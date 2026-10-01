@@ -1,15 +1,5 @@
 # test_review_unchanged_knowledge.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_review_unchanged_knowledge.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`|
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -36,30 +26,22 @@ Tests are scoped executable evidence. They do not certify the mounted product jo
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. The implementation-specific account is grounded in the repository source below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+No configured domain source could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The named constructs own this behavior; reads and validation use their existing callers and models.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `test_code_only_recorder_retains_unchanged_knowledge_and_reopens_after_cleanup` owns the behavior described above. | `test_code_only_recorder_retains_unchanged_knowledge_and_reopens_after_cleanup` | mcp/tests/test_review_unchanged_knowledge.py:50-75 |
+- `test_code_only_recorder_retains_unchanged_knowledge_and_reopens_after_cleanup` owns the behavior described above. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No independent cross-repository interface is introduced by this source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence is required. | — | — |
-
-## Update History
-
-- 2026-09-26T19:49:05Z — Created the regression card for this source owner.
+No additional cross-repository evidence is required.

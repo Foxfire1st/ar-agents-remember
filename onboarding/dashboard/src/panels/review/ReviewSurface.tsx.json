@@ -1,0 +1,329 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+        "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewPanes"
+        }
+      },
+      "id": "RLZ-1EJ1NP47",
+      "invariant": "INV-KKJYVB40",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Chooses the payload the workspace renders: the answer for the subject on screen, or while that subject is pending the last admitted frame of the task context, so the workspace is never unmounted by a selection.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+        "content": "sha256:a3b0ce3c907a1810a578b36a713cc9a3dde87c5d9ee8f7d2ee95634a1716ab39",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSurface"
+        }
+      },
+      "id": "RLZ-9ZV5SCXK",
+      "invariant": "INV-MCVSM81V",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Its selectSubject records the element that had focus when the reader made the selection.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+        "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "readingStatusOf"
+        }
+      },
+      "id": "RLZ-X8ZT1K8Z",
+      "invariant": "INV-WQZ2WFCN",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Turns an unanswered read (pending, failed or refused) into the reading status bound to the requested question's key and subject label, carrying the owner's problem block for a failure or refusal.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The held first read and the snapshot observation.\n\nAnchor: `hold: navigation.settling`; `useObservedComparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:f530a0a18cf444a2a7d6e9afaf0c4e338df6f3eda533e514a9ade2cc54d78852",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 484
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.**\n\nAnchor: \"const TAKEOVER = 'changeset-viewer'\"; \"gridTemplateColumns: 'minmax(0, 1fr)'\"; `review-details`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:e8c79db37b257981f76785102148e1a3b18dc1d9f5cf407c1c2a87d71ebbb709",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:fc8e19119ad588f0cbdea8b15373ac22ff408b697cbf213ad72bf9cd62e09191",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 462
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The header wraps the task/subject controls while keeping their context and refresh action available.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:50a21e780fe614ab03503265a8b6b7a15862708244fbcd5b4ba83419f86af6f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewHeader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The reviewer root owns its vertical scrollport while the shell retains its own layout responsibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:cbb1e4e74abf391bab0aae5cc5da8fd3937cb6a9736b088f205675658c549472",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewShell"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The fixture builder and the mount this pin relies on, cited from their own declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "content": "sha256:e5098754580075d9ac90d9661f08ae5062d64191645eeeae0e021744202482d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.narrow.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The shell decision this file does **not** change, and which stays routed to the cockpit owner: the comment that states it sits on the declaration itself.\n\nAnchor: \"the viewport does not scroll\"; `overflow: \"hidden\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:b7f4e827f86735aa40e379004ac017b07e546ec2af840b663f42f428268e4553",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`useSurface` owns the behavior described above, including the cache, `selectSubject` and the `reading` status.\n\nAnchor: `ReviewReadCache`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:a3b0ce3c907a1810a578b36a713cc9a3dde87c5d9ee8f7d2ee95634a1716ab39",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:0380fd9d1bf53c2b3d96c33f236e9aa292fae57cce0e2b8da6535154fdd04dd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectSubject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The unanswered subject's status, keyed and labelled with the requested subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "readingStatusOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`ReviewPanes` owns the behavior described above: the workspace over the answer or the frame, the records only for an answer, and the one lane read handed to both (MIK-L32).\n\nAnchor: \"function ReviewPanes({\"; \"const laneRead = useReviewLane(\"; \"<ReviewTechnicalDetails\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One lane read per comparison through the real surface; none for a dataset review.\n\nAnchor: \"offers the two lane destinations after the families, with their file and hunk totals\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:b4208a1f7f309f648eeddb28c688fab9ca1605233bf8fed064411149f37e100c",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.lane.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`ReviewSurface` owns the behavior described above, including the cache provider, the pending/unavailable root attributes and the engagement observer.\n\nAnchor: `ReviewReadCacheContext`; `useReaderEngagement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`PageControls` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:76c5dd85b8b9ae6c8c17d994c119e81752adaea4863959d8f62aa2516211d09d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageControls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The root is the keymap owner's reviewer zone (MIK-L33).\n\nAnchor: \"data-kbzone=\\\"review\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:58dbde1ded845fd81a69214ca4d3c3ec14e89657568feb0a917dc96f9a18ee12",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The pane helper's two load-bearing declarations (moved unchanged to `ReviewRecordPanes.tsx` by L48).**\n\nAnchor: \"minWidth: 0\"; \"overflowWrap\"; `data-pane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:fdc345b4cca4071f4f476013b944e8b0f347609a5bc03ac18fe9376ef4986ba2",
+            "locator": {
+              "kind": "symbol",
+              "name": "pane"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

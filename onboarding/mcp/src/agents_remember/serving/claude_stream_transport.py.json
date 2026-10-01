@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/serving/claude_stream_transport.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter's floor-gated sub-agent-text probe stops the transport and starts the same object again, so a completed stop must release process ownership for the relaunch to launch at all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:9583356f0db74b2d44cf3d06337be875ccdb64f60fd05c845707584e18c3b0d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_negotiate"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:705ab877a618cf5ad28a45d5efc0c731d98aa02d1a510eff02904f228d1094e5",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adapter's own shutdown stops the transport before it cancels the state reader, so ownership release is the final shutdown step rather than an early reset.\n\nAnchor: `finish_reader`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:dcddce929d8ee8aa97a6494db17b4b7e7c962264eab356610f82178165b2dd66",
+            "locator": {
+              "end": 530,
+              "kind": "line_range",
+              "start": 530
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

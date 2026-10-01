@@ -1,0 +1,60 @@
+{
+  "path": "mcp/native_helpers/conversation_library",
+  "references": {
+    "1": {
+      "note": "The helper protocol fixes exact versions, a 1 MiB bound, exact operation keys, fixed safe error detail, and the serve/probe/sign/page primitives.\n\nAnchor: \"export const PROTOCOL_VERSION\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:19299769ec918cbf22e87632ef5acbf56c9e92f42c296cb36800e1ad7a362fb5",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus.\n\nAnchor: \"the exact locked helper versions are protocol constants\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a62dcf4fbc0ce0148a3b5ff4e5311b0f22ca22d2",
+            "content": "sha256:2ada443672f3438476ab8ce6d30e93315a9517e4060eb0ee72e1643c50628a58",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Python host and Claude/Pi ports drive these entries on the production seam.\n\nAnchor: \"class ConversationLibraryHelperHost\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:8e2c84333d9047eb810c452b92171f3e81efed439c86e38d72b01fdba73e2287",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

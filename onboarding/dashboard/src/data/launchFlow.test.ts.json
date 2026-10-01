@@ -1,0 +1,107 @@
+{
+  "path": "dashboard/src/data/launchFlow.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The machines + client under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:a0fb68c34dcc59f53c7ba790766778a88a8dc3feaec942b1723bcf0ad96fa818",
+            "locator": {
+              "kind": "symbol",
+              "name": "launchSelectionBody"
+            },
+            "path": "dashboard/src/data/launchFlow.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:611edb3fb30083968b9901be4077f1c0bf8c8c7add5cf587a2fc8c9a4b177209",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "dashboard/src/data/launchFlow.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recorded-catalog envelope/snapshot builders (incl. the non-launch-settable-default trap).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:5c3057343678e205cbb78b35acbc965696fd1c25b674fc8f985e010d4bfb2a57",
+            "locator": {
+              "kind": "symbol",
+              "name": "modelRow"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:2e96ff34a3eeb462edf9e68ef04a268908f94720676315be8f781184a2c8e24f",
+            "locator": {
+              "kind": "symbol",
+              "name": "preSessionSnapshot"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The open-response fixtures the classifier table covers exhaustively.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:cd786e3692b4d8989bb68a2e901dfbc7b51ec0606fe22eb0fa4620f73494621c",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPENED_STARTING"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:50b85fa42af45f036a60181f4db1fcc55996622c57b79e38f834b5054ec37699",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPENED_VENDOR_DEFAULTS"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:f8b54603d0ba68ffe206625d24db22317f53d819424c40578979876204ce88fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "INVALID_PARTIAL_PAIR"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

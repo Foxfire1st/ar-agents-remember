@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewSurface.entryEconomy.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewSurface.entryEconomy.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T17:06:50+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -52,32 +42,24 @@ Only `fetch` is stubbed; requests are classified by URL path and query. The hold
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this test module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The economy the cases hold the reviewer to, including the bounded wait. | "the wait for the catalogue is bounded" | dashboard/src/panels/review/ReviewSurface.entryEconomy.test.tsx:1-12 |
-| The catalogue fixture and the per-family review under a chosen snapshot. | `CATALOGUE`; `familyReview` | dashboard/src/panels/review/ReviewSurface.entryEconomy.test.tsx:39-68 |
-| One catalogue read, then only the chosen subject; re-read once for a new generation. | "reads the catalogue once on entry, then asks the review only for the subject it chose" | dashboard/src/panels/review/ReviewSurface.entryEconomy.test.tsx:70-140 |
-| A stalled catalogue releases into the task-context review within the bound. | "reads the task-context review and shows the source explorer when the catalogue never answers"; `SUBJECT_HOLD_MS` | dashboard/src/panels/review/ReviewSurface.entryEconomy.test.tsx:142-176 |
-| The hold and the comparison-keyed catalogue under test. | `SUBJECT_HOLD_MS`; `useReviewNavigation` | dashboard/src/panels/review/ReviewNavigation.tsx:146-199 |
+- The economy the cases hold the reviewer to, including the bounded wait. [1]
+- The catalogue fixture and the per-family review under a chosen snapshot. [2]
+- One catalogue read, then only the chosen subject; re-read once for a new generation. [3]
+- A stalled catalogue releases into the task-context review within the bound. [4]
+- The hold and the comparison-keyed catalogue under test. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T17:06:50+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): created this card for the reviewer entry-economy cases (A1) and the bounded-hold case (A2, L47-R1-F1). The verification pair names the code base; closeout owns the real stamp.
+No meaningful cross-repo references found.

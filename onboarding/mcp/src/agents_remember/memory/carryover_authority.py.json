@@ -1,0 +1,104 @@
+{
+  "path": "mcp/src/agents_remember/memory/carryover_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The internal apply owner obtains target storage authority and passes it to route-index refresh only after configured contract and protected-checkout authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:7b27b96851ed90b6080df0ea24930b76547ceb6e8abd7c628c80343b10cc31a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:ccf1e9497a2c9db372bb3095d5526a60b5d78ef16cd430d28e900541c0caf82e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_target_route_indexes"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:f8906f1bf107784d7ba6c116f3264660365e1540dc44446ca561d3f6295f186d",
+            "locator": {
+              "end": 661,
+              "kind": "line_range",
+              "start": 627
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:2e64a5276ef3dba950b9b81a080e978eb0d950b7155138ccb9e7f788e2913b94",
+            "locator": {
+              "end": 670,
+              "kind": "line_range",
+              "start": 636
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:0abd13981ec925ba346b0b8c26b88923f771b784af7f6a9eaf7d22a945e58ba0",
+            "locator": {
+              "end": 791,
+              "kind": "line_range",
+              "start": 698
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:7d4773c02e876ad9f11fb6fdd4ee2a010710dd6b3280ba8ac561af7798b6e2e9",
+            "locator": {
+              "end": 852,
+              "kind": "line_range",
+              "start": 759
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The raw preflight exposes the required target storage authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7017d03dd3293689706598705718baf9f1d23d1f",
+            "content": "sha256:5a9c9649a42bf93672b5c8bde46a3b0f2e6a06ee23f880f7cdaf0dbd95d978b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "required_target_storage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

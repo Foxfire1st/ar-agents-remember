@@ -1,0 +1,365 @@
+{
+  "path": "mcp/tests/test_knowledge_bootstrap_procedure.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's subject is the *authored* knowledge foundation and the missing first-time process, and its four readings are deliberately kept apart.\n\nAnchor: \"A repository's knowledge foundation is *authored*\"; \"the **procedure** exists and is served\"; \"the **commands the procedure prints** exist\"; \"the **seats** the procedure names are admitted by the shipped opener\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:dc507f34261852baf571c7c1455b7902f74e4b9df3937112b113fe170a0ac544",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The served catalog publishes the procedure, and the served bytes are compared with the canonical tree's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:8d470c781470b3e7647350515e3b5d8002e0e78bb0194e0e563a2c86618cdbf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_served_catalog_publishes_the_bootstrap_procedure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every invocation the procedure prints is filled and run through the real parser, grading declaration and option-ownership together without executing anything.\n\nAnchor: \"The requirement's own failure: a document that describes commands which do not exist.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:a13edc06f41ee2db5aa46f9a4735a6a7c76d3989ef3bc09519c12027dc865fc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_invocation_the_procedure_prints_resolves_in_the_shipped_parser"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The curator-shape case measures the **compiler**, which is why it is named for the compiler rather than for an admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:0f65fa242e5bd5f001dec11b12d5bbba16e3f314321151c927c592eeb4de0517",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_compiled_curator_shape_names_the_procedure_it_would_receive"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:1c60723d2b7ccd779d54e2fa4fa223d9ce7fa2d06b1f7b0d38eaf88c2c3252ff",
+            "locator": {
+              "end": 429,
+              "kind": "line_range",
+              "start": 409
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The two served skills an ordinary setup follows name the procedure and report the knowledge state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:e3c24b9831303ebd3ee4cf39f32ecf362c406da453ad6d83ccc050b13d2209a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_served_setup_and_onboarding_surfaces_reach_the_procedure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The launch world the route cases drive is the shipped wiring module's own, not a fixture invented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:3ac1087a5b806eff64a173c68ba91f782cc9726bb415d623db7dcd96a04b2155",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scratch_world"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:a32b0c5dfe1797a9b3c36c5a456629151f39422b4a637fcf37d2114f65d22180",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEAF_REF"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The module is placed in the evidence-unit lane.\n\nAnchor: \"pytestmark = pytest.mark.evidence_unit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The constants bind the case to the canonical tree: the skill name and the file whose bytes a served read is compared against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:a76b337cc05bd7b14e537071a1fa84a8d5643aeec00f88e590dcf634b83910f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCEDURE_SKILL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:49aca5567b2f700f827020c2a7d5dd187346776e20068983d4cea338e6249ac2",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCEDURE_FILE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:08ec0de82757704360ef40da8ae5f266071f914813190451d43eb55f1daac725",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The printed-invocation grammar is a line that *opens* with the program name, so an inline mention inside a sentence is prose rather than a command line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:aab12670bc97b63a770674a4e99375b73fc6f12584fba314e1e38a4dcac1058c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROGRAM"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:9d908bbed5a2472c75111207db7c885c70a0432f7789a59297d20a1691941f32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INVOCATION"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:eea362cb33164947aab8d47bccc8eebb1c8b05c02d47e8a44bd69c0d3f369be4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PLACEHOLDER"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The placeholder is filled only to satisfy the parser's arity, because the case grades the command line's shape and runs no command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:b8d44b205bdb26bd6facbda1bff24377262c2dd106816cd8028f67a7d5d01607",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLACEHOLDER_VALUE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The served route reads a published skill body through the catalog's own read entry point rather than from `skills/` directly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:d06f633addc8c8305fbbe84b577045bfc131d9628b78478403aa7a4490dcbc5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_body"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:7dd84ce3ff85a267be0b075883fc67330b159882c24776a37446cdff9e3f6309",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The compiled free-agent instructions for a role are obtained through the launch compiler's own shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:85529bef873aea7b540bf48d9ce27391d4583dda8a9ef71a3010b411a8460479",
+            "locator": {
+              "kind": "symbol",
+              "name": "free_agent_instructions"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:ecf3c6e9889c2c7282dec6ff2627fd8e95eff8e6e57624398dcafc14a1cf6edb",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cases open seats over the shipped scratch world and compare the observed status per role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:5e0c29e549311c71e549d607f07a6021df3d0493212bb5d66c080c9383a6b7fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_seat"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:581db6f9d8194718143e96262069684dfd718a667498562b0eb3df0af82c0538",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_opener_admits_exactly_the_taskless_seat_roles_and_instructs_each"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one seat the product admits without a task document **and** instructs about the foundation is the bootstrap seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:461c16b7ffd657b90482daea225827dd0b29dfe26bce2b806fff5cab4a5271ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_admitted_taskless_seat_receives_the_foundation_step"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:da073f92a4821910eea9e599c0d7429ab424b1e19d0f35da4ed116ebb1984f4f",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 298
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The curator's own seat opens with a named role scope and receives the procedure, which is the other half of the seat gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:cf608c3f47c1fa5279dc214ff9f309c52264bf2fcb00434e4ed84b56caf42a04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_curator_seat_opens_on_a_task_document_and_taskless"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/library/scope.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/library/scope.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Native conversation library overview](overview.md)
@@ -51,38 +41,25 @@ errors.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal scope authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cursor suite proves the narrow-only scope semantics and the digest binding; the null-byte
 route regression is pinned at the ASGI layer.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical library scope confines the requested path and refuses invalid or escaping input. | `canonical_library_scope` | mcp/src/agents_remember/serving/conversation/library/scope.py:30-71 |
-| Canonical library scope confines the requested path and refuses invalid or escaping input. | `canonical_library_scope` | mcp/src/agents_remember/serving/conversation/library/scope.py:30-71 |
-| The query digest binds harness, canonical scope and sort. | `query_digest` | mcp/src/agents_remember/serving/conversation/library/scope.py:74-87 |
+- Canonical library scope confines the requested path and refuses invalid or escaping input. [1]
+- Canonical library scope confines the requested path and refuses invalid or escaping input. [2]
+- The query digest binds harness, canonical scope and sort. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local scope authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 6 initial citation findings (3 anchor, 0 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
-
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the canonical scope authority
-  sidecar. Verification is blank until closeout commits and stamps the new source.
+No meaningful cross-repo references found.

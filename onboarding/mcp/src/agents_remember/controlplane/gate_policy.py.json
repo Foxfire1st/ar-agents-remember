@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/gate_policy.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Gate records carry `decidedBy`/`decidedVia`/`decidingRole` and evidence refs checked here.\n\nAnchor: \"class GateRecord\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af2a37e3cdff5f67bda1c0fd35069fcde2489e7",
+            "content": "sha256:f3c93f7d3af46248d0746d80d22ea61bbd0d2d1eff2392b2202d56fb99ef7941",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/controlplane/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pure resolver consumes this policy.\n\nAnchor: \"class GateGuard\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098584045028586661c04fda59d447990277db8a",
+            "content": "sha256:198a6546e4de20cf19d73a1e00d7bb79ce5656454fdf46de3c73182d196a0cc2",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "MCP settings parse the named/custom policy into this model.\n\nAnchor: \"class McpRuntimeConfig\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:ecc3c3c8f78a3ede9ad1e547359d16fd6cec6adb344ad3557c5576b198e5f830",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Gate decision payloads reject invalid orchestration decisions before appending.\n\nAnchor: \"def gate_create_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38cf83279988cbcecd8e45164ef3986c630f3b20",
+            "content": "sha256:aa6d56aa725a78f943a96de9d1355cf75633dcca19e76ad9de6bdb7d5afc20fd",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

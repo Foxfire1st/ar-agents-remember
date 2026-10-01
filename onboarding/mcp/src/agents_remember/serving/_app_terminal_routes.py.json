@@ -1,0 +1,260 @@
+{
+  "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Session route registration owns terminal open/catalog/assignment endpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:c0daa52d08e69750dc73e80efc0f03d337ea2ea17bd1ec3d88bdefc4d78eb718",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_terminal_session_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Catalog/open payloads use current structural binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:d7118254c536418957020a0744db9a3dc0ef5afddd8b23de6f07d8ada4cc28f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_entry_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Task assignment delegates validation and generalized mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:8582167fddae5867bac8570dd0595cee880d53c0eaa50d0ff536a2c9815e5484",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_task_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The wired launch point: the capsule is resolved before any host side effect, a refusal is HTTP 400 `capsule-unavailable`, the workspace comes from the one rule, and the per-run record rides the response as `instructionMode`.\n\nAnchor: `session_workspace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:160a90a082c8c63a6d5ab9a778cd8e4b4ccf67d9f48295e8173882ff617dd393",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_terminal_response"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:ade4924a285ec8e455a4b7c52effb75428d732a60f71eaad8379b0fb70b7ad71",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_for_workspace"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:72a11c884fb7a7643a155c8dad9d7f81975bfe5fd7dc39ed4897de8db8557a77",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The application-rank compiler is injected here rather than imported, because `serving` ranks below `application`.\n\nAnchor: `ServingCollaborators.capsule_launch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80dd57c34d44fcd1bdd1920cb2b74809135bed5a",
+            "content": "sha256:891407977e55df799014c2d7b29ac46cfaf55167873b92967700f3f15436a9f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a987ff56d53db0d3fcca47b7d2aa0210104558ec",
+            "content": "sha256:c1dad9d8dc89b68f736cc49e5569ccb22f5b1ed3a053f83ec8883ced0dd1b18b",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 457
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The route's launchability question and the pre-existing reason an adapter-owned harness is refused here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:940970aaedcf6a6a2d6f2d3c1fbfd6740b7f4f0df7d1d13cb8494bd6ea83716f",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_backend"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:bfee572d0d59b61ad26583d1dd96ca136e9f0ccff6b8bca1f40fb9a3cba3da62",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_launch_detail"
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:e406ca1b33b350b6d62b1b2638773b92dcd8dc2205b191bfa6b9698ce92bed4d",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cases: a free agent reads its capsule out of its own first prompt through this route, and an un-compilable role refuses before any host effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:e63878f1d8d84c3eb1c8dae92b740660a0be1589c72f3fecc5825b6954d92a25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:67df6697e853be30ae74d7cc0850e722d8570d04e1c6bd5db614ab67ec12eeba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_uncapsulable_role_refuses_by_name_before_any_host_effect"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:d721fec7a1ec333e78514ceae21ad3891307bedf01ba514f6870595a2fddb165",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:f22b0ac7b4621883af1ef89260c06b2552d73f86d34fabbaec540b47898575f7",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 529
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:dd55b241c136f5d9cfabe81ff9ba0eb827a86d3b61c863c20c26a2ffe36204bd",
+            "locator": {
+              "end": 607,
+              "kind": "line_range",
+              "start": 577
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:7fa1ad6e111130019f2e0854a22339abaf6d20b87d4f0100da8a55589a90e100",
+            "locator": {
+              "end": 872,
+              "kind": "line_range",
+              "start": 816
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

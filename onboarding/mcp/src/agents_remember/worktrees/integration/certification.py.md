@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/certification.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/certification.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:12:42+00:00 |
-| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing integration overview](overview.md)
@@ -45,41 +35,33 @@ Keep selected execution authority separate from completed quality certification.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+No configured domain documentation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `IntegrationCertificationOwner` owns the described selection or observation boundary. | `IntegrationCertificationOwner` | mcp/src/agents_remember/worktrees/integration/certification.py:61-63 |
-| `IntegrationCertificationRequest` owns the described selection or observation boundary. | `IntegrationCertificationRequest` | mcp/src/agents_remember/worktrees/integration/certification.py:67-72 |
-| `LoadedIntegrationCertification` owns the described selection or observation boundary. | `LoadedIntegrationCertification` | mcp/src/agents_remember/worktrees/integration/certification.py:76-95 |
-| `_current` owns the described selection or observation boundary. | `_current` | mcp/src/agents_remember/worktrees/integration/certification.py:112-156 |
-| `authorize_integration_start` owns the described selection or observation boundary. | `authorize_integration_start` | mcp/src/agents_remember/worktrees/integration/certification.py:159-163 |
-| `_identity` owns the described selection or observation boundary. | `_identity` | mcp/src/agents_remember/worktrees/integration/certification.py:166-189 |
-| `prepare_integration_certification` owns the described selection or observation boundary. | `prepare_integration_certification` | mcp/src/agents_remember/worktrees/integration/certification.py:192-216 |
-| `protected_integration_generations` owns the described selection or observation boundary. | `protected_integration_generations` | mcp/src/agents_remember/worktrees/integration/certification.py:225-232 |
-| `_load` owns the described selection or observation boundary. | `_load` | mcp/src/agents_remember/worktrees/integration/certification.py:235-296 |
-| `_select` owns the described selection or observation boundary. | `_select` | mcp/src/agents_remember/worktrees/integration/certification.py:299-315 |
-| `_require_interrupted` owns the described selection or observation boundary. | `_require_interrupted` | mcp/src/agents_remember/worktrees/integration/certification.py:318-340 |
-| `require_resumable_integration` owns the described selection or observation boundary. | `require_resumable_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:343-349 |
-| `select_integration_terminals` owns the described selection or observation boundary. | `select_integration_terminals` | mcp/src/agents_remember/worktrees/integration/certification.py:352-364 |
-| `select_completed_integration` owns the described selection or observation boundary. | `select_completed_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:367-441 |
+- `IntegrationCertificationOwner` owns the described selection or observation boundary. [1]
+- `IntegrationCertificationRequest` owns the described selection or observation boundary. [2]
+- `LoadedIntegrationCertification` owns the described selection or observation boundary. [3]
+- `_current` owns the described selection or observation boundary. [4]
+- `authorize_integration_start` owns the described selection or observation boundary. [5]
+- `_identity` owns the described selection or observation boundary. [6]
+- `prepare_integration_certification` owns the described selection or observation boundary. [7]
+- `protected_integration_generations` owns the described selection or observation boundary. [8]
+- `_load` owns the described selection or observation boundary. [9]
+- `_select` owns the described selection or observation boundary. [10]
+- `_require_interrupted` owns the described selection or observation boundary. [11]
+- `require_resumable_integration` owns the described selection or observation boundary. [12]
+- `select_integration_terminals` owns the described selection or observation boundary. [13]
+- `select_completed_integration` owns the described selection or observation boundary. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository reference is required. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T15:12:42+00:00 — Created from actual source at c69d5171187fa1957025e393270db9f5a864ab14; documented original evidence, current owner checks and selection/completion boundaries. Source verification does not claim suite execution or CCR acceptance.
+No cross-repository reference is required.

@@ -1,0 +1,203 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/authorization.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`AuthorizationBinding` is the strict principal/tenant wire type the resolver mints and verifies.\n\nAnchor: \"class AuthorizationBinding(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7c0957e9ed10ec573ba9174f6f5ecf16aeeb408",
+            "content": "sha256:fa90f339a1670d6d594edc79c09561e2dd44ef50c136c181d92c397e723a1aa7",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/models/conversations/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The request dependency consults only the ASGI TCP peer and delegates to the bound resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:57d50753cfe99f0a8c0b0ff4ac9461d7b4d3b9b7185d3509a949813ff62fccbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_conversation_authorization"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The production composition binds `LocalOperatorAuthorizationResolver.for_workspace(workspace_root)` into the one runtime.\n\nAnchor: \"LocalOperatorAuthorizationResolver.for_workspace(config.workspace_root)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:451133477c6e0fec44aef983c0883debe44199fb5783e1a1d4defac5557daf0f",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:d9e14d9833631bcaa5452b52a1316354696274e8a3c1523657d3f96a5749dd4b",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 325
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`AuthorityError` is the typed refusal raised for non-loopback peers and cross-principal bindings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Contract tests prove local-operator identity, loopback resolution, non-loopback/unknown fail-closed, the signature-pinned no-identity-channel, ignored browser claims, cross-principal cursor/scope/operation rejection, and injected-resolver separation in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0497f68900b902594c4f5ece89b7c1a9ace42794",
+            "content": "sha256:9875611ba720420344369fa1f762749123972230605895f840e84911a02894ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_server_resolves_one_local_operator_workspace_identity"
+            },
+            "path": "mcp/tests/test_conversation_authorization.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0497f68900b902594c4f5ece89b7c1a9ace42794",
+            "content": "sha256:62d54ac220c596e397fe021d845640c8d4175879820e5f09ab6ff9d9d34c9e8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_loopback_peers_resolve"
+            },
+            "path": "mcp/tests/test_conversation_authorization.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0497f68900b902594c4f5ece89b7c1a9ace42794",
+            "content": "sha256:a84961387a5279d25d7559207ff00f66f87c78e6dde7d82d40942fc0961dd71a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_loopback_peers_fail_closed"
+            },
+            "path": "mcp/tests/test_conversation_authorization.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0497f68900b902594c4f5ece89b7c1a9ace42794",
+            "content": "sha256:bd42b1d878a78aa1b6a677f4d307d142a77d0965933ac97c5877ce3bf6ba54e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_peer_fails_closed"
+            },
+            "path": "mcp/tests/test_conversation_authorization.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0497f68900b902594c4f5ece89b7c1a9ace42794",
+            "content": "sha256:6397c61cd153cb40f58ef833d1362f64e3eb7ace30d1cfb45ece9b6ca2dfc9fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_browser_identity_claims_are_never_read"
+            },
+            "path": "mcp/tests/test_conversation_authorization.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0497f68900b902594c4f5ece89b7c1a9ace42794",
+            "content": "sha256:7594f0df1003797801af0d3e83b2585bf8cc3106c952c050b77b8a28d773faf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cross_principal_cursor_binding_rejected"
+            },
+            "path": "mcp/tests/test_conversation_authorization.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0497f68900b902594c4f5ece89b7c1a9ace42794",
+            "content": "sha256:122768704950fbcd081ad6bb73907d90e43a32c2ab67d8df8bc482203dffd00f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cross_principal_scope_binding_rejected"
+            },
+            "path": "mcp/tests/test_conversation_authorization.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0497f68900b902594c4f5ece89b7c1a9ace42794",
+            "content": "sha256:693776536864902bfa596f6883fa639e1a844bc900eaf68127993d18237dc8f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cross_principal_operations_have_distinct_fingerprints"
+            },
+            "path": "mcp/tests/test_conversation_authorization.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0497f68900b902594c4f5ece89b7c1a9ace42794",
+            "content": "sha256:8bc3abf2db30031f724a3444268c82d3d0c042216b69bddb0aac22341b0888d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_injected_resolver_proves_cross_principal_rejection"
+            },
+            "path": "mcp/tests/test_conversation_authorization.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/EngineRoom.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/EngineRoom.tsx`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/ overview](overview.md)
@@ -89,19 +79,19 @@ official strip aggregation is presentational only: `EnclosureProcessMap` still r
 `workspaceEngines` array, and the `engine-stack` / `engine-unit` testids live only on the fallback path and
 must be kept for the legacy projection tests.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `buildEngineRoomModel` (pure model: joins, lifts workspace stack, sets `enclosureKey`/`usesFallback`). | `buildEngineRoomModel` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66 |
-| §4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \| `roomStage` \| `roomZone`]). | `roomShell` | dashboard/src/panels/EngineRoom.tsx:252-279; dashboard/src/panels/EngineRoom.tsx:284-292 |
-| `EngineRoomHeader` (health/phase/nextAction + master-caution from `selectQueue`). | `EngineRoomHeader` | dashboard/src/panels/EngineRoom.tsx:137-171 |
-| `OfficialStrip` groups official workspace providers by label + runtime state, renders duplicate peers as counted chips, and exposes grouped repo labels via `title`/`aria-label`. | `OfficialStrip` | dashboard/src/panels/EngineRoom.tsx:109-132 |
-| Official-strip regression tests pin seven same-state CGCs into one `7 CGC · nominal` chip, keep mixed CGC states separate, and assert hover-title repo lists. | "7 CGC · nominal" | dashboard/src/panels/EngineRoom.test.tsx:207-207 |
-| The bounded-height panel variant the room uses. | `fill` | dashboard/src/grammar/Panel.tsx:59-59 |
-| `groupEngines` (fallback) + `engineState` + `selectQueue`. | `groupEngines` | dashboard/src/data/selectors.ts:37-46; dashboard/src/data/selectors.ts:123-127; dashboard/src/data/selectors.ts:147-165 |
-| The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). | "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240 |
-| The shared chat-routed gate responder rendered by diagnostics. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
+### Repo-Internal References
+
+- `buildEngineRoomModel` (pure model: joins, lifts workspace stack, sets `enclosureKey`/`usesFallback`). [1]
+- §4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \| `roomStage` \| `roomZone`]). [2]
+- `EngineRoomHeader` (health/phase/nextAction + master-caution from `selectQueue`). [3]
+- `OfficialStrip` groups official workspace providers by label + runtime state, renders duplicate peers as counted chips, and exposes grouped repo labels via `title`/`aria-label`. [4]
+- Official-strip regression tests pin seven same-state CGCs into one `7 CGC · nominal` chip, keep mixed CGC states separate, and assert hover-title repo lists. [5]
+- The bounded-height panel variant the room uses. [6]
+- `groupEngines` (fallback) + `engineState` + `selectQueue`. [7]
+- The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). [8]
+- The shared chat-routed gate responder rendered by diagnostics. [9]
 
 ## Current L5I Maintenance
 
@@ -110,39 +100,3 @@ slices with `stableEquals`, memoizes its pure room model, and memoizes the compo
 unrelated analytics replacement or a cockpit tab switch therefore does not rebuild the large room.
 The header pulse additionally stops while its observed element is hidden, so a mounted-but-hidden
 room does not keep a Motion frame loop alive.
-
-## Update History
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the engine-room styles barrel import change. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 9 citation rows with exact anchors and ranges: buildEngineRoomModel.ts L26-L66, the roomShell/header/OfficialStrip extents in EngineRoom.tsx, the official-strip test cases, grammar/Panel.tsx fill variant, data/selectors.ts selector triple, observer/snapshots.py `read_engine_process_facts` L639-L700, and GateResponder.tsx L217-L236. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-07-24T13:17:17Z — Curator: documented the narrowed analytics subscriptions, memoized room
-  model/component, and visibility-gated header pulse. Verification fields remain pinned until the
-  uncommitted code is committed at closeout.
-
-- 2026-06-24T08:09+02:00 — Engine Room leaf identity: the selected-room header now titles the active leaf (`leafId || taskName`) and keeps the parent series task in the metadata line when a leaf is present. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:19+02:00 — Official-line strip aggregation: `OfficialStrip` now groups workspace providers
-  by provider label + `engineState`, counts duplicate same-state CGCs (e.g. `7 CGC · nominal`), and exposes
-  grouped mainline repos in the hover/title text. Regression coverage added in `EngineRoom.test.tsx`.
-  Verification metadata pinned until closeout stamps the official-strip aggregation code commit.
-- 2026-06-23T13:45+02:00 — Task 11: threaded `EngineProcessView.gate` into `EnclosureProcessMap` and
-  `DiagnosticsPanel`; diagnostics now renders the compact shared responder for worktree-bound gates.
-  Verification metadata pinned until closeout stamps the task-11 code commit.
-- 2026-06-22T16:00 — slice 5o canvas remount on scenario switch: the panel reads the store generation counter (`state.gen`) and passes `key={gen}` to `EnclosureProcessMap`. The dev bench's `store.reset()` bumps `gen` on a scenario switch, forcing a clean remount of the centre canvas so a previous mode's exiting Motion failure-overlay (e.g. `FleetingEnclosure`) can't orphan mid-`AnimatePresence` and bleed through the scenario dropdown; `gen` is constant (0) in production, so the canvas is never remounted by it there. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-18T18:00+02:00 — slice 5h ledger popover: resolves the official `LedgerNode` from `analytics.ledgers` by the selected enclosure's `repoName` and passes it down as `officialLedger` for the official coupler popover. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-17T22:45 — engine-room visual-parity + fill-height layout: the room's `<Panel>` is rendered with
-  `fill` (the bounded-height variant) so the centre canvas + right panel stop resizing per selection and the
-  side columns scroll; `EnclosureProcessMap` now receives `model.workspaceEngines` so the bird's-eye renders
-  the left official-line engines from the same real stack the `OfficialStrip` summarises. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-16T03:50 — slice 5f S5 (lifecycle T12–T18): the header `phaseChip` became a `motion.span` that pulses while the selected enclosure is in a human-gated lifecycle phase (`LIFECYCLE_PHASES`: sync / closeout / commit-approval / integration / cleanup); the header carries `data-phase-active` (new `EngineRoom.test.tsx` pins it). Gated, instant under `data-effects=off`. Verification metadata pinned until closeout stamps the S5 code commit.
-- 2026-06-16T02:30 — slice 5f S1: replaced the 2-col `roomLayout`/`detailColumn` with the §4.2
-  full-width 3-zone room — an `EngineRoomHeader` (selected enclosure · health · phase · next action +
-  master-caution mirror from `selectQueue`) over `roomGrid` [stack list \| pod stage \| boot+diagnostics
-  on the right]. Verification metadata pinned until closeout stamps the S1 code commit.
-- 2026-06-16T01:55 — slice 5f S0: enclosure selection keyed by `worktreeGroup` (`selectedGroup` +
-  `selected.enclosureKey`) instead of `node.id`, matching `EnclosureStackList`'s new `selectedKey` prop.
-- 2026-06-15T19:35 — slice 5e: rewritten for slice 5e: builds buildEngineRoomModel and renders the enclosure stack list + process map + boot timeline + diagnostics (official-line strip on top); keeps groupEngines fallback + engine-stack/engine-unit testids.
-- 2026-06-15T17:00 — Created for slice 5d: migrated onto `Panel` + state-keyed Panda cvas (no
-  descendant selectors). Verification metadata pinned until closeout stamps the 5d code commit.

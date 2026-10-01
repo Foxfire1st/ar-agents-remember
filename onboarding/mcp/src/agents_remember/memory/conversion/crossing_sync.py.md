@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/conversion/crossing_sync.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/conversion/crossing_sync.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T14:21:42+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -76,11 +66,12 @@ left unchanged.
 
 ### Todos
 
-The module docstring's step 1 still describes the row as `reason: <marker text>`. Since ruling N1 the
-text is in `markers` and `reason` is the fixed summary, so the docstring is stale on that point: a code
-nit for the next touch, not a behaviour difference.
+None recorded. L37 corrected the module docstring's step 1: the marker text goes in `markers`, one entry per
+moved line, and `reason` is the fixed summary `MARKER_ROW_REASON` (ruling N1). It was a docstring change only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -89,36 +80,25 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The steps and their helpers.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A step failure names the step. | `CrossingError`; `Step` | mcp/src/agents_remember/memory/conversion/crossing_sync.py:61-66; mcp/src/agents_remember/memory/conversion/crossing_sync.py:55-55 |
-| The crossing test and the pinned version. | `is_crossing`; `_pinned_version` | mcp/src/agents_remember/memory/conversion/crossing_sync.py:89-93; mcp/src/agents_remember/memory/conversion/crossing_sync.py:198-206 |
-| Step 1: the leaf's added no-impact markers become onboarding_trace rows, with the lines in `markers`. | `marker_rows`; `MARKER_ROW_REASON`; `marker_pieces` | mcp/src/agents_remember/memory/conversion/crossing_sync.py:111-139; mcp/src/agents_remember/memory/conversion/crossing_sync.py:142-145; mcp/src/agents_remember/memory/conversion/crossing_sync.py:148-154 |
-| Markers go into the leaf's history file; a subject with a row is reported, not dropped. | `with_markers` | mcp/src/agents_remember/memory/conversion/crossing_sync.py:157-179 |
-| The master-line crossing history file's name. | `next_crossing_owner` | mcp/src/agents_remember/memory/conversion/crossing_sync.py:182-191 |
-| Steps 1-4 and the report. | `cross`; `CrossingPlan` | mcp/src/agents_remember/memory/conversion/crossing_sync.py:224-280; mcp/src/agents_remember/memory/conversion/crossing_sync.py:77-86 |
-| Cards counted by side. | `_card_counts` | mcp/src/agents_remember/memory/conversion/crossing_sync.py:290-313 |
-| The markers move, each side converts, and the trees merge. | `test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges` | mcp/tests/test_knowledge_crossing.py:162-214 |
-| Many long markers fit one valid row. | `test_many_long_markers_move_into_one_valid_history_row` | mcp/tests/test_knowledge_crossing.py:217-243 |
-| A master-line record conflict opens a crossing history file, closed at commit. | `test_a_master_line_record_conflict_opens_a_crossing_history_file_closed_at_commit` | mcp/tests/test_knowledge_crossing.py:246-290 |
+- A step failure names the step. [1]
+- The crossing test and the pinned version. [2]
+- Step 1: the leaf's added no-impact markers become onboarding_trace rows, with the lines in `markers`. [3]
+- Markers go into the leaf's history file; a subject with a row is reported, not dropped. [4]
+- The master-line crossing history file's name. [5]
+- Steps 1-4 and the report. [6]
+- Cards counted by side. [7]
+- The markers move, each side converts, and the trees merge. [8]
+- Many long markers fit one valid row. [9]
+- A master-line record conflict opens a crossing history file, closed at commit. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

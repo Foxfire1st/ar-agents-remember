@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The Intent review and change-set controls in a leaf task document's change-set bar.",
+  "conditions": [
+    "A control's read is loading, unrecorded, known-empty, refused, unreadable or unanswered."
+  ],
+  "exclusions": [
+    "The reviewer surface's own problem blocks (ReviewOutcome)."
+  ],
+  "id": "INV-TH4KXFTX",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "4f77cc0b-5f6d-4180-985b-da27f422fee9",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Change-set and Intent review controls carry a one- or two-word state with data-review-state/data-review-code, and the owner's code, reason, offending input and next action sit in a closed disclosure beside the control rather than in or beside the entry as a paragraph.",
+  "status": "proposed",
+  "supersedes": []
+}

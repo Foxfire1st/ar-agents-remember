@@ -1,0 +1,171 @@
+{
+  "path": "mcp/tests/test_governing_overview_resolution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `(card, code)` set assertion is what pins per-declaration reporting; the card broken in both appears twice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "639894cd0bcaddea4f47a96beec5067705a2371e",
+            "content": "sha256:f49a300af67dbcfe665c7d1348d144ff236c44e84aab2fec85b4cc51748cdab6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_dead_declaration_form_is_reported_and_no_clean_card_is"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two counters are asserted separately, so a first-match-wins regression cannot hide behind a total.\n\nAnchor: \"self.assertEqual(result.unresolvedField, 1)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "639894cd0bcaddea4f47a96beec5067705a2371e",
+            "content": "sha256:db057fdc1c8ca16817b65b0f010717dbe75dc3350f99e0eecdb2d203272574e0",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "639894cd0bcaddea4f47a96beec5067705a2371e",
+            "content": "sha256:f49a300af67dbcfe665c7d1348d144ff236c44e84aab2fec85b4cc51748cdab6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_dead_declaration_form_is_reported_and_no_clean_card_is"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The walk scope is pinned so a widened root would red the case.\n\nAnchor: \"self.assertEqual(result.cardsWalked, 6)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "639894cd0bcaddea4f47a96beec5067705a2371e",
+            "content": "sha256:a30d455b71485aa666e5e0e15571b6a798379252456314f8e49bb8fcd243c912",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 149
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The single seam that materialises a seeded card, with `section=False` selecting the no-heading template.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "639894cd0bcaddea4f47a96beec5067705a2371e",
+            "content": "sha256:b37828d9cf45e51e599901176910685adfb9867d4d1f226bfd240a0e880a1f1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_card"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The check under test, its three-bases field probe, and the observation classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "039f213cf4bd2561ff4c170a191edd2d83736126",
+            "content": "sha256:7eb00d42c337d4d45cec607f7d14c408ba6697e786bac89e90c30274f3991f27",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_governing_overview_resolution"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/governing_overview_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The second half of the same defect: a dead governing overview must arrive in the gated repair set the curator's loop reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfedadad8afb9d580e9064cabf997316c914f4eb",
+            "content": "sha256:4991743281717e026a059e8a532eb68e8f7c641489e431218b36bcbbe35adc14",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dead_governing_overview_reaches_the_gated_repair_set"
+            },
+            "path": "mcp/tests/test_memory_quality_runs.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfedadad8afb9d580e9064cabf997316c914f4eb",
+            "content": "sha256:0de7f2750333a87720c7fc1b75b92840164636a2d9c67ea5d969831d35a44cd7",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 355
+            },
+            "path": "mcp/tests/test_memory_quality_runs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The population ceiling the module's one-case budget was measured against.\n\nAnchor: `unit_case_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f3bd41068ad5495a640a6683e9bdc8a57904799",
+            "content": "sha256:247bbb930b2420b58c6de2e29c3947ee8d23cf69de7f980abf10f28c0d922079",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The collector that refuses the entire run when the population exceeds that ceiling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_finish"
+            },
+            "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

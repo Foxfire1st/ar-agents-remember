@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/finalize.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Strict tool response base class is defined here.\n\nAnchor: \"class StrictResponseModel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public response registry maps `lifecycle_finalize_task` to this model.\n\nAnchor: `lifecycle_finalize_task`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The finalizer response model is the current wire authority; deleted representative-payload tests provide no current pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eefe9957926f7c5e703c6dff044bdfebba98d76e",
+            "content": "sha256:3e11bc3ad41eaee18d73bded639a20efbae22405a74292f6646941a25856bd73",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleFinalizeTaskResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`.\n\nAnchor: \"def lifecycle_finalize_task_tool(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:f6d066ed830a743ac850c9150d2e1aef3a625454194bd6cb4ccda4e5099bbb20",
+            "locator": {
+              "end": 904,
+              "kind": "line_range",
+              "start": 884
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on.\n\nAnchor: \"class RetirementSettings:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:a540dfa0c5117e86fd9eaf02cb7d5c530569236ac65b792e6855272119a8b40d",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

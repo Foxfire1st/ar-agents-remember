@@ -1,0 +1,219 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Data records and constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
+            "content": "sha256:c0b34716944454ad279d667f4a37d00c4cda4aab8ab86bfd031b9d63ebf0f538",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftRow"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
+            "content": "sha256:833349d17d1dc710103368c805d62cc659b7dd0d60f9ae29416dade0283db967",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Git boundary and fingerprints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c60efeec0ef3127bc1dd8922d20481a59200a57",
+            "content": "sha256:ecc277734383eb3fee80003c54f49e10a572496ae1f551907e9491c7a5cfb9ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_git_blob_set_fingerprint"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Discovery and metadata parsing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47fbe0fe7452568f5bb7f766308430b516d8f247",
+            "content": "sha256:799f47d31c089634a30dd9df429f2ca6dbea6140c0ea8d292a18826b47cc13df",
+            "locator": {
+              "kind": "symbol",
+              "name": "discover_onboarding_files"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47fbe0fe7452568f5bb7f766308430b516d8f247",
+            "content": "sha256:7dbf9b805cae33bb6980a9b7735d2cc5b407228ea8e8e6b54415dd106777bb52",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Sidecar/overview classifiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c3931f72183810cec08c4833bc012565e56f4b",
+            "content": "sha256:ac3013c540b7fadbde7919fa7414e610c44ab2018a747f232cfa9a990f73b485",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_overview_onboarding"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c3931f72183810cec08c4833bc012565e56f4b",
+            "content": "sha256:b9375140191642a34b97ffdbb5da779d3b7e7a3f5847f7f3b40628f5c4b29b87",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_sidecar_onboarding_units"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Entity and inline classifiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9adc256a128d606ec110e5ff8c622ec9420d3899",
+            "content": "sha256:5c4f820d19f18aae50a089b0bf9477496df130a1c55231d57689d3d9fadb43c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_entity_fingerprint"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ec5e6da699e2143162ef74916ffeda38e4c8f85",
+            "content": "sha256:04a1f13c60fe60e8e033d573fe8a3e735ca8f4ebf0a04611ee407e5bccbc56b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_inline_source"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Report rendering and path resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afb0862053f674f8c5e07040f8b0626c877d1334",
+            "content": "sha256:69170fbaf3ec90aabdf7e9b505c3a28c2931e170e0a954aa20b855e74c63f270",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_markdown_report"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Summary generation reuses the facade's classifiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:d1ac205dbaa6ffc19900eec8884c15383ec45c72e0d1971e0100a0327dd2380e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_drift_summary"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:cc71e59e34007427b7f27a80030370176d365d5edb7aab0bd94795bd9d862c38",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The re-exported `run_git` and `main`'s git-repository guard resolve here, not to `git_ops`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:b1152ceffbd4c31d92575acbc4a3c7b3ac5f4c523c673df3f488d6f1d2ff6f33",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

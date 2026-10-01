@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_candidate_workspace.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_candidate_workspace.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -82,49 +72,33 @@ Eleven nodes, each protecting a distinct operation or consequential failure:
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one fixture every case builds on. | `candidate` | mcp/tests/test_knowledge_candidate_workspace.py:56-58 |
-| Creation is `created` only if a reopen sees the same identity and sealed receipt. | "test_a_created_candidate_reopens_with_its_receipt_and_the_declared_schema" | mcp/tests/test_knowledge_candidate_workspace.py:57-79 |
-| Two clones of one baseline share no file and no row. | "test_two_candidates_cloned_from_one_baseline_diverge_and_share_no_file_or_row" | mcp/tests/test_knowledge_candidate_workspace.py:119-149 |
-| An occupied destination is a resume attempt and is refused without writing. | "test_an_existing_destination_is_a_resume_attempt_not_an_initialization_target" | mcp/tests/test_knowledge_candidate_workspace.py:152-172 |
-| A candidate the admission cannot verify is refused with its bytes intact. | "test_a_candidate_the_admission_cannot_verify_is_refused_with_its_bytes_intact" | mcp/tests/test_knowledge_candidate_workspace.py:175-198 |
-| A missing database or receipt is an input error that creates nothing. | "test_a_missing_database_or_receipt_is_an_input_error_that_creates_nothing" | mcp/tests/test_knowledge_candidate_workspace.py:163-204 |
-| The live-reader protection for the removed peer unlink. | "test_a_live_reader_does_not_let_the_write_boundarys_close_lose_the_commit" | mcp/tests/test_knowledge_candidate_workspace.py:206-246 |
-| The real-crash restart protection. | "test_a_crash_restart_keeps_the_committed_batch_and_drops_the_abandoned_one" | mcp/tests/test_knowledge_candidate_workspace.py:286-316 |
-| The two narrow disposal grounds, each refused against a stale or wrong publication. | "test_a_discard_disposition_must_name_the_current_candidate_identity"; "test_a_published_disposition_requires_a_publication_of_that_exact_dataset" | mcp/tests/test_knowledge_candidate_workspace.py:319-347; mcp/tests/test_knowledge_candidate_workspace.py:350-400 |
-| The failed-flush refusal that keeps `created` honest. | "test_a_failed_candidate_flush_is_refused_before_the_directory_is_exposed" | mcp/tests/test_knowledge_candidate_workspace.py:403-425 |
-| The shared harness this module exercises the lifecycle through. | `build_case`; `crash_and_abandon` | mcp/tests/snapshot_lifecycle_test_support.py:178-205; mcp/tests/snapshot_lifecycle_test_support.py:478-534 |
-| The lifecycle operations these cases protect. | `create_candidate`; `clone_candidate`; `open_candidate`; `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:88-100; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:103-129; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:132-141; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:144-176 |
-| The lane row that keeps this module collectable. | "mcp/tests/test_knowledge_candidate_workspace.py" | mcp/tests/test-evidence-lanes.toml:95-95 |
+- The one fixture every case builds on. [1]
+- Creation is `created` only if a reopen sees the same identity and sealed receipt. [2]
+- Two clones of one baseline share no file and no row. [3]
+- An occupied destination is a resume attempt and is refused without writing. [4]
+- A candidate the admission cannot verify is refused with its bytes intact. [5]
+- A missing database or receipt is an input error that creates nothing. [6]
+- The live-reader protection for the removed peer unlink. [7]
+- The real-crash restart protection. [8]
+- The two narrow disposal grounds, each refused against a stale or wrong publication. [9]
+- The failed-flush refusal that keeps `created` honest. [10]
+- The shared harness this module exercises the lifecycle through. [11]
+- The lifecycle operations these cases protect. [12]
+- The lane row that keeps this module collectable. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 2 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`candidate_workspace.py`, `snapshot_lifecycle_test_support.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:26:38+00:00: Generated citation repair: "mcp/tests/test_knowledge_candidate_workspace.py" repointed to mcp/tests/test-evidence-lanes.toml:95-95. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_candidate_workspace.py" repointed to mcp/tests/test-evidence-lanes.toml:86-86. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_knowledge_candidate_workspace.py" repointed to mcp/tests/test-evidence-lanes.toml:84-84. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "mcp/tests/test_knowledge_candidate_workspace.py" repointed to mcp/tests/test-evidence-lanes.toml:83-83. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_knowledge_candidate_workspace.py" repointed to mcp/tests/test-evidence-lanes.toml:70-70. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new candidate-lifecycle suite. It records the eleven distinct operations/failures the nodes protect, with the two durability nodes called out as the protection for the upstream L1 peer-unlink correction (`test_a_live_reader_…` reaches exactly the state an unconditional unlink destroyed, and `test_a_crash_restart_…` uses a real child interpreter), and the convention that refusal cases assert both the refusal and the absence of the side effect. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/runtime_environment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lifecycle CLI uses these root and stdio helpers.\n\nAnchor: [\"default=default_coordination_root()\", \"configure_utf8_stdio()\"]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd331e5eaa941cc632b3a6f1a2a673f8b7055d1",
+            "content": "sha256:670a48b4baadd726895a11dba0464a4e27b0d6b4fdc8e80c2e662e526f6afd45",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/cli.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1cd331e5eaa941cc632b3a6f1a2a673f8b7055d1",
+            "content": "sha256:e78f995c8f5b3b63121b639f1e39cb2e364ffd8c9b827f2b02dbeccb019260cd",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/cli.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Command execution uses the subprocess environment helper.\n\nAnchor: [\"subprocess_env(None)\"]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7548ad8fa6ef7ff70da29921cf6de403a2224236",
+            "content": "sha256:91caf96d05f5b7bdb621534983d048c09611b33a8703933c4401da424c0c9ddb",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

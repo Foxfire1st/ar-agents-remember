@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/control/asset_spool.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/control/asset_spool.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structured conversation control overview](overview.md)
@@ -61,47 +51,26 @@ rebind. This is the only module that touches the filesystem for attachments.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the spool convention is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The asset reference type and byte reader are the L2E substrate; the lifecycle policy consuming this
 boundary is the sibling attachments module; the confinement mirrors the L2E runner-side check.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `AssetReference` type and `read_asset_bytes` this module produces/consumes. | `AssetReference`; `read_asset_bytes` | mcp/src/agents_remember/models/conversations/control_wire.py:154-162; mcp/src/agents_remember/models/conversations/control_wire.py:444-451 |
-| The lifecycle policy that stages/exchanges/deletes through this boundary: `stage`, `submit`, `attachment_status`, `rebind`, `mark_recoverable`, `delete_recoverable`, plus the expiry sweep, live-store eviction, and spool byte deletion. | `stage`; `submit`; `attachment_status`; `rebind`; `mark_recoverable`; `delete_recoverable` | mcp/src/agents_remember/serving/conversation/control/attachments.py:135-201; mcp/src/agents_remember/serving/conversation/control/attachments.py:204-270; mcp/src/agents_remember/serving/conversation/control/attachments.py:345-372; mcp/src/agents_remember/serving/conversation/control/attachments.py:375-433; mcp/src/agents_remember/serving/conversation/control/attachments.py:460-481; mcp/src/agents_remember/serving/conversation/control/attachments.py:484-497 |
-| The `AttachmentCapability` limits `validate_upload` enforces (allow-listed MIME types, `max_bytes`, `max_count`, `description` required/fallback, and the supported-state actionability validator). | "class AttachmentCapability(FeatureCapability):" | mcp/src/agents_remember/models/conversations/capabilities.py:48-48 |
-| The upload validator applies those limits at the spool boundary. | `validate_upload` | mcp/src/agents_remember/serving/conversation/control/asset_spool.py:86-98 |
+- The `AssetReference` type and `read_asset_bytes` this module produces/consumes. [1]
+- The lifecycle policy that stages/exchanges/deletes through this boundary: `stage`, `submit`, `attachment_status`, `rebind`, `mark_recoverable`, `delete_recoverable`, plus the expiry sweep, live-store eviction, and spool byte deletion. [2]
+- The `AttachmentCapability` limits `validate_upload` enforces (allow-listed MIME types, `max_bytes`, `max_count`, `description` required/fallback, and the supported-state actionability validator). [3]
+- The upload validator applies those limits at the spool boundary. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
-  exact non-fixing check returns zero findings.
-
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 16 repository-reference citations (16/16 anchored and sourced; scoped citation check clean).
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations that drifted as both targets grew. The attachments lifecycle policy is now L135-L497 (`stage` L135, `submit` L204, `attachment_status` L345, `rebind` L375, `mark_recoverable` L460, `delete_recoverable` L484) plus L710-L741 (expiry sweep, eviction, spool byte deletion) in a 795-line file. `AttachmentCapability` in `models.py` is L678-L690, not L406-L678; both claims were made specific about what the ranges cover.
-
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the attachment spool
-  boundary — confined constructed paths, resolve-and-verify containment, 0700/0600 permissions,
-  digest compute/verify, and the staged asset data types, extracted from `attachments.py` this round.
-  Verification is blank because the new source file is uncommitted; closeout owns its first source
-  stamp.
+No meaningful cross-repo references found.

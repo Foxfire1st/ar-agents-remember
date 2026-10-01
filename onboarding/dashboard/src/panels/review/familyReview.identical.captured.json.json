@@ -1,0 +1,337 @@
+{
+  "path": "dashboard/src/panels/review/familyReview.identical.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The envelope: the one review read the surface makes, its surface version, and its state.**\n\nAnchor: \"\\\"operation\\\":\\\"read_knowledge_review\\\"\"; \"\\\"surface_version\\\":\\\"knowledge-review-surface/1\\\"\"; \"\\\"state\\\":\\\"review\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "985f12ff45d958987b5ffe3c76219e330e8d3f08",
+            "content": "sha256:fa7a257f08801afb7143e181bf5d0877bb517bd63e203360a18a692efdace660",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The receipt row for this body: its digest, scenario, request and normalization, under the receipt's command, source tree and selection rule.**\n\nAnchor: \"familyReview.identical.captured.json\"; \"captured_source_tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146eb12e3f11da3c7cd7448c107f8bda4a135c6a",
+            "content": "sha256:c4f4e168baa4325840c3e538364fa52abbd67a0c889f1e091ada7cd033afdcfe",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/review/familyReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.**\n\nAnchor: \"These are not browser evidence\"; \"Dagger-only\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:77daab791b8d46dc60365f21f54af89ae2e273a412aa605db47feafbc341cd95",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The fixture case distinguishes separate guarantee revisions with identical text (\"Wording unchanged\", both revisions named, the text once) from the same unchanged revision.\n\nAnchor: \"it(\\\"distinguishes two distinct revisions with identical text\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:c7a017a2a158b4a2811c1ba288e0b95afab8d6261de2f68c681e8f485d9c6f5d",
+            "locator": {
+              "end": 579,
+              "kind": "line_range",
+              "start": 550
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The comparison union these bytes are read through, and the decision order that keeps the three \"did not change\" shapes apart: identity first, text second.**\n\nAnchor: `identical_text`; `unchanged_revision`; `one_sided`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:aea857cf958c0cae6cfe05836e02434a01a8462f6cf8ab8586838decd815dfb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "GuaranteeComparison"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:7f7630b999c4cb6b2f74122afa51a459a1bc32457c28bdac944086e3656d3156",
+            "locator": {
+              "kind": "symbol",
+              "name": "joint_guarantee"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:0636b12f71ae1af776e17acbe83718889b60b9416fd17890d23068376b3b251a",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberComparison"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:21ee11f9cd21a215498c27cc03ae9fd386598a4e70cdfc3267b30a4c57cc76bb",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:f28adc5cabed11838c71b111b57af8cc1d8ac4f2178d3a1f0406bdd4b7feffac",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 330
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:f5cb05254ebdb0ff14c7d476ae796eef33863536e4afc4d1a629864bf61342a9",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 333
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The guarantee block distinguishes the same revision, distinct revisions with identical text and a known one-sided guarantee.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:bf97083e7c87d83ccc765b41a2b8fa3d9ec40849c659024c65a660a3cbce0ede",
+            "locator": {
+              "kind": "symbol",
+              "name": "GuaranteeComparisonBlock"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The enclosure the bytes were recorded over, and the single normalization: the per-run fixture repository uuid is written as a placeholder.**\n\nAnchor: \"\\\"leaf_id\\\":\\\"260921-icr-l1\\\"\"; \"review-source-endpoints-fixture\"; \"<repository_id>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "985f12ff45d958987b5ffe3c76219e330e8d3f08",
+            "content": "sha256:fa7a257f08801afb7143e181bf5d0877bb517bd63e203360a18a692efdace660",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The family context and the row count that differs from the `complete` body: seven measured rows and four distinct member revisions.**\n\nAnchor: \"\\\"family_context\\\":{\\\"detail\\\":\\\"this family context is partial\"; \"\\\"membership_rows_total\\\":7\"; \"\\\"unique_member_revision_total\\\":4\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "985f12ff45d958987b5ffe3c76219e330e8d3f08",
+            "content": "sha256:fa7a257f08801afb7143e181bf5d0877bb517bd63e203360a18a692efdace660",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The unchanged shape: the same family revision on both snapshots, carrying the same guarantee text.**\n\nAnchor: \"\\\"display_label\\\":\\\"retry-budget-family\\\"\"; \"The retry budget is shared by integration and synchronization.\"; \"\\\"state\\\":\\\"first_page\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "985f12ff45d958987b5ffe3c76219e330e8d3f08",
+            "content": "sha256:fa7a257f08801afb7143e181bf5d0877bb517bd63e203360a18a692efdace660",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The identical-text shape: two distinct family revisions whose guarantee text is the same string while their payload digests differ.**\n\nAnchor: \"\\\"display_label\\\":\\\"retry-and-anchor-family\\\"\"; \"\\\"joint_guarantee\\\":\\\"The retry budget and the anchor identity rule hold together.\\\"\"; \"\\\"payload_digest\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "985f12ff45d958987b5ffe3c76219e330e8d3f08",
+            "content": "sha256:fa7a257f08801afb7143e181bf5d0877bb517bd63e203360a18a692efdace660",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**Three sides supplied their two member updates on a first page of a continuing walk, and the identical-text family's one-row after roster was read whole.**\n\nAnchor: \"was read whole: 1 recorded membership(s), all carried here\"; \"holds 2 recorded membership(s) and this page supplies 2 member context update(s)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "985f12ff45d958987b5ffe3c76219e330e8d3f08",
+            "content": "sha256:fa7a257f08801afb7143e181bf5d0877bb517bd63e203360a18a692efdace660",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface.\n\nAnchor: `captured(\"familyReview.identical.captured.json\")`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:02cac78f0ea6b262938f6fca2aeef72d541120bfb4c785e66f92b613aaacbe9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "captured"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:e9880751ae765a5cd7311a6bdfd34fb45abbfaae1b124652acb31b63c26f5a80",
+            "locator": {
+              "kind": "symbol",
+              "name": "firstFamilyId"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:5ca5d406d29c8efcde125e3d898acdd2babca9efde452cdd24cda5bc70980918",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**Each member source's structured locator and state: `whole_file` and `unresolved` file locators, and a recorded 3-7 line range on the exact blob that is `unresolved` with no range.**\n\nAnchor: \"\\\"locator\\\":{\\\"end_line\\\":7,\\\"kind\\\":\\\"line_range\\\",\\\"start_line\\\":3}\"; \"\\\"locator_state\\\":\\\"whole_file\\\"\"; \"\\\"locator_state\\\":\\\"unresolved\\\"\"; \"\\\"resolution\\\":\\\"recorded_blob_mismatch\\\"\"; \"\\\"resolved_ranges\\\":[]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "985f12ff45d958987b5ffe3c76219e330e8d3f08",
+            "content": "sha256:fa7a257f08801afb7143e181bf5d0877bb517bd63e203360a18a692efdace660",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The provenance of this body: made over HTTP by ICR-L44's producer in its own run at source tree `a8039b8e`, which the receipt records at its top level, carrying each member source's structured locator, resolved ranges and locator state.**\n\nAnchor: \"familyReview.capture-provenance.json\"; \"its own run, at source tree a8039b8e\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:470967ae38339d7e3f2afc7a264a5362b3087697acfefc6ea56db95961b69155",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

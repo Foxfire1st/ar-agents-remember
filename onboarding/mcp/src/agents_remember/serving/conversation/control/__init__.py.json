@@ -1,0 +1,255 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The sibling `api.py` owns the control surface's `APIRouter` instance.\n\nAnchor: \"router = APIRouter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:f9bad6f1ccf54703ab4e97fbe960da8e529d4621e1d654be72b46611aba5f85b",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "That router uses the `/api/terminal/{ar_session_id}` prefix and registers exactly seventeen decorated routes, from `conversation_interrupt` through `conversation_telemetry`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:f784e3acea4d87cea6d726a7cc9ecc7172876451f0b4e4192f602a9b1312340e",
+            "locator": {
+              "kind": "symbol",
+              "name": "router"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:a7ac49d277d47b2905c5b83d09a2c00dfd6bbfc04b2665641475435ea65a3687",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_interrupt"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:2d4e62eb6df3a9ace57ffcaf6cdc4d17b98bc6ab07a7c16162916869cd55f496",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_interrupt_status"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:ad3b980809599c6380807a885744f67e9bd79bc49af57864a076d2af3b76e48f",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_interrupt_reconcile"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:e30209e8f9aca197540d46a95ffa974b4583fb3b1a04a032b848677eb988e216",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_operation_queue"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:f57f762f85df968dca049cac639247033019f452c3a2dea33252056f63f01416",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_withdraw"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:ac62db92338f0a263c6dd336362f02ccfa4e9683da66ca60fda05cd5313a7a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_withdraw_status"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:f55f3b6a6d1b00875443ba880bc905bcce659cc76ffdd8fd21b2d991e3b29dd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_withdraw_reconcile"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:0663310147df1f6fc6410b7c82ba9279d819108b38d81169e9ff8ad5018d7284",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_pending_recoveries"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:8bca4b2adfc81017d99e0a8c7bb6e9a18904fc571755407f0fc3ddcb961a3621",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_fetch_recovery"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:5148ed42f30fb80d00e71852a5ae18cdc6e4fcfaca4b4f49a9cebbad991eddfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_ack_recovery"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:0154c5eec889df401db4e94117311b7f4aebadaa5a027448f8782fb464c25a8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_stage_attachments"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:b002d67fb9cc22f0782ba5cb01414bace01d8b1516fe3f91da5df6c5828dba94",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_rebind_attachment"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:02c2f1afb67102b5494cac0e7370743ff35d4f58e995e0d276486434403cafcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_attachment_status"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:7f764863c0ba07c7cd35708e6fb59a27074a746deb4c93725ea6573514ebc93b",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_attachment_reconcile"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:515604777846ed95bd53d95d51f85a182f08e25d9fcb8aec54ff51cbeaa73408",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_submit"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:e6dde3b9a1aabb47e26e956ca4f400c473790ce592982074e2462d55a8617b3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_policy"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:1f605c7f1c864e6637a6569a45892838d24a7510735461bfd849a57e0a98a705",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_telemetry"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The governing route-local overview for the implemented control slice.\n\nAnchor: `# Structured Conversation Control Route Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/serving/conversation/control/overview.md:1-433"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

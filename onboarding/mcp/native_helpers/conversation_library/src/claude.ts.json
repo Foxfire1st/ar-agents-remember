@@ -1,0 +1,43 @@
+{
+  "path": "mcp/native_helpers/conversation_library/src/claude.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here.\n\nAnchor: \"export const PROTOCOL_VERSION\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:19299769ec918cbf22e87632ef5acbf56c9e92f42c296cb36800e1ad7a362fb5",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Python Claude port calls list/read/resolve-resume-target through the locked helper host; it also adds the per-row agent grouping, the `agentsEnumerated` marker degrade, and the composite `<sessionId>/<agentId>` read split.\n\nAnchor: \"class ClaudeConversationLibrary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:8dea2fdb13e0e23ed2638ff8decd69ee9c974159a4c1ee8de89d9621c1d79f1e",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

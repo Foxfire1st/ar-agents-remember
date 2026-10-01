@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_structural_limits.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A wide class is reported with its measured surface",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805748a89a379b7f3c8e377f0674e126ff75f34d",
+            "content": "sha256:b12a69cf977e333dbb5ab5b1ff80eec9754d147ce79fb9c81ae69dfe0d8cde6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wide_class_is_reported_with_its_measured_surface"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Moving methods into a sibling module does not lower the count",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805748a89a379b7f3c8e377f0674e126ff75f34d",
+            "content": "sha256:6ba2ef8f75812d75b3e1fa7a2620a35e1a69c1233cbfd5abc3197911ed9b2a22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moving_methods_into_a_sibling_module_does_not_lower_the_count"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A property and its setter count once",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805748a89a379b7f3c8e377f0674e126ff75f34d",
+            "content": "sha256:cc21bddca9308879e5b27f6032e59ea1f8950918d5478b26e47534ae7b727a75",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_property_and_its_setter_count_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Typing overloads count once",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805748a89a379b7f3c8e377f0674e126ff75f34d",
+            "content": "sha256:ec8211fe7e15c26c1afac0335de79740d43147c533bff821495eb7b91febdb58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_typing_overloads_count_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The function length check reports every offender not the first",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805748a89a379b7f3c8e377f0674e126ff75f34d",
+            "content": "sha256:9fa4b0a1b91f9aa0141ce33264837ef29a12d0d0af02e3c6408917e7dc24cdb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_function_length_check_reports_every_offender_not_the_first"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The directory check rejects a crowded directory",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805748a89a379b7f3c8e377f0674e126ff75f34d",
+            "content": "sha256:a4dbc0af60c0f5f2bd613b8c227c22da8865f299f127f069dc654a5566966c6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_directory_check_rejects_a_crowded_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A declared deviation silences exactly the directory it names",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805748a89a379b7f3c8e377f0674e126ff75f34d",
+            "content": "sha256:6ff59c002b5e9746b91208e85eb7a4830f0a3cb8c6a0ff77569f4cc807f947c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_declared_deviation_silences_exactly_the_directory_it_names"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

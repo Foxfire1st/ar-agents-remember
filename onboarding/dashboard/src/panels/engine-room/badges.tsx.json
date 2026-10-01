@@ -1,0 +1,83 @@
+{
+  "path": "dashboard/src/panels/engine-room/badges.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The failure-mode overlay primitives extracted from the canvas.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:72260e68bb2968276ba779c6259e9d106e7868bf8ca6056eb25666594f095028",
+            "locator": {
+              "kind": "symbol",
+              "name": "FleetingEnclosure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:6d5c4b4f5e5abea5b273bf4c033289512dcf8825e2849a0db32c18ca2c4a65f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalStop"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:ca5ddd6c1557eb0f78551f357738316c1aaefa0b13697d913ac593b6036ebe85",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusedConduit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closeout-order train and moved/attention badges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:3fb1d931931185d1a3d50004bcfe00cadeac3a2b8e7f47636c52f84c75459f1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutTrain"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:7faac7581dd0e4264b9835403e6d17675da5d527313de8131f5f2b2169726beb",
+            "locator": {
+              "kind": "symbol",
+              "name": "MovedBadge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:2ec5e657928e4527887bd1b9f848d1ab1efdb84e4d7bfb69dc59265c86b79a59",
+            "locator": {
+              "kind": "symbol",
+              "name": "Gate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

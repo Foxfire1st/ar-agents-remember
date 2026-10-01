@@ -1,0 +1,105 @@
+{
+  "path": "dashboard/src/panels/engine-room/flow.styles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The conduit/flow and transient primitives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:dd9e87bd05d0c9a6449e378a5313f71ec58af02e5f27795b395a298f55bf2840",
+            "locator": {
+              "kind": "symbol",
+              "name": "flowConduit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:77fb3414279cbb8402a5a24a549c930926f2d360f59889e520dd32554f1cef5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "flowPacket"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:349e7444ebd586b64f76d82a2594d11322ddc6d0206d525eae4a33341db534e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "scanRing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:8129a3102604ce3b905cc6b6ae9186971e9ed54a05358aeba9363daae315be8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ghostedLane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The failure-overlay recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:8bb101263081fee28fcd4dcffc32d6108736d892d70e461e15a1a3045efea6a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusedConduit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:ff226ed751d37c364eb04d7d6557cdfac7d1cd7bf24ffa4ac6ab7e6b28f848ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "fleetingBox"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:e90fe16056b8dab2a099cc35be68dbd511d77eae8a7d8b9955fcf19728bc80cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "stopBar"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:eb657d9aa434a5cf1e6d429d01e1a264e6ee9163404c5479f5cfc4d29d53f5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "abandonRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_currentness.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_currentness.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -58,49 +48,38 @@ per-side computation, the observation cache key, Git failures, and the two read 
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R03@v2` of task
 `260928_maintained-invariant-knowledge`; it lives outside the code and memory repositories, so it is named
 here and not cited as a row.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: real Git code, a converted memory tree, raw-Git edits. | "outside any managed flow" | mcp/tests/test_knowledge_currentness.py:1-9 |
-| The fixture world, with a fresh private cache by default. | `World`; `world` | mcp/tests/test_knowledge_currentness.py:214-256; mcp/tests/test_knowledge_currentness.py:259-261 |
-| The packet's conforming example. | `test_a_raw_git_body_edit_flags_only_its_invariant_and_names_the_entry` | mcp/tests/test_knowledge_currentness.py:273-306 |
-| Stale reasons. | `test_stale_covers_an_absent_path_an_ambiguous_symbol_and_an_unmappable_range` | mcp/tests/test_knowledge_currentness.py:309-337 |
-| Unverifiable reasons and the N1 order. | `test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator` | mcp/tests/test_knowledge_currentness.py:340-365 |
-| Git failures and no caching of them. | `test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason` | mcp/tests/test_knowledge_currentness.py:368-378 |
-| A missing recorded line-range blob. | `test_a_line_range_recorded_against_a_blob_the_store_lacks_is_unverifiable` | mcp/tests/test_knowledge_currentness.py:381-402 |
-| Precedence and `unrealized`. | `test_precedence_stale_before_unverifiable_before_unrealized` | mcp/tests/test_knowledge_currentness.py:405-418 |
-| Stale proofs. | `test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale` | mcp/tests/test_knowledge_currentness.py:421-439 |
-| Per side. | `test_one_function_computes_each_side_of_a_comparison` | mcp/tests/test_knowledge_currentness.py:442-461 |
-| The cache key. | `test_observations_are_keyed_by_blob_locator_and_extractor_version_and_reused` | mcp/tests/test_knowledge_currentness.py:469-502 |
-| `knowledge_read` with a named tree. | `test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible` | mcp/tests/test_knowledge_currentness.py:523-558 |
-| `knowledge_read` without one. | `test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head` | mcp/tests/test_knowledge_currentness.py:561-580 |
-| The published-intent block. | `test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree` | mcp/tests/test_knowledge_currentness.py:583-630 |
-| A failing step never refuses. | `test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read` | mcp/tests/test_knowledge_currentness.py:633-656 |
-| The lane row. | "mcp/tests/test_knowledge_currentness.py" | mcp/tests/test-evidence-lanes.toml:117-117 |
+- The module statement: real Git code, a converted memory tree, raw-Git edits. [1]
+- The fixture world, with a fresh private cache by default. [2]
+- The packet's conforming example. [3]
+- Stale reasons. [4]
+- Unverifiable reasons and the N1 order. [5]
+- Git failures and no caching of them. [6]
+- A missing recorded line-range blob. [7]
+- Precedence and `unrealized`. [8]
+- Stale proofs. [9]
+- Per side. [10]
+- The cache key. [11]
+- `knowledge_read` with a named tree. [12]
+- `knowledge_read` without one. [13]
+- The published-intent block. [14]
+- A failing step never refuses. [15]
+- The lane row. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: every case works in its own temporary repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:27:07+00:00: Generated citation repair: "mcp/tests/test_knowledge_currentness.py" repointed to mcp/tests/test-evidence-lanes.toml:117-117. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): created this card for the new case module MIK-R03 adds (13 cases). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

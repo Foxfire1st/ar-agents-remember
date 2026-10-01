@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_writer/history_check.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_writer/history_check.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T10:05:46+02:00 |
-| lastVerifiedCommitHash | `cd3e943d740b490d391722389af0a6bca0ccf93e`|
-| lastVerifiedCommitDate | 2026-09-29T10:38:08+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -32,6 +22,10 @@ architect ruling F1).** After all edits, `owner_history_problems` checks every r
 - `stale_examined_members`: a family row examined each member at its candidate revision, rule 5.
 - The remedy is "name this row again in 'history' so the writer rewrites it"; on a **closed** file it is
   `_FROZEN` ("closed and frozen (MIK-R07 rule 7) … a correction belongs to a new leaf's rows").
+- **L37.** The file checked is the owner's writable history file (`state.history_target(owner)`), so a reopened
+  leaf's rows are checked in its latest attempt and its closed file is not a refusal reason. A `changed` row's
+  revision counts from `_base_revision`: the higher merge side's revision while a merge leaves the record unmerged
+  (MIK-R24 rule 8 step 4), else the base's. So the writer accepts a crossing's resolution at maximum plus one.
 
 ### Conventions
 
@@ -48,7 +42,9 @@ architect ruling F1).** After all edits, `owner_history_problems` checks every r
 - Open question to the architect from the worker: `reanchor_mismatches` and `unknown_subjects` could also
   run as a registered validator rule over open history files (owner MIK-R09 or R22).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R12@v2` of task
@@ -57,31 +53,22 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The check and its per-row messages.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two remedies. | `_FROZEN` | mcp/src/agents_remember/application/knowledge_writer/history_check.py:43-46 |
-| Every row of the owner's file, as problems. | `owner_history_problems` | mcp/src/agents_remember/application/knowledge_writer/history_check.py:49-72 |
-| Invariant and family row checks. | `_row_messages` | mcp/src/agents_remember/application/knowledge_writer/history_check.py:75-102 |
-| A contradicted row refuses until it is named again; a closed file is frozen. | `test_a_row_the_candidate_contradicts_refuses_until_it_is_named_again` | mcp/tests/test_knowledge_writer.py:491-528 |
+- The two remedies. [1]
+- Every row of the owner's file, as problems. [2]
+- Invariant and family row checks. [3]
+- A contradicted row refuses until it is named again; a closed file is frozen. [4]
 
-## Cross-Repo References
+- The revision a row's change counts from: the higher merge side's for an unmerged record. [5]
+
+### Cross-Repo References
 
 No cross-repo boundary is crossed: the writer reads the paired code worktree and writes the paired memory
 worktree of one repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

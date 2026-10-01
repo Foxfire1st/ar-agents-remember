@@ -1,0 +1,103 @@
+{
+  "path": "mcp/src/agents_remember/application/task_projection/revision.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One content-addressed identity over the selection plus every projected fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d511891d58b4da9baf517f7cf3901afca72005eb",
+            "content": "sha256:968e47a22eff90c1496d7cb2acfdd8791fb14d92e446c414cf3421bf564a7c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The seven fact planes identity must cover — a new plane belongs here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d511891d58b4da9baf517f7cf3901afca72005eb",
+            "content": "sha256:6c1d65220a9449b58845c98cabf40f60397ea495c85a78f33d4833de4211cd70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_planes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared digest primitive the compiler also uses, so both sides agree on one algorithm.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22645b2a843186a545f3412ddf26b4a955a7a63c",
+            "content": "sha256:2fbddfa75252c78f0e4bdf08df8b6c44ade8117dc1c4d41f33d4e2cacc655b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_content_digest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The compiler-facing content digest, which is the rendered bytes rather than the selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22645b2a843186a545f3412ddf26b4a955a7a63c",
+            "content": "sha256:699e7a3395cc3dcb2af02db176a2b4e17e5a6015a10407b0ec0231a7171aa1b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleTaskContext"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The revision is assigned before rendering, so the document carries its own identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:2bce8e1e68e4330fda14f8d92ad47cbf6f8ccdfad8bf946c994808130bce7c2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Builder"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:e6928448b4d6ce040ec90c12f82be70034ea935e0a0895794e17f92e5dfc9f92",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

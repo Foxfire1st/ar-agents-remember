@@ -1,0 +1,332 @@
+{
+  "path": "mcp/src/agents_remember/observer/ambient.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:8c4374938879f79e4d6802c63925956662c216e71284014a1a4b7cc3a49d882d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TERMINAL_STATES"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:16c89a41b06940d0acc7318ab9be0b1d262c3a8c91045d796963373d34c09df5",
+            "locator": {
+              "kind": "symbol",
+              "name": "coerce_end_outcome"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:68300b739da1927db29cec45b98779726e7acc34b5ab1a6256f0a9bc79d96672",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleState"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared timing thresholds + `Clock` this imports (the `age_seconds` stamp-ager now lives in `controlplane.stamps`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9da3bf265e34b2b14caff3d4f834635c3ee55f3",
+            "content": "sha256:52c1c779f9509dbee75721dac2f08957e66c4a132a86f885ddce3a6085590f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "HEARTBEAT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/observer/timeutil.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35893ecd2b60c2f73d8d59bd85966045b0f60356",
+            "content": "sha256:ef97c60e5372125bff2b3b50c5a0a1c49e405da08332967feeac58f34ea10a9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "age_seconds"
+            },
+            "path": "mcp/src/agents_remember/controlplane/stamps.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:ee007ae986db048bb8506c817ea9a73f2265c6d546027d4c07d8621d1a03f7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_lifecycle"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:343deac34115dcc1ab4238e0e1fc75473be2edfb94879d7fc14479de78b967e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_inferred"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The dashboard retention policy whose inactivity TTL ages out a log once its heartbeat decays.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:965527bc6b5cd78e03ec9e08ab12c4725c4c8a6d0fe1b618ac6b549ced1b9d73",
+            "locator": {
+              "kind": "symbol",
+              "name": "FLEETING_INACTIVE_TTL_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_expired_lifecycle_event_logs"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8).\n\nAnchor: `### 1.2 States and the state machine`; `### 2.2 The v1 kind families (four, plus heartbeat)`; `## 8. Deferred to Implementation Phases`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:447719a448a7fe82a7e2034972703ef6627f21776567be7076da53459ece838d",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:c6abae5009729b8de306ea6d715ba20cc83da630fbb75338ffaf680960abf9fe",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:822938504779aff7cc575b5aa47f7c251301bb1488a13eb50aa0ea4991c89635",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 397
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The append-only store the ambient writes events to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:2f08443e4f411f7c837987e255aae726e8836daa769647e940a28b25c78f1a4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventStore"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `ar-observer-event/v1` envelope every signal emits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:77305b122ad15cacc54eac6fc0d8dba20a7e6dcfcafa884335ad11c49c9838c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "OBSERVER_EVENT_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The application response boundary finalizes the payload and emits the completed tool call when an ambient lifecycle exists.\n\nAnchor: \"def complete_tool_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:8c6ce6cb3afcda77d14da74501bc9317aec63207eaa83ff57e536393afd03d6a",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The optional stale-notifier banner reads the ambient root and contains errors before response enrichment.\n\nAnchor: \"def _agent_notifier_banner(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:c53b403544d1af5605724d601825fc96eaf6ec314bd27da5a480f8a235019097",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The agent-notifier heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5).\n\nAnchor: \"the watcher must be code AND watched\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f502fd398e2ca6d7fce379c4dcb1d9c2dadfb5da",
+            "content": "sha256:cacb6cb026b0a9c99c392cf271c16799c845dd8b98d921544a8389a395e89d57",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier_heartbeat.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "content": "sha256:857300ce08b97b2670b6396a264f03bb281d1fce3f315f3ca51dc56ef3ae3099",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedStore"
+            },
+            "path": "mcp/src/agents_remember/observer/served_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface.\n\nAnchor: `emit_read_packet`; `is_served`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "content": "sha256:760f97779c9809b085f182dc10d6f92fd000eec19b5c5f26ebe9d11ba466ca25",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "content": "sha256:b557cc8bb82167b6e805274c512af503a6798739fb532de302a1ce32fcae8634",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 363
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The heartbeat/stale idiom this generalizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9edaa317e28fecbc451aa6731d9c7d5578217178",
+            "content": "sha256:9b5965a98db1bb69e47807e6e050f5422f54a20626c7786ef6d3846f00b87e97",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetupProgressFile"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_progress.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

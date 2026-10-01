@@ -1,0 +1,292 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.memo.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The seven `vi.mock` render-count probes (`counts`, `CountedEngineRoom` … `CountedEventRiver`).\n\nAnchor: \"function CountedEngineRoom()\", \"function CountedDetailPanel(props: ComponentProps<typeof Real>)\", \"function CountedSessionsView(props: ComponentProps<typeof Real>)\", \"function CountedFileViewer(props: ComponentProps<typeof Real>)\", \"function CountedAttentionQueue(props: ComponentProps<typeof Real>)\", \"function CountedLifecycleList(props: ComponentProps<typeof Real>)\", \"function CountedEventRiver()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74468c94149ab27f6ef6892d87ffe81c75ef3b9c",
+            "content": "sha256:1450a0b28dc8eef7b98e4e4e33962c6bc68f31275ba00eb5ab7b2db38d2f47fc",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74468c94149ab27f6ef6892d87ffe81c75ef3b9c",
+            "content": "sha256:f5468fc0ac1743598299412816b5d7335d8af1630f5181a47ae7247fe83a27b4",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74468c94149ab27f6ef6892d87ffe81c75ef3b9c",
+            "content": "sha256:09f01c3f47db603a4409db618edffe83dd241bb25085de5163f70c74b64c6312",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74468c94149ab27f6ef6892d87ffe81c75ef3b9c",
+            "content": "sha256:f9bedaba8d10d394b1f1c7c39bda9c73e5b32f9d8a4b69283e6935c63e1306fe",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74468c94149ab27f6ef6892d87ffe81c75ef3b9c",
+            "content": "sha256:7b8764791426589762eac7973b4ba940c9ede4d604f4ba8025aec99593ce85db",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74468c94149ab27f6ef6892d87ffe81c75ef3b9c",
+            "content": "sha256:5f87039cdbb8adc2f4a79a0cb585836a4147beda0372f98fce6bcec49f2ed024",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74468c94149ab27f6ef6892d87ffe81c75ef3b9c",
+            "content": "sha256:cf023b7e68a5d34154d04c70044527dde11c899f7b3c58b2ca7713c26070e516",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The File Viewer remains mounted and receives visibility as active.\n\nAnchor: \"<ViewLayer visible={view === \\\"files\\\"} className={filesLayer}>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:0aec7eae80e366139a1ed5bb3aa476a7a51499e9253bbe1e8e862fc3d13bff9a",
+            "locator": {
+              "end": 801,
+              "kind": "line_range",
+              "start": 801
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Chats remains mounted; takeover suppresses its active state.\n\nAnchor: \"<ViewLayer visible={view === \\\"chats\\\"} className={chatsLayer}>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:44012fb8679caf5b3b186c315f02439a3bd3b682762f39afc74305ee3a1750db",
+            "locator": {
+              "end": 809,
+              "kind": "line_range",
+              "start": 809
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "This is dashboard-local test coverage.\n\nAnchor: \"persistent layers skip the setView reconcile (260721 tab-switch CPU)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74468c94149ab27f6ef6892d87ffe81c75ef3b9c",
+            "content": "sha256:b4f6ce3de88dade2dd692894eb539759b3059b1b03ed967043559a74aa5846c0",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 218
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The keep-alive DOM-identity case (same `.rail--left` / `engine-room` / `sessions-view` nodes across switches).\n\nAnchor: \"keeps the visibility/aria contract and DOM identity across switches (keep-alive intact)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74468c94149ab27f6ef6892d87ffe81c75ef3b9c",
+            "content": "sha256:a8d7c0a8b2e880f28958fde4f4cb67b1bd42442153a65e454f5dee2682b78f1c",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The persistent layer layout is declared once for Chats.\n\nAnchor: \"const chatsLayer = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:fa60abeb32d102294edbd5292c621d33dd646c5f3973ca1e64618b2ab352ad95",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The file layer reuses the persistent layout.\n\nAnchor: \"const filesLayer = chatsLayer;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:0b026a57754a1df551ff3f0ad05a198c53ec076fa6772025d7ff6bbe09ab3e36",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Operations layer reuses the persistent layout.\n\nAnchor: \"const operationsLayer = chatsLayer;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:9c94eb8d0f1b51c3f995adaa0f3a5045fe39298065b099aa3d7c113b46f9f7a7",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The Engine Room layer reuses the persistent layout.\n\nAnchor: \"const engineLayer = chatsLayer;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:9383f069c3442159d8f6a0467e49f9af0984ab3f81155f433457fd9b437db15e",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 351
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shell hides each layer through display and aria-hidden while retaining its children.\n\nAnchor: \"function ViewLayer({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:4cb6e084c952d7ad3b2ff6fd7b59ea59cc3d6e51a7e6e39f5823e5f5ff667c7b",
+            "locator": {
+              "end": 728,
+              "kind": "line_range",
+              "start": 728
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Engine Room instance remains mounted.\n\nAnchor: \"<ViewLayer visible={view === \\\"engine\\\"} className={engineLayer}>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:71cdf757bb7d62698eb9ad770a63633c5f788bb2a6d9db9b21302babe99b3952",
+            "locator": {
+              "end": 784,
+              "kind": "line_range",
+              "start": 784
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Operations reader remains mounted.\n\nAnchor: \"<ViewLayer visible={view === \\\"operations\\\"} className={operationsLayer}>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:67936ac58c73b8561f4f5854d26861447aba4cd2af859a927e98d699c6945c2f",
+            "locator": {
+              "end": 789,
+              "kind": "line_range",
+              "start": 789
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

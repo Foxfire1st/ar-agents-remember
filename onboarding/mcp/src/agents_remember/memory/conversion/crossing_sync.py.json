@@ -1,0 +1,225 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A step failure names the step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:3f722526699d1b2d71565e28a0cf73adf9da717c80e85a742fd1b814ecb5aef4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:b840e9df76ed064b03c1c29864a4ef9f1a6fd08bcf1ae25bddfc900d25cfa805",
+            "locator": {
+              "kind": "symbol",
+              "name": "Step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A master-line record conflict opens a crossing history file, closed at commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:5f7ac04d3e3081631c06c2ab56043490a06a04dd8a5c037261ec3df453adc1b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_record_conflict_opens_a_crossing_history_file_closed_at_commit"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The crossing test and the pinned version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:d1ef806c93d658fd7429364872133972dad9f9914b2331d3bdec2e513e851bc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_crossing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:939a1a94c52b2a22439da6eabef98e978a7afe503ef62fade399e57e8b8341a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pinned_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Step 1: the leaf's added no-impact markers become onboarding_trace rows, with the lines in `markers`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:22d6e294c1f4eff9f134de208acee3b138fbc703b85a8155c23a390c05e59bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "marker_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:ad5da1b5564b593c91a3ac70a9e8c6a519b3d76c254ef678ff967d687153ce6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MARKER_ROW_REASON"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:d0eb58191c9f616ed03a05b5a60bf36cf244d72055d73d9c434858148e5a7a46",
+            "locator": {
+              "kind": "symbol",
+              "name": "marker_pieces"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Markers go into the leaf's history file; a subject with a row is reported, not dropped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:d372068980e5c96d4c0e96c3ff9c47f0a6258c22dd8335edd325f87a1a722812",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_markers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The master-line crossing history file's name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:eb2a1cdba73fbe1610e64a146a96afede08ca4cc284f180795d950323fcf9e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_crossing_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Steps 1-4 and the report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:0be363e9910148dc217019ae7a6fa772bbb7adc8f19f4999c61629f7cccce3f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cross"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:0a289ea6074d958310c6c37d8336fb4dcdea85034fe6509be235187d2c157888",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingPlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Cards counted by side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:0cbf5676de63bf4123fe5fb45cf4cab77652d3ed904cc7d7e11a71b0bdc9bfeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_card_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The markers move, each side converts, and the trees merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:0285370986170d8107001d48f3fcfcca38cb54e7991e260114553e2ec76086c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Many long markers fit one valid row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:a4429208556043268c2b04d6fb8e5c19deb7da5d2d734fe98531175c83ec4064",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_many_long_markers_move_into_one_valid_history_row"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

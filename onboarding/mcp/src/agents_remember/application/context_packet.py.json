@@ -1,0 +1,191 @@
+{
+  "path": "mcp/src/agents_remember/application/context_packet.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`ContextPacketV2` and nested summary models define the response shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dee1374065329a5e81164a1712a53b595efb1f7",
+            "content": "sha256:c1d0ad0575d6dd7eb1b23158502d843b17d2d7919b57f6695585533a74fb8e29",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContextPacketV2"
+            },
+            "path": "mcp/src/agents_remember/models/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider summary projection keeps context compact and points details at diagnostics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "514d04f97f4a75aec95d03c476627d2325a95f01",
+            "content": "sha256:29e3596daeb61746fe569f6e9cd8f77cdbb4b272ffb92526538fa13c5fb0e8e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_summary"
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` (L14-L49) returns `WorktreeSummary`, so there is no dict boundary here to validate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c790aa2ff909b770419509d63711ebe924d66b3",
+            "content": "sha256:4bd81b106b5483bd46c41e0f548f1e95f63cb987062c0184fff338169b9eb1f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_packet"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c790aa2ff909b770419509d63711ebe924d66b3",
+            "content": "sha256:ea4cb0110a3a4917c8e55a998693dd58062df3f134fddcc02c60ed9dfcfa3a1a",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`DriftSummaryPacket` (L17-L20) — the `TypedDict` `_drift_packet` now returns — and `DriftStatus` (declared in `models/drift.py`).\n\nAnchor: \"class DriftSummaryPacket(TypedDict):\"; \"DriftStatus = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
+            "content": "sha256:4f888b408f3ea32f96c6d9a7aff94534d8f465c7a1a8fc402108a5a5492e3cfb",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:a4fd9adef884dbb6ec257dea9499d51b7d671e333bf190b352afb44cb58b8b8f",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Public payload builder validates this application entry point output through the model registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "724de93431a763237e4b7a27b1042570fd8336b5",
+            "content": "sha256:684697fb5ea7ad34bf65f24e83058ce370cb459c15ba79307efebdefb2391f51",
+            "locator": {
+              "kind": "symbol",
+              "name": "context_packet_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Branch freshness facts (upstream, fetch, ahead/behind) come from the freshness kernel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5850ef8813711a19fa9e598e5888e96dc914f952",
+            "content": "sha256:0b2089562fc3fb113c6393fd5b9ae364c6e107d06b1a50c1b9836cfb7581af5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_branch_freshness"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`ledgerMapsCodeHead` reuses the ledger loader and mapping lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dee1374065329a5e81164a1712a53b595efb1f7",
+            "content": "sha256:4d2a3b44d5eca0a3f8a6e952cb503bbbd7ba32a0f7aa43d4ce2faac56f0dd03a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerMapsCodeHead"
+            },
+            "path": "mcp/src/agents_remember/models/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:3ae031cbe65c164de319b55fe1ccefb3ad3edaeade89531a176bdfd304386d44",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContextPacketError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:db10d8a1f4b7d55fbed6cf4b0b35165264740ff47ec3d68374d22fe6e297ecdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContextPacketRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:514fad889468a806ec57d17b62cd9ab44b6ebefa44cbd0699a45ced8dd108303",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_context_packet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

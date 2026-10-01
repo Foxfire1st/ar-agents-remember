@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_recorded_relationships.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_recorded_relationships.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T19:40:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -114,46 +104,38 @@ second implementation of either.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the uncommitted candidate: the module's own docstring and
 twenty-three definitions, the shipped read owners and ICR-R07 rule it calls, the traversal that
 consumes it, and the cases that measure the reach.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the three facts it owns and of the reach: the page is not the store, the whole line is read, and the owner is chosen by the kind of revision.** | `successor_line` | mcp/src/agents_remember/application/review_recorded_relationships.py:1-59; mcp/src/agents_remember/application/review_recorded_relationships.py:233-292 |
-| The published surface: the read values and the readers the traversal and route modules consume. | `__all__` | mcp/src/agents_remember/application/review_recorded_relationships.py:61-75 |
-| One snapshot as this traversal reads it: its side name, its file, its connection and its own authored edges. | `RecordedSnapshot`; `recorded_snapshot`; `read_snapshot_edges` | mcp/src/agents_remember/application/review_recorded_relationships.py:95-101; mcp/src/agents_remember/application/review_recorded_relationships.py:145-160; mcp/src/agents_remember/application/review_revision_comparison.py:97-110 |
-| **One recorded side, with the origin that says which read produced it and the identity its revision belongs to.** | `RecordedRelationship`; `RecordedIdentityIndex` | mcp/src/agents_remember/application/review_recorded_relationships.py:105-134; mcp/src/agents_remember/application/review_recorded_relationships.py:138-142 |
-| **The head rule: no successor, one established head, or an unresolved line with its shape and its candidate ends — never a denial that a relationship is recorded.** | `SuccessorLine`; `successor_line`; `revision_heads` | mcp/src/agents_remember/application/review_recorded_relationships.py:164-178; mcp/src/agents_remember/application/review_recorded_relationships.py:233-292; mcp/src/agents_remember/application/review_revision_comparison.py:81-94 |
-| The authored walk: every descendant, visited once, and the ancestor/successor predicates the pairing uses. | `authored_descendants`; `authored_ancestor`; `authored_successor` | mcp/src/agents_remember/application/review_recorded_relationships.py:181-198; mcp/src/agents_remember/application/review_recorded_relationships.py:201-217; mcp/src/agents_remember/application/review_recorded_relationships.py:220-230 |
-| **The line read: the kind selects the owner, realizations by invariant revision and memberships by family revision, and the whole line is read.** | `RelationshipLine`; `read_line_relationships`; `fetch_realizations_for_invariants`; `fetch_memberships_of_families_full` | mcp/src/agents_remember/application/review_recorded_relationships.py:296-306; mcp/src/agents_remember/application/review_recorded_relationships.py:309-339; mcp/src/agents_remember/memory/knowledge/read_queries.py:263-297; mcp/src/agents_remember/memory/knowledge/read_queries.py:153-175 |
-| The anchor seam one side's exact code tree asks for, so a line-read row carries the same resolution vocabulary as a selected one. | `head_anchor_resolver` | mcp/src/agents_remember/application/review_recorded_relationships.py:342-359 |
-| One realization and one membership read on a successor line, each resolving its identity from the snapshot's own revision row. | `_line_realization`; `_line_membership`; `_revision_identity` | mcp/src/agents_remember/application/review_recorded_relationships.py:376-409; mcp/src/agents_remember/application/review_recorded_relationships.py:412-449; mcp/src/agents_remember/application/review_recorded_relationships.py:362-373 |
-| **The union-item read: the three relationship kinds, the identity index built from the snapshot's own revision rows, and the payload read as one recorded side.** | `read_snapshot_relationships`; `_identity_index`; `_relationship`; `side_payload` | mcp/src/agents_remember/application/review_recorded_relationships.py:458-475; mcp/src/agents_remember/application/review_recorded_relationships.py:478-518; mcp/src/agents_remember/application/review_recorded_relationships.py:521-561; mcp/src/agents_remember/application/review_recorded_relationships.py:452-455; mcp/src/agents_remember/application/review_recorded_relationships.py:87-91 |
-| The comparison's own statement about a claim's source observation, carried verbatim. | `recorded_change_state` | mcp/src/agents_remember/application/review_recorded_relationships.py:593-603 |
-| The traversal that consumes this module and the member-wise pairing rule built on its predicates. | `relationship_movements`; `_line_relationships`; `_replaced` | mcp/src/agents_remember/application/review_relationship_movement.py:142-177; mcp/src/agents_remember/application/review_relationship_movement.py:227-274; mcp/src/agents_remember/application/review_relationship_movement.py:544-580 |
-| **The cases that measure the reach: the member identity's movement at its own head, the multi-ended line unresolved and never denied, the family head read through the family owner with no sibling mis-named, and a membership moved onto an unselected family revision.** | `test_a_member_identities_moved_realization_is_displayed_at_its_own_head`; `test_a_member_line_with_no_single_head_is_unresolved_and_never_denied`; `test_a_family_revision_that_keeps_its_members_displays_each_membership_once`; `test_a_membership_moved_onto_an_unselected_family_revision_is_displayed` | mcp/tests/test_knowledge_review_relationship_reach.py:305-357; mcp/tests/test_knowledge_review_relationship_reach.py:360-389; mcp/tests/test_knowledge_review_relationship_reach.py:435-469; mcp/tests/test_knowledge_review_relationship_line.py:353-405 |
+- **The module's own statement of the three facts it owns and of the reach: the page is not the store, the whole line is read, and the owner is chosen by the kind of revision.** [1]
+- The published surface: the read values and the readers the traversal and route modules consume. [2]
+- One snapshot as this traversal reads it: its side name, its file, its connection and its own authored edges. [3]
+- **One recorded side, with the origin that says which read produced it and the identity its revision belongs to.** [4]
+- **The head rule: no successor, one established head, or an unresolved line with its shape and its candidate ends — never a denial that a relationship is recorded.** [5]
+- The authored walk: every descendant, visited once, and the ancestor/successor predicates the pairing uses. [6]
+- **The line read: the kind selects the owner, realizations by invariant revision and memberships by family revision, and the whole line is read.** [7]
+- The anchor seam one side's exact code tree asks for, so a line-read row carries the same resolution vocabulary as a selected one. [8]
+- One realization and one membership read on a successor line, each resolving its identity from the snapshot's own revision row. [9]
+- **The union-item read: the three relationship kinds, the identity index built from the snapshot's own revision rows, and the payload read as one recorded side.** [10]
+- The comparison's own statement about a claim's source observation, carried verbatim. [11]
+- The traversal that consumes this module and the member-wise pairing rule built on its predicates. [12]
+- **The cases that measure the reach: the member identity's movement at its own head, the multi-ended line unresolved and never denied, the family head read through the family owner with no sibling mis-named, and a membership moved onto an unselected family revision.** [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It reads one repository's two datasets
 through their own owners and carries no identity beyond that repository namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **created.** The module is new in this leaf (`ICR-R08@v1`) and this is its one-to-one card. It records the read contract and the master's ruling as implemented: the identity of every association revision is read from the snapshot's own rows; the head of an authored line is ICR-R07's rule, called rather than re-derived; the **whole** line is read (the third round's F3), so an intermediate descendant is found and a negative is complete over what was read; and the family side is read through the family-revision owner while a membership contributes both of its lines (the second round's F2). It also records that a row read outside the comparison's page carries its own origin, and that the comparison's change state is carried verbatim by `recorded_change_state`. **Basis accounting:** the verification pair above names this leaf's base, the last real commit the reading was taken against; the candidate is named here in the body rather than in a metadata row, and closeout owns the stamp once the code commit exists.
+No applicable cross-repository source was found.

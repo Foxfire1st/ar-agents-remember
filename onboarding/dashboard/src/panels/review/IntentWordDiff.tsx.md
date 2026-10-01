@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/IntentWordDiff.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/IntentWordDiff.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -114,46 +104,34 @@ review keeps the landed rendering (ruling Q3).
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured. The requirement packets `MIK-R35@v1` and the adopted `ICR-R35@v1`,
 the leaf's rulings (`35_word-level-intent-diff.json`: 11:53:13 Q1–Q6, 12:16:39 R1, 12:43:15 R2) and the evidence
 folder `notes/reports/260928-MIK-L35-evidence/` (real-browser rounds r1–r3 over a converted scratch leaf) live
 outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of rules 1, 1a, 3, 4, 5 and 7, and the dataset boundary. | "is word-diffed, and only there do labels compare" | dashboard/src/panels/review/IntentWordDiff.tsx:1-19 |
-| The tree-comparison scope the centre and the navigator set. | "export function TreeComparisonScope("; "export function IntentWordDiffScope({"; "export const useTreeComparison = (): boolean =>" | dashboard/src/panels/review/IntentWordDiff.tsx:143-167 |
-| The one layout control. | "function ProseLayoutControl() {" | dashboard/src/panels/review/IntentWordDiff.tsx:169-192 |
-| A mark: struck or underlined, announced, whitespace as hidden glyphs with a closing space. | "function Mark({ part }: { part: DiffPart }) {" | dashboard/src/panels/review/IntentWordDiff.tsx:194-214 |
-| Whitespace-only rendering with both exact texts disclosed. | "function WhitespaceOnly({"; "whitespace-only change" | dashboard/src/panels/review/IntentWordDiff.tsx:261-291 |
-| One passage per changed field; the rewrite fallback, its reason and the unsaved "Show inline". | "function rewriteReason(diff: WordsDiff): string {"; "function TextPassage({" | dashboard/src/panels/review/IntentWordDiff.tsx:295-343 |
-| Aligned lists, including moved items. | "function ListItem({ row, field }: { row: ListRow; field: string }) {"; "function ListPassage({" | dashboard/src/panels/review/IntentWordDiff.tsx:345-394 |
-| The R06 indication: known absent, or a side that could not be read. | "function OneSidedLine({"; "not known absent" | dashboard/src/panels/review/IntentWordDiff.tsx:396-420 |
-| A null field as known absence; a projected list shown as reported. | "function FieldBody({" | dashboard/src/panels/review/IntentWordDiff.tsx:459-490 |
-| The control only where a word-diffed passage is drawn (F5, R2-1). | "const wordsPassage = (before: string, after: string) =>"; "function drawsPassage("; "function offersLayout(" | dashboard/src/panels/review/IntentWordDiff.tsx:492-532 |
-| The statement area of a tree comparison's selected invariant. | "export function IntentStatementBody({" | dashboard/src/panels/review/IntentWordDiff.tsx:557-613 |
-| The guarantee's changed text, including one revision whose texts differ, and the details fact. | "export function guaranteeTextChange("; "export function guaranteeFact(" | dashboard/src/panels/review/IntentWordDiff.tsx:615-634 |
-| The changed-guarantee block and the one-sided guarantee label. | "export function GuaranteeTextChange({"; "export function OneSidedGuaranteeLabel({" | dashboard/src/panels/review/IntentWordDiff.tsx:636-699 |
-| Where the centre and the navigator set the scope. | "<IntentWordDiffScope payload={props.payload}>"; "<TreeComparisonScope tree={tree}>" | dashboard/src/panels/review/FamilyReviewCenter.tsx:905-905; dashboard/src/panels/review/FamilyTree.tsx:807-807 |
+- The module's own statement of rules 1, 1a, 3, 4, 5 and 7, and the dataset boundary. [1]
+- The tree-comparison scope the centre and the navigator set. [2]
+- The one layout control. [3]
+- A mark: struck or underlined, announced, whitespace as hidden glyphs with a closing space. [4]
+- Whitespace-only rendering with both exact texts disclosed. [5]
+- One passage per changed field; the rewrite fallback, its reason and the unsaved "Show inline". [6]
+- Aligned lists, including moved items. [7]
+- The R06 indication: known absent, or a side that could not be read. [8]
+- A null field as known absence; a projected list shown as reported. [9]
+- The control only where a word-diffed passage is drawn (F5, R2-1). [10]
+- The statement area of a tree comparison's selected invariant. [11]
+- The guarantee's changed text, including one revision whose texts differ, and the details fact. [12]
+- The changed-guarantee block and the one-sided guarantee label. [13]
+- Where the centre and the navigator set the scope. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`FamilyReviewCenter.tsx`, `FamilyTree.tsx`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:20:04+00:00: Generated citation repair: "<IntentWordDiffScope payload={props.payload}>"; "<TreeComparisonScope tree={tree}>" repointed to dashboard/src/panels/review/FamilyReviewCenter.tsx:905-905; dashboard/src/panels/review/FamilyTree.tsx:807-807. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted import lines in `FamilyReviewCenter.tsx` (one) and `FamilyTree.tsx` (one, plus the four-line member-row hook above the cited range), so the scope row was re-pointed by the exact Git-hunk line shift (`891-898` → `892-899`; `675-683` → `680-688`). The claim is unchanged. No stamp advanced.
-- 2026-09-30T13:18:53+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): created this card for the new rendering module MIK-R35 adds, recording rulings Q1 (the same-revision label), Q2 (the unsaved per-passage "Show inline"), Q3 (no word diff for datasets) and Q6 (the roster out of scope) of 2026-09-30T11:53:13; review R1 F2 (every tree-comparison label compares text bytes), F4 (the field-level one-sided, projected and whitespace-glyph cases) and F5 (control placement) of 12:16:39; and R2-1 (fixed) and R2-3 (a note) of 12:43:15. Three candidate invariants recorded. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

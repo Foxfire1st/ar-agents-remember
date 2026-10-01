@@ -1,0 +1,110 @@
+{
+  "path": "dashboard/src/data/conversation/client.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The page/telemetry/interrupt/error wire shapes this client returns.\n\nAnchor: \"export interface ConversationPage\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:032f1fce7e94eb801544ecb734007bba9022c6a05f676b92d124b3a727e5c366",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 289
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store that threads `PageResult` errors to `errorBySession`/the banner.\n\nAnchor: \"export const LRU_LIMIT\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:436029cf440578dbb531f3b912f6e23748669bbd02aeebbeedc0cdfbf25654e1",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The SSE controller that consumes `conversationEventsUrl`.\n\nAnchor: \"export function openConversationStream\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5bcbf91dd9e078714dc8aec7e3ef1aa7d230459",
+            "content": "sha256:940a09d96098d92fbabf2dc62be3b4fa8b980bf9fd855b664e1245855b777984",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/data/conversation/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The interrupt hook that discriminates `ControlResult` into ack/settlement/refusal.\n\nAnchor: \"type ControlResult\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:420f7338843404d7f4c679a01a71f2847b81b0ebe5cd35377f54c8af2b23418d",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The landed active + control routes this client calls.\n\nAnchor: \"async def conversation_page\", \"def _dump\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:19d1650ede129a1aa6331998a9398691fd3bf760579a1e1190250dfa599d4c33",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:96c5a1322c2dd092c704a5fb3a4b66029c38de52bb5b6d7c2018977510ef4b10",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

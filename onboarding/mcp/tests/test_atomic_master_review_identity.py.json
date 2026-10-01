@@ -1,0 +1,86 @@
+{
+  "path": "mcp/tests/test_atomic_master_review_identity.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Baseline leaf digest/currentness compatibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e3bd0ec8bb1fd9f36bda0b0aa8d2fa5226b199",
+            "content": "sha256:1fcc9a89f089be04edd42a8d35e5214f64fde09951ef9851c77a4d5315e4cd7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_leaf_route_review_keeps_digest_and_currentness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Operational bookkeeping does not change aggregate identity.\n\nAnchor: \"def test_atomic_master_aggregate_ignores_operational_bookkeeping(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e3bd0ec8bb1fd9f36bda0b0aa8d2fa5226b199",
+            "content": "sha256:266cdf6e2c3d6b46ce4f969483f622c5d1be84be50fdbd8d47db558ee2fa33b3",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Normative and membership changes alter aggregate identity.\n\nAnchor: \"def test_atomic_master_aggregate_changes_for_normative_or_membership_changes(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e3bd0ec8bb1fd9f36bda0b0aa8d2fa5226b199",
+            "content": "sha256:840e903c5a70de994a81ae6f8538be536d86c143d0016c6f3229f2d7343b5bf0",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 304
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Models under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:c362f1e9336f07cccf8472710ca186614d1057c6bf255d39b700d7bf517f125e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewScope"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:7f9fc5da30d8d786e759086820d40acf7ca95b7ec2e193c95bf7a104763fec9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewChildIntent"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

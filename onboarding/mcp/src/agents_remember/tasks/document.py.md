@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/document.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/tasks/document.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [tasks/overview.md](overview.md)
@@ -196,10 +186,8 @@ written. The field is optional, so every existing document still loads unchanged
   shows it as a `**Knowledge maintenance scope:** \`true\`` header line.
 - The worklist reads it through `application/knowledge_worklist/leaf.leaf_maintenance_scope`, which since MIK-R09 (260928-MIK-L09, the L11 carry) uses the strict lookup (`strict_leaf_doc`): a document that exists but cannot be read makes the run `incomplete`, never the default scope.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The optional field and its comment. | "MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base" | mcp/src/agents_remember/tasks/document.py:720-720 |
-| The worklist reads it, since MIK-R09 through the strict lookup inside the run's fail-closed read (an unreadable document is `incomplete`, never the default scope). | "def leaf_maintenance_scope(" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:151-160 |
+- The optional field and its comment. [1]
+- The worklist reads it, since MIK-R09 through the strict lookup inside the run's fail-closed read (an unreadable document is `incomplete`, never the default scope). [2]
 
 ## 260928-MIK-L11 The `expectedKnowledgeEffects` Declaration (MIK-R11 Rule 1)
 
@@ -228,34 +216,30 @@ the architect's approval) through `task_doc`. Absent means no declaration, and e
   MIK-R11 is installed at the cutover (an L37 obligation; the same holds for `knowledgeMaintenanceScope`).
   The store writes with `exclude_none`, so a write from the new build never emits the key as `null`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One declaration: subject form, effect label and requirement reference. | `ExpectedKnowledgeEffect` | mcp/src/agents_remember/tasks/document.py:655-666 |
-| The refusals: master, empty, repeated subject and effect. | `_check_expected_knowledge_effects` | mcp/src/agents_remember/tasks/document.py:669-686 |
-| The optional field and its comment. | "MIK-R11: the invariant and family effects the leaf expects" | mcp/src/agents_remember/tasks/document.py:723-725 |
-| The check runs in the document validator. | "_check_expected_knowledge_effects(self.kind, self.expectedKnowledgeEffects)" | mcp/src/agents_remember/tasks/document.py:768-768 |
-| The shared patterns. | `DECLARED_SUBJECT_PATTERN`; `REQUIREMENT_REF_PATTERN` | mcp/src/agents_remember/models/knowledge_files/planned.py:67-67; mcp/src/agents_remember/models/knowledge_files/planned.py:70-70 |
-| The field's tests: optional, normative, settable, rendered and refused when malformed. | `test_the_field_is_optional_normative_intent_settable_and_refuses_malformed_declarations` | mcp/tests/test_planned_knowledge_effects.py:119-184 |
+- One declaration: subject form, effect label and requirement reference. [3]
+- The refusals: master, empty, repeated subject and effect. [4]
+- The optional field and its comment. [5]
+- The check runs in the document validator. [6]
+- The shared patterns. [7]
+- The field's tests: optional, normative, settable, rendered and refused when malformed. [8]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation sources are configured for this repository-internal persisted model.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
+No relevant external documentation was available after checking the configured source registry.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored. | `Step` | mcp/src/agents_remember/tasks/document.py:117-135 |
-| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:204-259 |
-| The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:319-371 |
-| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:295-316 |
-| The route-review record validates its typed dependency declaration and self-digest. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-198 |
-| The R03 route-review dependency vocabulary. | `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-119; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:267-302; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:354-358 |
-| Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. | `derived_leaf_placement`; `_latest_unblocked_segment` | mcp/src/agents_remember/tasks/document.py:408-442; mcp/src/agents_remember/tasks/document.py:445-462 |
+- The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored. [9]
+- Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. [10]
+- The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. [11]
+- Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. [12]
+- The route-review record validates its typed dependency declaration and self-digest. [13]
+- The R03 route-review dependency vocabulary. [14]
+- Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. [15]
 
 ## L23 Final Candidate Disposition
 
@@ -277,97 +261,3 @@ family.
 The route-review record now binds per-evidence-file SHA-256 digests, the `route-review/v1`
 dependency declaration, and a canonical self-digest; `build_route_review` stamps all three from the
 exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
-
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No change to the task-document model: its own source is unchanged. **Reopened claim reworded:** the `leaf_maintenance_scope` row and its bullet, which MIK-R09 (260928-MIK-L09) changed to the strict, fail-closed lookup (the L11 carry); this pass's generated bullet for the row was removed. No verification stamp was advanced. **Re-anchored:** claims bind by anchor text and a committed generated bullet names the old anchor, so the reworded row was re-anchored on line-exact quotes ("def leaf_maintenance_scope("); no committed history line was edited.
-- 2026-09-29T21:49:26+00:00: Generated citation repair: "MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base" repointed to mcp/src/agents_remember/tasks/document.py:720-720. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T21:49:26+00:00: Generated citation repair: `leaf_maintenance_scope` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:134-138. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Added the section "260928-MIK-L11 The `expectedKnowledgeEffects` Declaration" (`ExpectedKnowledgeEffect`, `_check_expected_knowledge_effects`, the `NORMATIVE_INTENT` class, `set_field` and render), recording architect rulings 2026-09-29T21:56:18 (Q2: no real declaration before the L37 install; Q5: the `requirementRef` form). Rows below the insertion were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): Added the section "260928-MIK-L08 The `knowledgeMaintenanceScope` Field (MIK-R08 Definition 5)": the optional boolean on `TaskDocument`, its meaning for the worklist, and architect ruling 4 (`LIFECYCLE`, not `NORMATIVE`).
-- 2026-09-17T07:33:51+00:00: Generated citation repair: `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` repointed to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-118; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-273; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:325-329. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `EvidenceDependencies` in the row 203 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-242 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98, the extent of the construct the claim is about (the checker named line(s) [98, 229, 233] as its live location); re-pointed `require_evidence_dependencies` in the row 203 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:234, the extent of the construct the claim is about (the checker named line(s) [234, 238, 345] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `EvidenceDependencies` in the row 203 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:325-326 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-99, the extent of the construct the claim is about (the checker named line(s) [98, 229, 233] as its live location); re-pointed `require_evidence_dependencies` in the row 203 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:98-99 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-242, the extent of the construct the claim is about (the checker named line(s) [234, 238, 345] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `canonical_sha256` in the row 203 of this card from mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:238-242 to mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:325-326, the extent of the construct the claim is about (the checker named line(s) [325, 343] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:325-326 in the row 203 of this card; the repetition added no pooled evidence
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: `Step` gained the optional `note` field
-  (`None`-defaulted, `exclude_none`-preserving), recorded as the root cause of the observed
-  loss — the schema had no field for a top-level note, so `set_step` accepted it and silently
-  dropped it whatever the update key set did. Also recorded that `Step.note` is classified `AUDIT`
-  in `document_field_effects.py` and that the taxonomy fails closed for an unclassified field.
-  Verification metadata remains closeout-owned; no acceptance claim.
-
-- 2026-09-11T23:05:00+00:00: Master abandonment curation: `derived_leaf_placement` and `_latest_unblocked_segment` now take `resolved_refs` (terminal masters — `Completed` or `abandoned`) instead of `completed_refs`, and the invariant plus its source row record that a segment blocked only by an abandoned master schedules instead of blocking forever. Content change, not a range repoint.
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `resolve_graph_endpoint` repointed to mcp/src/agents_remember/tasks/document.py:285-306. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-07T00:42+02:00 — Removed remaining obsolete suite-proof citations; current production invariants and historical records remain preserved.
-
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the route-review record's content-addressing fields (evidence SHA-256 digests, dependencies, recordDigest) and the all-or-nothing validator binding; prior task-schema and graph-model prose preserved.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: extracted intrinsic execution-graph
-  validation into one indexed, operation-counted analysis reused by admission, waves, placement,
-  and cycle reporting; preserved the task-document wire and refusal surface. Verification remains
-  closeout-owned.
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded reviewer as one
-  explicitly polymorphic role across leaf, master, and sprint task documents, including sprint-seat
-  schema admission. Verification remains closeout-owned.
-
-- 2026-08-24T13:43+02:00 — DAGQC L1: removed `SprintExecutionNode` cross-type equality/hash
-  aliasing with `TaskDocumentRef`; node identity is structural and ownership comparisons are
-  explicit through `node.ref`. Legacy lump parse/serialization remains unchanged. Verification
-  metadata remains pinned until closeout.
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `derived_waves` acyclicity refusals now name the exact
-  cycle members (`_find_cycle_members`/`_residual_adjacency`/`_dfs_cycle_members`/`_CycleSearch`,
-  playthrough F4). Verified at code commit de3a0fd9.
-
-- 2026-08-20T04:14+02:00 — 260815-DAG-L14: `TaskDocument` gained first-class sprint `seats`
-  (`SprintSeat` — role/label/identity/state, sprint-only, unique among non-retired roles) and
-  `SubTaskRef` gained the optional typed `masterRef` (the commanded master document a row tracks).
-  `SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES` moved here as the canonical altitude declaration.
-  Verified at code commit 2f494982.
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the sprint graph model is now leaf-segmented —
-  `SprintExecutionNode` lumps or per-master segments with legacy bare-ref lifting and byte-identical
-  lump re-serialization, judgment-provenanced edges with segment-sampling endpoints, sprint-wide
-  leaf uniqueness and lump/segment mutual exclusion, node-derived waves, and the pure
-  `derived_leaf_placement` / `leaf_placement_facts` / `numbering_drift_hints` fact helpers.
-  Verification remains closeout-owned.
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the JSON-primary task schema now distinguishes
-  commanded-master execution nature from sprint-only reasoned AON graphs, derives stable waves, and
-  rejects duplicate, unknown, self-referential, blank-reason, cyclic, or wrong-kind shapes.
-- 2026-08-14T06:34+02:00 — L23 final candidate review: task-document parsing derives canonical
-  parent series/master/leaf relationships used by transitive lineage and route-review authority.
-  Verification remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped task-document citation claims; final exact frozen-snapshot check is clean.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-06T23:57:42+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TaskDocument` gained
-  `orchestrates: list[str]` (default `[]`) — the orchestration-command relation; a master doc with a
-  non-empty list IS an orchestration task naming the masters it commands. The kind validator now
-  rejects the field on non-master docs (master-only, like `subTasks`). Additive: no new kind, no
-  migration, docs without the field are byte-identical.
-  Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-06-29T21:24+02:00 — Post-landing cleanup (master/leaf-only): clarified that `light` survives in
-  `DocKind` for legacy-load compatibility only — the `task_doc` controller refuses to author new `light`
-  documents, so every task is `master` or `subTask` (leaf). Schema unchanged (a code comment documents the
-  retention). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T16:39+02:00 — Task 17 schema-side clarification: master docs still forbid authored
-  `lifecycleId`, but that is no longer treated as a projection exclusion; the observer projects active
-  master docs with optional runtime lifecycle attachment. Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `TaskDocument` replaced `contractPath` with `seriesContractPath` plus `enclosures: list[TaskEnclosureRef]`, allowing one task document to refer to its root series contract and one or more leaf enclosure contracts. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T06:03 — Slice 3c reopened (R4, leaf-doc fidelity): added `HeaderNote` + optional `statusNote`/`headerNotes`, and relaxed the kind-guard so a leaf may carry freeform `sections` (still forbids the `subTasks` series index + non-freeform sections); `DocStatus` stays a strict enum. Verification metadata pinned until closeout stamps the R4 code commit.
-- 2026-06-19T05:15 — Slice 3c reopened (R3, deferred-examples honesty): added optional leaf-only `codeExamplesNote` (`None`-defaulted so `exclude_none` keeps existing JSON byte-identical) and extended the kind-guard `@model_validator` — a master forbids it, and a leaf forbids it alongside non-empty `codeExamples`. Verification metadata pinned until closeout stamps the R3 code commit.
-- 2026-06-19T04:18 — Slice 3c reopened (R2, heading-vs-outcome): `Step` gained an optional `outcome` (the checkbox-line deliverable, distinct from the heading `title`; `None`-defaulted so `exclude_none` keeps existing JSON byte-identical). The renderer puts it on the `- [ ]` line. Verification metadata pinned until closeout stamps the R2 code commit.
-- 2026-06-19T03:17 — Slice 3c reopened (R1, masters observable): added `series_total`/`series_done` — the master analog of `step_total`/`step_done`. A master's checkboxes are its `subTasks` (each one box); `series_done` counts the **declared** `Completed` subtasks, authoritative over a slice's own leaf steps. Verification metadata pinned until closeout stamps the R1 code commit.
-- 2026-06-14T00:16 — Slice 3c commit 3: added `kind:"master"` with `SubTaskRef` (series index) + ordered `Section` (`freeform`/`subTasks`/`sharedDecisions`) and a kind-guard `@model_validator` (master ⇒ no steps/codeExamples/lifecycleId; light/subTask ⇒ no subTasks/sections). Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-- 2026-06-13T22:34 — Created for slice 3c commit 1: the `ar-task-document/v1` Pydantic schema + progress helpers. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

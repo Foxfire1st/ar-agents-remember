@@ -1,0 +1,536 @@
+{
+  "path": "mcp/src/agents_remember/observer",
+  "references": {
+    "1": {
+      "note": "The foundational approved design for this substrate: entities, store layout, retention, and TTL project-and-prune; current retention has evolved beyond that design.\n\nAnchor: `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:d8d5ef894d70a64e9d87dca14ac51381417473540885c57bf9e941fd1bac2d94",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`drift_snapshot_path` is the shared drift-snapshot path helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:8232e9eb442c1a4f7fd24cc18ba36e924475e60ed78e7875784d38e33890aa9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "drift_snapshot_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Projection input invokes the orphan-pruning helper.\n\nAnchor: \"prune_orphaned_drift_snapshots(config\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
+            "content": "sha256:0f5daf3b0311594bf6ff6a8b13207aa460fb8e573b3d46a097304ce72f54534e",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shared helper implements orphan pruning for worktree drift snapshots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
+            "content": "sha256:2f8d306e049220a2aa893df0c9dd64963eaf9559cdca1e78d2069128a07eb1f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_orphaned_drift_snapshots"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`ContractSnapshot` is declared here.\n\nAnchor: \"class ContractSnapshot:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "content": "sha256:8d1efc19c36180f62c59d70753c8e50dc619df01d31668cbc9bef341503534f8",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`ContractSnapshotCache` is the associated snapshot-cache type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "content": "sha256:6dad0eac1147fe7ae4d29c6d1208475075f6ec075e7cb42ffb04fc6646ef3f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractSnapshotCache"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "`progress_status` is the setup-progress status record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9edaa317e28fecbc451aa6731d9c7d5578217178",
+            "content": "sha256:d71e182a7d9c1ce81984006208997bfa59717d28cdf1a5944769094769a7ee59",
+            "locator": {
+              "kind": "symbol",
+              "name": "progress_status"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_progress.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The ambient `end()` entry owns terminal-state publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:efd1b6ced46ad363813e09e8ec03a2d3db2837abc9138a4ee0f5c7c80494ac07",
+            "locator": {
+              "kind": "symbol",
+              "name": "end"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "`projected_current` is the gate store's tolerant projected fold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
+            "content": "sha256:c61f28479b14565bfa962e51a8c0e18b5c499cd5f4277ceef4660cf0a08dc54e",
+            "locator": {
+              "kind": "symbol",
+              "name": "projected_current"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
+            "content": "sha256:71a099ce8ab34bf06b28222b214319b51f56266ce7d29a7421124dca65c2ff0d",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "883c4266d5e0b1f9db5d09dc7832650afdea5165",
+            "content": "sha256:a0c2de12c5efad8e0862a46f7edc416d3d1b4621e35b3512f4170c726bcee9d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "pending_for_projection"
+            },
+            "path": "mcp/src/agents_remember/controlplane/expectation_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`gate_keep_ids` is the retention keep-set helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:8db5fd84f410da3e0887ba4a35f5e81880675deacf962f8d57d29593d31e3f38",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_keep_ids"
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:c6579af0e3c55d77ac612845e3d0b3f1360b53d99e11d2ca04057ed8e36fbd5a",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`Event` is the observer event model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "locator": {
+              "kind": "symbol",
+              "name": "Event"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split.\n\nAnchor: \"Read policy is part of each store's authority contract:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:9de255cbab58f707c3d292a621b20d00fc7e0cacd917142b8141d59e8d5f9b47",
+            "locator": {
+              "kind": "symbol",
+              "name": "DURABLE_STORE_CONTRACT"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:ec00bc2fea0f83fd0c9e970066167d0a34be98885c75c1d51e155564a4649ded",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "`StatesAreFiledOnce` is the TypeScript overlap-check type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:8ba123894d75ce9a9e5150115cc5b64e6b77e66bf64ba9080fb94ac20415c41d",
+            "locator": {
+              "kind": "symbol",
+              "name": "StatesAreFiledOnce"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The `STATE OF THE MIRROR` comment documents the Python mirror.\n\nAnchor: \"STATE OF THE MIRROR\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:e2687d3182031b0379e3c3084c17002600ef4a2e7f1b9e5ee8a0245b9698d530",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The primitives-only title protocol and projection lookup preserve owning-master identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:581894bb44cb259c9092f3630395eaa1578e923c0201c524a0447e4d441f0ac5",
+            "locator": {
+              "kind": "symbol",
+              "name": "GraphNodeLike"
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:8db791857e68ea8e5e249a7216002cd2c72483920aab6fc40f7b0a2d596babab",
+            "locator": {
+              "kind": "symbol",
+              "name": "GraphTitlesLike"
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:e92f491b30b7186686235ced915c39305d53731e299559b3e09529c74d7f6c15",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:333263397ba73982b45521d84e92d30a1682b3cd6bee839ecb956a4817b46f8f",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Public-reader regression proves duplicate local leaf numbers retain their owner's title.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "content": "sha256:4d93455816bc4e952e32f9396ccf5d5632ed00913a6f13a67647a57d557a0a13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_local_leaf_numbers_keep_master_qualified_titles"
+            },
+            "path": "mcp/tests/test_task_documents_graph_projection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "content": "sha256:ce9295767506a7e7d9d06e256ce905f8e52f287a94624d3db431b65d1e19700c",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/tests/test_task_documents_graph_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`StrictResponseModel` is the shared response-model base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:82b1223f6a2dfe69490f7dacf49a68f6da3450399b2d6266267c975685458548",
+            "locator": {
+              "kind": "symbol",
+              "name": "StrictResponseModel"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:97a355f06bc816f40ec3e6d30faf87c55a9cec8e6da60eb216254b9c65165c90",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The raw event stream entry is `stream_raw_events`.\n\nAnchor: \"def stream_raw_events\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "557621687e7e8238a5f892f1663045a6fe629754",
+            "content": "sha256:8faa54e8e14ffcf77fa1c1e6c756cb7945cc8e20ffecdd066949c4660e3a7206",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": "mcp/src/agents_remember/serving/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The lifecycle-log pruning entry is `prune_expired_lifecycle_event_logs`.\n\nAnchor: \"def prune_expired_lifecycle_event_logs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`workspace_provider_nodes` is one of the route-local provider-node helper symbols.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2405158f39752c86d7c41a18a0954a1dbfa7936b",
+            "content": "sha256:3b73aa8fd49e2ebdd532ad71ff979a654510ab050f8ed85949eb8b5d5ff20d71",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace_provider_nodes"
+            },
+            "path": "mcp/src/agents_remember/observer/provider_nodes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Active-enclosure admission is implemented by `admitted_worktree_groups`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
+            "content": "sha256:64203d068fcd3ccebcb13a3562f1e453dc5a584c589c31070ad6cff6428f068e",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_worktree_groups"
+            },
+            "path": "mcp/src/agents_remember/observer/worktree_provider_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Engine activity is admitted by projection input state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
+            "content": "sha256:f8468360c9249bfceaee84a39190d7cc8cc699bd9cb22e17ba58fb59b46e06b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionInputState"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
+            "content": "sha256:6fccbb1f525ecec233d981c30d7f3bfa24bb6412ae9e12e79dfad9592af3fee2",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Series token totals are composed by a reducer-side helper from projected task docs and lifecycles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42846b7c9ce7da533453aa95d96ef70250b36475",
+            "content": "sha256:cac30fe7c04d074eed4260e1a52c91b74dd2a2c198ef00e6f957dd829b215e20",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_series_token_totals"
+            },
+            "path": "mcp/src/agents_remember/observer/series_tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

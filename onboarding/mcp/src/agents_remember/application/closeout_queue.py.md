@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/closeout_queue.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/closeout_queue.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application overview](overview.md)
@@ -62,17 +52,17 @@ The application layer owns ambient identity resolution; scheduling mechanics sta
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; this is an internal authority boundary.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The seat-or-declared caller resolution precedes construction of the structural queue actor. | `closeout_queue_tool`; `_declared_queue_actor`; `_refuse_hosted_declared_conflict` | mcp/src/agents_remember/application/closeout_queue.py:19-60 |
+- The seat-or-declared caller resolution precedes construction of the structural queue actor. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
@@ -82,33 +72,4 @@ Non-availability still permits the existing declared ambient caller path, but ev
 seat-resolution failure now preserves only its typed status and returns a bounded public detail.
 Backend exception text and caller-sensitive internals no longer cross this application boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Non-availability and other ambient-seat failures have separate public handling. | `closeout_queue_tool` | mcp/src/agents_remember/application/closeout_queue.py:19-61 |
-
-## Update History
-
-- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled bounded ambient-seat failure translation at the application boundary. Verified at code commit `1d446724`.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: the queue application boundary gains the
-  declared-caller fallback (L16-R2/R3): on `ambient-seat-unavailable` the request-carried `caller`
-  builds the identical `QueueActor` a seat would, and a contradicting declared caller refuses
-  (`closeout-queue-caller-conflict`). Body updated to the L16 trust model (F5: self-declared
-  identity grants no authority beyond the same role/document pair; residual risk is
-  deployment-level) and the L16-R4 mechanism-vs-judgment guarantee. Verified at code commit
-  a9d50e08.
-
-
-- 2026-08-15T09:10+02:00 — Created for L3's ambient-authorized closeout-queue application boundary; verification remains pinned to the leaf base until closeout stamps the candidate commit.
+- Non-availability and other ambient-seat failures have separate public handling. [2]

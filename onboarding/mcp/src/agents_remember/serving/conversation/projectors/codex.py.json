@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/projectors/codex.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router.\n\nAnchor: `route_delta_params`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "107323ca12efbef4744dffaaab55d0939866fa22",
+            "content": "sha256:7bd7c62e2b9836f346a099036f6bfbd467570e9c106e3ded57c845781faed858",
+            "locator": {
+              "end": 776,
+              "kind": "line_range",
+              "start": 776
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The router itself moved out of the adapter in 260731-EFA-L6 and was renamed with it, so the adapter-private name is gone from the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b325c4c18da76cc789a97cc7aa56b0ecdc016a6",
+            "content": "sha256:f272944396e58f0b398ca0603018404d28b94640c76d0536e9f401ef15ec480c",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_delta_params"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_threads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`EvidenceFrame.native_method` is the typed field the bridge preserves and this projector switches on; `evidence_frame_json` serializes it as `nativeMethod` (wire contracts in models since L9).\n\nAnchor: \"payload[\\\"nativeMethod\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:15c0f3c6b995f5d0513b88b2429a6a6f54a473f28c4f790a5e2654aae77d3b43",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`ConversationAgentRef`/`ConversationAgentStatus` are the roster identity/status grammar this projector emits; `ConversationItem.agent` is the optional field that carries it (absent = parent conversation).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35089139cef4ef6981a20c8ef9314ff20a450a8d",
+            "content": "sha256:add40b84d89db1a1b816197de8bf07d5786d0a1e39b115d3c4e885e26064f510",
+            "locator": {
+              "kind": "symbol",
+              "name": "parent_agent_id"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The engine passes the multiplexed demux context: the one mapper call site sets `parent_thread_id=self._identity.vendor_conversation_id` on `map_evidence_frame`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:e1ca76609ea030bce91ec355bf3ed58fa113f224d6487be503beb080f47517e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_evidence_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:18764da5f9fa4b27b97a02939918830ef30af6bbdae45d27249e0a29bcf1a9c7",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The store's tool-call block union keeps full-item re-maps byte-identical while converging partial-block tools; roster-aware rules preserve a roster notice's `final-message` block across later block-less lifecycle upserts, and a late `streaming` tagging upsert never regresses a terminal phase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:0295b8279ae8923bb0f4281c69bdb7d5979277ae7e377287467fa178ec16aeba",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_item"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:b940ffefbc39a2454d64a1abc57c7a062878010bbd91488897ad4fc2db31ec05",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The engine resolves bare-delta target blocks through the mapped item's kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:e361e6eb8e43315f489c6f60e05b0a5d4381b01685a244870b049bba5ff037b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_delta"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:6d5521e5a296161d7e47f103491c5e3acad94e77ee140616378ed46802c386f2",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

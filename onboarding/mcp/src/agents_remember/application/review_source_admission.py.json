@@ -1,0 +1,463 @@
+{
+  "path": "mcp/src/agents_remember/application/review_source_admission.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+        "content": "sha256:b8ceaccec69326358db9f3848aca2b3ba4261a406ccb0cf6a1e834c53d267845",
+        "locator": {
+          "kind": "symbol",
+          "name": "_link_undetermined"
+        }
+      },
+      "id": "RLZ-9EC7B6PN",
+      "invariant": "INV-XTXZESS6",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Builds the refusal for an unlisted path whose link could not be determined. It states that the link was undetermined, carries the detail naming which knowledge was unread and why, and directs repair of that snapshot, without claiming that no realization links the path.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+        "content": "sha256:35208096f471216ee87820edc4f8bdf5b066971b0b8c2b55e347bd0bb297f3f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_not_listed"
+        }
+      },
+      "id": "RLZ-CXH58B4W",
+      "invariant": "INV-2TQGXFAX",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Builds the source_content_unresolved refusal for a path the measured pair does not list and no recorded realization links. The refusal carries the link detail that says what each snapshot answered and states that no content was read for the path.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+        "content": "sha256:d5fced25043432cf98848326ed03672c4c612bedfef1a5aa3d381d14ff23a408",
+        "locator": {
+          "kind": "symbol",
+          "name": "_attributed_or_refused"
+        }
+      },
+      "id": "RLZ-D43E5CF2",
+      "invariant": "INV-9ECAFVTQ",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Makes the admission decision for a path the measured change set does not list. It admits the path only when the realization link reports a linking side, as admission attributed_unchanged with a detail naming the linking before/after knowledge and stating that the path is unchanged and not counted as a changed file; otherwise it returns the undetermined or not-listed refusal.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+        "content": "sha256:38e8843a8cebfb16f766d607a7dee7674eb699fa1a559e313a7a5af4a6d746fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "admit_source_path"
+        }
+      },
+      "id": "RLZ-NM6160PK",
+      "invariant": "INV-YBS0CVBK",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Only reads the inventory it is given: it looks the path up with _entry_for and otherwise returns a SourceAdmission whose entry is None for an attributed unchanged path or a leaf-change-set bound. Opening attributed context therefore never appends an entry to the inventory or alters its listed_total.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the two admitted populations and of why every other path is refused.**\n\nAnchor: \"An attributed unchanged path.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:7701bc7ee676c5ebdbb05d3262b69e7f6dfeb40f4b1ea4f54ab19e4abbe0f837",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one caller: the content read hands its inventory here before reading any byte.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:ebb5f7773a87fded477bec63545ebd293f8b42fc91309cf6768a7b61a2436f74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The inventory owner re-used for the leaf change set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_inventory"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:660943b0c519a43f2230401da098b234638bae93577d58cc25567582a8370745",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_tree_side"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The wire literals this module fills and the validator that ties attributed context to `unchanged` and `requested_generation`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:54c92b9afc2fd4e7731d0dc4fd8ec21782f8ee08dc496671a69beda3c27aa139",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceAdmission"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:2c3e2fbc0da7f7362d7795f8680a36d75cc201bff17e128f010b541adcb34756",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceExpansionStatus"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:68d579b4f63b4547ddc7eda60b5d41289c53a48c46bd1bc954e77e7903158ab2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_attributed_context_to_be_a_measured_unchanged_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The cases: attributed admission without counting, unlinked refusal, and undetermined refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:a91f9b24a303265586c5bbd016bdf3e7233c2897ce74f821ce03ebf130172a60",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:c405e549eab3887145bc7f2ee49d30d66dad755472e4b3e744f0fb1b940c6075",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_path_no_recorded_realization_links_is_still_refused"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:e7e8349ee6dbf01820889bfe44cd5c9bf7581763bab975eb30ac2a05ba7db799",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The never-initialized remedy, and a proof entry linking its path in a tree index while a dataset links none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:92ebea492fbe15d48389f2f018c2c51cf9b81e6eeee3f773a7eed40140057148",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_never_initialized_knowledge_asks_to_initialize_it"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:12119e15d7780f0ab0fb4af89ed345ec2825a0ce86bfd0f18ea007d863adc694",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tree_index_links_a_path_its_proof_entry_is_anchored_at"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Ruling Q1 at the route: an unchanged test file only a proof names is refused before the proof exists and admitted with the new sentence after.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57fef0675dd3dd1aabd83c357b5d7642d52195a7",
+            "content": "sha256:fcb7164803a03ddef8f525daca1ea7839ee704354a2dea175af4f7345d92ff66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_path_only_a_proof_names_opens_in_a_tree_review"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface and the fixed detail a changed path carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:2613a27752c5665212d5381b3e5636e9babbed22e567d62eee1349ac92e9e296",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:9978d18fb2e362d11ee53ccfe8d308e846114a38080c839e2a20a7e18adda500",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CHANGED_DETAIL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The admission value: which measurement admitted the path, and the derived `unchanged` / entry / `unknown` status.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:f76ec60271007067c6917da384c08f73c345d32780469f99efab8c9e56eee3a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The fixed order: requested inventory, then the recorded link for a measured pair, then the leaf change set for an unmeasured one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:38e8843a8cebfb16f766d607a7dee7674eb699fa1a559e313a7a5af4a6d746fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_source_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Linked admits (a realization, or a proof of a tree comparison), established negative refuses, unread knowledge refuses as undetermined.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:d5fced25043432cf98848326ed03672c4c612bedfef1a5aa3d381d14ff23a408",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attributed_or_refused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The three refusals: unmeasured pair with no admitting change set, measured pair with no link, and a link that could not be determined.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:7a72ad5a3e738166b2ef87480774bdc91afd7694cfa9d2a77e291be68f293087",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unconfined"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:35208096f471216ee87820edc4f8bdf5b066971b0b8c2b55e347bd0bb297f3f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_not_listed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:b8ceaccec69326358db9f3848aca2b3ba4261a406ccb0cf6a1e834c53d267845",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link_undetermined"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two remedies: initialize never-created knowledge, restore or repair a damaged snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:a000faaeda1b3fd0aa59341f178a05d586ffddef88b2639dfa0878d0ace43a86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RESTORE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:5bffce1766b4e23c4601e3cc8a877fea74b9307e4706f407a73c223529ffeaca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INITIALIZE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Exact-string inventory match and the bounded offending input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:54e598163059020c50c915ac1bea0105d1c3a2922429ffc0e88fa83926316deb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:334d6bbb1940e240d85edc359e302b9911caaa9d9e44cb429adbc6bd8303fa1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded_input"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The link owner this module consumes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c44437cfac6ee519a532c3ce675f46baa01148fe",
+            "content": "sha256:e38536d621ff2f1518f2d862f59e980f3b720a7be1752b531ee2256e6186b1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationLink"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_realization_link.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c44437cfac6ee519a532c3ce675f46baa01148fe",
+            "content": "sha256:8ef4c43fc85de2eca313ac24b362b166d2034dc3e91b56e1671f4e5d73858773",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_realization_link"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_realization_link.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

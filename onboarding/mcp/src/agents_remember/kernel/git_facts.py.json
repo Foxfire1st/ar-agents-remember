@@ -1,0 +1,147 @@
+{
+  "path": "mcp/src/agents_remember/kernel/git_facts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Git invocations are delegated to the shared `run_git` runner rather than a private wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The local default bound is 300 seconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_LOCAL_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ordinary remote bound is 120 seconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:fbfa8472a098bcd75d67a5d7bf39fb9f4f9dd902aa130d654f77efe08ec86503",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_REMOTE_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The metadata bound is 30 seconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:4e9712efdc5e47916c2dbb622ba70183d1df366b5fb155e7aaba5c37c0972fe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_METADATA_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared Git runner applies caller-selected bounds and isolated repository environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The other kernel caller of `branch --show-current` and `rev-parse HEAD` names the same metadata bound, so one command means one bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:2c71d5eedab6a3578ad0e726d1e22188e8240690161a923bf42a9b328e2e8624",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_branch"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:0c8d38a51cdf0f5d75a5f3fc7ee6d09163b1ee8a888bd65345dcb7648f5abad0",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_head_or_empty"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

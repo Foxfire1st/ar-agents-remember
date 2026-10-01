@@ -1,0 +1,58 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing",
+  "references": {
+    "1": {
+      "note": "Ordinary bootstrap owns local ordering/cache/state isolation without certification.\n\nAnchor: \"Reusable pytest bootstrap with no certifying or external-service capability.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "content": "sha256:8871d41faeb01e4371a59eeaaa76181e2fbaf1d9f69eea9aaabeea8b1bda5a5a",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Certifying setup admits Dagger before candidate preparation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ddfbc85fc5f45313589051580d96912e39b3a7e",
+            "content": "sha256:a500dbafd07c3152de1eb1ca29dc220699d6b225160005b1113116953b6ba2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_certifying_pytest_bootstrap"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retry execution retains exact explicit affected modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81f720761fefb6324ddcadc1765b211667d6ca3c",
+            "content": "sha256:716e3b8067e9eb1957cc60dab531e0d731a9e90b2a1fadc0830d99ea9a4f5482",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_modifyitems"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/retry_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

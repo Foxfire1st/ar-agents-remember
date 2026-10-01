@@ -1,0 +1,221 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/effect_refusals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The label refusal: the observed label and the nine admitted values as facts, with no synonym and no nearest match.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67f4e15e5c63ae4dd348f93498436b742d7a4e9e",
+            "content": "sha256:b73968a83735c5b151ecf2cbce73c4bc1c1c3b1faa76560a41cbb644ba1b3431",
+            "locator": {
+              "kind": "symbol",
+              "name": "effect_label_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shipped code vocabulary these three codes stay inside; no new member was added by this leaf.\n\nAnchor: \"KnowledgeRefusalCode = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:12fa1866d1db2c3499769a35939717f0e720d051b99867ba1d9063abe2ff4a3a",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The cardinality refusal, whose `observed` fact is the declared label and the two counts, and whose `expected` comes from the rule's own text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67f4e15e5c63ae4dd348f93498436b742d7a4e9e",
+            "content": "sha256:787c12be7f0c2e992022a877980fd854aec43d32fed76001f69e12c598849dab",
+            "locator": {
+              "kind": "symbol",
+              "name": "effect_cardinality_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The succession-cycle refusal: the self-naming case and the longer cycle are one refusal from one rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67f4e15e5c63ae4dd348f93498436b742d7a4e9e",
+            "content": "sha256:ed45bcf9c1d347df47589540c2fe1218ed3c56a272c526b495a95882e4def687",
+            "locator": {
+              "kind": "symbol",
+              "name": "succession_cycle_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The duplicate-claim refusal, which only an *identical* declaration reaches; a differently labelled claim for one comparison is kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67f4e15e5c63ae4dd348f93498436b742d7a4e9e",
+            "content": "sha256:fc80b556aa92a007333d0ab2b988eb628bde212a142b655f940c5cb0143deeef",
+            "locator": {
+              "kind": "symbol",
+              "name": "duplicate_effect_claim_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The operation every refusal in this group belongs to, spelled narrowly so neither the refusal model nor the endpoint check needs a cast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67f4e15e5c63ae4dd348f93498436b742d7a4e9e",
+            "content": "sha256:17ab6b028f0075953b59be125c3db3197fe69a0edf0f41614d6132ec4ecce302",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_OPERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one rendering of the nine admitted values, read by both the refusal's `expected` fact and its `next_action`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67f4e15e5c63ae4dd348f93498436b742d7a4e9e",
+            "content": "sha256:660def1d8dd4fd3e09272dc11c72a6d7cd996f881f6f880da3ca964c7a5d6674",
+            "locator": {
+              "kind": "symbol",
+              "name": "ADMITTED_LABEL_LISTING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one cardinality rule, imported rather than restated so the two enforcement points cannot disagree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aafe998aace199abd97cba3a574645151209fc7f",
+            "content": "sha256:48a191f87410206d8200e14cb0b5a48594d1599745a00ad54235914b32dbd19d",
+            "locator": {
+              "kind": "symbol",
+              "name": "cardinality_violation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/effect.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aafe998aace199abd97cba3a574645151209fc7f",
+            "content": "sha256:f5275f6d3c01eb7836a72440dc871a2689205729483ae7cd594a89cd9707df10",
+            "locator": {
+              "kind": "symbol",
+              "name": "cardinality_rule_text"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/effect.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The nine-member effect vocabulary the label refusal reads its admitted set from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aafe998aace199abd97cba3a574645151209fc7f",
+            "content": "sha256:aff1727683a42211e8382807aa90861f209dfce6fc1b7e731719f2c76bdcea9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ADMITTED_EFFECT_LABELS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/effect.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aafe998aace199abd97cba3a574645151209fc7f",
+            "content": "sha256:4f6bafa442d8a0fb8b5cf5de60b167707c1bc248f83d5726d196621c27e687f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectLabel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/effect.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared spelling helper and facts type these factories build through — this module's only import from the shared refusals module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b83598a7c3d65dacbbc27f3e7e334a28f5be63918e3c741be171f543bc4acafe",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusalFacts"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:6df445afe35c2439f71f175bd7b9eef7fb8453546f96623e279db50b013f2c27",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

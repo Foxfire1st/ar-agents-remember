@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Runner settings and workspace paths are derived in GrepAI core.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:9dc8b3975d1a44f8f95019b86d5c704ae28d85fdd77967794ff05b780ed523c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_runner_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI action dispatch uses this module for start, stop, refresh, and bounded run readiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:8cd2f8a597b7c39ccf3a3789ed6a9f15733b598f4bc8e7651b6be9d9dd9ad1cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_docker_start"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "GrepAI project migration lives with backend startup and is reused here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:bdf5f145bde62da0c2b6a87bbae447264359ee6f9c4ad54d1eef1477667d4777",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_project_migration"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

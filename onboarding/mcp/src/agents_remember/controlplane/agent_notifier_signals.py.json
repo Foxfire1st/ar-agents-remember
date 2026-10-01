@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/agent_notifier_signals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Cooldown records carry structural and private correlation fields separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19724595ba8611fb7389bed26521ca305c1a75da",
+            "content": "sha256:c4e350e0086d8fae1a1daab7805ab0ac12ed1068dffff42a1ff696cb48bd95a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierSignalRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Target equality includes the full routed seat and finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19724595ba8611fb7389bed26521ca305c1a75da",
+            "content": "sha256:4f93710d4d007ae6605d81005c0d0f8a065b9cb1e25486d66117d185c9d55f0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierSignalKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store bounds and serializes cooldown evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19724595ba8611fb7389bed26521ca305c1a75da",
+            "content": "sha256:1a524aa39be9a7b1bbd14dd11fd4e496d4981fd15041c5f853a9363f5c813407",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierSignalCooldownStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

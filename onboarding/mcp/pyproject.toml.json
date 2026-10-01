@@ -1,0 +1,462 @@
+{
+  "path": "mcp/pyproject.toml",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The quality plan composes the selected development tools; coverage and production CRAP remain diagnostic.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "content": "sha256:10b854095f14037d602dab0dc7210a0441a03380b931c9552ade0e61e5dc2ebf",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_steps"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers.\n\nAnchor: `## Quickstart`, `## Install And Run`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fa4acedc86c1261ac0f3059f24d979a9ce28040",
+            "content": "sha256:d28186db32c2a9debc84471408c55eb91829b534c6e0fd9c9ad2952504f4b035",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/README.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fa4acedc86c1261ac0f3059f24d979a9ce28040",
+            "content": "sha256:a33cd8748552a71090a8e0825a2705df75df0151daa597accd657c8932acf78f",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator.\n\nAnchor: `runtime_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:517c8a6bf9dd9c30609d30101aa553af6e8a792f28a9d1c0a22c4f46ad748b69",
+            "locator": {
+              "end": 880,
+              "kind": "line_range",
+              "start": 880
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar.\n\nAnchor: \"npm run build\"; \"mcp/.venv/bin/python scripts/sync-dashboard.py\"; \".venv/bin/python -m build\"; \"agents_remember/package_data/dashboard.fingerprint\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f317b6f98a957906e5147f6a91f0c1630340979d",
+            "content": "sha256:4920eeefec172c781f641bf698c96ecbc4cc083c06c0ba90470dbaefc0156848",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f317b6f98a957906e5147f6a91f0c1630340979d",
+            "content": "sha256:02b17d86eea5557151a03f46a2a1223273faf7e7b24055879fd73944b7195268",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f317b6f98a957906e5147f6a91f0c1630340979d",
+            "content": "sha256:4aa22987a42c834e37f7e85f16c3b8ec516a8b160f0ae81daeb7548c64d90b61",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f317b6f98a957906e5147f6a91f0c1630340979d",
+            "content": "sha256:f866829aeefe6f2997fc71f638530478cf6a06d36c811a457afdfff78f8a1f0d",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The placement step whose output this recursive glob picks up at build time.\n\nAnchor: \"TARGET = REPO_ROOT\"; \"def sync() -> int:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:b53e5a5286172fb0a4772843ba3ed62331687bcb9939ec9c49e9066d4ee4272d",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:2a6bb56318c8b304bba99069b27f1d49f32c54568df8a19dbbf5952abe19e17c",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:3a64a457fd1246925ae37ea541dc9e2cd764b75f6bb92a31ba52d508f7aba116",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:e91c1751a7c3936c01e1c45b87b92daa50bb941805453a6783accf204a05dcb6",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Both generated dashboard paths are git-ignored, with the reason recorded inline.\n\nAnchor: \"/mcp/src/agents_remember/package_data/dashboard/\", \"/mcp/src/agents_remember/package_data/dashboard.fingerprint\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15dff1e651aa655888d4b896cf0305d858b01eb5",
+            "content": "sha256:0a8c6e6c23100def0cb8ce7c9eb79f601a514201255389c857ec009112541e7e",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": ".gitignore"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard.\n\nAnchor: \"no built cockpit bundle in this installation\", \"No dashboard bundle at %s; serving 503 on the static surface. Build it with: %s\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
+            "content": "sha256:cb5876cb58d0c60548339f9c133de86208617e353558355834678229e1edeb15",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/serving/static.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
+            "content": "sha256:18e93248d16db0d9d28d9f2b0f798f03b36fcb666a5325e611943f32c1dba319",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "mcp/src/agents_remember/serving/static.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The Ruff `target-version` that must track the supported minor declared here lives in the repository-root project file.\n\nAnchor: \"py313\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19f6ae8ae18913f975c8a01188667560312ecd77",
+            "content": "sha256:66849923cf1e429dc9be66b5ca9be29d75ada44505e180a10a193079e3826c7a",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Package metadata directly bounds the interpreter line and declares its Python classifier.\n\nAnchor: \"requires-python = \\\">=3.13,<3.14\\\"\"; \"Programming Language :: Python :: 3.13\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
+            "content": "sha256:3eb096cb5217e79f9cc0a130bccc64f134816969face2930f54e2f2b1beb97ac",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Root pytest configuration selects four workers by default.\n\nAnchor: \"-n=4\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19f6ae8ae18913f975c8a01188667560312ecd77",
+            "content": "sha256:3ba6c4ba535ae9033fbe06949ca6eca5c5c4f4375e101f3172ee3fcaf52092c4",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "19f6ae8ae18913f975c8a01188667560312ecd77",
+            "content": "sha256:70525e47cbd9f3178774a1352cbbf683c00a3ee8c8398143faa2d145d5881347",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public response contracts depend on Pydantic and token accounting depends on tiktoken.\n\nAnchor: \"pydantic>=2,<3\"; \"tiktoken>=0.12,<1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
+            "content": "sha256:b1a2b61702e74b4bd237f0a9b3190faab80b5b73f1c048c570f979057e1014fb",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
+            "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The knowledge store's SQLite binding is exact-pinned, with the session/build-option reason recorded inline above the entry.\n\nAnchor: \"apsw==3.53.4.0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
+            "content": "sha256:44db4b85a586f86da2ed7cc34e2a6af28fb512217074dfad5d406fb14c8c83fe",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The same exact pin in the checkout requirements manifest, which must agree with this file.\n\nAnchor: \"apsw==3.53.4.0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e755e6453e0f09911bbe4a91cdcc31f9b2b61b58",
+            "content": "sha256:46a04c2b98321faec862575eb95fefbd5596b21464b7114c968a8701099d74aa",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "mcp/requirements.txt"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The locked resolution carries the pin as a direct requirement plus the platform wheel set the exact pin selects.\n\nAnchor: \"{ name = \\\"apsw\\\", specifier = \\\"==3.53.4.0\\\" }\"; `apsw`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe705098ec154e1f02f9097da19929a24eed6ee",
+            "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/uv.lock"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fe705098ec154e1f02f9097da19929a24eed6ee",
+            "content": "sha256:7142fd68cef43eeb08e6226d3ee746655be17a130b7c5e2e10299ce6e267aa3c",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/uv.lock"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Production complexity scoring loads Radon and refuses when its development dependency is unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fbe2e519b5448fefb73065d075615300f042042",
+            "content": "sha256:6020f0f963ade11abf7177478e86936e8f8a52306299eac2ecfcb14ac264e6e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "complexity_blocks"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The MCP console entry point resolves through `agents_remember.mcp.__main__`.\n\nAnchor: \"from .server import main\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab78be40f9d47ecdb224d994180945115476b92b",
+            "content": "sha256:1b249d53c66b04a7e3fdbdf65ef7c10a5193731499fdbaf1cda4f9fe39bb1929",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/mcp/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
+            "content": "sha256:8ba8940d7686bf3dd467ec8790e7670c5edfd14b6f842150163d0a6bc041b93c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_convert.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a427c4a06e479418c26e61261ac237036221c33a",
+            "content": "sha256:cb49f9717d1255debcfeee659757ff1bbdcd9f2b718cd95b399df20720a6e947",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The run: convert, report, write unless checking, exit status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a427c4a06e479418c26e61261ac237036221c33a",
+            "content": "sha256:e631c1b11216c787ff9129d0c0258450160d463f25b66772f9dd5615d6796756",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The umbrella registration.\n\nAnchor: `knowledge_convert`; \"knowledge-convert\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:78bf7ea52798639925cff6048b1f51e086ddb12d000042dd4f29bea084924d52",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The conversion it drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed2ab738479059526e1b54164853b9f02681dc7a",
+            "content": "sha256:2ce00211f0e556d927091ddb1985ea255f143356e7d6fe10e0dec936a1dbc7fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "convert_memory"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/convert.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

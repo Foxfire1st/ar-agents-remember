@@ -1,0 +1,167 @@
+{
+  "path": "mcp/tests/test_repository_certification_profiles.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Two language distinct repositories compile the same four gate protocol",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:33c745f0ff3cff9dfc8360de4986826396f361020248d90dc3bef68ae25a1c70",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_language_distinct_repositories_compile_the_same_four_gate_protocol"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Invalid graphs refuse before plan compilation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:2c79e48f4dec13e3a8fe991a587cd8cdc89a2fa2b48ab9bb5a9466076d6f0215",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_graphs_refuse_before_plan_compilation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Profile edit changes profile and plan identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:3e12b468bac85dbe3b1ea2c6ac7f62b13487ca407548579fc85486e28da8a64f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_profile_edit_changes_profile_and_plan_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Later gate edit retains earlier gate plan identities",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:96a5d25240a7185e17c3bc37f2d990c8c32f180f40297257f81fc54ca68f1065",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_later_gate_edit_retains_earlier_gate_plan_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Explicit not applicable gate remains typed and visible",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:4f9c13b76f19addc4566565a6b481eadd3a8d741656e44eb7bafac716a144a90",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_explicit_not_applicable_gate_remains_typed_and_visible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Distinct fixture adapters and decoders complete the declared protocol",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:91f0a8651c9ec96ea1b22eacc2d25876869a1a9e6a78b4a62c3b35ced4eeb4b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_distinct_fixture_adapters_and_decoders_complete_the_declared_protocol"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Result decoder refuses a symlink escape",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:845d702dd7992a37470ca7b6ad94070e040522c6d24ccff56393771ff1508b6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_result_decoder_refuses_a_symlink_escape"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Repository profile selector refuses an unadmitted absolute output",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:71c4ea4d78012517344fc93ea35166c314a32eb466b48b89467ed152a4d545ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_profile_selector_refuses_an_unadmitted_absolute_output"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Selector result refuses unreasoned output and targeted full expansion",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:3a23c68e37590b6e137c7235c80de473267900e8c7e750f077ac8f8d5f050d51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_selector_result_refuses_unreasoned_output_and_targeted_full_expansion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Repository profile teardown adapter requires a passing cleanup checkpoint",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
+            "content": "sha256:e805a1232cdc9e052b9402d4cbda707aabb2971e3cba33b59eb246f67fb86943",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_profile_teardown_adapter_requires_a_passing_cleanup_checkpoint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

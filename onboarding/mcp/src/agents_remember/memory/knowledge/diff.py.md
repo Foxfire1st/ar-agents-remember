@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/diff.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/diff.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T03:15+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -153,52 +143,42 @@ here so a successor does not read the comparison as fully covered; they are evid
 closers, not behavioural defects. The leaf's contested evidence items were carried to `KS-R09`/`L9`
 (ledger entries **A9**/**A10**).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The declared field projection: which `ReadItem` field carries each compared record field.** | `FIELD_PROJECTION` | mcp/src/agents_remember/memory/knowledge/diff.py:66-76 |
-| **The five anchor fields an observation is compared on, with `detail` deliberately absent.** | `_ANCHOR_FIELDS` | mcp/src/agents_remember/memory/knowledge/diff.py:82-88 |
-| The declared union stream order and the read-kind mapping, and the advertised-pair identity. | `_KIND_ORDER`; `_KIND_BY_READ_ITEM`; `ADVERTISED_ID_SEPARATOR`; `advertised_item_id` | mcp/src/agents_remember/memory/knowledge/diff.py:93-117 |
-| The per-side view, the per-side lineage and the pair of them as one value. | `SideView`; `SideLineage`; `ComparisonView` | mcp/src/agents_remember/memory/knowledge/diff.py:121-149 |
-| **One union item: both payloads, its coverage, its transition, its changed fields, its reachability and its source comparison.** | `DiffItemComparison` | mcp/src/agents_remember/memory/knowledge/diff.py:153-172 |
-| **The whole comparison value, including the four per-side selected sets a caller compares the union against.** | `DiffComparison` | mcp/src/agents_remember/memory/knowledge/diff.py:176-197 |
-| **The one entry point: the two sides, the two lines, the union, the order and the aggregate counts.** | `compare_selected_scopes` | mcp/src/agents_remember/memory/knowledge/diff.py:200-264 |
-| The union construction, its stable key, and the claims map the source half reads. | `_union_items`; `_union_key`; `_claims_by_id` | mcp/src/agents_remember/memory/knowledge/diff.py:267-306 |
-| **The per-item comparison: coverage, projection, the record half and the source half.** | `_compare_one` | mcp/src/agents_remember/memory/knowledge/diff.py:309-357 |
-| **The six record transitions, recognised from the authored predecessor edge and from nothing else.** | `_record_transition`; `_SUPERSEDABLE_KINDS`; `_replaced_revision`; `_supersedes`; `_selected` | mcp/src/agents_remember/memory/knowledge/diff.py:360-457 |
-| **The coverage decision: the three rules, the direction each was measured in, and the family-half caveat.** | `_coverage` | mcp/src/agents_remember/memory/knowledge/diff.py:460-522 |
-| **The existence question each kind asks of the other snapshot, by its own key.** | `_recorded` | mcp/src/agents_remember/memory/knowledge/diff.py:525-544 |
-| The projection, the field comparison that runs only when both sides hold the record, and the claim's own two authored fields. | `_project`; `_changed_fields`; `_claim_changed_fields` | mcp/src/agents_remember/memory/knowledge/diff.py:547-593 |
-| The content comparison and the anchor signature the source half is built on. | `_comparable`; `_anchor_signature` | mcp/src/agents_remember/memory/knowledge/diff.py:596-612 |
-| **The source comparison, the four booleans, and `missing_side` as the reason they are all false.** | `_source_change` | mcp/src/agents_remember/memory/knowledge/diff.py:615-656 |
-| The reachability labels and the declared stream order's implementation. | `_reached_via`; `_ordered`; `_first_present` | mcp/src/agents_remember/memory/knowledge/diff.py:659-686 |
-| The existence probes and the predecessor-edge union this module consumes. | `invariant_revision_is_recorded`; `family_revision_is_recorded`; `membership_is_recorded`; `realization_claim_is_recorded`; `fetch_predecessor_edges` | mcp/src/agents_remember/memory/knowledge/read_queries.py:311-320; mcp/src/agents_remember/memory/knowledge/read_queries.py:323-332; mcp/src/agents_remember/memory/knowledge/read_queries.py:335-342; mcp/src/agents_remember/memory/knowledge/read_queries.py:478-491; mcp/src/agents_remember/memory/knowledge/read_queries.py:455-475 |
-| **The node that owns the union-side property the two rules serve, and the removed-realization node whose failing assertion is the load-bearing `assert 'unchanged' == 'removed'`.** | "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence"; "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union" | mcp/tests/test_knowledge_diff_scope.py:398-504; mcp/tests/test_knowledge_diff_scope.py:283-316 |
-| **The nodes that hold the two change statements apart and measure the record comparison field by field.** | "test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other"; "test_the_record_comparison_reports_exactly_the_payload_field_that_changed"; "test_a_source_only_change_is_reported_as_a_source_observation_and_no_record_field_changed" | mcp/tests/test_knowledge_diff_boundaries.py:510-540; mcp/tests/test_knowledge_diff_boundaries.py:543-597; mcp/tests/test_knowledge_diff_scope.py:151-193 |
-| The fixture's two snapshots and the transitions between them that this module's states are measured against. | `build_diff_fixture`; `DiffFixture` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/diff_scope_test_support.py:148-186 |
+- **The declared field projection: which `ReadItem` field carries each compared record field.** [1]
+- **The five anchor fields an observation is compared on, with `detail` deliberately absent.** [2]
+- The declared union stream order and the read-kind mapping, and the advertised-pair identity. [3]
+- The per-side view, the per-side lineage and the pair of them as one value. [4]
+- **One union item: both payloads, its coverage, its transition, its changed fields, its reachability and its source comparison.** [5]
+- **The whole comparison value, including the four per-side selected sets a caller compares the union against.** [6]
+- **The one entry point: the two sides, the two lines, the union, the order and the aggregate counts.** [7]
+- The union construction, its stable key, and the claims map the source half reads. [8]
+- **The per-item comparison: coverage, projection, the record half and the source half.** [9]
+- **The six record transitions, recognised from the authored predecessor edge and from nothing else.** [10]
+- **The coverage decision: the three rules, the direction each was measured in, and the family-half caveat.** [11]
+- **The existence question each kind asks of the other snapshot, by its own key.** [12]
+- The projection, the field comparison that runs only when both sides hold the record, and the claim's own two authored fields. [13]
+- The content comparison and the anchor signature the source half is built on. [14]
+- **The source comparison, the four booleans, and `missing_side` as the reason they are all false.** [15]
+- The reachability labels and the declared stream order's implementation. [16]
+- The existence probes and the predecessor-edge union this module consumes. [17]
+- **The node that owns the union-side property the two rules serve, and the removed-realization node whose failing assertion is the load-bearing `assert 'unchanged' == 'removed'`.** [18]
+- **The nodes that hold the two change statements apart and measure the record comparison field by field.** [19]
+- The fixture's two snapshots and the transitions between them that this module's states are measured against. [20]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The two repositories a comparison names are
 **code trees** the caller resolved, and this module reads neither of them: it compares two database
 connections the caller opened.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 3 citations into `mcp/tests/test_knowledge_diff_scope.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): created this one-to-one card for the two-snapshot union. It states the module's single claim — **the comparison is the union of two independently selected sets with each item retaining its snapshot** — and the four steps that build it, then documents the two contracts review corrected most. **The coverage rules are recorded with the measured direction of each rather than as three equal deciders:** rule 1 is load-bearing alone (variant `A`, two assertion kills); rule 2 cannot decide a state its neighbours do not, because an authored edge is a foreign key into the snapshot that declares it, so it is kept as a cheap short-circuit and its **invariant half is asserted while its family half is unexercised** (the fixture authors 0 `family_predecessor` rows — a stated gap, not coverage); and rule 3 is load-bearing in the **forced-present** direction (`C'`, two kills, plus `M24`), while forcing its answer absent changes no asserted state on this population (`C`, 28/28 survivors). The card records that collapsing the three is wrong because it **turns a missing selection into a real absence**, and that the leaf's first statement of that reason was the reverse and is withdrawn. It also records the four carried limits with their named closers (`M4`, `M8`, `M27` covered gaps; `M23` a non-experiment with its bound carried), the three equivalent mutants as **proved equivalences rather than kills** (including the instruction not to delete `_project`'s narrowing without deciding `FIELD_PROJECTION`'s fate), and the source half's `missing_side` semantics. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
+No meaningful cross-repo references found.

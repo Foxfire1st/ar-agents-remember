@@ -1,0 +1,222 @@
+{
+  "path": "mcp/src/agents_remember/serving/response_contract.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The served vocabulary of the leaf view's own recordedness, and its default for every existing caller.**\n\nAnchor: \"state: Literal[\\\"recorded\\\", \\\"unrecorded\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafChangeSet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:159da6ef49727c547882faaa0c6c5f07ceb45e0cb5d62d237e27fa9db7490f89",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The producer that publishes it, with the counter zero it exists to annotate.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The client mirror and the control that renders the state and withholds the total.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:1d08d2d1e3b9ee475152be5029ffa52b02d3079169aeca5d205633f21c468331",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskChangeset"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:e35cabbbff34cd2a8ca427ea32bb54c51df1efc804f65d529106da5de03ea2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetButton"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The cases that measure the discriminator and the route status.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:b9332aae10fd5065c5bc4ba35205b40390de7a58b9ce8e9b63c01de77f68e38b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:c797f9387e3d9d2b955ce41e52637dc378b31de1f07fa17e47c7801bd65c1741",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_answers_an_unrecorded_committed_view_without_a_status_error"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The master-net generation identity (four endpoints + digest) and the served net's `generation` + `currentness` + `scope`; leaf rows carry `committed`/`working` state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:f64c082d90fbb42c45415faf0fed88e15e456ce9c1b4d3bfccd27c9e4b686b03",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNetGeneration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:dde80e31f24d9d4836c324eaa93b07012c54462ca77b232373d84670f5e882b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterChangeSet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:bbbb25e8523b159636c4217b70b8618bc867bb38c88eb3b0cde709926030ce4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The leaf view's own recordedness: the `state` discriminator, its `recorded` default, and the route's sentence it carries (260921-ICR-L25).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafChangeSet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:159da6ef49727c547882faaa0c6c5f07ceb45e0cb5d62d237e27fa9db7490f89",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The catalog wire mirrors structural binding, replacement, and the private dispatch receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:99d12fb092b2aaee432f74aab4ded60d437f14818ef6d2e7c33bad36582e28b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalogEntryWire"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Open and seat-conflict responses carry structural identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:0d48bf4c3921c4f055a62be30df77cd363018e46aae040503a1f5f370b8745a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpened"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Task assignment success/refusal use task-document identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:f38e5b44460554fe46bf88809cbf5bcf8bd8db31457bd37f06a4a8f5988f8e06",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalTaskAttached"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

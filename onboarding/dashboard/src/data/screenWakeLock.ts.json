@@ -1,0 +1,70 @@
+{
+  "path": "dashboard/src/data/screenWakeLock.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Visibility, release, and overlapping-acquire handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505865bf7a78f9816dc2d5544162cf9c0e92c3b0",
+            "content": "sha256:4dee0d4c201a1796e31c959ca51078d0e1f8db40b32819c6ce9ecabfb47c7d89",
+            "locator": {
+              "kind": "symbol",
+              "name": "startScreenWakeLock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cockpit startup owns the returned lifecycle.\n\nAnchor: \"} from \\\"react\\\";\"; \"import { startScreenWakeLock } from \"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1bfee08e533d7fdd1b4e65ceeb2656de61f30f1",
+            "content": "sha256:08b8bd133a0e18ed1096568fc817b9ab856652a56f71ff512bb6015ffa2ca149",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1bfee08e533d7fdd1b4e65ceeb2656de61f30f1",
+            "content": "sha256:ce3e0150659079d77f1751f95b88af50229efa4af6fec3f03153e4fe0db78919",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The optional browser API is wrapped locally.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505865bf7a78f9816dc2d5544162cf9c0e92c3b0",
+            "content": "sha256:464f96b71d5655a91eec74e94f3f00cad39e7fd682a01b7fa3331d43fe812ac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "wakeLockOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

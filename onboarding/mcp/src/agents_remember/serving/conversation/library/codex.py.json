@@ -1,0 +1,185 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/codex.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The library owner maps native lists and reads, verifies cursors, and mints resume targets after exact identity checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15c9d9e77817ceeeae851da545c349d5e178c680",
+            "content": "sha256:9e19c6b816d8b22e0c04fe7d32004e5cb31e1a5db02411b4f2f0470c7b49be73",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexConversationLibrary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Native Codex payload shape failures become typed library-store errors rather than fabricated history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15c9d9e77817ceeeae851da545c349d5e178c680",
+            "content": "sha256:138a2ed90d920234071f47ce901c857d86dd40aaf795dc66f533930f8e16baea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_shape_error"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Native agent rows require their actual parent and grouping evidence; no unproven agent identity is fabricated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15c9d9e77817ceeeae851da545c349d5e178c680",
+            "content": "sha256:9ad5ad33ed6e7fed5d37bc8f7d28aa26d674c47907c93488430fd55075c16563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks.\n\nAnchor: `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:b4401fa48501825e6ebace6acf0357f9e2bc9aa23c733b7385e718e4e873270f",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_initialize_response"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:8bd9706755bf6bcda90abdd6a2e3b4a63fe158c576eb93936687801cff5ec95a",
+            "locator": {
+              "kind": "symbol",
+              "name": "iso_from_epoch"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:89fc76af12d04a4c4523df9e5e8a91b387a37ae18dfbe6202439a81e5a0d890b",
+            "locator": {
+              "kind": "symbol",
+              "name": "required_object"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:d472e4357ac3d6bf84a3f390721080585e3ab645a21430b787903daf221cdbb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "required_text"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:bb29163bdb599cf4a0255010a88374b41b82a862432f44f05544e1070df76a4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "required_list"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:52c9063acb784aec2f0db6dbf34f4a872ab30d53a3ac47f874cfd3480b606e35",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:639eff5726f64736bca8e3f86a9d57d87128b869a6f359f59908b5cf27d71039",
+            "locator": {
+              "end": 566,
+              "kind": "line_range",
+              "start": 561
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:06a384b4e9902db87bfaf03c171a54dcf21ccedd40278ee2a322c74328cc2450",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 585
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:53baeea230360afe10b935426bdfdbe75085e929e1cea84a03735895f872ba67",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 595
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:efc55118af2b1dca03662b28094ea471b4d18f2558fac810bbad6b25bbb5338e",
+            "locator": {
+              "end": 606,
+              "kind": "line_range",
+              "start": 602
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

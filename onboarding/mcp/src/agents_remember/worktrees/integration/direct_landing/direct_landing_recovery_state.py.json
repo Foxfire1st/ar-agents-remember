@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Typed classification checks actual code, memory repository/ref, and candidate evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be974cfb747b9a8d6a659199e705f46c2d155e57",
+            "content": "sha256:3c0d26f8639f01f03b66ab813a112e19210a297a508d8789f96d58afbf4e20ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRecoveryClassification"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be974cfb747b9a8d6a659199e705f46c2d155e57",
+            "content": "sha256:b3369a5356fa614b8514eef70e1f7d87b2a347d2827253682b1461312c573c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_output_matches_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Memory receipt inference and output matching are based on actual Git lineage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be974cfb747b9a8d6a659199e705f46c2d155e57",
+            "content": "sha256:b7a4abd67f38188672caf96e3df1ced668fb25d0f5293b64d2f0369638e53921",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_recovery_outputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be974cfb747b9a8d6a659199e705f46c2d155e57",
+            "content": "sha256:b3369a5356fa614b8514eef70e1f7d87b2a347d2827253682b1461312c573c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_output_matches_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Prepared and committed intent convergence retain exact ref/tree checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be974cfb747b9a8d6a659199e705f46c2d155e57",
+            "content": "sha256:faf27bcfc55353546874d0b2851904162724befa4d344b8ad9c13448ca9bef3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mutation_intent_converges"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be974cfb747b9a8d6a659199e705f46c2d155e57",
+            "content": "sha256:7df48e44f5fae0fc8167560d2d5e43eb0e10bf5e590e949ccf6a2dc0ed06317f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_committed_intent_converges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared snapshots exclude cache data while retaining actual objects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:8e25de5b2bec6a3e47821213ae384a185a78a94bd2c1f7cb3f3dcd9511ee4927",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_is_clean_at_head"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:19c51b9844d66464c3c424d576ca19666580a7582628f1b97c3ede6a0b6d1dcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exclude_cache_from_index"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Recovery tests reject code/ref/content drift and accept cache absence or damage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
+            "content": "sha256:a096b135eb3b68c3bc32a895b09cee585bd9ba58dc7052409b1a8045464334ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recover_after_interrupted_receipt"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
+            "content": "sha256:04010af4035543f16e10e1a085e08495cb9f7a998f349c69adf9950414a4cf4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_publishes_memory_and_recovers_independently_of_cache"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

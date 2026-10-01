@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_logs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The parser binds recent cwd-matching logs and distinguishes user messages from Claude command evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591223324bac9a1e361e91e879fe131dca2b5273",
+            "content": "sha256:5a6146780ec627ce789f3ed58ad939fa8668fc2fbbf1da9557ca2750ec0140ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessSessionLog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The injector supplies the unique message id or command text and chooses calibrated acceptance windows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d61509a5729f3bc17908fdd7e111859e5cd77529",
+            "content": "sha256:179a57ebd4651816971c08db623f59f67544bd3090e58f89890d8469e912140d",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver"
+            },
+            "path": "mcp/src/agents_remember/serving/injector.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

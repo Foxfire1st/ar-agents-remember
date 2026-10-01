@@ -1,0 +1,73 @@
+{
+  "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "PR-4 defines both explicit-graph and graph-less activation review.\n\nAnchor: `### PR-4 — Order-respects-edges`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e55dad68ba351cb50941db3bf47c3f4c03e9e77",
+            "content": "sha256:15c532779777404947b1de5c9579138abd5e3d41336886feedf712199ceb2a8b",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Strategist doctrine authors the topology choice under review.\n\nAnchor: `# Strategist`; \"Choose the topology explicitly.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf0a2e76f7851a18f089e32ee0fb9c21b45d1d4b",
+            "content": "sha256:66e61aa88724f9f62f7235690163c3dc03d5797f6c0f94be6cd6b0c2375c21ff",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf0a2e76f7851a18f089e32ee0fb9c21b45d1d4b",
+            "content": "sha256:103da3c5211c87729494a0bf94d28a1139ff54d3c44b03d53c6a510ee5618fcb",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The template renders the graph-less activation walk explicitly.\n\nAnchor: \"## Derived Waves And Blocker Walk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07998616f4c61d68672ee7cc4f7981d644c382e8",
+            "content": "sha256:3403a9462de0b85308dd505c41026677b5be5ebe3968c804bf6c5b8c919fcf8c",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/orchestration-task.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

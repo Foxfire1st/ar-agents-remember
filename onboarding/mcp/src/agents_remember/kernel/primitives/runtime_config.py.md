@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/primitives/runtime_config.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/primitives/runtime_config.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [kernel primitives overview](overview.md)
@@ -182,24 +172,24 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
   existing settings files with no `retirement` key keep auto-land ON, not off, unlike `dashboard`'s
   off-by-default posture.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The process entry point owns `load_config`; `create_server` receives the resulting typed config and passes it to application initialization and every tool registrar. | "def main(argv:"; "def create_server(config: McpRuntimeConfig) -> Any:" | mcp/src/agents_remember/mcp/server.py:58-58; mcp/src/agents_remember/mcp/server.py:77-77 |
-| Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. | "class McpConfigTests(unittest.TestCase):" | mcp/tests/test_config.py:46-252 |
-| `DashboardSettings` defines the boot-snapshot auto-start and port values; the daemon supervisor consumes them to gate autostart and choose the endpoint port. | `DashboardSettings`; `maybe_autostart_dashboard`; `_autostart` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:90-95; mcp/src/agents_remember/serving/daemon.py:338-358; mcp/src/agents_remember/serving/daemon.py:361-366; mcp/src/agents_remember/kernel/primitives/runtime_config.py:98-103 |
-| Gate delegation policy validation lives in controlplane. | `make_gate_policy`; `apply_seam_verdict_requirement` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:75-107; mcp/src/agents_remember/kernel/primitives/gate_policy.py:130-149 |
-| The dedicated `providerDegradation` parser validates the authority block and constructs typed settings. | `parse_provider_degradation_settings` | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:58-128 |
-| `config_from_mapping` calls that parser and translates `ProviderDegradationSettingsError` into `ConfigError`. | `config_from_mapping` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:241-290 |
-| `evaluate_provider_degradation` consumes `config.provider_degradation` for enablement, sample limits, and classification thresholds on every evaluation. | `evaluate_provider_degradation`; `provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
-| `load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block. | `load_agentic_settings`; `_parse_orchestration`; "def parse_gate_delegation(" | mcp/src/agents_remember/kernel/_agentic_settings_policy.py:28-28; mcp/src/agents_remember/kernel/agentic_settings.py:209-244; mcp/src/agents_remember/kernel/agentic_settings.py:349-384 |
-| `parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser. | `parse_orchestration_settings`; `_parse_legacy_authority_gate_delegation` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:538-571; mcp/src/agents_remember/kernel/primitives/runtime_config.py:574-606; mcp/src/agents_remember/kernel/primitives/runtime_config.py:629-661 |
-| `provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
-| The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. | `_provider_operation_result`; `ProviderOperation.required_provider` | mcp/src/agents_remember/application/provider_tools.py:961-1008 |
-| Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-156 |
-| Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. | `codex_benchmark_prepare_tool`; `codex_benchmark_run_tool`; `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:64-84; mcp/src/agents_remember/application/benchmark_tools.py:137-144; mcp/src/agents_remember/application/benchmark_tools.py:87-134 |
-| Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. | `install_runtime`; `install_runtime_from_config` | mcp/src/agents_remember/install/runtime.py:462-553; mcp/src/agents_remember/install/runtime.py:556-615; mcp/src/agents_remember/install/runtime.py:633-651; mcp/src/agents_remember/install/runtime.py:829-911 |
+### Repo-Internal References
+
+- The process entry point owns `load_config`; `create_server` receives the resulting typed config and passes it to application initialization and every tool registrar. [1]
+- Config tests cover authority rejection, harness-root inference, provider derivation, and include containment. [2]
+- `DashboardSettings` defines the boot-snapshot auto-start and port values; the daemon supervisor consumes them to gate autostart and choose the endpoint port. [3]
+- Gate delegation policy validation lives in controlplane. [4]
+- The dedicated `providerDegradation` parser validates the authority block and constructs typed settings. [5]
+- `config_from_mapping` calls that parser and translates `ProviderDegradationSettingsError` into `ConfigError`. [6]
+- `evaluate_provider_degradation` consumes `config.provider_degradation` for enablement, sample limits, and classification thresholds on every evaluation. [7]
+- `load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block. [8]
+- `parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser. [9]
+- `provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated. [10]
+- The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent. [11]
+- Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree. [12]
+- Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests. [13]
+- Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority. [14]
 
 | Retirement settings declare the two default-on cleanup toggles. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:111-121 |
 | Integration consults its retirement setting at the completed edge. | `worktree_integrate_tool` | mcp/src/agents_remember/application/worktree_tools.py:479-564; mcp/src/agents_remember/application/worktree_tools.py:400-413 |
@@ -211,108 +201,3 @@ As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewer
 ## 260815-DAG-L4 Authority Boundary
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
-
-## Update History
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `McpConfigTests` repointed to mcp/tests/test_config.py:46-252. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new optional RepositoryScope.certification_profile field and its canonical-relative-path parser (_optional_repository_profile_reference) wiring the repository-owned certification profile into runtime config.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `McpRuntimeConfig.direct_execution_enabled` —
-  fail-closed policy gate for sanctioned direct execution (`parse_direct_execution_enabled`,
-  bool-only; default `False`; `_checkout_runtime_config` pins it off). Verified at code commit
-  a9d50e08.
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: `load_config` now selects a deterministic synthetic
-  config for undeclared linked-checkout execution before reading caller-supplied settings, and
-  refuses undeclared primary-checkout execution. Verification metadata remains pinned until
-  approved closeout.
-
-- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the seven configuration relationship groups (9 repairs, 2 normalisations, 0 declines); the runtime group was split across both install owners, and the locked final rerun was clean with frozen zero source/tokenize/parse/build telemetry.
-- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: corrected seven
-  underbound relationship groups without changing their approved meaning: server config ownership;
-  degradation parsing/translation; agentic/global-versus-legacy orchestration loading; watcher
-  gating; worktree setup; benchmark filtering; and runtime install derivation. Cross-owner groups
-  were split where needed, and every changed binding is a provisional `:1-1` input for the fresh
-  Luna curator; no citation mechanics ran.
-- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
-
-- 2026-08-04T00:59:36+02:00 — 260731-EFA-L6 S18-SR1 worker correction: source-first repaired the
-  seven B06 configuration relationship groups. Loading is owned by `main`/`load_config`; daemon,
-  provider-degradation, boot-snapshot gate-delegation, live provider-authority funnels, and both
-  retirement hooks now point to their actual consumers. New or rewritten bindings remain honest
-  `:1-1` inputs for the later scoped fixer; preserved the prior B06 entry and ran no citation
-  mechanics. Verification metadata remains pinned until closeout stamps the L6 code commit.
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped configuration citations; final exact frozen-snapshot check is clean.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: **mechanical only, attested unchanged.** The
-  file's diff against `c1dc505` is two `ruff format` line rewraps —
-  `require_provider_launch_authority`'s parameter list and one
-  `_warn_legacy_gate_delegation(...)` call — with no behaviour, signature, key, or default touched.
-  Every claim in this sidecar was re-checked against the current source and still holds; the prose
-  was deliberately not rewritten. (The whole-tree reformat is commit `00e8379`.)
-- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): renamed the completion toggles to
-  `auto_land_on_integration`/`auto_land_on_finalize` and the settings keys to
-  `autoLandOnIntegration`/`autoLandOnFinalize`. The parser still accepts HFX-L8's
-  `autoRetireOnIntegration`/`autoRetireOnFinalize` aliases so already-written authority files do not
-  fail boot during the semantic rename; the new keys take precedence when both are present.
-  Verification metadata remains pinned until closeout stamps the HFX2-L11 commit.
-
-- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity +
-  turn-state): added `KNOWN_RETIREMENT_FIELDS`, the frozen `RetirementSettings` dataclass
-  (`auto_retire_on_integration`/`auto_retire_on_finalize`, both default `True`), the
-  `McpRuntimeConfig.retirement` field, and `parse_retirement_settings` (same fail-loud-unknown-key
-  pattern as `parse_dashboard_settings`); `config_from_mapping` now threads
-  `parse_retirement_settings(data.get("retirement"))` into the constructed config. `retirement`
-  deliberately stays a local MCP-authority boot-snapshot setting, not the global agentic settings
-  file. Verification metadata pinned until closeout stamps the HFX-L8 commit.
-- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `config_from_mapping` now parses
-  the optional `providerDegradation` block through the new dedicated
-  `provider_degradation_settings.parse_provider_degradation_settings` (wrapped into `ConfigError`)
-  and stores it on the new `McpRuntimeConfig.provider_degradation` field
-  (default `ProviderDegradationSettings()`). No change to any existing field's parsing behavior.
-  Verification metadata pinned until closeout stamps the HFX-L7 commit.
-- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): added `ProviderAuthority`,
-  `reload_provider_authority` (re-reads only the providers map from the authority file;
-  unreadable/invalid ⇒ empty map + `error`, fail-closed), and
-  `require_provider_launch_authority` (refuses with `ConfigError` when the disk disables
-  providers or cannot be read; returns the live-map config when armed). Verification metadata
-  pinned until closeout stamps the HFX-L1 commit.
-
-- 2026-07-07T12:50+02:00 — No content impact: L16's config.py change is message-wording only (the boot error/warning text now points at the harnesses manual); the parsing behavior and the boot-snapshot contract this sidecar describes are unchanged (review L16R-4 concurred the body is not stale).
-
-- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application, message-only): the authority-file
-  unsupported-`orchestration.*` refusal now enumerates the grown agentic family
-  (gateDelegation, loops, roles, rolesPerLevel, concurrency, spawn, harnesses) when pointing at the
-  global settings file. No parsing behavior changed. Verification metadata pinned until closeout
-  stamps the L16 commit.
-
-- 2026-07-06T22:20+02:00 — 260703-L13 (settings unification): gateDelegation re-homed to the
-  global agentic settings file (boot-snapshot through the kernel loader; authority-file value
-  = one-cycle legacy fallback with a boot warning, shadowed values warn as IGNORED); the
-  gate-delegation parse functions moved to `kernel/agentic_settings.py`; authority-file
-  `orchestration` now accepts gateDelegation ONLY (roles/concurrency/loops fail loud naming
-  the new home — the silent-drop trap closed); the dead `memorySettingsIncludes` plumbing and
-  `parse_path_list` removed (leftover keys tolerated-ignored). Verification metadata pinned
-  until closeout stamps the L13 commit.
-- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): requireReviewerVerdictAtSeams wired through the parse path (no longer inert). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-04T12:32+02:00 — 260703-L4: added optional
-  `orchestration.gateDelegation` parsing into `OrchestrationSettings`, defaulting
-  to all-human and fail-loud validating delegated roles, reviewer-verdict
-  requirements, and human-pinned kinds. Verification metadata pinned until
-  closeout stamps the L4 commit.
-- 2026-07-03T11:40+02:00 — 260703 L2: added the optional `dashboard` settings object —
-  `parse_dashboard_settings` → frozen `DashboardSettings(auto_start, port)` on
-  `McpRuntimeConfig.dashboard`, `KNOWN_DASHBOARD_FIELDS` fail-loud allowlist,
-  `DEFAULT_DASHBOARD_PORT = 8765`; defaults keep supervision off. Verification metadata pinned
-  until closeout stamps the code commit.
-- 2026-05-31T12:30+02:00 — `timeoutCaps` now rejects unknown cap names via the `KNOWN_TIMEOUT_CAPS` allowlist (`providerSetupSeconds`, `toolSeconds`); added the boolean `benchmarksEnabled`/`benchmarks_enabled` flag (`parse_benchmarks_enabled`); `ConfigError` now subclasses the typed `AgentsRememberError` family rather than `ValueError` directly (1.0.0 review remediation).
-- 2026-05-30T21:33+02:00: Documented `timeoutCaps` handling added in the 0.9.x run — `parse_timeout_caps` (non-negative-int caps), the fail-loud `ConfigError` on the renamed `providerSeconds` key, the `providerSetupSeconds`/`DEFAULT_PROVIDER_SETUP_SECONDS`/`DEFAULT_DOCKER_CONTROL_SECONDS` defaults, and the `ConfigError` (ValueError) contract. Verified against `8927f03`.
-- 2026-05-29T18:35+02:00: Extracted `_parse_repository_entry` from `parse_repositories` to reduce complexity; behavior-preserving (commit `e3dab63`).
-- 2026-05-28T12:32+02:00: Updated after transcript roots defaulted to `logs/mcp` and provider log roots moved under `logs/providers/`.
-- 2026-05-24T09:23+02:00: Updated after config coverage switched the normal Codex harness placement from `.agents/mcp` to `.codex/mcp`.
-- 2026-05-23T18:05+02:00: Created during direct closeout prep after MCP settings became the only authority route.

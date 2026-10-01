@@ -1,15 +1,5 @@
 # dashboard/src/dev/benchProbes.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/dev/benchProbes.ts`               |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-31T16:10+02:00                           |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -72,24 +62,14 @@ alongside the four Playwright config files and the four driver directories.
 - The `Window` augmentation must stay in exactly one file. Two augmentations of the same
   property in one program is the drift this module was created to end.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `cockpitScenarios.ts` imports `CockpitBenchProbe` + `CockpitResetAudit` from this type-only module. | "./benchProbes" | dashboard/src/dev/cockpitScenarios.ts:33-33 |
-| `cockpitScenarios.ts` installs the `window.__cockpitBench` probe used by the browser drivers. | "window.__cockpitBench =" | dashboard/src/dev/cockpitScenarios.ts:780-780 |
-| `cockpitScenarios.ts` installs the `__cockpitBenchResetAudit` reset-audit surface. | `__cockpitBenchResetAudit` | dashboard/src/dev/cockpitScenarios.ts:293-293 |
-| `PtyRenderBench.tsx` imports `PtyFrameStats` + `PtySerializeProbe` from this type-only module. | "./benchProbes" | dashboard/src/dev/PtyRenderBench.tsx:7-7 |
-| `PtyRenderBench.tsx` installs the initial `window.__ptyBench` probe state. | "window.__ptyBench = { done: false" | dashboard/src/dev/PtyRenderBench.tsx:100-100 |
-| `PtyRenderBench.tsx` installs the real-column-count `__ptyBenchCols` surface. | `__ptyBenchCols` | dashboard/src/dev/PtyRenderBench.tsx:154-154 |
-| The driver TypeScript project includes this file. | "src/dev/benchProbes.ts" | dashboard/tsconfig.driver.json:21-21 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
-
-- 2026-07-31T16:10+02:00 — Created for 260731-EFA-L2. The probe interfaces and the single
-  `Window` augmentation were extracted here from `cockpitScenarios.ts` and
-  `PtyRenderBench.tsx` so the app and the Playwright driver tsconfig project read one
-  declaration instead of two (or one plus `any`). No runtime behaviour moved. Verification
-  metadata is pinned to the leaf's reformat commit until closeout stamps the code commit.
+- `cockpitScenarios.ts` imports `CockpitBenchProbe` + `CockpitResetAudit` from this type-only module. [1]
+- `cockpitScenarios.ts` installs the `window.__cockpitBench` probe used by the browser drivers. [2]
+- `cockpitScenarios.ts` installs the `__cockpitBenchResetAudit` reset-audit surface. [3]
+- `PtyRenderBench.tsx` imports `PtyFrameStats` + `PtySerializeProbe` from this type-only module. [4]
+- `PtyRenderBench.tsx` installs the initial `window.__ptyBench` probe state. [5]
+- `PtyRenderBench.tsx` installs the real-column-count `__ptyBenchCols` surface. [6]
+- The driver TypeScript project includes this file. [7]

@@ -1,0 +1,360 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/classification.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of its subject and of what it deliberately does not have, including the two-member closure, the unclassifiable value routed to an unresolved limitation, and the \"no store, no cache and no persistence\" claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+            "content": "sha256:299743c615d259ed7b09b8321534c39b46b9e6c20e1c02daf7c53cd6d207f3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnresolvedLimitation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:9b792194e51a5f184ee5fbc852ad02a09ed87b4582b59a1d6c802820e000b809",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+            "content": "sha256:a7235eb689ee50a623ba937d771de0a219a2e344f41f3225e1a341b1b86bd8c1",
+            "locator": {
+              "end": 429,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one accessor that raises for a pair the registry does not carry, naming the sorted registry in its message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:f9ed99a8348ddf3181899f89003109362ec61b0c0e15355b831c20988cba675a",
+            "locator": {
+              "kind": "symbol",
+              "name": "mechanical_rule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The determination filter that returns the registered rules in registry order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:fe101218a314d2faaf91a7c669d027acce2f919f2273082f2b4ab6c6df8749aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "mechanical_rules_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The accessor that raises when the named rule determines a consequence and therefore names no ordering input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:a30ea72d2174fff78245c72326284dfb9582bb9b5122ca8704a8d28ac89cd3ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "ordered_input_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The authored reason as the author wrote it: an actor reference rather than free text, and a rationale bounded as prose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:cba8f88595469290b6ed1d476a47c22045ad2597d8b6c16226e68a976587bbef",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoredDetermination"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The provenance record that refuses both mixtures of the two determinations, requires both halves of the rule identity in the mechanical branch, and checks the registry on the way.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:b27df7823d2ccb9caa6f8b2c699d01bddc3343a67c7dfa8252712dcd356032ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_exactly_one_branch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The two builders, one per branch, so a caller cannot half-fill a provenance record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:baa4ed12c9da9992b3523e42096cbe6033926a346186c20f5fc7810a5afdb7c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "authored_provenance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:4fee9eda95be41674220c0147fc745c37979278d3d6608d94b2fcdfeca745a1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "mechanical_provenance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The frozen, `extra=\"forbid\"` base every shape derives from, with the three bounded-length constants this module's fields reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROSE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:3eb2f7176a3550df9b7a7a2ca0105cfb6a5c57f24a99169106b4587720a1715a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LABEL_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFERENCE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closed two-member class set, its two members as typed values, and the runtime tuple derived from the literal rather than restated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:5568411438ccaeb5953a415309f71c7ac6f86cc9b4cbfa10272b9446b5aa291d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLASSIFICATION_CLASSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The four admitted ordering inputs quoted from the declared prohibition, with the runtime sequence derived from the literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:d31dd5307b2b19bd7224a9e162160e7e9b7c4650f73a4a02826b70b338e71312",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrderingInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closed determination kinds and the registry version recorded beside every mechanical classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:3f2116d8ac4dcd7020905b5fabf03a624aaf9b9490b5e5f35c73b570941ac00d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeterminationKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:f63c0a1b325734593bb888946bd06e5d897dc8fe913e3696d5272745de082fe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "MECHANICAL_RULE_REGISTRY_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The registered-role grouping order read from the realization-role vocabulary's own declaration instead of being hand-copied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:6eaa0792a0e7f6846a6b527b5b5cbd17ec4829bcf40a72065b0809b48a4f2fd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "REGISTERED_ROLE_ORDER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:04ce117f509879f455d40f1f713e5577467d3d7b176c100922cc2680c0911db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationRole"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The failure that is an exception rather than a refusal value, so an unregistered rule cannot yield a default classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:bb52bc1bb77059a57f1946655bf36ee9b1ae8acdebbb755a7fdfaaf9fb0e3abd",
+            "locator": {
+              "kind": "symbol",
+              "name": "MechanicalRuleNotRegistered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One registered rule's declared fields, and the validator that refuses an ordering rule with no admitted input, a consequence rule that names one, and a rule that reads nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:cd7cfdc86d6e9b0a4866038df1eb8c111a963072c38a6c8b7cda6470f9761df9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_an_admitted_ordering_input"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The registry itself: eight rules declared as a tuple, four ordering rules with exactly one per admitted input and four no-consequence rules, each reading named recorded values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:d72132f0161ac3037adaae3a6ab1b103990961f9a57ae6d6b605461ea3a78e5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "MECHANICAL_RULES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The registry's lookup, keyed by rule identity together with rule version so both halves of the identity are required.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6fb2a1b51ed3b6cf2ec54110b9d62b67c078df",
+            "content": "sha256:fad9bd96565bbdd00d1cde34917fceb67191061fa8f3603bf9b7fde55b40a40b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MECHANICAL_RULES_BY_IDENTITY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

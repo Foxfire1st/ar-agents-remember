@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package initialization is documentation-only.\n\nAnchor: \"Repository-declared source applicability bound before plan compilation.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1881f3b8e8777085ef3fa92911f305cb30759999",
+            "content": "sha256:e15dc927200fa38100138c4541b346605199f86a06dc333b0f2d38b2fbd54ec6",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

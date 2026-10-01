@@ -1,0 +1,94 @@
+{
+  "path": "mcp/src/agents_remember/certification/frozen_run",
+  "references": {
+    "1": {
+      "note": "A frozen run revalidates exact original admission and complete-record identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "466536c3090c7f103403b2b484e2af5c1d6a32c9",
+            "content": "sha256:fe9bc53b2a7b6d4169ba19e8d26b1fcd8841e7d9056a0d6cafcc348d39815ebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrozenCertificationRun"
+            },
+            "path": "mcp/src/agents_remember/certification/frozen_run/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "466536c3090c7f103403b2b484e2af5c1d6a32c9",
+            "content": "sha256:4bb7a2c0d02b9efae4f4457a4a0c0ba24dc8c1071fb2bafcc143b06f9bd06bba",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_certification_run"
+            },
+            "path": "mcp/src/agents_remember/certification/frozen_run/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Candidate records separate semantic projections from exact derivation bytes and provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:7ae5e00b717c41c98aa87865282ab6d660d85c06c09832e6dbf36438d98051d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateAuthorityEnvelope"
+            },
+            "path": "mcp/src/agents_remember/certification/frozen_run/authorities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:559e1df169602b1656ad1181fd600f04819e03855aae3795a5b5b9a468e06556",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateAuthorityRecords"
+            },
+            "path": "mcp/src/agents_remember/certification/frozen_run/authorities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Production admission prepares and observes a candidate before compiling lifecycle recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a0e27c85cc1145fef22eaac8e76b040d30117cc",
+            "content": "sha256:c17a03574fbe306a7ad0d15274068b70e5329d7b95e0ca404326d21add4d374a",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_closeout_certification"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a0e27c85cc1145fef22eaac8e76b040d30117cc",
+            "content": "sha256:9ed9efd9cefba14a231f8a50f694ca0e4fe25c9426eb7f138d2480c5f20812b3",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

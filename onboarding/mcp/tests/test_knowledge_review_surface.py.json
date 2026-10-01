@@ -1,0 +1,756 @@
+{
+  "path": "mcp/tests/test_knowledge_review_surface.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the load-bearing properties, one case each, and the worked review of the design's §8 journey.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:a07b511ae3d93de9a1f4c96b9822c32a78e067305fe9f082f7ec38642dd30459",
+            "locator": {
+              "kind": "symbol",
+              "name": "FORBIDDEN_FIELD_NAMES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:1dd1f68e553198a87e1fdd652fe8fa2318abc68aa4b74d1d880391c1b8ecb684",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:6cc6e66a8df209892a18334d90f9e06b22af91252f06526d65f2c5c64c2a9e9e",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The missing-role boundary asserted at the display: unclassified, never guessed from a name.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:c9ced5b0c066f50dea45680d2d1971c375eb5df30c825d2d649925f2c4ea0237",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_role_stays_unclassified_and_is_never_guessed_from_a_name"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:0425754e8424bd0c3f8f033c00eba7b6ca933c6f264d8e0451abb9ac22110253",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 440
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The whole-schema walk for a field a generated conclusion could occupy, and the case that the vocabulary defines no record kind, table or status of its own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:aca19d05b37d6a1d1c865871e74edbe8f01b62d6fea11d403fe2beaab0bfb147",
+            "locator": {
+              "kind": "symbol",
+              "name": "walk_property_names"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:535cb473f9f95ad83f3a13acfbb28ccc885b19c299a435b6cf5713baa9188d79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_whole_payload_schema_has_no_field_a_generated_conclusion_could_occupy"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:9c1281290594bba0361c2b6c1b2421cb2cd241bfd24f88bee66760e1e0c9efef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_surface_defines_no_record_kind_no_table_and_no_status_of_its_own"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:4740425adb7f9375a88b0887f13e1d8cefec6e631157919f5ad2296f5191d544",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The stores-nothing case, measured as the two datasets' row counts being identical across a full render.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:925cc6fcf0f1d0f349463d2015440f9449e42130e5fa1be0339e0a34480245c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_surface_stores_nothing_so_deleting_every_rendering_loses_no_canonical_information"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:7eeb5f17e8b03d058206679bc4cbebc4453d130133e71649c2ab0a450e32b794",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 493
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The selects-nothing case, comparing the payload's identity and counts against the shipped comparison value for value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:a57eae007b6c8e049cde12a7b37638dbe4a828974ffc0721bc6eb3588e26f4e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:e33ce3f45ec28247a93d4bd4710d30dd7b5d4f188fee8d46941ccd8c9b7cd6e6",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 506
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The state cases: unassessed is unassessed; no evidence records reads `none_recorded` with source inspection still available; a passing observation is never invariant-satisfied; a signal carries no severity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:865fd63935dd59bd9a58bb5df21fbf5a82d2f1a02bd4da96a4422d1d3e9ef1c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unassessed_subject_is_displayed_unassessed_and_never_defaulted_to_compatible"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:1f3010a0dedf0225179fea0f21b5cb03a13804c69c22f68d89b84cf5cdb795cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_passing_observation_is_displayed_as_an_observation_and_never_as_invariant_satisfied"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:5e6625aa75ac04e82d6a12c214a35c1dc59082fa7a6ae74cd0fb57357cbbe740",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_detection_signal_carries_its_facts_and_scope_limitations_and_no_severity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:a6c463e0908dad4e6f299326c82580e4a052e93d96a0eb437d4f536c17406b14",
+            "locator": {
+              "end": 582,
+              "kind": "line_range",
+              "start": 558
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:1b169042a8a4b6a4e4c6743c8808762d1496a5e52f756619095005d584d4c757",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 585
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:376511f1939929d8f759f01dc93685f2d7aa688225fafdefe34392a1b1cee7a1",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 603
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The staleness pair, asserted from both directions, plus the absent-submission-path case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:e75eed75b1ca85e95163733a3d07486168d1859a54acd81823f40f9c1c616fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_stale_rule_holds_in_both_directions"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:9761a00e2945187edc15a04263eb5376e4aefed80eb836b67ff511a49475bfe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_surface_reports_the_absent_submission_path_instead_of_growing_a_private_one"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:377f6d1db4356a5823a4aef051698547c3d1c60704d5843af1c44c0f20387a54",
+            "locator": {
+              "end": 644,
+              "kind": "line_range",
+              "start": 622
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:85e9200aa32e2108ac160f5f120fa7076a938840589a8ce80accf5ca14c6b1cc",
+            "locator": {
+              "end": 656,
+              "kind": "line_range",
+              "start": 647
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The unresolved-author case and the missing-side case, both refusals rather than renderings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:d3db1b81c7cc98da6948711ee7ea05e7277628c9a7ed88c541526096e5332773",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_item_whose_author_is_not_published_is_shown_as_an_unresolved_reference"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:6ccfa76b579526620207be48e999658db5888ae6e79a8f92d742ddb89468830e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_side_is_its_own_state_and_never_an_empty_string"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:bcd410ed6d2b8dacbfe96263c906e1ced4b52b946ab7ef2aefe76452dd686bfa",
+            "locator": {
+              "end": 672,
+              "kind": "line_range",
+              "start": 659
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:422108f6a072aa6fd09c0e269840100ebc6f1841d8014c4293d8c1edca54c0f8",
+            "locator": {
+              "end": 689,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The two-disagreeing-assessments case and the measured matching-binding case — the currentness axis from both directions, and the case `260921-ICR-L15` renamed so its name and its input agree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:3ec9004afce7d8e2bccc8f7b57453e43cd78ab3999884efc7e0aceeec59b08e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_disagreeing_assessments_are_both_displayed_with_their_authors_and_no_resolution"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:8c554a0e6d5a212d4a6973a599af7d638274646d2f4009b3ded6b85e185adb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_complete_matching_measurement_reports_the_assessment_current"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:7b2795a606b2f3768b7f9893d8defb5fbc0590e90f1c86bac5d7ebfe2377047d",
+            "locator": {
+              "end": 718,
+              "kind": "line_range",
+              "start": 692
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The worked review of the design's §8 journey, and the case that closes it: a stale assessment is never reused.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:5a4b477b38b19d51d86b4bf996d08c50e2b83b2896e909edf48d634fff67e47a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_worked_review_journey_renders_every_step_it_walks"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:5738fe5b3ac6ac078f823f722b34b552d44bdbc30477f81982260bebd8a7d8b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_assessment_is_never_reused_as_a_review_of_the_new_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The pane-name case carries the surface's re-contracted entry catalogue (`260921-ICR-L9`): the catalogue the resolver offers is measured identity for identity against the two snapshots' own tables — every recorded invariant and family listed with its label and before/after presence, listing one never comparing it, a subject the comparison cannot answer for still listed (its reason carried by the review it opens), and an identity neither snapshot records absent.**\n\nAnchor: `read_subject_catalogue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:3e8f6a67f656ca3334cbf26120d731ed6dc21921c2223d439fc9f4325813856a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rendered_pane_types_are_the_three_the_design_names"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The lane declaration, which is a precondition rather than metadata.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The two cases this leaf (`260921-ICR-L2`) added: a knowledge-only change leaves an openable review whose inventory is a *measured* empty set while the comparison is untouched, and an inventory that could not carry a name is partial **by construction**, with all three refused shapes asserted — the first now also asserting the corrected attribution (measured empty partition, zero denominator, empty lists, locations still displayed). Since `260921-ICR-L7` the first case also asserts the same explicitly ambiguous selection as the rewritten pane case (the knowledge half is untouched by the empty source half — only the source measurement changed, and only the source pane answers for it).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:ca9f033c76a105fd9705d603b5df139629dbfc53a9a11ce74b77ab001706b984",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:1870b597ea8ffe4018bd695196ebba832f65b575cd6ac928090df35559b897c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_inventory_that_could_not_carry_a_name_is_partial_by_construction"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The leaf id the resolution reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:aefb9102af4af0998d69bb0e697be6e35744cc9683434b1e5a1990f2aeec36e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPOSITORY_LEAF"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The config that names no real root, so only the resolution's own refusals can answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:b3290840b99d08ae6a117d1c7919fb91f00139d0bccaded62a144e46cd57c223",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_config"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fresh two-snapshot fixture per case, and the resolution assembled without a contract so the composition can be driven without a coordination tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:569502bf735b86e9d8cd035fd0e1c66865de363e3f3ada6a426801b336a9f01b",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:f4db2ccd4d0f53dc2fae9f5c5133896e9575ace058c9f78342a05eb45b16897d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolution_for"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one request shape, the narrowing helper the optional selector obliged, and the one failing-loudly render helper every pane case goes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:50c3bbd9a3e6f6cd500b0c88b74e20bca0933df8a5c5eff3d4bb0428d89a9348",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_request"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:6084a0581a7d33db9f7765ff5e23045bb9d7997d03f5d9fefb7dc790a56c0bc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewed_selector"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:ad3964881ac8149dd2c45ddc283849855f22c28d1fd4ad022fa96889f004a18a",
+            "locator": {
+              "kind": "symbol",
+              "name": "render"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:f3fa9828ee2fcbffea5063cd560d041547749771fb04eaca1101077fed6dc13e",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:b37365d66fcac292752d5bc7b1544115749f62357ac18438a31ef17df9ecdb64",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The three input builders that produce records through the seams that own them rather than by constructing stored rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:dea9b19932b48cee24c398e02236f41a2d143d6b2c02c9eae6c6f293502022da",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_assessment"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:69919d0a371fe36c42f77375141b76ddca5613c5029df40b25ed1f03ab0bf9dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "observation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:c2080373f52293d29dbf73134608c2fd914d3925a8bee67d7f018c027992f431",
+            "locator": {
+              "kind": "symbol",
+              "name": "signal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shipped two-snapshot support the whole module is built on, with the independent byte-safe Git observation this leaf's inventory cases compare against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:001584ab745e28afcd6f1111f23193c034a107b180674d07b25de79659af14a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffFixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:061866315310050b29472dd283530f910051ba1434bc9de325377aa09af49bff",
+            "locator": {
+              "kind": "symbol",
+              "name": "independent_changed_records"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The pane cases: since `260921-ICR-L7` the knowledge-pane case asserts the recorded ambiguous selection (every head and retained revision named, no pair, both sides `unresolved` with the ambiguity as their detail) and the comparison's own field changes; the source-pane cases read the unchanged sibling and the removed claim's before-side, and the counts the selection did not reach.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:d8ca9fa81403b9e2624109c9b4d2a93d749f64e697d81e8391623b53a1cfe194",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_knowledge_pane_renders_the_subjects_own_statements_and_the_comparisons_own_facts"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:310b03dd905a026e1ce524b5c7313db771be0229b6584f6642707cd227dda2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_source_pane_shows_the_unchanged_sibling_and_the_removed_claims_before_side"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:e618d10655301c4ce200798224e7dc212b32f2a0fcd1f1fca7fae598a0b3c0c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_source_pane_counts_the_unmapped_path_and_the_records_outside_the_selection"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:060d1f98e716e234d9d4819e9ff26437d17a6fb1c7ecf081bc459db7e08f14fc",
+            "locator": {
+              "end": 409,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:a9ce8a5ecc6db93ed55cbb526228594a30222d5a5495415dfe3c8024492a33d7",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 410
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:37dbc5051b0ba55a0b11e245c0a8ddca23b65f9265888a09f25913f1d3822d46",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 424
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_conversation_control_queue.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_conversation_control_queue.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -64,52 +54,25 @@ post-ack not-found, disposed replay, on-disk spool deletion).
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the queue/withdrawal contract is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The suite exercises the queue projection and the withdrawal/recovery authority over the shared
 topology.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The source-aware queue projection under test. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:51-51 |
-| The withdrawal + bounded recovery authority (900 s lease, `sweep_recoveries` expiry sweep at L651) and the `ControlRequest` it is addressed by. | "def sweep_recoveries" | mcp/src/agents_remember/serving/conversation/control/withdrawals.py:658-658 |
-| The shared fake-topology harness with the `NOW`-anchored service. | `NOW` | mcp/tests/_control_plane.py:79-79 |
+- The source-aware queue projection under test. [1]
+- The withdrawal + bounded recovery authority (900 s lease, `sweep_recoveries` expiry sweep at L651) and the `ControlRequest` it is addressed by. [2]
+- The shared fake-topology harness with the `NOW`-anchored service. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 5 citation finding(s); scoped recheck clean.
-
-- 2026-07-31T16:50+02:00 — 260731-EFA-L2 code-quality gate: the withdrawal authority, the harness
-  control client, and the ref minter all moved their loose arguments into parameter objects, so
-  this suite now calls `withdrawals.*` through `ControlRequest`, `submit_control_prompt` through
-  `ControlSubmission`, and `mint_ref` through `RefBinding` + `RefTarget`. Added a Logic paragraph
-  naming those call shapes (the forgery battery in particular now varies a `RefBinding`, not a
-  keyword) and re-anchored the line references the same commit moved: `QueueProjectionTests` is
-  L51 (was L47), `WithdrawalRecoveryTests` is L211 (was L202),
-  `test_recovery_lease_expiry_disposes_content` is L505 (was L465), `queue_projection.py` is
-  L47-L152, `withdrawals.py` is L121-L706, and the `NOW`-anchored `ControlHarness` is L436-L520.
-  No test was added, removed, or renamed and the privacy, one-winner, and frozen-clock-expiry
-  assertions are untouched.
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the queue/withdrawal/
-  recovery suite — complete never-bodies truth, cockpit-only withdrawal race, opaque discovery +
-  authenticated fetch/ack, journal-of-last-resort recovery, forgery battery, and the untouched
-  frozen-clock expiry proof. Verification is blank because the new source file is uncommitted;
-  closeout owns its first source stamp.
+No meaningful cross-repo references found.

@@ -1,0 +1,168 @@
+{
+  "path": "mcp/src/agents_remember/serving/_app_lifespan.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Worker-thread cancellation is shielded, drained, and then re-raised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:85e9dbca2c7d66b23685761ed1e3feb8b6e09f8a3ce65f843af8de569c925f77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_to_thread_drained_on_cancel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The separate notifier heartbeat reader the observer-health reading sits beside.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:6853dc0785dda7bdc1b5839f7f251e9a105caa6d3c05adfe994b0ffa14cefb3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_notifier_heartbeat_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A completed observer call publishes this stage's own health for BOTH outcomes, and only the phase separates a startup-prime failure from a steady-pass one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:1894d805addf06d9766de7d643aff795a788d3ad0c5bc2e89300abf9e6ec8f76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_terminal_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The serving lifetime owns one completion-relative, non-overlapping terminal-observation caller that goes off-loop through the drained helper and sleeps after each attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:5cb4bab997fd02e9eace95b13b78a59c4a29d144dc7bc2e7231c5207d1f62143",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observation_loop"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One contained pre-serve terminal-catalog observation attempt through the same drained helper, whose only failure handling is an `except Exception` that logs and returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:08ffe06cd34a335040c8b9023f595a73cb1e4ffa2244d5f421ea7c95b957232a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prime_terminal_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every blocking metrics operation uses the drained cancellation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:1e0e300639f62502e4650accd22e10e2eaccacb3f3bfa44d65c98f68aa03abbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metrics_loop"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The observer reads the sweeper's own starting-row interval constant as its attempt cadence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:df35871babd673fe66debf42ab5d27f2e60c9c2c859d50b3ab6c88951e483ec6",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The serving lifespan runs migration, then workspace-river compaction, then the observer-health lifetime start and its initial record, then the one observation prime, then the projection prime, then registers the recurring tasks, then cancels and awaits every background task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:bf37d7527b4e3d4e69e7f2fa160ae710eae7c33dc4f5586b09917dd3d5ea29e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serving_lifespan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The notifier refreshes liveness before each sweep and drains an in-flight refresh on cancellation; that inline refresh publishes no observer-health transition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:7565dd6fd0582dc576d1375911dba9730357fc3b9dfae0272a24af6bd6a4b47f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_notifier_loop"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The served observer-health reader: the current lifetime's persisted row at response time, or `None` to omit the tail key, with the cutoff taken from the configured sweep cadence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:afacf3ef594ddf38aabbc8dc5e96bd42780901f12e524710e72120f8ba9e086e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observer_health_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

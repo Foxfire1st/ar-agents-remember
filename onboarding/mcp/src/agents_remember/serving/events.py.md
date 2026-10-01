@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/events.py
 
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `mcp/src/agents_remember/serving/events.py` |
-| doc_type               | `file-level-onboarding`                     |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`  |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview      | `overview.md`                               |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -124,90 +114,28 @@ are liveness rather than activity, and accepted event text is parsed exactly onc
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was found after checking the configured sources; cursor and event-stream
 claims are proven by repository source and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local event tail. | — | — |
+No relevant external or domain documentation was found for this repository-local event tail.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The observer event envelope tailed here. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
-| The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`). | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| The one read/path abstraction (NS #5). | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:34-36 |
-| The app that mounts this as `GET /api/events`. | "async def stream_events(" | mcp/src/agents_remember/serving/_app_common.py:127-127; mcp/src/agents_remember/serving/_app_common.py:131-131 |
-| The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
-| `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. | `read_new_events` | mcp/src/agents_remember/serving/events.py:191-229 |
-| `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. | `stream_raw_events` | mcp/src/agents_remember/serving/events.py:232-279 |
+- The observer event envelope tailed here. [1]
+- The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`). [2]
+- The one read/path abstraction (NS #5). [3]
+- The app that mounts this as `GET /api/events`. [4]
+- The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs. [5]
+- `read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches. [6]
+- `stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it. [7]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local event tail.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | — | — |
-
-## Update History
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/serving/_app_common.py` (one import and the `knowledge_reader` collaborator field), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `_app_common.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/serving/_app_common.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "async def stream_events(" repointed to mcp/src/agents_remember/serving/_app_common.py:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "async def stream_events(" repointed to mcp/src/agents_remember/serving/_app_common.py:123-123. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 7 citation claims; scoped recheck clean (0 findings).
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the one remaining cross-file citation,
-  into `mcp/tests/test_serving.py`. The stamped `L994-L1124` now lands in `BuildInfoTests` /
-  `ActionGateTests`, nothing to do with raw events. The five behaviours the row names are
-  `RawEventTests` L1913-L2039 (`test_read_new_events_skips_heartbeats`,
-  `test_read_new_events_limit_bounds_batch`, the two
-  `test_dormant_*_lifecycle_pruned_without_terminal_event` cases, and
-  `test_initial_offsets_bound_active_replay_to_recent_window`) plus
-  `StreamRawEventsTests.test_stream_does_not_emit_heartbeats` at L2099-L2128. Both ranges read
-  back; the claim is unchanged and still true.
-
-- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
-  `mcp/src/agents_remember/serving/events.py` and moved the lines this card cites, so the
-  Citations column no longer pointed at the code its rows name. Corrected the ranges (L125-L225 →
-  L125-L227; L188-L231 → L190-L233). The behaviour described is unchanged — the file's AST is
-  identical to the base revision — this is a citation repair only. Verification metadata pinned
-  until closeout stamps the L2 commit.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
-- 2026-07-18T12:43+02:00 — FEUI-L9R: documented server-owned record realignment, exact skip/cursor
-  semantics, top-level-object admission, and one-parse payload reuse; verification metadata remains
-  pinned pending candidate closeout.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3: moved workspace `/api/events` resume to locked
-  virtual offsets over the compacted physical river while leaving lifecycle cursors physical.
-  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-06-28T13:54+02:00 — Task 34: `read_new_events` now filters `lifecycle.heartbeat` lines via
-  `_is_heartbeat_line` (compact-wire substring fast-path + tolerant JSON fallback) and takes a `limit`
-  for bounded chunks (offset still advances past skipped/consumed lines). `stream_raw_events` computes the
-  offset map once, prunes on a slow `PRUNE_INTERVAL_SECONDS` cadence, drains the backlog in
-  `DEFAULT_EVENT_BATCH` chunks yielding between them, and sends `ready` only after the window-bounded
-  backlog drains — so connect cost is bounded (no 3x scan, no whole-history materialization). Verification
-  metadata pinned until closeout stamps the task-34 code commit.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: the raw Event River stream now emits a one-shot
-  `ready` event after initial backlog delivery so clients can distinguish "still hydrating" from "no
-  retained events." Verification metadata pinned until closeout stamps the task-29 code commit.
-- 2026-06-28T05:38+02:00 — Task 29: the raw SSE tail now prunes expired terminal lifecycle logs and
-  starts cursor-less or malformed-cursor connections from lifecycle-aware retained offsets rather than
-  replaying all history; valid `Last-Event-ID` resumes still use the supplied byte offsets exactly.
-  Verification metadata pinned until closeout stamps the task-29 code commit.
-- 2026-06-14T23:30+02:00 — Slice 05 (5c): `stream_raw_events` now emits `ServerSentEvent(data=json.loads(line))` so the raw channel is single-encoded like `/api/stream` (was double-encoded `data: "{…}"`, forcing every client to parse twice); docstring + invariant updated. Verification metadata pinned until closeout stamps the 5c code commit.
-- 2026-06-14T11:30+02:00 — Created for slice 04 commit 4b: the raw `event` SSE channel — a pure
-  byte-offset tail (`read_new_events`) with composite per-source cursor resume
-  (`encode_cursor` / `decode_cursor`) and the `stream_raw_events` async tailer. Verification
-  metadata pinned until closeout stamps the 4b code commit.
+The reviewed behavior is wholly repository-local.

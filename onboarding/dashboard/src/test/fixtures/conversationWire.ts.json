@@ -1,0 +1,439 @@
+{
+  "path": "dashboard/src/test/fixtures/conversationWire.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture header documents the former empty-capability double assertion as a failure mode.\n\nAnchor: \"a page whose capability tree is EMPTY\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:0e7bf8627a59ca5455af63776cbdc08c8db22a0ee1fa863ab90cdb28cf613b92",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The full `ConversationCapabilities` interface and fixture builder construct the twenty-three-leaf capability tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:0942e913ab7814c4dcb6f0a77c44ce06b84b126979211ab5214cb7f83bace52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationCapabilities"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:7d6fe87a94c03f5cb7457201327a23d9c5c3901deef84f41f110b257154578d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationCapabilities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The fixture's `LibraryConversationKey` alias and the two library-row builders.\n\nAnchor: \"export type LibraryConversationKey\"; \"export function conversationLibraryRow\"; \"export function conversationLibraryAgentRow\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:8dc721039709c3534ad0efd083814140ac3b5a5f97af5971932a74f6dd52f81f",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:19d2c46499f777b36e2cce1a531ac4528dcbfa2848a2ab2b4dba6634fe7cec8c",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:3034161e40aed64b4f43adc9f1ed027b7891e31d93771bed2e3ff852c3ea29fe",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shared `Overrides` mapped type constrains required keys, while `ConversationCapabilityOverrides` gives `conversationCapabilities` its separate per-group override type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
+            "locator": {
+              "kind": "symbol",
+              "name": "Overrides"
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:0517e055b4a2ebff5d1d6e93e4d2a022db72ced47e5ca5455d854197a06ec06e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationCapabilityOverrides"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:7d6fe87a94c03f5cb7457201327a23d9c5c3901deef84f41f110b257154578d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationCapabilities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The registry entries that make the page-cursor and library-key mints the assertions allowed in this file.\n\nAnchor: \"src/test/fixtures/conversationWire.ts :: as ActivePageCursor\"; \"src/test/fixtures/conversationWire.ts :: as LibraryConversationKey\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b20440a2649c9d2073988eac6904f506a2b9713d",
+            "content": "sha256:4d5cd2fb4f3df884515255b39523f2f8b5472beea9f566ffca204db802561041",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b20440a2649c9d2073988eac6904f506a2b9713d",
+            "content": "sha256:4d5cd2fb4f3df884515255b39523f2f8b5472beea9f566ffca204db802561041",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "`ConversationCapabilities` asserted present in the guard's discovered vocabulary, so these builders are policed rather than merely conventional.\n\nAnchor: `ConversationCapabilities`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b20440a2649c9d2073988eac6904f506a2b9713d",
+            "content": "sha256:ceb2de2f09d983d6ba49421cb42bcad06448bf92fcc0c3c3b49724a31abf4ed2",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The probe proving `conversationPage({ capabilities: undefined })` is now rejected at the call site.\n\nAnchor: \"a builder override cannot state that a required field is absent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:3394f195238b36c051bc34713244ed3308a31c288dca925292da8cb2bd66e162",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "dashboard/src/test/fixtureOverrides.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The companion builder module for the served projection, whose header carries the shared R6 reasoning.\n\nAnchor: \"R6 in one sentence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "488e20b586b8c9409e6866254d2114639129e541",
+            "content": "sha256:c485c290c1ae15965367b24a7fd5261585725a9788c022a191071e493835d16d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "488e20b586b8c9409e6866254d2114639129e541",
+            "content": "sha256:3edd014eb5565d32e5786bcd9a98e792fa2921ad59371f39fc85d600f4bc35d8",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "488e20b586b8c9409e6866254d2114639129e541",
+            "content": "sha256:ac618bdfe1a92d6ff1d361e48d45fea5d10e4488d650e77035ed99d9cb83c628",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The mirror's own header names its in-repo Python source, confirming a language seam inside this repository rather than a repository boundary.\n\nAnchor: \"mcp/src/agents_remember/serving/conversation/models.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:d16d551a1b45d865c40ef7558b642b96d3fd7e0fd7f41a6cace8a5aa752b9464",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The overrides fixture records the optional-property `\"does not set\"` case.\n\nAnchor: \"does not set\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:5e52a19109e074ac94b19d32730bd6c549b202c66a51c2d9293b834a7a139eac",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The library grammar's branded string alias is `LibraryConversationKey`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:8dc721039709c3534ad0efd083814140ac3b5a5f97af5971932a74f6dd52f81f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LibraryConversationKey"
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two one-token failure modes, and why removing the cast alone did not close the second one.\n\nAnchor: \"{} as unknown as ConversationCapabilities\"; \"undefined as unknown as ConversationCapabilities\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:0e7bf8627a59ca5455af63776cbdc08c8db22a0ee1fa863ab90cdb28cf613b92",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:5e5d0fa4eefcc85e09993e4895233f728ec578f61654f91195ab9ca5bb73bd42",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three brand mints that replaced the scattered inline casts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:1b06cd3fefac8edba1018607abc9616c7e28c86fd24d7888f8796b4b9b849b2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "pageCursor"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:528d616eb6c23f7e258d7492a41d0d53dfeaee3eb279af578aef7842b463078c",
+            "locator": {
+              "kind": "symbol",
+              "name": "eventCursor"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:8fe0c47d69a195c5da0c545119075421c966f12c5f1b2e2f4c8c22e663efdaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "libraryConversationKey"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The attachment builder extends the feature capability with the image contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:55939bb50f2276d12d1d3169459974e98ad46d956d9c063cb70f7f5d200ef62e",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachmentCapability"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`ConversationCapabilityOverrides` derived from the wire type, and the full twenty-three-leaf tree `conversationCapabilities` produces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:0517e055b4a2ebff5d1d6e93e4d2a022db72ced47e5ca5455d854197a06ec06e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationCapabilityOverrides"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:7d6fe87a94c03f5cb7457201327a23d9c5c3901deef84f41f110b257154578d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationCapabilities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`conversationPage` binding `items` once so the page's `totalItems` cannot disagree with its contents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:72a2fb4edf364b89bf2d29ee74bc7663acf79aed8aea14330232e6846698eb05",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationPage"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "`ConversationPage.capabilities` is REQUIRED — the fact that made the second defect an impossible fixture rather than an unusual one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:eb52178bf5c9cdaf9b4f77c2d9543d48b4b5ed0fb1af494586bc5383973e9cc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationPage"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

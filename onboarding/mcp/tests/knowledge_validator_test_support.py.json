@@ -1,0 +1,152 @@
+{
+  "path": "mcp/tests/knowledge_validator_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Doc14 family's other realizations, by file, entry, symbol and blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:629222de358d15ab365f73e25d414003888b0f3c05caa0001a76ace1a9393892",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:2c3e3bf254dfe78f1a853d1b51e33829e987c2dec2618013d2e3889e48d5fff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_REALIZATIONS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real code paths the anchors name, the family's realization files included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:93b0cb4776ab122030160db30727f6936ff57a4573b1fae0a6b098d1160cc8cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_PATHS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "MIK-R27's legacy count, and the unchecked admission the two added invariants claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:8e13ce7929262d972717ccfb775f3469d94581b658d6f5880390861deb860cdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:bc39888ee61cc2c0ba4de3cc9f385ffdf99ef24fad8e6aac3af1bf1711433459",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCHECKED_ADMISSION"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A file sidecar with one realization entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:7d0d11925878898294f32b36a0f838b8082ec6e056d082b5cece1cf52a967c1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_sidecar"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The card with markers, an escape, a code span and a fenced block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:6a19a599a9376155c1319a8b76cf8e64b6468bc38a32810c1fb01df247a51495",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIRECT_LANDING_MARKDOWN"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The converted fixture tree, with a sidecar and card for each family realization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:10ef770da38f2daba4b6ea610b88a2afd9cecb8300ffb24a63bf3d757877ae38",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_tree_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Editing one JSON file and writing a tree to disk.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:bd42b3795e457b4caea90cbcabec7f72b62031241e62384a12b5096c62f99b41",
+            "locator": {
+              "kind": "symbol",
+              "name": "edit_json"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
+            "content": "sha256:5f63186672503e141e7c81092e19b136e3eb8bac711dee7bcb9fb03f81aadcf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

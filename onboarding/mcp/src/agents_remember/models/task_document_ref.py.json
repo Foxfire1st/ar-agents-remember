@@ -1,0 +1,65 @@
+{
+  "path": "mcp/src/agents_remember/models/task_document_ref.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen model validates, hashes, and serializes the canonical document reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f280c226367b5ccab8b9e6a759ee1143c6e160c",
+            "content": "sha256:a18296a1e39924b94137ce6ae35eae386ee8b188d71d0b58c04f473092ee0add",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentRef"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f280c226367b5ccab8b9e6a759ee1143c6e160c",
+            "content": "sha256:a4597f436dcf216add0c6ec4619551d556385d6169d6b5163a208cea5d204bf9",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Topology resolves the reference against real task documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb0a67ae4a1fb1f4587cdf5c5bb6cf9365ab69d",
+            "content": "sha256:cc9bc8b4533e2aed384342b0c40b913847a79cdf24d4d55f317decf7a14be0f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentTopology"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5fb0a67ae4a1fb1f4587cdf5c5bb6cf9365ab69d",
+            "content": "sha256:383138a391cc8a6f8bd14cb8178a0994cc78c96292e2bad7722a9057406913ec",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

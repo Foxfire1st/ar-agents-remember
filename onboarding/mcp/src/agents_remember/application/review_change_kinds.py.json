@@ -1,0 +1,366 @@
+{
+  "path": "mcp/src/agents_remember/application/review_change_kinds.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement: facts computed here, for returned members only, each read from the comparison itself.\n\nAnchor: \"The facts are computed here, on\"; \"Nothing is inferred: a side that cannot be read makes the facts it would decide\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:9e5efdee50db1b31016c8d8c4dfed99b08bcfc8a152dcda368b635b848d3cfa5",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The unconditional unknown for an unresolved range, the lane's reason in a reviewer's words, and a non-file entry at a non-text change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:aa79ae63ffbd53aac3ffc15133454659fda37e6091ad70569be86191c8e29a8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_withheld"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:956a54f04b37a563e88ab4824a5a8b81d07c416b281ca8725873e4b52c284fe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:698118fab553529222bbfa76ded3cfb2e90d66cca41646b9414597a69e2d7639",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unintersectable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The worklist classifier's class of one base entry, for definition 7.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:6dd3007bc65f8d696a0a6296e764bc37817200694a60a10f54af00c2464b7207",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_class"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Records and entries read through each side's index; an unparsed record or sidecar answers why instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:956ebe66572efe0b540149adf396312b93f71b0e569d261c0a9d1bf0a89d0218",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:37b1faa1498ab2fe64c3540650354aab2725a29734be695e095f3a51738a419f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The change inventory read once, and each changed path classified once by the lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:2c89aad673abb897ff397448a2607643f5520ff7adae2e6ff7527002f6ee8d5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_change"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:bee5e8ea9e7b01025acecf40d33515acd158951b906ab4bf2e1a9ad373627ebd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Its one caller: the composed review's family context.\n\nAnchor: \"family_context=with_change_kinds(family.context, resolved.trees),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:df335d4a125139d744fd24d04fcc90476e7739486a731c2c73afa5927cfabd48",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 555
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The entry point: one lane per read, a dataset review's context unchanged, unreadable trees make every fact unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:8119de1f5d96ed9b68912c635dbb69549524348d8714325e015030c6f9b3495c",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_change_kinds"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:dfc0748b87c6f412da2fa705bd08ed0bb08ef5143e10d70c2b8eceb3a40dedb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unread"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A fact's three states, and its reasons with the entries that established nothing first (review R2-3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:0fd8bc8a743204d4c2b0f2ac027fbb6dbed33b4b5704d0fabe825afe18512ab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Fact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The family's own row and its total over the family's own records (review R1 note).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:6c4614a17a96e48c7826f5713b9aab57e61cb2c57a03414982b40d61101f51c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_guarantee"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:d571492cd9c2f9d26450f1f01790af8c7ae5cfa69ca908eac207d81b9d21fcc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_members_total"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:4a3b21f2dabb0ac708c58708a8c6fe084747d2941be363b69cec47afc41f2db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_own_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One member occurrence: three facts, bounded evidence, and the change kind's reasons apart from the membership's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:07ce1edf356f21af4331839ef8a4a4d356b0b1ae1c92cb544edfa4916e34fe06",
+            "locator": {
+              "kind": "symbol",
+              "name": "_member"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:58205f9aa4c67bbda425b7c9c248bfa77f8b4f8c5f0eb1544c4a014056e348a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_position"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Intent: the revision, presence (retired counts as removed) and a same revision whose text differs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:c22afa54133d18347a5f09f76335564a970e96623c14e5eef398e723c8fe8908",
+            "locator": {
+              "kind": "symbol",
+              "name": "_intent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:2ea2feb2fee7a4cbd9282e7e19c5f2948f8e54a4f35825b52ce0dba394726166",
+            "locator": {
+              "kind": "symbol",
+              "name": "_presence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:fd8e46c32dbaefbbf0abbc127eb6dfb921df2a712bc1868a2504f268ecb616b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_WORDING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Membership on each side of this family's record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:63216ba8ae86a0bea7dc77c32423739b3b9e7de3f155bdbe59526fb07da5e2a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_membership"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Implementation (a): added, retired or re-anchored; only the mechanical carry is exempt (review R1 F1); stale-at-base repairs worded apart.\n\nAnchor: \"carried_mechanically(old, new, entry_class)\"; \"(stale at base)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:b765346817bef2c8201e14b23b64419e695578a0748af6fba530f104556a7cb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Implementation (b) through the lane's links only, and definition 8 on a changed non-text file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:e95c50bfa63956e7a1c5bfd5fac6930a764b5dccbd5ee35f8c13d980f01d91f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hunks"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:a033b20ad38f4eb2919f795290f2941dc3ce7369b9cc0607268e2e343d5d2a93",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hunk_linked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:cdf1674a989d83dc8373495e4992a431265e50e2655adb38c518a07c7f23a655",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_covered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

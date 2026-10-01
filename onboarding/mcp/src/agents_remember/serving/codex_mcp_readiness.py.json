@@ -1,0 +1,83 @@
+{
+  "path": "mcp/src/agents_remember/serving/codex_mcp_readiness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Readiness depends on the current app-server's complete MCP status inventory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77b709d0b59a1c9e045a546ea2b4ba6861b5cce6",
+            "content": "sha256:75d749a152700c5f1921f6bc21207f302bf9b4f4a5ba85b84f5a1c613e24dd55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_server_statuses"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Connected exact-tool evidence is returned as one typed result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77b709d0b59a1c9e045a546ea2b4ba6861b5cce6",
+            "content": "sha256:72558b5685efc1c8c42b1be8e09f96dfe6cc55bcc886d2e5c59e18639b9e28e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexMcpToolReadiness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77b709d0b59a1c9e045a546ea2b4ba6861b5cce6",
+            "content": "sha256:0869f52dced4309ee95a43099c0309932ac0368cea8982a682382c8f6f13fe87",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Server status and tool maps are parsed centrally and fail on malformed shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77b709d0b59a1c9e045a546ea2b4ba6861b5cce6",
+            "content": "sha256:90bd097459e3cc02878a37c98f99b8d70a8fbf5d8813622b49fff15c1dae03e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_server_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The readiness gate receives the in-process Codex transport abstraction instead of starting a second client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77b709d0b59a1c9e045a546ea2b4ba6861b5cce6",
+            "content": "sha256:0869f52dced4309ee95a43099c0309932ac0368cea8982a682382c8f6f13fe87",
+            "locator": {
+              "kind": "symbol",
+              "name": "wait_for_codex_mcp_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

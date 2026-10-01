@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/EvidencePane.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/EvidencePane.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -43,39 +33,24 @@ including post-removal control-stop residuals that must stay visible without a f
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Pure evidence/detail projection. | `submitEvidenceLines` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:102-112 |
-| Shared terminate/retire residual rendering and exact dismissal. | `RetainedStopResiduals` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:356-405 |
-| Full pane rendering and explicit actions. | `EvidencePane` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:407-463 |
-| Lifecycle notice store shared with the stage. | `useLifecycleNotices` | dashboard/src/data/sessionLifecycle.ts:123-125 |
-| Set acknowledgment driver. | `acknowledgeSetAttention` | dashboard/src/data/setClient.ts:386-391 |
+- Pure evidence/detail projection. [1]
+- Shared terminate/retire residual rendering and exact dismissal. [2]
+- Full pane rendering and explicit actions. [3]
+- Lifecycle notice store shared with the stage. [4]
+- Set acknowledgment driver. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Replaced the inspector's leaf fact with the current task-document path
-  while preserving the pane's evidence-only boundary.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
-
-- 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Records the
-  full evidence audit surface, explicit mark-seen action, and authoritative post-removal stop
-  residual boundary. Verification metadata remains pinned to the leaf base until closeout.
+No cross-repo evidence applies.

@@ -1,0 +1,335 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/direct_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring's gate and closing paragraphs.\n\nAnchor: \"On converted memory (the layout marker on either side) the mandatory\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:226918613a75e04cd32e6b90bec4ee4d823624e4295bf7fe67b83e93cf02e26e",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The application owns configured admission and execution serialization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
+            "content": "sha256:16182a70a535e68c325ce3c6b0650ea2d3f987887d6e428d6cefb15b0742cfee",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing_tool"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The focused integration scenario verifies cache-independent publication and recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
+            "content": "sha256:04010af4035543f16e10e1a085e08495cb9f7a998f349c69adf9950414a4cf4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_publishes_memory_and_recovers_independently_of_cache"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Unconverted memory: the lock refuses it once the repository holds converted memory, else the landing is ungated as before.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:a556c9d631cc7b7ddd6a9d5a9d33c4b0a769fc0caad09453666329c49b429836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_gate_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The preview refuses as the apply.\n\nAnchor: \"the preview refuses exactly as the apply\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:767a848cc159077f96c215c9764252f71d2d32b524d87b3dd904ca4bfc366764",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 330
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Settle, exact retry, prepare, admit, and settle again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:4232b495a9d678814fda15ce5697a8895c37838865b77472bff84184b4d4624e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_or_observe_direct_landing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:4abfa9c436839e39ebb85fb6ae69253fc9df01102159e0cd9829765afc84666a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_generation_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:c4ebac975d68ae7a6efe5f1ff38c1c928941de08cc8d7bafd0ca43a16260885b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settle_kept_closing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:d5e03f18d4cea924322743cb15ff720ba2fa16644d11372ce6c4a0cbca0eaa3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_in_flight_retry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:e509d5b3c4ac845c6a324d72e2178c067311f4efae55672571ea1c432fdd028f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_same_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only a created generation keeps the closing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:dd65446e3f48801008bfe08029e799e0c042df4200a50efe7576bec8ac024dc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_direct_landing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:e8a26a75453fa0e1653775a4bd163f8313dd06687528ce34ec70128419ac5ca9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_undo_closing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The prepared input, the candidate and the closing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:0fec0d018cc7316c21def5fe0988c9dc7b7fd6276e829cbea4295d0d8547f58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare_direct_landing_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:f9f295f860c3152fb170a80feb75d53a3d0948924e84ed6e04ca17b308d423c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_operation_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The exact memory tree, the gate and the closing validated as a leaf publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:02b7b8473248163ebad747818ab63a8a92f103861c010144b196e2dd0163295f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_content_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:a556c9d631cc7b7ddd6a9d5a9d33c4b0a769fc0caad09453666329c49b429836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_gate_owner"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:8ba572bf3a1b2e1b3780b6db58e8a2e5cb7ce8c1afbcc68cddb2f244906923cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_close_gated_leaf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Policy, normalized request, exact code proof, and the preview, which writes no memory content and since MIK-R09 refuses exactly as the apply on converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:b6313075bca31824d7928b803603389bc5ea4d6d3e4bedbc190e46ccf408a255",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:36f9c5bef4fc7e75cba32750b3f7d4bb85ab5d1557faf92da7fc9d841088c209",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_direct_landing_enabled"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:acb0aa61b8e185ad27ae6f3bd40f5bfed3da7996b8ee3c2f0b9e941068777cc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_code_commit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:fc2591d70b89bb3d1bead80f6b1f7633ce8c3a512450f4124122dba379247f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_landing_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Memory admission captures the prepared content snapshot and typed candidate (since MIK-R09 in `_operation_candidate`, after the gate's closing).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:2780f751b9394d215f434f8db87d87049f4ef62b8ef8db8ce718fd1683e8608e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_memory_admission_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Generation creation and action-required public projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:78e7ea90e5a38e6272b65cfaf9c4febca753e2d6b17e59089740913f3ebcb2de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_direct_landing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+            "content": "sha256:0e0906c5db8c47ae09e5bc75b0e43904670ba50ae43ace7fb37910e83a80d873",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_landing_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

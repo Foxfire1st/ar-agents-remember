@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/projector/facade.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/projector/facade.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active projector package overview](overview.md)
@@ -45,18 +35,18 @@ The facade coordinates lifecycle; it does not duplicate component state.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The active service owns facade registration and replacement. | `ActiveConversationService`; `_projector_for_locked` | mcp/src/agents_remember/serving/conversation/active/service.py:57-259 |
-| Coordinator and stream implement the delegated work. | `RebuildCoordinator`; `ProjectionMutationStream` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
+- The active service owns facade registration and replacement. [1]
+- Coordinator and stream implement the delegated work. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
@@ -76,13 +66,3 @@ projection, one session, one epoch" structural instead of a convention repeated 
 parameter lists.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 4 citation findings for the active service, rebuild coordinator, and mutation stream ownership rows.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ProjectedSession` and the spine/readers bundles the facade now builds and shares across every ingestion component.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the facade ownership
-  record after the projector decomposition. Verification metadata remains blank until commit.

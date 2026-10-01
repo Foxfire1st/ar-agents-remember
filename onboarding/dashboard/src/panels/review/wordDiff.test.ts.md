@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/wordDiff.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/wordDiff.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:18:53+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -56,32 +46,23 @@ describes.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packets `MIK-R35@v1` / `ICR-R35@v1` live outside the
 repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The real wording the cases start from. | "gitTrees.invariant.captured.json"; "const STATEMENT =" | dashboard/src/panels/review/wordDiff.test.ts:1-20 |
-| Tokens keep every byte. | "keeps every byte: words with their punctuation, and whitespace runs as they are" | dashboard/src/panels/review/wordDiff.test.ts:27-44 |
-| The conforming example, exact reassembly, runs, whitespace marks and the byte decision (F3). | "marks the replaced words in place within one sentence (the conforming example)"; "reassembles both exact texts from its parts, whatever the change"; "decides by bytes: identical, whitespace only, or words" | dashboard/src/panels/review/wordDiff.test.ts:46-112 |
-| The named ratio, exactly 0.5 not above it, and the coarse bound. | "is the named renderer constant 0.5, compared with changed words over the longer side"; "marks a middle too long to align as one removed and one added run, still exact" | dashboard/src/panels/review/wordDiff.test.ts:114-148 |
-| Rule 1a: insertions, removals, equal-count pairing, moved items, never positional. | "describe('list alignment (rule 1a)'"; "shows a reordered item as moved, never pairing by position across the list" | dashboard/src/panels/review/wordDiff.test.ts:150-214 |
+- The real wording the cases start from. [1]
+- Tokens keep every byte. [2]
+- The conforming example, exact reassembly, runs, whitespace marks and the byte decision (F3). [3]
+- The named ratio, exactly 0.5 not above it, and the coarse bound. [4]
+- Rule 1a: insertions, removals, equal-count pairing, moved items, never positional. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T13:18:53+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): created this card for the new unit test module, recording ruling Q2 (the ratio constant and exactly 0.5 not a rewrite; 2026-09-30T11:53:13) and review R1 F3 (the whitespace-only cases; 12:16:39). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/controlplane/interaction_retention.py
 
-| Field                  | Value                                                                  |
-| ---------------------- | ---------------------------------------------------------------------- |
-| repository             | agents-remember                                                        |
-| path                   | `mcp/src/agents_remember/controlplane/interaction_retention.py`        |
-| doc_type               | `file-level-onboarding`                                                |
-| lastUpdated            | 2026-08-24T14:43+02:00                                                 |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`|
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
-| governingOverview      | `overview.md`                                                          |
-
 ## Governing Overview
 
 [controlplane overview](overview.md)
@@ -162,71 +152,3 @@ execution reports remain protected from TTL and capacity reclamation until task-
 registration is durable. Protected rows reserve capacity and are never displaced by ordinary
 retention pressure; registration, rather than heuristic text inspection at deletion time, releases
 them to the normal bounded policy.
-
-## Update History
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded the fail-closed execution-evidence retention boundary. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — No content impact: reviewed the gate-model import move into the
-  structural package; retention sets, authority preservation, and TTL behavior are unchanged.
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: aligned this card with the current source
-  paths: `age_seconds` comes from `controlplane/stamps.py`, the deciding-process reclaimer is
-  `controlplane/gate_decisions.py::_reclaim_gate_log`, and the cancellation deletion is
-  `application/gate_tools.py::gate_decide_tool`. Retention policy (the `applied` authority
-  branch, no-TTL bound, inbox 48h/500-row cap) is unchanged. Verification metadata pinned until
-  closeout stamps the code commit.
-- 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). This card carried **no** L5
-  content and described a retention policy that no longer exists. Recorded: `applied` is out of
-  `PRUNE_IMMEDIATE_GATE_STATES` (now exactly `{"cancelled", "expired"}`); the new
-  `CONSUMED_APPROVAL_GATE_KINDS = MUTATING_TOOL_GATE_KINDS | SEAM_CONSUMED_GATE_KINDS` and why being
-  a superset is free; that `_keep_gate`'s authority branch runs **before** the clock is consulted
-  and takes neither `now` nor `ttl_seconds`; that there is **no TTL at all**, deliberately, because
-  a retention window is a guess about a human's retry time and this code made that guess twice
-  (30s, then zero) and was wrong both times, so growth is bounded by approvals actually granted and
-  consumed. Recorded the asymmetry with its reason: dropping the last snapshot returns
-  `evaluate_gate` to permitted-gateless, which is the *intended* meaning for a withdrawn gate
-  (already deleted at decision time by `gate_decide_payload`) and a superseded one (its replacement
-  is in the same log with a newer `ts`), but for a granted and spent gate there is nothing to fall
-  back to. Recorded that every other kind's `applied` stays immediately prunable and why
-  (`agent-question` and friends never reach `evaluate_gate`). Added the open decision that
-  `master-handover-approval` sits in this set ahead of its consumer, since `integrate.py` never
-  writes an `applied` for it. Added three invariants, including that this module is one of three
-  closed defects and not the fix. Also corrected the `lastUpdated` field, which read
-  `2026-07-31T00:00` while the newest history entry was `2026-07-31T16:35`. Verification metadata
-  pinned until closeout stamps the L5 commit.
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/controlplane/interaction_retention.py` since the L2 base commit is the
-  whole-tree `ruff format` pass in `00e8379`, which re-wrapped 6 line(s) with no token change
-  whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
-  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
-  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
-  card makes about its own source still holds.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
-  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
-  structure or responsibility change. The sidecar was re-read against the current source and
-  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented the unchanged 48-hour pending TTL
-  and 500-row cap as fallback retention and the pre-folded-current transaction seam used after
-  confirmed-gone resolution. Verification metadata remains pinned until closeout stamps the
-  candidate commit.
-
-- 2026-07-10T22:18+02:00 — 260707-HFX2-L20: made inbox compaction use the shared terminal-dominant
-  fold so stale in-flight delivery snapshots cannot resurrect pending retention.
-
-- 2026-07-10T02:39+02:00 — HFX3 retro curation: replaced the superseded immortal-pending account
-  with the reviewed health-first contract: 48-hour pending TTL, 500-row hard cap, newest-first
-  eviction, immediate ladder-resolved reclamation, and artifact-not-row durability. Added the
-  governing-overview backlink. Verification metadata remains pinned until closeout stamps the
-  eventual two-parent code commit.
-
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: `_keep_inbox_entry` now drops `ladder-resolved` terminal
-  rows during compaction while continuing to protect pending/unacked rows. Verification metadata
-  pinned until closeout stamps the HFX2-L8 commit.
-- 2026-07-08T14:10+02:00 — 260707-HFX2-L1: `_keep_inbox_entry` now keeps every `pending` row
-  regardless of age (R1: compaction never removes an unacked row); the 24h TTL applies only to
-  `consumed` rows. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
-- 2026-06-25T13:10+02:00 — Created for task 23/24 gate/inbox retention, wait defaults, and pickup TTLs.

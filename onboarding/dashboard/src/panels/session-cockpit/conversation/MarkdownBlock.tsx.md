@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -52,47 +42,24 @@ labeled, keyboard-scrollable overflow region so a long line never widens the pag
   only while the app-root `word-break: normal` override (index.css, RV-1) is in place; a component-level
   overflow-wrap patch cannot survive an inherited `break-all`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Consumed by message/thinking/interaction/tool/result items as the shared prose renderer. | `MessageItem`; `ThinkingItem`; `InteractionItem`; `TurnResultItem` | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101; dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-156; dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx:35-56; dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-82 |
-| The house Markdown primitive precedent (react-markdown + remark-gfm, memoized) elsewhere in the cockpit. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
+- Consumed by message/thinking/interaction/tool/result items as the shared prose renderer. [1]
+- The house Markdown primitive precedent (react-markdown + remark-gfm, memoized) elsewhere in the cockpit. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims (2 table rows, 1 prose citation); scoped recheck clean (0 findings).
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The `prose`
-  recipe grew the V10 wrapping rules, pushing `MarkdownBlockImpl` from L68 (now a `& th, & td`
-  padding line) to L73-L84; the range now covers the whole component body it describes.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded V10 whole-word wrapping — `overflowWrap`
-  `anywhere → break-word` on prose/links, inline `& code` `whiteSpace: nowrap`; and the dependency note
-  that both are inert without the leaf's `index.css` `word-break: normal` root override (RV-1).
-  Streaming-safe memoization + labeled code/table overflow regions unchanged. Verification pinned to the
-  leaf base (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the streaming-safe
-  Markdown block — one memoized react-markdown render per changed string (no per-token remount) with
-  fenced code and tables in their own keyboard-scrollable overflow regions. Verification is pinned to
-  the leaf base (`0be0099`) because the new source file is uncommitted; closeout owns its first source
-  stamp.
+No applicable cross-repository source was found.

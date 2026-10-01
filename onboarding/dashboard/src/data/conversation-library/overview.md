@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/conversation-library/`       |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-01T10:35+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
@@ -92,72 +86,30 @@ and this overview is their governing pillar.
 | List/read/open HTTP client | [client.ts](client.ts.md) |
 | Reconstructable store + open orchestration | [store.ts](store.ts.md) · [store.test.ts](store.test.ts.md) |
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This route's statements were verified from its direct agents-remember source/tests and the
 reviewed worker report and final-PASS review verdict.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this route. | — | — |
+No configured Domain Documentation source exists for this route.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The route mirrors this repository's own landed library wire contract and talks only to this package's
 serving endpoints; no cross-repository implementation source governs it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The browser client and native serving route expose library listing for a harness with optional query fields. | `fetchLibraryList`; `api_library_list` | dashboard/src/data/conversation-library/client.ts:36-54; mcp/src/agents_remember/serving/conversation/library/api.py:109-130 |
-| The browser client and native serving route read a historical conversation page. | `fetchLibraryRead`; `api_library_read` | dashboard/src/data/conversation-library/client.ts:56-76; mcp/src/agents_remember/serving/conversation/library/api.py:133-158 |
-| The browser client and native serving route open a conversation. | `openConversation`; `api_library_open` | dashboard/src/data/conversation-library/client.ts:127-135; mcp/src/agents_remember/serving/conversation/library/api.py:169-199 |
-| The browser client and native serving route report open-request status. | `openStatus`; `api_library_open_status` | dashboard/src/data/conversation-library/client.ts:137-145; mcp/src/agents_remember/serving/conversation/library/api.py:202-221 |
-| The browser client and native serving route reconcile an open request. | `openReconcile`; `api_library_open_reconcile` | dashboard/src/data/conversation-library/client.ts:147-155; mcp/src/agents_remember/serving/conversation/library/api.py:224-243 |
-| The in-stage browser view reads this library state and starts list loading. | `ConversationLibrarySurface` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171 |
-| The sibling active-conversation state is a separate projection. | `ActiveConversationProjection` | dashboard/src/data/conversation/reducer.ts:42-66 |
-| The parent data boundary keeps `dashboardStore`/`DashboardState` separate from `conversationLibraryStore`. | `DashboardState`; `dashboardStore`; `conversationLibraryStore` | dashboard/src/data/conversation-library/store.ts:77-84; dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
-
-## Update History
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the route body for the canonical
-  `TaskDocumentRef` launch context shared by client and store; leaf-key routing is not retained as a
-  parallel public contract.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: store.ts changed only by behavior-preserving lint remediation.
-
-- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: split list, read, open, status, and reconcile ownership across the browser client and native routes. Verification metadata unchanged.
-
-- 2026-08-01T10:35+02:00 — No route impact: 260731-EFA-L4 changed exactly one file in this
-  route and it is a test — `git status --short -- dashboard/src/data/conversation-library/` lists
-  only `store.test.ts`; `types.ts` and `client.ts` and `store.ts` are untouched. The whole change is
-  one line of fixture hygiene: `const KEY = "ar-lck1.k1" as LibraryConversationKey` became
-  `libraryConversationKey("ar-lck1.k1")`, the named mint in
-  `test/fixtures/conversationWire.ts`, so the branded key is produced in one registered place
-  instead of asserted at the call site. `LibraryConversationKey` is `string & { __brand }` — an
-  opaque server-issued token with no structure to get wrong — so the mint changes where the
-  assertion lives, not what it can express. Checked rather than assumed: the full set of
-  `describe`/`it`/`test` titles hashes identically before and after
-  (`git show HEAD:<file> | grep -E '^\s*(it|test|describe)\(' | md5sum` against the working tree),
-  and the counts match exactly at 7 `it(` blocks and 16 `expect(` calls. The exact-open focus gate,
-  the caller-stable requestId rule, the F6 hardening, and the no-durable-index rule are all asserted
-  by the same assertions they were. The `as unknown as` casts still in the file are `fetch`/`Response`
-  transport doubles, not wire nodes. `npm run typecheck` (`tsc -b`) exits 0. Verification metadata
-  untouched; closeout stamps the commit.
-
-- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: extended the wire+store contract for the harness
-  sub-agent grouping — `ConversationLibraryRow.agents` (capability-free `ConversationLibraryAgentRow`
-  children, server-minted keys), the page-level `agentsNote` capability-honesty field, and the store's
-  carry-through-loading / freshest-page-wins note rule. The L7 source is uncommitted, so
-  lastVerifiedCommit* stays on the prior stamp and closeout re-stamps verification.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the governing pillar for the reconstructable
-  dormant conversation-library projection — the exact-open focus gate (R4: focus only on
-  `opened`/`opened`, no active-marking field), the caller-stable open requestId reconciled under one id
-  (invariant 27), the F6 open-flow hardening (dispatch-time busy, transport-retained id, poll-exhaustion
-  reconcile), and the no-durable-index rule. Verification is pinned to the leaf base (`0be0099`) because
-  the new source route is uncommitted; closeout owns its first source stamp.
+- The browser client and native serving route expose library listing for a harness with optional query fields. [1]
+- The browser client and native serving route read a historical conversation page. [2]
+- The browser client and native serving route open a conversation. [3]
+- The browser client and native serving route report open-request status. [4]
+- The browser client and native serving route reconcile an open request. [5]
+- The in-stage browser view reads this library state and starts list loading. [6]
+- The sibling active-conversation state is a separate projection. [7]
+- The parent data boundary keeps `dashboardStore`/`DashboardState` separate from `conversationLibraryStore`. [8]

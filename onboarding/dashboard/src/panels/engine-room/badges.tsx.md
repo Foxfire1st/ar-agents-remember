@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/badges.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/engine-room/badges.tsx`               |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
@@ -48,32 +38,22 @@ requires it (e.g. the fleeting box).
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The failure-mode overlay primitives extracted from the canvas. | `FleetingEnclosure`; `TerminalStop`; `RefusedConduit` | dashboard/src/panels/engine-room/badges.tsx:193-236; dashboard/src/panels/engine-room/badges.tsx:237-283 |
-| The closeout-order train and moved/attention badges. | `CloseoutTrain`; `MovedBadge`; `Gate` | dashboard/src/panels/engine-room/badges.tsx:61-79; dashboard/src/panels/engine-room/badges.tsx:127-145; dashboard/src/panels/engine-room/badges.tsx:315-342 |
+- The failure-mode overlay primitives extracted from the canvas. [1]
+- The closeout-order train and moved/attention badges. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the new
-  badge module extracted from `EnclosureCanvas.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+No applicable cross-repository source was found.

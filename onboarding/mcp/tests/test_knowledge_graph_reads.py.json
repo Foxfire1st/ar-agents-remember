@@ -1,0 +1,268 @@
+{
+  "path": "mcp/tests/test_knowledge_graph_reads.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The read contract this module's cases protect, stated as one relation with two directions.\n\nAnchor: \"one relation, two directions, one set of identities\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da2945186e9594f383289817be7564fba6f85fa0",
+            "content": "sha256:a53ab348d5836b20f83fc3071c3a90b05cbe144fbee5106f670a3d7399ed6067",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The unit-regression lane row this module is registered by.\n\nAnchor: \"mcp/tests/test_knowledge_graph_reads.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:1e7b8727d7280006234612e234cb1b71d7f1fc7850b177e1a7e1e821713c5400",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The fixture contract that names this module as an exact consumer.\n\nAnchor: \"contract:knowledge-identity-branching-fixture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:674cc0e45bcaa39e972d5253c4e0a4e204d360ea774269c0c705222b6bb574fe",
+            "locator": {
+              "end": 1237,
+              "kind": "line_range",
+              "start": 1237
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The requirement's own demonstration node, compared as identity sets.\n\nAnchor: \"test_two_realizations_resolve_from_either_direction_with_the_same_claim_ids\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da2945186e9594f383289817be7564fba6f85fa0",
+            "content": "sha256:48726402436475ec54a9a55a62695e97fcbaddd11214437591e43327ebf7507b",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The overlapping-family frontier node.\n\nAnchor: \"test_overlapping_families_answer_both_directions_with_the_same_member_ids\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da2945186e9594f383289817be7564fba6f85fa0",
+            "content": "sha256:3267ca317f45c459986363188ae94eb1975100f27e9c009a7c266c750d6bfe99",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two storage-versus-resolution nodes.\n\nAnchor: \"test_an_absent_source_anchor_is_retained_exactly_as_authored\"; \"test_a_symbol_locator_is_stored_and_read_back_while_no_resolver_supports_it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da2945186e9594f383289817be7564fba6f85fa0",
+            "content": "sha256:a9b9dfaef178f27d7baa57daa4c8ffdc6be6aedf0f8702c534a7a4b5d3e5ec99",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "da2945186e9594f383289817be7564fba6f85fa0",
+            "content": "sha256:ff535c34a87d3f0a7597ceb8051ec6777d3ae91d52c7efbb01f5a5ac93d10f41",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The historical-meaning node over a real before/after pair.\n\nAnchor: \"test_a_removed_claim_stays_in_the_baseline_and_is_absent_from_the_successor\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da2945186e9594f383289817be7564fba6f85fa0",
+            "content": "sha256:2a188700aa6f23ec7d1aeaa878090a4035063f784a384812d1d8d4417dde68e8",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The revision-to-family read node.\n\nAnchor: \"test_a_family_revision_read_reports_the_family_it_belongs_to\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da2945186e9594f383289817be7564fba6f85fa0",
+            "content": "sha256:5a023887a86dba74e73d4fca6b2bbe40b6d0c8dc8ba32d497bdff1629b163b09",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The forward and reverse reads the cases compare.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
+            "content": "sha256:36c93d7f52d4a7592149598047919ab478e97de4beed2335d6c5f32aff433e54",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_claims_for_invariant_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
+            "content": "sha256:78dda0bad711f03aae3a65f80b08bfc8ff4dee60c9818fc361b4ba2e397d7bb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_claims_for_anchor"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "content": "sha256:0bf7248309d1073b1b3b0824a04faf588c6be10341b98ec49e92d498ef12c5b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_members"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "content": "sha256:079cd24f66f0df288bf260e0a82471627b2a7967029960ada956a41fac02dbf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families_for_invariant_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The before/after pair builder this module consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df2b6b7cb6635f2833676f6a968aa62eeb0f107",
+            "content": "sha256:54d673273cd44b1886b119ea7a7c9a95c108adfb372f80a45679c38a1098d6cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_removed_relation_successor"
+            },
+            "path": "mcp/tests/knowledge_graph_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The locator union whose kinds the cases vary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:828d9a42d7a261e7c3adfb7cb474a01c9f7af1db127ae1332d03471474f2f958",
+            "locator": {
+              "kind": "symbol",
+              "name": "SymbolLocator"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:cd62c80383c06ea6d0fdf6d3cc765e8810a3cf4e42979c3dc2fa7ebabdf4aedf",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileLocator"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:4b2f431ea69379a415912a641b12cc4e703ee418cda7b983c2be11639ee703a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LineRangeLocator"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

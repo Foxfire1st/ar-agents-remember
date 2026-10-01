@@ -1,0 +1,211 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Who authors the operation, and whether a document names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:4dfaad9e45c6ff3c960d14ed11483937b3c05b37f90e892b282d288b47de68b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "Owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The history file an owner writes: a leaf's latest attempt, or the next once the latest is closed in the base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The higher side's revision of a record a merge left unmerged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:2188eb4a780fe71e67a6752b27128cbb721c36bf77b223e652c8907f8e3a9efe",
+            "locator": {
+              "kind": "symbol",
+              "name": "merged_sides_revision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:98908690330e3a35692f9c0bb713bdd9467044654aa4a3eeccbde1dd813475c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unmerged_stages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A reopened leaf writes its next attempt, and its history is every file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The base is the memory worktree's `HEAD`, or its conversion when the candidate is converted and `HEAD` is not; a base that cannot be built is a named problem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:80c03b60b51a0663375ba8aa56bb07abbacc528b11829821ec978f003f427d83",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every ID the tree holds, including history row IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:ce1e7420efa6a3c7891ef51c2457127074312dff5d3c3c4b0dd3ad2d5d797e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "known_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Rerun ID reuse by origin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:28b3fc95cdbb893b59686a47f7bf48c0425cf1d6242140502f451e7ac0f7c27d",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_by_origin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A record keeps its file unless a new slug renames it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:1f669d7feea5dbeb3cff2e275d1f04e2f5af342b826f6404dfe6235355c1f647",
+            "locator": {
+              "kind": "symbol",
+              "name": "put_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Entries this owner wrote for an invariant from a hand-off entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:b1f16b93b6865cb61f7e3871b7df161583dc3e5fe0a0c2c54b7a1616e86a738d",
+            "locator": {
+              "kind": "symbol",
+              "name": "entries_by_origin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A record as the base holds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:45cc2b94b6500faf4a316a268483a4f4e8d320e33d6cfc827dafcf0149286758",
+            "locator": {
+              "kind": "symbol",
+              "name": "base_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An entry's anchor as the base holds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:07e9259706dd6623930d89b396120f99cbd927582e66a30b3ae4f01f1762f6cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "base_entry_anchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The atomic per-file write and the removals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:1e85efdb2bd0bb18666bf7a6969c031c4cc8888d95a62dcf2a2329b5044befcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

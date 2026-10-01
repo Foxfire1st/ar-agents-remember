@@ -1,0 +1,132 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/launcher.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "What the launcher is, and the ruling that it is a launcher rather than a role seat.\n\nAnchor: `## What it is`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:c15b73782fdac4c10831e24fa6905c15a00530abbd0f885c0e48bb5774c9e80c",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one-call contract for ordinary role-shaped work.\n\nAnchor: `## Ordinary role-shaped work — the one call`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:92d071c210fef3386b8840769a1408553fa15c6f5d92457466fc7513d595281a",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bounded task-seat-takeover exception.\n\nAnchor: `## Task-seat takeover — the bounded exception`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:0ddb12b50e745ea1ccad8dac0e5dc459a55561729a72cfc11c7db9f40d12c7ed",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The launcher's prohibition list.\n\nAnchor: `## What the launcher must not do`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:1ee097b3e1e2cbae9a8a11be74606f13672953708e8595b998bfa024396ffddf",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The structural reason this block is authored outside `roles/`.\n\nAnchor: \"Why it is authored here rather than in\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "744d35a727412fe0fbc612c71527412c9a8f1607",
+            "content": "sha256:bc82b620945d4395df4c8881c3017e712e665efb10770409d6cb2e02ec3ef311",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The manifest declares the launcher entry under the ambient-launcher routing condition whose instruction source is this file.\n\nAnchor: `routing_condition`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:a58af0027e4188ef52a946cfdd4982ce5e58b8ec51777adcdde9f45f6e6d9d4e",
+            "locator": {
+              "end": 507,
+              "kind": "line_range",
+              "start": 507
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shipped check asserts the launcher is not a role and that `ambient-launcher` is a routing condition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:71f7ce77160c90cec18929123418d8fcd2589c9295ad63bfa3dc43fd230e4971",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manifest_resolves_every_role_and_operation_source"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/curator_realization_authoring.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/curator_realization_authoring.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T17:09:54+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -86,37 +76,30 @@ nothing; the ingest calls it.
 No additional work is asserted by this card. (Reviewer R4's optional note — rebasing the
 recorded-but-uncommitted test on the real crash window — belongs to the test card and the Architect.)
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement: per target first, checked at admission, no route spelled by a placeholder, and what it does not cover.** | "Per target first, then the entry's explicit default."; "What this does not cover." | mcp/src/agents_remember/application/curator_realization_authoring.py:1-37 |
-| The five refusal codes and the producer-facing keys. | `CODE_RATIONALE_ABSENT`; `CODE_ROUTE_ABSENT_LITERAL`; `ENTRY_RATIONALE_KEY`; `TARGET_RATIONALE_KEY` | mcp/src/agents_remember/application/curator_realization_authoring.py:50-64 |
-| Values are trimmed text or nothing; a non-string is never rendered, and an unknown role is refused. | `_stated`; `_vocabulary_role`; `_field_problem` | mcp/src/agents_remember/application/curator_realization_authoring.py:69-77; mcp/src/agents_remember/application/curator_realization_authoring.py:80-83; mcp/src/agents_remember/application/curator_realization_authoring.py:86-95 |
-| **The placeholder word `absent` is matched in any case once trimmed, at a target and at `authority.governing_route`, where a non-string route is also refused.** | `_names_absent_route`; `_authority_route_problem` | mcp/src/agents_remember/application/curator_realization_authoring.py:98-102; mcp/src/agents_remember/application/curator_realization_authoring.py:105-117 |
-| **Resolution: target first, then the entry default, halves independent; only target-stated keys enter the digest.** | `TargetRealization`; `EntryRealization`; `for_target` | mcp/src/agents_remember/application/curator_realization_authoring.py:120-131; mcp/src/agents_remember/application/curator_realization_authoring.py:134-174 |
-| **The ordered target checks and the refusal that names every failing target.** | `_TARGET_CHECKS`; `realization_refusal`; `_describe` | mcp/src/agents_remember/application/curator_realization_authoring.py:209-246; mcp/src/agents_remember/application/curator_realization_authoring.py:249-280; mcp/src/agents_remember/application/curator_realization_authoring.py:283-287 |
-| The shipped role vocabulary and the unassessed-edge member, and the stored prose limit. | `RealizationRole`; `UNCLASSIFIED_ROLE`; `PROSE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/graph.py:36-46; mcp/src/agents_remember/models/knowledge/base.py:24-24 |
-| **The callers: the entry fields read the default, admission asks the refusal before `_creation` (committed allocations exempt), and each planned target binds its resolved realization.** | `_EntryFields`; `_resolve_creation`; `_plan_target_inner` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:834-880; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2221-2254; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2537-2592 |
-| The cases proving each rule through the real writer. | `test_each_target_of_one_entry_stores_its_own_authored_rationale_and_role`; `test_a_value_that_is_not_text_an_unknown_role_or_an_over_long_rationale_refuses_its_own_entry`; `test_the_word_absent_is_refused_as_a_governing_route_in_any_case_once_trimmed` | mcp/tests/test_curator_realization_authoring.py:121-150; mcp/tests/test_curator_realization_authoring.py:272-314; mcp/tests/test_curator_realization_authoring.py:606-630 |
+- **The module's own statement: per target first, checked at admission, no route spelled by a placeholder, and what it does not cover.** [1]
+- The five refusal codes and the producer-facing keys. [2]
+- Values are trimmed text or nothing; a non-string is never rendered, and an unknown role is refused. [3]
+- **The placeholder word `absent` is matched in any case once trimmed, at a target and at `authority.governing_route`, where a non-string route is also refused.** [4]
+- **Resolution: target first, then the entry default, halves independent; only target-stated keys enter the digest.** [5]
+- **The ordered target checks and the refusal that names every failing target.** [6]
+- The shipped role vocabulary and the unassessed-edge member, and the stored prose limit. [7]
+- **The callers: the entry fields read the default, admission asks the refusal before `_creation` (committed allocations exempt), and each planned target binds its resolved realization.** [8]
+- The cases proving each rule through the real writer. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The hand-off template that tells producers
 this shape is a same-repository skill file (`skills/l-01-agent-lifecycles/templates/curator-handoff-list.md`).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T17:09:54+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`; primary ICR-R20@v1, attempts L45-A2…A5, review R4 PASS): created this card for the module that now owns realization role/rationale authoring. **Semantic transition:** the writer's generated fallback rationale ("The statement is realized at <path>.") is removed and superseded by an authored rationale required per new realization target (developer ruling "require rationale"); per-target values override the explicit entry-level default; five named refusals land before identity minting (Architect rulings 2026-09-28T12:17:09, 16:15:11 and 16:38:58+02:00 on reviews R1–R3). Verification stamp names the code base; the module exists only in the uncommitted candidate and closeout owns the real stamp.
+No meaningful cross-repo references found.

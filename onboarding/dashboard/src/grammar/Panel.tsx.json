@@ -1,0 +1,83 @@
+{
+  "path": "dashboard/src/grammar/Panel.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`Panel` is the shared panel chrome primitive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98d36745c158cda0ea21c018a601df46566c3df4",
+            "content": "sha256:a496f7643da43edb989182547364cec0d2eb92106d175da69102a945a8b91a9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Panel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Engine Room passes `fill` to bound its 3-zone grid.\n\nAnchor: `fill`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a73535bd8d10a0482e7d858ca94ed20c9a16e7d1",
+            "content": "sha256:a1b998dd7be19505bf9ec4d4dc5427e75ca34e5f26fe2cf2216951124c6f8b14",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 288
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Panel shell uses the `bgPanel` background and `grid` border tokens in its styles.\n\nAnchor: \"background: \\\"bgPanel\\\"\"; \"borderColor: \\\"grid\\\"\"; \"bgPanel: { value:\"; \"grid: { value:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98d36745c158cda0ea21c018a601df46566c3df4",
+            "content": "sha256:740f7f16e230be768fafefa8b4c7457697e9b130a931afb17d72c44b5d9ad33a",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "98d36745c158cda0ea21c018a601df46566c3df4",
+            "content": "sha256:d24febeb83f114313641dc335061025c0d346f30e9d58a3070b0e77b335dbe0d",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
+            "content": "sha256:158fb2b47e39ee5c150cae896c1c04114cd5a55d5d96792c49d2f9330565b8d0",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/panda.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

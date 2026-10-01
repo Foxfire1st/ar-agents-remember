@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_currentness/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_currentness/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T19:59:41+02:00 |
-| lastVerifiedCommitHash | `719acba61e491d0b7f1ee82dbeea5314ecec5083`|
-| lastVerifiedCommitDate | 2026-09-29T20:27:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -48,7 +38,9 @@ modules, and this file re-exports their public names.
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R03@v2` of task
@@ -57,28 +49,17 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package statement and its map of rules to modules. | "Stale invariants flagged at read time" | mcp/src/agents_remember/application/knowledge_currentness/__init__.py:1-14 |
-| The re-exported names. | `invariant_currentness`; `read_currentness` | mcp/src/agents_remember/application/knowledge_currentness/__init__.py:26-39 |
-| The two consumers import through the package. | "from agents_remember.application.knowledge_currentness import" | mcp/src/agents_remember/application/published_intent.py:91-91; mcp/src/agents_remember/mcp/tools/knowledge.py:41-44 |
+- The package statement and its map of rules to modules. [1]
+- The re-exported names. [2]
+- The two consumers import through the package. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the package reads one memory tree's index and one code
 repository's object store, both named by its caller.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): created this card for the new package MIK-R03 adds. No `knowledge_currentness/overview.md` was created, following the `knowledge_worklist/` precedent; the application route overview governs it. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

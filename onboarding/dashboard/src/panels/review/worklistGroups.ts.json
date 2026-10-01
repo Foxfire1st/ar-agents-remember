@@ -1,0 +1,194 @@
+{
+  "path": "dashboard/src/panels/review/worklistGroups.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lane's gate items for one opened file, from the unexplained groups (MIK-L32).\n\nAnchor: \"const groups = worklistGroups(gate.worklist).unexplained.filter((group) => group.path === path);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:6613de03ec906d4f3cf504e1ca8a2b3df1c054e4ebdb758f5e37596a456bd3ac",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 473
+            },
+            "path": "dashboard/src/panels/review/LaneFileFocus.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's own statement: grouping only, the four groups, and that history rows answer the unexplained items while this structure and the lane only list them.\n\nAnchor: \"Grouping only\"; \"They are answered by history rows\"; \"(MIK-R10) that the closeout gate enforces; this structure and the MIK-R32 lane only list them.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:5dcf2bf851a8ac3d92b55d9624783fe902dee73a8fe71638ed5d2281f40a2254",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The group shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:ff0b51643d18ea8c544033f6af270397f217ec30ae4b6ce81af751db38c99371",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorklistEntry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:7292fd308088ed3d4189d4fc98b03178cfb9eb0d8beab935ad06717b0c8db58f",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnexplainedGroup"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:46dff427de4a69e67f8ba4c89530407ae1228fb96d119ad4bc9f09d7e0598c8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorklistGroups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Rows found by the item's subject and by its `facts.row`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:db331d6ef3d2a2427c0d1656b8e43b21f8a53fe9d9c04408fc80dfc6efef66a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowSubjects"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:a5f62bd981bf3ebffcca87de55494ef5270fa60e88a372ed3525ad693c4fced1",
+            "locator": {
+              "kind": "symbol",
+              "name": "entryOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unexplained items by file, then coverage state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:ffe1c75e80b9c4905a17849ccf706c5e27e7b60ea5c6dd250a93a62b58b47c3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "coverageState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:706ddd23d48b117956a934b4c0137d959922096cbd49ffedd2d2bd852fe1620c",
+            "locator": {
+              "kind": "symbol",
+              "name": "unexplainedGroups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The four groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:5b2cb86ef503849c65aff2b461e56d0b2da8b91baa99c26282775e3a8aef85a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklistGroups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cards' planning marks and the hunk linkage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:c1c849fcc1ec8249124eb75a55330bf2723822b26dd05eb464a685b7163228d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "planningMarks"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03090a63ac87c98b266ccbcbb5ac1194aaefcc15",
+            "content": "sha256:91db648e9670f610b57c15b2fa19f6a09eee972c489c8c488982e25a116f12a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunkLinkage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The server's matching row lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc8f866afc212d6035d8c6e321f10aaf6e6ab72f",
+            "content": "sha256:1868095f0bdbc8a5ab5c1a9ec35b3a48e57c7c38426fdc4adeaa43cefd1490e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_subjects"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

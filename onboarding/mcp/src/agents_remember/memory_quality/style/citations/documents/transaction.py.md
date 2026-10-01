@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T04:32:25+00:00 |
-| lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
-| lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Area overview](overview.md)
@@ -41,37 +31,29 @@ The file has one owner and one mirrored card. Source coordinates below include d
 
 No additional debt is claimed by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. The cited behavior is a repository-owned contract, without an external documentation claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source. | N/A | N/A |
+No configured external domain source.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The concrete owners and forcing cases below support this file's contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Accepted cells carry optional exact-move projection bindings. | `Edit` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:19-27 |
-| Cell replacements and generated history compose one final byte sequence. | `render` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:40-52 |
-| Complete original bytes and held source-index identity must still match. | `unchanged` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:54-67 |
-| Every source cell and optional projection binding is checked. | `_cell_unchanged` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:69-79 |
-| Validation precedes atomic byte publication and final digest accounting. | `publish` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:81-87 |
-| Preview validates the same preconditions without invoking the writer. | `preview` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:89-92 |
-| Each accepted projection receives the complete document digest. | `projections` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:94-99 |
-| The existing writer uses a unique temporary file, fsync and atomic replacement; it does not lock. | `atomic_write_bytes` | mcp/src/agents_remember/kernel/atomic_write.py:51-70 |
+- Accepted cells carry optional exact-move projection bindings. [1]
+- Cell replacements and generated history compose one final byte sequence. [2]
+- Complete original bytes and held source-index identity must still match. [3]
+- Every source cell and optional projection binding is checked. [4]
+- Validation precedes atomic byte publication and final digest accounting. [5]
+- Preview validates the same preconditions without invoking the writer. [6]
+- Each accepted projection receives the complete document digest. [7]
+- The existing writer uses a unique temporary file, fsync and atomic replacement; it does not lock. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This file creates no cross-repository protocol. It composes local citation and file-publication owners.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No separate cross-repository authority. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Created the transaction-owner card with exact full-byte/cell/lease checks, CRLF composition, preview/publication accounting and the explicit final-read concurrency limit. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
+No separate cross-repository authority.

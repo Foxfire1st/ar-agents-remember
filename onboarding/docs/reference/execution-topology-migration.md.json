@@ -1,0 +1,143 @@
+{
+  "path": "docs/reference/execution-topology-migration.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The read-only inventory the guide documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:17bcd8f3428838464157c8c0498fc854914df5f446dbdb3a26a075a36c1e7d80",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_execution_topology"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:e90bbdbbaa160013e9a27f178bcd56db368b63f1735dc14db54f010f3fc7f3eb",
+            "locator": {
+              "end": 979,
+              "kind": "line_range",
+              "start": 917
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The graph-authoring batch (and graph-less bootstrap) the guide documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:2f95bbaffd921ff5d9f5c9f41de1fdef57c39f78ec1fa2e554c61e3e339ac20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_execution_graph"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:c7e62cb967e2bca942aa3cc5226de3ecf421748ff6db4e6ff1a3f7e0c9f8325c",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Fail-closed validation of a sprint's commanded membership and natures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:3dc698020ffa24205784b3bb57b63e0d9238f49524b681fe93644b305424ad0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_execution_topology"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:bedd8f1717078627e07b38ca92aa7808e81ae6cc6152f5596af0890862cdacf3",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact per-contract activation is the single runtime selection authority and archives malformed snapshots before replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:8873f85453764b66074b38456dd555d2d7a1a5e400b0f7c6795998742010474c",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_atomic_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:02c769bd10c6ced2c205db3d5ddfe21f3b32ba4ed8644546ef38d628ea56dded",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_atomic_series_selection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Queue waiting reasons observe activation without owning its lifecycle; only reconciling waits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:8f185c22a95c3ed7c51df07d2b9764247886e8cd8ca1a91553979c42a36a58d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "activation_waiting_reason"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

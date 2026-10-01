@@ -1,0 +1,155 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: the key, inputs outside the trees, the bounds, what is never kept.\n\nAnchor: \"A verdict that carries an unreadable input or a run that failed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "content": "sha256:82e40bcbd51fedd068b0bcd2e25fe0adfa6408348a879a8d5df076bf8c8d6518",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bounds and the key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "content": "sha256:e686ed45465e41e63fc2bf410ff08e56ab3cfcfb5cbb4b30381de4675fc726b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPACITY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "content": "sha256:2d7e6ec6090a5beb014a48c0788de897f3063de2822524ba907e62545973fc6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_AGE_SECONDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "content": "sha256:c41140236ad406d64eb0bad047d91221b4ba3015e86c288d6276278927fe42d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateMemoKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A kept verdict with its read set, hashed again before reuse.\n\nAnchor: \"def still_read_the_same(self)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "content": "sha256:3666812befcb8f9a437fd2c6d6dd7a62c083481c66c04148aa31d24f64feec41",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Kept"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The key of one evaluation, or no memo.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "content": "sha256:259de3efe221e71a7f63dfea13916a5e28c8b5d95523f7af00e0603927b1f851",
+            "locator": {
+              "kind": "symbol",
+              "name": "memo_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reuse and keep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "content": "sha256:30ee54a0949b5d8e434add6a188d8fab6cb75d013e454a2c954de9067bf3383d",
+            "locator": {
+              "kind": "symbol",
+              "name": "remembered"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "content": "sha256:9a4df1f073632fb9bf820be492876834fb3bb9800f0c979ede3af9810f572de7",
+            "locator": {
+              "kind": "symbol",
+              "name": "remember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Only identical inputs reuse a verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "content": "sha256:74746b4d59f362ac41001eae047ad11460c1f86fd80da1221bd80ef45112b7ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A changed approval state recomputes a kept pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "content": "sha256:60a98806c5d48ef840917eba8fb8e664786e7a4a659aa8399e3c2739b74b7e63",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_pass_is_recomputed_once_an_endpoint_s_approval_state_changes"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

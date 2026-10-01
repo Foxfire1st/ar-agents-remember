@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/data/fetchWithTimeout.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper aborts and always clears its timer.\n\nAnchor: \"export async function fetchWithTimeout\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9418a86f2df6b7b216b5188d35fd2c86571e6141",
+            "content": "sha256:274231f39ed69b97388c24135388f76bba083821e98576b6264aa720b5c6f10e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared boot reads use the helper before entering their single-flight maps.\n\nAnchor: \"export function shareInflight\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94ca179c937d5841948b4d9c4f937592f60e38c7",
+            "content": "sha256:d2cda498ebcf9eb0ac787a013cefc33f0f83e2737b9284c268dd04c903bf8da8",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/data/inflight.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The helper is local browser transport plumbing.\n\nAnchor: \"export async function fetchWithTimeout\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9418a86f2df6b7b216b5188d35fd2c86571e6141",
+            "content": "sha256:274231f39ed69b97388c24135388f76bba083821e98576b6264aa720b5c6f10e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

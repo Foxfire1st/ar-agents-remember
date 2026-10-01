@@ -1,0 +1,191 @@
+{
+  "path": "dashboard/src/test/fixtures/catalogRows.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared row builder.\n\nAnchor: \"export function catalogRow\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:a8a7c9546cc6a8635af6fa45f479cbf737e296cf14ffe1a57c04fb86faf87030",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The PTY archetype-surface consumer.\n\nAnchor: \"const controlled = () => fromTerminalSessionInfo(L6_CONTROLLED_WORKING)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d09f1f11bc7e56ada9fec62b1c1a36ca055ec25",
+            "content": "sha256:cec65543e9f27a5fca998b60d92ee62fdca5fc76d6ac31d9f198ace1368f9f22",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The mockup-mirroring terminal-row `FLEET` scenario, distinct from its task-document fixture.\n\nAnchor: \"export const FLEET: TerminalCatalogRow[]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:aeeb58800a01f679c91345cc1dd3543c863dfeef0cb842ac9ca0b2e5462d8e29",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The appended L6 PTY, interaction, and residual fixture pack.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:ea54c8b7d5392b4545194acdc6ea6f3c2d60d7b7c3d55c73a8e9fa31ca83eca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "L6_CONTROLLED_WORKING"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:f80a3b614405a750fba3b8d8292987a5701d378a4257cd50865745734bb73df6",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The appended L5I structured-interaction fixture pack.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:4c25acd4d267df584ad91750fae24ccfc5a8133445f22f534be223041b671a57",
+            "locator": {
+              "kind": "symbol",
+              "name": "L5I_INTERACTION_QUESTIONS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The appended L7 multiplexed-interaction fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:20e90144bc9c3a9f3f3f26478b10be1e23321395a72f676cb782e857bfb24bc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_MULTIPLEXED_INTERACTIONS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The wire type instantiated by these fixtures.\n\nAnchor: \"interface TerminalCatalogRow\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccf02e3f6a22b4e05160cd79e1102f882011c162",
+            "content": "sha256:5f745bea3c5301d5daa36299c7af64abfdc45b7927e9d47c2601c3f343777d5c",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/types/terminalCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The rail-state fixture consumer.\n\nAnchor: \"hydrate(FLEET\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56b61f4e3ece27f20482db0ce86b22ddc22c7de",
+            "content": "sha256:3f8d96e2e0c5bf7a6b1933ad2d149a54a6eca08153cd34edb06af93eb3c0ec77",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The lifecycle-flow consumer of the appended fixtures.\n\nAnchor: \"const retired = fromTerminalSessionInfo(L6_RETIRED_WITH_STOP_ERROR)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77902ee6a969c6672217fe296dc82f67437ad38",
+            "content": "sha256:2f7560eb0f75187006ce322e1dcfea9199d7c3b7fa6ed0495fe682ed1acf5e2b",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "dashboard/src/data/sessionLifecycle.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The interaction-bar consumer, including the multiplex suite.\n\nAnchor: \"const multiplexedSession\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:e1a7e188ebeb33ca138522122be41d7c375f09f255e22fb57e2b265b2bc2955e",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 481
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

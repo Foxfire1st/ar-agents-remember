@@ -1,0 +1,393 @@
+{
+  "path": "mcp/src/agents_remember/application/review_recorded_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the two questions it answers, the two places it reads and the reason: a page must not decide a record's meaning.**\n\nAnchor: \"A review's applicability classification turns on two questions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:6d0cefe1c3cab50bc0394f31936e8aec843bb335eba63b46fea07e49c71c5150",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedSnapshots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:5f54d0ea43074e84fb4f7f65a90e398ba81f751a01df8a19c4aa37e873f33c61",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The sources one classification is assembled from, with the known-subject catalogue a reader rather than a value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:be05bf098f413d727a2e3064c0bef84bd3aa4105f0900a6a1c000453113a615b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ApplicabilitySources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The read owners this module composes instead of writing SQL of its own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:8657312654423a2f18d7fd9065a8e426f43bc47e457f9a697717ab7ef40ae0b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_revision_ids"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:0c4053a754aa87570724f898082a27d197b472f2cfcce4ca2f6e60174c044e5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_memberships_of_invariants"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:1b02d6e267bed762609104fdea5d089a0e57e80606a112edb4d7d619846a6cff",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_family_ids_for_revisions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:aec97992be3482f558d2aed2fffff3396442a7d68e7d2fda8590cd485a6678ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_memberships_of_families_full"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:9aa77b62fce1a6b254e8004fbc6cddb8e5ffd1d411c18bc02c387ad831013ea9",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_invariant_revisions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:d8f1233349ed7bf844a90b9f3c470ce43b01aaa5b46e62f5a9c4e869b9ad544c",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_realizations_for_invariants"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The one consumer, and the port its panes read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:afd17b58628b96dd72b374726620ed74f75980e41f68fa9013d3981b4a9195ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_applicability"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_applicability.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:bb321e42eb6244d4a05805435f272610c130b581f1f81bdcf7fbba561f51df7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AppliedRecords"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_applicability.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The case that measures the page-independence this module exists for: identical treatments, context and summaries at every page size.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:5012fff1b633cd20f1622b60ff5a83451cbd4aeef10ae44e255d4be40c55f57d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_page_size_classifies_the_same_records_the_same_way"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The population as the classifier reads it, with the recorded revisions and ICR-R07's page-bound retained list kept deliberately apart.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:75dca0b664aae2968c876b97425021bee8711f2aac080593dd0127d29addd327",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedSelection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:05a7f73b12ab67251ea43964ad10a0a6a2bc9573c86ae2d86f46acfd6c547270",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_retained"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The one public entry, which reads the snapshots' half and merges it under the comparison's page facts so the union only grows.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:17dfe0a55eb654e6821590865eb67a689a54ca7081f7bc7c54f3f95e0cbf846c",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_subject_population"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The three fixed tiers of relationship spelling, ordered so two page sizes render the same related identity the same way.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:17dfe0a55eb654e6821590865eb67a689a54ca7081f7bc7c54f3f95e0cbf846c",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_subject_population"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The one identity a review seed names, in the union's own kind vocabulary, with a revision seed resolved through the item that carries it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:1a43bde627940d735d97ab9562f34b7c152b4fab7a0b2f2a66709bfdfa154ce3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:2efd96e643e7825355566834c3addd3cf6c6b8f125490c3ed1c6f6442cccf16d",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/application/review_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The mutable accumulator whose one rule is that an association identity is never a revision.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:5247a68a8259d5ad93433f78d10e4463540d398cfd7309f4946de7599584e55c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Population"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:0b97694855109f42602bbbbc2421104ac3ec6ad735b3022e1797724bd73e04d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "reach"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:29ef485126ec109131987f0b644947f413fe8d902592c0662058c0b96124949b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reach_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The page-independent half read from both snapshots' own owners, contributing nothing from a side that could not be read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:439b561c626e2daf415ad1483dcfff1505cbfbedb2428f6ce648aa6b3f2cbc4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot_population"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:9cacbe3a5b37cc72797d0a9cc1718c841947fb400c5fe41b10179e68b2ebea8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_recorded_reach"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**What \"related family/closure context\" means here: a directly containing family, its recorded members, and each member indexed under its own identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:4d522bbd050a2f02cb4eb9c1f28f0c411e77d1725916f4c66341ab1a21faa89a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_containing_families"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:bae6778344e0e01e7b30cdb195e115b075cf8af9bc95c006c3323f4df4160362",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_family_members"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:0cd6153ad2dc556a81c0f59c35c3ec749f4c174e383d8e85dea1af0348b0a52a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_realizations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The comparison facts the classification must not mix across comparisons, carried as one measurement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:96a451320914c974915d46b45e15a445322ec64f152da9bf244b77dbeabf2cf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonFacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

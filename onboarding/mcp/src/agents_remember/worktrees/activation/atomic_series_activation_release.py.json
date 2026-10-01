@@ -1,0 +1,294 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The selector authority supplies the per-contract activation path, strict observation, and canonical master reference.\n\nAnchor: \"def activation_path(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:d6e17a409e4fac3ebceb9ec9737f7d815e06fd5fcdede5befd4ec33de49876c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_atomic_series_path"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:d0c6fd8108a45c49ca5f85915f8dcd62f629d0b461ea7490a47a97afbd56c1fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_master_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:7c08e5a860b1bf82c64c5b31bda2cff218bb28404e571f30939e94e7fdb9b072",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Explicit cancellation refuses an absent exact selection and a record that selects another contract.\n\nAnchor: `atomic-series-activation-selection-missing`; `atomic-series-activation-selected-contract-mismatch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:b72a92de1e17269d0df6e9df39b32068f257c2283c7577c93ef639e5144d3821",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_atomic_series_selection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:5a0ba86a5ca71f56205cc05690fe6389091a0b2052e5d566d36fa3284eff5d8c",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact-owner proof and the revision-incremented vacant replacement retain the last selected master/contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:539807dba19805716c7b75ddcc1cd2a03c97791b84cfb9f88c069b60fe2e934c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_selects_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:63d6ff82bae19511ab1e49b5be5ebe1fae21fde83bf0bbfe4c4dd94151e05dac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_release_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:ff59fda7c2f59cab55c7445342dc0f41eecfc1f9a456c7af341e0da2918514df",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:699ef1acc1af8a0c80083b5929d04972ec60cba10956acf00f1fb3feb1c74268",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The terminal bridge translates exact, absent, unreadable, and different-selection outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4df4324735948c916744cbd6d02298769da89c55",
+            "content": "sha256:3a00552ad62fb39e17881fca1a99e72e77ec42e0376a23afba78315f45693c59",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_terminal_atomic_series_release"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Tests prove exact release addresses only the released contract and that another contract's record is never adopted.\n\nAnchor: \"def test_release_addresses_only_the_released_contract(self) -> None:\"; \"def test_another_contracts_record_can_never_be_adopted(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:d5e9b53584670e8d426bfc747b555b8e77eba3bc9a7fb7b667772183cfb67600",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:5fc1f69f7d81269feb93b572f3c74639b51462bdfba97750b13386b483ff5427",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stop-only pause is the third caller of the strict explicit release, and it adds no authority of its own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
+            "content": "sha256:84fafdf9ffdd37a4b4147001d8b5e46c26385abec50dcc60edc1628ff2e1d51d",
+            "locator": {
+              "kind": "symbol",
+              "name": "pause_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
+            "content": "sha256:be8ef36ce51fa9483a23838076371def6eeaed7e42576161d3273b2170fb4d96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_already_stopped_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The pause's boundary proof shows that releasing one master leaves the other master's record byte-identical, which is this file's per-contract isolation observed from the caller's side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:e16d848df49149016f354712e4e8e29f7dccf59c85a41603b7e913cd78625476",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pausing_one_master_leaves_the_other_masters_record_byte_identical"
+            },
+            "path": "mcp/tests/test_pause_stop_only_end_to_end.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:a6eaffb2ca41eb8c5e818b06bd369eaaec1cad7cbffd68fb95eae4ee52673875",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/tests/test_pause_stop_only_end_to_end.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two foreign-record shapes, proved apart through the public route: the **vacant** foreign record reaches this file's exact-owner guard and is refused as a contract mismatch, while an **active** one is refused by the observation's earlier guard and reports as unreadable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:29badfc47c3e17c80a5c5e1b9690a3a61b492950ad43b2bde7884d937d13fdf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_naming_another_master_is_refused_not_released"
+            },
+            "path": "mcp/tests/test_pause_stop_only_end_to_end.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:6b2ec005a344837fc18ec9982c9c05dfbe285b255377044b6562ed72bdc75ffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_this_contract_does_not_own_is_refused_not_released"
+            },
+            "path": "mcp/tests/test_pause_stop_only_end_to_end.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:16069cb37ef6c028533cf425c54ca39298918940aec20a123eb8e72aeb8c82ca",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 406
+            },
+            "path": "mcp/tests/test_pause_stop_only_end_to_end.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The pause's structural guard proves the stop's static import closure cannot reach a publication module, so the third caller releases through this strict path only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:3cee22c074a1321d04fd58e1890fc02bdd44f6700364e32bb2d89460fd0f26b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLICATION_MODULES"
+            },
+            "path": "mcp/tests/test_pause_is_not_publication.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

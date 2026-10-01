@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/operations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The L2E epoch-guarded native interrupt write and replay-once cache.\n\nAnchor: \"One native interrupt write\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:481d71e39d8a237622564b210df398737d33e8fdb67d30ebe61ff2f1b6f8261f",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pi mapper's two message_end emission classes (`pi:message_end` content-less, `transcript` content-ful).\n\nAnchor: \"transcript: tuple[TranscriptEntry\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01608c7cc53b618a668b33cc25f0d2a94bb2c1b3",
+            "content": "sha256:b37ef00b85e1cd12cd170d9779d28ec137455ba501586d14022e122a36741017",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The L3E truncation-envelope identity preservation (`type` + `message.stopReason`) this read consumes.\n\nAnchor: `_preserved_evidence_identity`, `clip_evidence_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:c1cff8f82d05708aa6bf6e1d9e0ead335139fe6083a42eadb34cb87fda8a369e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preserved_evidence_identity"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:9f814acd3a3dea8bb6c8311fc5e370fabd2c37ba17f379ba49ad8da12da65d5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "clip_evidence_payload"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The service seams (per-session lock, epoch verify, identity, timeline) this ledger composes.\n\nAnchor: `session_lock`, `verify_epoch`, `build_identity`, `read_full_timeline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:0bc07f83ec1e00f2db98e88912c2013c6449a2ef7db23777e4199425482f5422",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_lock"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:dc636be7dd1685b4e10aaf5c53fc443ee9c30e5699705e70c63f270fb3b104d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_epoch"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:5813a1c7cfdda4001ff7252ad87518bee12425a27e4365bdce0b13ae15fb2cf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_identity"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:d0c4b18adbf47c6be173e901de7d6f8bc7bcdbaf6b3e8cc442844258a14ce6ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_full_timeline"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

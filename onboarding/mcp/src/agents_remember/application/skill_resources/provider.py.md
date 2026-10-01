@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/skill_resources/provider.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/skill_resources/provider.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -71,53 +61,26 @@ Constants are module-level and documented with the reason they exist, not just t
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation governs the location of this repository's generated package data. The
 generation contract is the source checkout's own: root `skills/` is canonical and
 `scripts/sync-skills.py` refreshes the package copy. No relevant documentation found after checking
 live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The served tree is the packaged runtime skills copy, which is what makes a served revision reproducible. | `PACKAGED_SKILLS_DIRECTORY`; `shipped_skill_tree` | mcp/src/agents_remember/application/skill_resources/provider.py:29-29; mcp/src/agents_remember/application/skill_resources/provider.py:39-47 |
-| The corpus root, its manifest and its publishing origin travel together as one admission. | `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/provider.py:50-63 |
-| The publishing origin is both the URI prefix and the identity half that keeps two servers' same-named skills distinct. | `SHIPPED_SKILL_ORIGIN` | mcp/src/agents_remember/application/skill_resources/provider.py:26-26 |
-| The packaging helper both managers open, which may materialize the package data for the duration of the call. | `packaged_source_root` | mcp/src/agents_remember/install/assets.py:35-47 |
-| The generated package-data copy the served tree is read from. | "ar-role-capsule-composition/v1" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json:1-6 |
-| The canonical skills source tree the package copy is generated from. | "name: l-01-agent-lifecycles" | skills/l-01-agent-lifecycles/SKILL.md:2-2 |
-| The consumer obligation stated for a caller supplying a corpus root without its origin. | `CapsuleSourceSelectionRequest` | mcp/src/agents_remember/application/skill_resources/capsule.py:156-170 |
-| The case that keeps same-named skills from two servers distinct. | `test_same_named_skills_from_two_servers_remain_distinct` | mcp/tests/test_capsule_serving.py:862-879 |
+- The served tree is the packaged runtime skills copy, which is what makes a served revision reproducible. [1]
+- The corpus root, its manifest and its publishing origin travel together as one admission. [2]
+- The publishing origin is both the URI prefix and the identity half that keeps two servers' same-named skills distinct. [3]
+- The packaging helper both managers open, which may materialize the package data for the duration of the call. [4]
+- The generated package-data copy the served tree is read from. [5]
+- The canonical skills source tree the package copy is generated from. [6]
+- The consumer obligation stated for a caller supplying a corpus root without its origin. [7]
+- The case that keeps same-named skills from two servers distinct. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T07:40+02:00 — 260915-CAPS-L24 curator: **one evidence row removed on two independent grounds, neither of them silence.** The removed row read: *"The case that demonstrates removing the origin/identity pairing breaks distinctness (coordination-root relative)."* — anchor `M2-resource-read-grants-a-tool-permission`, Source `tasks/agents-remember/260915_role-capsules-and-native-eve/notes/reports/caps-l4-mutation-probe.json`. **Ground 1, uncitable:** that Source is a coordination-task-root artifact, and a card's Source must be repo-relative to the code repository or the memory repository — `memory_quality/style/citations/range_resolution.py:57-61` states that grammar and `memory_quality/style/citations/resolution.py`'s `Trees` resolves in exactly those two roots (both checked, not assumed) — so no legal Source cell could ever name this evidence, and no shipped rule permits a task-root citation. **Ground 2, mis-anchored:** the record the row named does not evidence the proposition the row asserted. Read from the probe itself, `M2-resource-read-grants-a-tool-permission` carries `behaviour: "CAPS-R04.4 -- a resource read grants no permission"` and `guarantee: "the admitted tool snapshot is the published surface and nothing else"`, mutates `mcp/src/agents_remember/application/skill_resources/capsule.py`, and must fail `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names`; the probe's fourteen mutation records cover `CAPS-R04.1/.3/.4/.6` and `F-L4-08(a)-(e)` / `F-L4-05`, the string `distinct` occurs nowhere in the file, and `origin` occurs only inside captured test output. A row whose named evidence contradicts what it asserts cannot remain as written, whatever is decided about citability. **The proposition itself is not lost, and it is true of the code** — `models/skill_resources.py:10` states that identity is the publishing `origin` plus the resource URI and `:101-102` is `identity`, which is why the adjacent row above (the positive `test_same_named_skills_from_two_servers_remain_distinct` case, `:862-879`) still carries the invariant. The finding survives in full in **260915-CAPS-L4's own probe** (`notes/reports/caps-l4-mutation-probe.json`, the artifact this row cited, which is L4's evidence and not this card's), in `notes/reports/260915-CAPS-L24-curator-repair.md` under *"The bounded final pass on the last row"* (section 6a) and **§6c** (the removal record), and in `notes/reports/260915-CAPS-L24-curator-evidence/cited-probe-record.json`. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-16T10:40:46+00:00: Generated citation repair: `test_same_named_skills_from_two_servers_remain_distinct` repointed to mcp/tests/test_capsule_serving.py:862-879. No content impact: mechanical anchor-range projection bound to citation source snapshot d000fd9192b3f076fd4f39e5e775a368dd70d71b172c679cb9d28176bdc33096; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T12:25+02:00 — 260915-CAPS-L4 curator, **closing pass, citation work on this document
-  alone** (`citation_fix --document mcp/src/agents_remember/application/skill_resources/provider.py.md`):
-  `test_same_named_skills_from_two_servers_remain_distinct` repointed to
-  `mcp/tests/test_capsule_serving.py:862-879` (the repairs moved it), three ranges normalised to their
-  exact definition extents, and one degenerate `:1-1` citation replaced by the actual frontmatter extent
-  of the canonical `skills/l-01-agent-lifecycles/SKILL.md`. **Blast radius avoided (defect `D8`):** the
-  root-wide form of this tool would have rewritten 188 claims across other leaves' documents; the
-  per-document run wrote this file only.
-
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: corrected the served-corpus
-  reference set against the settled candidate — the served tree is the generated
-  `package_data/runtime/skills/` copy, the corpus that carries the composition manifest is its
-  `l-01-agent-lifecycles` subtree, and the publishing origin travels with the tree. Re-anchored the
-  provider ranges against the current 73-line source.
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator: created the card for the served-corpus provider.
-  Recorded that the served tree is the packaged `runtime/skills` copy rather than the root `skills/`
-  tree, that the publishing origin is carried as part of a skill's identity (not just a URI prefix),
-  and why the corpus root, its manifest and its origin are one value. Verification metadata remains
-  closeout-owned; no acceptance claim is made.

@@ -1,0 +1,404 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/requirements.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The one write entry point, its pre-lock checks and its one immediate transaction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:ca97b977567e3fe67ec336b11e23cbd373a1a9a3a201f7fc21246257a58f389b",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_requirement_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The governing route authored once: a later revision cannot repoint the record's sealed association.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:0e800d40184a2d16075647c33afff88892a8a74f8e8e4857e53d04dc28cc17ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_record_route_unchanged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The pre-lock route check, with the ungoverned state never refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:8a9ac63685591a04ef4344acea8a775e1cc77ea85b9775d5b2d2c398f25d4c7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_governing_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The two operation names this record group declares once, one per operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:9f2919d2cfd70ebac1811a4d975eef605db399dfd2bcf85436848477e660b896",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORD_OPERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The read operation name, declared beside the record operation rather than inside the write path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:6731514331ef63defb1361917197a972fb1c0d5643fc1021b057558e0fbbe644",
+            "locator": {
+              "kind": "symbol",
+              "name": "READ_OPERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The narrow local literal, asserted by the suite to be a subset of the shipped vocabulary rather than a second one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56e90c252bdaf1b81b3ed10b53f73fe2af8448d",
+            "content": "sha256:7d1a87fb9248552780e452e366e963a384d0b7e70f9d296ea15888c53e0f4665",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementRevisionOperation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/requirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The shipped lock and one-immediate-transaction contract whose rollback this module relies on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:130e018fa5aca9ea593e79899e82d27a56fdffd114fa01df79ad01ab23b17861",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_candidate_lock"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:7ee02cccff995e8f4b6b3163968e712d95eae57acd7ce0aa83ae5fce8729905e",
+            "locator": {
+              "kind": "symbol",
+              "name": "within_immediate"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The envelope tables these operations write into, and the immutable-revision trigger behind them.\n\nAnchor: `record_revision_no_rewrite`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:a0fa52dafe6f7343934ee1b9c82df56ad2c55ff04755514b37bb8c077182ee86",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The one-payload-seam entry point this record group calls, with its three refusal paths and one code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:a70c5252d91317d7a1e283ddcb483f6714da87613f16dd6229fe84b06582cb7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_record_payload"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The lineage, promotion, reference and namespace cases that pin this module's refusals one by one.\n\nAnchor: \"test_a_promotion_attempt_is_refused_and_no_stored_byte_changes\"; \"test_a_self_predecessor_is_refused_as_a_cycle_and_writes_nothing\"; \"test_a_dangling_predecessor_is_refused\"; \"test_a_request_addressed_to_another_namespace_is_refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:d91c00f2f45cf7075cfa4b192610976f14427475d9217e7ccf461561d9106da9",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "mcp/tests/test_knowledge_requirement_revisions.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:59b8fb24de6052285ed956c7eb99786859d2383c2919170c20d1f839502182f5",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 403
+            },
+            "path": "mcp/tests/test_knowledge_requirement_revisions.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:28c55d9e86b3b8e871a23b29c5680155d8b83a51e2673d09d2d36e697633ca88",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 448
+            },
+            "path": "mcp/tests/test_knowledge_requirement_revisions.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:47622c2e98f47f1bcc050c12e2a6591de3d4617c6f4a6e7d1d35717d09892e10",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 529
+            },
+            "path": "mcp/tests/test_knowledge_requirement_revisions.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The route cases: ungoverned as a state, and a sealed association that cannot be repointed.\n\nAnchor: \"test_ungoverned_is_reported_as_a_state_and_never_defaulted\"; \"test_a_named_route_must_be_authored_and_is_never_repointed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:360ef13232de92fbd22a5b6d776cacdb569d9e1c874873a7d929a5c487e56e45",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 366
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:5b54101b3fcb29e7b3e79f00619c8a902ab233b914b731e733bf7b05382e76e7",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 384
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The transactional body: every guard before either INSERT, so a refusal leaves no row behind.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:30839a3da9360c50d53193c1d9ccf1f313559d0ba3c1586a04f9094cceb61150",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The reference-resolution case: unresolved, then resolved to exactly one, then ambiguous over two holders.\n\nAnchor: \"test_a_reference_from_another_record_group_resolves_to_this_record_group\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:e94ff3067e9c490b49d2bfd350b338bdf2c2d0535c36e8d4ce6dab89a30c809f",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 528
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The single payload seam this record group validates through, delegated to rather than restated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:d73f4e48c2d83b4cc55decdceeae9783a2ed14f301ab989e7a0a784ed2ba0d29",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admissible_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The read that answers through the derived views and refuses a record nothing stores.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:798da46428a62a656d3ff2d4829c1bfcf91ac893cf08cf8a67db5665c9437fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_requirement_revisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Requirement 2.6 answered here: resolved names exactly one record, ambiguous names more than one, and neither is won by the substrate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:d579018fa3d0850e9260d3e301761169fe722141d5f9a149d02e4da3c1514a94",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_requirement_reference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Promotion refused as an attempt on a stored revision, with the owner named as the next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:e6ea88f08a0e3e621512121daefade5b616a77eeb2e1e9017b072bc07a470221",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_promotion_not_attempted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The shared acyclic-lineage rule this record group composes instead of re-implementing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:c06677e551a916946921747cbd468b364b48166969e062f849ce538ad90e2523",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_lineage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared rule itself, decided over the stored predecessor edges plus the new edge.\n\nAnchor: \"def find_cycle(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:8a11dd22ae1c99ef0aba9461640ee317ff532fff9dbccfbef44abc2bcc5729d4",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A predecessor stored under another record and a predecessor stored nowhere, refused as different facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:994ba9c8dcd22265be9a05661a64414b6a34a73518ee20a54e6fcce568cec5b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_predecessor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

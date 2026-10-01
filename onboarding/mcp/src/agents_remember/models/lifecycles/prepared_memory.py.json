@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/prepared_memory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`PreparedCodeExecutionView` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32a8fc90639ba4d0f99bac8a06185d40593e4d1b",
+            "content": "sha256:71ab7d9439ff9b3956a9de4aad7a6420e24ae4fd1f411956e6ba52742457ce8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedCodeExecutionView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`PreparedMemoryCandidate` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32a8fc90639ba4d0f99bac8a06185d40593e4d1b",
+            "content": "sha256:307fb2eb06e182acbc4cc6fdee5fe0068b21a21166103ffff67e4b64d113f087",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedMemoryCandidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

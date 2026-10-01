@@ -1,0 +1,82 @@
+{
+  "path": "mcp/tests/fixtures/codex_app_server_0_144_3.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This frozen snapshot records schema-generation provenance and its stable method list.\n\nAnchor: \"schemaSha256\"; \"stableMethods\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9acd6695169d0629fac981918f75be9251399eb",
+            "content": "sha256:1c1a9a3763d1bc30c814a695bbc889856956e0d875a537c4bc1ff6ed39ef0a35",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Thread-start and resume examples retain their distinct result envelopes.\n\nAnchor: \"threadStartResult\"; \"threadResumeResult\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9acd6695169d0629fac981918f75be9251399eb",
+            "content": "sha256:2beaa3151d34345b77a0fa33c2dab6e8538824a391964bd04c6ec6841f056526",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d9acd6695169d0629fac981918f75be9251399eb",
+            "content": "sha256:ef117da0e38b2b87b32f4404a1d340abd94dbd4e498f0985d64c741d37b4bea4",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generated command and pinned schema hashes are recorded in the fixture.\n\nAnchor: \"generatedBy\"; \"schemaSha256\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9acd6695169d0629fac981918f75be9251399eb",
+            "content": "sha256:6a4c8e2befc01d9ad673d486e6e6fb0a0007ba7c1fa952a3c62c05f79fd84d21",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d9acd6695169d0629fac981918f75be9251399eb",
+            "content": "sha256:5e973217e9455b75d5d2d1d457c9879d8ea780056d23ce17109eed29057331e0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

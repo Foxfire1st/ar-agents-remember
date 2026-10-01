@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/BootTimeline.tsx
 
-| Field                  | Value                                                  |
-| ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember                                        |
-| path                   | `dashboard/src/panels/engine-room/BootTimeline.tsx`    |
-| doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`             |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
-| governingOverview      | `overview.md`                                          |
-
 ## Governing Overview
 
 [engine-room overview](overview.md)
@@ -41,32 +31,11 @@ The `BootTimeline({ node })` component maps the selected steps to `<li>` rows st
 - Step order is positional/fixed in both `bootSteps` and `teardownSteps`; `<li>` keys use `step.label`, so step labels must stay unique within a node.
 - `data-testid="boot-timeline"`, the `data-mode` attribute (`boot`/`steady`/`teardown`), and per-row `data-state` are the stable hooks for tests/visual verification.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`). | "export interface EngineProcessNode {"; "function steadyState(node: EngineProcessNode): StepState {"; "node.health === \"failed\""; "node.providers.some"; "function bootSteps(node: EngineProcessNode): Step[] {"; "node.edges.find"; "node.codeWorktree.exists"; "Memory (${node.memoryMode})" | dashboard/src/panels/engine-room/BootTimeline.tsx:46-47; dashboard/src/panels/engine-room/BootTimeline.tsx:51-51; dashboard/src/panels/engine-room/BootTimeline.tsx:56-56; dashboard/src/panels/engine-room/BootTimeline.tsx:58-58; dashboard/src/panels/engine-room/BootTimeline.tsx:66-66; dashboard/src/panels/engine-room/BootTimeline.tsx:74-105; dashboard/src/types/projection.ts:233-233 |
-| `EngineProcessEdge.state` is mapped through the known `EDGE_TO_STEP` values. | `EngineProcessEdge`; `EDGE_TO_STEP`; "node.edges.find"; "EDGE_TO_STEP[found.state] ?? \"pending\"" | dashboard/src/panels/engine-room/BootTimeline.tsx:20-30; dashboard/src/panels/engine-room/BootTimeline.tsx:58-59; dashboard/src/types/projection.ts:223-231 |
-| `DISPOSE_PHASES`, `disposeFrontier(node)`, and `teardownSteps(node)` drive tear-down mode. | `DISPOSE_PHASES`; `disposeFrontier`; `teardownSteps` | dashboard/src/panels/engine-room/BootTimeline.tsx:86-93; dashboard/src/panels/engine-room/BootTimeline.tsx:99-112; dashboard/src/panels/engine-room/BootTimeline.tsx:114-148 |
-| `timeline`, `timelineStep`, `timelineMark`, and `sectionLabel` are the state-keyed timeline style recipes declared in the engine-room layout styles. | "export const timeline = css({"; "export const timelineStep = cva({"; "export const timelineMark = cva({"; "export const sectionLabel = css({" | dashboard/src/panels/engine-room/layout.styles.ts:103-103; dashboard/src/panels/engine-room/layout.styles.ts:474-474; dashboard/src/panels/engine-room/layout.styles.ts:482-482; dashboard/src/panels/engine-room/layout.styles.ts:503-503 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: rebound projection, edge-state mapping, teardown,
-  and styling references to exact anchors; corrected the edge-state claim to the source's string model
-  and narrowed styling to the cited recipe declarations.
-
-- 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: steady-state completion now ignores missing provider placeholders, so an enclosure with only expected-but-unobserved providers does not read as fully booted. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-22T16:00 — Slice 05o right-panel review fixes. (a) "Contract anchor" now LEADS the boot sequence (the task contract is the precondition the worktree is created from), moved ahead of "Code worktree" and the ledger-map/memory step. (b) Three-way header via the new `STEADY_PHASES` set (`sync-needed`/`running`/`nominal`/`completed`/`live`): a live fully-booted worktree (e.g. T12B live-sync) renders "Steady state" (`data-mode="steady"`) over the completed boot checklist, distinct from "Boot sequence" and "Tear-down sequence". (c) `DISPOSE_PHASES` gained `integration-blocked` (T14C) so a terminal integration conflict reads "Tear-down sequence". (d) `teardownSteps` special-cases two terminal phases: a conflict (`integration-blocked`) marks closeout `complete` + the push/integrate step `blocked`; an abandon (`abandoned`) marks the bypassed landing steps (closeout/push/PR/pull/carryover) `skipped` and only cleanup/retire `complete`, because an abandon does no landing. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-21T23:35 — Slice 5k F2/F4: documented the new tear-down mode. `DISPOSE_PHASES` (closeout/integration/carryover/cleanup-pending + abandoned) switches the timeline to a forward-moving seven-step dispose checklist (`teardownSteps`) instead of reverting boot rows to "pending"; `disposeFrontier` reads the same `node.landing[]` ref progression as the canvas flows so the running row and the cyan flow agree; header becomes "Tear-down sequence" and a `data-mode` attribute is set. Added the dispose-path reference row.
-- 2026-06-15T19:35 — Created for slice 5e: derives the ordered boot-sequence steps + states from an EngineProcessNode. Verification metadata pinned until closeout stamps the 5e code commit.
+- Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`). [1]
+- `EngineProcessEdge.state` is mapped through the known `EDGE_TO_STEP` values. [2]
+- `DISPOSE_PHASES`, `disposeFrontier(node)`, and `teardownSteps(node)` drive tear-down mode. [3]
+- `timeline`, `timelineStep`, `timelineMark`, and `sectionLabel` are the state-keyed timeline style recipes declared in the engine-room layout styles. [4]

@@ -1,0 +1,380 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration",
+  "references": {
+    "1": {
+      "note": "Exact integration selection and original-publication readback precede suffix execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:d40aa87012b3b10aabac28476b26ae2c827c1f0d6de300fb8cba325792ab0521",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_integration_certification"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/certification.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:ae2287bf16d25ee0dfbc758a66f46a77f7b71493c6ecf4949cef591ddc09a163",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/certification.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Direct memory writes exclude the consumer cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:71dc6b111f8da282d014b6892504a7795300587220e818cb6e952e175f640f4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_memory_commit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:56302950c4f46b161e210050dd52e58bf745c09b861663e281aae80debb7f2d3",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Direct memory writes exclude the consumer cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:71dc6b111f8da282d014b6892504a7795300587220e818cb6e952e175f640f4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_memory_commit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:56302950c4f46b161e210050dd52e58bf745c09b861663e281aae80debb7f2d3",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Completed organizational proof binds original selected references through the operation owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:c3efb44186b31cc466a9c863b21521527f8f28b4ef2de202d85649dc2c11e9cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_completed_integration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/certification.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Locator-manifest-journal authority and all publication I/O/state transitions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
+            "content": "sha256:abc5c389ad0d9255383d2c2dee1fb6a8e391b5af0ee6c36ba544e3ed81fe4f9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationLocation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
+            "content": "sha256:1f18160dae0c23fdcd33b04073f218646008553af70d5e10dfda5c436f24d898",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enclosure_publication"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pure immutable binding, canonical serialization, digests, and bounded conflict evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:ff16a32629103479bc49695d797b25ab603d5646e59faf5eaa856c9f06d3ec60",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureBindingIdentity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:4aadb11f7efc4ff00d1b29f7aa6800dc7e8dc36c33f2a5dae70506881fa916ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosure_binding_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:1af3875eaabf5515397000923f0ebaa5dc7569bb850b7032e18e0072729b4403",
+            "locator": {
+              "kind": "symbol",
+              "name": "sha256_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:30ded36bf353e0607f7329252356d33e66852229e20ac76eb112adb62483b762",
+            "locator": {
+              "kind": "symbol",
+              "name": "location_conflict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:0aa9a41c09eaf6b6cb2960d9a5c8f1578d67b87be26382161a4e9d3f320e5572",
+            "locator": {
+              "kind": "symbol",
+              "name": "byte_conflict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease.\n\nAnchor: \"LifecycleControlAction = Literal[\"; \"class LifecycleControlCommand:\"; \"def control_operation(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c800252e5609ce24629551ce7c0cdc99602f3ed6",
+            "content": "sha256:fa5e75a93ab3a56d318b263c2163d9b1c13d8d158c1deeecdea9a3fe279713b9",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_kinds.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
+            "content": "sha256:bb8ca008b295162e540ceb5fe199d463faee8d2a2133161358f6c02b224c4a9f",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
+            "content": "sha256:2b7a3f458448b900d425419a9822adcfb019ab2e8c15b95e9b5713525f9ab1e0",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Direct landing recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:82f07877e1f8720099fb74a1d5d1acd9ff514510dd660e8033ef4876211a130d",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:77192bb537bcbf33572394092bc04fce51fdfd6403c67f7238beb3f1142566d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_or_require_direct_landing_recovery"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:a21de75cfe6d0826d19a889aa8712862d06843c31065ed0d63798d89971a3a0b",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:d516952324af3137e6acde09d0a225586bee2d21b56b7da3e170c6c994a40a9d",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Public operation projection derives legal controls and recovery surfaces from retained journal evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "content": "sha256:2a93ceb2cd2bba8b07d2ce242e2567ae6207922b3170f8e0fbd6884bf970f530",
+            "locator": {
+              "kind": "symbol",
+              "name": "operation_projection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "content": "sha256:95a0f7f9e891cc5d961e40a825c23bf3525854dadfc906a83d57108c4b932a94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projected_operation_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "content": "sha256:02733c3c2502bbc568aff0a43397e7827a47df13570b0142dd1fcb92fbb8431f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_operation_specific_projected_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The landing output carrier has only code and memory-content commits.\n\nAnchor: \"The accepted code and memory commits landed as one authority set.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:1f9d9c2cc7b1d5dcaf46f62a5e3083fc69886f9fe7935064467e8af535d84ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegratedCommits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Only actual memory ancestry determines this integration proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_integrated_memory_ancestry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

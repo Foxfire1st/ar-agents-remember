@@ -1,0 +1,115 @@
+{
+  "path": "mcp/src/agents_remember/observer/timeutil.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The write side imports the cadence and TTL, and `_inactive_seconds_locked` ages the last real non-heartbeat event.\n\nAnchor: \"from agents_remember.observer.timeutil import (\"; \"def _inactive_seconds_locked(self) -> float:\"; \"age = age_seconds(last, self._clock())\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:5f4637f7ac2cb965b2c223a5278ced58cf8997cc403e663fb37b86397bda0e8b",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:ef2ef585a2372cdf167cfcb5eb0a11ab8a0616d93d9fe45d8a68336b9814832b",
+            "locator": {
+              "end": 598,
+              "kind": "line_range",
+              "start": 592
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The read side (observer/reducer.py) imports the stale and TTL thresholds from `observer.timeutil` for the inferred layer.\n\nAnchor: \"from agents_remember.observer.timeutil import STALE_AFTER_SECONDS, TTL_SECONDS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:182344875eb9b31ffd411c37101a0e01abd954d3917be84eb62c9e2e6bfd40b1",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The provider-layer heartbeat/stale idiom with its own separate copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9edaa317e28fecbc451aa6731d9c7d5578217178",
+            "content": "sha256:52c1c779f9509dbee75721dac2f08957e66c4a132a86f885ddce3a6085590f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "HEARTBEAT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_progress.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9edaa317e28fecbc451aa6731d9c7d5578217178",
+            "content": "sha256:853356a634ff7a2ed59f0924213f3accabd69b3d5a77dd206a2fb0801ebd9326",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_AFTER_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_progress.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9edaa317e28fecbc451aa6731d9c7d5578217178",
+            "content": "sha256:dafaef05df0891e675bc913f743304fddfcaa9b989e5a8ac90bed8c1d3b71dec",
+            "locator": {
+              "kind": "symbol",
+              "name": "Clock"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_progress.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The design sections describe lifecycle TTL/heartbeat semantics and defer implementation ownership.\n\nAnchor: `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design`; `### 1.5 Fleeting vs persistent; save gate; TTL`; `### 1.6 Ambient attribution and the heartbeat`; `## 8. Deferred to Implementation Phases`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:d8d5ef894d70a64e9d87dca14ac51381417473540885c57bf9e941fd1bac2d94",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

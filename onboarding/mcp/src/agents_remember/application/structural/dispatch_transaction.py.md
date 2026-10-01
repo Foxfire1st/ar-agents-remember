@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/structural/dispatch_transaction.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/structural/dispatch_transaction.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structural application services](overview.md)
@@ -65,48 +55,22 @@ reconciling, but all returned payloads contain only the structural document-and-
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; this repository-owned transaction and its forcing
 suite are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The dispatch transaction has one bounded reconciliation-and-retry loop. | `execute_dispatch_transaction` | mcp/src/agents_remember/application/structural/dispatch_transaction.py:54-88 |
+- The dispatch transaction has one bounded reconciliation-and-retry loop. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Existing generation evidence is loaded, repaired, and classified before retirement. | `reconcile_dispatch_evidence`; `_load_dispatch_evidence`; `_dispatch_evidence_outcome` | mcp/src/agents_remember/application/structural/dispatch_transaction.py:202-220; mcp/src/agents_remember/application/structural/dispatch_transaction.py:223-247; mcp/src/agents_remember/application/structural/dispatch_transaction.py:250-293 |
-| Contradictory evidence produces the stable typed reconciliation refusal. | `_reconciliation_refusal` | mcp/src/agents_remember/application/structural/dispatch_transaction.py:296-309 |
-| Reviewer reconciliation refuses a current generation owned by a different structural parent. | `_structural_parent_conflict` | mcp/src/agents_remember/application/structural/dispatch_transaction.py:121-162 |
-| Serialized dispatch has one transaction entry point; no end-to-end concurrency pass is inferred from source inspection. | `execute_serialized_dispatch` | mcp/src/agents_remember/application/structural/dispatch_transaction.py:96-119 |
+- Existing generation evidence is loaded, repaired, and classified before retirement. [2]
+- Contradictory evidence produces the stable typed reconciliation refusal. [3]
+- Reviewer reconciliation refuses a current generation owned by a different structural parent. [4]
+- Serialized dispatch has one transaction entry point; no end-to-end concurrency pass is inferred from source inspection. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository dependency governs this unit.
-
-## Update History
-
-- 2026-08-31T12:00+02:00 — ARSPAWN-L5 A005 review repair added
-  `execute_serialized_dispatch` as the transaction-owned lock/execution boundary and reduced the
-  public dispatch function below the code-quality size limit. Verification remains closeout-owned.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented the
-  generation-bound reviewer-parent check, its loud `structural-parent-conflict`, and the one
-  deterministic leaf-only migration boundary. Verification remains closeout-owned.
-
-- 2026-08-26T16:03+02:00 — Post-failure repair: documented the dispatch-specific receipt-store
-  collaborator and rechecked the explicitly bounded two-attempt reconciliation loop. Verification
-  remains closeout-owned.
-
-
-- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
-
-- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: made the positive-proof versus
-  unknown-state rollback boundary explicit and refreshed every final candidate citation.
-  Verification remains closeout-owned.
-
-- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: created for canonical-seat dispatch
-  reconciliation. Verification remains closeout-owned.

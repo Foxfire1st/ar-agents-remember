@@ -1,15 +1,5 @@
 # mcp/tests/test_retry_coverage.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_retry_coverage.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -44,28 +34,19 @@ separate from the missing-file refusal: an explicitly expected retained path mus
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation is configured for this repository-owned forcing proof.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Complementary retained and delta arcs become one scored database/JSON pair. | `test_retained_and_delta_contexts_merge_before_json_is_scored` | mcp/tests/test_retry_coverage.py:11-65 |
-| An all-contexts-affected delta publishes fresh contexts without inventing retained data. | `test_empty_retained_subset_merges_only_fresh_delta_contexts` | mcp/tests/test_retry_coverage.py:68-113 |
-| A merge refusal removes both public artifacts. | `test_merge_failure_removes_both_public_artifacts` | mcp/tests/test_retry_coverage.py:116-140 |
-| The production merge owner performs fail-closed publication. | `merge_delta_artifacts` | mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py:56-99 |
+- Complementary retained and delta arcs become one scored database/JSON pair. [1]
+- An all-contexts-affected delta publishes fresh contexts without inventing retained data. [2]
+- A merge refusal removes both public artifacts. [3]
+- The production merge owner performs fail-closed publication. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None.
-
-## Update History
-
-- 2026-08-27T20:16+02:00 — Corrected the onboarding projection after moving the formatter
-  regression to the dependency-neutral helper-invariant suite; this file remains coverage-only.
-- 2026-08-27T19:13+02:00 — Added the explicit empty-retained-subset forcing case while preserving
-  the separate missing-expected-database refusal.
-- 2026-08-27T18:33+02:00 — Created with the isolated retry-coverage repair. Verification metadata
-  remains empty until governed closeout.

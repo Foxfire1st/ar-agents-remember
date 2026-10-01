@@ -1,0 +1,37 @@
+{
+  "path": "dashboard/src/grammar/Affordance.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `ActionAvailability` shape rendered (enabled / disabledReason / nextSafeAction).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591b918ee40a220c357af5920f711fe3f5c52dce",
+            "content": "sha256:94d8ede398dc9d392cd88616bba2585f18a5b2371222324d5462a93590296c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ActionAvailability"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591b918ee40a220c357af5920f711fe3f5c52dce",
+            "content": "sha256:eed351cbda9244f240cc624060a7a508a534566532d5567159abd3f48f472244",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

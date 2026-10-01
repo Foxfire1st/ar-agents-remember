@@ -1,0 +1,203 @@
+{
+  "path": "dashboard/src/data/interactionAnswer.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Kind classification, the agent label, the multiplexed payload set, and the per-interaction lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:ee8b24ffed6e5d6ce920efa66a438fdd635724cf4910d3978c704bccdb3d6264",
+            "locator": {
+              "kind": "symbol",
+              "name": "representPendingInteraction"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:eb930db27750d1c421a12c2ed18002ad742223093492c4fe41466fdb5864fd91",
+            "locator": {
+              "kind": "symbol",
+              "name": "pendingInteractionAgentLabel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:49acdeee34ad381f4eab0eead29d968bfbccb03e0a23381a250f1f181cf87cc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "pendingInteractionPayloads"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:7ea467b849ee0f4fe83d2d4e3893497f8a488fd4c2bd42c3b9f729011af8559d",
+            "locator": {
+              "kind": "symbol",
+              "name": "representSessionPendingInteraction"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact-session POST + epoch retry and the locked submit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:8196a792532c1819daed760e2cafe6410d8d56f18fe7c9d2f76d6e70e0e8ce0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "answerViaInteractionRoute"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:8f099f3887eb6021d33c7dd6399fb499840e57555d9f99712e8a860f74b49ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "submitInteractionAnswer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `OpenSession` mirror of both pending slots + the catalog mapping that carries them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0702c05a9e116b7f804c940919194f3044e0beba",
+            "content": "sha256:8ba9a66509af2fce305ba2c2779c35b9c49ff7063603cd3b7a2198921642101c",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenSession"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The exact-session backend response endpoint used by all modes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:6aedd763c7eeaa256d8ee1f7af50f176162371b58375ecee967254c8429d9091",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_interaction_response"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The bar that renders one bar per pending payload and badges the agent label.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f05f3361e2c16bb8fdaee1e19704e09dd6db74",
+            "content": "sha256:efa3105c63c02605798b3ac5899308558b97403458791853c89985411a5f4ea1",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionBar"
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The rail preview naming WHO asks via the same label helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede35ad614b800bbfdfd6ff9ef3c7ce7c5eb17e8",
+            "content": "sha256:da42d81d22584adda5e272539bb57d8853c897c3f6788969371f47b64d7ad43e",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionRail"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The waiting-seat triage titles deriving asker + preview from the helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca0ce2b1c506aaedbb68337eaf039d40cc19c9ed",
+            "content": "sha256:17024dec3e22d9be92510984860643994344ee1abde13899bc5764d85ceaf817",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionsView"
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The round-trip state slice this path's outcomes land in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:4ce91b1de2ede1af30146eefb690e1a4f70ca2b5e3429658a30cdb142391141a",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionCockpitStore"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The suite: kind matrix, lifecycle-free structured/scalar round-trips, epoch retry, and agent-label pins.\n\nAnchor: \"submitInteractionAnswer — the session-direct route\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcd821360ff54c6d2f72efdf100533727d9d5db7",
+            "content": "sha256:791af472b45ac4a3ee65f2e172256a5346574b8ef9eac2c2e9dba72f7e0414cd",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 317
+            },
+            "path": "dashboard/src/data/interactionAnswer.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

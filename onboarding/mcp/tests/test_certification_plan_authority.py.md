@@ -1,15 +1,5 @@
 # mcp/tests/test_certification_plan_authority.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_certification_plan_authority.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:38+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -36,36 +26,24 @@ Recomputing a digest does not authorize a foreign semantic catalog. The retained
 
 No file-local implementation change is requested by this reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Result publication refuses deleted inserted and substituted plan catalogs. | `test_result_publication_refuses_deleted_inserted_and_substituted_plan_catalogs` | mcp/tests/test_certification_plan_authority.py:77-117 |
-| Result publication binds the external candidate identity. | `test_result_publication_binds_the_external_candidate_identity` | mcp/tests/test_certification_plan_authority.py:120-139 |
-| Hostile artifact query product refuses before query allocation. | `test_hostile_artifact_query_product_refuses_before_query_allocation` | mcp/tests/test_certification_plan_authority.py:142-162 |
+- Result publication refuses deleted inserted and substituted plan catalogs. [1]
+- Result publication binds the external candidate identity. [2]
+- Hostile artifact query product refuses before query allocation. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
-
-
-- 2026-09-01T03:11+02:00 — Created for plan-authority, pre-allocation boundedness, and scaling
-  evidence. Verification remains closeout-owned until the source candidate is committed.
+Fixture repositories and protocol doubles do not establish a live external integration.

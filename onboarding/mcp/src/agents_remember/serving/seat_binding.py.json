@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/serving/seat_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Attach-role normalization is deliberately narrow and fail-closed for an untyped harness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dd1f71a093eb0967ab810b95ba25f6b2708217b",
+            "content": "sha256:958573e50027bab7cc40059e1a31b846e4992817fb27a8a000b2688313ad1721",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_seat_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Legacy role suffixes are detection-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dd1f71a093eb0967ab810b95ba25f6b2708217b",
+            "content": "sha256:92c2e3104e41b3f84fc37a19d4675d1755f56bd94c8c4bb8292d1473f9c519f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_suffixed_leaf_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Structural assignment validates canonical task identity, altitude, and live pair ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "535dc055b4ef427eb0bf8ac6f58bcc216579cd0e",
+            "content": "sha256:b8cbb8434925013b141aeaef34edcd6912e044c6aa01daae07f8af84bb373820",
+            "locator": {
+              "kind": "symbol",
+              "name": "assign_terminal_session_to_task"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_task_assignment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

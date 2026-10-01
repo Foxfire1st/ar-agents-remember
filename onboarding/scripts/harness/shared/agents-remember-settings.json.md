@@ -1,15 +1,5 @@
 # scripts/harness/shared/agents-remember-settings.json
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `scripts/harness/shared/agents-remember-settings.json` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -49,18 +39,10 @@ as placeholders that `render-starter.py` substitutes at render time:
 - Editing a generated copy is caught by `sync-harness.py --check` in both hook tiers and
   by `mcp/tests/test_sync_harness.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The generator that fans this file out verbatim, including to `.vscode/mcp/`. | `generated_files` | scripts/sync-harness.py:576-621 |
-| `render_settings` performs the placeholder substitution in a rendered workspace. | `render_settings` | scripts/harness/render_starter.py:108-115 |
-| The settings schema this template instantiates. | `# settings.json Reference` | docs/reference/settings-json.md:1-526 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 2 citation items; scoped citation check now passes.
-
-- 2026-07-31T06:30+02:00 — 260731-EFA-L2 promoted this to the single source for eight
-  byte-identical copies plus the `.vscode/` mirror (requirement L2-R12). Verification
-  metadata is pinned to the leaf's reformat commit until closeout stamps the code commit.
+- The generator that fans this file out verbatim, including to `.vscode/mcp/`. [1]
+- `render_settings` performs the placeholder substitution in a rendered workspace. [2]
+- The settings schema this template instantiates. [3]

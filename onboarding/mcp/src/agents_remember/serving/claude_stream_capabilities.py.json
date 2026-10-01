@@ -1,0 +1,68 @@
+{
+  "path": "mcp/src/agents_remember/serving/claude_stream_capabilities.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The protocol builds the correlated `list_models` control request.\n\nAnchor: `list_models`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:888a86a965693077dda10f42e0136d09b4b4f6cfdf4f649ca6ced53003a3d04b",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Startup passes the `system/init` current model into this parser before returning the catalog.\n\nAnchor: \"async def _negotiate(self\"; \"capabilities = await negotiate_claude_catalog(\"; \"capabilities = parse_list_models_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:705ab877a618cf5ad28a45d5efc0c731d98aa02d1a510eff02904f228d1094e5",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "335a1c6878e2f9d5c1dcab83eb2bd7f68bfc5867",
+            "content": "sha256:cf88617e4fa5f2e66bb4e96569a513ed3115f2c9c05f7e667eedc7b86f874de8",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7907ed927e34b64195d50aab2a0baa2109383621",
+            "content": "sha256:03766ed7b240678706909f24497a7799e73c386c3e5655ad9eeed631b570b988",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

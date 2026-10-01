@@ -1,0 +1,245 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/closeout_lineage.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The heal entry point projects lineage, refuses the unsettleable, runs the existing sync for each stale edge's owning contract, and returns the reloaded contract identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:fb4d0c84166b3b4fbce64cf4e9fa95fac43982880ec4dcd71f65c189e2e72e51",
+            "locator": {
+              "kind": "symbol",
+              "name": "heal_current_source_lineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:b050304557983d64fca3e32ff7c0b8a64130708ddcda4867758aafe4966a1c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "HealedSourceLineage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Preview and unprovable projections are the only two pre-sync refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:9558f281238041de8d863f748eec16d6e896d435cf600b9018ecf14cc7ce65ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_settleable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A retained sync conflict, a refused sync, and a still-stale result each get their own typed status and duty set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:735c5d8725d85eb8cb7e9015dfd3433051bf9367fac8e1792656d9ef219a3c26",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_conflict"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:ced6ef399d39b3b5c32e3a8f99310bc48cd8eccc6d2b9074b1127508f0cf64c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sync_refused"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:d6089ee9cf9d105ee25ed5d100d19140e213518fa302bbbc986b50db9b3b58f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_still_stale"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every refusal shares one lead-sentence-plus-guidance shape and carries typed status/payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:bc617af5ef08d0c1720bd7ec5f4e0305e1b0b1f742165529a42b590067cd23e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:1146a93c5c3991416fa852daa2ed23102d2d73fea31e568a29898635d9bed7f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageRefusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The projection, refusal vocabulary, and ordered sync recoveries this module consumes are owned by the lineage policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:79cbbca2da3a3cb736feb775398705b7d93feb4639bb384398371b0806ccec4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_lineage_for_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/source_lineage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:174ad86371b89839c067cf21deadb2ddf10b3e448944c1eaa69fac8e43108ced",
+            "locator": {
+              "kind": "symbol",
+              "name": "lineage_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/source_lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The projected state and its ordered `recoveries` are the shared wire model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageProjection"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:0a0bf5a1061cb229b0f71dccbfcf35974c07782402caff8ac3e61f7631682bca",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageRecovery"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The heal runs the ordinary public sync result for the owning contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21969ed5fdd3d0a96855f1d252badef880c5febc",
+            "content": "sha256:263b46b9addc50759981f98b71636c39f48bd59bdaf15b6e5bee6459c680afe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Closeout imports this module in place of the bare `require_current_source_lineage` guard at both entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "content": "sha256:29c6ca7208dd0891b999f8e9522d1f4f31eeae66a761b3c5df8c1eb8c511e913",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_closeout_source_state"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revalidate_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "content": "sha256:304c5787e940f53c2429b91d3dd0b83d21c85bdbcff0631a4a95d9e58500a472",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 338
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "content": "sha256:e7edcf7323a8ffca4197f73999e078abe56628d966e106ddf919b3a438eb07f6",
+            "locator": {
+              "end": 653,
+              "kind": "line_range",
+              "start": 641
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,590 @@
+{
+  "path": "dashboard/src/panels/changeset",
+  "references": {
+    "1": {
+      "note": "The optional marks and the marked pane.\n\nAnchor: \"marks?: PaneMarks;\"; \"const { portals, placement, gutterFor, drawn } = useMarkedPane(marks);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:963636f838a021db3e4d2aef8df3e8216a722f3f5a51d8ddd7f705c06c7d03b8",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The same-origin client wrapping that API.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:a85e2cc9a5a731afed4fd8049a86cb9be07af2b3948fb6ceefd4894695138bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskChangeset"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:9cb7c1608471f6293a509aa3b3a4375373af844a648aa37982391749ac30f15b",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:b52cb6555d13a6037152c24e113693ceb949967d977b1db78682129a9278753e",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shell that hosts the takeover + restores the rails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:c5b9f02930597474797f123f212f6ad444d90e8f20aebfbfea8f8e35d6165076",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The detail panel button + counters that open this screen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:e35cabbbff34cd2a8ca427ea32bb54c51df1efc804f65d529106da5de03ea2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetButton"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The reused read-only CodeMirror pane + theme + lang map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilePane"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The markdown renderer the sidecar column + rendered-markdown toggle reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
+            "content": "sha256:46e6b914756bebae0699a0997ff3d22903e92a1910c7c2228fe012b30e5116d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "Markdown"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The siege-tank empty-state backdrop shown until a file is picked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
+            "content": "sha256:1fdb99f22b57f7bf665c0b14bd93b1c6eda2fe294352e1fce9d7f0dd9705e608",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyStateBackdrop"
+            },
+            "path": "dashboard/src/panels/EmptyStateBackdrop.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The target variant this route's type gained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:783de6c89bb80598c0e1943b0ee2df78df68bd18e6ad233d217e4e8e08be8c63",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetTarget"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector.\n\nAnchor: \"never mounted for one, so no change-set\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:820db497595b065edcce8a209717bec28e5769ccb4bf4e60888edc4bcd8879f6",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).**\n\nAnchor: \"Intent review\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:f4a7aed8100db99e8f239d60c9f5f1f3b42093d7bced0cc7bbe7958b4c35f240",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The identity the entry carries instead of a filesystem path (since `260921-ICR-L47`): the task context only, `review: {}` for a live leaf and `{ historical: true }` for a closed one — no subject.**\n\nAnchor: \"export function IntentReviewEntry({\"; \"review: live ? {} : { historical: true }\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two extracted view builders, each with its marks gutter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:e7cec30cbd96c803a638f2abb67208cddabb5fbbd936951407407511d7ce016b",
+            "locator": {
+              "kind": "symbol",
+              "name": "splitView"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:031af190906ad6ef40e704e316cf9ba5776dcd6232a59f546f4dbe5a11291fc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "inlineView"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:cc0642b46db423ef16f86484fedbf882b3cb90e88fc204e9762472d6dbb9a084",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReviewEntries"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The one liveness predicate both gated entries share.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:71cd159561dfafcdf346e22ba29fd069090dca1ef6108584c65a420dcae544ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafIsLive"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The generation the open series view is bound to, and the caption that renders it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:35ef29daaaa65e6822669c6c30993e82853488ce26864fe60f897edf8a1a998d",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundSeriesGeneration"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:94c76e4569bbafb5e455aac24f07dfdfbb7210cb66c3244bf7da528fa552c9f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesGenerationTag"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The entry button threading the published generation into the viewer target.**\n\nAnchor: \"onClick={() => onOpen(generation ? { ...target, generation } : target)}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:b36d13058eb8d6367c672f9857f4b4d248d9152e4085fd36681eb1724395bcf0",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:783de6c89bb80598c0e1943b0ee2df78df68bd18e6ad233d217e4e8e08be8c63",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetTarget"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The entry that produces the empty target for a live leaf the server offers no subject for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocChangeSetBar"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The surface that receives it and asks for the task's own review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:adca9206f69580ac76715414d13bcff3f68a4002df6cdd9dcc7abbc99826d1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTarget"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The optional first lines and the content-sized host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffPane"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:6f1675bccb6158f8bc5b35b471847f9ae0477a2731275a8d91bb06999abf54e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "fitHost"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The card that passes them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:bcfcd413d2155f23a718cd535411c888e89f3efe5399a0c04b6fb8421a82be23",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangedExcerpt"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant.\n\nAnchor: `includeLeaves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:c9d86d8b727ec2e2f7874d14dd6cbd6bac26ced7e2dddee775f1a24539495455",
+            "locator": {
+              "kind": "symbol",
+              "name": "seriesLeaves"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:2c0278c9021c1dcd6880b7e2f577ee855a3747055483582d8110e6ef8c812a21",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The rendered rail and its per-leaf counters, and the click that opens one leaf's own range.\n\nAnchor: `onOpenLeaf`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:0846cde134a51e804cdcf97c268f83cfcda9ae1db548fc05ff9e0048b0691ee6",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafBreakdown"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:656a2e690992b4cd3c9d4ccc34d3565bc44c43101d95c97773d63d5d7fa8db6a",
+            "locator": {
+              "end": 721,
+              "kind": "line_range",
+              "start": 715
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:e9e6a748e8910e1f666dd80af9cb8eb286c4035b744ddf6f258f50e458cf48aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetRefusal"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:53cb8f15809c09e81c3df1b68504652105e2c5dc67def37496eab939d900f261",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetMainPane"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The cockpit re-target that keeps the opened leaf inside this route's takeover.\n\nAnchor: `onOpenLeaf`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 601
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The L3 read-only change-set API this screen consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "content": "sha256:4c1ee7ea52690bf26e08d81dae077c82c25e2b12b98eac954503f2824feda89e",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

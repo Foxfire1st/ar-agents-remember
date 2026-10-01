@@ -1,0 +1,89 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical source this bundle copy is sync-propagated from.\n\nAnchor: `# Criteria Catalog — Onboarding/Memory Review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3927385cc0dcab701a409a68c467d1ed113c5fcc",
+            "content": "sha256:35d564f4dd3f81264abe355f55a6673ef759aeadd486b1e04b6c0fc0b3f4d746",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "OM-4, the requirement-bound standing criterion for plausible admission justifications.\n\nAnchor: \"Admission justifications are plausible\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3927385cc0dcab701a409a68c467d1ed113c5fcc",
+            "content": "sha256:c3b3b3acbc99753b8d0331cd075d38a2d210897fd3ccc34a0dee93d9877a6c86",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reviewer role that binds this catalog per review type.\n\nAnchor: `# Reviewer`; `onboarding-memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:ab61f89f2cf8813e1bad0f4068c60866d7c444e67df49d57c1e75fb1efb1435d",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:660b2f7b698dab73721bd0a1f4d5a93100254a483c2073430bf081e0d9c3243b",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Update History order checker whose naive/UTC comparison semantics OM-3 pins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961d92b07979a970b038f73798a14caacdafa71c",
+            "content": "sha256:173c07be9eb05cc7d0c33215f89878f2de45df6aa9ccf91c671662ca4abf04a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHECK_NAME"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/update_history/history_order.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

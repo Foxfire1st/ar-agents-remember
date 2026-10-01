@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/application/runtime/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring names the three owned runtime concerns.\n\nAnchor: \"Application operations for runtime startup, installation, and skill deployment.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efc1f632ebca02c283a845061503170874516159",
+            "content": "sha256:7dc0ffc532cf3aa45ad8ddaee4f9218d11e2b7c271852a57d46a41622ab27a9b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

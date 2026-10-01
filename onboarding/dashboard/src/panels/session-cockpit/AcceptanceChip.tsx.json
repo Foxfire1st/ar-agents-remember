@@ -1,0 +1,112 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/AcceptanceChip.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Chip rendering and action boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6e8b8d30eb73f315254cef996198b0a484f6cbc",
+            "content": "sha256:eda8b5b63db798b88ce3c687e6e7be4a194452b4fae9846595c4aaa007cc9484",
+            "locator": {
+              "kind": "symbol",
+              "name": "AcceptanceChip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Typed presentation models and acceptance words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:7de6d52ea5c1888df14dfbfdc97b4951eea97838468c5fc0f4516595811c44db",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetChipModel"
+            },
+            "path": "dashboard/src/data/setChips.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:5caeace12da70209e81af7e333c61a300a2be4b9f94b5fdee4e8c1d48266b745",
+            "locator": {
+              "kind": "symbol",
+              "name": "deriveSetChips"
+            },
+            "path": "dashboard/src/data/setChips.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:02e3356a5d9f0b8e56bfbc5c2994be11305313a350f33f4124148014dbfbc2e7",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "dashboard/src/data/setChips.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Primary live-control owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7244eb21672fd89aa04a39047e7d5273b3ee1",
+            "content": "sha256:da1406f7615a7ae7dc77665798f8bba46ebaca1fa17d0f205d48acf37e9f5ce0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModelEffortControl"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ModelEffortControl.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Background outcome owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "710bfa44cbf21bb6632da6a7d248fbcc48d61769",
+            "content": "sha256:311b0c69f7b06cdee8e15fdedffde93acb34c4ab969fc69c84c6906cb3ef8aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetOutcomeToasts"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "710bfa44cbf21bb6632da6a7d248fbcc48d61769",
+            "content": "sha256:8de2a2017356a3c04a7da62cf176ac155a0b22661917f7befefe1de88548692b",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

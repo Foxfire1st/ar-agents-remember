@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/mcp/public_surface.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The validator reconciles every public authority and returns content-addressed evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9a37e28035d76f7ba584cd4f8dedec60028354f",
+            "content": "sha256:872a9af88aabd2e7b6ad4c284aa445e86574adc1892e4ee8c9d5697704096d5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_public_surface"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9a37e28035d76f7ba584cd4f8dedec60028354f",
+            "content": "sha256:d7f2ad6faa6097cd83d43a5780425e9a6a535f132a80901734d944564a794fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_dispatch_advertisement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9a37e28035d76f7ba584cd4f8dedec60028354f",
+            "content": "sha256:ca1d2dd1576f2060e79e978d5f888e04c5c34bfef413f828c2c3b54c2b26409c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicSurfaceEvidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dispatch input ownership is one closed four-field vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9a37e28035d76f7ba584cd4f8dedec60028354f",
+            "content": "sha256:db9f933fc8781e1b6cb452ab0cb27420db06449eec98915049bb6ef4cbd410dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "DISPATCH_AGENT_INPUT_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9a37e28035d76f7ba584cd4f8dedec60028354f",
+            "content": "sha256:a09bbb3892bc75a298cae885f77ccd2fa849435156d9ce84dc1405bcbd93fac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_dispatch_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

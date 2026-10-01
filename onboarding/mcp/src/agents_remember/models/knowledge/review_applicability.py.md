@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/review_applicability.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/review_applicability.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T02:30+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -127,42 +117,34 @@ models are additive on the payload, so a payload published before these labels e
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the six treatments, what `context` is, and that no similarity or score can be recorded here.** | "Five display treatments, each a different recorded fact" | mcp/src/agents_remember/models/knowledge/review_applicability.py:1-40 |
-| **The published vocabulary.** | `__all__` | mcp/src/agents_remember/models/knowledge/review_applicability.py:56-63 |
-| **The five supplied collections, spelled as the record-class vocabulary minus its measurement channel, with the import-time assertion that keeps the two from drifting.** | `ReviewApplicabilityClass`; `REVIEW_APPLICABILITY_CLASSES` | mcp/src/agents_remember/models/knowledge/review_applicability.py:69-81 |
-| **The six treatments, and the four a displayed record can carry.** | `ReviewApplicabilityState`; `ReviewDisplayedApplicabilityState` | mcp/src/agents_remember/models/knowledge/review_applicability.py:86-88; mcp/src/agents_remember/models/knowledge/review_applicability.py:93-93 |
-| **Why one displayed record may appear beside the selected subject, with its own recorded subject and the exact references the treatment was decided from.** | `ReviewDisplayedApplicability` | mcp/src/agents_remember/models/knowledge/review_applicability.py:96-137 |
-| **The validator that makes the F09 shape unrepresentable: a `direct` or `historical` claim without a subject identity is refused at construction.** | `_require_the_subject_bearing_states_to_name_their_subject` | mcp/src/agents_remember/models/knowledge/review_applicability.py:119-137 |
-| **The labelled context value: true subject, the recorded relationship that reached it, author/role and references, and no judgment content.** | `ReviewContextRecord` | mcp/src/agents_remember/models/knowledge/review_applicability.py:140-166 |
-| **One collection counted by treatment, with `supplied` stated per class and the two validators that refuse a losing partition and an unactionable exclusion.** | `ReviewApplicabilitySummary`; `_require_the_counts_to_partition_the_supplied_population`; `_require_an_exclusion_to_state_itself` | mcp/src/agents_remember/models/knowledge/review_applicability.py:169-222; mcp/src/agents_remember/models/knowledge/review_applicability.py:199-211; mcp/src/agents_remember/models/knowledge/review_applicability.py:214-222 |
-| **The wire limit constants this vocabulary reads, shared with every other knowledge model.** | `KnowledgeModel`; `REFERENCE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:1-40 |
-| **The owner that produces these values, and the one place the policy lives.** | `review_applicability`; `AppliedRecords` | mcp/src/agents_remember/application/review_record_applicability.py:183-214; mcp/src/agents_remember/application/review_record_applicability.py:134-180 |
-| **The re-export that keeps the vocabulary reachable through the payload module, and the five display models that carry a label plus the two panes that carry the context rows and the counts.** | `ReviewAuthoredEffect`; `ReviewKnowledgePane`; `ReviewEvidencePane` | mcp/src/agents_remember/models/knowledge/review.py:483-505; mcp/src/agents_remember/models/knowledge/review.py:680-756; mcp/src/agents_remember/models/knowledge/review.py:918-958 |
-| **The cases that measure the vocabulary's own refusals and its class-set equality with the record vocabulary.** | `test_a_label_and_a_summary_refuse_a_claim_their_recorded_facts_do_not_support`; `test_the_class_vocabulary_is_the_record_vocabulary_minus_its_measurement_channel` | mcp/tests/test_knowledge_review_subject_isolation.py:528-553; mcp/tests/test_knowledge_review_subject_isolation.py:520-525 |
-| **The client mirror of this vocabulary, and the one client case that proves a pre-label payload still renders.** | `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; "still renders a payload published before the labels existed" | dashboard/src/data/review.ts:155-164; dashboard/src/data/review.ts:166-178; dashboard/src/data/review.ts:180-190; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:299-310 |
+- **The module's own statement of the six treatments, what `context` is, and that no similarity or score can be recorded here.** [1]
+- **The published vocabulary.** [2]
+- **The five supplied collections, spelled as the record-class vocabulary minus its measurement channel, with the import-time assertion that keeps the two from drifting.** [3]
+- **The six treatments, and the four a displayed record can carry.** [4]
+- **Why one displayed record may appear beside the selected subject, with its own recorded subject and the exact references the treatment was decided from.** [5]
+- **The validator that makes the F09 shape unrepresentable: a `direct` or `historical` claim without a subject identity is refused at construction.** [6]
+- **The labelled context value: true subject, the recorded relationship that reached it, author/role and references, and no judgment content.** [7]
+- **One collection counted by treatment, with `supplied` stated per class and the two validators that refuse a losing partition and an unactionable exclusion.** [8]
+- **The wire limit constants this vocabulary reads, shared with every other knowledge model.** [9]
+- **The owner that produces these values, and the one place the policy lives.** [10]
+- **The re-export that keeps the vocabulary reachable through the payload module, and the five display models that carry a label plus the two panes that carry the context rows and the counts.** [11]
+- **The cases that measure the vocabulary's own refusals and its class-set equality with the record vocabulary.** [12]
+- **The client mirror of this vocabulary, and the one client case that proves a pre-label payload still renders.** [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It is a wire vocabulary and names no
 boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; "still renders a payload published before the labels existed" repointed to dashboard/src/data/review.ts:155-164; dashboard/src/data/review.ts:166-178; dashboard/src/data/review.ts:180-190; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:299-310. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T02:30:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): created this one-to-one card for the display vocabulary this leaf introduced (`ICR-R26@v1`). The card records the six treatments as six different recorded facts, the class union that is the record-class vocabulary minus its measurement channel (with the import-time assertion that keeps the two spellings equal), the two model validators that make a losing partition and an unnamed subject unrepresentable, the context value that carries a record's true subject and kind but none of its judgment, and the deliberate absence of any similarity, confidence or score field. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists. No claim in this card is made from a reading of a commit that does not contain the module.
+No meaningful cross-repo references found.

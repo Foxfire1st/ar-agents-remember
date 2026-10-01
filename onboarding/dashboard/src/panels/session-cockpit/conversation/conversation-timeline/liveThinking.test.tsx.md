@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/conversation-timeline/liveThinking.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/conversation/conversation-timeline/liveThinking.test.tsx`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                                        |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
-| governingOverview      | `../overview.md`                                          |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](../overview.md)
@@ -28,12 +18,8 @@ The 260731-EFA-L7 R15/R17 acceptance pins for live-thinking coalescing, re-appli
 
 - At most one live indicator per active turn identity; completed reasoning with real content is never deleted.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The timeline component under test. | `ConversationTimeline` | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-106 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the live-thinking acceptance suite. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+- The timeline component under test. [1]

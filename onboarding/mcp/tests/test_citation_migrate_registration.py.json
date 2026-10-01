@@ -1,0 +1,126 @@
+{
+  "path": "mcp/tests/test_citation_migrate_registration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The application entry point whose reachability this module pins (unchanged by MIK-R24, whose converted-format routing covers `citation_check` and `citation_fix` only).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:d12084a98d779f4b69ab321b1a361cf4cd4c6d183775a0396da895b04935ae88",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_migrate_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The migration the registered tool must actually arrive at.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:821d0f66bb6a8ca3a4fdc438b49930a87dd0268b420ea57b6b7fd6dd32a8115a",
+            "locator": {
+              "kind": "symbol",
+              "name": "migrate_onboarding_root"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/migration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The payload wrapper between the registered handler and the application tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "content": "sha256:743e5d3362f851cda417df3309b8aef2db3dac1ff0a21b246902035bcf3503b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_migrate_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The registration surface that wires the handler onto the server.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf5d4bd962bb0138e26a43fc4836aadec32de998",
+            "content": "sha256:0822b243970bd428eb7342e198c11877e43e2cccb85c4309125e8917ebd6a9cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_memory_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The advertised-name roster the tool must appear in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The response-model registry that keeps the advertised name typed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The typed response envelope the registry maps the name to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
+            "content": "sha256:b0a443f958da19164b83239e1088436fa529f99d2f1fdba398355041b694ac50",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationMigrateResponse"
+            },
+            "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

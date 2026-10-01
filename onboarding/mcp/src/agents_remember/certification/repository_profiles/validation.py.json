@@ -1,0 +1,192 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/validation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`validate_repository_profile` carries the current contract described above.\n\nAnchor: \"def validate_repository_profile\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:e1a6a3da5e3238c25a6ae5aa62ac854fd03767ef92feeda086aa6d7fa25d9e88",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_validate_executor` carries the current contract described above.\n\nAnchor: \"def _validate_executor\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:821016b993f10d92932ad5f76742b9228bd9ba3f16126fc54ac2f1c4d50cfb9d",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_validate_rail_runtime` carries the current contract described above.\n\nAnchor: \"def _validate_rail_runtime\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:06d6f868876dc784a86b2304a70f7b301cce69ff298420fba6c03ffff389d108",
+            "locator": {
+              "end": 597,
+              "kind": "line_range",
+              "start": 528
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The aggregate validator returns every independent finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:e1a6a3da5e3238c25a6ae5aa62ac854fd03767ef92feeda086aa6d7fa25d9e88",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_repository_profile"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:e27a2eeb3390803a3efc5d600ea79901cd8734efd1d52a48e3d0ebf0ca26ccc8",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Selector duplicates and identity placeholders refuse before execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:3321cee8c51e7a0729508ff7cf5c48698320309f016510179c631beffe153e60",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_selector"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:8084493045a268500b111ad69de60667530f18b4e1bf5c7ab1535d98ea086cd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_selector_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Command placeholders must be complete, declared, and list-atomic.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:fdacb84bf2355980a0759fb5d58d48a3214af7536085ca0a65f4a14841ede795",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_command_placeholders"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:f02db6caed86b24ba1af8db06e51b68d2f343f28cae592673e18c948b551a1ba",
+            "locator": {
+              "end": 750,
+              "kind": "line_range",
+              "start": 709
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Rail validation checks the declared rail contract and ownership constraints.\n\nAnchor: \"def _validate_rail(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:ec6ff2c50097808eaf2c207d4f940a5d5445fe70371a0ddb5111b9533b61521e",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 491
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Artifact dependencies must name valid producing rails and artifacts.\n\nAnchor: \"def _validate_artifact_dependencies\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:e46d5b2919b08cdd7042023dac32381b5b95027aac74da1123f25e73b53194bd",
+            "locator": {
+              "end": 662,
+              "kind": "line_range",
+              "start": 621
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Gate semantic validation checks the applicable gate contract.\n\nAnchor: \"def _validate_gate_semantics\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+            "content": "sha256:1e26755a019520bf1efb7362cc92efe629bdca8b032550dcb76589d939ce1b4b",
+            "locator": {
+              "end": 683,
+              "kind": "line_range",
+              "start": 665
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

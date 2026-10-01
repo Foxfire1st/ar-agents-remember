@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_observer.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Append routes per lifecycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "229a1284fa08b85c28e7751a26ce2251e9567dd9",
+            "content": "sha256:23841b9dfc83f34dc90a0548ed684b3050f1652da3762fe57c45d052420bd061",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_append_routes_per_lifecycle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Workspace log for lifecycleless events.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "229a1284fa08b85c28e7751a26ce2251e9567dd9",
+            "content": "sha256:43330721f2c9b4b311386443a3d832ffa45c2908f5d6b8f9d5ad82dcc598381e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_workspace_log_for_lifecycleless_events"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Round trip through store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "229a1284fa08b85c28e7751a26ce2251e9567dd9",
+            "content": "sha256:237d9c47747056a35b0e88d4f94ac4f9d11fa955dbcc989815345ca95a157077",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_round_trip_through_store"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/useSessionsPaletteCommands.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The palette-command registration hook.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874f6bb9be6c9cedd4170b34a5f8b60fa593427a",
+            "content": "sha256:fea32fa57ee48b514c59881ac36a802b7e1a989d5363ca4eb9447bc78e062205",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSessionsPaletteCommands"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

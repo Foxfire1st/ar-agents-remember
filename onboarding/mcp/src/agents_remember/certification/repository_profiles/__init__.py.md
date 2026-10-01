@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/repository_profiles/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/repository_profiles/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
-| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification contract overview](../overview.md)
@@ -48,23 +38,16 @@ The module re-exports `AdmittedRepositoryProfile`, `load_repository_profile`,
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; the profiles are repository-owned contracts.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The facade exports the full selection-result surface added by L19. | `RepositorySelectionResult`; `build_repository_selection_result`; `__all__` | mcp/src/agents_remember/certification/repository_profiles/__init__.py:26-33; mcp/src/agents_remember/certification/repository_profiles/__init__.py:38-59 |
+- The facade exports the full selection-result surface added by L19. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None; this package is the repository-neutral authority inside agents-remember.
-
-## Update History
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
-  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): created the card for the package
-  facade and recorded the L19 re-export of the selection-result contract.
-  Verification is pinned to the owning commit.

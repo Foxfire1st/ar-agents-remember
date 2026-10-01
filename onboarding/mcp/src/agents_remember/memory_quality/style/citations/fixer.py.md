@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/fixer.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/fixer.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T04:32:25+00:00 |
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -58,66 +48,33 @@ pointed, so the onboarding root must be a leaf memory worktree, never the offici
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. This card describes the repository's own implementation and forcing contracts without an external documentation claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source. | N/A | N/A |
+No configured external domain source.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The fixer composes existing source authority with the document publication owner.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The per-run bundle now carries the verification histories and a per-document continuity cache. | `Walk`; `Walk.continuity` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:201-220 |
-| Malformed source segments exclude the whole claim instead of deleting evidence. | "def candidates(" | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:223-258 |
-| Only accepted per-document transactions await publication. | `Staging` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:261-266 |
-| One validated scope and source-index lease cover planning, publication and postcheck, and each repairing claim is planned with its own document's continuity. | `fix_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:269-325 |
-| Projection refusal returns before an Edit enters staging. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:354-399 |
-| The repair outcome supplies exact projection authority and one run timestamp. | `_projection` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:402-423 |
-| Validated previews and successful publications alone contribute repair/projection results. | `_publish` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:426-451 |
-| An observed scoped disappearance is unmeasurable, not an empty successful scan. | `_postcheck` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:328-351 |
-| Scoped normalization regenerates only anchors verified by each original source segment; it passes no continuity authority because its empty sightings can never relocate. | `_scoped_citation` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:486-544 |
-| Null recheck and actual publication counts remain explicit in the returned result. | `payload` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:547-595 |
-| The continuity a relocation must prove, and the reader that resolves one document's stamp. | `Continuity`; `continuity_for` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:159-240; mcp/src/agents_remember/memory_quality/style/citations/repair.py:243-253 |
-| The existing atomic writer receives only a revalidated complete document batch. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
+- The per-run bundle now carries the verification histories and a per-document continuity cache. [1]
+- Malformed source segments exclude the whole claim instead of deleting evidence. [2]
+- Only accepted per-document transactions await publication. [3]
+- One validated scope and source-index lease cover planning, publication and postcheck, and each repairing claim is planned with its own document's continuity. [4]
+- Projection refusal returns before an Edit enters staging. [5]
+- The repair outcome supplies exact projection authority and one run timestamp. [6]
+- Validated previews and successful publications alone contribute repair/projection results. [7]
+- An observed scoped disappearance is unmeasurable, not an empty successful scan. [8]
+- Scoped normalization regenerates only anchors verified by each original source segment; it passes no continuity authority because its empty sightings can never relocate. [9]
+- Null recheck and actual publication counts remain explicit in the returned result. [10]
+- The continuity a relocation must prove, and the reader that resolves one document's stamp. [11]
+- The existing atomic writer receives only a revalidated complete document batch. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This file introduces no separate cross-repository protocol. Local temporary code/memory roots and their application write-scope contract remain distinct from a cross-repository authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No new cross-repository protocol. | N/A | N/A |
-
-## Update History
-
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded that `Walk` now carries
-  `provenance.Histories` (built in `__post_init__`) plus a per-document `origins` cache, that
-  `Walk.continuity(document)` resolves one document's `repair.Continuity` at most once per run, and
-  that `fix_onboarding_root` passes it into `repair.plan` so a tree-wide relocation has to prove
-  continuity. Recorded that `_scoped_citation` passes `None` **deliberately** — its empty `Sightings`
-  can never relocate, so it reaches no cross-file decision that needs continuity authority — and
-  added the corresponding invariants. All stale reference ranges re-measured against the current
-  source. Verification metadata remains closeout-owned; no acceptance claim.
-
-- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced the generic local-variable anchor with the exact candidate collector declaration and current body range. Source hashes: mcp/src/agents_remember/memory_quality/style/citations/fixer.py=db1b9921b32325b4b7ab7f39969296dc154b004bea6a3b4eb55ad917b9f5a682; verification metadata remains unchanged.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=db1b9921b32325b4b7ab7f39969296dc154b004bea6a3b4eb55ad917b9f5a682; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Documented admission before staging, per-document conflict isolation, actual write accounting, preview digest semantics and explicit unavailable postcheck after scoped disappearance. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
-
-- 2026-09-04T01:15+02:00 - 260831-CCR-L10 Gate-5 memory pass: refreshed for the CCR-R10
-  deterministic anchor-range projection change-set (code commit 709dd076). Body now reflects the
-  `Staging` seam (`fix_onboarding_root`/`_decide`), `Result.projections`,
-  the per-document digest binding for staged projections, and the `payload` additions
-  (`projectionCount`/`projections`/`repairToolVersion`); every module-surface
-  bullet and reference row re-anchored to the post-change source ranges; verification metadata
-  pinned to 709dd076.
-
-- 2026-08-05T03:49+02:00 — 260731-EFA-L6 C1 closeout pass: aligned the Logic bullets and Finding line numbers with the scoped fixer's generated decorator-inclusive class ranges; verification metadata unchanged.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+No new cross-repository protocol.

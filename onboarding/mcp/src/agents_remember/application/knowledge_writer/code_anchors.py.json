@@ -1,0 +1,175 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A locator that does not resolve at C.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:0d6a01344898beeb8d62493d06d27a8e94703d0762c4c9040226341ff6a8c7a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorResolutionError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The captured tree C and its blobs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:4c29f26e3b561edc747abf182dbaf287157f726eaf25662d7d2be62451f30d14",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeSnapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A `file:` row subject must name the path's object at C, or `absent` (MIK-R10).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:2575c01115c40f0cd75c1cd60371abe20b5dacce0e354e2a62736bbfdfdd40f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "file_subject_mismatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Capture through the private-index candidate tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:33a098e68cd5df3d1fe9f3c50a40c6ac3cd83699031a4cb669819baecae0fb10",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Resolve a locator into an anchor with blob and content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:e22efd530081de646d8ac5be7f15b57e4f84ba2e6d2b9875051db516a9c77e75",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A symbol must bind exactly once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:573bac58759240358706539e42e95eff1948766aa6a1ac4742e74e209eb3c224",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:99ae16c99d181d0db7ef7ff7ab2831445bbf183e0afe66582563c0a5699760b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_spans"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3eebc5b0f77b9c84611738fc4420e2599f3582a9",
+            "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:ee8bea02f9640eba00856b87d932045c8764c2c74c9c60b3f3c94daa7200849f",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The snapshot of a committed code state, for a master line's crossing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:51bb53a56b198579fc9c5c2737fc2fa91c6acc3d918ddf929034da07024b7ee5",
+            "locator": {
+              "kind": "symbol",
+              "name": "at_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Both constructors read the regular files of one tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
+            "content": "sha256:ec9f46b76547f55f557ceb82a0e3b87c8558c286cd6f9a777853c9f5a24dd112",
+            "locator": {
+              "kind": "symbol",
+              "name": "of_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

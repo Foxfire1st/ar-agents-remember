@@ -2,14 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/kernel/primitives/` |
 | onboardingRoute | `mcp/src/agents_remember/kernel/primitives/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../../../overview.md) |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
 
 ## What This Area Is
 
@@ -98,29 +93,25 @@ The profile loader and executor remain downstream owners.
 - The `lifecycle-operation` mode belongs only to the detached task worker. It admits live
   operation authority but does not populate the MCP/dashboard daemon writer role.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots. | `resolve_checkout_location`; `require_durable_write_target` | mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:90-108; mcp/src/agents_remember/kernel/primitives/checkout_coordination.py:132-155 |
-| The layering rail enforces the total order this route anchors. | `load_contract` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:62-62 |
-| Structural gate models import the producer-owned gate vocabulary from kernel. | "from agents_remember.kernel.primitives.gate_vocab import (" | mcp/src/agents_remember/models/structural/gates.py:15-20 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots. [1]
+- The layering rail enforces the total order this route anchors. [2]
+- Structural gate models import the producer-owned gate vocabulary from kernel. [3]
+
+### Cross-Repo References
 
 No cross-repository implementation participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
-## Docs References
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
 ## File-Level Onboarding Map
 
@@ -155,45 +146,3 @@ When adding a primitive:
 ## 260815-DAG-L4 L4 Configured Repository Identity
 
 Runtime configuration is part of protected-ref authority: code and memory Git common directories, memory mode, coordination root, and canonical task tree must match the durable contract before lifecycle journaling or mutation.
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
-  `mcp/src/agents_remember/kernel/primitives/` route changed since the recorded verification commit.
-  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
-  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
-  remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
-  the recorded verification commit (the source-checkout fallback advanced to `3.0.0rc8`). Re-read
-  the route card: its live claim names no version literal and the old literal survives only in dated
-  history. No wording changed; verification metadata remains closeout-owned.
-- 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added configured profile-reference admission and qualified opt-in memory-cap planning. Verification records current source claims, not execution or acceptance.
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `runtime_config.py` gains the
-  fail-closed `directExecutionEnabled` policy gate (`parse_direct_execution_enabled`; default
-  `False`; `_checkout_runtime_config` pins it off). Verified at code commit a9d50e08.
-
-
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-
-- 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the narrow lifecycle-operation execution mode for the plane-owned detached task worker while retaining an empty daemon role and ordinary checkout isolation. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
-- 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: separated checkout-local coordination authority from the exact enclosure report-artifact target; reports do not become a coordinator and every other durable target remains refused. Verification remains closeout-owned.
-- 2026-08-12T22:04+02:00 — 260731-EFA-L23 post-code curator: documented the committed version resolver seam: installed package metadata is authoritative and a source checkout falls back to the `3.0.0rc7` release identity. Final verification stamping remains closeout-owned.
-
-- 2026-08-12T10:08+02:00 — No route impact: the rc7 leaf changes the existing version fallback
-  literal and names its metadata/fallback resolver so targeted CRAP can score it; primitive
-  vocabulary, import direction, and route ownership are unchanged. Verification metadata remains
-  pinned until closeout.
-
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24: changed memory-cap
-  ownership from a mandatory default to an explicit opt-in primitive; host-
-  managed full gates bypass it. Verification metadata remains pinned until
-  closeout stamps L24.
-
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: added the checkout-coordination primitive, its
-  loaded-package detection rule, explicit execution modes, deterministic leaf dummy root, and
-  central durable-target containment. Verification metadata remains pinned until approved closeout.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created the route overview for the new
-  `kernel/primitives/` package. Verification metadata pinned until closeout stamps the L9 code
-  commit.

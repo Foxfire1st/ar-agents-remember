@@ -1,0 +1,209 @@
+{
+  "path": "dashboard/src/data/reviewIntentSummary.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+        "content": "sha256:3fef816c5f454621fbf268a196236890351373d251adc7d08c338bb4073c19a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentSummaryRead"
+        }
+      },
+      "id": "RLZ-3WEB8YKV",
+      "invariant": "INV-R93S8Y30",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Declares the entry's read as exactly one of loading, counted/partial with counts, or unavailable with a problem, so the client type cannot hold counts beside an unavailable answer and the entry never draws numbers for an unread comparison.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+        "content": "sha256:2c2f13de9b2747a0cb5b73e3de999c831e5a9998999a146030f4f95c02d5dca6",
+        "locator": {
+          "kind": "symbol",
+          "name": "useIntentReviewSummary"
+        }
+      },
+      "id": "RLZ-QQ3BEVWE",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Re-runs the summary read only when repo, master, leaf or the passed facts change, never on the analytics document itself. Each read takes a sequence number, and only the newest still-mounted read may store its answer, which is filed under its repo/master/leaf key; a late answer for a previous leaf is dropped or shown as loading.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+        "content": "sha256:2c2f13de9b2747a0cb5b73e3de999c831e5a9998999a146030f4f95c02d5dca6",
+        "locator": {
+          "kind": "symbol",
+          "name": "useIntentReviewSummary"
+        }
+      },
+      "id": "RLZ-YNCHSBQT",
+      "invariant": "INV-115RDW8H",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Is the entry's only knowledge read when a leaf is selected: one intentReviewSummary request per repo/master/leaf key, repeated only when that leaf's projection facts change, with just the latest request allowed to store its answer. It returns loading for any other key, and a rejected request becomes an unavailable state rather than counts.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The wire types mirroring the server model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:b40ecffaa5128d54b1dfa64768b2c48fd623dca66e034c5d4b447be9e40e3302",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentCounts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:34c1b82d034aad49467300081f0fbb5b04b15c43117c58adbb451073e437a310",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route request through the shared decode.\n\nAnchor: `getReviewJson`; \"/api/review/intent/summary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:6c80a16fba30eb0ed60f763c52163cdd0ea53d4a3f8a8ca79388e86acf03e4dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReviewSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The render state and the answer mapping; an unrecognised body is unreadable, never drawn.\n\nAnchor: `unreadableAnswer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:3fef816c5f454621fbf268a196236890351373d251adc7d08c338bb4073c19a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentSummaryRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:71bd18dfcd12161f2db4ebc7bf6983acc2d14d5baf4bed1af5a3d40e2c52a4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "summaryRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hook: one read per task context and per `facts`, superseded answers dropped.\n\nAnchor: `reads.current === seq`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:2c2f13de9b2747a0cb5b73e3de999c831e5a9998999a146030f4f95c02d5dca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentReviewSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The lane's count carried on both answered states (MIK-L32).\n\nAnchor: \"attribution?: ReviewLaneSummary;\"; \"const attribution = result.attribution ? { attribution: result.attribution } : {};\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:1b9422615ee1b87596c992a3e70f0455265397a2496108e2854652ae817e8915",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:71bd18dfcd12161f2db4ebc7bf6983acc2d14d5baf4bed1af5a3d40e2c52a4f0",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The server model it mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "content": "sha256:b3b3d0304191ed5d8827108783c73c2b12de3dfd88ba02b272f7c884d1f27996",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_intent_summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The consumer.\n\nAnchor: `useIntentReviewSummary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

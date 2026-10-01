@@ -1,0 +1,37 @@
+{
+  "path": "mcp/src/agents_remember/models/structural/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public agent and gate models live in explicit sibling modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bb98b8f4c9b505cf9f36dd541b2ea56345860a4",
+            "content": "sha256:772a8073516131dd78eadb4621548fd53b4a34443ccc4201b6a8ac5d5d68b5c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "DispatchAgentRequest"
+            },
+            "path": "mcp/src/agents_remember/models/structural/agent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
+            "content": "sha256:3067f0a5ebd7781fd41dfb516d1394a0d4cae45391cbdb060ce55259eb303fd7",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/structural/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

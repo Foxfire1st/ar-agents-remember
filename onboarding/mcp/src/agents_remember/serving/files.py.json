@@ -1,0 +1,189 @@
+{
+  "path": "mcp/src/agents_remember/serving/files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_resolve_within`) extracted to and imported from here (L3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7581a4059025446b6723ceaa66e7d3d9f59ed212",
+            "content": "sha256:2fb25a3b0226d61a4674cd83a7e0bf5d9dd3d1448c5f61270f3cb50598a2bc1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_within"
+            },
+            "path": "mcp/src/agents_remember/serving/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`.\n\nAnchor: `add_middleware`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f337a1f8b33c7cbfcf86dec38b37a714943bae54",
+            "content": "sha256:07522a90260bdb0ea2933792c872f0766427c32c177f22badf066d95f17402e9",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "content": "sha256:e7439e42dfde2e3ca132f294c995f2162845dad8496330e19b214d075be85ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "confine_rel"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "content": "sha256:f264a2faeee90e3ff349790d1c9fbd939f4200473dd8024ac8c86e5d76a08814",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here.\n\nAnchor: \"test_worktree_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:41b0e7e9e6c7bb19d27bc77f1547f84b60ad6e8a92c97dd63b9a3c2a0811fca7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The repo allow-list authority guard (`require_repo` → `RepositoryScope`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:cae5d208c1d8ec05196503e1db089c686c65b9c7216370666479dc5709c237b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_repo"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:779d115e4f600250810d56478a00d8b217e5c480fa0660dc331fba97d87be490",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:2f7fc71b853fa9cb9f443605702fc3088c095ad4756f35649dc1aecd6a53b90c",
+            "locator": {
+              "kind": "symbol",
+              "name": "allowed_repo_ids"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The leaf-enclosure contract enumerator the catalog walks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:47e5201e5b1d133febcbb89eefa6f0ca7e1473347442477513ad46e266e91d2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "iter_leaf_enclosure_contracts"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.\n\nAnchor: \"coordination.worktree_group\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:147f3a13ca15b4b7a46682cb3829e94f974866ff9c13b54854be3f643a9e67d4",
+            "locator": {
+              "end": 1031,
+              "kind": "line_range",
+              "start": 1031
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:f1915524f01a1ba3f36260c3f0691ef0d6dfcff21095b266f47595050f7b10a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "discover_route_overviews"
+            },
+            "path": "mcp/src/agents_remember/kernel/onboarding_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

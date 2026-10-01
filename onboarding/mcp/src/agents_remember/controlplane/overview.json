@@ -1,0 +1,399 @@
+{
+  "path": "mcp/src/agents_remember/controlplane",
+  "references": {
+    "1": {
+      "note": "Gates mirror the observer event substrate (envelope + append-only JSONL store).\n\nAnchor: \"class EventStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:6265718c4953782e5e276b9fb819df8c37055dc3ed01a2aeecbe9c701f98a0e5",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_mcp_process"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dev_app"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:19f9b7165341d3052d1b1125a87d54dbda0cec85951ef043f790dd6075630b36",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:1090f706fded8f1cb7c1100e85ee76d80c23fda78fea0a4b00ec708969080f43",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:e26ef8683885e4c13344e79d00129018e3092fe07925ce6c1070a5facd649158",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "content": "sha256:b92153e2d4b5e8e39fb22f8e3c36fbfaf92ad1984a562be174679233df2efa5a",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Gate compaction is guarded by control-plane ownership because trusted dashboard paths call `gate_decide_payload` directly.\n\nAnchor: \"def gate_decide_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38cf83279988cbcecd8e45164ef3986c630f3b20",
+            "content": "sha256:32ce4e620e33b76d9db50a60e5027f0575a03c05bbc150cb2db2bb3a440f0ab4",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The projection tick reads folded gates and pending expectation rows without rewriting them.\n\nAnchor: \"def read_gates(coordination_root: Path, *, now: datetime\"; \"def read_expectation_rows(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:6c13db54e0814f706ad528a2f32ee3aea154a9f18dad38cc1e43bc8eff833bd8",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:208bb0111a1236aa4d6bfe71f851f610139b92595c80b956b76eeace1997d9d9",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The serving relay composes fact predicates and dispatches fact actions over this route's stores.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e595e89dacda7d4cffcb03ae09034a21e501bd3",
+            "content": "sha256:f5f24b333086e832c7bd77470411e457d9af1968ae65bdac95dbfd43f0d102e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_predicates"
+            },
+            "path": "mcp/src/agents_remember/serving/_agent_notifier_evaluation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:469a7b969a614ea431bc73f81a09d6ee280426bdaaaa5584059c154f6f09d052",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FINDING_ACTIONS"
+            },
+            "path": "mcp/src/agents_remember/serving/_agent_notifier_actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Gate policy validation and delegated decision checks.\n\nAnchor: \"class GatePolicy:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:8d9487b3076ca1d8cfda80f3bb6275600830c76684c06abda4eb102af1a7946f",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `gate_*` payload builders that drive this substrate.\n\nAnchor: \"def gate_create_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38cf83279988cbcecd8e45164ef3986c630f3b20",
+            "content": "sha256:aa6d56aa725a78f943a96de9d1355cf75633dcca19e76ad9de6bdb7d5afc20fd",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Gate response models, including the structural public boundary and internal exact correlations.\n\nAnchor: \"class GateCreateResponse\"; \"class StructuralGateResponse\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
+            "content": "sha256:4e00f71a695b1c426fe55515342f6a13bc5f57134773a8648b99b587a06ccf1e",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/models/structural/gates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
+            "content": "sha256:65a249d36e56cea8ec93c427b39ad7e5bdb5e9b836ee74716155cf4bfadd3fac",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/models/structural/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The inbox record/store pair provides the external-chat pull return channel.\n\nAnchor: \"class InboxAddress\", \"class OperatorInboxStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bf6786f6e546a7f79d0be5ccb3200c4da94e75a",
+            "content": "sha256:d17f8669c6f3a3d3914aac6964139af8c7837a64018244653e9400f177a59276",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:6f3682528b25fdb8a2d8add33b519f023d66cba0e6966b3cee97447eaf0e1052",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only.\n\nAnchor: \"class AttentionDismissalStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "702e1a4a709d0898a95c78b3dc236065c165f9a1",
+            "content": "sha256:7c3eeb17805bef2edd0e22916d67ef56962c4f8aea9913ea43d8a06e09899139",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview.\n\nAnchor: \"class ProviderDegradationStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:22d42a9364869463b895daa2d960aa31ad3c51114cc28a5cef042c139f97eef9",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Guarded durable-store composition preserves coordinator containment and held-lock rewrite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_access"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:18e19347826e5c2e9e70f9ba584a22c80264b29fda28921c215e951f9fd2e5ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_lock_held"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:c9c7808b5010f0a0a197d1a8167b62768116043eb6483dec5b0c49a5b9a46e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rewrite_lines"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Shared kernel exclusion is independent of caller authorization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:915104295d8fa4d8973a118ed3314645db9b7e134d512c63302bf14e7f51085c",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_file_lock"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:938a7ee0fafc28cb146d0acc1fb7fb46383b87b1f68ba3708f3341c547450d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_held"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

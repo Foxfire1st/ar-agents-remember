@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/diff_display.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/diff_display.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -136,52 +126,38 @@ dump is a different operation with a different limit. The richer display filters
 neutrality annotations the packet defers are later increments (`KS-Q17`, `KS-Q18`), and until the
 annotation lifecycle is specified the data stays visible and expandable rather than collapsed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The expansion reference and the reproducing command, stated in full so neither needs this module to be read.** | `DIFF_EXPANSION_REFERENCE`; `TREE_DIFF_COMMAND` | mcp/src/agents_remember/memory/knowledge/diff_display.py:99-99; mcp/src/agents_remember/memory/knowledge/diff_display.py:113-113 |
-| The fixed presentation order of the limitations. | `DIFF_LIMITATION_ORDER` | mcp/src/agents_remember/memory/knowledge/diff_display.py:117-125 |
-| **One side's source binding, the changed path, the observation and the seam — the shared vocabulary, re-exported at this seam.** | `TreeSide`; `TreeChange`; `TreePaths`; `TreeDifferenceProbe`; `no_tree_difference_probe` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:32-42; mcp/src/agents_remember/memory/knowledge/tree_observation.py:46-64; mcp/src/agents_remember/memory/knowledge/tree_observation.py:68-108; mcp/src/agents_remember/memory/knowledge/tree_observation.py:114-134 |
-| **The partition arithmetic, re-exported at this seam: the reader, the mapping fact, the side inspection, the partition and the licensing predicate.** | `AttributionReader`; `MappingFact`; `SideInspection`; `partition_attribution`; `unavailable_attribution`; `licenses_absence` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:91-94; mcp/src/agents_remember/memory/knowledge/diff_attribution.py:56-78; mcp/src/agents_remember/memory/knowledge/diff_attribution.py:82-88; mcp/src/agents_remember/memory/knowledge/diff_attribution.py:116-178; mcp/src/agents_remember/memory/knowledge/diff_attribution.py:97-113; mcp/src/agents_remember/memory/knowledge/diff_attribution.py:211-227 |
-| **The source half one display is built from: the two sides and the two seams travelling as one measurement.** | `SourceObservation` | mcp/src/agents_remember/memory/knowledge/diff_display.py:127-146 |
-| **The one entry point and the order it builds in — filter, omissions from the partition, limitations, expansion from the same one observation.** | `build_display` | mcp/src/agents_remember/memory/knowledge/diff_display.py:157-200 |
-| **The limitation table that establishes each declared limit from the omissions beside it, with the undetermined limit's second producer.** | `_declared`; `_LIMITATION_REASONS` | mcp/src/agents_remember/memory/knowledge/diff_display.py:202-241; mcp/src/agents_remember/memory/knowledge/diff_display.py:233-241 |
-| **The display filter, its two halves both measured in fix round 1, and the role read from whichever side holds the claim.** | `_apply_filter`; `_authored_role` | mcp/src/agents_remember/memory/knowledge/diff_display.py:243-288; mcp/src/agents_remember/memory/knowledge/diff_display.py:290-305 |
-| **The per-kind omission for records the other side held but did not select, stated as a selection fact and not a deletion.** | `_unselected_omissions` | mcp/src/agents_remember/memory/knowledge/diff_display.py:307-327 |
-| **The two attribution omissions from the partition: confirmed-unregistered and undetermined, with their two limitations and two reasons.** | `_attribution_omissions` | mcp/src/agents_remember/memory/knowledge/diff_display.py:329-392 |
-| **The deleted selection-only calculation, deliberately not replaced: what replaces it is the partition value's own bucket.** | `attributed_paths(comparison)` (deleted); `SourceAttribution.attributed_paths` | mcp/src/agents_remember/memory/knowledge/diff_display.py:30-36; mcp/src/agents_remember/models/knowledge/diff.py:588-592 |
-| The noun and order tables, and the counted noun phrase. | `_KIND_NOUNS`; `_KIND_ORDER`; `_kind_order`; `_count` | mcp/src/agents_remember/memory/knowledge/diff_display.py:377-383; mcp/src/agents_remember/memory/knowledge/diff_display.py:385-391; mcp/src/agents_remember/memory/knowledge/diff_display.py:394-395; mcp/src/agents_remember/memory/knowledge/diff_display.py:398-402 |
-| **The expansion builder: both trees, both roots, the path lists from the same observation, the carried partition and the detail that states what was observed.** | `_expansion`; `_expansion_detail`; `_stated_attribution` | mcp/src/agents_remember/memory/knowledge/diff_display.py:414-468; mcp/src/agents_remember/memory/knowledge/diff_display.py:452-468; mcp/src/agents_remember/memory/knowledge/diff_display.py:469-508 |
-| The production probe, and the read-only handle the row counts are taken through. | `git_tree_difference_probe`; `open_diff_side`; `diff_row_counts` | mcp/src/agents_remember/application/knowledge_diff.py:166-200; mcp/src/agents_remember/application/knowledge_diff.py:132-163; mcp/src/agents_remember/application/knowledge_diff.py:846-860 |
-| **The node that measures the expansion naming both trees and every differing path, and the node that measures the unattributed gap surviving a filter.** | "test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at"; "test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap" | mcp/tests/test_knowledge_diff_boundaries.py:145-182; mcp/tests/test_knowledge_diff_boundaries.py:185-218 |
-| **The node that measures the filter narrowing the display and never the comparison.** | "test_a_role_filter_narrows_the_display_and_never_the_comparison" | mcp/tests/test_knowledge_diff_scope.py:510-547 |
-| The two nodes that measure an unavailable observation reported as unavailable and a real probe making the gap visible. | "test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set"; "test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible" | mcp/tests/test_knowledge_diff_boundaries.py:791-847; mcp/tests/test_knowledge_diff_boundaries.py:850-912 |
+- **The expansion reference and the reproducing command, stated in full so neither needs this module to be read.** [1]
+- The fixed presentation order of the limitations. [2]
+- **One side's source binding, the changed path, the observation and the seam — the shared vocabulary, re-exported at this seam.** [3]
+- **The partition arithmetic, re-exported at this seam: the reader, the mapping fact, the side inspection, the partition and the licensing predicate.** [4]
+- **The source half one display is built from: the two sides and the two seams travelling as one measurement.** [5]
+- **The one entry point and the order it builds in — filter, omissions from the partition, limitations, expansion from the same one observation.** [6]
+- **The limitation table that establishes each declared limit from the omissions beside it, with the undetermined limit's second producer.** [7]
+- **The display filter, its two halves both measured in fix round 1, and the role read from whichever side holds the claim.** [8]
+- **The per-kind omission for records the other side held but did not select, stated as a selection fact and not a deletion.** [9]
+- **The two attribution omissions from the partition: confirmed-unregistered and undetermined, with their two limitations and two reasons.** [10]
+- **The deleted selection-only calculation, deliberately not replaced: what replaces it is the partition value's own bucket.** [11]
+- The noun and order tables, and the counted noun phrase. [12]
+- **The expansion builder: both trees, both roots, the path lists from the same observation, the carried partition and the detail that states what was observed.** [13]
+- The production probe, and the read-only handle the row counts are taken through. [14]
+- **The node that measures the expansion naming both trees and every differing path, and the node that measures the unattributed gap surviving a filter.** [15]
+- **The node that measures the filter narrowing the display and never the comparison.** [16]
+- The two nodes that measure an unavailable observation reported as unavailable and a real probe making the gap visible. [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The two sides' `root` values are where the
 application layer runs the published command, and this module never runs it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test_knowledge_diff_scope.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **probe-case row re-cited** (`791-847`/`850-912`). Wording unchanged; no stamp advanced.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **corrected the deleted attribution calculation and recorded the partition seam.** `attributed_paths(comparison)` and `_unattributed_paths` — the selection-only union this card's §"union rule" section and reference table documented — are **deleted** by this leaf (the calculation ICR-R04 corrects: an unchanged mapped file incremented the changed-file counter), not moved: what replaces them is `SourceAttribution.attributed_paths`, the partition value's own bucket accessor, and no in-tree importer existed. The partition arithmetic now lives in `memory/knowledge/diff_attribution.py` and the observation vocabulary in `memory/knowledge/tree_observation.py`, both re-exported here; `build_display` takes one `SourceObservation` (probe plus attribution reader over the same observation) and returns the partition beside the expansion; the omissions are the two the partition establishes (confirmed-unregistered and undetermined). Every reference row was re-derived against this candidate, including the exact deliberate-non-replacement note in the module docstring. Also repaired one L2 leftover: the published-command paragraph still stated `--name-only` while the command is `--raw -z`. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the last real commit whose bytes the untouched claims were verified against; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the display vocabulary learned to keep a path it cannot print.** `TreePaths` gained `entries`/`partial`/`unrepresentable` with the two construction rules that keep them honest (paths must equal the entry paths; an unrepresentable path implies a partial observation), and `TreeChange` was added as the status-bearing entry the review's inventory renders. The advertised command changed from `--name-only` to `--raw -z` for the reason stated in the module: the command a reader acts on must be the same interface that preserved the identity, or the boundary claim "a tab/newline filename remains the same address used for file expansion" is false in the one place it matters. `_expansion_detail` was extracted so a partial observation declares its limit rather than quietly counting fewer paths. All rows in the reference table were re-derived against this candidate. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
-
-
-- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): created this one-to-one card for the comparison's display half. It records the three jobs as one job — **a response must never be readable as more than it is** — the ordered build (filter, omissions, limitations, expansion from **one** observation so the omission count and the path list cannot disagree), the filter that narrows the display and **never** the comparison, the limitation table that establishes each declared limit from the omissions beside it with `no_semantic_assessment_performed` unconditional, and the two limitations the packet names explicitly (records the other selection missed, and changed paths no recorded realization attributes). It states the two contracts a successor must not flatten: **`attributed_paths` unions the two sides rather than intersecting them**, because a path the baseline attributed and the candidate no longer reaches **is** attributed — counting it as unattributed would claim the earlier code had no recorded attribution when it had exactly that; and **`available=False` is not an empty change set**, so an unavailable probe contributes no expansion and no omission and says so through its `detail`. It also records why the probe is a seam rather than a subprocess inside this module (a storage module that shelled out would put a subprocess on a read path whose persistence argument is that it only issues `SELECT`) and that the published command names the two tree ids and never a branch, a working tree or `HEAD`. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
+No meaningful cross-repo references found.

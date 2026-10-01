@@ -1,0 +1,165 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external/domain document defines this lift; the projectors and control-plane evidence pages are the source of truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43e9c45fa7b4e0b0792ae68233c039949b7304fa",
+            "content": "sha256:2e04ebcfa38b770e92adb87048a4e2c215fde9dcf974f5b3f56151a90f35f85b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_entry_terminal_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The per-vendor projector registry and strict `HarnessProjector` protocol the lift reuses.\n\nAnchor: `class HarnessProjector`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9d9c4e78b62dcd9e1f69a01963dc0b6507b668",
+            "content": "sha256:814cb9a40fa232fc007a16d1410662e0fd3ff0a215a8e92045a2e9ecac116418",
+            "locator": {
+              "kind": "symbol",
+              "name": "projector_for"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d9d9c4e78b62dcd9e1f69a01963dc0b6507b668",
+            "content": "sha256:a4260e66697a631fdc2247c63ca05d795a3209a3423a9739fbca0e94341b33d0",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d9d9c4e78b62dcd9e1f69a01963dc0b6507b668",
+            "content": "sha256:d375cc02cac305bd65d9263f056d55520fb195a31cf8d565ebd30d7ea88013ad",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bounded evidence-page and native-page read seams.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:1341df71b925cf79579981bff120c11c78efc600339f7f5d174fef22b24bef1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_control_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:66af92341ae9db3a777152f3e1d4f2680eb83ab6a476b13b7971294a384f4c6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_control_native_page"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The catalog cursor fields and liveness failure containment this module feeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:e7db2a7dc756636f6cb3231c2290d8f57caac7dcfb534a86a7a104d6bf813f69",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_evidence_sequence"
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:4109b1e25a862e269bec312e0290864dda06ec2640436adb7f573a2ca07f58cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_native_cursor"
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:2ea7a0a8ac50d2198a645a3798ae035f92c76c0a17fedfa7e8ff74b27a179d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The focused tests pin the no-loss envelope, unsupported-harness, bounded-Pi, and failure-containment cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c14ba79027d43d9fbba4e09b0f0f4965b4f1fcb",
+            "content": "sha256:47722250485fa6ec4f9eb7be880c88d976f09f30ad3e3d23af6a27702527e19b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadEntryTerminalEvidenceTests"
+            },
+            "path": "mcp/tests/test_terminal_evidence_cursors.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9c14ba79027d43d9fbba4e09b0f0f4965b4f1fcb",
+            "content": "sha256:f887d5c070688309ee853444e1a28af454951dd91255ef3c3e286191f13d0d60",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiCursorContinuationTests"
+            },
+            "path": "mcp/tests/test_terminal_evidence_cursors.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

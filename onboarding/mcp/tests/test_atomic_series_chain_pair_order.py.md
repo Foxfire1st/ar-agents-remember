@@ -1,15 +1,5 @@
 # mcp/tests/test_atomic_series_chain_pair_order.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_atomic_series_chain_pair_order.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T17:09+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -168,57 +158,38 @@ No task-independent follow-up is recorded in the source. The docstring's two reg
 the pair-order regression, `D-45` for the admissible-position refusal) are historical provenance
 rather than open work: both behaviours are now pinned by the two classes here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rows below separate the test file's own fixtures and cases from the production predicates they
 force, so a reader can see which half of each claim is asserted here and which half is asserted by the
 module under test.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The property the module pins: the chain orders on the landing pair rather than the code commit alone, so two leaves on one code commit remain two landings. | "The atomic landing chain orders a memory-only leaf by the pair, not by the code commit alone." | mcp/tests/test_atomic_series_chain_pair_order.py:1-7 |
-| The regression the case closes: both directions returned unordered once two leaves shared a code commit, so a complete atomic master containing a memory-only leaf could not be landed. | "two leaves shared a code commit"; "atomic-series-leaf-chain-invalid" | mcp/tests/test_atomic_series_chain_pair_order.py:9-11; mcp/tests/test_atomic_series_chain_pair_order.py:11-13 |
-| The second, surviving refusal (register row D-45): a base advanced by a leaf-level sync was invisible to a spine that read the series contract alone. | "the spine's admissible positions were read from the series contract alone" | mcp/tests/test_atomic_series_chain_pair_order.py:15-20 |
-| The production predicates under test and the import that names them. | "from agents_remember.worktrees.series_closeout import ("; `_leaf_landing_precedes` | mcp/tests/test_atomic_series_chain_pair_order.py:37-40; mcp/src/agents_remember/worktrees/series_closeout.py:284-317 |
-| The Git fixture helpers: a checked-out repository on a named branch, a commit that returns its own id, and a ref placement the checked-out branch does not own. | `_commit`; `_branch`; `_Side` | mcp/tests/test_atomic_series_chain_pair_order.py:62-66; mcp/tests/test_atomic_series_chain_pair_order.py:69-72; mcp/tests/test_atomic_series_chain_pair_order.py:76-80 |
-| The pair-order class and the contract builder that fixes each leaf's recorded pair independently of its work branch. | `AtomicSeriesChainPairOrderTests`; `_contract` | mcp/tests/test_atomic_series_chain_pair_order.py:83-99; mcp/tests/test_atomic_series_chain_pair_order.py:101-134 |
-| The four pair-order cases: a shared code commit with ordered memory is a step, code ancestry still orders, an identical pair is one landing recorded twice in both fixture pairs, and disabled memory keeps the code-only rule. | `test_a_shared_code_commit_with_ordered_memory_is_a_chain_step`; `test_code_ancestry_still_orders_when_the_code_position_moved`; `test_an_identical_pair_is_still_one_landing_recorded_twice`; `test_disabled_memory_keeps_the_code_only_rule` | mcp/tests/test_atomic_series_chain_pair_order.py:136-144; mcp/tests/test_atomic_series_chain_pair_order.py:146-152; mcp/tests/test_atomic_series_chain_pair_order.py:154-168; mcp/tests/test_atomic_series_chain_pair_order.py:170-193 |
-| The leaf-sync class and its two builders: the canonical series contract, and a landed leaf that may carry its own sync log. | `AtomicSeriesLeafSyncPositionTests`; `_series`; `_leaf` | mcp/tests/test_atomic_series_chain_pair_order.py:196-209; mcp/tests/test_atomic_series_chain_pair_order.py:231-254; mcp/tests/test_atomic_series_chain_pair_order.py:256-296 |
-| The single case that pins all three directions: the recorded leaf-level sync position is admitted and ordered, a position no contract's sync recorded is refused with the foreign commit named, and a step whose endpoint merges the previous landing with a recorded position is admitted as that position's own line. | `test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused` | mcp/tests/test_atomic_series_chain_pair_order.py:298-377 |
-| The production chain walk the order comes out of: the chain is proved landed, then ordered by asking the pair predicate against every other remaining leaf and refusing unless exactly one minimum exists. | `_require_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:226-248; mcp/src/agents_remember/worktrees/series_closeout.py:251-281 |
-| The spine proof behind the second refusal: each landing must be an ancestor of the ref, and each step may add only official positions the chain's own contracts synced with — or a line one of those positions, lying inside that step, reaches. | `_require_landing_spine_side`; `_require_admitted_step`; `_positions_inside_the_step`; `_reached_by_an_official_position`; `_landing_source_positions` | mcp/src/agents_remember/worktrees/series_closeout.py:405-446; mcp/src/agents_remember/worktrees/series_closeout.py:483-543; mcp/src/agents_remember/worktrees/series_closeout.py:546-566; mcp/src/agents_remember/worktrees/series_closeout.py:569-576; mcp/src/agents_remember/worktrees/series_closeout.py:579-602 |
-| The origin rule the chain still enforces: with no sync the oldest leaf starts at the recorded base, and with a sync its base must lie on one line with the position the first sync advanced from. | `_require_chain_origin` | mcp/src/agents_remember/worktrees/series_closeout.py:320-351 |
-| The contract fields the fixtures set: the mid-task sync log, the integration status, and the leaf identity the chain is keyed by. | `sync_log`; `integration_status`; `leaf_id` | mcp/src/agents_remember/worktrees/worktree_contract.py:280-280; mcp/src/agents_remember/worktrees/worktree_contract.py:263-263; mcp/src/agents_remember/worktrees/worktree_contract.py:269-269 |
+- The property the module pins: the chain orders on the landing pair rather than the code commit alone, so two leaves on one code commit remain two landings. [1]
+- The regression the case closes: both directions returned unordered once two leaves shared a code commit, so a complete atomic master containing a memory-only leaf could not be landed. [2]
+- The second, surviving refusal (register row D-45): a base advanced by a leaf-level sync was invisible to a spine that read the series contract alone. [3]
+- The production predicates under test and the import that names them. [4]
+- The Git fixture helpers: a checked-out repository on a named branch, a commit that returns its own id, and a ref placement the checked-out branch does not own. [5]
+- The pair-order class and the contract builder that fixes each leaf's recorded pair independently of its work branch. [6]
+- The four pair-order cases: a shared code commit with ordered memory is a step, code ancestry still orders, an identical pair is one landing recorded twice in both fixture pairs, and disabled memory keeps the code-only rule. [7]
+- The leaf-sync class and its two builders: the canonical series contract, and a landed leaf that may carry its own sync log. [8]
+- The single case that pins all three directions: the recorded leaf-level sync position is admitted and ordered, a position no contract's sync recorded is refused with the foreign commit named, and a step whose endpoint merges the previous landing with a recorded position is admitted as that position's own line. [9]
+- The production chain walk the order comes out of: the chain is proved landed, then ordered by asking the pair predicate against every other remaining leaf and refusing unless exactly one minimum exists. [10]
+- The spine proof behind the second refusal: each landing must be an ancestor of the ref, and each step may add only official positions the chain's own contracts synced with — or a line one of those positions, lying inside that step, reaches. [11]
+- The origin rule the chain still enforces: with no sync the oldest leaf starts at the recorded base, and with a sync its base must lie on one line with the position the first sync advanced from. [12]
+- The contract fields the fixtures set: the mid-task sync log, the integration status, and the leaf identity the chain is keyed by. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The suite drives real `git` against
 temporary repositories it creates itself, and every contract it builds names one synthetic
 coordination root; no sibling repository, remote, or external service participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-20T03:19+02:00 — 260915-KS-L35 curator (uncommitted change set on `ar/260915-ks-l35-ar`, code base `7abacd8e`): **the leaf-sync case gained a third direction, and it is the reason this leaf exists.** `test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused` now also builds a step whose endpoint is a `--no-ff` merge of the previous landing with a recorded position and asserts the chain admits it, counting the step's own non-merge commits (`"4"`) so the direction cannot pass on an empty step. That is the 260915-KS master's real L5 → L6 history — recorded base `8dfc11b8` is the merge of the previous landing `7db50f8f` with the synced super-line position `8dd62345`, and the pre-repair `_require_admitted_step` admitted the position while refusing all 22 commits of the line it introduced (register row `D-60`). The direction is statements inside the existing case body, not a new collected case, because both lanes sit at exactly their budget — **2300 / 2300** unit and **400 / 400** integration — and one added collected case makes `pytest_collection_finish` raise `UsageError`, after which that lane executes zero tests; the Invariants section now states that budget arithmetic as this module's decision rule. The case's own reference row was re-pointed to its current extent (`:298-377`, it grew by the new direction) and the spine row now carries the two helpers the repair added, `_positions_inside_the_step` and `_reached_by_an_official_position`. The `_position_that_descends_from_a_step_does_not_vacate_it` counter-case and its helper are untouched and still refuse. No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator: created this one-to-one card for the atomic-series
-  chain pair-order suite. It records the property the module pins (the landing order is over the pair,
-  not the code commit alone), the two refusals it forces — the pair-order regression that made a
-  complete atomic master containing a memory-only leaf unlandable (register row D52), and the
-  leaf-level sync position the spine used to miss (register row D-45) — the Git-backed fixture
-  helpers, all five cases in both classes, and the production predicates in
-  `worktrees/series_closeout.py` they exercise (`_leaf_landing_precedes`,
-  `_require_exact_atomic_landing_chain`, `_ordered_atomic_landing_chain`,
-  `_require_landing_spine_side`, `_require_admitted_step`, `_landing_source_positions`). Verified
-  against the committed source at `e79985045437d7e6409b873c7da3c51aa7cd9685`.
+No meaningful cross-repo references found.

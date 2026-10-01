@@ -1,0 +1,394 @@
+{
+  "path": "mcp/tests/merge_case_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The harness's three responsibilities and the statement that it holds no policy.\n\nAnchor: \"It is test support, not production code: it decides nothing, holds no policy\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:b41146763d10d9194491916596aa663053e26c0be6b9e16777be1cc4f3794efb",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The unit-side consuming module, which drives the disjoint-edit survival case.\n\nAnchor: \"def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:8aa0cb093158f15096398064c9dd38d5a000178b0f32343d4bdad093f8f5d383",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The integration-side consuming module, whose docstring states which integrity checks a case can reach.\n\nAnchor: \"Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be8045510eae43dc4a30d00474c0db1f34731ddd",
+            "content": "sha256:8fd94129b27fe62041396d5942ea199fe9a01c7c67ec37a0222c31114c70baeb",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The store operations the authored states go through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:7587d649a2a528fa4296a832f9010af5e9ab4c400094deb2b17502dca5b3c64a",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_invariant"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:3172cf05981d5a62e9715d3426c3ef65c54f315ee927ecb6376c4f65960749f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The registered artifact that makes this harness an owned contract rather than a private helper.\n\nAnchor: \"contract:common-base-merge-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:c297b2a047cd8e3a340a492b281531ba5ac7f16e9f01ef90251e23fc8f5ba518",
+            "locator": {
+              "end": 1319,
+              "kind": "line_range",
+              "start": 1319
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The consuming module that drives the harness's own deletion case, cited at the definition the claim is about.**\n\nAnchor: \"test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:8aa0cb093158f15096398064c9dd38d5a000178b0f32343d4bdad093f8f5d383",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The boundary module that supplies the conflict-row and final-integrity cases, cited at its own module docstring.**\n\nAnchor: \"Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be8045510eae43dc4a30d00474c0db1f34731ddd",
+            "content": "sha256:67755d1aba01915276c9d8aad84da0cb055fa231645b1cf8f10a5be89b6fb258",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one case world and the readers a case uses instead of raw paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:87cea494e6c70e12b8c21603a4fbbbe9924e55acd48da9f3059f502efd9679f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitBranchWorld"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:247e9454c171cf5d77bd97c07ad9f3b7a7d578506eec05b0450dcf5a7b743bdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeCase"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:f3933d03bea26a5a4d0203332b58f16729e462569fbe04a87a180d67c71a5ed0",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_path"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:906aa5cccae2ea32e40da64a6b70a466eaf589b2c236d015fba7dd631d3ad4e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "databases_by_role"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The base state authored through the real store operations and closed through SQLite's own backup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:2400dd44ee53d2f48262f187807f0ff7a11b26bc4edcbe4e924e7c1864bac21d",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_base_state"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:992300318ec999d5a0500413eb9b6f425f60b004e5681622791864644fc4c1d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "copy_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The successor rule: a new revision naming its predecessor, never an edit of a sealed row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:0db2d66af0b687f960247e42c9f93b62e1127cef95d1bf9b4a6e00ce9bbb5f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_revision"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:f24b13e9cc4cb00ec559d3031bb61637cb39370f070d447a6b565ee5aa07c5e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_label"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three-commit world whose base is the sides' parent, and the per-commit dataset export.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:50756c3379ecfec1ee5eb94e3581c1bc1bcb869f06fba0c50670cef851df45eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_git_world"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:356a095c6160311fa2802470288ddd020b9b842df81dc5c76c73787c9dc770aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "materialize_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one binary read, and why it does not go through the text-decoding runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:1bd1c4aec1d732023a75f39cf8c061b10c04aa5de4a67d34c04bee8bdd1ceace",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_committed_blob"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The build order that puts an unusual state inside the commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:6ad32801bb47dc160ae769989211ff37346cb4165ef7b7102b73544d4d66d535",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_case"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The measurement helpers that make input preservation and survival measured rather than asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:456f4df6b796806c6745007dabb530f558a9b7474be6d67aab55325f55c296b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "table_rows"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:544629aea9acd5d2024360a4103129c45573d918e5bad0498b0bc6d60327dca8",
+            "locator": {
+              "kind": "symbol",
+              "name": "row_counts"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:d60164791db41816c4b81fa4f2223df911846694e4282948b2d6537f3a51c4da",
+            "locator": {
+              "kind": "symbol",
+              "name": "file_digest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:5f4201e872de6cffd6c0f3d0126407d465065c8a2520c214da0c6c545401d42c",
+            "locator": {
+              "kind": "symbol",
+              "name": "journal_peer_names"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:ca8a25a7d00e24b396ce389a308a1d7f939cec6c6fbb9c2cd224d96579bd85c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "statements_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:917f63641558b6d24b220fa0736c2a49f436022d6b5562a1b6511d01bc72c4aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "labels_of"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The registered artifact that makes this harness an owned contract rather than a private helper.\n\nAnchor: \"contract:common-base-merge-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:c297b2a047cd8e3a340a492b281531ba5ac7f16e9f01ef90251e23fc8f5ba518",
+            "locator": {
+              "end": 1319,
+              "kind": "line_range",
+              "start": 1319
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

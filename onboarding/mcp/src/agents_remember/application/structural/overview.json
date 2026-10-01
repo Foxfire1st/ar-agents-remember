@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/application/structural",
+  "references": {
+    "1": {
+      "note": "The public structural operations are registered through one adapter module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "456c0ea5679c22be7fe3f24882008f2eec27f544",
+            "content": "sha256:55f5ba971a49d36fcd6b52b94c4ad8c8e4d3279be607cc34303c5a334dffbd52",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_agent_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/structural_agent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Structural resolution qualifies document+role seats and refuses ambiguity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f9f51d45c6c05c4b98bfb9c5586d948624c2764",
+            "content": "sha256:1acb9b38b437626002a5693a509fb5de0b95ec0695f2ac060a905e791089fa6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "StructuralSeatResolver"
+            },
+            "path": "mcp/src/agents_remember/serving/structural_seats.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

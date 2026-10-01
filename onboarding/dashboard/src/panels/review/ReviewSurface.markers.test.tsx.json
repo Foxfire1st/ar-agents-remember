@@ -1,0 +1,142 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.markers.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real bodies of comparison 2, the routing and the held leaf-wide read.\n\nAnchor: \"markerReturn.task.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:ba92f5f13e4d64ba4bd13a42cd3e933b7f093fc180fa0c3d337f291ed8ee0638",
+            "locator": {
+              "kind": "symbol",
+              "name": "answer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:996a37b125649f6492a3ac5cb0c7c79eac80e546485d7e13b5cffbdd78824391",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:e8ba2f4b512810e88829d7c5e46af3fd78bb9ad2f84272612a1d90d1ff78b3b5",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Case 1: two marks from one classification read.\n\nAnchor: \"opens a changed file with one marker per hunk, from the one classification\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:778fa21fc104c1f5a710028883419bf1fe9fb3af4ff7c86ccc3419d00050c92b",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Case 2: follow to the member row, card excerpt marks, and the return with layout, list and focus.\n\nAnchor: \"selects the tree position a marker names, and returns to the hunk with focus on the marker\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:981c5fde9082db034f7ce0ee2a5b9a96030f9d5ea5b3d48ecbf14590e95a9c69",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Comparison 3's bodies and the focused element's announcement.\n\nAnchor: \"markerUnknown.memberUnknown.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:38c3b7c1a1b2222754797bc6d71114d08a4fa72ed58dc378f16722af333dfb3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "focusedAnnouncement"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:03c9ac7318efc8b855630e5d62902ec4b5fdb457f3354888e8727c304cdb0710",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Case 3: unknown membership in its own state, apart from no family.\n\nAnchor: \"opens an unknown membership in its own Attribution unknown state, apart from no family\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:487c248518bcac9279ffb05f014f318873bda133c7d1f4f4adb3aeef1bca384c",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Case 3's member-row step: the membership line in the description, the comparison's reason, nothing named twice (MIK-L33).\n\nAnchor: \"(MIK-L33 review R3-1: a member row is named by its subject only, and described by its facts).\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:ee48042d7d8af0795c079cd59470c1f4683d1c37e70e02aff6d75ca48c4c91e2",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 311
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

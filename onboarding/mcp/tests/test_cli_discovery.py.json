@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_cli_discovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Convention wins over registration in the same directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6789d1b6f4c93c3177dacfcfca6cb2dbcc9920",
+            "content": "sha256:6905df0681513cdef97f58e7bf58b1864feee0f3bb4aee29a2571dd22fea5a4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_convention_wins_over_registration_in_the_same_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Nearest directory wins across levels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6789d1b6f4c93c3177dacfcfca6cb2dbcc9920",
+            "content": "sha256:fe01caf8e44b334ee0106ec482d3b5937f5cd8f96698f65cf0ab505e90374273",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nearest_directory_wins_across_levels"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Malformed and foreign registrations are skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6789d1b6f4c93c3177dacfcfca6cb2dbcc9920",
+            "content": "sha256:869368806dec71fa80d1c7adda71ab6dfe000b9a7e79ea351fcfe69796a568fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_malformed_and_foreign_registrations_are_skipped"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Miss raises with both patterns and the origin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6789d1b6f4c93c3177dacfcfca6cb2dbcc9920",
+            "content": "sha256:80972242b38ca6297124874b5e6394179e48afb11b3e6d3d31254a45953b5c11",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_miss_raises_with_both_patterns_and_the_origin"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

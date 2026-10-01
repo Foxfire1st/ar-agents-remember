@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/data/sessions.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The client row carries structural binding separately from runtime identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:63bc468e08fb9286c6dd5749f7582a0a2f3930aa3e3a22b79f74dbd3a90c7ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenSession"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Assignment updates and uniqueness use task-document plus role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:085eabea3ae7300f760c1b8a23d0cc69c2fd6d7991e8ccb2338ec0a5819196bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyTaskAssignment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:132e1fc07818bd808a3f42a2b0e3955496ccc08a9f2c0e37f5a1bf20d8902683",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:fc6fb5fdf74c4769a5cbeae537834b67ac74617ee2c28431496db5bf83e5f323",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 480
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Live lookup resolves the current occupant of a structural seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:a31ca3211936e22d353e2de91602346ce0de118718b217c678b345d6ea0dbb14",
+            "locator": {
+              "kind": "symbol",
+              "name": "findSessionForTask"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Catalog hydration preserves the server-owned structural row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:016090cbf36780cfae301c1dcc0fb5204a13d503e10f8c9feb5ef8d586823ce8",
+            "locator": {
+              "kind": "symbol",
+              "name": "fromTerminalSessionInfo"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

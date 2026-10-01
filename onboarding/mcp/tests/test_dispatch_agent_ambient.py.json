@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_dispatch_agent_ambient.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Ambient dispatch refuses unknown task reference before spawn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d912ae21315dc4cebe9ebda2c820adef1b790874",
+            "content": "sha256:9423dc050b683506b58615e0f3a54a2664c23272288032bbf051f75ec2e99fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ambient_dispatch_refuses_unknown_task_reference_before_spawn"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ambient dispatch refuses role altitude mismatch before spawn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d912ae21315dc4cebe9ebda2c820adef1b790874",
+            "content": "sha256:953d0dcc696bd1abf356079e524d9b9a93d990945716d61b10078749c1df4665",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ambient_dispatch_refuses_role_altitude_mismatch_before_spawn"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Role without hosted identity never falls back to ambient dispatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d912ae21315dc4cebe9ebda2c820adef1b790874",
+            "content": "sha256:1e3f7f98eeb5ef3d41d895d6ab92118df70b554aa5222a1ad4fce46c8636bd84",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_role_without_hosted_identity_never_falls_back_to_ambient_dispatch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Ambient dispatch runs the real spawn and persists the brief.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d912ae21315dc4cebe9ebda2c820adef1b790874",
+            "content": "sha256:563bc10a7f5cb91837cff288bba596f3c2d93de55bfe7337467792c3f0f963cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ambient_dispatch_runs_the_real_spawn_and_persists_the_brief"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ambient dispatch rolls back via system closure when brief persistence fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d912ae21315dc4cebe9ebda2c820adef1b790874",
+            "content": "sha256:223e73f985a2f4ec1f0e72843197011daf5fb062ecd248fe4c8d5f62861bd67b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ambient_dispatch_rolls_back_via_system_closure_when_brief_persistence_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Plane dispatch refuses broken plane identity without downgrading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d912ae21315dc4cebe9ebda2c820adef1b790874",
+            "content": "sha256:21da8dcaf14c19883b89361d0fd98e1be0eb49c4d329cae1065a8e086db0f699",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plane_dispatch_refuses_broken_plane_identity_without_downgrading"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Plane dispatch refuses an unauthorized child role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d912ae21315dc4cebe9ebda2c820adef1b790874",
+            "content": "sha256:dbcbb9cccca0b249c4e39995311ada8ca7373f951fb84b04583930b2e82f4181",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plane_dispatch_refuses_an_unauthorized_child_role"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

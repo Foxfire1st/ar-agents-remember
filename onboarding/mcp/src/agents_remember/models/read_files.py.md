@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/read_files.py
 
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `mcp/src/agents_remember/models/read_files.py` |
-| doc_type               | `file-level-onboarding`                     |
-| lastUpdated | 2026-09-21T15:14+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview      | `overview.md`                               |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -88,52 +78,12 @@ carries it as a dict rather than re-declaring a second contract for the same rea
   state the route produces. The model declares no field of that block, so the selection contract stays in
   `application/published_intent.py` and this module cannot drift into a second spelling of it.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The strict response base and `ToolResponse`. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
-| **The new field, and the owning module that decides its shape.** | `published_intent`; `published_intent_block` | mcp/src/agents_remember/application/published_intent.py:420-435; mcp/src/agents_remember/models/read_files.py:80-80 |
-| The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. | `_resolve_onboarding` | mcp/src/agents_remember/application/read_files.py:235-264 |
-| The three optional format fields a file result gains, and the module that fills them. | `FileRead`; `converted_card_parts`; `legacy_published_intent` | mcp/src/agents_remember/models/read_files.py:35-53; mcp/src/agents_remember/application/read_files_format.py:65-93; mcp/src/agents_remember/application/read_files_format.py:35-49 |
-| The registry mapping `read_ar_files` to this response model (L120). | `read_ar_files` | mcp/src/agents_remember/models/tools/tool_registry.py:167-167 |
+### Repo-Internal References
 
-## Update History
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body update (MIK-R24 rules 5 and 9).** `FileRead` gained the optional `format`, `sidecar` and `references` fields: a paragraph and a row. The `published_intent` paragraph now names the `legacy-format` state an unconverted tree gets. The `FileRead`, `ReadArFilesResponse` and `published_intent` citations were re-measured six lines down.
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. MIK-R23 changed `published_intent_block` (a converted memory tree's block now carries `memoryTree` and per-page `indexState`); the claim that the owning module decides the field's shape and this model carries it as a dict was re-read and still holds, so its wording is retained. The range was re-pointed to the function's extent `:420-435`; the fixer's generated bullet, written minutes earlier in this same pass, is folded into this entry.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **body updated — this response gained a field.** `ReadArFilesResponse` now declares `published_intent: dict[str, Any] | None` at `:74` (ICR-R19@v1), the repository's published intent read through the existing selective read at one exact snapshot; the class docstring states the field's contract and the body records that the shape is owned by `application.published_intent` rather than re-declared here, plus an invariant that this model carries the block and does not own its selection. The `ReadArFilesResponse` citation extent was re-derived to `:50-74` and the `_resolve_onboarding` reference row to `read_files.py:235-267` (was `:209-238`) because this leaf's insertions moved that declaration; a reference row was added for the new field and its owning module. No claim was re-worded to fit a stale pointer. **Stamp accounting:** the recorded working candidate names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains the body as it now stands and the governed closeout owns the real stamp. No commit was made.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:167-167. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:154-154. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:153-153. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T23:44:56+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:152-152. No content impact: mechanical anchor-range projection bound to citation source snapshot fc36bf81fd36002f552f72a34a44e9713fa47fc86ced6632de3215e5011793d3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:151-151. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `read_ar_files` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:155-155. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 8 citation findings and repaired the
-  reversal this card had self-flagged. `FileReadStatus` is declared in this module at line 29 and
-  `VALID_FILE_READ_STATUSES` is derived here at line 32; the body, the vocabulary invariant, and the two
-  reference rows now state the model → producer direction (`application.read_files` imports the
-  alias; `_resolve_onboarding` at 209-238 decides the value). The exhaustiveness row follows the
-  renamed `test_every_onboarding_status_the_read_entry_point_returns_validates` (778-785). Scoped
-  recheck clean.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No route impact from the rename itself: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`; the references and the vocabulary here follow ("the application layer" for the package, "an application entry point" for one function). **FLAGGED, NOT FIXED — this body is stale for a reason that is NOT the rename, and the curator who owns that change should repair it.** A separate staged change in the same code worktree moved `FileReadStatus` and `VALID_FILE_READ_STATUSES` back INTO this module (L29 and L32); `application/read_files.py` now imports the alias at L43. That reverses the 260731-EFA-L4 decision recorded below, so the "`FileReadStatus` is imported from `application.read_files`; this module must ..." invariant and the reference row calling `application/read_files.py` "the DECLARER of `FileReadStatus` with its derived `VALID_FILE_READ_STATUSES`" are both false against the current worktree, as are the L54/L57/L216-L218 anchors in that row. The claims are left verbatim rather than rewritten into something plausible, because the intent behind the reversal belongs to that change, not to this one. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T09:38+02:00 — 260731-EFA-L4 curator: body corrected. The card described
-  `FileReadStatus` as this module's Literal; it is now imported from
-  `controllers.read_files` L54, the module whose `_resolve_onboarding` is the only function that
-  decides the value. Recorded the derived `VALID_FILE_READ_STATUSES` and the exhaustiveness test
-  that asserts produced == declared, and added the producer-owns-the-vocabulary invariant plus the
-  explicit note that `found` with an absent `source` is not a contradiction. Citations: `FileRead`
-  pinned to L26-L38, `ReadArFilesResponse` to L41-L54, the import to L18-L22; the controller
-  reference row gained `FileReadStatus` L54 / `VALID_FILE_READ_STATUSES` L57 /
-  `_resolve_onboarding` L216-L218, the registry row gained L120, and a row was added for the
-  exhaustiveness suite. Verification metadata pinned until closeout stamps the L4 commit.
-
-- 2026-06-22T22:33+02:00 — Created for slice 07: the `FileRead` + `ReadArFilesResponse` strict response contract for `read_ar_files`. Verification metadata pinned until closeout stamps the slice-07 code commit.
+- The strict response base and `ToolResponse`. [1]
+- **The new field, and the owning module that decides its shape.** [2]
+- The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. [3]
+- The three optional format fields a file result gains, and the module that fills them. [4]
+- The registry mapping `read_ar_files` to this response model (L120). [5]

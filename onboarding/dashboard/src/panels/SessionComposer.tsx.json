@@ -1,0 +1,79 @@
+{
+  "path": "dashboard/src/panels/SessionComposer.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`SessionsView` names the focused-live seat condition used by the composer boundary.\n\nAnchor: \"const { focused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:d078a928f346399ad6fa91454f33ef5abcdceee8927958c1de5dcbbeb0a22bb8",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ordinary composer drafts call `submitSessionDraft`.\n\nAnchor: \"void submitSessionDraft\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8448208d92f3f1248ce35f98678d37f8299ba73b",
+            "content": "sha256:a05d6a49bb89f67d10800c22ae2122c117e948481517143535d96ba8b6989785",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/panels/sessionComposerHooks.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pending interaction answers call `submitInteractionAnswer`.\n\nAnchor: \"export async function submitInteractionAnswer(args: {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:f2929f1a943fc385f1908b460d2581f31281967cfd687629e66d8c797e0a7fbd",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 570
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The test suite declares the `SessionComposer` render/interaction block.\n\nAnchor: \"describe(\\\"SessionComposer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b568217f721587fec57b4b2f12fa6bd861793c3b",
+            "content": "sha256:8f53faa431fe9d9af4688df8a72b421d724621ffaf8dddf9fe9b4f8d92a0e64e",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/SessionComposer.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_projection/declarations.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/application/task_projection/declarations.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T10:30+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -70,45 +60,30 @@ caller — never resolved by a directory scan.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking the configured sources. | N/A | N/A |
+No relevant documentation found after checking the configured sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The declarations readers, the refusal they map, and the owners that decide packet reality.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The declarations reader that normalises leaf and master altitudes into one typed union. | `read_declarations`; `RequirementDeclaration` | mcp/src/agents_remember/application/task_projection/declarations.py:50-74; mcp/src/agents_remember/application/task_projection/declarations.py:43-47 |
-| The identity helper: a packet reference yields `"<stable_id>@<version>"`, prose yields `None`. | `declaration_identity` | mcp/src/agents_remember/application/task_projection/declarations.py:77-82 |
-| The deliberate non-ownership path that does not read an adjacent packet. | `adjacent` | mcp/src/agents_remember/application/task_projection/declarations.py:85-107 |
-| A missing obligation is a reported gap, never an empty section. | `missing_section_gap` | mcp/src/agents_remember/application/task_projection/declarations.py:110-120 |
-| The task-intent owner that confines a declared packet path, reads it and verifies its header. | `task_intent_projection`; `task_intent_master_projection`; `TaskIntentRequirementPacket`; `TaskIntentRequirementText` | mcp/src/agents_remember/tasks/task_intent.py:132-177; mcp/src/agents_remember/tasks/task_intent.py:196-222; mcp/src/agents_remember/tasks/task_intent.py:52-56; mcp/src/agents_remember/tasks/task_intent.py:47-49 |
-| The task-root-relative packet confinement the exact-text route reuses rather than reimplements. | `confine_non_symlink_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:52-88 |
-| The section role vocabulary a gap is reported against. | `PacketSectionRole`; `PACKET_SECTION_HEADINGS` | mcp/src/agents_remember/application/task_projection/packets.py:43-50; mcp/src/agents_remember/application/task_projection/packets.py:64-81 |
-| The case that proves every owned obligation is carried verbatim and a missing section is a gap. | `test_the_projected_planes_keep_their_kinds_and_carry_every_obligation_verbatim` | mcp/tests/test_task_projection.py:1152-1209 |
+- The declarations reader that normalises leaf and master altitudes into one typed union. [1]
+- The identity helper: a packet reference yields `"<stable_id>@<version>"`, prose yields `None`. [2]
+- The deliberate non-ownership path that does not read an adjacent packet. [3]
+- A missing obligation is a reported gap, never an empty section. [4]
+- The task-intent owner that confines a declared packet path, reads it and verifies its header. [5]
+- The task-root-relative packet confinement the exact-text route reuses rather than reimplements. [6]
+- The section role vocabulary a gap is reported against. [7]
+- The case that proves every owned obligation is carried verbatim and a missing section is a gap. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract consumes this declarations reader.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: created this card for the requirement-declaration
-  reader added by the scoped-task-context leaf (`CAPS-R03@v1`). Records both admissible routes (the
-  typed `approved-requirement-packet` reference as the standardized policy, and the exact-text route
-  needing an admitted location), the deliberate non-ownership path that does not read an adjacent
-  packet's body, the missing-section gap rule, and the no-search boundary. Verification metadata is
-  left at the leaf base commit because the source is uncommitted — the governed closeout stamps the
-  real code commit.
+No meaningful cross-repo references found.

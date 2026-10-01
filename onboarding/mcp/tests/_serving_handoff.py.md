@@ -1,15 +1,5 @@
 # mcp/tests/_serving_handoff.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/_serving_handoff.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T21:25+02:00 |
-| lastVerifiedCommitHash | `806649b91bdce18f7b915bfbbf6727967f4e7a88` |
-| lastVerifiedCommitDate | 2026-09-16T12:23:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -134,70 +124,45 @@ opens no socket and issues no HTTP request; it is ordinary version-controlled te
 None. The instrument covers the oracle's terms and its three park points; a scenario needing a fourth
 would add a gate beside these rather than a second harness.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved memory root. Every claim on this card is
 about repository-owned serving behaviour, so no external domain source is cited.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 The declarations below establish the current instrument and the production seams it drives; this
 inventory is not execution evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The oracle's four scheduling terms are read from production declarations, not literals: 21.0 s of logical scheduling before any measured overrun. | `P`; `F`; `N`; `WORST_PHASE_BOUND` | mcp/tests/_serving_handoff.py:86-96 |
-| The real `asyncio.sleep`, captured before the fixture swaps it for the virtual clock. | `_REAL_SLEEP` | mcp/tests/_serving_handoff.py:83-83 |
-| The driver's step budget is sized from the observer's grid so a late sweep fails on the bound rather than aborting the driver with an attribution error. | `_STEP_LIMIT` | mcp/tests/_serving_handoff.py:113-121 |
-| One `refresh()` attempt's window and how many rows it probed, which is how a full sweep is told apart from a fast-path pass. | `_SweepCall`; `full_sweep` | mcp/tests/_serving_handoff.py:127-139 |
-| The one entry point both loops call; attempt numbers and records are allocated under one lock because `measure()` compares that index. | `_SweepWitness`; `refresh` | mcp/tests/_serving_handoff.py:183-241; mcp/tests/_serving_handoff.py:216-229 |
-| The last refresh still running at a moment: the pass that can delay the next sweep. | `in_flight_at` | mcp/tests/_serving_handoff.py:235-241 |
-| The real catalog with its single durable write path recorded, so the commit's instant, order and rows are observable while `batch()` and the atomic replace stay production code. | `_WitnessCatalog`; `_write_disk` | mcp/tests/_serving_handoff.py:244-293; mcp/tests/_serving_handoff.py:261-267 |
-| Durable truth is read with `include_terminated=True`, matching the notifier's own read scope rather than a narrower filtered one. | `committed_holds` | mcp/tests/_serving_handoff.py:281-293 |
-| The one in-batch hook, which holds a sweep inside its own open batch after it projected the fact. | `upsert` | mcp/tests/_serving_handoff.py:269-274 |
-| The adapter readers a sweep consumes, the one terminal fact a case can make readable, and the three park points. | `_Adapter`; `make_readable` | mcp/tests/_serving_handoff.py:296-364; mcp/tests/_serving_handoff.py:318-322 |
-| The notifier loop's own catalog port, delegated in full and recorded on every `list()` read. | `_CatalogReads`; `list` | mcp/tests/_serving_handoff.py:367-403; mcp/tests/_serving_handoff.py:389-395 |
-| One notifier pass recorded around the real `run_agent_notifier_sweep`, so "this pass actually read the fact" is decidable per pass. | `_NotifierPasses`; `observed` | mcp/tests/_serving_handoff.py:406-428; mcp/tests/_serving_handoff.py:177-180 |
-| The real heartbeat store's end-of-pass tick, which is where a pass is parked as in-flight-but-not-consumed. | `_HeartbeatWitness`; `tick` | mcp/tests/_serving_handoff.py:431-450; mcp/tests/_serving_handoff.py:444-447 |
-| A fresh frozen settings snapshot per load, which is what makes in-place enablement observable. | `_SettingsSource`; `set_enabled` | mcp/tests/_serving_handoff.py:453-471; mcp/tests/_serving_handoff.py:466-468 |
-| Three seeded rows in the order a full sweep observes them: evidence, second steady seat, starting row. | `_seed_rows` | mcp/tests/_serving_handoff.py:496-503 |
-| One disposable world composing the recordings, the adapter and the real fixture. | `_World` | mcp/tests/_serving_handoff.py:507-540 |
-| The shared serving fixture extended with the real notifier loop's collaborators, rather than a second harness. | `_HandoffFixture` | mcp/tests/_serving_handoff.py:543-600 |
-| Every oracle term read back out of recorded events, with `bound` composed from the measured terms. | `_Handoff`; `bound` | mcp/tests/_serving_handoff.py:604-666; mcp/tests/_serving_handoff.py:663-666 |
-| The driver releasing one parked sleep at a time so a case chooses each pass's exact instant. | `_HandoffCase`; `observer_poll`; `notifier_poll` | mcp/tests/_serving_handoff.py:669-886; mcp/tests/_serving_handoff.py:699-710; mcp/tests/_serving_handoff.py:712-723 |
-| Re-parking, not a new record, is what proves an interval was consumed — a disabled loop re-parks without running a pass. | `settle`; `poll_until` | mcp/tests/_serving_handoff.py:694-697; mcp/tests/_serving_handoff.py:725-732 |
-| The arming choices that make the observer phase strict rather than maximal. | `arm_the_fact_after`; `arm_the_fact_at` | mcp/tests/_serving_handoff.py:769-779; mcp/tests/_serving_handoff.py:759-767 |
-| Every term of the bound asserted against the recorded events, with the three unfalsifiable relations documented instead of asserted. | `assert_oracle` | mcp/tests/_serving_handoff.py:827-886 |
-| The production loops and sweeper this harness enters rather than replaces. | `_terminal_observation_loop`; `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:109-126; mcp/src/agents_remember/serving/_app_lifespan.py:288-352 |
-| The sweeper's retained starting-row window and ten-second full-sweep limit behind `refresh`. | `refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
-| The fixture this harness extends, and the clock its sleep primitive replaces. | `_ServingFixture`; `_VirtualClock` | mcp/tests/test_serving_observation_loop.py:259-370; mcp/tests/test_serving_observation_loop.py:115-159 |
-| The proof site that owns the oracle's documentation and its eight cases. | `ServingNotifierHandoffTests` | mcp/tests/test_serving_notifier_handoff.py:52-376 |
+- The oracle's four scheduling terms are read from production declarations, not literals: 21.0 s of logical scheduling before any measured overrun. [1]
+- The real `asyncio.sleep`, captured before the fixture swaps it for the virtual clock. [2]
+- The driver's step budget is sized from the observer's grid so a late sweep fails on the bound rather than aborting the driver with an attribution error. [3]
+- One `refresh()` attempt's window and how many rows it probed, which is how a full sweep is told apart from a fast-path pass. [4]
+- The one entry point both loops call; attempt numbers and records are allocated under one lock because `measure()` compares that index. [5]
+- The last refresh still running at a moment: the pass that can delay the next sweep. [6]
+- The real catalog with its single durable write path recorded, so the commit's instant, order and rows are observable while `batch()` and the atomic replace stay production code. [7]
+- Durable truth is read with `include_terminated=True`, matching the notifier's own read scope rather than a narrower filtered one. [8]
+- The one in-batch hook, which holds a sweep inside its own open batch after it projected the fact. [9]
+- The adapter readers a sweep consumes, the one terminal fact a case can make readable, and the three park points. [10]
+- The notifier loop's own catalog port, delegated in full and recorded on every `list()` read. [11]
+- One notifier pass recorded around the real `run_agent_notifier_sweep`, so "this pass actually read the fact" is decidable per pass. [12]
+- The real heartbeat store's end-of-pass tick, which is where a pass is parked as in-flight-but-not-consumed. [13]
+- A fresh frozen settings snapshot per load, which is what makes in-place enablement observable. [14]
+- Three seeded rows in the order a full sweep observes them: evidence, second steady seat, starting row. [15]
+- One disposable world composing the recordings, the adapter and the real fixture. [16]
+- The shared serving fixture extended with the real notifier loop's collaborators, rather than a second harness. [17]
+- Every oracle term read back out of recorded events, with `bound` composed from the measured terms. [18]
+- The driver releasing one parked sleep at a time so a case chooses each pass's exact instant. [19]
+- Re-parking, not a new record, is what proves an interval was consumed — a disabled loop re-parks without running a pass. [20]
+- The arming choices that make the observer phase strict rather than maximal. [21]
+- Every term of the bound asserted against the recorded events, with the three unfalsifiable relations documented instead of asserted. [22]
+- The production loops and sweeper this harness enters rather than replaces. [23]
+- The sweeper's retained starting-row window and ten-second full-sweep limit behind `refresh`. [24]
+- The fixture this harness extends, and the clock its sleep primitive replaces. [25]
+- The proof site that owns the oracle's documentation and its eight cases. [26]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository authority is established by this repository-owned test-support module.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-
-- 2026-09-15T21:25+02:00 — 260831-LOCR-L04 curator (uncommitted change set on `ar/260831-locr-l04`,
-  base `e9678c56`, `mcp/tests/_serving_handoff.py` new, 886 lines, sha256 `6ab4455a…`): created this
-  card for the leaf's new handoff harness. It is the instrument half of a preservation leaf's proof
-  envelope — the leaf changes no production file, so the harness and the oracle are the whole
-  deliverable, and the card records what the instrument actually is rather than a one-line stub. Four
-  properties are recorded because each is load-bearing and none is visible from a passing run: the
-  scheduling constants are read from production declarations so the bound cannot drift from the knobs;
-  the wrappers **are** the production collaborators (the sweeper attribute, the notifier's catalog port,
-  the heartbeat tick) so no production behaviour is reimplemented; the settings loader hands out a fresh
-  frozen snapshot per load, which is what makes a cached-settings loop observably different from a
-  re-reading one; and `assert_oracle` documents its three unfalsifiable relations instead of asserting
-  them, because an assertion that cannot fail in any reachable state is not evidence. The committed-truth
-  read is scoped to the notifier's own `include_terminated=True` collection for the reason recorded in
-  the body: a filtered read would answer about a narrower collection than the claim. Verification
-  metadata is pinned to the leaf base only; the source is an uncommitted candidate, so normal closeout
-  owns the final stamping.

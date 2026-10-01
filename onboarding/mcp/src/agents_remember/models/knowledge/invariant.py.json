@@ -1,0 +1,154 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/invariant.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The invariant identity shape, its nonblank display label and the row digest a label edit names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "content": "sha256:7e478e3d46b8261aa04fa8ae8c23fd232a97784a05268e0eb8ebcca24650bb3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantDraft"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "content": "sha256:30e9aad669bb4970266f7e2053be487cfbf3ddd32a0a986a38c24a028ced6190",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The complete revision aggregate and its validators, including the self-predecessor rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "content": "sha256:a5149a9a6c73e01baad0c1c1141feaada9913738ad9530481dcd957649afe0fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantRevision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "content": "sha256:d07550d2e2173dd9ca4054097aa74437b737c47741d195797212d4c056590b46",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_self_consistent_acceptance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared accepted/proposed rule this validator now delegates to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_consistent_acceptance"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The read-back shape that pins the sorted predecessor set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
+            "content": "sha256:926be26caf1b07a6e17a4af4e40598a2553f4ff4937d3f58b7c26678e011f095",
+            "locator": {
+              "kind": "symbol",
+              "name": "StoredInvariantRevision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The stored `invariant_revision` table this aggregate is written to, with its immutability triggers.\n\nAnchor: `invariant_revision`; `invariant_revision_no_update`; `invariant_revision_no_delete`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:06e82c4037ac7680e4b651f09348637c8d608920d2d30c538355cf34701597d5",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:aeaac578e16cdd30c07ea3d949c822616d1ae680b152f3467cdf369f5f5ad6e3",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 353
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The insert-only operation that seals and stores one aggregate, or refuses without any row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:3172cf05981d5a62e9715d3426c3ef65c54f315ee927ecb6376c4f65960749f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:0ea5933c42829b36e5b9ad294cf7bb2df3411043acf2d1110a4898733832f4ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_insert_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

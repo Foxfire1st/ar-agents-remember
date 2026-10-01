@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/telemetry/adapters.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/telemetry/adapters.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T12:30:00+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification overview](../overview.md)
@@ -68,43 +58,27 @@ never sees R11/R20/R21/R22 objects.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root; the governing documentary
 artifact is the CCR-R16@v3 requirement packet, whose exhaustive event matrix defines the legal
 context/outcome and required payload for every event kind the adapters compile. Task artifact
 paths are not repo-relative citations, so this fact is recorded as prose here.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Execution-coherent identity is fixed before any event is compiled. | `TelemetryExecutionContext` | mcp/src/agents_remember/certification/telemetry/adapters.py:91-103 |
-| Admission telemetry derives the candidate-admitted event from its owned inputs. | "def compile_candidate_admitted" | mcp/src/agents_remember/certification/telemetry/adapters.py:147-162 |
-| Pass telemetry derives the publication event from its owned gate evidence. | "def compile_gate_pass_published" | mcp/src/agents_remember/certification/telemetry/adapters.py:278-301 |
-| Rail telemetry projects the terminal rail observation. | "def compile_rail_terminal" | mcp/src/agents_remember/certification/telemetry/adapters.py:209-232 |
-| Finalization telemetry projects completion from its owned finalization inputs. | "def compile_finalization_completed" | mcp/src/agents_remember/certification/telemetry/adapters.py:497-510 |
-| Every event is assembled through one matrix-driven base path that requires candidate and profile. | `_base_event` | mcp/src/agents_remember/certification/telemetry/adapters.py:583-609 |
-| Separate spans carry executor time without ever becoming gate evidence. | "def span("; "class TelemetrySpan(FrozenContractModel)" | mcp/src/agents_remember/certification/telemetry/adapters.py:566-580; mcp/src/agents_remember/certification/telemetry/models.py:220-234 |
-| The event kind vocabulary the adapters emit is fixed by the models layer. | `EventKind`; `EVENT_MATRIX` | mcp/src/agents_remember/certification/telemetry/models.py:82-107; mcp/src/agents_remember/certification/telemetry/models.py:160-185 |
-| The facade exposes the full adapter set through its explicit export table. | `__all__` | mcp/src/agents_remember/certification/telemetry/__init__.py:105-197 |
+- Execution-coherent identity is fixed before any event is compiled. [1]
+- Admission telemetry derives the candidate-admitted event from its owned inputs. [2]
+- Pass telemetry derives the publication event from its owned gate evidence. [3]
+- Rail telemetry projects the terminal rail observation. [4]
+- Finalization telemetry projects completion from its owned finalization inputs. [5]
+- Every event is assembled through one matrix-driven base path that requires candidate and profile. [6]
+- Separate spans carry executor time without ever becoming gate evidence. [7]
+- The event kind vocabulary the adapters emit is fixed by the models layer. [8]
+- The facade exposes the full adapter set through its explicit export table. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
-
-## Update History
-
-- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced generic type-use anchors with the exact span helper and model declarations. Source hashes: mcp/src/agents_remember/certification/telemetry/adapters.py=18cc9d511188ad2d835419acd6dd1251260c3233d06e1454291aa53a4ecb9ecd, mcp/src/agents_remember/certification/telemetry/models.py=482cc098f1f2cae2165a6beb91e524251af79a7c1bfc31071f63a928da255cf6; verification metadata remains unchanged.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (span→566-580; __all__ export table→105-197). Preserved claim prose; source-sha256=18cc9d511188ad2d835419acd6dd1251260c3233d06e1454291aa53a4ecb9ecd; verification metadata remains unchanged because commit-owned realization is pending.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited citation follow-up: corrected the retained `span` body citation to the current definition range `566-580` after the first reconciliation history entry; source-sha256=18cc9d511188ad2d835419acd6dd1251260c3233d06e1454291aa53a4ecb9ecd. Verification metadata remains unchanged because commit-owned realization is pending.
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `TelemetryExecutionContext` repointed to mcp/src/agents_remember/certification/telemetry/adapters.py:91-103. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `_base_event` repointed to mcp/src/agents_remember/certification/telemetry/adapters.py:583-609. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5: created for the CCR-R16@v3 event-compile
-  adapters (leaf 260831-CCR-L16, certified commit
-  `2cd360d8f45ccdcf640dc9c5d14b941ac2f0f8eb`). Verification stamp advanced to the certified code
-  commit.

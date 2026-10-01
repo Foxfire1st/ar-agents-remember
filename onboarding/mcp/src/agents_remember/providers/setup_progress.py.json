@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/providers/setup_progress.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provider setup functions announce phases through `setup_progress_from(args)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba58b03a56e398af531689e5afc2eabaad21e600",
+            "content": "sha256:2b298727889b36ea6fb4b2585dbc3ce558335b334f12b56e16d0281a35278d5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "setup_progress_from"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The worktree launcher creates the file and finishes it from the setup payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5668db44301baeeabadf810bb85c9a5282bf100f",
+            "content": "sha256:2566a6eb7ce057c6650bab6d2e43067da2f364273b27787c6e484c73fb51cb39",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_provider_setup"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

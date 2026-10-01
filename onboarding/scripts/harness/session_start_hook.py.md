@@ -1,15 +1,5 @@
 # scripts/harness/session_start_hook.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `scripts/harness/session_start_hook.py`    |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-07T00:31+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `../../overview.md`                        |
-
 ## Governing Overview
 
 [overview.md](../../overview.md)
@@ -70,21 +60,10 @@ among its fragments; the generator inserts the constant conditionally.
 - Editing a generated hook script directly is caught by `sync-harness.py --check` in both
   hook tiers and by `mcp/tests/test_sync_harness.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The generator that assembles these fragments and emits the conditional `WORKSPACE_ROOT` constant and per-harness trailer. | `WORKSPACE_ROOT` | scripts/sync-harness.py:556-556 |
-| The directive body every hook reads at run time. | "Otherwise you are the developer-facing **free chat**: read" | scripts/harness/shared/session-start-directive.md:10-10 |
-| The classification recording that the envelope and the workspace guard are protocol requirements. | `started_inside_workspace`; "payload envelope" | scripts/harness/README.md:79-79; scripts/harness/README.md:81-81 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
-
-- 2026-08-10T10:40+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
-- 2026-08-03T03:12:31+02:00 — W3-B04 curator: curated 3 table citations (3 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
-- 2026-07-31T06:30+02:00 — 260731-EFA-L2 created this fragment library, collapsing four
-  independent session-start hook copies into one checked definition (requirement L2-R12).
-  Verification metadata is pinned to the leaf's reformat commit until closeout stamps the
-  code commit.
+- The generator that assembles these fragments and emits the conditional `WORKSPACE_ROOT` constant and per-harness trailer. [1]
+- The directive body every hook reads at run time. [2]
+- The classification recording that the envelope and the workspace guard are protocol requirements. [3]

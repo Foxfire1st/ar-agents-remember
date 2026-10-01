@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/projectors/common.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/projectors/common.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active conversation projectors overview](overview.md)
@@ -61,54 +51,29 @@ they fail or how they attribute evidence.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. This module carries no vendor
 semantics of its own; each harness mapper sidecar cites its own schema authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this shared module. | — | — |
+No configured domain documentation was available for this shared module.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The engine catches `UnmappableShape` and mints the fallback unknown-vendor item; the store
 consumes the output types; the strict `ProvenanceEvidence`/`ConversationItem` wire models
 validate every emitted product.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Native evidence ingestion maps `UnmappableShape` (and an over-budget truncated frame) to preserved `MappedUnknownVendor` evidence, never a stream failure; thread binding and roster reconciliation still apply to malformed agent-thread frames. | `NativeEvidenceIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:44-268 |
-| Echo ingestion takes the same containment for a submission echo it cannot parse. | `EchoIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:35-187 |
-| `ProjectionMutationStream.apply_outputs` routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and buffers `MappedTurnOutcome` as the pending terminal. | `ProjectionMutationStream` | mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py:49-197 |
-| The rebuild coordinator resolves pending user-item provenance in a bounded batch and applies each record to the store. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:63-192 |
-| `ProvenanceEvidence` and the strict item validator define the products these builders fill. | "class ProvenanceEvidence(WireModel):" | mcp/src/agents_remember/models/conversations/identity.py:68-68 |
+- Native evidence ingestion maps `UnmappableShape` (and an over-budget truncated frame) to preserved `MappedUnknownVendor` evidence, never a stream failure; thread binding and roster reconciliation still apply to malformed agent-thread frames. [1]
+- Echo ingestion takes the same containment for a submission echo it cannot parse. [2]
+- `ProjectionMutationStream.apply_outputs` routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and buffers `MappedTurnOutcome` as the pending terminal. [3]
+- The rebuild coordinator resolves pending user-item provenance in a bounded batch and applies each record to the store. [4]
+- `ProvenanceEvidence` and the strict item validator define the products these builders fill. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this shared module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-03T03:00:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 5 Repo-Internal citation claims with exact ingestion, mutation, rebuild, and mapper-output anchors. Verification metadata remains unchanged for closeout.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations broken by the `active/projector.py` -> `active/projector/` package split, expanding them into 4 rows because the consumers landed in different modules. `UnmappableShape` containment plus thread binding/roster reconciliation is `native_ingestion.py` L159-L200; the echo-side equivalent is `echo_ingestion.py` L165-L178; the `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` routing into the store is `ProjectionMutationStream.apply_outputs` in `mutation_stream.py` L85-L100; the user-item provenance rebuild is `RebuildCoordinator._resolve_provenance` in `rebuild_coordinator.py` L179-L192.
-
-- 2026-07-26T15:34 — 260718-CHATS-L7: `MappedUnknownVendor` gained the optional
-  `agent: ConversationAgentRef` field (L92-L96, fix-round review finding 4) so a malformed
-  AGENT-thread frame's preserved evidence stays in that agent's view, never the parent's.
-  Sidecar: documented the field and its degrade-not-fatal-but-agent-honest invariant; refreshed
-  citations (parse gate L34-L49, outputs L56-L99, builders L102-L145) and re-pointed the
-  projector.py citations displaced by the L7 multiplexed-projection rewrite (L453-L472 →
-  L856-L879; L515-L533 → L969/L986-L1004) plus the models.py product lines (L315-L403 →
-  L197-L204/L341-L431). Uncommitted; closeout re-stamps verification.
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the shared
-  mapper infrastructure — strict parsing, the four mapper output types, honest provenance
-  builders. Verification is blank because the new source file is uncommitted; closeout owns its
-  first source stamp.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/detection_walk.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/detection_walk.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T17:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -154,55 +144,39 @@ None recorded. The walk's `unmapped_changed_paths` and truncation flags come fro
 that neither advertises nor truncates gets the complete-for-declared-policy status — which is a bounded
 scan result and is not upgraded to a claim about attribution accuracy.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The walk's whole input: the shipped comparison, the sides read, the declaration, the manifest reference and the comparison's own advertised gaps. | `DetectionWalkInput` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:64-81 |
-| **The stable signal identity, derived from the recorded group key rather than from the bytes behind it.** | `_signal_id` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:84-94 |
-| **The regroup that keeps one identity per signal: the record identity while it names one union item, the item identity exactly when several items share the record, both read from the comparison.** | `_regroup_shared_items` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:149-177 |
-| The recorded facts one union realization item is reduced to, reading no source bytes. | `_ClaimFacts`; `_claim_facts` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:97-136 |
-| The membership and family-revision reads the family conditions classify on. | `_family_members`; `_family_revision_ids` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:186-201; mcp/src/agents_remember/memory/knowledge/detection_walk.py:204-213 |
-| **The five declared conditions and the declared deterministic total order: the condition vocabulary's own order first, then the recorded group key.** | `detect_review_conditions` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:182-247 |
-| **The grouped signal that keeps every contributing match, its path, its edges and its sibling set.** | `_family_signal` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:250-289 |
-| The single-claim signal recorded on the side that held it. | `_claim_signal`; `_record_change_signal` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:363-396; mcp/src/agents_remember/memory/knowledge/detection_walk.py:328-360 |
-| **The one place a signal is assembled: the required field set, the derived limitations and the rendered detail.** | `_MatchedCondition`; `_emit` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:363-414 |
-| **The limitations derived from recorded facts, plus the unconditional one — never a limitation with no omission behind it.** | `_walk_limitations` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:453-477 |
-| The unsupported locator read as a declared scope limitation rather than a negative match. | `_has_unread_locator` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:480-493 |
-| The omission read from the comparison's own recorded reason, so declaration and omission cannot disagree. | `_declared_probe_omission` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:503-513 |
-| **The recorded input set built from the declaration's own discriminator, with the probe read off the union rather than re-run.** | `_recorded_input_set`; `_probe_from` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:516-531; mcp/src/agents_remember/memory/knowledge/detection_walk.py:534-548 |
-| The observed granularity one locator kind supports, and no finer one. | `_granularity` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:551-556 |
-| **The unretained manifest reference: a real reference at a destination that is deliberately not the durable route, so it resolves unresolved rather than being fabricated as retained.** | `_unretained_manifest` | mcp/src/agents_remember/memory/knowledge/detection_walk.py:559-578 |
-| The comparison the walk reads and the item shape it classifies on. | `KnowledgeDiffResult`; `KnowledgeDiffItem` | mcp/src/agents_remember/models/knowledge/diff.py:733-818; mcp/src/agents_remember/models/knowledge/diff.py:333-370 |
-| The declared conditions and declared input sets the walk emits from. | `DETECTION_CONDITIONS`; `DECLARED_INPUT_SETS` | mcp/src/agents_remember/models/knowledge/detection.py:124-149 |
-| The record half: the store's own refusals, the write path and the read path this walk's values are handed to. | `record_detection_run`; `build_detection_run` | mcp/src/agents_remember/memory/knowledge/detection.py:263-289; mcp/src/agents_remember/memory/knowledge/detection.py:144-173 |
-| **The cases that measure the scenario/control identity, the declared order, the retained group and the unsupported locator.** | "test_a_budget_change_and_a_comments_only_change_produce_the_same_condition_and_signal"; "test_the_declared_order_is_total_over_signal_identity_and_independent_of_item_order"; "test_an_unsupported_locator_is_a_declared_limitation_rather_than_a_negative_match" | mcp/tests/test_knowledge_detection_runs.py:293-324; mcp/tests/test_knowledge_detection_runs.py:339-372; mcp/tests/test_knowledge_detection_runs.py:373-399 |
+- The walk's whole input: the shipped comparison, the sides read, the declaration, the manifest reference and the comparison's own advertised gaps. [1]
+- **The stable signal identity, derived from the recorded group key rather than from the bytes behind it.** [2]
+- **The regroup that keeps one identity per signal: the record identity while it names one union item, the item identity exactly when several items share the record, both read from the comparison.** [3]
+- The recorded facts one union realization item is reduced to, reading no source bytes. [4]
+- The membership and family-revision reads the family conditions classify on. [5]
+- **The five declared conditions and the declared deterministic total order: the condition vocabulary's own order first, then the recorded group key.** [6]
+- **The grouped signal that keeps every contributing match, its path, its edges and its sibling set.** [7]
+- The single-claim signal recorded on the side that held it. [8]
+- **The one place a signal is assembled: the required field set, the derived limitations and the rendered detail.** [9]
+- **The limitations derived from recorded facts, plus the unconditional one — never a limitation with no omission behind it.** [10]
+- The unsupported locator read as a declared scope limitation rather than a negative match. [11]
+- The omission read from the comparison's own recorded reason, so declaration and omission cannot disagree. [12]
+- **The recorded input set built from the declaration's own discriminator, with the probe read off the union rather than re-run.** [13]
+- The observed granularity one locator kind supports, and no finer one. [14]
+- **The unretained manifest reference: a real reference at a destination that is deliberately not the durable route, so it resolves unresolved rather than being fabricated as retained.** [15]
+- The comparison the walk reads and the item shape it classifies on. [16]
+- The declared conditions and declared input sets the walk emits from. [17]
+- The record half: the store's own refusals, the write path and the read path this walk's values are handed to. [18]
+- **The cases that measure the scenario/control identity, the declared order, the retained group and the unsupported locator.** [19]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The `KnowledgeDiffResult`/`KnowledgeDiffItem` row cited `models/knowledge/diff.py:501-520`/`318-340`, which the attribution-partition growth moved; it now cites the declarations at `:733-818`/`:333-370`. Wording unchanged; no stamp advanced.
-- 2026-09-19T17:15+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`, base `497d9e9f`): M1-4 anchor repair, re-read against the code worktree at `e7998504`. Three rows were wrong. The single-claim row had `_claim_signal` and `_record_change_signal` crossed (each was answered with the other's range); they now cite `:363-396` and `:328-360` respectively. `_walk_limitations` was cited at `:417-441` (the `_emit` tail) and now cites `:453-477`; `_declared_probe_omission` was cited at `:467-477` and now cites `:503-513`. Every other row was re-checked and stands (the two `_ClaimFacts`/`_claim_facts` and `_MatchedCondition`/`_emit` rows pair both constructs to one shared range, which is true). No claim was deleted or softened. The stamp is unchanged because `5e4eb651`'s content for this file is byte-identical to `e7998504` (`git diff 5e4eb651 HEAD` is empty).- 2026-09-18T17:30:57+00:00: Generated citation repair: `_family_members`; `_family_revision_ids` repointed to mcp/src/agents_remember/memory/knowledge/detection_walk.py:186-201; mcp/src/agents_remember/memory/knowledge/detection_walk.py:204-213. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_claim_signal`; `_record_change_signal` repointed to mcp/src/agents_remember/memory/knowledge/detection_walk.py:363-396; mcp/src/agents_remember/memory/knowledge/detection_walk.py:328-360. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_has_unread_locator` repointed to mcp/src/agents_remember/memory/knowledge/detection_walk.py:480-493. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_recorded_input_set`; `_probe_from` repointed to mcp/src/agents_remember/memory/knowledge/detection_walk.py:516-531; mcp/src/agents_remember/memory/knowledge/detection_walk.py:534-548. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_granularity` repointed to mcp/src/agents_remember/memory/knowledge/detection_walk.py:551-556. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_unretained_manifest` repointed to mcp/src/agents_remember/memory/knowledge/detection_walk.py:559-578. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:22+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the one identity rule this pass changed, and corrected the card for it. `_ClaimFacts` now carries a `group_key` seeded from the recorded identity (`detection_walk.py:103`, `:122-126`), `_regroup_shared_items` (`:149-177`) moves it to the realization **item** identity for exactly those claims whose record identity names more than one union item, `detect_review_conditions` runs the claims through it (`:228-230`), and `_claim_signal` groups under `claim.group_key` (`:394`) instead of `claim.claim_id` (`:385` still builds the path id from the record identity, which is what a path's edges name). Without it two items sharing one claim record produced two signals under one `signal_id` and `build_detection_run` refused the whole run with the deterministic-total-order error. The Purpose, the Logic account of the declared order, the private-helper convention and the identity invariant now state the rule — identity is a function of the recorded group key, the record identity is used while it names one item, the item identity takes over exactly when it does not, and both are read from the comparison rather than from enumeration position. One row was added for the regroup; no existing row, citation or range was rewritten, and no verification stamp advanced (the source is uncommitted and closeout owns the stamp).
-- 2026-09-18T05:15+02:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): created this one-to-one card for the detection walk. It records the three enforced properties (the walk is structural and reads no source bytes; one place assembles a signal; a group keeps every contributing match), the five conditions and what each is *about*, the identity derived from the recorded group key so a scenario and its harmless control produce the **same** signal identity, the declared total order as `(condition vocabulary index, group key)`, the limitations derived from recorded facts rather than added by habit and why (the signal's own validator refuses both a limitation with no omission and an omission with no limitation), the counterpart probe read off the union's own coverage value rather than re-run, the granularity taken from the recorded locator kind and no finer, and the deliberately unretained manifest reference that resolves unresolved until the durable publication route exists. Verification metadata is the leaf's base commit `4264dcc9`: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

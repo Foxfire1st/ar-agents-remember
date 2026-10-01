@@ -1,15 +1,5 @@
 # mcp/tests/eve_adapter_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/eve_adapter_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -165,116 +155,34 @@ lockfile/tsconfig files are copied. Nothing is installed and nothing is copied i
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; the modeled ordering is the pinned eve protocol's, mirrored from the production transport. | — | — |
+No configured `Domain Documentation` source; the modeled ordering is the pinned eve protocol's, mirrored from the production transport.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The seam this double implements is the production transport protocol, which is why the adapter stays under test. | `EveRuntimeTransport`; `EveRuntimeProcess.send_message`; `EveRuntimeProcess.stream` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89; mcp/src/agents_remember/serving/eve_runtime_client.py:170-238; mcp/src/agents_remember/serving/eve_runtime_client.py:102-130 |
-| The cancel request this double records is the one the production client builds, including the target turn. | `cancel_turn_body`; `FakeEveSession.cancel_requests` | mcp/src/agents_remember/serving/eve_runtime_client.py:85-89; mcp/tests/eve_adapter_test_support.py:41-60 |
-| Frame decoding is delegated to the production parser, not re-implemented here. | `parse_event_frame` | mcp/src/agents_remember/serving/eve_protocol.py:192-222 |
-| The conformance suites that consume this double, one case class per named scenario. | `EveAdapterSubmissionTests`; `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests`; `EveAdapterIsolationTests` | mcp/tests/test_eve_adapter.py:371-1128 |
-| The live native fixture is the non-deterministic counterpart and deliberately does **not** use this double. | `TracingEveRuntime` | mcp/tests/live_eve_native_fixture.py:123-170 |
-| The capsule binding this double's launches now carry, built through the capsule seam's own fixture support rather than hand-written environment values. | `fixture_launch_binding`; `fixture_carrier_for`; `binding_env`; `repository_with_commit` | mcp/tests/eve_adapter_test_support.py:336-364; mcp/tests/eve_capsule_test_support.py:565-620; mcp/tests/eve_adapter_test_support.py:407-436 |
-| The launch path that verifies the declared carrier before a process exists, which is why a partial binding would be refused before any protocol behaviour is observed. | `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
-| The live native fixture is the only artifact that proves the *live runtime* half of the same seam; it drives a real eve process rather than this double. | `TracingEveRuntime`; `_scenario_capsule_binding` | mcp/tests/live_eve_native_fixture.py:123-170; mcp/tests/live_eve_native_fixture.py:1758-1813 |
-| None | "async def compact_session(self, session_id: str) -> Mapping[str, object]: ..."; "async def clear_session(self, session_id: str) -> Mapping[str, object]: ..." | mcp/src/agents_remember/serving/eve_runtime_client.py:124-126 |
-| The cases that pin the two members statically and behaviourally, so a member that exists and does nothing also fails. | `EveRuntimeTransportFakeContractTests` | mcp/tests/test_eve_adapter.py:1182-1232 |
-| The named environment guard, its call sites, and the install it names. The two suites were cited as **bare paths** until this pass, so the three anchors could not resolve; they now carry the real ranges. | `require_installed_eve_application`; `_started`; `_start_eve`; `_evidence_frames` | mcp/tests/eve_adapter_test_support.py:44-62; mcp/tests/test_eve_adapter.py:256-277; mcp/tests/test_eve_product_integration.py:682-691; mcp/tests/test_eve_product_integration.py:1547-1567; eve_runtime/README.md:25 |
-| The recording provider boundary this module gained: the raw request body kept verbatim, and the instrument's own drop that models a boundary losing the value. | `RecordedModelRequest`; `serve_recording_provider`; `drop_reasoning_effort`; `_sse_frame` | mcp/tests/eve_adapter_test_support.py:440-465; mcp/tests/eve_adapter_test_support.py:467-574; mcp/tests/eve_adapter_test_support.py:467-473; mcp/tests/eve_adapter_test_support.py:576-578 |
-| The application root the bytes under test come from, and the machine-local install it links to. | `staged_runtime_root`; `EVE_APPLICATION_ROOT` | mcp/tests/eve_adapter_test_support.py:580-599; mcp/tests/eve_adapter_test_support.py:37-37 |
-| The cases that consume the recording boundary and the staged root, one application root and one process per level. | `EveEffortConsumerTests` | mcp/tests/test_eve_effort_runtime.py:175-214 |
+- The seam this double implements is the production transport protocol, which is why the adapter stays under test. [1]
+- The cancel request this double records is the one the production client builds, including the target turn. [2]
+- Frame decoding is delegated to the production parser, not re-implemented here. [3]
+- The conformance suites that consume this double, one case class per named scenario. [4]
+- The live native fixture is the non-deterministic counterpart and deliberately does **not** use this double. [5]
+- The capsule binding this double's launches now carry, built through the capsule seam's own fixture support rather than hand-written environment values. [6]
+- The launch path that verifies the declared carrier before a process exists, which is why a partial binding would be refused before any protocol behaviour is observed. [7]
+- The live native fixture is the only artifact that proves the *live runtime* half of the same seam; it drives a real eve process rather than this double. [8]
+- None [9]
+- The cases that pin the two members statically and behaviourally, so a member that exists and does nothing also fails. [10]
+- The named environment guard, its call sites, and the install it names. The two suites were cited as **bare paths** until this pass, so the three anchors could not resolve; they now carry the real ranges. [11]
+- The recording provider boundary this module gained: the raw request body kept verbatim, and the instrument's own drop that models a boundary losing the value. [12]
+- The application root the bytes under test come from, and the machine-local install it links to. [13]
+- The cases that consume the recording boundary and the staged root, one application root and one process per level. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this support module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **the module gained a second, non-double boundary —
-  a real recording provider — and a staged application root.** Recorded in Logic: `RecordedModelRequest`
-  (440) and `serve_recording_provider` (467) exist because the value this leaf measures **is the raw
-  request body**, and the product's deterministic fixture model traces a normalized projection, which
-  must not be trusted for that. The two properties worth stating as contracts were added to Invariants:
-  a boundary that loses a value must lose it **in the instrument** (`drop_reasoning_effort` removes the
-  key from the request the provider receives, before recording and before answering — substituting the
-  absence in an assertion, `L17-5`, proves nothing), and the bytes measured must be the repository's own
-  (`staged_runtime_root`, 580, links `agent` to the authored tree rather than copying or reducing it).
-  Added two reference rows and one for the consuming module. **Checker result (post-sync,
-  verbatim).** The refusal this entry first recorded was resolved by the leaf's `worktree_sync`:
-  the pair is now `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the
-  contract-scoped `memory_quality_check` ran against this worktree. Headline: `ok:false`,
-  `checklistStatus:"action-required"`,
-  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
-  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
-  unonboarded). This card's own contribution: one `onboarding_drift_drifted` finding, and **one
-  `claim_reopen` error at `:192`** on the older "named environment guard" row, which cited
-  `mcp/tests/test_eve_adapter.py` and `mcp/tests/test_eve_product_integration.py` as **bare
-  paths with no ranges**, so the anchors `_started` / `_start_eve` / `_evidence_frames` could
-  not resolve. That row was repaired in this pass (real ranges added); the finding will clear
-  once the candidate is committed. Verification metadata moves to the synced base `d8ed8c21`;
-  the candidate is deliberately uncommitted, so the governed closeout stamps the real code
-  commit and no hash or fingerprint was invented here.
-
-- 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **the double now implements the whole protocol, and
-  the launch-dependent cases skip by name** (defect D19, repaired by this leaf). `compact_session` and
-  `clear_session` were added because `EveRuntimeTransport` gained them and this fake did not, which made
-  `FakeRuntimeFactory` unassignable at the seven rewired call sites and failed the whole-tree pyright
-  gate; the fix is on the double, because the protocol is the shipped seam. Each mirrors the real
-  route's documented difference — compaction *represents* the history, clear *removes* it while keeping
-  the session identity — and the pair is pinned statically (pyright) and behaviourally
-  (`EveRuntimeTransportFakeContractTests` in `test_eve_adapter.py`). `require_installed_eve_application`
-  gives every case that starts the real runtime a **named** skip when `eve_runtime/node_modules` is
-  absent, stating the missing path and the exact install command; coverage of the call sites was proved
-  per case in its own process (40 guarded / 59 clean / 0 unguarded), and serial and three consecutive
-  `-n=4` runs are now deterministic where the failure had moved between schedules. **Recorded, not
-  repaired: D20.** `stage_runtime_root` stages before it checks the install, so a refused call leaves a
-  half-staged destination the next call accepts — a production fail-open that is not this leaf's seam;
-  that non-determinism is what the guard removes from the *test* side only. Verification metadata moves
-  to this leaf's synced base `8997e184`; the candidate is deliberately uncommitted, so the governed
-  closeout stamps the real code commit and no hash or fingerprint was invented here.
-
-- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the double's launches must now carry a real,
-  verifiable capsule binding.** `fixture_launch_binding` was added because the launch path is no longer
-  a pass-through: `resolve_runtime_spec` verifies the declared carrier, its digest and the admitted
-  worktree before a process would exist, so a launch declaring half a binding is refused before any
-  protocol behaviour can be observed. The fixture therefore builds a **real** git worktree with a real
-  commit and a real carrier through the capsule seam's own support module, and returns the same four
-  values a real launch carries; `test_eve_adapter.py`'s `_launch` now spreads that result into the
-  launch environment and takes `cwd` from it, replacing the hand-written `AR_WORKSPACE_ROOT` /
-  `AR_BINDING_REF` pair that could not have passed the verification. It is `lru_cache(maxsize=1)`
-  because the work is real and the binding immutable. This is a genuine coupling worth recording: the
-  transport is a double, but the launch path is production. Verification metadata moves to the leaf's
-  synced base `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout stamps
-  the real code commit and no hash or fingerprint was invented here.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): the cancel control became a
-  **request record**. `FakeEveSession.cancel_requests` now stores the `(session_id, turn_id)` pair
-  rather than merely noting that a cancel occurred, which is what allows the interrupt cases to assert
-  the exact turn that reached the runtime; before this round a seeded "cancel never contacts the
-  runtime" and a seeded wrong-turn cancel both passed. The boundary "a recorded control must record the
-  request, not a boolean" was added, `_current_turn_id` is now named, and all three citation tables were
-  rewritten into the `Finding | Anchor | Source` shape. Verification metadata moves to the leaf's
-  current base `e9300687`, with the governed closeout stamping the real code commit.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: created this card for a support module added by the
-  native eve session-adapter change set. Records that it is a transport double (not an adapter
-  double), the two modeled behaviors that make the cursor assertions meaningful, the
-  durable-write-before-response ordering the reconcile cases depend on, and the fact that pytest does
-  not collect this filename. Verification metadata is pinned to the leaf's base commit `67b21aeb`
-  because the candidate is deliberately uncommitted — the governed closeout stamps the real code
-  commit, and no hash or fingerprint was invented here.
+No meaningful cross-repo references found.

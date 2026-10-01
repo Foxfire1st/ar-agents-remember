@@ -1,15 +1,5 @@
 # subjectReview.capture-provenance.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/subjectReview.capture-provenance.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -40,35 +30,25 @@ These fixtures are not current project knowledge, new authored judgments or moun
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; source and captured responses provide this local test evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+No configured domain source could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The case or captured property below records the input this card describes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The case or response retains its declared selected input. | "captured_source_tree" | dashboard/src/panels/review/subjectReview.capture-provenance.json:2-6 |
-| **The re-captured family entry: its own source tree, command, route, capture record, selection rule, signature and requests.** | "subjectReview.family.captured.json"; "l44_recapture_review_fixtures.py" | dashboard/src/panels/review/subjectReview.capture-provenance.json:5-26 |
-| **The re-captured invariant entry, with the same producer facts.** | "subjectReview.invariant.captured.json" | dashboard/src/panels/review/subjectReview.capture-provenance.json:27-48 |
-| The manifest scope distinguishing re-captured route bodies from unchanged owner-produced responses. | "real review-route bodies re-captured" | dashboard/src/panels/review/subjectReview.capture-provenance.json:71-71 |
+- The case or response retains its declared selected input. [1]
+- **The re-captured family entry: its own source tree, command, route, capture record, selection rule, signature and requests.** [2]
+- **The re-captured invariant entry, with the same producer facts.** [3]
+- The manifest scope distinguishing re-captured route bodies from unchanged owner-produced responses. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Capture provenance names disposable repository evidence; it grants no production knowledge authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional production cross-repository contract is asserted. | — | — |
-
-## Update History
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the `family` and `invariant` entries now describe real route re-captures (own source tree, command, route, capture record, selection rule, signature, attempts, scenario, requests) while the other entries remain owner-produced responses; recorded the two entry kinds, the task-local producer's expiry and the new scope sentence, with rows. No verification stamp was advanced.
-
-- 2026-09-26T20:40:46Z — Created the captured subject-selection regression/provenance card.
+No additional production cross-repository contract is asserted.

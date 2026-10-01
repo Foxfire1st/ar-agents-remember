@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_tree_knowledge.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_tree_knowledge.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -112,51 +102,34 @@ lane is the separate review destination).
   ruling 22:22:37 Q2) and the mixed key casing (review F9: `snake_keys` at the route boundary, and the adapter's types
   in `dashboard/src/data/reviewTrees.ts`).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement packet
 `MIK-R25@v1` (rules 2 and 3) with its rulings in `25_reviewer-on-git-trees.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The route's port: refused, not converted, one focused answer (a file, the lane, the cards) or the tree view. | `read_review_trees` | mcp/src/agents_remember/application/review_tree_knowledge.py:102-128 |
-| A numbered leaf-wide read pinned to that comparison, live only when it is the current number; a focused read always reopens. | "def _comparison("; "if not query.focused:"; "def _resolved(" | mcp/src/agents_remember/application/review_tree_knowledge.py:131-152; mcp/src/agents_remember/application/review_tree_knowledge.py:155-165 |
-| The leaf-wide view with its re-keyed currentness; one focused answer (the cards' entries, the lane, or one file's classification or refusal). | "def _view("; "def _focused("; "def _file_view(" | mcp/src/agents_remember/application/review_tree_knowledge.py:168-230 |
-| One snake_case wire convention, identifier-shaped keys only. | `snake_keys`; `_snake`; `_IDENTIFIER_KEY` | mcp/src/agents_remember/application/review_tree_knowledge.py:98-99; mcp/src/agents_remember/application/review_tree_knowledge.py:233-246 |
-| The knowledge diff and its two groupings. | `knowledge_tree_diff`; `_Groups` | mcp/src/agents_remember/application/review_tree_knowledge.py:210-227; mcp/src/agents_remember/application/review_tree_knowledge.py:252-269; mcp/src/agents_remember/application/review_tree_knowledge.py:272-325 |
-| Every changed indexed file with its patch, from `--name-status -z`. | `_changed_files`; `_name_status` | mcp/src/agents_remember/application/review_tree_knowledge.py:286-301; mcp/src/agents_remember/application/review_tree_knowledge.py:328-343; mcp/src/agents_remember/application/review_tree_knowledge.py:346-380 |
-| A sidecar's changed realization and proof entries. | `_changed_entries` | mcp/src/agents_remember/application/review_tree_knowledge.py:426-443 |
-| MIK-R03 currentness per side at that side's own code tree. | `side_currentness` | mcp/src/agents_remember/application/review_tree_knowledge.py:449-471 |
-| The worklist view, its binding to the four trees, and the history rows about each item's subject and its `facts.row` subject. | "def worklist_view("; "def _bound("; "def _history_rows("; `_row_subjects` | mcp/src/agents_remember/application/review_tree_knowledge.py:477-502; mcp/src/agents_remember/application/review_tree_knowledge.py:505-517; mcp/src/agents_remember/application/review_tree_knowledge.py:520-558 |
-| The record IDs of one kind the currentness reads. | `record_ids` | mcp/src/agents_remember/memory/knowledge_index/query.py:338-342 |
-| The lane and one file served on the live tree leaf; an unchanged path refused. | `test_a_live_tree_leaf_serves_the_lane_and_its_entry_count` | mcp/tests/test_review_unexplained_lane.py:659-679 |
-| The tree view on the fixture: diff groups, currentness per side, worklist. | `test_the_tree_view_shows_the_knowledge_diff_currentness_per_side_and_the_worklist` | mcp/tests/test_review_git_trees.py:462-505 |
-| No review path opens a database other than the derived index. | `test_no_review_path_opens_a_database_other_than_the_derived_index` | mcp/tests/test_review_git_trees.py:656-681 |
-| The pinned numbered read keeps a live leaf's computed worklist; the cards read and the key-length bound at the route. | `test_the_tree_view_route_serves_the_port_and_refuses_when_unwired` | mcp/tests/test_review_git_trees.py:730-776 |
-| Rows found by the subject an item's `facts.row` names. | `test_history_rows_are_found_by_the_row_subject_an_item_names` | mcp/tests/test_review_git_trees.py:886-897 |
+- The route's port: refused, not converted, one focused answer (a file, the lane, the cards) or the tree view. [1]
+- A numbered leaf-wide read pinned to that comparison, live only when it is the current number; a focused read always reopens. [2]
+- The leaf-wide view with its re-keyed currentness; one focused answer (the cards' entries, the lane, or one file's classification or refusal). [3]
+- One snake_case wire convention, identifier-shaped keys only. [4]
+- The knowledge diff and its two groupings. [5]
+- Every changed indexed file with its patch, from `--name-status -z`. [6]
+- A sidecar's changed realization and proof entries. [7]
+- MIK-R03 currentness per side at that side's own code tree. [8]
+- The worklist view, its binding to the four trees, and the history rows about each item's subject and its `facts.row` subject. [9]
+- The record IDs of one kind the currentness reads. [10]
+- The lane and one file served on the live tree leaf; an unchanged path refused. [11]
+- The tree view on the fixture: diff groups, currentness per side, worklist. [12]
+- No review path opens a database other than the derived index. [13]
+- The pinned numbered read keeps a live leaf's computed worklist; the cards read and the key-length bound at the route. [14]
+- Rows found by the subject an item's `facts.row` names. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32.** Purpose records the lane and file reads (`lane=files`, `file=<path>`, `_file_view`'s typed refusal) and that MIK-R25's worklist view stays beside the lane; Logic records `ReviewTreesQuery.focused` (every focused read reopens) and the dispatch through `_focused`, which replaces L31's `_entries_view`. **Reopened claims reworded and re-anchored:** the `_view`/`_entries_view` row (now "def _view("; "def _focused("; "def _file_view(", `168-230`) and the `_comparison` row (now naming a focused read, re-measured to `131-152; 155-165`); this pass's generated bullet for the `_comparison` row was removed. One row added (the live-leaf lane case). Other rows re-pointed by the installed fixer (its bullets kept) or by the exact base-to-staged shift. No verification stamp was advanced.
-- 2026-09-30T12:07:38+00:00: Generated citation repair: `_changed_entries` repointed to mcp/src/agents_remember/application/review_tree_knowledge.py:426-443. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:07:38+00:00: Generated citation repair: `side_currentness` repointed to mcp/src/agents_remember/application/review_tree_knowledge.py:449-471. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:07:38+00:00: Generated citation repair: `record_ids` repointed to mcp/src/agents_remember/memory/knowledge_index/query.py:338-342. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Purpose and Logic record the cards read (`invariants=`, ruling 05:36:19 Q2; `_entries_view`), the comparison pinning (review F11 at 06:10:21, R2-1's `| None` annotation at 06:47:03, R2-6 accepted), the one snake_case wire casing (`snake_keys`, MIK-L25 review F9 carried to L31) and the `facts.row` history lookup (PS-1, accepted at 05:36:19); the L31 Todo is marked resolved and a candidate invariant (card planning marks from the same comparison only) is recorded. **Reopened claims reworded and re-anchored:** the `_comparison`, `_view` and worklist rows now name `_resolved`, `_entries_view` and `_row_subjects` and are anchored on line-exact quotes; this pass's three generated bullets for them were removed. Three rows added (`snake_keys`, the route case, the row-subject case).
-- 2026-09-30T07:53:24+00:00: Generated citation repair: `_changed_files`; `_name_status` repointed to mcp/src/agents_remember/application/review_tree_knowledge.py:286-301; mcp/src/agents_remember/application/review_tree_knowledge.py:304-338. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T07:53:24+00:00: Generated citation repair: `_changed_entries` repointed to mcp/src/agents_remember/application/review_tree_knowledge.py:384-401. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T07:53:24+00:00: Generated citation repair: `side_currentness` repointed to mcp/src/agents_remember/application/review_tree_knowledge.py:407-429. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T03:46:54+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): created this card for the new file MIK-R25 adds, recording rulings 22:22:37 (Q1, Q2 and the complexity split) and 23:15:34 (F4, F9 carried to L31). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,133 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The library store open flow (`beginOpen`/`reconcileOpen`, `openedForFocus`, `dispatching`, `pollsExhausted`).\n\nAnchor: `OpenTracker`, `beginOpen`, `reconcileOpen`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:246a0901e59032916fa7f66cbff1dda3815cca260d1df407bfae6fcec633f041",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenTracker"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:fce7869eb017f38bcf6032694bcccc3c0cf5e4f894a25e1cc5070fc61e6945f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "beginOpen"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:b96bf8f988072c34a2c5717d5024d54f53958677a77837e5c36d906c1fbe10ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcileOpen"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:f7941b4ea3e2b7eadda7c0d8ffd6a9fb0d46aac9dbf3d19a5186e6f83c0e4e39",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:d1877f3ce91c666a651d032a206a0221bc2dcb1c8711484aa303f06b39dec740",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:264369591e963524de351d4eb9c7ad01460ed190c760b27703fa7d9ca226b397",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The row wire type carrying `identityDigest`/`capabilities.resume`.\n\nAnchor: `ConversationLibraryRow`, `HistoryCapabilities`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:e5ebf7bfa104d28ae1a9141a50c41fc0ed3dc1112ce9b802bf1055954b94c32f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryRow"
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:d0b51bf6c6c201d3e7e575fa75b0dba88bdae065efeff4b7bd00843bc3259e80",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryCapabilities"
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The surface declares `onOpened`, mounts this action for the selected row, and forwards the callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "179fe52c67ccf3d450dc0a657ba772b077be613b",
+            "content": "sha256:0d0a53bd2e2f3c45f10bca5cf3e27c08dba871f559bc0bad91ea5752314c1016",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibrarySurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

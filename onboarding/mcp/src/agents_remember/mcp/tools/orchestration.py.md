@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/tools/orchestration.py
 
-| Field                  | Value                                                     |
-| ---------------------- | --------------------------------------------------------- |
-| repository             | agents-remember                                           |
-| path                   | `mcp/src/agents_remember/mcp/tools/orchestration.py`      |
-| doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-07-31T15:31+02:00                                    |
-| lastVerifiedCommitHash |                                                           `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                                           2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                             |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -59,22 +49,10 @@ validation.
 - The manager push uses the same durable inbox substrate as other agent-to-agent
   messages, so missed hosted delivery can still be polled.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Nudge record and rate-limit policy live in controlplane. | `OrchestrationNudgeStore` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:41-125 |
-| Agent-to-agent message enqueue and hosted-session push live in the operator inbox builder. | `operator_inbox_post_payload` | mcp/src/agents_remember/mcp/tools/operator_inbox.py:19-36 |
-| Response validation uses the public orchestration response model. | `OrchestrationNudgeManagerResponse` | mcp/src/agents_remember/models/orchestration.py:12-22 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims; scoped recheck clean (0 findings).
-
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the seven flat keyword arguments became `target:
-  NudgeTarget` + `subject: NudgeSubject`, and the inbox post now travels as `InboxAddress` /
-  `InboxMessage` / `InboxPoster`. Rate limiting, event logging and the response shape are unchanged.
-  Verification metadata pinned until closeout stamps the L2 code commit.
-- 2026-07-04T12:31+02:00 - L3: created the orchestration nudge tool card. Verification metadata pinned until closeout stamps the L3 commit.
+- Nudge record and rate-limit policy live in controlplane. [1]
+- Agent-to-agent message enqueue and hosted-session push live in the operator inbox builder. [2]
+- Response validation uses the public orchestration response model. [3]

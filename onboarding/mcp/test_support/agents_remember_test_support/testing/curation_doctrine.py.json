@@ -1,0 +1,106 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c09d75cdb452d0855092938278691db7146f646d",
+            "content": "sha256:aa626ea645cea8d719f586c941fda749af19dfb7331364339fa6ffac0221448f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The required-rule table names the exact form each canonical surface must state, keyed by shipped path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c09d75cdb452d0855092938278691db7146f646d",
+            "content": "sha256:cfdfa61570894c7affb510db3b1ccef180082fba891eae8b68258a893e3176b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_COMPLETENESS_STATEMENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The nine generated copies are the sweep targets, and the canonical tree is sweep target zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c09d75cdb452d0855092938278691db7146f646d",
+            "content": "sha256:34a0fc2576100ebe900f1dd81204517ee42baa8b703e9c1de07da1cc00793042",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATED_SKILL_COPIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c09d75cdb452d0855092938278691db7146f646d",
+            "content": "sha256:cfdfa61570894c7affb510db3b1ccef180082fba891eae8b68258a893e3176b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_COMPLETENESS_STATEMENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The consuming cases and the seeded re-insertion that proves the guard can fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_seeded_old_sentence_is_observed_to_fail_the_guard"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The nine copies are produced from the canonical tree by the generator whose `--check` proves currency.\n\nAnchor: \"--check\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:3834212530d102e4d17271f2c6ababa60643994708b979be5ce666f02155af8f",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

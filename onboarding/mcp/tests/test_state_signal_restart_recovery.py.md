@@ -1,15 +1,5 @@
 # mcp/tests/test_state_signal_restart_recovery.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_state_signal_restart_recovery.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T13:15+02:00 |
-| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6`|
-| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -90,39 +80,31 @@ row/marker/attempt state rather than about a live adapter. Cases drive the retai
 No additional implementation scope is opened by this memory reconciliation. The optional real-sweep
 drain-fence hardening above is not authorized scope for this leaf.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own fixtures
 and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A failed marker write leaves one unmarked pending row, zero submissions, and a restart that renews the same row id before delivering once. | `test_marker_failure_keeps_one_unmarked_row_and_restart_retries_it` | mcp/tests/test_state_signal_restart_recovery.py:353-388 |
-| Both competing finders' findings are fenced at the shared action, and recovery in the same sweep stamps before delivering. | `test_immediate_boundary_marker_failure_is_fenced_until_the_marker_retries` | mcp/tests/test_state_signal_restart_recovery.py:390-449 |
-| A stop after the marker leaves one marked pending row that the ordinary pending-row path lands once. | `test_stop_after_marker_before_delivery_resumes_on_the_pending_row_path` | mcp/tests/test_state_signal_restart_recovery.py:451-486 |
-| A same-seat structural rebind renews and re-addresses the original row id rather than minting a sibling. | `test_rebind_before_marker_retry_renews_and_readdresses_the_same_row` | mcp/tests/test_state_signal_restart_recovery.py:488-527 |
-| Two distinct seats reporting one evidence identity keep two rows that never renew each other. | `test_two_seats_reporting_the_same_evidence_keep_distinct_rows` | mcp/tests/test_state_signal_restart_recovery.py:529-561 |
-| A later evidence identity re-arms the seat as a successor row while the older row still delivers. | `test_new_evidence_identity_rearms_and_the_older_row_still_delivers` | mcp/tests/test_state_signal_restart_recovery.py:563-608 |
-| The non-state preservation control: structural coalescing across occupants, a second row on a different role. | `test_other_kinds_keep_their_structural_coalescing_key` | mcp/tests/test_state_signal_restart_recovery.py:610-652 |
-| Fresh store objects over the same durable files model a restarted notifier process. | `_World`; `_World.restarted` | mcp/tests/test_state_signal_restart_recovery.py:267-305 |
-| The injected durable-store fault fails only the marker leg, leaving the row write healthy. | `_failed_marker_write` | mcp/tests/test_state_signal_restart_recovery.py:332-337 |
-| The accepted-receipt patch keeps delivery assertions on the shared protocol seam. | `_submit_patch` | mcp/tests/test_state_signal_restart_recovery.py:345-351 |
-| The temporary world writes a real task topology before the sweep resolves structural owners. | `_write_task_topology` | mcp/tests/test_state_signal_restart_recovery.py:198-244 |
+- A failed marker write leaves one unmarked pending row, zero submissions, and a restart that renews the same row id before delivering once. [1]
+- Both competing finders' findings are fenced at the shared action, and recovery in the same sweep stamps before delivering. [2]
+- A stop after the marker leaves one marked pending row that the ordinary pending-row path lands once. [3]
+- A same-seat structural rebind renews and re-addresses the original row id rather than minting a sibling. [4]
+- Two distinct seats reporting one evidence identity keep two rows that never renew each other. [5]
+- A later evidence identity re-arms the seat as a successor row while the older row still delivers. [6]
+- The non-state preservation control: structural coalescing across occupants, a second row on a different role. [7]
+- Fresh store objects over the same durable files model a restarted notifier process. [8]
+- The injected durable-store fault fails only the marker leg, leaving the row write healthy. [9]
+- The accepted-receipt patch keeps delivery assertions on the shared protocol seam. [10]
+- The temporary world writes a real task topology before the sweep resolves structural owners. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: created this sidecar for the seven-case crash/restart recovery module (marker failure, immediate-boundary fence over both finders, stop-after-marker, same-seat rebind, two-seat collision, later-evidence re-arm, non-state preservation control). Recorded the durable row/marker/order contract it forces, the `_World.restarted` reconstruction convention, and the review verdict's coverage limit: the fence case drives the finders directly because `state_signal_held_on_boundary` excludes a live-target state-signal row from the generic finder by construction. Lane registration lives on the `test-evidence-lanes.toml` card; this module holds no governed evidence registration. Verification metadata pinned to the leaf base until closeout stamps the leaf commit.
+No external evidence is needed for these assertions.

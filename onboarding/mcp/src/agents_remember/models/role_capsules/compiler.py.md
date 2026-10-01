@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/role_capsules/compiler.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/models/role_capsules/compiler.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-21T22:40:00+02:00 |
-| lastVerifiedCommitHash | `a8d2431926d6b130012ca81ed2e85b14721c0615` |
-| lastVerifiedCommitDate | 2026-09-21T22:51:46+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [models overview](../overview.md)
@@ -107,62 +97,30 @@ format and is itself part of the digest document.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources. | n/a | n/a |
+No relevant documentation found after checking live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value. | `compile_admitted_capsule`; `CapsuleCompilationOutcome` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/compilation.py:46-88 |
-| The diagnostic shapes this module fills and the ordering rule that keeps them out of the digest. | `CapsuleManifest`; `CapsuleSourceRecord`; `CapsuleRejection` | mcp/src/agents_remember/models/role_capsules/diagnostics.py:105-217; mcp/src/agents_remember/models/role_capsules/diagnostics.py:38-58; mcp/src/agents_remember/models/role_capsules/diagnostics.py:73-96 |
-| **The carried skill channel** — one content-addressed reference per declared skill, built with no policy call. | `skill_references` | mcp/src/agents_remember/models/role_capsules/compiler.py:153-190 |
-| The determinism cases: identical input to identical content and digest, order as identity, and a real binding change moving the digest. | `test_identical_input_compiles_to_identical_ordered_content_and_digest`; `test_reordering_the_composed_blocks_changes_the_semantic_digest`; `test_a_real_binding_change_does_move_the_semantic_digest` | mcp/tests/test_role_capsule_compiler.py:381-390; mcp/tests/test_role_capsule_compiler.py:436-458; mcp/tests/test_role_capsule_compiler.py:461-467 |
-| Ephemeral diagnostics do not move identity, while an applicable block change does; an unrelated role never reaches another role's capsule. | `test_a_declared_but_unselected_specialization_changes_diagnostics_not_identity`; `test_changing_an_applicable_operation_block_changes_that_capsule`; `test_changing_an_unrelated_role_leaves_the_worker_capsule_untouched` | mcp/tests/test_role_capsule_compiler.py:414-433; mcp/tests/test_role_capsule_compiler.py:486-495; mcp/tests/test_role_capsule_compiler.py:475-483 |
-| Composition requires neither model nor network, and no network client is imported. | `test_composition_succeeds_with_network_and_model_access_denied`; `test_the_compiler_modules_import_no_network_client` | mcp/tests/test_role_capsule_compiler.py:910-929; mcp/tests/test_role_capsule_compiler.py:932-961 |
-| A refusal still produces an explanation manifest carrying its remedy, and an unverifiable projection is refused. | `test_a_refusal_still_produces_an_explanation_manifest`; `test_a_projection_whose_bytes_do_not_match_its_digest_is_refused` | mcp/tests/test_role_capsule_compiler.py:893-907; mcp/tests/test_role_capsule_compiler.py:864-876 |
-| The typed refusal this module raises for every defect class. | `CapsuleCompilationError`; `CapsuleManifestError`; `CapsuleSourceError` | mcp/src/agents_remember/errors.py:490-531; mcp/src/agents_remember/errors.py:534-535; mcp/src/agents_remember/errors.py:538-539 |
+- The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value. [1]
+- The diagnostic shapes this module fills and the ordering rule that keeps them out of the digest. [2]
+- **The carried skill channel** — one content-addressed reference per declared skill, built with no policy call. [3]
+- The determinism cases: identical input to identical content and digest, order as identity, and a real binding change moving the digest. [4]
+- Ephemeral diagnostics do not move identity, while an applicable block change does; an unrelated role never reaches another role's capsule. [5]
+- Composition requires neither model nor network, and no network client is imported. [6]
+- A refusal still produces an explanation manifest carrying its remedy, and an unverifiable projection is refused. [7]
+- The typed refusal this module raises for every defect class. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract is consumed. The reference implementation studied during design
 was eve's dynamic resolver; that is a design input recorded in the leaf's requirement packet,
 not a runtime boundary of this module, and no eve code is imported.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the two enforced citation rows were re-read and re-derived — the defect is inherited and pre-existing.** Both rows named `CapsuleManifestError` and `CapsuleSourceError` while citing `mcp/src/agents_remember/errors.py:464-507`, `:508-511` and `:512-513`; those lines hold unrelated `CodexAppServerError` subclasses, and the two capsule refusals moved in an **earlier landing**, not by this leaf. Read against the candidate, `CapsuleCompilationError` now occupies `490-531`, `CapsuleManifestError` `534-535` and `CapsuleSourceError` `538-539`; the rows were repointed to those extents and each anchor was verified to occur literally inside its range. No claim wording was changed — the claims were true and only the pointers were wrong. This is a citation-only repair; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `compile_role_capsule` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:89-145. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `skill_references` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:153-190. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `semantic_digest` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:224-269. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `semantic_digest` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:224-269. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `_selected_specializations` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:293-294. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `verified_task_context` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:193-216. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `compiled_manifest` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:387-413. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `refused_manifest` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:416-429. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `manifest_for_error` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:432-444. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `UNREAD_REVISION` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:86-86. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `MANIFEST_SCHEMA` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:82-82. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `UNREAD_REVISION` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:87-87. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `MANIFEST_SCHEMA` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:83-83. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
-
-- 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate, which added a real skill-reference producer. The pipeline is now **seven** steps: `skill_references` (this module, previously absent) builds one content-addressed reference per declared skill, and `semantic_digest` gained a `skills` parameter, so the digest document now carries a `skill <origin> <identity> <revision>` line per reference. Added the explicit statement that the two capability channels enter the digest differently and neither is a grant — tool ids are policy-narrowed, skill references are carried and never policy-checked — plus an invariant forbidding the "narrowed/permitted/granted" description of a skill reference, and a new reference row for the carried channel. Every line range in this card was refreshed (the module grew 431 → 506 lines), and the refusal row now names all three current subclasses. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit.
-
-- 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: created this card for the deterministic
-  capsule compiler added by this leaf (`CAPS-R02@v1`). Records the six-step pipeline and its
-  order, the digest's inclusion/exclusion rule with the admitted-but-unselected specialization
-  asymmetry, the verified task-context channel, the two refusal-side manifest builders, and the
-  no-I/O / no-partial-capsule invariants. Verification metadata is left at the leaf base commit
-  because the source is uncommitted — the governed closeout stamps the real code commit.
+No meaningful cross-repo references found.

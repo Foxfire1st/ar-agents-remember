@@ -1,0 +1,226 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/series_closeout.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Final closeout and series integration re-prove canonical completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:9b508bd2cd220a82612812e77fedbc7a331615324897be8cde91d78b935cc659",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_closeout_publication_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checkpoint capture and publication revalidate an explicit two-output candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:3ac41c041d874284f11a9734da21dad08b464c9bee055d5a290d1c0e86a48ea7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesCheckpointRefs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:6442f060dcdab6811d634a250c0b737bd57fd830bbecd6d811266c5f74ac2197",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_series_checkpoint_under_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Leaf membership, output identity, and ordering remain exact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:f698dc5d1d5cb4c271b2f60cdfadf11a10e195e0d347d12289e00d37297823ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_atomic_landing_chain"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:bf922d3bdb63750a9371042c04da9e816b37bc7f9e28b0cc4c1c9cb0734f734e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ordered_atomic_landing_chain"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:e39a41a7b20da63f3bb85226bd14e56016249b5e1812abe3a8c59fc10040c835",
+            "locator": {
+              "kind": "symbol",
+              "name": "_atomic_leaf_code_matches"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:5781bc1005ec1f1bacf2001bc1e12ac40f7aeb15a4b030a9c76e80889ce96a27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_atomic_leaf_memory_matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Recorded origins and admitted substantive history preserve reconciled series proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:010b120cd5ce1edfe1b338a84e7800b2ef905bcedae8b90b78d5eb7a33ba9976",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_chain_origin"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:dca3b8327d8d1f1bf5282e15e021051b98d566991892b6379b9879405d884e92",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admitted_step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:52d8114fc4482beaada1efc09e1e7452f2a44b5c3e5d3ba4c597f49f01af3411",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 309
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:82d8aaab5dda99d4b2ec2ed677cc103e616de53c2ad4c7be62e1b76a95f2daae",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 472
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Series cleanliness and actual memory-ref capture exclude cache authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:9530ca6b259e8fca5799d7b33d338c27b4274e3166ed3e612ef3295b2375a579",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_series_workbench_commit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:6442f060dcdab6811d634a250c0b737bd57fd830bbecd6d811266c5f74ac2197",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_series_checkpoint_under_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Recorded origins and admitted substantive history preserve reconciled series proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:010b120cd5ce1edfe1b338a84e7800b2ef905bcedae8b90b78d5eb7a33ba9976",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_chain_origin"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:dca3b8327d8d1f1bf5282e15e021051b98d566991892b6379b9879405d884e92",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admitted_step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:85d8991c93b892593b656fa2d790eecf9f2e1b265ec5a62b68acb8c835bdc48f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_positions_inside_the_step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:63f402c86a67c7aaf38e0d1833fb8c062fa2bf273926937c64c01d6369e99166",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reached_by_an_official_position"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

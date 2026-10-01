@@ -1,15 +1,5 @@
 # review_recorded_knowledge.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_recorded_knowledge.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`|
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -36,32 +26,24 @@ No current worktree, branch tip or sibling generation supplies a missing operand
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. The implementation-specific account is grounded in the repository source below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+No configured domain source could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The named constructs own this behavior; reads and validation use their existing callers and models.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `RecordedKnowledge` owns the behavior described above. | `RecordedKnowledge` | mcp/src/agents_remember/application/review_recorded_knowledge.py:28-49 |
-| `read_recorded_knowledge` owns the behavior described above. | `read_recorded_knowledge` | mcp/src/agents_remember/application/review_recorded_knowledge.py:52-82 |
-| `read_memory_knowledge` owns the behavior described above. | `read_memory_knowledge` | mcp/src/agents_remember/application/review_recorded_knowledge.py:85-131 |
+- `RecordedKnowledge` owns the behavior described above. [1]
+- `read_recorded_knowledge` owns the behavior described above. [2]
+- `read_memory_knowledge` owns the behavior described above. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No independent cross-repository interface is introduced by this source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence is required. | — | — |
-
-## Update History
-
-- 2026-09-26T19:49:05Z — Created the exact historical knowledge-operand reader card.
+No additional cross-repository evidence is required.

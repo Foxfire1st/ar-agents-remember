@@ -1,0 +1,262 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/withdrawals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The L2E atomic `cockpit_only` withdraw and pre-tombstone recovery capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bbfd2ca90b117c4a84a2a7541e741783c6af5a6",
+            "content": "sha256:ea753be2a4ba6b67a743f49441db9311314d8604612896e3727a1a48c18faeff",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessSubmissionAuthority"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bbfd2ca90b117c4a84a2a7541e741783c6af5a6",
+            "content": "sha256:38e39eb17048d4d529484c62dddd2ffd691e91f5a886c7816ecde5cf2e377c55",
+            "locator": {
+              "end": 1023,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recovery content/digest/asset-ref assembly extracted to the sibling module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:97d9b0fe3a2f8f5ed7e4428468b2e975a3f18316b94df1b347425e2a66101faf",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovery_text"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:02d7d76cf1ad681ca4a58cd05c983e6b74ba616ce743e9f1c69592729e4ae481",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovery_digest"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:7c05c994f74092056eb7630fabb4c6cdd30c8e95350830969c35d9710322f4af",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovery_payload"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:b2b79b0899faf89647c8fa4c442fdebbb703bf1b5c4bc8e9baca05a22089fe8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_attachment_refs"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:471319c1322d4be09f1d6327f575ee9abaccd1abd3c8da103a4d6ebfb681bd9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachment_recovery_ref"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Attachment recoverable-marking and byte deletion under the same lease.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:46405548d8a07ff79ce17bcb77989ca97c89e35738425dbdd0c438c2103abd15",
+            "locator": {
+              "kind": "symbol",
+              "name": "mark_recoverable"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:d2f5bd00579415c8f4e6251200cfa043c7a9707346b2627f93ed75e3d111a132",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_recoverable"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:830f0e22c6955db0aa9fcbdb04f0f0f9855065caa07ed18cbb8fa8f01f9b0a4f",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:033d7bfe596fbca7bcbdf7da6034968a9a936f5e3f11451b50ba6ae0e62637f3",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 484
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The withdrawal/operation/recovery ref brands re-bound on every wire.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bcd0ced07560843eaf4cf8dff8926f02721d2d2",
+            "content": "sha256:534664b15aa612ca4bfc8c82da0ddc9e7d9ed210c94cd68cb07e6882d151d5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefBinding"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bcd0ced07560843eaf4cf8dff8926f02721d2d2",
+            "content": "sha256:1d43d73718edfee99be1e8653d91f2426f6046842cb3b17afdb8f35335b741f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "mint_ref"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bcd0ced07560843eaf4cf8dff8926f02721d2d2",
+            "content": "sha256:22bd77b264cd50f80273476f2904788841bfea74f8930e739f97c661e9ef7b26",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_ref"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bcd0ced07560843eaf4cf8dff8926f02721d2d2",
+            "content": "sha256:44af68dce49ebbb2693bf1336774445179178cc0b218f52897ffa3c014069205",
+            "locator": {
+              "kind": "symbol",
+              "name": "ref_identity"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bcd0ced07560843eaf4cf8dff8926f02721d2d2",
+            "content": "sha256:196bb3fcf6727548a539f3405e2714b36f3678d142a956f91b3fe7fe8f415b24",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bcd0ced07560843eaf4cf8dff8926f02721d2d2",
+            "content": "sha256:f79cad4c33000d6a259caa89d6ee39b28e4b4656b25d5396372addd794895e86",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bcd0ced07560843eaf4cf8dff8926f02721d2d2",
+            "content": "sha256:f1da79bccea3844e2db5eda31ac1081c910136a0bd071b489dfe3fa0e0b2493b",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bcd0ced07560843eaf4cf8dff8926f02721d2d2",
+            "content": "sha256:f5b47c1e9ae27c31244447555c0c276c47e0ce3a44b1192eb04f88bc306d1ea9",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

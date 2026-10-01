@@ -1,0 +1,453 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/evidence_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The revision payload version and the envelope draft the pair of rows is written from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:28df55955efbd3065fbca30619ebdc1c2e7da6fa107804ab95bdd540b467e0c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORD_REVISION_PAYLOAD_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:0d873c978e9172c270d9a339ee8677e0ad3d125f14a5dc2105478a34acd36892",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnvelopeDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The claim-identity listing, decoding nothing, and the whole-listing form unchanged beside it: both run the same identity statement, so the two cannot disagree about which identities exist.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:73a905d65c96b1abbad77859235cafa9d44a0eef9facf64ee011f8650c946cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_ids"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:cb12bd0c51f70cbd9c572ff8024a14af9f55269045fc90b91a1173b77d6c3070",
+            "locator": {
+              "kind": "symbol",
+              "name": "all_claims"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:edbbc3cbe3b49a3c5d9fefceb643b9ea14cea4fb001f5180bd8c24f847c2427e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLAIM_IDS_OF_REPOSITORY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The single-record reader each listed identity is then read through, which is what makes a per-record guard possible without a second reader.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:b35cd191357c1904f03f59ec2a5669432cd62815d11ffc4286ffa27e898cc348",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:3f369da158ccddf9816501e87ddd4604f657bacefa0b8ff09726ac1235b24c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "claimed_coverage_of_claim"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The composing reader this listing exists for: one identity read at a time, a damaged claim named while its siblings are supplied.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:9d3414d3cbfb184182667f2ee91d0f737cf04c780c897fe98c2cdd721543fcdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_records"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:73a905d65c96b1abbad77859235cafa9d44a0eef9facf64ee011f8650c946cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The registered surface gained exactly one name (`claim_ids`), and the case that measures the isolation it makes reachable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:c9cf3dbdb85b9d0febdbc27b31e95e921acb37b560c98b49e5e8ee5934492b20",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
+            "content": "sha256:9d94d1f1181c23e2f3af3405dd683e998a88f791ae7a6767f8db3da6d4008e15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
+            "content": "sha256:592634c89f04d5af4dcb558eec535c6e312f4bd53ed61dc9181f3482aa48d0a2",
+            "locator": {
+              "end": 847,
+              "kind": "line_range",
+              "start": 719
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The case that asserts there is no blob column and no second content store.\n\nAnchor: \"def test_there_is_no_blob_column_and_no_second_content_store(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21a59dfc5ed2eba2d7b36f782cdb4244a3594cd",
+            "content": "sha256:0f60b821fa51096773c94ef760a68db1859691ea52e5b26203d910db9d0278d4",
+            "locator": {
+              "end": 905,
+              "kind": "line_range",
+              "start": 871
+            },
+            "path": "mcp/tests/test_knowledge_evidence_observations.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The envelope row and its digest — the ledger pair every record kind shares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:ce5fe395b52a64021b10a848102bdeb2dd43722931c508ffc6456df9308d2bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "envelope_record_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:07ba3fc3d887ce1d187dd30d4a30278779fe4f63fdc873e01352cf650510c18c",
+            "locator": {
+              "kind": "symbol",
+              "name": "envelope_record_row_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The revision row, its recomputed seal, and the decode that re-derives it rather than trusting the row's text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:3cd8efd3dc44904cdecb77c6f2df7a0cd24eb3c26d21c680b01458347d9a10c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:8404fc400518a6c5f07af56b85deee59185c406c8f7a71ce1f2e76a0ceb2d519",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:92d3fee6f7a2570d56064c54cef68fc11fd254c3e7e560b91def9284ca45c7b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_record_revision_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The claim's ledger row and its observable-row digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:30312c420d40494abc966ea60b7163f551bf94464dbf144e345055dd17e7f87c",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:9919b906a090c69d2c0dce0cf2d37e755abdc8ab19b49bd639bf5611a054717e",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_claim_row_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The subject edge's row, its table and revision column, and its observable-row digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:24f52d7dc7b5cacae6289ac9fc8df7335a499e55e213b03a83856d4bc08fd540",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:c17cd82e0b308a387f6b6d82c3bc8df57be4d5aaf0f256749fbaf257e217ed88",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_table"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:340be4ac86a7e6a0542e808dadf42d59d1459b4933648200cf5e7cb29ceafa6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_revision_column"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:978581b4b60d86f63f807c0d6cd0075d67a0e89adb8d836351ad418ba1c23fba",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_row_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The claimed-coverage edge's row and its observable-row digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:30093de4673407678419586aba2ae9b45f8080f9f32c77272b35bdd1f7afd1e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "coverage_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:977af2760038dbb1c833761ad0b59678eb6c69aa8b1fefda8fc2af5c499c8a66",
+            "locator": {
+              "kind": "symbol",
+              "name": "coverage_row_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The observation's row codec is imported from its own module and kept in this module's registered surface, so callers keep naming this module.**\n\nAnchor: \"from agents_remember.memory.knowledge.evidence_observation_rows import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:c9cf3dbdb85b9d0febdbc27b31e95e921acb37b560c98b49e5e8ee5934492b20",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:790b565843a9ff325589ce8b3eb81ce657d2f58fe5a40bb36938c8eeabb8d170",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The callers that reach the observation codec through this module.\n\nAnchor: `OBSERVATION_COLUMNS`; `observation_row`; `decode_observation_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a1c7001c7a592e484217a255420703318e114d",
+            "content": "sha256:57e7657a7b933d4dd071d002b4f30e33177fc546075ab185057c3edd827695ab",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7a1c7001c7a592e484217a255420703318e114d",
+            "content": "sha256:2a32af7a380026c097fa5050886d88319c4ec8ce55ce3e48426ee3b7de761397",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:dee5df254fdb7d87a4d789217e777bec228dafa2d833fc14e04dde0d09f50d9f",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The read statements whose declared order columns live in the read-queries module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:c62070b2b08a5d20ee6b4781988d35f00af1554dcc7c112156a97921ea6bc892",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLAIM_BY_ID"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:267a1109c067bfcffb248998806dcf102ad6e3fc65a30cffea27813f6e75137b",
+            "locator": {
+              "kind": "symbol",
+              "name": "OBSERVATION_BY_ID"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

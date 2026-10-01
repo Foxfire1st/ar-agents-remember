@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/refs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `AuthorizationBinding` (principal/tenant) re-bound in every payload check.\n\nAnchor: \"class AuthorizationBinding(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eefcb6c4789991423d20c864c1583ff7386a0090",
+            "content": "sha256:fa90f339a1670d6d594edc79c09561e2dd44ef50c136c181d92c397e723a1aa7",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/models/conversations/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The app-scoped control secret this module signs/verifies with.\n\nAnchor: \"def secret\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:285639ffa9a47b99b0b3710fb597667f761bc00752ed5e8227701d47b04d839e",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 235
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The L1 cursor authority whose signed-purpose-branded posture this mirrors.\n\nAnchor: \"CURSOR_SCHEMA_VERSION = 1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d6cf3a4f2147199259cad445c3ba082b9ee00a2",
+            "content": "sha256:93132e3d94b491b1c377ce9f2b3e6b29079ee861128fb628491eefe27ff2d00b",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/cursor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Consumers: the queue projection mints operation/withdrawal refs; withdrawals/attachments decode and re-bind them.\n\nAnchor: \"async def operation_queue\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1818fde0a667d5e743c19f35c8c46c7c2f09b4f6",
+            "content": "sha256:2582f61991ded1b84932a3a419edc14072393ab8ae4f31aa5e76eaacfd8b2ac2",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/queue_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

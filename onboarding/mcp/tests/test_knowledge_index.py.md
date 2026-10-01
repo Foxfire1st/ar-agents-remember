@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_index.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_index.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -40,7 +30,9 @@
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The index's design authority is the coordination-root note Doc14
@@ -48,37 +40,23 @@ No domain documentation source is configured for this repository (`system/source
 packet `MIK-R23@v1` of task `260928_maintained-invariant-knowledge`; both live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixtures: a committed review tree and a cache outside it. | `memory`; `cache` | mcp/tests/test_knowledge_index.py:46-53; mcp/tests/test_knowledge_index.py:56-58 |
-| Sources and key. | `test_a_working_tree_and_its_git_tree_index_to_the_same_key_and_answers`; `test_a_historical_git_tree_is_read_through_objects_without_a_checkout`; `test_the_key_is_the_tree_id_of_the_captured_state_and_depends_on_content_only`; `test_capturing_a_key_writes_nothing_into_the_repository`; `test_a_directory_outside_git_has_no_key` | mcp/tests/test_knowledge_index.py:68-79; mcp/tests/test_knowledge_index.py:82-95; mcp/tests/test_knowledge_index.py:101-125; mcp/tests/test_knowledge_index.py:128-144; mcp/tests/test_knowledge_index.py:147-151 |
-| Answers. | `test_path_lookups_return_realizations_and_proofs`; `test_an_invariant_answers_its_code_tests_families_links_and_history`; `test_a_family_answers_members_and_routes_and_routes_answer_their_families`; `test_incoming_links_reach_any_record`; `test_history_rows_are_found_by_subject_and_by_leaf` | mcp/tests/test_knowledge_index.py:157-168; mcp/tests/test_knowledge_index.py:171-195; mcp/tests/test_knowledge_index.py:198-214; mcp/tests/test_knowledge_index.py:235-240; mcp/tests/test_knowledge_index.py:243-259 |
-| A family routed at the root governs every path. | `test_a_family_routed_at_the_root_governs_every_path` | mcp/tests/test_knowledge_index.py:217-232 |
-| Freshness, partial state and an unconverted tree. | `test_an_edited_working_tree_is_never_answered_from_the_previous_content`; `test_a_file_failing_its_schema_marks_the_index_partial_and_is_named`; `test_an_unconverted_tree_is_indexed_empty_and_says_so` | mcp/tests/test_knowledge_index.py:265-279; mcp/tests/test_knowledge_index.py:285-313; mcp/tests/test_knowledge_index.py:316-327 |
-| Cache, flags and format. | `test_the_cache_reuses_rebuilds_and_loses_nothing_when_deleted`; `test_old_and_excess_index_files_are_evicted`; `test_the_cache_is_never_placed_inside_a_git_working_tree`; `test_an_index_flag_never_hides_an_edit_from_the_key`; `test_the_index_file_declares_its_format_and_key` | mcp/tests/test_knowledge_index.py:333-354; mcp/tests/test_knowledge_index.py:357-372; mcp/tests/test_knowledge_index.py:375-382; mcp/tests/test_knowledge_index.py:385-400; mcp/tests/test_knowledge_index.py:403-414 |
-| The command and the shared file filter. | `test_the_command_reports_the_index_and_exits_by_state`; `test_the_index_reads_the_files_the_validator_reads` | mcp/tests/test_knowledge_index.py:417-452; mcp/tests/test_knowledge_index.py:455-464 |
-| The lane row. | "mcp/tests/test_knowledge_index.py" | mcp/tests/test-evidence-lanes.toml:105-105 |
+- The fixtures: a committed review tree and a cache outside it. [1]
+- Sources and key. [2]
+- Answers. [3]
+- A family routed at the root governs every path. [4]
+- Freshness, partial state and an unconverted tree. [5]
+- Cache, flags and format. [6]
+- The command and the shared file filter. [7]
+- The lane row. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: every case builds its own repository under `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 6 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_knowledge_index.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:28:12+00:00: Generated citation repair: "mcp/tests/test_knowledge_index.py" repointed to mcp/tests/test-evidence-lanes.toml:105-105. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — one MIK-R04 case: a family routed at `.` governs every path.** The Answers bullet names it and one row is added. The other rows were re-pointed by the exact line shift (one import line, the 19-line case), their claims unchanged; the lane row now reads `:102`. No verification stamp was advanced.
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): created this card for the new file MIK-R23 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

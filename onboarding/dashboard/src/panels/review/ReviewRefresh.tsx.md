@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewRefresh.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewRefresh.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -103,9 +93,7 @@ L47-R1-F2).** The click calls `onRefresh()` and then `revalidateEntry()` from `u
 the entry's summary once (the entry is hidden while the reviewer is open) and does not re-read the catalogue.
 Without the cockpit's provider `revalidateEntry` is a no-op.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The click refreshes, then re-validates the entry. | `useRevalidateIntentEntry`; "revalidateEntry();" | dashboard/src/panels/review/ReviewRefresh.tsx:49-94 |
+- The click refreshes, then re-validates the entry. [1]
 
 ### Conventions
 
@@ -148,16 +136,16 @@ subject change and the refresh click could land inside one React flush — a pas
 single user action produces in today's shell. The fix is at the component boundary this leaf's test
 treats as in scope, and no shell change was made or claimed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own header and its four
 statements, the two exported types, the control with its `data-*` surface, the `generationOf` derivation
@@ -165,39 +153,24 @@ with its phase gate, the one call site in `ReviewSurface.tsx`, and the three cas
 control, the failed refresh and the sentence-versus-DOM agreement. Every anchor in a row occurs inside
 the range that row cites.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of what a refresh is — the two possible answers and never a blend — that a failed refresh keeps the old generation, and what it deliberately is not (no polling loop, no dataset choice, the identity belongs to one question).** | `ReviewRefresh`; `generationOf` | dashboard/src/panels/review/ReviewRefresh.tsx:1-31; dashboard/src/panels/review/ReviewRefresh.tsx:49-94; dashboard/src/panels/review/ReviewRefresh.tsx:113-127 |
-| The module's two imports: the payload type it reads its digests from and the read state whose phase gates the claim. | `ReviewPayload`; `ReviewRead` | dashboard/src/panels/review/ReviewRefresh.tsx:34-35 |
-| **The two states a rendered claim may have, with "no claim" expressed as `null` rather than as a third state — a surface that has not been re-read has measured nothing.** | `ReviewGenerationState`; `ReviewGeneration` | dashboard/src/panels/review/ReviewRefresh.tsx:40-40; dashboard/src/panels/review/ReviewRefresh.tsx:41-41; dashboard/src/panels/review/ReviewRefresh.tsx:43-47 |
-| **The control: the reader's own refresh button with its observable busy state, and the conditional notice carrying the state and both digests as data attributes.** | `ReviewRefresh`; `review-refresh`; `review-generation-notice` | dashboard/src/panels/review/ReviewRefresh.tsx:49-94 |
-| **The sentence, chosen by the state, with each clause a fact the answer published — and the first fix round's correction, which made it say which generation the panes below hold.** | "the candidate's comparison moved"; "the comparison below is still the candidate's current one" | dashboard/src/panels/review/ReviewRefresh.tsx:87-88 |
-| **The one derivation of a claim: the phase gate first, then the carried identity, then the payload the surface renders, and the state decided by comparing the two digests.** | `generationOf` | dashboard/src/panels/review/ReviewRefresh.tsx:113-127 |
-| **The reason the phase gate exists — a read that never reached the server has answered nothing, so a failure renders no "still current" claim beside its own error — and the reason both digests come from the rendered payload.** | `generationOf` | dashboard/src/panels/review/ReviewRefresh.tsx:113-127 |
-| The surface supplies refresh, loading state and the displayed generation to the shared control. | `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:534-600 |
-| **The case that measures the whole refresh path through the real surface and client: the read carries the displayed identity, the notice names both digests, the panes hold the current comparison, and the sentence is asserted to agree with the pane's own `data-comparison`.** | "re-reads the same question carrying the binding identity on screen, and names what moved" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:579-623 |
-| **The case that pins the phase gate: a failed refresh keeps the labelled old comparison and its error and renders no generation claim at all.** | "keeps the labelled old comparison and its error when the refresh fails" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:625-652 |
-| The submission disclosure carries the server staleness and submission boundary. | `SubmissionBlock` | dashboard/src/panels/review/ReviewRecordPanes.tsx:417-445 |
+- **The module's own statement of what a refresh is — the two possible answers and never a blend — that a failed refresh keeps the old generation, and what it deliberately is not (no polling loop, no dataset choice, the identity belongs to one question).** [2]
+- The module's two imports: the payload type it reads its digests from and the read state whose phase gates the claim. [3]
+- **The two states a rendered claim may have, with "no claim" expressed as `null` rather than as a third state — a surface that has not been re-read has measured nothing.** [4]
+- **The control: the reader's own refresh button with its observable busy state, and the conditional notice carrying the state and both digests as data attributes.** [5]
+- **The sentence, chosen by the state, with each clause a fact the answer published — and the first fix round's correction, which made it say which generation the panes below hold.** [6]
+- **The one derivation of a claim: the phase gate first, then the carried identity, then the payload the surface renders, and the state decided by comparing the two digests.** [7]
+- **The reason the phase gate exists — a read that never reached the server has answered nothing, so a failure renders no "still current" claim beside its own error — and the reason both digests come from the rendered payload.** [8]
+- The surface supplies refresh, loading state and the displayed generation to the shared control. [9]
+- **The case that measures the whole refresh path through the real surface and client: the read carries the displayed identity, the notice names both digests, the panes hold the current comparison, and the sentence is asserted to agree with the pane's own `data-comparison`.** [10]
+- **The case that pins the phase gate: a failed refresh keeps the labelled old comparison and its error and renders no generation claim at all.** [11]
+- The submission disclosure carries the server staleness and submission boundary. [12]
 
 | `ReviewRefresh` owns the behavior described above. | `ReviewRefresh` | dashboard/src/panels/review/ReviewRefresh.tsx:48-50 |
 | `generationOf` owns the behavior described above. | `generationOf` | dashboard/src/panels/review/ReviewRefresh.tsx:113-115 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The claim it renders is about one
 repository namespace's candidate comparison, answered by the same-origin dashboard route.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`ReviewSurface.tsx`) moved with the leaf's inserted lines: 1 passing row(s) normalised by the fixer. No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewRecordPanes.tsx`, `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/review/ReviewRefresh.tsx`); no claim changed. No verification stamp was advanced.
-- 2026-09-30T12:21:07+00:00: Generated citation repair: `SubmissionBlock` repointed to dashboard/src/panels/review/ReviewRecordPanes.tsx:417-445. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claims re-read after the surface split.** `ReviewSurface` still hands `ReviewRefresh` the refresh callback, the loading flag and the displayed generation (`generationOf(read, carried, shown)`), and `SubmissionBlock` moved unchanged into `ReviewRecordPanes.tsx`; both claims hold and their rows were re-pointed. The two outcomes-module cases moved 7 lines with L48's adapted assertion and were re-pointed to their own `it(...)` extents. No content impact on this module: `ReviewRefresh.tsx` itself did not change. No verification stamp was advanced.
-- 2026-09-28T17:11:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the reviewer's refresh also re-validates the task entry's summary (`ICR-R24@v3`; L47-R1-F2 ruling).** New Logic paragraph and row; the invariant that the component calls only `onRefresh` now names the added re-validation. Displaced rows re-pointed. No stamp advanced.
-- 2026-09-26T21:09:49+00:00: Generated citation repair: "the candidate's comparison moved"; "the comparison below is still the candidate's current one" repointed to dashboard/src/panels/review/ReviewRefresh.tsx:81-81; dashboard/src/panels/review/ReviewRefresh.tsx:82-82. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T19:49:05Z — Reconciled the changed ownership and current behavior with the source.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** This leaf shortened `ReviewSurface.tsx` (995 → 910 lines) by moving the complete source change explorer into its own module, which moved both call sites this card cites: the control's mount is now `881-885` (carrying `ReviewRefresh` and `generationOf` together, which clears the range's out-of-bounds end as well as both anchor findings) and the staleness paragraph the notice sits beside is now `413-417` (carrying the `review-stale` testid). No claim was reworded or dropped and no contributing range was removed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **created.** This module is new in this leaf and this is its one-to-one card. It records the two facts a refresh's answer can be and never a blend of them, the failed-refresh rule (the retained comparison stays on screen, labelled, with its error beside it), the boundary the header states (no polling loop, no dataset selection, the identity belongs to one question), and the two rules the leaf's fix rounds established on the derivation itself: **`L17-F2`** — the notice renders no claim unless the carrying read's phase is `reviewed`, because a read that never reached the server has answered nothing, so a `refused` or `failed` refresh produces no "still current" sentence beside its own error — and **`L17-R2-F2`** — the `superseded` sentence must describe the panes it sits beside, so it names the moved previous identity and the current one and says the panes hold the current one, replacing the earlier claim that the panes below were the comparison the reader had been reading. The case that pins the correction asserts the sentence and the pane's own `data-comparison` agree, so the two cannot drift apart again. **Stamp accounting:** the verification pair names the **production line at this leaf's base** `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` (2026-09-23T05:16:40+02:00); everything this card describes is **uncommitted** working-tree bytes in the `ar/260921-icr-l17` worktree composed on top of that base, so no commit contains the code a stamp would claim to have verified. What was actually read is that working tree, and the governed closeout owns the real stamp.
+No meaningful cross-repo references found.

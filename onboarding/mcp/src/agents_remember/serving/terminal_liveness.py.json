@@ -1,0 +1,240 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal_liveness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No domain document defines the sweep/hysteresis semantics; the implementation is the source of truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:b88fca7ee72888c16b66f2746722280d0762ddb91c51fe50ad8a1a16dedeff95",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_terminal_liveness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The pure projection helpers the alive path composes before its single final upsert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2236e5ba76316e971b5c98c014e6232513f0dcf5",
+            "content": "sha256:fcced1de241b0ee872565712e32848845ef86f69d2e7a0ff91706401770e0aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "control_snapshot_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_control_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2236e5ba76316e971b5c98c014e6232513f0dcf5",
+            "content": "sha256:b272478403bb281c344704af5796c121cd6f7ce58dc6c334b361f7f7b0777449",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_control_unsupported_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_control_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:b23d68ad3a6352ceb0252784148bd811a02912dccad27b40120c4e8dd102c098",
+            "locator": {
+              "kind": "symbol",
+              "name": "TmuxProbeResult"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_tmux.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The persisted liveness state + locked `record_liveness_probe` write point this module drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:98afd03e2a43f88ecb526101c12ed023773e55887542ca7aaa10e7886e69460f",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_liveness_success"
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:deefdf03b0770348059a4ee08e01dafdbc91717504b228675fa274fb4a5a0bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_liveness_failure"
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The app wiring: one sweeper whose steady-state caller is the serving lifespan's observation loop, direct observations on WebSocket attach + the live-paste target, injected clock. `GET /api/terminal/sessions` is not a caller — it projects `runtime.catalog.list()` and names no sweeper (see `## 260831-LOCR-R02 Current Delta`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cd8506a38114aa7e475c457dfb9e70b8426653",
+            "content": "sha256:8d6b918433b63f427c2efb9a5bd7506d0de7749e0422c9c0b2c5af1686337b73",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_app"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66cd8506a38114aa7e475c457dfb9e70b8426653",
+            "content": "sha256:ede6e2709957bf914da21443a0caf9b5e32de039f67a0bd84f1915f64f6b4cc0",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification, committed-snapshot contention, dirty-gated single-write batches.\n\nAnchor: \"class TerminalCatalogLivenessTests(unittest.TestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:fb398447155fd92801d3d1f95d04de5ea1714b0d27573e718d59caab6f840f0a",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/tests/test_terminal_liveness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The marker-based classifier this module's `_observe_alive` calls on every alive harness row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:715e1749b8f76639fd144e6647220892a6df13d3bf5e01a1cc4abe92c4b84933",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_turn_state"
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses).\n\nAnchor: \"Public pane capture used by liveness and bounded dispatch retry/failure evidence.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:7191a1bc2ff42190d315884e9cb34705dadb2a244fe9eff13ec567b65b189619",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_paste.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cd8506a38114aa7e475c457dfb9e70b8426653",
+            "content": "sha256:8d6b918433b63f427c2efb9a5bd7506d0de7749e0422c9c0b2c5af1686337b73",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_app"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66cd8506a38114aa7e475c457dfb9e70b8426653",
+            "content": "sha256:ede6e2709957bf914da21443a0caf9b5e32de039f67a0bd84f1915f64f6b4cc0",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The explicit contention read and dirty-gated batch the sweep depends on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:d5a8cd0ca49e44e9f4e6cd32d0d949d88c2db83d3b1e67d148a258e7c4e564e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_committed"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:be4a8fe2890d5da1a70bbe54a2a1d2dc05d440209e65129c8a62708e271bead7",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

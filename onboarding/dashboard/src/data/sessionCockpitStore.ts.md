@@ -1,15 +1,5 @@
 # dashboard/src/data/sessionCockpitStore.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/sessionCockpitStore.ts`      |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`       |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -101,36 +91,32 @@ Interaction retry state can now retain a structured answers map alongside its hu
 The exact map, keyed by the authoritative question text, is what a retry resends; it is not rebuilt
 from rendered controls.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The per-seat shape, L4 live-control state/actions, honesty invariants, poll health, toggle persistence, and mirror. | `PerSessionCockpit`; `SessionCockpitState`; `recordPollBeat`; `setOrchestrationTreeView`; `startCockpitMirror` | dashboard/src/data/sessionCockpitStore.ts:113-153; dashboard/src/data/sessionCockpitStore.ts:209-268; dashboard/src/data/sessionCockpitStore.ts:612-632 |
-| The exact snapshot and five-value set-acceptance wire vocabulary mirrored by the store. | `CapabilitySnapshotWire`; `SetAcceptance` | dashboard/src/types/harnessCapabilities.ts:59-65; dashboard/src/types/harnessCapabilities.ts:86-86 |
-| The sole I/O driver for snapshot, route-error, echo, pair, and matching-ack writes. | `refreshSessionSnapshot`; `sendSet`; `applySetResult`; `startPairChangeFlow`; `acknowledgeSetAttention`; `cycleEffortRequested` | dashboard/src/data/setClient.ts:72-119; dashboard/src/data/setClient.ts:228-274; dashboard/src/data/setClient.ts:326-348; dashboard/src/data/setClient.ts:375-383; dashboard/src/data/setClient.ts:386-391; dashboard/src/data/setClient.ts:405-426 |
-| The beat writer (every catalog read records poll health). | `currentCatalogTransportAttempt` | dashboard/src/data/catalogPoll.ts:62-77 |
-| The catalog registry the mirror subscribes to. | `sessionStore` | dashboard/src/data/sessions.ts:543-557 |
-| The view that mirrors layout/palette in and consumes focus + perSession. | "setLayout: (layout: { railCollapsed: boolean; inspectorCollapsed: boolean }) => void;"; "setPaletteOpen: (open: boolean) => void;"; "const { focused, focusedLive, focusedConversationLive, perSession } = data;" | dashboard/src/data/sessionCockpitStore.ts:225-225; dashboard/src/data/sessionCockpitStore.ts:226-226; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:186-186 |
-| The freshness/provenance consumers (HeaderStrip diagnostics, inspector tiers). | `WS_WORDS`; `HeaderStrip`; `freshness` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:81-86; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169; dashboard/src/panels/session-cockpit/HeaderStrip.tsx:101-101 |
-| The unit suite incl. the QUEUED-never-moves-the-marker and per-kind clobber cases. | `recordPendingSet`; "QUEUED NEVER MOVES THE EFFECTIVE MARKER: ledger writes leave launchEvidence untouched" | dashboard/src/data/sessionCockpitStore.test.ts:41-56; dashboard/src/data/sessionCockpitStore.test.ts:75-89 |
-| The bar writes and clears the exact interaction's in-flight/error/answered state. | "  const submitAnswer = useCallback("; "  const submitAnswers = useCallback("; "    setInteractionAnswer: (id, answer) =>" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:179-204; dashboard/src/data/sessionCockpitStore.ts:578-582 |
-| The exact-session answer path records outcomes and retries the stored payload. | `submitInteractionAnswer`; `retryStoredInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:570-637 |
+- The per-seat shape, L4 live-control state/actions, honesty invariants, poll health, toggle persistence, and mirror. [1]
+- The exact snapshot and five-value set-acceptance wire vocabulary mirrored by the store. [2]
+- The sole I/O driver for snapshot, route-error, echo, pair, and matching-ack writes. [3]
+- The beat writer (every catalog read records poll health). [4]
+- The catalog registry the mirror subscribes to. [5]
+- The view that mirrors layout/palette in and consumes focus + perSession. [6]
+- The freshness/provenance consumers (HeaderStrip diagnostics, inspector tiers). [7]
+- The unit suite incl. the QUEUED-never-moves-the-marker and per-kind clobber cases. [8]
+- The bar writes and clears the exact interaction's in-flight/error/answered state. [9]
+- The exact-session answer path records outcomes and retries the stored payload. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## 260715-FEUI-L5 Reliable Submit Delta
 
@@ -146,36 +132,3 @@ The canonical Chats inspector now initializes collapsed. Deliberate inspector op
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Update History
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `sessionStore` repointed to dashboard/src/data/sessions.ts:543-557. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: updated cockpit-store answer-state citations.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T03:59:59+02:00 — Curated 15 citation claims (10 table rows, 5 prose citations): added exact anchors and source paths; scoped fixer generated the final ranges.
-- 2026-07-24T13:17:50Z — Documented structured-interaction retry state. Verification hash/date remain
-  pinned to the pre-commit source stamp.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented bounded submit history/queue state, pending
-  withdrawal, exact recovery, and draft/answer revision-CAS actions.
-
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 added the typed exact-session snapshot/error/loading
-  slice, timestamped per-kind echo evidence, route errors, serialized pair state, selective
-  readback acknowledgment, and pre-acknowledged benign ledger evidence. Requested and effective
-  state remain separate. Verification metadata is pinned to the contract base pending code commit.
-- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R4, F7): appended the optional per-seat
-  `interactionAnswer` slice (`InteractionAnswerState` + `setInteractionAnswer`) — the
-  InteractionBar's answer round-trip (in-flight → verbatim error → answered-waiting), store-backed
-  so it survives view switches and cleared when the interactionId changes under it. Append-only;
-  `emptyPerSession` untouched. Verification metadata pinned to the leaf base until closeout
-  stamps the L6 code commit.
-- 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S3 (R3/R15/F13/F22): the cockpit client
-  store — per-kind pending sets, acknowledged set ledger that never moves launch evidence,
-  five-tier evidence starting pending, composer shell, turn clock, per-pane freshness, client
-  queue with alt+↑ supersession, poll-health beats with the 3-miss stale cutoff, the persisted
-  orchestration-tree toggle, one-way view mirrors, and the refcounted catalog mirror.
-  Verification metadata pinned to the leaf base until closeout stamps the L2 code commit.

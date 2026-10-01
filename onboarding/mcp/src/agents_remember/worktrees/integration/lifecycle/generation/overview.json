@@ -1,0 +1,69 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation",
+  "references": {
+    "1": {
+      "note": "Queued construction and exact integration snapshots retain separate responsibilities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:20645ae5252fb6a886f24a7c8a45325d614dc3c19c071607b8dc2364996655ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "queued_operation_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:79440cb03a070e4c2f2302f3dca90f497df21ce3470fb6d2ad2794e20d1ab2e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_integration_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Resume fences termination and preserves the accepted generation and mutation histories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ee9d0ee0a5e88ec312bc65b08a788b3b70324b",
+            "content": "sha256:91439a63b37721bc9542fa47250aab8856372225c42ab2c5f1095029b7712647",
+            "locator": {
+              "kind": "symbol",
+              "name": "requeued_same_generation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Integration generation authority follows the actual publication pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:79440cb03a070e4c2f2302f3dca90f497df21ce3470fb6d2ad2794e20d1ab2e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_integration_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -1,0 +1,160 @@
+{
+  "path": "mcp/src/agents_remember/models/context_packet.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The context application entry point constructs \"packet = ContextPacketV2(\" from resolver, Git, provider, worktree, and drift facts.\n\nAnchor: \"packet = ContextPacketV2(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:e58db83f1650b355ef25a3625d2bbe5800cafdd5de6eb00cf3b3e3573aaa919d",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider readiness in the packet uses compact provider summary models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "content": "sha256:aa8802cf3a6f79cf3698078969a314a147c82a800f2ca8d741f1f69cd2116aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderSummary"
+            },
+            "path": "mcp/src/agents_remember/models/providers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`RepoState` (L22) and its `VALID_REPO_STATES` (L26); `git_facts_to_packet` (L104-L115) is the untyped dict `RepoSummary` validates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0b9c668414f020ae86262032fdc39d1813a4a6a",
+            "content": "sha256:480d9cdb8c2ad41bcb78577f1274d487b46d5a34f41aa3b2a711df089ebe957b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepoState"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0b9c668414f020ae86262032fdc39d1813a4a6a",
+            "content": "sha256:b44351d2f446fb73f8da4e1bb72a2b848c63eab7e9e5f0038ed845f53137ab65",
+            "locator": {
+              "kind": "symbol",
+              "name": "VALID_REPO_STATES"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0b9c668414f020ae86262032fdc39d1813a4a6a",
+            "content": "sha256:3a29d1589c232d2e550fbb81b4dea411cf8497d2fefa18cc8ea3e1407af2deb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_facts_to_packet"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_facts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`FreshnessState` (L29-L38) and `VALID_FRESHNESS_STATES` (L41); `freshness_to_packet` (L158-L169).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:600c17fc2e6730f83045d514a964e513489ce452fae8a87c0ba9d3edd35598c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "FreshnessState"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:cc7e4a0f93077ad5cb44fbb6ac4aabf037f139938f6d304eba3e72b4c6c60436",
+            "locator": {
+              "kind": "symbol",
+              "name": "VALID_FRESHNESS_STATES"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:9984c8ad73edd4b1ae9bb4f539820b50aa01b1392924e78e500b233200ff0228",
+            "locator": {
+              "kind": "symbol",
+              "name": "freshness_to_packet"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`MemoryMode` (L209) — the one declaration `memory.mode` and `worktree.memoryMode` now share (kernel-owned since L9).\n\nAnchor: \"MemoryMode = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489de7b5354c1f0e318b20273a214b7f53714e30",
+            "content": "sha256:2214062a9c907213972ed20d76cd59d4c710d9a819be88a4a08774949f96f0e3",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`worktree_status_packet` (L65-L152) returns `WorktreeSummary` directly, so this packet's `worktree` block is constructed, not validated.\n\nAnchor: \"def worktree_status_packet(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00d06ec6ebe2a4416c2f4549b9c5cb39e7e2e93",
+            "content": "sha256:f01928e219c4db428093cb5c3bd4fefe1530626dea339b9b4a5a517ce196ce2a",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

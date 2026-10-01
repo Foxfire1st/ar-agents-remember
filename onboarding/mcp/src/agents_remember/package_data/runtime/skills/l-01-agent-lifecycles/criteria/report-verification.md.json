@@ -1,0 +1,80 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/report-verification.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical source this bundle copy is sync-propagated from.\n\nAnchor: `# Criteria Catalog — Report Verification`; \"mcp package data\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:932ecfb6de5eb944491881bceacb9f148bc06c2a7032a15f5f3eaad604b79419",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillTarget"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "content": "sha256:1f449f52443539f9bb0bf707bf71d8d1c6bbb37333212e9542792fda93358568",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/report-verification.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reviewer role that binds this catalog in every review type.\n\nAnchor: `# Reviewer`; `report-verification`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c75dae506a280d84fa66fbca69242753b3a4563",
+            "content": "sha256:24cc837d3d3839346fd454a75f924f9e13328ed64dad27f63c88d8b41b335e93",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c75dae506a280d84fa66fbca69242753b3a4563",
+            "content": "sha256:660b2f7b698dab73721bd0a1f4d5a93100254a483c2073430bf081e0d9c3243b",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

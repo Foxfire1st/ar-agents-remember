@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/governing-route-map-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The governing route map template defines placement principles for route-local overviews and keeps file-level onboarding separate.\n\nAnchor: `## Placement Principles`, \"File-level onboarding remains separate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25d493e6efb78074c1d5f983765ad4acaf2c317a",
+            "content": "sha256:319d2ba863157dd2707fc0fc08d636bb4e8a45fa099077662d735ddf03845c4e",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template records proposed routes, deferred routes, moved/deleted routes, cross-cutting concepts, parent/child overview relationships, and developer questions.\n\nAnchor: `## Proposed Governing Routes`, `## Routes Considered But Deferred`, `## Moved Or Deleted Routes`, `## Cross-Cutting Concepts`, `## Parent / Child Overview Relationships`, `## Developer Questions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25d493e6efb78074c1d5f983765ad4acaf2c317a",
+            "content": "sha256:c111600673682ea21cbd4f244d4b785337eb4e17506f1c780f669ef61d24f639",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-03-repo-bootstrap` skill Phase 4B writes `bootstrap/governing-route-map.md` from this template before overview cards and waves, and records stale, moved, or deleted routes for existing-memory slice maintenance.\n\nAnchor: `### 4B — Governing Route Map`, \"bootstrap/governing-route-map.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4014891822eb5110082227e1b68355f17b6e96ef",
+            "content": "sha256:18c5fd17ea1b850be7bd8cfa14c486291efd450d37a62ec2f964116fbbb1e1c9",
+            "locator": {
+              "end": 831,
+              "kind": "line_range",
+              "start": 804
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

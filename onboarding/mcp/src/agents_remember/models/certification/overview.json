@@ -1,0 +1,94 @@
+{
+  "path": "mcp/src/agents_remember/models/certification",
+  "references": {
+    "1": {
+      "note": "The shared identity and base carry only closed wire constraints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:f7a5ea8901e77c6b05bef81b105d77eeb31dc6624c20f98ca48378d817c7305f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrozenContractModel"
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:628f20b3dd283d5b3f5dc34d5edc2656a649e7f37d476fe4b74c37b5744ac7d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Corrective shape requires actual digest movement and canonical entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f220125db85b19a6b1b797e926e99bcbc0531c4e",
+            "content": "sha256:6795759ba5a1dd7dfa0ff34efaa4c10adcc23068665c3f674d01333da0d2b8ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "CorrectiveInputChange"
+            },
+            "path": "mcp/src/agents_remember/models/certification/corrective.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f220125db85b19a6b1b797e926e99bcbc0531c4e",
+            "content": "sha256:5cfd1ca23b409da4dfe703ad46a7134e9efb552299ee3f47109ae452a10e8075",
+            "locator": {
+              "kind": "symbol",
+              "name": "RedCatalogDisposition"
+            },
+            "path": "mcp/src/agents_remember/models/certification/corrective.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact original bytes are bound separately from semantic address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03b041ad380285cdff15423a063404779bef23cf",
+            "content": "sha256:a6e3cc4384ad9232ac7a0e37a6bda365bb58a2d051607fe373b847c64eabc13f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificateObjectReference"
+            },
+            "path": "mcp/src/agents_remember/models/certification/references.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03b041ad380285cdff15423a063404779bef23cf",
+            "content": "sha256:dcd6ac49dfddf740b16950664aa28d4e0d35f8d0717350deb6676854ad915a7f",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/models/certification/references.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

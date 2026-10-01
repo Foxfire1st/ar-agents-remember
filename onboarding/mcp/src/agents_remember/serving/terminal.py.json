@@ -1,0 +1,141 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The serving layer this host joins (transport; localhost posture).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27766bdc74bc94c31405b3b426f266048e9db2a6",
+            "content": "sha256:1058de4d7ec751e69c68637e5db071ba6f3daa4e705eb3c448aa49cc09a5fcae",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalHost"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The FastAPI app wires the WebSocket bridge and terminal-session routes over this host.\n\nAnchor: \"async def _serve_terminal_websocket(\"; \"def _register_terminal_session_routes(app: FastAPI\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:edbf24c5b1cd8e6a487ea07b67f33f7b1ce8fc08809ef923156cb4cc6c2ab253",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:c7ca2563074b9357b42f67febeb11f2a755c0824fb6318bb47b2325ea72395f0",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:2d3432bc24a59721e97abaa379b502b727e01f362ba72ca155a869d5b1112d75",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:e8f4f88089989d3864bda3066daae8924cc24d58394c5518b2b37604d587b19c",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Catalog entries declare durable identity/cwd/tmux/command/lifecycle/status fields, and \"class TerminalCatalogEntry:\" persists and reads those entries.\n\nAnchor: \"class TerminalCatalogEntry:\"; \"class TerminalCatalogEntry:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:1645b7ed0df5ce1d59792b73ecc88bff6aff1ee2b6e6aec2ad020f71f91bde8f",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:bf447973e7d081b57ebe545c616fdc5b076530dc793c6f6ccded3a64d7659a13",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The opener resolves the spawn environment, builds the terminal session spec, calls the host ensure operation, and upserts the catalog entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:b344d6d3713677556f327572dc52a45398dafae48a613c0412683b2db195705a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_terminal_transaction"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:b8f76c28d7a5d292cb976782825d02b3af8043fc7bd3f59a83b294b515a8e1ad",
+            "locator": {
+              "end": 708,
+              "kind": "line_range",
+              "start": 619
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

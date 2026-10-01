@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_lifecycle_operations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Start returns immediately and duplicate observes one launch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99eb7d7b5d9e74d0871e85abf9c677f7fbeae05",
+            "content": "sha256:a6687404677cdd27fcbd7c43b579da4c29f221f33a1a2f08a9aa07597bf8463a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_returns_immediately_and_duplicate_observes_one_launch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The cross-kind/terminal contract-lifecycle lease was removed with the door-operation-journal lock plane, so no lease exclusion is asserted here any more; the retained behaviour is start/observe dedup and the two cancellation boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99eb7d7b5d9e74d0871e85abf9c677f7fbeae05",
+            "content": "sha256:08f944a9e5c63ade3db6fcfe1e5ef3c89ec562d3519d5b94bf96d51ec0c14735",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancel_before_boundary_proves_exit_before_releasing_worker_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cancel before boundary proves exit before releasing worker authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99eb7d7b5d9e74d0871e85abf9c677f7fbeae05",
+            "content": "sha256:08f944a9e5c63ade3db6fcfe1e5ef3c89ec562d3519d5b94bf96d51ec0c14735",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancel_before_boundary_proves_exit_before_releasing_worker_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cancel after boundary refuses without making approval reusable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99eb7d7b5d9e74d0871e85abf9c677f7fbeae05",
+            "content": "sha256:743e506014c2940c7552e225aa8c700a9e33302795c5fc6da48b9307a37de93d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancel_after_boundary_refuses_without_making_approval_reusable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

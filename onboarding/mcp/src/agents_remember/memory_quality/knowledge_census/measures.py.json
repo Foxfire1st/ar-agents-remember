@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_census/measures.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`N` is the sum of the four cells; out-of-cohort claims are counted beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97553bd370add844af2e6dedc7ed07a0319351fa",
+            "content": "sha256:59c26f1ae990c4892f7905f4496d0483df726fa9defc1de5f38f71b30869a165",
+            "locator": {
+              "kind": "symbol",
+              "name": "Counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A measure has a value only when its denominator is not zero, and renders with counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97553bd370add844af2e6dedc7ed07a0319351fa",
+            "content": "sha256:d31ed435ca30e3ec4aa621b91fcef621784e6b9595e5c36d9610f6e3f10a43bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "Measure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A zero denominator is not applicable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97553bd370add844af2e6dedc7ed07a0319351fa",
+            "content": "sha256:28876b08a0b8032c51a3c88f8f85ac088b47f55bb43fb74e189e18cb81ad2fe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ratio"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The six measures in Doc12's order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97553bd370add844af2e6dedc7ed07a0319351fa",
+            "content": "sha256:5cce5e63d593ed77e01ed09bc378a934d06efde90bfdbead39b6e2e968710ade",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_measures"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The conforming example's strings, with counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f86d20bf0fec7d5d1d7a06e51767968b6725696",
+            "content": "sha256:ac79fcd449d0433c0cc214c716a58ab5a8a60e2241c5ad547ebc3f231600e5b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_measures_of_the_conforming_example_carry_their_counts"
+            },
+            "path": "mcp/tests/test_knowledge_census_report.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Zero denominators, never a perfect score.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f86d20bf0fec7d5d1d7a06e51767968b6725696",
+            "content": "sha256:9570e98f2d40e6945265336aa3047a050639864d48ec47d37e26c4ca6a520b25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_zero_denominator_is_not_applicable_never_a_perfect_score"
+            },
+            "path": "mcp/tests/test_knowledge_census_report.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cohort, and the latest assessment governs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f86d20bf0fec7d5d1d7a06e51767968b6725696",
+            "content": "sha256:4b21ce92a94b5b5fd79a6b81fd852c1bf850f21cb36f41faf30aa523718bc398",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cohort_is_the_assessable_claims_and_the_latest_assessment_governs"
+            },
+            "path": "mcp/tests/test_knowledge_census_report.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

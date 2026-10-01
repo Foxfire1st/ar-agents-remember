@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_context_packet.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Builds packet from allowed repo.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a79aface2c4f39b630e117c45e48f88b20fb3ea",
+            "content": "sha256:93b58ad3b082323d1d476f3d9041fa612fe1a5798aba83a46e478e6eef5fa657",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_builds_packet_from_allowed_repo"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Rejects unknown repo before filesystem resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a79aface2c4f39b630e117c45e48f88b20fb3ea",
+            "content": "sha256:51dd20f4a690ef8ee712adb9c62754b67c5ff465d4d740a54146aa84d822e9aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rejects_unknown_repo_before_filesystem_resolution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Freshness reports behind code branch and ledger mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a79aface2c4f39b630e117c45e48f88b20fb3ea",
+            "content": "sha256:9bc8f28c0837b8ed1649900fa4ab8f8f602c23344fcce733ba674b2392db50bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_freshness_reports_behind_code_branch_and_ledger_mapping"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

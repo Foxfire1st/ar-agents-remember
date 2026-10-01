@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_gate_routes.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_gate_routes.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -68,6 +58,12 @@ census pins.
 - **F9 and notes:** `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict`;
   `test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory` (an unreadable candidate tree, a missing official
   branch, a timed-out probe at `leaf_gate_refusal`); `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`.
+- **L37: three gate guards pinned (the L09 review R4 carry, N23 to N25).**
+  `test_a_git_failure_asking_for_a_recorded_blob_is_named_by_the_trees_and_the_lane`: `CodeTrees.has_blob` names
+  a Git failure as its own input (N24), and the reviewer lane reads it `unavailable` with that reason, never
+  raising (N23). `test_an_unwritable_closing_receipt_restores_the_file_and_admits_nothing`: direct landing
+  restores the history file to its open bytes when the closing receipt cannot be written (N25). Each fails under
+  its mutation.
 
 ### Conventions
 
@@ -84,38 +80,32 @@ census pins.
 
 - None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: each route test enters through its own entry point. | "Each route test enters through the route's own entry point" | mcp/tests/test_knowledge_gate_routes.py:1-7 |
-| F1 and the worktree closeout, record, master and checkpoint route entries. | `test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing`; `test_the_worktree_closeout_refuses_restores_the_file_and_commits_it_closed_once_valid`; `test_the_master_and_checkpoint_landings_refuse_through_the_integration_route` | mcp/tests/test_knowledge_gate_routes.py:157-279 |
-| Direct landing's route entries and its closing across calls. | `test_direct_landing_preview_and_apply_refuse_through_their_route_entry`; `test_another_generation_s_request_never_replaces_a_kept_closing`; `test_an_unreadable_closing_receipt_is_a_named_refusal_at_apply_and_at_cancel` | mcp/tests/test_knowledge_gate_routes.py:342-548 |
-| Master landing refuses anything not current; ghost subjects; the scoping. | `test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing`; `test_a_hand_committed_closed_history_file_with_a_ghost_subject_is_refused_at_master_landing`; `test_a_sibling_s_file_closed_in_the_base_is_not_re_anchor_checked_at_a_leaf_route` | mcp/tests/test_knowledge_gate_routes.py:556-640 |
-| The exact trees re-anchor-check the file they just closed; an unavailable object. | `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed`; `test_a_code_object_that_is_unavailable_is_named_and_keeps_the_item_findings` | mcp/tests/test_knowledge_gate_routes.py:654-723 |
-| The admission base, the memo key and record landing on unconverted memory. | `test_the_routes_judge_a_leaf_s_earlier_record_new_against_the_parent_line`; `test_the_memo_key_holds_the_parent_tip`; `test_record_landing_on_unconverted_memory_never_reads_the_landed_commit` | mcp/tests/test_knowledge_gate_routes.py:731-785 |
-| Git failures, probes and the read set. | `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict`; `test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory`; `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept` | mcp/tests/test_knowledge_gate_routes.py:802-884 |
-| R3-1 and R3-2. | `test_a_closing_the_memory_line_already_holds_is_never_restored`; `test_a_recorded_blob_the_store_lacks_is_named_at_its_real_raise_site`; `test_a_git_failure_asking_for_a_recorded_blob_is_incomplete_and_never_kept` | mcp/tests/test_knowledge_gate_routes.py:893-992 |
-| The lane row. | "mcp/tests/test_knowledge_gate_routes.py" | mcp/tests/test-evidence-lanes.toml:123-123 |
+- The module docstring: each route test enters through its own entry point. [1]
+- F1 and the worktree closeout, record, master and checkpoint route entries. [2]
+- Direct landing's route entries and its closing across calls. [3]
+- Master landing refuses anything not current; ghost subjects; the scoping. [4]
+- The exact trees re-anchor-check the file they just closed; an unavailable object. [5]
+- The admission base, the memo key and record landing on unconverted memory. [6]
+- Git failures, probes and the read set. [7]
+- R3-1 and R3-2. [8]
+- The lane row. [9]
 
-## Cross-Repo References
+- A Git failure asking for a recorded blob is named by the trees and the lane. [10]
+- An unwritable closing receipt restores the file and admits nothing. [11]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the fixture builds its own repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new test module of the review R1 fix round (F5: one refusal test per public route entry, ruling 16:07:55), which also pins F1-F4, F6, F7, F9, R2-1 to R2-5 (17:59:48) and R3-1/R3-2 (19:16:07). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

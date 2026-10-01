@@ -1,0 +1,81 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The task-document panel variants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "491e939eed25097b2adee337139d4d79f22a0127",
+            "content": "sha256:a7533194df58d39e42c414f64c0ad2b563aea3d84d3d72426095102c46dcc0e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentPanel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "491e939eed25097b2adee337139d4d79f22a0127",
+            "content": "sha256:46c209996e25cd3bf9811c335ec354cc6af71e0d596724a2ff3cbc26a9a40204",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyDetailPanel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "491e939eed25097b2adee337139d4d79f22a0127",
+            "content": "sha256:8b9c26c1e823012735efdbe3ed7ef56e003195c610f474e7032124aca7c8d477",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesDetailPanel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "491e939eed25097b2adee337139d4d79f22a0127",
+            "content": "sha256:8e0170a03ecd665c5511df638bcb83e49416447173c7b6846d592bc4aadf942e",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "491e939eed25097b2adee337139d4d79f22a0127",
+            "content": "sha256:17efde4040a3ec870915c05de2acef21761fa9091761401d7ea301ada627d7f5",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "491e939eed25097b2adee337139d4d79f22a0127",
+            "content": "sha256:f3688707a1564664d980f80e8fb6ac0855448410606ebf81cc8f05b6ca3a87cc",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

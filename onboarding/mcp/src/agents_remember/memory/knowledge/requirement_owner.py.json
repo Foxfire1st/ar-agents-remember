@@ -1,0 +1,143 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/requirement_owner.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The whole consumption: the reference re-typed into the owner's own shape, the owner asked, the answer carried as data.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2563879ec3c7eefa67e9ae58a9a04569b3fbe9e8",
+            "content": "sha256:eea2675f32c7316986dd711c17ed9da97bf95ecc3bbdbac2f94a0ac39ade500b",
+            "locator": {
+              "kind": "symbol",
+              "name": "consume_owner_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The single private task-plane import that makes this module the record group's only boundary to the task plane, and the one call site it feeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2563879ec3c7eefa67e9ae58a9a04569b3fbe9e8",
+            "content": "sha256:eea2675f32c7316986dd711c17ed9da97bf95ecc3bbdbac2f94a0ac39ade500b",
+            "locator": {
+              "kind": "symbol",
+              "name": "consume_owner_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The owner's own reference shape, which is what the two planes are made to compare literally instead of through a translation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:3de9da4fba259cdd7ede9f6ff9f23f7b778afcf6671a6ad3c93b3ffe8abe81da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ApprovedRequirementPacketRef"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The owner's refusal carrier, whose `status` and `detail` travel verbatim into the resolution value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:ba458d0b483c1530e132e5f27fc2b72c4d4fe946a665a4862e7e92ea40e19469",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The substrate's resolution value: one outcome, and a refusal only in the unresolved outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56e90c252bdaf1b81b3ed10b53f73fe2af8448d",
+            "content": "sha256:57aea78e37873200ce396959369685d653e8d03367d9ff1283756f8d9b336abe",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementOwnerResolution"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/requirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The three components the owner reference carries, which this module re-types rather than re-spells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56e90c252bdaf1b81b3ed10b53f73fe2af8448d",
+            "content": "sha256:09d4cde84e3d70d710bc2d82f8cc64dbdd2c554a6b53d8485f4a700925f52272",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementOwnerRef"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/requirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The case that makes \"the reference is never rewritten\" total: four real owner refusals carried verbatim, with the stored reference byte-identical.**\n\nAnchor: \"test_each_owner_refusal_is_carried_verbatim_and_leaves_the_reference_unrewritten\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:95e53442f94103b000ec03697a6b325f635bc02e8547ba2d8ab297ddac1d71a2",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that keeps the refusal the owner's: paths the owner would refuse are still representable, so the answer cannot come from the substrate.\n\nAnchor: \"test_the_payload_does_not_police_the_reference_the_owner_owns\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:a9d1e5b122e5bd3a9a86d5960366a4fc391b9078b7b32ee65f86ea77b4cdedde",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,186 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/code_objects.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The class and its caches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:3437e7d8c09a7a92c41c77f336f3d4f8f019aab4a2417fa5d3184e3122af3d7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A commit by exact name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:51eac2097846b98da2d5b910557d344a3566ae28c85ccc15643ed91cc2afd83f",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every commit with a prefix, so ambiguity is seen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:8ae960f3597ab9bf56e7c9d1d40d6deadbaea5e38ad3691da134ff12516df22b",
+            "locator": {
+              "kind": "symbol",
+              "name": "commits_with_prefix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A commit's file-to-blob map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:594ca34f55e0be59ef95f21f65825d7af9c29e8fe9e9c324e2e96b40be978e78",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Git's not-found exit, and a Git failure named rather than read as absent (R3-2).\n\nAnchor: \"def has_blob(self, blob_id: str) -> bool:\"; \"the object store cannot say whether it holds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GIT_NOT_FOUND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:661c59ba6d84d2c519f21e3f21fcd824a8fe73348aae8310e3d880d9a79b5d3f",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Batched blob reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:f0fef503a4a201278ce39c9440b4486925c3f6392ff7ca3a82f1922aa9b23efa",
+            "locator": {
+              "kind": "symbol",
+              "name": "prefetch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:2c5341f0df119c28c9640ec80328e921a435dcb9384d33b6ac03147f3013837c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One symbol extent per (blob, grammar); the top-level reading for recorded claims.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:3a520caf4331238dcfd27f83399f8368821a6f9284d947106fecfdd29595bf4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "symbol_span"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:4f4560e0b2f5bee9fce5a0cc28c0a9829616232cfc114115a3e08d186c627e21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outermost"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An anchor's content in a blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:3098099b5cf798abc118ce1a1c1abf010f10f890d85b05e183207769f97087fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared binding rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eebc5b0f77b9c84611738fc4420e2599f3582a9",
+            "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

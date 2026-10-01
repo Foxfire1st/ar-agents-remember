@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/panels/engine-room/ledger.styles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The popover card/scroll recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4770d991e090927d7ecd6357bb6d148660c94dee",
+            "content": "sha256:959c5e0c3e571921b95a140abe8050b1259f328c910dcab455eda70504198421",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerCard"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4770d991e090927d7ecd6357bb6d148660c94dee",
+            "content": "sha256:32fa1bca6a3529aaefc27d42ca6e00878fc54147ce633cc6913eec9b2338b08c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerScroll"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4770d991e090927d7ecd6357bb6d148660c94dee",
+            "content": "sha256:86c3e38a909692479ffe491f8532598c5302211d7a1c657e99776c73876b8cf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerButton"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The six-column row/seam recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4770d991e090927d7ecd6357bb6d148660c94dee",
+            "content": "sha256:ceef35624b8dbde7e2bcf89aab642a0d1150c6f706ffee17fb4686c9702a5fff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerDate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4770d991e090927d7ecd6357bb6d148660c94dee",
+            "content": "sha256:dc9003b3e6953c9340a71001687113dc655d3b8849fce22db18b0da56da8090b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerHashCode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4770d991e090927d7ecd6357bb6d148660c94dee",
+            "content": "sha256:e5836ab05e26d16e4e8c1649ca1e30e25fc1358589c044d7a86e721fdc4d7a95",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerHashMem"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4770d991e090927d7ecd6357bb6d148660c94dee",
+            "content": "sha256:4c4922ca52c3fc650ea6ba560d63e17a0c4f782edd302baa243145a128f01e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerSeam"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

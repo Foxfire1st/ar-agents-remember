@@ -1,0 +1,48 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Compact builders that pair with the reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71205358ae7e6a368fc74bfc50750241bc068eeb",
+            "content": "sha256:f0b34cf4a5368d93268075fe3bb03a67c33601ced0ddef09a947f0ecdabab217",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_runtime_install_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56cc081c2a57c4ca0554bef043856542937b65fc",
+            "content": "sha256:c8e1a2d4a567622bce9c46aad84bb75f6445da3eedd9bc9218490af5e0463f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_diagnostics_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/providers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56cc081c2a57c4ca0554bef043856542937b65fc",
+            "content": "sha256:f35d3203d69ceb187bc7fc095723fdb600fe29589633d98e9dfa7a77c9d778b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_watchers_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/providers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

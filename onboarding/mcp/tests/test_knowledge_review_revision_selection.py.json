@@ -1,0 +1,352 @@
+{
+  "path": "mcp/tests/test_knowledge_review_revision_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The new module's scope statement: heads from authored successors, the six load-bearing properties, and the fault-injection disclosure.\n\nAnchor: `select_subject_revisions`; `revision_heads`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:f5d6e08f75fccd5e7484e009b45e311c0d4646ad9c409d64b50fd260005fb212",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:c3115ab418247ffad09146e7ddef7b34b1542c655b06103189ce5eef4d6641bc",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The two lineage failures: a successor cycle and a dangling authored edge, each unresolved with no pair and the reason named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:3ddd0afb074437b7f09cdf9d25b2863fd9088d241480e4d1f3c08b876e4b2396",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_successor_cycle_is_unresolved_and_names_no_pair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:ef6a3e4e7c14a5c1d4d74edcb4b0d3c076aef8b14619b711323ad0ea809f101e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dangling_authored_edge_is_unresolved_and_names_the_missing_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Order-independence: the successor relation beats sorted position.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:6f17e1bb369bdf32d2e544d24c926fab90f69e9859a805f3ff97b169a515ac1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_heads_come_from_successors_not_from_sorted_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The pane case: the served payload records the compared head pair and renders the heads' own recorded statements as `present`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:08dcdf36572af45fba09a070f6f216091fb71b547f8b6bb146f8952e871c9761",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_review_pane_renders_the_selected_head_pairs_own_statements"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane row, inserted mid-list in the alphabetical knowledge run.\n\nAnchor: \"mcp/tests/test_knowledge_review_revision_selection.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:ca0181cb2687cc93f7d2ddab0b83e2d688779fdfad7c0f7e2aa50a3da01d612f",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The policy the cases measure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:e869785b3bfadaf409edcfe34e1a6db893cca324a55a6b94e04c953f1196bddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_subject_revisions"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The value the cases assert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:20d0caaa29ddeed4149843915c3866b9867af707b27905938a430d226d3c9b4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionSelection"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/revision_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's own lane declaration, which is what makes the classification its own rather than a budget convenience.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixed recorded statements every authored revision carries, so a head's text is assertable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:c596aaa7f3a6c0d6d0714e2b10874362d78c6842a1c1b1c87618a60a62171246",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATEMENTS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The fixture that makes a chain, a fork and a history real: two independently built snapshots under one namespace through the public write path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:4f72cd2c8e2453d0e7afda913f13790c41043d3ec8359b5fa8839d6ac5ae6129",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_snapshot"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:95bf67b63d78bc62c17078457d481a16b880402ea16034e9f6d179a362f98b23",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_pair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:6ffc31678cb585ea8875839ff9c5c939409b55d017c018bd4626840b9dc888ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChainPair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:5e769a86606a88f55e34968f48d718cafe4b9de7eb54a8d6afe0cc51aafdb733",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotSpec"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The adapter's own function under test, called exactly as `compose_review` calls it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:c339878c1eb6da08c3ba21d3b8452e19bce0c046adf093cb9e7de01d894aa2d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:59db75f042639d88ab9a8df1a0b0ba3c01784e7515dc27feba13f5c73cefe705",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:57638b18ceaae869ef877ed5cd8fc97cab7d987a4241577ce560379583a9ffd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_seed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two chain defaults with exact selected revision ids: `r1`-vs-`r3` and the advanced `r2`-vs-`r3`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:a485a4566081992cffff071e12917c3dcc0dd65ad82e3b634a583ef5d63ad26d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:e71b2f4a53ec3edabc092945000639a5f79ccfc9bf62defdeec07ff32b466177",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_advanced_before_head_moves_the_default_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Selectable history: the default still compares the heads while `r2` is compared on demand through the per-side explicit selector with its own recorded text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:cd76141f3174b3a3164780aafdd29aa22e1a31561ce8dd1ba900d1b37e436a69",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_intermediate_revision_stays_selectable_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two fork ambiguities: both heads listed, no pair, the statement naming the choice left to the reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:c9ed8b97c386d72bde00821b35ce2bf801f54bd89b914249d7c3f3f8711948b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fork_on_the_after_side_is_an_explicit_ambiguity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:d4e35083d8de63a54e2e09380557b0b21d25698babb41e405524281e96e653b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fork_on_the_before_side_is_an_explicit_ambiguity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The known-empty side: a removal under the R06 contract with the before head recorded and the after side absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:5814a0dc41fc56acea744067ad44e77b812aa343eef92e6b368830deb305ca91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

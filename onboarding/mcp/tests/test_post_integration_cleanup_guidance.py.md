@@ -2,14 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_post_integration_cleanup_guidance.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:28+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 | verificationStatus | working-candidate |
-| governingOverview | `overview.md` |
 
 The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
@@ -47,30 +40,24 @@ Module-level tests use the small constructed contract where only projection is a
 
 No new file-local follow-up is identified by this source reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Finalization and retired cleanup-vocabulary assertions. | `test_a_pending_cleanup_offers_finalization_and_never_a_cleanup_decision`; `test_the_cleanup_decision_is_no_longer_in_the_next_operation_vocabulary` | mcp/tests/test_post_integration_cleanup_guidance.py:49-65; mcp/tests/test_post_integration_cleanup_guidance.py:68-81 |
-| External completion depends on landed commits, never cache text. | `test_external_completion_proves_landed_commits_without_reading_the_cache` | mcp/tests/test_post_integration_cleanup_guidance.py:84-119 |
-| Checkpoint guidance remains still-working. | `test_a_checkpointed_series_keeps_working_instead_of_being_told_to_integrate` | mcp/tests/test_post_integration_cleanup_guidance.py:122-148 |
-| Production completion and post-integration guidance owner. | `carryover_done`; `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:245-328 |
+- Finalization and retired cleanup-vocabulary assertions. [1]
+- External completion depends on landed commits, never cache text. [2]
+- Checkpoint guidance remains still-working. [3]
+- Production completion and post-integration guidance owner. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
 ## KS-R23@v1 The Validate Step Is Named Before Its Window Closes
 
@@ -96,29 +83,3 @@ contract:
 `_external_memory_leaf` (`:154-188`) builds the contract those cases drive — external memory, a memory
 worktree, a completed closeout — and writes the canonical authority where `curator_coherence_paths`
 resolves it, which is what makes the first case's condition real rather than mocked.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-18T19:28+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the three cases this leaf's item 18 (D-25) added to this module, which this card did not mention.** They drive `lifecycle_guidance` over a real leaf external-memory contract: a published authority routes out of closeout-completed to `curator_coherence` with `action="validate"` and the canonical `caller` while `nextOperation` stays `request_integration_decision`; an unpublished leaf is still told to integrate; a series contract is never routed to the coherence route. The section above states them with their measured extents, and the Invariants section gained the rule the first case enforces — a step's reason has to travel with the step. `_external_memory_leaf` builds the contract and writes the authority where the resolver names it. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real code commit; the reference rows are left to the citation-range repair pass that owns them.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Added real Git completion coverage for absent/malformed/stale cache states and unlanded/missing outputs; retained the three existing finalization/vocabulary/checkpoint scenarios. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: `lifecycle_finalize_task_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:862-893. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T19:50+02:00 — 260831-LOCR-L31: the first case was renamed with its subject —
-  `test_a_pending_cleanup_offers_a_retry_and_never_a_cleanup_decision` →
-  `test_a_pending_cleanup_offers_finalization_and_never_a_cleanup_decision` — because the
-  `cleanup-pending` phase now routes `finalize` / `lifecycle_finalize_task` with
-  `nextRequiredArgs == ["contract_path"]` instead of a `retry_cleanup` / `worktree_cleanup` move;
-  recorded the new assertion set (including that `"worktree_cleanup"` is absent from the summary) and
-  the **inverted** second case (`retry_cleanup not in NextOperation`, `finalize in`), which is a
-  removal rather than an addition because the branch the first case covers was that member's only
-  writer. Added `nextRequiredArgs` to the asserted-projection invariant and re-pointed the guidance
-  and model reference ranges after this leaf's line movement. Verification metadata remains
-  closeout-owned; no acceptance claim.
-- 2026-09-12T04:10+02:00 — Created by the 260831-LOCR-L30 follow-up curator pass. Documents the
-  three cases, the one-cell-per-case fixture convention, and the checkpoint projection the new case
-  pins (which is the exact set of assertions that failed before the `checkpointed` branch existed).
-  Verification metadata is pinned to the leaf base commit and remains closeout-owned.
-
-- 2026-09-12T01:26:36+00:00: Hand retirement by the 260918-TSIP-L11 closing seat of the mechanical repair this timestamp recorded. The ranges it wrote for `_post_integration_phase` and `retry_cleanup` (mcp/src/agents_remember/worktrees/modules/guidance.py:255-329; mcp/src/agents_remember/worktrees/modules/guidance.py:302-302) were re-read against the module on the merged tip and re-cited by hand, and the machine marker is removed so neither is read as an unverified projection. The claim row itself now cites mcp/src/agents_remember/worktrees/modules/guidance.py:245-328, which holds `_post_integration_phase`'s definition. No claim wording changed; no verification stamp is advanced over prose that was not re-read. No content impact: mechanical anchor-range projection bound to citation source snapshot 1b5cbe38ab438de766feb0fc3860228f5125b623ebbee641f90211d51326d68e; claim bytes unchanged; generated by ccr-r10@v1.

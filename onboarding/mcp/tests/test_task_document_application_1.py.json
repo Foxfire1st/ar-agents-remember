@@ -1,0 +1,732 @@
+{
+  "path": "mcp/tests/test_task_document_application_1.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Leaf create syncs parent master row",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:937d2d1243824b510fb898eb5c88a348ec268db817cbf360ad9c210f7d1369ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_create_syncs_parent_master_row"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:0f95280f395193350db3a9f89104a7514d3626d5b8a3be816dc4a50f9d6e07c3",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Dry run does not mutate existing files",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:6c3a4ed688e18af678b22e9c7a2e4e83a06be10c0175b65b7bd050e9a5b96574",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dry_run_does_not_mutate_existing_files"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:2293ecc068b18be0967d38a3faf75917a50713886a2334a9c71b4aa518b92f8f",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Dry run would lose flags unmodeled md content",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:633e84b19fdb12a8215566cb80ee14f6b6dbb01ee75934794b233e1947de93da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dry_run_would_lose_flags_unmodeled_md_content"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:1432f2f1572ea198a22ccccef2ebc9de9bc6eafcf5f9aa2ccd6b65c0ab9e16cd",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Replace rewrites structural fields and decisions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:9b183eb2a268c4dea11f7e281db45a46fc7ef5f55f6aa512ff1237dec94910f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replace_rewrites_structural_fields_and_decisions"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:1dcf66f162681fc1a4ccdcffb7036c85af1a78a7f6ce980ca1b66b440108ae56",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Replace rejects document path change",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:a79b426c7b1c00e62fe7a7c51bf19e77bc700ec343b391cb489c6d736a29281f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replace_rejects_document_path_change"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Set step updates only and names the parent of a bare substep id",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:5642383be71a4ebcc2ca9f54b8a2b79260bde5ce0b1b55abfc0ca37c67d14406",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_set_step_updates_only_and_names_the_parent_of_a_bare_substep_id"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:09d1d11cbdadcbc9eedd984bcc2d08e3a9f2be1b929749ddbf426a052ac2c723",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 298
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Set step names the parent for a dotted child id",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:93336a7dcf756f69f9c10050a9dbeb7f0c8b47ff8d2685c9fbaae133cb8d9357",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_set_step_names_the_parent_for_a_dotted_child_id"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:457df2c8b1c1f361bf64c64fa581174856145ae92d1cb7d25384e00097c6bf9d",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 334
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Set step refuses an ambiguous id",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:9c8408d47af04731f2f1e9446273a1fefa64fea10dac71de128e4e551e3c78bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_set_step_refuses_an_ambiguous_id"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:02e07b79457422acc321865ca56937a200b77e90894a67ecbcaf487d84e0afdc",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 366
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Add step creates one unit and refuses an existing id",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:e366170e4877fad37107a0ce8282dedee9f287377a1e9f5d92c165cc000e07fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_add_step_creates_one_unit_and_refuses_an_existing_id"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:44a3e01efd2cd797c90a48f98a74031951345837475797bc8489997e468f521d",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Remove step requires a reason and records the removal",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:90026811dd127a9d1a75d432da6da7fd681949b5e6cfa870efff98156d14fdd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remove_step_requires_a_reason_and_records_the_removal"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:0e1a5eed6b7c8d8174c0f095c8d327468ae4c8b9de3578370018b08fc9ce71bd",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 392
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Remove step deletes a done step and repairs a completed document",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:84be54d9d7b5f41c029da7569215a1108e1963d7aedc745ac180b98fefdc9447",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remove_step_deletes_a_done_step_and_repairs_a_completed_document"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:5851da379ed2e2e4c3ffd39371879085c84a7aedc2f1d191ff95d3ccfb57eedd",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 413
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Leaf updates preserve manual master scope",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:48980cc389be3e67ff55d257177fddeeb222e7b7b37f97d1f020bff4dd1cd63e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_updates_preserve_manual_master_scope"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:5bd842aac7c084ba02c786a34be7bbf2a5c3cc3922dde5791b8ca564170fea1e",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "A top level note persists instead of being discarded",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:7c599da75fd222ef0aee9529cef3ab59b4c6b666ea7f6b062580b88fa2455180",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_top_level_note_persists_instead_of_being_discarded"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:9ad1f74396cf4ed6ba609527c51e26aab7c77c233c1beae1d950fcb2fba10c1f",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 473
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "A top level note is rendered into the markdown",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:e0a197993b41212149893d413375e5718acbf73d54e95ff86f6d4a9426fa8903",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_top_level_note_is_rendered_into_the_markdown"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:02cc5d14108a73fbbf0f81c9ba379ee3a79909cb0ffb681f28eba7914095592a",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 472
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Read steps returns the checklist and changes nothing",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:87a8b27badecfc12f99fb225a3d72b16163eaaf8aea11b8aa6057a166bd4f085",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_steps_returns_the_checklist_and_changes_nothing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:60baa2346219525762fd258f23304114776881accb8cc3dcdbce53862f2987f9",
+            "locator": {
+              "end": 529,
+              "kind": "line_range",
+              "start": 492
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Skip step is exact audited and does not cascade",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:36aaa46ead78abbc7197b9f11f11b8b906263d9dd4d6a95b3553ba8d3f205401",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_skip_step_is_exact_audited_and_does_not_cascade"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The restamp decision table: both derived fields absent and only the series path absent both produce a candidate; a fresh lifecycle still overwrites a stale binding; the one exact no-op is everything bound and current.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:1b8db3129e1a73b1fef3c71d9abbaf4af894d9eac337cb66a80f55cacbeadaf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafDocMasterLinkBindingTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:8547da4bbc25ee55951c9dc76518054c5dcf73fe06794e48a954ba163d0ab373",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_binds_only_the_derived_fields_that_are_absent"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:a46909ca5f32731c3e14e03973f05cc2bf84b84fd36fe1f53a5d665d1a03d82f",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 577
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:2280a9675db2e952144b1eeeb94770654b8842e02b3aeecafddb33d53539ea71",
+            "locator": {
+              "end": 666,
+              "kind": "line_range",
+              "start": 602
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The class-local helpers that author the pre-contract state directly and plan against it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:61f47931426a8abac87fcf363979893ba0e5ab1d6032b36dc62294f1c6dce80a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_doc_path"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:ce27dc54d01380514773234c33569d3df22eb8d37cade08b1bca265742c58adc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rewrite_leaf_doc"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:92cb8614ccdb8787032ccc53e07c363969fe201d9c5e7c908902df7d7c942ea0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The focused read's payload survives the response model the tool advertises: the real handler's `steps` list validates through `finalize_tool_response`, and an undeclared key still fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:53e6d4a691589dc6d9088b6496f5983ec8063830536a2fc508e61af98e843253",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_steps_response_validates_against_the_model_the_tool_advertises"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Done child cannot hide pending parent from progress or master sync",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:ca1baf7e7114c6dcfa6cf7b19bd1eae0d9fabf9827103242df80f9330fc47561",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_done_child_cannot_hide_pending_parent_from_progress_or_master_sync"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:1673faa9341464e91016e2d180cd3eff82cf11324ef0adaf3e31aa04f5296a75",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "An unreadable parent master refuses the leaf edit rather than dropping the row",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:ea04d22186a1d6ef8fea7f1de86ebe8521a311e734af39fdc08f3e56122ed50b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_parent_master_refuses_the_leaf_edit_rather_than_dropping_the_row"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:a67fdca3838599d65dd3b308598018b3b76559d5e7d13e6ce60987f40b558bbf",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Explicit cross series master ref never falls back to local master",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:02571c7ca409515a72c2503d0093846e6bdc575981412335a70a8643eb3f5084",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_explicit_cross_series_master_ref_never_falls_back_to_local_master"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:8c0a61013c41f75da01a8a70912a89d33d6e7ab7be7ffc4031bd37818b8e914e",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Leaf sync refuses duplicate or mispointed exact parent row before write",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:9c4c0e0db4c67dc96984c6b9d555f5f6e6b1cb01fb21cdd974e5fcf5a8f85323",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_sync_refuses_duplicate_or_mispointed_exact_parent_row_before_write"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:53d53a55b41e189bcfaaa864d0658dbf1e1c78a1df412e7d9c8f6cef68c57ccb",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Leaf sync demotes completed master when work becomes unresolved",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:f8600889ad49bb369c34911c2073200dd1d132a954fa53d5d940d5127a2f56c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_sync_demotes_completed_master_when_work_becomes_unresolved"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:9948adb599182aa2b23e56c37798f81de3a342f121831a6b483061a3bdfad404",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Set status and set field",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:31c0621efe9fff3f9ad2a06af3f1c5f912878f677e0348e893545d8d0c418292",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_set_status_and_set_field"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:bb46bdcb719f3603842e0a875e78597df6b907269d0c0d61559272cca268ad65",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Set field cannot repoint plane owned contract identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:0d7c496d79fc433fc42df1ce9e30dd4df09feeb5f037dfb681dff00f816877df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_set_field_cannot_repoint_plane_owned_contract_identity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:613d8278bdd973d6844ab3b0891389dc6824b42520aa043309d865dbe8c05a22",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

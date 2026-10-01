@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_observer_projection_attention.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Blocked and provider down rank alarm first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51106f4e516cc453bb0f251b22592ad47e33c067",
+            "content": "sha256:bf41f4594bda1f6ecdff85aa0d35d25a46a1327eb19977daee14bbf5bdae6838",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_blocked_and_provider_down_rank_alarm_first"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dismiss suppresses actionable drift until newer snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51106f4e516cc453bb0f251b22592ad47e33c067",
+            "content": "sha256:36380ba9abd948e9f069974ccc0608dfe6ff451643018944c79dca9c962e9067",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dismiss_suppresses_actionable_drift_until_newer_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Newer turn end supersedes dismissal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51106f4e516cc453bb0f251b22592ad47e33c067",
+            "content": "sha256:9288fe3b6a903b3b9666328393886c4659fd7a18ab7f49bc4ca98d275be4de1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_newer_turn_end_supersedes_dismissal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

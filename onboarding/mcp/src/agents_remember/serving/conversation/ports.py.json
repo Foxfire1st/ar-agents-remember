@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/ports.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Normalized cursor, identity, page, event, status, capability, and resume types are defined centrally.\n\nAnchor: \"class ConversationEventEnvelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03b82e309cb0279cc7f12095b4569da47b17bb16",
+            "content": "sha256:2a00663514e360fa87a2e922c9cc6bc42aa705519cd719b21527324c2ef947c9",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/models/conversations/stream_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

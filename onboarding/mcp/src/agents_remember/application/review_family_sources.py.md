@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_family_sources.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_family_sources.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:42:25+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -72,40 +62,32 @@ vocabulary (`AnchorResolution`, `ReadItem`) and the member-source reference with
 
 None recorded. Rendering the region is the dashboard's work and is not done by this leaf.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rows below name the projection, its two helpers, the one caller and the production-path cases that
 drive it over two real datasets and two real Git trees.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **One recorded realization claim projected as a side-bound reference, refusing a claim read without its stored role or rationale.** | `member_source` | mcp/src/agents_remember/application/review_family_sources.py:27-51 |
-| **The locator state stated through the model's own rule, from the observation's locator, exactness and ranges.** | `_locator_state` | mcp/src/agents_remember/application/review_family_sources.py:54-63 |
-| The diagnostic sentence one source reference has always carried, unchanged. | `_detail` | mcp/src/agents_remember/application/review_family_sources.py:66-77 |
-| The one caller: the roster owner's member composition. | `member_source` | mcp/src/agents_remember/application/review_family_rosters.py:523-523 |
-| **The value and the rule this projection fills.** | `ReviewFamilyMemberSource`; `source_locator_state` | mcp/src/agents_remember/models/knowledge/review_family_source.py:36-123 |
-| **The structured ranges this projection carries, filled by the resolver on the exact recorded blob only.** | `resolved_ranges` | mcp/src/agents_remember/models/knowledge/read_anchor.py:64-69 |
-| **Two members in one file keep two locators, two ranges and two stored rationales; a line range and a file locator resolve as their own states.** | "test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale" | mcp/tests/test_review_family_member_sources.py:262-290 |
-| **A changed file keeps its unchanged attributed range on each side.** | "test_a_changed_file_keeps_its_unchanged_attributed_range_on_each_side" | mcp/tests/test_review_family_member_sources.py:293-311 |
-| **Every pre-existing field keeps its published value; only the three new fields are added.** | "test_the_existing_source_fields_keep_their_published_values" | mcp/tests/test_review_family_member_sources.py:364-385 |
+- **One recorded realization claim projected as a side-bound reference, refusing a claim read without its stored role or rationale.** [1]
+- **The locator state stated through the model's own rule, from the observation's locator, exactness and ranges.** [2]
+- The diagnostic sentence one source reference has always carried, unchanged. [3]
+- The one caller: the roster owner's member composition. [4]
+- **The value and the rule this projection fills.** [5]
+- **The structured ranges this projection carries, filled by the resolver on the exact recorded blob only.** [6]
+- **Two members in one file keep two locators, two ranges and two stored rationales; a line range and a file locator resolve as their own states.** [7]
+- **A changed file keeps its unchanged attributed range on each side.** [8]
+- **Every pre-existing field keeps its published value; only the three new fields are added.** [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T16:42:25+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): created this one-to-one card for the member-source projection moved out of the roster module (which previously held it as the private `_source`) and extended per ICR-R31@v1 to carry, per side and per claim, the structured recorded locator, the resolver's resolved ranges and the locator state, with role and rationale carried exactly as stored and required. The module is untracked at the base commit, so `lastVerifiedCommitHash` names the leaf base and the verified basis is the working-tree delta on top of it; the closeout records the real commit.
+No meaningful cross-repo references found.

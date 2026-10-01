@@ -1,0 +1,26 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Family context composed for an invariant-identity or exact-invariant-revision selection within one bound review comparison.",
+  "conditions": [
+    "The existing invariant read policy discovers only the union of directly related family identities on the two bound snapshots; completed sibling rosters do not discover further families.",
+    "Each discovered identity is resolved on both bound snapshots through the existing family owner, using the family’s full authored revision population and existing predecessor-based head rule rather than the membership-bearing subset.",
+    "A unique authored head supplies its own guarantee and exact roster. Competing legitimate heads, including memberless heads, remain explicit unresolved candidates; genuinely absent or unreadable family sides keep their distinct states.",
+    "Primary invariant revision, statement, conditions and evidence remain independently composed, and family rosters use the existing comparison/subject-bound continuation and complete source-inventory owners."
+  ],
+  "exclusions": [
+    "No inferred membership, inherited roster, arbitrary latest head, extra family traversal, current-store substitution or fabricated historical counterpart.",
+    "Explicit family-revision requests retain their existing exact-revision selection and recorded-history contract; this does not replace them with a head lookup.",
+    "This obligation does not certify historical assessment loading, all evidence channels, installed browser behavior or whole-product acceptance."
+  ],
+  "id": "INV-RT13RESK",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "e22b4973-87f4-4532-adb2-b4362f22470b",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Each discovered family is composed independently on both bound snapshots through the existing family owner and authored-head rule. Missing membership of the selected invariant neither erases an existing family counterpart nor pins the family to a historical predecessor that still cites the member.",
+  "status": "proposed",
+  "supersedes": []
+}

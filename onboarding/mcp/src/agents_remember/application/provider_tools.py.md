@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/provider_tools.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/application/provider_tools.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -128,21 +118,21 @@ names projects. A configured repo id like `Cobalt` is therefore queried as proje
 - `cgc_dependencies` must keep using the native `analyze deps <module>` command
   shape; provider readiness does not prove this typed wrapper is correct.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Provider summary and diagnostics projection live in the provider status module. | `provider_status_packet`; `provider_diagnostics_packet` | mcp/src/agents_remember/providers/status.py:53-87; mcp/src/agents_remember/providers/status.py:105-127 |
-| Provider response models distinguish compact summaries from diagnostics/native payloads. | `ProviderSummary`; `ProviderStatusResponse`; `ProviderDiagnosticsResponse`; `ProviderNativeToolResponse` | mcp/src/agents_remember/models/providers.py:75-93; mcp/src/agents_remember/models/providers.py:96-119; mcp/src/agents_remember/models/providers.py:138-158; mcp/src/agents_remember/models/providers.py:182-188 |
-| Provider status and diagnostics payload builders produce the application-facing model inputs. | `provider_status_payload`; `provider_diagnostics_payload` | mcp/src/agents_remember/mcp/tools/providers.py:33-37; mcp/src/agents_remember/mcp/tools/providers.py:40-52 |
-| The base tool payload delegates the builder output to completion without normalizing it itself. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
-| Complete tool responses validate the normalized payload. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:131-145 |
-| Finalization converts the completed response into the model-facing result. | `finalize_tool_response` | mcp/src/agents_remember/models/tools/tool_response.py:15-26 |
-| The registry selects the response model for each provider tool. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
-| Watcher actions reject ambiguous refresh, retain stop/status, and require live launch authority for start/restart/invalidation. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:50-89 |
-| The launch-authority configuration exposes reload and requirement gates. | `ProviderAuthority`; `reload_provider_authority`; `require_provider_launch_authority` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:151-171; mcp/src/agents_remember/kernel/primitives/runtime_config.py:174-199; mcp/src/agents_remember/kernel/primitives/runtime_config.py:202-221 |
-| The watcher application entry point calls the launch gate. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
-| The query application entry point delegates to `_provider_operation_result`, whose required-provider path invokes the launch authority before the provider operation. | `grepai_search_tool`; `_provider_operation_result` | mcp/src/agents_remember/application/provider_tools.py:470-505; mcp/src/agents_remember/application/provider_tools.py:961-1008 |
+### Repo-Internal References
+
+- Provider summary and diagnostics projection live in the provider status module. [1]
+- Provider response models distinguish compact summaries from diagnostics/native payloads. [2]
+- Provider status and diagnostics payload builders produce the application-facing model inputs. [3]
+- The base tool payload delegates the builder output to completion without normalizing it itself. [4]
+- Complete tool responses validate the normalized payload. [5]
+- Finalization converts the completed response into the model-facing result. [6]
+- The registry selects the response model for each provider tool. [7]
+- Watcher actions reject ambiguous refresh, retain stop/status, and require live launch authority for start/restart/invalidation. [8]
+- The launch-authority configuration exposes reload and requirement gates. [9]
+- The watcher application entry point calls the launch gate. [10]
+- The query application entry point delegates to `_provider_operation_result`, whose required-provider path invokes the launch authority before the provider operation. [11]
 
 ## 260918-TSIP-L6 One Declared Refusal Per Provider Tool
 
@@ -162,46 +152,3 @@ and `provider_diagnostics_tool` (`:43-50`) already used — their `state: "noPro
 what the nine were brought up to, not a tolerated exception. Two argument-validation raises
 (`:493`, `:538`) deliberately still raise: a malformed argument is not a condition the product
 declares, and the entry point's own input model refuses it.
-
-## Update History
-- 2026-09-19T19:52+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T34`'s repair of the eight provider tools — one declared refusal site per operation (`ProviderRefusalSite`, `_PROVIDER_REFUSAL_SITES`), a payload half and a raised half, and the two family guards (`resolve_grepai_query`, `resolve_cgc_capability`) that make it one place rather than eight. Every citation range re-derived against the repaired file. Verification metadata stays closeout-owned.
-- 2026-09-12T20:53:11+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:22-24. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:75-77. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `complete_tool_response` repointed to mcp/src/agents_remember/application/tool_response.py:84-98. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound direct payload delegation and the query helper's required-provider launch path to their operative extents, preserving owner splits.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: introduced `ProviderQueryScope` (+ `WORKSPACE_QUERY_SCOPE`),
-  `GrepaiRepoScope` (+ `ALL_INDEXED_REPOS`), `GrepaiSearchQuery`, `GrepaiTraceQuery` and the internal
-  `ProviderOperation` / `_grepai_target` / `_grepai_operation` / `_canonical_repo_ids` seams; every
-  query tool's keyword list moved onto them. The launch-authority gate, worktree scoping, refusal
-  behaviour and native argument vectors are unchanged. Verification metadata pinned until closeout
-  stamps the L2 code commit.
-- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix: `_provider_operation_result` gained
-  `launch_capable_provider` — the SPECIFIC provider must be armed in the live map (GrepAI
-  funnels pass `grepai-memory`, CGC funnels pass `codegraphcontext-code`; missing ⇒
-  `ConfigError` before the runner is invoked), so an armed grepai no longer authorizes a cgc
-  one-shot. Verification metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `provider_watchers_tool`
-  gates `start`/`restart`/`invalidate-indexes` through `require_provider_launch_authority`
-  (disk-disabled ⇒ `ConfigError`; armed ⇒ the action runs on the live map) while
-  `stop`/`status`/`shutdown-all` stay legal; `_provider_operation_result` gained
-  `launch_capable` and `grepai_search`/`grepai_trace`/`cgc_visualize`/`_cgc_run_tool` pass
-  `True`, so one-shot runner containers are gated too; a worktree `settings_path_override` is
-  honored only under an armed live authority. Updated Code Commentary and Invariants.
-  Verification metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-07-02T15:40+02:00 — `cgc_dependencies_tool` now emits CodeGraphContext's
-  current `analyze deps <module>` command instead of the stale
-  `analyze dependencies <module>` spelling. Updated Code Commentary and
-  Invariants.
-- 2026-06-02T02:00+02:00 — `_grepai_project_selection` now emits `--project` as `stable_provider_id(repo_id)` (matching the watcher's project naming) and resolves `repo_ids` case-insensitively via the new `_canonical_repo_ids`; fixes uppercase repo ids (e.g. `Cobalt`) returning empty grepai_search/grepai_trace results. Updated Code Commentary and Invariants.
-- 2026-06-01T00:00+02:00 — `action="refresh"` removed and replaced by `restart` (no index changes) and `invalidate-indexes` (destructive rebuild); `_provider_invalidate_indexes` implements the destructive path. All CGC/GrepAI query tools gained a `worktree` parameter routed through `_resolve_worktree_target` / `_worktree_provider_targets` / `_load_worktree_grepai_provider` / `_provider_operation_result`. Updated Purpose, Code Commentary, and Invariants.
-- 2026-05-31T12:30+02:00 — Dropped the provider-runner integrity invariant: `_provider_operation_result` no longer calls `check_provider_runner_integrity` / returns a `runnerIntegrityFailed` block, and repo validation now goes through the shared `require_repo` guard (1.0.0 review remediation).
-- 2026-05-30T21:33+02:00: Re-verified against `825a172` after the provider dockerization / never-cap-indexing run; the controller surface (status, diagnostics, watchers, GrepAI search/trace, typed CGC tools) and its act-by-default `dry_run` behavior still match. Repaired the builder reference — provider payload builders now live in `tools/providers.py` after the `01f503d` `mcp/tools.py` split.
-- 2026-05-28T19:52+02:00: Created when provider MCP behavior moved out of the former `skill_tools.py` mega-facade.

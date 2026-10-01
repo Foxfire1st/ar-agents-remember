@@ -1,0 +1,191 @@
+{
+  "path": "dashboard/src/panels/notes-reader",
+  "references": {
+    "1": {
+      "note": "The read-only notes routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:a751e8b4d04a6eae9f3a33fa848a630a8cf66a31a29b970931ee96eaedd898d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_notes_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_notes"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_note"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The same-origin notes client (`listNotes`/`readNote`/`resolveNoteReference`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
+            "content": "sha256:ea96e2f129e7d29d6f2e847dca92d725fb659db2a4a0b2931b7985b15052079b",
+            "locator": {
+              "kind": "symbol",
+              "name": "listNotes"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
+            "content": "sha256:684ae4c7ea130b878532f5488a9dd9ce46584ce558626cc1fb52e3c9a51d6ba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "readNote"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
+            "content": "sha256:8c62e549e9afe5477f682e83eda4e4870e1fa470f6ebb4c7c0d196705144b939",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveNoteReference"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering.\n\nAnchor: \"function noteAsFileContent(\"; \"function dualPaneProps(\"; \"<DualPane {...dualPaneProps(note)} split={false} />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe0caf57f7ac45f1e37530a4f8f90edfa30b4eb",
+            "content": "sha256:594588f676c4d2debe3970e4c23069527741e528fdcf9ac4f6c9965912371242",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fe0caf57f7ac45f1e37530a4f8f90edfa30b4eb",
+            "content": "sha256:68a2b4d382437dadb4bbbe1d75607d067e34315faef5c4dd340524dfa4c6235d",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cockpit defines the note-opening callback.\n\nAnchor: \"const openNotes = useCallback((target: NotesReaderTarget) => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:70415866ef3eaf11b112a4d3a1e096c4a6dd6672bc1652987b78dd2e85ee207e",
+            "locator": {
+              "end": 535,
+              "kind": "line_range",
+              "start": 531
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cockpit defines the note-selection callback.\n\nAnchor: \"const selectNote = useCallback(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:477c90a87261c3bd02c91e291b73d783272a382dfeb16e8fa309dc55970b545c",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 538
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cockpit renders NotesReaderViewer.\n\nAnchor: \"<NotesReaderViewer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:5e7324eb16d1a1120e25ff0485617aa4e555dad57373f64a2c8235296b853979",
+            "locator": {
+              "end": 625,
+              "kind": "line_range",
+              "start": 625
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target.\n\nAnchor: \"function ReferenceList({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
+            "content": "sha256:57d93e8c8eee9b2809d8909bb805c385e80443956db0ace8c4891a48af78f973",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

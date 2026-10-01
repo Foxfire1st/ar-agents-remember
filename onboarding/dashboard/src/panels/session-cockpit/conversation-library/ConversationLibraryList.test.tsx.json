@@ -1,0 +1,127 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The list component under test (child-row grammar, `agentChildRow`, agentsNote render); imported at L14.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9585dab520ca2074f38b811a29f5f05dfdce1a08",
+            "content": "sha256:2aee42ed4bccc740f83722046b5a84bb3d3f17adea6f19c045a52bf0d930b761",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentChildRow"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`ConversationLibraryRow` — now the only wire type this file imports directly (L9); `HistoryCapabilities` and `LibraryConversationKey` reach it through the builders instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:e5ebf7bfa104d28ae1a9141a50c41fc0ed3dc1112ce9b802bf1055954b94c32f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryRow"
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `conversationLibraryRow` fixture builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:11a2a64cc3713243efa475ca44bac636e01269e82b807659073e30fc492ae8cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationLibraryRow"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `conversationLibraryAgentRow` fixture builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:f32777b80372f5438a436af893a02b77f790aa83eb5a52a2058d98aa733ab87e",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationLibraryAgentRow"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `historyCapabilities` fixture builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:6168a926ac6a286b9d07ed9c89efc664de8aadf2f6fc3d1862388c354b5ac698",
+            "locator": {
+              "kind": "symbol",
+              "name": "historyCapabilities"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `libraryConversationKey` brand mint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:8fe0c47d69a195c5da0c545119075421c966f12c5f1b2e2f4c8c22e663efdaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "libraryConversationKey"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The sanctioned-cast registry that records \"as LibraryConversationKey\" as a permitted site with its reason.\n\nAnchor: \"as LibraryConversationKey\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:eecad3f0c5cd894c1037dd4a3d1a87c9ef91ce9231ee6013dcc60339a70f1740",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

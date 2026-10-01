@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/args.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/worktrees/modules/args.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-20T06:22+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Purpose
 
 Defines the typed cross-layer DTO that carries worktree operation inputs from
@@ -81,30 +71,32 @@ The ledger is a computed consumer cache; it cannot supply an additional Git outp
 
 None recorded for the ledger-retirement boundary.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `WorktreeArgs` carries normalized closeout input, actual landed code/memory facts, and the one authored knowledge decision a reconcile call may carry. | `WorktreeArgs`; `knowledge_resolution` | mcp/src/agents_remember/worktrees/modules/args.py:35-118; mcp/src/agents_remember/worktrees/modules/args.py:60-62 |
-| `report_operation_progress` publishes progress through the exact worker-owned callback. | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:118-121 |
+- `WorktreeArgs` carries normalized closeout input, actual landed code/memory facts, and the one authored knowledge decision a reconcile call may carry. [1]
+- `report_operation_progress` publishes progress through the exact worker-owned callback. [2]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Public sync choice and resolution-action vocabularies are owned once by the worktree model. (`MemorySyncChoice`; `SyncResolutionAction`) | `MemorySyncChoice`; `SyncResolutionAction` | mcp/src/agents_remember/models/worktree.py:96-96; mcp/src/agents_remember/models/worktree.py:95-95 |
-| **The authored-decision vocabulary this transport carries for a reconcile call, owned by the merge model rather than restated here.** (`AuthoredReconciliation`) | `AuthoredReconciliation` | mcp/src/agents_remember/models/knowledge/merge.py:175-211 |
-| Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) | `WorktreeProviderSetupConfig` | mcp/src/agents_remember/worktrees/modules/models.py:35-43 |
-| Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. (`build_parser`) | `build_parser` | mcp/src/agents_remember/worktrees/modules/cli.py:132-195 |
-| Gate delegation policy model (kernel-owned since L9). (`GatePolicy`; `DEFAULT_GATE_POLICY = GatePolicy()`) | `GatePolicy` | mcp/src/agents_remember/kernel/primitives/gate_policy.py:53-63 |
+- Public sync choice and resolution-action vocabularies are owned once by the worktree model. (`MemorySyncChoice`; `SyncResolutionAction`) [3]
+- **The authored-decision vocabulary this transport carries for a reconcile call, owned by the merge model rather than restated here.** (`AuthoredReconciliation`) [4]
+- Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) [5]
+- Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. (`build_parser`) [6]
+- Gate delegation policy model (kernel-owned since L9). (`GatePolicy`; `DEFAULT_GATE_POLICY = GatePolicy()`) [7]
+
+### Cross-Repo References
+
+No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
+
+No additional cross-repository evidence applies.
 
 ## Series-Contract Notes
 
@@ -126,79 +118,13 @@ The current source seams include `WorktreeArgs`, `report_operation_progress`. Th
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Inputs shared by the worktree application layer, CLI, and domain functions. (`WorktreeArgs`) | `WorktreeArgs` | mcp/src/agents_remember/worktrees/modules/args.py:35-118 |
-| Advance the plane-owned operation when this call runs under its detached worker. (`report_operation_progress`) | `report_operation_progress` | mcp/src/agents_remember/worktrees/modules/args.py:118-121 |
+- Inputs shared by the worktree application layer, CLI, and domain functions. (`WorktreeArgs`) [8]
+- Advance the plane-owned operation when this call runs under its detached worker. (`report_operation_progress`) [9]
 
 ## Current Landed Composition
 
 The internal `integration_certification_owner` field carries the typed journal-owned integration certification continuation. It defaults to absent and is not a public authorization token; the integration owner validates its own authority.
 
-## Cross-Repo References
-
-No separately configured cross-repository implementation governs this file; any external-memory repository is addressed by the task contract.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-20T07:35+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **reopened claim re-read against the construct its range now covers, and the stale generated-projection record retired after that read.** The claim — *"Public sync choice and resolution-action vocabularies are owned once by the worktree model."* — names `MemorySyncChoice` and `SyncResolutionAction`. Each anchor was resolved at its own current declaration in the code worktree and the cited range holds it, so the pointer is current and the wording still holds unchanged: no re-cite and no re-wording was needed. The generated citation-repair bullet that recorded the mechanical projection of this claim's range was **removed** because that projection resolves an exact NAME rather than the claim's subject, so keeping it would leave an unverifiable range asserting currency it cannot support; with it retired the range stands as the curator-read citation it now is. The rest of the card's history is untouched, no other bullet or row was deleted, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T06:22+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the internal transport gained the one decided input this leaf adds.** `WorktreeArgs.knowledge_resolution: AuthoredReconciliation | None` is recorded with what it is (the authored decision for exactly one refused conflict and the side whose value is the reconciled one), why it is typed through `models.knowledge.merge` rather than restated here (the vocabulary is owned once, exactly as `resolution_action` is owned by `models.worktree`), and the fact that the pairing with its action is enforced in the sync driver's `sync_input_refusal` rather than by a default here. Every cited range in this card was re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
-
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=5e45e8425b3e6205a35a8a343e9c0178d1b2ec87f24472d586fb5cd181ccc24e. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "class WorktreeArgs" repointed to mcp/src/agents_remember/worktrees/modules/args.py:33-33. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new optional certification_profile field on WorktreeArgs carrying the repository-owned profile reference into closeout/integration.
-
-
-- 2026-08-26T03:37+02:00 — Narrowed sync inputs to shared `MemorySyncChoice` and
-  `SyncResolutionAction` aliases and documented contract-addressed continue/cancel. Verification
-  remains post-Dagger/closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
-- 2026-08-17T12:35+02:00 — 260815-DAG-L5: added the optional integration `quality_certification` field to worktree arguments. Verification remains closeout-owned.
-
-- 2026-08-17T12:30+02:00 — 260815-DAG-L5: added the optional integration `quality_certification` field to worktree arguments. Verification remains closeout-owned.
-
-- 2026-08-14T06:36+02:00 — L23 final candidate review: internal worktree arguments carry operation
-  progress and accepted-candidate evidence while public tool inputs remain task-addressed.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T20:43+02:00 — W2-B08: anchored 3 worktree-argument reference claims with exact model, CLI, and gate-policy anchors; ranges remain generated by the scoped fixer. Verification metadata stays pinned until closeout.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-
-- 2026-07-04T12:32+02:00 — 260703-L4: `WorktreeArgs` now carries
-  `gate_policy`, defaulting to all-human, so closeout preview/apply consumes the
-  trusted MCP gate delegation policy. Verification metadata pinned until closeout
-  stamps the L4 commit.
-
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `WorktreeArgs` now includes `parent_task` and `leaf_id` so all worktree operations can resolve nested active task roots and specific leaf enclosures without filesystem paths. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-13T18:45+02:00 — Slice 2c: added `lifecycle_id: str = ""` (the observable-lifecycle enclosure anchor the controller resolves and `_build_start_contract` stamps into the contract). Verification metadata pinned until closeout stamps the 2c code commit.
-
-- 2026-06-10T09:56+02:00 — Added `memory_sync_choice: str | None = None` (GitHub #54 sub-task D worktree_sync recovery selector).
-
-- 2026-06-10T09:30+02:00 — Added `stale_base_choice: str | None = None` (GitHub #54 stale-base preflight recovery selector).
-
-- 2026-06-10T07:30+02:00 — Added `retry_provider_setup: bool = False` (GitHub #53): on an existing contract, worktree start relaunches background provider setup instead of attaching; refused while a live setup heartbeat exists.
-
-- 2026-06-01T20:45+02:00 — `WorktreeArgs` gained `force` and `teardown_providers` for the abandon/cleanup teardown path.
-
-- 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.

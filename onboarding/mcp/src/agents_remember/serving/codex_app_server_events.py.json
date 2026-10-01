@@ -1,0 +1,35 @@
+{
+  "path": "mcp/src/agents_remember/serving/codex_app_server_events.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `CodexEventQueue` (lines 24-118) — Bounded queue with honest load-shedding: never raises, never silently drops..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9286c20e7b615c35596bad444210a531b98043e2",
+            "content": "sha256:4a7cd50bc104430e175e42d9c0cd4ab58e64d151ed255ce4b58fa84792b37d12",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexEventQueue"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9286c20e7b615c35596bad444210a531b98043e2",
+            "content": "sha256:f7d225d27189b951ba719a30bf8503e9511e3cf8565bba3046aadfeb7e353408",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

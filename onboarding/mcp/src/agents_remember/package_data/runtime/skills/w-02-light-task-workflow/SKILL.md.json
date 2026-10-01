@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work.\n\nAnchor: `## Task Artifact`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8f69e05dfb985510893fb3e92a78747bdea7609",
+            "content": "sha256:81c15edf86262e1e18be953fe87dfadc1b129780b97649a2ec12ed786ca5e3e3",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, waiting for commit approval before closeout commits, and leaving completion to `lifecycle_finalize_task` after the branch lands.\n\nAnchor: `## Agent Responsibilities`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8f69e05dfb985510893fb3e92a78747bdea7609",
+            "content": "sha256:086e3d58c860a98fa91088cb5d7e6a67a8c9fcc31728e6f5e62f998d107bc009",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline — refreshed onboarding content committed with the computed ledger cache excluded — before `c-09-git-worktree-manager` skill start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state.\n\nAnchor: `## Invariants`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8f69e05dfb985510893fb3e92a78747bdea7609",
+            "content": "sha256:46b89ed86767defdae358206ae1674d1b75aca45188b1c91a679c1dc160057b7",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

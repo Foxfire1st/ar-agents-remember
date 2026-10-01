@@ -1,0 +1,84 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/file_size.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The project-owned wrapper's file-size rail selects enforcing or report-only behavior from explicit configuration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "content": "sha256:073d4f17a220c088b85aa3658371831c8dff3635dd12990e270a8e72e8423aba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_size_step"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "content": "sha256:beba92f6d0a8ff7ffc247b43994421c6b89bc1de22b6dcece08179a3d6de89a2",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 290
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The arming boolean and measured scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:8135a5d24c237f70f247c57ea13bce05654862d31ca10833618fdc409e6180c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "file_size_armed"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:647e52f344f4a5aa49eb70735e89fde4fe0d2bdbaabbd9c66f44e5b7c471e20f",
+            "locator": {
+              "kind": "symbol",
+              "name": "size_paths"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The band-boundary and wiring suite.\n\nAnchor: \"class FileSizeBandsTests(unittest.TestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bc181f2aa3d648ba18869dcdbf942b114f18be7",
+            "content": "sha256:de36f1fd0deddd7728bd5ad2f6361149a041fef46da568fc1bf0dc7040e6fad4",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/tests/test_file_size_detector.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

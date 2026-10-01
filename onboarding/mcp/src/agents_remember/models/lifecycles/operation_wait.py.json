@@ -1,0 +1,113 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/operation_wait.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one typed wait-outcome Literal and its constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a08e895db5bad70e38c3efde63dd320864f691d1",
+            "content": "sha256:4bc59a71c22f92dfb97c343d85a84258e96b2e0212b42d75af63c9a760717351",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleWaitOutcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a08e895db5bad70e38c3efde63dd320864f691d1",
+            "content": "sha256:d7123b2bfb529037f6be71ad3596617a4b69290ea14d4775dc3e21bdf3378dbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "OUTCOME_CHANGED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The read-only bounded wait loop returning these outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fdef150ff0c4296ea02094499df128b00e397e",
+            "content": "sha256:745b21800186b5a4a6b8aa1b858ad4004b44f3961ec43699ebbf71c20b692a48",
+            "locator": {
+              "kind": "symbol",
+              "name": "wait_for_lifecycle_change"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The public wire response carrying the outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:212aa2e29f869d630a691b4bd1ad8086f89ad2a603de2103d2ca1e990992512d",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeStatusWaitResponse"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:e2ae0e25129056d9977daab6c27a60d14bbdd1a4dea40c8d167bb8a1a3492425",
+            "locator": {
+              "kind": "symbol",
+              "name": "outcome"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The durable cursor the waiters compare.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:1fad0ac0d36de0f0e08eb7ab87a3d85d76b039f0c4c3199f11a15238a060f95b",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaningfulRevision"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The vocabulary is one repository's lifecycle wait contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a08e895db5bad70e38c3efde63dd320864f691d1",
+            "content": "sha256:4bc59a71c22f92dfb97c343d85a84258e96b2e0212b42d75af63c9a760717351",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleWaitOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,177 @@
+{
+  "path": "dashboard/src/dev/Bench.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `happy-build`→`build-up` legacy-deep-link alias (05k).\n\nAnchor: \"?scenario=happy-build\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "content": "sha256:6c5c0e43f53b6eee016e18c069359056845fc54ba71ba64fae6354c4b679f7cf",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The grouped scenario picker is a compact selector.\n\nAnchor: `htmlFor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "content": "sha256:d806ae5cd8aebbe43a2006d73326dfcb09be8e08b2d1ed2e601ea7fd6852a5a5",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The selected scenario mounts the real cockpit shell.\n\nAnchor: \"chats\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "content": "sha256:cf1badc51f33094eb0289e3f866a37047fe9d265008c748784a73692449ab306",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The scenario model validates named engine-room scenarios before building frames.\n\nAnchor: \"scenario player: unknown engine-room scenario\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:269c34b74d805a992c9ebc1897cb1c648d0aae88de46429e84cf40feddde10e9",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The real cockpit shell it renders (also the shell rendered against fixtures).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:6fdf1e0ad4f182baf776bf3ac64b7530e1f43832b9b646cb1f0c15a70085a52f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:1eda33cb057457f00b53b454c6b262f23d811d88b1fb828ff0cf6731aa329492",
+            "locator": {
+              "end": 666,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The gallery fixtures hydrated by the legacy `?state=` path.\n\nAnchor: \"calm\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:67e050d059da499f329f1fc4fda702e7bf0bdbcb85cf2fd6d9fe696a5a4fb105",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "dashboard/src/dev/fixtures.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The dev terminal mock provided via context (slice 6e-1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9e4a8b01a0ca35b853fc4fe7248e59cf784815e",
+            "content": "sha256:f1fb9945ba4a57e6553c1e5f220b730a9b17d234150835df6b405dbc936e4d95",
+            "locator": {
+              "kind": "symbol",
+              "name": "mockTerminalSocketFactory"
+            },
+            "path": "dashboard/src/dev/mockTerminalSocket.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Picker styles.\n\nAnchor: \"bench-overlay\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b74ed16fea917655aa1db99cf0fb0260bf794d01",
+            "content": "sha256:6e3c50f39ec662c303bcbc442cbfe5096f2f2d7618f8865f55e26fb6411afc87",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/dev/dev.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Player active-control styles.\n\nAnchor: \"player__controls button.is-on\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b74ed16fea917655aa1db99cf0fb0260bf794d01",
+            "content": "sha256:f8304a402df78e303864dab56f5c4a6280504ec042f403bfff97c72ead0de577",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "dashboard/src/dev/dev.css"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

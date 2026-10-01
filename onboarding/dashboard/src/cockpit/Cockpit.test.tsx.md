@@ -1,15 +1,5 @@
 # dashboard/src/cockpit/Cockpit.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/cockpit/Cockpit.test.tsx`         |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`       |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `../overview.md`                                |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -133,32 +123,37 @@ No task-independent technical debt was identified during FEUI-L9R review.
 The shell suite now checks dirty/stale serving-stamp cues, mounted rail and Engine Room identity across
 full-bleed switches, and the React.memo export contract for all persistent cockpit layers.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for this file. | — | — |
+No relevant domain documentation was found for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:860-910; dashboard/src/cockpit/Cockpit.tsx:850-850 |
-| `GALLERY` fixtures + the `applySnapshot` hydration pattern. | `GalleryEntry`; `seed` | dashboard/src/cockpit/Cockpit.test.tsx:29-33; dashboard/src/dev/fixtures.ts:11-11; dashboard/src/dev/fixtures.ts:127-131 |
-| The shared jsdom stubs the render relies on. | "jsdom omits scrollIntoView"; "jsdom's media elements don't implement playback" | dashboard/src/test/setup.ts:86-86; dashboard/src/test/setup.ts:125-125 |
-| The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. | "renders complete bodies for direct"; "discards task A's late body after selecting task B and hydrates B exactly once" | dashboard/src/cockpit/Cockpit.test.tsx:338-398; dashboard/src/cockpit/Cockpit.test.tsx:400-442 |
-| The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. | "defaults to Operations" | dashboard/src/cockpit/Cockpit.test.tsx:769-796 |
-| The production source census, separately from the singular test query, establishes the sole `<SessionsView>` JSX mount. | "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:810-810 |
-| The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). | `withStates` | dashboard/src/cockpit/Cockpit.test.tsx:450-459 |
-| `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. | `railProjection`; `WARN_ROW`; "keeps a handoff state and a queue warning apart in the one rail that shows both"; "speaks the severity of an attention row into the accessibility tree"; "passes axe on the panel the severity label lives in" | dashboard/src/cockpit/Cockpit.test.tsx:861-909; dashboard/src/cockpit/Cockpit.test.tsx:911-921; dashboard/src/cockpit/Cockpit.test.tsx:923-933; dashboard/src/cockpit/Cockpit.test.tsx:935-951; dashboard/src/cockpit/Cockpit.test.tsx:953-963 |
-| The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. | `severityMark` | dashboard/src/panels/AttentionQueue.tsx:49-49 |
-| The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. | "task-state" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:673-673 |
-| The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). | `taskDoc` | dashboard/src/test/fixtures/wire.ts:284-289 |
-| `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. | `metricsFor` | dashboard/src/types/projection.ts:466-473 |
+- `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. [1]
+- `GALLERY` fixtures + the `applySnapshot` hydration pattern. [2]
+- The shared jsdom stubs the render relies on. [3]
+- The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. [4]
+- The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. [5]
+- The production source census, separately from the singular test query, establishes the sole `<SessionsView>` JSX mount. [6]
+- The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). [7]
+- `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. [8]
+- The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. [9]
+- The `Task progress: …; phase: …` label on `data-testid="task-state"` that React Aria's `role="option"` absorbs. [10]
+- The typed builder the local `taskDoc` factory now delegates to (and the header explaining why the `createdAt` it removed compiled before). [11]
+- `metricsFor()` — the client mirror of `reducer.py::_metrics` these seeds now call instead of listing buckets. [12]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## Historical FEUI-L8 Reviewed Candidate Delta
 
@@ -169,116 +164,9 @@ switches/focuses only the accepted exact session.
 This section records the FEUI-L8 review point. That candidate subsequently landed in code authority
 `31f58834f86c0d98e26b0896e099a2403a8729ee`, which this card now verifies.
 
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
 ## 260821-CLIVE Projection Fixture Alignment
 
 No production behavior or assertion changed in this file. The local projected `SeriesNode` fixture
 now supplies the required `discardedCount: 0` and `discardedSubTasks: []` cells so cockpit tests remain
 type-aligned with the canonical projection contract. Discard rendering is owned by the task-reader and
 lifecycle-list routes, not by this cockpit composition suite.
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "<SessionsView" repointed to dashboard/src/cockpit/Cockpit.tsx:809-809. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "<SessionsView" repointed to dashboard/src/cockpit/Cockpit.tsx:800-800. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "<SessionsView" repointed to dashboard/src/cockpit/Cockpit.tsx:798-798. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 8 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "<SessionsView" repointed to dashboard/src/cockpit/Cockpit.tsx:783-783. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `metricsFor` repointed to dashboard/src/types/projection.ts:467-474. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-24T15:04+02:00 — No content impact: 260821-CLIVE only completed the local
-  `SeriesNode` fixture with the two required discard-history fields. Existing cockpit behavior and
-  assertions are unchanged.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: removed duplicated Source ranges;
-  exact non-fixing check returns zero findings.
-
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 20 citation finding(s); scoped recheck clean.
-
-- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
-  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
-  every anchor below it. Re-anchored the one row citing that file: `metricsFor()` L203-L220 → L246-L257
-  (the comment naming `reducer.py::_metrics` at L246, the function at L250). No body claim changed —
-  the seeds still call `metricsFor(...)`.
-
-- 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: the body listed neither of the two new describes, so
-  both were added. cit:(["workspace rollup — the handoff reaches the header"], dashboard/src/cockpit/Cockpit.test.tsx:445-478) pins
-  `[data-testid="task-metrics"]` containing `2 awaiting you` for two `awaiting-developer` lifecycles and
-  containing no `"awaiting"` — while still reading `1 running` / `1 blocked` — when none are handed back.
-  cit:(["the left rail shows lifecycle states and attention severities at the same time"], dashboard/src/cockpit/Cockpit.test.tsx:851-964) renders
-  the whole `CockpitShell` on purpose and adds the accessibility-tree assertions: I confirmed against
-  `AttentionQueue.tsx` L222-L230 that the severity really is a `role="img"` + `aria-label` wrapper (so
-  `getByRole("img", { name: "Severity: warn" })` is a tree query, not an attribute read) and against
-  `LifecycleList.tsx` L385-L392 that the state span's label is absorbed by React Aria's `role="option"`,
-  which is why the two dots are asserted differently. Recorded the fixture conversion honestly: the
-  local `taskDoc` now delegates to `test/fixtures/wire.ts`'s builder, the leaf sub-task's `createdAt`
-  (declared by no server model) is gone, and the two hand-listed `metrics` literals became
-  `metricsFor(...)` — meaning the pre-existing L1/L5 cases now run against complete derived rollups
-  rather than typed-in numbers. `axe-core` was checked in `dashboard/package.json` and was ALREADY a
-  devDependency (`^4.10.2`) — this is its first use in this suite, not a new dependency. Citation
-  repairs, each re-anchored on its proving symbol: `CockpitShell` L124-L205 → L385-L442 (the old range
-  is inside the Panda `cva` block); the S5 cutover case L640-L667 → L759-L788; the sole `<SessionsView>`
-  JSX mount L551-L560 → L612-L628; the L1 composition range L329-L434 → L328-L434 so it opens on the
-  `describe`. Five rows added for the new coverage and its collaborators.
-
-- 2026-07-24T13:17:50Z — Added persistent-layer and serving-identity regression coverage. Verification
-  hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: replaced the retired `<Chats>`/`data-testid="chats"`
-  keep-alive claim with the landed S5 evidence: the test proves a found `sessions-view` node persists
-  through hide/reveal with no Sessions route, while the separate source census establishes the sole
-  JSX mount. Also labeled the former uncommitted-candidate note as historical after landing. Verified
-  against code commit `31f58834f86c0d98e26b0896e099a2403a8729ee`.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: documented the client/server fingerprint match and mismatch
-  regressions; verification metadata remains pinned pending candidate closeout.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T00:25+02:00 — 260715-FEUI-L1 (R1): added the "Sessions view: full-bleed keep-alive
-  layer" describe — same-node identity across switches, display/aria-hidden toggling, full-bleed
-  rails-hide, and the scope marker present while hidden. Pure addition; no existing case changed.
-  Verification metadata pinned to the task base until closeout stamps the L1 code commit.
-- 2026-07-12T16:45+02:00 — 260712-TRH-L1 reopen correction: added Operations click-to-detail
-  composition coverage for direct leaf, master, drilled, and lifecycle-bound readers under analytics
-  summary churn, plus a pending A-to-B switch with late A resolution. Verification metadata remains
-  blank until closeout stamps the code commit.
-
-- 2026-07-07T10:50+02:00 — L15: servingBuild stamp tests added. Verification metadata pinned until closeout stamps the L15 commit.
-
-- 2026-07-07T05:26+02:00 — 260703-L15 S3: added the serving-build stamp describe — the muted
-  stamp renders the snapshot's commit short-hash + "up <boot time>", falls back to `v<version>`
-  when the stamp has no commit, and renders NOTHING when the wire carries no `servingBuild`
-  (a pre-L15 server; never faked).
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-06-30T00:00:00+02:00 — L5 follow-up: added a `seedDrillableMaster` (+ `taskDoc` factory) and a "rail chat keys by
-  the drilled leaf, not the master" case — drilling a master's sub-task makes the `rail-chat-heading` the
-  leaf id, not the master, pinning the displayed-leaf key (L5 fix 1). Also mocked the lazy
-  `../panels/Terminal` (jsdom-safe) and reset the `sessions` store in `afterEach`. Verification metadata
-  pinned until closeout stamps the L5 commit.
-- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added a right-rail River⇄Chat toggle case — clicking the
-  `rail-toggle-chat` radio swaps the Event River for the single-instance `RailChat` and
-  `rail-toggle-river` swaps it back, pinning the `railView` switch on a railed view. Verification metadata
-  pinned until closeout stamps the L5 commit.
-- 2026-06-19T14:05 — Task 6 slice 6e-4: added the "Chats persistence across view switches" describe — pins that `<Chats>` stays mounted (its parent layer toggles `display` none↔flex) across a view switch and is the **same** DOM node throughout, so the live terminal is never re-created. Verification metadata pinned until closeout stamps the 6e-4 code commit.
-- 2026-06-16T02:30 — Created for slice 5f S1: render test pinning the full-bleed rails-hide (Engine
-  Room / Topology) vs railed (Operations / Memory) behaviour. Verification metadata pinned until
-  closeout stamps the S1 code commit.

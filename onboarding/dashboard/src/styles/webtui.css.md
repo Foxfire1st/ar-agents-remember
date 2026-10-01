@@ -1,15 +1,5 @@
 # dashboard/src/styles/webtui.css
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/styles/webtui.css`                |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -64,25 +54,13 @@ transform leaves them alone.
   `test/webtuiSpike.test.ts`.
 - The scope root lives on `SessionsView`'s root div; no WebTUI rule may match outside it.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The layer-order statement that slots `webtui` between effects and tokens. | "@layer reset" | dashboard/src/index.css:9-9 |
-| The token vars the mapping references (incl. the L1-added `--muted`). | "--muted" | dashboard/src/styles/tokens.css:13-13 |
-| The shared scoping options (prefix, includeFiles, the :root/html/body collapse transform). | `webtuiPrefixOptions` | dashboard/webtui-scope.config.cjs:26-30 |
-| The build wiring: Panda first, then the prefixer over the inlined imports. | "Panda first", "postcss-import", "postcss-prefix-selector': webtuiPrefixOptions" | dashboard/postcss.config.cjs:1-4; dashboard/postcss.config.cjs:8-11 |
-| The four automated spike assertions + exact-pin checks that keep this contract honest. | "S1 spike (a): every WebTUI rule is confined to the cockpit root", "S1 spike (b): one color system — WebTUI vars map onto podracer tokens", "S1 spike (c): the html[data-effects=off] determinism freeze still wins", "S1 spike (d): layer order + focus-visible survival (React Aria intact)", "S1 spike: exact version pins (0.x churn ruling)" | dashboard/src/test/webtuiSpike.test.ts:61-96; dashboard/src/test/webtuiSpike.test.ts:98-129; dashboard/src/test/webtuiSpike.test.ts:131-154; dashboard/src/test/webtuiSpike.test.ts:156-172; dashboard/src/test/webtuiSpike.test.ts:174-182 |
-| The scope-root carrier. | "data-testid=\"sessions-stage\"" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 14 citations (citation_anchor_missing=5, citation_prose_not_in_cit_form=4, citation_source_malformed=5); amended max-reviewer subject binding for layer and plugin ordering; final scoped citation check clean.
-- 2026-08-02T01:42+02:00 — No content impact: corrected Source Path link depth. The link(s) in this document carried one `../` too many and had never resolved from this card's directory — not code moving out from under a citation, the path as written. Enumerating every depth in both trees leaves exactly one that resolves and it is exactly one level shallower, so there was nothing to judge (`memory_quality/style/citations`, `citation_link_depth_wrong`). No claim, range or target document changed. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S1 (R2, OQ-D = adopt): the one WebTUI
-  mapping file — four dist imports into `layer(webtui)` via relative node_modules paths (Vite 8
-  postcss-import limitation), the `[data-view="sessions"]` token mapping (color-mix over token
-  vars only), and the scoped `:focus-visible` restore. The `@scope` fallback was ruled viable but
-  not needed (the build-time prefixer is runtime-free, layer-composable, and statically
-  testable). Verification metadata pinned to the task base until closeout stamps the L1 code
-  commit.
+- The layer-order statement that slots `webtui` between effects and tokens. [1]
+- The token vars the mapping references (incl. the L1-added `--muted`). [2]
+- The shared scoping options (prefix, includeFiles, the :root/html/body collapse transform). [3]
+- The build wiring: Panda first, then the prefixer over the inlined imports. [4]
+- The four automated spike assertions + exact-pin checks that keep this contract honest. [5]
+- The scope-root carrier. [6]

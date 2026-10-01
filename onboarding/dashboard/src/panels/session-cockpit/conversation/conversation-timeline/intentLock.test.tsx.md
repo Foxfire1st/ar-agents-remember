@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/conversation-timeline/intentLock.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/session-cockpit/conversation/conversation-timeline/intentLock.test.tsx` |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`                  |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](../overview.md)
@@ -44,36 +34,21 @@ Assertions preserved from the monolithic suite.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The intent-lock suite owns its shared hermetic geometry/timer fixture at the unique B3 suite boundary. | "ConversationTimeline — intent lock, follow-on-growth, latest chip (B3)" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/intentLock.test.tsx:12-12 |
+- The intent-lock suite owns its shared hermetic geometry/timer fixture at the unique B3 suite boundary. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-12T17:04+02:00 — 260731-EFA-L23 dashboard-gate repair: replaced duplicated geometry and
-  per-test fake/real timer ownership with `installScrollMemoryGeometry`, `feedOf`, and `pinGeometry`.
-  Focused Vitest is 10/10 with no unhandled teardown error; verification provenance remains
-  closeout-owned.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  intent-lock suite split from `renderer.test.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+No applicable cross-repository source was found.

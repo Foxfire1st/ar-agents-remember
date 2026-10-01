@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_export.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_export.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `0da444b3b2b61f6a86fa4076b283c305db025d22`|
-| lastVerifiedCommitDate | 2026-09-20T02:38:15+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -95,44 +85,35 @@ exactly that reason.
 None recorded for this slice. The unwired status is a carried limitation of the increment, not a defect
 this leaf left open.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The two boundaries this seam does not cross: an export is not a read response or a projection, and an import creates no commit and restores no ancestry.** | "an export is **not** a filtered read response"; "creates **no Git commit**" | mcp/src/agents_remember/application/knowledge_export.py:1-18 |
-| The seam's public surface, including the two constants and the validation report re-exported for a consumer that must not import storage. | `__all__` | mcp/src/agents_remember/application/knowledge_export.py:46-57 |
-| The export entry point. | `export_knowledge_artifact` | mcp/src/agents_remember/application/knowledge_export.py:60-63 |
-| The import entry point and the carried no-promotion statement. | `import_knowledge_artifact` | mcp/src/agents_remember/application/knowledge_export.py:66-74 |
-| **The read-only validation that produces no database at all.** | `validate_knowledge_artifact` | mcp/src/agents_remember/application/knowledge_export.py:77-96 |
-| **The value-or-refusal file reader: `selected_input_unavailable` for an unreadable path, `invalid_export` for non-UTF-8 bytes.** | `read_knowledge_artifact` | mcp/src/agents_remember/application/knowledge_export.py:99-109 |
-| **The body that is only handed out for an artifact the validator accepted.** | `canonical_body_of_artifact` | mcp/src/agents_remember/application/knowledge_export.py:112-126 |
-| The defect the layer below makes unreachable. | `KnowledgeArtifactSeamDefect` | mcp/src/agents_remember/application/knowledge_export.py:129-130 |
-| The four storage operations this seam delegates to. | `export_knowledge_dataset`; `import_knowledge_dataset`; `read_artifact`; `artifact_digest` | mcp/src/agents_remember/memory/knowledge/export_import.py:133-192; mcp/src/agents_remember/memory/knowledge/export_import.py:195-244; mcp/src/agents_remember/memory/knowledge/export_import.py:257-290; mcp/src/agents_remember/memory/knowledge/export_import.py:247-254 |
-| The reader and validator the seam composes for its read-only half. | `parse_export`; `validate_export`; `logical_body_of_artifact` | mcp/src/agents_remember/memory/knowledge/export_portable.py:490-543; mcp/src/agents_remember/memory/knowledge/export_portable.py:667-712; mcp/src/agents_remember/memory/knowledge/export_portable.py:721-731 |
-| The request and result vocabulary this seam takes and returns unchanged. | `ExportRequest`; `ExportResult`; `ImportRequest`; `ImportResult`; `PortableValidation` | mcp/src/agents_remember/models/knowledge/portable.py:36-44; mcp/src/agents_remember/models/knowledge/portable.py:101-133; mcp/src/agents_remember/models/knowledge/portable.py:47-63; mcp/src/agents_remember/models/knowledge/portable.py:136-176; mcp/src/agents_remember/models/knowledge/portable.py:66-98 |
-| The three sibling seams this module sits beside. | `write_authorship`; `publish_prepared_knowledge_snapshot`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge.py:117-137; mcp/src/agents_remember/application/knowledge_merge.py:74-83; mcp/src/agents_remember/application/knowledge_snapshot.py:142-147 |
-|  The layer ranks that make a lower owner consume models rather than this module. | "package.memory"; "package.application" | layers.toml:206-207; layers.toml:314-315  |
-| The nodes that drive the conforming round trip and the read-only recovery recipe through the public operations. | "test_a_populated_dataset_round_trips_to_an_equal_logical_dataset"; "test_a_filtered_read_response_cannot_validate_as_a_complete_export" | mcp/tests/test_knowledge_portable_roundtrip.py:356-427; mcp/tests/test_knowledge_portable_roundtrip.py:712-739 |
+- **The two boundaries this seam does not cross: an export is not a read response or a projection, and an import creates no commit and restores no ancestry.** [1]
+- The seam's public surface, including the two constants and the validation report re-exported for a consumer that must not import storage. [2]
+- The export entry point. [3]
+- The import entry point and the carried no-promotion statement. [4]
+- **The read-only validation that produces no database at all.** [5]
+- **The value-or-refusal file reader: `selected_input_unavailable` for an unreadable path, `invalid_export` for non-UTF-8 bytes.** [6]
+- **The body that is only handed out for an artifact the validator accepted.** [7]
+- The defect the layer below makes unreachable. [8]
+- The four storage operations this seam delegates to. [9]
+- The reader and validator the seam composes for its read-only half. [10]
+- The request and result vocabulary this seam takes and returns unchanged. [11]
+- The three sibling seams this module sits beside. [12]
+- The layer ranks that make a lower owner consume models rather than this module. [13]
+- The nodes that drive the conforming round trip and the read-only recovery recipe through the public operations. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The artifact may be exported to and imported
 from anywhere, but nothing in this seam reads another repository or writes a ledger row.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-20T00:16:01+00:00: Generated citation repair: `write_authorship`; `publish_prepared_knowledge_snapshot`; `merge_resolved_knowledge_datasets` repointed to mcp/src/agents_remember/application/knowledge.py:117-137; mcp/src/agents_remember/application/knowledge_snapshot.py:142-147; mcp/src/agents_remember/application/knowledge_merge.py:74-83. No content impact: mechanical anchor-range projection bound to citation source snapshot b8fe5b3589f1357e836aaad1587e69ed38bbda0d58221eaa2150e96eb0561e93; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): created this one-to-one card for the new fourth composition seam. It records the five entry points — the two pure delegations, the read-only validation that produces **no database at all**, the value-or-refusal file reader whose two failures carry different codes, and `canonical_body_of_artifact`, which **validates before it returns a body** because a body is what a comparison is made of and a refused artifact has no dataset identity to compare — plus the carried non-claims the ruled design made explicit: an export is not a filtered read response and not a Markdown projection, and an import creates no Git commit and restores no Git ancestry. It re-records the wiring boundary because it did not move: like its three siblings, this seam has **no non-test importer in `mcp/src`**. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

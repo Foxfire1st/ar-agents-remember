@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Whole-subject review answers and changed-file content answers read by one mounted review surface.",
+  "conditions": [
+    "The answer was admitted, is whole (not a page) and carried no refresh identity; content answers are kept only when state is content with an expansion.",
+    "Both stores are bounded LRU (24 reviews, 32 content answers) and live only as long as the mounted surface."
+  ],
+  "exclusions": [
+    "Paged and roster-continuation reads, which stay owned by the read cycle.",
+    "Refusals and failures, which are always asked again.",
+    "Re-validating a moved live candidate on return; the reader's refresh re-asks (O-R1-1, by design).",
+    "Content rendered outside a review surface, which has no cache."
+  ],
+  "id": "INV-MC654E0T",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "5db7b64f-00ad-4eae-b593-94a3e26a3fca",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An admitted whole-subject review and an opened file's content are read once per comparison generation: returning to a subject or reopening a file for the same code-tree and snapshot pair issues no request, a refresh always re-asks, an answer from another generation empties both stores, refusals and failures are not kept, and both stores are bounded least-recently-used stores owned by one mounted surface.",
+  "status": "proposed",
+  "supersedes": []
+}

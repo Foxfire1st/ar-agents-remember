@@ -1,0 +1,131 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact contract-owned candidate resolution with confinement and leaf-only rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c08748884801c252ef40003f0bc87fb750f3afe",
+            "content": "sha256:a0b961b2f9ec8acc5613ed40865f8c00ac83d6fb5d747b93366cb7a658b280f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_task_intent_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical identity computation over the resolved candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c08748884801c252ef40003f0bc87fb750f3afe",
+            "content": "sha256:67f304105de70ec794fef9a4712808f798aea5b2f7e172418151a077dec3a038",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_task_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Live-door currentness requirement used by closeout admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c08748884801c252ef40003f0bc87fb750f3afe",
+            "content": "sha256:d5bb16327953a176bd42b98ce7b0bf20d0532b6cb28c3b6ae600e34b26987cce",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_door_task_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The identity producer it delegates to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa8a422af6c17568acd7a89dbd33e0cce7f13bbe",
+            "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_identity"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The terminal leaf-doc resolver used by leaf contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afb2167df9758847d5986759f233bb6ebd42dd44",
+            "content": "sha256:a77c556c4e654ba288320ba6d8625d7cea93f2e7f2a224f7bd72ea3757a299aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_terminal_leaf_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afb2167df9758847d5986759f233bb6ebd42dd44",
+            "content": "sha256:489f9dbeeb62a7f55cc729d0a93bb4f55bd32fcb1a7a26e800db3e71968763a3",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The typed models behind the intent state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:bc56b3a6d16cf9b6df35621d6006d2dbd53b41003e7a249705032ab237385c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:4c0add1f4867b8581f781aba5f74eec5cebfcd0a9bd09061a5a456a5a405bccb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentState"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

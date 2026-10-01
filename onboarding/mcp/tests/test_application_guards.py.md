@@ -1,15 +1,5 @@
 # mcp/tests/test_application_guards.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/tests/test_application_guards.py`      |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                         |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -62,28 +52,11 @@ substring of each guard's message rather than the full string.
 - The tests exercise the guards directly; they do not drive an application entry point or MCP
   dispatch, and they assert on message substrings, not exact strings.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two guards under test live in the application layer. | `require_repo`; `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:16-24; mcp/src/agents_remember/kernel/authority.py:27-35 |
-| AuthorityError is the typed repository/path refusal used by application guards. | "class AuthorityError(" | mcp/src/agents_remember/errors.py:110-117 |
-| All such domain errors inherit ValueError through AgentsRememberError. | "class AgentsRememberError(" | mcp/src/agents_remember/errors.py:18-19 |
-| `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. | `McpRuntimeConfig`; `RepositoryScope`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:77-81; mcp/src/agents_remember/kernel/primitives/runtime_config.py:125-147; mcp/src/agents_remember/kernel/primitives/runtime_config.py:738-743; mcp/src/agents_remember/kernel/primitives/runtime_config.py:749-754 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated the concrete refusal class from its base class. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-
-- 2026-09-03T14:00+02:00 — 260831-CCR-L27 Gate-5 memory pass: re-read the
-  `RepositoryScope` claim against the current construct (still a dataclass at
-  runtime_config.py:77; wording retained, range 77-81 regenerated to the current
-  class) and advanced the verification stamp from 0506b57a to the leaf base commit
-  eb05a872.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.
+- The two guards under test live in the application layer. [1]
+- AuthorityError is the typed repository/path refusal used by application guards. [2]
+- All such domain errors inherit ValueError through AgentsRememberError. [3]
+- `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. [4]

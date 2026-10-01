@@ -1,0 +1,62 @@
+{
+  "path": "mcp/src/agents_remember/models/benchmarks.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Benchmark application entry points expose prepare/run service payloads through MCP.\n\nAnchor: `codex_benchmark_prepare_tool`, `codex_benchmark_run_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:90767b1cf7f32042d517f81c517ba348d61e953cca5a576ed7576f96c2c9198e",
+            "locator": {
+              "kind": "symbol",
+              "name": "codex_benchmark_prepare_tool"
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:313d69677bd41d25962fb7278dad42a5847cf254465729d62dafe4d017fb5d46",
+            "locator": {
+              "kind": "symbol",
+              "name": "codex_benchmark_run_tool"
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:c30aaedfd499eafa8fa4bb70c89fe8d78d17c3154a177fd4b33f20e83f840242",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:12e6f34a396975d2013c9a659eef4c2f4d674aabf64fbe084cc7eb622a18c2cc",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

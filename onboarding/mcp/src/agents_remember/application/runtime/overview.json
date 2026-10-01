@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/application/runtime",
+  "references": {
+    "1": {
+      "note": "Startup owns MCP process declaration, collaborator installation, and the serving-build payload gateway.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "content": "sha256:7caec175c6320d20accf7e357b79e757fff27bd113a5565c683b4beacba3a329",
+            "locator": {
+              "kind": "symbol",
+              "name": "declare_mcp_process"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "content": "sha256:d2b19b94ab8b1709bbf05887fb6d470af890ca6e85d160671b72559a2bfbfd99",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialize_mcp_application"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "content": "sha256:9c29d951910abed0042a43d058e5ae68fd77fd06994e8ab33343aa5808469774",
+            "locator": {
+              "kind": "symbol",
+              "name": "mcp_serving_build_payload"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_mcp_process"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Runtime installation is a thin typed delegation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10ffef7f8dfe40ebf25ce46db7d11c2f8d75c181",
+            "content": "sha256:467f4a6a564822c9967d0253e2cb876837e10d04373f708da2679f96482fb423",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Skill installation resolves the configured harness skill root and delegates the copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
+            "content": "sha256:364e64a9ed7adbe0959731447cf332d8eab1df0d3ef2a126b90f79e86a3120a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "skills_install_tool"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

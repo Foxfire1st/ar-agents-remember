@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/review_lane.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/review_lane.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:06:33+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -79,39 +69,30 @@ The application owner is `application/review_unexplained_lane.py` over `applicat
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement packet
 `MIK-R32@v1` (adopting `ICR-R33@v1`) and its rulings in `32_unexplained-changes-lane.json`; they live outside the code
 and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The three shapes, the buckets and the hunk classes, in the module's own words. | "fixes the three shapes the lane is served in"; "intersection only -- never coverage, correctness or preservation." | mcp/src/agents_remember/models/knowledge/review_lane.py:1-34 |
-| The lane's literals. | `LaneBucket`; `LaneHunkClass`; `LaneRangeReason`; `LaneMembershipState`; `LaneGateLinkage` | mcp/src/agents_remember/models/knowledge/review_lane.py:74-89 |
-| One entry's range or reason. | `ReviewLaneEntryRange`; `_range_or_reason` | mcp/src/agents_remember/models/knowledge/review_lane.py:103-119 |
-| Family occurrences and links with their keys. | `ReviewLaneFamilyOccurrence`; `ReviewLaneLink` | mcp/src/agents_remember/models/knowledge/review_lane.py:122-155 |
-| A hunk's facts follow its class. | `ReviewLaneUnknown`; `ReviewLaneHunk`; `_facts_follow_the_class` | mcp/src/agents_remember/models/knowledge/review_lane.py:158-182 |
-| One side, the non-text fact, and the counts per class. | `ReviewLaneSide`; `ReviewLaneNonText`; `ReviewLaneCounts` | mcp/src/agents_remember/models/knowledge/review_lane.py:185-220 |
-| The per-file response and one listed file. | `ReviewFileClassification`; `ReviewLaneFile` | mcp/src/agents_remember/models/knowledge/review_lane.py:223-249 |
-| A destination lists exactly its totals; one path and its bucket. | `ReviewLaneDestination`; `ReviewLanePath` | mcp/src/agents_remember/models/knowledge/review_lane.py:252-278 |
-| The lane reconciles, with every measured path listed once. | `ReviewUnexplainedLane`; `_buckets_reconcile` | mcp/src/agents_remember/models/knowledge/review_lane.py:284-312 |
-| The entry's count, never a zero when unmeasured. | `ReviewLaneSummary`; `_totals_problem` | mcp/src/agents_remember/models/knowledge/review_lane.py:318-361 |
-| Where the summary and the lane travel. | "attribution: ReviewLaneSummary"; "lane: ReviewUnexplainedLane" | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:108-108; mcp/src/agents_remember/models/knowledge/review_trees.py:262-262 |
+- The three shapes, the buckets and the hunk classes, in the module's own words. [1]
+- The lane's literals. [2]
+- One entry's range or reason. [3]
+- Family occurrences and links with their keys. [4]
+- A hunk's facts follow its class. [5]
+- One side, the non-text fact, and the counts per class. [6]
+- The per-file response and one listed file. [7]
+- A destination lists exactly its totals; one path and its bucket. [8]
+- The lane reconciles, with every measured path listed once. [9]
+- The entry's count, never a zero when unmeasured. [10]
+- Where the summary and the lane travel. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T14:06:33+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): created this card for the new model module MIK-R32 adds, recording ruling 2026-09-30T12:19:20 Q1 (`ReviewLanePath` and the `paths` validator) and review R1 F2/F4 (the caps the application now clips to). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

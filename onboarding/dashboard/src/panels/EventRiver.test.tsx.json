@@ -1,0 +1,187 @@
+{
+  "path": "dashboard/src/panels/EventRiver.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The panel under test (now a virtualized list; the `read.packet` per-kind row on an otherwise-generic river).\n\nAnchor: \"Event river\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d15a0455d7d09fc7f066615ef67e1560f9d37a9",
+            "content": "sha256:ef26f0328200084e026f5713fdda36413dfcfcca991070029e6f373e3f3a1a71",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "dashboard/src/panels/EventRiver.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The summary layer whose known-kind behavior, lifecycle-only task-document label fallback, and context-ready gate the render tests exercise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3197c79bd1aec076f39a5e65e6d0a3b3d99052ce",
+            "content": "sha256:c43940496069d26b63f6d95ff62712356ca52b330d42480d9ff58d598a2630b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarizeReadPacket"
+            },
+            "path": "dashboard/src/panels/eventSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The render regression pins that a lifecycle-bound row stays hidden until task-document context is available.\n\nAnchor: \"waits for lifecycle summary context before rendering lifecycle-bound rows\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "448c5e3ab54d21267abca8e9d1d1cf1d8851638e",
+            "content": "sha256:1ffa0255f4164d5a50cf45b97f7fcf4b64b881614a89165d8a325dadc708ffce",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts).\n\nAnchor: \"retains and virtualizes the full window beyond the old newest-60 cap\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "448c5e3ab54d21267abca8e9d1d1cf1d8851638e",
+            "content": "sha256:8ba2a6b60f7fc23bc292cd77946130bed62dfccec0251d3aa6ab59e12ca593ae",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`ev` delegates to the shared `observerEvent` builder and drops the `as ObserverEvent` cast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:a82a0882fb602faf321939bffff95b3bddceffcc52d86e117304a71983226595",
+            "locator": {
+              "kind": "symbol",
+              "name": "observerEvent"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:bcaff4518c1620c2f58027856315cd55675da50d3809e78286cd7bac510fcd4a",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 373
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`observerEvent` — the shared envelope builder supplying `schema`/`trust`, typed against the mirror.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:a82a0882fb602faf321939bffff95b3bddceffcc52d86e117304a71983226595",
+            "locator": {
+              "kind": "symbol",
+              "name": "observerEvent"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:bcaff4518c1620c2f58027856315cd55675da50d3809e78286cd7bac510fcd4a",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 373
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `read.packet` emitter that carries `data.repoId` + facts-only `files`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:fa7783dbb8fcf07b0759fd347f89bcf01d62f0a98a0a12650e0cdee7c87ddb3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "emit_read_packet"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The `ObserverEvent` shape (trust/actor/kind/data) the helper builds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObserverEvent"
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`qualifiedLeafKey`/`leafTitleForKey` — the task identity helpers used by the lifecycle-attached and lifecycle-only row tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:d89aefbc0307a52e699efa13f8b71184a74a065efb162c4a603c138f896689ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafTitleForKey"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T12:59+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [sprint-graph overview](overview.md)
@@ -59,45 +49,23 @@ React `act` so subscriber-driven UI updates settle through the normal mounted bo
 
 No file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured for this repository, and no external library fact
 is needed to explain this repository-local mounted regression.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation source is configured for this repository-local test contract. | n/a | n/a |
+No relevant external documentation source is configured for this repository-local test contract.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shell-level suite pins graph/queue reachability, sprint scoping, graphless queue reachability, and mounted canonical-reset clearance. | "sprint page shell (L12-R5)" | dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx:53-174 |
-| The real sprint page surface rendered. | `DetailPanel` | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
-| The master reader mounts the queue independently of the optional graph section. | `MasterOverview`; `SprintGraphSection` | dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:246-253 |
-| The sprint-scoped queue implementation reads the authoritative store and renders nothing when no matching queue remains. | `CloseoutQueueImpl` | dashboard/src/panels/CloseoutQueue.tsx:69-83 |
-| The canonical store reset clears all scenario projections, including `closeoutQueues`, in one transaction. | `reset` | dashboard/src/data/store.ts:382-400 |
+- The shell-level suite pins graph/queue reachability, sprint scoping, graphless queue reachability, and mounted canonical-reset clearance. [1]
+- The real sprint page surface rendered. [2]
+- The master reader mounts the queue independently of the optional graph section. [3]
+- The sprint-scoped queue implementation reads the authoritative store and renders nothing when no matching queue remains. [4]
+- The canonical store reset clears all scenario projections, including `closeoutQueues`, in one transaction. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
-
-## Update History
-
-- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: extended this card with the forcing mounted
-  regression: seed a visible unique queue through the real `DetailPanel`, run the canonical reset
-  while mounted, and prove both authoritative store state and queue-derived UI residue disappear.
-  Recorded that this is dev/test scenario infrastructure and production queue behavior remains
-  unchanged. Verification metadata remains pinned until governed closeout stamps the code commit.
-
-- 2026-08-20T10:45+02:00 — Created for 260815-DAG-L12 (R5): the sprint-page shell test —
-
-graph view + scoped CloseoutQueue mounted on the real DetailPanel, with queue scoping
-
-pinned. Verified at code commit b7f2c8e2.
-
-
-
-- 2026-08-20T10:45+02:00 — Created for 260815-DAG-L12 (R5): the sprint-page shell test —
-  graph view + scoped CloseoutQueue mounted on the real DetailPanel, with queue scoping
-  pinned. Verified at code commit b7f2c8e2.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/effect_views.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/effect_views.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T10:34+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -92,39 +82,31 @@ the member groups in.
 - **The scope's detail sentence counts what the read produced**, so it describes the read rather than
   the store's expectations.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one builder: the member groups, the change sets, the computed membership and the stored precedence, assembled into one derived scope. | `effect_scope` | mcp/src/agents_remember/memory/knowledge/effect_views.py:135-173 |
-| The membership fact, read out of each member's own stored `change_set_id` — the only thing this module computes. | `_membership_by_change_set` | mcp/src/agents_remember/memory/knowledge/effect_views.py:222-250 |
-| The stored predecessor identities keyed by successor, which make a superseded change set addressable rather than overwritten. | `_precedence_by_successor` | mcp/src/agents_remember/memory/knowledge/effect_views.py:264-275 |
-| The change set's view, carrying all six declared parts plus its computed membership, its stored predecessors and its unresolved references. | `_change_set_view` | mcp/src/agents_remember/memory/knowledge/effect_views.py:379-435 |
-| The stored lifecycle returned rather than a constant, with a third state reported as a damaged store. | `_lifecycle` | mcp/src/agents_remember/memory/knowledge/effect_views.py:438-455 |
-| The per-kind existence lookups that make subject resolution a lookup and never a guess. | `_SUBJECT_EXISTS`; `subject_resolves`; `realization_claim_resolves` | mcp/src/agents_remember/memory/knowledge/effect_views.py:113-125; mcp/src/agents_remember/memory/knowledge/effect_views.py:477-484; mcp/src/agents_remember/memory/knowledge/effect_views.py:487-491 |
-| The closed field set an unresolved fact may be reported under, mirroring the view model so the builder cannot report one the model would refuse. | `UnresolvedField` | mcp/src/agents_remember/memory/knowledge/effect_views.py:81-86 |
-| The three unresolved reasons, each stated as a boundary rather than as a lookup failure. | `ASSESSMENT_ABSENT_DETAIL`; `REQUIREMENT_REFERENCE_DETAIL`; `SUBJECT_UNRESOLVED_DETAIL` | mcp/src/agents_remember/memory/knowledge/effect_views.py:91-95; mcp/src/agents_remember/memory/knowledge/effect_views.py:99-104; mcp/src/agents_remember/memory/knowledge/effect_views.py:107-111 |
-| The row readers the views are built from, which keep the views pure functions of stored rows. | `decode_effect_record_row`; `decode_effect_revision_row` | mcp/src/agents_remember/memory/knowledge/effect_records.py:249-260; mcp/src/agents_remember/memory/knowledge/effect_records.py:263-310 |
-| The derived scope and unresolved-reference models these builders produce. | `AuthoredEffectScope`; `UnresolvedReference` | mcp/src/agents_remember/models/knowledge/change_set.py:253-267; mcp/src/agents_remember/models/knowledge/change_set.py:139-158 |
+- The one builder: the member groups, the change sets, the computed membership and the stored precedence, assembled into one derived scope. [1]
+- The membership fact, read out of each member's own stored `change_set_id` — the only thing this module computes. [2]
+- The stored predecessor identities keyed by successor, which make a superseded change set addressable rather than overwritten. [3]
+- The change set's view, carrying all six declared parts plus its computed membership, its stored predecessors and its unresolved references. [4]
+- The stored lifecycle returned rather than a constant, with a third state reported as a damaged store. [5]
+- The per-kind existence lookups that make subject resolution a lookup and never a guess. [6]
+- The closed field set an unresolved fact may be reported under, mirroring the view model so the builder cannot report one the model would refuse. [7]
+- The three unresolved reasons, each stated as a boundary rather than as a lookup failure. [8]
+- The row readers the views are built from, which keep the views pure functions of stored rows. [9]
+- The derived scope and unresolved-reference models these builders produce. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A view is a function of one namespace's own
 stored rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T10:34+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): created this one-to-one card for the authored-effect record group's derived views. It records that nothing is stored, that membership is the only thing computed, the four states that become readable (membership, unresolved assessment reference, unresolved requirement reference, unresolved subject) and why each is a state rather than a refusal, the existence-lookup rule that keeps resolution from becoming a parse, and the union ordering that keeps the two reporting planes reconcilable. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

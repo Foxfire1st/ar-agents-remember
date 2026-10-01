@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/code_object_retention.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/code_object_retention.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
-| governingOverview | `mcp/src/agents_remember/worktrees/modules/overview.md` |
-
 ## Governing Overview
 
 [worktrees/modules route overview](overview.md)
@@ -152,16 +142,16 @@ identity is: the commit id has to be a function of the retained objects and noth
   unmeasured (see the boundary above). It is recorded as an open question rather than a todo with an
   owner in this leaf.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own docstring and functions, in the cases that
 measure the pin against a real repository, and in the two consumers (`review_comparison_retention` for
@@ -170,47 +160,33 @@ the retention commit's **identity is supplied explicitly** so the commit id is a
 objects; custody counts only the refs and commits the caller **names**, so the leaf's own work branch is
 never custody; and `absent` is a reader's observation with its own type, never a stored custody value.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the three properties — one commit and one ref, measured custody over named history only, explicit release with a record — and of what it does not decide. | `retain_code_object`; `code_object_custody` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:1-35 |
-| The published surface, the namespace, the two custody literals and the third observation's literal. | `__all__`; `RETAINED_CODE_REF_NAMESPACE`; `CUSTODY_RETAINED`; `CUSTODY_COMMITTED_HISTORY`; `CUSTODY_UNREADABLE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:48-84 |
-| The constants that make a retention commit's id independent of the ambient identity and the clock. | `_RETENTION_EMAIL`; `_EPOCH`; `_GIT_OBJECT` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:86-91 |
-| **The durable history a custody measurement is allowed to find the tree in, and the empty set as a statement.** | `CustodyNames` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:94-106 |
-| **The pin record — ref, commit, tree, base — whose four fields release requires together.** | `RetainedCodeObject` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:109-122 |
-| **The release record a caller stores as unavailable history, including the custody measured at release and the honest `absent` case.** | `ReleasedCodeObject` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:125-143 |
-| The ref builder and its namespace-escape refusal. | `retention_ref` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:146-162 |
-| The one Git question that answers a boolean rather than raising. | `object_readable` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:165-175 |
-| **Retention: the recorded base as parent, the one-directional idempotence, and the refusal to re-point a ref another generation owns.** | `retain_code_object` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212 |
-| **Custody over named history only, bounded by the number of names and never walking ancestry.** | `code_object_custody` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240 |
-| **The three-way observation, and the reason `absent` is a separate type from the two custody values.** | `code_object_observation`; `CodeObjectObservation` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:79-84; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:243-256 |
-| The reader's question about a recorded pin: gone, or re-pointed. | `retained_object_readable` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:259-267 |
-| **Release: refuse a moved ref, converge on an absent one, and return the record with custody measured before deletion.** | `release_retained_code_object` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:270-316 |
-| **The identity-supplied commit, and the base commit's own date that keeps the pin meaningful in `git log` while staying derived.** | `_retention_commit`; `_retention_identity` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:366-415 |
-| The named-commit resolution that drops what does not resolve to a commit. | `_named_commits`; `_commit_of`; `_commit_tree`; `_parent_of`; `_ref_commit` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:418-465 |
-| The Git failure's own words, rendered transport-safe for an actionable refusal. | `_diagnostic`; `_require_namespaced`; `_require_present`; `_existing_or_refuse` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:322-363; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:468-474 |
-| The Git runner and the identity option that makes an explicit commit identity possible. | `run_git`; `GitRunnerOptions` | mcp/src/agents_remember/kernel/git_command.py:117-216 |
-| The typed failure this module raises for every one of its ref outcomes. | `CodeObjectRetentionError` | mcp/src/agents_remember/errors.py:180-191 |
-| The sibling Git-mechanics owner this module sits beside, and the branch-ref spelling its callers use for the protected source branch. | `local_branch_ref` | mcp/src/agents_remember/worktrees/modules/git.py:79-85 |
-| The create-side consumer: custody measured against the contract's names, and a pin created only when named history does not hold the tree. | `custody_names`; `_pinned_outcome` | mcp/src/agents_remember/application/review_comparison_retention.py:278-295; mcp/src/agents_remember/application/review_comparison_retention.py:312-358 |
-| The release-side consumer: the fast-fail re-check, the record written first, and the record withdrawn when this module refuses. | `release_comparison_code_object`; `_require_the_ref_names_the_record` | mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124; mcp/src/agents_remember/application/review_comparison_reclamation.py:150-171 |
-| **The cases that measure the pin against a real repository: the leaf's own work branch is not custody and the pin survives losing it, genuine protected history stops the pin, and a moved ref is never deleted.** | `test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it`; `test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens`; `test_a_retention_ref_that_moved_is_never_deleted` | mcp/tests/test_knowledge_review_comparison_generation.py:871-912; mcp/tests/test_knowledge_review_comparison_generation.py:915-968; mcp/tests/test_knowledge_review_comparison_generation.py:971-1018 |
-| **The case whose control object proves `git gc --prune=now` really reclaimed while the pinned objects survived.** | `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation`; `_write_control_object` | mcp/tests/test_knowledge_review_comparison_generation.py:236-241; mcp/tests/test_knowledge_review_comparison_generation.py:336-387 |
+- The module's own statement of the three properties — one commit and one ref, measured custody over named history only, explicit release with a record — and of what it does not decide. [1]
+- The published surface, the namespace, the two custody literals and the third observation's literal. [2]
+- The constants that make a retention commit's id independent of the ambient identity and the clock. [3]
+- **The durable history a custody measurement is allowed to find the tree in, and the empty set as a statement.** [4]
+- **The pin record — ref, commit, tree, base — whose four fields release requires together.** [5]
+- **The release record a caller stores as unavailable history, including the custody measured at release and the honest `absent` case.** [6]
+- The ref builder and its namespace-escape refusal. [7]
+- The one Git question that answers a boolean rather than raising. [8]
+- **Retention: the recorded base as parent, the one-directional idempotence, and the refusal to re-point a ref another generation owns.** [9]
+- **Custody over named history only, bounded by the number of names and never walking ancestry.** [10]
+- **The three-way observation, and the reason `absent` is a separate type from the two custody values.** [11]
+- The reader's question about a recorded pin: gone, or re-pointed. [12]
+- **Release: refuse a moved ref, converge on an absent one, and return the record with custody measured before deletion.** [13]
+- **The identity-supplied commit, and the base commit's own date that keeps the pin meaningful in `git log` while staying derived.** [14]
+- The named-commit resolution that drops what does not resolve to a commit. [15]
+- The Git failure's own words, rendered transport-safe for an actionable refusal. [16]
+- The Git runner and the identity option that makes an explicit commit identity possible. [17]
+- The typed failure this module raises for every one of its ref outcomes. [18]
+- The sibling Git-mechanics owner this module sits beside, and the branch-ref spelling its callers use for the protected source branch. [19]
+- The create-side consumer: custody measured against the contract's names, and a pin created only when named history does not hold the tree. [20]
+- The release-side consumer: the fast-fail re-check, the record written first, and the record withdrawn when this module refuses. [21]
+- **The cases that measure the pin against a real repository: the leaf's own work branch is not custody and the pin survives losing it, genuine protected history stops the pin, and a moved ref is never deleted.** [22]
+- **The case whose control object proves `git gc --prune=now` really reclaimed while the pinned objects survived.** [23]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It runs Git against one local repository whose
 path the caller supplies and creates a ref inside that repository's own namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 2 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one inherited citation defect repaired — it is not this leaf's own.** The row carrying the module's own statement of the three properties cited `code_object_retention.py:1-35` with an Anchor cell reading `*(module docstring)*`, which is italic prose rather than an anchor: nothing in the row said what those lines were supposed to contain, so the range could not be checked at all. The defect predates this leaf (the card was created by 260921-ICR-L11) and is repaired here only because this leaf's curation pass owns the gate finding. The Anchor cell now names two real identifiers that occur **literally inside the cited range** — `retain_code_object` at line 8 and `code_object_custody` at line 16, the retention act and the measurement the docstring's three properties describe — so the claim is checkable. The Finding wording, the cited range and every other row are unchanged; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
-- 2026-09-21T19:50:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): created this one-to-one card for the module this leaf introduced as the **Git-object retention owner** ICR-R11@v1 requires ("retain code objects explicitly until reachable committed history takes custody"). It records the decisions rather than the function list: one commit whose **parent is the recorded base commit** keeps *both* bound objects alive through **one** ref under `refs/ar/retained-code/`, a namespace outside `refs/heads` and `refs/remotes` so nothing fetches, pushes, merges or deletes it; the commit's author, committer and both timestamps are supplied explicitly and dated by the **base commit**, so the commit id is a function of the retained objects and a pin re-created after an explicit release is the identical object — which is what makes an exact re-freeze converge instead of producing two generations claiming one index; custody is measured against **named** durable history only, so a leaf's own disposable work branch is never custody, the measurement never walks ancestry, and an empty name set keeps the pin; a ref that already names a different pin is refused rather than re-pointed; and release requires the ref to still name the recorded commit, refuses a moved ref, converges on an already-absent one, and returns the custody measured **before** deletion because it cannot be recovered afterwards. The card also carries the third observation (`absent`) as its own type — never a stored custody value — and records one **open boundary**: whether a landed integration or closeout operation objects to the `refs/ar/retained-code/` namespace was not measured by this leaf, which cannot run those transactions. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted candidate; what was actually read is this leaf's uncommitted working tree, and closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/role_capsules/manifest.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/models/role_capsules/manifest.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [models overview](../overview.md)
@@ -92,50 +82,29 @@ or source path that the parser rejects is meant to be rejected.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources. | n/a | n/a |
+No relevant documentation found after checking live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The frozen vocabulary this parser is validated against. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:64-75; mcp/src/agents_remember/models/role_capsules/vocabulary.py:77-89; mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-108 |
-| The canonical authored metadata this module parses. | "\"schema\": \"ar-role-capsule-composition/v1\"" | skills/l-01-agent-lifecycles/composition-manifest.json:2-2 |
-| The tracked generated copy under the governed `mcp/**` surface, produced by the propagation owner. | "ar-role-capsule-composition/v1" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json:2-2 |
-| Tool identities declared here are narrowed against the admitted policy, never granted. | `narrow_tool_requests` | mcp/src/agents_remember/models/role_capsules/tools.py:24-58 |
-| **Skill references declared here are carried, not narrowed** — no `tool_policy`/`permits` call is made for them. | `skill_references` | mcp/src/agents_remember/models/role_capsules/compiler.py:153-190 |
-| The skill identity helper and the skill entry a reference is built from. | `skills_declared_identity`; `CapsuleSkillEntry` | mcp/src/agents_remember/models/role_capsules/manifest.py:93-107; mcp/src/agents_remember/models/role_capsules/sources.py:175-185 |
-| A declared skill must resolve, and its root file must be admitted, or compilation refuses. | `_require_role_skills_are_declared`; `_require_declared_skills_present` | mcp/src/agents_remember/models/role_capsules/manifest.py:479-508; mcp/src/agents_remember/models/role_capsules/source_set.py:195-228 |
-| The shipped-manifest agreement and structural-refusal cases. | `test_the_shipped_manifest_parses_and_agrees_with_the_frozen_vocabulary`; `test_every_role_and_operation_the_shipped_manifest_declares_has_a_source`; `test_a_manifest_that_routes_two_identities_at_one_file_is_refused`; `test_a_manifest_whose_applicability_contradicts_itself_is_refused` | mcp/tests/test_role_capsule_admission.py:185-196; mcp/tests/test_role_capsule_admission.py:197-218; mcp/tests/test_role_capsule_admission.py:255-274; mcp/tests/test_role_capsule_admission.py:241-254 |
-| Every tool identity the shipped manifest requests exists in the public roster. | `test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` | mcp/tests/test_role_capsule_admission.py:219-228 |
+- The frozen vocabulary this parser is validated against. [1]
+- The canonical authored metadata this module parses. [2]
+- The tracked generated copy under the governed `mcp/**` surface, produced by the propagation owner. [3]
+- Tool identities declared here are narrowed against the admitted policy, never granted. [4]
+- **Skill references declared here are carried, not narrowed** — no `tool_policy`/`permits` call is made for them. [5]
+- The skill identity helper and the skill entry a reference is built from. [6]
+- A declared skill must resolve, and its root file must be admitted, or compilation refuses. [7]
+- The shipped-manifest agreement and structural-refusal cases. [8]
+- Every tool identity the shipped manifest requests exists in the public roster. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract is consumed by this parser.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `skill_references` repointed to mcp/src/agents_remember/models/role_capsules/compiler.py:153-190. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `skills_declared_identity`; `CapsuleSkillEntry` repointed to mcp/src/agents_remember/models/role_capsules/sources.py:175-185; mcp/src/agents_remember/models/role_capsules/manifest.py:93-107. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `COMPOSITION_MANIFEST_SCHEMA` repointed to mcp/src/agents_remember/models/role_capsules/manifest.py:37-37. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
-
-- 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: **correction driven by review finding F06** (`evidence gap`), not by a source change. The Logic section had claimed the compiler "narrows **tool identities** and **skill references** … against the admitted permission policy". That is false for skills: the only policy-narrowing path on this candidate is `tools.narrow_tool_requests`, which applies to **tool ids**, while `compiler.skill_references` makes no `tool_policy`/`permits` call at all. Rewrote the paragraph to state the two channels separately — tool ids are policy-narrowed and refuse (`tool-request-not-permitted`) outside the admitted snapshot; skill references are **carried** with `identity`/`origin`/`uri`/`revision` and are verified against the admitted source set, never against a policy — and added an invariant that a skill reference must never be described as narrowed or granted. Also refreshed against the A3 candidate: new `CapsuleSkillEntry` and `_parse_skills` rows, the third structural refusal `_require_role_skills_are_declared` (plus its `source_set` counterpart `_require_declared_skills_present`), and every line range in this card, all of which had shifted. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit, and no hash was invented here.
-
-- 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: created this card for the composition-manifest
-  parser added by the deterministic capsule compiler leaf (`CAPS-R02@v1`). Records the
-  declared-over-manifest authority direction, the two structural refusals, the no-prose rule,
-  and the new per-role tool/skill declaration lists as requests that are narrowed rather than
-  granted. Verification metadata is left at the leaf base commit because the source is
-  uncommitted — the governed closeout stamps the real code commit.
+No meaningful cross-repo references found.

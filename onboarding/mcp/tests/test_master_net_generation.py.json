@@ -1,0 +1,136 @@
+{
+  "path": "mcp/tests/test_master_net_generation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The evidence lane the module runs in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared master-shaped world (series + two leaf contracts, real code/memory repos) and its builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "content": "sha256:6610fde6b6f5f5e66b29c98373ed90dd5658de16b3ed546c0752b0812678c478",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "content": "sha256:da4755e888c8a60ec4f80217ad367562e7a2231c8a260f515d8aa953e8473c15",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "content": "sha256:f11d5e51f1ab9605ce8b8663ef3914c1f96782ec8089fecf63e91488e25e5a72",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The conforming add-then-remove case and the F1 diff-failure refusal case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "content": "sha256:2de796bf3226f012ae5d15a82940e8c11b88c163c9e563dfd6aca2252a8cb15e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9e3d894b4507b91ffa3471824cb09af1fa7e1dc9",
+            "content": "sha256:9ace9375d2a6e6c42c4bae2fd355a2648977fce3a93d80eb3818f7fc775a7705",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_diff_failure_after_validation_is_refused_never_reported_as_zero"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lane row that makes these cases run.\n\nAnchor: `test_master_net_generation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:5411749dbd3b184fb122907bb2b8bcf744cb6f96b7f6b3bb3af87b6b3157ba5b",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:7a575351d35d49184626d8535b1e76e3c313d05810ad25cf7446591727a247a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_master_net"
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "content": "sha256:c05746a0396ad5a7276164066781be3b539a8381708540ffb470ea6c4e9937a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

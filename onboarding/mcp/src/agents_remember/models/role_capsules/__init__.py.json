@@ -1,0 +1,236 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen DTO surface this package re-exports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:dd176736cd45826295ab7e8823cd0daa90ae87e13a0f34eb93404d222c7c71e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleAdmittedFacts"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:57b0718a3ae9e2c8769b9728d72996c910023d64d1b783d49aaf471a3ab4c350",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCapsule"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:372b60031c0d67597a35a00adfa085d1e81e08fded7627846c3e61026916c63d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationResult"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:fba635e4a8c48dbcba56094aea3dadd7a723aa3dd607642e47be93ae599628bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleBinding"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:1149d13bee6cc64657efc367056d1677d1f1410e89958f11c0c4e6d64a642c7e",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:0bec921fc81bcef7099c072fed58c2f1cc03055115386f7cc3a4d1ba798d5f80",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:2b89c8b5b829b4c7aee6c3d04716f38516d808c54d06d59ddab700d15a20c067",
+            "locator": {
+              "end": 475,
+              "kind": "line_range",
+              "start": 451
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:6911d0c7080958ba99c131184f8583b674a4559c02b336a3398998ba611347df",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The I/O boundary this package deliberately does not contain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:915fd89222d1328505df921b788cb9559a7190b597c8b7549b071d961fa0e4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_capsule_sources"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sibling package that owns admitted-context resolution and reading.\n\nAnchor: `CapsuleCompilationOutcome`; `CapsuleAdmissionRequest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dd0b1463a17ce23128b22d06e82ce24f1df5c1c",
+            "content": "sha256:7fb86a812d5f7475ae949d059f4808d226d000bcb629d8cc069f6350163c2285",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The layer contract that places these value types in `models` and the I/O in `application`; it declares the target order (`errors < kernel < models < … < application < mcp < cli`) and states that it fails against the tree until the named leaf moves the code.\n\nAnchor: `[contract]`; `rule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:a61a4fdfbfe3426b07c832a4a9f5d3720b928cb03a528b0e959f5d74c80a1e70",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fitness function and where its result is produced. **Measured on this candidate: the tree does not yet satisfy its own declared target — 16 pre-existing violations, all `worktrees -> memory_quality` and its siblings; none names a role-capsule module and there are 0 undeclared imports.** Do not read this contract as currently satisfied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:f134280fcd0a69bf0773201d352b7814b51c4732841b7a4fe6458e8d5d1e884b",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_layering"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:e07187b947938609ba57dd8dbac7214da9928f7d65679569b60f277a46f5ab6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LayeringReport"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The unit tests that pin the fitness function itself (not this candidate's result).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b0782366b995fd3bfd4e6bf0d6cba8823b7190",
+            "content": "sha256:a78a9bf39a659e5a5b2b809304ed5ccf5360807e0fb57723bed8af902718150c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_tree"
+            },
+            "path": "mcp/tests/test_layering.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "23b0782366b995fd3bfd4e6bf0d6cba8823b7190",
+            "content": "sha256:6bcb43940a58ca1762f93294c1a9d5d98c201dd9d0f3625ee101d3f87fd837ab",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_layering.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

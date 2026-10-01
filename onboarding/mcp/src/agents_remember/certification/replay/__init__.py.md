@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/replay/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/replay/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `e84c004c37a4bad082e1a7f1bdc4bd062282a185` |
-| lastVerifiedCommitDate | 2026-09-04T22:06:05+02:00 |
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification contract overview](../overview.md)
@@ -38,35 +28,25 @@ The facade exposes composition operations only; it never declares a numeric redu
 
 Execution and concrete replay-leg wiring are owned by later consumers, not this facade.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. The governing task artifacts (the CCR-R17 approved replay protocol requirement packet and the 17_measured-replay-and-reduction leaf doc) define the measured-replay protocol scope; task artifact paths are not repo-relative citations, so these facts are recorded as prose here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's declared replay protocol excludes numeric reduction thresholds from its records. | "Numeric reduction thresholds are" | mcp/src/agents_remember/certification/replay/__init__.py:1-10 |
+- The module's declared replay protocol excludes numeric reduction thresholds from its records. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The facade re-exports the comparison-report surface from its owning module. | `compare` | mcp/src/agents_remember/certification/replay/__init__.py:12-15 |
-| The facade re-exports the freeze/population surface from its owning module. | `freeze` | mcp/src/agents_remember/certification/replay/__init__.py:16-29 |
-| The facade re-exports the measured-run reducer from its owning module. | `measure` | mcp/src/agents_remember/certification/replay/__init__.py:30-34 |
-| The facade re-exports the span analyzer from its owning module. | `spans` | mcp/src/agents_remember/certification/replay/__init__.py:50-54 |
-| `__all__` fixes the complete public replay surface in one place. | `__all__` | mcp/src/agents_remember/certification/replay/__init__.py:56-88 |
-| The certification route facade re-exports this whole subpackage. | `replay` | mcp/src/agents_remember/certification/__init__.py:72-104 |
+- The facade re-exports the comparison-report surface from its owning module. [2]
+- The facade re-exports the freeze/population surface from its owning module. [3]
+- The facade re-exports the measured-run reducer from its owning module. [4]
+- The facade re-exports the span analyzer from its owning module. [5]
+- `__all__` fixes the complete public replay surface in one place. [6]
+- The certification route facade re-exports this whole subpackage. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Measured replay stays repository-neutral contract evidence inside the certification route. | - | - |
-
-## Update History
-
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Retained the scope statement using its actual docstring sentence rather than the unrelated acceptance-scenario export. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-
-- 2026-09-04T22:23+02:00 - 260831-CCR-L17 Gate-5 memory pass: created this card for the new CCR-R17 measured-replay subpackage facade. Verification stamp is the full leaf code commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185` (tree `f97c4969d7ddb93eed75c80a4936fc05fab8e2eb`).
+Measured replay stays repository-neutral contract evidence inside the certification route.

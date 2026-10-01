@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/models/conversations/history.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The library serializer deliberately keeps nulls on the wire.\n\nAnchor: \"return value.model_dump(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:afbc7c15512050ede52bdb6f0c80b897d01b51c19d326757fa85e1e41d6db487",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

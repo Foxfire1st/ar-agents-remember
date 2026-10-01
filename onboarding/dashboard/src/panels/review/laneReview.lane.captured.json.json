@@ -1,0 +1,76 @@
+{
+  "path": "dashboard/src/panels/review/laneReview.lane.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The totals and every path's bucket.\n\nAnchor: \"paths\"; \"\\\"state\\\": \\\"measured\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a402960cdcc6da71ee808cff1a7ddec8bf3434e6",
+            "content": "sha256:35c70ab955d4ceeedc307d8d9ef8959e402b044589283873b7ffd9de2e257ab6",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `Unexplained changes` destination and its totals.\n\nAnchor: \"unexplained_changes\"; \"\\\"non_text\\\": 2\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a402960cdcc6da71ee808cff1a7ddec8bf3434e6",
+            "content": "sha256:8dc62cb1425768d5b2becdd8cc82eb7935398e09ce0c1d13e90d5c780f118e7b",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `Unknown attribution` destination, with the entries recorded at an older blob.\n\nAnchor: \"unknown_attribution\"; \"after: 4 entries recorded here supply no range\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a402960cdcc6da71ee808cff1a7ddec8bf3434e6",
+            "content": "sha256:9a9f7fb00bd2f026026d1e257dc4fd19e93d03d6ee0715fab681840373b8fddc",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/laneReview.lane.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7310b805a789910931fd5a77e9562cb7cb6a6c8a",
+            "content": "sha256:aed6eec04b7c4f063fedb8266e4c6152a75a4362e22f6022739ea40b0c382dce",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/panels/review/laneReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

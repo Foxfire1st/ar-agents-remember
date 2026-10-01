@@ -1,0 +1,326 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Strict declaration, live inspection and immutable authority snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:fd49157d567eeec0d83ecaa600159d19d1db0378f93ee067b96f5f5053096af0",
+            "locator": {
+              "kind": "symbol",
+              "name": "DaggerHostDeclaration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:1737af1dccdf00177621a0e46b242f839bce2ed5e9c6757f01a7310c82e90bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "DockerEngineInspector"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:c88c949f7d40f6b36d51da0d17c839a414c2025d9ae054f9ae4a23e86baa66e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DaggerAuthoritySnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:44be373072b7769396b6771ce8a811547e1d82d3789e228930fc5b2dbd2beb9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "authority_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Typed lock and authority refusal surfaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f52af19e4c6a8e21279ef804f3b29ef5fdf49670",
+            "content": "sha256:dc992d040683b2873cecb086737b750032f8eb26dd30a337b7bb2c4351aa9a56",
+            "locator": {
+              "kind": "symbol",
+              "name": "LockCapabilityError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f52af19e4c6a8e21279ef804f3b29ef5fdf49670",
+            "content": "sha256:dd5ad70ba4ed060a38eeff6462e479b0bc9b884ddba49babc06cc35dbdcbdb31",
+            "locator": {
+              "kind": "symbol",
+              "name": "DaggerRuntimeAuthorityError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Declaration parsing, host location and connection-only endpoint policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:1b56caa53bc086d7959126ad15d599b540da8cc2f487a6df9faffee8b03959b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_host_declaration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:6f3696e8bdb328fe6fb129685e946ca2c732feea5d193ea5403a6c0bd23c9bc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_host_level_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:8aec7810fe0d0b0d045b2e1d4475960d4d52c83976f1e16e7e43b76914ebafa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_endpoint_value"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Launch environment is bound to the admitted snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:342cbacc6e43c0087a8731c61fd65080c1108d0cec0b86151a0fed7bdb60914b",
+            "locator": {
+              "kind": "symbol",
+              "name": "authority_environment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:6defffb8db7b8e52981e3fe3a4816db3a14deca8d29315fd9d15dac5c51e97af",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_host_declaration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Host registry transaction entry, domain refusal, census, barriers and exact owner mutations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:e1559ace39aa897386513e4fa11b0b38b52e80867efaafdd6111e9c718955ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityRegistry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Admission freezes one authority and changes registry state under its lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:5f3a3344b5c5d5ab2c212bebef152b1d6cd0b8b35cb6941f7709d7060ce67080",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_dagger_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:23b4815ea32e96f9a95ddafe72e334f9fdee9a64e668c6bc54e2c445281c42aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_with_registry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Continuation and terminal release share the same physical registry lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:6902f2dfacc147cf2d200760c7008ee1bc305d7b18a5c0cbbe6c0e5b8613b91f",
+            "locator": {
+              "kind": "symbol",
+              "name": "reuse_authority_for_continuation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:92b9fa197273c4529dd9ae6f6d6fe4908cf69b55ab497e32eb34c722fcb587ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_dagger_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Process-start liveness and operation-scoped owner identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:08b900d641c357a50cfc950372bb514bfcaf721004164e13c5196971e230867f",
+            "locator": {
+              "kind": "symbol",
+              "name": "process_fingerprint_live"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:6f2b69e0e674270978b23c179e86fb34e0e82648528427b5f783384dcea945ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_host_process_fingerprint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:0d681c710cc3ba1486d74989ec1d3106c7d1e2de8009fb2af6779a391d0588fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_process_fingerprint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:5b2967cd32445cb99e7c1eb87027fa1d0d4427704e027735271ca30162e56ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "owner_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Host-local registry root configuration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:3e84f6880ff84c4db20211504da77d89908e3f6e0092d18f6e374678918b3e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "default_registry_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One physical lock protocol, actual thread/process exclusion and capability probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_path_for"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:915104295d8fa4d8973a118ed3314645db9b7e134d512c63302bf14e7f51085c",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_file_lock"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:453d3b09cee82b3412379fb449e22269ec97d11c8dd64c39efe1e612b49d5aeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_lock_capability"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

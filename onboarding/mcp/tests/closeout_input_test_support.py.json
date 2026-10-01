@@ -1,0 +1,120 @@
+{
+  "path": "mcp/tests/closeout_input_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The recorder verifies typed progress transitions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:eb0261c0b0a2c19450389708c4193e54f3165f835aeea1cdc75f8f4aee8d8347",
+            "locator": {
+              "kind": "symbol",
+              "name": "MutationEvidenceRecorder"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical setup passes only enabled code/memory messages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:9aa06f36685c033349f60b9aa1b179dc6f424142b1df22e09736d44290be3493",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_closeout_operation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Finalization publishes code/memory recovery cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:7b8fad8ba5dd079080f5bbb0e3f8e4fabe9896d2c7d312665e0d66c321746e81",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_closeout_finalization"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Input and WorktreeArgs builders share production normalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:ee8013dcde65b92a192ab77a34d5bfe7eb6d69c1ac739075385d925921caa8f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_operation_input"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:7205b78a3c664f64bf493142c9045ce62c0e053938706061921befc9362f8989",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_worktree_args"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Evidence builders retain the explicit durable states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:7f54cd7448b21086dd129068daddfaaeadfbdc5018c7441d6365130aa7bf0004",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_mutation_intent"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:c630c2d0dbd036fc49b7fcf4abbbfb376d570a2e8d31153762becf06b63d9927",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_commit_proven"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:f56c0e17b4a6528e64b797e59208ee22401d827085ef77951658d939ff944e2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_reconciled_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

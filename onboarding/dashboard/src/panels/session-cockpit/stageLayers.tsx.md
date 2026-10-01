@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/stageLayers.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/session-cockpit/stageLayers.tsx`      |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -42,33 +32,21 @@ The PTY layer must never unmount on transient focus changes.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The stage layer components. | `EmptyChatStage`; `ConversationPool`; `PtyLayer` | dashboard/src/panels/session-cockpit/stageLayers.tsx:13-109 |
+- The stage layer components. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Recorded task-document-plus-role launch context at the library-stage
-  composition seam.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the stage
-  layers module extracted from `ChatsStageBody.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+No applicable cross-repository source was found.

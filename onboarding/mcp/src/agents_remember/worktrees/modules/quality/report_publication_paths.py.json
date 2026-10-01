@@ -1,0 +1,100 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact publication boundaries and legacy projection cleanup are confined.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "999a59779d53606089e7056e6b917fac1fda276a",
+            "content": "sha256:11e966714fa017916f57a8cb3e7f357b23908d8c410de143d5fa02ea6d741ed7",
+            "locator": {
+              "kind": "symbol",
+              "name": "preflight_report_destination"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "999a59779d53606089e7056e6b917fac1fda276a",
+            "content": "sha256:93179fab1eb6222ded7b79674212989c427b29cbc41fa3b2740ea05e42ac1190",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_legacy_report_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recursive inventory exposes irregular entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "999a59779d53606089e7056e6b917fac1fda276a",
+            "content": "sha256:f42aee40d41bb6048d9d2b0e7c34d8d910749e949541fd8bd83d4f5139b9888a",
+            "locator": {
+              "kind": "symbol",
+              "name": "report_tree_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Report reopening validates the safe locator, path nodes, size and digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "999a59779d53606089e7056e6b917fac1fda276a",
+            "content": "sha256:01d71a892e26e328f7714f2da3835d14e90dc650bc106f301029035b17eab82f",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_report_path_from_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "All managed generation candidates are preflighted before bounded retention pruning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "999a59779d53606089e7056e6b917fac1fda276a",
+            "content": "sha256:9e5af5aaa4b52c7fb1ffcccb058cdabe081ae95871b1a43da515aedfd226324f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prune_report_generations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The publisher supplies selected-certificate and prior-current protection before moving the pointer.\n\nAnchor: \"def _publish_reports(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1b6a9c04d61213a3ae710b4c7979eca305e661f",
+            "content": "sha256:bc3e7d99b92081ccb191e3b3af26168576b775a1c1e8060b0a8a62a28e803a72",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 437
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

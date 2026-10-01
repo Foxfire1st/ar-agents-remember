@@ -1,0 +1,149 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Execution publishes or reuses real memory output and refreshes the cache afterward.\n\nAnchor: \"ledgerCache\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:82f07877e1f8720099fb74a1d5d1acd9ff514510dd660e8033ef4876211a130d",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_direct_landing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:2ed178292059a03b2e80e88e5d8e1130489d02eafe95ee8b3fe93e7fb31c1073",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Prepared attempts preserve repository and exact pre-commit tree evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:cd45b2305222e7a01b8cf90918e4bfc0aa663889712936c7d5608c97b083a8f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_accepted_memory_prestate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:ca950dc7f3c5055a50c38ff9505d804052841476cb989ec5be27b9d2a8a755e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_prepared_direct_attempt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:0ed8353a9586779f617bc7248025bce64917f6ce15fd1308ee70b80df2629275",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared mutation intent and proof retain actual object checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:112946f07d62c75613cbc8278b9845297104d365edf3b2a89845efd4bef442eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_git_mutation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:74cede5d5666ede7da4a51fd2363de10a55831288779e487efe58a8475d97748",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_mutation_intent"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lifecycle recovery owner resumes the generation before execution.\n\nAnchor: \"lifecycle-generation-changed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66e88e65219d24196744b4328febf2a7a40dcc",
+            "content": "sha256:3d903382f2d942483703b354899fdadf37cdc45b4e74b348cf98cb2cf4e6b17a",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Lost-receipt recovery and clean reuse are exercised with real temporary repositories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
+            "content": "sha256:a096b135eb3b68c3bc32a895b09cee585bd9ba58dc7052409b1a8045464334ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recover_after_interrupted_receipt"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
+            "content": "sha256:04010af4035543f16e10e1a085e08495cb9f7a998f349c69adf9950414a4cf4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_publishes_memory_and_recovers_independently_of_cache"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/gitTrees.invariant.captured.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/gitTrees.invariant.captured.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:23:08+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -39,32 +29,21 @@ The body describes scratch copies under `/tmp/mik-l31-real`, not current project
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R25@v1` and its rulings
 (`25_reviewer-on-git-trees.json`) live outside the code and memory repositories, so they are named here and not
 cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The tree comparison it was read from (comparison 1 of the MIK-L31 scratch leaf). | "review:trees:1" | dashboard/src/panels/review/gitTrees.invariant.captured.json:1354-1354 |
-| The receipt row for this body, now with its request parameters. | "gitTrees.invariant.captured.json" | dashboard/src/panels/review/gitTrees.capture-provenance.json:39-39 |
+- The tree comparison it was read from (comparison 1 of the MIK-L31 scratch leaf). [1]
+- The receipt row for this body, now with its request parameters. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): body update, bytes unchanged. Purpose and Logic name its MIK-L35 consumers (`IntentWordDiff.test.tsx` and `ReviewSurface.wordDiff.test.tsx` read it; `wordDiff.test.ts` quotes its wording); Conventions says tests, plural.
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update for the MIK-L31 re-capture: leaf `260928-MIK-L31`, `review:trees:1`, and its new consumer `statementWording.test.tsx`. **Claims re-anchored:** the comparison row (`review:trees:2` no longer exists in the body) and the receipt row (reworded; this pass's generated bullet removed).
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T03:46:54+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): created this card for the new captured fixture. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

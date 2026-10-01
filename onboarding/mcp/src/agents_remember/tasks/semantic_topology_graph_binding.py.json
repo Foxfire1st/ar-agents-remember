@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/tasks/semantic_topology_graph_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen endpoint, node, edge, and graph subclasses preserve the schema while sealing collections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31ecbcf86c9cc204aaddbad83415e4a1a0d439ca",
+            "content": "sha256:7535ca0a5187a369732d8dcd943820585da3e7dec34e21370d26cb040d63c8af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ImmutableSprintExecutionEndpoint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "31ecbcf86c9cc204aaddbad83415e4a1a0d439ca",
+            "content": "sha256:1e7db6a963e0387bdabade998c9d9d463895f0ffe8d22465040f3689a21d921d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ImmutableSprintExecutionNode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "31ecbcf86c9cc204aaddbad83415e4a1a0d439ca",
+            "content": "sha256:ba8509ad30b80038c4888bf9ce794cc469852cc1b126c496e024254a32ba8220",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ImmutableSprintExecutionEdge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "31ecbcf86c9cc204aaddbad83415e4a1a0d439ca",
+            "content": "sha256:942be7268d0dc06b5f9daf77086d08b32f2de05c851e6977603b5607330749f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ImmutableSprintExecutionGraph"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical bytes are the only input to immutable materialization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31ecbcf86c9cc204aaddbad83415e4a1a0d439ca",
+            "content": "sha256:ca4a06bcecde48aad7c51b7f52ac63c22fbc40236f425b82c545b5a840030cb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "immutable_semantic_topology_graph"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/grammar/Markdown.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/grammar/Markdown.tsx`             |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -70,26 +60,13 @@ The renderer stays presentational and memoized: the listing is read from the pro
 context mounted by the task reader, never fetched here, and non-requirement links are
 untouched.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The detail-panel entry delegates the reader surface to its implementation. | "export const DetailPanel = memo(DetailPanelImpl);" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
-| MasterOverview renders the objective through Markdown and composes the section readers. | "export function MasterOverview({" | dashboard/src/panels/detail-panel/taskReader.tsx:189-266 |
-| MasterSection renders authored body text through Markdown and delegates shared decisions. | "export function MasterSection({" | dashboard/src/panels/detail-panel/taskReader.tsx:288-319 |
-| Bullets renders each item through inline Markdown. | "export function Bullets({ items }: { items: string[] }) {" | dashboard/src/panels/detail-panel/taskReader.tsx:701-711 |
-| DecisionList renders both decision and rationale through inline Markdown. | "export function DecisionList({ items }: { items: TaskDecisionNode[] }) {" | dashboard/src/panels/detail-panel/taskReader.tsx:771-786 |
-| The leaf TaskReader composes TaskReaderSections inside the requirement-link boundary. | "export function TaskReader({" | dashboard/src/panels/detail-panel/taskReader.tsx:638-674 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the requirement-address anchor handling — registered `requirements/...` links render as opening buttons via `useTaskRequirementLinks`, unregistered requirement addresses render as refused spans, and external/anchor links are untouched; applies to block and inline variants.
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: bound task prose, master sections, bullets, and decisions to their operative `DetailPanel` consumers. Verification metadata unchanged.
-
-- 2026-06-21T02:44+02:00 — Created for slice 6g: the shared `Markdown` grammar primitive (react-markdown + remark-gfm; Panda descendant-selector styling; a GFM-table horizontal-scroll box; an `inline` variant that unwraps the paragraph for list/decision cells; `React.memo` so stable bodies aren't re-parsed on projection ticks). Renders no raw HTML (XSS-safe). Verification metadata is a placeholder pinned until closeout stamps the 6g code commit.
+- The detail-panel entry delegates the reader surface to its implementation. [1]
+- MasterOverview renders the objective through Markdown and composes the section readers. [2]
+- MasterSection renders authored body text through Markdown and delegates shared decisions. [3]
+- Bullets renders each item through inline Markdown. [4]
+- DecisionList renders both decision and rationale through inline Markdown. [5]
+- The leaf TaskReader composes TaskReaderSections inside the requirement-link boundary. [6]

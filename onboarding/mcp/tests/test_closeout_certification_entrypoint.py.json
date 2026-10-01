@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_closeout_certification_entrypoint.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This suite exercises production-shaped entrypoint ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2932505da9d30c65f6cd0effb72f18b5d729870f",
+            "content": "sha256:f3b413234fb29a7e8e0c71da7981d1c7bdccaeac034faed70ed5a199631903ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_executor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture installs the repository profile and declares a changed candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2932505da9d30c65f6cd0effb72f18b5d729870f",
+            "content": "sha256:69ef8cb0c05995cc6d37c789b160a584039b67ed7ab2f4d8598cfbf81007b945",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Task-document and route declaration are performed before execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2932505da9d30c65f6cd0effb72f18b5d729870f",
+            "content": "sha256:b252d430481a5615f7c999dedde99b74b2a79491663fe847c819f265610ac73a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_and_declare"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The executor uses isolated preparation and real report publication owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2932505da9d30c65f6cd0effb72f18b5d729870f",
+            "content": "sha256:f3b413234fb29a7e8e0c71da7981d1c7bdccaeac034faed70ed5a199631903ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_executor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

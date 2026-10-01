@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/structural/reviewer_parent.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/structural/reviewer_parent.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T07:35+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [structural application overview](overview.md)
@@ -43,21 +33,17 @@ topology has one unambiguous owner.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Ambient parent derivation is topology- and altitude-specific. | `ambient_reviewer_parent` | mcp/src/agents_remember/application/structural/reviewer_parent.py:32-55 |
-| Dispatch provenance carries the exact reviewer parent. | `resolve_dispatch_provenance` | mcp/src/agents_remember/application/structural/reviewer_parent.py:58-78 |
+- Ambient parent derivation is topology- and altitude-specific. [1]
+- Dispatch provenance carries the exact reviewer parent. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
-
-## Update History
-
-- 2026-08-31T07:35+02:00 — Created for 260821-ARSPAWN-L5 independent-review repair. Verification remains closeout-owned.

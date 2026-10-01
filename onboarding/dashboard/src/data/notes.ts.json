@@ -1,0 +1,150 @@
+{
+  "path": "dashboard/src/data/notes.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The serving endpoints this client wraps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:0d00b8c2e8b4018c2285876277245ab1007dcea03c3afde5fc22afd8cfc21409",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_notes"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_note"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared transport (`getJson`, `qs`, `FilesApiError`) reused here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
+            "locator": {
+              "kind": "symbol",
+              "name": "getJson"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:11bda74086b107d0f8086147192b1bb72ed321ba4a7307b33e0cba67e2a3ad2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "qs"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilesApiError"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:21bfb5b2643dd6bf18c7bfee7063b020fa02725476791b85e3d2832880586da4",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The task notes surface owns the listing and delegates reader opening; its reference list gives explicit requirement addresses precedence over note resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
+            "content": "sha256:d8274e76e06cec70165ab206f3f5700b8405bb0643825cd82c8ac85c3200c401",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskNotes"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
+            "content": "sha256:57d93e8c8eee9b2809d8909bb805c385e80443956db0ace8c4891a48af78f973",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReferenceList"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The test suite for this module.\n\nAnchor: \"builds the list / read URLs\"; \"throws the shared FilesApiError on a non-ok response\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e11e054c74b0b12c9e993867ba049f902b36a4f7",
+            "content": "sha256:b9a833fc606f482bbab911b8b1a9db70c9b11fc72ad87c42b24757c33d7ee183",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/data/notes.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e11e054c74b0b12c9e993867ba049f902b36a4f7",
+            "content": "sha256:6458bf6707c0d91e12b85a68ca597f694417aca0de4df12be415c4ffd7194199",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "dashboard/src/data/notes.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

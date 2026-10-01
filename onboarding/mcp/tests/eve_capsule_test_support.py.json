@@ -1,0 +1,222 @@
+{
+  "path": "mcp/tests/eve_capsule_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The production producer this fixture drives, and the carrier type its result is handed back as.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:41bc4cffe90304a076c0f8625742a5b55ffadb078b94ebea36a5f249fab3aa4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "materialize_eve_binding"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:707cfc5c036ec5cfcd5f16bf6658de0c2dba3c505001758fc1cbc365e5e8362c",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveBoundLaunch"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:1453584ce334174a9324f67c97d44550efc5d20dfac69c6578e9219a61d6118b",
+            "locator": {
+              "kind": "symbol",
+              "name": "carrier_digest"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The environment names the fixture renders, imported into the launch module from the carrier module so the fixture cannot invent a spelling the launch does not read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:98443210ff187a5c1a7a4389e1c30e2a6824e9258444e8f7960eeb1ab28bdc6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BINDING_REF_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:2bba1964c3be276b013b090cb2e3933d47c27696d7381cca39b9f5a8e762451f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_DIGEST_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:b0082851957c57882ea1410385280bcf9ea224e02ed595998d5cc499a03f77de",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_PATH_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:b1d54515704c485ad25ac3dd736b4f0949fe9af2eb43d8f6180746b7321f23c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_ROOT_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:54dfd8ed5ec14d018fe59b12c3421b7fa4b542299d73ae8bacdcd0f7afdbedae",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compiler and projection inputs this fixture supplies for real.\n\nAnchor: \"Resolve the admitted worktree/branch/task context the projection will read.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:c3d2144310d2a38eeed8be4d4c358291431cf1e2cd8b6b4b0fd84182fd42189c",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_task_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:b5f0bf5bde1ae1a2fc3d09be0af5f6a41c4a6aaf28aae3f2dd6026c09d0c431e",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lifecycle catalog row for this support module, including its four consumers and its replacement contract.\n\nAnchor: \"path = \\\"mcp/tests/eve_capsule_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:2c3f3257119b54ecf03917790420b2f1fbd4324fd709cb039d88acaa6db5b1b6",
+            "locator": {
+              "end": 1551,
+              "kind": "line_range",
+              "start": 1551
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The focused binding cases that consume this world, and the runtime case that executes the shipped TypeScript against it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:df259b195ec369236d99da74c3d9c064e274b4ca9d48c1a2d9b1a21fd11af362",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carrier_json"
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bc4707f0134d1fef3f5f6dcbd20cbc68c185f992",
+            "content": "sha256:3facf250bb8f381a9b5193524625e8f78c4fcd0eed1e365c67bbd3963eb137f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_verifier_accepts_the_admitted_carrier_and_workspace"
+            },
+            "path": "mcp/tests/test_eve_capsule_runtime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The live native fixture that compiles a capsule from this world and launches the real eve runtime against it.\n\nAnchor: `build_world` consumer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:c280061a20bf80da66fa3c302c5f607306c4ca7d787be2963da38c18974366b3",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:8e59b44af06374e3709800483998446a3d005d52bac7f9725e9e03a6b177bc63",
+            "locator": {
+              "end": 1175,
+              "kind": "line_range",
+              "start": 1175
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

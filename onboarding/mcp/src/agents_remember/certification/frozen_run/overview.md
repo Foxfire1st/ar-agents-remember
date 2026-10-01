@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification/frozen_run` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T14:47:06+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -51,28 +45,22 @@ owners; a valid retained object is not evidence that any gate passed.
 | `models.py` | [models.py.md](models.py.md) | covered |
 | `authorities.py` | [authorities.py.md](authorities.py.md) | covered |
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A frozen run revalidates exact original admission and complete-record identity. | `FrozenCertificationRun`; `freeze_certification_run` | mcp/src/agents_remember/certification/frozen_run/models.py:25-80 |
-| Candidate records separate semantic projections from exact derivation bytes and provenance. | `CandidateAuthorityEnvelope`; `CandidateAuthorityRecords` | mcp/src/agents_remember/certification/frozen_run/authorities.py:100-128 |
-| Production admission prepares and observes a candidate before compiling lifecycle recovery. | `prepare_closeout_certification` | mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py:75-142 |
+### Repo-Internal References
 
-## Docs References
+- A frozen run revalidates exact original admission and complete-record identity. [1]
+- Candidate records separate semantic projections from exact derivation bytes and provenance. [2]
+- Production admission prepares and observes a candidate before compiling lifecycle recovery. [3]
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned by this route.
 
 ## CCR-L42 Refresh Validation Parity
 
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
-
-
-## Update History
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-
-- 2026-09-06T14:47:06+00:00 — Created the governing route from actual source at c69d5171187fa1957025e393270db9f5a864ab14, separating original frozen inputs from execution and certification authority.

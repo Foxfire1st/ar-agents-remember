@@ -1,0 +1,296 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/build.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The builder's contract: one snapshot in, problems named, nothing derived.\n\nAnchor: \"A file that fails its schema is reported, never guessed at.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:6a2d9b1898adf234ce68a2387749cc1c927c8c89791adaf9f968d08435181955",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The parsed tree keeps each history file by path and each owner's merged history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ParsedTree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:6641ed1aa7ae6ceaded818186410fec4a228bd97743b0ecaa5f122bd3d2db579",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_knowledge_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "History rows are written per file, under the file's own path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parsed tree and its completeness.\n\nAnchor: `state`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77f7730bcf211dcaaeb2dc03954cc7c6655972ab",
+            "content": "sha256:6593f84dc1273e38763c34ffaa301e8f5c1f582a2a84b7f046c5704a80f400ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "ParsedTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "What one build reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:50338a20987465f4fb984f54f86c618c7b89ac2c504d5c6db6b9cf32c6a1ea44",
+            "locator": {
+              "kind": "symbol",
+              "name": "BuildReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Parsing: every failure becomes a named problem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:12fe26df413e5fd56556d8b53cbe05ba029412474e55c166d67d3619ff61a78c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:8dcde49fce2b044f20c1309a9e36e70e3a636785e762458d8fdeb777e61f976f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Location, kind, file-name and duplicate-ID rules for record and sidecar files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:6641ed1aa7ae6ceaded818186410fec4a228bd97743b0ecaa5f122bd3d2db579",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_knowledge_file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:f175925119c246d60beb3ec102c132a57d70ca5a3aceee9d71b4bcbe12232ebd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_onboarding_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One transaction: the store schema, the `ix_*` tables, the rows, the projection and the metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:ba4b3cb06011e3c1a22e9748aed9c8d66e2d0be2019d1f5c948dd566e78cc50e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_index"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The row writers: records, entries, members, routes, links, references and history rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:7bcf09c0ef7bd024665c5239842344ffd4efab1d13397fa859b93c8e50776693",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:8039957364408c96e2f0cb139c6a0ebfc2903dbf62c183504a45d3e4ec24f099",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:83786254cb1c6ba01dbdbdb8080fccf86b7db73359a32c8b6b36b668252b92d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_link"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:c24f1b920e33f706375685894361121aa7b8dbabe06c9ec36d0d76421128becd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_references"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:c19bb9830ed09e05975a186139949c60dc16e2dfec09f2fd8dc964aae4c335fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reference_endpoint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:c5c9db12cb8f6a83d479bbffeb65e74639debb54f72394a99891d906010921a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The metadata row set a cached file is checked against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:553db5bd42c2f97e64f517be601274d4040befce7a4f33f88bc2887a9334535e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_meta"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A file failing its schema marks the index partial and is named; an unconverted tree indexes empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_failing_its_schema_marks_the_index_partial_and_is_named"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:072445b5f786964f51e85ccdb9940ef25ff81dd1fb13da0b74564894bbb565ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_tree_is_indexed_empty_and_says_so"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

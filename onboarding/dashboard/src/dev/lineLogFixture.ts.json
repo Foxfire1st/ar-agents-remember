@@ -1,0 +1,147 @@
+{
+  "path": "dashboard/src/dev/lineLogFixture.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Boot/stream line sets, the mock socket incl. the queued-submission stdin echo, both factories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bef2f47273ab3cacac75840e2074d5a4a500b0e",
+            "content": "sha256:e1a981ad8245525188f16fe1e844d80b9b266f81a0c15aec15e490a2b9691c7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RUNNER_LINE_LOG_BOOT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bef2f47273ab3cacac75840e2074d5a4a500b0e",
+            "content": "sha256:b568882070411dbe4c09e4767ddc1a1471734fa1e63ba9afd657d6e0a9fdcd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "RUNNER_LINE_LOG_STREAM"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bef2f47273ab3cacac75840e2074d5a4a500b0e",
+            "content": "sha256:b5be63fc1c7dd8ef415e31f5fd9498aba2d4c2692fbe8af91aae851017644e72",
+            "locator": {
+              "kind": "symbol",
+              "name": "MockLineLogSocket"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bef2f47273ab3cacac75840e2074d5a4a500b0e",
+            "content": "sha256:c486d21475383429aaa238895601bd21e9fd21e965003c4f73c8936c3df38169",
+            "locator": {
+              "kind": "symbol",
+              "name": "mockControlledLineLogSocketFactory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bef2f47273ab3cacac75840e2074d5a4a500b0e",
+            "content": "sha256:eb81ab01b10db84f92d3273af81b0e4bf048f494643306859c809d330001b40e",
+            "locator": {
+              "kind": "symbol",
+              "name": "benchLineLogSocketFactory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The socket-factory context type this plugs into.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:6eb715f0d584f0ab2d46831defc88bf70c2c6a822e3f400b34923e5154d768b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalSocketFactory"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bench consuming the firehose factory + stream lines (serialize probe fill).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:512d9a4a7497a82bda0d9346c966cbca396bf00e19f59d5910af15d7265fbb27",
+            "locator": {
+              "kind": "symbol",
+              "name": "PtyRenderBench"
+            },
+            "path": "dashboard/src/dev/PtyRenderBench.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pre-existing generic dev echo socket this complements (Chats bench).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9e4a8b01a0ca35b853fc4fe7248e59cf784815e",
+            "content": "sha256:a3d0b7b832b53d42d25f93eaac822e05c6c3cf53ac0b66f02a37e5bd2332e700",
+            "locator": {
+              "kind": "symbol",
+              "name": "MockTerminalSocket"
+            },
+            "path": "dashboard/src/dev/mockTerminalSocket.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9e4a8b01a0ca35b853fc4fe7248e59cf784815e",
+            "content": "sha256:d0bbb0ce28268f513c5ed1bf7b46d8dbf861691f93e4c2f13c5890e8a64fda6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "createMockTerminalSocketFactory"
+            },
+            "path": "dashboard/src/dev/mockTerminalSocket.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The honesty hint whose trap the `send` echo models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:38aac4e195126df3ca0e41785174282e9dbd5a2ac5ef8ca13db14a6b17bcfa5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_HONESTY_HINT"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

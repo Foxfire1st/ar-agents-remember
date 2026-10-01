@@ -1,0 +1,433 @@
+{
+  "path": "mcp/tests/test_task_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture world and the two spec value objects that keep a failure attributable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:16d08dd235c2fab3d6e6b20e622f7a32d065436e72983188831ba41581cb9851",
+            "locator": {
+              "kind": "symbol",
+              "name": "World"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:9712be888d8af948be2c787b27b604633abf02d634198c6b3847a6a3a9eff507",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractSpec"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:0dadb0edcc1a2aedf66eb7647dbdc8702781699c6785c90577ef14041e682113",
+            "locator": {
+              "kind": "symbol",
+              "name": "BindingSpec"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:5b55b9682961d305f550fb9c540cd6acd0fbb6fb11d76ba1209645e5576fd178",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:7d383ed5232eebb3cb050b5e4180bac2ea7cbeba6a15a289c556107e2f7a57e1",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 290
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The compiler seam these cases verify through, including its digest refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The fail-closed loader this module currently fails: it raises for any test file without an explicit lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
+            "content": "sha256:9b6a76d1115a5e75a0942cd311c4835eb9b348576c744e8fe48d63cc541eb117",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_lane_manifest"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
+            "content": "sha256:a30551583ff064e537c72296e22e5ff68b0414649a67be7abb14a7109efc6c93",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneManifestError"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The missing-lane finding that names exactly this module.\n\nAnchor: \"test files without an explicit lane\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
+            "content": "sha256:995b131e049619d62aa3635af042abec8d39207c962eed0ca526230e9b1b3607",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane manifest of record, which has no row for this module yet. A row belongs in the `unit-regression` list, whose alphabetical neighbours are `test_task_intent_identity.py` (`:111`) and `test_telemetry_store.py` (`:112`).\n\nAnchor: \"unit-regression\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d833d65671cf09d0b1e1b9f3c02e7e3822e83e93",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The `pytest` hook that runs the loader on every collection, so an unlisted module is a collection failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
+            "content": "sha256:3f51591bfdc5301926b452b47db4e3b8f0f4eb2a1aa42af08dad1992348c2c1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_modifyitems"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
+            "content": "sha256:dd824674b6f19ed8945708cf1f205e6b3b13216849d0b810ce711c312c5ec58c",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The population setting that makes every module under `mcp/tests/` part of the expected set.\n\nAnchor: \"testpaths\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f3bd41068ad5495a640a6683e9bdc8a57904799",
+            "content": "sha256:2190a60352b4095e9f4ce96f02b3e1e1db6f520b056e958c782adade18cdf3d8",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The generated enclosure contract, and the external-memory topology the fixture must reproduce.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:7c6a7f5937fc2fcd6060dfb6860f239e15e9722fcfcf709d0cd9d0d3beaa20fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:637a9215a8f0cbc926a94375efe67bb5f7d340077097997a3af8f3dbbed36519",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 235
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two sibling leaves the isolation cases project against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:f9cc67dc810309fc15036600614125fbdb8b03c07be8ca9e4e0bbb6ba845ee77",
+            "locator": {
+              "kind": "symbol",
+              "name": "ALPHA_SPEC"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:40e815f2fa4ec52cef3798b697755cc618c35b1fcc0b8884534b6d6e1eafb1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "BETA_SPEC"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The structural import-surface case: no writer, no transport, no task-JSON reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:92f9bfe4953fb8b8fad0b239f44df9d07de1cb0692ae79255c0c2eea41f949c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projection_modules_import_no_writer_transport_or_task_json_reader"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:114eb89807360014692832da27a8a76854aa77a30c3982d3dc7463d03f5757d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_WRITE_OR_TRANSPORT_MARKERS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:64249431232aa8132fbc51839d7883dfc45e7fbcaafd49377b91e87619a317ec",
+            "locator": {
+              "end": 764,
+              "kind": "line_range",
+              "start": 738
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:6429d6733ce2742d30278d299b0d7d7786eab23820c12be0c4dc8b2404de4fc7",
+            "locator": {
+              "end": 736,
+              "kind": "line_range",
+              "start": 719
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read-only case: the task tree is byte-identical after a success and after every refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:21950a202f0518236df30a3b9217f3dab3c4323e8aae90e53e852e1a389a7a18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_and_a_successful_projection_leave_the_task_tree_byte_identical"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The altitude case: sprint history reaches an orchestrator but never a leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:6f214939d516356c166ffedf2c6fd010f36816c90464dffab1e6cf154b233086",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sprint_decision_history_reaches_orchestrator_but_never_a_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The failure-taxonomy case: each unresolvable input has its own status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:7a9e4dcce48dbe2a6b8e0bb6beb09ed88d822e81987a3e654937f981bcba1708",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_unresolvable_input_returns_its_own_source_resolution_status"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The seam case: the provider satisfies the compiler protocol, and the knowledge channel is optional.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:e3b48eba85440378c4bfbda57b551a952bbb9f932c17309d1957a2a80071bbd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_provider_serves_the_compiler_protocol_and_the_knowledge_seam_is_optional"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:f96d49d22e7939d8099c8b1adf2d6c8e95adf6c17ffda844640ec3402f534777",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RecordingExpansion"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:aa281c3dd570a4334972e4b3146720c3e934a3dd1480a5c882d3ed26422722c4",
+            "locator": {
+              "end": 897,
+              "kind": "line_range",
+              "start": 853
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:bc1278bdf0d16c711ee51b198b66e2a7492cb16eb82ab818682660cfc593cfa4",
+            "locator": {
+              "end": 850,
+              "kind": "line_range",
+              "start": 838
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The package the cases exercise, whose read plan they pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:e6330ee0420722480f14212217d7bb8e84ceb0a8a43c00c0fcafbed27b335338",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_plan"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:15d1e21b6de0cc5eab87e37db3e71fe1b0f12cdf369635b9317d44f50e4bdfc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_documents"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/dev/scenarios.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/dev/scenarios.test.ts`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T10:40+02:00                           |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`       |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -102,79 +92,29 @@ timeline or an empty frame fails.
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card is verified from its direct source, the model under test, and the
 server-side model the vocabulary mirrors.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The T9C `reindex-reroute` case: `/reroute/i` caption, `stale` `cgc-seed` edge, `seedFallback`, never `blocked`, same-`worktreeGroup` prop diff. | "reindex-reroute" | dashboard/src/dev/scenarios.test.ts:131-161 |
-| `SERVED_EDGE_STATES` and the guard that no authored edge state falls outside it. | `SERVED_EDGE_STATES` | dashboard/src/dev/scenarios.test.ts:284-294 |
-| Asserts the `build-up`/`tear-down` timelines + frame validity. | `buildUp`; `tearDown`; `version`; `caption` | dashboard/src/dev/scenarios.test.ts:7-14; dashboard/src/dev/scenarios.test.ts:8-25; dashboard/src/dev/scenarios.test.ts:28-36 |
-| The `SCENARIOS` model under test, including the `reindexReroute` timeline whose R4 caption this case matches. | `SCENARIOS`; `reindexReroute` | dashboard/src/dev/scenarios.ts:90-102; dashboard/src/dev/scenarios.ts:260-273 |
-| `EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra="forbid"` model. | `SERVED_EDGE_STATES` | dashboard/src/dev/scenarios.test.ts:284-294 |
-| `_seed_edge_state` — the reducer function that actually emits `stale`; `refused` is not among its answers. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638 |
-| `refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only. | `refusedPolarityOf` | dashboard/src/panels/engine-room/geometry.ts:124-134 |
+- The T9C `reindex-reroute` case: `/reroute/i` caption, `stale` `cgc-seed` edge, `seedFallback`, never `blocked`, same-`worktreeGroup` prop diff. [1]
+- `SERVED_EDGE_STATES` and the guard that no authored edge state falls outside it. [2]
+- Asserts the `build-up`/`tear-down` timelines + frame validity. [3]
+- The `SCENARIOS` model under test, including the `reindexReroute` timeline whose R4 caption this case matches. [4]
+- `EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra="forbid"` model. [5]
+- `_seed_edge_state` — the reducer function that actually emits `stale`; `refused` is not among its answers. [6]
+- `refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. The served vocabulary this file mirrors lives in the same
 repository, under `mcp/src/agents_remember/observer/`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-03T09:30+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 8 assigned citation findings (4 missing anchors and 4 malformed sources); final scoped check is clean. Max-reviewer Tier-2 subject-binding addendum bound the buildUp/tearDown assertion bodies and frame-validity checks instead of declaration-only ranges.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the `projection.py`
-  citation after a worker inserted ten lines above it. `EngineProcessEdge` L752-L771 → L762-L781:
-  the class opens at L762, `model_config = ConfigDict(extra="forbid")` is L770, and the nine-state
-  vocabulary comment plus `state: str` are L778-L779. No body text changed.
-- 2026-08-01T10:04+02:00 — 260731-EFA-L4 curator: corrected the T9C description and documented the new
-  vocabulary guard. The `reindex-reroute` case now matches `/reroute/i` instead of `/refused/i`,
-  looks for a **`stale`** `cgc-seed` edge instead of a `refused` one, and **no longer asserts
-  `refusedPolarity === "amber"`** — that field existed on no server model, was set by the fixture the
-  assertion then read, and the amber flash is derived from the edge state by
-  `EnclosureCanvas.tsx::refusedPolarityOf`. Added case (13), the `SERVED_EDGE_STATES` guard that pins
-  every authored edge state to the nine `EngineProcessEdge.state` documents, plus `Conventions`,
-  `Todos`, `Docs References` and `Cross-Repo References`, which the card lacked. Replaced the `—`
-  citation with ranges proving `SERVED_EDGE_STATES`, the T9C case, `_seed_edge_state`,
-  `EngineProcessEdge.state` and `refusedPolarityOf`. Verification metadata left pinned; closeout
-  stamps the code commit.
-- 2026-06-22T11:00 — slice 05o: added six arc `it` cases, one per remaining failure mode — `seed-fault`
-  (T9B: failed `grepai-clone` + memory engine down, CGC unaffected, re-seed after the fault),
-  `reindex-reroute` (T9C: refused amber `cgc-seed` + `seedFallback`, soft/never blocked),
-  `provider-block` (T7B: `blocked` `setupState`, zero providers, provider-plan + pre-contract
-  `missingFacts`), `live-sync` (T12B: `blocked` `ledger-map`, behind-source memory, ff/ref recover with
-  no clone beat), `integration-conflict` (T14C: failed integration return-lane, terminal
-  `integration-blocked` STOP, no recover tail), and `abandon` (T18: 4 frames, abandoned×3, no landing,
-  one `boot-demo` identity). Each asserts the choreography off the projection (health/edge-state/polarity),
-  recoverable modes re-run the clone beats, and the failure beat shares one enclosure identity with its
-  resolving neighbour. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T10:45 — slice 05o T1B: added a sixth `it` pinning the `stale-base` arc — preflight/block/fast-forward
-  captions, a `blocked`-health frame whose `codeSource.behindSource > 0` and whose `missingFacts` carry a
-  `contract not yet written` entry (the fleeting born-blocked beat), a **running `cgc-seed`/`grepai-clone`**
-  beat (the recover's copy-arrow clone, so it can't regress to a teleport), and a single `worktreeGroup` across
-  the frames (one enclosure). Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T00:29 — slice 05o T3B: added a fifth `it` pinning the `memory-block` arc — verify/block/
-  reconcile captions, a `blocked`-health frame, a **running `cgc-seed`/`grepai-clone`** beat (locks in the
-  recover's copy-arrow clone beats so they can't regress to a teleport), and a single `worktreeGroup` across the
-  frames. Broadened the verify caption match to `/verif/i`. Verification metadata pinned until closeout stamps
-  the 05o code commit.
-- 2026-06-19T23:58+02:00 — Created for slice 5i: tests for the scenario model — build-up (6 frames) /
-  tear-down (≥6, with a `cleanup-pending` de-materialise frame) timelines, every frame a valid v2
-  projection + caption, and the gallery states folded in as single-frame resting scenarios. Verification
-  metadata pinned until closeout stamps the code commit.
+No meaningful cross-repo references found.

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_agent_notifier_ladder.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Task doc.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ba4f2efe2e98225b1e87a362d8ad94a025e3dac",
+            "content": "sha256:e2161c8eabc91acad9009466c22904a5bf1c542b788105f34a468b179d235887",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_doc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Write topology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ba4f2efe2e98225b1e87a362d8ad94a025e3dac",
+            "content": "sha256:4ce62f9f4ce9678c9aa8d910bec143ed64956e17344e2082ef9d359659803d5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_topology"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Leaf ref.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ba4f2efe2e98225b1e87a362d8ad94a025e3dac",
+            "content": "sha256:6ec3b02ab41370b53e61a9a4252bce9f0d8dffa0480c3801f600cf7e02762cef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_ref"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

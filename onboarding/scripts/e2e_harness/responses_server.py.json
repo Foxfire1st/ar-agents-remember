@@ -1,0 +1,95 @@
+{
+  "path": "scripts/e2e_harness/responses_server.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Tool discovery and schema validation operate on the request produced by real Codex.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39b13f56e2c7a50a2df4719f591675e4e7d081fc",
+            "content": "sha256:b738157c4326e305b02af72aafa57eaef1ef7498573e6bd0d71fbe7c331c47eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScriptedResponses"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39b13f56e2c7a50a2df4719f591675e4e7d081fc",
+            "content": "sha256:1347e13e6880db923c8d8f0085fd536785344c0bfa75689a43af189da3acd0bf",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 329
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The state script maps ambient, hosted, retirement, vacancy, and replacement prompts to public tools.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39b13f56e2c7a50a2df4719f591675e4e7d081fc",
+            "content": "sha256:01247742d239c511d4e1fa8fa8ce9572cbc0ee8eb7e3cef3e63aef8970de86a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_action"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39b13f56e2c7a50a2df4719f591675e4e7d081fc",
+            "content": "sha256:32ca06c765035b52a662ebef0191107a431a8502817f4aa363219005d4c717ce",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tool-search output is paired with its exact query call id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39b13f56e2c7a50a2df4719f591675e4e7d081fc",
+            "content": "sha256:b39a772a5ff85ddefd32134840ff9c2386f8b68449ca3545ab6512d157cb8cac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_has_completed_tool_search"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The server is a local test provider with no sibling-repository dependency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39b13f56e2c7a50a2df4719f591675e4e7d081fc",
+            "content": "sha256:63f02877c8a181e035925dea8fed5e1e610c4981fdc7ccd9e2014f64dbd36a98",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResponsesServer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

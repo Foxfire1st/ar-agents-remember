@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/fixtures/knowledge_files/4.1-worktrees-overview.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture names its schema.\n\nAnchor: \"ar-onboarding-route/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f6d3ca47e13ce661216d254ef5f6c7b5a6a1e71",
+            "content": "sha256:c4147ff3d09c7ff9723bd3a5a1b9fe2af341c0e8020a5fea74c7686608d79d4b",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Its distinguishing identity.\n\nAnchor: \"mcp/src/agents_remember/worktrees\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f6d3ca47e13ce661216d254ef5f6c7b5a6a1e71",
+            "content": "sha256:c8e4b0c6871c4e20e1ef92da8d59d0586fdb4aaa2494cbaeffb9191ca763c96b",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test maps this file to its model.\n\nAnchor: \"4.1-worktrees-overview.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b77ecb71863271304d8626c32c5a96b3930bf4cc",
+            "content": "sha256:00811ded8aaf10b2c3fdc3c5bc3676c173237c2f625091753abd8516182c95c8",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

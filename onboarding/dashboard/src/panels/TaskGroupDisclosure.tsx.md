@@ -1,15 +1,5 @@
 # dashboard/src/panels/TaskGroupDisclosure.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/TaskGroupDisclosure.tsx`   |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T12:58+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/ overview](overview.md)
@@ -43,35 +33,24 @@ shared amber focus-visible treatment. The component owns no state and performs n
 
 None known for this leaf.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation found after checking the resolved `system/sources.md`; it has no configured
 Domain Documentation entries. Accessibility semantics are proved by the native control and focused
 repository tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain-documentation source was available for this local UI primitive. | — | — |
+No configured domain-documentation source was available for this local UI primitive.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The parent list computes the descendant-bearing BY REPO condition before rendering the control. | `hasDescendants` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:641-641 |
-| The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row. | "<TaskGroupDisclosure" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:664-664 |
-| Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation. | "defaults hierarchy disclosures to expanded and renders controls only for parents"; "keeps sprint and master collapse independent without changing selection or BY PHASE" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:150-167; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:169-209 |
+- The parent list computes the descendant-bearing BY REPO condition before rendering the control. [1]
+- The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row. [2]
+- Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The control is local to the dashboard panels route and has no cross-repository interface. | — | — |
-
-## Update History
-
-- 2026-08-04T15:46:45+02:00 — 260731-EFA-L6 S18-B08 curator: split the parent-list descendant condition from the disclosure mount and regenerated the unique JSX mount extent.
-
-- 2026-07-12T12:58+02:00 — Created for 260712-TRH-L3. Candidate source is uncommitted; verification metadata
-  is pinned to the leaf base until closeout stamps the eventual code commit.
+The control is local to the dashboard panels route and has no cross-repository interface.

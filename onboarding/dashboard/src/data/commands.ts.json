@@ -1,0 +1,149 @@
+{
+  "path": "dashboard/src/data/commands.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The registry, replace-by-id unregister guard, and the default set with the stub seams.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:87fadab0a7cdd79c22f0cacea4a4a91774adcb1dcc7984251f2afebc0fa9e1ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "createCommandRegistry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The view builds the context and dispatches chord command ids into the registry.\n\nAnchor: \"registry.run(commandId\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:dffa68604e2380c37c94f844e9e59ed7d84aac7a8421a8573d453f2842b056fb",
+            "locator": {
+              "end": 1048,
+              "kind": "line_range",
+              "start": 1048
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The palette clears its query when the selected command keeps the palette open.\n\nAnchor: \"if (command?.keepsPaletteOpen)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f6d5f63b7058e0e74ede68e30f8233e29c5c3e9",
+            "content": "sha256:1a6b7cc2c018189d234abd14c74f38122539ec7851b50093b7bbeda39757ce1e",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 426
+            },
+            "path": "dashboard/src/panels/session-cockpit/CommandPalette.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The chord tables that carry these command ids per zone.\n\nAnchor: \"palette.open\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32384b5c1290e4e59213ae0a1b6fa2333ef47ec6",
+            "content": "sha256:c83e5b83141ccb1887330d53cc3aad59a22e0349eadecbe7781008e19e13972b",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/data/keymap/chords.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The registry suite pins registration order and when-predicate filtering.\n\nAnchor: \"lists commands in registration order and filters by when-predicate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78cdf2499cedd50904a30bb9aeac0f70aabb9cdf",
+            "content": "sha256:27727c9b1729fb6684ce714eba9029b631fd4df600e8b6b1d47cb37d343dbd5d",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "dashboard/src/data/commands.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The registry suite pins replacement-by-id and stale-unregister behavior.\n\nAnchor: \"replaces by id and unregisters only its own registration\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78cdf2499cedd50904a30bb9aeac0f70aabb9cdf",
+            "content": "sha256:d70e7370e592b8a33fa2a1be0a8d707beea9bb84a75e0355c7521204a8f8c983",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/data/commands.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The default-command suite pins live panel/focus actions and honest stubs.\n\nAnchor: \"registers the v1 set with live panel/focus actions and honest stubs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78cdf2499cedd50904a30bb9aeac0f70aabb9cdf",
+            "content": "sha256:cffcdb8b2289d1a06e09ad79fa829cfc5b29a5e48714f9c8d99f92cb0d396dcb",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/data/commands.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The default-command suite pins palette-open gating.\n\nAnchor: \"gates palette.open on the palette being closed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78cdf2499cedd50904a30bb9aeac0f70aabb9cdf",
+            "content": "sha256:9b7b6acee6b8aa92009b2ac45fb811c21d39073f806a881ffbc68d7bf2371034",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "dashboard/src/data/commands.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

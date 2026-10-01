@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/gate_vocab.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Structural gate models import the producer-owned vocabulary from kernel.\n\nAnchor: \"from agents_remember.kernel.primitives.gate_vocab import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efe5583aae24a76efe20a175fb9c9ba067d76b56",
+            "content": "sha256:36d7702b2074245d813ac292fdddb6016cf6ecd7e92ebb721838ddcd7a8c4dfc",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/models/structural/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Gate kind coercion is the production vocabulary boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ece7adf1ca7541bae7cac4eb8a6a45e695916b",
+            "content": "sha256:ccba211f201868aaf84acca7e268aab137d47499306d23512d01f6a65bead559",
+            "locator": {
+              "kind": "symbol",
+              "name": "coerce_gate_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

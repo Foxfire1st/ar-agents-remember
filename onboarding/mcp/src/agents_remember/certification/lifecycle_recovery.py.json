@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The recovery record journals the exact R21 reuse decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:d75de9bdbb8ed91dafe2fd9e9231adfdd594ab96051f0f120c3c8c6715799ffb",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_certification_recovery_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:fb2376c6c0212ca2284b3dce4afbf2394ae732df9179c2bdf5d2ef243251ae6a",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Finalization revalidates the exact admitted candidate and journal, then binds the unfinished leg.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:2726096dad4a4af117f75a696bfb8a20f9d7dece05ab7a7613022d96be8144b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_lifecycle_finalization"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:4d7fc4a8fc806a70877715b05503cc5b63520047e74e8da9436510683e6a0c19",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_finalization_alignment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:56296b0e6a4004f89dfc22d9221b993742e097d321d669a13e51bbea1d4b5011",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:48d590ac5c57876988cd8d568c915754f59548b5f98f190e639384fb849fd499",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Currentness reread and exact-leg authorization gate every publication write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:ab99e7a4ecf14852c33e9d96e03344d5cfb153b84ffa876364e06a8643c6e119",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_lifecycle_finalization_currentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:863e3fa80f46131f63aa4eaea210d82e6e7935a580dbfd7dba86e3721a508292",
+            "locator": {
+              "kind": "symbol",
+              "name": "authorize_finalization_leg"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:4c70c261f77131171557dca09a004abe7c822cbe5cc72809fda96f85f69908bf",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:8c304929db8a3c684f578434601bfd728dddecd7c11c19cb3321aefdbc101cdb",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Gate certificate and invalidation contracts are imported from the R21 owners.\n\nAnchor: \"class GateFiveSemanticInputs(FrozenContractModel)\"; \"class GateCertificate(FrozenContractModel)\"; \"def plan_certificate_reuse(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:110cccd99367e79120d54bc4f39539739f211011133a0dc92da49be9acf0f06b",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:ed2cae1fdc7951bd302289f7fa00c7959ed9fda26f08e5609d870becc8879da8",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:9d4c0cbf3fb6189cff632b86e86e09a8fda0db0fbafe7f0578b939ad5a72b252",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_invalidation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

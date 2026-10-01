@@ -1,0 +1,156 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/carry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "What carried means and what the writer changes.\n\nAnchor: \"Nothing else changes: not the locator kind, not the name\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57755dbe9aff5204421da8c3384af01e2d9f142d",
+            "content": "sha256:f781243a8e82eed0142c91eeac34e7ec0cbe1b43ce32e2ea8b40e0b5f3fc5b11",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The carry keeps the mapping only when the content is identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57755dbe9aff5204421da8c3384af01e2d9f142d",
+            "content": "sha256:0497a1854e8ad506f07199c34c2ec284b9dd26f4a9acb2d8ca5e3735a7107da5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carried_anchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mapping at a new blob, with the mapped span and the content there; `None` when it does not resolve (reused by MIK-R14's refresh).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57755dbe9aff5204421da8c3384af01e2d9f142d",
+            "content": "sha256:48fdd0a92fa2376148fa4fcc817fa5b512733364a633108b03530885244f95b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "mapped_anchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The refresh maps a line range through the diff with this function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:65ec616e0f52ea5b7f64933be0a6458f77a0ad8df4f0a7adcb30ea539503e5b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_refresh_maps_a_line_range_and_refreshes_only_the_fired_links"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every carried entry of the tree is re-recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57755dbe9aff5204421da8c3384af01e2d9f142d",
+            "content": "sha256:2b685fa9dea29491d7787bb4f65cbc9bfd94a13ea7e20a62e94d0aaad9637e44",
+            "locator": {
+              "kind": "symbol",
+              "name": "carry_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Only the owner's open row with the old `after` is updated.\n\nAnchor: `history_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fbfa3dc5dacd3634a20aaecc958d22b187b2a22",
+            "content": "sha256:f9399201af02ec2c10a7aa0cb7bdc1c1009a94e5087d29635f0d9b0ff96aaed1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carry_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The call in every writer operation.\n\nAnchor: `carry_entries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd6cf1d01b81aad12a4d1e9d8815046cd441dffe",
+            "content": "sha256:357ec0bb032b4a3d1e7affcdfdac35ec1f39ddc73624a3d818d8441d2bbba737",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Blobs and covering rows are carried.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f599e6cb7ae08370dc907627108697cd4c118803",
+            "content": "sha256:f2ab56e2b5b537001c07008dc9577493f986db58f2841cf8129d3eb17317a987",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Another owner's row and a closed file are untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f599e6cb7ae08370dc907627108697cd4c118803",
+            "content": "sha256:2d0d37e9629db5c447406e19ecb7c5c0431d725c380abb86739332459cbd8349",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carrying_never_edits_another_owners_row_or_a_closed_history_file"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

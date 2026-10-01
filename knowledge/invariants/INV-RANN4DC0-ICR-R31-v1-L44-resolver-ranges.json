@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every anchor observation the knowledge read's anchor resolver produces against a requested code tree (knowledge read pages, diff observations, the family roster).",
+  "conditions": [
+    "The requested tree holds the exact recorded blob at the recorded path.",
+    "Symbol extents come from the shipped extractor for a language it has a grammar for."
+  ],
+  "exclusions": [
+    "Observations whose resolution is not exact_recorded_blob, which carry no range.",
+    "Re-anchoring, searching or clipping a recorded range."
+  ],
+  "id": "INV-RANN4DC0",
+  "origin": {
+    "leaf": "260921-ICR-L44",
+    "legacyId": "17bf9520-fb33-41a4-a39f-b54f85fbc74c",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The anchor resolver reports the line ranges an exact recorded blob supports as structured values -- every defining extent for a symbol locator, the recorded range for a line_range locator, none for a file locator -- and reports no range beside any other resolution, with its diagnostic sentence unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

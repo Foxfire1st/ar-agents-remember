@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_writer/reconsideration.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_writer/reconsideration.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:05:38+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -110,7 +100,9 @@ neither row changes an alternative, its status or the chosen option.
   an `OSError` between them, or a second `raise` whose append fails, leaves a question with no knowledge written. A
   rerun appends nothing twice (key prefix).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R14@v2` of task
@@ -118,50 +110,39 @@ No domain documentation source is configured for this repository (`system/source
 2026-09-30T04:37:56 to 11:53:13); they live outside the code and memory repositories, so they are named here and
 not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: both rows, the refresh, and the five link states it names. | "The writer's reconsideration rows (MIK-R14 rule 4)" | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:1-54 |
-| The task owner's `openQuestions` port. | `OpenQuestions` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:89-99 |
-| What a subject names: a decision, a rejected or deferred alternative, and a link addressing it. | `reconsidered_alternative`; `_alternative`; `_addresses` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:102-122; mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:129-141; mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:144-151 |
-| The `raise` question and its key. | `raise_question` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:154-174 |
-| The append in a committing run; every refusal is returned. | `append_questions` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:177-197 |
-| The code candidate a refresh maps anchors to. | `CodeAtC` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:200-205 |
-| The link states. | `UNCHANGED`; `STALE_ITEM`; `NEW_CHANGES` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:208-215 |
-| What a row answers, and the refresh's result. | `Answer`; `Refresh` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:218-230; mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:233-243 |
-| Only fired, refreshable links; each judged against its K_B target. | `refreshed_links` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:246-278 |
-| One fired link to a target or a refusal; the new-change refusals. | `_outcome`; `_new_change` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:281-307; mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:310-325 |
-| The K_B target: the base record's link, the facts' anchor, or the key alone. | `_fired_target` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:328-346 |
-| The state dispatch and the requirement states, with the R5-2 upper bound. | `_link_state`; `_requirement_state`; `_newer` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:349-363; mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:366-391; mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:394-397 |
-| The anchor states: stale item, unchanged, carried only when the content survives, changed again. | `_anchor_state`; `_refreshed_anchor_state`; `_seen_content` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:400-423; mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:426-436; mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:439-444 |
-| The refresh target: the item's version and packet, or the anchor mapped to C. | `_refreshed_target` | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:456-481 |
-| `still_rejected` refusals of a wrong subject or extra field. | `test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees` | mcp/tests/test_reconsideration_surfacing.py:417-443 |
-| A requirement link re-pointed once, bumped once; the next leaf raises nothing. | `test_still_rejected_repoints_a_persistent_requirement_link_so_it_raises_once` | mcp/tests/test_reconsideration_surfacing.py:709-742 |
-| An anchor re-anchored; a `raise` leaves it; a second change raises a new item. | `test_still_rejected_reanchors_a_linked_anchor_so_it_stays_live` | mcp/tests/test_reconsideration_surfacing.py:745-765 |
-| Only fired links; a range mapped through the diff (F1). | `test_the_refresh_maps_a_line_range_and_refreshes_only_the_fired_links` | mcp/tests/test_reconsideration_surfacing.py:781-810 |
-| An unmappable range, or a row naming another item, refuses. | `test_a_range_that_cannot_be_mapped_refuses_the_row_naming_the_link` | mcp/tests/test_reconsideration_surfacing.py:813-826 |
-| The re-point takes the item's facts (F4). | `test_the_repoint_takes_the_items_approved_version_not_a_fresh_read` | mcp/tests/test_reconsideration_surfacing.py:852-868 |
-| Re-authored, lookalike and moved links refuse (N1, N2). | `test_a_refresh_refuses_a_fired_link_re_authored_or_moved_in_the_leaf` | mcp/tests/test_reconsideration_surfacing.py:885-916 |
-| Idempotent reruns (R3-1). | `test_a_rerun_after_a_requirement_refresh_is_written_and_bumps_nothing`; `test_a_rerun_after_an_anchor_refresh_is_written_and_bumps_nothing` | mcp/tests/test_reconsideration_surfacing.py:962-979; mcp/tests/test_reconsideration_surfacing.py:982-991 |
-| Carried after an edit outside the range; committed re-authors and lookalikes refused (R4-1, R4-2). | `test_a_rerun_after_more_code_changes_carries_the_refreshed_anchor`; `test_a_committed_lookalike_or_re_author_stays_refused` | mcp/tests/test_reconsideration_surfacing.py:1000-1017; mcp/tests/test_reconsideration_surfacing.py:1020-1039 |
-| A newer version needs the new item named (R4-3, explicit answer). | `test_a_version_approved_after_the_refresh_is_named_and_needs_the_new_item` | mcp/tests/test_reconsideration_surfacing.py:1077-1093 |
-| A second change inside the range needs the new item; a stale worklist is refused (R5-1). | `test_a_second_change_inside_the_anchored_range_needs_the_new_item` | mcp/tests/test_reconsideration_surfacing.py:1111-1143 |
-| A curator-set unapproved version and an anchor re-pointed to other code are re-authored (R5-2). | `test_a_curator_set_unapproved_version_is_re_authored`; `test_an_anchor_link_re_authored_to_other_code_is_refused` | mcp/tests/test_reconsideration_surfacing.py:1146-1158; mcp/tests/test_reconsideration_surfacing.py:1161-1172 |
+- The module docstring: both rows, the refresh, and the five link states it names. [1]
+- The task owner's `openQuestions` port. [2]
+- What a subject names: a decision, a rejected or deferred alternative, and a link addressing it. [3]
+- The `raise` question and its key. [4]
+- The append in a committing run; every refusal is returned. [5]
+- The code candidate a refresh maps anchors to. [6]
+- The link states. [7]
+- What a row answers, and the refresh's result. [8]
+- Only fired, refreshable links; each judged against its K_B target. [9]
+- One fired link to a target or a refusal; the new-change refusals. [10]
+- The K_B target: the base record's link, the facts' anchor, or the key alone. [11]
+- The state dispatch and the requirement states, with the R5-2 upper bound. [12]
+- The anchor states: stale item, unchanged, carried only when the content survives, changed again. [13]
+- The refresh target: the item's version and packet, or the anchor mapped to C. [14]
+- `still_rejected` refusals of a wrong subject or extra field. [15]
+- A requirement link re-pointed once, bumped once; the next leaf raises nothing. [16]
+- An anchor re-anchored; a `raise` leaves it; a second change raises a new item. [17]
+- Only fired links; a range mapped through the diff (F1). [18]
+- An unmappable range, or a row naming another item, refuses. [19]
+- The re-point takes the item's facts (F4). [20]
+- Re-authored, lookalike and moved links refuse (N1, N2). [21]
+- Idempotent reruns (R3-1). [22]
+- Carried after an edit outside the range; committed re-authors and lookalikes refused (R4-1, R4-2). [23]
+- A newer version needs the new item named (R4-3, explicit answer). [24]
+- A second change inside the range needs the new item; a stale worklist is refused (R5-1). [25]
+- A curator-set unapproved version and an anchor re-pointed to other code are re-authored (R5-2). [26]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the task document is reached only through the `OpenQuestions` port.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:05:38+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): created this card for the new file MIK-R14 adds, recording rulings 04:37:56 (Q2/Q3 refresh, Q7 limit), 05:31:11 (F1–F4, F7), 06:17:11 (N1, N2), 07:13:54 with the 09:18:48 reconciliation (R3-1, one ruling with the duplicate N5), 10:05:18 and 10:39:15 (R4 carried state, messages, explicit answer), 11:01:18 and 11:24:12 (R5 content survival, stale item, R5-2 upper bound) and the 11:53:13 notes. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

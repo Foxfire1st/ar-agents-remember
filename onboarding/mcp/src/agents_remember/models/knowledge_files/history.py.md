@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge_files/history.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge_files/history.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -112,6 +102,14 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
 - The models check shape and the helpers check facts the caller supplies; whether a row is current
   for a worklist item is the gate's rule (MIK-R09 rule 2), and the writer is MIK-R12's.
 - Nothing in the installed runtime reads or writes history files before MIK-R37.
+- **Reopen after a converted closeout (L37 ruling, 2026-10-01T01:57:55).** `HistoryFile.attempt` is optional
+  (>= 2, a leaf only; a wave or crossing file with `attempt` is refused), so every existing file keeps its
+  bytes; `attempt_number` is 1 without it. A reopened leaf keeps its closed file frozen and writes
+  `<leaf-id>-attempt-<n>.json`. `writable_attempt(closed_by_attempt)` names the attempt a write or a closeout
+  goes to: the latest while it is open, the next once it is closed, 1 when there is no file.
+  `merged_leaf_history(files)` reads all of an owner's files as one history, in attempt order: a later row about
+  a subject supersedes the earlier one, and every other row, a closed file's included, still counts. The merge
+  is a reading and is never written back. `empty_history(..., attempt=n)` creates an attempt file.
 
 ### Todos
 
@@ -128,10 +126,8 @@ the writer's `history` section (`authoring._onboarding_row`), and MIK-R24 rule 8
 moving an open leaf's markers. The root route's subject is `onboarding:overview` (architect ruling
 2026-09-29T18:49:50 (3)).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The row kind's docstring, with MIK-R30's semantics and the root subject. | `OnboardingTraceRow`; "satisfies the onboarding gate's item" | mcp/src/agents_remember/models/knowledge_files/history.py:261-283 |
-| The gate that reads these rows. | `_history_rows` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:339-361 |
+- The row kind's docstring, with MIK-R30's semantics and the root subject. [1]
+- The gate that reads these rows. [2]
 
 ## 260928-MIK-L11 The Planned Row (MIK-R11 Rule 5)
 
@@ -151,12 +147,10 @@ string `<ID>@v<n>` while a `deferred` row's `requirement` is structured; both sp
 R1 F5, accepted by ruling 2026-09-29T22:35:34+02:00). The module docstring now names MIK-R30 and MIK-R11 as
 the kinds that have landed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The docstring's list of landed row kinds (since MIK-R14 it names MIK-R10's and MIK-R14's, with MIK-R06 still to come). | "MIK-R06 later" | mcp/src/agents_remember/models/knowledge_files/history.py:26-28 |
-| The ref: exactly one key. | `PlannedRef`; `_require_exactly_one` | mcp/src/agents_remember/models/knowledge_files/history.py:286-312 |
-| The planned row and its disposition-bound ref. | `PlannedEffectRow`; `_require_ref_of_disposition` | mcp/src/agents_remember/models/knowledge_files/history.py:315-338 |
-| The registry test, since MIK-R14 six kinds compared as a set. | `test_row_kind_registry_owns_disjoint_subject_forms` | mcp/tests/test_knowledge_history_files.py:168-193 |
+- The docstring's list of landed row kinds (since MIK-R14 it names MIK-R10's and MIK-R14's, with MIK-R06 still to come). [3]
+- The ref: exactly one key. [4]
+- The planned row and its disposition-bound ref. [5]
+- The registry test, since MIK-R14 six kinds compared as a set. [6]
 
 ## 260928-MIK-L10 The No-Invariant Row (MIK-R10 Rule 3)
 
@@ -172,12 +166,10 @@ the worklist's (a stray row is reported as unnecessary, never refused). A `no_in
 an **uncovered** file satisfies nothing (rule 5; ruling 2026-09-30T03:24:28 N2). The module docstring now names
 MIK-R10 among the landed kinds.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The row's subject pattern and disposition come from the one spelling. | "from agents_remember.models.knowledge_files.unexplained import" | mcp/src/agents_remember/models/knowledge_files/history.py:80-80 |
-| The no_invariant row: its pattern, its one disposition, its owner. | `UnexplainedChangeRow` | mcp/src/agents_remember/models/knowledge_files/history.py:341-353 |
-| Registered fifth. | "HistoryRowKind(\"unexplained\", UnexplainedChangeRow, \"MIK-R10\")" | mcp/src/agents_remember/models/knowledge_files/history.py:387-387 |
-| The model's refusals: another disposition, a blank reason, `covers`, a malformed subject. | `test_the_kinds_are_registered_and_no_invariant_is_the_only_row_disposition` | mcp/tests/test_unexplained_change_disposition.py:161-181 |
+- The row's subject pattern and disposition come from the one spelling. [7]
+- The no_invariant row: its pattern, its one disposition, its owner. [8]
+- Registered fifth. [9]
+- The model's refusals: another disposition, a blank reason, `covers`, a malformed subject. [10]
 
 ## 260928-MIK-L14 The Reconsideration Row (MIK-R14 Rule 4)
 
@@ -193,14 +185,14 @@ MIK-R14's `reconsider:…` among the landed kinds, with MIK-R06 still to come. T
 `test_knowledge_history_files.py`, because leaves register in landing order (review F9); the duplicate-name check
 that the ordered list gave is gone, while subject disjointness is still asserted (review N4, accepted as a note).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The row's subject pattern and dispositions come from the one spelling. | "from agents_remember.models.knowledge_files.reconsideration import" | mcp/src/agents_remember/models/knowledge_files/history.py:65-68 |
-| The reconsideration row: its kind, pattern and two dispositions. | `ReconsiderationRow` | mcp/src/agents_remember/models/knowledge_files/history.py:356-368 |
-| Registered sixth, owned by MIK-R14. | "HistoryRowKind(\"reconsideration\", ReconsiderationRow, \"MIK-R14\")" | mcp/src/agents_remember/models/knowledge_files/history.py:388-388 |
-| The row kind registered with its owner, and the subject parsed. | `test_the_row_kind_and_the_item_kind_are_registered` | mcp/tests/test_reconsideration_surfacing.py:604-611 |
+- The row's subject pattern and dispositions come from the one spelling. [11]
+- The reconsideration row: its kind, pattern and two dispositions. [12]
+- Registered sixth, owned by MIK-R14. [13]
+- The row kind registered with its owner, and the subject parsed. [14]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The format's design authority is the coordination-root note
@@ -208,55 +200,36 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R07@v2` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The file model is registered in `documents.py`; the tests in `test_knowledge_history_files.py` pin
 each rule.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The invariant and family disposition vocabularies. | `INVARIANT_DISPOSITIONS`; `FAMILY_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge_files/history.py:85-86 |
-| The shared row shape and kind dispatch check. | `HistoryRow` | mcp/src/agents_remember/models/knowledge_files/history.py:105-130 |
-| Covered entries: anchors with a path, or absent on one side. | `CoveredEntry` | mcp/src/agents_remember/models/knowledge_files/history.py:133-164 |
-| What each disposition's covers must show. | `_COVER_REQUIREMENTS`; `_require_disposition_evidence` | mcp/src/agents_remember/models/knowledge_files/history.py:176-198; mcp/src/agents_remember/models/knowledge_files/history.py:201-217 |
-| The invariant row. | `InvariantRow` | mcp/src/agents_remember/models/knowledge_files/history.py:220-236 |
-| The family row and its examined members. | `ExaminedMember`; `FamilyRow` | mcp/src/agents_remember/models/knowledge_files/history.py:239-243; mcp/src/agents_remember/models/knowledge_files/history.py:246-258 |
-| The onboarding-trace row: one disposition, and the moved marker lines as a structured list. | `OnboardingTraceRow` | mcp/src/agents_remember/models/knowledge_files/history.py:261-283 |
-| The row-kind registry, now with six kinds (MIK-R11 adds `planned`, MIK-R10 `unexplained`, MIK-R14 `reconsideration`), and dispatch. | "HISTORY_ROW_KINDS: Final["; `row_kind_for_subject` | mcp/src/agents_remember/models/knowledge_files/history.py:382-389; mcp/src/agents_remember/models/knowledge_files/history.py:392-398 |
-| Many long marker lines move into one valid row. | `test_many_long_markers_move_into_one_valid_history_row` | mcp/tests/test_knowledge_crossing.py:217-243 |
-| The file: one owner, one row per subject. | `HistoryFile` | mcp/src/agents_remember/models/knowledge_files/history.py:418-462 |
-| The freeze predicate. | `is_closed_history`; `frozen_history_violation` | mcp/src/agents_remember/models/knowledge_files/history.py:476-495; mcp/src/agents_remember/models/knowledge_files/history.py:498-506 |
-| Re-anchoring checked against K_C. | `reanchor_mismatches`; `sidecar_entry_anchors` | mcp/src/agents_remember/models/knowledge_files/history.py:514-526; mcp/src/agents_remember/models/knowledge_files/history.py:529-534 |
-| The revision binding for invariant and family rows. | `invariant_revision_violation`; `stale_examined_members` | mcp/src/agents_remember/models/knowledge_files/history.py:547-567; mcp/src/agents_remember/models/knowledge_files/history.py:570-581 |
-| The history schema is dispatched by `documents.py`. | `HISTORY_SCHEMA` | mcp/src/agents_remember/models/knowledge_files/documents.py:64-71 |
-| Closed files stay byte-identical, even when reformatted. | `test_closed_in_base_implies_byte_identical_in_candidate` | mcp/tests/test_knowledge_history_files.py:332-360 |
+- The invariant and family disposition vocabularies. [15]
+- The shared row shape and kind dispatch check. [16]
+- Covered entries: anchors with a path, or absent on one side. [17]
+- What each disposition's covers must show. [18]
+- The invariant row. [19]
+- The family row and its examined members. [20]
+- The onboarding-trace row: one disposition, and the moved marker lines as a structured list. [21]
+- The row-kind registry, now with six kinds (MIK-R11 adds `planned`, MIK-R10 `unexplained`, MIK-R14 `reconsideration`), and dispatch. [22]
+- Many long marker lines move into one valid row. [23]
+- The file: one owner, one row per subject. [24]
+- The freeze predicate. [25]
+- Re-anchoring checked against K_C. [26]
+- The revision binding for invariant and family rows. [27]
+- The history schema is dispatched by `documents.py`. [28]
+- Closed files stay byte-identical, even when reformatted. [29]
 
-## Cross-Repo References
+- The optional attempt of a reopened leaf's file. [30]
+- The attempt a write or closeout goes to. [31]
+- All of an owner's history files read as one history. [32]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module reads and writes only files of the memory
 repository layout it declares, and calls no sibling repository or external service.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** A Logic bullet for `ReconsiderationRow`; the registry bullet names six kinds and the set comparison; a new section "260928-MIK-L14 The Reconsideration Row (MIK-R14 Rule 4)" with four rows (review F9, N4). **Reopened claim re-read and reworded:** the docstring row's anchor "MIK-R06 and R14" is gone from the code (the list now names MIK-R14 and leaves MIK-R06 for later). The committed L10 entry names that anchor, so the row is re-anchored on "MIK-R06 later" (`26-28`) instead of editing committed history. The registry row and the L11 registry-test row are reworded for six kinds; their anchors are unchanged. The four rows the fixer declined (`row_kind_for_subject`, `frozen_history_violation`, `sidecar_entry_anchors`, `stale_examined_members`) were re-pointed by the exact line shift of this leaf's diff (the new row class and imports sit above them). The fixer's generated bullets are kept: none of their claims was reworded. No verification stamp was advanced.
-- 2026-09-30T10:07:07+00:00: Generated citation repair: "from agents_remember.models.knowledge_files.unexplained import" repointed to mcp/src/agents_remember/models/knowledge_files/history.py:80-80. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:07:07+00:00: Generated citation repair: "HistoryRowKind(\"unexplained\", UnexplainedChangeRow, \"MIK-R10\")" repointed to mcp/src/agents_remember/models/knowledge_files/history.py:387-387. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:07:07+00:00: Generated citation repair: `INVARIANT_DISPOSITIONS`; `FAMILY_DISPOSITIONS` repointed to mcp/src/agents_remember/models/knowledge_files/history.py:85-85; mcp/src/agents_remember/models/knowledge_files/history.py:86-86. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** Added a Logic bullet for `UnexplainedChangeRow` and the section "260928-MIK-L10 The No-Invariant Row (MIK-R10 Rule 3)" with four rows (ruling 03:24:28 N2). **Two reopened claims reworded and re-anchored:** the docstring row (its anchor "MIK-R06, R10 and R14 later" is gone from the code; now "MIK-R06 and R14") and the registry row (five kinds; re-anchored on the line-exact quote "HISTORY_ROW_KINDS: Final["). The registry Logic bullet names five kinds. Other rows were projected or normalised by the installed fixer, or re-pointed by exact line shift. No verification stamp was advanced.
-- 2026-09-30T02:33:27+00:00: Generated citation repair: `INVARIANT_DISPOSITIONS`; `FAMILY_DISPOSITIONS` repointed to mcp/src/agents_remember/models/knowledge_files/history.py:82-82; mcp/src/agents_remember/models/knowledge_files/history.py:83-83. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T21:49:00+00:00: Generated citation repair: `INVARIANT_DISPOSITIONS`; `FAMILY_DISPOSITIONS` repointed to mcp/src/agents_remember/models/knowledge_files/history.py:80-80; mcp/src/agents_remember/models/knowledge_files/history.py:81-81. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T21:49:00+00:00: Generated citation repair: `HistoryFile` repointed to mcp/src/agents_remember/models/knowledge_files/history.py:381-425. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Added a Logic bullet for `PlannedEffectRow` and the section "260928-MIK-L11 The Planned Row" (`PlannedRef`, the disposition-bound ref, the two requirement spellings of review R1 F5). **The reopened `HISTORY_ROW_KINDS` claim was re-read and reworded** (four kinds, `planned` owned by MIK-R11) and re-measured; the Logic bullet on the registry was reworded to match. Other rows were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 What An Onboarding Row Means" (the docstring-only change, recording architect ruling 2026-09-29T18:49:50 (3)) and reworded the Logic sentence that left the kind's semantics to L30. Rows below the docstring were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body update: the `onboarding_trace` row kind (registered by MIK-R24, owned by MIK-R30).** Added a Logic bullet for `OnboardingTraceRow`, including the architect ruling N1: the moved marker lines go in the structured `markers` list, and `reason` is a short fixed summary. **Corrected claims this change made untrue:** the registry holds three kinds, not two; MIK-R30 is no longer a future adder; and "no row is produced automatically" now names the crossing sync's marker move as its one mechanical writer. The reopened `HISTORY_ROW_KINDS` row was re-measured (`282-286`) and reworded. A row for the new class and one for its long-marker test were added.
-- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **No content impact** — citation-only repair. MIK-R20 adds the census import and the `CensusDocument` member to `models/knowledge_files/documents.py`, so its `SCHEMA_MODELS` table moved to `:64-71`; this card's history-schema row was re-pointed, its claim unchanged (the history schema is still registered there). No verification stamp was advanced.
-- 2026-09-29T06:00:00+02:00 — 260928-MIK-L07 curator (uncommitted change set on `ar/260928-mik-l07`, code base `45fe37749b388de348d16ced50c28c03490dce64` plus the working-tree delta, after worker fix round 1): created this card for the new file MIK-R07 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

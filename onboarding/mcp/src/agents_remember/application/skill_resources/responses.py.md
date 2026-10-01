@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/skill_resources/responses.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/skill_resources/responses.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -68,52 +58,31 @@ in a separate error type, which is what lets one response model serve both shape
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The trust statement this module stamps on every served file is the extension's own security posture:
 skill content is server-supplied data, a host must not honor mechanisms declared in it, and a resource
 read is not an activation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A declared tool set is an observation, never a permission channel. | `declared_allowed_tools` | mcp/src/agents_remember/models/skill_resources.py:270-285 |
-| Provenance travels with the bytes: origin, identity, this file's revision, and the trust statement. | `skill_meta` | mcp/src/agents_remember/models/skill_resources.py:253-267 |
+- A declared tool set is an observation, never a permission channel. [1]
+- Provenance travels with the bytes: origin, identity, this file's revision, and the trust statement. [2]
 
 Canonical live reference: <https://github.com/modelcontextprotocol/modelcontextprotocol> (the skills
 extension specification, SEP-2640).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The response builders, and the admitted facts that are present in a refusal as well as a success. | `role_capsule_response` | mcp/src/agents_remember/application/skill_resources/responses.py:34-55 |
-| A refusal keeps the manifest facts it has and never fabricates capsule content. | `_fill_manifest` | mcp/src/agents_remember/application/skill_resources/responses.py:58-119 |
-| The listing names files and carries no body; `skillRevision` and this file's revision are two facts. | `_entry_payload`; `skill_catalog_read_response` | mcp/src/agents_remember/application/skill_resources/responses.py:138-164; mcp/src/agents_remember/application/skill_resources/responses.py:167-177 |
-| The trust statement every served file carries, as a constant rather than an input. | `SERVER_SUPPLIED_CONTENT_TRUST` | mcp/src/agents_remember/models/role_capsule_resources.py:31-32 |
-| The strict response contracts these builders produce. | `RoleCapsuleResponse`; `SkillCatalogListResponse`; `SkillCatalogReadResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:86-115; mcp/src/agents_remember/models/role_capsule_resources.py:137-150; mcp/src/agents_remember/models/role_capsule_resources.py:153-167 |
-| The case that executes the no-grant guarantee these builders render. | `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names` | mcp/tests/test_capsule_serving.py:815-849 |
-| The case that executes the no-body-in-a-listing guarantee these builders render. | `test_the_discovery_registry_is_not_the_model_visible_catalog` | mcp/tests/test_capsule_serving.py:886-912 |
-| These builders serve this server's own tool surface; the extension's enumeration result is produced by the `skills/list` handler. | `_skills_list_handler` | mcp/src/agents_remember/mcp/registration/skills_extension.py:243-257 |
+- The response builders, and the admitted facts that are present in a refusal as well as a success. [3]
+- A refusal keeps the manifest facts it has and never fabricates capsule content. [4]
+- The listing names files and carries no body; `skillRevision` and this file's revision are two facts. [5]
+- The trust statement every served file carries, as a constant rather than an input. [6]
+- The strict response contracts these builders produce. [7]
+- The case that executes the no-grant guarantee these builders render. [8]
+- The case that executes the no-body-in-a-listing guarantee these builders render. [9]
+- These builders serve this server's own tool surface; the extension's enumeration result is produced by the `skills/list` handler. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names` repointed to mcp/tests/test_capsule_serving.py:815-849. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_the_discovery_registry_is_not_the_model_visible_catalog` repointed to mcp/tests/test_capsule_serving.py:886-912. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: re-anchored every citation range
-  against the current `models/skill_resources.py` and `mcp/tests/test_capsule_serving.py`, corrected the
-  two case ranges that the repairs moved, and added the boundary row that matters after the repairs:
-  these builders serve **this server's own tool surface**, while the extension's enumeration result is
-  produced by the `skills/list` protocol handler on the registration route. The recorded contract is
-  unchanged — copy-only builders, one refusal/success envelope, named-versus-carried in a listing, and
-  the constant trust statement.
-
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator: created the card for the response builders.
-  Recorded the copy-only contract (no decision lives here), the refusal envelope that keeps the seat
-  and revision facts it has, the named-versus-carried split between a listing and a read, the constant
-  trust statement, and the two mutation-probe-backed guarantees (no grant, no body in a listing).
-  Verification metadata remains closeout-owned; no acceptance claim is made.

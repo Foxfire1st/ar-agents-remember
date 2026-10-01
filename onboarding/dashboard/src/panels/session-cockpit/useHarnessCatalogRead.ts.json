@@ -1,0 +1,53 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Supplies the typed one-attempt read and result states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c87a333fcbc7605dad19267d7e48d7a354c2ee22",
+            "content": "sha256:6a4891ea09b5bcfebe0fccd7330e8cc0e649274e8810071b490118ec74845e69",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessCatalogRead"
+            },
+            "path": "dashboard/src/data/harnessCatalog.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c87a333fcbc7605dad19267d7e48d7a354c2ee22",
+            "content": "sha256:5c270f24a1b10ed598b5143289e8c9faa3aa6fa386391a72949c8dcc0357bd98",
+            "locator": {
+              "kind": "symbol",
+              "name": "readHarnessCatalog"
+            },
+            "path": "dashboard/src/data/harnessCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Consumes the hook and renders retryable explicit states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:b1e8deb090ef470275858dc95f44213ac3a85f2211a62ef9c1e2202b02d611c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchFlow"
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

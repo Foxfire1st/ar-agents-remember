@@ -1,0 +1,57 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/CapabilitiesPane.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Authority-separation regression for `SNAPSHOT`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11fb901bdc5d85b069918708f48eba9f1922f9a0",
+            "content": "sha256:e486cf317620948d6119d3eb998617ccc6fb9567260c5dde0d7a8d12541dcf43",
+            "locator": {
+              "kind": "symbol",
+              "name": "SNAPSHOT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Existing-read-route regression for \"uses only the existing exact-session and harness refresh routes\".\n\nAnchor: \"uses only the existing exact-session and harness refresh routes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11fb901bdc5d85b069918708f48eba9f1922f9a0",
+            "content": "sha256:23f78a528e006072cbaa428d43fb64ba377ab62bad4aee151c63fe33e22f55a7",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Component under test, `CapabilitiesPane`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7353d28e2d3028cbaba6df3d604819dc58070fd6",
+            "content": "sha256:9c9721dce0252b44b2b82e056a02330420dac622a8a568c5e3ccefc416c329eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitiesPane"
+            },
+            "path": "dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

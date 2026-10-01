@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/process_status.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CGC process lifecycle uses namespace gates, liveness checks, and command-line inspection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
+            "content": "sha256:bde1bd37f9e5da5cd9629b0f59197038f60d85e1484435c641f4aa6f25928319",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_start_watch_process"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Aggregate watcher lifecycle reports namespace durability before starting enabled providers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
+            "content": "sha256:824b874266a154a86592bb9679bdc6119f465d360667cc61c15adc4b5ea3b128",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_durable_watcher_namespace"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

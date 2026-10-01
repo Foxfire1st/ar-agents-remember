@@ -1,0 +1,316 @@
+{
+  "path": "mcp/src/agents_remember/install/experiment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The per-run selection input, its vocabulary, and the resolved value that records which input won.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:49c743dbc3dab5f2f591c20bf53b45f2011d67b566c9c68d769e6bab17f495c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPERIMENT_ENV"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:319638e3632a97097d50f3b4065ebb1d41b1609e667c34da38fea4456bdd5f6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPERIMENTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:894bc6e92bdfff3a8528dbd0d75ebbbddbff5eb371df5f586b381f447a4f9bc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExperimentSelection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:ac30c7798cfffff52c5325ee55cc8d9c0ad2bd798e32a2f2ebd3a762ed8c7c54",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_experiment_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The compiler resolves its corpus from the packaged tree, not the coordination root's copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:b1aa6db26f9495b7eac841b60e70fbfb0730b9dbbdeb2a63197ed4bac2c762b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "shipped_composition_corpus"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The explicit \"selected nothing\" value the installer's scope defaults to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:34a4ed746cc97c29d853ed1a8bef8b0ef88c2546999e6d5a2b71fa2bf40dc2e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "unselected_experiment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The three-answer delivery decision in which a selected-but-unable run is refused rather than degraded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:7f87a8f5deaee1e121060af98d6661f13b1e543a9bbc054d2acbc050314242ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "decide_instruction_delivery"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:71b1bb2887d80d3089c8a3b09c742a00f7a3cfe57f8f003b8de9ef2b90f4e8c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionDelivery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The startup targets a capsule-mode installation withholds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:8d8649f8e1fbc2a80004834152c2ccf2c5d374fc0c35e3b631cfd0ce9a6c0270",
+            "locator": {
+              "kind": "symbol",
+              "name": "WITHHELD_STARTUP_TARGETS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pinned versions, the corpus anchor, the minimum node major, and the one-line dependency install command.\n\nAnchor: `dependency_install_command`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:632d2a4ef2c68147e88e3eb7e72bbfb264e045425a84204e73356452cced0dca",
+            "locator": {
+              "kind": "symbol",
+              "name": "PINNED_DEPENDENCIES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:684230c5d826a8f344a73f6bf3f7ad650a399c83726c67edce126a43f987e75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CORPUS_ANCHOR"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:33bdd4d264999d84beb4c955d281a376492894dcacc826e2e669b610ad0cf843",
+            "locator": {
+              "kind": "symbol",
+              "name": "MINIMUM_NODE_MAJOR"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:cae4d82147779143f06f95464d6b36f1dc4ce0b8834c9e693d30d5f369d4ae7a",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:27079c3888a4e099d8a199734de9a7b322de539173bc2daa7f7be83e14d87fab",
+            "locator": {
+              "end": 566,
+              "kind": "line_range",
+              "start": 537
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The capability report and the blocking/non-blocking probes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:486eac8fa62a9bb1762dcc129ce463f479dc9fb32c7535d8a3b2b64b466a57f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "probe_capabilities"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:a8c378691487d9eb73ac4df59e127b34873b32444edf5b05983feccf6802d9d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One run record per run, in the packet's shape plus the mode, reason, selection source and capability detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:86f3d489531f3d2c87ea9e53e0057bccd3990d1874d583756b13cd442fa1cea9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExperimentRunRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:f1a238e1ae49a9b77e185729476416951c7ef718ce0e163f7c98f9253e16d85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_run_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:9aad44037b86200530761efd46fd12be74cff020c2b7c2c7361ed9ae281991e4",
+            "locator": {
+              "end": 609,
+              "kind": "line_range",
+              "start": 568
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The rendered undo rows for the unmodified configuration, and the labelled skills-install row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:a55cfd53630deddaa0bc3216a7417a911aa760169797fd04cedf49baddea84ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "experiment_rollback_plan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:7ffe0de540ead406e324c1330bcc7f86c021401c0449a2a8931d652c2e9fbee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "rollback_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The installer consumes an already-resolved selection and refuses an unselected scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:c394882fe50cb8c5fbd4c58641c06077492cbbacce38cca0e5715639c13753cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_experiment_install"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:f2592acb3de309e5d5c9d230a540dc6b8dbb08fbf49afdb79e8cbd5d9846823c",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_experimental_runtime"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

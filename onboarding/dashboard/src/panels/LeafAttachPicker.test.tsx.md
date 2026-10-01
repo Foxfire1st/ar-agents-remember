@@ -1,15 +1,5 @@
 # dashboard/src/panels/LeafAttachPicker.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/LeafAttachPicker.test.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -55,29 +45,14 @@ Render + interaction only; no store, no backend, no portal-overlay harness. The 
 contract (visible rows by testid, `onPick` payload) rather than internal drill state, and treat the leaf
 key as opaque — they only check it round-trips through `onPick`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component under test. | `LeafAttachPicker` | dashboard/src/panels/LeafAttachPicker.tsx:145-349 |
-| The `TaskTreeNode` type the `TREE` fixture is built against. | `TaskTreeNode` | dashboard/src/data/taskIdentity.ts:133-139 |
+### Repo-Internal References
+
+- The component under test. [1]
+- The `TaskTreeNode` type the `TREE` fixture is built against. [2]
 
 ## Current L5I Maintenance
 
 The picker tests now cover the measured placement contract in addition to selection behavior,
 including opening above the trigger when the lower viewport room cannot accommodate the menu.
-
-## Update History
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 4 citation findings (2 rows); scoped recheck clean.
-- 2026-07-24T13:17:17Z — Curator: recorded regression coverage for measured vertical placement;
-  verification fields remain pre-commit.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: expanded drill-down tests with mandatory/preselected
-  seat role and restricted role-option behavior.
-
-- 2026-06-30T00:00:00+02:00 — Operations Integration L5 (Sidebar chat): created — drill-down navigation tests over a
-  nested master→leaf tree: masters list before leaves, drilling reveals a master's leaves + nested
-  masters, an in-context master pre-drills on open, walking back returns to the top level, and selecting a
-  leaf calls `onPick` with the qualified leaf key (incl. a leaf two levels deep). Verification metadata
-  pinned until closeout stamps the L5 commit.

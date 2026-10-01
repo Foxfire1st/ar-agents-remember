@@ -1,0 +1,278 @@
+{
+  "path": "mcp/tests/test_role_capsule_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen vocabulary and its completeness guard the vocabulary group pins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_OPERATIONS"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:fcfcd052a7e3b10ed2c740f5f529182d7b3148edf830db0c4174057719602d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_STATUSES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The manifest parser the shipped-manifest group exercises against the real file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:d3e6eee279eafcfca161291cb247167af728e57159bcf6e30031ef5a16653f19",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_composition_manifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:70cb6e8181c52a286806bbf286ed853dc14e21dbff7c6e46073921b8a5f30b3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_path_serves_one_identity"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:9128e49587a934636fc7f5a88063b9b6a16a85d90840452fb3e618399482b9de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_operation_applicability_agrees"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:d9ebe0c01225ff5c3367abc7ff71348cad9b820eeca4ee81a7871f376414497f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_role_skills_are_declared"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The admission boundary the admission group refuses through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:915fd89222d1328505df921b788cb9559a7190b597c8b7549b071d961fa0e4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_capsule_sources"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:54ae6eb9a2320bd63746c338442c15491cf9fd0857b1e15171bd357124fe8448",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_confined_relative"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The both-directions plan validation, including the skill-root gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "content": "sha256:cbc02076178ee4d24950f063c800c5076a7082d8fdc80267179e9536bc0a6af5",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_source_set"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_skills_present"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The carried skill channel** these cases pin, and the helper that names a skill identity.\n\nAnchor: \"The canonical identity of a skill reference: origin plus skill name.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:818f46d27fa1b66ce97dd9f70db626a5c63f7bbc33a2e0ebbfe3596add2abb25",
+            "locator": {
+              "kind": "symbol",
+              "name": "skills_declared_identity"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:f01dd531368a0f81cc5dddac18e5ced531455bba62bcff32bed1e8f1fc64642d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSkillReference"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25).\n\nAnchor: `CapsuleSourceError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:ac45f0589b6cb6ad75ff30d3b2d60d75cfedf136bd7740a23b4a8e0d5908be44",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The real corpus this module is the only role-capsule test to read.\n\nAnchor: \"ar-role-capsule-composition/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:13546d9abdcd5196f3cc0d6f41800b27a79b31fc2c63887e67a76836953abbfd",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The sibling module that owns the compiler's own property cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_input_compiles_to_identical_ordered_content_and_digest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

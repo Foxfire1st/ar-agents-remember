@@ -1,0 +1,59 @@
+{
+  "path": "scripts/harness/shared/agents-remember-settings.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generator that fans this file out verbatim, including to `.vscode/mcp/`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:1558c093be0e087e187b21ff6e42f2a7cdbda8555d6072199861142e5160295b",
+            "locator": {
+              "kind": "symbol",
+              "name": "generated_files"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`render_settings` performs the placeholder substitution in a rendered workspace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48702d860710153a5eceeaead202c3492b62aeb9",
+            "content": "sha256:8c295a34cdc886d831c3010960f7f283cf941570958f3b939cae49ed3838ca54",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_settings"
+            },
+            "path": "scripts/harness/render_starter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The settings schema this template instantiates.\n\nAnchor: `# settings.json Reference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4ff84bbe6a784f10f205215c9e8c4ec42c077f1",
+            "content": "sha256:17dc0947e3353afa6f31c7ce11ae8d93b3cfe16d2375760e70de569073aca074",
+            "locator": {
+              "end": 526,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

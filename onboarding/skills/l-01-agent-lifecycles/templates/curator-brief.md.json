@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The worktree section requires the current pre-curator lineage projection and explains its evidence-only role.\n\nAnchor: \"Pre-curator lineage:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
+            "content": "sha256:603f74ab2ddb67bbd1ec4cf0d48ba61068acfe19a221b37467e53a330501833e",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact requirement packets and adjudications are mandatory task inputs.\n\nAnchor: \"## Task inputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
+            "content": "sha256:e4444b193ca705d126d0145e7c1ef3f1abcf290e7658f10f1b612d80e31ac110",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The brief carries the producers' curator hand-off list as data, with the producer fields filled and the curator fields null.\n\nAnchor: \"Producers' curator hand-off list:\"; \"the curator fields\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
+            "content": "sha256:abc24de372a3c706c8654d21dcccea8e5ab74a15fa259297e6877d5e16543700",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation.\n\nAnchor: \"Immediately before compiling this brief\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
+            "content": "sha256:7c0d49416af51e866359ef52a10e1ec3694a9d9c21f6d6f53072aaa6e0b5bca4",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 177
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief.\n\nAnchor: \"Hand the curator its brief\"; \"curator-brief.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:d93a243b0e3ef14a8a2569a9b86053eccfab1a993d87f75ef004a5afdd46f8e6",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,400 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The skill is the procedure that authors the knowledge foundation (invariants, families, source realizations, external sources) as distinct from Markdown onboarding, and it adds no role and no second store.\n\nAnchor: `# c-14-knowledge-bootstrap Knowledge Bootstrap`; \"This is a procedure, not a role and not a second orchestration system.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:6e239a14b09ec258b7e64896d045058584f4225f2edf6d99707daed5a2f8cf64",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Step 5 reads the report as the result: batch state, per-entry outcomes, the independent publication read-back, destination contents, and the remaining/unmeasured/carried work.\n\nAnchor: `### 5. Read the result back — the report is the result`; `run.batchState`; `publishedIdentity`; `destinationContents`; `remainingBasis`; `progressRecordWritten`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:ad424b580c1d368e9889cbc6764b3983e3386626061162c7bbe10b218356e2ad",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A partial run reports itself partial; an empty destination, a committed-nothing batch or a zero exit is not a populated foundation.\n\nAnchor: `### 6. Report coverage and unresolved work`; \"An empty destination, a batch that committed nothing, or an exit status of zero is not a populated foundation.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:878cd8e8222eceb6fe3e74043135265a4dafe3a2c093cde41a921643cee8ca5e",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Staging is removed only by its bounded owner and only against a proven dataset match; it is never removed to tidy an unpublished run.\n\nAnchor: `### 7. Clean up through the bounded owner, when there is anything to clean`; `--discard-staging`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:a7dac45061db16ec4f2eeb83f77456551e5533ec665fe0cbfeef552df5328b9c",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The failure table carries the product's own refusal codes and its `nextAction` route for each, including the enclosure guard and the destination that must not be overwritten.\n\nAnchor: `## Failure And Recovery Behavior`; `destination_unusable`; `staging_belongs_to_another_operation`; `memory_line_moved`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:fe8f25ec00d4982ea21125cca281100aec284e026db082c63fc1ca12572d27bb",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The eight preservation boundaries, including no fabricated leaf/worktree/enclosure, no invented authority, and the delivery gates that keep their owners.\n\nAnchor: `## Preservation Boundaries`; \"No fabricated development leaf, worktree, enclosure or task document\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:efd275ce0b5a2c7a7477f77b487b2fef4afe999b859851d8be73a5e813f884bb",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The relationship table places the procedure against its neighbours: c-13 reaches it, c-03 names it, c-00 reports the location's state, c-10 is a baseline and not a foundation, and the l-01 carriers house the owner and the first-hour seat.\n\nAnchor: `## Relationship To Other Skills`; `c-13-install-and-onboard`; `c-03-repo-bootstrap`; `c-00-initialize-memory-repo`; `c-10-adopt-memory-baseline`; `templates/curator-handoff-list.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:81cc5730c1114652449cc15c0b13395b94683a6b36e6ae653c009d05b3cfebc5",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The acceptance criteria state the reachable entries, the state read before authoring, the planning default, the derived admission, the read-back, partiality, the published location and the no-new-owner boundary.\n\nAnchor: `## Acceptance Criteria`; \"a zero exit status is never quoted as a publication\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:b8f4a940eb2680d84ef3f1d2f5aa62063d7ca9c57b5968d5f01e14917e358ea2",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 329
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The taskless seat set the procedure's gate rests on, which `260921-ICR-L32` changed on the developer's 2026-09-24 ruling so that it admits `curator`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:41ebaad1a45d219fd40decb0ea0f455eb2f7d55afb6b49d3fe05ade539c21739",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASKLESS_SEAT_ROLES"
+            },
+            "path": "mcp/src/agents_remember/serving/task_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Propagation is generated, not hand-maintained: the root tree is copied into the package-owned copy and the eight harness starter packages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Step 3 requires admission for every new record and gives the rule with two admitted and two refused examples (MIK-R27).\n\nAnchor: \"A foundation is a small set of meaningful records\"; `prevents_costly_mistake`; \"introduced by L43\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:dffe7faf364748c0b70c9001b191f39d2d2c2374894cfeb0f38fb2e563f0ecb8",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The new-project entry is a **taskless** seat, and since the developer's 2026-09-24 ruling the procedure states that a taskless curator seat **exists** and authors the foundation when no task does, instead of asserting a refusal the product no longer makes.\n\nAnchor: `## Who Runs It`; \"A taskless *curator* seat exists\"; `\"task-binding-required\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:89b28516c83050bf9f71824659f1557bece5992fd9aa836b8fa53fdb8e5527ee",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The step-3 bullet requiring an authored realization rationale for every target.\n\nAnchor: \"realization rationale for every target\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:525c6bc0ba2280e5398d035888088697917a7a5785dd5fa13d8d937a49d39e88",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The procedure and its nine generated copies are byte-identical on this candidate, and the leaf's own catalog case reads the served bytes back against the canonical tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:49aca5567b2f700f827020c2a7d5dd187346776e20068983d4cea338e6249ac2",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCEDURE_FILE"
+            },
+            "path": "mcp/tests/test_knowledge_bootstrap_procedure.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a606c4df9f2d7636c879d0d5d4f9353b0369221",
+            "content": "sha256:8a8357d902c86ce8f94370eb835a3973f04fcd8188a4fda4e500e9d992f8a2cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "procedure_text"
+            },
+            "path": "mcp/tests/test_knowledge_bootstrap_procedure.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Onboarding is optional input and never a precondition; a repository with no onboarding file is a supported starting state.\n\nAnchor: `## When To Use`; \"Onboarding is **optional input, never a precondition**.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:cda8018d6f01ea0715c4fa3eae73da49e4d10f4d4d224c7a5b9a7c9b7d7f75e6",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The three reachable entries and the delegated-assistance boundary: collection may be delegated, the authored result may not.\n\nAnchor: \"Collection and search assistance may be delegated; the authored result may not.\"; `enclosure_in_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:e88b24bdf6379a1e335d8a8d514778c823815eea72c654f16209b179befd845d",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:d9d209c3e03eaf83cfdee4b13b6a54b2be27d3f351045d091b13607c170a87c8",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Step 1 separates the four knowledge states, and a refused admission is not one of them.\n\nAnchor: `### 1. Resolve the entry and name the current state`; `not-recorded`; `recorded`; `unusable`; `context-not-admitted`; `snapshot_unavailable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:cbf4a9c11e930e4efe1e56bba68cc37f1460240975ccf126d70ff9367f9f3a61",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Step 2 bounds the inventory to root and area contracts with real anchors rather than one record per file, and treats a missing optional source as absent rather than failed.\n\nAnchor: `### 2. Build a bounded source inventory and a coverage plan`; \"A missing optional source is **absent, not failed**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:435539266f064dd43c626698b3a4ba8d8b1de74be1b5ec9ead1cca00e8e54630",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Step 3 hands the evidence to the curator in the shape the hand-off-list template owns, and states the reconciliation the curator performs — including the deliberate no-family outcome with its basis and the unexamined obligation that is never reported as family-free (since leaf `260921-ICR-L45` it also requires an authored realization rationale for every target; see the separate row below).\n\nAnchor: `no_family`; `unexamined`; \"existing records are reused or revised, not duplicated\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:9ac1fb70886cfcc622019b52bbac8d50c9b2188cb6357e75ce9ccea871ac58d3",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The taskless writer entry, with planning as its default and `--commit` as the developer's whole write act.\n\nAnchor: `### 4. Author through the curator's own writer`; `--authorization-ref`; \"--commit\"; \"Planning is the default, and planning is the dry run.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:6b5ded07eb33cfe919562abe07fc86895b8a17e79c37c767ed73bcaf64987549",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The authoring procedure names the installed leaf command and distinguishes declared from caller-selected publication destinations.\n\nAnchor: `### 4. Author through the curator's own writer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
+            "content": "sha256:9d2d5188ab92c06f9df7235785642a1bdeb9251e8ada10dac01421a2164e4ad0",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

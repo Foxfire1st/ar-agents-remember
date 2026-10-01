@@ -1,0 +1,378 @@
+{
+  "path": "mcp/tests/test_knowledge_reader.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the fixture's two converted commits.\n\nAnchor: \"The fixture is a coordination root with one repository\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:eb639788fafda9748453c1c89c3e71f78a2abd1e70452d10dc7f55306123c1c3",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The selections: commits, published, a leaf, and a partial index with no code tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:20dea8da31a88de46854922338de60c279f59f310d30dc87822cf32b26e99e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_any_commit_is_selectable_by_its_hexadecimal_name_only"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:3a33f23e636a1dc6724100475094f0c70c0b3f67543a6666600260c53cd3726a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_published_tree_reads_uncommitted_state_writes_nothing_and_offers_a_pin"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:d64bbdc08aca662eaea96d5e531025d449cbf9b84099f74f1caff203b52605c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_live_leafs_candidate_is_selectable_and_names_what_its_code_tree_leaves_out"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:7ba76dccb0277ce2e031287870cfc6441590966069bee5e4aee72542a979ea82",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_index_and_an_unavailable_code_tree_are_named_where_they_apply"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The route, and bad requests and bounded code notices.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:113eedcddca789aecec61858881ddfcf7f25b94b2cebf5495bd52b5a8c16b9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_serves_every_view_and_the_reader_writes_nothing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:e8ea9332fe0e0c03897947e1c5c9208971ac1a1602879d89777d1536932d0709",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bad_requests_are_400_and_large_or_binary_code_is_a_bounded_notice"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_knowledge_reader.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b58860aa66f2927597ae37e60875eb10b0d8d3d4",
+            "content": "sha256:a76d28987255bc973fec0d29a9e3b41a0704330037508157d8de6058c414cd94",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The converted tree, the second commit's changes and the world with an unconverted commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:13b7793d5ad5c4c30b7437cd34f5735ce9169566382e501c529d331f25ab4541",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_tree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:161cc695e098ed19e4e775c242f93cfa1cff5e89ab15e3f31cf8f90a4360c576",
+            "locator": {
+              "kind": "symbol",
+              "name": "_second_commit"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:aee64e7af5ba853679e1127e1974383b89e90d9e04d3227f9b78cc2324bc7aa5",
+            "locator": {
+              "kind": "symbol",
+              "name": "world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The read-only snapshot of both repositories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:f0c22317f20c7b1de2cbcc8eaa7553d89335d0345effd93d1d5a14dd673efedc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The file and bounded directory views.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:f45cf783a9b0526374a9d3a1f8b2c99702471bea89d68a2bf7f37cafd5e73b8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_path_view_shows_prose_references_entries_families_and_linked_records"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:3f762896f00475c395ab162843bff4dd6ee398be97f22a28d1a104d260c1ffaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directory_view_is_bounded_to_its_own_level_children_and_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The subtree walk, the walk's code tree (F16, R3-1, R3-2), and another walk refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:ca786e08e8f89f95c23884338c758424ddb831e9b0dad129ae7fc9f663173cc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directorys_subtree_pages_through_the_shared_continuation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:7421f6fb089297a8ddbe4a9b682d9a78af5f6e46cbac65039b12f43ad0e193b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_subtree_walk_measures_every_page_at_the_code_tree_it_began_at"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:855e41cc2bb2f70b49670ced41001cb816bbcbc0c9f599911ca11f299742a536",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_subtree_continuation_of_another_walk_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The whole answer, envelope included, within the bound (F17).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:ced0c4b06187c1937cb0daa461d3aa6bb88548171145791a8a30c18e0abae0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The test file, the explorer and the without-proof list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:5d570159fdbe0e76b5580b931350b78dcf67bcacf30d32aac73514f477d2bbc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_test_file_shows_its_proofs_by_invariant_with_their_facets"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:d57a52994f2e6f24efe9d9fcbb12e8db1ecb80bf02d338f20467ab1a9734550b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_explorer_lists_code_and_onboarding_children_with_entry_counts"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:8e74b1ea82e47a31a8eca736a3726fb8e8664ea1e1020917106b0e01728c7733",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_without_proof_list_is_filterable_by_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The invariant view, moves and re-anchors, and the timeline cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:826741795f9b0683381b217a11e2ce8097aa6a95c446f68e1194650e04fec8b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_invariant_truth_view_has_every_field_state_link_and_a_three_source_timeline"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:3f2a14867bd47b8b67be4a8823f18733c06c696dbb8335ba4fe9ec31d1434ead",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_timeline_labels_moves_and_re_anchors_and_reads_only_the_sidecars_naming_them"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:e72130690db972dcfb30dc7fc0f2e6a6ad5a1504a95b1416e82910ce02348fa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_complete_timeline_is_served_again_from_the_bounded_cache"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The family, decision, incident and facet, and census views.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:b16bf1ef7d162c95f1bb1259eefda7931c86c75fb51e44538c92e2bed19fdd41",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_truth_view_shows_guarantee_members_routes_and_every_location"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:aa44a1dedc3db2bab142d620572c5896682b98cb777e9f1b8d8a538c09f8e63e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_truth_view_shows_alternatives_and_derived_supersession"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:e87d855ec9ffef79a1148c805a82b272bc5a492c79df1bc3a61dfbdcf099ccf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_incident_and_facet_views_show_every_field_and_typed_links_both_ways"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:e353d581810d23c2fc4449c389ce71c54e2d2eb49e7f1a19f91bd8d67084a675",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_census_view_shows_measures_and_each_routes_status_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

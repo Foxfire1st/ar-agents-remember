@@ -1,0 +1,154 @@
+{
+  "path": "mcp/src/agents_remember/serving/retire_policy.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`session_retire_payload` builds actor/target `SeatRef`s from `binding_role`/`binding_leaf_key` and calls `check_retire_authority` before any catalog mutation, translating `RetirePolicyError` into a `retire-refused` tool status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:4f73f86cc04aefc86418a701c6461b30118702bbd298c809aa57f3766a5ec6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_retire_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:d9bd30d9e88dfbbbac7e074f3be8c919bb14ac18f2482a04ed27c6ccd51cbd35",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`POST /api/terminal/{session}/retire` performs the identical authority check before calling `retire_entry`.\n\nAnchor: \"def _retire_response(\"; \"def _seat_ref(entry: TerminalCatalogEntry) -> SeatRef:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:526836a5b4e65d6db771aa48efc00b059df8ea2208f9ec0ac60eb0601a1dc0e3",
+            "locator": {
+              "end": 616,
+              "kind": "line_range",
+              "start": 616
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:d263c3c39d6dc457fe0e7a88f2f7d7996ce7186c30f213a16869aac0eeb55c5f",
+            "locator": {
+              "end": 676,
+              "kind": "line_range",
+              "start": 676
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`TerminalCatalogEntry.binding_role` and `binding_task_document_ref` are the current structural identity fields `SeatRef` consumes; `with_retirement` is the terminal mark this policy gates.\n\nAnchor: \"def binding_role(self) -> str:\"; \"def binding_task_document_ref\"; \"def with_retirement(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:6c283b5f6a564e23613f733adaec3055488c13f8b5a242ca7658db7bb00f50ea",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 420
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:5f0f57e2f5c82a41d285fd9b8435adfca3ba3f35a5245b2c493ec1c1627449e8",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 558
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:28dc90c83ddd1669e1a3d2118a0ee94e2997c46159fcc056ba312fea716e4c4e",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 568
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`retire_entry` is the mechanics primitive this policy gates for manual retire paths; `serving/landing.py` handles completion-edge landed archive marking separately because landing is not retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3e674639e889428073a86e671470918788034cb",
+            "content": "sha256:9c6e69dba8cf1d3a96f3f6ad937acf0c57dd8ffbfc7bd7fa7ad00856813cc370",
+            "locator": {
+              "kind": "symbol",
+              "name": "retire_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/retire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a30526c88d4c9cd3e076491b7bbe23155381351",
+            "content": "sha256:4ea7c4375a9fa852abe3fffc19d369751a9641fafaa589ff5e07a9622f8550b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "land_seats_for_task"
+            },
+            "path": "mcp/src/agents_remember/serving/landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3e674639e889428073a86e671470918788034cb",
+            "content": "sha256:d6e0ce1f4c87cf87209e5a2cf3f8eef1978f026e895a4134a39ebdd774a30f43",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/serving/retire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

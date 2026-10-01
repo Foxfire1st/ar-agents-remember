@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Reusing an allocated curator-ingest entry key after scope has been recorded.",
+  "conditions": [
+    "The semantic scope participates in the existing content digest.",
+    "Changed scope must use a successor entry key with the stored invariant and predecessor revision identities."
+  ],
+  "exclusions": [
+    "An exact byte-equivalent retry remains a replay.",
+    "No in-place migration of historical applicability is authorized."
+  ],
+  "id": "INV-TPDQGXYK",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "88335d69-2675-4902-bcce-2f6eb0115688",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Changing an already allocated entry's semantic scope is a content conflict requiring an explicit successor rather than an exact retry.",
+  "status": "proposed",
+  "supersedes": []
+}

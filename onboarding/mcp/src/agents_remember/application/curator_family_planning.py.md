@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/curator_family_planning.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/curator_family_planning.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T23:48:33Z |
-| lastVerifiedCommitHash | `c114deaca13555f3c5121a7f5b803233b6bd866c` |
-| lastVerifiedCommitDate | 2026-09-27T02:50:14+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -49,54 +39,29 @@ Allocation keys are task-scoped; canonical family identities are not derived fro
 
 No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The operative contract is defined by the repository sources cited below. | — | — |
+The operative contract is defined by the repository sources cited below.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These references name the current owners and the behavior they establish.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Read exact stored family and membership facts from the selected dataset. | `read_stored_family_facts` | mcp/src/agents_remember/application/curator_family_planning.py:252-299 |
-| Allocate or recover a declaration and validate its stored references. | `_plan_declaration` | mcp/src/agents_remember/application/curator_family_planning.py:377-435 |
-| The retry digest includes nonempty retention IDs and bases in stable order. | `_declaration_digest` | mcp/src/agents_remember/application/curator_family_planning.py:475-491 |
-| Retained memberships resolve exact predecessor and invariant endpoints. | `_retained_memberships` | mcp/src/agents_remember/application/curator_family_planning.py:617-664 |
-| Combine this entry’s own membership and retained sibling plans. | `plan_entry_family` | mcp/src/agents_remember/application/curator_family_planning.py:548-614 |
-| Existing commands add only unstored family and membership rows. | `family_commands` | mcp/src/agents_remember/application/curator_family_planning.py:762-813 |
-| A retirement uses the exact stored membership row and digest. | `_retirement_plans` | mcp/src/agents_remember/application/curator_family_planning.py:727-754 |
-| Public successor behavior is exercised across separate leaf scopes. | `test_public_successor_retains_exact_siblings_and_publishes_across_leaf_scopes` | mcp/tests/test_curator_family_retention.py:147-199 |
+- Read exact stored family and membership facts from the selected dataset. [1]
+- Allocate or recover a declaration and validate its stored references. [2]
+- The retry digest includes nonempty retention IDs and bases in stable order. [3]
+- Retained memberships resolve exact predecessor and invariant endpoints. [4]
+- Combine this entry’s own membership and retained sibling plans. [5]
+- Existing commands add only unstored family and membership rows. [6]
+- A retirement uses the exact stored membership row and digest. [7]
+- Public successor behavior is exercised across separate leaf scopes. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository defines this file's contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository implementation dependency. | — | — |
-
-## Update History
-
-- 2026-09-26T23:48:33Z — L39: reconciled exact sibling-retention input, immutable endpoint behavior and reporting against the frozen source. Preserved prior history and existing verification metadata; actual source commit stamping remains closeout-owned.
-
-
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
-  `63b476297708f779de8ed5c0bf3555b9d1de70c2`): created this one-to-one card for the module
-  `ICR-R28@v2` introduced as **the resolution half of the curator's family plane**. The stamp basis is
-  the leaf's base commit, because the module is untracked there and no commit contains what a stamp
-  would otherwise claim to have verified. Two things a reader must carry away, because both were live
-  defects during the leaf: **a family identity is allocated from the operation's own journal and never
-  derived from the local key**, so the same key spelled by two tasks mints two families while a repeat
-  of one operation finds its own pair, and the same key arriving with a *changed* guarantee is refused
-  with `family_allocation_conflict` — the refusal names the successor shape rather than rewriting a
-  revision an earlier membership still cites; and **the undeclared-key answer has exactly one
-  implementation** (`_declarationfamily_refusal`), because a second copy in the read half answered a
-  question that depends on the dataset. The unexamined case is a carried entry with nothing authored,
-  never an absent entry, and a stored row contributes no command so an exact retry reports rather than
-  re-inserts. No verification stamp beyond the leaf's base is advanced: the candidate is uncommitted
-  and the governed closeout owns the real commit.
+No meaningful cross-repository implementation dependency.

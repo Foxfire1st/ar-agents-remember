@@ -1,0 +1,69 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The top-level checker enforces section presence and one-to-one entity alignment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7991e5e72ae5584f9fe752e92bda7355b840f3",
+            "content": "sha256:3b946e71858b7b0e689e16adca1b7140655537c2897b3ce816731bc5f386de0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_onboarding_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Inventory and fingerprint parsing is shared with drift classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22e3b480466ffbbaf6395af50fc68a5c70456b55",
+            "content": "sha256:7e22fccbef5156b8ff51c338a1ccec2f8dbe5bf566bd8ea7ac420fcaf3ca92c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_entity_fingerprint_rows"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22e3b480466ffbbaf6395af50fc68a5c70456b55",
+            "content": "sha256:14f3c29454eef6bce268dd0e0874bc0a2ce0f2df95544e2d0d67b2212d72c21c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_entity_inventory_names"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registry places this check first in closeout's pre-metadata phase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2c03879894f168b5c6930d5795ed3f63c20750d",
+            "content": "sha256:0b3644142a67ae3e76d08862151b20be1664cbd5ecd37e57cc3f8ca45a59a627",
+            "locator": {
+              "kind": "symbol",
+              "name": "BEFORE_METADATA_REFRESH_CHECKS"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

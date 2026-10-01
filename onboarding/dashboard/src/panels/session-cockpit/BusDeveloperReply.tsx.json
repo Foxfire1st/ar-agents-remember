@@ -1,0 +1,88 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sender-only reverse request construction and message-kind mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d9ab97f2fcde03fc248039166a4cac27ca6e03",
+            "content": "sha256:2bdefefbed9a67bc814ee22b6531215a89cb1f6041ab86bfaf56ae9f3ae7c99c",
+            "locator": {
+              "kind": "symbol",
+              "name": "developerReplyRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Accessible controlled form and the sole operator-inbox POST.\n\nAnchor: \"post to operator inbox\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d9ab97f2fcde03fc248039166a4cac27ca6e03",
+            "content": "sha256:14393b311d6065a39913361294fa34747af0abb6802a4ef94e86046c93e53a31",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing POST client this boundary reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ee3d856b19db6058dd8bba5fcb70ea9b00a1245",
+            "content": "sha256:e16da90edc096af451166ae06d363eb198c7d023ee58646324be566cc5fabd66",
+            "locator": {
+              "kind": "symbol",
+              "name": "postOperatorInbox"
+            },
+            "path": "dashboard/src/data/operatorInbox.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact request-body and zero-POST regression coverage.\n\nAnchor: \"posts a developer decision to the original sender through /api/operator-inbox only\"; \"performs zero POSTs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85208cfbf29c9cd14034fa1850a76e1251b79748",
+            "content": "sha256:1bac05a9a13c5bec083af78a246a741cbffe5763f8945d96c43dc75aeae2bf16",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "dashboard/src/panels/session-cockpit/BusPane.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "85208cfbf29c9cd14034fa1850a76e1251b79748",
+            "content": "sha256:d67c01b7bac1807e8abd758c70a3d914b1abf92e93c26f6a2759481983a4135f",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "dashboard/src/panels/session-cockpit/BusPane.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

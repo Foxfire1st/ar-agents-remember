@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/application/closeout_queue.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The seat-or-declared caller resolution precedes construction of the structural queue actor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9aac119d67a3ecb1fa36686d0a40c54128f52f99",
+            "content": "sha256:e2b9be34cbfa69188afdc23c6c0329f4d40318ecc7dc73aa7be92fe208ab046e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_queue_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9aac119d67a3ecb1fa36686d0a40c54128f52f99",
+            "content": "sha256:805425d263cb7891eda9a9426a666be6b68561c3d3c1a54a5c37ba18b483ffd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_queue_actor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9aac119d67a3ecb1fa36686d0a40c54128f52f99",
+            "content": "sha256:a9ffd9764bae9c4f9abcd1ad3b0e1c071eacff4c73841c5e41591cb4eef65f20",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_hosted_declared_conflict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Non-availability and other ambient-seat failures have separate public handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9aac119d67a3ecb1fa36686d0a40c54128f52f99",
+            "content": "sha256:e2b9be34cbfa69188afdc23c6c0329f4d40318ecc7dc73aa7be92fe208ab046e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_queue_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/coordination_context/__init__.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/coordination_context/__init__.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-25T20:57+02:00                     |
-| lastVerifiedCommitHash | `c310611a6678051c9e37b912c522b367530c0686` |
-| lastVerifiedCommitDate | 2026-05-26T02:17:03+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [coordination_context overview](overview.md)
@@ -30,29 +20,18 @@ The module is intentionally declarative and contains no import-time wiring.
 - Keep implementation ownership in the sibling modules.
 - Keep public compatibility exports in `coordination_context_resolver.py`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation is needed for a package marker module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is needed. | n/a | n/a |
+No relevant external documentation is needed.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository evidence is needed for this package marker.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
-
-- 2026-05-25T20:57+02:00: Created with the split coordination-context implementation package.
+No meaningful cross-repo references found.

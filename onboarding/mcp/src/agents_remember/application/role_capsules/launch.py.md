@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/role_capsules/launch.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/role_capsules/launch.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T09:10+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -133,57 +123,39 @@ The declared successor obligation **(A)** — a typed taskless admission in the 
 `CapsuleAdmittedFacts` with per-consumer cases — is carried by the owning seat into the master's
 obligation ledger for L11's verification. It is not this leaf's work.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured in the resolved source registry for this pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| How a taskless seat's absent task plane is spelled once, and why it cannot be mistaken for a task path. | `FREE_AGENT_TASK_REFERENCE_PREFIX` | mcp/src/agents_remember/application/role_capsules/launch.py:83-89 |
-| The work branch of a taskless seat whose workspace is not a git work tree. | `UNVERSIONED_WORK_BRANCH` | mcp/src/agents_remember/application/role_capsules/launch.py:92-96 |
-| Where a launch's eve carrier is written, and why it is outside every workspace. | `EVE_CARRIER_ROOT` | mcp/src/agents_remember/application/role_capsules/launch.py:99-105 |
-| The five facts a task-attached seat resolves together so two carriers cannot bind two enclosures. | `AdmittedTaskSeat` | mcp/src/agents_remember/application/role_capsules/launch.py:109-123 |
-| The frozen DTO's absent task plane, minted once here; the digest is the admission's own content address. | `FreeAgentSeatAdmission`; `FreeAgentSeatAdmission.digest`; `FreeAgentSeatAdmission.admitted_facts` | mcp/src/agents_remember/application/role_capsules/launch.py:126-196 |
-| The altitude comes from the composition manifest and the workspace identity from the workspace's own Git facts. | `free_agent_seat_admission` | mcp/src/agents_remember/application/role_capsules/launch.py:199-230 |
-| The repository identity a taskless seat is admitted under, and the branch fallback. | `workspace_identity`; `_registered_repository_for` | mcp/src/agents_remember/application/role_capsules/launch.py:233-247; mcp/src/agents_remember/application/role_capsules/launch.py:249-264 |
-| The entry point the launch points reach through the serving port, and its own role refusal. | `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| The task-attached path: document resolution, the registered root, the enclosure lookup, and the named refusals. | `_compile_admitted_task` | mcp/src/agents_remember/application/role_capsules/launch.py:297-360 |
-| The eve carrier path, including the admitted-workspace read-back out of the artifact the consumer re-verifies. | `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405 |
-| The free-agent path, and the named refusal of an eve free agent. | `_compile_free_agent` | mcp/src/agents_remember/application/role_capsules/launch.py:407-448 |
-| The delivered value and its per-run record; the two carriers are set exclusively. | `_capsule_launch` | mcp/src/agents_remember/application/role_capsules/launch.py:450-488 |
-| The enclosure lookup goes through the control plane's one contract reader. | `_enclosure_contract` | mcp/src/agents_remember/application/role_capsules/launch.py:522-537 |
-| The carrier directory is per seat and derived from the task path. | `_carrier_directory` | mcp/src/agents_remember/application/role_capsules/launch.py:559-564 |
-| The one routing rule for a seat addressed by role and operation, which a taskless launch also uses. | `routed_admission_for` | mcp/src/agents_remember/application/skill_resources/capsule.py:515-554 |
-| The same operation the registered MCP tool answers, and the resolved repository root that D13's second half carries onto the projection request. | `compile_task_capsule`; `AdmittedEnclosure`; `AdmittedEnclosure.code_repository_root` | mcp/src/agents_remember/application/skill_resources/capsule.py:205-259; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202; mcp/src/agents_remember/application/skill_resources/capsule.py:262-289 |
-| L7's produce side, which the eve path calls rather than adding a second carrier format. | `materialize_eve_binding` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206 |
-| The taskless seat class the developer's free-agent ruling admits. | `TASKLESS_SEAT_ROLES` | mcp/src/agents_remember/serving/task_binding.py:1-120 |
-| The cases pinning the named absence, the identity-moves-with-the-seat rule, and the registered boundary. | `test_the_free_agent_admission_names_its_absent_task_plane`; `test_the_free_agent_capsule_identity_moves_with_the_seat` | mcp/tests/test_capsule_launch_wiring.py:920-944; mcp/tests/test_capsule_launch_wiring.py:946-974; mcp/tests/test_capsule_launch_wiring.py:990-1011 |
-| The production-chain acceptance for a task-attached seat and for a free agent, read from each session's own first prompt. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt` | mcp/tests/test_capsule_launch_wiring.py:484-528; mcp/tests/test_capsule_launch_wiring.py:530-575 |
+- How a taskless seat's absent task plane is spelled once, and why it cannot be mistaken for a task path. [1]
+- The work branch of a taskless seat whose workspace is not a git work tree. [2]
+- Where a launch's eve carrier is written, and why it is outside every workspace. [3]
+- The five facts a task-attached seat resolves together so two carriers cannot bind two enclosures. [4]
+- The frozen DTO's absent task plane, minted once here; the digest is the admission's own content address. [5]
+- The altitude comes from the composition manifest and the workspace identity from the workspace's own Git facts. [6]
+- The repository identity a taskless seat is admitted under, and the branch fallback. [7]
+- The entry point the launch points reach through the serving port, and its own role refusal. [8]
+- The task-attached path: document resolution, the registered root, the enclosure lookup, and the named refusals. [9]
+- The eve carrier path, including the admitted-workspace read-back out of the artifact the consumer re-verifies. [10]
+- The free-agent path, and the named refusal of an eve free agent. [11]
+- The delivered value and its per-run record; the two carriers are set exclusively. [12]
+- The enclosure lookup goes through the control plane's one contract reader. [13]
+- The carrier directory is per seat and derived from the task path. [14]
+- The one routing rule for a seat addressed by role and operation, which a taskless launch also uses. [15]
+- The same operation the registered MCP tool answers, and the resolved repository root that D13's second half carries onto the projection request. [16]
+- L7's produce side, which the eve path calls rather than adding a second carrier format. [17]
+- The taskless seat class the developer's free-agent ruling admits. [18]
+- The cases pinning the named absence, the identity-moves-with-the-seat rule, and the registered boundary. [19]
+- The production-chain acceptance for a task-attached seat and for a free agent, read from each session's own first prompt. [20]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `_carrier_directory` repointed to mcp/src/agents_remember/application/role_capsules/launch.py:559-564. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T09:10+02:00 — 260915-CAPS-L15 curator: **created this card** (the census reported it
-  missing, `integrity.missing_onboarding`). Records the module as the compiler connection the severed
-  chain lacked: the two admittances resolved together into `AdmittedTaskSeat`, the free agent's **named
-  absence** (`free-agent:<role>`, refused by the task layer's own parser) as convention (B) with
-  successor obligation (A) routed to L11, the two carriers the master already built, the eve
-  admitted-workspace read-back that is the `L15R-1` fix, the one routing rule that keeps a taskless
-  launch from re-deriving a source set, and the named refusals every unresolvable half returns.
-  Verification metadata pins the leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so
-  the governed closeout stamps the real code commit and no hash or fingerprint was invented here.
+No meaningful cross-repo references found.

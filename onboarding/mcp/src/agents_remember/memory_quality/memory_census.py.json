@@ -1,0 +1,174 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/memory_census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The census module has no external domain dependency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:0a6ef378479a7c76a1c4fc8e0600c54b5686b960f8b264dcbcf4253b7fc4c099",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_memory_census"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact Git members and metadata are read through the private tree reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:f799382c56e27d96a5dc748d896aee482e4459ea99b200b1db44de1faf89be3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current sidecar mappings are authoritative, while historical mappings survive only for paths removed from the candidate tree.\n\nAnchor: \"def sidecars(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:bad08508a81ec87307d3d3a12fd15fd7161b60cda4bfa8a0ea02c9a8281ab24b",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 300
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Edited current metadata is checked for missing or contradictory artifact type and mapping; historical-only documents retain an absent row without a removal blocker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:baf8140a6e01e6221f19cca6e84328cbdb045e5a2effacd6f13970cf0efc2dbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "edited_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Structural rows are accumulated for inline onboarding, route overviews, and entities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:bce289ab851c86abb6371bb6a56c61a12e160d66deb2623a68ebd2c2e98349d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "inline"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:fbc5ff0a43f352c4a7a58ea76e03709e1ab3182dd7dd32210844877e758ad950",
+            "locator": {
+              "kind": "symbol",
+              "name": "overviews"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:6f9af5b876f59b8d639ac7e8863036dda052a4ee6a2edbb4479f5f3cb126fee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "entities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The route-owned scope is converted into one ordered census result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:0a6ef378479a7c76a1c4fc8e0600c54b5686b960f8b264dcbcf4253b7fc4c099",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_memory_census"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A converted tree's cards get their kind and source from the converted format, sidecars read in one batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:b14317a8629781d2f6c440f01982632ea4d32c23e9e78633a5f47e127daca0fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_converted_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "On a converted tree a sidecar's counted change is its card's edit; anchor-only re-recording is not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:d8b3c6087ef5ebdbacc1a150737592f1fb26fbfd1cc3887ccb8253e5320de376",
+            "locator": {
+              "kind": "symbol",
+              "name": "edited_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The census compares the candidate with the scope's comparison tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:0a6ef378479a7c76a1c4fc8e0600c54b5686b960f8b264dcbcf4253b7fc4c099",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_memory_census"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

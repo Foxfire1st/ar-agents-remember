@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Immutable curator generations and publication-owned evidence custody for an admitted external-memory leaf.",
+  "conditions": [
+    "The exact content address, typed leaf/contract identity, deterministic projection, retained attestation and declared evidence validate.",
+    "Published judgment custody retains admitted original bytes and preserves the authored citation/hash.",
+    "Strict live readiness separately checks live quality, current dependencies and original inputs.",
+    "A legacy explicit task citation is read at its admitted durable address; non-task evidence without recorded custody is unavailable."
+  ],
+  "exclusions": [
+    "Using current code/memory bytes or recreated worktree files to repair historical evidence.",
+    "Treating durable integrity as live readiness or semantic acceptance."
+  ],
+  "id": "INV-453ZPCZ5",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "e331c7f4-0dce-4098-ba2a-1c139869a0cf",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "An immutable curator generation is read through one integrity owner that validates its content address, typed identity, projection, retained attestation and evidence without requiring reclaimed live quality files. The publication owner retains admitted code:, memory: and task: judgment evidence through its existing path/SHA/size artifact type, preserving the authored citation and hash. Strict live readiness still checks original live inputs. Legacy records retain their encoding: explicit task citations remain addressable; code/memory citations without owner custody are unavailable and never borrow current bytes.",
+  "status": "proposed",
+  "supersedes": []
+}

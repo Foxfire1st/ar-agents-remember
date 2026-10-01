@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/structural/gate_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Lifecycle-gate creation resolves a structural target before invoking internal gate creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fdd3d3e3bb2ee2629b8db7746e05ce30165cb66",
+            "content": "sha256:b04b9b8d85daa7cc13784e6c29f85e094ea27658fad08b7f0492001bfdc5a7e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "structural_lifecycle_gate_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Gate decisions and listing authorize through the same ambient structural context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fdd3d3e3bb2ee2629b8db7746e05ce30165cb66",
+            "content": "sha256:0db7c0439c9e76c94ea4eb30ab9054dd63966779debcb7ae309041e6202f9a7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "structural_gate_decide_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/facet_read.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/facet_read.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -96,45 +86,34 @@ and its own counts live in `models/knowledge/facet_read.py`; this module execute
 None recorded. A cursor for a selection that does not fit is deliberately not planned: the declared
 contract is complete-or-refused, and a continuation surface would be a second declared policy.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The one entry point: seed dispatch, the bound it raises past, the declared order, the counts and the manifest.** | `select_facet_scope` | mcp/src/agents_remember/memory/knowledge/facet_read.py:109-129 |
-| **The bound and the exception that carries both the count and the bound to the caller.** | `ITEM_LIMIT`; `FacetSelectionIncomplete` | mcp/src/agents_remember/memory/knowledge/facet_read.py:63-65; mcp/src/agents_remember/memory/knowledge/facet_read.py:68-82 |
-| The query and the selection as frozen values, with `seed_recorded` as the fact the caller's absence answer rests on. | `FacetSelectionQuery`; `FacetSelection` | mcp/src/agents_remember/memory/knowledge/facet_read.py:85-91; mcp/src/agents_remember/memory/knowledge/facet_read.py:93-106 |
-| **The facet-record aggregate: the record, every retained revision, every attachment and every touching edge.** | `_facet_record_items` | mcp/src/agents_remember/memory/knowledge/facet_read.py:132-155 |
-| **The both-directions edge walk, deduplicated by the edge's own key.** | `_supersessions_of_record` | mcp/src/agents_remember/memory/knowledge/facet_read.py:158-172 |
-| The explanation aggregate and the exact-statement-revision check that keeps the two subject kinds apart. | `_explanation_items`; `_subject_revision_recorded` | mcp/src/agents_remember/memory/knowledge/facet_read.py:175-193; mcp/src/agents_remember/memory/knowledge/facet_read.py:196-206 |
-| **The counts derived from the item tuple, so a page cannot report a total its items do not add up to.** | `_counts` | mcp/src/agents_remember/memory/knowledge/facet_read.py:209-219 |
-| **The manifest that seals the policy, the seed and the exact item identities.** | `_manifest_digest` | mcp/src/agents_remember/memory/knowledge/facet_read.py:222-236 |
-| The read-only execution helpers and the ordered statement set that is the only SQL in the module. | `_one`; `_many`; `_RECORD_BY_ID`; `_ATTACHMENTS_OF_RECORD` | mcp/src/agents_remember/memory/knowledge/facet_read.py:239-248; mcp/src/agents_remember/memory/knowledge/facet_read.py:251-294 |
-| The declared policy name, item limit and seed union this module executes. | `FACET_SELECTION_POLICY_VERSION`; `FACET_SELECTION_ITEM_LIMIT`; `FacetReadSeed` | mcp/src/agents_remember/models/knowledge/facet_read.py:56-56; mcp/src/agents_remember/models/knowledge/facet_read.py:61-61; mcp/src/agents_remember/models/knowledge/facet_read.py:182-185 |
-| The declared item order and identity the manifest and the page both derive from. | `facet_item_sort_key`; `facet_item_id` | mcp/src/agents_remember/models/knowledge/facet_read.py:273-276; mcp/src/agents_remember/models/knowledge/facet_read.py:295-299 |
-| The row codecs every item here is decoded through. | `decode_facet_record_row`; `decode_attachment_row`; `decode_supersession_row`; `decode_explanation_row` | mcp/src/agents_remember/memory/knowledge/facet_records.py:157-190; mcp/src/agents_remember/memory/knowledge/facet_records.py:374-396; mcp/src/agents_remember/memory/knowledge/facet_records.py:429-441; mcp/src/agents_remember/memory/knowledge/facet_records.py:567-585 |
-| The application seam that converts the bound into the shipped refusal and owns the operation name. | `read_facet_scope` | mcp/src/agents_remember/application/knowledge_facets.py:71-121 |
-| **The case that holds the exact page, the empty-but-real selection and the incompleteness refusal.** | "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" | mcp/tests/test_knowledge_facets.py:1266-1266 |
+- **The one entry point: seed dispatch, the bound it raises past, the declared order, the counts and the manifest.** [1]
+- **The bound and the exception that carries both the count and the bound to the caller.** [2]
+- The query and the selection as frozen values, with `seed_recorded` as the fact the caller's absence answer rests on. [3]
+- **The facet-record aggregate: the record, every retained revision, every attachment and every touching edge.** [4]
+- **The both-directions edge walk, deduplicated by the edge's own key.** [5]
+- The explanation aggregate and the exact-statement-revision check that keeps the two subject kinds apart. [6]
+- **The counts derived from the item tuple, so a page cannot report a total its items do not add up to.** [7]
+- **The manifest that seals the policy, the seed and the exact item identities.** [8]
+- The read-only execution helpers and the ordered statement set that is the only SQL in the module. [9]
+- The declared policy name, item limit and seed union this module executes. [10]
+- The declared item order and identity the manifest and the page both derive from. [11]
+- The row codecs every item here is decoded through. [12]
+- The application seam that converts the bound into the shipped refusal and owns the operation name. [13]
+- **The case that holds the exact page, the empty-but-real selection and the incompleteness refusal.** [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" repointed to mcp/tests/test_knowledge_facets.py:1266-1266. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" repointed to mcp/tests/test_knowledge_facets.py:1246-1246. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" repointed to mcp/tests/test_knowledge_facets.py:1208-1208. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the facet-specific selection. It records what each seed selects (including the **both-directions** supersession walk deduplicated by the edge's own key), the complete-or-refused bound with the exception carrying both count and bound to the operation that owns the refusal name, the "nothing is derived" rule (order by kind then stable identifiers, every retained revision served, only the stored designation matters), the counts and manifest derived from the same tuple the page is built from, the read-only handle that makes "a refusal leaves the file byte-identical" structural, and the non-overlap with `KS-R07@v1`'s selection that is the reason a shipped page is byte-identical. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

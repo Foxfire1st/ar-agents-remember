@@ -1,0 +1,195 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The teardown command requires a proof destination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:410e0ff98c9e6dd48f278fb5f16c6279e9d76ed2ba028b950d3aa8271c5a7bf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:50d807c201041f83882e4ce6a2b5de09657947d2c5837199514b88847a793781",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Executable scope receives the exact selector digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:740258f87dbf227ba0b31f3b97f1cad96f3e7621df669f9b73c10657da169b74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_profile_config"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:38212a56d74ed059d8b36d6a45f356c110b3d66e8c7e4fefe13d55e3999a2c24",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Published selection is compared with its repository-owned derivation and executable scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:33603f5d74bd4c4b49f002e836ad7bdb61ed11e2825ee9f42ef2ca83e4fc111c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_exact_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:e41dfe5fffb83217b949234fbc1670769971bf42db24934a01cabec64b0c0795",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Python rail handles declared retry and causal continuation without changing ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:5146a02b0f057f84003e0928bf90de2228bd683dfb31d9372bb09c57f784cf1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_python_suite"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:eb97a9d224c0801d92f4baefca577c161377916d9df1307cbf09404853f8d14d",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "CRAP and changed coverage consume the exact suite artifact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:e3487c21f6e70a4300bd308e7a0c1084e7796a3c0453abf656bc902b44008551",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_post_coverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:c704ce0d88775dfb949ede52ed5fda602b856cdf3d38a1d4c84c15b63c420fe0",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Actual report bytes must carry passing L5-C10 checkpoints; skipped applicability is explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:233488614c3706c839a726964993767f127b48fb20025aae4bbd926902994571",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_teardown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The persisted proof binds summary bytes and observed replication reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:e2cfdf27d4356f30d9fc875e49f70176a959e93b0b7d34268be19607ee82a7c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_teardown_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Canonical POSIX-string order aligns equivalent populations without deduplicating them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:b795483dcf9bb49865ff686f69efa2318d85e3234557d8d92113cc557c35d91f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T01:22:26+02:00 |
-| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
-| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -46,7 +36,9 @@
 
 Each rule recomputes the family states, and `_absent_routes` reparses the bases' family files twice; negligible at fixture scale, a cache on the context is a later option (review R1 finding 5).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The route design authority is the coordination-root note Doc14
@@ -54,36 +46,24 @@ No domain documentation source is configured for this repository (`system/source
 requirement packet `MIK-R04@v2` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The six rules, the carried-route computation and their registration.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Carried routes are the union of every base's family routes. | `_base_family_routes` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:58-71 |
-| Absent routes, skipped for a conversion, a missing code tree and a retired family. | `_absent_routes` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:83-93 |
-| An added route is refused, a carried one reported. | `check_route_directories`; `check_carried_route_absent` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:96-104; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:107-116 |
-| Coverage and Non-empty name the family, the route and the uncovered path. | `check_coverage`; `check_non_empty` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:119-137; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:140-149 |
-| The two reported states. | `check_unrealized_family`; `check_route_unassigned` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:152-160; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:163-171 |
-| The six registered rules, three report-only and three writer-reported. | `ROUTE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:174-217 |
-| An added route must be a directory; a carried one is reported. | `test_an_added_route_must_be_a_directory_of_the_code_tree`; `test_a_carried_route_whose_directory_is_gone_is_reported_not_refused` | mcp/tests/test_knowledge_family_routes.py:190-201; mcp/tests/test_knowledge_family_routes.py:204-215 |
-| At a merge, a route carried by either parent is carried. | `test_at_a_merge_a_route_carried_by_either_parent_is_carried` | mcp/tests/test_knowledge_family_routes.py:218-234 |
-| A route holding only a proof entry violates Non-empty. | `test_a_route_holding_only_a_proof_entry_violates_non_empty` | mcp/tests/test_knowledge_family_routes.py:154-166 |
+- Carried routes are the union of every base's family routes. [1]
+- Absent routes, skipped for a conversion, a missing code tree and a retired family. [2]
+- An added route is refused, a carried one reported. [3]
+- Coverage and Non-empty name the family, the route and the uncovered path. [4]
+- The two reported states. [5]
+- The six registered rules, three report-only and three writer-reported. [6]
+- An added route must be a directory; a carried one is reported. [7]
+- At a merge, a route carried by either parent is carried. [8]
+- A route holding only a proof entry violates Non-empty. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the rules read one memory tree, its bases and one paired code tree, all addressed explicitly by the caller.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated.** The `R04.1-carried-route-absent` bullet now says what the route-maintenance pass it names does since MIK-R06 landed: a route killed in the leaf's range becomes a mandatory worklist item, and a route already dead at B stays this report (L06 ruling Q1). This card's source is unchanged; no row moved. No verification stamp was advanced.
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): created this card for the new file MIK-R04 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

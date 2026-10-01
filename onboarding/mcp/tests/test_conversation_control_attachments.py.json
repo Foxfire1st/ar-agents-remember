@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_conversation_control_attachments.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Mime count byte and kind limits are typed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9e434ec3ba1bc94d5a46ab1e1c031ace5d7e67",
+            "content": "sha256:9def773c2f6fd6e964605c827ad8a043f26979d96ee73bc2eb26df668c1fd16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_mime_count_byte_and_kind_limits_are_typed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Submit carries refs and consumes one use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9e434ec3ba1bc94d5a46ab1e1c031ace5d7e67",
+            "content": "sha256:11d2ff2310fc2045b668b601eece5d4fc34b13717fdc3c52b767ce38f3223e8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_submit_carries_refs_and_consumes_one_use"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tampered asset block is rejected before dispatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9e434ec3ba1bc94d5a46ab1e1c031ace5d7e67",
+            "content": "sha256:4f222336250cee07d508055087ff5eca8a2396fa33c2f92ce09044b295634e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tampered_asset_block_is_rejected_before_dispatch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Double use of one asset is typed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9e434ec3ba1bc94d5a46ab1e1c031ace5d7e67",
+            "content": "sha256:2a5af773819b72113409bc9e17a4f86287243242852bcfa0cc47c848e3767f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_double_use_of_one_asset_is_typed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Withdraw marks recoverable and rebind exchanges one use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9e434ec3ba1bc94d5a46ab1e1c031ace5d7e67",
+            "content": "sha256:daac221770d85acfc515060a4f05f8c927708e4584130639e25d9194e2442fff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_withdraw_marks_recoverable_and_rebind_exchanges_one_use"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Unknown outcome is retained and never cleaned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9e434ec3ba1bc94d5a46ab1e1c031ace5d7e67",
+            "content": "sha256:bb8bf9ab35b70d2ceb3d18085cd3e77d969fd22fc7554252b7cf4ae637091284",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_outcome_is_retained_and_never_cleaned"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/useElementVisible.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/engine-room/useElementVisible.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Engine Room overview](overview.md)
@@ -40,32 +30,22 @@ all animation owners off in a non-browser runner.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in `system/sources.md`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The mock captures per-element observer callbacks and teardown removes the shim. | `MockIntersectionObserver` | dashboard/src/panels/engine-room/useElementVisible.test.tsx:10-22 |
-| The two cases pin visible fallback and hide/show/disconnect transitions. | "stays visible when IntersectionObserver is unavailable (the jsdom default — a no-op gate)"; "flips false on hide and true on re-show" | dashboard/src/panels/engine-room/useElementVisible.test.tsx:56-60; dashboard/src/panels/engine-room/useElementVisible.test.tsx:62-77 |
-| Implementation under test. | `useElementVisible` | dashboard/src/panels/engine-room/useElementVisible.ts:15-27 |
+- The mock captures per-element observer callbacks and teardown removes the shim. [1]
+- The two cases pin visible fallback and hide/show/disconnect transitions. [2]
+- Implementation under test. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence applies. | — | — |
-
-## Update History
-- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 3 citation claims; scoped result 0 findings.
-
-- 2026-07-24T13:17:17Z — Curator: created coverage onboarding for the new visibility gate. It is
-  uncommitted, so verification fields are intentionally blank until closeout stamps the code commit.
+No cross-repository evidence applies.

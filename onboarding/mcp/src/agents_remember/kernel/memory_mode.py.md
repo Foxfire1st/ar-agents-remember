@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/memory_mode.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/memory_mode.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T14:25+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../overview.md)
@@ -95,50 +85,31 @@ layout; `repo-sidecar` itself survives as a per-artifact storage placement
 refusal does — the developer's stated boundary forbids setup instructions in code, and none are here;
 the setup route lives in this vocabulary's remedy text and in the instruction corpus.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. The behaviour above is a
 repository-owned product decision, not an external library contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `Topology` has the single supported member `external`. | `Topology` | mcp/src/agents_remember/kernel/memory_mode.py:30-30 |
-| `MemoryMode` has exactly `external` and `disabled`. | `MemoryMode` | mcp/src/agents_remember/kernel/memory_mode.py:35-35 |
-| The supported tuples are derived from the literals, not hand-written. | `SUPPORTED_MEMORY_MODES` | mcp/src/agents_remember/kernel/memory_mode.py:33-38 |
-| The removal is declared positively, not left as an absence. | `REMOVED_MEMORY_MODES` | mcp/src/agents_remember/kernel/memory_mode.py:40-40 |
-| The old repo-sidecar directory names survive only to detect and report that layout. | `LEGACY_INTERNAL_MEMORY_DIRNAME` | mcp/src/agents_remember/kernel/memory_mode.py:43-47 |
-| The documented route out is stated once for every refusal surface, with no automatic migration. | `MEMORY_MODE_REMEDIES` | mcp/src/agents_remember/kernel/memory_mode.py:49-56 |
-| Legacy roots are computed as resolved paths so a report can name the exact artifact. | `legacy_internal_memory_root` | mcp/src/agents_remember/kernel/memory_mode.py:60-62 |
-| One refusal text is shared by every surface, naming the value, the removal and the supported set. | `memory_mode_refusal_message` | mcp/src/agents_remember/kernel/memory_mode.py:78-86 |
-| The same facts are constructible as a typed error and as a publishable mapping. | `memory_mode_refusal_fields` | mcp/src/agents_remember/kernel/memory_mode.py:100-107 |
-| A removed member is refused by name, never substituted by a supported one. | `refuse_removed_memory_mode` | mcp/src/agents_remember/kernel/memory_mode.py:110-112 |
-| A removed token is refused by name while an unknown token is an invalid-argument error. | `require_supported_memory_mode` | mcp/src/agents_remember/kernel/memory_mode.py:115-130 |
-| The topology narrower applies the same removal-versus-typo distinction. | `require_supported_topology` | mcp/src/agents_remember/kernel/memory_mode.py:133-142 |
-| The typed refusal carries a stable status plus requested, supported, artifact and remedies. | `MemoryModeUnsupportedError` | mcp/src/agents_remember/errors.py:637-685 |
+- `Topology` has the single supported member `external`. [1]
+- `MemoryMode` has exactly `external` and `disabled`. [2]
+- The supported tuples are derived from the literals, not hand-written. [3]
+- The removal is declared positively, not left as an absence. [4]
+- The old repo-sidecar directory names survive only to detect and report that layout. [5]
+- The documented route out is stated once for every refusal surface, with no automatic migration. [6]
+- Legacy roots are computed as resolved paths so a report can name the exact artifact. [7]
+- One refusal text is shared by every surface, naming the value, the removal and the supported set. [8]
+- The same facts are constructible as a typed error and as a publishable mapping. [9]
+- A removed member is refused by name, never substituted by a supported one. [10]
+- A removed token is refused by name while an unknown token is an invalid-argument error. [11]
+- The topology narrower applies the same removal-versus-typo distinction. [12]
+- The typed refusal carries a stable status plus requested, supported, artifact and remedies. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local vocabulary and refusal claims.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `MemoryModeUnsupportedError` repointed to mcp/src/agents_remember/errors.py:637-685. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-
-
-- 2026-09-16T14:25+02:00 — 260915-CAPS-L12 curator (closeout-gate follow-up): the two verification fields above, which this card's creation entry left un-advanced, were populated on the closeout gate's refusal — `external-memory closeout requires onboarding verification metadata before memory commit`. They follow the canonical file-level model (`file-level-onboarding-workflow.md` § Metadata Rules: "use the latest commit that touched the source file once the content has been verified") and now read hash `b281bcd68261866be306cc80a48241921b6dd0d2`, date `2026-09-16T14:24:58+02:00` — the `[260915-CAPS-L12]` code commit that actually contains this source file, matching the value closeout's own `refresh_onboarding_metadata_for_context` writes for every required card. An earlier revision of this entry named the pre-commit base `c1dbebf8`, which does not contain this file; that value was replaced rather than retained, and no earlier history entry was rewritten. The creation entry's sentence that no stamp was advanced is superseded here, added rather than edited because `Update History` is append-only. Closeout re-stamps both fields authoritatively at the real commit.
-- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **created the missing sidecar** for the module
-  `CAPS-R12@v1` added. It is the single home of the post-removal vocabulary (`Topology` = `external`;
-  `MemoryMode` = `external`/`disabled`), the removal declaration, the legacy-layout detection constants
-  and the one typed refusal. Recorded that `internal` is not a member of either literal, that existing
-  state is reported rather than rewritten, and that `LEGACY_INTERNAL_*` and `repo-sidecar` are
-  deliberate survivors rather than residue. Verification metadata remains closeout-owned: the source is
-  uncommitted, so no stamp was advanced and no commit hash was invented.

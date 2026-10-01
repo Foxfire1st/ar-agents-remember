@@ -1,0 +1,251 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Carried routes are the union of every base's family routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:22f6b67b9265ec86bacc2c94bed207801c5311f60b6beacb95fc503d44694f43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_family_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Absent routes, skipped for a conversion, a missing code tree and a retired family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:ab6ec5bec5e3fa57012aee6891728fc6039f0305a22e02f2f00c8a7466307cef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absent_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An added route is refused, a carried one reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:9448837b724f1ae45e8ecec1e0c6e61c05def98354ee3f851d91d74ad4264b40",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_route_directories"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:1b3426bb39e0c0eec14aab610717aae9c79c2f3df6336b638e7b4d007afa8e62",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_carried_route_absent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Coverage and Non-empty name the family, the route and the uncovered path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:8303d9cda9eee370c3ed87c59da3d48c638b9f37725a182abbaa0ba392efa3c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_coverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:5d3876bf6ae12fcffeef6ea182e2eb3f2fbfb869f0b9b81569c56862bd0f496e",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_non_empty"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two reported states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:a947878280835794d641aea99f1e863ac9a1875b92269b3f3e73d5b7393530b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_unrealized_family"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:ed694338a1ce005df3ff5f7c6817c35d2989590d2fe57fb0aeeed84a8becaf86",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_route_unassigned"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The six registered rules, three report-only and three writer-reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:3bac0ea2049cfa7256b321605d02cf1d685f28583a58cb62d16a9ac158079dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROUTE_RULES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "An added route must be a directory; a carried one is reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:5ef9511e1c519d4475c9228eeafcb84917dbf14fe180155f0d27ef9ec53452a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_added_route_must_be_a_directory_of_the_code_tree"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:21dfd92a55b0fd34384a573eb871016245f73b001c1ae6fbed0cfbabc6b84a1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_carried_route_whose_directory_is_gone_is_reported_not_refused"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:a4ae2592ad959cc1d3cb9143a4575213bc9d26d9184ac726a8269e8514483309",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:3ad1b3e972e70693dfd64af576f9b1a42fc780bd14a96d3d6c7d6e2c91964920",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "At a merge, a route carried by either parent is carried.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:830185b2ab81ae775c2b7b08f66f0b149037f8f26a53630b471d7844eaa6692a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_at_a_merge_a_route_carried_by_either_parent_is_carried"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:8c69934db64c84ca5c1ff10b0b62d90b1f4462421e484b0f4ac8e06a671950c9",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A route holding only a proof entry violates Non-empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:9cb52af69cbc3423d9f755594e5bd796248fabc6cfd9580f5bdcb80d9aa598d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_route_holding_only_a_proof_entry_violates_non_empty"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:8f6781e52db33b956c3ce190fca31b30cac9db95357fdbb6b604f9f2c26d97b1",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

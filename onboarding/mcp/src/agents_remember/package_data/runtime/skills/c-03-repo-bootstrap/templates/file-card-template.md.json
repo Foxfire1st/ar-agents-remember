@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/file-card-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file card template records classification, governing context, worker inputs, allowed/disallowed reads, required sections, reference expectations, traps, questions, and done criteria.\n\nAnchor: `# File Card — <source path>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75ce0da2b5c0fd1f2f8b409c22e606cba0d420e8",
+            "content": "sha256:23675f237940c29b634ff695fdaadcf1ac016244478efb7311fda586b689ebf2",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`c-03-repo-bootstrap` skill Phase 4G writes file cards for priority source files and requires them before file-level onboarding unless the repo is tiny.\n\nAnchor: `### 4G — File Card Generation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4014891822eb5110082227e1b68355f17b6e96ef",
+            "content": "sha256:0ce8a587313b9bdab6c4b3dd29ea725a18d9450dec788580feb91c5c3396063b",
+            "locator": {
+              "end": 984,
+              "kind": "line_range",
+              "start": 960
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-03-repo-bootstrap` skill Phase 4H says each file worker receives one file card and follows `c-05-create-or-update-onboarding-files` skill for file-level onboarding.\n\nAnchor: `### 4H — File-Level Onboarding Waves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4014891822eb5110082227e1b68355f17b6e96ef",
+            "content": "sha256:946e7a1f2a142b02491bfb38d52f4c51795398c20e126daf3815b70817c2925f",
+            "locator": {
+              "end": 1020,
+              "kind": "line_range",
+              "start": 985
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

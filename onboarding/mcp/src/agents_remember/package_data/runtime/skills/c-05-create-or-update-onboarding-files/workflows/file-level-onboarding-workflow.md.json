@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Scope and placement rules require one onboarding unit per source file, store sidecar onboarding under the resolved onboarding root, and route structural slice changes to `c-03-repo-bootstrap` skill.\n\nAnchor: `## Scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "103531f1b34b0845982d014e10ecfbb7777c2ae5",
+            "content": "sha256:b608d95322181783395583dd275392097483357927d633697b6029b9c9ac63c1",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source discovery rules require the resolved `Domain Documentation` category, authoritative live documentation retrieval when the registry names it, local mirrors as orientation only, and actual evidence citations instead of source registries.\n\nAnchor: `## Source Discovery Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "103531f1b34b0845982d014e10ecfbb7777c2ae5",
+            "content": "sha256:893d6a8935df641f1dbb3c550f07b960310d62c355276b7c8fd22e2bd8da70c1",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Section rules require metadata with `governingOverview`, a governing overview section, code commentary, top-level docs references, repo-internal references, cross-repo references, and update history.\n\nAnchor: `governingOverview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "103531f1b34b0845982d014e10ecfbb7777c2ae5",
+            "content": "sha256:f0c47d99857425df4c5b4182e7327508704615af7ae2bfb2537f0493ef69cc71",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Creation steps now confirm the target is one concrete file, route route-local slice cases to `c-03-repo-bootstrap` skill, identify/read the nearest governing overview, and cross-check all reference sections.\n\nAnchor: `## Create Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "103531f1b34b0845982d014e10ecfbb7777c2ae5",
+            "content": "sha256:b0300cd3d8ea55fc1ba8588cbe1e77b3707a203d11aef23816b3c62ec3491bf9",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Maintenance steps require re-reading source and onboarding, refreshing changed sections and citations, applying inline syntax rules, appending update history, classifying moves/splits/merges/relocations/deletions, preserving accurate old onboarding in current targets, and routing whole-route moves or deletions to `c-03-repo-bootstrap` skill.\n\nAnchor: `## Maintain Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "103531f1b34b0845982d014e10ecfbb7777c2ae5",
+            "content": "sha256:f8e407ac2406ee9308467a5ab146851ad1f645c1ad91e4b3f58728b968e04cc4",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The workflow sends converted memory to the converted-card workflow.\n\nAnchor: \"**Converted memory:** when the memory tree holds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "103531f1b34b0845982d014e10ecfbb7777c2ae5",
+            "content": "sha256:114b904239cfb28be4edda1d3dd7321960e4c18239e026a53c32166d2ad0de97",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/eve_capsule/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/eve_capsule/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application/ overview](../overview.md)
@@ -117,77 +107,29 @@ None for this module's own side. The **live-seat** half of the eve delivery stor
 gate (`D22`), owned by **L17**; the typed-absence end state **(A)** for a taskless admission is a
 successor obligation carried to the final-verification ledger. Neither requires an edit here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation pass
 was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; the carrier's cryptography is Node's/Python's standard `sha256`, not a documented external contract. | — | — |
+No configured `Domain Documentation` source; the carrier's cryptography is Node's/Python's standard `sha256`, not a documented external contract.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one compiler and the one projection this module transports from, unchanged and not re-implemented. | `compile_task_capsule`; `CapsuleCompileRequest`; `project_task_context`; "def resolve_task_projection_scope(" | mcp/src/agents_remember/application/skill_resources/capsule.py:91-108; mcp/src/agents_remember/application/skill_resources/capsule.py:205-236; mcp/src/agents_remember/application/task_projection/projection.py:78-90; mcp/src/agents_remember/application/task_projection/scope.py:334-417 |
-| The carrier format and the environment names are declared in the models tier, so the producer and the consumer share one spelling. | `EveCapsuleCarrier`; `BINDING_REF_ENV`; `CAPSULE_DIGEST_ENV` | mcp/src/agents_remember/models/eve_capsule_carrier.py:32-42; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231 |
-| The reader half that proves a carrier before a process exists, and the git-identity check behind it. | `verify_capsule_binding`; `_require_admitted_git_worktree` | mcp/src/agents_remember/serving/eve_runtime_launch.py:466-516; mcp/src/agents_remember/serving/eve_runtime_launch.py:518-546 |
-| The in-process reader that applies the carrier the launch verified. | `loadVerifiedCapsule`; `admitWritePath` | eve_runtime/agent/lib/capsule.ts:109-149; eve_runtime/agent/lib/capsule.ts:164-178 |
-| The focused cases over this module's refusals, including the unadmitted-surface and projection-disagreement refusals. | `test_materialize_refuses_an_unadmitted_surface_root`; `test_materialize_refuses_a_projection_that_disagrees_with_the_capsule` | mcp/tests/test_eve_capsule_binding.py:233-240; mcp/tests/test_eve_capsule_binding.py:282-295 |
-| The fixture world that supplies this module's real inputs, and — before the wiring landed — the one place `materialize_eve_binding` was called. | `FixtureWorld`; `fixture_carrier_for` | mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:565-620 |
-| The production caller this seam now has, and the launch whose workspace is read back out of the carrier it writes. | `_compile_eve_task`; `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:362-405; mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| The lifecycle catalog row registering the shared support module this seam's cases rest on, whose four declared consumers the loader re-derives from source. | "path = \"mcp/tests/eve_capsule_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1551-1551 |
+- The one compiler and the one projection this module transports from, unchanged and not re-implemented. [1]
+- The carrier format and the environment names are declared in the models tier, so the producer and the consumer share one spelling. [2]
+- The reader half that proves a carrier before a process exists, and the git-identity check behind it. [3]
+- The in-process reader that applies the carrier the launch verified. [4]
+- The focused cases over this module's refusals, including the unadmitted-surface and projection-disagreement refusals. [5]
+- The fixture world that supplies this module's real inputs, and — before the wiring landed — the one place `materialize_eve_binding` was called. [6]
+- The production caller this seam now has, and the launch whose workspace is read back out of the carrier it writes. [7]
+- The lifecycle catalog row registering the shared support module this seam's cases rest on, whose four declared consumers the loader re-derives from source. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this module: the carrier is AR's own format and the
 compiler it calls is AR's own.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1518-1518. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1472-1472. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1456-1456. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:57:45+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1457-1457. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T00:16:01+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1455-1455. No content impact: mechanical anchor-range projection bound to citation source snapshot b8fe5b3589f1357e836aaad1587e69ed38bbda0d58221eaa2150e96eb0561e93; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1453-1453. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 1 enforced `citation_anchor_absent_from_range` row in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1448-1448` → `mcp/tests/evidence-lifecycle.toml:1448-1449` (row 141). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1448-1448. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1444-1444. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1442-1442. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1438-1438. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1437-1437. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "path = \"mcp/tests/eve_capsule_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1434-1434. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T10:00+02:00 — 260915-CAPS-L15 curator: **the seam gained its production caller, so the
-  invariant that said it had none was corrected in place.** `application/role_capsules/launch.py::_compile_eve_task`
-  now calls `materialize_eve_binding` for a wired launch point, which discharges the **produce** half of
-  `L7R-4` (a production caller exists, and the consumer's own gate accepts the carrier it writes, from
-  the launch's own captured cwd and env — `E8`). The card states explicitly which half that is and which
-  it is not: a dispatched eve seat still cannot start (the inherited settings-chain effort gate, `D22`,
-  owner **L17**), so no reader takes the produce-side discharge for a live-seat one. The reader-half
-  citation was re-anchored for this leaf's insertions, and the fixture row no longer stands in as the
-  seam's only caller. Verification metadata moves to this leaf's base `15fa0e2c`; the candidate is
-  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
-  fingerprint was invented here.
-- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: created this card for the produce side of the
-  capsule/workspace binding seam, added by this leaf's change set. Records the three shaping rules
-  (admission precedes execution, one compiler, the admitted worktree rather than a re-derived path),
-  the read-back-equals-written check, the projection-agreement check and why it is a check rather than
-  a second opinion, the fail-closed surface rules (absolute existing directories; the worker's set as
-  the fallback so an undeclared role cannot inherit the memory write), and the explicit boundary that
-  this module produces a carrier without launching, verifying or applying one. States the produce-side
-  seam honestly: `materialize_eve_binding` still has **no production caller**, and the production
-  launch-site wiring is leaf 15's `CAPS-R15@v1` obligation under the `L7R-4` transfer. Verification
-  metadata is pinned to the leaf's synced base `23cc7a72` because the candidate is deliberately
-  uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was
-  invented here.
+No meaningful cross-repo references found.

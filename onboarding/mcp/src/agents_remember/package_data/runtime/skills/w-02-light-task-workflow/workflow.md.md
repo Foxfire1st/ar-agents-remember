@@ -1,14 +1,5 @@
 # `w-02-light-task-workflow` workflow.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T14:18+02:00 |
-| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`|
-| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
-
 ## Purpose
 
 This workflow file gives the step-by-step `w-02-light-task-workflow` skill procedure for creating a task wrapper, planning in `task.md`, approving implementation, implementing, validating, requesting separate commit approval for worktree-backed closeout, and finalizing a light durable task after its branch lands.
@@ -60,34 +51,30 @@ A light-task handoff records relevant targeted checks and honest failed or not-r
 
 No external domain documentation applies to this repository-local workflow.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The workflow defines the concrete process behind the `w-02-light-task-workflow` skill.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The workflow goal is to run the in-between task lifecycle. | "Run the in-between task lifecycle" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:5-5 |
-| The workflow requires drift checking, approval before implementation, onboarding updates, and separate commit approval. | "drift check before planning"; "approval before implementation"; "onboarding update through"; "separate commit approval" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:11-14 |
-| The durable artifact shape is a wrapper folder plus `task.md` under the resolved task root. | "The durable artifact shape" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:54-54 |
-| A leaf contract lives at `enclosures/<leaf-id>/series-contract.md`. | "places its leaf contract at" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:62-62 |
-| The task document is JSON-primary with schema `ar-task-document/v1`. | "ar-task-document/v1" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:114-114 |
-| `codeExamplesNote` records deferred code examples distinctly from none-needed. | `codeExamplesNote` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:125-125 |
-| Closeout may call `lifecycle_finalize_task` only after every declared work unit is done or intentionally skipped. | `lifecycle_finalize_task` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:256-256 |
-| Final closure verifies that referenced workflow or skill paths still resolve. | "verify any referenced workflow or skill paths still resolve" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:277-277 |
-| A master series uses one master integration branch plus leaf enclosure worktrees. | "one master integration branch plus leaf enclosure worktrees" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:359-359 |
-| The master owns the final release step, while sub-tasks never bump the version. | "The master owns only the final release step" | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:367-367 |
+- The workflow goal is to run the in-between task lifecycle. [1]
+- The workflow requires drift checking, approval before implementation, onboarding updates, and separate commit approval. [2]
+- The durable artifact shape is a wrapper folder plus `task.md` under the resolved task root. [3]
+- A leaf contract lives at `enclosures/<leaf-id>/series-contract.md`. [4]
+- The task document is JSON-primary with schema `ar-task-document/v1`. [5]
+- `codeExamplesNote` records deferred code examples distinctly from none-needed. [6]
+- Closeout may call `lifecycle_finalize_task` only after every declared work unit is done or intentionally skipped. [7]
+- Final closure verifies that referenced workflow or skill paths still resolve. [8]
+- A master series uses one master integration branch plus leaf enclosure worktrees. [9]
+- The master owns the final release step, while sub-tasks never bump the version. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for the current workflow file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## Series-Contract Notes
 
@@ -115,54 +102,3 @@ summary behavior.
 This packaged projection preserves the canonical phase boundary: validate before append; a
 malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
 a malformed handed-off attempt requires independent rejection before successor handoff.
-
-## Update History
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Updated the light-task handoff paragraph with the completed-curation exception.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "one master integration branch plus leaf enclosure worktrees" repointed to mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:359-359. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "The master owns only the final release step" repointed to mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:367-367. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "one master integration branch plus leaf enclosure worktrees" repointed to mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:359-359. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-08-28T14:18+02:00 — Reconciled workflow citations with the committed PDLS candidate after
-  the one-primary-requirement doctrine was finalized; the documented workflow is unchanged.
-
-- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
-  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
-  unchanged.
-
-- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
-  contract from canonical lifecycle/task doctrine.
-
-- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 workflow semantics.
-
-- 2026-08-27T18:06+02:00 — M40-M45: synchronized the attempt-journal workflow from canonical source.
-
-- 2026-08-27T14:04+02:00 — Clarified immutable version-addressed packet files, packet-local corpus
-  approval, and new-file revision handling in the installed workflow.
-- 2026-08-27T13:32+02:00 — M39@v1: added Phase 0 requirement compilation, the canonical
-  `requirements/` corpus, clause splitting, fresh-agent cold reads, developer corpus approval before
-  task creation, filtered task projections, one-primary leaves, and versioned invalidation plus
-  rebriefing. Verification remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: recorded stable-ID assignment, exact-set handoff, and per-ID
-  acceptance/review. Verification metadata stays pinned until governed closeout stamps the PDLS
-  commit.
-
-- 2026-08-04T09:54:46+02:00 — 260731-EFA-L6 S18-B07 second bounded correction: expanded the implementation-section claim through the ordered read, perform, cleanup, and completion steps; same-reviewer delta pending.
-
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged workflow details now define the master integration branch plus per-leaf enclosure lifecycle, including active slice worktrees and final master release. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T22:50+02:00: Dashboard task 14 — documented that closeout does not set worktree-backed tasks to `Completed`; `lifecycle_finalize_task` does so after the branch lands and cleanup/finalization is approved. Verification metadata pinned until closeout stamps the source commit.
-- 2026-06-19T05:15+02:00: Slice 3c reopened (R3, deferred-examples honesty) — the proposed-code-examples step now records deferral via `codeExamplesNote` so the render distinguishes deferred from none-needed. Synced from canonical `skills/`. Verification metadata pinned until closeout stamps the R3 code commit.
-- 2026-06-13T22:34: Slice 3c commit 2 — step 7 now authors the task document via the `task_doc` MCP tool (JSON-primary; the tool renders `task.md`, `template.md` is the render spec). Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
-- 2026-06-02T04:25+02:00: Replaced the heavy-oriented "What This Workflow Does Not Cover" + "Relationship To Heavy Task Workflow" sections with a "When To Escalate To A Master Series" section, and dropped the "same naming convention as heavy-task-workflow" phrasing. `l-01-session-job-lifecycle` skill series, Sub-task B/S6, mcp 1.1.0.
-- 2026-06-02T04:10+02:00: Added a "Master Task Series" section documenting escalation to a master + light sub-task series (one worktree per series, a commit per slice, one integrate + release at the end). `l-01-session-job-lifecycle` skill series, Sub-task B/S5, mcp 1.1.0.
-- 2026-05-31T01:06+02:00: Added step 6 "Reframe and design before writing the plan" linking the Task Collaboration Doctrine and recording settled design in the task file's `## Design` section before implementation steps; renumbered later steps to 7 and 8, added the design item to the required-sections list, and refreshed the citations my insertion shifted.
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to `w-02-light-task-workflow` skill planning.
-- 2026-05-24T04:34+02:00: Updated task-start references after `c-02-memory-quality-control` skill was renamed to memory quality control.
-- 2026-05-10T01:19: Updated after Phase 2 gained the closeout dry-run and explicit commit approval handoff for worktree-backed tasks.
-- 2026-05-10T00:56: Updated the `c-09-git-worktree-manager` skill handoff rule so refreshed external-memory onboarding and ledger changes are committed before worktree start.
-- 2026-05-10T00:47: Updated `w-02-light-task-workflow` skill phase language so task wrapper folders are created before any `c-09-git-worktree-manager` skill worktree.
-- 2026-05-09T22:57: Refreshed verification metadata and updated `w-02-light-task-workflow` skill citations.
-- 2026-05-09T21:59: Updated for worktree-backed task folders and `c-08-ar-coordination-context-resolver` skill resolved tools/sources paths.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for `w-02-light-task-workflow` skill workflow steps.

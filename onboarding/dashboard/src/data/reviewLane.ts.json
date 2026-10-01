@@ -1,0 +1,256 @@
+{
+  "path": "dashboard/src/data/reviewLane.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter's own statement: the server classifies once and this file only carries the answer.\n\nAnchor: \"server classifies once and this adapter only carries the answer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:ed505ec47b788133675374579a5a550f1e6cf56418799e02d1e4efcbcc200d64",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one lane read of the surface.\n\nAnchor: \"const laneRead = useReviewLane(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
+            "content": "sha256:c0a3de7fe67b48f89e71059b05fe33dad9eb0330cae7845b7e3356b1a1751d68",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The server's shapes this file mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "content": "sha256:e3a1f01daa91af1f0f7221f49fa61a258bf0ea17fa8f2efe6be65910088fd018",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewUnexplainedLane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c4a4f7ed1f5c7b3dc241232a0ea1d28e5b5d04f",
+            "content": "sha256:04790c18172613a812821ec7bb64da312c4c771b0c0935210f705db289c26f2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFileClassification"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_lane.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The entry's count: totals only when counted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:e82fdd7d6309a4161f9dc2cc880e216df96dc89630d50018a09e324a0a37edee",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewLaneSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A link's keys and family occurrences; the per-file response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:d5e75c4289a51117ee095dd569352bdbb37ed8bf83987e3b91aa1333fcdba41e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewLaneLink"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:2850ce6c8646c12bb58d689ffbb2dbe156fa004f7a52c2893b615b52dab1d53e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFileClassification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A destination, one path's bucket, and the lane with `paths`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:72fc1761b8a733ac25a03f51abe9eb21c35011f7e13d3a7b9e1dbc07564a107e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewLaneDestination"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:1750aa24fce9157a2212b9301afca3550b1138ff5ac8cd2d2d5454be97aef8b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewLanePath"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:79c99187876fb3bcca1d90c817283adbde84eddd2efc60a7973ea7abae94008e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewUnexplainedLane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read states, and an answer without its value read as unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:db847eeeb253d265ec8d73796aa715fac4b8d09fca424aeb4ea9e8b7d956bd0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:899b2a9e8ec6be0f995ce1a6ae41fcae5bda1749fbaf8e489de391f7921fc627",
+            "locator": {
+              "kind": "symbol",
+              "name": "readOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One answer kept with its URL; `null` asks nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:46b959119dcff79d88307fb45283ee89124e6235b0b06838f5acbb768616560e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useLaneAnswer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two reads: the lane (none for a dataset review) and one file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:ca044fb554d86b53ee7a9f656cea4fe94166872e1b7e6a168623a2f29fb13b6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewLane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:85ae7bf244b16c318bb7fcecf8bf2ae78463929ac183ea270e2af2f0ab260cdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewFileClassification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One file's classification as a single read for the intent markers; a transport failure is `unavailable`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "readFileClassification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Its one caller: the marker scope's per-surface cache, only for a tree comparison.\n\nAnchor: \"comparison === undefined ? null : readFileClassification(repo, master, leaf, comparison, path),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:b4de4cacb6a3d60b886bdac02c57d0fbfe97046151afac25168afdcd10e212f2",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

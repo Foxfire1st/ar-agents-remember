@@ -1,0 +1,402 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_control_factories.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The runner constructs a discovery adapter, obtains knobs, validates dynamic advertise, then constructs the configured runtime adapter.\n\nAnchor: \"async def _prepare_controlled_launch(\"; \"discoverer = create_harness_protocol_adapter(config.harness_id\"; \"knobs = harness_launch_knobs(\"; \"launch = apply_launch_knobs(base\"; \"discovery_env = {\"; \"validate_launch_selection(selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:3c5b049e191742630efbcac6c9a556b415d9a7e02a603b597b0c788431bf20bf",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:9ac0be56dd78a55538a38ad6a06ceeb27cf71d86394a65777af5ee2391b4822f",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:ebc6d95d022e3ee5678dd5625b5ebf44713f5e19fee01a739aadf57256aebbcf",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 313
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:2512ee4e2cc2366dcc376c3404f5c6910056276674abaf1f9a778a91b388168e",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:eee1891616bebb284ad4217feaf75500298e16e0057543dfbb5d3f09242221ab",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The three pre-existing construction guards were extracted with their messages unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:a08ecdf2f1bc8b66f8c919e026c7aa21a9f77d9408ae014be6f58eeff1a0b551",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_consistent_launch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:40ca568fcbd75a780e53672002c9d29b4d3ed82c00df3c28c329aaba0ed647ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_launch_knobs_present"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:cb0b202b32612c4f4af24c5ae7127f84a984fb9dccc5dce6eedf45db65ecc5c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_thread_boundary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A capsule is refused for any harness without a verified instruction channel, and filled into the sole Codex settings site otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:118a3d89bfad25b6492bae14dd522a582ca0d700c944302f103fd79dfdebe974",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_capsule_channel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2b5088b617b61478353dc2280de551ce38e85be3d6491a95f22fe51e3caf806c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_harness_protocol_adapter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Claude consumes expected launch evidence and produces native model/effort flags.\n\nAnchor: \"def verify_effective_launch\"; `launch_knobs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:dac48a01c6af918abe21fbfd802b518a53f990673c188eb672a80b416fc96be7",
+            "locator": {
+              "kind": "symbol",
+              "name": "claude_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:f607693b8f86e8badeaf77d1aec4cbf6a5494ce72fb2360cd38520281aae9e70",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaudeStreamJsonAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:6561d9b8a007b68be01d42cda368b7a213a5793b35a38a299ef3cd902c6a9868",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 239
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:c140e15e5336055ce1a24a2b7a41f3dd34a17b700d4560d09cdd6251b3ce8a97",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:4500f0f1ee17190bf30d683aca12551efe2493b0f72f84705c46b9e100642472",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Codex session settings resolve typed or catalog-default model/effort into thread config.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:97ed545fab260dae5710718ce358487d0ea9fb7c94c73d212fe25d73dbb72328",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexAppServerSettings"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:895a839e7f87bc324cabd6534f2c7d2f4c985300b2fd85cfdf31e3a693eaaf00",
+            "locator": {
+              "kind": "symbol",
+              "name": "connect"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:fa02168c81a4a9858d299b11ec07312008216bf11b40be9913c52f14f910e03e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_thread_params"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pi consumes expected launch evidence and produces native provider-qualified model/thinking flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:f04b6c8c2f9c3c5127447d9d793956f72bfa8669e200ee7ea07f26bde0ab1007",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiRpcAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:463aadf8d623f3d4d3b4edd2a1e583e2e62878ece290491f10ab67357a0fa8b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "pi_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:2e67119bc01178ea3c794a71eae9bdbdb238b2962d28351650810725564ae5e3",
+            "locator": {
+              "end": 768,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:84624ff45ce4683111031278123055402a574df626a44d73839e717a760777b4",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "eve consumes a selection recovered from the applied launch knobs and is constructed with no argv-vocabulary flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:b99b92bb30379eefab17c4cd4b9d314bd90df3608eace895431440de00a8978d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveSessionAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:b737fcf816c1273c940c48327bd7a22833a331b37c19bf28f12fc9ee9fcd7af6",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "eve's launch vocabulary is the environment, because its model and effort are compiled application values with no argv spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:6ee2e7dbd9cee9fcbe26ace2ddd633165b0ab4cd3a118e25b230f852ed27cc41",
+            "locator": {
+              "kind": "symbol",
+              "name": "eve_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The reader that recovers the applied selection from a probe launch spec.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:83c0ea4b7a54e0b59c1b1c8d4593ca185ff3d59c8bb3f8519623c0e05e7280ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_spec_selection"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "This factory's own recovery helper; it refuses a resolved launch that arrives without adapter-produced knobs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:548c3434bd9af2f7bdcaf54507d76326c2380f93740033e7e8a4eeacc97a2198",
+            "locator": {
+              "kind": "symbol",
+              "name": "_eve_expected_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The selection and its knobs are one frozen pair, so the factory's argument count stays inside the repository limit without an exemption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:fdd84a89f81997491833393f4081ec67013f10ab0b777c7f6635d90c070a46d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

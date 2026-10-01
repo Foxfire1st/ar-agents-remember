@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation-library overview](overview.md)
@@ -63,51 +53,28 @@ discipline that the review's F8/F16/F22/F23 findings and the height-containment 
 - This surface reads the library store and never writes a durable index; the list is server-native
   cursor-paged, never locally accumulated as a database.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The library store the surface reads and drives (list/preview/open loaders). | `useConversationLibrary` | dashboard/src/data/conversation-library/store.ts:86-88 |
-| The native list column. | `ConversationLibraryList` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:104-205 |
-| The read-only preview column in the same block grammar. | `ConversationHistoryPreview` | dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx:28-84 |
-| The sole resume action mounted for the selected row. | `OpenConversationAction` | dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx:72-174 |
-| The harness label used for the heading. | `harnessLabel` | dashboard/src/data/conversation/format.ts:89-100 |
-| The stage body that renders this surface, keeps the live surface inert behind it, and suppresses the drawer while it is up. | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
+- The library store the surface reads and drives (list/preview/open loaders). [1]
+- The native list column. [2]
+- The read-only preview column in the same block grammar. [3]
+- The sole resume action mounted for the selected row. [4]
+- The harness label used for the heading. [5]
+- The stage body that renders this surface, keeps the live surface inert behind it, and suppresses the drawer while it is up. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T02:41:46+02:00 — W3-B05 curator: anchored 6 Tier-2 table citations and 5 Tier-2 prose citations with exact source paths; fixer generated all ranges.
-- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the one-line `agentsNote` pass-through
-  (the list receives `agentsNote` as a pass-through prop) (cit:(["agentsNote: list?.agentsNote"], dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:179-179)) into the list; all line citations re-stamped against the
-  post-L7 source (several pre-existing citations had also drifted and are corrected). The L7 source is
-  uncommitted, so lastVerifiedCommit* stays on the prior stamp and closeout re-stamps verification.
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V10 stack-threshold raise (`@container`
-  breakpoint `640px → 56rem`) so the two columns stack to one flow before they crush; the `nowrap` +
-  `min-height:0` + interior-scroll containment idiom is unchanged (the reason the `@container` matches).
-  Verification pinned to the leaf base (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the in-stage
-  prior-conversation browser surface — heading-focus-on-open, the three §4.4 return paths on one
-  focus-return token, and the F23/L4.R5 `nowrap` + `min-height:0` + interior-scroll + `@container`
-  height-containment idiom that keeps the resume action and pager pointer-reachable. Verification is
-  pinned to the leaf base (`0be0099`) because the new source file is uncommitted; closeout owns its
-  first source stamp.
+No applicable cross-repository source was found.

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete proof and closed authority comparison recognize only the selected code output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eda28256623e66702f7034156debad3f05ac710b",
+            "content": "sha256:4d84783c24c892a55f61a7227a152338588f3d6dddde9dc256e004a43c703f69",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_retained_output_currentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

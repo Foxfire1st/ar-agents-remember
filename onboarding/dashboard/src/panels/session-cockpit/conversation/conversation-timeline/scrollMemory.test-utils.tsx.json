@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory.test-utils.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The geometry and hermetic timer hooks, plus the feed and viewport helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "289e26afac866baa0a881897d104c86c1dedd955",
+            "content": "sha256:108040fe2188cb9096d3ffc6fc70d1d428e8f76c6b7e993ec975b967742ac0ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "installScrollMemoryGeometry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "289e26afac866baa0a881897d104c86c1dedd955",
+            "content": "sha256:0fb744eb35725bf4af5e6c0d8fe8cfcf632dc3dd0850283c809cf01549527cfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "feedOf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "289e26afac866baa0a881897d104c86c1dedd955",
+            "content": "sha256:be9ab31632a578787458c1d9d9c53e1a701c9cd8eb248d1eb0bee4bf30ccd7f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "pinGeometry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

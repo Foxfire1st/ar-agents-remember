@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/library/pi.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/library/pi.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate |  2026-08-13T00:18:59+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Native conversation library overview](overview.md)
@@ -61,49 +51,26 @@ are the complete session line, tool records included, so historical and tool com
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal port.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The ports suite proves rows/paging, role/tool/notice mapping, and session-file argv targets on
 fake helpers; the installed suite proves the live gate, the round-trip, and the real end-to-end
 open; the locked helper implements the native seam.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The Pi library maps durable entries and mints the verified session-file resume target without switching a running session. | `PiConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/pi.py:80-328 |
-| Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the live helper gate, list/read/resolve round-trip, and the real Pi open with exact identity and retirement. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
-| The locked helper's SessionManager list/branch-read/session-file resolution implementations. | "export async function handlePi(request: HelperRequest): Promise<unknown> {"; "async function listPiSessions("; "async function readPiSession("; "async function resolvePiResumeTarget(" | mcp/native_helpers/conversation_library/src/pi.ts:54-54; mcp/native_helpers/conversation_library/src/pi.ts:69-69; mcp/native_helpers/conversation_library/src/pi.ts:101-101; mcp/native_helpers/conversation_library/src/pi.ts:133-133 |
+- The Pi library maps durable entries and mints the verified session-file resume target without switching a running session. [1]
+Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the live helper gate, list/read/resolve round-trip, and the real Pi open with exact identity and retirement. These removed artifacts provide no current execution or capability-enablement proof.
+- The locked helper's SessionManager list/branch-read/session-file resolution implementations. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local port.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 3 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
-  `test_conversation_library_installed.py`. The live Pi helper gate + list/read/resolve round-trip now
-  read at L217-L263 and the real-open E2E class `PiOpenEndToEndTests` at L284-L413 (was
-  `L215-L262; L360-L479`, which now lands inside the Codex open E2E). Both ranges read back.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R4 version-gate removal — recorded the
-  contract-only gate doctrine now stated in the docstring: the helper handshake reports observed
-  runtime/helper versions as informational evidence only, and the succeeding native `list`/`getBranch`
-  operation is the sole proof (never a version-string comparison; a drift never demotes the surface).
-  Change uncommitted; closeout re-stamps verification.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the helper-backed Pi port sidecar.
-  Verification is blank until closeout commits and stamps the new source.
+No meaningful cross-repo references found.

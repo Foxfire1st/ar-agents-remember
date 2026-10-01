@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/lifecycle` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-11T10:26:37+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -70,7 +64,9 @@ this route.
 | `lifecycle_tools.py` | [lifecycle_tools.py.md](lifecycle_tools.py.md) | covered |
 | `terminal_rail_failure.py` | [terminal_rail_failure.py.md](terminal_rail_failure.py.md) | covered |
 
-## Docs And Boundary References
+## Evidence
+
+### Docs And Boundary References
 
 No Domain Documentation or cross-repository source is configured for this route. Same-repository
 authority is documented by the linked source sidecars and the worktrees integration overview.
@@ -85,9 +81,7 @@ implementation on the route, but it is currently unreachable from the public too
 Direct landing remains a distinct route. Normal closeout/integration does not select or execute
 repository certification or quality profiles as an automatic prerequisite.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The bounded read-only observer validates the cursor, polls the exact generation, and returns change or timeout. | "def validate_wait_cursor(after_revision: int)"; "def wait_for_lifecycle_change(" | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py:87-146 |
+- The bounded read-only observer validates the cursor, polls the exact generation, and returns change or timeout. [1]
 
 ## CCR-L42 Refresh Validation Parity
 
@@ -101,35 +95,3 @@ public `worktree_closeout_apply` and `worktree_integrate` tools and does not inv
 quality, memory quality, selected certification, curator coherence, or independent review. Full
 suites are an explicit developer request. The detached worker and its lease, described in earlier
 revisions of this section, no longer exist.
-
-
-## Update History
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: removed the four cards whose source files the cut deleted (`lifecycle_operation_worker.py` by `173bb01e`; `lifecycle_status_wait.py` and `lifecycle_enclosure_tools.py` by `41b0812e`; `legacy_operation_tool.py` by `a583beb8`) and dropped their stale links from the File-Level Onboarding Map. The map now lists every surviving card on the route. Recorded that the detached worker, its lease, and the public read-only wait tool are gone while the bounded observer at `worktrees/integration/lifecycle/observation/status_wait.py` survives unreachable. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-
-- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded route-review refusal promotion in the lifecycle certification adapter and preserved its no-mutation boundary. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-
-- 2026-09-06T15:08:14+00:00 — Added the current selected-certification/refusal source routes and their precise fixture/model boundaries; corrected stale pending-candidate wording where present. Preserved broader prior verification stamps and all earlier history.
-
-- 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Qualified typed-failure precedence and documented configured profile propagation plus telemetry helper boundary. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
-
-
-- 2026-09-05T06:12+00:00 — Combined typed terminal failure handling with bounded read-only wait routing and documented the meaningful-revision cursor.
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage adds the `lifecycle_status_wait.py` read-only wait controller (CCR-R15 `worktree_status_wait`); route index regenerated.
-
-
-- 2026-09-04T17:15+02:00 — 260831-CCR-L20 Gate-5 memory pass (code commit `ce7f10b5`):
-  recorded CCR-R20 typed terminal rail-failure propagation on the detached worker boundary:
-  `OperationRuntime.fail` routes unclassified outer failures through
-  `terminal_rail_failure.py`, and the route's File-Level Onboarding Map gained the new module.
-  Verification stamp is the full leaf code commit
-  `ce7f10b565f82bc41421d60ba914ee1d0abf61c4`.
-
-
-- 2026-08-30T06:26+02:00 — MCAR-L03 A005: documented the strict-by-default admission boundary
-  and its narrow single-owner transfer of candidate identity to exact-pair validation.
-
-- 2026-08-25T15:44+02:00 — Created for PDLS whole-system reconciliation and the public
-  lifecycle-error translation boundary. Verification remains closeout-owned.

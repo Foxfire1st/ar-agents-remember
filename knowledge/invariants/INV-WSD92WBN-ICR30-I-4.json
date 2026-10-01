@@ -1,0 +1,27 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [
+    "Disposition source: this run's measurement of the boundary's own pinned limit",
+    "Family examination: no joint obligation is supported. Basis: The checkout-coordination boundary is a property of how a process was loaded rather than of the knowledge write plane's batch, destination or attribution obligations, and no other obligation examined here shares a joint guarantee with it; it is recorded as a deliberate family-free outcome, and its own pinned limitation (any mode declaration lifts the confinement) is carried in the statement's disposition rather than folded into a family guarantee."
+  ],
+  "exclusions": [],
+  "id": "INV-WSD92WBN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: partial.",
+        "Evidence: Measured by this run at 71a17079: the installed editable console script answers 'undeclared Agents Remember execution from the primary checkout is refused', and the repository's own pin in mcp/tests/test_checkout_coordination_isolation.py records that any mode declaration lifts the refusal (260918-TSIP-L3, T30)."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "92651e5e-fe92-41ab-a46c-ccde94c36d10",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An undeclared process whose Agents Remember package was loaded from a linked Git checkout reads and writes coordination state only inside a disposable root under that checkout's own enclosure, and undeclared execution from the primary checkout is refused before any authority settings document is read.",
+  "status": "proposed",
+  "supersedes": []
+}

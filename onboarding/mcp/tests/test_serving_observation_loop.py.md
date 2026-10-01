@@ -1,15 +1,5 @@
 # mcp/tests/test_serving_observation_loop.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| path | `mcp/tests/test_serving_observation_loop.py` |
-| doc_type | `file-level-onboarding` |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -178,137 +168,33 @@ the prime's own cancellation property has no falsifying case in either module.
 None. The module is complete for its leaves' requirements; a future change to the notifier's inline
 refresh belongs to the leaf that decides it.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved memory root. The module tests
 repository-owned serving behavior, so no external domain claim is needed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 The cases are grounded in the production observation loop and in the sweeper's retained clocks; these
 references describe the behavior under test and do not claim a certification result.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The serving lifetime owns one completion-relative, non-overlapping observation attempt that sleeps after each call returns, including a failed one. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:109-126 |
-| That attempt cadence is the sweeper's own starting-row interval constant, read at its declaration. | "DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS = 1.0" | mcp/src/agents_remember/serving/terminal_liveness.py:57-57 |
-| The lifespan creates the observer unconditionally and cancels/awaits it with the other background loops, and it takes the one pre-serve observation prime before the projection is built. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:288-348 |
-| The sweeper keeps its own starting-row window and ten-second full-sweep limit behind `refresh`. | `refresh`; `_refresh_starting_rows`; `_starting_rate_limited`; `_rate_limited` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221; mcp/src/agents_remember/serving/terminal_liveness.py:223-268; mcp/src/agents_remember/serving/terminal_liveness.py:277-282; mcp/src/agents_remember/serving/terminal_liveness.py:270-275 |
-| The module drives the real lifespan finalizer, the real sweeper, and its cadence cases with a virtual clock and no HTTP surface; every absolute call index counts the pre-serve prime as call 1. | `ServingObservationLoopTests` | mcp/tests/test_serving_observation_loop.py:469-691 |
-| One failed pass is isolated: the owner stays scheduled, five sibling loops and the HTTP surface survive, nothing durable of its own is published, the retry resumes from the current catalog, and cancellation still ends the task. | `ServingObservationFailureIsolationTests` | mcp/tests/test_serving_observation_loop.py:694-928 |
-| The failure boundary is `except Exception` and therefore cannot absorb cancellation, because `CancelledError` is a `BaseException`. | `_terminal_observation_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:109-126 |
-| The like-scoped exclusion that keeps the R11 identity exact while accounting for the one row R17 must rewrite on every completed observer call. | `_durable_tree_without_observer_health` | mcp/tests/test_serving_observation_loop.py:429-440 |
-| The health row's own path and the category a failed steady pass must publish, asserted by the failure case. | `terminal_observer_health_path`; `TerminalObserverHealthStore` | mcp/src/agents_remember/serving/terminal_observer_health.py:110-113; mcp/src/agents_remember/serving/terminal_observer_health.py:239-279 |
-| The shared fixture and its ordered `startup` witness, imported by the startup-prime module as well as used here. | `_ServingFixture`; `_record_startup` | mcp/tests/test_serving_observation_loop.py:259-370 |
-| The probe's parkable inner callable, used to place a slow pass on a chosen invocation rather than always on the first. | `_Gate` | mcp/tests/test_serving_observation_loop.py:236-256 |
-| The sibling module that owns the pre-serve prime's own ordering contract and imports this fixture. | `ServingStartupPrimeTests` | mcp/tests/test_serving_startup_prime.py:93-352 |
-| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_observation_loop.py" |mcp/tests/test-evidence-lanes.toml:232-232|
+- The serving lifetime owns one completion-relative, non-overlapping observation attempt that sleeps after each call returns, including a failed one. [1]
+- That attempt cadence is the sweeper's own starting-row interval constant, read at its declaration. [2]
+- The lifespan creates the observer unconditionally and cancels/awaits it with the other background loops, and it takes the one pre-serve observation prime before the projection is built. [3]
+- The sweeper keeps its own starting-row window and ten-second full-sweep limit behind `refresh`. [4]
+- The module drives the real lifespan finalizer, the real sweeper, and its cadence cases with a virtual clock and no HTTP surface; every absolute call index counts the pre-serve prime as call 1. [5]
+- One failed pass is isolated: the owner stays scheduled, five sibling loops and the HTTP surface survive, nothing durable of its own is published, the retry resumes from the current catalog, and cancellation still ends the task. [6]
+- The failure boundary is `except Exception` and therefore cannot absorb cancellation, because `CancelledError` is a `BaseException`. [7]
+- The like-scoped exclusion that keeps the R11 identity exact while accounting for the one row R17 must rewrite on every completed observer call. [8]
+- The health row's own path and the category a failed steady pass must publish, asserted by the failure case. [9]
+- The shared fixture and its ordered `startup` witness, imported by the startup-prime module as well as used here. [10]
+- The probe's parkable inner callable, used to place a slow pass on a chosen invocation rather than always on the first. [11]
+- The sibling module that owns the pre-serve prime's own ordering contract and imports this fixture. [12]
+- The candidate classifies this module once, in the explicit unit-regression lane. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation boundary is established by this repository-owned
 unit-regression module.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 7 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`_app_lifespan.py`, `terminal_liveness.py`, `test_serving_observation_loop.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:32:26+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:232-232. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:180-180. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:162-162. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:155-155. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:152-152. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:151-151. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:150-150. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:148-148. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:128-128. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand while resolving the memory sync** — `mcp/tests/test_serving_observation_loop.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand** — `mcp/tests/test_serving_observation_loop.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: `"mcp/tests/test_serving_observation_loop.py"` → `mcp/tests/test-evidence-lanes.toml:123-123`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_serving_observation_loop.py" repointed to mcp/tests/test-evidence-lanes.toml:120-120. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-15T18:42:00+00:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
-  base `99534dc5`, `mcp/tests/test_serving_observation_loop.py` +86, 924 lines, final candidate
-  `git diff | sha256sum` = `b75a785d…`): this landed **L11** module was modified by this leaf, so the
-  card records what changed about its meaning rather than a routine refresh. `LOCR-R17@v1` makes every
-  completed observer call — successful or failed — atomically rewrite exactly
-  `observer_root/workspace/terminal-observer-health.json`, so R11's three "nothing durable moved"
-  identities can no longer hold verbatim. They now run over
-  `_durable_tree_without_observer_health` (the full map minus exactly that one path), which keeps the
-  claim exact for every OTHER durable artifact instead of weakening it to "almost nothing changed",
-  and the failure case additionally asserts positively that the row moved and carries
-  `steady-state-refresh-failed`. **The module's own wording changed with it**: it now says a failed
-  pass "publishes nothing durable **of its own**", and the card's invariant and negative-boundary
-  sections were corrected to match — the previous "publishes nothing durable" and "claims nothing
-  about observer-failure publication" sentences would now overstate the boundary, since the case does
-  assert that one row's movement and category (never log text or the health module's own field set,
-  which stay `LOCR-R17@v1`'s contract in the sibling card). **A vacuity defect found after the review
-  round is recorded as negative knowledge**: the first form of that assertion compared the FULL map
-  against the FILTERED one, so the extra key made the inequality hold in every reachable state,
-  including the one where the row never moved; it now reads in two like-scoped halves. An assertion
-  whose two sides are differently scoped is not a stronger form of the same claim but an empty one,
-  and a passing run cannot see the difference. Class anchors re-derived against the 924-line candidate
-  (`ServingObservationLoopTests` `439-657` → `469-688`, `ServingObservationFailureIsolationTests`
-  `660-874` → `690-924`, `_ServingFixture` `246-354` → `259-371`, `_Gate` `223-243` → `236-257`), the
-  `_serving_lifespan` citation moved with the production file (`255-310` → `288-352`), and rows were
-  added for the two helpers this leaf introduced. The module's lane row (`test-evidence-lanes.toml:97`)
-  is unchanged — the L17 insertion is the new sibling module at `:122`, below it — so L11's
-  classification is untouched. Verification metadata remains closeout-owned; no stamp advanced.
-- 2026-09-15T13:02:00+00:00 — 260831-LOCR-L18 curator (uncommitted test change set on `ar/260831-locr-l18`,
-  base `d868486c`, `+117/−44`, 874 lines): the module's body was corrected rather than annotated,
-  because `LOCR-R18@v1`'s pre-serve prime changed the meaning of every absolute call index it asserts
-  and gave the shared fixture a second consumer. Recorded the current contract: the fixture now also
-  carries the ordered `startup` witness (`_record_startup`, one `(step, sweeps_completed)` entry per
-  pre-serve step) and `_Gate`, a parkable probe `inner` so a case can make a chosen invocation slow;
-  **call 1 is the pre-serve prime and call 2 is the recurring owner's own first pass**, which is the
-  numbering contract both this module and its new sibling depend on. Nine landed cases were
-  re-anchored by `+1` for that shift (five of `ServingObservationLoopTests`, four of
-  `ServingObservationFailureIsolationTests`) with the injected failure moved back onto the owner's own
-  pass; no assertion was relaxed, dropped, skipped or made conditional and the shared helpers stayed
-  byte-identical, so this is a mechanical index shift and **not** a re-adjudication of `LOCR-R11@v1`,
-  which remains accepted and untouched. One case was additionally repaired for **vacuity**:
-  `test_cancellation_still_passes_through_the_failure_boundary` had been parking invocation 1, which
-  the prime now occupies, so it cancelled an owner task that never started and passed even under a
-  mutation that swallows cancellation; it now gates the owner's own in-flight pass. That is a
-  test-integrity fact about this fixture, not a production defect. Class anchors were re-derived
-  against the 874-line candidate (`ServingObservationLoopTests` `399-591` → `439-657`,
-  `ServingObservationFailureIsolationTests` `594-801` → `660-874`) and the `_serving_lifespan`
-  citation moved with the production file (`232-284` → `255-310`). Two fixture instrument limits are
-  recorded as boundaries, not resolved claims, both measured by this leaf's independent review: the
-  `startup` witness records no entry for the two patched migration/compaction steps, so it does not
-  constrain prime-versus-migration/compaction (`L18-RV-3`), and the prime's own cancellation property
-  has no falsifying case in either module (`L18-RV-2`). Verification metadata remains closeout-owned;
-  no stamp advanced.
-- 2026-09-15T12:10:00+00:00 — 260831-LOCR-L11 curator (uncommitted test-only change set on
-  `ar/260831-locr-l11`, base `163ba8a9`): the module gained `ServingObservationFailureIsolationTests`
-  (five cases) plus additive harness members (`_RefreshProbe.fail_on`/`.outcomes`, `_LiveHost.probed`,
-  `_durable_tree`, `_background_tasks`, `_serving_probe_route`, `_seed_emitted_signal_marker`,
-  `_seed_workspace_cursor`), so this card's three stale assertions were corrected in the body rather
-  than overridden: the case census is **12** in two classes (not seven in one), the class anchors are
-  `399-591` and `594-801` (not `318-510`), and the module **does** now pin pass-failure retry and error
-  semantics — the previous "likewise not claimed" sentence was inverted by this change set. Recorded
-  the new current contract (one failed pass leaves the owner scheduled, five sibling loops and the
-  serving surface intact, publishes nothing durable under a control proving a successful pass does
-  change the tree, and retries from the current persisted catalog on the cadence alone) together with
-  the boundary-safety invariant that makes the isolation compatible with shutdown:
-  `except Exception` cannot swallow `CancelledError`, so widening it to `BaseException` fails the
-  cancellation case alone. Also recorded the negative boundary that the module still does not claim
-  structured observer-failure *publication* — that belongs to a separate requirement — so a future
-  reader does not read this card as evidence for an observer-health surface. Production is byte-unchanged
-  by this change set (`_app_lifespan.py` sha256 `7c36ea83…`, the identity the L01 reviewer recorded);
-  this leaf's deliverable is the proof envelope, not a production edit. Verification metadata remains
-  closeout-owned; no stamp advanced.
-- 2026-09-15T11:19:00+00:00 — 260831-LOCR-L01 curator: created this file card for the leaf's new
-  steady-state observation suite. Recorded the current contract it protects (a serving-lifespan-owned,
-  completion-relative, non-overlapping observation attempt through the drained helper, independent of
-  HTTP, dashboard, and notifier enablement), the virtual-clock harness shape, the falsifiable failure
-  classes, and the boundaries the module deliberately does not claim (the notifier's inline refresh and
-  pass-failure error semantics). Verification remains closeout-owned because the source is an
-  uncommitted candidate; no stamp beyond the leaf base was advanced.

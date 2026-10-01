@@ -1,0 +1,70 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The drift summary and CLI facade call these renderers and the path resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:d1ac205dbaa6ffc19900eec8884c15383ec45c72e0d1971e0100a0327dd2380e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_drift_summary"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:cc71e59e34007427b7f27a80030370176d365d5edb7aab0bd94795bd9d862c38",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Branch facts (`current_branch_name`, for the default report filename) come from `git_ops`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c60efeec0ef3127bc1dd8922d20481a59200a57",
+            "content": "sha256:5c60cfa8642a6c618f67475238e81f0498275dcd6bc965ecb7764d0b10f590ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_branch_name"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The HEAD stamp in `write_markdown_report` runs on the single kernel git runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afb0862053f674f8c5e07040f8b0626c877d1334",
+            "content": "sha256:69170fbaf3ec90aabdf7e9b505c3a28c2931e170e0a954aa20b855e74c63f270",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_markdown_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

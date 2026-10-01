@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "An authored family successor gives a faithful, inspectable account of changed support while preserving the exact identity, meaning and history of its retained obligations.",
+  "id": "FAM-M9QBG39Z",
+  "members": [
+    "INV-2A00CD6G",
+    "INV-6080HQF9",
+    "INV-AGA5HG4K",
+    "INV-HXAH9APB"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "5ed168fb-f65b-4429-9045-d703cfaea8c0",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "routes": [],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Faithful authored family succession"
+}

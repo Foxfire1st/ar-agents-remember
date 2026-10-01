@@ -1,15 +1,5 @@
 # dashboard/src/grammar/Panel.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/grammar/Panel.tsx`                |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-17T22:45                                 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -50,24 +40,10 @@ replacement for the removed `.rail > .panel > h2` rule and must keep rows scroll
 Engine Room uses it for its internal 3-zone layout, while other callers use the ordinary panel surface or
 their own layout props.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `Panel` is the shared panel chrome primitive. | `Panel` | dashboard/src/grammar/Panel.tsx:48-69 |
-| The Engine Room passes `fill` to bound its 3-zone grid. | `fill` | dashboard/src/panels/EngineRoom.tsx:288-288 |
-| The Panel shell uses the `bgPanel` background and `grid` border tokens in its styles. | "background: \"bgPanel\""; "borderColor: \"grid\""; "bgPanel: { value:"; "grid: { value:" | dashboard/src/grammar/Panel.tsx:14-20; dashboard/src/grammar/Panel.tsx:34-46; dashboard/panda.config.ts:32-38 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: reissued whole-claim evidence for Panel token usage and token definitions for same-reviewer closure.
-
-- 2026-06-17T22:45 — engine-room visual-parity pass: `shell` became a Panda `cva` with an opt-in `fill`
-  variant (`display:flex` + `flexDirection:column` + `overflow:hidden` vs the default `display:block` +
-  `overflow:auto`); `Panel` gained a `fill?: boolean` prop (default `false`). This binds the Engine Room to a
-  fixed height so its centre canvas + right panel stop resizing per selection and the side columns scroll on
-  their own. Backward-compatible; other panels are untouched. Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-15T17:00 — Created for slice 5d: the shared `Panel` chrome primitive (self-scroll + sticky
-  band) replacing the global panel/sticky CSS. Verification metadata pinned until closeout stamps the
-  5d code commit.
+- `Panel` is the shared panel chrome primitive. [1]
+- The Engine Room passes `fill` to bound its 3-zone grid. [2]
+- The Panel shell uses the `bgPanel` background and `grid` border tokens in its styles. [3]

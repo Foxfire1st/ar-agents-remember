@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/conftest.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate paths and disposable scrubbed environment",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "content": "sha256:2729620b8d53ef465294050c5f2e38382ba11614eaa743e3243a0a4c5a399262",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPOSITORY_ROOT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Budget config and explicit certification option",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "content": "sha256:b156dc6e6a844b2bef08609b65004b03cd8df71ad64f0f57aa27b4fbd77ba266",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_addoption"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Single lane read and genuine certification admission",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "content": "sha256:ccaac46542632793e73c3814a3ea0c78de5be69041a413b743c96feb58353020",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_configure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Skip integration imports for default units",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "content": "sha256:f6cfa9c9114bb478696ea6932cf4cc88bd4f0ab3ab9a872d03ec0f6d0c2f4b3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_ignore_collect"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Selected item budgets and explicit tradeoff refusal",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_finish"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Explicit bind/reset application composition",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "content": "sha256:481fdab23f82ab9d11b96075a52668351ba4183e9b0124f8b6983da051ee5460",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_services"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Restore environment and remove temporary root",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "content": "sha256:7f41a8328323663c187c30e8c1b50baec67266d49c01dd89abc116ee2c89a4ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_unconfigure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

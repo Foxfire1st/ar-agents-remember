@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`entities.py` recomputes entity fingerprints and change notes through these helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9adc256a128d606ec110e5ff8c622ec9420d3899",
+            "content": "sha256:5c4f820d19f18aae50a089b0bf9477496df130a1c55231d57689d3d9fadb43c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_entity_fingerprint"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`sidecar.py`'s external classifier calls the imported `local_change_note` helper; its own `cat-file` and `diff --quiet` calls go straight to the kernel runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c3931f72183810cec08c4833bc012565e56f4b",
+            "content": "sha256:0de36447500ee274ba84ade56e81c64e47de0f45bdd24e8ad34e24e3f7b53c68",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_external_onboarding"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`run_git` lives here now: selector scrubbing, DEVNULL stdin, and the local/remote/metadata timeout classes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:b1152ceffbd4c31d92575acbc4a3c7b3ac5f4c523c673df3f488d6f1d2ff6f33",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/MemoryMirror.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`driftSegments` + the `DRIFT_ORDER`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:4c0fb7c43778f84379248a5e9c2dcccaf4baf74975385a21d6539f52be823e57",
+            "locator": {
+              "kind": "symbol",
+              "name": "driftSegments"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The drift/ledger/stalest analytics nodes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a6e260a843e4e37e3e7a43f502b1978dc2189fa",
+            "content": "sha256:a7b8d62e0e29d006112cc35e305ec422f860555869e63ccd668ba43e8f995b9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "Analytics"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "kind": "unresolved",
+          "text": "mcp/src/agents_remember/observer/projection.py:1097-1153"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

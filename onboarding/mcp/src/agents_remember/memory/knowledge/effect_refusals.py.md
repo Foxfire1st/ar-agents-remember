@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/effect_refusals.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/effect_refusals.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T10:20+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -94,39 +84,31 @@ place the vocabulary could be spelled differently.
   replaces or deletes a stored claim, and the remedy it names is to author a claim that says something
   the stored ones do not.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The label refusal: the observed label and the nine admitted values as facts, with no synonym and no nearest match. | `effect_label_refusal` | mcp/src/agents_remember/memory/knowledge/effect_refusals.py:48-68 |
-| The cardinality refusal, whose `observed` fact is the declared label and the two counts, and whose `expected` comes from the rule's own text. | `effect_cardinality_refusal` | mcp/src/agents_remember/memory/knowledge/effect_refusals.py:71-103 |
-| The succession-cycle refusal: the self-naming case and the longer cycle are one refusal from one rule. | `succession_cycle_refusal` | mcp/src/agents_remember/memory/knowledge/effect_refusals.py:106-132 |
-| The duplicate-claim refusal, which only an *identical* declaration reaches; a differently labelled claim for one comparison is kept. | `duplicate_effect_claim_refusal` | mcp/src/agents_remember/memory/knowledge/effect_refusals.py:135-161 |
-| The operation every refusal in this group belongs to, spelled narrowly so neither the refusal model nor the endpoint check needs a cast. | `EFFECT_OPERATION` | mcp/src/agents_remember/memory/knowledge/effect_refusals.py:41-41 |
-| The one rendering of the nine admitted values, read by both the refusal's `expected` fact and its `next_action`. | `ADMITTED_LABEL_LISTING` | mcp/src/agents_remember/memory/knowledge/effect_refusals.py:45-45 |
-| The one cardinality rule, imported rather than restated so the two enforcement points cannot disagree. | `cardinality_violation`; `cardinality_rule_text` | mcp/src/agents_remember/models/knowledge/effect.py:102-133; mcp/src/agents_remember/models/knowledge/effect.py:136-148 |
-| The nine-member effect vocabulary the label refusal reads its admitted set from. | `ADMITTED_EFFECT_LABELS`; `EffectLabel` | mcp/src/agents_remember/models/knowledge/effect.py:63-73; mcp/src/agents_remember/models/knowledge/effect.py:75-85 |
-| The shared spelling helper and facts type these factories build through — this module's only import from the shared refusals module. | `refusal`; `RefusalFacts` | mcp/src/agents_remember/memory/knowledge/refusals.py:57-79; mcp/src/agents_remember/memory/knowledge/refusals.py:48-56 |
-| The shipped code vocabulary these three codes stay inside; no new member was added by this leaf. | "KnowledgeRefusalCode = Literal[" | mcp/src/agents_remember/models/knowledge/result.py:151-222 |
+- The label refusal: the observed label and the nine admitted values as facts, with no synonym and no nearest match. [1]
+- The cardinality refusal, whose `observed` fact is the declared label and the two counts, and whose `expected` comes from the rule's own text. [2]
+- The succession-cycle refusal: the self-naming case and the longer cycle are one refusal from one rule. [3]
+- The duplicate-claim refusal, which only an *identical* declaration reaches; a differently labelled claim for one comparison is kept. [4]
+- The operation every refusal in this group belongs to, spelled narrowly so neither the refusal model nor the endpoint check needs a cast. [5]
+- The one rendering of the nine admitted values, read by both the refusal's `expected` fact and its `next_action`. [6]
+- The one cardinality rule, imported rather than restated so the two enforcement points cannot disagree. [7]
+- The nine-member effect vocabulary the label refusal reads its admitted set from. [8]
+- The shared spelling helper and facts type these factories build through — this module's only import from the shared refusals module. [9]
+- The shipped code vocabulary these three codes stay inside; no new member was added by this leaf. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A refusal is a statement about one
 namespace's own store, and the facts it carries are identities inside that store.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T10:20+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): created this one-to-one card for the authored-effect record group's own refusal factories. It records the four distinct facts, the shipped codes they reuse, the import-not-restate rule that keeps the cardinality predicate single-defined, and the deliberate absence of the shipped refusals that already have a home. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

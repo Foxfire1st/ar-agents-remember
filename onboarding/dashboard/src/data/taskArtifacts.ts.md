@@ -1,15 +1,5 @@
 # dashboard/src/data/taskArtifacts.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/taskArtifacts.ts`      |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -56,33 +46,22 @@ payload).
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this type-only module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The cockpit takeover renders the reader with this target spread. | `NotesTakeover` | dashboard/src/cockpit/Cockpit.tsx:576-610 |
-| The task reader wraps its prose with the requirements provider that produces these targets. | `TaskRequirementBoundary` | dashboard/src/panels/detail-panel/taskReader.tsx:86-104 |
-| The reader itself consumes the union (notes vs requirements listing/content). | `NotesReaderViewerImpl` | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:234-299 |
+- The cockpit takeover renders the reader with this target spread. [1]
+- The task reader wraps its prose with the requirements provider that produces these targets. [2]
+- The reader itself consumes the union (notes vs requirements listing/content). [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: created for the new
-  discriminated task-artifact reader target (notes vs task-local requirements
-  packets) that L23 threads through the takeover wiring. Verified at code commit
-  1993dd25.
+No applicable cross-repository source was found.

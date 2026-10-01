@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/grepai/seed.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/grepai/seed.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                         |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -53,28 +43,10 @@
 - Source provider settings may come from the current settings file when source and target coordination roots match, or from an explicit source settings path for worktree workflow-local copies.
 - The module starts backends only; watcher refresh and provider-level sequencing stay in `grepai/setup.py` and `provider_setup.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Isolated GrepAI settings define the target roots and workflow-local backend names used by clone operations. | `isolated_grepai_settings` | mcp/src/agents_remember/providers/grepai/isolated.py:36-74 |
-| GrepAI setup calls clone before refresh when seed options are present. | `prepare_enabled_provider` | mcp/src/agents_remember/providers/grepai/setup.py:56-71 |
-| Provider setup threads source/target settings into GrepAI seed options for worktrees (benchmarks pass none). | `GrepaiSeedOptions` | mcp/src/agents_remember/providers/provider_setup.py:105-112 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead `governingOverview` field repaired.** This card's field named `../../../overview.md`, which resolves under no base — not relative to the card, the onboarding root, or the root's parent — so the route the card declares did not exist. The field now names `overview.md`, the route-local overview of this card's own directory. The card carries no `## Governing Overview` section, so no body link existed to repair and none was invented. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 10 citations (citation_anchor_missing=5, citation_prose_not_in_cit_form=0, citation_source_malformed=5); final scoped citation check clean.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911`/`PLR0913` armed with no
-  exemptions): extracted `_clone_inputs` (+ the `_CloneInputs` NamedTuple), introduced the frozen
-  `_GrepaiCloneEnd` for `_clone_context_from_providers`, and re-signed `_run_with_stall_watchdog`
-  onto the frozen `_StallWatchdog`; the watchdog also entered `Popen` as a context manager so the
-  read end of a `stdout=PIPE` is closed by this function rather than by GC. Skip reasons, stall
-  results and the produced `GrepaiCloneContext` are unchanged. Verification metadata pinned until
-  closeout stamps the L2 commit.
-- 2026-06-19T13:42: `_resolve_clone_context` now refuses a benchmark-scoped target (`instance.scope == "benchmark"`) with a `_clone_skip` before resolving any source, so a benchmark stack can never clone from another provider stack (hermetic). Defense-in-depth alongside the benchmark runner no longer wiring a seed source; corrected Purpose/Invariants since benchmarks no longer warm-start (task 260619).
-- 2026-06-10T05:30+02:00 — `_clone_database` runs under a stall watchdog (`_run_with_stall_watchdog`): no total-time cap (clones scale with index size by design), killed only after 300s of zero progress (dump-file growth / `_target_database_size` probe), returning a structured phase-named `stalled` result. stderr goes to a temp file so unread pipe buffers cannot deadlock the child.
-- 2026-05-31T12:30+02:00 — Documented that `_clone_skip` now returns `ok: True` (benign skip, mirroring CGC) instead of `ok: False` (1.0.0 review remediation).
-- 2026-05-30T21:33+02:00: Documented that clone dump/restore now run uncapped (`timeout=None`) since clone time scales with index size (never-cap-indexing run). Verified against `825a172`.
-- 2026-05-29T18:35+02:00: Narrowed the `GrepaiCloneContext | dict` union via `isinstance` and removed the dead `_is_clone_skip`; behavior-preserving (commit `0549b28`).
-- 2026-05-27T18:10:12+02:00: Created for GrepAI provider warm-start support.
+- Isolated GrepAI settings define the target roots and workflow-local backend names used by clone operations. [1]
+- GrepAI setup calls clone before refresh when seed options are present. [2]
+- Provider setup threads source/target settings into GrepAI seed options for worktrees (benchmarks pass none). [3]

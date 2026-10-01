@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/detail-panel/viewedLeaf.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The viewed-leaf reporting suite.\n\nAnchor: \"describe(\\\"DetailPanel viewed-task reporting\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "493258baa362ee4436867009428796ef3c1c5201",
+            "content": "sha256:133efcf649d7dc227b817fa92cc405807b6f05a86c869b7fcd606916fcb4c7d9",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

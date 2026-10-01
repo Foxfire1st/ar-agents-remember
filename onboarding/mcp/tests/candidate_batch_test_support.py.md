@@ -1,15 +1,5 @@
 # mcp/tests/candidate_batch_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/candidate_batch_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -90,62 +80,31 @@ explicitly asks for.
 None recorded for this slice. Its declared consumer set is exact, and the registry validator derives the real
 importers and refuses a differing declared set — so a third consumer module must update the row in the same change.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The harness and its real-seam setup, including the context resolved from the live candidate. | `CandidateHarness`; `build_candidate_harness` | mcp/tests/candidate_batch_test_support.py:92-236; mcp/tests/candidate_batch_test_support.py:237-278 |
-| The two measurements, each taken through its own opened store. | `logical_digest`; `table_counts` | mcp/tests/candidate_batch_test_support.py:279-287; mcp/tests/candidate_batch_test_support.py:288-297 |
-| The refusal probe and the evidence object a case asserts on. | `RefusalEvidence`; `measure_refusal` | mcp/tests/candidate_batch_test_support.py:298-323; mcp/tests/candidate_batch_test_support.py:324-345 |
-| The removal seeds and the digest each removal must name. | `RemovalSeed`; `removal_seeds`; `record_is_gone` | mcp/tests/candidate_batch_test_support.py:346-355; mcp/tests/candidate_batch_test_support.py:431-534; mcp/tests/candidate_batch_test_support.py:535-544 |
-| The deliberate raw write that places the row the operations forbid. | `insert_raw_membership` | mcp/tests/candidate_batch_test_support.py:545-577 |
-|The registered contract, artifact row, evidence node and exact consumer set.|"contract:candidate-batch-case-harness"| mcp/tests/evidence-lifecycle.toml:1266-1266 |
-| The admitted destination and namespace initialization the harness drives. | `initialize_knowledge_namespace`; `resolve_candidate_context` | mcp/src/agents_remember/application/knowledge.py:160-191; mcp/src/agents_remember/application/knowledge.py:252-273 |
-| The operation the harness applies its batches through. | `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:303-318 |
-| The two declared consumers' own first nodes, which measure a refusal through this harness. | "test_every_declared_command_is_applied_and_read_back"; "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_commands.py:114-209; mcp/tests/test_candidate_batch_transaction.py:62-110 |
-| The registry validator that derives real importers and refuses a differing declared consumer set. | `load_evidence_inventory` | mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:179-225 |
+- The harness and its real-seam setup, including the context resolved from the live candidate. [1]
+- The two measurements, each taken through its own opened store. [2]
+- The refusal probe and the evidence object a case asserts on. [3]
+- The removal seeds and the digest each removal must name. [4]
+- The deliberate raw write that places the row the operations forbid. [5]
+- The registered contract, artifact row, evidence node and exact consumer set. [6]
+- The admitted destination and namespace initialization the harness drives. [7]
+- The operation the harness applies its batches through. [8]
+- The two declared consumers' own first nodes, which measure a refusal through this harness. [9]
+- The registry validator that derives real importers and refuses a differing declared consumer set. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-| The registered contract, artifact row, evidence node and exact consumer set. | "contract:candidate-batch-case-harness" | mcp/tests/evidence-lifecycle.toml:1266-1266 |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1256-1256. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1256-1256. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1244-1244. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1244-1244. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1239-1239. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1239-1239. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1241-1241. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1241-1241. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 2 enforced `citation_anchor_absent_from_range` rows in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1239-1239` → `mcp/tests/evidence-lifecycle.toml:1239-1240` (rows 111, 124). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1239-1239. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `load_evidence_inventory` repointed to mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:179-225. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1239-1239. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1236-1236. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1236-1236. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1232-1232. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "contract:candidate-batch-case-harness" repointed to mcp/tests/evidence-lifecycle.toml:1232-1232. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 4 generated projection bullet(s) by hand while resolving the memory sync** — `contract:candidate-batch-case-harness`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `contract:candidate-batch-case-harness`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:05:00+00:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read every claim in this card whose cited range the leaf's own source edits had moved. This leaf's insertion of `mcp/tests/test-evidence-lanes.toml` rows and a test module shifted the anchors below them, and the re-cited range of each claim was checked against the construct it is about rather than accepted from the mechanical projection. Ranges re-cited: `mcp/tests/evidence-lifecycle.toml:1103-1103` -> `mcp/tests/evidence-lifecycle.toml:1104-1104`. The generated projection bullets that recorded the same moves are retired here, so no mechanically rewritten range remains recorded as unverified evidence. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-
-- 2026-09-16T08:10:00+00:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): created this one-to-one card for the new candidate-batch case harness. It records what the harness builds through the real seam (an admitted destination and a context resolved from the live candidate), the refusal probe that measures table counts and the logical digest through a separately opened store, the one deliberate raw write that exists because the operations forbid the state a duplicate-pair case needs, and its registered contract with an exact two-module consumer set. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.
+- The registered contract, artifact row, evidence node and exact consumer set. [11]

@@ -1,0 +1,158 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/projectors",
+  "references": {
+    "1": {
+      "note": "The engine consumes the mapper channel flags and converts `UnmappableShape` into preserved unknown-vendor evidence.\n\nAnchor: \"or not self._mapper.uses_native_pages\"; \"if self._mapper.uses_transcript_echo:\"; \"or self._mapper.eager_native_continuation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:b2cba5a65ae808154562e135cea4830f96c33389f81aa39233587bbff0aafcc9",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:5558ad193d697b5423fa810c7102499f0f2195e458da9142de83aa372a094265",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:86863af0e12a0a15d7e464dafaa447fae9f08156090193eb8f205528434aa5d0",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store converges the split tool items these mappers emit.\n\nAnchor: \"def apply_item(self\"; \"def _union_blocks(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:ede33ee3b6d7d0d398ead5ba89bdecb97afbe992716ed057dbb867618255d55f",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:0092ba3ee2053c40a054f5bf8d979188c8989af435123e43e965f1a5624ed9aa",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 470
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The evidence/native frame products the mappers parse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:0c8e1fe06c22330610aad9172e790eeec03a37e5f742d87c786c40f45338e9b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceFrame"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:c12839b55e1a162fd9ee4bdee061544319130f7cd5f479ac063ac70cd0a242a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidencePage"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:3fa7919a42c87455b3f4221291878956ad7599e8bc866b56bd2e7bb580226a04",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeEvidenceFrame"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:9a6f714d035347da59ad6a1a099c0bb2ea83b36d245b5d1a427212d193119374",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeEvidencePage"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:b3e7b0a6d897cd31756859ecc9292589a506a58e24bf026129e58fa863c0fa5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionProvenance"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:ffed8d0b5c6d06f8bb6e092e4ff0abdeebeb7dbcafbfac35a475f4b220ff3502",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionProvenanceBatch"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

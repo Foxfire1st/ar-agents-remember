@@ -1,15 +1,5 @@
 # dashboard/src/data/selectors.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/selectors.test.ts`           |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -43,41 +33,22 @@ These tests do not prove backend attention derivation or dismissal persistence. 
 selector contract: panels can subscribe to `selectQueue` without local filtering loops, and optimistic
 suppression affects display only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation is needed for these pure selector tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation applies to these pure selector tests. | n/a | n/a |
+No relevant external documentation applies to these pure selector tests.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `selectQueue` coverage includes empty analytics and optimistic suppression. | "reads the server-computed queue" | dashboard/src/data/selectors.test.ts:74-89 |
-| Tree grouping and wait formatting tests cover the unchanged selector behavior. | "BY PHASE groups by l-01 phase in pipeline order"; "scales seconds → s/m/h/d and renders unknown as a dash" | dashboard/src/data/selectors.test.ts:25-36; dashboard/src/data/selectors.test.ts:64-70 |
-| The selector under test caches and filters attention rows. | `selectQueue` | dashboard/src/data/selectors.ts:37-46 |
+- `selectQueue` coverage includes empty analytics and optimistic suppression. [1]
+- Tree grouping and wait formatting tests cover the unchanged selector behavior. [2]
+- The selector under test caches and filters attention rows. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-02T20:43+02:00 — W2-B08: anchored 3 selector-test citation claims and normalized two generic no-document/boundary placeholders to `n/a | n/a`; no Tier 3 rows remain. Verification metadata stays pinned until closeout.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-06T02:55+02:00 — 260703-L11: added the `hasLiveWorktree` truth-table case pinning the
-  existence-only tasks-surface visibility rule. Verification metadata pinned until closeout stamps the
-  L11 commit.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: created the missing sidecar and documented coverage for
-  the optimistic attention suppression selector behavior. Verification metadata is pinned to the last
-  committed file version until closeout stamps the task-29 code commit.
+No meaningful cross-repo references found.

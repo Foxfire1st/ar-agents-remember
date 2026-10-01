@@ -1,0 +1,279 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal_tmux.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `TmuxProbeResult` (lines 62-66) — Evidence-bearing tmux session probe result..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:b23d68ad3a6352ceb0252784148bd811a02912dccad27b40120c4e8dd102c098",
+            "locator": {
+              "kind": "symbol",
+              "name": "TmuxProbeResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `_env_flags` (lines 203-212) — Flatten ``env`` into tmux ``-e KEY=VALUE`` new-session flags (L2 knob injection)..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:e31b89fa2a4852a89a33c7a911a3b7c633e3d76c39debf099b8ed19f7d543a8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_env_flags"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `tmux_create_detached` (lines 215-238) — Create tmux session ``name`` without attaching a local PTY client, seeding ``env`` at spawn..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:11f5efe14a11a09d9b89dd7015b9202c24dacabdb638f92f6bc4807971e52c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "tmux_create_detached"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `tmux_enable_mouse` (lines 241-260) — Enable per-session mouse mode; no-op when tmux or the session is absent (idempotent)..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:6a632a047a2f7307c36591d5cd20ec1db852eba094a221e0befa412b4ce8d6e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "tmux_enable_mouse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `tmux_cancel_copy_mode` (lines 263-281) — Leave copy-mode on session ``name``; harmless error when no mode is active..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:bfdf1c682750aaa35700332683e44527ea7d0ecbb56b4bda6afb07aee4510750",
+            "locator": {
+              "kind": "symbol",
+              "name": "tmux_cancel_copy_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the function `pane_in_mode` (lines 284-306) — Read tmux's exact ``pane_in_mode`` flag without sending input..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:f5e74704357df8e438a818300e198cb36cd8277aba1b3a59c3da37263e4a9d09",
+            "locator": {
+              "kind": "symbol",
+              "name": "pane_in_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `ensure_terminal_input_ready` (lines 309-322) — Cancel copy mode when present and prove the exact pane left it before input..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:66ead9334db2c2d6688d6765f5019494449f2ee30a256730a7d87f0d9bcd0429",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_terminal_input_ready"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Defines the function `tmux_session_name` (lines 325-332) — The deterministic tmux identity for an arbitrary session id..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:4d2d26c336b7626e87a84feea0de49feae022ccc009441edc49e2bbecbf592a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "tmux_session_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Defines the function `build_tmux_command` (lines 335-370) — The persistent-session argv: ``tmux [-T sync] new-session -A -s <name> ...``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:c18fd161d3140c0c3677c72a368d0485b6a7bae2b628ad1878a4c20d539b3d72",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_tmux_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `tmux_client_environment` (lines 85-98) — Construct the environment for a dashboard-owned tmux client process..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:4c273fedf1d4390bc1fd9c671861eaf1036d9df4615f3b15b155fdc5ea701712",
+            "locator": {
+              "kind": "symbol",
+              "name": "tmux_client_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `_parse_tmux_version` (lines 101-109) — Extract ``(major, minor)`` from ``tmux -V`` output, or ``None`` when it is not a numeric release..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:dc8ac1a474b4113e920248da3cf8a465899cce7e313b0fd80a2e0392174fffc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_tmux_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `_tmux_version` (lines 113-135) — The local tmux release, probed once per process (``None`` when tmux is absent/unparseable)..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:1dc48f520ab837798797cf0c61460d40333e9786d528a53bd92a21f08207c449",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tmux_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `_tmux_supports_client_capabilities` (lines 138-146) — Whether this tmux accepts ``-T`` (unknown versions answer ``False``)..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:dd5d937513e586bdace84a8320ec376d8239a5d891ab1da37cda8a722860bf8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tmux_supports_client_capabilities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `tmux_probe_session` (lines 149-176) — Whether tmux knows ``name``, preserving why a negative probe happened..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:a179c23283fbb70ea260e356de8afeb67c68b6fb063ca38650d13529fb046fa5",
+            "locator": {
+              "kind": "symbol",
+              "name": "tmux_probe_session"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `_tmux_missing_session_stderr` (lines 179-181).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:341632a5ee41eb53083f248d010a8c92d2db799170401b71faa81c3447b39cc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tmux_missing_session_stderr"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `tmux_probe_result_from_bool` (lines 184-186).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:b1d13d434c854f05e80cadb3e15b6e2804680169ab7b97759e68fca2f43ab1e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "tmux_probe_result_from_bool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `tmux_kill_session` (lines 189-200) — Kill tmux session ``name``; no-op when tmux or the session is absent..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "568fb74a1a5932684927b5be9276741ce64e871c",
+            "content": "sha256:b9c08cf6a728a46e6d167abcb14386554a8cd36f9f93e87050f0278257dda9a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "tmux_kill_session"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pair resolver derives the consumer cache path, excludes it from the digest, and proves real branch/base authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
+            "content": "sha256:3abe5e591f9a2a07420ecc288ff6a9aea2d60f4fa7d39af093ba0797e91a7fb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_memory_candidate_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pair resolution and digest construction are centralized.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
+            "content": "sha256:3abe5e591f9a2a07420ecc288ff6a9aea2d60f4fa7d39af093ba0797e91a7fb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_memory_candidate_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Requested authority is compared before candidate work begins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
+            "content": "sha256:13e31032033e95c42ee833f18c8ee798f676ab68a84163f44b38be575efed55a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_requested_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Work branch, accepted source head, and ancestry are all proven without mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
+            "content": "sha256:a08427c583b4eeba9568bb21e31d646c4bf625376585ba18a2b15f26fb53175d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_branch_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

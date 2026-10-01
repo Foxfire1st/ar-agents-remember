@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CGC backend container lifecycle consumes backend settings from this module through `cgc_backend_start`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
+            "content": "sha256:22f218c1d83409dc3d5ea53fb158ea303b2cd7190add8f85ce2904be7552c092",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_backend_start"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC lifecycle actions consume the selected runtime layout through `cgc_start`, `cgc_refresh`, and `cgc_run`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
+            "content": "sha256:dc7eb669fc01a1e64364da80808afa2897ccce4091249ab1a6d15d107ac43859",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_start"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:dde624991b47eee275f846529e6153c0315d85112a95b8f8cfc3e564432f693f",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_refresh"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3a70677d9651cd35ac2ce27a9583647d348e522",
+            "content": "sha256:0a3fa984f192b1b5e145be3a6af4d9ca2a315401f0049d39b89653780a8225ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_run"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "CGC Docker runner helpers consume runner image/build/lock/container fields from this layout through `cgc_runner_image_build`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:7f4261766edddd732b442d4a9f61ee8147d962c830365ca195f6d069e1ab3c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_runner_image_build"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

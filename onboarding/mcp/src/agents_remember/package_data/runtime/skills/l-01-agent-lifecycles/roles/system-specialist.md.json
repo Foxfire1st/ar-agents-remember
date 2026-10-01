@@ -1,0 +1,153 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical source this bundle copy is sync-propagated from.\n\nAnchor: `# System Specialist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50052035edb53ca042e37aa5ac1f328a2600d22c",
+            "content": "sha256:a9d4a53522e92db311bcf710c6de61912d2b86ab396c2286ffe5ac8e79b7fbe1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/system-specialist.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The detector this seat investigates: degradation events, metrics snapshot, critical failsafe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:8afbf9c6eb69bf5c788c0dee107788c717d31829ca9417501296c174edf133f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_provider_degradation"
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:963ee1671e9a7d807c97b60622a62f43d2922b64e7a3671619181360eddb9373",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared provider-degradation response protocol this seat operates inside.\n\nAnchor: `## Provider degradation, as every seat meets it`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d044d376148ccfb3194d34248e2a98c7201c3b99",
+            "content": "sha256:699e2c6b5ace39869c85120cc3946f8d793ec5b28dc9323499939e217d571ff4",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "skills/l-01-agent-lifecycles/core/lifecycle-frame.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The recovery moves this seat's investigation feeds.\n\nAnchor: `# Operation — Recovery`; `## The recovery moves, and when each applies`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e02e898298e264ae812237afe2e7e5e8bbd1159a",
+            "content": "sha256:74c29298c97887fd0a2a2f4bad57ee6de565d754331c427ef1e866f58d46c230",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/recovery.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e02e898298e264ae812237afe2e7e5e8bbd1159a",
+            "content": "sha256:4cba3bb12d76156d84c9431d430c8af3299a1b01238d829c06b2a22e1d1485bc",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/recovery.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The role census / escalation ladder registering `system-specialist` as the ninth portable role.\n\nAnchor: \"system-specialist\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e11b70700968f78ab03d551a82ad8fb371506d83",
+            "content": "sha256:16fdf3618b562e86346611f3a9f9484b9b60be6d31f50321e610a221425b5e35",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The inbox role/message-kind schema this seat is addressed through (`AgentRole.system-specialist`, `degradation-alert`) — vocabulary moved to models/operator_inbox.py by L9.\n\nAnchor: \"AgentRole = Literal[\"; \"degradation-alert\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
+            "content": "sha256:f74c8bcf040ddf1fd4463b5ca4b16779174057419224330238e19aaee7c156fd",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/operator_inbox.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
+            "content": "sha256:f1149f548c4f0c54f89280c0285d491daf0f1ca9b0a543b38ad11a6ef6ae8fec",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/models/operator_inbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

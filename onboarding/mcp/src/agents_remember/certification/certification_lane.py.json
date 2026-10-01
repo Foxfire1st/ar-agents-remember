@@ -1,0 +1,138 @@
+{
+  "path": "mcp/src/agents_remember/certification/certification_lane.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Lane identity and five-gate compilation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:58a828a921c1dbcd12d153737e6989ba7080f5e94becc4b47fbe1f77a65cbe2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationLane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:e4db6759dcdeb458471be87fda9fa24b99c520e1cff31aaa0683314572caeffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_certification_lane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Currentness recompilation/refusal",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:94c639d7d47bd7c60a6387b288d36b85cb914bef67caeb94d902a08d762ef7ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_certification_lane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:a7c822d53dd35c344c07c8d05386b4b239a1c6317fb116d35925d310638d0441",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registry construction preserves rail contracts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:ec73d2a87a0988dc93b1449f93167f6cb273e0238559b76ccbabbbc5a0769f0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_registry_contribution"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:a5fbe1db7a0c793014a08c5b977a4b405276901b4050ff3b4671c55f261de404",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_repository_rail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Applicability and memory-rail validation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:ec73d2a87a0988dc93b1449f93167f6cb273e0238559b76ccbabbbc5a0769f0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_registry_contribution"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:8ceea90e800de3f8cbd0dae5823535322b62939817188dd82918df89360d5389",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_not_applicable_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:ba62138f66c8e22162c60583c2171bd60ed8fa223ac1d622c9a0edb01c639ee5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_memory_rails"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:afa55e4a3ed911d20677f31047b47587ab90ae68e5b2465a339dedb215f627d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

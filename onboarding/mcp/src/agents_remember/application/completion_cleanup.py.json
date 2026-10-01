@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/completion_cleanup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The completion owner resolves task truth, folds report evidence, and applies the configured close/land policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f99f9da8a7bb063cb5835d1be6dedc81daec302",
+            "content": "sha256:1963fc600eb3bd5a682b5786379b5e665870cc5e6daee11dd2831076a3690254",
+            "locator": {
+              "kind": "symbol",
+              "name": "auto_complete_seats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Candidate selection includes every non-terminated role occupant bound to the canonical task document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f99f9da8a7bb063cb5835d1be6dedc81daec302",
+            "content": "sha256:667a63bcdd7d0f7d9edb2e420bdcdecdbad2166927843de207c056ab99181ca9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completion_candidates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cleanup is subordinate to successful completion; contract failures cannot rewrite the completed edge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f99f9da8a7bb063cb5835d1be6dedc81daec302",
+            "content": "sha256:1963fc600eb3bd5a682b5786379b5e665870cc5e6daee11dd2831076a3690254",
+            "locator": {
+              "kind": "symbol",
+              "name": "auto_complete_seats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

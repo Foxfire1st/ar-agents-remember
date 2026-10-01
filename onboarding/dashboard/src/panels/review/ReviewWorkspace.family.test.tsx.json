@@ -1,0 +1,943 @@
+{
+  "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement that this is `ICR-R24@v3` at the mounted surface: the family tree, the unified central reading path, the complete source explorer and the one family-roster walk control.**\n\nAnchor: \"ICR-R24@v3 at the mounted surface\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:0546eb413abc2ae6d903bf8666319c9f5e7c18dcc6e793e266faec2934a226ab",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one stubbed `fetch` for the whole surface: it records the URLs, routes `/source-content` to the refusal, and answers the rest with the captured queue in order.\n\nAnchor: \"function serving\"; \"vi.stubGlobal\"; \"/source-content\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:78041fc941ba4fdbb20f3aa82097165a4a597506ae8d23c55bddf85ba1d47996",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:dd92132024ce9183156324866988a4fa3d0fec254a946361a6e1b992f98f5d9d",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:eeac68cc6bb890b08ec18dc37cb5f409ab8500a40090b0515a08e708431c2867",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The test mount opens the real surface with the fixture task and selected subject context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:7f7036dc4142423061e435c53177d7ac5e0d394307634872b871a72050eaccd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "mount"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The teardown cleans the mounted tree and restores stubbed globals.\n\nAnchor: \"afterEach(() => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:4c883b57e00177cc48fa8029916e1982d28bb3b2a6dce3800ee06ac60cedc32f",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The one `describe` every case below lives in, including the MIK-L31 real-body and synthetic roster cases.\n\nAnchor: \"describe(\\\"ReviewSurface family-centered workspace (ICR-R24@v3)\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:9cc65682d42c158cb759c2323b64b110e12558f4f215a293954c22a00d89e488",
+            "locator": {
+              "end": 947,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Case 1: the recorded families, their authored guarantees, the full member statements with unchanged siblings included, the recorded sharing, and the opener on every member row.\n\nAnchor: \"renders the recorded families, their authored guarantees and the full member statements\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:c51cbbd1a205a20a96d38d39c838f619a566d7298d28fd66ca14fe8b9eb1722e",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Case 2: a guarantee comparison is drawn in the shape the two recorded revisions support — the same revision on both snapshots versus two different ones.\n\nAnchor: \"opens a family review whose guarantee comparison is the shape the two recorded revisions support\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:d257dbe4a9401f8a7a5e21860e6f68eb2ee74dcd1569fd699f400a5e8f0b865d",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Case 3: a member's review keeps its family, and statement, membership, source attribution and authored judgment are five separate facts.\n\nAnchor: \"keeps the family context when a member is selected and states the five facts separately\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:74e8e3a6eed80ae44a40486ee7a6c2eac6d7e86c89f1fc08abb6ffd4f7b16fe4",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Case 4: the complete source explorer is independent of the family selection.\n\nAnchor: \"keeps the complete source explorer independent of the family selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:0b00cb4850706b90e04e71d0e3fc6422f6f307d8057b54f3f476614825978970",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**Case 5: a roster walks only from the cursor that family's own page published, and the collection picker offers no option that would fetch a refusal.**\n\nAnchor: \"sends the family's published cursor and refuses a response from another walk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:0ba84c58bd5ba710a607739cefa2a4068df78b458e0f2683ce35e89adecf6b28",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Case 6: a body with no family context is rendered as that fact and never as a measured zero.\n\nAnchor: \"renders a body that carries no family context as that fact, never as a measured zero\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:1b8657b87e519eb396218b514f7ae4b2d6f1c30d93d5fb0f3b3e504de0b69e75",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 344
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**Real component and real client, with only `fetch` stubbed, and the header's provenance: the two captures recorded in the receipt (the MIK-L31 re-capture, `mik_l31_recapture`), and the one case labelled SYNTHETIC as the only assembled body.**\n\nAnchor: `intentReview`; \"is stubbed\"; \"familyReview.*.captured.json\"; \"familyReview.capture-provenance.json\"; \"mik_l31_recapture\"; \"labelled SYNTHETIC\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:ec7e44b3b5049b984e971f736e0bb5216e75b6ec46ef571edcdb99b73b585a98",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Case 7: an expanded entry stays expanded across a diff-layout switch, and full-file is one value shared by the explorer and the centre.\n\nAnchor: \"keeps an expanded entry expanded across a diff-layout switch\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:8cd71683613f7b25d689b20a1135069a8fcf6ad8170e68ad739d2cf65727a9e7",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Case 8: the current selection is exposed on the tree and arrow keys traverse the one roving-focus group.\n\nAnchor: \"marks the current selection and traverses the tree by keyboard\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:80220ae7c0ceddb3dfc59b78ad2355e52fd6e56644310daffd7f2af8b1ec3408",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 394
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Case 9: the filter reports its own scope, keeps a matched family's members, and states that the composed contexts are unchanged when nothing matches.\n\nAnchor: \"reports the filter scope without restating the comparison's totals\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:a6d41a23dc0f058f1341d481768f1dd502b16d11f39fcf26935acb9b2f3cca96",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 419
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "**MIK-L31: a bounded roster page over the real re-captured body states the part of the measured rows it carried, never zero.**\n\nAnchor: \"states a bounded roster page as the part of the measured rows it carried, never as zero\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:5cf6812963837cba671a160050bd9f68bb51dbbe698c880fc3f4b70ed2fac207",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 451
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "**Fix round 1, direction one, kept by ruling Q3 over a labelled SYNTHETIC body: a bounded roster that carried none of the rows it measured says so, and never that the read measured zero.**\n\nAnchor: \"(SYNTHETIC body)\"; \"SYNTHETIC FIXTURE, not a route body\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:11d8af8233ff7da85adc0b33a81c3867d47f92e1846e1256768c765b844f38ef",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 471
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "**Fix round 1, direction two: the measured zero is said only where the read really measured zero memberships.**\n\nAnchor: \"still says the measured zero when the read really measured zero memberships\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:174b45794a0397217f168a5ad45d62f80c9cd9a0d46f440d44e72577fbbce930",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 493
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "**Fix round 1: a bounded member context is headed partial, its counts are the owner's rows with the loaded count read from the body (below 4), and the centre's continuation control is clicked and its request asserted.**\n\nAnchor: \"it(\\\"heads a bounded member context partial and counts the owner's rows\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:cb80bcf332c876026cf18876e67a53c9681c00e651192ef26b15ca7f28a48b78",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 504
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "**Fix round 1, as MIK-R31 rule 3 renders it: two distinct revisions carrying identical text are \"Wording unchanged\" with both revisions named, the guarantee once, never one unchanged revision.**\n\nAnchor: \"it(\\\"distinguishes two distinct revisions with identical text\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:c7a017a2a158b4a2811c1ba288e0b95afab8d6261de2f68c681e8f485d9c6f5d",
+            "locator": {
+              "end": 579,
+              "kind": "line_range",
+              "start": 550
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "**Fix round 1: a member whose content the page did not carry is stated as that, not as a one-sided statement.**\n\nAnchor: \"states a member whose content the page did not carry as that, not as a one-sided statement\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:355d308f8ff84cec2634ddce8cf1ccbd2593fa0bb8e2cca4e24a57afa420031f",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 581
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Uncarried roster content is not converted into an absent primary statement.\n\nAnchor: \"does not turn an uncarried roster operand into an absent statement\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:0b63b3507874e69c55a8317c24fc51ff3253e7b874e504c34968d0f0e4022d4f",
+            "locator": {
+              "end": 616,
+              "kind": "line_range",
+              "start": 600
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "What these cases catch, including the two ways a repair could lie.\n\nAnchor: \"WHAT THESE CASES CATCH\"; \"the two ways a repair could lie\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:4edcd37ddcead9cdc15c646f2e40f5af6b9a0fe46046e7a2062a34756e067235",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "Bounded before-only membership remains context and does not assert invariant removal.\n\nAnchor: \"retains a bounded before-only membership without claiming that the invariant was removed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:bd6e9a3f1a277d8e943aa9ba7f22c10a2b508a0aa21286f1b2d719ec7ba55a3e",
+            "locator": {
+              "end": 630,
+              "kind": "line_range",
+              "start": 618
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "**Fix round 1, over the measured-empty body since MIK-L31: the centre's empty-roster line is the tree's own string for the same family — one implementation mounted twice.**\n\nAnchor: \"it(\\\"prints one empty-roster sentence in both columns\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:f1991a38053d43fc5fcf62c801739d5eba02718e31fc6691583d857953d66b95",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 632
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "**Fix round 3: the page that completes a multi-page walk is stated as the walk's last page, never as the whole roster; since MIK-L31 its carried count is read from the body.**\n\nAnchor: \"it(\\\"states the page that completes a multi-page walk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:9bbd0d13e68714cb9ee78df1cba8cf56d4121ddb0a59c7c6462110a517e8de8d",
+            "locator": {
+              "end": 694,
+              "kind": "line_range",
+              "start": 658
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "**Fix round 5, V10: all five workspace values survive two page requests issued by the centre's own continuation control, and exactly three request URLs are seen.**\n\nAnchor: \"keeps the reader's workspace state across two page requests through the centre's own control\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:7d8fdb788dae61fbbd93a50a81ccde3ade15c0188fce221a96cfdcd8d8af25a7",
+            "locator": {
+              "end": 748,
+              "kind": "line_range",
+              "start": 695
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "**260921-ICR-L25, register B3: the narrow jump route is composed ABOVE the family tree and the tree is intact — the case pins document order (`DOCUMENT_POSITION_FOLLOWING`), that both families and their member rows are still rendered, and that activating the control focuses the centre column. It pins composition rather than a pixel, because a jsdom render has no layout and the pixels are the mounted capture's job.**\n\nAnchor: \"composes the narrow jump route above the family tree, with the tree intact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:c38c5bf4c7b0a270f099f1b5b11c106159d0342f444ba5a9e536660664172b5b",
+            "locator": {
+              "end": 946,
+              "kind": "line_range",
+              "start": 928
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "**260921-ICR-L36 (fix round included): the family's rendered excerpt collection is the body's DISTINCT excerpt set and not its changed-row count, every row's `data-collapsed-rows` is one of the body's group sizes, every divergent excerpt's `data-sides` and per-side reading strings match the body's, and EVERY rendered row's `data-sides` equals the sides the body resolves it on. The predicate is divergence of the reading (distinct resolution sets across sides), not \"seen on two sides\".**\n\nAnchor: \"renders the family's changed expression excerpts, deduplicated, over the captured family\"; `review-center-family-expressions`; `review-center-family-expression-resolution`; `dataset.sides`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:7f8fe0c30da4d42146fa772d522fc65366e4a11628ad45abc2e3bd76c83978ee",
+            "locator": {
+              "end": 826,
+              "kind": "line_range",
+              "start": 758
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The arithmetic that case's expectation is read from, deliberately written in the case's module rather than imported from the component, so the assertion checks the body and not the implementation it tests. It computes the excerpt key the fixed module uses (`path \\0 recorded`), the per-side resolution sets the divergent predicate compares, and the side list every rendered row is checked against.**\n\nAnchor: \"function familyExpressionArithmetic\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:56b4bb43c8f321d14d9d7398bccfb1772b076279b65f34d51600b722099875ae",
+            "locator": {
+              "end": 877,
+              "kind": "line_range",
+              "start": 788
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The shared empty-roster function distinguishes absent family revisions, measured zero and page-local missing rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:4282b40ca237191be2db1ed269467c4359a964ff096e898ae7543d3e903c6ec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "emptyRosterSentence"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The owner of the completion sentence: `complete` is the read walk's flag, so a one-page walk is the whole selection while a final page is only its last position.\n\nAnchor: \"the page is the whole selection\"; \"this page completes the walk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:b5071870f1a8f6bba6b80bd2e8013d422201e276d4edc918b0dd1aa5b822126c",
+            "locator": {
+              "kind": "symbol",
+              "name": "completionNote"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:5484d77c1f447fda7b3779c79db7f45fda838200d1c38f515176eaadddfac547",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:0ffb80a4003cea6f3c13d535471f9e5858e0fdea3b58b8b787e90cdd116554ca",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:b81cb5627053aa8f2aa3434632217386d4e1b255859ff8e4aa493af5565174cd",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:5884a6a8ffe7c25f8237ffc9cb4c70171d28d7adf8cba5836475c67fac658740",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The tree's own roster line, whose test id the centre re-mounts under its own name.\n\nAnchor: `review-family-roster`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:0333052dac0303645f8625277c45768f4163d55bcbb1f745c4e684cfde134955",
+            "locator": {
+              "kind": "symbol",
+              "name": "RosterLine"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**What they do not claim: not browser evidence, Dagger-only Playwright configs, and a live publication explicitly out of scope.**\n\nAnchor: \"WHAT THEY DO NOT CLAIM\"; \"These are not browser evidence\"; \"require-dagger-test-environment.mjs\"; \"not of a live page fed by a running publication\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:77daab791b8d46dc60365f21f54af89ae2e273a412aa605db47feafbc341cd95",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "The tree's own continuation control, which publishes the cursor it was given and is the component the centre mounts a second time (since MIK-L33 it also names its family, `data-family-label`).\n\nAnchor: \"export function RosterNext({\"; `review-family-roster-next`; `data-continuation={page.continuation}`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:3c9efbf2d9d606a17118f92df45cc5b55fdd56629d40f53c6bbb3bca91621a2e",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The central empty-roster presentation reuses the tree-owned sentence and preserves the page scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:a7e72b33b5cb9df4eca702f5997c953dbb6e5ee5e37f6eb35e7857d7e211cb99",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberContext"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:4282b40ca237191be2db1ed269467c4359a964ff096e898ae7543d3e903c6ec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "emptyRosterSentence"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The centre's bounded member-context heading and counts, decided from the read owner's own counts and the pages' completeness.\n\nAnchor: \"loaded context contains ${carriedCarried} member row(s) of them\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:23dabe198b2110ee22cc820c70b27542796903fbb3c1d167653bb2e6f927955b",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberContextHeading"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:5f05d06e36376653ff0cac44b7bb66da9d768519922276b264bbb861aaa6f5b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberContextCounts"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Roster revision content and authoritative selected-subject statements remain separate rendering responsibilities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:5bc0c679bae62942589037662b256e93744fc59e945101535c1d7965ad55b4b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberStatement"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "content": "sha256:9635725047309d8545115e099e722d59e8889d6751caa802181b917a1bf43821",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedStatement"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "**The server-side rule the walk case pins: `family_members` is in the paged union because the server accepts it, and deliberately not among the walkable collections, because that collection is the set of per-family walks and a cursor-less request earns the server's own refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:ebf43ed1519de788e906ed176606a0951358dd73b859f6384b7330fa6b4ad0d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPagedCollection"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:0964d98f645d8891118069099c77829089e6d41f01623e58f508b2d26e0f2ca7",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_WALKABLE_COLLECTIONS"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The one page request type a roster continuation builds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:ae45d4342fb28895e56a67f55d56ba63220f49dfd0cdd55329d50860d4d21323",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPageRequest"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The source explorer retains the complete inventory independently of semantic selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:7a9918cfbbeca0fe8a60beee6bfca6dae9a51d703b41789f89f7c4a9233ae972",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceExplorer"
+            },
+            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The workspace hook preserves display state and the source opener needed for focus return.\n\nAnchor: \"export function useWorkspaceState(): WorkspaceState {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:31ce75f980905b7cad53321c274334e5d84d556adc43db3ab79bf25d0ad77373",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two collection constants the walk case pins, and the captured refusal body the no-family-context case mounts.\n\nAnchor: `REVIEW_PAGED_COLLECTIONS`; `REVIEW_WALKABLE_COLLECTIONS`; `RECORDS_PAGE_REFUSAL_RESPONSE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:294f9d77f3954a6d8c51bf8b7ea52d0024e563b9def4e242c2f985658d47f8c3",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The three task identifiers and the seven captured bodies, read from the capture directory.\n\nAnchor: \"const COMPLETE\"; \"const EMPTY_ROSTER\"; \"const WALK_FINAL\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:aae9bd08dbbc69b7c265f3191de2d5bd32ebf691e5041c5cd898ca6a82a47963",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:c0b536e62b571d0f544522c11194405895dbd076a69154bea194fa07719bb659",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The loader that resolves a capture from this file's own directory rather than the process cwd.\n\nAnchor: \"function captured\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:c822a15fa99f372272bee76c901f2e711e1eeab0cca77c9c880072e98c092d72",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The runtime narrowing that finds a family subject in a captured body and throws rather than mounting under a wrong one.\n\nAnchor: \"function firstFamilyId\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:b4715f4a424122fd03bbaa0f1735d3d206c28d65fe7831d5f9d48fd83d84b090",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The typed refusal the explorer's reads are answered with, so no case asserts on a file's bytes.\n\nAnchor: \"const SOURCE_REFUSAL\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:70bc7ba3d08dfd08c91f6fed77f7398b369f81735141772465cbc6f70e68ef7c",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,266 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/schema_v7.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The five appended tables, in declaration order — the only names this generation adds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f0d2c8d04b3997913c22193cd0b45a6555216fa",
+            "content": "sha256:9c0b95cd4290f15e7576d365d366d1a91b5c06245f89ca542e79cdcf093828d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The case that asserts a write against an older generation is refused with both versions as facts.\n\nAnchor: \"def test_an_observation_write_against_an_older_generation_is_refused(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21a59dfc5ed2eba2d7b36f782cdb4244a3594cd",
+            "content": "sha256:075be7407c1f3854fa5e6f200f77c11783c2e41fc203037e44d57216cefa08de",
+            "locator": {
+              "end": 870,
+              "kind": "line_range",
+              "start": 847
+            },
+            "path": "mcp/tests/test_knowledge_evidence_observations.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The appended columns, primary keys and typed-JSON columns, one group per declaration plane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f0d2c8d04b3997913c22193cd0b45a6555216fa",
+            "content": "sha256:8c53e26efa8ef359f72c317d7ebedb82066ce9cce0f43bc3b3606d7daeb3ee73",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_COLUMNS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f0d2c8d04b3997913c22193cd0b45a6555216fa",
+            "content": "sha256:e5a5f14e5caeb5609af1f58dc5cfe45c3287ce01085d86a560f73c68267dea91",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_PRIMARY_KEYS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f0d2c8d04b3997913c22193cd0b45a6555216fa",
+            "content": "sha256:e2bc8fce3ca9fc53b4622838744aa3c6539a33fc6640250f4943dfd2caf12373",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_JSON_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The closed five-member execution vocabulary the column's own `CHECK` carries, and the public tuple that keeps the DDL and the typed field from drifting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f0d2c8d04b3997913c22193cd0b45a6555216fa",
+            "content": "sha256:59ec983a5b7f1e23a9c6fcd26cfb430828fda278ed07720d7db07b8b7efed1ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXECUTION_RESULT_MEMBERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f0d2c8d04b3997913c22193cd0b45a6555216fa",
+            "content": "sha256:21676a74aec35ea34cad7c4c5f6a8d7825e87424c44f777d2da27c7f4436db9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXECUTION_RESULT_CHECK"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The five tables' DDL and the indexes over the two join tables and the observation's recorded candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f0d2c8d04b3997913c22193cd0b45a6555216fa",
+            "content": "sha256:1bc04487510abbe38b51e3c35bd4c4ae467eaa4a368001deac04cb996d193e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLE_DDL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f0d2c8d04b3997913c22193cd0b45a6555216fa",
+            "content": "sha256:a61241534ece153c2ebed6f75187c6f8d8521a3082dd26fddb44f6a14787f299",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_INDEX_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The no-rewrite and no-delete triggers that make a second run a second record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f0d2c8d04b3997913c22193cd0b45a6555216fa",
+            "content": "sha256:8287495feda71d8b123d99832d5cf1e3ca0e35f056ce49e3894c29a5d62c5849",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TRIGGERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The generation this one is composed onto, by name, and the composition that names this module as generation 7's append.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:c0fc2a8431ad545b6804afc57fd2910566a51c42839917034d89aa892001a16a",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_6"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:e1d56b7528e9587e0848e1eecd1c193391ebde10ede23b3e2c45f014f797f99d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_7"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:6e4541a8017248b3da2a0de5cda3418f71cfc9e5c28b1026435b59d13e94e5bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_7"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The schema name generation 7 declares, and the registry whose last entry is now the created generation — generation 8 as of `KS-R13@v1`, so this leaf's own generation stays declared and no longer the tip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:5c5bf7da6fd21e5c830c510b7562413bbe5a598a109e2eb60503ec3dab6e9398",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_7_SCHEMA_NAME"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATIONS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:c954da44fc1cb1e734e9bfa69681a7a466150cb94dcadac44e0688afef4fdaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENT_GENERATION"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The generation the write path requires before any supporting-record row may exist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a1c7001c7a592e484217a255420703318e114d",
+            "content": "sha256:679c5895f164637053cac7406f27b0db1cfb74bb8fb99cec87e747c2b0e81554",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIRED_EVIDENCE_GENERATION"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The case that asserts the append and the inheritance against the generation this leaf descends from, by name.\n\nAnchor: \"def test_the_observation_generation_appends_and_inherits_by_name(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21a59dfc5ed2eba2d7b36f782cdb4244a3594cd",
+            "content": "sha256:ff5fdb8346619fbe1eec07059c960b7fc383b50d4863cdbe965aae2d2d1549eb",
+            "locator": {
+              "end": 928,
+              "kind": "line_range",
+              "start": 906
+            },
+            "path": "mcp/tests/test_knowledge_evidence_observations.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

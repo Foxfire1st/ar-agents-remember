@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/markerReturn.lane.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lane: totals, the measured state and the explorer's paths.\n\nAnchor: \"\\\"lane\\\": {\"; \"\\\"changed_total\\\": 4\"; \"review_marker_scratch.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7c1bce64a664098a9ed4886d36bc2a5bbd942e4",
+            "content": "sha256:80fcea8e0b6bac7f1cfe2558d845916c145e10129b65dfad517b0ef582e68fcf",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerReturn.lane.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9476cdf46a177d23b4fdb8d261bbb6c4e64e3bf9",
+            "content": "sha256:3d8c688bdbf50513e21a6f2abb24f52121a0bf1e4eac52c9b57730ac2e151248",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/panels/review/markerReturn.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

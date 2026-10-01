@@ -1,0 +1,131 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_worklist.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two forms and the exit statuses.\n\nAnchor: \"Exit status: 0 for a complete worklist\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e351d8cca0556ac2acf327a957258b81846564",
+            "content": "sha256:2f838eac315292da674398481c7457c22e1b66947644461d1c57a71b1a9b4496",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e351d8cca0556ac2acf327a957258b81846564",
+            "content": "sha256:cb169c72feaa37e308ec849c2c4fae3a548d7cc0a038d93dbb71e848be4f9c78",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Explicit sides, with named argument errors.\n\nAnchor: `ExplicitSides`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e351d8cca0556ac2acf327a957258b81846564",
+            "content": "sha256:d4f54dc8008b285ae05cfc7860016174e02788e275bc255899979b976e8f8008",
+            "locator": {
+              "kind": "symbol",
+              "name": "_explicit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The optional coordination root for requirement endpoints (MIK-R14), in the usage line, the parser and the sides.\n\nAnchor: \"[--coordination-root DIR]\"; \"\\\"--coordination-root\\\",\"; \"coordination_root=args.coordination_root\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e351d8cca0556ac2acf327a957258b81846564",
+            "content": "sha256:7384fda70a121a1f713351d73fed7287d5f8e8193978f8b4844f6c043e294f20",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2e351d8cca0556ac2acf327a957258b81846564",
+            "content": "sha256:c16ca13c32b9b61774b47f3b9dd71403cc12a0f975d01e0abfe1ffe382d42fe5",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2e351d8cca0556ac2acf327a957258b81846564",
+            "content": "sha256:cff05fda093f70e53fc6d8e5b07161800e184ce55dc71c3c006e58b9aac600fd",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The run and its exit status.\n\nAnchor: `leaf_worklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e351d8cca0556ac2acf327a957258b81846564",
+            "content": "sha256:31905fd59298b90ebac1ff5f191f3073edd98d7138327751a3f6e7e367c477c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The subcommand registration.\n\nAnchor: \"knowledge-worklist\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:2808210ac1923f37f17837a1fd0172c7f133f9b08b8d710540b8bd0375f6c1a8",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

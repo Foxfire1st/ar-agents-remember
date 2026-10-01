@@ -1,0 +1,76 @@
+{
+  "path": "dashboard/src/dev/DevApp.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The DEV-only route gate that drops this chunk in prod.\n\nAnchor: \"const DevApp = import.meta.env.DEV\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b5d529d145096de8b20ff331cf361f8bb37d4b",
+            "content": "sha256:e03551219394142a83baf1ffb5374192bfc37ca8e632d064d7f2fceca84d7037",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/App.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The co-located dev-gallery styles it imports.\n\nAnchor: \"./dev.css\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf7f4bd3885bdab232af0f680b217afa7430295b",
+            "content": "sha256:55d52b0ac92b770ddbf9460f6345ea8537b2fa81a6ac9716b60272027fa6e665",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The L6 renderer measurement harness mounted at `/dev/pty-bench`.\n\nAnchor: \"return <PtyRenderBench />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf7f4bd3885bdab232af0f680b217afa7430295b",
+            "content": "sha256:3c35cf2257c369d77748fb3642554505709712f23949f1e32b2017ee1bd2b124",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lifecycle-design canvas mounted at `/dev/flows` (`initialModel` from `?model=`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2448f87bab9a04dd5ea11428abbbfdc77d2c8524",
+            "content": "sha256:fb9f28081fde3453e56f90a3b450258f870f768b49a4a0488866cea5e9e8a15e",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialModel"
+            },
+            "path": "dashboard/src/panels/FlowTab.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,166 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Ref/repository identity and transport-safe errors have shared implementations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:1162f7cb58bc57825349497bdd5fe49d3e0115ebc67c0d61fd426292956fecc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_transport_safe_git_diagnostic"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:5777bc0b0c3621a8045a8da3a987b5244a609c00b57b01cd3ceffa06cc74901a",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_git"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:bb671106c4738c19abd0c46b0a440e8c5e9dbc3ca686d0fd05b9be1e262a02b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "local_branch_ref"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:3c11f083a73cc878659abb8f050e8b9aa48af45b37069e5b337f0534d9059be9",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Candidate trees use private indices and exact derived-path exclusions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_excluded_pathspec"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:f8f4b48042939ace0b2a4d95c1c51b0fbf8e9c25fd9dca108d935a5d4a36007e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Filtered status and staging/commit APIs share the exclusion contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:46db35bdabf960661b7f3f61825fc5d43590347bcdec94e1fc0bb9e79edde0ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_args"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:f4ed54b78505149f52cf865e74608e5c0da609448f9dcebd7dff4a5ca31c3c04",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_verified_staged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The exact cache pathspec is defined beside the consumer filename.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "content": "sha256:f90721c6c96b66b3f4f906dcd8182a771fbae7ce6214fdb9c65618c0f13d68bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEDGER_RELATIVE_PATH"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "content": "sha256:fe8c801c1101f2ea09438c141664d03f55189cd2474a9e9ffd57d075d423f5bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_CACHE_EXCLUDE"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Changed-file reporting preserves its distinct deletion/rename/count semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:0e79ba415fc69c4911c449a0d32333a3dd33e0aa68e711b17568dba622df25cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "committed_changed_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:e624c577a6a46da2a9dcc5305a454f893acaedde7b3be3e81951754ececf4337",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

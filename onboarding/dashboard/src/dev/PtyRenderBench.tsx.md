@@ -1,15 +1,5 @@
 # dashboard/src/dev/PtyRenderBench.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/dev/PtyRenderBench.tsx`           |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-31T16:10+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -87,36 +77,13 @@ the file).
   onboarding convention — so this card is its documentation anchor.) Reproduce:
   `npm run dev` then `node e2e/ptyRenderBench.mjs`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Query params, rAF measurement, serialize probe, `__ptyBench`/`__ptyBenchCols` installation, the minmax grid. | `measureFrames` | dashboard/src/dev/PtyRenderBench.tsx:18-41; dashboard/src/dev/PtyRenderBench.tsx:43-81; dashboard/src/dev/PtyRenderBench.tsx:84-91; dashboard/src/dev/PtyRenderBench.tsx:100-123; dashboard/src/dev/PtyRenderBench.tsx:138-160 |
-| The shared declaration of `PtyFrameStats`, `PtySerializeProbe` and the `Window` augmentation this file installs into. | `PtyFrameStats` | dashboard/src/dev/benchProbes.ts:57-90 |
-| The line-log content + configurable-rate mock socket factory the panes consume. | `benchLineLogSocketFactory` | dashboard/src/dev/lineLogFixture.ts:22-22; dashboard/src/dev/lineLogFixture.ts:89-90 |
-| The real pane component under measurement (renderer prop, `onResizeCols`). | `onResizeCols` | dashboard/src/panels/Terminal.tsx:61-61 |
-| The decision record the numbers feed (`PTY_RENDERER = "dom"` + measured summary). | `PTY_RENDERER` | dashboard/src/panels/session-cockpit/PtySurface.tsx:39-39 |
-| The `/dev/pty-bench` route mount. | "/dev/pty-bench" | dashboard/src/dev/DevApp.tsx:16-16 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored the `/dev/pty-bench` route mount citation to the mount line after DevApp.tsx grew (import at line 4, mount at line 16); verification metadata unchanged.
-
-
-- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: converted the 4 superseded prose
-  citations to cit form (query params `PtyRenderBench`, `measureFrames` 18-41, `runSerializeProbe`
-  43-81, the minmax grid 138-160) and normalized the 6 reference rows with anchors. Zero findings
-  remain.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2: the `FrameStats`/`SerializeProbe` interfaces and the
-  `Window` augmentation for `__ptyBench`/`__ptyBenchCols` moved out to `benchProbes.ts` (as
-  `PtyFrameStats`/`PtySerializeProbe`) so the Playwright driver tsconfig project reads one
-  declaration instead of `any`. No measurement, query parameter or probe changed; line
-  citations re-anchored after the ~28-line extraction. Verification metadata is pinned to the
-  leaf's reformat commit until closeout stamps the code commit.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 S1 (master OQ-B): the renderer measurement
-  harness — N real Terminal panes on a mock line-log firehose, rAF-delta stats on
-  `window.__ptyBench`, per-pane real cols on `window.__ptyBenchCols` (R8), the minmax(0,1fr)
-  squeeze grid, and the serialize reattach probe; driven by the un-carded
-  `dashboard/e2e/ptyRenderBench.mjs` node script (SwiftShader caveat recorded there and here).
-  Verification metadata pinned to the leaf base until closeout stamps the L6 code commit.
+- Query params, rAF measurement, serialize probe, `__ptyBench`/`__ptyBenchCols` installation, the minmax grid. [1]
+- The shared declaration of `PtyFrameStats`, `PtySerializeProbe` and the `Window` augmentation this file installs into. [2]
+- The line-log content + configurable-rate mock socket factory the panes consume. [3]
+- The real pane component under measurement (renderer prop, `onResizeCols`). [4]
+- The decision record the numbers feed (`PTY_RENDERER = "dom"` + measured summary). [5]
+- The `/dev/pty-bench` route mount. [6]

@@ -1,0 +1,54 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/context/materialize.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`CgcRuntimeLayout` definition and construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:a677e10aca772dd8a0146ab82085b2f95ed49f7d0683117eabcf02daa5301b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "CgcRuntimeLayout"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ignore/requirements constants and `.gitignore` reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e883fb99670064642a2f0589ac6a9e289275488",
+            "content": "sha256:0e6dced52de613058c34adb33bc1c8128bbe78491177f1e04550e0e696b50792",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_gitignore_patterns"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e883fb99670064642a2f0589ac6a9e289275488",
+            "content": "sha256:4a03aeef2607f831380c85b093443328e1f32f343ab50a9ba99b67b78feebe6a",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

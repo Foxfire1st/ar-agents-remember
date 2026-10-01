@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/terminal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Internal assignment carries session correlation plus structural binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:701faaee676d384f691142930a5d5b4ac9712ce23e8efc03b78d96431d6ed9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_terminal_session_to_task_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Legacy internal spawn/retire/rename primitives remain behind the structural application.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:0dd93910f7bbe2ab45902195c7c9493a9c1742f63cf5ed7f9402bd6697a843bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn_agent_session_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:4f73f86cc04aefc86418a701c6461b30118702bbd298c809aa57f3766a5ec6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_retire_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:b10d012adb0f2f73d8c20c0f6121b1e78ef21aa790aad112d137fef8dd61a53f",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_rename_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

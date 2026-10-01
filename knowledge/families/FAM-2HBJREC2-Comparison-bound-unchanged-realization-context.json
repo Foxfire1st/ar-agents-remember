@@ -1,0 +1,28 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "In a review, an unchanged file is readable only as context of a realization -- or, in an index-backed comparison, a proof -- that the same comparison's recorded knowledge anchors at exactly that path, at that comparison's exact endpoints, stated as unchanged context and never counted as a change; every other unchanged path, and every path whose link cannot be established, is refused by name.",
+  "id": "FAM-2HBJREC2",
+  "members": [
+    "INV-2TQGXFAX",
+    "INV-9ECAFVTQ",
+    "INV-M9AMAYWY",
+    "INV-RS0EVBHD",
+    "INV-T23G8ZJM",
+    "INV-XTXZESS6",
+    "INV-YBS0CVBK"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "26150ff5-db0e-4259-8b48-f013d5bbaa6d",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "routes": [
+    "dashboard/src/data",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/models/knowledge"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Comparison-bound unchanged realization context"
+}

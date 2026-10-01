@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/harness_control_runner.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/harness_control_runner.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -97,17 +87,17 @@ retry, default, or continue the vendor launch.
 None known for the runner boundary. **D12's bound is now stated and enforced here** — see the
 `260915-CAPS-L11` section below: the payload no longer rides argv unbounded.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 Launch validation and adapter construction remain separate pure/data and vendor-specific seams.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Launch selection, validation, effective echo checks, knob application, and duplicate-selector preflight are centralized in the launch module. | `ResolvedLaunch`; `validate_launch_selection`; `verify_effective_launch`; `apply_launch_knobs`; `_owned_argv_overrides` | mcp/src/agents_remember/serving/harness_launch.py:17-54; mcp/src/agents_remember/serving/harness_launch.py:78-119; mcp/src/agents_remember/serving/harness_launch.py:122-148; mcp/src/agents_remember/serving/harness_launch.py:173-206; mcp/src/agents_remember/serving/harness_launch.py:233-250 |
-| The factory pairs a typed selection with adapter-produced knobs and ignores ambient role env as authority. | `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:120-162 |
-| The opener embeds the typed launch in this runner command and persists model/effort provenance on the terminal row. | `_session_command`; `_opened_catalog_entry` | mcp/src/agents_remember/serving/terminal_opener.py:534-568; mcp/src/agents_remember/serving/terminal_opener.py:571-636 |
-| The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence (`raw["bridgeError"]`), refusing to overwrite an already-started bridge. | `mark_failed` | mcp/src/agents_remember/serving/harness_control_bridge.py:164-178 |
-| The pre-session catalog reuses `adapter_argv` before calling the transient adapter's token-free discovery path. | "argv=adapter_argv(installed.harness.id" | mcp/src/agents_remember/serving/harness_capability_catalog.py:205-212 |
+- Launch selection, validation, effective echo checks, knob application, and duplicate-selector preflight are centralized in the launch module. [1]
+- The factory pairs a typed selection with adapter-produced knobs and ignores ambient role env as authority. [2]
+- The opener embeds the typed launch in this runner command and persists model/effort provenance on the terminal row. [3]
+- The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence (`raw["bridgeError"]`), refusing to overwrite an already-started bridge. [4]
+- The pre-session catalog reuses `adapter_argv` before calling the transient adapter's token-free discovery path. [5]
 
 ## 260731-EFA-L2 Current Delta
 
@@ -194,52 +184,3 @@ length** as much as a capsule — the token grows ~**1.3320 encoded bytes per `c
 and the bound is first crossed at a cwd ~2,297 characters longer than the server workspace root.
 **Any pair measured over `129024` is a bound re-derivation that stops the loop, never a silent
 re-bound.**
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-17T15:54+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): replaced the
-  **stale forward-routing note** in `Todos` — which still said the bound "is routed to the
-  final-verification leaf (`D12`), not to this seam" and quoted L15's superseded **120,536 chars /
-  92.0 %** — with the delivered contract: `MAX_ARGV_TOKEN_BYTES` 131072, `ARGV_TOKEN_SAFETY_MARGIN_BYTES`
-  2048, `ARGV_TOKEN_BOUND_BYTES` **129024**, and `_refuse_over_bound_token` refusing **before any
-  spawn**. Recorded why the margin is small (the check measures the bytes the kernel counts) and what
-  the refusal names (measured size, bound, kernel limit, seat) — the operator-visibility reason D12
-  exists. Carried L11's own measured width for the largest pair and the two limit facts the leaf
-  established: the bound is **enforced** (refused by name at a `PATH_MAX` cwd), and the route to it is
-  a **path length** as much as a capsule (~1.3320 encoded bytes per `cwd` character — the base64 4/3
-  expansion — first crossing at ~2,297 characters beyond the server workspace, so a headroom figure
-  is only meaningful with its inputs named). Range repairs: `create_harness_protocol_adapter`
-  48-90 → **120-162** (moved by an earlier leaf, not by this one), the catalog row 180-195 →
-  **205-212**, and the catalog claim re-worded so its anchor lives inside its own range.
-  Verification metadata stays pinned at the last committed source; the closeout stamps the real
-  code commit.
-
-- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: recorded the optional capsule carrier on the runner
-  payload — `RunnerConfig.capsule_delivery`, the **conditional** `capsuleDelivery` key that keeps the
-  capsule-free payload byte-identical to base (measured: 344 chars, same token sha256), the refusing
-  decoder, and both factory call sites that must keep passing it. Added the payload-bound limit
-  (`D12`: largest shipped capsule 120,536 chars = 92.0 % of `MAX_ARG_STRLEN`, ~10 KB headroom,
-  invisible `E2BIG` at spawn) as a declared limit routed to the final-verification leaf. Repaired two
-  stale cross-file ranges (`_opened_catalog_entry`, `mark_failed`) and joined a table split by a blank
-  line. Verification metadata stays pinned to the last committed source (`c1dbebf8`).
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: split launch, factory, opener, and contract-test ownership and normalized scoped citation evidence.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `HarnessControlBridge.mark_failed` is a single contiguous method at L170-L184 in the 623-line `harness_control_bridge.py`, so the two-range citation collapsed to one; extended the claim to name `raw["bridgeError"]` and the already-started refusal, both read back at L174 and L181.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the named payload-decode and launch-agreement checks; refusals unchanged.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive `resumeThreadId`
-  payload field — trimmed-non-empty parse validation, legacy field-less compatibility, and delivery
-  into both real adapter-construction sites as the codex-only factory kwarg while the transient
-  discoverer never receives it. Verification metadata stays pinned until closeout stamps the
-  candidate commit.
-- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the shared native argv helper
-  used by hosted launch and token-free pre-session discovery, plus roleless complete-pair launch
-  flowing through the existing runner boundary.
-- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented typed launch serialization,
-  pre-discovery selector conflict refusal, token-free dynamic validation, fresh configured runtime
-  construction, ready-only session commands, and persistent exact launch-failure IPC evidence.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented bridge-owned hosted launch, exact identity,
-  correlated commands, transcript rendering, and shutdown.

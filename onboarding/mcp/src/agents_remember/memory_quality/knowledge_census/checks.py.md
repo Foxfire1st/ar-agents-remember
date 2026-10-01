@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_census/checks.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_census/checks.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695`|
-| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -58,7 +48,9 @@ before it writes, so the writer and every commit route refuse the same things.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The census design authority is the coordination-root notes Doc12 (the
@@ -66,38 +58,27 @@ migration census and its measures) and Doc14 (`notes/ar-intent-reviewer-and-beyo
 and the requirement packet `MIK-R20@v2` of task `260928_maintained-invariant-knowledge`; they live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rule table, the pinning, the claim and route checks and the append-only comparison.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The nine census rules and their owners. | `CENSUS_RULES` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:52-65 |
-| The fields of a recorded claim that never change. | `STABLE_CLAIM_FIELDS` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:71-71 |
-| Prefix at one base, subsequence at a merge. | `_preserved` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:103-106 |
-| Exactly the two pinned paths, and their change or deletion refused. | `_is_pinned_path`; `_pinned_findings` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:115-124; mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:127-140 |
-| Claims name inventoried artifacts of their route; IDs are unique; linked records exist. | `_claim_findings`; `_claim_row_findings` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:143-175; mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:178-196 |
-| Stable claim fields and append-only assessments. | `_claim_append_findings` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:221-255 |
-| Append-only route status histories. | `_status_append_findings` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:258-270 |
-| The entry point. | `check_censuses` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:286-312 |
-| A recorded assessment is never edited; a correction appends. | `test_a_recorded_assessment_is_never_edited_and_a_correction_appends` | mcp/tests/test_knowledge_census_files.py:315-338 |
-| Status histories are append-only; merges keep both parents. | `test_route_statuses_are_append_only_and_merges_keep_both_parents` | mcp/tests/test_knowledge_census_files.py:341-364 |
-| Routes whose slug ends like a pinned file still append. | `test_routes_whose_slug_ends_like_a_pinned_file_still_append` | mcp/tests/test_knowledge_census_files.py:476-499 |
-| A recorded claim's identity and cohort fields are stable. | `test_a_recorded_claims_identity_and_cohort_fields_are_stable` | mcp/tests/test_knowledge_census_files.py:502-532 |
+- The nine census rules and their owners. [1]
+- The fields of a recorded claim that never change. [2]
+- Prefix at one base, subsequence at a merge. [3]
+- Exactly the two pinned paths, and their change or deletion refused. [4]
+- Claims name inventoried artifacts of their route; IDs are unique; linked records exist. [5]
+- Stable claim fields and append-only assessments. [6]
+- Append-only route status histories. [7]
+- The entry point. [8]
+- A recorded assessment is never edited; a correction appends. [9]
+- Status histories are append-only; merges keep both parents. [10]
+- Routes whose slug ends like a pinned file still append. [11]
+- A recorded claim's identity and cohort fields are stable. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the package reads one memory tree's bytes, handed in by the caller.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): created this card for the new file MIK-R20 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

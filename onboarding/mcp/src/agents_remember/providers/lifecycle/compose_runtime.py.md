@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/lifecycle/compose_runtime.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/lifecycle/compose_runtime.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [Provider Lifecycle Overview](overview.md)
@@ -73,49 +63,25 @@ the Windows/Pyright contract.
 - Compose-rendered provider resources must carry generated ownership labels;
   unlabeled provider settings are invalid.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation is configured for this repository; the
 resolved `system/sources.md` currently contains no entries.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation source is configured for this file. | `# Sources` | system/sources.md:1-3 |
+- No relevant external documentation source is configured for this file. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. | `run_compose` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:72-84 |
-| Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. | `auto` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:98-141 |
-| `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. | `host_user` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:151-156 |
-| Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. | `container_managed_by_project`; `network_managed_by_project` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:176-177; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:205-206 |
-| Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. | `remove_container_command`; `remove_network_command` | mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:209-210; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:213-214 |
+- Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin. [2]
+- Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources. [3]
+- `host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them. [4]
+- Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks. [5]
+- Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is required beyond Docker/Compose runtime execution. | n/a | n/a |
-
-## Update History
-- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 5 citation items; scoped citation check now passes.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  added the frozen `BackendStartReconciliation` so the CGC and GrepAI backend starts report host
-  reconciliation as one value. Additive; emitted payloads are unchanged. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-06-06T17:27+02:00 — Updated after `host_user()` switched to `getattr()` plus `callable()` checks so Windows/Pyright does not treat POSIX-only `os.getuid` and `os.getgid` as required attributes.
-- 2026-05-31T12:30+02:00 — Documented new `host_user()`/`host_user_block()` helpers that render an optional `user: uid:gid` line so provider containers run as the host user (1.0.0 review remediation).
-- 2026-05-28T14:21:08+02:00: Updated after Compose rendering began rejecting
-  provider settings without generated `instance.labels`.
-- 2026-05-27T00:25+02:00: Updated after auto host ports began rendering as
-  `host::container` and unmanaged Compose network migration joined container
-  migration.
-- 2026-05-27T00:06+02:00: Updated after unmanaged Compose container removal was split into focused helpers to resolve touched-file Radon pressure.
-- 2026-05-26T23:59+02:00: Created for the provider Compose migration and closeout missing-onboarding gate.
+No cross-repo boundary is required beyond Docker/Compose runtime execution.

@@ -1,0 +1,107 @@
+{
+  "path": "dashboard/src/panels/engine-room/useElementVisible.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The hook defaults visible, observes an element when supported, and disconnects at cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "250fa25f2154206e5f9bcc40f76bd61b14db3bbe",
+            "content": "sha256:add1174aca02d231e5682f4e1398a163094799d78b12cba24c11052b098e08a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "useElementVisible"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The GSAP owner consumes this signal to pause, rather than rebuild, a scoped animation context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "useEngineTimeline"
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:c5e4df124e24c21062cb953c70ea792d6075b7213ad5b957bf8b7fa1edc3f244",
+            "locator": {
+              "kind": "symbol",
+              "name": "visible"
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Focused tests cover observer-unavailable visibility, hide/show transitions, and disconnect on unmount.\n\nAnchor: \"stays visible when IntersectionObserver is unavailable\"; \"flips false on hide and true on re-show\"; \"expect(observed.size).toBe(0)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0f509a9d08a1ea2120b60b2419bffc5f88ca930",
+            "content": "sha256:8a9a7c046225e484b0d8ce34626d1e2051da1ec07280f5859075e92b6c1ffa3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MockIntersectionObserver"
+            },
+            "path": "dashboard/src/panels/engine-room/useElementVisible.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e0f509a9d08a1ea2120b60b2419bffc5f88ca930",
+            "content": "sha256:ec7086bccf7256903b44d4adf9009f3a652eaafb8ca926814a2509909bca32c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "fireIntersection"
+            },
+            "path": "dashboard/src/panels/engine-room/useElementVisible.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e0f509a9d08a1ea2120b60b2419bffc5f88ca930",
+            "content": "sha256:cb299ec2b6d6650877649523d18020d063be807700a1269a696e37bcf82667de",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/engine-room/useElementVisible.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e0f509a9d08a1ea2120b60b2419bffc5f88ca930",
+            "content": "sha256:f52569dfe20d525a09afa88b551d6b4ae8a8edaf9821e02859b0d1e3b6eeda34",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/panels/engine-room/useElementVisible.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T18:54:49+02:00 |
-| lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
-| lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [activation overview](overview.md)
@@ -111,57 +101,31 @@ post-`lstat` symlink swap cannot silently redirect the trusted read.
 Exact selector claims and citations are reconciled to the frozen source; verification remains
 closeout-owned until the real code commit exists.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- Strict Pydantic records define the contract-keyed selector state and archive evidence consumed here. [1]
+- The fingerprinted record is keyed by the canonical series contract path and stores no source-pair field. [2]
+- A sha256 of the canonical contract path is the per-contract identity that names one activation record. [3]
+- The strict observation carries the contract path and fingerprint for every read. [4]
+- Any record that is not this exact contract is refused as a mismatch instead of adopted. [5]
+- Strict, side-effect-free observation resolves absent, nonregular, malformed, and terminal cases into vacant/unreadable facts. [6]
+- Publication is idempotent per contract/state, archives corrupt authority first, and quarantines nonregular entries without following them. [7]
+- Only this contract's own reconciling state is projected as a waiting reason. [8]
+- Continuation and cancellation bind to this contract's own selected or last-released record. [9]
+- A terminal contract cannot be selected. [10]
+- Public activation diagnostics are bounded before they cross status or admission response boundaries. [11]
+- The status facade retains the same contract-grounded activation observation without mutation and bounds unreadable detail. [12]
+- The selecting transaction moves this contract's reconciling state to active only after exact sync. [13]
+- Queue projection translates this authority only into contract source facts and waiting reasons. [14]
+- The pure public admission projection retains this contract's activation observation and contract-scoped recovery facts without mutation. [15]
+- Focused forcing covers two masters sharing one source pair, vacant/active non-waiting states, exact release, non-adoption of another contract's record, and the terminal refusal. [16]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Strict Pydantic records define the contract-keyed selector state and archive evidence consumed here. | `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27; mcp/src/agents_remember/models/structural/atomic_series_activation.py:30-45 |
-| The fingerprinted record is keyed by the canonical series contract path and stores no source-pair field. | "class AtomicSeriesActivationRecord(BaseModel):"; "class AtomicSeriesActivationArchiveEvidence(BaseModel):" | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27; mcp/src/agents_remember/models/structural/atomic_series_activation.py:30-45 |
-| A sha256 of the canonical contract path is the per-contract identity that names one activation record. | "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142 |
-| The strict observation carries the contract path and fingerprint for every read. | "class AtomicSeriesActivationObservation:"; "def source_fact(self) -> dict[str, object]:" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:91-102; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:115-127 |
-| Any record that is not this exact contract is refused as a mismatch instead of adopted. | `_require_record_identity`; `atomic-series-activation-contract-mismatch` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:369-372 |
-| Strict, side-effect-free observation resolves absent, nonregular, malformed, and terminal cases into vacant/unreadable facts. | `observe_atomic_series`; `observe_atomic_series_path` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:290-335 |
-| Publication is idempotent per contract/state, archives corrupt authority first, and quarantines nonregular entries without following them. | `publish_atomic_series_selection`; `_archive_unreadable_selection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:155-212; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:453-524 |
-| Only this contract's own reconciling state is projected as a waiting reason. | `activation_waiting_reason`; `atomic-series-reconciling` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:275-287; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:285-287 |
-| Continuation and cancellation bind to this contract's own selected or last-released record. | `require_selected_atomic_series`; `require_atomic_series_cancellation_owner` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:215-243; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:246-272 |
-| A terminal contract cannot be selected. | "atomic-series-terminal" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:168-172 |
-| Public activation diagnostics are bounded before they cross status or admission response boundaries. | `bounded_activation_detail`; "def source_fact(self) -> dict[str, object]:" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:61-68; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:115-127 |
-| The status facade retains the same contract-grounded activation observation without mutation and bounds unreadable detail. | `atomic_series_status_projection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:434-444 |
-| The selecting transaction moves this contract's reconciling state to active only after exact sync. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121 |
-| Queue projection translates this authority only into contract source facts and waiting reasons. | `project_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py:29-51 |
-| The pure public admission projection retains this contract's activation observation and contract-scoped recovery facts without mutation. | `atomic_series_admission_projection` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
-| Focused forcing covers two masters sharing one source pair, vacant/active non-waiting states, exact release, non-adoption of another contract's record, and the terminal refusal. | "class AtomicSeriesActivationTests(unittest.TestCase):"; `test_contracts_sharing_one_source_pair_hold_independent_selection`; `test_another_contracts_record_can_never_be_adopted` | mcp/tests/test_atomic_series_activation.py:109-140; mcp/tests/test_atomic_series_activation.py:117-140; mcp/tests/test_atomic_series_activation.py:174-209 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is configured for this memory root.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-13T14:19:04+02:00 — Per-contract re-keying: rewrote Purpose/Logic/Conventions/Invariants around `contract_fingerprint`/`activation_path` contract addressing, the `contract_path`+`contract_fingerprint` observation, `_require_record_identity`'s `atomic-series-activation-contract-mismatch` refusal, and `activation_waiting_reason` returning only `atomic-series-reconciling`. Removed the source-pair model, fingerprint, waiting reasons, and logical-pause claims, and rebound every citation to the frozen source. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation reconciled the bounded unreadable-detail projection through the observation source fact and status facade. The parser-error prefix and truncation marker remain source-grounded, selector bytes remain read-only, and verification metadata stays closeout-owned; no acceptance claim.
-- 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation split the admission and status citations after the public admission projection moved into its dedicated module. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the pure admission and status projections, retained activation observations, and no-live-process inference boundary. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `AtomicSeriesActivationTests` repointed to mcp/tests/test_atomic_series_activation.py:96-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-26T08:20+02:00 — Final frozen reconciliation of selector observation, publication,
-  archive, and exact identity claims.
-
-- 2026-08-26T06:05+02:00 — Moved with the selector into the focused `worktrees/activation/` route;
-  behavior and prior history are preserved, with no old-path compatibility owner.
-
-- 2026-08-26T05:40+02:00 — Reconciled the completed nonregular-entry quarantine: strict `lstat`,
-  no-follow regular reads, opaque atomic move plus evidence, and refusal when preservation cannot
-  complete. Final ranges remain post-Dagger-owned.
-
-- 2026-08-26T02:55+02:00 — Drafted the selector authority against the pre-Dagger frozen partition;
-  nonregular-entry repair, exact ranges, and verification remain open.

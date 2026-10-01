@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`shouldAnimate()` reads data-effects + prefers-reduced-motion",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:85938afe92f867b591b3d3982ab2520bece763d0e68fc3809ac8e8b20e57b88f",
+            "locator": {
+              "kind": "symbol",
+              "name": "shouldAnimate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`useShouldAnimate()` reactive hook (media query + MutationObserver)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The main entry checks `?effects=off` or `calm-cockpit` and sets `document.documentElement.dataset.effects` to `off`.\n\nAnchor: \"effects=off\"; \"window.localStorage.getItem(\\\"calm-cockpit\\\")\"; \"document.documentElement.dataset.effects = \\\"off\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b235ae6d40f2ffc6897ad451c87b3bae5b873e9",
+            "content": "sha256:3374a1678a3eb112da42b76d5f2b828e711a93cd668bda51b141cbecfcd92430",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/main.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b235ae6d40f2ffc6897ad451c87b3bae5b873e9",
+            "content": "sha256:1ced0356bdc8b0d19073bd61956b0f4f516795de3bb24cf31a866386a7aadde8",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/main.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The prior inline freeze check this generalizes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountConstel"
+            },
+            "path": "dashboard/src/topology/constel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

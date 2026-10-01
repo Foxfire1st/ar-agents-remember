@@ -1,14 +1,5 @@
 # file-level-onboarding-workflow.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-
 ## Purpose
 
 This workflow defines how `c-05-create-or-update-onboarding-files` skill creates and maintains onboarding for one concrete source file, including the governing-overview backlink that connects file-level onboarding to route-local overview context, the routing boundary for structural slice changes, preservation-first handling for moved/split/merged/deleted behavior, and the provider-neutral source-discovery rules for documentation evidence.
@@ -18,6 +9,11 @@ This workflow defines how `c-05-create-or-update-onboarding-files` skill creates
 ### Logic
 
 The workflow selects sidecar or inline storage, stores sidecar onboarding under the resolved onboarding root, enforces metadata and required sections, discovers the nearest governing route-local overview, reads source and existing onboarding, verifies references, writes concise commentary, and updates verification metadata. Its source-discovery rules start from the `c-08-ar-coordination-context-resolver` skill resolved `system/sources.md` `Domain Documentation` category, treat live documentation sources named there as authoritative, use local mirrors only as orientation caches, and require live retrieval through the registry's named tool or MCP before saying no relevant documentation exists. `Docs References` is a required top-level `##` reference section, not a `###` subsection under `Code Commentary`. Before file-level create/delete/move work, it checks whether the change is actually a route-level slice case that belongs in `c-03-repo-bootstrap` skill. For moved, split, merged, relocated, or deleted code, the workflow reads old onboarding before deletion and reuses accurate durable knowledge in current targets whenever behavior moved.
+
+**Converted memory (L37 fix round P1b).** The workflow now opens with a pointer: when the memory tree holds
+`knowledge/layout.json`, use `converted-card-workflow.md` instead. A converted card has no metadata table, no
+Update History and no citation tables, and its sidecar references are authored by `citation_fix`. The metadata,
+Update History and citation rules of this workflow are for unconverted memory.
 
 ### Conventions
 
@@ -35,38 +31,24 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 No external domain documentation is required for this repository-local workflow. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this workflow is repository source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found after checking live sources. | n/a | n/a |
+No relevant external documentation found after checking live sources.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This workflow is the primary schema source for mirrored file-level onboarding.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Scope and placement rules require one onboarding unit per source file, store sidecar onboarding under the resolved onboarding root, and route structural slice changes to `c-03-repo-bootstrap` skill. | `## Scope` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md:11-19 |
-| Source discovery rules require the resolved `Domain Documentation` category, authoritative live documentation retrieval when the registry names it, local mirrors as orientation only, and actual evidence citations instead of source registries. | `## Source Discovery Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md:20-30 |
-| Section rules require metadata with `governingOverview`, a governing overview section, code commentary, top-level docs references, repo-internal references, cross-repo references, and update history. | `governingOverview` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md:47-86 |
-| Creation steps now confirm the target is one concrete file, route route-local slice cases to `c-03-repo-bootstrap` skill, identify/read the nearest governing overview, and cross-check all reference sections. | `## Create Workflow` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md:88-102 |
-| Maintenance steps require re-reading source and onboarding, refreshing changed sections and citations, applying inline syntax rules, appending update history, classifying moves/splits/merges/relocations/deletions, preserving accurate old onboarding in current targets, and routing whole-route moves or deletions to `c-03-repo-bootstrap` skill. | `## Maintain Workflow` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/file-level-onboarding-workflow.md:103-121 |
+- Scope and placement rules require one onboarding unit per source file, store sidecar onboarding under the resolved onboarding root, and route structural slice changes to `c-03-repo-bootstrap` skill. [1]
+- Source discovery rules require the resolved `Domain Documentation` category, authoritative live documentation retrieval when the registry names it, local mirrors as orientation only, and actual evidence citations instead of source registries. [2]
+- Section rules require metadata with `governingOverview`, a governing overview section, code commentary, top-level docs references, repo-internal references, cross-repo references, and update history. [3]
+- Creation steps now confirm the target is one concrete file, route route-local slice cases to `c-03-repo-bootstrap` skill, identify/read the nearest governing overview, and cross-check all reference sections. [4]
+- Maintenance steps require re-reading source and onboarding, refreshing changed sections and citations, applying inline syntax rules, appending update history, classifying moves/splits/merges/relocations/deletions, preserving accurate old onboarding in current targets, and routing whole-route moves or deletions to `c-03-repo-bootstrap` skill. [5]
 
-## Cross-Repo References
+- The workflow sends converted memory to the converted-card workflow. [6]
+
+### Cross-Repo References
 
 No sibling repository evidence is needed for the workflow itself.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 4 citation rows with the exact workflow section-heading anchors (`## Scope`, `## Source Discovery Rules`, `## Create Workflow`, `## Maintain Workflow`) and ledger-verified section ranges. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
-
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-22T16:39+02:00: Updated after the workflow gained explicit preservation-first handling for moved, split, merged, relocated, or deleted source behavior. Verification metadata remains pinned until closeout commits the workflow change.
-- 2026-05-22T13:32+02:00: Updated after source discovery rules made live registry-named documentation authoritative and local mirrors orientation-only for file-level onboarding. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-18T08:49+02:00: Updated after the workflow was aligned with the template's top-level `## Docs References` section. Verification metadata remains pinned until closeout commits the workflow change.
-- 2026-05-14T21:16+02:00: Refreshed for resolved onboarding-root placement and `c-03-repo-bootstrap` skill routing of route-level slice create, refresh, move, and delete cases. Verification metadata remains pinned to the last committed source until closeout.
-- 2026-05-14T18:00+02:00: Refreshed for governing overview metadata, route-local overview discovery, canonical reference sections, and self-sufficient file-level onboarding. Verification metadata remains pinned to the last committed source until closeout.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for the `c-05-create-or-update-onboarding-files` skill file-level workflow.
+No meaningful cross-repo references found.

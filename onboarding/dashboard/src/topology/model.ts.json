@@ -1,0 +1,206 @@
+{
+  "path": "dashboard/src/topology/model.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`LIFECYCLE_STATES` is the `as const` tuple with `State` derived from it — the six states `CONSTEL_STATUS_BY_STATE` must be total over, and the list `model.test.ts` iterates instead of hand-copying. It is now COMPOSED from the two declared halves (`LIVE_STATES` + `TERMINAL_STATES`), so the six names are read off L42/L48.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb98102215dec203894ca6997c6b4fe29974402",
+            "content": "sha256:03593dcea707b4ee6a05583a3cc4507d5b13f6e6675c9b59445350e98b773870",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_STATES"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`WorkspaceProjection.activeWorktreeGroups` (worktree-group basenames with a live enclosure lifecycle) is the bounded set `activeTopologyInputs` filters on; `ProviderNode.worktreeGroup` is a basename while `EnclosureNode.worktreeGroup` is a full path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:d4dfbbc5bb077d297ff877986513a5abb996589f46933348707d356ace92de14",
+            "locator": {
+              "kind": "symbol",
+              "name": "activeTopologyInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`CONSTEL_STATUSES` + the derived `ConstelStatus`, the total `CONSTEL_STATUS_BY_STATE`, the declared `UNCLASSIFIED_STATUS`, the `STATUS_BY_DECLARED_STATE` partial read view, and `lifecycleStatus` with its inferred-degrades-healthy-only rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:7b65740d0a61f6c98d5fe366a26beae041534dfb70f1dbc8da6f89f0c14852e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`activeTopologyInputs` keeps only enclosures whose `groupKey(worktreeGroup)` ∈ `activeWorktreeGroups` and the lifecycles bound to them; `buildTopology` folds each enclosure's 1:1 lifecycle into the `wt` node via `lifecycleStatus` and parents providers by `groupKey` worktree group, then repo id, then workspace core.\n\nAnchor: `activeTopologyInputs`, `buildTopology`, `groupKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:d4dfbbc5bb077d297ff877986513a5abb996589f46933348707d356ace92de14",
+            "locator": {
+              "kind": "symbol",
+              "name": "activeTopologyInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:3a1f56c36ce5b8079c80ef81327f1d57edd5f2bf02ea24c322ddeea75b737650",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildTopology"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:6c3d5233886e6352c0dcdccf6e71630073047668321ed7e6feb9840f186199af",
+            "locator": {
+              "kind": "symbol",
+              "name": "groupKey"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:5fa50d15a53015770e0d6a5699fd652ebba3d91d4c0c74203d2c45e7b2276a52",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2543af1b8eb99722d5abb9d562a7195eb23a801e",
+            "content": "sha256:5b62afbdea12f4ac212b52371a63bd1ffd8cdd6e9db162d158c4f9ba96bcd2b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_workspace"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2543af1b8eb99722d5abb9d562a7195eb23a801e",
+            "content": "sha256:6f42dd9b6382bf7482a850fc3dafd63996fb0c0f3ae495249ffcfc414d3790b0",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The projection store passes that structural set through to the served projection.\n\nAnchor: `active_worktree_groups`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5817f1ba2e9179b5a8ab60a643d5971ca85cc22e",
+            "content": "sha256:05897ce97fc64aa562c243a90491e9cc4a5521e0816ec7e13aadab384ba22795",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`constelColors` keys the canvas palette by `ConstelStatus` declared here, and `col` indexes it with no `??` — the downstream half of the same grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
+            "locator": {
+              "kind": "symbol",
+              "name": "constelColors"
+            },
+            "path": "dashboard/src/topology/constel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`model.test.ts` pins the grammar: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the inferred degrade, and `buildTopology` driven over the whole vocabulary.\n\nAnchor: \"classifies every state the vocabulary declares\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:7332e70d220220014d10ba047ac7ac7a6a3f2f9c3abae9a7fa6eb63307841144",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/topology/model.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "`Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f197168068ebede03bb29a8769b4dccc419147",
+            "content": "sha256:c420d1aa8394b04cdbc37e97e27d92604d46847c69806fa78679d90e877447be",
+            "locator": {
+              "kind": "symbol",
+              "name": "Topology"
+            },
+            "path": "dashboard/src/panels/Topology.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

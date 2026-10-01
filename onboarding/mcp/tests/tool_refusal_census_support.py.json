@@ -1,0 +1,186 @@
+{
+  "path": "mcp/tests/tool_refusal_census_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The 67 production failure invocations, one per advertised tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "content": "sha256:70004f4a8906f2f7b09752a32beb96438e5bdf3a1b3dec692c144087a9559d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "failure_invocations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The driver: roster equality first, then one drive per tool, with the lifecycle arranged so `lifecycle_start`'s own failure path is measured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "content": "sha256:f1eb90822a966bdd841e236dec24900e7cd7421e786986fb1e713dba929c984f",
+            "locator": {
+              "kind": "symbol",
+              "name": "drive_census"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An absent contract path inside the coordination root, for the contract-address family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "content": "sha256:1cc7b8f97e212b401dbe64d1b7e56596d209dd765fa0b8686ba0816d7f6a2e98",
+            "locator": {
+              "kind": "symbol",
+              "name": "absent_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A contract-shaped path outside the coordination root, for the confinement refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "content": "sha256:fd876166c512d2313ec477b70af2a1ecc1af16b1e32d80dee7deb96d6462d403",
+            "locator": {
+              "kind": "symbol",
+              "name": "outside_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fixture document addresses a tool must resolve to reach a later refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "content": "sha256:15cdcf76c3ad8b7f34bf60940aaf2cee4518108644336f667ff7cd6c90182cfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_REF"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "content": "sha256:f48477c8257375ef328a9ad0395846fab930014c76dc46eb1f1440510b9a12ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEAF_REF"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "content": "sha256:720cb39c673c62fe09714597851f0f996167f68207b600f8fdb51fd09eaf6b34",
+            "locator": {
+              "kind": "symbol",
+              "name": "ABSENT_REF"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The advertised roster the table is asserted equal to before anything is driven.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The hermetic world every invocation addresses, shared with the benign sweep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06c7d7ff5739a3ad3e74a813262fb3ce5803f41a",
+            "content": "sha256:5c64f8e3c9cb8d30991cc0d9e0799de7d4585b70f68302fcfae99a461555202b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointWorld"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "06c7d7ff5739a3ad3e74a813262fb3ce5803f41a",
+            "content": "sha256:49f76b64f13ae8792801a8416c306daae7afba744bf81ff9e751b8e476334e08",
+            "locator": {
+              "end": 866,
+              "kind": "line_range",
+              "start": 325
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The conformance check that drives this census and asserts the three-shape partition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14b0d3930b00dea5d6a7fbcb58c5b0fa6bb1ee4d",
+            "content": "sha256:ef07aeb0910e846a6041a24f0d94069d55100bfbdcda243c206164559c71f38e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailurePathCensusTests"
+            },
+            "path": "mcp/tests/test_tool_refusal_conformance.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "14b0d3930b00dea5d6a7fbcb58c5b0fa6bb1ee4d",
+            "content": "sha256:0b33482fd31a91935714ca6ee74aa7a12571e7be93d06a23c1a4816f83a9cdcc",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/tests/test_tool_refusal_conformance.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

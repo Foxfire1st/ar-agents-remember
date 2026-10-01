@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/seed.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Isolated GrepAI settings define the target roots and workflow-local backend names used by clone operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:5dbfe025cc41e1eea14f593260ecdeba9a8ebb1590fdfd0e21d3d71e4cd5f94f",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_grepai_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/isolated.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:5488547ef590957a8f350934078fef2bab4447bf4566c48f664f45afb5bd0eff",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/isolated.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI setup calls clone before refresh when seed options are present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f45213a811767ecb30498884a6cbbc9fe53b85d",
+            "content": "sha256:616cbba1ae96ecc60912600c46d5282f6a8453b87cd0e48de0b3cd5b00e5652e",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enabled_provider"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Provider setup threads source/target settings into GrepAI seed options for worktrees (benchmarks pass none).\n\nAnchor: `GrepaiSeedOptions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:f5c94680fbdfb60bf1a3df65fd33bffaf2f27a8fb4d9e685eccbbbfc2e427e3d",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

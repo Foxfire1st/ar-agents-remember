@@ -1,0 +1,136 @@
+{
+  "path": "mcp/src/agents_remember/serving/review_summary.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
+        "content": "sha256:a1b2fb6cf117b0ba91d7aed34b896c96603e933c55e4bcbff68ffbbfe27e6a97",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_review_summary_route"
+        }
+      },
+      "id": "RLZ-GJM2AWPM",
+      "invariant": "INV-8BYGSPZF",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Registers the summary route so that every result the port returns, whether counted, partial or unavailable, is serialized with the default HTTP 200 and its state in the body. The only non-200 answer is the named 503 when the process was composed without the summary port.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The route path and the port signature (repository, master, leaf).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
+            "content": "sha256:9098a58d916d46d43525349a09e1eea4ec33f198283d9d400d0077bd6699a907",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_REVIEW_SUMMARY_ROUTE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
+            "content": "sha256:339c8c2dc7e87458f12a4b07f43bb6caa7aead2c3100512a8fc2abfa5b5804ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryPort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unwired answer: named, and never a zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
+            "content": "sha256:e605b27e3db38513a69c151e95f55bb108a57a684869c3beebd0ad1301207e7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNWIRED_SUMMARY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every typed state answered 200 with the body; 503 only without a port.\n\nAnchor: `status_code=503`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ef5a9b687f5ae19e5c2b7b8fad4e3a3adf7b7a",
+            "content": "sha256:a1b2fb6cf117b0ba91d7aed34b896c96603e933c55e4bcbff68ffbbfe27e6a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_review_summary_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The route is registered from the app's collaborators.\n\nAnchor: `register_review_summary_route`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:e04b749fe36fc805b5c8bef3eadd3f2599165fef9526448b7fbf60b6a2f90890",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 305
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The optional collaborator slot the route reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:cbf1034558b18983a498fffe5a7123fd770b5f7e0809cdc4289fc9938606e09d",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_intent_summary"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case that pins 200 for every typed state and 503 when unwired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:5ec4426310ed577e98649c1676d02f04618802385e4e55646974e99cf95bd8eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_answers_every_typed_state_in_the_body"
+            },
+            "path": "mcp/tests/test_review_intent_summary.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

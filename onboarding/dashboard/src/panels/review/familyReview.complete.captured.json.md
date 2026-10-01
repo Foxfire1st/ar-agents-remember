@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/familyReview.complete.captured.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/familyReview.complete.captured.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -127,54 +117,41 @@ Nothing in those cases passes the component a value: the bodies are the whole in
 
 None recorded for this file.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every row was re-derived against this candidate, and every anchor in a row occurs on the line the row
 cites. Because each captured body is one minified line, the cited range is the whole file and the
 finding names the exact key path and value a reader can re-check.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The envelope: the one review read the surface makes, its surface version, and its state.** | "\"operation\":\"read_knowledge_review\""; "\"surface_version\":\"knowledge-review-surface/1\""; "\"state\":\"review\"" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| **The enclosure the bytes were recorded over, and the single normalization: the per-run fixture repository uuid is written as a placeholder.** | "\"leaf_id\":\"260921-icr-l1\""; "review-source-endpoints-fixture"; "<repository_id>" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| **The family context: two families returned of two, none remaining, the owner's measured row counts, and the `partial` state whose detail names every part it could not establish.** | "\"family_context\":{\"detail\":\"this family context is partial"; "\"families_remaining\":0,\"families_returned\":2,\"families_total\":2"; "\"membership_rows_total\":8"; "\"unique_member_revision_total\":4" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| **A roster carried whole on a page that is a position in a walk: the owner's own carried-vs-measured sentence, the measured total, and the still-open page block with its published continuation.** | "holds 2 recorded membership(s) and this page supplies 2 member context update(s)"; "\"members_total\":2"; "\"page\":{\"complete\":false"; "\"page_size=6" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| **The unchanged shape: one family revision recorded by both snapshots, with the authored text it carries.** | "\"display_label\":\"retry-budget-family\""; "The retry budget is shared by integration and synchronization." | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| **The changed shape: two distinct family revisions whose authored texts differ, and the retained before revision the after side still names.** | "The retry budget and the anchor identity rule hold together."; "The retry budget and the batch obligation hold together under the revised member."; "\"recorded_revision_ids\"" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| **The two families' display labels, and that both selections are recorded comparisons.** | "\"display_label\":\"retry-budget-family\""; "\"display_label\":\"retry-and-anchor-family\""; "\"state\":\"compared\"" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| **Each member source's structured locator and state: file locators only, `whole_file` on the exact blob, `unresolved` where the path is absent, and no resolved range anywhere.** | "\"locator\":{\"kind\":\"file\"}"; "\"locator_state\":\"whole_file\""; "\"locator_state\":\"unresolved\""; "\"resolution\":\"path_absent\""; "\"resolved_ranges\":[]" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| **Every member row on the page carries its revision content, which is why all eight rows are readable statements rather than page-scoped notices.** | "\"state\":\"recorded\""; "\"members_total\":2" | dashboard/src/panels/review/familyReview.complete.captured.json:1-1 |
-| The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.complete.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:78-81; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:87-110; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:76-76 |
-| **The provenance of this body: made over HTTP by ICR-L44's producer in its own run at source tree `a8039b8e`, which the receipt records at its top level, carrying each member source's structured locator, resolved ranges and locator state.** | "familyReview.capture-provenance.json"; "its own run, at source tree a8039b8e" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:9-11 |
-| **The receipt row for this body: its digest, scenario, request and normalization, under the receipt's command, source tree and selection rule.** | "familyReview.complete.captured.json"; "captured_source_tree" | dashboard/src/panels/review/familyReview.capture-provenance.json:1-25 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
-| **The two cases that render these bytes first: the families, their guarantees and the full member statements; and the guarantee comparison shape each family earns.** | "renders the recorded families, their authored guarantees and the full member statements"; `COMPLETE`; "The complete member statements, unchanged siblings included"; "opens a family review whose guarantee comparison is the shape the two recorded revisions support"; "the only shape" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:67-67; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:176-214; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:216-249 |
-| The four further cases these bytes drive: the five separate facts beside a selected member, the selection-independent explorer, the layout switch, the keyboard traversal, and the filter scope. | "keeps the family context when a member is selected and states the five facts separately"; "keeps the complete source explorer independent of the family selection"; "keeps an expanded entry expanded across a diff-layout switch"; "marks the current selection and traverses the tree by keyboard"; "reports the filter scope without restating the comparison's totals" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:251-279; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:281-297; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:365-392; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:394-417; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:419-448 |
-| **The vocabulary the two guarantee facts are read through: the comparison union and the three "did not change" shapes kept apart, decided by identity first and text second.** | `GuaranteeComparison`; `identical_text`; `unchanged_revision`; `one_sided`; `joint_guarantee` | dashboard/src/data/reviewFamily.ts:293-298; dashboard/src/data/reviewFamily.ts:300-309; dashboard/src/data/reviewFamily.ts:41-41; dashboard/src/data/reviewFamily.ts:330-330; dashboard/src/data/reviewFamily.ts:333-333 |
+- **The envelope: the one review read the surface makes, its surface version, and its state.** [1]
+- **The enclosure the bytes were recorded over, and the single normalization: the per-run fixture repository uuid is written as a placeholder.** [2]
+- **The family context: two families returned of two, none remaining, the owner's measured row counts, and the `partial` state whose detail names every part it could not establish.** [3]
+- **A roster carried whole on a page that is a position in a walk: the owner's own carried-vs-measured sentence, the measured total, and the still-open page block with its published continuation.** [4]
+- **The unchanged shape: one family revision recorded by both snapshots, with the authored text it carries.** [5]
+- **The changed shape: two distinct family revisions whose authored texts differ, and the retained before revision the after side still names.** [6]
+- **The two families' display labels, and that both selections are recorded comparisons.** [7]
+- **Each member source's structured locator and state: file locators only, `whole_file` on the exact blob, `unresolved` where the path is absent, and no resolved range anywhere.** [8]
+- **Every member row on the page carries its revision content, which is why all eight rows are readable statements rather than page-scoped notices.** [9]
+- The one constant that binds this body to its cases, and the runtime narrowing that keeps a body with a missing field from mounting the surface. [10]
+- **The provenance of this body: made over HTTP by ICR-L44's producer in its own run at source tree `a8039b8e`, which the receipt records at its top level, carrying each member source's structured locator, resolved ranges and locator state.** [11]
+- **The receipt row for this body: its digest, scenario, request and normalization, under the receipt's command, source tree and selection rule.** [12]
+- **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** [13]
+- **The two cases that render these bytes first: the families, their guarantees and the full member statements; and the guarantee comparison shape each family earns.** [14]
+- The four further cases these bytes drive: the five separate facts beside a selected member, the selection-independent explorer, the layout switch, the keyboard traversal, and the filter scope. [15]
+- **The vocabulary the two guarantee facts are read through: the comparison union and the three "did not change" shapes kept apart, decided by identity first and text second.** [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file: it is one recorded response body from this
 repository's own route over this repository's own fixture enclosure.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **consumer added (MIK-L33), bytes unchanged:** the Purpose names `FamilyTree.triage.test.tsx`, which mounts this body as its dataset-review case (no change facts, so the landed tree). The rows moved by `FamilyTree.tsx`'s and `FamilyReviewCenter.tsx`'s inserted lines were re-pointed by the installed fixer (its bullets kept) or the exact base-to-staged line shift.
-- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): citation re-anchored; the fixture bytes are unchanged. The worker's comment-only rewrite of the `ReviewWorkspace.family.test.tsx` header (MIK-L31 follow-up) no longer says "re-captured over HTTP"; the provenance row is reworded to the header's new text (this body is from ICR-L44's own run at `a8039b8e`, the receipt's top level) and re-measured (`8-13` → `9-11`). The rows below the header were re-pointed by the exact −1 line shift and normalised by the installed fixer, run once on this card.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/panels/review/ReviewWorkspace.family.test.tsx`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the body was re-captured over HTTP from the real review route (47,035 bytes; sha256 `1a218df3…e91f`, recorded in `familyReview.capture-provenance.json`) so its member sources carry `locator`, `resolved_ranges` and `locator_state`. Every identity in it is new, so the card now names labels and sentences instead of per-build UUIDs, states the roster sentence as the route now words it (`this page supplies 2 member context update(s)`), describes the four sources' locator states, and points its provenance at the receipt instead of the retired probe. The shapes it pins are unchanged. No verification stamp was advanced.
-
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`): **created this one-to-one card for the first of the leaf's seven captured family-review bodies.** It records what the bytes are (the route's own answer over a fixture enclosure, the probe that recorded them, the one `<repository_id>` normalization), the file's exact identity a reader can re-check (46,076 bytes; sha256 `82c9ca93def45bba517a295d31ca0f098c092404beb1644423d1991998f45e37`), and the one state it pins apart from its six siblings: **a roster carried whole** — every side carried the rows its owner measured (2 of 2), all eight member rows are `state: "recorded"`, and both guarantee shapes are present at once (the same revision on both sides for one family; two distinct revisions with different authored text for the other) while the family context stays `partial` because the read walk continues. It also records the citation convention these bodies force: each file is one minified line, so every reference row cites `:1-1` and names the exact key path and value, and two candidate anchors (`"members":[]` and the `recorded_revision_ids` array literal) were **dropped rather than cited** because a bracketed literal does not verify under the literal-grep rule. **Stamp accounting:** no verification stamp was advanced beyond the leaf base commit — the candidate is uncommitted, and governed closeout owns the real stamp.
+No meaningful cross-repo references found.

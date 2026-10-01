@@ -1,15 +1,5 @@
 # dashboard/src/panels/TaskNotes.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/TaskNotes.tsx`             |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7` |
-| lastVerifiedCommitDate | 2026-09-28T20:30:48+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -70,44 +60,20 @@ only ever created from the server's own listing (`resolveNoteReference` against 
 never point outside the series' notes tree — and opening is delegated to `onOpenNotes`, never a local
 write.
 
-## Cross-Repo References
+## Evidence
+
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A same-origin view over the local notes API; nothing crosses repositories. | — | — |
+A same-origin view over the local notes API; nothing crosses repositories.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The data client + the pure reference resolver. | `listNotes`, `resolveNoteReference` | dashboard/src/data/notes.ts:32-33; dashboard/src/data/notes.ts:52-65 |
-| The surface passes a shared discriminated artifact target: notes carry a path, while requirements also carry the selected document. | "export type TaskArtifactReaderTarget =" | dashboard/src/data/taskArtifacts.ts:1-14 |
-| TaskNotes imports the shared target under its existing local NotesReaderTarget name. | "import type { TaskArtifactReaderTarget as NotesReaderTarget }" | dashboard/src/panels/TaskNotes.tsx:17-17 |
-| The shared markdown renderer (inline reference rendering). | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
-| The task reader + master overview that mount this component and thread `onOpenNotes`. | `MasterOverview`, `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:614-648 |
-| The serving endpoints behind the client. | `register_notes_routes` | mcp/src/agents_remember/serving/notes.py:279-288 |
-| The component test suite. | "TaskNotes entry surface" | dashboard/src/panels/TaskNotes.test.tsx:38-76 |
-
-## Update History
-
-- 2026-09-28T17:09:38+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed the `register_notes_routes` range to its candidate extent (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`, re-validated after the L44/L45/L47 sync). It was already off by three lines at base and moved again with L55's rewrite of the listing walk. The routes themselves are unchanged. No stamp was advanced.
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the requirement-reference routing in `ReferenceList` (`requirement-ref-<n>` buttons over the requirement listing; notes resolution only for non-requirement refs) and the explicit `kind: "notes"` payload tag on note opens.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 5 repository-internal references for the notes client, renderer, mounting surfaces, serving routes, and component tests; final scoped result 0 (checker-clean).
-
-- 2026-07-07T14:00+02:00 — agent-orchestration L17: TaskNotes became the compact ENTRY SURFACE only. The
-  inline `NoteReader` pane was RETIRED; the list rows and resolved references now call the new `onOpenNotes`
-  callback to open the L17 Notes Reader takeover (with the whole notes tree in its rail). The note-content
-  rendering tests (markdown/text/binary/truncation) moved to `notes-reader/NotesReaderViewer.test.tsx`;
-  `TaskNotes.test.tsx` now asserts the entry callbacks. Verification metadata pinned until closeout stamps
-  the L17 commit.
-- 2026-07-06T02:10+02:00 — Created for agent-orchestration L9 (friction F-M): the
-  series-notes list + on-demand note reader (markdown formatted, text preformatted,
-  binary placeholder, truncation banner) and the reference-link resolution over the
-  fetched listing; unreachable API degrades to no surface with references staying plain
-  text. Verification metadata pinned until closeout stamps the L9 commit.
+- The data client + the pure reference resolver. [1]
+- The surface passes a shared discriminated artifact target: notes carry a path, while requirements also carry the selected document. [2]
+- TaskNotes imports the shared target under its existing local NotesReaderTarget name. [3]
+- The shared markdown renderer (inline reference rendering). [4]
+- The task reader + master overview that mount this component and thread `onOpenNotes`. [5]
+- The serving endpoints behind the client. [6]
+- The component test suite. [7]

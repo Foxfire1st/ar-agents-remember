@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/family.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/family.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -73,44 +63,30 @@ storage owner is `memory/knowledge/families.py`.
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The separation between the family guarantee and its members' obligations. | "a member keeps its exact own obligation, and the two are separate authored claims" | mcp/src/agents_remember/models/knowledge/family.py:4-6 |
-| The identity draft and its stored, digest-carrying form. | `FamilyDraft`; `FamilyIdentity` | mcp/src/agents_remember/models/knowledge/family.py:35-48; mcp/src/agents_remember/models/knowledge/family.py:51-55 |
-| The authored aggregate before sealing, with its digest deliberately absent. | `FamilyRevisionDraft` | mcp/src/agents_remember/models/knowledge/family.py:58-102 |
-| The sealed revision and its stored read shape. | `FamilyRevision`; `StoredFamilyRevision` | mcp/src/agents_remember/models/knowledge/family.py:105-109; mcp/src/agents_remember/models/knowledge/family.py:112-123 |
-| The shared accepted/proposed rule this aggregate applies at construction. | `require_consistent_acceptance` | mcp/src/agents_remember/models/knowledge/base.py:40-56 |
-| The payload this revision's digest seals, including the sorted predecessor set. | `canonical_family_revision_payload`; `family_revision_payload_digest` | mcp/src/agents_remember/models/knowledge/digest.py:71-92; mcp/src/agents_remember/models/knowledge/digest.py:93-96 |
-| The row codec and seal-verifying decode that turn these values into stored rows. | `family_revision_row`; `decode_family_revision_row`; `sealed_family_revision_from_draft` | mcp/src/agents_remember/memory/knowledge/records.py:287-302; mcp/src/agents_remember/memory/knowledge/records.py:327-356; mcp/src/agents_remember/memory/knowledge/records.py:303-326 |
-| The storage owner that writes and reads these values. | `create_family`; `create_family_revision`; `get_family_revision` | mcp/src/agents_remember/memory/knowledge/families.py:79-94; mcp/src/agents_remember/memory/knowledge/families.py:133-160; mcp/src/agents_remember/memory/knowledge/families.py:267-282 |
-| The declared `family` and `family_revision` tables these values map onto. | `family`; `family_revision` | mcp/src/agents_remember/memory/knowledge/schema.py:222-232; mcp/src/agents_remember/memory/knowledge/schema.py:233-250 |
-| The requirement this vocabulary's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
+- The separation between the family guarantee and its members' obligations. [1]
+- The identity draft and its stored, digest-carrying form. [2]
+- The authored aggregate before sealing, with its digest deliberately absent. [3]
+- The sealed revision and its stored read shape. [4]
+- The shared accepted/proposed rule this aggregate applies at construction. [5]
+- The payload this revision's digest seals, including the sorted predecessor set. [6]
+- The row codec and seal-verifying decode that turn these values into stored rows. [7]
+- The storage owner that writes and reads these values. [8]
+- The declared `family` and `family_revision` tables these values map onto. [9]
+The requirement this vocabulary's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `create_family`; `create_family_revision`; `get_family_revision` at mcp/src/agents_remember/memory/knowledge/families.py:79-94; mcp/src/agents_remember/memory/knowledge/families.py:133-160; mcp/src/agents_remember/memory/knowledge/families.py:267-282.
-- 2026-09-17T07:33:51+00:00: Generated citation repair: `create_family`; `create_family_revision`; `get_family_revision` repointed to mcp/src/agents_remember/memory/knowledge/families.py:79-94; mcp/src/agents_remember/memory/knowledge/families.py:133-160; mcp/src/agents_remember/memory/knowledge/families.py:267-282. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `create_family_revision` in the row 96 of this card from mcp/src/agents_remember/memory/knowledge/families.py:267-269 to mcp/src/agents_remember/memory/knowledge/families.py:133, the extent of the construct the claim is about (the checker named line(s) [133, 138, 149] as its live location); re-pointed `get_family_revision` in the row 96 of this card from mcp/src/agents_remember/memory/knowledge/families.py:133 to mcp/src/agents_remember/memory/knowledge/families.py:166, the extent of the construct the claim is about (the checker named line(s) [166, 194, 267] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `create_family_revision` in the row 96 of this card from mcp/src/agents_remember/memory/knowledge/families.py:79-80 to mcp/src/agents_remember/memory/knowledge/families.py:133-135, the extent of the construct the claim is about (the checker named line(s) [133, 138, 149] as its live location); re-pointed `get_family_revision` in the row 96 of this card from mcp/src/agents_remember/memory/knowledge/families.py:133-135 to mcp/src/agents_remember/memory/knowledge/families.py:267-269, the extent of the construct the claim is about (the checker named line(s) [166, 194, 267] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `create_family_revision` in the row 96 of this card from mcp/src/agents_remember/memory/knowledge/families.py:267-269 to mcp/src/agents_remember/memory/knowledge/families.py:133-135, the extent of the construct the claim is about (the checker named line(s) [133, 138, 149] as its live location); re-pointed `create_family` in the row 96 of this card from mcp/src/agents_remember/memory/knowledge/families.py:133-135 to mcp/src/agents_remember/memory/knowledge/families.py:79-80, the extent of the construct the claim is about (the checker named line(s) [79, 82, 85] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/memory/knowledge/families.py:79-80 in the row 96 of this card; the repetition added no pooled evidence
-- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): created this one-to-one card for the new family vocabulary. It records that the guarantee is the family's own text and never assembled from members, that a family revision is immutable by construction with its sorted predecessor set inside the seal, and that the accepted/proposed and self-predecessor rules are authored-value rules refused at construction rather than at the storage boundary. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

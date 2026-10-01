@@ -1,0 +1,350 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/classify.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The class order, the definition-4 ruling and the definition-7 rules.\n\nAnchor: \"When the C blob *is* the\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:4c21c1750cfc443dd9ab1803e0826641e3506d1fd5625daec9135215762b12e5",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A re-anchor is a change unless a covering class or the carry explains it; since MIK-L33 `_reanchor` asks the public `reanchored`, which asks `carried_mechanically`.\n\nAnchor: \"def _reanchor(before: IndexedEntry, after: IndexedEntry, classifier: Classifier, note: Any) -> None:\"; \"if not reanchored(old, new, entry_class):\"; `reanchored`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:852afda0bb7d68f782a5b912eee61463df5b0d4bfe5eef55dd7af4e8ee64e2b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "carried_mechanically"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The link anchor triggers on `touched` and `moved_or_absent` and joins no entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:a125d2d23586b1b52cad8992cef936274a1dd516e6b591a698bb268713962f1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_linked_anchor_triggers_when_touched_or_absent_and_not_otherwise"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Stale takes precedence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:62282b9ff8b2095e0dd00d07b25de0f6d8c680a603c94ded3b522b1bfedb104c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_at_base_takes_precedence_and_reaches_its_families_without_widening"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Deletion, rename, ambiguity and a deleted range are `moved_or_absent`, with a mechanical match.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:67801069c34021e5bebc182b46733d93b5617b3becd08bdfc389a950c155d203",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_or_absent_covers_deletion_rename_ambiguity_and_a_deleted_range"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Added, retired and re-anchored entries raise; new records do not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:546cd8440134277c5d76f26e9ddeabceb8f5d3d5494f0a4dc923e127d3012853",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_added_retired_and_reanchored_entries_raise_and_new_records_do_not"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The writer's carry in K_C is not a change.\n\nAnchor: \"def test_a_mechanical_carry_forward_in_k_c_is_not_a_change(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:51e797af26f5ac11f536ef473e15bf89a73f35fc1f4cd155adc0617bb85aa910",
+            "locator": {
+              "end": 529,
+              "kind": "line_range",
+              "start": 523
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "An unchanged blob is `untouched`; an edit elsewhere with changed range bytes is `touched`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:8971fb569fb477e31ad6aa759579309c7772c7fee3c8184950b6034dc0038aad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_blob_is_untouched_whatever_its_recorded_content_says"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The two public helpers, exported (MIK-L33).\n\nAnchor: \"\\\"carried_mechanically\\\",\"; \"\\\"reanchored\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:e201bb785430cc5d69645245f726886ef7007ed5e38c80ca8b0155dda9c5dab3",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The reviewer's use: only the mechanical carry is exempt (review R1 F1).\n\nAnchor: \"elif not carried_mechanically(old, new, entry_class):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:dc1f7a8ae12f68c36e8788e5c911dfdad44c53a7c91bead5dbc476c0b0f7b284",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 408
+            },
+            "path": "mcp/src/agents_remember/application/review_change_kinds.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Raising and covering classes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:ea2e4109d534d506166d5aa5c24d157e75df0e019458e597c68d9bf769e73b23",
+            "locator": {
+              "kind": "symbol",
+              "name": "RAISING_CLASSES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:4278ed28abbccb4cee2cec61b61aa6cd1d657d5a0474b8e6030e63640a7a64b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "COVERING_CLASSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One entry's class and facts; the per-side content identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:87d07602605446ad837ae4b17df2f53aca9e6ae6909fc3ca8fb1297a79805265",
+            "locator": {
+              "kind": "symbol",
+              "name": "Classification"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:ac43167257da9759884d08c1d978ddc21d6d9dfb8365c7eae4315721b658c8d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "contents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Classify once per run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:eb98968ac1345f2a07ea797b009653bc897ccffae40f4d404feba15e4c4fb86c",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An entry's kind handed to the shared body, which decides the class with the unchanged-blob `untouched` rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:4c4183fbd061be495ecef160b96129ef40e75741fddb1fce4847d58315711178",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:8a0cecff46ec663c3a259a68054643edff875cadf89d8ae5e13e8ae6e0ae6d48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_anchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A `reconsider_on` link's anchor, classified like an entry with kind `link` and never recorded as one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:d3c6a457c3f7c232ece8b34718b15c76500b747acc6ea219ba76a45f5f2d25cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:33e478286fbcf0d026432a82ab7ac730cdeccbae2025c02bd82baa367e83616b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The hunks that hit the range; `None` for a binary pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:c51fbf3997d808f754ce7a4af4c221bff0563da1f5ff1541ed33e9502714a4f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The writer's carry-forward is not a re-anchor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:57f6b15a21b2a14a6d87f5bfac1a81d8636bd6900a6bb1192720cdfaa146852f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_only_mechanical"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Added, retired and changed-record invariants; changed families.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e7e1b56b4ff350b37a584948c613864f4d72f9",
+            "content": "sha256:95b3238796787cf78c1223da476248122db8a026dd93178dff903ed3f4a0b101",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/primitives.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/primitives.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -59,61 +49,29 @@ introduced.
   reason in the `title` — it never fabricates or paraphrases capability copy, and never renders the
   reason as always-visible chrome (R11).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The lane/source/capability types these primitives narrow over. | `ConversationLane`; `ConversationSource`; `ConversationCapabilities` | dashboard/src/data/conversation/types.ts:29-36; dashboard/src/data/conversation/types.ts:38-46; dashboard/src/data/conversation/types.ts:253-283 |
-| The clamp/badge consumer in the message grammar. | `MessageItem` | dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx:104-156 |
-| The clamp/badge consumer in the tool grammar. | `ToolItem` | dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx:87-118 |
-| The clamp/badge consumer in the diff grammar. | `DiffBlock` | dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx:35-79 |
-| The surface that renders CapabilityReason cues (labeled `history`/`live`) for history/live completeness. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
-| The renderer suite asserting the real clamp button + source badge. | "ConversationTimeline — one navigable role=feed (R5" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx:7-7 |
-| The R11 progressive-disclosure cue unit pins (visible state word, full reason in `title`, supported = nothing). | "CapabilityReason — R11 progressive disclosure cue" | dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx:19-47 |
+- The lane/source/capability types these primitives narrow over. [1]
+- The clamp/badge consumer in the message grammar. [2]
+- The clamp/badge consumer in the tool grammar. [3]
+- The clamp/badge consumer in the diff grammar. [4]
+- The surface that renders CapabilityReason cues (labeled `history`/`live`) for history/live completeness. [5]
+- The renderer suite asserting the real clamp button + source badge. [6]
+- The R11 progressive-disclosure cue unit pins (visible state word, full reason in `title`, supported = nothing). [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-04T02:35:12+02:00 — S18-B05 curator delta: resolved provisional source-local citation bindings with fixer-generated current-source ranges; no approved semantic claim changes.
-- 2026-08-04T01:28:33+02:00 — S18-SR2-B05 worker: corrected the invariant's label casing to the source-owned lowercase `show more` grammar.
-- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 7 citation anchors across the 5 assigned reference claims; scoped recheck clean (0 findings).
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations, each now a full
-  span over its construct instead of a single line that had drifted off it. `ClampButton` L37 → the
-  component body L38-L68 (L37 was the closing `*/` of its docstring), and the `clampButton` recipe
-  the same sentence describes is cited explicitly at L16-L31; `sourceLineCount` L70 → L71-L74 (L70
-  was its docstring); `useClampIds` L140 → L161-L164 (L140 had drifted onto `CapabilityReason`'s
-  signature). All claims unchanged and re-verified. NOT fixed (beyond this worklist):
-  `SourceBadge`/`sourceBadgeLabel` L92/L108 are L93-L107/L109-L119, and `CapabilityReason` L130 is
-  L140-L158 (L130 sits inside the `cue` recipe).
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: reworked the `CapabilityReason` claim — it is now
-  a short progressive-disclosure CUE (visible one-word state, optional `label` prefix, full server
-  reason in the hover `title`), replacing the always-visible reason paragraph (R11); added the new
-  `primitives.test.tsx` reference. Also recorded the FB7.4/A8/V12 `ClampButton` restyle (lowercase
-  `show more`/`show less`, de-boxed underline, nowrap). Verification pinned to the leaf base (`352d5cd`)
-  until closeout stamps the candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the shared item
-  primitives — the one real ClampButton (exact `+N lines` only when known), `sourceLineCount`, the
-  interpretation-changing SourceBadge (ordinary content unbadged), CapabilityReason (exact server
-  reason), and useClampIds. Verification is pinned to the leaf base (`0be0099`) because the new source
-  file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

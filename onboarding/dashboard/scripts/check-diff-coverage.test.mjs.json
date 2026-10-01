@@ -1,0 +1,83 @@
+{
+  "path": "dashboard/scripts/check-diff-coverage.test.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The direct CLI refusal occurs before base-resolution output.\n\nAnchor: \"the direct changed-lines CLI refuses before reading Git or coverage\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e190d2457a4dad0b99fc4a3060474f98d7a7a5b",
+            "content": "sha256:98dc0b13a2b7388c5258ee893d1ebb1825bf2dd193437beb1ed4f929a89c9e70",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pure executable-statement helpers remain directly importable and tested.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d1857a57c467a4753eba362622c41f739f85696",
+            "content": "sha256:0227974000e1aff9e885c86a05263aecdd735df1f54f2c3a91dacc8e9020128b",
+            "locator": {
+              "kind": "symbol",
+              "name": "executableStatementLines"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d1857a57c467a4753eba362622c41f739f85696",
+            "content": "sha256:cb7730f6fc03c1359e26142f2b686d9fbaa3ee160492e41afd6440741b958631",
+            "locator": {
+              "kind": "symbol",
+              "name": "measureDiffCoverage"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e190d2457a4dad0b99fc4a3060474f98d7a7a5b",
+            "content": "sha256:f028d1f30f7fd025c066a1c0af257bddb74b179d4a827ce01604af1a39d8f3be",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Vitest includes script tests in its declared test population.\n\nAnchor: \"scripts/**/*.test.mjs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdea2611cc34a3c7063534e3318374cbb216bb09",
+            "content": "sha256:a476b0982c138a23b963d335f281549c5fe818d77c9459e951e82c34224c7aa8",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/vitest.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

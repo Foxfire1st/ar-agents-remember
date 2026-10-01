@@ -1,0 +1,305 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/effects.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one entry point that applies a command inside the caller's open transaction, and raises rather than returns so the whole batch rolls back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:b79f999fae2f2cb96c35985694a4603ba2c4fad40f7bad81e4f78e0ed2739006",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_effect_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared acyclic walk over generation 8's table, so no second cycle rule grows beside the first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:56c9ab09fb13096725a96fbaa27dbca211e3c1f0d53fb22acd7a81e66d8d6ee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_successions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The derived read that refuses by state rather than by exception, and the thin builder entry point under it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:6061cf7563c52b26207ea060283628d5ab0c1861ac2d7d05a0ec20a291836f2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_effect_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:68875573b0e8898f9d989a405fe3330ed818a6be3012bd1b733956fe0a775820",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_effect_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The named-route check: a dangling named route is refused, the explicit ungoverned state is not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:93160306859d8b0df01f17ed5497df37e4c1451971ec956dcf31d9a90a9bfade",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_governing_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The command-to-kind table read instead of the payload, so a caller cannot store a pair the registry would refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:4684a13835496230c8b8e28283cbb4cc3998f91a011181f3670fbdb8f095aa56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COMMAND_DECLARATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The operation and the generation this module's refusals and writes belong to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:fbcf816864d345ce3ef5f3ba1236140620b7532d2ed68385684c120bf9accab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "READ_OPERATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:15cb5446dbda413c361775724f17506a702f07b768f066808aaea1808f7ea59b",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIRED_EFFECT_GENERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The one place a relation write says which endpoint kinds exist, which this module reuses rather than paralleling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
+            "content": "sha256:0e316ff0e6cb353a3aa64d54f036996cf429f2171c727829329ec4a1ee4c1aeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_realization_claim_endpoint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
+            "content": "sha256:25dbf2ff65ec9cbba339287626e914a8aac751eff216e644fd09d145fdf84813",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_effect_revision_endpoint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
+            "content": "sha256:4bbfac7c88eadc0f50c2b18247a836eb96aa7a746bbc2356f8bfa318ce004281",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_change_set_endpoint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The measured order — validate at the envelope seam, then resolve on the validated payload, then check duplicates — before any row exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:285d5f9103dcef8328a2add1e163fb7025e08fffe4e2da39347b9b19c99cecac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admissible_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The envelope row and its one sealed revision, written together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:7dd1b73f5f139579bfd40cda4f913aa6fc53dab8e3d7dab144b9329941595ac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one succession edge, inserted inside the successor's own batch and cycle-checked in the same transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:90d6f016a72cf15632a1e27995ba8965a6f7c3051c2d4b7b6c6898cf32543117",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_succession_edges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shape check: the nine admitted labels and the shared cardinality rule, reading no content, no diff and no text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:2e569a4a4b36953229a80750afd7ec8fd8cd76b203ad74e67d39dd48c6836294",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_admitted_declaration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The refusal of accepted origin data, with no promotion operation anywhere in the group.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:839523f0f1087c03a72213e53004f8a96967fb759630ee98242bd5f363866437",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_proposed_origin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The generation gate, compared against the dataset's own recorded generation rather than the build's support.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:6eea1458736dd62b5744668bfcae1cfc8ab3cb482e392b2fc0aaf0c2fc8c8a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_effect_generation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:c9e2c0cec49ce3403eb9beea3108812685201376bdf8e6c0e7f1c783f20f5852",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_effect_generation_or_raise"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The four resolved reference families and the two deliberately unresolved ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:aba7d09c882a96f57bbd28a8cfd0d069048913a4aceada98589fbf7ed2a2d22a",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_payload_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The duplicate scan, bounded to the one change set and comparing only label and the two reference sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:ba2e7fce9ddcbd70b5a300ab736b3dd6f8670d90efb1a126fd6168e9b62852b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_no_stored_duplicate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,163 @@
+{
+  "path": "mcp/src/agents_remember/application/role_capsules/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The admitted compile entry point this package exports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The root-confined source admission this package exports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:915fd89222d1328505df921b788cb9559a7190b597c8b7549b071d961fa0e4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_capsule_sources"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:5ace26cae48ab5833cfda401dceae4d4a4c0ddd4b37b6946b5c6a0be821bac36",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleAdmissionRequest"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:917f897eddff348cf7a75a420cdf74ab20d185daf659f681e16a00e17e16e4a3",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The pure compiler this boundary feeds, which owns every selection rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aaee4b8c32a28769990b218d044bec323387fda5",
+            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_role_capsule"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aaee4b8c32a28769990b218d044bec323387fda5",
+            "content": "sha256:40e34ffd4e456f90c078e20a0cb2511078ac5d9f00c4b001142ea4965a8b5020",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sibling model package whose contract this boundary resolves inputs for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:fba635e4a8c48dbcba56094aea3dadd7a723aa3dd607642e47be93ae599628bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleBinding"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752ee10c2dd4ba370a7c7aea69a29d6f35f52b2",
+            "content": "sha256:d464added16b1b2082a4125e9703f5bedd93e564691bc9254aefa030163dfae9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSource"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:da228ad4d9aa6db3d88b70dee03b08c94ddbd5ab36bbef511cc168171aeecaa5",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

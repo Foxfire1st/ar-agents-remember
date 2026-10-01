@@ -1,0 +1,249 @@
+{
+  "path": "mcp/tests/test_state_signal_worker_wake.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The incident shape: a completed worker with no inbox row wakes its current manager with one durable state-signal carrying seat, leaf, role, outcome and evidence identity, and re-projection mints no second row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:31c6ef6ac755a4f695752d2ee3b648e36dcd5b62f6872206796344813a729857",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_completed_worker_without_inbox_row_wakes_current_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "One owned worker seat reporting canonical terminal truth from the adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:74a2aef66aeb0361351d3d3456f9b165d5872d5175c05385e3b31aeda59e25f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worker"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The manager seat, addressed by current occupancy rather than by a recorded sender.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:723c9e0efacb88d04b7ad873b69791b271b62624a083d8195d939892358d8646",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The sprint-scoped orchestrator, the manager's own structural owner, present so the sweep's unrelated dead-upstream fact stays quiet and the whole store can be asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:09468cdaee15e904b3c595d286ba546faa15911b1efe09ca0ff4fb6613c60e73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sprint_orchestrator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The temporary world writes real sprint, master, leaf and unrelated-master documents before the sweep resolves structural owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:414bb67237dff98e2f4fb50ef505d6b6d8213b2dea1663aa8b78ccfc0ee6e95c",
+            "locator": {
+              "kind": "symbol",
+              "name": "setUp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Every agent the whole store names, as address or as owner, used to prove no unrelated manager was woken.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:adf0cb35a04f92ae6bc63beda35274c1bff5340489fc059b5c9982735d89fd5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_addressed_agents"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The module's `unit-regression` lane row, added by the same change set that created the module.\n\nAnchor: \"mcp/tests/test_state_signal_worker_wake.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:a38cbf7c59e1ca08118684de67d88f1728bcae1f9762345fff6772282d51bd6b",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dedupe is per terminal-evidence identity, not per seat: a second turn on the same stored row wakes the manager again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:7508a33aabbb488183d47afee1777554412c8a09180cefdfb7b32de80b3c2945",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_second_terminal_turn_for_the_same_seat_wakes_the_manager_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`failed` and `unknown` outcomes never wake the manager and leave the seat unstamped and eligible, however real the evidence identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:e962ecba1a0e95ca5f0da98e604e3081b2df8155f5c53809824a1031a69eca3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_or_unknown_terminal_turn_never_wakes_the_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "An interrupted turn wakes the manager as `interrupted` with its origin, not as a completed turn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:59d49b5b6d60a623f8a560a85f98325a7994b68a5ed8fa23a52104c46d50ebfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_worker_wakes_manager_as_interrupted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The wake leaves the leaf and master task documents byte-unchanged; it never closes task work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:e8aaf0da89cde7ff77d1ffb82fcdd0acb93b2bff26c8a808478b62bee70f93c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worker_wake_leaves_task_documents_untouched"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A turn-end without a terminal evidence identity wakes nobody; stamping the adapter identity alone makes it wake.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:485725eb3989de2e56ad3cc064b5447187616b1e7e0ed599be274dce0f641229",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_turn_end_without_terminal_evidence_identity_wakes_nobody"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A worker below a managerless master wakes nobody, stamps no marker, guesses no global owner, and stays eligible for the next sweep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:a0f6022cac7200ff2520d5e0b7bcdd982ed5d06e77a07579e3325582129ce673",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worker_below_a_managerless_master_wakes_nobody_and_stays_eligible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The terminal host records every contact the sweep makes, so an empty live terminal-session read is a measured zero on a host the delivery path reached.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:eeac4a906c8d753d20de75fa80d8463d9a834af9d07a372868431dc1601bd62a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RecordingHost"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The accepted paster keeps delivery assertions on the shared protocol seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f4a1e99e828eb9979624a9cf31d41069c6cc3f",
+            "content": "sha256:795c5f3eb9a93eba801e005f5abb50ec415a5257ca10fcb59a8287b398c8516e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_accepted_paster"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

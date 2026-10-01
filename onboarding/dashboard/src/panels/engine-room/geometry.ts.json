@@ -1,0 +1,88 @@
+{
+  "path": "dashboard/src/panels/engine-room/geometry.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scene-wide coordinate constants and conduit-path builder consumed by the layers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:90c16dfc396d21ee0a085a71634a4c56c6d84875cd5a754a95bece8cc000f5c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "COL_MAIN_CX"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:7c3ee3a791b37ef2418dcb2c82f1a40d6817975ba6e171b2abb31553000c897d",
+            "locator": {
+              "kind": "symbol",
+              "name": "conduitPathD"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The runtime/state vocabulary narrowing shared by gauges and conduits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:9d01763296cfa395218917f0b578f6da349947b0aec03d46064b3d09cd5883c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtimeState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:281c97ffe839783da21ba1cf64f67a1a8459c60abc261e1956f63b0a96c61068",
+            "locator": {
+              "kind": "symbol",
+              "name": "conduitState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The materialisation/block derivations this module feeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:96ae224a660d306e828d63dac5c820748e724ec62b58b9affa6c2b6db358a4e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "branchEnter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:8c9d4ce0c0ed0a0879f1a5ee0ea038662470e23436de1e416d11af48e3650200",
+            "locator": {
+              "kind": "symbol",
+              "name": "isBlocked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

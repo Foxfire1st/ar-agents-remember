@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/measurements.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The measurement cache and constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe35126e216da6b8c168d485c93a127b6ea73dd",
+            "content": "sha256:389457dea7f927a2e139fde4251e42049c046238ac9a89b26bdd5efbd0bdeefa",
+            "locator": {
+              "kind": "symbol",
+              "name": "readStoredMeasurements"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9fe35126e216da6b8c168d485c93a127b6ea73dd",
+            "content": "sha256:e10fcb3482cae93c079b616524fe9e79d6f181628a55034ea4bba98a48f118f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "storeMeasurements"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9fe35126e216da6b8c168d485c93a127b6ea73dd",
+            "content": "sha256:810929b43f19270dd1b984a7dfd977ff2d167b4d712ca92b0b10fbd536d7e54d",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPERATOR_SCROLL_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

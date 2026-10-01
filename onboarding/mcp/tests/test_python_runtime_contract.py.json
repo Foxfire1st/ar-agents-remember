@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_python_runtime_contract.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Runtime builder is fully cloned atomically published and reused",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ddcd1ada70825db33a085db4980598c5a19c7c5",
+            "content": "sha256:6113fc67bbd8947f6a8188eafbc25c401083dc984e717cc0452c7da81fb8a68b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_builder_is_fully_cloned_atomically_published_and_reused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Existing foreign builder is refused and preserved",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ddcd1ada70825db33a085db4980598c5a19c7c5",
+            "content": "sha256:0cf273e554c9aa942ef912af9876e49b520b03bce8f6974a2bbcbb6a1b6ae3cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_foreign_builder_is_refused_and_preserved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

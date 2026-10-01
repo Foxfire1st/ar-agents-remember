@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/masterSeries.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/masterSeries.test.tsx`   |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-24T15:28+02:00                                        |
-| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8`                  |
-| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -38,28 +28,24 @@ assertions preserved from the monolithic suite.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The master-series navigation suite. | `describe` | dashboard/src/panels/detail-panel/masterSeries.test.tsx:15-411 |
+- The master-series navigation suite. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 ## 260821-CLIVE Discarded-Before-Start Proof
 
@@ -70,18 +56,3 @@ The inline proof also carries the exact generated contract's required `childJson
 `childMarkdown` missing-state witnesses. Those opaque records establish fixture conformance; the UI
 continues to render the proof fingerprint rather than interpreting or exposing their contents.
 Existing sprint-to-master-to-leaf and cross-series navigation coverage remains in force.
-
-## Update History
-
-- 2026-08-24T15:28+02:00 — No content impact: added required `childJson` and `childMarkdown`
-  missing-state proof witnesses to the discard fixture; mounted UI assertions and behavior are
-  unchanged. Verification metadata remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Added mounted proof that discard-before-start history is visible and
-  does not increment live completion.
-
-- 2026-08-20T04:36+02:00 — 260815-DAG-L14: added the mounted-UI proofs for the sprint → master → leaf navigation (typed `masterRef` row opens the commanded master) and the unprojected-target fallback. Verified at code commit 9c3180c1.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  master-series suite split from `DetailPanel.test.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.

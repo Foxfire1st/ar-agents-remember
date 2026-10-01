@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Owning overview](overview.md)
@@ -40,50 +30,26 @@ Physical code execution root and logical code/memory pair identity are separate 
 
 No additional source-local TODO is asserted by this maintenance pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is configured. | — | — |
+No external domain source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The running-owner observation reloads the selected output and builds a bound physical view. | `observe_prepared_code_view`; `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:65-92; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
-| The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease. | `observe_selected_prepared_code_view`; "Reprove a selected code output without requiring a live worker lease." | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
-| Selected record and intent currentness are rechecked around observation. | `_require_selected_code_current` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:166-186 |
-| The execution view binds the exact output bytes, raw commit/tree, and logical pair. | `_build_prepared_code_view`; `_PreparedCodeViewBuild`; "logicalPair"; "codeCommit" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:189-223 |
-| Preparation precedes a fresh observation when the caller requests a prepared view. | `prepare_code_view`; `observe_selected_prepared_code_view` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:226-231; mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:95-163 |
+- The running-owner observation reloads the selected output and builds a bound physical view. [1]
+- The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease. [2]
+- Selected record and intent currentness are rechecked around observation. [3]
+- The execution view binds the exact output bytes, raw commit/tree, and logical pair. [4]
+- Preparation precedes a fresh observation when the caller requests a prepared view. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Documented strict existing-code bindings in both live-worker and selected-record views, preserving the physical-root/logical-pair distinction. Source SHA-256 `afc00f38d2cee203d28a9a2bdc35d61a641d5b73ea818f66c3d4d6f2ba811705`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py` changed since
-  the recorded verification commit. Re-read the card against the frozen on-disk source and
-  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
-  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit (a pure, net-zero import relocation of the memory candidate-pair
-  resolver). Re-read the card: no claim names the moved module and the cited range is exact. No
-  wording changed; verification metadata remains closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `prepare_code_view` repointed to mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py:221-226. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
-
-Created from the current source. Verification metadata is intentionally unset until a genuine commit-based verification occurs; no test or acceptance result is asserted.
+No distinct cross-repository evidence source is configured for this file.

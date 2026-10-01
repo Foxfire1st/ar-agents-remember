@@ -1,0 +1,155 @@
+{
+  "path": "mcp/tests/test_provider_degradation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The detector and evaluator under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:e3c123bc9822ba8b99dcb74c283abd42947e6224905682ba3164a4b36cc27d30",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_degradation"
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:8afbf9c6eb69bf5c788c0dee107788c717d31829ca9417501296c174edf133f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_provider_degradation"
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:963ee1671e9a7d807c97b60622a62f43d2922b64e7a3671619181360eddb9373",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:532f4a9c0205081dc78e30733995b35c894fa0bda33d2819462e65a72e1b79aa",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 326
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The settings dataclass this suite constructs directly to tune thresholds per test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
+            "content": "sha256:ae19850cc8c13885fe7c3551e4cc81bb2c0bd7941ed3cbd9de846437de08f0f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderDegradationSettings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The metrics store/schema rows the classifier tests construct as fixtures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c86583a29b0796ba6496bce761a659f55b347e4",
+            "content": "sha256:d1e4da6082542791ea2019dcbcdfd6c7ac0b73d96f3f2f1024264ba483544541",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROVIDER_INDEX_STATE_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/providers/metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c86583a29b0796ba6496bce761a659f55b347e4",
+            "content": "sha256:a876b725220e82f9eb87229dbd19c9319d5a12d5911927fdd3d8b6ca0b2c5f6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContainerSample"
+            },
+            "path": "mcp/src/agents_remember/providers/metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c86583a29b0796ba6496bce761a659f55b347e4",
+            "content": "sha256:3f91cd473aa85c0f74be69954010e9aa6892b53c97c2161356c42cc791d0e040",
+            "locator": {
+              "kind": "symbol",
+              "name": "MetricsSnapshot"
+            },
+            "path": "mcp/src/agents_remember/providers/metrics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The terminal catalog entries seeded as alert recipients.\n\nAnchor: \"def from_json(cls\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "477f996d57219b103dd4c13ce6cca3c70bc2851e",
+            "content": "sha256:f68831231c78532de936316ada7329eec381038925fef295ad22841e86f00c40",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The operator inbox store read back to assert alert rows/roles/responses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d66d265a1b51ffcf94a565c09df1c9480add6e3",
+            "content": "sha256:03651d2009a1dc4bd934e1ecd2ec89adebae7121fd4e6d15f06b08b57fa3383a",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperatorInboxStore"
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

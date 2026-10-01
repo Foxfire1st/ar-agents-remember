@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/facade.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The active service owns facade registration and replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d9460000d36ec6fc93ecbeda40bf9ef38945bb2",
+            "content": "sha256:f5547c5befb1dbf44669b5b0ffd6d015a9b6b16aa20b6dc537acfce4bcd0c37e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ActiveConversationService"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d9460000d36ec6fc93ecbeda40bf9ef38945bb2",
+            "content": "sha256:de952b0bbf6343e2d19cc1152cf1d26e089d479d95e434d3c7431caf3f3fdcc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projector_for_locked"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Coordinator and stream implement the delegated work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa0b2b836fceffeb7a79b177e77a3e328bdd838e",
+            "content": "sha256:9c5ca6aa0ac6718b86da017f1f1004c6cf022b7fc40bb09e6279bb50681c20a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RebuildCoordinator"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08eaede8436d2c6b58f60b6bb5e1b89a2cacff5e",
+            "content": "sha256:26d09ec7ef38ce1dce594a31624ad055f4ead4e987a5a397987078c2dd5fd010",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionMutationStream"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08eaede8436d2c6b58f60b6bb5e1b89a2cacff5e",
+            "content": "sha256:9de0fa79b86607f72744483b6c53f1516f056b327e33a25abdfc91779df34500",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa0b2b836fceffeb7a79b177e77a3e328bdd838e",
+            "content": "sha256:7ae608f96f9ea3b4b049326e61bd33174a82b2cb4509097de4aea44814b2249c",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

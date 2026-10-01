@@ -1,0 +1,56 @@
+{
+  "path": "scripts/e2e_harness/dispatch_sentinels.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The sentinel corpus is derived from the exact live description and schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b647b7ad18ba7d2f68c7958cf19e3a4d2535261",
+            "content": "sha256:9b6dd00aadaf7892043ecf09ff51ea76dbc53f39153d48abd9ef28e8b44168f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_rejection_sentinels"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each malformed candidate must fail through the canonical validator with its expected diagnostic.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b647b7ad18ba7d2f68c7958cf19e3a4d2535261",
+            "content": "sha256:2a0fe106ded6e912804629a46d2c42111b660937251fdcaece5304d12aeca307",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prove_rejection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module imports the candidate repository's canonical validator directly.\n\nAnchor: \"from agents_remember.mcp.public_surface import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b647b7ad18ba7d2f68c7958cf19e3a4d2535261",
+            "content": "sha256:5abd120761a1c695d74e91e481cb20cbc26505e4ff56dcd8ffcff5cef0fd9c29",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

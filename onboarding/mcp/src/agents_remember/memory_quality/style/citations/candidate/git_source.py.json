@@ -1,0 +1,156 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/candidate/git_source.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate membership comes from the exact Git tree and refuses unsafe census paths.\n\nAnchor: `members`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "028bb08601874bb55237554e52086c1a73e56c2a",
+            "content": "sha256:ee78178d1fc7f1c7e7643826544108007f301c5ea87460734fa4ef626581f790",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Root and parent traversal require real directories and a regular member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "028bb08601874bb55237554e52086c1a73e56c2a",
+            "content": "sha256:4e8cbcd7d33ea6c68b6fcb14e1c73ab4976353a4856c93f86010da6ef1d1de7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Batched unfiltered hashing with post-hash identity checks; the shared bound is applied by the caller, not raised here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "028bb08601874bb55237554e52086c1a73e56c2a",
+            "content": "sha256:92473a2b13a83c918048d7d07fce273a3fd19a8d262a7fd6a72bc759752f8263",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Direct code resolution verifies the exact selected member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "028bb08601874bb55237554e52086c1a73e56c2a",
+            "content": "sha256:a477b13069c6d9c73a1780ac555f09b2ba38042b85d402c99d204faad4bb55c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The candidate population now consumes the register and the caps, reporting what it excludes or skips.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "028bb08601874bb55237554e52086c1a73e56c2a",
+            "content": "sha256:2674661afa75549ad75a155af87373ddf603d0c9c056ce32722c7d595a4eef3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The register's path-rule decision the candidate population consults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:980d7b4e24c950796f641db3d639af8208f3ef09d7834ae385284d545f832c94",
+            "locator": {
+              "kind": "symbol",
+              "name": "excluding_rule"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one budget owner, which reports skips instead of raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:a0f14453b20a5d6caa4a6e7d7f345fd2888e74bda307af8b16f2af547add1de7",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_source_bounds"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The register record this route consults, including the authority Git actually exercised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:faaee0c2e5305b0aae424099606778ab4560dcc3e764f3a725745ad6536dec03",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExclusionRegister"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The tree record this route emits, carrying the population and its reported skips.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:832cb39ca66269c31c9d9211be86502cd36480b55eb364476804876e47d0c312",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeState"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

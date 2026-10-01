@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation/agents.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/conversation/agents.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `3a8ff703d796dc585b86a458daaf9eb2af6b2b31` |
-| lastVerifiedCommitDate | 2026-07-30T13:59:13+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data/conversation overview](overview.md)
@@ -61,60 +51,31 @@ to the parent instead of being trusted.
 - `afterEach` `reset()`s the real `activeConversationStore` so the store-level cases do not leak
   state; only the store is real, everything else is a plain object fixture.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The roster/focus module under test. | `deriveAgents` | dashboard/src/data/conversation/agents.ts:71-86 |
-| The store whose `agentFocusBySession`/`evict`/`reset` the store-level cases drive. | `setAgentFocus` | dashboard/src/data/conversation/store.ts:69-69 |
-| The `emptyProjection` helper used to seed an evictable projection. | `emptyProjection` | dashboard/src/data/conversation/reducer.ts:68-81 |
-| The wire types the fixtures build (`ConversationAgentRef`, `ConversationItem`). | `ConversationAgentRef` | dashboard/src/data/conversation/types.ts:148-156 |
+- The roster/focus module under test. [1]
+- The store whose `agentFocusBySession`/`evict`/`reset` the store-level cases drive. [2]
+- The `emptyProjection` helper used to seed an evictable projection. [3]
+- The wire types the fixtures build (`ConversationAgentRef`, `ConversationItem`). [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 ## 260727-CHATS-IM-L2 Current Delta
 
 Negative cases now prove that `agent-history:<thread>` and thread-scoped rebound system notices do
 not satisfy roster detection even when they carry an agent ref.
-
-## Update History
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: corrected the `setAgentFocus`
-  store occurrence (interface line 69 / implementation 125) in prose, table, and the retained
-  L2 history entry via the scoped fixer; exact non-fixing check returns zero findings.
-
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 15 citation findings; scoped check passed.
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 6 stale self-citations in Logic after
-  the second `isAgentRosterItem` case added child-history and rebound system-notice negatives.
-  The affected suites and store boundary were re-read directly: cit:([`isAgentRosterItem`], dashboard/src/data/conversation/agents.ts:14-18); cit:([`setAgentFocus`], dashboard/src/data/conversation/store.ts:69-69).
-  Every range was read back against the current source. The store bullet and reducer reference were
-  left for a later worklist item.
-
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added negative roster tests for
-  child-history state and rebound system notices, pinning the one-explicit-identity-per-seat
-  contract. Verification metadata remains pinned until closeout.
-
-- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: created the sidecar for the roster/focus unit
-  pins — the ruled roster shape, the evidence-bound label precedence, terminal-only final-message
-  previews (codex `final-message`, claude `summary`), both focus-cycle directions with the
-  stale-id-to-parent recompute, the focus filter lanes, and the store-level LRU-survival + reset
-  pins for `agentFocusBySession`. Verification is pinned to the leaf base (`842b487`) because the
-  new source file is uncommitted; closeout owns its first source stamp.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [worktree integration overview](overview.md)
@@ -40,33 +30,18 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module defines `integration_resolution_required` as its public seam. | `integration_resolution_required` | mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py:14-108 |
+- The module defines `integration_resolution_required` as its public seam. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py` changed since
-  the recorded verification commit. Re-read the card against the frozen on-disk source and
-  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
-  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit (the resolution summary and cancel note were reworded). Re-read
-  the card: it already records the reworded summary and its cited whole-file range still holds. No
-  wording changed; verification metadata remains closeout-owned.
-- 2026-09-10T15:06+02:00 — Recorded the source-drift recovery rewording: the handoff summary and cancel note now route through `worktree_sync` plus a new targeted closeout, while the refusal sentence and protected-ref/door classification are unchanged. Re-derived the public-surface anchor against the current working tree. Verification metadata remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

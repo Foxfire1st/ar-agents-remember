@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/operations/bootstrap.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/bootstrap.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-16T17:59+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -99,37 +89,33 @@ baseline — read the tree, not the drift report, and get explicit agreement bef
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation governs this repository-local operation block.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources. | n/a | n/a |
+No relevant documentation found after checking live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical source this package-data copy is sync-propagated from. | `# Operation — Session Bootstrap` | skills/l-01-agent-lifecycles/operations/bootstrap.md:1-1 |
-| Selection rule, carrier start route, and the one-carrier table. | "When it is selected:" | skills/l-01-agent-lifecycles/operations/bootstrap.md:8-8 |
-| Required inputs, including the three developer decisions. | "Required inputs" | skills/l-01-agent-lifecycles/operations/bootstrap.md:33-33 |
-| The seven-step ordered workflow, each step naming its owner. | "Normal workflow" | skills/l-01-agent-lifecycles/operations/bootstrap.md:49-49 |
-| The seven-row failure inventory a new user actually hits. | "The failure states a new user actually hits" | skills/l-01-agent-lifecycles/operations/bootstrap.md:98-98 |
-| The conformance standard: re-derivability, no independent acceptor, failures reported as failures. | "How conformance is evidenced" | skills/l-01-agent-lifecycles/operations/bootstrap.md:117-117 |
-| The authority gates, including the absent-altitude-is-the-shape rule. | "Authority gates" | skills/l-01-agent-lifecycles/operations/bootstrap.md:137-137 |
-| The two known failure-handling rows, including the capsule-delivery gap. | "Failure handling" | skills/l-01-agent-lifecycles/operations/bootstrap.md:158-158 |
-| The manifest entry binding this operation to its single carrier. | "applies_to_roles" | skills/l-01-agent-lifecycles/composition-manifest.json:127-132 |
-| The operation vocabulary extension that publishes `bootstrap` as the ninth operation. | `CAPSULE_OPERATIONS` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-110 |
-| The role card this operation is the procedure for. | `# Bootstrap` | skills/l-01-agent-lifecycles/roles/bootstrap.md:6-148 |
+- Canonical source this package-data copy is sync-propagated from. [1]
+- Selection rule, carrier start route, and the one-carrier table. [2]
+- Required inputs, including the three developer decisions. [3]
+- The seven-step ordered workflow, each step naming its owner. [4]
+- The seven-row failure inventory a new user actually hits. [5]
+- The conformance standard: re-derivability, no independent acceptor, failures reported as failures. [6]
+- The authority gates, including the absent-altitude-is-the-shape rule. [7]
+- The two known failure-handling rows, including the capsule-delivery gap. [8]
+- The manifest entry binding this operation to its single carrier. [9]
+- The operation vocabulary extension that publishes `bootstrap` as the ninth operation. [10]
+- The role card this operation is the procedure for. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract defines this operation block.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260921-ICR-L27 The Operation's Sixth Step Reaches The Knowledge Foundation
 
@@ -164,27 +150,3 @@ foundation's state — recorded at an identity, or the named state that says it 
 **This card describes a generated copy**, propagated from
 `skills/l-01-agent-lifecycles/operations/bootstrap.md` by `scripts/sync-skills.py` into this package-owned
 copy and the eight harness starter packages.
-
-## Update History
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Required inputs" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:33-33. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Normal workflow" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:49-49. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "The failure states a new user actually hits" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:98-98. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "How conformance is evidenced" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:117-117. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Authority gates" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:137-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Failure handling" repointed to skills/l-01-agent-lifecycles/operations/bootstrap.md:158-158. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the step's seat gate changes.** The step now states that the roles admitted without a task document are `chat`, `terminal`, this operation's own carrier and `curator` (the developer's 2026-09-24 ruling), and that it hands the authoring to a taskless curator session for a repository with no task; the L27 note is retained as true at its own bytes with a second dated note for these bytes. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T12:44:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: step 6 and the four knowledge rows.** The new step, the renumbered 7/8, the "reached by this operation's step 6 rather than by a re-entry" selection note, the four failure-table rows that keep `not-recorded` / `recorded` / `unusable` / a refused admission distinct, the prohibition on authoring the foundation, and the completion sentence that now carries its state. **Citation accounting:** the rows this card carries were re-read against this candidate and re-anchored to the lines that now carry each construct. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `# Lifecycle — Bootstrap` repointed to skills/l-01-agent-lifecycles/roles/bootstrap.md:6-231. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
-
-- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: created this card for the operation block the leaf
-  added (`CAPS-R13@v1`). It records the selection rule, the free-agent start route stated inside the
-  block itself, the seven ordered steps with their owning surfaces, the seven-row failure inventory
-  (including the unsupported-topology refusal that must never migrate an `ar-memory/` root), the
-  re-derivability conformance standard with its no-independent-acceptor rule, and the authority gates
-  that forbid "fixing" the absent task altitude. Companion card: `roles/bootstrap.md.md`. Verification
-  metadata is left at the leaf base commit because the source is uncommitted — the governed closeout
-  stamps the real code commit, and no hash or fingerprint was invented here.

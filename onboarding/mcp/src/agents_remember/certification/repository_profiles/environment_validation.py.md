@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/repository_profiles/environment_validation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/repository_profiles/environment_validation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:39:50+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification contract overview](../overview.md)
@@ -42,31 +32,21 @@ Use these functions through the aggregate repository-profile validator and prese
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+No configured domain documentation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `_validate_environments` implements the described validation step. | `_validate_environments` | mcp/src/agents_remember/certification/repository_profiles/environment_validation.py:12-32 |
-| `_validate_selected_producer` implements the described validation step. | `_validate_selected_producer` | mcp/src/agents_remember/certification/repository_profiles/environment_validation.py:74-90 |
+- `_validate_environments` implements the described validation step. [1]
+- `_validate_selected_producer` implements the described validation step. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository reference is required. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:39:50+00:00 — Reconciled the landed validation/helper extraction against IAS d3610903; retained ownership and refusal semantics and refreshed same-file evidence ranges. Verification stamps and final acceptance were not advanced.
-
-- 2026-09-06T15:09:25+00:00 — Created from actual source at c69d5171187fa1957025e393270db9f5a864ab14; documented the declaration checks and their exact runtime limits.
+No cross-repository reference is required.

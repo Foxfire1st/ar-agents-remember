@@ -1,0 +1,176 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:833ade30cfb4dbbc8ef13abf4e7816a932f9edb0b852e1c7f55c7735a27eb944",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_evidence_inventory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:86d77ee4e1df44b6a15c7842bec46e0624ceb2c6579c0c5d7662a8d7d65f0256",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Inventory loading validates the catalog against source-derived consumer facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:833ade30cfb4dbbc8ef13abf4e7816a932f9edb0b852e1c7f55c7735a27eb944",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_evidence_inventory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:443ef26d98fad6c134d34445c38f7cf4ac82303d89533f96dd0d883e6ec8dd9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_path_and_consumers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:ff293e5c5d8a50c7b64271cfacb5bce6a62d7678b61b307cf10aa38fc1c4d3a4",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:3409892fd22a8defad8bbccdb1f69d65e4178f13a5ebe31e81c82d455aa36422",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 349
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Contract owners and exact evidence selectors must resolve to real source nodes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:9fbf1f6cc27af1afe79f9d47457c1c7a84c87ee1f7ae3aa292756804632eb4a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_contracts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:1dcbeff02a82d8991e28f22a90129df3b99bed6b1407bc22fab25bd41acc2e0a",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 453
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Discovery delegates the configured-threshold and durable-artifact predicate to one owner.\n\nAnchor: \"def governed_artifact_paths(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:53b897ad4b97880593f9c6a5e1e784a69129c7570e283ae5abf7e42dea75a424",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_catalog_coverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce3cde113e7a8b3f96d10aeda24fb596e7d676f5",
+            "content": "sha256:999afbcb138111be1570569e39b7979048a3a91320dc76efd4e91a6cbdcedc39",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_governance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The module's own docstring names it the **consumer-completeness oracle** and separates it from the catalog byte pin beside it, naming each gate's documented repair.\n\nAnchor: \"consumer-completeness oracle\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:be61ba29be63fadf7bcafa074f271b93387b50b8942b7746ca3f52dc23f3d329",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:5b7e4ca83b807b7188954973a23fcc0578f621868e26bdf934ea848bcbcd68dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CATALOG_PATH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

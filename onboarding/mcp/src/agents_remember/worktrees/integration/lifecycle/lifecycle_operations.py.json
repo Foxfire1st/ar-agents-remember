@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_require_series_recording_only` refuses enabled code or memory writes for recording-only series closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:60544388f0819cdf7ddfc3be044f30471d2aa2f18958a14af7c7b615ccf7c8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_series_recording_only"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`start_or_observe_closeout_operation` composes closeout admission through the journal-owned lifecycle route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:a22e7f63d314667eb3c66ea11182d1d6dcc0897edda80291388f2bd301b60c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_or_observe_closeout_operation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Detached launch admits the Linux runtime, transfers the real child object to the reaper, and then records process identity. (`launch_detached_worker`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:078cb53c91a747a1c64a7ba26deaadc3b247dc91b4c79855576643001feb4e26",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_detached_worker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "R03 dependency binding on claims and queued records plus launch re-requirement. (`queued_operation_record`; `_prepare_closeout_claim`; `_recover_launch_and_project`)\n\nAnchor: `queued_operation_record`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:8bf82fc0ab65e90ec318dfa7a185c8af7e8994aac825a108766f299bafd20373",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

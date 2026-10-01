@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:05:38+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -66,7 +56,9 @@ managed sync, `knowledge-validate`) refuses such a reorder. This is L13's carrie
   reword of the moved option is not caught, and duplicate option texts are not followed. Binding links to a content
   hash would change the L21 link shape and was not taken.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R14@v2` of task
@@ -74,30 +66,19 @@ No domain documentation source is configured for this repository (`system/source
 and `14_reconsideration-surfacing.json`; they live outside the code and memory repositories, so they are named here and
 not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: why a reorder would retarget a link, and how an alternative is followed. | "Reordering a decision's alternatives" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:1-17 |
-| Options, linked indexes and the raw decision files of a tree. | `_options`; `_linked`; `_decisions` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:39-46; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:49-57; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:60-71 |
-| Moves followed from both sides by unique option text. | `moved_linked_alternatives` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:74-104 |
-| One refusing finding per move, against every base. | `check_linked_alternative_order` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:107-129 |
-| The rule registered on import. | `RECONSIDERATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:132-142 |
-| Swap refused twice; reword and append pass; moves into a linked index refused from either side. | `test_a_reorder_of_linked_alternatives_is_refused` | mcp/tests/test_reconsideration_surfacing.py:561-601 |
+- The module docstring: why a reorder would retarget a link, and how an alternative is followed. [1]
+- Options, linked indexes and the raw decision files of a tree. [2]
+- Moves followed from both sides by unique option text. [3]
+- One refusing finding per move, against every base. [4]
+- The rule registered on import. [5]
+- Swap refused twice; reword and append pass; moves into a linked index refused from either side. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the rule reads the validation context's trees only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:05:38+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): created this card for the new file MIK-R14 adds, recording L13's carried decision (01:45:56), the Q4 recorded limit (04:37:56), review F5 and F6 (05:31:11) and note R6-4 (11:53:13). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_structural_dispatch_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pre append failure retires only the proven unbriefed generation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e5d46ca54c20a0bcacdc488f4cc322e05b4fb6",
+            "content": "sha256:45df03019155819c51de9b53bac720608f486da0c81d11d2133f7d80fe2f9800",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pre_append_failure_retires_only_the_proven_unbriefed_generation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Post append compaction failure keeps and reuses the briefed generation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e5d46ca54c20a0bcacdc488f4cc322e05b4fb6",
+            "content": "sha256:5c296846122daab53c4614f898de7afe959000c9d8c792a8ddf1499c0c39d264",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_post_append_compaction_failure_keeps_and_reuses_the_briefed_generation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Receipt bind failure is unknown not rollback and retry repairs it",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e5d46ca54c20a0bcacdc488f4cc322e05b4fb6",
+            "content": "sha256:ee11a93080ecdc9f38b40c64e9d40855fe1f2a3345e421a140f161950a6e4c0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_receipt_bind_failure_is_unknown_not_rollback_and_retry_repairs_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Live reviewer from another parent is not reused or retired",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e5d46ca54c20a0bcacdc488f4cc322e05b4fb6",
+            "content": "sha256:be57863fc83b2680dac36d46a7ccdb4ecaeee14d71ee42a9413a3819a655d2c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_reviewer_from_another_parent_is_not_reused_or_retired"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Terminal failed brief retires and replaces that generation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e5d46ca54c20a0bcacdc488f4cc322e05b4fb6",
+            "content": "sha256:2f681db6f6c5d1daa6a7ebc9b88fe18233d519c83fec51bb297441f96a2f9509",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_failed_brief_retires_and_replaces_that_generation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

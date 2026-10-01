@@ -1,15 +1,5 @@
 # dashboard/src/data/operatorInbox.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/operatorInbox.ts`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash |                                                  `e9678c56e7f441371584ad8a18e2b9380cb38cf0`|
-| lastVerifiedCommitDate |                                                  2026-09-15T20:50:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -51,44 +41,25 @@ body, tiny status union, and no optimistic store mutation.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The observable-lifecycle design names pull-based return channels as the durable fallback when push or
 direct re-invocation is not available. This helper is the dashboard client side of that fallback.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Pull-based return channels resume gate answers when a harness cannot be pushed or directly re-invoked. | "The return channel (four layers on one durable truth)" | docs/design/observable-lifecycle.md:286-304 |
+- Pull-based return channels resume gate answers when a harness cannot be pushed or directly re-invoked. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The helper defines the request/status contract and posts JSON to `/api/operator-inbox`. | `postOperatorInbox` | dashboard/src/data/operatorInbox.ts:18-32 |
-| `GateResponder` calls this helper only after lifecycle-to-hosted-session lookup fails. | `GateResponder` | dashboard/src/panels/GateResponder.tsx:720-780 |
-| The serving endpoint writes the inbox entry with developer/dashboard attribution. | "def _operator_inbox_response(" | mcp/src/agents_remember/serving/_app_routes.py:344-344 |
-| The helper test pins the POST body and error mapping. | `postOperatorInbox` | dashboard/src/data/operatorInbox.test.ts:5-45 |
-| `AgentPickupIndicator` calls the dismiss helper for stale pending responses. | `AgentPickupIndicator` | dashboard/src/panels/AgentPickupIndicator.tsx:42-83 |
+- The helper defines the request/status contract and posts JSON to `/api/operator-inbox`. [2]
+- `GateResponder` calls this helper only after lifecycle-to-hosted-session lookup fails. [3]
+- The serving endpoint writes the inbox entry with developer/dashboard attribution. [4]
+- The helper test pins the POST body and error mapping. [5]
+- `AgentPickupIndicator` calls the dismiss helper for stale pending responses. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None. | N/A | N/A |
-
-## Update History
-
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 4 citation rows with exact anchors and ranges: the observable-lifecycle return-channel section (docs/design/observable-lifecycle.md L286-L304), the helper contract (operatorInbox.ts L1-L48), the serving endpoint's developer/dashboard attribution (serving/app.py L1233-L1274), and the helper test (operatorInbox.test.ts L5-L45). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-04T12:31+02:00 - L3: mirrored the expanded `/api/operator-inbox`
-  request body with recipient role, sender/message metadata, artifact path, and
-  hosted-delivery opt-in. Verification metadata pinned until closeout stamps the
-  L3 commit.
-- 2026-06-25T13:10+02:00 — Task 23/24: added `dismissOperatorInboxEntry` for the task-row check-chat warning.
-- 2026-06-23T15:05+02:00 — Created for task 10 dashboard fallback: `postOperatorInbox` sends missing-hosted-session gate responses to `POST /api/operator-inbox` and reports posted/error for the responder UI. Verification metadata pinned until closeout stamps the task-10 code commit.
+None.

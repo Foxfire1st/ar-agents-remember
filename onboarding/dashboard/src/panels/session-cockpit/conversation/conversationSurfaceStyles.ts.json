@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversationSurfaceStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The surface recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17affc0d989bc627294fa5f2b1ceff643e0af91f",
+            "content": "sha256:236e9d077e679976e96332e805def464722c63407870e36d9585b5219068e52c",
+            "locator": {
+              "kind": "symbol",
+              "name": "surface"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17affc0d989bc627294fa5f2b1ceff643e0af91f",
+            "content": "sha256:2751315f6879d0cd8b3d3880942d9f72e156b6ff811888b59bea59a888bd2b18",
+            "locator": {
+              "kind": "symbol",
+              "name": "toolbar"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17affc0d989bc627294fa5f2b1ceff643e0af91f",
+            "content": "sha256:06bac64439641624b0aab9d283364d627316705f7e1041f68a35ee29330fc107",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentHistoryError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

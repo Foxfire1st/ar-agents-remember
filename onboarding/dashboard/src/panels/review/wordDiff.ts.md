@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/wordDiff.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/wordDiff.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:18:53+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -77,40 +67,31 @@ lists (conditions, exclusions). `IntentWordDiff.tsx` draws what it decides. It h
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured. The requirement packets `MIK-R35@v1` and the adopted `ICR-R35@v1`,
 and the leaf's rulings (`35_word-level-intent-diff.json`), live outside the code and memory repositories, so they are
 named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of rules 1, 1a, 2, 3, 4 and 8. | "every byte of the text is in exactly one token"; "Nothing is normalized, trimmed or summarized." | dashboard/src/panels/review/wordDiff.ts:1-19 |
-| The named rewrite ratio and the alignment bound. | "export const REWRITE_RATIO = 0.5;"; "export const DIFF_CELL_LIMIT = 2_000_000;" | dashboard/src/panels/review/wordDiff.ts:21-26 |
-| The diff's parts and its three answers. | "export interface DiffPart {"; "export type TextDiff =" | dashboard/src/panels/review/wordDiff.ts:28-45 |
-| Whitespace-preserving tokens. | "export function tokenize(text: string): string[] {" | dashboard/src/panels/review/wordDiff.ts:49-51 |
-| The token LCS with prefix and suffix set aside, and the coarse fallback past the bound. | "function editScript("; "function middleScript(" | dashboard/src/panels/review/wordDiff.ts:67-85; dashboard/src/panels/review/wordDiff.ts:87-117 |
-| A replaced phrase as one removed and one added run. | "function regions(parts: DiffPart[]): DiffPart[] {"; "function betweenChanges(" | dashboard/src/panels/review/wordDiff.ts:150-171; dashboard/src/panels/review/wordDiff.ts:174-178 |
-| The decision: identical, whitespace-only with all whitespace removed (F3), or words with the ratio. | "export function textDiff(before: string, after: string): TextDiff {" | dashboard/src/panels/review/wordDiff.ts:180-206 |
-| Exact reassembly of each side. | "export function sideText(" | dashboard/src/panels/review/wordDiff.ts:210-216 |
-| Whitespace made visible and named. | "export function visibleWhitespace("; "export function describeWhitespace(" | dashboard/src/panels/review/wordDiff.ts:219-223; dashboard/src/panels/review/wordDiff.ts:226-242 |
-| Rule 1a: LCS by exact text, moved items out before gap pairing, gaps paired only on equal counts. | "export function alignLists("; "function movedPairs("; "function gapRows(" | dashboard/src/panels/review/wordDiff.ts:258-280; dashboard/src/panels/review/wordDiff.ts:283-300; dashboard/src/panels/review/wordDiff.ts:302-330 |
-| The renderer that draws it. | "export function IntentStatementBody({" | dashboard/src/panels/review/IntentWordDiff.tsx:559-613 |
-| The unit cases. | "reassembles both exact texts from its parts, whatever the change"; "takes moved items out of the gaps before pairing, and pairs equal texts one to one" | dashboard/src/panels/review/wordDiff.test.ts:65-80; dashboard/src/panels/review/wordDiff.test.ts:200-213 |
+- The module's own statement of rules 1, 1a, 2, 3, 4 and 8. [1]
+- The named rewrite ratio and the alignment bound. [2]
+- The diff's parts and its three answers. [3]
+- Whitespace-preserving tokens. [4]
+- The token LCS with prefix and suffix set aside, and the coarse fallback past the bound. [5]
+- A replaced phrase as one removed and one added run. [6]
+- The decision: identical, whitespace-only with all whitespace removed (F3), or words with the ratio. [7]
+- Exact reassembly of each side. [8]
+- Whitespace made visible and named. [9]
+- Rule 1a: LCS by exact text, moved items out before gap pairing, gaps paired only on equal counts. [10]
+- The renderer that draws it. [11]
+- The unit cases. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T13:18:53+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): created this card for the new pure module MIK-R35 adds, recording rulings Q2 (`REWRITE_RATIO = 0.5`, counting over the longer side, exactly 0.5 not a rewrite; 2026-09-30T11:53:13), Q5 (rule 1a as written), F3 (whitespace-only with all whitespace removed; 12:16:39) and the R2-2 note (12:43:15), plus one candidate invariant. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

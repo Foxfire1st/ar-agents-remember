@@ -1,0 +1,175 @@
+{
+  "path": "mcp/src/agents_remember/serving/codex_app_server_turns.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `StartedTurn` (lines 28-39) — What ``turn/start`` answered: which turn began, in what state, for which operation..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:36d9f2dea191037b1936818780cc483fa833edfa8d2df785faf745df4090754b",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartedTurn"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:1f78e5b23d8d74c1ca8d5c80792dc93c9ee3c64878c6275e0a9408b7430249bf",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `verified_asset_path` (lines 42-52) — Re-verify the staged file at construction before the native process sees its path..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:8d4bf99c43ea2c4ab7309575d5d3215e0b8b6d7b1e941e7a92d9e47a4fb4f9d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "verified_asset_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:4c081e9c6e62444e5986e485795c3451fdb21aad93930bf2a11f5b9183f253bc",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `turn_input` (lines 55-61) — Build the turn input blocks; verified local images ride as native paths..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:2d21db4a33c1cdb881d2dab1dde88d424c76cb4ed9c0524a9c2aa260ae66d384",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_input"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:372bf6105d1da970039c9bbe028317d05f7b4932fc972db121fd2266c889f796",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `turn_start_params` (lines 64-92) — The ``turn/start`` params for one submission, carrying only the policies that are set..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:2a98a696d49b09877f30535d01ea02f9e3e1ae2352eef89bdfbe352e5eac3c13",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_start_params"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:9c5c5fd055a0eef6d3e8671562ea6dcbd7f2c57baa663639cc5844c944945e22",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `rejected_turn_receipt` (lines 95-111) — The receipt for a turn ``turn/start`` itself reported terminal..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:e005f3302e63e52381e30f28b2cd4f0beec66e6f6fd8b20d5cd687613a76e2d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "rejected_turn_receipt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:e06fc0cd2af31daacdaa156c95959745a1e2c7d3b7091f6d8637126c9f7af26b",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `accepted_turn_receipt` (lines 114-137) — The receipt for a turn that started, recording whether it also finished inside the call..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:5ac5683cbb284369ea5542931befc35b99a47eaa6447ad582c2da92474afbe4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "accepted_turn_receipt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bb7574b10e150c3242f37f491a8b0202001d29b",
+            "content": "sha256:77d5e20c937477cdf92e46e3c06a962a5cd8e17b179e09ad10f345e9201e861e",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

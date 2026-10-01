@@ -1,0 +1,106 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Install/status/doctor behavior consumes runner image build and status helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
+            "content": "sha256:52bd3c9bb9583ad635f66860b519f05e12941a80201f51d0398e5ff884de1652",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_install_commands"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
+            "content": "sha256:86240505a791540944168ce9a2d6faa1bb4164e3ee410c0a98c3ad353b67fc75",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_status"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
+            "content": "sha256:f01af274112e143e320271580913e4a419c4241095496000ffa4f28ee2858d58",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_doctor"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Watcher process control consumes Docker watcher command helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
+            "content": "sha256:bde1bd37f9e5da5cd9629b0f59197038f60d85e1484435c641f4aa6f25928319",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_start_watch_process"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
+            "content": "sha256:bcc556175a2d901bd937451266fd4ded6f65d8fce971f7299610d5621cf3cb32",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_start_all_watch_process"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Refresh and bounded query commands run through Docker command helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:3453f157e693c52a99587feaf45b75054079422744f92a0f444a42be0100e164",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_refresh_command"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3a70677d9651cd35ac2ce27a9583647d348e522",
+            "content": "sha256:3b96a5d26cbcd5afc428bb02273ba193617af281a595df23d77782c23f13b849",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_run_command"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

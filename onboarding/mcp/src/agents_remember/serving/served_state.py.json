@@ -1,0 +1,89 @@
+{
+  "path": "mcp/src/agents_remember/serving/served_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Serving-only fields extend the observer model and remain outside its persisted shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:c7a650fc8418729b75834341247c3ad77d5644b3bc0f545327e636fbf292cbff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedWorkspaceProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One assembly point preserves both omission and null semantics, including the observer-health key's absent-versus-null rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:b25506b3516db7bd29cf86e398cba73c3eb89f9ee23ea438eb6e4463798e7c82",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_state_tail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tail's exact key list, so assembly and contract cannot drift apart silently.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:591c47b45ceb9399b98ae3e26d585c245020884edea4abff262bf3edff98dc6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_TAIL_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declared wire form of the fourth key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:651db9ef1c066933a60bc74f05a55c7e2b7bda2a81081be02c79dcddd51c9ad9",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthPayload"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_observer_health.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The served-tail cases that drive this assembly through the production route handler and stream generator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:a2fe0aa4feeeb6823b8f7b2769b9d473e4df165d0829a51e8dfc9a30dc48c86e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthServedTailTests"
+            },
+            "path": "mcp/tests/test_terminal_observer_health.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

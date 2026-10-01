@@ -1,15 +1,5 @@
 # mcp/tests/test_tool_entry_point_sweep.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_tool_entry_point_sweep.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -116,51 +106,47 @@ literals.
   raiser means the envelope is lost at the entry point, and the repair belongs to the tool's owner
   (`L6`), not to this module.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured in this memory root. These are
 repository-owned contract and assertion facts; no external library behaviour is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended. | `EntryPointWorld` | mcp/tests/test_tool_entry_point_sweep.py:328-931 |
-| The classifier both the sweep and the controls use, so a control proves the sweep. | `classify` | mcp/tests/test_tool_entry_point_sweep.py:289-299 |
-| The refused model's identity, which separates a response-model break from the caller's invalid arguments. | `REFUSED_MODEL` | mcp/tests/test_tool_entry_point_sweep.py:208-208 |
-| `T34`'s nine tools that lose the whole envelope, each with the ordinary precondition that loses it. **Now empty** — repaired by `260918-TSIP-L6`. | `ENVELOPE_LOSING_RAISERS` | mcp/tests/test_tool_entry_point_sweep.py:98-98 |
-| The same defect on the lifecycle family's state precondition, five tools with their losing states. | `STATE_DEPENDENT_RAISERS` | mcp/tests/test_tool_entry_point_sweep.py:128-134 |
-| The matrix's four ambient states. | `AMBIENT_STATES` | mcp/tests/test_tool_entry_point_sweep.py:136-136 |
-| The population derived by rule from the roster, so the pin cannot be measured over itself. | `LIFECYCLE_STATE_POPULATION` | mcp/tests/test_tool_entry_point_sweep.py:144-146 |
-| The population written out, so weakening the derivation rule is a second visible edit. | `EXPECTED_LIFECYCLE_STATE_POPULATION` | mcp/tests/test_tool_entry_point_sweep.py:154-165 |
-| The two scaffold files the sweep's own world may gain, and nothing else. | `KNOWN_MEMORY_SCAFFOLD_ADDITIONS` | mcp/tests/test_tool_entry_point_sweep.py:171-171 |
-| The third pin: an envelope reporting `ok:false` that a caller cannot act on. **Now empty** — `citation_migrate` answers the envelope, repaired by `260918-TSIP-L6`. | `UNMARKED_NOT_OK` | mcp/tests/test_tool_entry_point_sweep.py:189-189 |
-| A refusal's own marks, read from the payload rather than from the arm. | `refusal_marks` | mcp/tests/test_tool_entry_point_sweep.py:232-245 |
-| The coordination-root zones inside which the product may legitimately write. | `COORDINATION_WRITE_ZONES` | mcp/tests/test_tool_entry_point_sweep.py:218-229 |
-| The swept population is derived and equals the live server's advertisement. | `EntryPointCoverageTests` | mcp/tests/test_tool_entry_point_sweep.py:934-951 |
-| The sweep itself: one world, one run, and the equality assertions that bind every pin. | `EntryPointProbeTests` | mcp/tests/test_tool_entry_point_sweep.py:954-1246 |
-| The executed positive control over the choke point, and both break shapes at the entry point. | `ChokePointControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1249-1345 |
-| The census controls: write, rewrite and delete in both repositories and outside every zone. | `EntryPointCensusControlTests` | mcp/tests/test_tool_entry_point_sweep.py:1348-1420 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_entry_point_sweep.py" |mcp/tests/test-evidence-lanes.toml:266-266|
-| The advertised roster the swept population is derived from and asserted equal to. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-97 |
-| The registry whose models classify a payload that does not validate. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:163-253 |
-| The choke point a bypassing handler skips, and the validation this module's control executes. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
-| The validation the positive control drives directly. | `finalize_tool_response` | mcp/src/agents_remember/models/tools/tool_response.py:15-26 |
+- The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended. [1]
+- The classifier both the sweep and the controls use, so a control proves the sweep. [2]
+- The refused model's identity, which separates a response-model break from the caller's invalid arguments. [3]
+- `T34`'s nine tools that lose the whole envelope, each with the ordinary precondition that loses it. **Now empty** — repaired by `260918-TSIP-L6`. [4]
+- The same defect on the lifecycle family's state precondition, five tools with their losing states. [5]
+- The matrix's four ambient states. [6]
+- The population derived by rule from the roster, so the pin cannot be measured over itself. [7]
+- The population written out, so weakening the derivation rule is a second visible edit. [8]
+- The two scaffold files the sweep's own world may gain, and nothing else. [9]
+- The third pin: an envelope reporting `ok:false` that a caller cannot act on. **Now empty** — `citation_migrate` answers the envelope, repaired by `260918-TSIP-L6`. [10]
+- A refusal's own marks, read from the payload rather than from the arm. [11]
+- The coordination-root zones inside which the product may legitimately write. [12]
+- The swept population is derived and equals the live server's advertisement. [13]
+- The sweep itself: one world, one run, and the equality assertions that bind every pin. [14]
+- The executed positive control over the choke point, and both break shapes at the entry point. [15]
+- The census controls: write, rewrite and delete in both repositories and outside every zone. [16]
+- The lane row that keeps this module in the default selection. [17]
+- The advertised roster the swept population is derived from and asserted equal to. [18]
+- The registry whose models classify a payload that does not validate. [19]
+- The choke point a bypassing handler skips, and the validation this module's control executes. [20]
+- The validation the positive control drives directly. [21]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local contract claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No repository or external-system boundary is proved by this module. | N/A | N/A |
+No repository or external-system boundary is proved by this module.
 
 ## 260918-TSIP-L6 Both Pins Emptied In The Change That Repaired Them
 
@@ -181,19 +167,3 @@ rather than keeping a second inline copy that could drift. A new case,
 the real entry point — and this module grew **1274 → 1353 lines** in the change.
 `STATE_DEPENDENT_RAISERS` is untouched: its five members cannot refuse without a contract change
 (`T66`, deferred), so the pin stays and names itself as an open, measured defect.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 9 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`public_roster.py`, `test_tool_entry_point_sweep.py`, `tool_registry.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:33:12+00:00: Generated citation repair: "mcp/tests/test_tool_entry_point_sweep.py" repointed to mcp/tests/test-evidence-lanes.toml:266-266. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_tool_entry_point_sweep.py" repointed to mcp/tests/test-evidence-lanes.toml:213-213. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_tool_entry_point_sweep.py" repointed to mcp/tests/test-evidence-lanes.toml:195-195. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `EntryPointCoverageTests` repointed to mcp/tests/test_tool_entry_point_sweep.py:934-951. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_tool_entry_point_sweep.py" repointed to mcp/tests/test-evidence-lanes.toml:188-188. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T19:52+02:00 — 260918-TSIP-L6 curator (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): **both pins emptied in the change that repaired them** — `ENVELOPE_LOSING_RAISERS` → `frozenset()`, `UNMARKED_NOT_OK` → `{}` — with `T34_REPAIRED_TOOLS` added as the single source of truth for the repaired nine and a new entry-point case asserting the repair. `STATE_DEPENDENT_RAISERS` untouched (`T66`, deferred). The module grew 1274 → 1353 lines; every citation range re-derived against the candidate. Closeout owns the real commit stamp.
-- 2026-09-18T19:48+02:00 — 260918-TSIP-L5 curator (uncommitted change set on `ar/260918-tsip-l5-ar`, base `f05ba167`): **created**. The module is new in this leaf (**1274 lines / 14 cases**, sha256 `4223c626…`), and it is the durable form of this leaf's happy-path trace: every registered public tool driven through a real in-memory MCP client session against `create_server`, in one hermetic scratch world. Recorded the two pinned raiser constants and their update rule, the third pin (`T64`), the executed choke-point control and the two break shapes it drives, the measured hermeticity boundary (`KNOWN_MEMORY_SCAFFOLD_ADDITIONS`, `COORDINATION_WRITE_ZONES`) and its census controls. Its lane row was added by the same change set at `mcp/tests/test-evidence-lanes.toml:153` in `unit-regression`. Verification metadata is the recorded base commit; the candidate is uncommitted and the governed closeout stamps the real code commit.

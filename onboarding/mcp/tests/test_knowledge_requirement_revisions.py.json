@@ -1,0 +1,399 @@
+{
+  "path": "mcp/tests/test_knowledge_requirement_revisions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The kind admits exactly its own declared pair; a wrong schema or an unknown kind is `invalid_payload`.**\n\nAnchor: \"test_the_requirement_kind_resolves_only_to_its_own_declared_pair\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:98ae32bfea5f5f8f58db4f0d25e0af17ee519329241c8190218bfae444c10caa",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The stored-cycle case: forced store damage, then a descendant refused by the shared rule that names the cycle.**\n\nAnchor: \"test_a_stored_cycle_refuses_a_descendant_and_names_the_cycle\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:fca33a87cd0a3ea0b3e82050cb67e8cb929deb4b9a31c8d4977023fdf84be841",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 462
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The read of a record nothing stores, refused with the table named.\n\nAnchor: \"test_the_read_refuses_a_record_that_is_not_stored\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:75dbb0319b4601c3495bebaddf8d62e647a416ed4003d967d97dc712ba0170c5",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 516
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The namespace refusal, and the row codec's envelope-tuple round trip with its tampered-payload case.\n\nAnchor: \"test_a_request_addressed_to_another_namespace_is_refused\"; \"test_the_revision_row_codec_round_trips_through_the_envelope_tuple\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:47622c2e98f47f1bcc050c12e2a6591de3d4617c6f4a6e7d1d35717d09892e10",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 529
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:2bb87f81c2a107ea4bd2b5a723e860fa0a941d5c0ef349c64d921e2e85b0bf9a",
+            "locator": {
+              "end": 581,
+              "kind": "line_range",
+              "start": 548
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The shared acyclic-lineage rule this suite proves the record group composes rather than re-implements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:03ffb7994e450f5d0f5321092035d4a276824955e911a7aa51f02c28f976bce9",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_cycle"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The immutable-revision trigger the stored-cycle case must drop to reach its rule.\n\nAnchor: `record_revision_no_rewrite`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:e5619e345bcefcd2a07a8f96af1c731d39a5a857e673809320c625e3ea27cff8",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The operation surface these cases drive, and the guards they pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:ca97b977567e3fe67ec336b11e23cbd373a1a9a3a201f7fc21246257a58f389b",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_requirement_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirements.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:c06677e551a916946921747cbd468b364b48166969e062f849ce538ad90e2523",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_lineage"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirements.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The production payload vocabulary these cases are about.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56e90c252bdaf1b81b3ed10b53f73fe2af8448d",
+            "content": "sha256:a15f4b4ea3350dd63a24a41a21cae347e05165acda78d7a4f60ccd2ef5f5ebb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementRevisionPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/requirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The two shared-support artifacts this module imports, whose exact consumer lists are the code-side gate gap this leaf left open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:f6c981bb0a9339d79bbc66c862627721faee3e5177b6adebbb9ed85db64fa163",
+            "locator": {
+              "kind": "symbol",
+              "name": "make_authorship"
+            },
+            "path": "mcp/tests/knowledge_fixture_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "112f7a18a62526d17d968ad7c89f6c0c7c761e77",
+            "content": "sha256:b0176fcf5e5f4521b2e3f3be819ee5e07090f08a6f72651c0d5726302b955043",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_current_generation_store"
+            },
+            "path": "mcp/tests/generation_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The lane row that gives this module its classification and keeps it collectable under a named lane.\n\nAnchor: \"unit-regression = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "866a956469afcfdbe2585b3ec2e1e032a2d0b98f",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two declared operations are members of the shipped vocabulary rather than a second one.\n\nAnchor: \"test_the_record_group_declares_two_operations_beside_the_shipped_vocabulary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:73c9714d452a6d029634e7170b11f6d5a9491808a2e035c7e260bc0d4c2424e0",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The state/acceptance consistency rule applied at construction, in both directions.\n\nAnchor: \"test_an_accepted_origin_state_without_an_acceptance_reference_is_refused\"; \"test_a_proposed_origin_state_carrying_an_acceptance_reference_is_refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:5d29100efbb01d02db05d3be3a18779d5d2fa7fd44b7c9da7c8401f686efb6fd",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:6afcdf1b10481ec165bdc76d09c496bf901c3f8609199bb2bbfc73acba7a7e03",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 235
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The promotion refusal, measured as the stored payload being byte-identical after the attempt.**\n\nAnchor: \"test_a_promotion_attempt_is_refused_and_no_stored_byte_changes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:d91c00f2f45cf7075cfa4b192610976f14427475d9217e7ccf461561d9106da9",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**An `accepted` payload stored with the envelope lifecycle still `proposed`: an acceptance recorded, no approval produced.**\n\nAnchor: \"test_recording_an_accepted_revision_stores_the_state_and_produces_no_approval\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:1c9068ac07c8cee43f509e77d3d5af62395079eac8249b648a70862350891ef9",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The explanation refused by value, and the four authorship substitutes refused as a second author.\n\nAnchor: \"test_an_empty_or_absent_explanation_is_refused\"; \"test_no_payload_field_can_substitute_for_the_revisions_authorship\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:2e0fe0459eae4f8e74b414b227d00e0e6e9b716c409eca6becfeb6717ccac1f7",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:722bc68cd56a8f52aaa7062be03f82a42884290719fcd37983d5267ddfc0eadf",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The stored authorship surviving a close and reopen unchanged.\n\nAnchor: \"test_the_stored_revision_carries_the_authorship_it_was_authored_under\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:304d0f358a15991234f5a4e1b5818f66f22efade443bec820b51fa18df4889c4",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 342
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**A successor records its predecessor and leaves it byte-identical.**\n\nAnchor: \"test_a_successor_records_its_predecessor_and_leaves_it_byte_identical\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:6d424ef83e8d174e2679b92b1dddab4d047b609bc6b04e181efac8918b32ce4c",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 368
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The three lineage refusals: a self-predecessor, a predecessor under another record, and a predecessor stored nowhere.\n\nAnchor: \"test_a_self_predecessor_is_refused_as_a_cycle_and_writes_nothing\"; \"test_a_predecessor_belonging_to_another_record_is_refused\"; \"test_a_dangling_predecessor_is_refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:59b8fb24de6052285ed956c7eb99786859d2383c2919170c20d1f839502182f5",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 403
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:9842cc38c744f14ead1c628242a5363a5ca35bd9cbf75c6766d5b2f4332ba36f",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 426
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47577546d6856a1868858e71001b2fb4da60fd10",
+            "content": "sha256:28c55d9e86b3b8e871a23b29c5680155d8b83a51e2673d09d2d36e697633ca88",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 448
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

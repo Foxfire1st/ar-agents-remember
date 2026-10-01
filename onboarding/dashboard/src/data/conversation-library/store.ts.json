@@ -1,0 +1,106 @@
+{
+  "path": "dashboard/src/data/conversation-library/store.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The client verbs (list/read/open/status/reconcile) this store orchestrates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:269260c8b7855e7808f9d9959c31c2c0a6f73825c1859b445812fa96beb61d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "openConversation"
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:950d6f8a7214799902c1ed415e303ec90484913aea7acec8a8696af80c5779c4",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The wire types the tracker and views hold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:318ffc0691eddf7613b741c65eee0769823502aabefd1b69b1dbb57f7c6531e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenConversationOperation"
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The in-stage browser view that reads this store and renders list/preview/open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "179fe52c67ccf3d450dc0a657ba772b077be613b",
+            "content": "sha256:0d0a53bd2e2f3c45f10bca5cf3e27c08dba871f559bc0bad91ea5752314c1016",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibrarySurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sole resume action consuming `beginOpen`/`reconcileOpen` and the `openedForFocus` gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14c4e00bc0af8ce6ee2ff1eef4cb50145c113fac",
+            "content": "sha256:6c9027e155f9762cd287e4d1d804ff06a7203df6b67e015c461c502fb5d16025",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenConversationAction"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The open-flow (R4/F6) regression suite over this store.\n\nAnchor: \"conversation library open flow (R4 — focus only on exact opened proof)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "464265c87488654262b1c1226aadaa96dfa776b9",
+            "content": "sha256:d50248f2a7769fb68937d70d5d8ca0cf3c7b9019bc465425af44031c9143fb47",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/data/conversation-library/store.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

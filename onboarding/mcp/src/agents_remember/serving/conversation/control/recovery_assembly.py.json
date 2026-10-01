@@ -1,0 +1,115 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The assembly's source priority reads the substrate `WithdrawalRecovery` payload first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:97d9b0fe3a2f8f5ed7e4428468b2e975a3f18316b94df1b347425e2a66101faf",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovery_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The submit journal entry used as recovery source of last resort.\n\nAnchor: \"class JournalEntry:\"; \"def recovery_text(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:acc2031d68acdaf4863c4c0c7ba98e08ccf8e432e06838dc43b20dcd1b20e162",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:97d9b0fe3a2f8f5ed7e4428468b2e975a3f18316b94df1b347425e2a66101faf",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The attachment recovery-ref assembly mints one ref per recoverable asset through its ref-mint call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:471319c1322d4be09f1d6327f575ee9abaccd1abd3c8da103a4d6ebfb681bd9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachment_recovery_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`recovery_digest` reuses the authority-parity payload digest so recovery matches the submit's idempotence digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b63c13fd732b1c1bb44cd63917beb9b6766ce5d",
+            "content": "sha256:02d7d76cf1ad681ca4a58cd05c983e6b74ba616ce743e9f1c69592729e4ae481",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovery_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The lifecycle policy that consumes this assembly: `_build_withdrawn_record` calls `recovery_text`, `recovery_digest`, `recover_attachment_refs`, and `recovery_payload`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9d7923994261529e7d8d0fb956335c393505ea1",
+            "content": "sha256:94cf9d2da7e2775ef8929eb0dcdbba253319ff6bec9f784cd3d06eb5f1e9e48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_withdrawn_record"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/withdrawals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9d7923994261529e7d8d0fb956335c393505ea1",
+            "content": "sha256:194942f4115897946bebb95914c04e6062aa0e621e3d2ee20263b101ee940a27",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 442
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/withdrawals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

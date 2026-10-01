@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/models/certification/corrective.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The disposition kinds are a closed vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f220125db85b19a6b1b797e926e99bcbc0531c4e",
+            "content": "sha256:1f0c79a70ccf9d2ee5dbedde3950bc2a2ffe1e9bc7259269c02b66abefe484a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CorrectiveDispositionKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each corrective input must move an exact semantic identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f220125db85b19a6b1b797e926e99bcbc0531c4e",
+            "content": "sha256:6795759ba5a1dd7dfa0ff34efaa4c10adcc23068665c3f674d01333da0d2b8ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "CorrectiveInputChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Direct/root shape, unique keys and canonical ordering are enforced together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f220125db85b19a6b1b797e926e99bcbc0531c4e",
+            "content": "sha256:5cfd1ca23b409da4dfe703ad46a7134e9efb552299ee3f47109ae452a10e8075",
+            "locator": {
+              "kind": "symbol",
+              "name": "RedCatalogDisposition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

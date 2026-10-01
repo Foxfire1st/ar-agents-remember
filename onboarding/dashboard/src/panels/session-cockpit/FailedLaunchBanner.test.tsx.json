@@ -1,0 +1,71 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The banner under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:bfe4aa300a42bd27e753eed83f14d79ac2ef9e116fc148e78e192f0cd2db564b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailedLaunchBanner"
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The failed-row fixtures ×3 harnesses with verbatim bridgeErrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:98ec529fea22b5e443685a6a5b057dab04a4c8096f8fa273dc86cdfc2fb0e6bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_CLAUDE_ROW"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:5d2f0b43307fded80a485920e433bbdb4a81a62f20aaa641380d602006ef3691",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared row builder for the leafed/bare variants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8347b415f4ddc75c4a8ad3bb516ff17b65ca21e",
+            "content": "sha256:9db694deeedeb33760607e5cff5f1733bf29c524d2ae0cc9a66df87abbb5e8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalogRow"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

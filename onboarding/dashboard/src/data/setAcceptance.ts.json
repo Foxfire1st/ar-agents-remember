@@ -1,0 +1,132 @@
+{
+  "path": "dashboard/src/data/setAcceptance.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Route classification, reducer, readback promotion, and refetch predicate.\n\nAnchor: `classifySetResponse`, `reduceSetResult`, `resolvePendingsByReadback`, `shouldRefetchOnTurnEnded`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da4f1c6ffddb8a1cb523b9deb379df3ce4ee123e",
+            "content": "sha256:91a38c98eb0ffa441cd8a8651137ab3c4018ebc8217b14afdffd2c69108b84f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "classifySetResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da4f1c6ffddb8a1cb523b9deb379df3ce4ee123e",
+            "content": "sha256:52b49af7458fa71a381db34c403a28e8b46c92122a1df96a7ec4e7c427cc77eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "reduceSetResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da4f1c6ffddb8a1cb523b9deb379df3ce4ee123e",
+            "content": "sha256:17abdcde9682cf25b223fbfa4af104ba6b08856fd213e8e2d811422a30458eb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolvePendingsByReadback"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da4f1c6ffddb8a1cb523b9deb379df3ce4ee123e",
+            "content": "sha256:332a25468fdd90f1054943232e3518bf070e2d3294ce96fd3d8a6774ac4c0758",
+            "locator": {
+              "kind": "symbol",
+              "name": "shouldRefetchOnTurnEnded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exhaustive acceptance, HTTP, clamp, and readback tables.\n\nAnchor: \"reduceSetResult — the exhaustive acceptance × kind × clamp table\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8219704cdc92d7c496a8d171201b090f6f18d872",
+            "content": "sha256:e4f7dbf4551432683462d0b81e5dbc94745034d350d45db12a8ca53b16f01ffe",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/data/setAcceptance.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Store snapshots and pending phases consumed by the reducer.\n\nAnchor: `PerSessionCockpit`, `PendingSet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a5ef1fe18bf42397a8e66828a2fa51b8d681a02",
+            "content": "sha256:d43db0760180d63a1cc2ba91bda1d0f72761971f139ac5133d10ad2869b410e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PerSessionCockpit"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a5ef1fe18bf42397a8e66828a2fa51b8d681a02",
+            "content": "sha256:f8d3275ee548d213173047a19c4e08bdceeb4457d7276f5113c3749238d1b383",
+            "locator": {
+              "kind": "symbol",
+              "name": "PendingSet"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Set acceptance vocabulary mirrored by the frontend.\n\nAnchor: `SetAcceptance`, `SetResultWire`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:1f65b6d4501a188ff7ff765951e77f5b7d67eafe150379c7ec7ace9769912279",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetAcceptance"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:b1befa54b27b561cf82b3b486d0448c3962c7596c6f49ff14ee3709e59de53b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetResultWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,120 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared queue error stores exact public status and detail as direct typed attributes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:bacfd7e2143643926e5673f43734c4f7faa88a011444cfb60b0a25201896bfae",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueueError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Request-carried task references validate fail-closed in one place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:fc1a8d6fabbec4334726541902efbb2f9dca2cf9716bcb8d5ab5cea5be895d60",
+            "locator": {
+              "kind": "symbol",
+              "name": "queue_task_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The capacity-refusal family is declared once, codes beside the classification the projection applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:ab997ab1555fa24cf63ea3a1f5c00f8c46cbe05f0ce34504bd45ff9476c4d007",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPACITY_REFUSAL_CODES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:36669672e1883df064c9e4f87c56185a88bd4bf6302c2aa08c6c258805273433",
+            "locator": {
+              "kind": "symbol",
+              "name": "MASTER_CAPACITY_EXCEEDED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:9d79befdd9313a83d8dd9036a452a27f7e516e95d8f67cbd1487ef633c98470c",
+            "locator": {
+              "kind": "symbol",
+              "name": "EDGE_CAPACITY_EXCEEDED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:8fdff19af75249ea0ef2005730025f1cd2148939041ef6a0d8224731e10cb54b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_PROBLEM_CAP_EXCEEDED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Queue consumers share one bounded, stable failure-detail constructor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:c268bebde689f5040e1976aee298be49840a21c11b1debe47feafba86f0e7ecf",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded_queue_failure_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Task-reference validation also uses that constructor instead of echoing the supplied value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:fc1a8d6fabbec4334726541902efbb2f9dca2cf9716bcb8d5ab5cea5be895d60",
+            "locator": {
+              "kind": "symbol",
+              "name": "queue_task_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

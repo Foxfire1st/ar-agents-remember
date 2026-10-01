@@ -1,0 +1,189 @@
+{
+  "path": "dashboard/src/panels/review/statementWording.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the 13:40 rule.\n\nAnchor: \"A revision that changes only a condition is NOT\"; \"never promoted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:683bd253eec40deb64251db7d1a885aa1dbddbe6985568b1e2e1f84e2bb60387",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The four fields and the carried/uncarried distinction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:5882683de569d6bd91a394a6e94e1b60fa97c1d928fe576c60ff5e806bd00ff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "WordingField"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:46669f944f194bccf3c7a6ce4cee5ab3d16cb35179e5296bdd9bd12d1a66c2d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoredWording"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The comparison: an uncarried field is never identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:21985ae9973ee44e0a84e9f449909f8ec06a3cc1c74122b689b70018a953eaae",
+            "locator": {
+              "kind": "symbol",
+              "name": "same"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:a0910ed306e022bb3a9f7d8d74d3d23fc13183cc74f13984dce569aecd8b203b",
+            "locator": {
+              "kind": "symbol",
+              "name": "wordingComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A member row's authored fields, shared by the statement and the navigator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:7dcee5914d51e84909c41e8aed0307898bdeff7a58d6aa0e1abba95b7982a417",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowWording"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The tree comparison's text-first decision: the bytes decide even at one revision.\n\nAnchor: \"one revision can\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:fb4d1500ba9f16dd57e88f69b5bbf9ddb839c30e62fc1bf00c05320cd2d55a01",
+            "locator": {
+              "kind": "symbol",
+              "name": "textFirstComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The compact metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:da69de79e68209a239ac0b003fcc93793c7503c42e6c02d5133d9574042471d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "revisionMeta"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The guarantee's compact revision labels, moved here and shared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:984e1974fdbfedaba66f3da9f48e297538b5d5eb409e001dac7ac7afa79d5886",
+            "locator": {
+              "kind": "symbol",
+              "name": "guaranteeRevisionLabels"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The statement label and body that use it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "content": "sha256:890a70ebd74a50031ee37e0394e60826f070db5123fab5e27a02664a6cfc2b78",
+            "locator": {
+              "kind": "symbol",
+              "name": "statementLabel"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "content": "sha256:cc46312e35c341cf69249f197c5030aa1dce8928010081b98258cb9838de6834",
+            "locator": {
+              "kind": "symbol",
+              "name": "StatementBody"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The cases.\n\nAnchor: \"renders two revisions with identical authored text once, with the revisions as metadata\"; \"never labels a condition-only revision unchanged: the changed condition is named\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb1c42c74a23b9615f66c6e0f0032de15ad8e008",
+            "content": "sha256:dcbb7d8f067692ee960e22a675736f6cd711c6378a7969d682414516e1167ce2",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/panels/review/statementWording.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

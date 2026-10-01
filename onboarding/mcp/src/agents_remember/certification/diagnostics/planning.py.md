@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/diagnostics/planning.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/diagnostics/planning.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T07:08:26+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification contract overview](../overview.md)
@@ -43,40 +33,25 @@ All refusals raise typed `CertificationContractError` with finding code/path/det
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. The CCR-R13@v2 packet clauses (frozen digest f0387b1627c5e8f48073b55d40dc362065e46943c5688f0f863fddb480770d3a) and the leaf doc 13_non-certifying-diagnostic-e2e.md carry the one-canonical-scenario rule; task artifact paths are not repo-relative citations, so they are recorded as prose here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The diagnostic catalog may only replicate the exact canonical scenario rails at diagnostic altitude. | `_require_canonical_scenario_catalog` | mcp/src/agents_remember/certification/diagnostics/planning.py:142-162 |
+- The diagnostic catalog may only replicate the exact canonical scenario rails at diagnostic altitude. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared certification plan compiler builds the altitude plan. | `compile_certification_plan` | mcp/src/agents_remember/certification/planning.py:1-160 |
-| Registry validation gates admission before any plan is compiled. | `validate_registry` | mcp/src/agents_remember/certification/validation.py:1-120 |
-| The run controller consumes the compiled plan to build its run spec and plan record. | `build_diagnostic_run_spec` | mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py:575-617 |
-| The diagnostics package imports these three planning helpers. | "from agents_remember.certification.diagnostics.planning import (" | mcp/src/agents_remember/certification/diagnostics/__init__.py:26-30 |
-| The diagnostics package lists these planning helpers in its public exports. | `__all__` | mcp/src/agents_remember/certification/diagnostics/__init__.py:43-67 |
-| The outer certification facade re-exports these planning helpers. | "from agents_remember.certification.diagnostics import (" | mcp/src/agents_remember/certification/__init__.py:18-37 |
+- The shared certification plan compiler builds the altitude plan. [2]
+- Registry validation gates admission before any plan is compiled. [3]
+- The run controller consumes the compiled plan to build its run spec and plan record. [4]
+- The diagnostics package imports these three planning helpers. [5]
+- The diagnostics package lists these planning helpers in its public exports. [6]
+- The outer certification facade re-exports these planning helpers. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The altitude rules stay repository-neutral and rely only on registry/profile/certifying-plan inputs. | `compile_diagnostic_plan` | mcp/src/agents_remember/certification/diagnostics/planning.py:30-96 |
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=d152934f922c32f9de76dd1f3ec5923f21388bea293ccb82bca9508044d1219f; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-05T07:08:26+00:00 — L31 final residual curation against frozen code `ea35964985f30080488270e71ac81657ac40682b`: Split the two-facade claim into exact import and export constructs in one source file per row; public planning-helper ownership unchanged. This scoped repair does not promote the card's verification stamp or certify a gate.
-
-- 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
-
-- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass: created this card for the new CCR-R13@v2 diagnostic-altitude plan projection delivered in code commit 4ba18bb2; anchors and ranges derived from the current worktree source and pinned to that commit (tree 631145bf3e0d5899b1dcbccf8c0d4a8257821f0d).
+- The altitude rules stay repository-neutral and rely only on registry/profile/certifying-plan inputs. [8]

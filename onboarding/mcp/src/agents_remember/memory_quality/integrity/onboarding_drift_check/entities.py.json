@@ -1,0 +1,69 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fingerprints and change notes are computed via `git_ops`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c60efeec0ef3127bc1dd8922d20481a59200a57",
+            "content": "sha256:ecc277734383eb3fee80003c54f49e10a572496ae1f551907e9491c7a5cfb9ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_git_blob_set_fingerprint"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c60efeec0ef3127bc1dd8922d20481a59200a57",
+            "content": "sha256:2b113165589c9d788afa6609acec6cb753724d29a74218d0dee0f4151343d7e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "entity_local_change_notes"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`sidecar.py` delegates `repo-entity-catalog` sidecars to the sidecar classifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c3931f72183810cec08c4833bc012565e56f4b",
+            "content": "sha256:b9375140191642a34b97ffdbb5da779d3b7e7a3f5847f7f3b40628f5c4b29b87",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_sidecar_onboarding_units"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`entities.py` implements `classify_entity_catalog`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9adc256a128d606ec110e5ff8c622ec9420d3899",
+            "content": "sha256:c8bd7460c7169ce5b618cf0becf20290ecc5a0029ec36fe8df50106ef5b0bcc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_entity_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

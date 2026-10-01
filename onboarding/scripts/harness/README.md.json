@@ -1,0 +1,84 @@
+{
+  "path": "scripts/harness/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generator whose `HARNESSES` table encodes this classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:b97b00e3242d45344ec51e9ba662263f51e4cd5fe7d17f8f006efb5393c86f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "HARNESSES"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two fragment libraries this file inventories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48702d860710153a5eceeaead202c3492b62aeb9",
+            "content": "sha256:8c295a34cdc886d831c3010960f7f283cf941570958f3b939cae49ed3838ca54",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_settings"
+            },
+            "path": "scripts/harness/render_starter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b21f57d74bcbc0e7e88136f6c9af11efffaa4ee",
+            "content": "sha256:79f06f6571f7e8d4d1f12a2317796b8e4ebc2ded18056a388ae2b82b6d4abfbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "hook_specific_output"
+            },
+            "path": "scripts/harness/session_start_hook.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The verbatim and composed bodies.\n\nAnchor: \"exec python3\"; \"Join-Path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f1bcb96cd1a7f67dc2b62566459540ea2d53b74",
+            "content": "sha256:2c41aab4a23dcde927b4845140f90b3d52608ae62d3d80ef8452e455e3c067e9",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "scripts/harness/shared/render-starter.ps1"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78c857d9a932925240d28162c76575a9b5a5dec0",
+            "content": "sha256:cee02d9326200adf431eed31b51fe78efbef85fe778ce0a74f761bb90226e11d",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "scripts/harness/shared/render-starter.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

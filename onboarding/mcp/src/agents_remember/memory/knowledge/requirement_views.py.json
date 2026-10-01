@@ -1,0 +1,256 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/requirement_views.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The one projection entry: every derived view for one record, from the rows and nothing else.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:20a19663ffb3aa77fe0b67711ccacd7cfe8d8573564e90f0803950da1381df12",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The no-winner cases: a fork, a disagreement, and an unresolved owner that has nothing to compare.\n\nAnchor: \"test_a_fork_is_reported_as_more_than_one_head_and_no_winner_is_chosen\"; \"test_a_stored_state_that_disagrees_with_the_owners_state_reports_both_and_chooses_none\"; \"test_an_unresolved_owner_has_nothing_to_compare_even_when_a_state_is_supplied\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:cea2871796eba4fe4a5b19b70b01ad3960bb978d2fea0fd9957d4a65ba101623",
+            "locator": {
+              "end": 646,
+              "kind": "line_range",
+              "start": 617
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:c0054803c9ea3b249748f83860227cbb427857354e927f09a2937646bf10bdee",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 647
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:900f1dc24014b8ea5863cb715109308330c73b3a8ddcfc8b4f6a8f3c9dff9961",
+            "locator": {
+              "end": 729,
+              "kind": "line_range",
+              "start": 701
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fork rule — more than one head is reported as more than one head, and no successor is designated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:3bd36af66109f9a69c66c8951d03eee399e0d2555b4d2c40f8633154932c9f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "head_revision_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bounded predecessor walk, and the constant that makes a damaged store a report rather than a hang.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:84e9e8dbd21bcd936cd20f1ad287b123851cc01820c1780735dd0037bd053cb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "predecessor_chain_view"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:13916f6b3de6bc0818acf65ceb281c9d2f9d50bb6e4dde45dbd1e822fdadf559",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHAIN_BOUND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Currentness by value: both recorded states travel with their provenance, and no winner is chosen.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:c76c4fc39840c1a43dd43d41269ff8546ed6af1f03dad8754e3357205d6af396",
+            "locator": {
+              "kind": "symbol",
+              "name": "currentness_fact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:987456c130078e46537b5673611050a2709926641f609c9961c20a9e4436a804",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_state_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The ungoverned route as an explicit state rather than a default, with the packet's directory deliberately not an input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:f4f13f155001b0508b19590c2d9b6e6474b31939359e963bd75a95cc6ed7f40a",
+            "locator": {
+              "kind": "symbol",
+              "name": "governing_route_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The three documented absences, each saying which absence it is.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:8a902708b0059a97175a05ba16aaf727ddecf4f0b7e2ac5914dd156c59c147c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNRESOLVED_OWNER_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:6c88f60498174e5d07ceb22335a7c9259b00a6e9e262eb2bce97de947f52755f",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_COMPARED_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dbc07958695465192de4d7b762f7f9fea55eb03",
+            "content": "sha256:2bf0ecb7c37c583ac71624fa85526ae11534d430f7e001e4d812dacc0129277c",
+            "locator": {
+              "kind": "symbol",
+              "name": "NO_REVISION_DETAIL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The currentness value whose `state` must equal the value derived from the two recorded pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56e90c252bdaf1b81b3ed10b53f73fe2af8448d",
+            "content": "sha256:42d57e5850913b46e8f6883c6442226eceb8b39a39d52bd1712ef7605e2c6daa",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementCurrentness"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/requirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The acyclicity rule the write transaction applies, which is why the walk here is bounded rather than guarded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8ec0b7be43d2a0467494d0623323237c70a3ffc",
+            "content": "sha256:c06677e551a916946921747cbd468b364b48166969e062f849ce538ad90e2523",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_lineage"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirements.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The two cases that keep a view an answer rather than an authority: byte-identical rebuilds, and totality over a row set holding no revision.**\n\nAnchor: \"test_every_derived_view_rebuilds_byte_identically_from_the_stored_rows\"; \"test_the_derived_views_are_total_over_a_row_set_holding_no_revision\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:d2b56ea6cd670091ad5d09b6b8299a79131c455b3ae43b62169fd2f866f75bcb",
+            "locator": {
+              "end": 616,
+              "kind": "line_range",
+              "start": 569
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
+            "content": "sha256:c4f102bb6304e90b8fd273cc60d436954c2d0a81d47d71b1467fd545fb8641f6",
+            "locator": {
+              "end": 755,
+              "kind": "line_range",
+              "start": 730
+            },
+            "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

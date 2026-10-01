@@ -1,0 +1,116 @@
+{
+  "path": "mcp/src/agents_remember/tasks/execution_graph_validation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact intrinsic work is a first-class immutable result.\n\nAnchor: \"Exact collection operations in one canonical whole-graph admission.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b511aa5ad114c9e3da92b2629017433657ed54ac",
+            "content": "sha256:852ffcf20993d4d119ef4fe6b13ea1810c241b2c7225f682c5d9944d19b637de",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical admission and the cheap successful-work lower bound share one operation vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b511aa5ad114c9e3da92b2629017433657ed54ac",
+            "content": "sha256:ef40a05af07ec86bc273f2d56a177a04e80bfef279f00c93160b83848a87fac7",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_execution_graph"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b511aa5ad114c9e3da92b2629017433657ed54ac",
+            "content": "sha256:5a3e3d0711a155fb428d75043958218add2f39fa87839c915878fd08de87183b",
+            "locator": {
+              "kind": "symbol",
+              "name": "minimum_successful_execution_graph_validation_work"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Indexed endpoint resolution visits each edge once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b511aa5ad114c9e3da92b2629017433657ed54ac",
+            "content": "sha256:85910e5b246e568776d263f56f7094f4e59e8884c0b06f4e530e5c1691725169",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_graph"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b511aa5ad114c9e3da92b2629017433657ed54ac",
+            "content": "sha256:3ef6aa11c1908ef57b73930ebf5f229d62eaa383a9808b3611c7818be3c1b481",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_endpoint_index"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b511aa5ad114c9e3da92b2629017433657ed54ac",
+            "content": "sha256:b92eb2850399e65c29246ed8f04f6366ede510d37c5ba828b35d9e45f78283db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_edges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Wave and cycle derivation consume the resolved adjacency without rescanning endpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b511aa5ad114c9e3da92b2629017433657ed54ac",
+            "content": "sha256:0aeccb3ca46859ba87a101acd67b0d9fdfe896739c5858f9dd544aeeb096c2f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_derive_waves"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b511aa5ad114c9e3da92b2629017433657ed54ac",
+            "content": "sha256:791d603b5efd03a2553cbed17b8e1326f64b2450ac5198b419188754c55bd279",
+            "locator": {
+              "kind": "symbol",
+              "name": "_find_cycle_members"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

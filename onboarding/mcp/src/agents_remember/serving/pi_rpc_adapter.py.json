@@ -1,0 +1,260 @@
+{
+  "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Configuration owns the finite locked mutation/readback/catalog transaction, exact provider split, selected-model effort gate, clamp evidence, and atomic commit decision.\n\nAnchor: `PiRpcConfiguration`, `set_effort`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6431f0e359e00aafe8a14e0502c4c0c731a44ba",
+            "content": "sha256:1e3858949df965935ffc0a13842914c4199aee439bb3ed71fa6ff806dbe60fe4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiRpcConfiguration"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_configuration.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6431f0e359e00aafe8a14e0502c4c0c731a44ba",
+            "content": "sha256:bad59c668bff2cde67476dcbe0b45fe33be3078e3e1dc93ab92d8d9c4c220289",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_effort"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_configuration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pi protocol parsing provides RPC launch validation, safe state identity, and provider-qualified model-local effort menus.\n\nAnchor: `parse_pi_state`, `parse_pi_models`, `pi_rpc_launch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:dc7b0f3643f560ced1dc533d4c8e6d7b1781520d3d5fc44a5fa56561330d0898",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_pi_state"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:f21ba484fb252ca8bea77458433e9e43a0334d335ebe2356024d2470817249fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_pi_models"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:c95b4796259355500e98da88133fa076cb974038031c9b6dc68abc30a1f4ea99",
+            "locator": {
+              "kind": "symbol",
+              "name": "pi_rpc_launch"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:7ec6deef2dbe7f8067f228cb92f4bc31dc67e1ff48ef1cc709fb77c52834b9e6",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:eb9a1134f6f64fae5b5b53518a7e19011d33e9bf4c7daae0c0ea48c48c837a10",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:7d498c3bfb68881618077dfb314144385ff696d29d96e13c52a8291ff25fd8b4",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The launch validator requires exact Pi catalog keys and model-local launch effort before the configured process starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:7f9ca95dee3a483293013b9c276a5271d70b3f4671bafcd789b8296bbf191f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_effective_launch"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:8b77fdc44dda3bfd84f499995d2cf573bfc0974c88c8fd48146f1500fd6e4a14",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The subprocess boundary correlates requests, reclaims cancellation state, and ignores valid late responses without tombstones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7864939e3baebde9060994ffa10d8b26f6bb17f",
+            "content": "sha256:80dd3b29c8154e4c100db9ec9abf3e4d55d5d20f6b6695aab290d693b29f2c0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiRpcSubprocess"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_process.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7864939e3baebde9060994ffa10d8b26f6bb17f",
+            "content": "sha256:33dc8d13f31818a899e975703633f5a4dbdb14b9193a5541b8617859d0ab58bd",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_process.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The event mapper owns normalized state, settlement, and extension interaction projections.\n\nAnchor: `PiRpcEventMapper`, `translate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01608c7cc53b618a668b33cc25f0d2a94bb2c1b3",
+            "content": "sha256:2e2ade4fed0b785b699c24cc39bb7a78ad2789b7c8e0c6162765fe7b777ea238",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiRpcEventMapper"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "01608c7cc53b618a668b33cc25f0d2a94bb2c1b3",
+            "content": "sha256:e84e287378569f29b2ef967ae818b312a6d5ed5ee40d05a34d5e83c7387509bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "translate"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Entry identity/timestamp helpers keep native paging coordinates honest.\n\nAnchor: `pi_entry_identity`, `pi_entry_created_at`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:91568a4d381c52652e5413d9c9bdc53cd7c675eefb09597be1dee21aca29d372",
+            "locator": {
+              "kind": "symbol",
+              "name": "pi_entry_identity"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:a9101bf06cf296452b451787e949d20440568dc22aea7ffa67778c93773f601c",
+            "locator": {
+              "kind": "symbol",
+              "name": "pi_entry_created_at"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:393c872c4e3bcaa4a4c2db6ebc756e6252af478229042e96e2918583372024c7",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:7f45af66ee0732cc84a26a71c9813422c9be69c33e905875a8c0aeac990938c7",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

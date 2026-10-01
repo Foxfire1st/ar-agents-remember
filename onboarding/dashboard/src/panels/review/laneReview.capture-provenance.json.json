@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/laneReview.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "When, by what command and at which source tree the bodies were captured, and over which scratch leaf.\n\nAnchor: \"captured_at\"; \"source_tree\"; \"scratch\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7310b805a789910931fd5a77e9562cb7cb6a6c8a",
+            "content": "sha256:a7f9fc1ff855182d47243ce3ce858ebe0e3b3d74bbe95a60b8566f0e83cc5eb6",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One receipt row per captured body.\n\nAnchor: \"\\\"fixtures\\\": [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7310b805a789910931fd5a77e9562cb7cb6a6c8a",
+            "content": "sha256:6c225ee18240f1d6c4b277029aadd9d180f6c8d68ec9efc7a96d77122bc6d6c1",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

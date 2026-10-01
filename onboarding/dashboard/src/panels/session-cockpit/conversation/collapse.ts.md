@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/collapse.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/collapse.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -36,43 +26,28 @@ identity is never mutated. It produces a flat `DisplayRow[]` the feed virtualize
 - Only runs of ≥3 identical-summary unknown-vendor items collapse; a mixed or short run stays expanded.
 - The function is pure (no store/DOM), so it is unit-testable and virtualization-safe.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The declared `DisplayRow` output type. | `DisplayRow` | dashboard/src/panels/session-cockpit/conversation/collapse.ts:23-33 |
-| The declared pure grouping entry point. | "describe(\"groupUnknownVendorRuns (F10)\", () => {" | dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24 |
-| The unknown-vendor content block type. | `ConversationContentBlock` | dashboard/src/data/conversation/types.ts:63-105 |
-| The `ConversationItem` wire type. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
-| The `ConversationTimeline` feed component. | "function ConversationTimeline" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-56 |
-| The grouping test suite. | "describe(\"groupUnknownVendorRuns" | dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24 |
+- The declared `DisplayRow` output type. [1]
+- The declared pure grouping entry point. [2]
+- The unknown-vendor content block type. [3]
+- The `ConversationItem` wire type. [4]
+- The `ConversationTimeline` feed component. [5]
+- The grouping test suite. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: the L7-FIX-3 stable-row refactor: `groupDisplayRows` now delegates to extracted helpers (`liveKeyFor`, `handleLiveOpen`, `handleLiveUpdate`, `handleLiveFinalize`, `unknownRunFor`) with `openLiveRow` storing row-object references and finalize locating them via `rows.indexOf` before `splice` — no index bookkeeping, no splice-without-renumber path. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-
-- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the pure unknown-vendor run
-  collapse — a run of ≥3 identical-summary events folds to one de-emphasized addressable row (first
-  ordinal as posinset), identity never mutated (F10). Verification is pinned to the leaf base
-  (`0be0099`) because the new source file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

@@ -1,0 +1,68 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/landing_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Projector owns startup and cancellation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:d272549f0863cfc269d7a5888beed02fb3e802f6e2b6feb847ac9d9b482fb285",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:43477c9169a681ccd17a8e3afc59fe390c6f47fc5e5405be992c35edc5802a18",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Landing facts are merged into projected status.\n\nAnchor: \"def _safe_status_payload(  # pragma: no cover\"; \"def refresh_engine_process_landing(  # pragma: no cover\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:c0b41bf724fa325f718540072e6ed531f3abac3c4bbe31b6379d54edb0cb30f9",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 302
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:29fa95bf808f375c1e18708778b778e0975980a79ce154ac11d6079674ef7373",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 348
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

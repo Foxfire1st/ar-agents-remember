@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/panels/review/wordDiff.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real wording the cases start from.\n\nAnchor: \"gitTrees.invariant.captured.json\"; \"const STATEMENT =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06b268abb52eea105d550a3f5a2d121731e938b1",
+            "content": "sha256:3c0a8c066f205d0249bfaa9da9f669f27a9358164665470df6a982f30c29c90f",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tokens keep every byte.\n\nAnchor: \"keeps every byte: words with their punctuation, and whitespace runs as they are\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06b268abb52eea105d550a3f5a2d121731e938b1",
+            "content": "sha256:250fd6b64f7a22779140ef8391639268b0f880335f705c6a7726e116bf6a14f2",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The conforming example, exact reassembly, runs, whitespace marks and the byte decision (F3).\n\nAnchor: \"marks the replaced words in place within one sentence (the conforming example)\"; \"reassembles both exact texts from its parts, whatever the change\"; \"decides by bytes: identical, whitespace only, or words\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06b268abb52eea105d550a3f5a2d121731e938b1",
+            "content": "sha256:9e7e0d2aba85143fe9c138f279cc681476cb313445a36f3c83a51eb6a989171c",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The named ratio, exactly 0.5 not above it, and the coarse bound.\n\nAnchor: \"is the named renderer constant 0.5, compared with changed words over the longer side\"; \"marks a middle too long to align as one removed and one added run, still exact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06b268abb52eea105d550a3f5a2d121731e938b1",
+            "content": "sha256:071e08861b61865e42ad066393f9aa035bc6b318715fd2d55a3cb8981f71bce9",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Rule 1a: insertions, removals, equal-count pairing, moved items, never positional.\n\nAnchor: \"describe('list alignment (rule 1a)'\"; \"shows a reordered item as moved, never pairing by position across the list\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06b268abb52eea105d550a3f5a2d121731e938b1",
+            "content": "sha256:cf065f38828fb9b29dd38023f89a5e29706b380563b7e4f425bfe1accb23b7d5",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

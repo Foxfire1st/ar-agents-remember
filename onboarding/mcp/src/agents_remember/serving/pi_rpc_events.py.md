@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/pi_rpc_events.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/pi_rpc_events.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 [serving/ overview](overview.md)
 
@@ -53,29 +43,25 @@ projector mints terminal items from durable entries, so the suppressed entry sta
   transcript entry is ever minted.
 - Mapping does not launch processes, reconnect sessions, or register vendors.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Pi frame schemas and UI policy. | `PI_RPC_DIALOG_METHODS`, `PI_RPC_FIRE_AND_FORGET_METHODS`, `PiRpcJsonlDecoder` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:20-23; mcp/src/agents_remember/serving/pi_rpc_protocol.py:59-103 |
-| Adapter event-stream owner. | `PiRpcAdapter`, `_event_stream`, `subscribe` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:94-768; mcp/src/agents_remember/serving/pi_rpc_adapter.py:268-305; mcp/src/agents_remember/serving/pi_rpc_adapter.py:307-308 |
-| Event/settlement coverage. | `test_retry_compaction_and_agent_settled_are_not_early_idle`, `test_extension_ui_round_trip_and_reclamation_scale` | mcp/tests/test_pi_rpc_adapter_ops_2.py:79-110; mcp/tests/test_pi_rpc_adapter_ops_2.py:112-167 |
-| Valid-role contentless message_end frames cross as evidence without fabricated transcript text. | `_message_event` | mcp/src/agents_remember/serving/pi_rpc_events.py:248-266 |
+### Repo-Internal References
+- Pi frame schemas and UI policy. [1]
+- Adapter event-stream owner. [2]
+- Event/settlement coverage. [3]
+- Valid-role contentless message_end frames cross as evidence without fabricated transcript text. [4]
 
 
-## Cross-Repo References
+### Cross-Repo References
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -93,27 +79,3 @@ each combination belongs to a specific kind of frame, so it is chosen **once** a
 than as four separate arguments. The emitted events are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-03T03:59:59+02:00 — Curated 8 citation findings (4 table rows, 4 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `EventPayload` / `EMPTY_EVENT_PAYLOAD` as the per-frame event payload choice.
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the content-less `message_end`
-  relaxation — the abort's own native shape crosses as an evidence-only `pi:message_end` event
-  with no transcript entry and no bridge failure; exactly one raise class is relaxed, the role
-  check precedes the extraction, and role/object strictness is preserved (the reviewer's
-  implementation-found substrate defect, accepted as deviation 1). Verification metadata stays
-  pinned until closeout stamps the candidate commit.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the reserved-key `arEvidence`
-  forwarding at `message_end` and the `pi:<type>` fallback — full frames with native identity cross
-  into the evidence buffer while `piEvent` stays byte-identical. Verification metadata stays
-  pinned until closeout stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented exact-ref event translation and fresh-idle terminal
-  evidence.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: removed version fabrication from mapped Pi event evidence and
-  documented the structured protocol boundary.
-- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for normalized activity,
-  queue, transcript, extension UI, retry/compaction, and settled completion mapping.

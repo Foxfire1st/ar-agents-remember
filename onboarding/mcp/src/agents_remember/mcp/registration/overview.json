@@ -1,0 +1,494 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration",
+  "references": {
+    "1": {
+      "note": "The description's two new clauses.\n\nAnchor: \"existing immediate parent, or names none and its folder's task.json master lists it, the\"; \"assertions are omitted; a sub-task naming none whose folder task.json is not a master is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8112a3a2d347b6add092425f471a2ccc00f7c4aa",
+            "content": "sha256:6b54f04430c4427a4a342127cc9eb7b3a9af7b6db979086c45e0827f3f382235",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`PUBLIC_TOOLS` — the advertised name list this package must match (63 names), defined in `models` and re-exported by the adapter.\n\nAnchor: \"PUBLIC_TOOLS = (\"; \"__all__ = [\\\"PUBLIC_TOOLS\\\", \\\"RESERVED_TOOLS\\\", \\\"TRANSPORT\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:b0053d26dc1ddbfeaa7d8e65af358e70b68734e5f38ed18b4c107d6c7d9f9c89",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The `PLR0913` per-file-ignore and the reasoning recorded beside it.\n\nAnchor: \"mcp/src/agents_remember/mcp/registration/*.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f3bd41068ad5495a640a6683e9bdc8a57904799",
+            "content": "sha256:3cf29d3ca7682b6651c5944ff70aa77ec90c7f2e16d6df26e1244a14174dd8c4",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`TaskRef` — the shared task locator three read-side tools pack.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7d94fc2a811ecaa875d929ec1242369625dadc",
+            "content": "sha256:099fc8a76c1c3855e16525e55b4246e43e679d8c7af08b945c90347ee2c062d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRef"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_ref.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Canonical closeout input rejects a ledger message field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:8e272d5d3aebe96cc9f9600241586e3ded7ea7ec493af34631d2b12e90cd5971",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutMessageInput"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:dde7ba7bb8b303bbf419202b9a1fb3358d68f2505b2a5b83df405199a842647e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutInvalidField"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Worktree registration composition, re-read and re-cited by the L37 curator at the current declaration.\n\nAnchor: \"def register_worktree_tools(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "content": "sha256:de35b6e0021f31dccd710dfe7f0fd695e258e2b75556001f88bbd7129250c298",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Public payload builders — the enclosure-adoption payload builder was removed; this route now consumes the start, attach, status and sync builders.\n\nAnchor: \"worktree_attach_payload,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "content": "sha256:873e75070d7809267b0b9c5d940872fdb8495c4adacf8bed518cbb80677f0337",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The removed wait registration has no public replacement; the observation registration now declares read-only addressing, refusal behavior and typed request construction for `worktree_status`.\n\nAnchor: \"def worktree_status(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "content": "sha256:29b4e36124ae3f059a7ec076c34a28ea2ee384f1c6433b0297cb2be5ce0097d4",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The refusal whose docstring now names the ordinary publication and its read-back, and the registrar that declares it.**\n\nAnchor: \"publishes that candidate to the repository's one declared published dataset location\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:e8c94ad100efd12ab302c3a1625821d631893099b8ab8d6663015e7a4d4fff33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_change"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:04cbbf58be71ca6842f719d3b55a23e41ab2ca90835b3c76fcaf8c14f1a32ae6",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_change"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The operation family entry point this leaf leaves exactly as it was: five registrars, declared order, appended at the tail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:7ced0c158739d1b0f273906b7910dc48c072d931ca4b70ec7c863a7f67e3ccb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The writer the refusal names for the write half, and the module that now owns the publication half the refusal also names.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:1e68e38b1d88e42cbf232455a533b8ff42545fd09694ebe83890024f9cd1ccb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ingest_curator_list"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:a26b10bf2b87b50893180b1b3246bbb2cb72f0062f8d956290b22857a1ca074e",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_publication_location"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:c31f33b68a4b6f664642c7b4faeabd06521cbcf5c7dd474315183345555ba8e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_identity_read_back"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The description sentences on the chain rows and the family seed.\n\nAnchor: \"one compact chain_family row per family routed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:429d58ebcd0a04fccd0879350ada71e8a79b6093a50c1f2bf13ba68d30c83a0e",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The subcommand spelling the docstring carries, and the parser that registers it.\n\nAnchor: \"knowledge-ingest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:78458fde33a11a578539417b89ca696a3c1f1095d05a10e45fc7a5bf09cf4509",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The entry point, now handing `config` to the diff and project registrars.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:7ced0c158739d1b0f273906b7910dc48c072d931ca4b70ec7c863a7f67e3ccb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The three registrars that forward the coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:ca0c1ca58b96b1b605fcc935731d60496c72dd4aca9cbf8289c5f3cd1ab9bba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_read"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:9067f856b2008ede6aa6ccd0567e309f2c39d3f18a845dab6bc5726e4d3b903d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_diff"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:5daf1eb49eb13c20b66e6fd9f3b1df49eab677b171d1399341d7b9fe542fcac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_project"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The registered citation_fix tool and its description.\n\nAnchor: \"On converted memory it authors the cards' citation rows into sidecar references and\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
+            "content": "sha256:20b5ef5cf44d451e4bac42e2c256688c2935e7430ccf795b2e21fe34b876c0e7",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The description sentences on the leaf read.\n\nAnchor: \"is the family-complete leaf read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:8837038817a916b5274d882dddaf20ceb722b9044964c0835ef60e758e1cd5ab",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The route's read description of a bounded, cross-surface continuation.\n\nAnchor: \"accepts the token any page minted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:dce41df8dba686e7f462d85141b60012e1b8faca829fa5abb354476c4e7e8996",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The description sentence, at the walk's code tree since MIK-R02.\n\nAnchor: \"gives each returned invariant's state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:e709b3d5ca3b2e60763976e5c681460330186b68606dcc733c789672668b8a43",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The registrar's optional pair, `contractPath` and docstring.\n\nAnchor: \"a leaf may be named without a dataset\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:afab6bd8751c09e3fa58cf84fb3d478c847ca87ce968c9d24b6000d59da1e2da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_integrity_check"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The registrar's docstring sentence.\n\nAnchor: \"On a converted memory tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e0a4b8048d178dd2034a1c182a89699f73330",
+            "content": "sha256:e8c94ad100efd12ab302c3a1625821d631893099b8ab8d6663015e7a4d4fff33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_change"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The payload builders every declaration forwards to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

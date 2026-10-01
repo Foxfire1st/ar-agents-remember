@@ -1,0 +1,164 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stable store archives raw or opaque journal evidence and projects quarantine.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncOperationStore"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:d4bc6b6f0f627f861dfed3e739f5288f508f957eea7a9e550c5b69aa8f3fb5fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_quarantined_sync_projection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ref reconstruction and contract/base constraints come from the sync authority module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:610da19fbdf8f06d13d74b3047ba0e21b3938a0ebca6c1185c87dfe38b4d0e66",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:54752aca1563316956fdeda67007fbe3df351ef1252ac5c4650045859ded929d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_record_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact merge attribution and rollback proof are centralized in the Git module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
+            "content": "sha256:fa1ca326117de93fc4febaebe1e7802714efa4d373dcef16fdc132ab769eae5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "exact_created_head"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
+            "content": "sha256:362b89c6551f6b216e57821ac09377acfd097be4b244b1b5af2d0e95ddd23acd",
+            "locator": {
+              "kind": "symbol",
+              "name": "rollback_side"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair.\n\nAnchor: \"require_parked_wip_settled(record)\"; \"restore_cancelled_wip(store, record)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "content": "sha256:9c5760e4bc86f585066e6683af4bdbfddaf9454ccfbc970f775f7a64bebc9561",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_sync"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "content": "sha256:281c7b4b0435e9938358c5cf452b0edb9478f113094ca158e3f66baffa5efa3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_sync"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The completed result gains the recomputed worklist summary; every failure leaves it unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "content": "sha256:4914b185c2e5d37db635c28801ec25eb7e089977c7b791b1c9b13703c40528f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_recomputed_worklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "content": "sha256:891cae08c8d5b0e773a64d1940b51a1ac566213ac0137ba3f1bd58f7c4aefb56",
+            "locator": {
+              "kind": "symbol",
+              "name": "recompute_knowledge_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The completed-branch proof addresses only operation-created heads and reads no ledger rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_completed_branches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/certification/` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T14:48:58+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -37,18 +31,14 @@ Start with `base.py` for frozen models and rail identity, `corrective.py` for ex
 | `corrective.py` | [corrective.py.md](corrective.py.md) | Canonical direct/root repair dispositions |
 | `references.py` | [references.py.md](references.py.md) | Exact stored object references |
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared identity and base carry only closed wire constraints. | `FrozenContractModel`; `RailIdentity` | mcp/src/agents_remember/models/certification/base.py:30-33; mcp/src/agents_remember/models/certification/base.py:36-42 |
-| Corrective shape requires actual digest movement and canonical entries. | `CorrectiveInputChange`; `RedCatalogDisposition` | mcp/src/agents_remember/models/certification/corrective.py:22-38; mcp/src/agents_remember/models/certification/corrective.py:41-70 |
-| Exact original bytes are bound separately from semantic address. | `CertificateObjectReference` | mcp/src/agents_remember/models/certification/references.py:24-39 |
+### Repo-Internal References
 
-## Docs And Cross-Repo References
+- The shared identity and base carry only closed wire constraints. [1]
+- Corrective shape requires actual digest movement and canonical entries. [2]
+- Exact original bytes are bound separately from semantic address. [3]
+
+### Docs And Cross-Repo References
 
 The configured Domain Documentation registry has no entries. These source-owned models and transitions introduce no cross-repository protocol.
-
-## Update History
-
-- 2026-09-06T14:48:58+00:00 — Created this nearest route from source at `c69d5171187fa1957025e393270db9f5a864ab14`. Preserved domain/store authority outside the wire/transition package; source review is not gate or acceptance evidence.

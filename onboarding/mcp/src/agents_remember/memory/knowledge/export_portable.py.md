@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/export_portable.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/export_portable.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -156,51 +146,41 @@ None recorded for this slice. Two carried facts belong to a consumer rather than
 has no killing node in this leaf's population — reported by the scoped final verification as an
 observation for **L9**, not as a claim of this leaf.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The acceptance rule, the guarantee and the digest-coverage statement, in the form a consumer may rely on.** | "Every accepted artifact is the canonical rendering of the logical content it carries"; "Inside `logicalDigest`" | mcp/src/agents_remember/memory/knowledge/export_portable.py:39-75 |
-| The declared format member and the envelope key order the document renders in. | `EXPORT_FORMAT`; `ENVELOPE_KEYS` | mcp/src/agents_remember/memory/knowledge/export_portable.py:116-116; mcp/src/agents_remember/memory/knowledge/export_portable.py:120-128 |
-| The boundary an export carries for its reader, returned on the result rather than embedded in the artifact. | `PORTABLE_NOTES` | mcp/src/agents_remember/memory/knowledge/export_portable.py:133-140 |
-| The document encoding: the kernel's canonical kwargs with key sorting deliberately omitted, so the declared column order survives. | `DOCUMENT_JSON_KWARGS` | mcp/src/agents_remember/memory/knowledge/export_portable.py:147-150 |
-| The envelope builder: declared column order, canonical nested keys and declared manifest order. | `export_envelope`; `_ordered_rows`; `_canonical_json_value` | mcp/src/agents_remember/memory/knowledge/export_portable.py:199-239; mcp/src/agents_remember/memory/knowledge/export_portable.py:242-264; mcp/src/agents_remember/memory/knowledge/export_portable.py:267-274 |
-| The one encoder, and the header rule that stops it emitting a form its own reader refuses. | `encode_export`; `_validated_header`; `_render_document` | mcp/src/agents_remember/memory/knowledge/export_portable.py:276-301; mcp/src/agents_remember/memory/knowledge/export_portable.py:304-330; mcp/src/agents_remember/memory/knowledge/export_portable.py:345-348 |
-| `canonical_document`, the renderer that answers "is this the canonical form?", with the necessary-but-not-sufficient caveat. | `canonical_document` | mcp/src/agents_remember/memory/knowledge/export_portable.py:366-398 |
-| The gate's rendering, which keeps each header scalar's declared JSON type so the header check is the site that refuses a respelled generation by name. | `_render_declared_document`; `_plain_envelope`; `_plain_tables`; `_canonical_rows` | mcp/src/agents_remember/memory/knowledge/export_portable.py:401-415; mcp/src/agents_remember/memory/knowledge/export_portable.py:351-363; mcp/src/agents_remember/memory/knowledge/export_portable.py:418-445; mcp/src/agents_remember/memory/knowledge/export_portable.py:448-469 |
-| The reading order: duplicate keys and unparsable text, envelope shape, manifest, gate, header. | `parse_export`; `_Document` | mcp/src/agents_remember/memory/knowledge/export_portable.py:490-543; mcp/src/agents_remember/memory/knowledge/export_portable.py:1026-1059 |
-| The shape refusal (unknown and missing envelope fields) and the manifest refusal that runs before the gate. | `_shape_refusal`; `_manifest_refusal` | mcp/src/agents_remember/memory/knowledge/export_portable.py:546-570; mcp/src/agents_remember/memory/knowledge/export_portable.py:573-607 |
-| **The whole-document gate, its refusal-identity and the bounded statement of how the text differs.** | `_non_canonical_refusal`; `_canonical_difference` | mcp/src/agents_remember/memory/knowledge/export_portable.py:610-642; mcp/src/agents_remember/memory/knowledge/export_portable.py:645-664 |
-| The dataset checks: declared column order, declared types, canonical nested order, primary-key uniqueness, namespace binding and the recomputed seal. | `validate_export`; `_validate_table_rows`; `_typed_row`; `_validate_dataset` | mcp/src/agents_remember/memory/knowledge/export_portable.py:667-712; mcp/src/agents_remember/memory/knowledge/export_portable.py:839-882; mcp/src/agents_remember/memory/knowledge/export_portable.py:885-925; mcp/src/agents_remember/memory/knowledge/export_portable.py:964-1023 |
-| **The type-strict generation comparison that is the second half of the guarantee, and the entry's public symbol list.** | `_validate_header`; `__all__` | mcp/src/agents_remember/memory/knowledge/export_portable.py:755-812; mcp/src/agents_remember/memory/knowledge/export_portable.py:1141-1156 |
-| The reachable, verdict-changing namespace guard with no killing node (an observation for L9). | `bound` | mcp/src/agents_remember/memory/knowledge/export_portable.py:981-998 |
-| The one canonical logical encoder this module transports rather than re-implements. | `logical_body_from_tables`; `logical_digest_of_tables` | mcp/src/agents_remember/memory/knowledge/logical.py:95-129; mcp/src/agents_remember/memory/knowledge/logical.py:132-135 |
-| The kernel canonical encoding the digest kwargs come from, and its no-NaN policy. | `CANONICAL_JSON_KWARGS`; `sha256_digest` | mcp/src/agents_remember/kernel/canonical_json.py:20-32; mcp/src/agents_remember/kernel/canonical_json.py:34-38 |
-| The table and column manifest the declared orders are read from. | `CANONICAL_TABLES`; `CANONICAL_COLUMNS`; `SCHEMA_USER_VERSION` | mcp/src/agents_remember/memory/knowledge/schema.py:26-42; mcp/src/agents_remember/memory/knowledge/schema.py:47-112; mcp/src/agents_remember/memory/knowledge/schema.py:27-27 |
-| The typed JSON column set a value is canonicalised against. | `JSON_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema.py:154-162 |
-| **The node that asserts the canonical form is the only form the reader accepts, including all seven header types.** | "test_the_canonical_form_of_the_whole_document_is_the_only_form_the_reader_accepts" | mcp/tests/test_knowledge_portable_boundaries.py:133-258 |
-| The node that asserts an unreadable artifact is refused with a typed code. | "test_an_artifact_that_cannot_be_read_as_text_is_refused_with_a_typed_code" | mcp/tests/test_knowledge_portable_boundaries.py:763-763 |
+- **The acceptance rule, the guarantee and the digest-coverage statement, in the form a consumer may rely on.** [1]
+- The declared format member and the envelope key order the document renders in. [2]
+- The boundary an export carries for its reader, returned on the result rather than embedded in the artifact. [3]
+- The document encoding: the kernel's canonical kwargs with key sorting deliberately omitted, so the declared column order survives. [4]
+- The envelope builder: declared column order, canonical nested keys and declared manifest order. [5]
+- The one encoder, and the header rule that stops it emitting a form its own reader refuses. [6]
+- `canonical_document`, the renderer that answers "is this the canonical form?", with the necessary-but-not-sufficient caveat. [7]
+- The gate's rendering, which keeps each header scalar's declared JSON type so the header check is the site that refuses a respelled generation by name. [8]
+- The reading order: duplicate keys and unparsable text, envelope shape, manifest, gate, header. [9]
+- The shape refusal (unknown and missing envelope fields) and the manifest refusal that runs before the gate. [10]
+- **The whole-document gate, its refusal-identity and the bounded statement of how the text differs.** [11]
+- The dataset checks: declared column order, declared types, canonical nested order, primary-key uniqueness, namespace binding and the recomputed seal. [12]
+- **The type-strict generation comparison that is the second half of the guarantee, and the entry's public symbol list.** [13]
+- The reachable, verdict-changing namespace guard with no killing node (an observation for L9). [14]
+- The one canonical logical encoder this module transports rather than re-implements. [15]
+- The kernel canonical encoding the digest kwargs come from, and its no-NaN policy. [16]
+- The table and column manifest the declared orders are read from. [17]
+- The typed JSON column set a value is canonicalised against. [18]
+- **The node that asserts the canonical form is the only form the reader accepts, including all seven header types.** [19]
+- The node that asserts an unreadable artifact is refused with a typed code. [20]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The artifact crosses **machines**, not
 repositories: nothing here reads a second checkout, resolves a source object or consults Git.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_an_artifact_that_cannot_be_read_as_text_is_refused_with_a_typed_code" repointed to mcp/tests/test_knowledge_portable_boundaries.py:763-763. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-
-- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): created this one-to-one card for the portable artifact format. It records the guarantee in the only form a consumer may rely on — **every accepted artifact is the canonical rendering of the logical content it carries**, so two artifacts that both validate and declare the same `logicalDigest` are the same bytes — and states that acceptance is **two** checks: the whole-document gate (the text must be the exact rendering of the document it holds, at every level the format declares an order or a spelling for) and the header check (every declaration must be the one this build implements **and of the type this build writes**, with `userVersion` compared type-strictly so `1.0` and `true` are refused by name as unsupported generations). It records what the digest covers and what the document form covers instead — the envelope's field order, the declared manifest order, each row's declared column order, every value's canonical spelling, and the JSON type of every header value — the two deliberately different JSON encodings, the reading order that makes each refusal the first applicable one, and the two misusable callables (`canonical_document` as necessary-but-not-sufficient, `encode_export` as the re-encoding path from the validated value). The `_out_of_canonical_order` branch is recorded as unreachable defence in depth, and the namespace-binding guard at `:911` is recorded as a reachable guard with no killing node, reported for L9. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

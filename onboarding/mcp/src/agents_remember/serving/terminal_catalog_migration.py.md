@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/terminal_catalog_migration.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/terminal_catalog_migration.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Serving overview](overview.md)
@@ -46,23 +36,14 @@ Legacy field names appear only inside this migration module and migration tests.
 
 Remove the migration only through a separately ruled durability-epoch change after deployed data is proven current.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Catalog migration is one-way and row-local. | `migrate_terminal_catalog_v1` | mcp/src/agents_remember/serving/terminal_catalog_migration.py:19-71 |
-| Role altitude selects the canonical migrated document. | `task_ref_for_role` | mcp/src/agents_remember/serving/terminal_catalog_migration.py:72-149 |
+- Catalog migration is one-way and row-local. [1]
+- Role altitude selects the canonical migrated document. [2]
 
-## Cross-Repo References
-
-
-## Update History
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: made the one-way reviewer
-  migration explicitly leaf-only and fail-closed for legacy named master/sprint scopes.
-  Verification remains closeout-owned.
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the explicit catalog durability migration.
+### Cross-Repo References

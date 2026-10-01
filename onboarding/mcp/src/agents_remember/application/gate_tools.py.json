@@ -1,0 +1,735 @@
+{
+  "path": "mcp/src/agents_remember/application/gate_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `_result` (lines 88-90) — Return the raw use-case result for the MCP adapter to finalize..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:30d1f3e03b0cf9d65e6b8966cb95b7ebe4948908e2607b62ca70b1b01d34abef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `_decision_payload` (lines 151-156).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:7685cad707fe221521ef7431e692993170e9e0c4d0f1deb22ef1b5a945af791d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decision_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:5f44f4ce2e8f0e8c5f732d7dc66dd4a2ba09bb6feba6fb6d2978159cb2e16d86",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `_resolve_deciding_actor` (lines 159-170).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:6f0c80e1233a4989f0e24df4480dc932cf373cdaf9c4718438e5dfb241e6637e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_deciding_actor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:e4b0991c0a91d404efb0659da9e20903688de592c043d5d7a7d0e804d3bede3d",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `_cancelled_wait_payload` (lines 173-185).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:324fe2ed6ac02bc9e11083a52617ee2899d4670024f08d15d85c71a034672ae2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cancelled_wait_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:273c8f1f5f4cbfbecabd5cae14dff771587d99f69f22520a4f7b700df6cdfe40",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the class `GateWait` (lines 189-203) — How a caller waits for a gate to resolve..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:e6b3a4a3d39ea8b0491c7d9c27e136782278022195439d293ad38aa43f794da4",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateWait"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:3423132eea4100e459e15cb509d5c2f74ff023c870e9bafc441bdedc0fe2ab29",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the class `InboxWatch` (lines 207-213) — Which operator-inbox entries end a gate wait alongside a decision on the gate itself:.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:45f8565ca2fc14120e736cdac2d73925e9d95ed5909261ad00eca3e66ac7f3d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "InboxWatch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:b9af49d5947975a76c0c1a274f335df34c5b45a7432ab2ee4dd130a89d5cee3d",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the class `GateRaise` (lines 217-228) — One ``lifecycle_gate`` raise: which gate to open and what it asks of the developer..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:0c2b1aea4ac8657d84b94a0ad1bbb7adb8162d3a0db6e3f796714b2966b27091",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateRaise"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:f8975868732fe38492469feb8acb02d98e51810aee05c81afee3f7de213d64ba",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Defines the function `gate_create_tool` (lines 244-277).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:1eb31b4b8a447b34998f1a1064691313ddfd51a6e6865a25bde9fd074590b0d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_create_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:3c8ad0395672676f363ab4361c8b57b292e1c8ca65bb0617f1091f47431c0c49",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Defines the function `_gating_lifecycle` (lines 280-293) — The active lifecycle this gate raises against; only a running, matching one may gate..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:4eab07ecb7532fb4e0b25c1db83d575d287cb3d5ac0829d74a9c10880d86b4c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gating_lifecycle"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:9e8273cef04441f8f4c5bf223fe1b9b33f4f83e177e09759df652de53ff7913b",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Defines the function `_validated_ask` (lines 296-317) — Type-check the free-form ``ask`` mapping into the structured ask's three inputs..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:6bcb52abc41507c515255335a5bfd5797b287714b23a5e3230bc28402badfc36",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_ask"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:6961e9b6e70b8af93dff9ecbfbf7b376d9e917bcf635132c521b68baa02295a3",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Defines the function `_require_raise_and_continue_allowed` (lines 320-350) — Refuse a ``wait=false`` raise that policy does not permit..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:4c0e89da6eb0c8ff0e2a59149ed6a55f48e497f959760cac466c85a9e686a796",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_raise_and_continue_allowed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:c4ad2009cc54becba34aee583cf1053371174512a6056e3fa13cfbce1b10f930",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `_store` (lines 93-94).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:bfc47a5f0e424b2bec60ceafc70b62de24d1bf57e3a9df0b1fb899b26b915202",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Defines the function `_raised_gate_payload` (lines 353-381) — The immediate ``wait=false`` response: the gate is open and its id is the hand-off..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:f17bbe61663225352e10e991fca18b4fd092d803907aadfad4f267f311242f0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_raised_gate_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:1e2a9895eaadf6a530cf57403c688642a2b42ee56bb6ee5a02becfa9b9bcbaff",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 353
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Defines the function `lifecycle_gate_tool` (lines 384-454).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:a592df7925994e3bfe372413749036bac02d53c3594a300e18fe163cfd133596",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_gate_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:a13c141c258e2a6e943a3fe5851b4e3903a4deb917ce801b44bd3bd924019edd",
+            "locator": {
+              "end": 454,
+              "kind": "line_range",
+              "start": 384
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Defines the function `raise_lifecycle_gate` (lines 457-479) — Compose the flat transport request into one lifecycle-gate use case..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:2cd6482c3a84791d65dc12c53b85314e136de850252201898de63598728d53b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "raise_lifecycle_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:2de6ac2a7ee42c2fac3836465af3d465329c8808e672c09432ef88929964a301",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 457
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Defines the function `gate_decide_tool` (lines 482-509).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:5b714ae86cc15edeba93d7659e8109416345199bc62bca0424154cf60ac188ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_decide_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:93fdcded11316391c107d5433dd2a16ac0fad95551705133665ed00f950cb538",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Defines the function `gate_decide_for_lifecycle_tool` (lines 512-546) — Decide the lifecycle's latest still-open gate for an application caller..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:c2d04550e256c22c6a5c96ab87f619eb1746855434eb3a8dd13b53dc8f7883b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_decide_for_lifecycle_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:8fb2953ce73362142f5d72de6cc4e73d3d4978d1788139cc857b63d0df7e600d",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 512
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Defines the function `record_gate_decision` (lines 549-568) — Compose transport verdict fields and decide the addressed gate..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:2bf1759820071d1f66809b49e031af2b3b0368fe68ce9a91eeec8af9b61b10af",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_gate_decision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:72d1c90fdfd5b6d228a844c23cfd6a131454292c66214b16d6dfc985ae4b9504",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 549
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Defines the function `record_lifecycle_gate_decision` (lines 571-590) — Compose transport verdict fields and decide a lifecycle's current gate..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:88147c74bbb022158ad2a698bec75ca385b00ec8e07e673bc68be62c0a0ff9af",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_lifecycle_gate_decision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:406cc4053ae58954bc7c4a66eba77b090a06d20c92bffe798038defedf99fca2",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 571
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Defines the function `gate_wait_tool` (lines 593-636) — Bounded wait until the gate leaves ``open`` (or ``timeout_seconds``)..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:9bf544da382abd2c4c90cd5a8b56b17dfa959390bb0a506a867b147580cc8d1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_wait_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:8e3ca0f928923ca945092abdeedcecf18596d6cbee6bf551c6c361bd470bafa8",
+            "locator": {
+              "end": 636,
+              "kind": "line_range",
+              "start": 593
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Defines the function `gate_response_wait_tool` (lines 639-701) — Bounded wait for either a gate decision or a dashboard Chat inbox entry..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:6c529166f83c3bcc732184dc200abedf48365598a621d479f510ce03ec1bbfbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_response_wait_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:dfa86ac3f4be3b44fb5e49ea30ded0c2086a8ee53308347d3cd05232e803f9a1",
+            "locator": {
+              "end": 701,
+              "kind": "line_range",
+              "start": 639
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Defines the function `gate_list_tool` (lines 704-730).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:93856a752c196d5f9c11906c1819e1b8783a742b00a514c37ca28735e281bb9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_list_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:1fd1d4811ae920314fff0fb687793ace799ad244ecfa275118109030c589c209",
+            "locator": {
+              "end": 730,
+              "kind": "line_range",
+              "start": 704
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `_inbox_store` (lines 97-98).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:1ec0925058b909207c2189b6aa5c7c81fc7f48c534e34413c2b27384407b5027",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inbox_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `_expectation_store` (lines 101-102).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:de403253909d75b65781f18533ee4bb12ad7a293bc283e0b9abe605483caabd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expectation_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `_gate_policy` (lines 105-107) — The active delegation policy; a config-less caller gets the human-only default..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:a568702cada3143e04123c94c45d03b86b0eab7d059cda461f389b851c9cc93c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_policy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `_expectation_sla_seconds` (lines 110-113).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:ca1b2ae86a75b9717621dfd0c632c9e14fe82484e8de301d939774177d4f2e2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expectation_sla_seconds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `_write_verdict_by_row` (lines 116-132) — R2: a gate open atomically writes its ``verdict-by`` expectation row (same call, never a.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:c1be3a84ac1e57f934b8a164a52e44372ba4e8a14d7ac2258d06806040650d9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_verdict_by_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:6cd4343a1f646dbcd10fa21a6a288c2c5c4d2b2e826118ee7e2b248b0b1651c7",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `_resolve_gate_lifecycle_id` (lines 135-144).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:67907cddd3ca185ba2eaf674a0d6c2bedb8997267b5a17fda9c41f59e4313754",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_gate_lifecycle_id"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:0234681858ccdeb0cd23fc769f5bdbaa5d4b3eaab257df1b2e6f9ed7ae9f2331",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `_entry_payload` (lines 147-148).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:880b363b57d8b0631cb94b5a6c8f548539e21587b1f9f1537369a6aea119f7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

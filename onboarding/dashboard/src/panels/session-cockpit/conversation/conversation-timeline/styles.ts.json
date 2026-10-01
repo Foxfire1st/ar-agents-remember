@@ -1,0 +1,56 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/styles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The feed viewport/row recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0174e94f795842dbe7b096181a9abf883dd3f05c",
+            "content": "sha256:a6442af14274f550ab4bb8f21d7eecd175034a8e18aa31b1c227ed975bec04fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "viewport"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0174e94f795842dbe7b096181a9abf883dd3f05c",
+            "content": "sha256:a7b3af31ac474048e8a62d6bda3f5ae1cdf70c0920b2c82e4c07d5ea17bbe4dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "feedInner"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0174e94f795842dbe7b096181a9abf883dd3f05c",
+            "content": "sha256:6367e668096b56d697b5c1bdb6deda31eadf148830d426c26dcc2f05556ad7c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowShell"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0174e94f795842dbe7b096181a9abf883dd3f05c",
+            "content": "sha256:c9d312ba4c0bb33ea99e87127223c8c780f026460c78f4875dda6701d60683d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "latestChip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/install/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The initializer identifies the package as runtime installation services and contains no executable behavior.\n\nAnchor: \"Runtime installation services for Agents Remember.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5008b9cbfdf6297e55939e899d9657f9bf8c3f7",
+            "content": "sha256:a589f2c46eee4f9974956f8c7433593afbe6fe17387a725cedb89ccf28d6fb78",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

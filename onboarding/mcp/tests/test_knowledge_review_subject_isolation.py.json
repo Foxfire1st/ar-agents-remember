@@ -1,0 +1,502 @@
+{
+  "path": "mcp/tests/test_knowledge_review_subject_isolation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the defect it pins, the records its fixture produces and the properties its cases measure.**\n\nAnchor: \"One selected subject's review displays only the records that subject may be judged by\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:bd97574b9eedbd93ad88af656a8e47da646c2a96f2e999eee1ca1341760695ee",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The F-V2 case: every page size classifies the same records the same way, context included.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:5012fff1b633cd20f1622b60ff5a83451cbd4aeef10ae44e255d4be40c55f57d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_page_size_classifies_the_same_records_the_same_way"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The F-V6 case: a `direct` sentence cites ICR-R07 only when R07's own published list carries the matched revisions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:c6de95b7973b6e5287875c17716d84011c53e31ae405e55fb6793ae1d9005a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_direct_label_never_cites_a_retained_list_that_does_not_carry_the_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The complete populations: the channels' counts beside the pane's own, and every summary a partition.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:38fef42dc4c2138368c00839f82a1e185f191b516c4c65261b90c3dde77da598",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_supplied_collection_reports_its_complete_population"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The attribution of the signals, the claim, the observation and the subject-less authored question.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:c5d7198eaf534704a162760d9c40b57f97da6cc14e193e8f37bace4f577a5be4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_records_own_bindings_attribute_the_signals_and_the_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The source inventory is a measurement of the two bound trees and is untouched by record selection.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:a4de89cf22753e6e890e164dd46be196031a95bd81fc646b9ed477ef5b3a48bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_source_inventory_is_independent_of_the_record_selection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The two vocabulary refusals, measured at construction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:8b82a2928c97dc0b7d467c6079e66e778bbe3f63997f5d0b42918e31fecae4c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_class_vocabulary_is_the_record_vocabulary_minus_its_measurement_channel"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:863072742d71946ca9d506f728aac141f52b6da6a917692a81f1014fb2b00a9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_label_and_a_summary_refuse_a_claim_their_recorded_facts_do_not_support"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The fixture that produces every record class through its owner and reads the page-size series once.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:f0dc19ad90d70dc11957e4746dba35c90dd4a3fa618930b01a93f9c2b599eec1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_journey"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:20440235b7a1d546ac4ac83492d7d6d41c3a4da9f444b7d0176a3f7f95babe7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_assessments"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:008be31be2b08f4c52b7e49e3380b8d7d5f63966c959cd6cb39289b0f6007778",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_detection_run"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:7e5c52f2cb22292a2064555b6a6482b0d1b9f5e27806254d972abecad9a4c6a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_evidence_claim"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:33178e12ab3dec39826b99bb468660651be56bed52a1e992591d3a2db1bdeab9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_observation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:1160566f8248e83135d65c145bb76d96e396d636d5c42e8d4f68e7c4029a1f33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_authored_effect"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:c644f96526cca16ac0c1c5ed32f03a81a0d96ca9c720d987a298eeaec752ac43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_through_port"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The production port every case reads through.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b245971737d12089b63c41ea71b910022980b7a",
+            "content": "sha256:c3b1ddf235500347a9cb44d9d3e2a9a5e58ace18c1cd9e840033005c73c162d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The production policy these cases measure.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:afd17b58628b96dd72b374726620ed74f75980e41f68fa9013d3981b4a9195ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_applicability"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_applicability.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:bb321e42eb6244d4a05805435f272610c130b581f1f81bdcf7fbba561f51df7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AppliedRecords"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_applicability.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The vocabulary these cases read their assertions from.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:c3ad673155582cb9ddb27d598dc9f29646ddade47be02b99ab10e7b7ecff6d6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewDisplayedApplicability"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_applicability.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:2d11058bebc56c33867ae720126aaef9c698ff37bc890a9960e7f3675371a930",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewApplicabilitySummary"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_applicability.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The live enclosure and the reads the cases use, with a refusal failing the case rather than changing the assertion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:9f5ab857c7d57ca6b648d333bb233bc4e14793da5ebbd7a0e4395470e19e3585",
+            "locator": {
+              "kind": "symbol",
+              "name": "Journey"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:490b14c27f038ac5f3fbea491a463cb490aac4a5d1bd139992e1c421ece26e9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:00aa271b6cb485d7cd6b02c176b64718fa85f455dcfbc0b2926f06edd42a75ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "treatments"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:142a19dfd1abf6a2d8b30d5eb258f85e59152afd1d1fabdee2e1298b9d23871b",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_of"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The lane row that registers this module — `unit-regression` is a bare TOML key, so it is named here rather than anchored — and the first of the four consumer rows its cases are derived for.**\n\nAnchor: \"mcp/tests/test_knowledge_review_subject_isolation.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b64799fabbf257ec95b4d6d3c83e1e83c9d925",
+            "content": "sha256:77db5f43160a255602359cf3d2cf1197e35970d4018b73033a93aa481667e708",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e19cee01311b80dc8a806840263da0697707efde",
+            "content": "sha256:6c0813e16260cb8eeb0ff830c7f076a5e21e5cb958001a00c58baf63eb603d64",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 454
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The one enclosure per module, and the read after the source moved.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:0af281f7a89fc87bea584b596a0d192dd9119319551642d233ac3ee65f9f7659",
+            "locator": {
+              "kind": "symbol",
+              "name": "journey"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:068fef4e69762a6d3aa1dfd0efa65bcdfb94a4b05da4d294fdaa405eec984063",
+            "locator": {
+              "kind": "symbol",
+              "name": "moved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The F09 case: the sibling's record is in neither pane's assessments and is labelled context with its kind, its true subject and none of its finding.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:ee86d436c12c6e8162e96369ac2af15f8507df788adc06848b13aaa31fa32e47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The selected subject's own record, with the binding its label names and its provenance verbatim.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:2a35edcb37496c0402983e437164858d77608367b296380b2c1d3ecb6523acb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_selected_subjects_own_assessment_is_direct_with_its_recorded_binding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The exclusion as arithmetic: an unreachable subject is counted, not displayed, and the summary names how to reach it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:76b0e26ad5884f9f0f4c4132afd74654743cc2d1b66c1035f0d630b601966fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrelated_subjects_assessment_is_counted_and_not_displayed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**An unresolvable binding displayed with its references and never as support.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:c6291208960b87bcb68280fdc6fe3b82e8a1a3f939777a19dc86008ff1ed68dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unresolvable_binding_is_displayed_unresolved_with_its_references"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**A previous generation's record labelled historical with the tree it examined, and never current.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:b94c267c4ec4cbc2ea902194ac8db08f105e33974d381c66e5474b6179776021",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_previous_generations_assessment_is_historical_and_never_current"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The F-V1 case: a malformed revision binding is unresolved and claims no retained revision.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:1fcede449285fdef64444ec4a099d1d0fc39f79169809f09dca10aae9e8e3a8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_malformed_revision_binding_is_unresolved_and_never_a_retained_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

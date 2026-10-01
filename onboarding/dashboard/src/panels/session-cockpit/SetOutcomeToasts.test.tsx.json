@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/SetOutcomeToasts.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Visibility, persistence, mark-seen, focus, and collapse cases.\n\nAnchor: \"renders nothing without unacknowledged outcomes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cc467823d4ee2d1df8488a54a6390b18182759f",
+            "content": "sha256:ae195d139f56dd4f01cd67806f6438dce6ab1802f8c826c244b577b0e434fd95",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Component under test.\n\nAnchor: \"export function SetOutcomeToasts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "710bfa44cbf21bb6632da6a7d248fbcc48d61769",
+            "content": "sha256:8a5596dd5439a7563a506cf29ed792da9f623692977f2f184b21b18acdecb30b",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

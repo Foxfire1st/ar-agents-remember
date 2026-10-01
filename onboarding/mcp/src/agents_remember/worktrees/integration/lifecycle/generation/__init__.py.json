@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The initializer names the package ownership without executing a workflow.\n\nAnchor: \"Lifecycle generation creation and retained same-generation resume owners.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dbbdf6ff5d15654991699a2ce90fcf576dce1c",
+            "content": "sha256:47bc832c8dcfbd9712bdcdaeeea8441ec3eaad22e4e4a9729ad85d0357ec46f2",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

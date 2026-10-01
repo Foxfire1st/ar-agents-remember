@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Creation of invariant revisions from a curator handoff with one or more resolved targets.",
+  "conditions": [
+    "The curator supplies nonblank applicability and explicit lists of conditions and exclusions.",
+    "Scope validation runs before invariant identity allocation and writes, including preview."
+  ],
+  "exclusions": [
+    "This admission rule does not retroactively rewrite historical stored scope.",
+    "A targetless ruling is not an invariant revision."
+  ],
+  "id": "INV-KBCKV7N1",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "178a2eef-acfa-4796-a96d-38fe6c5cf1ef",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "An invariant ingested from a curator hand-off carries curator-authored semantic scope, and an unfilled scope refuses that entry before invariant writes.",
+  "status": "proposed",
+  "supersedes": []
+}

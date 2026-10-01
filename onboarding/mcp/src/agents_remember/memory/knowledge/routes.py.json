@@ -1,0 +1,248 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The confinement rule table: nine refused forms, first breach wins, and an admitted path returned unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:9fa472344f72aea98219a3f28e0a1f35fef05c66a059bf2f8d5fdf67df180ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_route_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:f1bff91928de2540eff05b965b2fd0675924ce652b110f71965d2fab38af9db1",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shipped lineage-cycle technique this walk follows, and the confinement rule it implements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:2d7eaf673adf418f11aca4fa417763d280b70a06fe278bfc04e9a4621f551ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_lineage_cycle"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The authorship codec whose encoded value is stored as each route's and association's provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:d6dbd1590d2cd59d0430a60a931f333425a6b26b4c33d4fffdb5ed0c691d6277",
+            "locator": {
+              "kind": "symbol",
+              "name": "encode_authorship"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The route operations in the shipped operation vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The eighteen cases covering authoring, idempotence, refusal and the cycle rollback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:3ae007e80425b53abd9278056816ef201ad500368ef4f42e2719d27907540836",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_confined_path_is_authored_and_its_identity_returned"
+            },
+            "path": "mcp/tests/test_knowledge_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The recursive-CTE acyclicity walk, anchored on the edge rather than the route, returning `None` or one `lineage_cycle` refusal.\n\nAnchor: `lineage_cycle`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:743536918d07f037ce0bcdf3e273ac92a309241f25590a95d5c29c8ddd26169d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The write layer's two request objects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:5aba53f301cbdf8c910ab5656847ad62e23a5bf34fdf401d9a24af5c36a81b9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Route authoring: normalise, return an existing route for an already-authored path, refuse an unauthored parent, insert, then check the hierarchy inside the caller's transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:3718ecd74520da19b491579a4561d932d487ab78213dd982c79c6eb37acd1392",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_route"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:610007d88e2db75fcb36b876883c01bf4c414ec005c54acb87ecf2c67b0790f0",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read side of the association, and why `None` is a fact rather than a default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:c80c92aa3047ec810f8e2ef131b7a5a7d138ba826dbc58d55840f5398c979cbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_governing_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The governed-entity map — three generation-1 entities, one join table and key column each — and the four refusals plus the idempotent re-statement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:1c57e3604ba40effd0306e5ec07234dd3f318b7b0e31158517daad6449239a0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GOVERNED_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `route` table the walk reads: repository-relative `path`, self-referencing deferred parent, one-node cycle `CHECK`, rebind and delete triggers.\n\nAnchor: `path`; `CHECK`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:1bd63a4fa80b838089208e4fb04039f38f67fc21b4a73c306301f831eac71bab",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The three join tables whose primary keys make \"at most one governing route per governed row\" a constraint.\n\nAnchor: `source_anchor_route`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:c5d3f823c0c17cd3d77f8cd5a6eac32f204b53b536178ff4cea2b76563f22515",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_PRIMARY_KEYS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The envelope's nullable governing route, so a record is scoped through the same route entity.\n\nAnchor: `knowledge_record`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:825eb155e8b2e072eb4c308a34fc10caf36132978375a3367b6e2f1f0e489d17",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

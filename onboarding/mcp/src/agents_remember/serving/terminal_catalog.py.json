@@ -1,0 +1,132 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal_catalog.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The catalog queries current occupancy by task document and role through the shared selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:07d7a17df45acabc034053c44cd695979eeba3cece00027fdcc789234a2eebad",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_for_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One exact generation idempotently binds one durable pinned-brief receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:2bee0c7bd7c43d4b15ded425cb620a398103ba8d26d55dd780b7871cf4169c47",
+            "locator": {
+              "kind": "symbol",
+              "name": "DispatchBriefReceiptStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Legacy rows migrate before strict model parsing.\n\nAnchor: \"rows = migrate_terminal_catalog_v1(self.path.parent.parent.parent, rows)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:832e59c7558e809a3d3b12e94dcad8525fb489d0bb44ba42466d1b79d6721869",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 411
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current catalog model owns strict row serialization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:0fac878e1709e9f97f98da114e320e9ff71e56f1dba70b05d0afc77d57e998c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalogEntry"
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The explicit contention read decodes the last atomically replaced file and never joins an active batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:d5a8cd0ca49e44e9f4e6cd32d0d949d88c2db83d3b1e67d148a258e7c4e564e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_committed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An exactly-equal single matching row is not rewritten; duplicate ids still take the replace-and-append path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:5e5bb70860105cfb8cfcd922a141a6f423023595c050318b14ee670d26a2c038",
+            "locator": {
+              "kind": "symbol",
+              "name": "upsert"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One dirty-gated atomic replacement per batch, including dirty-partial flush on a body exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:be4a8fe2890d5da1a70bbe54a2a1d2dc05d440209e65129c8a62708e271bead7",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:0f05bf0ae3019d6adcd477db2fe84d5323d50f42396b63ad854bd28393dd9a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_disk"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

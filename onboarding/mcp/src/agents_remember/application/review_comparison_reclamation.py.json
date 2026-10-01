@@ -1,0 +1,439 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the two properties the reopen depends on, and of what it deliberately does not decide.\n\nAnchor: `review_comparison_freeze`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:f47de03c3f5a2afce9356e675b5063ad02f93b22335bca0e5de5e999e4c2d6b4",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The two typed failures this module raises, with their stated reason for being raised rather than returned.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:2274d2c732dc02f1a1446d8b254aa836da88e671b3b6ad42de1656eb83fead61",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectRetentionError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:6f59dd1ce2de981f4831d18db96083f8b33665595c83a8a5042db183f0a47d72",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonReclamationError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The case that measures the discard: a mismatch refused with both files in place and no record, then recorded digests equal to the frozen ones, then both halves reported `unavailable-history`, then the retry recording `None`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:9d7a26de3632ed1ed41462bc252b978cf99d67081b994dd92fd08c24de671fbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_discarding_snapshots_records_the_bytes_it_measured_and_refuses_a_mismatch"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The case that measures the release: an unavailable-history record, the custody measured before and after reclamation, and a reopen that reports the deletion rather than today's data.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:9711ee22b2df5d0ac4d1053b2865b3cb497bf3d63f81b3864e2b16120cb64fa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_explicit_release_records_unavailable_history_and_is_measured_not_assumed"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The case that refuses to delete a ref that moved.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:26f0fcf4ae264a72b733ce134400182b3ac996a478cc5e418eafc98df0f15bfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retention_ref_that_moved_is_never_deleted"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The reopen that consumes these records: the per-channel states and the unavailable-history channel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
+            "content": "sha256:d9b1127ccd4028a81d821f6338009dbc0b2c17dad6ae42521ff333ea70abb177",
+            "locator": {
+              "kind": "symbol",
+              "name": "reopen_comparison_generation"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
+            "content": "sha256:cb6a6df1572b2c295881fc71696ec7b90e98b7c702902725437c634c5d00ad3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSourceChannel"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
+            "content": "sha256:a1d61a6fac0321648380cfdd1e330a04df3090e5b2bbe971ccd648b5a930b95b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonKnowledgeChannel"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
+            "content": "sha256:39747140a2865824f4e75103e126d4cbbe87b82faa76c8d6ef3c07177e4c8557",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
+            "content": "sha256:51e71bc0ecd6b269c97de9ac9bda45de28d58df3008af344ebc837e17fef0e15",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
+            "content": "sha256:b6f0ad713ba8ca9eebde90ae2ed6b8534661405259847645fe9e226c98664c57",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The two canonical deletion owners the manifest names on everything a freeze creates.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:b3cad26dc6444ea9c4a238f9cee1763b484a948ba6a2649f29ebce4e50d7e822",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_OBJECT_DELETION_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:cf20c8006bfd6e4a4ffc2e98b10dad9b4ae8990afa7686fe2e68475cf676a17a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SNAPSHOT_DELETION_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:11403f37d5d7a8eab9490e0f9e0ab2cb7f16ea9f33a1ced40264c929147f158d",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The deletion targets, spelled with the record's own literal vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:cb96171205e7a139335fa0a2c4a9498c6cf5de67628520f46a15ef3e128568d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:797af217e22d8549df4d384e0412855cc1a4a6ffc22eb76caacaf5b67498108e",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:be39c27038ec8022824e354550e1cfaa1828b8a33f6c7b515b22d5a765de798f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_target"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:4548934791426979898b094db55fd6bb40b21f37089ac52ba4a356934a7a35f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_OBJECT_TARGET"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The code release: no pin → refuse; moved ref → refuse before recording; custody measured before deletion; record written first and withdrawn if the release refuses.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:8ea7439e1b26cd6454e4e363a2f9d6d95e09d045ca2ab19e61d4b3a4d6792f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_comparison_code_object"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:df54760da3521d4429511706c704e37bb28fa5aacaf26333fdd289313b847310",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_ref_names_the_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:aae663c17e31ffeccce1b8a866676e7786f120ea51a55f8b30778046ff6e1876",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ref_exists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The custody names read back from the record rather than re-derived from a live contract, because the enclosure may be gone.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:f694a5a3f4fdc933d2765721d94265a3206ff2c35bc5fc74f5273b325c87459c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_custody_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The snapshot discard: one record per retained half, inside its own recorded cleanup scope, and the manifest left in place.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:2d02bfda2b3bbcfa8f3de7fae05a367ca4045f9c08ff00232765e5f6be676e2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_comparison_snapshots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The digest that is measured rather than copied, the mismatch that records nothing, and the already-absent snapshot that converges as `None`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:48a64ad8931d00cef7f72463a2411794916a24826b9f87d5c72b4f28e187357e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measure_and_remove"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The record the two operations write, and the manifest read that bounds them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:73d2ab8e235bb64a6aaf9817c167e685cf29aaa0d8cb180b00ae1b58c6774add",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonHistoryDeletion"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:45caf52e247338e80737728b123867c75868e42d906a7ca3a7e785490576f043",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_history_deletion"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_manifest"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The retention owner whose ref the code release deletes, and the two failure statuses it raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_retained_code_object"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:f9bf8dc42f67156b384de43f6486c23156208dad567ec64c19f26716ad28c76f",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained_object_readable"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:874ace4ceb964e42fca51d95238b53398b65e9f281bde01d0ddb915da2497f06",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_observation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

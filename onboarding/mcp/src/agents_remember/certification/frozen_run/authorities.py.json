@@ -1,0 +1,105 @@
+{
+  "path": "mcp/src/agents_remember/certification/frozen_run/authorities.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Snapshots verify exact bytes and mutation authority requires a complete memory pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:c2a77146856ed8f36c6c600ea27f799c43c346214078b414b327313f3828a0ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityInputSnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:fec166088442eef10b9d8900ce0f4d6b1fb4150496e2b2a072fb45bc83b86817",
+            "locator": {
+              "kind": "symbol",
+              "name": "MutationAuthorityRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source and worktree contracts retain explicit tips, physical identities and preparation observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:571e95b9375810731ed7c5c22161ad464f5fed6b5a607a69de9875bf43e56a1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAuthorityEdge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:38ed95119f115833c3ca33c52f89d62281ad7838b76da5475699b8f7655b74ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeRuleRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generated-input declarations do not claim freshness; the aggregate validates its semantic digest and snapshot order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:192fd3deb4ffa606d56be81bad449334494a6dc117dabc7917fb338b35007754",
+            "locator": {
+              "kind": "symbol",
+              "name": "GeneratedInputRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab4ab71571ac64abf87c30e3b7d035c6a32c632",
+            "content": "sha256:559e1df169602b1656ad1181fd600f04819e03855aae3795a5b5b9a468e06556",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateAuthorityRecords"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The production observer derives records from current task, door, worktree, lineage and contract owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "186e793a41b1b6b6fccf3de6101ecbfabbe838d2",
+            "content": "sha256:f06a32dbc028b6727c6c6da6b56fca5f5db2cc7a7adbf68f88dc63cf14cd9fef",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_certification_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

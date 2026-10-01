@@ -1,0 +1,51 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/evidence_governance.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Discovery combines support, durable suffix, policy, task/date, and configured-size authority while excluding the lifecycle catalog policy input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce3cde113e7a8b3f96d10aeda24fb596e7d676f5",
+            "content": "sha256:b95aa1102a23a8f4823b7dd407a2bd73d11ade6dd2bfe159c88a1b95cba410fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "governed_artifact_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce3cde113e7a8b3f96d10aeda24fb596e7d676f5",
+            "content": "sha256:7fa2ebcba22d3e66024eb929a3c5a33952222cf787f8f0c777b29ca6f84a8659",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_PATH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lifecycle validator consumes this exact predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:53b897ad4b97880593f9c6a5e1e784a69129c7570e283ae5abf7e42dea75a424",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_catalog_coverage"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

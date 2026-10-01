@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/providers/setup_reporting.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Setup finalization computes strict `ok`, recovered `ready`, setup state, failed phases, final status, result counts, and summary output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20b3e05eb740ab1f14aa73b5d442ba3186c8f9cf",
+            "content": "sha256:9e0a7e8b9b03cc39236a62381409ff19a1454ac6a171bf606802bb344754e8f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_setup_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Setup state keeps `ready-with-failed-phases` distinct from `ok`, failed, and failed-unchecked states.\n\nAnchor: `ok`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20b3e05eb740ab1f14aa73b5d442ba3186c8f9cf",
+            "content": "sha256:389fac5410d0775893af6b7eaf6a3a5b7c1c97bc6f057d726ef4fbb3fed1e1cc",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Setup summary files are written under `logs/providers/setup/` as `last-<action>.json`, a timestamped snapshot, and `last-<action>-full.json` (full untrimmed payload), with dry-runs returning paths but writing nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20b3e05eb740ab1f14aa73b5d442ba3186c8f9cf",
+            "content": "sha256:2fe17e1a02a3cd255c4de6d6b6151c2d8a805cc7928c650a17a3a28892410bce",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_setup_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Summary payloads omit nested settings internals and include action, readiness, enabled providers, result counts, failed phases, final status, and compacted results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20b3e05eb740ab1f14aa73b5d442ba3186c8f9cf",
+            "content": "sha256:a8373421e094355170b87a60f57cf873125e834299f2e7423f287b22f97654a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

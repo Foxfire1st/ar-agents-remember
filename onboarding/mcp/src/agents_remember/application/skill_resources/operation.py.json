@@ -1,0 +1,209 @@
+{
+  "path": "mcp/src/agents_remember/application/skill_resources/operation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The capsule entry point re-shapes the flat tool parameters into the enclosure selector the coordination layer accepts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:2a778309bf92a9929919ae0209c369036fd2adf9dca6c28339059322f38c4320",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_capsule_compile_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:7ccd69fabb4452b501bcdfe4ff63951869ba9660a72d3a8ba7a9a0a1f3f178dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleOperationRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The three skill entry points build one catalog, with the shipped corpus as the default and a caller-supplied tree as the test override.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:5fbdf557958300c14da8a4f0432c62e3bc804136fe2221d2e9cbf3c8779f6346",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_list_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:82eefdaf02b663fb22ca10337f2dab01ae502c37c1bfbf162f533f48288ead12",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_read_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:b0a1099489b76eb70de65ebfbd7fe1c35054703d060baf0d1ad82900abec8514",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_registry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:4a89f92236c1f2769c7add94fce48a204faf322869fdf5aa9364f19591d46fc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Delivery refuses while any discovered skill is unreadable, checked before the read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:9f89ad4312b4a20e24167f49024286ffc951eb819c027f75a1feb332e2667fba",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_servable"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The request records both entry-point families take.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:1e36c5813ca53a4e09475dc30ebc654babc6111b66340d6d502f7557d7727970",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:7ccd69fabb4452b501bcdfe4ff63951869ba9660a72d3a8ba7a9a0a1f3f178dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleOperationRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The frozen operation vocabulary the capsule request carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_OPERATIONS"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The transport envelope these entry points' responses pass through.\n\nAnchor: `_tool_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
+            "content": "sha256:37212786e2f96a0c702403f7c0abc3cff9685de5395542308fccd2c13cc85552",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The consumer obligations recorded for a non-MCP caller of these entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:e3bc789bb66a1a3037cba8acfa21524e65966e045a47f3451ae9898f39ddf2c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceSelectionRequest"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that executes the discovery-registry-versus-body separation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:fdc3df03e6984138a4dd82eb0bd84582f4754ab3779042878e6c006845bdd1f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_discovery_registry_is_not_the_model_visible_catalog"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:2e0be92cf9b6dc1bd52d05de1fbf41646af68de7dfa5d2601e43ddd71d4e6143",
+            "locator": {
+              "end": 908,
+              "kind": "line_range",
+              "start": 882
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

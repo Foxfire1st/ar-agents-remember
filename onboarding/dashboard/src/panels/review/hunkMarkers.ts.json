@@ -1,0 +1,309 @@
+{
+  "path": "dashboard/src/panels/review/hunkMarkers.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement: nothing here classifies; marks sit on the owner's side lines only.\n\nAnchor: \"Nothing here classifies.\"; \"owner hunks drawn in one displayed region keep two marks.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:c2376877be3ff08df5aaede68fafbb815ec3a1d10b83915df167f56eb3cbb7b4",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The owner's response these functions read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:2850ce6c8646c12bb58d689ffbb2dbe156fa004f7a52c2893b615b52dab1d53e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFileClassification"
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0f7a951d7362705b3037fbcc09014d35eeb3da6",
+            "content": "sha256:d5e75c4289a51117ee095dd569352bdbb37ed8bf83987e3b91aa1333fcdba41e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewLaneLink"
+            },
+            "path": "dashboard/src/data/reviewLane.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The cases over the six real scenarios.\n\nAnchor: \"names every intersecting invariant of a replace hunk, with each family occurrence\"; \"marks every hunk a window draws, a neighbour shown as context too\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3d4f183bafc876057b43b513fd8e98da0a85f2",
+            "content": "sha256:f2580dcdd0ad87de1599456c219546735ff88075d527a78bcd98ed6145f18908",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/panels/review/hunkMarkers.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The target an occurrence opens, carrying its membership state and reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:e8764f1f639d6954c8e2773979296e35ed75c52c7867eefe9f71180c6d3ff4da",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An occurrence, an entry (realization or proof), an unknown line, a hunk's mark with its label and compact text, and a file's marks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:eff7c2889ca2c3f3c8f68b11481f5cd06529d3e2778add1aef9a781c1121f5a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkOccurrence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:c60fbc083cab148b08f4bd51da9742b697a44b90aad29503368369a8b2232d8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkEntry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:b2fd1fb6b0ca328d556727b87509f7fb0d6dfb7e5f109fc22d5227830c9df0fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "HunkMark"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:d58e0277e4c980c56218772e79c602feb49be9af3d3a3db9002b618007148362",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileMarks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One file-level mark for a confirmed-unregistered or wholly unreadable file; otherwise one mark per owner hunk.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:02be08ec52fd7e38593ab373c9b1ae21f9245e43ed1fb6b93494f03be93e5873",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunkKey"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:6631beca27475d00c2de617584c9d10c8fde865ef86233e58b6fff24b8e69d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "fileMarks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A hunk's realizations and proofs apart, and its unknown lines, including a linked hunk's unread side (ruling Q2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:7a46a0a9f2dd61783f272ee0b94f2b937944a65d4696ecf5f52a03ce6dcfedf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunkMark"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:3fd406b4c96d0fcefea515b8eb9f19b730e7ae237ab386dd411bfe99a121618c",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadChangedSides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One entry per kind and invariant; occurrences merged across sides; each with its target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:a4f572e73e92a5bf6f2431933d9a5a921c6ef4ef050385ed42a5f9b5324e4627",
+            "locator": {
+              "kind": "symbol",
+              "name": "markEntries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:c10297bd8d4b65036e511c979a3b45232b1e25f219ba215cabf39697aba0a3cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "addOccurrence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The unknown-membership reason from the owner's facts, naming L32's rule as its owner (ruling Q3, review N1).\n\nAnchor: \"The rule's owner is MIK-L32's server\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:1307b3ccc49c064cc5531f3e0ff25fc94eb9b696c0080fddfd587dc10d4a7bcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "unknownReason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The gutter label, the compact phone label (review R1 F2) and the occurrence label.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:d4e336f014e3f1af622f412e9c83e988736ceb4681167e26acaf1b3d1b913a1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "markLabel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:0d886b931806e7c174d5f3e3bc6e3d48b713e024a96f95b8f6a5ab6418b3a0fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "compactLabel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:252bbdaaa87304ff83c61bb3dc94199dea34beddf78627c8c4b07bfda2c0cad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "occurrenceLabel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Placement on the owner's side lines within the drawn window; an inline deletion below its removed lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:8600ddbee800192b7d4f20d4e384b1c91be7f885d4e86129b23587e6dc9ffa30",
+            "locator": {
+              "kind": "symbol",
+              "name": "firstDrawn"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:1bddce5f9c00710167d40a899ef5b18e07bfb16629f8b3fd893ff778b1e449f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "markAnchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:2535de796885b56cfa7880592af7d654bfd7520d9978714f17201b911490d3b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "wholeSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

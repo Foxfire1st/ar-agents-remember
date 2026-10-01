@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/templates/orchestration-task.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-26T08:45+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -58,29 +48,24 @@ None recorded.
 
 This template records the exact checks and their failed or not-run status as handoff evidence, together with the curator's complete memory-quality result. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry that completed curation as a prerequisite; full code quality, full tests, certification, and review are explicit requests rather than automatic template gates.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- Canonical source this bundle copy is sync-propagated from. [1]
+- The strategist role that fills this template and chooses either topology. [2]
+- The plan-review criteria re-derive effective priority and validate either explicit-graph or graph-less topology. [3]
+- The shipped template's derived-wave walk now says nothing serializes a graph-less sprint instead of the removed source-pair-selected exposure walk. [4]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Orchestration-Task Template` | skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-215 |
-| The strategist role that fills this template and chooses either topology. | `# Strategist`; "Choose the topology explicitly."; "The template is the artifact's shape authority" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:44-50 |
-| The plan-review criteria re-derive effective priority and validate either explicit-graph or graph-less topology. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-140 |
-| The shipped template's derived-wave walk now says nothing serializes a graph-less sprint instead of the removed source-pair-selected exposure walk. | "nothing serializes a graph-less" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-174 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260815-DAG-L14 Doctrine Sync
 
@@ -155,75 +140,3 @@ one-selected-master-at-a-time and source-pair activation wording returns 0 hits 
 ## CCR-L42 current candidate
 
 The orchestration task template now specifies baseline sealing, fix-verification subset checks, review-mode fields, explicit developer authorization at the three-round limit, and task-document review lifecycle operations.
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Replaced the shared handoff-evidence boilerplate sentence with the completed-curation rule.
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: Repaired citations this leaf falsified: the canonical lifecycle corpus was consolidated (the router shrank 620 → 179 lines; all nine role files and several templates were rewritten), so the cited anchors and ranges no longer resolved. No behavioral claim changed — the cited rule was re-pointed at its current home. Verification metadata remains closeout-owned. The strategist row now cites the rewritten file's real head range (`:1-16`, was `:1-263` against a 197-line file).
-
-- 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
-  shipped-source debt row and debt paragraph and replaced them with the corrected shipped range —
-  the template's derived-wave walk now reads "nothing serializes a graph-less sprint — it declares no
-  dependencies, so independent atomic masters proceed concurrently and no master is held because
-  another is selected" at `:172-174`. Body prose now states the developer ruling (nothing serializes
-  a graph-less sprint; `atomic-sequential` is sprint shape, not a serialization mechanism;
-  per-contract activation records each contract's own `reconciling -> active` and the queue projects
-  only each contract's own active/reconciling/vacant waiting candidates; only explicit
-  `executionGraph` waves gate on `predecessor-incomplete:`), and every other range was re-grepped and
-  repointed to canonical `orchestration-task.md:1-215`, `strategist.md:1-263`, and
-  `plan-review.md:1-140`. Source documentation only; verification metadata remains closeout-owned and
-  no acceptance or test claim is made.
-- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: rewrote this card's graph-less
-  walk from one source-pair-selected implementation exposure with pause/resume to the per-contract
-  activation record — a sibling master sharing the protected source pair is never paused or blocked,
-  and the only waiting reason is `atomic-series-reconciling` — and recorded the shipped-source debt
-  that the frozen mirrored template still shows the removed source-pair-selected walk at its own
-  `:172-173`, flagged for a future code leaf. That debt observation is superseded by the
-  260831-LOCR-L36 round-2 entry above: the shipped text is corrected and the debt note is removed.
-  Source documentation only; verification metadata
-  remains closeout-owned and no acceptance or test claim is made.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The orchestration task template now specifies baseline sealing, fix-verification subset checks, review-mode fields, explicit developer authorization at the three-round limit, and task-document review lifecycle operations.
-
-- 2026-08-26T08:45+02:00 — Restored the canonical Docs reference section for this changed
-  synchronized orchestration-task template card.
-
-- 2026-08-26T05:20+02:00 — Reconciled the generated graph-less walk with source-pair selection,
-  pause/resume preservation, and dependency separation. Final ranges remain post-Dagger-owned.
-
-- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: recorded one effective candidate priority,
-  optional explicit graph structure, complete strategist-skip reasoning, and the all-attachments
-  then one-full-graph-bootstrap sequence. Canonical/generated sync is complete; Dagger acceptance
-  remains closeout-owned and pending.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: restored the `executionGraph` qualifier in the canonical adoption-payload heading; copies re-synced. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T05:10+02:00 — 260815-DAG-L14: template updated to the atomic
-  `attach_master` flow and seats structure. Verified at code commit 2f494982.
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
-  adoption without a graph runs atomic-sequentially and `author_execution_graph` owns bootstrap
-  and edits; the `migrate_execution_topology` reference is gone. Verification remains
-  closeout-owned.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized explicit fact/judgment authority,
-  graph-edge traceability, derived waves, and auditable runtime reprioritization. Verification
-  remains closeout-owned.
-- 2026-08-14T06:34+02:00 — L23 synchronized runtime template: orchestration tasks record
-  candidate-bound route review and Dagger altitude without exposing private operation identity.
-
-- 2026-08-11T19:58+02:00 — Reconciled `orchestration-task.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 6 citation findings (3 rows); scoped recheck clean.
-
-- 2026-07-10T02:39+02:00 — HFX3/L14 combined curation: replaced the mandatory-strategist premise
-  with the two valid authorship paths—approved strategist draft or orchestrator-authored task after
-  a sanctioned skip—and preserved adoption plus shown-work requirements. Added the governing
-  overview backlink. Verification metadata remains pinned until closeout stamps the eventual
-  two-parent code commit.
-
-- 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `templates/orchestration-task.md` (leaf 260703-L12): the tenth template — the strategist's sprint plan with mandatory shown work (evidence-cited edges incl. declaration cross-references, derivation-named blast radii, from→to leaf moves, honest unplannable-as-scoped findings). Verification metadata pinned until closeout stamps the L12 commit.

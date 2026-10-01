@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_resume` checks retained generation and exact publication evidence before worker relaunch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
+            "content": "sha256:ad8092a5e208d5e92db4a9c3ef0afb86c0b86d223a48990a5f7d59c53e9e8bfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_resume_arguments` retains the admitted code/memory messages in the successor correction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
+            "content": "sha256:e1d4225c6b92512836fd7295854262168512eb379ea59ef399509fc9bd5520ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_closeout_resume_admission` combines current candidate evidence with code/memory input for resume.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
+            "content": "sha256:48491fc955a32e5c770972ce73838a0bb4afe434bd83bfe75f9374fcec75c0fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_resume_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The module defines `LifecycleControlCommand`; `control_operation` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
+            "content": "sha256:8f3776e30cd01a7e1671fdf78dde3e5df4be3a768fb0eb492282350ccfaf439e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleControlCommand"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
+            "content": "sha256:7d6b10243a410be1f58ffdf3eb807b2bef65985c6bd6a66bc0c1ace4139e184b",
+            "locator": {
+              "kind": "symbol",
+              "name": "control_operation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

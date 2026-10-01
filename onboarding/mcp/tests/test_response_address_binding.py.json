@@ -1,0 +1,298 @@
+{
+  "path": "mcp/tests/test_response_address_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The guidance shape the worktree state machine emits, both spellings set to the contract file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:0504d05cb0d3d550deeb6a3a81e3a8e896bf93a370927db1abc9d981fcf71d2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "guidance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The producer half of `T54`: the closed payload declares its own address in the envelope spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:5054f330f119a4a0577cba64bf5aab2845c8893e300441a8c05e11d992a1ebfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closed_closeout_payload_declares_its_own_address_in_the_envelope_spelling"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The guard these cases pin, and the two rules it applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_next_step"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The place comparison: the same file, or the directory that immediately contains it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:d2e302d797ad2d3700c15c9090afc507fb08c55f14ec05c46005dab1877fc78e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_names_the_same_place"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The entry namer `T71` repaired: source path, or the document's own path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:a9d3300500ec89f0c73c0c610c7f4bc572321bba7653b2296ee714b0a7ee6184",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refreshed_onboarding_paths"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The bounded count that refuses to count a blank.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:a12761f440ea6989b36077918fb290fec58dd8c2c9bd0559adf8483473434aaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bounded_paths"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "`T64`'s decision: `ok` answers whether the call did what it set out to do, with `state` and `outcome` declared separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:c7d49aab97960d9f63ba747b6f15ce84acfebe417acffe8abccbea664a436c10",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/migration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane row that keeps this module in the default selection.\n\nAnchor: \"mcp/tests/test_response_address_binding.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:f176b16c2afbd14618bc048ea73d4b31a20898a9e7f85cac3869f6f76c354ada",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The refusal axes this module reuses rather than re-deriving, so a refusal is judged once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:0235cc2a3f435dc6f95d5ad9ebf7f065f4a49503a944cbb4daa08a5d0f6e3625",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_axes"
+            },
+            "path": "mcp/tests/test_tool_refusal_conformance.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A real closeout response model, so the guard is driven by the envelope it will meet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:c6efbdcae4d037944246477128d1fd03fa661e58996da22e6ceabe28d102d26d",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_response"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The recorded `T54` shape: a response that declares no address cannot vouch for guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:c104d3e9c16a2f1806d01e06aa811ca91411bc58c2540477080f1016130b360b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_guidance_naming_another_task_is_withheld_from_a_response_with_no_address"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The positive control: the guard is not a blanket refusal of guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:ca4495bf46c7027886191ca1c0a23f5ec7fff75cce76f16a6a9b3100db0249ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_guidance_agreeing_with_the_responses_own_address_is_kept"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "One disagreeing spelling is enough to withhold the hint, in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:ad70744f26dc6643b235ff0effa3bd06a40ebc369873fd0d82fa38144fc1b769",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_stale_path_spelling_is_enough_to_withhold_the_guidance"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Guidance that names no artifact is kept; `None` stays `None`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:6089409734ac10ac32d4447b7bdc8f5309fb71d31ef4fa8e92572eb6a4252e7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_guidance_that_names_no_artifact_is_left_alone"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`T71`: every counted refresh entry is named by its source path or its own document path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:7451374a737b474350e6c3a28b4ed2fb8b97a20c3b6c6075cfd51a4151b8218d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_refreshed_onboarding_census_names_every_entry_it_counts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The migration payload builder and a declined item, driven through the real producer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:aeae3428653f9720b72e0b043d03a72a6d03380fd1dc2a0571cebc3d31351c99",
+            "locator": {
+              "kind": "symbol",
+              "name": "_migration_payload"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:39d30e4caf45dfcea7afb54dc4155333cd9890b4fd4a298fe93a07b546244819",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declined_item"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "`T64`: a preview reports its outcome instead of a bare not-ok, and must not read `remaining`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bca09ec47c6aae61dce8c0e2e54d03ebee173d",
+            "content": "sha256:57564de017cdbd2be62bf5c9b2da200ef4e8c1daf95fd10ef76a1b955eab0cb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_migration_preview_reports_its_outcome_instead_of_a_bare_not_ok"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

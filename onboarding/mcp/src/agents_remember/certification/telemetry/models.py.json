@@ -1,0 +1,168 @@
+{
+  "path": "mcp/src/agents_remember/certification/telemetry/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exhaustive matrix fixes one disposition and ID cardinality per event kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:c0cd5bc9bf46c72ee483ffb6f864c8f66564de29ae400ea9f379103600080696",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVENT_MATRIX"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:f3863f415271f3e9e106f21d93766911f2552033682ee6bb54995c311e1e2ee5",
+            "locator": {
+              "kind": "symbol",
+              "name": "MatrixCell"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:9af27de7f7e87be9ea2bc6481fea30394c357349b2b09a28379996ab6602df99",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:aeba36efe96295f697265bb169f821b3c92fd62a564e6fbe59dbb8f3d32ca164",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The root event enforces execution identity, envelope partition, matrix cardinality, exact gate/rail identity, and digest binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:e39fb924b60f7c743241f523ee2e8281e6ee5448c825c414c7f1d8edb3c7522b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryEvent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:a66a7168bbecc54a23dcc4547a38b43951860cd2ac1ebd4e08a6621594df9dc6",
+            "locator": {
+              "end": 851,
+              "kind": "line_range",
+              "start": 673
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-kind payloads validate their own shape before an event may carry them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:756fa74012c7e4084989fc7bff73a265483c04443cc04dec2dc127681d6eabe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateStartedPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:9e4f7bf650db3f32012b089553b70132a3a2fe82a78d527a021b73babc1a8f65",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateCatalogCompletePayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:1f6003466ba86510514744e2cf801956ee95fc6b15ce0978dad45d9923a4fc2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailStartedPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Content-addressed catalog and decision models keep manifest identities deterministic.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:65055d7a11195fea6f7e3b35ef9ed3ef5a552bfc14a3caa0cbd386954391c12b",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalog_manifest_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:1bbed94de406bbee1769321a38172950cc71531fadb5c0ba18ad5398c3b41873",
+            "locator": {
+              "kind": "symbol",
+              "name": "CatalogRailRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The adapters compile events against exactly these matrix cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:87b944fccda6cb8931c1c9e35f319fd53b34ae7b058bc12516b920c2c7eae826",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_event"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/adapters.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,465 @@
+{
+  "path": "mcp/tests/test_knowledge_read_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The node the requirement's non-conformance example points at: a one-item page still advertises the second location, with the corrected counts.**\n\nAnchor: \"test_a_page_budget_of_one_item_still_advertises_the_second_location\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:a2c619472ca9b368f23fa40b61a0136e2820f31179365be08f68ed63506924fb",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The fixture every node builds through the public store operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_read_scope_fixture"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The lane row this module occupies.\n\nAnchor: \"mcp/tests/test_knowledge_read_scope.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:e96a96cc68897cd2cf796e834f8ac55d5e09216383f9ae3be2059e57efbd1734",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The support artifact and contract this module is a declared consumer of.\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The support artifact and contract this module is a declared consumer of.\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The lane row this module occupies.\n\nAnchor: \"mcp/tests/test_knowledge_read_scope.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:e96a96cc68897cd2cf796e834f8ac55d5e09216383f9ae3be2059e57efbd1734",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The support artifact and contract this module is a declared consumer of.\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The support artifact and contract this module is a declared consumer of.\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The support artifact and contract this module is a declared consumer of.\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The support artifact and contract this module is a declared consumer of.\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The completeness node that compares the walk against the mandatory set derived from recorded rows rather than against the implementation's own page manifest.**\n\nAnchor: \"test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:4c5b989e5948e781c88b2faddcfd3fb80d23bd856a32bbc1629e8d5b85b53d3d",
+            "locator": {
+              "end": 721,
+              "kind": "line_range",
+              "start": 658
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The ordering node the review sealed as HIGH, and the fixture repair that made it deterministic.**\n\nAnchor: \"test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:4651404abbab03832a57a3c0db0e96b1e087813b8c29c45004713ba095a76130",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 722
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The packet's stopping-rule nodes, including the explicit `G` expansion that reaches K1.\n\nAnchor: \"test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family\"; \"test_an_exact_invariant_revision_seed_selects_that_revision_and_its_directly_containing_families\"; \"test_an_exact_family_revision_seed_stops_after_its_own_members\"; \"test_selecting_the_advertised_family_explicitly_is_what_reaches_the_further_realizations\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:475ccf188b7e5abf74f9696c4db8b4cdde268c9db9625744257726442daf76d0",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:9344404b65b913236252ba3ec261db8ca5ff3e32d8a4c50f24cd03214ab5aeea",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:2f60ec5589e475f812be82436c8119cb456808f25f7060016f7c9f53064116a1",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:7e099c4ed2830b80080a634c590edfa56cee30e8226884d1c55b5e87bad6b502",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 246
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two equivalence nodes (invariant versus family seed; path versus exact revision seed).\n\nAnchor: \"test_the_invariant_seed_and_the_family_seed_enumerate_the_same_claims_and_locations\"; \"test_a_path_seed_and_the_exact_invariant_revision_seed_close_over_the_same_records\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:13016ad5df5c48133d0c39cf704300ad315a24409a6d2f4f6982ab872bebfef4",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:158e2e101716c09968ddf36f62c73418e3cd399df2e559c5c628480eba48567e",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The revision-grouping nodes.\n\nAnchor: \"test_an_identity_seed_returns_every_retained_revision_as_its_own_group\"; \"test_an_exact_revision_seed_does_not_select_the_identitys_other_retained_revisions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:c46680773dc498b794bad283b56c5271c244601aab9dc4982df65f756c74f267",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 394
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:3b4c749df61f476f189becc453457679a7980e50d56e9bb2ac01dbf532f3500d",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 444
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The count-separation and multi-family-membership nodes.\n\nAnchor: \"test_claim_identities_and_distinct_source_locations_are_counted_separately\"; \"test_a_revision_reached_through_two_families_appears_once_with_both_membership_rows\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:a36c699961f3f9d9d60a27c0df62e158e73a58a683622ce2371349395897c642",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 475
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:12cb977c8efe45de5c8c4194eb8e63d3793269d81b136cd2f214288bf7e440e4",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 510
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The truncation, too-small-budget, execution-bound and absence nodes.\n\nAnchor: \"test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness\"; \"test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position\"; \"test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total\"; \"test_the_declared_bound_admits_a_selection_that_fits_and_refuses_one_that_does_not\"; \"test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope\"; \"test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:5c200ca49c45669de000675c5a401a09add06308a336302714740e7a633f8b1c",
+            "locator": {
+              "end": 871,
+              "kind": "line_range",
+              "start": 838
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:d43818481b79967ccbba1437ec42bc0044e2b26cf2aaffad4b9efdd5e91bd906",
+            "locator": {
+              "end": 901,
+              "kind": "line_range",
+              "start": 872
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:974652ad71b65eef3ac6dad523a9ac5eb25052a305cb4311d361b95cc1b7545f",
+            "locator": {
+              "end": 929,
+              "kind": "line_range",
+              "start": 902
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:ef43a8e95f2df1f83aa3aa90a66209ef3890c212f7f832d319e2d58e9de90421",
+            "locator": {
+              "end": 961,
+              "kind": "line_range",
+              "start": 930
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:9be0f34229e5bd75b5a71958a3cc5aeb9616a7c013cfd8ad3637eba43d153246",
+            "locator": {
+              "end": 981,
+              "kind": "line_range",
+              "start": 962
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:459997fbd9b6470aa25c1ed76aca90b6bf9501b1289a3879f65b99adbb791af1",
+            "locator": {
+              "end": 1000,
+              "kind": "line_range",
+              "start": 982
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The persisted-nothing and namespace-confinement nodes.**\n\nAnchor: \"test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged\"; \"test_the_selection_reads_only_the_requested_namespace\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:88e836e2f828f2e4894ab0b6a7d0684b6ed834358ff502038b72c0d81c08b7cd",
+            "locator": {
+              "end": 1058,
+              "kind": "line_range",
+              "start": 1001
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:c1581ba47068d66fa1341d058154d3e1ae559a328a68138927289049166bd8d9",
+            "locator": {
+              "end": 1163,
+              "kind": "line_range",
+              "start": 1059
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,186 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/base.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The advertised tuple names the structural public surface, and is now defined in the `models` leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11f7b63ef890f294ec645cb0a18372190e239551",
+            "content": "sha256:68e903ed4eb01e85a91b74875abc196a300101695c83e602e2fcf8a2d0805c21",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adapter re-exports the roster through `__all__` instead of declaring its own copy.\n\nAnchor: \"__all__ = [\\\"PUBLIC_TOOLS\\\", \\\"RESERVED_TOOLS\\\", \\\"TRANSPORT\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:b0053d26dc1ddbfeaa7d8e65af358e70b68734e5f38ed18b4c107d6c7d9f9c89",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The live registration is compared to this tuple, in order, by the inventory suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fef1f425c51b6301f92d4992ef459f0ba20bb23",
+            "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicSurfaceInventoryTests"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5fef1f425c51b6301f92d4992ef459f0ba20bb23",
+            "content": "sha256:8ff5679e907d7c783697590bddca168b76d2d8d0ee7926088784a9b9cd17f011",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared adapter finalizes one application result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Registrars are the only published declaration family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ade787685940a8e8c127d3c75b23c32e05acb9d",
+            "content": "sha256:f2c28947cf1d464a66d9b8fdc18b28052f9e07bbb80604a521f8eaf99c5392d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_REGISTRARS"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ade787685940a8e8c127d3c75b23c32e05acb9d",
+            "content": "sha256:3f0d4213495fcd5354b75164a9e2fe189f73a9a689516ccea835d2476d982981",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared protocol vocabulary declares stdio transport.\n\nAnchor: \"TRANSPORT =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:ce29b753f5c354c1ae64c4aeed6c4e8047661de316f0b1c0db7560214913beb8",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The public tool-name tuple's one definition, moved out of this adapter by 260831-LOCR-L32.\n\nAnchor: \"PUBLIC_TOOLS = (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11f7b63ef890f294ec645cb0a18372190e239551",
+            "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The reserved-tool tuple is explicitly empty.\n\nAnchor: \"RESERVED_TOOLS: tuple[str, ...] = ()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:e25b91ef7e59f5708d629d8411b56fd5ec7c03af9f7b3e1ce4a3d5713fbb8cff",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The protocol adapter delegates response completion to the application boundary.\n\nAnchor: \"def _tool_payload(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:99fcc8b8517d59f1b701140ddf00c842b539245f7a74358c3785a061633b7d23",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

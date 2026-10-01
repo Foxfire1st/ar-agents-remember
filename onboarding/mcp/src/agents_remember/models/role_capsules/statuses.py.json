@@ -1,0 +1,195 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/statuses.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The completeness and uniqueness guard over this vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:13836f58741f8e844f762e31a1dd8fbb61804c7ee13cb28e524c601f5363bc05",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_documented_refusal_code_is_registered_exactly_once"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The typed refusal that carries a status, its detail, a remedy, and structured conflict rows. `CapsuleBindingError` was removed on the A3 candidate and must not be cited.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:b455239473b006be03beff93864429921efbe0b4fd2402ee452a6276939eff44",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:75bfdb3bdf4b9a82ea89850c55be6be6e3713700c9ab9dbe22dc9b58940efe79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleManifestError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:352ee2208b6afea6cb4c3b75274c4d656eeb3f44e99e08e8fbf0e8859a3275ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The equality-conflict case that stops compilation instead of choosing by accident.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:afd6c9ee7c05aaeecfba8d1612ee15bdb19b4316c546573e90ac44a3f5b0bf7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_identity"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:d55ad0d15e700e18ae143ae8244492c24f4ed0acd93273ad3dea99117ac1c4a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_supersessions"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:6873cf2d08c56dd180dd8506e96846d5a4e583bb8fe16e67777dbf8e9d2a07a1",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:f440e75de7b7d1bf5fe039e4a800539ef79496e0b292fedd541ded1f65fce011",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The source-admission codes raised outside this tuple, in the application layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:82075bb93b27d63d84cd11f9b43f08372964ce9e7b2494f28e59b2e67d54e27d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_root"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:194dd2c492ed34d2ce21132ec79464cfb294ab31946597ee8719bb235a1d122e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:54ae6eb9a2320bd63746c338442c15491cf9fd0857b1e15171bd357124fe8448",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_confined_relative"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**`source-not-utf8`** and the revision/blank-content refusals, raised in the value layer rather than the application layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:f5f3ac449878a4e5e5a4fedea401c505803868766c9be6b437e5f68ac6755006",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSource"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The tool-policy refusal raised when a request falls outside the admitted snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49ac1a5cf1fe0ddc4233b130e93da2604479b31c",
+            "content": "sha256:7430c3face8fa5a6e9f1a8283a23447097755708433698d37d259206ec48aa37",
+            "locator": {
+              "kind": "symbol",
+              "name": "narrow_tool_requests"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

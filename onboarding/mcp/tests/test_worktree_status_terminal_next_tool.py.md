@@ -1,15 +1,5 @@
 # mcp/tests/test_worktree_status_terminal_next_tool.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_worktree_status_terminal_next_tool.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -85,38 +75,20 @@ surface (`TaskDocResponse.model_validate(...).nextTool == "session_retire"`).
 - `pytestmark = pytest.mark.usefixtures("worktree_services")` selects real worktree services; the
   cases are integration-lane, not hermetic units.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The archive-ready branch names the accepted cleanup operation, its args bind to the real tool, and the branch is exercised for both cleanup verbs. | `test_archive_ready_status_names_the_accepted_cleanup_operation` | mcp/tests/test_worktree_status_terminal_next_tool.py:192-219 |
-| The wire envelope declares the three keys the projector writes; nothing rides as an extra. | `test_worktree_status_declares_the_next_move_keys` | mcp/tests/test_worktree_status_terminal_next_tool.py:230-236 |
-| The validator accepts roster members, accepts absence, and refuses an out-of-roster value. | `test_next_tool_must_name_a_registered_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:231-244 |
-| The boundary case: a registered-but-non-public tool is refused on the worktree surface and accepted on the `task_doc` surface, which is what makes the rule per-surface. | `test_the_worktree_surface_refuses_a_registered_but_non_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:247-278 |
-| The declarations and the membership validator the cases pin. | "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" | mcp/src/agents_remember/models/worktree.py:400-402; mcp/src/agents_remember/models/worktree.py:431-442 |
-| The advertised roster the validator enforces membership against. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-85 |
-| The terminal-archive refusal producer that makes the protected state reachable. | `terminal_archive_required_result` | mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py:86-150 |
-| The projector whose write this file protects. | `_project_terminal_contract_status` | mcp/src/agents_remember/application/worktree_status.py:463-505 |
-| The non-public name that must stay non-public on the worktree surface, and the registry row that still registers it. | "\"session_retire\","; "\"session_retire\": SessionRetireResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:134-134; mcp/src/agents_remember/models/tools/tool_registry.py:158-158; mcp/src/agents_remember/models/tools/tool_registry.py:140-140; mcp/src/agents_remember/models/tools/tool_registry.py:164-164; mcp/src/agents_remember/models/tools/tool_registry.py:147-147; mcp/src/agents_remember/models/tools/tool_registry.py:171-171 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The archive-ready branch names the accepted cleanup operation, its args bind to the real tool, and the branch is exercised for both cleanup verbs. [1]
+- The wire envelope declares the three keys the projector writes; nothing rides as an extra. [2]
+- The validator accepts roster members, accepts absence, and refuses an out-of-roster value. [3]
+- The boundary case: a registered-but-non-public tool is refused on the worktree surface and accepted on the `task_doc` surface, which is what makes the rule per-surface. [4]
+- The declarations and the membership validator the cases pin. [5]
+- The advertised roster the validator enforces membership against. [6]
+- The terminal-archive refusal producer that makes the protected state reachable. [7]
+- The projector whose write this file protects. [8]
+- The non-public name that must stay non-public on the worktree surface, and the registry row that still registers it. [9]
+
+### Cross-Repo References
 
 No cross-repository boundary is exercised; the fixture builds a local repository under `tmp_path`.
-
-## Update History
-- 2026-09-20T07:24+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **citation ranges re-derived by reading the cited construct, not by arithmetic on the old numbers.** This leaf's own source edits grew the file this card cites, so the row(s) naming `"# The next-move triple, declared here so the worktree surface's guidance is part of"` and `"def _require_registered_public_next_tool"` no longer held their anchor in the cited range. Each was re-read in the code worktree at the construct the claim names and re-pointed to that construct's own current declaration extent (`mcp/src/agents_remember/models/worktree.py:400-402` and `mcp/src/agents_remember/models/worktree.py:431-442`). No claim wording, anchor or row was changed, added or deleted; no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T01:00+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 2 enforced citation rows this card carried (citation_anchor_absent_from_range): both cited ranges were hand-read against mcp/src/agents_remember/models/worktree.py and already held the anchor their claim names — the next-move-triple comment at worktree.py:352-352 and `def _require_registered_public_next_tool` at worktree.py:385-385 — so no range was changed; every claim wording, anchor and every other range is unchanged, and no verification stamp was advanced.
-- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 2 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `# The next-move triple, declared here so the worktree surface's guidance is part of`; `def _require_registered_public_next_tool`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `test_worktree_status_terminal_next_tool.py.md:96` ("# The next-move triple, declared here so the worktree surface's guidance is part of", "def _require_registered_public_next_tool").
-- 2026-09-18T19:51:00+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The pinned-declarations row's next-move-triple cell cited `models/worktree.py:323-323`, which is `code_quality_gate`; widened to `323-330` so the range reaches the comment that declares the triple. The validator cell at `355-364` and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_worktree_status_declares_the_next_move_keys` repointed to mcp/tests/test_worktree_status_terminal_next_tool.py:230-236. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `_project_terminal_contract_status` repointed to mcp/src/agents_remember/application/worktree_status.py:463-505. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shrank `models/worktree.py`: the next-move triple comment now resolves at `models/worktree.py:322-322` and `_require_registered_public_next_tool` at `models/worktree.py:355-364`, so the declarations/validator row was rebound. Claim wording unchanged.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: created the card for the new integration-lane
-  module. Recorded that it is the first and only coverage of the `terminal-archive-ready` branch, that
-  it reaches that state through real production calls, that it pins the three declarations plus the
-  membership validator in both directions, and that the boundary case is what makes the invariant
-  per-surface (`task_doc` may name the registered-but-non-public `session_retire`; the worktree
-  surface must not, and `PUBLIC_TOOLS` must not be widened to allow it). Verification metadata
-  remains closeout-owned; no acceptance claim.

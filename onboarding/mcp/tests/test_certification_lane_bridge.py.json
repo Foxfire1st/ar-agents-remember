@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_certification_lane_bridge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Bridge derives one canonical five gate authority from the real profile.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adc7ad7891eab882b06e77414df995764ed5c11d",
+            "content": "sha256:04451212780cd1d936125a03627be161d3104383b509dc6a1402f1bb15ad1d14",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bridge_derives_one_canonical_five_gate_authority_from_the_real_profile"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bridge admit currentness reread accepts and refuses movement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adc7ad7891eab882b06e77414df995764ed5c11d",
+            "content": "sha256:49180e8a46e80778d97bfd8592d171aa6673f2a06dce839c5e733a460d475950",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bridge_admit_currentness_reread_accepts_and_refuses_movement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

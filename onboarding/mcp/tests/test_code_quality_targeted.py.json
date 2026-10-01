@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_code_quality_targeted.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Changed files closure and test subset are derived.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aeb085a9989895922dab2d5dd42544a74ea2862",
+            "content": "sha256:9cf9cab385c3a50510b36429bdaecdcf50ea1db47713519158bdec5adc0bcaea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_changed_files_closure_and_test_subset_are_derived"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Changed production module without owner refuses without broadening.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aeb085a9989895922dab2d5dd42544a74ea2862",
+            "content": "sha256:cc5d4b1b0767153860882efeabf7258cce31404882d0113a7cabccce48370aea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_changed_production_module_without_owner_refuses_without_broadening"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared support change selects static import consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aeb085a9989895922dab2d5dd42544a74ea2862",
+            "content": "sha256:dee8302f3520d1b8e1b84a77158aeb93873049da2459ba2a6d1634a9f5a0760e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_shared_support_change_selects_static_import_consumers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Verification package change never becomes product coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aeb085a9989895922dab2d5dd42544a74ea2862",
+            "content": "sha256:96b22497448fa45cf3cb3bc6932cecb3d878580c145c9cdc0a2aaf01ee246b9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_verification_package_change_never_becomes_product_coverage"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

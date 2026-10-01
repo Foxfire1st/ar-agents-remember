@@ -1,15 +1,5 @@
 # mcp/tests/test_task_doc_structural_publication_l2.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_task_doc_structural_publication_l2.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -42,42 +32,26 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Attach refuses json side drift across selected master batch | `test_attach_refuses_json_side_drift_across_selected_master_batch` | mcp/tests/test_task_doc_structural_publication_l2.py:85-86 |
-| Attach refuses markdown side drift across selected master batch | `test_attach_refuses_markdown_side_drift_across_selected_master_batch` | mcp/tests/test_task_doc_structural_publication_l2.py:88-89 |
-| Detach first allows later exact absence bound create | `test_detach_first_allows_later_exact_absence_bound_create` | mcp/tests/test_task_doc_structural_publication_l2.py:124-157 |
+- Attach refuses json side drift across selected master batch [1]
+- Attach refuses markdown side drift across selected master batch [2]
+- Detach first allows later exact absence bound create [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
-
-
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
-
-- 2026-08-24T00:10+02:00 — 260821-CLIVE-L2: reconciled the retained seven exact source-set/CAS
-  tests and removed the create-first L3 task-unlocking acceptance claim from current L2 onboarding;
-  verification fields remain closeout-owned.
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+No external evidence is needed for these assertions.

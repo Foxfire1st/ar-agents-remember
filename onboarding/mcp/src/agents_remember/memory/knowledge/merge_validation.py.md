@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/merge_validation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/merge_validation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T06:18+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -49,41 +39,30 @@
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The four datasets named once so a validation pass cannot mix them up. | `MergeInputs` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:68-76 |
-| The reachable structural check, whose typed-row read recomputes every seal. | `require_structural_validity` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:77-107 |
-| The immutability comparison, including the two calls with two different reachability facts. | `require_immutable_revisions_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:108-158 |
-| The side-input pass that refuses an in-place rewrite before the merge starts. | `require_side_inputs_preserved` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:159-172 |
-| The applied-change postcondition and its three-part unreachability statement. | `require_applied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:173-217 |
-| **The whole list rather than only its first member, which is what lets an authored decision tell the omissions it authorised from the ones it did not.** | `unapplied_changes` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:218-250 |
-| The per-column comparison against the side the operation came from. | `_first_unapplied_change`; `_first_differing_column` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:251-290; mcp/src/agents_remember/memory/knowledge/merge_validation.py:298-326 |
-| The sealed-aggregate read that catches a row edited behind its seal with the file still open. | `_require_sealed_aggregates` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:327-359 |
-| The two halves of the base comparison: the sealed revision rows and the predecessor edges in their separate table. | `_first_revision_difference`; `_revision_rows`; `_first_missing_edge`; `_edge_set` | mcp/src/agents_remember/memory/knowledge/merge_validation.py:360-382; mcp/src/agents_remember/memory/knowledge/merge_validation.py:422-431; mcp/src/agents_remember/memory/knowledge/merge_validation.py:393-410; mcp/src/agents_remember/memory/knowledge/merge_validation.py:411-421 |
-| The refusal for a sealed revision whose stored row no longer matches its payload. | `immutable_revision_changed_refusal` | mcp/src/agents_remember/memory/knowledge/merge_refusals.py:176-196 |
-| The boundary node for the reachable structural guard, and the two direct-policy nodes for the unreachable call sites. | "test_a_candidate_carrying_a_foreign_key_violation_is_refused_by_the_structural_check" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:187-226 |
+- The four datasets named once so a validation pass cannot mix them up. [1]
+- The reachable structural check, whose typed-row read recomputes every seal. [2]
+- The immutability comparison, including the two calls with two different reachability facts. [3]
+- The side-input pass that refuses an in-place rewrite before the merge starts. [4]
+- The applied-change postcondition and its three-part unreachability statement. [5]
+- **The whole list rather than only its first member, which is what lets an authored decision tell the omissions it authorised from the ones it did not.** [6]
+- The per-column comparison against the side the operation came from. [7]
+- The sealed-aggregate read that catches a row edited behind its seal with the file still open. [8]
+- The two halves of the base comparison: the sealed revision rows and the predecessor edges in their separate table. [9]
+- The refusal for a sealed revision whose stored row no longer matches its payload. [10]
+- The boundary node for the reachable structural guard, and the two direct-policy nodes for the unreachable call sites. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-20T06:18+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **a fifth check was added, and this card's "four checks" count and its section list are corrected rather than annotated.** `unapplied_changes(operation, *, merged, side, operations)` is the same measurement `require_applied_changes` makes, exposed as *every* unapplied operation in delta order instead of only the first — the merge's `_authored_postcondition` is the caller, and it needs the count (not the identity) to bound a row-less authored decision: the result may be missing exactly as many operations as the engine reported retracting it, and a different number is a lost change the caller never authorised. Nothing about `require_applied_changes` itself changed, and the two stated unreachability facts still hold for it. Every range in the reference table was re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.
-
-- 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new postcondition module. It records the four checks and what each answers, the sealed-digest rule (the *stored* payload digest is recomputed, so re-stating the same payload with different JSON key order is not a change while changing the statement behind the digest is), and — as the load-bearing statement a later reader needs — this leaf's two stated reachability facts: the merged-candidate immutability call and the applied-change check are non-experiments under this schema, their policies are exercised directly by boundary nodes, and only the structural check has a reachable failing case. It also corrects the record in this leaf's own review: the predecessor set lives in a **separate** edge table, so the revision-row comparison never sees it. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

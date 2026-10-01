@@ -1,0 +1,104 @@
+{
+  "path": "mcp/src/agents_remember/cli/discovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting.\n\nAnchor: \"config_path = args.config or discover_config()\"; \"except (ConfigDiscoveryError, ConfigError) as error:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:0165886a086fec60887fd91b9e41063515a8e8276f8177c375838ff6ef7d75c5",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 319
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:326045f4b0ee397b3109f6a3a49f8437abf10ef7b9b32518bbe3c5af96869d8e",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting.\n\nAnchor: \"config_path = args.config or discover_config()\"; \"except (ConfigDiscoveryError, ConfigError) as error:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:0165886a086fec60887fd91b9e41063515a8e8276f8177c375838ff6ef7d75c5",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 319
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:326045f4b0ee397b3109f6a3a49f8437abf10ef7b9b32518bbe3c5af96869d8e",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The settings loader the discovered path feeds (`load_config`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:57afd11ee4cb0155d38f7174417397460259c8c9897017ca76417f0749efaa0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_config"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Unit tests: convention/registration hits, precedence, nearest-wins, malformed tolerance, template skip, miss error.\n\nAnchor: \"class DiscoverConfigTests(unittest.TestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6789d1b6f4c93c3177dacfcfca6cb2dbcc9920",
+            "content": "sha256:be9509ea9efe159a6574f89d0ae42adf7655d03b67816c927030f5ca4b459f37",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/tests/test_cli_discovery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

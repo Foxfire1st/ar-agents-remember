@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/serving/_agent_notifier_evaluation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rebind evaluation contains a malformed or ambiguous replacement chain to the affected row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e595e89dacda7d4cffcb03ae09034a21e501bd3",
+            "content": "sha256:54c148978597fd7cb12c4d627cb006c6a4c33cfe218beec28be55a403e29162a",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_rebind_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stale-turn and dead-upstream evaluation suppress only the structurally unprovable seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e595e89dacda7d4cffcb03ae09034a21e501bd3",
+            "content": "sha256:88921e020d809808ff240b4d45757b38076a3cf3670e2f44c91cc728f2b5b25f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_safe_stale_turn_state_due"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e595e89dacda7d4cffcb03ae09034a21e501bd3",
+            "content": "sha256:41599b128e6bca094b94a06719429348032cbb5c751179a69ea657d6a9f9f526",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_dead_upstream_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Redelivery budget excludes only a row whose route predicates cannot be proven.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e595e89dacda7d4cffcb03ae09034a21e501bd3",
+            "content": "sha256:bccfa2ffc9c047b6ef59074504a720227336ada0b5f820bd030425b178a12e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "_redelivery_route_is_actionable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

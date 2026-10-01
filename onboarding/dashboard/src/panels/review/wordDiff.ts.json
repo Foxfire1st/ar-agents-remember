@@ -1,0 +1,286 @@
+{
+  "path": "dashboard/src/panels/review/wordDiff.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of rules 1, 1a, 2, 3, 4 and 8.\n\nAnchor: \"every byte of the text is in exactly one token\"; \"Nothing is normalized, trimmed or summarized.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:e612241ac3e9660a1451b43aff3d2f8c83d34969d53e696c664df4c2e220077b",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Rule 1a: LCS by exact text, moved items out before gap pairing, gaps paired only on equal counts.\n\nAnchor: \"export function alignLists(\"; \"function movedPairs(\"; \"function gapRows(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:0e7c857395e7598a082cd9c746073994fbe4c38facd826d4a74b4a46761286d6",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:5d4d009eb443d968b3fbc56fad20f2503bbf4c99d8cf6cfd630b4a3c0da911ee",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:19722817fe284a8c0f9f3a99809623d99ea3413f21e0eb9c4294604ab0e434fa",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The renderer that draws it.\n\nAnchor: \"export function IntentStatementBody({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:400b673dcf7fbcb9033f20b0c6f5dfbcd96cb034a746175dde4dac94a193a7c7",
+            "locator": {
+              "end": 613,
+              "kind": "line_range",
+              "start": 559
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The unit cases.\n\nAnchor: \"reassembles both exact texts from its parts, whatever the change\"; \"takes moved items out of the gaps before pairing, and pairs equal texts one to one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06b268abb52eea105d550a3f5a2d121731e938b1",
+            "content": "sha256:37daa61bf0bed0960929e9e25ec6e9fe67a5817e3cb5dc2c768a3e27c86b70d8",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/panels/review/wordDiff.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "06b268abb52eea105d550a3f5a2d121731e938b1",
+            "content": "sha256:181db61f14a0cfc31b4c82478a95c36b54792024773bfdf1525aa7ffdee16d9b",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "dashboard/src/panels/review/wordDiff.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The named rewrite ratio and the alignment bound.\n\nAnchor: \"export const REWRITE_RATIO = 0.5;\"; \"export const DIFF_CELL_LIMIT = 2_000_000;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:2572fee4a7012bc8be4179e88e889526e0c953ef7d2071de754728ba2c19e0e1",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The diff's parts and its three answers.\n\nAnchor: \"export interface DiffPart {\"; \"export type TextDiff =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:b120013b7b97c32590cbd116928f77f313cf4aaea19d181bcffe07899ce5b34d",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Whitespace-preserving tokens.\n\nAnchor: \"export function tokenize(text: string): string[] {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:5703748ba49ebc882135848a688831618d5e5698f45dc5171d11daed338c13eb",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The token LCS with prefix and suffix set aside, and the coarse fallback past the bound.\n\nAnchor: \"function editScript(\"; \"function middleScript(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:ce1e27274becdd5690b4683ef3c99eaed0de7e9b79655c47c2981150316e1249",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:7493eb5983c67c9c49140ba137089875731420c09dada1b057b9262385ee76ba",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A replaced phrase as one removed and one added run.\n\nAnchor: \"function regions(parts: DiffPart[]): DiffPart[] {\"; \"function betweenChanges(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:a82908fadc9d9fbad483ec7737cbea28cf3c7d4dc14ea14cefed00353e2d8490",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:6c1b0e8b4aa9b70e75936959420b1fb6affa6be6c951fd5c566d965e8c3ed27d",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The decision: identical, whitespace-only with all whitespace removed (F3), or words with the ratio.\n\nAnchor: \"export function textDiff(before: string, after: string): TextDiff {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:3aa4a7f4cc220cad03aff8d3acfb5dc2270b0775c4a2f61c237e012a1a08b47d",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Exact reassembly of each side.\n\nAnchor: \"export function sideText(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:c344f26f9834c1175fbc305183b71ee5b6fddefb338a0b630ac8becc3e32ebdd",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Whitespace made visible and named.\n\nAnchor: \"export function visibleWhitespace(\"; \"export function describeWhitespace(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:fc02e1769a9da4bad65f59eb8f25f781115c0fdcc1646ca6db21cb7408d02a77",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28d5ba4b3992a42270c734ebbe79ecd9f4545354",
+            "content": "sha256:d86ff5af92463cc5e9a0b3146b9c1e440f364acfc7600ca08728c4ddf53696e8",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 226
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

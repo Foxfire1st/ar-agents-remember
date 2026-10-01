@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_dispatch_brief.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Ready dispatch is inbox rooted lands and starts expectation clocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd72e8255ae9c007b565cff4eb038429f04f1ce",
+            "content": "sha256:04891d392ed1bed231a18d339770aae9ef2930588cf40b2245c4359174005003",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ready_dispatch_is_inbox_rooted_lands_and_starts_expectation_clocks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Rejected adapter receipt keeps same row pending.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd72e8255ae9c007b565cff4eb038429f04f1ce",
+            "content": "sha256:c18b77124475d168b61c69d53c4216984b9476bc1d0b43436b7ca832fb86d4f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rejected_adapter_receipt_keeps_same_row_pending"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ambiguous redelivery reconciles without resubmitting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd72e8255ae9c007b565cff4eb038429f04f1ce",
+            "content": "sha256:758a4fd2de24de3bbca81c6eb58b8b29658138d2b41c8c995b2dc06d41cee103",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ambiguous_redelivery_reconciles_without_resubmitting"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Not ready queues one durable dispatch row for plane retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd72e8255ae9c007b565cff4eb038429f04f1ce",
+            "content": "sha256:96e736c8c22bf6fc76dbccf6d63e3e425d38c82ace70b7ff611263819a0feb85",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_not_ready_queues_one_durable_dispatch_row_for_plane_retry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Exact agent target never falls back to matching lifecycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd72e8255ae9c007b565cff4eb038429f04f1ce",
+            "content": "sha256:74104cd8e19fe69149511fb2fe63ef23b6036434854fd60a53c608096767221f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exact_agent_target_never_falls_back_to_matching_lifecycle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

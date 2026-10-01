@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/queue/closeout_recovery.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:58 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -48,35 +38,31 @@ Recovery state enters through typed `WorktreeArgs`; `report_operation_progress` 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `MemoryCloseoutOutcome` contains the memory commit and informational refresh results. | `MemoryCloseoutOutcome` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:27-36 |
-| `prove_closeout_recovery_commits` proves exact output refs without consulting a cache table. | `prove_closeout_recovery_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:39-55 |
-| `_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh. | `_prove_memory_output` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-81 |
-| `accepted_code_commit` commits or reuses the exact accepted code tree and records its proof. | `accepted_code_commit` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:84-141 |
-| `resume_external_commits` re-proves existing memory output and republishes only the code/memory pair. | `resume_external_commits` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:144-160 |
+- `MemoryCloseoutOutcome` contains the memory commit and informational refresh results. [1]
+- `prove_closeout_recovery_commits` proves exact output refs without consulting a cache table. [2]
+- `_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh. [3]
+- `accepted_code_commit` commits or reuses the exact accepted code tree and records its proof. [4]
+- `resume_external_commits` re-proves existing memory output and republishes only the code/memory pair. [5]
 
 The current recovery primitives below establish exact two-output proof and cache-independent resumption.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
+No additional cross-repository evidence applies.
 
 ## R39 Series Closeout Recovery
 
@@ -102,44 +88,3 @@ The current seams are `MemoryCloseoutOutcome`, `prove_closeout_recovery_commits`
 The removed `integration/closeout/ledger_recovery.py` classified ledger byte/tree contradictions and recovered a third ledger mutation. That behavior is intentionally gone. Its durable principles remain here: recovery advances only proved outputs, recorded commit identity is immutable, and queue state cannot substitute for journal evidence. There is no current source owner for reconstructing a ledger commit, so its old one-to-one sidecar is retired.
 
 The old sidecar's 2026-08-25 creation provenance was: “Created during PDLS whole-system reconciliation after source and requirement review. Verification remains closeout-owned.” This records the retired owner's history; it does not claim current ledger authority.
-
-## Update History
-
-- 2026-09-15T00:58 UTC — Rechecked the formatted L9 working candidate and rebound current references after source cleanup; source-sha256=6682e6c58d342bbdc3109fcd1f9eccdecfe492b6bf808ad108ee1e1529314ce7. The older working-candidate snapshot and verification provenance are retained.
-
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=a7ba0387d7ad07da815838182c4f5a3300204352b5076b7367818cce6d7f596b. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `MemoryCloseoutOutcome` repointed to mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:47-56. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `prove_closeout_recovery_commits` repointed to mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:59-74. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `accepted_code_commit` repointed to mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:168-226. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-08-26T14:32+02:00 — Corrected closeout retry semantics for settings-only memory changes:
-  exact current edges are reused, while a different historical same-code mapping causes a new
-  memory-state row and ledger commit. Verification remains closeout-owned.
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-input and ledger-recovery package relocations; journal-owned recovery proof and exact tuple reconciliation are unchanged.
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/queue/closeout_recovery.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
-
-
-- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
-
-- 2026-08-14T11:48:55+02:00 — R42 curator: recorded the move of `MemoryCloseoutOutcome` and
-  `prove_closeout_recovery_commits` from the closeout coordinator into the recovery owner; updated
-  direct forcing-test citations. Verification remains closeout-owned.
-
-- 2026-08-14T11:25+02:00 — R39 curator: documented clean landed-code recovery for series/master
-  closeout. Verification remains closeout-owned.
-
-- 2026-08-14T09:37+02:00 — Reopened L23 acceptance ownership: series/master recovery records only
-  a clean, already-landed code HEAD so no post-approval path can create an unreviewed master commit.
-- 2026-08-14T05:26Z — Created for the L23 final candidate: documented monotonic closeout commit
-  recovery and the exact code-to-memory-to-ledger reconciliation boundary. Verification remains
-  closeout-owned until the source commit exists.

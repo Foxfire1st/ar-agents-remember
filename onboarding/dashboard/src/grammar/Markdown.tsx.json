@@ -1,0 +1,115 @@
+{
+  "path": "dashboard/src/grammar/Markdown.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The detail-panel entry delegates the reader surface to its implementation.\n\nAnchor: \"export const DetailPanel = memo(DetailPanelImpl);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "MasterOverview renders the objective through Markdown and composes the section readers.\n\nAnchor: \"export function MasterOverview({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:870f45dc6d4b00dc1d5a9a77d0b6aec42efb4c4df16fd13c52b6e9fe1580d60f",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "MasterSection renders authored body text through Markdown and delegates shared decisions.\n\nAnchor: \"export function MasterSection({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:3a753bd34c0b0b7cc956ceb2574e7197648f85430bed281ed0d1296821ef4717",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 288
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Bullets renders each item through inline Markdown.\n\nAnchor: \"export function Bullets({ items }: { items: string[] }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:7b8b0462f06b2c31bc4fec4a3d502ac978e7739130096582b642c30ba65da741",
+            "locator": {
+              "end": 711,
+              "kind": "line_range",
+              "start": 701
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "DecisionList renders both decision and rationale through inline Markdown.\n\nAnchor: \"export function DecisionList({ items }: { items: TaskDecisionNode[] }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:5352b72ae12feb6ce7da3267ae3d668932d1b77cf21dc529c77d3b3bb97d8627",
+            "locator": {
+              "end": 786,
+              "kind": "line_range",
+              "start": 771
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The leaf TaskReader composes TaskReaderSections inside the requirement-link boundary.\n\nAnchor: \"export function TaskReader({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
+            "locator": {
+              "end": 674,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

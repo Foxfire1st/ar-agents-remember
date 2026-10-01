@@ -1,0 +1,205 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/composition.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The four command kinds, published as a named constant so a later leaf unions its own set rather than restating members.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5261e9431d946302e3cfd9a3efc8077c523c89",
+            "content": "sha256:baf0a44949a63fbcb1ceeb966ba3ec94b440ba4c71f19158efb680f858521ad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPOSITION_COMMAND_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The case that proves the union is exactly its own members and the six tables declare no content-address column.**\n\nAnchor: \"test_the_composition_commands_are_the_closed_unions_own_members\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:d61c534b18b2ee74e3726395521da0cc9450d3f39f62716a486cc40f8dff6d24",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The case that proves every half-declared policy state is refused at the value boundary.**\n\nAnchor: \"test_the_declared_policy_shape_refuses_every_half_declared_state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:aa7bf9ef56384c78f880e7f5989972f056fa905e06bb965e64f49412ffded89e",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The facet suite's re-scoped assertion, which now unions this leaf's published constant instead of a literal.**\n\nAnchor: \"test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:b91bad3c3cf9ff2e7cdc28cea8222cc80ad39591f236ba41db5f36d626dd65ac",
+            "locator": {
+              "end": 913,
+              "kind": "line_range",
+              "start": 913
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The six record tables those commands write, exactly generation 5's appended set.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5261e9431d946302e3cfd9a3efc8077c523c89",
+            "content": "sha256:8b3b147cbe8dfd7e4902f818f8bf84089dadc9dbe90e32b8bb5c37bd63f83e7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPOSITION_WRITABLE_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The one registered scope a traversal policy may widen, and nothing else.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5261e9431d946302e3cfd9a3efc8077c523c89",
+            "content": "sha256:4bbada9c452f9f295b196348ff4076f2ac5c6b329008cd5e20e130a0663ac77f",
+            "locator": {
+              "kind": "symbol",
+              "name": "REGISTERED_REVIEW_SCOPE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closed direction vocabulary, which decides which endpoints a traversal may step through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5261e9431d946302e3cfd9a3efc8077c523c89",
+            "content": "sha256:404c8811eea0368c5d9e2e1fc61524ec9a52c1166d237a35597f417294ce0986",
+            "locator": {
+              "kind": "symbol",
+              "name": "FOLLOW_DIRECTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The value-boundary half of the policy validation: a half-declared policy fails construction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5261e9431d946302e3cfd9a3efc8077c523c89",
+            "content": "sha256:a836695dc67b9449a34669d8a0aaba79c06618adfa86931f4065aa9dc4decff4",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyCompositionPolicyDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stored policy version, whose row identity and author spelling are separate fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5261e9431d946302e3cfd9a3efc8077c523c89",
+            "content": "sha256:b74c7b2d1af5dd7566a5b2afab4a5ea4287bc41b55df0d55b2b3389d5b70d09a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyCompositionPolicyVersion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The reported link, carrying its direction and the policy version it was declared under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5261e9431d946302e3cfd9a3efc8077c523c89",
+            "content": "sha256:b46c77fd7e498fd6b2131aa90e62d7c880b8d901de7c88db102aa52a6ab418a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyCompositionLink"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The authored context model, which declares no content address, digest or fingerprint of its own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5261e9431d946302e3cfd9a3efc8077c523c89",
+            "content": "sha256:43ba47c15de89baf667f7b0dbf8df3d7ce7166316c741d95ecff0befbb15de7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyExplanationContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The context draft, whose successor cites a predecessor that must already be stored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5261e9431d946302e3cfd9a3efc8077c523c89",
+            "content": "sha256:f357bf914c9809bab0164c146d677e1ecc2b33e5c1b0363b564fadf46afde34a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyExplanationContextDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

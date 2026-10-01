@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/`          |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
@@ -23,9 +17,7 @@ zones include `review` (so a rebinding shows). [`sessions-view/shell.test.tsx`](
 lives in this view's palette, which is not reachable while the reviewer takeover is open (pre-existing; review R1 F9,
 left as ruled).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reviewer's group on the keys page. | "Intent reviewer — while focus is inside it" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:301-301 |
+- The reviewer's group on the keys page. [1]
 
 ## Current Structural Rail Contract
 
@@ -306,39 +298,35 @@ this overview is their governing pillar.
 | Palette and keyboard binding | [CommandPalette.tsx](CommandPalette.tsx.md) · [useKeyboardZones.ts](useKeyboardZones.ts.md) |
 | Launch chooser and request ownership | [LaunchFlow.tsx](LaunchFlow.tsx.md) · [useHarnessCatalogRead.ts](useHarnessCatalogRead.ts.md) |
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is configured. Product and
 interaction claims were verified from same-repository source/tests, the final reviewer PASS, the L8
 task evidence, and the recovered same-repository history pack.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for the canonical Chats route. | — | — |
+No relevant domain documentation was found for the canonical Chats route.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The route composes repository-local data and server clients. Toad/T3 were historical design
 references, not imported governing implementations, so no cross-repository source is cited here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository implementation source governs FEUI-L8. | — | — |
+No applicable cross-repository implementation source governs FEUI-L8.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Full-route composition and shell ownership. | "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" | dashboard/src/cockpit/Cockpit.tsx:51-51; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286 |
-| Legacy duty bar. | `ChatContextBar` | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:74-117 |
-| Structural role rail and data derivation. | `SessionRail`; `buildRailModel` | dashboard/src/data/railModel.ts:397-423; dashboard/src/panels/session-cockpit/SessionRail.tsx:161-242 |
-| PTY/ended continuity. | "import { lazy, Suspense, useEffect, useMemo, useRef, useState } from \"react\";"; "import { EndedSessionState } from \"./EndedSessionState\";"; "The PtySurface: the session stage's terminal half. Wraps the"; "export function EndedSessionState({ session }: { session: OpenSession }) {" | dashboard/src/panels/session-cockpit/PtySurface.tsx:1-1; dashboard/src/panels/session-cockpit/PtySurface.tsx:19-19; dashboard/src/panels/session-cockpit/PtySurface.tsx:21-21; dashboard/src/panels/session-cockpit/EndedSessionState.tsx:35-35 |
-| Cleanup authority notice. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
-| Effective keyboard contract. | "export function useEffectiveKeymap(): EffectiveKeymap {"; "export function useKeyboardZones({" | dashboard/src/data/keymap/preferences.ts:329-331; dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97; dashboard/src/data/keymap/preferences.ts:369-369 |
-| Dev end-to-end scenario authority. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
-| The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). | `SERVED`, `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:228-243; dashboard/src/test/fixtures/wire.ts:66-66 |
-| The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. | `collectWireFixtureFindings` | dashboard/src/test/wireFixtureGuard.ts:484-587 |
-| The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). | `HarnessInfo`, `DetectedHarness` | dashboard/src/data/harnessCatalog.ts:5-9; mcp/src/agents_remember/serving/response_contract.py:372-377 |
+- Full-route composition and shell ownership. [2]
+- Legacy duty bar. [3]
+- Structural role rail and data derivation. [4]
+- PTY/ended continuity. [5]
+- Cleanup authority notice. [6]
+- Effective keyboard contract. [7]
+- Dev end-to-end scenario authority. [8]
+- The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side). [9]
+- The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules. [10]
+- The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`). [11]
 
 ## Current L5I Route State
 
@@ -426,184 +414,3 @@ latest-chip assertions.
 ## 260815-DAG Master Full-Gate Repair Route Impact
 
 The session-cockpit forcing suites hardened teardown: async `afterEach` clears fake timers / flushes the 150 ms virtualizer scroll-observer debounce before jsdom teardown so orphaned callbacks cannot fire without a `window`.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **route body updated for MIK-R33 rule 7:** new section "260928-MIK-L33 The `?` Page Lists The Intent Reviewer's Chords" (the keys page's fourth group and the extended `?` case); one row. The rows moved by the eight inserted lines of `CommandPalette.tsx` were re-pointed by the installed fixer.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "import { SessionsView } from \"../panels/session-cockpit/sessions-view/SessionsView\";"; "data-testid=\"sessions-stage\"" repointed to dashboard/src/cockpit/Cockpit.tsx:50-50; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:286-286. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
-  `dashboard/src/panels/session-cockpit/` route changed since the recorded verification commit.
-  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
-  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
-  remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
-  the recorded verification commit — `sessions-view/lifecycle.test.tsx` gained the
-  planned-retirement window suite. Re-read the route card: it makes no claim about that suite, so no
-  wording changed. The drift predates this task line (the change landed with an earlier route
-  change, not with this master). Verification metadata remains closeout-owned.
-- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
-
-- 2026-08-26T10:44:52+02:00 — No route impact: refreshed the `VOCABULARIES` forcing range after test growth; Chats cockpit ownership and behavior are unchanged.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: test `afterEach` hooks now flush virtualizer debounces (fake-timer clear + real-timer 200 ms settle). Verified at code commit e5cb139f.
-
-
-- 2026-08-14T06:25+02:00 — L23 final candidate review: accepted interaction responses consume
-  pending prompts and return the session to working/replay state; the fleet scenario now shares the
-  canonical sprint/master/leaf task-document fixture, rail groups constrain width, and virtualizer
-  timers are drained before jsdom teardown. Verification provenance remains closeout-owned.
-
-- 2026-08-12T17:16+02:00 — 260731-EFA-L23 dashboard-gate repair: reconciled the parent cockpit
-  route with the intent-lock suite's shared hermetic geometry/timer fixture and its cleanup-before-
-  real-time ordering. Focused Vitest remains 10/10 with no unhandled teardown error; production
-  session-cockpit behavior is unchanged.
-
-- 2026-08-12T00:28+02:00 — No route impact: `BusPane.test.tsx` now waits for its already-expected
-  final developer-reply acknowledgment so the legitimate intermediate `posting…` render cannot
-  race the assertion; session-cockpit production behavior and route structure are unchanged.
-
-- 2026-08-11T23:40+02:00 — No route impact: the `RailTop` summary and completed-bulk helper split
-  preserves the task-projected rail, completed-seat actions, and current-occupant row boundary.
-  Verification metadata remains pinned until governed closeout.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the cockpit route with
-  task-document-addressed dispatch, messaging, gate, retire, and rename controls while keeping
-  private runtime coordinates out of agent-facing state.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed the rail hot path for concurrent sprint command
-  groups and legacy isolation. Verification metadata remains pinned until closeout.
-
-- 2026-08-09T22:22+02:00 — No route impact: the conversation timeline's test-only timer
-  teardown now prevents a Virtualizer debounce from outliving jsdom. Session-cockpit production
-  behavior and route structure are unchanged; detail lives in the conversation overview.
-
-- 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: documented lifecycle-free interaction
-  answers through the owning session's interaction-response endpoint.
-
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: repaired two `DetectedHarness` citation
-  ranges in this route overview after `response_contract.py` grew (line-shift only; no route
-  shape change). Verification metadata pinned until closeout stamps the 260713-TES-L2 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking coalescing and file-size coverage for session-cockpit. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (sessions-view split, parts modules, e2e app fixes). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 10 route-reference rows and 3 prose citation groups, including the contract-test and harness-response evidence; no route behavior claims were changed.
-- 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "Fixture Contract For
-  This Route" closed with *"`fixture ⊆ mirror` is what these suites enforce; `mirror ⊆ server` is
-  enforced by nothing"* — the outer two nodes of a four-node chain, which reads as though nothing
-  measures the mirror against the snapshot. It does: `test/contract.test.ts` measures
-  `types/projection.ts` against `fixtures/snapshot.json` in three TYPE-level directions
-  (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror`; cit:(["mirror ⊇ served — the server grows", "served ⊇ mirror — the mirror declares", "fixture ⊇ mirror — THE ORACLE ITSELF"], dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45)) plus runtime `VOCABULARIES`
-  assertions cit:([`VOCABULARIES`], dashboard/src/test/contract.test.ts:287-423) for the string unions `resolveJsonModule` widens to `string`. The
-  paragraph now names all three links and states the unheld one as **`snapshot.json` ↔
-  `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one letter from
-  "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the strength the
-  evidence carries: no in-repo generator **and no in-repo mechanism keeping the two sides in step**.
-  Same correction applied to the 12:35 entry's restatement below. No suite claim, table row, or
-  verification field changed.
-
-- 2026-08-01T12:35+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added
-  the "Fixture Contract For This Route" section. No cockpit component changed — all seven changed
-  sources are suites — so the body records the durable rule (a cockpit test builds wire nodes through
-  `test/fixtures/wire.ts` / `conversationWire.ts`, never through a cast) and, separately, the three
-  seeds whose SHAPE was corrected because it was a payload the server cannot send: the `undefined` /
-  hand-built `ConversationCapabilities` on a required field, the two-of-thirteen-key `Analytics` in
-  `SessionRail.test.tsx`, and the now-derived `page.totalItems`. Six of the seven changed only in
-  helper/seed construction with no assertion text touched; I ran all seven (163 tests, green) and read
-  each diff to confirm the `expect` lines are untouched. `LaunchFlow.test.tsx` is the exception and is
-  recorded as a LOSS: its three `control: "starting"` keys are gone, so the surviving
-  `not.toContain("adapter starting")` assertions can no longer fail and that guarantee is marked
-  superseded here — verified `DetectedHarness` declares exactly `id`/`name`/`detected`
-  cit:([`DetectedHarness`], mcp/src/agents_remember/serving/response_contract.py:372-377) on a `WireResponse` with `extra="forbid"`
-  cit:([`WireResponse`], mcp/src/agents_remember/serving/response_contract.py:88-100), and
-  that `HarnessInfo` mirrors the same three cit:([`HarnessInfo`], dashboard/src/data/harnessCatalog.ts:5-9). Recorded the replacement
-  guarantee (typed `HARNESSES` annotation + the per-row `Object.keys` assertion) and the reason the
-  chooser needs a local belt at all: `wireFixtureGuard.ts` discovers vocabulary from a first-line
-  `// TypeScript mirror of` marker, `harnessCatalog.ts` has none, and the guard's own note lists it
-  among five unmarked blind-spot modules. Stated the fixture chain's honest reach (both `wire.ts` and
-  `snapshot.json` hand-maintained, no generator in this repository; the `snapshot.json` ↔
-  `observer/projection.py` crossing held by nothing). (This bullet originally read "`mirror ⊆ server`
-  enforced by nothing", which dropped the middle link; corrected in the 14:05 entry.) Added three
-  two-cell `Repo-Internal References` rows, matching the existing two-column
-  header. Verification metadata remains pinned until closeout stamps the commit.
-
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the conversation surface now
-  hydrates only the effective selected child and retains exact roster identity across live updates,
-  reload, and child focus. The broader cockpit layout and ownership model are unchanged.
-  Verification metadata remains pinned until closeout.
-
-- 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: added the "Sub-Agent Lanes And Multiplexed
-  Pending Interactions" section — the `ConversationSurface` roster/agent-lane focus cycling with
-  roster-revalidated LRU-surviving focus, the library's indented server-keyed agent child rows plus
-  verbatim `agentsNote`, and the multiplexed `InteractionBar` (one bar per pending interaction,
-  adapter-bound agent badge, shared answer-channel routing) with attention previews naming who
-  asks. No route composition, keep-alive, or authority model changed; verification metadata
-  remains pre-commit and closeout re-stamps.
-
-- 2026-07-24T13:17:17Z — Curator: corrected the route model for mounted conversation continuity,
-  scroll restoration, focused action placement, retired StatusLine/rail footer, and structured
-  interaction authority. The deleted StatusLine knowledge is retained by SessionsView/SessionStage
-  and this route overview; verification metadata remains pre-commit.
-
-- 2026-07-21T11:30+02:00 — No route impact: 260718-CHATS-L5F (half-time functional fixes,
-  PASS-WITH-NOTES) touched one governed file — `SessionsView.tsx` gained the R9 (audit V5)
-  focused-seat live-turn merge (`useActiveConversation` → `focusedLiveTurnWorking` →
-  `{ liveTurnWorking: true }` on the focused row). The route's composition, keep-alive, focus, and
-  authority model are unchanged: the state-preference rule itself lives in the `data/` route's
-  `stateGrammar.ts` (`seatVisualState`, terminal/fault/blocked/wait guards first) and the change is
-  recorded in the [SessionsView.tsx sidecar](SessionsView.tsx.md) and the data overview's Catalog
-  And Session Identity section. Verification metadata advances with closeout stamping only.
-  added the "Cockpit chrome conventions" section recording the durable cross-file design truths this
-  dashboard-only leaf established — the FB7 terminal well + gutter grammar, the RV-2 responsive rail-row
-  grammar, collapse-or-explain chrome (StatusLine/HeaderStrip/top-bar, UA-5 slot removed), the
-  humanize-duration single authority + `shortId`, and the load-bearing `@webtui/css` `word-break:
-  break-all` cascade trap + unlayered root-override remedy (RV-1). No route composition, authority, or
-  invariant changed; zero backend edits. Spec home for the TUI grammar is the leaf visual-audit `## FB7`.
-  Verification stays pinned to the leaf base (`352d5cd`) because the polish candidate is uncommitted;
-  closeout owns candidate stamping.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator (structured Chats renderer, reviewer FINAL PASS,
-  26/26 findings closed): recorded the composition change from the unconditional controlled-session
-  PtySurface body to `ChatsStageBody` (structured `ConversationSurface` is the controlled-session
-  default; PTY demoted to the default-off read-only terminal-diagnostics drawer + legacy-raw body),
-  the two new child routes `conversation/` (harness-neutral grammar + interrupt hook) and
-  `conversation-library/` (in-stage history browser + sole exact-open resume), the realized one-roof
-  conversation contract (both active transcript and previous-conversation library served from the
-  landed L1/L2/L3 adapter-normalized contracts as a reconstructable projection — no durable browser
-  index), the `WorkingLine` interrupt prop / `conversation.stop` chord, and the corrected
-  PTY-not-unconditional invariant. Superseded the FEUI-L8 "controlled sessions still expose the runner
-  line-log because UA-1 is absent" claim. Verification metadata remains pinned to the FEUI-MX-FIX-2
-  base because the reviewed L4 candidate is uncommitted; closeout owns candidate stamping.
-
-- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: recorded ChatContextBar as the raw-create gesture owner,
-  SessionsView as accepted-row-only focus, shared raw/harness parsing through LaunchFlow, and the
-  zero-row/zero-focus failure contract. Verification metadata remains pinned pending closeout.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: added the one-owner chooser recovery state machine, narrow
-  accessibility exception, fixed viewport boundary, and xterm-preserving boot reattach contract.
-  Verification metadata remains pinned pending candidate closeout.
-
-- 2026-07-18T07:22+02:00 — 260715-FEUI-L8 final curator pass: promoted this route to the sole
-  product-facing Chats destination, recorded Operations/default-closed-inspector decisions, folded
-  in legacy Chats/SessionList/sessionGroups duties before sidecar retirement, documented persistent
-  PTY/ended/cleanup/keymap/scenario hardening, and preserved the future one-roof conversation plus
-  absent-UA-1 boundary. Metadata remains pinned to the leaf base until closeout.
-- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 (Round 3 reviewer PASS): replaced the interim inspector
-  with stable-mounted Evidence/Capabilities/Bus panes, added the contractual StatusLine, preserved
-  per-entry reply state through filter/virtual/off-tab unmount pressure, restricted reverse replies
-  to sender identity, surfaced post-removal stop residuals, and documented the 100/101 accessible
-  virtualization boundary. Verification metadata remains pinned to the leaf base until closeout.
-- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced the composer/queue stub with the live
-  shared CodeMirror surface, exact submit/reconcile lifecycle, QueuePreview, zone-sensitive Alt+Up,
-  authoritative withdrawal, response-loss convergence, revision-CAS recovery, and no-PTY-fallback
-  invariants.
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4: filled exact-session model/effort controls and their
-  evidence/toast/live-region surfaces after final reviewer PASS; metadata remained pinned.
-- 2026-07-17T06:20+02:00 — 260715-FEUI-L3: added capability-driven launch and failed-launch
-  correction surfaces after final reviewer PASS; metadata remained pinned.
-- 2026-07-17T04:20+02:00 — 260715-FEUI-L6: filled PTY, interaction, lifecycle, residual, and
-  working-line surfaces after final reviewer PASS; chose the DOM renderer by measurement.
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2: added the data layer, rail, stage, attention, smart focus,
-  and palette composition after final reviewer PASS; metadata remained pinned.
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 as the Sessions-named cockpit shell with
-  resizable panels, keyboard/palette foundation, floor hint, and rail calibration.

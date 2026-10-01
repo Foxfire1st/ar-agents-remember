@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/owner_signals.py
 
-| Field                  | Value                                                    |
-| ---------------------- | -------------------------------------------------------- |
-| repository             | agents-remember                                          |
-| path                   | `mcp/src/agents_remember/serving/owner_signals.py`       |
-| doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-09-15T13:15+02:00                                    |
-| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6`                                    |
-| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
-| governingOverview      | `overview.md`                                            |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -88,36 +78,32 @@ on one prefix normalization, and the kind-scoped source identity lives in one fu
 
 None for this module.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved `system/sources.md`; the
 posting semantics are same-repository runtime behavior proven by source and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external/domain document defines this posting primitive; the ruled coalescing contract is the source of truth. | `_post_owner_signal` | mcp/src/agents_remember/serving/owner_signals.py:93-158 |
+- No external/domain document defines this posting primitive; the ruled coalescing contract is the source of truth. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The primitive composes the control-plane inbox record/transition helpers and the delivery
 helper; the action layer and the sweep import it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The inbox row record/creation and renewal/readdress transitions it composes. | "def create_operator_inbox_entry("; "def renew(" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:244-244; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:434-434 |
-| The delivery attempt it drives and the admission policy it carries. | "def deliver_inbox_entry("; "class DeliveryAdmission:" | mcp/src/agents_remember/serving/inbox_delivery.py:171-217; mcp/src/agents_remember/serving/inbox_delivery.py:94-105 |
-| The row is durable and on the sweep fold before the optional marker step (lines 185-192), which precedes the delivery attempt. | `_post_owner_signal` | mcp/src/agents_remember/serving/owner_signals.py:117-209 |
-| The kind-scoped source identity the lookup delegates to. | `_coalesces_on_source`; `_find_coalescible` | mcp/src/agents_remember/serving/owner_signals.py:76-89; mcp/src/agents_remember/serving/owner_signals.py:92-114 |
-| The sweep facade re-exporting the primitive for existing callers. Note the lookup's signature is now the single `signal=` carrier, not the five keyword values it used to take. | `_post_owner_signal`; `_find_coalescible` | mcp/src/agents_remember/serving/owner_signals.py:117-209; mcp/src/agents_remember/serving/owner_signals.py:92-114 |
-| The ask-identity normalization shared with the evaluation module. | "def _seat_liveness_ask_identity(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:240-240 |
+- The inbox row record/creation and renewal/readdress transitions it composes. [2]
+- The delivery attempt it drives and the admission policy it carries. [3]
+- The row is durable and on the sweep fold before the optional marker step (lines 185-192), which precedes the delivery attempt. [4]
+- The kind-scoped source identity the lookup delegates to. [5]
+- The sweep facade re-exporting the primitive for existing callers. Note the lookup's signature is now the single `signal=` carrier, not the five keyword values it used to take. [6]
+- The ask-identity normalization shared with the evaluation module. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes this posting primitive. | — | — |
+No cross-repo boundary owns or consumes this posting primitive.
 
 ## 260831-LOCR-L10 Current Delta — Kind-Scoped Source Identity And The Post-Persistence Step
 
@@ -143,18 +129,3 @@ into more rows" describes the pre-demolition past, not a live path). The posting
 itself was unchanged by that leaf. This entry supersedes any earlier description in this sidecar
 that conflicts with the current source behavior above; verification metadata stays pinned to the
 pre-commit source history until closeout.
-
-## Update History
-- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: recorded the current posting contract. Coalescing is kind-scoped through `_coalesces_on_source`: a `state-signal` row is identified by exact `subjectAgentId` and no longer by the mutable task-document/role projection, while every other kind keeps the structural key and still ignores occupant identity; `_find_coalescible` now takes the posted `OwnerSignal` as the one carrier of those fields. `OwnerSignalOptions.after_persist` is the new optional post-persistence/pre-delivery step, invoked after append-or-renew and `sweep.remember` and strictly before `deliver_inbox_entry`, so a failed marker write leaves one pending unmarked row and no adapter submission. The prior bullet that placed the state-signal marker write after the post by the caller is superseded, and every construct range was re-derived against the current source. Verification metadata remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `owner_signals.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the rebind-vocabulary sweep in
-  `_find_coalescible`/`_post_owner_signal` (ladder readdressing → rebind machinery; storm
-  note historical). Verification metadata pinned until closeout stamps the 260713-TES-L5
-  commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: created this sidecar for the extracted
-  owner-signal posting primitive (`OwnerSignal`/`OwnerSignalOptions`, `_find_coalescible`,
-  `_post_owner_signal` moved from `_agent_notifier_actions.py`; admission policy now rides
-  the options). Verification metadata pinned to the leaf base `1c1629fc` until closeout stamps
-  the 260713-TES-L2 commit.

@@ -1,0 +1,388 @@
+{
+  "path": "mcp/src/agents_remember/application/skill_resources/capsule.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The four refusal-capable steps and the outcome that carries the binding in both shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:c3d2144310d2a38eeed8be4d4c358291431cf1e2cd8b6b4b0fd84182fd42189c",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_task_capsule"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:148ccdc25c930326ea0a87fda84c78b9a655d10fd52a4a76c60b3e65c6b81857",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompileOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The tool policy is a snapshot of the published roster, so a capsule requests tools and never grants them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:555b110693e8fd5bcd0c9de05489a4ef1b674ae4aa306f634a858400c38200c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_tool_policy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The advertised roster the tool policy snapshots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The corpus root, its manifest and its publishing origin travel together as one admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:b1aa6db26f9495b7eac841b60e70fbfb0730b9dbbdeb2a63197ed4bac2c762b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "shipped_composition_corpus"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The composition manifest that routes the admitted source set.\n\nAnchor: \"\\\"schema\\\": \\\"ar-role-capsule-composition/v1\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The consumer the operation compiles through.\n\nAnchor: `compile_admitted_capsule`; `CapsuleAdmissionRequest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dd0b1463a17ce23128b22d06e82ce24f1df5c1c",
+            "content": "sha256:a6d1293ff1911cd6ee0cce1152bf3e0d91d5e3f4d7ce84d3cb63a1296261e326",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1dd0b1463a17ce23128b22d06e82ce24f1df5c1c",
+            "content": "sha256:42c19e2b770cbaf42f9018f126bbc018f6c3ba33798d549ae2aa5917219f984d",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The projection consumer.\n\nAnchor: `resolve_task_projection_scope`; `TaskProjectionSource`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "060bc73f6cbc6aacea1155681cf2f467b8a51af8",
+            "content": "sha256:3bc6e9a578cb3e10214b402d89787de823680a3fdedaa7d8d5753fa3437fe65e",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The seat is derived from the document's altitude and the role string is validated against it, never used as authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:8b510f1c59eadd633e890f61a89296a725ed091b00c234a65eaec0b9fd4c861e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:3b4b59e6b1ef6fdf105dfc962e2fc003c52de84325a23b0295aef1c87d1be435",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The admitted revision is the digest of the JSON bytes the task store handed over.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:580bc2ba7b11f508edd6bbf52a6b4ce9fee772c8c537addc0f34b8b1ea086920",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_task_doc_source"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The role/altitude rule the operation checks against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:245ad882a42c3bee97cdf6ffa88bb042047c0248e25b400acd68cc5f7f1aaa83",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentTopology"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:e53e24b4ede20d3ccd8d1d6a0cb8bd5a408a07317e9aab553bc03cc44d65a718",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_role"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Selection comes from the manifest, and the declared skill `source` is the admitted path while the `uri` is provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:70a059c5db100360ca2b2701934c524500b3002805425f09381d703bc1a9be8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "routed_admission_request"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:8b47f49c6b049604a4e718c0bda2deb60385ace3c2218a043efbfabdc3c48247",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skill_root_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The seat-addressed form of the same routing rule, for a caller with no task document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:a72993a1f642f47a8445a8cb32389440f5fb220c1d4d771763a2da49f1e209ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSeatAddress"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:4b7ba4689b56507f70c5d55a82df8bbe6965ad4e6f484bd7a0a551cf1d5a8fd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "routed_admission_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:fd09c489fab32c6097d6cfcb18dbd69e856c1135f85d6258da17db3f572a01cc",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "D13's repair: the root read out of the contract the request names, and carried onto the enclosure so the projection uses the same one.\n\nAnchor: `AdmittedEnclosure.code_repository_root`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:d894e33e9c1370fad5e1185ba814b7e379c6b8c4663f2eb16319d755f40aaaf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_repository_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:f3216586d98fa1bc36cb0829601d6140603c2f527602b04d4505578c044809e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmittedEnclosure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:2bb1b1020f6a676b875c0ed002574c7c443705a92f4b99021d8b6abe85221341",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The registered boundary the repair makes usable, and the case that fails if the declared schema loses the field the resolution depends on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:2a778309bf92a9929919ae0209c369036fd2adf9dca6c28339059322f38c4320",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_capsule_compile_tool"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:1da30b548faaf479ac900db05bca426b879c58bf5c89fb0d399ebb1fe11c189c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_capsule_operation_resolves_a_repository_through_its_schema"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:714ddb1e69f13697fd821f42d8f345e62454511765669a50e80acaa3357628c9",
+            "locator": {
+              "end": 1022,
+              "kind": "line_range",
+              "start": 975
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The launch compiler that consumes the seat-addressed routing entry point for a taskless seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

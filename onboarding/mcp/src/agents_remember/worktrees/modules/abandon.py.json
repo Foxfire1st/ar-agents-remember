@@ -1,0 +1,285 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/abandon.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Successful abandon and exact terminal replay are wrapped with exact source-pair release.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38fe72fb66fa0fa72e9bb6b552087da8cec2bd0e",
+            "content": "sha256:0623b28fc10dd817ec588e6bcee462c6c358ba2520d2d8c0b458a26017c9a2a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "abandon_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The typed contract amendment record holds the six optional vocabulary cells.\n\nAnchor: \"class ContractCells:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:94b53095cea2ad42bb9785a81659e67e5225b20b174b3af6b3be014fb68f7e2b",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The typed amendment helper preserves unspecified cells and applies supplied vocabulary values.\n\nAnchor: \"def amend_contract(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:f2270d2055e3a8e41f08bab1c5ba923cde991600e141bcc3a1511946d072918e",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The current module exposes `abandon_result` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38fe72fb66fa0fa72e9bb6b552087da8cec2bd0e",
+            "content": "sha256:0623b28fc10dd817ec588e6bcee462c6c358ba2520d2d8c0b458a26017c9a2a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "abandon_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The terminal bridge preserves missing, unreadable, or different selection and never clears a newer owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4df4324735948c916744cbd6d02298769da89c55",
+            "content": "sha256:3a00552ad62fb39e17881fca1a99e72e77ec42e0376a23afba78315f45693c59",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_terminal_atomic_series_release"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Abandon passes its dry-run flag into terminal result validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38fe72fb66fa0fa72e9bb6b552087da8cec2bd0e",
+            "content": "sha256:45b8e27a90409eb628b03bba721ee431689b45ed31ea06d80d99ebf88049944c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_outputs_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38fe72fb66fa0fa72e9bb6b552087da8cec2bd0e",
+            "content": "sha256:7bd825774004529cc0694a66cf449d4e9c100646151c582a2c401b4171ab5126",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_terminal_outputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Provider teardown is delegated to the provider-runtime teardown function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:2aa48a21f45fe58ab4750793d6e04cb30fa24541e46271d4235ebc8f95b8b1ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "teardown_worktree_providers"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_force`, and `remove_empty_dir` are reused from cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_registered_worktree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:8e58b4070331d3fcd12f77132d203db94d86f77c85aa6cfc9370533dd5dcaa20",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_branch_if_merged"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:e17908e803a0963f77a43608b2d5adbd3cee3f03d892f343615f641b7a3d6fe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_branch_force"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:668fe963c9e63a21e06c992b1bd8e1d7925cb58f97ed82e22a1e645824a62ef7",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_empty_dir"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:11fc2dbe6740217cc905c252782faf50cb7f3ec4c4579f50aa5a0672d455119a",
+            "locator": {
+              "end": 467,
+              "kind": "line_range",
+              "start": 452
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`WorktreeArgs` types the abandon input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a36bc182b43134c2cf03c76dba11f075bfa7e70",
+            "content": "sha256:335d0788ff134fe33f1c142afae65d2bd0c1d843bb42b48fa5de07b748bd506b",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeArgs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a36bc182b43134c2cf03c76dba11f075bfa7e70",
+            "content": "sha256:8aa2aa5f62137ac86057312153935493e010459d8d02fa8f997db5b64daf3dfc",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer.\n\nAnchor: \"def worktree_abandon\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a816e4076dcc166e5d7e42c0346f56b8f240b224",
+            "content": "sha256:7403fc53f7d92a57cb8563f17fa2ce8a42b91877c7139744ada91dedc03874f5",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "073c9d5fa9aa753f1dca441e4cd97c1aeaa281e2",
+            "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_series_reports_is_child_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states.\n\nAnchor: \"CleanupStatus = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:e092fb2568484314845a9e60f9dea7437e90fa9fe0e646662ff06051f4a2749b",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

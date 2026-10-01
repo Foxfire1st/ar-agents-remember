@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_task_sprint_linkage.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared helper _judgment_register",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "109f8bcaa856f95c2d0eb4e436381c32d01b4033",
+            "content": "sha256:79406cc65017db175f9f0d3ae913f8940be4d45b99671397f08b7d05a44f0ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judgment_register"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared helper _judgment_row",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "109f8bcaa856f95c2d0eb4e436381c32d01b4033",
+            "content": "sha256:111c4909058fce7d9e758605337e3c4f0648e6fc7a5635d8f048f82b35cd5247",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judgment_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared helper _register_section",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "109f8bcaa856f95c2d0eb4e436381c32d01b4033",
+            "content": "sha256:d2f66314228a20ff60bd9f3decfcef70c64f4017cb5540d460b192bcf7188e66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_section"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

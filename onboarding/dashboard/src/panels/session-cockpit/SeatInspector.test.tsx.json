@@ -1,0 +1,141 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/SeatInspector.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Tab navigation and hidden-panel draft retention.\n\nAnchor: \"exposes keyboard-navigable Evidence\"; \"retains an open Bus draft across click and keyboard tabs while hiding inactive controls\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f80bacd1271eddfac5f971e3eb8c05dd8a932f",
+            "content": "sha256:8394e14410cb6548ed1f04a8bf2e9d2236e8ac2399ef08f8589804947a9a1c41",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42f80bacd1271eddfac5f971e3eb8c05dd8a932f",
+            "content": "sha256:ed7661a5fca1f7c1b3cb389650f940e7bb4104f36d4bd67c9bffa215ad2c9db8",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Off-tab success/error settlement and no-focus Bus.\n\nAnchor: \"settles posted and error replies on their exact entries while the Bus tab is inactive\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f80bacd1271eddfac5f971e3eb8c05dd8a932f",
+            "content": "sha256:c43faf3d31eb63c4d8c0207e8dd1fd78a86667c596cc99d2d25b407eaf990c0f",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Carried L6 evidence cases.\n\nAnchor: \"names the pane archetype for controlled vs legacy raw seats (R1)\"; \"shows the verbatim pending-interaction payload (the unrepresentable fallback's target)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f80bacd1271eddfac5f971e3eb8c05dd8a932f",
+            "content": "sha256:9ebc97b1de6d33594963839c1bf0d081edd9c07a37286ce352957c3394a349ac",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42f80bacd1271eddfac5f971e3eb8c05dd8a932f",
+            "content": "sha256:174e7ba5c31a594c3cacf3846cebebb426354851b6cadad60312047ed0d13511",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Explicit mark-seen and seat-switch regressions.\n\nAnchor: \"viewing the ledger does not acknowledge; the explicit mark-seen action does (F22)\"; \"switching seats never acknowledges the newly focused seat\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f80bacd1271eddfac5f971e3eb8c05dd8a932f",
+            "content": "sha256:76c9bdb3a9c340df631b27afa0ef1685d64a2eb0f4042842f875741637abaf00",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42f80bacd1271eddfac5f971e3eb8c05dd8a932f",
+            "content": "sha256:18ed3dc8a1f7089dc0e7e1d49c0b65a2231c95e318699441c7f0256abd79a570",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Composition host under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:cf6921ed2102d45126e0de529c02858f0882a8e6f24889c24ffc1708fa7fe532",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeatInspector"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SeatInspector.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:ae987932e111c8637bd0624f3d98e0a8ce6b2c8efc89812d5edf84c9d65db128",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "dashboard/src/panels/session-cockpit/SeatInspector.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/data/taskDocuments.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper encodes `docPath`, rejects non-OK responses, and returns the decoded task node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e556f123a00e478e3cda966c38b2f5f480d44563",
+            "content": "sha256:d23293d031664a859281a7265df52025938e3fdac9a61838eb3ea0b58b43dad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchTaskDocument"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`useTaskDocumentBody` calls the adapter for the visible document and keys cached bodies by path plus revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bf51b0a984191e58aeaf7c6434f659bb37dac0a",
+            "content": "sha256:0d6ffc85f1a3edeb5da304402725eb14f95437a157cb23bc8c307b97856cf82e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTaskDocumentBody"
+            },
+            "path": "dashboard/src/data/useTaskDocumentBody.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The serving route maps projection readiness and the confined snapshot read to HTTP responses.\n\nAnchor: \"def _task_document_response(runtime: _ServingRuntime\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:d4723aa1a7b1320b1fdbfaa4c2119f52eb6d81a7d65dacd30a8f182370c443d9",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The snapshot reader resolves under `tasks`, validates the schema, and builds the full node.\n\nAnchor: \"def read_task_document_body(  # pragma: no cover\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:c8efa303d6cb9cd9949c2ddfd78a4511ef56b40341431c6ef5efbe6eb0973dbf",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:739671a860e8acf658130f7eb9c33cb6edfdc17e53f07c46beb1d1df6cc91c75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projected_document"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

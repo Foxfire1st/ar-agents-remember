@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [],
+  "exclusions": [],
+  "id": "INV-753SKJFF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: Measured by this run at 71a17079 through the shipped resolver: with no enclosure in scope the ordinary read route answers /home/firefox/projects/ar-coordination/memory-repos/ar-agents-remember/knowledge.sqlite, and resolve_context on this leaf's enclosure contract answers that leaf's memory worktree instead."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "3ac4c376-9a30-4aff-a219-9ade903d183e",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A repository's published knowledge dataset has exactly one declared location, named by the ordinary read route's own owner as the memory layer's knowledge.sqlite, and the memory layer that location belongs to is the canonical external memory root when no enclosure is in scope and that task's own memory worktree inside a leaf.",
+  "status": "proposed",
+  "supersedes": []
+}

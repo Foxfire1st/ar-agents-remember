@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/preparation/output_selection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/output_selection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Owning overview](overview.md)
@@ -36,26 +26,16 @@ The documented types and paths do not themselves establish execution, certificat
 
 No source-local TODO is asserted here.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+### Docs References
 
-## Repo-Internal References
+No configured domain documentation applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `retain_prepared_output` owns the corresponding behavior described above. | `retain_prepared_output` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/output_selection.py:23-57` |
+### Repo-Internal References
 
-## Cross-Repo References
+- `retain_prepared_output` owns the corresponding behavior described above. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+### Cross-Repo References
 
-## Update History
-
-### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
-
-Created from the current source. Verification metadata is intentionally unset until a genuine commit-based verification occurs; no test or acceptance result is asserted.
+No cross-repository source is needed for this card.

@@ -1,15 +1,5 @@
 # skills/l-01-agent-lifecycles/roles/system-specialist.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | skills/l-01-agent-lifecycles/roles/system-specialist.md |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -40,27 +30,17 @@ settings keys.
 - Completion is the report/fix artifact plus terminal/finalizer truth, not a parallel row.
 - Canonical lifecycle doctrine owns this source; generated copies are synchronization outputs.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 `skills/l-01-agent-lifecycles/roles/system-specialist.md` is the canonical role contract; provider
 degradation state and the orchestrator brief supply the concrete event evidence.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
-
-## Update History
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified system-specialist as target-only plus
-  explicit ambient-takeover target, retained orchestrator-owned plane creation, and kept structural
-  authority outside settings. Verification remains closeout-owned.
-
-- 2026-08-28T14:15+02:00 — Replaced the generic dispatch placeholder with the current sprint-bound
-  provider-degradation role, report-before-fix rule, structural parent messaging, explicit fix
-  authority, and provider-only mutation boundary; stamped the landed candidate.
-
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

@@ -1,0 +1,337 @@
+{
+  "path": "dashboard/src/panels/session-cockpit",
+  "references": {
+    "1": {
+      "note": "The reviewer's group on the keys page.\n\nAnchor: \"Intent reviewer — while focus is inside it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f6d5f63b7058e0e74ede68e30f8233e29c5c3e9",
+            "content": "sha256:82f8afa0d1a8b0fabac16d2385f3d1ba7e9e4edb3b6ddf5ee009804da2db45af",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 301
+            },
+            "path": "dashboard/src/panels/session-cockpit/CommandPalette.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The cast guard, its first-line mirror-marker discovery rule, and its own list of unmarked blind-spot modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:18bc516d082e4191214ef67a5850700280733efa468b9781879757ed5dfe0270",
+            "locator": {
+              "kind": "symbol",
+              "name": "collectWireFixtureFindings"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The launch chooser's catalog types and the server model they mirror (`HarnessInfo` ↔ `DetectedHarness`).\n\nAnchor: `HarnessInfo`, `DetectedHarness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c87a333fcbc7605dad19267d7e48d7a354c2ee22",
+            "content": "sha256:382700cf19eb12ff3bc2d9c824123434a38f606118f4c2991885d37aa479e85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessInfo"
+            },
+            "path": "dashboard/src/data/harnessCatalog.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:29d177b2e2a02eb40a25bc6bcac134c02f344bbadd628a5a6bc430e4260b5124",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectedHarness"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Full-route composition and shell ownership.\n\nAnchor: \"import { SessionsView } from \\\"../panels/session-cockpit/sessions-view/SessionsView\\\";\"; \"data-testid=\\\"sessions-stage\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:f7d9bb3a6f01b172decbe6e85a9e9c53cc120bf95cd236f2208f597c41f16af4",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:d46b9042f2ddd082323ff73e99ec65e52c007b7ad8655c2b5c6b4c0689712cab",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Legacy duty bar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "707beb3f24632d9964c70ac53fc0a6a88d9dd9eb",
+            "content": "sha256:3ae78784af2d0a68f1476ce4292a37ba5db0cec81212ecdcccf1f7f0cf18d201",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChatContextBar"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatContextBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "707beb3f24632d9964c70ac53fc0a6a88d9dd9eb",
+            "content": "sha256:2fa54e04a787e1ef32d0be2ca7ae00ce5563d6566dcbe088c71cff0bfbd00c99",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatContextBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Structural role rail and data derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:cd97a64dc1b9b7ee7a84b776bd75c657e02a4f1b896d9745402a21d609738b03",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionRail"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:cb246c84cd67b13d018a14318050aeaaf2b7dbbb23881b5879637d68135b833f",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildRailModel"
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:55451313e11eb1dd74fe9976b4869b5f3ff372991ad9f312ab8191ed6e58edbc",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 397
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "PTY/ended continuity.\n\nAnchor: \"import { lazy, Suspense, useEffect, useMemo, useRef, useState } from \\\"react\\\";\"; \"import { EndedSessionState } from \\\"./EndedSessionState\\\";\"; \"The PtySurface: the session stage's terminal half. Wraps the\"; \"export function EndedSessionState({ session }: { session: OpenSession }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:4899d6826b0082d615316e5ac46e1e542544e5d8d5184808d4597d3a7e46ef90",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:1affa46384fb8b8fad4ee9847620b6691330606d4854e26c739c50f7dfcfd572",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:6a511fac242bc5813e76cfc68e37934ad6c8196bbf020b455e030f360795a03b",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20cac54253518fd1abf899cb94a971981a456892",
+            "content": "sha256:bfc6d679f10ae50ff3641244d0a05396ba8195d53afaa1edc7e3f179d01a4d30",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/session-cockpit/EndedSessionState.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cleanup authority notice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2862c7253fabd8b4da6633a17aee9135985e4149",
+            "content": "sha256:f11906f047c6f97125dcedb634c7ca7685976a2461e16df10f2e8aeff9c9397a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandedCleanupNotice"
+            },
+            "path": "dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Effective keyboard contract.\n\nAnchor: \"export function useEffectiveKeymap(): EffectiveKeymap {\"; \"export function useKeyboardZones({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8358886e1f6bdefb7a98b6697db164a2a4a504d",
+            "content": "sha256:98c6b77ef22573b2aa8574c36856e7aa936b1c3e244fba9c8618d294b2a3d857",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 329
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9428f12da2796a8267085f196e583f7874ba2f16",
+            "content": "sha256:9a4db9ecfacefdcd42aabbc588f910e037d4bafca4316af9cd1b856c49b54dcd",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8358886e1f6bdefb7a98b6697db164a2a4a504d",
+            "content": "sha256:68d6f721d13968c8300b36f414355f8c30dd99036b093dd4476dd5303190e38f",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 369
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Dev end-to-end scenario authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
+            "content": "sha256:9fa9dab47e2b4b97ef674118086ff75977d0e1e40eed4bb5ea3f8e7469675260",
+            "locator": {
+              "kind": "symbol",
+              "name": "COCKPIT_SCENARIOS"
+            },
+            "path": "dashboard/src/dev/cockpitScenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared builders every cockpit suite seeds wire nodes from (projection side and conversation side).\n\nAnchor: `SERVED`, `conversationPage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:c485c290c1ae15965367b24a7fd5261585725a9788c022a191071e493835d16d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:72a2fb4edf364b89bf2d29ee74bc7663acf79aed8aea14330232e6846698eb05",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationPage"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

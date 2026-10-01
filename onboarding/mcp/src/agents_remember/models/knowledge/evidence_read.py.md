@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/evidence_read.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/evidence_read.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -64,37 +54,29 @@ stated. Every retained revision is served as its own item.
 - **This selection is disjoint from the two shipped selections.** It declares its own policy version and
   appears in neither of their responses, which is what keeps their serialized pages unchanged.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The projection's own declared policy name and the bound that makes a selection complete or refused. | `EVIDENCE_SELECTION_POLICY_VERSION`; `EVIDENCE_SELECTION_ITEM_LIMIT`; `EVIDENCE_ITEM_LIMIT_REASON` | mcp/src/agents_remember/models/knowledge/evidence_read.py:55-55; mcp/src/agents_remember/models/knowledge/evidence_read.py:60-60; mcp/src/agents_remember/models/knowledge/evidence_read.py:62-64 |
-| The claim record and revision items, and the subject and coverage items that carry what the claim asserts. | `EvidenceClaimRecord`; `EvidenceClaimRevision`; `ClaimSubject`; `ClaimCoverage` | mcp/src/agents_remember/models/knowledge/evidence_read.py:73-90; mcp/src/agents_remember/models/knowledge/evidence_read.py:93-103; mcp/src/agents_remember/models/knowledge/evidence_read.py:106-116; mcp/src/agents_remember/models/knowledge/evidence_read.py:119-130 |
-| The observation record and revision items. | `VerificationObservationRecord`; `VerificationObservationRevision` | mcp/src/agents_remember/models/knowledge/evidence_read.py:133-139; mcp/src/agents_remember/models/knowledge/evidence_read.py:142-152 |
-| The four distinguishable artifact-resolution states, whose own validator refuses a state that claims bytes it did not read. | `ArtifactResolution` | mcp/src/agents_remember/models/knowledge/evidence_read.py:166-198 |
-| The unassessed state a claim with no assessment reference is served with. | `AssessmentReferenceState` | mcp/src/agents_remember/models/knowledge/evidence_read.py:207-230 |
-| The two seed kinds and the seed's own identity. | `EvidenceClaimSeed`; `ObservationCandidateSeed`; `evidence_seed_digest` | mcp/src/agents_remember/models/knowledge/evidence_read.py:241-245; mcp/src/agents_remember/models/knowledge/evidence_read.py:248-272; mcp/src/agents_remember/models/knowledge/evidence_read.py:281-284 |
-| The item union and its fixed kind order. | `EvidenceReadItem`; `evidence_item_sort_key` | mcp/src/agents_remember/models/knowledge/evidence_read.py:333-338; mcp/src/agents_remember/models/knowledge/evidence_read.py:359-362 |
-| The counts, the page and the result a caller carries away. | `EvidenceReadCounts`; `EvidenceReadPage`; `EvidenceReadResult` | mcp/src/agents_remember/models/knowledge/evidence_read.py:384-405; mcp/src/agents_remember/models/knowledge/evidence_read.py:409-431; mcp/src/agents_remember/models/knowledge/evidence_read.py:447-478 |
-| The case that asserts the four states are distinguishable and that a stored reference survives a mismatch unchanged. | "def test_the_four_artifact_resolution_states_are_distinguishable(" | mcp/tests/test_knowledge_evidence_observations.py:461-623 |
+- The projection's own declared policy name and the bound that makes a selection complete or refused. [1]
+- The claim record and revision items, and the subject and coverage items that carry what the claim asserts. [2]
+- The observation record and revision items. [3]
+- The four distinguishable artifact-resolution states, whose own validator refuses a state that claims bytes it did not read. [4]
+- The unassessed state a claim with no assessment reference is served with. [5]
+- The two seed kinds and the seed's own identity. [6]
+- The item union and its fixed kind order. [7]
+- The counts, the page and the result a caller carries away. [8]
+- The case that asserts the four states are distinguishable and that a stored reference survives a mismatch unchanged. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T06:20+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): created this one-to-one card for the evidence read projection's declared contract. It records the third selection's disjointness from the two shipped selections, the four artifact-resolution states, the unassessed state, and the rule that limitations are served visibly with an empty value reported as a fact. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

@@ -1,0 +1,104 @@
+{
+  "path": "mcp/tests/_agent_wire_fixtures.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The local builder inventory, including the `CollabAgents` parameter object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26536d9d70ff0a4d40f99748e28cbe1a02e6999",
+            "content": "sha256:ff07befd98458f33f3d71607ba2f8ef21019843091cd225c5d074fbfa3b95bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CollabAgents"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module docstring records external provenance labels for the fixture shapes; those labels are not protocol proof under this frozen source authority.\n\nAnchor: `protocol`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26536d9d70ff0a4d40f99748e28cbe1a02e6999",
+            "content": "sha256:f970865fbf52983ef90f3b4abff3fed90e80b61e0863108fbf80894b3b6901f8",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The notification builder retains the caller-supplied method and params.\n\nAnchor: \"def notification(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26536d9d70ff0a4d40f99748e28cbe1a02e6999",
+            "content": "sha256:e25d5093a3e22c19430ff08fa80dbad7d6c25f8b5101f7d35d25c31d76af0ae2",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The collab event builder constructs per-agent status, optional model/effort and tool-call identity.\n\nAnchor: \"def collab_agent_tool_call_item(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26536d9d70ff0a4d40f99748e28cbe1a02e6999",
+            "content": "sha256:b234173fe3912ea5e7ac53033eb719ff9d4f6c8df39b08a2aa44ad26be812db9",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The demuxed adapter under test owns the thread registry, per-thread state, and multiplexed pendings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d216a0a0509cf778181e714c81ae340a7a83307",
+            "content": "sha256:372bd40cceebbdf0a8480134b09af60eadfc0e624ebacaf6588f75888074b768",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexAppServerAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d216a0a0509cf778181e714c81ae340a7a83307",
+            "content": "sha256:a17a885fd0febb1ce070a985d7389c696d399add1b7bfeb98ae3fc6be2a135f1",
+            "locator": {
+              "end": 1115,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

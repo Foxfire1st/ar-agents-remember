@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/public_surface.py
 
-| Field                  | Value                                                   |
-| ---------------------- | ------------------------------------------------------- |
-| repository             | agents-remember                                         |
-| path                   | `mcp/src/agents_remember/mcp/public_surface.py`         |
-| doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-30T21:49:22+02:00                               |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`              |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `../../../overview.md`                                  |
-
 ## Governing Overview
 
 [MCP package overview](../../../overview.md)
@@ -52,23 +42,9 @@ other spend controls cannot be silently ignored or routed around the settings-ow
 - Full public-surface validation and one-tool consumer acceptance share the same dispatch contract;
   neither route owns a second schema interpretation.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The validator reconciles every public authority and returns content-addressed evidence. | `validate_public_surface`; `validate_dispatch_advertisement`; `PublicSurfaceEvidence` | mcp/src/agents_remember/mcp/public_surface.py:54-60; mcp/src/agents_remember/mcp/public_surface.py:198-240 |
-| Dispatch input ownership is one closed four-field vocabulary. | `DISPATCH_AGENT_INPUT_FIELDS`; `_validate_dispatch_schema` | mcp/src/agents_remember/mcp/public_surface.py:25-25; mcp/src/agents_remember/mcp/public_surface.py:146-149 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-30T21:49:22+02:00 — 260821-ARSPAWN-L5: exposed the canonical single-dispatch
-  advertisement validator so the real Codex acceptance records the same exact schema digest as the
-  full MCP surface instead of reimplementing a weaker top-level check. Verification remains
-  closeout-owned.
-
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: simplified inventory assertions through
-  one fail-closed requirement helper and removed redundant duplicate checks already implied by the
-  unique canonical inventory plus exact live order. Verification remains closeout-owned.
-
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: created for the permanent public-surface
-  validator. Final verification provenance remains closeout-owned.
+- The validator reconciles every public authority and returns content-addressed evidence. [1]
+- Dispatch input ownership is one closed four-field vocabulary. [2]

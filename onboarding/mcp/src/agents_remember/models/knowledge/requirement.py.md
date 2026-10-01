@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/requirement.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/requirement.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -120,55 +110,44 @@ explanation is attributed, self-contained, and never the text another system imp
 None recorded. `EvidenceClaim` remains the concrete non-facet category still outstanding in the
 envelope registry; this module registered the fourth family and did not close that gap.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The recorded quotation-degree ruling, reproduced verbatim beside the frozen shape it governs.** | `RequirementRevisionPayload` | mcp/src/agents_remember/models/knowledge/requirement.py:172-213 |
-| The one kind and the one frozen shape the record group declares in the envelope's typed vocabulary. | `REQUIREMENT_REVISION_KIND`; `REQUIREMENT_REVISION_SCHEMA` | mcp/src/agents_remember/models/knowledge/requirement.py:80-84 |
-| The version spelling taken from the task plane's own pattern rather than widened into a second admitted form. | `REQUIREMENT_PACKET_VERSION_PATTERN` | mcp/src/agents_remember/models/knowledge/requirement.py:86-90 |
-| The proposed lifecycle every requirement revision is written under, and why the payload's own state travels beside it. | `REQUIREMENT_RECORD_LIFECYCLE` | mcp/src/agents_remember/models/knowledge/requirement.py:92-96 |
-|**The owner reference in the task plane's own three components, with `extra="forbid"` as the fourth-addressing-scheme refusal.**|`RequirementOwnerRef`| mcp/src/agents_remember/models/knowledge/requirement.py:116-139 |
-|The resolution consumed rather than re-derived: one outcome, and the owner's own refusal fields verbatim.|`RequirementOwnerResolution`| mcp/src/agents_remember/models/knowledge/requirement.py:140-171 |
-|**The payload's whole field set — and the absence of any operative-obligation field.**|`RequirementRevisionPayload`| mcp/src/agents_remember/models/knowledge/requirement.py:172-213 |
-| The explanation refused by value, so a whitespace-only body is refused rather than admitted by `min_length=1`. | `_require_an_explanation_that_says_something` | mcp/src/agents_remember/models/knowledge/requirement.py:198-211 |
-|The currentness value whose `state` must equal the value derived from the two recorded pairs.|`RequirementCurrentness`| mcp/src/agents_remember/models/knowledge/requirement.py:232-270 |
-|The ungoverned route as an explicit state rather than a default.|`RequirementGoverningRouteView`| mcp/src/agents_remember/models/knowledge/requirement.py:300-322 |
-| The one projection value the read half returns. | `RequirementRevisionScope` | mcp/src/agents_remember/models/knowledge/requirement.py:340-360 |
-| The two-operation local literal, asserted to be a subset of the shipped vocabulary rather than a second one. | `RequirementRevisionOperation` | mcp/src/agents_remember/models/knowledge/requirement.py:383-386 |
-| The receipt's one-outcome rule, and the reference resolution's 1 / 0 / at-least-2 rule. | `RequirementRevisionResult`; `RequirementReferenceResolution` | mcp/src/agents_remember/models/knowledge/requirement.py:389-408; mcp/src/agents_remember/models/knowledge/requirement.py:409-433 |
-| The payload shapes declared beside the models, so the envelope registry and this vocabulary cannot drift. | `REQUIREMENT_PAYLOAD_MODELS` | mcp/src/agents_remember/models/knowledge/requirement.py:457-459; mcp/src/agents_remember/memory/knowledge/record_envelope.py:151-151 |
-|The shared state/acceptance consistency rule this payload delegates to rather than restating.|`require_consistent_acceptance`| mcp/src/agents_remember/models/knowledge/base.py:40-58 |
-|The strict, extra-forbidding, frozen base that makes an undeclared field a refusal by construction — the reason the absence claims need no denylist.|`KnowledgeModel`| mcp/src/agents_remember/models/knowledge/base.py:34-39 |
-|The owner's own reference shape, which this module deliberately re-spells rather than translates.|`ApprovedRequirementPacketRef`| mcp/src/agents_remember/models/task_intent/__init__.py:22-38 |
-| The registry this payload shape is admitted through, and the derived kind set that names its group. | `PAYLOAD_MODELS`; `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:148-148; mcp/src/agents_remember/memory/knowledge/record_envelope.py:150-174; mcp/src/agents_remember/memory/knowledge/record_envelope.py:149-149; mcp/src/agents_remember/memory/knowledge/record_envelope.py:103-118; mcp/src/agents_remember/memory/knowledge/record_envelope.py:85-85; mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-132; mcp/src/agents_remember/memory/knowledge/record_envelope.py:195-195; mcp/src/agents_remember/memory/knowledge/record_envelope.py:204-213; mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187 |
-| **The falsifiable absence at the payload plane: four forbidden operative-obligation names, each refused with the name in the detail.** | "test_a_payload_carrying_an_operative_obligation_field_is_refused" | mcp/tests/test_knowledge_requirement_reference_contract.py:294-310 |
-| The falsifiable absence at the schema plane: the re-derived column census over every registered generation, and the fact that the kind is not a table. | "test_no_registered_generation_declares_a_column_for_the_forbidden_set" | mcp/tests/test_knowledge_requirement_reference_contract.py:311-333 |
-| The task-authority absence, and the hand-sealed forbidden row that cannot be decoded. | "test_a_payload_carrying_a_forbidden_task_authority_field_is_refused"; "test_a_stored_payload_carrying_a_forbidden_field_could_not_be_decoded" | mcp/tests/test_knowledge_requirement_reference_contract.py:277-293; mcp/tests/test_knowledge_requirement_reference_contract.py:334-365 |
-| The three-component shape, the admitted version spelling, and the reference the payload deliberately does not police. | "test_the_owner_reference_carries_exactly_the_task_planes_three_components"; "test_a_version_outside_the_admitted_spelling_is_refused"; "test_the_payload_does_not_police_the_reference_the_owner_owns" | mcp/tests/test_knowledge_requirement_reference_contract.py:222-248; mcp/tests/test_knowledge_requirement_reference_contract.py:249-258; mcp/tests/test_knowledge_requirement_reference_contract.py:259-276 |
-| The state/consistency and explanation cases, including the authorship-substitution refusals. | "test_an_accepted_origin_state_without_an_acceptance_reference_is_refused"; "test_a_proposed_origin_state_carrying_an_acceptance_reference_is_refused"; "test_an_empty_or_absent_explanation_is_refused"; "test_no_payload_field_can_substitute_for_the_revisions_authorship" | mcp/tests/test_knowledge_requirement_revisions.py:225-234; mcp/tests/test_knowledge_requirement_revisions.py:235-246; mcp/tests/test_knowledge_requirement_revisions.py:315-325; mcp/tests/test_knowledge_requirement_revisions.py:326-341 |
-| The membership case that keeps the local operation literal a subset rather than a second vocabulary. | "test_the_record_group_declares_two_operations_beside_the_shipped_vocabulary" | mcp/tests/test_knowledge_requirement_revisions.py:213-224 |
+- **The recorded quotation-degree ruling, reproduced verbatim beside the frozen shape it governs.** [1]
+- The one kind and the one frozen shape the record group declares in the envelope's typed vocabulary. [2]
+- The version spelling taken from the task plane's own pattern rather than widened into a second admitted form. [3]
+- The proposed lifecycle every requirement revision is written under, and why the payload's own state travels beside it. [4]
+- **The owner reference in the task plane's own three components, with `extra="forbid"` as the fourth-addressing-scheme refusal.** [5]
+- The resolution consumed rather than re-derived: one outcome, and the owner's own refusal fields verbatim. [6]
+- **The payload's whole field set — and the absence of any operative-obligation field.** [7]
+- The explanation refused by value, so a whitespace-only body is refused rather than admitted by `min_length=1`. [8]
+- The currentness value whose `state` must equal the value derived from the two recorded pairs. [9]
+- The ungoverned route as an explicit state rather than a default. [10]
+- The one projection value the read half returns. [11]
+- The two-operation local literal, asserted to be a subset of the shipped vocabulary rather than a second one. [12]
+- The receipt's one-outcome rule, and the reference resolution's 1 / 0 / at-least-2 rule. [13]
+- The payload shapes declared beside the models, so the envelope registry and this vocabulary cannot drift. [14]
+- The shared state/acceptance consistency rule this payload delegates to rather than restating. [15]
+- The strict, extra-forbidding, frozen base that makes an undeclared field a refusal by construction — the reason the absence claims need no denylist. [16]
+- The owner's own reference shape, which this module deliberately re-spells rather than translates. [17]
+- The registry this payload shape is admitted through, and the derived kind set that names its group. [18]
+- **The falsifiable absence at the payload plane: four forbidden operative-obligation names, each refused with the name in the detail.** [19]
+- The falsifiable absence at the schema plane: the re-derived column census over every registered generation, and the fact that the kind is not a table. [20]
+- The task-authority absence, and the hand-sealed forbidden row that cannot be decoded. [21]
+- The three-component shape, the admitted version spelling, and the reference the payload deliberately does not police. [22]
+- The state/consistency and explanation cases, including the authorship-substitution refusals. [23]
+- The membership case that keeps the local operation literal a subset rather than a second vocabulary. [24]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T19:56:02+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The derived-group row cited `record_envelope.py:204-204` (`DETECTION_RECORD_KINDS`) for `REQUIREMENT_RECORD_KINDS`, which is declared at `211-213`; the range was widened to `204-213` so it reaches that declaration while keeping the registry rows it already cited. The claim, both anchors and the other eight ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 1 claim(s) here (1 x citation_claim_reopened). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
-
-- 2026-09-18T04:15:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): created this one-to-one card for the requirement record group's payload vocabulary. It records the **recorded `CR19-5` quotation-degree ruling** where the finding asked for it — beside the frozen shape it governs — and states its substance rather than just its existence: no quotation-degree policy is in the schema, the degree is an authoring discipline carried by attribution plus the absence of any operative-obligation field, and the reason is that policing the degree would require comparing the field against the owner's packet bytes, the operand requirement 2.3 forbids the substrate to treat as one. It states that the payload's **whole field set is `requirement_kind`, `owner`, `owner_resolution`, `explanation`, `state_at_origin` and `acceptance_ref`** — there is no stored `obligation_text` or `requirement_text`, and the absence is falsifiable at both planes rather than merely true. It also records three boundaries a reader is likely to misread: the payload **does not police the reference** the owner owns (a path the owner would refuse is still representable, so the refusal can only come from the owner); the version spelling is the task plane's own pattern rather than a second admitted form; and `state_at_origin` / `acceptance_ref` are the **shipped** pair validated by the shared `require_consistent_acceptance`, not a new state mechanism. Verification metadata advances to the leaf's base commit `e963a01c` because the body was read against the current source; the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

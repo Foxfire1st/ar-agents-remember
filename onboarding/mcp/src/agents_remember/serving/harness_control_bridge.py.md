@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/harness_control_bridge.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/harness_control_bridge.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-02T01:42+02:00|
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -124,43 +114,39 @@ operation rows plus provenance/timeline reads belong to its `SubmissionLedger`.
 
 None known for the bridge seam.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live
 domain-documentation pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The adapter protocol owns vendor-specific setter execution; `HarnessSubmissionAuthority` owns
 ordinary-operation order and result validation, while `SubmissionLedger` owns retained rows and
 timeline/provenance reads.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. | `HarnessProtocolAdapter`; `UnsupportedHarnessProtocolAdapter` | mcp/src/agents_remember/serving/harness_control_adapter.py:32-59; mcp/src/agents_remember/serving/harness_control_adapter.py:151-235 |
-| The bridge exposes its running, epoch-bound "def submissions(self) -> HarnessSubmissionAuthority:" through `submissions()`. The authority owns ordinary-operation dispatch order and result validation, including "async def set_model(self" and "async def set_effort(self"; the bridge applies the running-state guard before each caller takes the authority. | "def submissions(self) -> HarnessSubmissionAuthority:"; "def submissions(self) -> HarnessSubmissionAuthority:"; "async def set_model(self"; "async def set_effort(self" | mcp/src/agents_remember/serving/harness_control_bridge.py:323-332; mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023; mcp/src/agents_remember/serving/harness_submission_authority.py:294-295; mcp/src/agents_remember/serving/harness_submission_authority.py:297-298 |
-| The retained `SubmissionLedger` owns provenance and paged operation-timeline reads; private IPC reaches the timeline as `bridge.submissions().ledger.operation_timeline`. | "async def _submission_provenance("; "async def _operation_timeline("; "class SubmissionLedger:" | mcp/src/agents_remember/serving/harness_control_ipc.py:315-326; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405; mcp/src/agents_remember/serving/harness_submission_ledger.py:228-238; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
-| Private IPC exposes bridge advertise/set actions under the same exact identity. | `HarnessControlServer`; `_advertise`; `_set_model`; `_set_effort` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
-| The evidence DTOs, reserved keys, clip/window helpers, and structural native-page protocol live in the models module; `AR_EVIDENCE_METHOD_KEY` + `EvidenceFrame.native_method` are the method-carry pair this divert preserves, alongside `EvidenceFrame.thread_id` (the demux key this bridge stamps) plus `AdapterSnapshot.pending_interactions` (the plural multiplexed set). | `AR_EVIDENCE_KEY`; `AR_EVIDENCE_METHOD_KEY`; "class AdapterSnapshot"; "class EvidenceFrame"; "class EvidencePage"; "class NativeEvidencePage"; "class NativePageReader" | mcp/src/agents_remember/models/conversations/evidence.py:17-17; mcp/src/agents_remember/models/conversations/evidence.py:26-26; mcp/src/agents_remember/models/conversations/control_wire.py:127-127; mcp/src/agents_remember/models/conversations/evidence.py:80-80; mcp/src/agents_remember/models/conversations/evidence.py:106-106; mcp/src/agents_remember/models/conversations/evidence.py:128-128; mcp/src/agents_remember/models/conversations/evidence.py:138-138 |
+- The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists. [1]
+- The bridge exposes its running, epoch-bound "def submissions(self) -> HarnessSubmissionAuthority:" through `submissions()`. The authority owns ordinary-operation dispatch order and result validation, including "async def set_model(self" and "async def set_effort(self"; the bridge applies the running-state guard before each caller takes the authority. [2]
+- The retained `SubmissionLedger` owns provenance and paged operation-timeline reads; private IPC reaches the timeline as `bridge.submissions().ledger.operation_timeline`. [3]
+- Private IPC exposes bridge advertise/set actions under the same exact identity. [4]
+- The evidence DTOs, reserved keys, clip/window helpers, and structural native-page protocol live in the models module; `AR_EVIDENCE_METHOD_KEY` + `EvidenceFrame.native_method` are the method-carry pair this divert preserves, alongside `EvidenceFrame.thread_id` (the demux key this bridge stamps) plus `AdapterSnapshot.pending_interactions` (the plural multiplexed set). [5]
 
 | The structural interrupt sub-protocol this bridge dispatches against, with identity guards riding the write. | "class InterruptCapableAdapter(Protocol):"; """"Structural native interrupt write; adapters opt in without a base-contract member." | mcp/src/agents_remember/serving/harness_control_adapter.py:91-106; mcp/src/agents_remember/serving/harness_control_bridge.py:273-300 |
 | The IPC server dispatches the interrupt and operation-timeline actions to this bridge over the private socket. | `HarnessControlServer`; `_interrupt`; `_operation_timeline` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
 | The validated client drives `interrupt_control`/`read_operation_timeline` with strict response validation against this bridge's stamps. | "def interrupt_control("; "opaque cursor coordinates are invalid in the operation timeline domain"; "def _interrupt_result("; "def _operation_timeline(" | mcp/src/agents_remember/serving/_harness_control_parsing.py:252-252; mcp/src/agents_remember/serving/harness_control_client.py:431-451; mcp/src/agents_remember/serving/harness_control_client.py:454-478; mcp/src/agents_remember/serving/_harness_control_parsing.py:277-277 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by the bridge.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
-### Shared Protocol Bridge
+#### Shared Protocol Bridge
 
 The bridge owns adapter lifecycle, exact identity, readiness, correlated immediate/queued/rejected/
 unknown receipts, pending interactions, transcript completion, and graceful recovery. It retains
@@ -184,60 +170,3 @@ they are one decision, how much a single live session may hold, and raising any 
 moves the process's real ceiling somewhere else. The default values are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `:1-1` fixer-input
-  ranges with exact source-backed occurrences (bridge `submissions`, authority setters,
-  ledger/ipc provenance and timeline); exact non-fixing check returns zero findings.
-
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected setter and operation-timeline
-  ownership. The bridge supplies a running-checked path to its authority; the authority owns setter
-  order/result validation, while its ledger owns retained rows and timeline/provenance reads. New
-  ranges are left as explicit `:1-1` curator input.
-
-- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 18 mechanical citation findings across the evidence/interrupt prose and seven reference rows. Preserved one Tier-3 row: the claim assigns `operation_timeline` ownership to the bridge, but frozen code routes the read through IPC to the submission ledger; no misleading bridge citation was fabricated.
-
-- 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `BridgeLimits` / `DEFAULT_BRIDGE_LIMITS` as the single per-session memory budget (default values unchanged).
-- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the multiplex demux key — `_evidence_thread_id`
-  extracts `threadId` verbatim (missing/malformed degrades to `None` = parent, never guessed) and
-  `_append_evidence` stamps it as `EvidenceFrame.thread_id` — and the additive per-thread
-  `native_page(thread_id=…)` forwarding (present-only forwarding, `TypeError` refused typed naming
-  the adapter, bridge-stamped epoch unchanged). Refreshed the `_divert_evidence` line ranges
-  (L521-L544, validation L532-L536) and the models citation ranges for the L7-shifted source.
-  Verification metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented `_divert_evidence`'s
-  native-method thread: the diverted event's `AR_EVIDENCE_METHOD_KEY` is validated non-empty text,
-  preserved onto the frame as typed `native_method`, and its reserved key stripped alongside
-  `AR_EVIDENCE_KEY` so the redacted snapshot stays byte-identical; refreshed the divert line ranges
-  and the models citation. Verification metadata stays pinned until closeout stamps the candidate
-  commit.
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the epoch-guarded native
-  `interrupt` dispatch (`_require_epoch` mismatch typed, structural `InterruptCapableAdapter`
-  refusal naming the adapter, adapter-mint-epoch refusal, bridge-stamped epoch, settlement
-  untouched on the landed completion path) and the `operation_timeline` read delegation; refreshed
-  the adapter/queue/models/IPC citation ranges for the shifted sources (the queue row's pre-facade
-  ranges were legacy-stale and now cite the current facade). Verification metadata stays pinned
-  until closeout stamps the candidate commit.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the bounded per-session evidence
-  deque with reserved-key diversion at `_run_events` (redacted event to every existing consumer),
-  the deque-domain `evidence()` page with eviction-floor honesty, the structural `native_page()`
-  dispatch with bridge-stamped epoch, and the `submission_provenance()` delegation. Verification
-  metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented the sole authority facade, exact operation routing,
-  event-before-publish completion, and lifecycle cleanup.
-
-- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented exact-running-adapter advertise
-  beside the already ordered set, submit, and reconcile operations while keeping pre-session cache
-  ownership separate.
-- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented bridge-level model/effort methods,
-  their shared command ordering with prompts and interactions, and the adapter/queue ownership split.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented cross-adapter bridge lifecycle and receipt semantics.
-
-- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator pass: created onboarding for the one-adapter
-  bridge, handshake gate, ordered inputs, ambiguous-send recovery, and bounded lifecycle behavior.

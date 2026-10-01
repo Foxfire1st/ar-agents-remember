@@ -1,0 +1,242 @@
+{
+  "path": "dashboard/src/panels/changeset/DiffPane.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilePane"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The focused card that passes `firstLine` and `fit`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:bcfcd413d2155f23a718cd535411c888e89f3efe5399a0c04b6fb8421a82be23",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangedExcerpt"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The column wrapper that mounts it and supplies `mode`/`collapse`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
+            "content": "sha256:e5714cd8acc86de919bd14fa0b6a98406e1bfe7bb28c3c1925a88e7897ea6ab4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetPane"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The `FileDiff` (before/after content) the caller passes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:e2bd5054ddc3d96a280a97eb71993abb8ce521baaa0fc07d3a3c1ed7e2a6d8d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileDiff"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared CodeMirror theme (chrome + syntax `HighlightStyle`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
+            "content": "sha256:41490c7641b928a6a14d94412fce86bf797a1d18cc9a6f53a0d560d1f049f1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "codeTheme"
+            },
+            "path": "dashboard/src/panels/file-viewer/codemirrorTheme.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The lazy language-by-extension map it awaits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1478b3eb824544d49fc8276496f61aaf257f0641",
+            "content": "sha256:cec276075ea12bb587409a65c951298b3de8202f320a9312327f38bd58008711",
+            "locator": {
+              "kind": "symbol",
+              "name": "langExtension"
+            },
+            "path": "dashboard/src/panels/file-viewer/langByExtension.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false); each side numbered from its own first line when an excerpt is shown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffPane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:e7cec30cbd96c803a638f2abb67208cddabb5fbbd936951407407511d7ce016b",
+            "locator": {
+              "kind": "symbol",
+              "name": "splitView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:031af190906ad6ef40e704e316cf9ba5776dcd6232a59f546f4dbe5a11291fc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "inlineView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "What both builders share, including the marked pane's gutter and `drawn` hooks (MIK-L34).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:2e140469085b64bca69a16e98ba3eb780a2f97abf09fd8bccf83739da71c83a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffBuild"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The optional `marks` prop, the marked pane, and the teardown that tells it the editors are gone.\n\nAnchor: \"marks?: PaneMarks;\"; \"const { portals, placement, gutterFor, drawn } = useMarkedPane(marks);\"; \"drawn(null);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:963636f838a021db3e4d2aef8df3e8216a722f3f5a51d8ddd7f705c06c7d03b8",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:9c7428217d70869daec7a6dc1317aa3ab302c088ee304cfca396bb51e5408ebd",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The marks gutter, its portals and the reveal this pane hosts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:05f0296b0096a62c5af8ff3e1496d6b28788a40a01ae4f4b422a83ae22b58d9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMarkedPane"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The content-sized host an expression card uses (MIK-L31).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:6f1675bccb6158f8bc5b35b471847f9ae0477a2731275a8d91bb06999abf54e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "fitHost"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The gutter that keeps a file's own numbering for an excerpt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b961de3b6888c054c469b9d0c25747c41a0b8cc4",
+            "content": "sha256:0b4f1e982725f2acda23ff71ef826be806b6751c2f48b3f384ae29907a989a2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "numberedFrom"
+            },
+            "path": "dashboard/src/panels/file-viewer/lineNumbering.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

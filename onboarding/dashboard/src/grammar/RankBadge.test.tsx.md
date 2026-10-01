@@ -1,15 +1,5 @@
 # dashboard/src/grammar/RankBadge.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/grammar/RankBadge.test.tsx`       |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T23:56:06+02:00                           |
-| lastVerifiedCommitHash | `e358c4ac520d94ae2e597ae3cbe186e07a4d1063`       |
-| lastVerifiedCommitDate | 2026-07-07T05:26:14+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -38,15 +28,8 @@ Pure render tests — no store, no backend. The pip assertion reads the inline `
 fill is the mechanism that outranks the cva's `& path { fill:none }`), so a refactor that drops it
 to a class would fail here and must prove the pip still fills.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The orchestration-tier test renders the command pip and three chevrons, then asserts the filled pip and stroked chevrons. | "renders the orchestration tier as a command pip over three chevrons" | dashboard/src/grammar/RankBadge.test.tsx:12-23 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: narrowed or split the flagged claim to source-clear evidence under the adversarial verdict, then the exact scoped fixer/check passed.
-
-- 2026-07-06T23:56:06+02:00 — 260703-L14 (visual hierarchy + chat grouping): created — pins the V4
-  glyph anatomy (pip + 3 chevrons vs 2 chevrons), fixed-viewBox size scaling, and gold/purple tier
-  token classes. Verification metadata pinned until closeout stamps the L14 commit.
+- The orchestration-tier test renders the command pip and three chevrons, then asserts the filled pip and stroked chevrons. [1]

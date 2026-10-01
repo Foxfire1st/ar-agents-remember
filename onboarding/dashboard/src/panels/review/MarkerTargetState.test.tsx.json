@@ -1,0 +1,81 @@
+{
+  "path": "dashboard/src/panels/review/MarkerTargetState.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real payload and target.\n\nAnchor: \"markerUnknown.memberUnknown.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d20b62ae0668822438c75d9d06f5e1eb0bccbb2",
+            "content": "sha256:2b583c94e95303b74b2ae73c7bf45facc2a3bc12e25f334910be9abbff13a038",
+            "locator": {
+              "kind": "symbol",
+              "name": "inScope"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6d20b62ae0668822438c75d9d06f5e1eb0bccbb2",
+            "content": "sha256:86e7725cda1482e81476173349fcbd5d8fefdd774cd7ebca0108da14abe37e8a",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two cases.\n\nAnchor: \"marks the member's row when the named family is in the tree, and only that row\"; \"shows the state on the invariant view when the named family is not in the review\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d20b62ae0668822438c75d9d06f5e1eb0bccbb2",
+            "content": "sha256:eb34b49e48ad1a2607a2aef02ce37868c2f3acea66398580f5adfbb8ab1af652",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The components under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:52115f4989e98d3509cf06bba43115e4d2fddb2ea8f73c42f757e06988482f4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberTargetNote"
+            },
+            "path": "dashboard/src/panels/review/MarkerTargetState.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:0910f3aeb46b49518184049b8643d518aff2751c2846a54a7bee25a97d7dbae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberFamilyLabel"
+            },
+            "path": "dashboard/src/panels/review/MarkerTargetState.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

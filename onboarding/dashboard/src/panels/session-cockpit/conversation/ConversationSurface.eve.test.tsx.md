@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -93,45 +83,28 @@ conversation being asserted and would otherwise mount a live telemetry surface.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No `Domain Documentation` category is configured for this repository, so no live domain-documentation
 pass was available for this file. It asserts the repository's own rendered surface.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source exists in `system/sources.md`; the subject is this repository's own React surface and wire body. | — | — |
+No configured `Domain Documentation` source exists in `system/sources.md`; the subject is this repository's own React surface and wire body.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shipped surface this case mounts, and the store it seeds. | `ConversationSurface`; `activeConversationStore`; `emptyProjection` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-269; dashboard/src/data/conversation/store.ts:207-207; dashboard/src/data/conversation/reducer.ts:68-68 |
-| The decoder that supplies the items and status with no cast. | `eveConversationItems`; `eveConversationStatus` | dashboard/src/test/fixtures/eveConversationCapture.ts:376-376; dashboard/src/test/fixtures/eveConversationCapture.ts:379-379 |
-| The guard the no-cast discipline satisfies. | `wireFixtureGuard` | dashboard/src/test/wireFixtureGuard.ts:1-1; dashboard/src/test/wireFixtureGuard.test.ts:1-1 |
-| The Python cases that pin the same capture against the live projector and assert the states it must show. | `test_the_projection_matches_the_capture_the_mounted_ui_renders`; `test_the_capture_shows_the_states_the_packet_names`; `test_live_frames_and_replayed_frames_project_identically`; `test_a_reconnect_replays_evidence_without_duplicating_items` | mcp/tests/test_eve_product_integration.py:1445-1452; mcp/tests/test_eve_product_integration.py:1454-1485; mcp/tests/test_eve_product_integration.py:1496-1514; mcp/tests/test_eve_product_integration.py:1516-1532; mcp/tests/test_eve_product_integration.py:1706-1713; mcp/tests/test_eve_product_integration.py:1715-1746; mcp/tests/test_eve_product_integration.py:1757-1775; mcp/tests/test_eve_product_integration.py:1777-1793 |
-| The turn-boundary rendering the cancelled case reads (the amber interrupted line and the notice row). | `TurnResultItem` | dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-82 |
-| The interaction row the question and authorization cases read. | `InteractionItem` | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101 |
-| The harness-agnostic sibling mount this file sits beside. | "ConversationSurface hidden keep-alive gating (F-j)" | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx:98-98 |
+- The shipped surface this case mounts, and the store it seeds. [1]
+- The decoder that supplies the items and status with no cast. [2]
+- The guard the no-cast discipline satisfies. [3]
+- The Python cases that pin the same capture against the live projector and assert the states it must show. [4]
+- The turn-boundary rendering the cancelled case reads (the amber interrupted line and the notice row). [5]
+- The interaction row the question and authorization cases read. [6]
+- The harness-agnostic sibling mount this file sits beside. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repo boundary is involved: the surface, the store and the wire body are all this
 repository's own.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-16T11:43:03+00:00: Generated citation repair: `TurnResultItem` repointed to dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx:46-82. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-16T11:43:03+00:00: Generated citation repair: `InteractionItem` repointed to dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-101. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: created this card for a file added by the eve
-  product-integration change set. Records the six mounted assertions and the packet behaviour each
-  evidences, the no-cast decoding discipline it satisfies, the store-seeding and jsdom-geometry
-  requirements, and the declared limit that this is jsdom over a production-serialized body rather
-  than a real browser against a real model. Verification metadata is pinned to the leaf's synced base
-  commit `ff97072c` because the candidate is deliberately uncommitted — the governed closeout stamps
-  the real code commit, and no hash or fingerprint was invented here.
+No meaningful cross-repo references found.

@@ -1,0 +1,243 @@
+{
+  "path": "mcp/src/agents_remember/providers/settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MCP config derives allowed repositories/providers and provider runtime roots from trusted settings.\n\nAnchor: `McpRuntimeConfig`, `allowed_repo_ids`, `allowed_provider_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:0d3b1a86df3de4b2b7f81828fd3dc25bd588d932ed545f8863363d4d68b777e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:2f7fc71b853fa9cb9f443605702fc3088c095ad4756f35649dc1aecd6a53b90c",
+            "locator": {
+              "kind": "symbol",
+              "name": "allowed_repo_ids"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:6130143af927c42e2e4f98a47667822fef9432c4ac037c07e5e9c418828576ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "allowed_provider_ids"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider status writes generated lifecycle settings before calling `watchers_run`.\n\nAnchor: `watchers_run`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "514d04f97f4a75aec95d03c476627d2325a95f01",
+            "content": "sha256:02a2572eb0ede056e330ba26ea47a44a6e35b94ded15017112f2b6df7d944c63",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 239
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool.\n\nAnchor: `install_runtime_from_config`, [\"settings=lifecycle_settings_from_config(\"], [\"def lifecycle_settings_from_config(config: McpRuntimeConfig)\"]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:cffe7f3c5c49cdff5cf1afaca964375ed03f1bb382c70213e451dc14660dabf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_runtime_from_config"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:67b072abea5fa645d2dde768432b7ff05b7fc770b9fc513c9276e1d18596afa6",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend.\n\nAnchor: `_grepai_settings`, `_grepai_runtime`, `_grepai_backend`, `_grepai_embedder`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:b2ee2a2ded7ce5314c2739b4d4858514359036f9e091f55c8c761e5fb6978b78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grepai_settings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:19e6b1dd6572154c6797b6d706e0d7504a0246454521cfc39c59a39a17da7799",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grepai_runtime"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:f9cb85ccc1a343a4a0398e2328534314a7c1d0590dec9124684992e68d6bf497",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grepai_backend"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:b201935aabb3af45eb205c85099179521fa7aeefe455297ac61a2907ae3cb2cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grepai_embedder"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:34dce006bfc60810310ce49746c4f6ccbc4435b19217ef4d96b0feaa30c5dc25",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:05c236fcc3fa0654a15e2d04de3e0fb4bd31095a9a461bc1896dda39580645c8",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:3d529ccdb4e1d42eb53bcac185e1a78e9e573c6f4bf95b473999e73bf64462d0",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:c739036a9afa8bd7d7680028d82896efe0f170679d036b0c10bc86a9fde65962",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings.\n\nAnchor: `_cgc_settings`, `_cgc_root_settings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:f55b790414330d6ecff12768bfda58072db954aaaaf65c6b71b1573c4898a5ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cgc_settings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:27fa5c710c0e4be0c343ec1390a63483787ee55c71c194144648a83cb672ca5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cgc_root_settings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:e6dfa5347513efca49b8256bae8713fb888f0e45cb21573908fe74e325ccf0f6",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:9805280708f6e2f20d1ca5141e7661c64cebe3b06e2fd5b4ba2e6107f413b72f",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 330
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

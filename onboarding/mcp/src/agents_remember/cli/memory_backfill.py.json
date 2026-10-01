@@ -1,0 +1,130 @@
+{
+  "path": "mcp/src/agents_remember/cli/memory_backfill.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Flags, request resolution, and mode/directory refusal define the adapter scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33237ccaa4eaa5e7222f8492b14e63265ec8de0",
+            "content": "sha256:bd1d927600faa3f1447d852ed9f6448a9ef629d7f5f6210bb5b7cd866a956b2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e33237ccaa4eaa5e7222f8492b14e63265ec8de0",
+            "content": "sha256:bf57351ded10bb75454e9a7b3c771b76acb8da42ec4d2dc3e5d7ace73d4279c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_request_from"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e33237ccaa4eaa5e7222f8492b14e63265ec8de0",
+            "content": "sha256:182863900fc906d4e5424cce9782be96f016f8575142f95c589efaca25ef7fe6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Planning and apply status/output remain separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33237ccaa4eaa5e7222f8492b14e63265ec8de0",
+            "content": "sha256:d1becb311907e2ee6d252e84ae61b512c712e525406b510b0dd7887d5bb577bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e33237ccaa4eaa5e7222f8492b14e63265ec8de0",
+            "content": "sha256:289c57763fdbb5b1fa31b771d6cce552b8544e2940ad71a83b9822a2adcf77ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The kernel owns loss-aware planning and the explicit apply transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "content": "sha256:c276775d9942cc6b9373733c4b2beb2bead8e66ca99efee4b1fef6d1b17342c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryBackfillPlan"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_backfill.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "content": "sha256:dc5363c1070d2f3775d94dd8495abdbfa22e598a587fb43b1cebcf4b23f72d11",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_memory_backfill"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_backfill.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "content": "sha256:36cd6a546faa8fc208cc8c5d73eaef16d0f7e699685cdc2a278ccd380cebd8f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_memory_backfill"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_backfill.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Actual branch-name invocation and retry behavior are tested through the CLI.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:177b8e65f038c71703902e0fcc089fcddecca73ef5a022a001531cec7270b42e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry"
+            },
+            "path": "mcp/tests/test_memory_backfill.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

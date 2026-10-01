@@ -1,0 +1,89 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/tree_seeds.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: why an unheld seed is refused and that a database read is untouched.\n\nAnchor: \"a seed the tree does not hold is refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9773915a85ebdfb20f5d4b5dc599f2dc51eac45",
+            "content": "sha256:6b87ae7da7743dd83cfec8fc8b025af25cc217a4c6d330e45e40445475f3b5cf",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Why a named seed names no revision the tree holds; a bare held ID is told its seed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9773915a85ebdfb20f5d4b5dc599f2dc51eac45",
+            "content": "sha256:958408f0af6fc866d28b9f7a31be1508010821307d69d8c0a7f3ff474d9811fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "absent_seed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reason for the first seed the tree does not hold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9773915a85ebdfb20f5d4b5dc599f2dc51eac45",
+            "content": "sha256:7c185c735181e38c9dd1c7dd1806d17230ee84968f86cca1aeb703e228d66d80",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_seed_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Where current seeds come from, as every refusal says.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9773915a85ebdfb20f5d4b5dc599f2dc51eac45",
+            "content": "sha256:7560ec2d07cd86d4c8a8a0c9375f08874430c8e1e238effa4d7cd54234409cc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SEED_SOURCES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A converted tree refuses a database-era UUID, a bare ID and an unheld family; a database read with an unknown seed is still a complete view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8f68761727af2bccdd02ec39c86ee0156f52aad",
+            "content": "sha256:b85e670eef150d1bd92b5d9169844298c0bb8e8ae7f3ef1db44163b3e0749816",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold_and_a_database_read_is_unchanged"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

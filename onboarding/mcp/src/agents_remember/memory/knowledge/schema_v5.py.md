@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/schema_v5.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/schema_v5.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -57,44 +47,31 @@ target reference, the locator's discriminator, and the nullable governing-route 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The one table generation 5 appends, and the registries the composition merges from.** | `APPENDED_TABLES`; `APPENDED_COLUMNS`; `APPENDED_PRIMARY_KEYS` | mcp/src/agents_remember/memory/knowledge/schema_v5.py:62-62; mcp/src/agents_remember/memory/knowledge/schema_v5.py:64-81; mcp/src/agents_remember/memory/knowledge/schema_v5.py:83-89 |
-| The typed-JSON column registry, which is where the binding payload actually travels. | `APPENDED_JSON_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v5.py:91-93 |
-| **The table DDL: the unique key over the recorded key text, and the `CHECK` that names exactly the shipped locator union.** | `APPENDED_TABLE_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v5.py:95-132 |
-| The index DDL and the triggers that seal the recorded facts against in-place re-binding. | `APPENDED_INDEX_DDL`; `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v5.py:134-146; mcp/src/agents_remember/memory/knowledge/schema_v5.py:148-165 |
-| **The composition that puts generation 5's table after generation 4's twenty-one and asserts the prefix equality.** | `_compose_generation_5`; `GENERATION_5` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:357-365; mcp/src/agents_remember/memory/knowledge/schema_generations.py:321-325; mcp/src/agents_remember/memory/knowledge/schema_generations.py:336-352 |
-| The schema name and version generation 5 declares, and its place in the registry. | `GENERATION_5_SCHEMA_NAME` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:222-222 |
-| The generation-2 `route` table the governing-route foreign key resolves against. | `APPENDED_TABLES` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:42-49 |
-| The generation the write path requires before a binding row may exist. | `REQUIRED_BINDING_GENERATION` | mcp/src/agents_remember/memory/knowledge/citations.py:88-88 |
-| **The cases that measure the append without touching generation 4's names, the absent identity column, and the locator `CHECK` naming exactly the shipped union.** | `test_generation_5_appends_to_generation_4_without_touching_its_twenty_one_tables`; `test_the_binding_table_has_no_content_address_digest_or_fingerprint_column`; `test_the_locator_check_names_exactly_the_shipped_source_locator_union` | mcp/tests/test_knowledge_citation_bindings.py:118-176 |
-| The boundary case that proves a generation-4 dataset is refused the binding table rather than widened. | `test_a_generation_4_dataset_is_refused_the_binding_table_rather_than_widened` | mcp/tests/test_knowledge_citation_boundaries.py:598-628 |
+- **The one table generation 5 appends, and the registries the composition merges from.** [1]
+- The typed-JSON column registry, which is where the binding payload actually travels. [2]
+- **The table DDL: the unique key over the recorded key text, and the `CHECK` that names exactly the shipped locator union.** [3]
+- The index DDL and the triggers that seal the recorded facts against in-place re-binding. [4]
+- **The composition that puts generation 5's table after generation 4's twenty-one and asserts the prefix equality.** [5]
+- The schema name and version generation 5 declares, and its place in the registry. [6]
+- The generation-2 `route` table the governing-route foreign key resolves against. [7]
+- The generation the write path requires before a binding row may exist. [8]
+- **The cases that measure the append without touching generation 4's names, the absent identity column, and the locator `CHECK` naming exactly the shipped union.** [9]
+- The boundary case that proves a generation-4 dataset is refused the binding table rather than widened. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A table declaration is a property of the
 dataset, and a dataset's identity excludes Git commits, ledger rows and checkout locations.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `GENERATION_5_SCHEMA_NAME` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:222-222. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `test_a_generation_4_dataset_is_refused_the_binding_table_rather_than_widened` repointed to mcp/tests/test_knowledge_citation_boundaries.py:598-628. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `GENERATION_5_SCHEMA_NAME` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:212-212. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:06:32+00:00: Generated citation repair: `GENERATION_5_SCHEMA_NAME` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:199-199. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T04:05:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): created this one-to-one card for generation 5's one appended table. It records the three decisions a reader must not get wrong. First, **appending is the whole additive rule** — five registries merge into generation 4's maps and nothing earlier is redeclared, reordered, renamed, retyped or dropped, with the prefix-equality assertion written *by the generation it descends from* so a future renumber changes two names and not a column list. Second, **the table deliberately has no digest, content address or fingerprint column**: the owner revision's blob identity is a reference to an identity the memory side already records, and ambiguity is decided by equality over the recorded key text, which is the fact at issue. Third, **the recorded facts are sealed by triggers** while `lifecycle` stays free, because rewriting a key or re-pointing a target in place would silently re-bind the row to prose that says something else. Verification metadata advances to the leaf's base commit `e963a01c` because every cited construct was re-read against the working tree; the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

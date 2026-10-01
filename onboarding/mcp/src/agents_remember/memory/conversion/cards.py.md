@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/conversion/cards.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/conversion/cards.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T14:21:42+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -64,7 +54,9 @@ output template. `render_card` writes the converted Markdown once every real row
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -73,37 +65,26 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The split, the render, and the rules each applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The seven dropped metadata fields and the Evidence heading. | `DROPPED_METADATA`; `EVIDENCE_HEADING` | mcp/src/agents_remember/memory/conversion/cards.py:37-48 |
-| A card taken apart: metadata, rows in output order, template, stray rows. | `SplitCard`; `CitationRow` | mcp/src/agents_remember/memory/conversion/cards.py:68-80; mcp/src/agents_remember/memory/conversion/cards.py:57-65 |
-| The metadata rows are dropped; other rows stay in a smaller table. | `_replace_metadata` | mcp/src/agents_remember/memory/conversion/cards.py:116-140 |
-| Update History is dropped and its bytes counted. | `_drop_history` | mcp/src/agents_remember/memory/conversion/cards.py:153-164 |
-| A citation table becomes finding lines; a placeholder stays prose. | `_take_table`; `_is_placeholder` | mcp/src/agents_remember/memory/conversion/cards.py:182-212; mcp/src/agents_remember/memory/conversion/cards.py:87-91 |
-| The split. | `split_card` | mcp/src/agents_remember/memory/conversion/cards.py:222-253 |
-| Stray citation-shaped rows are left alone and listed. | `_stray_citation_rows` | mcp/src/agents_remember/memory/conversion/cards.py:256-278 |
-| The reference sections move into one Evidence section, one level lower. | `_assemble` | mcp/src/agents_remember/memory/conversion/cards.py:310-341 |
-| The render: sentinels, then the validator's escaping, then the numbers. | `render_card` | mcp/src/agents_remember/memory/conversion/cards.py:344-365 |
-| A card becomes prose, one Evidence section and numbered references. | `test_a_card_becomes_prose_one_evidence_section_and_numbered_references` | mcp/tests/test_knowledge_conversion.py:75-159 |
-| Rendered back without history, a card reproduces its content. | `test_a_converted_card_renders_back_to_its_content_without_history`; `render_legacy` | mcp/tests/test_knowledge_conversion.py:306-330; mcp/tests/test_knowledge_conversion.py:431-454 |
+- The seven dropped metadata fields and the Evidence heading. [1]
+- A card taken apart: metadata, rows in output order, template, stray rows. [2]
+- The metadata rows are dropped; other rows stay in a smaller table. [3]
+- Update History is dropped and its bytes counted. [4]
+- A citation table becomes finding lines; a placeholder stays prose. [5]
+- The split. [6]
+- Stray citation-shaped rows are left alone and listed. [7]
+- The reference sections move into one Evidence section, one level lower. [8]
+- The render: sentinels, then the validator's escaping, then the numbers. [9]
+- A card becomes prose, one Evidence section and numbered references. [10]
+- Rendered back without history, a card reproduces its content. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

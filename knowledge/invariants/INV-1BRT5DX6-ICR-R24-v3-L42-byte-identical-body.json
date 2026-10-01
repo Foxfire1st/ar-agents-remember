@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The projected body of any task document served by read_task_document_body, compared with the projection whose master join table is built from the whole canonical task-document set.",
+  "conditions": [
+    "Graph-named masters are found at <repository folder>/<task>/<file>.json tails across every repository folder, in canonical-enumeration order, so duplicate-key last-wins is preserved.",
+    "Only payloads carrying the task-document schema enter the join, because the document model defaults a missing schema and would otherwise admit a schema-less master-shaped JSON."
+  ],
+  "exclusions": [
+    "Documents edited between two reads (a live mtime change is a real difference, not a projection difference).",
+    "Exact-path reads of historical notes/ or 0_archive copies, whose pre-existing served behaviour is preserved rather than asserted here."
+  ],
+  "id": "INV-1BRT5DX6",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "112c5122-9c95-4891-885a-04633f7b75bc",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The bounded body read projects the same bytes as the projection with the corpus-wide master join table for leaf, master, standalone and sprint documents, because the graph view looks masters up only by the refs its nodes carry and the candidate probe returns exactly that subset of the canonical enumeration in the same order.",
+  "status": "proposed",
+  "supersedes": []
+}

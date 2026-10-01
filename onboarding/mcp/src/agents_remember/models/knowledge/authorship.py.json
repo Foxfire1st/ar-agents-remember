@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/authorship.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a5f7db9de3b6cbbd9f0b3b71938b820d857a14ae",
+        "content": "sha256:c5322248065baeea039509c45260a83e80aa7e2ad16d6fe174019105ea9d53b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "Authorship"
+        }
+      },
+      "id": "RLZ-C9B36JZG",
+      "invariant": "INV-103S55GN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The anchor draft is the Git-bound half and the authorship origin references plus the manifest are the non-Git half; both are named because the obligation is that the two never merge.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The provenance envelope, its three validators and the normalized-UTC rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5f7db9de3b6cbbd9f0b3b71938b820d857a14ae",
+            "content": "sha256:c5322248065baeea039509c45260a83e80aa7e2ad16d6fe174019105ea9d53b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authorship"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5f7db9de3b6cbbd9f0b3b71938b820d857a14ae",
+            "content": "sha256:3c4b65013cf12c6e448a3f3716744604ee95488b7d99cdc78ffbe999320591f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_nonblank_reference"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5f7db9de3b6cbbd9f0b3b71938b820d857a14ae",
+            "content": "sha256:38245257f053b5965a4a78a5cfb61f09fb1639acab43b55449a12ccb79105ad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_nonblank_origins"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5f7db9de3b6cbbd9f0b3b71938b820d857a14ae",
+            "content": "sha256:70782e75255620a12bd43cdbf2d3bddefb85b9a2ef653f82465378357d26f6f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_normalized_utc"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The application assigns the operation identity and the recorded instant instead of accepting them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:cc0c1ded77cd743de6c33b0f1a4c1e76796770eef09dbb355133c1f5af24a461",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_authorship"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:4eed48a472a383b7d76c62d3965f8cc9ad599245d919c8fbf4dc41123ac2bb79",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The envelope is stored as a canonical JSON typed column.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:d6dbd1590d2cd59d0430a60a931f333425a6b26b4c33d4fffdb5ed0c691d6277",
+            "locator": {
+              "kind": "symbol",
+              "name": "encode_authorship"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:8f467da48ad8a1f6adab6026e82992f0462f62f2b4e501b7785f305b2acea92a",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_authorship"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The envelope is part of the sealed revision payload, so provenance is inside the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:bf82a17c91fe9724b782c711419f091eeecdebe93cc2087b9d7194c9a48bdce3",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_revision_payload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:4865172139f2d96b7e8b25245ac70e26384f19b5644994ac35c26de2628906e8",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Git commit attribution stays with its existing owner; this leaf read it for context and copied nothing.\n\nAnchor: \"# contract at the moment it is armed. And this module is the reader of a hashed object, which is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:813ca0c54706c022240c93c97353e0a11adb4c3f3a33fdb7ab00fa7f30a8ffea",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

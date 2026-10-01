@@ -1,0 +1,187 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The re-exported names, `writer_reported_rule_ids` included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9022c98629b43fff5146389154cafda8efe6853",
+            "content": "sha256:2227e920a47dfb31e1e613eb780c44df7c38b820c1a638abfdbb66994cdf6c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included.\n\nAnchor: `rules_admission`; `rules_references`; `rules_routes`; `rules_structure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:bb50d078bccaacd1686fe49b419a3dce8f8dc7f278d038916b015ed91152b77c",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:ed8ea5e99c87135f8f2bd8425504645b5cb200ad9d2bcdfc5b7c67295a77cb08",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:af803519d48d730ae8acbbbb0c1b94a053b51346512b222a2b89d7898ac69b4e",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:562c7588b445717c4314dd9fb044d48d073653203fe9bb3ca02e4ca9121d0194",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The route adapter the composition binds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:7dce94a987c6103da6908cfe0a1167b479263995df126d1907da7fb0f28ba36e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeValidation"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The module map names MIK-R09's history-row rule, and importing the validator registers it.\n\nAnchor: \"MIK-R09's rule on history rows that are not frozen\"; \"registers MIK-R09's open history row rule\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9022c98629b43fff5146389154cafda8efe6853",
+            "content": "sha256:c07359c7a1238541c47db97e2b6f5c75cb7760e0b792eb76c78926fcdeedb923",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:e28c592b8a2fcbbac5a8f3438c49a4076e075b04365f166d5984f8f6ef753464",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The module map names MIK-R14's link guard, and importing the validator registers it.\n\nAnchor: \"MIK-R14's guard: an alternative a\"; \"registers MIK-R14's link guard\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9022c98629b43fff5146389154cafda8efe6853",
+            "content": "sha256:8ce6c3a589eb4b4f833315758f9eee40ce12ef682fea3b8672bfc637611e1cd1",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:4beea48b7f752cbd777ca2a1d668b50dc7f70a100bb0d28a8c4257e9bac9537e",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The module map names MIK-R13's decision rules, and importing the validator registers them.\n\nAnchor: `rules_decisions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9022c98629b43fff5146389154cafda8efe6853",
+            "content": "sha256:0ffdd80cf121cb077567cd4aed0f21d9ad61bda705d2c2305ab9f6f0560ef821",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:bfe534ad8976f20b23872f51fa7bd2448ba80562d1591816c0fcc7563255966b",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

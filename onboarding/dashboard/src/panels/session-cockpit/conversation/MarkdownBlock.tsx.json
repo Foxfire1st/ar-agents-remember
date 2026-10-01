@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Consumed by message/thinking/interaction/tool/result items as the shared prose renderer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2282164565997c8df88a3cd3158d2adc1fdd2b2",
+            "content": "sha256:4362c963c8aa520d1e2a485bfd5bfccc6c6e321b2bbb01bb5c319efdae09e8bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "MessageItem"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2538f1e4a4bad5081518887e5eb608e0ab67b4a",
+            "content": "sha256:babbc3cab60795608de5b191bf98bc78576c29d7f576cd5c4c40e3c85b35832c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ThinkingItem"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ccb97957c00edbe63e2a342a102589edeb21dc8e",
+            "content": "sha256:6aedc7858cb17419944047f7138b40731865f2769d8352f66b9900f81beaceb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionItem"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06901ae0677dd9ddb65cfeb322d7456fc510081a",
+            "content": "sha256:421884cee5bbcdfec73b349c3b295a3349abb7fca0f164f8a5b6a7b2fa67c5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnResultItem"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The house Markdown primitive precedent (react-markdown + remark-gfm, memoized) elsewhere in the cockpit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eca2dd9be19afabd89fc0f1946d9d5f3bdcf41c",
+            "content": "sha256:073bc6db74059e4fc0b2f55f44b3351d596649087b6d94924759282acbccd7d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "Markdown"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

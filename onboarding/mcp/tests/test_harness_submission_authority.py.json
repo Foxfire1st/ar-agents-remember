@@ -1,0 +1,135 @@
+{
+  "path": "mcp/tests/test_harness_submission_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Slow active operation does not block status or queued withdrawal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bab2988b4008841307e19b0a2f93b323a986cfc",
+            "content": "sha256:362cad984fbe3077a4bdd5900a54572fced8f7418acba10225b38785db6d4d7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_slow_active_operation_does_not_block_status_or_queued_withdrawal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dispatch claim wins atomic withdrawal race.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bab2988b4008841307e19b0a2f93b323a986cfc",
+            "content": "sha256:bbe86f7c8b456e5514d99153999bcb30e76ddab658d0d7b7124bf6e892fc790c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dispatch_claim_wins_atomic_withdrawal_race"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Withdrawal during preflight wins before dispatch claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bab2988b4008841307e19b0a2f93b323a986cfc",
+            "content": "sha256:33d889dede482496d0cd26b0369810ea21f608fe4047812d479731ea33b71af9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_withdrawal_during_preflight_wins_before_dispatch_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Completion before receipt is buffered and releases exact head.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bab2988b4008841307e19b0a2f93b323a986cfc",
+            "content": "sha256:5c12c4eca81b8bedc00f11e344d054d033989fa4877f05bfe7317d0a560b80d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_completion_before_receipt_is_buffered_and_releases_exact_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Same id is idempotent but source or payload change conflicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bab2988b4008841307e19b0a2f93b323a986cfc",
+            "content": "sha256:15c10b4852c522d13912b5bc12f439a9521e115ec774f101ca523162a846c242",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_same_id_is_idempotent_but_source_or_payload_change_conflicts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Certified pre send busy requeues without vendor queue or resend.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bab2988b4008841307e19b0a2f93b323a986cfc",
+            "content": "sha256:dba15caec7ad9c087ce3743cb48a8fdf4760937216fb7d18213c0a912dd7f346",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_certified_pre_send_busy_requeues_without_vendor_queue_or_resend"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Epoch and public source scope fail closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bab2988b4008841307e19b0a2f93b323a986cfc",
+            "content": "sha256:7e35f672a179ef0ac7af028916f9d95677cacf2580981d031d3df6ca6cb75e84",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_epoch_and_public_source_scope_fail_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A ledger with nothing droppable refuses room rather than forgetting a row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bab2988b4008841307e19b0a2f93b323a986cfc",
+            "content": "sha256:c43111d6bac93ec3279dce68f9cea9f6665528e2caaa5660553e547fa8961363",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_ledger_with_nothing_droppable_refuses_room_rather_than_forgetting_a_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

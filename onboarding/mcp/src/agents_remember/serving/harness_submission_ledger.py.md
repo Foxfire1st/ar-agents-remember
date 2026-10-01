@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/harness_submission_ledger.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/harness_submission_ledger.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](overview.md)
@@ -40,20 +30,12 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the class `OperationRecord` (lines 58-252) — One ordinary operation's whole life: its state, its evidence, and what it answers with.. | `OperationRecord` | mcp/src/agents_remember/serving/harness_submission_ledger.py:58-252 |
-| Defines the class `SubmissionLedger` (lines 255-437) — The bounded, epoch-stamped record store one submission authority admits into and reads from.. | `SubmissionLedger` | mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
-| Defines the function `ref_key` (lines 440-441). | `ref_key` | mcp/src/agents_remember/serving/harness_submission_ledger.py:444-445 |
-
-## Update History
-
-- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- Defines the class `OperationRecord` (lines 58-252) — One ordinary operation's whole life: its state, its evidence, and what it answers with.. [1]
+- Defines the class `SubmissionLedger` (lines 255-437) — The bounded, epoch-stamped record store one submission authority admits into and reads from.. [2]
+- Defines the function `ref_key` (lines 440-441). [3]

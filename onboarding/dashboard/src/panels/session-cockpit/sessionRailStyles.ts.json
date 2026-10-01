@@ -1,0 +1,79 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessionRailStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Master and leaf containers express real task nesting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e96730fa836583d2479d98844c7897b223b833be",
+            "content": "sha256:883884059f5c03a4840228b7d6df16527258ac81fb5bfd7ceaff9b88387a3b1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterBox"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Row layout constrains identity and action segments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e96730fa836583d2479d98844c7897b223b833be",
+            "content": "sha256:748fc8e74f6e272fe36f991009db2c2e89d1ca793da32e8ad6f8897358768c34",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowShell"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e96730fa836583d2479d98844c7897b223b833be",
+            "content": "sha256:380a37ba90af938b7cdf70faefa05d0c686eddfe676be3b5174c886d045783e8",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The live title is clipped to a single ellipsized line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e96730fa836583d2479d98844c7897b223b833be",
+            "content": "sha256:b8584bfff15a5bde38df7506d93790d8e9768aeff3be98ae11f308d85e06b01c",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowTitle"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e96730fa836583d2479d98844c7897b223b833be",
+            "content": "sha256:72b5b648701213fa9d0ff3c80758a3ba3884256d0540a509c0608834429de9d2",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

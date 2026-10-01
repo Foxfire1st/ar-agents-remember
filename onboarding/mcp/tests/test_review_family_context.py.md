@@ -1,15 +1,5 @@
 # mcp/tests/test_review_family_context.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_review_family_context.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp tests route overview](overview.md)
@@ -142,14 +132,16 @@ the file rather than buried in an assertion.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured domain documentation could be consulted for this module. The resolved memory layer's
 `system/sources.md` carries no `Domain Documentation` category — its whole body is "No entries
 configured yet." — so there is no external or domain source to check and no documentation row is
 recorded here.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own cases and in the owners they drive. The three
 details a reader should carry: **every population is authored through the store's own operations over
@@ -158,67 +150,51 @@ choose; **the ambiguity case asserts that no revision was chosen** while the can
 and **the route case serves the real application**, which is what proves the context reaches the client
 over the shipped transport rather than being assembled in the browser.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The leaf's load-bearing properties, one case each, and the fact that nothing here builds a review payload.** | "Every population is produced by the store's own operations over the shared endpoint fixture" | mcp/tests/test_review_family_context.py:1-34 |
-| The frozen scenario handle the cases read. | `FamilyScenario` | mcp/tests/test_review_family_context.py:116-124 |
-| The module-scoped scenario fixture. | `scenario` | mcp/tests/test_review_family_context.py:127-131 |
-| **The real leaf enclosure built over the shared endpoint fixture, with two real knowledge datasets.** | `build_family_scenario` | mcp/tests/test_review_family_context.py:134-165 |
-| The authored successor revision of a member invariant. | `_author_member_successor` | mcp/tests/test_review_family_context.py:168-189 |
-| The authored successor family revision. | `_author_family_successor` | mcp/tests/test_review_family_context.py:192-213 |
-| **One membership row authored through the membership owner, so a membership exists only because a case recorded it.** | `_author_membership` | mcp/tests/test_review_family_context.py:216-231 |
-| The review request built for a given selector. | `family_request` | mcp/tests/test_review_family_context.py:237-255 |
-| The production read the cases drive. | `review` | mcp/tests/test_review_family_context.py:258-264 |
-| The one family context selected out of the payload. | `entry_for` | mcp/tests/test_review_family_context.py:267-272 |
-| A side's roster indexed by member revision. | `members_of` | mcp/tests/test_review_family_context.py:275-278 |
-| **A selected invariant resolving every recorded family it belongs to, each with its own guarantee text.** | `test_a_selected_invariant_resolves_both_recorded_families_with_their_own_guarantees` | mcp/tests/test_review_family_context.py:284-318 |
-| An unchanged family still composed at its own revision. | `test_a_family_that_did_not_move_is_still_composed_at_its_own_revision` | mcp/tests/test_review_family_context.py:321-336 |
-| **A successor revision read from its own rows, with the dropped membership still carried on the side that records it.** | `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` | mcp/tests/test_review_family_context.py:342-381 |
-| **One canonical revision referenced in two contexts, with the unique count not growing.** | `test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts` | mcp/tests/test_review_family_context.py:384-422 |
-| **A member change making its family context available and concluding nothing about the guarantee.** | `test_a_member_change_makes_its_family_context_available_and_concludes_nothing` | mcp/tests/test_review_family_context.py:425-449 |
-| A selection in no recorded family as the measured zero. | `test_a_selection_in_no_recorded_family_is_a_measured_zero` | mcp/tests/test_review_family_context.py:455-470 |
-| Missing knowledge as the review's own refusal rather than an empty family context. | `test_missing_knowledge_is_the_reviews_refusal_not_an_empty_family_context` | mcp/tests/test_review_family_context.py:473-484 |
-| The task-context review stating that it selected no subject. | `test_a_task_context_review_states_that_it_selected_no_subject` | mcp/tests/test_review_family_context.py:487-498 |
-| A family only the candidate records as a one-sided context with a stated absence. | `test_a_family_only_the_candidate_records_is_a_one_sided_context_with_a_stated_absence` | mcp/tests/test_review_family_context.py:501-520 |
-| **An authored ambiguity naming its candidates and choosing no revision.** | `test_an_ambiguous_family_lineage_names_its_candidates_and_chooses_no_revision` | mcp/tests/test_review_family_context.py:523-563 |
-| The sibling family revisions that build the ambiguity fixture. | `_author_sibling_family_revisions` | mcp/tests/test_review_family_context.py:566-587 |
-| **A truncated roster staying partial with the owner's counts and the cursor that reaches the rest.** | `test_a_truncated_roster_stays_partial_with_the_owners_counts_and_continuation` | mcp/tests/test_review_family_context.py:593-622 |
-| The roster page's completeness as the case reads it. | `_complete` | mcp/tests/test_review_family_context.py:625-628 |
-| **The published cursor continuing exactly the walk that minted it.** | `test_the_published_cursor_continues_exactly_the_walk_that_minted_it` | mcp/tests/test_review_family_context.py:631-673 |
-| **A cursor that binds no composed walk refused beside every first page.** | `test_a_cursor_that_binds_no_walk_is_refused_beside_the_first_pages` | mcp/tests/test_review_family_context.py:676-714 |
-| Naming the roster collection without a cursor earning the collection's own refusal. | `test_naming_the_roster_collection_without_a_cursor_is_refused` | mcp/tests/test_review_family_context.py:717-736 |
-| A token of another format answered in the owner's own vocabulary. | `test_a_token_that_is_not_a_roster_cursor_is_answered_with_the_owner_vocabulary` | mcp/tests/test_review_family_context.py:739-754 |
-| **The complete source inventory and its unique counts not growing with a repeated membership.** | `test_the_complete_source_population_does_not_grow_with_a_repeated_membership` | mcp/tests/test_review_family_context.py:760-790 |
-| The one-sided family fixture. | `_author_added_family` | mcp/tests/test_review_family_context.py:793-831 |
-| The review of a subject the fixture never authored. | `_review_of_unfamiliar_invariant` | mcp/tests/test_review_family_context.py:834-872 |
-| **The context reaching the client over the real review route, which is what makes this a transport proof.** | `test_the_family_context_reaches_the_client_over_the_real_review_route` | mcp/tests/test_review_family_context.py:878-930 |
-| The real application the route case serves. | `_served` | mcp/tests/test_review_family_context.py:933-946 |
-| **Further memberships authored through the store's own operations, so a roster needs more than one page of the read walk.** | `_author_extra_roster_rows` | mcp/tests/test_review_family_context.py:952-998 |
-| **One side's roster walk followed exactly as the delivered continuation control drives it, with the previous page's cursor and no page bound.** | `_walk_the_route` | mcp/tests/test_review_family_context.py:1001-1042 |
-| **The single-page boundary: one page is the roster, complete, cursored nowhere, carrying every row and saying so.** | `test_a_roster_that_fits_one_page_is_carried_whole_and_says_so` | mcp/tests/test_review_family_context.py:1045-1057 |
-| **The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.** | `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` | mcp/tests/test_review_family_context.py:1060-1095 |
-| **The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.** | `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` | mcp/tests/test_review_family_context.py:1098-1137 |
-| **The production read these cases drive, which composes the context and carries it on the payload.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:335-577 |
-| The population cases this module's fixtures are shared with. | `test_the_canonical_memberless_successor_shape_is_an_ambiguity` | mcp/tests/test_review_family_context_population.py:89-134 |
-| The values cases that pin the construction rules of the same deliverable. | `test_a_context_whose_counts_do_not_describe_its_roster_is_refused` | mcp/tests/test_review_family_context_values.py:30-48 |
+- **The leaf's load-bearing properties, one case each, and the fact that nothing here builds a review payload.** [1]
+- The frozen scenario handle the cases read. [2]
+- The module-scoped scenario fixture. [3]
+- **The real leaf enclosure built over the shared endpoint fixture, with two real knowledge datasets.** [4]
+- The authored successor revision of a member invariant. [5]
+- The authored successor family revision. [6]
+- **One membership row authored through the membership owner, so a membership exists only because a case recorded it.** [7]
+- The review request built for a given selector. [8]
+- The production read the cases drive. [9]
+- The one family context selected out of the payload. [10]
+- A side's roster indexed by member revision. [11]
+- **A selected invariant resolving every recorded family it belongs to, each with its own guarantee text.** [12]
+- An unchanged family still composed at its own revision. [13]
+- **A successor revision read from its own rows, with the dropped membership still carried on the side that records it.** [14]
+- **One canonical revision referenced in two contexts, with the unique count not growing.** [15]
+- **A member change making its family context available and concluding nothing about the guarantee.** [16]
+- A selection in no recorded family as the measured zero. [17]
+- Missing knowledge as the review's own refusal rather than an empty family context. [18]
+- The task-context review stating that it selected no subject. [19]
+- A family only the candidate records as a one-sided context with a stated absence. [20]
+- **An authored ambiguity naming its candidates and choosing no revision.** [21]
+- The sibling family revisions that build the ambiguity fixture. [22]
+- **A truncated roster staying partial with the owner's counts and the cursor that reaches the rest.** [23]
+- The roster page's completeness as the case reads it. [24]
+- **The published cursor continuing exactly the walk that minted it.** [25]
+- **A cursor that binds no composed walk refused beside every first page.** [26]
+- Naming the roster collection without a cursor earning the collection's own refusal. [27]
+- A token of another format answered in the owner's own vocabulary. [28]
+- **The complete source inventory and its unique counts not growing with a repeated membership.** [29]
+- The one-sided family fixture. [30]
+- The review of a subject the fixture never authored. [31]
+- **The context reaching the client over the real review route, which is what makes this a transport proof.** [32]
+- The real application the route case serves. [33]
+- **Further memberships authored through the store's own operations, so a roster needs more than one page of the read walk.** [34]
+- **One side's roster walk followed exactly as the delivered continuation control drives it, with the previous page's cursor and no page bound.** [35]
+- **The single-page boundary: one page is the roster, complete, cursored nowhere, carrying every row and saying so.** [36]
+- **The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.** [37]
+- **The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.** [38]
+- **The production read these cases drive, which composes the context and carries it on the payload.** [39]
+- The population cases this module's fixtures are shared with. [40]
+- The values cases that pin the construction rules of the same deliverable. [41]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised by these cases. The enclosure, the two knowledge datasets, the
 code trees and the served application all belong to this repository's own fixture support and to the
 leaf enclosure the resolution selected. No remote, credential, network or external system is involved, so
 no cross-repo reference row is recorded.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 2 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_review_family_context_values.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-27T02:33:48+00:00: Generated citation repair: `test_the_canonical_memberless_successor_shape_is_an_ambiguity` repointed to mcp/tests/test_review_family_context_population.py:89-134. No content impact: mechanical anchor-range projection bound to citation source snapshot 8d622ab90c9b13974d7092fdff43b4fba5681d634b1dc5af7229f82cc78dbdaa; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-27T02:21:35Z — L40: reconciled the three documentation-only corrections to independent family selection and genuine family absence. No executable case or older history was rewritten; verification metadata remains unchanged.
-
-
-- 2026-09-27T00:59:43+00:00 — Updated walk-population interpretation to exact unique member identities across sparse updates. Completion still belongs to the read walk and never proves that its last page carries the whole roster.
-
-- 2026-09-24T02:20:00+02:00 — 260921-ICR-L31 curator, **reopened enclosure** (`260921-icr-l31b`, same base `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499`): **this card gained the three walk cases the reopen appended, and its line-count disclosure was corrected.** The reopen's subject is a completion-semantics defect in `ReviewFamilyRevisionContext`, and these cases are its bite-proofs at the route: `test_a_roster_that_fits_one_page_is_carried_whole_and_says_so` (`:1045-1057`), `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share` (`:1060-1092`) and `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` (`:1095-1133`), with the two helpers they need (`_author_extra_roster_rows` `:952-998`, `_walk_the_route` `:1001-1042`). The module is **946 → 1,133 lines**: still above the 900-line soft rail and below the 1,200-line hard rail, and the census offender sets are byte-identical at base and candidate, so the disclosed crossing did not become a breach. The appended block is **insertions only**, so every citation this card already carried still holds and none was re-anchored. What the card asserts about the new cases is deliberately **shape rather than arithmetic**: how many pages a roster needs is a property of that run's page budgeting (the read walk is bounded over its item population and its byte ceiling, not over rows), so no page count or per-page row count is recorded here as a contract — the cases assert the completed page's own share strictly between zero and the owner's total, the pages summing to that total, and the single-page sentence staying off a multi-page walk's final page. **Stamp accounting: no verification stamp was advanced** — the candidate is uncommitted and the governed closeout owns the real code and memory commits, so the header still names the leaf's base `fdf3e4b6` plus the working-tree delta.
-
-- 2026-09-23T22:10:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): created this one-to-one card for the case module `ICR-R31@v1` introduced as the production-entry measurement of the comparison-bound family context. The stamp basis is honest rather than convenient: the module is untracked at the base commit, so `lastVerifiedCommitHash` names the leaf's base commit, and the verified basis is the working-tree delta on top of it — no commit contains what a stamp would otherwise claim to have verified. The card records the two things a reader should not have to rediscover: **every population is authored through the store's own operations over the shared endpoint fixture**, so no case builds a review payload, injects a context or reads a database the resolution did not choose; and **the module is a disclosed soft-rail crossing** at 946 lines — under the 1,200 hard rail, adding no census offender — with the population and values cases split into two sibling modules rather than growing this one. Fix round 1 added the sibling population module after round-1 verification falsified the composition's revision population; this module's own cases were not weakened by that fix, and the split is by seam rather than by line count.

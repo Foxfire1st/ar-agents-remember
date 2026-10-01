@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Imports of the anchor-observation vocabulary and the family member-source reference.",
+  "conditions": [
+    "Callers import these names from models/knowledge/read.py or models/knowledge/review_family_context.py.",
+    "Family examination: no joint obligation is supported. Basis: A module-placement and import-compatibility obligation; it guarantees nothing about what a reviewer sees and shares no joint behaviour with the region guarantee."
+  ],
+  "exclusions": [
+    "Behaviour of the moved values, which the extraction does not change."
+  ],
+  "id": "INV-NRSN2ABQ",
+  "origin": {
+    "leaf": "260921-ICR-L44",
+    "legacyId": "3e78c08f-5dc3-4fa8-898b-003f11cdb0b5",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The anchor-observation vocabulary lives in models/knowledge/read_anchor.py and the family member-source reference with its locator-state rule lives in models/knowledge/review_family_source.py; read.py and review_family_context.py re-export them unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

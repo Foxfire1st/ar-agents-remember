@@ -1,0 +1,77 @@
+{
+  "path": "scripts/harness/shared/workspace-directive.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generator's `HARNESSES` declaration table is defined here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:b97b00e3242d45344ec51e9ba662263f51e4cd5fe7d17f8f006efb5393c86f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "HARNESSES"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The inside-the-workspace variant of the same directive uses the relative coordinator path.\n\nAnchor: \"ar-coordination/AGENTS.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e3b032eb10a8417bbe3823715259c98e6ebe797",
+            "content": "sha256:451890237f9aa3836133237edbbd6adc62c7feb6409e74a903e74bdec26872a7",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "scripts/harness/shared/session-start-directive.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`write_context_file` mirrors the rendered file to the workspace root for Hermes and Antigravity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48702d860710153a5eceeaead202c3492b62aeb9",
+            "content": "sha256:a1034f80775996e3822aee5edada1ba3b49e190d453400e796fd34a47adabfd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_context_file"
+            },
+            "path": "scripts/harness/render_starter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The classification recording why the two directive bodies differ.\n\nAnchor: `## What is shared and what is per-harness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9da5860bd14bef74bc1c3b989b28c190edb154",
+            "content": "sha256:b0b3ba3a0417afff4a0c7a8fee084ed1b319f904b1667756e66e215e3531d57c",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "scripts/harness/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

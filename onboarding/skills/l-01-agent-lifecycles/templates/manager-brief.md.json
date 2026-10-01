@@ -1,0 +1,70 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source edge and every requirement revision are compiled before worker dispatch.\n\nAnchor: \"## The source edge (plane-owned, load-bearing)\"; \"## Dispatch defaults\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e11b70700968f78ab03d551a82ad8fb371506d83",
+            "content": "sha256:634d7daf15c48cefbe8cd762e36608a2a28386332bcaccf55d860c03e93b1a72",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e11b70700968f78ab03d551a82ad8fb371506d83",
+            "content": "sha256:4482cdb0bac5f040bd43faf42189fd3f934aff853c1c8d0c4c03b4df98c216ca",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Master exit carries the full revision set and independent adjudications.\n\nAnchor: \"## The exit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e11b70700968f78ab03d551a82ad8fb371506d83",
+            "content": "sha256:1305e15ab630ef8c13130106ad2612492fce7446bd856eef28fea19da46a7214",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations.\n\nAnchor: \"## Dispatch defaults\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e11b70700968f78ab03d551a82ad8fb371506d83",
+            "content": "sha256:4482cdb0bac5f040bd43faf42189fd3f934aff853c1c8d0c4c03b4df98c216ca",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

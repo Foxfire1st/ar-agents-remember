@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_codex_native_history.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Bounded items are probed and opaque cursor consumes each source page once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496df49f07223ed7c72f059cb88d7d11f1aaf0cf",
+            "content": "sha256:607b035da0af3b38900ecf5ecadd94089f138112cdf95e9c0a4f57e82c3091cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bounded_items_are_probed_and_opaque_cursor_consumes_each_source_page_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Two cursor cycle terminates typed without re requesting a source page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496df49f07223ed7c72f059cb88d7d11f1aaf0cf",
+            "content": "sha256:98a7aa88c30b7d7cd3e7dd1f61cb104122500f963f0be3c9e281a1a2e8e4c828",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_cursor_cycle_terminates_typed_without_re_requesting_a_source_page"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recognized bounded rpc failure never silently falls back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496df49f07223ed7c72f059cb88d7d11f1aaf0cf",
+            "content": "sha256:b71cce71206e40e8d2ad3f6b009891767f3ab7fc99c3297b862ee60a6c0b26ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recognized_bounded_rpc_failure_never_silently_falls_back"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source response over post transport materialization ceiling is typed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496df49f07223ed7c72f059cb88d7d11f1aaf0cf",
+            "content": "sha256:646303e8b2212c40f506da66c9397ac97e4ec8b364b66622732d62a840f5c156",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_source_response_over_post_transport_materialization_ceiling_is_typed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Native history limit outcome survives both control ipc clients.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496df49f07223ed7c72f059cb88d7d11f1aaf0cf",
+            "content": "sha256:a1b426436ab1c194cc6c90fa1710df156e32955945181de4a10aee7199812b8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_history_limit_outcome_survives_both_control_ipc_clients"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

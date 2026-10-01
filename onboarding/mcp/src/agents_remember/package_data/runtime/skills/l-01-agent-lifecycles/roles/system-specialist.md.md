@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/roles/system-specialist.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82`|
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
-| governingOverview | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -80,68 +70,23 @@ response protocol (task doc `08_degradation-protocol-and-system-specialist.json`
 - Dashboard-owned session role is immutable; capture attempts are refused and escalated, not
   absorbed.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# System Specialist` | skills/l-01-agent-lifecycles/roles/system-specialist.md:1-14 |
-| The detector this seat investigates: degradation events, metrics snapshot, critical failsafe. | `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323 |
-| The shared provider-degradation response protocol this seat operates inside. | `## Provider degradation, as every seat meets it` | skills/l-01-agent-lifecycles/core/lifecycle-frame.md:57-70 |
-| The recovery moves this seat's investigation feeds. | `# Operation — Recovery`; `## The recovery moves, and when each applies` | skills/l-01-agent-lifecycles/operations/recovery.md:1-1; skills/l-01-agent-lifecycles/operations/recovery.md:20-34 |
-| The role census / escalation ladder registering `system-specialist` as the ninth portable role. | "system-specialist" | skills/l-01-agent-lifecycles/templates/manager-brief.md:171-171 |
-| The inbox role/message-kind schema this seat is addressed through (`AgentRole.system-specialist`, `degradation-alert`) — vocabulary moved to models/operator_inbox.py by L9. | "AgentRole = Literal["; "degradation-alert" | mcp/src/agents_remember/models/operator_inbox.py:22-22; mcp/src/agents_remember/models/operator_inbox.py:44-44 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Canonical source this bundle copy is sync-propagated from. [1]
+- The detector this seat investigates: degradation events, metrics snapshot, critical failsafe. [2]
+- The shared provider-degradation response protocol this seat operates inside. [3]
+- The recovery moves this seat's investigation feeds. [4]
+- The role census / escalation ladder registering `system-specialist` as the ninth portable role. [5]
+- The inbox role/message-kind schema this seat is addressed through (`AgentRole.system-specialist`, `degradation-alert`) — vocabulary moved to models/operator_inbox.py by L9. [6]
+
+### Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration role file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260712-TRH-L4 Generated-Copy Doctrine
 
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
-
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "system-specialist" repointed to skills/l-01-agent-lifecycles/templates/manager-brief.md:171-171. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T20:45+02:00 — owning-seat merge resolution (source-line convergence): the
-  `governingOverview` field and its link were restored to `../../../../../../../overview.md`.
-  The 2026-09-16T08:01 metadata repair above dropped one path level — this card sits one directory
-  below the skill's `SKILL.md` card, so the target it names (the MCP package overview,
-  `onboarding/mcp/overview.md`) needs seven levels up, not five. The five-level value resolved to
-  `onboarding/mcp/src/agents_remember/overview.md`, which does not exist, so the card pointed at a
-  missing file while its own text claimed the MCP package overview. No content claim changed; only
-  the path. Verification metadata is unchanged and stays closeout-owned.
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.**
-  The canonical system-specialist role was rewritten (150 lines) into the corpus's readable order and
-  declares its inherited sources with `**Inherits:**`. Updated Logic with the readable order, the
-  inherited sources, and where the recovery moves and provider-degradation protocol now live. Repo-
-  Internal References: the orchestrator-role citation whose anchor (`## Provider Degradation Alert`) no
-  longer resolves was replaced with the two current homes of that rule, and the canonical-source
-  citation range was corrected to the rewritten file's real head. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
-
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "system-specialist" repointed to skills/l-01-agent-lifecycles/templates/manager-brief.md:165-165. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "system-specialist" repointed to skills/l-01-agent-lifecycles/templates/manager-brief.md:167-167. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized orchestrator-owned specialist
-  dispatch, explicit ambient takeover, and fixed structural-row ownership. Verification remains
-  closeout-owned.
-
-- 2026-08-28T14:18+02:00 — Reconciled system-specialist citations against the committed PDLS
-  candidate; the provider-focused role contract remains unchanged.
-
-- 2026-08-11T19:58+02:00 — Recorded `system-specialist.md` as a synchronized runtime artifact of the current canonical lifecycle doctrine; it introduces no independent role contract.
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 5 repository-internal bundle, detector, dispatch, role-registry, and inbox-schema references; final scoped result 0 (checker-clean).
-
-- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-08T01:20+02:00 — 260707-HFX-L7 provider degradation protocol: created onboarding for
-  the new investigate-first system-specialist seat (report-before-fix, providers-only scope,
-  explicit-order fix mode, one-rung escalation to orchestrator). Gap-filled by the manager after
-  the curator memory pass omitted this one package-data sidecar and closeout's onboarding-refresh
-  gate blocked on it; every other L7 onboarding surface was written by the fresh curator pass
-  (see the curator memory-pass report). Verification metadata pinned until closeout stamps the
-  HFX-L7 commit.

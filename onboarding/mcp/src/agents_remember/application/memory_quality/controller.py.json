@@ -1,0 +1,507 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/controller.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The refusal runs before any scan and returns a refused result naming the crossing sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:a615899736aae3f8c317123c8f935e70b75405d00193ba9fb8691d63cd70a36a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_memory_quality"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unconverted_line_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Each open item counts once: since MIK-R09 the card's and the route's traces and the uncovered file's `unexplained_hunk` (3); rows make the count 0; today's function is not called.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f1948f145246baa4b6f177eb8b28a39c86f655",
+            "content": "sha256:3791c03cb6a7b1e0c4c7d47bfda608971ed4afd7ffa62183d20f6c6d8b187f93",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The report-only findings pass through the filter.\n\nAnchor: \"report_only.extend(_needed_rows_dropped(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:efe76312e77682e68e992671355a3d71847f9fe3476e46414da36a4c0c18a76b",
+            "locator": {
+              "end": 712,
+              "kind": "line_range",
+              "start": 712
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The filter and the adjusted count.\n\nAnchor: `answering_trace_subjects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:e3eed057ca2ce1987b93c26ff3a0d4086762ea0473199bc965a64601abdf36a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_needed_rows_dropped"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The raw count is 2 and the response count 1; only the stray row remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:4c5eafea8bf2553e0ae900b990d3fbbf9ed3ecc3601b15a7077c1766087e525f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The run evaluates the gate and briefs it.\n\nAnchor: \"gate, worklist = _knowledge_gate_and_worklist(scope, candidate_inputs)\"; \"response.update(_knowledge_briefs(worklist, gate))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:d30622187a30162290aaf9f949eddfb22aef39fa7c6e81518b08b818748ac930",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 445
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:13443460f3ad91b4157b1fd9c1852797656053dba94a16ffb331d9e3093cb0ee",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The gate carried to the checklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:7616d7c3e4e63c1bbcd879dd1c72d76aed494dc9cb3940e9dcd3551c4904605a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PreparedInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The gate over the exact curator candidate; `None` where it does not apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:58c69b529ff72df2527aa7718489f45d33129774eb5e9b546e4a2384b09acda8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Each gate finding is one repair finding, each open item counted once.\n\nAnchor: \"repair_findings.extend(_with_gate(gate_findings, prepared.gate))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:f46bff14ccf15ad96dfaf4add6284831b1be86fc914733e91c17558c139f1fdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_with_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:3fa222544a3a64f21cce38b1d127538ae58ed3bd7944912bd587f6c6549f0602",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_findings_beside"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:e6d8900949c661a6afba962e7adfbdbc9918f3c38c6ada8d8cf42943e90bb628",
+            "locator": {
+              "end": 711,
+              "kind": "line_range",
+              "start": 711
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The census blockers, split out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:13ba507951d84e7229ae4cfe7395f5d55b0c9b5d88bcb3deb6db6dafbf727674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepared_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:0cfcbea14c2832d8e4f50ae6be718a4b709293bd5c1e8965e5e3c12fcecc0f96",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualityExecution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_curator_checklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:e8b26e89b7081e4a34d185bda2198f8cb1b1d124a25104055eca841e18724bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_memory_quality_request"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_memory_quality_request"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll_memory_quality_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer.\n\nAnchor: \"if not execution.publish_curator_report\"; \"_attach_curator_checklist(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_curator_checklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:fa11606fa82c7bb78f5a4d83332e6c2950facf38dc6df4205db8dd4b305b8f98",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:2cac897afdc9131e3bcace94eb09e67f20fc497380f995630e188fd25c5d9523",
+            "locator": {
+              "end": 485,
+              "kind": "line_range",
+              "start": 485
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "R03 candidate-tree freezing and change refusal around curator publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:0bc34dd86368215adac6559c168363adf1c1169c366e0f8790436cdc0f66302f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_curator_candidate_inputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:e00fdf6cb79ab8f97990ce8e38e0391ee664b89e845d50142e407dcc7d2fe966",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_same_curator_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Why a run refuses its unconverted memory: the leaf's line, or the official checkout of a repository-level run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:1e4695090e86243d29edfa20d74d1f551cd102d5e79638d560e9fe6a6c6fbf17",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unconverted_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response.\n\nAnchor: `worklist_summary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:52f08d5ee85c00d08d65558dcfc05c043c5a1eb91a66b562efa56726350d1eed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_and_worklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:ef9b492e9cbacddddf4e0196fe8fc93f1ba3a6971b27dcaa5637d4225637c070",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_briefs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The prepared inputs handed to the checklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:7616d7c3e4e63c1bbcd879dd1c72d76aed494dc9cb3940e9dcd3551c4904605a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PreparedInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only a contract-scoped run gets a worklist, through the one recompute entry point.\n\nAnchor: `recompute_leaf_worklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:5237413a80e1aa4c55eaf5683bf672c745d09079acf3197ecba5d862e70bfa8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path.\n\nAnchor: `knowledge_worklist_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_curator_checklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f599e6cb7ae08370dc907627108697cd4c118803",
+            "content": "sha256:760603c37479f3c55f9774626c7bd71d0f3e556c64a2ed9b763e59a1bdf4707e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The checklist's leaf block hands the gate the changed paths and the accepted identities.\n\nAnchor: \"gate_findings, gate_report_only = _onboarding_refresh_gate(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:7e7dcf9ee26ea14497f7605dd049bd825b1d8743336f97326fac290fe9293da4",
+            "locator": {
+              "end": 704,
+              "kind": "line_range",
+              "start": 704
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The dispatch: the history-file gate on a converted tree, today's gate otherwise.\n\nAnchor: `leaf_onboarding_trace_sides`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:d1d84de99bef2d8de31b440791aad3947b5f3687812f74f97d09bb4397a674e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_refresh_gate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

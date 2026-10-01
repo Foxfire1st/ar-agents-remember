@@ -1,0 +1,142 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Mirrors the observer event envelope (camelCase, `extra=\"forbid\"`, schema alias).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "locator": {
+              "kind": "symbol",
+              "name": "Event"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The append-only store that serializes and folds these snapshots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
+            "content": "sha256:875d8c2001dd8671d1d77b40f8b60ec15d0301937d920cfe18a9437366bb168c",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateStore"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
+            "content": "sha256:69d07c0d453c7c96499ebe567b2d47e9567d48a93510888616a6ca8257e2f413",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ids come from the local ULID mint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca1e65d5adf705f43b2e7e7645571d514f033d44",
+            "content": "sha256:6fccc769ef95e64d5c53e3ec6afd3a1828fc5ac5b1385c032b2b52665415ce52",
+            "locator": {
+              "kind": "symbol",
+              "name": "new_ulid"
+            },
+            "path": "mcp/src/agents_remember/observer/ulid.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af2a37e3cdff5f67bda1c0fd35069fcde2489e7",
+            "content": "sha256:e5c0b9f39701e93fc902434314625b8e41e4f8627df07b304467256fe1dac109",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`DurableRecord` supplies the `extra=\"forbid\"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:592e3db0cf23a5975acd675c9f0ea4cd776f9197a5228977f32c151529dd34b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "DurableRecord"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_version_supported"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:7cdd7ebf24d5534ce80d66e4639f3017b81142344eabfb895bf7400158b17a50",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:9e106904ce26833811676a71061bc28df2135311590e7fd62e8faf50634c7722",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,627 @@
+{
+  "path": "mcp/tests/_serving_handoff.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The oracle's four scheduling terms are read from production declarations, not literals: 21.0 s of logical scheduling before any measured overrun.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:89dc1b0833a30a7360fdc7e065dd8ff1c98cb105bec95283457b0a010b6540da",
+            "locator": {
+              "kind": "symbol",
+              "name": "P"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:c6428f6ec3c42d12effd157a5582b856f63233fc86e5209237ff15f1fe53bd6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "F"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:72e096e529639690698878b0e687fe5aba3590323f4a3ca15a996fd84fc58515",
+            "locator": {
+              "kind": "symbol",
+              "name": "N"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:3bfb194da439101f170ad6f833023b386e353dd8946ff03e12e5b86de5be33eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORST_PHASE_BOUND"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The adapter readers a sweep consumes, the one terminal fact a case can make readable, and the three park points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:69eefe538f97f2d8f376c514ca3023f636fbcf93f7379d0b4044196b0cc5f8ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Adapter"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:b541d7d1a4a27d6b06252d3c123ecd917afe9aba01fec13b890aab6f72f0fa5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "make_readable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The notifier loop's own catalog port, delegated in full and recorded on every `list()` read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:0da9f739dd9267e1a773c0c77d40cc54ad5979013389e94b8d271f0327bb4368",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CatalogReads"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:13ef573b9b706d30cd42330d05f4f3c126178dab8634c38dc6aa1f00833ce2f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "list"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "One notifier pass recorded around the real `run_agent_notifier_sweep`, so \"this pass actually read the fact\" is decidable per pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:ba0728145f6be87d81c4ff0a54b326936b72b9eb06c86b823a0bc7d1ff80c607",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NotifierPasses"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:8f9205e3affed204a69a341eaefc25808b942d55eb6c034beec62431a50f4364",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The real heartbeat store's end-of-pass tick, which is where a pass is parked as in-flight-but-not-consumed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:ef21c3451dbfdf95ff5a111cdeb0023445ea4b541272bb8cbe8ef085e29a7d8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_HeartbeatWitness"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:6b25461e3702d52d84739db60fbe0cff0a34d668500d5e8cbe92db6e899c0303",
+            "locator": {
+              "kind": "symbol",
+              "name": "tick"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A fresh frozen settings snapshot per load, which is what makes in-place enablement observable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:50a789d7307676c03962716e55dd8a117ce61b1b3071d4d980abb296c123b98f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SettingsSource"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:32aa33bd2229502d83d56e287ea2ea572399b1e24d05affad640a6c81dbee477",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_enabled"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Three seeded rows in the order a full sweep observes them: evidence, second steady seat, starting row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:dbb10bcb2171e8d27f83a3b5cf1a307c92887244180cb620f32b5eb0f0a7dd05",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "One disposable world composing the recordings, the adapter and the real fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:70d3e0575a1d0f3e27c47bd1a50267ad7bfdf202eb3230a4f634da99810ea355",
+            "locator": {
+              "kind": "symbol",
+              "name": "_World"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The shared serving fixture extended with the real notifier loop's collaborators, rather than a second harness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:0feb7d67b4c077fefcada40b6035fde9de75f90e7705170f8252df59cc62a358",
+            "locator": {
+              "kind": "symbol",
+              "name": "_HandoffFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Every oracle term read back out of recorded events, with `bound` composed from the measured terms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:3a86a1c5e5ca1470462a22907640df90992ff0229433218b7e129326477be31b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Handoff"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:d5711f1cc60284f094f406623f89fef4cd60c3b73f94ae0aedf43da44c8e0579",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The driver releasing one parked sleep at a time so a case chooses each pass's exact instant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:d390985336f142a427999df8cd954aaa31155b65c8305a3c16352da87810fe86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_HandoffCase"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:02762409030db87f2c1c41c3b4e051cf59924d3f44afd159caf0609a2c3d2068",
+            "locator": {
+              "kind": "symbol",
+              "name": "observer_poll"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:fbe79e06f3ea53b9ae4aa23487e69f69b7521dad68e7e4e298b30e736288c30f",
+            "locator": {
+              "kind": "symbol",
+              "name": "notifier_poll"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real `asyncio.sleep`, captured before the fixture swaps it for the virtual clock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:cfc7b85855a2e82784af3a74dc8bd57589a1224f4fd66612e782377ce8709aaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REAL_SLEEP"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Re-parking, not a new record, is what proves an interval was consumed — a disabled loop re-parks without running a pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:9c220943d34a9e7864e8422e351d1e749012069ba2f543637753c0ade3611c13",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:ada84579e88e543f6968af4dab3343ac1bbdd9f716f9696cce58aa325cd1aefc",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll_until"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The arming choices that make the observer phase strict rather than maximal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:9f47db98331cbae7c5f1075ebfd9f6f1aa68807c784d31fecca8b02d1ba6642a",
+            "locator": {
+              "kind": "symbol",
+              "name": "arm_the_fact_after"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:31d3c4efcff6cd5d9bc6aaebb195d60846c243758c2d2f02208c64de70c6fd27",
+            "locator": {
+              "kind": "symbol",
+              "name": "arm_the_fact_at"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Every term of the bound asserted against the recorded events, with the three unfalsifiable relations documented instead of asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:fe1967b0a8269b74f91b18547e1b01d388ea0b87fb3abed7c0aa340e3863ecb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_oracle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The production loops and sweeper this harness enters rather than replaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:5cb4bab997fd02e9eace95b13b78a59c4a29d144dc7bc2e7231c5207d1f62143",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observation_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:bf37d7527b4e3d4e69e7f2fa160ae710eae7c33dc4f5586b09917dd3d5ea29e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serving_lifespan"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The sweeper's retained starting-row window and ten-second full-sweep limit behind `refresh`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:ecf9805e5170a4d00f3b6f3490b33284da3f03a5a6d367381d719c50eb6ed2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The fixture this harness extends, and the clock its sleep primitive replaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41e8b9949999c510c9bc4f94cbf8a951fc59d0d5",
+            "content": "sha256:14b8dce2ded758d7f7f27e0f64fc88f84e43ee0667dad8c51b62210131fcdf31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ServingFixture"
+            },
+            "path": "mcp/tests/test_serving_observation_loop.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "41e8b9949999c510c9bc4f94cbf8a951fc59d0d5",
+            "content": "sha256:233e76a706f6e4f93c34dd69b01c3ae9c88d1e3e6911091acbeec09aadfb2d63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_VirtualClock"
+            },
+            "path": "mcp/tests/test_serving_observation_loop.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The proof site that owns the oracle's documentation and its eight cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:12b7c4d1ffd07b558f6255ac6d942d56a443f835085f828cb5318d07e0ed6489",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingNotifierHandoffTests"
+            },
+            "path": "mcp/tests/test_serving_notifier_handoff.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The driver's step budget is sized from the observer's grid so a late sweep fails on the bound rather than aborting the driver with an attribution error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:936b97dbfff12381b2648ceaad8269c9e09ee638569b377ad089a5673855540a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_STEP_LIMIT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "One `refresh()` attempt's window and how many rows it probed, which is how a full sweep is told apart from a fast-path pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:5c305f9246cf4bf525c96751f30028a45c52481c4a9114ea49bd35c28c4c4d45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SweepCall"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:859fd6ff2b4ef08912118c4b252e9312ff91f91ba7478634bb16c57594d774a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "full_sweep"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one entry point both loops call; attempt numbers and records are allocated under one lock because `measure()` compares that index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:7cd4cbc434e896ecf38ab34ca08b2b0f8e6993d68f2fef541df61ad64da69d37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SweepWitness"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:f3fa3cae333e606ae5eb16bde7f8273041cd0dddb278f7318bf4648976ca0925",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The last refresh still running at a moment: the pass that can delay the next sweep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:e2d204a4e0314855fd64b844bf268a69ee912b030107b12024af8c1b88b071c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "in_flight_at"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The real catalog with its single durable write path recorded, so the commit's instant, order and rows are observable while `batch()` and the atomic replace stay production code.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:e1e20b5f0cb40a45be5d468ab5da33e4f7d1566feeb72b8e5ef8a569f1711794",
+            "locator": {
+              "kind": "symbol",
+              "name": "_WitnessCatalog"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:0f5901ee4e99b32728991c478cead610576ff13a1e696faca5ec550c204d9d28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_disk"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Durable truth is read with `include_terminated=True`, matching the notifier's own read scope rather than a narrower filtered one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:0893011a74bf8d5ddef75ccb68fbcc7f8e72f8a3b0bea89cddb423db1493fd23",
+            "locator": {
+              "kind": "symbol",
+              "name": "committed_holds"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The one in-batch hook, which holds a sweep inside its own open batch after it projected the fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:fc08432621a057bef9d2eb73a0ca122ff1152f5e970cd0be3062b3292fe3e977",
+            "locator": {
+              "kind": "symbol",
+              "name": "upsert"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

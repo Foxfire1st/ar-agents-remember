@@ -1,0 +1,127 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_control_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The daemon submit route selects the public raw-free receipt serializer.\n\nAnchor: \"public_receipt_json(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:0e95eebe21e1f46c8f980ef43898855e7150d5ead9b213fc79bca3383e81431a",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_submit"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:c6582a376d757fa3d0dcde129e9ed0f8a69c2c99a1a90f357e4153fd4ff5d32e",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 370
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The daemon reconcile route selects the public raw-free reconciliation serializer.\n\nAnchor: \"public_reconciliation_json(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:7fd3427944f2f12aeb8ad13e4bdd0a3c71c8f2b6144b00ff566c464c14f27574",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_reconcile"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:91e64f53c072a047e90f5e9c61f50c9ee85c3759cf56f8f3c1ff0adccf5f28af",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 405
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Private IPC still serializes full receipt evidence for exact-session peers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:e3cdb324e812664b8141c02bc15910b2ac4b53f0934a91e5262a960560808a54",
+            "locator": {
+              "kind": "symbol",
+              "name": "_submit"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:62870f689f2d115150055eee331d174a68f254421d1a9ad2f2b31b2cb2dec731",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Private IPC still serializes full reconciliation evidence for exact-session peers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:119e0c76f48f18ad3fb188a3cc5b8af3747e11f419dd6aa971fa7578d36468fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:e7bb2b4d7810e2823ecb7abd7e6b015665cb7cfa2bb69f9f902f33dca01edcd5",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

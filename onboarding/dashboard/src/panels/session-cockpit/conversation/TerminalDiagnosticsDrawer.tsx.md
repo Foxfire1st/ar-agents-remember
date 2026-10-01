@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -46,39 +36,26 @@ never read as app chrome; for a controlled session the hosted PTY is read-only.
   restores on close — F9); this component only renders the close affordance.
 - Vendor output is always framed (A7) so it cannot read as app chrome.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The keep-alive PTY surface hosted read-only inside the frame (its additive `readOnly` prop). | "terminal-diagnostics-frame"; "<PtySurface focused={focused} readOnly />" | dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx:110-111 |
-| The session type the drawer targets. | `OpenSession` | dashboard/src/data/sessions.ts:28-83 |
-| The stage body that owns default-off toggling and hides the drawer while the library overlay is up (F8). | "import { TerminalDiagnosticsDrawer } from \"./conversation/TerminalDiagnosticsDrawer\";"; "const [chatsDiagnosticsOpen"; "data-testid=\"chats-stage-layers\""; "const toggleChatsDiagnostics = useCallback(" | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:525-525; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:209-218; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:396-396; dashboard/src/panels/session-cockpit/stageLayers.tsx:8-8; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:526-526 |
-| The view that captures/consumes the diagnostics focus-return token (F9). | `toggleChatsDiagnostics`; `isConnected` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:272-272; dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:260-260 |
+- The keep-alive PTY surface hosted read-only inside the frame (its additive `readOnly` prop). [1]
+- The session type the drawer targets. [2]
+- The stage body that owns default-off toggling and hides the drawer while the library overlay is up (F8). [3]
+- The view that captures/consumes the diagnostics focus-return token (F9). [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-03T09:55+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 11 assigned citation findings (3 missing anchors, 3 malformed sources, and 5 prose citations); final scoped check is clean. Max-reviewer Tier-2 subject-binding addendum replaced declaration-only pointers with the PTY implementation, library/drawer render gate, and diagnostics focus capture/consume ranges.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the terminal diagnostics
-  drawer — default-off, inert + aria-hidden + no-PTY-when-closed, the A7 vendor-frame lockup/caption,
-  and the read-only controlled PTY via `PtySurface readOnly`. Verification is pinned to the leaf base
-  (`0be0099`) because the new source file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

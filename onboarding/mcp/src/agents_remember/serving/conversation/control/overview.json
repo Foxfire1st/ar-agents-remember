@@ -1,0 +1,453 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control",
+  "references": {
+    "1": {
+      "note": "`get_conversation_runtime` is the runtime dependency entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:be269e721d7ad8df1d80760e865b4a339ae56d6f16c391904602272cb85ce46e",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_conversation_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:b8333ca02abf8e45b12d0b0436dfa0755b38f7dcff5b4c2a848f2283a1645626",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`WITHDRAW_OUTCOME_RESPONSES` declares the withdrawal outcome response table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:3d9b08bcc468470e0856222e0973813bdfeb00dd285539ff2b2d0620eac2653c",
+            "locator": {
+              "kind": "symbol",
+              "name": "WITHDRAW_OUTCOME_RESPONSES"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:dd705633f49985d9a0f344de01242d7f33fe4e55207f05c8b52b9dfe97842542",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The control client sends the epoch-guarded interrupt write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:97e543075a3b8a2a86084f0fa7442ce706ef01bca8f6911ce6487aaa2aba40fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "interrupt_control"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:ab7d0fe8ce423608d643ffb756784913322d8a2ce4f680fd338551964623487b",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 425
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The control client validates paged operation-timeline reads before returning them.\n\nAnchor: \"opaque cursor coordinates are invalid in the operation timeline domain\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:519362615e8c3f70415cdff5f0a1545154a4d273082196b162b3bbb20ac4b1fb",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 454
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The control client validates the additive asset channel on prompt submission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:b3efdb1a38a081ab704d9f83f8d231422095971acf5849041788e0674c879d0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "submit_control_prompt"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:d6c022d144854328df3bf08f5e0d674f8b254bdb66661ab2a629e43e34153f5e",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 214
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`clip_evidence_payload` is the truncation-envelope entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:9f814acd3a3dea8bb6c8311fc5e370fabd2c37ba17f379ba49ad8da12da65d5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "clip_evidence_payload"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Pi settlement reads the preserved terminal identity through its stop-reason reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46b60613914598fb1f3d5815a8e76d9f81a86372",
+            "content": "sha256:085cc20490026cf2c12215759570f74f23f6443dd1cbec82e22559bc5398bc35",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pi_stop_reason"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/operations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46b60613914598fb1f3d5815a8e76d9f81a86372",
+            "content": "sha256:a874b8f12c427a95994fbd08bf9142ee3a92eb15356e927b9927b778445248c7",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 484
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/operations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "`HarnessSubmissionAuthority` owns setter and prompt admission/dispatch on the shared authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:ace0aeb8e2a223c370516931cf9664710e8a4212f01dee2689c6976fad978c48",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessSubmissionAuthority"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:0dbebbf3069744afd8f59c879b66460c0100f5cfb9aa6dcc18b5a749da2cf826",
+            "locator": {
+              "end": 1023,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "`capabilities_for` is the active capability-view entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:d178cb3e9af7566c2ce4d446ce1cfdd59451018f5e589405a37201afd595bfff",
+            "locator": {
+              "kind": "symbol",
+              "name": "capabilities_for"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:57d50753cfe99f0a8c0b0ff4ac9461d7b4d3b9b7185d3509a949813ff62fccbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_conversation_authorization"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:f755ee8ac1086b9e97408980809c36c18374c9d074709c3c6938ef57bdc81f6d",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The conversation models define `protect_queue_source_privacy`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c42fab80701148e55eb502581ada2d0dcccc9c0a",
+            "content": "sha256:7bca4e610f48b2b797ff1acf2463ea7404cc9191683040c9203fe4fe381f0bdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "protect_queue_source_privacy"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/submissions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`operation_fingerprint` hashes the canonical operation identity without retaining raw request content.\n\nAnchor: \"def operation_fingerprint(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6de2f473e3782a9770f89872bc2910c334f97ab",
+            "content": "sha256:ce9529f22d0b4bad6f88c745721d499ad77fc418b36491366aa9939d2bd0c04b",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/models/conversations/telemetry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`PolicyPart` is declared in the route-local `control/policy.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0194cffc7625f827a5732a8c50372ef17646af2f",
+            "content": "sha256:398896c73ab97412c0a2157da86341d27692df72f856ebaf18d6dd7f04a65d68",
+            "locator": {
+              "kind": "symbol",
+              "name": "PolicyPart"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0194cffc7625f827a5732a8c50372ef17646af2f",
+            "content": "sha256:9f2a63b5f534c6d07385bc35b7727473f18de780f699baf1f077c6b4f68eef66",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`ConversationPolicyProjection` is declared in the route-local `control/policy.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0194cffc7625f827a5732a8c50372ef17646af2f",
+            "content": "sha256:a05482c2cb34eed569628497fc4bdf4dad56069c5586cf248e37f3175df954e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationPolicyProjection"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0194cffc7625f827a5732a8c50372ef17646af2f",
+            "content": "sha256:9e81dc1b949c1505ffaa501068465636b308884d37033d081bf011561c5b689c",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`_map_typed_error` is the control API error-mapping entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:5b9552b4dc3f6a834be14a7e42604b16bb99a30ea72366034093e6e73aced1f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_map_typed_error"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:b3f2e0efe7cf6cb07371457a7efde5a40e69e5014d54574ec69dd8a7c43e184b",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`CONTROL_RESPONSES` is the six-status shared refusal table for the control surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:1fd5333f1c3c8701ab67921139a44cd45e107688ca11a1a2688422dbc134b0d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONTROL_RESPONSES"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:ed4902da95d76aec1ea335ef87753c1366fe361e0982d8877a2840106bdbc5a3",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`INTERRUPT_OUTCOME_RESPONSES` declares the interrupt outcome response table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:61e08401c0d139c5b631654da38ed5a4d65ea946001368a46b4b31cebfe1254d",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERRUPT_OUTCOME_RESPONSES"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:dc9324ad87aa0cbeb49686226a3c94b6b9eac5eafc9692fef11e7a247d0a6f8b",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

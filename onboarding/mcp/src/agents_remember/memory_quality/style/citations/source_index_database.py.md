@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T02:22:00+02:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -43,20 +33,14 @@ Readiness schema and limits come from `source_index_state`. This module owns SQL
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The exact metadata schema binds generation, snapshot, roots, and candidate selection to readiness. | `_validate_generation_metadata` | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:58-98 |
-| Canonical bounded counters must match the ready marker. | `_generation_counters` | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:101-126 |
-| Opening checks size and metadata before admitting read-only queries, with explicit integrity checks when requested. | `open` | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:224-262 |
-| Snapshot publication records candidate identity alongside the application checksum and counters. | `write_snapshot` | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:333-354 |
-| Anchor queries retain distinct direct and quote lookup paths. | `locations` | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:439-447 |
-| Explicit integrity validation checks packed data, references, counters, and the stored digest. | `validate_application_integrity` | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:486-507 |
-| The application checksum covers query-bearing rows including FTS term/document pairs. | `_application_digest` | mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py:744-782 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-06T02:22:00+02:00 — L30 recovery source review: Documented candidate-bound database metadata and retained query/integrity responsibilities; replaced stale source ranges. Verified against prepared code commit `97e8ed2e1fae21756c3ad995c30613d4fbfcc503`; source review does not claim Gate-5 execution or recovery acceptance.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- The exact metadata schema binds generation, snapshot, roots, and candidate selection to readiness. [1]
+- Canonical bounded counters must match the ready marker. [2]
+- Opening checks size and metadata before admitting read-only queries, with explicit integrity checks when requested. [3]
+- Snapshot publication records candidate identity alongside the application checksum and counters. [4]
+- Anchor queries retain distinct direct and quote lookup paths. [5]
+- Explicit integrity validation checks packed data, references, counters, and the stored digest. [6]
+- The application checksum covers query-bearing rows including FTS term/document pairs. [7]

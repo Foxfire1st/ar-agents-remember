@@ -1,0 +1,71 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/ChatContextBar.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Unit under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "707beb3f24632d9964c70ac53fc0a6a88d9dd9eb",
+            "content": "sha256:3ae78784af2d0a68f1476ce4292a37ba5db0cec81212ecdcccf1f7f0cf18d201",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChatContextBar"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatContextBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "707beb3f24632d9964c70ac53fc0a6a88d9dd9eb",
+            "content": "sha256:2fa54e04a787e1ef32d0be2ca7ae00ce5563d6566dcbe088c71cff0bfbd00c99",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatContextBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The typed `taskDoc` builder `leafDoc()` now returns, replacing an `as unknown as TaskDocNode` cast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "content": "sha256:b6f4449a610c853dc02c93cbd467d7e51859462c455d37452856c2db473369b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDoc"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`buildTaskTree` — the only consumer of the seeded doc, and the reason the richer base changes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:70d0d8fbe1e746fae171a5ac7b7ff6d5f28320f50478c32fc2ba299684889d3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildTaskTree"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

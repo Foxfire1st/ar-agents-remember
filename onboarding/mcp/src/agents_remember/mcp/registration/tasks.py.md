@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/registration/tasks.py
 
-| Field                  | Value                                                    |
-| ---------------------- | -------------------------------------------------------- |
-| repository             | agents-remember                                           |
-| path                   | `mcp/src/agents_remember/mcp/registration/tasks.py`       |
-| doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-09-30T15:25:16+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
-| governingOverview      | `overview.md`                                             |
-
 ## Governing Overview
 
 [registration route overview](overview.md)
@@ -109,14 +99,14 @@ recreates everything.
 - Document schema validation, master/leaf rules, and the reopen refusals live in
   `application/task_doc_tools.py` and `application/worktree_tools.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `task_doc` / `task_reopen` payload builders. | `task_doc_payload`, `task_reopen_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32; mcp/src/agents_remember/mcp/tools/task_doc.py:35-48 |
-| The finalize description: the folder-master row and the sub-task refusal (MIK-R38). | "existing immediate parent, or names none and its folder's task.json master lists it, the"; "assertions are omitted; a sub-task naming none whose folder task.json is not a master is" | mcp/src/agents_remember/mcp/registration/tasks.py:90-103 |
-| The finalize builder. | `lifecycle_finalize_task_payload` | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-32 |
-| `FinalizeTaskDocs`. | "class FinalizeTaskDocs:" | mcp/src/agents_remember/application/worktree_tool_requests.py:144-144 |
+### Repo-Internal References
+
+- The `task_doc` / `task_reopen` payload builders. [1]
+- The finalize description: the folder-master row and the sub-task refusal (MIK-R38). [2]
+- The finalize builder. [3]
+- `FinalizeTaskDocs`. [4]
 
 ## Historical 260815-DAG-L3 Queue Registration (Superseded)
 
@@ -176,94 +166,3 @@ exists to find — a capability refused by a surface that still advertises it (`
 reversed). The pin is taken from the **registered** FastMCP surface
 (`TOOL_REGISTRARS` → the real `task_doc` description), not from this constant, by
 `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
-
-## Update History
-- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38.** The `lifecycle_finalize_task` paragraph records the docstring's two new clauses (ruling 12:33:07 Q3; review R1 note 5 and the re-wrap, ruling 13:11:32; "a sub-task naming none", ruling 14:12:52) and that no argument or schema changed; one row added. The docstring grew by two lines, so the `skip_step` vocabulary citation was re-pointed by the exact +2 shift (`119/135/141-142` → `121/137/143-144`; every one of its six anchors re-read in the new ranges). The line numbers in the TSIP-L4 section are those of its own time. No verification stamp was advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the `task_doc` description stops advertising the refused `'light'` kind (`T43`, surface side). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: "operation: 'create'"; "exact existing step"; "sets only that unit done"; "records intentional-skip provenance without cascading"; "A nonblank reason is required."; "explicit status clears an earlier skip disposition" repointed to mcp/src/agents_remember/mcp/registration/tasks.py:119-119; mcp/src/agents_remember/mcp/registration/tasks.py:141-141; mcp/src/agents_remember/mcp/registration/tasks.py:141-141; mcp/src/agents_remember/mcp/registration/tasks.py:142-142; mcp/src/agents_remember/mcp/registration/tasks.py:142-142; mcp/src/agents_remember/mcp/registration/tasks.py:135-135. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:54+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
-  base `a12c511f`): the `curator_coherence` **description** is one of the leaf's five changed paths,
-  so the card gained a **body** update rather than a restamp. The registered text now names all nine
-  fields `publish` requires, says `status`/`prepare`/`validate` forbid them, and the validator's
-  refusal appends `missing: <fields>` (`T50`, both halves). Recorded why the description rather than
-  the schema carries it: `CuratorCoherenceRequest.model_json_schema()["required"]` is
-  `["action","contract_path"]` because the constraint is conditional on `action == "publish"`, and a
-  model-level validator reports `loc: ()`, so the message is the caller's only route to the field.
-  One citation into this file was re-derived against the new bytes — the `skip_step` vocabulary row
-  moved `:114-136 → :119-141` (every one of its six anchors re-read inside the new range) — and the
-  card's other citation rows point at other files and were not moved by this source. `lastUpdated`
-  advances with this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` stay at the recorded
-  verification because the candidate is uncommitted and the governed closeout owns the real code commit.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "class FinalizeTaskDocs:" repointed to mcp/src/agents_remember/application/worktree_tool_requests.py:144-144. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "class FinalizeTaskDocs:" repointed to mcp/src/agents_remember/application/worktree_tool_requests.py:144-144. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: the `task_doc` tool **description** now
-  advertises the step plane split by intent. Recorded the new operation vocabulary
-  (`add_step`/`remove_step`/`read_steps` alongside `set_step`/`skip_step`), the real semantics the
-  description now states (`set_step` update-only and never creating; `add_step` create-only and
-  refusing an existing id; `remove_step` delete-only with a nonblank `step.reason`, a decision entry,
-  and the `done`-unit / `Completed`-document rulings; `read_steps` read-only; one exact addressing
-  rule where `parent` selects the namespace), and that this change touched the description text only.
-  Added the invariant that the operation vocabulary lives only in the description because `operation`
-  is a plain `str`, not an enum. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "class FinalizeTaskDocs:" repointed to mcp/src/agents_remember/application/worktree_tool_requests.py:147-147. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "class FinalizeTaskDocs:" repointed to mcp/src/agents_remember/application/worktree_tool_requests.py:133-133. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-29T08:52+02:00 — Registered the single lifecycle-owned curator-coherence API and its
-  structured authority contract. Verification remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented the canonical door tool, disposable queue, and audited unstarted discard surface. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: `task_doc` description extracted to a module constant; imports updated to `application/task_docs/task_doc_tools`. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: the `task_doc` declaration gains `branch_addressed`
-  (policy-gated direct-execution opt-in for `record_route_review`), and the `closeout_queue`
-  docstring caller rule is updated to the declared-caller reality (L16-R2). Verified at code
-  commit a9d50e08.
-
-
-- 2026-08-20T04:28+02:00 — 260815-DAG-L14: the `task_doc` docstring and operation vocabulary add
-  `attach_master`/`detach_master`/`linkage_report` (typed masterRef batch, symmetric detach,
-  read-only linkage facts); a sprint `get` carries `linkageFacts`. Verified at code commit 2f494982.
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13: `task_doc` docstring drops the removed
-  `migrate_execution_topology` operation, documents the graph-less `author_execution_graph`
-  bootstrap, the scaffolded planning registers, and the register write-time shape validation; the
-  `closeout_queue` docstring documents the degraded status readout and the sync-first recovery
-  naming. Verification remains closeout-owned.
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the `task_doc` docstring gains the
-  `author_execution_graph` operation (typed mutation batch, segment-sampling endpoints,
-  Judgment-Register provenance, partition refusals, fact-only placement/numbering reporting) and
-  now scopes `migrate_execution_topology` as the lump-only bootstrap. Verification remains
-  closeout-owned.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-15T09:10+02:00 — L3 content update: registered and documented the public closeout-queue
-  tool contract; verification remains closeout-owned.
-
-- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: the public migration description
-  now spells out the nested master reference/nature cells, graph node and reasoned-edge cells,
-  and the classification plus wave surfaces returned by preview.
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the public task-doc tool contract documents the
-  previewable multi-document execution-topology migration payload and derived-wave response.
-- 2026-08-14T06:32+02:00 — No public schema impact: L23 keeps task registrations task-addressed
-  while the application layer owns reopen planning, lineage, and route-review admission.
-  Verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
-- 2026-08-04T16:28:49+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound the complete `skip_step` vocabulary and semantics to the registration docstring span, with explicit anchors for the operation member, exact-step shape, one-unit completion, intentional-skip provenance, non-cascade, nonblank-reason, and status-clearing predicates. Verification metadata unchanged.
-
-- 2026-08-02T21:07:18+02:00 — 260731-EFA-L6 curator W2-B10: repaired 8 citation findings (4 reference rows); scoped recheck clean.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The three task
-  declarations moved out of `server.py`; `task_doc` now packs `TaskDocTarget`/`TaskDocEdit` and
-  `lifecycle_finalize_task` packs `FinalizeTaskDocs`. Verification metadata pinned to the pre-change
-  commit until closeout stamps the L2 code commit.

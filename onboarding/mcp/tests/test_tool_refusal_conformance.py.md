@@ -1,15 +1,5 @@
 # mcp/tests/test_tool_refusal_conformance.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_tool_refusal_conformance.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -97,71 +87,41 @@ built once per class (`setup_class`, `:195-200`) and closed in `teardown_class` 
   `lifecycle_resume` are also pinned by the sweep's `STATE_DEPENDENT_RAISERS`; their repair needs
   a refusal shape the strict `LifecycleResponse` family does not have (`T66`, deferred).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured in this memory root. These are
 repository-owned delivery-shape facts; no external library behaviour is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The three axes of a typed refusal, read from the payload itself. | `refusal_axes` | mcp/tests/test_tool_refusal_conformance.py:258-269 |
-| The seventeen invocations that legitimately answer `ok: true`, each with its reason. | `ALWAYS_ANSWERS` | mcp/tests/test_tool_refusal_conformance.py:145-203 |
-| The eighteen tools that still lose the envelope, grouped in the source by the mechanism that raises. | `BARE_RAISERS` | mcp/tests/test_tool_refusal_conformance.py:234-255 |
-| The census: one world, one run, and the assertions that bind both pins in both directions. | `FailurePathCensusTests` | mcp/tests/test_tool_refusal_conformance.py:272-463 |
-| The population is derived from the live advertisement and the roster, never a literal count. | `test_the_censused_population_is_the_advertised_one` | mcp/tests/test_tool_refusal_conformance.py:285-294 |
-| The **four** shapes partition the population: a typed refusal, a stateful refusal, an always-answer and a raiser — there is no fifth answer. `260918-TSIP-L10` renamed this case from `..._three_named_shapes` in the change that added the fourth, because the name states the claim and the claim changed. | `test_every_failure_path_answers_in_one_of_the_four_named_shapes` | mcp/tests/test_tool_refusal_conformance.py:296-335 |
-| Each refusal axis asserted by name, so a regression says which one it broke. | `test_every_refusal_names_what_refused_why_and_the_next_action` | mcp/tests/test_tool_refusal_conformance.py:337-359 |
-| `T34`'s nine answer in the envelope at the entry point, read from the sweep's single source of truth. | `test_the_t34_family_is_no_longer_a_bare_raiser` | mcp/tests/test_tool_refusal_conformance.py:439-463 |
-| The executed control: each axis stripped from a real refusal, and the predicate required to reject it. | `FailurePathControlTests` | mcp/tests/test_tool_refusal_conformance.py:466-505 |
-| The hermeticity statement the module is held to: every fixture root inside the disposable world, no provider configured. | `test_the_module_runs_in_seconds_and_touches_no_real_state` | mcp/tests/test_tool_refusal_conformance.py:563-587 |
-| The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census. | `failure_invocations` | mcp/tests/tool_refusal_census_support.py:54-279 |
-| The driver that refuses a table which is not the roster before it drives anything. | `drive_census` | mcp/tests/tool_refusal_census_support.py:282-306 |
-| The nine tools `T34` repaired, owned by the sweep module beside the pin they left. | `T34_REPAIRED_TOOLS` | mcp/tests/test_tool_entry_point_sweep.py:103-115 |
-| The sweep whose benign half this module completes, and the world both share. | `EntryPointWorld` | mcp/tests/test_tool_entry_point_sweep.py:328-931 |
-| The advertised roster the population is derived from and asserted equal to. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-97 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_tool_refusal_conformance.py" |mcp/tests/test-evidence-lanes.toml:267-267|
+- The three axes of a typed refusal, read from the payload itself. [1]
+- The seventeen invocations that legitimately answer `ok: true`, each with its reason. [2]
+- The eighteen tools that still lose the envelope, grouped in the source by the mechanism that raises. [3]
+- The census: one world, one run, and the assertions that bind both pins in both directions. [4]
+- The population is derived from the live advertisement and the roster, never a literal count. [5]
+- The **four** shapes partition the population: a typed refusal, a stateful refusal, an always-answer and a raiser — there is no fifth answer. `260918-TSIP-L10` renamed this case from `..._three_named_shapes` in the change that added the fourth, because the name states the claim and the claim changed. [6]
+- Each refusal axis asserted by name, so a regression says which one it broke. [7]
+- `T34`'s nine answer in the envelope at the entry point, read from the sweep's single source of truth. [8]
+- The executed control: each axis stripped from a real refusal, and the predicate required to reject it. [9]
+- The hermeticity statement the module is held to: every fixture root inside the disposable world, no provider configured. [10]
+- The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census. [11]
+- The driver that refuses a table which is not the roster before it drives anything. [12]
+- The nine tools `T34` repaired, owned by the sweep module beside the pin they left. [13]
+- The sweep whose benign half this module completes, and the world both share. [14]
+- The advertised roster the population is derived from and asserted equal to. [15]
+- The lane row that keeps this module in the default selection. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Each invocation goes through the real MCP adapter against a server built by `create_server` over
 the fixture's own disposable coordination root. No production cross-repository authority is
 claimed by this census.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No repository or external-system boundary is proved by this module. | N/A | N/A |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 12 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`public_roster.py`, `test_tool_entry_point_sweep.py`, `test_tool_refusal_conformance.py`, `tool_refusal_census_support.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:33:17+00:00: Generated citation repair: "mcp/tests/test_tool_refusal_conformance.py" repointed to mcp/tests/test-evidence-lanes.toml:267-267. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `test_the_t34_family_is_no_longer_a_bare_raiser` repointed to mcp/tests/test_tool_refusal_conformance.py:439-463. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `test_the_module_runs_in_seconds_and_touches_no_real_state` repointed to mcp/tests/test_tool_refusal_conformance.py:563-587. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_tool_refusal_conformance.py" repointed to mcp/tests/test-evidence-lanes.toml:214-214. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the D55 guard case.** A new subsection records the case that pins the mounted refusal's own detail to both shipped write-plane entry points, and why the guard exists (the singular sentence was true at its own bytes and became incomplete when the second route shipped). No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_tool_refusal_conformance.py" repointed to mcp/tests/test-evidence-lanes.toml:196-196. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `refusal_axes` repointed to mcp/tests/test_tool_refusal_conformance.py:250-261. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `test_the_censused_population_is_the_advertised_one` repointed to mcp/tests/test_tool_refusal_conformance.py:277-286. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `test_every_refusal_names_what_refused_why_and_the_next_action` repointed to mcp/tests/test_tool_refusal_conformance.py:329-351. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `test_the_t34_family_is_no_longer_a_bare_raiser` repointed to mcp/tests/test_tool_refusal_conformance.py:406-430. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `FailurePathControlTests` repointed to mcp/tests/test_tool_refusal_conformance.py:433-472. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `test_the_module_runs_in_seconds_and_touches_no_real_state` repointed to mcp/tests/test_tool_refusal_conformance.py:530-554. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `drive_census` repointed to mcp/tests/tool_refusal_census_support.py:282-306. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_tool_refusal_conformance.py" repointed to mcp/tests/test-evidence-lanes.toml:189-189. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T01:20+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_tool_refusal_conformance.py.md:118` (test_every_failure_path_answers_in_one_of_the_four_named_shapes) — re-read the claim against the successor case's own docstring, which records the rename (and, where it says so, the reversal of the behaviour the row described).
-
-- 2026-09-19T19:50+02:00 — 260918-TSIP-L6 curator (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): **created**. The module is new in this leaf (**349 lines / 7 cases**, sha256 `a7980fae537b799a…`) and is the durable form of the leaf's delivery-shape rule: every advertised tool driven down a path that cannot succeed, through the production entry point, and required to answer as a typed refusal, a recorded always-answer, or a recorded bare raiser. Recorded the measured census (**67 = 32 + 18 + 17**), the three refusal axes, both pins with their update rule, the executed axis-stripping control, the `T34` repair read at the entry point from the sweep's single source of truth, and the hermeticity property the module asserts of its own fixture. Its lane row was added by the same change set at `mcp/tests/test-evidence-lanes.toml:155` in `unit-regression`. Verification metadata is the recorded base commit; the candidate is uncommitted and the governed closeout stamps the real code commit.
+No repository or external-system boundary is proved by this module.

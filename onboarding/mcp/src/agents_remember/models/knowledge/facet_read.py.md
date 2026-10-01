@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/facet_read.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/facet_read.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -105,42 +95,33 @@ Two decisions are recorded here and both are the reason the module exists:
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The declared policy name, the enumeration bound and its reason — this selection's own policy rather than the shipped one.** | `FACET_SELECTION_POLICY_VERSION`; `FACET_SELECTION_ITEM_LIMIT`; `FACET_ITEM_LIMIT_REASON` | mcp/src/agents_remember/models/knowledge/facet_read.py:56-63 |
-| **The six stored-value models, including the absent designation reported as absent.** | `FacetRecord`; `FacetRevision`; `FacetAttachment`; `DecisionSupersession`; `ExplanationRecord`; `ExplanationRevision` | mcp/src/agents_remember/models/knowledge/facet_read.py:71-160 |
-| The two seed kinds, their union and the seed digest. | `FacetRecordSeed`; `ExplanationSubjectSeed`; `FacetReadSeed`; `facet_seed_digest` | mcp/src/agents_remember/models/knowledge/facet_read.py:168-191 |
-| The six item kinds, one model each, and the union they form. | `FacetRecordItem`; `FacetRevisionItem`; `FacetAttachmentItem`; `DecisionSupersessionItem`; `ExplanationItem`; `ExplanationRevisionItem`; `FacetReadItem` | mcp/src/agents_remember/models/knowledge/facet_read.py:199-258 |
-| **The declared order over item kinds and stable identifiers, and the identity an item is addressed by.** | `facet_item_sort_key`; `facet_item_id` | mcp/src/agents_remember/models/knowledge/facet_read.py:273-299 |
-| **The counts that are the selection's own arithmetic, with no `has_more` and no remaining count.** | `FacetReadCounts` | mcp/src/agents_remember/models/knowledge/facet_read.py:302-329 |
-| **The page whose completeness is not a settable flag, and whose validator refuses a count/order disagreement.** | `FacetReadPage` | mcp/src/agents_remember/models/knowledge/facet_read.py:332-354 |
-| The request and the page-or-refusal result, with the validator that keeps the two exclusive. | `FacetReadRequest`; `FacetReadResult` | mcp/src/agents_remember/models/knowledge/facet_read.py:357-390 |
-| The attachment endpoint and explanation subject shapes this module reuses rather than redeclaring. | `AttachmentEndpoint`; `ExplanationSubject` | mcp/src/agents_remember/models/knowledge/facet.py:288-294; mcp/src/agents_remember/models/knowledge/facet.py:365-368 |
-| The shipped recorded-scope policy this selection deliberately does not share. | `KNOWLEDGE_READ_POLICY_VERSION` | mcp/src/agents_remember/models/knowledge/read.py:91-91 |
-| The frozen, strict, extra-forbidding base that makes every page a value. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
-| The selection that executes these declarations and the application seam that serves them. | "def select_facet_scope("; `read_facet_scope` | mcp/src/agents_remember/memory/knowledge/facet_read.py:109-129; mcp/src/agents_remember/application/knowledge_facets.py:71-121 |
-| **The cases that hold the declared order, the counts' arithmetic, the empty-but-real page and the own-policy result.** | "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact"; "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy" | mcp/tests/test_knowledge_facets.py:1104-1119; mcp/tests/test_knowledge_facets.py:1053-1068; mcp/tests/test_knowledge_facets.py:1119-1119; mcp/tests/test_knowledge_facets.py:1239-1246; mcp/tests/test_knowledge_facets.py:1187-1194; mcp/tests/test_knowledge_facets.py:1266-1266; mcp/tests/test_knowledge_facets.py:1214-1214 |
+- **The declared policy name, the enumeration bound and its reason — this selection's own policy rather than the shipped one.** [1]
+- **The six stored-value models, including the absent designation reported as absent.** [2]
+- The two seed kinds, their union and the seed digest. [3]
+- The six item kinds, one model each, and the union they form. [4]
+- **The declared order over item kinds and stable identifiers, and the identity an item is addressed by.** [5]
+- **The counts that are the selection's own arithmetic, with no `has_more` and no remaining count.** [6]
+- **The page whose completeness is not a settable flag, and whose validator refuses a count/order disagreement.** [7]
+- The request and the page-or-refusal result, with the validator that keeps the two exclusive. [8]
+- The attachment endpoint and explanation subject shapes this module reuses rather than redeclaring. [9]
+- The shipped recorded-scope policy this selection deliberately does not share. [10]
+- The frozen, strict, extra-forbidding base that makes every page a value. [11]
+- The selection that executes these declarations and the application seam that serves them. [12]
+- **The cases that hold the declared order, the counts' arithmetic, the empty-but-real page and the own-policy result.** [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/models/knowledge/read.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the facet selection's declared vocabulary. It records the **two decisions the module exists for** (complete-or-refused with no cursor, and nothing deriving currency with the stored designation reported verbatim), the six stored-value models with the absent designation as a fact rather than a fallback, the two seed kinds and six item kinds as closed discriminated unions, the declared order over item kinds and stable identifiers, the counts as the selection's own arithmetic with no `has_more`, the page whose completeness is `Literal[True]` and whose validator refuses a count or order disagreement, the page-or-refusal result validator, the own policy name rather than the shipped one, and the deliberate non-change that the facade does not re-export this vocabulary. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

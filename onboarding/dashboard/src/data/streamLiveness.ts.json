@@ -1,0 +1,57 @@
+{
+  "path": "dashboard/src/data/streamLiveness.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Liveness tuning, one-shot backstop, and visibility handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74dddf1fe2fda16cede5a864d8ab3bbdeb0545f7",
+            "content": "sha256:39290241126049e95b8d9451f11c4639c8a0b7ed50b54dd60e3b8658062ea0a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "startStreamLivenessWatchdog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Conversation and state streams both install this watchdog.\n\nAnchor: \"half-open-wedge\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce5020b60dcc8107abe2430742d38707074ae80b",
+            "content": "sha256:c4855cc874514a7b33e3665fe099f1915bff4d785d26c3ec9b5b99cff6bd7d58",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The watchdog is local browser transport policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74dddf1fe2fda16cede5a864d8ab3bbdeb0545f7",
+            "content": "sha256:39290241126049e95b8d9451f11c4639c8a0b7ed50b54dd60e3b8658062ea0a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "startStreamLivenessWatchdog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

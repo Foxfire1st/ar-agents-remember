@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_gate/gate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_gate/gate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -72,6 +62,14 @@ every commit route refuse while any exists. None is report-only, and there is no
   leaf_publication=True)`: every judged candidate publishes a leaf, so the history-row rule reads the leaf's own file
   whatever its `closed` flag (review R1 F1). A `SubprocessError` is `incomplete [git]`, never a validity verdict
   (F9); `OSError`/`ValueError` is `knowledge-validator-unreadable`.
+- **Findings name the history file the writer writes (L37 reopen ruling, review R1 F10a).** `_item_findings` takes
+  the file from `_writable_history(context, owner, trees)`, not from the plain `history_path(owner)`. For every
+  history file of the owner in the candidate (`owner_history_attempt`), an attempt counts as frozen when it is
+  closed in a comparison base (`_closed_in_bases`: `git cat-file blob <base>:<path>`, the parent line's memory
+  tip), which is the writer's own rule; `writable_attempt` then names the latest open attempt, or the next one. An
+  attempt that only the candidate closes (this closeout's own) is still the one named. Without a comparison base
+  the candidate's own `closed` flags stand in. The base read is for the message only: a failed read counts as not
+  closed.
 
 ### Conventions
 
@@ -95,10 +93,9 @@ every commit route refuse while any exists. None is report-only, and there is no
   `test_an_incomplete_run_is_one_finding_naming_its_input_never_an_unhandled_error`,
   `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict` and
   `test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory`.
-- **On unconverted memory the gate is `None`** (inert until the cutover; `unconverted.sh`: identical to base apart
-  from the build label).
-- **Not built here:** MIK-R09 rule 6's second bullet (refuse unconverted trees and name the crossing sync), carried to
-  L37 by ruling 14:38:47 gap 1; the docstring says so.
+- **On unconverted memory the gate is `None`** (`unconverted.sh`: identical to base apart from the build label).
+  MIK-R09 rule 6's second bullet (refuse unconverted trees and name the crossing sync) is not in this module: it
+  is the cutover lock of `worktrees/cutover_lock.py`, wired at the routes by L37.
 
 ### Todos
 
@@ -108,41 +105,36 @@ every commit route refuse while any exists. None is report-only, and there is no
 - **Carried to L37 (gap 1):** the refusal of unconverted trees at every route, which is the cutover lock (G4 remains
   the developer's).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is `MIK-R09@v2` and `09_mandatory-invariant-closeout-gate.json`,
 outside the repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: the rule, always recomputed, applicability and what is not wired. | "The gate never reads a persisted worklist or trusts its digest" | mcp/src/agents_remember/application/knowledge_gate/gate.py:1-28 |
-| The finding codes and the repair row. | `GATE_CHECK`; `GateFinding` | mcp/src/agents_remember/application/knowledge_gate/gate.py:99-127 |
-| The exact candidate the gate judges. | `GateTrees` | mcp/src/agents_remember/application/knowledge_gate/gate.py:130-147 |
-| The verdict: memoisable, brief and refusal. | `GateResult`; "def memoisable(self)"; "def brief(self)"; "def refusal(self)" | mcp/src/agents_remember/application/knowledge_gate/gate.py:150-211 |
-| The recompute that never raises. | `recompute_for_gate` | mcp/src/agents_remember/application/knowledge_gate/gate.py:214-233 |
-| Probe, tip, memo, then the recorded evaluation. | `evaluate_leaf_gate`; `_applies`; `_resolved_tip` | mcp/src/agents_remember/application/knowledge_gate/gate.py:236-279 |
-| The evaluation and the judgment. | `_evaluate`; `judge` | mcp/src/agents_remember/application/knowledge_gate/gate.py:293-342 |
-| K_C and C read once; the invariant kinds first; a failed read is incomplete. | `_candidate`; `_item_findings`; `_decided` | mcp/src/agents_remember/application/knowledge_gate/gate.py:345-415 |
-| The validator at the gate, as a leaf publication. | `validation_findings`; `_base` | mcp/src/agents_remember/application/knowledge_gate/gate.py:436-495 |
-| The packet's examples: ready only once current rows answer every item; a new edit reopens two. | `test_a_leaf_is_ready_only_once_current_rows_answer_every_item_and_a_new_edit_reopens_two` | mcp/tests/test_knowledge_closeout_gate.py:404-443 |
-| A failed Git read inside a predicate or the validator is never a verdict. | `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict` | mcp/tests/test_knowledge_gate_routes.py:802-825 |
+- The module docstring: the rule, always recomputed, applicability and what is not wired. [1]
+- The finding codes and the repair row. [2]
+- The exact candidate the gate judges. [3]
+- The verdict: memoisable, brief and refusal. [4]
+- The recompute that never raises. [5]
+- Probe, tip, memo, then the recorded evaluation. [6]
+- The evaluation and the judgment. [7]
+- K_C and C read once; the invariant kinds first; a failed read is incomplete. [8]
+- The validator at the gate, as a leaf publication. [9]
+- The packet's examples: ready only once current rows answer every item; a new edit reopens two. [10]
+- A failed Git read inside a predicate or the validator is never a verdict. [11]
 
-## Cross-Repo References
+- The file a row answering the leaf's items goes to: the latest attempt not closed in a base. [12]
+- Whether a comparison base holds the path as a closed history file. [13]
+- The gate names the attempt the writer writes. [14]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the gate reads the leaf's own code and memory repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new file MIK-R09 adds, recording the carried obligations (L22 validator wiring, L03 `SubprocessError` → incomplete, L27 admission base at the parent tip, L11 fail-closed reads and always recompute; start decision 13:15:47), gap 1 carried to L37 (14:38:47), the memo's read set (15:09:25), review R1 F1 and F9 (16:07:55), R2-3 (17:59:48), and the 16:08:08 reopen-after-cutover carry to L37. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

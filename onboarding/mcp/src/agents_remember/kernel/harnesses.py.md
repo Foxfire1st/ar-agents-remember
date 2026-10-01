@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/harnesses.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/harnesses.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../overview.md)
@@ -93,66 +83,28 @@ lives with the runtime it describes, in `kernel/eve_runtime_readiness.py`.
 None known. Packaging the runtime into `package_data/runtime/eve-agent` is another leaf's scope; the
 probe already reads that path first when it exists.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source exists in `system/sources.md`; the settings surface this table feeds is documented in-repo. | — | — |
+No configured `Domain Documentation` source exists in `system/sources.md`; the settings surface this table feeds is documented in-repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range
 holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the row type, including the `runtime_probe` field that decides how a harness is proved launchable. | `Harness` | mcp/src/agents_remember/kernel/harnesses.py:149-184 |
-| The curated set: four rows, `eve` last and the only one carrying a readiness probe. | `HARNESSES`; `EVE_RUNTIME_PROBE`; `EVE_RUNTIME_COMMAND` | mcp/src/agents_remember/kernel/harnesses.py:144-145; mcp/src/agents_remember/kernel/harnesses.py:187-212 |
-| The probe registry: the name→resolver map, the registration decorator, and the loader that runs the registrations. | `RUNTIME_PROBES`; `register_runtime_probe`; `load_runtime_probes`; `ProbeResult`; `RuntimeProbe` | mcp/src/agents_remember/kernel/harnesses.py:38-38; mcp/src/agents_remember/kernel/harnesses.py:43-43; mcp/src/agents_remember/kernel/harnesses.py:46-46; mcp/src/agents_remember/kernel/harnesses.py:50-57; mcp/src/agents_remember/kernel/harnesses.py:60-68 |
-| Detection's two branches: the probe for a probe-declaring row, `which` for everything else. | `is_harness_available`; `harness_availability_detail`; `harness_runtime_verdict` | mcp/src/agents_remember/kernel/harnesses.py:71-79; mcp/src/agents_remember/kernel/harnesses.py:82-103; mcp/src/agents_remember/kernel/harnesses.py:106-139 |
-| The probe implementation detection now asks, and the floor it owns for both readers. | `eve_runtime_readiness`; `MINIMUM_NODE_MAJOR` | mcp/src/agents_remember/kernel/eve_runtime_readiness.py:55-55; mcp/src/agents_remember/kernel/eve_runtime_readiness.py:89-128 |
-| The settings merge carries a builtin's probe across an override instead of dropping it. | `_merged_harness` | mcp/src/agents_remember/kernel/_agentic_settings_harness.py:133-182 |
-| The serving-side consumers: detection detail and the narrower terminal-launchability question. | `is_detected`; `harness_detection_detail`; `terminal_launch_detail`; `detect_harnesses` | mcp/src/agents_remember/serving/harnesses.py:93-107; mcp/src/agents_remember/serving/harnesses.py:110-124; mcp/src/agents_remember/serving/harnesses.py:127-153; mcp/src/agents_remember/serving/harnesses.py:156-174 |
-| The capability catalog gates on the readiness verdict rather than on `which`. | `HarnessCapabilityCatalog`; `_probed_install` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212; mcp/src/agents_remember/serving/harness_capability_catalog.py:215-224 |
-| The separate protocol-adapter registry that an `eve` id also resolves through. | `BUILTIN_PROTOCOL_HARNESSES`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:33-33; mcp/src/agents_remember/serving/harness_control_factories.py:56-102; mcp/src/agents_remember/serving/harness_control_factories.py:35-35; mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
-| The cases: the eve row is last and the others are unchanged, it consults its probe and never PATH, and the path harnesses keep the ordinary lookup. | `EveRegistryTests` | mcp/tests/test_eve_product_integration.py:694-748 |
-| The settings case pinning that an override of a builtin keeps its runtime readiness probe, and that a settings-defined id declares none. | `test_a_builtin_override_keeps_its_runtime_readiness_probe`; `test_new_id_adds_a_harness_with_defaults_derived` | mcp/tests/test_agentic_settings.py:268-278; mcp/tests/test_agentic_settings.py:280-294 |
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `EveRegistryTests` repointed to mcp/tests/test_eve_product_integration.py:694-748. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: **the card's central claim was inverted by this
-  change set, so it is corrected rather than deleted.** The previous entry recorded that the native eve
-  protocol adapter "deliberately has no row here" and that an `eve` id "resolves through the protocol
-  factory only and never through terminal launch". eve now **has** a row — last in `HARNESSES`, and the
-  only row carrying `runtime_probe=EVE_RUNTIME_PROBE` — which is what makes `"harness": "eve"` legal
-  everywhere the id set is validated. Recorded the new probe seam this module owns (`RUNTIME_PROBES`,
-  `register_runtime_probe`, `load_runtime_probes`, `ProbeResult`/`RuntimeProbe`) and its two-branch
-  detection (`is_harness_available`, `harness_availability_detail`, `harness_runtime_verdict`), the
-  honest `EVE_RUNTIME_COMMAND` placeholder that is never spawned, the ordering guarantee (row last, so
-  the first-detected default is unchanged), and the corrected boundary: a row makes a harness
-  *selectable*, not *terminal-launchable*, and an override may not strip a builtin's probe. Reference
-  table extended from three rows to eleven. Verification metadata moves to the leaf's synced base
-  `ff97072c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
-  commit and no hash or fingerprint was invented here.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **No content impact from the A2
-  revision.** This file is byte-identical between the A1 and A2 candidates of the same change set, so
-  the body — the `HARNESSES` docstring's record of why the native eve protocol adapter deliberately
-  has no row here — is retained unchanged. The pass advanced the verification metadata to the leaf's
-  current base `e9300687` under the leaf's one consistent convention (the candidate is uncommitted, so
-  the governed closeout re-stamps the real code commit) and re-read the existing citations, which
-  remain in the required `Finding | Anchor | Source` shape. No hash or fingerprint was invented.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: the curated set is unchanged (still `claude`,
-  `codex`, `pi`) and this file's **only** delta is the `HARNESSES` docstring, which now records why
-  the new native eve protocol adapter deliberately has no row here: eve's runtime is an AR-owned
-  application, not a `PATH` command, so terminal-harness exposure is the packaging/capability leaf's
-  decision. Body updated to state that boundary as an invariant rather than leaving the card silent
-  about a registry that now contains an adapter with no row. Verification metadata pinned until
-  closeout stamps the candidate commit.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- Defines the row type, including the `runtime_probe` field that decides how a harness is proved launchable. [1]
+- The curated set: four rows, `eve` last and the only one carrying a readiness probe. [2]
+- The probe registry: the name→resolver map, the registration decorator, and the loader that runs the registrations. [3]
+- Detection's two branches: the probe for a probe-declaring row, `which` for everything else. [4]
+- The probe implementation detection now asks, and the floor it owns for both readers. [5]
+- The settings merge carries a builtin's probe across an override instead of dropping it. [6]
+- The serving-side consumers: detection detail and the narrower terminal-launchability question. [7]
+- The capability catalog gates on the readiness verdict rather than on `which`. [8]
+- The separate protocol-adapter registry that an `eve` id also resolves through. [9]
+- The cases: the eve row is last and the others are unchanged, it consults its probe and never PATH, and the path harnesses keep the ordinary lookup. [10]
+- The settings case pinning that an override of a builtin keeps its runtime readiness probe, and that a settings-defined id declares none. [11]

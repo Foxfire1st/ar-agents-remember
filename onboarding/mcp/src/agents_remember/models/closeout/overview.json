@@ -1,0 +1,65 @@
+{
+  "path": "mcp/src/agents_remember/models/closeout",
+  "references": {
+    "1": {
+      "note": "Accepted closeout message input contains only code and memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:8e272d5d3aebe96cc9f9600241586e3ded7ea7ec493af34631d2b12e90cd5971",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutMessageInput"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:7af713ab811004bcaeb2de4fa8983f6e102faa6fb473bbe596bc086ee969e822",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The effective two-leg input renders memory attribution through the kernel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:27080a1f03fa1174fbaf751a244ae5e116cb782523bded9c4b4c60e60c3f17f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_message"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:b5e66c5b68b109768d7f9b3fa3b46cef7c18c9b10729650e94dee8263695b769",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectiveCloseoutInput"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_worklist/leaf.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_worklist/leaf.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -114,12 +104,10 @@ gate recomputes, and every probe and read it makes fails closed.
 - **Unconverted leaves are unchanged:** `recompute_leaf_worklist` still returns `None` and
   `leaf_onboarding_trace_sides` returns `None`, so every production leaf before MIK-R37 keeps today's gate.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one-list step after a complete run, over the same K_B; since MIK-R11 the run reads the leaf's declaration before the pairing, and since MIK-R10 the unexplained items are settled after the onboarding items; since MIK-R09 both steps live in `worklist_over`, which `leaf_worklist` and direct landing share. | "def leaf_worklist("; "document = worklist_onboarding(document, contract, request)" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:451-451; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:551-551 |
-| The gate's side request from the contract. | `_trace_request` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:577-593 |
-| The gate chooser: `None` keeps today's gate; a failure is an incomplete side, and since MIK-R09 so is a marker probe Git cannot answer (`layout marker: …`). | "def leaf_onboarding_trace_sides("; "def _trace_gate_converted(" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:596-640 |
-| An unconverted leaf gets no sides and no worklist. | `test_an_unconverted_leaf_keeps_todays_gate_unchanged` | mcp/tests/test_onboarding_trace_gate.py:750-757 |
+- The one-list step after a complete run, over the same K_B; since MIK-R11 the run reads the leaf's declaration before the pairing, and since MIK-R10 the unexplained items are settled after the onboarding items; since MIK-R09 both steps live in `worklist_over`, which `leaf_worklist` and direct landing share. [1]
+- The gate's side request from the contract. [2]
+- The gate chooser: `None` keeps today's gate; a failure is an incomplete side, and since MIK-R09 so is a marker probe Git cannot answer (`layout marker: …`). [3]
+- An unconverted leaf gets no sides and no worklist. [4]
 
 ## 260928-MIK-L11 The Leaf's Declared Effects (MIK-R11)
 
@@ -136,12 +124,10 @@ gate recomputes, and every probe and read it makes fails closed.
 - **Unconverted leaves are unchanged.** The applicability probe returns `None` before the declaration is
   read, so a production leaf before MIK-R37 never reads it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The declaration, read through the strict lookup. | `leaf_expected_effects`; `strict_leaf_doc` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:163-172 |
-| The named sides carry the declaration. | `ExplicitSides`; `expected_effects` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:188-211 |
-| An unresolved leaf document is an `incomplete` run naming it (since MIK-R09 inside `_leaf_document`, together with the maintenance scope). | `LeafDocumentUnresolved`; "leaf task document" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:483-521 |
-| The fail-closed run, tested. | "leaf task document" | mcp/tests/test_planned_knowledge_effects.py:579-587 |
+- The declaration, read through the strict lookup. [5]
+- The named sides carry the declaration. [6]
+- An unresolved leaf document is an `incomplete` run naming it (since MIK-R09 inside `_leaf_document`, together with the maintenance scope). [7]
+- The fail-closed run, tested. [8]
 
 ## 260928-MIK-L10 Coverage At K_B And The Settled Unexplained Items (MIK-R10)
 
@@ -163,16 +149,14 @@ gate recomputes, and every probe and read it makes fails closed.
 - **Unconverted leaves are unchanged.** `_sides` still returns `None` before any coverage read when both
   memory sides are unconverted, so no production leaf before MIK-R37 reads a census or gets an item.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The resolved sides carry K_B's route coverage. | `_Resolved`; "coverage: RouteCoverage" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:282-288 |
-| Coverage over K_B's Git tree and its census blobs; over a converted base's files. | `_git_coverage`; `_files_coverage` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:294-307; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:310-312 |
-| Coverage chosen per base kind; an unreadable census names K_B. | `CoverageUnreadable`; "coverage = _git_coverage(" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:331-344 |
-| The coverage passed into the run. | "coverage=resolved.coverage" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:423-423 |
-| The settling step after the onboarding items, since MIK-R09 the last step of `worklist_over`. | "return _settled_unexplained(document)" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:552-552 |
-| Settled items, a recomputed digest and open count, and needed rows kept out of the unnecessary list. | `_settled_unexplained`; `answering_trace_subjects` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:555-574 |
-| Coverage by entries, a migrated route, a later status, and an unreadable census. | `test_coverage_is_entries_in_k_b_or_the_latest_census_status_of_the_governing_route` | mcp/tests/test_unexplained_change_disposition.py:222-271 |
-| The leaf route: an uncovered new file answered by writing its card. | `test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace` | mcp/tests/test_unexplained_change_disposition.py:463-505 |
+- The resolved sides carry K_B's route coverage. [9]
+- Coverage over K_B's Git tree and its census blobs; over a converted base's files. [10]
+- Coverage chosen per base kind; an unreadable census names K_B. [11]
+- The coverage passed into the run. [12]
+- The settling step after the onboarding items, since MIK-R09 the last step of `worklist_over`. [13]
+- Settled items, a recomputed digest and open count, and needed rows kept out of the unnecessary list. [14]
+- Coverage by entries, a migrated route, a later status, and an unreadable census. [15]
+- The leaf route: an uncovered new file answered by writing its card. [16]
 
 ## 260928-MIK-L14 The Coordination Root Reaches The Run (MIK-R14)
 
@@ -186,11 +170,9 @@ gate recomputes, and every probe and read it makes fails closed.
 - **Unconverted leaves are unchanged.** `_sides` still returns `None` for a both-unconverted leaf before any
   endpoint is read; the real unconverted L14 contract gives `None` on the base and L14 builds (`unconverted.txt`).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The named sides carry the coordination root. | "Where requirement endpoints' owning tasks live (MIK-R14)" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:211-211 |
-| The run over named sides passes it on. | "coordination_root=sides.coordination_root" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:424-424 |
-| A leaf's run takes it from the contract. | "coordination_root=contract.coordination_root," | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:519-519 |
+- The named sides carry the coordination root. [17]
+- The run over named sides passes it on. [18]
+- A leaf's run takes it from the contract. [19]
 
 ## 260928-MIK-L09 The Gate's Exact Candidate, And Every Probe Fails Closed (MIK-R09)
 
@@ -215,18 +197,18 @@ gate recomputes, and every probe and read it makes fails closed.
 - **Unconverted leaves are unchanged:** the probe returns `None` before any capture or read, as before; the leaf's
   `unconverted.sh` evidence finds base and this build identical (worklist `null`).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The applicability docstring: a probe Git cannot answer is never unconverted memory. | "A marker probe Git cannot answer" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:19-23 |
-| The exact candidate as Git trees. | `CandidateTrees` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:175-185 |
-| The cheap probe and the gate's applicability. | `_leaf_converted`; `leaf_gate_applies` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:429-448 |
-| A probe Git cannot answer is an `incomplete` worklist naming `layout marker`. | "Incomplete(\"layout marker\"" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:471-471 |
-| The fail-closed reads, with the strict maintenance scope. | `_leaf_document`; "maintenance_scope = leaf_maintenance_scope(contract)"; `_missing` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:483-527 |
-| The full worklist over explicit sides, shared with direct landing. | `worklist_over` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:530-552 |
-| The marker probe through `has_layout_marker`. | `_holds_marker` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:649-656 |
-| A marker probe Git cannot answer is never unconverted memory, at the worklist and the trace sides. | `test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory` | mcp/tests/test_knowledge_gate_routes.py:828-856 |
+- The applicability docstring: a probe Git cannot answer is never unconverted memory. [20]
+- The exact candidate as Git trees. [21]
+- The cheap probe and the gate's applicability. [22]
+- A probe Git cannot answer is an `incomplete` worklist naming `layout marker`. [23]
+- The fail-closed reads, with the strict maintenance scope. [24]
+- The full worklist over explicit sides, shared with direct landing. [25]
+- The marker probe through `has_layout_marker`. [26]
+- A marker probe Git cannot answer is never unconverted memory, at the worklist and the trace sides. [27]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R08@v2` of task
@@ -235,71 +217,32 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The four sides, applicability and persistence rules. | "whose two memory sides are both unconverted gets no worklist" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:1-27 |
-| Where a leaf's worklist lives. | `worklist_path`; `WORKLIST_FILE_NAME` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:118-118; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:127-132 |
-| Reading the latest persisted worklist. | `read_leaf_worklist` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:141-148 |
-| The task-document flag. | `leaf_maintenance_scope`; `knowledgeMaintenanceScope` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:151-160 |
-| The explicitly named sides. | `ExplicitSides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:188-211 |
-| K_B by trailer, or `incomplete` naming the pairing. | `paired_memory_commit`; `attributed_commits` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:253-279 |
-| The sides, the both-unconverted `None`, and the pairing document. | `_sides` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:315-364 |
-| K_B as its conversion, through the read-or-convert path shared with the onboarding gate; since MIK-R10 the same cached files also give the route coverage. | `_converted_base_side`; `converted_base_files` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:365-393 |
-| The run over named sides, which since MIK-R11 also passes the leaf's declared effects; unreadable input is `incomplete`. | "def worklist_for_sides(sides: ExplicitSides)"; "expected_effects=sides.expected_effects" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:398-398; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:422-422 |
-| A leaf's run from its contract, with the cheap applicability probe (since MIK-R09 through `has_layout_marker`, and a probe Git cannot answer is `incomplete` naming `layout marker`); then (MIK-R11) the declaration and (MIK-R09) the strict maintenance scope, whose unresolved document makes the run `incomplete`; a complete run then gains the onboarding items. | `leaf_worklist`; `_leaf_converted`; `_leaf_document`; `_official_converted`; `_holds_marker` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:429-439; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:451-521; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:643-656 |
-| The one recompute entry point, which never raises; since MIK-R09 a Git failure is named `git`. | "def recompute_leaf_worklist(" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:659-694 |
-| The port adapter the composition binds. | `LeafWorklistRecompute` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:697-706 |
-| Pairing by trailer, following the sync, and persistence beside the contract. | `test_a_leaf_pairs_k_b_by_trailer_follows_its_sync_and_persists_beside_its_contract` | mcp/tests/test_knowledge_worklist_leaf.py:240-282 |
-| No pairing commit is `incomplete` naming the pairing. | `test_a_base_no_memory_commit_pairs_with_is_incomplete_naming_the_pairing` | mcp/tests/test_knowledge_worklist_leaf.py:285-291 |
-| An unconverted base is compared as its conversion. | `test_an_unconverted_base_is_compared_as_its_conversion` | mcp/tests/test_knowledge_worklist_leaf.py:306-327 |
-| The recompute never raises and never fails a completed sync. | `test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync` | mcp/tests/test_knowledge_worklist_leaf.py:673-710 |
-| Both memory sides unconverted: no worklist. | `test_two_unconverted_memory_sides_get_no_worklist` | mcp/tests/test_knowledge_worklist.py:629-643 |
+- The four sides, applicability and persistence rules. [28]
+- Where a leaf's worklist lives. [29]
+- Reading the latest persisted worklist. [30]
+- The task-document flag. [31]
+- The explicitly named sides. [32]
+- K_B by trailer, or `incomplete` naming the pairing. [33]
+- The sides, the both-unconverted `None`, and the pairing document. [34]
+- K_B as its conversion, through the read-or-convert path shared with the onboarding gate; since MIK-R10 the same cached files also give the route coverage. [35]
+- The run over named sides, which since MIK-R11 also passes the leaf's declared effects; unreadable input is `incomplete`. [36]
+- A leaf's run from its contract, with the cheap applicability probe (since MIK-R09 through `has_layout_marker`, and a probe Git cannot answer is `incomplete` naming `layout marker`); then (MIK-R11) the declaration and (MIK-R09) the strict maintenance scope, whose unresolved document makes the run `incomplete`; a complete run then gains the onboarding items. [37]
+- The one recompute entry point, which never raises; since MIK-R09 a Git failure is named `git`. [38]
+- The port adapter the composition binds. [39]
+- Pairing by trailer, following the sync, and persistence beside the contract. [40]
+- No pairing commit is `incomplete` naming the pairing. [41]
+- An unconverted base is compared as its conversion. [42]
+- The recompute never raises and never fails a completed sync. [43]
+- Both memory sides unconverted: no worklist. [44]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The leaf worklist reads the code repository and the memory repository of one leaf (the external memory
 repository and its official line) and writes into the coordination task root. These are the configured
 code/memory pair of one repository, not a boundary to another code repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The run reads the paired code and memory repositories named by the leaf's contract. | "def leaf_worklist("; `memory_repo_path` | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:451-480 |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** New section "260928-MIK-L09 The Gate's Exact Candidate, And Every Probe Fails Closed (MIK-R09)" (`CandidateTrees`, `leaf_gate_applies`, the `_leaf_document` split, `worklist_over` shared with direct landing, `_holds_marker` through `has_layout_marker`: review R1 F9), with eight rows. The Purpose and the Logic's applicability, explicit-sides, maintenance-scope and recompute bullets are updated (the strict maintenance-scope read resolves the L11 carry; `SubprocessError` → `incomplete [git]`, the L03 carry); the trigger-split invariant now says how L09 recomputes, and the L09 Todo is marked resolved. **Reopened claims reworded:** the one-list-step row (re-anchored on "document = worklist_onboarding(document, contract, request)"), the gate-chooser row, the `leaf_worklist`/`_official_converted` row (re-measured over `_leaf_converted`, `_leaf_document` and `_holds_marker`), the `recompute_leaf_worklist` row, and the settling row, whose anchor no longer resolved (re-anchored on "return _settled_unexplained(document)"; the committed L10 bullet naming the old text is untouched). This pass's generated bullets for the three reworded rows the fixer had re-pointed were removed. The L11 row into the moved `leaf_worklist` body was re-measured (`_leaf_document`, `483-521`), and the cross-repo row, which still passed by coincidence, now cites `leaf_worklist`'s own extent (`451-480`); the L11 declaration row, which the check did not flag because `strict_leaf_doc` now also occurs in `leaf_maintenance_scope`, was re-pointed by the exact +11 shift (`152-161` → `163-172`). The rows the fixer declined were re-pointed by the exact base-to-staged line shift. **Re-anchored:** claims bind by anchor text and a committed generated bullet names the old anchor, so the reworded gate-chooser and recompute rows were re-anchored on line-exact quotes ("def leaf_onboarding_trace_sides(", "def _trace_gate_converted(", "def recompute_leaf_worklist("); no committed history line was edited.
-- 2026-09-30T17:58:53+00:00: Generated citation repair: `_trace_request` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:577-593. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:53+00:00: Generated citation repair: `test_an_unconverted_leaf_keeps_todays_gate_unchanged` repointed to mcp/tests/test_onboarding_trace_gate.py:750-757. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:53+00:00: Generated citation repair: `_Resolved`; "coverage: RouteCoverage" repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:282-288; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:288-288. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:53+00:00: Generated citation repair: "coverage=resolved.coverage" repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:423-423. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:53+00:00: Generated citation repair: "Where requirement endpoints' owning tasks live (MIK-R14)" repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:211-211. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:53+00:00: Generated citation repair: "coordination_root=sides.coordination_root" repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:424-424. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:53+00:00: Generated citation repair: "coordination_root=contract.coordination_root," repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:519-519. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:53+00:00: Generated citation repair: `ExplicitSides` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:188-211. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:53+00:00: Generated citation repair: `LeafWorklistRecompute` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:697-706. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** New section "260928-MIK-L14 The Coordination Root Reaches The Run (MIK-R14)": `ExplicitSides.coordination_root`, `worklist_for_sides` and `leaf_worklist` pass the contract's root into the run so step 8 resolves requirement endpoints (read-only; also on L31's live review read, review R6), and unconverted leaves stay `None`. Three rows. The rows the fixer declined were re-pointed by the exact line shift of this leaf's diff; the others were projected or normalised by the installed fixer, and its generated bullets are kept. No verification stamp was advanced.
-- 2026-09-30T10:05:17+00:00: Generated citation repair: `_Resolved`; "coverage: RouteCoverage" repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:258-264; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:264-264. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:05:17+00:00: Generated citation repair: "coverage=resolved.coverage" repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:397-397. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:05:17+00:00: Generated citation repair: "document = _settled_unexplained(document)" repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:454-454. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** Purpose extended; added the section "260928-MIK-L10 Coverage At K_B And The Settled Unexplained Items (MIK-R10)" (`_git_coverage`, `_files_coverage`, the coverage returned by `_converted_base_side`, `CoverageUnreadable` as an `incomplete` run naming K_B, `_settled_unexplained`, and the needed onboarding rows dropped from `unnecessaryRows`), with the rulings of 01:56:39 (Q3, Q4); eight rows. **Row re-measured, not shifted:** the `_converted_base_side` row (`302-326`, correct at the base, but no line shift could map it because its signature lines changed) now cites `341-369`, and its claim names the coverage. **Two reopened claims re-read:** the L30 one-list row (reworded to name the settling step) and the Cross-Repo row (retained), both about `leaf_worklist`, which MIK-R10 changed; they are re-anchored on the line-exact quote "def leaf_worklist(", and this pass's fixer bullet for the first was removed. Other rows were projected or normalised by the installed fixer, or re-pointed by exact line shift. No verification stamp was advanced.
-- 2026-09-30T02:32:51+00:00: Generated citation repair: `_trace_request` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:479-495. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:32:51+00:00: Generated citation repair: `leaf_onboarding_trace_sides` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:498-531. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:32:51+00:00: Generated citation repair: `read_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:135-142. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:32:51+00:00: Generated citation repair: "def worklist_for_sides(sides: ExplicitSides)"; "expected_effects=sides.expected_effects" repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:372-372; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:394-394. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:32:51+00:00: Generated citation repair: `recompute_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:544-575. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:32:51+00:00: Generated citation repair: `LeafWorklistRecompute` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:578-587. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T21:47:56+00:00: Generated citation repair: `_trace_request` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:412-428. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T21:47:56+00:00: Generated citation repair: `LeafWorklistRecompute` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:511-520. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Added the section "260928-MIK-L11 The Leaf's Declared Effects" (`leaf_expected_effects` through the strict lookup, the fail-closed `incomplete` run, `ExplicitSides.expected_effects`), recording architect ruling 2026-09-29T22:35:34 (F2, with `leaf_maintenance_scope`'s fail-soft lookup carried to L09). **The reopened `worklist_for_sides` claim was re-read and reworded** (it now passes the declared effects) and re-anchored on its line-exact quotes, because the generated-repair bullet that binds it is committed. **The two reopened `leaf_worklist` rows** (L30's one-list row and the run row) were re-read and reworded (the run now reads the declaration first); only the one generated-repair bullet this pass's fixer wrote for them was removed. Other rows were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T18:59:33+00:00: Generated citation repair: `worklist_for_sides` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:309-332. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T18:59:33+00:00: Generated citation repair: `recompute_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:452-483. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T18:59:33+00:00: Generated citation repair: `LeafWorklistRecompute` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:486-495. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 The Onboarding Gate's Sides And Items" (`worklist_onboarding` after a complete run, `_trace_request`, `leaf_onboarding_trace_sides`, and the cache move), recording architect rulings 2026-09-29T18:49:50 (2, 4). **The reopened `leaf_worklist` claim was re-read and reworded** (it now says that a complete run gains the onboarding items) and re-measured, with its sibling cross-repo row; the converted-base row was reworded for `converted_base_files`. Other rows were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+- The run reads the paired code and memory repositories named by the leaf's contract. [45]

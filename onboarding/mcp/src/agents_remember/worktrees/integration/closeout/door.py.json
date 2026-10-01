@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/door.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`successor_waiting_door` binds successor identity to code/memory and task provenance without a ledger dependency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35356f9b5beedf48bc6ce7ea053ffb611f010882",
+            "content": "sha256:bc9b449ddad5c4673d58a506c86edf7d5c6252d9a22a74ed387e0e0eae153514",
+            "locator": {
+              "kind": "symbol",
+              "name": "successor_waiting_door"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_require_door_transition` preserves the exact door identity and legal publication transitions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35356f9b5beedf48bc6ce7ea053ffb611f010882",
+            "content": "sha256:5227171e5d14728989e5f4ed2fd457dc61220e4c6b77c4caf79520a3c68b977a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_door_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module defines `DoorContractReadFailure`; `DoorPublicationClassification`; `DoorPublicationError` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35356f9b5beedf48bc6ce7ea053ffb611f010882",
+            "content": "sha256:f5a3b380f0182f136747b41bf54135a44713170427bcaa20f2535632451e9232",
+            "locator": {
+              "kind": "symbol",
+              "name": "DoorContractReadFailure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35356f9b5beedf48bc6ce7ea053ffb611f010882",
+            "content": "sha256:eb140cb5532fc2386354578050a27815f7d2d48a1825d9efb84abde1c6f038ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "DoorPublicationError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The door journal is written and read here, and `live_closeout_door` is the single live reader every former `contract.closeout_door` call site now uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35356f9b5beedf48bc6ce7ea053ffb611f010882",
+            "content": "sha256:b06353ff564e42f7a0d511c384ae03aa744e8720f4a57ad3baf9c1b8e14638f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "live_closeout_door"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Claim and successor seams re-require or rebuild the door dependency declaration. (`door_generation_for_operation`; `successor_waiting_door`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35356f9b5beedf48bc6ce7ea053ffb611f010882",
+            "content": "sha256:637c735d8cef194f41c6c6a02f5a6c6bc29d0c764e652ddd59cece1ad84bddfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "door_generation_for_operation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35356f9b5beedf48bc6ce7ea053ffb611f010882",
+            "content": "sha256:bc9b449ddad5c4673d58a506c86edf7d5c6252d9a22a74ed387e0e0eae153514",
+            "locator": {
+              "kind": "symbol",
+              "name": "successor_waiting_door"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

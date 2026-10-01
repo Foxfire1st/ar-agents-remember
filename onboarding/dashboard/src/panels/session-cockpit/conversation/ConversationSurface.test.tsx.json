@@ -1,0 +1,81 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Helpers seed projection/visibility variants for the surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30f6b1d480fe4978bac026bd45b096cafcbe4fc7",
+            "content": "sha256:0223bb022b0863a1101b1cdf9827197359d2e5e5f6f4a9c3c764764217753e4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "seed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Hidden gating, latest chip, and scroll wiring are covered.\n\nAnchor: \"ConversationSurface hidden keep-alive gating (F-j)\"; \"ConversationSurface — latest chip (B3)\"; \"ConversationSurface — the scroll-up trap\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30f6b1d480fe4978bac026bd45b096cafcbe4fc7",
+            "content": "sha256:425975afbe457ce47fe0bb109db2a376d3c2390858edd15fe38e500e84a55d26",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "30f6b1d480fe4978bac026bd45b096cafcbe4fc7",
+            "content": "sha256:acc1778f92a6bd1f293e6b6184ac9764e84cd272025d245f1f4164b5977eea07",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "30f6b1d480fe4978bac026bd45b096cafcbe4fc7",
+            "content": "sha256:3fdd96b6bd44efd32d5fddba74509d8d41edd676f98b474feb34933d8ba27ebb",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Implementation under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

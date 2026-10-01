@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_public_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`MigratedLifecycleClassification` reports proven code and memory output without a ledger-proof field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14884870d0d141d56b9e81566c424797228639af",
+            "content": "sha256:7bc5e9179bc474163d503aef6deeff5ac5fb908527f6ceb001867ce86598833e",
+            "locator": {
+              "kind": "symbol",
+              "name": "MigratedLifecycleClassification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`classify_migrated_lifecycle` classifies the retained migration proof without inventing new outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14884870d0d141d56b9e81566c424797228639af",
+            "content": "sha256:ce17bbb5e974d3b01b2759a75f4bc374d192c129327120389684ba2a469ca514",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_migrated_lifecycle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module defines `PublicEvidencePair`; `MigratedLifecycleClassification`; `public_lifecycle_evidence_pair` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14884870d0d141d56b9e81566c424797228639af",
+            "content": "sha256:a4a6e8e49320b81fe01fd5f65d1b1fa65a0a0990f1eb7f8a3cc8f9980793bcbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicEvidencePair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

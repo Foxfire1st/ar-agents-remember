@@ -1,0 +1,75 @@
+{
+  "path": "skills/w-02-light-task-workflow/master-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The master projects requirements to manifestation subtasks.\n\nAnchor: \"## Filtered Requirement Projection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
+            "content": "sha256:e7bbb4a566f27adb9f7d5027aea3e309567b95aaa201da0eb85f7d363bebba37",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each subtask names one primary revision and adjacent constraints separately.\n\nAnchor: \"## Primary Requirement Revision\"; \"## Adjacent Requirement Constraints\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
+            "content": "sha256:eb79d11e6a888bb605ed717b943a6a0564bf28d5e40e8bc79f337320af687d3e",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Usage rules preserve approval, versioning, and evidence boundaries.\n\nAnchor: `## Usage rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
+            "content": "sha256:5a7b5e0c814cf90d59ed45f6535ea85f1af87fc25f08c83773bf1d098a8296b5",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The master summary exposes attempt state while preserving leaf-journal authority and a non-gating boundary.\n\nAnchor: \"## Requirement Attempt Summary (rebuildable projection — never a gate)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
+            "content": "sha256:871ba8fbc44d366dfb170e49e9c922a3ddbfc3ac870b6db1abee4a42f4376887",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

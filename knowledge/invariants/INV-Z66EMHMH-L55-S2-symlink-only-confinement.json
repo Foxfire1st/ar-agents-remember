@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The notes listing behind GET /api/notes/list (list_notes and its walk helpers in mcp/src/agents_remember/serving/notes.py) over one series master's tasks/<repo>/<master>/notes/ root.",
+  "conditions": [
+    "The walk starts at the realpath-resolved notes root and descends only into directories opened by descriptor beneath it, so a non-symlink child is inside the root by construction.",
+    "A symlink entry is confined by resolve() plus path_is_relative_to against the resolved root, judged on the entry's lexical path through the walk."
+  ],
+  "exclusions": [
+    "read_note, which confines each requested path with confine_rel.",
+    "The listing remains linear in directory entries (one stat each); only per-entry path resolution is excluded.",
+    "The symlink stat-before-check window: the DirEntry stat is taken in the directory-first sort before the path check, so a retarget in between can list one outside file's size (the path-based walk had the same single-entry window in the opposite order)."
+  ],
+  "id": "INV-Z66EMHMH",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "a364488f-a789-4589-8c76-1dfb4a45a787",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The notes listing realpath-checks only symlink entries against the resolved notes root; a non-symlink child of a directory the walk entered is confined by construction, so each listed entry costs one followed stat and path resolution is paid once for the root plus once per symlink regardless of note count or content size.",
+  "status": "proposed",
+  "supersedes": []
+}

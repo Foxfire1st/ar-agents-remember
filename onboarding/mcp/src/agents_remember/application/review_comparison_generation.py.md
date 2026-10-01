@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_comparison_generation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_comparison_generation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:31:41+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -164,16 +154,16 @@ layout helpers are pure path arithmetic.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in this module's own docstring and functions, in the four sibling
 modules that produce, retain, reclaim and resolve a generation, and in the cases that measure the whole
@@ -182,58 +172,38 @@ journey. Three details a reader should carry: the durable root is **asked of its
 checked against the directory name; and `recorded_at` is outside the seal on purpose, which is what
 makes an exact retry converge.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what it owns (the record, the layout, the deletion record) and of the separate responsibility next door. | `ComparisonGenerationManifest`; `ComparisonHistoryDeletion` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:501-518 |
-| The published surface: version, layout literals, the eleven models, the path helpers, the reads and the discovery functions. | `__all__`; `COMPARISON_GENERATION_VERSION` | mcp/src/agents_remember/application/review_comparison_generation.py:86-121; mcp/src/agents_remember/application/review_comparison_generation.py:126-128 |
-| **The layout, named once**, and the two typed-absence spellings with their reason for being distinct from a failure. | `COMPARISON_GENERATIONS_DIRECTORY`; `COMPARISON_MANIFEST_NAME`; `COMPARISON_KNOWLEDGE_DIRECTORY`; `COMPARISON_SNAPSHOT_NAME`; `COMPARISON_DELETIONS_DIRECTORY`; `KNOWLEDGE_NOT_SELECTED`; `TYPED_ABSENCE_STATES` | mcp/src/agents_remember/application/review_comparison_generation.py:132-132; mcp/src/agents_remember/application/review_comparison_generation.py:133-133; mcp/src/agents_remember/application/review_comparison_generation.py:134-134; mcp/src/agents_remember/application/review_comparison_generation.py:135-135; mcp/src/agents_remember/application/review_comparison_generation.py:136-136; mcp/src/agents_remember/application/review_comparison_generation.py:142-142; mcp/src/agents_remember/application/review_comparison_generation.py:151-151 |
-| **The fields the seal does not cover, and why each is excluded.** | `_UNSEALED_FIELDS`; `_GENERATION_NAMESPACE` | mcp/src/agents_remember/application/review_comparison_generation.py:162-162; mcp/src/agents_remember/application/review_comparison_generation.py:155-155 |
-| **One retained snapshot: a generation-relative path, the digest of the bytes written, and the deletion owner plus bounded scope that may delete it.** | `ComparisonSnapshotArtifact` | mcp/src/agents_remember/application/review_comparison_generation.py:165-179 |
-| **The validator that makes the packet's non-conforming example unconstructible: identity and bytes travel together, and a non-retained side states its reason.** | `ComparisonKnowledgeBinding`; `_retained_means_identity_and_bytes` | mcp/src/agents_remember/application/review_comparison_generation.py:182-216 |
-| **The source binding: the capture owner's own identity carried verbatim, the custody measurement, the names it was measured against, and the pin's agreement with the custody.** | `ComparisonSourceBinding`; `_custody_and_the_pin_agree` | mcp/src/agents_remember/application/review_comparison_generation.py:219-271 |
-| **The scope binding: the owner-produced inventory's state, digest and population, plus the selection that must name its selector.** | `ComparisonScopeBinding`; `_the_selection_and_its_selectors_agree` | mcp/src/agents_remember/application/review_comparison_generation.py:274-302 |
-| One cited owner-produced artifact as a task-relative, digest-bearing reference. | `ComparisonArtifactReference` | mcp/src/agents_remember/application/review_comparison_generation.py:305-317 |
-| **The records binding, which asserts what the composition supplied and deliberately not whether an owner published none or could not be read (R14's fact).** | `ComparisonRecordBinding`; `record_total` | mcp/src/agents_remember/application/review_comparison_generation.py:320-364; mcp/src/agents_remember/application/review_comparison_generation.py:360-364 |
-| Every policy version as a constant its owner declares, never a version derived here. | `ComparisonPolicyStamp` | mcp/src/agents_remember/application/review_comparison_generation.py:367-377 |
-| **The lineage: one predecessor named by id *and* manifest digest, plus the two optional owner digests.** | `ComparisonPublicationLineage`; `_a_predecessor_is_named_by_identity_and_digest` | mcp/src/agents_remember/application/review_comparison_generation.py:380-402 |
-| **The record itself, the seal it carries, and the four self-agreement checks including the re-derived generation id.** | `ComparisonGenerationManifest`; `_the_record_agrees_with_itself`; `binding_payload`; `compute_binding_digest`; `manifest_digest`; `knowledge_side` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498 |
-| **The unavailable-history record an explicit deletion writes, including the custody measured *before* a pin was released.** | `ComparisonHistoryDeletion` | mcp/src/agents_remember/application/review_comparison_generation.py:501-518 |
-| **The whole layout, derived from the one durable root owner.** | `comparison_generations_root`; `leaf_generation_root`; `generation_directory`; `manifest_path`; `snapshot_path`; `deletion_record_path`; `task_root_for_review` | mcp/src/agents_remember/application/review_comparison_generation.py:524-527; mcp/src/agents_remember/application/review_comparison_generation.py:530-533; mcp/src/agents_remember/application/review_comparison_generation.py:536-539; mcp/src/agents_remember/application/review_comparison_generation.py:542-545; mcp/src/agents_remember/application/review_comparison_generation.py:548-553; mcp/src/agents_remember/application/review_comparison_generation.py:556-561; mcp/src/agents_remember/application/review_comparison_generation.py:564-572 |
-| **The derived generation id, and the one function that seals and validates a field set together.** | `generation_identity`; `assemble_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:575-583; mcp/src/agents_remember/application/review_comparison_generation.py:586-609 |
-| **The two-statement read: the record's own validation plus the containing directory's agreement with the id it claims.** | `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:615-649 |
-| **The deletion reads and the canonical-bytes write, with "present but unreadable is not absence" stated in the code.** | `read_history_deletion`; `write_history_deletion` | mcp/src/agents_remember/application/review_comparison_generation.py:652-676; mcp/src/agents_remember/application/review_comparison_generation.py:679-694 |
-| **Discovery: the one list of published-looking directories, and the pass that skips an unreadable record instead of guessing its fields.** | `generation_directories`; `ComparisonGenerationRef`; `read_generation_refs` | mcp/src/agents_remember/application/review_comparison_generation.py:697-711; mcp/src/agents_remember/application/review_comparison_generation.py:714-722; mcp/src/agents_remember/application/review_comparison_generation.py:725-753 |
-| **The one durable-root owner this module asks instead of restating `<task_root>/notes/reports`.** | `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-68 |
-| The R05 constant imported rather than re-spelled, so the accepted spelling and the recorded one cannot drift. | `NOT_RECORDED` | mcp/src/agents_remember/application/knowledge_before_half.py:84-84 |
-| The owners whose values the manifest carries rather than re-derives: the capture identity, the resolved pair, the inventory and the comparison identity. | `FutureCodeCandidateIdentity`; `ReviewCandidateResolution`; `ReviewSourceInventory`; `ComparisonIdentity` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22; mcp/src/agents_remember/application/review_candidate_resolution.py:106-135; mcp/src/agents_remember/models/knowledge/review.py:324-880; mcp/src/agents_remember/models/knowledge/review.py:63-63 |
-| **The four cases that measure this record's own contract: what it binds, what it refuses to read, what converges, and what a damaged record is reported as.** | `test_the_manifest_binds_the_owners_identities_versions_and_its_own_fields`; `test_a_record_that_cannot_be_read_is_not_a_readable_generation`; `test_an_exact_retry_converges_and_a_superseding_generation_names_its_predecessor`; `test_a_half_with_no_recorded_generation_freezes_as_typed_absence_never_as_inference` | mcp/tests/test_knowledge_review_comparison_generation.py:393-479; mcp/tests/test_knowledge_review_comparison_generation.py:603-671; mcp/tests/test_knowledge_review_comparison_generation.py:713-764; mcp/tests/test_knowledge_review_comparison_generation.py:770-838 |
+- The module's own statement of what it owns (the record, the layout, the deletion record) and of the separate responsibility next door. [1]
+- The published surface: version, layout literals, the eleven models, the path helpers, the reads and the discovery functions. [2]
+- **The layout, named once**, and the two typed-absence spellings with their reason for being distinct from a failure. [3]
+- **The fields the seal does not cover, and why each is excluded.** [4]
+- **One retained snapshot: a generation-relative path, the digest of the bytes written, and the deletion owner plus bounded scope that may delete it.** [5]
+- **The validator that makes the packet's non-conforming example unconstructible: identity and bytes travel together, and a non-retained side states its reason.** [6]
+- **The source binding: the capture owner's own identity carried verbatim, the custody measurement, the names it was measured against, and the pin's agreement with the custody.** [7]
+- **The scope binding: the owner-produced inventory's state, digest and population, plus the selection that must name its selector.** [8]
+- One cited owner-produced artifact as a task-relative, digest-bearing reference. [9]
+- **The records binding, which asserts what the composition supplied and deliberately not whether an owner published none or could not be read (R14's fact).** [10]
+- Every policy version as a constant its owner declares, never a version derived here. [11]
+- **The lineage: one predecessor named by id *and* manifest digest, plus the two optional owner digests.** [12]
+- **The record itself, the seal it carries, and the four self-agreement checks including the re-derived generation id.** [13]
+- **The unavailable-history record an explicit deletion writes, including the custody measured *before* a pin was released.** [14]
+- **The whole layout, derived from the one durable root owner.** [15]
+- **The derived generation id, and the one function that seals and validates a field set together.** [16]
+- **The two-statement read: the record's own validation plus the containing directory's agreement with the id it claims.** [17]
+- **The deletion reads and the canonical-bytes write, with "present but unreadable is not absence" stated in the code.** [18]
+- **Discovery: the one list of published-looking directories, and the pass that skips an unreadable record instead of guessing its fields.** [19]
+- **The one durable-root owner this module asks instead of restating `<task_root>/notes/reports`.** [20]
+- The R05 constant imported rather than re-spelled, so the accepted spelling and the recorded one cannot drift. [21]
+- The owners whose values the manifest carries rather than re-derives: the capture identity, the resolved pair, the inventory and the comparison identity. [22]
+- **The four cases that measure this record's own contract: what it binds, what it refuses to read, what converges, and what a damaged record is reported as.** [23]
 
 The following declarations carry the changed boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Counts and optional assessment availability remain separate recorded facts. | `ComparisonRecordBinding` | mcp/src/agents_remember/application/review_comparison_generation.py:320-364 |
+- Counts and optional assessment availability remain separate recorded facts. [24]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The record is published under the coordination
 task root, which is outside both the code and the memory repository, and the repository it *names* is a
 path the source binding records rather than something this module resolves.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 1 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 10 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 12 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-
-- 2026-09-27T04:56:35+00:00 — Documented optional owner availability and canonical omission for existing immutable manifests. Verification hashes/dates remain closeout-owned.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one inherited citation defect repaired — it is not this leaf's own.** The row carrying the module's own statement of what it owns cited `review_comparison_generation.py:1-42` with an Anchor cell reading `*(module docstring)*`, which is italic prose rather than an anchor: nothing in the row said what those lines were supposed to contain, so the range could not be checked at all. The defect predates this leaf (the row was written by 260921-ICR-L11) and is repaired here only because this leaf's curation pass owns the gate finding. The Anchor cell now names two real identifiers that occur **literally inside the cited range** — `ComparisonGenerationManifest` at line 11 and `ComparisonHistoryDeletion` at line 22, the record and the deletion record the docstring says this module owns — which is what makes the claim checkable. The Finding wording, the cited range and every other row are unchanged; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
-- 2026-09-21T19:26:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): created this one-to-one card for the module this leaf introduced as the **keystone of ICR-R11@v1** — the durable record a comparison survives cleanup and restart *as*. It records what the record is rather than only where the code lives: the manifest binds owner-produced identities and **stores no semantic judgment of its own** (its one self-computed digest is a seal over its own fields); a `retained` knowledge side must carry identity **and** bytes by construction, which makes the packet's non-conforming example — a manifest holding only a digest of already-deleted SQLite bytes — unconstructible rather than merely discouraged; the generation id is **re-derived from the seal** and then checked a second time against the directory the record was found in, so a record resealed around edited fields is refused instead of being read as the generation a caller resolved; and `recorded_at` is outside the seal on purpose so an exact retry converges on the same record instead of refusing against itself. It also records the boundaries: the durable root is asked of `durable_evidence.durable_reports_root` rather than restated, `not-recorded` / `not-selected` are R05's typed absences and not failures, an unreadable deletion record is a storage error rather than "no deletion recorded", and hidden stage directories are never generations. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted candidate and no real commit contains the content a stamp would otherwise claim to have verified. The recorded working candidate states what was actually read, and closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T21:59+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -61,46 +51,25 @@ arrow navigation with wrap + scroll-into-view, Enter/click select, Esc/backdrop 
 - The one-line contract is pinned at 20 agents: the roster size must never grow the chrome outside
   the menu.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component under test. | `AgentsArea` | dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:180-396 |
-| The `ConversationAgentView` shape the fixtures build. | `ConversationAgentView` | dashboard/src/data/conversation/agents.ts:58-64 |
-| The surface-level focus behavior this line plugs into, incl. the ArrowDown hijack (separate suite). | "ArrowDown from the timeline moves focus into the agents line; Enter opens the menu; Enter selects" | dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:186-211 |
+- The component under test. [1]
+- The `ConversationAgentView` shape the fixtures build. [2]
+- The surface-level focus behavior this line plugs into, incl. the ArrowDown hijack (separate suite). [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-03T09:50+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 15 assigned citation findings (2 missing anchors, 2 malformed sources, and 11 prose citations); final scoped check is clean.
-
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: rewrote the card for the reworked suite — the
-  old per-agent-row/expand-collapse pins are replaced by the one-compact-line contract (20-agent
-  roster still one line), the listbox open/aria/focus pins, wrapping arrow navigation with the
-  scroll-into-view spy, Enter/click/Esc/backdrop select-and-dismiss semantics, the viewed-agent
-  initial active option with re-select-as-close, the in-line viewing note + back-to-parent
-  affordance, and the closed-line Escape return. Verification stays pinned (uncommitted);
-  closeout re-stamps.
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: created the sidecar for the R7 AgentsArea suite —
-  the static `0 agents` summary (no dead toggle), one row per agent with word-carrying chips and the
-  terminal-only preview, honest `aria-expanded` collapse, `aria-current` focus marking, and the
-  row-activation focus toggle (focus agent / back to parent). Verification is pinned to the leaf base
-  (`842b487`) because the new source file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

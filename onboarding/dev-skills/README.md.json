@@ -1,0 +1,24 @@
+{
+  "path": "dev-skills/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`sync-skills.py` copies only `REPO_ROOT/\"skills\"` into its fixed targets; `dev-skills/` is never a target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0377d4f717b152989552b3cdd7adeb9d57cebc5e",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

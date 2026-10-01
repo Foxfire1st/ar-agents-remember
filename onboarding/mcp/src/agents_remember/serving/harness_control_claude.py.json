@@ -1,0 +1,294 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_control_claude.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "State requires the same vendor session, retained UUID, exact canonical replay body, and ordered terminal result.\n\nAnchor: `ClaudeStreamState`, `_require_faithful_replay`, `_handle_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94bf5a628d99c3605a8e516c66b273ad545d3f97",
+            "content": "sha256:08a23b5e2040c8a2bd3a81b5af6d5baa678041dd7661915c33b70d65345d1fa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaudeStreamState"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94bf5a628d99c3605a8e516c66b273ad545d3f97",
+            "content": "sha256:52be3fe1af6949c8d6265615859f9e28e1a67c75170bdfea7216984272bacc0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_faithful_replay"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94bf5a628d99c3605a8e516c66b273ad545d3f97",
+            "content": "sha256:c13c7f5543453c7ee83a4159ee0de4d3ea0832d3c86d51aeee61acef73740a8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_handle_result"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Protocol keeps normal stream argv construction separate from discovery-only MCP selector replacement and pins the first-`--` boundary.\n\nAnchor: `build_claude_stream_argv`, `build_claude_discovery_argv`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:417c56ec5506f387f43622d0e47dec835f225a1f2ba0b5c6b2af283b70f84ccb",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_claude_stream_argv"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:58a7cca6354629aef422f3ed95fe74073f077a7c79bd9951e8b8a00525ea6083",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_claude_discovery_argv"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:0eb98c5cbbad6a930ed1c2de418ae257cab568740cc13244b9910415a644eac7",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:6f9638cab792964813955d681b52dd98e22690c1072cec9757d19bc9b4cff133",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sub-agent-text forwarding floor gate: `FORWARD_SUBAGENT_TEXT_FLAG`, the probed floor `(2, 1, 220)`, and `forward_subagent_text_supported` — fail-closed so unproven/unparseable versions never get the flag.\n\nAnchor: `FORWARD_SUBAGENT_TEXT_FLAG`, `FORWARD_SUBAGENT_TEXT_FLOOR`, `forward_subagent_text_supported`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:2a53307a94bb0f2e05da04b13d5fd49ad38909014405891859453423cdbaebed",
+            "locator": {
+              "kind": "symbol",
+              "name": "FORWARD_SUBAGENT_TEXT_FLAG"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:429217615db9a9e01e03268f0b918517085c0938208abec3ee40437b4d2c0d3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FORWARD_SUBAGENT_TEXT_FLOOR"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:65e54ea10314e37282594df30e4989c9c64caf7b27c2fc4ca7ef139d436a22f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "forward_subagent_text_supported"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Protocol command gating admits native model/effort categories without model-name heuristics while keeping identity changes blocked.\n\nAnchor: `_IDENTITY_CHANGING_COMMANDS`, `_NATIVE_CAPABILITY_COMMANDS`, `command_unsupported_detail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:8ccd8bfb4e4097bc6fec96c0ade4cd2a96810154896c5c986461032bd91f26bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_IDENTITY_CHANGING_COMMANDS"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:16a397aaad4895c31daa2ff36bc67c2eef1587a9631901a7e0c4672879866515",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NATIVE_CAPABILITY_COMMANDS"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:31df4fec7abcaee51f6008531385b3f9642c69f2b4bb6f15e9e4474383a2a219",
+            "locator": {
+              "kind": "symbol",
+              "name": "command_unsupported_detail"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:6f556f4e4415a3f7fa75aa5b41dd425de3d0051bd769cb458a309a66ba622f70",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:5b0eb0832a60349dc227bb8c0c4f7dd78391f29ba486da9502a9c66587eeb65f",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 352
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Claude catalog parsing validates unique models, selectability, resolved current identity, and model-local effort.\n\nAnchor: `parse_list_models_response`, `_parse_model`, `_require_unique_model_keys`, `_select_current_model`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7907ed927e34b64195d50aab2a0baa2109383621",
+            "content": "sha256:03766ed7b240678706909f24497a7799e73c386c3e5655ad9eeed631b570b988",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_list_models_response"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7907ed927e34b64195d50aab2a0baa2109383621",
+            "content": "sha256:26dba7ec10a2221d8638eb3b307681afb2e515cb7ceb53a94f6c8f7f035c3a01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_model"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7907ed927e34b64195d50aab2a0baa2109383621",
+            "content": "sha256:51d11cf5e43c65364dc938c6e9ee6770e2977c74dd52d97db1b9b354bb6ea5eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_unique_model_keys"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7907ed927e34b64195d50aab2a0baa2109383621",
+            "content": "sha256:80ab5a9e89c01f545414209afbb9336153c38036407d5010e4d0ea2ecf5c13f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_current_model"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared submission authority admits setters onto the same ordinary-operation timeline as prompt/interaction/reconciliation commands and validates honest `SetResult` evidence. `HarnessControlQueue` no longer exists — it was deleted in 260731-EFA-L6 as a pure forwarding facade, so the authority is now the only owner rather than the thing behind a facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:88401fcf5e4d8e7e1c667a13d7190ec13035195f9c578f984ae7bebc54ac1195",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_set_result"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:155ee358ff65d67e2abd370c4a3a169fbcfd5ec087ee5e57b3ef385244bc70ec",
+            "locator": {
+              "end": 1023,
+              "kind": "line_range",
+              "start": 1010
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

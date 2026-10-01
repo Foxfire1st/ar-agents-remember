@@ -1,0 +1,259 @@
+{
+  "path": "dashboard/src/panels/review/IntentWordDiff.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of rules 1, 1a, 3, 4, 5 and 7, and the dataset boundary.\n\nAnchor: \"is word-diffed, and only there do labels compare\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:6d303f8af2cc6820a2f8fb925f4491104d6f89627a7f54ccdf0f388a1e5aabf1",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The control only where a word-diffed passage is drawn (F5, R2-1).\n\nAnchor: \"const wordsPassage = (before: string, after: string) =>\"; \"function drawsPassage(\"; \"function offersLayout(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:596a5d9a6e6ada0fddacf6647522e2cfcc6f617891ae7f2835e8a15d8a34bcd3",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 492
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The statement area of a tree comparison's selected invariant.\n\nAnchor: \"export function IntentStatementBody({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:a1c4d4b1d13cf041d2bf6cb1083c3efab8dfdfd07faf15dec96917b374dc6e55",
+            "locator": {
+              "end": 613,
+              "kind": "line_range",
+              "start": 557
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The guarantee's changed text, including one revision whose texts differ, and the details fact.\n\nAnchor: \"export function guaranteeTextChange(\"; \"export function guaranteeFact(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:f59295a3de78a180ee94a8a00a8fbb8cb8bddbc3e72024020925c3d298172742",
+            "locator": {
+              "end": 634,
+              "kind": "line_range",
+              "start": 615
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The changed-guarantee block and the one-sided guarantee label.\n\nAnchor: \"export function GuaranteeTextChange({\"; \"export function OneSidedGuaranteeLabel({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:20e7a58e9ca5e6ccd5db5a8a7a36bf03d05a5559a182e3b1bfa471865ba34eb7",
+            "locator": {
+              "end": 699,
+              "kind": "line_range",
+              "start": 636
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Where the centre and the navigator set the scope.\n\nAnchor: \"<IntentWordDiffScope payload={props.payload}>\"; \"<TreeComparisonScope tree={tree}>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:f039637f9550de083a3248bcb081f492b1f519086446c7d15bc37b6b0c15f46f",
+            "locator": {
+              "end": 905,
+              "kind": "line_range",
+              "start": 905
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:ad6b7c96ce6f8236f06318ebaa06d03b09ce3f357c16b5446dfc1aabc377266c",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 807
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tree-comparison scope the centre and the navigator set.\n\nAnchor: \"export function TreeComparisonScope(\"; \"export function IntentWordDiffScope({\"; \"export const useTreeComparison = (): boolean =>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:c1f4f5f1c91fffc5b09f84c00ada9298fbbab3128d6f4096f0c6b79ef8dd1aa6",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one layout control.\n\nAnchor: \"function ProseLayoutControl() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:4ecfb27eb7cafab8fcd64d59826a7a19772e703499e529cc82915e4e712f2837",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A mark: struck or underlined, announced, whitespace as hidden glyphs with a closing space.\n\nAnchor: \"function Mark({ part }: { part: DiffPart }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:3673b70acabeb6e819454801d74dafc5c1bde6dda8ef85397387dbbeb08b1273",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Whitespace-only rendering with both exact texts disclosed.\n\nAnchor: \"function WhitespaceOnly({\"; \"whitespace-only change\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:85db1af0495e7a8e028c1c8239a29470df1cd4df81312b5808eb9c2603a0a5cf",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 261
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One passage per changed field; the rewrite fallback, its reason and the unsaved \"Show inline\".\n\nAnchor: \"function rewriteReason(diff: WordsDiff): string {\"; \"function TextPassage({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:93595650086d2a05df66dcbebbb554df76414fd26cbcd496a11651e5cea63f56",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Aligned lists, including moved items.\n\nAnchor: \"function ListItem({ row, field }: { row: ListRow; field: string }) {\"; \"function ListPassage({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:0099a82de0fd5eef5c33d1f216d3183d1bcb9a1150240a9282d959c0931569ac",
+            "locator": {
+              "end": 394,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The R06 indication: known absent, or a side that could not be read.\n\nAnchor: \"function OneSidedLine({\"; \"not known absent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:34b02d2077eac3347eb63305af514eb0d1f9d1e12c39ef5412dddc174aa34a07",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 396
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A null field as known absence; a projected list shown as reported.\n\nAnchor: \"function FieldBody({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "614ec14e1439e60bff77b58274dd261140375aa0",
+            "content": "sha256:498df1064c262ae2746756281db1430591ca6ff6836dea8f4564df33afebab6d",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 459
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

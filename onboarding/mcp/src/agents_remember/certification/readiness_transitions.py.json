@@ -1,0 +1,107 @@
+{
+  "path": "mcp/src/agents_remember/certification/readiness_transitions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The vocabulary requires a canonical transition table with no translation layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11dd787b17f4fda9458c319ed64b6660036e0b9",
+            "content": "sha256:de01500e37ad0597786414dc6a06c0901920391bc8860503cedb15eed989ba5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_READINESS_TRANSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical table is the single same-generation transition declaration for all four domains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11dd787b17f4fda9458c319ed64b6660036e0b9",
+            "content": "sha256:de01500e37ad0597786414dc6a06c0901920391bc8860503cedb15eed989ba5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_READINESS_TRANSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The validator fails closed on any transition outside the canonical table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11dd787b17f4fda9458c319ed64b6660036e0b9",
+            "content": "sha256:de019c59b593d56f740043a0b42d62053b6802b658139c61ac0fe96c0bd17a7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_readiness_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Refusal findings reuse the readiness contract error family.\n\nAnchor: `CloseoutReadinessContractError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11dd787b17f4fda9458c319ed64b6660036e0b9",
+            "content": "sha256:a15eeb1ba5f76d998a01e8e86d79eab647eccc1f48bb62d2b7cc98b1aef68a31",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The rule shape comes from the readiness models vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6acfc185342be3a34564d96252e15ab57f43a15d",
+            "content": "sha256:677e0a9ebc1e24aa0caebbed93f189cefd362f3b17854dc78dbf5296d4a23c42",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadinessTransitionRule"
+            },
+            "path": "mcp/src/agents_remember/certification/readiness_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The certification facade imports and re-exports the transition table and validator.\n\nAnchor: `readiness_transitions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "389ba6c651fb5023baa08c53db2be4886375fbd1",
+            "content": "sha256:1f1ce15351268f4e439368061e4bb3c365d1f897bfeef6e8495649da613f9f05",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

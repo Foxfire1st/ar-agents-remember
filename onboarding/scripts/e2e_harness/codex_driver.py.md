@@ -1,15 +1,5 @@
 # codex_driver.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `scripts/e2e_harness/codex_driver.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T22:20:19+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `scripts/e2e_harness/overview.md` |
-
 ## Governing Overview
 
 [Ambient Role-Chat E2E Harness](overview.md)
@@ -49,37 +39,22 @@ accident.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. Runtime negotiation is the authority for the client
 actually exercised by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The real app-server probe and ambient turn collect negotiated runtime evidence. | `_run_ambient_codex` | scripts/e2e_harness/codex_driver.py:100-194 |
+- The real app-server probe and ambient turn collect negotiated runtime evidence. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP registration and handshake are inspected before ambient execution. | `codex_mcp_registration` | scripts/e2e_harness/codex_driver.py:34-49; scripts/e2e_harness/codex_driver.py:72-97 |
-| Process and notification summaries stay bounded for actionable reports. | `_notification_summary` | scripts/e2e_harness/codex_driver.py:197-252 |
+- MCP registration and handshake are inspected before ambient execution. [2]
+- Process and notification summaries stay bounded for actionable reports. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| All external state is fixture-provided rather than imported from another repository. | `_codex_environment` | scripts/e2e_harness/codex_driver.py:254-289 |
-
-## Update History
-
-- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
-  canonical anchored citation format. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:59:40+02:00 — 260821-ARSPAWN-L5: added explicit ambient-identity-absence
-  evidence and the deliberate same-seat repeat prompt while retaining one real Codex boundary per
-  call. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created onboarding for the real Codex 0.151.0 driver. Verification metadata remains closeout-owned.
+- All external state is fixture-provided rather than imported from another repository. [4]

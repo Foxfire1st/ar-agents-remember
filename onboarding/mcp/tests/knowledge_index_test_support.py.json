@@ -1,0 +1,138 @@
+{
+  "path": "mcp/tests/knowledge_index_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two fixture kinds and the converter's limits.\n\nAnchor: \"It is not the MIK-R24 conversion\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:6be004876566af4fb359eb573dfe228b38b5dcddc428b3d473dc3cde3724f4a8",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The conforming-example tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:2f859d67e363d8825234bae19243c1c04126b54199f024989db9ba1d661ffb6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_review_tree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:d27c728453b05311cdabba3e09a4707d0338480561b76601cd867bd1d70bf274",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:26b0faeab708d7820dd37a46e72fdd4391e1f1fdd4e015a02000041d38ef220a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixture converter and its head selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:bce115e814f888e929ad982ba066fed481f1779fb35c29a5d87c8dd7d393a99d",
+            "locator": {
+              "kind": "symbol",
+              "name": "convert_dataset"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:6d36cc6ce6c1c73f9a3f36dcf6a9a2431bd6c312bcac26feede347bf548a562a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_convert"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:b0665e526b395e8a62634e006314b58e198f0f70e5b86b5e064017036ab5d96b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_heads"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:1aebeb9406c4c9fad8b19a0e50b46d4f0f4e6b5f7fe79bb984a45a4b0d87b6ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_convert_realizations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The store-authored parity database and the extra candidate claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:81ab449a136983de86cc1283ef9e1db6ff39bfb0976a7b667ef392fd7f06bee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parity_dataset"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "content": "sha256:a6d8913508785deb8636c7fbdc411f3949ae57e4df57cc8ec7fd9ccef0273a1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_parity_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

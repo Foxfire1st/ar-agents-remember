@@ -1,0 +1,220 @@
+{
+  "path": "dashboard/src/panels/engine-room/EnclosureStackList.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`EnclosureStackList` component + props (`views`, `selectedKey`, `onSelect`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b799b339f49a88c118eabef01ef2dadd0821da2f",
+            "content": "sha256:5dbc5522501399c81d0fec1f027495271dbb78ebace13350bf81879c4defb3b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureStackList"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Single-selection `ListBox`; `Selection` coerced to single key in `onSelectionChange`\n\nAnchor: \"single\"; `onSelectionChange`; `typeof`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b799b339f49a88c118eabef01ef2dadd0821da2f",
+            "content": "sha256:312b3c2883c9defd7ea166c5638d45b5bb59f03d0ae02e3648e170341787f8df",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b799b339f49a88c118eabef01ef2dadd0821da2f",
+            "content": "sha256:da6a28a627b0fe39b167ad101cacdc2abd6f8a7cb2dd8f6de66de3c59f17b375",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b799b339f49a88c118eabef01ef2dadd0821da2f",
+            "content": "sha256:c8513314e2572dcd90970ad6c208dc55bc4907410914a725381df4e9c0d103e1",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-enclosure `ListBoxItem` keyed by `node.worktreeGroup`; `textValue` = taskName + repoName\n\nAnchor: `worktreeGroup`; `textValue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b799b339f49a88c118eabef01ef2dadd0821da2f",
+            "content": "sha256:8d010122a7d5f54f735db51602f7821977b61cce33c238fdfb870c25da6fa086",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Phase chip + gate-state chips (review/closeout/integration), conditional integ + lifecycle\n\nAnchor: `phase`; `state`; `humanReviewStatus`; `closeoutStatus`; `integrationStatus`; \"not-started\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b799b339f49a88c118eabef01ef2dadd0821da2f",
+            "content": "sha256:5eafb583bb59b1664e464aca886227a09b8f4c4e126989699c8dfb813af03d4f",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b799b339f49a88c118eabef01ef2dadd0821da2f",
+            "content": "sha256:adec85bea883e138d76200a115596d4251cadd8bb200566ca57f17dc43e31af9",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`EngineProcessView` view type ({ enclosureKey, node, lifecycle })",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e6bbe43f55f80235591a68efa88089992e0933f",
+            "content": "sha256:781de27d3b75f15264927e15d255afd82b244214d46a860e3643990507c267dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessView"
+            },
+            "path": "dashboard/src/panels/engine-room/engineRoomTypes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`EngineProcessNode` fields (worktreeGroup, phase, health, humanReviewStatus, closeoutStatus, integrationStatus)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`stackItem`/`healthDot`/`phaseChip` `health`-variant recipes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:09c0d8d001339fc44a99ea4a59737a494b60e862b798cf58659ddfc831ecdd24",
+            "locator": {
+              "kind": "symbol",
+              "name": "stackItem"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:5de7520067a7984282375194629a00bcc4e15cc28258cd7b24594a4b143bda57",
+            "locator": {
+              "kind": "symbol",
+              "name": "healthDot"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:e69262c9162561589714c55ab15aa15635aea8d5a8a756e0617d44c4e46b884f",
+            "locator": {
+              "kind": "symbol",
+              "name": "phaseChip"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`stackList` layout keeps the enclosure rail vertically scrollable",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:50937e62d1ea53a3b68a16332d004a9691e5ef6739acebc65501fc151e3fc476",
+            "locator": {
+              "kind": "symbol",
+              "name": "stackList"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`chip` styles define the compact status-chip presentation\n\nAnchor: `chip`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "content": "sha256:7d543e6ea33a4af29069865d85cfef21efd1f6c9c7b320db9fd341c884f5e53e",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

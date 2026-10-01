@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/view_source.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/view_source.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -184,56 +174,44 @@ storage is a single private `_cache` keyed by what was read rather than a second
   holds membership. The port declares `family_member_rows` so that read is a typed method call rather
   than a string a caller can spell wrong, and `_member_row` is the only row builder for that statement.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The reader answers a port declared one layer up and feeds a view layer that decides everything this
 module refuses to decide; the tables it reads are declared by generations it does not own. The rows
 below cite the reader's statements, builders and entry points, the vocabulary it imports rather than
 re-declares, and the layer where selection, ordering and provenance classification actually happen.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reader's own statement of its division of labour: recorded rows out, no selection, no ordering and no classification, because every such decision carries a provenance class one layer up. | `ViewSourceRow` | mcp/src/agents_remember/memory/knowledge/view_source.py:1-21 |
-| The read-only handle this module opens through, with the read-only APSW flag and the busy timeout it does set. | `open_read_only_database` | mcp/src/agents_remember/memory/knowledge/view_source.py:14-17; mcp/src/agents_remember/memory/knowledge/connection.py:52-63 |
-| The snapshot composed from the dataset's own identity rather than a caller's assertion. | `dataset_identity`; `KnowledgeReadSnapshot` | mcp/src/agents_remember/memory/knowledge/view_source.py:19-20; mcp/src/agents_remember/memory/knowledge/logical.py:153-175; mcp/src/agents_remember/models/knowledge/read.py:275-281 |
-| The envelope-and-revision read, with its columns named rather than selected by a star so a later column cannot change what a view sees. | `RECORDS_OF_KIND` | mcp/src/agents_remember/memory/knowledge/view_source.py:48-59 |
-| The two registered totals, each counted from its own table and returned as one counts value. | `REGISTERED_REALIZATIONS`; `REGISTERED_FAMILIES` | mcp/src/agents_remember/memory/knowledge/view_source.py:61-63; mcp/src/agents_remember/memory/knowledge/view_source.py:64-64 |
-| Generation 1's own entities read by their own statements instead of being copied into the envelope. | `INVARIANT_REVISIONS`; `FAMILY_REVISIONS` | mcp/src/agents_remember/memory/knowledge/view_source.py:65-88 |
-| The family-membership read: its own statement, executed from its own port method, with the comment recording why the generic envelope read could not answer it. | `FAMILY_MEMBERS`; `family_member_rows` | mcp/src/agents_remember/memory/knowledge/view_source.py:91-99; mcp/src/agents_remember/memory/knowledge/view_source.py:235-248; mcp/src/agents_remember/memory/knowledge/view_source.py:333-351 |
-| The realization-claim read and the source anchor it joins, so a claim arrives with the location it attributes. | `REALIZATION_CLAIMS` | mcp/src/agents_remember/memory/knowledge/view_source.py:95-102 |
-| The attachment read, whose endpoint column is chosen from the declared vocabulary instead of being interpolated from caller text. | `ENDPOINT_COLUMNS`; `ATTACHMENTS_OF_ENDPOINT` | mcp/src/agents_remember/models/knowledge/facet.py:300-305; mcp/src/agents_remember/memory/knowledge/view_source.py:105-118 |
-| The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through. | `_sequence`; `_provenance_author`; `decode_typed_column` | mcp/src/agents_remember/memory/knowledge/view_source.py:126-151; mcp/src/agents_remember/memory/knowledge/records.py:64-67 |
-| The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers — including the membership method the protocol declares so a caller cannot reach for the envelope kind by name. | `StoreViewReader`; `KnowledgeViewReader`; `family_member_rows` | mcp/src/agents_remember/memory/knowledge/view_source.py:154-173; mcp/src/agents_remember/models/knowledge/view.py:1068-1114; mcp/src/agents_remember/models/knowledge/view.py:1101-1110 |
-| The snapshot accessor, the registered counts and the per-kind read with its lifetime cache. | `snapshot`; `registered_counts`; `rows`; `_cache` | mcp/src/agents_remember/memory/knowledge/view_source.py:175-197 |
-| The entity row readers and the attachment read, plus the count helper that refuses an empty count result. | `invariant_rows`; `family_rows`; `realization_rows`; `attachment_rows`; `_count` | mcp/src/agents_remember/memory/knowledge/view_source.py:205-213; mcp/src/agents_remember/memory/knowledge/view_source.py:215-223; mcp/src/agents_remember/memory/knowledge/view_source.py:225-233; mcp/src/agents_remember/memory/knowledge/view_source.py:250-265; mcp/src/agents_remember/memory/knowledge/view_source.py:287-290 |
-| The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable. | `anchor_state`; `ViewReaderError` | mcp/src/agents_remember/memory/knowledge/view_source.py:267-283; mcp/src/agents_remember/models/knowledge/view.py:165-171; mcp/src/agents_remember/models/knowledge/view.py:771-771 |
-| The row builders, each naming its record kind and schema and building its payload from named columns. | `_invariant_row`; `_family_row`; `_member_row`; `_realization_row`; `_attachment_row`; `_decode_row` | mcp/src/agents_remember/memory/knowledge/view_source.py:298-315; mcp/src/agents_remember/memory/knowledge/view_source.py:317-331; mcp/src/agents_remember/memory/knowledge/view_source.py:333-351; mcp/src/agents_remember/memory/knowledge/view_source.py:353-372; mcp/src/agents_remember/memory/knowledge/view_source.py:374-384; mcp/src/agents_remember/memory/knowledge/view_source.py:386-402 |
-| Both entry points, with the anchor resolver passed in rather than resolved at this layer. | `store_view_reader`; `open_view_reader` | mcp/src/agents_remember/memory/knowledge/view_source.py:405-428; mcp/src/agents_remember/memory/knowledge/view_source.py:431-455 |
-| Where selection and ordering actually live, with an unclassifiable value withheld rather than defaulted. | `order_candidates` | mcp/src/agents_remember/application/knowledge_view_render.py:278-313 |
-| The envelope and revision tables generation 2 appends, and the opened store the reader is built over. | `APPENDED_TABLES`; `OpenedKnowledgeStore` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:42-49; mcp/src/agents_remember/memory/knowledge/store.py:95-103 |
+- The reader's own statement of its division of labour: recorded rows out, no selection, no ordering and no classification, because every such decision carries a provenance class one layer up. [1]
+- The read-only handle this module opens through, with the read-only APSW flag and the busy timeout it does set. [2]
+- The snapshot composed from the dataset's own identity rather than a caller's assertion. [3]
+- The envelope-and-revision read, with its columns named rather than selected by a star so a later column cannot change what a view sees. [4]
+- The two registered totals, each counted from its own table and returned as one counts value. [5]
+- Generation 1's own entities read by their own statements instead of being copied into the envelope. [6]
+- The family-membership read: its own statement, executed from its own port method, with the comment recording why the generic envelope read could not answer it. [7]
+- The realization-claim read and the source anchor it joins, so a claim arrives with the location it attributes. [8]
+- The attachment read, whose endpoint column is chosen from the declared vocabulary instead of being interpolated from caller text. [9]
+- The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through. [10]
+- The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers — including the membership method the protocol declares so a caller cannot reach for the envelope kind by name. [11]
+- The snapshot accessor, the registered counts and the per-kind read with its lifetime cache. [12]
+- The entity row readers and the attachment read, plus the count helper that refuses an empty count result. [13]
+- The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable. [14]
+- The row builders, each naming its record kind and schema and building its payload from named columns. [15]
+- Both entry points, with the anchor resolver passed in rather than resolved at this layer. [16]
+- Where selection and ordering actually live, with an unclassifiable value withheld rather than defaulted. [17]
+- The envelope and revision tables generation 2 appends, and the opened store the reader is built over. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The reader reads one local database at one
 path through a read-only handle, every identity it returns is a store-local row identity or a declared
 vocabulary member, and nothing here reaches another repository, another dataset or a remote.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`models/knowledge/read.py` lost the moved anchor vocabulary; the evidence TOMLs gained one row) were re-measured against the candidate by the curator so each anchor lands on its construct again; no claim wording changed.
-
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-20T05:24+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **body update for the membership read this leaf makes real, and the invariant this card stated backwards.** The card's own Invariants list said `FAMILY_MEMBERS` was "a module-level statement that `__all__` does not list and that no module or test in the shipped candidate references besides its own definition, so the family-membership read this leaf declares has no caller yet." That was true when it was written and is false now: L41 gave the statement its caller — `StoreViewReader.family_member_rows` (`memory/knowledge/view_source.py:235-248`) — and `_member_row` (`:333-351`) is the one row builder for it. The Invariants entries now say that, the Logic section gained a paragraph stating why the membership read is a port method rather than `rows("family_member")` (the envelope tables never carried the kind, so the named-kind read answered "no rows" on a dataset holding membership and the family view reported a guarantee, no members, no locations and a complete answer), the row-builder and cache paragraphs now name `_member_row` and the membership statement key, and the Conventions section counts six row builders and five record-schema literals rather than five and four. The reference table's membership row now cites the statement, the method and the builder, and its reader row carries the protocol method the port declares. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded — the candidate is uncommitted and the governed closeout owns the real stamp — and the superseded `ar/260915-ks-l20` candidate row is replaced by the recorded working candidate above, because two candidate rows for one card cannot both stand and no stamp was advanced or invented.
-- 2026-09-19T17:15+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`, base `497d9e9f`): M1-4 anchor repair, re-read against the code worktree at `e7998504`. Three rows were wrong. The attachment row had the two names and their modules swapped: the statement `ATTACHMENTS_OF_ENDPOINT` lives in this module at `:105-118` and the declared `ENDPOINT_COLUMNS` tuple lives in `models/knowledge/facet.py:300-305`, and the citations now follow the anchors' order. `KnowledgeViewReader` was cited at `models/knowledge/view.py:862-881`, which is `ReviewMatrixRow`; the protocol is at `:1032-1067`. `ViewReaderError` was cited at `models/knowledge/view.py:152-158`, which is the ordering-provenance rule; the class is at `:160-166`. Every other row was re-checked and stands (`ViewSourceRow` in the docstring range and `_cache` in the constructor range are deliberate mention anchors). No claim was deleted or softened. The stamp is unchanged because `d0c1d1cf`'s content for this file is byte-identical to `e7998504` (`git diff d0c1d1cf HEAD` is empty).- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the reader port's implementation. It records the division of labour that is the module's contract — envelope and revision rows out, no selection, no ordering and no classification, because those decisions carry their provenance class in the view layer — together with the read-only handle `open_read_only_database` gives, the snapshot resolved from the dataset's own identity rather than asserted, the eight SQL constants with the one substituted endpoint column taken from the declared vocabulary, the typed-JSON decoding, the per-kind row builders and the two entry points that pass the anchor resolver in. It also records the deliberate absences: no writable statement, no path of its own, no derived author, and the declared-but-uncalled family-membership statement. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

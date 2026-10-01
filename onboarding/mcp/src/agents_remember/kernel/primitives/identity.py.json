@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/identity.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MCP config uses `provider_instance_id()` when provider settings omit an explicit `instanceId`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:3dbfb0ced91205e9df4110ce3df2b084ed194f5e422473716c068bcfafe5c528",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_provider_config"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Generated lifecycle settings derive GrepAI and CGC runtime names and ownership labels through the settings builders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:13e3cfbec31da961c5f5beeb6f88220acd13202a6f8f27c7e12642e421f74717",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grepai_names"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:b2ee2a2ded7ce5314c2739b4d4858514359036f9e091f55c8c761e5fb6978b78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grepai_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:f55b790414330d6ecff12768bfda58072db954aaaaf65c6b71b1573c4898a5ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cgc_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:7b68c3745be81d6e5a2f284e6faa20a02aae995b1545019e00af55de30732576",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:c739036a9afa8bd7d7680028d82896efe0f170679d036b0c10bc86a9fde65962",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:e6dfa5347513efca49b8256bae8713fb888f0e45cb21573908fe74e325ccf0f6",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 237
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Worktree CGC isolated settings derive workflow-local instance ids through this helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:1b0136c79c3ba75bae909467183d6322b725fb5d369a1fa63ee2ad60812e9446",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_cgc_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worktree GrepAI isolated settings derive workflow-local instance ids through this helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:5dbfe025cc41e1eea14f593260ecdeba9a8ebb1590fdfd0e21d3d71e4cd5f94f",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_grepai_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/isolated.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:5488547ef590957a8f350934078fef2bab4447bf4566c48f664f45afb5bd0eff",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/isolated.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

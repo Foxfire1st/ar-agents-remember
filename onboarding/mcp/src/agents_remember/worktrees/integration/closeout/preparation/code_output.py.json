@@ -1,0 +1,111 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_output.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`current_code_preparation` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7008f3bc8e15a7da3d0acace280c5087c6ee0681",
+            "content": "sha256:4c46f0c143b8c75fdf516d9d865d84d46b053c37e425649f18ca87aca9687496",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_code_preparation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7008f3bc8e15a7da3d0acace280c5087c6ee0681",
+            "content": "sha256:368cd0f1eab0609138fb77f47e3c0f4e562d7599941e6653546bed16ce257790",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`select_code_preparation` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7008f3bc8e15a7da3d0acace280c5087c6ee0681",
+            "content": "sha256:77f252513b07f0919dd76577838a37cf94f27f155eb63bc004b3fc91b307283a",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_code_preparation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_code_prefix` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7008f3bc8e15a7da3d0acace280c5087c6ee0681",
+            "content": "sha256:27dc95fbf4fa978b85de50d6c328eb8ee8cb5b97ba6ea716a3d8ea8600359a61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_code_prefix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_new_code_intent` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7008f3bc8e15a7da3d0acace280c5087c6ee0681",
+            "content": "sha256:8287b1345bc09bd30cc99d37ced2cfeca61b8edbe1d2ea09dc520563212dcc3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_new_code_intent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7008f3bc8e15a7da3d0acace280c5087c6ee0681",
+            "content": "sha256:1d41c95614c6348d823cefcf4c6dce1ba96d1eefa9929d365733d934aec8baab",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`retain_code_output` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7008f3bc8e15a7da3d0acace280c5087c6ee0681",
+            "content": "sha256:4fa47a82f892a0f30877fc733d142df020ba9543bc29ab87afed3e61ce42a1e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_code_output"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

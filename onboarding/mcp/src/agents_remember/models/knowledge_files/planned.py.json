@@ -1,0 +1,193 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/planned.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: the forms and who shares them.\n\nAnchor: \"the one spelling of those forms\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:55229f2889c19aad07e98c30707e8d38e5274ad3f8ab62724b998ec759485e85",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The item kind, the unknown-subject fact and the dispositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:a66a8278c4c61b1e8d3739a46787415e1d56e55e12bc33926167c1076d6391a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLANNED_ITEM_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:d011c56812d6546dad86b6c07f791981a7b67b3ec1b65faf796520b44522a6c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBJECT_UNKNOWN"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:0f854ddd0cb9d02beef637ae01876573318c1414a8f6eed1b7be345758a26a80",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLANNED_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ref keys each disposition takes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:cb94fa4ffe6310cf4ff54412b0abf458d8f0f399b13bdf283c547eabaf3e6ec5",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFS_BY_DISPOSITION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declared, planned and requirement-ref patterns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:75b301649e713f35b2c329bd46e5327926038ed9a3dc2610ebf226dc6903b68b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECLARED_SUBJECT_PATTERN"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:99281ad6f7e6bc47a6b27ea9aa2e9407dac86e5b87fdd4cbef67ac0442b6af93",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLANNED_SUBJECT_PATTERN"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:c6c763d63dacaf9645772fb8acb024a87974b05cf28a102979649307b6914f72",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIREMENT_REF_PATTERN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The planned subject key and its parse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:d96f90ae9b6e6b7d252a8a440265573410d981f180c627b045c521373f3009f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "planned_subject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:77a77588858ef95626257567fab74c6eac8850b6ad1ebd2788e1a9063d563898",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_planned_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stored-item predicate for the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:34f497eef3153dc8d02978bf9783e12b4919c4387896f082df4e323d586a7fa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "planned_item_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The history row model built on these forms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6886ba1eefd70b2c4e342086c68884decf72ac8e",
+            "content": "sha256:621bc2e6a508d74aa5f647066d6609eb5b704b98b1ae0c35578a234bf946e695",
+            "locator": {
+              "kind": "symbol",
+              "name": "PlannedEffectRow"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The predicate agrees with `satisfiedBy` on every item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "content": "sha256:e5843fff97a252979221547a2bb897adadfa857a52373ed518f29daac2bdcfec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_planned_row_answers_its_item_and_the_stored_predicate_agrees"
+            },
+            "path": "mcp/tests/test_planned_knowledge_effects.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

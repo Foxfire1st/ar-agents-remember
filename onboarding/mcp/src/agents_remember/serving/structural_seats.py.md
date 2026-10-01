@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/structural_seats.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/structural_seats.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Serving overview](overview.md)
@@ -61,47 +51,20 @@ occupant/provenance evidence.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The resolver and error family centralize structural qualification. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:24-157 |
-| Parent/child canonical addresses are derivable through vacancy. | `parent_address`; `child_address` | mcp/src/agents_remember/serving/structural_seats.py:48-65; mcp/src/agents_remember/serving/structural_seats.py:67-77 |
-| Reviewer parent resolution validates the plane stamp and permits unstamped migration only for historical leaf rows. | `_reviewer_parent_address` | mcp/src/agents_remember/serving/structural_seats.py:160-197 |
-| Task containment resolves real sprint/master/leaf documents. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:35-252 |
+- The resolver and error family centralize structural qualification. [1]
+- Parent/child canonical addresses are derivable through vacancy. [2]
+- Reviewer parent resolution validates the plane stamp and permits unstamped migration only for historical leaf rows. [3]
+- Task containment resolves real sprint/master/leaf documents. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
-
-
-## Update History
-
-- 2026-08-31T12:00+02:00 — ARSPAWN-L5 A005 review repair restored the specific
-  outside-manager-master refusal and extracted manager authorization to keep the resolver below its
-  complexity bound. Verification remains closeout-owned.
-
-- 2026-08-31T04:59+02:00 — Tightened the ARSPAWN-L5 migration boundary to the actual
-  pre-polymorphic population: only unstamped leaf reviewers have a deterministic historical owner;
-  master and sprint rows require plane-stamped parent provenance. Verification remains closeout-owned.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented the four
-  reviewer contexts, their plane-specific child authorization, and the bounded legacy versus
-  fail-closed sprint-parent rule. Verification remains closeout-owned.
-
-- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
-
-- 2026-08-25T22:27+02:00 — No content impact: final ARSPAWN-L2 review confirmed vacancy-safe
-  address derivation and current-generation resolution remain separated exactly as documented.
-  Verification remains closeout-owned.
-
-- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: separated canonical address derivation from current
-  occupant resolution and consumed the shared incumbent/heir selector. Verification remains
-  closeout-owned.
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created; absorbs qualified binding behavior formerly split across leaf validation and sprint-role binding helpers.

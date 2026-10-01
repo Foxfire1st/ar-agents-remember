@@ -1,0 +1,89 @@
+{
+  "path": "dashboard/src/panels/review/familyExpressions.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+        "content": "sha256:919512bce016d5724a47041414039b47ebb45d0570677917e9c7a9e234ee5b21",
+        "locator": {
+          "kind": "symbol",
+          "name": "familyExpressionExcerpts"
+        }
+      },
+      "id": "RLZ-4XSZ69Z0",
+      "invariant": "INV-XX178P3W",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Tallies the family's claims into excerpts keyed by repository path plus recorded source identity, then attaches each side's observed identities and resolution outcomes as separate per-side readings, so one path recorded at two identities stays two excerpts and an observation never changes the key.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`carriedMembership` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:f89b71ec76294961ad77314e9b0e0feae936a7c026d75885e32dfc9c26c0ea29",
+            "locator": {
+              "kind": "symbol",
+              "name": "carriedMembership"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`familyExpressionExcerpts` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:919512bce016d5724a47041414039b47ebb45d0570677917e9c7a9e234ee5b21",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyExpressionExcerpts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`excerptKey` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:c8c06c4f84ccd5a750fec7a568c7c674fd046d60d098ddfd28d116f9e57419ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "excerptKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`recordSideReadings` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:6eb2e9f702a7d3495c581f4eb4e1f55e84b31d16b6d6025e5aa42b8949c8d689",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordSideReadings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

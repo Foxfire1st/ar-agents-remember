@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/refusals.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/refusals.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -193,53 +183,36 @@ typed `KnowledgeRefusal` rather than letting an exception escape:
 composition half: each factory restates through the shipped codes, which is why the code union's
 membership is unchanged by this leaf while the *operation* union gained three names.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The defect-report exception versus the internal control-flow exception. | `KnowledgeStorageError`; `KnowledgeRefused` | mcp/src/agents_remember/memory/knowledge/refusals.py:27-44 |
-| The facts bundle and the one generic factory every refusal is built through. | `RefusalFacts`; `refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:48-56; mcp/src/agents_remember/memory/knowledge/refusals.py:57-79 |
-| The two-branch cycle refusal whose text must be true in both directions, and the family sibling that shares its wording. | `lineage_cycle_refusal`; `family_lineage_cycle_refusal`; `_lineage_cycle_wording` | mcp/src/agents_remember/memory/knowledge/refusals.py:238-264; mcp/src/agents_remember/memory/knowledge/refusals.py:265-286; mcp/src/agents_remember/memory/knowledge/refusals.py:290-309 |
-| The family, anchor and relation factories added with the graph half, one per failure. | `unknown_family_refusal`; `duplicate_family_refusal`; `duplicate_anchor_refusal`; `duplicate_relationship_refusal`; `missing_expected_row_refusal`; `stale_expected_row_refusal`; `referenced_anchor_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:310-323; mcp/src/agents_remember/memory/knowledge/refusals.py:337-357; mcp/src/agents_remember/memory/knowledge/refusals.py:420-440; mcp/src/agents_remember/memory/knowledge/refusals.py:492-512; mcp/src/agents_remember/memory/knowledge/refusals.py:514-529; mcp/src/agents_remember/memory/knowledge/refusals.py:531-551; mcp/src/agents_remember/memory/knowledge/refusals.py:553-566 |
-| The batch-scoped factories, including the two codes this leaf made reachable and the fail-closed task-lane refusal. | `batch_target_not_candidate_refusal`; `batch_task_binding_unresolved_refusal`; `batch_promotion_not_supported_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:605-618; mcp/src/agents_remember/memory/knowledge/refusals.py:620-649; mcp/src/agents_remember/memory/knowledge/refusals.py:651-664 |
-| The relabelling factory that preserves a command's own code, record and remedy while naming the batch. | `batch_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:743-763 |
-| The builder whose `command` argument carries both the failing position and its kind. | `batch_command_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:791-813 |
-| The context and stale-record refusals that name both digests. | `batch_context_refusal`; `batch_context_digest_refusal`; `batch_stale_record_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:713-726; mcp/src/agents_remember/memory/knowledge/refusals.py:728-741; mcp/src/agents_remember/memory/knowledge/refusals.py:696-711 |
-| The write-path rule the descending branch describes, and its post-insert graph scope, now owned by the shared lineage module. | `require_acyclic_lineage`; "def find_cycle("; "def declared_cycle(" | mcp/src/agents_remember/memory/knowledge/store.py:698-728; mcp/src/agents_remember/memory/knowledge/lineage.py:97-130; mcp/src/agents_remember/memory/knowledge/lineage.py:133-157; mcp/src/agents_remember/memory/knowledge/lineage.py:133-133; mcp/src/agents_remember/memory/knowledge/store.py:649-649; mcp/src/agents_remember/memory/knowledge/store.py:734-734 |
-| The SQLite-error mapping, its caller-supplied failure context, and the trigger-message prefix that steers it. | `map_sqlite_error`; `SqliteFailureContext` | mcp/src/agents_remember/memory/knowledge/refusals.py:828-871; mcp/src/agents_remember/memory/knowledge/refusals.py:815-826 |
-| **The candidate-lifecycle and publication group this leaf added: one factory per observable failure point.** | `selected_input_unavailable_refusal`; `candidate_binding_changed_refusal`; `candidate_snapshot_unpublished_refusal`; `snapshot_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-902; mcp/src/agents_remember/memory/knowledge/refusals.py:904-928; mcp/src/agents_remember/memory/knowledge/refusals.py:930-949; mcp/src/agents_remember/memory/knowledge/refusals.py:951-974 |
-| **The destination and install failures, including the honest durability code.** | `destination_stale_refusal`; `publication_failed_refusal`; `publication_durability_unconfirmed_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:976-999; mcp/src/agents_remember/memory/knowledge/refusals.py:1001-1018; mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1039 |
-| The trigger messages the mapping depends on. | `IMMUTABILITY_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema.py:286-350 |
-| The refusal codes these factories must stay within, now including the batch codes and the seven this leaf added. | "KnowledgeRefusalCode = Literal[" | mcp/src/agents_remember/models/knowledge/result.py:161-161 |
-| The operation that produces the batch codes, and the alias that keeps the earlier lane-check name working. | `change_candidate`; `require_writable_lane`; `require_candidate_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102; mcp/src/agents_remember/memory/knowledge/candidate.py:110-110 |
-| The two nodes that reach the batch lane refusals on a real store. | "test_a_baseline_lane_is_refused_as_a_non_candidate_target"; "test_a_task_candidate_lane_is_refused_until_its_binding_can_be_resolved" | mcp/tests/test_candidate_batch_transaction.py:374-393; mcp/tests/test_candidate_batch_transaction.py:1162-1188 |
+- The defect-report exception versus the internal control-flow exception. [1]
+- The facts bundle and the one generic factory every refusal is built through. [2]
+- The two-branch cycle refusal whose text must be true in both directions, and the family sibling that shares its wording. [3]
+- The family, anchor and relation factories added with the graph half, one per failure. [4]
+- The batch-scoped factories, including the two codes this leaf made reachable and the fail-closed task-lane refusal. [5]
+- The relabelling factory that preserves a command's own code, record and remedy while naming the batch. [6]
+- The builder whose `command` argument carries both the failing position and its kind. [7]
+- The context and stale-record refusals that name both digests. [8]
+- The write-path rule the descending branch describes, and its post-insert graph scope, now owned by the shared lineage module. [9]
+- The SQLite-error mapping, its caller-supplied failure context, and the trigger-message prefix that steers it. [10]
+- **The candidate-lifecycle and publication group this leaf added: one factory per observable failure point.** [11]
+- **The destination and install failures, including the honest durability code.** [12]
+- The trigger messages the mapping depends on. [13]
+- The refusal codes these factories must stay within, now including the batch codes and the seven this leaf added. [14]
+- The operation that produces the batch codes, and the alias that keeps the earlier lane-check name working. [15]
+- The two nodes that reach the batch lane refusals on a real store. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-20T01:00+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range): its cited range was hand-read against mcp/src/agents_remember/memory/knowledge/candidate.py and already held the anchor its claim names — `require_candidate_lane` at candidate.py:110-110 — so no range was changed; every claim wording, anchor and every other range is unchanged, and no verification stamp was advanced.
-- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 1 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `require_candidate_lane`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `refusals.py.md:223` (`change_candidate`, `require_writable_lane`, `require_candidate_lane`).
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "KnowledgeRefusalCode = Literal[" repointed to mcp/src/agents_remember/models/knowledge/result.py:161-161. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:00+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): recorded the **three composition refusal factories this leaf added** and the fact that they add no vocabulary: each restates a modelled failure through the *shipped* refusal codes, so the code union's membership is unchanged while the operation union gained three names. The section names what each factory carries — the policy identity and version (and, for an unknown version, the versions the identity does declare); the not-permitted edge and the exceeded bound, the latter because a truncated traversal reported as a scope is a false statement about what was reached; and the cycle's own revision ids for the family-composition cycle refusal. Verification metadata is **not** advanced; the code commit does not exist yet and closeout owns that stamp.
-- 2026-09-17T22:33:10+00:00: Generated citation repair: `KnowledgeRefusalCode` repointed to mcp/src/agents_remember/models/knowledge/result.py:95-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 82f9228826d64da5e61d4da1a77adecab55752bad9f20116de62f870f7abd93f; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): **recorded the seven factories the candidate lifecycle and publication boundary added, and corrected this card's reachability claim for `unsupported_schema`.** The new group is `selected_input_unavailable`, `candidate_binding_changed`, `candidate_snapshot_unpublished`, `snapshot_incomplete`, `destination_stale`, `publication_failed` and `publication_durability_unconfirmed`, one per observable failure point, and the card states the rule they share: none of them removes, replaces or repairs a database, a receipt or a published snapshot to make a later step succeed. Two of them carry distinctions a later reader must not flatten — `snapshot_incomplete` covers **both** the closed-snapshot freeze and a candidate's private-stage seal, because in both cases nothing outside the operation's own stage exists afterwards and the caller has one decision to make; and `publication_durability_unconfirmed` is the **honest** code for a replacement that completed but could not be re-read, which is neither a failure to claim nor a success to claim. The card also corrects the earlier statement that `unsupported_schema` "has no producer": it has no *factory* here, but since this leaf the publication gate and the candidate lifecycle produce it through the generic factory for a selected input that is not a database of this schema — a deliberate split, since this package's own open path still reports its own schema mismatches as `KnowledgeStorageError` defects. `no_change` remains a reservation with no producer, and the reachable `no_change` values are the *result state* and the *publication state*. Verification metadata remains empty until closeout stamps the code commit. The candidate-change operation composes the single-record operations, so its refusals are built here: two codes this leaf made reachable (`target_not_candidate` for a non-candidate lane, `promotion_not_supported` for accepted-origin data), the fail-closed `unauthorized_scope` refusal for a `task-candidate` lane whose resolved binding this operation cannot check, the two-digest context and stale-record refusals, the batch lineage restatement, and the two builders — `batch_refusal`, which relabels one command's refusal while **preserving** its code, record and remedy, and `batch_command_refusal`, whose `command` argument is the `"<index>:<kind>"` pair the caller needs. The card now states as a carried limitation that the refusal *code* `no_change` still has no producer and must not be branched on, while the *result state* `MutationResult.state == "no_change"` is the reachable vocabulary Verification metadata remains empty until closeout stamps the code commit.
-- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **recorded the batch-scoped refusal vocabulary and separated the result state from the refusal code.** The candidate-change operation composes the single-record operations, so its refusals are built here: two codes this leaf made reachable (`target_not_candidate` for a non-candidate lane, `promotion_not_supported` for accepted-origin data), the fail-closed `unauthorized_scope` refusal for a `task-candidate` lane whose resolved binding this operation cannot check, the two-digest context and stale-record refusals, the batch lineage restatement, and the two builders — `batch_refusal`, which relabels one command's refusal while **preserving** its code, record and remedy, and `batch_command_refusal`, whose `command` argument is the `"<index>:<kind>"` pair the caller needs. The card now states as a carried limitation that the refusal *code* `no_change` still has no producer and must not be branched on, while the *result state* `MutationResult.state == "no_change"` is the reachable vocabulary — the distinction the worker's earlier report got wrong on the report side and the handoff states correctly. Verification metadata remains closeout-owned.
-- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): **superseded the L1 account of the SQLite-error mapping and extended the vocabulary to the graph half.** The earlier card described `map_sqlite_error` as taking a bare record id; that signature hard-coded `operation="create_invariant_revision"` and the invariant tables for every caller, so a mapped failure from any other write reported the wrong operation and the wrong row. The card now records the `SqliteFailureContext` signature and the eleven caller-supplied contexts, the two cycle refusals sharing one wording helper so the two lineage graphs cannot describe different rules, the fourteen new relation factories with the code each emits, and the corrected reachability statement (`missing_expected_row` is now produced; `no_change` remains a result state rather than a refusal, and `unsupported_schema` still has no producer). Verification metadata remains empty until closeout stamps the code commit.
-- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new typed refusal vocabulary. It records that refusals are returned values, that the two cycle branches must be true in their own case, and that the trigger-message prefix is a shared contract with the SQLite-error mapping. The final wording of the descending branch is the round-3 review outcome for sealed finding `RV-4`. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

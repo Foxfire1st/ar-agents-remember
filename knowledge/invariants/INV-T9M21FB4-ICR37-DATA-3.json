@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The explicit --unchanged-knowledge comparison-recording operation for a live leaf.",
+  "conditions": [
+    "The published dataset and any existing task halves equal the exact recorded memory-base dataset identity.",
+    "Existing candidate admission and the original-baseline owner place the live pair before the ordinary freeze operation."
+  ],
+  "exclusions": [
+    "Changed, unpublished, foreign-namespace, missing or corrupt knowledge refuses this mode.",
+    "This operation authors no invariant, semantic assessment or published knowledge update.",
+    "A converted leaf: its comparison is recorded by its Git trees and never copied, so this mode refuses it."
+  ],
+  "id": "INV-T9M21FB4",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "1a0c111a-5f4c-4fca-8c03-b5b9e33ce720",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "An explicit unchanged-knowledge recording prepares the normal live comparison only for a dataset comparison whose published and pending task knowledge match the exact recorded memory base; a leaf whose comparison is its Git trees (converted memory) is refused before any dataset is read or copied.",
+  "status": "proposed",
+  "supersedes": []
+}

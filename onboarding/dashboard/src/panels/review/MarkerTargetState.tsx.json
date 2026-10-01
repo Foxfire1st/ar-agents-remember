@@ -1,0 +1,273 @@
+{
+  "path": "dashboard/src/panels/review/MarkerTargetState.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement: the state at the target, never `No recorded family`, and the review's context kept beside it.\n\nAnchor: \"The review's own family context is kept beside it, never replaced silently\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:0da7729c4919e9d42516772247d82dbb5e92bf723129378a3a3f0c0c3dd14ceb",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The real-data case: unknown membership in its own state, apart from no family.\n\nAnchor: \"opens an unknown membership in its own Attribution unknown state, apart from no family\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
+            "content": "sha256:487c248518bcac9279ffb05f014f318873bda133c7d1f4f4adb3aeef1bca384c",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.markers.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The unit cases.\n\nAnchor: \"marks the member's row when the named family is in the tree, and only that row\"; \"shows the state on the invariant view when the named family is not in the review\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d20b62ae0668822438c75d9d06f5e1eb0bccbb2",
+            "content": "sha256:eb34b49e48ad1a2607a2aef02ce37868c2f3acea66398580f5adfbb8ab1af652",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/panels/review/MarkerTargetState.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The note's `id`, by which a dataset row is described (review R3-1), and the space between tag and reason.\n\nAnchor: \"id?: string;\"; \"<span className={tag}>{ATTRIBUTION_UNKNOWN}</span> {target.reason}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:622d5cf3260bcc532671c20d8d9c6c9051ceac41ed948f4e9754c4240311b873",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "On a tree comparison the target is a tag on the change facts' membership line (MIK-L33).\n\nAnchor: \"opened from an intent marker\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "content": "sha256:e103545b7cd5a10188d3d0245f56c0ea5338b5c6ff5d3531862640199259e32c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MembershipReason"
+            },
+            "path": "dashboard/src/panels/review/ChangeBadges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only a `membership_unknown` target shows anything.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:189ca7f84d37c7d3192ef9bc1c5d75cd1b0f4b887a0583652c8b7a211d2fed7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTRIBUTION_UNKNOWN"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:335fbf5ab0c649259041d1536925333f39036ead05eb2c9f984a097f9e35344b",
+            "locator": {
+              "kind": "symbol",
+              "name": "unknownTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The member row's note, only on the exact family and revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:52115f4989e98d3509cf06bba43115e4d2fddb2ea8f73c42f757e06988482f4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberTargetNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The row check shared with the change badge (MIK-L33 merge round).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:e3b039bab277148da1d5ddd8e4206ce1eca83d498c356a04d2c54f8956b51be9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMemberTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The invariant view's target: no row in this tree for the membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:d3fdc2a3a6b359bc0a65ae92d7482b3edacd0bea4bb5aec4510cecf2edbe2597",
+            "locator": {
+              "kind": "symbol",
+              "name": "useInvariantTargetState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The rail's focusable state, named by its heading and described by its reason (review R1 F3).\n\nAnchor: \"data-target-state-focus\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:d689fe79266a826865e0abdb471720de20d80cb6bb4ea04ba98a9f7bccbabaaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantTargetState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The centre's family line, with the review's label moved here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:3842b55ef5705fc42e4bfc8eebb7eea7032f9df052946b1431dd58710e073395",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberContextLabel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:0910f3aeb46b49518184049b8643d518aff2751c2846a54a7bee25a97d7dbae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberFamilyLabel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Its three mounts: the member button, the rail and the centre.\n\nAnchor: \"<MemberTargetNote\"; \"const unknown = useInvariantTargetState(subject, context);\"; \"<MemberFamilyLabel subject={subject} payload={payload} entry={entry} />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:74a02be2082df868d060fd6e6873574bfb64ac179807e87d09970ea0772e8a68",
+            "locator": {
+              "end": 806,
+              "kind": "line_range",
+              "start": 806
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:6ae6ed71735f3babd607e3c23f0b97d0d47e5c05b396ec8ad4036ee2efb70d1f",
+            "locator": {
+              "end": 554,
+              "kind": "line_range",
+              "start": 554
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:b1ac2be0d92757132171f6afa867c1f2cefd660c4e9869ce3756dd1cdc9f72af",
+            "locator": {
+              "end": 602,
+              "kind": "line_range",
+              "start": 602
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Focus goes to the state before the tree's current node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:37ae6a0769e0069cf4a58d9a119a3cc69c29eda347e970ca0dcde345c749be05",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectionNode"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

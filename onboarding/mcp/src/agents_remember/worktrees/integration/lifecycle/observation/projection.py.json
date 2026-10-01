@@ -1,0 +1,127 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Single/latest/all readers project retained journals and keep task status from hiding siblings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a1817cc07e8f07b679c59e4e62fccb1a18a45eb",
+            "content": "sha256:85a92bec4137ee2388e266bb097af9919c48fbd734b8197e063768a9b94f784d",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_operation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a1817cc07e8f07b679c59e4e62fccb1a18a45eb",
+            "content": "sha256:7e11ca15a212ffb069f6db954328012fd40fb82793c64b4bae73aa203a042bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "latest_operation_projection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a1817cc07e8f07b679c59e4e62fccb1a18a45eb",
+            "content": "sha256:60c6dddd52bd951e86ede2813c8903e9b5b0b9d42274d9dfb7c19567ea70c155",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_operation_projections"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Location contradictions and unreadable contracts become bounded developer-decision projections with no controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a1817cc07e8f07b679c59e4e62fccb1a18a45eb",
+            "content": "sha256:f351558ee64a1b33dd8e699b1bf80bf0a377bddaa9bd659cc175526f59acd8e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_operation_location_decision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a1817cc07e8f07b679c59e4e62fccb1a18a45eb",
+            "content": "sha256:bb3755458836e4ba83bff04180dce736de1ec62bfab66d20cf9a6b8a475b8130",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_contract_operation_projections"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Worker exit and closeout mutation recovery are reconciled into read-only derived records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a1817cc07e8f07b679c59e4e62fccb1a18a45eb",
+            "content": "sha256:c6c43d1e74e8286ba5d3432cfc15d1b15e85318036c419dc4f67c4d8dc733935",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_observed_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a1817cc07e8f07b679c59e4e62fccb1a18a45eb",
+            "content": "sha256:b79e41494cfd1c35377ae9b1d5e7f7fa0e3f4e978a22843443c2ead350b57ffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_worker_observed_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a1817cc07e8f07b679c59e4e62fccb1a18a45eb",
+            "content": "sha256:c8a686abfed071d9773d3dba0fdbcdd2149fd24384e6c1c95ffbd81c4440f386",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The read-only wait snapshot projection entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a1817cc07e8f07b679c59e4e62fccb1a18a45eb",
+            "content": "sha256:c4bb6e46bfde1c7204df5506a82ca67ffe77a04b9c25f656ea212e0dac78fc9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_operation_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

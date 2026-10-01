@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/projection_types.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/projection_types.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`|
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](../../../overview.md)
@@ -56,24 +46,24 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact current source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fail-closed generation error raised for an unrepresentable schema shape. | `ProjectionTypeGenerationError` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:82-84 |
-| The persisted projection schema, copied for safe mutation. | `workspace_projection_schema` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:86-89 |
-| The declared HTTP/SSE snapshot schema, including its serve-time tail. | `served_projection_schema` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:91-94 |
-| Stable bytes for the committed JSON Schema artifact. | `schema_json` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:96-100 |
-| The exact declaration sets the renderer folds into TypeScript, including the served projection's payload rename. | `DEFINITION_RENAMES`; `NAMED_VOCABULARIES` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:35-38; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:40-46 |
-| The models whose nulls are MEANINGFUL and therefore stay required `T \| null` on the output contract. | `NULL_PRESERVING_MODELS` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:48-49 |
-| The one vocabulary for runtime-only JSON Schema refinements, `maximum` included, and the shape each refinement may attach to. | `SCHEMA_REFINEMENT_KEYWORDS`; `_schema_allowed_keywords` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:52-59; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:203-236 |
-| Refinements are serialized deterministically beside their property instead of being dropped. | `_refinement_schema`; `_refinement_comment` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:238-258; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:260-272 |
-| The recursive, fail-closed schema walk that refuses any unknown or shape-inapplicable keyword. | `_schema_children`; `_validate_schema_node`; `_validate_schema` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:274-306; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:308-327; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:329-341 |
-| The derived state partition and the closed TypeScript vocabulary blocks. | `_state_partition`; `_vocabulary_block` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:451-466; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:487-567 |
-| The served projection's own definitions are folded into the same generated module, and the definition set is compared exactly. | `render_typescript` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:569-601 |
-| The drift check the repository gates on: a stale generated artifact is named rather than regenerated silently. | `stale_generated_files`; `sync_generated_files` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:614-621; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:623-625 |
+- The fail-closed generation error raised for an unrepresentable schema shape. [1]
+- The persisted projection schema, copied for safe mutation. [2]
+- The declared HTTP/SSE snapshot schema, including its serve-time tail. [3]
+- Stable bytes for the committed JSON Schema artifact. [4]
+- The exact declaration sets the renderer folds into TypeScript, including the served projection's payload rename. [5]
+- The models whose nulls are MEANINGFUL and therefore stay required `T \| null` on the output contract. [6]
+- The one vocabulary for runtime-only JSON Schema refinements, `maximum` included, and the shape each refinement may attach to. [7]
+- Refinements are serialized deterministically beside their property instead of being dropped. [8]
+- The recursive, fail-closed schema walk that refuses any unknown or shape-inapplicable keyword. [9]
+- The derived state partition and the closed TypeScript vocabulary blocks. [10]
+- The served projection's own definitions are folded into the same generated module, and the definition set is compared exactly. [11]
+- The drift check the repository gates on: a stale generated artifact is named rather than regenerated silently. [12]
 
 ## 260821-CLIVE-L2 Nullable Union Preservation
 
@@ -83,9 +73,7 @@ its annotations and remaining `anyOf` alternatives. An all-null field still refu
 This lets the lifecycle-operation status schema remain a closed multi-variant union instead of
 being flattened or rejected.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case. | `_without_null` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:397-410 |
+- `_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case. [13]
 
 ## 260821-CLIVE Exact Runtime Refinements
 
@@ -134,40 +122,3 @@ regeneration:
 The counter ceiling is the reason the keyword exists: a bounded field declared only in the producer
 is a contract the schema does not state. The gate stays closed — an unsupported keyword still fails
 the drift check — so this is an extension of the vocabulary, not a loosening of it.
-
-## Update History
-
-- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
-  base `99534dc5`, `projection_types.py` +30/−11): the generator's declaration sets and refinement
-  vocabulary changed, so the body was corrected rather than annotated. Added the
-  `## 260831-LOCR-L17 Served-Schema Declarations` section: `DEFINITION_RENAMES` gained
-  `TerminalObserverHealthPayload` → `TerminalObserverHealth` (the served `$defs` are compared
-  exactly, so an undeclared new definition is a refusal), `NULL_PRESERVING_MODELS` gained the same
-  model (its nulls are served facts, so its nullable properties stay required `T | null`), and
-  `maximum` joined the supported refinement vocabulary — including the integer/number branch of
-  `_schema_allowed_keywords` — so the record's two 32-bit counters state their ceiling in the
-  generated contract instead of documenting only a floor. The refinements section now lists
-  `maximum` and records why it exists (a bounded field declared only in the producer is a contract
-  the schema does not state) and that the drift gate still fails closed on any unsupported keyword.
-  Every symbol range on this card was re-derived against the current 625-line source, because the
-  previous list and table carried ranges from an earlier revision (`_object` `75-78`/`90-93` →
-  `102-106`, `_state_partition` `340-356`/`439-453` → `451-466`, `_vocabulary_block` `382-421` →
-  `487-567`, `render_typescript` `467-495` → `569-601`, `stale_generated_files` `509-515` →
-  `614-621`). The card's `lastVerifiedCommitHash` is deliberately unchanged: the source is an
-  uncommitted candidate and verification metadata remains closeout-owned. No stamp advanced.
-
-- 2026-08-29T19:04+02:00 — Generation-11 repair: taught the generator to resolve Python 3.13's
-  local named-literal enum references and to emit those vocabularies exactly once while retaining
-  fail-closed behavior for every other reference shape. Verification remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE/DAGQC reconciliation: expanded the earlier
-  `maxItems` account to the exact supported refinement vocabulary and its fail-closed rendering
-  boundary. Timestamp is the curator host's Europe/Berlin system time; verification remains
-  closeout-owned.
-
-- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled nullable multi-variant union preservation. Verified at code commit `1d446724`.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

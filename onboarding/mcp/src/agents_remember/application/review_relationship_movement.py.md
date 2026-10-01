@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_relationship_movement.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_relationship_movement.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -165,50 +155,41 @@ single location row carries only the first movement in stream order; the complet
 `source.relationships`) is routed to `ICR-R24`, which mounts the pane, and is recorded in the
 display card's boundaries rather than as work here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the uncommitted candidate: the module's own docstring and
 twenty definitions, the three owners it calls, the vocabulary it fills, the adapter that invokes it,
 and the three case modules that measure it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the contract: the union both snapshots record, one value per relationship, the ruling that the page is not the store, and the unresolved-and-not-denied rule.** | `relationship_movements` | mcp/src/agents_remember/application/review_relationship_movement.py:1-58; mcp/src/agents_remember/application/review_relationship_movement.py:142-177 |
-| The published surface: the sources value, the traversal and the re-exported address view. | `__all__` | mcp/src/agents_remember/application/review_relationship_movement.py:101-105 |
-| The declared stream order and why the governing route is last. | `_KIND_ORDER` | mcp/src/agents_remember/application/review_relationship_movement.py:113-120 |
-| **Everything one traversal reads as one frozen value, because it is one measurement.** | `RelationshipSources` | mcp/src/agents_remember/application/review_relationship_movement.py:123-139 |
-| **The one entry point: both snapshots opened read-only and closed in a `finally`, the union traversal, the route movement, and the labelled inference attached last.** | `relationship_movements`; `open_read_only_database`; `recorded_snapshot`; `governing_route_movement`; `with_rename_inferences` | mcp/src/agents_remember/application/review_relationship_movement.py:142-177; mcp/src/agents_remember/application/review_recorded_relationships.py:145-160; mcp/src/agents_remember/application/review_governing_route.py:59-93; mcp/src/agents_remember/application/review_rename_inference.py:155-177; mcp/src/agents_remember/memory/knowledge/connection.py:52-63 |
-| **The traversal: candidate sides first, one movement per relationship, the unpaired baseline sides displayed one-sided, the stream in declared order.** | `_movements`; `read_snapshot_relationships`; `paired_movement`; `single_sided_movement`; `_movement_order` | mcp/src/agents_remember/application/review_relationship_movement.py:183-224; mcp/src/agents_remember/application/review_relationship_movement.py:471-480; mcp/src/agents_remember/application/review_relationship_movement.py:107-139; mcp/src/agents_remember/application/review_recorded_relationships.py:458-475; mcp/src/agents_remember/application/review_relationship_display.py:107-139; mcp/src/agents_remember/application/review_relationship_display.py:142-174 |
-| **The whole authored line is read, not its head, and rows the page already selected are skipped so a record is displayed once.** | `_line_relationships`; `_ids` | mcp/src/agents_remember/application/review_relationship_movement.py:227-274; mcp/src/agents_remember/application/review_relationship_movement.py:357-360 |
-| The citations one baseline side's lines are built from — a realization one invariant revision, a membership its family *and* member revisions. | `_line_citations`; `_lines_of`; `_line_revisions` | mcp/src/agents_remember/application/review_relationship_movement.py:277-292; mcp/src/agents_remember/application/review_relationship_movement.py:321-346; mcp/src/agents_remember/application/review_relationship_movement.py:349-354 |
-| **Only a row that *is* the line's uniquely established head may be described as one; an intermediate descendant or a multi-ended line takes the line basis.** | `_is_line_head`; `_pairing_basis`; `successor_line` | mcp/src/agents_remember/application/review_relationship_movement.py:295-318; mcp/src/agents_remember/application/review_relationship_movement.py:439-468; mcp/src/agents_remember/application/review_recorded_relationships.py:233-292 |
-| **The tested search value: what was read, what was found on the line, and the shape of the line's ends.** | `_search_of`; `_same_citation` | mcp/src/agents_remember/application/review_relationship_movement.py:363-402; mcp/src/agents_remember/application/review_relationship_movement.py:405-436 |
-| **The pairing rules: the same recorded row, or an authored replacement of a withdrawn row; member-wise family pairing; the family edge alone never pairs.** | `_matching`; `_continues`; `_replaced`; `authored_successor` | mcp/src/agents_remember/application/review_relationship_movement.py:491-515; mcp/src/agents_remember/application/review_relationship_movement.py:518-541; mcp/src/agents_remember/application/review_relationship_movement.py:544-580; mcp/src/agents_remember/application/review_recorded_relationships.py:220-230 |
-| The adapter's one call: the union traversed from the comparison's own page items and the resolved dataset halves, threaded into the source pane. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:335-577 |
-| The wire vocabulary the movements fill, with the validators that refuse an unstated pairing, a transition without its sides and an unexplained absent identity. | `ReviewRelationshipMovement`; `ReviewRelationshipSide`; `ReviewPairingBasis`; `ReviewRelationshipGap` | mcp/src/agents_remember/models/knowledge/review_relationships.py:126-135; mcp/src/agents_remember/models/knowledge/review_relationships.py:138-150; mcp/src/agents_remember/models/knowledge/review_relationships.py:153-201; mcp/src/agents_remember/models/knowledge/review_relationships.py:258-372 |
-| **The eleven cases that measure the packet's own behaviour: the moved realization, the after-only reading falsified, the withdrawn realization, outside-selection, the labelled rename inference, no fabricated movement, authored split and merge, family reassignment, route reassignment, the ungoverned identity, and the unresolved anchor.** | `test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity`; `test_only_the_after_graph_is_read_so_the_old_association_vanishes`; `test_a_withdrawn_realization_stays_visible_with_its_deleted_file_and_its_identity`; `test_a_record_the_other_selection_did_not_reach_is_not_displayed_as_a_deletion`; `test_a_source_rename_is_displayed_as_a_labelled_git_inference`; `test_the_same_rename_with_no_authored_edge_is_a_retraction_and_an_addition`; `test_the_authored_split_and_merge_are_displayed_from_the_candidates_own_edges`; `test_a_family_association_reassigned_to_a_new_revision_displays_both_recorded_sides`; `test_a_governing_route_reassignment_displays_both_recorded_routes`; `test_an_identity_with_no_route_is_displayed_as_ungoverned_and_never_as_the_root`; `test_a_side_that_did_not_resolve_exactly_keeps_its_own_state_and_reason` | mcp/tests/test_knowledge_review_relationship_movement.py:447-494; mcp/tests/test_knowledge_review_relationship_movement.py:497-528; mcp/tests/test_knowledge_review_relationship_movement.py:531-570; mcp/tests/test_knowledge_review_relationship_movement.py:573-601; mcp/tests/test_knowledge_review_relationship_movement.py:607-637; mcp/tests/test_knowledge_review_relationship_movement.py:675-717; mcp/tests/test_knowledge_review_relationship_movement.py:723-753; mcp/tests/test_knowledge_review_relationship_movement.py:759-800; mcp/tests/test_knowledge_review_relationship_movement.py:803-826; mcp/tests/test_knowledge_review_relationship_movement.py:829-857; mcp/tests/test_knowledge_review_relationship_movement.py:860-891 |
-| The reach cases the master's ruling required: a member identity's movement at its own established head, a multi-ended line unresolved and never denied, and the address view's qualification. | `test_a_member_identities_moved_realization_is_displayed_at_its_own_head`; `test_a_member_line_with_no_single_head_is_unresolved_and_never_denied`; `test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs` | mcp/tests/test_knowledge_review_relationship_reach.py:305-357; mcp/tests/test_knowledge_review_relationship_reach.py:360-389; mcp/tests/test_knowledge_review_relationship_reach.py:503-541 |
-| The authored-line cases of the third round: a split line that records relationships is named and never denied, a multi-ended line never claims a unique head, and an intermediate descendant is displayed. | `test_a_split_line_that_records_relationships_names_them_and_never_denies`; `test_a_multi_head_line_with_relationships_never_claims_a_unique_head`; `test_a_relationship_on_an_intermediate_descendant_is_displayed` | mcp/tests/test_knowledge_review_relationship_line.py:211-263; mcp/tests/test_knowledge_review_relationship_line.py:266-291; mcp/tests/test_knowledge_review_relationship_line.py:316-350 |
+- **The module's own statement of the contract: the union both snapshots record, one value per relationship, the ruling that the page is not the store, and the unresolved-and-not-denied rule.** [1]
+- The published surface: the sources value, the traversal and the re-exported address view. [2]
+- The declared stream order and why the governing route is last. [3]
+- **Everything one traversal reads as one frozen value, because it is one measurement.** [4]
+- **The one entry point: both snapshots opened read-only and closed in a `finally`, the union traversal, the route movement, and the labelled inference attached last.** [5]
+- **The traversal: candidate sides first, one movement per relationship, the unpaired baseline sides displayed one-sided, the stream in declared order.** [6]
+- **The whole authored line is read, not its head, and rows the page already selected are skipped so a record is displayed once.** [7]
+- The citations one baseline side's lines are built from — a realization one invariant revision, a membership its family *and* member revisions. [8]
+- **Only a row that *is* the line's uniquely established head may be described as one; an intermediate descendant or a multi-ended line takes the line basis.** [9]
+- **The tested search value: what was read, what was found on the line, and the shape of the line's ends.** [10]
+- **The pairing rules: the same recorded row, or an authored replacement of a withdrawn row; member-wise family pairing; the family edge alone never pairs.** [11]
+- The adapter's one call: the union traversed from the comparison's own page items and the resolved dataset halves, threaded into the source pane. [12]
+- The wire vocabulary the movements fill, with the validators that refuse an unstated pairing, a transition without its sides and an unexplained absent identity. [13]
+- **The eleven cases that measure the packet's own behaviour: the moved realization, the after-only reading falsified, the withdrawn realization, outside-selection, the labelled rename inference, no fabricated movement, authored split and merge, family reassignment, route reassignment, the ungoverned identity, and the unresolved anchor.** [14]
+- The reach cases the master's ruling required: a member identity's movement at its own established head, a multi-ended line unresolved and never denied, and the address view's qualification. [15]
+- The authored-line cases of the third round: a split line that records relationships is named and never denied, a multi-ended line never claims a unique head, and an intermediate descendant is displayed. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The traversal reads the two datasets the
 server resolved and the two code trees the comparison bound, all inside one repository namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 3 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`review_relationship_movement.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **created.** The module is new in this leaf (`ICR-R08@v1`) and this is its one-to-one card. It records the traversal contract the packet states and the leaf's four adversarial verification rounds hardened: the recorded before/after union rather than the candidate's graph; pairing only by the author's own records with the basis named on every paired movement; the ruling that the union is not bounded by the comparison's selected revision page, implemented by reading the **whole** authored successor line through ICR-R07's head rule and owner-keyed reads; unresolved sides stated with their code and reason and never denied; and the labelled Git rename inference attached after the fact and never read back. It also records the reachability truth measured for this packet — the production path reaches `anchor_unresolved`, `successor_line_unresolved`, `predecessor_records_no_relationship`, the transition `outside_selection` and the state `ungoverned`, while `anchor_unrecorded`, `identity_differs`, `identity_not_recorded` and `route_not_recorded` are defensive-only — and the `source_locations` one-location-per-address consequence routed to `ICR-R24`. **Basis accounting:** the verification pair above names this leaf's base, the last real commit the reading was taken against, because the module exists only in this leaf's uncommitted candidate; the candidate is named here in the body rather than in a metadata row, and closeout owns the stamp once the code commit exists.
+No applicable cross-repository source was found.

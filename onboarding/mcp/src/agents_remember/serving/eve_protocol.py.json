@@ -1,0 +1,204 @@
+{
+  "path": "mcp/src/agents_remember/serving/eve_protocol.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The transport client is the only caller of these routes and parsers, and both of its body builders spell the queued policy from this module's one literal.\n\nAnchor: `EveRuntimeProcess.create_session`; `EveRuntimeProcess.stream`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:76fc3ba2b4a5ae21fbe00976819e924ef259ae80ee0d6dfd410bfc9d9ee54be0",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_session_body"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:e7014d7a5bd832451a20f24148a0add445818f72937a4133851b7e5bec9fa63f",
+            "locator": {
+              "kind": "symbol",
+              "name": "follow_up_body"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:7bfc71432f52e14254ca6780e1dffd05dcf081bb3f18b9d648cb90e5cd022cd3",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The incremental decoder feeds raw bytes through `parse_event_frame` one completed line at a time.\n\nAnchor: `parse_event_frame`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79d8d1104431897fbf5b93aa3c03edfdd97a5c2d",
+            "content": "sha256:b32ed40f02bcb14ceb11e00bca911a158b82c85d175b59be8ecc0e7793988ecc",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/serving/eve_stream_cursor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The adapter owns the persisted cursor and drops a replayed envelope id before translating.\n\nAnchor: \"drop a replayed duplicate\"; \"One replay verdict per event\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:badc0848c8f19496131802edf184b7f37e6b075d27d4b4aafb4e1313b4ec3ffe",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 626
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The runtime application's authored channel carries the same queue default for every later turn.\n\nAnchor: \"turnPolicy: \\\"queue\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e46a81e8a0ed7a1f534cc17fd24ef7ac979f9e36",
+            "content": "sha256:e3462c2cb8e343363ba79825a453d54a96e7630821f62c9f3851bc43eea6e7f4",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "eve_runtime/agent/channels/eve.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Wire-conformance cases pin the index arithmetic, the version gate, the permissive-parse refusals, and the exact request bodies the production client sends over a mock transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05c5f945582f4c68946bfbafb789cf0c501cdf4f",
+            "content": "sha256:db235addabdf13341093142bda4368f94e375c1e8c92aa08ee470ff0533bba8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveCursorTests"
+            },
+            "path": "mcp/tests/test_eve_protocol.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "05c5f945582f4c68946bfbafb789cf0c501cdf4f",
+            "content": "sha256:1b43f2bcc03f8629c2a97f5ad6d70a9404ecf530ff235142893023ca6d30e350",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveFrameTests"
+            },
+            "path": "mcp/tests/test_eve_protocol.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "05c5f945582f4c68946bfbafb789cf0c501cdf4f",
+            "content": "sha256:b1351a8d2f961a491598363cc59528b96a00019f7ca7325481427c0ee6683d8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveStreamHeaderTests"
+            },
+            "path": "mcp/tests/test_eve_protocol.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "05c5f945582f4c68946bfbafb789cf0c501cdf4f",
+            "content": "sha256:7c890ededa33d578b2e2237dceb4e8c2e8f39199aa312f9a71dc24e2f924b864",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveWireRequestTests"
+            },
+            "path": "mcp/tests/test_eve_protocol.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "05c5f945582f4c68946bfbafb789cf0c501cdf4f",
+            "content": "sha256:fb8bbeb5d2f437d819efb03def25b1392d4db58034aed7fdb56400cb277ef285",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/tests/test_eve_protocol.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The replay window's own cases cover first-sight versus repeat, oldest-first eviction at the bound, a size-1 window, id-less events, and the non-positive refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05c5f945582f4c68946bfbafb789cf0c501cdf4f",
+            "content": "sha256:aaa764766477fd2d40d369ae803dc3300ee9afe48c5fcf0e35dadc0f116346cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveReplayWindowTests"
+            },
+            "path": "mcp/tests/test_eve_protocol.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `/eve/v1` routes, the `x-eve-stream-*` headers and the event envelope are eve's published wire contract, re-verified against the installed package at the pinned release.\n\nAnchor: \"/eve/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:9bbc07b383c03abd86f56943803596f3baa48a81f04768fec635e8f8bff380ca",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

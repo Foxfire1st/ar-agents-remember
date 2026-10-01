@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/test-utils.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared seeds and terminal ledgers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2cc790d8aadebf9021916879df639358178ed4f",
+            "content": "sha256:e8d320c71f3c18b888db46e336e8b8a1c6b815b75dcbb10f297e44288b5662bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedReadyComposerSession"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a2cc790d8aadebf9021916879df639358178ed4f",
+            "content": "sha256:1ac9dd009c48211a07363eac060bb1e095ac1774cf2413b53545ddbffa09b718",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedLiveProjection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a2cc790d8aadebf9021916879df639358178ed4f",
+            "content": "sha256:71f544225a9ec7510ee33e47f738b113859e2a9aa89332995165664a8ca22c6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "mockTerminalMounts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

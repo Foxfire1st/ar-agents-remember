@@ -1,15 +1,5 @@
 # skills/l-01-agent-lifecycles/templates/curator-brief.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/templates/curator-brief.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T17:09+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312`|
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [lifecycle skill overview](../overview.md)
@@ -57,52 +47,26 @@ the curator never documents stale source and never repairs code.
 
 This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The worktree section requires the current pre-curator lineage projection and explains its evidence-only role. | "Pre-curator lineage:" | skills/l-01-agent-lifecycles/templates/curator-brief.md:39-39 |
-| Exact requirement packets and adjudications are mandatory task inputs. | "## Task inputs" | skills/l-01-agent-lifecycles/templates/curator-brief.md:44-54 |
-| The brief carries the producers' curator hand-off list as data, with the producer fields filled and the curator fields null. | "Producers' curator hand-off list:"; "the curator fields" | skills/l-01-agent-lifecycles/templates/curator-brief.md:71-77 |
-| Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation. | "Immediately before compiling this brief" | skills/l-01-agent-lifecycles/templates/curator-brief.md:177-180 |
-| Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief. | "Hand the curator its brief"; "curator-brief.md" | skills/l-01-agent-lifecycles/roles/manager.md:109-112 |
+- The worktree section requires the current pre-curator lineage projection and explains its evidence-only role. [1]
+- Exact requirement packets and adjudications are mandatory task inputs. [2]
+- The brief carries the producers' curator hand-off list as data, with the producer fields filled and the curator fields null. [3]
+- Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation. [4]
+- Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief. [5]
+
+### Cross-Repo References
+
+No cross-repository implementation dependency governs this template.
 
 ## 260821-DAGQC-L2 Briefed Quality Grammar
 
 The brief's self-check examples now use `memory_quality_check(request={...})` with an explicit
 mode. This prevents a fresh curator from reconstructing the retired flat wait/run-id grammar and
 keeps sync/start/poll fields mutually exclusive.
-
-## Cross-Repo References
-
-No cross-repository implementation dependency governs this template.
-
-## Update History
-- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `14582854955223f75588c23c9f29f9d51bde9675`). The diff is seven added lines under `## Task inputs` (`:71-77`) adding the **Producers' curator hand-off list** input: the path or fenced-block location of the builder's list plus the reviewer's own list when review was requested, in the shape of `../templates/curator-handoff-list.md`, handed over unparaphrased as data — producer fields (`id`, `statement`, `kind`, `target`, `found_at`, `disposition`, `disposition_source`, `evidence`, `authority`) filled, curator fields (`resolution`, `validated_at`, `record_action`, `supersedes`) `null`, and the list governing over a prose summary. Body: added that input and its field-ownership boundary to the Code Commentary and added a Repo-Internal References row for it. Citations: the compiler-notes row had to be recomputed — the seven inserted lines moved "Immediately before compiling this brief" from `:170` to `:177`, so its extent is re-pointed to `:177-180`, the whole note. Verified ranges/claims: "Pre-curator lineage:" still resolves at `:39` inside `:39-39`, "## Task inputs" at `:51` inside `:44-54`, and the manager row's anchors still resolve inside `roles/manager.md:109-112`.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "Pre-curator lineage:" repointed to skills/l-01-agent-lifecycles/templates/curator-brief.md:39-39. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "Immediately before compiling this brief" repointed to skills/l-01-agent-lifecycles/templates/curator-brief.md:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "Curator onboarding handoff." repointed to skills/l-01-agent-lifecycles/roles/manager.md:187-187. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "Pre-curator lineage:" repointed to skills/l-01-agent-lifecycles/templates/curator-brief.md:33-33. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "Immediately before compiling this brief" repointed to skills/l-01-agent-lifecycles/templates/curator-brief.md:152-152. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Immediately before compiling this brief" repointed to skills/l-01-agent-lifecycles/templates/curator-brief.md:185-185. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Curator coherence pass — mandatory, not skippable." repointed to skills/l-01-agent-lifecycles/roles/manager.md:243-243. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-28T14:18+02:00 — Reconciled curator-brief citations against the committed PDLS
-  candidate; the post-review onboarding boundary remains unchanged.
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T16:27+02:00 — Added exact approved requirement packets and reviewer adjudications to
-  curator intake/output, closing the bare-ID briefing gap. Verification remains closeout-owned.
-
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: aligned the curator brief with the canonical discriminated quality request. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-13T08:47+02:00 — Created for the L23 pre-curator source-lineage gate and brief-carried current projection. Verification metadata remains closeout-owned.

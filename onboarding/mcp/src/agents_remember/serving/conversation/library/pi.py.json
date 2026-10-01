@@ -1,0 +1,80 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/pi.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Pi library maps durable entries and mints the verified session-file resume target without switching a running session.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad5c905bdab26a647e6669cdb5b5ed44fccfe85b",
+            "content": "sha256:9ce7d4a9669814732c4746d975a373a98d75f7bf6dc28055135250c9baac1967",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiConversationLibrary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The locked helper's SessionManager list/branch-read/session-file resolution implementations.\n\nAnchor: \"export async function handlePi(request: HelperRequest): Promise<unknown> {\"; \"async function listPiSessions(\"; \"async function readPiSession(\"; \"async function resolvePiResumeTarget(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:198f8bb6abde14f75d9d5fde3f271dace4fce6e570c6d1a1f5500de2fcdffd20",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:79da3ac54652653f7311ffdf3413371d3c5881c06a419690b042c07942a5547f",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:fd372ec99f1bc9f1744bae6270845e28431117e37c39e5d5b5fde24f95159b11",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:9996f6a4583c5daaa390e3d72396f25b788938b98afcb35611e1b0dcd1dd8b15",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

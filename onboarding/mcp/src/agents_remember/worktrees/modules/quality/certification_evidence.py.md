@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Worktree modules overview](../overview.md)
@@ -46,44 +36,31 @@ Canonical store loaders own object shape, semantic digest and exact content addr
 
 None recorded for this file's bounded read/retention responsibility.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain documentation is configured. | N/A | N/A |
+No external domain documentation is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The exact selected journal is bounded and validates certificate rows. | `read_gate_records`; `validate_gate_records` | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:31-56; mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:59-81 |
-| Cross-bind selections to their exact stored objects before publishing or pruning. | "def verify_selected_publications" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:101-124 |
-| Selected certificates pin exact generations until journal replacement or cleanup. | "def protected_certificate_generations" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:86-98 |
-| Publication verification checks certificate, result and publication identity together. | "def verify_publication_authority" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:152-183 |
-| Retain the original selected generation for a semantically identical certificate. | "def publication_binding" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:127-149 |
-| Execution identity excludes physical generation, report bytes and audit provenance. | "def _execution_authority" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:268-278 |
-| Open every emitted binding through its one accepted immutable generation. | "def verify_result_evidence" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:281-295 |
-| Published artifact references are opened through their accepted snapshot. | "def _verify_reference" | mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py:298-309 |
+- The exact selected journal is bounded and validates certificate rows. [1]
+- Cross-bind selections to their exact stored objects before publishing or pruning. [2]
+- Selected certificates pin exact generations until journal replacement or cleanup. [3]
+- Publication verification checks certificate, result and publication identity together. [4]
+- Retain the original selected generation for a semantically identical certificate. [5]
+- Execution identity excludes physical generation, report bytes and audit provenance. [6]
+- Open every emitted binding through its one accepted immutable generation. [7]
+- Published artifact references are opened through their accepted snapshot. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation protocol is defined here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required for these local claims. | N/A | N/A |
+No cross-repository evidence is required for these local claims.
 
 ## Current Landed Composition
 
 Non-certifying terminal rows bind their result to an exact stored `FrozenCertificationRun`. The verifier compares registry, certification/gate plan, candidate, profile altitude, repository plan and publication identity before retaining the terminal generation. A terminal row cannot substitute for a certificate; its frozen-run reference is type-checked by the canonical object store.
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4345a49f3f957d68983b31d625622b21568e3c90dad68783448701bb213d790e; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-05T22:19+00:00 — L30 source review at `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Created the exact selected-journal, semantic cross-binding, retained-generation and physical-evidence account from the prepared code object.

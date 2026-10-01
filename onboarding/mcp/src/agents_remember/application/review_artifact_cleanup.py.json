@@ -1,0 +1,356 @@
+{
+  "path": "mcp/src/agents_remember/application/review_artifact_cleanup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement of every target's identity source, the trust line, the confinement and the accepted window.\n\nAnchor: \"Where every target's identity comes from\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:65b3cdb9f8d5ecc4e630765490d24cf32505c709dec9762a31420d44b271e929",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A manifest naming another leaf, pin, repository or directory is held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:fa4183f5b29506c78abef9259953e8e42280d289b330333019b073e2d911bbfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_foreign_generation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:eb92b6c363d9fd8af3627e0f5ad119b59437f8fb7364fb445c56ef8788a8d525",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outside_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The F1 exact own-task rule and the retained-code refs it selects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:c3360d3cd407e96f28fc561fb57139ee9431f89ab0d5b605e375340b45632183",
+            "locator": {
+              "kind": "symbol",
+              "name": "_own_leaf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:5c98946d84b57374d9cc629a5b79acd6db9dadf255b2fa80dcec3006cd35f0d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_code_refs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The content scan: confined root, confined candidates, knowledge schema, untracked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:a72c26b962e3bac1bdebb115c1752e70ab15e47a6d176963c87d7fdfb5fa1759",
+            "locator": {
+              "kind": "symbol",
+              "name": "_delete_dataset_copies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:a425baa23d2c1a7fe55d6f2f6e8b191a2d33f621043920be413ae0476660ecfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scan_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:a772b18cf1e8599e6f5ebccc5a3243dbf7154a464f6abb6f2f3735e97f454960",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_leftover_copy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:6af8d2dc36de8e58b80f5cf993ed534c8568d1a74b26f14274f4205617000435",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_knowledge_dataset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The finalizer carries the report after the archive move, and never raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a6e50c572269dc9616f7161669a3837ee2d1fc6",
+            "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_with_review_artifact_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The main archive case and the colliding-task case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:3d1354f049755323c27c0138905c788eb69753b831a5e70f1f4a4a727b24d460",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archiving_deletes_the_tasks_review_refs_legacy_pins_and_dataset_copies"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:f3de9985dc8eefa2c59de0ddf3c5843fcf261f8db2458bc4a6d6e693e49332e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archiving_one_task_never_selects_a_colliding_tasks_pins"
+            },
+            "path": "mcp/tests/test_review_artifact_cleanup.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The report file, the reason, and the two tables that make a file a knowledge dataset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:42d35b5c46a15f15cd6a3e464959e7d4f149e1741f01687f96fdc458de9a5632",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLEANUP_REPORT_NAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:2da45cc24f011454caf1f59d92909c00a4c311d206113c425b7b4bfc489448cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_KNOWLEDGE_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The report, and holding a generation's pin and snapshots with the reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:bc41aee9cc4c23102ae7a4d2c4e148a106aeb6ea2937623252d82b0a054f8b2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Report"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:53e84a8db448a768f6ead582fd43ecde608b71b86eb0b402a1a1409d217b9a42",
+            "locator": {
+              "kind": "symbol",
+              "name": "hold"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The composition-bound port implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:5813a24b3fbc8e54016b61fcb910793faf5a1ddb44978272d44ae198a8f29c19",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewArtifactCleanup"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The whole hook: review refs by directory name, own retained-code refs, generations, copies, the report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:69537368a7f44575fa856398999e6fdae1834e748a91edf53d5e90ccda97edd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_review_artifacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The report is written only inside the task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:2a2f13bccf9ef308a45d1862e2bf5037f0fe79d9aaa982c93b6248f14b2fb2a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Physical confinement: no symlink on the way, and the resolved path inside the resolved root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:ae51143fee96962cbcb3a892ba1150757478318b616aa7e4370aa9d5fee623e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Confinement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:bdb70365235fb65adad56f55afdbeaedb428e01f1d91999347edde51013c57f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The legacy identity by the trust line, and `task.json` read only when it is the task's own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:9962ef73ecf8dbeb26edb84fb2609ae181eeeab5b6521b4d7c1c3b2f1a81778b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confirmed_task_id"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:158df8e5a73aa3606ee1a32225a2a95c30d4299ce7b52fbc47a5b5b7e6394b52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Generations released through their owners, or held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:3e0adf52880e9527e5cd4a6626a096d4b3e8f8ada57549dfd2f4be225c96fbea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_release_generations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "content": "sha256:571d113a6ecdb17f1e480dbb8096427f0fb504f36d11a83944f714bde3590978",
+            "locator": {
+              "kind": "symbol",
+              "name": "_release_one"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

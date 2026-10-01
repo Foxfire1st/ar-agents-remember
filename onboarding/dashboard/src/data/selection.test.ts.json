@@ -1,0 +1,36 @@
+{
+  "path": "dashboard/src/data/selection.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The rules under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a95e289ddac9e9f3f464940626ae2cf6746a936",
+            "content": "sha256:f1ade0f773f8bb2873a96d94526db10af4158ffa68488d8bdb7d43fc53832e4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "isIgnoredAnchor"
+            },
+            "path": "dashboard/src/data/selection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a95e289ddac9e9f3f464940626ae2cf6746a936",
+            "content": "sha256:cbc752eddc38ecf2c6bc0b21b73442b99fb2e0497ba70f634734c365ee2ade78",
+            "locator": {
+              "kind": "symbol",
+              "name": "readSelection"
+            },
+            "path": "dashboard/src/data/selection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Choosing which knowledge snapshots may admit an unchanged path for a requested review tree pair of one leaf.",
+  "conditions": [
+    "A requested pair equal to the pair the leaf's review binds now uses that resolution's halves (live, or a closed leaf's reopened generation).",
+    "A superseded pair uses only the latest comparison generation this leaf published for exactly that pair, reopened through the generation owner.",
+    "A half the generation did not retain is not read."
+  ],
+  "exclusions": [
+    "Substituting the leaf's current knowledge for a superseded or unrecorded pair.",
+    "Reading any other leaf's, master's or published dataset."
+  ],
+  "id": "INV-RS0EVBHD",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "66e4a9e8-5277-480e-b67f-bc16c4d69603",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The knowledge that can admit an unchanged path is the requested comparison's own: the leaf resolution's halves when the requested pair is the one it binds now, otherwise the latest comparison generation this leaf published for exactly that pair; with no such record nothing is admitted and the leaf's current knowledge is never substituted.",
+  "status": "proposed",
+  "supersedes": []
+}

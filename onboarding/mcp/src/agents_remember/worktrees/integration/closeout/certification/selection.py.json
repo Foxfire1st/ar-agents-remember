@@ -1,0 +1,258 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact object kinds and the loaded graph have typed owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:2835089f22854586685f151cedfa3ac44ca845d92eb3362d2bf50a803815391b",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_typed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:cea2f7012d5b3a03702f19a6244d489cc1190e223aaec64b6a4a8503d8ae44b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "LoadedCertificationSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Readback follows bounded explicit generations and validates every original graph binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:b6bc617ff4a35d179179efc42681e2139ce39bc662fdb411ab7175de13d4d44c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_selected_certification"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:7a30032efe7e06ef3a350eabff3f24b27661673c349baa7fd453d3368422566f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_selection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:2652c455a0140450f9a583d1763c939175a08d48b0af03917d57c66c6e613a02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_predecessor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:a6a5b4f0834967ffb8a518c7d9530977736b88ab507ae42322e8ee9f8740f38b",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:c97a9d39b6c7adddfc6dadb8e20d7c1a91c1cf421897816ea3b36cb686b30f01",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Inherited terminals and recompiled admissions retain the exact original context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:0754003015cedfad612c91fde449834bf8fb84a762cf034cd8f1248419d28665",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_inherited_terminals"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:0816d786a87b0daff5c62880815bb6c6d720514ff20336f037abb9058bdf08f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recompile_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Complete terminal chains and every recovery decision are checked against the retained certificate pool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:0b9f0c70c01607babd1970858a5c98c365265e5e8ee824b5db266cb6931f3fb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_terminal_chain"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:50a6e663ca9b83ebf19d4b4b5ace3f4140a0c668bb22a52d11f714f81990d2b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_recovery_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Terminal loading reopens original publication bytes and validates full result/certificate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:2476185869975c2d278ff2a50ca770fe8b30c82309333f51da343a8ba17d2054",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_selected_terminal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:b244255b64bac99f5730445d44ccc7ddabf108b9a6c67838690ccb764e19b6d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Memory inputs have exact canonical byte storage and typed readback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:4cd2f16d858daafff720d7c0fb8b4798eae2033a96af1b9a2d912b44960836d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovery_memory_inputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:86075ee2dbe9e824ecae38ea2ca5beb7b204a8ce4697e665f146b5f58dc6d7aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_memory_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Only explicit interrupted evidence can be replaced; red retry requires a successor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:f93b8cc73e6f3f1af3a44835c441ecfe63c94e2476af33a39a84bec9c29ff016",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_interrupted_terminal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:31c8760ef22d7cf5adddbe445e69553c2c37644c7ad68c58e5a14f1c7e5d6163",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_unchanged_retry_admissible"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Selection uses a live-owner CAS and preserves terminal history on the permitted replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:f110aefaddaa2a5a92ddde02e47bfa7d1214857b88c894795e4c8d497120e9c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_certification_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:1f584797b767322fad69f2f19bb96e67898554d3bc553645e8c724a7b3aaa4dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_recorded_terminals"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

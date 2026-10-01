@@ -2,17 +2,44 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
 [mcp overview](../../../overview.md)
+
+## 260928-MIK-L37 The Cutover Lock Joins This Route, And A Reopened Leaf Writes A New History Attempt
+
+`260928-MIK-L37` (MIK-R37) adds one module and wires it at every memory route of this layer. The cutover build was installed on 2026-10-01 (MIK-R37 rule 4), and this leaf's closeout converts the master's
+memory line. What earlier sections of this overview call "inert until the cutover" is live from this leaf on.
+
+- **[`cutover_lock.py`](cutover_lock.py.md) (new): unconverted memory is read, never written, checked, synced or
+  landed (MIK-R09 rule 6, second bullet; MIK-R24 rule 9).** A route that found its memory unconverted on every side
+  asks `cutover_lock_refusal`. The lock holds once the memory repository holds converted memory anywhere (a local
+  branch tip or a registered worktree's working tree with `knowledge/layout.json`); the refusal names the crossing
+  sync. A repository that holds none is not locked and behaves as before this master. A probe Git cannot answer
+  refuses by name. A converting candidate is gated, never locked.
+- **Where it is asked.** [`knowledge_gate.py`](knowledge_gate.py.md) (`leaf_cutover_refusal`,
+  `prepared_closeout_lock`, and inside `leaf_gate_refusal` and `landing_gate_refusal`),
+  [`knowledge_crossing.py`](knowledge_crossing.py.md) (`unconverted_line_refusal`),
+  [`direct_landing.py`](direct_landing.py.md), [`sync_transaction.py`](sync_transaction.py.md) (`_cutover_locked`,
+  at admission), and the `modules/` routes (closeout, record landing, a leaf's integration).
+- **Reopen after a converted closeout.** `knowledge_gate.latest_owner_history` finds a reopened leaf's latest
+  attempt file (`<leaf-id>-attempt-<n>.json`), and `close_owner_history` closes that one; the closed first file stays
+  frozen.
+- **Cancel after a memory conflict.** [`sync_transaction_git.py`](sync_transaction_git.py.md)'s `rollback_side`
+  restores a tracked `memory.md` before `git merge --abort`, so a conflicted memory sync can be cancelled on a line
+  that still tracks the cache.
+
+The lock is a stored invariant (INV-JT28KJ), realized in `cutover_lock.py`, `knowledge_gate.py`,
+`sync_transaction.py` and `modules/integrate.py`, and proved by `mcp/tests/test_knowledge_cutover.py`.
+
+- The lock's one question and its refusal. [65]
+- The worktree layer's helper that names the leaf's line. [66]
+- The managed sync asks the lock at admission. [67]
+- The closeout closes a reopened leaf's latest attempt. [68]
+- The rollback restores the cache before the merge abort. [69]
+
 
 ## Route Impact: Explicit Code-Object Retention (260921-ICR-L11)
 
@@ -41,15 +68,13 @@ and the custody question:
 **Open boundary, recorded rather than assumed safe.** Whether a landed integration or closeout operation
 objects to the new ref namespace was not measured by this leaf, which cannot run those transactions.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The retention owner this route gained: one commit, one ref, the recorded base as parent.** | `retain_code_object`; `RETAINED_CODE_REF_NAMESPACE` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:70-70 |
-| **Custody measured over named history, and the three-way observation that a record never stores.** | `code_object_custody`; `CustodyNames`; `code_object_observation` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:94-106; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:243-256 |
-| The commit identity that makes a re-created pin identical. | `_retention_commit`; `_retention_identity` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:366-394; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:397-415 |
-| The explicit release, and the record it returns. | `release_retained_code_object`; `ReleasedCodeObject` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:125-143; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:270-316 |
-| The contract-derived custody names the create-side consumer measures against. | `custody_names` | mcp/src/agents_remember/application/review_comparison_retention.py:278-295 |
-| The per-file detail for the new member: the module's own statement of the three properties — one commit and one ref, measured custody over named history only, explicit release with a record — and of what it does not decide. | `retain_code_object`; `code_object_custody` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240 |
-| The per-file detail for the new member. | "# mcp/src/agents_remember/worktrees/modules/code_object_retention.py" | onboarding/mcp/src/agents_remember/worktrees/modules/code_object_retention.py.md:1-210 |
+- **The retention owner this route gained: one commit, one ref, the recorded base as parent.** [1]
+- **Custody measured over named history, and the three-way observation that a record never stores.** [2]
+- The commit identity that makes a re-created pin identical. [3]
+- The explicit release, and the record it returns. [4]
+- The contract-derived custody names the create-side consumer measures against. [5]
+- The per-file detail for the new member: the module's own statement of the three properties — one commit and one ref, measured custody over named history only, explicit release with a record — and of what it does not decide. [6]
+- The per-file detail for the new member. [7]
 
 ## What This Area Is
 
@@ -251,50 +276,43 @@ memory-carryover vehicle.
   child-admission seal is gone, so a master that took a checkpoint landing
   (`integration_status="checkpointed"`) still admits the next leaf.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Task observation, memory/finalization continuation, knowledge validation (since MIK-R22), the knowledge crossing (since MIK-R24), the worklist recompute (since MIK-R08), the review-artifact archive hook (since MIK-R25) and the mandatory invariant gate (since MIK-R09) use explicit service ports; `WorktreeServices` carries each as a field. | `MemoryQualityPort`; `CertificationContinuationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:113-130; mcp/src/agents_remember/worktrees/services.py:292-302; mcp/src/agents_remember/worktrees/services.py:305-317 |
-| The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. | `AtomicSeriesActivationRecord`; `AtomicSeriesActivationArchiveEvidence` | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27; mcp/src/agents_remember/models/structural/atomic_series_activation.py:30-45 |
-| The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. | `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` | mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/modules/pause.py:130-149; mcp/src/agents_remember/worktrees/modules/pause.py:172-189; mcp/src/agents_remember/worktrees/modules/pause.py:192-208; mcp/src/agents_remember/worktrees/modules/pause.py:152-169 |
-| The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. | `require_parent_series` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
-| The stop cannot reach a publication, asserted structurally over the module's import closure. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
-| Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest. | `observe_atomic_series`; `_require_record_identity`; "def contract_fingerprint("; "def activation_path(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142 |
-| Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven; the public admission explanation stays contract-grounded and never names a foreign master as a precondition. | `activate_atomic_series_contract`; `reconcile_selected_series_under_authority`; "def atomic_series_admission_projection(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121; mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
-| The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. | `SyncOperationStore`; `observe_sync_operation` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:207-401; mcp/src/agents_remember/worktrees/sync_transaction_state.py:404-420 |
-| The sync driver retains conflicts for continuation, exposes explicit cancellation, and now carries the authored reconcile route through the same continuation. | `sync_contract_under_authority`; `_continue_resolution`; `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction.py:88-116; mcp/src/agents_remember/worktrees/sync_transaction.py:581-602; mcp/src/agents_remember/worktrees/sync_transaction.py:622-641; mcp/src/agents_remember/worktrees/sync_transaction.py:652-690 |
-| Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. | `cancel_sync`; `recover_unreadable_journal`; `recover_missing_journal` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:194-225; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:228-298; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:301-318 |
-| Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. | `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction.py:356-382; mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:551-571 |
-| A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. | `_reconciling_result`; `_mid_flight_summary` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
+### Repo-Internal References
+
+- Task observation, memory/finalization continuation, knowledge validation (since MIK-R22), the knowledge crossing (since MIK-R24), the worklist recompute (since MIK-R08), the review-artifact archive hook (since MIK-R25) and the mandatory invariant gate (since MIK-R09) use explicit service ports; `WorktreeServices` carries each as a field. [8]
+- The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. [9]
+- The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. [10]
+- The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. [11]
+- The stop cannot reach a publication, asserted structurally over the module's import closure. [12]
+- Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest. [13]
+- Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven; the public admission explanation stays contract-grounded and never names a foreign master as a precondition. [14]
+- The stable journal lives at `.lifecycle/sync-operation.json` and projects recovery without reading task text. [15]
+- The sync driver retains conflicts for continuation, exposes explicit cancellation, and now carries the authored reconcile route through the same continuation. [16]
+- Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof. [17]
+- Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list. [18]
+- A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [19]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite. | `capture_series_checkpoint_refs` | mcp/src/agents_remember/worktrees/series_closeout.py:104-122 |
-| Consumer source rows are derived only from Git attribution. | `read_ledger_source`; "Only committed Code-Commit attribution contributes mappings." | mcp/src/agents_remember/worktrees/ledger_projection.py:222-249; mcp/src/agents_remember/worktrees/ledger_projection.py:1-5 |
-| Real memory source ancestry remains a landing requirement. | `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
+- Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite. [20]
+- Consumer source rows are derived only from Git attribution. [21]
+- Real memory source ancestry remains a landing requirement. [22]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Docs References
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
 ## File-Level Onboarding Map
 
 | Source File | Onboarding File | Status | Reason |
 | --- | --- | --- | --- |
 | `modules/pause.py` | [`modules/pause.py.md`](modules/pause.py.md) | covered | the stop-only pause: release one selection, publish nothing |
+| `cutover_lock.py` | [`cutover_lock.py.md`](cutover_lock.py.md) | covered | the cutover lock: unconverted memory is only read once the repository holds converted memory |
 | `knowledge_conflict.py` | [`knowledge_conflict.py.md`](knowledge_conflict.py.md) | covered | Git half of the knowledge-dataset conflict settlement |
 | `knowledge_crossing.py` | [`knowledge_crossing.py.md`](knowledge_crossing.py.md) | covered | the crossing sync in the managed sync, and the MIK-R24 rule 9 refusal |
 | `knowledge_validation.py` | [`knowledge_validation.py.md`](knowledge_validation.py.md) | covered | memory commit routes' gate to the MIK-R22 knowledge validator |
@@ -829,13 +847,11 @@ dataset half — reading identities, proving the common base, publishing the uni
 receives one boolean. `SyncGitProofError` still owns every unproven Git transition, and the routing
 introduces no new authority, no commit of its own, and no ledger row.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The routing: knowledge conflicts settle in the transaction, what it will not decide is what the agent still gets, and the engine's reason travels out with it. | `_continue_memory_merge`; `settle_knowledge_conflicts`; `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:52-67; mcp/src/agents_remember/worktrees/sync_transaction_git.py:383-415; mcp/src/agents_remember/worktrees/knowledge_conflict.py:241-257 |
-| Binary-safe stage materialisation and the unique-common-base proof that refuses rather than guessing. | `_materialise_stages`; `_common_base` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:138-158; mcp/src/agents_remember/worktrees/knowledge_conflict.py:161-172 |
-| The dataset half this route may not host, and the commits the adapter's base claim needs together. | `merge_conflicted_stages`; `ConflictCommits` | mcp/src/agents_remember/application/knowledge_merge.py:113-181; mcp/src/agents_remember/application/knowledge_merge.py:223-234; mcp/src/agents_remember/application/knowledge_merge.py:164-175 |
-| The layer rule that forces the split, enforced over the tree rather than asserted. | `test_lower_ranked_owners_do_not_import_the_memory_domain` | mcp/tests/test_knowledge_store.py:839-857 |
-| The integration case that drives a real divergent dataset through `sync()` and asserts the sync completes with both sides intact. | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:150-186 |
+- The routing: knowledge conflicts settle in the transaction, what it will not decide is what the agent still gets, and the engine's reason travels out with it. [23]
+- Binary-safe stage materialisation and the unique-common-base proof that refuses rather than guessing. [24]
+- The dataset half this route may not host, and the commits the adapter's base claim needs together. [25]
+- The layer rule that forces the split, enforced over the tree rather than asserted. [26]
+- The integration case that drives a real divergent dataset through `sync()` and asserts the sync completes with both sides intact. [27]
 
 ## Route Impact: A Series At A Collected Address Is Re-Addressed, Not Refused (260915-KS-L34)
 
@@ -887,15 +903,13 @@ successor generation always cites the exact archived predecessor. The series' ow
 `pending`, because `reopened` is itself a terminal series state and would leave the series unable to own
 the lane.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| In flight is read from the progress cells a completion writes, never from `cleanup`. | `_series_in_flight` | mcp/src/agents_remember/worktrees/reopen.py:1003-1012 |
-| A live series is unaddressed only when its own address is terminal-archived and both progress cells are untouched. | `_series_is_live_unaddressed` | mcp/src/agents_remember/worktrees/reopen.py:1015-1039 |
-| An advanced branch on an in-flight series is its own landed work: reported `advance`, never moved. | `_series_ref_recut` | mcp/src/agents_remember/worktrees/reopen.py:921-977 |
-| The reset clears a review counter that carries history, and leaves an all-zero one alone. | `_review_state_carries_history`; `_plan_series_document_reset` | mcp/src/agents_remember/worktrees/reopen.py:1042-1062; mcp/src/agents_remember/worktrees/reopen.py:1065-1117 |
-| `reset` or `publish` is decided by the arrival, and the applied payload states which one ran. | `_series_reopen_plan` | mcp/src/agents_remember/worktrees/reopen.py:1120-1189 |
-| The gathered case that drives all three arrivals at the publication, and the spent counter's clearance. | `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` | mcp/tests/test_task_reopen.py:230-341 |
-| The already-live arrival re-addressed: successor cites the archived predecessor, branch unmoved, counter cleared from `round: 3`. | `_assert_a_live_unaddressed_series_is_re_addressed` | mcp/tests/test_task_reopen.py:376-469 |
+- In flight is read from the progress cells a completion writes, never from `cleanup`. [28]
+- A live series is unaddressed only when its own address is terminal-archived and both progress cells are untouched. [29]
+- An advanced branch on an in-flight series is its own landed work: reported `advance`, never moved. [30]
+- The reset clears a review counter that carries history, and leaves an all-zero one alone. [31]
+- `reset` or `publish` is decided by the arrival, and the applied payload states which one ran. [32]
+- The gathered case that drives all three arrivals at the publication, and the spent counter's clearance. [33]
+- The already-live arrival re-addressed: successor cites the archived predecessor, branch unmoved, counter cleared from `round: 3`. [34]
 
 ## Route Impact: The Series Chain Admits The Reconciled Line A Step Merged With (260915-KS-L35)
 
@@ -944,279 +958,10 @@ under the pre-repair validator and admitted genuinely foreign history once, and 
 result; the second promotion ran the repaired validator against that history, which is what surfaced the
 refusal. A chain admitted under an older validator has not been proved by the current one.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Each landing is an ancestor of the ref, and each step is proved by enumeration against the positions the chain's own contracts record. | `_require_landing_spine_side`; `_require_admitted_step`; `_landing_source_positions` | mcp/src/agents_remember/worktrees/series_closeout.py:405-446; mcp/src/agents_remember/worktrees/series_closeout.py:483-543; mcp/src/agents_remember/worktrees/series_closeout.py:579-602 |
-| Inside means strictly after the step's start and at or before its end, so a position that only descends from the step is outside it. | `_positions_inside_the_step`; `_reached_by_an_official_position` | mcp/src/agents_remember/worktrees/series_closeout.py:546-566; mcp/src/agents_remember/worktrees/series_closeout.py:569-576 |
-| Both directions of the step rule are pinned by one collected case, because both lanes sit at exactly their budget, and the descending-position counter-case is untouched. | `test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused`; `test_a_position_that_descends_from_a_step_does_not_vacate_it` | mcp/tests/test_atomic_series_chain_pair_order.py:298-377; mcp/tests/test_atomic_series_chain_pair_order.py:379-411 |
-| The order the spine walk consumes: every leaf is proved landed first, then ordered by the pair predicate, refusing unless exactly one minimum exists. | `_require_exact_atomic_landing_chain`; `_ordered_atomic_landing_chain` | mcp/src/agents_remember/worktrees/series_closeout.py:226-248; mcp/src/agents_remember/worktrees/series_closeout.py:251-281 |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 Every Memory Commit And Landing Route Asks The Mandatory Invariant Gate" after L38's: the new, carded `knowledge_gate.py` (marker applicability with gap 1 carried to L37, `GATE_UNBOUND`, the closeout's own `closed: true`, the direct landing's per-generation receipts, the prepared path's refusal), a table of every route and what it checks (the rulings of 14:38:47 gaps 2–3, 16:07:55 F1–F5 and F7, 17:59:48 R2-2/R2-5, 19:16:07 R3-1), two candidate invariants and inertness; five rows. The L22 section's "MIK-R09's routes … will call the same helper" is of its own time; this section says they do. **Reopened claims reworded:** the three rows citing `WorktreeServices` (the bundle now carries `knowledge_gate`; re-measured `305-317`). The rows the installed fixer declined were re-pointed by the exact base-to-staged line shift. No verification stamp was advanced.
-- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 A Leaf's Master Is Resolved By One Rule At Finalize And Reopen" after L25's (D32; rulings 12:33:07 Q2, 13:11:32 finding 1, 13:35:32; review R1 note 3 out of scope), with three rows. The installed fixer re-pointed the two reopen-test rows of the KS-L34 section (one generated bullet, kept) and normalised the L25 `finalize.py` and `services.py` rows. No verification stamp was advanced.
-- 2026-09-30T13:23:30+00:00: Generated citation repair: `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` repointed to mcp/tests/test_task_reopen.py:230-341. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 Archiving A Task Deletes Its Review Artifacts" after L08's (the `ReviewArtifactCleanupPort` in `services.py`, the finalizer's `_with_review_artifact_cleanup`, and the archive rulings), with two rows. **Three reopened `WorktreeServices` rows re-read:** the class gained `review_artifact_cleanup`; the services-ports row and the validator-port row were reworded to name it, and all three were re-measured to the class's current extent (`239-249` → `239-250`). No verification stamp was advanced.
-- 2026-09-29T15:45:24+00:00: Generated citation repair: `_finish_staged_memory_merge`; `_already_current_result`; `_require_completed_branches` repointed to mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598; mcp/src/agents_remember/worktrees/sync_transaction.py:356-382; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:551-571. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 A Completed Sync Recomputes The Leaf's Worklist" (the port, `with_recomputed_worklist`, the `continue` replay, never failing a completed sync; architect ruling 1), and named the worklist port in the `services.py` file-table row. **Two reopened `WorktreeServices` claims re-read and re-measured:** the bundle now also carries `knowledge_worklist`, so both rows say so and cite the class's current extent `213-223`; the first row's port range now spans the validation, crossing, worklist and continuation ports (`132-210`).
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24).** New section: the crossing sync in the managed sync and the rule 9 refusal, covering the new `knowledge_crossing.py` card, the five touched modules and the rulings, with five rows. Also added `knowledge_crossing.py` to both file tables, and the crossing routing to the `sync_transaction_git.py` responsibility. The four reopened claims were reworded to name the crossing port, the history closing and the converted base: the two `WorktreeServices` rows (re-measured `202-211`), the sync-proof row and the L22 `_finish_staged_memory_merge` row. This folds in the two fixer projections of this pass for `_finish_staged_memory_merge`.
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L22 The Memory Commit Routes' Gate To The Knowledge Validator" at the end of the change narrative, the `knowledge_validation.py` rows in Load-Bearing Files and the File-Level Onboarding Map, and one Hot Path Summary sentence. Reworded the two reference rows whose evidence changed (`WorktreeServices` now carries the knowledge-validation port; the staged memory merge is validated before its commit). I folded the same-pass generated repair bullet for the second row into this entry. The installed `memory-citations --fix` also re-normalised other passing ranges in this document; their claims are unchanged. No verification stamp was advanced.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **one inherited citation defect in this document repaired — it is not this leaf's own.** The row that carries the per-file detail for `modules/code_object_retention.py` had a **markdown path** in its Source cell (`mcp/src/agents_remember/worktrees/modules/code_object_retention.py.md`) rather than a `path:start-end` citation, and named **no anchor** at all, so nothing said what its lines were supposed to contain. The defect predates this leaf (the row was written by 260921-ICR-L11, whose own change this route records) and is repaired here only because this leaf's curation pass owns the gate finding. The row's Source now cites the code the claim is about — `mcp/src/agents_remember/worktrees/modules/code_object_retention.py:1-35`, the module's own header — and its Anchor cell names two real identifiers that occur literally inside that range (`retain_code_object` at 8, `code_object_custody` at 16), which is what makes the claim ("the module's own statement of the three properties") checkable. The Finding text was extended by a clause naming those three properties, because the row previously asserted only that a detail existed somewhere. No other row, range or claim was touched; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately **not** advanced, because nothing in this leaf is committed and the governed closeout owns the real stamp.
-- 2026-09-21T22:16+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by this leaf's own citation pass.** one reference row's citation was repaired: the per-file detail row for `mcp/src/agents_remember/worktrees/modules/code_object_retention.py` cited the card as a bare memory path, which is not a citation; it now cites `onboarding/mcp/src/agents_remember/worktrees/modules/code_object_retention.py.md:1-35` with the card's own title as its anchor. The route's own prose was not changed and the row states the same fact it did before. No claim was re-worded, no anchor was renamed and no row was dropped; the route's `Hot Path Summary` and its described responsibility are unchanged by this leaf (the change it records lives in the cards this route governs, not in the route's own statement). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout's metadata refresh owns the real one.
-- 2026-09-21T20:26:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **route impact recorded for one new `modules/` member.** `modules/code_object_retention.py` gives this route explicit Git-object retention: a namespace of its own (`refs/ar/retained-code/`) that no fetch, push, merge, rebase or delete touches; one retention commit whose parent is the recorded base commit, so one ref keeps **both** bound objects alive and the commit id is a function of the objects it keeps; custody measured only over the history the caller names, with the leaf's own disposable work branch excluded and an empty name set keeping the pin; and an explicit release that refuses a ref which no longer names the recorded commit and returns the custody measured before deletion. The section also records one **open boundary** — whether a landed integration or closeout operation objects to the new ref namespace was not measured by this leaf. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
-- 2026-09-21T02:00+02:00 — 260915-KS-L47 curator (post-closeout pass; code commit `3888cd8600e39a52c540d6038820759e3d4ffa7a`, memory commit `09dd841df686940858f409ae6818eb9e8de1d12e`): **re-read the three reopened claims against the committed bytes and answered both questions the checklist put to each; one range was genuinely wrong and is re-cited, two are the declarations they name and their wording is retained, and the card's stamp is advanced to the commit that carries these bytes.** (1) `_series_ref_recut` — the cited `reopen.py:784-818` did **not** hold the declaration, which sits at `921-977`; the range is re-cited. Its claim ("An advanced branch on an in-flight series is its own landed work: reported `advance`, never moved") is exactly what the construct states: the function's own docstring makes it decision 2, "An existing ref is never moved ... reported as `advance` when an in-flight series is standing on its own committed work", and the landing is deliberately not consulted there. (2) `_review_state_carries_history`; `_plan_series_document_reset` — both cited ranges (`1042-1062`, `1065-1117`) **are** those two declarations, so the projection landed on the location the claim is about rather than on a same-named mention elsewhere; the claim ("The reset clears a review counter that carries history, and leaves an all-zero one alone") is the pair the two functions implement, so wording and ranges are **retained**. (3) `_series_reopen_plan` — its cited `1120-1189` is the declaration, and the claim ("`reset` or `publish` is decided by the arrival, and the applied payload states which one ran") holds at it: the function's own `mode="publish" if (live or tombstone == contract) else "reset"` decides the mode from the arrival and carries it on the returned plan, so wording and range are **retained**. The stamp was advanced only after those readings: `lastVerifiedCommitHash`/`lastVerifiedCommitDate` now name `3888cd86…` at 2026-09-21T02:00, which is a real commit whose bytes are the ones read here. **This edit is after the memory commit and therefore needs a second closeout to be committed.** No commit was made by this pass.
-- 2026-09-20T07:36+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **reopened claim re-read against the construct its range now covers, and the stale generated-projection record retired after that read.** The claim — *"The sync driver retains conflicts for continuation and exposes explicit cancellation."* — names `sync_contract_under_authority` and `_continue_resolution`. Each anchor was resolved at its own current declaration in the code worktree and the cited range holds it, so the pointer is current and the wording still holds unchanged: no re-cite and no re-wording was needed. The generated citation-repair bullet that recorded the mechanical projection of this claim's range was **removed** because that projection resolves an exact NAME rather than the claim's subject, so keeping it would leave an unverifiable range asserting currency it cannot support; with it retired the range stands as the curator-read citation it now is. The rest of the card's history is untouched, no other bullet or row was deleted, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated across all five governed modules.** `knowledge_conflict.py` returns a typed settlement (`RefusedKnowledgeStage` with the engine's conflict and refusal, `KnowledgeConflictSettlement(remaining, refused)` with a `guidance` preference) and gained `settle_knowledge_conflict` as the single-path entry the authored retry re-enters; `sync_transaction_git.py` returns `SideMergeOutcome` instead of a three-tuple and gained `reconcile_side_merge`; `sync_transaction_state.py` journals `SyncSideRecord.knowledgeConflict` so a resumed sync re-projects the diagnosis rather than only the file name; `sync_transaction.py` gained the reconcile route (`_retained_side`, `_finish_retained_merge`, `_reconcile_knowledge_resolution`, `_reconcile_problem`, `_knowledge_conflict`, `_reconcile_preview`) and refuses the action/decision pair in both directions; `sync_transaction_results.py` advertises `reconcile_knowledge_resolution` with the journaled record and the decision left to the agent, and `reconcile_preview` is the dry run. The route's own earlier L31 section — "the sync settles a knowledge-dataset conflict" — remains true and is extended by this one rather than superseded: what changed is that the settlement now carries the engine's explanation and the agent has a supported operation to answer it. A body change, not a metadata-only refresh.
-
-- 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated across all five governed modules.** `knowledge_conflict.py` returns a typed settlement (`RefusedKnowledgeStage` with the engine's conflict and refusal, `KnowledgeConflictSettlement(remaining, refused)` with a `guidance` preference) and gained `settle_knowledge_conflict` as the single-path entry the authored retry re-enters; `sync_transaction_git.py` returns `SideMergeOutcome` instead of a three-tuple and gained `reconcile_side_merge`; `sync_transaction_state.py` journals `SyncSideRecord.knowledgeConflict` so a resumed sync re-projects the diagnosis rather than only the file name; `sync_transaction.py` gained the reconcile route (`_retained_side`, `_finish_retained_merge`, `_reconcile_knowledge_resolution`, `_reconcile_problem`, `_knowledge_conflict`, `_reconcile_preview`) and refuses the action/decision pair in both directions; `sync_transaction_results.py` advertises `reconcile_knowledge_resolution` with the journaled record and the decision left to the agent, and `reconcile_preview` is the dry run. The route's own earlier L31 section — "the sync settles a knowledge-dataset conflict" — remains true and is extended by this one rather than superseded: what changed is that the settlement now carries the engine's explanation and the agent has a supported operation to answer it. A body change, not a metadata-only refresh.
-
-- 2026-09-20T02:05:20+00:00: Generated citation repair: `_series_in_flight` repointed to mcp/src/agents_remember/worktrees/reopen.py:1003-1012. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: `_series_is_live_unaddressed` repointed to mcp/src/agents_remember/worktrees/reopen.py:1015-1039. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: `_review_state_carries_history`; `_plan_series_document_reset` repointed to mcp/src/agents_remember/worktrees/reopen.py:1042-1062; mcp/src/agents_remember/worktrees/reopen.py:1065-1117. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: `_series_reopen_plan` repointed to mcp/src/agents_remember/worktrees/reopen.py:1120-1189. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T03:22+02:00 — 260915-KS-L35 curator (uncommitted change set on `ar/260915-ks-l35-ar`, code base `7abacd8e`): **the route gained the L35 section above, because what a spine step may add is a route-level rule and where its boundary sits is the thing a reader gets wrong.** The section records the enumeration (never subtraction) that measures a step, the residual the enumeration left — a step whose endpoint is the merge of the previous landing with a synced position *is* that position's own line, measured on this master as `7db50f8f` → `8dfc11b8`, the merge of `7db50f8f` with the synced position `8dd62345` whose ancestry holds all 22 commits the step adds (D-60) — the two predicates that now decide (`_positions_inside_the_step`, `_reached_by_an_official_position`), and the boundary that keeps the counter-case refusing: a position that merely descends from the step is not inside it. It also records the operational fact that the check is enforced by the revision the running plane loads, so history admitted under an older validator has not been proved by the current one, and that the rest of the chain proof — origin, ordering, landing identity, checkout cleanliness — is unchanged. The four reference rows above are re-derived against this candidate. No verification stamp advanced; the metadata carries a recorded working candidate naming this candidate, and the governed closeout owns the real code and memory commits.
-- 2026-09-20T02:50+02:00 — 260915-KS-L34 curator (uncommitted change set on `ar/260915-ks-l34-ar`, code base `0da444b3`): **No route impact on the route's model; a moved body on `reopen.py`'s own.** This route gained the L34 section above, because the reading a caller needs — which fact decides a series reopen's ref rule, and why `cleanup` is not it — is a route-level fact rather than a sidecar detail. The section records the second arrival at the series publication (live on disk, `cleanup: pending`, both progress cells virgin, integration branches carrying the series' own landed work, locator still `terminal-archived`), the three facts that now decide instead of two, the resumed interrupted reset, and the review-counter reset a reopened master needs so its next round reads as the first. The route's own surface — the lifecycle operations, the closeout-door and landing ref owners, the sync and queue projections — is unchanged, and `reopen.py` remains the sole owner of `task_reopen`. No verification stamp advanced; the metadata carries a recorded working candidate naming this candidate, and the governed closeout owns the real code and memory commits.
-- 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **this route gained a module and a conflict-flow step.** Added the L31 route-impact section (the binary-to-Git problem, the `_continue_memory_merge` routing and its left/right pair, binary-safe stage materialisation, the preserved refusal and the absent compatibility verdict, and the layer rule that forces the two-module split), registered `knowledge_conflict.py` in the Load-Bearing Files and File-Level Onboarding Map tables with its new card, and corrected the retained-conflict flow so step 2 no longer tells an agent to resolve a knowledge dataset by hand. No verification stamp advanced; closeout owns it.
-- 2026-09-18T18:53+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **No route impact:** this route was re-read at code `c5a74a85` because the sources underneath it moved, and the model this overview describes is unchanged. The delta is one level down and one route further in: `worktrees/integration/closeout/` gained `curator_assessment_evidence.py` and the assessment-evidence publication in `curator_coherence_publication.py`, both of which are that child route's own and are recorded on [`integration/closeout/overview.md`](integration/closeout/overview.md). This route's own surface — the lifecycle operations, the closeout-door and landing ref owners, the sync/queue projections, and the ledger-free memory-output rule — is not touched by them, and the delegation this overview already makes ("closeout claim, commit, certification, integration, or recovery evidence → `worktrees/integration/lifecycle/` and closeout-door owners") still names the right owners. Stamp advanced to `c5a74a85` because the review happened there; closeout re-stamps. No body byte changed, because none needed to.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T07:33:51+00:00: Generated citation repair: `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` repointed to mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/modules/pause.py:130-149; mcp/src/agents_remember/worktrees/modules/pause.py:152-169; mcp/src/agents_remember/worktrees/modules/pause.py:172-189; mcp/src/agents_remember/worktrees/modules/pause.py:192-208. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_already_stopped_result` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:79-82 to mcp/src/agents_remember/worktrees/modules/pause.py:116, the extent of the construct the claim is about (the checker named line(s) [116, 130] as its live location); re-pointed `_already_vacant_payload` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:116 to mcp/src/agents_remember/worktrees/modules/pause.py:149, the extent of the construct the claim is about (the checker named line(s) [149, 152] as its live location); added mcp/src/agents_remember/worktrees/sync_transaction.py:474 to the row 225 of this card as the citation for `_continue_resolution`: no cited file carried the construct, and the checker named line(s) [474, 539] in this file as its live location; re-pointed `_paused_payload` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:149 to mcp/src/agents_remember/worktrees/modules/pause.py:127, the extent of the construct the claim is about (the checker named line(s) [127, 172] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_already_stopped_result` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:192-197 to mcp/src/agents_remember/worktrees/modules/pause.py:130-133, the extent of the construct the claim is about (the checker named line(s) [116, 130] as its live location); re-pointed `_already_vacant_payload` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:130-133 to mcp/src/agents_remember/worktrees/modules/pause.py:152-155, the extent of the construct the claim is about (the checker named line(s) [149, 152] as its live location); re-pointed `_continue_resolution` in the row 225 of this card from mcp/src/agents_remember/worktrees/sync_transaction.py:82-87 to mcp/src/agents_remember/worktrees/sync_transaction.py:539-544, the extent of the construct the claim is about (the checker named line(s) [474, 539] as its live location); re-pointed `_paused_payload` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:152-155 to mcp/src/agents_remember/worktrees/modules/pause.py:172-175, the extent of the construct the claim is about (the checker named line(s) [127, 172] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_already_stopped_result` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:79-82 to mcp/src/agents_remember/worktrees/modules/pause.py:130-133, the extent of the construct the claim is about (the checker named line(s) [116, 130] as its live location); re-pointed `_already_vacant_payload` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:130-133 to mcp/src/agents_remember/worktrees/modules/pause.py:152-155, the extent of the construct the claim is about (the checker named line(s) [149, 152] as its live location); re-pointed `_paused_payload` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:152-155 to mcp/src/agents_remember/worktrees/modules/pause.py:172-175, the extent of the construct the claim is about (the checker named line(s) [127, 172] as its live location); re-pointed `_refusal_payload` in the row 219 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:172-175 to mcp/src/agents_remember/worktrees/modules/pause.py:192-197, the extent of the construct the claim is about (the checker named line(s) [104, 121, 192] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock; stamped the untimestamped Update History entries with this document's own commit clock
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/worktrees/modules/pause.py:192-197 in the row 219 of this card; the repetition added no pooled evidence; kept one copy of the repeated citation mcp/src/agents_remember/worktrees/sync_transaction.py:82-87 in the row 225 of this card; the repetition added no pooled evidence
-
-- 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
-- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced source-table union and ledger-based admission invariants; historical milestone accounts are explicitly superseded. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-
-- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
-  `ar/260913_ledger-commit-attribution`, base `bb65a207`): added the completed-master review's half of
-  the ledger exclusion channel to this route's L11 record. The read still decides the memory half of a
-  source row and holds no code repository; `project_ledger` now asks the code half of those same rows
-  at the one boundary where the code repository is in hand (`_kept_true_source_rows`), excluding with
-  `code-commit-missing` any source row the repository cannot prove and reporting it through the same
-  `sourceRowsExcluded`/`sourceExcludedRows`/`sourceExcludedReasons` payload. The reviewed defect: the
-  rebuild appended the source's rows unchanged, so an invalid source row survived the recompute that
-  exists to repair it. Recorded the deliberate widening `LedgerWorld.code_repository: Path | None =
-  None` — a world naming no code repository cannot refute a code claim and keeps its rows, where a
-  `None` in the previously required field died inside the object test — and the two cases that pin
-  both halves. Detail lives on the `worktrees/ledger_projection.py` card and on `mcp/overview.md`.
-  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp
-  advanced.
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/worktrees` carries local unstaged changes not represented in HEAD.
-  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
-  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
-  remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T13:20+02:00 — A dropped ledger row is reported, not refused by the sync (curator on the
-  landed `ab47182` change set of the 260913 ledger line): the sync-side row-preservation rule is
-  removed — `validate_current_memory_side`, `validate_completed_side`, `_validate_parent_ledgers`,
-  `_validate_required_ledger_rows` and `_ledger_rows`, with their call sites in
-  `sync_transaction.py::_already_current_result` and
-  `sync_transaction_recovery.py::_require_completed_branches` — so every sync proof is about Git
-  state and one answer applies on both routes. Recorded the measured thirteen-row trigger and the
-  permanently-unsyncable master it produced, the mid-flight reporting rewrite
-  (`_reconciling_result` → `atomic-series-reconciling` with `_mid_flight_summary` naming the stuck
-  contract, its publication time, its revision and both exits), and corrected the false local
-  invariant that had stated the file rule. Re-derived the sync/activation reference anchors on this
-  route. Verification metadata remains closeout-owned; no execution or acceptance claim and no
-  verification stamp advanced.
-- 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
-  `ar/260913-lca-l11-ar`, base `4214d7a1`): recorded the developer's 2026-09-14T08:15+02:00 ruling
-  that the rebuild outranks the tracked ledger file, and the removal it ordered — the
-  ledger-preservation check and its whole surface across `integration_ref_transaction.py` and
-  `series_closeout.py`, with `integrate.py`'s admission losing its ledger-history dimension. Stated
-  the four surviving promises, the surviving series-closeout projection gate as a different route,
-  the measured trigger (L10's 13 dropped / 455 reordered repair refused at a current start point),
-  and the asymmetry between the checkpoint and leaf routes that the master's decision attributes to `L35`. Recorded the removal's **cost** — a
-  same-code-commit row reversal can now land unreported for any code commit other than the landed
-  one, the "resolution preservation" rule that would have closed it refused a correct ledger and was
-  removed, and it is a known gap pending a decision. Recorded the rebuilder's second defect and the
-  direction of its fix, with both the worker's measurement and this curator's independent
-  re-verification (479 rows, 1 trailered commit, 466 kept + 13 excluded at `f5edc613`). Corrected
-  the two body passages the change falsifies — the L2 reader paragraph's "fallback" framing and the
-  L34 paragraph's `LandingAdmission`/`_require_preserved_ledger_history` account — and added the
-  matching local invariant. Verification metadata remains closeout-owned; no execution or acceptance
-  claim and no verification stamp advanced.
-- 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
-  `ar/260913-lca-l5-ar`, base `52875e7a`): recorded the new `task-enclosure-binding-master-link-missing`
-  refusal on `require_current_leaf_enclosure_binding` — a leaf document with an exact enclosure address
-  but no `seriesContractPath` now refuses by name with the start/attach remedy instead of reading as
-  `present`, and the reason it does not reuse `mismatched`'s `task_doc.replace` recovery is that a replace
-  cannot write a derived field. Stated that two shared closeout fixtures were corrected because they had
-  been modelling the damage state, and that the repairing publisher lives on the task route. Also recorded
-  that this route's `task_resolver.py` lost ownership of the task-layout path vocabulary to the new
-  `tasks/task_paths.py` (it now re-exports it), which is what keeps `layers.toml`'s
-  `tasks`(9) < `worktrees`(10) order intact. Route
-  documentation only: verification metadata remains closeout-owned and no execution or acceptance claim is
-  made.
-- 2026-09-13T23:26+02:00 — 260913-LCA-L2 follow-up (same uncommitted change set): corrected the
-  ancestry census in the route-impact section below to name its method and carry the full figures —
-  `git merge-base --is-ancestor` at tip `5e4899ea` gives 442 rows on the first-parent line, 34 off it,
-  21 of those 34 still ancestors, 463 rows naming an ancestor in total and 13 naming none — and
-  stated that the module docstring's older 35/441/462/14 figures came from comparing the table's
-  written cells against `git rev-list` output as text, the whole difference being the table's single
-  truncated memory-commit cell `684c33b2`. No claim about the projection, the fallback or the
-  unretired ledger commit changed. Verification metadata remains closeout-owned; no acceptance claim
-  and no verification stamp advanced.
-- 2026-09-13T23:10+02:00 — 260913-LCA-L2 curator (uncommitted change set on `ar/260913-lca-l2-ar`):
-  recorded that this route's source-ledger reader now projects the complete source ledger from the
-  memory commits' own `Code-Commit:` attribution through the new `kernel/memory_attribution.py`,
-  with the per-commit blob read kept only for a commit whose whole walk attributes nothing; stated
-  the measured reason the walk is the full ancestry (476 rows, 442 on the first-parent line, 34 off
-  it, 21 of those still ancestors, 13 not ancestors at all), the real-repository state that the
-  fallback is the live path at `5e4899ea` (0 of 958 commits trailered), and the boundary the change
-  did not cross — the tracked ledger commit and every named-ref reader of it are unchanged and their
-  retirement is a separate leaf. Added the matching local invariant. Verification metadata remains
-  closeout-owned; no acceptance claim and no verification stamp advanced.
-- 2026-09-13T20:42+02:00 — Recorded the child-admission seal removal and the already-vacant stop on this
-  route (uncommitted 260831-LOCR change set on `ar/260831_lifecycle-owned-completion-relay`): the
-  deleted `atomic_series_seal.py` and its call sites, the `require_parent_series` rename, the pause's
-  `atomic-series-already-vacant` success for a master holding no selection (with the unreadable/foreign
-  refusals kept and `release_atomic_series_selection` unchanged), and the new ordered playthrough as
-  the regression proof. Widened the stop invariant to state that no lifecycle cell refuses a leaf,
-  updated the load-bearing reference rows (`pause_result` and friends to `pause.py:80-128`/`173-191`/`193-209`
-  after the module grew to 209 lines, plus a `require_parent_series` row), and corrected the
-  `test_pause_stop_only_end_to_end.py` description. Verification metadata remains closeout-owned; no
-  acceptance claim and no verification stamp advanced.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the stop-only pause on this route — the
-  `modules/pause.py` delegation to the existing release authority, the paused payload and its
-  proposal-free `nextStep`, the per-contract isolation that leaves a sibling's record byte-identical, the
-  structural exclusion of publication (measured closure 60 modules including the root, 5 direct
-  imports, 54 beyond them, 0 of 12 publication modules reached, with non-vacuity checks and named
-  witnesses so a depth-1 walker fails), and the explicit statement that
-  `worktree_checkpoint_landing` remains the separate publication. Added the load-bearing
-  file row, the local invariant, the reference row, and the route-impact section. Verification metadata
-  remains closeout-owned; no acceptance claim.
-- 2026-09-13T17:56+02:00 — 260831-LOCR-L36: corrected the checkpoint-route paragraph and recorded
-  the reconciled series completion. The checkpoint is a partial **publication** (it moves the master's
-  committed code and memory refs onto the protected source branch under explicit developer approval),
-  not a pause, and the checkpoint capture proves its ledger mapping through
-  `exact_series_memory_closeout`, the exact-mapping reader, while the final series route may accept the
-  reconciled pair through `series_memory_closeout`. Recorded that the atomic completion proof no longer
-  anchors the leaf chain at the recorded base pair — `worktree_sync` advances that pair, so the chain
-  is ordered by the leaves' own landed ancestry and each step is admitted only when it adds nothing
-  beyond the previous landing and the official positions this contract synced with — and that a
-  master's own reconciliation merges enter `atomic_series_ledger_prefix` as proved rows. The recorded
-  pair for a reconciled master is the reconciled code tip against the memory ref the same sync landed,
-  accepted only when the landed table is the exact projection of its source plus this line's own true
-  rows; recording that row is an agent-owned `memory.md` write with no public tool. Verification
-  metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T15:03:18+02:00 — 260831-LOCR-L36 round 2: stated the developer ruling on this route. "What This Area Is", the Hot Path Summary, and the local invariants now say that a graph-less sprint's `atomic-sequential` default describes the sprint's shape (every commanded master executes atomically) and serializes nothing, because such a sprint declares no dependencies, and that per-contract activation never pauses or excludes a sibling; the same ruling is recorded on the sibling `modules/overview.md` route. Source-pair wording was kept only where the sync/integration plane is genuinely per pair (the `Select And Admit An Atomic Master` flow steps and the sync-transaction paragraphs). The per-contract activation account itself is unchanged. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T14:19+02:00 — Per-contract activation curation on this route: rewrote the area purpose, hot path, R25 observation boundary, structures, operating model steps 2/6/7, main-flow selection step, load-bearing rows, invariants, child-overview row and the Integrated-IAS sentence so atomic-series activation is described as one `contract_fingerprint`-keyed record per series contract rather than one selection per protected source pair — selecting one master no longer pauses, clears, or terminalizes another, and `reconciling` is the only waiting reason. Replaced the retired `AtomicSeriesSourceRef`/`AtomicSeriesSourcePair`/`atomic_series_source_pair` rows with the `AtomicSeriesActivationRecord`/`AtomicSeriesActivationArchiveEvidence` and `observe_atomic_series`/`_require_record_identity`/`contract_fingerprint`/`activation_path`/`atomic_series_admission_projection` citations at models/structural/atomic_series_activation.py:16-27 and :30-45 and atomic_series_activation.py:145-152, :360-372, :130-134, :137-142, and atomic_series_admission.py:33-74. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded the preview/apply parity invariant on this route
-  with its full instance inventory (five fixed; `worktree_start` and the memory-carryover pair
-  reported-not-fixed with their reasons; and the `worktree_abandon`/`worktree_cleanup`
-  verdict/state-string adjacent shape), and the checkpoint reachability repair that produced it — the
-  captured `SeriesCheckpointRefs` candidate with its required, revalidated `expected` argument, the one
-  `checkpoint_landing_eligibility` decision both surfaces read, the shared ledger proof, the required
-  `operation` name on the protected-ref edge, and the closeout preview gate extraction. Content change,
-  not a range repoint; verification metadata remains closeout-owned and no acceptance claim is made.
-- 2026-09-12T05:05+02:00 — 260831-LOCR-L30 mirror-list completeness: the checkpoint projection note
-  named three dashboard mirrors of `WorktreePhase` where there are six; it now lists all five files /
-  six sites and defers to the `guidance.py` card as the maintained list. Content change, not a range
-  repoint; verification metadata remains closeout-owned.
-- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: replaced the recorded checkpoint guidance gap
-  with the implemented behavior — `_post_integration_phase` now has a `checkpointed` branch projecting
-  `worktree-started` + `continue_work`/`worktree_status`, with the closed-`WorktreePhase` rationale —
-  and recorded the widened `already-recorded` guard on the pull-request route. Verification metadata
-  remains closeout-owned; no acceptance claim.
-- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the non-final series exit on this route,
-  the single-writer cell that now carries two landing outcomes, the widened series abandon guard, and
-  the guidance phase gap for `checkpointed`. Verification metadata remains closeout-owned; no
-  acceptance claim.
-- 2026-09-11T23:05:00+00:00: Route-impact curation for this route: recorded the new `record_landing_result` facade export and shared landed-integration writer, the terminal-task-state requirement for integration-branch retirement with its cleanup/abandon asymmetry, and the named abandoned-master closeout refusal. Content change, not a range repoint.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationStore`, `activate_atomic_series_contract`, `observe_sync_operation`, `reconcile_selected_series_under_authority` repointed to mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:103-121, mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100, mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repaired the exact-pair resolver reference, which now lives at `memory_quality/memory_candidate_pair.py` after commit `0b63d6fc` relocated it out of `closeout/`. Only this cut-affected claim was reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
-- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
-- 2026-09-10T15:06+02:00 — Closeout auto-carry and parked candidate: recorded that the sync transaction parks and returns a dirty moving side's candidate (park, journal, restore on completed/resume/cancel, finalize refusal), and that the closeout-family lineage guard self-heals a settleable stale break through that transaction. Re-derived the sync anchors against the current working tree. Verification metadata remains closeout-owned.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound the worktrees overview's activation observer citations to current source ranges; source-pair ownership is unchanged and no acceptance claim is made.
-- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the route-review refusal projection and activation/admission observation boundaries under the worktrees route. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
-
-
-- 2026-09-06T13:51:59+00:00 — L33 candidate curation: Routed canonical task observation and selected certification through the existing service/integration owners; distinguished implemented admission/execution from absent default continuation. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
-
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Reviewed the seven changed child quality sources; routed the new publication and host-lock behavior without changing lifecycle or source-pair ownership.
-
-- 2026-09-05T07:14+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected scheduling independence versus publication locking and added current intent/certification composition. Verification records source review, not execution or acceptance.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: unified lifecycle and semantic-topology leaf
-  identity on the canonical composite task-domain binding. Verification remains closeout-owned.
-
-- 2026-08-31T20:30+02:00 — 260831-DER: restored the ordinary series no-door integration state and
-  recorded the strict separation from policy-gated leaf-without-enclosure direct landing. Existing
-  leaf door and retained-journal recovery boundaries remain unchanged.
-
-- 2026-08-31T12:27+02:00 — No route impact: A005 changes only the already-documented quality
-  executor and publication child route; the root worktree ownership, lifecycle boundaries, and
-  hot-path routing remain unchanged. Verification remains closeout-owned.
-
-- 2026-08-29T21:46+02:00 — MCAR-L03: added the canonical exact code/memory pair resolver to the
-  worktree route. Verification remains closeout-owned.
-
-- 2026-08-29T12:52+02:00 — MCAR-L02 C009 recovery: recorded the invocation-owned
-  candidate-index boundary after queue and dashboard observers exposed a shared-scratch deletion
-  race. Verification remains closeout-owned.
-
-- 2026-08-29T10:40+02:00 — Moved the exact future-code candidate identity into
-  `integration/closeout/`, its consuming lifecycle boundary, to restore the root package cap.
-
-- 2026-08-29T08:52+02:00 — Added the structured curator-coherence child route and shared
-  admission boundary. Verification remains closeout-owned.
-
-- 2026-08-29T05:17+02:00 — A003 self-review repair: recorded immutable identity and
-  collision-free concurrent candidate observations.
-
-- 2026-08-29T04:55+02:00 — Added the strict future-code candidate owner and documented the
-  separation between tree-bound semantic acceptance and journal-bound Git-operation recovery.
-  Verification metadata remains pinned until closeout.
-
-- 2026-08-28T14:15+02:00 — PDLS closeout: re-read the accepted quality-gate and integration
-  changes against the landed candidate. Existing route ownership already places test authority in
-  the quality owner and recovery evidence in the root journal; stamped committed provenance.
-
-- 2026-08-26T19:34+02:00 — Reconciled the master-series bootstrap handoff at the parent route:
-  apply-time journal/contract observation shares the existing per-master mutex, while dry-run
-  remains unlocked and write-free. This closes the concurrent split read without a retry, fallback
-  reader, compatibility route, or new lock namespace.
-
-- 2026-08-26T14:32+02:00 — Corrected source-pair sync's ledger boundary from global code-key
-  uniqueness to newest-first current authority plus exact parent-history preservation.
-
-- 2026-08-26T08:55+02:00 — Promoted the activation and sync units from provisional to frozen
-  covered status after pass 13.
-
-- 2026-08-26T08:20+02:00 — Final frozen reconciliation of 5 activation package units, 7 root
-  sync units, and their queue/module/integration boundaries; commit-derived stamps remain
-  closeout-owned.
-
-- 2026-08-26T06:25+02:00 — Reconciled current coverage after the consolidation: five activation
-  package units and seven root sync units have strict provisional sidecars; final citations and
-  verification remain post-Dagger owned.
-
-- 2026-08-26T06:05+02:00 — Reconciled the structural-limit move: activation is now one focused
-  child route with five strict sidecars, while resumable sync remains at the worktrees root. No
-  compatibility readers or old-path cards remain.
-
-- 2026-08-26T02:55+02:00 — Created for the direct IAS source-pair coordination repair. Recorded
-  approved activation, resumable-sync, task-authoring, queue-ownership, cleanup, and no-fallback
-  boundaries against the moving candidate; verification remains frozen-candidate owned.
-
+- Each landing is an ancestor of the ref, and each step is proved by enumeration against the positions the chain's own contracts record. [35]
+- Inside means strictly after the step's start and at or before its end, so a position that only descends from the step is outside it. [36]
+- Both directions of the step rule are pinned by one collected case, because both lanes sit at exactly their budget, and the descending-position counter-case is untouched. [37]
+- The order the spine walk consumes: every leaf is proved landed first, then ordered by the pair predicate, refusing unless exactly one minimum exists. [38]
 
 ## Route Impact: The Diagnosis Reaches The Agent, And One Authored Decision Settles It (260915-KS-L40)
 
@@ -1257,11 +1002,9 @@ steps (resolve it in the worktree and continue, or cancel), rather than journali
 merge guard is untouched: `_independent_insert_refusal` still refuses two independent insertions of one identity, and no
 blanket equal-payload exception was introduced.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The journaled decisions, and the continuation that clears them with the conflict. | `SyncSideRecord`; `_finish_retained_merge` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:50-102; mcp/src/agents_remember/worktrees/sync_transaction.py:635-635; mcp/src/agents_remember/worktrees/sync_transaction.py:644-644; mcp/src/agents_remember/worktrees/sync_transaction.py:652-690 |
-| The attempt that carries every accepted decision, and the bounded refusal that stops the cycling. | `_reconcile_knowledge_resolution`; `_reconcile_progress_refusal` | mcp/src/agents_remember/worktrees/sync_transaction.py:693-752; mcp/src/agents_remember/worktrees/sync_transaction.py:755-784 |
-| The Git half that hands the adapter the whole sequence. | `reconcile_side_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:418-444 |
+- The journaled decisions, and the continuation that clears them with the conflict. [39]
+- The attempt that carries every accepted decision, and the bounded refusal that stops the cycling. [40]
+- The Git half that hands the adapter the whole sequence. [41]
 
 ## 260915-KS-L42 The Unsettleable Conflict's Summary Names It And Says What To Do
 
@@ -1295,13 +1038,11 @@ Closeout, direct landing, record landing, and master and checkpoint landing are 
 architect's ruling; they will call the same helper. Memory plans that are not a merge (fast-forward, skip,
 already-current) are not validated at the sync.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator. | `has_layout_marker`; `memory_commit_refusal` | mcp/src/agents_remember/worktrees/knowledge_validation.py:40-61; mcp/src/agents_remember/worktrees/knowledge_validation.py:64-104 |
-| The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). | `KnowledgeValidationPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:133-162; mcp/src/agents_remember/worktrees/services.py:305-317 |
-| The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). | `_finish_staged_memory_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:570-598 |
-| The driver maps the refusal to its own state with a recovery line. | `_knowledge_validation_refused` | mcp/src/agents_remember/worktrees/sync_transaction.py:594-610 |
-| The route never commits converted memory unvalidated, and an unreadable tree is refused. | `test_the_worktree_route_never_commits_converted_memory_unvalidated` | mcp/tests/test_knowledge_validator_routes.py:134-158 |
+- The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator. [42]
+- The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). [43]
+- The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
+- The driver maps the refusal to its own state with a recovery line. [45]
+- The route never commits converted memory unvalidated, and an unreadable tree is refused. [46]
 
 ## 260928-MIK-L24 The Crossing Sync In The Managed Sync, And The Unconverted-Line Refusal
 
@@ -1342,13 +1083,11 @@ the route reaches it only through the new `services.KnowledgeCrossingPort`, boun
 On the real ONT fork (`48b06d96b` against the scratch-converted sprint line), the conflicted cards were
 exactly within the 46 cards both lines changed, and after mechanical resolution the merge validated clean.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The plan before Git, and its application to the started merge. | `crossing_plan`; `apply_crossing` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:80-112; mcp/src/agents_remember/worktrees/knowledge_crossing.py:150-160 |
-| The crossing branch of the memory merge. | `_crossing`; `_apply_crossing_merge` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:537-567; mcp/src/agents_remember/worktrees/sync_transaction_git.py:515-534 |
-| The port and its request and view. | `KnowledgeCrossingPort`; `CrossingRequest`; `CrossingPlanView` | mcp/src/agents_remember/worktrees/services.py:165-177; mcp/src/agents_remember/worktrees/services.py:184-194; mcp/src/agents_remember/worktrees/services.py:197-200 |
-| The rule 9 refusal. | `unconverted_line_refusal` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
-| The durable report and the master-line history file closed at commit. | `write_crossing_report`; `close_crossing_history` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:237-262; mcp/src/agents_remember/worktrees/knowledge_crossing.py:201-222 |
+- The plan before Git, and its application to the started merge. [47]
+- The crossing branch of the memory merge. [48]
+- The port and its request and view. [49]
+- The rule 9 refusal. [50]
+- The durable report and the master-line history file closed at commit. [51]
 
 ## 260928-MIK-L08 A Completed Sync Recomputes The Leaf's Worklist
 
@@ -1369,11 +1108,9 @@ With no port bound, or no worklist applicable (both memory sides unconverted, ev
 MIK-R37), the sync result is byte-for-byte unchanged. Closeout validation and landing pre-commit are the
 other two triggers, and they are L09's.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`). | `KnowledgeWorklistPort`; `WorktreeServices` | mcp/src/agents_remember/worktrees/services.py:203-211; mcp/src/agents_remember/worktrees/services.py:305-317 |
-| The completed result gains the summary; every failure leaves it unchanged. | `with_recomputed_worklist`; `recompute_knowledge_worklist` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:96-108; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:111-127 |
-| The `continue` replay recomputes too. | `terminal_resolution_replay` | mcp/src/agents_remember/worktrees/sync_transaction_results.py:356-391 |
+- The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`). [52]
+- The completed result gains the summary; every failure leaves it unchanged. [53]
+- The `continue` replay recomputes too. [54]
 
 ## 260928-MIK-L25 Archiving A Task Deletes Its Review Artifacts
 
@@ -1396,10 +1133,8 @@ physically confined to the task (rulings 00:08:39, 01:00:07, 01:37:42, 02:12:06;
 not gated on conversion (ruling 22:22:37 Q4): once this build is installed, archival also deletes unconverted
 tasks' legacy copies — including curator scratch copies — which L37's cutover notes state (F7).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The archive hook's request and port. | `ReviewArtifactCleanupRequest`; `ReviewArtifactCleanupPort` | mcp/src/agents_remember/worktrees/services.py:266-279; mcp/src/agents_remember/worktrees/services.py:282-289 |
-| The finalizer carries the hook's report after the archive move, and never raises. | `_with_review_artifact_cleanup` | mcp/src/agents_remember/worktrees/modules/finalize.py:233-271 |
+- The archive hook's request and port. [55]
+- The finalizer carries the hook's report after the archive move, and never raises. [56]
 
 ## 260928-MIK-L38 A Leaf's Master Is Resolved By One Rule At Finalize And Reopen
 
@@ -1422,11 +1157,9 @@ The rule lives below this layer, in the task domain, so this route imports it an
 on the memory conversion. The named-master resolution differences between the sync and these writers stay out of
 scope (review R1 note 3).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Finalize resolves a leaf naming none through the shared helper. | "folder_master = folder_master_json_path(task_root, leaf)" | mcp/src/agents_remember/worktrees/modules/finalize.py:459-481 |
-| Reopen resolves a leaf naming none through the same helper. | "return master_sync.folder_master_json_path(task_root, doc)" | mcp/src/agents_remember/worktrees/reopen.py:647-657 |
-| Reopen's placement guard on the leaf and the master. | "require_task_document_in_place(json_path, doc, ReopenTaskDocumentError)"; "require_task_document_in_place(master_path, master, ReopenTaskDocumentError)" | mcp/src/agents_remember/worktrees/reopen.py:435-477; mcp/src/agents_remember/worktrees/reopen.py:588-628 |
+- Finalize resolves a leaf naming none through the shared helper. [57]
+- Reopen resolves a leaf naming none through the same helper. [58]
+- Reopen's placement guard on the leaf and the master. [59]
 
 ## 260928-MIK-L09 Every Memory Commit And Landing Route Asks The Mandatory Invariant Gate
 
@@ -1469,15 +1202,8 @@ every route behaves exactly as before the gate (the unconverted test; `unconvert
 build: identical apart from the build label, including the real memory commit tree `20ccf39a…`, the record-landing
 payload and the direct-landing preview). **Inert until the cutover.**
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The layer's probes, the unbound refusal and the closeout's own write. | `converted_memory`; `GATE_UNBOUND`; `close_owner_history` | mcp/src/agents_remember/worktrees/knowledge_gate.py:89-105; mcp/src/agents_remember/worktrees/knowledge_gate.py:279-300 |
-| The closeout validator's and the landings' gate. | `leaf_gate_refusal`; `landing_gate_refusal` | mcp/src/agents_remember/worktrees/knowledge_gate.py:176-196; mcp/src/agents_remember/worktrees/knowledge_gate.py:230-260 |
-| The direct landing's closing, kept and settled per generation. | `keep_direct_closing`; `settle_direct_closing` | mcp/src/agents_remember/worktrees/knowledge_gate.py:360-422 |
-| The port, the landing request and the direct verdict. | `KnowledgeGatePort`; `LandingGateRequest`; `DirectGateVerdict` | mcp/src/agents_remember/worktrees/services.py:214-263 |
-| Direct landing's gate and closing. | `_direct_gate_owner`; `_close_gated_leaf` | mcp/src/agents_remember/worktrees/direct_landing.py:619-667 |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact: `SyncSideRecord.knowledgeReconciliations` as the journal of accepted decisions, `_reconcile_knowledge_resolution` re-entering the merge with all of them, `_reconcile_progress_refusal` as the bounded `sync-resolution-cycling` refusal that replaces "reconcile until it lands", `reconcile_side_merge`'s sequence parameter, the measured twelve-applications-to-two before/after, and the statement that the merge guard was not weakened. No verification stamp was advanced: the sources are modified in the delivered working tree and the governed closeout owns the real stamp; the recorded working candidate names the candidate this reading was performed against. No commit was made.
-- 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact: `_unsettled_instruction` and the summary it produces, the fact that `_resolution_guidance` needed no new branch because an empty decision list already advertises the manual continuation, the measured before/after of the advertised call, and the `cancelArgs` item left open for the round-3 reviewer rather than widened into this leaf. The card's recorded working candidate now names this leaf's candidate on base `74c6c693`; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained as recorded.
+- The layer's probes, the unbound refusal and the closeout's own write. [60]
+- The closeout validator's and the landings' gate. [61]
+- The direct landing's closing, kept and settled per generation. [62]
+- The port, the landing request and the direct verdict. [63]
+- Direct landing's gate and closing. [64]

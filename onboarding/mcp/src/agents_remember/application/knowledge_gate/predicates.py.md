@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_gate/predicates.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_gate/predicates.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -81,38 +71,29 @@ counted change) satisfies it. An item whose kind has no predicate is open.
 
 - None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is `MIK-R09@v2` and `09_mandatory-invariant-closeout-gate.json`,
 outside the repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: one predicate per kind, never a generic lookup. | "never through a generic row" | mcp/src/agents_remember/application/knowledge_gate/predicates.py:1-32 |
-| What a predicate reads, and the entry state that raises on a failed read. | `GateContext`; `GitReadFailed` | mcp/src/agents_remember/application/knowledge_gate/predicates.py:77-114; mcp/src/agents_remember/application/knowledge_gate/predicates.py:73-74 |
-| Registration and dispatch; an unregistered kind is open. | `register_gate_predicate`; `item_open_reason` | mcp/src/agents_remember/application/knowledge_gate/predicates.py:123-131; mcp/src/agents_remember/application/knowledge_gate/predicates.py:134-143 |
-| The covers an invariant row must hold, and its currentness. | `required_covers`; `invariant_row_open` | mcp/src/agents_remember/application/knowledge_gate/predicates.py:155-171; mcp/src/agents_remember/application/knowledge_gate/predicates.py:183-202 |
-| The family row's three reasons. | `family_row_open`; `_examined_set_reason`; `_moved_members_reason`; `_uncovered_members_reason` | mcp/src/agents_remember/application/knowledge_gate/predicates.py:210-254 |
-| The route condition decided by subject. | `_route_condition_open` | mcp/src/agents_remember/application/knowledge_gate/predicates.py:273-279 |
-| The ten registrations. | "register_gate_predicate(\"touched_invariant\", invariant_row_open)" | mcp/src/agents_remember/application/knowledge_gate/predicates.py:282-290 |
-| The dispatch test. | `test_every_registered_kind_is_decided_by_its_own_predicate_never_a_generic_lookup` | mcp/tests/test_knowledge_closeout_gate.py:596-667 |
+- The module docstring: one predicate per kind, never a generic lookup. [1]
+- What a predicate reads, and the entry state that raises on a failed read. [2]
+- Registration and dispatch; an unregistered kind is open. [3]
+- The covers an invariant row must hold, and its currentness. [4]
+- The family row's three reasons. [5]
+- The route condition decided by subject. [6]
+- The ten registrations. [7]
+- The dispatch test. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new file MIK-R09 adds, recording the carried per-kind predicates (L06 Q7, L06 review N2, L10, L14 and D29, L30 review N6; start decision 13:15:47), review R1 F9 (`GitReadFailed`) and R2-3 (a code object that is unavailable is not a Git failure). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

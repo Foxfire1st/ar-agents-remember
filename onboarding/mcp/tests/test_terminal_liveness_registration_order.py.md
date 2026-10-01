@@ -1,15 +1,5 @@
 # mcp/tests/test_terminal_liveness_registration_order.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| path | `mcp/tests/test_terminal_liveness_registration_order.py` |
-| doc_type | `file-level-onboarding` |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -104,65 +94,35 @@ No additional implementation scope is opened by this card. The retention contrac
 terminated rows (reclaimed regardless of proof) is pre-existing and deliberately outside this
 module's scope; any change to it belongs to the catalog's own owner.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured in the resolved memory root, and this module
 tests repository-owned serving and catalog behavior, so no external domain claim is needed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No domain document defines the sweep's registration/compaction order; the implementation is the source of truth. | `refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
+- No domain document defines the sweep's registration/compaction order; the implementation is the source of truth. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cited source declarations establish the contract this module pins; these ranges record current
 source, not a recorded test execution.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The action bundle that carries the `register_execution_evidence` callback, and the `None` an absent registrar leaves behind. | `TerminalLivenessActions` | mcp/src/agents_remember/serving/terminal_liveness.py:137-142 |
-| The ordered pass: observation batch, post-commit terminated enumeration, registration, compaction, then deferred syncs and turn-state callbacks. | `refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
-| The terminated-row read the ordering case instruments, and the `include_terminated` switch it exercises. | `list` | mcp/src/agents_remember/serving/terminal_catalog.py:80-84 |
-| The observation batch whose commit boundary the order chain proves. | `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:281-313 |
-| The reclamation predicate that retains a task-bound leaf row until its id is proved registered. | `compact`; `_leaf_execution_entry` | mcp/src/agents_remember/serving/terminal_catalog.py:52-62; mcp/src/agents_remember/serving/terminal_catalog.py:315-349 |
-| The starting-row fast path that must perform neither registration nor compaction. | `_refresh_starting_rows` | mcp/src/agents_remember/serving/terminal_liveness.py:223-268 |
-| The production registrar whose result really is partial — an id is proved only when every registration result is `durable_or_irrelevant`. | `register_terminal_catalog_execution_evidence` | mcp/src/agents_remember/application/task_docs/task_execution_registration.py:353-389 |
-| The app wiring that injects the real registrar into the sweeper's actions. | `create_app` | mcp/src/agents_remember/serving/app.py:258-329 |
-| The sibling module that pins the same full/starting sweep order for the deferred post-commit work. | `TerminalLivenessDeferredWorkTests` | mcp/tests/test_terminal_liveness_deferred_work.py:101-366 |
-| The ordering case, the partial-proof case, the failure case, the restart case and the fast-path exclusion case. | `test_due_sweep_registers_committed_terminated_rows_before_compaction`; `test_partial_registration_compacts_only_the_proven_rows`; `test_registration_failure_prevents_compaction_and_leaves_rows_retryable`; `test_restart_after_registration_before_compaction_reregisters_and_loses_nothing`; `test_starting_fast_path_neither_registers_nor_compacts_while_the_due_sweep_does` | mcp/tests/test_terminal_liveness_registration_order.py:154-246; mcp/tests/test_terminal_liveness_registration_order.py:248-278; mcp/tests/test_terminal_liveness_registration_order.py:280-310; mcp/tests/test_terminal_liveness_registration_order.py:312-358; mcp/tests/test_terminal_liveness_registration_order.py:360-403 |
-| The module's own `unit-regression` lane row, added by the same change set that created it. | "mcp/tests/test_terminal_liveness_registration_order.py" |mcp/tests/test-evidence-lanes.toml:263-263|
+- The action bundle that carries the `register_execution_evidence` callback, and the `None` an absent registrar leaves behind. [2]
+- The ordered pass: observation batch, post-commit terminated enumeration, registration, compaction, then deferred syncs and turn-state callbacks. [3]
+- The terminated-row read the ordering case instruments, and the `include_terminated` switch it exercises. [4]
+- The observation batch whose commit boundary the order chain proves. [5]
+- The reclamation predicate that retains a task-bound leaf row until its id is proved registered. [6]
+- The starting-row fast path that must perform neither registration nor compaction. [7]
+- The production registrar whose result really is partial — an id is proved only when every registration result is `durable_or_irrelevant`. [8]
+- The app wiring that injects the real registrar into the sweeper's actions. [9]
+- The sibling module that pins the same full/starting sweep order for the deferred post-commit work. [10]
+- The ordering case, the partial-proof case, the failure case, the restart case and the fast-path exclusion case. [11]
+- The module's own `unit-regression` lane row, added by the same change set that created it. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation boundary is established by this repository-owned
 unit-regression module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes this local serving proof. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 3 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`app.py`, `terminal_catalog.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:33:00+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:263-263. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:210-210. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:185-185. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:182-182. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:181-181. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:180-180. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:178-178. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:156-156. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand while resolving the memory sync** — `mcp/tests/test_terminal_liveness_registration_order.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand** — `mcp/tests/test_terminal_liveness_registration_order.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: `"mcp/tests/test_terminal_liveness_registration_order.py"` → `mcp/tests/test-evidence-lanes.toml:151-151`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_terminal_liveness_registration_order.py" repointed to mcp/tests/test-evidence-lanes.toml:150-150. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-15T11:20:00+00:00 — 260831-LOCR-L23 curator: created this card for the change set's new
-  ordering module (base `67b21aeb`). It records the post-commit registration-before-compaction chain
-  the module asserts, the five cases and the observables they own, the fail-closed no-registrar
-  default, and the starting-row fast path's exclusion — as current source ranges, without claiming
-  execution, acceptance or a future commit stamp. Verification metadata remains closeout-owned.
+No cross-repo boundary owns or consumes this local serving proof.

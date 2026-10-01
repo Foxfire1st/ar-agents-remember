@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Historical review of a closed leaf with no previously published comparison generation.",
+  "conditions": [
+    "The recorded enclosure identifies exact source and memory commit endpoints.",
+    "Each knowledge operand is read from knowledge.sqlite at its recorded memory commit."
+  ],
+  "exclusions": [
+    "No current database, branch tip, sibling generation or invented empty dataset can replace an unavailable operand.",
+    "An existing ambiguous or unreadable frozen generation is not eligible for reconstruction."
+  ],
+  "id": "INV-8Q6DZTDB",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "f724cf8f-699b-47bf-883c-b70780d84676",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A closed leaf without a frozen review compares only its exact recorded source and memory endpoints; missing operands remain explicit.",
+  "status": "proposed",
+  "supersedes": []
+}

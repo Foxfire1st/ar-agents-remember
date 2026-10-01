@@ -1,0 +1,130 @@
+{
+  "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`EnclosureProcessMap` + `EnclosureCanvas` under test (fleeting + scene + decals).\n\nAnchor: \"export function EnclosureProcessMap\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
+            "content": "sha256:a5e17e7e06809939cbac00f4393e72a742d469beea2875cf821988533825c6dc",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: \"stale\", … })`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26976beab443429be148efbc9ed27a1dc8507fa0",
+            "content": "sha256:fcdfb5fed7ecad411da4df17dbae7d1a8bc4fdc2afb4627e81d05383d7823d93",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENGINE_ROOM_SCENARIOS"
+            },
+            "path": "dashboard/src/panels/engine-room/fixtures.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair.\n\nAnchor: \"renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa22e0bdde3542e21ced22322ef428f95c60aea3",
+            "content": "sha256:775cc049096f9cac7be03c885a072d957cb6621a4d5ac0a538c670741bbd91b4",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`refusedPolarityOf` — the derivation the test's amber expectation depends on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:521843cc89ecb7ccc1a3e9ff68b46d002a1a62ccc357caad545cc1093ebb3ae7",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusedPolarityOf"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_seed_edge_state` — why `stale` is the honest reroute state to assert.\n\nAnchor: \"def _seed_edge_state(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f5202770805a4016e906e848217bb239e3c013",
+            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `ProviderNode` shape `WORKSPACE_ENGINES` builds.\n\nAnchor: \"export interface WorkspaceProjection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
+            "locator": {
+              "end": 840,
+              "kind": "line_range",
+              "start": 840
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The jsdom stubs + determinism freeze.\n\nAnchor: \"window.matchMedia = ((query\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15a7cad93247304f4472e3a7cd603fdc710517ab",
+            "content": "sha256:66c7fb03929afbc3109a4bbb8849510372641018233a2ef434e767ff5a69d39a",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "dashboard/src/test/setup.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

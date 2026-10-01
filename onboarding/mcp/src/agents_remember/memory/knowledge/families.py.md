@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/families.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/families.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -112,44 +102,35 @@ covers revision rows and relation payloads only; adding the two triggers changes
 `schema_fingerprint()`, which the L5 merge preflight compares, so it belongs to the declared
 `ar-knowledge-sqlite/v2` route rather than to this leaf.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two rules this module is shaped by, stated in its own docstring. | "A family revision is immutable and its payload is sealed." | mcp/src/agents_remember/memory/knowledge/families.py:6-8 |
-| Family identity creation and its label-conflict refusal. | `create_family`; `_insert_family` | mcp/src/agents_remember/memory/knowledge/families.py:79-96; mcp/src/agents_remember/memory/knowledge/families.py:97-108 |
-| The in-transaction family identity insert the batch command composes. | `insert_family` | mcp/src/agents_remember/memory/knowledge/families.py:110-131 |
-| The sealed family revision operation, which decides the repeat answer and delegates the write. | `create_family_revision`; `_insert_family_revision` | mcp/src/agents_remember/memory/knowledge/families.py:133-162; mcp/src/agents_remember/memory/knowledge/families.py:163-171 |
-| The in-transaction aggregate insert, including the deferral of the immediate foreign-key check to the batch's own pass. | `insert_family_revision` | mcp/src/agents_remember/memory/knowledge/families.py:173-208 |
-| Predecessor ownership, which distinguishes a dangling predecessor from a cross-family one and admits the batch's declarations. | `_require_same_family_predecessors` | mcp/src/agents_remember/memory/knowledge/families.py:211-236 |
-| The family lineage guard, which reuses the shared rule rather than restating it. | `_require_acyclic_family` | mcp/src/agents_remember/memory/knowledge/families.py:238-253 |
-| The narrow ownership read used for predecessor and endpoint checks. | `family_id_of_revision` | mcp/src/agents_remember/memory/knowledge/families.py:285-302 |
-| The read surface, including the seal-verifying revision read. | `get_family`; `get_family_revision`; `list_family_revision_ids` | mcp/src/agents_remember/memory/knowledge/families.py:256-265; mcp/src/agents_remember/memory/knowledge/families.py:267-283; mcp/src/agents_remember/memory/knowledge/families.py:304-315 |
-| The shared lineage rule this module applies a second time, and the batch-aware caller that hands it the declared edges. | `find_cycle`; `family_edges`; `declared_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:107-131; mcp/src/agents_remember/memory/knowledge/lineage.py:63-68; mcp/src/agents_remember/memory/knowledge/lineage.py:71-105 |
-| The two-branch family lineage refusal and its shared wording. | `family_lineage_cycle_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:265-286 |
-| The payload a family revision's digest seals, including the sorted predecessor set. | `canonical_family_revision_payload`; `sealed_family_revision` | mcp/src/agents_remember/models/knowledge/digest.py:71-92; mcp/src/agents_remember/models/knowledge/digest.py:99-102 |
-| The vocabulary shapes this module stores. | `FamilyDraft`; `FamilyRevisionDraft`; `FamilyRevision`; `StoredFamilyRevision` | mcp/src/agents_remember/models/knowledge/family.py:35-48; mcp/src/agents_remember/models/knowledge/family.py:58-102; mcp/src/agents_remember/models/knowledge/family.py:105-109; mcp/src/agents_remember/models/knowledge/family.py:112-123 |
-| The declared `family`, `family_revision` and `family_predecessor` tables and their indexes. | `family`; `family_revision`; `family_predecessor` | mcp/src/agents_remember/memory/knowledge/schema.py:222-232; mcp/src/agents_remember/memory/knowledge/schema.py:233-250; mcp/src/agents_remember/memory/knowledge/schema.py:251-266 |
-| The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
+- The two rules this module is shaped by, stated in its own docstring. [1]
+- Family identity creation and its label-conflict refusal. [2]
+- The in-transaction family identity insert the batch command composes. [3]
+- The sealed family revision operation, which decides the repeat answer and delegates the write. [4]
+- The in-transaction aggregate insert, including the deferral of the immediate foreign-key check to the batch's own pass. [5]
+- Predecessor ownership, which distinguishes a dangling predecessor from a cross-family one and admits the batch's declarations. [6]
+- The family lineage guard, which reuses the shared rule rather than restating it. [7]
+- The narrow ownership read used for predecessor and endpoint checks. [8]
+- The read surface, including the seal-verifying revision read. [9]
+- The shared lineage rule this module applies a second time, and the batch-aware caller that hands it the declared edges. [10]
+- The two-branch family lineage refusal and its shared wording. [11]
+- The payload a family revision's digest seals, including the sorted predecessor set. [12]
+- The vocabulary shapes this module stores. [13]
+- The declared `family`, `family_revision` and `family_predecessor` tables and their indexes. [14]
+The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **extended this card for the batch composition it enabled.** The family identity insert and the sealed family-revision aggregate are now in-transaction helpers (`insert_family`, `insert_family_revision`) that the candidate-change batch composes, so the card states the split between the operation (which decides the identical-repeat answer and owns the lock and the transaction) and its helper (which writes and assumes both), and records the disclosed exposure that nothing enforces the lock/transaction precondition on a published helper. `_require_same_family_predecessors` gained the batch's declared `pending` set, so a predecessor another command in the same batch creates is admitted; the card now records that a batch's declarations are validated over the completed graph rather than the request order, and that the *declared* edges are judged by the shared rule through `lineage.declared_cycle` rather than by a second rule here. Citation ranges were re-derived; the `governingOverview` link was repaired from `../../overview.md` (the application route) to the three-level path. Verification metadata remains closeout-owned.
-- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): created this one-to-one card for the new family module. It records the two rules the module is shaped by (an immutable, payload-sealed family revision whose guarantee is never derived from its members; a family lineage that reuses the one shared acyclic rule instead of restating it), the guarantee-is-not-the-members separation, the narrow `family_id_of_revision` ownership read, and the disclosed `family` identity-trigger asymmetry routed to the `ar-knowledge-sqlite/v2` decision rather than treated as a v1 defect. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

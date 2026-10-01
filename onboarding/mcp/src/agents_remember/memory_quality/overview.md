@@ -2,17 +2,35 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
 | sourceRoute            | `mcp/src/agents_remember/memory_quality/`  |
-| doc_type               | `route-local-overview`                     |
-| governingOverview      | `../../../overview.md`                     |
 
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
+
+## 260928-MIK-L37 The Census And The Converted Check Read A Converted Candidate Against Its Converted Base
+
+`260928-MIK-L37` (MIK-R37, fix round P1b and review R3). The cutover build was installed on 2026-10-01 (MIK-R37 rule 4), and this leaf's closeout converts the master's
+memory line. What earlier sections of this overview call "inert until the cutover" is live from this leaf on.
+
+- **[`converted_cards.py`](converted_cards.py.md) (new).** A converted card's kind and source come from its place
+  in the tree and its sidecar's `path`, answered in the legacy metadata table's keys.
+- **[`memory_census.py`](memory_census.py.md) and [`memory_census_scope.py`](memory_census_scope.py.md).** The
+  census reads converted cards through that module and compares the candidate with the scope's comparison tree
+  (the baseline, or its conversion: MIK-R24 rule 7). A sidecar change counts as its card's edit only beyond the
+  anchors' `blob`, line numbers and `content` (MIK-R30 rule 3). Before this, the first full run on a converted
+  candidate failed and every converted card was a blocker.
+- **[`converted_check.py`](converted_check.py.md) and [`check.py`](check.py.md).** The `knowledge.converted` check
+  takes its base through a `KnowledgeBasePort`: `HEAD`, or its conversion when `HEAD` is unconverted. A base that
+  cannot be built is the finding `R24.7-converted-base`.
+- **[`reference_state.py`](reference_state.py.md).** The fixer's re-recording can be scoped to one sidecar and
+  names unreadable sidecars instead of raising.
+
+- A converted card's kind and source. [71]
+- What the task edited on a converted tree. [72]
+- The converted check's bases. [73]
+- The re-recording scoped to one sidecar. [74]
+
 
 ## 260915-CAPS-L20 The Dead Governing Declaration Becomes Visible
 
@@ -232,23 +250,28 @@ Every one of the six was found by **exercising an operation rather than by readi
 practical rule for this route: when a preview and an apply are two implementations of one decision,
 exercise the pair, and prefer a single shared eligibility evaluation over two agreeing copies.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. | `run_memory_quality_request`; `_execute_memory_quality` | mcp/src/agents_remember/application/memory_quality/controller.py:261-267; mcp/src/agents_remember/application/memory_quality/controller.py:395-468 |
-| Tool metadata and server registration expose `memory_quality_check` to agents. | `memory_quality_check_payload`, `create_server` | mcp/src/agents_remember/mcp/server.py:58-70; mcp/src/agents_remember/mcp/tools/memory.py:59-66 |
-| The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:67-98 |
-| The missing-onboarding checker catches newly added worktree files before code commit. | `check_missing_onboarding` | mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:50-77 |
-| The shared drift model declares the vocabulary used by drift-check wire responses. | "class DriftSummary(StrictResponseModel):" | mcp/src/agents_remember/models/drift.py:13-23; mcp/src/agents_remember/models/memory.py:13-27 |
-| The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. | `build_context_packet` | mcp/src/agents_remember/application/context_packet.py:64-110 |
-| The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. | `write_curator_checklist` | mcp/src/agents_remember/memory_quality/curator_checklist.py:133-213 |
+### Repo-Internal References
+
+- The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. [1]
+- Tool metadata and server registration expose `memory_quality_check` to agents. [2]
+- The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. [3]
+- The missing-onboarding checker catches newly added worktree files before code commit. [4]
+- The shared drift model declares the vocabulary used by drift-check wire responses. [5]
+- The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. [6]
+- The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. [7]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Memory candidate identity excludes consumer cache availability. | `MemoryCandidatePairIdentity` | mcp/src/agents_remember/models/lifecycles/memory_candidate.py:10-33 |
+- Memory candidate identity excludes consumer cache availability. [8]
+
+### MCAR-L03 Pair-Bound Quality Evidence
+
+Full leaf quality receives only a contract-resolved code/onboarding pair and writes that complete
+identity into the structured curator attestation. Repository-only quality remains a diagnostic and
+cannot publish candidate acceptance. Pre/post-scan revalidation makes wrong or raced scope a
+typed refusal before evidence can be accepted.
 
 ## Historical 260731-EFA-L2 — Every Verdict Is Now Emitted From One Place
 
@@ -402,13 +425,6 @@ census. Public memory readiness retains raw `qualityChecklistStatus` but reports
 `checklistStatus=coherence-required` and `closeoutReady=false` until the same structured authority
 validator used by closeout succeeds.
 
-## MCAR-L03 Pair-Bound Quality Evidence
-
-Full leaf quality receives only a contract-resolved code/onboarding pair and writes that complete
-identity into the structured curator attestation. Repository-only quality remains a diagnostic and
-cannot publish candidate acceptance. Pre/post-scan revalidation makes wrong or raced scope a
-typed refusal before evidence can be accepted.
-
 ## 260831-CCR-L08 — Final Full Memory-Coherence Certification (Gate 5)
 
 This route now owns the final full memory-coherence certification package
@@ -461,14 +477,12 @@ The application retains write-scope authorization and the source index retains f
 
 [Document publication route](style/citations/documents/overview.md) owns the local file map and transaction invariants.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:354-399 |
-| A relocation proves continuity through the established provenance path before a tree-wide match is admitted. | `Continuity`; `continuity_for`; `_retarget` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:159-240; mcp/src/agents_remember/memory_quality/style/citations/repair.py:243-253; mcp/src/agents_remember/memory_quality/style/citations/repair.py:356-387 |
-| The walk resolves one document's continuity and feeds it to the planner. | `Walk`; `fix_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:201-220; mcp/src/agents_remember/memory_quality/style/citations/fixer.py:269-325 |
-| The migration pass consults the same continuity authority before a cross-file relocation, although its continuity branches are unreachable from that entry point by construction. | `Pass`; `place` | mcp/src/agents_remember/memory_quality/style/citations/migration.py:63-86; mcp/src/agents_remember/memory_quality/style/citations/migration.py:415-460 |
-| A mechanically projected range is ENFORCED at `error` severity with the support question instead of asserting currency; the ordinary evidence-change item stays `warning`. | `_projected_review_message`; `surfaced_finding` | mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:338-361; mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py:364-408 |
-| Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
+- Projection admission precedes staging; declined claims retain their original bytes. [9]
+- A relocation proves continuity through the established provenance path before a tree-wide match is admitted. [10]
+- The walk resolves one document's continuity and feeds it to the planner. [11]
+- The migration pass consults the same continuity authority before a cross-file relocation, although its continuity branches are unreachable from that entry point by construction. [12]
+- A mechanically projected range is ENFORCED at `error` severity with the support question instead of asserting currency; the ordinary evidence-change item stays `warning`. [13]
+- Accepted batches check complete document bytes and held source/cell bindings before atomic publication. [14]
 
 ## Gate-5 Registry And Execution Boundary
 
@@ -484,11 +498,9 @@ and candidate-pair authority but explicitly passes `affected_closure_plan_digest
 in the inspected source. Existing closeout memory checks and curator-coherence publication remain
 real behavior, but must not be equated with the new affected-closure/full-certification protocol.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. | "def gate_five_memory_rails("; "def _catalog_configuration_digest() -> str:" | mcp/src/agents_remember/memory_quality/gate_five_rails.py:36-102 |
-| The application surface projects readiness with no affected-closure plan. | "def _attach_final_full_catalog(" | mcp/src/agents_remember/application/memory_quality/controller.py:648-648; mcp/src/agents_remember/application/memory_quality/controller.py:881-917 |
-| Full certification requires explicit evidence and predecessor authority supplied by its caller. | "def certify_final_full_memory_coherence(" | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-134 |
+- Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. [15]
+- The application surface projects readiness with no affected-closure plan. [16]
+- Full certification requires explicit evidence and predecessor authority supplied by its caller. [17]
 
 ## The Shared Exclusion Register, And The Ruled Caps (260915-CAPS-L14)
 
@@ -537,17 +549,15 @@ admission refuses by name too: `_admitted_source_index` in
 rather than being read as "no register" — a rebuilt index must not silently lose the rules that
 produced its population.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one construction point folding settings, ignore file and call into one register. | `resolve_exclusion_register` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:196-226 |
-| The two settings keys, and the refusal-by-name discipline for a malformed value. | `read_citation_index_settings` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:56-85 |
-| The bounded non-Git matcher and its pinned divergence from Git. | `FallbackIgnoreMatcher` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:252-297 |
-| A caller exclude that cannot mean anything is refused by name. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
-| The ruled numbers, the skip vocabulary and the status vocabulary. | `MAX_SOURCE_BYTES`; `MAX_SOURCE_FILE_BYTES`; `MAX_SOURCE_HARD_STOP_BYTES`; `SKIP_REASONS`; `STATUS_CAPPED`; `STATUS_WITHIN_CAPS` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:22-23; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:27-27; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:36-36; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:38-39 |
-| The register's three sources and recorded authority values. | `EXCLUSION_SOURCES`; `GITIGNORE_AUTHORITIES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:48-52; mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:57-61 |
-| The closeout gate refuses by name rather than letting a bare error out. | `_admitted_source_index` | mcp/src/agents_remember/application/prepared_certification.py:431-453 |
-| The caller-exclude surface on the registered tool and the CLI. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-128 |
-| One root gives one authority on both acquisition routes. | `test_one_root_gives_one_gitignore_authority_on_both_acquisition_routes` | mcp/tests/test_citation_index_resilience.py:376-406 |
+- The one construction point folding settings, ignore file and call into one register. [18]
+- The two settings keys, and the refusal-by-name discipline for a malformed value. [19]
+- The bounded non-Git matcher and its pinned divergence from Git. [20]
+- A caller exclude that cannot mean anything is refused by name. [21]
+- The ruled numbers, the skip vocabulary and the status vocabulary. [22]
+- The register's three sources and recorded authority values. [23]
+- The closeout gate refuses by name rather than letting a bare error out. [24]
+- The caller-exclude surface on the registered tool and the CLI. [25]
+- One root gives one authority on both acquisition routes. [26]
 
 ## Exact Git Candidate Source-Index Composition
 
@@ -570,11 +580,9 @@ validates the lease against its exact unit tree before running the selected-docu
 with the same explicit tree. These owners are usable by the recovery verifier; their library
 composition does not close the production execution gap recorded above or replace full Gate 5.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The index opens either the explicit candidate selection or the ordinary filesystem policy. | `open_repository_index` | mcp/src/agents_remember/memory_quality/style/citations/source_index.py:360-431 |
-| R06 checks candidate selection and exact indexed membership. | `observe_source_index`; `_require_index_matches_candidate` | mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:100-152; mcp/src/agents_remember/memory_quality/incremental_scope/owners.py:353-404 |
-| R07 validates and forwards the unit candidate tree to its selected-document checker. | `RangeResolutionAffectedExecutor` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-134 |
+- The index opens either the explicit candidate selection or the ordinary filesystem policy. [27]
+- R06 checks candidate selection and exact indexed membership. [28]
+- R07 validates and forwards the unit candidate tree to its selected-document checker. [29]
 
 ## L34 Preparation Ownership — the closeout adapter moved out
 
@@ -738,13 +746,11 @@ file-level cards carry the per-module detail; the route-level facts are these:
 - **What it does not judge.** Meaning (Doc13), and whether an anchor's content still matches the code
   (currentness, MIK-R03). Only path existence is checked, and only for anchors no base carries.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package's module map and public API. | `__all__` | mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py:60-80 |
-| The single registry. | `register_rule`; `registered_rules` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:68-74; mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:77-80 |
-| The commit route's call, with no skip parameter. | `require_valid_commit`; `validation_applies` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:91-94; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:97-100; mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:103-122 |
-| The Git adapter the worktree port binds to. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:41-124 |
-| The registered rule sets, with their report-only flags. | `STRUCTURE_RULES`; `REFERENCE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:134-163; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:229-269 |
+- The package's module map and public API. [30]
+- The single registry. [31]
+- The commit route's call, with no skip parameter. [32]
+- The Git adapter the worktree port binds to. [33]
+- The registered rule sets, with their report-only flags. [34]
 
 ## 260928-MIK-L04 Family Route Rules Join The Knowledge Validator
 
@@ -770,11 +776,9 @@ registers the rules, and `validator.py` imports it, so every place the validator
 The validator cannot tell a broad route from a deep one; route depth stays curator judgment, helped by the
 suggestion and the `agents-remember knowledge-routes` command.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One family's route state over its members' realizations. | `FamilyRouteState` | mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:72-132 |
-| The six registered rules, three report-only and three writer-reported. | `ROUTE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:174-217 |
-| The registry flag a writer reads. | `writer_reported_rule_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:83-88 |
+- One family's route state over its members' realizations. [35]
+- The six registered rules, three report-only and three writer-reported. [36]
+- The registry flag a writer reads. [37]
 
 ## 260928-MIK-L20 The Migration Census Joins This Route
 
@@ -800,11 +804,9 @@ one registry.** The package reads a memory tree's bytes only and depends on noth
 No separate `knowledge_census/overview.md` was created, following the sibling subpackages. The census writer
 (`memory/knowledge_census/writer.py`) runs the same checks before every write.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The nine census rules. | `CENSUS_RULES` | mcp/src/agents_remember/memory_quality/knowledge_census/checks.py:52-65 |
-| The measures in Doc12's order. | `compute_measures` | mcp/src/agents_remember/memory_quality/knowledge_census/measures.py:137-160 |
-| The registration with the validator. | `CENSUS_VALIDATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_census.py:54-57 |
+- The nine census rules. [38]
+- The measures in Doc12's order. [39]
+- The registration with the validator. [40]
 
 
 ## 260928-MIK-L24 The Converted Format Joins This Route
@@ -834,14 +836,12 @@ before MIK-R37.
 - The rule 9 refusal runs in the memory-quality controller (`application/memory_quality/controller.py`,
   the `application` route). It is inert until the official line is converted (architect ruling).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Stale references are report-only. | `check_references` | mcp/src/agents_remember/memory_quality/reference_state.py:125-157 |
-| The converted run's legacy-format checks and its validator slot. | `LEGACY_FORMAT_CHECKS`; `converted_knowledge_check` | mcp/src/agents_remember/memory_quality/converted_check.py:31-37; mcp/src/agents_remember/memory_quality/converted_check.py:66-93 |
-| The runner's dispatch by format. | `_converted_check` | mcp/src/agents_remember/memory_quality/check.py:163-177 |
-| The commit route's optional base converter. | `GitKnowledgeValidation` | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:41-124 |
-| The escaping rule on the validator's grammar. | `escape_markers` | mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:142-162 |
-| The one symbol-binding rule. | `qualified_spans` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:159-178 |
+- Stale references are report-only. [41]
+- The converted run's legacy-format checks and its validator slot. [42]
+- The runner's dispatch by format. [43]
+- The commit route's optional base converter. [44]
+- The escaping rule on the validator's grammar. [45]
+- The one symbol-binding rule. [46]
 
 ## 260928-MIK-L28 The Checklist Lists The Invariants Without Proof, As Information
 
@@ -854,9 +854,7 @@ is checklist-only and informational (architect ruling, 2026-09-29):** it is not 
 summary model. The controller passes `None` for every unconverted tree, so the checklist bytes are
 unchanged before MIK-R37.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The defaulted input and its section. | `WithoutProof`; `_append_without_proof` | mcp/src/agents_remember/memory_quality/curator_checklist.py:66-71; mcp/src/agents_remember/memory_quality/curator_checklist.py:74-79; mcp/src/agents_remember/memory_quality/curator_checklist.py:355-387 |
+- The defaulted input and its section. [47]
 
 ## 260928-MIK-L08 The Checklist Shows The Leaf's Worklist, As Information
 
@@ -874,10 +872,8 @@ section.
 - **Unchanged for unconverted leaves.** With no worklist the section is not rendered, so today's checklist
   bytes are unchanged.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The section and the summary. | `knowledge_worklist_lines`; `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:234-283 |
-| The checklist's defaulted inputs. | `knowledge_worklist`; `knowledge_worklist_path` | mcp/src/agents_remember/memory_quality/curator_checklist.py:70-71 |
+- The section and the summary. [48]
+- The checklist's defaulted inputs. [49]
 
 ## 260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree
 
@@ -889,9 +885,7 @@ check was already not applicable there (MIK-R24). On an unconverted tree both ar
 now would change today's gate on unconverted trees. The gate that replaces Update History on converted trees
 is `worktrees/modules/onboarding_trace.py`; this route gains no new module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixer's converted-tree early return. | `fix_onboarding_root`; "not-applicable-converted" | mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py:33-66 |
+- The fixer's converted-tree early return. [50]
 
 ## 260928-MIK-L11 The Worklist Section Shows The Planned Effects
 
@@ -916,10 +910,8 @@ half of rule 7 is carried to L31 (ruling Q1, 2026-09-29T21:56:18+02:00). Unconve
 section, so today's checklist bytes are unchanged; this curation's own `memory_quality_check` runs produced
 no worklist.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The planned-effects block and the `planned_untouched` facts. | `_planned_lines`; `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:77-87; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:121-147 |
-| The item table's **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:234-283 |
+- The planned-effects block and the `planned_untouched` facts. [51]
+- The item table's **Plan** column. [52]
 
 ## 260928-MIK-L27 The Admission Rule Joins The Knowledge Validator
 
@@ -955,11 +947,9 @@ only records a parent holds. Unconverted memory is unchanged, and this curation'
 against the parent line (L09, ruling Q6); demotion's realization entries and the census outcome (the R19
 follow-up, ruling Q5).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A new record is refused for an unsupported claim, legacy-unassessed or a reference-only justification. | `check_new_record_admission` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:247-273 |
-| An export is a record whose legacy ID derives its ID. | `_exported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:180-192 |
-| The three rules, one refusing and two report-only. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:307-328 |
+- A new record is refused for an unsupported claim, legacy-unassessed or a reference-only justification. [53]
+- An export is a record whose legacy ID derives its ID. [54]
+- The three rules, one refusing and two report-only. [55]
 
 ## 260928-MIK-L06 The Worklist Section Renders The Family Route Conditions
 
@@ -978,10 +968,8 @@ enforcing an open route item is MIK-R09's gate (L09), through
 `application/knowledge_worklist.family_route_item_open`. Unconverted leaves render no section, so today's
 checklist bytes are unchanged; this curation's own `memory_quality_check` runs produced no worklist.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The route item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:150-166; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:169-174; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:177-180 |
-| The kind-to-renderer table (since MIK-R10 it also maps the two unexplained kinds). | "_FACT_RENDERERS: Final[" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:215-215 |
+- The route item's facts, its affected set and its suggestion text. [56]
+- The kind-to-renderer table (since MIK-R10 it also maps the two unexplained kinds). [57]
 
 ## 260928-MIK-L13 The Decision Content Rules Join The Knowledge Validator
 
@@ -1010,11 +998,9 @@ The rules refuse nothing until decisions are authored on a converted line: the c
 freshly converted scratch copy. Unconverted memory is unchanged, and this curation's own `memory_quality_check`
 runs produced no worklist.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The five rules, four refusing and one report-only. | `DECISION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:112-144 |
-| A stored superseded is named from the raw document. | `check_superseded_not_stored` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:80-97 |
-| A decision is never an export for admission. | "if isinstance(record, DecisionRecord):" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:189-190 |
+- The five rules, four refusing and one report-only. [58]
+- A stored superseded is named from the raw document. [59]
+- A decision is never an export for admission. [60]
 
 ## 260928-MIK-L10 The Worklist Section Renders The Unexplained Changes
 
@@ -1035,10 +1021,8 @@ also keeps an `onboarding:<path>` row that answers an uncovered item out of MIK-
 this curation's own `memory_quality_check` runs produced no worklist. Grouping the (by design numerous) unexplained
 items for the curator is carried to L31/L32.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| An unexplained item's facts: where, coverage, delete-only, and what answers it. | `_unexplained_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:90-118 |
-| The two unexplained kinds in the renderer table. | "\"unexplained_file\": _unexplained_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:224-224 |
+- An unexplained item's facts: where, coverage, delete-only, and what answers it. [61]
+- The two unexplained kinds in the renderer table. [62]
 
 ## 260928-MIK-L14 The Reorder Guard Joins The Knowledge Validator, And The Worklist Section Renders Reconsideration
 
@@ -1066,11 +1050,9 @@ today's checklist bytes are unchanged; this curation's own `memory_quality_check
   Realized by `moved_linked_alternatives`; proved by `test_a_reorder_of_linked_alternatives_is_refused` and the
   real reorder contrast.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Moves followed from both sides by unique option text. | `moved_linked_alternatives` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:74-104 |
-| The refusing guard, registered on import. | `RECONSIDERATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:132-139 |
-| A reconsideration item's facts. | `_reconsideration_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:183-197 |
+- Moves followed from both sides by unique option text. [63]
+- The refusing guard, registered on import. [64]
+- A reconsideration item's facts. [65]
 
 ## 260928-MIK-L09 The History-Row Rule Joins The Validator, And The Gate Counts Every Open Item
 
@@ -1107,166 +1089,8 @@ one registry.** Route meaning extended in three ways:
   gate only on converted memory; unconverted checklists are byte-identical, and this curation's own
   `memory_quality_check` runs produced no worklist.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The files the re-anchor check reads. | `checked_history_files` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:80-91 |
-| The refusing and the merge-reported rule. | `check_history_rows`; `check_merged_history_rows` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:161-190 |
-| The registering import. | `rules_history` | mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py:27-29 |
-| The leaf-publication route of the adapter. | "def leaf_refusal(" | mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:65-79 |
-| The section's lead: the gate counts each open item. | "The section itself counts nothing" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:1-8 |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 The History-Row Rule Joins The Validator, And The Gate Counts Every Open Item" after L14's: the new, carded `rules_history.py` (`R09-history-rows` with review R1 F1's leaf-publication scoping and R2-1's subjects-everywhere rule; the report-only `R09-history-rows-merged` of the sync-merge ruling), the leaf-publication flag through the validator and adapter, the `RETIRED` fixture, and the section and checklist comment now saying the gate counts every open item; two candidate invariants; five rows. The Route Model bullet names `rules_history.py`. **The entry is in the real list after the last section, not in the inline `## Update History` mention of the Route Model.** Rows into the section and checklist modules were re-pointed by the installed fixer (bullets kept); L06's route-facts row, which the fixer normalised by adding the three new extents while keeping two base extents, lost those two stale ranges. No verification stamp was advanced.
-- 2026-09-30T18:00:48+00:00: Generated citation repair: `knowledge_worklist`; `knowledge_worklist_path` repointed to mcp/src/agents_remember/memory_quality/curator_checklist.py:70-70; mcp/src/agents_remember/memory_quality/curator_checklist.py:71-71. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T18:00:48+00:00: Generated citation repair: "_FACT_RENDERERS: Final[" repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:215-215. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T18:00:48+00:00: Generated citation repair: "\"unexplained_file\": _unexplained_facts," repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:224-224. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **route body updated for MIK-R14.** Added the section "260928-MIK-L14 The Reorder Guard Joins The Knowledge Validator, And The Worklist Section Renders Reconsideration" after L10's: the new, carded `rules_reconsideration.py` (`R14.1-linked-alternative-order`, L13's carried link-stability decision, rulings 04:37:56 Q4 and 05:31:11 F5/F6, note R6-4), `_reconsideration_facts`, and one candidate invariant; three rows. The Route Model bullet names `rules_decisions.py` and `rules_reconsideration.py`, and L13's section notes that its Q5/Q6 carry is met. The entry is in the real list after the last section, not the inline `## Update History` mention. The fixer's generated bullets are kept (none of their claims was reworded). No verification stamp was advanced.
-- 2026-09-30T10:06:55+00:00: Generated citation repair: "_FACT_RENDERERS: Final[" repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:06:55+00:00: Generated citation repair: "\"unexplained_file\": _unexplained_facts," repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:203-203. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 The Worklist Section Renders The Unexplained Changes" after L13's (`_unexplained_facts` as two `_FACT_RENDERERS` entries; the Q3 onboarding-row rule; the L31/L32 carry), two rows. **Reopened claim reworded:** L06's `_FACT_RENDERERS` row (the table gained two entries) is re-anchored on the line-exact quote "_FACT_RENDERERS: Final["; this pass's fixer bullet for it was removed. The entry is in the real list after the last section, not the inline `## Update History` mention. No verification stamp was advanced.
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 The Decision Content Rules Join The Knowledge Validator" after L06's: the five `rules_decisions.py` rules, rulings 01:45:56 Q1–Q3 and Q5/Q6, and the review F6 admission guard in `rules_admission.py`. Three rows. The entry is in the real list after the last section, not the inline `## Update History` mention. No verification stamp was advanced.
-- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **route body updated for MIK-R06.** Added the section "260928-MIK-L06 The Worklist Section Renders The Family Route Conditions" (`_route_facts` and its helpers, the `_FACT_RENDERERS` dispatch table from review R3-N1), with two rows; L11's two rows into `knowledge_worklist_section.py` were re-measured by hand (`72-82`/`85-111` → `71-81`/`84-110`, `118-166` → `161-209`). The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
-- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Rule Joins The Knowledge Validator" (the new, carded `rules_admission.py`, governed by this overview), recording architect rulings 2026-09-29T22:11:24 (Q1, Q2, Q5, Q6) and 23:04:57 (F1, F2), with three rows; the Route Model bullet names the module. The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 The Worklist Section Shows The Planned Effects" (the planned-effects block, the **Plan** column and the `planned_untouched` facts), recording architect rulings 2026-09-29T21:56:18 (Q1) and 22:35:34 (F4). L08's section-and-summary row was re-measured (`knowledge_worklist_lines` now `118-166`). The entry went into the real list after the last section, not into the inline `## Update History` mention. No verification stamp was advanced.
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** Added the section "260928-MIK-L30 The Update History Fixer Steps Aside On A Converted Tree" (the `not-applicable-converted` return, architect ruling 2026-09-29T18:49:50 (5)). One row. The entry went into the real list after the last section, not into the inline `## Update History` mention in the `style/update_history/` bullet. No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The Checklist Shows The Leaf's Worklist, As Information": the new `knowledge_worklist_section.py` (carded, governed by this overview) and the checklist's defaulted worklist inputs, never counted. The entry went into the real list after the last section, not into the inline `## Update History` mention in the `style/update_history/` bullet.
-- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New section: the checklist's informational "Invariants without proof" section, with the architect ruling that the list is checklist-only and never counts toward `curatorActionableCount`. One row. The entry went into the real list after the last section, not into the inline `## Update History` mention. The `_attach_final_full_catalog` row was re-pointed by the exact line map, and five further rows were re-pointed or normalised by the installed `memory-citations --fix`, with no wording change.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24 rule 5).** New section "260928-MIK-L24 The Converted Format Joins This Route", covering the two new modules (`reference_state`, `converted_check`), the four touched ones (`check`, `commit_route`, `markers`, `extents`) and the rule 9 ruling, with six rows. The entry sits in the real Update History list after the last section, not in the inline mention inside "Deterministic Citation Document Publication".
-- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new section "260928-MIK-L20 The Migration Census Joins This Route"** for the five new `knowledge_census/` cards and the new `knowledge_validator/rules_census.py` card, plus the `validator.py` and `parsed.py` changes; the Route Model gains a `knowledge_census/` bullet and names `rules_census.py`. No separate `knowledge_census/overview.md` was created. No stamp advanced.
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "260928-MIK-L04 Family Route Rules Join The Knowledge Validator"** for the two new cards (`family_routes.py`, `rules_routes.py`) and the `registry.py`/`trees.py`/`validator.py`/`__init__.py` changes. The L22 section's `__init__`, registry and validator rows were re-pointed by the exact line shift (the validator row's two ranges put back in anchor order), and the installed fixer re-normalised older passing ranges in this document; no claim wording changed there. No stamp advanced.
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated — the mandatory knowledge validator joins this route.** Added `knowledge_validator/` to the Route Model and the Hot Path Summary, a new first invariant (no converted memory commit without a passing validator run; no skip), and the section "260928-MIK-L22 The Mandatory Knowledge Validator Joins This Route". The package's eleven modules got new file cards governed by this overview; no separate `knowledge_validator/overview.md` was created, following the sibling subpackages. No verification stamp was advanced.
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **added the `260921-ICR-L15 Measured assessment currentness` section above.** It records the two governed sources this leaf changed under this route: the six-member status vocabulary `reported_subject_status` now enumerates in the projection's own precedence order and the `notMeasuredCount` the pipeline carries end to end (`family_review.py`, 452 → 457 lines, with `application/memory_quality/controller.py` 847 → 848), and the persisted checklist's new `not-measured` limitation row and count beside the narrowed meaning of `stale` (`knowledge_review.py`, 210 → 230). This is a body change and not a metadata-only refresh, which is why it is recorded here. This document carried **no** repairable citation finding, so no citation range on it was touched. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-19T22:58+02:00 — 260918-TSIP-L7 curator (uncommitted change set on `ar/260918-tsip-l7-ar`, memory worktree base `fd1a024e`): **added the L7 section** — the two citation changes this leaf lands under this route (`definition_outside_range_findings` and the `definitionsOutsideCitedRanges` payload key at `range_resolution.py:466-513`/`:650-685`/`:718-718`; `cells.unescaped` at `cells.py:40-53`), each named with the shape it fires on and the bound it does not exceed, and the population the agreement module pins on the leaf memory worktree (120 / 283 / 3 / 2) recorded as a pin held elsewhere rather than restated. It also records the module header's wrong-tree-adjacent line number for `_refuse_official_memory` (`R2-3`: the header says `:100`, the definition is at `:105`). The body changed substantively and this entry is the history record; `lastVerifiedCommitHash` is not advanced because the candidate is uncommitted and the governed closeout owns the real code commit. No other claim in this document was re-read.
-- 2026-09-19T19:54+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T64` — `citation_migrate`'s preview answers `ok: true` with `state: planned`, and `remaining` is never read on a dry run; the two facts the old `ok` folded in are now declared separately. Citation range re-derived against the repaired file. Verification metadata stays closeout-owned.
-- 2026-09-18T19:56:44+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) The readiness row cited `controller.py:583-600` for `"def _attach_final_full_catalog("`, whose definition this leaf's changes left at `671-707`; that cell cites it now. (b) and (c) The entry-point row cited `110-125` and `318-360` for `run_memory_quality_request` and `_execute_memory_quality`; the two definitions now span `249-255` and `383-435`, which is what the cell cites. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T18:40+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **repointed this route at the two candidate-identity modules commit `806649b9` moved out to `worktrees/modules/`.** The route's source is unchanged by this pass — the change is that two cards used to be reached from here and now are not, so the `Memory-Candidate Roots Relocated In` section and the two prose mentions of `future_code_candidate.py` / `memory_candidate_pair.py` now say where those modules actually live and link to their cards' new paths. Leaving the old links would have made this overview the last dead reference to the retired `memory_quality/` sidecars. No verification stamp is advanced: this route's own source did not change, and the entry records a documentation move, not a re-read of this route. `memory_census_scope.py` is unaffected and still this route's.
-- 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): **added the L16 section** — the route's new `family_review.py` with its four acts and the failure each exists to prevent, and the one change this leaf made to a shipped module: the three-term actionability formula extracted into the named `curator_actionable_count`, whose value and behaviour are unchanged and whose one call site is the checklist writer. The section states the two boundaries a reader must not flatten — the pipeline calls the shipped function rather than restating the sum, and it renders into `KS-R15@v1`'s existing `knowledgeReview` section rather than creating a second worklist. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `knowledge_review.py` and one defaulted input plus one rendered section in `curator_checklist.py`; the section is **report-only** and the arithmetic is unchanged, which the body now states where the module's own comparison sentence lives rather than leaving it to a reader to infer. The reference rows were re-derived from the current files: `_append_drift` is `:319-350`, `_render` `:204-266`, `write_curator_checklist` `:100-180`, `_tracked_onboarding_paths` `:183-189`, and the controller rows moved to `:317-337`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:583-583. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: added the section above and recorded this route's share of the leaf — the new `integrity/governing_overview_resolution.py` check, its two-base resolution rule, its observation boundary, the wiring that carries its findings into the gated curator repair set, and the `D32` condition on the closeout-admission consumer. Verification metadata advanced to this leaf's frozen code base.
-- 2026-09-17T11:20+02:00 — 260915-CAPS-L14 curator: added **The Shared Exclusion Register, And The Ruled Caps** as a current-intent section, because this leaf makes the register a contract on this route rather than a detail. Records the three sources feeding one register and where each lives, the `matches_any` semantics shared with the storage resolver and the drift check, the register's **deliberate and pinned divergence from Git** on a negated file under an excluded directory, the developer's 2026-08-20 cap numbers with the skip-and-report rule (never a silent omission, never a whole-tree refusal), the refusal-by-name discipline for a malformed `onboarding.citationIndex`, and the closeout gate's own typed refusal through `_admitted_source_index`. Corrects the **stale `schema-9` claim** in *Exact Git Candidate Source-Index Composition* to the v10 manifest that now carries the register and states that a v9 manifest is refused and rebuilt, and adds the one-authority-per-root parity between the two acquisition routes. Repointed the *L34 Preparation Ownership* link to the card's real home after the adapter's second move (`806649b9`) to the application rank. Records that the register, the caps and the settings key are **mode-independent**. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented cache-independent candidate pair identity and citation content snapshots. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-13T09:05+00:00 — 260831-LOCR-L34: recorded the preview/apply parity invariant on this route
-  as both an invariant bullet and a section, naming the five fixed instances, the two
-  reported-not-fixed ones (`worktree_start`'s non-separable reservation CAS; the memory-carryover
-  plan/apply pair) and the `worktree_abandon`/`worktree_cleanup` verdict/state-string adjacent shape,
-  with the observation that every instance was found by exercising an operation rather than by reading
-  it. Recorded why this route carries it: its own `citation_fix` / citation-transaction /
-  onboarding-refresh previews are the surfaces a planned bulk mechanical migration will touch next.
-  The full inventory remains owned by the `worktrees/overview.md` route. Content change, not a range
-  repoint; verification metadata remains closeout-owned and no acceptance claim is made.
-- 2026-09-13T02:05+02:00 — 260831-LOCR-L33 route curation (delta after publish): the projected-range
-  review item is now **enforced** (`severity="error" if bullets else "warning"`) rather than
-  report-only, so a mechanically projected range blocks until it is disposed of; recorded the
-  rationale (unverified evidence must force a disposition), the cost (every projected range blocks),
-  that the ordinary evidence-change item keeps its `warning`, that only `code == INVALID` is ever
-  demoted to pre-existing debt, and that with no git view every finding stays enforced. Also recorded
-  that the migration pass's continuity branches are unreachable from its own entry point by
-  construction. **Supersedes the severity "still warning / undecided policy call" statement in the
-  entry below.** Source-evidence rows updated.
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 route curation: recorded the continuity-based relocation
-  rule (no live cited file, a unique tree-wide sighting, and a proved same-kind origin at the
-  document's verification stamp), that the fixer and the migration pass consult one authority
-  (`Walk.continuity` / `Pass.continuity` behind `repair.continuity_for`), the three new refusal codes,
-  why the first design failed open on a *deleted* cited file, and the corrected review surface for a
-  mechanically projected range (the support question instead of a currency assertion, severity still
-  `warning` as an undecided policy call). Source-evidence rows added. Route ownership and publication
-  semantics are otherwise unchanged.
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: moved the `prepared_certification.py` sidecar out to `worktrees/integration/closeout/` (commit `deb032fb`) and moved the `future_code_candidate.py`, `memory_candidate_pair.py` and `memory_census_scope.py` sidecars in from the closeout route (commits `0b63d6fc`, `be517eec`), repairing the dead `prepared_certification.py.md` link and recording the new candidate-root ownership. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: re-anchored the readiness projection
-  row to the current `_attach_final_full_catalog` declaration; certification ownership and route
-  semantics remain unchanged.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:503-503. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: "def _attach_final_full_catalog(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:499-499. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-### 2026-09-06T17:13:06+00:00 — L34 implementation memory
-- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Documented the accepted-edit transaction route, exact observed-conflict boundary, CRLF, dry-run counts and nullable scoped recheck at source-reviewed private C b34f4a59; retained all separate Gate-5 readiness/execution limits.
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Added the exact Git-candidate index and R06/R07 composition boundary at 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; retained the unresolved production-caller and deterministic-repair limits.
-- 2026-09-05T07:14+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected drift vocabulary ownership, historical Markdown coherence authority, final certification producer claims, and explicit R10 write defects. Verification records source review, not execution or acceptance.
-- 2026-09-05T06:12+00:00 — Recovered final-catalog knowledge and corrected readiness versus certification ownership; added the Gate-5 rail derivation and the still-unwired R07/R08 execution boundary.
-- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: added the
-  `final_certification/` route-model bullet and the CCR-R08 leaf section (final full
-  memory-coherence certification: complete catalog, readiness projection on the full run,
-  executable certification) and re-anchored the controller row shifted by the +57-line change.
-  Verification metadata stays pinned until closeout stamps the code commit.
-- 2026-08-29T21:46+02:00 — MCAR-L03: bound leaf quality and curator attestations to the exact
-  code/memory pair. Verification remains closeout-owned.
-- 2026-08-29T08:52+02:00 — MCAR-L02 A005: removed timestamp entropy from the curator checklist and
-  joined raw quality with the sole coherence validator. Verification remains closeout-owned.
-- 2026-08-26T10:44:52+02:00 — Reconciled the route with the extracted application controller while preserving memory-quality check ownership inside this package.
-- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: recorded the structured curator
-  attestation and exact source-change disposition contract consumed before queue declaration.
-  Verification remains closeout-owned.
-- 2026-08-11T16:54+02:00 — Added the enclosure-local curator checklist owner, combined the
-  pre-closeout worklist behind one full scoped quality call, and preserved code/memory mutation and
-  real-commit stamping outside the report writer.
-- 2026-08-11T14:58+02:00 — Re-read the new temporary-provenance claim against the current
-  application entry point and regenerated its evidence to the exact declaration and assignment.
-- 2026-08-11T14:40+02:00 — Assigned missing-onboarding and full dirty-tree quality repair to the
-  curator before handoff, recorded temporary comparison provenance, and kept real-commit refresh
-  and the repeated hard gate in closeout.
-- 2026-08-10T12:46+02:00 — L9 closeout repair: added the entity-catalog alignment owner and its
-  pre-code fail-fast boundary; verification metadata stays pinned until closeout stamps the repair.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-- 2026-08-07T14:30+02:00 — 260731-EFA-L8 curator (bounded delta): recorded the round-9
-  claim_reopen mechanism — the absent-at-stamp rule extended to whole source files added after
-  the stamp (unique working-tree anchor inside a cited range surfaces report-only; absent,
-  ambiguous, or stale evidence stays hard) — and the test coverage that pins it. Verification
-  metadata stays pinned until closeout stamps the code commit.
-- 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the closeout memory-quality phase-order repair (`check.py` phase constants + `worktrees/modules/closeout.py`): the before-commit phase list is now empty and every check, claim-reopen included, runs in the single phase after the code commit and the metadata refresh to it — claim evidence is only comparable once the commit it must be compared against exists; L16's closeout produced the first live deadlock under the L6 placement (115 unresolvable findings). Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: rebound the
-  `memory_quality_check` row to the actual `memory_quality_check_tool` definition; exact
-  non-fixing check returns zero findings.
-- 2026-08-02T20:33:53+02:00 — 260731-EFA-L6 curator W1-B10 final-index reconciliation after S31: repaired 1 citation range for `memory_quality_check` using the warm source-index snapshot; scoped recheck clean.
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 10 citation findings (4 rows); scoped recheck clean.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** This route acquired
-  something the card did not describe — it is now the declaring owner of a wire vocabulary, not
-  only its producer. Recorded `DriftStatus` and the `DriftSummaryPacket` TypedDict in
-  `integrity/onboarding_drift_check/models.py`, `summary.py`'s three producers moving off
-  `dict[str, Any]` onto it, and the resulting INBOUND import edge from `models/drift.py`,
-  `models/memory.py` and `controllers/context_packet.py` (checked by grep against the current
-  source: those three plus the six in-subpackage consumers). Recorded WHY the edge exists rather
-  than just that it does: `models.drift.DriftStatus` was `["notChecked", "checked"]` with no
-  `error` field, so `context_packet(include_drift=true)` against a repo with no onboarding root
-  raised on both the status and the key — the diagnostic failed on the call meant to explain the
-  problem. Added two invariants (one declaration of an emittable status, imported by every wire
-  model; and `NotRequired` keys are read with `.get`, with `check.py`'s guard-then-`.get` pattern
-  named as the reason) and two reference rows to the 2-column table. **Re-verified all eight
-  line-number citations in the L3 section and its history entry against the current files** — none
-  moved: `require_git` is still at `check_missing_onboarding.py:176`, `worktree_added_sources`'
-  call sites at 82-83, `code_repository_name_from_git`'s probe at 192, and `git_ops.py`'s
-  `current_branch_name`/`local_change_note`/`list_repo_sources`/`git_stdout`/`git_blob_hash` at
-  15/22/41/54/61. Neither of those two files was touched by this leaf. Verification metadata
-  pinned until closeout stamps the L4 commit.
-- 2026-07-31T20:58+02:00 — 260731-EFA-L3 curator: recorded that this route no longer contains a
-  git runner. `integrity/onboarding_drift_check/git_ops.py` and
-  `integrity/check_missing_onboarding.py` each held a private `run_git` that was the kernel's
-  runner minus `env=git_environment()`, so an exported `GIT_DIR` could make these checks read a
-  different repository — including the pre-code-commit gate whose stated boundary is that it is
-  local-worktree-scoped. Both now call `kernel/git_command.run_git`; the misnamed always-raising
-  copy in `check_missing_onboarding.py` became `require_git` (line 176), with
-  `worktree_added_sources` and `code_repository_name_from_git` moved onto it. No statement in the
-  body was false — the route model, check catalogue and emitted rows are unchanged — this adds the
-  correctness fact behind them. Verification metadata pinned until closeout stamps the L3 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: verdict construction was centralized per classifier
-  (`_missing_sidecar_onboarding`/`_missing_inline_onboarding`, `sidecar.py`'s `row(...)` closure
-  and `_early_classification`, `EntityCatalog` in `entities.py`), and both CLI entry points now
-  pass `hints=CoordinationHints(...)` to the resolver. No check was added, removed or reclassified;
-  emitted rows are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-06-28T07:43+02:00 — Task 29 S7 route impact: drift snapshot summaries now carry source-root,
-  memory-root, optional report-path, and checked-at provenance for actionable-drift attention detail.
-  Verification metadata pinned until closeout stamps the task-29 code commit.
-- 2026-06-27T23:09+02:00 — Task 32 route impact: the drift summary writer now uses the shared observer drift-snapshot path helper, keeping producer writes aligned with projection pruning and cleanup deletion. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-13T20:48+02:00 — Slice 3b (browser-dashboard): the drift summary run now also persists a durable `ar-drift-snapshot/v1` JSON under `logs/observer/drift/` (`_write_drift_snapshot`, best-effort) for the observer dashboard to read without re-classifying; recorded this new output in the `integrity/onboarding_drift_check/` Route Model bullet. The route's check responsibilities are otherwise unchanged. Verification metadata pinned until closeout stamps the 3b code commit.
-- 2026-06-11T15:20+02:00 — No route impact: onboarding_drift_check/git_ops.py fingerprint helpers gained a keyword-only ref parameter for carryover entity-catalog validation; route structure and check responsibilities are unchanged.
-- 2026-06-06T12:15: Re-verified against the current memory-quality package; corrected controller and MCP payload-builder references after memory tools moved out of the former `skill_tools.py`/`mcp/tools.py` surfaces.
-- 2026-05-31T12:40+02:00: Removed the `integrity/ledger_consistency.py` reserved-stub bullet after the empty stub source and its sidecar were deleted in the 1.0.0 remediation.
-- 2026-05-24T03:24+02:00: Updated after adding `check_missing_onboarding` as the pre-code-commit integrity pass for newly added files.
-- 2026-05-24T03:09+02:00: Updated after adding the dedicated `history_order_fix.py` script and keeping `memory_quality_check` report-only.
-- 2026-05-24T02:47+02:00: Created after memory quality became a first-class package route with integrity and style subdomains.
-Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
+- The files the re-anchor check reads. [66]
+- The refusing and the merge-reported rule. [67]
+- The registering import. [68]
+- The leaf-publication route of the adapter. [69]
+- The section's lead: the gate counts each open item. [70]

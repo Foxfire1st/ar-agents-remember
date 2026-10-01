@@ -1,0 +1,119 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_database.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact metadata schema binds generation, snapshot, roots, and candidate selection to readiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21e62026b822d90a4f71c542de49fb2c22480252",
+            "content": "sha256:c32f25547a5c909ecd210046b9d5b2880f82fea1eedbffec2270ecd39d4c7a3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_generation_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical bounded counters must match the ready marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21e62026b822d90a4f71c542de49fb2c22480252",
+            "content": "sha256:472e85ae65d8531791fc79b037f46abc9a47d06b1163c4fde570ccfa1d573f9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_generation_counters"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Opening checks size and metadata before admitting read-only queries, with explicit integrity checks when requested.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21e62026b822d90a4f71c542de49fb2c22480252",
+            "content": "sha256:6b89b928688f0e1c16315625f7f845c30f678b966e0248aba6e0a2b0fcebe34c",
+            "locator": {
+              "kind": "symbol",
+              "name": "open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Snapshot publication records candidate identity alongside the application checksum and counters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21e62026b822d90a4f71c542de49fb2c22480252",
+            "content": "sha256:0af54ba2b037e617ac3bbfda52ef0da10796f1a34ebb79587d0eafcb96252ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Anchor queries retain distinct direct and quote lookup paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21e62026b822d90a4f71c542de49fb2c22480252",
+            "content": "sha256:ec801a6fb7312a35b2659f9866f75e478607c7962fa5f3c8cb9fbe4cf09ef785",
+            "locator": {
+              "kind": "symbol",
+              "name": "locations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Explicit integrity validation checks packed data, references, counters, and the stored digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21e62026b822d90a4f71c542de49fb2c22480252",
+            "content": "sha256:dbc427c6a50ce45cae935e4f647629fba7de6f3562d0fb6b95196bf53bd81847",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_application_integrity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The application checksum covers query-bearing rows including FTS term/document pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21e62026b822d90a4f71c542de49fb2c22480252",
+            "content": "sha256:844dd923d866a4b924f66d45c12690fc6fffc286ca73fed64eee6e728e3f42dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_application_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

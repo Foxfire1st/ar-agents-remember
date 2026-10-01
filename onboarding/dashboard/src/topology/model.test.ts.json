@@ -1,0 +1,269 @@
+{
+  "path": "dashboard/src/topology/model.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `lifecycleStatus` describe: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the same answer under `inferred`, and the healthy-only degrade.\n\nAnchor: `lifecycleStatus`; \"classifies every state the vocabulary declares\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:6ca7bc1bcff3a0290f2ee775d19139e8c1f61170c278d8b6d85001aad30f9e1b",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`fromANewerServer` — the single named widening the two unknown-state cases share.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:a97a29b082ace29d54ea262a3968235c08e6964e830ab1deaa991bbd929e135f",
+            "locator": {
+              "kind": "symbol",
+              "name": "fromANewerServer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two vocabulary-driven `buildTopology` cases: every state drawn with its declared status, and `awaiting-developer` explicitly not `\"ok\"`.\n\nAnchor: \"draws every state in the vocabulary with the status that state declares\"; \"does not render an awaiting-developer lifecycle as a healthy node\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:c18ea3ddbd852751507b101112323d99ba8cd3070673f070481031b2a57d9e54",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:28a8989429acd42bd6561c972970875042675562c438dbc20eec8bfae3009ce6",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The grammar under test — `CONSTEL_STATUSES`, `CONSTEL_STATUS_BY_STATE`, `UNCLASSIFIED_STATUS`, `STATUS_BY_DECLARED_STATE`, `lifecycleStatus`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:6995f9835dafa8ba781ddb2c4a7946277d0f3595424f45737eb3c90e4fc82152",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSTEL_STATUSES"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:477043ee2435228e00523275b0abe90903326674fc3096400c9cb286046ad7da",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSTEL_STATUS_BY_STATE"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:94db2618aaf24dd20956df08690ad730be78d11b5a801a1710f1f094ab67bf65",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCLASSIFIED_STATUS"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:963a4b1440a116d7e562f1570e8b5f03077a9758a13c254c0c192cce23f012ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_BY_DECLARED_STATE"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:7b65740d0a61f6c98d5fe366a26beae041534dfb70f1dbc8da6f89f0c14852e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleStatus"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The topology builder folds each enclosure's lifecycle through `lifecycleStatus` and parents providers by worktree group, repo id, or workspace core.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:7b65740d0a61f6c98d5fe366a26beae041534dfb70f1dbc8da6f89f0c14852e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleStatus"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`LIFECYCLE_STATES` — the imported vocabulary the assertions iterate instead of restating; composed from `LIVE_STATES` (L42) + `TERMINAL_STATES` (L48), so the range holds all six names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cb98102215dec203894ca6997c6b4fe29974402",
+            "content": "sha256:03593dcea707b4ee6a05583a3cc4507d5b13f6e6675c9b59445350e98b773870",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_STATES"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cb98102215dec203894ca6997c6b4fe29974402",
+            "content": "sha256:ac609c9000a57be0454d5aae606cc68bbfe372b0f20faab99ec8a7db9dac562e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIVE_STATES"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cb98102215dec203894ca6997c6b4fe29974402",
+            "content": "sha256:7b5d61f0f6a98202a5ae07bcfff41c5c6e4dd2931ef587c7be65679752ef3186",
+            "locator": {
+              "kind": "symbol",
+              "name": "TERMINAL_STATES"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The provider-parenting fixtures and assertions: matching worktree groups, missing groups, aggregate workspace providers, repo-scoped workspace providers, and `worktreeGroup` precedence.\n\nAnchor: \"joins a worktree provider to its enclosure when worktreeGroup formats differ (path vs basename)\"; \"parents worktree-scoped providers to their owning worktree node\"; \"falls back to the workspace core when a worktree provider has no matching group\"; \"keeps workspace-scoped providers parented to the workspace core\"; \"parents repo-scoped workspace providers to their covered repo node\"; \"keeps worktreeGroup precedence over repoId for provider parenting\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:b372a30ff74bee201bc3f9db5334e96c06b7561e7c83af964159772239056722",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:bbb92979442f135c41e347733687107a9f5ee1eab1eb4df848564a791102b258",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:aa22999df81d65e01fa735c48544d742b48f63d98570e27a4bb95f2eb3c72829",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:4c85e5827b234f7dcceb9240d6aa04d6690347b651d7f756e180fd19da19b5f5",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:bf79415d534e74648d9e2108c9874affdb561c6fe2bb288b46bcae574d3b84b2",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:59868ba268b432b935e187a6362cebe2143e78c1a28bee71be3b12f01fcd69a6",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

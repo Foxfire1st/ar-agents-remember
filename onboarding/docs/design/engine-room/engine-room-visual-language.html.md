@@ -1,15 +1,5 @@
 # engine-room-visual-language.html
 
-| Field                  | Value                                                |
-| ---------------------- | ---------------------------------------------------- |
-| repository             | agents-remember                                      |
-| path                   | `docs/design/engine-room/engine-room-visual-language.html` |
-| doc_type               | `file-level-onboarding`                              |
-| lastUpdated            | 2026-06-21T23:35                                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`           |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                        |
-
 ## Governing Overview
 
 [engine-room/ design overview](overview.md)
@@ -112,67 +102,31 @@ TOC) are:
 None tracked outside active task work. The footer states the standing obligation: keep this file, the
 dashboard, and the onboarding in sync.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 This file is itself the canonical engine-room design reference; the relevant external context is the
 animation stack it maps onto in §11. No external documentation was required to describe this self-contained
 spec. No relevant documentation found after checking live sources.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The §11 implementation mapping names the GSAP/Motion stack (DrawSVG, MotionPath, AnimatePresence, layoutId, matchMedia) the dashboard uses to realise these CSS-authored primitives. | "GSAP DrawSVGPlugin" | docs/design/engine-room/engine-room-visual-language.html:913-913 |
+- The §11 implementation mapping names the GSAP/Motion stack (DrawSVG, MotionPath, AnimatePresence, layoutId, matchMedia) the dashboard uses to realise these CSS-authored primitives. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The spec is the design authority distilled from the `podstage.html` prototype and realised by the React
 engine-room renderer. The two cross-links below are the proving pair: the prototype it distils and the
 renderer it governs.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The companion prototype / scenario player this spec distils into a primitives library; the spec's CSS classes mirror it 1:1. | "h1>Engine Room · Pod Stage</h1>" | docs/design/engine-room/podstage.html:162-162 |
-| The React engine-room renderer implements these primitives in `EnclosureCanvas.tsx`. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
-| The React engine-room renderer drives the GSAP timeline from `useEngineTimeline.ts`. | "export function useEngineTimeline" | dashboard/src/panels/engine-room/useEngineTimeline.ts:168-168 |
-| The React engine-room renderer's static styles live in `engineRoomStyles.ts`. | "Static layout only" | dashboard/src/panels/engine-room/layout.styles.ts:592-592 |
-| The React engine-room renderer's boot timeline lives in `BootTimeline.tsx`. | `BootTimeline` | dashboard/src/panels/engine-room/BootTimeline.tsx:155-177 |
+- The companion prototype / scenario player this spec distils into a primitives library; the spec's CSS classes mirror it 1:1. [2]
+- The React engine-room renderer implements these primitives in `EnclosureCanvas.tsx`. [3]
+- The React engine-room renderer drives the GSAP timeline from `useEngineTimeline.ts`. [4]
+- The React engine-room renderer's static styles live in `engineRoomStyles.ts`. [5]
+- The React engine-room renderer's boot timeline lives in `BootTimeline.tsx`. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This is an in-repo design reference with no cross-repository or external-system boundary. No meaningful
 cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| _None._ | — | — |
-
-## Update History
-
-- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 6 initial citation findings (3 anchor, 0 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-06-22T17:00 — slice 05o doc-debt close: **§10 Failure modes completed** — now documents **all eight**
-  modes (T3b/T1b/T7b/T9b/T9c/T12b/T14c/T18), not just the scan-ring + ghosted-lane primitives. Added the four
-  net-new primitive cards (engine-dropout halo, refused-conduit flash red/amber, moved badge, terminal STOP)
-  and **restructured** the section: a single **Primitives** card grid first, then **the eight modes** as a
-  2-column note grid; cross-references flipped to "(above)". CSS gained `.refuse`/`.dropout`/`.stop-*`/`.moved-*`
-  + `.grouphead`/`.modegrid`. Verification metadata pinned until closeout stamps the 05o code commit.
-
-- 2026-06-22T10:45 — slice 05o: the **§10 Failure modes** section gained a **Mode 2 — stale-base block (T1b)** note.
-  Before the worktree forks, the scan ring sweeps the **code/main lane** (is local main current with upstream?);
-  on a behind/diverged base a **fleeting enclosure is born blocked** (§2.1, contract not yet written) with the
-  stale **main node pruned** (the §3 dormant register) and two choices — **fast-forward** or **proceed-stale**.
-  Its only net-new piece vs Mode 1 is the pruned base node; the scan ring, fleeting block, steady gate, and
-  recovery chips already exist. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T00:29 — slice 05o: the spec gained a **§10 Failure modes** section (pinning the T3B
-  **scan ring** + **ghosted lane** primitives; TOC + the §12 implementation table updated; Timing renumbered
-  §10→§11, Implementation §11→§12), and the **§6 Engines** primitive was changed to a **flat gold bezel (no
-  glow)** + **constant-gold spine/petals** (the `.e-frame` `drop-shadow` dropped; the `.e-petal` state strokes
-  collapsed to a base amber, opacity-only variants) — mirrored into the React engine room (`engineRoomStyles`)
-  the same slice per "change it here first". Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-21T23:35 — Created. File-level onboarding for the engine-room visual-language living spec
-  (the canonical colour/motion/glow/timing source of truth for the dashboard engine room): documented the
-  state colour language, the eleven sections, the source-of-truth invariant ("change it here first"), the
-  reduced-motion + WCAG rules, the CSS-for-portability / GSAP+Motion-in-production split, and the cross-link
-  to the `podstage.html` prototype and the `dashboard/src/panels/engine-room/` renderer. The source file is
-  newly added and not yet committed; verification metadata pinned to repo HEAD until a commit stamps it.
+_None._

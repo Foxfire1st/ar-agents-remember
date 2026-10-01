@@ -1,0 +1,104 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The quality-control phase table distinguishes task-start drift, curator intake, pre-commit coverage, closeout validation, and targeted style repair.\n\nAnchor: \"## Quality Control Phases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5be91b5a411a4c1938387f35a1f9ec2b8d8ec288",
+            "content": "sha256:c0ee5d56ff99b830bfd2a3993e689b56367303e0e755577622bee535ef5f16c0",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task-start quality control preserves the gradual-adoption boundary for historical files without onboarding and separates clean-source update candidates from dirty-source active work-in-progress before `c-05-create-or-update-onboarding-files` skill handoff.\n\nAnchor: \"Run Task-Start Drift Control\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5be91b5a411a4c1938387f35a1f9ec2b8d8ec288",
+            "content": "sha256:02b342e2e1998ff9838cac71167a1cb577fb0d74c8ffe8360bdefbd5518b9b78",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pre-code-commit quality control checks only current worktree additions so newly added files cannot escape onboarding.\n\nAnchor: \"Run Pre-Code-Commit Missing-Onboarding Control\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5be91b5a411a4c1938387f35a1f9ec2b8d8ec288",
+            "content": "sha256:b0037f625c8451bc6e21685e05150af86e784ff57edd034b6b64f296594dec7e",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Curation publishes the coherence authority the checklist requires and uses focused style fixers only after reported findings.\n\nAnchor: \"### 7. Publish the Curator Coherence Authority When the Checklist Requires It\"; \"### 8. Use Targeted Style Fixers Only After Findings\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5be91b5a411a4c1938387f35a1f9ec2b8d8ec288",
+            "content": "sha256:22bf3a07b31dce093e7d69d25ff575e1c07916345ddddfda39ea653544d3e2c3",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5be91b5a411a4c1938387f35a1f9ec2b8d8ec288",
+            "content": "sha256:5867f2bc1aa5589e238192d4b7da0413522c6a64c3c38f94679ada71b6a0d5e1",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "On converted memory the legacy-format checks are not applicable, and currentness comes from anchors.\n\nAnchor: \"**On converted memory** (the tree holds the knowledge layout marker)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5be91b5a411a4c1938387f35a1f9ec2b8d8ec288",
+            "content": "sha256:4cfb835c2cae38565d499def1a7633dbfb2aa77576a2925a71dde336663de4e1",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,254 @@
+{
+  "path": "mcp/tests/test_review_family_context_values.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The two halves of the deliverable: the production composition measured in the sibling module, and the value rules measured here, with the honest fixture explicitly not evidence about the store.**\n\nAnchor: \"Each case mutates one internally consistent value and shows the construction refusing it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:26d08762eaf68671817d54cae3d56f92ca25e6a074857aab02388e8049260bea",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one internally consistent context every roster-and-count case departs from by exactly one clause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:7d2011299a03bfa2b45f026e2704051cced06edb4e96c650bc95ed8063cc86c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_honest_context"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The validator these cases exercise, which requires a recorded side's revision to be one the family owner records and — this reopen's correction — holds only a single-page walk (`complete and state == \"first_page\"`) to the revision-wide member count.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:5ab4dfd22fcf32ec1aae001948d5f3a6fef46685f8a50cef37df3aca6ea34ee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_state_to_match_what_it_carries"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The validator refusing a claimed remainder with no way to reach it and counts that do not describe the entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:e5cada4fd5584027202325d7f77647d005c1ad5dcd5cec27364f6f1871235204",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_family_counts_to_describe_the_entries"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The validator refusing a truncated roster presented as a complete one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:6e81dfb09c86d71f03f19f2a6367df0d6ef9d14ea7eb6f2f82d4a32aaab85b30",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_cursor_and_the_remainder_to_agree"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The production-entry cases this module is the value half of.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:316eb67aa9a8163f8e3f94bdb6dfb4658570ebc28ffdb75fde574759258dad51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_selected_invariant_resolves_both_recorded_families_with_their_own_guarantees"
+            },
+            "path": "mcp/tests/test_review_family_context.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The population case independently checks authored-head ambiguity and explicitly requested revision history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157258eb83dbf2b7452758c7684d5e20dd8c96d1",
+            "content": "sha256:8c5a74167ce8a4b96a4f10f8c9de8e73dbae81ff859ab21120c1760732c6f7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_history_sentence_is_measured_against_the_family_owner"
+            },
+            "path": "mcp/tests/test_review_family_context_population.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**Counts that do not describe the entries and rosters beside them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:eae2bd394000fc965ea5198178eede91537bc0051b2d5aeb2e972e1f6cddc679",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_context_whose_counts_do_not_describe_its_roster_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**A roster page whose completeness, remainder and cursor disagree, so a truncated roster cannot read as the whole one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:c1a4aea6097a198872e3a4fa210e198e2493741cb2d17122b146cf2916f6e64c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_roster_page_may_not_present_a_truncated_roster_as_a_complete_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A side that recorded no context carrying members or a member count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:c19ca74fe7027d6e12b0ceac261e57410c4dcd657c60868f3fa457052c68516d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_side_that_read_nothing_may_not_carry_a_roster"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**A recorded side naming a revision the family owner does not record — the value-level half of the population fix.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:59230cc595620a83ea6a269df61f933b83403cb4a8b03e8d2be568a5116cd813",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_side_may_not_name_a_revision_its_family_does_not_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The corrected guard's real subject, still enforced: a complete page that is also the walk's first page carries every row it counts.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:43a18a8b96a9b05f1edb6ab810a0d6768fde937ef86ee1aba623d08083ad9f3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_complete_walk_that_is_one_page_must_carry_the_whole_roster"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The correction itself, pinned with the same carried rows: a completed continued page is accepted, and those rows on a first page are refused, so the relaxation is not a hole.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:acecf65a4e484a265fe2187c9a2d0095521a3aba3deee624dd99941a7f2e84a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_final_page_of_a_multi_page_walk_may_carry_only_its_own_share"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**A member source's locator state, locator, ranges and resolution are one fact, and a source without its stored role or rationale is refused.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:ce73af9573286bfca1b6a93eff832e53b34cd5855a52d85802a78d3cd5a60f2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_source_may_not_state_a_region_its_observation_does_not_support"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The validators that case exercises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:95c92071f269bb1ac75085595f3ad266a09445d9eb8b47b15b1504859b90ddf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_locator_state_to_match_what_it_carries"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

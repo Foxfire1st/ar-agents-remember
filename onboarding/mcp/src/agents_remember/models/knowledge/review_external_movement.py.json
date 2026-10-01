@@ -1,0 +1,345 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_external_movement.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of why this is a measurement and not a command classifier, and what the four states mean.**\n\nAnchor: \"What is supported is a field, not a tone of voice.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:612778411c29ffa32960c9f8413a6ec3193e43bae8d6a0afa8eba69fb89edc73",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The `after` validator that refuses every false shape — state against replaced identities, absence against reason, and `generation_readable` against `unavailable`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:6687d73734d00cc7aabf371f3330f0bede14a7c69c2d963fb5f9d778fb79a440",
+            "locator": {
+              "kind": "symbol",
+              "name": "_the_state_follows_from_what_was_measured"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The matrix these labels come from, and the recovery each row names.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:85312f9e8779d274e34d7f1ba9c08639079d754b4921d7a1dd099a562312e697",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_TRANSITION_SUPPORT"
+            },
+            "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The producer that publishes this value from what the repository shows.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:ac10d2ef059faf48c7ca8add41eb3c75a7bb99dda49961ae448d5ccab2f4bfee",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_git_movement"
+            },
+            "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The closeout/integration statement, which repeats the unsupported verdicts whether or not a value was produced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:74120cde5631dfc9547be309a8bc107ffff02f5d431e39260e1bfd58e6657ccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absence_block"
+            },
+            "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The payload field this value travels on, and the re-export that keeps its import site.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:4b81dce1ffe23b560df4d6b969cbceee7210a18302fc57a2096645f66819e782",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_git_movement"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:344eb3143c693eee314cb20205e3d9f558eaefd7e0cf79cfd57ba03c071ffc43",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExternalGitMovement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The payload module's own `__all__` entry for the value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:344eb3143c693eee314cb20205e3d9f558eaefd7e0cf79cfd57ba03c071ffc43",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExternalGitMovement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The read path that carries the value from the measurement owner to the payload.**\n\nAnchor: `external_git_movement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:e3471e65b0ce0e4ce628d9197af00f1677f97c464839ede36eef006736e5a0ac",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The second review boundary that publishes the same value on the task-context path.\n\nAnchor: `external_git_movement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:a1e9951a80e3c0599f4087957acc15fdd6975af780628bdc7b4f330a9c65845d",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The case that forges five false shapes, each departing from exactly one validator clause, with the real published value as the accepted control.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10912c6c4aabf944329b780793458ea42566620",
+            "content": "sha256:5090829855d4686acf164e912ab52a3653cb40a76a275dc884463f7f981eaae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_movement_validator_refuses_each_false_shape"
+            },
+            "path": "mcp/tests/test_review_external_git_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The case that pins the control state as the value an untouched leaf publishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10912c6c4aabf944329b780793458ea42566620",
+            "content": "sha256:6d0e55103a4a95e1304f20666fd10eb2f96065d95d15b9a9f05f70b375a3e2ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_unchanged_value_is_the_one_the_control_state_publishes"
+            },
+            "path": "mcp/tests/test_review_external_git_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared bounds, the base model and the state vocabulary this value reuses.\n\nAnchor: `ReviewSyncMovementState`; `KnowledgeModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:288fe7846fe9ca8b2f6eee7a89a3efb34527ef154573bb2ad2322f99da875394",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The published surface: the value, the transition union, the channel union, the evidence union and the reconciliation union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:a545b77d5334b9d977ede385b4777abfb18ec72c1344a5d67377ed15997ad398",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The transition vocabulary, whose first member `unchanged` is the measured absence of a transition rather than an event.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:658ffdf72709b07c7b03af8fb4a8e4c5d5b644fa81ef680bbc4a9a79d52f0a31",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExternalGitTransition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Whether this system reconciles a transition at all, earned by the one recovery it performs.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:82b5ea0842c95b5906a0cc6c3d890f950b1456a8859eb39c7398ff40153da081",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitTransitionReconciliation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The three declared channels, each named by the thing that moved rather than by the command that moved it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:b649e261489dd2dded20a3a02faf824bf1c4186787e106ddb4e7472f6ef1bda2",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMovementChannel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**What one channel's ancestry check found, with `advanced` as a measurement of its own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:d8bbb27524d6b0bc8d9fafc226626a9eb07ad5727401226ad4c879d748ae94b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMovementEvidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The movement value: its four-state binding, the transition and evidence tuples, the moved identities and the reason rule.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:344eb3143c693eee314cb20205e3d9f558eaefd7e0cf79cfd57ba03c071ffc43",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExternalGitMovement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The field set, with `observed_*` present only for the channels that were read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:a0ea97f19b1ed2e66d8b6a9b77ba235d05909ff1a2d51877a11556547b11fd91",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_code_work_branch_head"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:d99b1f6f4297dcf57bd89d32fe0fb07d556a37f01a8dec64eaec4f419ea82007",
+            "locator": {
+              "kind": "symbol",
+              "name": "reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

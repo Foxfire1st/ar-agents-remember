@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`status_payload` calls `landing_refs` and emits its result as the `landing` block.\n\nAnchor: \"def _status_payload_with_landing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:45b26a8b0a279bdd72416d85b11c3e768d1ee61c66a78bbbbde9b7b784427f6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "status_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:f09781b9b50eefc7f8332ae44dc6a8101dce980484769d31fb4653344425c70c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_payload_with_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:9c490b890097d893a4f8f2bf5817e0fc69921498c255a4842a304cff7af49111",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 501
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:be2b0955bbe767a5616d8badba2144b66a3a28fffa78a35c2c03fbf32fadfb2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingRefNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reducer composer that reads `status[\"landing\"]` into the node.\n\nAnchor: \"landing=[LandingRefNode\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "content": "sha256:566d7693c7cd2ef482c368cf1d84c825815128ebcca5327b374967adf7a4b800",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 304
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_REPOSITORY_SELECTOR_ENV"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_LOCAL_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_environment"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead.\n\nAnchor: \"observe: LandingObserver = landing_refs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb726d4977576722049db05c92f7ea8ad8f32718",
+            "content": "sha256:f75d8b665649dbad22afd263de12647c50270621a7e57e8cdf90679779c1733a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_docs/task_doc_tools.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [application/overview.md](overview.md)
@@ -174,31 +164,31 @@ validation failures, and invalid resolvable parent master docs.
   raw sections. It validates the raw container and all members first, appends only missing
   scaffolds, and leaves semantic register validation to the existing model/validator owners.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. | `VALID_OPERATIONS` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:92-115 |
-| The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. | `_MUTATIONS` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:738-748 |
-| The four step adapters are one-line delegations to the extracted step-plane module; this module registers and validates, it no longer owns the addressing rule. | `_apply_set_step`; `_apply_add_step`; `_apply_remove_step`; `_apply_skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:692-693; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:696-697; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:700-701; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:704-710 |
-| `read_steps` is a read-only special operation that publishes nothing and returns only the checklist, never the whole authored document. | `_read_steps` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:407-423 |
-| The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader. | `_enforce_terminal_status` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:877-894 |
-| `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. | `_replace` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:571-583 |
-| Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. | `test_replace_rewrites_structural_fields_and_decisions` | mcp/tests/test_task_document_application_1.py:253-296 |
-| Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. | "master_sync = plan_master_sync(task_root" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:322-322 |
-| The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. | `plan_master_sync` | mcp/src/agents_remember/tasks/master_sync.py:35-89 |
-| The task-document schema model this application entry point validates and writes; its class body now ends at its integration-branch normaliser. | "class TaskDocument(_Doc):" | mcp/src/agents_remember/tasks/document.py:649-826 |
-| The markdown renderer this application entry point drives. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:45-71 |
-| The JSON/markdown store this application entry point drives. | `write_task_docs` | mcp/src/agents_remember/tasks/store.py:112-124 |
-| The payload builder that wraps this application entry point. | `task_doc_payload` | mcp/src/agents_remember/mcp/tools/task_doc.py:21-32 |
-| The contract helpers used to resolve the task root + lifecycle key. | `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286 |
-| The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary. | `task_doc_tool`; `_publish_task_doc_candidate` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:220-278; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:310-365 |
-| Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:586-619 |
-| The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. | `scaffold_register_sections`; `_validated_section_list` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51 |
-| The fail-closed leaf-authoring guard: refuses a leaf whose derived master link nothing would ever bind, and states the planning allowance as a guarantee. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:622-652 |
-| The `elif` arm that reaches the guard from the shared create/replace builder. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:586-619 |
-| The two end-to-end cases that pin the refusal's message and the still-working planning flow. | `test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy`; `test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds` | mcp/tests/test_leaf_doc_master_link_binding.py:235-250; mcp/tests/test_leaf_doc_master_link_binding.py:252-268 |
-| Task document edits are prepared before publication; removed scaffolding tests are not current proof of execution. | `_prepare_task_doc_edit` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:368-404 |
+### Repo-Internal References
+
+- The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path. [1]
+- The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`. [2]
+- The four step adapters are one-line delegations to the extracted step-plane module; this module registers and validates, it no longer owns the addressing rule. [3]
+- `read_steps` is a read-only special operation that publishes nothing and returns only the checklist, never the whole authored document. [4]
+- The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader. [5]
+- `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. [6]
+- Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. [7]
+- Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. [8]
+- The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. [9]
+- The task-document schema model this application entry point validates and writes; its class body now ends at its integration-branch normaliser. [10]
+- The markdown renderer this application entry point drives. [11]
+- The JSON/markdown store this application entry point drives. [12]
+- The payload builder that wraps this application entry point. [13]
+- The contract helpers used to resolve the task root + lifecycle key. [14]
+- The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary. [15]
+- Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. [16]
+- The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. [17]
+- The fail-closed leaf-authoring guard: refuses a leaf whose derived master link nothing would ever bind, and states the planning allowance as a guarantee. [18]
+- The `elif` arm that reaches the guard from the shared create/replace builder. [19]
+- The two end-to-end cases that pin the refusal's message and the still-working planning flow. [20]
+- Task document edits are prepared before publication; removed scaffolding tests are not current proof of execution. [21]
 
 ## 260928-MIK-L08 `knowledgeMaintenanceScope` Is Settable
 
@@ -207,10 +197,8 @@ worklist classify every entry of its memory base. `set_field` can therefore turn
 leaf; the model's own validation still runs on the whole document. The field is classified `LIFECYCLE`,
 not `NORMATIVE` (architect ruling 4), so setting it does not change the task's intent digest.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The settable flat fields, now including the maintenance-scope flag. | `_MUTABLE_FIELDS`; "knowledgeMaintenanceScope" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:119-140 |
-| The field's `LIFECYCLE` classification. | "knowledgeMaintenanceScope" | mcp/src/agents_remember/tasks/document_field_effects.py:166-166 |
+- The settable flat fields, now including the maintenance-scope flag. [22]
+- The field's `LIFECYCLE` classification. [23]
 
 ## 260928-MIK-L11 `expectedKnowledgeEffects` Is Settable
 
@@ -224,10 +212,8 @@ architect's approval) is procedural: `task_doc` has no per-field role gate, and 
 declaration against the packet (ruling Q3). No real task document may carry it before the L37 install
 (ruling Q2, 2026-09-29T21:56:18+02:00).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The settable flat fields, now including the declaration. | `_MUTABLE_FIELDS`; "expectedKnowledgeEffects" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:119-140 |
-| `set_field` sets it, the digest changes, and clearing restores it. | `test_the_field_is_optional_normative_intent_settable_and_refuses_malformed_declarations` | mcp/tests/test_planned_knowledge_effects.py:119-184 |
+- The settable flat fields, now including the declaration. [24]
+- `set_field` sets it, the digest changes, and clearing restores it. [25]
 
 ## Current Task-First Publication Boundary
 
@@ -264,9 +250,7 @@ an authoring lock and not an owner of claimed-operation lifecycle evidence.
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. | `TaskDocTarget`; `TaskDocEdit`; `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:143-155; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:158-171; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:220-278 |
+- The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary. [26]
 
 ## 260913-LCA-L5 Leaf Authoring Fails Closed On A Missing Master Link
 
@@ -304,221 +288,3 @@ itself stale. Net `+1` from the old `:595`, so every line at or below the old `:
 `mcp/registration/tasks.py` no longer advertises `'light'`, and this refusal now names the
 vocabulary it does accept. Pinned against the **registered** FastMCP surface, not a source
 constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
-
-## Update History
-- 2026-09-29T21:48:37+00:00: Generated citation repair: "master_sync = plan_master_sync(task_root" repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:322-322. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Added the section "260928-MIK-L11 `expectedKnowledgeEffects` Is Settable" and named the field in the `set_field` Logic bullet, recording architect rulings 2026-09-29T21:56:18 (Q2, Q3). L08's classification row was re-pointed by the exact +1 line shift. No verification stamp was advanced.
-- 2026-09-29T15:43:00+00:00: Generated citation repair: "master_sync = plan_master_sync(task_root" repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:321-321. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Invariants now lists `knowledgeMaintenanceScope` among the `_MUTABLE_FIELDS` `set_field` may touch, and a short L08 section records it with architect ruling 4 (`LIFECYCLE`, outside the intent digest). **Reopened `TaskDocument` claim re-read and re-cited:** the entry point still drives that model; the row is re-measured to the class's current extent `649-826` and anchored on its class line, so the committed 2026-09-09 generated-repair bullet for `TaskDocument` no longer describes it.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the `kind` refusal now names the accepted vocabulary (`T43`, producer side). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
-- 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `WorktreeContract` at mcp/src/agents_remember/worktrees/worktree_contract.py:229-283.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-read the reopened claim in the row 192 of this card against the current code: its anchor still resolves inside the cited range, so the wording holds and the stamp advances
-  `52875e7a`): recorded the fail-closed leaf-authoring refusal. The Logic and Invariants sections now
-  state that a leaf document is never authored where nothing could bind its derived fields, that the
-  planning case stays allowed **by an explicit guarantee** (the start binding publisher writes both
-  fields once the contract exists), and that no derived field is dropped silently anywhere in
-  `_build_doc`. This corrects the earlier card, which implied leaf authoring succeeded under any task
-  root. Added a section for the change and four reference rows. Also repaired every stale range in the
-  two reference tables against the current source, measured with AST: change-induced drift
-  (`_MUTATIONS` 700-710 → 735-745, the four `_apply_*` step adapters 654-672 → 689-707,
-  `_enforce_terminal_status` 839-856 → 874-891, the `replace` test 243-286 → 237-280) and drift that
-  predated this change (`_build_doc` 559-589 → 584-616, `_read_steps` 405-419 → 405-421,
-  `task_doc_tool`/`_publish_task_doc_candidate` 214-272/304-359 → 218-276/308-363,
-  `_prepare_task_doc_edit` 362-398 → 366-402, `TaskDocTarget`/`TaskDocEdit` 137-149/152-165 →
-  142-153/157-169, `TaskDocument` 645-819 → 649-823, `WorktreeContract` 228-283 → 229-283).
-  Verification metadata is **not** advanced: the code commit does not exist and closeout owns the
-  stamp; no acceptance claim.
-
-- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
-  `52875e7a`): recorded the fail-closed leaf-authoring refusal. The Logic and Invariants sections now
-  state that a leaf document is never authored where nothing could bind its derived fields, that the
-  planning case stays allowed **by an explicit guarantee** (the start binding publisher writes both
-  fields once the contract exists), and that no derived field is dropped silently anywhere in
-  `_build_doc`. This corrects the earlier card, which implied leaf authoring succeeded under any task
-  root. Added a section for the change and four reference rows. Also repaired every stale range in the
-  two reference tables against the current source, measured with AST: change-induced drift
-  (`_MUTATIONS` 700-710 → 735-745, the four `_apply_*` step adapters 654-672 → 689-707,
-  `_enforce_terminal_status` 839-856 → 874-891, the `replace` test 243-286 → 237-280) and drift that
-  predated this change (`_build_doc` 559-589 → 584-616, `_read_steps` 405-419 → 405-421,
-  `task_doc_tool`/`_publish_task_doc_candidate` 214-272/304-359 → 218-276/308-363,
-  `_prepare_task_doc_edit` 362-398 → 366-402, `TaskDocTarget`/`TaskDocEdit` 137-149/152-165 →
-  142-153/157-169, `TaskDocument` 645-819 → 649-823, `WorktreeContract` 228-283 → 229-283).
-  Verification metadata is **not** advanced: the code commit does not exist and closeout owns the
-  stamp; no acceptance claim.
-
-- 2026-09-12T22:45:49+00:00: Generated citation repair: `_replace` repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:569-581. No content impact: mechanical anchor-range projection bound to citation source snapshot 7464238939d75c2065358d53c0f2e066dda635c5705830dfbe24fff068177c35; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-12T22:45:49+00:00: Generated citation repair: "master_sync = plan_master_sync(task_root" repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:320-320. No content impact: mechanical anchor-range projection bound to citation source snapshot 7464238939d75c2065358d53c0f2e066dda635c5705830dfbe24fff068177c35; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded that the step plane was extracted to
-  the new sibling `task_doc_steps.py` (the tools module had reached 1,243 lines against the armed
-  1,200-line hard limit) and that `VALID_OPERATIONS` gained `add_step`/`remove_step`/`read_steps`.
-  Corrected the old statement that `set_step` "upserts a top-level step or, with `parent`, a
-  substep": it is now update-only and never creates, `add_step` is the create-only path, and
-  `remove_step` is delete-only with a mandatory reason. Recorded the reasoned `remove_step`
-  exemption in `_enforce_terminal_status` (a `Completed` document admits it once a nonblank reason is
-  given — required, not merely permitted, because gating on document status would have forced a
-  full-document `replace` on the motivating already-`Completed` leaf), the all-step-ops reject a
-  master rule, and that `remove_step` and `skip_step` are distinct. Verification metadata remains
-  closeout-owned; no acceptance claim.
-
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "master_sync = plan_master_sync(task_root" repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:316-316. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "master_sync = plan_master_sync(task_root" repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:321-321. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `TaskDocument` repointed to mcp/src/agents_remember/tasks/document.py:642-816. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `test_replace_rewrites_structural_fields_and_decisions` repointed to mcp/tests/test_task_document_application_1.py:243-286. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-read and re-anchored the unchanged
-  `TaskDocument` dependency after task-schema extraction. Verification remains closeout-owned.
-
-
-- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: documented the extracted atomic raw-section
-  scaffolding boundary and reconciled the dispatcher with the landed task-first publication and
-  central graph-cardinality contracts. Verification metadata remains pinned until architect-owned
-  closeout stamps the real code commit.
-
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: module moved to `application/task_docs/`; gained `_sprint_doc_identity` for the special-op results. Verified at code commit e5cb139f.
-
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/application/task_docs/task_doc_tools.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
-
-
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   task-doc publish/preview sites thread the joined graph titles into the renderer (`_graph_titles_for` / `_batch_graph_titles`, L12-R1). Verified at code commit b7f2c8e2.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: `task_doc_tool` takes `call: TaskDocCall` (dry_run +
-  branch_addressed) instead of the bare `dry_run` flag; the route-review binding machinery moved
-  to `application/task_doc_route_review.py` (facade re-export, L16-R6/R9). Verified at code commit
-  a9d50e08.
-
-
-
-- 2026-08-20T04:20+02:00 — 260815-DAG-L14: the `task_doc` dispatcher routes
-  `attach_master`/`detach_master`/`linkage_report` to `application/task_sprint_linkage.py`, carries
-  `linkageFacts` on a sprint `get`, and delegates the Completed-row check to the linkage module
-  (typed rows complete against the linked master document). Verified at code commit 2f494982.
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13: `VALID_OPERATIONS` dropped `migrate_execution_topology`
-  (graph-less sprints run the atomic-sequential default; `author_execution_graph` bootstraps), new
-  orchestration sprints are scaffolded with empty canonical Judgment/Priority Register sections,
-  and every write passes register-shape validation (`closeout-grade-register-shape-invalid` on a
-  malformed register section). Verification remains closeout-owned.
-
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: `VALID_OPERATIONS` gained `author_execution_graph`
-  (dispatched to the topology module's incremental graph authoring with `ExecutionTopologyError` →
-  `TaskDocError` translation), and `task_reopen_tool` moved to the new
-  `application/task_reopen.py` module, re-exported here unchanged (facade). Verification remains
-  closeout-owned.
-
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-
-
-- 2026-08-15T11:25+02:00 — L3 static-gate repair: extracted queue-scope resolution into its
-  application sibling; publication ordering, fail-closed errors, and queue locking are unchanged.
-
-- 2026-08-15T11:07+02:00 — L3 Dagger repair: queue-scope resolution now distinguishes
-  genuinely ungoverned light/standalone task documents from graph-commanded masters and leaves;
-  strict parent and publication locking still apply to every graph-managed task-fact batch.
-
-- 2026-08-15T09:10+02:00 — L3 content update: recorded queue scope resolution, whole-batch
-  publication, completion validation, and governed subtask deletion; verification remains
-  closeout-owned.
-
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: `task_doc` now exposes the explicit
-  `migrate_execution_topology` operation and routes topology-bearing create/replace/set-field edits
-  through the dedicated cross-document policy before any write. Verification remains closeout-owned.
-
-- 2026-08-14T06:30+02:00 — L23 final candidate review: task application flows expose manager
-  lineage preflight and route completed-leaf restart through exact task-reopen planning before
-  descendant branch checks. Verification remains closeout-owned.
-
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-
-- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 4 citation findings and one omission.
-  Re-ranged the `VALID_OPERATIONS` (60-72), `_replace` (248-260), and master-sync literal (176-186) rows
-  to current locations, pointed the `replace` test row at the three moved tests
-  (1080-1123/1125-1148/1150-1164), and added the missing `skip_step` to the operation roll-call.
-  Scoped recheck clean.
-
-
-- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 14 initial citation findings (7 anchor, 0 prose, 7 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
-
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that drifted as
-  `mcp/tests/test_task_document.py` grew. The three `replace` tests
-  (`test_replace_rewrites_structural_fields_and_decisions`,
-  `test_replace_dry_run_does_not_mutate_existing_files`,
-  `test_replace_rejects_document_path_change`) now sit at L876-L960, not L683-L767; read the range
-  back and confirmed it still proves the `steps`/`codeExamples`/`decisions` rewrite, the dry-run
-  no-mutation guarantee, and the `TaskDocError` on a slug that would move the document path.
-
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `task_doc_tool` took `target: TaskDocTarget` +
-  `edit: TaskDocEdit` (default `NO_EDIT`) in place of its ten keyword arguments, and the edit
-  applier split into one `_apply_*` function per operation behind `_apply`. Operation semantics,
-  validation, master sync and the dry-run preview are unchanged. Verification metadata pinned until
-  closeout stamps the L2 code commit.
-
-- 2026-07-06T23:57:54+02:00 — 260703-L14 (visual hierarchy + chat grouping): added `orchestrates` to
-  `_MUTABLE_FIELDS` — `set_field` can set the orchestration-command list on a master (flat string
-  list, matching the whitelist's scalars+flat-lists rule); the schema validator backstops
-  master-only, so the same call on a leaf raises `TaskDocError`.
-  Verification metadata pinned until closeout stamps the L14 commit.
-
-- 2026-07-03T00:30+02:00 — L11 adds `task_reopen_tool` beside the task_doc controller — the tool reopens a TASK, so the controller lives in the task domain, not with the worktree tools.
-
-- 2026-06-29T22:57+02:00 — CRUD completion (leaf L2): added the `remove_subtask` op — master-only, drops the
-  `SubTaskRef` by `number` and deletes the referenced leaf doc (json+md) unless `keep_file`, raising on an
-  absent number; dry-run reports `wouldDeleteFiles`. Verification metadata pinned until closeout stamps
-  the code commit.
-
-- 2026-06-29T21:24+02:00 — Post-landing cleanup (master/leaf-only authoring): `_build_doc` (shared by
-  `create`/`replace`) now refuses an explicit `kind="light"` and defaults an absent `kind` to `subTask`
-  under a leaf contract else `master`. Added a controller rejection + default-kind test and repaired two
-  tests that authored `light` through the controller. Verification metadata pinned until closeout stamps
-  the code commit.
-
-- 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: the controller now plans same-root leaf-to-master
-  row sync after every leaf mutation, includes master preview data in dry-run responses, and writes changed
-  leaf/master docs together through `write_task_docs`. Verification metadata pinned until closeout stamps
-  the code commit.
-
-- 2026-06-26T12:41+02:00 — Task-doc replacement repair: documented `replace` as a
-  schema-validated full-document operation for task resets/replans, with path-move refusal and
-  focused tests for structural rewrites, dry-run no-mutation, and path-change rejection. Verification
-  metadata pinned until closeout stamps the code commit.
-
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: task-doc resolution now uses active task-root and leaf-enclosure resolvers, accepts `seriesContractPath`/`enclosures`, and seeds new leaf docs with enclosure references instead of the retired `contractPath`. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-19T07:23+02:00 — Slice 3c reopened (R5, dry-run/preview): added a `dry_run` param + a `_preview` helper (`difflib` unified diff vs the on-disk `.md` + a `wouldLose` line-set check) that returns the rendered markdown without writing; corrected the Logic note that `set_section` is master-only (R4 made it leaf-capable). Verification metadata pinned until closeout stamps the R5 code commit.
-
-- 2026-06-19T06:03+02:00 — Slice 3c reopened (R4, leaf-doc fidelity): added `statusNote` to `_MUTABLE_FIELDS` and dropped the master-only guard on `set_section` (a leaf may upsert freeform sections; the schema validator backstops freeform-only). Verification metadata pinned until closeout stamps the R4 code commit.
-
-- 2026-06-19T05:15+02:00 — Slice 3c reopened (R3, deferred-examples honesty): added `codeExamplesNote` to `_MUTABLE_FIELDS` so `set_field` can record the deferred-examples note; the schema validator backstops master-forbids/leaf-coherence. Verification metadata pinned until closeout stamps the R3 code commit.
-
-- 2026-06-14T00:16+02:00 — Slice 3c commit 3: added master ops `set_subtask` (upsert `SubTaskRef` by number) + `set_section` (upsert freeform `Section` by heading), master `create` handling (skips `lifecycleId`), and kind guards (`set_step` rejects a master; `set_subtask`/`set_section` reject a non-master). Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-
-- 2026-06-13T22:34+02:00 — Created for slice 3c commit 1: the `task_doc` authoring controller (op-dispatch + contract lifecycle pickup). Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

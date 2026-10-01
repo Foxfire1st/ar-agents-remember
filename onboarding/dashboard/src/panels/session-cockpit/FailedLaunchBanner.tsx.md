@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -63,30 +53,15 @@ SessionsView for any focused seat with `controlState === "failed"`, above the pt
   ruling (the component is deliberately `useState`-only).
 - Nothing fires before the explicit confirm — zero fetches until `retire` is confirmed.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The banner: verbatim error, refused pair, armed retire confirm, corrected-launch prefill. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-143 |
-| `verbatimBridgeError` (serialize-never-reword) + the tier machine behind 'refused'. | `verbatimBridgeError` | dashboard/src/data/launchEvidence.ts:57-66 |
-| The refused-tier badge with the word in the accessible name. | `EvidenceBadge` | dashboard/src/grammar/EvidenceBadge.tsx:46-69 |
-| The operator terminate route this retire uses. | `terminateTerminalSession` | dashboard/src/data/terminal.ts:442-451 |
-| The owner mounting it for a focused FAILED seat and opening the pre-filled flow. | `onLaunchCorrected` | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:179-179 |
-| The flow consuming the refused-pair prefill. | `LaunchPrefill` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:41-47 |
-| The failed-row fixtures ×3 harnesses (verbatim bridgeErrors, retained refused pairs). | `FAILED_LAUNCH_ROWS` | dashboard/src/test/fixtures/openResponses.ts:140-144 |
-| The suite: verbatim ×3, never-validated, prefill, honest confirm, decline, stated absence. | "FailedLaunchBanner (R6) — uniform across Claude" | dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx:30-106 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `FailedLaunchBanner.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 9 citation claims and preserved verification metadata.
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R6 (uniform async fail-loud): the
-  focused-failed-seat banner rendering the bridgeError verbatim (absence stated), the retained
-  pair as refused/never-validated with the EvidenceBadge, and exactly Retire (armed confirm
-  naming session + leaf; operator terminate route — the true retire route needs the seat's own
-  actor identity, upstream ask recorded) and 'Launch corrected…' (refused-pair prefill); zero
-  timers/effects — no auto-retry exists. Verification metadata pinned to the leaf base until
-  closeout stamps the L3 code commit.
+- The banner: verbatim error, refused pair, armed retire confirm, corrected-launch prefill. [1]
+- `verbatimBridgeError` (serialize-never-reword) + the tier machine behind 'refused'. [2]
+- The refused-tier badge with the word in the accessible name. [3]
+- The operator terminate route this retire uses. [4]
+- The owner mounting it for a focused FAILED seat and opening the pre-filled flow. [5]
+- The flow consuming the refused-pair prefill. [6]
+- The failed-row fixtures ×3 harnesses (verbatim bridgeErrors, retained refused pairs). [7]
+- The suite: verbatim ×3, never-validated, prefill, honest confirm, decline, stated absence. [8]

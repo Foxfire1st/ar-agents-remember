@@ -1,0 +1,403 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/family_review.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The four acts this module owns, one per pipeline stage: grouping, separated statuses, currentness and routing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:19fc48fb9974ff9eda30c73ee13271f2e9bdf6aa0b217bef6106ff58770b79ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "group_detection_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:9ff590592fde22b523fd808c8d0c7d21d65b4294491a4301e1eafa779e4cdf6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_status_report"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:cfd325f2ea3d85aaed96020a74ef04477c9616cad613ce8db0f180bc0e46d7c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_currentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:ef3797244a49a75bbf644c8e2977cff0968c01f5206ddd628d10a78f47af7036",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_family_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The detector's declared precedence and the two recorded limitations that make an input unresolved.\n\nAnchor: `registered_scope_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:71420b2a3415bef7647853bdb2b734739f455381ae577cdf3ae8a23039af1c0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "detector_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The curator's status vocabulary, with `no-record-recorded` as the answer for an empty collection.\n\nAnchor: \"no-record-recorded\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:a4028de9b71f0fc33410f9690181eb7555f731318637244ecc6a66844e1262f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_review_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Currentness measured through `KS-R15@v1`'s own comparison rather than a locally restated one.\n\nAnchor: \"measured = assessment_currentness(assessment, current.get(assessment.assessmentId, {}))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:cfd325f2ea3d85aaed96020a74ef04477c9616cad613ce8db0f180bc0e46d7c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_currentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:04155594f71fb20cc167f630a396091f31fece09d6c2e3077c93767731ec5657",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The one currentness string, targeting the field the curator-coherence response already declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:47cdb18ca2f869ec50d7c596cbb4e7d3c73c69e07689c921aed30afef79ab772",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_currentness_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The routing report: one row per group addressed by the group's own subject id, the report-only heading, and the shipped formula consumed rather than restated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:ef3797244a49a75bbf644c8e2977cff0968c01f5206ddd628d10a78f47af7036",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_family_review"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:8a1d33d891b8e75c3321ec50f689d39db674666ffe81078c9881d8ba3b2d1ed0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_id_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "19f494496b10bbc4067fd8056bb5ccd7e6d139fe",
+            "content": "sha256:e629ba85386b7d83694b262a4e7ce90f3029d34e03bf00c630d087fa7d2aceee",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_actionable_count"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:06d27c70536fb2179139a32e4f978b8ab9911d8a2bfbf801915f94f277091753",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_REVIEW_HEADING"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The report-only section's rows, built from the shipped state projection and summary builder, with no row for a subject nobody recorded.\n\nAnchor: \"def summarise_assessment_state(measured: AssessmentSummaryInput) -> AssessmentSummary:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:367354cc9ffa16c9d895433c0ab588ad2f62e554943d95851af991eea9155fb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_review_summaries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:0f7e50a411cd4bb382b1f1ee02e62663f3fac8aac540b0ce7817d304d78219f6",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The subject-state reader defined here, exercised by this leaf's tests and absent from the module's declared export list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:d6e37a47861ca33d9decc031ab7fca1006347b3525ed1956a0700cd70314bc16",
+            "locator": {
+              "kind": "symbol",
+              "name": "reported_subject_status"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:6322586a1bdef6a1df31bb4d65c67c8cfd0aea229a2d31bbad570db3a841d87d",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:1823ce541266581be1548bc963ff57c3a286860179d324eeb45d355a4b0d1072",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_state"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:ca024605e359f2908d0584bb66b06b8594527e7422271a3af5d4b930118dd6ea",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 437
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two family conditions and the declared three-edge path shape their subject derivation requires.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:ac275d0dd8a9fe31eb2f17e712705f4560ca1beb99454d1f6170419914afc4e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_CONDITIONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:f4b7056900ca256c5b1f728301620f84a94c40efb5ecfc3bd3b341c0ec88d9ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FAMILY_PATH_EDGE_COUNT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The subject derivation from recorded facts only, in `KS-R15@v1`'s own subject spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:62013977621cb64d0c4e3bf6120d7600d6734e55fd9b17205ad3d4f0e7d3559a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The subject-kind classification over recorded change granularities, and the refusal of a signal that fits no kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:6e4d28c6727078096de28b0150a017365eaf7ceb05424c380b47a963786847d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The path-shape check that refuses to guess a subject from a shorter recorded path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:36fc96eafa553c19357b873d040c87af159ff44ec9bc971b6181851270fc1b65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_first_edges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The input signature rendered from the declared set and each side's context digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:5952e4a4b4248bd364ecdb3350c8a05f0f935a1d69a79dc3d7183977a5cb92e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_input_signature"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One group per key, carrying the declared grouping policy version and the shared group identity.\n\nAnchor: \"group_id=fact_group_identity(subject_id, _input_signature(signals[0])),\"; \"grouping_policy_version=FACT_GROUPING_POLICY_VERSION,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:84e0546dd5a521691584e8f24f4ac0a8ebcaea7d1062bbc8d0dd084e069012cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_group_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The match projection that keeps every supporting path, item id and edge of one signal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:16b03c5f4481b5a56524b8a43a93dbbda4f65710e1196ff60f86386e65559fb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_match_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The five-owner composition: a sixth owner and a missing owner are both refused, and both sentences come from the declaration table.\n\nAnchor: \"a sixth owner is a second reporting surface\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:9ff590592fde22b523fd808c8d0c7d21d65b4294491a4301e1eafa779e4cdf6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_status_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

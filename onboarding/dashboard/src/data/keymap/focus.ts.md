@@ -1,15 +1,5 @@
 # dashboard/src/data/keymap/focus.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/keymap/focus.ts`             |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:20+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [data/keymap overview](overview.md)
@@ -45,28 +35,10 @@ StatusLine is no longer a region or an F6 stop.
 - The cycle order is fixed; later leaves add focusables INSIDE regions (via `data-focus-target`),
   not new regions, without touching this file.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The region cycle, selectors, and the stage-header/PTY landing constants. | `nextRegion`; `regionTargetSelector`; `STAGE_HEADER_SELECTOR`; `PTY_HOST_SELECTOR` | dashboard/src/data/keymap/focus.ts:14-24; dashboard/src/data/keymap/focus.ts:27-29; dashboard/src/data/keymap/focus.ts:32-32; dashboard/src/data/keymap/focus.ts:35-35 |
-| The view wires F6/Shift+F6 through `nextRegion` with collapsed panels filtered out. | "const next = nextRegion(current" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:467-467 |
-| The cycle suite: forward/backward wrap, edge starts, collapsed dropout, unavailable-current recovery. | "cycles backward with Shift+F6"; "skips collapsed panels (they leave the cycle)"; "recovers when the current region itself is unavailable" | dashboard/src/data/keymap/focus.test.ts:15-18; dashboard/src/data/keymap/focus.test.ts:25-30; dashboard/src/data/keymap/focus.test.ts:32-34 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T16:46+02:00 — 260731-EFA-L6 curator W1-B03: repaired 3 citation rows with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
-
-- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the
-  header comment gained the removed-`statusline`-region note, shifting the whole file down one
-  line: `STAGE_HEADER_SELECTOR` L31 → L32 and `PTY_HOST_SELECTOR` L34 → L35. Both constants are
-  unchanged.
-
-- 2026-07-24T13:17:50Z — Corrected the stale StatusLine focus-region description after the bar's
-  removal; F6 now wraps inspector directly to rail. Verification hash/date remain pinned to the
-  pre-commit source stamp.
-
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4 (R7): the F6 region cycle with
-  collapsed-panel dropout plus the stage-header (composer-Esc / PTY-exit landing) and PTY-host
-  focus selectors. Verification metadata pinned to the task base until closeout stamps the L1
-  code commit.
+- The region cycle, selectors, and the stage-header/PTY landing constants. [1]
+- The view wires F6/Shift+F6 through `nextRegion` with collapsed panels filtered out. [2]
+- The cycle suite: forward/backward wrap, edge starts, collapsed dropout, unavailable-current recovery. [3]

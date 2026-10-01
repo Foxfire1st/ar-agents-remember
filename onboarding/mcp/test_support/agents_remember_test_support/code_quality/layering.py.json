@@ -1,0 +1,67 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The wrapper registers the layering step unconditionally.\n\nAnchor: \"def quality_steps(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2b064a36e33d50f392a9db3a5acb82e794c832c",
+            "content": "sha256:d8567095454d3719c73cef2c7f50dbc0d6e7b9da657cdb5f961600618a6e9046",
+            "locator": {
+              "kind": "symbol",
+              "name": "_layering_step"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2b064a36e33d50f392a9db3a5acb82e794c832c",
+            "content": "sha256:10b854095f14037d602dab0dc7210a0441a03380b931c9552ade0e61e5dc2ebf",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unit suite pins rank violations, cycles, undeclared dirs/imports, and present-false rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de9913b5a9c86bf44cd10bb46c4c23309f025767",
+            "content": "sha256:d2cb73e1863b5f2ceda96f451d8e21b1cafe178d3d57377696517c5c5c8ab88d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rank_violation_fails"
+            },
+            "path": "mcp/tests/test_layering.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "de9913b5a9c86bf44cd10bb46c4c23309f025767",
+            "content": "sha256:d33705f3f4eeef09f04ceb0316d67dc7fbb3f005859ae2a206a81aa82b0ecf79",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/tests/test_layering.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

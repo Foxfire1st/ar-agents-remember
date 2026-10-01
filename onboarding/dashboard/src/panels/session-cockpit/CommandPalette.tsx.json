@@ -1,0 +1,110 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/CommandPalette.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pages, run/close semantics, back gesture, and the data-driven keys page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f6d5f63b7058e0e74ede68e30f8233e29c5c3e9",
+            "content": "sha256:6cdabbc0b87cf73cdea0877c875a77d4fa1056c87c6b7a00f27cbcb565eba958",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommandPalette"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registry contract (`list`/`run`/`keepsPaletteOpen`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:b385a5ef69a73afdcc78029642a999f84e45a16d92347191f55e22fdf4181952",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommandRegistry"
+            },
+            "path": "dashboard/src/data/commands.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The keys page renders the PTY-reserved terminal entries.\n\nAnchor: \"Terminal — everything passes through except exactly\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f6d5f63b7058e0e74ede68e30f8233e29c5c3e9",
+            "content": "sha256:e51a992076caa6665cd775074ecc3455886bd9298beb5f644300aabc04597743",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 309
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The view that owns open/page state and the invoker focus-return.\n\nAnchor: `closePalette`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:b97b7a888b7735f9c4ab5491048ec1abc3ce23280b9b60ec91c2073bf0dab866",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 379
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Palette behavior coverage: open, Esc + focus return, keys page from real tables, suppression, `/` rule.\n\nAnchor: \"opens on ctrl+k from the chrome zone and closes on Escape\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63eea4bd1f9d5462193341b7a1b75a2dc42e855b",
+            "content": "sha256:f7e2fb814531bdbff21674e8a7cb02f42bba334c17f313e8a8a3f3e9113727d8",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The reviewer's group on the keys page, from the effective bindings (MIK-L33).\n\nAnchor: \"Intent reviewer — while focus is inside it\"; \"entry.zones.includes(\\\"review\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f6d5f63b7058e0e74ede68e30f8233e29c5c3e9",
+            "content": "sha256:a9e1909743f8164ba3eb8ff6babdd4e639dc98bd4c3bf125df2a1cbc8866aac9",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

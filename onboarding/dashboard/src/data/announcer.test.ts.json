@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/data/announcer.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Announcement implementation under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10c66e5d84f945029c828f5c0205edaa23e7a910",
+            "content": "sha256:27736c46064acf27019b0c66ad809ba0d5b7d7cab8016c9e69f0c33217ec17b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "stateEntryAnnouncements"
+            },
+            "path": "dashboard/src/data/announcer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One source for every asserted string.\n\nAnchor: `setResultAnnouncement`, `promotionAnnouncement`, `sessionFailedAnnouncement`, `sessionAwaitingInputAnnouncement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:bcfcda0ff9a58b5d5e5948088bc7e2b3c5c4a71d78e92e8c055cd8850cdf4094",
+            "locator": {
+              "kind": "symbol",
+              "name": "setResultAnnouncement"
+            },
+            "path": "dashboard/src/data/setControlsCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:6f1854b9b0a234abb95744917a29b64b75f352de9e2749552c0cca4ec0bb3f46",
+            "locator": {
+              "kind": "symbol",
+              "name": "promotionAnnouncement"
+            },
+            "path": "dashboard/src/data/setControlsCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:08a4c1cf6e75e84bd91b8d0e784b971fa381675277102495ea5a49c581d6e5cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionFailedAnnouncement"
+            },
+            "path": "dashboard/src/data/setControlsCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:f198da5608b3b99fd6340beb9d447c195279c6d9b6793a7f1f711cc8f249f12e",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionAwaitingInputAnnouncement"
+            },
+            "path": "dashboard/src/data/setControlsCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The catalog-row fixture builder the seat helper spreads (plural pending flows through `...overrides`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3dfad5e78de65c19952a06c1e4423eeb352c842",
+            "content": "sha256:9db694deeedeb33760607e5cff5f1733bf29c524d2ae0cc9a66df87abbb5e8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalogRow"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

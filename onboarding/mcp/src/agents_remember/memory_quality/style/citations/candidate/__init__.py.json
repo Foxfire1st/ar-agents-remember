@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/candidate/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package declaration names its exact Git-candidate acquisition responsibility.\n\nAnchor: \"Exact Git candidate membership for citation source acquisition.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cf4bd87e985c78c37add47c03053a46ddd65d55",
+            "content": "sha256:6c46d901bad99f86cb907b637c8cb1f2a37475110a44abf5e96e3df0ecd2ea44",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_lifecycle_operation_model_helpers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Removed the fake ledgerCommit fixture field while preserving exact recovery-proof assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c56243064f39b9d8aa786f0f9109884eb6b56da5",
+            "content": "sha256:2408ddaac33d755923437a0c7c847aa1aaedbf2209c8d50c9c03ea51db891944",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recovery_commits_cannot_contradict_commit_proof"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Mutation history and irreversible boundary require exact proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c56243064f39b9d8aa786f0f9109884eb6b56da5",
+            "content": "sha256:faafde3de69f9a1db550fc8f93baab46d1d9dd1051648f4605809034e61f0598",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_mutation_history_and_irreversible_boundary_require_exact_proof"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recovery commits cannot contradict commit proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c56243064f39b9d8aa786f0f9109884eb6b56da5",
+            "content": "sha256:2408ddaac33d755923437a0c7c847aa1aaedbf2209c8d50c9c03ea51db891944",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recovery_commits_cannot_contradict_commit_proof"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worker binding and termination evidence are one authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c56243064f39b9d8aa786f0f9109884eb6b56da5",
+            "content": "sha256:8a3d37912882bbb53bd5ccc6451acc26b61fad628e82b3efb8a19a591179a997",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worker_binding_and_termination_evidence_are_one_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

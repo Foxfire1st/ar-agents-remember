@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_wire_contract.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A function returning a dump makes its callers taint sources",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64945a135b54fe4187781f21550c8c4c6700e12e",
+            "content": "sha256:9005e4f86221caf89f77e59c33fdb79d82a798b2936d833753222119f30e99bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_function_returning_a_dump_makes_its_callers_taint_sources"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A plain key assignment is caught",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64945a135b54fe4187781f21550c8c4c6700e12e",
+            "content": "sha256:543e969d8b2194fe3707d29d598d19e1d551c2226a1923642f67e886040c578a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_plain_key_assignment_is_caught"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A copy does not launder the dump",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64945a135b54fe4187781f21550c8c4c6700e12e",
+            "content": "sha256:38b9f408c9195c59692f834556d1f426fb42d6bfe46fda1376b34f9cb482cf74",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_copy_does_not_launder_the_dump"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Setting fields on the model before the dump is the sanctioned pattern",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64945a135b54fe4187781f21550c8c4c6700e12e",
+            "content": "sha256:9cb4dd59dbc654a45c092e9107432a0798760d212197180f798623f6704a9949",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_setting_fields_on_the_model_before_the_dump_is_the_sanctioned_pattern"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reading a dumped dict is not mutating it",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64945a135b54fe4187781f21550c8c4c6700e12e",
+            "content": "sha256:ebe8734cc773a7422c6d9ae116130ae9921d957df1f53b5dc7aa56cbf8532897",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reading_a_dumped_dict_is_not_mutating_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

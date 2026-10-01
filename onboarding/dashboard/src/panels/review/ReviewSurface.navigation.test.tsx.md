@@ -1,15 +1,5 @@
 # ReviewSurface.navigation.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewSurface.navigation.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:40:44+02:00 |
-| lastVerifiedCommitHash | `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`|
-| lastVerifiedCommitDate | 2026-09-28T22:11:57+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -63,37 +53,28 @@ Tests are scoped executable evidence. They do not certify the mounted product jo
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. The implementation-specific account is grounded in the repository source below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+No configured domain source could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The named constructs own this behavior; reads and validation use their existing callers and models.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what it pins and why its replies are held. | "The first two cases answer immediately"; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:1-23 |
-| The held-reply server: every review reply can be answered, refused or lost; catalogue and content reads are counted. | `delayedServer`; `heldFor`; `answer` | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:256-306 |
-| Mounted shell, subject-labelled pending area and zero-request return. | "keeps the reviewer mounted across family → invariant → family, pending only in the reading area, and reuses what it read" | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:316-410 |
-| Latest selection wins; a superseded answer is not kept. | "settles on the latest of rapid selections and never shows a superseded answer" | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:412-458 |
-| Late catalogue with and without reader engagement. | "does not move a reader who is working when the catalogue answers after the bounded wait"; "lands a reader who has not acted on the first family when the catalogue answers late, without remounting" | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:460-511 |
-| Failed or refused selection stated in the reading area for the requested subject. | "keeps the workspace and navigation when a newly selected subject is %s, stating it for that subject" | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:523-601 |
-| Focus the reader moved while pending is kept. | "leaves focus where the reader moved it while the selected subject was pending" | dashboard/src/panels/review/ReviewSurface.navigation.test.tsx:603-631 |
+- The module's own statement of what it pins and why its replies are held. [1]
+- The held-reply server: every review reply can be answered, refused or lost; catalogue and content reads are counted. [2]
+- Mounted shell, subject-labelled pending area and zero-request return. [3]
+- Latest selection wins; a superseded answer is not kept. [4]
+- Late catalogue with and without reader engagement. [5]
+- Failed or refused selection stated in the reading area for the requested subject. [6]
+- Focus the reader moved while pending is kept. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No independent cross-repository interface is introduced by this source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence is required. | — | — |
-
-## Update History
-- 2026-09-28T21:40:44+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — this module became the acceptance evidence for the mounted reviewer (`ICR-R24@v3`).** L48 added four delayed-reply cases (mounted across selection with zero-request return, latest selection wins, late catalogue with and without engagement) and A2 added three more (failed/refused selection via `it.each`, moved focus kept), all against a `delayedServer` that holds review replies open; the first existing case now waits for its passive-effect focus. Purpose, Logic, Conventions and Invariants were extended, and the single row (which cited import lines under a behaviour claim) was replaced by one row per case extent. The worker and reviewer recorded that the new cases fail on the base and A1 sources respectively. Invariants record review observation O-R1-2 as a scope limit of the scroll assertion, not a defect. No stamp advanced.
-
-- 2026-09-26T19:49:05Z — Created the regression card for this source owner.
+No additional cross-repository evidence is required.

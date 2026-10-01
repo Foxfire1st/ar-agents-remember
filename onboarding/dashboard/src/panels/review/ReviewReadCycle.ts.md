@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewReadCycle.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewReadCycle.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -180,11 +170,9 @@ has not answered, and the bounded `SUBJECT_HOLD_MS` (750 ms) has not expired (`R
 two display refs are now kept by a small `useLatest` helper (a ref updated every render), extracted to keep
 the hook under the per-function line rail; it changes no read rule.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The optional hold on the question. | `ReviewReadQuestion`; `hold?: boolean` | dashboard/src/panels/review/ReviewReadCycle.ts:303-317 |
-| The latest-value ref helper. | `useLatest` | dashboard/src/panels/review/ReviewReadCycle.ts:352-356 |
-| No read starts while held. | `useReviewReadCycle`; "if (hold) return undefined" | dashboard/src/panels/review/ReviewReadCycle.ts:358-471 |
+- The optional hold on the question. [1]
+- The latest-value ref helper. [2]
+- No read starts while held. [3]
 
 ### Conventions
 
@@ -248,69 +236,50 @@ notice it feeds is a restatement of the server's own comparison, not an independ
 server's `staleness.state` remains the authority, and a read that never reaches the server produces no
 claim at all.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own header and the four
 rules it states, the public read-cycle types and private continuation owners, the two call sites in
 `ReviewSurface.tsx`, the client argument the read threads, and the two test cases that measure the
 identity's single-read rule. Every anchor in a row occurs inside the range that row cites.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of why it exists (the file-size rail and the per-function rail), the rules it enforces (including L48's keyed answer and once-per-comparison rules), the carried-identity rule, and the explicit "what it does not do" — no timer, no retry ladder, no polling.** | "THE THREE RULES THIS MODULE ENFORCES"; "AN ANSWER IS BOUND TO ITS QUESTION"; "A WHOLE SUBJECT IS READ ONCE PER COMPARISON" | dashboard/src/panels/review/ReviewReadCycle.ts:1-50 |
-| The module's imports: the review wire types and the client, and the read state with its mapper. | `intentReview`; `readFrom` | dashboard/src/panels/review/ReviewReadCycle.ts:52-64 |
-| **The page request, exported from here rather than declared in the surface, with the collection, the cursor and the size axis the target key consumes.** | `ReviewPageRequest` | dashboard/src/panels/review/ReviewReadCycle.ts:73-77 |
-| **The question's identity: task, record, question and page position, with the page's own reason for participating.** | `targetKeyOf` | dashboard/src/panels/review/ReviewReadCycle.ts:82-100 |
-| **The one read: the nine-argument client call, the previous identity passed as the ninth, and the answer handed to the caller's callback rather than written to state.** | `askReview`; `intentReview`; `reviewProblemFromCause` | dashboard/src/panels/review/ReviewReadCycle.ts:105-136 |
-| **The one read path: the sequence number, the superseded flag, the drop of a payload read for another key, the two-part condition under which the carried identity may be sent, and (L48) the kept-answer short cut and the keep-or-observe decision.** | `startRead`; `keepReview`; `observe` | dashboard/src/panels/review/ReviewReadCycle.ts:163-217 |
-| **Admission writes the keyed read, the retained generation and the frame together.** | `admit`; `setFrame` | dashboard/src/panels/review/ReviewReadCycle.ts:219-223 |
-| **The read for the question on screen, derived per render.** | `readOnScreen`; `KeyedRead` | dashboard/src/panels/review/ReviewReadCycle.ts:228-231; dashboard/src/panels/review/ReviewReadCycle.ts:319-337 |
-| **The frame: the last admitted payload of one task context.** | `useFrame` | dashboard/src/panels/review/ReviewReadCycle.ts:341-348 |
-| **The identity paired with the one read it belongs to — the read number, the question key and the digest — and the defect the pairing closes.** | `CarriedBinding` | dashboard/src/panels/review/ReviewReadCycle.ts:277-281 |
-| **The hook's contract: the read, the retained generation and its key, the identity described for the question on screen now, and the reader's own refresh.** | `ReviewReadCycle`; `frame` | dashboard/src/panels/review/ReviewReadCycle.ts:283-301 |
-| **The hook itself: the four pieces of state, the memoised request fields, the sequence counter, the two refs and the single effect that starts a read.** | `useReviewReadCycle`; `reads`; `carriedRef` | dashboard/src/panels/review/ReviewReadCycle.ts:358-471 |
-| **`refresh` files the identity with the question it was displayed for and the read number that will replace it, and asks the effect to run again — a refresh with nothing displayed carries nothing.** | `refresh`; `refreshNonce`; `forgetReview` | dashboard/src/panels/review/ReviewReadCycle.ts:377-377; dashboard/src/panels/review/ReviewReadCycle.ts:423-439 |
-| **All three conjuncts of the described identity, and the same-flush defect that makes the question key non-redundant with the read number.** | `carriedHere` | dashboard/src/panels/review/ReviewReadCycle.ts:451-454 |
-| **The read state and its mapper: the four phases this module sets, and the client's typed answer projected into them.** | `ReviewRead`; `readFrom` | dashboard/src/panels/review/ReviewOutcome.tsx:33-37; dashboard/src/panels/review/ReviewOutcome.tsx:42-55 |
-| **The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.** | `intentReview`; `reviewQuery` | dashboard/src/data/review.ts:558-574; dashboard/src/data/review.ts:580-611 |
-| **The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.** | `PREVIOUS_BINDING_QUERY` | dashboard/src/data/review.ts:674-674 |
-| The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:453-532; dashboard/src/panels/review/ReviewSurface.tsx:534-600 |
-| **The generation claim that consumes `carried`: it renders nothing unless the read that carried the identity has answered.** | `generationOf` | dashboard/src/panels/review/ReviewRefresh.tsx:113-127 |
-| **The cases that measure the identity's single-read rule through the real surface: a different subject carries nothing, a recorded read carries nothing, and a same-flush subject change plus refresh carries nothing.** | "carries the identity into a read that replaces it, and into no other question (L17-F1)"; "never carries a live identity into a recorded read, nor a recorded one into a live read (L17-F1)"; "renders no generation claim when the subject change and the refresh land in one flush (L17-R2-F1)" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:707-898 |
-| **The case that measures the sequence guard: a slow earlier subject's answer cannot replace the subject selected now.** | "never renders a slow earlier subject's answer over the subject selected now" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:654-705 |
-| Rejected continuation becomes a failed read without installing the raw response. | `familyContinuationRead` | dashboard/src/panels/review/ReviewReadCycle.ts:249-270 |
-| Sparse updates preserve exact content and claim identity within independent walks (moved unchanged to `familyWalkMerge.ts` by L48). | `mergeMember`; `mergeFamilySide` | dashboard/src/panels/review/familyWalkMerge.ts:15-35; dashboard/src/panels/review/familyWalkMerge.ts:37-60 |
-| Only the bound comparison and exact family-side-revision walk are composed. | `sameFamilyWalk`; `admittedFamilyContinuation`; `mergeFamilyContinuation` | dashboard/src/panels/review/familyWalkMerge.ts:62-74; dashboard/src/panels/review/familyWalkMerge.ts:76-102; dashboard/src/panels/review/familyWalkMerge.ts:116-170 |
+- **The module's own statement of why it exists (the file-size rail and the per-function rail), the rules it enforces (including L48's keyed answer and once-per-comparison rules), the carried-identity rule, and the explicit "what it does not do" — no timer, no retry ladder, no polling.** [4]
+- The module's imports: the review wire types and the client, and the read state with its mapper. [5]
+- **The page request, exported from here rather than declared in the surface, with the collection, the cursor and the size axis the target key consumes.** [6]
+- **The question's identity: task, record, question and page position, with the page's own reason for participating.** [7]
+- **The one read: the nine-argument client call, the previous identity passed as the ninth, and the answer handed to the caller's callback rather than written to state.** [8]
+- **The one read path: the sequence number, the superseded flag, the drop of a payload read for another key, the two-part condition under which the carried identity may be sent, and (L48) the kept-answer short cut and the keep-or-observe decision.** [9]
+- **Admission writes the keyed read, the retained generation and the frame together.** [10]
+- **The read for the question on screen, derived per render.** [11]
+- **The frame: the last admitted payload of one task context.** [12]
+- **The identity paired with the one read it belongs to — the read number, the question key and the digest — and the defect the pairing closes.** [13]
+- **The hook's contract: the read, the retained generation and its key, the identity described for the question on screen now, and the reader's own refresh.** [14]
+- **The hook itself: the four pieces of state, the memoised request fields, the sequence counter, the two refs and the single effect that starts a read.** [15]
+- **`refresh` files the identity with the question it was displayed for and the read number that will replace it, and asks the effect to run again — a refresh with nothing displayed carries nothing.** [16]
+- **All three conjuncts of the described identity, and the same-flush defect that makes the question key non-redundant with the read number.** [17]
+- **The read state and its mapper: the four phases this module sets, and the client's typed answer projected into them.** [18]
+- **The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.** [19]
+- **The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.** [20]
+- The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh. [21]
+- **The generation claim that consumes `carried`: it renders nothing unless the read that carried the identity has answered.** [22]
+- **The cases that measure the identity's single-read rule through the real surface: a different subject carries nothing, a recorded read carries nothing, and a same-flush subject change plus refresh carries nothing.** [23]
+- **The case that measures the sequence guard: a slow earlier subject's answer cannot replace the subject selected now.** [24]
+- Rejected continuation becomes a failed read without installing the raw response. [25]
+- Sparse updates preserve exact content and claim identity within independent walks (moved unchanged to `familyWalkMerge.ts` by L48). [26]
+- Only the bound comparison and exact family-side-revision walk are composed. [27]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every read names one repository namespace
 and one leaf id and is served by the same-origin dashboard route.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`ReviewSurface.tsx`, `familyWalkMerge.ts`) moved with the leaf's inserted lines: 3 passing row(s) normalised by the fixer. No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/ReviewReadCycle.ts`, `dashboard/src/panels/review/ReviewRefresh.tsx`, `dashboard/src/panels/review/familyWalkMerge.ts`); no claim changed. No verification stamp was advanced.
-- 2026-09-28T21:45:24+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — keyed reads, a per-comparison cache and a task-context frame (`ICR-R24@v3`; L48-R1-F1; L47-R1-F5 file budget; `ICR-R17`/`ICR-R10`/`ICR-R26` preserved).** The read state became a `KeyedRead` and the returned `read` is derived by `readOnScreen`, so the surface only ever sees a read for the question on screen; `startRead` serves and keeps whole-subject answers through the surface's `ReviewReadCache` and `admit` also sets `frame` (via `useFrame`), which a failure or refusal no longer clears. The roster-walk merge moved unchanged to `familyWalkMerge.ts` (539 → 471 lines). The card **extends** its read-cycle contract with these rules and **preserves** the four L17 rules, the continuation admission and the hold; its statements that the hook returns four values and that `read` is plain state are **superseded**. Review observation O-R1-1 (cached returns do not re-validate a moving live candidate) is recorded as the stated design rule, not a defect. The five reopened claims were re-read; every row re-derived, four rows added. No stamp advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/data/review.ts`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:11:24+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **body update — the read cycle can hold its first read (`ICR-R24@v3`).** Records `hold` on the question and in the effect, and the `useLatest` extraction for the two display refs; the read rules above are unchanged. Displaced rows were re-pointed from the base-to-candidate line mapping. No stamp advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-
-- 2026-09-27T01:16:27+00:00 — Re-resolved import, hook, refresh and continuation references against their actual constructs. Ambiguous name-only repairs were not accepted: imports remain cited at the import block, and hook/refresh claims at their own definitions. No verification stamp was advanced.
-
-- 2026-09-27T00:59:43+00:00 — Curated same-question bounded family accumulation and explicit rejection. Compatible sparse updates retain exact content, claim identity and independent walk progress; rejected pages fail visibly with coherent retention, while refresh/history/subject changes keep replacement semantics. Primary statement, source, evidence and assessment owners are preserved.
-- 2026-09-26T21:09:43+00:00: Generated citation repair: `PREVIOUS_BINDING_QUERY` repointed to dashboard/src/data/review.ts:659-659. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed, no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **body refresh for the widened page-request union, plus the citation repair of this card's 10 unsatisfied rows.** `ReviewPageRequest.of` is now the server's own `ReviewPagedCollection` (`"knowledge" | "records" | "family_members"`) rather than the narrowed `"knowledge" | "records"` pair, so a request that continues a family's truncated roster with the cursor its family context published is representable; which collections the surface offers with **no** cursor is `REVIEW_WALKABLE_COLLECTIONS`' separate decision, and the card now says so in Logic and in Invariants. **Citation repair:** the `citation_claim_reopened` row for `ReviewPageRequest` was re-pointed at the range the declaration occupies now (`62-66`), because the declaration line had fallen outside every cited range; the nine `citation_anchor_absent_from_range`/`citation_range_out_of_bounds` findings were cleared the same way — the import block → `43-53`, the one read (`askReview`/`intentReview`/`reviewProblemFromCause`) → `94-125`, `intentReview`/`reviewQuery` → `dashboard/src/data/review.ts:533-549`/`555-586`, and the surface's use of this module → `ReviewSurface.tsx:55-56`, `844-853`, `854`, `884`, which also retires the two ranges that ran past the end of `ReviewSurface.tsx` (`920-935`, `955-966`). Every target range was verified with `sed -n 'START,ENDp'` over the frozen candidate before it was written; no row was dropped and no claim was re-worded. Two further rows whose constructs this leaf's own insertions moved — `CarriedBinding` → `187-191` and `carriedHere` → `286-291` — were re-pointed in the same pass. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **created.** This module is new in this leaf and this is its one-to-one card. It records the three rules the module's own header states (one read per question, the newest read wins, a refresh replaces rather than patches), why it exists as its own module (the file-size rail plus the per-function rail, with the outcome states and the refresh control left to their own owners), and the rule that carries the leaf's two fix rounds: the carried binding identity is `{readNumber, key, digest}` and is both **sent** and **described** only when the read number and the question key agree, so the identity the notice describes is exactly the identity the request carried. Both fix rounds are recorded where the source records them — `L17-F1` (the identity is not sticky; a different subject, a different leaf, a recorded read and a later read of the same question all carry nothing) and `L17-R2-F1` (the question key is not redundant with the read number, because a subject change and a refresh in one React flush would otherwise describe another subject's identity). The module's one honest limit is recorded rather than closed: the notice this value feeds is a restatement of the server's own comparison, not an independent measurement. **Stamp accounting:** the verification pair names the **production line at this leaf's base** `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` (2026-09-23T05:16:40+02:00); everything this card describes is **uncommitted** working-tree bytes in the `ar/260921-icr-l17` worktree composed on top of that base, so no commit contains the code a stamp would claim to have verified. What was actually read is that working tree, and the governed closeout owns the real stamp.
+No meaningful cross-repo references found.

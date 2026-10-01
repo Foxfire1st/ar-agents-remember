@@ -1,0 +1,318 @@
+{
+  "path": "dashboard/src/panels/review/laneFocus.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Nothing here classifies; marks sit on the owner's hunks.\n\nAnchor: \"Nothing here classifies\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:7ab70af8b8b083602b4e6f9b964514194ed4b1e1b893964ebe46b7786c1878a5",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The intent markers' use of the window helpers (MIK-L34).\n\nAnchor: \"import { sideLines, spanLabel } from './laneFocus';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:4df93eb7e9ed11d8b9ff859a015a4efdda2e8ea936813d57e4ac0aec9055343d",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The details' counts and lists from the lane.\n\nAnchor: \"const lane = laneRead ? laneAttributionFacts(laneRead) : null;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:d8ba60258043350ed65bfa39511b003625b721264ef2217885c03bc23a56258b",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The window, focus and totals cases.\n\nAnchor: \"cuts each window on the server side line numbers, with context, clamped to the text\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a2a2e407d99e2879d694dfa39e2516461d27d69",
+            "content": "sha256:00a0c292a85a6182957a2e3245dbad5c82db7b0c88883acbd1814d358833f050",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "dashboard/src/panels/review/laneFocus.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The context and focus bounds; the destination titles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:2ab890792930feda76de53532092c381772c55ea4f7b30a4435c152512cd4999",
+            "locator": {
+              "kind": "symbol",
+              "name": "HUNK_CONTEXT_LINES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:25ba3c239968f8bded173f911381591db7fa8f8c8d256a7a97aba03a44e8b756",
+            "locator": {
+              "kind": "symbol",
+              "name": "FOCUSED_HUNK_LIMIT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:d853306fe6f7b39dcafc096010f5782d6dc5ffad7445e94b2636b74bb8d397ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "DESTINATION_TITLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One note per group.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:31c5922d8301d6674d662557a3ba9760bf3799359adf7e43ed75a8b3c5ed1571",
+            "locator": {
+              "kind": "symbol",
+              "name": "GROUP_TITLES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:f42c0427575c71c91766359ad1b0f0723a665a619062d0a36441df60d39f2698",
+            "locator": {
+              "kind": "symbol",
+              "name": "GROUP_NOTES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two groups in the server's order, and the totals line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:d93e8492bb082e722cb131730dd51df69e2be4b288513f493999367623ae50d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "destinationOf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:02fd82cb3d941c36c165a8dead642849ab41ec31c4c2a758225f88237ec65e07",
+            "locator": {
+              "kind": "symbol",
+              "name": "destinationGroups"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:99874271ed266efb8321373154d63f608fa7945313795cd0737ff9e92a6d0a0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "destinationTotals"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The hunks a destination opens a file on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:6b04a5811f97c0b354574a674e05a7b8acd8cf4b9350d08d9edb672eeb6165b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "focusedHunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Span labels, side lines and the window on the server's line numbers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:2d05d52e992eee94275e2cb28e6439eeaf6cd14d1129622c3bf26fea523d180f",
+            "locator": {
+              "kind": "symbol",
+              "name": "spanLabel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:f6ef9fd042f71d80868d38f5070a8ee7291e7777213bd90f668b050cc045bb3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideLines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:5bb38cf1126df8314be2cdafa6c20b28dcecfd5bf071eb4840e7e9ac3d77bb3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunkWindow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The explorer's labels from the lane (ruling Q1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:1209b12ed7a54371f4584c241222599dfc491e639b7dd5c5e2bd4f9fd9b264f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPLORER_LABELS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:d015b11871787e4f7e9da7372c9fa6bf99a6c153eda308c260749f91300e37ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPLORER_PENDING"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:60eea9ace105939fd09ff06afc389fd71b4c95638e583ac44698d52a2867cdcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "explorerAttribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The technical details' facts and counts from the lane (review F1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:956800efbebeeb2f42402548972f2575df55778362017a93b2477238a0a5847a",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneAttributionFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:61cdbce22f23a4b732680df6aebb603f92dbfcb8a7d802f83b5dabfcf805f50a",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneCountText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The workspace's explorer source by kind of review.\n\nAnchor: \"return explorerAttribution(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:43bae5e55b06ebe37ac4035ad0f0f8f76ac2fc220640c86e579beae309012cd8",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 690
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

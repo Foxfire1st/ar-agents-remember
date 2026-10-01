@@ -1,0 +1,67 @@
+{
+  "path": "dashboard/src/data/submitRetention.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cockpit store invokes these compactors for per-session history and queue state.\n\nAnchor: `enqueueSubmit`, `upsertSubmitRecord`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1812c8196f94387f7a56e134cb3c2b4e60060b5c",
+            "content": "sha256:762812716e285178d264651a69e28486ad0b6e6d4a0f68eb263103b7aa5172b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "enqueueSubmit"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1812c8196f94387f7a56e134cb3c2b4e60060b5c",
+            "content": "sha256:cdaca13e56fbbb2fe7e8557faac117f97df49034edbf0c3df89907f36ed6c449",
+            "locator": {
+              "kind": "symbol",
+              "name": "upsertSubmitRecord"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1812c8196f94387f7a56e134cb3c2b4e60060b5c",
+            "content": "sha256:454272021ad451a0236ab6674c7968f9abf27799311b3cb29a39ce4366743032",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retention tests protect active rows and cap only settled tails.\n\nAnchor: \"reliable-submit retention policy (F4)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f17e11c02274eaea122c744608c8696d535e9fcc",
+            "content": "sha256:de183ad671500d244131d40644f63e5997ac6ca9c239ef0ac8613ab4d403d94b",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/data/submitRetention.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

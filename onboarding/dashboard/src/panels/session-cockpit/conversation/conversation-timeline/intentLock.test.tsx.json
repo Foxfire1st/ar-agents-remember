@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/intentLock.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The intent-lock suite owns its shared hermetic geometry/timer fixture at the unique B3 suite boundary.\n\nAnchor: \"ConversationTimeline — intent lock, follow-on-growth, latest chip (B3)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b262069924678915d7c45a28c3436dd56ee69fcc",
+            "content": "sha256:21338557e93936e4a4b225d069ea7ed1b3d94df235da0e64cfa93d474ceadd37",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

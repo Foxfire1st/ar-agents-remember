@@ -1,0 +1,356 @@
+{
+  "path": "scripts/e2e_harness/fresh_user_scenario.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one step record: the call made and the real result it returned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:ef8be4f5b39bd1f884f18b91e55c64cef0bdd82f1a89c578ec9366527812b48f",
+            "locator": {
+              "kind": "symbol",
+              "name": "StepRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:ebc05c0907105bf806cc8c8ff17ffa6d3cfb043436a9a1802bcf0b03788fb727",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The ordered worktree starts the product's authority requires.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:7f51f17434e792c8f35bd7a8b4330c53499d61d4d7db662435bf79467c7caa40",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_topology"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:f4e18a5a553c45cf22f957df6fa774260a161d0d863a5cd1f0a6aa7976624b06",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_leaf_worktree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:783ef6c5a7b71a2bcf4bfc01370c961ab38b5a6da9d7874ea3299ddd60693465",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:7c98edd5792807ffbf7bbdefa5fabd28b3d6261620dc5b383d0e011ff491260e",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 408
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The declared fixture setup that creates the memory series branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:f0238f33d87aa10742dc38a33244b1fbf7362bee67c8e424701fecfcf9894089",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declare_memory_series_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:b320951dfe3cbde226e4c9b8ac7ea72fd205a4bb66d1d6d14b409938850b77d4",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 473
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The four per-fixture invariants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:0556c4cba75ee70525a4ee3f163af06579b6e79fde1743359b8f339670fecc8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invariant"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The register the citation and memory-quality steps honour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:bc8d8673b5000b63a5323437a58f74bc6abc45719c3b471983852720046e204a",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_exclusion_register"
+            },
+            "path": "scripts/e2e_harness/fresh_user_fixture.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The step that must never be `completed` when it could not run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
+            "content": "sha256:8594016a671f475c4cc186876c41467e8f3781c6bcb9ae9838a31a38725bd30a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_step_that_cannot_run_is_blocked_by_name_and_not_completed"
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The delivered transcript these ranges are read against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "766d156231453da6663ed15bea2b9bac79eb30cd",
+            "content": "sha256:0ebd69c7f2f756c10cc61570742ea9630c3128a285fb0ed31d57ce800d4796e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPORT_DIRECTORY"
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Why `MCP_SRC` must be a **string** in `sys.path`: the import machinery silently ignores a `Path`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:b66d5706c569fc74a449dd2e3f8d9b4aa7c647a76266738bca89a86d8acc306e",
+            "locator": {
+              "kind": "symbol",
+              "name": "MCP_SRC"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The candidate-source assertion that runs before the first product call, and the per-step provenance it records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:146b9ccd5d57e2ee59d46d2bf6c8ffd4735e0c2a0be79d206951e96050741ae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_candidate_source"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:28eba8b65b6d984e337f6c9c07eec0723938c4cf1be169824b57ffed6d69089f",
+            "locator": {
+              "kind": "symbol",
+              "name": "package_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The ordered steps for one fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:5ff3b75e41a81df14c941982ddf07836c0a03b278543edef6df6380cdf9dbae4",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_fixture_scenario"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:4b70cd2364b888be587436fb29691929c0c7cc7bd07e3a3cacbb4e7217c53104",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 579
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two-fixture acceptance, its invariants and its transcript.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:ac4a6d944717aeb5831a27fc4d49773700aa06e107d2f94405e6cc3bc7db14e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_fresh_user_acceptance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The free agent's capsule, read back from the launch token the session was actually started with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:69202d132c60f5436e55737ecbb06870f15c022c8500d6b9180c3493c54db008",
+            "locator": {
+              "kind": "symbol",
+              "name": "free_agent_acceptance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The citation step is a real `citation_fix` call once the enclosure contract exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:395971011845bfcccfd6d826b2a1ed071a303bc8e5e5af2edc4c69fbefe8ab82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_fix"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:c4458641c8b060b26528114553fe18979528e22b75c66d1c46b413413a087cdb",
+            "locator": {
+              "end": 840,
+              "kind": "line_range",
+              "start": 828
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The citation step when no enclosure contract exists: blocked by name, never completed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:40f88859406a353b419d0078bdb03256964176f7604dab511840235e47ae0101",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_blocked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:3cc0dcbf197200b2f595b6f3f7e2d0b00fb10fef82174b13a2c8e6ec817496c2",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 843
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The blocked entry is built from the run's own step records, so it cannot disagree with them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:f30d84e1585938f147125d1ad89021e2308c6d181efbf33be963832f779909d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "first_worktree_task_blocked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

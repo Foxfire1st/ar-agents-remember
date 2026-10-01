@@ -1,0 +1,84 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "SSE status drives working, elapsed, and stale rendering without any control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9671e660bb1b94ee1ce3ac15a5d40b4d1b0bd3ca",
+            "content": "sha256:5f2930bf7948989ff112fa71b3a24a84c162f939d03a5995219c65166886c7d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationWorkingLine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9671e660bb1b94ee1ce3ac15a5d40b4d1b0bd3ca",
+            "content": "sha256:e1e156a1858322838fff3c76d7851f09e4dfb692dbb4cd1d3e54c41fca5c0144",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stage composition selects this only for a live harness stream.\n\nAnchor: \"const { focused, focusedLive, focusedConversationLive, perSession } = data;\"; \"<ConversationWorkingLine sessionId={focused.id} />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:8f07f338f1aa64dcfab116c352f84f89b4f716f23e9466d788803fbc5d10a21f",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:79f15591aac13e045ecba7485affb19568de2a17a37875e08a7503ea5d3e6c58",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Focused tests pin cue-only behavior.\n\nAnchor: \"working-line-stop\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c763264ca0df3aec14635974eec7e96f8e2f34",
+            "content": "sha256:91f74f6b7059de075a5e5f7f6d1a8c8a1880f80ae6679f2633f4e7a265971869",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

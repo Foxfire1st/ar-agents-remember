@@ -1,0 +1,106 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/isolated.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provider setup combines isolated GrepAI and CGC settings before running workflow-local provider lifecycle operations.\n\nAnchor: `isolated_cgc_settings`, `isolated_grepai_settings`, `run_provider_setup`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:6f9db385f629df11ea28fb29cf3ba86c7e3be033e7b0342b6406bded92b9063c",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_cgc_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:86edf7de01656100a221ee675453e3faf7c65551853fecfb5efc6f0a1739738c",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_grepai_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:af8258abc42c3660a450fa042ee7e3fcd9537c70a89f3d87b5b6ee41bad390d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_provider_setup"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI database warm-start is handled by the seed module after isolated target settings exist.\n\nAnchor: `grepai_clone_bundle`, `_clone_database`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:9f1d0de1d48308573ca6b309fbe6dcb8bdd7362acb8a0a13efbfb24317151b0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_clone_bundle"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:507968aeb9a25c1226c720cb5891b4973ae48788f5aa78deaa15560d1de702a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clone_database"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Provider identity helpers derive the worktree instance id and ownership labels.\n\nAnchor: `provider_instance_id`, `provider_ownership_labels`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4925b4f0c208f138d2aa6fc1a138adadddf32e07",
+            "content": "sha256:1598160f9746046dc74f983bf8ecb6ad0a5ef20be60bb76dfdf19832b15f462c",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_instance_id"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/identity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4925b4f0c208f138d2aa6fc1a138adadddf32e07",
+            "content": "sha256:55f504c841a42b7a336bc1f8ac85ba30965b85e969efe497ddbfdeb474987e5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_ownership_labels"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

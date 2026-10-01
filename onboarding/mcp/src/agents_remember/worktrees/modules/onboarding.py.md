@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/onboarding.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/worktrees/modules/onboarding.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -222,102 +212,42 @@ an unconverted clone of ICR L47).
   Deleting `memory_quality/style/update_history/` and today's gate is left to the cutover, MIK-R37 (ruling
   18:49:50 (5)).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A tree holding the layout marker is converted. | `converted_onboarding` | mcp/src/agents_remember/worktrees/modules/onboarding.py:80-88 |
-| No route-overview stamps on a converted tree. | `refresh_route_overview_metadata_for_context`; "a converted overview carries no verification metadata" | mcp/src/agents_remember/worktrees/modules/onboarding.py:492-529 |
-| Today's missing-onboarding refusal, shared by both gates. | `_require_onboarded_sources` | mcp/src/agents_remember/worktrees/modules/onboarding.py:951-967 |
-| The memory-quality entry point, which never raises. | `onboarding_trace_gate_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:970-996 |
-| The closeout entry point, which refuses naming every missing trace. | `validate_onboarding_traces_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:999-1011 |
-| No card stamps on a converted tree. | `refresh_onboarding_metadata_for_context`; "a converted card carries no verification metadata" | mcp/src/agents_remember/worktrees/modules/onboarding.py:1033-1077 |
-| The rule both entry points evaluate. | `onboarding_trace_result` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:402-482 |
-| An unconverted leaf keeps today's gate. | `test_an_unconverted_leaf_keeps_todays_gate_unchanged` | mcp/tests/test_onboarding_trace_gate.py:750-757 |
+- A tree holding the layout marker is converted. [1]
+- No route-overview stamps on a converted tree. [2]
+- Today's missing-onboarding refusal, shared by both gates. [3]
+- The memory-quality entry point, which never raises. [4]
+- The closeout entry point, which refuses naming every missing trace. [5]
+- No card stamps on a converted tree. [6]
+- The rule both entry points evaluate. [7]
+- An unconverted leaf keeps today's gate. [8]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline. | `contract_memory_verified_commit` | mcp/src/agents_remember/worktrees/modules/onboarding.py:61-63 |
-| `_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline. | `_changed_memory_paths` | mcp/src/agents_remember/worktrees/modules/onboarding.py:66-77 |
+- `contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline. [9]
+- `_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline. [10]
 
 Current production closeout refuses missing or unsupported source sidecars before memory commit (`validate_onboarding_refresh_plan_for_context`, mcp/src/agents_remember/worktrees/modules/onboarding.py:826-864). The metadata wrapper passes the verified change and accepted no-impact set into the context refresh (`refresh_onboarding_metadata`, mcp/src/agents_remember/worktrees/modules/onboarding.py:1069-1081). External closeout refreshes entity fingerprints before memory-content publication (`_refresh_external_memory`, mcp/src/agents_remember/worktrees/modules/closeout_external.py:121-147); the downstream cache is derived from attributed Git history and is not a body-review baseline. These contracts are source-backed; the removed support slices are not current test evidence.
 
 
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`) | `classify_entity_fingerprint` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:337-395 |
-| Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:184-235 |
+- Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`) [11]
+- Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) [12]
 
 | Sidecar and route-overview attestations are checked independently and aggregated before refresh publication. (`validate_memory_refresh_attestations`) | L867-L942 | [mcp/src/agents_remember/worktrees/modules/onboarding.py](mcp/src/agents_remember/worktrees/modules/onboarding.py) |
 
-## Cross-Repo References
+### Cross-Repo References
 
 Closeout can coordinate code and external-memory worktrees, but no external
 implementation governs this module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `mcp/tests/test_onboarding_trace_gate.py`, so the citation row into it was re-pointed by the installed fixer (run once; its generated bullet is kept, since no claim was reworded); the same run normalised the `worktrees/modules/onboarding_trace.py` row, a file L09 did not change. No verification stamp was advanced.
-- 2026-09-30T18:02:04+00:00: Generated citation repair: `test_an_unconverted_leaf_keeps_todays_gate_unchanged` repointed to mcp/tests/test_onboarding_trace_gate.py:750-757. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T18:58:42+00:00: Generated citation repair: `contract_memory_verified_commit` repointed to mcp/src/agents_remember/worktrees/modules/onboarding.py:61-63. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 The Converted-Tree Dispatch (MIK-R30)" (`converted_onboarding`, the shared `_require_onboarded_sources`, the two new entry points, and the converted-tree early returns of both metadata refreshers) and a closing Logic paragraph, recording architect rulings 2026-09-29T18:49:50 (1: only a counted change or a row on converted trees; 5: deletion left to MIK-R37). Today's gate on unconverted trees is unchanged. Rows below the inserted functions were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:337-343 to mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:337-342, the range the cited construct now occupies
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=f8508321721044ce85bb464c13146d4ff9a93843f25c858575bda1d3bad10c1a. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-
-- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: documented the shared sidecar and route-overview attestation composition used by curator preparation and closeout; verification metadata remains closeout-owned.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `classify_sidecar_onboarding_units`; `classify_entity_fingerprint` repointed to mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py:289-342; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:337-395. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated four forcing tests and replaced one-line anchors with complete behavioral evidence. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-
-- 2026-08-29T18:29+02:00 — Routed candidate-bound no-content/no-route decisions through the body
-  validation and refresh boundaries. Only unchanged stale content is eligible; untraced edits
-  remain fail-closed.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
-
-- 2026-08-12T22:45+02:00 — 260731-EFA-L23 curator follow-up: documented the final citation-only distinction for task-edited route overviews. Complete generated `path:line[-line]` coordinate shifts may pass without fabricated history, while prose, anchor, path, table-shape, metadata-only, and other untraced changes remain fail-closed. Verification remains closeout-owned.
-- 2026-08-12T22:36+02:00 — 260731-EFA-L23 pre-commit type-check follow-up: aligned `_route_overview_bucket`'s source docstring with its typed `ancestor` / `source` / `task-edited` evidence contract and the task-edited citation-coordinate-only exception. Runtime behavior is unchanged. Verification remains closeout-owned.
-- 2026-08-12T22:25+02:00 — 260731-EFA-L23 curator follow-up: documented baseline-relative task-edited route inclusion and its fail-closed body/history classification. This closes the synced-source closeout deadlock without allowing metadata-only or untraced overview refreshes. Verification remains closeout-owned.
-- 2026-08-05T23:20+02:00 — 260731-EFA-L16 curator: recorded `_refresh_regenerated_documents` — the metadata refresh now also stamps onboarding documents the task touched (memory worktree diff) that carry verification metadata, so citations the fixer regenerated against the working tree do not stay pinned to a commit whose constructs no longer exist; route overviews and entity catalogs keep their own refresh passes. Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-04T18:47+02:00 — 260731-EFA-L6 S18-B17 curator: corrected the four drifted test ranges
-  in the worktree-tests row (long-sidecar 1573-1592, metadata refresh 1631-1673, missing-sidecar
-  blocking 1674-1694, entity fingerprint 2041-2094) and narrowed the claim: the "explicit
-  initialized-memory storage authority" sub-claim is evidenced by none of the four cited tests, so
-  it was dropped rather than pointed at an unrelated route-index test.
-- 2026-08-03T10:55+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 7 assigned citation findings (3 missing anchors and 4 malformed sources); final scoped check is clean.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0913` armed with no
-  exemptions): `classify_route_overview_updates`'s body was extracted into `_overview_revision`,
-  `_governing_overview_bucket` and `_route_overview_bucket`, leaving the public function as the
-  loop that appends each returned bucket; and `refresh_onboarding_metadata`,
-  `refresh_onboarding_metadata_for_context` and `refresh_route_overview_metadata_for_context` were
-  re-signed onto `VerifiedChange`. Classification outcomes and stamped metadata are unchanged.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: route-index preview and apply now pass the resolved
-  `context.storage` authority explicitly into deterministic generation.
-- 2026-06-12T19:06+02:00 — Issue #83: two-tier plan split via `working_paths` (blocking `missing`/`unsupported` scoped to working paths, committed-range gaps collected as non-blocking `unonboarded`), body gates re-baselined on `contract_memory_verified_commit` via `commit_text_or_none` with `_changed_memory_paths` membership, and `_joined_sample` capping gate error joins.
-- 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added the route-overview body gate (`_nearest_governing_route`, `classify_route_overview_updates`, `require_updated_route_overview_content` with the `No route impact:` marker) wired into `validate_route_overview_refresh_plan_for_context`; ancestor matches report as `stamped_without_body_review` instead of failing.
-- 2026-06-10T04:47+02:00 — Issue #56 sub-task 1: moved shared metadata/route helpers to `kernel/onboarding_doc.py` (facade re-exports kept) and rebuilt the content gate as the four-case body/history classification (`classify_sidecar_updates` + `require_updated_sidecar_content` returning marker-attested paths): untraced body edits and unmarked history-only edits now fail; `No content impact:` entries pass and are surfaced.
-- 2026-06-02T16:24+02:00: User-facing closeout content-gate error messages now say "Run the `c-05-create-or-update-onboarding-files` skill" (was "Run C-05 create-or-update-onboarding-files"). Reference-style normalization; behavior unchanged.
-- 2026-05-31T12:50+02:00 — `onboarding_refresh_plan_for_context` now gates the sidecar-storage check on the boolean `resolver.is_sidecar_storage(storage)` predicate, replacing the label-returning `resolver.sidecar_storage_label(storage)`; behavior-preserving (truthiness unchanged). Added a Code Commentary note naming the predicate (1.0.0 review remediation).
-- 2026-05-29T18:35+02:00: Gave the refresh-plan producers precise `TypedDict` return types and removed the now-redundant `isinstance` guards in `require_updated_sidecar_content`; behavior-preserving (commits `0549b28`, `e3dab63`).
-- 2026-05-29T07:36+02:00: Added `require_updated_sidecar_content` and wired it into `validate_onboarding_refresh_plan_for_context` (direct and worktree) so a changed source file with an unmodified sidecar body fails closeout instead of receiving a metadata-only verification refresh.
-- 2026-05-28T15:24+02:00: Updated after closeout began refreshing route overview metadata and generated route indexes before memory quality and memory commits. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-25T20:41+02:00: Created during worktree manager module extraction.
+No additional cross-repository evidence applies.

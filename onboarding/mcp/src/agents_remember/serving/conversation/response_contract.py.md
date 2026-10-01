@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/response_contract.py
 
-| Field                  | Value                                                                |
-| ---------------------- | -------------------------------------------------------------------- |
-| repository             | agents-remember                                                      |
-| path                   | `mcp/src/agents_remember/serving/conversation/response_contract.py`  |
-| doc_type               | `file-level-onboarding`                                              |
-| lastUpdated            | 2026-09-06T21:54:05+00:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                           |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                                        |
-
 ## Governing Overview
 
 [Structured conversation contract overview](overview.md)
@@ -97,57 +87,31 @@ table and its source cannot drift silently.
 
 None specific to this module.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live
 domain-documentation pass was available for this internal wire contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each table here is a transcription of one real mapper in a sibling route module, and the models
 it reuses are owned by the parent contract module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The strict base and the shared refusal models this module imports and extends. | `WireResponse`; `StatusRefusal`; `CursorRefusal`; `CapabilityUnavailableRefusal`; `BridgeEpochMismatchRefusal` | mcp/src/agents_remember/serving/response_contract.py:88-100; mcp/src/agents_remember/serving/response_contract.py:111-115; mcp/src/agents_remember/serving/response_contract.py:152-158; mcp/src/agents_remember/serving/response_contract.py:170-175; mcp/src/agents_remember/serving/response_contract.py:178-183 |
-| The wire models the 25 routes already dumped, reused here as declarations. | "class AttachmentOperationProjection(WireModel):"; "class InterruptOperation(WireModel):"; "class OpenConversationOperation(WireModel):"; "class WithdrawnQueueResponse(WireModel):"; "class FailedWithdrawalResponse(WireModel):" | mcp/src/agents_remember/models/conversations/attachments.py:34-34; mcp/src/agents_remember/models/conversations/interrupts.py:12-12; mcp/src/agents_remember/models/conversations/opening.py:16-16; mcp/src/agents_remember/models/conversations/withdrawals.py:43-43; mcp/src/agents_remember/models/conversations/withdrawals.py:53-53 |
-| The one mapper `CONTROL_RESPONSES` transcribes, and the submit route whose 422 unions the answer with the shared refusal. | `_map_typed_error`; `conversation_submit` | mcp/src/agents_remember/serving/conversation/control/api.py:124-141; mcp/src/agents_remember/serving/conversation/control/api.py:635-682 |
-| The cursor refusals `CONVERSATION_RESPONSES` adds for the active routes. | `_map_typed_error`; `_resume_cursor` | mcp/src/agents_remember/serving/conversation/active/api.py:77-99; mcp/src/agents_remember/serving/conversation/active/api.py:111-123 |
-| The library error table `LIBRARY_RESPONSES` transcribes and the total outcome map `OPEN_OUTCOME_RESPONSES` pairs with. | `_error_response`; `_OPEN_STATUS_BY_OUTCOME` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:271-286 |
-| The status pickers whose non-200 answers carry the operation body rather than a refusal. | `interrupt_http_status` | mcp/src/agents_remember/serving/conversation/control/operations.py:552-561 |
-| Current production declaration; the removed broad suite supplies no current execution proof. | `INTERRUPT_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:146-159 |
+- The strict base and the shared refusal models this module imports and extends. [1]
+- The wire models the 25 routes already dumped, reused here as declarations. [2]
+- The one mapper `CONTROL_RESPONSES` transcribes, and the submit route whose 422 unions the answer with the shared refusal. [3]
+- The cursor refusals `CONVERSATION_RESPONSES` adds for the active routes. [4]
+- The library error table `LIBRARY_RESPONSES` transcribes and the total outcome map `OPEN_OUTCOME_RESPONSES` pairs with. [5]
+- The status pickers whose non-200 answers carry the operation body rather than a refusal. [6]
+- Current production declaration; the removed broad suite supplies no current execution proof. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is declared here; these are bodies this repository's own
 conversation routes emit.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-
-## Update History
-
-- 2026-09-06T21:54:05+00:00 — Preserved response-shape and validation boundaries while removing active enforcement claims for the retired conformance suite. Source declarations were inspected; no replacement coverage is asserted.
-
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 5 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 116, 118; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 1 repository-reference citation and normalized 2 prose citations (1/1 anchored and sourced; scoped citation check clean).
-
-- 2026-08-01T08:18+02:00 — 260731-EFA-L4 curator: created for the new
-  `serving/conversation/response_contract.py`. Documented the three route-assembled shapes that
-  had no model (`StagedAttachments`, `ConversationSubmitted`, `AgentHistoryHydrated`), the
-  `WithdrawQueueAnswer` union, and the four shared `responses={...}` tables with the mapper each
-  transcribes. Recorded the dict-merge rule that makes every outcome table union in the shared
-  table's refusal model for overlapping statuses — `{**LIBRARY_RESPONSES,
-  **OPEN_OUTCOME_RESPONSES}` deleted refusal models on three statuses across the open trio, and
-  `/conversation/submit` had the same defect — and the package-boundary import-order reason this
-  module is split from `serving/response_contract.py`. Verification metadata is a placeholder
-  pinned to the leaf base `abc7cbcc`; closeout stamps the real commit.
+No meaningful cross-repo references found.

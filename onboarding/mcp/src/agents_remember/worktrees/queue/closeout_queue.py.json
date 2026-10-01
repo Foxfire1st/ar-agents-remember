@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The facade serves status and idempotent rebuild.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf06af01bc7379fa66b715b67badc453af5a0912",
+            "content": "sha256:267b441fd5f09e3a13506ff333b9abd53f68f13094b57f0f9578115402570c7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_queue_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Claim admission requires the exact first-ready waiting generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf06af01bc7379fa66b715b67badc453af5a0912",
+            "content": "sha256:da43490f95322a736f44e06916fbc023898e5f90231f2d7d85dbc2b864bb5cfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_first_ready_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

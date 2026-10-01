@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/models/conversations/capabilities.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Capability state requires coherent evidence; supported/partial states require runtime-fixture evidence and version metadata alone does not demote capability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c849c256e95887423d0c54ae9b3b657666fb0be",
+            "content": "sha256:686dbdeb7f7a8f8f787b433ff79dff88a3fcf5cdd1cdebb7416bb334c56541ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureCapability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

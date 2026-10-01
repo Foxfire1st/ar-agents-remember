@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_sprint_role_seats.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Same role on different sprints never crosses repository scope",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1362d1cf4e9f63303a580a5607adc6e0063169bc",
+            "content": "sha256:e49bb403697f98cf9dec2e5d9033aa7fa54a3eaee68adec59e999f9f51f0a232",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_same_role_on_different_sprints_never_crosses_repository_scope"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Duplicate current occupants fail closed",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1362d1cf4e9f63303a580a5607adc6e0063169bc",
+            "content": "sha256:ed739f6a7fd8534e5b19075c95e24ad593bb46a1d55b11be64a0d41de885f89e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_current_occupants_fail_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Role altitude mismatch fails before any occupant lookup",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1362d1cf4e9f63303a580a5607adc6e0063169bc",
+            "content": "sha256:8d608f8e0d86171fd68bd811aa8916db40829d2fd83fc243b4e6b48f1c487cf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_role_altitude_mismatch_fails_before_any_occupant_lookup"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Reviewer parent is exact for each review seam",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1362d1cf4e9f63303a580a5607adc6e0063169bc",
+            "content": "sha256:c154338c1863b333b174ee0b2cbe205c18d001a782c668931bd8945bfa9a15fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reviewer_parent_is_exact_for_each_review_seam"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

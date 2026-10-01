@@ -1,0 +1,641 @@
+{
+  "path": "mcp/tests/test_historical_committed_leaf_review.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the defect it measures, the six load-bearing properties, and that every case reads the production composition rather than a prebuilt payload.**\n\nAnchor: \"candidate_not_live\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:82bb46566607aa3b9789686502991755d7ae98ae8ca7ec6f349e4a010c83a2a5",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The restart case: the same bytes from a fresh interpreter that knows only the coordination root.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:8001c57a4930dce2aecdbaac714227292f592d1be3b5069945943e011e282e23",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fresh_process_reconstructs_the_same_recorded_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The contamination case: bytes, binding and provenance unchanged after a later task lands, and the later path absent from the inventory.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:9f9556aef30c24bdaf3120e272c4911bde085b4bf45950b30a1a698049f75de7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_later_task_does_not_contaminate_the_recorded_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The pre-feature case: the recorded source range exposed with the absence of an intent generation stated as a typed absence.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:7a788e1a93fb5c7b9455048c6e7b6c9bfc42b75fdc1dfa0a6635b7c936a669ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pre_feature_leaf_exposes_its_recorded_source_range_and_its_absence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The F1 case: a generation that recorded no intent half states that absence as its own fact on the pane and on both refusals, and never as content that does not resolve.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:3733c5fbbee015ddca5884aed69771d46c2e92079773131f838a15456c6e4bb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_generation_that_recorded_no_intent_half_states_that_absence_as_its_own_fact"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The F2 case: a recorded range the repository cannot resolve is `candidate_unresolved`, not the intake defect's code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:e37c7b836a381c1b6dd8682b10d8b43669068d7c98993d796f62dc9840881f20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_range_the_repository_cannot_resolve_is_unresolved_not_not_live"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The supporting measurement that a reclaimed object really is gone, so the unavailable-channel case deletes through R11's own reclamation owner rather than behind it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:b06a31fda4e519f18a49ee6a0701f7516d7029df00916af1d9b6b4125aa0e595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_object_present"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:2d02bfda2b3bbcfa8f3de7fae05a367ca4045f9c08ff00232765e5f6be676e2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_comparison_snapshots"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:8ea7439e1b26cd6454e4e363a2f9d6d95e09d045ca2ab19e61d4b3a4d6792f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_comparison_code_object"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The per-channel failure case: the affected channel unavailable with the record's own deletion statement, and nothing substituted.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:c0c8ec116ba64dd30bcbaf241987f6d3c6e7784e8d828e5d365cbdaf4c257c2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_expected_content_that_no_longer_resolves_is_unavailable_not_substituted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The one state in which the intake defect's code is still the honest answer.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:d7dd58e696f8c8267a37bdbda5677c671b5bf181457eeb9b124be5ed562e387b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closed_leaf_with_nothing_recorded_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The declared history tokens the cases assert, read from the resolution module's own vocabulary.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
+            "content": "sha256:2c60f2206692a6fc6bf1b6350c4f004a2e0da19b82fb8cb67a5665df39ad10c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_RECORDED_COMPARISON"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
+            "content": "sha256:69b11d7d16505cd8244b9dfcfe4783d23885eb5caa2d42399f305d6aec473155",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_RECORDED_SOURCE_RANGE"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
+            "content": "sha256:3d42ec32024110404a2ac9b2c8331b0496f4f4e4151412f39f838b2b9e50ff91",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_COMPARISON_PREFIX"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
+            "content": "sha256:497f17a0c8af1f13d97db3a588f94609c7619a73870cc464bfc1be59f794e7b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_INTENT_PREFIX"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
+            "content": "sha256:59fb428affbca64fc9060ea9816a369cf597ab6b4d9c5453898b0b097b12641c",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_SOURCE_PREFIX"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
+            "content": "sha256:c709b93497d2e0ae97b7b6fbf1c40332d82602efb1d862e41a8749ffd45b6e17",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClosedLeafReview"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.**\n\nAnchor: \"mcp/tests/test_historical_committed_leaf_review.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74055a1f0b10c28a31331400849d3268f0ea09fe",
+            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1645304df02f5faac3039ae5a23a3046666de9f4",
+            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
+            "locator": {
+              "end": 739,
+              "kind": "line_range",
+              "start": 739
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1645304df02f5faac3039ae5a23a3046666de9f4",
+            "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
+            "locator": {
+              "end": 1459,
+              "kind": "line_range",
+              "start": 1459
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1645304df02f5faac3039ae5a23a3046666de9f4",
+            "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
+            "locator": {
+              "end": 1507,
+              "kind": "line_range",
+              "start": 1507
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route every case drives, and the lane the module belongs to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:987347ddd334ec49e6950bf148954565eed37fb27925f8622d425067b7e0c60d",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_ROUTE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The re-pin that keeps the catalog identity of the lifecycle TOML deliberate rather than incidental.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fbd124e5510b62bd23790c62de89f122bdeb7de",
+            "content": "sha256:c66cc42f3fbeb76cabc16cba8fee5064737ad427cc9be31f6d7fd3b23d742599",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fbd124e5510b62bd23790c62de89f122bdeb7de",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fbd124e5510b62bd23790c62de89f122bdeb7de",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The child that reopens the same comparison in an interpreter sharing no state with the parent.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:fd9318c757da39384c8f188d10d0a6fe1f02bd773e55ac4ebbd4fa169cdbe983",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CHILD_SERVE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The R01 enclosure fixture this module extends, one fresh enclosure per case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:4570baa8ba0d5f075c1be9729e6fea4879022b115a1ca9afa17ed0a94941c14d",
+            "locator": {
+              "kind": "symbol",
+              "name": "closed_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:0c798a95c1ada8c9446d651225169cbdde97b5be1b2d1607112c87ae41550075",
+            "locator": {
+              "kind": "symbol",
+              "name": "EndpointFixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The production composition the cases read through: the real route, the real collaborators, the real record loader.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:9b691422d43900647f02a9292c8f6affb31309ae4a43eea7f2431e7cb5802328",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serve"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:507ab34ae5aa4943f6a46f78b0488bfb1adcac6344d89391e17169bd5ba42592",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_params"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:fe3d9fcebaa8c5f1ba9461995fb95e055116cb475e43fbdf67198f81dd04c4eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_params"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:d59bd6c773d08c633632526be47583b22c2a06c48ce1bec67ff9a9728c1f8748",
+            "locator": {
+              "kind": "symbol",
+              "name": "_body"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The two owners the fixture drives: freezing a real comparison and reading the owner's own payload.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:f5b0ced7bf181055afd8ae473f22a1374204256f06896524102178c85e4b4d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "_freeze"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:9a08ef9b85c4a337e6e94b0eb9d2696b97b41564a071b4624ff45101d5d974ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_composition"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9baa903836c03eec271bb657e854b9c5a724318a",
+            "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_review_comparison"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The restart leg: a descriptor of the four roots alone, a child interpreter, and the served bytes written out for the parent to compare.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:f613e3df42b3c5939df7cdb6a9b59015f68181b13a385be6fdca19f915bf44d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_served_in_a_new_process"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52f29eab770cdebcf52ef58db3e6c22a4e62e10b",
+            "content": "sha256:4bc2d9d2399cbc94111d16559f644d01853298eff8c9daf74279302549f0fd17",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:99fc4ec2d3677253837aad7a34cb07b174c1c9f64b90e97a401c506ba1a03ad0",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_review_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:52de6eed8cb2b8ec80e9892c810136759f2e973107e3c76e4ea4fa5ef478a414",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:d62a6010ec850e9f46e4306eac5080c171e5a35ebabf06453410a9c03ba39404",
+            "locator": {
+              "end": 624,
+              "kind": "line_range",
+              "start": 542
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The later-task leg: a real commit on the repository, and the leaf's protected source branch really moved to it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:69032d5a18ed02045bea65a345651c5a47d22da3712d06b76e084d2c5df071ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_land_a_later_task"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:1d47305963b892aff7fc6bcbff07feee2dd67172fe047a00ebfcf46c9a9fc56d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LATER_TASK_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:98f1784eadd62f8a7469062008c1a78c390ed25292b276f273596c7b9dd0dd36",
+            "locator": {
+              "kind": "symbol",
+              "name": "LATER_TASK_TEXT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The byte-for-byte case: the live frozen read and the cleaned read served as bytes and compared.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae5bf9a1c9e82543ffd351a303a28e1c3bd0a6a9",
+            "content": "sha256:e54d72139fce7a83967d0759c5db97ac77303a78ea5470b6bcd9e8c17633d9c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

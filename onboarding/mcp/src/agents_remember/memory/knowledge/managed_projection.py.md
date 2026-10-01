@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/managed_projection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/managed_projection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -180,15 +170,15 @@ than restates.
   become a second, unrecorded authority, and this module reads and writes nothing besides the
   destination and the artifacts it is handed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This module is one half of a pair: the vocabulary of the projection — the plan, the outputs, the
 manifest, the refusal codes, and the two confinement and collision predicates — lives in
@@ -196,37 +186,29 @@ manifest, the refusal codes, and the two confinement and collision predicates �
 rows below cite the behaviour in this file, the declarations it consumes, and the shared base whose
 frozen, forbidding configuration every shape in both modules derives from.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the eight vault-safety clauses, including that the destination is never enumerated, that confinement is resolved, and that no recursive clean or rmtree exists here. | `rmtree`; `_discard_staging` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:1-37; mcp/src/agents_remember/memory/knowledge/managed_projection.py:712-730 |
-| The four public names this module adds: the writer, the hook record, the refusal report and the resolved-confinement helper. | `__all__` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:69-74 |
-| The one publication seam: the default no-op hook and the frozen hook record a test interrupts publication with. | `_no_hook`; `ProjectionHooks` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:77-85 |
-| The report of a projection that wrote nothing, naming the destination root and carrying no manifest generation. | `refusal_report` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:88-97 |
-| Resolved confinement: the parent's real path and the joined path's own real path must both be inside the resolved root. | `resolve_inside_destination` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:100-123 |
-| The syntactic half of confinement and the collision predicate, both consumed from the vocabulary module rather than restated. | `require_confined_relative_path`; `detect_destination_collisions` | mcp/src/agents_remember/models/knowledge/projection_manifest.py:491-516; mcp/src/agents_remember/models/knowledge/projection_manifest.py:448-488 |
-| The staging directory's declared name, and the single staged-artifact write that creates only that artifact's own parents. | `STAGING_DIRECTORY_NAME`; `_write_staged` | mcp/src/agents_remember/models/knowledge/projection_manifest.py:92-94; mcp/src/agents_remember/memory/knowledge/managed_projection.py:130-136 |
-| The destination as one computed description, and the five-way observation each recorded path is classified into. | `_DestinationState`; `_Observation`; `_observe` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:146-159; mcp/src/agents_remember/memory/knowledge/managed_projection.py:163-178; mcp/src/agents_remember/memory/knowledge/managed_projection.py:181-200 |
-| The prior manifest as the only ownership authority, with its unreadable and symlinked cases refused rather than treated as absent. | `_read_prior_manifest`; `MANIFEST_UNREADABLE`; `ProjectionRefusal` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:203-257; mcp/src/agents_remember/models/knowledge/projection_manifest.py:137-151 |
-| The writer's entry point and its guard order — destination, manifest, collision, escape — before anything is staged. | `ManagedProjectionWriter`; `write`; `_require_destination` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:260-288; mcp/src/agents_remember/memory/knowledge/managed_projection.py:292-323 |
-| The collision refusal: both paths, both identities and the canonical form they share, with no disambiguating suffix invented. | `_first_collision`; `Collision` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:325-347; mcp/src/agents_remember/models/knowledge/projection_manifest.py:404-413 |
-| The escape refusal, where the syntactic refusal is re-stamped with the same resolved root the resolving half names. | `_first_escape`; `DESTINATION_ESCAPE` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:349-379; mcp/src/agents_remember/models/knowledge/projection_manifest.py:105-123 |
-| One call's whole order: partition, stage, publish, retire, derive the next manifest, publish it. | `_stage_and_publish`; `_next_manifest`; `_publish_manifest` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:383-432; mcp/src/agents_remember/memory/knowledge/managed_projection.py:744-779; mcp/src/agents_remember/memory/knowledge/managed_projection.py:782-790 |
-| The partition that preserves an externally edited file by kind, and the per-path authorization that is the only way past it. | `_partition`; `authorized_overwrites`; `ManagedOutput` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:434-478; mcp/src/agents_remember/models/knowledge/projection_manifest.py:197-208; mcp/src/agents_remember/models/knowledge/projection_manifest.py:211-229 |
-| A link in the way of a write is reported for that one output, and the same rule is asked from both the staging and the deletion side. | `_stage`; `_crosses_a_link` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:480-506; mcp/src/agents_remember/memory/knowledge/managed_projection.py:682-697 |
-| One rename per output, and the manifest's canonical bytes written through the same staging discipline. | `_publish`; `_manifest_bytes` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:508-548; mcp/src/agents_remember/memory/knowledge/managed_projection.py:139-143 |
-| The deletion rule's both halves, and the retention that keeps a prior generation's whole entry so a retained path never becomes unowned. | `_retire`; `unchanged_from`; `_remove_unchanged`; `_carried_retentions`; `RetainedOutput` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:550-622; mcp/src/agents_remember/memory/knowledge/managed_projection.py:163-178; mcp/src/agents_remember/memory/knowledge/managed_projection.py:700-709; mcp/src/agents_remember/memory/knowledge/managed_projection.py:625-646; mcp/src/agents_remember/models/knowledge/projection_manifest.py:232-249 |
-| The frozen, forbidding base every shape in both modules derives from, with the bounded-length constants the fields reuse. | `KnowledgeModel`; `PROSE_MAX_LENGTH`; `REFERENCE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-37 |
+- The module's own statement of the eight vault-safety clauses, including that the destination is never enumerated, that confinement is resolved, and that no recursive clean or rmtree exists here. [1]
+- The four public names this module adds: the writer, the hook record, the refusal report and the resolved-confinement helper. [2]
+- The one publication seam: the default no-op hook and the frozen hook record a test interrupts publication with. [3]
+- The report of a projection that wrote nothing, naming the destination root and carrying no manifest generation. [4]
+- Resolved confinement: the parent's real path and the joined path's own real path must both be inside the resolved root. [5]
+- The syntactic half of confinement and the collision predicate, both consumed from the vocabulary module rather than restated. [6]
+- The staging directory's declared name, and the single staged-artifact write that creates only that artifact's own parents. [7]
+- The destination as one computed description, and the five-way observation each recorded path is classified into. [8]
+- The prior manifest as the only ownership authority, with its unreadable and symlinked cases refused rather than treated as absent. [9]
+- The writer's entry point and its guard order — destination, manifest, collision, escape — before anything is staged. [10]
+- The collision refusal: both paths, both identities and the canonical form they share, with no disambiguating suffix invented. [11]
+- The escape refusal, where the syntactic refusal is re-stamped with the same resolved root the resolving half names. [12]
+- One call's whole order: partition, stage, publish, retire, derive the next manifest, publish it. [13]
+- The partition that preserves an externally edited file by kind, and the per-path authorization that is the only way past it. [14]
+- A link in the way of a write is reported for that one output, and the same rule is asked from both the staging and the deletion side. [15]
+- One rename per output, and the manifest's canonical bytes written through the same staging discipline. [16]
+- The deletion rule's both halves, and the retention that keeps a prior generation's whole entry so a retained path never becomes unowned. [17]
+- The frozen, forbidding base every shape in both modules derives from, with the bounded-length constants the fields reuse. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The projection writes one local
 destination the caller configured, every identity it records is a store-local stable identity or a
 content digest, and nothing here reads another repository, another dataset or a remote.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the managed projection writer. It records the eight vault-safety clauses as behaviours rather than intentions — the manifest as the only ownership authority with no destination enumeration, confinement by real-path resolution, collisions refused before either artifact is written, an escaping link never followed for a write or a delete, publication as a stage-then-rename, a deletion requiring both halves of the unchanged test, no recursive clean and no `rmtree` anywhere, and an externally edited file reported by kind and preserved behind a recorded per-path authorization — plus the `ProjectionHooks.before_publish` seam that makes checkpoint 4 inducible without a sleep, the `RetainedOutput.recorded` carry, `_carried_retentions`, `_next_manifest` and `refusal_report`. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

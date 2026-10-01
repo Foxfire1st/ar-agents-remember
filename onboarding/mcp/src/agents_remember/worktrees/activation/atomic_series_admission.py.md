@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T19:16:43+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [activation overview](overview.md)
@@ -75,38 +65,23 @@ repository and exact contract path needed for a subsequent read-only `worktree_s
 The source is an uncommitted candidate. Closeout owns the eventual commit-derived verification
 stamp; this sidecar does not claim acceptance or Gate 5 evidence.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- Request fields define the optional contract, requested identity, activation observation, and edge-evidence inputs. [1]
+- The public projection assembles requested identity, contract fingerprint, activation, retry, and status evidence while bounding its public detail. [2]
+- Requested identity resolves the canonical master reference and the exact contract path with no source-pair fallback. [3]
+- The activation projection retains observed state, contract fingerprint, bounded detail, and exact selected identity. [4]
+- The status action keeps the repository and exact contract path for a read-only `worktree_status` call. [5]
+- Retry guidance distinguishes vacant, unreadable, and general contract-scoped correction states. [6]
+- The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field. [7]
+- Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail. [8]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Request fields define the optional contract, requested identity, activation observation, and edge-evidence inputs. | `AtomicSeriesAdmissionRequest` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:18-30 |
-| The public projection assembles requested identity, contract fingerprint, activation, retry, and status evidence while bounding its public detail. | `atomic_series_admission_projection` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
-| Requested identity resolves the canonical master reference and the exact contract path with no source-pair fallback. | `_admission_requested_identity` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:77-89 |
-| The activation projection retains observed state, contract fingerprint, bounded detail, and exact selected identity. | `_admission_activation` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:92-116 |
-| The status action keeps the repository and exact contract path for a read-only `worktree_status` call. | `_admission_status_action` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:119-137 |
-| Retry guidance distinguishes vacant, unreadable, and general contract-scoped correction states. | `_admission_retry_precondition` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:140-158 |
-| The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field. | "class AtomicSeriesAdmission(StrictResponseModel):"; "class AtomicSeriesAdmissionActivation(StrictResponseModel):" | mcp/src/agents_remember/models/worktree.py:283-306; mcp/src/agents_remember/models/worktree.py:258-272 |
-| Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail. | "def test_registered_sync_refusal_addresses_only_this_contracts_own_state(self) -> None:"; "def test_registered_status_and_sync_bound_oversized_unreadable_detail(self) -> None:" | mcp/tests/test_activation_admission_registered.py:178-222; mcp/tests/test_activation_admission_registered.py:268-321 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is configured for this memory root.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-20T07:21+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **citation ranges re-derived by reading the cited construct, not by arithmetic on the old numbers.** This leaf's own source edits grew the file this card cites, so the row(s) naming `"class AtomicSeriesAdmission(StrictResponseModel):"` and `"class AtomicSeriesAdmissionActivation(StrictResponseModel):"` no longer held their anchor in the cited range. Each was re-read in the code worktree at the construct the claim names and re-pointed to that construct's own current declaration extent (`mcp/src/agents_remember/models/worktree.py:283-306` and `mcp/src/agents_remember/models/worktree.py:258-272`). No claim wording, anchor or row was changed, added or deleted; no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T01:06+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range). The row pairs the two response models; its first citation `mcp/src/agents_remember/models/worktree.py:235-235` was already correct for `AtomicSeriesAdmission`, while its second, `:180-192`, pointed at the activation-fact block instead of `AtomicSeriesAdmissionActivation`, so it now reads `:210-222`, that class's own extent. No claim wording or anchor was changed, no other range was touched, and no verification stamp was advanced.
-- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 1 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `class AtomicSeriesAdmission(StrictResponseModel):`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
-- 2026-09-13T14:19:25+02:00 — Contract-scoped admission: rewrote Purpose/Logic/Conventions/Invariants so the projection emits `contractFingerprint` plus activation, retry precondition, and status action, removed the classification, blocking, and source-pair keys and the whole cross-contract blocker story, and recorded the contract-scoped vacant/unreadable/general retry wording. Citations rebound to the frozen source; verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound the public admission `detail` field to the shared 8192-character diagnostic bound, preserving oversized parser-error evidence through structured refusal output without mutation or acceptance claim.
-- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation reconciled admission unreadable-detail projection with the shared bounded diagnostic helper. Concrete validation evidence remains available under the public response limit, with no authority mutation or acceptance claim; verification remains closeout-owned.
-- 2026-09-08T17:36:08+02:00 — CCR-L38 source-grounded preparation added the one-to-one sidecar for the current `atomic_series_admission.py` diagnostic projection. The source remains uncommitted; the base metadata is retained and closeout owns the eventual verification stamp. No acceptance or Gate 5 claim.

@@ -1,0 +1,235 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**One recorded claim at one measured path, with its resolution and whether it resolved — stale and unresolved mappings carried, never promoted.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:269701f65d014547af84790aaba169714e1a6112a7dc630400642270c0640243",
+            "locator": {
+              "kind": "symbol",
+              "name": "MappingFact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The value the partition builds, with its disjoint-plus-exhaustive validator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:2a7a4601f743cf6c9dae592d96253b497c6c143b4c120508d7f7dc09b7ae86d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAttribution"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**One bound snapshot's contribution and how completely it was inspected.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:13f17f1124b00df14b0b372e8f3e0f3e22209b05c56ff14ae5ac926ec7e796fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideInspection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The reader seam: which registered mappings each bound snapshot holds at the measured paths.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:99fb2f447a3c40fe101a918d49bed1e9523aab7622f57cbb13d698f453fc233f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionReader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The partition of a measurement never made: no total, and the reason it is not zero.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:3f071e6b8eb62175c43836c799ef16393b5dbc9292a6c9bb9ba64afb87d7cf80",
+            "locator": {
+              "kind": "symbol",
+              "name": "unavailable_attribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The whole accounting in four steps: measured denominator, resolved-attribution, licensed absence, subject link.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:8603ed6d34e8fe4107d63930ff1c406caa646f8fdf11093049af969f2f8baf9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "partition_attribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The licensing table and the one predicate behind both the bucket and the exclusive-outside label.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:2ff3a80defcdbb818d4f9cfa3ea2fc6ab9ef565cbf545304e6513522cc9977a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LICENSED_ABSENCE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:6bc897bac3e214079b7f3fe2bcc2cd36a274e79098879a3af5c9994687b39fd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_licenses_absence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:b3e1bf008fc491cc6ad79df0f47f7105c276a5706bfe16ebbfb60ae8b78ff7af",
+            "locator": {
+              "kind": "symbol",
+              "name": "licenses_absence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**One path's bucket, its link, its mapped sides and the fact that decided it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:655a5922d21a02b13acff526a2e0bcfd72f89ac62cf23ae7e2e0f6c8804c2f2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_path_attribution"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:e108e3d098d515bc158d1bfb2ad6ae678131de2d29f5098eed53dbed2aa09531",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:948cdeb3737042aab7df8c24ec0a57dff0480a700082c13c1a21e702c4a3b05f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mapped_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The incomplete-partition label and the scope sentence that states a partial denominator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:2d9dc37cce04c028abd655ab3cb8823dd13e483870b5c7d84464b871f954288c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_incomplete_suffix"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:8206859b9d87960516b98bc1907e31eeedb3d69e077d914cda4aea6f52e5e272",
+            "locator": {
+              "kind": "symbol",
+              "name": "_partition_detail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:2c863af1c3f6bb697a1748f772229b781308040fdff0c8eb6375c08daabed756",
+            "locator": {
+              "kind": "symbol",
+              "name": "_denominator_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The single caller that supplies the observation, the mappings and the sides.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:ed2b1a340d82597a734d98a463b25e25eece6da613211d3401da547233e185bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_attribution"
+            },
+            "path": "mcp/src/agents_remember/application/review_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

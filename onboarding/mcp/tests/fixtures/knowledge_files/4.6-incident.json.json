@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/fixtures/knowledge_files/4.6-incident.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture names its schema.\n\nAnchor: \"ar-incident/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8362f552581916d5a2d7feb5f2bb4f886fc268ac",
+            "content": "sha256:2b3dbed4ef5c793d2cae5c77aad0f4ecbf7f5e04a067a467ccf8ba21be70531c",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Its distinguishing identity.\n\nAnchor: \"INC-5WQ8HB\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8362f552581916d5a2d7feb5f2bb4f886fc268ac",
+            "content": "sha256:5fafa3a402b2e59d05e45d9b564bff408e1418950d975afbaeabdbec04c7c73c",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test maps this file to its model.\n\nAnchor: \"4.6-incident.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b77ecb71863271304d8626c32c5a96b3930bf4cc",
+            "content": "sha256:7e32f1e280140776d418d27d03dee1b22a7a2c9b1054e6277de72279475b261f",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

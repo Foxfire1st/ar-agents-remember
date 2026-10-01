@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Source citation resolution for ordinary admitted live-leaf curation before Git closeout.",
+  "conditions": [
+    "The shared future-code owner captures the exact eligible working and new source bytes under the real leaf contract.",
+    "The same captured source and admission facts are rechecked before affected writes and publication."
+  ],
+  "exclusions": [
+    "Taskless bootstrap retains its existing admitted committed-source behavior.",
+    "This is not a global filesystem lock.",
+    "Source movement after a successful knowledge batch may leave uniquely authored candidate work while publication refuses; it is not published success."
+  ],
+  "id": "INV-CDB4MZW4",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "ffa5f8a1-64a6-4074-8a84-06dad530234c",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Ordinary live-leaf curation resolves its source citations against the shared exact future-code capture and refuses moved inputs before affected writes or publication.",
+  "status": "proposed",
+  "supersedes": []
+}

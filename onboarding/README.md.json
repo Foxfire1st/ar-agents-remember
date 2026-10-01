@@ -1,0 +1,230 @@
+{
+  "path": "README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`.\n\nAnchor: `## Core Features`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:084adacfb6fa35356d75567a154270e09ac04ba0ecc4c526b993a6c3ebda9977",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. The range was re-anchored by `CAPS-R12@v1`: the section still opens at `## Stability` on line 326 and its body is now the single line 328, and the promised layout no longer names `ar-memory/` because the internal mode was removed.\n\nAnchor: `## Stability`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:3cb56faca149534285c76f06c3cbb9976dead79a0d726ca2d2aa2506c5f8a0f5",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 326
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop).\n\nAnchor: `## Contributing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:f6e757f50314de45ed752df3d2fb828221716fb822264b73bd592d3f9fb919ad",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 330
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages.\n\nAnchor: `# Agents Remember Documentation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42107d0e4efa5a3fd541524ef08a05945cb6865e",
+            "content": "sha256:5a02350458a4dd401fd3d639e5fa1fefb9e61051f4e34a5153ef4516a6063880",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling.\n\nAnchor: `# Memory your coding agent can trust`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c83efc74d5cd38dedb23a2bf0bab8d6ac1b7afa",
+            "content": "sha256:a9c86b67f264f84fcc3de5cc583029cc43fdf4411f99eda322da555336773b0d",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/features.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop.\n\nAnchor: `## What It Looks Like In Practice`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:303140747a515f3b23e7dc6ddca01d65b90f4dc0f39b285aecc6c4eabc098bb4",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable by-path onboarding example.\n\nAnchor: `## Live Demo`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:27793a31e5e56505cb00d8e7fa4ecad35c2f727a103c20e651e8fc3f3d5ffeaf",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Requirements section names Python 3.13, the bounded package range, and the canonical repository-development runtime documentation.\n\nAnchor: `## Requirements`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:9d632315d8cc2f39a0bc2655d77ac7c905c58f788347fda6c6a1bc1c5faf2a3d",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files.\n\nAnchor: `## Quickstart`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:a473f395d7af7387d06c06aa640edcd7bee0507c6dc0b5a66459d4bb796e752e",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`.\n\nAnchor: `## Documentation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:db214c710fa1fd7669c0ad364637fab363f22b9c60c469690d09b22da7ca5ecb",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note.\n\nAnchor: `## Run The Dashboard`; \"autoStart\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:87bdca314eefd1720fd4ebe65f6d90544601603798192df5b92eaf49e8839b6c",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default.\n\nAnchor: `## Repository Layout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:504242233cf5f534f83ceda9baf9999c205421af5aa966f282b8cc288af3118a",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract.\n\nAnchor: \"## Status\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "content": "sha256:7192791d12701f60e59d0a970a2e6187c86e5bab11156f1ff57f1c236f1f2ebd",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

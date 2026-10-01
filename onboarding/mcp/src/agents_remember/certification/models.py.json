@@ -1,0 +1,206 @@
+{
+  "path": "mcp/src/agents_remember/certification/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Closed gate, rail-class and status vocabularies prevent undeclared contract states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:de483d624f4d5e9ac34d041ecac647f93bd9ac41e8ed075f0cb3f9bc99160626",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateId"
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:13d01438a675d65a9be95774baaa9c13544f46cacbf05df7bb4ad42e5beff48e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailClass"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:7d6c7f58824d74956ba07c066466be24f1a6a3550f58703d51a765e8a5cf05f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared frozen base and semantic-text validator preserve the original wire constraints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:f7a5ea8901e77c6b05bef81b105d77eeb31dc6624c20f98ca48378d817c7305f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrozenContractModel"
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:8dbd41a7c8d5237827ca70cf08e2b4b2ea864de1685ee05d6c35c7a763e6dc0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_semantic_text"
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:7c626e0f94d76e38c400a359bd3d609ebc0b7abe975e56f12c3695c41a0ed310",
+            "locator": {
+              "kind": "symbol",
+              "name": "SemanticText"
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rail definitions bind identity, ownership, authority, prerequisites, adapters, evidence, and artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:e2c7b44a3f08e87f781178539a8a6f1c3e44a98b1ba3b0ce05e84b2ade9b1276",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailDefinition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Deterministic same-gate dependencies compile into canonical execution waves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:b90463caf4d1cd2cd9c07456ac962f7eb4dd13921c56fe4d5fd577c30b910876",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_execution_waves"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Gate and certification plans validate complete catalogs, waves, identities, and digests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:e909b1113446f1df2e93fdbcab39c1455120b20237143be74450c506a13878b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "GatePlan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:bfb2c0c21ea240c0d7d40c4f82417a439087434f25781f436297657a958c3053",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationPlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Result models enforce legal status payloads, unique members, exact identities, and manifest disposition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:cda9767f29889c496d50e319cc4b38e49fe6b2682d1f6acf987d11cbf6094803",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:02bfb2ef935ea082c5bc4d1796e006f9f90b2e67340b81566859b2a496244cc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateResultManifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`CandidateIdentity` carries a validated kind and nonblank value; exact Git-tree restrictions are imposed by certificate owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:b1421f1822bb337644025986fafb3e6bb2354b506496d480a8a5e0041c4746ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Full planned catalog comparison is owned by result publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:143281b8b803ad07530f4666039ae7ef4390eae5d287b7620fe4c76951c96ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_result_catalog"
+            },
+            "path": "mcp/src/agents_remember/certification/results.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/relay_death_watch.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/relay_death_watch.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-09T06:48+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -73,39 +63,26 @@ notifier's own logs.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved `system/sources.md`; the
 heartbeat-staleness and degradation-alert semantics are same-repository runtime behavior proven
 by source and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external/domain document defines this watcher; N5 ruling and the tests are the authority. | `post_relay_death_signal` | mcp/src/agents_remember/serving/relay_death_watch.py:100-152 |
+- No external/domain document defines this watcher; N5 ruling and the tests are the authority. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The heartbeat row and age helper the watcher reads. | `AgentNotifierHeartbeatStore`; `heartbeat_age_seconds` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-125; mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:128-138 |
-| The scoped architect mailbox the alert is addressed to (role-only fallback when no scoped seat). | `derive_architect_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:111-120 |
-| The durable push path for the alert row. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:165-223 |
-| The loop task is spawned by the serving lifespan beside the notifier loop. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:288-348 |
+- The heartbeat row and age helper the watcher reads. [2]
+- The scoped architect mailbox the alert is addressed to (role-only fallback when no scoped seat). [3]
+- The durable push path for the alert row. [4]
+- The loop task is spawned by the serving lifespan beside the notifier loop. [5]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes this watcher. | — | — |
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `relay_death_watch.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: created this file-level onboarding card for
-  the new relay-death watcher module (N5): independent 30s cadence, heartbeat-staleness →
-  architect-mailbox `degradation-alert`, per-tick-identity marker dedupe, default-cutoff
-  settings fallback, best-effort delivery, loop wiring from `_serving_lifespan`. Verification
-  metadata pinned until closeout stamps the 260713-TES-L4 commit.
+No cross-repo boundary owns or consumes this watcher.

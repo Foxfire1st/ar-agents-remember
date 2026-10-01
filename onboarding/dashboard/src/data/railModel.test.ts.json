@@ -1,0 +1,301 @@
+{
+  "path": "dashboard/src/data/railModel.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The rail-model functions under test.\n\nAnchor: `buildRailModel`, `railCycleOrder`, `buildSpawnTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:cb246c84cd67b13d018a14318050aeaaf2b7dbbb23881b5879637d68135b833f",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildRailModel"
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:de94f05789a22fbb87a3305c207fe184ce9915ae763ef3b90f3669e2f5307efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "railCycleOrder"
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:48ca2d96fb6a842a57e5088427a5d831a9c1e8d8826c3e70b9caa527a5ddd5c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildSpawnTree"
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:55451313e11eb1dd74fe9976b4869b5f3ff372991ad9f312ab8191ed6e58edbc",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 397
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:8763163bab2e4f7e9d5c2b5a8e53d85c2e835b0171b4eece9b10cd0f5f667170",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 426
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:a1857f63fd62dfcdfd132d8a1aab40a34a39313bd32da4e378d0dd81b031c2be",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 451
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared full-wire-shape catalog fixtures, including the multiplexed interaction row.\n\nAnchor: `catalogRow`, `FLEET`, `L7_MULTIPLEXED_INTERACTIONS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:9db694deeedeb33760607e5cff5f1733bf29c524d2ae0cc9a66df87abbb5e8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalogRow"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:8c763bfc43b9667cee7ee81d2b0f9dc0c034a93b2cbbbdeff34ac0ce8640f769",
+            "locator": {
+              "kind": "symbol",
+              "name": "FLEET"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:20e90144bc9c3a9f3f3f26478b10be1e23321395a72f676cb782e857bfb24bc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_MULTIPLEXED_INTERACTIONS"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The N1 agent-only-blocked triage pin.\n\nAnchor: \"lists a seat blocked SOLELY on a multiplexed sub-agent approval\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b8257f86b18c6f09b3b77a055b0d5a8b0bd19cf",
+            "content": "sha256:5fa0c86cf12cbfc220817c8a4c2e3a6cb9a26db44c1f34f959868c1e1ec1a055",
+            "locator": {
+              "end": 512,
+              "kind": "line_range",
+              "start": 496
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The served builders used by the projection-join fixtures.\n\nAnchor: `taskDoc`, `gate`, `lifecycle`, `agentPickup`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:b6f4449a610c853dc02c93cbd467d7e51859462c455d37452856c2db473369b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDoc"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:57213f80787647531f9e6612a7e965efec8fc029a39b4e148c601056f50fa05a",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:d0a2ab51fc39e99c785427195b81e8d28bda217130654c318b480eaad0b95c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:bb9bd1fb24b14583fd0928a52ecacd7eb69b6786b3580cc67a516a033639631b",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentPickup"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:0b6d7588b51c25d183925852d3c4c394b777fc423f105c8f412e89933cf8d266",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:43fb172f19b86de351d92c1542f987f3ba0e281cedc860a8a6527237521b3960",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:7787bef99d426bc546b2ab40461310dcc30baff6bbbc70805d626108c14e1087",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:43849332380b785d2899f3a109e73ffb2f431d2909a287d6110b717ae72389d2",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The held-gate join case.\n\nAnchor: \"joins HELD gates by leafKey only while undecided (R13)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b8257f86b18c6f09b3b77a055b0d5a8b0bd19cf",
+            "content": "sha256:88d90fb802b7981470c88153ae1a5e1e94c6ef7721c9681ea5582a6d39a6f8c0",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 413
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two-state brief-column join case.\n\nAnchor: \"brief column is TWO-state: pending while unacknowledged\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b8257f86b18c6f09b3b77a055b0d5a8b0bd19cf",
+            "content": "sha256:74e2670f173f6126d6efdf7eab8d19b26d5c47aeae9d6a51aa84ca19d6f298d6",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 435
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The critical-bus join case.\n\nAnchor: \"critical bus = age ≥ ttl·0.8 or escalated check-chat (F11)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b8257f86b18c6f09b3b77a055b0d5a8b0bd19cf",
+            "content": "sha256:601d8fc328d1e4dcf54bdc2d02b9735f866fc237cb2a2984dbf75b162d5a8702",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 455
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

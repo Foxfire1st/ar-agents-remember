@@ -2,17 +2,47 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
 | sourceRoute            | `mcp/`                                     |
-| doc_type               | `route-local-overview`                     |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
 [overview.md](../overview.md)
+
+## 260928-MIK-L37 The Cutover To Text Storage: The Installed Build Governs Converted Memory
+
+`260928-MIK-L37` (MIK-R37). The cutover build was installed on 2026-10-01 (MIK-R37 rule 4), and this leaf's closeout converts the master's
+memory line. What earlier sections of this overview call "inert until the cutover" is live from this leaf on. From this leaf on, on this master's line:
+
+- knowledge is written through the curator file writer and read through the derived index;
+- the knowledge database is frozen: the database writer and the publication sink refuse a converted tree and name
+  the file writer, and `knowledge.sqlite` stays in place until MIK-R26 removes it;
+- the cutover lock (`src/agents_remember/worktrees/cutover_lock.py`) refuses every write, check, managed sync,
+  closeout and landing of memory that is unconverted on every side once its memory repository holds converted
+  memory, naming the crossing sync.
+
+Files this overview governs directly:
+
+- **[`cli/knowledge_ingest.py`](src/agents_remember/cli/knowledge_ingest.py.md) and
+  [`cli/knowledge_write_route.py`](src/agents_remember/cli/knowledge_write_route.py.md).** `knowledge-ingest` gains
+  `--crossing <task-id>-crossing-<n>`: with the master's series contract, a crossing sync's curator resolves a
+  record both sides changed (at the higher side's revision plus one) and records the rows into the crossing history
+  file. The leaf route passes the contract's code base as the converted base's fallback commit.
+- **[`cli/knowledge_bootstrap.py`](src/agents_remember/cli/knowledge_bootstrap.py.md).** The database route takes
+  the cutover lock.
+- **[`cli/memory_citations.py`](src/agents_remember/cli/memory_citations.py.md).** On converted memory `--fix` takes
+  `--document` alone and authors that card.
+- **[`kernel/memory_init.py`](src/agents_remember/kernel/memory_init.py.md).** The failed-Git early return carries
+  `layoutMarker`.
+- **The packaged skills.** The c-05 skill gains
+  [`workflows/converted-card-workflow.md`](src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md.md),
+  and the c-02 skill, the c-05 skill, its file-level workflow and the curator role each gain their converted-memory
+  paragraph.
+
+- The crossing owner's route of knowledge-ingest. [222]
+- The bootstrap's database route takes the cutover lock. [223]
+- The converted-card workflow's opening. [224]
+- The lock every memory route asks. [225]
+
 
 ## 260928-MIK-L33 Review Triage Order And Change-Kind Badges, Inert Until The Cutover
 
@@ -51,10 +81,8 @@ without hiding unchanged siblings, and move between them with `j`/`k`.
   after curation, and every hunk-established fact is a link in the lane's per-file response (2 of 2). Checks on the
   merged tree: the whole vitest suite 1,951 passed; the reviewer's focused pytest 150 passed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The facts and where they come from. | "The facts are computed here, on" | mcp/src/agents_remember/application/review_change_kinds.py:1-33 |
-| Their vocabulary. | "The **primary** kind is the highest established fact in the precedence" | mcp/src/agents_remember/models/knowledge/review_change_kinds.py:1-34 |
+- The facts and where they come from. [1]
+- Their vocabulary. [2]
 
 ## 260928-MIK-L09 The Mandatory Invariant Closeout Gate, Inert Until The Cutover
 
@@ -156,13 +184,11 @@ flag or report-only mode exists.
   timing (about 67 s → 17 s and 31 s → 8 s per run). Final checks (R3): unit suite 3,406 passed, integration lane 457
   passed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The gate over a leaf's exact candidate. | `evaluate_leaf_gate`; `judge` | mcp/src/agents_remember/application/knowledge_gate/gate.py:236-261; mcp/src/agents_remember/application/knowledge_gate/gate.py:317-342 |
-| Each kind's own predicate, registered beside the kind. | "register_gate_predicate(\"touched_invariant\", invariant_row_open)" | mcp/src/agents_remember/application/knowledge_gate/predicates.py:282-290 |
-| The worktree layer's probes, the unbound refusal and the closeout's own write. | `GATE_UNBOUND`; `leaf_gate_refusal`; `close_owner_history` | mcp/src/agents_remember/worktrees/knowledge_gate.py:89-92; mcp/src/agents_remember/worktrees/knowledge_gate.py:176-196; mcp/src/agents_remember/worktrees/knowledge_gate.py:279-300 |
-| The history-row rule over every file's subjects and the leaf's own file. | `checked_history_files`; `check_history_rows` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:80-91; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:161-179 |
-| The two lane rows. | "mcp/tests/test_knowledge_closeout_gate.py"; "mcp/tests/test_knowledge_gate_routes.py" | mcp/tests/test-evidence-lanes.toml:122-123 |
+- The gate over a leaf's exact candidate. [3]
+- Each kind's own predicate, registered beside the kind. [4]
+- The worktree layer's probes, the unbound refusal and the closeout's own write. [5]
+- The history-row rule over every file's subjects and the leaf's own file. [6]
+- The two lane rows. [7]
 
 ## 260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master
 
@@ -206,11 +232,9 @@ master) stayed `inProgress` on the master; the developer saw 15 such rows, repai
   `ReopenResetTests` cases.
   Review R2: unit suite 3,298 passed, integration lane 457 passed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one rule, named for its three writers. | "ONE RULE FOR EVERY WRITER OF A LEAF'S MASTER ROW (MIK-R38)." | mcp/src/agents_remember/tasks/master_sync.py:165-183 |
-| The finalizer's dispatch. | "target = _folder_parent(contract.task_root, args, leaf)" | mcp/src/agents_remember/worktrees/modules/finalize.py:397-437 |
-| The placement guard. | "def require_task_document_in_place(" | mcp/src/agents_remember/tasks/leaf_doc.py:140-156 |
+- The one rule, named for its three writers. [8]
+- The finalizer's dispatch. [9]
+- The placement guard. [10]
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane In The Reviewer, Inert Until The Cutover
 
@@ -263,11 +287,9 @@ definitions.
   agreement check matched the gate on every path's hunks and non-text linkage. Final checks (R2, synced tree): unit
   suite 3,359 passed, integration lane 447 passed, the whole vitest suite 1,811 passed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one classification and where it differs from the gate. | "An entry supplies a range on a side only at its own recorded blob." | mcp/src/agents_remember/application/review_lane_classification.py:1-33 |
-| The three reads. | "Three reads over one comparison of four Git trees, all through the one classification of" | mcp/src/agents_remember/application/review_unexplained_lane.py:1-27 |
-| The lane's shapes and validators. | "fixes the three shapes the lane is served in" | mcp/src/agents_remember/models/knowledge/review_lane.py:1-34 |
+- The one classification and where it differs from the gate. [11]
+- The three reads. [12]
+- The lane's shapes and validators. [13]
 
 ## 260928-MIK-L14 Reconsideration Surfacing, Inert Until The Cutover
 
@@ -337,13 +359,11 @@ curator never reverses a decision. An unanswered candidate blocks closeout throu
   pass-with-notes; final unit suite 3,327 passed, integration lane 447 passed. After L29 landed, the leaf was synced
   onto `ce459423` (its 36 files re-applied cleanly).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The worklist registrant: what is read, the triggers, route and superseded rulings, the items. | "item kind: a decision whose reconsider target changed" | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:1-39 |
-| The writer's rows, the refresh and its link states. | "The writer's reconsideration rows (MIK-R14 rule 4)" | mcp/src/agents_remember/application/knowledge_writer/reconsideration.py:1-54 |
-| The manifest lookup. | `requirement_approval` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:198-209 |
-| The reorder guard, registered on import. | `RECONSIDERATION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py:132-139 |
-| The lane row. | "mcp/tests/test_reconsideration_surfacing.py" | mcp/tests/test-evidence-lanes.toml:131-131 |
+- The worklist registrant: what is read, the triggers, route and superseded rulings, the items. [14]
+- The writer's rows, the refresh and its link states. [15]
+- The manifest lookup. [16]
+- The reorder guard, registered on import. [17]
+- The lane row. [18]
 
 ## 260928-MIK-L29 The Path-Based Knowledge Reader, Inert Until The Cutover
 
@@ -407,11 +427,9 @@ repository, commit and path or ID, so every link is a navigation and a view can 
   tokens; the invariant timeline reads 7 blobs instead of about 2,590 (F1); a real-browser walkthrough at 1600×1100 and
   390×844 (task-local evidence).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reader's entry point: one read-only question per call, the envelope and the typed failures. | `read_knowledge_reader` | mcp/src/agents_remember/application/knowledge_reader/__init__.py:72-89 |
-| The route: 200 for typed answers, 400 for invalid requests, 503 unwired. | `register_knowledge_reader_route` | mcp/src/agents_remember/serving/knowledge_reader.py:61-93 |
-| The Knowledge area's own statement. | "The Knowledge area (MIK-R29)" | dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx:1-7 |
+- The reader's entry point: one read-only question per call, the envelope and the typed failures. [19]
+- The route: 200 for typed answers, 400 for invalid requests, 503 unwired. [20]
+- The Knowledge area's own statement. [21]
 
 ## 260928-MIK-L31 Focused Expression Cards In The Reviewer, Inert Until The Cutover
 
@@ -467,11 +485,9 @@ view.
   headers of `ReviewWorkspace.family.test.tsx` and `ReviewReadCycle.family.test.tsx` name the MIK-L31 re-capture,
   and `familyExpressions.test.ts`'s measured-shape comment name the re-captured `walkFinal` revision `a08a87b4`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The entries module statement. | "Every entry of a tree comparison, located on both code sides for the reviewer's cards (MIK-R31)." | mcp/src/agents_remember/application/review_tree_entries.py:1-19 |
-| The on-demand cards read at the route. | `MAX_ENTRY_INVARIANTS`; `ReviewTreesSelection` | mcp/src/agents_remember/serving/review_trees.py:38-38; mcp/src/agents_remember/serving/review_trees.py:80-119 |
-| The card component's own statement. | "one focused" | dashboard/src/panels/review/ExpressionCards.tsx:1-7 |
+- The entries module statement. [22]
+- The on-demand cards read at the route. [23]
+- The card component's own statement. [24]
 
 ## 260928-MIK-L05 Route-Chain Family Retrieval, Inert Until The Cutover
 
@@ -520,12 +536,10 @@ lifecycle to a `served_earlier` row; `knowledge_read` never does.
   threshold (largest 7,957 tokens), chain last; 982 of 3,440 entry-less files became pages. Review R1
   pass-with-notes, R2 pass; post-sync full unit suite 3,289 passed, integration lane 447 passed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The chain module statement. | "Route-chain families of a seed path" | mcp/src/agents_remember/application/knowledge_leaf/chain.py:1-26 |
-| The compact row with its family seed. | `chain_row` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:134-154 |
-| The family seed on the mounted read. | `_family_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:525-535 |
-| The lane row. | "mcp/tests/test_knowledge_route_chain.py" | mcp/tests/test-evidence-lanes.toml:111-111 |
+- The chain module statement. [25]
+- The compact row with its family seed. [26]
+- The family seed on the mounted read. [27]
+- The lane row. [28]
 
 ## 260928-MIK-L10 Unexplained Change Disposition, Inert Until The Cutover
 
@@ -570,12 +584,10 @@ reason; an **uncovered** file takes its onboarding trace (MIK-R30).
   (`449b69ef…`). Real data on ICR L47 scratch clones: 160 items, `openCount` 0 after one attach and 22 rows. Review
   R1 pass-with-notes, R2 pass (R2-1 low); full unit suite 3,236 passed, integration lane 447 passed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two kinds and the coverage lookup. | "MIK-R10's unexplained changes" | mcp/src/agents_remember/application/knowledge_worklist/unexplained.py:1-35 |
-| The subjects and the gate predicate. | `unexplained_satisfied_by` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:120-148 |
-| A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). | "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" | mcp/src/agents_remember/application/knowledge_worklist/compute.py:601-613 |
-| The lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:130-130 |
+- The two kinds and the coverage lookup. [29]
+- The subjects and the gate predicate. [30]
+- A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). [31]
+- The lane row. [32]
 
 ## 260928-MIK-L25 The Reviewer On Git Trees, Inert Until The Cutover; The Archive Hook Once Installed
 
@@ -621,13 +633,11 @@ and the archive hook that deletes a task's review artifacts.
   the dashboard adapter and UI cases on real captured bodies. Review R6: pass-with-notes; full unit suite 3,231
   passed, integration lane 447 passed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The four-tree comparison, pinned and recorded. | "A review comparison as four Git trees, pinned by Git refs and reopened from its tree ids" | mcp/src/agents_remember/application/review_tree_comparison.py:1-31 |
-| The archive hook's identity sources and confinement. | "Where every target's identity comes from" | mcp/src/agents_remember/application/review_artifact_cleanup.py:22-38 |
-| The tree view route. | `KNOWLEDGE_REVIEW_TREES_ROUTE` | mcp/src/agents_remember/serving/review_trees.py:36-36 |
-| The index format bump for the seal fix. | `INDEX_FORMAT` | mcp/src/agents_remember/memory/knowledge_index/schema.py:23-23 |
-| The two lane rows. | "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" | mcp/tests/test-evidence-lanes.toml:126-126; mcp/tests/test-evidence-lanes.toml:129-129 |
+- The four-tree comparison, pinned and recorded. [33]
+- The archive hook's identity sources and confinement. [34]
+- The tree view route. [35]
+- The index format bump for the seal fix. [36]
+- The two lane rows. [37]
 
 ## 260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover
 
@@ -674,13 +684,11 @@ at closeout. A decision keeps the chosen alternative and the rejected or deferre
 - **Tests:** the new `test_knowledge_decisions.py` (9 cases, one `unit-regression` lane row at `:121`) and two new
   cases plus the adapted bootstrap dispatch case in `test_knowledge_writer.py`. No catalog row or re-pin.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The content rules and derived reads. | "MIK-R13's content rules for decision records, and the reads they make possible." | mcp/src/agents_remember/models/knowledge_files/decisions.py:1-25 |
-| The five registered decision rules. | `DECISION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:112-144 |
-| The owner resolves each requirement endpoint; unresolved is reported. | `resolve_requirement_endpoint` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:92-129 |
-| The writer reports each endpoint of the records the run touched. | `requirement_endpoints` | mcp/src/agents_remember/application/knowledge_writer/requirement_links.py:24-53 |
-| A decision is never an export. | "if isinstance(record, DecisionRecord):" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:189-190 |
+- The content rules and derived reads. [38]
+- The five registered decision rules. [39]
+- The owner resolves each requirement endpoint; unresolved is reported. [40]
+- The writer reports each endpoint of the records the run touched. [41]
+- A decision is never an export. [42]
 
 ## 260928-MIK-L01 The Family-Complete Leaf Read, Inert Until The Cutover
 
@@ -720,11 +728,9 @@ At intake a leaf read returned 3 of 25 items and never the family.
 - **Tests:** `test_knowledge_leaf_read.py` (11 collected cases), the adapted L02 paging, index-reuse and
   conversion-toolchain cases, one lane row, two catalog consumer lines and the Thirty-ninth re-pin.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The leaf package statement. | "The family-complete leaf read of a converted memory tree" | mcp/src/agents_remember/application/knowledge_leaf/__init__.py:1-13 |
-| A path seed of the published-intent block is read as a leaf. | `_tree_page_block`; `prepare_leaf` | mcp/src/agents_remember/application/published_intent.py:720-760 |
-| The mounted read's leaf response, of a path or (since MIK-R05) a family seed. | `_leaf_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:577-633 |
+- The leaf package statement. [43]
+- A path seed of the published-intent block is read as a leaf. [44]
+- The mounted read's leaf response, of a path or (since MIK-R05) a family seed. [45]
 
 ## 260928-MIK-L06 Family Route Maintenance In The Worklist, Inert Until The Cutover
 
@@ -765,11 +771,9 @@ retired. Retired families raise nothing. Nothing is rerouted automatically.
 - **Tests:** the new `test_family_route_conditions.py` (10 cases, `unit-regression`) and one case in
   `test_knowledge_writer.py`. No catalog row or re-pin.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement. | "family routes maintained with the code" | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:1-50 |
-| The stored predicate for the gate. | `family_route_item_open` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:141-154 |
-| Step 6 of the run. | `_route_items` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:507-530 |
+- The module statement. [46]
+- The stored predicate for the gate. [47]
+- Step 6 of the run. [48]
 
 ## 260928-MIK-L27 The Admission Rule In The Knowledge Validator, Inert Until The Cutover
 
@@ -805,11 +809,9 @@ meets no criterion stays prose.
 - **Tests:** 9 cases in `test_knowledge_validator.py` and 1 in `test_knowledge_writer.py`; L22's and L04's
   exact pins gain the one report-only legacy count. No lane row, catalog row or re-pin.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The admission rule's module statement. | "MIK-R27's admission rules in the validator's registry (MIK-R22 rule 9)." | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:1-37 |
-| The three registered rules. | `ADMISSION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:307-328 |
-| The export test. | `_exported` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py:180-192 |
+- The admission rule's module statement. [49]
+- The three registered rules. [50]
+- The export test. [51]
 
 ## 260928-MIK-L11 Planned Invariant Effects Reconciliation, Inert Until The Cutover
 
@@ -845,12 +847,10 @@ no history row delivers as declared, and the curator answers each with a planned
 - **Tests:** `test_planned_knowledge_effects.py` (5 collected cases), one lane row, one catalog consumer line
   and the Thirty-eighth re-pin (`cb853f72…`); the history-registry case asserts four row kinds.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reconciliation module statement. | "Planned invariant effects reconciliation (MIK-R11@v2)" | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:1-27 |
-| The declaration on the task document. | `ExpectedKnowledgeEffect` | mcp/src/agents_remember/tasks/document.py:655-666 |
-| The planned row. | `PlannedEffectRow` | mcp/src/agents_remember/models/knowledge_files/history.py:315-338 |
-| The task owner's strict lookup and decision answer. | `strict_leaf_doc`; `leaf_decision_refusal` | mcp/src/agents_remember/tasks/leaf_decisions.py:39-51; mcp/src/agents_remember/tasks/leaf_decisions.py:81-98 |
+- The reconciliation module statement. [52]
+- The declaration on the task document. [53]
+- The planned row. [54]
+- The task owner's strict lookup and decision answer. [55]
 
 ## 260928-MIK-L02 Bounded Continuation Accepted By The Mounted Read, Inert Until The Cutover
 
@@ -879,11 +879,9 @@ refused (`continuation_unreadable`, observed 2026-09-28) is replaced on converte
 - **Tests:** `test_knowledge_paging.py` (11 collected cases), one lane row, two catalog consumer lines and the
   Thirty-seventh re-pin.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The paging package statement. | "Bounded pages of a memory tree's knowledge" | mcp/src/agents_remember/application/knowledge_paging/__init__.py:1-30 |
-| The mounted read's converted-tree branch. | `read_tree_page` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:212-251 |
-| The whole-block bound of the published-intent block. | `bounded_block` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:52-79 |
+- The paging package statement. [56]
+- The mounted read's converted-tree branch. [57]
+- The whole-block bound of the published-intent block. [58]
 
 ## 260928-MIK-L30 The Onboarding Refresh Gate On History Files, Inert Until The Cutover
 
@@ -910,11 +908,9 @@ stamps once memory is converted (D23).
 - **Tests:** `test_onboarding_trace_gate.py` (15 cases) and one lane row; two worklist-leaf assertions count
   the new items. No catalog change and no re-pin.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The rule's statement for converted trees. | "The onboarding refresh gate on history files (MIK-R30), for converted memory trees." | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:1-27 |
-| The memory-quality dispatch between the two gates. | `_onboarding_refresh_gate` | mcp/src/agents_remember/application/memory_quality/controller.py:804-854 |
-| The gate chooser both enforcement points share (since MIK-R09 a probe Git cannot answer is an incomplete side). | "def leaf_onboarding_trace_sides(" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:596-630 |
+- The rule's statement for converted trees. [59]
+- The memory-quality dispatch between the two gates. [60]
+- The gate chooser both enforcement points share (since MIK-R09 a probe Git cannot answer is an incomplete side). [61]
 
 ## 260928-MIK-L03 Stale Invariants Flagged At Read Time, Inert Until The Cutover
 
@@ -937,11 +933,9 @@ A stale invariant stays visible and names each differing entry; reads never writ
 - **Tests:** `test_knowledge_currentness.py` (13 cases), one lane row, one catalog consumer and the
   Thirty-sixth re-pin.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package statement. | "Stale invariants flagged at read time" | mcp/src/agents_remember/application/knowledge_currentness/__init__.py:1-14 |
-| The `knowledge_read` surface, reached through the per-page extras since MIK-R02. | `_tree_extras`; `WalkCurrentness` | mcp/src/agents_remember/mcp/tools/knowledge.py:485-501 |
-| The published-intent surface. | `read_published_intent`; `_TREE_SCOPE` | mcp/src/agents_remember/application/published_intent.py:482-511; mcp/src/agents_remember/application/published_intent.py:572-575 |
+- The package statement. [62]
+- The `knowledge_read` surface, reached through the per-page extras since MIK-R02. [63]
+- The published-intent surface. [64]
 
 ## 260928-MIK-L08 The Change-To-Knowledge Worklist, Inert Until The Cutover
 
@@ -976,10 +970,8 @@ renames come from ICR's rename inference (**ruling 3**); carrying updates only t
 **Nothing the installed runtime does changes before MIK-R37**: the worklist is inert while both memory
 sides are unconverted.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one recompute entry point L08's triggers call (since MIK-R09 a Git failure is named `git`; the gate recomputes over its exact candidate instead). | "def recompute_leaf_worklist(" | mcp/src/agents_remember/application/knowledge_worklist/leaf.py:659-694 |
-| The CLI subcommand. | `run`; `leaf_worklist` | mcp/src/agents_remember/cli/knowledge_worklist.py:99-114 |
+- The one recompute entry point L08's triggers call (since MIK-R09 a Git failure is named `git`; the gate recomputes over its exact candidate instead). [65]
+- The CLI subcommand. [66]
 
 ## 260928-MIK-L28 First-Class Test Proofs Are Read Back And Listed, Not Yet Used
 
@@ -1003,10 +995,8 @@ already writes them as `proves` entries (MIK-R12); this leaf reads them back and
 ruling.** No `cli/` or `kernel/` file changed. **Nothing the installed runtime does changes before
 MIK-R37**: every new answer is `None` or absent for an unconverted tree and for a database.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two readings of proofs. | `tree_view_proofs`; `invariants_without_proof` | mcp/src/agents_remember/application/knowledge_proofs.py:69-87; mcp/src/agents_remember/application/knowledge_proofs.py:157-190 |
-| The package template copy's proof guidance. | "Proofs are shown and counted (MIK-R28)." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:530-534 |
+- The two readings of proofs. [67]
+- The package template copy's proof guidance. [68]
 
 ## 260928-MIK-L24 Conversion And Boundary Crossing, And The CLI Gains `knowledge-convert`
 
@@ -1052,15 +1042,13 @@ The facts that belong to this route, because `cli/` and `kernel/` have no overvi
   `markers`.
 - **Conversion-format version 1 is pinned by a golden digest.**
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The umbrella registers the conversion command. | `knowledge_convert`; "knowledge-convert" | mcp/src/agents_remember/cli/__main__.py:78-83 |
-| The command converts, validates before writing, and commits nothing. | `run` | mcp/src/agents_remember/cli/knowledge_convert.py:57-89 |
-| The pinned conversion-format version. | `CONVERSION_FORMAT_VERSION` | mcp/src/agents_remember/memory/conversion/convert.py:44-44 |
-| A raw three-way line merge that writes nothing. | `merge_file_bytes` | mcp/src/agents_remember/kernel/git_command.py:378-406 |
-| A new memory repository is created with the layout marker. | `LAYOUT_MARKER_TEXT`; `_holds_legacy_memory` | mcp/src/agents_remember/kernel/memory_init.py:20-20; mcp/src/agents_remember/kernel/memory_init.py:24-34 |
-| A converted overview's sidecar feeds the hot-path hints. | `_route_sidecar_hint_text` | mcp/src/agents_remember/kernel/route_index.py:336-358 |
-| The rule 9 refusal, inert until the official line is converted. | `unconverted_line_refusal` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
+- The umbrella registers the conversion command. [69]
+- The command converts, validates before writing, and commits nothing. [70]
+- The pinned conversion-format version. [71]
+- A raw three-way line merge that writes nothing. [72]
+- A new memory repository is created with the layout marker. [73]
+- A converted overview's sidecar feeds the hot-path hints. [74]
+- The rule 9 refusal for a leaf whose official line is converted and, since L37, the cutover lock for every other unconverted tree. [75]
 
 ## 260928-MIK-L12 The Curator Writer, And Two CLI Entry Points That Choose Their Writer By Memory Tree
 
@@ -1088,12 +1076,10 @@ route, because `cli/` has no overview of its own:
 (the `mcp/registration` and `mcp/tools` route overviews). Before MIK-R37 no production memory tree holds
 `knowledge/layout.json`, so no production route changes behaviour.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The ingest dispatch on the loaded contract's memory worktree. | `run`; `run_leaf_write` | mcp/src/agents_remember/cli/knowledge_ingest.py:680-716 |
-| The bootstrap run mode's dispatch on the admitted memory root. | `_run`; `run_wave_write` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-538 |
-| The layout-marker test both commands use. | `is_converted` | mcp/src/agents_remember/cli/knowledge_write_route.py:65-68 |
-| The writer refuses an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:60-64 |
+- The ingest dispatch on the loaded contract's memory worktree. [76]
+- The bootstrap run mode's dispatch on the admitted memory root. [77]
+- The layout-marker test both commands use. [78]
+- The writer refuses an unconverted memory tree. [79]
 
 ## 260928-MIK-L20 The Migration Census As Files, And The CLI Gains `knowledge-census`
 
@@ -1119,11 +1105,9 @@ of its own:
 Before MIK-R37 no production memory tree holds `knowledge/layout.json`, and the writer refuses an
 unconverted tree, so no production route changes behaviour.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The subcommand registration. | `knowledge_census`; "knowledge-census" | mcp/src/agents_remember/cli/__main__.py:108-113 |
-| Inventory pins the baseline and writes through the census writer. | `_run_inventory` | mcp/src/agents_remember/cli/knowledge_census.py:71-93 |
-| The writer refuses an unconverted memory tree. | `_tree` | mcp/src/agents_remember/memory/knowledge_census/writer.py:83-90 |
+- The subcommand registration. [80]
+- Inventory pins the baseline and writes through the census writer. [81]
+- The writer refuses an unconverted memory tree. [82]
 
 ## 260928-MIK-L04 Family Routes Are Validated, And The CLI Gains `knowledge-routes`
 
@@ -1148,11 +1132,9 @@ validator and later for MIK-R06's route maintenance. `FamilyRecord.routes` in
 Before MIK-R37 no production memory tree holds `knowledge/layout.json` or a family record, so no production
 route changes behaviour.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The subcommand registration. | `knowledge_routes`; "knowledge-routes" | mcp/src/agents_remember/cli/__main__.py:102-107 |
-| The command reads the families and prints them; it writes nothing. | `run` | mcp/src/agents_remember/cli/knowledge_routes.py:115-137 |
-| The six route rules in the registry. | `ROUTE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py:174-217 |
+- The subcommand registration. [83]
+- The command reads the families and prints them; it writes nothing. [84]
+- The six route rules in the registry. [85]
 
 ## 260928-MIK-L23 The Derived Knowledge Index, And The CLI Gains `knowledge-index`
 
@@ -1179,12 +1161,10 @@ of its own:
 Before MIK-R37 no production memory tree holds `knowledge/layout.json`, so no production route changes
 behaviour.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The subcommand registration. | `knowledge_index`; "knowledge-index" | mcp/src/agents_remember/cli/__main__.py:90-95 |
-| The command's report and exit statuses. | `run` | mcp/src/agents_remember/cli/knowledge_index.py:44-82 |
-| The one dataset resolution every knowledge read applies. | `select_knowledge_dataset` | mcp/src/agents_remember/application/published_intent.py:381-400 |
-| The cache that refuses any location inside a Git working tree. | `KnowledgeIndexCache` | mcp/src/agents_remember/memory/knowledge_index/cache.py:66-164 |
+- The subcommand registration. [86]
+- The command's report and exit statuses. [87]
+- The one dataset resolution every knowledge read applies. [88]
+- The cache that refuses any location inside a Git working tree. [89]
 
 ## 260928-MIK-L22 The Mandatory Knowledge Validator, And The CLI Gains `knowledge-validate`
 
@@ -1210,12 +1190,10 @@ The validator runs at the managed sync's memory merge through the worktree layer
 `KnowledgeValidationPort` (see the `worktrees` route overview). Before MIK-R37 no production memory tree
 holds `knowledge/layout.json`, so no production route changes behaviour.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The subcommand registration. | `knowledge_validate`; "knowledge-validate" | mcp/src/agents_remember/cli/__main__.py:77-88 |
-| The command's inputs, scope answer and exit statuses. | `run` | mcp/src/agents_remember/cli/knowledge_validate.py:69-93 |
-| The shared exclusion predicate. | `is_excluded_from_knowledge` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:50-63 |
-| The batch blob reader. | `read_git_blobs_bytes` | mcp/src/agents_remember/kernel/git_command.py:338-375 |
+- The subcommand registration. [90]
+- The command's inputs, scope answer and exit statuses. [91]
+- The shared exclusion predicate. [92]
+- The batch blob reader. [93]
 
 ## 260928-MIK-L21 The Package Declares The Text Knowledge Format, And The CLI Gains `knowledge-format`
 
@@ -1235,21 +1213,17 @@ repository keeps being written through the knowledge store until the layout swit
 hand-off template (and its package and harness copies, regenerated by `scripts/sync-skills.py`) gained an
 informational section mapping hand-off fields to the future files; it changes nothing a producer emits.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The format package's own map and its shape-only boundary. | "The text knowledge format" | mcp/src/agents_remember/models/knowledge_files/__init__.py:1-1 |
-| The subcommand registration. | `knowledge_format`; "knowledge-format" | mcp/src/agents_remember/cli/__main__.py:71-76 |
-| The command's exit statuses. | "Exit status: 0 when every file is canonical" | mcp/src/agents_remember/cli/knowledge_format.py:11-12 |
-| The template's informational section. | "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:427-427 |
+- The format package's own map and its shape-only boundary. [94]
+- The subcommand registration. [95]
+- The command's exit statuses. [96]
+- The template's informational section. [97]
 
 ## Ordinary comparison recording
 
 The installed review-record-comparison CLI remains the one review producer. Its explicit unchanged-knowledge mode supports code-only work without authored knowledge or publication. The synchronized curator and curation instructions invoke the producer and preserve its result; closeout carries that evidence without becoming a semantic approval gate.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `add_arguments` owns the behavior described above. | `add_arguments` | mcp/src/agents_remember/cli/review_comparison_record.py:105-159 |
-| `run` owns the behavior described above. | `run` | mcp/src/agents_remember/cli/review_comparison_record.py:162-202 |
+- `add_arguments` owns the behavior described above. [98]
+- `run` owns the behavior described above. [99]
 
 ## 260921-ICR-L45 The Curator Writer Stops Generating Rationale, And The Package Copies Carry The New Target Shape
 
@@ -1268,11 +1242,9 @@ The template's element shape `{path, locator, governing_route?, rationale, role?
 element shape in the external schema note *260915-KS-curator-handoff-list-schema.md* revision 1, which
 lives outside this repository and was not edited.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The realization admission owner. | `realization_refusal` | mcp/src/agents_remember/application/curator_realization_authoring.py:249-280 |
-| The admission call before minting, exempting committed allocations. | `_resolve_creation` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:2221-2253 |
-| The package-owned template copy stating the superseding target shape. | "this file's element shape supersedes rule 1's" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:8-18 |
+- The realization admission owner. [100]
+- The admission call before minting, exempting committed allocations. [101]
+- The package-owned template copy stating the superseding target shape. [102]
 
 ## 260921-ICR-L34 The Reviewer's Comparison Becomes Recordable, And A Placed Baseline Becomes Openable
 
@@ -1319,13 +1291,11 @@ the seal, so naming a standing generation changes the derived id and an ordinary
 successor rather than reusing the record. Both are carried on the new sidecar and in this leaf's
 curation report for the next leaf.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The `review-record-comparison` subcommand: the adapter's registration on the umbrella CLI, and the declarative pair it uses.** | `review_comparison_record`; "review-record-comparison" | mcp/src/agents_remember/cli/__main__.py:114-122 |
-| **The run this command is: the argument-list answer, the standing generation named as predecessor, the request from the contract's own identities, the one freeze call and the outcome as an exit code.** | `run`; `_standing_generation`; `EXIT_PUBLISHED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/review_comparison_record.py:94-95; mcp/src/agents_remember/cli/review_comparison_record.py:162-202; mcp/src/agents_remember/cli/review_comparison_record.py:205-229; mcp/src/agents_remember/cli/review_comparison_record.py:95-95 |
-| **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** | `review_namespace`; `read_baseline_generation` | mcp/src/agents_remember/application/review_candidate_resolution.py:391-430; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316 |
-| **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** | `_UNSEALED_FIELDS`; `_lineage` | mcp/src/agents_remember/application/review_comparison_freeze.py:760-769; mcp/src/agents_remember/application/review_comparison_generation.py:162-162 |
-| The case that protects the corrected namespace rule on the real placed-baseline journey. | `test_the_placed_baseline_is_opened_under_its_own_recorded_namespace` | mcp/tests/test_knowledge_ingest_comparison_generation.py:329-370 |
+- **The `review-record-comparison` subcommand: the adapter's registration on the umbrella CLI, and the declarative pair it uses.** [103]
+- **The run this command is: the argument-list answer, the standing generation named as predecessor, the request from the contract's own identities, the one freeze call and the outcome as an exit code.** [104]
+- **The record-beside-the-bytes namespace, corrected in place: the receipt when there is one, otherwise the before half's own generation record, and the requested repository only when neither exists.** [105]
+- **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** [106]
+- The case that protects the corrected namespace rule on the real placed-baseline journey. [107]
 
 ## 260921-ICR-L32 The Repair Leaf: The Seat Policy Moves, And Two Long-Route Defects Close
 
@@ -1350,112 +1320,6 @@ plus a 578-line sibling, `test_curator_ingest_write_and_retention.py`), so the �
 pre-L28 value in both scopes while the catalog keeps **16 contracts / 66 artifacts**; and the D02 NUL-safe
 Git family's cases live in `test_master_net_generation.py` over an eight-name fixture that includes a literal
 backslash on each side.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **route body updated for MIK-R33:** new top section "260928-MIK-L33 Review Triage Order And Change-Kind Badges, Inert Until The Cutover" (where, the rulings, the five candidate invariants, inertness, tests and evidence); two rows. The other moved rows were re-pointed by the installed fixer (its bullets kept) or the exact base-to-staged line shift.
-- 2026-09-30T20:22:50+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:131-131. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:22:50+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:130-130. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:22:50+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:138-138. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **The L32 review F5 carry is resolved** (ruling 2026-09-30T13:07:38). MIK-L34 (per-hunk intent markers, dashboard only) marks every owner hunk a lane window draws, a neighbour shown only as context included, and corrects the "the full file shows every one" wording; the L32 section's F5 clause now says so, and its Q5 clause records that L34 kept L32's membership mapping as it is (each state maps directly onto a marker target; ruling 2026-09-30T16:19:34 Q2 left the response unchanged). This leaf changed no file under `mcp/`, so the route needs no section of its own; the leaf's section is in `dashboard/src/panels/overview.md`.
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 The Mandatory Invariant Closeout Gate, Inert Until The Cutover" at the top: where the leaf lands (the new `application/knowledge_gate/` package, `worktrees/knowledge_gate.py`, `rules_history.py`, `kernel/recorded_reads.py`, and every route), every ruling of `09_mandatory-invariant-closeout-gate.json` (the carried obligations and D29 of 13:15:47; 14:38:47 gaps 1–4 with gap 1 carried to L37; 15:09:25; 16:07:55 F1–F9 and the sync-merge rule; 16:08:08 carried to L37; 17:59:48 R2; 19:16:07 R3), the six candidate invariants, inertness and its three exceptions, and the tests and real-data evidence; five rows. **Reopened claims reworded:** L10's delete-only row (now both sides, anchored on `_linked`), L30's gate-chooser row and L08's recompute row; this pass's generated bullets for those three were removed. The other moved rows were re-pointed by the installed fixer (bullets kept) or by the exact base-to-staged line shift. No verification stamp was advanced. **Re-anchored:** claims bind by anchor text and a committed generated bullet names the old anchor, so the reworded rows were re-anchored on line-exact quotes ("def _linked(" with the `_linked` condition line, "def leaf_onboarding_trace_sides(", "def recompute_leaf_worklist("); no committed history line was edited.
-- 2026-09-30T17:58:19+00:00: Generated citation repair: `requirement_approval` repointed to mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:198-209. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:19+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:130-130. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:19+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:129-129. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:19+00:00: Generated citation repair: `_onboarding_refresh_gate` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:804-854. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:19+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:137-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:58:19+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:901-937. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master" at the top: D32, where the leaf lands (including the c-09 package copy this route governs), every ruling (12:33:07 Q1-Q4, 13:11:32 finding 1 and notes 2-5, 13:35:32, 14:12:52, the L32 sync), the three candidate invariants, that it is not gated on conversion, the real-path evidence and tests; three rows. The installed fixer normalised one memory-relative row into `memory/overview.md` (`1-2146` → `1-2148`), a document this leaf did not change. No verification stamp was advanced.
-- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane In The Reviewer, Inert Until The Cutover" at the top: where the leaf lands, every ruling (PS-1, 12:19:20 Q1-Q7 with Q2 carried to L37, 13:07:38 F1-F6 with F5 carried to L34, R2 pass, the L35 sync rerun), the five candidate invariants, inertness, tests and evidence, and three rows. The moved rows were re-pointed by the installed fixer (its bullets kept, since no claim was reworded) or by the exact base-to-staged shift. No verification stamp was advanced.
-- 2026-09-30T12:06:51+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:128-128. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:06:51+00:00: Generated citation repair: "hunk.new_count > 0" repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:560-560. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:06:51+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:127-127. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:06:51+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_TREES_ROUTE` repointed to mcp/src/agents_remember/serving/review_trees.py:36-36. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:06:51+00:00: Generated citation repair: "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" repointed to mcp/tests/test-evidence-lanes.toml:124-124; mcp/tests/test-evidence-lanes.toml:126-126. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:06:51+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:135-135. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T12:56:40+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` plus the staged delta; first curated over `b54d1b03`, then merged with L29's landed curation after the sync onto code `ce459423` / memory `a6075c76`, L29's committed lines kept byte-identical): **package-route body updated for MIK-R14.** A new top section, "260928-MIK-L14 Reconsideration Surfacing, Inert Until The Cutover": the whole leaf (six new modules and the touched worklist, writer, model, resolver, validator, checklist, CLI and template files), every ruling from 01:45:56 to 11:53:13 (including the 09:18:48 reconciliation of the duplicate R3-1/N5 ruling), the six candidate invariants, inertness, and the tests and real-data evidence; five rows. L13's section now notes that its Q5/Q6 carry is met by L14. The rows the installed fixer declined were re-pointed by the exact line shift of this leaf's diff; the fixer projected or normalised the rest, and its generated bullets are kept. No verification stamp was advanced. **After the sync:** L29's top section and this leaf's are both kept, this leaf's above (it lands later); the lane row is `:127`.
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, 24 files over code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R1 and R2 changes-required with fix rounds, R3 and post-sync pass-with-notes, then the R3-1/R3-2 fix): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Path-Based Knowledge Reader, Inert Until The Cutover": where the reader lives, every ruling of `29_path-based-knowledge-reader.json` (the carried L13 rule; 09:42:58 Q1/N1, Q2, N2 and F1-F14; 10:44:14 F15-F18 and the "more" guard; 11:24:12 R3-1 and R3-2), the five candidate invariants, inertness and the evidence, with three rows. Rows citing the grown collaborator record, composition root and lane manifest were re-pointed by the installed fixer (the bullets below) or by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
-- 2026-09-30T10:04:48+00:00: Generated citation repair: "hunk.new_count > 0" repointed to mcp/src/agents_remember/application/knowledge_worklist/compute.py:558-558. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:04:48+00:00: Generated citation repair: `is_converted` repointed to mcp/src/agents_remember/cli/knowledge_write_route.py:65-68. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:04:48+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:133-133. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T09:56:02+00:00: Generated citation repair: "mcp/tests/test_knowledge_route_chain.py" repointed to mcp/tests/test-evidence-lanes.toml:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T09:56:02+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:126-126. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T09:56:02+00:00: Generated citation repair: "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" repointed to mcp/tests/test-evidence-lanes.toml:124-124; mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T09:56:02+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:133-133. No content impact: mechanical anchor-range projection bound to citation source snapshot 33e107d812c1dd3f1f44473057fb87849c6d5f902a8c0ec12b93f5e2833dc93f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved:** the three stale code comments the 10:05:09 entry recorded were refreshed by the worker (comments only; `familyExpressions.test.ts` joins the change set). The L31 section's bullet says so.
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the whole-leaf section "260928-MIK-L31 Focused Expression Cards In The Reviewer, Inert Until The Cutover" at the top: what the cards show, where the code lives, every architect ruling (the carried L11, L25 Q2/F9/Q8, L10, PS-1; 05:36:19 Q1-Q4; 06:10:21 R1; 06:47:03 R2; 09:38:03 R3 with R3-N1), the five candidate invariants, inertness, the evidence, and the stale code comments found. Three rows added.
-- 2026-09-30T07:52:41+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_TREES_ROUTE` repointed to mcp/src/agents_remember/serving/review_trees.py:34-34. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **route body updated for MIK-R05.** Added the section "260928-MIK-L05 Route-Chain Family Retrieval, Inert Until The Cutover" at the top: the whole leaf, every ruling (2026-09-30 03:32:18, 04:12:49, 04:45:22), the four candidate invariants, the tests and the real-data evidence, with four rows. **Reopened claim reworded:** L01's `_leaf_response` row.
-- 2026-09-30T03:50:54+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T03:50:54+00:00: Generated citation repair: "mcp/tests/test_review_git_trees.py"; "mcp/tests/test_review_artifact_cleanup.py" repointed to mcp/tests/test-evidence-lanes.toml:123-123; mcp/tests/test-evidence-lanes.toml:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T03:50:54+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:177-177. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T03:50:54+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:132-132. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "260928-MIK-L10 Unexplained Change Disposition, Inert Until The Cutover" at the top: the whole leaf, every ruling (01:56:39 Q1–Q4, 03:24:28 N1–N6), the L09 and L31/L32 carries, the four candidate invariants, inertness and the evidence; four rows. No verification stamp was advanced.
-- 2026-09-30T02:31:23+00:00: Generated citation repair: `leaf_onboarding_trace_sides` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:498-531. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:31:23+00:00: Generated citation repair: `recompute_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:544-575. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:31:23+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:131-131. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Reviewer On Git Trees, Inert Until The Cutover; The Archive Hook Once Installed" at the top: the whole leaf, every ruling, the five candidate invariants, the inertness and its one exception, and the tests, with five rows. Rows citing moved lines were projected by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
-- 2026-09-30T01:45:46+00:00: Generated citation repair: `_UNSEALED_FIELDS`; `_lineage` repointed to mcp/src/agents_remember/application/review_comparison_generation.py:162-162; mcp/src/agents_remember/application/review_comparison_freeze.py:760-769. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T01:45:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:130-130. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T01:45:46+00:00: Generated citation repair: `missing_dataset_half`; `unreadable_half_refusal` repointed to mcp/src/agents_remember/application/review_candidate_resolution.py:370-388; mcp/src/agents_remember/application/knowledge_before_half.py:347-377. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover" at the top: the whole leaf, the rulings of 01:45:56 (Q1–Q8) and 02:05:07 (F1–F7), the five candidate invariants, the real-data evidence and the tests. Five rows. No verification stamp was advanced.
-- 2026-09-30T01:07:13+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:128-128. No content impact: mechanical anchor-range projection bound to citation source snapshot 8a187177fd97aa785f74b03e4a26914c71c4a09b0afe5ab323208b62b13057b0; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The Family-Complete Leaf Read, Inert Until The Cutover" at the top: where it lives, the five carried obligations, every ruling of 2026-09-29T23:21:57 and 2026-09-30T00:08:39, the five candidate invariants, the preservation and real-data evidence, the tests, and three rows. L02's paging-statement row was re-measured (`1-27` → `1-30`). The other rows were projected or normalised by the installed fixer.
-- 2026-09-29T23:55:07+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:55:07+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:127-127. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **route body updated for MIK-R06.** Added the section "260928-MIK-L06 Family Route Maintenance In The Worklist, Inert Until The Cutover" at the top: the whole leaf, the carried L04 decision, every architect ruling (21:49:19 Q1–Q7, 22:40:22 F1/N1/N2/N6/N7, 23:14:41) and the five candidate invariants, with three rows. No verification stamp was advanced.
-- 2026-09-29T23:17:45+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:126-126. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "260928-MIK-L27 The Admission Rule In The Knowledge Validator, Inert Until The Cutover" at the top: the whole leaf, every ruling (22:11:24 Q1–Q6; 23:04:57 F1–F6) and the five candidate invariants, with three rows. No verification stamp was advanced.
-- 2026-09-29T21:47:38+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 Planned Invariant Effects Reconciliation, Inert Until The Cutover" at the top: the whole leaf, where it lands, every architect ruling of 2026-09-29T21:56:18 (Q1–Q5) and 22:35:34 (F1–F7), the five candidate invariants and the preservation evidence. Rows citing the touched modules were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T19:57:33+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T19:57:33+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** New section at the top, "260928-MIK-L02 Bounded Continuation Accepted By The Mounted Read, Inert Until The Cutover": the whole leaf and every ruling (the carried L23 ruling; 19:56:40; 20:40:40; 21:32:34). Three rows. **Reopened L03 row re-read and reworded:** the `knowledge_read` surface row named `read_currentness` and `requested_code_tree`, which `mcp/tools/knowledge.py` no longer calls; it now cites `_tree_extras` and `WalkCurrentness`. Other rows citing moved lines were re-pointed by the installed fixer or the exact line map. No verification stamp was advanced.
-- 2026-09-29T19:00:13+00:00: Generated citation repair: `recompute_leaf_worklist` repointed to mcp/src/agents_remember/application/knowledge_worklist/leaf.py:452-483. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T19:00:13+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:123-123. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T19:00:13+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:780-816. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section at the top, "260928-MIK-L30 The Onboarding Refresh Gate On History Files, Inert Until The Cutover": the whole leaf and every architect ruling (18:49:50, 19:23:45, 19:53:54). Three rows. Rows citing moved lines were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T18:08:35+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:147-147. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T18:08:35+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:122-122. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): **route body updated for MIK-R03.** Added the section "260928-MIK-L03 Stale Invariants Flagged At Read Time, Inert Until The Cutover" at the top: the whole leaf and every architect ruling. Three rows.
-- 2026-09-29T15:41:25+00:00: Generated citation repair: `UNCONVERTED` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T15:41:25+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:121-121. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The Change-To-Knowledge Worklist, Inert Until The Cutover" at the top: the new `application/knowledge_worklist/` package, the writer's carry, the two triggers L08 wires, the tool, the task-document field, the `knowledge-worklist` CLI (`cli/` has no overview of its own, so this route governs its card), and every architect ruling recorded on `08_change-to-knowledge-worklist.json`.
-- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New top section: first-class test proofs read back and listed, with the four architect rulings (`path -k name`; the optional `proofs` field; the "without proof" list is checklist-only and informational; rule 3 and the stale-proof clause move to L08/L03), and the package template copy this route governs. Two rows. No `cli/` or `kernel/` fact changed. Rows citing files this change moved were re-pointed or normalised by the installed `memory-citations --fix`, with no wording change.
-- 2026-09-29T13:25:35+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:119-119. No content impact: mechanical anchor-range projection bound to citation source snapshot 669685dd91608eb0296af5d8546b06d1035099d9a0ff44914baa1ead631123fe; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Route body update (MIK-R24).** New top section: the conversion package (governed by `memory`), the `knowledge-convert` command (twelve subcommands), the `kernel/` changes (`merge_file_bytes`, the `memory_init` marker, route-index sidecar hints), the ingest refusal, and the architect rulings, with seven rows. The existing multi-anchor rows into the changed CLI umbrella and kernel files were re-pointed by the exact base-to-working line map, with no wording change.
-- 2026-09-29T12:03:19+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:118-118. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T12:03:19+00:00: Generated citation repair: `published_intent` repointed to mcp/src/agents_remember/models/read_files.py:80-80. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T08:09:59+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new top section "260928-MIK-L12 The Curator Writer, And Two CLI Entry Points That Choose Their Writer By Memory Tree"** covering the new writer package (governed by the `application` route overview), the new `anchor_content.py` model, and the `cli/` fact (no new subcommand; `knowledge_write_route.py`; the ingest and bootstrap dispatch and `--wave`). The two reopened `run` claims (the "public selection the next task uses" rows of the KS-L39/L45 section) and the placement-handoff row that also names `run` were re-read against the current `run` (`mcp/src/agents_remember/cli/knowledge_ingest.py:672-708`) and `_place_review_baseline` (`:516-554`): on unconverted memory `run` still selects the baseline, authors the candidate and hands the loaded contract to `_place_review_baseline`, which still places the review baseline, so each claim was reworded only to say that this is the database route and a converted memory worktree goes to the file writer first. Because the 2026-09-20 generated projection of `_place_review_baseline` (to `:288-312`) named those rows, each row that bundled `run` with `_place_review_baseline` was split so that each claim cites only the construct it is about: the placement row now cites `_placement_refusal`, `_place_review_baseline` and `_invocation_refusal` (where `--rebase-baseline`'s refusal actually lives, `:573-598`), and new rows cite `run` alone (`:672-708`) and `_place_review_baseline` alone (`:516-554`). No verification stamp was advanced.
-- 2026-09-29T07:42:07+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:113-113. No content impact: mechanical anchor-range projection bound to citation source snapshot 5471ee460569295ca840b30e20ab1f90682c00b4b8e1fe413c2ad714c9b76b42; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **route body updated — new top section "260928-MIK-L20 The Migration Census As Files, And The CLI Gains `knowledge-census`"** covering the census files, the two new packages (`memory_quality/knowledge_census/`, governed by the `memory_quality` route overview, and `memory/knowledge_census/`, governed by the `memory` route overview), the new `census.py` model, and the new `cli/knowledge_census.py` card (the umbrella now registers eleven subcommands). Rows citing `cli/__main__.py` were re-pointed by the exact two-line shift, their claims unchanged. No stamp advanced.
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new top section "260928-MIK-L04 Family Routes Are Validated, And The CLI Gains `knowledge-routes`"** covering the six route rules, `.` as a family route, the index's root-route match and the new `cli/knowledge_routes.py` card (the umbrella now registers ten subcommands). Rows citing `cli/__main__.py` were re-pointed by the exact line shift, their claims unchanged. No stamp advanced.
-- 2026-09-29T06:44:49+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot 1a5c7dd5cb87835c8b4e585975574124e545ed7ed5b56804bf2cecaf1ab8ce6b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 The Derived Knowledge Index, And The CLI Gains `knowledge-index`": the new `memory/knowledge_index/` package (governed by the `memory` route overview), the ninth CLI subcommand, and the read switch for a `databasePath` that names a converted memory tree. Re-pointed the published-intent row's `published_intent_block` citation from the stale `:279-294` to the function's extent `:420-435` (claim unchanged), and the two multi-anchor `cli/__main__.py` rows the fixer declined by exact base-to-working line mapping. No verification stamp was advanced.
-- 2026-09-29T05:51:26+00:00: Generated citation repair: `PUBLISHED_DATASET_NAME` repointed to mcp/src/agents_remember/application/published_intent.py:140-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 08ce78606da3cc2a7c0249e0af5ee18d9cd313bdb4222c759c5a89e3e75efdf0; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T05:51:26+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:110-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 08ce78606da3cc2a7c0249e0af5ee18d9cd313bdb4222c759c5a89e3e75efdf0; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L22 The Mandatory Knowledge Validator, And The CLI Gains `knowledge-validate`" for the two directories this route governs directly: `cli/` (the eighth subcommand, and the formatter's shared exclusion predicate) and `kernel/` (`read_git_blobs_bytes` and the raw-output stdin encoding). The earlier L21 section's "seventh subcommand" is left as that leaf's history. No verification stamp was advanced.
-- 2026-09-29T05:00:35+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:107-107. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new section for the text knowledge format package and the `knowledge-format` subcommand** (top of this overview), and the `review-record-comparison` registration row no longer calls it the sixth subcommand and cites its shifted range (`cli/__main__.py:69-77`).
-- 2026-09-29T02:54:02+00:00: Generated citation repair: "mcp/tests/test_knowledge_ingest_publication_route.py" repointed to mcp/tests/test-evidence-lanes.toml:104-104. No content impact: mechanical anchor-range projection bound to citation source snapshot 2eb2ea9eedcea065d08ac926c00a066bf53846ee3aa35f06aeeb6a9d076a86de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/src/agents_remember/memory/knowledge/evidence_records.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_review_resolution_and_route.py`. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:16:46+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the L45 section (two new application modules, the removed generated rationale, and the regenerated package skill copies carrying the per-target rationale shape). The `_with_replays` claim was re-read (it now calls `curator_stored_revisions.stored_revisions`; wording holds). Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): the source-content port row named `_admit`, which moved to `application/review_source_admission.py` as `admit_source_path`; the row now cites it and names the second admitted population (unchanged context a recorded realization of the same comparison links, per the 2026-09-28 ruling). No route impact otherwise: the port, route and composition are unchanged. No stamp advanced.
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 6 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 4 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-
-- 2026-09-27T05:02:28+00:00 — Reconciled this route's durable assessment-history ownership and failure boundaries. Existing source/knowledge/evidence owners and authored judgment meaning are preserved; verification stamps remain closeout-owned.
-
-- 2026-09-26T23:48:33Z — L39: No route impact: explicit stored-sibling retention remains within the existing application family planner, report renderer, tests and synchronized curator instructions. The repository/package purpose, entity boundaries and one-writer ownership are unchanged; detailed behavior is recorded in the governing application and test overviews.
-
-- 2026-09-26T21:13:25+00:00: Generated citation repair: `_UNSEALED_FIELDS`; `_lineage` repointed to mcp/src/agents_remember/application/review_comparison_generation.py:155-155; mcp/src/agents_remember/application/review_comparison_freeze.py:628-637. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — Reconciled current route ownership and retained existing source and history boundaries.
-- 2026-09-25T23:58+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **citation repair only; no route-level fact changed on this pillar.** The round-1 curator's two WIP corrections still stand as written (they are `No route impact`-class edits about the installed harness skill roots, which this leaf's change set does not touch). What this pass adds is the citation consequence of the round-2 change set moving `serving/changeset.py` and `response_contract.py` by line: the rows on this pillar that cite those two files by coordinate were reviewed against the tip. No claim was weakened to fit a stale pointer and none was dropped to silence a finding. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
-- 2026-09-25T22:30:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, uncommitted change set on `ar/260921-icr-l34-ar`, code base `a9a1a41bba535803421470bd17d858657177cb5f` plus the working-tree delta): **route body updated — the reviewer's comparison becomes recordable and a placed baseline becomes openable.** The new section records the sixth subcommand (`review-record-comparison`) that gives the freeze owner its first shipped caller, the `review_namespace` correction (the namespace is read from the record beside the bytes, so the before half of every `knowledge-ingest --baseline` continuity run stops being unopenable and every such leaf's comparison stops being unfreezable), what a reader can now do, and the two carried limits (the producer is live-leaf-only; the new command is not idempotent as its own docstring claims). The L45 section's receipt-only namespace paragraph and its row are corrected in place with a dated correction block, and an older section's five-subcommand count is corrected in place. **Citation accounting:** the three `REVIEW_*` constant ranges this document carried into `review_candidate_resolution.py` were re-derived against this candidate (`80/86/87` → `98/104/105`). No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the repair leaf's own package-side record.** The new section states the taskless admission (`{chat, terminal, bootstrap, curator}`), that its carrier half is generated (`sync-skills.py`, nine targets `ok`), that the mounted refusal now names both write-plane entry points, and the two test-side movements (the 818 + 578 split restoring the census with 16 contracts / 66 artifacts; the D02 cases over an eight-name fixture). It also states that the L27 section's "not modified by this leaf" is history rather than current policy. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260921-ICR-L27 The Package Publishes A New Procedure, And Its Generated Copies Carry It
 
@@ -1561,13 +1425,11 @@ The ten cases live in `mcp/tests/test_knowledge_review_evidence_channels.py` and
 `cli.dashboard.serving_collaborators`, so the packet's failure — a production port supplying only
 assessments while claiming a complete bundle — is caught at the composition rather than at the resolver.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The production record owner: five collections and one measured currentness channel, each read through its owner.** | `review_records_for`; `_COLLECTION_OWNERS`; `CURRENTNESS_OWNER` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/application/review_evidence_records.py:136-143; mcp/src/agents_remember/application/review_assessment_currentness.py:69-69 |
-| **The per-record guard and the two identity listings it composes.** | `_read_signal_runs`; `_claim_records`; `recorded_run_ids`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:387-412; mcp/src/agents_remember/application/review_evidence_records.py:521-545; mcp/src/agents_remember/memory/knowledge/detection.py:565-579; mcp/src/agents_remember/memory/knowledge/evidence_records.py:838-850|
-| **The availability vocabulary and the field that carries it on the served payload.** | `ReviewRecordChannel`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review_records.py:68-123; mcp/src/agents_remember/models/knowledge/review.py:956-996; mcp/src/agents_remember/models/knowledge/review.py:893-893|
-| **The production port the cases drive, and the two states F09 collapsed.** | `review_port`; `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/src/agents_remember/cli/dashboard.py:97-111; mcp/tests/test_knowledge_review_evidence_channels.py:621-647 |
-| The two per-record damage cases, and the task-context collection that reports `not_selected`. | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied`; `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870; mcp/tests/test_knowledge_review_evidence_channels.py:669-690 |
+- **The production record owner: five collections and one measured currentness channel, each read through its owner.** [108]
+- **The per-record guard and the two identity listings it composes.** [109]
+- **The availability vocabulary and the field that carries it on the served payload.** [110]
+- **The production port the cases drive, and the two states F09 collapsed.** [111]
+- The two per-record damage cases, and the task-context collection that reports `not_selected`. [112]
 
 ## 260921-ICR-L11 The Package Gains The Durable-Comparison Chain, And Two Typed Failures Beside The Candidate's
 
@@ -1601,17 +1463,15 @@ irreversible step. The insertion is **not additive at the tail** — it lands at
 below it moved, and the citations into `errors.py` held by this package's cards were re-derived rather
 than shifted.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** | `ComparisonGenerationManifest`; `read_manifest`; `generation_identity` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:575-583; mcp/src/agents_remember/application/review_comparison_generation.py:546-554; mcp/src/agents_remember/application/review_comparison_generation.py:615-649 |
-| **The production entry and the one-rename publication.** | `freeze_review_comparison`; `_publish` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258; mcp/src/agents_remember/application/review_comparison_freeze.py:438-462 |
-| **Custody over named durable history only, and the two snapshots copied by the storage owner.** | `custody_names`; `retain_knowledge_sides` | mcp/src/agents_remember/application/review_comparison_retention.py:278-295; mcp/src/agents_remember/application/review_comparison_retention.py:381-407 |
-| **The two deletion owners and the record that precedes every deletion.** | `release_comparison_code_object`; `discard_comparison_snapshots` | mcp/src/agents_remember/application/review_comparison_reclamation.py:77-124; mcp/src/agents_remember/application/review_comparison_reclamation.py:174-210 |
-| **The read-back: per-channel states and `unavailable_channels()`.** | `reopen_comparison_generation`; `ComparisonReopen` | mcp/src/agents_remember/application/review_comparison_reopen.py:164-225; mcp/src/agents_remember/application/review_comparison_reopen.py:228-249 |
-| **The Git-object retention member this route's `worktrees/` gained.** | `retain_code_object`; `code_object_custody` | mcp/src/agents_remember/worktrees/modules/code_object_retention.py:178-212; mcp/src/agents_remember/worktrees/modules/code_object_retention.py:215-240 |
-| **The two typed failures, and the two boundaries that decide why they are raised.** | `CodeObjectRetentionError`; `ComparisonReclamationError` | mcp/src/agents_remember/errors.py:180-190; mcp/src/agents_remember/errors.py:193-203 |
-| **The one durable-root owner the layout asks instead of restating.** | `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
-| The fifteen production-composition cases that measure the chain end to end. | `test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation` | mcp/tests/test_knowledge_review_comparison_generation.py:336-387 |
+- **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** [113]
+- **The production entry and the one-rename publication.** [114]
+- **Custody over named durable history only, and the two snapshots copied by the storage owner.** [115]
+- **The two deletion owners and the record that precedes every deletion.** [116]
+- **The read-back: per-channel states and `unavailable_channels()`.** [117]
+- **The Git-object retention member this route's `worktrees/` gained.** [118]
+- **The two typed failures, and the two boundaries that decide why they are raised.** [119]
+- **The one durable-root owner the layout asks instead of restating.** [120]
+- The fifteen production-composition cases that measure the chain end to end. [121]
 
 ## 260921-ICR-L6 The Review Surface's Statement Sides Get An Owner, And A Served Field Value Stops Reading As Absent
 
@@ -1640,14 +1500,12 @@ bracketed with `<recorded as a structured value, rendered as compact JSON: …>`
 visible truncation). That is a value change inside an existing field, not a wire-shape change: no new
 field, no new type and no transport change, and `models/knowledge/review.py` is untouched.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. | `side_content`; `side_conditions`; `read_side`; `field_changes`; `field_text` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:127-132; mcp/src/agents_remember/application/review_statement_sides.py:120-124; mcp/src/agents_remember/application/review_statement_sides.py:135-155; mcp/src/agents_remember/application/review_statement_sides.py:158-179 |
-| **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** | `structured_value_text`; `ReviewFieldChange` | mcp/src/agents_remember/application/review_statement_sides.py:69-83; mcp/src/agents_remember/models/knowledge/review.py:507-518 |
-| The adapter's delegation, with the composition unchanged. | `side_content`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:1020-1043; mcp/src/agents_remember/application/knowledge_review.py:968-1020 |
-| **The served-value change measured through the real composition.** | `test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence` | mcp/tests/test_knowledge_review_one_sided_statements.py:320-348 |
-| The added and the removed statement, each keeping its complete available text beside the named absent side. | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
-| The renderer that decides the four branches from declared state. | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:94-121 |
+- The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. [122]
+- **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** [123]
+- The adapter's delegation, with the composition unchanged. [124]
+- **The served-value change measured through the real composition.** [125]
+- The added and the removed statement, each keeping its complete available text beside the named absent side. [126]
+- The renderer that decides the four branches from declared state. [127]
 
 ## 260921-ICR-L20 The Ingest Publishes To The One Location The Read Route Declares, And Reads It Back
 
@@ -1682,17 +1540,15 @@ whole of this package's public-surface delta. The per-file detail lives in the n
   lines is R20's own decision surface rather than absorption. This is the same "keep the adapter a
   delegator" rule this route applied at ICR-L1 and ICR-L18.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The declared location, resolved through the read route's own owner, and the context that keeps the read-back in the scope the write was made in.** | `declared_publication_location`; `DeclaredPublicationLocation`; `published_dataset_path` | mcp/src/agents_remember/application/knowledge_publication_route.py:68-80; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:200-216 |
-| **The admission as four ordered facts, the fourth of which is the ordinary update.** | `admitted_destination`; `DestinationAdmission`; `read_captured_dataset_identity` | mcp/src/agents_remember/application/knowledge_publication_route.py:83-94; mcp/src/agents_remember/application/knowledge_publication_route.py:135-199; mcp/src/agents_remember/application/knowledge_before_half.py:226-240 |
-| **The read-back through the reader's owner, and the three states the report carries.** | `published_identity_read_back`; `PublishedIdentityReadBack`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:202-250; mcp/src/agents_remember/application/knowledge_publication_route.py:97-112; mcp/src/agents_remember/application/published_intent.py:219-243 |
-| **The destination selection the CLI owns, its refusals, and the route line it completes from the run's own report.** | `_Destination`; `_destination_conflict`; `_selected_destination`; `_publication_route`; `_read_back` | mcp/src/agents_remember/cli/knowledge_ingest.py:288-299; mcp/src/agents_remember/cli/knowledge_ingest.py:321-357; mcp/src/agents_remember/cli/knowledge_ingest.py:307-318; mcp/src/agents_remember/cli/knowledge_ingest.py:402-414; mcp/src/agents_remember/cli/knowledge_ingest.py:622-635; mcp/src/agents_remember/cli/knowledge_ingest.py:434-447 |
-| **The renderer that left the CLI, and the two fields this leaf added to the caller's answer.** | `summary`; `payload`; `_counts` | mcp/src/agents_remember/cli/knowledge_ingest_report.py:34-76; mcp/src/agents_remember/cli/knowledge_ingest_report.py:279-293; mcp/src/agents_remember/cli/knowledge_ingest_report.py:79-128; mcp/src/agents_remember/cli/knowledge_ingest_report.py:154-168 |
-| The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. | `_register_knowledge_change`; `knowledge_change` | mcp/src/agents_remember/mcp/registration/knowledge.py:125-157 |
-| The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. | `PUBLISHED_DATASET_NAME` | mcp/src/agents_remember/application/published_intent.py:177-177 |
-| **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** | `test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back`; `test_a_run_that_names_no_destination_states_that_it_published_nothing`; `test_a_destination_selected_without_a_publication_says_so_in_the_route_line` | mcp/tests/test_knowledge_ingest_publication_route.py:266-315; mcp/tests/test_knowledge_ingest_publication_route.py:536-560; mcp/tests/test_knowledge_ingest_publication_route.py:647-702 |
-| The lane row the new module occupies and the two governed consumer rows it joined. | "mcp/tests/test_knowledge_ingest_publication_route.py" | mcp/tests/test-evidence-lanes.toml:138-138 |
+- **The declared location, resolved through the read route's own owner, and the context that keeps the read-back in the scope the write was made in.** [128]
+- **The admission as four ordered facts, the fourth of which is the ordinary update.** [129]
+- **The read-back through the reader's owner, and the three states the report carries.** [130]
+- **The destination selection the CLI owns, its refusals, and the route line it completes from the run's own report.** [131]
+- **The renderer that left the CLI, and the two fields this leaf added to the caller's answer.** [132]
+- The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. [133]
+- The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. [134]
+- **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** [135]
+- The lane row the new module occupies and the two governed consumer rows it joined. [136]
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -1721,15 +1577,13 @@ in the reconciled sidecars for `.../knowledge_before_half.py` and `mcp/src/agent
   *whether* this run may fill anything — plus the invocation refusal for `--rebase-baseline` without
   `--baseline`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The application owner that decides what a before half is afterwards, and the four ordered answers behind that decision.** | `fill_admitted_before_half`; `_place_or_keep` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:464-500; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576 |
-| **The recorded generation, the four-state read of what the half holds, the one first placement, and the deliberate rebase with lineage.** | `BaselineGeneration`; `read_standing_generation`; `place_original_baseline`; `rebase_comparison_baseline` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:108-160; mcp/src/agents_remember/application/knowledge_baseline_generation.py:354-373; mcp/src/agents_remember/application/knowledge_baseline_generation.py:579-612; mcp/src/agents_remember/application/knowledge_baseline_generation.py:615-657 |
-| **The two publication legs whose order is the failure contract, and the read-back that states what the half holds when one refuses.** | `_publish_generation`; `_publish_dataset_leg`; `_publish_record_leg`; `_failed_placement` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:660-696; mcp/src/agents_remember/application/knowledge_baseline_generation.py:699-712; mcp/src/agents_remember/application/knowledge_baseline_generation.py:715-738; mcp/src/agents_remember/application/knowledge_baseline_generation.py:741-760 |
-| **The CLI's one remaining placement question, the handoff that delegates the rest, and the new argument with its invocation refusal.** | `_placement_refusal`; `_place_review_baseline`; `_invocation_refusal`; "--rebase-baseline" | mcp/src/agents_remember/cli/knowledge_ingest.py:497-521; mcp/src/agents_remember/cli/knowledge_ingest.py:524-562; mcp/src/agents_remember/cli/knowledge_ingest.py:581-606 |
-| **The run that reaches that handoff is the database route: since `260928-MIK-L12` `run` first sends a converted memory worktree to the curator file writer.** | `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:680-716 |
-| The sibling owner the half's layout and provenance record stay with, whose docstring was reconciled by this leaf to state the one-record rule. | `read_before_half`; `baseline_origin_path` | mcp/src/agents_remember/application/knowledge_before_half.py:163-166; mcp/src/agents_remember/application/knowledge_before_half.py:257-286 |
-| **The successful journey and the failure windows, driven through the shipped CLI on real enclosures.** | `test_a_second_successful_ingest_over_one_path_keeps_the_original_baseline`; `test_a_rebase_whose_record_leg_fails_leaves_the_original_baseline_in_place` | mcp/tests/test_knowledge_ingest_comparison_generation.py:153-209; mcp/tests/test_knowledge_ingest_failure_windows.py:321-395 |
+- **The application owner that decides what a before half is afterwards, and the four ordered answers behind that decision.** [137]
+- **The recorded generation, the four-state read of what the half holds, the one first placement, and the deliberate rebase with lineage.** [138]
+- **The two publication legs whose order is the failure contract, and the read-back that states what the half holds when one refuses.** [139]
+- **The CLI's one remaining placement question, the handoff that delegates the rest, and the new argument with its invocation refusal.** [140]
+- **The run that reaches that handoff is the database route: since `260928-MIK-L12` `run` first sends a converted memory worktree to the curator file writer.** [141]
+- The sibling owner the half's layout and provenance record stay with, whose docstring was reconciled by this leaf to state the one-record rule. [142]
+- **The successful journey and the failure windows, driven through the shipped CLI on real enclosures.** [143]
 
 ## 260921-ICR-L5 The Cold-Start Ingest Establishes A Before Half, And A Selected One Is Read On Every Run
 
@@ -1756,14 +1610,12 @@ lives in the sidecars for `mcp/src/agents_remember/application/knowledge_before_
   gained one import and two call sites so a present-but-unreadable side is a named refusal on both the
   composition and the entry list.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The before half's owner: its layout, its origin record, its four states and the one refusal. | `read_before_half`; `BaselineOrigin`; `unreadable_half_refusal` | mcp/src/agents_remember/application/knowledge_before_half.py:257-286; mcp/src/agents_remember/application/knowledge_before_half.py:89-120; mcp/src/agents_remember/application/knowledge_before_half.py:347-377 |
-| The establishing operation, and the admission it reads from the committed candidate's own record. | `establish_first_generation`; `_candidate_admission` | mcp/src/agents_remember/application/knowledge_first_generation.py:102-126; mcp/src/agents_remember/application/knowledge_first_generation.py:157-187 |
-| **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** | `_selected_baseline`; `_admitted_candidate`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1619-1640; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1561-1616; mcp/src/agents_remember/memory/knowledge/refusals.py:882-901 |
-| **The CLI's two filling paths behind one placement gate, and the cold-start branch.** | `_place_review_baseline`; `_place_or_keep`; `_establish_first_generation`; `_placement_refusal` | mcp/src/agents_remember/cli/knowledge_ingest.py:497-521; mcp/src/agents_remember/cli/knowledge_ingest.py:524-562; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516 |
-| The two adapter call sites that state the unreadable-half refusal on both routes. | `compose_review`; `list_knowledge_review_entries` | mcp/src/agents_remember/application/knowledge_review.py:257-318; mcp/src/agents_remember/application/knowledge_review.py:335-577 |
-| The cases that measure the operation at the CLI and the surface's before half. | `test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half`; `test_a_before_side_that_is_present_but_unreadable_refuses_by_name` | mcp/tests/test_knowledge_curator_ingest_list.py:1899-2013; mcp/tests/test_knowledge_review_resolution_and_route.py:134-172 |
+- The before half's owner: its layout, its origin record, its four states and the one refusal. [144]
+- The establishing operation, and the admission it reads from the committed candidate's own record. [145]
+- **The admission's read of a selected baseline, taken before anything else is decided and on the resume path too.** [146]
+- **The CLI's two filling paths behind one placement gate, and the cold-start branch.** [147]
+- The two adapter call sites that state the unreadable-half refusal on both routes. [148]
+- The cases that measure the operation at the CLI and the surface's before half. [149]
 
 ## ARSPAWN-L4 Public Advertisement And Starter Contract
 
@@ -1935,26 +1787,24 @@ Preparation does not grant a final certificate. The interactive catalog projecti
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root and contract digest; the ledger path is informational and excluded from candidate authority. A changed pair or candidate must refuse stale publication. Metadata stamping and cache refresh cannot substitute for substantive memory repair.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-53 |
-| Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:568-722; mcp/src/agents_remember/application/memory_quality/controller.py:372-392; mcp/src/agents_remember/application/memory_quality/controller.py:395-468 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:901-937 |
-| Final memory adapter requires the selected four-code-terminal prefix. | `PreparedMemoryCertificationAdapter` | mcp/src/agents_remember/application/prepared_certification.py:770-834 |
-| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:20-68 |
+- Development commands, budgets, diagnostic metrics and isolation. [150]
+- Certifying publication and accepting consumers. [151]
+- Exact contract scope, full check and curator worklist publication. [152]
+- Interactive catalog names missing authority without eligibility. [153]
+- Final memory adapter requires the selected four-code-terminal prefix. [154]
+- Finalization consumes original selected fifth-certificate inputs. [155]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A ledger view is derived from Git and cache write failure is only an availability result. | `refresh_memory_cache`; `derive_memory_ledger` | mcp/src/agents_remember/kernel/memory_cache.py:22-41; mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
-| Existing preparation retains actual Git binding and allows a distinct memory content view. | `ExistingGitPreparationBinding` | mcp/src/agents_remember/kernel/git_preparation.py:33-44 |
-| Baseline adoption commits memory content and returns a cache observation. | `adopt_initial_baseline`; `memory_content_commit` | mcp/src/agents_remember/memory/baseline.py:195-249; mcp/src/agents_remember/memory/baseline.py:233-240 |
+- A ledger view is derived from Git and cache write failure is only an availability result. [156]
+- Existing preparation retains actual Git binding and allows a distinct memory content view. [157]
+- Baseline adoption commits memory content and returns a cache observation. [158]
 
 ## Purpose
 
@@ -2436,14 +2286,12 @@ resolution depends on. The evidence for both halves is
 `notes/reports/260915-CAPS-L15-evidence/E8-fix-r1-production-chain.txt` and
 `mcp/tests/test_capsule_launch_wiring.py`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one decision point every launch point calls, with its three answers and named refusals. | `resolve_launch_capsule`; `LaunchCapsuleMode` | mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:73-78 |
-| The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
-| The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-294; mcp/src/agents_remember/application/role_capsules/launch.py:362-404 |
-| D13's repair, on the registered operation's own resolution path. | `_declared_repository_root`; `AdmittedEnclosure.code_repository_root` | mcp/src/agents_remember/application/skill_resources/capsule.py:419-443; mcp/src/agents_remember/application/skill_resources/capsule.py:186-202 |
-| The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. | `LIBRARY_REOPEN_LEGACY_REASON`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-119; mcp/tests/test_capsule_launch_wiring.py:761-801; mcp/tests/test_capsule_launch_wiring.py:805-844 |
-| The production chain read at the consumer's own gate and at the live runtime's system block. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
+- The one decision point every launch point calls, with its three answers and named refusals. [159]
+- The one workspace rule and the selection that follows it. [160]
+- The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161]
+- D13's repair, on the registered operation's own resolution path. [162]
+- The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. [163]
+- The production chain read at the consumer's own gate and at the live runtime's system block. [164]
 
 ## 260915-CAPS-L6 Native eve Session Adapter Route Impact
 
@@ -3128,9 +2976,7 @@ The package surface now exposes retry, recover, cancel, revise, integrate, retir
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Public closeout payload delegates the current task-bound request. | `worktree_closeout_apply_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:124-141 |
+- Public closeout payload delegates the current task-bound request. [165]
 
 ## Historical milestone context: 260821-DAGQC-L2 Packaged Doctrine Synchronization
 
@@ -3218,10 +3064,8 @@ exist and refuses symlinks — including in-root aliases — unlike the symlink-
 
 ### L32 Citation Publication Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:354-399 |
-| Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
+- Projection admission precedes staging; declined claims retain their original bytes. [166]
+- Accepted batches check complete document bytes and held source/cell bindings before atomic publication. [167]
 
 ## L34 Preparation Ownership
 
@@ -3466,15 +3310,13 @@ the installer does not write the four coordinator `AGENTS.md` targets and **remo
 earlier install left, so an opted-in installation injects no legacy startup chain; the disabled run is
 its own positive control.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-|  The exact binary-wheel pin and the in-file reason tying it to the session build option. | "apsw==3.53.4.0" | mcp/pyproject.toml:21-26  |
-|  The same pin in the requirements manifest. | "apsw==3.53.4.0" | mcp/requirements.txt:2-2  |
-| The storage home and the one-way import direction, declared as charter wording only. | "[package.memory]" | layers.toml:206-222 |
-| The storage package's own boundary statement. | "The package owns the schema, the row codecs and the insert-only revision operation." | mcp/src/agents_remember/memory/knowledge/__init__.py:1-7 |
-| The one canonical encoder, its policy and its duplicate-key-refusing decoder. | `CANONICAL_JSON_KWARGS`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:19-24; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
-| The composition seam that is the storage package's only consumer. | `create_knowledge_revision` | mcp/src/agents_remember/application/knowledge.py:222-236 |
-| The route overview this section introduces. | `# mcp/src/agents_remember/memory/ - Memory Repository Lifecycle And Knowledge Storage Overview` | onboarding/mcp/src/agents_remember/memory/overview.md:1-2177 |
+- The exact binary-wheel pin and the in-file reason tying it to the session build option. [168]
+- The same pin in the requirements manifest. [169]
+- The storage home and the one-way import direction, declared as charter wording only. [170]
+- The storage package's own boundary statement. [171]
+- The one canonical encoder, its policy and its duplicate-key-refusing decoder. [172]
+- The composition seam that is the storage package's only consumer. [173]
+- The route overview this section introduces. [174]
 **Measured qualification (260915-CAPS-L10, finding `F-6`) — read the sentence above as root-scoped.** The
 withholding is complete **inside the coordination root** and it is **not** complete on the machine. The
 install does **not** manage the developer harness's own skill root, and in the measured arms **both** arms
@@ -3608,21 +3450,19 @@ application adapter's two halves — and passes them as `knowledge_review` and
 `knowledge_review_entries`. Every `create_app` call in that module goes through that function, so a
 served dashboard either has both adapters or refuses the corresponding route by name.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The comparison route constant, GET-only.** | `KNOWLEDGE_REVIEW_ROUTE` |mcp/src/agents_remember/serving/review.py:83-83|
-| **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` |mcp/src/agents_remember/serving/review.py:89-89|
-| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" |mcp/src/agents_remember/serving/review.py:281-294|
-| **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** | `_UNWIRED_ENTRIES` |mcp/src/agents_remember/serving/review.py:115-124|
-| **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** | `_status_for`; `source_content_unresolved` |mcp/src/agents_remember/serving/review.py:607-624; mcp/src/agents_remember/models/knowledge/review.py:151-160|
-| The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. | "knowledge_review: KnowledgeReviewPort"; "knowledge_review_entries: KnowledgeReviewEntriesPort" | mcp/src/agents_remember/serving/_app_common.py:463-463; mcp/src/agents_remember/serving/_app_common.py:474-474 |
-| The registration that passes both ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:297-300 |
-| The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:94-103; mcp/src/agents_remember/cli/dashboard.py:105-113 |
-| **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses. The three constant ranges were re-derived against this leaf's candidate, whose import block moved them.** | `REVIEW_CANDIDATE_RELATIVE_ROOT`; `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY` | mcp/src/agents_remember/application/review_candidate_resolution.py:107-107; mcp/src/agents_remember/application/review_candidate_resolution.py:113-113; mcp/src/agents_remember/application/review_candidate_resolution.py:114-114; mcp/src/agents_remember/application/knowledge_review.py:132-146; mcp/src/agents_remember/cli/knowledge_ingest.py:143-145 |
-| **The ingest run's review handoff: two filling paths behind one placement gate — the fork-point dataset copied into the before half, or an identified empty first generation established there.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:524-562 |
-| **The namespace read from the record beside the bytes rather than from the request — the sibling module's operation, which the adapter delegates to. Corrected in place by `260921-ICR-L34`: the receipt-only rule made the before half of every `knowledge-ingest --baseline` run unopenable, and therefore every such leaf's comparison unfreezable.** | `review_namespace`; `read_baseline_generation` |mcp/src/agents_remember/application/review_candidate_resolution.py:391-430; mcp/src/agents_remember/application/knowledge_baseline_generation.py:285-316|
-| **The pair preflight: the absent half named as `baseline` or `candidate` — the sibling module's operation, called only when a subject was named, because a task-context review compares no dataset — and the sibling fact beside it, a side that is present but cannot be read.** | `missing_dataset_half`; `unreadable_half_refusal` |mcp/src/agents_remember/application/knowledge_before_half.py:347-377; mcp/src/agents_remember/application/review_candidate_resolution.py:370-388|
-| The cold-start branch that fills the half when the caller named no baseline, and the two rules that guard the fork-point copy. | `_establish_first_generation`; `_place_or_keep`; `_placement_refusal` | mcp/src/agents_remember/application/knowledge_baseline_generation.py:503-516; mcp/src/agents_remember/application/knowledge_baseline_generation.py:551-576; mcp/src/agents_remember/cli/knowledge_ingest.py:497-521 |
+- **The comparison route constant, GET-only.** [175]
+- **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** [176]
+- The typed request the query string parses into, with no path among its inputs. [177]
+- **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** [178]
+- **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [179]
+- The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. [180]
+- The registration that passes both ports. [181]
+- The composition root's two adapter functions. [182]
+- **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses. The three constant ranges were re-derived against this leaf's candidate, whose import block moved them.** [183]
+- **The ingest run's review handoff: two filling paths behind one placement gate — the fork-point dataset copied into the before half, or an identified empty first generation established there.** [184]
+- **The namespace read from the record beside the bytes rather than from the request — the sibling module's operation, which the adapter delegates to. Corrected in place by `260921-ICR-L34`: the receipt-only rule made the before half of every `knowledge-ingest --baseline` run unopenable, and therefore every such leaf's comparison unfreezable.** [185]
+- **The pair preflight: the absent half named as `baseline` or `candidate` — the sibling module's operation, called only when a subject was named, because a task-context review compares no dataset — and the sibling fact beside it, a side that is present but cannot be read.** [186]
+- The cold-start branch that fills the half when the caller named no baseline, and the two rules that guard the fork-point copy. [187]
 
 ## 260915-KS-L22 The Intent-Review Route, Its Port, And The Wiring Behind It
 
@@ -3656,18 +3496,16 @@ that function, so a served dashboard either has the adapter or refuses by name; 
 assembles collaborators some other way and omits the field gets the refusal rather than a silently
 empty surface.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one route this leaf adds. | `KNOWLEDGE_REVIEW_ROUTE` |mcp/src/agents_remember/serving/review.py:83-83|
-| The GET-only registration. | `KNOWLEDGE_REVIEW_ROUTE` |mcp/src/agents_remember/serving/review.py:83-83|
-| The typed request the query string parses into, with no path among its inputs. | "def review_request_from_query(" |mcp/src/agents_remember/serving/review.py:281-294|
-| The port field on the collaborators dataclass, and the rank reason it exists. | "knowledge_review: KnowledgeReviewPort" | mcp/src/agents_remember/serving/_app_common.py:462-471 |
-| The registration that reads that port. | `register_review_routes`; `collaborators.knowledge_review` | mcp/src/agents_remember/serving/app.py:298-304 |
-| The composition root's two adapter functions. | "def review_port(request):"; "def review_entries_port(repository_id, master, leaf_id):" | mcp/src/agents_remember/cli/dashboard.py:94-103; mcp/src/agents_remember/cli/dashboard.py:105-113 |
-| **The three review ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/cli/dashboard.py:79-83; mcp/src/agents_remember/cli/dashboard.py:154-163 |
-| **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** | "def _status_for(" |mcp/src/agents_remember/serving/review.py:522-607|
-| **The two ports passed into the shared collaborators.** | `knowledge_review`; `knowledge_review_entries` | mcp/src/agents_remember/cli/dashboard.py:79-83; mcp/src/agents_remember/cli/dashboard.py:154-163 |
-| **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** | "def _status_for(" |mcp/src/agents_remember/serving/review.py:522-607|
+- The one route this leaf adds. [188]
+- The GET-only registration. [189]
+- The typed request the query string parses into, with no path among its inputs. [190]
+- The port field on the collaborators dataclass, and the rank reason it exists. [191]
+- The registration that reads that port. [192]
+- The composition root's two adapter functions. [193]
+- **The three review ports passed into the shared collaborators.** [194]
+- **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
+- **The two ports passed into the shared collaborators.** [196]
+- **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
 
 ## 260915-KS-L30 Route Impact — The Curator Ingest Becomes Continuous, And It Publishes
 
@@ -3740,3719 +3578,16 @@ What this route does not gain: no second write path (publication is still
 `application/knowledge_snapshot.py`), no change to the five published `knowledge_*` tools, and no new
 refusal vocabulary. The per-file detail lives in the sidecars for those modules.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The public selection the next task uses to begin from a prior task's published dataset — and, since 260915-KS-L45, the run that also authors the candidate the review opens (on unconverted memory; since `260928-MIK-L12` a converted memory worktree goes to the curator file writer first).** | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:184-282; mcp/src/agents_remember/cli/knowledge_ingest.py:680-716 |
-| **The handoff that places that dataset into the review's baseline half.** | `_place_review_baseline` | mcp/src/agents_remember/cli/knowledge_ingest.py:524-562 |
-| The operation, and the selection value that carries the baseline into admission. | `ingest_curator_list`; `IngestSelection` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1096-1113; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1116-1243; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1019-1036 |
-| The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:3248-3490; mcp/src/agents_remember/application/knowledge_curator_ingest.py:649-661; mcp/src/agents_remember/application/knowledge_curator_ingest.py:735-787; mcp/src/agents_remember/application/knowledge_curator_ingest.py:3519-3555 |
-| The case that measures the journey through the public operation on a real SQLite store. | `test_repository_knowledge_continues_across_baselines_and_tasks` | mcp/tests/test_knowledge_curator_ingest_list.py:2544-2665 |
-| The public selection the next task uses to begin from a prior task's published dataset (the database route; a converted memory worktree goes to the file writer first). | `add_arguments`; `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:184-282; mcp/src/agents_remember/cli/knowledge_ingest.py:680-716 |
-| The allocation a new truth's identity comes from, and the journal a repeat resolves through. | `_Allocation`; `_creation`; `_record_allocations`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:664-700; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1956-1977; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1980-2019; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2050-2057 |
-| The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. | `_retry_key`; `_content_digest`; `_named_anchor_id` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1841-1853; mcp/src/agents_remember/application/knowledge_curator_ingest.py:1856-1908; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2512-2534 |
-| The citation derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints — each now on its own discriminator. | `_identity`; `_target_identities`; `_TargetIdentities` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:3248-3490; mcp/src/agents_remember/application/knowledge_curator_ingest.py:649-661; mcp/src/agents_remember/application/knowledge_curator_ingest.py:735-787; mcp/src/agents_remember/application/knowledge_curator_ingest.py:3519-3555 |
-| The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. | `test_repository_knowledge_continues_across_baselines_and_tasks`; `_cycle01_reused_label_identity` | mcp/tests/test_knowledge_curator_ingest_list.py:2544-2665; mcp/tests/test_knowledge_curator_ingest_list.py:3009-3126 |
-
-## Update History
-- 2026-09-24T12:28:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **route body updated for the new knowledge-bootstrap procedure and for what this package's route owns in its delivery.** The package-owned copy `mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md` is **generated** from root `skills/c-14-knowledge-bootstrap/SKILL.md` by `scripts/sync-skills.py` (nine generated targets: this copy plus the eight harness starter packages), so the section states that the canonical home is the root tree and that the copies are never edited in place. It also records the route's real ownership: the served catalog is the delivery route, the served bytes are compared with `skills/` rather than trusted, and the admission gate's own constant (`TASKLESS_SEAT_ROLES`) is **not** modified by this leaf — the procedure was corrected to the product. **Citation accounting:** the route's own cards and the cards citing the two evidence-lane TOMLs were re-anchored in this pass, because this leaf's three consumer-row additions shift the line numbers of those tables; no range was produced by adding a delta to an old number. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
-  `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator's two authored
-  planes.** The package gained five application owners, one twenty-case test module, the ingest/report
-  wiring they need, and the `l-01-agent-lifecycles` curator carriers. **Citation accounting:** every
-  range this route and its sibling cards carry into the renumbered files
-  (`application/knowledge_curator_ingest.py` 3587 → 3861, `mcp/tests/test-evidence-lanes.toml` +1,
-  `mcp/tests/evidence-lifecycle.toml` +2) was re-derived against this candidate's bytes rather than
-  shifted by a remembered delta, and the rows the product reported as
-  `citation_anchor_absent_from_range` were re-anchored to the constructs they name. No claim and no row
-  was dropped, and no verification stamp was advanced: the candidate is uncommitted and the governed
-  closeout owns the real stamp.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **the route's catalogue row for `ICR-R08@v1` is unchanged and the document's candidate-reading metadata rows were removed.** The route gained `models/knowledge/review_relationships.py` (the recorded relationship vocabulary) and five application owners, and the source pane's payload gained the relationship collection; this document's own rows that cite the review adapter, the source inventory and the review vocabulary were re-derived at their constructs' new extents rather than shifted, and the metadata rows the developer's 2026-09-22 rule removed were the only metadata change. No verification stamp was advanced: the candidate is uncommitted and closeout owns the real stamp.
-- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **L7-aftershock citation repair: the delegation row re-cited to the landed declaration** (`_knowledge_pane` `:712-759`). Wording retained; no stamp advanced.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T22:55:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **package-route body updated for one new production owner, one new vocabulary module and one new case module.** `application/review_evidence_records.py` becomes `ICR-R14@v1`'s record owner (every owner-produced collection for one resolved candidate plus a stated non-measurement), the adapter's private resolver leaves `knowledge_review.py` for it (831 → 819 lines, name re-exported), `models/knowledge/review_records.py` declares the five-state availability vocabulary and `ReviewEvidencePane.channels` carries it, and two memory-route owners gain identity listings so a damaged record is named while its siblings are supplied. The section states the three package-wide facts and the five reference rows behind them, and no earlier section was re-worded. **Stamp accounting:** the verification pair is retained as recorded (`d80a0513…` / `2026-09-21T19:51:20+02:00`), which is the production line this reading was against; the candidate row added at the top names the uncommitted candidate and no stamp was invented.
-- 2026-09-21T20:44:00+02:00 — 260921-ICR-L11 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L20` line; no side and no claim was dropped.** The header keeps both candidate rows (`ar/260921-icr-l20` and `ar/260921-icr-l11`) and one `lastUpdated`; both sections are kept — this leaf's `260921-ICR-L11` section first (newest content) and `260921-ICR-L20`'s below it — and both history entries are kept, this leaf's above `260921-ICR-L20`'s. **Citation accounting:** no range in this document needed re-derivation — the ranges it carries into `mcp/tests/test-evidence-lanes.toml` (`:89`) and `mcp/tests/evidence-lifecycle.toml` (`:733`, `:1271`) are **above** the sync line's insertions and were re-read as unchanged, while this leaf's own ranges into `errors.py` (`:180-190`, `:193-203`), `durable_evidence.py` (`:58-69`) and the new modules name the merged line's content exactly (those files are byte-identical to this leaf's candidate). **No claim was corrected here**, because neither side asserted a value the merge moved. **No verification stamp was advanced** — the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows sit outside the conflict and keep `945ddad6a9c90fbf5d7eef7546b9e69714c6c4fc` / `2026-09-21T18:46:40+02:00` from the incoming line.
-- 2026-09-21T20:36:00+02:00 — 260921-ICR-L11 curator (uncommitted change set on `ar/260921-icr-l11`, base `9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75`): **this package route gained the durable-comparison chain: six production modules, one test module, and two typed failures.** The section states the chain in one line per owner (record, freeze, retention, reclamation, reopen, plus the `worktrees/modules/` Git-object retention they depend on) and records that it composes owners which already existed — **no second store, no second capture path, no second measurement**. It also records the package-wide consequence of the `errors.py` change: `CodeObjectRetentionError` and `ComparisonReclamationError` are ordinary `AgentsRememberError` members with a `status`, raised rather than returned at two different boundaries, and the insertion at `180` is **not additive at the tail**, so every class below it moved and the citations into `errors.py` held by this package's cards were re-derived rather than shifted. Verification metadata is **not** advanced: the candidate is uncommitted and the governed closeout owns the stamp.
-- 2026-09-21T18:35+02:00 — 260921-ICR-L20 curator, **memory-side sync conflict resolved as a UNION with the incoming `260921-ICR-L6` line; no side and no claim was dropped.** Both sections are kept: `260921-ICR-L6`'s statement-side section stands first (newer) and this leaf's publication-route section follows it, each unchanged in substance. Every range the resolution keeps was then re-derived against the merged candidate rather than shifted by a remembered delta (the three conflicted rows took the merged extent per construct — the CLI's `_place_review_baseline` `:504-542` and `_placement_refusal` `:477-501`, the adapter's `compose_review` `:377-452` and `list_knowledge_review_entries` `:198-279`, and `test_knowledge_review_surface.py`'s case `:828-866`; the half-names row took `review_candidate_resolution.py:77-84` with the adapter's `__all__` `:131-145` and the CLI's import block `:143-145`); where both sides cited the same construct the merged extent was taken, and two claims that had become untrue in the merged state were corrected rather than kept in two wordings (the half-names row's CLI citation said `:102-103` on both sides and the merged import block is `:143-145`). **No verification stamp was advanced:** the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is exactly what the incoming line recorded (`9043a82ecd8cf6cfd0c2d08e2e36cd060b0c5f75` / 2026-09-21T18:13:19+02:00 where that line carried it), this leaf's candidate reading was recorded in the entry as metadata and not as a stamp, and the governed closeout owns the real commit.
-- 2026-09-21T18:20:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`, merged base `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **this route gained one module and one served-value change, and the entry was revised at the sync so the document states the merged line rather than either side of it.** The section above records that `mcp/src/agents_remember/application/review_statement_sides.py` now owns the review surface's statement-side data contract; that `application/knowledge_review.py` delegates to it (888 → **831 lines**, `__all__` unchanged, no re-export because nothing under `mcp/` imported the old private names); and that a **changed structured field** (`provenance`) is no longer served as `None` on both sides — an absence the snapshot does not hold, stated twice — but as each side's own labelled canonical projection. It is a value change inside an existing field: no new wire field, no new type, and `models/knowledge/review.py` untouched. The renderer half is `dashboard/src/panels/review/KnowledgeStatements.tsx`, where an addition or removal now draws the complete available statement beside a named absent side. **Sync accounting:** this document's memory-side conflict was resolved as an **additive union** — leaf `260921-ICR-L18`'s section is kept whole above/below this one, and this leaf's section and entry are kept whole beside it; no side was chosen wholesale and no claim was dropped. One observed gap is recorded rather than repaired: L18's section on this document arrived from the landed memory line **without an Update History entry of its own**, so this resolution preserved it exactly as it was carried and invented no record for another seat. Verification metadata is **not** advanced: the stamp is L18's `71a4433e686b3380af97a0836bb82bab2c8f2aad` / `2026-09-21T16:29:06+02:00`, which this leaf neither advances nor regresses, and the candidate is uncommitted so the governed closeout owns the real stamp.
-- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **body update for the route's new publication owner and the seam it drew.** This package gained `application/knowledge_publication_route.py`, `cli/knowledge_ingest_report.py` and `tests/test_knowledge_ingest_publication_route.py`; its public surface did **not** move — no tool name, response model or refusal code changed, and the mounted `knowledge_change` docstring gained one sentence naming the ordinary route. The section states the four route-level facts (one declared location reached by the write side, the derived admission, the read-back that replaces a successful-exit inference, and the CLI keeping the decision while giving up the renderer). **Citation accounting:** every range this section carries into the three new files, the CLI and `published_intent.py` was derived from its construct's own extent in this candidate; the rows this document already carried into `cli/knowledge_ingest.py` were re-derived in the same pass, because the module renumbered completely (541 → 692) — `_placement_refusal` `:292-316` → `:477-501`, `_place_review_baseline` `:319-357` → `:504-542`, `run` `:360-409` → `:660-692`, `add_arguments` `:133-209` → `:171-262`. No claim and no row was dropped, and no verification stamp was advanced — the governed closeout owns it.
-- 2026-09-21T15:25+02:00 — 260921-ICR-L5 curator, **the second quality pass's enforced rows re-read and re-cited; every one of them was a range that had drifted out from under its anchor.** Rows repaired here by re-deriving each range from the construct's own extent in the merged candidate, with claim wording retained because each claim still states what the code does: the unique `list_knowledge_review_entries` row (now `knowledge_review.py:207-288`, which is the operation's declaration in the adapter) and the two journey-case rows (now `2567-2690`, `2691-2785`, `3032-3149`, i.e. the class and the two entry points the claim's own words describe). No verification stamp was advanced — the working tree still differs from every recorded stamp, so closeout owns that stamp.
-- 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **the sync's memory-side conflict in this document resolved as a union, and one range on the master side corrected rather than merged.** Kept from the master line: L5's re-measured ingest-handoff row (`cli/knowledge_ingest.py:336-376`, the two filling paths behind one placement gate), its cold-start rows, its `unreadable_half_refusal` fact beside the pair preflight, and all four of its history entries. Kept from this leaf: the review rows it re-derived when this leaf moved `serving/review.py` and `review_candidate_resolution.py`. **Corrected rather than merged:** the published-half-names row cited `review_candidate_resolution.py:72-79` and `knowledge_review.py:118-120` — the pre-merge import block — so it now cites the constants' single span (`77-87`) and the merged adapter's `__all__` (`125-142`), with the CLI's own import line (`102-103`) kept beside them; the `review_namespace` row's `276-301` became `300-325`; and the pair-preflight row's `255-273` became `279-297`, because `candidate_ref` was added above both constructs. My earlier duplicate wording of the ingest-handoff row was **superseded, not merged**: L5's row states the same fact and adds the cold-start path, so keeping both would have said one thing twice. No claim was dropped and none was invented.
-- 2026-09-21T15:10+02:00 — 260921-ICR-L5 curator, **the quality checklist's five enforced rows on this document re-read and re-cited against the merged candidate.** Two were stale ranges and three were reopened claims, and the wording of each was compared with the construct before its range was regenerated. `_place_review_baseline` is cited at its merged extent (`336-376`) where the L45-era row still carried `293-332`; the journey row now names `_cycle01_public_identities` beside the two cases the claim's words describe and cites all three at their merged extents (`2567-2690`, `2691-2785`, `3032-3149`) instead of four ranges that no longer held their anchors; and the two rows whose claims are about the *pair handoff* rather than about the gate were left at the extents that do hold them. The review-handoff claim itself is retained rather than re-worded: it still states what the code does, and its range now holds the declaration the construct occupies. No verification stamp was advanced — the working tree still differs from the recorded `702714fc` stamp, so it cannot be re-verified here and closeout owns the real stamp.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **citation repair only, forced by this leaf's line shifts; no route impact.** Four rows in the review section cite `serving/review.py` and `review_candidate_resolution.py` by line, and this leaf moved all four constructs (`_status_for` 102-117 → 125-140 after the optional-selector change; `review_namespace` 276-301 → 300-325 and `missing_dataset_half` 255-273 → 279-297 after `candidate_ref` was added above them; the two published half-names now cited as the single 77-87 span that carries both constants). Each row was re-read against the construct it names and re-derived from that construct's current extent; the `missing_dataset_half` row's prose was corrected with it, because the pair preflight is now reached only when a subject was named — a task-context review compares no dataset. No claim was deleted, no anchor was dropped to silence a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-21T14:30+02:00 — 260921-ICR-L5 curator, **the sync's memory-side conflict in this document resolved as a UNION, and one claim on the superseded side corrected rather than merged.** Both sides' rows for the review pair were kept with each anchor re-derived against the merged candidate: L5's re-measured `_place_review_baseline` range (`:336-376`, against a 513 -> 620 line CLI file) and L1's statement that the three `REVIEW_*` constants are now *defined* in `application/review_candidate_resolution.py` and re-exported through `knowledge_review.py`, which is the import path the CLI uses; the `review_namespace` and `missing_dataset_half` rows keep L1's relocation to the sibling module, and L5's cold-start rows were added beside them. One claim **could not be merged and was corrected**: the KS-L45 section above said a run with no `--baseline` "leaves the half absent", which stopped being true when leaf `260921-ICR-L5` landed the cold-start establishment — that sentence now states the three current outcomes. No verification stamp was advanced.
-- 2026-09-21T14:25+02:00 — 260921-ICR-L5 curator (uncommitted change set on `ar/260921-icr-l5`, code base `f745e16659c5602252bb185a2ffccc356c2bde26`): **the cold-start branch reached the curator write plane this route publishes, and the section above states the two facts that reach this altitude.** Nothing public moved — no advertised tool name, no response model, no refusal vocabulary — and the change is two new application modules plus an import and two call sites in the review adapter. The CLI's review handoff now has two filling paths behind one placement gate: `--baseline` copies the fork point (with an identified generation and a damaged half both protected), and no `--baseline` establishes an identified empty first generation, while a *selected* baseline that is missing or corrupt is refused by name on every run including a resume. **Citation accounting:** every range on this route that points into `cli/knowledge_ingest.py` or `knowledge_curator_ingest.py` was re-derived from the construct's own extent rather than carried, because leaf `260921-ICR-L5` renumbered the CLI file entirely and moved every anchor below `:1325` of the curator ingest. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded; no stamp was advanced or invented and no commit was made.
-- 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **citation repair only, forced by this leaf's move of the review resolution out of `application/knowledge_review.py` into `application/review_candidate_resolution.py`.** The rows of this document that cited `knowledge_review.py` for `REVIEW_CANDIDATE_RELATIVE_ROOT`, `REVIEW_CANDIDATE_DIRECTORY`, `REVIEW_BASELINE_DIRECTORY`, `review_namespace`, `missing_dataset_half`, `list_knowledge_review_entries` and `_recorded_identities` were re-read and re-pointed: a name the sibling module now defines is cited there, and a name the adapter still owns is cited at the extent it occupies in this candidate (the module is 1113 lines, down from 1281). No claim was re-worded beyond naming where the construct now lives, no row was deleted and no verification stamp was advanced — the candidate is uncommitted and closeout owns that stamp.
-- 2026-09-21T00:20+02:00 — 260915-KS-L47 curator (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`, memory base `2f415d930d1f8122ae0226bd296add3265600749`): **body update for the route this leaf's change set touches — the three write-binding repairs this leaf lands on the ingest entry point: the retry guard now digests the whole normalized semantic write intent, explicit anchor reuse is resolved against the stored anchor before any plan exists, and the review's before-snapshot is captured before publication can overwrite its source. The route section above states each measured before/after and names the fields the digest deliberately excludes. Every citation this leaf's edits moved was re-measured to its construct's own extent.** This is a body change and not a metadata-only refresh: the route section carries statements the overview did not make before. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains this body and no stamp was measured on it; no stamp was advanced or invented. No commit was made.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `_place_review_baseline` repointed to mcp/src/agents_remember/cli/knowledge_ingest.py:288-312. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator, **memory-side sync conflict resolved as a UNION; no side dropped.** The memory source branch advanced to `92f444b04` (260915-KS-L45) while this leaf's curation was in flight, so the sync's re-apply conflicted in this file. Both sides were kept because both are true: 260915-KS-L45's landed additions (the Intent-review entry path, the two published half-names `REVIEW_BASELINE_DIRECTORY`/`REVIEW_CANDIDATE_DIRECTORY`, the `missing_dataset_half` pair preflight, the receipt-derived `review_namespace`, and the enumerating reads) and this leaf's 260915-KS-L43 edits (the allocated-identity/derived-citation split, the retry key and its journal, the explicit anchor reuse, and the recovery's journaled decisions with the bounded cycling refusal). Where the two sides carried the same row in different line numbers, the row was re-measured against the moved line rather than picked: L45 curated against `fb719f89` and this leaf's source moves every citation below `:306` of `knowledge_curator_ingest.py` and renumbers `cli/knowledge_ingest.py` entirely, so the surviving ranges are the post-merge measurement for both. One **contradiction** is recorded rather than silently resolved: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` frontmatter pair is L45's (recorded against the moved line, the newest verification on record), while the candidate reading recorded in the entry is this leaf's reading — two different claims, kept beside each other instead of one overwriting the other. No verification stamp was advanced by this leaf.
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **this route's identity bullets had their scope corrected, and the allocation they were silent about is now stated.** The first bullet said the ingest's identities belong to the repository rather than the baseline and that "the same obligation is therefore the same record when the next task reads the line at a later baseline" — true of the citation identities, and true of the invariant only because the entry's local label was then its whole distinction. That reading is what the developer's 2026-09-20 ruling replaced, so the bullet now says which identities the derivation covers and names the sentence's narrowed scope; a new bullet states the ruling at this route's altitude (the API allocates and persists the canonical identity; the label is not an input; continuity is naming the stored identity; a retry rides a separate idempotency key; **enclosure-scoped stored identity is forbidden**); and the two-constructs bullet now records that the anchor is keyed on the allocated revision and the claim on its own edge, because the route/anchor fix alone still left two independent tasks sharing one claim. Three rows were added for the allocation, the retry key/content guard and the explicit anchor reuse, and the two rows the fixer could not project were re-measured by hand. No verification stamp was advanced: the source is modified in the delivered working tree and the governed closeout owns the real stamp; the entry names the candidate this reading was performed against. No commit was made.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_ROUTE` repointed to mcp/src/agents_remember/serving/review.py:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: `KNOWLEDGE_REVIEW_ROUTE` repointed to mcp/src/agents_remember/serving/review.py:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: "def review_request_from_query(" repointed to mcp/src/agents_remember/serving/review.py:83-83. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the reviewer surface became two routes, and the candidate pair it compares got a production producer.** This overview gained the section recording both: `/api/review/intent/entries` lists the subjects the resolved pair can be compared on (a second **path**, not a second adapter, because a caller that had to guess a subject id would be choosing the candidate), `_status_for` reads success as `refusal is None` so one mapping serves both result types with `subject_unresolved` answering `404`, and the entry route refuses an unwired process by name (`_UNWIRED_ENTRIES`) rather than with an empty list. It also records the producer half: the ingest CLI derives its candidate directory from the contract through the review's own **published** constants, and a committing run given `--baseline` **copies** that dataset into the baseline half, with `missing_dataset_half` naming which half is absent when neither is there; and that both sides are opened under the namespace read from the candidate's own sealed receipt, because the dataset is bound to a namespace id rather than to the requested repository spelling. The L22 section is retained below with its count superseded in place. No verification stamp was advanced.
-- 2026-09-20T05:17+02:00 — 260915-KS-L39 curator (uncommitted CYCLE-01 change set on `ar/260915-ks-l39-ar`, base `756c47b37fa16324a836a44336655413d10fffaa`): **this route's body gained the L39 section above**, and it states the three CYCLE-01 points at the boundary this route publishes: the CLI's new `--baseline` selection, the identity derivation moving off the code base commit onto the repository's own `repository_id`, and the symbol discriminator that lets two constructs of one file store two anchors and two claims against one route row. The five published `knowledge_*` tools, their schemas, the read rail and the refusal vocabulary are unchanged, and the publication owner is still `application/knowledge_snapshot.py`. This is a body change, not a metadata-only refresh: the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows are left exactly as they were, no stamp is advanced — the candidate is uncommitted and closeout owns the real code and memory commits — and the entry names the candidate this reading was performed against.
-- 2026-09-20T01:54+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **this route's body gained the L30 section above** — the curator ingest's continuous repository identity, its baseline fork, declared invariant revisions and multi-anchor targets, and the publication leg that makes a committed candidate reachable as a dataset through the CLI. The five published `knowledge_*` tools, their schemas, the read rail and the refusal vocabulary are unchanged, and the publication owner is still `application/knowledge_snapshot.py`. This is a body change, not a metadata-only refresh: the previous verification stamp rows are left exactly as they were and no stamp is advanced, because the candidate is uncommitted and closeout owns the real code and memory commits.
-- 2026-09-19T21:35:57+02:00 — 260918-TSIP-L7 worker (agreement leaf, `ar/260918-tsip-l7-ar`, base `7879f5b2`): **the budget sentence in `## Development And Certification Policy` was false and is corrected.** It read *"budgets of 1,000 unit and 150 integration"* — two raises stale, and made false a second time by this leaf's own change — and now states the declared pair with its home (`pyproject.toml:263-264`: `unit_case_budget = 3000`, `integration_case_budget = 600`), the pair it replaces (2300 / 400, the merged line's) and the reason the raise is a policy rather than a measurement. This is `T56` on the 260918 TSIP register and the sixth instance of its class found by grep on this master; the four sibling sites in other routes are reported with their owners rather than repaired here. `lastVerifiedCommitHash` is deliberately unchanged: the candidate is uncommitted and the governed closeout owns the real code commit. No other claim in this document was re-read.
-- 2026-09-18T19:17+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section** — the route-level statement of the terminal leaf's changes under `mcp/` (the measuring-build stamp, the corrected `read_steps` response, the address-bound next-step hint, `atomic_replace`'s two legs, the accepted memory-worktree shape, the cleanup-preview agreement, the closeout hint plus the durable attestation copy, the citation-machinery fixes, and the knowledge substrate's own contradictions), each pointing at the module sidecar that carries it. It also states the three rails a reader must respect: zero integration headroom (400 / 400, with the `UsageError` that makes an over-budget lane execute nothing), the budget pair's real home in the repository-root `pyproject.toml`, and the catalogue's unchanged 15 / 65 with a moved digest. The body changed substantively; no verification stamp moves, because every source named is modified in the delivered working tree and closeout owns the stamp.
-- 2026-09-18T18:20+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **re-read this card's reopened claim against the construct its range now covers, and RETAINED its wording** — `KNOWLEDGE_REVIEW_ROUTE`, cited at mcp/src/agents_remember/serving/review.py:104-104. The claim says the section's route is registered GET-only, and the cited line is `@app.get(KNOWLEDGE_REVIEW_ROUTE)`; the constant itself is declared at `:49`. The claim is true as written. It reopens because the construct **did not exist at this card's recorded verification commit** — it is this leaf's own addition — so the comparison the checker makes is between a stamp that predates the construct and a tree that carries it. That is the stamp-relative condition this master named at L12, L13, L16, L17, L20 and L21, and it clears when closeout writes the code commit. No range was substituted or deleted and the verification stamp is **not** advanced.
-- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the GET-only `GET /api/review/intent` route and its path-free query contract, the `knowledge_review` port on `ServingCollaborators` with the rank reason it exists, and the composition-root wiring in `cli/dashboard.py` that supplies the application adapter. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
-- 2026-09-18T14:55+02:00 — 260918-TSIP-L3 curator (citation repair, `ar/260918-tsip-l3-ar`, base `a12c511f`): `task_reopen` was repointed `:59-71 → :64-76` (the `curator_coherence` description repair added 5 lines above it). The 2026-09-11 generated-repair history entry below keeps its as-of numbers. The claim's wording was re-read against the new bytes and is unchanged — only the range moved, because this leaf's edit to `mcp/src/agents_remember/mcp/registration/tasks.py` inserted lines above it. `lastUpdated` advances with this repair; `lastVerifiedCommitHash` is deliberately unchanged because the candidate is uncommitted and the governed closeout owns the real code commit.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:600-636. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the packaged role files' current shape reaches this route.** The CAPS-L1 section still described the packaged role files as carrying the L1 readable order and an `**Inherits:**` declaration line. leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) rewrote all **ten** files under `package_data/runtime/skills/l-01-agent-lifecycles/roles/` into the **function shape** — `# <Role>`, `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do`, and a closing `## Stop and …` section — so the numbered sections, the knob block and the `**Inherits:**` line no longer exist there and any card citing one is stale. The canonical `skills/` tree was rewritten first and `scripts/sync-skills.py` propagated it, so canonical and packaged copies stay byte-identical. Body updated as above; no verification stamp advanced because the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 6 generated projection bullet(s) by hand** — `create_knowledge_revision`, `worktree_closeout_apply_payload`, `task_reopen`, `PreparedMemoryCertificationAdapter`, `_attach_final_full_catalog`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
-- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the capsule chain's measured result and its live limit reach this route.** Added § 260915-CAPS-L10 Measured Result — the capsule is **larger** than the legacy startup chain at the one elevation measurable (delivered `orientation` capsule **11,828** vs a **5,928** baseline, **+5,900**; like-for-like `implementation` capsule 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED** with disposition **REVISE** and no IAS landing authorized. That section also carries the delivery result that did hold (the started eve session's own system block holds the capsule exactly once — second call, after compaction, after clear and after resume; a forged delivery never reached it; an edited carrier was refused with no model call; the runtime staged from the builder's worktree and asserted byte-equal), the unobservables and the UNRUN items, and the explicit statement that the L1 restructure, the L2 compiler properties and the L9 cutover are **structure, correctness and design intent — not a measured context reduction**. **Qualified the L9 cutover section with the measurement's finding `F-6`:** the withholding is complete inside the coordination root but **not** on the machine — the install does not manage the harness's own skill root and **both** measured arms read `~/.agents/skills/l-01-agent-lifecycles/SKILL.md`, so no card may claim the legacy corpus is off (owner L9 / harness-surface). **Corrected a landed defect (`D35`):** the CAPS-L18 section named `checklistStatus=ready-for-closeout` as the repair loop's termination condition, which is never a value of the combined field; the raw `qualityChecklistStatus` is the gate, the combined `checklistStatus` then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **route impact recorded rather than a no-impact marker** —
-  the section above states the experimental packaging and cutover boundary, including the two
-  claims this route must not invent (the legacy corpus is *not* fully deduplicated; C6/C7's
-  union is L11's residual, this leaf settles the installation/cutover route only) and the
-  per-run selection with its root-scoped no-global-switch proof. It also records what the route
-  changed (the new `install/experiment.py`, the two entry points over one private installer, the
-  cutover, the packaged mirror and its generator target, and the installed `runtime/eve-agent`
-  path) and that the leaf is entirely unlanded. Verification metadata is left at the leaf's base
-  commit; the candidate is deliberately uncommitted, so the governed closeout stamps the real
-  code commit.
-- 2026-09-17T11:35+02:00 — 260915-CAPS-L14 curator: **route impact recorded rather than a no-impact marker** for the citation source-index surface this package exposes. Adds the section above (the shared exclusion register and its three sources, the additive caller-exclude surface on the MCP tool and the CLI, the reported-skip cap mechanics under the developer's 2026-08-20 ruling with the v10 manifest and the v9 rebuild, the typed refusals on the quality surface and at the closeout gate, and the mode-independence of all three). **Repairs a stale claim**: the final memory adapter citation still pointed at
-  `worktrees/integration/closeout/prepared_certification.py:721-785`, a path that no longer exists — the adapter moved to the application rank in `806649b9`, so the row now reads `application/prepared_certification.py:749-813`. The adjacent `PreparedCloseoutContinuation` range start is corrected to the class's real declaration line. Verification metadata is left at `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
-
-- 2026-09-17T11:15+02:00 — 260915-CAPS-L15 curator: **route impact recorded rather than a no-impact
-  marker.** The launch path this package serves changed meaning: two of the three production launch
-  points now compile and supply the capsule (the spawn primitive and the dashboard opener), the third is
-  a declared exclusion with its measured reason, the launch runs where its capsule admits (one workspace
-  value across cwd, settings selection and `AR_WORKSPACE_ROOT`), and the D13 repair makes the registered
-  `role_capsule_compile` surface usable. Two limitations are carried with their owner (`D22`'s eve
-  dispatch gate and the dashboard route's `session_backend` gap, both **L17**) so no reader takes the
-  wired path for an eve seat launching end to end. Six reference rows added. Verification metadata moves
-  to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
-  stamps the real code commit and no hash or fingerprint was invented here.
-
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
-
-
-- 2026-09-17T01:31:11+00:00 — **Historical stamp carried from the incoming official line** (merge HEAD `12bd7fd3`; the live stamp for this file is the later synced value in the metadata table above, which closeout re-stamps): `lastUpdated` 2026-09-15T13:15+02:00; `lastVerifiedCommitHash` `a5f5380badf357622daf1965a7a0e3caf91b51ff`; `lastVerifiedCommitDate` 2026-09-16T08:34:21+02:00; the candidate reading taken against `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`.
-
-- 2026-09-17T01:15:00+00:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): **No route impact:** reviewed this overview as the nearest governing route above the experimental knowledge substrate, whose meaning changed one level down. The change set adds the baseline-to-candidate comparison inside `memory/knowledge/` (two modules), its vocabulary in `models/knowledge/diff.py`, its composition seam in `application/knowledge_diff.py`, two test modules with one governed support artifact, and two additive changes to existing modules (`memory/knowledge/read.py`'s one-field `SelectionQuery.seed_override`, and five new readers in `memory/knowledge/read_queries.py`). None of that adds, moves or retires an MCP-package responsibility, a charter paragraph or a boundary at **this** altitude: the sub-route's own overviews carry the substantive account, and the package's route table is unchanged. The knowledge substrate's own section below (260915-KS-L1) remains the L1 as-of record and is not extended here.
-
-- 2026-09-16T21:50:00+00:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **No route impact:** reviewed this overview as the nearest governing route above the experimental knowledge substrate, whose meaning changed one level down. The change set adds the selective recorded-scope read inside `memory/knowledge/` (four modules), its vocabulary in `models/knowledge/read.py`, its composition seam in `application/knowledge_read.py`, and three test modules with one governed support artifact. None of that adds, moves or retires an MCP-package responsibility, a charter paragraph or a boundary at **this** altitude: the sub-route's own overviews carry the substantive account, and the package's route table is unchanged. The knowledge substrate's own section below (260915-KS-L1) remains the L1 as-of record and is not extended here.
-
-- 2026-09-16T11:50+02:00 — 260915-CAPS-L4 curator, **post-verdict correction**: the independent
-  baseline review landed (`260915-CAPS-L4-verdict-baseline.md`, recommendation **BLOCK**,
-  `CAPS-R04@v1` `rejected`) and refuted the spec claim the entry above rested on. The final SEP-2640
-  introduces **three protocol methods** and makes `skills/list` + `skills/get` mandatory for any server
-  declaring the extension — the declaration *is* the commitment — while this server answers neither
-  (`-32602`); the handoff's "no new protocol methods" was a **misquotation** (`F-L4-06`, `F-L4-05`).
-  Added the rejection banner to this route's inventory section, removed the sentence asserting the
-  false claim, and recorded that the 66-name agreement, the three advertised tools and the 85-resource
-  registration are all real and independently reproduced while the **conformance** claim is not. **The
-  onboarding describing this transport must not be treated as settled current intent, and must be
-  refreshed when fix leaf F1 repairs the surface.**
-
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`,
-  base `b00a4ac2`): corrected this route's top-level inventory claim — the ordered `PUBLIC_TOOLS`
-  inventory, the live registration and the response-model registry now agree at **66** names, not 63,
-  after this change appended `role_capsule_compile`, `skill_catalog_list` and `skill_catalog_read`
-  through the new thirteenth registrar `mcp/registration/capsule_serving.py`. Recorded the second,
-  larger route-level fact: this package now advertises **MCP resources** for the first time (85: every
-  file of the 14 shipped skills plus `skill://index.json`) through the SEP-2640 skills transport, and
-  the two new `skill_catalog_*` tools are this server's own reads over
-  the same registry for a client that is not resource-aware. Also recorded that the
-  served corpus is the generated `package_data/runtime/skills/` copy rather than the canonical root
-  `skills/` tree, which is what makes a served revision reproducible. The 63-name sentence is kept as
-  the lineage it was and now says it held until this change. Verification metadata remains
-  closeout-owned; no acceptance claim.
-- 2026-09-16T09:30:00+00:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): **No route impact:** reviewed this overview as the nearest governing route for `kernel/atomic_write.py`, whose only change is one added helper. `fsync_file` extends the module's existing durability contract (the file-data half, for a producer that wrote the file through another owner) without adding, moving or retiring a route responsibility, and the module's own card carries the disclosure that its directory fsync runs after `os.replace`. The kernel route therefore has no new pillar, no new charter wording and no boundary change to record here; the substantive account lives in `mcp/src/agents_remember/kernel/atomic_write.py.md` and in the `memory/` route overview's L4 section.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **route body updated** for the native eve session adapter (`CAPS-R06@v1`). Added § 260915-CAPS-L6 Native eve Session Adapter Route Impact, recording the seven new `serving/eve_*.py` modules, the one existing registry that changes (`BUILTIN_PROTOCOL_HARNESSES` now includes `eve`), the deliberate non-change in `kernel/harnesses.py` and why the two registries answer different questions, the repository-root runtime tree, and the five-module test population. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
-
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the packaged lifecycle-corpus consolidation. Added § 260915-CAPS-L1 Packaged Lifecycle Corpus Restructured, which records the 14 new and 17 rewritten files under `package_data/runtime/skills/l-01-agent-lifecycles/**`, the generated-never-authored boundary (`skills/` canonical; `scripts/sync-skills.py --check` proves byte-identity), and the consequence that this generated `mcp/**` copy is the governed onboarding surface for a canonical tree that sits outside this memory root's path rules. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
-
-
-- 2026-09-15T20:40:00+00:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base
-  `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
-  `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
-  rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
-  `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
-  remains closeout-owned.
-
-- 2026-09-15T11:15:00+00:00 — 260831-LOCR-L10 curator: No route impact: this change set is five paths inside `mcp/src/agents_remember/serving/` and `mcp/tests/`, and it changes the state-signal posting/recovery contract, not the package boundary this overview owns (public tool roster, activation/admission, certification, memory preparation, structural agent boundary, route model). The package-level statements above stand as written; the affected contract is recorded on `serving/overview.md`, the three serving file cards, and the tests route.
-
-- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
-
-- 2026-09-15T06:37:50+02:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Established the single Git attribution authority and cache boundary across kernel, baseline and carryover; superseded transitional source-table readers. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-14T22:00:00+00:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
-
-- 2026-09-14T22:00:00+00:00 — LCA L9 terminal-cache retirement and abandon-preview correction: refreshed this route with the shared cache-removal owner and its regression coverage.
-
-- 2026-09-14T21:55:00+00:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
-  `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
-  corrected for the review's second pair of defects. The L3 recoverable-order sentence now names
-  `_update_ref_stream` and the one-instruction-per-line rule the `update-ref --stdin` stream needs,
-  because a blank line is an EMPTY COMMAND to git and aborted the whole transaction for any run that
-  declared two or more refs; the L3 review paragraph now states that two external reviews found four
-  defects and records the third (the multi-ref stream, with the two-branch public-apply case that pins
-  it) and the fourth (the projection's rebuild appending the source's rows unchanged, so an invalid
-  source row survived the recompute that exists to repair it — now excluded with `code-commit-missing`
-  and reported, with `LedgerWorld.code_repository` optional so a world naming none keeps its rows).
-  The L2 ledger-attribution section records the same code-half change on the reader's consuming side.
-  Detail lives on the `kernel/memory_backfill.py`, `worktrees/ledger_projection.py` and
-  `mcp/tests/test_memory_ledger.py` cards. States plainly that the fixed tool is proven on fixtures
-  plus a read-only plan measurement, has **not** been applied to any real repository, and has **no**
-  Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
-  verification stamp advanced.
-
-- 2026-09-14T18:00:00+00:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source moved
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source moved
-  under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
-  consumer rows were added to the ownership catalog, the checkpoint-landing world builders moved to
-  the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the
-  overview: it names none of those constructs, and the constructs it does describe still hold, so no
-  wording changed. Verification metadata remains closeout-owned.
-
-- 2026-09-14T18:00:00+00:00 — 260913-LCA-L12 curator (drift re-verification): `mcp` carries local
-  unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
-  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
-  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
-
-- 2026-09-14T16:20:00+00:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
-  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
-  both are fixed, so the L3 section above was corrected rather than extended. The selection is no
-  longer "the oldest row per code commit wins": it is a maximum matching (code commits offered
-  most-constrained-first, a tie going to the older row read off the table) plus a fill that gives
-  every memory commit the matching did not reach its own oldest row — the fill is load-bearing because
-  a matching is symmetric and the format is not. The skip vocabulary is five literals split into holes
-  and declines, with `lost_claims` naming each code commit that ends with no trailer and the memory
-  commit that took its pairing, and a plan that lost a mapping can never report empty. Measured at
-  `7aa4cd97`: 418 of 428 code commits named (the maximum, confirmed with Hopcroft-Karp), 455 of 455
-  memory commits trailered, 52 of the review's 60 omitted pairings recovered, 5 of the remaining 8
-  provably uncarryable and 3 the same tie resolved by the table's order; a 55-of-60 hash-order variant
-  was refused. Recorded the structural bound (472 pairings, 455 single-trailer memory commits, at most
-  418 matchable code commits) and the second defect on the CLI's own path: a branch-name tip was never
-  resolved to an exact commit, so the run wrote its rescue refs and then refused and the retry tripped
-  its own predecessor's refs — every name is now resolved before any ref is written and the
-  empty-plan check precedes the rescue guard. Also recorded that the acceptance proof is now
-  trailer-only (it reads the rewritten tip through an absent ledger path, because `read_ledger_source`
-  unions the table into the trailers and the earlier proof therefore proved the table had survived —
-  which is how 60 omissions passed a green suite). States plainly that the tool is fixed and proven on
-  fixtures plus a read-only plan measurement and has **not** been applied to any real repository; the
-  earlier pre-fix confined attempt and its revert stay recorded as the reason the rewrite is deferred
-  to this master's integration into IAS. Verification metadata remains closeout-owned; no acceptance
-  claim and no verification stamp advanced.
-
-- 2026-09-14T15:20:00+00:00 — 260913-LCA-L3 route impact (curator, uncommitted change set on
-  `ar/260913-lca-l3-ar`, base `7317108b`): added the L3 section to this route's record of the
-  ledger-attribution plane, because this route governs `mcp/src/agents_remember/kernel/` (there is no
-  route-local `kernel/overview.md`) and the leaf added the third kernel module in that plane,
-  `kernel/memory_backfill.py`, with `cli/memory_backfill.py` as its only entry point. The section
-  records the declared oldest-row-per-code-commit trailer rule and its closed four-literal skip
-  vocabulary, the byte-faithful replay (and why it forced `GitRunnerOptions.identity`), structural
-  idempotence, the rescue-ref-before-first-object and single-transaction ordering, the
-  `carry_ledger_cells` table carry, and the reversal: the confined apply was verified and then
-  reverted by developer ruling because rewriting the shared ancestors removed the master's common
-  ancestor with its super, so the shared line still carries 0 trailers and the backfill is deferred to
-  this master's integration into IAS. Corrected the runner paragraphs in the same pass, which the
-  change made false or which the 2026-09-06 test-inventory reduction had already falsified:
-  `run_git` now takes a single `GitRunnerOptions` (`work_dir`, `input_text`, `timeout`, `identity`)
-  instead of three keyword arguments, 38 call sites across 19 files were migrated mechanically;
-  `benchmarks/runner_modules/commands.py` no longer composes its own argv (it calls `run_git`); the
-  `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel` reference and the AST-sweep
-  / guard-on-the-guard description of `mcp/tests/test_git_command.py` are marked as removed by
-  `d3610903` rather than current coverage, with the retained half described instead. Verification
-  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-- 2026-09-14T09:58:00+00:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
-  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
-  `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a
-  per-commit fallback". The reader now reads the source commit's own recorded table on **every** path
-  and merges the reachable commits' attribution into it, excluding with a recorded reason any row the
-  source cannot prove; the fallback framing was the defect's own description — a partially
-  backfilled line (479 recorded rows, one trailered commit at `f5edc613`) read as a one-row source.
-  The kernel `memory_attribution.py` module itself is unchanged by this leaf; the correction is to how
-  this route describes the reader that consumes it. Verification metadata remains closeout-owned; no
-  acceptance claim and no verification stamp advanced.
-
-- 2026-09-14T05:05:00+00:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
-  `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
-  sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this
-  change set it imports and re-exports it from the new `tasks/task_paths.py`, which owns the single
-  definition of `series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two path builders and the
-  two predicates. The move keeps `layers.toml`'s `tasks`(9) < `worktrees`(10) order intact while every
-  existing caller still imports `worktrees.task_resolver`; `task_resolver.py`'s own card is the detailed
-  authority. Recorded because the earlier sentence named `task_resolver.py` as the owner of the raw leaf
-  enclosure paths and the archive exclusion, which is no longer true. Route documentation only:
-  verification metadata remains closeout-owned and no execution or acceptance claim is made.
-
-- 2026-09-13T21:52:00+00:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
-  `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
-  attribution plane. The kernel module now **writes** the trailer as well as reading it
-  (`render_memory_content_message`, `:72-97`), and `models/closeout/input.py` imports that renderer
-  instead of naming the key, so the single `grep -rn '"Code-Commit"' --include=*.py mcp/` hit is now the
-  only interpolation as well as the only declaration. Added the producer-surface subsection: the
-  corrected census (5 producers, 0 untrailered, with the two corrections to the master's
-  2026-09-13T22:05 decision), the five producer sites with the code commit each names, the
-  trailerless-by-rule sites with their reasons, why carryover and baseline force the
-  append-as-final-block shape, and the census case that enforces it. This route also governs
-  `mcp/src/agents_remember/memory/`, so the carryover and baseline producers are recorded here: carryover
-  attributes `official_head` and baseline attributes the code source-branch commit, each rendered by the
-  one renderer at its commit site with its ledger leg left unattributed. Verification metadata remains
-  closeout-owned; no acceptance claim and no verification stamp advanced.
-
-- 2026-09-13T21:23:00+00:00 — 260913-LCA-L2 follow-up (same uncommitted change set): the measured
-  two-literal defect the entry below records is fixed, so this section now states the resolved shape —
-  `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`
-  (`input.py:9`), its own literal is deleted, and `grep -rn '"Code-Commit"' --include=*.py mcp/` has
-  exactly one hit. Recorded why the direction is kernel → models rather than the reverse
-  (`layers.toml`'s ordered ranks and the zero imports of `agents_remember.models` under `kernel/`) and
-  that a case now round-trips the real writer's rendered message through a real commit and the real
-  reader. The entry below stands as the record of what was true when it was written. Verification
-  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-- 2026-09-13T21:11:00+00:00 — 260913-LCA-L2 route impact (uncommitted change set on
-  `ar/260913-lca-l2-ar`): this route governs `mcp/src/agents_remember/kernel/` (there is no
-  route-local `kernel/overview.md`), and the leaf added `kernel/memory_attribution.py` — the
-  attribution reader that projects the ledger's source from the memory commits' own `Code-Commit:`
-  trailers — and rewired `worktrees/ledger_projection.read_ledger_source` onto it with a per-commit
-  blob fallback for the pre-trailer history. Recorded the split of ownership between the format owner
-  (`memory_ledger.py`) and the attribution reader, the hash-bound reason the trailer is evidence, the
-  explicit statement that the tracked ledger commit is not retired, and the measured docstring defect
-  on the new module (the writer's key is its own literal). Detail lives on the new module card and on
-  the worktrees route. Verification metadata remains closeout-owned; no acceptance claim and no
-  verification stamp advanced.
-
-- 2026-09-13T17:02:00+00:00 — 260831-LOCR-L37 route impact: the advertised MCP surface gained one tool,
-  `worktree_pause`, declared in the worktrees registrar family and carried by `PUBLIC_TOOLS` and
-  `TOOL_RESPONSE_MODELS` in the same leaf, so the exact-ordered inventory, live registration and
-  response models this overview requires to agree still do. The stop's route publishes nothing, which
-  is why it sits in the working half of the surface rather than beside the checkpoint publication in
-  the landing half. Detail lives on the `registration/`, `tools/` and `worktrees/` child routes and on
-  `worktrees/modules/pause.py.md`. Verification metadata remains closeout-owned; no acceptance claim.
-
-- 2026-09-13T13:00:56+00:00 — 260831-LOCR-L36 curator (round 2): stated the developer ruling where this route describes the graph-less default and per-contract activation — the `atomic-sequential` default is the sprint's SHAPE (every commanded master executes atomically) and serializes nothing, no master is held because another is selected, waiting reasons are per contract from that contract's own activation record, and a real authored graph still gates on genuine predecessors. The shipped-skill side of the change is documented on the skill routes, not restated here. No verification-metadata change; no execution or acceptance claim.
-
-- 2026-09-11T08:26:37+00:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the `PreparedMemoryCertificationAdapter` citation to `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, where commit `deb032fb` moved the adapter out of `memory_quality/`. Citation path only; the cited claim is unchanged and verification metadata remains pinned.
-
-- 2026-09-10T06:03:15+00:00 — No content impact: reviewed the packaged closeout instruction making the existing worktree-manager cleanup follow-up mandatory; MCP transaction and cleanup ownership are unchanged.
-
-- 2026-09-10T05:33:57+00:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-
-- 2026-09-08T14:45:44+00:00: CCR-L24 preparation reviewed `PreparedMemoryCertificationAdapter` and `_attach_final_full_catalog` against the current L38-composed code candidate; wording retained and ranges regenerated. Verification metadata remains pinned pending final pair composition.
-
-- 2026-09-06T22:34:00+00:00 — Reconciled current source anchors and diagnostic/four-worker policy; removed obsolete test-proof claims without altering verification pins.
-
-- 2026-09-06T21:56:00+00:00 — Reconciled d3610903 development/certification and pre-gate memory preparation policy while preserving the production feature inventory, ownership narratives, invariants and original historical entries. Retired obsolete test citations and marked milestone procedures historical; verification pins remain closeout-owned.
-
-- 2026-09-06T14:11:47+00:00 — Candidate curation review correction: Removed stale L32 private-output/delivery status from durable prose and described the current selected-terminal and unbound continuation boundaries. Historical entries and verification stamps are preserved.
-
-- 2026-09-06T14:03:43+00:00 — L33 candidate route curation: Routed exact environment reconstruction, generated-input ownership and retained source-applicability evidence to the repository profile card. Preserved earlier source verification stamps and complete history; this records current source structure without a gate or acceptance claim.
-
-- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Replaced the superseded L32 defect sentence with the actual private-C transaction, preview and conflict behavior; preserved separate remaining production obligations.
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-05T22:23:00+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Updated cross-route publication and neutral lock ownership; retained the unresolved citation and lifecycle composition boundaries.
-
-- 2026-09-05T07:30:00+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reconciled current CCR profiles, task intent and evidence limits; corrected public/service ownership and repaired a pre-existing literal truncation. Verification records source review, not execution or acceptance.
-
-- 2026-09-05T06:21:00+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
-
-- 2026-09-05T06:12:00+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
-
-- 2026-09-03T23:06:00+00:00 — 260831-CCR-L23 Gate-5 route impact: recorded the `confine_non_symlink_rel` kernel guard addition in `sidecar_pairing.py`.
-
-- 2026-09-01T09:33:00+00:00 — No route impact: CCR-L11 Attempt 10 adds focused certification
-  forcing, exact test-input ownership, and removes one dominated internal refusal. The generic
-  five-gate foundation, package boundary, and absence of an executor or repository profile remain
-  unchanged. Verification remains closeout-owned.
-
-- 2026-09-01T01:11:00+00:00 — Added the route-owned generic five-gate certification contract
-  foundation and kept the current Dagger acceptance wrapper explicit as the still-live executor
-  until repository-profile and integration owners land. Verification remains closeout-owned.
-
-- 2026-08-31T18:30:00+00:00 — No route impact: 260831-DER narrows direct landing to an explicitly
-  selected leaf delivery without an enclosure and restores ordinary series integration without
-  the policy flag. Package ownership and route topology are unchanged.
-
-- 2026-08-31T07:06:00+00:00 — 260821-ARSPAWN-L5 A005 recorded that the real-client clean-room
-  boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather
-  than introducing a weaker E2E interpretation. Verification remains closeout-owned.
-
-- 2026-08-30T13:15:36+00:00 — ARSPAWN-L4 route impact: documented exact public-surface parity,
-  shared candidate identity, and the preserved eight-harness self-update contract. Verification
-  remains closeout-owned.
-
-- 2026-08-30T10:42:00+00:00 — 260821-ARSPAWN-L3 review correction: replaced the superseded
-  caller-declaration summary with process-derived ambient authority, distinguished ordinary
-  architect bootstrap from explicit named-role takeover, and recorded the structural role-table
-  rows' non-settings boundary. Verification remains closeout-owned.
-
-- 2026-08-29T20:45:00+00:00 — MCAR-L03: documented the single contract-derived code-memory pair
-  identity shared by memory quality, attestation, coherence, closeout admission, and recovery,
-  including the diagnostic-only repository route and fail-closed revalidation boundary.
-
-- 2026-08-29T06:52:00+00:00 — MCAR-L02 A005: added the single structured curator-coherence authority,
-  deterministic attestation bridge, and shared memory/closeout validator. Verification remains
-  closeout-owned.
-
-- 2026-08-29T03:28:00+00:00 — MCAR-L02: added the parent-route summary for immutable exact
-  future-code identity, collision-free concurrent observation, and the separate
-  operation-reconciliation boundary.
-
-- 2026-08-28T13:52:15+00:00 — No route impact: the hook environment repair and its focused
-  regression test preserve MCP package ownership and keep the host hook a deterministic non-test
-  gate.
-
-- 2026-08-28T08:03:40+00:00 — Reconciled the MCP quality-route summary with Candidate A's deletion;
-  deterministic host checks remain, but no host Python wrapper exists.
-
-- 2026-08-27T20:15:00+00:00 — Synchronized packaged lifecycle projections and structural proof for
-  the pre-handoff correction versus post-handoff rejection boundary.
-
-- 2026-08-27T19:53:00+00:00 — M40@v2/M44@v2 packaged-skill impact: synchronized review-handoff-only
-  attempts, separate protocol events, lightweight content-addressed records, and non-gating summary
-  semantics across all runtime projections.
-
-- 2026-08-26T14:03:00+00:00 — Memory hygiene: removed a pre-existing tool-output truncation banner
-  accidentally committed above the package overview title; route content is unchanged.
-
-- 2026-08-26T12:32:00+00:00 — Corrected the package-wide ledger contract after IAS activation exposed
-  an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
-  all lifecycle consumers now distinguish current lookup from exact historical containment.
-
-- 2026-08-26T10:30:00+00:00 — 260821-ARSPAWN-L2 package impact: recorded canonical-seat idempotency, bounded
-  evidence-aware recovery, replacement-safe delivery, and runtime-id-free public outcomes.
-  Verification remains closeout-owned.
-
-- 2026-08-26T00:55:00+00:00 — Reconciled the MCP route with source-pair atomic activation,
-  pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,
-  disposable queue ownership, and exact terminal selector release.
-
-- 2026-08-25T15:21:00+00:00 — Reconciled the final PDLS package ownership and evidence boundaries.
-  Verification remains closeout-owned.
-
-- 2026-08-25T06:27:00+00:00 — 260824-PDLS wave 004: documented the extracted quality CLI parser and its non-authority boundary at emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; the recorded Dagger gate remains red.
-
-- 2026-08-24T23:56:00+00:00 — 260824-PDLS reconciled the explicit cohort, lifecycle/cadence registry,
-  product-only scoring, shared ownership graph, and causal localization.
-
-- 2026-08-24T19:23:00+00:00 — 260824-PDLS introduced the testing route and explicit evidence
-  altitude boundary.
-
-- 2026-08-24T12:19:00+00:00 — No route impact: 260821-DAGQC-L2 synchronized packaged memory-quality and curator examples to the canonical discriminated request while preserving concurrent L4 route material. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-24T11:51:26+00:00 — 260821-DAGQC-L4: reconciled packaged planning,
-  review evidence, effective priority, graph-optional topology, atomic graph adoption, and
-  canonical handover references. Also recorded direct targeted Vitest as diagnostic-only while
-  guarded acceptance rails remain Dagger-attested. Canonical/generated sync is reported green;
-  Dagger acceptance remains pending and closeout-owned.
-
-- 2026-08-23T14:08:00+00:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-
-- 2026-08-22T08:39:00+00:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
-
-- 2026-08-21T00:50:00+00:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` becomes the one public spawn tool for both caller kinds; ambient launchers are resolved from the process environment (no `AR_HOSTED_SESSION_ID`) with role-altitude validation, and `spawn_agent_session` stays internal. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-20T22:45:00+00:00 — 260815-DAG master full-gate repair route impact: new package routes (`application/task_docs`, `models/queue`, `worktrees/queue`, `worktrees/integration`); `TaskDocResponse` wire-field fix; closeout/reopen refactors; sync-skills orchestration-task copy. Verified at code commit e5cb139f.
-
-- 2026-08-20T19:30:00+00:00 — 260815-DAG-L15 route impact: new serving_preflight + memory_quality_runs modules, async memory-quality wait/run_id surface, hardened authoring dialect, and the L7 orchestration_portfolio deletion. Verified at code commit de3a0fd9.
-
-- 2026-08-20T08:45:00+00:00 — 260815-DAG-L12:   L12 render-ready sprint graph: mermaid document diagram, shared title join, primitives-only projection builder, serving wiring, application title threading. Verified at code commit b7f2c8e2.
-
-- 2026-08-20T07:35:00+00:00 — 260815-DAG-L16 route impact: seat-independent task-execution fallback
-  (declared caller on closeout-queue and structural gate tools), branch-addressed `record_route_review`
-  binding, and the `direct_landing` operation. Verified at code commit a9d50e08.
-
-- 2026-08-20T03:02:00+00:00 — 260815-DAG-L14 route impact: `task_doc` registers
-  `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the
-  sprint document route gains first-class `seats` and typed `masterRef` rows. Verified at code
-  commit 8071a644.
-
-- 2026-08-19T20:32:00+00:00 — 260815-DAG-L13 route impact: the canonical scheduling-register boundary
-  now records the L13 split — mutations and document writes stay fail-closed (creation scaffolds
-  the empty registers, writes validate shape) while the queue `status` read degrades to a facts
-  projection, and graph-less sprints run the atomic-sequential default with a named series lane
-  owner; new modules `worktrees/scheduling_mode.py` (mode/nature/lane resolution) and
-  `worktrees/closeout_queue_blocker.py` (blocker transitions, extracted from `closeout_queue.py`)
-  joined the route, and `migrate_execution_topology` was removed. Verification remains
-  closeout-owned.
-
-- 2026-08-19T02:20:00+00:00 — No route impact: 260815-DAG-L10 re-rooted the series contract `worktree_group` at `worktrees/<repo>/<master>-ar` so series reports are swept with the group; leaf enclosures and the mcp-route purpose are unchanged.
-
-- 2026-08-18T12:00:00+00:00 — No route impact: 260815-DAG-L9 added `inventory_execution_topology` to `application/task_execution_topology.py`; the mcp-route purpose is unchanged.
-
-- 2026-08-18T08:30:00+00:00 — No route impact: 260815-DAG-L7 added the orchestrator portfolio loop under worktrees; route purpose unchanged.
-
-- 2026-08-18T07:05:00+00:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-17T23:24:00+00:00 — No route impact: 260815-DAG-L6 added the blocker-acquisition super-tip precondition (`_require_current_super_tips`) under mcp/src/agents_remember/worktrees; the route's purpose is unchanged.
-
-- 2026-08-17T10:30:00+00:00 — No route impact: 260815-DAG-L5 added organizational-completion modules under mcp/src/agents_remember/worktrees; the route's purpose is unchanged.
-
-- 2026-08-15T21:38:00+00:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-
-- 2026-08-15T11:27:00+00:00 — No route impact: the Pyright repair is an explicit test-only
-  optional-result narrowing; MCP source, routing, and behavior are unchanged.
-
-- 2026-08-15T11:18:00+00:00 — No route impact: Ruff reformatted one strict evidence predicate and
-  ten queue/topology test modules; MCP behavior, routing, and ownership are unchanged.
-
-- 2026-08-15T11:08:00+00:00 — No route impact: the closeout fast-hook repair is import grouping and
-  test-only binding cleanup; queue routing, public behavior, and ownership are unchanged.
-
-- 2026-08-15T10:53:00+00:00 — L3 targeted-gate route impact: tightened canonical judgment-table
-  parsing and atomic finalized-landing proof while splitting their exhaustive forcing by owner; no
-  second queue, evidence authority, or test altitude was added.
-
-- 2026-08-15T09:25:00+00:00 — L3 static-gate route impact: separated task-doc queue-scope
-  classification and exact evidence comparisons from their orchestration callers without adding a
-  second authority or compatibility path.
-
-- 2026-08-15T09:07:00+00:00 — L3 Dagger-failure route impact: refined graph-governed task
-  publication, exact queue refusal diagnostics, and worker-owned recovery of a committed but
-  uncertified leaf while preserving one mechanistic queue and lifecycle authority.
-
-- 2026-08-15T07:10:00+00:00 — 260815-DAG-L3 route impact: added the cross-layer closeout-queue route
-  and its exact evidence, persistence, task-fact locking, and lifecycle boundaries. Verification
-  remains closeout-owned.
-
-- 2026-08-15T02:32:00+00:00 — 260815-DAG-L2 route impact: synchronized packaged lifecycle roles,
-  criteria, briefs, and verdict templates with the ruled organizational/atomic topology and
-  auditable planning authority. MCP tool routing and worktree enforcement are unchanged in this
-  leaf; verification remains closeout-owned.
-
-- 2026-08-15T00:42:41+00:00 — 260815-DAG-L1 review repair: task-document identity mutations can
-  no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
-  existing single-owner fitness census. Package routing and ownership remain unchanged.
-
-- 2026-08-15T00:16:50+00:00 — 260815-DAG-L1 route impact: the MCP task-document surface gains one
-  explicit, previewable execution-topology migration and projects the same canonical nature/graph
-  contract. There is no implicit legacy inference or compatibility reader.
-
-- 2026-08-14T12:03:04+00:00 — No route impact: R46 changes only the assertion spelling for the
-  existing metrics-shutdown timeout in one test. MCP production, package authority, public
-  behavior, and package routing are unchanged; verification remains pinned to the last committed
-  source until closeout.
-
-- 2026-08-14T09:48:55+00:00 — R42 curator: recorded recovery-proof ownership and the two focused
-  test extractions. Verification remains closeout-owned.
-
-- 2026-08-14T09:29:00+00:00 — R39 curator: added the shared environment guard, self-wrapper policy,
-  and final altitude topology to the package route. Verification remains closeout-owned.
-
-- 2026-08-14T07:08:00+00:00 — No route impact: reopened L23 narrows candidate-bound route-review
-  admission to its already-documented leaf altitude so repeat series/master closeout can restamp
-  the final leaf tip. MCP package ownership and public tool shape are unchanged; verification
-  provenance remains closeout-owned.
-
-- 2026-08-14T04:25:00+00:00 — L23 final package review: reconciled the package authority map with
-  Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and
-  transitive lineage rechecks. Verification provenance remains closeout-owned.
-
-- 2026-08-13T12:32:00+00:00 — L23 final quality-contract review: recorded Dagger-only Agents Remember
-  acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff
-  base, generated function help, and host execution's diagnostic-only status. Verification remains
-  closeout-owned.
-
-- 2026-08-13T10:26:00+00:00 — No route impact: L23 extracted closeout's existing external-memory
-  quality-phase mechanics into a sibling worktree module, renamed internal registrar helpers, and
-  adjusted test-only package-root imports. MCP package authority and public tool behavior remain
-  unchanged; verification provenance remains closeout-owned.
-
-- 2026-08-13T07:05:00+00:00 — L23 integration-gate follow-up: recorded the dedicated application
-  runtime and lifecycle-model packages, pre-curator task-derived lineage proof, and closeout/
-  integration transitive post-quality/final rechecks. Exact behavior remains in the application,
-  models, worktree-module, lifecycle-skill, and test child routes; final verification provenance
-  remains closeout-owned.
-
-- 2026-08-12T22:07:00+00:00 — 260731-EFA-L23 post-closeout worker-authority repair: documented MCP-package ownership of the explicit lifecycle-operation execution mode. The detached task worker declares it before config/service loading, retains live durable-operation authority, and does not claim MCP/dashboard daemon ownership; undeclared checkout CLI isolation remains unchanged. The owner reports 46 focused tests, Ruff clean, and diff-check clean. Verification remains closeout-owned.
-
-- 2026-08-12T19:18:00+00:00 — L23 curator follow-up: documented deterministic native `$HOME/.local/bin` admission after Windows-interoperability filtering; no shell/version-manager discovery or compatibility fallback was added. Verification remains closeout-owned.
-
-- 2026-08-12T18:20:00+00:00 — L23 curator: documented MCP-wide task-derived lineage admission and recovery ownership; verification remains closeout-owned.
-
-- 2026-08-12T14:54:00+00:00 — 260731-EFA-L23 installed-runtime route review: detached lifecycle launch
-  now preserves installed MCP code selection and the packaged worker composes real services before
-  dispatch. Task checkout state remains input, never unpublished runtime code. Verification
-  provenance remains closeout-owned.
-
-- 2026-08-12T13:19:00+00:00 — L23 curator: added the explicit Dagger clean-quality executor and task-addressed durable lifecycle-operation boundary; verification provenance remains closeout-owned.
-
-- 2026-08-12T08:08:00+00:00 — No route impact: MCP 3.0.0rc7 advances the existing package and
-  kernel fallback version authorities without changing package routes, dependencies, entry
-  points, or tool behavior. Verification metadata remains pinned until closeout.
-
-- 2026-08-12T07:20:00+00:00 — No route impact: the 260731-EFA-L20 reopen changes only the executable shape of one checkout-isolation assertion; MCP package behavior and routing are unchanged.
-
-- 2026-08-12T06:41:00+00:00 — No route impact: 260731-EFA-L20 adds no package behavior or source route; it repairs master-gate proof through test simplification and direct boundary coverage.
-
-- 2026-08-12T05:10:00+00:00 — 260731-EFA-L24 route impact: settings,
-  integration, closeout, packaged lifecycle doctrine, and regression tests now
-  agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
-  Verification metadata remains pinned until closeout stamps L24.
-
-- 2026-08-11T23:38:00+00:00 — No route impact: 260731-EFA-L22 makes leaf quality enforcement
-  deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test
-  responsibilities; package subsystems and public tool inventory are unchanged.
-
-- 2026-08-11T22:20:00+00:00 — Corrected the package boundary: the dependency supplies pytest-xdist,
-  root pytest configuration owns worker selection, and the wrapper contributes derived gate
-  arguments only. Verification metadata remains pinned until closeout.
-
-- 2026-08-11T21:56:00+00:00 — Recorded the package-level pytest-xdist dependency, automatic worker
-  selection in the single pytest rail, and retry-proof invalidation across executor changes.
-  Verification metadata remains pinned until closeout.
-
-- 2026-08-11T17:58:00+00:00 — 260731-EFA-L19 curator: reconciled the package route with the public
-  structural agent surface and private plane-owned session, inbox, and gate machinery; child-route
-  overviews and one-to-one cards carry the implementation evidence.
-
-- 2026-08-10T17:57:55+00:00 — 260731-EFA-L21 route impact: recorded checkout execution
-  classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the
-  trusted MCP/dashboard plus explicit-test declarations. Detailed ownership remains in the
-  application, kernel/primitives, controlplane, and tests route cards. Verification metadata
-  remains pinned until closeout stamps the L21 code commit.
-
-- 2026-08-10T11:00:00+00:00 — 260731-EFA-L9 curator: refreshed the mcp/ route body for the current
-  staged package delta (application, models, registration/tools, memory-quality, worktree, and
-  serving seams); file-level details remain in sidecars. Verification metadata remains pinned
-  until closeout.
-
-- 2026-07-03T10:55:00+00:00 — 260703 L1 route impact: the umbrella CLI under `cli/` gains
-  `cli/discovery.py` — trusted-settings auto-discovery making `--config` optional on
-  `agents-remember dashboard` (upward walk, convention-then-registration, nearest wins, semantic
-  usability probe vs the tracked placeholder template) — covered by
-  `mcp/tests/test_cli_discovery.py`. Verification metadata pinned until closeout stamps the code
-  commit.
-
-- 2026-07-03T10:50:00+00:00 — No route impact: L15 push-gate fixups (type narrowing + test import hygiene only; the pre-push quality gate now exits 0 across the tree).
-
-- 2026-07-03T09:20:00+00:00 — No route impact: L14 release bump only (pyproject version + SERVER_VERSION fallback); no mcp behavior or structure change.
-
-- 2026-07-03T00:58:00+00:00 — No route impact: L13 reopen drill second cycle (marker comment extension only).
-
-- 2026-07-03T00:40:00+00:00 — No route impact: L13 reopen drill: a marker comment in mcp/tests/conftest.py only; no mcp behavior or structure change.
-
-- 2026-07-02T23:55:00+00:00 — L12 route impact: provider compose templates gain memory caps; CGC watch hygiene fixed (enriched .cgcignore reaches the watch context, committed bundle excluded per-repo, fired debounce timers popped via a maintained patch, image revision ar2).
-
-- 2026-07-02T22:35:00+00:00 — L11 route impact: task_reopen tool added (tasks/reopen.py + leaf_doc.py, task_doc-side controller/payload/model); worktree start honors cleanup=reopened and restamps leaf-doc lifecycles; the reducer projects abandon terminality from contracts.
-
-- 2026-07-02T19:45:00+00:00 — No route impact: the L10 binding repair is a one-line-scale join fix inside
-  `observer/snapshots.py` (described in the observer route overview) plus its
-  `mcp/tests/test_observer_projection.py` regression; no MCP tool surface or subsystem narrative
-  changed at this granularity. Verification metadata pinned until closeout stamps the L10 commit.
-
-- 2026-07-02T18:55:00+00:00 — No route impact: the L8-r1 correction (pill-click-triggered direct leaf
-  paste instead of auto-paste-on-selection) is a dashboard frontend change; the only `mcp/`-route
-  effect is the regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. Verification
-  metadata pinned until closeout stamps the L8-r1 commit.
-
-- 2026-07-02T18:15:00+00:00 — No route impact: operations-integration L8 is a dashboard frontend change
-  (direct leaf-chat highlight paste + obsolete response-UI cleanup); the only `mcp/`-route effect is the
-  regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP package source, tool
-  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the L8
-  commit.
-
-- 2026-07-02T16:35:00+00:00 — No route impact: operations-integration L7 repaired the `cgc_dependencies`
-  native subcommand (`analyze deps`) inside `controllers/provider_tools.py`, refreshed the packaged CGC
-  guidance table, and locked the argv contract in `mcp/tests/test_tools.py`. No MCP tool surface or
-  subsystem narrative changed at this granularity. Verification metadata pinned until closeout stamps
-  the L7 commit.
-
-- 2026-07-02T15:25:00+00:00 — No route impact: the reopened-L6 copy-mode escape stays inside
-  `serving/terminal.py` (typing after wheel scrolling cancels tmux copy-mode; described in the serving
-  route overview) and its `mcp/tests/test_terminal.py` coverage. No MCP tool surface or subsystem
-  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
-  follow-up commit.
-
-- 2026-07-02T15:04:00+00:00 — L9 route impact: added a package-level agent-facing terminal reassignment tool
-  (`attach_terminal_session_to_leaf`) and the shared serving helper used by both MCP and the dashboard
-  route. This changes the public MCP tool/model surface and the dashboard terminal catalog subsystem.
-  Verification metadata pinned until closeout stamps the L9 commit.
-
-- 2026-07-02T14:35:00+00:00 — No route impact: the reopened-L6 wheel/paste fixes touch
-  `serving/terminal.py` (the per-session tmux mouse `TmuxConfigurer` seam, described in the serving
-  route overview), its `mcp/tests/test_terminal.py` coverage, and the regenerated
-  `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP tool surface or subsystem
-  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
-  follow-up commit.
-
-- 2026-07-02T13:03:00+00:00 — No route impact: the L6 alternate-buffer wheel follow-up rebuilt and
-  re-synced the generated `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the
-  `Terminal` wheel routing change under `dashboard/src/`. The shipped bundle remains generated static
-  package data served by the existing dashboard package path; no MCP package source behavior, tool
-  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the
-  follow-up commit.
-
-- 2026-07-02T12:15:00+00:00 — No route impact: L6 closeout rebuilt and re-synced the generated
-  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the leaf-chat draft handoff and
-  terminal scrollback frontend changes under `dashboard/src/`. The shipped bundle remains generated
-  static package data served by the existing dashboard package path; no MCP package source behavior,
-  tool surface, or subsystem narrative changed.
-
-- 2026-06-30T23:43:00+00:00 — No route impact: L6 rebuilt and re-synced the generated
-  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the right-rail chat context-handoff
-  frontend changes under `dashboard/src/`. The shipped bundle remains generated static package data served
-  by the existing dashboard package path; no MCP package source behavior, tool surface, or subsystem
-  narrative changed. Verification metadata pinned until closeout stamps the L6 commit.
-
-- 2026-06-29T22:00:00+00:00 — No route impact: L5 (Sidebar chat: leaf-keyed attachment) added the leaf→chat registry to
-  the serving layer — `serving/app.py` gained the `leafKey` opener claim + `POST /api/terminal/{session}/attach-leaf`
-  (`409 leaf-taken`, running-only) and `serving/terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
-  + `active_for_leaf`, and the generated `package_data/dashboard/` bundle (+ fingerprint) was
-  rebuilt/re-synced for the sidebar-chat frontend (the rail River⇄Chat toggle + leaf attach). The serving
-  change is documented in the `serving/` route overview + the `app.py`/`terminal_catalog.py` sidecars; the
-  shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is
-  unchanged. Verification metadata pinned until closeout stamps the L5 commit.
-
-- 2026-06-29T21:18:00+00:00 — No route impact: `worktrees/modules/start.py` now derives the recorded memory base from the source branch tip (not the repo HEAD); nothing at the mcp-package route level changes (detail in the start.py file sidecar; task 260629_post-landing-cleanup L3).
-
-- 2026-06-29T21:00:00+00:00 — No route impact: operations-integration L4a — `serving/changeset.py` gained the
-  doc-reader leaf change-set endpoints (`/api/changeset/{task,file-diff}` `leaf` + `mode` selector;
-  committed/working views by leaf-id off the persisted contract), and the generated `package_data/dashboard/`
-  bundle (+ fingerprint) was rebuilt/re-synced for the doc-reader change-set buttons + the diff-highlight
-  rectangle. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar;
-  the shipped bundle remains generated static package data; the mcp-package subsystem narrative is unchanged.
-  Verification metadata pinned until closeout stamps the L4a commit.
-
-- 2026-06-29T20:57:00+00:00 — No route impact: the `task_doc` MCP tool docstring now lists the `remove_subtask` op (server.py registration/forwarding only); nothing at the mcp-package route level changes (detail in the server.py / task_doc_tools.py file sidecars; task 260629_post-landing-cleanup L2).
-
-- 2026-06-29T15:00:00+00:00 — No route impact: operations-integration L4 review follow-up — `serving/changeset.py` gained the master NET change-set (`master_changeset` net `base→tip` + `master_file_diff`, the `/api/changeset/file-diff` `master` param), and the generated `package_data/dashboard/` bundle (+ fingerprint) was rebuilt/re-synced for the master-inspection + code-view readability/scroll polish. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar; the shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is unchanged. Verification metadata pinned until closeout stamps the L4 follow-up commit.
-
-- 2026-06-29T14:40:00+00:00 — No route impact: operations-integration L4 rebuilt and re-synced the generated `package_data/dashboard/` bundle (+ the sibling `package_data/dashboard.fingerprint`) with `scripts/sync-dashboard.py` after the Change-Set Viewer frontend source changes under the in-scope root `dashboard/src/` sub-project (new `@codemirror/merge` dep). The shipped bundle remains generated static package data served by the existing dashboard package path; no mcp-package source behavior or tool surface changed. Verification metadata pinned until closeout stamps the L4 code commit.
-
-- 2026-06-29T13:30:00+00:00 — No route impact: operations-integration L3 added a read-only change-set API (`serving/changeset.py`: `GET /api/changeset/{task,file-diff,master}`) plus a shared `serving/scope.py` (scope resolution + error map extracted from `serving/files.py`) and a new `worktrees/modules/git.py` `changed_files_with_counts` primitive. These are serving-layer / worktrees-module additions documented in the `serving/` and `worktrees/modules/` route overviews and the file sidecars; the mcp-package overview's subsystem narrative is unchanged. Verification metadata pinned until closeout stamps the L3 code commit.
-
-- 2026-06-29T07:06:00+00:00 — No route impact: operations-integration L2 rebuilt and re-synced the generated `package_data/dashboard/` bundle (+ the sibling `package_data/dashboard.fingerprint`) with `scripts/sync-dashboard.py` after the File Viewer frontend source changes under the in-scope root `dashboard/src/` sub-project. The shipped bundle remains generated static package data served by the existing dashboard package path; no mcp-package source behavior or tool surface changed. Verification metadata pinned until closeout stamps the L2 code commit.
-
-- 2026-06-28T20:41:00+00:00 — No route impact: operations-integration L1 added a read-only dashboard files API (`serving/files.py`) plus a shared `kernel/sidecar_pairing.py` helper and its test. These are serving-layer / shared-kernel additions documented in the `serving/` route overview and the file sidecars; the mcp-package overview's subsystem narrative is unchanged. Verification metadata pinned until closeout stamps the L1 code commit.
-
-- 2026-06-28T18:30:00+00:00 — No route impact: a `find_worktree_contract` archive-skip + docstring fix under `kernel/coordination_context/`; nothing at the mcp-package route level changes (detail in the contracts.py file sidecar; task 260628_post-landing-cleanup).
-
-- 2026-06-28T14:17:00+00:00 — Task 35 route impact: `scripts/sync-dashboard.py --check` is now source-aware —
-  `sync` fingerprints the dashboard build inputs (the `src` tree minus tests, plus the production configs)
-  into a sibling `package_data/dashboard.fingerprint`, and `--check` re-verifies it, so the pre-commit gate
-  flags a `dashboard/src` change shipped without a rebuild (not only the built-bundle digest), mirroring how
-  the skill gate flags a changed skill. Covered by `test_sync_dashboard.py` `SourceFingerprintTests`.
-  Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-28T11:54:00+00:00 — Task 34 route impact: the package-level observer/serving summary now records
-  **inactivity-keyed** raw Event River retention (superseding the post-termination grace-window pruning):
-  `event_retention.py` prunes a fleeting/enclosure lifecycle log after >1h of no real (non-heartbeat)
-  activity rather than on `lifecycle.ended`, `ambient.py`'s heartbeat ticker decays after ~10 min idle,
-  and `/api/events` does one retained-backlog scan per connect, filters `lifecycle.heartbeat`, and
-  streams a bounded chunked backlog. Detail lives in the observer and serving route overviews plus the
-  `event_retention.py`, `ambient.py`, and `events.py` sidecars. Verification metadata pinned until
-  closeout stamps the task-34 code commit.
-
-- 2026-06-28T05:45:00+00:00 — Task 33 route impact: the observer projection now exposes an `activeWorktreeGroups`
-  field (from `active_enclosure_worktree_groups`, shared with the Engine Room) that the dashboard Topology
-  consumes for active-enclosure scoping. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-28T05:43:00+00:00 — Task 29 S7 route impact: the package summary now records actionable-drift
-  provenance/dismissal, raw Event River `ready` hydration, and the no-frontend-count-cap boundary.
-  Detail lives in the observer, serving, controlplane, memory-quality, and dashboard route overviews.
-  Verification metadata pinned until closeout stamps the task-29 code commit.
-
-- 2026-06-28T04:08:00+00:00 — Task 29 route impact: the package-level observer/serving summary now records
-  lifecycle-aware raw Event River retention and active-enclosure projection admission. The raw
-  `events.jsonl` substrate remains episodic rather than audit-grade: terminal lifecycle logs are pruned
-  after the grace window, fresh raw SSE connections start from retained offsets, projection caches repo
-  surfaces briefly, and worktree provider/runtime data is admitted only for active enclosure-backed
-  worktree groups. Detail lives in the observer and serving route overviews plus the
-  `event_retention.py`, `worktree_provider_admission.py`, `projection_store.py`, `snapshots.py`, and
-  `events.py` sidecars. Verification metadata pinned until closeout stamps the task-29 code commit.
-
-- 2026-06-28T01:33:00+00:00 — Task 32 route impact: the package-level observer summary now records
-  physical retention for persisted drift snapshots — cleanup removes the exact code-worktree snapshot
-  for a reclaimed contract and projection prunes valid deleted-worktree snapshots before reading
-  analytics. Verification metadata pinned until closeout stamps the task-32 code commit.
-
-- 2026-06-28T01:21:00+00:00 — Task 31 route impact: the package-level dashboard path now refreshes provider
-  current-state before live projection ticks, inspects worktree provider containers for isolated stacks, and
-  projects missing expected provider roles into Engine Room instead of leaving empty provider containers
-  ambiguous. Detail lives in the `observer/`, `serving/`, `providers/`, and dashboard panel sidecars.
-  Verification metadata pinned until closeout stamps the task-31 code commit.
-
-- 2026-06-27T20:00:00+00:00 — Task 28 route impact (NOTIFY-AND-CONTINUE turn end): the
-  `agents_remember.observer` next-step paragraph now records the new non-terminal
-  `awaiting-developer` state + public `lifecycle_turn_end_notification(summary)` tool
-  (notify + stop, no wait/inbox) as the **active** turn-end path, the `_tool_payload`
-  auto-dismiss, the next-step hint **repoint** from `lifecycle_gate`, and the one-line
-  reducer gate-open/blocked-gate dedup; the `agents_remember.controlplane` bullet now
-  records that the `lifecycle_gate`/`operator_inbox_*` turn-end choreography is **parked**
-  (kept and valid, un-hinted). Per-file detail lives in the `observer/`, `mcp/tools/`, and
-  `models/` route overviews + the file sidecars. Verification metadata pinned until closeout
-  stamps the code commit.
-
-- 2026-06-27T19:20:00+00:00 — Task 30 route impact: the package-level worktree lifecycle
-  summary now records the already-integrated re-closeout reset behavior in
-  `worktrees/modules/closeout.py`: changed closeouts reopen integration for
-  re-integration, while no-op re-closeouts keep completed integration markers.
-  Detailed behavior lives in the `worktrees/modules` route overview and the
-  closeout sidecar. Verification metadata pinned until closeout stamps the code
-  commit.
-
-- 2026-06-27T18:16:00+00:00 — No route impact: the task-27 follow-up adds a gate-await
-  branch to `mcp/tools/next_step.py` (a `blocked` lifecycle now hints
-  `lifecycle_resume`, carrying the chain through the open gate). The next-step
-  engine is already inventoried in this route's `agents_remember.observer` Route
-  Model bullet and its architecture is unchanged (detail in the file sidecar).
-  Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-27T16:43:00+00:00 — Task 27 route impact: the `agents_remember.observer`
-  Route Model bullet now records the lifecycle next-step hint engine
-  (`mcp/tools/next_step.py`) — a `NextStep` hint folded from the projected
-  lifecycle state and attached to every tool response at the `_tool_payload`
-  choke point (one-time `lifecycle_start` `frontHalfRundown` front half, the
-  linear half delegating to `guidance.lifecycle_guidance` with a
-  `lifecycle_gate(kind=…)` gate overlay, and a terminal `lifecycle_end`
-  loop-back), generalizing worktree-only guidance to the whole lifecycle spine.
-  Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-27T13:24:00+00:00 — Task 22 follow-up route impact: the package-level serving summary now records
-  detached tmux session creation, independent per-browser WebSocket attaches, non-destructive browser
-  disconnect, and sticky explicit termination for cataloged dashboard terminal sessions. Detailed
-  behavior lives in the serving route overview and sidecars. Verification metadata pinned until closeout
-  stamps the follow-up code commit.
-
-- 2026-06-26T21:15:00+00:00 — Task 22 route impact: the dashboard serving route now persists terminal
-  session metadata in `serving.terminal_catalog`, lists catalog rows, rehydrates live tmux sessions on
-  WebSocket attach, marks stale rows exited, and terminates cataloged sessions on request. Verification
-  metadata pinned until closeout stamps the code commit.
-
-- 2026-06-26T18:18:00+00:00 — Task 21 route impact: task-document writes now synchronize same-root master
-  rows, and observer analytics expose `SeriesNode.seriesTokenTotal` for the dashboard master reader.
-  Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-26T17:40:00+00:00 — No route impact: task 20 reopened for Event River
-  lifecycle-label fallback and only re-synced the generated
-  `package_data/dashboard/` bundle under `mcp/` after frontend source changes
-  in `dashboard/src/data` and `dashboard/src/panels`. The shipped bundle remains
-  generated static package data served by the existing dashboard package path;
-  no MCP tool surface, serving contract, or package route model changed.
-  Verification metadata pinned until closeout stamps the reopened task-20 code
-  commit.
-
-- 2026-06-26T16:43:00+00:00 — Regression fix: package-level control-plane
-  paragraph now records `lifecycle_gate` as blocking until a developer decision
-  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
-  by the public junction.
-
-- 2026-06-26T16:23:00+00:00 — No route impact: task 20 rebuilt and re-synced the generated
-  `package_data/dashboard/` bundle after Event River frontend source changes under `dashboard/src/panels/`.
-  The shipped bundle remains generated static package data served by the existing dashboard package path;
-  no MCP tool surface, serving contract, or package route model changed. Verification metadata pinned until
-  closeout stamps the code commit.
-
-- 2026-06-26T15:05:00+00:00 — Regression fix: package-level control-plane
-  paragraph now records `lifecycle_gate` as blocking until a developer decision
-  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
-  by the public junction.
-
-- 2026-06-26T14:15:00+00:00 — Task 25 closeout verification: refreshed the package-level
-  control-plane paragraph for the unified public `lifecycle_gate` registration and verified
-  the `task_doc replace` summary against code commit `2017434`.
-
-- 2026-06-26T13:33:00+00:00 — No route impact: task 25 preserves the source branch's
-  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
-  control-plane, MCP-tool, model, and observer sidecars, so the package-level task-document summary
-  remains the replacement-repair wording. Verification metadata pinned until closeout stamps the code
-  commit.
-
-- 2026-06-25T12:02:00+00:00 — Task 24 reopened: MCP package overview records ambient-bound gate creation plus gate-id-only cancel cleanup for stale workspace-shaped gates.
-
-- 2026-06-25T11:20:00+00:00 — Task 23/24: MCP package overview now records disposable gate/inbox interaction retention, agent-pickup projection, and the rebuilt dashboard bundle.
-
-- 2026-06-25T07:55:00+00:00 — GrepAI provider lifecycle now documents and tests non-conflicting preferred auto host ports (`61432` PostgreSQL, `61434` Ollama) while retaining container service ports `5432`/`11434`.
-
-- 2026-06-25T05:26:00+00:00 — Task 19 gate interaction polish: the MCP package now exposes
-  `gate_response_wait`, keeps one open gate per lifecycle by expiring older gates, records targeted
-  dashboard Yes/No decisions with rejection notes, preserves Chat as operator-inbox/message-only, and
-  ships the rebuilt dashboard bundle. Verification metadata pinned until closeout stamps the code
-  commit.
-
-- 2026-06-24T16:17:00+00:00 — No route impact: empty-state backdrop zoom-stability rebuilt and re-synced the
-  generated `package_data/dashboard/` bundle after the frontend source and SC2 boomerang asset changes in
-  `dashboard/src` / `dashboard/public/assets`. The shipped bundle remains generated output served by the
-  existing MCP dashboard package path; no MCP tool surface, serving contract, or package route model changed.
-  Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-24T14:39:00+00:00 — Task 17 package route correction: refreshed the task-document summary so
-  observer projection is active-doc-first with optional lifecycle context, rather than requiring a
-  lifecycle key before Operations can show a task. Detail lives in the observer route overview and
-  sidecars. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-24T11:59:00+00:00 — No route impact: the Task 17 progress-count follow-up only re-synced the
-  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
-  `dashboard/src/panels/DetailPanel.tsx` display fix; no MCP package service surface changed.
-  Verification metadata pinned until closeout stamps the follow-up code commit.
-
-- 2026-06-24T10:57:00+00:00 — No route impact: the Task 17 master-selection follow-up only re-synced the
-  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
-  `dashboard/src/panels/DetailPanel.tsx` fix; no MCP package service surface changed. Verification
-  metadata pinned until closeout stamps the follow-up code commit.
-
-- 2026-06-24T10:43:00+00:00 — No route impact: Task 18 rebuilt and re-synced the generated
-  `package_data/dashboard/` bundle after the Operations task-title ellipsis fix in `dashboard/src`.
-  The MCP package route model is unchanged; the synced assets remain generated output owned by
-  `scripts/sync-dashboard.py` and checked by `mcp/tests/test_sync_dashboard.py`. Verification metadata
-  pinned until closeout stamps the code commit.
-
-- 2026-06-24T10:21:00+00:00 — No route impact: Task 17 updates `mcp/tests/test_observer_projection.py`
-  coverage for observer task/series `createdAt` and master objective projection within the existing
-  observer/test route model; no new MCP service domain or package route was added. Verification
-  metadata pinned until closeout stamps the code commit.
-
-- 2026-06-24T06:59:00+00:00 — No route impact: observer task-document correction keeps
-  `series-contract.md` as enclosure/process state only; lifecycle-readable task content comes from
-  JSON-primary `ar-task-document/v1` docs. Detail lives in the `observer/` overview plus
-  `snapshots.py`, `projection.py`, and `test_observer_projection.py` sidecars. The generated dashboard
-  bundle under `package_data/dashboard/` was re-synced from `dashboard/dist`; no MCP tool surface
-  changed. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-24T04:26:00+00:00 — Series-contract task resolver: refreshed the worktree lifecycle Route Model
-  paragraph to mention `worktrees/task_resolver.py`, which centralizes task-name lookup, nested
-  parent-task disambiguation, leaf enclosure contract paths, active archive exclusion, and completed
-  root-task archival. Detail lives in the new `task_resolver.py` sidecar. Verification metadata pinned until
-  closeout stamps the series-contract resolver code commit.
-
-- 2026-06-23T22:16:00+00:00 — Task 14 cleanup correction: updated the worktree lifecycle Route Model paragraph to reflect the current child-edge cleanup contract. Cleanup still hard-refuses before carryover and proves task work branches against the contract source branch, but it no longer retires parent/source branches; those branches are finalized by their own lifecycle edge.
-
-- 2026-06-23T21:04:00+00:00 — Dashboard task 14 adds the terminal `lifecycle_finalize_task` MCP operation. Refreshed the Hot Path Summary and Route Model for `worktrees/modules/finalize.py`: one branch-edge ancestry proof after landing, memory carryover check, cleanup verification, JSON-primary leaf + immediate parent-row reconciliation, no squash equivalence.
-
-- 2026-06-23T20:31:00+00:00 — Task 12 S2 clarification: refined the observer summary to distinguish
-  GrepAI process aggregation from addressable repo/project targets, so `targetRepos` can project as repo
-  satellites without implying separate per-repo provider processes.
-
-- 2026-06-23T20:09:00+00:00 — Task 12 S2 correction: refined the observer read-side summary after GrepAI
-  target evidence was verified in MCP config/current-state flow. CGC watcher rows and GrepAI
-  configured `targetRepos` now both project as repo-scoped workspace provider nodes; only providers
-  without target evidence remain aggregate.
-
-- 2026-06-23T19:58:00+00:00 — Task 12 S2 refreshed the observer read-side summary for repo-covered
-  workspace provider projection: CGC per-repo watcher rows now become repo-scoped provider nodes,
-  while unsupported provider coverage remains aggregate. Detail lives in the `observer/` route
-  overview plus the `provider_nodes.py`, `snapshots.py`, `projection.py`, and
-  `test_observer_projection.py` sidecars.
-
-- 2026-06-23T14:17:00+00:00 — Task 13 cleanup correctness: refreshed the `agents_remember.observer` / worktree lifecycle Route Model paragraph for the cleanup source-branch proof and dry-run directory preview fix; detailed behavior lives in the `worktrees/modules` route overview and `cleanup.py` sidecar.
-
-- 2026-06-23T14:02:00+00:00 — No route impact: task 12 S1 refreshed the shipped dashboard bundle under
-  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
-  topology frontend source. The MCP package route model and Python serving/control/tool behavior are
-  unchanged; this is generated static frontend package data only.
-
-- 2026-06-23T13:05:00+00:00 — Task 10 dashboard fallback: added the serving-layer `POST /api/operator-inbox` bridge to the package overview, tying the dashboard no-hosted-session path to the external-chat operator inbox. Verification metadata pinned until closeout stamps the task-10 code commit.
-
-- 2026-06-23T12:33:00+00:00 — No route impact: Task 11 refreshed the shipped dashboard bundle under
-  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
-  browser cockpit. The MCP package route model and Python serving/control/tool behavior are unchanged;
-  this is generated static frontend package data only.
-
-- 2026-06-23T11:44:00+00:00 — Task 10 backend inbox: documented the external-chat operator inbox as a control-plane sibling to gates and the three new `operator_inbox_*` tools. Verification metadata pinned until closeout stamps the task-10 code commit.
-
-- 2026-06-23T05:25:00+00:00 — slice 09 (gate-signal adoption): refreshed the `agents_remember.controlplane` Route Model bullet for the `GateKind` extension to the full l-01 gate spine (`plan-approval` / `worktree-intent` / `push-approval` added; `closeout-approval` IS the commit gate, tracked by the `gate_create` docstring), and the `agents_remember.observer` bullet for the `worktrees/modules/guidance.py` visibility fix — `lifecycle_guidance` no longer reads a `commit-approval-pending` gate off `git status`, so a dirty worktree projects its honest lifecycle-position phase (closeout-completed → `integration-pending`). The mcp package route model this overview describes is unchanged; per-route detail lives in the `controlplane/` + `worktrees/modules/` route overviews + the `records.py` / `server.py` / `guidance.py` sidecars. Verification metadata pinned until closeout stamps the slice-09 code commit.
-
-- 2026-06-22T23:40:00+00:00 — No route impact: slice 07b v1 carries the read's `repoId` on the `read.packet` — `observer/ambient.emit_read_packet` now takes `repo_id` and emits `data.repoId`, `controllers/read_files.py` passes `repo.repo_id`, and `mcp/tests/test_read_ar_files.py` asserts it (the dashboard `EventRiver` consumes it, out of this package). No MCP tool signature, controller surface, or schema changed; detail lives in the `controllers/` + `observer/` route overviews + file sidecars, and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the slice-07b code commit.
-
-- 2026-06-22T22:53:00+00:00 — No route impact: slice 07 S4+S5 is doctrine/docstring text only — the `read_ar_files` tool docstring (`mcp/server.py`) now states the research-phase-read role, the `controllers/read_files.py` + `observer/served_store.py` docstrings retarget the compact-reset producer to the post-3.0 agentic-control-plane (consumer + `refresh` kept as defensive scaffolding), and the synced runtime mirrors under `package_data/runtime/` (coordinator `AGENTS.md`, `c-04`/`l-01` `SKILL.md`) carry the research-phase-read doctrine. No MCP tool signature, controller surface, or schema changed; detail lives in the `controllers/` + `observer/` route overviews + file sidecars, and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the slice-07 code commit.
-
-- 2026-06-21T04:40:00+00:00 — Slice 05m (carryover-before-cleanup): refreshed the `agents_remember.observer` Route Model bullet for the carryover-before-cleanup lifecycle correctness landed in `worktrees/modules/` (`guidance.carryover_done` reads the official ledger; the new `carryover-pending` phase routes `memory_carryover_apply` before `cleanup-pending`; `cleanup_result` hard-refuses cleanup until the carry runs and then retires the work + PR'd source branches) and the observer reducer that now follows it (`_GUIDANCE_PHASE` projects `carryover-pending`; the engine-room node carries the display-only `carryoverDoneAt`). The mcp-package detail lives in the `worktrees/modules/` + `observer/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 05m code commit.
-
-- 2026-06-21T03:30:00+00:00 — Slice 05l Part 2 (landing-arc probe hardening): refreshed the `agents_remember.observer` Route Model bullet for the hardened `worktrees/modules/landing.py` probe — the protected target `origin/<base>` is now probed directly via `ls-remote` (visible across the whole landing window before any PR and independent of `gh`) and the PR ref carries gh's open/merge timestamp on the additive `LandingRefNode.at`, so the dashboard can follow a REAL remote landing; carryover/cleanup lifecycle correctness is a separate upcoming slice (05m). The mcp-package detail lives in the `worktrees/modules/` + `observer/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 05l-P2 code commit.
-
-- 2026-06-21T02:10:00+00:00 — Slice 05l Part 1 (backend teardown visibility): the `agents_remember.observer` reducer now projects the `abandoned` worktree phase (sourced from `worktrees/modules/guidance.py`'s new `cleanup == "abandoned"` branch) and **drops disposed** (cleaned-up/abandoned) enclosures from the Engine Room `Analytics.engineProcesses` so the frontend (05k) animates the teardown; refreshed the observer Route Model bullet. The mcp-package detail lives in the `observer/` + `worktrees/modules/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 05l-P1 code commit.
-
-- 2026-06-21T00:44:00+00:00 — No route impact: slice 6g changes are observer-local — `observer/read_task_documents` contract-pairs masters + resolves cross-master links, and `observer/projection.TaskDocNode` gains `subTasks`/`sections`/`masterLifecycleId` (detail in `src/agents_remember/observer/overview.md`). The `mcp/` package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 6g code commit.
-
-- 2026-06-19T18:30:00+00:00 — Task 6 slice 6f: `agents_remember.serving` gained `POST /api/terminal/{session}/image` (save a validated screenshot under the session cwd for path-injection, `python-multipart` dep) and a harness-scoped Ctrl-Z strip on the terminal host. Refreshed the serving Route Model bullet; per-file detail lives in `serving/overview.md` + the `app.py`/`terminal.py` sidecars. Verification metadata pinned until closeout stamps the 6f code commit.
-
-- 2026-06-19T13:50:00+00:00 — No route impact: the 5h H4 cleanup teardown + landing-source flag fix only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The frontend change lives in the in-scope root `dashboard/src/`. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-19T13:00:00+00:00 — No route impact: the 5h H3 remote/PR strip readability + connector pass only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The frontend change lives in the in-scope root `dashboard/src/`. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-19T12:05:00+00:00 — No route impact: task 6 slice 6e-4 modified `serving/terminal.py` (controlling-tty via `os.login_tty` + a seeded winsize so tmux honors resize) and `mcp/tests/test_terminal.py` (added `test_spawn_seeds_default_winsize`); both are internal to the already-documented `serving/` sub-route (detail in `serving/overview.md` + the `terminal.py` / `test_terminal.py` sidecars). The `mcp/` package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 6e-4 code commit.
-
-- 2026-06-19T11:57:00+00:00 — No route impact: slice 5h H3 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope; synced from `dashboard/dist`); no mcp-package source behavior changed. The H3 frontend change (engine-room remote/PR landing strip) lives in the in-scope root `dashboard/src/` with its own route + file sidecars. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-19T05:23:00+00:00 — No route impact: slice 3c R5 adds a `dry_run` flag to the `task_doc` tool (act-by-default false; true returns `rendered`/`diff`/`wouldLose` without writing) — an optional param on an existing tool, no new tool surface; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-19T04:39:00+00:00 — No route impact: the engine-room crash fix rebuilt the shipped dashboard bundle under `package_data/dashboard/` (synced from `dashboard/dist`); it is a generated artifact and no mcp package route surface changed. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-19T04:03:00+00:00 — No route impact: slice 3c reopened (R4, leaf-doc fidelity) adds leaf schema fields (`statusNote`/`headerNotes`/`HeaderNote`) + freeform leaf `sections` in the `tasks/` route, a `_MUTABLE_FIELDS`/`set_section` controller tweak, and the synced w-02 skill guidance under `package_data/runtime/skills/`; no MCP tool surface changed (the `task_doc` signature is unchanged) and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-19T03:15:00+00:00 — No route impact: slice 3c reopened (R3, deferred-examples honesty) adds an optional `codeExamplesNote` schema field + a renderer branch in the `tasks/` route and the synced w-02 skill guidance under `package_data/runtime/skills/`; no MCP tool surface changed (the `task_doc` tool signature is unchanged) and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-19T02:18:00+00:00 — No route impact: slice 3c reopened (R2, heading-vs-outcome) adds an optional `Step.outcome` + a renderer tweak in the `tasks/` route (the checkbox carries the distinct outcome; a bare step is heading-only); detail in the `tasks/` overview + the `document.py`/`render.py` sidecars. The mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-19T01:17:00+00:00 — No route impact: slice 3c reopened (R1, masters observable) adds a folder-keyed series/master projection inside the `observer/` route (`read_series_documents` + `SeriesNode`/`Analytics.series`) plus the `series_total`/`series_done` helpers in the `tasks/` route; both carry their own sub-route overviews and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-18T19:27:00+00:00 — Task 6 slice 6e-2b: `agents_remember.serving` gained `harnesses.py` (the curated harness launch registry — Claude Code/Codex/Pi.dev + `shutil.which` detection) + `app.py`'s `GET /api/harnesses` and a `kind="harness"` opener branch. Refreshed the serving Route Model bullet (opener now spawns a shell *or* a detected harness). Per-file detail lives in the `serving/` route. Verification metadata pinned until closeout stamps the 6e-2b code commit.
-
-- 2026-06-18T19:25:00+00:00 — No route impact: slice 5h Tier 2 enriches the `observer/` ledger window with per-side commit message + date via a best-effort batched `git log` (detail in the `observer/` overview) and expands `mcp/tests/test_observer_projection.py` under this route with `LedgerCommitMetaTests` (real git repos); the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-18T16:00:00+00:00 — No route impact: slice 5h's ledger popover extends the `observer/` ledger surface (additive `LedgerNode.rows` / `EngineProcessNode.ledgerRows`; detail in the `observer/` overview) and expands `mcp/tests/test_observer_projection.py` under this route with the windowing tests; the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the code commit.
-
-- 2026-06-18T15:40:00+00:00 — Task 6 slice 6e-2a: `agents_remember.serving` `app.py` gained the `POST /api/terminal/{session}` **opener** (the dashboard spawns + owns a shell session at `config.workspace_root` via the pure `resolve_terminal_launch` → `host.open`; server-resolved command). Refreshed the serving Route Model bullet. Harness kinds + per-harness buttons are 6e-2b. Verification metadata pinned until closeout stamps the 6e-2a code commit.
-
-- 2026-06-18T14:10:00+00:00 — Task 6 slice 6d-2: `agents_remember.serving` `app.py` gained the `@app.websocket("/api/terminal/{session}")` Mode B2 bridge (PTY ↔ WebSocket — binary out, JSON `stdin`/`resize` in, `{type:exit}` on child exit, attach-only + tmux-persistent) + the `terminal_host` `create_app` param; `pyproject.toml` added the `websockets` core dep (uvicorn's WS impl). Refreshed the serving Route Model bullet; per-file detail lives in the `serving/` route. The xterm.js visual is 6e. Verification metadata pinned until closeout stamps the 6d-2 code commit.
-
-- 2026-06-18T13:40:00+00:00 — Task 6 slice 6d-1: `agents_remember.serving` gained the **Mode B2 terminal host** (`terminal.py` — a `TerminalHost` registry of tmux-wrapped stdlib-`pty` sessions, injectable spawn, fixed-argv/localhost posture) + `mcp/tests/test_terminal.py`. Refreshed the serving Route Model bullet; per-file detail lives in the `serving/` route. The WebSocket bridge + `websockets` dep are 6d-2, the xterm.js visual 6e. Verification metadata pinned until closeout stamps the 6d-1 code commit.
-
-- 2026-06-18T12:05:00+00:00 — No route impact: task 6 slice 6c Part A is within the `agents_remember.observer` sub-route (gate projection — `read_gates` + `_attach_gates` / `_gate_attention` materialize a durable gate onto the lifecycle); the mcp package route model this overview describes is unchanged — detail lives in the `observer/` route overview + file sidecars (the `mcp/tests` test addition has no package-route impact). Verification metadata pinned until closeout stamps the 6c Part A code commit.
-
-- 2026-06-18T10:10:00+00:00 — Task 6 slice 6b: the `agents_remember.controlplane` domain became **enforcing** — new `enforcement.py` (`evaluate_closeout_gate`) binds `worktree_closeout_apply` on a developer-approved gate, and `agents_remember.serving`'s POST plane records gate decisions (`gate_decide_for_lifecycle`). Refreshed the controlplane + serving Route Model bullets; per-file detail lives in those routes + the synced l-01/c-12-closeout skill sidecars under this package. Verification metadata pinned until closeout stamps the 6b code commit.
-
-- 2026-06-18T06:51:00+00:00 — No route impact: slice 5h H1 adds the `worktrees/modules/landing.py` best-effort landing-arc probe (detail in the `worktrees/modules/` overview) and the `observer` `landing`/`integrationStrategy` projection fields (detail in the `observer/` overview); the new `mcp/tests/test_landing.py` + the expanded `test_observer_projection.py` under this route carry no mcp-package route-model impact. The mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 5h code commit.
-
-- 2026-06-17T23:05:00+00:00 — Task 6 slice 6a: new `agents_remember.controlplane` service domain (the gate control-plane substrate — `GateRecord` + `GateStore`) plus the four `gate_*` MCP tools registered through `server.py`/`mcp/tools`/`models` (47-tool surface). Added the controlplane Route Model bullet; per-file detail lives in the new `controlplane/` route and the `gates` sidecars. Verification metadata pinned until closeout stamps the 6a code commit.
-
-- 2026-06-16T01:50:00+00:00 — No route impact: slice 5f S5 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S5 frontend change (lifecycle-phase header pulse) lives in the in-scope root `dashboard/src/`.
-
-- 2026-06-16T01:40:00+00:00 — No route impact: slice 5f S4 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S4 frontend change (conduit power-up flow packets) lives in the in-scope root `dashboard/src/`.
-
-- 2026-06-16T01:35:00+00:00 — No route impact: slice 5f S3 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S3 frontend changes (promotion morph + alarm-parity test) live in the in-scope root `dashboard/src/`.
-
-- 2026-06-16T01:25:00+00:00 — No route impact: slice 5f S6 closed the §9 observability gaps in `observer/reducer.py` (the `_start_attention` attention source + `start_progress` threading) and `worktrees/modules/start.py` (happy-path start-progress emits); the mcp package route model this overview describes is unchanged — detail lives in the `observer/` + `worktrees/modules/` route overviews and the file sidecars.
-
-- 2026-06-16T01:05:00+00:00 — No route impact: slice 5f S2 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S2 frontend changes (Engine Room birth motion + fleeting rendering) live in the in-scope root `dashboard/src/`.
-
-- 2026-06-16T00:30:00+00:00 — No route impact: slice 5f S1 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S1 frontend change (full-bleed cockpit layout) lives in the in-scope root `dashboard/src/`.
-
-- 2026-06-15T23:55:00+00:00 — No route impact: slice 5f S0 only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The S0 frontend changes live in the in-scope root `dashboard/src/` with their own route overviews + file sidecars.
-
-- 2026-06-15T17:35:00+00:00 — No route impact: slice 5e's mcp-side changes (the observer `engineProcesses` surface + `worktrees/start_progress.py` §5.4) are captured in the `observer/` and `worktrees/modules/` route overviews + file sidecars; the mcp package route model this overview describes is unchanged.
-
-- 2026-06-15T15:00:00+00:00 — No route impact: slice 5d only re-synced the generated dashboard bundle under `package_data/dashboard/` (excluded from memory scope); no mcp-package source behavior changed. The 5d frontend re-architecture (Panda + React Aria) lives in the now-in-scope root `dashboard/src/` with its own route overviews + file sidecars.
-
-- 2026-06-14T21:30:00+00:00 — Slice 05 (5c): the `agents_remember.observer` read side added persistent
-  lifecycle and per-worktree provider projections plus full task content; serving simulation/event
-  fixes and matching tests landed. The then-added rich-sim generator was later retired by PDLS
-  after it had no maintained consumer.
-
-- 2026-06-14T15:30:00+00:00 — Slice 05 (5b): the `agents_remember.observer` projection gained the server-computed **attention queue** (`AttentionItem` + the derived `Analytics.attentionQueue`, the pure `build_attention_queue` wired through `project_workspace`); refreshed the observer Route Model bullet. The expanded `mcp/tests/test_observer_projection.py` under this route carries no mcp-package route-model impact (detail in the file/route cards). The 5b cockpit panels are frontend, living in the out-of-scope root `dashboard/`. Verification metadata pinned until closeout stamps the 5b code commit.
-
-- 2026-06-14T13:52:00+00:00 — Slice 05a: the package now ships the **real** dashboard cockpit bundle under `package_data/dashboard/` (the slice-04 placeholder is replaced by the Vite/React build, synced by `scripts/sync-dashboard.py`); added `mcp/tests/test_sync_dashboard.py` and wired `sync-dashboard.py --check` into both githooks + the CI workflow. The mcp package route model is otherwise unchanged (the cockpit React/TS sources live in the out-of-scope root `dashboard/`). Verification metadata pinned until closeout stamps the 5a code commit.
-
-- 2026-06-14T09:30:00+00:00 — Slice 04 commit 4b: extended `agents_remember.serving` with the raw `event` SSE channel (`events.py` — byte-offset `Last-Event-ID` resume), sim-mode replay (`sim.py` — a replay clock + fixture feeder over the projector's `now`/`before_tick` seams), and the no-mutation `POST /api/actions/{action}` skeleton (`actions.py`); `app.py` gained `/api/events` + `/api/actions`, `cli/dashboard.py` the `--sim`/`--sim-speed` flags. Refreshed the serving Route Model bullet; per-file detail lives in the new + updated `serving/` sidecars. Verification metadata pinned until closeout stamps the 4b code commit.
-
-- 2026-06-14T09:30:00+00:00 — Slice 04 commit 4a: new `agents_remember.serving` service domain (the dashboard serving spine — FastAPI app, shared projector, per-entity SSE deltas, static mount) with its own route overview, plus the umbrella `agents-remember` CLI (`cli/__main__.py` + `cli/dashboard.py`) and `fastapi`/`uvicorn` core deps. Added the serving Route Model bullet; per-file detail lives in the new `serving/` route + `cli/` sidecars. Verification metadata pinned until closeout stamps the 4a code commit.
-
-- 2026-06-13T22:16:00+00:00 — No route impact: slice 3c commit 3 extends the `agents_remember.tasks` domain with `kind:"master"` (a `subTasks` series index + ordered `sections`) and the master `task_doc` ops (`set_subtask`/`set_section`); the per-route detail lives in the `tasks/`, `mcp/tools`, and controller overviews + the file sidecars, and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-
-- 2026-06-13T21:10:00+00:00 — Slice 3c commit 2: the observer read side first added task-document projection (`read_task_documents` → `Analytics.taskDocuments`; later Task 17 made projection active-doc-first with optional lifecycle context), and the `w-02-light-task-workflow` skill under `package_data` adopted JSON-primary authoring (synced from canonical `skills/`). Updated the tasks Route Model bullet (the observer projects them, not "will project"). Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
-
-- 2026-06-13T20:34:00+00:00 — Slice 3c commit 1: new `agents_remember.tasks` service domain (the JSON-primary `ar-task-document/v1` schema + renderer + store) and the `task_doc` authoring tool registered through `server.py`/`mcp/tools`/`models` (43-tool surface). Added the tasks Route Model bullet; per-file detail lives in the new `tasks/` route and the `task_doc` sidecars. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
-
-- 2026-06-13T18:48:00+00:00 — Slice 3b: the `agents_remember.observer` projection read side gained the analytical surfaces (drift snapshot, sidecar staleness, setup, route coverage, tool reports, ledger) + the rollups; refreshed the observer Route Model bullet (no longer "analytical surfaces land in 3b"). The drift-producer snapshot write in `memory_quality/summary.py` and the expanded `mcp/tests/test_observer_projection.py` under this route carry no mcp-package route-model impact (detail lives in their file/route cards). Verification metadata pinned until closeout stamps the 3b code commit.
-
-- 2026-06-13T17:30:00+00:00 — Slice 3a: the `agents_remember.observer` domain gained the projection **read side** (`reducer.py`, `projection.py`, `snapshots.py`, `projection_store.py`, plus the shared `paths.py`/`timeutil.py`); the observer Route Model bullet no longer says the read side "arrives in a later slice." Per-file detail lives in the `observer/` route. Verification metadata pinned until closeout stamps the 3a code commit.
-
-- 2026-06-13T16:45:00+00:00 — No route impact: slice 2c extends the mcp-internal `observer` domain (resume + save gate: `save_gate.py`, ambient `promote`/`attach`) and forwards an `on_unsaved` argument through the lifecycle/worktree tools; the per-route detail lives in the `observer` and `mcp/tools` overviews, and the mcp package route model this overview describes is unchanged. Verification metadata pinned until closeout stamps the 2c code commit.
-
-- 2026-06-13T14:41:00+00:00 — Slice 2b: the `agents_remember.observer` domain gained the ambient lifecycle and the six `lifecycle_*` signal tools, and `server.py` + `mcp/tools/base.py` wired the `install_ambient` call plus the `_tool_payload` emission hook; updated the observer Route Model bullet. Per-file detail lives in the `observer/` and `mcp/tools/` routes. Verification metadata pinned until closeout stamps the 2b code commit.
-
-- 2026-06-13T09:15:00+00:00 — New `agents_remember.observer` service domain (slice 2a of the 3.0 browser-dashboard series): the observable-lifecycle event substrate write side — `ar-observer-event/v1` envelope, local ULID mint, append-only per-lifecycle event store — with its own route overview under this package. Added it to the Route Model; per-file detail lives in the new `observer/` route. Later slices add the ambient lifecycle + signal tools and the projection read side.
-
-- 2026-06-12T17:06:00+00:00 — No route impact: the issue #83 changes under this route are the worktree-manager facade re-exports, the test additions, the 2.9.1 version bump, and the synced c-12-closeout and l-01-session-job-lifecycle skill copies (issue #83 doctrine plus the two-turn gate protocol); the closeout worklist behavior itself is documented at the `mcp/src/agents_remember/worktrees/modules` route, and the package layout/routing this overview describes is unchanged.
-
-- 2026-06-11T13:20:00+00:00 — No route impact: carryover gained the memory-only-doc and entity-catalog candidate kinds inside memory/carryover.py and the c-11 packaged skill doc; route structure and module responsibilities on this route are unchanged (detail lives in the per-file cards).
-
-- 2026-06-11T12:07:00+00:00: No route impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
-
-- 2026-06-11T04:47:00+00:00 — No route impact: issue #62 removed the `direct_closeout_*` tool surface (server registrations, payload builders, controllers, models, CLI subcommand, tests) — closeout is worktree-only; the package structure this overview describes is unchanged (detail in the file sidecars and sub-route overviews).
-
-- 2026-06-10T08:26:00+00:00 — No route impact: package version bumped to 2.8.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #54 release; runtime skills (l-01/c-09/c-11) teach the new freshness checkpoints; route behavior unchanged.
-
-- 2026-06-10T07:56:00+00:00 — Issue #54 sub-task D: new `worktree_sync` tool (mid-task atomic base-pair sync) and the fetch-free `worktree_status` freshness block; route detail lives in the `worktrees/modules` overview.
-
-- 2026-06-10T07:45:00+00:00 — Issue #54 sub-task C: carryover apply reports `memory_main_advance`, fast-forwarding memory main to the official checkout tip after the carryover commits.
-
-- 2026-06-10T07:30:00+00:00 — Issue #54 sub-task B: `worktree_start` gained the stale-base preflight (behind/diverged source branches block with `stale_base_choice` recoveries) and the memory source branch auto-template; route detail lives in the `worktrees/modules` overview.
-
-- 2026-06-10T06:39:00+00:00 — Issue #54 sub-task A: added `kernel/git_freshness.py` (branch-vs-upstream freshness kernel) and the opt-in `context_packet` `include_freshness` section with `ledgerMapsCodeHead`.
-
-- 2026-06-10T06:15:00+00:00 — No route impact: package version bumped to 2.7.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #53/#58 release; route behavior unchanged.
-
-- 2026-06-10T05:40:00+00:00 — GitHub #53/#58: added the background-observability invariant (async worktree provider setup with durable heartbeat progress, stale projection, retry path) and the container-form argv invariant; shared context helpers moved to `providers/context_common.py` (facade re-entrancy fix).
-
-- 2026-06-10T04:05:00+00:00 — No route impact: package version bumped to 2.6.0 (`pyproject.toml`, `SERVER_VERSION` fallback) for the GitHub #56 release; route behavior unchanged.
-
-- 2026-06-10T03:50:00+00:00 — Issue #56 sub-task 3: the Hot Path Summary now records carryover route-overview candidates and guarded official-side index regeneration (`memory/carryover.py`).
-
-- 2026-06-10T03:30:00+00:00 — Route body caught up with the 2.5.0–2.5.2 releases: content-gated provider readiness, the stdio subprocess invariant (#49), stall-watchdog doctrine, and the tool-report response-budget layer. Previous closeouts had only stamped the verification header (developer-flagged gap).
-
-- 2026-06-10T03:20:00+00:00 — No route impact: sub-task 2 extended the body gates to route overviews and the c-05 skill doctrine; the route surface described in the sub-task 1 entry already covers both gates and the markers.
-
-- 2026-06-10T02:47:00+00:00 — Issue #56 sub-task 1: added `kernel/onboarding_doc.py` (shared doc parsing + body/history classification) and the four-case sidecar body gate with in-band no-impact attestation markers to the route surface.
-
-- 2026-06-09T12:52:00+00:00: Refreshed the MCP route overview against MCP 2.4.1 `main`; added the canonical root runtime asset sync boundary for package data.
-
-- 2026-06-08T07:57:00+00:00: Re-verified the MCP package route after PR-39 restored context-packet provider-summary validation and made skipped-provider summaries a modeled optional-null contract.
-
-- 2026-06-06T12:15:00+00:00: Re-verified against the current MCP package surface; corrected stale `mcp/tools.py` and provider lifecycle module references after the `mcp/tools/` package split and provider-first lifecycle packages.
-
-- 2026-05-31T10:40:00+00:00: Removed the deleted `providers/integrity.py` runner-integrity prose and reference row after the provider-runner integrity feature was removed in the 1.0.0 remediation; `providers/status.py` no longer checks runner integrity.
-
-- 2026-05-29T06:53:00+00:00: Updated after `server.py` began installing the `mcp/compact_content.py` shim that minifies tool-result text mirrors, and after dev-time tool-response conformance tests landed.
-
-- 2026-05-28T17:52:00+00:00: Updated after public MCP response payloads were wired through Pydantic models, context packets moved to compact V2, provider diagnostics became the detail boundary, and controllers split by domain.
-
-- 2026-05-28T11:40:00+00:00: Tightened MCP provider invariants to forbid CGC host `venvRoot`, host executable, and site-packages patch fallback paths.
-
-- 2026-05-28T10:32:00+00:00: Updated after provider operator logs moved into the central `logs/` tree and provider status began writing current-state snapshots under `logs/providers/status/`.
-
-- 2026-05-25T17:16:00+00:00: Updated after the legacy `provider_lifecycle.py` facade was deleted and `providers.lifecycle` became the sole lifecycle facade.
-
-- 2026-05-25T17:01:00+00:00: Updated after provider lifecycle split into focused modules and GrepAI runtime became Docker-only without `_bin`, `_venvs`, host GrepAI, or host Ollama fallback.
-
-- 2026-05-24T00:47:00+00:00: Updated after drift moved into `memory_quality.integrity` and `memory_quality_check` became the closeout quality gate.
-
-- 2026-05-23T02:29:00+00:00: Created for the MCP package route after Phase 3 added MCP-owned runtime installation, provider layout convergence, and runner integrity checks.
-
-  `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
-
-  `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
-
-  rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
-
-  `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
-
-  remains closeout-owned.
-
-  `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
-
-  `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
-
-  rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
-
-  `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
-
-  remains closeout-owned.
-
-  `67b21aeb`): recorded the experimental knowledge-storage route in this package overview — the new
-
-  `memory/knowledge/` storage domain and its route overview, the new `kernel/canonical_json.py` primitive with its
-
-  rank rationale, the exact `apsw==3.53.4.0` pin and why session support makes it a build-time property, the
-
-  `layers.toml` charter-wording addition with no rank move, and the explicit non-claims. Verification metadata
-
-  remains closeout-owned.
-
-  `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
-
-  corrected for the review's second pair of defects. The L3 recoverable-order sentence now names
-
-  `_update_ref_stream` and the one-instruction-per-line rule the `update-ref --stdin` stream needs,
-
-  because a blank line is an EMPTY COMMAND to git and aborted the whole transaction for any run that
-
-  declared two or more refs; the L3 review paragraph now states that two external reviews found four
-
-  defects and records the third (the multi-ref stream, with the two-branch public-apply case that pins
-
-  it) and the fourth (the projection's rebuild appending the source's rows unchanged, so an invalid
-
-  source row survived the recompute that exists to repair it — now excluded with `code-commit-missing`
-
-  and reported, with `LedgerWorld.code_repository` optional so a world naming none keeps its rows).
-
-  The L2 ledger-attribution section records the same code-half change on the reader's consuming side.
-
-  Detail lives on the `kernel/memory_backfill.py`, `worktrees/ledger_projection.py` and
-
-  `mcp/tests/test_memory_ledger.py` cards. States plainly that the fixed tool is proven on fixtures
-
-  plus a read-only plan measurement, has **not** been applied to any real repository, and has **no**
-
-  Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
-
-  verification stamp advanced.
-
-  `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
-
-  corrected for the review's second pair of defects. The L3 recoverable-order sentence now names
-
-  `_update_ref_stream` and the one-instruction-per-line rule the `update-ref --stdin` stream needs,
-
-  because a blank line is an EMPTY COMMAND to git and aborted the whole transaction for any run that
-
-  declared two or more refs; the L3 review paragraph now states that two external reviews found four
-
-  defects and records the third (the multi-ref stream, with the two-branch public-apply case that pins
-
-  it) and the fourth (the projection's rebuild appending the source's rows unchanged, so an invalid
-
-  source row survived the recompute that exists to repair it — now excluded with `code-commit-missing`
-
-  and reported, with `LedgerWorld.code_repository` optional so a world naming none keeps its rows).
-
-  The L2 ledger-attribution section records the same code-half change on the reader's consuming side.
-
-  Detail lives on the `kernel/memory_backfill.py`, `worktrees/ledger_projection.py` and
-
-  `mcp/tests/test_memory_ledger.py` cards. States plainly that the fixed tool is proven on fixtures
-
-  plus a read-only plan measurement, has **not** been applied to any real repository, and has **no**
-
-  Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
-
-  verification stamp advanced.
-
-  `ar/260913_ledger-commit-attribution`, base `bb65a207`): this route's L2 and L3 sections were
-
-  corrected for the review's second pair of defects. The L3 recoverable-order sentence now names
-
-  `_update_ref_stream` and the one-instruction-per-line rule the `update-ref --stdin` stream needs,
-
-  because a blank line is an EMPTY COMMAND to git and aborted the whole transaction for any run that
-
-  declared two or more refs; the L3 review paragraph now states that two external reviews found four
-
-  defects and records the third (the multi-ref stream, with the two-branch public-apply case that pins
-
-  it) and the fourth (the projection's rebuild appending the source's rows unchanged, so an invalid
-
-  source row survived the recompute that exists to repair it — now excluded with `code-commit-missing`
-
-  and reported, with `LedgerWorld.code_repository` optional so a world naming none keeps its rows).
-
-  The L2 ledger-attribution section records the same code-half change on the reader's consuming side.
-
-  Detail lives on the `kernel/memory_backfill.py`, `worktrees/ledger_projection.py` and
-
-  `mcp/tests/test_memory_ledger.py` cards. States plainly that the fixed tool is proven on fixtures
-
-  plus a read-only plan measurement, has **not** been applied to any real repository, and has **no**
-
-  Dagger certificate. Verification metadata remains closeout-owned; no acceptance claim and no
-
-  verification stamp advanced.
-
-  under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
-
-  consumer rows were added to the ownership catalog, the checkpoint-landing world builders moved to
-
-  the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the
-
-  overview: it names none of those constructs, and the constructs it does describe still hold, so no
-
-  wording changed. Verification metadata remains closeout-owned.
-
-  under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
-
-  consumer rows were added to the ownership catalog, the checkpoint-landing world builders moved to
-
-  the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the
-
-  overview: it names none of those constructs, and the constructs it does describe still hold, so no
-
-  wording changed. Verification metadata remains closeout-owned.
-
-  under this route — the series-attach branch was extracted into `startup/series_attach.py`, twelve
-
-  consumer rows were added to the ownership catalog, the checkpoint-landing world builders moved to
-
-  the shared `checkpoint_landing_test_support`, and three suites switched to them. Re-read the
-
-  overview: it names none of those constructs, and the constructs it does describe still hold, so no
-
-  wording changed. Verification metadata remains closeout-owned.
-
-  unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
-
-  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
-
-  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
-
-  unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
-
-  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
-
-  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
-
-  unstaged changes not represented in HEAD. Re-read the card against the frozen on-disk source and
-
-  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
-
-  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
-
-  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
-
-  both are fixed, so the L3 section above was corrected rather than extended. The selection is no
-
-  longer "the oldest row per code commit wins": it is a maximum matching (code commits offered
-
-  most-constrained-first, a tie going to the older row read off the table) plus a fill that gives
-
-  every memory commit the matching did not reach its own oldest row — the fill is load-bearing because
-
-  a matching is symmetric and the format is not. The skip vocabulary is five literals split into holes
-
-  and declines, with `lost_claims` naming each code commit that ends with no trailer and the memory
-
-  commit that took its pairing, and a plan that lost a mapping can never report empty. Measured at
-
-  `7aa4cd97`: 418 of 428 code commits named (the maximum, confirmed with Hopcroft-Karp), 455 of 455
-
-  memory commits trailered, 52 of the review's 60 omitted pairings recovered, 5 of the remaining 8
-
-  provably uncarryable and 3 the same tie resolved by the table's order; a 55-of-60 hash-order variant
-
-  was refused. Recorded the structural bound (472 pairings, 455 single-trailer memory commits, at most
-
-  418 matchable code commits) and the second defect on the CLI's own path: a branch-name tip was never
-
-  resolved to an exact commit, so the run wrote its rescue refs and then refused and the retry tripped
-
-  its own predecessor's refs — every name is now resolved before any ref is written and the
-
-  empty-plan check precedes the rescue guard. Also recorded that the acceptance proof is now
-
-  trailer-only (it reads the rewritten tip through an absent ledger path, because `read_ledger_source`
-
-  unions the table into the trailers and the earlier proof therefore proved the table had survived —
-
-  which is how 60 omissions passed a green suite). States plainly that the tool is fixed and proven on
-
-  fixtures plus a read-only plan measurement and has **not** been applied to any real repository; the
-
-  earlier pre-fix confined attempt and its revert stay recorded as the reason the rewrite is deferred
-
-  to this master's integration into IAS. Verification metadata remains closeout-owned; no acceptance
-
-  claim and no verification stamp advanced.
-
-  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
-
-  both are fixed, so the L3 section above was corrected rather than extended. The selection is no
-
-  longer "the oldest row per code commit wins": it is a maximum matching (code commits offered
-
-  most-constrained-first, a tie going to the older row read off the table) plus a fill that gives
-
-  every memory commit the matching did not reach its own oldest row — the fill is load-bearing because
-
-  a matching is symmetric and the format is not. The skip vocabulary is five literals split into holes
-
-  and declines, with `lost_claims` naming each code commit that ends with no trailer and the memory
-
-  commit that took its pairing, and a plan that lost a mapping can never report empty. Measured at
-
-  `7aa4cd97`: 418 of 428 code commits named (the maximum, confirmed with Hopcroft-Karp), 455 of 455
-
-  memory commits trailered, 52 of the review's 60 omitted pairings recovered, 5 of the remaining 8
-
-  provably uncarryable and 3 the same tie resolved by the table's order; a 55-of-60 hash-order variant
-
-  was refused. Recorded the structural bound (472 pairings, 455 single-trailer memory commits, at most
-
-  418 matchable code commits) and the second defect on the CLI's own path: a branch-name tip was never
-
-  resolved to an exact commit, so the run wrote its rescue refs and then refused and the retry tripped
-
-  its own predecessor's refs — every name is now resolved before any ref is written and the
-
-  empty-plan check precedes the rescue guard. Also recorded that the acceptance proof is now
-
-  trailer-only (it reads the rewritten tip through an absent ledger path, because `read_ledger_source`
-
-  unions the table into the trailers and the earlier proof therefore proved the table had survived —
-
-  which is how 60 omissions passed a green suite). States plainly that the tool is fixed and proven on
-
-  fixtures plus a read-only plan measurement and has **not** been applied to any real repository; the
-
-  earlier pre-fix confined attempt and its revert stay recorded as the reason the rewrite is deferred
-
-  to this master's integration into IAS. Verification metadata remains closeout-owned; no acceptance
-
-  claim and no verification stamp advanced.
-
-  `ar/260913-lca-l3-ar`, base `7317108b`): an external review found two defects in the backfill and
-
-  both are fixed, so the L3 section above was corrected rather than extended. The selection is no
-
-  longer "the oldest row per code commit wins": it is a maximum matching (code commits offered
-
-  most-constrained-first, a tie going to the older row read off the table) plus a fill that gives
-
-  every memory commit the matching did not reach its own oldest row — the fill is load-bearing because
-
-  a matching is symmetric and the format is not. The skip vocabulary is five literals split into holes
-
-  and declines, with `lost_claims` naming each code commit that ends with no trailer and the memory
-
-  commit that took its pairing, and a plan that lost a mapping can never report empty. Measured at
-
-  `7aa4cd97`: 418 of 428 code commits named (the maximum, confirmed with Hopcroft-Karp), 455 of 455
-
-  memory commits trailered, 52 of the review's 60 omitted pairings recovered, 5 of the remaining 8
-
-  provably uncarryable and 3 the same tie resolved by the table's order; a 55-of-60 hash-order variant
-
-  was refused. Recorded the structural bound (472 pairings, 455 single-trailer memory commits, at most
-
-  418 matchable code commits) and the second defect on the CLI's own path: a branch-name tip was never
-
-  resolved to an exact commit, so the run wrote its rescue refs and then refused and the retry tripped
-
-  its own predecessor's refs — every name is now resolved before any ref is written and the
-
-  empty-plan check precedes the rescue guard. Also recorded that the acceptance proof is now
-
-  trailer-only (it reads the rewritten tip through an absent ledger path, because `read_ledger_source`
-
-  unions the table into the trailers and the earlier proof therefore proved the table had survived —
-
-  which is how 60 omissions passed a green suite). States plainly that the tool is fixed and proven on
-
-  fixtures plus a read-only plan measurement and has **not** been applied to any real repository; the
-
-  earlier pre-fix confined attempt and its revert stay recorded as the reason the rewrite is deferred
-
-  to this master's integration into IAS. Verification metadata remains closeout-owned; no acceptance
-
-  claim and no verification stamp advanced.
-
-  `ar/260913-lca-l3-ar`, base `7317108b`): added the L3 section to this route's record of the
-
-  ledger-attribution plane, because this route governs `mcp/src/agents_remember/kernel/` (there is no
-
-  route-local `kernel/overview.md`) and the leaf added the third kernel module in that plane,
-
-  `kernel/memory_backfill.py`, with `cli/memory_backfill.py` as its only entry point. The section
-
-  records the declared oldest-row-per-code-commit trailer rule and its closed four-literal skip
-
-  vocabulary, the byte-faithful replay (and why it forced `GitRunnerOptions.identity`), structural
-
-  idempotence, the rescue-ref-before-first-object and single-transaction ordering, the
-
-  `carry_ledger_cells` table carry, and the reversal: the confined apply was verified and then
-
-  reverted by developer ruling because rewriting the shared ancestors removed the master's common
-
-  ancestor with its super, so the shared line still carries 0 trailers and the backfill is deferred to
-
-  this master's integration into IAS. Corrected the runner paragraphs in the same pass, which the
-
-  change made false or which the 2026-09-06 test-inventory reduction had already falsified:
-
-  `run_git` now takes a single `GitRunnerOptions` (`work_dir`, `input_text`, `timeout`, `identity`)
-
-  instead of three keyword arguments, 38 call sites across 19 files were migrated mechanically;
-
-  `benchmarks/runner_modules/commands.py` no longer composes its own argv (it calls `run_git`); the
-
-  `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel` reference and the AST-sweep
-
-  / guard-on-the-guard description of `mcp/tests/test_git_command.py` are marked as removed by
-
-  `d3610903` rather than current coverage, with the retained half described instead. Verification
-
-  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-  `ar/260913-lca-l3-ar`, base `7317108b`): added the L3 section to this route's record of the
-
-  ledger-attribution plane, because this route governs `mcp/src/agents_remember/kernel/` (there is no
-
-  route-local `kernel/overview.md`) and the leaf added the third kernel module in that plane,
-
-  `kernel/memory_backfill.py`, with `cli/memory_backfill.py` as its only entry point. The section
-
-  records the declared oldest-row-per-code-commit trailer rule and its closed four-literal skip
-
-  vocabulary, the byte-faithful replay (and why it forced `GitRunnerOptions.identity`), structural
-
-  idempotence, the rescue-ref-before-first-object and single-transaction ordering, the
-
-  `carry_ledger_cells` table carry, and the reversal: the confined apply was verified and then
-
-  reverted by developer ruling because rewriting the shared ancestors removed the master's common
-
-  ancestor with its super, so the shared line still carries 0 trailers and the backfill is deferred to
-
-  this master's integration into IAS. Corrected the runner paragraphs in the same pass, which the
-
-  change made false or which the 2026-09-06 test-inventory reduction had already falsified:
-
-  `run_git` now takes a single `GitRunnerOptions` (`work_dir`, `input_text`, `timeout`, `identity`)
-
-  instead of three keyword arguments, 38 call sites across 19 files were migrated mechanically;
-
-  `benchmarks/runner_modules/commands.py` no longer composes its own argv (it calls `run_git`); the
-
-  `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel` reference and the AST-sweep
-
-  / guard-on-the-guard description of `mcp/tests/test_git_command.py` are marked as removed by
-
-  `d3610903` rather than current coverage, with the retained half described instead. Verification
-
-  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-  `ar/260913-lca-l3-ar`, base `7317108b`): added the L3 section to this route's record of the
-
-  ledger-attribution plane, because this route governs `mcp/src/agents_remember/kernel/` (there is no
-
-  route-local `kernel/overview.md`) and the leaf added the third kernel module in that plane,
-
-  `kernel/memory_backfill.py`, with `cli/memory_backfill.py` as its only entry point. The section
-
-  records the declared oldest-row-per-code-commit trailer rule and its closed four-literal skip
-
-  vocabulary, the byte-faithful replay (and why it forced `GitRunnerOptions.identity`), structural
-
-  idempotence, the rescue-ref-before-first-object and single-transaction ordering, the
-
-  `carry_ledger_cells` table carry, and the reversal: the confined apply was verified and then
-
-  reverted by developer ruling because rewriting the shared ancestors removed the master's common
-
-  ancestor with its super, so the shared line still carries 0 trailers and the backfill is deferred to
-
-  this master's integration into IAS. Corrected the runner paragraphs in the same pass, which the
-
-  change made false or which the 2026-09-06 test-inventory reduction had already falsified:
-
-  `run_git` now takes a single `GitRunnerOptions` (`work_dir`, `input_text`, `timeout`, `identity`)
-
-  instead of three keyword arguments, 38 call sites across 19 files were migrated mechanically;
-
-  `benchmarks/runner_modules/commands.py` no longer composes its own argv (it calls `run_git`); the
-
-  `TimeoutClassTests::test_one_command_means_one_bound_across_the_kernel` reference and the AST-sweep
-
-  / guard-on-the-guard description of `mcp/tests/test_git_command.py` are marked as removed by
-
-  `d3610903` rather than current coverage, with the retained half described instead. Verification
-
-  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
-
-  `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a
-
-  per-commit fallback". The reader now reads the source commit's own recorded table on **every** path
-
-  and merges the reachable commits' attribution into it, excluding with a recorded reason any row the
-
-  source cannot prove; the fallback framing was the defect's own description — a partially
-
-  backfilled line (479 recorded rows, one trailered commit at `f5edc613`) read as a one-row source.
-
-  The kernel `memory_attribution.py` module itself is unchanged by this leaf; the correction is to how
-
-  this route describes the reader that consumes it. Verification metadata remains closeout-owned; no
-
-  acceptance claim and no verification stamp advanced.
-
-  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
-
-  `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a
-
-  per-commit fallback". The reader now reads the source commit's own recorded table on **every** path
-
-  and merges the reachable commits' attribution into it, excluding with a recorded reason any row the
-
-  source cannot prove; the fallback framing was the defect's own description — a partially
-
-  backfilled line (479 recorded rows, one trailered commit at `f5edc613`) read as a one-row source.
-
-  The kernel `memory_attribution.py` module itself is unchanged by this leaf; the correction is to how
-
-  this route describes the reader that consumes it. Verification metadata remains closeout-owned; no
-
-  acceptance claim and no verification stamp advanced.
-
-  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's L2 section where it described
-
-  `worktrees/ledger_projection.read_ledger_source` as "attribution instead of the blob, with a
-
-  per-commit fallback". The reader now reads the source commit's own recorded table on **every** path
-
-  and merges the reachable commits' attribution into it, excluding with a recorded reason any row the
-
-  source cannot prove; the fallback framing was the defect's own description — a partially
-
-  backfilled line (479 recorded rows, one trailered commit at `f5edc613`) read as a one-row source.
-
-  The kernel `memory_attribution.py` module itself is unchanged by this leaf; the correction is to how
-
-  this route describes the reader that consumes it. Verification metadata remains closeout-owned; no
-
-  acceptance claim and no verification stamp advanced.
-
-  `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
-
-  sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this
-
-  change set it imports and re-exports it from the new `tasks/task_paths.py`, which owns the single
-
-  definition of `series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two path builders and the
-
-  two predicates. The move keeps `layers.toml`'s `tasks`(9) < `worktrees`(10) order intact while every
-
-  existing caller still imports `worktrees.task_resolver`; `task_resolver.py`'s own card is the detailed
-
-  authority. Recorded because the earlier sentence named `task_resolver.py` as the owner of the raw leaf
-
-  enclosure paths and the archive exclusion, which is no longer true. Route documentation only:
-
-  verification metadata remains closeout-owned and no execution or acceptance claim is made.
-
-  `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
-
-  sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this
-
-  change set it imports and re-exports it from the new `tasks/task_paths.py`, which owns the single
-
-  definition of `series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two path builders and the
-
-  two predicates. The move keeps `layers.toml`'s `tasks`(9) < `worktrees`(10) order intact while every
-
-  existing caller still imports `worktrees.task_resolver`; `task_resolver.py`'s own card is the detailed
-
-  authority. Recorded because the earlier sentence named `task_resolver.py` as the owner of the raw leaf
-
-  enclosure paths and the archive exclusion, which is no longer true. Route documentation only:
-
-  verification metadata remains closeout-owned and no execution or acceptance claim is made.
-
-  `ar/260913-lca-l5-ar`, base `52875e7a`): corrected the worktree-lifecycle paragraph's ownership
-
-  sentence. `worktrees/task_resolver.py` no longer defines the task-layout path vocabulary — since this
-
-  change set it imports and re-exports it from the new `tasks/task_paths.py`, which owns the single
-
-  definition of `series-contract.md`, `0_archive`, `enclosures/`, `slugify`, the two path builders and the
-
-  two predicates. The move keeps `layers.toml`'s `tasks`(9) < `worktrees`(10) order intact while every
-
-  existing caller still imports `worktrees.task_resolver`; `task_resolver.py`'s own card is the detailed
-
-  authority. Recorded because the earlier sentence named `task_resolver.py` as the owner of the raw leaf
-
-  enclosure paths and the archive exclusion, which is no longer true. Route documentation only:
-
-  verification metadata remains closeout-owned and no execution or acceptance claim is made.
-
-  `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
-
-  attribution plane. The kernel module now **writes** the trailer as well as reading it
-
-  (`render_memory_content_message`, `:72-97`), and `models/closeout/input.py` imports that renderer
-
-  instead of naming the key, so the single `grep -rn '"Code-Commit"' --include=*.py mcp/` hit is now the
-
-  only interpolation as well as the only declaration. Added the producer-surface subsection: the
-
-  corrected census (5 producers, 0 untrailered, with the two corrections to the master's
-
-  2026-09-13T22:05 decision), the five producer sites with the code commit each names, the
-
-  trailerless-by-rule sites with their reasons, why carryover and baseline force the
-
-  append-as-final-block shape, and the census case that enforces it. This route also governs
-
-  `mcp/src/agents_remember/memory/`, so the carryover and baseline producers are recorded here: carryover
-
-  attributes `official_head` and baseline attributes the code source-branch commit, each rendered by the
-
-  one renderer at its commit site with its ledger leg left unattributed. Verification metadata remains
-
-  closeout-owned; no acceptance claim and no verification stamp advanced.
-
-  `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
-
-  attribution plane. The kernel module now **writes** the trailer as well as reading it
-
-  (`render_memory_content_message`, `:72-97`), and `models/closeout/input.py` imports that renderer
-
-  instead of naming the key, so the single `grep -rn '"Code-Commit"' --include=*.py mcp/` hit is now the
-
-  only interpolation as well as the only declaration. Added the producer-surface subsection: the
-
-  corrected census (5 producers, 0 untrailered, with the two corrections to the master's
-
-  2026-09-13T22:05 decision), the five producer sites with the code commit each names, the
-
-  trailerless-by-rule sites with their reasons, why carryover and baseline force the
-
-  append-as-final-block shape, and the census case that enforces it. This route also governs
-
-  `mcp/src/agents_remember/memory/`, so the carryover and baseline producers are recorded here: carryover
-
-  attributes `official_head` and baseline attributes the code source-branch commit, each rendered by the
-
-  one renderer at its commit site with its ledger leg left unattributed. Verification metadata remains
-
-  closeout-owned; no acceptance claim and no verification stamp advanced.
-
-  `5bb124d4`): route impact on the section above, which is this route's record of the kernel's
-
-  attribution plane. The kernel module now **writes** the trailer as well as reading it
-
-  (`render_memory_content_message`, `:72-97`), and `models/closeout/input.py` imports that renderer
-
-  instead of naming the key, so the single `grep -rn '"Code-Commit"' --include=*.py mcp/` hit is now the
-
-  only interpolation as well as the only declaration. Added the producer-surface subsection: the
-
-  corrected census (5 producers, 0 untrailered, with the two corrections to the master's
-
-  2026-09-13T22:05 decision), the five producer sites with the code commit each names, the
-
-  trailerless-by-rule sites with their reasons, why carryover and baseline force the
-
-  append-as-final-block shape, and the census case that enforces it. This route also governs
-
-  `mcp/src/agents_remember/memory/`, so the carryover and baseline producers are recorded here: carryover
-
-  attributes `official_head` and baseline attributes the code source-branch commit, each rendered by the
-
-  one renderer at its commit site with its ledger leg left unattributed. Verification metadata remains
-
-  closeout-owned; no acceptance claim and no verification stamp advanced.
-
-  two-literal defect the entry below records is fixed, so this section now states the resolved shape —
-
-  `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`
-
-  (`input.py:9`), its own literal is deleted, and `grep -rn '"Code-Commit"' --include=*.py mcp/` has
-
-  exactly one hit. Recorded why the direction is kernel → models rather than the reverse
-
-  (`layers.toml`'s ordered ranks and the zero imports of `agents_remember.models` under `kernel/`) and
-
-  that a case now round-trips the real writer's rendered message through a real commit and the real
-
-  reader. The entry below stands as the record of what was true when it was written. Verification
-
-  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-  two-literal defect the entry below records is fixed, so this section now states the resolved shape —
-
-  `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`
-
-  (`input.py:9`), its own literal is deleted, and `grep -rn '"Code-Commit"' --include=*.py mcp/` has
-
-  exactly one hit. Recorded why the direction is kernel → models rather than the reverse
-
-  (`layers.toml`'s ordered ranks and the zero imports of `agents_remember.models` under `kernel/`) and
-
-  that a case now round-trips the real writer's rendered message through a real commit and the real
-
-  reader. The entry below stands as the record of what was true when it was written. Verification
-
-  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-  two-literal defect the entry below records is fixed, so this section now states the resolved shape —
-
-  `models/closeout/input.py` imports `CODE_COMMIT_TRAILER_KEY` from `kernel/memory_attribution.py`
-
-  (`input.py:9`), its own literal is deleted, and `grep -rn '"Code-Commit"' --include=*.py mcp/` has
-
-  exactly one hit. Recorded why the direction is kernel → models rather than the reverse
-
-  (`layers.toml`'s ordered ranks and the zero imports of `agents_remember.models` under `kernel/`) and
-
-  that a case now round-trips the real writer's rendered message through a real commit and the real
-
-  reader. The entry below stands as the record of what was true when it was written. Verification
-
-  metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-  `ar/260913-lca-l2-ar`): this route governs `mcp/src/agents_remember/kernel/` (there is no
-
-  route-local `kernel/overview.md`), and the leaf added `kernel/memory_attribution.py` — the
-
-  attribution reader that projects the ledger's source from the memory commits' own `Code-Commit:`
-
-  trailers — and rewired `worktrees/ledger_projection.read_ledger_source` onto it with a per-commit
-
-  blob fallback for the pre-trailer history. Recorded the split of ownership between the format owner
-
-  (`memory_ledger.py`) and the attribution reader, the hash-bound reason the trailer is evidence, the
-
-  explicit statement that the tracked ledger commit is not retired, and the measured docstring defect
-
-  on the new module (the writer's key is its own literal). Detail lives on the new module card and on
-
-  the worktrees route. Verification metadata remains closeout-owned; no acceptance claim and no
-
-  verification stamp advanced.
-
-  `ar/260913-lca-l2-ar`): this route governs `mcp/src/agents_remember/kernel/` (there is no
-
-  route-local `kernel/overview.md`), and the leaf added `kernel/memory_attribution.py` — the
-
-  attribution reader that projects the ledger's source from the memory commits' own `Code-Commit:`
-
-  trailers — and rewired `worktrees/ledger_projection.read_ledger_source` onto it with a per-commit
-
-  blob fallback for the pre-trailer history. Recorded the split of ownership between the format owner
-
-  (`memory_ledger.py`) and the attribution reader, the hash-bound reason the trailer is evidence, the
-
-  explicit statement that the tracked ledger commit is not retired, and the measured docstring defect
-
-  on the new module (the writer's key is its own literal). Detail lives on the new module card and on
-
-  the worktrees route. Verification metadata remains closeout-owned; no acceptance claim and no
-
-  verification stamp advanced.
-
-  `ar/260913-lca-l2-ar`): this route governs `mcp/src/agents_remember/kernel/` (there is no
-
-  route-local `kernel/overview.md`), and the leaf added `kernel/memory_attribution.py` — the
-
-  attribution reader that projects the ledger's source from the memory commits' own `Code-Commit:`
-
-  trailers — and rewired `worktrees/ledger_projection.read_ledger_source` onto it with a per-commit
-
-  blob fallback for the pre-trailer history. Recorded the split of ownership between the format owner
-
-  (`memory_ledger.py`) and the attribution reader, the hash-bound reason the trailer is evidence, the
-
-  explicit statement that the tracked ledger commit is not retired, and the measured docstring defect
-
-  on the new module (the writer's key is its own literal). Detail lives on the new module card and on
-
-  the worktrees route. Verification metadata remains closeout-owned; no acceptance claim and no
-
-  verification stamp advanced.
-
-  `worktree_pause`, declared in the worktrees registrar family and carried by `PUBLIC_TOOLS` and
-
-  `TOOL_RESPONSE_MODELS` in the same leaf, so the exact-ordered inventory, live registration and
-
-  response models this overview requires to agree still do. The stop's route publishes nothing, which
-
-  is why it sits in the working half of the surface rather than beside the checkpoint publication in
-
-  the landing half. Detail lives on the `registration/`, `tools/` and `worktrees/` child routes and on
-
-  `worktrees/modules/pause.py.md`. Verification metadata remains closeout-owned; no acceptance claim.
-
-  `worktree_pause`, declared in the worktrees registrar family and carried by `PUBLIC_TOOLS` and
-
-  `TOOL_RESPONSE_MODELS` in the same leaf, so the exact-ordered inventory, live registration and
-
-  response models this overview requires to agree still do. The stop's route publishes nothing, which
-
-  is why it sits in the working half of the surface rather than beside the checkpoint publication in
-
-  the landing half. Detail lives on the `registration/`, `tools/` and `worktrees/` child routes and on
-
-  `worktrees/modules/pause.py.md`. Verification metadata remains closeout-owned; no acceptance claim.
-
-  `worktree_pause`, declared in the worktrees registrar family and carried by `PUBLIC_TOOLS` and
-
-  `TOOL_RESPONSE_MODELS` in the same leaf, so the exact-ordered inventory, live registration and
-
-  response models this overview requires to agree still do. The stop's route publishes nothing, which
-
-  is why it sits in the working half of the surface rather than beside the checkpoint publication in
-
-  the landing half. Detail lives on the `registration/`, `tools/` and `worktrees/` child routes and on
-
-  `worktrees/modules/pause.py.md`. Verification metadata remains closeout-owned; no acceptance claim.
-
-### 2026-09-06T17:13:06+00:00 — L34 implementation memory
-
-Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
-
-  forcing, exact test-input ownership, and removes one dominated internal refusal. The generic
-
-  five-gate foundation, package boundary, and absence of an executor or repository profile remain
-
-  unchanged. Verification remains closeout-owned.
-
-  forcing, exact test-input ownership, and removes one dominated internal refusal. The generic
-
-  five-gate foundation, package boundary, and absence of an executor or repository profile remain
-
-  unchanged. Verification remains closeout-owned.
-
-  forcing, exact test-input ownership, and removes one dominated internal refusal. The generic
-
-  five-gate foundation, package boundary, and absence of an executor or repository profile remain
-
-  unchanged. Verification remains closeout-owned.
-
-  foundation and kept the current Dagger acceptance wrapper explicit as the still-live executor
-
-  until repository-profile and integration owners land. Verification remains closeout-owned.
-
-  foundation and kept the current Dagger acceptance wrapper explicit as the still-live executor
-
-  until repository-profile and integration owners land. Verification remains closeout-owned.
-
-  foundation and kept the current Dagger acceptance wrapper explicit as the still-live executor
-
-  until repository-profile and integration owners land. Verification remains closeout-owned.
-
-  selected leaf delivery without an enclosure and restores ordinary series integration without
-
-  the policy flag. Package ownership and route topology are unchanged.
-
-  selected leaf delivery without an enclosure and restores ordinary series integration without
-
-  the policy flag. Package ownership and route topology are unchanged.
-
-  selected leaf delivery without an enclosure and restores ordinary series integration without
-
-  the policy flag. Package ownership and route topology are unchanged.
-
-  boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather
-
-  than introducing a weaker E2E interpretation. Verification remains closeout-owned.
-
-  boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather
-
-  than introducing a weaker E2E interpretation. Verification remains closeout-owned.
-
-  boundary reuses the canonical dispatch-advertisement validator and its exact schema digest rather
-
-  than introducing a weaker E2E interpretation. Verification remains closeout-owned.
-
-  shared candidate identity, and the preserved eight-harness self-update contract. Verification
-
-  remains closeout-owned.
-
-  shared candidate identity, and the preserved eight-harness self-update contract. Verification
-
-  remains closeout-owned.
-
-  shared candidate identity, and the preserved eight-harness self-update contract. Verification
-
-  remains closeout-owned.
-
-  caller-declaration summary with process-derived ambient authority, distinguished ordinary
-
-  architect bootstrap from explicit named-role takeover, and recorded the structural role-table
-
-  rows' non-settings boundary. Verification remains closeout-owned.
-
-  caller-declaration summary with process-derived ambient authority, distinguished ordinary
-
-  architect bootstrap from explicit named-role takeover, and recorded the structural role-table
-
-  rows' non-settings boundary. Verification remains closeout-owned.
-
-  caller-declaration summary with process-derived ambient authority, distinguished ordinary
-
-  architect bootstrap from explicit named-role takeover, and recorded the structural role-table
-
-  rows' non-settings boundary. Verification remains closeout-owned.
-
-  identity shared by memory quality, attestation, coherence, closeout admission, and recovery,
-
-  including the diagnostic-only repository route and fail-closed revalidation boundary.
-
-  identity shared by memory quality, attestation, coherence, closeout admission, and recovery,
-
-  including the diagnostic-only repository route and fail-closed revalidation boundary.
-
-  identity shared by memory quality, attestation, coherence, closeout admission, and recovery,
-
-  including the diagnostic-only repository route and fail-closed revalidation boundary.
-
-  deterministic attestation bridge, and shared memory/closeout validator. Verification remains
-
-  closeout-owned.
-
-  deterministic attestation bridge, and shared memory/closeout validator. Verification remains
-
-  closeout-owned.
-
-  deterministic attestation bridge, and shared memory/closeout validator. Verification remains
-
-  closeout-owned.
-
-  future-code identity, collision-free concurrent observation, and the separate
-
-  operation-reconciliation boundary.
-
-  future-code identity, collision-free concurrent observation, and the separate
-
-  operation-reconciliation boundary.
-
-  future-code identity, collision-free concurrent observation, and the separate
-
-  operation-reconciliation boundary.
-
-  regression test preserve MCP package ownership and keep the host hook a deterministic non-test
-
-  gate.
-
-  regression test preserve MCP package ownership and keep the host hook a deterministic non-test
-
-  gate.
-
-  regression test preserve MCP package ownership and keep the host hook a deterministic non-test
-
-  gate.
-
-  deterministic host checks remain, but no host Python wrapper exists.
-
-  deterministic host checks remain, but no host Python wrapper exists.
-
-  deterministic host checks remain, but no host Python wrapper exists.
-
-  the pre-handoff correction versus post-handoff rejection boundary.
-
-  the pre-handoff correction versus post-handoff rejection boundary.
-
-  the pre-handoff correction versus post-handoff rejection boundary.
-
-  attempts, separate protocol events, lightweight content-addressed records, and non-gating summary
-
-  semantics across all runtime projections.
-
-  attempts, separate protocol events, lightweight content-addressed records, and non-gating summary
-
-  semantics across all runtime projections.
-
-  attempts, separate protocol events, lightweight content-addressed records, and non-gating summary
-
-  semantics across all runtime projections.
-
-  accidentally committed above the package overview title; route content is unchanged.
-
-  accidentally committed above the package overview title; route content is unchanged.
-
-  accidentally committed above the package overview title; route content is unchanged.
-
-  an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
-
-  all lifecycle consumers now distinguish current lookup from exact historical containment.
-
-  an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
-
-  all lifecycle consumers now distinguish current lookup from exact historical containment.
-
-  an unrequested uniqueness rule: repeated code commits are valid newest-first memory history and
-
-  all lifecycle consumers now distinguish current lookup from exact historical containment.
-
-  evidence-aware recovery, replacement-safe delivery, and runtime-id-free public outcomes.
-
-  Verification remains closeout-owned.
-
-  evidence-aware recovery, replacement-safe delivery, and runtime-id-free public outcomes.
-
-  Verification remains closeout-owned.
-
-  evidence-aware recovery, replacement-safe delivery, and runtime-id-free public outcomes.
-
-  Verification remains closeout-owned.
-
-  pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,
-
-  disposable queue ownership, and exact terminal selector release.
-
-  pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,
-
-  disposable queue ownership, and exact terminal selector release.
-
-  pause/reconcile switching, stable enclosure-root sync recovery, unlocked task authoring,
-
-  disposable queue ownership, and exact terminal selector release.
-
-  Verification remains closeout-owned.
-
-  Verification remains closeout-owned.
-
-  Verification remains closeout-owned.
-
-  product-only scoring, shared ownership graph, and causal localization.
-
-  product-only scoring, shared ownership graph, and causal localization.
-
-  product-only scoring, shared ownership graph, and causal localization.
-
-  altitude boundary.
-
-  altitude boundary.
-
-  altitude boundary.
-
-  review evidence, effective priority, graph-optional topology, atomic graph adoption, and
-
-  canonical handover references. Also recorded direct targeted Vitest as diagnostic-only while
-
-  guarded acceptance rails remain Dagger-attested. Canonical/generated sync is reported green;
-
-  Dagger acceptance remains pending and closeout-owned.
-
-  review evidence, effective priority, graph-optional topology, atomic graph adoption, and
-
-  canonical handover references. Also recorded direct targeted Vitest as diagnostic-only while
-
-  guarded acceptance rails remain Dagger-attested. Canonical/generated sync is reported green;
-
-  Dagger acceptance remains pending and closeout-owned.
-
-  review evidence, effective priority, graph-optional topology, atomic graph adoption, and
-
-  canonical handover references. Also recorded direct targeted Vitest as diagnostic-only while
-
-  guarded acceptance rails remain Dagger-attested. Canonical/generated sync is reported green;
-
-  Dagger acceptance remains pending and closeout-owned.
-
-  (declared caller on closeout-queue and structural gate tools), branch-addressed `record_route_review`
-
-  binding, and the `direct_landing` operation. Verified at code commit a9d50e08.
-
-  (declared caller on closeout-queue and structural gate tools), branch-addressed `record_route_review`
-
-  binding, and the `direct_landing` operation. Verified at code commit a9d50e08.
-
-  (declared caller on closeout-queue and structural gate tools), branch-addressed `record_route_review`
-
-  binding, and the `direct_landing` operation. Verified at code commit a9d50e08.
-
-  `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the
-
-  sprint document route gains first-class `seats` and typed `masterRef` rows. Verified at code
-
-  commit 8071a644.
-
-  `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the
-
-  sprint document route gains first-class `seats` and typed `masterRef` rows. Verified at code
-
-  commit 8071a644.
-
-  `attach_master`/`detach_master`/`linkage_report` and carries `linkageFacts` on sprint gets; the
-
-  sprint document route gains first-class `seats` and typed `masterRef` rows. Verified at code
-
-  commit 8071a644.
-
-  now records the L13 split — mutations and document writes stay fail-closed (creation scaffolds
-
-  the empty registers, writes validate shape) while the queue `status` read degrades to a facts
-
-  projection, and graph-less sprints run the atomic-sequential default with a named series lane
-
-  owner; new modules `worktrees/scheduling_mode.py` (mode/nature/lane resolution) and
-
-  `worktrees/closeout_queue_blocker.py` (blocker transitions, extracted from `closeout_queue.py`)
-
-  joined the route, and `migrate_execution_topology` was removed. Verification remains
-
-  closeout-owned.
-
-  now records the L13 split — mutations and document writes stay fail-closed (creation scaffolds
-
-  the empty registers, writes validate shape) while the queue `status` read degrades to a facts
-
-  projection, and graph-less sprints run the atomic-sequential default with a named series lane
-
-  owner; new modules `worktrees/scheduling_mode.py` (mode/nature/lane resolution) and
-
-  `worktrees/closeout_queue_blocker.py` (blocker transitions, extracted from `closeout_queue.py`)
-
-  joined the route, and `migrate_execution_topology` was removed. Verification remains
-
-  closeout-owned.
-
-  now records the L13 split — mutations and document writes stay fail-closed (creation scaffolds
-
-  the empty registers, writes validate shape) while the queue `status` read degrades to a facts
-
-  projection, and graph-less sprints run the atomic-sequential default with a named series lane
-
-  owner; new modules `worktrees/scheduling_mode.py` (mode/nature/lane resolution) and
-
-  `worktrees/closeout_queue_blocker.py` (blocker transitions, extracted from `closeout_queue.py`)
-
-  joined the route, and `migrate_execution_topology` was removed. Verification remains
-
-  closeout-owned.
-
-  optional-result narrowing; MCP source, routing, and behavior are unchanged.
-
-  optional-result narrowing; MCP source, routing, and behavior are unchanged.
-
-  optional-result narrowing; MCP source, routing, and behavior are unchanged.
-
-  ten queue/topology test modules; MCP behavior, routing, and ownership are unchanged.
-
-  ten queue/topology test modules; MCP behavior, routing, and ownership are unchanged.
-
-  ten queue/topology test modules; MCP behavior, routing, and ownership are unchanged.
-
-  test-only binding cleanup; queue routing, public behavior, and ownership are unchanged.
-
-  test-only binding cleanup; queue routing, public behavior, and ownership are unchanged.
-
-  test-only binding cleanup; queue routing, public behavior, and ownership are unchanged.
-
-  parsing and atomic finalized-landing proof while splitting their exhaustive forcing by owner; no
-
-  second queue, evidence authority, or test altitude was added.
-
-  parsing and atomic finalized-landing proof while splitting their exhaustive forcing by owner; no
-
-  second queue, evidence authority, or test altitude was added.
-
-  parsing and atomic finalized-landing proof while splitting their exhaustive forcing by owner; no
-
-  second queue, evidence authority, or test altitude was added.
-
-  classification and exact evidence comparisons from their orchestration callers without adding a
-
-  second authority or compatibility path.
-
-  classification and exact evidence comparisons from their orchestration callers without adding a
-
-  second authority or compatibility path.
-
-  classification and exact evidence comparisons from their orchestration callers without adding a
-
-  second authority or compatibility path.
-
-  publication, exact queue refusal diagnostics, and worker-owned recovery of a committed but
-
-  uncertified leaf while preserving one mechanistic queue and lifecycle authority.
-
-  publication, exact queue refusal diagnostics, and worker-owned recovery of a committed but
-
-  uncertified leaf while preserving one mechanistic queue and lifecycle authority.
-
-  publication, exact queue refusal diagnostics, and worker-owned recovery of a committed but
-
-  uncertified leaf while preserving one mechanistic queue and lifecycle authority.
-
-  and its exact evidence, persistence, task-fact locking, and lifecycle boundaries. Verification
-
-  remains closeout-owned.
-
-  and its exact evidence, persistence, task-fact locking, and lifecycle boundaries. Verification
-
-  remains closeout-owned.
-
-  and its exact evidence, persistence, task-fact locking, and lifecycle boundaries. Verification
-
-  remains closeout-owned.
-
-  criteria, briefs, and verdict templates with the ruled organizational/atomic topology and
-
-  auditable planning authority. MCP tool routing and worktree enforcement are unchanged in this
-
-  leaf; verification remains closeout-owned.
-
-  criteria, briefs, and verdict templates with the ruled organizational/atomic topology and
-
-  auditable planning authority. MCP tool routing and worktree enforcement are unchanged in this
-
-  leaf; verification remains closeout-owned.
-
-  criteria, briefs, and verdict templates with the ruled organizational/atomic topology and
-
-  auditable planning authority. MCP tool routing and worktree enforcement are unchanged in this
-
-  leaf; verification remains closeout-owned.
-
-  no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
-
-  existing single-owner fitness census. Package routing and ownership remain unchanged.
-
-  no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
-
-  existing single-owner fitness census. Package routing and ownership remain unchanged.
-
-  no longer bypass sprint topology validation, and the new multi-root publisher is covered by the
-
-  existing single-owner fitness census. Package routing and ownership remain unchanged.
-
-  explicit, previewable execution-topology migration and projects the same canonical nature/graph
-
-  contract. There is no implicit legacy inference or compatibility reader.
-
-  explicit, previewable execution-topology migration and projects the same canonical nature/graph
-
-  contract. There is no implicit legacy inference or compatibility reader.
-
-  explicit, previewable execution-topology migration and projects the same canonical nature/graph
-
-  contract. There is no implicit legacy inference or compatibility reader.
-
-  existing metrics-shutdown timeout in one test. MCP production, package authority, public
-
-  behavior, and package routing are unchanged; verification remains pinned to the last committed
-
-  source until closeout.
-
-  existing metrics-shutdown timeout in one test. MCP production, package authority, public
-
-  behavior, and package routing are unchanged; verification remains pinned to the last committed
-
-  source until closeout.
-
-  existing metrics-shutdown timeout in one test. MCP production, package authority, public
-
-  behavior, and package routing are unchanged; verification remains pinned to the last committed
-
-  source until closeout.
-
-  test extractions. Verification remains closeout-owned.
-
-  test extractions. Verification remains closeout-owned.
-
-  test extractions. Verification remains closeout-owned.
-
-  and final altitude topology to the package route. Verification remains closeout-owned.
-
-  and final altitude topology to the package route. Verification remains closeout-owned.
-
-  and final altitude topology to the package route. Verification remains closeout-owned.
-
-  admission to its already-documented leaf altitude so repeat series/master closeout can restamp
-
-  the final leaf tip. MCP package ownership and public tool shape are unchanged; verification
-
-  provenance remains closeout-owned.
-
-  admission to its already-documented leaf altitude so repeat series/master closeout can restamp
-
-  the final leaf tip. MCP package ownership and public tool shape are unchanged; verification
-
-  provenance remains closeout-owned.
-
-  admission to its already-documented leaf altitude so repeat series/master closeout can restamp
-
-  the final leaf tip. MCP package ownership and public tool shape are unchanged; verification
-
-  provenance remains closeout-owned.
-
-  Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and
-
-  transitive lineage rechecks. Verification provenance remains closeout-owned.
-
-  Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and
-
-  transitive lineage rechecks. Verification provenance remains closeout-owned.
-
-  Dagger-only acceptance, per-run suite attestation, exact-candidate recovery, route review, and
-
-  transitive lineage rechecks. Verification provenance remains closeout-owned.
-
-  acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff
-
-  base, generated function help, and host execution's diagnostic-only status. Verification remains
-
-  closeout-owned.
-
-  acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff
-
-  base, generated function help, and host execution's diagnostic-only status. Verification remains
-
-  closeout-owned.
-
-  acceptance, targeted leaf/focused versus once-per-master full altitude, mandatory explicit diff
-
-  base, generated function help, and host execution's diagnostic-only status. Verification remains
-
-  closeout-owned.
-
-  quality-phase mechanics into a sibling worktree module, renamed internal registrar helpers, and
-
-  adjusted test-only package-root imports. MCP package authority and public tool behavior remain
-
-  unchanged; verification provenance remains closeout-owned.
-
-  quality-phase mechanics into a sibling worktree module, renamed internal registrar helpers, and
-
-  adjusted test-only package-root imports. MCP package authority and public tool behavior remain
-
-  unchanged; verification provenance remains closeout-owned.
-
-  quality-phase mechanics into a sibling worktree module, renamed internal registrar helpers, and
-
-  adjusted test-only package-root imports. MCP package authority and public tool behavior remain
-
-  unchanged; verification provenance remains closeout-owned.
-
-  runtime and lifecycle-model packages, pre-curator task-derived lineage proof, and closeout/
-
-  integration transitive post-quality/final rechecks. Exact behavior remains in the application,
-
-  models, worktree-module, lifecycle-skill, and test child routes; final verification provenance
-
-  remains closeout-owned.
-
-  runtime and lifecycle-model packages, pre-curator task-derived lineage proof, and closeout/
-
-  integration transitive post-quality/final rechecks. Exact behavior remains in the application,
-
-  models, worktree-module, lifecycle-skill, and test child routes; final verification provenance
-
-  remains closeout-owned.
-
-  runtime and lifecycle-model packages, pre-curator task-derived lineage proof, and closeout/
-
-  integration transitive post-quality/final rechecks. Exact behavior remains in the application,
-
-  models, worktree-module, lifecycle-skill, and test child routes; final verification provenance
-
-  remains closeout-owned.
-
-  now preserves installed MCP code selection and the packaged worker composes real services before
-
-  dispatch. Task checkout state remains input, never unpublished runtime code. Verification
-
-  provenance remains closeout-owned.
-
-  now preserves installed MCP code selection and the packaged worker composes real services before
-
-  dispatch. Task checkout state remains input, never unpublished runtime code. Verification
-
-  provenance remains closeout-owned.
-
-  now preserves installed MCP code selection and the packaged worker composes real services before
-
-  dispatch. Task checkout state remains input, never unpublished runtime code. Verification
-
-  provenance remains closeout-owned.
-
-  kernel fallback version authorities without changing package routes, dependencies, entry
-
-  points, or tool behavior. Verification metadata remains pinned until closeout.
-
-  kernel fallback version authorities without changing package routes, dependencies, entry
-
-  points, or tool behavior. Verification metadata remains pinned until closeout.
-
-  kernel fallback version authorities without changing package routes, dependencies, entry
-
-  points, or tool behavior. Verification metadata remains pinned until closeout.
-
-  integration, closeout, packaged lifecycle doctrine, and regression tests now
-
-  agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
-
-  Verification metadata remains pinned until closeout stamps L24.
-
-  integration, closeout, packaged lifecycle doctrine, and regression tests now
-
-  agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
-
-  Verification metadata remains pinned until closeout stamps L24.
-
-  integration, closeout, packaged lifecycle doctrine, and regression tests now
-
-  agree on host-managed full-gate RAM/swap with an optional explicit hard cap.
-
-  Verification metadata remains pinned until closeout stamps L24.
-
-  deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test
-
-  responsibilities; package subsystems and public tool inventory are unchanged.
-
-  deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test
-
-  responsibilities; package subsystems and public tool inventory are unchanged.
-
-  deterministic (exact Ruff pin and preserved file-size arm) and splits three oversized test
-
-  responsibilities; package subsystems and public tool inventory are unchanged.
-
-  root pytest configuration owns worker selection, and the wrapper contributes derived gate
-
-  arguments only. Verification metadata remains pinned until closeout.
-
-  root pytest configuration owns worker selection, and the wrapper contributes derived gate
-
-  arguments only. Verification metadata remains pinned until closeout.
-
-  root pytest configuration owns worker selection, and the wrapper contributes derived gate
-
-  arguments only. Verification metadata remains pinned until closeout.
-
-  selection in the single pytest rail, and retry-proof invalidation across executor changes.
-
-  Verification metadata remains pinned until closeout.
-
-  selection in the single pytest rail, and retry-proof invalidation across executor changes.
-
-  Verification metadata remains pinned until closeout.
-
-  selection in the single pytest rail, and retry-proof invalidation across executor changes.
-
-  Verification metadata remains pinned until closeout.
-
-  structural agent surface and private plane-owned session, inbox, and gate machinery; child-route
-
-  overviews and one-to-one cards carry the implementation evidence.
-
-  structural agent surface and private plane-owned session, inbox, and gate machinery; child-route
-
-  overviews and one-to-one cards carry the implementation evidence.
-
-  structural agent surface and private plane-owned session, inbox, and gate machinery; child-route
-
-  overviews and one-to-one cards carry the implementation evidence.
-
-  classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the
-
-  trusted MCP/dashboard plus explicit-test declarations. Detailed ownership remains in the
-
-  application, kernel/primitives, controlplane, and tests route cards. Verification metadata
-
-  remains pinned until closeout stamps the L21 code commit.
-
-  classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the
-
-  trusted MCP/dashboard plus explicit-test declarations. Detailed ownership remains in the
-
-  application, kernel/primitives, controlplane, and tests route cards. Verification metadata
-
-  remains pinned until closeout stamps the L21 code commit.
-
-  classification, the linked-worktree dummy coordination root, primary-checkout refusal, and the
-
-  trusted MCP/dashboard plus explicit-test declarations. Detailed ownership remains in the
-
-  application, kernel/primitives, controlplane, and tests route cards. Verification metadata
-
-  remains pinned until closeout stamps the L21 code commit.
-
-  staged package delta (application, models, registration/tools, memory-quality, worktree, and
-
-  serving seams); file-level details remain in sidecars. Verification metadata remains pinned
-
-  until closeout.
-
-  staged package delta (application, models, registration/tools, memory-quality, worktree, and
-
-  serving seams); file-level details remain in sidecars. Verification metadata remains pinned
-
-  until closeout.
-
-  staged package delta (application, models, registration/tools, memory-quality, worktree, and
-
-  serving seams); file-level details remain in sidecars. Verification metadata remains pinned
-
-  until closeout.
-
-  `cli/discovery.py` — trusted-settings auto-discovery making `--config` optional on
-
-  `agents-remember dashboard` (upward walk, convention-then-registration, nearest wins, semantic
-
-  usability probe vs the tracked placeholder template) — covered by
-
-  `mcp/tests/test_cli_discovery.py`. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  `cli/discovery.py` — trusted-settings auto-discovery making `--config` optional on
-
-  `agents-remember dashboard` (upward walk, convention-then-registration, nearest wins, semantic
-
-  usability probe vs the tracked placeholder template) — covered by
-
-  `mcp/tests/test_cli_discovery.py`. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  `cli/discovery.py` — trusted-settings auto-discovery making `--config` optional on
-
-  `agents-remember dashboard` (upward walk, convention-then-registration, nearest wins, semantic
-
-  usability probe vs the tracked placeholder template) — covered by
-
-  `mcp/tests/test_cli_discovery.py`. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  `observer/snapshots.py` (described in the observer route overview) plus its
-
-  `mcp/tests/test_observer_projection.py` regression; no MCP tool surface or subsystem narrative
-
-  changed at this granularity. Verification metadata pinned until closeout stamps the L10 commit.
-
-  `observer/snapshots.py` (described in the observer route overview) plus its
-
-  `mcp/tests/test_observer_projection.py` regression; no MCP tool surface or subsystem narrative
-
-  changed at this granularity. Verification metadata pinned until closeout stamps the L10 commit.
-
-  `observer/snapshots.py` (described in the observer route overview) plus its
-
-  `mcp/tests/test_observer_projection.py` regression; no MCP tool surface or subsystem narrative
-
-  changed at this granularity. Verification metadata pinned until closeout stamps the L10 commit.
-
-  paste instead of auto-paste-on-selection) is a dashboard frontend change; the only `mcp/`-route
-
-  effect is the regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. Verification
-
-  metadata pinned until closeout stamps the L8-r1 commit.
-
-  paste instead of auto-paste-on-selection) is a dashboard frontend change; the only `mcp/`-route
-
-  effect is the regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. Verification
-
-  metadata pinned until closeout stamps the L8-r1 commit.
-
-  paste instead of auto-paste-on-selection) is a dashboard frontend change; the only `mcp/`-route
-
-  effect is the regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. Verification
-
-  metadata pinned until closeout stamps the L8-r1 commit.
-
-  (direct leaf-chat highlight paste + obsolete response-UI cleanup); the only `mcp/`-route effect is the
-
-  regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP package source, tool
-
-  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the L8
-
-  commit.
-
-  (direct leaf-chat highlight paste + obsolete response-UI cleanup); the only `mcp/`-route effect is the
-
-  regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP package source, tool
-
-  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the L8
-
-  commit.
-
-  (direct leaf-chat highlight paste + obsolete response-UI cleanup); the only `mcp/`-route effect is the
-
-  regenerated `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP package source, tool
-
-  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the L8
-
-  commit.
-
-  native subcommand (`analyze deps`) inside `controllers/provider_tools.py`, refreshed the packaged CGC
-
-  guidance table, and locked the argv contract in `mcp/tests/test_tools.py`. No MCP tool surface or
-
-  subsystem narrative changed at this granularity. Verification metadata pinned until closeout stamps
-
-  the L7 commit.
-
-  native subcommand (`analyze deps`) inside `controllers/provider_tools.py`, refreshed the packaged CGC
-
-  guidance table, and locked the argv contract in `mcp/tests/test_tools.py`. No MCP tool surface or
-
-  subsystem narrative changed at this granularity. Verification metadata pinned until closeout stamps
-
-  the L7 commit.
-
-  native subcommand (`analyze deps`) inside `controllers/provider_tools.py`, refreshed the packaged CGC
-
-  guidance table, and locked the argv contract in `mcp/tests/test_tools.py`. No MCP tool surface or
-
-  subsystem narrative changed at this granularity. Verification metadata pinned until closeout stamps
-
-  the L7 commit.
-
-  `serving/terminal.py` (typing after wheel scrolling cancels tmux copy-mode; described in the serving
-
-  route overview) and its `mcp/tests/test_terminal.py` coverage. No MCP tool surface or subsystem
-
-  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
-
-  follow-up commit.
-
-  `serving/terminal.py` (typing after wheel scrolling cancels tmux copy-mode; described in the serving
-
-  route overview) and its `mcp/tests/test_terminal.py` coverage. No MCP tool surface or subsystem
-
-  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
-
-  follow-up commit.
-
-  `serving/terminal.py` (typing after wheel scrolling cancels tmux copy-mode; described in the serving
-
-  route overview) and its `mcp/tests/test_terminal.py` coverage. No MCP tool surface or subsystem
-
-  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
-
-  follow-up commit.
-
-  (`attach_terminal_session_to_leaf`) and the shared serving helper used by both MCP and the dashboard
-
-  route. This changes the public MCP tool/model surface and the dashboard terminal catalog subsystem.
-
-  Verification metadata pinned until closeout stamps the L9 commit.
-
-  (`attach_terminal_session_to_leaf`) and the shared serving helper used by both MCP and the dashboard
-
-  route. This changes the public MCP tool/model surface and the dashboard terminal catalog subsystem.
-
-  Verification metadata pinned until closeout stamps the L9 commit.
-
-  (`attach_terminal_session_to_leaf`) and the shared serving helper used by both MCP and the dashboard
-
-  route. This changes the public MCP tool/model surface and the dashboard terminal catalog subsystem.
-
-  Verification metadata pinned until closeout stamps the L9 commit.
-
-  `serving/terminal.py` (the per-session tmux mouse `TmuxConfigurer` seam, described in the serving
-
-  route overview), its `mcp/tests/test_terminal.py` coverage, and the regenerated
-
-  `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP tool surface or subsystem
-
-  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
-
-  follow-up commit.
-
-  `serving/terminal.py` (the per-session tmux mouse `TmuxConfigurer` seam, described in the serving
-
-  route overview), its `mcp/tests/test_terminal.py` coverage, and the regenerated
-
-  `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP tool surface or subsystem
-
-  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
-
-  follow-up commit.
-
-  `serving/terminal.py` (the per-session tmux mouse `TmuxConfigurer` seam, described in the serving
-
-  route overview), its `mcp/tests/test_terminal.py` coverage, and the regenerated
-
-  `package_data/dashboard/` bundle + `dashboard.fingerprint`. No MCP tool surface or subsystem
-
-  narrative changed at this granularity. Verification metadata pinned until closeout stamps the
-
-  follow-up commit.
-
-  re-synced the generated `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the
-
-  `Terminal` wheel routing change under `dashboard/src/`. The shipped bundle remains generated static
-
-  package data served by the existing dashboard package path; no MCP package source behavior, tool
-
-  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the
-
-  follow-up commit.
-
-  re-synced the generated `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the
-
-  `Terminal` wheel routing change under `dashboard/src/`. The shipped bundle remains generated static
-
-  package data served by the existing dashboard package path; no MCP package source behavior, tool
-
-  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the
-
-  follow-up commit.
-
-  re-synced the generated `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the
-
-  `Terminal` wheel routing change under `dashboard/src/`. The shipped bundle remains generated static
-
-  package data served by the existing dashboard package path; no MCP package source behavior, tool
-
-  surface, or subsystem narrative changed. Verification metadata pinned until closeout stamps the
-
-  follow-up commit.
-
-  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the leaf-chat draft handoff and
-
-  terminal scrollback frontend changes under `dashboard/src/`. The shipped bundle remains generated
-
-  static package data served by the existing dashboard package path; no MCP package source behavior,
-
-  tool surface, or subsystem narrative changed.
-
-  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the leaf-chat draft handoff and
-
-  terminal scrollback frontend changes under `dashboard/src/`. The shipped bundle remains generated
-
-  static package data served by the existing dashboard package path; no MCP package source behavior,
-
-  tool surface, or subsystem narrative changed.
-
-  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the leaf-chat draft handoff and
-
-  terminal scrollback frontend changes under `dashboard/src/`. The shipped bundle remains generated
-
-  static package data served by the existing dashboard package path; no MCP package source behavior,
-
-  tool surface, or subsystem narrative changed.
-
-  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the right-rail chat context-handoff
-
-  frontend changes under `dashboard/src/`. The shipped bundle remains generated static package data served
-
-  by the existing dashboard package path; no MCP package source behavior, tool surface, or subsystem
-
-  narrative changed. Verification metadata pinned until closeout stamps the L6 commit.
-
-  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the right-rail chat context-handoff
-
-  frontend changes under `dashboard/src/`. The shipped bundle remains generated static package data served
-
-  by the existing dashboard package path; no MCP package source behavior, tool surface, or subsystem
-
-  narrative changed. Verification metadata pinned until closeout stamps the L6 commit.
-
-  `package_data/dashboard/` bundle plus `dashboard.fingerprint` after the right-rail chat context-handoff
-
-  frontend changes under `dashboard/src/`. The shipped bundle remains generated static package data served
-
-  by the existing dashboard package path; no MCP package source behavior, tool surface, or subsystem
-
-  narrative changed. Verification metadata pinned until closeout stamps the L6 commit.
-
-  the serving layer — `serving/app.py` gained the `leafKey` opener claim + `POST /api/terminal/{session}/attach-leaf`
-
-  (`409 leaf-taken`, running-only) and `serving/terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
-
-  + `active_for_leaf`, and the generated `package_data/dashboard/` bundle (+ fingerprint) was
-
-  rebuilt/re-synced for the sidebar-chat frontend (the rail River⇄Chat toggle + leaf attach). The serving
-
-  change is documented in the `serving/` route overview + the `app.py`/`terminal_catalog.py` sidecars; the
-
-  shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is
-
-  unchanged. Verification metadata pinned until closeout stamps the L5 commit.
-
-  the serving layer — `serving/app.py` gained the `leafKey` opener claim + `POST /api/terminal/{session}/attach-leaf`
-
-  (`409 leaf-taken`, running-only) and `serving/terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
-
-  + `active_for_leaf`, and the generated `package_data/dashboard/` bundle (+ fingerprint) was
-
-  rebuilt/re-synced for the sidebar-chat frontend (the rail River⇄Chat toggle + leaf attach). The serving
-
-  change is documented in the `serving/` route overview + the `app.py`/`terminal_catalog.py` sidecars; the
-
-  shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is
-
-  unchanged. Verification metadata pinned until closeout stamps the L5 commit.
-
-  the serving layer — `serving/app.py` gained the `leafKey` opener claim + `POST /api/terminal/{session}/attach-leaf`
-
-  (`409 leaf-taken`, running-only) and `serving/terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
-
-  + `active_for_leaf`, and the generated `package_data/dashboard/` bundle (+ fingerprint) was
-
-  rebuilt/re-synced for the sidebar-chat frontend (the rail River⇄Chat toggle + leaf attach). The serving
-
-  change is documented in the `serving/` route overview + the `app.py`/`terminal_catalog.py` sidecars; the
-
-  shipped bundle remains generated static package data; the mcp-package overview's subsystem narrative is
-
-  unchanged. Verification metadata pinned until closeout stamps the L5 commit.
-
-  doc-reader leaf change-set endpoints (`/api/changeset/{task,file-diff}` `leaf` + `mode` selector;
-
-  committed/working views by leaf-id off the persisted contract), and the generated `package_data/dashboard/`
-
-  bundle (+ fingerprint) was rebuilt/re-synced for the doc-reader change-set buttons + the diff-highlight
-
-  rectangle. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar;
-
-  the shipped bundle remains generated static package data; the mcp-package subsystem narrative is unchanged.
-
-  Verification metadata pinned until closeout stamps the L4a commit.
-
-  doc-reader leaf change-set endpoints (`/api/changeset/{task,file-diff}` `leaf` + `mode` selector;
-
-  committed/working views by leaf-id off the persisted contract), and the generated `package_data/dashboard/`
-
-  bundle (+ fingerprint) was rebuilt/re-synced for the doc-reader change-set buttons + the diff-highlight
-
-  rectangle. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar;
-
-  the shipped bundle remains generated static package data; the mcp-package subsystem narrative is unchanged.
-
-  Verification metadata pinned until closeout stamps the L4a commit.
-
-  doc-reader leaf change-set endpoints (`/api/changeset/{task,file-diff}` `leaf` + `mode` selector;
-
-  committed/working views by leaf-id off the persisted contract), and the generated `package_data/dashboard/`
-
-  bundle (+ fingerprint) was rebuilt/re-synced for the doc-reader change-set buttons + the diff-highlight
-
-  rectangle. The serving change is documented in the `serving/` route overview + the `changeset.py` sidecar;
-
-  the shipped bundle remains generated static package data; the mcp-package subsystem narrative is unchanged.
-
-  Verification metadata pinned until closeout stamps the L4a commit.
-
-  `sync` fingerprints the dashboard build inputs (the `src` tree minus tests, plus the production configs)
-
-  into a sibling `package_data/dashboard.fingerprint`, and `--check` re-verifies it, so the pre-commit gate
-
-  flags a `dashboard/src` change shipped without a rebuild (not only the built-bundle digest), mirroring how
-
-  the skill gate flags a changed skill. Covered by `test_sync_dashboard.py` `SourceFingerprintTests`.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  `sync` fingerprints the dashboard build inputs (the `src` tree minus tests, plus the production configs)
-
-  into a sibling `package_data/dashboard.fingerprint`, and `--check` re-verifies it, so the pre-commit gate
-
-  flags a `dashboard/src` change shipped without a rebuild (not only the built-bundle digest), mirroring how
-
-  the skill gate flags a changed skill. Covered by `test_sync_dashboard.py` `SourceFingerprintTests`.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  `sync` fingerprints the dashboard build inputs (the `src` tree minus tests, plus the production configs)
-
-  into a sibling `package_data/dashboard.fingerprint`, and `--check` re-verifies it, so the pre-commit gate
-
-  flags a `dashboard/src` change shipped without a rebuild (not only the built-bundle digest), mirroring how
-
-  the skill gate flags a changed skill. Covered by `test_sync_dashboard.py` `SourceFingerprintTests`.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  **inactivity-keyed** raw Event River retention (superseding the post-termination grace-window pruning):
-
-  `event_retention.py` prunes a fleeting/enclosure lifecycle log after >1h of no real (non-heartbeat)
-
-  activity rather than on `lifecycle.ended`, `ambient.py`'s heartbeat ticker decays after ~10 min idle,
-
-  and `/api/events` does one retained-backlog scan per connect, filters `lifecycle.heartbeat`, and
-
-  streams a bounded chunked backlog. Detail lives in the observer and serving route overviews plus the
-
-  `event_retention.py`, `ambient.py`, and `events.py` sidecars. Verification metadata pinned until
-
-  closeout stamps the task-34 code commit.
-
-  **inactivity-keyed** raw Event River retention (superseding the post-termination grace-window pruning):
-
-  `event_retention.py` prunes a fleeting/enclosure lifecycle log after >1h of no real (non-heartbeat)
-
-  activity rather than on `lifecycle.ended`, `ambient.py`'s heartbeat ticker decays after ~10 min idle,
-
-  and `/api/events` does one retained-backlog scan per connect, filters `lifecycle.heartbeat`, and
-
-  streams a bounded chunked backlog. Detail lives in the observer and serving route overviews plus the
-
-  `event_retention.py`, `ambient.py`, and `events.py` sidecars. Verification metadata pinned until
-
-  closeout stamps the task-34 code commit.
-
-  **inactivity-keyed** raw Event River retention (superseding the post-termination grace-window pruning):
-
-  `event_retention.py` prunes a fleeting/enclosure lifecycle log after >1h of no real (non-heartbeat)
-
-  activity rather than on `lifecycle.ended`, `ambient.py`'s heartbeat ticker decays after ~10 min idle,
-
-  and `/api/events` does one retained-backlog scan per connect, filters `lifecycle.heartbeat`, and
-
-  streams a bounded chunked backlog. Detail lives in the observer and serving route overviews plus the
-
-  `event_retention.py`, `ambient.py`, and `events.py` sidecars. Verification metadata pinned until
-
-  closeout stamps the task-34 code commit.
-
-  field (from `active_enclosure_worktree_groups`, shared with the Engine Room) that the dashboard Topology
-
-  consumes for active-enclosure scoping. Verification metadata pinned until closeout stamps the code commit.
-
-  field (from `active_enclosure_worktree_groups`, shared with the Engine Room) that the dashboard Topology
-
-  consumes for active-enclosure scoping. Verification metadata pinned until closeout stamps the code commit.
-
-  field (from `active_enclosure_worktree_groups`, shared with the Engine Room) that the dashboard Topology
-
-  consumes for active-enclosure scoping. Verification metadata pinned until closeout stamps the code commit.
-
-  provenance/dismissal, raw Event River `ready` hydration, and the no-frontend-count-cap boundary.
-
-  Detail lives in the observer, serving, controlplane, memory-quality, and dashboard route overviews.
-
-  Verification metadata pinned until closeout stamps the task-29 code commit.
-
-  provenance/dismissal, raw Event River `ready` hydration, and the no-frontend-count-cap boundary.
-
-  Detail lives in the observer, serving, controlplane, memory-quality, and dashboard route overviews.
-
-  Verification metadata pinned until closeout stamps the task-29 code commit.
-
-  provenance/dismissal, raw Event River `ready` hydration, and the no-frontend-count-cap boundary.
-
-  Detail lives in the observer, serving, controlplane, memory-quality, and dashboard route overviews.
-
-  Verification metadata pinned until closeout stamps the task-29 code commit.
-
-  lifecycle-aware raw Event River retention and active-enclosure projection admission. The raw
-
-  `events.jsonl` substrate remains episodic rather than audit-grade: terminal lifecycle logs are pruned
-
-  after the grace window, fresh raw SSE connections start from retained offsets, projection caches repo
-
-  surfaces briefly, and worktree provider/runtime data is admitted only for active enclosure-backed
-
-  worktree groups. Detail lives in the observer and serving route overviews plus the
-
-  `event_retention.py`, `worktree_provider_admission.py`, `projection_store.py`, `snapshots.py`, and
-
-  `events.py` sidecars. Verification metadata pinned until closeout stamps the task-29 code commit.
-
-  lifecycle-aware raw Event River retention and active-enclosure projection admission. The raw
-
-  `events.jsonl` substrate remains episodic rather than audit-grade: terminal lifecycle logs are pruned
-
-  after the grace window, fresh raw SSE connections start from retained offsets, projection caches repo
-
-  surfaces briefly, and worktree provider/runtime data is admitted only for active enclosure-backed
-
-  worktree groups. Detail lives in the observer and serving route overviews plus the
-
-  `event_retention.py`, `worktree_provider_admission.py`, `projection_store.py`, `snapshots.py`, and
-
-  `events.py` sidecars. Verification metadata pinned until closeout stamps the task-29 code commit.
-
-  lifecycle-aware raw Event River retention and active-enclosure projection admission. The raw
-
-  `events.jsonl` substrate remains episodic rather than audit-grade: terminal lifecycle logs are pruned
-
-  after the grace window, fresh raw SSE connections start from retained offsets, projection caches repo
-
-  surfaces briefly, and worktree provider/runtime data is admitted only for active enclosure-backed
-
-  worktree groups. Detail lives in the observer and serving route overviews plus the
-
-  `event_retention.py`, `worktree_provider_admission.py`, `projection_store.py`, `snapshots.py`, and
-
-  `events.py` sidecars. Verification metadata pinned until closeout stamps the task-29 code commit.
-
-  physical retention for persisted drift snapshots — cleanup removes the exact code-worktree snapshot
-
-  for a reclaimed contract and projection prunes valid deleted-worktree snapshots before reading
-
-  analytics. Verification metadata pinned until closeout stamps the task-32 code commit.
-
-  physical retention for persisted drift snapshots — cleanup removes the exact code-worktree snapshot
-
-  for a reclaimed contract and projection prunes valid deleted-worktree snapshots before reading
-
-  analytics. Verification metadata pinned until closeout stamps the task-32 code commit.
-
-  physical retention for persisted drift snapshots — cleanup removes the exact code-worktree snapshot
-
-  for a reclaimed contract and projection prunes valid deleted-worktree snapshots before reading
-
-  analytics. Verification metadata pinned until closeout stamps the task-32 code commit.
-
-  current-state before live projection ticks, inspects worktree provider containers for isolated stacks, and
-
-  projects missing expected provider roles into Engine Room instead of leaving empty provider containers
-
-  ambiguous. Detail lives in the `observer/`, `serving/`, `providers/`, and dashboard panel sidecars.
-
-  Verification metadata pinned until closeout stamps the task-31 code commit.
-
-  current-state before live projection ticks, inspects worktree provider containers for isolated stacks, and
-
-  projects missing expected provider roles into Engine Room instead of leaving empty provider containers
-
-  ambiguous. Detail lives in the `observer/`, `serving/`, `providers/`, and dashboard panel sidecars.
-
-  Verification metadata pinned until closeout stamps the task-31 code commit.
-
-  current-state before live projection ticks, inspects worktree provider containers for isolated stacks, and
-
-  projects missing expected provider roles into Engine Room instead of leaving empty provider containers
-
-  ambiguous. Detail lives in the `observer/`, `serving/`, `providers/`, and dashboard panel sidecars.
-
-  Verification metadata pinned until closeout stamps the task-31 code commit.
-
-  `agents_remember.observer` next-step paragraph now records the new non-terminal
-
-  `awaiting-developer` state + public `lifecycle_turn_end_notification(summary)` tool
-
-  (notify + stop, no wait/inbox) as the **active** turn-end path, the `_tool_payload`
-
-  auto-dismiss, the next-step hint **repoint** from `lifecycle_gate`, and the one-line
-
-  reducer gate-open/blocked-gate dedup; the `agents_remember.controlplane` bullet now
-
-  records that the `lifecycle_gate`/`operator_inbox_*` turn-end choreography is **parked**
-
-  (kept and valid, un-hinted). Per-file detail lives in the `observer/`, `mcp/tools/`, and
-
-  `models/` route overviews + the file sidecars. Verification metadata pinned until closeout
-
-  stamps the code commit.
-
-  `agents_remember.observer` next-step paragraph now records the new non-terminal
-
-  `awaiting-developer` state + public `lifecycle_turn_end_notification(summary)` tool
-
-  (notify + stop, no wait/inbox) as the **active** turn-end path, the `_tool_payload`
-
-  auto-dismiss, the next-step hint **repoint** from `lifecycle_gate`, and the one-line
-
-  reducer gate-open/blocked-gate dedup; the `agents_remember.controlplane` bullet now
-
-  records that the `lifecycle_gate`/`operator_inbox_*` turn-end choreography is **parked**
-
-  (kept and valid, un-hinted). Per-file detail lives in the `observer/`, `mcp/tools/`, and
-
-  `models/` route overviews + the file sidecars. Verification metadata pinned until closeout
-
-  stamps the code commit.
-
-  `agents_remember.observer` next-step paragraph now records the new non-terminal
-
-  `awaiting-developer` state + public `lifecycle_turn_end_notification(summary)` tool
-
-  (notify + stop, no wait/inbox) as the **active** turn-end path, the `_tool_payload`
-
-  auto-dismiss, the next-step hint **repoint** from `lifecycle_gate`, and the one-line
-
-  reducer gate-open/blocked-gate dedup; the `agents_remember.controlplane` bullet now
-
-  records that the `lifecycle_gate`/`operator_inbox_*` turn-end choreography is **parked**
-
-  (kept and valid, un-hinted). Per-file detail lives in the `observer/`, `mcp/tools/`, and
-
-  `models/` route overviews + the file sidecars. Verification metadata pinned until closeout
-
-  stamps the code commit.
-
-  summary now records the already-integrated re-closeout reset behavior in
-
-  `worktrees/modules/closeout.py`: changed closeouts reopen integration for
-
-  re-integration, while no-op re-closeouts keep completed integration markers.
-
-  Detailed behavior lives in the `worktrees/modules` route overview and the
-
-  closeout sidecar. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  summary now records the already-integrated re-closeout reset behavior in
-
-  `worktrees/modules/closeout.py`: changed closeouts reopen integration for
-
-  re-integration, while no-op re-closeouts keep completed integration markers.
-
-  Detailed behavior lives in the `worktrees/modules` route overview and the
-
-  closeout sidecar. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  summary now records the already-integrated re-closeout reset behavior in
-
-  `worktrees/modules/closeout.py`: changed closeouts reopen integration for
-
-  re-integration, while no-op re-closeouts keep completed integration markers.
-
-  Detailed behavior lives in the `worktrees/modules` route overview and the
-
-  closeout sidecar. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  branch to `mcp/tools/next_step.py` (a `blocked` lifecycle now hints
-
-  `lifecycle_resume`, carrying the chain through the open gate). The next-step
-
-  engine is already inventoried in this route's `agents_remember.observer` Route
-
-  Model bullet and its architecture is unchanged (detail in the file sidecar).
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  branch to `mcp/tools/next_step.py` (a `blocked` lifecycle now hints
-
-  `lifecycle_resume`, carrying the chain through the open gate). The next-step
-
-  engine is already inventoried in this route's `agents_remember.observer` Route
-
-  Model bullet and its architecture is unchanged (detail in the file sidecar).
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  branch to `mcp/tools/next_step.py` (a `blocked` lifecycle now hints
-
-  `lifecycle_resume`, carrying the chain through the open gate). The next-step
-
-  engine is already inventoried in this route's `agents_remember.observer` Route
-
-  Model bullet and its architecture is unchanged (detail in the file sidecar).
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  Route Model bullet now records the lifecycle next-step hint engine
-
-  (`mcp/tools/next_step.py`) — a `NextStep` hint folded from the projected
-
-  lifecycle state and attached to every tool response at the `_tool_payload`
-
-  choke point (one-time `lifecycle_start` `frontHalfRundown` front half, the
-
-  linear half delegating to `guidance.lifecycle_guidance` with a
-
-  `lifecycle_gate(kind=…)` gate overlay, and a terminal `lifecycle_end`
-
-  loop-back), generalizing worktree-only guidance to the whole lifecycle spine.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  Route Model bullet now records the lifecycle next-step hint engine
-
-  (`mcp/tools/next_step.py`) — a `NextStep` hint folded from the projected
-
-  lifecycle state and attached to every tool response at the `_tool_payload`
-
-  choke point (one-time `lifecycle_start` `frontHalfRundown` front half, the
-
-  linear half delegating to `guidance.lifecycle_guidance` with a
-
-  `lifecycle_gate(kind=…)` gate overlay, and a terminal `lifecycle_end`
-
-  loop-back), generalizing worktree-only guidance to the whole lifecycle spine.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  Route Model bullet now records the lifecycle next-step hint engine
-
-  (`mcp/tools/next_step.py`) — a `NextStep` hint folded from the projected
-
-  lifecycle state and attached to every tool response at the `_tool_payload`
-
-  choke point (one-time `lifecycle_start` `frontHalfRundown` front half, the
-
-  linear half delegating to `guidance.lifecycle_guidance` with a
-
-  `lifecycle_gate(kind=…)` gate overlay, and a terminal `lifecycle_end`
-
-  loop-back), generalizing worktree-only guidance to the whole lifecycle spine.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  detached tmux session creation, independent per-browser WebSocket attaches, non-destructive browser
-
-  disconnect, and sticky explicit termination for cataloged dashboard terminal sessions. Detailed
-
-  behavior lives in the serving route overview and sidecars. Verification metadata pinned until closeout
-
-  stamps the follow-up code commit.
-
-  detached tmux session creation, independent per-browser WebSocket attaches, non-destructive browser
-
-  disconnect, and sticky explicit termination for cataloged dashboard terminal sessions. Detailed
-
-  behavior lives in the serving route overview and sidecars. Verification metadata pinned until closeout
-
-  stamps the follow-up code commit.
-
-  detached tmux session creation, independent per-browser WebSocket attaches, non-destructive browser
-
-  disconnect, and sticky explicit termination for cataloged dashboard terminal sessions. Detailed
-
-  behavior lives in the serving route overview and sidecars. Verification metadata pinned until closeout
-
-  stamps the follow-up code commit.
-
-  session metadata in `serving.terminal_catalog`, lists catalog rows, rehydrates live tmux sessions on
-
-  WebSocket attach, marks stale rows exited, and terminates cataloged sessions on request. Verification
-
-  metadata pinned until closeout stamps the code commit.
-
-  session metadata in `serving.terminal_catalog`, lists catalog rows, rehydrates live tmux sessions on
-
-  WebSocket attach, marks stale rows exited, and terminates cataloged sessions on request. Verification
-
-  metadata pinned until closeout stamps the code commit.
-
-  session metadata in `serving.terminal_catalog`, lists catalog rows, rehydrates live tmux sessions on
-
-  WebSocket attach, marks stale rows exited, and terminates cataloged sessions on request. Verification
-
-  metadata pinned until closeout stamps the code commit.
-
-  rows, and observer analytics expose `SeriesNode.seriesTokenTotal` for the dashboard master reader.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  rows, and observer analytics expose `SeriesNode.seriesTokenTotal` for the dashboard master reader.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  rows, and observer analytics expose `SeriesNode.seriesTokenTotal` for the dashboard master reader.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  lifecycle-label fallback and only re-synced the generated
-
-  `package_data/dashboard/` bundle under `mcp/` after frontend source changes
-
-  in `dashboard/src/data` and `dashboard/src/panels`. The shipped bundle remains
-
-  generated static package data served by the existing dashboard package path;
-
-  no MCP tool surface, serving contract, or package route model changed.
-
-  Verification metadata pinned until closeout stamps the reopened task-20 code
-
-  commit.
-
-  lifecycle-label fallback and only re-synced the generated
-
-  `package_data/dashboard/` bundle under `mcp/` after frontend source changes
-
-  in `dashboard/src/data` and `dashboard/src/panels`. The shipped bundle remains
-
-  generated static package data served by the existing dashboard package path;
-
-  no MCP tool surface, serving contract, or package route model changed.
-
-  Verification metadata pinned until closeout stamps the reopened task-20 code
-
-  commit.
-
-  lifecycle-label fallback and only re-synced the generated
-
-  `package_data/dashboard/` bundle under `mcp/` after frontend source changes
-
-  in `dashboard/src/data` and `dashboard/src/panels`. The shipped bundle remains
-
-  generated static package data served by the existing dashboard package path;
-
-  no MCP tool surface, serving contract, or package route model changed.
-
-  Verification metadata pinned until closeout stamps the reopened task-20 code
-
-  commit.
-
-  paragraph now records `lifecycle_gate` as blocking until a developer decision
-
-  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
-
-  by the public junction.
-
-  paragraph now records `lifecycle_gate` as blocking until a developer decision
-
-  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
-
-  by the public junction.
-
-  paragraph now records `lifecycle_gate` as blocking until a developer decision
-
-  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
-
-  by the public junction.
-
-  paragraph now records `lifecycle_gate` as create + block + bounded wait, so
-
-  the public agent-facing junction is no longer described as wait-state
-
-  initialization only.
-
-  `package_data/dashboard/` bundle after Event River frontend source changes under `dashboard/src/panels/`.
-
-  The shipped bundle remains generated static package data served by the existing dashboard package path;
-
-  no MCP tool surface, serving contract, or package route model changed. Verification metadata pinned until
-
-  closeout stamps the code commit.
-
-  `package_data/dashboard/` bundle after Event River frontend source changes under `dashboard/src/panels/`.
-
-  The shipped bundle remains generated static package data served by the existing dashboard package path;
-
-  no MCP tool surface, serving contract, or package route model changed. Verification metadata pinned until
-
-  closeout stamps the code commit.
-
-  `package_data/dashboard/` bundle after Event River frontend source changes under `dashboard/src/panels/`.
-
-  The shipped bundle remains generated static package data served by the existing dashboard package path;
-
-  no MCP tool surface, serving contract, or package route model changed. Verification metadata pinned until
-
-  closeout stamps the code commit.
-
-  paragraph now records `lifecycle_gate` as blocking until a developer decision
-
-  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
-
-  by the public junction.
-
-  paragraph now records `lifecycle_gate` as blocking until a developer decision
-
-  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
-
-  by the public junction.
-
-  paragraph now records `lifecycle_gate` as blocking until a developer decision
-
-  or gate-specific inbox response, with stale lifecycle-scoped inbox rows ignored
-
-  by the public junction.
-
-  paragraph now records `lifecycle_gate` as create + block + bounded wait, so
-
-  the public agent-facing junction is no longer described as wait-state
-
-  initialization only.
-
-  control-plane paragraph for the unified public `lifecycle_gate` registration and verified
-
-  the `task_doc replace` summary against code commit `2017434`.
-
-  control-plane paragraph for the unified public `lifecycle_gate` registration and verified
-
-  the `task_doc replace` summary against code commit `2017434`.
-
-  control-plane paragraph for the unified public `lifecycle_gate` registration and verified
-
-  the `task_doc replace` summary against code commit `2017434`.
-
-  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
-
-  control-plane, MCP-tool, model, and observer sidecars, so the package-level task-document summary
-
-  remains the replacement-repair wording. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
-
-  control-plane, MCP-tool, model, and observer sidecars, so the package-level task-document summary
-
-  remains the replacement-repair wording. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  `task_doc replace` operation; lifecycle-gate API consolidation is documented in the scoped
-
-  control-plane, MCP-tool, model, and observer sidecars, so the package-level task-document summary
-
-  remains the replacement-repair wording. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  `gate_response_wait`, keeps one open gate per lifecycle by expiring older gates, records targeted
-
-  dashboard Yes/No decisions with rejection notes, preserves Chat as operator-inbox/message-only, and
-
-  ships the rebuilt dashboard bundle. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  `gate_response_wait`, keeps one open gate per lifecycle by expiring older gates, records targeted
-
-  dashboard Yes/No decisions with rejection notes, preserves Chat as operator-inbox/message-only, and
-
-  ships the rebuilt dashboard bundle. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  `gate_response_wait`, keeps one open gate per lifecycle by expiring older gates, records targeted
-
-  dashboard Yes/No decisions with rejection notes, preserves Chat as operator-inbox/message-only, and
-
-  ships the rebuilt dashboard bundle. Verification metadata pinned until closeout stamps the code
-
-  commit.
-
-  generated `package_data/dashboard/` bundle after the frontend source and SC2 boomerang asset changes in
-
-  `dashboard/src` / `dashboard/public/assets`. The shipped bundle remains generated output served by the
-
-  existing MCP dashboard package path; no MCP tool surface, serving contract, or package route model changed.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  generated `package_data/dashboard/` bundle after the frontend source and SC2 boomerang asset changes in
-
-  `dashboard/src` / `dashboard/public/assets`. The shipped bundle remains generated output served by the
-
-  existing MCP dashboard package path; no MCP tool surface, serving contract, or package route model changed.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  generated `package_data/dashboard/` bundle after the frontend source and SC2 boomerang asset changes in
-
-  `dashboard/src` / `dashboard/public/assets`. The shipped bundle remains generated output served by the
-
-  existing MCP dashboard package path; no MCP tool surface, serving contract, or package route model changed.
-
-  Verification metadata pinned until closeout stamps the code commit.
-
-  observer projection is active-doc-first with optional lifecycle context, rather than requiring a
-
-  lifecycle key before Operations can show a task. Detail lives in the observer route overview and
-
-  sidecars. Verification metadata pinned until closeout stamps the code commit.
-
-  observer projection is active-doc-first with optional lifecycle context, rather than requiring a
-
-  lifecycle key before Operations can show a task. Detail lives in the observer route overview and
-
-  sidecars. Verification metadata pinned until closeout stamps the code commit.
-
-  observer projection is active-doc-first with optional lifecycle context, rather than requiring a
-
-  lifecycle key before Operations can show a task. Detail lives in the observer route overview and
-
-  sidecars. Verification metadata pinned until closeout stamps the code commit.
-
-  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
-
-  `dashboard/src/panels/DetailPanel.tsx` display fix; no MCP package service surface changed.
-
-  Verification metadata pinned until closeout stamps the follow-up code commit.
-
-  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
-
-  `dashboard/src/panels/DetailPanel.tsx` display fix; no MCP package service surface changed.
-
-  Verification metadata pinned until closeout stamps the follow-up code commit.
-
-  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
-
-  `dashboard/src/panels/DetailPanel.tsx` display fix; no MCP package service surface changed.
-
-  Verification metadata pinned until closeout stamps the follow-up code commit.
-
-  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
-
-  `dashboard/src/panels/DetailPanel.tsx` fix; no MCP package service surface changed. Verification
-
-  metadata pinned until closeout stamps the follow-up code commit.
-
-  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
-
-  `dashboard/src/panels/DetailPanel.tsx` fix; no MCP package service surface changed. Verification
-
-  metadata pinned until closeout stamps the follow-up code commit.
-
-  generated dashboard bundle under `src/agents_remember/package_data/dashboard/` after a
-
-  `dashboard/src/panels/DetailPanel.tsx` fix; no MCP package service surface changed. Verification
-
-  metadata pinned until closeout stamps the follow-up code commit.
-
-  `package_data/dashboard/` bundle after the Operations task-title ellipsis fix in `dashboard/src`.
-
-  The MCP package route model is unchanged; the synced assets remain generated output owned by
-
-  `scripts/sync-dashboard.py` and checked by `mcp/tests/test_sync_dashboard.py`. Verification metadata
-
-  pinned until closeout stamps the code commit.
-
-  `package_data/dashboard/` bundle after the Operations task-title ellipsis fix in `dashboard/src`.
-
-  The MCP package route model is unchanged; the synced assets remain generated output owned by
-
-  `scripts/sync-dashboard.py` and checked by `mcp/tests/test_sync_dashboard.py`. Verification metadata
-
-  pinned until closeout stamps the code commit.
-
-  `package_data/dashboard/` bundle after the Operations task-title ellipsis fix in `dashboard/src`.
-
-  The MCP package route model is unchanged; the synced assets remain generated output owned by
-
-  `scripts/sync-dashboard.py` and checked by `mcp/tests/test_sync_dashboard.py`. Verification metadata
-
-  pinned until closeout stamps the code commit.
-
-  coverage for observer task/series `createdAt` and master objective projection within the existing
-
-  observer/test route model; no new MCP service domain or package route was added. Verification
-
-  metadata pinned until closeout stamps the code commit.
-
-  coverage for observer task/series `createdAt` and master objective projection within the existing
-
-  observer/test route model; no new MCP service domain or package route was added. Verification
-
-  metadata pinned until closeout stamps the code commit.
-
-  coverage for observer task/series `createdAt` and master objective projection within the existing
-
-  observer/test route model; no new MCP service domain or package route was added. Verification
-
-  metadata pinned until closeout stamps the code commit.
-
-  `series-contract.md` as enclosure/process state only; lifecycle-readable task content comes from
-
-  JSON-primary `ar-task-document/v1` docs. Detail lives in the `observer/` overview plus
-
-  `snapshots.py`, `projection.py`, and `test_observer_projection.py` sidecars. The generated dashboard
-
-  bundle under `package_data/dashboard/` was re-synced from `dashboard/dist`; no MCP tool surface
-
-  changed. Verification metadata pinned until closeout stamps the code commit.
-
-  `series-contract.md` as enclosure/process state only; lifecycle-readable task content comes from
-
-  JSON-primary `ar-task-document/v1` docs. Detail lives in the `observer/` overview plus
-
-  `snapshots.py`, `projection.py`, and `test_observer_projection.py` sidecars. The generated dashboard
-
-  bundle under `package_data/dashboard/` was re-synced from `dashboard/dist`; no MCP tool surface
-
-  changed. Verification metadata pinned until closeout stamps the code commit.
-
-  `series-contract.md` as enclosure/process state only; lifecycle-readable task content comes from
-
-  JSON-primary `ar-task-document/v1` docs. Detail lives in the `observer/` overview plus
-
-  `snapshots.py`, `projection.py`, and `test_observer_projection.py` sidecars. The generated dashboard
-
-  bundle under `package_data/dashboard/` was re-synced from `dashboard/dist`; no MCP tool surface
-
-  changed. Verification metadata pinned until closeout stamps the code commit.
-
-  paragraph to mention `worktrees/task_resolver.py`, which centralizes task-name lookup, nested
-
-  parent-task disambiguation, leaf enclosure contract paths, active archive exclusion, and completed
-
-  root-task archival. Detail lives in the new `task_resolver.py` sidecar. Verification metadata pinned until
-
-  closeout stamps the series-contract resolver code commit.
-
-  paragraph to mention `worktrees/task_resolver.py`, which centralizes task-name lookup, nested
-
-  parent-task disambiguation, leaf enclosure contract paths, active archive exclusion, and completed
-
-  root-task archival. Detail lives in the new `task_resolver.py` sidecar. Verification metadata pinned until
-
-  closeout stamps the series-contract resolver code commit.
-
-  paragraph to mention `worktrees/task_resolver.py`, which centralizes task-name lookup, nested
-
-  parent-task disambiguation, leaf enclosure contract paths, active archive exclusion, and completed
-
-  root-task archival. Detail lives in the new `task_resolver.py` sidecar. Verification metadata pinned until
-
-  closeout stamps the series-contract resolver code commit.
-
-  GrepAI process aggregation from addressable repo/project targets, so `targetRepos` can project as repo
-
-  satellites without implying separate per-repo provider processes.
-
-  GrepAI process aggregation from addressable repo/project targets, so `targetRepos` can project as repo
-
-  satellites without implying separate per-repo provider processes.
-
-  GrepAI process aggregation from addressable repo/project targets, so `targetRepos` can project as repo
-
-  satellites without implying separate per-repo provider processes.
-
-  target evidence was verified in MCP config/current-state flow. CGC watcher rows and GrepAI
-
-  configured `targetRepos` now both project as repo-scoped workspace provider nodes; only providers
-
-  without target evidence remain aggregate.
-
-  target evidence was verified in MCP config/current-state flow. CGC watcher rows and GrepAI
-
-  configured `targetRepos` now both project as repo-scoped workspace provider nodes; only providers
-
-  without target evidence remain aggregate.
-
-  target evidence was verified in MCP config/current-state flow. CGC watcher rows and GrepAI
-
-  configured `targetRepos` now both project as repo-scoped workspace provider nodes; only providers
-
-  without target evidence remain aggregate.
-
-  workspace provider projection: CGC per-repo watcher rows now become repo-scoped provider nodes,
-
-  while unsupported provider coverage remains aggregate. Detail lives in the `observer/` route
-
-  overview plus the `provider_nodes.py`, `snapshots.py`, `projection.py`, and
-
-  `test_observer_projection.py` sidecars.
-
-  workspace provider projection: CGC per-repo watcher rows now become repo-scoped provider nodes,
-
-  while unsupported provider coverage remains aggregate. Detail lives in the `observer/` route
-
-  overview plus the `provider_nodes.py`, `snapshots.py`, `projection.py`, and
-
-  `test_observer_projection.py` sidecars.
-
-  workspace provider projection: CGC per-repo watcher rows now become repo-scoped provider nodes,
-
-  while unsupported provider coverage remains aggregate. Detail lives in the `observer/` route
-
-  overview plus the `provider_nodes.py`, `snapshots.py`, `projection.py`, and
-
-  `test_observer_projection.py` sidecars.
-
-  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
-
-  topology frontend source. The MCP package route model and Python serving/control/tool behavior are
-
-  unchanged; this is generated static frontend package data only.
-
-  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
-
-  topology frontend source. The MCP package route model and Python serving/control/tool behavior are
-
-  unchanged; this is generated static frontend package data only.
-
-  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
-
-  topology frontend source. The MCP package route model and Python serving/control/tool behavior are
-
-  unchanged; this is generated static frontend package data only.
-
-  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
-
-  browser cockpit. The MCP package route model and Python serving/control/tool behavior are unchanged;
-
-  this is generated static frontend package data only.
-
-  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
-
-  browser cockpit. The MCP package route model and Python serving/control/tool behavior are unchanged;
-
-  this is generated static frontend package data only.
-
-  `src/agents_remember/package_data/dashboard/` with `scripts/sync-dashboard.py` after changing the
-
-  browser cockpit. The MCP package route model and Python serving/control/tool behavior are unchanged;
-
-  this is generated static frontend package data only.
-
-  lifecycle and per-worktree provider projections plus full task content; serving simulation/event
-
-  fixes and matching tests landed. The then-added rich-sim generator was later retired by PDLS
-
-  after it had no maintained consumer.
-
-  lifecycle and per-worktree provider projections plus full task content; serving simulation/event
-
-  fixes and matching tests landed. The then-added rich-sim generator was later retired by PDLS
-
-  after it had no maintained consumer.
-
-  lifecycle and per-worktree provider projections plus full task content; serving simulation/event
-
-  fixes and matching tests landed. The then-added rich-sim generator was later retired by PDLS
-
-  after it had no maintained consumer.
+- **The public selection the next task uses to begin from a prior task's published dataset — and, since 260915-KS-L45, the run that also authors the candidate the review opens (on unconverted memory; since `260928-MIK-L12` a converted memory worktree goes to the curator file writer first).** [198]
+- **The handoff that places that dataset into the review's baseline half.** [199]
+- The operation, and the selection value that carries the baseline into admission. [200]
+- The identity derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints. [201]
+- The case that measures the journey through the public operation on a real SQLite store. [202]
+- The public selection the next task uses to begin from a prior task's published dataset (the database route; a converted memory worktree goes to the file writer first). [203]
+- The allocation a new truth's identity comes from, and the journal a repeat resolves through. [204]
+- The retry key, the content guard, and the explicit anchor reuse a producer may name instead of authoring. [205]
+- The citation derivation, keyed on the repository rather than the base commit, and the three identities one target's own place mints — each now on its own discriminator. [206]
+- The case that measures the journey through the public operation on a real SQLite store, and the case L43 re-pointed at the ruled semantics. [207]
 
 ## 260915-KS-L23 The Terminal Leaf: What Changed Under This Route, And The Three Rails It Must Respect
 
@@ -7568,15 +3703,10 @@ of all seven when it was written and false of one by 2026-09-24. Installing and 
 copies is the orchestrator's acceptance step, not a package change, and no test under `mcp/tests` can
 assert an installed copy.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** | `published_intent_block`; `open_read_context`; `read_knowledge_scope` | mcp/src/agents_remember/application/published_intent.py:464-479; mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/application/knowledge_read.py:144-166 |
-| **The response field the block travels on, carried by the strict response model rather than re-declared.** | `published_intent` | mcp/src/agents_remember/models/read_files.py:80-80 |
-| **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** | `## Published Intent Before Planning` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:173-282 |
-| **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** | `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` | mcp/tests/test_read_ar_files.py:529-552 |
-
-## Update History
-- 2026-09-21T23:10:00+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated, and one sentence of the reviewer surface's route model corrected rather than extended.** The package gained one review route (`/api/review/intent/source-content`), one `ServingCollaborators` review port (`ReviewSourceContentPort`) and one application owner (`application/review_source_content.py`, with its vocabulary in `models/knowledge/review_source_content.py`); the section above records the three facts that reach this altitude — the third **path**'s reason (a payload carrying every changed file's text would be a document dump), the corrected boundary (**the review surface accepts no filesystem path and no root, but its expansion route does take a repository-relative entry path, read only from a measured change set**), and the refusal shape (`_UNWIRED_SOURCE_CONTENT` refuses an unwired process as "not served rather than served as an empty file", and `source_content_unresolved` reaches `400` through the same fall-through as `comparison_refused`). The L45 section keeps its heading and now opens by naming the superseded count, because two of its sentences ("two GET routes", "no adapter is a named refusal on both routes") had become false. **Citation accounting:** every row this document carries into `serving/review.py` was re-derived against the candidate, because that file grew 223 → 349 lines (the `KNOWLEDGE_REVIEW_*` constants `:51-58` → `:59-74`, `_UNWIRED_ENTRIES` `:68-80` → `:85-97`, `review_request_from_query` `:83-99` → `:134-173`, `_status_for` `:125-140` → `:199-216`), and the two `_app_common.py` port rows (`:456`/`:467`) and the `cli/dashboard.py` composition row (`:109-110`) were re-pointed to the extents they occupy now (`:460`/`:471`, `:124-126`), with the third review port added to both. No claim was deleted, no anchor dropped to silence a finding, and no row invented. **No verification stamp was advanced**: the candidate is uncommitted, the stamp rows name the production line the card was read against (`d80a0513…`, committed `2026-09-21T19:51:20+02:00`), and the governed closeout owns the real stamp.
+- **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** [208]
+- **The response field the block travels on, carried by the strict response model rather than re-declared.** [209]
+- **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** [210]
+- **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** [211]
 
 ## 260921-ICR-L3 The Reviewer Gains An Expansion Route, And Its Inventory Rows Open Into Bound Content
 
@@ -7603,15 +3733,13 @@ empty document would read as a file this repository does not hold — and the ex
 application owner, its vocabulary, its route-local overviews and the dashboard renderer are recorded on
 their own routes; this section records only what this package's route model gained.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` |mcp/src/agents_remember/serving/review.py:96-96|
-| **The third collaborator port, with the reason it is a port rather than a field on the review payload.** | `review_source_content`; `ReviewSourceContentPort` | mcp/src/agents_remember/serving/_app_common.py:484-484; mcp/src/agents_remember/serving/review.py:83-83 |
-| **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** | `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:129-138|
-| **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** | `read_review_source_content`; `admit_source_path` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_admission.py:86-128 |
-| The composition root's third review port, and the registration call that passes all three collaborators. | `review_source_content_port`; `register_review_routes` | mcp/src/agents_remember/cli/dashboard.py:123-133; mcp/src/agents_remember/serving/app.py:295-301 |
-| **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** | `SOURCE_CONTENT_REFERENCE`; `ReviewSourceExpansion` | mcp/src/agents_remember/application/review_source_content.py:56-56; mcp/src/agents_remember/application/review_source_content.py:70-70; mcp/src/agents_remember/models/knowledge/review_source_content.py:153-214 |
-| The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:773-795; mcp/tests/test_knowledge_review_source_content.py:798-821; mcp/tests/test_knowledge_review_source_content.py:641-676 |
+- **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** [212]
+- **The third collaborator port, with the reason it is a port rather than a field on the review payload.** [213]
+- **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** [214]
+- **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [215]
+- The composition root's third review port, and the registration call that passes all three collaborators. [216]
+- **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** [217]
+- The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. [218]
 
 
 ## 260921-ICR-L16 The Review Transport's 400/404 Idiom Collapses To One Mapping, And Its Bodies Gain Actions
@@ -7637,17 +3765,9 @@ additive on this route's own bodies. `serving/review.py` grew 349 → 401 lines 
 `application/knowledge_review.py` — this campaign's global write mutex — is **untouched**: nothing this
 packet owns lives there, because no new application behaviour and no new refusal code were introduced.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The one mapping both adapters reach, and the one body builder it uses.** | `_port_outcome`; `_transport_refusal` | mcp/src/agents_remember/serving/review.py:155-167; mcp/src/agents_remember/serving/review.py:170-196 |
-| **The two actions the bodies gained, and the not-found body's offending input.** | `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` |mcp/src/agents_remember/serving/review.py:149-152; mcp/src/agents_remember/serving/review.py:145-148|
-| **The result-to-status mapping, unchanged, which the new bodies are used beside.** | `_status_for` |mcp/src/agents_remember/serving/review.py:607-624|
-
-## Update History
-- 2026-09-24T21:05+02:00 — 260921-ICR-L25 curator (assembled-acceptance leaf; uncommitted change set on `ar/260921-icr-l25-ar`, code base `86639933d61528387ce106dbd4d7a334bd468671` with an **empty** working-tree delta, memory base `1e241048382a4ff8833d8b0c82ffd2e3122f9ded`; gate `verify-l25.md` = `pass-with-findings`): **one superseded current-state sentence in the L19 section above corrected in place, dated.** That section said "**The seven installed harness skill roots still carry the 179-line carrier**"; one of the seven has since moved, so the sentence was false as it stood of that one. Measured at this correction: `~/.claude/skills`, `~/.codex/skills`, `projects/.claude/skills`, `projects/.codex/skills`, `projects/.pi/skills` and `projects/.hermes/skills` still hold `c-04-retrieval-strategy-router/SKILL.md` at **179 lines**, sha256 `45174b88161cfc57365ac56c27b143cbf1c23f1f032d4f235403d009aedcc66b`, with **no `c-14`** (measured absent), while `~/.agents/skills` — the root the delivered server reports as `server_info.harnessSkillRoot` — holds `c-04` at **241 lines**, sha256 `4a8bf5a83d202ca72685aa68c89d575ff4a1870e127d026c8e48273580c09c88`, and `c-14` at **311 lines**, sha256 `87aaacd18fd072563ba71af10ca40a25506d18a00d2c97f5460377cfa036ed8d`, both byte-identical (`cmp`) to this package's canonical `skills/**`. The corrected sentence names which six and which seventh instead of generalising to all roots or to none, and the paragraph's remaining claim — that no test under `mcp/tests` can assert an installed copy — is untouched because it is still true. **No card was created and no other sentence in this document changed** (empty code delta, so no card's 1-to-1 source responsibility moved). No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.
-- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The delegation row cited `knowledge_review.py:84-88`/`672-705`, which the record-owner extraction and attribution wiring moved; it now cites the import block at `:93-96` and `_knowledge_pane` at `:694-727`. Wording unchanged; no stamp advanced.
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The section above records the one place the review transport changed: the duplicated `AuthorityError`/`FileNotFoundError` mapping collapsed into one `_port_outcome` with one `_transport_refusal` body builder, and the two bodies that named only their message gained the action their own failure implies (plus the offending path for `not-found`). It also records the untouched neighbour that matters most: `application/knowledge_review.py`, the campaign's write mutex, is not touched because this packet introduced no application behaviour and no refusal code. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
-- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this package's impact for the leaf: the new `application/published_intent.py`, the `published_intent` field on the read-files response, the deliberately unchanged MCP surface (`mcp/tools/read_files.py` and the tool registration) and the untouched `application/knowledge_read.py`, the regenerated `package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md` (179 → 239 lines, nine targets written by `scripts/sync-skills.py`), the case that holds the carrier to the payload's real spellings, and the boundary that the seven installed harness skill roots still carry the old carrier — an acceptance-time install the orchestrator owns, not a package change. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp. No commit was made.
+- **The one mapping both adapters reach, and the one body builder it uses.** [219]
+- **The two actions the bodies gained, and the not-found body's offending input.** [220]
+- **The result-to-status mapping, unchanged, which the new bodies are used beside.** [221]
 
 ## 260921-ICR-L10 Complete Bounded Pagination On The Review Surface
 
@@ -7668,14 +3788,6 @@ keeps the owner's own remedy and is reported as `comparison_page_unreadable`, so
 open a new comparison when nothing moved. The manifest side is one lane row, three consumer rows and a
 re-pin with the population unchanged at sixteen contracts and sixty-six artifacts.
 
-## Update History
-- 2026-09-23T00:30:00+02:00 — 260921-ICR-L10 curator (candidate `ar/260921-icr-l10`, uncommitted; production line at this leaf's base `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`): **route body updated: complete bounded pagination on the review surface.** The two bounded
-collections' own cursors now travel through composition, transport and a reachable control; a new
-application module owns the page arithmetic and the reset mapping; the review models publish the page
-value and a separate refusal; the serving route admits the page size itself; and the dashboard renders
-the control over a captured real body. The manifest side is one lane row, three consumer rows and a
-re-pin with the population unchanged. Rows across this route that cited the changed files by line were
-re-derived against this candidate. No verification stamp was advanced: nothing in this leaf is committed, so the commit/closeout stamp remains closeout's.
 ## 260921-ICR-L26 Three Of This Route's Rows Re-Cited After The Review Adapter Moved
 
 `260921-ICR-L26` (`ICR-R26@v1`, subject and comparison isolation) changed this route only through the
@@ -7688,8 +3800,6 @@ re-derived from each construct's own extent in the candidate; **no route-level f
 overview's account of the MCP surface, its tools and its registration is untouched by the leaf, and the
 route's own index was regenerated with the rest of the tree.
 
-## Update History
-- 2026-09-23T02:50:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): **route body touched only by three re-cited rows.** The section above records which rows moved and why (this leaf's insertions into `application/knowledge_review.py`, `application/review_evidence_records.py` and `application/review_record_rendering.py`, whose constructs this route's reference table names), and states that no route-level claim changed. **Citation accounting:** `_claim_records` `498-521`→`548-572`, `_knowledge_pane` `463`→`926-978`, and the record renderer's `evidence_pane`/`signal`/`observation` `152-176`/`276-294`/`297-311`→`213-252`/`456-473`/`431-453`; `ReviewEvidencePane` `75`/`893`→`918-958`. **Stamp accounting:** no verification stamp was advanced — nothing in this leaf is committed, so the governed closeout owns the real stamp.
 ## 260921-ICR-L12 Historical Committed-Leaf Review: A Closed Leaf Reopens Its Recorded Comparison
 
 `260921-ICR-L12` (`ICR-R12@v1`) makes a committed or closed leaf reviewable again. The intake
@@ -7716,29 +3826,6 @@ creates no worktree and no filesystem entry; retaining, freezing and reopening r
 source inventory R02's and the record bundle R14's. `ICR-R24@v1` owns the leaf-history navigation,
 `ICR-R17@v1` live refresh and `ICR-R25@v1` the assembled browser acceptance. The diff adds exactly one
 suppression (a local import's `# noqa: PLC0415 - cycle`) and widens no limit or rail.
-
-## Update History
-
-- 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
-  base `0d7910f9d646161c414ed6543453536a3c749d49`): **package body updated for the taskless knowledge
-  bootstrap (`ICR-R29@v1`), and the umbrella gains its fifth subcommand.** The section below is
-  **appended at the end of this document's change narrative rather than inserted at its head**, so no
-  existing heading and no reference range on a card that cites this overview by line moved. **Citation
-  accounting:** the new modules' cards cite their own declarations at this candidate's lines; no
-  existing row on this overview was re-pointed, re-worded or deleted. **Stamp accounting: no
-  verification stamp was advanced** — the candidate is uncommitted and the governed closeout owns the
-  real code and memory commits.
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **citation accounting on this overview's review-record rows, plus the one anchor left alone.** (a) The production-record-owner row cited `mcp/src/agents_remember/application/review_evidence_records.py:174-192` for `review_records_for`, whose declaration sits at `:171` (extent `:171-196`) — the range was widened to cover it. (b) The two per-record damage cases row cited `mcp/tests/test_knowledge_review_evidence_channels.py:695-717` and `:719-745`; both cases moved down that module in this leaf (they now occupy `:825-844` and `:847-870`), so both ranges were repointed to the lines that carry them. The row's `_COLLECTION_OWNERS` range (`:121-142`) and the task-context case range (`:655-677`) are unchanged. (c) **Left alone and reported:** the same production-record-owner row's third anchor, the anonymous constant `_CURRENTNESS`, was deleted by this leaf's fix round and exists nowhere in the code tree; its range (`:144-158`) is left exactly as written rather than re-pointed at an adjacent construct that would make the cell look current, so that finding stays open for a curator who re-reads the claim itself. No claim or anchor wording was changed anywhere and no range was dropped to silence a row. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-23T04:31:21+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **repository body updated for historical committed-leaf review (ICR-R12@v1).** The section above
-records the defect, the one new owner and its two records, the byte-for-byte reproduction across
-cleanup, restart and a later landing, the declared-absence-versus-unavailable distinction, the record
-selector and its admission, and the preservation boundaries routed to other leaves. **Citation
-accounting:** every row on this overview that cited the review modules, the adapter, the resolution, the
-serving route, the models or the two registration TOMLs by line was re-derived against this candidate.
-**Stamp accounting:** no verification stamp was advanced — the header already names this leaf's base as
-the production line the reading was taken against, and nothing in this leaf is committed, so the
-governed closeout owns the real stamp.
-
 
 ## 260921-ICR-L29 The Package Gains A Taskless Bootstrap, And The Ingest Stops Requiring An Enclosure
 
@@ -7785,6 +3872,3 @@ all.
 ## Normal comparison capture and explicit recovery
 
 The existing review-record-comparison command now records actual owner-produced assessment inputs through the normal resolved-pair freeze. Its paired recovery controls select an exact retained parent and original curator generation. The packaged curation operation documents both paths and remains synchronized from the canonical skill. No new knowledge writer, semantic store or automatic historical repair is introduced.
-
-## Update History
-- 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No route impact: the `mcp/` route's shape is unchanged by L47 (the new summary read, route, model and test are recorded on the application, serving, models and tests overviews). Rows into `serving/app.py`, `cli/dashboard.py`, `_app_common.py` and `knowledge_review.py` displaced by L47 were re-pointed from the base-to-candidate line mapping, and the row for the reviewer-route registration (`register_review_routes`, now a multi-line call) was re-cited to the lines that hold it with the anchor named as the call. Appended at the end so the line-cited parts do not move. No stamp advanced.

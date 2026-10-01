@@ -1,0 +1,129 @@
+{
+  "path": "mcp/src/agents_remember/serving/relay_death_watch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external/domain document defines this watcher; N5 ruling and the tests are the authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc23c52cd1f903abe4a039c167ff6f864c1e956f",
+            "content": "sha256:c48ecd381616bc3bf7e2a0d94935f6b526572c9b04214f837315d148d646b260",
+            "locator": {
+              "kind": "symbol",
+              "name": "post_relay_death_signal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The heartbeat row and age helper the watcher reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f502fd398e2ca6d7fce379c4dcb1d9c2dadfb5da",
+            "content": "sha256:9b389839e38f014b4cb9a1f6e5ec90c91816a41292f6005c4265bc4a5fff0d2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierHeartbeatStore"
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier_heartbeat.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f502fd398e2ca6d7fce379c4dcb1d9c2dadfb5da",
+            "content": "sha256:b100b6e8bb840b6ab6e7d458a3fa8f3cfd0fbeb9436d805d03e04b32a1878c81",
+            "locator": {
+              "kind": "symbol",
+              "name": "heartbeat_age_seconds"
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier_heartbeat.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The scoped architect mailbox the alert is addressed to (role-only fallback when no scoped seat).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a699febdc3cb1920fd1ab989cb61d4e5a328b4a",
+            "content": "sha256:454eb467b1381637393b6cb6a154273ea8a36713206a1c2c6665fd1641e43c13",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_architect_owner"
+            },
+            "path": "mcp/src/agents_remember/controlplane/signal_routing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a699febdc3cb1920fd1ab989cb61d4e5a328b4a",
+            "content": "sha256:141d5d64c87fe5849b81a65012c29818a2c299c85301b1f5d06b053372b3afd7",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/controlplane/signal_routing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The durable push path for the alert row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa8c28490d56023e8587e750c0369311759e71a2",
+            "content": "sha256:974d34325c8011077e0b04e031cc2250b6538d4c1ca10bbac0f9f254d38a093c",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver_inbox_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/inbox_delivery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa8c28490d56023e8587e750c0369311759e71a2",
+            "content": "sha256:a6422c018b4d4d7597963da97c0fd6d0a1f2e200343fb29db9b35e79431a2711",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/serving/inbox_delivery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The loop task is spawned by the serving lifespan beside the notifier loop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:bf37d7527b4e3d4e69e7f2fa160ae710eae7c33dc4f5586b09917dd3d5ea29e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serving_lifespan"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

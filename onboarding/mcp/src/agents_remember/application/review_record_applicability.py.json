@@ -1,0 +1,596 @@
+{
+  "path": "mcp/src/agents_remember/application/review_record_applicability.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the defect it removes, the two things its classification reads, the six outcomes and the rule that filtering is stated rather than silent.**\n\nAnchor: \"The defect this module removes is F09's\"; \"One projection, six outcomes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:5e31671db1c2f9705a804057d9ca42c33008d2ce7338dc5e85e33e39ab51fa15",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**ICR-R07's own page-bound retained list, carried beside the recorded revisions rather than in place of them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:05a7f73b12ab67251ea43964ad10a0a6a2bc9573c86ae2d86f46acfd6c547270",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_retained"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**A comparison subject is matched by exact authored reference or binding digest, and nothing else resolves.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:c93714177b5f24a3085fb3b91ab2ae508caba44986ec801e805a978cd6e352f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_subject_label"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The signal and matrix-row classifications: a recorded path that reaches the selection, a related identity displayed as context, and an unmatched path shown unresolved with its references.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:2b9bffc411686b5a798fd19840c8ed41458a56ee428401116cbd7a5b32b6149e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_signals"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:155173e3b3aa07adfd6e780bd29a25bf1629768c8d1662b18d2fc1322b1835e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:ec18b106182d1f19eba514ca2c5629546558d4f65ffcc50c24db427e0f67aad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_match_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The lazy known-subject catalogue, opened only when a record names a subject the selection does not reach.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:eb102b4d1d4784d04d4010e7339fe5bbd7d98548bebc48a8c171e1602eb304bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_KnownSubjects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The catalogue owner the lazy reader calls, kept the one implementation of a subject enumeration.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_subject_catalogue"
+            },
+            "path": "mcp/src/agents_remember/application/review_subject_catalogue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The six-way summary a collection's counts are published as, with the page-versus-owner population stated per class.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:58370f8190ed2e0cf27438590ac1ea9df08acc209fdb4b12bfc105e14b390791",
+            "locator": {
+              "kind": "symbol",
+              "name": "_summary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:f58f984d8eba50986ae602612afaa2f67c2b316ce57c1c5588e4d3b951519f43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MATRIX_OWNED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The vocabulary the projection builds, and the validator that refuses a summary losing a record.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:c3ad673155582cb9ddb27d598dc9f29646ddade47be02b99ab10e7b7ecff6d6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewDisplayedApplicability"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_applicability.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:cd50e39d396a4098107a244d565c6b6b29164c5b6d64181c7010745f309e27c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewContextRecord"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_applicability.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:2d11058bebc56c33867ae720126aaef9c698ff37bc890a9960e7f3675371a930",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewApplicabilitySummary"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_applicability.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:6253f99f9e92994eddd3e47093c80e2e4b0384814b1a13ac85cc7dc5de3c3eb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_counts_to_partition_the_supplied_population"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_applicability.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The recorded population this classification turns on, read from the two snapshots' own owners and merged under the comparison's page facts.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:17dfe0a55eb654e6821590865eb67a689a54ca7081f7bc7c54f3f95e0cbf846c",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_subject_population"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:75dca0b664aae2968c876b97425021bee8711f2aac080593dd0127d29addd327",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedSelection"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The one call the composition makes, before either pane renders anything.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The projection's own \"what stays in a pane\" rule, which is what keeps an unrelated record out of one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:d56046998c315b5706bb0fd1697348c5e003cfd0a244e69994f4559a28f17f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "displayed_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The port the panes consume: per-record labels, the labelled context rows, the six-way summaries and the selection the classification was made against.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:bb321e42eb6244d4a05805435f272610c130b581f1f81bdcf7fbba561f51df7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AppliedRecords"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The port the renderer consumes, so a pane renders what it is handed and never decides which records those are.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:ecdb6b1cf10e3b153e4c1f75aecd54a75a898d75060d7a43ecf804f93f27c05d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewApplicabilityProjection"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The cases that measure the projection: a sibling's assessment as context and never the selected subject's, the selected subject's own record direct, an unrelated subject counted and not displayed, an unresolvable binding displayed with its references, a previous generation historical, and a malformed revision binding unresolved.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:ee86d436c12c6e8162e96369ac2af15f8507df788adc06848b13aaa31fa32e47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:2a35edcb37496c0402983e437164858d77608367b296380b2c1d3ecb6523acb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_selected_subjects_own_assessment_is_direct_with_its_recorded_binding"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:76b0e26ad5884f9f0f4c4132afd74654743cc2d1b66c1035f0d630b601966fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrelated_subjects_assessment_is_counted_and_not_displayed"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:c6291208960b87bcb68280fdc6fe3b82e8a1a3f939777a19dc86008ff1ed68dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unresolvable_binding_is_displayed_unresolved_with_its_references"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:b94c267c4ec4cbc2ea902194ac8db08f105e33974d381c66e5474b6179776021",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_previous_generations_assessment_is_historical_and_never_current"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:1fcede449285fdef64444ec4a099d1d0fc39f79169809f09dca10aae9e8e3a8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_malformed_revision_binding_is_unresolved_and_never_a_retained_revision"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The cases that measure the page-independence and the retention basis: identical treatments and summaries at every page size, and a `direct` label that may cite R07's list only when that list carries the record.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:5012fff1b633cd20f1622b60ff5a83451cbd4aeef10ae44e255d4be40c55f57d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_page_size_classifies_the_same_records_the_same_way"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:c6de95b7973b6e5287875c17716d84011c53e31ae405e55fb6793ae1d9005a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_direct_label_never_cites_a_retained_list_that_does_not_carry_the_record"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The cases that measure the stated populations and the vocabulary's own refusals.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:38fef42dc4c2138368c00839f82a1e185f191b516c4c65261b90c3dde77da598",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_supplied_collection_reports_its_complete_population"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:8b82a2928c97dc0b7d467c6079e66e778bbe3f63997f5d0b42918e31fecae4c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_class_vocabulary_is_the_record_vocabulary_minus_its_measurement_channel"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:863072742d71946ca9d506f728aac141f52b6da6a917692a81f1014fb2b00a9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_label_and_a_summary_refuse_a_claim_their_recorded_facts_do_not_support"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The one entry the composition calls, before either pane renders anything.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:afd17b58628b96dd72b374726620ed74f75980e41f68fa9013d3981b4a9195ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_applicability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The sources that one entry is assembled from, with the known-subject catalogue a reader rather than a value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c8e25027d04a95e13f1d4749622b3d990c6761",
+            "content": "sha256:be05bf098f413d727a2e3064c0bef84bd3aa4105f0900a6a1c000453113a615b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ApplicabilitySources"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The policy: the selection's recorded population is read once and the four supplied collections are classified against it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:52cf11460556dc0d5fa64ddd3a1c016fcc3291287f9200588a683967e5428bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_review_applicability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The task-context entry: no subject selected, so every record is the candidate's own input with its recorded subject beside it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:af2e2a797306d1ecdb35a62d1dbbc381a7f50b2858895d3a4cc46ad7e983186b",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_context_applicability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The per-collection projection, and the context row one related identity earns: true subject, the recorded relationship that reached it, the record's kind as its label, author and role, and no judgment content.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:9223116de4ad32c91f7df64ea432b271fdd0e63d87506769d6f7a925b7dd5c3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_assessments"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:e7cc56eb746ee00072cb94f7dd65d16b0022152178741db1591131f82f886f6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_context_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The direct/historical decision and the two unresolved shapes a revision binding can earn, with the sentences that state each basis.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:398c43e59b0ba42a5a27d461983f91468ac9356ece13de290ae617e70c26f0de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_bound_label"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:682b9adde5ed6ed384951b4d1bd36d7912f88c010a17ff8c9a00583677df6ced",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revision_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:fa73911d3a791ebaf511bb254b020ac12010bd847838bd0b5a29a2047b737312",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RevisionBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The one place a label may cite ICR-R07's published retained list, and only when that list really carries the matched revisions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:1bde35484bdd3144e93a8f3a4c0d0212ad26f50d62dcbeff29ad72a34e91880e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retention_basis"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

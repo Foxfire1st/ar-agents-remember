@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56`                                        |
-| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
-| governingOverview      | `../overview.md`                                          |
-
 ## Governing Overview
 
 [serving projections overview](../overview.md)
@@ -37,13 +27,8 @@ Analytical file-surface readers: drift, sidecars, setup, routes, tools, ledger. 
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **both governing declarations repaired.** The field named `overview.md` and the body link named `overview.md`; each resolved card-relatively to nothing, and they did not agree with each other. Both now name `../overview.md`, the route-local overview of this card's own directory. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.

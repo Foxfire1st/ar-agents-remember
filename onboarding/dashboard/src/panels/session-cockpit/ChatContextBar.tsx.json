@@ -1,0 +1,82 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/ChatContextBar.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical host composition delegates launch through the session view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "707beb3f24632d9964c70ac53fc0a6a88d9dd9eb",
+            "content": "sha256:adb3d32ea115b45a7937f208e21b4baf49a8e29930d3c255a0716218a93d27a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "onLaunchChat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The server-first task-seat operation exposes its result type and catalog-authoritative assignment action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "content": "sha256:085eabea3ae7300f760c1b8a23d0cc69c2fd6d7991e8ccb2338ec0a5819196bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyTaskAssignment"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:23caffeb541e9a96ed563b29f21faa818f069dda107ff5e13236fc28811c31bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttachTaskResult"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Session changes are broadcast through the catalog notification helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "content": "sha256:8ab5981b7884639a2347750e4529b903696642bdf0f6c7510679a4c4c1f3881c",
+            "locator": {
+              "kind": "symbol",
+              "name": "notifySessionCatalogChanged"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "content": "sha256:188b8d04eaf049ad1360fdecd4dba4d43de5157c5f881429d1d998ee748d3a09",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/selected_lifecycle_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Task, route-review, series and door owners declare the prepared candidate while preserving existing doors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4675511c014519b372b6ff6670f77ac36ee4746c",
+            "content": "sha256:16a4919a1a1c1b3c2ed623b27e8e72431231504380936a37de8087e8f994196b",
+            "locator": {
+              "kind": "symbol",
+              "name": "declare_selected_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Input normalization follows explicit declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4675511c014519b372b6ff6670f77ac36ee4746c",
+            "content": "sha256:a7a74b4000a952df622533d45ae146f60f194838abbaecf2bf5777d4b64f10fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_closeout_operation_input"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public-entrypoint fixture reuse requires a live non-synthetic waiting door.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4675511c014519b372b6ff6670f77ac36ee4746c",
+            "content": "sha256:a53625476eb6eec71cef2a18ab8e8daa5566c388b3d7267a71cad06bb90b9f67",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

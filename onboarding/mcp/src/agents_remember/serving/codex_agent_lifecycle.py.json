@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/serving/codex_agent_lifecycle.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Adapter registry applies the shared ordering.\n\nAnchor: \"thread/status/changed params\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "107323ca12efbef4744dffaaab55d0939866fa22",
+            "content": "sha256:ff61e73e3c3629cb0edb7f611de5a43256c8c44442acfa1f940fd5426b6fe8a6",
+            "locator": {
+              "end": 704,
+              "kind": "line_range",
+              "start": 704
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,139 @@
+{
+  "path": "dashboard/src/panels/EngineRoom.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "content": "sha256:58d15a56ecc549ad38344568d9dcf75211615fbbe42a58e947aca64d28a6163e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineRoomHeader"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "content": "sha256:1dc7ebbc67959512746628e11ce54e25ff0cb9b3e0d2551374614a9bfccbc885",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_PHASES"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`OfficialStrip` groups official workspace providers by label + runtime state and exposes grouped repo labels via hover/title.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "content": "sha256:014599f78795057568d2d9ae61ac1df42a915f0f7d6fbe8714edf70689df66ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "OfficialStrip"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility.\n\nAnchor: \"aggregates same-state official CGC engines into one strip chip\"; \"keeps official CGC aggregate chips separated by runtime state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fc5c2d2b667f8a72797b3417aaa48e00f403417",
+            "content": "sha256:f286ca6fada8072f8174c5e5b556876a4a2a17eb7518bede60a044c80e52c872",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedOfficialProviders"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3fc5c2d2b667f8a72797b3417aaa48e00f403417",
+            "content": "sha256:40bf6dec8f58db91fab2497cb59239c56b1c58b4fbfb849533f96cf63565daaa",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 198
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3fc5c2d2b667f8a72797b3417aaa48e00f403417",
+            "content": "sha256:5f4189f025d31a1c6443a34be4abddd5b8b9687a8437ef50b85ef317bd72cee7",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `GALLERY` projection seed + the store `applySnapshot`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:494192985f8d2f2ea7f9f79c571aed7020551fcece88e01e2cb4b4e396f00cf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "GALLERY"
+            },
+            "path": "dashboard/src/dev/fixtures.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5602ac3c146d20656384d061cc99d26f28d2751",
+            "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
+            "locator": {
+              "kind": "symbol",
+              "name": "applySnapshot"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The honest-motion gate the pulse reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

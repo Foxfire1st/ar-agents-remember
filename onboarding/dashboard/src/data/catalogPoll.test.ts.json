@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/data/catalogPoll.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e1c040d98b8ecea8de0d887a1779ffb33a2f901",
+            "content": "sha256:c1dc139906eb371b5a40c180eaf645208e65df49a05bb5611846d6ef0cbb0afd",
+            "locator": {
+              "kind": "symbol",
+              "name": "hydrateTerminalSessionsFromCatalog"
+            },
+            "path": "dashboard/src/data/catalogPoll.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The poll-health state the beat assertions read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:7b439b0af7f45c35c768ce9b8096a4d33fa5b6fcffa56c22349fe3b105aaba5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordPollBeat"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

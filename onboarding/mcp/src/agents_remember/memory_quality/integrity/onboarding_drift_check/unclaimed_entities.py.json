@@ -1,0 +1,135 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/unclaimed_entities.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `UnclaimedEntitySource` (lines 49-65) — One meaningful unclaimed source and the declarations that ranked it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e808590282c1e11865bf4a3ba62c746e9d12a10",
+            "content": "sha256:dcab21a0f87970523b8a6d84bd914cdde7a72a90089ef5d4139258b8cf1dd9a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnclaimedEntitySource"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `UnclaimedEntityReport` (lines 69-75) — Complete coverage counts plus the ranked meaningful subset..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e808590282c1e11865bf4a3ba62c746e9d12a10",
+            "content": "sha256:580cb541fe014b3021941f93659b3fefaca008e6c419de523a7aee79590041dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnclaimedEntityReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `_assigned_names` (lines 78-80).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e808590282c1e11865bf4a3ba62c746e9d12a10",
+            "content": "sha256:216f58a6b91ecf15448b4b0a6184f152264e2bc4f833f33d806f722fba5a8dd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assigned_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `_assigned_value` (lines 83-84).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e808590282c1e11865bf4a3ba62c746e9d12a10",
+            "content": "sha256:75eca74a1223d422ca6e68e475134e4a1dfb08659e8d95019b966fba5dc344c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assigned_value"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `_call_name` (lines 87-94).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e808590282c1e11865bf4a3ba62c746e9d12a10",
+            "content": "sha256:59a50b9a90a5873bf27af1a8dfa45e780a2efcca18fa786f225a55c27d0938f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_call_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `declaration_signals` (lines 97-126) — Return the explicit contract/schema/authority facts declared by one Python module..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e808590282c1e11865bf4a3ba62c746e9d12a10",
+            "content": "sha256:3d05afd1a51364e4fcc146ed15d73ca354c73a11ba41c8672e51a57f33e761d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "declaration_signals"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `_rank_key` (lines 129-144).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e808590282c1e11865bf4a3ba62c746e9d12a10",
+            "content": "sha256:a26976dafdec6bfbbd136be06b9e2d6cf1b724e28644571e613c4d08a7dbc40a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rank_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `rank_unclaimed_entity_sources` (lines 147-175) — Compute the real inventory/evidence set difference and rank its meaningful members..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e808590282c1e11865bf4a3ba62c746e9d12a10",
+            "content": "sha256:796b23074841c1c30c5b53d00646078a5aa93893c9f649c83d29830edd2c94eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "rank_unclaimed_entity_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

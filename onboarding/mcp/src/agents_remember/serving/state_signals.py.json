@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/serving/state_signals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Compound-idle membership follows direct task containment and one current manager generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:8d93c05bae0034ebde778a4054391754ef30c16ded7497e527bf8713e835dc62",
+            "locator": {
+              "kind": "symbol",
+              "name": "compound_idle_sets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous or malformed subjects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:dcdf93f6d3bd05f0d7350c6e38a9ab2e4fea5a1ea36a2b0ca5b4e24b18869009",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_state_signal_findings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:177ec8f609726f1ba26e563832534b67f4a4176d59cfd1446d74810f489b72c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_safe_state_signal_finding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A held state-signal row is suppressed from the generic redelivery path while its resolved target is running.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:5c05193b09b570aa25efa992b7c35c52898a7e2c33731ceb2df9378afc47e50b",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_signal_held_on_boundary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Non-reaction evaluation uses topology, current-generation identity, and durable landed rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:9a4bd54c6a05516bcfc739efd7f477f30165143ec5ed6e40d3263cfb796c1b54",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_non_reaction_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Non-reaction subject expansion adds all reviewer altitudes without widening unrelated role scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:2d4282ba42366c232b54c608828ad8d4c2011860b08b751c3b10593e76f77720",
+            "locator": {
+              "kind": "symbol",
+              "name": "_notifier_subject_owner_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Boundary drain admits a pending row whose target turn boundary follows its last recorded attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:9ce753f9ac4c6a30f31fd16f41f424684e8eb60116bec7d2b2081317eaeeccca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_boundary_follows_last_attempt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Boundary-drain eligibility for a no-attempt row is state-signal-scoped; the sweep reuses the same durable pending row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:e495a7494a950556a4c4dcad9297eb9a935508f5c997626f0e64348022cfa631",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_boundary_drain_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One canonical ask identity (terminal outcome + evidence id) shared by the emitter, the coalescing lookup and the action-time marker guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:5b0a324a08acc7c2b53ac6edeac23ff051cdaa451a84cdeba574197d26de81f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_signal_ask"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

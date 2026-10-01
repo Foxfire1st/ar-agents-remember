@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The focus-model suite.\n\nAnchor: `describe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146fd883ca07ba977ec4c76b484b166e4a6e2f7b",
+            "content": "sha256:bc56a8d844c684ffb14e5e0b6a52233a8ee7d65dda5c20ff1f076b56ed1c26cc",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

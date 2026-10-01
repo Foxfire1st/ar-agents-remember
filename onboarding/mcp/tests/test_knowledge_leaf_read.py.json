@@ -1,0 +1,321 @@
+{
+  "path": "mcp/tests/test_knowledge_leaf_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement.\n\nAnchor: \"The family-complete leaf read (MIK-R01) and the obligations L01 carries from L02.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:6d3e38db46af27d1258327d4e977b936de33965e4f5fddddce42c892ad5bb6f8",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A root with no commit refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:3ea401a03a43b57e7385951a8a85d185b62fa5cd8283e4a2cb562952a132efee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_repository_root_with_no_commit_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A leaf walk resumes at its code tree, with no path in the token.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:5a71216510badfcfe86be5efdd077a9490856e1b6a13a05693ce39b7721a91c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "More than one queue of seeds refused by name within the threshold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:d508d6891a52082aa93efcb1f2e6f0c763d6bdef112b0b7bfa352d4941c1e5f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tail_longer_than_one_queue_is_refused_by_name_within_the_threshold"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:d1757747966b5958b8fddc6f7b0917bf56b35d394574d00a6d0aeffe8735f175",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DEEP"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A tree projection carries every row of a view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:261bfa98268dee4857bf2f94fc31053103d99af08b07c9fbbbad0c42c6f98e29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tree_projection_carries_every_row_of_a_view"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The derived reference title.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:9ec38008dbe37f6963594f3b765bfd7237a7cfd3e7406ae97cda89d48b149956",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_derived_reference_title_is_the_first_sentence_cut_to_a_fixed_length"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Identity seeds keep the scope read beside the leaf, and the mixed-block policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:b86ea1b9064470226fe929445c9e38ac7e03244c5505d282b5d188ac17dc4374",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:8699c5e208e5a1531acbd9a9afd66b121eb76606c1bd79783da02e47708059ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk_entries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_knowledge_leaf_read.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The converted-tree world written through the text-file layout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:bbf13c6de35ed7f2befbe434996bfd4ad5e1b15c45f01bb9989759ae346fb6c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invariant"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:2c122f528f9a18c38353aff398a31e4e0048423461bd20d3c356d94d65ecfed4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:1550c5e20aebf17732d975b2c5c6c660114e5d4766df68e6494dc2ae622bdbaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sidecar"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:289325e65c692bbe9ce0bac0210d18ef675508a57df84ed609268473ca74b8b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Selection, order, reference row, frontier, the chain rows after it, counts and policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:719c231d5847f39cc891886dad2420c64c2dedf063940980409a9f28b9bd61e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_selects_one_family_hop_in_the_declared_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "One selection on both surfaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:7485b28c93f60d10ce62b680ae4c3f287d4802c374dcd7202f58a4ea148dc58f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_surfaces_return_one_selection_under_one_manifest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Family names in the `invariant` view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:7eab63efaf85ccf45d87510d5f750c82a7a67387606df624f2661f9a41894b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_invariant_view_names_its_families"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The conforming example in one response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:e7bffd1477271ca35c373791f6bbf6d9829d4af2be466e90f740c6139d739496",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_conforming_example_returns_the_whole_family_in_one_response"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "MIK-R05: a path without entries under a route is a page of its chain rows, stating `registration_absent`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:42f22a52bc23231200bab37cd394f75fd4c8cac97f90ec086cac1ffea41c7de0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_without_entries_still_returns_its_route_chain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A path with no entry and no governing family refused on both surfaces with its `routeChain`, and refusals naming the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:3badeaac9a49dfb95516547d9d09a1b2cd66a699c1167c69f5ac14c1a56b178d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_absent_and_partial_states_are_named"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A partial index named on both surfaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5329cefca05e80bb81e4876eb652c8fc285ca24c",
+            "content": "sha256:d71d4320e9264f2d437969f53cc6006f051278fa90a91b30bc196ace704d784c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_index_is_named_on_both_surfaces"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

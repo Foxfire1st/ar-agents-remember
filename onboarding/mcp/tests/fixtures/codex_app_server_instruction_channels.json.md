@@ -1,15 +1,5 @@
 # mcp/tests/fixtures/codex_app_server_instruction_channels.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/fixtures/codex_app_server_instruction_channels.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](../overview.md)
@@ -54,37 +44,22 @@ remains evidence about **that** schema; it is not the contract for this one.
 
 Regenerate on the next pinned-CLI change.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved source registry.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The per-request instruction fields are recorded, with `turn/start` deliberately empty. | "\"instructionFields\"" | mcp/tests/fixtures/codex_app_server_instruction_channels.json:5-5 |
-| The thread-open response's own observation field is recorded. | "\"threadOpenResponseInstructionFields\"" | mcp/tests/fixtures/codex_app_server_instruction_channels.json:20-20 |
-| The fixture supplies the case that pins the delivered instruction parameter. | `test_instruction_channel_is_the_schema_supported_thread_open_field` | mcp/tests/test_codex_capsule_delivery.py:296-315 |
+- The per-request instruction fields are recorded, with `turn/start` deliberately empty. [1]
+- The thread-open response's own observation field is recorded. [2]
+- The fixture supplies the case that pins the delivered instruction parameter. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Generated from the external Codex CLI app-server schema.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Generation provenance and the pinned version are recorded in the fixture itself. | `cliVersion`; `schemaBundleDigest` | mcp/tests/fixtures/codex_app_server_instruction_channels.json:3-4 |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: created onboarding for the installed-schema
-  instruction-channel fixture, recording that it is the independent side of the wire comparison, the
-  `turn/start` absence the lifetime design rests on, the expiry contract, and the regeneration path.
-  `governingOverview` is `../overview.md` (the route-local `mcp/tests/overview.md` the census names as
-  this source's nearest governing route) rather than the grandparent the sibling
-  `codex_app_server_0_144_3.json.md` card points at. Verification metadata stays pinned to the last
-  committed source (`c1dbebf8`).
+- Generation provenance and the pinned version are recorded in the fixture itself. [4]

@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/review/markerReturn.file.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The per-file response and its two hunks.\n\nAnchor: \"file_classification\"; \"\\\"start\\\": 124\"; \"\\\"start\\\": 210\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e545e68c0211bca9d83a53b806208e48eb28623",
+            "content": "sha256:2bafc0621b09482aaf1f2c7237eafbe2b3b20bbf446c3fab40069148365dfb08",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two knowledge sides, both indexes complete.\n\nAnchor: \"knowledge_sides\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e545e68c0211bca9d83a53b806208e48eb28623",
+            "content": "sha256:1a52ab087644a048512ddc6684d3115a2b31293efa58a7a786b5698eb0e512aa",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 382
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerReturn.file.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9476cdf46a177d23b4fdb8d261bbb6c4e64e3bf9",
+            "content": "sha256:2402043f890a48a9f8695f17edfe877fde6906f72b7ec33bd5039f7e8cb6bad7",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/panels/review/markerReturn.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,115 @@
+{
+  "path": "mcp/tests/eve_fixture_model.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The live fixture starts this stub and points the runtime at it, and is the only consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:8c4aaac4eac2ff5483870619e1e7321b61e9f5a7ea39d1e486af5c441cfeb853",
+            "locator": {
+              "kind": "symbol",
+              "name": "LiveFixture"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:bb41b2064a0808ed4834f8c5a889f90d95c83bd249e2a31f42c331a6c3938a6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:db083775cef65afc1ec7133318a6670e5af95d4f3d59fdc00968b1c25816b170",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The runtime application reads the provider base URL, name and key from the adapter-owned launch environment.\n\nAnchor: `createOpenAICompatible`; `AR_EVE_PROVIDER_BASE_URL`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e7657e36f886ab4d4ed61f8016f36e1ec6a778",
+            "content": "sha256:95bca4737efb9824dd283e87a03210d4affb33f40a7db01001b5789adb273828",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "eve_runtime/agent/agent.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:d1ae8eb6e2857ddd6e1458ee218e68d55a2347e3b08c4ac683269c9a5e07c06d",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The adapter's launched runtime is what actually consumes this provider, so the stub never appears on a production path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:65f4d062b6c46ef53987340bb549a1deef96b65b95c1206dc4f14d09473f08ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRuntimeProcess"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The stub imitates the OpenAI-compatible chat-completions API, and the runtime reaches it through the pinned `@ai-sdk/openai-compatible` provider.\n\nAnchor: \"@ai-sdk/openai-compatible\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:08c5a2314f066536647ce65cfa374665f22e4f762f74cc4cc4c7a923bcac826a",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

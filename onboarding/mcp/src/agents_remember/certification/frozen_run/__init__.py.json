@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/certification/frozen_run/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package initialization is documentation-only.\n\nAnchor: \"Retained certification-run contracts and exact object references.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a0c6f6e1ff87a635f0e3d29f4e6c23184feceb8",
+            "content": "sha256:723bb78dd18acae17c94c8ca0661c42a6b80872b5a692c671a1cf51a0adf89bc",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

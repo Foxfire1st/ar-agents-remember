@@ -1,0 +1,398 @@
+{
+  "path": "mcp/tests/test_review_route_refusals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The docstring's own statement of what the module is (the fast transport contract, driving the real route), of the two shapes a refusal arrives in, and of what it deliberately does not re-derive.**\n\nAnchor: `register_review_routes`; `KnowledgeReviewResult`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:60014d7a2706ed04c0de4a2313bcd8d43c6964fa11295dcf96334db5e125a50e",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:d8e919e4799b4163676b414429257ba814fc264487c224041bbc7720543a6561",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:bdd27657dd148550586a608e8502f05a2b544edcbdca14e865911f3202eed0fc",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:a41315a2b25788e91b87702ed18fc9a3dfe6988430e0ff3a312c43382f59f52d",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The `AuthorityError` mapping this leaf made actionable.**\n\nAnchor: \"test_a_refused_authority_carries_the_action_that_clears_it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:eaa7146cdaf7e0d4ced0cf60a82df9bd5b1b51c8ff4c9ff108406b4a5509ab2f",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The `FileNotFoundError` mapping this leaf made actionable, keeping the path and adding the action.**\n\nAnchor: \"test_a_missing_path_names_the_path_it_does_not_hold_and_a_next_action\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:8ee703879633836f7c4d124c17180e5ae380329daaee75859c00f22c4428d38c",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The packet's conforming example at the transport: `404` + `candidate_dataset_absent` + the whole refusal, with no `payload` key so it cannot read as a degraded success.**\n\nAnchor: \"test_a_typed_refusal_travels_whole_in_the_body_of_its_own_status\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:a41315a2b25788e91b87702ed18fc9a3dfe6988430e0ff3a312c43382f59f52d",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The status family derived from the refusal's own code, driven through the entry route.**\n\nAnchor: \"test_the_entry_route_maps_each_refusal_code_onto_its_own_status\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:75f78e2f295596fa1e817a27968cb0661394c7455b896b2b70bfa369a1e3bc0f",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The transport this module pins: the one actionable refusal body builder and the one 400/404 mapping both adapters reach through.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:96773af1d825e27ff84469b7ab2145d6f3aa8914644c7a27f5a1a0b943144762",
+            "locator": {
+              "kind": "symbol",
+              "name": "_transport_refusal"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:1cc85c851604ee4ca8b137bd8590fb591c073c8be26c824d93ac866c3364c194",
+            "locator": {
+              "kind": "symbol",
+              "name": "_port_outcome"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:ef6e1b55aece9a15c3bec5a918e3b050bbcb3a0e514ffa05dff9e7cddd9bd5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AUTHORITY_NEXT_ACTION"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:e427c2f50687224b5cbca6c4f60658d87324deb3d248450f678ce8aa53646209",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NOT_FOUND_NEXT_ACTION"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The result-to-status mapping the parametrized case pins from the code's own side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_for"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The lane row that puts this module in the hermetic unit population.**\n\nAnchor: `unit-regression`; `test_review_route_refusals`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:a1a9756cb36be0680f8f8c3372c162801fe0abb626ecb157cf81858cd27a37e6",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The client that reads these bodies whatever the status, which is why the status family stays the route's own contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
+            "content": "sha256:a7bc0043eb876ab57a01745946b74e720cf5875e15f479a41be9803d4677c9f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "getReviewJson"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
+            "content": "sha256:271d6b7623337a09551756c4d7ab7ae9e32ec8f92f20d40bf9ff29ed2769205b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewFailureToken"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real route constants, registrar and typed models under test.\n\nAnchor: `KNOWLEDGE_REVIEW_ENTRIES_ROUTE`; `KNOWLEDGE_REVIEW_ROUTE`; `register_review_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:d8e919e4799b4163676b414429257ba814fc264487c224041bbc7720543a6561",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The lane marker that keeps this a hermetic unit module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The task context, the recorded subject, and **the module's own definition of actionable**.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:6c2317f6ae7a3a7a65e662ba6a45ceb582959bdeb4ddddac77242e746e33e7e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:d2825304b464d7cde60743b159e1c4a654fa9f4866ceb6f8e5052371c73df7cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBJECT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:874b037984507799b35d3410ee30957ef204329343f8872f416764a641be4592",
+            "locator": {
+              "kind": "symbol",
+              "name": "ACTIONABLE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A configuration naming no real root, because these routes resolve nothing from it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:ce99886129768a176e5142d3a5b26d8ce030610245505521485dfba20ba4cbd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_config"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The one app builder: a bare `FastAPI()` with the real routes registered and the ports injected.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:3117a5e4c783497749141e19539f5b608980f91d71e9ad01791a90ad724d2c78",
+            "locator": {
+              "kind": "symbol",
+              "name": "served"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The typed refusal builder whose own action the cases assert survives the transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:5e5d695f1399d071076b7d29f946ae81815ca0fad81f902754032ec4f491ac8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "typed_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**An unwired adapter refused on both routes with an actionable body naming the composition root.**\n\nAnchor: \"test_an_unwired_adapter_answers_with_the_action_that_wires_it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:b9bf1bd6f8212e68d4a351b088bc0a783022861caf179ee837cff867f09b5626",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**An unadmitted selector refused by the transport itself before the port runs, naming the input and both admitted kinds.**\n\nAnchor: \"test_an_unadmitted_selector_names_the_input_and_the_admitted_kinds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3036c7fcb571f1b9f1cd796189ff0f9884a71c",
+            "content": "sha256:bb3c76b5a3338e7962c6fca4ead02564abeb703649ceca573687e10346344cb1",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

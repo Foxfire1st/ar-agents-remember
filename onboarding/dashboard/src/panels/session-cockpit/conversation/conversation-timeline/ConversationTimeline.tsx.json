@@ -1,0 +1,165 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Feed ARIA, focus pinning, bottom-follow, older paging, widget keyboard nav, the scroll-key set, run collapse.\n\nAnchor: \"export { OPERATOR_SCROLL_KEYS } from \\\"./measurements\\\";\"; \"export interface ConversationTimelineProps {\"; \"honestly known (else omitted; paging copy says \\\"total unknown\\\"). A roving tabindex + a focus-pinning\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "678a26102901492941425c3a49304020b187637c",
+            "content": "sha256:ea8012a20100ac1ca57ca3e6e9dc8e93f8a15822b80534c551d46266b38ae4f6",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "678a26102901492941425c3a49304020b187637c",
+            "content": "sha256:c609576ade197c4f54123e7dd0f64f2ee02c803a79c25953412fe2399dad12dc",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "678a26102901492941425c3a49304020b187637c",
+            "content": "sha256:124581e4c70bfcda1550eb352fd63713135c31cbded8523caee687bba7b6dbb0",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pure unknown-vendor run grouping this feed renders.\n\nAnchor: \"describe(\\\"groupUnknownVendorRuns (F10)\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a78c3d313e5a6a2611810a8e05f9c046c2eb125",
+            "content": "sha256:058ec78720461b32d264a961a49b5cbbb257f4419d8aba51238a613dc45e0038",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/collapse.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The kind dispatcher + stable accessible-name helper per article.\n\nAnchor: `ConversationItemView`, `itemAccessibleName`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b156fbba479b8bc6b33a0c1347cdee530f878b",
+            "content": "sha256:fca763ba027acd44b32b62e0f05001857d82abed6b01ff4ca32c859cd908fd1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItemView"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50b156fbba479b8bc6b33a0c1347cdee530f878b",
+            "content": "sha256:bd8bc9a0b7b212ee3fe6b7f761227254cc3cec6bb5a2417b9bf73dcdc81b4adb",
+            "locator": {
+              "kind": "symbol",
+              "name": "itemAccessibleName"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The item wire type (`globalOrdinal`/`kind`/`phase`) the feed reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:dc580072cfe96fda01c3de42598e5bc2f81d32569780f998186cba1df463599e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItem"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The surface that mounts this feed, owns announcements + paging callbacks, and hijacks ArrowDown into the agents line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The feed ARIA + default-closed diagnostics render suite.\n\nAnchor: \"ConversationTimeline — one navigable role=feed (R5\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa535ac4ad4fc146f8f3ae1130a08816b6459968",
+            "content": "sha256:480569b29c46516a0d1d673227202c674e0419685af3ba8ad775746df4f189d6",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The surface keyboard-contract suite pinning the ArrowDown absence from the scroll-key set.\n\nAnchor: \"ConversationSurface agent focus\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c01668b78549f9c042c847a61302c545d904c62e",
+            "content": "sha256:0dfd4275e30c6d79160bfcf90b2f470f0d52218cd938fc41011aa012bd3eaed5",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

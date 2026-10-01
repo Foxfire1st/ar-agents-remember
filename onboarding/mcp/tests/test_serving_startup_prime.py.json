@@ -1,0 +1,155 @@
+{
+  "path": "mcp/tests/test_serving_startup_prime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One contained pre-serve terminal-catalog observation attempt through the drained helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:08ffe06cd34a335040c8b9023f595a73cb1e4ffa2244d5f421ea7c95b957232a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prime_terminal_observation"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lifespan runs migration, then compaction, then the prime, then the projection prime, then creates the recurring tasks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:bf37d7527b4e3d4e69e7f2fa160ae710eae7c33dc4f5586b09917dd3d5ea29e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serving_lifespan"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The steady-state owner the prime shares its canonical entry point with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:5cb4bab997fd02e9eace95b13b78a59c4a29d144dc7bc2e7231c5207d1f62143",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observation_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The off-loop drain-on-cancel boundary the prime and every later pass both go through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:85e9dbca2c7d66b23685761ed1e3feb8b6e09f8a3ce65f843af8de569c925f77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_to_thread_drained_on_cancel"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one canonical observation entry point both the prime and later passes call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:ecf9805e5170a4d00f3b6f3490b33284da3f03a5a6d367381d719c50eb6ed2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The six startup-order cases and their `(step, sweeps_completed)` witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b4b3a42116315ebb7f8c744e9ee910cc0dfc2aa",
+            "content": "sha256:400d26bffb2c677673d0bb8f2dd8ffd942bab146c0398401e309eb17a14bbfaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingStartupPrimeTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared fixture whose `startup` record and `_Gate` this module reads and reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41e8b9949999c510c9bc4f94cbf8a951fc59d0d5",
+            "content": "sha256:14b8dce2ded758d7f7f27e0f64fc88f84e43ee0667dad8c51b62210131fcdf31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ServingFixture"
+            },
+            "path": "mcp/tests/test_serving_observation_loop.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "41e8b9949999c510c9bc4f94cbf8a951fc59d0d5",
+            "content": "sha256:172dd9d448c7d8cde643c12e7f7e3ce5b3b209a629afbe04cbdbc93e5c878b63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Gate"
+            },
+            "path": "mcp/tests/test_serving_observation_loop.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The candidate registers this module once, in the explicit unit-regression lane, one row below its sibling.\n\nAnchor: \"mcp/tests/test_serving_startup_prime.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:63b3b851a9c384eba059444b64dcfac87911b7ed13c8a64d726eabe19d226c84",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 234
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,157 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/responses.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `ToolResponse` strict envelope base (`ok`/`operation`/`tokens`).\n\nAnchor: \"class ToolResponse(ResponseModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:d98ec066125f6127dbbe8a52abe5b660f815bea33d53be2a2e63b52821b7a542",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `State`/`Phase` Literals reused as response field types (declared here since L9).\n\nAnchor: \"State = Literal[LiveState\"; \"Phase = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:44c8d45e3b5599ef3ead09d582379cfa8aad059442a8ba986d59a79c55752845",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:456bb986c16af0114076552af2472d3ca010830a6f0e8a0cddff06106786870d",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registry maps lifecycle signal tools to their declared response models.\n\nAnchor: \"\\\"lifecycle_start\\\": LifecycleStartResponse,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:bae7e48d786c7b8d76860e19854898dfaabc0b87365f6032e6d800e2fb512720",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The public response-model registry filters internal compatibility tool names from the complete model registry.\n\nAnchor: \"PUBLIC_TOOL_RESPONSE_MODELS: dict[str\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:6a8ad15391153df8c0e8ef6d3e158e1e76f0d70bbca93d7df82029d6f0b2f248",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The builders that assemble payloads validated against these models; `lifecycle_start_payload` fills `frontHalfRundown`.\n\nAnchor: \"def lifecycle_start_payload() -> dict[str\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "380deed8b87f71a8f66e40a44979f7cc1a9f7d8e",
+            "content": "sha256:7c115e192a07d7d96233ccd46178d6fd220032a2968f54f5b790ef5fb6ca7c44",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Owner of the `FRONT_HALF_RUNDOWN` list content emitted as `frontHalfRundown`.\n\nAnchor: \"FRONT_HALF_RUNDOWN: list[str] = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
+            "content": "sha256:9e6446f008b640464c06717e336171792d5f6ed0120c8940d31f9d5fbadeb221",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/application/next_step.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The persisted-record peer these are deliberately *not*.\n\nAnchor: \"class Event(BaseModel):\"; \"OBSERVER_EVENT_SCHEMA =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:77305b122ad15cacc54eac6fc0d8dba20a7e6dcfcafa884335ad11c49c9838c4",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:b475a5b8491fe6b783223d7c1b26257d74dddab44165049dfa45f767536b96ab",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

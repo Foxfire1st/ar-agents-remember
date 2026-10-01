@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/operator_inbox_posts.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/operator_inbox_posts.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](overview.md)
@@ -53,19 +43,19 @@ never required for ordinary agent replies.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Post-time owner rebinding preserves a complete canonical structural address. | `_post_address` | mcp/src/agents_remember/serving/operator_inbox_posts.py:110-149 |
-| Append is the durable commit point before compaction and expectation publication. | `_persist_post` | mcp/src/agents_remember/serving/operator_inbox_posts.py:232-248 |
-| The shared post path derives, stamps, persists, and delivers the row. | `post_operator_inbox_entry` | mcp/src/agents_remember/serving/operator_inbox_posts.py:268-375 |
+- Post-time owner rebinding preserves a complete canonical structural address. [1]
+- Append is the durable commit point before compaction and expectation publication. [2]
+- The shared post path derives, stamps, persists, and delivers the row. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
@@ -90,26 +80,3 @@ The registered tool's response model is unchanged in name — it is the same
 `mcp/tests/test_tool_response_conformance.py::test_operator_inbox_post_sprint_owner_refusal_is_a_typed_payload`,
 which drives the real tool over a real catalog and asserts
 `produced["status"] == "sprint-owner-required"`.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the decision-item refusal now returns a typed envelope and the success path sets `status` (`T15`). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
-
-- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
-
-- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: recorded append as the explicit
-  durable commit point and prohibited treating post-commit maintenance failure as proof of absence.
-  Verification remains closeout-owned.
-
-- 2026-08-25T20:31+02:00 — ARSPAWN-L2 quality pass: extracted canonical-address recognition so
-  `_post_address` remains below the complexity limit; behavior is unchanged and citations were
-  regenerated against the same candidate. Verification remains closeout-owned.
-
-- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: complete structural destinations remain
-  document-and-role-only through persistence; current occupant ids stay out of the durable envelope.
-  Verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `operator_inbox_posts.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

@@ -1,0 +1,273 @@
+{
+  "path": "mcp/tests/test_knowledge_crossing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The step 5 check for a pure plan (test-only).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:89ecb57997c8062eb2e20887b38be38a82aa56279e44562fe348409875a7833d",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_plan"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Overlapping edits reach the curator; a failed step changes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:4e4830a84005983da07a3c5589b501f73475627a3565c79bb4c4e1725268f4fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Its lane row.\n\nAnchor: \"mcp/tests/test_knowledge_crossing.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "119efc5d27e3b25fea633405ec5995d2fdebda87",
+            "content": "sha256:33b4b865c5c5115dd7a22ed4473ff30e50bbc9a1ec3048676cad3730f5be890a",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A record both sides changed is resolved at one more than the higher side, on a converted and an unconverted own side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:2d5a2622dbbef6146c60cda6f9e170aee71c3676175792825f24c3964eb33697",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_both_sides_changed_is_resolved_at_one_more_than_the_higher_side"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The writer compares an unconverted HEAD through its converted base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:2d725e4fb04dce11fb1a3ea1efbdbf994c3716be4bfcb804a064de312f082d5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_compares_an_unconverted_head_through_its_converted_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A trailerless HEAD converts at the gate's code base, and an unreadable one refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:00d180445cc0a5711a39f10c4368491be8f1d35a6ce11cc0b640ab1d09885520",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_trailerless_head_converts_at_the_gates_code_base_and_an_unreadable_one_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A conflicted crossing cancels cleanly and crosses again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:86ec96fc2a1524fb696c5a3399245f39313121f04f4f8dcd37d49df9efd81c3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cancel_and_cross_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The item rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:ace6564228b1d2dc12a39969501745b0a8d6eed5abe71770fa2c141008071299",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_items_merge_by_their_mechanical_and_authored_fields"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A reference-number collision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:bc8ade1a2f865ad64c622fef8ace488caa3ced7ebfa6616268ef29887bfb6b37",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reference_number_both_sides_added_conflicts_even_when_the_markdown_merges"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Markers first, conversion, merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:0285370986170d8107001d48f3fcfcca38cb54e7991e260114553e2ec76086c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Long markers in one valid row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:a4429208556043268c2b04d6fb8e5c19deb7da5d2d734fe98531175c83ec4064",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_many_long_markers_move_into_one_valid_history_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The master-line crossing history file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:5f7ac04d3e3081631c06c2ab56043490a06a04dd8a5c037261ec3df453adc1b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_record_conflict_opens_a_crossing_history_file_closed_at_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The converted base at the base's own code commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:710ffa62bab4ded60e4038a8f12ebab029d34c2cbb3989aa471584da8261a0af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_commit_route_validates_against_the_conversion_of_an_unconverted_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The managed crossing sync, and an ordinary journal without the new key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:c47e053eeef9b1a79299c2fbaf4b07dbb2a073343d67ef58acba8ee517470239",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:aa8d108d95b4b9aa26c70e083f1ac612dd6b680c64208876846fe842603f7546",
+            "locator": {
+              "kind": "symbol",
+              "name": "_crossing_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The unconverted first sync carries no worklist; the crossing sync's worklist is complete and persisted at the new base pair.\n\nAnchor: \"Both memory sides are unconverted: the sync recomputes no worklist\"; \"the completed sync recomputed the now-converted leaf's worklist\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:276ad4866c7b9e16fd72105eafe8573d2ca998f0937efd3c70cea09a033cc9f1",
+            "locator": {
+              "end": 621,
+              "kind": "line_range",
+              "start": 618
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:b89837e41a09ea1e53535a391bf9f21a470fd7a4ffdfd806128382385d688d85",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 692
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

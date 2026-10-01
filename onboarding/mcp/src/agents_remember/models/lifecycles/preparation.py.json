@@ -1,0 +1,130 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/preparation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Memory reuse binds exact raw HEAD/tree plus certified content and cannot simultaneously request a new write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:0051d8016387db160b7800ed421e521a66da481f31d1c7a701f1909510b950a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparationLeg"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:2588d432d884dab5a17be77145ce76c1edb261ab8b797042bb046e38fe0dad6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "certifiedContentTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_canonical_preparation_path` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:3ca00f6c27a95c34d7774f349228688b70d9bfc25a9873ce0b3876003902eafa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_preparation_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ExistingMemoryPreparationProof` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:8822d274a6b0f07f882cf4736a6c1acb8a3bee74f2485578b29d40c9662aee3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExistingMemoryPreparationProof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_one_header` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:f8e25a3e3380437a36bc534e6afa5fb75117312dfc0c9db258dec28b3afb3c75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_one_header"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_identity_date` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:814c12d562b9310551c6cbdfb44e61be8fbec9a67326f484b6964abeed724f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_date"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_require_output_headers` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:3a4ea2fe275b00d48f81f456768b6e10a03017c91aa2ab805091933c7ec2b333",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_output_headers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`require_prepared_output_matches_intent` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:a6cf5562d10452b2f9419bef1d6962297a8e7be44aa6083789db7a2895c6cc8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_prepared_output_matches_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

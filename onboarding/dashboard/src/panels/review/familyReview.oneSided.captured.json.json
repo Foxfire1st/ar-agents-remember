@@ -1,0 +1,285 @@
+{
+  "path": "dashboard/src/panels/review/familyReview.oneSided.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The envelope: the one review read the surface makes, its surface version, and its state.**\n\nAnchor: \"\\\"operation\\\":\\\"read_knowledge_review\\\"\"; \"\\\"surface_version\\\":\\\"knowledge-review-surface/1\\\"\"; \"\\\"state\\\":\\\"review\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55a804a650d31fa0db612703bf35a620eb45c595",
+            "content": "sha256:16e24767eb5556bd238ff195b8a6714b8ff82e3b05a9f1a5dde2f0783d3ad134",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.**\n\nAnchor: \"states a member whose content the page did not carry as that, not as a one-sided statement\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:355d308f8ff84cec2634ddce8cf1ccbd2593fa0bb8e2cca4e24a57afa420031f",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 581
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.**\n\nAnchor: `not_on_page`; `one_sided`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:0636b12f71ae1af776e17acbe83718889b60b9416fd17890d23068376b3b251a",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberComparison"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:cfa4b68d9af84f957409ebb3a30e1c0e707d2893ce2cd52547f61bb5e49cf706",
+            "locator": {
+              "kind": "symbol",
+              "name": "oneSidedMember"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.**\n\nAnchor: \"review-family-member-state\"; \"statement not carried on this page\"; \"review-center-member-not-on-page\"; \"did not carry the revision content\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:3c81eeb5193a4bfede6dac40dfc553a4dd9a799505e37862788afefc6f740df7",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 488
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:e14cc8f6c53e103dc22f30d936103f19f5fb6e78eda5a9326dcb089465d0282e",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Roster context does not select a primary statement pair; the subject owner supplies that pair, while an unaddressable member remains context.\n\nAnchor: \"export function SelectedStatement({\"; \"function UnavailableMember({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "content": "sha256:9635725047309d8545115e099e722d59e8889d6751caa802181b917a1bf43821",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:721cdf0c9f1cceb9e4c2d88ec9142ca0306cf2f613409284001ac09746aa5d77",
+            "locator": {
+              "end": 882,
+              "kind": "line_range",
+              "start": 859
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The enclosure the bytes were recorded over, the one normalization, and the scratch directory the capture ran in.**\n\nAnchor: \"\\\"leaf_id\\\":\\\"260921-icr-l1\\\"\"; \"review-source-endpoints-fixture\"; \"<repository_id>\"; \"l31-one-sided\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55a804a650d31fa0db612703bf35a620eb45c595",
+            "content": "sha256:16e24767eb5556bd238ff195b8a6714b8ff82e3b05a9f1a5dde2f0783d3ad134",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The page block: a continued page of the before side's walk, with its returned/remaining/total arithmetic and its scope.**\n\nAnchor: \"\\\"collection\\\":\\\"family_members\\\"\"; \"\\\"returned\\\":5\"; \"\\\"remaining\\\":6\"; \"\\\"total\\\":11\"; \"\\\"page_size=4\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55a804a650d31fa0db612703bf35a620eb45c595",
+            "content": "sha256:16e24767eb5556bd238ff195b8a6714b8ff82e3b05a9f1a5dde2f0783d3ad134",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The family context and its counts.**\n\nAnchor: \"\\\"family_context\\\":{\\\"detail\\\":\\\"this family context is partial\"; \"\\\"membership_rows_total\\\":8\"; \"\\\"unique_member_revision_total\\\":4\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55a804a650d31fa0db612703bf35a620eb45c595",
+            "content": "sha256:16e24767eb5556bd238ff195b8a6714b8ff82e3b05a9f1a5dde2f0783d3ad134",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The one uncarried row of the whole body: its revision and member identities, and the state that says the row is recorded while its content is not on the page.**\n\nAnchor: \"dccb2d50-628c-4f00-aa46-e3ba98c46874\"; \"9b397d0d-93ab-4c8b-949a-546685c06e31\"; \"\\\"state\\\":\\\"content_not_on_page\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55a804a650d31fa0db612703bf35a620eb45c595",
+            "content": "sha256:16e24767eb5556bd238ff195b8a6714b8ff82e3b05a9f1a5dde2f0783d3ad134",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The other one-snapshot fact: two unresolved attribution rows, each a record held by one snapshot displayed as present outside the selection.**\n\nAnchor: \"\\\"recorded_reference\\\":\\\"0133d688-6f67-467a-a24a-68b587b602c3\\\"\"; \"\\\"recorded_reference\\\":\\\"2c2e8b4a-d6c9-4d69-8a0f-c397336befca\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55a804a650d31fa0db612703bf35a620eb45c595",
+            "content": "sha256:16e24767eb5556bd238ff195b8a6714b8ff82e3b05a9f1a5dde2f0783d3ad134",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The receipt row for this file in the MIK-L31 re-capture.**\n\nAnchor: \"familyReview.oneSided.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146eb12e3f11da3c7cd7448c107f8bda4a135c6a",
+            "content": "sha256:ac10dbabd07040d2383a599c857a1cbef5a84ce8bd6844482268156565d3d469",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/panels/review/familyReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one constant that binds this body to its case, and the runtime narrowing.\n\nAnchor: \"const ONE_SIDED\"; \"function firstFamilyId\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:29b6caa1033ba91fa6ee4b3b76a7d1fb79a6e61db7706f29ba3c34c6ba1b3857",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:e9880751ae765a5cd7311a6bdfd34fb45abbfaae1b124652acb31b63c26f5a80",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.**\n\nAnchor: \"These are not browser evidence\"; \"Dagger-only\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:77daab791b8d46dc60365f21f54af89ae2e273a412aa605db47feafbc341cd95",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/source_selection_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate identities and changed paths are explicit fixture values with a canonical digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "979a9600faed1e18f8b8feb18ad794e073f80aa7",
+            "content": "sha256:d5fd0de409b04a4e9070bd6c3e8ee51f139cdb49836dc2cd6f2d0cefea130922",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_selection_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Targeted applicability is compiled from the declared fixture dependency prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "979a9600faed1e18f8b8feb18ad794e073f80aa7",
+            "content": "sha256:3209c0cbe2d865a9e6b3817108dbd6b88a24ef76fa8ae24bb2f5030a2b431328",
+            "locator": {
+              "kind": "symbol",
+              "name": "ambient_selection_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The writer emits typed selection to a concrete test input file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "979a9600faed1e18f8b8feb18ad794e073f80aa7",
+            "content": "sha256:6ef560cac664635622be902e4a2b979dbdfe34f5fb97e7f24a9f96c692b095ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_ambient_selection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

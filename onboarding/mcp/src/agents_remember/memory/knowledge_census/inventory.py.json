@@ -1,0 +1,132 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_census/inventory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A revision that names no commit is an unreadable baseline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59c73ccfe22c4f748e6c60c4da38c6790b5c9820",
+            "content": "sha256:a4c3c9f0f94783105515e95f61ae79408c6049398db25b161e8dde860da92b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A tree Git cannot list is an unreadable baseline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59c73ccfe22c4f748e6c60c4da38c6790b5c9820",
+            "content": "sha256:d28a77220a699dcc741275648f0593b8e1a9ed1ef20c30a66403d7be7af8f1d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paths_at"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Routes are the directories holding `overview.md`; the nearest governs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59c73ccfe22c4f748e6c60c4da38c6790b5c9820",
+            "content": "sha256:d33dc472bba8406ed17bc56a82ff310e7baec2b9423919c519236cbfd74e6946",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_routes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59c73ccfe22c4f748e6c60c4da38c6790b5c9820",
+            "content": "sha256:55a2adc339911a61106f7c9e45788ff5ced8b8900cf92ad26de52c2ed3d40ff1",
+            "locator": {
+              "kind": "symbol",
+              "name": "governing_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The mechanical inventory from two path sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59c73ccfe22c4f748e6c60c4da38c6790b5c9820",
+            "content": "sha256:2e457ef68dd1f78a4d3ada0109da5e928fb52643dfabbff66cde6cdcdf36fc48",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Pin the baseline and inventory it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59c73ccfe22c4f748e6c60c4da38c6790b5c9820",
+            "content": "sha256:0486f897e3514385ce6430a5f794328714fbc33ec279dc117a10e62aa7a01643",
+            "locator": {
+              "kind": "symbol",
+              "name": "take_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Inventory rows carry their governing onboarding route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:c9c3f729152f504b69db957bf4d8c4386e7e3da32906e2537a25808f438094d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_inventory_rows_carry_their_governing_onboarding_route"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Exact commits are pinned and an unreadable baseline refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:eabdfc5125ebe668e656f8041681703a2a8e3e2a4b69f13470ad4fb8959b6598",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_take_inventory_pins_exact_commits_and_refuses_an_unreadable_baseline"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,126 @@
+{
+  "path": "dashboard/src/data/setControlsCopy.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared copy and announcement formatters.\n\nAnchor: `setWaitingCopy`, `clampChipCopy`, `queuedChipCopy`, `setRouteErrorCopy`, `setResultAnnouncement`, `sessionAwaitingInputAnnouncement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:9cf652bfd2a1a42ff75e11c8ef3763e762de74b8c8da717526c3638b7fb61692",
+            "locator": {
+              "kind": "symbol",
+              "name": "setWaitingCopy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:06c936e8d8cbaab709efd6e71481aa6ed244bac4f290b7c82422d0fe33d7e7ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "clampChipCopy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:d7ff61a64740d60289af99d50e965604fdb5f4388cff22b2bce536a2300a75dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "queuedChipCopy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:1f1eae3485cd5613f8ee834baa0d7a890d14d48c5e02eea9daba22befbde505e",
+            "locator": {
+              "kind": "symbol",
+              "name": "setRouteErrorCopy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:bcfcda0ff9a58b5d5e5948088bc7e2b3c5c4a71d78e92e8c055cd8850cdf4094",
+            "locator": {
+              "kind": "symbol",
+              "name": "setResultAnnouncement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:f198da5608b3b99fd6340beb9d447c195279c6d9b6793a7f1f711cc8f249f12e",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionAwaitingInputAnnouncement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Presentation-model consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:5caeace12da70209e81af7e333c61a300a2be4b9f94b5fdee4e8c1d48266b745",
+            "locator": {
+              "kind": "symbol",
+              "name": "deriveSetChips"
+            },
+            "path": "dashboard/src/data/setChips.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:02e3356a5d9f0b8e56bfbc5c2994be11305313a350f33f4124148014dbfbc2e7",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "dashboard/src/data/setChips.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "I/O and live-region consumer.\n\nAnchor: \"The set-controls driver (260715-FEUI-L4 S1/S3/S4)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:b01b3804e54e6c1a4fe292da36904146229c8a09a47f4ddc270c9e661e08f1de",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

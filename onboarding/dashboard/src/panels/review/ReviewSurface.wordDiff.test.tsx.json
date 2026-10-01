@@ -1,0 +1,110 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.wordDiff.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The five real bodies the surface is served.\n\nAnchor: \"captured<ReviewResult>('gitTrees.family.captured.json')\"; \"captured<ReviewTreesResult>('gitTrees.cards.captured.json')\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88161394c6c5da9849b68814df49684caaf4ef53",
+            "content": "sha256:27644ac10e81c3acc6933009f55045741f6f76394b296eeb3184973373589403",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The successor revisions, including one guarantee revision whose text changes.\n\nAnchor: \"function successor(result: ReviewResult, tree: boolean, sameRevision = false): ReviewResult {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88161394c6c5da9849b68814df49684caaf4ef53",
+            "content": "sha256:e916acc9818b4ad73dfac93a9e8f7257460267fd3a5df36e07fa28a28895d56f",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fetch stub; every `/trees` read without `invariants` gets the leaf-wide body, L32's lane read included (it reads unavailable).\n\nAnchor: \"function serve(tree: boolean, sameRevision = false) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88161394c6c5da9849b68814df49684caaf4ef53",
+            "content": "sha256:47a0b0aa955e101da60257bb093c83ee54158df8ab41ff7debade0642148be91",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tree review's two passages, and the dataset review as landed.\n\nAnchor: \"word-diffs a tree review's member statement and family guarantee in the center\"; \"keeps the landed statement and guarantee rendering for a dataset review\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88161394c6c5da9849b68814df49684caaf4ef53",
+            "content": "sha256:4f55f2064002048aaa9645bd51b80a30590e6f41a9f1fff057ce4971e94ba8ba",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Review R1 F2 through the real surface.\n\nAnchor: \"never calls one guarantee revision unchanged when its texts differ, anywhere on a tree review\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88161394c6c5da9849b68814df49684caaf4ef53",
+            "content": "sha256:0deff1f88a6ee5203ac64505f0096f8b4d8c6d94147126fdf977b12cc06c9644",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The rail prop that makes the navigator compare bytes on a tree comparison.\n\nAnchor: \"tree={treeComparisonNumber(payload.limitations) !== undefined}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:8b8a282349f4220a28f862da92e4b94efbbbc191ad646aa3b70f1f1bfef63cea",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 619
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

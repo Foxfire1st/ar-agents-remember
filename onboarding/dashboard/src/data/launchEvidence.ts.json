@@ -1,0 +1,172 @@
+{
+  "path": "dashboard/src/data/launchEvidence.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The echo predicate, tier machine, tier senses, and verbatim bridge-error reader.\n\nAnchor: `hasLaunchEcho`, `launchTier`, `TIER_SENSE`, `verbatimBridgeError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:5d0f4a2baaeb2ccc3c8978baf88b991831463786a82bfa5631fa5c344dffdc51",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasLaunchEcho"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:ff76d7c1946f463adeb382f50b8dd834fd2846b7076135f308e8994403472584",
+            "locator": {
+              "kind": "symbol",
+              "name": "launchTier"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:c273c97a76797f7fd2433dcf637c84ca8ebd4309a623827258e6f8577c550cd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TIER_SENSE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:a483e0afb4eea7acbb35fce40c5c55a0ec81d65c545defc84bfe2b07f94e447c",
+            "locator": {
+              "kind": "symbol",
+              "name": "verbatimBridgeError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `EvidenceTier` vocabulary this returns (L2-seeded store type).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:cfd9da7e21731dd0396faa84aa2e44c22dad8de3776b32c261ba5fb470522cea",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceTier"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The requested-pair persistence this refuses to treat as proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:1beeaba3a897a711500f915b023490113c73f182d5de282f03a7d4f193835f96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_pair"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The badge rendering the tier word + glyph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fc6f58685cf5cd4c8322afba303663ece819053",
+            "content": "sha256:cc20f8248b0265959cd8ac941596ea26db23bcc9ca4c1f39d7710530e75ab023",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceBadge"
+            },
+            "path": "dashboard/src/grammar/EvidenceBadge.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Header derivation from row truth (`launchTier(session)`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5feca6c1ef45c47bfb13052a610fda7553e04905",
+            "content": "sha256:071e490ee058f77161433e0aa682a1982131b81fdee42438d1e73174076be58a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeaderStrip"
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5feca6c1ef45c47bfb13052a610fda7553e04905",
+            "content": "sha256:de2802d7f5e6096e0bc492ca3e9a406cc4d5b275a909e4c583ec04f08e0cfd4c",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The failed-launch banner consuming `verbatimBridgeError` + the refused tier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:bfe4aa300a42bd27e753eed83f14d79ac2ef9e116fc148e78e192f0cd2db564b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailedLaunchBanner"
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The exhaustive table suite incl. the claude-never-readback invariant.\n\nAnchor: \"launchTier — exhaustive controlState × harness × pair table\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ffc01ed45aa69d3b365b39705d4cbccb870c03",
+            "content": "sha256:71532eba7f459980e05f1ae9ac81effb8a981b345977be8a2055a13f63bd66ba",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/data/launchEvidence.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

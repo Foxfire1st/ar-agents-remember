@@ -1,0 +1,165 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/HeaderStrip.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "HeaderStrip renders identity, one model/effort control, state, leaf-only context, and diagnostics with freshness plus optional spawn-level provenance.\n\nAnchor: `header-leaf`; `header-provenance-level`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5feca6c1ef45c47bfb13052a610fda7553e04905",
+            "content": "sha256:071e490ee058f77161433e0aa682a1982131b81fdee42438d1e73174076be58a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeaderStrip"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5feca6c1ef45c47bfb13052a610fda7553e04905",
+            "content": "sha256:228e9b4ac6737aec35dd7667321cdce77eee01f0ead859d783f17f7c85de97e2",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Focused tests assert that leaf context omits seat-role text, model/effort is not duplicated with evidence badges or tier words, and spawn-level provenance is conditional.\n\nAnchor: \"renders the §1.2 anatomy in order: identity → controls → state → leaf → diagnostics\"; \"one plain pair (260723): the control carries model · effort; diagnostics never duplicate it\"; \"renders no provenance chips for a hand-opened session — absent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80203609074fd6c7a78de917b31ff95465667643",
+            "content": "sha256:3a6e1346dd2d4c960e31009a7957145f1957eedce74ef1ef0495ac9c71a0b71d",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "80203609074fd6c7a78de917b31ff95465667643",
+            "content": "sha256:86c297857c068a365cf603ffec84188473220ea1dd2852ce7af2453de1167136",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "80203609074fd6c7a78de917b31ff95465667643",
+            "content": "sha256:088560925c1bfb07ccfa6467fe892ad0d474f9202a040c8ff6be41341d5aa3f5",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The grammar + single dot renderer the state cluster uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5021374525ac7482aac8ff6fe6d35ca1e0635215",
+            "content": "sha256:9d15234b559e699861daf20a55c57d9cd9b0396312f13e9958c9c2d92506f8f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "StateDot"
+            },
+            "path": "dashboard/src/panels/session-cockpit/StateDot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The freshness state consumed (`PerSessionCockpit`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:d43db0760180d63a1cc2ba91bda1d0f72761971f139ac5133d10ad2869b410e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PerSessionCockpit"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The stage container mounting this as the always-on header layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9630b4b378858e59322c88e524b4938faf55e02",
+            "content": "sha256:006abb8e283d0b2756d4043f68e873d4017e9844090202035b5bf9f95cd26b60",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionStage"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionStage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The live exact-session model/effort control mounted in the slot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7244eb21672fd89aa04a39047e7d5273b3ee1",
+            "content": "sha256:da1406f7615a7ae7dc77665798f8bba46ebaca1fa17d0f205d48acf37e9f5ce0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModelEffortControl"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ModelEffortControl.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The suite pins anatomy order, the mounted control, the grammar state, freshness honesty, absence of duplicated model/effort provenance, and conditional spawn-level/source provenance.\n\nAnchor: \"HeaderStrip (R10)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80203609074fd6c7a78de917b31ff95465667643",
+            "content": "sha256:d51c52194f13c8c947b7c727ff795624672fe4755ae9cf1b7f15c47d4baba5e3",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

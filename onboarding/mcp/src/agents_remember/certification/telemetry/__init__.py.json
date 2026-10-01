@@ -1,0 +1,49 @@
+{
+  "path": "mcp/src/agents_remember/certification/telemetry/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package re-exports the public telemetry surface from five owning modules.\n\nAnchor: `TelemetryExecutionContext`; `TelemetryEvent`; `TelemetryProjection`; `DurableTelemetryStore`; `TelemetryReadiness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e4ecb6935f8d19eb1915c6bda641048c5f0ef7",
+            "content": "sha256:123d276305110f8d5129a3e5f6658cfb909dcc4114f450ef2cef240ba2ee8efd",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`__all__` fixes the complete public telemetry surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e4ecb6935f8d19eb1915c6bda641048c5f0ef7",
+            "content": "sha256:60ef9a1796fa0a944965d7e62026e474e8908b5bbce7b49fc723dcc66b7158bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The certification facade imports the telemetry surface through this package.\n\nAnchor: \"from agents_remember.certification.telemetry import (\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "mcp/src/agents_remember/certification/__init__.py:146-184"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

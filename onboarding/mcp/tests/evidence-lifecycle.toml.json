@@ -1,0 +1,2514 @@
+{
+  "path": "mcp/tests/evidence-lifecycle.toml",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The schema version and the large-fixture discovery threshold remain explicit.\n\nAnchor: `schema_version`; `large_fixture_bytes`; \"ar-test-evidence-lifecycle/v3\"; \"large_fixture_bytes = 25000\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The two consumer declarations 260915-KS-L6 added to the branching-fixture row.**\n\nAnchor: \"owner = \\\"knowledge-identity-branching-fixture\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:da10fa2ef325027c59c17d95b26dfa3f509bc20f8090a144e0717c5503861934",
+            "locator": {
+              "end": 1229,
+              "kind": "line_range",
+              "start": 1229
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The consumer declaration 260915-KS-L6 added to the snapshot-lifecycle row — the boundary module only, because the roundtrip module does not import that harness.**\n\nAnchor: \"owner = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:dc8f4681b54e886907dd4af01d7131dbec1e182167b5ed8147c22244e22bf33c",
+            "locator": {
+              "end": 1301,
+              "kind": "line_range",
+              "start": 1301
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The two consumer declarations 260915-KS-L6 added to the merge-case row.**\n\nAnchor: \"owner = \\\"common-base-merge-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:1299b454748c61b82cf12aa6b4b8cabaef662f7f354073fcd43e95fef7b48dbe",
+            "locator": {
+              "end": 1321,
+              "kind": "line_range",
+              "start": 1321
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:1299b454748c61b82cf12aa6b4b8cabaef662f7f354073fcd43e95fef7b48dbe",
+            "locator": {
+              "end": 748,
+              "kind": "line_range",
+              "start": 748
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:bf9eeeb0ef76a06028b53dc6306c00adcd0ce82d8befd9636f391058ddbb03f4",
+            "locator": {
+              "end": 1331,
+              "kind": "line_range",
+              "start": 1331
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The node that makes that contract's claim real: both sides' disjoint edits survive into a closed, published candidate that carries no verdict.**\n\nAnchor: \"def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:65e07eb7d3866db96e7c14fd333a6347031bd307b5635245d323e3fdb87a8e13",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The node that makes that contract's closedness claim real: a WAL-resident batch is published whole while a main-file copy is not.**\n\nAnchor: \"test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c63d3786063cf858be3f628ffa5c42f521a97a",
+            "content": "sha256:e0a366bf433ae22a4f5041ad90816ddd89cb955268435809552b610b3486b177",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/tests/test_knowledge_snapshot_publication.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The lane rows that keep the knowledge test modules in the certifying collection path, including the two this leaf registered.\n\nAnchor: \"unit-regression\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c02261f5476c684e5ed67b0f1688537e74c30d8",
+            "content": "sha256:f2e298ff3be255662751fa45d9a2923ddcaccdf4db7d0ff9b94f311cf914c1b0",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The one-to-one card for the batch harness, which records what it builds through the real seam.\n\nAnchor: \"One admitted candidate built through the real seam\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/tests/candidate_batch_test_support.py.md:1-40"
+        }
+      ]
+    },
+    "17": {
+      "note": "The snapshot harness card, which records the registered owner and the exact consumer set.\n\nAnchor: \"id = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40"
+        }
+      ]
+    },
+    "18": {
+      "note": "The consumer entry this leaf appended to the snapshot harness, which is a row in a list rather than a new registration — the populations do not move because of it.\n\nAnchor: \"mcp/tests/test_knowledge_curator_ingest_list.py\",",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:eb15bcfc091e7fd3ba8e739b23772530da317c61cf14ffb53a31b34ef7c4db18",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 670
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The referenced transaction test definition exists in the current source.\n\nAnchor: \"test_public_closeout_commits_code_and_memory_without_acceptance_tools\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:bb043388f8a411c5e75a54f79141a1cdeed0b92c912901d306567521edb4e655",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_closeout_commits_code_and_memory_without_acceptance_tools"
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The four retained knowledge contracts and their evidence nodes.\n\nAnchor: \"id = \\\"ar-durable-store/1.0-process-race-evidence\\\"\"; \"id = \\\"conversation-control-public-route-contract\\\"\"; \"id = \\\"next-supported-pi-rpc-activity-recording\\\"\"; \"id = \\\"synthetic-test-evidence-candidate\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:4a0937f8d575487db66d4e89997e313b7d2d60c05ffe56c91d5163970b633957",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d0926c8c1f57bbea6d80de42810de32c783ecc4c52491effef81f4f93b3fa5da",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f13ad3eb09d3db67497f8b914b1e89d1eaa9f763594e555d3b1b115d38525875",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0f27b7254e53cf0acf5925430255f60ae39b05a2c852ec35b5ef718237eb4468",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 466
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 469
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:494f461d1071e9f1e0cde18d130f7ae474bdc62791d19e30e651f44cf4e54734",
+            "locator": {
+              "end": 1182,
+              "kind": "line_range",
+              "start": 1182
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:2e156d69bd8743f631d04cf0cc864e81162959227248a282270742be7cf28786",
+            "locator": {
+              "end": 1206,
+              "kind": "line_range",
+              "start": 1206
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
+            "locator": {
+              "end": 1235,
+              "kind": "line_range",
+              "start": 1235
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c0b7338c6aea3db85b66242cfb383f13aeb9f7746d482ec5f81d12771b8292d8",
+            "locator": {
+              "end": 1255,
+              "kind": "line_range",
+              "start": 1255
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:bc56a1bbd67af8e04d484bf3ca5d0b69f4da1e8bdc044bcee4b70675fade35e5",
+            "locator": {
+              "end": 1499,
+              "kind": "line_range",
+              "start": 1499
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
+            "locator": {
+              "end": 1643,
+              "kind": "line_range",
+              "start": 1643
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:8c11de3626994c792ff84bfdab66e54baa8c6d8a345f213d9e607f991af1065d",
+            "locator": {
+              "end": 1682,
+              "kind": "line_range",
+              "start": 1682
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:2e156d69bd8743f631d04cf0cc864e81162959227248a282270742be7cf28786",
+            "locator": {
+              "end": 1718,
+              "kind": "line_range",
+              "start": 1718
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "None\n\nAnchor: \"mcp/tests/closeout_fixture_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6a946188593cf2745ff840c7a291cf8e8b68abf294e5cb91cd433f860e9a265b",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 325
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Closeout-input support names the same retained code/memory transaction replacement node.\n\nAnchor: \"mcp/tests/closeout_input_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f4e8276b7cad0c18160dd9ec306f9b9ff0d11758e1d356ee0528fb22bb7a83ab",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 343
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "None\n\nAnchor: \"mcp/tests/curator_coherence_test_support.py\"; \"mcp/tests/test_post_integration_cleanup_guidance.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f13ad3eb09d3db67497f8b914b1e89d1eaa9f763594e555d3b1b115d38525875",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b8e0331c786ce28f3517e221a8630b7dbe1d9e9a960acee921d794b728e5494b",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 421
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5ebdca0cbbe1ff56a15aa091a774bd14ac859bc451c7f9f76955d73295ffc4bd",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 384
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:a83b0e3970558107dbb3f282bb21bf29ff6c55669b5778055eebd71abb68108b",
+            "locator": {
+              "end": 432,
+              "kind": "line_range",
+              "start": 425
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The snapshot harness card, which records the registered owner and the exact consumer set.\n\nAnchor: \"id = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/tests/snapshot_lifecycle_test_support.py.md:1-40"
+        }
+      ]
+    },
+    "24": {
+      "note": "The referenced transaction test definition exists in the current source.\n\nAnchor: \"test_public_closeout_commits_code_and_memory_without_acceptance_tools\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:f46b3f76419569eac26edf9d9eb107a837d5d9ce892d9ba6e649bd25b0ffaffa",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The first artifact's two new consumer rows: the Node package-lock fixture, whose `consumer_scope = \"exact\"` list both new modules joined.**\n\nAnchor: \"mcp/tests/test_knowledge_ingest_comparison_generation.py\"; \"mcp/tests/test_knowledge_ingest_failure_windows.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:eb15bcfc091e7fd3ba8e739b23772530da317c61cf14ffb53a31b34ef7c4db18",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 670
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:56292bcf6df89e7f93eb9984d3ee73b49bf33a8777db57360d9b53429f8734a9",
+            "locator": {
+              "end": 738,
+              "kind": "line_range",
+              "start": 738
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "**The second artifact's two new consumer rows: the snapshot-lifecycle shared support module, whose `consumer_scope = \"exact\"` list both new modules joined.**\n\nAnchor: \"mcp/tests/test_knowledge_ingest_comparison_generation.py\"; \"mcp/tests/test_knowledge_ingest_failure_windows.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:937b217a157b01164b23bd5d4cbe04f9656c45a777e4632a12ad2f333472ef2d",
+            "locator": {
+              "end": 743,
+              "kind": "line_range",
+              "start": 742
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c4b7980a64976922ab29dfe29bd7b43f7b833f2072e500aba06137ee72c865d4",
+            "locator": {
+              "end": 745,
+              "kind": "line_range",
+              "start": 744
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
+            "locator": {
+              "end": 1304,
+              "kind": "line_range",
+              "start": 1304
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:9a4c1fa0b84f8d420099b0d993c2515b26f25d0761a0a246ee6d48aee86a066d",
+            "locator": {
+              "end": 1309,
+              "kind": "line_range",
+              "start": 1309
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:1855e0f91038612de1804d29d1a01c49a0789d372e3314b652ecfb99b72e0020",
+            "locator": {
+              "end": 747,
+              "kind": "line_range",
+              "start": 747
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d708203ad4693151e9809d84f6b6a45341d7574fb9c604324e48643bf7aa623e",
+            "locator": {
+              "end": 746,
+              "kind": "line_range",
+              "start": 746
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:1299b454748c61b82cf12aa6b4b8cabaef662f7f354073fcd43e95fef7b48dbe",
+            "locator": {
+              "end": 1321,
+              "kind": "line_range",
+              "start": 1321
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The artifact the first pair belongs to, and the scope both lists carry.\n\nAnchor: \"mcp/tests/fixtures/repository_profiles/node/package-lock.json\"; \"exact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:eb15bcfc091e7fd3ba8e739b23772530da317c61cf14ffb53a31b34ef7c4db18",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 670
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7e027222c96ad14c1c4341d24a8b3af6f32f8c3230040db2e2f1ff07eddd9be8",
+            "locator": {
+              "end": 1276,
+              "kind": "line_range",
+              "start": 1276
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The artifact the second pair belongs to.\n\nAnchor: \"mcp/tests/snapshot_lifecycle_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:bf5d273fa8fac3ca980a6765692b6660f63ad7e567aea5da27804f896c77519a",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The two block kinds whose counts this change does not move, and the sha256 it does move.\n\nAnchor: \"[[contract]]\"; \"[[artifact]]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:46427229d5aed44bc322bdc95541547745871bcbaf946c057c297da3bbe25562",
+            "locator": {
+              "end": 1707,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Closeout fixture support names the retained code/memory transaction replacement.\n\nAnchor: \"closeout_fixture_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6a946188593cf2745ff840c7a291cf8e8b68abf294e5cb91cd433f860e9a265b",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 325
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The constant this file's bytes pin, re-pinned deliberately in the same change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The reason no third fixture exists: both new modules import the existing builders rather than introducing one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e789c05a1ffe8da8b7bdae9e0fb7d62d2f6ef666",
+            "content": "sha256:da3d4c91d97c6059e207dbd4e5d3f1ad28e4b5cc88ab103b7659db21454643ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_case"
+            },
+            "path": "mcp/tests/snapshot_lifecycle_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e789c05a1ffe8da8b7bdae9e0fb7d62d2f6ef666",
+            "content": "sha256:a8d73aa5bce4d8db2e37b2f6f065e736472f1e42f87cdffadaffdec2c7d90211",
+            "locator": {
+              "kind": "symbol",
+              "name": "create"
+            },
+            "path": "mcp/tests/snapshot_lifecycle_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The first consumer row: the diff-scope shared support module, whose `consumer_scope = \"exact\"` list this leaf's module joined.**\n\nAnchor: \"mcp/tests/test_knowledge_review_source_endpoints.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:35533dd7c7b8a719e84a2d95f57fa7223f6625b59427b117451836ad486634da",
+            "locator": {
+              "end": 1472,
+              "kind": "line_range",
+              "start": 1432
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:a030c166ca646be6ba8660755a3045e04d6f7e624177ca6a9292fb454ccf9e2c",
+            "locator": {
+              "end": 1473,
+              "kind": "line_range",
+              "start": 1473
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The second consumer row: the read-scope shared support module, whose `consumer_scope = \"exact\"` list this leaf's module joined.**\n\nAnchor: \"mcp/tests/test_knowledge_review_source_endpoints.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d73e93aa8bb9e97b994271d5f26216ed506483b06cef03232fdc7d9c6e4fca14",
+            "locator": {
+              "end": 1514,
+              "kind": "line_range",
+              "start": 1457
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 1515,
+              "kind": "line_range",
+              "start": 1515
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The two block kinds whose counts this change does not move, and the sha256 it does move.\n\nAnchor: \"[[contract]]\"; \"[[artifact]]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:a186511680bd5d7e01160d744b6f36423af13b3df5ad04d2e0321e8702f40b5e",
+            "locator": {
+              "end": 1713,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:e4e3fb490f2f1557cb46affb21a7a5ffb0ea4fbc73b126400451f1e913d6759c",
+            "locator": {
+              "end": 1703,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "The constant this file's bytes pin, re-pinned deliberately in the same change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The reason no third fixture exists: the case module composes the two existing ones.\n\nAnchor: `build_read_scope_fixture`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:998bdf5474397bbd34dea73afb2fbb45da19fc91c2da09ebb14988ffed35c367",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "**The first of the two consumer rows: the diff-cases artifact's exact consumer list, which the new module joins.**\n\nAnchor: `consumers`; `consumer_scope`; `replacement_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:cca7e7dd8ebba19c0279c23006a0fd80d2002e593da471d42aebd0e5a9ba5eab",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:60ee2ecb4e15f4b7543fe0dd41aa9c984195b05a0d2aeee58064cf31ab07000d",
+            "locator": {
+              "end": 1715,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:57ac5758509dc542a9c267d713bdf0a837298a6f48dc8d8452bb334f73e08b1c",
+            "locator": {
+              "end": 1715,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "**The second: the read-scope artifact's exact consumer list.**\n\nAnchor: `consumers`; `consumer_scope`; `replacement_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:249699f40e35e9de6d97b34b3293953f7c5cf0af7a825e02793f0c8de47870f9",
+            "locator": {
+              "end": 1446,
+              "kind": "line_range",
+              "start": 1445
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:57ac5758509dc542a9c267d713bdf0a837298a6f48dc8d8452bb334f73e08b1c",
+            "locator": {
+              "end": 1715,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:985ea58914b7386be64457474dd01c0cd46ba06d994cf3765277b585ba77369e",
+            "locator": {
+              "end": 1442,
+              "kind": "line_range",
+              "start": 1442
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "The two artifacts' own subjects, which are what make the module a source-derived consumer of each.\n\nAnchor: `source_version_or_generator`; `introduced_by`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:cca7e7dd8ebba19c0279c23006a0fd80d2002e593da471d42aebd0e5a9ba5eab",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:3c7917febe7682c6d11a8f2c99a947ef2c8faa29066f0c2fcbc3b5259bfe2d0d",
+            "locator": {
+              "end": 1715,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:9f391fb41454a2fe2128890005c35cafe05795392d335e86a025ae041007d125",
+            "locator": {
+              "end": 1715,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f6b8d776e8f9a5bfd667c422d7c624dfd89924d6ed2dc3361cb6827f4b92c791",
+            "locator": {
+              "end": 1439,
+              "kind": "line_range",
+              "start": 1439
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Closeout-input support declares the cleanup-guidance consumer.\n\nAnchor: \"closeout_input_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f4e8276b7cad0c18160dd9ec306f9b9ff0d11758e1d356ee0528fb22bb7a83ab",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 343
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "**The imports that make it a consumer: the candidate content path from the diff-scope support and the batch path from the read-scope support.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:c7a7057bbee6283d3ef6db33a5e51a22aecbc9b3cfb78bb55671fb7a6563495f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BATCH_PATH_CANDIDATE_TEXT"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:37933c004aabd5d44817aeea27c512aa73d337c6d11ac21bf6529765175cdafc",
+            "locator": {
+              "kind": "symbol",
+              "name": "BATCH_PATH"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "The fixture module it builds on rather than duplicating, so no third enclosure fixture was introduced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:0c798a95c1ada8c9446d651225169cbdde97b5be1b2d1607112c87ae41550075",
+            "locator": {
+              "kind": "symbol",
+              "name": "EndpointFixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "**The pinned counts and the re-pinned digest, in the module that measures this file.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "**The row this leaf registered: its own case module, on the read-scope artifact's `consumer_scope = \"exact\"` list.**\n\nAnchor: \"mcp/tests/test_knowledge_review_one_sided_statements.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "locator": {
+              "end": 1532,
+              "kind": "line_range",
+              "start": 1532
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "**The row this leaf registered: its own case module, on the read-scope artifact's `consumer_scope = \"exact\"` list.**\n\nAnchor: \"mcp/tests/test_knowledge_review_one_sided_statements.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "locator": {
+              "end": 1532,
+              "kind": "line_range",
+              "start": 1532
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "**The row L18's landed consequence repair had already carried, now the row immediately below this leaf's: `mcp/tests/test_read_ar_files.py` imports the same fixture and was the path L19's landing left unregistered. The two are kept as a set — the census compares consumer sets — so each path is named exactly once.**\n\nAnchor: \"mcp/tests/test_read_ar_files.py\"; \"from read_scope_test_support import\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5792b0ef15880ac85b80ae7eca1306d80c1947ec17fe88f479b8131cc353b272",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 435
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bb94e80858d5081445a4b8394fbb17728c44a320",
+            "content": "sha256:b336f2a6807c69fed3a9773f1ba0be404c36857bba50a3a3995a4887e5160dce",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/tests/test_read_ar_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "46": {
+      "note": "The artifact both rows belong to: its `[[artifact]]` block, its `knowledge-read-scope-cases` owner, its `consumer_scope = \"exact\"` and the list's exact extent on the merged candidate.\n\nAnchor: `\"mcp/tests/read_scope_test_support.py\"`; `consumer_scope`; `consumers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:395f4b6d14b9bdb33a5e68660405909153b1a71aa54b1d86ea0e16c6ed8b3f69",
+            "locator": {
+              "end": 1472,
+              "kind": "line_range",
+              "start": 1430
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "47": {
+      "note": "The constant this file's bytes pin, re-pinned at the sync, and the two count constants this change leaves alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "**The row registered for the member-source cases, at the end of the read-scope artifact's exact consumer list.**\n\nAnchor: \"mcp/tests/test_review_family_member_sources.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:e111d9824c5c3b8661b7747afcdcbdcaaad1743618904d235184c6584fe3b78a",
+            "locator": {
+              "end": 1547,
+              "kind": "line_range",
+              "start": 1547
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "49": {
+      "note": "The import that makes the module a consumer.\n\nAnchor: `build_read_scope_fixture`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:e1a6cbc3e9e8485fef2675cdae112ecfc533d3c78d53d818868c501a57afaaed",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/tests/test_review_family_member_sources.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The knowledge branching fixture's contract and artifact row, whose consumer list 260915-KS-L2 corrected to the five source-observed importers and 260915-KS-L6 extended to the two portable modules.**\n\nAnchor: \"id = \\\"knowledge-identity-branching-fixture\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "50": {
+      "note": "**The first consumer row: the diff-cases shared support module, whose `consumer_scope = \"exact\"` list this leaf's module joined.**\n\nAnchor: \"mcp/tests/test_knowledge_review_source_content.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:1effbb92efd218883fee754ecc96e3fbe0b0e4de528fd5794aca73201fcf7b62",
+            "locator": {
+              "end": 1473,
+              "kind": "line_range",
+              "start": 1433
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 1474,
+              "kind": "line_range",
+              "start": 1474
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "51": {
+      "note": "**The second: the read-scope shared support module's exact list, where the new row sits above L6's registered module and L18's landed one.**\n\nAnchor: \"mcp/tests/test_knowledge_review_source_content.py\"; \"mcp/tests/test_knowledge_review_one_sided_statements.py\"; \"mcp/tests/test_read_ar_files.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:62b480ddb08b3ef8a0a71102987e323cf33cffae4ae18a9f7b1ebcaf1df1dd6b",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 434
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d65a4feb4c9362cd4f694ff9fd63fe2908dbb4638e19514796982d51acb39aab",
+            "locator": {
+              "end": 1533,
+              "kind": "line_range",
+              "start": 1478
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "52": {
+      "note": "The two artifacts' own declarations, which are what make the module a source-derived consumer of each.\n\nAnchor: `replacement_contract`; `consumer_scope`; `consumers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:061bce42cb2e1f7d604ab2274f4287c8cddc33f09042e691c59128e436abaa6b",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ef7c4521e349fcc4ed0f2a833d5de737f85410df0b9a20292e331262aa2fbe59",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c895a96d37d61ae99e4604959669cb98f7c31085f996ffdfa49f2fd7ed02c5f7",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "53": {
+      "note": "**The fixture it extends rather than duplicating, and the observation helper its cases read bytes back through.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:0c798a95c1ada8c9446d651225169cbdde97b5be1b2d1607112c87ae41550075",
+            "locator": {
+              "kind": "symbol",
+              "name": "EndpointFixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:3424050ba33cd009a66d4f16129e7d176e42a8643683295111e58624b02ffa3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "54": {
+      "note": "The tracked paths the read-scope consumer row is derived from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:7bc7935af8168a4a5d9ca0a1dddf279e8924381538694b3bc9f8bd3c9322f9ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "AUXILIARY_PATH"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:7cc90345a1a65f79aa7a0772d4517ca23f9725f62f2cd6dfbb20fa6b2e3b464b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MISMATCH_PATH"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:bb31bddcdb417f5b7f273c9d787f3c7cb07c6bd620eb71056f23936bd86be795",
+            "locator": {
+              "kind": "symbol",
+              "name": "SYNCHRONIZATION_PATH"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "55": {
+      "note": "**The counts this change does not move, the bytes it does, and the constant that carries them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "56": {
+      "note": "The first exact consumer row.\n\nAnchor: \"mcp/tests/test_curator_realization_authoring.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0525807e4d6f6be6fe8b69e31992e9bc8b4f66fd161c9fd981313046fd97dd2d",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 702
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "57": {
+      "note": "The snapshot-lifecycle support artifact's consumer list with the new exact consumer.\n\nAnchor: \"mcp/tests/test_curator_realization_authoring.py\"; \"contract:knowledge-snapshot-lifecycle-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:65dd8d685295bd0b181a2ea00fc957f622a9a3791f9a816da39ccc5bd24afc5d",
+            "locator": {
+              "end": 1315,
+              "kind": "line_range",
+              "start": 1307
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "58": {
+      "note": "**The three consumer entries on the diff-cases artifact's exact list, appended newest-last.**\n\nAnchor: \"mcp/tests/test_knowledge_review_relationship_movement.py\"; \"mcp/tests/test_knowledge_review_relationship_reach.py\"; \"mcp/tests/test_knowledge_review_relationship_line.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:8ce26ec44314a777ee5123970b91414fd37c174a3a367ee62727489a554e1092",
+            "locator": {
+              "end": 1481,
+              "kind": "line_range",
+              "start": 1441
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:4f7a2f55f297273ad151de72fde25fcecce16126de9e1978583f7a752b095777",
+            "locator": {
+              "end": 1482,
+              "kind": "line_range",
+              "start": 1482
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "59": {
+      "note": "**The same three on the read-scope artifact's exact list.**\n\nAnchor: \"mcp/tests/test_knowledge_review_relationship_movement.py\"; \"mcp/tests/test_knowledge_review_relationship_reach.py\"; \"mcp/tests/test_knowledge_review_relationship_line.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d73e93aa8bb9e97b994271d5f26216ed506483b06cef03232fdc7d9c6e4fca14",
+            "locator": {
+              "end": 1514,
+              "kind": "line_range",
+              "start": 1457
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 1515,
+              "kind": "line_range",
+              "start": 1515
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The knowledge graph case-support contract and its matching artifact row, added by 260915-KS-L2 with three declared consumers.\n\nAnchor: \"id = \\\"knowledge-graph-case-support\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:4e0ba156d314185fc939606247039639125704bf4373ebbd92dbdba5b7cf7fc8",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "60": {
+      "note": "The two artifacts' own declarations, which are what make each module a source-derived consumer of both.\n\nAnchor: `replacement_contract`; `consumer_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:cb276ff38eba356c4fad332407e1c0d1aa752d839977d72f73ea24fde7278abb",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:9f2f8faeda289a3f9a24eeb27e6f5bbb9be3d9ebdb6be696b59b72e87bbe1029",
+            "locator": {
+              "end": 1411,
+              "kind": "line_range",
+              "start": 1409
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "61": {
+      "note": "The enclosure the three modules extend rather than duplicating.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:0c798a95c1ada8c9446d651225169cbdde97b5be1b2d1607112c87ae41550075",
+            "locator": {
+              "kind": "symbol",
+              "name": "EndpointFixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "62": {
+      "note": "**The counts this change does not move, the bytes it does, and the constant that carries them (`d2d6dc6a…`, the Twentieth re-pin).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "63": {
+      "note": "The read-scope artifact's consumer list with the new exact consumer.\n\nAnchor: \"mcp/tests/test_knowledge_review_attributed_source_content.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:1545cc3b4ce63acacc80b76f5a8eb48b738288610e72c9af80703568856378e8",
+            "locator": {
+              "end": 1531,
+              "kind": "line_range",
+              "start": 1530
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "64": {
+      "note": "The curator-coherence support artifact's exact consumer list, with its two added paths (`test_review_assessment_history.py`, `test_review_assessment_history_repairs.py`) at the end.\n\nAnchor: \"path = \\\"mcp/tests/curator_coherence_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f070ec38417a8ebcf5a9a13d6be96b2582eeaf66f973fa4e859510a9df957f7c",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 390
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "65": {
+      "note": "The package-lock artifact's exact consumer list, with the three curator modules after `test_curator_realization_authoring.py` and four paths at the end.\n\nAnchor: \"path = \\\"mcp/tests/fixtures/repository_profiles/node/package-lock.json\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:a6c82153862b018643415e9d8d5e3527a83b0387823605240c0019309e39d0a6",
+            "locator": {
+              "end": 820,
+              "kind": "line_range",
+              "start": 673
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "66": {
+      "note": "The snapshot-lifecycle support artifact's exact consumer list, with the three curator modules.\n\nAnchor: \"path = \\\"mcp/tests/snapshot_lifecycle_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0647be8ce42a149c78f186bef4131e28c9da41cb0426bc737616c9746a84fc9d",
+            "locator": {
+              "end": 1306,
+              "kind": "line_range",
+              "start": 1279
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "67": {
+      "note": "The diff-scope support artifact's exact consumer list, with each split module below its sibling.\n\nAnchor: \"path = \\\"mcp/tests/diff_scope_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:12ec47105434610c24afd13e3158619e932c1994842c564e7a793f0657eea4e3",
+            "locator": {
+              "end": 1471,
+              "kind": "line_range",
+              "start": 1426
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "68": {
+      "note": "The read-scope support artifact's exact consumer list, with the same three split modules and the attributed-source-content module.\n\nAnchor: \"path = \\\"mcp/tests/read_scope_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:bda1c71909b164bacd7c2a7c9252379197af8f44cffd22c11431d7e0b7db91fc",
+            "locator": {
+              "end": 1530,
+              "kind": "line_range",
+              "start": 1474
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "69": {
+      "note": "The byte pin these additions oblige.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The candidate-batch case-harness contract and its artifact row, added by 260915-KS-L3 with two declared consumers and a real evidence node.\n\nAnchor: \"id = \\\"candidate-batch-case-harness\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:54340d2be81ae47ade8ae29f534bf2b30e164636f01f443fcbeb4885bebeda8c",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "70": {
+      "note": "The five new shared-support rows.\n\nAnchor: \"mcp/tests/knowledge_validator_test_support.py\"; \"mcp/tests/knowledge_conversion_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:2ac99a96f5f64c512159cc0ef9dc7a82c8a3b24b6aa333fdbcb3d3809e68ba7c",
+            "locator": {
+              "end": 1877,
+              "kind": "line_range",
+              "start": 1777
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "71": {
+      "note": "The nine new fixture rows for the Doc14 knowledge-file examples.\n\nAnchor: \"mcp/tests/fixtures/knowledge_files/4.1-direct_landing.py.json\"; \"mcp/tests/fixtures/knowledge_files/r21-integrate.py.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:353acab7cd120ab91b6310d9c3ed80b5a75aa8078da10bf95ce0657da5ef2706",
+            "locator": {
+              "end": 2083,
+              "kind": "line_range",
+              "start": 1878
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "72": {
+      "note": "The consumer additions: the conversion toolchain case on the curator-coherence and read-scope rows, the crossing case on the merge-case and generation rows.\n\nAnchor: \"mcp/tests/test_knowledge_conversion_toolchain.py\"; \"mcp/tests/test_knowledge_crossing.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 458
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:079069e71d4cb9299a8d8acb0dc86219a7b11aec6b9893c7ff2d3494d67212cc",
+            "locator": {
+              "end": 1352,
+              "kind": "line_range",
+              "start": 1351
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:e6c46315a11da04a79f1384b40a9c38037eb19ed93c7155e61b2040a7dc440d0",
+            "locator": {
+              "end": 1387,
+              "kind": "line_range",
+              "start": 1386
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ef4e92907f166d4b5fb0c3951241cf67ac7ea691a9ea7c3f3b2a9c19c057014e",
+            "locator": {
+              "end": 1552,
+              "kind": "line_range",
+              "start": 1552
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "73": {
+      "note": "The three consumer additions, one on each exact row.\n\nAnchor: \"mcp/tests/test_knowledge_proofs.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7e15c44fe5836f1b89733045a7059d363ccfc831483428ef81e6fa116380dc70",
+            "locator": {
+              "end": 831,
+              "kind": "line_range",
+              "start": 831
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7fbc0b2f1ee8b16384794688d3ac875a39f6e9489c8a5a490f92262e8d7fb760",
+            "locator": {
+              "end": 1820,
+              "kind": "line_range",
+              "start": 1820
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
+            "locator": {
+              "end": 1840,
+              "kind": "line_range",
+              "start": 1840
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "74": {
+      "note": "The three rows they belong to.\n\nAnchor: \"mcp/tests/fixtures/repository_profiles/node/package-lock.json\"; \"mcp/tests/knowledge_index_test_support.py\"; \"mcp/tests/knowledge_writer_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f392a0880e392b9a28b05b4fe546666dca5bac25836c7a5f57c9c67c2af599a",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:47d11868f7be4ad942d4d5c0eb7dfcfae99213400b98d62e1443f3661090aaaa",
+            "locator": {
+              "end": 1810,
+              "kind": "line_range",
+              "start": 1810
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:9ce13a7d94c708b49f8c36dfada1ebbab07dc71dfb0deee07fe707515c707a00",
+            "locator": {
+              "end": 1834,
+              "kind": "line_range",
+              "start": 1834
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "75": {
+      "note": "The consumer addition.\n\nAnchor: \"mcp/tests/test_knowledge_worklist_leaf.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:dfd4223af6cc1abfd7ff62be6523ce9ffbdf6cd366929876a167e5e5e9c111de",
+            "locator": {
+              "end": 832,
+              "kind": "line_range",
+              "start": 832
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "76": {
+      "note": "The row it belongs to.\n\nAnchor: \"mcp/tests/fixtures/repository_profiles/node/package-lock.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f392a0880e392b9a28b05b4fe546666dca5bac25836c7a5f57c9c67c2af599a",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "77": {
+      "note": "The consumer addition.\n\nAnchor: \"mcp/tests/test_knowledge_currentness.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ea533393f6ab58b54c02b6526a92b2a9d597d162f1fd77dbfe7a1fbceab5cbb8",
+            "locator": {
+              "end": 833,
+              "kind": "line_range",
+              "start": 833
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "78": {
+      "note": "The row it belongs to.\n\nAnchor: \"mcp/tests/fixtures/repository_profiles/node/package-lock.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f392a0880e392b9a28b05b4fe546666dca5bac25836c7a5f57c9c67c2af599a",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "79": {
+      "note": "The paging module's consumer line on the package-lock row.\n\nAnchor: \"mcp/tests/test_knowledge_paging.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
+            "locator": {
+              "end": 834,
+              "kind": "line_range",
+              "start": 834
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The snapshot-lifecycle contract and artifact row, with an exact consumer list that 260915-KS-L6 extended to the portable boundary module.**\n\nAnchor: \"id = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "80": {
+      "note": "The paging module's consumer line on the index-support row.\n\nAnchor: \"mcp/tests/test_knowledge_paging.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
+            "locator": {
+              "end": 1828,
+              "kind": "line_range",
+              "start": 1828
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "81": {
+      "note": "The index-support row that gains it.\n\nAnchor: \"path = \\\"mcp/tests/knowledge_index_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:47d11868f7be4ad942d4d5c0eb7dfcfae99213400b98d62e1443f3661090aaaa",
+            "locator": {
+              "end": 1810,
+              "kind": "line_range",
+              "start": 1810
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "82": {
+      "note": "The planned-effects module's consumer line.\n\nAnchor: \"mcp/tests/test_planned_knowledge_effects.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:fa377eaa04ac949870887763adda65172a739965e8babc52a2d5204e9546d7f9",
+            "locator": {
+              "end": 835,
+              "kind": "line_range",
+              "start": 835
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "83": {
+      "note": "The row it belongs to.\n\nAnchor: \"mcp/tests/fixtures/repository_profiles/node/package-lock.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f392a0880e392b9a28b05b4fe546666dca5bac25836c7a5f57c9c67c2af599a",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "84": {
+      "note": "The leaf-read module's consumer line on the package-lock row.\n\nAnchor: \"mcp/tests/test_knowledge_leaf_read.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
+            "locator": {
+              "end": 836,
+              "kind": "line_range",
+              "start": 836
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "85": {
+      "note": "The leaf-read module's consumer line on the index-support row.\n\nAnchor: \"mcp/tests/test_knowledge_leaf_read.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
+            "locator": {
+              "end": 1829,
+              "kind": "line_range",
+              "start": 1829
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "86": {
+      "note": "The two rows it belongs to.\n\nAnchor: \"path = \\\"mcp/tests/fixtures/repository_profiles/node/package-lock.json\\\"\"; \"path = \\\"mcp/tests/knowledge_index_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f392a0880e392b9a28b05b4fe546666dca5bac25836c7a5f57c9c67c2af599a",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:47d11868f7be4ad942d4d5c0eb7dfcfae99213400b98d62e1443f3661090aaaa",
+            "locator": {
+              "end": 1810,
+              "kind": "line_range",
+              "start": 1810
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "87": {
+      "note": "The unexplained-change module's consumer line on the package-lock row.\n\nAnchor: \"mcp/tests/test_unexplained_change_disposition.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 837
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "88": {
+      "note": "The row it belongs to.\n\nAnchor: \"path = \\\"mcp/tests/fixtures/repository_profiles/node/package-lock.json\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f392a0880e392b9a28b05b4fe546666dca5bac25836c7a5f57c9c67c2af599a",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "89": {
+      "note": "The route-chain module's consumer lines on the four rows.\n\nAnchor: \"mcp/tests/test_knowledge_route_chain.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 459
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
+            "locator": {
+              "end": 838,
+              "kind": "line_range",
+              "start": 838
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
+            "locator": {
+              "end": 1553,
+              "kind": "line_range",
+              "start": 1553
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
+            "locator": {
+              "end": 1829,
+              "kind": "line_range",
+              "start": 1829
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The common-base-merge contract and artifact row, whose exact consumer list 260915-KS-L6 extended to both portable modules.**\n\nAnchor: \"id = \\\"common-base-merge-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "90": {
+      "note": "The four rows it belongs to.\n\nAnchor: \"path = \\\"mcp/tests/curator_coherence_test_support.py\\\"\"; \"path = \\\"mcp/tests/fixtures/repository_profiles/node/package-lock.json\\\"\"; \"path = \\\"mcp/tests/read_scope_test_support.py\\\"\"; \"path = \\\"mcp/tests/knowledge_index_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 390
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f392a0880e392b9a28b05b4fe546666dca5bac25836c7a5f57c9c67c2af599a",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:a2176f563e74393015b265300dbebd50a6c2edd71f082ebd7cea15a57ac6412a",
+            "locator": {
+              "end": 1497,
+              "kind": "line_range",
+              "start": 1497
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:47d11868f7be4ad942d4d5c0eb7dfcfae99213400b98d62e1443f3661090aaaa",
+            "locator": {
+              "end": 1810,
+              "kind": "line_range",
+              "start": 1810
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "91": {
+      "note": "The reconsideration module's consumer line on the package-lock row.\n\nAnchor: \"mcp/tests/test_reconsideration_surfacing.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
+            "locator": {
+              "end": 839,
+              "kind": "line_range",
+              "start": 839
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "92": {
+      "note": "The row it belongs to.\n\nAnchor: \"path = \\\"mcp/tests/fixtures/repository_profiles/node/package-lock.json\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f392a0880e392b9a28b05b4fe546666dca5bac25836c7a5f57c9c67c2af599a",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

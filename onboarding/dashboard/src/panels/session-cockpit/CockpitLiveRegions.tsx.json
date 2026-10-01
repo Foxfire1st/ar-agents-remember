@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Persistent polite/assertive DOM bridge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03a3272c464ed8c76961e96dd1838ef072c8269d",
+            "content": "sha256:5733e63f655067773014e34890226955c3dd5813858a948920c3fb9394b401b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitLiveRegions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Mount-before-message and repeated-message coverage.\n\nAnchor: \"renders one polite and one assertive region\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6caea6c9d2dd33a08f5c606c2578c1e0b8c3cb6c",
+            "content": "sha256:d13fc422632a2f7c82c6a63409862fbfcdf22f923c57576a9c44f1c3622c1faa",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Refcounted announcement stores.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10c66e5d84f945029c828f5c0205edaa23e7a910",
+            "content": "sha256:3beeac93ffaaa920488452f0f5bf464ebf67381ac120bf96bfb81b06c093b818",
+            "locator": {
+              "kind": "symbol",
+              "name": "announcerStore"
+            },
+            "path": "dashboard/src/data/announcer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

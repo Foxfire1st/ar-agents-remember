@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/requirement_owner.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/requirement_owner.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -75,36 +65,28 @@ None recorded. The reachability fact is worth a reader's attention: **no product
 this module**, so an unresolved-owner state reaches storage only when a caller obtained it here
 first. There is no MCP tool or serving route for the record group yet.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The whole consumption: the reference re-typed into the owner's own shape, the owner asked, the answer carried as data.** | `consume_owner_resolution` | mcp/src/agents_remember/memory/knowledge/requirement_owner.py:61-82 |
-| The single private task-plane import that makes this module the record group's only boundary to the task plane, and the one call site it feeds. | `consume_owner_resolution` | mcp/src/agents_remember/memory/knowledge/requirement_owner.py:61-82 |
-|The owner's own reference shape, which is what the two planes are made to compare literally instead of through a translation.|`ApprovedRequirementPacketRef`| mcp/src/agents_remember/models/task_intent/__init__.py:22-38 |
-|The owner's refusal carrier, whose `status` and `detail` travel verbatim into the resolution value.|`TaskIntentError`| mcp/src/agents_remember/errors.py:88-97 |
-|The substrate's resolution value: one outcome, and a refusal only in the unresolved outcome.|`RequirementOwnerResolution`| mcp/src/agents_remember/models/knowledge/requirement.py:140-171 |
-|The three components the owner reference carries, which this module re-types rather than re-spells.|`RequirementOwnerRef`| mcp/src/agents_remember/models/knowledge/requirement.py:116-139 |
-| **The case that makes "the reference is never rewritten" total: four real owner refusals carried verbatim, with the stored reference byte-identical.** | "test_each_owner_refusal_is_carried_verbatim_and_leaves_the_reference_unrewritten" | mcp/tests/test_knowledge_requirement_reference_contract.py:435-499 |
-| The case that keeps the refusal the owner's: paths the owner would refuse are still representable, so the answer cannot come from the substrate. | "test_the_payload_does_not_police_the_reference_the_owner_owns" | mcp/tests/test_knowledge_requirement_reference_contract.py:259-276 |
+- **The whole consumption: the reference re-typed into the owner's own shape, the owner asked, the answer carried as data.** [1]
+- The single private task-plane import that makes this module the record group's only boundary to the task plane, and the one call site it feeds. [2]
+- The owner's own reference shape, which is what the two planes are made to compare literally instead of through a translation. [3]
+- The owner's refusal carrier, whose `status` and `detail` travel verbatim into the resolution value. [4]
+- The substrate's resolution value: one outcome, and a refusal only in the unresolved outcome. [5]
+- The three components the owner reference carries, which this module re-types rather than re-spells. [6]
+- **The case that makes "the reference is never rewritten" total: four real owner refusals carried verbatim, with the stored reference byte-identical.** [7]
+- The case that keeps the refusal the owner's: paths the owner would refuse are still representable, so the answer cannot come from the substrate. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T06:05+02:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): created this one-to-one card for the record group's task-plane boundary. It records the boundary as the module's whole subject — one private import of the owner's resolver, an answer consumed rather than re-derived — and the two decisions a future reader would otherwise have to guess at: the reference is **re-typed into the owner's own `ApprovedRequirementPacketRef` so the planes compare literally** rather than through a translation that could disagree, and **the owner's normalized path is deliberately discarded** so the stored reference is byte-identical to the caller's under every outcome, refusal and success alike. It also records the reachability fact that keeps this module's role honest: no production module imports it, so an unresolved-owner state reaches storage only when a caller obtained it here and passed it in as payload data. Verification metadata advances to the leaf's base commit `e963a01c` because the body was read against the current source; the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

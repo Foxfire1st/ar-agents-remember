@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/triage.familyPage.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The bounded family context with facts for the returned members only.\n\nAnchor: \"family_context\"; \"\\\"change_kinds\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825b9f8a4c2b8f191f733976aced5ed06e79f710",
+            "content": "sha256:fe1f0ec53d779466fd961adda028e4a418fefc42da3a66380833d15826767fdd",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/triage.familyPage.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b898b0f2d0033f2e41c815ea7c0af7c66833337b",
+            "content": "sha256:73738245e4af80b37b5fab3cbae62203c48f8b16b9cd223efe1b7e1c1f338d5d",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/review/triage.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

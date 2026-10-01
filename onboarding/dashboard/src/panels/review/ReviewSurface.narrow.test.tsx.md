@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewSurface.narrow.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewSurface.narrow.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:22:59+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [panels route overview](../overview.md)
@@ -110,54 +100,36 @@ None recorded. The pin covers the declarations the round-3 fix added; whether th
 at 320 px on a real browser remains a Class-3 question (the Playwright configs are Dagger-gated by
 `dashboard/scripts/require-dagger-test-environment.mjs`), and this module deliberately does not claim it.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the fixture builder and its deliberately
 unbreakable reference, the mount and the two waits that make the disclosure present, the three cases by their own
 names, the component each case asserts against, and the measured evidence the pin defers to. Every anchor in a
 row occurs inside the range that row cites.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The fixture: a complete payload whose `comparison.reference` is one unbreakable 64-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.** | `payload`; "1678adab6416222068ba391db5b8b48d7c38b5b8c859adeac36fad3d0a2a" | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:44-110 |
-| The `ReviewResult` the real client decodes, and the mount that stubs only `fetch` and waits for both the surface root and the disclosure. | `reviewed`; `mount`; `review-surface`; `review-details` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:112-117; dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:119-138 |
-| The teardown cleans the mounted tree and restores stubbed globals. | "afterEach(() => {" | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:140-143 |
-| **The tolerated serialisations of a numeric zero, and why the assertion is on the length rather than on `"0px"`.** | `isZeroLength` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:145-145 |
-| The own-root scrollport case checks the reviewer height and vertical overflow boundary. | "gives the reviewer its own vertical scrollport on its own root" | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:148-158 |
-| **Case 2: every `[data-pane]` is a grid item that may shrink (`min-width: 0`) and wrap its long identities (`overflow-wrap: anywhere`), with the non-empty input asserted first so the loop cannot be vacuous.** | "lets every complete-payload pane shrink and wrap its long identities"; `data-pane`; `panes.length` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:160-170 |
-| **Case 3: the disclosure's grid track is `minmax(0, 1fr)` — not the implicit `auto` — and the header row wraps while the subject span carries its own break opportunity.** | "constrains the disclosure's grid track and wraps the header row"; `gridTemplateColumns`; `flexWrap`; `review-subject` | dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:172-184 |
-| The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). | "const pane = (title: string, children: React.ReactNode) =>" | dashboard/src/panels/review/ReviewRecordPanes.tsx:33-41 |
-| The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). | "const pane = (title: string, children: React.ReactNode) =>" | dashboard/src/panels/review/ReviewRecordPanes.tsx:33-41 |
-| The shared client whose read this module mounts through, and whose decode the fixture satisfies. | `ReviewPayload`; `ReviewResult` | dashboard/src/data/review.ts:450-482; dashboard/src/data/review.ts:524-530 |
+- **The fixture: a complete payload whose `comparison.reference` is one unbreakable 64-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.** [1]
+- The `ReviewResult` the real client decodes, and the mount that stubs only `fetch` and waits for both the surface root and the disclosure. [2]
+- The teardown cleans the mounted tree and restores stubbed globals. [3]
+- **The tolerated serialisations of a numeric zero, and why the assertion is on the length rather than on `"0px"`.** [4]
+- The own-root scrollport case checks the reviewer height and vertical overflow boundary. [5]
+- **Case 2: every `[data-pane]` is a grid item that may shrink (`min-width: 0`) and wrap its long identities (`overflow-wrap: anywhere`), with the non-empty input asserted first so the loop cannot be vacuous.** [6]
+- **Case 3: the disclosure's grid track is `minmax(0, 1fr)` — not the implicit `auto` — and the header row wraps while the subject span carries its own break opportunity.** [7]
+- The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). [8]
+- The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48). [9]
+- The shared client whose read this module mounts through, and whose decode the fixture satisfies. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file. Every response is served by a stubbed same-origin
 `fetch` and names one repository namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewRecordPanes.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/data/review.ts`); no claim changed. No verification stamp was advanced.
-- 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the two pane-helper rows because an older *Generated citation repair* bullet in this card names `pane`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`const pane = (title: string, children: React.ReactNode) =>`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
-- 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claim re-read — the `pane` helper moved.** L48 moved the record panes, with `pane` and its `minWidth: 0` / `overflowWrap: 'anywhere'` declarations, verbatim into `ReviewRecordPanes.tsx`; the disclosure track `minmax(0, 1fr)` moved with `ReviewTechnicalDetails`. The pin still asserts the same declarations on the same rendered surface, so both duplicate rows were re-pointed rather than reworded. The mechanical-repair bullets below are superseded by this re-read. No verification stamp was advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-- 2026-09-26T21:10:14+00:00: Generated citation repair: `isZeroLength` repointed to dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:145-145. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:10:14+00:00: Generated citation repair: `gridTemplateColumns`; `flexWrap`; "constrains the disclosure's grid track and wraps the header row" repointed to dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:178-178; dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:182-182; dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:172-184. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:10:14+00:00: Generated citation repair: `pane` repointed to dashboard/src/panels/review/ReviewSurface.tsx:82-90. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:10:14+00:00: Generated citation repair: `pane` repointed to dashboard/src/panels/review/ReviewSurface.tsx:82-90. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `ReviewPayload`; `ReviewResult` repointed to dashboard/src/data/review.ts:425-457; dashboard/src/data/review.ts:499-505. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T00:15:00+02:00 — 260921-ICR-L25 curator, round 3 (candidate `ar/260921-icr-l25-ar`; the file is **untracked** in the code worktree, so no commit contains it — code worktree HEAD is `d9e7e6e79ce532d16c689435ae95a63aab430f94` and that is the last real commit on this line; memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`): **created this one-to-one card for the new acceptance module (register B7, round 3).** The file has no previous onboarding because the file itself is new in this round, so this is a create rather than a refresh; the 1-to-1 source mapping is what obliges it. The card records the module's own stated limit (jsdom cannot lay anything out, so the cases hold the **declarations** the repair consists of and a `getBoundingClientRect()` case here would pass vacuously), the deliberately unbreakable 64-character fixture token that reproduces the defect's shape rather than a smaller one, the three cases by name, the `review-surface`-not-`review-workspace` root distinction the first case exists to name, and the non-empty-input assertion that keeps the pane loop from being vacuous. **Stamp accounting:** no verification stamp was advanced beyond naming the line's HEAD — the file is uncommitted, so the governed closeout owns the real stamp, and a stamp naming a commit that does not contain the file would be a fabricated provenance claim. No commit was made.
+No meaningful cross-repo references found.

@@ -1,0 +1,106 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sidecar and entity discovery classify metadata, normalize paths, and parse entity evidence through these helpers.\n\nAnchor: \"def classify_sidecar_onboarding_units(\"; \"def parse_table_metadata(\"; \"def normalize_rel_path(\"; \"def parse_entity_fingerprint_rows(\"; \"def classify_entity_catalog(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c3931f72183810cec08c4833bc012565e56f4b",
+            "content": "sha256:b9375140191642a34b97ffdbb5da779d3b7e7a3f5847f7f3b40628f5c4b29b87",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 289
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47fbe0fe7452568f5bb7f766308430b516d8f247",
+            "content": "sha256:72d3372b9478278a90e3d5d770c66f287439033859778cc16c4c4fb353492873",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4386fbbbc4761658185ef15c5fc3f5f7e9c7931a",
+            "content": "sha256:2cd15437ec639793c5a7cfcfffd4ecc59bd42ec05134e11abc18b28a1c8202ad",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9adc256a128d606ec110e5ff8c622ec9420d3899",
+            "content": "sha256:7e22fccbef5156b8ff51c338a1ccec2f8dbe5bf566bd8ea7ac420fcaf3ca92c1",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9adc256a128d606ec110e5ff8c622ec9420d3899",
+            "content": "sha256:c8bd7460c7169ce5b618cf0becf20290ecc5a0029ec36fe8df50106ef5b0bcc2",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 428
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4386fbbbc4761658185ef15c5fc3f5f7e9c7931a",
+            "content": "sha256:7895fc4f3df334ba7ba0f2f7bc717650dd6bc0d3c81de5563c1170fdc4aa90ea",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Path normalization is provided by the kernel resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4386fbbbc4761658185ef15c5fc3f5f7e9c7931a",
+            "content": "sha256:ab7694ae876f83cd557719f29cc32a5e66c3a017411e6b0edfcf414ce450efba",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_rel_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

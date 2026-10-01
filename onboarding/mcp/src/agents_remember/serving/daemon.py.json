@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/serving/daemon.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:ec8ebb319a6713fe13f79587a01c9dd27c0033151ad9d4937e40d29f69e71ed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:636d999cef4a193ded08e18ac24d52d12ef182cb4be5eef56b4294f46229215e",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardSettings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The MCP boot seam calling `maybe_autostart_dashboard`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86c3b2be96c126893168d463c2382ef107b5bc07",
+            "content": "sha256:4988cff4af7aa12bf35be2bd4fbf5135840ac6fc0d8fcde7c8f847b1e6729ced",
+            "locator": {
+              "kind": "symbol",
+              "name": "maybe_autostart_dashboard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The version comparator (`SERVER_VERSION`, kernel-owned since L9).\n\nAnchor: \"agents-remember-mcp\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
+            "content": "sha256:1a71ea706994550a3f38a782ff0a00904f8bc35cc33e7a237000cbe0add3371c",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

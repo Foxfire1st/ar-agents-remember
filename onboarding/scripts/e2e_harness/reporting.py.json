@@ -1,0 +1,55 @@
+{
+  "path": "scripts/e2e_harness/reporting.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stable checkpoint meaning and observed evidence are separate records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f93da2ff31b160176f182d89ba64b12ddc032f",
+            "content": "sha256:9f5a06b778ba1abb6d43117180742828f79f618971683698b63e1d614db41754",
+            "locator": {
+              "kind": "symbol",
+              "name": "CheckpointDefinition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Failure is raised only after the structured checkpoint is appended.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f93da2ff31b160176f182d89ba64b12ddc032f",
+            "content": "sha256:f0305607b54b1695e1f970928efad1da01d8854818a049ab92806c67890832bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CheckpointRecorder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The report contract is wholly repository-owned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f93da2ff31b160176f182d89ba64b12ddc032f",
+            "content": "sha256:a03907458cb7dfa1c229150e0d24fe1526d63754c6d57a55d874fae2d481beba",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_json"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

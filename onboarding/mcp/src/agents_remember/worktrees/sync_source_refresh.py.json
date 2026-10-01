@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_source_refresh.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selecting admission refreshes before acquiring integration authority and then re-reads the contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:82a0467e81acda8134452cb44246bd38e3d67121d07bc23793e8ba7e05db8703",
+            "locator": {
+              "kind": "symbol",
+              "name": "activate_atomic_series_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sync module consumes fetched evidence while pinning local sources under authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdb96036af069b62b402c49771a0478cd377d90",
+            "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_contract_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

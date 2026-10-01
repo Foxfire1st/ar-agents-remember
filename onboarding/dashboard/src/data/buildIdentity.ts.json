@@ -1,0 +1,73 @@
+{
+  "path": "dashboard/src/data/buildIdentity.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The server projection still declares an optional dashboard fingerprint; the added process/source identity fields do not change the comparator's input.\n\nAnchor: \"export interface ServingBuild {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:7ff733fb2911efbb7db59e34e56fe0d5d371080014662aee3951df3a6b764c24",
+            "locator": {
+              "end": 569,
+              "kind": "line_range",
+              "start": 569
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:d22b42f9069752e763c6eb2ae1e16548a70b8d638100e5f7474281698648165d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingBuildStamp"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:9db85c6faa2e588bc876b9124ed1087251d6e099a70f8a85391e1e709d38bab6",
+            "locator": {
+              "end": 966,
+              "kind": "line_range",
+              "start": 940
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Embeds the fingerprint into the compiled client.\n\nAnchor: `__AR_DASHBOARD_BUILD__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a03f25459bbd020b6f25f0bf36bf1426ad202580",
+            "content": "sha256:0c8fce771c825e03611f52bf97aa084a608af92e6861dd334e75029f033e25f0",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/vite.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/signals.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Operations-signals suite.\n\nAnchor: \"describe(\\\"LifecycleList independent Operations signals\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ea0788d0c3b6e03a62d1cb46deff142186a0c9b",
+            "content": "sha256:c71b9a96ec0f6f643ca212a3e83e303b16456ba98b2f8527f8fa4c4c0534d178",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

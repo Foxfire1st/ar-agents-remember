@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/start_progress.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Schema tag gating reads",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "content": "sha256:a939b132d9947f028c0e1376f406ef58484bd1b5b9b18b01c4ed2fd776aa8abf",
+            "locator": {
+              "kind": "symbol",
+              "name": "START_PROGRESS_SCHEMA"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Path layout under `temp/worktree-start/<repo>/<worktree>.json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "content": "sha256:4a93610257ccc1376709a0826696cf5929b7b90375317863778fc47114fd8e45",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_progress_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Best-effort write that never raises",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "content": "sha256:4a3030af5b7b05b4b473774339d20194c0a912fade3ffba0112ca08973385db0",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_start_progress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`blockedReason` only emitted when present\n\nAnchor: `blockedReason`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "content": "sha256:5e5b83f6c3fc35ef84f243df11073962f895ba962c1a2a14af644ac49466231c",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Clear on contract supersession",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "content": "sha256:25c723659db84dbeb9252766fc1f77d0be565d72ab28e3df84c74c8da7484011",
+            "locator": {
+              "kind": "symbol",
+              "name": "clear_start_progress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Schema-gated read returning `None` on miss",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "content": "sha256:673efc3b3d6d3a8f986a1d1723a55b1c972a49606faa36238990d71a991aa639",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_start_progress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Layer placement avoids observer<->worktrees cycle\n\nAnchor: \"observer<->worktrees cycle\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "content": "sha256:272d79fca4eaa1a09a2ef267c85315ed0a4cafa774f39531f2d0fb1f9535e6f7",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

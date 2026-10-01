@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `15fe8678fc0f87eaac4606952f179135ebe392c4` |
-| lastVerifiedCommitDate | 2026-09-18T07:49:45+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -64,81 +54,25 @@ Keep test-consumer ownership separate from product-package/coverage ownership. U
 
 The previous card incorrectly described unresolved ownership as a full-population fallback. Current source retains incomplete/unresolved results and the targeted caller refuses them.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. These are repository-owned implementation and verification contracts; no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source. | N/A | N/A |
+No configured external domain source.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Observed and declared ownership, exact-empty distinction and refusals | `DependencyOwnershipGraph` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:225-519 |
-| Transitive importer closure | `transitive_importers` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:522-542 |
-| Digest binds declarations and classification authority | `ownership_configuration_digest` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:593-614 |
-| **The repository-owned declaration table, which now ends later than the L12 count because two citation-binding modules joined the ambient-role runner's exact consumers.** | `REPOSITORY_TEST_INPUT_CONSUMERS`; `AMBIENT_ROLE_RUNNER_PATH` | mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:56-178; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:47-47 |
+- Observed and declared ownership, exact-empty distinction and refusals [1]
+- Transitive importer closure [2]
+- Digest binds declarations and classification authority [3]
+- **The repository-owned declaration table, which now ends later than the L12 count because two citation-binding modules joined the ambient-role runner's exact consumers.** [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required. | N/A | N/A |
-
-
-## Update History
-- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): **re-read the consumer table's claim against the current source and moved the number it states.** The table gained **two** exact declarations in this leaf's change set — `mcp/tests/test_knowledge_citation_bindings.py` and `mcp/tests/test_knowledge_citation_boundaries.py`, both consumers of the ambient role runner — so the cited range moves `56-175` → `56-177` and the sentence that counted twelve declarations now says twelve *in one change set* and two more here. The reason the two modules are declared at all is the fact this card's overview now carries: a path *string* in a test is a dependency edge, derived once for the evidence census and once for the selection graph, and `REPOSITORY_TEST_INPUT_CONSUMERS` overrides the catalog for selection rather than restating it — so a module that quotes a real corpus key is registered here even though no import creates the edge. Verification metadata is **not** advanced over unreviewed content: the body was re-read against the current source, and the code commit does not exist yet — closeout owns that stamp.
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the frozen source added
-  twelve consumer rows to `REPOSITORY_TEST_INPUT_CONSUMERS`, which now ends at `:175`. Re-read the
-  card and corrected both: the table range (56-163 → 56-175) and the sentence that still said one
-  declaration was gained, which now names the twelve modules the extracted shared fixtures reach.
-  Verification metadata remains closeout-owned.
-- 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: recorded the one exact declaration this change set
-  adds to `REPOSITORY_TEST_INPUT_CONSUMERS` — `mcp/tests/test_terminal_blocker_reasons.py` as a
-  consumer of `AMBIENT_ROLE_RUNNER_PATH` (`scripts/e2e_harness/run.py`), the manifest-side half of
-  that module's route registration and an ownership record only. Re-derived the three reference
-  anchors this card keeps: `DependencyOwnershipGraph` `223-517` → `225-519`, `transitive_importers`
-  `520-540` → `522-542`, `ownership_configuration_digest` `591-612` → `593-614`; the previous values
-  were one line short of the symbols at both ends before this change as well. Added the declaration
-  and runner rows. Verification metadata remains closeout-owned.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=28e3e565cb0fe0868771a37ec2e5daf640a6857c25c560df15d983534d6c0124; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-06T00:17+02:00 — Reconciled exact ambient-runner consumer closure and added publication/evidence consumers; preserved incomplete-ownership refusal and explicit global invalidation.
-
-- 2026-09-05T06:14:14+00:00 — Corrected obsolete safe-full wording to the implemented explicit unresolved-ownership contract and incorporated new profile consumers.
-
-- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
-  Docs References task-artifact rows as prose (absolute ar-coordination paths are not
-  repo-relative citations and carry no verifiable provenance).
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for eb05a872780112640359232063168639d20fa87b (root bootstrap repair): documented the added exact literal consumer `mcp/tests/test_gate_certificate_authority.py` for the certification profile; verification metadata rebased from `0506b57a` to the bootstrap repair owning commit.
-
-- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 added exact, source-verified ownership for
-  `layers.toml`: five declared consumers, no full-population launch, and no scanner fallback.
-  Verification remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added source-verified exact consumer ownership for `.codex/config.toml`, avoiding both global invalidation and an unproved narrow selection. Verification remains closeout-owned.
-
-- 2026-08-27T14:04+02:00 — Removed the misleading graph-local `product_*` projection. Consumer
-  ownership remains cross-package; explicit configured package authority now exclusively owns the
-  distinct product-versus-verification measurement decision.
-
-- 2026-08-27T11:14+02:00 — Reconciled source-first ownership: recursive plugin/import/reference
-  facts are authoritative, catalog consumers are a cross-check, and incomplete truth names a fresh
-  rerun instead of silently selecting a narrower population.
-
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.
+No cross-repository evidence is required.

@@ -1,0 +1,232 @@
+{
+  "path": "mcp/tests/test_terminal_liveness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fake fixtures configure and drive the existing host/control-read seams",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:8b50335289c690ceb7a036624991938f0869f9b9b6a1c7418e3afafc39a4e662",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Clock"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:5cd918c22030e5716388eb6d634135a778d7abc407fbe7bde87e8386b2529ee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FakeHost"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:c71a5aebaa4acc377f41cfc9072e59b28fc4846f131b5c24fdd9a3db3db581f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sweeper"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:a0719572328b239cc93a0bf43e063e896be9dfb73ce653b6aeb657c44c874cd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_starting_sweeper"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The sweep lock releases after an observation exception so a later cadence retries",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:1bdf6e66ab88b0fcefdb0864f1ba44d395192e73b228f12184dd20e892d72f62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sweep_lock_releases_after_observation_exception_for_later_retry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A contended starting-row sweep reads the committed snapshot before any catalog list",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:fd66699e6285e3c6ae71d319a50177db33e92753851deb1d94f1a093c1bcfeee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_contended_starting_sweep_reads_committed_snapshot_before_any_catalog_list"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A repeated clean hosted sweep performs zero physical replacements",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:49a13794f244405340e2cda152e43a77f8b1e8736088e94b05fc1d43ac7aa75d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_clean_hosted_sweep_does_not_replace_catalog"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The raising probe double that forces the lock-release path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:79f0661151ed8a18c2e8919970cd684ac0ba65d711dc7e6f736c5298b665ff25",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RaisingHost"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Host failures retain the count-plus-window gate, exit-mark and immediate pane-gone transition",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:b7000fa9f7ee8fd9d271007e06283204f311bde5e607d2a2ac05f45ec021002a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_transient_failure_storm_leaves_sessions_running_until_window_elapsed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Full sweeps remain rate-limited by the configured interval",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:99dcf69b0daaae53cd15af0cec6bc8a084e33e992b7cebfdaabafdc30b3e85a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_full_sweep_rate_limit_is_preserved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Starting rows use the one-second path and four-row cap",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:0c99b3b28c95e56e9be618f0e9b8103595519ee2d7ef84ebf708ce5461413df5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_starting_rows_use_one_second_fast_path_and_four_row_cap"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Host failure evidence survives reload and clears after a successful probe",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:68abf12e47d5fecf15528d6871c31467085292eeaa64f1c646239ec4cb86526b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_failure_series_survives_restart_and_success_resets"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Connected bridge failures require three strikes across reload and reset on success",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:c3572183c62d374b60100e6c07f8138409069fb19fb452f5ddefa6d26197c55a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_connected_control_reads_require_three_strikes_across_restart_and_reset"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Alive starting rows remain eligible through delayed bridge reads",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:91036c3cbb37ba407330482585050c57d28e3838c1a4468340b33b194a607333",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_alive_starting_row_survives_delayed_bridge_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A contended full sweep returns without waiting and without a second probe",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:5bc58c97916a903f1d5b0df87ab48b157bcdd90ef62f4b9ef55cce97ffce0934",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_contended_full_sweep_returns_committed_snapshot_without_second_probe"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

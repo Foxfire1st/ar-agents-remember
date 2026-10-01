@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/tree_observation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/tree_observation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -84,36 +74,27 @@ seam-extraction fix round along the established seam policy (one implementation,
 adjacent module, original keeps re-exporting); `diff_display` re-exports every name here, so an
 importer that has always read them from the display seam keeps working.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **One side's source binding: the exact tree and the root the command runs in, with `tree_id=None` a supported state.** | `TreeSide` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:32-42 |
-| **One changed path: the raw filename as the address, Git's status, the renderability, the mode flag and the reason an unknown is unknown.** | `TreeChange` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:46-64 |
-| **The observation: availability apart from paths, entries held in agreement with paths, and the unrepresentable-implies-partial rule.** | `TreePaths` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:68-108 |
-| **The Git seam as one question, and the probe that observes nothing for a comparison whose sides named no code tree.** | `TreeDifferenceProbe`; `no_tree_difference_probe` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:114-134 |
-| **The shared vocabulary defined once and re-exported at the display seam, so existing importers keep working.** | `TreePaths`; `TreeChange`; `partition_attribution` | mcp/src/agents_remember/memory/knowledge/tree_observation.py:68-108; mcp/src/agents_remember/memory/knowledge/tree_observation.py:46-64; mcp/src/agents_remember/memory/knowledge/diff_attribution.py:116-178 |
-| **The two readers that consume this vocabulary beside the display.** | `partition_attribution`; `review_inventory` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:116-178; mcp/src/agents_remember/application/review_source_inventory.py:429-469 |
+- **One side's source binding: the exact tree and the root the command runs in, with `tree_id=None` a supported state.** [1]
+- **One changed path: the raw filename as the address, Git's status, the renderability, the mode flag and the reason an unknown is unknown.** [2]
+- **The observation: availability apart from paths, entries held in agreement with paths, and the unrepresentable-implies-partial rule.** [3]
+- **The Git seam as one question, and the probe that observes nothing for a comparison whose sides named no code tree.** [4]
+- **The shared vocabulary defined once and re-exported at the display seam, so existing importers keep working.** [5]
+- **The two readers that consume this vocabulary beside the display.** [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every statement runs against values the
 caller supplied; no second repository, ledger or coordination path is read.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **re-export row re-anchored** — the bare `diff_display` anchor cited twice is replaced by the shared names at their definitions (`TreePaths`/`TreeChange`/`partition_attribution`). Wording adjusted to name the anchors; no stamp advanced.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced as the **shared source-observation vocabulary for ICR-R04@v1**. It records the three values and the seam — `TreeSide` (identity plus root, with `tree_id=None` supported), `TreeChange` (raw filename as address, Git status, renderability, mode flag, unknown-reason), `TreePaths` (availability apart from paths, entries held in agreement by construction, unrepresentable-implies-partial) — and the two honesty rules construction enforces, so a successor does not re-inline them into any one reader. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the production line at this leaf's recorded base, because every construct cited here exists only in this leaf's uncommitted candidate; what was actually read is this leaf's uncommitted working tree, and closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

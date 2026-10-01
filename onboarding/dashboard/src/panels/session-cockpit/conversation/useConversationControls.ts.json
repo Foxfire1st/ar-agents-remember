@@ -1,0 +1,179 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Turn-id correlation, attempt-and-reflect gating, honest reason, ack≠settlement announcing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:c12f9e49f9911c655b40d0d60f9905592bf609d208c04d7baf946798a57143b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveWorkingTurnId"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:242511167653c9e64a155a9e3e1432c08ed1b49138b3a9a64e6146cb8cbeb894",
+            "locator": {
+              "kind": "symbol",
+              "name": "useConversationInterrupt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:e74ae1223905ff87b68e7d3550dc0e57cd0453f4864ef85b292f2066097ba30a",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The interrupt request/status/reconcile client + typed `ControlResult` (a refusal never guessed into success).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:36c3138bd0f3a485531087b32932ac38b2bf7b1fe125f5a8e43b79472a17407e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ControlResult"
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The projection type this hook reads (`status.turn.turnId`, item `turnId`, `capabilities.controls`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:a7ae24c55328ac48ae400a1753b9bd6319c56aa94e810ce19c2bfe801bfda516",
+            "locator": {
+              "kind": "symbol",
+              "name": "ActiveConversationProjection"
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The active conversation store this hook reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:7b0e8a90c1bed09c86800be640a7d95a4ffeb42b8ddcef69e2e57b457dad1955",
+            "locator": {
+              "kind": "symbol",
+              "name": "activeConversationStore"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `ariaKeyshortcuts` helper + `conversation.stop` binding lookup (F25).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb1400045f13dbb70b3167ab3cc4d00ace34229e",
+            "content": "sha256:f2756fad30831b3b6e25eb951b4e0e78bdcae306f811b01374de49701c9e0997",
+            "locator": {
+              "kind": "symbol",
+              "name": "ariaKeyshortcuts"
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared polite announcer for ack/settlement transitions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10c66e5d84f945029c828f5c0205edaa23e7a910",
+            "content": "sha256:2ab409d2ac6969e4c9d698c946c985c7a799f866d6840cc142e1b17c6faf3e50",
+            "locator": {
+              "kind": "symbol",
+              "name": "announcePolite"
+            },
+            "path": "dashboard/src/data/announcer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The WorkingLine host that renders the enabled/disabled stop from this hook.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1803d8e8d555b1dd1f750eeed778ff21f61302ff",
+            "content": "sha256:616077b5bce43da94bce549687878489f0050d8e4b7e920d2ed87bf7fc8a63f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkingLine"
+            },
+            "path": "dashboard/src/panels/session-cockpit/WorkingLine.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1803d8e8d555b1dd1f750eeed778ff21f61302ff",
+            "content": "sha256:6c8f1d6f6104e3e3238091e49b14288eb05a6d82a8ccda0e6bf6b0d9fd3bfcc6",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/src/panels/session-cockpit/WorkingLine.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The interrupt hook suite (enable/unresolvable/refusal regression).\n\nAnchor: \"useConversationInterrupt (F1 enable / F5 honest reasons)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54a131a1565f2ed7f07480e49b00222a3da4c826",
+            "content": "sha256:f46608d7c14b5353e592cc524b82c33061ea2902e27dba847df3cd87f1e82a80",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

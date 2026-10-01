@@ -1,0 +1,382 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/operator_inbox.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Passive/active pull and gate-wait are the return-channel layers available when push cannot be guaranteed.\n\nAnchor: `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:d8d5ef894d70a64e9d87dca14ac51381417473540885c57bf9e941fd1bac2d94",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The MCP module delegates post, registered-post, poll, and consume commands to the application layer and validates each response through `_tool_payload`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:72d19071d1f2b4d092fe2e3ac9fcabc4bacc4be5ddb0f7511c2479f741b52733",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_post_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:a5ca27ec2d6d43c375dcc15696d72c5449a8ebec96210894460103cdb038c435",
+            "locator": {
+              "kind": "symbol",
+              "name": "registered_operator_inbox_post_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:23e8507f187917c75e77b9381d573acb21d127099218b55d6cdf5c2b24fdcc49",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_poll_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:d6448461a08344dd40d08cd2e509b110da292a7280111613df2d91c0c8f35116",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_consume_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:c33f9216f5c34d4233ffcd5ebf71f9f4a8fec0195026e3057d14b13622a81054",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:365e35194804870383af318a828f8695fa0f28871aa2a84ebe708d7dff23fced",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:d1d786b32d0c6bdca848fd1a3d4e6c472d0033f7320e4b8a313535a5bbbf5483",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:0ef49388b3ab1e87ad462dbe9e90f6f724331d2b519beedb4d001dafc5dca287",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The application layer roots the store, composes post requests, polls pending entries, and consumes entries while fulfilling acknowledgements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:878a0252406f5bc9c877aff5064f8ad01550e3bb1dcd99251e01b73749bb9e4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store"
+            },
+            "path": "mcp/src/agents_remember/application/operator_inbox_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:3f49510691b51693400b2039df5c022fb209f951a9ee31c4497925dca28ced7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_post_tool"
+            },
+            "path": "mcp/src/agents_remember/application/operator_inbox_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:47ae2d3cd86a6fb24942c29781df9c7e5afb47a3a4b7933dd3d065bec4d1d4e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_poll_tool"
+            },
+            "path": "mcp/src/agents_remember/application/operator_inbox_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:2cde433c2bea8e046aa5462adaf3709d32752b01eee30ad722aecba73da2c464",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_consume_tool"
+            },
+            "path": "mcp/src/agents_remember/application/operator_inbox_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The serving post owner derives routing, persists the row and ack-by expectation, and performs optional hosted delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:662eb9a6b9dfc3445af7449e7ac8a58ce934b4fa3c333d853c2c2361b63629ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_address"
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:8e9a1a35410f876df5626ded0f0ff205773cb21090d72c6d782cead8b2e81ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_persist_post"
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:55e1e4b1ce69add73e2169d39a8a2a68e1905aad99592ca583b45f8e5883cfd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_post"
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:7af1661ef98bd74f2bce36068144ecbe55a78140ee535d37b18e99ad2aae0f97",
+            "locator": {
+              "kind": "symbol",
+              "name": "post_operator_inbox_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:568ae1f2a66848dd0e3aa45771b998094666893b77afc2ae10344513be11cafb",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:99347d5e531ac6f1e369d60540795528be167e610fb18ef174459825edb3318d",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:1f44ddf73bf2ed0899313b9a3370eb99423329616950439f8eaa29652257b297",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Hosted delivery reads the supervisor redelivery floor and passes it into the delivery attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:812d6fd7e4dfc0345d9817d4748bcb47de0dea9588eeb0a49f1b717861f69629",
+            "locator": {
+              "kind": "symbol",
+              "name": "_redelivery_floor_seconds"
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:55e1e4b1ce69add73e2169d39a8a2a68e1905aad99592ca583b45f8e5883cfd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_post"
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "671371a22f5b40e91beb88563d1f4a084a41bbf6",
+            "content": "sha256:4ec15031b25aa0fcbd7c0d24ab3b64b415dbfb13ac07a6762006f8964fbac79f",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The tool declarations fix public-route attribution to model/cli.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f721d34dbb7edc6927160dcf09a15f29c8908ab",
+            "content": "sha256:e101ee8b0f1e1b07d72031003bf5c02e9273cb719f1d21a0c636ca48251af910",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_orchestration_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/orchestration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The dashboard route delegates to `_operator_inbox_response`, which calls the serving post owner directly and fixes trusted developer/dashboard attribution.\n\nAnchor: \"def _operator_inbox_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:5b3c3a18907b28d960b640da2f9b5d336a5b5c92656ab541c5213e997a365144",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_operator_inbox"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:7a353f81c10296665e5b413bdb977f4aa252d41e6b02168b2ec79664aed3f097",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 336
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:140512e511d44248c7141ca5e8b0109bd0e2b0e587f664cb87820c2de2223070",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:cbe3a5a1f0a762e86dbe1a6961af083c7e06b0beafbf86083f78b047afb4a33d",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 405
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

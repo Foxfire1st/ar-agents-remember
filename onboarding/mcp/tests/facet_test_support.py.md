@@ -1,15 +1,5 @@
 # mcp/tests/facet_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/facet_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](../overview.md)
@@ -110,55 +100,36 @@ exactly one declared consumer, `mcp/tests/test_knowledge_facets.py`.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The measured pre-leaf constants, recorded with the construction that produced them.** | `PRE_LEAF_GENERATION_2_FINGERPRINT`; `PRE_LEAF_DATASET_DIGEST`; `PRE_LEAF_PAGE_DIGEST`; `PRE_LEAF_RESULT_DIGEST` | mcp/tests/facet_test_support.py:92-110; mcp/src/agents_remember/memory/knowledge/schema_generations.py:284-284 |
-| The one admitted candidate, built through the production seam with provenance from `write_authorship`. | `build_admitted_candidate` | mcp/tests/facet_test_support.py:187-202 |
-| **The recorded fixture: generation 2's own DDL, fixed identities, a fixed authorship instant, and the production authoring calls.** | `build_recorded_fixture`; `build_recorded_generation_2_dataset` | mcp/tests/facet_test_support.py:545-668; mcp/tests/facet_test_support.py:526-542 |
-| The count helper that measures the open dataset's own declared tables. | `table_counts` | mcp/tests/facet_test_support.py:462-468 |
-| **The one write driver that maps a command kind to the operation that owns it and carries the admitted envelope.** | `write_facet` | mcp/tests/facet_test_support.py:372-390 |
-| The three convenience wrappers that assert the write was applied before returning identities. | `store_facet`; `attach_facet`; `author_explanation` | mcp/tests/facet_test_support.py:404-426; mcp/tests/facet_test_support.py:429-441; mcp/tests/facet_test_support.py:444-459 |
-| **The batch driver and the context resolution a batch precondition is built from.** | `apply_commands`; `resolve_context` | mcp/tests/facet_test_support.py:363-369; mcp/tests/facet_test_support.py:350-360 |
-| The authored subject and the one stored target of every attachment kind. | `seed_subject`; `endpoints_for_subject` | mcp/tests/facet_test_support.py:205-233; mcp/tests/facet_test_support.py:332-347 |
-| **The recursive union walk and the three closed-vocabulary questions the cases ask through it.** | `member_models`; `payload_kinds`; `declared_subject_kinds`; `command_kinds` | mcp/tests/facet_test_support.py:484-523 |
-| The one valid payload per subtype and the one noun per endpoint kind. | `MINIMAL_PAYLOADS`; `ENDPOINT_NOUNS` | mcp/tests/facet_test_support.py:142-179 |
-| The twelve shipped command kinds as data, so the widened union is measured against a stated set. | `SHIPPED_COMMAND_KINDS` | mcp/tests/facet_test_support.py:125-140 |
-| **The governed artifact and its contract, with its one declared consumer.** | `knowledge-facet-cases`; "path = \"mcp/tests/facet_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1368-1368 |
-| The production generation builder and the recorded generation-2 DDL the fixture is created from. | `create_schema_statements`; `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:173-180; mcp/src/agents_remember/memory/knowledge/schema_generations.py:208-208; mcp/src/agents_remember/memory/knowledge/schema_generations.py:284-292; mcp/src/agents_remember/memory/knowledge/schema_generations.py:186-192; mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299; mcp/src/agents_remember/memory/knowledge/schema_generations.py:196-196; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-313; |
-| The cases this harness exists for, and the byte-identity node that reads the measured constants. | "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy"; "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write" | mcp/tests/test_knowledge_facets.py:1002-1017; mcp/tests/test_knowledge_facets.py:935-979; mcp/tests/test_knowledge_facets.py:1053-1068; mcp/tests/test_knowledge_facets.py:1187-1194; mcp/tests/test_knowledge_facets.py:1135-1142; mcp/tests/test_knowledge_facets.py:1214-1214; mcp/tests/test_knowledge_facets.py:1162-1162 |
-| The production generation builder and the recorded generation-2 DDL the fixture is created from. | `create_schema_statements`; `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:129-141; mcp/src/agents_remember/memory/knowledge/schema_generations.py:175-292; mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-313 |
-| The cases this harness exists for, and the byte-identity node that reads the measured constants. | "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy"; "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write" | mcp/tests/test_knowledge_facets.py:986-1068; mcp/tests/test_knowledge_facets.py:935-985; mcp/tests/test_knowledge_facets.py:1187-1194; mcp/tests/test_knowledge_facets.py:1135-1142; mcp/tests/test_knowledge_facets.py:1214-1214; mcp/tests/test_knowledge_facets.py:1162-1162 |
+- **The measured pre-leaf constants, recorded with the construction that produced them.** [1]
+- The one admitted candidate, built through the production seam with provenance from `write_authorship`. [2]
+- **The recorded fixture: generation 2's own DDL, fixed identities, a fixed authorship instant, and the production authoring calls.** [3]
+- The count helper that measures the open dataset's own declared tables. [4]
+- **The one write driver that maps a command kind to the operation that owns it and carries the admitted envelope.** [5]
+- The three convenience wrappers that assert the write was applied before returning identities. [6]
+- **The batch driver and the context resolution a batch precondition is built from.** [7]
+- The authored subject and the one stored target of every attachment kind. [8]
+- **The recursive union walk and the three closed-vocabulary questions the cases ask through it.** [9]
+- The one valid payload per subtype and the one noun per endpoint kind. [10]
+- The twelve shipped command kinds as data, so the widened union is measured against a stated set. [11]
+- **The governed artifact and its contract, with its one declared consumer.** [12]
+- The production generation builder and the recorded generation-2 DDL the fixture is created from. [13]
+- The cases this harness exists for, and the byte-identity node that reads the measured constants. [14]
+- The production generation builder and the recorded generation-2 DDL the fixture is created from. [15]
+- The cases this harness exists for, and the byte-identity node that reads the measured constants. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): **the page and result digests were re-measured for L44's additive `resolved_ranges` field.** The worker serialized the recorded fixture at `9b2f775f^` and at the tip. Each serialization differs only by one `,"resolved_ranges":[]` on the single file-locator anchor, and removing it reproduces the pre-leaf bytes. The worker then updated the two constants and wrote the cause and the original digests into a source comment. This follows the `260921-ICR-L44` F6 ruling that the field is additive on every anchor observation. Logic and Invariants now record this re-measurement and the leaf's rule for later drift (re-pin an intended contract change with its cause; restore an unintended one). Ranges were re-pointed through the exact base-to-candidate line map, and the constants row now spans the comment. No stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "path = \"mcp/tests/facet_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1354-1354. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "path = \"mcp/tests/facet_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1336-1336. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T07:28+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **citation ranges re-derived by reading the cited construct, not by arithmetic on the old numbers.** This leaf's own source edits grew the file this card cites, so the row(s) naming `"path = \"mcp/tests/facet_test_support.py\""` no longer held their anchor in the cited range. Each was re-read in the code worktree at the construct the claim names and re-pointed to that construct's own current declaration extent (`mcp/tests/evidence-lifecycle.toml:1330-1330`). No claim wording, anchor or row was changed, added or deleted; no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T02:25+02:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **re-repaired the one enforced `citation_anchor_absent_from_range` row of the governed-artifact claim, because the sync onto the master line moved the construct again.** The row ("The governed artifact and its contract, with its one declared consumer.") cites `"path = \"mcp/tests/facet_test_support.py\""`, which the 00:57 pass correctly read at `1326` on the pre-sync line; the merged line inserted two lines above that `[[artifact]]` block, so the artifact's own `path =` line now stands at **1328** and the range is repointed to `1328-1328`. The row's other range (`55-55`, the `knowledge-facet-cases` contract id in its `[[contract]]` block) is verified current and unchanged, as are the claim and both anchors. Claim wording and anchors are untouched, no range was dropped to silence a finding, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits. No commits.
-- 2026-09-20T00:57+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): hand-read the one enforced row this document carries and cleared it (`citation_anchor_absent_from_range`, "The governed artifact and its contract, with its one declared consumer."). The range written by the previous clearance (`evidence-lifecycle.toml:1318-1323`) no longer held `"path = \"mcp/tests/facet_test_support.py\""`: reading `mcp/tests/evidence-lifecycle.toml` shows that artifact block's own `path =` line now sits at `1326`, so the range was repointed to `1326-1326`; the row's other range (`55-55`, the `knowledge-facet-cases` contract id) is unchanged, as are its claim and both anchors. No claim was re-worded, no anchor or range was dropped to silence a finding, and no verification stamp was advanced. No commits.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `facet_test_support.py.md:127` ("path = \"mcp/tests/facet_test_support.py\"").
-- 2026-09-18T19:53:17+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) The governed-artifact row cited `evidence-lifecycle.toml:1318-1318` (the previous lane's consumer list) for `"path = \"mcp/tests/facet_test_support.py\""`; the artifact's own `path = …` line sits at `1323`, so the range was widened to `1318-1323`. (b) and (c) Both generation-builder rows cited `schema_generations.py:310-310` — the closing `)` of `_compose_generation_2` — for `GENERATION_2`; the record itself is the next statement at `313` (`GENERATION_2 = _compose_generation_2()`), so each row's range was widened to `310-313`. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "path = \"mcp/tests/facet_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1318-1318. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "path = \"mcp/tests/facet_test_support.py\"" repointed to mcp/tests/evidence-lifecycle.toml:1314-1314. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the new governed support module. It records the two capabilities no single facet case can own — one **admitted** candidate built through the production seam, and one **recorded** dataset whose page digests were measured on the base revision before this leaf existed — the pre-leaf constants as observations rather than assertions, the fixture construction (generation 2's own recorded DDL, fixed identities, a fixed authorship instant, the production authoring calls in one order), `table_counts` measuring the open dataset's own declared tables, the one write driver that maps a command kind to its owning operation, the authored subject and per-endpoint-kind targets, the recursive union walk behind the three closed-vocabulary questions, and the twelve shipped command kinds as data. It records the registration facts a new support module obliges: the `knowledge-facet-cases` contract and one exact consumer in `mcp/tests/evidence-lifecycle.toml`. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

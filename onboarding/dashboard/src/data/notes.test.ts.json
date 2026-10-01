@@ -1,0 +1,83 @@
+{
+  "path": "dashboard/src/data/notes.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The list/read client functions under test.\n\nAnchor: `listNotes`, `readNote`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
+            "content": "sha256:ea96e2f129e7d29d6f2e847dca92d725fb659db2a4a0b2931b7985b15052079b",
+            "locator": {
+              "kind": "symbol",
+              "name": "listNotes"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
+            "content": "sha256:684ae4c7ea130b878532f5488a9dd9ce46584ce558626cc1fb52e3c9a51d6ba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "readNote"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reference resolver under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
+            "content": "sha256:8c62e549e9afe5477f682e83eda4e4870e1fa470f6ebb4c7c0d196705144b939",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveNoteReference"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sibling client suite's shared fetch-stub idiom.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19e02342c8f1e56e91d12a758cf359249fd08567",
+            "content": "sha256:ec9dfc8049c847a31957becf35319bbc6e1a5c0aadee05f0dd795ba2be0af453",
+            "locator": {
+              "kind": "symbol",
+              "name": "stubFetch"
+            },
+            "path": "dashboard/src/data/files.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "19e02342c8f1e56e91d12a758cf359249fd08567",
+            "content": "sha256:41f27493de59bc24bf07cc656d050bd9631336dbcfae02f6dd44e34b57fcccbe",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "dashboard/src/data/files.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

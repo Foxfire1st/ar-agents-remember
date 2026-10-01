@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/serving/inbox_delivery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Delivery records adapter acceptance and boundary-aware landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa8c28490d56023e8587e750c0369311759e71a2",
+            "content": "sha256:974d34325c8011077e0b04e031cc2250b6538d4c1ca10bbac0f9f254d38a093c",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver_inbox_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Structural delivery target selection consumes the one canonical seat selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa8c28490d56023e8587e750c0369311759e71a2",
+            "content": "sha256:7f92ebb60cc4da9bb279f1c8f0557acab48463dcf764b61d670cdf633231829c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_structural_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Dispatch brief is the sole exact-pinned targeting exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa8c28490d56023e8587e750c0369311759e71a2",
+            "content": "sha256:2f9919c5f8f87c3d9113d32b8b1a667f7839bb15b178a945bdc11d42d6af7aaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "target_session_for_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

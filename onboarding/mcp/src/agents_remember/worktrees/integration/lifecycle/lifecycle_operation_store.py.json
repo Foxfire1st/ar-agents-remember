@@ -1,0 +1,184 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current `_validate_private_preparation_transition` boundary implements the preparation contract above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:9a7c34c3900278e087fc16d20bd2b22384de0ac91527c00dcd07ef2abac2b338",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_private_preparation_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:df480aff6a1a707bc5c9100a10a727dbc5edbcdfb76ca3516ea2b39589211aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "replace_terminal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shared meaningful-change comparison. (`meaningful_state_changed`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:70b881a117ff01cfa44109b8dd22f026fa87b3de23e76e92a6c4084b37130b22",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaningful_state_changed"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_validate_recovery_commits_transition` prevents proven code/memory recovery commits from disappearing or changing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:db7d1697169f1e0c043224c9ef61fe474d6e837d4eeecfd2ec96a92d2085b522",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_recovery_commits_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_validate_identity_and_evidence_transition` preserves generation identity and monotonic mutation/publication state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:75c39d3c0d84f8f0c16ccfd241fa36581dde7adce2675cae23717e7938dbda85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_identity_and_evidence_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Task intent joins the compared generation identity. (`_validate_identity_and_evidence_transition`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:75c39d3c0d84f8f0c16ccfd241fa36581dde7adce2675cae23717e7938dbda85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_identity_and_evidence_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Legacy missing-intent generation archive + successor write. (`_retire_missing_intent_generation`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:1ef53b29968ac4a2eee977de56a569ae260266e7609c5781ea39729c5ad034ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_missing_intent_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The write-side identity requirement for closeout/direct-landing records. (`_write`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:87461444e0b32193671801785ff6d62e12d172795e7f4e59c2a240703a3d876e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Exactly-once cursor validation on the meaningful subset. (`_validate_identity_and_evidence_transition`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:75c39d3c0d84f8f0c16ccfd241fa36581dde7adce2675cae23717e7938dbda85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_identity_and_evidence_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Both revisions assigned at the canonical writer boundary. (`_advance_record_revision`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:a8c02fff05ee9bd67eda38285d93f5c546aebdf6d1fca018dd13ac4998745d9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_advance_record_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The canonical journal writer increments recordRevision on every write and meaningfulRevision only for meaningful state changes. (`_advance_record_revision`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:a8c02fff05ee9bd67eda38285d93f5c546aebdf6d1fca018dd13ac4998745d9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_advance_record_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

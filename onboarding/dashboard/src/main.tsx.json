@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/src/main.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Panda entry + layer order it loads.\n\nAnchor: \"@layer reset\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:d60672d97d7348ea7c088e8a2f419f15b7e9315a72449a636c2fab1bf82c599b",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `:root` design tokens it loads.\n\nAnchor: \":root\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6ed9b5f830cc758ade244a573ce03c2ca8eb29",
+            "content": "sha256:3eea504bf20b41c4729d3cce40c23851d3ae95b5017e6b0a1a8ca385eb3357c8",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/styles/tokens.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The scoped WebTUI skin it loads third (260715-FEUI-L1).\n\nAnchor: \"base.css\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4226c7769b30f0ae479e448cb3a0259f36223b45",
+            "content": "sha256:8d8d4f288ed3866f4aafe4498f1befda128a7dd406f1f7094a0017a309dcec4f",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/styles/webtui.css"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

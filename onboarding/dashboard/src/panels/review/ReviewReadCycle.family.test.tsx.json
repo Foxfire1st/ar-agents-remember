@@ -1,0 +1,171 @@
+{
+  "path": "dashboard/src/panels/review/ReviewReadCycle.family.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The header's provenance paragraph: bodies from the public authorship and real review route; `familyPaging.captured.json` re-captured by MIK-L31 and recorded in the receipt; the walked family opened by its `family_id`.**\n\nAnchor: \"re-captured by MIK-L31 with ICR-L44's\"; \"familyReview.capture-provenance.json\"; \"rather than relying on its position\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:b4675237bf275a74485899e379d72e51f78c9a467a4da861a36a52a6e229b543",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The harness uses the captured HTTP bodies and existing read cycle, with its own fresh read cache.\n\nAnchor: `new ReviewReadCache()`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:2ae3228d95fe14e38b22d533e394945dd0e4a3e547b9ac06a933b8e54fbad027",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountCycle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Independent exact walks retain content and claims.\n\nAnchor: \"retains exact content and claim identities while before and after walks advance independently\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:d872f183f1198eb5b01fe4c114507144826234323fed258718ef574c5653ca0a",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Failed admission retains the coherent display and failure details.\n\nAnchor: \"retains the coherent display and fails a rejected continuation, including a structured page refusal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:364a235eda93f2966924ff4c46efaa6fdda0144833cf1a86c9d1e0318614d81d",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unadvertised cursors are checked without weakening whole-review refusal.\n\nAnchor: \"fails an unadvertised request cursor while preserving whole-review refusal semantics\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:f08cd09088604a690ef7d259be02cad1fe965742cc83fb867fe630b8ec9e8310",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The family-detail branch states loaded, complete and unavailable scope.\n\nAnchor: \"states loaded claim scope in family details for a content-only page, completed walk and unavailable side\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:31c90323e9e677e881d5d5455991e48217d3ad9e0f7be805b400800e0a3627e6",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 352
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Refresh, changed questions and late responses cannot reuse old context.\n\nAnchor: \"resets accumulated context on refresh, subject and history changes and drops late continuations\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:fb9677ea6ef196e81a98cf4d5712c21a60fb756f3f8cf7af27e4584a476caca3",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 412
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A late source expression becomes reachable beside preserved intent and workspace state; the walked family is opened by the capture's own `family_id`.\n\nAnchor: \"keeps selected intent, evidence, siblings, focus and open layout while a late source expression becomes reachable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:1afb2308b74d34d9406b9ea4aa41fc746e1472ecc4c301dcf310bb365da31997",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 467
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The production owner admits or rejects continuation before retaining data: the read cycle decides when (`familyContinuationRead`), and since L48 the merge it applies lives in `familyWalkMerge.ts`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:904fba4680b2632a1c07d36675ccd1ac88cd8287fbce8c3c8257cb60508ae176",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyContinuationRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:131860f27487fed3d48326b81a7bf59cfb0e6721b7e57501b8e15ea71ea9cf80",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilyContinuation"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

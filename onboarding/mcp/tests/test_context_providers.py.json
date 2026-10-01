@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_context_providers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Cgc layout ignores host falkordb environment defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c2c382bf2b8b747bf24f0822aaef9705d9dcdd",
+            "content": "sha256:4876d3a839eba67cd5868719fa00f7bf1fa25591ce0ddf9561f03152fa52f024",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cgc_layout_ignores_host_falkordb_environment_defaults"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ensure cgc runtime layout writes pinned defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c2c382bf2b8b747bf24f0822aaef9705d9dcdd",
+            "content": "sha256:6fd8952a4d99d540dc85468310a3ac43382436bc343f4e0fe39d660e01b84594",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ensure_cgc_runtime_layout_writes_pinned_defaults"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Detects forbidden source provider artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c2c382bf2b8b747bf24f0822aaef9705d9dcdd",
+            "content": "sha256:dd9efddc58a5dae1dd7bbdf3e857eafe1079ab2ab6cfd49be1bff436d82ce31f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detects_forbidden_source_provider_artifacts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Patch rejects unexpected source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c2c382bf2b8b747bf24f0822aaef9705d9dcdd",
+            "content": "sha256:40fc0367a0cfb914c9ab9ee87b377118e14ca6e545fb4229a115a067083363f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_patch_rejects_unexpected_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

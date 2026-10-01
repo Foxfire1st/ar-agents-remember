@@ -1,0 +1,231 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_submission_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Locks, idempotent admission, dispatch/withdraw, exact completion, the recovery capture, and the entry-thread multiplexed respond.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:ace0aeb8e2a223c370516931cf9664710e8a4212f01dee2689c6976fad978c48",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessSubmissionAuthority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:0dbebbf3069744afd8f59c879b66460c0100f5cfb9aa6dcc18b5a749da2cf826",
+            "locator": {
+              "end": 1023,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The records, the retention and the timeline read named in the old single-row claim are no longer in this module: 260731-EFA-L6 split `OperationRecord` and `SubmissionLedger` into their own file, which is where enrolment, eviction (`make_room`) and `operation_timeline` now live.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:aaf9b85badf14bed2ebbdca5e0a591ae3ed8907ec4e79e3da8295fadbe649f24",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationRecord"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:a3b78ef18a86c23300e6e5fb5631f0a87f62e0a877c3801478424679e0aadba5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionLedger"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:aa4522efad552d46be4705a5ea0e4942ce328e393a0a430482be9035efdf444f",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:369330a4d3e58664c30c9fd7154f90a71ebf302744367487c5870fd38fd3fefe",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bridge wires direct adapter events here before coalesced publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:4ad359276784eff657ecb362b536c606066f715763815a0ab85cdb261a92e8f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_events"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:a2baf75491604bbe5d8ceb4ed4d3281f2b3659014fefd58758915d83a2d0eae4",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 415
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The API registers the submission-ledger routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:142ec3dfb7465276a3e93dadac416b57af7179e97f34596b4aca812dd4ee8098",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_submission_ledger_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:6e099e715e07677825e6ca7a1ac539b3101c3041e7410b1968e5602d6aedaa3d",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 301
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The API exposes the submission-authority route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:5131f1889fbb940867b6a3f675608856931a7144edec08299e528696d9053a3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_submission_authority"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:d250c67ea0fde7ba9ce9e8564dea5c60936ff2a26856eaa6873b2c83c2c5d695",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The status serializer produces the raw-free submission batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:3b7ef7fd41869ac02e1fc45397907a20afad577cd17c982c72600f5c56f13134",
+            "locator": {
+              "kind": "symbol",
+              "name": "submission_status_batch_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The status wire model carries the raw-free batch projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:ccf611d403891a0e0c5c5c224744bf6a695572f7c56e679dc7677adbb454b58a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionStatusBatchWire"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The public receipt wire preserves the raw-free response shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:9afc6a6fe232f101a98d786bba4f69a1c9d21d321748c143a9a4feef6fa773d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicReceiptWire"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

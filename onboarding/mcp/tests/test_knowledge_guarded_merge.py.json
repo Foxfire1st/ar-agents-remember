@@ -1,0 +1,279 @@
+{
+  "path": "mcp/tests/test_knowledge_guarded_merge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The five-case contract, what each case fails on, and the budget statement.\n\nAnchor: \"The unit population is at its declared ceiling\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:19bad2d3c97ab18f508a3c8c802e816d5aa2a54d7ea2f2fb31d56c5fa4490b56",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The lane manifest row that classifies the unit half — the lane header itself, not one of its member rows.**\n\nAnchor: \"unit-regression\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The lane manifest row that classifies the integration half — the lane header itself.**\n\nAnchor: \"integration\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:f4c6916d77c24bba3da1bfa3f8a3aa5ba69edc7648bb345f8e0966be6a1231b7",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The governed-artifact registration of the support module these cases share.\n\nAnchor: \"contract:common-base-merge-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c297b2a047cd8e3a340a492b281531ba5ac7f16e9f01ef90251e23fc8f5ba518",
+            "locator": {
+              "end": 1339,
+              "kind": "line_range",
+              "start": 1339
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane manifest rows that classify both modules.\n\nAnchor: `unit-regression`; `integration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The governed-artifact registration of the support module these cases share.\n\nAnchor: \"contract:common-base-merge-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c297b2a047cd8e3a340a492b281531ba5ac7f16e9f01ef90251e23fc8f5ba518",
+            "locator": {
+              "end": 1339,
+              "kind": "line_range",
+              "start": 1339
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The governed-artifact registration of the support module these cases share.\n\nAnchor: \"contract:common-base-merge-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c297b2a047cd8e3a340a492b281531ba5ac7f16e9f01ef90251e23fc8f5ba518",
+            "locator": {
+              "end": 1339,
+              "kind": "line_range",
+              "start": 1339
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The structural node and its six classes plus reorder, rename, weakened trigger and `user_version`.\n\nAnchor: \"def test_every_structural_violation_is_refused_before_a_session_exists(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:62b7122663b3ab60b0061599ec901bc1c9de59c6adfdcc00d527372b3d29f412",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registered evidence node of `contract:common-base-merge-cases`.\n\nAnchor: \"def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:8aa0cb093158f15096398064c9dd38d5a000178b0f32343d4bdad093f8f5d383",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The conflict node, including the exact conflict-key assertion and the two orientations' differing retraction precondition.\n\nAnchor: \"def test_both_conflicting_edits_refuse_whole_and_preserve_every_input(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:4bd87d2eb922fff48aca41db0301be5423baa1a56884e6790c9a5fa2f6a35c11",
+            "locator": {
+              "end": 571,
+              "kind": "line_range",
+              "start": 473
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The base and input-defect node.\n\nAnchor: \"def test_every_base_and_every_input_defect_refuses_without_moving_a_dataset(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:434e4b817d970ca9d9cc67149d63de4a5d2adaace76ec4e57a240c1749b041ac",
+            "locator": {
+              "end": 671,
+              "kind": "line_range",
+              "start": 574
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The partial delta that reproduces a missing `session.attach` and is accepted by SQLite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:7b720fb406309409fbee361442802d09cf77e6f45d9f485ff50922feb52f4c3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_partial_delta"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The measured orientation assertion that replaced a constant-true predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:f77a8a3fffcbfbc720786d7c66e82cbf1b25b86eabee17362c8686ee125eea75",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_removal_orientation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The harness the cases are built on, and its real three-commit Git scenario.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:6ad32801bb47dc160ae769989211ff37346cb4165ef7b7102b73544d4d66d535",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_case"
+            },
+            "path": "mcp/tests/merge_case_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:87cea494e6c70e12b8c21603a4fbbbe9924e55acd48da9f3059f502efd9679f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitBranchWorld"
+            },
+            "path": "mcp/tests/merge_case_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The boundary module that carries the scenarios needing their own world.\n\nAnchor: \"Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be8045510eae43dc4a30d00474c0db1f34731ddd",
+            "content": "sha256:8fd94129b27fe62041396d5942ea199fe9a01c7c67ec37a0222c31114c70baeb",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

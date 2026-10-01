@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/review_history.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Error/status boundary, cap-aware begin semantics, and pending admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
+            "content": "sha256:57cb0cc0a1a3eca719c853b3d40d04af6f08a12b20a3f13d2b4c92ee8c1cd232",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewHistoryError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
+            "content": "sha256:c07d7a3c7ba19f526c24128b195a611d257f79e05869f1c0034c3f722702e859",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_task_review"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
+            "content": "sha256:5bd6ecbaf66d7e943325fdc3d95e9c3a29d3db71421e133bf2d8f9fe6a827a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_pending_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publication field validation, developer-permission parsing, and sealed baseline creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
+            "content": "sha256:8bb975a0afc7d1347c49594ad894de494fb3c46ffd93c170d28304409f882a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_publication_fields"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
+            "content": "sha256:89d61f6775c469e3d6643321f2d77ecdecadc983d01b98f07e2fd2593e3a209b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_developer_exception"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
+            "content": "sha256:416714329edf8424a27308852ed61776ca20fb58a7285203fced0c17a61cdd66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_baseline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Successor monotonicity and duplicate/blank-ID refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
+            "content": "sha256:f261a86d1b2f7c9565792a52a5285c3db3f159a4f2c6b97d16d89f4724e79f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_successor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
+            "content": "sha256:06a9767bbd8a773b59bc1d4b7283ace91072017fc81c2ecd62925de482eadfe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_unique_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

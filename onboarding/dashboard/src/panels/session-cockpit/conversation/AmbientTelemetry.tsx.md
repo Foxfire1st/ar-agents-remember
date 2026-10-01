@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -45,44 +35,27 @@ product truth (F19), giving the previously-orphaned `fetchConversationTelemetry`
 - Non-fresh metrics degrade to a quiet marker, never an alarm.
 - Evidence (origin/observed/runtime) rides the tooltip so the number is always attributable.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Absent-not-zero chips, ambient refresh, quiet-stale freshness. | `AmbientTelemetry` | dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:54-106 |
-| The telemetry read client (previously orphaned, now consumed — F3). | `fetchConversationTelemetry` | dashboard/src/data/conversation/client.ts:101-119 |
-| The A-convention presentation module (`joinChips`/`freshnessTone`/`humanizeAge`). | `joinChips` | dashboard/src/data/conversation/format.ts:17-19 |
-| The `ConversationTelemetry` wire type. | `ConversationTelemetry` | dashboard/src/data/conversation/types.ts:352-365 |
-| The toolbar host that mounts this component. | `statusRevision` | dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:73-73 |
+- Absent-not-zero chips, ambient refresh, quiet-stale freshness. [1]
+- The telemetry read client (previously orphaned, now consumed — F3). [2]
+- The A-convention presentation module (`joinChips`/`freshnessTone`/`humanizeAge`). [3]
+- The `ConversationTelemetry` wire type. [4]
+- The toolbar host that mounts this component. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the three superseded
-  `(L…)` prose citations and the `n/a` table rows with exact anchors and fixer-generated
-  ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for ambient evidence-bound
-  telemetry — absent-not-zero toolbar chips (A2) with a quiet-stale freshness marker (A4) and an
-  evidence tooltip, wiring the previously-dead `fetchConversationTelemetry` (F3) and making the
-  A-convention module product truth (F19). Verification is pinned to the leaf base (`0be0099`) because
-  the new source file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

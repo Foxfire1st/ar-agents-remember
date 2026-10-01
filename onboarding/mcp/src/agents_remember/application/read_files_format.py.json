@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/application/read_files_format.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The format is decided by the layout marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:525e943813ad7f452188b51dae51b429d6795e8e1f8dc3d64c19c856da113ddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_format"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:e9b3a6ab7b82913329c251f39fccec6bd697a6974df603e45a249ddadbb4656b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TEXT_FORMAT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:a75bffc8672d9c63609dc16d5f9df17d83fa3d9601aaef5a8e3fb044344eede5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_FORMAT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unconverted tree's knowledge section names both conversion routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:a3a13fce2f411e43fd4609617a39be3ded2a075d67558b1a5712f88434ecca43",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_published_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A converted card's sidecar and resolved references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:8135a1645c156c32cd131dc041fe9b689c02dae9d8bd898ca235b326c67fddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_card_parts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:a44d8fe2514ec92bc915dab8a80b221d89ef96f136a9697cb1cfe5b8d2c93d1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The call site in the entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b179a0024b43c400dad9107f2bc3acaf76743131",
+            "content": "sha256:074fc5111cf95faca8cad270b11cfafbfb7ce428f884ea288abb35e0290a20ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_one"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`read_ar_files` returns legacy-format or resolved references, and the converted tree's knowledge section through the tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75d574105370812c82dbe4c677b0075e2c9d5e15",
+            "content": "sha256:5f31dbb4d8fa6b8c3328c7042404d1d2920f4a659c6f4a471242d53ee00db72d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_ar_files_returns_legacy_format_or_resolved_references"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

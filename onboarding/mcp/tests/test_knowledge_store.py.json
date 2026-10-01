@@ -1,0 +1,269 @@
+{
+  "path": "mcp/tests/test_knowledge_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The divergent-successor read, the node registered as the shared fixture's evidence node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:d0e9a49e2fe7c2842e9814361b5e9afdfdadaba9f970099b2380da91106e0cf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_same_label_successors_reopen_as_separate_revisions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared fixture every case builds from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:436356d85a5375cb2207b22f622dc232bca56ceeaa44d4663d8a070d19627e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_branching_knowledge_fixture"
+            },
+            "path": "mcp/tests/knowledge_fixture_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions).\n\nAnchor: \"unit-regression\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b0fcc60b8acee7974778bfcc562d3487e2d4322",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The fixture's registered stable contract and evidence node.\n\nAnchor: \"contract:knowledge-identity-branching-fixture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:674cc0e45bcaa39e972d5253c4e0a4e204d360ea774269c0c705222b6bb574fe",
+            "locator": {
+              "end": 1217,
+              "kind": "line_range",
+              "start": 1217
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The store contract the added node pins, including the two-caller distinction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:add442e12c7882ddcbbac6febf4e560438c387e61daa6c792ba6ed2d0f62797b",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_invariant"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:95fb12b865fef2fdc9616fadf05576fe19edd2ea4749ff3a6e9122ce1165bb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_insert_invariant"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two-caller identity contract the `KS-R03` repair restored, added to this suite in that same change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:8672b2abd87143788559046224d36dd5805901d9158081f74cb00b3b3ad4ae1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The identity reuse refusal and its unchanged stored row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:f1c5214b7041437dd1e547404084c3487a47b85e1344c456d74995ae9ca6eaff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reused_revision_identity_with_other_content_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The write-path guard's descending branch, including the wording assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:7e4b4eb1b3f69f61fdbaba6a549c5ce42debd99d8c80a0bf702a4cd38c362d5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:6afb5f7f91b3ea6f6f3fada7f191f05505a293db639303792d35bf08474ec1be",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 453
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The before-the-insert evaluation a disabled guard fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:ada38a63cb0145f8c2da69661e040844c9702f07e719709912ce0061a519238b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lineage_guard_fires_before_the_candidate_insert"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The database-level immutability proof against the stored revision rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:8a3d9fc9b175bda99afb6bdee57715ffb05d4bc3efc3327b7c303d8dec949778",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stored_revision_rows_refuse_update_and_delete"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The seal covering more than the statement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:095136bf0acd6a9f1b76ce17073594963bfb3145f8b1fbfa078934c9c6497ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_payload_digest_seals_more_than_the_statement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The seam case that drives the production composition path, including the batch entry points this leaf added to that module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:fb472918c334bba3ad2b90692bc97509bfdf2b76503ebe497c0224fc0fafeb65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_application_seam_initializes_and_extends_one_namespace"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:ecbd1a54a59992b29be8f40246da17c2e42ed48de61c271c4010770d232ae6c0",
+            "locator": {
+              "end": 788,
+              "kind": "line_range",
+              "start": 736
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The layer-direction case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:1c162353d3f25d8f5abeb326b08d895a8b08a5afe8bf5f6990aabc56a12e2d2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lower_ranked_owners_do_not_import_the_memory_domain"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:59fb9ba301d8f873363a0bcac8a0030d36f4743339aac09fb79a0d9e97ea12f7",
+            "locator": {
+              "end": 856,
+              "kind": "line_range",
+              "start": 838
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

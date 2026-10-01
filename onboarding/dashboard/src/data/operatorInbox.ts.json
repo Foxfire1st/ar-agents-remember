@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/data/operatorInbox.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pull-based return channels resume gate answers when a harness cannot be pushed or directly re-invoked.\n\nAnchor: \"The return channel (four layers on one durable truth)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:0baeca40b7908b26580cbad41d40f4e2f99957dc36159db0e769c76dbe788bbf",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The helper defines the request/status contract and posts JSON to `/api/operator-inbox`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ee3d856b19db6058dd8bba5fcb70ea9b00a1245",
+            "content": "sha256:e16da90edc096af451166ae06d363eb198c7d023ee58646324be566cc5fabd66",
+            "locator": {
+              "kind": "symbol",
+              "name": "postOperatorInbox"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`GateResponder` calls this helper only after lifecycle-to-hosted-session lookup fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
+            "content": "sha256:847bc6a130fc562990a803182e005dd6b8e5262a8290bd519278b9077d4f6936",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateResponder"
+            },
+            "path": "dashboard/src/panels/GateResponder.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The serving endpoint writes the inbox entry with developer/dashboard attribution.\n\nAnchor: \"def _operator_inbox_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:140512e511d44248c7141ca5e8b0109bd0e2b0e587f664cb87820c2de2223070",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The helper test pins the POST body and error mapping.\n\nAnchor: `postOperatorInbox`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5f29f056010d4441fa276c9094e48226803c047",
+            "content": "sha256:13f6b0ea98e0f7d0e3911ab4408bd0bec1a6fb45a7a8340fb450db2a19a1d9e0",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/data/operatorInbox.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`AgentPickupIndicator` calls the dismiss helper for stale pending responses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f4348f9d417ec5f7744217df78ddbebc9143fd",
+            "content": "sha256:5390c3d38b730372c454a86a67bad7362107ae084087616b7f59e96388ead934",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentPickupIndicator"
+            },
+            "path": "dashboard/src/panels/AgentPickupIndicator.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

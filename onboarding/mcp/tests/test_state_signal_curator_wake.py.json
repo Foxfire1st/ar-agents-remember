@@ -1,0 +1,382 @@
+{
+  "path": "mcp/tests/test_state_signal_curator_wake.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A completed curator turn wakes the current manager of its own master with exactly one durable signal, no curator-authored row, and no second signal on re-observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:a42cac4ec530728342adc691c604f25a3919fb71c301c618ae33ebbe6eb87608",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_completed_curator_turn_wakes_the_current_manager_with_one_durable_signal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "One reader for both the pre-sweep premise and the post-sweep claim, so \"the relay wrote no governed artifact\" is a statement about one population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:6baaf851210e90ad273c11895cf25fb56b7d8e60fba4c217779c1177a0aa138c",
+            "locator": {
+              "kind": "symbol",
+              "name": "coordination_root_entries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The adapter's own evidence surface: the native envelope on the first read, the consumed tail thereafter, empty pages for every other seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:2263e2ff063cde043957a11dcdc36423da85c1a6aba5e9e901d2189818d4c2ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CuratorEvidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "One native codex `turn/completed` envelope, mapped by the real vendor projector rather than pre-digested into a turn claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:4366ad2c78ca658e45f8099de8d1cfc2abb3fa37d9992e219903cd65a77bc3e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_turn_completed_frame"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The production task-document tree the routing resolves structural owners from: one sprint, the curator's master, and a second master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:66b3c413db10edf1a560c02a632c5c1561bd7be776ae4c37170cadc0345e466c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_task_topology"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The stale spawn-ancestry address that routing must never select, because ownership comes from the task hierarchy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:61aaee4026e6b01256c56722d8d8699f432e1bb6344d77cc429b90d6fb6410a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_SPAWNER_ID"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The acceptance vocabulary deliberately asserted absent: delivery words are transport facts, not memory verdicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:a928dbd5042add08a56228369a92b9bb9e97a4f5cb997adb9027726dbd641ef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "VERDICT_VOCABULARY"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The single-signal reader every wake case asserts through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:47ea8353517f6322b128cc34c80112ae4229186114d52f7b116bbbd4ea2c8364",
+            "locator": {
+              "kind": "symbol",
+              "name": "_single_signal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The temporary-world context manager, including the no-master-manager variant the fail-closed case uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:73c241800f3211f5cdab2dd23704b3f1dad84b3b62d140d2ddd478681ac3a1c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The shared manager-routing predicate the curator seat must reach exactly as the worker seat does.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3da4909805be11a509818504187a09dcacff39",
+            "content": "sha256:e1774c43a537e7b7c30a50c9a8739457e79f1fb66d638af1925cd3f04c96a311",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_seat_occupant"
+            },
+            "path": "mcp/src/agents_remember/controlplane/seats.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The two sweeps whose composition produces the asserted turn truth and signal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:37e37426b8d14c3346b022e6a53013f650054d6b1bce458feeb2a0dfc8a16fa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalogLivenessSweeper"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b035bc25fcf8bfb657d6246b3a3bdd2df4e637c8",
+            "content": "sha256:3d4793dd9feb0a10ce5bdcc82bdb1b88f42dd316551020faf2aa6500cd44aa70",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_agent_notifier_sweep"
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An interrupted curator turn wakes the manager with interruption truth and is re-emission-guarded on that path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:773fcf4252ddc3d932a8761373b51331afc5dbc779ec40bcf0663d32b3004ce1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_interrupted_curator_turn_wakes_the_manager_with_interruption_truth"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The canonical payload builders the signal text is asserted equal to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:5b0a324a08acc7c2b53ac6edeac23ff051cdaa451a84cdeba574197d26de81f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_signal_ask"
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:1504a52e5fc9a45d5a768099b9ce4186df2889dea883702157c4ecca839389d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_signal_response"
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The durable marker the re-emission guard reads and the landed-row predicate the wake asserts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bf6786f6e546a7f79d0be5ccb3200c4da94e75a",
+            "content": "sha256:375bf9e43a97aa7ff5ec5d2f179edf1386a98d58ffd5ace6fe286d908a1a2e68",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_signal_landed"
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A failed curator turn reaches terminal truth, emits nothing, and leaves the seat eligible rather than consumed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:31081f57931858a146354132f75904c7e686d7aa66cc2c2d4401cf03636df4e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_curator_turn_never_wakes_the_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The payload is the canonical terminal-truth derivation with no verdict appended, and the post-sweep coordination root equals the premise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:36af2d2cf3b503af9901a8c692c64e240d2c010884b5c3b051e456fba21225bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_curator_wake_neither_validates_nor_declares_curator_coherence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A curator seat with no current manager fails closed instead of routing to another master's live manager, asserted as one reachable check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:e06b5f988cb79f354a40e35c11bc9b4da78a24fa3f4609ae7e256f1a7170cc0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_curator_seat_without_a_current_manager_fails_closed_without_global_routing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "One disposable production wiring per case: task topology, catalog, bridges, inbox, and the two real sweeps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:5d41b232fd484b091029a8b8371ab9fc010d7f69c198b1e592a3773d2afacdec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CuratorRelayWorld"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two real liveness observations; the second is past the sweeper's own full-sweep rate limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:983a72ebcf468f25a41054c43a3e2aa007300b497dd282f0c25a62bd3d16e4d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_adapter_evidence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:d5dc41532f303fc773de53acf2ac96637169035315527f0157686d61976d8fa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "One real notifier sweep under a bridge that accepts whatever it is handed, over temporary stores.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:930767dcd991ba9a3dc3908fb4ed676e8022a4186182f67174b091cb1ff5b943",
+            "locator": {
+              "kind": "symbol",
+              "name": "notifier"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Every row addressed to, delivered to, or itself a state signal, in one reachable read whose failure modes cannot shadow each other.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbd233f8a7ea23635db2992ce98a4e26ed3bfa0",
+            "content": "sha256:970c915bb5bc205483744c125d7f7b3c1ac3285bf3e6948dd31dd798261302ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "addressed_to"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,116 @@
+{
+  "path": "dashboard/src/data/interactionAnswer.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module under test (representation, multiplex helpers, direct route, and locked submit).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:ee8b24ffed6e5d6ce920efa66a438fdd635724cf4910d3978c704bccdb3d6264",
+            "locator": {
+              "kind": "symbol",
+              "name": "representPendingInteraction"
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:49acdeee34ad381f4eab0eead29d968bfbccb03e0a23381a250f1f181cf87cc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "pendingInteractionPayloads"
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:1a79f5527f0c8c0fc73b5c61f04e41e206d44f24a9a4d5f11c1de143880f3bf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "interactionAnswerIsLocked"
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:8f099f3887eb6021d33c7dd6399fb499840e57555d9f99712e8a860f74b49ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "submitInteractionAnswer"
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The component suite covers exact URL/body handling, in-flight/retry states, structured questions, and multiplexed sub-agent approvals.\n\nAnchor: \"round-trip states (F7)\"; \"structured questions (260718-CHATS-L5I)\"; \"multiplexed sub-agent approvals\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:88ffb4ae83d42ac28a5ef0e18f4304d709281b0e1a59c4b5181810e32613a032",
+            "locator": {
+              "kind": "symbol",
+              "name": "stubDirectRoute"
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:75b9845021180718e2ad7960f415c02f6477ac951ff570a9e807805a12d1bc74",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:a8fdc5fb10bb970864eb323e099356f978c340301f0e3f0d66dfba7df44a0280",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:52ea6defccee40b0185acb0446ffc381fe953e7a473906300f6cd838b6aedf5e",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 480
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

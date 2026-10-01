@@ -1,0 +1,268 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library",
+  "references": {
+    "1": {
+      "note": "The declared reason and the explicit legacy declaration on the launch.\n\nAnchor: `legacy_launch_capsule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:228d4da7030d7cfb30f7abd4610932afca8590683a8a4993d082926adb869eea",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIBRARY_REOPEN_LEGACY_REASON"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:2eac963454fcad690de4e584c7ab0d9f6718abf09a4d44063c1c109c3a38c46e",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 475
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The refresh plan that makes a capsule-carrying reopen a fresh thread.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:9b15cf7b2fdc66e05d8d3c3cd74a735a739b70ccf89ea14303c6ce347afad27b",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/capsule_delivery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:256d166df04af01eb5458c8253b3cc5c4a1f870323ed29c4f0910f4200eb4f11",
+            "locator": {
+              "kind": "symbol",
+              "name": "FRESH_THREAD"
+            },
+            "path": "mcp/src/agents_remember/serving/capsule_delivery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The identity proof the reopen exists for, which the exclusion protects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:5ae7e3fcdf5d876cd96ad5655e3cfbc7ccd43ad780586a8544a1d9321be0a8b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settle_observation"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The cases pinning the declaration and the whole-site enumeration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:4fb5039022189714018f9a64b35f23a23dd00d88ddda0f23486bbfd8d804237d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:ea60cb40eb13c58721fd67eaab4dcc1537ceeca0a55004f8761512b34f86408f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:440aaca49b82807bd51fc947932153f7cd6145050a956cf500dd2766de438284",
+            "locator": {
+              "end": 814,
+              "kind": "line_range",
+              "start": 803
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:fcfcfacb10b959a660d969a2bb975d5161a79d695e3b577422b37d7a7bb5af4e",
+            "locator": {
+              "end": 801,
+              "kind": "line_range",
+              "start": 761
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The dormant library read port defines scoped list, historical read, and server-private resume-target resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "056576c6bd94d53f956f5ae179b87d0abc833114",
+            "content": "sha256:034820523ac7e44c47205512cdc772dbdf0c333f31ff59fd223370ebb278d546",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryPort"
+            },
+            "path": "mcp/src/agents_remember/serving/ports.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "056576c6bd94d53f956f5ae179b87d0abc833114",
+            "content": "sha256:759fd424e6ff52ee92cd1c4c762bd3c16b303e71cf50d335e90d47258cb7b0f2",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/serving/ports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The L0 request dependencies are the only consumption seam the handlers use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:be269e721d7ad8df1d80760e865b4a339ae56d6f16c391904602272cb85ce46e",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_conversation_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:57d50753cfe99f0a8c0b0ff4ac9461d7b4d3b9b7185d3509a949813ff62fccbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_conversation_authorization"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:b8333ca02abf8e45b12d0b0436dfa0755b38f7dcff5b4c2a848f2283a1645626",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:f755ee8ac1086b9e97408980809c36c18374c9d074709c3c6938ef57bdc81f6d",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:06cbd87dc2c5c7e2582190d6192a41a1e16be96e1b47120154f64f7278940b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_terminal_session"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The locked Claude and Pi helpers dispatch list, read, and resume operations through their request handlers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:838505a4441bd718f8e99f3e3e362d8fe5638ffdf9b2fc63db54b59ee932022c",
+            "locator": {
+              "kind": "symbol",
+              "name": "handleClaude"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:6e0c71148c306535c56d90baacba388a30cd2f0aee92a2c69f0529ee5abf0e22",
+            "locator": {
+              "kind": "symbol",
+              "name": "handlePi"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

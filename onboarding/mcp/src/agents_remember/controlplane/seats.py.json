@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/seats.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `SeatRow` (lines 36-90) — One seat's row, as the control plane reads it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3da4909805be11a509818504187a09dcacff39",
+            "content": "sha256:f71e0a0fa3e011080092be2d7b55d61e9db73e371e3f36fd35a06ed961b5218c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeatRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c3da4909805be11a509818504187a09dcacff39",
+            "content": "sha256:adffb0e9d4cb0fea8a2a1936c2d6ed2cf0d5f67331739d389cd885ef10493f64",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the read-only catalog protocol consumed by structural selectors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3da4909805be11a509818504187a09dcacff39",
+            "content": "sha256:93c099d62bc16336aee702ab91106c392a51c59d5b167b4feb3badda705feb46",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeatDirectory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c3da4909805be11a509818504187a09dcacff39",
+            "content": "sha256:3d7d009553df2ed3af2217711fec85f1df8a0c86a13294f9e7c3ecd2095cf4d3",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Resolves one canonical current generation and fails closed on duplicate primaries or heirs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3da4909805be11a509818504187a09dcacff39",
+            "content": "sha256:e1774c43a537e7b7c30a50c9a8739457e79f1fb66d638af1925cd3f04c96a311",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_seat_occupant"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c3da4909805be11a509818504187a09dcacff39",
+            "content": "sha256:ead9de7bcbebf26d1ca54837c7ccae60b6640ef9a2f71099202a3bc7e7f4a156",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

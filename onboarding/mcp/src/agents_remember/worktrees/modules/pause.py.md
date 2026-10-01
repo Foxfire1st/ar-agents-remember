@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/pause.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/pause.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T13:18+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [modules route overview](overview.md)
@@ -152,37 +142,31 @@ it unchanged. Resuming is the existing public `worktree_sync`/attach route, not 
 
 None recorded. Verification metadata on this card remains closeout-owned.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- The stop-only route: contract identity check, the series-only refusal, the release delegation, the already-stopped decision, both success payloads and the refusal payload. [1]
+- The already-vacant vocabulary: the one release status the pause answers itself and the explicit already-stopped result, so a caller can tell "nothing was held" from a real release. [2]
+- The hand-back: a `nextStep` carrying a summary and no `nextTool`/`nextArgs`, so the result proposes no continued execution. Both success payloads carry it unchanged. [3]
+- The release authority the pause delegates to — strict explicit cancellation release, exact-owner proof, per-contract address, and the refusal statuses the pause explains (a missing selection is deliberately no longer among them). [4]
+- The observation the already-stopped decision takes rather than assumes: absence is `vacant`, and a record that is not this exact contract refuses instead of being read as inactive. Its `_load_selected_contract` is the earlier guard an **active** foreign record meets, which is why only a **vacant** foreign record reaches the release's `selected-contract-mismatch`. [5]
+- The activation record's contract-derived address is what makes one master's release leave another master's record alone. [6]
+- The public tool the pause is reached through, and the payload builder it is reached by. [7]
+- The facade re-export that keeps the public `git_worktree_manager` import path for the pause. [8]
+- The response model that declares `paused` as the route's own claim. [9]
+- The executable specification of the boundary: the pause's runtime-import closure is disjoint from every publication module. [10]
+- The boundary proof: the public pause over real temporary Git repositories, measuring refs, object databases, coordination tree, worktrees and task documents before and after. The never-selected case asserts the already-vacant SUCCESS (it was a refusal before this change set), and the module's ten cases keep the four refusal shapes apart — a leaf contract, a record this contract does not own, an unreadable record, and a vacant record naming another master. [11]
+- The end-to-end playthrough that proves the master a pause stops can still admit a leaf after its landing. [12]
+- The separate publication the pause must never be reached as or described as. [13]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The stop-only route: contract identity check, the series-only refusal, the release delegation, the already-stopped decision, both success payloads and the refusal payload. | `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` | mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/modules/pause.py:130-149 |
-| The already-vacant vocabulary: the one release status the pause answers itself and the explicit already-stopped result, so a caller can tell "nothing was held" from a real release. | `_ALREADY_VACANT_STATE`; `_ALREADY_VACANT_SUMMARY` | mcp/src/agents_remember/worktrees/modules/pause.py:36-38; mcp/src/agents_remember/worktrees/modules/pause.py:38-44 |
-| The hand-back: a `nextStep` carrying a summary and no `nextTool`/`nextArgs`, so the result proposes no continued execution. Both success payloads carry it unchanged. | `_PAUSE_NEXT_STEP` | mcp/src/agents_remember/worktrees/modules/pause.py:49-54 |
-| The release authority the pause delegates to — strict explicit cancellation release, exact-owner proof, per-contract address, and the refusal statuses the pause explains (a missing selection is deliberately no longer among them). | `release_atomic_series_selection`; `_record_selects_contract` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-53; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:79-88 |
-| The observation the already-stopped decision takes rather than assumes: absence is `vacant`, and a record that is not this exact contract refuses instead of being read as inactive. Its `_load_selected_contract` is the earlier guard an **active** foreign record meets, which is why only a **vacant** foreign record reaches the release's `selected-contract-mismatch`. | `observe_atomic_series`; `_observation_from_record`; `_load_selected_contract` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:338-357; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:375-401 |
-| The activation record's contract-derived address is what makes one master's release leave another master's record alone. | `activation_path`; "def contract_fingerprint(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-142 |
-| The public tool the pause is reached through, and the payload builder it is reached by. | "def worktree_pause("; "def worktree_pause_payload("; "def worktree_pause_tool(" | mcp/src/agents_remember/mcp/registration/worktrees.py:203-219; mcp/src/agents_remember/mcp/tools/worktree.py:88-95; mcp/src/agents_remember/application/worktree_tools.py:466-515 |
-| The facade re-export that keeps the public `git_worktree_manager` import path for the pause. | "from agents_remember.worktrees.modules.pause import pause_result"; "\"pause_result\"," | mcp/src/agents_remember/worktrees/git_worktree_manager.py:86-86; mcp/src/agents_remember/worktrees/git_worktree_manager.py:154-154 |
-| The response model that declares `paused` as the route's own claim. | `WorktreePauseResponse` | mcp/src/agents_remember/models/worktree.py:545-554 |
-| The executable specification of the boundary: the pause's runtime-import closure is disjoint from every publication module. | `PUBLICATION_MODULES`; `test_the_pause_cannot_reach_any_publication_module` | mcp/tests/test_pause_is_not_publication.py:37-52; mcp/tests/test_pause_is_not_publication.py:165-202 |
-| The boundary proof: the public pause over real temporary Git repositories, measuring refs, object databases, coordination tree, worktrees and task documents before and after. The never-selected case asserts the already-vacant SUCCESS (it was a refusal before this change set), and the module's ten cases keep the four refusal shapes apart — a leaf contract, a record this contract does not own, an unreadable record, and a vacant record naming another master. | `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing`; `test_pausing_an_already_released_master_is_idempotent`; `test_pausing_a_leaf_contract_is_refused`; `test_pausing_one_master_leaves_the_other_masters_record_byte_identical`; `test_a_record_this_contract_does_not_own_is_refused_not_released`; `test_an_unreadable_record_is_refused_not_reported_stopped`; `test_a_record_naming_another_master_is_refused_not_released`; `test_resuming_a_paused_master_restores_work_with_nothing_published` | mcp/tests/test_pause_stop_only_end_to_end.py:206-237; mcp/tests/test_pause_stop_only_end_to_end.py:239-266; mcp/tests/test_pause_stop_only_end_to_end.py:268-320; mcp/tests/test_pause_stop_only_end_to_end.py:322-336; mcp/tests/test_pause_stop_only_end_to_end.py:338-363; mcp/tests/test_pause_stop_only_end_to_end.py:365-407; mcp/tests/test_pause_stop_only_end_to_end.py:409-446; mcp/tests/test_pause_stop_only_end_to_end.py:448-474; mcp/tests/test_pause_stop_only_end_to_end.py:473-526; mcp/tests/test_pause_stop_only_end_to_end.py:565-589 |
-| The end-to-end playthrough that proves the master a pause stops can still admit a leaf after its landing. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173 |
-| The separate publication the pause must never be reached as or described as. | `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:173-201 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned stop route.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
 ## 260831-LOCR-L37 Pause/Publication Split
 
@@ -243,70 +227,3 @@ in `mcp/tests/test_tools.py`. Two things a later reader should not have to redis
   **vacant** foreign record reaches the release's exact-owner guard; an **active** foreign record is
   refused earlier, by the observation's `_load_selected_contract`, and reports as `unreadable`. A case
   written against the active shape therefore proves nothing about the guard the vacant shape reaches.
-
-## Update History
-- 2026-09-20T03:57:45+00:00: Generated citation repair: `WorktreePauseResponse` repointed to mcp/src/agents_remember/models/worktree.py:545-554. No content impact: mechanical anchor-range projection bound to citation source snapshot ef4a9932e0393a408ecd0f26b5bc2e0e1e335ad90b9e47a16092ffd6f3403af3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `WorktreePauseResponse` repointed to mcp/src/agents_remember/models/worktree.py:495-504. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `WorktreePauseResponse` repointed to mcp/src/agents_remember/models/worktree.py:489-498. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `_PAUSE_NEXT_STEP` repointed to mcp/src/agents_remember/worktrees/modules/pause.py:49-54. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T07:33:51+00:00: Generated citation repair: `pause_result`; `_already_stopped_result`; `_already_vacant_payload`; `_paused_payload`; `_refusal_payload` repointed to mcp/src/agents_remember/worktrees/modules/pause.py:79-127; mcp/src/agents_remember/worktrees/modules/pause.py:130-149; mcp/src/agents_remember/worktrees/modules/pause.py:152-169; mcp/src/agents_remember/worktrees/modules/pause.py:172-189; mcp/src/agents_remember/worktrees/modules/pause.py:192-208. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T07:33:51+00:00: Generated citation repair: `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing`; `test_pausing_an_already_released_master_is_idempotent`; `test_pausing_a_leaf_contract_is_refused`; `test_pausing_one_master_leaves_the_other_masters_record_byte_identical`; `test_a_record_this_contract_does_not_own_is_refused_not_released`; `test_an_unreadable_record_is_refused_not_reported_stopped`; `test_a_record_naming_another_master_is_refused_not_released`; `test_resuming_a_paused_master_restores_work_with_nothing_published` repointed to mcp/tests/test_pause_stop_only_end_to_end.py:206-237; mcp/tests/test_pause_stop_only_end_to_end.py:239-266; mcp/tests/test_pause_stop_only_end_to_end.py:268-320; mcp/tests/test_pause_stop_only_end_to_end.py:322-336; mcp/tests/test_pause_stop_only_end_to_end.py:338-363; mcp/tests/test_pause_stop_only_end_to_end.py:365-407; mcp/tests/test_pause_stop_only_end_to_end.py:409-446; mcp/tests/test_pause_stop_only_end_to_end.py:448-474; mcp/tests/test_pause_stop_only_end_to_end.py:476-526; mcp/tests/test_pause_stop_only_end_to_end.py:565-589. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `_PAUSE_NEXT_STEP` repointed to mcp/src/agents_remember/worktrees/modules/pause.py:49-54. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_ALREADY_VACANT_STATE` in the row 167 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:32-32 to mcp/src/agents_remember/worktrees/modules/pause.py:36, the extent of the construct the claim is about (the checker named line(s) [36, 159, 160] as its live location); re-pointed `_ALREADY_VACANT_SUMMARY` in the row 167 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:36 to mcp/src/agents_remember/worktrees/modules/pause.py:38, the extent of the construct the claim is about (the checker named line(s) [38, 166] as its live location); re-pointed `_already_stopped_result` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:79-82 to mcp/src/agents_remember/worktrees/modules/pause.py:116, the extent of the construct the claim is about (the checker named line(s) [116, 130] as its live location); re-pointed `_already_vacant_payload` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:116 to mcp/src/agents_remember/worktrees/modules/pause.py:149, the extent of the construct the claim is about (the checker named line(s) [149, 152] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_already_stopped_result` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:192-197 to mcp/src/agents_remember/worktrees/modules/pause.py:130-133, the extent of the construct the claim is about (the checker named line(s) [116, 130] as its live location); re-pointed `_already_vacant_payload` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:130-133 to mcp/src/agents_remember/worktrees/modules/pause.py:152-155, the extent of the construct the claim is about (the checker named line(s) [149, 152] as its live location); re-pointed `_paused_payload` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:152-155 to mcp/src/agents_remember/worktrees/modules/pause.py:172-175, the extent of the construct the claim is about (the checker named line(s) [127, 172] as its live location); re-pointed `pause_result` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:172-175 to mcp/src/agents_remember/worktrees/modules/pause.py:79-82, the extent of the construct the claim is about (the checker named line(s) [79] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_already_stopped_result` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:79-82 to mcp/src/agents_remember/worktrees/modules/pause.py:130-133, the extent of the construct the claim is about (the checker named line(s) [116, 130] as its live location); re-pointed `_already_vacant_payload` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:130-133 to mcp/src/agents_remember/worktrees/modules/pause.py:152-155, the extent of the construct the claim is about (the checker named line(s) [149, 152] as its live location); re-pointed `_paused_payload` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:152-155 to mcp/src/agents_remember/worktrees/modules/pause.py:172-175, the extent of the construct the claim is about (the checker named line(s) [127, 172] as its live location); re-pointed `_refusal_payload` in the row 166 of this card from mcp/src/agents_remember/worktrees/modules/pause.py:172-175 to mcp/src/agents_remember/worktrees/modules/pause.py:192-197, the extent of the construct the claim is about (the checker named line(s) [104, 121, 192] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/worktrees/modules/pause.py:192-197 in the row 166 of this card; the repetition added no pooled evidence; kept one copy of the repeated citation mcp/tests/test_pause_stop_only_end_to_end.py:365-366 in the row 176 of this card; the repetition added no pooled evidence
-
-- 2026-09-15T13:18+02:00 — 260831-LOCR-L38 verification envelope (uncommitted change set on
-  `ar/260831-locr-l38`, base `67b21aeb`): no production byte changed; the already-vacant stop was
-  judged PRESERVATION and proved instead of re-implemented. Extended the body with the envelope
-  account (the stale objective narrative, checkpoint commit `9026c29e` as the leaf's base ancestor),
-  the payload-level discriminator between the released and already-stopped successes, and the
-  guard-order fact that `selected-contract-mismatch` is reachable only through a **vacant** foreign
-  record while an **active** one reports as `release-unreadable` from the observation's earlier guard.
-  Repaired this card's citations against the current source: three helper ranges ended one line past
-  their function (`_already_stopped_result` now `131-150`, `_already_vacant_payload` `153-170`,
-  `_paused_payload` `173-190`), `release_atomic_series_selection` `23-54` → `23-53`, the registered
-  verb `registration/worktrees.py:199-219` → `:203-219`, `WorktreePauseResponse` `467-476` →
-  `466-475`, `worktree_pause_tool` `470-499` → `466-495`, the playthrough class `62-169` → `62-173`,
-  and the case row re-derived over the module's ten cases (it now also names the two new refusal
-  cases). Repaired the scoped check's `worktree_checkpoint_landing` finding on this card — the claim's
-  evidence changed since `bb65a207`, so it was re-read against the current construct and repointed
-  from `registration/closeout.py:180-209` to `:173-201` with the wording unchanged. Verification
-  metadata remains closeout-owned; no verification stamp advanced and no acceptance claim.
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the already-vacant
-  release branch is the frozen change and the earlier entry records it. Re-checked every cited range
-  and every prose claim: they hold. No wording changed. Verification metadata remains
-  closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/worktrees/modules/pause.py` changed since the recorded verification
-  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
-  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
-  metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
-  already-vacant release branch the card already documents. Re-read the card against the current
-  source: every prose claim holds; three cited helper ranges end one line before their closing line
-  but still contain each whole definition, and no claim depends on the missing line. No wording
-  changed; verification metadata remains closeout-owned.
-- 2026-09-13T20:42+02:00 — 260831-LOCR-L38 (uncommitted change set on
-  `ar/260831_lifecycle-owned-completion-relay`): recorded the already-vacant success.
-  `pause_result` now has four outcomes rather than three, with
-  `_already_stopped_result` (`pause.py:131-151`) answering only `_SELECTION_MISSING` and only after
-  `observe_atomic_series` reports `vacant`, `_already_vacant_payload`/`_ALREADY_VACANT_STATE`/
-  `_ALREADY_VACANT_SUMMARY` (`pause.py:153-171`, `:37`, `:39-45`) reporting
-  `atomic-series-already-vacant` with `paused: true` and the same stop next step, the
-  `selection-missing` entry removed from `_RELEASE_REFUSAL_DETAIL` because the pause answers that one
-  status itself, and the unreadable/foreign refusals kept because neither proves the master inactive.
-  Re-derived every `pause.py` citation on this card (the module grew from 148 to 209 lines) and the
-  eight end-to-end case ranges after the renamed never-selected case. Verification metadata remains
-  closeout-owned; no acceptance claim and no verification stamp advanced.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 curator: created the card for the new stop-only pause
-  module. Recorded the delegation to the existing `release_atomic_series_selection` authority (no
-  second scheduling or publication authority), the three-way split in `pause_result` (contract
-  identity, series-only refusal, release delegation), the paused payload's `state`/`status`/
-  `paused`/`atomicSeriesActivation` and its `nextStep` carrying a summary and no next call, the
-  contract-keyed isolation that leaves a sibling master's record byte-identical, and the structural
-  exclusion of publication through the module's runtime-import closure. Verification metadata
-  remains closeout-owned; no acceptance claim.

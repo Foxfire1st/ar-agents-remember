@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/markerUnknown.lane.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The partial after index and the lane.\n\nAnchor: \"\\\"index_state\\\": \\\"partial\\\"\"; \"\\\"lane\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9dae1576b0812a6e7eab5a842c16bd0aa2c4b76",
+            "content": "sha256:600c471ee15dd4fb1085a418c9b5d3dcc22011756a69c7e2adc70c449251aeea",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerUnknown.lane.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92897c5349f3345fff3e532e3c2380b0ed621a1c",
+            "content": "sha256:4b39d478acf3472a10ea112a63a55d9ac9bceff0938e9f7f61e86f7a20226306",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "dashboard/src/panels/review/markerUnknown.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

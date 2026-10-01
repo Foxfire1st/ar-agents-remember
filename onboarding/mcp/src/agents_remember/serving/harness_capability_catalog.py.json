@@ -1,0 +1,184 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The capability snapshot serializer retains model-local effort and the ACP Sense-1 projection.\n\nAnchor: \"Project the catalog into category-keyed options without duplicating state.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:c4c251d622dc27f9722eeb98615671a95710f4abd4bd32f0634065aa42034bda",
+            "locator": {
+              "kind": "symbol",
+              "name": "model_capability_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:8e18a6beb8c8ed4bd39ebc27f3aad3bf4463428df06c508a2975932f84b5e534",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adapter port limits normalized native discovery to the built-in protocol harness set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961ee00e2b3836187217ba0f9fc7d52ce7a0b47a",
+            "content": "sha256:38a8205b2c4d3c2528d84d10cbeaea89948a51a9cc470a137974fee25d4bd312",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessCapabilityDiscoverer"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "961ee00e2b3836187217ba0f9fc7d52ce7a0b47a",
+            "content": "sha256:2e695cecec67fb7d9031b3df220bac94b9acc26636a355b75f07d314383d1ee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "BUILTIN_PROTOCOL_HARNESSES"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared runner helper converts Codex registry argv to the native app-server boundary without dropping supplied arguments.\n\nAnchor: \"app-server\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:0be8160e04f03cc997652ee4eb5e7aced9d9ad194310da4a1023a3e83d4bb4ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "adapter_argv"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The readiness verdict the install gate now consumes, so a probe-declaring harness is gated on its runtime rather than on `PATH`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:c9658f95bd364cffc04f00c32856a8352aef920ddd40c066eeaa83dc538bc942",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_runtime_verdict"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:c2d4f48964201201597c682d4004271476f9edee00a091f32ed7d51bd3acd95a",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_availability_detail"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The probed-install identity: the interpreter is the fingerprint for a harness with no command, and a declared-but-absent interpreter still identifies the install.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:27b504d8b0391295183926fe744dcf379a99427b09878036e9239dd5a17824a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_probed_install"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:33bbf072858380231895fa95e4df74c4dfa3e1615f31b0c49692a8221f8d20b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_runtime_fingerprint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:94fa6dcd2a7e5310d3654ee4c2d51a03b530e60003ff3e23b5431abe3ad14f26",
+            "locator": {
+              "kind": "symbol",
+              "name": "_InstalledHarness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The adapter-side snapshot the catalog normalizes, whose effort axis is published at this candidate because the runtime consumes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:a104e09d45bd98cb9e00145d5b1bc706fce198f1e30297e9912e69abbb47d274",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capability_snapshot"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cases: discovery through the existing factory, the not-ready refusal before discovery, the probed-interpreter fingerprint, and the unknown-harness refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:6a3e038b2945d878b691969b65426ea31b632fb3f55fe8b0a280470f504fbe77",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveCapabilityDiscoveryTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,199 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.narrow.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The fixture: a complete payload whose `comparison.reference` is one unbreakable 64-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.**\n\nAnchor: \"1678adab6416222068ba391db5b8b48d7c38b5b8c859adeac36fad3d0a2a\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "content": "sha256:e5098754580075d9ac90d9661f08ae5062d64191645eeeae0e021744202482d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared client whose read this module mounts through, and whose decode the fixture satisfies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:9624cf94c71075e6f6e98ec6e957d2057507ac25f87b466d7d11c0ed15d7adb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPayload"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:24dfc2460ed59293a278a004057a152a127a02ccc656e876a2149eb953464178",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewResult"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `ReviewResult` the real client decodes, and the mount that stubs only `fetch` and waits for both the surface root and the disclosure.\n\nAnchor: `review-surface`; `review-details`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "content": "sha256:7d027d4f3671fb4c0a222d6868638c7574a6e5f231d6c092937b7ac89e7e9d19",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "content": "sha256:7cc59c3b1d7f5f91cacdfb75ac5001582af4eb7f4ee61015da1b2b9350683380",
+            "locator": {
+              "kind": "symbol",
+              "name": "mount"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The teardown cleans the mounted tree and restores stubbed globals.\n\nAnchor: \"afterEach(() => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "content": "sha256:9d9a37e62c532687cef01eddb22b605ddc65f2eaaa05c0af1cc48dbfc8321264",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The tolerated serialisations of a numeric zero, and why the assertion is on the length rather than on `\"0px\"`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "content": "sha256:dacb0ed08c45cd5c3cf841d13b11037582ad438414d4fe33dd08721e3ded2fa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "isZeroLength"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The own-root scrollport case checks the reviewer height and vertical overflow boundary.\n\nAnchor: \"gives the reviewer its own vertical scrollport on its own root\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "content": "sha256:c8c60cfcb165008f3277486f5360a47c2be22266a654267cefe3041805d5090b",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**Case 2: every `[data-pane]` is a grid item that may shrink (`min-width: 0`) and wrap its long identities (`overflow-wrap: anywhere`), with the non-empty input asserted first so the loop cannot be vacuous.**\n\nAnchor: \"lets every complete-payload pane shrink and wrap its long identities\"; `data-pane`; `panes.length`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "content": "sha256:cba0dbab7db1a9203b5586aaa3aab6724c9ed7d908dd83331ab18d33a09070bc",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**Case 3: the disclosure's grid track is `minmax(0, 1fr)` — not the implicit `auto` — and the header row wraps while the subject span carries its own break opportunity.**\n\nAnchor: \"constrains the disclosure's grid track and wraps the header row\"; `gridTemplateColumns`; `flexWrap`; `review-subject`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
+            "content": "sha256:6084aed60580dd3b1ced077316b296353d69f87e2fc117c3cb7b0faf617c2c6d",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48).\n\nAnchor: \"const pane = (title: string, children: React.ReactNode) =>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:fdc345b4cca4071f4f476013b944e8b0f347609a5bc03ac18fe9376ef4986ba2",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48).\n\nAnchor: \"const pane = (title: string, children: React.ReactNode) =>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:fdc345b4cca4071f4f476013b944e8b0f347609a5bc03ac18fe9376ef4986ba2",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

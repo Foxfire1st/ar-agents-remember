@@ -1,15 +1,5 @@
 # dashboard/src/data/reviewerContext.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/reviewerContext.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T07:35+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -43,21 +33,17 @@ review plane.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Reviewer ownership is checked at all three topology altitudes. | `reviewerParentMatches` | dashboard/src/data/reviewerContext.ts:11-24 |
-| UI labels retain the sprint ownership plane. | `reviewerContextLabel` | dashboard/src/data/reviewerContext.ts:26-36 |
+- Reviewer ownership is checked at all three topology altitudes. [1]
+- UI labels retain the sprint ownership plane. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
-
-## Update History
-
-- 2026-08-31T07:35+02:00 — Created for 260821-ARSPAWN-L5 independent-review repair. Verification remains closeout-owned.

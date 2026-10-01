@@ -1,0 +1,175 @@
+{
+  "path": "mcp/tests/test_atomic_write.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "It publishes the exact bytes and leaves no temp behind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:56df7cf05d58b01c51ca53b56fe3a2cbe6a57df7de2114c4dd376798fdd50f65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_it_publishes_the_exact_bytes_and_leaves_no_temp_behind"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:d6e9f4088264a3b40304b0ac3613780ac9d7d32901146a28905669055610dade",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A reader never sees a partial file because the temp is private.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:0b46c25ccd859c02ac3d1dc55c928540290abb49e6c8063dc7f24bfb2697cfd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reader_never_sees_a_partial_file_because_the_temp_is_private"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:566fd33a1e3a0881048916b7de29c6188b0a5283300ab1ea2a993a09e23fdb59",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A failed replace removes the temp and leaves the destination alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:706ce8f976fffe9dc4d1c3766bb33edc7bfd26adbab363e3578c4e25cb388c6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_replace_removes_the_temp_and_leaves_the_destination_alone"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:0d5ddcac1b2d6238aa7f3938d5fc8e3722a0398ae8dd3fcf18f3ac464218d83b",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cancellation between write and replace also removes the temp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:308b841d91a553d94bb9273d21270c5dcf2de7039e6ed80848d4c93e46b5a59e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancellation_between_write_and_replace_also_removes_the_temp"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:24c536ca6d15fdc2904b699ec02f75e91c61fd5a3a82dee4f71e8c0bda17f6ce",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The directory entry is flushed so a completed rename survives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:32bc41f91caf5617e628e43726543f3b589196ca0330bcbd049c33c84a6afe33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_directory_entry_is_flushed_so_a_completed_rename_survives"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:540f2a85c2fe5b2cd605a5902a246eecc688d6ebe3d3dad07ada4199707675e9",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A cross directory rename flushes both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:d5795660932e55e872fa783ca85f2dbcf78fe3bfe39b0b7879573f58d3900743",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cross_directory_rename_flushes_both"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9b0c577488685c619986a4be20ceab667174e422",
+            "content": "sha256:a08e32f2834a86d561fbb737755513385fd23eda1d853cb3947431adade487aa",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

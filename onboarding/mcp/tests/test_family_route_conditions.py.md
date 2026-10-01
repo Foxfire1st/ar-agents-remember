@@ -1,15 +1,5 @@
 # mcp/tests/test_family_route_conditions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_family_route_conditions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T01:22:26+02:00 |
-| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
-| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -76,44 +66,35 @@ route does; the satisfying row is a family row in the leaf's own history file. T
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R06@v2` of task
 `260928_maintained-invariant-knowledge` and its leaf document `06_family-route-maintenance.json`; they live
 outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The four families and the world. | "FAM-W00001"; `World` | mcp/tests/test_family_route_conditions.py:1-12; mcp/tests/test_family_route_conditions.py:133-149 |
-| The stored predicate checked against the live `satisfiedBy`. | `assert_predicate_agrees` | mcp/tests/test_family_route_conditions.py:184-189 |
-| The conforming directory move, with the R2-N1 stage. | `test_a_directory_move_raises_emptied_and_uncovered_and_a_rerouted_row_satisfies_them` | mcp/tests/test_family_route_conditions.py:206-271 |
-| `no_impact` refused; a kept dead route stays open. | `test_a_no_impact_row_never_satisfies_and_a_kept_dead_route_keeps_the_item_open` | mcp/tests/test_family_route_conditions.py:274-307 |
-| The carried L04 decision end to end. | `test_a_carried_dead_route_the_validator_only_reports_is_a_mandatory_item` | mcp/tests/test_family_route_conditions.py:315-358 |
-| A reached retired family raises nothing. | `test_a_reached_retired_family_raises_nothing` | mcp/tests/test_family_route_conditions.py:361-376 |
-| `route_unassigned` until an `assigned` row with routes. | `test_a_reached_family_without_routes_is_route_unassigned_until_an_assigned_row` | mcp/tests/test_family_route_conditions.py:384-409 |
-| The boundary example. | `test_an_entry_moving_to_another_file_inside_its_route_raises_no_route_item` | mcp/tests/test_family_route_conditions.py:412-423 |
-| An ambiguous rename target. | `test_an_ambiguous_rename_target_lists_every_candidate_and_suggests_nothing` | mcp/tests/test_family_route_conditions.py:426-450 |
-| The registered kind and its row lookup. | `test_the_kind_is_registered_and_its_row_is_the_familys_row` | mcp/tests/test_family_route_conditions.py:453-471 |
-| Q1: a route dead at B is not charged. | `test_an_unreached_familys_route_already_dead_at_b_is_not_charged_to_the_leaf` | mcp/tests/test_family_route_conditions.py:479-491 |
-| Q5: the suggestion follows renames. | `test_the_suggestion_follows_renames_of_files_absent_at_c_and_is_withheld_without_one` | mcp/tests/test_family_route_conditions.py:494-514 |
-| The lane registration. | "mcp/tests/test_family_route_conditions.py" | mcp/tests/test-evidence-lanes.toml:69-69 |
+- The four families and the world. [1]
+- The stored predicate checked against the live `satisfiedBy`. [2]
+- The conforming directory move, with the R2-N1 stage. [3]
+- `no_impact` refused; a kept dead route stays open. [4]
+- The carried L04 decision end to end. [5]
+- A reached retired family raises nothing. [6]
+- `route_unassigned` until an `assigned` row with routes. [7]
+- The boundary example. [8]
+- An ambiguous rename target. [9]
+- The registered kind and its row lookup. [10]
+- Q1: a route dead at B is not charged. [11]
+- Q5: the suggestion follows renames. [12]
+- The lane registration. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repo boundary is crossed: every repository is created under `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): created this card for the new test file MIK-R06 adds (10 cases). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

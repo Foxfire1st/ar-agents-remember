@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/references.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "References are attached during native evidence-frame ingestion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "518fbfc1e192dcdfb534f5604ac8fe1d26df6584",
+            "content": "sha256:4dcfa6688d54029674b2820a8be694b92381a92b5c7345c393780be3a94aa971",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_evidence_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "518fbfc1e192dcdfb534f5604ac8fe1d26df6584",
+            "content": "sha256:d57a36b9c3dc700144adb704466f27551633347e38405a369c6bbae74b408fa8",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "References are attached during echo-frame ingestion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "543a763b6cd183bf056771cba75fd6909a4edff5",
+            "content": "sha256:74acf44605191003e351c7d22f4e5004fbadf4eca77dd91be3abfa2e0149ec84",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "kind": "unresolved",
+          "text": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:180-182"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

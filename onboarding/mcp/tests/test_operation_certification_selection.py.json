@@ -1,0 +1,77 @@
+{
+  "path": "mcp/tests/test_operation_certification_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Operation selection fixture behavior is local test evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe4d6b2f1ba139685bb87af64454340e1ac6d8e",
+            "content": "sha256:0640d9f229117949d7cf0a5e3d1c1235488007c7a38c364d6fa961af3a4d6c2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6fe4d6b2f1ba139685bb87af64454340e1ac6d8e",
+            "content": "sha256:3128b588008caf4b743d10075016bb64889d9f6d61405278559dd94d94005572",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fixture state binds the exact operation and frozen admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe4d6b2f1ba139685bb87af64454340e1ac6d8e",
+            "content": "sha256:f001a05006169a4cdc5c687b32fc63e9ef54e4e477a7f25c8d1863fa43b398b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6fe4d6b2f1ba139685bb87af64454340e1ac6d8e",
+            "content": "sha256:0640d9f229117949d7cf0a5e3d1c1235488007c7a38c364d6fa961af3a4d6c2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Publication records artifact identities and terminal outcomes through production owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe4d6b2f1ba139685bb87af64454340e1ac6d8e",
+            "content": "sha256:3128b588008caf4b743d10075016bb64889d9f6d61405278559dd94d94005572",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

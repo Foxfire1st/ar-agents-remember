@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/SubjectReview.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The header distinguishing real review-route bodies from exact owner-produced responses, and pointing at the receipt.\n\nAnchor: \"Real review-route bodies\"; \"adjacent receipt\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8b6422d2952adb8e5c1a87c748c2c3f198ad12b",
+            "content": "sha256:7452c5726be60b1b5d131983e035c93ecfb243d3ba94da2ee37b27fc3a82c25b",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case or response retains its declared selected input.\n\nAnchor: \"reads the clicked member owner before displaying its concern, keeps family context, and preserves ambiguous revisions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8b6422d2952adb8e5c1a87c748c2c3f198ad12b",
+            "content": "sha256:26bc088fa348232b386a82fc0d19538d86201c6ceeb69d34aab4049fc5b0f17f",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

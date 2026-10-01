@@ -1,0 +1,122 @@
+{
+  "path": "mcp/tests/test_sync_parked_candidate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Code and memory WIP return, with cache excluded from the memory candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "content": "sha256:0408898e83b63a79b466f84dc5554d6a9717f30c669756deddc240c9a9c81298",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parked_candidate_is_carried_and_returned"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "content": "sha256:76c270e3360dc2879450c0a48b5e52fa2de98a1c8f1d884040a256db73ecc75f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parked_memory_candidate_is_carried_and_returned"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Genuine reapply conflict and cancellation preserve candidate content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "content": "sha256:5bd0fbeb16b5de26dd8c46e22f2c4e5868ee4dc5940de55f93f77aac48f4ee7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parked_candidate_reapply_conflict_is_retained_and_cancel_returns_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Crash recovery and retained-source continuation return parked work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "content": "sha256:a197d22d70c4a74f2fc14a879c6509e8c133b34923c3e6fbe43435472b895839",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_resume_returns_the_candidate_a_crash_left_parked"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "content": "sha256:b6a37b97562af76d85475fcd33c7530b9801d2e5a2fa594aecb5d85b2d9057a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_resolving_a_retained_merge_returns_the_parked_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pre-existing genuine conflicts remain a refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8d9960ce567746aa521eba9e151ed4ca4a58f3a",
+            "content": "sha256:2f2d91692a8e110087965aeb39f8f2f60778e6721e5ace8a0c9042845a15ebe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unmerged_index_entries_still_refuse_the_sync"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Production parked-content boundary and exact restore proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc538632c4087c472a10f5001375318e61e9daf",
+            "content": "sha256:e96929ca9176ec1f318d2193a4fdf656c43fd1f35ffd6d2dbc65c1ddb9722ea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "park_worktree_wip"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9fc538632c4087c472a10f5001375318e61e9daf",
+            "content": "sha256:a8d5c04f5077bf0a3a49869b23a27b0541df5d39eb33799b468ace30092d11e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_parked_wip_restored"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

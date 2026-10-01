@@ -1,15 +1,5 @@
 # dashboard/src/data/reviewTransport.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/reviewTransport.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview | `dashboard/src/data/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/data route overview](overview.md)
@@ -158,16 +148,16 @@ and outside this leaf's packet:
    owner-published `nextAction`, and offering a retry beside it would suggest the caller can clear a
    state only the owner can clear.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own header, the failure
 vocabulary and the one code→state table, the single GET, the three projections, the shared client whose
@@ -175,46 +165,30 @@ behaviour this module deliberately does not change, the client that delegates he
 that consume the one failure shape, and the case module that drives the whole thing over real HTTP
 bodies. Every anchor in a row occurs inside the range that row cites.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The header's own record of the defect this module exists for, and of its two boundaries: the body is the answer whatever the status, and the shared client keeps throwing for the routes that use it.** | `getReviewJson` | dashboard/src/data/reviewTransport.ts:1-16; dashboard/src/data/reviewTransport.ts:161-171 |
-| **The shared client whose throw-on-non-2xx idiom is right for the other serving routes and dropped this route's typed refusal whole: the behaviour this module deliberately does not change.** | `getJson`; `FilesApiError` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:95-102 |
-| **The failure vocabulary: one token per answer that is not a review, including the two honest fallbacks, and the explicit statement that `loading`/`known-empty` are not members.** | `ReviewFailureToken` | dashboard/src/data/reviewTransport.ts:27-45 |
-| **One failure in the owner's own terms, with `code` never re-spelled and `httpStatus` present only when a response carried it.** | `ReviewFailure` | dashboard/src/data/reviewTransport.ts:49-57 |
-| The typed refusal's wire fields, declared structurally so the import runs one way only. | `ReviewRefusalFacts` | dashboard/src/data/reviewTransport.ts:62-68 |
-| **The only code→state table in the dashboard, and the classifier that carries an unknown code verbatim rather than guessing it into a state.** | `TOKEN_BY_CODE`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:73-82; dashboard/src/data/reviewTransport.ts:97-98 |
-| **The refusals that answer for the intent half alone, which is what licenses offering the task's source inventory as a separate question.** | `INTENT_ONLY_CODES`; `intentOnlyRefusal` | dashboard/src/data/reviewTransport.ts:89-93; dashboard/src/data/reviewTransport.ts:95-95 |
-| The one error, staying a `FilesApiError` for existing catchers while carrying the whole failure. | `ReviewTransportError` | dashboard/src/data/reviewTransport.ts:102-107 |
-| **The single transport-level classification: the body's own `status`, the optional fields read only where published, and `path` accepted as the port's own spelling of the offending input.** | `ReviewBody`; `namedFailure`; `failureFromBody` | dashboard/src/data/reviewTransport.ts:109-117; dashboard/src/data/reviewTransport.ts:125-127; dashboard/src/data/reviewTransport.ts:129-146 |
-| **A failure with no HTTP response is its own token and carries no status.** | `networkFailure` | dashboard/src/data/reviewTransport.ts:148-156 |
-| **The one GET: the body is read whatever the status, and a body carrying this route's `state` IS the answer.** | `getReviewJson` | dashboard/src/data/reviewTransport.ts:161-171 |
-| **A typed refusal projected through the same classifier, so the entry and the surface cannot disagree about a code.** | `reviewProblemFromRefusal` | dashboard/src/data/reviewTransport.ts:176-183 |
-| An answer whose `state` this client does not admit is named, never rendered as a review. | `unreadableAnswer` | dashboard/src/data/reviewTransport.ts:187-191 |
-| Any thrown cause as a failure: the transport error's own, anything else as the network failure it must be. | `reviewProblemFromCause` | dashboard/src/data/reviewTransport.ts:195-196 |
-| The three public client reads use the shared review transport. | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:555-571; dashboard/src/data/review.ts:721-727; dashboard/src/data/review.ts:739-757 |
-| **The rendered counterpart of this module's classification: one region for every state that is not a review, and one block carrying every field the owner published.** | `ReviewOutcomeRegion`; `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177; dashboard/src/panels/review/ReviewOutcome.tsx:226-260 |
-| The task entry's brief word for the same tokens (`briefProblem`), shown on a control that never disappears, with the owner's full sentence in the disclosure beside it (`problemSentence`, since `260921-ICR-L47`). | `briefProblem`; `problemSentence`; `problem.token` | dashboard/src/panels/detail-panel/entryState.tsx:35-60 |
-| **The routed debt this card records and does not fix: the counter read's own rejection handler drops the reason instead of carrying it.** | `setCounters`; `leafChangeset` | dashboard/src/panels/detail-panel/changeSetBar.tsx:12-104; dashboard/src/panels/detail-panel/changeSetBar.tsx:12-114 |
-| The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched. | `getJson`; `taskChangeset` | dashboard/src/data/changeset.ts:1-10; dashboard/src/data/changeset.ts:144-149; dashboard/src/data/changeset.ts:167-168; dashboard/src/data/changeset.ts:224-234 |
-| **The cases that drive the real client functions against the measured route bodies, including the pair that shows `getJson` dropping the identical body this decode preserves.** | "resolves a 404 typed refusal through the review client, refusal intact"; "drops the same body through getJson: the shared client's semantics are unchanged"; "carries a transport-level refusal body's reason, offending input and next action"; "offers an explicit retry for a network failure, and the retry renders the answer" | dashboard/src/data/reviewTransport.test.ts:156-186; dashboard/src/data/reviewTransport.test.ts:217-236; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:357-376 |
+- **The header's own record of the defect this module exists for, and of its two boundaries: the body is the answer whatever the status, and the shared client keeps throwing for the routes that use it.** [1]
+- **The shared client whose throw-on-non-2xx idiom is right for the other serving routes and dropped this route's typed refusal whole: the behaviour this module deliberately does not change.** [2]
+- **The failure vocabulary: one token per answer that is not a review, including the two honest fallbacks, and the explicit statement that `loading`/`known-empty` are not members.** [3]
+- **One failure in the owner's own terms, with `code` never re-spelled and `httpStatus` present only when a response carried it.** [4]
+- The typed refusal's wire fields, declared structurally so the import runs one way only. [5]
+- **The only code→state table in the dashboard, and the classifier that carries an unknown code verbatim rather than guessing it into a state.** [6]
+- **The refusals that answer for the intent half alone, which is what licenses offering the task's source inventory as a separate question.** [7]
+- The one error, staying a `FilesApiError` for existing catchers while carrying the whole failure. [8]
+- **The single transport-level classification: the body's own `status`, the optional fields read only where published, and `path` accepted as the port's own spelling of the offending input.** [9]
+- **A failure with no HTTP response is its own token and carries no status.** [10]
+- **The one GET: the body is read whatever the status, and a body carrying this route's `state` IS the answer.** [11]
+- **A typed refusal projected through the same classifier, so the entry and the surface cannot disagree about a code.** [12]
+- An answer whose `state` this client does not admit is named, never rendered as a review. [13]
+- Any thrown cause as a failure: the transport error's own, anything else as the network failure it must be. [14]
+- The three public client reads use the shared review transport. [15]
+- **The rendered counterpart of this module's classification: one region for every state that is not a review, and one block carrying every field the owner published.** [16]
+- The task entry's brief word for the same tokens (`briefProblem`), shown on a control that never disappears, with the owner's full sentence in the disclosure beside it (`problemSentence`, since `260921-ICR-L47`). [17]
+- **The routed debt this card records and does not fix: the counter read's own rejection handler drops the reason instead of carrying it.** [18]
+- The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched. [19]
+- **The cases that drive the real client functions against the measured route bodies, including the pair that shows `getJson` dropping the identical body this decode preserves.** [20]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The module talks to its own origin and names
 one repository namespace in the query string.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T17:04:44+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **claim re-read and corrected.** The row about the entry bar's classification named `ReviewEntryState`, which L47 deleted; the entry now shows `briefProblem`'s word keyed on the same shared token and puts `problemSentence` in a disclosure. Reworded and re-cited to `panels/detail-panel/entryState.tsx`. This transport module is unchanged. No stamp advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — Repointed shared catalogue/grouping ownership to the extracted source; source-review entry remains available independently of knowledge.
-- 2026-09-25T23:58+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **citation repair only; no claim about this module changed.** The row that names this file's own subject by contrast — the change-set client and the route the D01 debt belonged to — cited `data/changeset.ts` by four stale coordinates. They are re-derived against this tip: the file's header contract (`:1-10`), the `getChangeSetJson` reader the client's refusal idiom lives in (`:144-149`), and the two leaf helpers (`:167`, `:224-234`). The sentence's meaning is unchanged: this is a different client, route and owner from the review transport, and it is where D01 was carried and closed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** The public-entry row's four ranges were re-derived one per anchor against the current `data/review.ts`: `reviewSourceContent` `717-735`, `intentReview` `533-549`, `ReviewTransportError`'s re-export line `24-24` (the export block shifted by one), and `intentReviewEntries` `699-705` — each verified with `sed -n 'START,ENDp'` to carry the anchor it is cited for. No claim was reworded or dropped and no contributing range was removed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **created.** The module is new in this leaf and this is its one-to-one card. It records what the decode is *for* rather than where its lines are: the measured pre-existing defect (the review route publishes its typed refusal in the body of a non-2xx response, and `getJson` read only `body.status` and threw, so the refusal was unreachable and a reader saw `404 Not Found`); the one GET whose body is the answer whatever the status, with a 200 that carries no `state` classified as a failure rather than as an empty review; the code→state table as the **only** one in `dashboard/src`, with an unknown code carried as `domain-refused` rather than guessed into a state; the two honest fallbacks (`unreadable` for a response this route did not produce, `network` for no response at all) and the statement that `loading`/`known-empty` are not failure members; the three projections that give every consumer one `ReviewFailure` shape; and the boundary that unrelated clients' semantics are untouched, which the case module asserts against the identical response. It also records, as **routed rather than fixed**, the change-set client's own swallowed refusal detail (`data/changeset.ts` → `getJson` → `/api/changeset/task`) to R12/R24 — a different route, client and owner, outside this packet's scope. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00) — the line this candidate now sits on after the leaf's pair sync — while what was actually read is this leaf's **uncommitted** working tree at that base: this leaf's **uncommitted** candidate at that base. Nothing in this leaf is committed, so no commit contains the bytes a stamp would claim to have verified; the `the recorded working candidate` row is the honest record and closeout owns the stamp.
+No meaningful cross-repo references found.

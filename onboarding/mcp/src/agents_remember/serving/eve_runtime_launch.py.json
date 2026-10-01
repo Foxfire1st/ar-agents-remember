@@ -1,0 +1,731 @@
+{
+  "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The launch spec, identity and workspace binding are AR's existing control-wire types.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:65dc1ea84d4f00830cdd4c79a8652fa33eda2acd4d1e85b16213f6869153a10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchSpec"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:b132748e350a37ef449e8165cd5c3c9e3bc9fde8b2bbe479aec306852ebd0ab6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ControlIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The cases pinning the launch-time verification in both directions, including a workspace checked out on another branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:be6387aafce0b59b7682a648097610f1f37b03dd37a0782224e57a9a16605b65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_verification_accepts_the_admitted_capsule"
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:2a4b8b17fc922800e7e21b37114157799732fcbdce39d2b6168134c2f0818e9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_verification_refuses_every_declared_defect"
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:19856cb6b5bed1749b4a69715564538ff88afca3dc834c47c48d18a6b9431b5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_verification_refuses_a_workspace_on_another_branch"
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:1cfe4b7900a7cae65ba96b5c6476aa508cb23e36e2744ef0ddc4a368996921a7",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 355
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:1711122059e4e520c133fe775d8efc46ea7495789fdc4e0941e6ecd6059afcfd",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 364
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:df8907b216dae95ae1dc2bbcb9de7c910427bb62ba06c429adfe5d8a25037452",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 397
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The adapter is the only consumer that resolves a spec, hands it to a transport, and verifies the effective selection it produced.\n\nAnchor: `EveSessionAdapter._resolve_spec`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:f2ca6c097203c873ea24c991e26d13e0acdbb84d534a191a21328dd117c53120",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_effective_selection"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:143572d9d62010525aa478a8101dbb78dc299715007612ef12b5b7cfadc74402",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 660
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:c552ad4c00d92d780ee385cd7288bc892a7f951dcf4f411688bc570708d93f41",
+            "locator": {
+              "end": 904,
+              "kind": "line_range",
+              "start": 892
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The factory recovers the applied selection by probing a `LaunchSpec` through this module's reader, so the values that reached the child are the ones verified.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:548c3434bd9af2f7bdcaf54507d76326c2380f93740033e7e8a4eeacc97a2198",
+            "locator": {
+              "kind": "symbol",
+              "name": "_eve_expected_selection"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:83c0ea4b7a54e0b59c1b1c8d4593ca185ff3d59c8bb3f8519623c0e05e7280ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_spec_selection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:3699e5beb045fc7e73f8b1e8c3f6fbe429b7c833fb42bbe8afdfe04dddf53f1c",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:5a6639b3d93f034570f428abbf45b34c14f7a95fc3b171df92b8dec0a9d72758",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 391
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The node floor is owned by the readiness module and re-exported here, so detection and launch read one number.\n\nAnchor: `KERNEL_MINIMUM_NODE_MAJOR`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:f9a22c6e95d37b45a3b62b587103db40b686584b0c63ea15e0aa7f4417acc25e",
+            "locator": {
+              "kind": "symbol",
+              "name": "MINIMUM_NODE_MAJOR"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:a665a81fedea5ecb98194d516be5a73a9bc70d756b8e6aaef1bd9f513c71682b",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:41143d7d3eedbd126130ea56fd0e737ea3817ed2a70bfd64e493a0fcffa12ab2",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:97114fec1f4b9ff30620f9e9076a99ba5e212793bc9dfe7fa69671bad5b0d0b4",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/src/agents_remember/kernel/eve_runtime_readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The runtime's own model fallback, read from the authored application rather than mirrored as a constant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:28a38571b3f77a469650195103d7ba4a06e08d2d7e27e36968160c1c899a6288",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_default_model"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:4ec0ebe152322b9a93f5b1c18c423a8650ac32463cef57ec8a2cb0cd9e64b36c",
+            "locator": {
+              "kind": "symbol",
+              "name": "AGENT_SOURCE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:cd110b7d1adfb90eb156651c2220da6fc99847353f8d7c29975b568689115678",
+            "locator": {
+              "kind": "symbol",
+              "name": "MODEL_FALLBACK_PATTERN"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:90bf726dbe98cbbfac1e26108d04b22e488fd0e0d55288ba16f9621a73ef40dd",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:6e85fe0f19fd98ffafcc4d5f7103d3932dc7366e0dc0969eac356ac294353cbb",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:8e31c50d398ac2966598c111b87fb6a6f36782dbb57d85fa6be0c29382a5ce8c",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 269
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The capability catalog consumes this fallback so a pre-session read names the model the runtime would really use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:149282dfd781a80c70d98a059169561792df1ec3cfd4e930aa22e2c4d22f2012",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessCapabilityCatalog"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The case pinning that the advertised model is the one the runtime would use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:4fc9ad2d32e3edf6c61d9ba888fe18448f35626f646c10323c0f4789ef00ed05",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_advertised_model_is_the_one_the_runtime_would_use"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The launch-vocabulary contract holds the new harness without an edit to the parametrized test, and now includes the environment carrier eve uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7b376ddc36d9acc3ea063f9d0df047fecead1a8",
+            "content": "sha256:7073f829f77e02929c4ce3490bc0022edfc7b05c05c4d9b946752208b52e6b66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knob_values"
+            },
+            "path": "mcp/tests/test_harness_launch.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a7b376ddc36d9acc3ea063f9d0df047fecead1a8",
+            "content": "sha256:06c27d0f8245a8079add5d9675c4d361cfee4f9421557316faf17241dd716430",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_harness_carries_a_clean_selection_into_its_own_launch_vocabulary"
+            },
+            "path": "mcp/tests/test_harness_launch.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The OS-level start-failure seed is an operator naming a nonexistent `AR_EVE_NODE`, which only fails because this module reads the selector as given.\n\nAnchor: `failureType`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:8fbcc6f6d6d44f9b318eefff84dfd296e423674e2ea505faf26a83a6a3677869",
+            "locator": {
+              "kind": "symbol",
+              "name": "START_FAILURES"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:158bed91bfaef44652af14eba156c4d6545b557a541c5210ea0290c694663bd6",
+            "locator": {
+              "end": 1862,
+              "kind": "line_range",
+              "start": 1847
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The pinned `eve` release and its Node `>=24` engine requirement come from the published package, not from a sibling Agents Remember repository.\n\nAnchor: `engines`; exact dependency pins",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:e628951999d92a54551f6674aa6ad41190990c9e39a5b4c1f99be79c554508ce",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:6c82aaae98e7cc9c92b49f277c6ae5e38690c3f97471b92615c1ab8c39aba990",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:5da26b3e5857ea65a7bcc5d4f89d4a789152ac19f4d6c85c60c839ceb7799b6d",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The launch knobs are AR's existing capability-port type, which is why eve participates in the same launch-vocabulary contract as the other harnesses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:519bce3f63db0423d06f6356e66d6beafb2c2a58a1a8364a8dad3d7c7fda6b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchKnobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declared pins and the operator-facing environment contract are documented beside the application they govern.\n\nAnchor: `dependencies`; environment table",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:cc4374719a61b525f8d8aba3a818d60f7e1074918d2f92173cfe499e913fc811",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:b0068764d79f6ba3edb276e34e0a6155d39ee710336a5212ac714dcff8e1709f",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored application applies the binding this module carries at `session.started`, and the channel's own AR binder is the route gate that refuses an unbound launch before any model work.\n\nAnchor: `defineDynamic`; `verifyAdmittedWorkspace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e46a81e8a0ed7a1f534cc17fd24ef7ac979f9e36",
+            "content": "sha256:4d5e26af7ae3f91e4a142f3f23db456a5ff5ff71c91c920a4fd9f4f764c7d440",
+            "locator": {
+              "kind": "symbol",
+              "name": "arCapsuleAuth"
+            },
+            "path": "eve_runtime/agent/channels/eve.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "445ff61351f588b8e05c8008ad94e159620a5d72",
+            "content": "sha256:913b2a295dbac9fe213b10b15fddf9eea636eb7e6240b77c21e715eab65ec4ec",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "eve_runtime/agent/instructions/ar-binding.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The launch-time proof itself, and the git-identity requirement behind it, whose six refusals each name their defect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:d1dca4dde5ef44f056d15f901a37851f4da2f82cbf221a97f602ddfda5f9531a",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_capsule_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:980edfc68032785938edd1337cc480af7c4218ca5f5f8b7bfd5e3706ae8d513d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admitted_git_worktree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:289d8604724843b028a608d8c2d8853ecaca339a608594bfb6c9e0a67ffb0723",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_git_head"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The carrier format and environment names this module verifies against, declared in the models tier so the reader and the writer share one spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:7b70655206e67231389d15539125636dd91c7fbcabce083605db181e095fdbee",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveCapsuleCarrier"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:98443210ff187a5c1a7a4389e1c30e2a6824e9258444e8f7960eeb1ab28bdc6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BINDING_REF_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:2bba1964c3be276b013b090cb2e3933d47c27696d7381cca39b9f5a8e762451f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_DIGEST_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:b0082851957c57882ea1410385280bcf9ea224e02ed595998d5cc499a03f77de",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_PATH_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:1453584ce334174a9324f67c97d44550efc5d20dfac69c6578e9219a61d6118b",
+            "locator": {
+              "kind": "symbol",
+              "name": "carrier_digest"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The D20 repair: the install is checked before the destination is touched, and the early return requires a complete staged application.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:1e2cc0f67a8febbc94d8bc33bd678f733ae713ae77a0a4d9ddca528ffc09608b",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_runtime_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:0a484b2a1e59e0d05043b44f648df9dd78e6d8820deb901c7eb03645ad895902",
+            "locator": {
+              "kind": "symbol",
+              "name": "_staged_application"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case pinning the repaired refusal: a first refusing call followed by a second in the same process refuses identically.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:73dc8711d02c0517d4b2401ba5633548ded80964b94dee4ffa7a21bdb612e861",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_stage_refuses_again_in_the_same_process"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The produce side of the same seam, which writes the carrier this module reads — and which **now has a production caller**: `application/role_capsules/launch.py::_compile_eve_task` materializes it for a wired launch point, verified from the consumer's side by `E8`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:41bc4cffe90304a076c0f8625742a5b55ffadb078b94ebea36a5f249fab3aa4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "materialize_eve_binding"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:d2be914b1def2a889f049ba43a6106f739e8ab507942d1a54c8ca6b75df4e554",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

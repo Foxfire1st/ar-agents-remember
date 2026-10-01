@@ -1,0 +1,307 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/memory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Carryover registration declares one memory subject and describes the computed cache refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
+            "content": "sha256:99fbd92d2c75f350e741595b0cf2b7a2e9c461ba524b20ce45e7e99ac40b9aea",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
+            "content": "sha256:95393490ee6003a5ee7f9361b9b9b404f2c4a3b95ace70e7e84bb0a5ac06c27d",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The typed start payload builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "content": "sha256:a1b7fedb447ac47c48a0a76ef0c38a981dccebe6aee175fd18cc4e77ed5d77e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check_start_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The typed poll payload builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "content": "sha256:6451c893d8b61f5f409e6f0ff41ff4962cf4de18e82baed771e9e751ff0cc38a",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check_poll_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The `citation_fix` registration and its caller-exclude parameter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
+            "content": "sha256:a7590b36fcfa68944541ca8b7d61860d33e1478e53c9101a4cfe2218e83fb958",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The scope object the excludes ride with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:ab62910d1dada62078530161905e63919f621b57b1c23302febddf16c8683644",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The one construction point that carries them into every citation operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:88d9294a6341261126fa2bd4111f7a9d9401d41930bee82161559219259a0e16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_trees"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The payload builders for the carryover plan and report-filing apply pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "content": "sha256:63b4e2ce0a07e4f2dda6ba71571370ece45f204e075b49bb33290789ac87edbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_plan_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The typed sync/start/poll payload builders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "content": "sha256:a9de81dbbdf4642cdad7ec87883e50f74e457a6689267d0c456b3eda641ebe61",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `MemoryBranches` parameter object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:33ec530cd7ea134f868737123e2ef344fae4d4c7609e21308019028ba0037442",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryBranches"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:6eba3c13988b14c9f4327b55f5b9bf0bc456157fa96704df335999364ae2ef3f",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 402
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `CarryoverSelection` parameter object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CarryoverSelection"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:b48b600459ee3665799b08aff443f98a99d36ba71c8907f158da55ee9c9cb630",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:7eaec590e90cef9afda608cb18f4d74465b0695311c5b03d70bb5de17e1d7cf7",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 472
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `CarryoverCommitMessages` parameter object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CarryoverCommitMessages"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:3bd53f467745ee3f70e010103aefb9efa75c118a6ab83d70904f666b62aa6130",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 492
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The payload builder for the carryover plan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "content": "sha256:63b4e2ce0a07e4f2dda6ba71571370ece45f204e075b49bb33290789ac87edbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_plan_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The payload builder for the report-filing apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "content": "sha256:376bec3b46afe08cc4835f775fda796868adc38a828138644f0e1ef290104d4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The typed sync payload builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "content": "sha256:a9de81dbbdf4642cdad7ec87883e50f74e457a6689267d0c456b3eda641ebe61",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,227 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/subtree.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the selection, the cut and the continuation.\n\nAnchor: \"Every entry under a directory, in bounded pages resumed by the shared continuation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:714f6705422bca2fae52006226e88e14d7e6465916aa26be01e6bf675d802ffe",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The paging, walk-tree and refusal cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:ca786e08e8f89f95c23884338c758424ddb831e9b0dad129ae7fc9f663173cc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directorys_subtree_pages_through_the_shared_continuation"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:7421f6fb089297a8ddbe4a9b682d9a78af5f6e46cbac65039b12f43ad0e193b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_subtree_walk_measures_every_page_at_the_code_tree_it_began_at"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:855e41cc2bb2f70b49670ced41001cb816bbcbc0c9f599911ca11f299742a536",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_subtree_continuation_of_another_walk_is_refused"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The view name, the policy and its version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:0a37030772300173ea33264d67eba3fcb09b1f7ab2bace7dbf71b070229e17bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBTREE_VIEW"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:62573e997da695eee8e3dbb0ef0c20a22e33cbfe28d4122f3aa353e24e06c11c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBTREE_POLICY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:4c3339e2a0bbdae0e8f535f5d046a11b948610499cea5d1ebf23b5a47f784ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBTREE_POLICY_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One page: the resume, the binding, the envelope counted inside the bound, and the measured selection returned (R3-1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:b01a4e2ebdf1f63bfcc5944b2125a94b7af149708508678ede7524076819911e",
+            "locator": {
+              "kind": "symbol",
+              "name": "subtree_page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A refusal with no rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:0c101541b64fd29544a82b6a853c13bcb4d6d80144ed7b034a7c8ce241039c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A resumed page at the walk's code tree, or a tree no longer held refused (F16).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:b3c0027d37d32393aa666a980598eb91836c0d22523e929cece227e14cd87d12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_at_walk_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Live entries by path then ID; the code tree ID bound into the token.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:cab7d5dd0080845eaf925b905b18e1cce487bb70afe72f9b2cfdd68ccc6115de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_entries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:6b82fdeafb90b9d4885a6dcb76cfad7f6777e5f2e4eaf354318a95677233ad79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_code_tree_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Another walk, tree, policy, path or position refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:037aff090bb7bab13ed0d6af873c8c4d83d85c88b97cf97ed10dd8079ca8151c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The rows and the renderer the pager measures, with states per page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:d7f59fad4a913795094376a903c38a4487a26693e3d82dc647e7de3798ea4aaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared pager and continuation this view uses.\n\nAnchor: \"from agents_remember.application.knowledge_paging.bindings import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:a0260134caf20e76c0832f1baa893b3cf07b359f492fa0a0b0f6d962239a240b",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,117 @@
+{
+  "path": "mcp/src/agents_remember/application/benchmark_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Benchmark response models define prepare/run envelopes and Codex execution policy fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9001944699cad56fc66efddc956aa4c2408bd38",
+            "content": "sha256:5d287d975aab7396bd725a1190d7ee3f2442d84a31c51ca46eb7c493d7ccd6fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexBenchmarkPrepareResponse"
+            },
+            "path": "mcp/src/agents_remember/models/benchmarks.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Benchmark service behavior lives under the benchmarks package.\n\nAnchor: \"Compatibility facade for Agents Remember benchmark prepare/run/analyze tools.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:9561b0e24a5c6c3d58bdd701d18b22cc24cddabcac34c0da984a18c14ea0374e",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared coordination-confinement guard used for benchmark root overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b796960fc74a9b30db4aa3ef0b9739906ba9205382c96e9b73141c8260ddeeb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_within_coordination"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b977602b87edfa146bea5330d4c8a95b1b688fe8cbbe5cc367d2d2b844901c9e",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live-authority reload behind `_live_provider_ids` (containment R1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:adc8833b207a0d8b99835c2c4c3649211752d6e09d43890c5c3db219cbca33e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_provider_ids"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:47e54d81d3830d81f16ba66844987fdd03ce3286fe909fcf93543069505b3bdd",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The workspace-side filter that consumes `allowed_provider_ids`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7b9169b9121e30aa03a531cf3b8fda097c806c4",
+            "content": "sha256:6aa72f8891d64f11e25124be12543ad81b5c93dd9d05f40fde9844065f7de5f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "filter_benchmark_provider_ids"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

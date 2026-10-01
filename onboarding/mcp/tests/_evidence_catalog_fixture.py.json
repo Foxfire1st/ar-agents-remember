@@ -1,0 +1,52 @@
+{
+  "path": "mcp/tests/_evidence_catalog_fixture.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One function writes complete current lifecycle metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38204d3fc74ab0886df9d064dbcd6ae228238fcb",
+            "content": "sha256:4d90fb00844186220653bec0e3c441f4010a3a35b12d989aad15c33229be4780",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_synthetic_evidence_catalog"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "38204d3fc74ab0886df9d064dbcd6ae228238fcb",
+            "content": "sha256:fe86c4165c406ede8de8ba9e70d9bf51a25bf08d60b3115b10d643064702ee13",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Production validation owns the accepted schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0dc482270a2a12e22ae3663e9d2951e7ce8a6698",
+            "content": "sha256:833ade30cfb4dbbc8ef13abf4e7816a932f9edb0b852e1c7f55c7735a27eb944",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_evidence_inventory"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

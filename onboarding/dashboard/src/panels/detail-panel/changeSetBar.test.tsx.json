@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The change-set bar suite, now with the generation-bound series entry case and the complete-catalogue traversal case.\n\nAnchor: `describe`; \"opens the series view bound to the generation the net published\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
+            "content": "sha256:042d3122fac0b3609ba25f3c806a6e12fd1a95e8813698e44fdd1771e8c7d1be",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
+            "content": "sha256:e81d932d76dcf1d32e204c2fc6fc669557b9aeb5e9bfc8d3ce22ed4a68dc1a9d",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The Intent review opens the task-context review and the reviewer chooses the subject; a failed summary read keeps the entry with `offline` and the reason in the disclosure.**\n\nAnchor: \"opens the task-context review; the reviewer chooses the subject\"; \"keeps the entry when the summary read itself fails\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
+            "content": "sha256:ce5b1b4526e88a39526cfda0ac4cc88676c318791127efc409659968ceb593b3",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 393
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The closed leaf's recorded entry with intent counts, and its survival when knowledge is unavailable.**\n\nAnchor: \"offers the Intent review for a closed leaf, bound to its recorded comparison\"; \"keeps the closed leaf's Intent review when its knowledge is unavailable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
+            "content": "sha256:8a7cea7821682ab8f27dd3437561d27dada6075a69742ab3d853286a60dc5484",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The net's leaf attribution rendered beside the total, the request that asks for it, and the absent-answer rule.\n\nAnchor: \"carries the master net's leaf attribution beside its total (R33.2)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
+            "content": "sha256:05c96f2189b6d8f4dfb0b1a6d68195ebdd15ae8352c4251dacf76f47719f619e",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,159 @@
+{
+  "path": "mcp/tests/test_atomic_master_review_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture parent-contract invariant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6445de4dd244cbef63cd83715c7761fd28282faa",
+            "content": "sha256:056b6b621e73be00a7104dbfd04acb2e4ed5f88f55d81dcf6655bff58f7e4d26",
+            "locator": {
+              "kind": "symbol",
+              "name": "setUp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Deferred atomic child and ownership behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6445de4dd244cbef63cd83715c7761fd28282faa",
+            "content": "sha256:4cddc586f0bfa93915f08f3b8ac3728d4305d5a0d9dd3c767c9482615f8aa51f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_atomic_child_review_is_deferred_and_leaf_integration_has_no_master_gate"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6445de4dd244cbef63cd83715c7761fd28282faa",
+            "content": "sha256:b30734fd18333b5128df2bbd19bf74ee4f2386443cb8e6655ff4131bfcb63854",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_canonical_master_is_an_ownership_error"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6445de4dd244cbef63cd83715c7761fd28282faa",
+            "content": "sha256:97fd57474a1415e381610cbb691828686d651af5378cbd178e0a061a03ebbff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parented_leaf_without_parent_contract_is_not_treated_as_standalone"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Master review requirement and stale-evidence behavior. The requirement is gone from this module and from integration; aggregate currentness now lives in the atomic-master identity tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e3bd0ec8bb1fd9f36bda0b0aa8d2fa5226b199",
+            "content": "sha256:4ba6a158de4c9565af8d26b9021ba90c5dfd2bddfe5da508f716ec66eb852276",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_atomic_master_aggregate_ignores_operational_bookkeeping"
+            },
+            "path": "mcp/tests/test_atomic_master_review_identity.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75e3bd0ec8bb1fd9f36bda0b0aa8d2fa5226b199",
+            "content": "sha256:b92f76cdfd1d044ebf77c4f52a6dbdbcd1f800245d47719a7a5431674ddac7ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_atomic_master_aggregate_changes_for_normative_or_membership_changes"
+            },
+            "path": "mcp/tests/test_atomic_master_review_identity.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Membership and status-only invariants moved to the identity tests; this module retains the organizational leaf boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e3bd0ec8bb1fd9f36bda0b0aa8d2fa5226b199",
+            "content": "sha256:4ba6a158de4c9565af8d26b9021ba90c5dfd2bddfe5da508f716ec66eb852276",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_atomic_master_aggregate_ignores_operational_bookkeeping"
+            },
+            "path": "mcp/tests/test_atomic_master_review_identity.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "75e3bd0ec8bb1fd9f36bda0b0aa8d2fa5226b199",
+            "content": "sha256:b92f76cdfd1d044ebf77c4f52a6dbdbcd1f800245d47719a7a5431674ddac7ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_atomic_master_aggregate_changes_for_normative_or_membership_changes"
+            },
+            "path": "mcp/tests/test_atomic_master_review_identity.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6445de4dd244cbef63cd83715c7761fd28282faa",
+            "content": "sha256:c2560accb1d9549f436dee03ec67312cba6c1c2fcbd505503fe7928a1465f931",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_organizational_leaf_keeps_the_existing_leaf_review_boundary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Canonical resolver under test; the master-only require_current_master_route_review was folded away into the altitude-dispatching resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95d65c1d99f8fbb96f1072bff4dc9acfb5470747",
+            "content": "sha256:9bf0283b9f3a8f2542c5122459edae9bcb89792f37867fdeecc73708b9751b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_atomic_master_scope"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review_scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95d65c1d99f8fbb96f1072bff4dc9acfb5470747",
+            "content": "sha256:992e8a2e557fdcce83b4549f1bcf970e1888701b2aa80c1f6ac7e64ab6481219",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_route_review"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review_scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

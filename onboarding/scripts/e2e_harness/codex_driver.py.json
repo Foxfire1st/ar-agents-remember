@@ -1,0 +1,83 @@
+{
+  "path": "scripts/e2e_harness/codex_driver.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real app-server probe and ambient turn collect negotiated runtime evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b74b5690b0a8cf1c51a74bbc5e947ea868a7086",
+            "content": "sha256:41be3ef34bc95bf9764fb4a030193d8a086c979de3a216a1cd57f9fe09f7f19c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_ambient_codex"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "MCP registration and handshake are inspected before ambient execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b74b5690b0a8cf1c51a74bbc5e947ea868a7086",
+            "content": "sha256:a4771b132a80071c95507bb7c8b840898ebdfa0868109c9883695be4bab4e09a",
+            "locator": {
+              "kind": "symbol",
+              "name": "codex_mcp_registration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b74b5690b0a8cf1c51a74bbc5e947ea868a7086",
+            "content": "sha256:ebcb9000278ef7a3fd466837eb512e14c8bc28d537d9116787e8524c13f07920",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Process and notification summaries stay bounded for actionable reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b74b5690b0a8cf1c51a74bbc5e947ea868a7086",
+            "content": "sha256:1ff5078d304a26c1f188bec02712eb97bbc5b23b958b203922c3f370b6179ad5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_notification_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "All external state is fixture-provided rather than imported from another repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b74b5690b0a8cf1c51a74bbc5e947ea868a7086",
+            "content": "sha256:11c1883aae05b086a7799d6ab13b64252dbf6d838f362961153fb013a64a76dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_codex_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

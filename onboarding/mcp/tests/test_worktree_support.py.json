@@ -1,0 +1,88 @@
+{
+  "path": "mcp/tests/test_worktree_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:4fe441fe9a17e98a7c88cc46f4b52f93562b675cf1ab18fbeb944ef4ce434da4",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialized_memory_repo"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:0936cdd95b6d13967f0541ab7ccebf537d691ed5adaa3b66df118478d3022f6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "seed_memory_ledger"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:9ff1b3879f15abd4cc5414a7f8dd6c0d562969ddb53ffae65d410f900cecccee",
+            "locator": {
+              "kind": "symbol",
+              "name": "init_repo"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "External-memory fixture supplies real isolated Git repositories and current contract inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:426ec73e23413a8aa8e540b75e4ffd8d1529dd0e96422ca6def835807d1eee30",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_external_contract_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The base class provides helper methods rather than collected test cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:798b2021be889252c6cfbee8b23ccc33170409025a9c153f4065490eacf01261",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unmapped_external_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSupportTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

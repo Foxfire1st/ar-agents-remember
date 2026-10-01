@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/`                            |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
@@ -26,9 +20,7 @@ transport casts the body as before; an omitted field stays `undefined`, and a re
 never recomputes a fact. The five new types are imported from `reviewFamily.ts` directly, not re-exported through
 `review.ts`. The keymap child route gains the reviewer's zone and chords (its overview's MIK-L33 section).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The mirrored change types and the entry's optional facts. | `ReviewMemberChange`; `ReviewFamilyChanges`; "change_kinds?: ReviewFamilyChanges;" | dashboard/src/data/reviewFamily.ts:197-227; dashboard/src/data/reviewFamily.ts:241-241 |
+- The mirrored change types and the entry's optional facts. [1]
 
 ## 260928-MIK-L34 One File's Classification As A Single Read, For The Per-Hunk Intent Markers
 
@@ -40,10 +32,8 @@ which keeps one answer per changed path for the surface on screen, so a file ope
 asks nothing. Every mark is built from this answer unchanged (ruling 2026-09-30T16:19:34 Q2 kept MIK-R32's response
 as it is). A dataset review names no comparison, so the scope asks nothing.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One file's classification as a single read; a transport failure is `unavailable`. | `readFileClassification` | dashboard/src/data/reviewLane.ts:261-276 |
-| The scope that keeps it per surface, only for a tree comparison. | "comparison === undefined ? null : readFileClassification(repo, master, leaf, comparison, path)," | dashboard/src/panels/review/intentMarkerScope.ts:96-98 |
+- One file's classification as a single read; a transport failure is `unavailable`. [2]
+- The scope that keeps it per surface, only for a tree comparison. [3]
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane Adapter, And The Entry's Count On The Summary
 
@@ -61,11 +51,9 @@ surface makes the one lane read and hands it down.
 (`ReviewLaneSummary`), from the same summary response, on the counted/partial state and on the refused state alike
 (ruling Q6); the entry therefore never asks for it more eagerly than for the intent counts (MIK-R32 rule 9).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The adapter's own statement: the server classifies once and this file only carries the answer. | "server classifies once and this adapter only carries the answer" | dashboard/src/data/reviewLane.ts:1-16 |
-| The two reads; none for a dataset review. | `useReviewLane`; `useReviewFileClassification` | dashboard/src/data/reviewLane.ts:248-257; dashboard/src/data/reviewLane.ts:279-291 |
-| The summary carries the lane's count on both answered states. | "const attribution = result.attribution ? { attribution: result.attribution } : {};" | dashboard/src/data/reviewIntentSummary.ts:79-90 |
+- The adapter's own statement: the server classifies once and this file only carries the answer. [4]
+- The two reads; none for a dataset review. [5]
+- The summary carries the lane's count on both answered states. [6]
 
 ## 260928-MIK-L29 The Knowledge Reader Adapter And Its Shareable Address
 
@@ -81,11 +69,9 @@ status, including a 400 `invalid-request`, and throws only on a transport failur
 from a process without the reader), so a refusal is shown as what it is and never as an empty view. The keys are the
 backend's camelCase document keys; the adapter issues GETs only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shareable hash, read and written. | `parseReaderHash`; `readerHash` | dashboard/src/data/knowledgeReader.ts:384-397; dashboard/src/data/knowledgeReader.ts:400-409 |
-| A typed answer returned whatever its status; only transport failures throw. | `readerGet` | dashboard/src/data/knowledgeReader.ts:424-441 |
-| The selection block every answer carries. | `ReaderSelection` | dashboard/src/data/knowledgeReader.ts:36-52 |
+- The shareable hash, read and written. [7]
+- A typed answer returned whatever its status; only transport failures throw. [8]
+- The selection block every answer carries. [9]
 
 ## 260928-MIK-L31 The Tree View Adapter Reads A Selection's Entries, And One Wire Casing
 
@@ -106,11 +92,9 @@ The real body ([`reviewTrees.captured.json`](reviewTrees.captured.json.md)) was 
 expansion refusal ([`reviewTransport.test.ts`](reviewTransport.test.ts.md)) was re-measured on the real route
 (MIK-R31 rule 6, ICR-L43 review R2 O2).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The entry types. | `ReviewTreeEntrySide`; `ReviewTreeEntry` | dashboard/src/data/reviewTrees.ts:193-211; dashboard/src/data/reviewTrees.ts:213-222 |
-| The comparison a payload names, and one selection's entries. | `treeComparisonNumber`; `useReviewTreeEntries` | dashboard/src/data/reviewTrees.ts:316-322; dashboard/src/data/reviewTrees.ts:326-352 |
-| No camelCase key in the real body. | "one wire convention (MIK-L25 review F9)" | dashboard/src/data/reviewTrees.test.ts:120-145 |
+- The entry types. [10]
+- The comparison a payload names, and one selection's entries. [11]
+- No camelCase key in the real body. [12]
 
 ## 260928-MIK-L25 The Tree View Adapter, And The Landed Review Over Trees
 
@@ -129,10 +113,8 @@ settled by L31 (above). Its cases
 ([`reviewTrees.captured.json`](reviewTrees.captured.json.md)) of the worker's converted scratch leaf, recaptured
 under the directory-name refs (ruling 2026-09-30T02:32:42 (a)).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The tree view's answer and the request, addressed by number, `recorded` or (since L31) a selection's invariants, never by path. | "export interface ReviewTreesResult"; "export const reviewTrees" | dashboard/src/data/reviewTrees.ts:224-238; dashboard/src/data/reviewTrees.ts:250-262 |
-| Three answers kept apart. | `reviewTreesRead` | dashboard/src/data/reviewTrees.ts:273-279 |
+- The tree view's answer and the request, addressed by number, `recorded` or (since L31) a selection's invariants, never by path. [13]
+- Three answers kept apart. [14]
 
 ## 260921-ICR-L44 The Family Mirror Carries Each Source's Locator, Ranges And State
 
@@ -144,19 +126,15 @@ required `role`/`rationale`. `review.ts` re-exports the three new types with the
 vocabulary. The review transport casts bodies to these types without a runtime decoder, so the mirror is
 the whole client-side contract; no rendering reads the new fields yet.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The three locator declarations. | `ReviewSourceLocator`; `ReviewSourceLocatorState` | dashboard/src/data/reviewFamily.ts:49-52; dashboard/src/data/reviewFamily.ts:65-65 |
-| The member source carrying them. | `ReviewFamilyMemberSource` | dashboard/src/data/reviewFamily.ts:67-87 |
+- The three locator declarations. [15]
+- The member source carrying them. [16]
 
 ## Recorded reviewer catalogue
 
 useReviewCatalogue.ts owns the reviewer's catalogue read (since `260921-ICR-L47` the task entry no longer reads it; it reads the changed-intent summary through reviewIntentSummary.ts instead). The read is keyed on the comparison's identity, preserves complete recorded subjects, counts and distinct failure states, and suppresses rows from another comparison while the current one is pending. intentEntryRevalidation.tsx holds the entry's re-validation generation (re-show, return from the reviewer, reviewer refresh), with no event system.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `useReviewCatalogue` owns the behavior described above. | `useReviewCatalogue` | dashboard/src/data/useReviewCatalogue.ts:79-111 |
-| The entry's summary read and its re-validation generation. | `useIntentReviewSummary`; `IntentEntryRevalidation` | dashboard/src/data/reviewIntentSummary.ts:96-121; dashboard/src/data/intentEntryRevalidation.tsx:29-54 |
+- `useReviewCatalogue` owns the behavior described above. [17]
+- The entry's summary read and its re-validation generation. [18]
 
 ## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
 
@@ -183,36 +161,6 @@ carried to the caller **verbatim** rather than summarised here — one vocabular
 consequence belongs to the owning route: `panels/detail-panel/changeSetBar.tsx` shows
 `unrecorded` as its own state and **withholds the `+0 −0` total**, since a zero of nothing is not a
 measurement.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **route body updated for MIK-R33:** new top section "260928-MIK-L33 The Family Mirror Carries The Change Facts Of A Tree Comparison" (`reviewFamily.ts`'s mirrored change types and `change_kinds`; the keymap child's section named); one row. **Row already stale at the base re-measured** (no content impact): the ICR-L24 mirror-module row's `reviewFamily.ts` range, whose anchor `ReviewFamilyContext` sat outside it at the base and which the exact shift would have widened across the inserted types, now cites the interface (`255-266`). The other moved rows were re-pointed by the installed fixer (its bullets kept) or the exact base-to-staged line shift.
-- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **route body updated for MIK-R34.** Added the section "260928-MIK-L34 One File's Classification As A Single Read, For The Per-Hunk Intent Markers": `reviewLane.readFileClassification` and its one caller, the marker scope (ruling 2026-09-30T16:19:34 Q2); two rows. **Reopened claim:** the `SourceContent` renderer row, bound by the committed 2026-09-26T21:07:30 generated bullet naming `Sides` and reopened because `Sides` gained the optional `markers` prop, was re-read and holds (the expansion's fields still feed its three state-decided branches); it is retained and re-anchored on the line-exact `"function Sides({"`, and the committed bullet is intact. The generated repair above re-points the MIK-L32 hook row; the fixer normalised the inventory row's `SourceContent` range (`222-271` → `252-305`) and the renderer row (`55-99` → `71-127`).
-- 2026-09-30T18:04:41+00:00: Generated citation repair: `useReviewLane`; `useReviewFileClassification` repointed to dashboard/src/data/reviewLane.ts:248-257; dashboard/src/data/reviewLane.ts:279-291. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Unexplained-Changes Lane Adapter, And The Entry's Count On The Summary" at the top: the new `reviewLane.ts` (linked card) and `attribution` on `reviewIntentSummary.ts`, with rulings 12:19:20 Q1 and Q6 and review R1 F1; three rows. The summary-read row of an earlier section was re-pointed by the installed fixer's normalisation. No verification stamp was advanced.
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Adapter And Its Shareable Address" at the top (the new `knowledgeReader.ts`, the hash address of rule 5, typed answers returned whatever their status), with three rows. The installed fixer normalised two rows in this pass. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Tree View Adapter Reads A Selection's Entries, And One Wire Casing" at the top: the entry types, `invariants=` (ruling 05:36:19 Q2), `treeComparisonNumber`, `useReviewTreeEntries`, the `enabled` flag and payload pinning (review F11), snake_case (MIK-L25 review F9), the re-captured body and the re-measured transport refusal (rule 6 O2), and one candidate invariant. L25's section now says its carried items are settled. **Reopened claim reworded and re-anchored:** L25's answer-and-request row, on line-exact quotes; this pass's generated bullet for it was removed. Three rows added.
-- 2026-09-30T07:49:51+00:00: Generated citation repair: `reviewTreesRead` repointed to dashboard/src/data/reviewTrees.ts:273-279. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Tree View Adapter, And The Landed Review Over Trees" at the top: the new `reviewTrees.ts`, its test and captured body (three new cards governed here), rulings 22:22:37 Q2 and 02:32:42 (a) and review F4 and F9, with two rows. Passing rows were normalised by the installed fixer. No verification stamp was advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/data/review.ts`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:21:23+02:00 — 260921-ICR-L44 curator (after the sync onto code base `58e22246cc09ef0ee12095e284a111a475081c38`, candidate tree `b9b82c7206142f2b0bc1490e193d3d2b154c1b82`): No route impact beyond this leaf's earlier entry: re-measured rows in the later sections of this overview that cite files this leaf (and L42's landed lane row) moved — the `read.py` rows after the extraction, the `review.ts` tree-id rows, and the lane-manifest rows — so each anchor lands on its construct again; no claim wording changed.
-- 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body updated — the catalogue read became the reviewer's, and two new modules serve the entry (`ICR-R24@v3`).** The first section now says the task entry reads the changed-intent summary (`reviewIntentSummary.ts`) instead of the catalogue, that the catalogue is keyed on the comparison, and that `intentEntryRevalidation.tsx` carries the ruled re-validation points. No stamp advanced.
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): added the route section for the family mirror's three locator declarations and the member source's new fields, re-exported through `review.ts`, and re-measured the ranges into `review.ts` its three-line insertion shifted.
-
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `snapshots_impl/_task_documents.py` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): the client's `ReviewSourceExpansion` gained the typed `admission`/`admission_detail` and the expansion-only `unchanged` status (body bullet updated; detail on the `review.ts` card). Ten rows citing `review.ts` lines this insertion displaced were re-pointed to where the same anchors now sit, each verified at base and candidate; claim wording unchanged. No stamp advanced.
-- 2026-09-26T21:07:30+00:00: Generated citation repair: "export const intentReview = (" repointed to dashboard/src/data/review.ts:543-543. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:07:30+00:00: Generated citation repair: "export const intentReviewEntries = (" repointed to dashboard/src/data/review.ts:709-709. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:07:30+00:00: Generated citation repair: `ReviewEntryListResult` repointed to dashboard/src/data/review.ts:687-700. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:07:30+00:00: Generated citation repair: "export interface ReviewResult {" repointed to dashboard/src/data/review.ts:509-509. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:07:30+00:00: Generated citation repair: "export interface ReviewPayload {" repointed to dashboard/src/data/review.ts:435-435. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:07:30+00:00: Generated citation repair: `reviewSourceContent` repointed to dashboard/src/data/review.ts:727-745. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:07:30+00:00: Generated citation repair: `Sides` repointed to dashboard/src/panels/review/SourceContent.tsx:54-98. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:07:30+00:00: Generated citation repair: `family_context` repointed to dashboard/src/data/review.ts:452-452. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — Reconciled current route ownership and retained existing source and history boundaries.
-- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **route body updated — the section above records the client half of an unrecorded range being named rather than refused.** `TaskChangeset.state`/`stateDetail` are optional mirrors of the server's `LeafChangeSet` addition, `stateDetail` is carried verbatim, and the rendering rule lives on the owning route. **Citation accounting:** every row this interface growth displaced on this route was re-derived from each construct's declaration at this tip — `MasterNetPins` `:46` → `:63`, `MasterNetGeneration` `:52` → `:69`, `MasterChangeset` `:59` → `:76`, `TaskChangeset` `:33` → `:41-48`, `masterFileDiff` `:112` → `:129-142`, `taskChangeset` `:188`/`:192` → `:167`, `getJson` `:135-144` → `:144`. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the change-set read carries its refusal.** The new section records that `data/changeset.ts` no longer discards a rejected counters read (the D01 defect L16 routed here and R12/R24 both landed without taking), that `files.ts` follows the same shape, and that loading, refused and answered are three distinguishable renderings. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Current Structural Identity Contract
 
@@ -490,41 +438,37 @@ ownership-display bugs, start with `sessions.ts`, `railModel.ts`, and their focu
 | Stream liveness and visible-tab wake policy | [streamLiveness.ts](streamLiveness.ts.md) · [screenWakeLock.ts](screenWakeLock.ts.md) |
 | Review client family mirror | [reviewFamily.ts](reviewFamily.ts.md) |
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it contains “No entries configured
 yet,” so no Domain Documentation source was available for this route. The current statements were
 verified from same-repository source/tests, the task/worker/reviewer records, and the recovered
 same-repository history pack.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for the data route. | — | — |
+No relevant domain documentation was found for the data route.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The data route's imports and authority calls resolve inside agents-remember; no cross-repository
 implementation source governs this slice. Adapter behavior is consumed through this repository's
 own server contracts, so no external code path is cited as authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found for these browser state/authority modules. | — | — |
+No applicable cross-repository source was found for these browser state/authority modules.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:116-116 |
-| Per-seat UI and evidence state. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
-| Reliable submission and authoritative withdrawal. | "export function createFetchSubmitTransport", "export const VISIBLE_STATUS_POLL_MS" | dashboard/src/data/submissionLifecycleClient.ts:18-18; dashboard/src/data/submitClient.ts:238-238 |
-| Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
-| Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:408-434; dashboard/src/data/railModel.ts:462-484 |
-| The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. | `dashboardStore`; `reset`; `ScenarioPlayer` | dashboard/src/data/store.ts:55-55; dashboard/src/data/store.ts:329-401; dashboard/src/dev/ScenarioPlayer.tsx:21-107 |
-| Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. | "export interface SeriesSubTaskNode"; "export interface TaskSubTaskRefNode"; "export type SubTaskRow" | dashboard/src/types/projection.ts:560-560; dashboard/src/types/projection.ts:792-792; dashboard/src/types/projection.ts:814-814; dashboard/src/types/projection.ts:838-838 |
-| The server series builder sorts only fully stamped rows before projection. | `_series_subtask_nodes` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:330-347 |
-| The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:46-46; scripts/sync-projection-types.py:57-57 |
+- Catalog/session ownership and cross-tab reconciliation. [19]
+- Per-seat UI and evidence state. [20]
+- Reliable submission and authoritative withdrawal. [21]
+- Lifecycle termination, residuals, and landed cleanup. [22]
+- Structural task hierarchy and diagnostic spawn ancestry are built as separate models. [23]
+- The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. [24]
+- The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. [25]
+- Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. [26]
+- The server series builder sorts only fully stamped rows before projection. [27]
+- The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. [28]
 
 ## Current Requirement Artifact Boundary
 
@@ -593,174 +537,15 @@ some other kind mapped onto one. The entry request names **no subject at all**, 
 of the same rule: it asks the server to select one. The file's own card carries the type-by-type
 detail.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The route's read-only client and its comparison call. | "export const intentReview = (" | dashboard/src/data/review.ts:558-558 |
-| **The entry call: the task context alone, because a selector is what it is being asked for.** | "export const intentReviewEntries = (" | dashboard/src/data/review.ts:724-724 |
-| **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** | `ReviewEntry`; `ReviewSubjectPresence` | dashboard/src/data/review.ts:690-690; dashboard/src/data/review.ts:693-693; dashboard/src/data/review.ts:695-700 |
-| **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** | `ReviewEntryListResult` | dashboard/src/data/review.ts:702-715 |
-| The endpoint the comparison call reaches, with no path among its parameters. | `review` | dashboard/src/data/review.ts:1-9; dashboard/src/data/review.ts:1-10 |
-| The closed selector union, the two kinds the server admits. | "export type ReviewSelectorKind" | dashboard/src/data/review.ts:67-67 |
-| The no-store-mutation boundary, stated in the module header. | "NO store mutation" | dashboard/src/data/review.ts:4-4 |
-| The typed result the client returns unchanged. | "export interface ReviewResult {" | dashboard/src/data/review.ts:524-524 |
-| The field-for-field mirror of the server's review payload. | "export interface ReviewPayload {" | dashboard/src/data/review.ts:450-450 |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
-- 2026-09-22T17:20:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The governed sources of this route changed (the entry half's catalogue rewrite and its client/picker consumers), so this overview's body rows naming the renamed constructs (`useReviewSubject` → `useReviewCatalogue`, `ReviewSubjectRead` → `ReviewCatalogueRead`, the selected-row target spelling) and the ranges this leaf's candidate moved were re-read and re-derived by hand; no route-level fact was otherwise changed. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp once the code commit exists.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "export const intentReview = (" repointed to dashboard/src/data/review.ts:271-271. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "export const intentReviewEntries = (" repointed to dashboard/src/data/review.ts:312-312. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "export interface ReviewResult {" repointed to dashboard/src/data/review.ts:258-258. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "export interface ReviewPayload {" repointed to dashboard/src/data/review.ts:235-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **this route's reviewer client gained the entry read, which is what makes the task-view entry reachable.** `intentReviewEntries(repo, master, leaf)` takes the task context and nothing else — a selector is precisely what it is being asked for — and returns a typed `ReviewEntryListResult` whose refused form carries a `refusal` and no entries rather than throwing, so a refused read is a normal outcome the caller renders as no button. The card also records `ReviewEntry`, whose own comment states it is "the ONLY legitimate source of the entry's selector" and that there is "no path field here on purpose", and it corrects the L22 sentence that said the module exports "one exported call": it now exports two, one per reviewer route. No verification stamp was advanced.
-- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — `data/review.ts`, the read-only client for `GET /api/review/intent`, its closed two-member selector union, and the no-store-mutation boundary it holds (no store, slice, reducer or write is exported). Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `_series_subtask_nodes` repointed to mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:302-319. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `_series_subtask_nodes` repointed to mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:302-319. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `SubTaskRow` in the row 324 of this card from dashboard/src/types/projection.ts:792-792 to dashboard/src/types/projection.ts:838, the extent of the construct the claim is about (the checker named line(s) [838] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `SubTaskRow` in the row 324 of this card from dashboard/src/types/projection.ts:560-566 to dashboard/src/types/projection.ts:838, the extent of the construct the claim is about (the checker named line(s) [838] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `SeriesSubTaskNode` in the row 324 of this card from dashboard/src/types/projection.ts:838 to dashboard/src/types/projection.ts:560-566, the extent of the construct the claim is about (the checker named line(s) [560] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `SubTaskRow` in the row 324 of this card from dashboard/src/types/projection.ts:560-560 to dashboard/src/types/projection.ts:838, the extent of the construct the claim is about (the checker named line(s) [838] as its live location)
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-14T10:16+02:00 — 260913-LCA-L10 curator: re-anchored one citation into `snapshots_impl/_task_documents.py` after that file grew by 52–57 lines for the tolerant read edge (the server series builder `_series_subtask_nodes` moved 260-277 → 314-333; the cited file changed, this route's own sources did not). No dashboard source, renderer, or fixture is in that change set, so the route's behavior and ownership contract are unchanged. Verification metadata unchanged; no verification stamp advanced.
-
-
-
-- 2026-09-05T07:20+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added the registered requirement artifact boundary and repaired creation-order/model evidence to the real owners. Verification records source review, not execution or acceptance.
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the new `requirements.ts` client + `taskArtifacts.ts` artifact-target type modules. File-level detail in the new data cards.
-
-
-- 2026-08-31T09:06+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
-  route citations after reviewed source movement; the data-route ownership contract is unchanged.
-  Verification remains closeout-owned.
-
-- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: recorded the route-level dev/test invariant
-  that the one canonical dashboard reset is total over scenario-owned projections, including
-  `closeoutQueues`, in one Zustand transaction. Production snapshot/delta queue ingestion,
-  ordering/filtering, scheduling, and lifecycle authority remain unchanged. Verification metadata
-  remains pinned until governed closeout stamps the code commit.
-
-- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 extends the route's volatile-age contract with lifecycle-operation `elapsedSeconds`: server and client strip the same field so operation clocks do not churn structurally unchanged enclosure rows. Verification provenance remains closeout-owned.
-
-- 2026-08-11T23:40+02:00 — No route impact: the `railModel.ts` helper split preserves this route's
-  canonical task-document hierarchy, role-altitude placement, and spawn-provenance separation.
-  Verification metadata remains pinned until governed closeout.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled this route with the
-  task-document-addressed dashboard data changes; current bodies and file cards now describe
-  canonical `TaskDocumentRef` identity without treating a leaf key as agent routing authority.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: added the sprint-qualified command-group hot path and
-  migration-only legacy boundary. Verification metadata remains pinned until closeout.
-
-- 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: the interaction-answer authority is
-  now uniformly exact-session-owned for structured and scalar payloads; lifecycle gates are not
-  an adapter response fallback.
-- 2026-08-08T21:20+02:00 — No route impact: 260713-TES-L1 renamed one store field
-  (`supervisorHeartbeat` → `agentNotifierHeartbeat`) with a legacy-wire fallback in `applySnapshot`;
-  the data route's shape and responsibilities are unchanged and the sidecar for `data/store.ts`
-  carries the detail. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (terminal refactor, submissionWithdrawal extraction, validated narrow). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
-  exact anchors and fixer-generated ranges, and deleted two rows whose onboarding-overview sources
-  are not indexable; exact non-fixing check returns zero findings.
-
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected the data-route projection boundary:
-  generated/stale-checked mirror, typed fixture builders, and separately measured manual sample.
-  New ranges are explicit `:1-1` curator input.
-
-- 2026-08-01T10:20+02:00 — 260731-EFA-L4 curator (route impact: one source file, one type contract
-  and one shared helper): `taskHierarchy.ts` is the only non-test source this leaf changed in the
-  route, and it moved twice. `ParentTaskMatch.ref` narrowed from the collapsed `TaskSubTaskRefNode`
-  to `SeriesSubTaskNode` — `findParentTaskMatch` reads `series.subTasks`, so the match was always a
-  series row, and the collapsed interface had been claiming a `createdAt` on master rows the server
-  never stamps plus a `linkedLifecycleId` on series rows that never carry one. And
-  `orderedByCreation` became exported: `panels/DetailPanel.tsx` held a byte-identical copy at the
-  leaf base (`git show HEAD:…/DetailPanel.tsx` L1219-L1224 against `taskHierarchy.ts` L134-L139 —
-  the same six lines) and now imports the one authority. Recorded the all-or-nothing rule and the
-  fact that `observer/snapshots.py::_series_subtask_nodes` already applies it server-side, so the
-  browser copy is a safety net rather than the source of the order. Also recorded the fixture
-  conversion — SIX of the seven changed suites now import `test/fixtures/wire.ts`; the seventh,
-  `taskHierarchy.test.ts`, builds no wire node and only follows the source's type narrowing
-  (checked by grepping each file for `test/fixtures/wire`) — and singled out `store.test.ts`, the
-  one suite where the conversion changed what is proven: `snapshot as unknown as
-  WorkspaceProjection` became `asServedProjection(snapshot)`, and a hard-coded lifecycle count of 2
-  became the fixture's own length, now 6. Recorded as an invariant exactly how far all of that
-  pins anything: `fixture ⊆ mirror` is enforced (`tsc -b` plus `wireFixtureGuard.ts`), mirror-against-
-  snapshot is enforced by `contract.test.ts` in three directions, and **`mirror ⊆ server` is enforced
-  by nothing** — both `test/fixtures/wire.ts` and `fixtures/snapshot.json` are hand-maintained and
-  no generator exists in this repository. Checks run: `npm run typecheck` (`tsc -b`) exits 0 across
-  the three referenced projects; `tsc --noEmit` is NOT a check here and was not used as one. Three
-  `Repo-Internal References` rows added. Verification metadata remains pinned until closeout stamps
-  the commit.
-
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: roster derivation now accepts
-  only explicit backend roster identities (`codex-agent-`/`claude-agent-`), so selected-child
-  history state and other agent-tagged notices remain transcript content rather than duplicate
-  seats. Verification metadata remains pinned until closeout.
-
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator (route impact: one derivation rule): recorded the
-  review-N1 plural pending rule in Catalog And Session Identity — `controlPendingInteractions?` is
-  the additive multiplexed sub-agent plural beside the parent-thread singular slot, and every
-  attention surface derives from `sessions.ts`'s `sessionHasPendingInteraction` (singular OR
-  non-empty plural) so an agent-only-blocked seat never goes dark. Detail in the
-  [sessions.ts](sessions.ts.md), [stateGrammar.ts](stateGrammar.ts.md),
-  [announcer.ts](announcer.ts.md), and [railModel.ts](railModel.ts.md) sidecars. Source is
-  uncommitted; closeout re-stamps verification.
-
-- 2026-07-24T13:17:50Z — Route impact: added the resilient boot/steady-state model for bounded
-  transport + single-flight, no-op catalog reconciliation, one-shot SSE liveness, lifecycle-terminal
-  submit settlement, and direct structured interaction answers. Added the new data file cards;
-  verification metadata remains pinned until the code commit.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 (audit V5) live-turn seat-state
-  nuance in Catalog And Session Identity — `OpenSession.liveTurnWorking?` is the single
-  projection-sourced ephemeral field (view-layer merge for the focused seat only; `sessions.ts` never
-  writes it, accepted-server-row materialization unweakened), and `stateGrammar.ts`'s
-  `seatVisualState` prefers it over the sweep-lagged catalog `turnState` strictly after the
-  terminal/fault/blocked/wait guards. Detail in the [sessions.ts](sessions.ts.md) and
-  [stateGrammar.ts](stateGrammar.ts.md) sidecars; the `conversation/` child route carries the R10
-  hydrate-retry truth in its own overview. Verification stays pinned until L5F closeout stamps the
-  candidate commit.
-- 2026-07-21T05:30+02:00 — No route impact: 260718-CHATS-L5P (cockpit chrome visual polish) touched one
-  `data/` source — `conversation/format.ts` gained the `shortId` helper (R6) and its `humanizeDuration`
-  became the cockpit-wide single duration authority (R5). Both are presentation conventions inside the
-  `conversation/` child route (recorded in [conversation/overview.md](conversation/overview.md) and the
-  `format.ts` card); the `data/` route model and every state/authority contract are unchanged.
-  Verification metadata unchanged.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator (structured Chats renderer, reviewer FINAL PASS):
-  added the two child routes `conversation/` (reconstructable active-conversation projection — pure
-  reducer + resumable stream + store/LRU) and `conversation-library/` (reconstructable
-  previous-conversation projection + exact-open flow), the Structured Conversation Projection route-
-  model section, and corrected the stale invariants — the structured conversation UI is now landed and
-  consumes adapter-normalized history/resume as a reconstructable projection (no durable browser
-  index), and controlled sessions default to the structured surface with the line-log demoted to a
-  read-only diagnostics drawer. Verification metadata remains pinned pending L4 candidate closeout.
-
-- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: documented `terminalOpen.ts` as the sole browser open
-  authority, accepted-server-row-only registry mutation, raw-response contradiction checks, shared
-  launch delegation, and request-matched dev fixtures. Verification metadata remains pinned pending
-  candidate closeout.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: added browser build identity, strict harness discovery, and
-  explicit durable-terminal recovery ownership. Verification metadata remains pinned pending
-  candidate closeout.
-
-- 2026-07-18T07:22+02:00 — Created during 260715-FEUI-L8 curation to own catalog/session state,
-  reliable submit and withdrawal, lifecycle cleanup, control-authority boundaries, and the
-  `sessionGroups` → `railModel`/`SessionRail` duty transfer. Verification metadata remains pinned to
-  the leaf base because the reviewed L8 candidate is uncommitted; closeout owns candidate stamping.
+- The route's read-only client and its comparison call. [29]
+- **The entry call: the task context alone, because a selector is what it is being asked for.** [30]
+- **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** [31]
+- **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** [32]
+- The endpoint the comparison call reaches, with no path among its parameters. [33]
+- The closed selector union, the two kinds the server admits. [34]
+- The no-store-mutation boundary, stated in the module header. [35]
+- The typed result the client returns unchanged. [36]
+- The field-for-field mirror of the server's review payload. [37]
 
 ## 260921-ICR-L2 The Review Client Mirrors The Inventory And Asks For The Task's Own Review
 
@@ -776,13 +561,11 @@ parameters at all** when there is none, which is the task-context request. The m
 field the server omits is absent here rather than defaulted — now covers an entire absent identity, and
 no fallback value was introduced for it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The inventory's wire types, including the byte form of a name this surface cannot print.** | `ReviewChangedFile`; `ReviewUnrepresentablePath`; `ReviewSourceInventory` | dashboard/src/data/review.ts:271-277; dashboard/src/data/review.ts:283-288; dashboard/src/data/review.ts:296-306 |
-| **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** | `ComparisonIdentity`; `ReviewStaleness` | dashboard/src/data/review.ts:113-126; dashboard/src/data/review.ts:429-440 |
-| The payload whose comparison may be absent, and the pane that says which question was answered. | `ReviewPayload`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:220-242; dashboard/src/data/review.ts:450-482|
-| **The request that omits the selector when there is none — the task-context entry.** | `intentReview` | dashboard/src/data/review.ts:558-574 |
-| The surface that consumes the new types and renders the inventory — whose rows, since `260921-ICR-L3`, also open into the entry's content. | `InventoryRows`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:170-222; dashboard/src/panels/review/SourceContent.tsx:252-305 |
+- **The inventory's wire types, including the byte form of a name this surface cannot print.** [38]
+- **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** [39]
+- The payload whose comparison may be absent, and the pane that says which question was answered. [40]
+- **The request that omits the selector when there is none — the task-context entry.** [41]
+- The surface that consumes the new types and renders the inventory — whose rows, since `260921-ICR-L3`, also open into the entry's content. [42]
 
 ## 260921-ICR-L3 The Expansion Wire Types And The One Call That Reads Its Refusal
 
@@ -822,15 +605,13 @@ request still names the task context alone.
 The consumer is the `panels/` route's Source pane, which mounts the new renderer beneath an openable
 inventory row; the file's own card carries the type-by-type detail.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** | `ReviewSourceSideState`; `ReviewSourceSide` | dashboard/src/data/review.ts:324-330; dashboard/src/data/review.ts:332-339 |
-| **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** | `ReviewSourceExpansion` | dashboard/src/data/review.ts:360-377 |
-| **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** | `ReviewSourceContentResult` | dashboard/src/data/review.ts:379-385 |
-| **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** | `reviewSourceContent` | dashboard/src/data/review.ts:742-760 |
-| **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** | `beforeCodeTreeId`; `afterCodeTreeId` | dashboard/src/data/review.ts:747-748; dashboard/src/data/review.ts:757-758 |
-| Central expression cards and optional inline inventory expansion mount source content at the inventory exact tree IDs. | `ExpressionCard`; `inventoryEntry` | dashboard/src/panels/review/ReviewExpressions.tsx:182-239; dashboard/src/panels/review/SourceExplorer.tsx:58-116 |
-| The renderer the expansion's fields feed, and its three state-decided branches. | "function Sides({"; `review-source-no-diff-claimed` | dashboard/src/panels/review/SourceContent.tsx:71-127 |
+- **The six-member state literal and the side value whose optional `text` is present only for the two textual states, so no missing or unrenderable side can arrive as an empty document.** [43]
+- **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** [44]
+- **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** [45]
+- **The one call that reads its typed body whatever the HTTP status was, and the only one here that does not go through `getJson`.** [46]
+- **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** [47]
+- Central expression cards and optional inline inventory expansion mount source content at the inventory exact tree IDs. [48]
+- The renderer the expansion's fields feed, and its three state-decided branches. [49]
 
 ## 260921-ICR-L16 The Review Route Gets Its Own Transport Owner
 
@@ -865,12 +646,10 @@ against the **identical** response. The change-set client (`data/changeset.ts` �
 `/api/changeset/task`) therefore still swallows its own refusal detail; that is a different route, client
 and owner, and it is **routed to R12/R24**, recorded here rather than fixed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The one GET whose body is the answer whatever the status, and which returns a typed result only for a body carrying this route's `state`.** | `getReviewJson` | dashboard/src/data/reviewTransport.ts:161-171 |
-| **The only code→state table in this route, with an unknown code carried verbatim rather than guessed into a state.** | `TOKEN_BY_CODE`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:73-82; dashboard/src/data/reviewTransport.ts:97-98 |
-| The comparison, catalogue and source-expansion clients delegate to the shared decoder. | `intentReview`; `intentReviewEntries`; `reviewSourceContent` | dashboard/src/data/review.ts:558-574; dashboard/src/data/review.ts:724-730; dashboard/src/data/review.ts:742-760 |
-| **The shared client whose semantics are unchanged, and the change-set client that still inherits them.** | `getJson`; `FilesApiError`; `leafChangeset` | dashboard/src/data/files.ts:76-97; dashboard/src/data/changeset.ts:144-144 |
+- **The one GET whose body is the answer whatever the status, and which returns a typed result only for a body carrying this route's `state`.** [50]
+- **The only code→state table in this route, with an unknown code carried verbatim rather than guessed into a state.** [51]
+- The comparison, catalogue and source-expansion clients delegate to the shared decoder. [52]
+- **The shared client whose semantics are unchanged, and the change-set client that still inherits them.** [53]
 
 ## 260921-ICR-L13 The Master Client Is Generation-Bound
 
@@ -884,15 +663,7 @@ changes what a successful master read carries, not what a failed one reports —
 **routed to R12/R24**. `data/changeset.ts`'s card carries the body update and citation
 re-derivation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The generation pins, the published generation identity, and the pins threaded through both master reads.** | `MasterNetPins`; `MasterNetGeneration`; `masterFileDiff` | dashboard/src/data/changeset.ts:63-68; dashboard/src/data/changeset.ts:69-75; dashboard/src/data/changeset.ts:201-214; dashboard/src/data/changeset.ts:76-76 |
-
-## Update History
-- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated — the master client is generation-bound (new section above).** No review-client fact changed; the R16 routed-debt sentence stands. The one row into the moved client is re-derived (`leafChangeset` `:100-108` → `:135-144`). No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The route gained the review reads' one transport owner, `data/reviewTransport.ts`, and `data/review.ts` became a delegator plus re-exporter (414 → 428 lines). The section above records the defect the owner closes (the typed refusal in the body of a non-2xx response was unreachable through `getJson`), the rule that makes the decode correct (a body carrying this route's `state` IS the answer, whatever the status), the closed failure vocabulary with `unreadable` (a response this route did not produce) and `network` (no response at all) as the two honest fallbacks rather than guessed states, and the boundary that unrelated clients are untouched. It also records, as **routed rather than fixed**, the change-set client's own swallowed refusal detail to R12/R24. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **route body updated, and citation re-derivation of the L2 record above forced by this leaf's change to its cited file.** Added the `260921-ICR-L3` section: `data/review.ts` gained the source-expansion wire types (`ReviewSourceSideState`, `ReviewSourceSide`, `ReviewSourceExpansion`, `ReviewSourceContentResult`) and `reviewSourceContent(...)`, and grew 320 → **414 lines**. The section records the one property a reader of this route has to carry away, because it is the exception to the route's own error idiom: `reviewSourceContent` is the only function in this client that does **not** go through `getJson`, because on the source-content route a typed refusal is a *normal* answer carrying a 400/404 status and `getJson`'s throw-on-non-OK behaviour would turn it into a transport error — so it decodes the body whatever the status was, returns it typed when `body.state` is `"content"` or `"refused"`, and throws `FilesApiError` only for a body that is not this route's answer. `intentReview` and `intentReviewEntries` are unchanged. **Citation accounting:** every row of the `260921-ICR-L2` section above cites `data/review.ts` by line and this leaf moved them all, so each was re-derived against this candidate — the inventory types `143-154`/`155-167`/`168-178` → `144-154`/`156-161`/`169-179`, `ComparisonIdentity`/`ReviewStaleness` `35-48`/`220-225` → `36-49`/`277-282`, `ReviewPayload`/`ReviewKnowledgePane` `235-247`/`98-114` → `292-304`/`99-113`, and `intentReview` `271-290` → `323-342` — as were the L22 section's nine rows, whose new values are `1-9`, `13-14`, `16-21`, `23-27`, `29-49`, `51-63`, `65-85`, `87-97`, `99-113`/`181-190`/`267-275`, `114-126`, `128-135`, `248-253`/`255-265`, `277-282`/`284-290`, `292-304`/`306-313`/`315-321`, `323-342`, `344-353`, `355-363`, `365-377`, and the consumed-client row now names `ReviewSurface.tsx:482-549` and `:214-260`. The five rows of the L3 section above are the ones this leaf added. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review client mirrors the new wire shape — the inventory types, an optional comparison identity, the `not_compared` and selection states — and `intentReview` now sends no selector at all when there is none, which is what makes the task-context review reachable from the browser. The section is appended at the end of this route's narrative, and the three rows of this document that cited `data/review.ts` by line were re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
+- **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
 
 ## 260921-ICR-L10 The Review Client Carries A Page, And One Normaliser Owns The Two Spellings Of "No Page"
 
@@ -917,9 +688,6 @@ cursor that is merely foreign is never called a moved comparison.
 The client never constructs or parses a cursor: it echoes the server's own token back, which is what
 keeps the two owners' walks distinct on the wire.
 
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-23T00:20:00+02:00 — 260921-ICR-L10 curator (candidate `ar/260921-icr-l10`, uncommitted; base `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`): **route body updated.** **the review client carries a page, and one normaliser owns the two spellings of "no page".** `data/review.ts` gained the page contract (`ReviewPagedCollection`, `ReviewCollectionPage` with `total_basis`, the payload's separate `page_refusal`), the `pageOf`/`continuation`/`pageSize` request parameters, and the pure helpers `continuationOf`, `pageBounds`, `carriedPage` and `RESET_GLOSS`. The load-bearing fact recorded above: the route omits the `page` key under `exclude_none=True`, so every consumer reads through `carriedPage` and none compares against `null`. Existing rows that cited `data/review.ts` were re-derived against this candidate, because this leaf moved them. No verification stamp was advanced: nothing in this leaf is committed, so the merge/commit stamp is closeout's.
 ## 260921-ICR-L26 The Review Client Mirrors The Applicability Vocabulary
 
 `260921-ICR-L26` (`ICR-R26@v1` — subject and comparison isolation on the server) reaches this route as a
@@ -937,8 +705,6 @@ no label", never "this record is unrelated" and never "nothing was filtered". `s
 four-member union of **displayed** treatments; `context` and `unrelated` are deliberately not members, so
 a name that looks like one of these unions cannot drift from the model's own vocabulary.
 
-## Update History
-- 2026-09-23T02:45:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): **route body updated for the client mirror (`ICR-R26@v1`).** The section above records the three new interfaces, the optional fields on the five display types and both panes, and the rule that an absent label is not an unrelated record. **Citation accounting:** every row on this overview that cited `data/review.ts` by line was re-derived against this candidate, because this leaf's insertions moved the interfaces below them (`ReviewAuthoredEffect`/`ReviewSignal` `91-101`/`144-154`, `ReviewAssessmentDisplay` `156-167`, the three panes `169-190`/`256-265`/`344-354`, `ReviewEvidenceLink`/`ReviewObservation` `323-329`/`331-342`). **Stamp accounting:** no verification stamp was advanced — the header already names the leaf's base, and nothing in this leaf is committed, so the governed closeout owns the real stamp.
 ## 260921-ICR-L12 The Client Mirrors The One Record The Server Admits
 
 `260921-ICR-L12` (`ICR-R12@v1`) adds one type and one optional argument to this route's review
@@ -951,14 +717,6 @@ is defined, so every existing caller builds byte-identically the URL it built be
 mounted case for the live read pins by asserting the parameter's absence rather than trusting the
 branch. The record is part of the question the surface asks, which is why it is a parameter of the read
 rather than a field applied to the result it returns.
-
-## Update History
-- 2026-09-23T04:31:21+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **route body updated for the client's record parameter (ICR-R12@v1).** The section above records the
-one mirrored value, that the live query string is unchanged, and why the record is a read parameter
-rather than a result field. **Citation accounting:** every row on this overview that cited `review.ts`
-by line was re-derived against this candidate. **Stamp accounting:** no verification stamp was
-advanced — the header already names this leaf's base as the production line the reading was taken
-against, and nothing in this leaf is committed, so the governed closeout owns the real stamp.
 
 ## 260921-ICR-L17 The Review Client Names The Refresh Parameter Once
 
@@ -1001,14 +759,7 @@ said something the server did not:
   capture recorded before the field existed, a hand-written body). It is never a measured zero and never
   rendered as `no_family_recorded`, which asserts that the recorded scope was read and held no family.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** | `ReviewFamilyContext`; `reviewFamily` | dashboard/src/data/reviewFamily.ts:255-266; dashboard/src/data/review.ts:33-61 |
-| **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** | `ReviewPagedCollection`; `family_members` | dashboard/src/data/review.ts:68-81 |
-| **The set a request may name with no cursor, and the reason `family_members` is not in it.** | `REVIEW_WALKABLE_COLLECTIONS` | dashboard/src/data/review.ts:91-91 |
-| **The optional family context whose absence says the body did not come from this route.** | `family_context` | dashboard/src/data/review.ts:467-467 |
-
-## Update History
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **route body updated for the family mirror and the page contract's one unaddressable collection.** The section above records what this leaf changed in the sources this route governs: `data/reviewFamily.ts` is the new typed per-family mirror (`ICR-R31@v1`) that `data/review.ts` re-exports whole, `ReviewPagedCollection` gained `family_members` because the server accepts it while `REVIEW_WALKABLE_COLLECTIONS` is the smaller set a request may name with no cursor, and `ReviewPayload.family_context` is optional with its absence stated as the body's own fact. The `## File Onboarding Map` names the new card. **Citation accounting:** every row on this overview whose anchor no longer sat in its cited range was re-derived from that anchor's own declaration on the frozen candidate; no claim wording changed and no row was dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **this route's client changed, and five reference rows here were re-anchored to the candidate's own bytes.** `dashboard/src/data/review.ts` gains `"not-measured"` on `ReviewStaleness.state` (`:357-363`), the state the raw-Git identity boundary reports when it could not compare at all — not `stale`, and not disabling submission. The repaired rows are `ReviewEntry` (`613-618`), the two exported interfaces (`442`, `377`), the source-content client (`660-678`) and the two published tree ids (`665-666`, `675-676`); each had been left pointing at lines an earlier insertion had moved past. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the review client carries the previous binding identity and names its query parameter once (`ICR-R17@v1`).** `intentReview` gains its ninth argument, `reviewQuery` assembles the one query string, and `PREVIOUS_BINDING_QUERY` is the single spelling of the wire name the server admits. No other client, transport rule or store shape changed. **Citation accounting:** the rows this insertion moved were re-derived from each construct's own declaration on the 672-line candidate (`ReviewEntry` `:607`, `intentReviewEntries` `:636`, `reviewSourceContent` `:654`, `intentReview` `:470`, `reviewQuery` `:492`, `PREVIOUS_BINDING_QUERY` `:586`). **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.
+- **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** [55]
+- **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
+- **The set a request may name with no cursor, and the reason `family_members` is not in it.** [57]
+- **The optional family context whose absence says the body did not come from this route.** [58]

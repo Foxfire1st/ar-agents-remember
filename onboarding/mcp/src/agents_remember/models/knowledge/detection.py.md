@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/detection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/detection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T17:10:27+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -162,69 +152,49 @@ per model declares the shape:
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The three published identities: the detection policy (a named contract, not a second selection rule), the authored extractor version, and the condition vocabulary's version.** | `DETECTION_POLICY_VERSION`; `DETECTION_EXTRACTOR_VERSION`; `CONDITION_VOCABULARY_VERSION` | mcp/src/agents_remember/models/knowledge/detection.py:96-134 |
-| The five declared conditions, as the validated type and as the ordered value the walk emits in. | `DetectionCondition`; `DETECTION_CONDITIONS` | mcp/src/agents_remember/models/knowledge/detection.py:111-132 |
-| **The three declared input sets, and the discriminator each member records, derived from the closed tuple so it cannot name an undeclared member.** | `DeclaredInputSet`; `DECLARED_INPUT_SETS`; `declared_input_set_discriminators` | mcp/src/agents_remember/models/knowledge/detection.py:136-149; mcp/src/agents_remember/models/knowledge/detection.py:286-303 |
-| The observed change granularities, whose whole point is that a file-level observation is not a span observation. | `DetectionChangeGranularity`; `_WHOLE_PATH_LOCATOR_KINDS` | mcp/src/agents_remember/models/knowledge/detection.py:156-170 |
-| The registered scope status, every declareable limitation, and the one limitation both records state unconditionally. | `DetectionScopeStatus`; `DETECTION_LIMITATIONS`; `NO_SEMANTIC_ASSESSMENT_LIMITATION` | mcp/src/agents_remember/models/knowledge/detection.py:172-215 |
-| **The closed conclusion-name list and the review that makes requirement 5.2's first half mechanical: it reads the declared field set and reports a conclusion-bearing name whatever its type.** | `CONCLUSION_BEARING_FIELD_NAMES`; `conclusion_bearing_fields` | mcp/src/agents_remember/models/knowledge/detection.py:217-283 |
-| The four manifest destinations, and the rule that only the durable publication route can back a retained report. | `MANIFEST_DESTINATION_KINDS` | mcp/src/agents_remember/models/knowledge/detection.py:250-258 |
-| The envelope registry key pair for each record kind, declared once here rather than spelled a second time. | `DETECTION_SIGNAL_KIND`; `DETECTION_RUN_KIND` | mcp/src/agents_remember/models/knowledge/detection.py:260-265 |
-| One side of a read as an identity: the admission, the selector and the selector policy version, with the one-namespace refusal. | `DetectionInputSide` | mcp/src/agents_remember/models/knowledge/detection.py:306-327 |
-| The counterpart-probe outcome, in the shipped coverage vocabulary rather than a second one. | `DetectionCounterpartProbe` | mcp/src/agents_remember/models/knowledge/detection.py:330-340 |
-| **The observed change at its recorded granularity, and the refusal of a span observation no whole-path locator could have made.** | `DetectionObservedChange` | mcp/src/agents_remember/models/knowledge/detection.py:343-379 |
-| The recorded relationship path, retaining every edge and the side that reached it. | `DetectionRelationshipPath` | mcp/src/agents_remember/models/knowledge/detection.py:382-398 |
-| **The manifest reference: the retained object's own fields, the declared destination kinds, and `resolve` reporting a reference it cannot show as unresolved with what would resolve it rather than as an empty manifest.** | `DetectionScopeManifest`; `DetectionManifestResolution` | mcp/src/agents_remember/models/knowledge/detection.py:401-543 |
-| **The declared input set and the discriminator check: two sides and no probe, both sides and the probe, or one side and no probe — each refused with the member and the recorded inputs named.** | `DetectionRecordedInputSet` | mcp/src/agents_remember/models/knowledge/detection.py:546-632 |
-| **The all-required signal field set, its closed-vocabulary validator and the `detail`-equals-rendering refusal that makes a verdict in prose unrepresentable.** | `DetectionSignalPayload`; `ordered_changes` | mcp/src/agents_remember/models/knowledge/detection.py:635-753 |
-| **The run payload: the two published versions, the per-signal members not collapsed into a run-level default, and the declared total order over signal identity.** | `DetectionRunPayload` | mcp/src/agents_remember/models/knowledge/detection.py:756-827 |
-| The run-basis rendering the run's `detail` must equal. | `_run_basis_detail` | mcp/src/agents_remember/models/knowledge/detection.py:830-837 |
-| The signals one run produced, returned in the run's recorded order rather than a query's order. | `DetectionSignalSet` | mcp/src/agents_remember/models/knowledge/detection.py:840-854 |
-| The request shape, carrying the assessed databases requirement 7.1 refuses to write into. | `DetectionRunRequest` | mcp/src/agents_remember/models/knowledge/detection.py:857-868 |
-| **The reproduction as two identities, two ordered sequences and the differences, with one verdict that must follow from them.** | `DetectionRunReproduction`; `DetectionRunInputDifference` | mcp/src/agents_remember/models/knowledge/detection.py:871-930 |
-| **The currentness answer that carries the recorded versions beside the current ones and cannot hold a re-interpreted signal.** | `DetectionRunCurrentness` | mcp/src/agents_remember/models/knowledge/detection.py:942-987 |
-| The one typed outcome per detection operation, with the served signals in the recorded order. | `DetectionRunResult` | mcp/src/agents_remember/models/knowledge/detection.py:990-1014 |
-| The one detail string a signal is allowed to hold, as a rendering of its own recorded basis. | `observed_basis_detail` | mcp/src/agents_remember/models/knowledge/detection.py:1017-1033 |
-| The envelope registry these payload models are registered in, which is why the field set is declared once here. | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187 |
-| The comparison the walk reads, and the shipped statement that a comparison is not a conclusion. | `KnowledgeDiffResult`; `KnowledgeDiffItem` | mcp/src/agents_remember/models/knowledge/diff.py:733-818; mcp/src/agents_remember/models/knowledge/diff.py:333-370 |
-| The refusal type a documented refusal would be carried on. | `KnowledgeRefusal` | mcp/src/agents_remember/models/knowledge/result.py:225-235 |
-| **The anchor resolution state that carries `unsupported_locator`, which is why the extractor version is authored here rather than imported.** | `AnchorResolutionState` | mcp/src/agents_remember/models/knowledge/read_anchor.py:27-35 |
-| The precedent comments naming the read-vocabulary constants by module and symbol rather than by line. | "read.KNOWLEDGE_READ_POLICY_VERSION"; "read_anchor.AnchorResolutionState" | mcp/src/agents_remember/models/knowledge/detection.py:96-100; mcp/src/agents_remember/models/knowledge/detection.py:195-199 |
-| The extractor-version origin note, whose claim that the resolver has no symbol extractor predates the resolver's symbol path. | `DETECTION_EXTRACTOR_VERSION` | mcp/src/agents_remember/models/knowledge/detection.py:102-108 |
+- **The three published identities: the detection policy (a named contract, not a second selection rule), the authored extractor version, and the condition vocabulary's version.** [1]
+- The five declared conditions, as the validated type and as the ordered value the walk emits in. [2]
+- **The three declared input sets, and the discriminator each member records, derived from the closed tuple so it cannot name an undeclared member.** [3]
+- The observed change granularities, whose whole point is that a file-level observation is not a span observation. [4]
+- The registered scope status, every declareable limitation, and the one limitation both records state unconditionally. [5]
+- **The closed conclusion-name list and the review that makes requirement 5.2's first half mechanical: it reads the declared field set and reports a conclusion-bearing name whatever its type.** [6]
+- The four manifest destinations, and the rule that only the durable publication route can back a retained report. [7]
+- The envelope registry key pair for each record kind, declared once here rather than spelled a second time. [8]
+- One side of a read as an identity: the admission, the selector and the selector policy version, with the one-namespace refusal. [9]
+- The counterpart-probe outcome, in the shipped coverage vocabulary rather than a second one. [10]
+- **The observed change at its recorded granularity, and the refusal of a span observation no whole-path locator could have made.** [11]
+- The recorded relationship path, retaining every edge and the side that reached it. [12]
+- **The manifest reference: the retained object's own fields, the declared destination kinds, and `resolve` reporting a reference it cannot show as unresolved with what would resolve it rather than as an empty manifest.** [13]
+- **The declared input set and the discriminator check: two sides and no probe, both sides and the probe, or one side and no probe — each refused with the member and the recorded inputs named.** [14]
+- **The all-required signal field set, its closed-vocabulary validator and the `detail`-equals-rendering refusal that makes a verdict in prose unrepresentable.** [15]
+- **The run payload: the two published versions, the per-signal members not collapsed into a run-level default, and the declared total order over signal identity.** [16]
+- The run-basis rendering the run's `detail` must equal. [17]
+- The signals one run produced, returned in the run's recorded order rather than a query's order. [18]
+- The request shape, carrying the assessed databases requirement 7.1 refuses to write into. [19]
+- **The reproduction as two identities, two ordered sequences and the differences, with one verdict that must follow from them.** [20]
+- **The currentness answer that carries the recorded versions beside the current ones and cannot hold a re-interpreted signal.** [21]
+- The one typed outcome per detection operation, with the served signals in the recorded order. [22]
+- The one detail string a signal is allowed to hold, as a rendering of its own recorded basis. [23]
+- The envelope registry these payload models are registered in, which is why the field set is declared once here. [24]
+- The comparison the walk reads, and the shipped statement that a comparison is not a conclusion. [25]
+- The refusal type a documented refusal would be carried on. [26]
+- **The anchor resolution state that carries `unsupported_locator`, which is why the extractor version is authored here rather than imported.** [27]
+- The precedent comments naming the read-vocabulary constants by module and symbol rather than by line. [28]
+- The extractor-version origin note, whose claim that the resolver has no symbol extractor predates the resolver's symbol path. [29]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T17:10:27+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `58e22246cc09ef0ee12095e284a111a475081c38`): the L44-A4 comment-only change replaced the two line-number precedents with module-and-symbol names (`read.KNOWLEDGE_READ_POLICY_VERSION`, `read_anchor.AnchorResolutionState`). The conventions note now says so, supersedes this card's earlier 16:55 note that those pointers no longer land, and records that the unchanged `DETECTION_EXTRACTOR_VERSION` comment's claim of no symbol extractor no longer describes the resolver. Rows added for both comment blocks. No behaviour changed.
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): this card's source is unchanged, but the anchor vocabulary it cites moved to `models/knowledge/read_anchor.py`: the row now cites that module, and the conventions note now says the docstring's line-number pointers (`read.py:112-130` and the `read_anchors.py` pointer) no longer land on their constructs, so a reader should follow the names.
-
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The `KnowledgeDiffResult`/`KnowledgeDiffItem` row cited `models/knowledge/diff.py:501-520`/`318-340`, which the attribution-partition growth moved; it now cites the declarations at `:733-818`/`:333-370`. Wording unchanged; no stamp advanced.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `PAYLOAD_MODELS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `KnowledgeRefusal` repointed to mcp/src/agents_remember/models/knowledge/result.py:225-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand while resolving the memory sync** — `KnowledgeRefusal`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T05:45:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `PAYLOAD_MODELS`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
-
-- 2026-09-18T03:15:00+00:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): created this one-to-one card for the detection vocabulary module. It records the three published identities and, for the extractor version, that it is **authored** because the shipped resolver has no symbol extractor to cite; the closed vocabularies each declared as a validated `Literal` beside the tuple a caller enumerates; the conclusion-name list plus `conclusion_bearing_fields` as the mechanical review that makes "a conclusion must not be representable" checkable rather than asserted; the per-member discriminator contract of `DetectionRecordedInputSet` (two sides without a probe, both sides with one, one side with none) and why counting sides is not the check; the granularity refusal that makes a whole-file observation recorded as a span change unrepresentable; the `detail`-equals-rendering rule that refuses a verdict written into prose exactly as it refuses a verdict field; the manifest resolution that reports `unresolved` with what would resolve it and never as an empty manifest; and the currentness shape that carries recorded and current versions beside the state and no signal at all. Verification metadata is the leaf's base commit `4264dcc9`: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

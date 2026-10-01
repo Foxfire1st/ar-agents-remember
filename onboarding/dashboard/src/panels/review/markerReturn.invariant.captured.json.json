@@ -1,0 +1,88 @@
+{
+  "path": "dashboard/src/panels/review/markerReturn.invariant.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The recorded family context with its one family and rosters.\n\nAnchor: \"family_context\"; \"Bounded notes listing with unchanged meaning\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "403b79bf419306b957cefa17b050653bdb8d4b1b",
+            "content": "sha256:1c8a9fa0204a6dd58f0f07502dd59081b880ccb4af0d6bb7aca6c194e6f87efb",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "403b79bf419306b957cefa17b050653bdb8d4b1b",
+            "content": "sha256:e08b6bee5a760182777a9dcfa3937f03732fcf2f1b236eb2d8aad3c3eba77451",
+            "locator": {
+              "end": 925,
+              "kind": "line_range",
+              "start": 925
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The comparison token.\n\nAnchor: \"review:trees:2\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "403b79bf419306b957cefa17b050653bdb8d4b1b",
+            "content": "sha256:4162a288019d6d08d9ae692affa90e798f4e1c73e2c3519baedcab14a6fb26bc",
+            "locator": {
+              "end": 1128,
+              "kind": "line_range",
+              "start": 1128
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerReturn.invariant.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9476cdf46a177d23b4fdb8d261bbb6c4e64e3bf9",
+            "content": "sha256:715880ff95d3e57101f232fdef00a396cdfde144fde0d4dd7fed552346ad65af",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/review/markerReturn.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The family's change facts (MIK-L33).\n\nAnchor: \"\\\"change_kinds\\\": {\"; \"\\\"guarantee\\\": \\\"unchanged\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "403b79bf419306b957cefa17b050653bdb8d4b1b",
+            "content": "sha256:9a8f2b992fdb797af88fe062f86a43e7e35455d1afb9d1c0a47a6445e0a2b258",
+            "locator": {
+              "end": 923,
+              "kind": "line_range",
+              "start": 823
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

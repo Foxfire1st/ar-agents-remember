@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The composed body and its stage/inspector slots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:b171dd29b8e97883a389f368a02b6899bdf1bec86a593841a299523bf497501a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionsViewBody"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:9c16e4991cb89de3ba5f85b57b98698a99cc4f25e25cd1de0567c213b290719b",
+            "locator": {
+              "kind": "symbol",
+              "name": "StagePanel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:92c276dbfdd9bad720fccd5a63d6fec0e9509b8fa05aa1a194dc770459155cef",
+            "locator": {
+              "kind": "symbol",
+              "name": "InspectorPanel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

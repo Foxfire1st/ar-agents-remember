@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/__init__.py
 
-| Field                  | Value                                          |
-| ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember                                |
-| path                   | `mcp/src/agents_remember/serving/__init__.py`  |
-| doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-06-14T11:30+02:00                         |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`     |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                  |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -31,14 +21,8 @@ package's surface is reached through its submodules (`app.create_app`, `projecto
 - Keep this import-free: importing the package must not import FastAPI, so the pure modules
   (`delta`, `projector`) remain testable and importable on their own.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The serving route overview. | `# mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview` | onboarding/mcp/src/agents_remember/serving/overview.md:1-1126 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-03T03:00:33+02:00 — W3-B05 curator: resolved 1 Tier-2 table finding with an exact route-overview heading and memory-repository source path; fixer generated the final range.
-
-- 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the serving package marker.
-  Verification metadata pinned until closeout stamps the 4a code commit.
+- The serving route overview. [1]

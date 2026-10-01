@@ -1,0 +1,170 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The banner: verbatim error, refused pair, armed retire confirm, corrected-launch prefill.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:bfe4aa300a42bd27e753eed83f14d79ac2ef9e116fc148e78e192f0cd2db564b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailedLaunchBanner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`verbatimBridgeError` (serialize-never-reword) + the tier machine behind 'refused'.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:a483e0afb4eea7acbb35fce40c5c55a0ec81d65c545defc84bfe2b07f94e447c",
+            "locator": {
+              "kind": "symbol",
+              "name": "verbatimBridgeError"
+            },
+            "path": "dashboard/src/data/launchEvidence.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refused-tier badge with the word in the accessible name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fc6f58685cf5cd4c8322afba303663ece819053",
+            "content": "sha256:cc20f8248b0265959cd8ac941596ea26db23bcc9ca4c1f39d7710530e75ab023",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceBadge"
+            },
+            "path": "dashboard/src/grammar/EvidenceBadge.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The operator terminate route this retire uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:dfd5ddac674912aeb2e9f7450e901fa96a47e765cf394fdbf82a02960dc222c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminateTerminalSession"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The owner mounting it for a focused FAILED seat and opening the pre-filled flow.\n\nAnchor: `onLaunchCorrected`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:6dff10379e9febb72aa9aa5e64fb9bd58e3ba751953592478807cd20d6636d5f",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The flow consuming the refused-pair prefill.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:12d77bf3136a543e0d000003b1e4cdc41a2def562853d24566945eaf8a4f4f53",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchPrefill"
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:5352aa967c14353d6a1fd654055eb0dc1dd6c379e384a9ae8e3c566489a9f185",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The failed-row fixtures ×3 harnesses (verbatim bridgeErrors, retained refused pairs).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:a1ea823cb996dc455902e56523e2f1b15662487e77af8125bbf2422b1b70781e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_LAUNCH_ROWS"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:228b44f02b92c6f4115266c9f57629573af4e76d9fce2b52888c43e7f8637ddc",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The suite: verbatim ×3, never-validated, prefill, honest confirm, decline, stated absence.\n\nAnchor: \"FailedLaunchBanner (R6) — uniform across Claude\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8176b0f247a9ebcb737ba9ae673f10d92f6de4d2",
+            "content": "sha256:ee279184e71ed077527465681d64df9dbb6dd735ee4bd138af601eae965ad87d",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

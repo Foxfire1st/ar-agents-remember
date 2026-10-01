@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/candidate/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/candidate/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T02:22:00+02:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../../overview.md)
@@ -37,12 +27,8 @@ Callers import the implementation from its concrete module. The initializer defi
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package declaration names its exact Git-candidate acquisition responsibility. | "Exact Git candidate membership for citation source acquisition." | mcp/src/agents_remember/memory_quality/style/citations/candidate/__init__.py:1-1 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-06T02:22:00+02:00 — L30 recovery source review: Created the package-initializer card and bound its one-line declaration to the existing memory-quality overview. Verified against prepared code commit `97e8ed2e1fae21756c3ad995c30613d4fbfcc503`; source review does not claim Gate-5 execution or recovery acceptance.
+- The package declaration names its exact Git-candidate acquisition responsibility. [1]

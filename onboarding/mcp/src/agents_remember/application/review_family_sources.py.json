@@ -1,0 +1,191 @@
+{
+  "path": "mcp/src/agents_remember/application/review_family_sources.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "079f2f248bff7cf7848d07a91542fb136f2a1e69",
+        "content": "sha256:5aef1ee14d041c35b1cc2167cd3d9c4e743b2b412fc584bb0b0f85ac80a558cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "member_source"
+        }
+      },
+      "id": "RLZ-C96RTA51",
+      "invariant": "INV-716Q6QMV",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "member_source (application/review_family_sources.py) projects each realization claim per side with its recorded locator, the side's resolved ranges and its locator state, carrying stored role and rationale; ReviewFamilyMemberSource (models/knowledge/review_family_source.py) is the value that carries and validates those fields; source_locator_state is the one rule the projection states and the validator checks.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**One recorded realization claim projected as a side-bound reference, refusing a claim read without its stored role or rationale.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "079f2f248bff7cf7848d07a91542fb136f2a1e69",
+            "content": "sha256:5aef1ee14d041c35b1cc2167cd3d9c4e743b2b412fc584bb0b0f85ac80a558cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "member_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The locator state stated through the model's own rule, from the observation's locator, exactness and ranges.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "079f2f248bff7cf7848d07a91542fb136f2a1e69",
+            "content": "sha256:e5a31796d348bd216ae86dea627a72a53cc0c3dd74506891772ace000c0630cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_locator_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The diagnostic sentence one source reference has always carried, unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "079f2f248bff7cf7848d07a91542fb136f2a1e69",
+            "content": "sha256:9f9eb5277fdd984d058d80a93df754465f33a7ecc56ba68c1896ac31abcc5b2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one caller: the roster owner's member composition.\n\nAnchor: `member_source`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "863986f5f429c7e0e5821471bcf7cd11a3543cbf",
+            "content": "sha256:3530f22d3813fd43ee3bd9f757d4126737d49a69e4ec9bf6828e8d91919f2243",
+            "locator": {
+              "end": 523,
+              "kind": "line_range",
+              "start": 523
+            },
+            "path": "mcp/src/agents_remember/application/review_family_rosters.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The value and the rule this projection fills.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:3f2aadd8daa716c3904a6a1c34b1ad619bfcdf4807078f6e09f95e37d3bcd8cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyMemberSource"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:ff0dd523eefc2edc0438cc85e87c4a442204a47fedc4f3d71d168d95af8433cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_locator_state"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The structured ranges this projection carries, filled by the resolver on the exact recorded blob only.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:00df60683c6562a39fed1cefd04740a3bdd3694504bcac425212fb50f8a370f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_ranges"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**Two members in one file keep two locators, two ranges and two stored rationales; a line range and a file locator resolve as their own states.**\n\nAnchor: \"test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:db5a418a3c076a03ca27d659eb8334041f770e840d3eb18561cbd12125f8bfe4",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/tests/test_review_family_member_sources.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**A changed file keeps its unchanged attributed range on each side.**\n\nAnchor: \"test_a_changed_file_keeps_its_unchanged_attributed_range_on_each_side\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:c2ff3b4c9fcd508151e2f6b490712ba4c14004ff9e0275a888fa6a107256bc5f",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "mcp/tests/test_review_family_member_sources.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**Every pre-existing field keeps its published value; only the three new fields are added.**\n\nAnchor: \"test_the_existing_source_fields_keep_their_published_values\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:a3901b80d1e05ba00baceeef1cf96cb080bd1bd206b4a8521be841ed1b7045b2",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 364
+            },
+            "path": "mcp/tests/test_review_family_member_sources.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,198 @@
+{
+  "path": "dashboard/src/test/fixtures/eveConversationCapture.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The decoder that reads this file through the wire mirror's own unions and throws on an undeclared token.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:cbc3745a1aedaae9ee0ebbb6e69d825529f3d2fbdbc462583651a984f41c5bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "eveConversationItems"
+            },
+            "path": "dashboard/src/test/fixtures/eveConversationCapture.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:526861ee93798a62581f1be88cbbe8bef41a159ecb53080660d5418601c72e08",
+            "locator": {
+              "kind": "symbol",
+              "name": "eveConversationStatus"
+            },
+            "path": "dashboard/src/test/fixtures/eveConversationCapture.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The mounted case that renders the decoded capture through the shipped surface and asserts rendered text.\n\nAnchor: \"mounted eve conversation (behaviour 3)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e56d5d36f5f27cf81f1546d199a7ac8f01f951",
+            "content": "sha256:20407ba767fef0b2c730ccf0a52999a2343bcbe8220350788ba8d10ff3acd677",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Python side pins this exact file against what the projector produces today, so it cannot drift from the projection it renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:ef7f426c7ba8233cef93a959643020ead8b9d71cb03b6e3529e8f9027830527e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projection_matches_the_capture_the_mounted_ui_renders"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:7596c18a53df84bd8fc674f24513a082eac0d46a7354198d823f372d929561ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_capture_shows_the_states_the_packet_names"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:6b04151e6ab00c43cde2077ea5c72d03dab4854b3811d47287456769c0879063",
+            "locator": {
+              "end": 1452,
+              "kind": "line_range",
+              "start": 1445
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:722b3c9a2f70692a28ad8c006a5ce79f58caba89c1c2d6c8f61907048c0c4611",
+            "locator": {
+              "end": 1485,
+              "kind": "line_range",
+              "start": 1454
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The projector rule that makes the operator row producer-less, which this file's first record carries.\n\nAnchor: `unknown_input_provenance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:dc36882e64402058301e5e25e70928f7de73a484896c7a9ae5a21b4c70cad649",
+            "locator": {
+              "kind": "symbol",
+              "name": "_item"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/eve.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The wire base the production capture path serializes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d169fe1db7ab48cd76cc4e49cfb687e0301b9746",
+            "content": "sha256:aef3a0076a011db55ca59698b7d9197e1b3c93caa187b45b3797439cc5361c2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireModel"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/primitives.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The capture path itself: the real projector page and the payload dump this file is the output of.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:728e4e4ae35c8438b65e611faf01087e0c903969391fe1332c461876707e0e86",
+            "locator": {
+              "kind": "symbol",
+              "name": "eve_conversation_page"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:a7351e596fa12320446a28246120a39d170b69158ada2b7b6a38fe8a43fb5c65",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_payload"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:bbd98bf0d30fe1566fc1a40461d4f1b3bce3545a543f205f433d0b26f27f4a01",
+            "locator": {
+              "end": 1423,
+              "kind": "line_range",
+              "start": 1414
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:78591167768dd8e8fc279ccf33498317dfe70197056946ab906f698674401a84",
+            "locator": {
+              "end": 1439,
+              "kind": "line_range",
+              "start": 1426
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,57 @@
+{
+  "path": "dashboard/src/panels/sessionComposerParts.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The composer render parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c030b585b258416ee5b6c8d728bec96b908da15",
+            "content": "sha256:abe8473a247a8dff0c3b73423a76e85304a1133ccebb7103b6b01a83fe5a1779",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComposerStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c030b585b258416ee5b6c8d728bec96b908da15",
+            "content": "sha256:cd53f575009e1b70927221f895ff68199aded3a2422de3ee91940851927003d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "WithdrawalRecovery"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c030b585b258416ee5b6c8d728bec96b908da15",
+            "content": "sha256:5499779c4100fa1fea8732a47efb235c7ba987960544af71807f7e2c49b5c28a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComposerView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c030b585b258416ee5b6c8d728bec96b908da15",
+            "content": "sha256:0364edb91162017b0ed62ba02d4879385c6fa00c44a6c5ca22befe4596e31e0e",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 408
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

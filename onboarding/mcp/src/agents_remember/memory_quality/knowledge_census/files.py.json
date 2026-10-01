@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_census/files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The census locations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "content": "sha256:b542f7ac836190d2b7bc162ba0b53493660b5d917f1aac9cfb841cdbb9f8fb30",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "content": "sha256:317b1b914ec5f794716798a785c45ca15966965ea4dc39b13c420f45ef822ccf",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_status_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A path's census ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "content": "sha256:88220b8479feeacff0bd5ca914b99293a2077b2c9c349fb5bbc2f4427b6a9717",
+            "locator": {
+              "kind": "symbol",
+              "name": "census_id_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The parsed census and the tree of censuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "content": "sha256:b40dc8f34f95039c2d1d5f40acd3ad5956d39156ca4d094c79651124debc7532",
+            "locator": {
+              "kind": "symbol",
+              "name": "ParsedCensus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "content": "sha256:f7b2cfa593a74ca9c244a7c0e3c2fd61ce02fef00e78a4a84695217856b7baea",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Location, canonical, schema, census and route-slug checks while reading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "content": "sha256:345fdfe758ca659dd5c2cb11eb1cdbd10b4e343a900ba1ac24e24c946006acd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Reader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f9ad1dd28c8166a9cdd6be6a299bf9f07b62275",
+            "content": "sha256:20c7e9a15bc81ea10af15b4a248b528237668bd3251ef90b2c97f7c4877a3fb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_censuses"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Every census file parses by schema and is canonical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:85190e1cdfd7f60b6cedd65ff1c3c273eda95f83dd3e713326da326e45368b57",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_census_file_parses_by_schema_and_is_canonical"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

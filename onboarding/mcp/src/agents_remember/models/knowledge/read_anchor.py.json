@@ -1,0 +1,210 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+        "content": "sha256:94101c434ec37600081cbe91b9d6a933676f9cd18397ca40c0d433c775a829d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "AnchorResolution"
+        }
+      },
+      "id": "RLZ-5N4ACEJB",
+      "invariant": "INV-RANN4DC0",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "_observed_symbol (memory/knowledge/read_anchors.py) places every defining extent of a symbol on the exact recorded blob; _observed_line_range places a recorded line range only when that blob holds the lines; AnchorResolution (models/knowledge/read_anchor.py) carries the resulting structured resolved_ranges and refuses them beside any other resolution.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+        "content": "sha256:94101c434ec37600081cbe91b9d6a933676f9cd18397ca40c0d433c775a829d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "AnchorResolution"
+        }
+      },
+      "id": "RLZ-QCDVQ5J4",
+      "invariant": "INV-NRSN2ABQ",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "AnchorResolution is declared in models/knowledge/read_anchor.py and ReviewFamilyMemberSource in models/knowledge/review_family_source.py; read.py and review_family_context.py import and re-export them so existing imports keep resolving.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The published surface of the anchor-observation vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:ca206a76ad6e46107633e0efe613b038ecf8cc559aaa477a0888cc64f18cf9bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The owner's seven resolution states, as a type and as a runtime tuple.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:bac0ca502dab452e2e32d5cdc45f6bf068b406df36d0d6215d795e3ce17c7f58",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorResolutionState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:e7d5704be8345468c87cea31bd2c77dc562def2e745391ca4d71fe5bf74b0583",
+            "locator": {
+              "kind": "symbol",
+              "name": "ANCHOR_RESOLUTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**One recorded anchor observed against the requested snapshot, carrying its recorded identity whatever the outcome and its structured locator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:94101c434ec37600081cbe91b9d6a933676f9cd18397ca40c0d433c775a829d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorResolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The structured region: the recorded line range or every defining extent, only on an exact recorded blob; none for a file locator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:00df60683c6562a39fed1cefd04740a3bdd3694504bcac425212fb50f8a370f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_ranges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The validator refusing ranges beside any resolution other than the exact recorded blob.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:6df7b2ab9a7f184f1a6c860739d84c54b1058c1706a4f901f3f63aa2dde00b27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_ranges_only_on_the_recorded_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The re-export that keeps every existing `read.py` import of these names working.\n\nAnchor: `AnchorResolution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:66cc3f65f03b02a10401d323c95df03ea60e255b5799c9aac7cb625631df15c7",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The read item field that carries the observation onto every realization-claim item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:67f3b71398806f5b4f55d98980b2737ded49379c955846d982cbf5389aa1f689",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The resolver that fills `resolved_ranges` for symbol and line-range locators on the exact recorded blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25dc2d7dd7d4079c8ad8e7725b427edf1c4f7e6f",
+            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_line_range"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25dc2d7dd7d4079c8ad8e7725b427edf1c4f7e6f",
+            "content": "sha256:6381261533770f98e10abde19f9389cc3f4d672ec5e39c60b3b6160fe35a6bd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25dc2d7dd7d4079c8ad8e7725b427edf1c4f7e6f",
+            "content": "sha256:19a50cc472fa39446856ab193ce3cc8b7567e9b24c0f1143ac8cbcbdb1b19b79",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

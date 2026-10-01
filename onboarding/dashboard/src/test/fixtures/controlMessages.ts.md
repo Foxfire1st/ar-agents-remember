@@ -1,15 +1,5 @@
 # dashboard/src/test/fixtures/controlMessages.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/test/fixtures/controlMessages.ts` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `../../overview.md`                              |
-
 ## Governing Overview
 
 [dashboard/src overview](../../overview.md)
@@ -43,45 +33,29 @@ founded here because L3 is the first API-consuming leaf.
 - The `requestId` reuse across all reconciliation fixtures is deliberate contract teaching — a
   new fixture with a fresh id would erode the no-resend lesson.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The five receipts + four reconciliations. | `SUBMISSION_RECEIPTS`; `RECONCILIATIONS` | dashboard/src/test/fixtures/controlMessages.ts:15-61; dashboard/src/test/fixtures/controlMessages.ts:63-100 |
-| The wire mirrors (`SubmissionReceiptWire`, `ReconciliationResultWire`). | `SubmissionReceiptWire`; `ReconciliationResultWire` | dashboard/src/types/harnessCapabilities.ts:99-107; dashboard/src/types/harnessCapabilities.ts:120-128 |
-| The Python serializers mirrored (`public_receipt_json`/`public_reconciliation_json`). | `public_receipt_json`; `public_reconciliation_json` | mcp/src/agents_remember/serving/harness_control_models.py:217-228; mcp/src/agents_remember/serving/harness_control_models.py:231-242 |
-| The vocabulary-equality suite (five/four by sorted keys, shared requestId). | "SetResult / receipt / reconciliation vocabularies" | dashboard/src/test/contractCapabilities.test.ts:120-161 |
+- The five receipts + four reconciliations. [1]
+- The wire mirrors (`SubmissionReceiptWire`, `ReconciliationResultWire`). [2]
+- The Python serializers mirrored (`public_receipt_json`/`public_reconciliation_json`). [3]
+- The vocabulary-equality suite (five/four by sorted keys, shared requestId). [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## 260715-FEUI-L5 Reliable Submit Delta
 
 All five receipt fixtures now carry bridge epoch; reconciliation fixtures carry epoch plus the
 normalized submission lifecycle state. This keeps frontend tests aligned to generation-bound public
 responses and prevents fixtures from silently accepting pre-L5 unversioned shapes.
-
-## Update History
-
-- 2026-08-03T02:40:51+02:00 — W3-B01 curator: curated 4 Repo-Internal table citations with exact fixture, wire-type, serializer, and vocabulary-suite anchors. Verification metadata remains unchanged for closeout.
-- 2026-07-17T21:39+02:00 — FEUI-L5: added epoch and lifecycle-state coverage to normalized control
-  message fixtures.
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R3 (reliable-submit fixtures):
-  SUBMISSION_RECEIPTS across the five acceptance states and RECONCILIATIONS across the four
-  states, all reconciliations keyed to the ambiguous receipt's requestId (resolve-by-id, never
-  resend) — the pack L5's composer/submit work consumes. Verification metadata pinned to the
-  leaf base until closeout stamps the L3 code commit.

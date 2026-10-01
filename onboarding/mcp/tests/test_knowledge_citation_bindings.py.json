@@ -1,0 +1,296 @@
+{
+  "path": "mcp/tests/test_knowledge_citation_bindings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The append measured by the generation it descends from, by name, and the generation-1 pin recomputed after the append.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:2c10f72cbc294f7009a5e9e744331ff2b1abdcc150c0aef930dbb3fd1a2c3bfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_generation_5_appends_to_generation_4_without_touching_its_twenty_one_tables"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:50bf9ee000892b5f7b6cc150ec3ee772f2f3533db1ec8f5bd6906754cbc324b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_generation_1_pin_still_recomputes_after_this_leaf_appends_a_generation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The enumeration returning every recorded binding with exactly one state, and an unresolvable key keeping its recorded key and attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:d823a454304c09afdf8c56aa6d7ebdff34d3627c29dcbc55dafea15b89c60155",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_enumeration_returns_every_recorded_binding_with_exactly_one_state"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:d776ce39d7222f4d9049ef061f1f8a5401669fae2141cd74194d67e0811ea0d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unresolvable_key_keeps_its_recorded_key_and_its_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The lane row this module occupies, and the lane it sits in — the unit lane, because every case here is hermetic.**\n\nAnchor: \"mcp/tests/test_knowledge_citation_bindings.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:3d815bcd3e10134848747d64b143d17306b5335eb024dbfa778f9175f52f17bd",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The case that scans the declared column set for an identity-valued name, which is how \"no second identity authority\" is enforced rather than promised.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:1331361fd560dfcb9a9f526c18e88b8c05de8f8e01ce0f189971b55b329c18c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_binding_table_has_no_content_address_digest_or_fingerprint_column"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two cases that read the declared `CHECK` constraints as text, so a binding-local locator or key-form spelling cannot appear.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:5915c16968df9d5ac2be8668a81dc4ea36017e2886a6d81dcc53c56a8249dba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_locator_check_names_exactly_the_shipped_source_locator_union"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:93f4478f5fa86f536cb5dff38826e7704f908051000b8dd34d60e66fa4d82d6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_key_form_check_names_exactly_the_declared_key_forms"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The shipped-literal identity, asserted per shared fact in both directions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:8664115aed0115823f81938783face38af65030c7e98029b104be71ef20dd64d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_shared_fact_reports_the_identical_shipped_literal"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:1a690894194e9cfb037ed75ca2fbfcaf67e835b83454d6e2328725918b3e553a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_binding_vocabulary_extends_the_shipped_one_only_in_one_direction"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The closed vocabulary agreeing with its facts in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:4a2de8099bfbc7e58a258e83f3878a72a649cdfddbb1015d0af60bc951be8b1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closed_vocabulary_agrees_with_its_facts_and_with_every_producing_surface"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The counts partition refused in both directions, and the coverage that refuses to leave an uncovered form uncounted.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:026b74448cd38397774ba14a94a28b63e47599a183051e6e97e4f16ea9e90ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_count_report_refuses_an_aggregate_that_dropped_a_key_from_the_denominator"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:bdc2c3ef5b6fb0e5c7670c7009b1d78abb97d9908135a78b6ebf3478e53a390c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_form_coverage_refuses_to_leave_an_uncovered_form_uncounted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The uncovered-form state distinct from an absent key, and the write-boundary refusal of a key without the declared mark.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:061f0bbba3b3c66aa0bc4758ab1f163fb9edd45a73eb3178896537f5978da9d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_uncovered_key_form_is_a_counted_state_distinct_from_an_absent_key"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:41d65436a5fa7d35dc7365d48e6ee37e5f1baef99a8cedd952101e6db410e7e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_prose_mark_is_the_shipped_one_and_a_key_without_it_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:dda89289fb6d80f96dac5c2518d6948781da0a89ce153d92f23c2c92b83d675c",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 336
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The three projection consequences measured directly.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:f3f60bb8c4cc959b24fd6a3ab02e02e8c64440c38371ce73e0efe37171b85dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_projection_display_refuses_a_conclusion_without_its_basis"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:2cd38157c9874d00fb06920663cfe6812a7619585acc947232864ef6824787a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_projection_row_renders_a_missing_assessment_as_missing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:1f3312c443f03b74192bf143ef72a29affc7173104a2b7488029a5202c0008b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_assessment_is_measured_from_its_examined_inputs_and_never_upgraded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The bound refusal with no items and no counts, and the absent completeness field beside the declared coverage.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:9da617c0ad3299b8596c48da40302a1390bd9cb3c578998f113d93b459e171a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bound_closure_refuses_with_selection_incomplete_and_the_bound_reached"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:f046fbaf057c90cb0bb632361fac9d966ff16f4f9240645bc3885afb862b548e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closure_states_no_semantic_completeness_and_reports_its_declared_coverage"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

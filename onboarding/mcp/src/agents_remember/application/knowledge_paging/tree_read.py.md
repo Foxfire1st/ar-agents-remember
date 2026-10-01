@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_paging/tree_read.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_paging/tree_read.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`|
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -37,6 +27,13 @@
   - **Resuming a family seed (review F4, 2026-09-30 04:12:49).** `_subject_refusal` takes a `family_id` normaliser, and `_named_subjects` compares a named `familyRevisionId` on a family-seed `leaf` token by its bare family ID (`_family_spelling(read, …)[0]`), so `ID`, `ID@rev` and the projected UUID all resume the walk, while another family is refused `continuation_binding_mismatch`. After the binding checks, `_resumed_revision_absent` holds a resume that names a revision to the same rule as a fresh read: `@99` or a bare `ID@` is refused `selector_absent` (R2-1). A different family therefore still fails first with `continuation_binding_mismatch`. The check returns a detail string, not a `PagingRefusal`, because `PagingRefusalCode` admits only paging codes.
 - **Family names in the `invariant` view (rule 7).** `_TreeRead.prepared` adds `families` (`_containing_families`: the live families by ID and title, through `family_names`) to every `invariant` view page.
 - `_refused` adds `threshold` to every refusal (ruling F8), and since MIK-R01 it takes the tree read and adds `memoryTree` (root, tree ID, index state, problems) and `indexComplete` to every refusal of a converted-tree read (rule 9, ruling N3 of 2026-09-30 00:08:39). The architect's R2-3 fix reworded the F4 detail for a missing root.
+- **A seed the tree does not hold is refused, never answered as an empty complete view (L37, P2 task 4).** A fresh
+  read goes through `_fresh_read`: `_fresh_seed_absent` asks `tree_seeds.tree_seed_refusal` about the request's
+  `invariantRevisionId` and, outside the leaf view, its `familyRevisionId`, and a seed the index does not hold
+  returns `selector_absent`, naming where current seeds come from. A `source_context` family seed keeps its own
+  spellings and is judged by `_revision_absent`, which now also refuses a family the tree does not hold (it used
+  to answer `None` for a bare unknown family ID). After the cutover every remembered database-era revision ID is
+  such a seed. A continuation and a database read are unchanged.
 
 ### Conventions
 
@@ -55,7 +52,9 @@
 
 - Review R2-I2: `_scope_response`'s refusal branches are not covered by the N2 identity-seed case; scope-token refusals are covered at the binding level by the L02 tests.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R02@v2` of task
@@ -64,42 +63,30 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: any surface's token, bound ordering and code tree, threshold on every response. | "over a converted memory tree: pages and continuations" | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:1-26 |
-| The default ordering, applied only when none is named. | `DEFAULT_ORDERING`; `_requested_subject` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:112-112; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:278-287 |
-| The subject a page is read about. | `ReadSubject` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:156-175 |
-| The dispatch and the checks before any selection. | `read_tree_page` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:212-251 |
-| The walk's code tree, and a root that does not hold it. | `_at_code_tree`; `_missing_code_tree`; `_holds_tree` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:290-306; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:309-326; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:329-334; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:319-324 |
-| A view page and a resumed scope page. | `_view_response`; `_scope_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:393-437; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:470-522 |
-| Every refusal states the threshold, and names the memory tree and its index state (MIK-R01 rule 9, ruling N3). | `_refused` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:646-660 |
-| The policy each paged response is checked against, and the subjects a scope or leaf token binds, the family seed's among them. | `_POLICIES`; `_SCOPE_SUBJECTS` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:117-130 |
-| A named subject compared with the token's seed: a family seed's `familyRevisionId` by its bare family ID (review F4). | `_subject_refusal`; `_named_subjects` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:348-367; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:370-382 |
-| The family seed: any spelling of the family, and one rule refusing a revision the tree does not hold, on fresh read and resume alike (ruling R2-1). | `_family_response`; `_family_spelling`; `_revision_absent`; `_resumed_revision_absent` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:525-535; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:538-544; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:547-565; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:568-574 |
-| Page 1 of a `source_context` path read is the leaf read, and of a read naming only `familyRevisionId` the family seed; a resumed page follows its token's kind, a leaf token's seed being a path or a family. | `_fresh_response`; `_resumed_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:254-262; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:265-275 |
-| The leaf page of a path or a family seed, one declared order on a fresh read (ruling Q7), and a path's `registration_absent` refusal carrying its route chain. | `_leaf_response`; `absent_chain` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:577-633 |
-| The `invariant` view names its families (rule 7). | `_containing_families`; `prepared` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:199-209; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:636-643 |
+- The module statement: any surface's token, bound ordering and code tree, threshold on every response. [1]
+- The default ordering, applied only when none is named. [2]
+- The subject a page is read about. [3]
+- The dispatch and the checks before any selection. [4]
+- The walk's code tree, and a root that does not hold it. [5]
+- A view page and a resumed scope page. [6]
+- Every refusal states the threshold, and names the memory tree and its index state (MIK-R01 rule 9, ruling N3). [7]
+- The policy each paged response is checked against, and the subjects a scope or leaf token binds, the family seed's among them. [8]
+- A named subject compared with the token's seed: a family seed's `familyRevisionId` by its bare family ID (review F4). [9]
+- The family seed: any spelling of the family, and one rule refusing a revision the tree does not hold, on fresh read and resume alike (ruling R2-1). [10]
+- Page 1 of a `source_context` path read is the leaf read, and of a read naming only `familyRevisionId` the family seed; a resumed page follows its token's kind, a leaf token's seed being a path or a family. [11]
+- The leaf page of a path or a family seed, one declared order on a fresh read (ruling Q7), and a path's `registration_absent` refusal carrying its route chain. [12]
+- The `invariant` view names its families (rule 7). [13]
 
-## Cross-Repo References
+- Page 1 of a fresh read, or the refusal of a seed the tree does not hold. [14]
+- A family or revision the tree does not hold is refused selector_absent. [15]
+- A converted tree refuses a seed it does not hold, and a database read is unchanged. [16]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the code tree is read from the caller's `repositoryRoot` or the mount's workspace, both the same code repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): MIK-R05. The family seed on `source_context` (`_family_response`, ruling Q1 of 2026-09-30 03:32:18), `_family_spelling`, and `_revision_absent`/`_resumed_revision_absent` refusing a revision the tree does not hold on fresh read and resume alike (ruling R2-1, 2026-09-30 04:45:22); `_named_subjects` normalising a named `familyRevisionId` on a family-seed resume (review F4, 04:12:49); leaf tokens with a family seed; `_SCOPE_SUBJECTS["family"]`; the `registration_absent` refusal carrying `routeChain`; `_POLICIES` at `family-complete-leaf/v2` (Q4) with the v1 token refused (F2). Two candidate invariants added. Reworded the reopened `_fresh_response` and `_leaf_response` rows and the `_POLICIES` row (re-measured `117-121` → `117-130` to hold `_SCOPE_SUBJECTS`).
-- 2026-09-30T03:49:34+00:00: Generated citation repair: `_refused` repointed to mcp/src/agents_remember/application/knowledge_paging/tree_read.py:646-660. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): MIK-R01 adds the leaf response to the converted-tree read. Purpose and Logic now describe `_fresh_response`/`_resumed_response`, `_leaf_response` (with ruling Q7, one declared order), `_POLICIES`, the `invariant` view's `families` (rule 7) and the refusals that name the memory tree (ruling N3); the base-defect boundary is marked fixed (carried 2026-09-29 21:17:07) and a candidate invariant was added; the Todo now carries review R2-I2. Four rows were added and the module-statement row re-measured (`1-19` → `1-26`). **Reopened claim re-read and reworded:** the `_refused` row now says refusals name the tree; this pass's generated-repair bullet for it was removed because its claim was reworded.
-- 2026-09-29T23:55:51+00:00: Generated citation repair: `ReadSubject` repointed to mcp/src/agents_remember/application/knowledge_paging/tree_read.py:151-170. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:55:51+00:00: Generated citation repair: `_at_code_tree`; `_missing_code_tree`; `_holds_tree` repointed to mcp/src/agents_remember/application/knowledge_paging/tree_read.py:280-296; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:299-316; mcp/src/agents_remember/application/knowledge_paging/tree_read.py:319-324. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): created this card for the new file MIK-R02 adds. It records the architect rulings of 2026-09-29 19:56:40 (Q4, Q5, Q6), 20:40:40 (F1 the empty ordering is refused; F2 no local path; F3 currentness at the walk's tree; F4 the named relocation refusal; F8 refusals state the threshold) and 21:32:34 (the tree ID plus a root check is the accepted binding; R2-3 cosmetic fixed). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

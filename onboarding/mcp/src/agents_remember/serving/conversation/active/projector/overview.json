@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector",
+  "references": {
+    "1": {
+      "note": "The active service creates and retires projector instances.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d9460000d36ec6fc93ecbeda40bf9ef38945bb2",
+            "content": "sha256:f5547c5befb1dbf44669b5b0ffd6d015a9b6b16aa20b6dc537acfce4bcd0c37e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ActiveConversationService"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d9460000d36ec6fc93ecbeda40bf9ef38945bb2",
+            "content": "sha256:5b24f52a9683b130657a3b344714ea1e60c1cd5a2960e13cd36776b59c702be9",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The package mutates one canonical projection store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:de99b113feb111c2ab6a86de3c0a7d466e2aac59ace371480576fd1fe1f72508",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionStore"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:65fbfe97bfd4abbebbbe2f1fa1681c80bcef8b8ca1e70bc8af04e2715baafd45",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Focused regressions cover projection, restart, overflow, child hydration, and singleflight.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "438a7f17ee6070cb089cb16f8c4836a6615868ab",
+            "content": "sha256:c63b0269d570211e9129e3eb68f9ba6fd6be640aeb78e6c53f011c11ea6bb954",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_settled_live_turns_project_once_when_native_ids_disjoint"
+            },
+            "path": "mcp/tests/test_conversation_active_service.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5b63e981a3c5dd5e37b4a4e3449a90efabed04ef",
+            "content": "sha256:255f3c815992d607b860e19e1d0a5a5fd396812700bf06ba39bef141fd634ccb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_concurrent_reconnect_replaces_a_retired_projector_once"
+            },
+            "path": "mcp/tests/test_active_projector_singleflight.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "438a7f17ee6070cb089cb16f8c4836a6615868ab",
+            "content": "sha256:46ac3f8b3d869957aba6f8c2ca4d841f6123c94ba2c50c382e55824dddfa37ad",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "mcp/tests/test_conversation_active_service.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

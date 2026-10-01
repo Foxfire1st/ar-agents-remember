@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_hosted_interactions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pending interaction round trips through durable gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd7614b21795f0001def761200aa7e12f2b6a3de",
+            "content": "sha256:682448ffd482b8ef527c695d5b54d1f3a68e88164fd1fdb7206d51325e70e4f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pending_interaction_round_trips_through_durable_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Failed respond reopens the gate instead of silently swallowing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd7614b21795f0001def761200aa7e12f2b6a3de",
+            "content": "sha256:5f4ca69d4a823c1601a055f261973d2a3d092adb979a54477102f1b0e3a1c1f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_respond_reopens_the_gate_instead_of_silently_swallowing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pre write failure keeps the decision and retries until the budget runs out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd7614b21795f0001def761200aa7e12f2b6a3de",
+            "content": "sha256:2c6346604ce8e5143182aff6c88dd7dfb20a4d1518113c38fa7b2a78e353ad83",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pre_write_failure_keeps_the_decision_and_retries_until_the_budget_runs_out"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Post write failure hands the decision back without re answering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd7614b21795f0001def761200aa7e12f2b6a3de",
+            "content": "sha256:ab7b790d932131cbb934b553193f4d8b01fda4d1dd330f5d5539540cc1b1e9f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_post_write_failure_hands_the_decision_back_without_re_answering"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Null request id completion rejects ambiguous vendor correlation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd7614b21795f0001def761200aa7e12f2b6a3de",
+            "content": "sha256:9b4791e4b2752b514855ece690c227228be8fb1f31c14ce685adbb579428a03b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_null_request_id_completion_rejects_ambiguous_vendor_correlation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,157 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+        "content": "sha256:500b2ef89b711edc5ae41bbf1e976f5a36257d90d5086d59340e8dfa9ec08fcc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_directories"
+        }
+      },
+      "id": "RLZ-6W686CWH",
+      "invariant": "INV-P0YZDCS9",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Lists exactly the two directory levels under tasks/ (repository, then task) through _walked_directories, which does not follow symlinked directories and contributes nothing for a folder it cannot list, matching how the replaced recursive glob descended.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+        "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_canonical_task_json_candidates"
+        }
+      },
+      "id": "RLZ-7Q8K452E",
+      "invariant": "INV-1BRT5DX6",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Returns the canonical-enumeration paths whose <task>/<file>.json tail is named, matched under every repository folder through the same _task_directories, _json_entries and archive/enclosure filter as _iter_task_json, and sorted the same way. The result is exactly that subset of the canonical enumeration in the same order, which keeps duplicate-key last-wins behaviour.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+        "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
+        "locator": {
+          "kind": "symbol",
+          "name": "_iter_task_json"
+        }
+      },
+      "id": "RLZ-BKE7NYA4",
+      "invariant": "INV-P0YZDCS9",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Enumerates task documents as the direct *.json entries of each tasks/<repository>/<task>/ folder, drops any path through 0_archive or enclosures, and sorts only those entries. Notes, report and enclosure folders are never walked just to be filtered afterwards.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The canonical enumeration: three listed levels, the archive/enclosure filter, and a sort over only the kept entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
+            "locator": {
+              "kind": "symbol",
+              "name": "_iter_task_json"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The named-tail probe, an exact same-order subset of the enumeration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_task_json_candidates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two listed levels, descended the way `rglob` descends.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:500b2ef89b711edc5ae41bbf1e976f5a36257d90d5086d59340e8dfa9ec08fcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_directories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One listing level: real directories only; an unreadable folder contributes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:b330b52ec65ce86590b3609895dbaf3eb5e8cb65c923cf59d2e3bac94f65c0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walked_directories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The rationale for the removed summary bound, which is unchanged and now sits two lines lower.\n\nAnchor: \"A task-document summary limit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:35d2c236b7be1a224a5fd1487bf4e8bfbe84f319d762016f3b6343e8cf035a49",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Regression evidence: the enumeration equals the earlier recursive glob, including its exclusions and symlink behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:e4e7373a4db7d90ca804d5ca71f2dc4ad4f836df93ffe5d686418a483ba0799a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_enumeration_keeps_exactly_the_canonical_depth_documents_the_recursive_glob_kept"
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

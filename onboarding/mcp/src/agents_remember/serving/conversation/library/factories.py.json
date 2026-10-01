@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/factories.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The immutable runtime/scope types and install-once binding used by this factory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:bb653125717ca28d372231b95682e73cfb8fff95a154ca598e738255b8988c83",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationScope"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:dc154a8035e89260fa70791731fb9f68cf6f785fbfce9a136518d3c92e25cd0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationRuntime"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:71191213cf478810d9baafec2789bdb9bb10048b737d12daf6ebf6937d9121cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_conversation_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The service module's injected `port_builder` seam.\n\nAnchor: \"port_builder: PortBuilder\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4003bc0dd2d03e1d4a0a349bf60fc40cbc4224dd",
+            "content": "sha256:a6e22930a0cfa46005d24ae2e0d7ce2365788a72a028eebdf47c4db1f28d265c",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

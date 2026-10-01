@@ -1,15 +1,5 @@
 # dashboard/src/dev/cockpitScenarios.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/dev/cockpitScenarios.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T10:12+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -119,82 +109,33 @@ Open since 260731-EFA-L4: five modules declare wire response types with no mirro
 `data/notes.ts`) and so stay outside `wireFixtureGuard.ts`'s discovered vocabulary. Both impossible
 fixtures this leaf removed lived in that blind spot. Marking them is out of this leaf's scope.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Cross-Repo References
+### Cross-Repo References
 
 Scenario routes and fixture facts are repository-local. Vendor harness names are data values, not cross-repository code dependencies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This table carries each claim's exact source ranges in the `Source` cell, with the anchor naming the
 construct those lines contain.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The announcer and `HarnessInfo` imports plus the `/api/harnesses` branch returning three-field rows pinned by `satisfies HarnessInfo[]`. | "import { announcerStore } from '../data/announcer';"; "import type { HarnessInfo } from '../data/harnessCatalog';"; `satisfies HarnessInfo[]` | dashboard/src/dev/cockpitScenarios.ts:1-4; dashboard/src/dev/cockpitScenarios.ts:433-443 |
-| `HarnessInfo` declared inline (`id`, `name`, `detected`) in a module carrying no mirror marker, which is why nothing compared the old fixture against it. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
-| The server's `DetectedHarness` / `DetectedHarnessesResponse` for `GET /api/harnesses`: exactly three fields on a `WireResponse`. | `DetectedHarness` | mcp/src/agents_remember/serving/response_contract.py:372-377 |
-| The guard's own note that its wire vocabulary is discovered from a house marker, that discovery is fail-closed in one direction only, and the five unmarked modules still in the blind spot. | "A NEW UNMARKED MIRROR MODULE IS INVISIBLE" | dashboard/src/test/wireFixtureGuard.ts:55-63 |
-| The `describe` asserting the injector answers only what the daemon could: exact key sets for the catalog rows and for the withdrawal result. | "the scenario server answers only what the daemon could answer" | dashboard/src/dev/cockpitScenarios.test.ts:110-142 |
-| Authority wrapper. | `CockpitScenarioHarness` | dashboard/src/dev/CockpitScenarioHarness.tsx:21-54 |
-| Scenario registration. | `SCENARIOS` | dashboard/src/dev/scenarios.ts:260-273 |
-| Cross-generation regressions. | "cockpit scenario authority boundary" | dashboard/src/dev/cockpitScenarios.test.ts:144-418 |
-| The probe types and the `Window` augmentation this file installs into, shared with the Playwright driver tsconfig project. | `Window` | dashboard/src/dev/benchProbes.ts:85-91 |
-
-## Update History
-
-- 2026-08-14T05:26Z — L23 final curator: extended the scenario authority contract with exact
-  interaction-response consumption: accepted answers move the addressed row to working, clear the
-  pending capability, and preserve replay/refusal safety. Also re-anchored the harness imports after
-  formatting. Verification remains closeout-owned.
-- 2026-08-11T19:58+02:00 — Updated the scenario authority model from leaf-key fixture identity to
-  structured task-document identity in both accepted responses and catalog rows.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the terminal-focus scenario addition. Verification metadata stays pinned until closeout stamps the code commit.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-04T17:50+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the eight Repo-Internal citation
-  rows — moved each claim's ranges out of the Finding cell into plain path:line-line Source spans,
-  supplied exact anchors (`HarnessInfo`, `DetectedHarness`, the guard's blind-spot heading literal,
-  the key-set `describe`, `CockpitScenarioHarness`, `SCENARIOS`, and the cross-generation regression
-  `describe`), and let the scoped fixer regenerate final extents. Claim wording unchanged; all
-  constructs verified present in the frozen source.
-- 2026-08-01T10:12+02:00 — 260731-EFA-L4 curator: recorded the impossible harness-catalog fixture and
-  its fix. `GET /api/harnesses` served three rows carrying a `control: "ready"` field that the
-  server's `DetectedHarness` (`id`/`name`/`detected`, `extra="forbid"`) can never send and that
-  nothing read; the rows are now three-field and pinned by `satisfies HarnessInfo[]`. Documented why
-  it survived — `data/harnessCatalog.ts` declares its response type inline with no mirror marker, so
-  it is outside `wireFixtureGuard.ts`'s discovered vocabulary and `tsc` had no mirror to compare a
-  bare literal against — and recorded the four other modules still in that blind spot as an open
-  `Todos` item. Added the "answer only what the daemon could answer" invariant. Added five
-  two-cell Repo-Internal rows with line ranges inside the `Finding` cell, matching this table's
-  existing two-column arity rather than widening the header. Verification metadata left pinned;
-  closeout stamps the code commit.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2: `CockpitBenchProbe`, `CockpitBenchTransition`,
-  `CockpitBenchRequest`, `CockpitResetAudit` and the `Window` augmentation moved out to
-  `benchProbes.ts` so the Playwright driver tsconfig project reads one declaration; this file
-  now imports two of them as types and exports none. No transport, audit or scenario
-  behaviour changed. Verification metadata is pinned to the leaf's reformat commit until
-  closeout stamps the code commit.
-
-- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: made the dev transport model authoritative raw and
-  harness open responses separately; raw rows no longer fabricate harness/control facts, while
-  harness rows preserve accepted identity and requested pair. Verification metadata remains pinned
-  until closeout.
-
-- 2026-07-18T07:22+02:00 — Created for FEUI-L8 cockpit scenario authority and interaction coverage;
-  verification metadata remains blank until commit.
+- The announcer and `HarnessInfo` imports plus the `/api/harnesses` branch returning three-field rows pinned by `satisfies HarnessInfo[]`. [1]
+- `HarnessInfo` declared inline (`id`, `name`, `detected`) in a module carrying no mirror marker, which is why nothing compared the old fixture against it. [2]
+- The server's `DetectedHarness` / `DetectedHarnessesResponse` for `GET /api/harnesses`: exactly three fields on a `WireResponse`. [3]
+- The guard's own note that its wire vocabulary is discovered from a house marker, that discovery is fail-closed in one direction only, and the five unmarked modules still in the blind spot. [4]
+- The `describe` asserting the injector answers only what the daemon could: exact key sets for the catalog rows and for the withdrawal result. [5]
+- Authority wrapper. [6]
+- Scenario registration. [7]
+- Cross-generation regressions. [8]
+- The probe types and the `Window` augmentation this file installs into, shared with the Playwright driver tsconfig project. [9]

@@ -1,15 +1,5 @@
 # dashboard/src/panels/CloseoutQueue.tsx
 
-| Field                  | Value                                           |
-| ---------------------- | ----------------------------------------------- |
-| repository             | agents-remember                                 |
-| path                   | `dashboard/src/panels/CloseoutQueue.tsx`        |
-| doc_type               | `file-level-onboarding`                         |
-| lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -37,13 +27,13 @@ classification and priority plus joined reasons.
 - The producer vocabulary permits member classification `ready`, `waiting`, or `blocked`. Those are
   view classifications over waiting door generations, not durable lifecycle dispositions.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Candidate row renders state, grade, and reasons. | `CandidateRow` | dashboard/src/panels/CloseoutQueue.tsx:29-42 |
-| Queue section renders service/source condition, source problems, and member list. | `Queue` | dashboard/src/panels/CloseoutQueue.tsx:44-67 |
-| Panel selects and renders the projected queues. | `CloseoutQueue` | dashboard/src/panels/CloseoutQueue.tsx:86-86 |
+### Repo-Internal References
+
+- Candidate row renders state, grade, and reasons. [1]
+- Queue section renders service/source condition, source problems, and member list. [2]
+- Panel selects and renders the projected queues. [3]
 
 
 ## 260815-DAG-L12 Sprint-Scoped Mount
@@ -60,14 +50,3 @@ graph-less atomic-sequential sprints retain scheduling visibility.
 The component observes a disposable projection only. Queue rows do not own claims, lifecycle state,
 commit evidence, certification, recovery, or terminal authority; invalid projection state is shown as
 typed repair evidence rather than being hidden behind a stale candidate/blocker view.
-
-## Update History
-
-- 2026-08-24T15:04+02:00 — Migrated the panel from mutable blocker/candidate vocabulary to the
-  exact-current service/source/problem/member projection and corrected graph-less sprint mounting.
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `CloseoutQueueImpl` gains the optional `sprintRef` scope and the revision/graph meta line (L12-R5). Verified at code commit b7f2c8e2.
-
-- 2026-08-18T00:00+02:00 — 260815-DAG-L8: created the read-only closeout-queue dashboard panel.
-  Verification metadata pinned until closeout stamps the L8 commit.

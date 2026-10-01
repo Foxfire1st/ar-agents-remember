@@ -1,0 +1,138 @@
+{
+  "path": "mcp/src/agents_remember/kernel/route_index.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points.\n\nAnchor: \"def route_index_source_snapshot(\", \"def _tracked_source_candidates(\", \"def _untracked_source_candidates(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0932723219e6d2d29a60670add3469a167a18286",
+            "content": "sha256:e0ad733fb60b7cc85b5061ad6f565621155ac40a08eb5389cda490c193869c26",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index_census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0932723219e6d2d29a60670add3469a167a18286",
+            "content": "sha256:f7f5f9227a3f0a4d239e3712b15f2ae1f09915459fdd873c7fa13dc6ddbd5b68",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index_census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0932723219e6d2d29a60670add3469a167a18286",
+            "content": "sha256:c0752f73467bf3e32d0873b90f96ab7bf9b333b2b8a759285c10740ab88ee60e",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index_census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A converted overview's sidecar reference targets feed the same hint extraction; nothing is added without a sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "content": "sha256:451ca02c359175e5a5804cb840ba4dad920b0cb53a74d708cda88e4770873932",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hot_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "content": "sha256:f03bc90acc91c048f7f63fc627cb1375b09937a3b089d8fdad717203496eb50d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_sidecar_hint_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "content": "sha256:7e7266cd42cddad6cf6080b3ed99cc3a765094e08f27661a1510abd1cf2d870b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_target_hint_spans"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "MCP refresh supplies resolved repository and storage authority.\n\nAnchor: \"def route_index_refresh_tool(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:2df10f7cd339c643d1e1bb99e82361d930b4d5c5960c646d06ca426a7b14e5a1",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Closeout preview/apply expose route-index refresh planning entry points.\n\nAnchor: \"def refresh_route_indexes_for_context(\", \"def route_index_refresh_plan_for_context(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:146d1e195f9fda3ff811d27e114460685f43291ee4a5aa98893919092af9f6d2",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 532
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:f45319eade0ffd4370666c3204bbd24f96d5be2fe3bdcc55b981c8517555ba42",
+            "locator": {
+              "end": 551,
+              "kind": "line_range",
+              "start": 543
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

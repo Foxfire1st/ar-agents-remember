@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/serving/dispatch_brief.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Dispatch target admission requires the exact hosted target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de039359a3a94924adb8d1d0673ec27752706467",
+            "content": "sha256:6fe0aa2b1e27a7a82395ed55443a26101aeaa7f210fcfb47ab07b1b509bc5171",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_dispatch_target"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de039359a3a94924adb8d1d0673ec27752706467",
+            "content": "sha256:89ec9f5fcb4ce88e5fc7182c9406151d691fab6cfca21f0b05ba554c1aba29d0",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dispatch brief is explicitly the exact-pinned exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de039359a3a94924adb8d1d0673ec27752706467",
+            "content": "sha256:195f850d9656dfe6edff6ff1a085d9a3bf62afb8ad60d1faf686b8f485ab7129",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_stays_on_exact_session"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Brief expectation fulfillment reads durable delivery evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de039359a3a94924adb8d1d0673ec27752706467",
+            "content": "sha256:87df64cc4c2262842b27b63e786778e966952af7d679a2a1a2f35313082df458",
+            "locator": {
+              "kind": "symbol",
+              "name": "fulfill_briefed_expectation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

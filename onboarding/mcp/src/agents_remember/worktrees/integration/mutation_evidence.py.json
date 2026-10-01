@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only enabled code/memory legs receive mutation cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:47a6be4de4f5791a84043f62cd700a9161f6d397cfa29514657fe093fbe2734e",
+            "locator": {
+              "kind": "symbol",
+              "name": "initial_closeout_mutation_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Intent, expected-output binding, and commit proof retain their order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:112946f07d62c75613cbc8278b9845297104d365edf3b2a89845efd4bef442eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_git_mutation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:a0e1d7e5dcf94d641d8e483e56f74b7652a52d3bae92570c414605d0361b99f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "bind_expected_output_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Interrupted attempts are reconciled from actual Git evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:c6edea6ac2ee716ea288491f7086dc5e8601b57c81314142e8971cb899b482f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_closeout_mutations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cache-excluded snapshots retain actual object/ref identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:8e25de5b2bec6a3e47821213ae384a185a78a94bd2c1f7cb3f3dcd9511ee4927",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_is_clean_at_head"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "content": "sha256:0132be34609d77a9785585724809e24a3f369d1e6b3023bf5e8ce1782da9c7eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ephemeral_git_mutation_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The snapshot model declares the separate content comparison tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:1d2213697e54872749956c9f46bcec11d94fd8d6c15fb918b47608230c689933",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMutationSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:676028d407a623f20445d2780262e688f7780dde977111121d388d2e879596fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "contentHeadTree"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

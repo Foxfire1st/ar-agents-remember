@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation/agents.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/conversation/agents.ts`      |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [data/conversation overview](overview.md)
@@ -77,65 +67,36 @@ and the tests pin every rule.
 - **Parent view keeps the roster visible.** Filtering to the parent drops agent-tagged items but
   keeps the notice/system roster rows, so the status strip is never hidden by the filter.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The wire types this module reads (`ConversationAgentRef`/`ConversationAgentStatus`, `ConversationItem.agent`). | `ConversationAgentRef`; `ConversationAgentStatus`; `ConversationItem` | dashboard/src/data/conversation/types.ts:140-146; dashboard/src/data/conversation/types.ts:148-156; dashboard/src/data/conversation/types.ts:158-176 |
-| The store whose `agentFocusBySession` this module's `effectiveAgentFocus` revalidates. | "agentFocusBySession: Record<string" | dashboard/src/data/conversation/store.ts:61-61; dashboard/src/data/conversation/store.ts:87-87; dashboard/src/data/conversation/store.ts:127-130 |
-| The codex roster mint: one `codex-agent-<threadId>` notice/system item per agent, upserted across the lifecycle, never optimistic. |"def _roster_item("; "item_id=f\"codex-agent-{thread_id}\","|mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:103-103; mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:120-120|
-| The claude roster mint: `claude-agent-<taskId>` from the task_* frames (with the join-key tool upsert), terminal summary as a "summary: str" TextBlock. | "def _task_lifecycle_blocks("; "summary: str" | mcp/src/agents_remember/serving/conversation/projectors/claude.py:496-511 |
-| The surface that cycles/filters by this model (ArrowLeft/Right, Esc, focus bar). | "cycleAgentFocus" | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:20-20; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:208-216 |
-| The roster strip rendering `ConversationAgentView` rows. | "import type { ConversationAgentView } from \"../../../data/conversation/agents\";" | dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:18-19 |
-| The agent badge rendering `agentLabel`. | `agentLabel` | dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx:73-81 |
-| The unit pins for every rule above. | `isAgentRosterItem`; `deriveAgents`; `cycleAgentFocus` | dashboard/src/data/conversation/agents.test.ts:53-60; dashboard/src/data/conversation/agents.test.ts:108-119; dashboard/src/data/conversation/agents.test.ts:141-150 |
+- The wire types this module reads (`ConversationAgentRef`/`ConversationAgentStatus`, `ConversationItem.agent`). [1]
+- The store whose `agentFocusBySession` this module's `effectiveAgentFocus` revalidates. [2]
+- The codex roster mint: one `codex-agent-<threadId>` notice/system item per agent, upserted across the lifecycle, never optimistic. [3]
+- The claude roster mint: `claude-agent-<taskId>` from the task_* frames (with the join-key tool upsert), terminal summary as a "summary: str" TextBlock. [4]
+- The surface that cycles/filters by this model (ArrowLeft/Right, Esc, focus bar). [5]
+- The roster strip rendering `ConversationAgentView` rows. [6]
+- The agent badge rendering `agentLabel`. [7]
+- The unit pins for every rule above. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 ## 260727-CHATS-IM-L2 Current Delta
 
 `isAgentRosterItem` now recognizes only explicit `codex-agent-` and `claude-agent-` notice ids.
 An arbitrary system notice carrying an agent ref is content, not roster authority. This prevents
 selected-child history state and rebound notices from appearing as extra seats.
-
-## Update History
-
-- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 6 table citations and 1 prose citation, normalized 6 source paths, and corrected 2 narrow extents to rendered/constructed evidence; no unresolved Tier-3 claims.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations that moved
-  when the projectors were refactored. The codex roster mint (`_roster_item`, now taking an
-  `ItemPlacement`) moved to `codex.py` L722-L753; the claude roster mint was decomposed out of one
-  monolithic `_map_task_lifecycle` into `claude.py` L305-L385 plus the extracted
-  `_task_lifecycle_blocks` (L496-L511, where the `summary` TextBlock is appended) and
-  `_agent_identity_tag_item` (L514-L554, the join-key tool-call upsert). Both claims re-verified
-  against the current source; no claim text changed.
-
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: narrowed roster detection to the
-  backend's explicit `codex-agent-`/`claude-agent-` identities. Agent-tagged child-history and
-  rebound system notices no longer create duplicate seats. Verification metadata remains pinned
-  until closeout.
-
-- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: created the sidecar for the sub-agent roster
-  derivation + timeline focus model (R7) — the ruled roster shape (notice/system/agent), the
-  evidence-bound label precedence, terminal-only final-message previews, first-evidence-order
-  `deriveAgents` with upsert replacement, the parent↔agents focus cycle, the honest stale-focus
-  recompute, and the focus filter that keeps the roster row in its own lane. Verification is pinned
-  to the leaf base (`842b487`) because the new source file is uncommitted; closeout owns its first
-  source stamp.

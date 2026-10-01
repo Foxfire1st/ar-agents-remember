@@ -1,0 +1,641 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it appends and why: six tables, an additive-only file, and the refusal of a wide row because each census entry is a record kind with its own identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:125f59f1f03901c693eb90ae9ff868ffdd7244b69fad0203ce728a77c9dcee83",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:88ef655d981fe1223ea51316da2e76610fd0921402043172d9ae0e3bb793e568",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The six rendered table declarations, each naming its own key columns and body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:005ea3bde51832c5be9e2311decdfcc4e2503fedf5f3ed7e2c12ec55a0bf154a",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLE_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The seven declared indexes, each covering the reverse direction of a declared lookup rather than a forward scan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:6fbb70a35653d1853dbc568269a57aa0468a26cb91f972cd6474b9a051d7c7a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_INDEX_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The trigger pair every appended table gets, with the reason nothing is exempt: a census row has no lifecycle field a later operation is entitled to move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:11deff6e879dac8f02ec95baec247aa0f3341951e8b50ecff37040ce6d8795b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TRIGGERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The declared-empty feature tuple, present so this generation states the same fact its predecessor does.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:846958ed5776f88992812fe9a6aa343215317e23ae19d052f3cc72413f779aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_FEATURES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The composition function that turns this module's literals into generation 9, as generation 8 with one module's declarations appended.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:f462563fc0b81c11ccd689c4c679c76f35083aed03a38d6f0dea9d82cfec4a9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_9"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:2e3431b78357da6223cfaf09e7c4bd387194097559deac8be074af5509bf3630",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_generation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:457790dd8d574759927ec1d6b1c5d62df26c49d53634effa64c5f3af356f5230",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AppendedGeneration"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:d4b773eb971036df74db2e7c70befebafc30cb3c07e31876dc67fc14c72f991e",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Generation 9's own identity in the registry, and the created generation a new store declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:8e3ff3008e705c16a74dc43e272b07823667e42d6bcc31eb6e62baa110c026b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_9_SCHEMA_NAME"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATIONS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:c954da44fc1cb1e734e9bfa69681a7a466150cb94dcadac44e0688afef4fdaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENT_GENERATION"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:2be98bbbee01755672f90aa45a9d4caf1d3e10f30b47428869d1d5269a9cd2ae",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 452
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The additive rule as one predicate — the appended tables follow the base's exactly and every earlier name keeps its column tuple, its primary key and its typed-JSON set — and the composition commentary that spells the rule out as a generation appending tables and never retyping, reordering or dropping an earlier generation's, with each successor's own composer beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:1192b4e543d37b99f6ffdc87d010b507af405780120b39f094c3f7cd2de3b6c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "descends_from"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:a1325880c2d5c596b0c3fc8c9d85b64904722a1435c1b5477df83f25e6532296",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_5"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:f462563fc0b81c11ccd689c4c679c76f35083aed03a38d6f0dea9d82cfec4a9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_9"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:bc678960c7565bd7b56be1319c9bae8f3f4aa3cea688199410372097510fb254",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b51650bee83afb5b3c09d5046704c4ee3c45515f9becf108f76d7958dcd76c9c",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 341
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:246b75e7e1cd655f22409b6093cc115ef248067d5acd2da39d6ebdbf87530208",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 347
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Where the census record kinds and their relations are registered as payload shapes, which is why this generation appends relations rather than a wide table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:1aa632338d8e78e635b4408f0517b7941c67949ecc4d2aacf0a2096a7aa41c1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_PAYLOAD_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Where the write path takes its column order and its vocabulary closes from, so a column added to a table without a statement is a storage error rather than a mis-ordered write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:5a0d80e7043eb62dce33275d1e1836c831b55d1d267e510b10c87b851f987d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inventory_columns"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/census_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:5150657686411fae6da1363ce4104e1f22b4768441cf028f9280a00619a63b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_closed"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/census_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The six tables generation 9 appends, in the order the encoder serializes them, appended after generation 8's thirty-four.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:125f59f1f03901c693eb90ae9ff868ffdd7244b69fad0203ce728a77c9dcee83",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:2b5d8cde47ae286fa3f6f5721147ac75105ce43737a9ed2465283df3ecfceab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_9"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:3c915c50d1f6e7f655a6980f4428f9e840f049635bd85671fc13440f7a4ffbc5",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declared column order of each appended table, which is what the encoder orders rows by and what the record group's INSERT statements are written against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:78c87513fd826f499ddb8123e2f41a971115f8b6c5b69616c2d06e2f46083ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declared primary keys: one identity column per record table, and a relation keyed by its whole recorded content so re-recording one relation is one row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:19d49aa3cb9e99ef0239dfdd1cd22a0995dab73c9ef058f4984fe0957f1baa46",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_PRIMARY_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The typed-JSON columns: provenance in all six tables and the exact unparsed content on the inventory row, held as a document so a reader can compare it byte for byte with the artifact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:8b8aa69b1429d9ae49b0b43c1a3272cd77cf078b0211cdc5395c74424471abfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_JSON_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The closed vocabularies the DDL constrains, with the three dispositions a curator's authored assessment may record and the reason that column is the nullable one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:e5e6c0309c605de1c9b86454f54cb9979859008c83ce5e7b3b29f800f6f26ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_ARTIFACT_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:b30bbbd4203a8e26756f9f887236be2e549f1cb6ae661b3433b3c1fea53c5463",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_PARSE_OUTCOMES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:7901655997e3383651465f40b8da989a7ea5bc99fd60f4869c49d1de8a0acabf",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_INVENTORY_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:8868a90f696fe445fd6cf4a252290965ed67f29aeecbe1aef96136eb6f6ebfbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_CLAIM_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:faaa32e475c8b332f6118347bdaac7e1626d967ae3936f6ecbc9321019e44d83",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_APPLICABILITY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:c60dea22d6082766c8db8d005f01e01378e0a59e32ea7df9021e61c40ef78d00",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_DISPOSITION_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:55e13cac620d6e03466605d608d80ea3072cbe696a4d3282bd6c2e15c601c8b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_DISPOSITION_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:9a8081273a55c78f586ff9e56459909b2148c230361645cbd32b1dab904b1af4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_EVIDENCE_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:c0e66bc8b9b5fa5b433914fb0de9b86552a331b8b90dd94a3858d771ba0b1d82",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_ASSESSMENT_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:724d7ee9918bfa086b59bb67c0dbef90982b7bc2924a9909cd2f51be54c5d238",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_REALIZATION_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:84b176ae0740383cfb055398ebe6ddf44016a1fb31964f3c76d8d4d62211f0de",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_LINK_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:6e9577ce490b6de1281226a32ce47dd37edcb278dc0bfcaf7f5e14e1d7e4efa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_TARGET_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Which column of which table is closed by which vocabulary, so a value added to a vocabulary is a value the schema already admits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:4177f0343cf503795f696ba179de93a3b3077f19aa7073f4f87c738ba835865c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_VOCABULARY_CHECKS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:a67fe3e8a47b1825d47bf876c373aaf8eb824ad3cbea7780d9d4a6c807fe510e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_vocabulary_closes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one DDL renderer: key, body, not-null provenance, declared primary key, vocabulary closes, repository foreign key and optional parent edge, closed `STRICT`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:38c16e130568f8164088a7e4542c74d9690aac94576e0f821953497b1bc5e9e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_table_ddl"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The composite parent edge the two claim relations declare, plus the disposition link's own parent edge written inline at its table, and the DDL mapping both are rendered through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:ff0cc73a9f21fabebd3c4d80d13ddb33a53abac71fdc43037eb11d5a5957753b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_parent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:005ea3bde51832c5be9e2311decdfcc4e2503fedf5f3ed7e2c12ec55a0bf154a",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLE_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

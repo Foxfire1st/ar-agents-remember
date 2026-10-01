@@ -1,0 +1,135 @@
+{
+  "path": "mcp/tests/test_conversation_active_service.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Hydration orders items and mints stable ids.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff5626c60ecbca25ee9dc03933e640809cd249f",
+            "content": "sha256:b0fb9eb1064bdd3dd717dd568a45f62316e631ca38cdd0dba65cc6baa5142258",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hydration_orders_items_and_mints_stable_ids"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Settled live turns project once when native ids disjoint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff5626c60ecbca25ee9dc03933e640809cd249f",
+            "content": "sha256:c63b0269d570211e9129e3eb68f9ba6fd6be640aeb78e6c53f011c11ea6bb954",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_settled_live_turns_project_once_when_native_ids_disjoint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Prior session native history survives live turns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff5626c60ecbca25ee9dc03933e640809cd249f",
+            "content": "sha256:e8120d87ba94c306ade499a22622e8f7f96680751c2da22d253268634d66d888",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prior_session_native_history_survives_live_turns"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Native page hydration and older paging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff5626c60ecbca25ee9dc03933e640809cd249f",
+            "content": "sha256:8650b93e856e243f439b615483405109bfe7ffc703549bd997f48759b3cd9aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_page_hydration_and_older_paging"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Gap on epoch flip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff5626c60ecbca25ee9dc03933e640809cd249f",
+            "content": "sha256:39ec2fc8a1b52b15aa3f9382a8e9b7b0e96dd626a02bf86c4356598369c80237",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gap_on_epoch_flip"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Zipper handles split result across polls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff5626c60ecbca25ee9dc03933e640809cd249f",
+            "content": "sha256:104eb5615ecdd2470549bff26afde0a5d478d10482a080f929fb9ad569bb5084",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_zipper_handles_split_result_across_polls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Page never claims completeness while frames pend.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff5626c60ecbca25ee9dc03933e640809cd249f",
+            "content": "sha256:69dd75dd850be6f341db750a4b583cacde1852b6c2cbcc7b31b3c0110903e7b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_page_never_claims_completeness_while_frames_pend"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Regressed evidence tip gaps instead of freezing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff5626c60ecbca25ee9dc03933e640809cd249f",
+            "content": "sha256:aad368f6a69d6c7f44774061d327fbdbd00973b9660e55d72d2a135151f15942",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_regressed_evidence_tip_gaps_instead_of_freezing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

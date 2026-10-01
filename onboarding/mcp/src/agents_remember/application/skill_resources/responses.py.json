@@ -1,0 +1,236 @@
+{
+  "path": "mcp/src/agents_remember/application/skill_resources/responses.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A declared tool set is an observation, never a permission channel.\n\nAnchor: `declared_allowed_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:739ea9814e5104ad474541966c82470c4cb545e7f7647280c3ef6f713ff5a955",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "These builders serve this server's own tool surface; the extension's enumeration result is produced by the `skills/list` handler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:dff2844fde0f4c222393a15010a2a6985f11267e5d6925e10c031798049c1a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skills_list_handler"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provenance travels with the bytes: origin, identity, this file's revision, and the trust statement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:6939f4f8d09e89a5ae6b22a6b79a0cf13ad562a7d44efb6314f593bbc452ce8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_meta"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The response builders, and the admitted facts that are present in a refusal as well as a success.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1561b7a012399b00069bb85b8abe538377e89057",
+            "content": "sha256:6527bdaf8b5b6feac4cbc3bbda489568653f8a287c5adbba5456e421f0bf3e06",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_capsule_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A refusal keeps the manifest facts it has and never fabricates capsule content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1561b7a012399b00069bb85b8abe538377e89057",
+            "content": "sha256:9876ee58b74090ed105bd80b901cb382629d798c1e8a7fc16cc750e2fbf1fcf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fill_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The listing names files and carries no body; `skillRevision` and this file's revision are two facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1561b7a012399b00069bb85b8abe538377e89057",
+            "content": "sha256:4d21205c243e338e7f56dbfb552057f9abfe5064e20860150c824aea796e2f87",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1561b7a012399b00069bb85b8abe538377e89057",
+            "content": "sha256:f61bb4a6dce52283d4e93751b139e978b37d86010095e966a03b8849f337baf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_read_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The trust statement every served file carries, as a constant rather than an input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:e2bed5eb9ba75146d7e2bd781cb38307db5b90b91663f16f75bfa7d5e8016403",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVER_SUPPLIED_CONTENT_TRUST"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The strict response contracts these builders produce.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:c60e6b82416934f780fdf1ce59eff9840476c4c307fc19b9b2089f211449a4c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleCapsuleResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:c3fcf3648ee9a334adea687e5219d8eaa03852026cc43e2a36e5c481ef8a5cd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogListResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:101b00e18d3e8cfe9badf6f0a19c0b0bd84063be7b88c8504e56a399b33234c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogReadResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that executes the no-grant guarantee these builders render.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:e8181a0720290a24893083991566ddd792976aeb263d08e9046d7d6ef75c9097",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:23240413395f0870408b2e3081f13621edce1e1fd1bfd54b1e279e2fe0c1da41",
+            "locator": {
+              "end": 849,
+              "kind": "line_range",
+              "start": 815
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The case that executes the no-body-in-a-listing guarantee these builders render.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:fdc3df03e6984138a4dd82eb0bd84582f4754ab3779042878e6c006845bdd1f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_discovery_registry_is_not_the_model_visible_catalog"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:2b0607b723b829d47ef5ccf50b50809eed6a8297c71b5cdd98c349e47383b521",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 886
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

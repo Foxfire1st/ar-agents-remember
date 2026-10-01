@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/_agentic_settings_sections.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:59:04+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview      | `../../../overview.md`                                          |
-
 ## Governing Overview
 
 [MCP package overview](../../../overview.md)
@@ -58,11 +48,11 @@ family key is refused by `_refuse_null_families` before this parser runs.
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+### Repo-Internal References
+
+The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.
 
 ## L23 Final Candidate Disposition
 
@@ -78,31 +68,3 @@ policy.
 ## CCR-L42 current candidate
 
 Loop-default parsing now rejects `maxRounds` above `MAX_REVIEW_ROUNDS` with a typed settings error; positive values at or below the hard review limit retain the existing parsing contract.
-
-## Update History
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Loop-default parsing now rejects `maxRounds` above `MAX_REVIEW_ROUNDS` with a typed settings error; positive values at or below the hard review limit retain the existing parsing contract.
-
-- 2026-09-06T21:59:04+00:00 — Preserved source-verified expectation semantics from retired test onboarding; verification pins unchanged.
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the executor-key removal from the quality-gate section parser -- the old dagger-only acceptance branch was deleted and `executor` now fails loud as an unknown key; memoryCapBytes-only parsing remains.
-
-
-- 2026-08-14T11:25+02:00 — R39 curator: recorded the host-test refusal and container-owned cap
-  semantics. Verification remains closeout-owned.
-- 2026-08-14T06:32+02:00 — L23 final candidate review: orchestration quality settings project the
-  Dagger-only execution contract and exact policy fields without adding fallback selection.
-  Verification remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: recorded that absent or
-  empty quality-gate settings select host-managed memory and only an explicit
-  positive integer enables the cap. Verification metadata remains pinned until
-  closeout stamps the L24 code commit.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded `_parse_quality_gate`
-  and the family's default/fail-loud/positive-int contract. Verification metadata
-  stays pinned until closeout stamps the 260731-EFA-L17 commit.
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

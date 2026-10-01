@@ -1,15 +1,5 @@
 # dashboard/src/dev/cockpitScenarios.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/dev/cockpitScenarios.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T10:20+02:00 |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb` |
-| lastVerifiedCommitDate |  2026-08-26T19:22:10+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -85,67 +75,30 @@ successor authority exists.
 
 No task-independent technical debt was identified during MX-FIX-2 review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The race suite exercises repository-local generation guards and stores; no cross-repository source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This table keeps exact findings, anchors, and source ranges in three columns.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| L110-L142 — the daemon-answerability `describe` and its two exact-key-set assertions. | "the scenario server answers only what the daemon could answer" | dashboard/src/dev/cockpitScenarios.test.ts:110-142 |
-| L63-L75 — `authorityTransport`'s `withdraw`, now annotated `: Promise<WithdrawalResultWire>`, with the comment recording why the concise async body lost excess-property checking. | `authorityTransport` | dashboard/src/dev/cockpitScenarios.test.ts:53-77 |
-| L40-L46 — `WithdrawalResultWire`'s five declared fields; `bridgeEpoch` is not among them. | `WithdrawalResultWire` | dashboard/src/data/submissionLifecycleClient.ts:40-46 |
-| L4-L9 — `HarnessInfo`'s three fields, declared inline in a module with no mirror marker. | `HarnessInfo` | dashboard/src/data/harnessCatalog.ts:5-9 |
-| L366-L377 — the server's `DetectedHarness` / `DetectedHarnessesResponse` declares exactly three fields, inheriting strict `WireResponse` whose `model_config` sets `extra="forbid"`. | "class WireResponse(BaseModel):"; `DetectedHarness`; `DetectedHarnessesResponse` | mcp/src/agents_remember/serving/response_contract.py:89-89; mcp/src/agents_remember/serving/response_contract.py:370-375; mcp/src/agents_remember/serving/response_contract.py:378-381 |
-| The `/api/harnesses` GET branch returns its `harnesses` fixture, type-pinned with `satisfies HarnessInfo[]`. | "satisfies HarnessInfo[]" | dashboard/src/dev/cockpitScenarios.ts:433-443 |
-| L55-L64 — the guard documents the unmarked-mirror blind spot and names the removed `control` and `bridgeEpoch` fixtures. | "UNMARKED MIRROR"; `control`; `bridgeEpoch` | dashboard/src/test/wireFixtureGuard.ts:55-55; dashboard/src/test/wireFixtureGuard.ts:62-63 |
-
-## Update History
-- 2026-08-14T05:26Z — L23 final curator: documented that accepted interaction responses are
-  observed through the catalog, shared working-state grammar, and attention rollup while replay and
-  refusal cases preserve exact-once authority; repaired the unrelated stale harness-route anchor.
-  Verification remains closeout-owned.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D1-D2 operative response and route-return evidence for the same-reviewer residual delta.
-
-- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 7 repo-internal citation rows and preserved verification metadata.
-
-- 2026-08-01T10:20+02:00 — 260731-EFA-L4 curator: documented the new
-  `describe("the scenario server answers only what the daemon could answer")` — two exact-sorted-key-set
-  assertions covering the two routes whose response types live in unmarked modules and are therefore
-  outside `wireFixtureGuard.ts`'s vocabulary: `/api/harnesses` rows must be exactly
-  `detected`/`id`/`name` (a `control` field was live), and the withdrawal result exactly the five
-  fields `WithdrawalResultWire` declares (a `bridgeEpoch` was live). Recorded why the second one
-  compiled: `withdraw` was an async arrow with a concise body, which loses excess-property checking
-  because the literal is compared against the inferred `Promise<…>` rather than the contextual one —
-  it now carries an explicit `: Promise<WithdrawalResultWire>`. Added the exact-key-set and
-  scope invariants, and six two-cell Repo-Internal rows with line ranges inside the `Finding` cell,
-  matching this table's existing two-column arity rather than widening the header. Verification
-  metadata left pinned; closeout stamps the code commit.
-
-- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: added real-client scenario coverage for accepted raw
-  and harness opens and verified raw catalog rows remain free of fabricated harness authority.
-  Verification metadata remains pinned until closeout.
-
-- 2026-07-18T07:22+02:00 — Created for FEUI-L8 same-id cross-generation regressions; verification
-  metadata remains blank until commit.
+- L110-L142 — the daemon-answerability `describe` and its two exact-key-set assertions. [1]
+- L63-L75 — `authorityTransport`'s `withdraw`, now annotated `: Promise<WithdrawalResultWire>`, with the comment recording why the concise async body lost excess-property checking. [2]
+- L40-L46 — `WithdrawalResultWire`'s five declared fields; `bridgeEpoch` is not among them. [3]
+- L4-L9 — `HarnessInfo`'s three fields, declared inline in a module with no mirror marker. [4]
+- L366-L377 — the server's `DetectedHarness` / `DetectedHarnessesResponse` declares exactly three fields, inheriting strict `WireResponse` whose `model_config` sets `extra="forbid"`. [5]
+- The `/api/harnesses` GET branch returns its `harnesses` fixture, type-pinned with `satisfies HarnessInfo[]`. [6]
+- L55-L64 — the guard documents the unmarked-mirror blind spot and names the removed `control` and `bridgeEpoch` fixtures. [7]

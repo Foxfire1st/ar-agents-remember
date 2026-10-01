@@ -1,0 +1,47 @@
+{
+  "path": "mcp/src/agents_remember/application/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The overview hot path summarizes guarded commit-message and forwarding boundaries.\n\nAnchor: \"## Hot Path Summary\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/application/overview.md:1250-1252"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public payload builders import application entry points from their owning modules.\n\nAnchor: \"from .benchmark import codex_benchmark_prepare_payload\"; \"from agents_remember.application.benchmark_tools import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:47fd854e9df92668e10afccfcc86828a554d492e07056f052b4fa74d4317f35d",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3d08e81b88c8b601e5ecae2f64ee22fe91302fd",
+            "content": "sha256:b84dedc3ff607a86c635da6235957e80aac52700b5339340fa312fa46a6b9b49",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/benchmark.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/data/launchFlow.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/launchFlow.test.ts`          |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T15:22+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -69,55 +59,25 @@ invented, a menu is sorted, a key is normalized, or a lone knob rides the wire.
 
 No task-independent technical debt was identified during MX-FIX-2 review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The machines + client under test. | `launchSelectionBody` | dashboard/src/data/launchFlow.ts:82-90 |
-| Recorded-catalog envelope/snapshot builders (incl. the non-launch-settable-default trap). | `modelRow`; `preSessionSnapshot` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:34-52; dashboard/src/test/fixtures/capabilityEnvelopes.ts:156-158 |
-| The open-response fixtures the classifier table covers exhaustively. | `OPENED_STARTING`; `OPENED_VENDOR_DEFAULTS`; `INVALID_PARTIAL_PAIR` | dashboard/src/test/fixtures/openResponses.ts:17-33; dashboard/src/test/fixtures/openResponses.ts:36-43; dashboard/src/test/fixtures/openResponses.ts:46-49 |
+- The machines + client under test. [1]
+- Recorded-catalog envelope/snapshot builders (incl. the non-launch-settable-default trap). [2]
+- The open-response fixtures the classifier table covers exhaustively. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `launchFlow.test.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.
-- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 9 citation findings, converting 3 legacy prose line references and 3 unanchored/malformed fixture rows into exact citations.
-
-- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The
-  `openHostedSession` describe block ends at the last line of the file, so its range was corrected
-  from the out-of-bounds L199-L247 to L199-L245 (the file is 245 lines); the three cases inside
-  (complete-pair POST body, vendor-defaults knob absence, thrown-fetch `outcome-unknown`) are
-  unchanged and were read back.
-
-- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: moved complete-pair, vendor-defaults, and thrown-fetch
-  client cases onto the shared authoritative opener response path without changing launch-selection
-  or F9 reconciliation expectations. Verification metadata remains pinned until closeout.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R4/R5/R8: reducer tables (re-gate,
-  non-launch-settable-default trap, advertised-order pin, Haiku effortless, Pi verbatim keys,
-  both-or-neither body), the classifier table over every open fixture incl. the F9
-  unknown-outcome sweep, and the POST-body assertions (complete pair / vendor-defaults knob
-  absence / thrown-fetch reconciliation). Verification metadata pinned to the leaf base until
-  closeout stamps the L3 code commit.
+No applicable cross-repository source was found.

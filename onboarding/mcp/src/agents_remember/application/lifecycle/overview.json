@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle",
+  "references": {
+    "1": {
+      "note": "The bounded read-only observer validates the cursor, polls the exact generation, and returns change or timeout.\n\nAnchor: \"def validate_wait_cursor(after_revision: int)\"; \"def wait_for_lifecycle_change(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fdef150ff0c4296ea02094499df128b00e397e",
+            "content": "sha256:181aa0d150de8c8c25f924a1e6c755a3f4babccdb208eb2954b5dc127f5779e4",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

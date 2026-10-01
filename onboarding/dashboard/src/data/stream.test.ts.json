@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/data/stream.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Controlled state-stream cases cover wake, hidden, error, and never-open paths.\n\nAnchor: \"connectState liveness (260723 sleep/wake)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "197e83f818ace54c5a74db7d9ea488af3d16d80a",
+            "content": "sha256:2fa635fbe53fa33ea4c0da21630953611203c6b1eefc71cdd208307c38973139",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Production state-stream transport owns the deadline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce5020b60dcc8107abe2430742d38707074ae80b",
+            "content": "sha256:e3d90fe0b37e7ff86579270533de22fd1bbb1774e8b5d9e5a9ddf5e0aa70e80b",
+            "locator": {
+              "kind": "symbol",
+              "name": "connectState"
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test covers dashboard-local state transport.\n\nAnchor: \"connectState liveness (260723 sleep/wake)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "197e83f818ace54c5a74db7d9ea488af3d16d80a",
+            "content": "sha256:2fa635fbe53fa33ea4c0da21630953611203c6b1eefc71cdd208307c38973139",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

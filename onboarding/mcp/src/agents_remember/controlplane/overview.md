@@ -2,13 +2,7 @@
 
 | Field                  | Value                                          |
 | ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember                                |
 | sourceRoute            | `mcp/src/agents_remember/controlplane`         |
-| doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
@@ -418,23 +412,23 @@ operator-facing inbox administration remains a separate internal surface.
 - **No reader branches on `schemaVersion`.** `DurableRecord` rejects an unknown major at parse
   time; that single rule is what gives both read policies their behaviour.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Gates mirror the observer event substrate (envelope + append-only JSONL store). | "class EventStore" | mcp/src/agents_remember/observer/store.py:103-103 |
-| Gate policy validation and delegated decision checks. | "class GatePolicy:" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
-| The `gate_*` payload builders that drive this substrate. | "def gate_create_payload" | mcp/src/agents_remember/mcp/tools/gates.py:44-44 |
-| Gate response models, including the structural public boundary and internal exact correlations. | "class GateCreateResponse"; "class StructuralGateResponse" | mcp/src/agents_remember/models/structural/gates.py:61-61; mcp/src/agents_remember/models/structural/gates.py:121-121 |
-| The inbox record/store pair provides the external-chat pull return channel. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:70-70 |
-| The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. | "class AttentionDismissalStore" | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-45 |
-| The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. | "class ProviderDegradationStore" | mcp/src/agents_remember/providers/degradation.py:171-171 |
-| Guarded durable-store composition preserves coordinator containment and held-lock rewrite. | `exclusive_access`; `require_lock_held`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:363-381; mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
-| Shared kernel exclusion is independent of caller authorization. | `exclusive_file_lock`; `lock_held` | mcp/src/agents_remember/kernel/file_lock.py:87-114; mcp/src/agents_remember/kernel/file_lock.py:117-119 |
-| Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. | `prepare_mcp_process`; `_dev_app`; `run` | mcp/src/agents_remember/application/runtime/startup.py:59-62; mcp/src/agents_remember/cli/dashboard.py:120-166; mcp/src/agents_remember/cli/dashboard.py:120-120; mcp/src/agents_remember/cli/dashboard.py:308-308; mcp/src/agents_remember/cli/dashboard.py:1-1; mcp/src/agents_remember/application/runtime/startup.py:1-1 |
-| Gate compaction is guarded by control-plane ownership because trusted dashboard paths call `gate_decide_payload` directly. | "def gate_decide_payload" | mcp/src/agents_remember/mcp/tools/gates.py:92-122 |
-| The projection tick reads folded gates and pending expectation rows without rewriting them. | "def read_gates(coordination_root: Path, *, now: datetime"; "def read_expectation_rows(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:107-107; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:197-197 |
-| The serving relay composes fact predicates and dispatches fact actions over this route's stores. | `evaluate_predicates`; `_FINDING_ACTIONS` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:722-733; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:381-433 |
+### Repo-Internal References
+
+- Gates mirror the observer event substrate (envelope + append-only JSONL store). [1]
+- Gate policy validation and delegated decision checks. [2]
+- The `gate_*` payload builders that drive this substrate. [3]
+- Gate response models, including the structural public boundary and internal exact correlations. [4]
+- The inbox record/store pair provides the external-chat pull return channel. [5]
+- The attention acknowledgement store keeps current lifecycle-scoped queue dismissals only. [6]
+- The provider degradation detector posting `degradation-alert` inbox rows addressed to `system-specialist`'s ladder peers (260707-HFX-L7); governed by the `mcp/` package overview. [7]
+- Guarded durable-store composition preserves coordinator containment and held-lock rewrite. [8]
+- Shared kernel exclusion is independent of caller authorization. [9]
+- Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path. [10]
+- Gate compaction is guarded by control-plane ownership because trusted dashboard paths call `gate_decide_payload` directly. [11]
+- The projection tick reads folded gates and pending expectation rows without rewriting them. [12]
+- The serving relay composes fact predicates and dispatches fact actions over this route's stores. [13]
 
 ## 260712-TRH-L4 Route Impact
 
@@ -563,265 +557,3 @@ this selector instead of re-deriving generation choice.
 `signal_routing.py` translates malformed or ambiguous occupancy into
 `StructuralRoutingError`. Notifier evaluation contains that error per finding so one corrupt
 address cannot abort unrelated rows.
-
-## Update History
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this route's governed sources are unchanged. MIK-R29 grew `mcp/src/agents_remember/cli/dashboard.py` (the reader import and the `knowledge_reader_port` binding), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/cli/dashboard.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **route body updated for a citation this leaf's movement invalidated.** The row that declares durable-store role declaration follows application entry paths named `prepare_mcp_process`, `_dev_app` and `run` and cited four spans in `cli/dashboard.py`; those functions moved when this leaf added the reviewer's second port to `serving_collaborators` and to the `create_app` registration, so the row's ranges were re-derived against the current working tree (`_dev_app` at `:114-144`, `run` at `:286-286`, the module's own anchors unchanged) and the claim's wording was re-read and retained — the composition still declares the MCP role in `prepare_mcp_process`, the reload worker in `_dev_app`, and the foreground/daemon path in `run`. No anchor was renamed and no citation was dropped; no other row moved. No verification stamp was advanced, because no commit contains this body.
-- 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The entry-path row cited `startup.py:41-44` (a docstring paragraph about the serving build) for `prepare_mcp_process`, whose definition is at `59-62`; that cell cites the definition now. The dashboard cells that carry `_dev_app` and `run` and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T18:22+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **this leaf's own code edit moved lines this route's body cites, so the carrier ranges were APPENDED to the rows that cite them and this entry records that body change.** `dashboard/src/agents_remember/cli/dashboard.py` in the governed tree gained this leaf's reviewer-adapter composition (the import, the `review_port` factory and the `knowledge_review=review_port` binding), which shifted the `_dev_app` and `run` declarations the durable-store-role row cites; that row now also cites `mcp/src/agents_remember/cli/dashboard.py:102-102` and `mcp/src/agents_remember/cli/dashboard.py:274-274`, the lines that carry them. **Every range each row already carried is kept** — the repair is a union, never a substitution and never a deletion — and no claim wording changed, because the durable-store role declaration the row is about is unchanged by this leaf. The verification stamp is **not** advanced: the code commit does not exist yet and closeout owns it.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `evaluate_predicates`; `_FINDING_ACTIONS` repointed to mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:381-433; mcp/src/agents_remember/serving/_agent_notifier_actions.py:722-733. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `evaluate_predicates`; `_FINDING_ACTIONS` repointed to mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:381-433; mcp/src/agents_remember/serving/_agent_notifier_actions.py:722-733. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: recorded that the lock plane was deleted (commit `1a0919c1`) — `task_publication_lock.py`, `integration_authority_lock.py` and `lifecycle_operation_lease.py` are gone, so task/door publication no longer takes a CAS mutex and there is no queue-to-repository lock order. Only cut-affected claims were reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-06T00:28+02:00 — Reconciled durable-store route ownership after shared kernel lock extraction, preserved coordinator target isolation and historical incident context, and separated concise hot-path routing from the retained operating detail.
-
-
-- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 shared incumbent/heir selection and per-finding routing
-  containment onto the IAS control-plane overview. Verification remains closeout-owned.
-
-- 2026-08-25T17:21+02:00 — Reconciled queue-store outcomes with disposable projection ownership.
-  Verification remains closeout-owned.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the historical queue-WAL/freeze model with short task CAS, disposable projection publication, and task-first execution retention. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: closeout_queue store/records import paths updated to the moved queue packages. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: integration_authority_lock create=False dry-run mode (F2). Verified at code commit de3a0fd9.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-18T10:30+02:00 — No route impact: 260815-DAG-L7 relocated the orchestrator portfolio module to worktrees; the controlplane route gained no lasting source.
-
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-
-- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: documented the canonical bounded queue
-  artifact, writer census, WAL recovery, and shared task-fact/sprint-status lock. Verification
-  remains closeout-owned.
-
-- 2026-08-13T09:05+02:00 — No route impact: L23's current source delta changes lifecycle model
-  packaging and worktree-lineage enforcement without changing any `controlplane/` source. Existing
-  gate, durable-store, signal, and inbox authority remains unchanged; verification provenance
-  remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: documented structurally addressed, fail-closed batched inbox transitions under the validated store boundary; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the control-plane route with
-  plane-owned occupant addressing, structural document-and-role seats, pinned inbox delivery, and
-  current-owner routing; affected file cards retain the direct source evidence.
-
-- 2026-08-10T19:57:55+02:00 — 260731-EFA-L21 route impact: recorded the durable-store target guard,
-  its pre-filesystem ordering, and linked-worktree dummy-root containment. Verification metadata
-  remains pinned until closeout stamps the L21 code commit.
-
-- 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: added exact-sprint routing and command-role versus
-  subordinate-role separation to the controlplane hot path. Verification metadata remains pinned
-  until closeout.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the ladder/orphan/skip-level
-  demolition, the owner-visible expectation surface, and the legacy parse-compat posture in
-  the records. Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the N13/N16 inbox-schema
-  migration (formal terminal vocabulary, landed-at-boundary, attribution-only consume), the
-  lock-held latest-fold transition primitive (F1), N11 terminal inspectability, the N13/§9
-  retention re-meaning, R13 scoped architect custody, N14 row-based owner derivation, and the
-  dormant escalation ladder (N3). Layout rows refreshed for records/store/retention/routing/
-  ladder. Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
-- 2026-08-09T03:51+02:00 — 260713-TES-L3 route impact: recorded the public `master_key`
-  promotion and its compound-idle consumer (`state_signals.py` master-scoped membership),
-  plus `derive_signal_owner` as the one-hop owner for compound-idle and manager-residue
-  signals (no global fallback). Verification metadata pinned until closeout stamps the
-  260713-TES-L3 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 route impact: recorded the state-signal substrate
-  (`InboxMessageKind`, `state_signal_landed`, backoff/reclamation/transition exclusions) and
-  the turn-report-by retirement. Verification metadata pinned until closeout stamps the
-  260713-TES-L2 commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: `supervisor_signals.py` renamed to
-  `agent_notifier_signals.py` with `AgentNotifierSignal*` identifiers; durable names
-  (`supervisor-signals.jsonl`, `store="supervisor-signals"`, `ar-supervisor-signal/v1`) retained
-  until their schema migration; the sole caller is now `serving/agent_notifier.py` and the
-  settings family is `orchestration.agentNotifier` (explicit legacy alias). Verification metadata
-  pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the cross-store lock-order doctrine in `durable_store.py` and that the inbox's lock-held transaction (L5's exception) is untouched. Verification metadata pinned until closeout stamps the code commit.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
-  anchors and source-backed ranges; exact non-fixing check returns zero findings.
-
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected durable-store startup ownership to
-  the application wrapper plus both dashboard entry paths. New ranges are explicit `:1-1` curator
-  input.
-
-- 2026-08-01T19:10+02:00 — Measured-claim repair; no prose about the lock, ownership, the read-policy
-  split or the compaction owners was touched, because it was right. The Hot Path Summary asserted six
-  base-commit loss rates, "127 of 2000 raising", "zero torn lines in every run" and a post-fix "0
-  lost, 0 raised, 0 torn, all six stores, all scenarios" as findings a reader could check. **No
-  base-commit measurement artifact is committed anywhere in the tree**, so that is now stated once,
-  plainly, and the rates are split by how well they are corroborated: 31.45 percent (four
-  independent sites) and 11.50 percent (three) are asserted plainly on the sources' authority, while
-  10.50 / 10.20 / 9.20 / 0.00 percent, 127 of 2000, "ten runs per store" and the whole-not-torn
-  property exist only in `durable_store.py`'s module docstring — the text these cards document — and
-  are attributed to it rather than restated as findings. **The post-fix claim was wrong in both
-  directions and is now stated at its true strength against
-  `test_controlplane_store_durability.py::MultiProcessDurabilityTests`:** `lost == 0` holds in all
-  three scenarios but over *five* stores in `forced_unlink` (`APPEND_CASES`; attention-dismissals has
-  no `append`, so it is excluded by construction) and six in the other two, while `torn_lines == 0`,
-  `append_error_count == 0` and `reclaim_error_count == 0` are asserted in the `stress` scenario
-  only. Added the one base-commit fact a reader *can* check — `HarnessSensitivityTests` asserting
-  1-of-1 loss for each unlocked store and 0 for operator-inbox against a `git archive` of
-  `e52edaf5`. The 18:30 entry below had the same six-rate list in its parenthetical and it was
-  reduced to the attribution. No line numbers were added into `durable_store.py`, which is under
-  active edit. Verification metadata untouched; closeout owns it.
-- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity), route-level. Recorded the loss
-  the sources report across all six JSONL stores at the base commit and the single
-  `ar-durable-store/1.0` contract
-  in the new `durable_store.py` that closed it. Recorded, as the route's governing distinction,
-  that the unconditional per-log lock is the mechanism while ownership is advisory, with
-  `require_lock_held` the one check that raises unconditionally because it asks about the calling
-  thread's own lock. Recorded that single-writer is a deployment fact rather than a structural one
-  and why the store that looked safest lost the most. Recorded the compaction owners including the
-  operator-inbox `None` exception; that `rewrite_lines` never unlinks; the strict/tolerant read
-  split with the every-authority-rewrite-reads-strictly property stated per store; the
-  `schemaVersion` rule that removes version branches from readers; the process-wide `RLock`
-  described as defending a simulated regression rather than fixing an existing thread race; the
-  `CompactionOwnerError` bug the enforcement caught in the dashboard's direct `gate_decide_payload`
-  call; and the accepted space-only consequence that gate reclamation now follows owner activity.
-  Added `durable_store.py` to the Layout table and eight route invariants. The route index
-  (`overview.index.json`) is deliberately not regenerated in this partitioned curator pass;
-  the manager owns the single aggregate refresh. Verification metadata pinned until closeout stamps
-  the L5 commit.
-- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `create_gate`, `decide_gate`,
-  `create_operator_inbox_entry`, `OperatorInboxStore.record_delivery`/`advance_rung`/`renew`,
-  `create_expectation_row`, `write_expectation_row`, `SupervisorSignalCooldownStore.last_sent` and
-  `in_cooldown` were all re-signed onto frozen parameter objects, and `gate_policy` gained the
-  extracted `_decision_attribution_failure_reason`. Record schemas and refusals are unchanged.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: recorded the exact two-field additive inbox-reader seam for
-  rolling serving compatibility; unrelated extensions remain rejected.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
-
-- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: refreshed the control-plane route for the
-  confirmed-gone inbox predicate, same-lock terminal resolution/compaction, persisted folded-id
-  removal accounting, unchanged TTL/cap fallback, and the callback no-store-reentry contract.
-  Verification metadata remains pinned until closeout stamps the candidate commit.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T22:18+02:00 — 260707-HFX2-L20 control-plane route impact: documented the shared
-  terminal-dominant inbox fold and durable consume snapshot that close the in-flight redelivery race.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 control-plane route impact: made rows, renewal,
-  cooldowns, current discovery, chain credit, and coalescing pair-aware while retaining the one
-  historical spawn-provenance ladder walk. Verification metadata remains pinned until closeout.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 control-plane route impact: replaced same-cwd unbound
-  seat credit with explicit replacement-leaf plus same-manager provenance and covered the
-  parallel-leaf negative. Verification metadata remains pinned until closeout stamps the eventual
-  L15 code commit.
-
-- 2026-07-10T02:39+02:00 — HFX3 retro curation: reconciled route truth with the health-first
-  48-hour pending TTL and 500-row cap, architect terminal custody, and the L13 redundant
-  five-minute later-rung floor. Historical HFX2-L1 immortal-pending entries remain as superseded
-  history only. Verification metadata remains pinned until closeout stamps the eventual two-parent
-  code commit.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round-2 route impact: documented current-manager-first
-  leaf signals, historical-only skip-level provenance, leaf/subject row fields, redundant rung
-  anchors, and the accepted unbound-worker S1 follow-up. Verification metadata remains pinned until
-  closeout stamps the eventual L13 code commit.
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-09T11:19+02:00 — 260707-HFX2-L9 route impact: added the shared 900-second redelivery
-  floor/fail-loud validation in `inbox_backoff.py`, threaded the floor through
-  `OperatorInboxStore.record_delivery`, and added `supervisor_signals.py` as the persisted
-  owner-signal cooldown store. The new store's unbounded/no-compactor scaling gap is documented as
-  a tracked HFX2-L11 deferral, not treated as already bounded. Verification metadata pinned until
-  closeout stamps the 260707-HFX2-L9 commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm, R1-R3): operator inbox rows
-  gain the terminal non-ack `ladder-resolved` state and resolution metadata; `inbox_backoff.py`
-  excludes it explicitly; store mutations accept an optional in-sweep current snapshot; the store adds
-  idempotent `mark_ladder_resolved`; and compaction prunes ladder-resolved terminal rows while still
-  preserving pending/unacked live rows. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L8 commit.
-- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact: two new modules — `escalation_ladder.py`
-  (the pure P-15 tier-3 rung walker) and `orphan_policy.py` (detection-only orphan-worker hook) —
-  plus R2/R4 extensions to `signal_routing.py` (`is_seat_dead`, `derive_skip_level_owner` — a
-  SEPARATE two-hop, dead-node-skipping walk, L1's one-hop `derive_signal_owner` unchanged) and R1/R2
-  extensions to `operator_inbox_records.py`/`operator_inbox_store.py` (`rung` field,
-  `advance_rung` transition). `serving/supervisor.py` (a sibling route) is the sole caller; no
-  ladder logic, delivery, or store mutation lives outside this route's pure derivation/hook
-  functions. Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
-- 2026-07-08T14:40+02:00 — 260707-HFX2-L1 route impact: three new modules —
-  `expectation_rows.py` (R2 durable deadline rows), `inbox_backoff.py` (R3 redelivery backoff +
-  rate limiting), `signal_routing.py` (R4 hierarchical routing derivation) — plus R1 ack-semantics
-  extensions to `OperatorInboxEntry`/`OperatorInboxStore`/`interaction_retention.py` making
-  consume=ack the only terminal delivery outcome and compaction never remove a pending/unacked
-  row. Gate/inbox record shapes otherwise unchanged. Verification metadata pinned until closeout
-  stamps the 260707-HFX2-L1 commit.
-- 2026-07-08T04:15+02:00 — 260707-HFX-L12 route impact (small, master-exit BLOCK fix leaf):
-  `AgentRole` gains `architect`/`curator` and `InboxMessageKind` gains
-  `decision-item`/`decision-ruling` (`operator_inbox_records.py`) so the HFX-L6-landed
-  decision-item/decision-ruling relay doctrine is representable and round-trippable through the
-  inbox, closing master-exit Finding 1
-  (`notes/reports/260707-HFX-master-exit-verdict.md`); pinned by
-  `test_decision_item_relay_round_trip_between_orchestrator_and_architect` in
-  `mcp/tests/test_operator_inbox.py`. Gate policy and inbox storage behavior are unchanged.
-  Verification metadata pinned until closeout stamps the HFX-L12 commit.
-- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `AgentRole` gains
-  `system-specialist` and `InboxMessageKind` gains `degradation-alert`
-  (`operator_inbox_records.py`); `OrchestrationRole`/`_ROLE_ESCALATION` gain
-  `system-specialist -> orchestrator` (`orchestration_artifacts.py`, R2 fix round closing
-  reviewer F5) so the new provider-degradation investigator seat is addressable and
-  ladder-routable; pinned by `test_system_specialist_escalates_to_orchestrator` in
-  `test_orchestration_comms.py`. Gate policy and inbox storage behavior are unchanged.
-  Verification metadata pinned until closeout stamps the HFX-L7 commit.
-- 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: orchestration artifacts can
-  now name `architect` and `curator` alongside the existing orchestration roles in turn-report,
-  handover, and escalation packet payloads; gate policy and inbox storage behavior are unchanged.
-  Verification metadata pinned until closeout stamps the HFX-L6 commit.
-- 2026-07-06T15:40+02:00 — 260703-L12 route impact (small): the `strategist` role joins `AgentRole` (`operator_inbox_records.py`) and `OrchestrationRole` + `_ROLE_ESCALATION` (`orchestration_artifacts.py`, escalating to the orchestrator) so the new spawn-first portfolio seat is addressable and ladder-routable; pinned by a new test in `test_orchestration_comms.py`. Verification metadata pinned until closeout stamps the L12 commit.
-- 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): the cross-lifecycle seam fold added as an invariant bullet (`all_current()` + enclosure addressing) and the Layout table de-duplicated (the older `enforcement.py`/`operator_inbox_records.py`/`operator_inbox_store.py` rows removed; the newer kind-generic + role/delivery-metadata descriptions kept). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): `GateStore.all_current()` folds every gate log (workspace + all lifecycles, last-wins per gate id) — the cross-lifecycle fold the integrate-side seam guard reads so an enclosure-addressed handover gate is visible from a different consuming lifecycle. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T18:24+02:00 — 260703-L8 route impact (cycle 5, small): `GateStore.find` resolves a gate id across the workspace and every lifecycle log — the packet-carried-id decide path. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T16:32+02:00 — 260703-L8 route impact (small): GateKind gains `master-handover-approval` (delegable master-exit seam gate; the named policy routes it to the orchestrator) and gate_policy gains SEAM_GATE_KINDS + `apply_seam_verdict_requirement` — the requireReviewerVerdictAtSeams wiring. Enforcement paths otherwise unchanged. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T01:32+02:00 — No route impact: orchestration_artifacts `template_path` root renamed with the unified skill folder (`l-01-agent-lifecycles`); resolution logic and the route model are unchanged (260703-L9).
-- 2026-07-04T12:32+02:00 — 260703-L4 route impact: added the
-  `gate_policy.py` schema/validator, generalized enforcement to a kind-generic
-  resolver, and documented delegated orchestration attribution plus reviewer
-  evidence refs. Human-pinned integration/push/cleanup gates remain
-  non-delegable. Verification metadata pinned until closeout stamps the L4
-  commit.
-- 2026-07-04T12:31+02:00 - L3 route impact: the inbox is now generalized for
-  agent-to-agent addressing with role/message/artifact/delivery metadata, and
-  the route adds orchestration artifact and rate-limited nudge helpers.
-  Verification metadata pinned until closeout stamps the L3 commit.
-- 2026-06-28T07:43+02:00 — Task 29 S7 route impact: attention dismissals now document the targetless
-  actionable-drift exception, preserving only current repo/branch drift acknowledgements while
-  lifecycle-bound rows continue to prune with live lifecycle ids. Verification metadata pinned until
-  closeout stamps the task-29 code commit.
-- 2026-06-28T03:05+02:00 — Task 28 S5.2: added `attention_dismissals.py` as compact lifecycle-scoped attention acknowledgement state; projection pruning removes rows for non-live lifecycles and gate-open items are consumed by gate cancellation/deletion. Verification metadata pinned until closeout stamps the task-28 code commit.
-- 2026-06-26T18:43+02:00 — Regression fix: route now records that public
-  `lifecycle_gate` waits without an exposed timeout and ignores stale
-  lifecycle-scoped inbox rows that are not tied to the newly opened gate.
-- 2026-06-26T17:05+02:00 — Regression fix: route now records that
-  `lifecycle_gate` performs the bounded gate/inbox wait itself after creating
-  the gate and blocking the lifecycle; it is no longer described as wait-state
-  initialization only.
-- 2026-06-26T14:16+02:00 — Task 25: route overview now describes `lifecycle_gate` as the public gate-opening workflow and classifies lower-level create/wait builders as compatibility internals.
-- 2026-06-25T13:20+02:00 — Task 23/24: added interaction-retention policy to the route and changed gate/inbox framing from permanent logs to disposable interaction rows with delete/TTL cleanup paths.
-- 2026-06-25T07:26+02:00 — Task 19: gates now include the `expired` state/helper for replacing older
-  open lifecycle gates, and the route exposes the `gate_response_wait` wait-plus-inbox helper while
-  keeping decisions and messages separate. Verification metadata pinned until closeout stamps the code
-  commit.
-- 2026-06-23T13:44+02:00 — Task 10 backend inbox: added `operator_inbox_records.py` and `operator_inbox_store.py` to the route, documenting the external-chat pull channel as a control-plane sibling to gates. Verification metadata pinned until closeout stamps the task-10 code commit.
-- 2026-06-23T07:25+02:00 — slice 09 (gate-signal adoption, S2): `records.py`'s `GateKind` Literal gained `plan-approval`, `worktree-intent`, and `push-approval` — the full l-01 gate spine; refreshed the `records.py` Layout row (and noted `closeout-approval` IS the commit gate, no separate `commit-approval`). The route's record-vs-policy split and store/enforcement modules are unchanged. Verification metadata pinned until closeout stamps the slice-09 code commit.
-- 2026-06-18T12:10+02:00 — Task 6 slice 6b: the route gained enforcement — `enforcement.py` (`evaluate_closeout_gate` + `CloseoutGuard`), the pure closeout-gate policy `worktree_closeout_apply` obeys. Revised the "record, not enforcement" framing: the *policy* is here (I/O-free), the *mutation* stays in the worktree tool. Verification metadata pinned until closeout stamps the 6b code commit.
-- 2026-06-18T01:05+02:00 — Created for task 6 slice 6a: the gate control-plane substrate route (`records.py` + `store.py` + facade). Verification metadata pinned until closeout stamps the 6a code commit.

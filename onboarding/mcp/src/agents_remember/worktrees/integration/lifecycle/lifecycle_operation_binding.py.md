@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T21:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Worktree integration](../overview.md)
@@ -40,25 +30,20 @@ functions while reserving, proving, validating, terminalizing, or resuming an en
 - This module never becomes a fallback locator, journal reader, or write authority.
 - `lifecycle_operation_location.py` remains the sole public locator-to-manifest state-machine owner.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. The repository models and state-machine
 tests govern this internal durability boundary.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Binding identity and payload fields are closed and predecessor-aware. | `EnclosureBindingIdentity`; `enclosure_binding_payload` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:24-115 |
-| Canonical digests, serialization, and bounded conflicts are pure helpers. | `locator_id`; `sha256_payload`; `model_text`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:118-165 |
-| Enclosure publication consumes the binding and digest API before any publication. | "def prepare_enclosure_publication("; "binding = enclosure_binding_payload("; "binding_fingerprint = sha256_payload(binding)" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:180-265 |
-| Readback verification re-derives the same binding and request identity. | "def _validate_manifest("; "class EnclosureBindingIdentity:"; "def enclosure_binding_payload(" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:1031-1107; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-25; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115 |
+- Binding identity and payload fields are closed and predecessor-aware. [1]
+- Canonical digests, serialization, and bounded conflicts are pure helpers. [2]
+- Enclosure publication consumes the binding and digest API before any publication. [3]
+- Readback verification re-derives the same binding and request identity. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository authority is owned here.
-
-## Update History
-
-- 2026-08-24T21:43+02:00 — Created for the hard-limit repair that separated pure enclosure binding
-  and serialization from locator/manifest I/O without changing the publication contract.

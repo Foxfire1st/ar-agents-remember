@@ -1,0 +1,71 @@
+{
+  "path": "dashboard/src/data/harnessCatalog.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Owns timeout, retry, and stale-request cancellation around this pure read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "957ad0cf826da319a18711d8d87e3c399fcad4f0",
+            "content": "sha256:c4dbd8c6cb916fbff95892857cca3d95525b9b2e7f2264e954a34a55d9a18ed1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useHarnessCatalogRead"
+            },
+            "path": "dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Renders the explicit catalog states in the chooser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:b1e8deb090ef470275858dc95f44213ac3a85f2211a62ef9c1e2202b02d611c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchFlow"
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The serving endpoint returns exactly the narrow row shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:62878735372bc7ded2f3b12efda24c8dae061e6dc961dc15ddf16f4e0f0793f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_harnesses"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:55a64dff25ff75981fb3cdd5e3aa78a288e464cda66a1916a9293ae2e0abc711",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

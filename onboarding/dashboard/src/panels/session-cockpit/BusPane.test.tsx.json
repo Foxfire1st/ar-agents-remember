@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/BusPane.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fleet, filter, focus-loss, and draft persistence cases.\n\nAnchor: \"keeps a reply draft keyed to its entry across focused-seat filter unmounts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3348411cc96f08fcc0f16831336d6f7f0c5020c6",
+            "content": "sha256:9a365a4ed3ec563c63c154bce09a391ed675e5e102ffdae81843ac36faac855e",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact POST and lifecycle-only zero-write cases.\n\nAnchor: \"posts a developer decision to the original sender through /api/operator-inbox only\"; \"renders a lifecycle-only source as unavailable and performs zero POSTs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3348411cc96f08fcc0f16831336d6f7f0c5020c6",
+            "content": "sha256:e74662091d59ce1985fbd74aa7a3e13da9d7c0ba99445e35d46d161bfec1fc6d",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3348411cc96f08fcc0f16831336d6f7f0c5020c6",
+            "content": "sha256:17d69811f3e659b30542700ede5baeee2920bbfb5bee8f6befd539311d5afd81",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Virtualized per-entry async state case.\n\nAnchor: \"keeps each reply's open\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3348411cc96f08fcc0f16831336d6f7f0c5020c6",
+            "content": "sha256:6982c4ae856177d53025be71d1e7224fa6e1434e352820f032c795085cd63b9c",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared coherent and legacy fixture pack.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:09d5838430e42de8c840279e81f1e91db3fe24094e7e84902b5e4e222b6e46f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_PICKUPS"
+            },
+            "path": "dashboard/src/test/fixtures/busScenarios.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,210 @@
+{
+  "path": "mcp/src/agents_remember/certification/readiness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The vocabulary must project one typed readiness semantics with no entry point translating red or unavailable facts into pass/skip/generic failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:048ec0b9d18e456319af23f65402582ffa5080b0c04a3fadc5fa285e73f1c7c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_closeout_readiness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The certifying-plan precondition and one-revision guard fix the exact Gate 1-5 scope and forbid mixed generations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:cc9a2ac64bc517ada14fad2bad06d4f5ad41bc26c8cb497c16bc246d45488479",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_certifying_plan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:241a6a0ae43a9f0da5280c7330a697521d4f81b8bdcc1bbe1d9c67c2e599dd1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Admission binds the envelope to the exact repository, candidate, profile, and plan and forbids pre-admission gate starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:858f0261e325893fb52bff6d65de99ed6b17e29a0661583e0c64eac57a1d05d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Gate compilation preserves ordered rail catalog, typed result contract, bounded evidence, and current-green certificate binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:c1292289ca624b53d9315018084328227f0d1a0526766d19ce1f10e4db26bdf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:d3e327c03470e0833be450b151b90fe3e43c07332e78b6ec7386af58925c3bf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_manifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:dad7203c32a84c4aa97210637fb341aa1d247bbb5ceccf90b47a744c9b18b61c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_result_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current-green certificate chain validation and the red-gate/currentness barriers gate later starts and finalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:acb0414271a8622a04f14432c9ac9be60997c4feaf9f6749f23265156d4f994e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_certificate_chain"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:ef848d0d0c852ed62f353453f8090491f187fcdd14c442cbec58b65586090de7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_gate_barriers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Lifecycle finalization is gated on certification readiness and validated for currentness when finalized.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:9ba636ff7e73c4071889d7ca626ef759145ec216ff3b8172cb4e72ca2abdc90b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_lifecycle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The certification facade imports and re-exports the readiness compiler and surface catalog.\n\nAnchor: `readiness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "389ba6c651fb5023baa08c53db2be4886375fbd1",
+            "content": "sha256:1dbb91adf69115b6d87e53b5ff482171f434e8004f2f1258ca2c19597ba42b46",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The readiness projection model self-verifies its content digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6acfc185342be3a34564d96252e15ab57f43a15d",
+            "content": "sha256:2ced7be92666c223587298a1b087e60ca6a52e87410cab86144320e277b447be",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutReadinessProjection"
+            },
+            "path": "mcp/src/agents_remember/certification/readiness_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6acfc185342be3a34564d96252e15ab57f43a15d",
+            "content": "sha256:1cf54b8277e8112bfb2cef21e18d10463fb1bf665a0dad9670d2a52c61aac9c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/readiness_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Readiness semantics are consumed by the public certification facade and the focus coverage suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4280742ab94075651c308fbb89b0d65a75cb239f",
+            "content": "sha256:4c19a8488d3494aa2fb32df5a8d5377fbb7f8be7138857eabc8d0336b2922ba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_closeout_readiness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

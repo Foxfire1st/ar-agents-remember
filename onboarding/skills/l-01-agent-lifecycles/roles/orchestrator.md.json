@@ -1,0 +1,245 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The seat's self-definition is an event loop over durable task state that never converses with the developer.\n\nAnchor: \"You run one sprint's backend as an event loop over durable task state, not a conversation.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:cbff62ccb165b0920cd2b537eba76b7c84589aecc7cfd0ae9ad7e5aa2ab12d5b",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Role-seat immutability refuses a pasted brief for another role.\n\nAnchor: \"**Role-seat immutability.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:c2462103ffdedb891d944ad73b77336ac83c9c1d337624c606b812dc38dcd6df",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The producers' curator hand-off list is passed through to the curator unparaphrased.\n\nAnchor: \"**The producers' hand-off list, handed to the curator unparaphrased.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:b2859f624700f8ea56c79fbcca2b9de1afa7b3c7ed1f819b33ed4fe1ad562fa2",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The by-hand portfolio-wide retire authority is exceptional and the write surface is enumerated.\n\nAnchor: \"**The portfolio-wide retire authority, exceptional cases only.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:e998e4b39ef1cb58d934c0e98b77305efe63934627c5e02bbe3bfb3dc0534bf3",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The seat's prohibitions and the architect ceiling with its four-field decision item are explicit.\n\nAnchor: \"**The developer-worthy wait is a decision item**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:50af1f8052cbe6323048473ad83337b9a9a8cb202b8bdb70362b9f2cd898271b",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Provider degradation has a fixed four-step response that ends in the always-legal teardown.\n\nAnchor: \"**Provider degradation — your own four-step response.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:512b998c7b3281ed4d3fe11a80170ac17bb7eff04c1b8c5c20928954993fc223",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The generic event loop is owned by the coordination operation, which wins on disagreement.\n\nAnchor: \"The event loop itself is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:b74e52005b47cb1c1cf35f656dd1f95ae999218c119fdcb644c39de01c249a76",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The topology duty fixes super off `main`, organizational vs atomic masters, and the waiting final push.\n\nAnchor: \"**The topology, single home.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:ca97c01134b35afc7db335510b2a9ee4aa0e1ea23054f2a8d16ba61f9781442c",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Priority judgment is recorded before it changes selection.\n\nAnchor: \"**Priority judgment is recorded before it changes selection**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:293a48fe9d585cf0c203f4fcd91029fc5e2302ff19407c87189e4a308dac225d",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Release and landing follow execution nature, with worker checks and the curator's complete result as prerequisite evidence.\n\nAnchor: \"**Release and land per execution nature**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:526b15328981d1aef4a333ec962f0f50bf96996e8dfa960597f02e5824d48959",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The spirit test is this seat's alone and cannot widen a fix-verification scope.\n\nAnchor: \"**The spirit test — this seat only.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:795ddaed7bcf0d81709c6cb985ac1d3a7cb585cac95b16137a3408a853d1de1f",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Master exit decides one open manager handover gate and never treats a verdict as the decision.\n\nAnchor: \"**Master exit.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:1111f9da3f46093825ec90548a65eb1711bbee61752f12cd547942da342db413",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The seat owns the portfolio bird's-eye through eight numbered duties.\n\nAnchor: \"**Four failure rules.**\"; \"**No native sub-agents on this seat.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:60a792019574fa57c1af0ab2f75713c0a8a90fa429b409e0cea10abf371a6705",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The seat's children are enumerated with the manager/system-specialist/super-exit reviewer split.\n\nAnchor: \"**Your children and their dispatch.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:91a61db93ada4e8fab626514e0cdee26b4b1fd09bd72faebbf85ac38eb2be112",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695`|
-| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -46,7 +36,9 @@
 
 - When a record has both a disallowed relation and another model-level error, Pydantic stops at the first failing validator, so the second error appears only after the first is repaired (review R1 round 2 note).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The validator's design authority is the coordination-root note
@@ -54,33 +46,21 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R22@v1` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The problem categories, the parser and its entry points.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The problem categories and the rule each maps to. | `ProblemCategory`; `_category` | mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py:50-52; mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py:102-110 |
-| The parsed result, including unparsed record IDs that still resolve. | `ParsedTree` | mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py:87-95 |
-| Location dispatch, canonical check, relation attribution and sidecar placement. | `_Parser` | mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py:125-300 |
-| The tree entry point and the lenient base reader. | `parse_tree`; `parse_sidecars_leniently` | mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py:303-317; mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py:320-334 |
-| A disallowed relation is refused under the relations rule with its field. | `test_a_disallowed_relation_is_refused_under_the_relations_rule_by_field` | mcp/tests/test_knowledge_validator.py:281-289 |
-| A non-canonical file names the formatter command. | `test_non_canonical_file_names_the_formatter_command` | mcp/tests/test_knowledge_validator.py:114-120 |
+- The problem categories and the rule each maps to. [1]
+- The parsed result, including unparsed record IDs that still resolve. [2]
+- Location dispatch, canonical check, relation attribution and sidecar placement. [3]
+- The tree entry point and the lenient base reader. [4]
+- A disallowed relation is refused under the relations rule with its field. [5]
+- A non-canonical file names the formatter command. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **body update — census files are now read by `rules_census`, not skipped pending MIK-R20.** The code change is docstring-only (`parse` still skips `knowledge/census/`); the Logic bullet now says who reads them, and the stale Todo "`knowledge/census/` is not read until MIK-R20" was removed because MIK-R20 has landed its reader. No citation moved: the docstring kept its line count. No verification stamp was advanced.
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

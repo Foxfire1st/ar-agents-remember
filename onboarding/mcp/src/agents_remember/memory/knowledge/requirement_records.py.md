@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/requirement_records.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/requirement_records.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -80,40 +70,32 @@ None recorded. There is no production caller of this record group yet: no MCP to
 route wires `record_requirement_revision` or `read_requirement_revisions`, so these codecs are
 reachable today only through the module's Python API.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two INSERTs this record group writes through: every envelope column named, no column inferred. | `REQUIREMENT_RECORD_INSERT`; `REQUIREMENT_REVISION_INSERT` | mcp/src/agents_remember/memory/knowledge/requirement_records.py:50-58 |
-| The three SELECTs it reads back: one record row, every record row of the kind, every revision of one record. | `REQUIREMENT_RECORD_ROW`; `REQUIREMENT_RECORD_ROWS_OF_KIND`; `REQUIREMENT_REVISION_ROWS` | mcp/src/agents_remember/memory/knowledge/requirement_records.py:60-74 |
-| The frozen record row a decoded row becomes. | `StoredRequirementRecord` | mcp/src/agents_remember/memory/knowledge/requirement_records.py:77-88 |
-| The frozen revision row a decoded row becomes. | `StoredRequirementRevision` | mcp/src/agents_remember/memory/knowledge/requirement_records.py:89-105 |
-| The record-row builder: `kind`, `record_schema`, `lifecycle` and the authority home declared by the record group rather than accepted from the caller. | `requirement_record_row` | mcp/src/agents_remember/memory/knowledge/requirement_records.py:106-133 |
-| The revision-row builder, which reuses the generic envelope tuple and digest. | `requirement_revision_row` | mcp/src/agents_remember/memory/knowledge/requirement_records.py:134-154 |
-|**The seal recomputed on the way out — a row altered behind its identity is refused rather than served.**|`decode_requirement_revision_row`| mcp/src/agents_remember/memory/knowledge/requirement_records.py:176-218 |
-| The frozen model resolved from the registry the write path admitted through, not by name. | `_validated_payload` | mcp/src/agents_remember/memory/knowledge/requirement_records.py:219-240 |
-|The generic envelope revision tuple and digest this record group reuses instead of restating.|`record_revision_row`; `record_revision_digest`| mcp/src/agents_remember/memory/knowledge/facet_records.py:193-208 |
-| The envelope tables these statements address, and the immutable-revision trigger that backs the codec's seal. | `record_revision_no_rewrite`; `APPENDED_TABLE_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:103-224 |
-|The record-group operation surface these codecs serve, including the authority home it reads from the store.|`record_requirement_revision`; `_authority_home`| mcp/src/agents_remember/memory/knowledge/requirements.py:89-112; mcp/src/agents_remember/memory/knowledge/requirements.py:504-514 |
-| The row-codec round trip and the tampered-payload case that proves the seal. | "test_the_revision_row_codec_round_trips_through_the_envelope_tuple" | mcp/tests/test_knowledge_requirement_revisions.py:548-581 |
+- The two INSERTs this record group writes through: every envelope column named, no column inferred. [1]
+- The three SELECTs it reads back: one record row, every record row of the kind, every revision of one record. [2]
+- The frozen record row a decoded row becomes. [3]
+- The frozen revision row a decoded row becomes. [4]
+- The record-row builder: `kind`, `record_schema`, `lifecycle` and the authority home declared by the record group rather than accepted from the caller. [5]
+- The revision-row builder, which reuses the generic envelope tuple and digest. [6]
+- **The seal recomputed on the way out — a row altered behind its identity is refused rather than served.** [7]
+- The frozen model resolved from the registry the write path admitted through, not by name. [8]
+- The generic envelope revision tuple and digest this record group reuses instead of restating. [9]
+- The envelope tables these statements address, and the immutable-revision trigger that backs the codec's seal. [10]
+- The record-group operation surface these codecs serve, including the authority home it reads from the store. [11]
+- The row-codec round trip and the tampered-payload case that proves the seal. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T06:05+02:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): created this one-to-one card for the requirement record group's row codec. It records that the record group deliberately has no table of its own and why (a per-revision state table would be the second revision aggregate `KS-R19@v1` requirement 1.1 forbids), the two failure kinds it keeps apart (a returned refusal for a caller's request versus a raised `KnowledgeStorageError` for a row that cannot be decoded), and the two facts a reader would otherwise have to re-derive: `kind`, `record_schema` and `lifecycle` are **declared by the record group rather than accepted from the caller** — which is why the envelope's `lifecycle` stays `proposed` even for an `accepted` origin payload — and the stored seal is **recomputed on read** so a payload rewritten behind its identity is refused instead of served. It also records that the revision tuple and its digest are **reused from `facet_records`** rather than restated, so the envelope's identity is computed in one place for every record group, and the standing fact that no production module imports this record group yet. Verification metadata advances to the leaf's base commit `e963a01c` because the body was read against the current source; the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

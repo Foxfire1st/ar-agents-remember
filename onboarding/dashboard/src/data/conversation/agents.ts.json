@@ -1,0 +1,252 @@
+{
+  "path": "dashboard/src/data/conversation/agents.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The wire types this module reads (`ConversationAgentRef`/`ConversationAgentStatus`, `ConversationItem.agent`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:73df6d19d3c7609687b644bc7aa91c01a94bf40a4a32af546ee9bcc2875442d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationAgentRef"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:74181bd96a0e29114a40d310e0b8e56db44c6a4d96a6459b65dfb72f576c437f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationAgentStatus"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:dc580072cfe96fda01c3de42598e5bc2f81d32569780f998186cba1df463599e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItem"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store whose `agentFocusBySession` this module's `effectiveAgentFocus` revalidates.\n\nAnchor: \"agentFocusBySession: Record<string\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:a5bcee8cde2668353413c8331cfd092e617d5f5d221f7ad958946311f72ba8ef",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:7bbfd9aca222ef39c731591a09da9ec1ea80a8dbadf9caacdd64b7be7591618d",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:f46d4b0329e32a800bb4545a24a9078d199ca6ae3936ae10d80496b6868e0c04",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The codex roster mint: one `codex-agent-<threadId>` notice/system item per agent, upserted across the lifecycle, never optimistic.\n\nAnchor: \"def _roster_item(\"; \"item_id=f\\\"codex-agent-{thread_id}\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc5d56e85490aab91eef76324debab67aeefa93",
+            "content": "sha256:79cdf5f88cf01810c1a42d40e2a04bcabca519c5d8b59560c91ee291d0382853",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc5d56e85490aab91eef76324debab67aeefa93",
+            "content": "sha256:26313d250836dc7a144a31d6b7a227b34b228b9523eaef33f6d964f8d0b54b51",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The claude roster mint: `claude-agent-<taskId>` from the task_* frames (with the join-key tool upsert), terminal summary as a \"summary: str\" TextBlock.\n\nAnchor: \"def _task_lifecycle_blocks(\"; \"summary: str\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d9b779060902566e6c400682e2f427b660172a6",
+            "content": "sha256:55882afbfdfc59d18a09ea9ea369f1586f7e7cf540f1936377103dd992773cf2",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 496
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The surface that cycles/filters by this model (ArrowLeft/Right, Esc, focus bar).\n\nAnchor: \"cycleAgentFocus\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:7dfa3d28651975c89f4ffd79f63b233a83a3a0fd766b302e3199fb2f5de1ac21",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:c5d29834d9bd67f57fd56574e1e803a7dded15a4f39acf70a1214b310d4ab76d",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The roster strip rendering `ConversationAgentView` rows.\n\nAnchor: \"import type { ConversationAgentView } from \\\"../../../data/conversation/agents\\\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a1bfab424e689fe7b7049cf98b79b519c671eda",
+            "content": "sha256:eb43af17241bb22ce89c414a5a959395690f72d66bd6ece1fc50379231598f95",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The agent badge rendering `agentLabel`.\n\nAnchor: `agentLabel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccb97957c00edbe63e2a342a102589edeb21dc8e",
+            "content": "sha256:292d29f0dfe58c825dee6466505502c44f1fc1ac6226a67885cf004d5934df16",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The unit pins for every rule above.\n\nAnchor: `isAgentRosterItem`; `deriveAgents`; `cycleAgentFocus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "468ca8341b7982fc03f6436e463d8fb97ba37831",
+            "content": "sha256:1038c38077db20f81f4042a30cd121b01aafb9dcd7787e8e2c3c9874896019cf",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/data/conversation/agents.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "468ca8341b7982fc03f6436e463d8fb97ba37831",
+            "content": "sha256:81d3b7ce1df12de294fa36c6c1419e729315d7de1f85695c6dbb8e9a2095e83d",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "dashboard/src/data/conversation/agents.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "468ca8341b7982fc03f6436e463d8fb97ba37831",
+            "content": "sha256:1f748d6e885d1ef0db8a875e2778b32b61f52fda41ac3087e44ba0beeb7fee2a",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "dashboard/src/data/conversation/agents.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

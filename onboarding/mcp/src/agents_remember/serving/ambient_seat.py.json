@@ -1,0 +1,62 @@
+{
+  "path": "mcp/src/agents_remember/serving/ambient_seat.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Plane caller resolution is a single trusted-context function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ecdd2229eefe13202e6c327d6ed47de5f858c14",
+            "content": "sha256:197164bb4cbd0f4360d565b5251f9fde07c23fb35218435f8666859e711f6767",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_ambient_seat"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ecdd2229eefe13202e6c327d6ed47de5f858c14",
+            "content": "sha256:4115212ffd5e91f1b07c352d63d43a3cb12370bf6c42f80f8585e15d53b43d22",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ambient caller resolution returns the typed marker only when no plane identity exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ecdd2229eefe13202e6c327d6ed47de5f858c14",
+            "content": "sha256:927e962e1629b810089006fb6b1d99daa9f1c86776fb45c78150af13897e19e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_ambient_caller"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ecdd2229eefe13202e6c327d6ed47de5f858c14",
+            "content": "sha256:e5c2fdfbc2ec06c2ed0206ed2a4e29b8968b0c2409ea05f5ba940531c09a79df",
+            "locator": {
+              "kind": "symbol",
+              "name": "AmbientCaller"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

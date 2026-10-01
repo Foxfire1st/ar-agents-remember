@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/repo-overview-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The repo overview template defines metadata, route-based verification fields, repo purpose, hot-path summary, architecture, code structure, functional areas, cross-repo references, build/dev commands, invariants, glossary, docs references, next work, verification needs, and update history.\n\nAnchor: `# <repo> — Onboarding Overview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0d25e794d910da952d9aa38fd2fdaedc069a6e1",
+            "content": "sha256:cb2230807aa6754e065df88288f816525872fc565e87deba7f4dec0140944333",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`c-03-repo-bootstrap` skill treats the root repo overview as the minimum successful bootstrap output.\n\nAnchor: `# Repo Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8351d63d37d1574a7faf21fa2bc613718b2f169d",
+            "content": "sha256:64b04d5363647b377e61c4f1f192716e3f45f198de163e4a13938adde3a74450",
+            "locator": {
+              "end": 1265,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-03-repo-bootstrap` skill Phase 3 synthesizes the root repo overview from state, input ledger, scout report, area briefs, and existing overview when present.\n\nAnchor: \"# Scout Report — <repo>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8351d63d37d1574a7faf21fa2bc613718b2f169d",
+            "content": "sha256:7486477afec572c00f0c627d5568d976227831d4a9619a279d2e6abac8d55819",
+            "locator": {
+              "end": 610,
+              "kind": "line_range",
+              "start": 610
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

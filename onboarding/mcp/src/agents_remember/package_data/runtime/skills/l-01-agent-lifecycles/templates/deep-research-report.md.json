@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from.\n\nAnchor: `## Companion Files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:570999b7324573789a8d0d6caba9f23f59f631d587f74a3ff5612422e1e34f9b",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from; the router shrank from 620 to 179 lines in 260915-CAPS-L1, so the anchor is rebased.\n\nAnchor: \"## Which Lifecycle Am I? (the router — exactly three conditions, in order)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:c20441bf8ed2bfc169b5d9e443eee76eaf66923041b438b83ff343e5b215b9ae",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance.\n\nAnchor: `# Deep Research Report Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee9711668ce01ae6eda8285a9c976a13a45a3e7f",
+            "content": "sha256:9aae8ab2e8c637dee0b072be529508fed4956e48d0c519a5b4b70d4894100d5d",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

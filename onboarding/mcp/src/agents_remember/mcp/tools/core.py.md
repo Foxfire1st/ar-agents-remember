@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/tools/core.py
 
-| Field                  | Value                                          |
-| ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `mcp/src/agents_remember/mcp/tools/core.py`    |
-| doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                  |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -77,50 +67,3 @@ keyword arguments, through the same response-model validation path as the rest o
 Core tool adapters now import runtime installation from `application.runtime.install` and skill
 installation from `application.runtime.skills`. Payload validation and transport-thin forwarding
 remain unchanged; the move removes the former flat application-module ownership.
-
-## Update History
-
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: `runtime_install_payload` now takes one
-  `RuntimeInstallRequest` instead of four keyword flags, which is how the registered tool's new
-  `experiment` parameter becomes the run's own selection input rather than a server-wide ambient
-  setting. Recorded the drift-freedom rationale and the `selectionSource` reporting. This
-  candidate is **uncommitted**; verification metadata remains closeout-owned.
-
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: the transport-thin builder now accepts the
-  application-produced strict payload and has no serving-domain dependency. Verification remains
-  closeout-owned.
-
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: `server_info_payload` now requires and serializes
-  the shared boot-resolved `ServingBuild`. Verification metadata remains pinned until closeout.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-13T09:05+02:00 — L23 curator: reviewed the two runtime import moves and recorded their
-  package ownership without claiming a tool-contract change; final provenance remains
-  closeout-owned.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `resolve_context_payload`'s five flat locators collapsed
-  into one `TaskRef` (`resolve_context_payload(config, task, *, worktree_name=None, topology=None)`),
-  forwarded to `resolve_context_tool(config, task, ...)`. `RuntimeInstallRequest` is now imported
-  from `agents_remember.install.runtime` (re-exported by `controllers/runtime_install.py`) rather
-  than defined in the controller. `runtime_install_payload`'s own four flags are unchanged. The
-  flat MCP signature callers see is unchanged — the packing happens in
-  `mcp/registration/core.py`. Verification metadata pinned until closeout stamps the L2 code commit.
-
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `resolve_context_payload` now accepts and forwards `parent_task` and `leaf_id` for nested task-root and leaf-enclosure resolution. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-10T08:39+02:00: `context_packet_payload` gained the `include_freshness` forward (issue #54 freshness section).
-- 2026-06-10T05:30+02:00 — `runtime_install_payload` files the full install detail via `write_tool_report` and returns `compact_runtime_install_payload`: summary counts, rebind digest `{attempted, ok, phases}`, first 5 messages + overflow marker, `reportPath` (the rebind runs were historically >50k chars).
-- 2026-06-02T04:40+02:00: `skills_install_payload` dropped the `layout` argument after the installer became a single flat copy (U-01-core-skills dissolved). `l-01-session-job-lifecycle` skill series, Sub-task B/S7, mcp 1.1.0.
-- 2026-05-30T21:33+02:00: Documented `runtime_install_payload` forwarding the full `RuntimeInstallRequest` including `install_provider_deps` and the new `no_cache` flag, and `skills_install_payload`'s `layout`/`overwrite`/`archive_existing` forwarding. Verified against `8927f03`.
-- 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the install payload builders.
-- 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).

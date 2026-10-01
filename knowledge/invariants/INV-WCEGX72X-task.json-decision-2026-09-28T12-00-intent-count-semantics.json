@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The changed-intent summary of one leaf review comparison: invariant and family joint-guarantee head revisions of its before and after knowledge snapshots.",
+  "conditions": [
+    "Heads are chosen by the revision comparison's head rule (revision_heads).",
+    "A relationship-only change is a successor with equal text and record status whose realizations or members differ, or an unchanged head whose realizations moved."
+  ],
+  "exclusions": [
+    "Change-set line totals and subject-catalogue totals.",
+    "How an acceptance-only revision is worded in the reviewer (R35/L49)."
+  ],
+  "id": "INV-WCEGX72X",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "7096a088-990a-4ee5-92ea-3a9e503fb06d",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Intent count semantics: + counts invariant/guarantee revisions present only after (added or revised), - counts those retired (removed or superseded); a revision counts once on each side; realization/membership-only changes are shown in the reviewer but not in +/-; missing knowledge is shown as unavailable, never +0 -0.",
+  "status": "proposed",
+  "supersedes": []
+}

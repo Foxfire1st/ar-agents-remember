@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelinePremeasure.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The premeasure hooks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "371aa5390b14d41c0569e0ccaab85ef5085d0f19",
+            "content": "sha256:95149cf9e17bd8be4a1ab7960bb64670eeb4e9ab4c90885f8bcbcc1b6aaa4094",
+            "locator": {
+              "kind": "symbol",
+              "name": "useStoredMeasurements"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "371aa5390b14d41c0569e0ccaab85ef5085d0f19",
+            "content": "sha256:0f25f2e3f9b06a90722c7fd9642b7fe3a43809f9d9e1004d7704f11dd2f31827",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePremeasureSlice"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "371aa5390b14d41c0569e0ccaab85ef5085d0f19",
+            "content": "sha256:237d9d9b057afa492d05a23b73531c341d96c67253134e57fcc24840af5997b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePremeasureCompletion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

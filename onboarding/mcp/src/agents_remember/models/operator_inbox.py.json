@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/models/operator_inbox.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The response models cover post, poll, and consume payloads and reuse the inbox state literal.\n\nAnchor: \"class OperatorInboxPostResponse(ToolResponse):\"; \"class OperatorInboxPollResponse(ToolResponse):\"; \"class OperatorInboxConsumeResponse(ToolResponse):\"; \"OperatorInboxState = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
+            "content": "sha256:5bbf269c860c09c840e12b1fba426e926f4a73426c7a7e4d0f77b8e1fc7e572a",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
+            "content": "sha256:f7a11a712169f6d5778a29235a95cfa2c75599e63bac6ad38da1a78b126c799b",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
+            "content": "sha256:123e00ddf798804313ed21828b880cc6f1b005b47ba2c4ec4a9468f2469be071",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
+            "content": "sha256:e4d13a980dc1ed1153ee65a7edec5b94a8ef720f886554ecd2c270a5aa29a039",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registry maps operator inbox post, poll, consume, and supersede tools to their response models.\n\nAnchor: \"\\\"operator_inbox_post\\\": OperatorInboxPostResponse,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:34fe7d6ec39d9718fa9794401f8ebf9e597bc9930f9d8b78f6ec096710e1bf40",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

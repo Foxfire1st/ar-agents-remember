@@ -1,0 +1,220 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/unexplained.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: both subjects and what satisfies an item by coverage.\n\nAnchor: \"Unexplained changes: the item subjects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:8131100c98d3b8498a664a29b9e7d08994471730597e4006df6e01c06e832803",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The history row kind built on these patterns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947f3b3df2af91c5b76a13a5eafd190a4d4d6e74",
+            "content": "sha256:b297338c0e33a8419088ba8d4744a1f9dcfceecfb4895f5f8cfde191bb2ba85d",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnexplainedChangeRow"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every case checks that the stored predicate agrees with `satisfiedBy`.\n\nAnchor: `unexplained_item_open`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:e95dee0f0297629fa18b3cdc979c6196bfd8dd9412228126c7a2ff5633037b51",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The kinds, the disposition and the coverage states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:e520953064708233183c3f6c388b86555b158a5f898a769fb1720989409570cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "HUNK_ITEM_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:b78876411fe82d77795f78b7a571a387f7098f945db63318d406b529dae28b51",
+            "locator": {
+              "kind": "symbol",
+              "name": "FILE_ITEM_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:9a30f3a221277593c028918f10ce27f8575cd5c15c38ad42fcf8eee54c46d067",
+            "locator": {
+              "kind": "symbol",
+              "name": "COUNTED_CHANGE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The subject patterns and the row-subject pattern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:b90ec4b9ec1ccef5ccd8fce75f170764dc9967dbb8f4e67da30b8d54e584688d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROW_SUBJECT_PATTERN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hunk subject spelled and parsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:b60772fe790f4832181aa4f66c9c87bd180b2370af8e0453cf60022db632429f",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunk_subject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:7b90b75254d921a08c81d136246d63f3ff9e3f3f8df2311bd34bbc44d12429e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_hunk_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The item ID is a function of the subject alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:644f7c2670e9b292710844ac61a53a178829bd9035aa3709d6452bfe139eff3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunk_item_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The file subject, `@absent` when C lacks the path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:007db88111eef14712699f7872147c27496052b491a691770344698d72bfc7b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "file_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The row subject that answers an item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:ad9ec2c22eec119da0e1f85f0e9a1c3e98d1a4db4edcc86585c98e77550f7a54",
+            "locator": {
+              "kind": "symbol",
+              "name": "row_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Covered: the row; uncovered: the onboarding trace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:39b0cd7ac374c1852152d8a2f8d1f26352994393969238aa7eaf9bd728aeca33",
+            "locator": {
+              "kind": "symbol",
+              "name": "unexplained_satisfied_by"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The gate's predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
+            "content": "sha256:2a46a8dd16dfde5feba21f8eceb0501ea84a0672ae07caaaa874b0acaea2df6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unexplained_item_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

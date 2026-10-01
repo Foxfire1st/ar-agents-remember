@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/documents",
+  "references": {
+    "1": {
+      "note": "Projection admission precedes staging; declined claims retain their original bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcc8d3100e55d4a643fb3035b03c4a53e5165dc4",
+            "content": "sha256:502a9eb1d6a45360d4edbdfc1bb93ef896cb3bc2e2ad41125ebcf7c600f87dfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decide"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/fixer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Accepted batches check complete document bytes and held source/cell bindings before atomic publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:cc49329bd1aeaf9ff0c541e0fe159358ff0927d7dbbae84ed4cbe97cf07ac420",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentTransaction"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

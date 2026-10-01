@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_evidence_lanes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Incomplete or ambiguous registry is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e614928ddff39aa02dafe0ea5fcb3a999c2b2e17",
+            "content": "sha256:87a0604dee8c7ba0cda3289149106ae9ce3555d69194dd54f16992855f4bf3ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_incomplete_or_ambiguous_registry_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

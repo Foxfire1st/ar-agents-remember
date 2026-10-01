@@ -1,0 +1,542 @@
+{
+  "path": "mcp/tests/test_review_bounded_pagination.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the four load-bearing properties and of what it does not re-derive.**\n\nAnchor: `compose_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:a37696e26246965e083244e83fd0c2ec1e84efcc02fba5ff635478c3c4c29fe9",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:903c1135d7a4d8154ebfd666bcff38abd2e6eee739368ec13a9dfbfe8cdbba4f",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The records walk: four pages, the same union property, no duplicate and no loss.**\n\nAnchor: \"test_every_page_of_a_large_records_selection_is_reachable_without_duplicate_or_loss\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:6bee5d4ab64804a8edbf202c8aa6aca9f1d346d5645442a6dcdca4ec7e5539d9",
+            "locator": {
+              "end": 562,
+              "kind": "line_range",
+              "start": 535
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The packet's failure example: a cursor whose generation moved is refused with the new-generation action, and the response is the first page of the comparison that is there now.**\n\nAnchor: \"test_a_cursor_from_a_moved_generation_is_refused_with_a_new_generation_action\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:00a140bbb93f6722a9dcdbffd129c0d7fdb3c6951e56a2f5fcbf8e8cd44ddfd8",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 565
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The page-size boundary admitted by the route itself: 64 served, 65 and −1 refused by name with no uncaught request-model error.**\n\nAnchor: \"test_the_transport_names_the_input_it_refused_and_bounds_the_page_it_applies\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:d448ff315605e6c483e43a53183f18fbe2bf8720c72e2a4db65227e063ff1ca4",
+            "locator": {
+              "end": 689,
+              "kind": "line_range",
+              "start": 606
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**A foreign cursor reported as the wrong collection rather than as a moved generation.**\n\nAnchor: \"test_a_foreign_cursor_is_reported_as_the_wrong_collection_not_a_moved_generation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:19f692840cb29583b9358dcbc650f6bd4904f14f931f11cc09755f93d88bcb34",
+            "locator": {
+              "end": 724,
+              "kind": "line_range",
+              "start": 692
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**A records remainder never names a cursor that cannot reach it, proved by presenting that cursor and reading the refusal.**\n\nAnchor: \"test_a_records_remainder_never_names_a_cursor_that_cannot_reach_it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:f11603fc7ac8c5a3a89d4802a3d2589567745966c41065bbc9a7fab8e3e08879",
+            "locator": {
+              "end": 765,
+              "kind": "line_range",
+              "start": 727
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The refused records cursor stated with its code, both identities and a live first page of that collection.\n\nAnchor: \"test_a_refused_records_cursor_states_its_code_identities_and_a_live_first_page\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:b3e0b3be09ae9618eabb32d9b902506455c626a63b6a8b725c553398b57c10f6",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 768
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The whole review states no remainder without the way to reach it, and the named request really reaches the population.**\n\nAnchor: \"test_the_whole_review_never_states_a_remainder_without_the_way_to_reach_it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:1b248becb119902cf9a2f6b7af07e97b924795c469cf2a8730914921b8a24c87",
+            "locator": {
+              "end": 838,
+              "kind": "line_range",
+              "start": 807
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The entry stays a catalogue: driving it calls no comparison and no view, and its body carries no page at either dataset size.**\n\nAnchor: \"test_the_entry_read_populates_the_button_without_fetching_record_pages\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:7d0d76da58693615dc11a01ea873e77638f1b61240e20a5fe472461b345f6f26",
+            "locator": {
+              "end": 878,
+              "kind": "line_range",
+              "start": 841
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The page arithmetic under test, and the page value whose constructor refuses a remainder without a cursor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b04b0a10c072c0e4e724844acb5325af5b83cfe",
+            "content": "sha256:82bbedbac249feff796b3508d6f4fae4d678dc28a4082cad74225624f6dba52b",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_page"
+            },
+            "path": "mcp/src/agents_remember/application/review_pagination.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b04b0a10c072c0e4e724844acb5325af5b83cfe",
+            "content": "sha256:9a4c272f27a3144db69a73c923360fe901d21fe8401fc90678b7a88544949f26",
+            "locator": {
+              "kind": "symbol",
+              "name": "records_page"
+            },
+            "path": "mcp/src/agents_remember/application/review_pagination.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b04b0a10c072c0e4e724844acb5325af5b83cfe",
+            "content": "sha256:4245b71f13e23616eb027bec122bedc7ac9d79b1802f80055656fd5a6863f67b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset_comparison_page"
+            },
+            "path": "mcp/src/agents_remember/application/review_pagination.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:d231f5d80a2730aab1061832becb5f2d5f3b3bd9ead09eb7a107fa018380ad30",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCollectionPage"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:c719a39e743a61037b67049dc3c4224ffc93e0b6f3712b54d83bb57dae8abb34",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 366
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The two page refusal codes the transport cases read.\n\nAnchor: `comparison_page_reset`; `comparison_page_unreadable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:fbe0325893e222ac3252111770681368eaa0f780917dc3232c130ab08134c9ea",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:92e08f692ea00fdb8852968ef6c4505506a82510e4181c414e420e19520974be",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lane marker, the two dataset sizes, and the two page sizes the walks use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:f2bdf9bab70f1263b5d4563fff7997c89112daccf7fb469609070864932d051b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SMALL_EXTRA_CLAIMS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:b178b0712024a5b26ca08bce777ecc55cfdcac53fec3b4aa0688f003e052cbad",
+            "locator": {
+              "kind": "symbol",
+              "name": "LARGE_EXTRA_CLAIMS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:62c36eab61faffa337d33a988452689fc00b785c0faec9ea0614df2359e19bff",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_PAGE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:01bf1b7ddadd2b5c2d55db1182ba74657e644699c183297280ac2a269c49ffe8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORDS_PAGE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The lane row and the three exact-scope consumer rows this module's registration produced.**\n\nAnchor: \"unit-regression\"; \"mcp/tests/test_review_bounded_pagination.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:66f537e142dc1e12668b4140fd40c746fe4aed23fade443a40607fba20b7a128",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The real two-snapshot fixture, built through the public store operations over two real Git trees.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:5649cae7a8a3f539af9decc5b1777143459a96e2cad3c745ab7a3c21287c8503",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaginationFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:2a1cef536a81d3ccdcf98cf893108cf6ecb4cb5997ea921ae8db3a864a4c2944",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_pagination_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The composition, the real route and the query builder every page is read through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:1d678b1af567cf6d1cafb907d384b714e014d39dfcb6e79e1f7260e3fb7ea5c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_page"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:9753689097ee78fa9154406860c4ba76a6de7471718d3ae03369af1fc848045d",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_client"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:6cb99e3febf0cb7e7bdc034510547aff4a9dff216f8f98731a4f25662bb03184",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_query"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:fd03bcbabb65e3a94ebd6758a956c7b500e294b94037e160206c780a9183eaae",
+            "locator": {
+              "kind": "symbol",
+              "name": "paged_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The walk helper and the two independent answer readers the cases compare the published counts with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:15af2f837e4063514d3979ddb83b576f34f11e9c79bec996b80871c88aa14163",
+            "locator": {
+              "kind": "symbol",
+              "name": "walk_comparison"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:0c54f6fd3282b81280cd81ba719bbbe553afa9ff6ffcf98177589d1e59f68a6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_answer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:c0502b8d2812e32b8a63a5caa4c4de8140b91ba9fed8002fc18602c264bc2d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_item_ids"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**A complete comparison is one page: no remainder and no cursor, so a whole selection is never presentable as a truncated one.**\n\nAnchor: \"test_a_complete_comparison_is_one_page_with_no_remainder_and_no_cursor\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:dbacc818e839da7257a97563d798370885b51dbb167eaf139ef55984d9706766",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 373
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The large walk: every page through HTTP, the union the comparison's own total exactly once, each page's counts adding up, the scope beside the counts.**\n\nAnchor: \"test_every_page_of_a_large_comparison_is_reachable_without_duplicate_or_loss\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:44f7b79458b2d5ead7159be9cd6e26c2b22cb3070808d3c79369035f504cfb28",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 389
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The item windows partition exactly and no rendered row is lost — with page attribution of a location row deliberately not asserted (`ICR-R08` resolves the line).**\n\nAnchor: \"test_the_item_windows_partition_exactly_and_paging_loses_no_rendered_row\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:754b42886b56a6da5e0ade5a8946c96c61d8698963e1263aafacb7391e5aa3a5",
+            "locator": {
+              "end": 488,
+              "kind": "line_range",
+              "start": 429
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The records collection publishes its own bounds and a cursor that is a different document from the comparison's.\n\nAnchor: \"test_the_records_collection_publishes_its_own_bounds_and_cursor\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "494080e1c1fc1003a6aaaa3194f1d239023bfe52",
+            "content": "sha256:96b2ad213298ef332ef74f6156e4be7dd74ac8e14c42b89da50ee3a6eda16d7d",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 509
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

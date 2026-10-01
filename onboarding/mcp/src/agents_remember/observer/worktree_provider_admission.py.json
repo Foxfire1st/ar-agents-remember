@@ -1,0 +1,140 @@
+{
+  "path": "mcp/src/agents_remember/observer/worktree_provider_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provider admission joins enclosures and rejects only a *present* terminal/non-provider-phase log — a missing (pruned) log leaves the durable enclosure admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
+            "content": "sha256:64203d068fcd3ccebcb13a3562f1e453dc5a584c589c31070ad6cff6428f068e",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_worktree_groups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The archived-cleanup vocabulary is declared once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
+            "content": "sha256:731a527878fd91faeb0f25f39cd7a2c4605f3beadb6c811943cf1575afa1ae91",
+            "locator": {
+              "kind": "symbol",
+              "name": "ARCHIVED_CLEANUP_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Active-enclosure groups keep any non-archived enclosure live; a missing log never drops the group (the Engine Room disappearing-worktree regression).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
+            "content": "sha256:6efc24cf6701fa2957a625d04e56de28b3a349d45a1497d2cda28bb0d787e492",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_enclosure_worktree_groups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A non-retired master series retains all its leaf lifecycle ids; retirement requires every leaf archived AND the one-week grace past the last finalized contract mtime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
+            "content": "sha256:f08e1c0714c6fb7a2ed60409168206516283e202cb56b5b10c6ab14557cfb0cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_retained_lifecycle_ids"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
+            "content": "sha256:6ed4dc830562e115740738f921655d8cd08a4b4a4d89ec4c06f7e42507d02988",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_is_retired"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
+            "content": "sha256:00395b1f2c36a0f4733f2a80cb6de8bf410a25a684683f98004b8918f1844b45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_finalized_at"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The projection store reads enclosures first, then passes `series_retained_lifecycle_ids(...)` as the retention `protected_lifecycle_ids`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5817f1ba2e9179b5a8ab60a643d5971ca85cc22e",
+            "content": "sha256:3a513f297bfa5429771604e8c96ea04352c007c364b9e3e027d39af1cc784a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5817f1ba2e9179b5a8ab60a643d5971ca85cc22e",
+            "content": "sha256:c3c1bde9d4eb82da7a474dc64e08b757d7c24dcd2a8114355883b36b9dcd87a6",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Retention honors that protection set, exempting protected logs from inactivity pruning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_expired_lifecycle_event_logs"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

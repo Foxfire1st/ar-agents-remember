@@ -1,0 +1,113 @@
+{
+  "path": "scripts/harness/shared/render-starter.ps1",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generator that fans this file out verbatim to all eight starter packages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:bb2026a0c603d64140bbbbff5e57ecf8fae9ff8aefcded836dc90bd6981a0f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "STARTER_SHARED"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:b97b00e3242d45344ec51e9ba662263f51e4cd5fe7d17f8f006efb5393c86f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "HARNESSES"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:1558c093be0e087e187b21ff6e42f2a7cdbda8555d6072199861142e5160295b",
+            "locator": {
+              "kind": "symbol",
+              "name": "generated_files"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:8b6aa8b058a99eec27707a5a0e48885b19b63750051c252481d0b187aba15077",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_shared"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The PowerShell wrapper launches `render-starter.py`.\n\nAnchor: \"render-starter.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f1bcb96cd1a7f67dc2b62566459540ea2d53b74",
+            "content": "sha256:2c41aab4a23dcde927b4845140f90b3d52608ae62d3d80ef8452e455e3c067e9",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The renderer implementation defines `main`.\n\nAnchor: \"def main(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48702d860710153a5eceeaead202c3492b62aeb9",
+            "content": "sha256:e0b9bef4d49238a69e597b72acc12b667b9b53fa174006d1a311c03bcfecee50",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "scripts/harness/render_starter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The POSIX counterpart.\n\nAnchor: \"render-starter.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78c857d9a932925240d28162c76575a9b5a5dec0",
+            "content": "sha256:cee02d9326200adf431eed31b51fe78efbef85fe778ce0a74f761bb90226e11d",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "scripts/harness/shared/render-starter.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,58 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/architect-brief.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The launcher submits one complete identity-free architect dispatch.\n\nAnchor: `# Template — Architect Brief`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29aeaa8008c172e1821e394f03454eadd16dd0a2",
+            "content": "sha256:5435dccb3334bda8a6528f218deaa9ae72c3f25a488101ec37b0d2a7cf8b1bd3",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The resulting architect uses plane-hosted child authority without ambient fallback.\n\nAnchor: \"This architect seat is now plane-hosted.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29aeaa8008c172e1821e394f03454eadd16dd0a2",
+            "content": "sha256:01cdacc64123d8d2b1c8c6fad5c3859df5e808aed2d3c719f87f021947c27fc3",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Placeholder, canonical-address, durable-handoff, and refusal recovery rules are explicit.\n\nAnchor: \"Compiler notes for the launcher.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29aeaa8008c172e1821e394f03454eadd16dd0a2",
+            "content": "sha256:233848da4ce427bf1dac888bdcf87b0c06a183ed017e8a250d27f287fec89501",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

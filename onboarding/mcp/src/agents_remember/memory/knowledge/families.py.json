@@ -1,0 +1,406 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/families.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two rules this module is shaped by, stated in its own docstring.\n\nAnchor: \"A family revision is immutable and its payload is sealed.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:35e4953e8524d4e90cad2023cada7ae8b50d9d6ccf68a31472871b0ceba2c9a1",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared lineage rule this module applies a second time, and the batch-aware caller that hands it the declared edges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:03ffb7994e450f5d0f5321092035d4a276824955e911a7aa51f02c28f976bce9",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_cycle"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:cc30df73c3a64d4c9075131f6708ec50883e918f1e9861d0b6a423a635538f68",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_edges"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:6f9e7e0d842d124be81b6a9e58c3194d454c07d758bcd2b7fb8fb529dfb0c163",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_cycle"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:dd5f16a703bb7506a40927db71db9dfd5295b05c340d104b560a7c9e70fb8cf3",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:385796531468b90353614c713fde64bd1bd19054206e068ccc079f9a3796c0e3",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two-branch family lineage refusal and its shared wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:3113ba52bb65d593ea649a9f1aa81a4d67154bc1a400e803be50c90a29a67767",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_lineage_cycle_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The payload a family revision's digest seals, including the sorted predecessor set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_family_revision_payload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:8cca302a754f85f33d051a7cbe1fd91de833d6dcd5d73e9c9f317d6b9e707483",
+            "locator": {
+              "kind": "symbol",
+              "name": "sealed_family_revision"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The vocabulary shapes this module stores.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "content": "sha256:c897286f1f7d52613f14c07065ef24e729928f81689672330d079a572a86ada6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyDraft"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "content": "sha256:99f5823455a8859e6d9fbd3aa3336297d0c9ba5c4e054c11b8d432c5b9868acd",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRevisionDraft"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "content": "sha256:f7dc8a9853d9b7f7760131731ccb7a767af8a95db9c8ad498153b9d7c9fc90f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRevision"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
+            "content": "sha256:f28d8258683cae840272652f732b316ec568881fddb128c51a3e0f6d912b4b54",
+            "locator": {
+              "kind": "symbol",
+              "name": "StoredFamilyRevision"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The declared `family`, `family_revision` and `family_predecessor` tables and their indexes.\n\nAnchor: `family`; `family_revision`; `family_predecessor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:a2c109f5b538bccec7bed1c2a1630ec11650ba7e3662eb56a6ae5da4b43890eb",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:3e977c51c5929aa0a81269ce041aa7f1fdb6c0188dcc01bf5ea2067dd425fcbb",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:d16b7d32aa40c0ad34431cbb4c6e37dff84df4bbaa10558ee8c549d006878cf7",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Family identity creation and its label-conflict refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:c36694fae20edbd501fce9fbeaa8989e2d6b882d6a31e9e0efab3a44a87d8577",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_family"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:6a49a81882642ffddac79b2bdf0457cfca09beba9e4f214198ef7b6fab6cb095",
+            "locator": {
+              "kind": "symbol",
+              "name": "_insert_family"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The in-transaction family identity insert the batch command composes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:0c105bad99f53a1fc21766910dc371ad8c6ec535c4d7c609963ade72d22bce00",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_family"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sealed family revision operation, which decides the repeat answer and delegates the write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:0bfdf0a52c70aff88470589c1cbe3b28025ba688e1625c661594cdc85c568d38",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_family_revision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:3c64a6a197061919fb5f5da312b97a57732d7b85b41e145020620710747f2948",
+            "locator": {
+              "kind": "symbol",
+              "name": "_insert_family_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The in-transaction aggregate insert, including the deferral of the immediate foreign-key check to the batch's own pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:c96fb065de198de21d253749478a1a3a64a64d4c3dbb111587580fadd396a626",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_family_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Predecessor ownership, which distinguishes a dangling predecessor from a cross-family one and admits the batch's declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:71efbba68d5eb207ce2a5d818a2f9bdc5195a15e680aa0981f6f47adc26c093a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_same_family_predecessors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The family lineage guard, which reuses the shared rule rather than restating it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:72b96c4f71f50d2b159f6e6ae8f664f881655c30b4f663f6d9816ac2cc338839",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_acyclic_family"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The narrow ownership read used for predecessor and endpoint checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:a80b6c15a28cd229b10b0d4ef0bb75d70ceef4f21c5de27eb52ef58ec0c6498f",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_id_of_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The read surface, including the seal-verifying revision read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:c51a165b94e9dd6de79384fdbe979368a7dc0a52f33cd560713ccc13b1c1a432",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_family"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_family_revision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:8efde8a6ffa20dfab43f421de39f55bccfb3cd8f9f7b726e5a5c635dee4daf87",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_family_revision_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

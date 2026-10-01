@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/SessionComposer.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test.\n\nAnchor: \"export const SessionComposer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bb3a062aadcf8a288bd4f1b8d2af05b8b8994e2",
+            "content": "sha256:14dc939807896c9a10efe7136c43889db0ecac09e1d1305146bc9b1616c82abe",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/panels/SessionComposer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Lifecycle-free answer mode uses the exact session response route and locks duplicate sends.\n\nAnchor: \"routes lifecycle-free answer-mode by exact session\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b568217f721587fec57b4b2f12fa6bd861793c3b",
+            "content": "sha256:78bd38b90937b1fbce1fb8f61cc95395ead471d620da1302a3912acd12a21408",
+            "locator": {
+              "end": 740,
+              "kind": "line_range",
+              "start": 697
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/knowledge_reader.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/knowledge_reader.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `mcp/src/agents_remember/serving/overview.md` |
-
 ## Governing Overview
 
 [serving route overview](overview.md)
@@ -53,35 +43,26 @@ its answer once.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement: 200 for typed answers, 400 for invalid requests, 503 unwired. | "Every typed answer is a 200" | mcp/src/agents_remember/serving/knowledge_reader.py:1-13 |
-| The route path. | `KNOWLEDGE_READER_ROUTE` | mcp/src/agents_remember/serving/knowledge_reader.py:31-31 |
-| One reader question, and the port type. | `KnowledgeReaderQuery`; `KnowledgeReaderPort` | mcp/src/agents_remember/serving/knowledge_reader.py:35-46; mcp/src/agents_remember/serving/knowledge_reader.py:49-49 |
-| The GET handler: 503 unwired, 400 for `invalid-request`, 200 otherwise. | `register_knowledge_reader_route` | mcp/src/agents_remember/serving/knowledge_reader.py:61-93 |
-| The collaborator field that carries the port. | "knowledge_reader: KnowledgeReaderPort" | mcp/src/agents_remember/serving/_app_common.py:510-510 |
-| The registration in `create_app`. | "register_knowledge_reader_route(app, collaborators.knowledge_reader)" | mcp/src/agents_remember/serving/app.py:307-307 |
-| The route cases: every view served, 503 unwired, nothing written; bad requests 400. | `test_the_route_serves_every_view_and_the_reader_writes_nothing`; `test_bad_requests_are_400_and_large_or_binary_code_is_a_bounded_notice` | mcp/tests/test_knowledge_reader.py:1092-1126; mcp/tests/test_knowledge_reader.py:1142-1182 |
+- The module's own statement: 200 for typed answers, 400 for invalid requests, 503 unwired. [1]
+- The route path. [2]
+- One reader question, and the port type. [3]
+- The GET handler: 503 unwired, 400 for `invalid-request`, 200 otherwise. [4]
+- The collaborator field that carries the port. [5]
+- The registration in `create_app`. [6]
+- The route cases: every view served, 503 unwired, nothing written; bad requests 400. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new route MIK-R29 adds, recording rulings 09:42:58 F3 and 10:44:14 F15 (a bad request answers 400 before any Git call) and the accepted open point that a subtree refusal is a typed 200. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Focused cases cover all process readiness variants.\n\nAnchor: \"never claims the link is ready when the process is %s\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "966881d73f40fbc6f12f76ed5ffdf627a5903db8",
+            "content": "sha256:fa0a466ee66c20d106f9bae7815a5ebc74784ae821567f53aa70b8441afeb18d",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "267fd09d2bb63ffbe2045ca3def3110833da6bf5",
+            "content": "sha256:b8f20e3e07587956b68b976702f008f690cf0759c8117dd34f7450b7e92bab1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationWelcome"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

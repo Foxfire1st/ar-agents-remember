@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/StateDot.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/StateDot.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T08:33+02:00                           |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -45,24 +35,11 @@ consumes the same grammar word without rendering a dot.
 - Consumers must choose the accessibility mode by context: name a truncation-surviving dot, hide
   a redundant dot beside visible text.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The cva variants + dual accessibility-mode renderer. | `dot`; `StateDot` | dashboard/src/panels/session-cockpit/StateDot.tsx:8-36; dashboard/src/panels/session-cockpit/StateDot.tsx:38-61 |
-| The grammar whose visuals this renders (single source). | `PULSE_ANIMATION`; `SeatVisualState`; `seatVisualState` | dashboard/src/data/stateGrammar.ts:14-14; dashboard/src/data/stateGrammar.ts:33-42; dashboard/src/data/stateGrammar.ts:101-125 |
-| The `pulseSlow` keyframe + the sovereign effects-off freeze. | `pulseSlow` | dashboard/src/index.css:94-101 |
-| The cross-surface consistency test (rail dot ≡ HeaderStrip dot). | "the rail dot and the HeaderStrip dot render the SAME grammar state for the same seat" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:461-471 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: regenerated the grammar/keyframe/test extents and retained the full keyframe/effects-off owner range from the worker ledger.
-
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R8 added optional accessible naming: rail dots are
-  named images carrying the grammar word, while dots next to visible words stay hidden.
-  Verification metadata is pinned to the contract base until code commit.
-- 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 (R14): the single grammar renderer —
-  color/pulse cva with the Panda-literal 2.4 s ease-in-out pulse pinned to
-  `stateGrammar.PULSE_ANIMATION`, reduced-motion steadiness, and the data-state attributes the
-  cross-surface test compares. Verification metadata pinned to the leaf base until closeout
-  stamps the L2 code commit.
+- The cva variants + dual accessibility-mode renderer. [1]
+- The grammar whose visuals this renders (single source). [2]
+- The `pulseSlow` keyframe + the sovereign effects-off freeze. [3]
+- The cross-surface consistency test (rail dot ≡ HeaderStrip dot). [4]

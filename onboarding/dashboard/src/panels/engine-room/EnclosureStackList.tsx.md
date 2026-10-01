@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/EnclosureStackList.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/engine-room/EnclosureStackList.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [engine-room overview](overview.md)
@@ -36,37 +26,16 @@ One exported component, `EnclosureStackList`, taking `views: EngineProcessView[]
 - `disallowEmptySelection` plus the parent passing `[selectedKey]` means there is always exactly one selected enclosure once a selection exists; the `"all"` branch and the `typeof key === "string"` guard keep the single-key contract intact against React Aria's `Selection` union.
 - `node.health` is the single styling driver across `stackItem`/`healthDot`/`phaseChip`; the integration chip is conditional on `node.integrationStatus !== "not-started"` and the lifecycle chip on `lifecycle` being present.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `EnclosureStackList` component + props (`views`, `selectedKey`, `onSelect`) | `EnclosureStackList` | dashboard/src/panels/engine-room/EnclosureStackList.tsx:27-85 |
-| Single-selection `ListBox`; `Selection` coerced to single key in `onSelectionChange` | "single"; `onSelectionChange`; `typeof` | dashboard/src/panels/engine-room/EnclosureStackList.tsx:39-39; dashboard/src/panels/engine-room/EnclosureStackList.tsx:42-42; dashboard/src/panels/engine-room/EnclosureStackList.tsx:45-45 |
-| Per-enclosure `ListBoxItem` keyed by `node.worktreeGroup`; `textValue` = taskName + repoName | `worktreeGroup`; `textValue` | dashboard/src/panels/engine-room/EnclosureStackList.tsx:58-60 |
-| Phase chip + gate-state chips (review/closeout/integration), conditional integ + lifecycle | `phase`; `state`; `humanReviewStatus`; `closeoutStatus`; `integrationStatus`; "not-started" | dashboard/src/panels/engine-room/EnclosureStackList.tsx:69-69; dashboard/src/panels/engine-room/EnclosureStackList.tsx:73-77 |
-| `EngineProcessView` view type ({ enclosureKey, node, lifecycle }) | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
-| `EngineProcessNode` fields (worktreeGroup, phase, health, humanReviewStatus, closeoutStatus, integrationStatus) | `EngineProcessNode` | dashboard/src/types/projection.ts:233-274 |
-| `stackItem`/`healthDot`/`phaseChip` `health`-variant recipes | `stackItem`; `healthDot`; `phaseChip` | dashboard/src/panels/engine-room/layout.styles.ts:127-155; dashboard/src/panels/engine-room/layout.styles.ts:194-215; dashboard/src/panels/engine-room/layout.styles.ts:230-256 |
-| `stackList` layout keeps the enclosure rail vertically scrollable | `stackList` | dashboard/src/panels/engine-room/layout.styles.ts:112-125 |
-| `chip` styles define the compact status-chip presentation | `chip` | dashboard/src/panels/engine-room/stage.styles.ts:252-252 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T02:39+02:00 — W3-B01 curator: curated the component, selection, item, phase/status, and style citations; the W3-REV-2 correction delta repaired four generated extents so single selection/key coercion, the keyed `ListBoxItem`/`textValue` implementation, the full phase/status-chip behavior, and the `chip` definition/styles are each supported. Verification metadata remains unchanged for closeout.
-
-- 2026-06-24T08:09+02:00 — Engine Room leaf identity: stack rows now use `leafId` as the primary label when present and render the parent `taskName` plus repo as secondary context, so parallel series leaves no longer appear as duplicate parent tasks. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-17T16:15 — slice 5g G5 (side-panel fix): the repo label moved to its own `stackRepo` line above the
-  status chips; the list now scrolls vertically only (`stackList` `overflowX: hidden` + `minWidth: 0` down
-  the tree so the name ellipsizes and the phase pill never clips) and the left rail widened. Verification
-  metadata pinned until closeout stamps the G5 code commit.
-- 2026-06-16T01:55 — slice 5f S0: list keyed by `worktreeGroup` (was `node.id`); prop renamed
-  `selectedId` → `selectedKey` to match. Keeps selection stable across a fleeting→real promotion.
-  Verification metadata pinned until closeout stamps the S0 code commit.
-- 2026-06-15T19:35 — Created for slice 5e: React Aria ListBox of enclosures (selectable; textValue carries phase + gate state). Verification metadata pinned until closeout stamps the 5e code commit.
+- `EnclosureStackList` component + props (`views`, `selectedKey`, `onSelect`) [1]
+- Single-selection `ListBox`; `Selection` coerced to single key in `onSelectionChange` [2]
+- Per-enclosure `ListBoxItem` keyed by `node.worktreeGroup`; `textValue` = taskName + repoName [3]
+- Phase chip + gate-state chips (review/closeout/integration), conditional integ + lifecycle [4]
+- `EngineProcessView` view type ({ enclosureKey, node, lifecycle }) [5]
+- `EngineProcessNode` fields (worktreeGroup, phase, health, humanReviewStatus, closeoutStatus, integrationStatus) [6]
+- `stackItem`/`healthDot`/`phaseChip` `health`-variant recipes [7]
+- `stackList` layout keeps the enclosure rail vertically scrollable [8]
+- `chip` styles define the compact status-chip presentation [9]

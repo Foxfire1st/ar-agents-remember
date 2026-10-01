@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/data/actions.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Client under test.\n\nAnchor: \"export type GateDecisionStatus\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd06534f6f271a26d17e7d8fed6edf3b6e6e63d1",
+            "content": "sha256:3a2a532a3469278ed94777793ffb2f7bca270250daa7b6cac3c083cd3da95b0f",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/data/actions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Targetless actionable drift dismissal omits `target` while still carrying `itemId` and `kind`.\n\nAnchor: \"distinguishes stale gates from missing open gates\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf14cb8b9666895ed57f89ec3d95ae916b2e9d8",
+            "content": "sha256:9c915c7acd64d50e5f981b11cceb293177376ceca32536428f2c45393e8b9bd1",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

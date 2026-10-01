@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/review/triage.family.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The family context with its change facts.\n\nAnchor: \"family_context\"; \"\\\"change_kinds\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df27e65b37694acf373af0d4c051a5abcd9bd60",
+            "content": "sha256:ed27f8eb5316e31c6b2421ed0f6ff0d0f34da447bcaeb5197d9aab0a44215726",
+            "locator": {
+              "end": 1165,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The comparison token.\n\nAnchor: \"review:trees:1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df27e65b37694acf373af0d4c051a5abcd9bd60",
+            "content": "sha256:4fc79277d1b7fc80d943fc5ca4a4a78b456966c6cbf317f4651a2025eca4847f",
+            "locator": {
+              "end": 1405,
+              "kind": "line_range",
+              "start": 1399
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/triage.family.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b898b0f2d0033f2e41c815ea7c0af7c66833337b",
+            "content": "sha256:4bc915734fda6c25f05c95a1d6869924f28c25019b75ace70120c18c2f916ee7",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/review/triage.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

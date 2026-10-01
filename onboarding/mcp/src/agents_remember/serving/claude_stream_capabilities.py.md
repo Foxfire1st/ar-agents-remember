@@ -1,15 +1,5 @@
 # claude_stream_capabilities.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/claude_stream_capabilities.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -55,52 +45,25 @@ identity evidence. Effort display names intentionally preserve the exact vendor 
 
 None known for L1.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Protocol framing and startup sequencing are separate so catalog parsing remains independently
 testable and token-free.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The protocol builds the correlated `list_models` control request. | `list_models` | mcp/src/agents_remember/serving/claude_stream_protocol.py:162-162 |
-| Startup passes the `system/init` current model into this parser before returning the catalog. | "async def _negotiate(self"; "capabilities = await negotiate_claude_catalog("; "capabilities = parse_list_models_response(" | mcp/src/agents_remember/serving/harness_control_claude.py:176-223; mcp/src/agents_remember/serving/claude_stream_startup.py:84-111; mcp/src/agents_remember/serving/claude_stream_capabilities.py:15-32 |
+- The protocol builds the correlated `list_models` control request. [1]
+- Startup passes the `system/init` current model into this parser before returning the catalog. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this parser.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: widened the correlated list-model request input so the fixer retains the complete protocol construction span.
-
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/serving/claude_stream_capabilities.py` since the L2 base commit is the
-  whole-tree `ruff format` pass in `00e8379`, which re-wrapped 3 line(s), touching only redundant
-  grouping parentheses. Checked by parsing both revisions and comparing the abstract syntax trees
-  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
-  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
-  card makes about its own source still holds.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R2 — `_select_current_model` gains a
-  `requested_key` parameter so a requested alias whose `resolved_model` matches the echoed resolution
-  wins the selection tie instead of collapsing onto the `is_default` alias. This is the parser seam of
-  the claude `opus[1m]` refused-pair fix (`opus[1m]` and `default` share
-  `resolved_model=claude-opus-4-8[1m]`); `harness_control_claude`/`claude_stream_startup` thread the
-  requested key in. Verification metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: created the one-to-one sidecar for dynamic
-  Claude catalog parsing, resolved-current-model validation, disabled rows, and strictly
-  model-advertised effort menus. Verification remains empty until closeout stamps the new source.
+No meaningful cross-repo references found.

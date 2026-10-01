@@ -1,0 +1,45 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/lifecycle_operation_location.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `LifecycleOperationPublicAddress`; `LocationDecisionPayload`; `ContractReadOperationObservation` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590331dbe08479090efe9dabc59fbba2dde79de2",
+            "content": "sha256:1cc137cd41f94224bcc125ed75da065f56c5e940fa643644f7658df82df8d1c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationPublicAddress"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "590331dbe08479090efe9dabc59fbba2dde79de2",
+            "content": "sha256:5ee220336280210e877fa32611c84fbfee793098a33dccf0e74ede4b725ea6df",
+            "locator": {
+              "kind": "symbol",
+              "name": "LocationDecisionPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "590331dbe08479090efe9dabc59fbba2dde79de2",
+            "content": "sha256:d671384696cafb960af566fc9548db2a7040691b814ad169935a8a9508d88f89",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractReadOperationObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

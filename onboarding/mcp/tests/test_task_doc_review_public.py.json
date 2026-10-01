@@ -1,0 +1,125 @@
+{
+  "path": "mcp/tests/test_task_doc_review_public.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Isolated public target, creation helper, and operation caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "content": "sha256:e56585c767773429b0ffa2ba91fbaa39f5a0883d9f0eb4b7944b745ca98beeda",
+            "locator": {
+              "kind": "symbol",
+              "name": "_target"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "content": "sha256:00419ea054129f76d8ba8dd489f4780566ffced6cd81eed892085f73bebf4685",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "content": "sha256:651e659356b8f8924020e5693b932196883c09f61694d4f0a43e0c0821987753",
+            "locator": {
+              "kind": "symbol",
+              "name": "_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Absent-state projection, begin replay, sealed baseline, shrink-only successors, and final pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "content": "sha256:3654fea8aca304c5ce8c2165352701935bb27115804e9d27b5cbbb78aed7b315",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_review_operations_seal_then_shrink_findings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recording without a prior begin starts the baseline, and replacement can reset the projected state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "content": "sha256:f31064f916dbdb3aa8348b2e6d65dc722502239b0b12d9a0d642b647006caf13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_review_api_records_without_begin_and_replace_can_set_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "New successor finding refusal after the baseline is sealed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "content": "sha256:6b1394fcd62e707c7c397c6b8a4e439ab26b64307149a072bcfe645d596e8dd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_successor_cannot_add_a_new_finding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Public cap, exhaustion-only direct permission, cumulative rounds four/five, and pending replay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "content": "sha256:559bbf35d69cf5bbe7f975c1d023354931dce11a0e9a4413a1c4e39770322ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_review_api_enforces_cap_and_carries_explicit_extra_rounds"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The master document the fixture now writes first, without which the leaf the review API is exercised on could not be authored at all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
+            "content": "sha256:00419ea054129f76d8ba8dd489f4780566ffced6cd81eed892085f73bebf4685",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

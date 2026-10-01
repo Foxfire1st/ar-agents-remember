@@ -1,0 +1,313 @@
+{
+  "path": "mcp/tests/knowledge_fixture_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture shape: the identity half's two same-label successors and the graph half's families and realizations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:054298d9523f318d16eec2f4ff4ebd514b91237afb3d6f60a04b9468dfa8e8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "BranchingKnowledgeFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:e8295070a3d04609a0dd462161e3e7c53cc2071e86393b3d202a89c62ee68169",
+            "locator": {
+              "kind": "symbol",
+              "name": "FixtureFamily"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:2efef002cd8fff409589abaaee952e531bb8b3257c575a40fcd1f7b86bf813d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "FixtureRealization"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:294a942c982ac87357b058841d72fb49991d657d952428f63f65e12853688084",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:d86ca6f9de1269edbc5d6885ea3a866d30a45492ea061c3749b1faf433f7f887",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:94577d938538ed7a82d923b4d466dd240c29e725f383a7e120b322063efb8c4e",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The builder, which authors both halves through the real operations and closes the store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:436356d85a5375cb2207b22f622dc232bca56ceeaa44d4663d8a070d19627e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_branching_knowledge_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The extension helper for later leaves' scenarios.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:68fd234c015460cf601f7dc9576254ed8d6d50f414050079f9a75178a045b3e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_revision_draft"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:89389ff29006f9ce4d6ea983f87710ab9d95ec12b1a8f5698bd57eaea54e8678",
+            "locator": {
+              "kind": "symbol",
+              "name": "RevisionClauses"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:ef843e7ee34a8c630694b60bd9207d3f981b6807919eb13862cf831b98c359c8",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The step assertion that makes a fixture failure loud.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:3c439a4b793d5a5e6a8257a770cb8894eb43e644eaede6ed55fe01ae8a516535",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The graph-half construction phases, each authored through the public operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:243f5bbff138b93500cabd63285770823936d0bbda5be1c5e23baeac758ca7e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_identity_half"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:159e120a18e05af29b283187b5166d28b3f47faaae8ca797b52fc6d4dd42b585",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_graph_half"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:c254f52967e63ba4f55f5a57a8d9daa4bbcae24764a92df8f0a529505ef12e0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_families"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:3056741f2aa60d459b5473d444a57b67bbb6425cae99d59a37f763881eb04f96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_realizations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The registered stable contract, its evidence node and its five declared consumers.\n\nAnchor: \"contract:knowledge-identity-branching-fixture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:674cc0e45bcaa39e972d5253c4e0a4e204d360ea774269c0c705222b6bb574fe",
+            "locator": {
+              "end": 1217,
+              "kind": "line_range",
+              "start": 1217
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The identity-conflict nodes that cover the contract in aggregate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:d0e9a49e2fe7c2842e9814361b5e9afdfdadaba9f970099b2380da91106e0cf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_same_label_successors_reopen_as_separate_revisions"
+            },
+            "path": "mcp/tests/test_knowledge_store.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:f1c5214b7041437dd1e547404084c3487a47b85e1344c456d74995ae9ca6eaff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reused_revision_identity_with_other_content_refuses"
+            },
+            "path": "mcp/tests/test_knowledge_store.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The operations the fixture authors through, both halves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:b570157d42896bc41c89120b89ebbfde5c46f70947d167739eb164146f439a6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_repository"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:7587d649a2a528fa4296a832f9010af5e9ab4c400094deb2b17502dca5b3c64a",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_invariant"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:3172cf05981d5a62e9715d3426c3ef65c54f315ee927ecb6376c4f65960749f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:c36694fae20edbd501fce9fbeaa8989e2d6b882d6a31e9e0efab3a44a87d8577",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_family"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
+            "content": "sha256:10a013393578987f89739b4813d908ae7a48bfa830b2bf3500f7c21e993bf19a",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_realization_claim"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

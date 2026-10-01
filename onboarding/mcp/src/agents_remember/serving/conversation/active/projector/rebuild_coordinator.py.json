@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native polling establishes the timeline and native continuation is then followed by echo polling for transcript gaps; the coordinator composes them in order.\n\nAnchor: \"async def poll_evidence(self\", \"async def poll_native_continuation(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:1ea93e6f585ac52ffdd26c129c4d9d5be1e02da7457fd8351dabc50aad253482",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:c882f914abb2b5c4ec302cdcc25322f88944329547d85a15e46b05a9739c3b07",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa0b2b836fceffeb7a79b177e77a3e328bdd838e",
+            "content": "sha256:ff4db6dfc68f8ad931f7ee083f64b8d6438fe0725b15b7b04cef39a180a1ea45",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa0b2b836fceffeb7a79b177e77a3e328bdd838e",
+            "content": "sha256:ab5afc968bb2f9ee174be31ce7facc5eca2856ff6daf5fcd6cafe186d8d9f6eb",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Echo polling fills transcript gaps in the ordered rebuild.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:e67d8014cc53284289706dff1ebc131f12d9fac210f47e58b0a3dbb5e0e397e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:c50711cc10f003bea525d414b29e4c9ee9accb05fb1d0040fe8c910be6fbab9e",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Conversation status is derived by the status service.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc935453ce0c3219cd887830d39fd21855857bf",
+            "content": "sha256:74fa28540d6649288611f3bf7bdfde3f8f5018638a6d95990e569e42f6716eae",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationStatusService"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "edc935453ce0c3219cd887830d39fd21855857bf",
+            "content": "sha256:8d2b528e70b7c2c6bb3323ff0f9269cd074fb0b8bd43eb380247f000c2507241",
+            "locator": {
+              "end": 508,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

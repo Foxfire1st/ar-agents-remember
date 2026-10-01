@@ -1,0 +1,164 @@
+{
+  "path": "mcp/src/agents_remember/kernel/git_freshness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The local default bound is 300 seconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_LOCAL_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The ordinary remote bound is 120 seconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:fbfa8472a098bcd75d67a5d7bf39fb9f4f9dd902aa130d654f77efe08ec86503",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_REMOTE_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The metadata bound is 30 seconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:4e9712efdc5e47916c2dbb622ba70183d1df366b5fb155e7aaba5c37c0972fe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_METADATA_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared Git runner applies caller-selected bounds and isolated repository environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Style precedent: read-only git facts with dataclass + packet projector, the sibling that classes its four probes the same way, and — since 260731-EFA-L4 — the sibling that declares its own `RepoState` / `VALID_REPO_STATES` for the same reason this file declares `FreshnessState`.\n\nAnchor: `RepoState`, `VALID_REPO_STATES`, `read_git_facts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0b9c668414f020ae86262032fdc39d1813a4a6a",
+            "content": "sha256:480d9cdb8c2ad41bcb78577f1274d487b46d5a34f41aa3b2a711df089ebe957b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepoState"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0b9c668414f020ae86262032fdc39d1813a4a6a",
+            "content": "sha256:b44351d2f446fb73f8da4e1bb72a2b848c63eab7e9e5f0038ed845f53137ab65",
+            "locator": {
+              "kind": "symbol",
+              "name": "VALID_REPO_STATES"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0b9c668414f020ae86262032fdc39d1813a4a6a",
+            "content": "sha256:6c60d477079431620e3b948c9d7109071f26b65cbbfa0eb5b8d446ddf240de1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_git_facts"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_facts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The wire face that imports `FreshnessState` instead of retyping its eight members: `BranchFreshness.state`.\n\nAnchor: \"state: FreshnessState\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dee1374065329a5e81164a1712a53b595efb1f7",
+            "content": "sha256:e4f713a5fc9357e461730c880816fc9867ecc2d1b90bb0dc501adc6098f8db5f",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/models/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The context packet application entry point is the first consumer (`_freshness_packet`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:fbd4498c88eedc397bb24db68c2120b0d809d1c230470f630ff906e46f2ad27a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_freshness_packet"
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

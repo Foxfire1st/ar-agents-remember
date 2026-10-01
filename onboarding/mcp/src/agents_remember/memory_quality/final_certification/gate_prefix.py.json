@@ -1,0 +1,115 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/final_certification/gate_prefix.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact reusable green Gate 1-4 prefix proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e482167e7e01d8ee0350bd21e7c29a43782df2fe",
+            "content": "sha256:9ce03194ff6758c1fa550e95b391d5a67a24b6061d53caa0143d875fef52334f",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateFourPrefixProof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Admits the exact current green Gate 1-4 prefix or refuses with a typed refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e482167e7e01d8ee0350bd21e7c29a43782df2fe",
+            "content": "sha256:bcb224ff21c8642cb7f079730a533884012b720f17b6ca5e7ca2b8eaa8b8581b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_green_gate_prefix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Stable one-code refusal summary from R21 findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e482167e7e01d8ee0350bd21e7c29a43782df2fe",
+            "content": "sha256:318f64a337213b64975b2c194a0914425938f2d59c58d5e11540cf818a7797ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The R21 certificate-chain validator consumed by the adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:896ca958a33b21b2435f825c5923bb1356117b1b48f650c57835bd3cfb0b7d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_certificate_chain"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:cc88c5d547428f73d445733ea86f8888074e524cb8b0fbf7cd551f3f917d9050",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The R21 reuse planner is the single reuse authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:f04b26a3b97c7b2b3a793956dd94e6698cf041f49a9c3f0e4a921e7e6dda9072",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_certificate_reuse"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_invalidation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:22be68a5b191b87b50ba21e8b6c2725a7eb1883989104b3f16873c8d14b9e715",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_invalidation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

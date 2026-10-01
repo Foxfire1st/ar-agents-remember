@@ -1,0 +1,91 @@
+{
+  "path": "dashboard/src/grammar/RankBadge.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The gold/purple tier tokens (+dim/ghost) this badge colours by.\n\nAnchor: `goldGhost`, `purpleGhost`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
+            "content": "sha256:087d224d9008ad53459bdab1d1c9c4679c46d906821ff49863e28af51f3d36a5",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/panda.config.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
+            "content": "sha256:e9d91dff882e5b314aa9bf7087cd7fd36d0c7be4f7d56a4ca2be7cf86f3c298f",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/panda.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task rows render the badge at `row` size beside the state dot, keyed by `OperationRow.tier`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "595765ae3ddf88e34bf2c296c05c36d180481444",
+            "content": "sha256:115cbc6c62af0d44cce092185b9e34ac8058622bfe6a889f27e3295758272c77",
+            "locator": {
+              "kind": "symbol",
+              "name": "commandFacts"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Import census confirms `LifecycleList` is the sole production consumer; the session rail does not import `RankBadge`.\n\nAnchor: \"../grammar/RankBadge\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "595765ae3ddf88e34bf2c296c05c36d180481444",
+            "content": "sha256:2fcc68ddf41f9cd97b1177da314aa023c67a3d30eb5c14a6fc02f95f294e1c55",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Glyph-anatomy and both-size tests keep `sm` supported even though production currently uses only `row`.\n\nAnchor: \"keeps the viewBox fixed and shrinks only the rendered box for the sm size\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8a02676daca08f67e5993de837d90d65163684b",
+            "content": "sha256:ba52228255a8ecffed75bf790c02115299c4ed145ca35bfdb2d42a98bc2bc582",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/grammar/RankBadge.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/controlplane/operator_inbox_store.py
 
-| Field                  | Value                                                             |
-| ---------------------- | ----------------------------------------------------------------- |
-| repository             | agents-remember                                                   |
-| path                   | `mcp/src/agents_remember/controlplane/operator_inbox_store.py`    |
-| doc_type               | `file-level-onboarding`                                           |
-| lastUpdated            | 2026-09-06T22:11:05+00:00 |
-| lastVerifiedCommitHash |                                                                   `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |                                                                   2026-08-29T20:33:10+02:00|
-| governingOverview      | `overview.md`                                                     |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -226,37 +216,33 @@ by lifecycle, agent, role, or combinations of those keys.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The observable-lifecycle design describes passive/active pull as the durable
 return-channel family; this store supplies the durable mailbox for external
 agents that cannot receive dashboard session injection.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Pull-based return channels sit above durable gate truth and resume on the next poll/poke when push is unavailable. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design` | docs/design/observable-lifecycle.md:1-402 |
+- Pull-based return channels sit above durable gate truth and resume on the next poll/poke when push is unavailable. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. | "def log_path" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:80-80 |
-| Pending filters match supplied lifecycle and/or agent keys. | "def list_pending" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:161-161 |
-| Consume is idempotent and appends a consumed snapshot only once. | "def consume" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:227-227 |
-| Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to "rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS" and delegates the due/limit decision. | "rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS" | mcp/src/agents_remember/controlplane/operator_inbox_store.py:223-223 |
-| `redelivery_floor_seconds` and `next_attempt_at` are NOT in this module — the delivery-snapshot half of the old claim moved to the shared backoff module, which is also where `redeliverable` itself lives. | `require_redelivery_floor_seconds`; `next_attempt_at`; `redeliverable` | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:64-74; mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:77-94; mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:131-144 |
-| The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening the module's own lockfile. | `_read_unlocked`; `_replace_unlocked`; `_exclusive_access`; `fcntl` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:361-369; mcp/src/agents_remember/controlplane/operator_inbox_store.py:371-377; mcp/src/agents_remember/controlplane/operator_inbox_store.py:379-383; mcp/src/agents_remember/providers/provider_setup.py:22-22 |
-| `OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None` and states why no single owner is possible for this log. | `OPERATOR_INBOX_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:182-198 |
+- The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history. [2]
+- Pending filters match supplied lifecycle and/or agent keys. [3]
+- Consume is idempotent and appends a consumed snapshot only once. [4]
+- Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to "rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS" and delegates the due/limit decision. [5]
+- `redelivery_floor_seconds` and `next_attempt_at` are NOT in this module — the delivery-snapshot half of the old claim moved to the shared backoff module, which is also where `redeliverable` itself lives. [6]
+- The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening the module's own lockfile. [7]
+- `OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None` and states why no single owner is possible for this log. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None. | N/A | N/A |
+None.
 
-### 260713-PHA-L5 Inbox-Rooted Adapter Evidence (historical milestone)
+#### 260713-PHA-L5 Inbox-Rooted Adapter Evidence (historical milestone)
 
 The store records accepted, queued, rejected, unsupported, ambiguous, and terminal-completion
 adapter evidence against an existing durable row. None of these transitions call `consume`.
@@ -268,108 +254,3 @@ task refs. Compaction and reconcile-and-compact accept the exact registered-id s
 unregistered execution report until task truth owns first-evidence proof. A missing registrar does
 not authorize deletion; it fails closed. This is one retention seam, not a second task reader or a
 compatibility path.
-
-## Update History
-
-- 2026-09-06T22:11:05+00:00 — Preserved current source-verified notifier/reclamation semantics from retired test cards; historical claims are not active coverage and verification pins are unchanged.
-
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented durable task registration before inbox execution-report reclamation. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: corrected the TRH-L5 lock-held-evidence
-  statement — the catalog read left the lock (pre-fetched by the supervisor before
-  `reconcile_and_compact`); only the bounded tmux snapshot remains lock-held. Consume authority and
-  the same-lock resolve/compact rationale are unchanged. Verification metadata stays pinned until
-  closeout stamps the L16 commit.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
-  exact anchors, deduplicated the backoff row, and converted the history pending/consume citations;
-  exact non-fixing check returns zero findings.
-- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass). **One stale citation and the
-  leaf's least-corroborated number.** The `OPERATOR_INBOX_OWNERSHIP` row cited `durable_store.py`
-  **L297-L313**; the constant is at **L368** — the file grew 598 → 699 lines mid-pass, so every
-  range written earlier is off. Replaced with a symbol-name citation and no range. Re-read the five
-  citations into this module's own source and left them: the log-path/append/read row L109-L126
-  (`log_path` L109, `append` L113, `read` L119, `current` L124), pending filters cit:(["def list_pending"], mcp/src/agents_remember/controlplane/operator_inbox_store.py:161-161), `consume`
-  cit:(["def consume"], mcp/src/agents_remember/controlplane/operator_inbox_store.py:227-227), the delivery-snapshot pair L151-L204; L234-L254, and the
-  `_read_unlocked` / `_replace_unlocked` / `_exclusive_access` row L468-L492 (L471, L481, L489). The
-  **0.00 percent** claim is now attributed rather than asserted as a measurement a reader can check:
-  it appears only in the `durable_store.py` docstring, as does the 9.20 percent that the old
-  "9.20 to 31.45 percent" range leaned on. Only 31.45 percent and 11.50 percent are carried at
-  several independent sites. The structural claim that needs no figure is stated instead and is the
-  one that actually carries the card: this was the only store holding a lock at the base commit and
-  the only one that lost nothing. This card's read-policy statements were already correct — strict
-  `_read_unlocked`, and every rewrite in this store reading through it — and were left unchanged.
-- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded this store as the
-  leaf's **declared compaction-owner exception**: `OPERATOR_INBOX_OWNERSHIP.compaction_owner` is
-  `None` because both processes must physically remove rows — the MCP deletes a cancelled gate's
-  rows via `delete_by_gate`, the dashboard resolves and compacts under one held lock in
-  `reconcile_and_compact` — and neither move travels without the decision it implements. It is
-  therefore the one log where locking rather than ownership is the whole mechanism, and it was the
-  only one of six to measure 0.00 percent loss at the base commit. Recorded the I/O migration:
-  `_exclusive_access` now wraps `durable_store.exclusive_access` (the local `import fcntl` and the
-  `operator-inbox.lock` path are gone, and the lockfile basename is consequently now
-  `operator-inbox.jsonl.lock`), `append` adds `check_declared_writer`, `_append_unlocked` fsyncs
-  through `append_line`, and `_replace_unlocked` delegates to `rewrite_lines` so it no longer
-  unlinks an emptied log or shares a `<log>.tmp` name. Recorded that `_read_unlocked` stays strict
-  and that every rewrite in this store therefore reads strictly. Repaired all four pre-existing
-  line citations, which this leaf's edits had pushed down the file. Verification metadata pinned
-  until closeout stamps the L5 commit.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 line citations that the parameter-object
-  refactor pushed down the file. Log/append/read/current is now L92-L108 (`log_path` through
-  `current`), consume is L350-L372, and the delivery-floor claim splits into L133-L186
-  (`record_delivery` threading `redelivery_floor_seconds` into `next_attempt_at`) plus L216-L236
-  (`list_redeliverable` defaulting to `DEFAULT_RATE_LIMIT_SECONDS`). All four spans read back.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  added the frozen `AdapterReceipt`, `DeliveryAttempt` and `InboxRenewal` parameter objects plus
-  the shared `_readdress_fields(owner)` helper, and re-signed three mutators:
-  `record_delivery(entry_id, attempt, *, now, ...)` (eight delivery/adapter keywords collapsed
-  into `attempt`), `advance_rung(entry_id, *, rung, now, readdress_to=None, current=None)` and
-  `renew(entry_id, renewal, *, now, current=None)`. The `readdress: bool` + three `owner_*`
-  keywords were replaced on both by an optional `InboxOwner` — supplying it *is* the readdress,
-  which removes the pass-an-owner-without-readdressing and readdress-to-nothing states. The two
-  readdress paths now write the same six fields through one helper. Written snapshots are
-  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed correlated delivery and explicit-consumption separation.
-
-- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented one-fold resolve-plus-compact
-  ordering, consume authority, persisted folded-id removal semantics, and the no-store-reentry
-  callback contract under the shared inbox lock. Verification metadata remains pinned until
-  closeout stamps the candidate commit.
-
-- 2026-07-10T22:18+02:00 — 260707-HFX2-L20: made current-state folding terminal-dominant and kept
-  consumed snapshots append-only until compaction, closing the live resurrection/redelivery race.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: made coalesced inbox renewal preserve the current
-  leaf-role subject pair through owner readdressing.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: made rung advancement stamp both dwell anchors
-  and allowed coalesced supervisor rows to preserve chain fields and readdress the current manager.
-  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
-
-- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: threaded the effective 900-second redelivery floor
-  through `record_delivery(..., redelivery_floor_seconds=...)` and preserved the shared default for
-  `list_redeliverable`. Verification metadata pinned until closeout stamps the 260707-HFX2-L9
-  commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: added optional snapshot-aware mutation/selection paths,
-  `mark_ladder_resolved`, and compaction of ladder-resolved terminal ids so supervisor sweeps avoid
-  per-finding log folds and dead-seat storms leave bounded inbox logs. Verification metadata pinned
-  until closeout stamps the HFX2-L8 commit.
-- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R1/R2, escalation ladder): added `advance_rung` — stamps
-  the ladder's next rung and re-anchors `escalatedAt` in the same snapshot, distinct from HFX2-L2's
-  rung-agnostic `mark_escalated`. `serving/supervisor.py::_escalate_rung` is the sole caller.
-  Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
-- 2026-07-08T14:00+02:00 — 260707-HFX2-L1: R1 ack semantics (attempt/backoff
-  fields on `record_delivery`, delivered is never terminal) + R3 redelivery
-  (`list_redeliverable`, `mark_escalated`), reusing the `inbox_backoff` module's
-  pure math. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L1 commit.
-- 2026-07-04T12:31+02:00 - L3: added recipient-role pending filters and
-  `record_delivery(...)` snapshots so hosted push outcomes stay attached to the
-  durable inbox row. Verification metadata pinned until closeout stamps the L3
-  commit.
-- 2026-06-25T13:10+02:00 — Task 23/24: added delete, delete-by-gate, and compaction so consumed/dismissed/expired operator-inbox entries do not accumulate forever.
-- 2026-06-23T13:44+02:00 — Created for task 10 backend inbox: append-only workspace inbox store with lifecycle/agent pending filters and idempotent consume. Verification metadata pinned until closeout stamps the task-10 code commit.

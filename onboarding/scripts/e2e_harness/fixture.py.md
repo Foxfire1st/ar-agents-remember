@@ -1,15 +1,5 @@
 # fixture.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `scripts/e2e_harness/fixture.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T09:45+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `scripts/e2e_harness/overview.md` |
-
 ## Governing Overview
 
 [Ambient Role-Chat E2E Harness](overview.md)
@@ -48,36 +38,21 @@ explicit inputs to the returned frozen `E2EFixture`; later phases do not redisco
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixture uses repository-owned task and template contracts as its authority. | `create_fixture` | scripts/e2e_harness/fixture.py:43-165 |
+- The fixture uses repository-owned task and template contracts as its authority. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture construction returns every run-owned path and canonical task address explicitly. | `E2EFixture` | scripts/e2e_harness/fixture.py:28-112 |
-| Codex config binds the deterministic Responses endpoint, candidate MCP server, and fixture tmux namespace. | `_write_codex_config` | scripts/e2e_harness/fixture.py:281-326 |
+- Fixture construction returns every run-owned path and canonical task address explicitly. [2]
+- Codex config binds the deterministic Responses endpoint, candidate MCP server, and fixture tmux namespace. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No live sibling repository supplies fixture behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Disposable repositories are initialized inside the run root. | `_initialize_repository` | scripts/e2e_harness/fixture.py:181-250 |
-
-## Update History
-
-- 2026-08-31T09:45+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded the explicit Codex MCP
-  `TMUX_TMPDIR` whitelist that keeps spawned role sessions, liveness probes, and teardown on one
-  fixture-owned tmux server. Verification remains closeout-owned.
-
-- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
-  canonical anchored citation format. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created onboarding for the clean-room fixture constructor. Verification metadata remains closeout-owned.
+- Disposable repositories are initialized inside the run root. [4]

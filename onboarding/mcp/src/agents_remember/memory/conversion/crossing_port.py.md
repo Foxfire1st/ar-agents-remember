@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/conversion/crossing_port.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/conversion/crossing_port.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -44,7 +34,9 @@ binds it, so `worktrees/` reaches the conversion without importing `memory.conve
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -53,30 +45,18 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The adapter and the port it implements.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The adapter. | `GitKnowledgeCrossing`; `plan` | mcp/src/agents_remember/memory/conversion/crossing_port.py:24-52 |
-| The port, its request and its view. | `KnowledgeCrossingPort`; `CrossingRequest`; `CrossingPlanView` | mcp/src/agents_remember/worktrees/services.py:197-200; mcp/src/agents_remember/worktrees/services.py:184-194; mcp/src/agents_remember/worktrees/services.py:165-177 |
-| The default composition binds it. | `build_default_worktree_services` | mcp/src/agents_remember/application/worktree_services.py:211-224 |
+- The adapter. [1]
+- The port, its request and its view. [2]
+- The default composition binds it. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `worktrees/services.py` and `application/worktree_services.py`, so the citation rows into them were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or, for the multi-anchor port row it declined, by the exact base-to-staged line shift. No verification stamp was advanced.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/FamilyTree.triage.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/FamilyTree.triage.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:21:58+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -58,32 +48,23 @@ Proves the candidate invariants recorded on `ChangeBadges.tsx.md` (each fact onc
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R33@v1` (adopting `ICR-R32@v1`) and the architect's rulings in `33_review-triage-order-and-change-kind-badges.json` live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The suite's statement: the real tree inside a reviewer zone over the store-authored bodies. | "The tree is the real component inside a reviewer" | dashboard/src/panels/review/FamilyTree.triage.test.tsx:1-26 |
-| The harness: the zone with a textarea, a contenteditable region and a terminal-zone control. | `Harness`; "data-kbzone=\"pty\"" | dashboard/src/panels/review/FamilyTree.triage.test.tsx:30-68 |
-| Badges: kinds, marks, the shared member, the reworded revision, why unknown, one statement, undescribed members, the dataset review. | "never calls a reworded revision unchanged: intent, noted, beside a genuinely unchanged member"; "states each fact once per node: the text note and the guarantee badge are not repeated" | dashboard/src/panels/review/FamilyTree.triage.test.tsx:113-283 |
-| Triage order and its control; triage when storage is unavailable. | "falls back to triage order when storage is unavailable" | dashboard/src/panels/review/FamilyTree.triage.test.tsx:285-329 |
-| Traversal: displayed order, ends, filter, the partial-family stop, inertness, the keymap owner. | "visits every non-unchanged occurrence in displayed order and stays at either end"; "stops at the continuation control past the returned members of a partial family"; "is inert in text fields, contenteditable regions, the terminal zone and outside the reviewer" | dashboard/src/panels/review/FamilyTree.triage.test.tsx:331-468 |
-| One statement per fact on a member, with and without a followed marker, and L34's note on a dataset row. | "puts a followed marker's Attribution unknown on the membership line, drawn first, described after the kind" | dashboard/src/panels/review/FamilyTree.triage.test.tsx:476-640 |
+- The suite's statement: the real tree inside a reviewer zone over the store-authored bodies. [1]
+- The harness: the zone with a textarea, a contenteditable region and a terminal-zone control. [2]
+- Badges: kinds, marks, the shared member, the reworded revision, why unknown, one statement, undescribed members, the dataset review. [3]
+- Triage order and its control; triage when storage is unavailable. [4]
+- Traversal: displayed order, ends, filter, the partial-family stop, inertness, the keymap owner. [5]
+- One statement per fact on a member, with and without a followed marker, and L34's note on a dataset row. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T22:21:58+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): created this card for the new tree test (18 cases), recording rulings 2026-09-30T16:22:22 (items 5 and 9), 17:47:43 (review R1 F3's mutations; one statement per fact), the merge round and 21:55:02 (R3-1). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

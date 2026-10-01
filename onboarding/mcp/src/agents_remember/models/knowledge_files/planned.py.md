@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge_files/planned.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge_files/planned.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -58,7 +48,9 @@ the writer all import these forms from here, so they cannot drift apart.
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R11@v2` of task
@@ -66,32 +58,21 @@ No domain documentation source is configured for this repository (`system/source
 `11_planned-invariant-effects-reconciliation.json`); it lives outside the code and memory repositories, so it
 is named here and not cited as a row.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: the forms and who shares them. | "the one spelling of those forms" | mcp/src/agents_remember/models/knowledge_files/planned.py:1-20 |
-| The item kind, the unknown-subject fact and the dispositions. | `PLANNED_ITEM_KIND`; `SUBJECT_UNKNOWN`; `PLANNED_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge_files/planned.py:44-46 |
-| The ref keys each disposition takes. | `REFS_BY_DISPOSITION` | mcp/src/agents_remember/models/knowledge_files/planned.py:50-54 |
-| The declared, planned and requirement-ref patterns. | `DECLARED_SUBJECT_PATTERN`; `PLANNED_SUBJECT_PATTERN`; `REQUIREMENT_REF_PATTERN` | mcp/src/agents_remember/models/knowledge_files/planned.py:61-70 |
-| The planned subject key and its parse. | `planned_subject`; `parse_planned_subject` | mcp/src/agents_remember/models/knowledge_files/planned.py:73-83 |
-| The stored-item predicate for the gate. | `planned_item_open` | mcp/src/agents_remember/models/knowledge_files/planned.py:86-97 |
-| The history row model built on these forms. | `PlannedEffectRow` | mcp/src/agents_remember/models/knowledge_files/history.py:310-333 |
-| The predicate agrees with `satisfiedBy` on every item. | `test_a_planned_row_answers_its_item_and_the_stored_predicate_agrees` | mcp/tests/test_planned_knowledge_effects.py:363-398 |
+- The module docstring: the forms and who shares them. [1]
+- The item kind, the unknown-subject fact and the dispositions. [2]
+- The ref keys each disposition takes. [3]
+- The declared, planned and requirement-ref patterns. [4]
+- The planned subject key and its parse. [5]
+- The stored-item predicate for the gate. [6]
+- The history row model built on these forms. [7]
+- The predicate agrees with `satisfiedBy` on every item. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module is pure models.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): created this card for the new file MIK-R11 adds, recording the architect ruling of 21:56:18 (Q5: `requirementRef` as `<ID>@v<n>`). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

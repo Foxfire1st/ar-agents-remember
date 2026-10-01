@@ -1,14 +1,5 @@
 # l-01-agent-lifecycles/templates/deep-research-report.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-
 ## Purpose
 
 This companion file provides the reusable report shape for deeper research in the `l-01-agent-lifecycles` skill. It keeps the main lifecycle compact by owning the full and compact report templates, evidence-ledger format, proof inventory, evidence kind taxonomy, evidence limits, and final lifecycle decision summary.
@@ -31,56 +22,26 @@ This file owns formatting, not lifecycle gating. The lifecycle still owns when d
 
 No current todo is recorded for this deep research report template.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation applies to this repository-local lifecycle report template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The template is a companion to the lifecycle entry contract and the detailed spine.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from. | `## Companion Files` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:126-149 |
-| The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from; the router shrank from 620 to 179 lines in 260915-CAPS-L1, so the anchor is rebased. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:24-66 |
-| The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. | `# Deep Research Report Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/deep-research-report.md:1-123 |
+- The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from. [1]
+- The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from; the router shrank from 620 to 179 lines in 260915-CAPS-L1, so the anchor is rebased. [2]
+- The template defines report rules, full and compact shapes, evidence kinds, and evidence-ledger guidance. [3]
 
 As of cycle 4 the decision block asks for the suggested artifact shape (minimal w-02 task vs master + series) instead of the retired 'build mode' axis.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this lifecycle report template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-20T01:33+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared the enforced `citation_claim_reopened` row this card carried by reading the claim and disposing of the three mechanical projections that held it open.** The claim — *"The entry contract lists this file in the `templates/…` companion-file line as one of the shapes spawning seats compile briefs from"* — was re-read against the bytes its range covers: the anchor `## Companion Files` resolves at `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:126`, inside the cited `:126-144`, and that section's `templates/…` bullet (`:133-136`) names `deep-research-report` among the field schemas the spawning seats compile briefs from. The wording is RETAINED, and the sibling row above it (`## Which Lifecycle Am I? …` at `:24-66`) is unaffected. **Three mechanical anchor-range projection bullets — 2026-09-18T10:45:13 (`:126-144`), 2026-09-17T06:49:47 (`:599-614`) and 2026-09-09T12:22:46 (`:573-588`) — were retired**: each recorded a tool projection rather than a reading, and the newest of the three wrote exactly the range verified here; the extents they wrote stay recorded in the 2026-09-16T08:01+02:00 CAPS-L1 entry below. **The two commit rows were replaced by one recorded working candidate** because the body has been rewritten since `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` — the projections moved this range — so that stamp no longer evidences the bytes it sits beside; no hash was invented and no stamp advanced. The cited `…/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` is byte-identical to this leaf's base `7dcec036`, so the construct read here is the construct at the substituted base. No Finding text, anchor, range or other row was changed.
-- 2026-09-19T23:20+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b22c34a912f939e27868786818463c3b9c`): **retired 3 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers, and advanced this card's verification stamp to the code commit whose bytes were actually read.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each was read. The construct is `126-149` of `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md` — re-measured on the file, not shifted: the heading's section runs to the line before the next heading of equal or higher level. No claim wording changed; nothing in the body was deleted to clear a finding. Note for a successor: a future landing that moves this file's headings makes the stamp historical again, and the closeout re-stamps.
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: Repaired citations this leaf falsified: the canonical lifecycle corpus was consolidated (the router shrank 620 → 179 lines; all nine role files and several templates were rewritten), so the cited anchors and ranges no longer resolved. No behavioral claim changed — the cited rule was re-pointed at its current home. Verification metadata remains closeout-owned. `## Companion Files` now cites `SKILL.md:125-142`; the previous `:573-588` exceeded the router's 179 lines.
-- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 2 citation entries (4 findings); no Tier-3 findings.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 citations and DELETED 1 whose material
-  is gone, after the `l-01-session-job-lifecycle` skill was renamed to `l-01-agent-lifecycles` and
-  its files moved into `templates/` and `roles/`. Repointed the entry-contract row to
-  `l-01-agent-lifecycles/SKILL.md` L376-L383 (the `templates/…` companion-file bullet, where
-  `deep-research-report` is now named on L381) and reworded it to match what SKILL.md actually
-  says. Fixed the self-citation link, which pointed at the retired skill path; its L12-L123 range
-  is still exact (Report Rules at L12 through the end of Evidence Ledger Guidance at L123 in a
-  123-line file). **Deleted** the row "The lifecycle delegates report shape to this template while
-  preserving its required proof categories" (was `lifecycle.md` L87-L97): `lifecycle.md` no longer
-  exists and nothing replaced that delegation — a full-tree grep for `deep-research`, `proof`,
-  `report shape` and `evidence ledger` across `SKILL.md`, `lenses.md`, all nine `roles/` files and
-  all five `criteria/` files finds this template's own L3-L6 self-description and one bare listing
-  on SKILL.md L381, and no lifecycle-side statement of required proof categories at all. Also
-  corrected the Purpose paragraph's stale `l-01-session-job-lifecycle` skill name.
-
-- 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): retired build-mode vocabulary replaced with artifact shape. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T01:30+02:00 - L9 lifecycle convergence: moved from the retired l-01-session-job-lifecycle skill into the shared template library and renamed deep-research-report.md; used by the orchestrator lifecycle's research phase. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-06-04T14:50+02:00: Created file-level onboarding for the new deep research report template companion file. Verification metadata is intentionally blank until closeout refreshes it to the first code commit containing the new source file.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # mcp/tests/merge_case_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/merge_case_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:45+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -53,66 +43,34 @@ The measurement half: `table_rows`, `row_counts`, `file_digest`, `journal_peer_n
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-|  The harness's three responsibilities and the statement that it holds no policy. | "It is test support, not production code: it decides nothing, holds no policy" | mcp/tests/merge_case_test_support.py:1-20 |
-| The one case world and the readers a case uses instead of raw paths. | `GitBranchWorld`; `MergeCase`; `state_path`; `databases_by_role` | mcp/tests/merge_case_test_support.py:72-78; mcp/tests/merge_case_test_support.py:82-132; mcp/tests/merge_case_test_support.py:91-94; mcp/tests/merge_case_test_support.py:125-132 |
-| The base state authored through the real store operations and closed through SQLite's own backup. | `author_base_state`; `copy_closed` | mcp/tests/merge_case_test_support.py:153-194; mcp/tests/merge_case_test_support.py:219-239 |
-| The successor rule: a new revision naming its predecessor, never an edit of a sealed row. | `add_revision`; `set_label` | mcp/tests/merge_case_test_support.py:248-285; mcp/tests/merge_case_test_support.py:309-314 |
-| The three-commit world whose base is the sides' parent, and the per-commit dataset export. | `build_git_world`; `materialize_commit` | mcp/tests/merge_case_test_support.py:427-449; mcp/tests/merge_case_test_support.py:474-484 |
-| The one binary read, and why it does not go through the text-decoding runner. | `_read_committed_blob` | mcp/tests/merge_case_test_support.py:487-508 |
-| The build order that puts an unusual state inside the commits. | `build_case` | mcp/tests/merge_case_test_support.py:511-571 |
-| The measurement helpers that make input preservation and survival measured rather than asserted. | `table_rows`; `row_counts`; `file_digest`; `journal_peer_names`; `statements_of`; `labels_of` | mcp/tests/merge_case_test_support.py:583-591; mcp/tests/merge_case_test_support.py:594-605; mcp/tests/merge_case_test_support.py:607-611; mcp/tests/merge_case_test_support.py:613-621; mcp/tests/merge_case_test_support.py:623-633; mcp/tests/merge_case_test_support.py:635-645 |
-|The registered artifact that makes this harness an owned contract rather than a private helper.|"contract:common-base-merge-cases"| mcp/tests/evidence-lifecycle.toml:1319-1319 |
-| The unit-side consuming module, which drives the disjoint-edit survival case. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:312-384 |
-| The integration-side consuming module, whose docstring states which integrity checks a case can reach. | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-22 |
-| The store operations the authored states go through. | `create_invariant`; `create_revision` | mcp/src/agents_remember/memory/knowledge/store.py:272-289; mcp/src/agents_remember/memory/knowledge/store.py:291-325 |
+- The harness's three responsibilities and the statement that it holds no policy. [1]
+- The one case world and the readers a case uses instead of raw paths. [2]
+- The base state authored through the real store operations and closed through SQLite's own backup. [3]
+- The successor rule: a new revision naming its predecessor, never an edit of a sealed row. [4]
+- The three-commit world whose base is the sides' parent, and the per-commit dataset export. [5]
+- The one binary read, and why it does not go through the text-decoding runner. [6]
+- The build order that puts an unusual state inside the commits. [7]
+- The measurement helpers that make input preservation and survival measured rather than asserted. [8]
+- The registered artifact that makes this harness an owned contract rather than a private helper. [9]
+- The unit-side consuming module, which drives the disjoint-edit survival case. [10]
+- The integration-side consuming module, whose docstring states which integrity checks a case can reach. [11]
+- The store operations the authored states go through. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-|  The registered artifact that makes this harness an owned contract rather than a private helper. | "contract:common-base-merge-cases" | mcp/tests/evidence-lifecycle.toml:1319-1319  |
-| **The consuming module that drives the harness's own deletion case, cited at the definition the claim is about.** | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:312-384 |
-| **The boundary module that supplies the conflict-row and final-integrity cases, cited at its own module docstring.** | "Boundary cases for the guarded merge: the conflict row identity and the final-integrity checks." | mcp/tests/test_knowledge_guarded_merge_boundaries.py:1-2 |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1305-1305. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1305-1305. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1290-1290. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1290-1290. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1282-1282. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1282-1282. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (citation repair in this document, no source change of its own): **two ranges in this card were re-cited to the construct they name.** Both the Repo-Internal References row and the Cross-Repo row that name the unit-side consumer pointed at `mcp/tests/test_knowledge_guarded_merge.py:307-310` / `:307-309`, which was that test case's declaration before this leaf's two new imports and the enlarged conflict case pushed the whole module down; the construct now stands at `:312-384` and both rows cite its own extent. This card's source file is not part of the change set — the two rows are this leaf's fall-out and were reconciled with it rather than left to read as somebody else's residue. No claim was weakened, no anchor renamed and no citation dropped; the card's own metadata was not touched and no verification stamp was advanced.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1284-1284. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1284-1284. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 2 enforced `citation_anchor_absent_from_range` rows in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1280-1280` → `mcp/tests/evidence-lifecycle.toml:1280-1281` (rows 76, 88). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1280-1280. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1280-1280. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1277-1277. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1277-1277. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1273-1273. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1273-1273. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1161-1161. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1161-1161. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:29:42+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1159-1159. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:29:42+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1159-1159. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T04:55:18+00:00: Generated citation repair: "contract:common-base-merge-cases" repointed to mcp/tests/evidence-lifecycle.toml:1155-1155. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read every claim in this card whose cited range the leaf's own source edits had moved. This leaf's insertion of `mcp/tests/test-evidence-lanes.toml` rows and a test module shifted the anchors below them, and the re-cited range of each claim was checked against the construct it is about rather than accepted from the mechanical projection. Ranges re-cited: `mcp/tests/evidence-lifecycle.toml:1132-1152` -> `mcp/tests/evidence-lifecycle.toml:1153-1153`. The generated projection bullets that recorded the same moves are retired here, so no mechanically rewritten range remains recorded as unverified evidence. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-
-- 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new shared case harness and its `shared-support` contract (`contract:common-base-merge-cases`, exact two-module consumer scope). It records the three responsibilities, the ordering rule that makes a case's unusual state part of the commit graph rather than a post-hoc rewrite of it, the successor-only rule for legitimate side states, and the one deliberate binary read that bypasses the package's text-decoding runner because a dataset is bytes. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.
+- The registered artifact that makes this harness an owned contract rather than a private helper. [13]
+- **The consuming module that drives the harness's own deletion case, cited at the definition the claim is about.** [14]
+- **The boundary module that supplies the conflict-row and final-integrity cases, cited at its own module docstring.** [15]

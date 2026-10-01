@@ -1,0 +1,111 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Two-output and route-specific candidate data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:1f9d9c2cc7b1d5dcaf46f62a5e3083fc69886f9fe7935064467e8af535d84ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegratedCommits"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:3d54c847ac533427708312616fc8fa0c71b63616a5dc1eebeca83892f95f985d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Preparation validates accepted output and source/checkout state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:151351600c0a9a60f6881259fc9496650076dbbe07175f8b54cb75c03e32e920",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_integration_ref_move"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ordered expected-old CAS retains a torn pair on a memory race.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:5a6cedc45ba08d5522b39500a5837e87c92f1c7250b8f818ec9b958f682c0b7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_integrated_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Owned checkout refresh excludes only memory cache state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:a6c3dd910fe11d284665e1e91e3a63dc5d3015540fc5d1d3f0f76a8ff2bff708",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_owned_checkout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Real Git regression for cache independence and competing memory CAS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:d1b769266ca2c06857744a419ea02ee250028be95719299bd5a1ff835a81951d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_damage_cannot_change_the_accepted_pair_or_block_its_ref_move"
+            },
+            "path": "mcp/tests/test_integration_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:5531733451c3fb886f1cb15c34c058422fb4a06dba377947b0aaf566115ccb21",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race"
+            },
+            "path": "mcp/tests/test_integration_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

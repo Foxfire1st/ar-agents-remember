@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "The notes listing costs one followed stat per entry, with path resolution paid only for the notes root and for symlinks, and it still means what the path-based walk meant: the same response bytes (except the ruled read-without-search directory), nothing listed from outside the notes root even when a directory is swapped for a symlink mid-walk, no whole-listing failure from a looping or file-traversing symlink, and no state kept between requests.",
+  "id": "FAM-4V4GSQCS",
+  "members": [
+    "INV-DA7D417G",
+    "INV-EJW15DXA",
+    "INV-QR24S1VH",
+    "INV-Z66EMHMH",
+    "INV-ZJS1XY4R"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "0acf2d11-8b86-458d-af47-2ebf5cc34890",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "routes": [],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Bounded notes listing with unchanged meaning"
+}

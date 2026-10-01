@@ -1,0 +1,272 @@
+{
+  "path": "mcp/src/agents_remember/application/task_projection/declarations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The declarations reader that normalises leaf and master altitudes into one typed union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35581f8bbcff8f2c195c31a4849946b9b33e2f86",
+            "content": "sha256:1aa1bf42fdb5bcc0db85bb27e22cc8d62a6c618d1bc15aedfeec1132652d236f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_declarations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35581f8bbcff8f2c195c31a4849946b9b33e2f86",
+            "content": "sha256:dbd49bd59ceafd6de0fb1c9c12a3caa46d94b5a38974576b26eb7c0313f4166e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementDeclaration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35581f8bbcff8f2c195c31a4849946b9b33e2f86",
+            "content": "sha256:86ef76625c418f6a50bcb77c8b3f6f93e41a8bede7cecf0e9b5a0d91f007d8b7",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The identity helper: a packet reference yields `\"<stable_id>@<version>\"`, prose yields `None`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35581f8bbcff8f2c195c31a4849946b9b33e2f86",
+            "content": "sha256:21b43058a6489718369b09c43064eee2154a1ebac12b3fe6b2f121a593b89d59",
+            "locator": {
+              "kind": "symbol",
+              "name": "declaration_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35581f8bbcff8f2c195c31a4849946b9b33e2f86",
+            "content": "sha256:75b785b9d083a37c296aa26241f772ffe84c4f8dbc70f3630f79181504bcbf80",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The deliberate non-ownership path that does not read an adjacent packet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35581f8bbcff8f2c195c31a4849946b9b33e2f86",
+            "content": "sha256:c61645f56ff4546b2541e23c97b3604c3d23d27a5bd1fbe4ab94a297931be276",
+            "locator": {
+              "kind": "symbol",
+              "name": "adjacent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35581f8bbcff8f2c195c31a4849946b9b33e2f86",
+            "content": "sha256:55c9b5be029a61ac6c9b7f1064d0061dc3ace32dbe5d40fb0134c6d36a696e8e",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A missing obligation is a reported gap, never an empty section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35581f8bbcff8f2c195c31a4849946b9b33e2f86",
+            "content": "sha256:543e1d977d33eb04382b773f8e14bb30f98baea626052d1ea9b70bbb95ae45fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_section_gap"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35581f8bbcff8f2c195c31a4849946b9b33e2f86",
+            "content": "sha256:646e35653396301b93df4c655543fecdd32da62ec02e2bc796c838e897112b16",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The task-intent owner that confines a declared packet path, reads it and verifies its header.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa8a422af6c17568acd7a89dbd33e0cce7f13bbe",
+            "content": "sha256:6e58a02fbd0380d57e8620d30ad3a21bf22358c0dc26135bbbaae90eef02f8f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_projection"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa8a422af6c17568acd7a89dbd33e0cce7f13bbe",
+            "content": "sha256:4a80d0b20bfe67867f452f5f5e4dea705df1607c1f4e1f14072f769e46275f32",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_master_projection"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa8a422af6c17568acd7a89dbd33e0cce7f13bbe",
+            "content": "sha256:dcefc55d834bc8588186080ff4b2f4e5d43f89d6aafcfc949ac7e85b8469feb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentRequirementPacket"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa8a422af6c17568acd7a89dbd33e0cce7f13bbe",
+            "content": "sha256:c4ddce62e8dae7f3f18e6715bcecc32bf6a46db3379911e66ca0051d27969cc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentRequirementText"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The task-root-relative packet confinement the exact-text route reuses rather than reimplements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "content": "sha256:012c2b16d2d96ae71785c8482741ff733c7cb8760396fc591ce689dee3a98318",
+            "locator": {
+              "kind": "symbol",
+              "name": "confine_non_symlink_rel"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The section role vocabulary a gap is reported against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:d3de3b82f1a0c2570b2ef3a210d6a0b6b25d2fd790d23036944bd86d5c7845d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PacketSectionRole"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/packets.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:5a2b17d4232030cb2a5da6c3ee38789169658b14a77a39a35455deaf8ebed459",
+            "locator": {
+              "kind": "symbol",
+              "name": "PACKET_SECTION_HEADINGS"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/packets.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:c03f2abc43a9ffd9a2328e9786795fa345a7b541eb80d5e86b02789efc754c63",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/packets.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:84003c916cc0d7d188dcb5ff5982e4d0218161f73744b82c2e3f1c0cd131dcda",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/packets.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that proves every owned obligation is carried verbatim and a missing section is a gap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:e6f948f47d6eee8147f8acda3e1b1abe40300b988e05232a5a91be055dc2ad27",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projected_planes_keep_their_kinds_and_carry_every_obligation_verbatim"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

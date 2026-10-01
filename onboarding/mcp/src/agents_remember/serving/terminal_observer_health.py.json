@@ -1,0 +1,301 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal_observer_health.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact v1 record: eleven required fields, `extra=\"forbid\"`, both counters bounded at the 32-bit ceiling, aware-RFC3339 stamps only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:5469dc91bbb6faa92b23e97a09dec559732d070237ca619bd493268ad8584631",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The additive, omissive fourth tail key on the served workspace projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:c7a650fc8418729b75834341247c3ad77d5644b3bc0f545327e636fbf292cbff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedWorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:591c47b45ceb9399b98ae3e26d585c245020884edea4abff262bf3edff98dc6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_TAIL_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:b25506b3516db7bd29cf86e398cba73c3eb89f9ee23ea438eb6e4463798e7c82",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_state_tail"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The generated mirror declares this payload and keeps its nulls, and the schema's supported refinement set states the counter ceiling.\n\nAnchor: \"a bounded counter is a contract the schema must state\"; \"export interface TerminalObserverHealth {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:12c412043ae314c0a7e561c09b3e82394a18264eb892726c9219716249bd25dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealth"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:b9bbb52a5a54f945fb4b26558a725b10ff2ebe72f46bbdb4714ceb673fa4a6a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_REFINEMENT_KEYWORDS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:cd287079d45b293b1fce3e43d87c1d419bd8f0183e4ac9ccd120ad3a5e1fd489",
+            "locator": {
+              "kind": "symbol",
+              "name": "NULL_PRESERVING_MODELS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The module's executable contract: sixteen cases over the record, the writer, publication, and the served tail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:3585ce2616b8154660c105a14d708d7a694a49ddcce6f4e43794c806a619f2a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthRecordTests"
+            },
+            "path": "mcp/tests/test_terminal_observer_health.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:9648a5554e9d36bbddf06e931a64187f9766cab8f2b9d47fc124d09350e59a30",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthLifespanTests"
+            },
+            "path": "mcp/tests/test_terminal_observer_health.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:a2fe0aa4feeeb6823b8f7b2769b9d473e4df165d0829a51e8dfc9a30dc48c86e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthServedTailTests"
+            },
+            "path": "mcp/tests/test_terminal_observer_health.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared wire form: the record plus the four serve-time computed fields, dumped without `exclude_none`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:651db9ef1c066933a60bc74f05a55c7e2b7bda2a81081be02c79dcddd51c9ad9",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one durable current row: validate-or-`None` read, one atomic replacement write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:beac77177e5d43d375f66f6494a2421afb85eff8dcad69b205bd39ee9a04071f",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current-lifetime gate and the exact `6 × sweep_interval_seconds` cutoff rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:a03eea52f868c2994a8a3a68d16529b4485a238c476a20ab1dec8d7d8265c2ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_terminal_observer_health"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The serving-lifetime accumulator: lifetime start, success and failure transitions, persisted-row reads, and the one fixed write-failure log line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:b63e4d1c0ba86de38936117e245aa9aa1db1f126ccc1dd23a2f2dba680206e81",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthPublisher"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The bounded, ordered, secret-safe failure classification table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:417363d6ca52cb983ac5acdc4bbf4486aefa1e731464b53796caa66b99b3f974",
+            "locator": {
+              "kind": "symbol",
+              "name": "TERMINAL_OBSERVER_FAILURE_TYPES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8ee117267c48931ecea44368c9e27287ce687b5",
+            "content": "sha256:47f91fca9d628482769aa4bbc93a096be3d795f5979f5d66b40da96ab37c80bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_terminal_observer_failure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Publication rides the observer CALL for both outcomes, and only the phase separates a startup-prime failure from a steady-pass one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:1894d805addf06d9766de7d643aff795a788d3ad0c5bc2e89300abf9e6ec8f76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_terminal_catalog"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The lifespan starts this serving lifetime's accumulator immediately before the prime, and derives the served cutoff from the configured sweep cadence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:afacf3ef594ddf38aabbc8dc5e96bd42780901f12e524710e72120f8ba9e086e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observer_health_payload"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:f8bc4b8af54d8322dc7be225e12f844580b61d42fcae265ccea97a295fa13a62",
+            "locator": {
+              "end": 352,
+              "kind": "line_range",
+              "start": 288
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One shared publisher on one observer root and one serving clock, read by the routes and written by the lifespan.\n\nAnchor: `_ServingRuntime`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cd8506a38114aa7e475c457dfb9e70b8426653",
+            "content": "sha256:8ad714338389e9cf8976ea3afafc69530c092cbe1b5d5240d5818480bedef219",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

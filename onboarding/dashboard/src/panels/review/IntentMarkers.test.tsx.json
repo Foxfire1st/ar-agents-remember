@@ -1,0 +1,119 @@
+{
+  "path": "dashboard/src/panels/review/IntentMarkers.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real bodies, the transport and the scope stand-in.\n\nAnchor: \"hunkMarkers.classifier.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:0ff2a69e7b052935bec19c9adfa334b19d6a7710e88cc5367fc42eb629ecc728",
+            "locator": {
+              "kind": "symbol",
+              "name": "scopeOf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:f3d8ad67c29a580defbe6f822279966a7e42f1ae49f97a0635cb12e2bf4f1579",
+            "locator": {
+              "kind": "symbol",
+              "name": "expansionOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A full diff's marks, lists, follow, proofs and the unread side.\n\nAnchor: \"marks each owner hunk on the owner's side lines, a deletion in the before editor\"; \"lists a proof entry as a test with its facet, apart from the intents\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:03845bfa4144458cae40649ba65734073f61cbe1716dffca790bf705708bd0a2",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Files without per-hunk marks, the partial inventory and past-text notes.\n\nAnchor: \"gives a confirmed-unregistered file one file-level unexplained mark\"; \"says why a changed file a partial inventory does not list carries no marks\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:3f9e690f083331a88ea713d7552415e794596f01d0db2fafeaa60ab3db02507d",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The return: list, view and focus; the hold never against the reader.\n\nAnchor: \"reopens its list, brings its hunk into view and focuses it\"; \"keeps the returned mark focused while the pane settles, never against the reader\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:33880d2441503c9bd9c032a2eb11fc9bbd3367dc6d06e6176dc4457befbff73d",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 393
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The lane's windows: every drawn hunk marked (F5), the wording, the full file's return.\n\nAnchor: \"marks every hunk a window draws: the focused one and each neighbour its context shows\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:3936375db05cf3935f645cc98fd2b5d8d805c1a4c9fce224e9c70e4fd9bd6be0",
+            "locator": {
+              "end": 564,
+              "kind": "line_range",
+              "start": 440
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cards: the exact card reopened; excerpts with an unreadable side, other content, an unchanged file.\n\nAnchor: \"reopens the card a marker was followed from, not the first card of its path\"; \"never reads, nor speaks for, an unchanged file's card\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:5f6277ede4d62ef1d70540b756d8cd327a197f00d8667c15eae435a04c80cf62",
+            "locator": {
+              "end": 770,
+              "kind": "line_range",
+              "start": 566
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

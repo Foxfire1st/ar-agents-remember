@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/effect.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/effect.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T10:28+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -104,40 +94,32 @@ label without a claim.
   that owns it. This group therefore contributes **no** table to `MutableRecordTable`, and the facet
   case asserts the derived effect-only remainder is empty so the absence is a checked fact.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The nine admitted labels, in one declaration, and the literal type built from exactly that tuple. | `ADMITTED_EFFECT_LABELS`; `EffectLabel` | mcp/src/agents_remember/models/knowledge/effect.py:63-73; mcp/src/agents_remember/models/knowledge/effect.py:75-85 |
-| The two labels the cardinality rule reads a count for, named rather than compared inline. | `DIVISION_EFFECT_LABELS` | mcp/src/agents_remember/models/knowledge/effect.py:90-90 |
-| The two reference contracts: an exact stored revision identity, and bounded-but-opaque stored text. | `RevisionReference`; `EffectReference` | mcp/src/agents_remember/models/knowledge/effect.py:99-99; mcp/src/agents_remember/models/knowledge/effect.py:94-94 |
-| The one cardinality rule — shared-reference, `split`, `merge` — and the renderer of what a declared label does admit. | `cardinality_violation`; `cardinality_rule_text` | mcp/src/agents_remember/models/knowledge/effect.py:102-133; mcp/src/agents_remember/models/knowledge/effect.py:136-148 |
-| The effect claim's frozen shape: closed label, two exact reference sets, a non-blank rationale, and unresolved-by-design assessment references. | `InvariantEffectClaimPayload` | mcp/src/agents_remember/models/knowledge/effect.py:151-203 |
-| The closed four-member subject kind a preservation claim may name — with no effect-claim member. | `PreservationSubjectKind`; `PreservationSubject` | mcp/src/agents_remember/models/knowledge/effect.py:198-203; mcp/src/agents_remember/models/knowledge/effect.py:206-217 |
-| The preservation claim and the open question, each with its own non-blank statement validator and no verdict field. | `PreservationClaimPayload`; `UnresolvedQuestionPayload` | mcp/src/agents_remember/models/knowledge/effect.py:220-242; mcp/src/agents_remember/models/knowledge/effect.py:245-262 |
-| The three kind strings and the three frozen shapes, declared once each so the registry unpacks rather than restates them. | `MEMBER_KINDS`; `MEMBER_PAYLOAD_MODELS` | mcp/src/agents_remember/models/knowledge/effect.py:275-279; mcp/src/agents_remember/models/knowledge/effect.py:281-285 |
-| The four candidate commands that write this group, as one closed set the dispatch, the preconditions and the duplicate check all read. | `EFFECT_COMMAND_KINDS` | mcp/src/agents_remember/models/knowledge/effect.py:292-297 |
-| The group's canonical tables, declared beside the commands that address them — exactly the two envelope tables, so the mutable union gains nothing. | `EFFECT_WRITABLE_TABLES` | mcp/src/agents_remember/models/knowledge/effect.py:312-315 |
-| The `extra="forbid"` base every payload derives from, which is what refuses a verdict field or a second authorship statement. | `model_config` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
+- The nine admitted labels, in one declaration, and the literal type built from exactly that tuple. [1]
+- The two labels the cardinality rule reads a count for, named rather than compared inline. [2]
+- The two reference contracts: an exact stored revision identity, and bounded-but-opaque stored text. [3]
+- The one cardinality rule — shared-reference, `split`, `merge` — and the renderer of what a declared label does admit. [4]
+- The effect claim's frozen shape: closed label, two exact reference sets, a non-blank rationale, and unresolved-by-design assessment references. [5]
+- The closed four-member subject kind a preservation claim may name — with no effect-claim member. [6]
+- The preservation claim and the open question, each with its own non-blank statement validator and no verdict field. [7]
+- The three kind strings and the three frozen shapes, declared once each so the registry unpacks rather than restates them. [8]
+- The four candidate commands that write this group, as one closed set the dispatch, the preconditions and the duplicate check all read. [9]
+- The group's canonical tables, declared beside the commands that address them — exactly the two envelope tables, so the mutable union gains nothing. [10]
+- The `extra="forbid"` base every payload derives from, which is what refuses a verdict field or a second authorship statement. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A payload shape is a property of one
 namespace's stored records, and every reference it carries is a store-local identity or opaque text.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T10:28+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): created this one-to-one card for the authored-effect payload vocabulary. It records the closed nine-label vocabulary and its one declaration, the single cardinality rule and why it is shared with the storage boundary rather than restated, the two distinct reference contracts (exact versus opaque), the deliberate absences (no truth verdict, no authorship field, no preservation flag, no answered-question field), and the two-table writable set that follows from the group being envelope-only. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

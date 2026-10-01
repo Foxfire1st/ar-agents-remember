@@ -1,0 +1,129 @@
+{
+  "path": "mcp/src/agents_remember/kernel/file_lock.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One physical suffix, one mutex per resource, and thread-local nesting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_path_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:67ef59667662f3d53dbc35e78d74c5edbd24fcccc140176be697ebc9c9c9586b",
+            "locator": {
+              "kind": "symbol",
+              "name": "thread_mutex_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:9a604f8ee478c8286e362f5e67c367511038768ed2af48b155599f47e91e93fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LockDepth"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capability probing, complete transaction exclusion, and current-thread hold inspection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:453d3b09cee82b3412379fb449e22269ec97d11c8dd64c39efe1e612b49d5aeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_lock_capability"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:915104295d8fa4d8973a118ed3314645db9b7e134d512c63302bf14e7f51085c",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_file_lock"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:938a7ee0fafc28cb146d0acc1fb7fb46383b87b1f68ba3708f3341c547450d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_held"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Control-plane target authorization precedes primitive entry; capability errors are translated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_access"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:18e19347826e5c2e9e70f9ba584a22c80264b29fda28921c215e951f9fd2e5ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_lock_held"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The host registry supplies its own policy and domain refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:e1559ace39aa897386513e4fa11b0b38b52e80867efaafdd6111e9c718955ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityRegistry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

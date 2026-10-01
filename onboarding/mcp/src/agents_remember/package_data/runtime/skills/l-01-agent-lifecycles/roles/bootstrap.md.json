@@ -1,0 +1,534 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical source this package-data copy is sync-propagated from.\n\nAnchor: `# Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:10142a79d25fd343a320bd8f36a2d54aef2f38490150509c33882ef53e4c3ecc",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The second reader of the same set, so the policy has one spelling.\n\nAnchor: `TASKLESS_SEAT_ROLES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "660c8701bbad019e8dffacbfb92113230201c37f",
+            "content": "sha256:bf7f7424891ee2b010757ae204d2a7993ec2c4bf7beb45ddc5287d8ea662ba27",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_task_assignment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "660c8701bbad019e8dffacbfb92113230201c37f",
+            "content": "sha256:413b2465840123b844f40be9e612e0bcabb386cfc37fc1ee4ebffa1fd854d21e",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_task_assignment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The frozen vocabulary extension that publishes the role and its operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_OPERATIONS"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shipped checks: free-agent shape, taskless admission, no altitude, and the manifest declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:aadc49e178a2b945b96d2131083fc888f56a92a2394b96f7806f7f99c89ce618",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_bootstrap_role_is_a_free_agent_and_has_no_task_altitude"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:6eecb3e4bcf77651132763dab64865af78de49e34aa64d2c09eef824212f2fa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_without_a_task_document_only_the_taskless_seat_roles_are_admitted"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:a5214dd1938fe30437c0057d86cc3c15326a7d5adb849bd940bbf06dc60c098f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_task_altitude_set_in_the_source_names_bootstrap"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:c46a3133b8d2e30740d05d48c17c6400801f8382c6ee2a8c777c93a4b721e7ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_declares_no_task_altitude_for_the_free_agent"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:a3642ac3b5bbf310d584c424300da3c9dbcae6431bdf7945839634884796ce4a",
+            "locator": {
+              "end": 618,
+              "kind": "line_range",
+              "start": 592
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The corpus shape checks every role file must satisfy, this one included.\n\nAnchor: \"Each role file is the developer-approved capsule shape, and nothing else.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:6d9416eb8947fc34b68e01a2826205d76a141b01173c6d2d4bd06e36d8eda8f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_role_source_is_a_capsule_shaped_function"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:d78a14f8e2e81395c228cc0832cce6a71a04442ab1889a1b700e2d66d69e53a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_ORDER"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The generated copies this file is one of, proved current by the generator's own check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:cc0fc76d82fcb1ce49eccf65d18cc94932f99661e0467ab778bd59fca87baeac",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:466a77ac94614b264016678e50f3dde6708a2b5920a8be37e37f0b52d8bd43f3",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role declares no inherited core blocks — it is a free agent, not a task seat, and is started by a call.\n\nAnchor: \"not a task seat: your brief is not a brief — you are started by a call\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The role's start is a call rather than a dispatch: nothing dispatches this agent, and nothing names its report path.\n\nAnchor: \"you are started by a call\"; \"Nothing dispatches this agent\"; \"so nothing names a path for it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:820197070c4caed4a9412fa672057089c3cf09ee132c5dee56fda6704667dcf2",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The seat sits outside the task-dispatch transaction as its shape: a task document, gate, packet, or compiled brief is not an input, and its absence is not an error.\n\nAnchor: \"Not inputs, and their absence is not an error\"; \"This seat is started before any of them exist\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:91030e70a2042e1916836c4c64b3d89012a2ba1f82647992c08f4980e406a0bd",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The role's instructions are the capsule itself — this page plus the bootstrap operation — and its brief is not a brief.\n\nAnchor: \"your brief is not a brief\"; \"are your instructions.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns.\n\nAnchor: `## What you may do`; `## Stop and report — there is no owning seat above this one before a task exists`; \"Bootstrap Report — <repository>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:0f1bd05b9c2bd630881f872775eb5db5cfa02666b83d9c6ee1c8cb33c8305507",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:b1276d29fa6221147599f9ed1c13f4db489fcbea26b78eec82cad2b909098091",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:3c7ed1a44ded21ad10cf8b9b5b98170c8c201f9eb385b325f85be10730182f48",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:91f2c2c0861c239ad04888e7c48e94a9a4b935f6694087b0cc8d26961b0b32ea",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:b09236398b19751ace1b0623aa98a5631176b6aad54ecd1a815b6a9086a8dbe4",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:e00098052d2e842ec1bb6b7fefc62c595578f2d04b56384ca064bec7e8a03953",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:40efe14b0741c4e08a0e72d714fe8ca1cb6ba8158ac4ad414b15f5d375eee261",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The operation block the role carries: workflow, failure inventory and authority gates.\n\nAnchor: `# Operation — Session Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "content": "sha256:0a167d25b360e154c02dd9fdac113e52bbb0b78f701733c88a7ceee773d3179f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The manifest entry declaring the free-agent altitude, its five tools and its three operations.\n\nAnchor: \"\\\"altitude\\\": \\\"free-agent\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:4bfb1faa8a0a63c2e4f582f0a9df847b07f5a05768f278f6bf0b4543ad7c88da",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 472
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The named taskless-seat admission this role's existence depends on, whose membership `260921-ICR-L32` changed on the developer's 2026-09-24 ruling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:41ebaad1a45d219fd40decb0ea0f455eb2f7d55afb6b49d3fe05ade539c21739",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASKLESS_SEAT_ROLES"
+            },
+            "path": "mcp/src/agents_remember/serving/task_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

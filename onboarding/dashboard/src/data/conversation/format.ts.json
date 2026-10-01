@@ -1,0 +1,135 @@
+{
+  "path": "dashboard/src/data/conversation/format.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The A1/A4/A5 convention proofs.\n\nAnchor: \"conversation format conventions (developer findings A1/A4/A5)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16a4f45c3203b1c6e536816e59df3f0de741f39e",
+            "content": "sha256:38f747290cb38d994b5a0181fd551fae0c7013464c4e84840a79a46afff9cd69",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/data/conversation/format.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The R6 `shortId` implementation, including the short-value and suffix branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3eaecec4dc7f066a3b6666c682a1a181267f4",
+            "content": "sha256:3d675610a2c84ef1a75fab0332cef47a4de96af768de50a7bb1dec7e72ebc9ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "shortId"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The live `ServingBuildStamp` and `AgentNotifierHeartbeatBadge` consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9efb1d2bb1911b62dff3d675b32364db70eb32d7",
+            "content": "sha256:d22b42f9069752e763c6eb2ae1e16548a70b8d638100e5f7474281698648165d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingBuildStamp"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9efb1d2bb1911b62dff3d675b32364db70eb32d7",
+            "content": "sha256:5508205699e2921a6ee43f076c77433055462f36900b4236837b797b06254e6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierHeartbeatBadge"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The focus-handoff fallback that uses `shortId` when no seat label exists (R6).\n\nAnchor: \"shortId(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:b29ca25d007dd514c6a641c2797950132d6281d4fbc588a11f7579cae45a8c60",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 863
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The ambient-telemetry surface that consumes `joinChips`/`freshnessTone`/`humanizeAge` (F3/F19).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c83dce30df8a11fb208befb8b76c12d66747c98c",
+            "content": "sha256:b468dc7219939e9fe2e2aef1b40dc314e7dc17c87a74b3ad8c766258d751ceb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AmbientTelemetry"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c83dce30df8a11fb208befb8b76c12d66747c98c",
+            "content": "sha256:2dcea56e36b80d03529b37173d2cf5582aaab9db3d0bd07c0b3590ca19fc4ae8",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The library rows consuming `truncateMiddle`/`humanizeAge`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9585dab520ca2074f38b811a29f5f05dfdce1a08",
+            "content": "sha256:b5f78ec035724b1f7d5ddc7e82a0e55d742cfa825d55c9a7c0462f6b72ffe0df",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryList"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

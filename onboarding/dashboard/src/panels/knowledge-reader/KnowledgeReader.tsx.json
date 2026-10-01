@@ -1,0 +1,263 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component's own statement: no task, the address in the hash.\n\nAnchor: \"The Knowledge area (MIK-R29)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:eeea18fce31670594773285748382ab80ebef29fa8f873cca3cf1bb425162e15",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The panel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:decd0881a773e8a706f3c4d6466f9a61eaa81b0c62b655b7a315c672758a576c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The Cockpit's Knowledge view.\n\nAnchor: \"return <KnowledgeReader />;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:5775d763ef7fd86d6c60073fa081818ec04e458e059af2e327e8c2fd081bbc17",
+            "locator": {
+              "end": 959,
+              "kind": "line_range",
+              "start": 959
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The address in the hash, followed on `hashchange`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:80a53e1442e549f1d829eeb844221e5c8838988089eda801c9121de1bf60765e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReaderAddress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The pin offered for a clean tree (N2), and the partial index named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:ab0ec89fa7fc887596ba4b243a2870639be2f30c1ac36706899749dc4a1d15d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "PinButton"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:76a6420f0f809e61cf8bda1cc57bf501cfca08713502945912730d3f1fa85060",
+            "locator": {
+              "kind": "symbol",
+              "name": "PartialIndex"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The banner: tree, memory revision, code tree and its note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:049e5748b44e3738027db7e4f5442c63be81e31f6a521aea202f6d736ec65a45",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectionLine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:bf0d8c31629dc61d0cbbeeb692ffc59da6386e9a3b2d2c44a3dcb18ff8a399d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionBanner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The view per answer, and refusals named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:e6e4e7106526f0cc83f2bc98bee732bbc575886a71acc4e2b45580d3782a7323",
+            "locator": {
+              "kind": "symbol",
+              "name": "NotServed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:e3a7f2e0201ae2d70c0270e3a7a50a6407b299ac7296ea14f3a8986d823ddf89",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnswerView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The memory-tree selector, unconverted commits disabled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:bce642042c0018c457f92d4607a9b13ccf54e9f3f02bee02fb5ee761c374edd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommitOptions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:44d1194a836d335b8ffda62f297b50b6cbb0511787c5ac4c24933ac74056d4ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommitSelect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Side reads kept as named failures (F11).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:a10a31bac9a657f1f29c642f5d49e9813e09f30513a30f453779ab55d99432b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:846ebb9d089004adb02297d97f7e25585b287c111eebb834a2a8843278d96dbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideFailures"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The address's answer, and the root summary as the landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:928939cd3dc8334d00a1399ac9f12c1edac297243bfd942d35b481aaa274fc74",
+            "locator": {
+              "kind": "symbol",
+              "name": "useAddressAnswer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:ea5314d9878290b9abaa6444fa842d97c12950c4547341a90071169af1d266b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRepositories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The toolbar and the view pane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:790b153a24969162eaaac68e90fc27ae7e6fbf36f717f7000b438e432abe384b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Toolbar"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
+            "content": "sha256:17bb012a4952a201b03a02fe2e537275f84d0fe47044dd4ebf7a16c2f0ab4ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

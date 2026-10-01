@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/tasks/store.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+        "content": "sha256:26f14716ec7356df142cc72f837f7380517426151aa6a6dededcc04065042010",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_task_docs"
+        }
+      },
+      "id": "RLZ-33Y3K7DM",
+      "invariant": "INV-ZRTBZAS4",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The projection writer is the construct that makes the Markdown derived rather than authored.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The task-document model the store writes, and reads back through `model_validate_json`.\n\nAnchor: \"class TaskDocument(_Doc):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef54a14f41a34d2429445ca5239646f05daf6eac",
+            "content": "sha256:bb2a5b99e2a3d919c309c6b4595e621a9ab9bd100439c8d876cae009b9a9cd34",
+            "locator": {
+              "end": 826,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The renderer invoked on every write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "385e386fadc50bd566dcf75ed13daaef86c02cbf",
+            "content": "sha256:51aef0a1e2ff4d9bb5f9682a42026aa1b606642e4e9554068960c1424c63cbec",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_markdown"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The application entry point uses batch writes when a leaf mutation also changes its parent master row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720dba86e0a43d96e27ffa5105f48b40b4ca6322",
+            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_tool"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Publishability gate refusing legacy review intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:40eb1d5e4a70cd19695ae6ed12124d2b6c44bca8a44d3b2384324cf1384b9a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_publishable_task_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared identity rejection seam it calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:99150d0e1e62768d1909878cfcf66645767504ba298ae39270aee30938c7dd5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_task_intent_identity"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current module exposes `TaskDocSourceSnapshot`, `TaskDocSourceReadError`, `doc_stem` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:598b8b132356383cbe0e3888140fd0962fd4bb9ac330950d41110bbb664f3922",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocSourceSnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:1111e6701d15ca4b5661e60a98b581d3cb4e35df96c050c0dcafd9a7047c1ba3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocSourceReadError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:9cc60d900e0fc4a0e0612ea1e9791e036dcd0221107502bf09a5d57393be13c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "doc_stem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

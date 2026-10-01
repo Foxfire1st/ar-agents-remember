@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/serving/task_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One API resolves canonical references and returns the shared refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:5ba6e95965730addd9449f85cf6b4e3b570a9875f33a4221edc9266974709359",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_task_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Binding order preserves lineage recovery before reviewer-parent validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:0c9b608aa9711ce4e5702fd640e276603f1e58de787634706c2fed4ca331d317",
+            "locator": {
+              "kind": "symbol",
+              "name": "_binding_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:df0458720021721a5f7bb674f0f2ac370d74110f039e0455a5e843a0024d4f55",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reviewer-parent ownership is explicit and altitude-specific.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:7ba9dae1a421d3f04944217834ad52f8c0e4c81b66e8028ae42915626d12e982",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_structural_parent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:fdc0e21d5f837f7766a78ab20dd4009e3f2bb0b7cc09acd2bc9d5c1bebf69f06",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

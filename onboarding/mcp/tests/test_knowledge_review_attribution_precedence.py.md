@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_review_attribution_precedence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_review_attribution_precedence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -80,39 +70,29 @@ property it protects in its docstring.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement (one enclosure, only the knowledge halves vary, nothing injected), and the import of the sibling's enclosure fixture. | "Attribution precedence across knowledge availability, over one real review enclosure."; "from test_knowledge_review_source_endpoints import LEAF_ID, EndpointFixture, build_endpoint_fixture" | mcp/tests/test_knowledge_review_attribution_precedence.py:1-41 |
-| The sibling's enclosure fixture these cases build on. | `EndpointFixture`; `build_endpoint_fixture`; `LEAF_ID` | mcp/tests/test_knowledge_review_source_endpoints.py:93-93; mcp/tests/test_knowledge_review_source_endpoints.py:113-197; mcp/tests/test_knowledge_review_source_endpoints.py:207-239 |
-| **The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.** | `test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown`; `test_the_same_pair_read_completely_confirms_absence_where_the_lost_half_could_not`; `test_a_damaged_knowledge_half_cannot_support_a_negative_attribution_conclusion` | mcp/tests/test_knowledge_review_attribution_precedence.py:53-123; mcp/tests/test_knowledge_review_attribution_precedence.py:163-196; mcp/tests/test_knowledge_review_attribution_precedence.py:199-247 |
-| **The empty-generation case: an identified empty first generation counts as completely inspected for absence.** | `test_an_identified_empty_first_generation_counts_as_completely_inspected_for_absence` | mcp/tests/test_knowledge_review_attribution_precedence.py:126-160 |
-| **The receipt cases: an unreadable candidate receipt is stated on the task route and refused on the subject route; a receipt that breaks after the preflight is stated in the pane and the limits.** | `test_an_unreadable_candidate_receipt_is_stated_on_the_task_route_and_refused_on_the_subject_route`; `test_a_receipt_that_breaks_after_the_preflight_is_stated_in_the_pane_and_the_limits` | mcp/tests/test_knowledge_review_attribution_precedence.py:250-326; mcp/tests/test_knowledge_review_attribution_precedence.py:329-377 |
-| The two knowledge states built by their owners' own writers. | `_damaged_origin`; `_identified_empty_first_generation` | mcp/tests/test_knowledge_review_attribution_precedence.py:380-402; mcp/tests/test_knowledge_review_attribution_precedence.py:405-450 |
-| The unit-regression lane row, beside its sibling's. | "mcp/tests/test_knowledge_review_attribution_precedence.py" | mcp/tests/test-evidence-lanes.toml:163-163 |
-| The two support artifacts whose exact `consumers` lists declare this module (at `:1449` and `:1505`). | "path = \"mcp/tests/diff_scope_test_support.py\""; "path = \"mcp/tests/read_scope_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:1425-1470; mcp/tests/evidence-lifecycle.toml:1473-1529 |
+- The module's own statement (one enclosure, only the knowledge halves vary, nothing injected), and the import of the sibling's enclosure fixture. [1]
+- The sibling's enclosure fixture these cases build on. [2]
+- **The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.** [3]
+- **The empty-generation case: an identified empty first generation counts as completely inspected for absence.** [4]
+- **The receipt cases: an unreadable candidate receipt is stated on the task route and refused on the subject route; a receipt that breaks after the preflight is stated in the pane and the limits.** [5]
+- The two knowledge states built by their owners' own writers. [6]
+- The unit-regression lane row, beside its sibling's. [7]
+- The two support artifacts whose exact `consumers` lists declare this module (at `:1449` and `:1505`). [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every case runs in-process against a
 temporary coordination root, its own repositories and its own datasets.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 1 passing row(s) normalised by the fixer. No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:29:20+00:00: Generated citation repair: "mcp/tests/test_knowledge_review_attribution_precedence.py" repointed to mcp/tests/test-evidence-lanes.toml:163-163. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): created this one-to-one card for the six attribution-precedence and receipt cases. The worker moved them verbatim out of `test_knowledge_review_source_endpoints.py` (1515 → 1093 lines there; 450 lines and 6 cases here). The three case rows moved from `test_knowledge_review_source_endpoints.py.md`, where they were removed. Their ranges were re-derived to each case's own extent: the precedence and receipt rows had collapsed to single `def` lines, and the receipt row had one range for two cases. The case descriptions reuse the `260921-ICR-L4` curator's account and the cases' own docstrings. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

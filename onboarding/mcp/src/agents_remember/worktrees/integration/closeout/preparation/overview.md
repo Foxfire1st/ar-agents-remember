@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout/preparation` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -42,19 +36,17 @@ The memory-content message uses the kernel's shared `Code-Commit:` renderer. `me
 - [finalization.py.md](finalization.py.md) — original prepared output publication and canonical contract completion.
 - [continuation.py.md](continuation.py.md) — default selected continuation and producer binding.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Selected intent and command CAS remain outside the transport package. | `select_preparation_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py:135-158 |
+### Repo-Internal References
+
+- Selected intent and command CAS remain outside the transport package. [1]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The selected bundle contains code and one memory-content output. | `PreparedMemoryOutputs` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:45-48 |
-| Existing memory reuse binds raw Git facts and a separately certified content tree. | `observe_existing_memory_proof` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py:19-63 |
-| Final publication proves and publishes the pair, then refreshes the cache. | `finalize_prepared_closeout`; `_publication_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:533-569; mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
+- The selected bundle contains code and one memory-content output. [2]
+- Existing memory reuse binds raw Git facts and a separately certified content tree. [3]
+- Final publication proves and publishes the pair, then refreshes the cache. [4]
 
 ## Integrated IAS Recovery Contract
 
@@ -63,35 +55,3 @@ Memory preparation reobserves the selected result, actual policy and original in
 ## CCR-L42 Refresh Validation Parity
 
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
-
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced M/L and C/M/L proof/publication with exact code and memory-content outputs and cache-free certified reuse. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
-  `5bb124d4`): route impact. `memory_output.py` became one of the five memory-content producers when
-  `_intent` began rendering the memory-content leg through
-  `kernel.memory_attribution.render_memory_content_message` against the candidate's certified code commit
-  (the ledger leg stays plain), which is also the producer the master's 2026-09-13T22:05 census missed and
-  the 2026-09-13T23:50 decision added. Recorded on `Ownership And Boundaries`: the memory-content leg is
-  attributed and the ledger leg is not, the message is hashed into the private commit that finalization
-  publishes to the live memory ref, and this leg's only protection is the source census because
-  `execute_selected_closeout` has no production caller. Verification metadata remains closeout-owned; no
-  acceptance claim and no verification stamp advanced.
-- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: re-anchored `select_preparation_intent`
-  to its current selection and state-persistence range; route ownership and verification metadata
-  remain unchanged.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/integration/closeout/preparation`, so no route/member/prose/invariant change is required. route-member-count=14; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
-
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
-
-
-### 2026-09-06T17:13:06+00:00 — Initial preparation route
-
-Recorded current source ownership with verification metadata unset and no execution or acceptance claim.

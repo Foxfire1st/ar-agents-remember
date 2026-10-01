@@ -1,15 +1,5 @@
 # mcp/tests/tool_refusal_census_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/tool_refusal_census_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T19:50+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -76,42 +66,32 @@ the fixture's entities once so the 67 invocations cannot spell them differently.
   module: the completeness check is a set comparison against `PUBLIC_TOOLS`, which is what makes
   the census shrink-proof.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured in this memory root. These are
 repository-owned fixture facts; no external library behaviour is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The 67 production failure invocations, one per advertised tool. | `failure_invocations` | mcp/tests/tool_refusal_census_support.py:54-228 |
-| The driver: roster equality first, then one drive per tool, with the lifecycle arranged so `lifecycle_start`'s own failure path is measured. | `drive_census` | mcp/tests/tool_refusal_census_support.py:282-306 |
-| An absent contract path inside the coordination root, for the contract-address family. | `absent_contract` | mcp/tests/tool_refusal_census_support.py:40-47 |
-| A contract-shaped path outside the coordination root, for the confinement refusals. | `outside_contract` | mcp/tests/tool_refusal_census_support.py:48-53 |
-| The fixture document addresses a tool must resolve to reach a later refusal. | `TASK_REF`; `LEAF_REF`; `ABSENT_REF` | mcp/tests/tool_refusal_census_support.py:35-35; mcp/tests/tool_refusal_census_support.py:36-36; mcp/tests/tool_refusal_census_support.py:37-37 |
-| The advertised roster the table is asserted equal to before anything is driven. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-91 |
-| The hermetic world every invocation addresses, shared with the benign sweep. | `EntryPointWorld` | mcp/tests/test_tool_entry_point_sweep.py:325-866 |
-| The conformance check that drives this census and asserts the three-shape partition. | `FailurePathCensusTests` | mcp/tests/test_tool_refusal_conformance.py:191-282 |
+- The 67 production failure invocations, one per advertised tool. [1]
+- The driver: roster equality first, then one drive per tool, with the lifecycle arranged so `lifecycle_start`'s own failure path is measured. [2]
+- An absent contract path inside the coordination root, for the contract-address family. [3]
+- A contract-shaped path outside the coordination root, for the confinement refusals. [4]
+- The fixture document addresses a tool must resolve to reach a later refusal. [5]
+- The advertised roster the table is asserted equal to before anything is driven. [6]
+- The hermetic world every invocation addresses, shared with the benign sweep. [7]
+- The conformance check that drives this census and asserts the three-shape partition. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for this fixture. Every address it hands
 out is inside the disposable world the calling test module builds.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No repository or external-system boundary is proved by this module. | N/A | N/A |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `drive_census` repointed to mcp/tests/tool_refusal_census_support.py:282-306. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-19T19:50+02:00 — 260918-TSIP-L6 curator (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): **created**. The module is new in this leaf (**253 lines**, sha256 `5ad77371b0025d7a…`) and holds the leaf's measured refusal population — one production failure invocation per public tool, asserted equal to `PUBLIC_TOOLS` in both directions before anything is driven, with the fixture addresses and the lifecycle ordering that make `lifecycle_start`'s own failure path the one measured. Recorded that it is a support module with no collected case and therefore no lane row, and that it owns no assertion about correctness: the three-shape partition and both pins belong to `mcp/tests/test_tool_refusal_conformance.py`. Verification metadata is the recorded base commit; the candidate is uncommitted and the governed closeout stamps the real code commit.
+No repository or external-system boundary is proved by this module.

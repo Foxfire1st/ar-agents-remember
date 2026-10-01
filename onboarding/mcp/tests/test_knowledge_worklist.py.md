@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_worklist.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_worklist.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -69,7 +59,9 @@ sides (`worklist_for_sides`) exactly as the leaf route does.
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R08@v2` of task
@@ -78,44 +70,28 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two real repositories each case builds. | "a converted **memory** whose base commit records" | mcp/tests/test_knowledge_worklist.py:1-8 |
-| The fixture's entries and locators. | `ENTRIES` | mcp/tests/test_knowledge_worklist.py:85-99 |
-| The fixture world and its worklist run. | `World`; `worklist_for_sides` | mcp/tests/test_knowledge_worklist.py:175-251 |
-| The knowledge items, without MIK-R10's unexplained kinds. | `UNEXPLAINED_KINDS`; `knowledge_items` | mcp/tests/test_knowledge_worklist.py:287-287; mcp/tests/test_knowledge_worklist.py:290-293 |
-| Hunk parsing and mapping. | `test_hunks_parse_and_line_ranges_map_through_the_zero_context_diff` | mcp/tests/test_knowledge_worklist.py:309-328 |
-| The conforming body-edit example. | `test_a_body_edit_raises_its_invariant_and_family_and_carries_the_rest_of_the_file` | mcp/tests/test_knowledge_worklist.py:336-361 |
-| The comment boundary: no knowledge item between functions, and exactly one unexplained hunk (MIK-R10). | `test_a_comment_between_functions_raises_nothing_and_one_inside_raises` | mcp/tests/test_knowledge_worklist.py:364-379 |
-| Proofs in change detection. | `test_proof_entries_take_part_in_change_detection` | mcp/tests/test_knowledge_worklist.py:434-448 |
-| Knowledge-side changes. | `test_added_retired_and_reanchored_entries_raise_and_new_records_do_not` | mcp/tests/test_knowledge_worklist.py:488-520 |
-| The registry. | `test_the_registry_declares_four_things_per_kind_and_refuses_a_second_registration` | mcp/tests/test_knowledge_worklist.py:559-597 |
-| `incomplete` inputs. | `test_unreadable_inputs_make_the_run_incomplete_and_name_them` | mcp/tests/test_knowledge_worklist.py:617-626 |
-| Both memory sides unconverted: no worklist. | `test_two_unconverted_memory_sides_get_no_worklist` | mcp/tests/test_knowledge_worklist.py:629-643 |
-| The definition-4 ruling. | `test_an_unchanged_blob_is_untouched_whatever_its_recorded_content_says` | mcp/tests/test_knowledge_worklist.py:651-670 |
-| A partial inventory. | `test_a_partial_change_inventory_makes_the_run_incomplete_naming_the_paths` | mcp/tests/test_knowledge_worklist.py:673-686 |
-| The lane registration. | "mcp/tests/test_knowledge_worklist.py" | mcp/tests/test-evidence-lanes.toml:119-119 |
+- The two real repositories each case builds. [1]
+- The fixture's entries and locators. [2]
+- The fixture world and its worklist run. [3]
+- The knowledge items, without MIK-R10's unexplained kinds. [4]
+- Hunk parsing and mapping. [5]
+- The conforming body-edit example. [6]
+- The comment boundary: no knowledge item between functions, and exactly one unexplained hunk (MIK-R10). [7]
+- Proofs in change detection. [8]
+- Knowledge-side changes. [9]
+- The registry. [10]
+- `incomplete` inputs. [11]
+- Both memory sides unconverted: no worklist. [12]
+- The definition-4 ruling. [13]
+- A partial inventory. [14]
+- The lane registration. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: every repository is built under `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 1 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_knowledge_worklist.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:30:03+00:00: Generated citation repair: "mcp/tests/test_knowledge_worklist.py" repointed to mcp/tests/test-evidence-lanes.toml:119-119. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** Recorded the `knowledge_items` helper (three L08 assertions that meant "no knowledge item" now use it) and the comment-between-functions case's new assertion of exactly one `unexplained_hunk`; one row added, the comment-boundary row reworded. Other rows were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-30T02:35:21+00:00: Generated citation repair: `test_unreadable_inputs_make_the_run_incomplete_and_name_them` repointed to mcp/tests/test_knowledge_worklist.py:617-626. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:35:21+00:00: Generated citation repair: "mcp/tests/test_knowledge_worklist.py" repointed to mcp/tests/test-evidence-lanes.toml:117-117. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

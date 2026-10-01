@@ -1,0 +1,313 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.applicability.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The two label fixtures the cases mount, each naming its own subject and references.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:2258a030ac3d0741971a96dbce87444c2393ec66e620068faceaea8b88d15389",
+            "locator": {
+              "kind": "symbol",
+              "name": "directLabel"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:126e0479cd2a980bf387d07dacf60a01349e8cc222de65d9df1dd1e8251dca14",
+            "locator": {
+              "kind": "symbol",
+              "name": "historicalLabel"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The rendered labels themselves: the per-record note, the context list and the counts block.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:938a7d9be8a83c0ef8a4dec6a90fa32fd5830bc24c9051260894fbc4b59565ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "applicabilityNote"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:ece684394c69ad646ad99dc52aacfcde6ff7b91f2bf7a42d1739264792cb4df5",
+            "locator": {
+              "kind": "symbol",
+              "name": "contextList"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:448a9ce9bf8955d74631de209b69389f86863bfb8ae00b358f162b65e429fc1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "applicabilityCounts"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The two call sites that mount them, on the knowledge pane and on the evidence pane.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:ffdf01a96b75a577dd0a4006ab295850c28fe3a47147332ad17c10a3d07a844c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgePane"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:d2dc8426c812d02df83b31c99969ee74c6e68c795814d77ea447b2eeccfbcb1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidencePane"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The server-side case this client mirrors: a sibling's record is context and never the selected subject's.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:ee86d436c12c6e8162e96369ac2af15f8507df788adc06848b13aaa31fa32e47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The two real wire bodies: one with the labels, context rows and counts, one without any of them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:e1062cf997c111e20e828da2efb0de09f0f73c61fc56df3a566606af59223ae4",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The envelope and the real `Response` the client decodes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:f4ae42c06c83d0e9acf1cafb27ed816f10042759156a44dc8cb1a1c791767bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:87e9fafeaf3eddc6b1b8d50be89dda0750238893f1758349429c8939fd57e303",
+            "locator": {
+              "kind": "symbol",
+              "name": "response"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:5be538c97f0040b13e5c6ca2699da95801a516735578300c39cac8422cab3cd4",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 204
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The one mount helper, and the cleanup that keeps no global across a case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:77bfb61bab6e2ccd00825e85dc41aa9480d1f0a44076c8b63e52bc617f3ff52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountSubject"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The F09 client case: the treatment and the true subject are mounted, and the sibling's finding is nowhere in the document.**\n\nAnchor: \"mounts each record's own treatment and the true subject of labelled context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:cb772dbd104db04b91801e696793ed1b154ebfabee992a276e7502f9a76d12e9",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 246
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The counts case: the six-way partition is rendered beside the collections it filtered.**\n\nAnchor: \"states the six-way counts beside the collections it filtered\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:f63a3d68e56eb32a80676d0398ac71fbea36af0d7f3ff77805a5285776b013f4",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The historical case: a previous generation is labelled and never reads as the current result.**\n\nAnchor: \"labels a previous generation's record as historical rather than as the current result\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:91b18447fd1ee942de2c74f94541ca6323641fbc692a05ed8f80866b0073e2ff",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 291
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The additive-compatibility case: a body published before the labels existed still renders.**\n\nAnchor: \"still renders a payload published before the labels existed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b87a5656b7d5207d85fce4473709be2bf8f2deb",
+            "content": "sha256:db172f9f73ba66f10b6695ccb13f2c73fb5337d0180bb2358aded54a687e7328",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 307
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The client vocabulary these cases mount, and the fields the surface gained.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:0af78791c0abe5abf137311818bcd9caf04b8cf676d120ccba0b932faa47a620",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewDisplayedApplicability"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:62e4954f608e3f992eadb1e3198e61d9aeff14c660ae214ab91f387054e78f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewContextRecord"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:efc790db74a159d7752bc685f7c78acbab44dc4045824226b91fd70b36e7d250",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewApplicabilitySummary"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:33e36359efd8dd337f7f07c83b33db59401b55633d4a9e8c96a71f50d6fece3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgePane"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/models/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This initializer declares the public model export list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fe18a58357e0e1b0920f7cdc7f3f1f735132c2",
+            "content": "sha256:73ef96f379137650ea45e8046a0faab0809da657e44c87b835d3af1ab45fc84d",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

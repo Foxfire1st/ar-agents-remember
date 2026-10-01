@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/rust/scripts/post-suite.sh",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture post-suite proof consumer over the suite artifact.\n\nAnchor: `suiteResult`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "500430a61fa565470a60376fe096200d4a86970d",
+            "content": "sha256:91fe2274af62efad0873207ff5129cc0492b6e5132fc17947902ee7bb9ef668b",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2283cd63b1a900b2661fae76a1a065dd4d016eea",
+            "content": "sha256:92df49754630acc34090ebbd6d882112d3cd0b499c5245daed9066b78bd84128",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,113 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pure evidence/detail projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:12da4fe2c3b52b8f1ecbd63f2b4abab8b291ca091f60b3952a4eacd2deff7ad9",
+            "locator": {
+              "kind": "symbol",
+              "name": "submitEvidenceLines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared terminate/retire residual rendering and exact dismissal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:84a5bbf79ae02464fa7e2d9b202a956c5dbe4f788916d7556f8af17efa90aaf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedStopResiduals"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:4c15ffa2a6a9cb763c5a7665e143878154360f752e39aea987758b49bd5c9289",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Full pane rendering and explicit actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:6e638d7fcfee5d7b9dd6eaac3a8961700a4cacb802f26c5a3175a79af98f8068",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidencePane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:a0348831f1b52f3d4e76ff429f5049853285130c56c90b8d2641a06bef492156",
+            "locator": {
+              "end": 463,
+              "kind": "line_range",
+              "start": 407
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Lifecycle notice store shared with the stage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:96271501f1dde1d1d11c4a1cced2ad75095749429f774152f2e300e076cd45a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "useLifecycleNotices"
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Set acknowledgment driver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:224ffc3eeb190d29fc8109c3ae2230abf90b786469061e5155b3eb6c05e43ca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "acknowledgeSetAttention"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

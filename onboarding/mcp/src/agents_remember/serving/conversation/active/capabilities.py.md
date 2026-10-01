@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/capabilities.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/capabilities.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active conversation serving overview](overview.md)
@@ -97,64 +87,30 @@ neither is restated here.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No `Domain Documentation` source is configured for this repository, so no live domain-documentation
 pass was available for this file. Its subject is fixture evidence recorded in this repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source exists in `system/sources.md`; the evidence classes this module builds are the repository's own recorded fixtures. | — | — |
+No configured `Domain Documentation` source exists in `system/sources.md`; the evidence classes this module builds are the repository's own recorded fixtures.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The keyed dispatch that replaced the silent pi fall-through, and the selector that reads it. | `_CONTROL_PLANE`; `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:432-437; mcp/src/agents_remember/serving/conversation/active/capabilities.py:440-457 |
-| eve's own evidence builder — supported rows on the pinned native scenario, `unavailable` for a contract eve's stream does not carry, `unverified` for a real but unexercised one. | `_eve_capabilities` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:351-429 |
-| eve's fixture id, runtime version and its own observation time, distinct from the other three harnesses'. | `_EVE_FIXTURE`; `_EVE_RUNTIME`; `_EVE_OBSERVED_AT` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:51-51; mcp/src/agents_remember/serving/conversation/active/capabilities.py:58-58; mcp/src/agents_remember/serving/conversation/active/capabilities.py:61-61 |
-| The evidence record now takes its observation time as a parameter, so a builder cannot inherit another harness's date. | `_fixture_evidence` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:64-76 |
-| The three state constructors every builder shares, and the no-attachment declaration. | `_runtime`; `_adapter`; `_unavailable`; `_no_attachments` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:79-89; mcp/src/agents_remember/serving/conversation/active/capabilities.py:92-98; mcp/src/agents_remember/serving/conversation/active/capabilities.py:101-102; mcp/src/agents_remember/serving/conversation/active/capabilities.py:105-118 |
-| The sibling builders this one must not resemble in evidence. | `_codex_capabilities`; `_claude_capabilities`; `_pi_capabilities` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:121-209; mcp/src/agents_remember/serving/conversation/active/capabilities.py:212-257; mcp/src/agents_remember/serving/conversation/active/capabilities.py:260-348 |
-| The control gate's single-source interrupt verdict and eve's telemetry declaration, both consumed rather than restated. | `interrupt_capability_for`; `telemetry_capabilities_for`; `_eve_controls`; `_eve_telemetry` | mcp/src/agents_remember/serving/conversation/control/capabilities.py:310-342; mcp/src/agents_remember/serving/conversation/control/capabilities.py:345-359; mcp/src/agents_remember/serving/conversation/control/capabilities.py:390-398; mcp/src/agents_remember/serving/conversation/control/capabilities.py:401-411 |
-| The cases: the advertised catalog derives from the launch selection, eve never borrows another harness's evidence, and an unknown harness fails loudly instead of inheriting a catalog. | `EveCapabilityHonestyTests` | mcp/tests/test_eve_product_integration.py:1134-1287 |
-| The projector whose frames every eve `supported` reason names. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/projectors/eve.py:147-159 |
+- The keyed dispatch that replaced the silent pi fall-through, and the selector that reads it. [1]
+- eve's own evidence builder — supported rows on the pinned native scenario, `unavailable` for a contract eve's stream does not carry, `unverified` for a real but unexercised one. [2]
+- eve's fixture id, runtime version and its own observation time, distinct from the other three harnesses'. [3]
+- The evidence record now takes its observation time as a parameter, so a builder cannot inherit another harness's date. [4]
+- The three state constructors every builder shares, and the no-attachment declaration. [5]
+- The sibling builders this one must not resemble in evidence. [6]
+- The control gate's single-source interrupt verdict and eve's telemetry declaration, both consumed rather than restated. [7]
+- The cases: the advertised catalog derives from the launch selection, eve never borrows another harness's evidence, and an unknown harness fails loudly instead of inheriting a catalog. [8]
+- The projector whose frames every eve `supported` reason names. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this module: it builds evidence records from
 fixtures recorded in this repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `EveCapabilityHonestyTests` repointed to mcp/tests/test_eve_product_integration.py:1134-1287. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-16T11:42:27+00:00: Generated citation repair: `_runtime`; `_adapter`; `_unavailable`; `_no_attachments` repointed to mcp/src/agents_remember/serving/conversation/active/capabilities.py:79-89; mcp/src/agents_remember/serving/conversation/active/capabilities.py:92-98; mcp/src/agents_remember/serving/conversation/active/capabilities.py:101-102; mcp/src/agents_remember/serving/conversation/active/capabilities.py:105-118. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: **the selector no longer has a default arm.**
-  `capabilities_for`'s `if codex / if claude / return _pi_capabilities(...)` chain is now a keyed
-  `_CONTROL_PLANE` lookup, so a harness this view has no evidence for raises instead of being served
-  pi's fixture ids, runtime version and `supported` rows under its own name — the silent-inheritance
-  defect that adding `eve` exposed. Added `_eve_capabilities` with its own fixture id, runtime version
-  and observation time; `_fixture_evidence` gained an `observed_at` parameter so a builder carries its
-  own date rather than inheriting the shared constant. Body rewritten on Purpose, Logic, Conventions,
-  Invariants and the reference table, and the three inline `cit:(…)` prose citations were converted to
-  audit rows in the required `Finding | Anchor | Source` shape. Verification metadata moves to the
-  leaf's synced base `ff97072c`; the candidate is deliberately uncommitted, so the governed closeout
-  stamps the real code commit and no hash or fingerprint was invented here.
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: bound the all-harness capability rule to every builder, the selector, and the interrupt bridge. Verification metadata unchanged.
-
-- 2026-07-31T16:35+02:00 — No content impact: the whole-tree `ruff format` pass changed only
-  formatting in this module; the prior capability references were revalidated against the linked
-  source cards after the service and model edits.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
-- 2026-07-24T13:18:47Z — Prior curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-21T11:30+02:00 — Prior curator: corrected the now-false read-time version-demotion doctrine,
-  refreshed the per-harness evidence, and left the first verification stamp for closeout.
-- 2026-07-19T17:35+02:00 — Prior curator: created the sidecar for exact-session capability evidence.
+No meaningful cross-repo references found.

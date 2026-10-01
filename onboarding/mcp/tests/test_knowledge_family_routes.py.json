@@ -1,0 +1,208 @@
+{
+  "path": "mcp/tests/test_knowledge_family_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Doc14 family example validates, and a proof is not a location.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:041ca81bc982770544f770a84aee6c8f482d454e21d7911fd0de840c3c6eb857",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_doc14_family_example_validates_with_every_route_holding_realizations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Coverage and Non-empty violations name the family, the route and the path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:23b55ce924192a6433d7ea3c25fa664414659c9ec5caf2df9b191d24aa935146",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_realization_outside_every_route_violates_coverage_naming_family_and_path"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:ecc5e9e457fb17414f923a21eedf281f8d53911fcc3e799e79b5a502130795c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_route_that_no_longer_contains_a_realization_violates_non_empty"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "One broad route passes; the suggestion offers local routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:7b088de260199f817e497e83c4fbc27d654897d93a611aa25bef21b03ce2f491",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_broad_route_satisfies_the_rules_and_the_suggestion_offers_the_local_ones"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Route spellings: `.` or a repository path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:eb5df9ab7ae8e5abfc55ac2de0582778f39aeb2501ff8d4ba0cf8aa4d255fe86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_route_is_a_repository_path_or_the_root_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The root route covers a root-level realization, and a family whose only route is `.` is non-empty; each validation's only finding is the report-only legacy count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:07c8d52641000b6d0869c1abecce9e204ec6ed28ed88a41b7838901382d43fc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_root_route_covers_a_realization_at_the_repository_root"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:23795dbb89c32d9420b6d86a0c55aae9bcd7fb9ca88ba74c0bbcd89334134514",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_root_route_alone_is_non_empty_whenever_the_family_is_realized"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The reported states and the retired exemption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:21a35f2a0ee92d78a1210c3d86f42db4acb176258fee8e5f1e3b0e5518ea65a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrealized_family_is_reported_and_non_empty_is_waived"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:6b558b50b4f4a37eb228f4599d6592662f6044e1c2f7efd946851ee85bc3ef59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_exported_family_without_routes_is_route_unassigned_and_coverage_is_waived"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:76fea8009a2752e0377995357901d818a3efa5b0fd20c0c6fbb94e569bc51dc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_family_is_exempt_from_every_route_rule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A family without routes that is not an unassessed export violates Coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:26e2cc02c9d1a8ad3d403e1c32de92c21c35285e9fe421cc3ca562b185646cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_without_routes_that_is_not_legacy_unassessed_violates_coverage"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:bc2809e66d5c99ec36ee3426c961df59180b0cd262033bf1ffa55722ca3886ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrealized_family_still_needs_a_route_unless_it_is_an_unassessed_export"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A standalone conversion checks no route directory: with no code tree it passes, reporting only the legacy count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:0d1e9c527689128fe7353f540791500ef4cfb5d2b118af2a6fa4cc6b6be28b9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_standalone_conversion_checks_no_route_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_knowledge_family_routes.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:8adda2e4b569169c29db5f94ba70ba865ffa308df881aa40153dd219b6e70d95",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

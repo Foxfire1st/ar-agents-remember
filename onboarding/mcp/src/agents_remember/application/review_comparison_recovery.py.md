@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_comparison_recovery.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_comparison_recovery.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:02:28+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`|
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [governing route overview](overview.md)
@@ -38,31 +28,23 @@ This is the explicit recovery entry, not a heuristic used when normal history la
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. The repository declarations below support this contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+No configured domain source could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cited owners carry the behavior and failure boundaries described above.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The exact parent and original curator digest feed one shared freeze. | `recover_review_comparison` | mcp/src/agents_remember/application/review_comparison_recovery.py:28-83 |
-| Parent scope, availability and absence of prior captured assessments are required. | `_parent_issue` | mcp/src/agents_remember/application/review_comparison_recovery.py:86-110 |
+- The exact parent and original curator digest feed one shared freeze. [1]
+- Parent scope, availability and absence of prior captured assessments are required. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate repository supplies this contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository reference is required. | — | — |
-
-## Update History
-
-- 2026-09-27T05:02:28+00:00 — Created this source-mirrored card for the durable assessment-history boundary. Verification hash/date remain blank until normal closeout records the actual accepted code commit.
+No cross-repository reference is required.

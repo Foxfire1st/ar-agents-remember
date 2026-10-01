@@ -1,0 +1,101 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CGC backend settings are derived in the CGC core module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bef1510d5667467b29295b3a4debc89849723ff9",
+            "content": "sha256:474669b49ba045e75b1f1c22cccaf391aa458db93fdfd582173e793a1063214d",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_backend_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared Docker and Compose helpers provide port inspection/allocation, data mount checks, FalkorDB ping polling, and unmanaged migration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6029fadb8d818bad5f7a8acb17fcedb6929a6439",
+            "content": "sha256:46ba807077438ba8963fe13e0c3ba394210d61dd76a1505bb39f8025ec90b981",
+            "locator": {
+              "kind": "symbol",
+              "name": "docker_container_port"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/docker_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6029fadb8d818bad5f7a8acb17fcedb6929a6439",
+            "content": "sha256:65522127d77ed340e80688793af22e4656eacd5e503dc97e73f02f8f2cbe1499",
+            "locator": {
+              "kind": "symbol",
+              "name": "docker_data_mount_source"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/docker_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6029fadb8d818bad5f7a8acb17fcedb6929a6439",
+            "content": "sha256:25bf68ae506d5a2d730d5ea51b31123ac93659100ba4aaac3d874971e955ec7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "docker_wait_for_ping"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/docker_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "acce02fc4be84ce7cab82235a3f902a6acad1769",
+            "content": "sha256:3de2acee9e142199705f191770dcb3eede0b8b27ad568ff16061ea7c4720a6fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "allocate_host_port"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/host_ports.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ca35b1bdeb11df6bda90e2f8adeaac187825cd5",
+            "content": "sha256:f339ade8760c4c3eec023cb6e11e30fbd679e5488037992797022c310e0eda0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_unmanaged_compose_container"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ca35b1bdeb11df6bda90e2f8adeaac187825cd5",
+            "content": "sha256:34db8b98c385b41e04b76e43d1cd95ab4d9bb601ca1a7fae496cabc9699717d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_unmanaged_compose_network"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

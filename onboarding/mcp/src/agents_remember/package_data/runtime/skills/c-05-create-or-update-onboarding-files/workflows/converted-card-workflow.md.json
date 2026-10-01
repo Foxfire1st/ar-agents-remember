@@ -1,0 +1,127 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "What a converted card is, and that sidecar JSON is never written by hand.\n\nAnchor: \"Never write sidecar JSON by hand.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
+            "content": "sha256:fa05f2f4e4de41f5a498c9b55173b133eadf2815f40ca95a3e2193228e54f780",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Creating a card for a new source file: the Markdown, the citation table and one fixer run.\n\nAnchor: \"Create a card for a new source file\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
+            "content": "sha256:0ad1d406713fd3bc8ee0ac763d6f37558c229b2e2007eefcd86035c1147a12ea",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Refreshing a card: prose, re-authoring one reference by its number, and mechanical moves.\n\nAnchor: \"Refresh a card after the code changed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
+            "content": "sha256:e036e0cb99863e6fba61f72bb065b3fdf79ec46ffe25c8744c38cf33c0a6fa64",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Removing a reference, and the moved-source and deleted-source procedures.\n\nAnchor: \"Remove a reference\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
+            "content": "sha256:a2382ceb5d6f6beb7c13e1a1b64cf015b80511bf5f63992711c2bc2850f19e77",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The no-change trace rows, and what never belongs on converted memory.\n\nAnchor: \"When the card needs no change\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
+            "content": "sha256:44025590f2b83bafa525c3bdd92ed9c9266abeac1e1de577e755f1a947586192",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The c-05 skill routes converted memory to this workflow.\n\nAnchor: \"Converted Memory\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de5f77af8d189ea6f2837f31e4bf19226647f241",
+            "content": "sha256:65ea2ac4878fbebbe7bfa09cc8a8fdacd91ebccbbd36315f8c7fef8ded951306",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The authoring the workflow drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_card_references"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/card_authoring.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

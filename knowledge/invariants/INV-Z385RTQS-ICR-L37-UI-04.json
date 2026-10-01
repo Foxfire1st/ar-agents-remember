@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Display preferences and expression inspection during one mounted review workspace.",
+  "conditions": [
+    "Workspace state survives comparison-page reads and diff-layout switches.",
+    "Closing an expanded expression returns focus to its retained opener when that element is available."
+  ],
+  "exclusions": [
+    "These transient display choices are not persisted knowledge or durable cross-session preferences."
+  ],
+  "id": "INV-Z385RTQS",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "7dc7a5d7-f06f-40ae-a3c7-b59efbd79869",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Diff layout and full-file disclosure are workspace state, with changed regions as the default and focus retained when an expression closes.",
+  "status": "proposed",
+  "supersedes": []
+}

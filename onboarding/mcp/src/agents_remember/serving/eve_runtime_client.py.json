@@ -1,0 +1,336 @@
+{
+  "path": "mcp/src/agents_remember/serving/eve_runtime_client.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Routes, status codes, headers and the queue policy constant are declared once in the wire module and imported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:61d7828537e0a02112b95d88e37fab45986f8dba6eb4ea0d0b6d318d7bce843c",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_HEALTH_PATH"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:43c90d83172333cf4410fba259d768b87318d61e530872ad62fac50e09770efa",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_POLICY_QUEUE"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:9ea5dc1fb14422b5a9000e01432f60502a9e12078e436ccb54f1dd5b8f22280e",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_session_acceptance"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:8307725a1249a5cd2d6d379f59e9b53e2c996f38bf7f71aa70d07c07f8ecec13",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_stream_version"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The session routes, the `x-eve-stream-*` headers and the `turnPolicy` vocabulary are the pinned published package's contract.\n\nAnchor: `## Pinned dependency`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:cc4374719a61b525f8d8aba3a818d60f7e1074918d2f92173cfe499e913fc811",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:b9fb7136be84cc41c9318a8bdb9c7d94e06b066717b8410af5c1c859159dbc1d",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both request bodies are built here from that one literal, which is what pins the queued policy on the wire rather than only in a comment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:76fc3ba2b4a5ae21fbe00976819e924ef259ae80ee0d6dfd410bfc9d9ee54be0",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_session_body"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:e7014d7a5bd832451a20f24148a0add445818f72937a4133851b7e5bec9fa63f",
+            "locator": {
+              "kind": "symbol",
+              "name": "follow_up_body"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:a2b3dae7a56dbb2057c824c7e342f4fabec95f0a5e3c8ca922c071e562ce2be5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_turn_body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frame decoding from one transport read is the cursor decoder's job, not this module's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79d8d1104431897fbf5b93aa3c03edfdd97a5c2d",
+            "content": "sha256:705dbd8afad3708e860f1815c4f1add1c10048cecbb8c3d7af438417facb6ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveNdjsonDecoder"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_stream_cursor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Node resolution is owned by the launch module so the client never guesses an interpreter, and the caller's choice arrives on the launch it is handed.\n\nAnchor: `EveRuntimeLaunch.node_executable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:1d13ad4ff8c7cab545a59ed4e663dece603eff9797111a32fd6295b638a76804",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_node_executable"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:94cda040f80b505b083ecce010b175137dafb992f5e47cb13e6ece2fdc0ba875",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:3dc1787c69b48626b4e9266061888a452b03f1bf23fe95f89308f78345efe3c9",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 406
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The native fixture subclasses this client to trace traffic, which is why the route surface must stay observable and every sent body is recorded for assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:66fefecf26d7bc0283ccfdfb76206103a69ab53964dcb464068eff78d18cd6d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TracingEveRuntime"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:2fd46e05a3f6a62bc58cbc6d3872342e24a65a00ea377883ad758f87fe012e02",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:fc38419bdab2ef83419f20203594de2e69c2e73404c0cb61b7576617a3925185",
+            "locator": {
+              "end": 670,
+              "kind": "line_range",
+              "start": 584
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The deterministic conformance suites implement this seam and leave every other layer production.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:49ee8e68e20ee0e82ee78c7e3eace0d829e5cbaa71bcb802daf8635c666d9e31",
+            "locator": {
+              "kind": "symbol",
+              "name": "FakeEveRuntime"
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:0780c29ff404bf7bea049348c3d9761504aa7a27ea7d568c2ee1958b95a22f50",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two session controls this client gained, and why they matter to the trusted-instruction claim: clear does not rerun resolvers, compaction may summarize user-role history.\n\nAnchor: `compact_session`; `clear_session`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:b5c87ca95d0850ef636342ffe00c88d2f98a8cd5fedab06f090328319ed790a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_control_body"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:95b03b303dde8282d8ce6b9964e199174a3efa6237ddd3a0b3639b4663e25160",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 242
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The trusted instructions are applied in the system role so they survive turn boundaries, compaction and clear.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:203d4011f13195d873cbdcf520f8b46540ff6875b72a6e8b4f6822bd6670a3e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_INSTRUCTION_CHANNEL"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:20008307c37d88f3067bbf86a7315b635d613f1de646f6a469fc42b5ca4886eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_CONTEXT_CHANNEL"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The cases that exercise the controls through this client's own seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05c5f945582f4c68946bfbafb789cf0c501cdf4f",
+            "content": "sha256:7c890ededa33d578b2e2237dceb4e8c2e8f39199aa312f9a71dc24e2f924b864",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveWireRequestTests"
+            },
+            "path": "mcp/tests/test_eve_protocol.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/skill_resources/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/skill_resources/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T00:59:43+00:00 |
-| lastVerifiedCommitHash | `a5bec6c3b3b413cd3066d0e8d302b4854d1b513a` |
-| lastVerifiedCommitDate | 2026-09-27T03:38:17+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -75,7 +65,9 @@ those methods answer with.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The served transport is the MCP skills extension (SEP-2640). Its operative facts for a reader of this
 package:
@@ -96,65 +88,24 @@ package:
 The package's reading contract (discovery separated from delivery, containment proven before the read,
 per-file revision re-checked, unreadable recorded not dropped) is what makes the entries trustworthy.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The extension identifier, this server's own index URI and schema, and the reserved `_meta` prefix. | `SKILLS_EXTENSION_ID`; `SKILL_INDEX_URI`; `SKILL_INDEX_SCHEMA`; `SKILL_META_PREFIX` | mcp/src/agents_remember/models/skill_resources.py:31-43 |
-| The SEP entry the two mandatory methods return. | `entry_document` | mcp/src/agents_remember/models/skill_resources.py:115-130 |
-| The served corpus is the package's own generated runtime skills copy, which is what makes a served revision reproducible. | `PACKAGED_SKILLS_DIRECTORY`; `shipped_skill_tree` | mcp/src/agents_remember/application/skill_resources/provider.py:28-47 |
+- The extension identifier, this server's own index URI and schema, and the reserved `_meta` prefix. [1]
+- The SEP entry the two mandatory methods return. [2]
+- The served corpus is the package's own generated runtime skills copy, which is what makes a served revision reproducible. [3]
 
 Canonical live reference: <https://github.com/modelcontextprotocol/modelcontextprotocol> (the skills
 extension specification, SEP-2640) — the URL the leaf's own `notes/source-evidence.md` pins.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package's two halves and the separation contract they exist to enforce. | `compile_task_capsule` | mcp/src/agents_remember/application/skill_resources/capsule.py:185-216 |
-| The revision-checked delivery half: one addressed file, containment proven before the read. | `read_served_file` | mcp/src/agents_remember/application/skill_resources/catalog.py:117-148 |
-| The verbatim frontmatter reader the entries depend on. | `parse_skill_frontmatter` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:52-71 |
-| The two planes stay separate in the compiled capsule: a declared skill becomes a reference, not instruction content. | `CapsuleSkillReferencePayload`; `RoleCapsuleResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:47-52; mcp/src/agents_remember/models/role_capsule_resources.py:86-115 |
-| The application entry points the MCP registration layer calls. | `role_capsule_compile_tool`; `skill_catalog_list_tool`; `skill_catalog_read_tool` | mcp/src/agents_remember/application/skill_resources/operation.py:68-107 |
-| How the boundary is registered: three public MCP tools, the resource set, and the two mandatory protocol methods. | `register_capsule_and_skill_tools`; `install_extension_methods` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:73-78; mcp/src/agents_remember/mcp/registration/skills_extension.py:133-153; mcp/src/agents_remember/mcp/registration/capsule_serving.py:85-90 |
-| The governing section separates per-task capsule composition from stable reusable skill delivery and states the admission and provenance boundary between them. | `## 260915-CAPS-L4 The Capsule And Skill-Resource Application Boundary` | onboarding/mcp/src/agents_remember/application/overview.md:898-938 |
+- The package's two halves and the separation contract they exist to enforce. [4]
+- The revision-checked delivery half: one addressed file, containment proven before the read. [5]
+- The verbatim frontmatter reader the entries depend on. [6]
+- The two planes stay separate in the compiled capsule: a declared skill becomes a reference, not instruction content. [7]
+- The application entry points the MCP registration layer calls. [8]
+- How the boundary is registered: three public MCP tools, the resource set, and the two mandatory protocol methods. [9]
+- The governing section separates per-task capsule composition from stable reusable skill delivery and states the admission and provenance boundary between them. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this package. The MCP SDK it registers
 against is a pinned external dependency (`mcp==1.29.1` at this leaf), not a sibling repository.
-
-## Update History
-
-- 2026-09-27T00:59:43+00:00 — Re-read the complete governing CAPS-L4 section and corrected this card's reference extent and rationale. Capsule composition and reusable skill delivery remain separate surfaces; the earlier generated-repair history is retained. No verification hash/date was edited; real closeout owns this citation card's accepted-code stamp.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `## 260915-CAPS-L4 The Capsule And Skill-Resource Application Boundary` repointed to onboarding/mcp/src/agents_remember/application/overview.md:860-900. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `## 260915-CAPS-L4 The Capsule And Skill-Resource Application Boundary` repointed to onboarding/mcp/src/agents_remember/application/overview.md:445-485. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T10:20+02:00 — 260915-CAPS-L15 curator: **the re-export surface gained two names, and the
-  grouping entry now records why both routing addresses exist.** `CapsuleSeatAddress` and
-  `routed_admission_for` were added for the launch path: a seat with no task document has no
-  `CapsuleCompileRequest` to hand over and must still use the one manifest selection, so the second
-  entry point takes the two values that actually decide it. The invariant says explicitly that the two
-  are entry points to one rule. Verification metadata moves to this leaf's base `15fa0e2c`; the
-  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit and no
-  hash or fingerprint was invented here.
-
-
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: rewrote this card against the
-  settled candidate. **Removed the rejection banner** — its subject was repaired by round 2 and round 3,
-  so the banner described a candidate that no longer exists. Recorded that **both mandatory protocol
-  methods are now implemented** (`mcp/registration/skills_extension.py`), that the SEP entry shape is
-  `{uri, frontmatter, resources:[{uri,digest,size}]}` with **verbatim** frontmatter, that nested skills
-  are published flat and their files also belong to the enclosing entry, and that this server's own
-  `skill://index.json` is a convenience resource **distinct from** the extension's enumeration surface.
-  Recorded that this package's registry is the single source all three transport halves answer from, and
-  pointed the boundary at the new protocol-method module one layer up. All citation ranges re-derived
-  against the current sources. Verification metadata remains closeout-owned; no acceptance claim is made.
-
-- 2026-09-16T11:50+02:00 — 260915-CAPS-L4 curator, post-verdict correction (superseded): corrected this
-  card's claim that the extension defines no protocol methods and recorded the rejected round-1 surface.
-  That surface has since been repaired, so the banner is removed above.
-
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator: created the card for the new
-  `application/skill_resources` package. Recorded the two-surface separation (per-task capsule
-  composition vs. stable reusable skill modules), the no-caller-named-path admission rule, and the
-  package layout. Its claim that the extension adds no protocol methods was wrong and is corrected above.

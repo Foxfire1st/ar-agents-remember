@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/models/conversations/withdrawals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Withdrawal projection validates allowed phase/outcome/recovery products and coherent recovery expiry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d75a9e32532b64e44414452d83b703244377c292",
+            "content": "sha256:0e88c3082e2ff042d40ea1bdc13438e1ee6660054ca28b73e65602fe536d571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "WithdrawalOperationProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

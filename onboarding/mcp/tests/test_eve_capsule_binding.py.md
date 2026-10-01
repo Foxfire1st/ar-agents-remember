@@ -1,15 +1,5 @@
 # mcp/tests/test_eve_capsule_binding.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_eve_capsule_binding.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `f7619b3dced6198cc54956997f7718738918b846` |
-| lastVerifiedCommitDate | 2026-09-18T06:38:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -81,44 +71,27 @@ constructor rather than only for the production path.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation pass
 was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; the second opinion the cases use is `git` itself and Python's own `hashlib`, not an external specification. | — | — |
+No configured `Domain Documentation` source; the second opinion the cases use is `git` itself and Python's own `hashlib`, not an external specification.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The producer under test and the format its output must satisfy. | `materialize_eve_binding`; `build_carrier`; `EveCapsuleCarrier` | mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206; mcp/src/agents_remember/application/eve_capsule/__init__.py:282-324; mcp/src/agents_remember/models/eve_capsule_carrier.py:168-231 |
-| The Python verifier these cases drive in both directions: accept the admitted binding, refuse each declared defect. | `verify_capsule_binding`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:129-143; mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497 |
-| The role authority table the write-surface cases assert against. | `ROLE_WRITE_SURFACES`; `write_scopes_for`; `WORKER_WRITE_SURFACES`; `CURATOR_WRITE_SURFACES` | mcp/src/agents_remember/application/eve_capsule/__init__.py:79-93; mcp/src/agents_remember/application/eve_capsule/__init__.py:327-365 |
-| The fixture world supplying the real repositories, worktrees, corpus and task documents. | `FixtureWorld`; `build_world` | mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:457-549 |
-| The runtime cases that execute the shipped TypeScript for the same seam, which no Python case can observe. | `test_runtime_verifier_refuses_each_declared_defect` | mcp/tests/test_eve_capsule_runtime.py:267-288 |
-| The live native fixture that proves the same binding against a real eve process. | "capsule-binding" | mcp/tests/live_eve_native_fixture.py:1137-1137 |
+- The producer under test and the format its output must satisfy. [1]
+- The Python verifier these cases drive in both directions: accept the admitted binding, refuse each declared defect. [2]
+- The role authority table the write-surface cases assert against. [3]
+- The fixture world supplying the real repositories, worktrees, corpus and task documents. [4]
+- The runtime cases that execute the shipped TypeScript for the same seam, which no Python case can observe. [5]
+- The live native fixture that proves the same binding against a real eve process. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by these cases; the git worktrees they assert against
 are created inside the test's own temporary directory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: created this card for the focused binding cases
-  added by this leaf's change set. Records the organizing property — both sides of every comparison have
-  independent provenance, which is what keeps the cases from being vacuous — the case grouping, and the
-  deliberate refusal shape: most cases assert a **named** defect, because an over-strict verifier that
-  refused everything would otherwise pass the whole refusal group. Records that
-  `test_materialize_writes_only_the_carrier_file_it_declares` is a boundary case rather than a
-  redundant one, and the dependency-based split from the runtime cases (these need no Node; those do).
-  Verification metadata is pinned to the leaf's synced base `23cc7a72` because the candidate is
-  deliberately uncommitted — the governed closeout stamps the real code commit, and no hash or
-  fingerprint was invented here.
+No meaningful cross-repo references found.

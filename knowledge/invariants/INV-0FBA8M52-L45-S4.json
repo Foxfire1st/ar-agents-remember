@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Curator hand-off lists written by producers and curators for the ordinary knowledge writer, and the canonical skill instructions that state their shape.",
+  "conditions": [
+    "governing_route is optional and is spelled missing by omitting the key.",
+    "The element shape supersedes rule 1's element shape in the external schema note 260915-KS-curator-handoff-list-schema.md revision 1; the rest of that note stands."
+  ],
+  "exclusions": [
+    "The generated skill copies, which follow the canonical text through scripts/sync-skills.py and are not authored independently.",
+    "The external schema note itself, which lives outside this repository and was not edited."
+  ],
+  "id": "INV-0FBA8M52",
+  "origin": {
+    "leaf": "260921-ICR-L45",
+    "legacyId": "fcae7f0d-c8d3-44de-8ca6-5e045f196a75",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The curator hand-off list's target shape is {path, locator, governing_route, rationale, role}, where rationale is the required authored explanation of why that place carries the obligation and role is optional; curators author a missing rationale from the evidence before ingest.",
+  "status": "proposed",
+  "supersedes": []
+}

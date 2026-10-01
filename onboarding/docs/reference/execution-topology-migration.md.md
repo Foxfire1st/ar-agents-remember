@@ -1,15 +1,5 @@
 # docs/reference/execution-topology-migration.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `docs/reference/execution-topology-migration.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
-| governingOverview | `docs/reference/overview.md` |
-
 ## Governing Overview
 
 [docs/reference/overview.md](overview.md)
@@ -84,51 +74,20 @@ Read the guide for the operator procedure; its wording is now the same rule this
 Source claims are reconciled to the frozen implementation. Verification metadata remains pinned to
 the previously verified commit until governed closeout can stamp the real new code commit.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- The read-only inventory the guide documents. [1]
+- The graph-authoring batch (and graph-less bootstrap) the guide documents. [2]
+- Fail-closed validation of a sprint's commanded membership and natures. [3]
+- Exact per-contract activation is the single runtime selection authority and archives malformed snapshots before replacement. [4]
+- Queue waiting reasons observe activation without owning its lifecycle; only reconciling waits. [5]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The read-only inventory the guide documents. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:917-979 |
-| The graph-authoring batch (and graph-less bootstrap) the guide documents. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:193-261 |
-| Fail-closed validation of a sprint's commanded membership and natures. | `validate_execution_topology` | mcp/src/agents_remember/tasks/document_refs.py:300-350 |
-| Exact per-contract activation is the single runtime selection authority and archives malformed snapshots before replacement. | `observe_atomic_series`; `publish_atomic_series_selection` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:155-212 |
-| Queue waiting reasons observe activation without owning its lifecycle; only reconciling waits. | `activation_waiting_reason` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:275-287 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned operator guide.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-13T15:03:18+02:00 — Removed the round-1 source-side-debt note: the guide was corrected this round, so the card now records the corrected text instead of flagging it. Re-read `docs/reference/execution-topology-migration.md` and confirmed the three corrected spots — the intro's "That default describes the sprint's shape and serializes nothing" with a graph-less sprint declaring no dependencies and "selecting one never pauses another" (lines 5-11), section 3's waiting reasons from "each contract's own strict activation snapshot (`active`, `reconciling`, or vacant)" (lines 62-68), and the release-notes bullet naming a missing graph "a sprint shape, not a serialization mechanism (nothing serializes a graph-less sprint)" (lines 122-125). Body updated with the ruling and the invariant that a missing graph is a shape, not a serialization mechanism; the retired phrases (the `paused by the selected master` waiting reason and "the source-pair-selected atomic-sequential default") no longer occur in the guide. Re-verified every citation row against the changed guide's cited sources: `inventory_execution_topology` task_execution_topology.py:917-979 (declaration at 966), `author_execution_graph` :193-261 (declaration at 202), `validate_execution_topology` tasks/document_refs.py:300-350 (declaration at 305), `observe_atomic_series`/`publish_atomic_series_selection` atomic_series_activation.py:145-152 and :155-212, and `activation_waiting_reason` :275-287; all anchors still resolve inside their ranges. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T14:19+02:00 — Per-contract activation curation: the card now describes the atomic-series activation record as keyed per series contract (not one selection per protected source pair), so selecting one master neither pauses nor clears another contract's record, and the queue's only waiting reason is `atomic-series-reconciling`. Rebound the observer/publisher citations to atomic_series_activation.py:145-152 and :155-212 and the waiting reason to :275-287. Recorded that the frozen documented guide's own text (lines 7-9, 61-65, 119) still carries the retired source-pair wording as source-side debt; no source-doc change is claimed. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound the operator-guide activation citations to the current observer, publisher, and waiting-reason definitions; no guide-content change or acceptance claim.
-- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
-
-- 2026-08-26T08:45+02:00 — Restored the canonical Docs/Cross-Repo reference section shape after
-  reconciling this changed guide.
-
-- 2026-08-26T08:20+02:00 — Reconciled the operator doctrine card to the frozen source; only the
-  future real-code-commit verification stamp remains closeout-owned.
-
-- 2026-08-26T05:20+02:00 — Reconciled the graph-less operator guide with source-pair activation:
-  switching selection pauses rather than retires, reconciliation precedes exposure, the queue is a
-  disposable observer, selector failure is runtime-scoped, and task authoring remains upstream.
-  Final citations and verification remain post-Dagger/closeout-owned.
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the guide was retitled from migration to authoring —
-  `migrate_execution_topology` is gone, the atomic-sequential default covers graph-less sprints,
-  and `author_execution_graph` bootstraps the first graph; reworked the procedure, seams, and
-  release-notes sections accordingly. Verification remains closeout-owned.
-
-- 2026-08-18T12:00:00+00:00 — 260815-DAG-L9: created as the operator migration/rollback reference for the
-  explicit execution-topology cutover. Verification remains closeout-owned.

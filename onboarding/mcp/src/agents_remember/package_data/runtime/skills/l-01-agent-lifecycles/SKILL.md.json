@@ -1,0 +1,283 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The packaged source carries the launcher, approval-gated strategist, architect-custody, and parallel-by-default invariants.\n\nAnchor: `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:1ca46a8318fb7c0df4394df84b9aa3debfb3c195fb5893f3357aa260b6547d29",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical skills are propagated into package data and harness mirrors by the sync script.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:749faa913fd02887de600f0c5da29e8e5d815d3ab4936ea5bb847d1a302f9b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_target"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:cc0fc76d82fcb1ce49eccf65d18cc94932f99661e0467ab778bd59fca87baeac",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:466a77ac94614b264016678e50f3dde6708a2b5920a8be37e37f0b52d8bd43f3",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The packaged source carries the launcher, approval-gated strategist, and parallel-by-default invariants as pointers, not as doctrine.\n\nAnchor: `# l-01-agent-lifecycles — The Agent Lifecycles`; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## The Role Registry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:3bc2659ebed47744e1413ab006e625a993829ba6336d3ff49e0f80e8a55e193b",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:65f90985a22076b3078963a0ec98ba4ff8cd8651be715bb83319a9d2ec8b66ad",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:73f893c413cf21875ea98a6a520e96f53e6c7f2bc8d97c01ad98e678c901efd6",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The router declares its own boundary — it routes, and every rule lives in exactly one other file — and names the ten-role registry plus the ambient launcher as a routing condition rather than an invented role.\n\nAnchor: `This file routes. It does not carry doctrine.`; `## Composition Map (how a capsule is assembled)`; `Exactly ten roles.`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:5645cbc81e4000afd5588fb97e2da7f24c8c5a04bb7b9fb6bf2d7c96c14c10f2",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:02140cb544bfd1987ac0e6466184bb03a5a644c3851fd7d08966c21512158ec0",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:2d1b5bebfaf3475cf07030c37c8a57594a640a172b017d50f61f971436f3e23d",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The tenth registry row this leaf added, and the reachability sentence it carries.\n\nAnchor: \"**bootstrap**\"; \"reachable before any task document exists\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:f4293396e1050a14ae3e054e5bf4d9fe25256273ecda9975ccc99fb4266abaaa",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Doctrine moved out of the router: shared rules to `core/`, procedures to `operations/`, rationale and superseded rulings to `reference/`, and routing metadata to the prose-free manifest.\n\nAnchor: `## Companion Files`; `## settings.json Orchestration Block`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:23de05fbaa4e7affea15f083f288e4f5b6d8f2a7ce813df02a3446fbef5935cf",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:47e1e966ab8a7ae7a082c09fb05b54b7c0b6fe0dce39e5c4ad0ea6d5039cc746",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The enabled corpus stays self-contained: the shipped check fails on a role that leaks a sibling's duties, on a manifest that names a missing source, and on any relative path the corpus cites that does not resolve.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:7884929095c6b0359249c65b25ec6fc2a4dbab3d60e7e873fdd576e97a238e35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SANCTIONED_SIBLING_REFERENCES"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:6d9416eb8947fc34b68e01a2826205d76a141b01173c6d2d4bd06e36d8eda8f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_role_source_is_a_capsule_shaped_function"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:62dd05cd9082ef08859f4f2e86978868f5b8098cfcecde26936577a4906f6aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manifest_reports_a_missing_source_instead_of_accepting_it"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:a8914662fcd420194e5815b5a3881a073124f2f2d330883afc461b203af1888a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_relative_path_the_corpus_cites_resolves"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

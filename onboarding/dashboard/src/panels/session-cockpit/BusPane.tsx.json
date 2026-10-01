@@ -1,0 +1,102 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/BusPane.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact focused-seat identity predicate and row facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4afa575b62e7122562d8463d34c0037b0e67ea3",
+            "content": "sha256:e876e7cf85b4bd79b48b02cc1c2d5cc8ead2038b056b60aa7ccd2c94cfba44a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "pickupMatchesFocusedSeat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Entry-keyed state, authoritative pruning, filters, and list rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4afa575b62e7122562d8463d34c0037b0e67ea3",
+            "content": "sha256:b27d0ec529ad7cd77daa6dd7b49533a58b96fd41ae22ec1b8d960ea6445a02a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "BusPane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c4afa575b62e7122562d8463d34c0037b0e67ea3",
+            "content": "sha256:fbe3895470e2dcdbe6e6d76203221ba8c98a6121164fd1d915ccbd10f1cf1e0d",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Separately rendered agent-notifier heartbeat.\n\nAnchor: \"<InspectorSection title=\\\"Agent notifier heartbeat\\\" testId=\\\"bus-heartbeat\\\">\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4afa575b62e7122562d8463d34c0037b0e67ea3",
+            "content": "sha256:399730ffcb94ea303957e34464fa79c3091eb042ab7e8e1723a9600ab9af0f6f",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Reverse reply write boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d9ab97f2fcde03fc248039166a4cac27ca6e03",
+            "content": "sha256:2bdefefbed9a67bc814ee22b6531215a89cb1f6041ab86bfaf56ae9f3ae7c99c",
+            "locator": {
+              "kind": "symbol",
+              "name": "developerReplyRequest"
+            },
+            "path": "dashboard/src/panels/session-cockpit/BusDeveloperReply.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Shared virtualized-list threshold and semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "118e54cbf09e76dc826a4c5043839fa039d3dc3b",
+            "content": "sha256:d5f0b3bd09c318bcca6b644dd4d5fc50a21c1d056ce0374096c92cc4cf1cda2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "INSPECTOR_VIRTUALIZE_THRESHOLD"
+            },
+            "path": "dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

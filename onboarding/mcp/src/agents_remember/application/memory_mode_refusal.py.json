@@ -1,0 +1,211 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_mode_refusal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reporter exists because the typed refusal subclasses `ValueError` and would otherwise be caught as generic unreadability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:81713832e5b7199f1894f5f28a69ca3310d8c9ad29c886479a4d4fa3741853d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryModeUnsupportedError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Surface 5 carries the refusal into the direct-landing answer.\n\nAnchor: \"except MemoryModeUnsupportedError\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
+            "content": "sha256:734b03d77233375f10187194389a855e055ef9f481ea92b7f7fc42c1d8f9cea2",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Surface 6 reports the removal as its own fact in the unstarted-evidence answer.\n\nAnchor: \"except MemoryModeUnsupportedError\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:734b03d77233375f10187194389a855e055ef9f481ea92b7f7fc42c1d8f9cea2",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Surface 7 keeps the worktree-start payload typed instead of falling through to the generic clause.\n\nAnchor: \"except MemoryModeUnsupportedError\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:734b03d77233375f10187194389a855e055ef9f481ea92b7f7fc42c1d8f9cea2",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The evidence-state marker distinguishes a removal refusal from any other read failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1bfae6cd8f3d4a1a6c77c3e767e427cb4612cb8",
+            "content": "sha256:becd0023614defc17e37b3bd9ecf7e3667ccfc1503984ba78a66159b14a7ba59",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_MODE_EVIDENCE_STATE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The removal facts travel in the established public failure-evidence envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1bfae6cd8f3d4a1a6c77c3e767e427cb4612cb8",
+            "content": "sha256:9a0cbb078ddc790ba3df36aae9bfcc9019bd6d18865dc4757fcc0d212152a3fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_mode_refusal_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The same facts are available as a boundary-owned payload, with the artifact when one exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1bfae6cd8f3d4a1a6c77c3e767e427cb4612cb8",
+            "content": "sha256:b8c606122a93bb6afd09b5b216a101e519ed2027ecfa1dc2cb9151bef657af67",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_mode_refusal_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The inverse direction rebuilds the operator fields and returns `None` for a non-removal failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1bfae6cd8f3d4a1a6c77c3e767e427cb4612cb8",
+            "content": "sha256:fa1cab985dc6b4b78ddb9896151c73122f892b46b2676676adacc118f945fc0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "removed_memory_mode_fields_from_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The reconstruction rebuilds the refusal text from the vocabulary rather than trusting a carried copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489de7b5354c1f0e318b20273a214b7f53714e30",
+            "content": "sha256:9aadd3903c35510b7aff60dc28c3011ffdd8e238a99cdec8c34b7b0e404fd341",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_mode_refusal_message"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Surface 1 of 7 catches the typed refusal ahead of its generic clause in the worktree-status contract read; the surrounding function is `worktree_status_packet`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00d06ec6ebe2a4416c2f4549b9c5cb39e7e2e93",
+            "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_packet"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Surface 2 publishes the refusal through the reporter rather than the generic failure path.\n\nAnchor: `memory_mode_refusal_evidence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00d06ec6ebe2a4416c2f4549b9c5cb39e7e2e93",
+            "content": "sha256:c9ffc569f3983e3ffdbe951a38b391a5097e15c069ac4a9f43ac0e9a91359694",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 410
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Surfaces 3 and 4 classify a configured contract's removal on both admission paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "content": "sha256:9c571b39e01737f7d10e41c00bdf63bb99b861a4294c6ab218e818a00eeeba6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "configured_contract_reread_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

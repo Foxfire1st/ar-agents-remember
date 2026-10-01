@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_reader/records.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_reader/records.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -71,38 +61,29 @@ and 3).** Every other reader module builds its rows from these four shapes:
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement that a decision is shown whole wherever it appears. | "**A decision** is always shown whole wherever it appears" | mcp/src/agents_remember/application/knowledge_reader/records.py:1-17 |
-| The title field per kind. | `_TITLE_FIELDS` | mcp/src/agents_remember/application/knowledge_reader/records.py:54-65 |
-| A record's summary, or `missing`. | `record_summary`; `summary_of` | mcp/src/agents_remember/application/knowledge_reader/records.py:69-75; mcp/src/agents_remember/application/knowledge_reader/records.py:78-90 |
-| Every decision of the tree read once; the superseding map. | `Decisions` | mcp/src/agents_remember/application/knowledge_reader/records.py:94-116 |
-| A decision in full: alternatives, stored and derived status, supersession, governs. | `decision_document` | mcp/src/agents_remember/application/knowledge_reader/records.py:119-157 |
-| The L13 helpers every decision field is read through. | "from agents_remember.models.knowledge_files.decisions import (" | mcp/src/agents_remember/application/knowledge_reader/records.py:29-34 |
-| A link target's kind; one indexed link with its record ends summarised. | `record_link_target`; `link_document` | mcp/src/agents_remember/application/knowledge_reader/records.py:160-170; mcp/src/agents_remember/application/knowledge_reader/records.py:173-189 |
-| Numbered references, every target resolved. | `reference_items`; `_reference_target` | mcp/src/agents_remember/application/knowledge_reader/records.py:192-210; mcp/src/agents_remember/application/knowledge_reader/records.py:213-227 |
-| Linking records, each once. | `records_linking` | mcp/src/agents_remember/application/knowledge_reader/records.py:230-248 |
-| The decision case: alternatives, and superseded derived at the later commit. | `test_a_decision_truth_view_shows_alternatives_and_derived_supersession` | mcp/tests/test_knowledge_reader.py:898-910 |
+- The module's own statement that a decision is shown whole wherever it appears. [1]
+- The title field per kind. [2]
+- A record's summary, or `missing`. [3]
+- Every decision of the tree read once; the superseding map. [4]
+- A decision in full: alternatives, stored and derived status, supersession, governs. [5]
+- The L13 helpers every decision field is read through. [6]
+- A link target's kind; one indexed link with its record ends summarised. [7]
+- Numbered references, every target resolved. [8]
+- Linking records, each once. [9]
+- The decision case: alternatives, and superseded derived at the later commit. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new module MIK-R29 adds, recording the rule carried from L13 at 01:45:56 (a decision's chosen and rejected alternatives and its derived superseded status are shown whole, read through `models/knowledge_files/decisions`) and ruling 09:42:58 F9 (the derived status heads the truth view). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

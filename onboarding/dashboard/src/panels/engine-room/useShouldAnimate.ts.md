@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/useShouldAnimate.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/engine-room/useShouldAnimate.ts` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [engine-room overview](overview.md)
@@ -33,17 +23,11 @@ Two exports.
 - SSR/test-safe: guards `typeof document/window === "undefined"` and returns `false` (no motion) in that case.
 - A pure read of global DOM state; it owns no animation — callers decide what "don't animate" means (render After, no tween).
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `shouldAnimate()` reads data-effects + prefers-reduced-motion | `shouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:12-16 |
-| `useShouldAnimate()` reactive hook (media query + MutationObserver) | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
-| The main entry checks `?effects=off` or `calm-cockpit` and sets `document.documentElement.dataset.effects` to `off`. | "effects=off"; "window.localStorage.getItem(\"calm-cockpit\")"; "document.documentElement.dataset.effects = \"off\"" | dashboard/src/main.tsx:12-12; dashboard/src/main.tsx:15-16 |
-| The prior inline freeze check this generalizes | `mountConstel` | dashboard/src/topology/constel.ts:408-468 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-04T13:54+02:00 — 260731-EFA-L6 S18-B13 curator: reissued whole-claim evidence for the effects-off query, storage toggle, and HTML dataset assignment for same-reviewer closure.
-- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-06-16T01:55 — Created for slice 5f S0: the `shouldAnimate()` / `useShouldAnimate()` honest-motion gate (reads data-effects + prefers-reduced-motion), scaffolding for the S2+ motion slices. Verification metadata pinned until closeout stamps the S0 code commit.
+- `shouldAnimate()` reads data-effects + prefers-reduced-motion [1]
+- `useShouldAnimate()` reactive hook (media query + MutationObserver) [2]
+- The main entry checks `?effects=off` or `calm-cockpit` and sets `document.documentElement.dataset.effects` to `off`. [3]
+- The prior inline freeze check this generalizes [4]

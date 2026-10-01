@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T12:43+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit overview](overview.md)
@@ -51,18 +41,9 @@ state plus an explicit `retry` callback and accepts timeout as a test seam rathe
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Supplies the typed one-attempt read and result states. | `HarnessCatalogRead`; `readHarnessCatalog` | dashboard/src/data/harnessCatalog.ts:13-16; dashboard/src/data/harnessCatalog.ts:45-51 |
-| Consumes the hook and renders retryable explicit states. | `LaunchFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:353-413 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the servingBootedAtRef hooks fix. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T11:32:09+02:00 — 260731-EFA-L6 S18-B02 curator: replaced unanchored local references with exact source anchors and generated final citation ranges with the scoped fixer.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: created the one-to-one card for the candidate chooser read
-  owner; verification metadata stays blank until the code candidate is committed and closeout can
-  stamp it.
+- Supplies the typed one-attempt read and result states. [1]
+- Consumes the hook and renders retryable explicit states. [2]

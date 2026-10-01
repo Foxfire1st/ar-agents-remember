@@ -1,0 +1,71 @@
+{
+  "path": "scripts/e2e_harness/fixture.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture uses repository-owned task and template contracts as its authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b019d783315d02763781e3fb22f332d2a31552",
+            "content": "sha256:5835a675a88712326d969e01945d6829c2b7ead04803f6da40ce18d0c3bc79c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_fixture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fixture construction returns every run-owned path and canonical task address explicitly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b019d783315d02763781e3fb22f332d2a31552",
+            "content": "sha256:7c591aaf84f75fbeacc96ba9725cfab7a30a77ec581c64e327689a3a49c73cf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "E2EFixture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Codex config binds the deterministic Responses endpoint, candidate MCP server, and fixture tmux namespace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b019d783315d02763781e3fb22f332d2a31552",
+            "content": "sha256:9b2fbfa266ecb94a1da213df1f96deb6512901746e1aeca99ad3993ba262d0c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_codex_config"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Disposable repositories are initialized inside the run root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b019d783315d02763781e3fb22f332d2a31552",
+            "content": "sha256:f41f0c980b8d1041be99c279d460f65546e1d5462a6b09811445c220c10a292f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_initialize_repository"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

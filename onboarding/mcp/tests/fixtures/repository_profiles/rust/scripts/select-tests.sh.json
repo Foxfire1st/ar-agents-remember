@@ -1,0 +1,54 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/rust/scripts/select-tests.sh",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The emitted population and digest are bound to the exact declared input identity.\n\nAnchor: `selected-tests`; `selectionDigest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b06c6f1050a9bea0dfe50a9d51c6d6b498f44c9",
+            "content": "sha256:6ac1d9685a647924385cd8c5c3a9af38c7f33b84f29614c293743791a4acd5c4",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The v2 result contract the fixture emits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a537399c25285e872d269f3434803ff0177d70d",
+            "content": "sha256:2d06d6321b45fa2ea3e0e7b5d046a7aa72be01cae2c4b6083cacb3b809d8fa67",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositorySelectionResult"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/selection_results.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a537399c25285e872d269f3434803ff0177d70d",
+            "content": "sha256:5a43ded626cb7768ea1f8135f0ae948deb3febcd2b2ba1645dd27b00cea7031e",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/selection_results.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,204 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: one predicate per kind, never a generic lookup.\n\nAnchor: \"never through a generic row\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:80443014643e86d58b8a0f1946bf6a6eaf63ff764342bec599bd866ca4359516",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "What a predicate reads, and the entry state that raises on a failed read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:b6aaf90cc945ae59b774ddfe476f0b2e4e5ac76c7c7bac312c76446362723793",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateContext"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:f052d9e85680da1c7eed7a67ecb1918551051cc2c708e0a89819c744363d970f",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitReadFailed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registration and dispatch; an unregistered kind is open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:1db214f0c369d9d12b79468e6ef43c88bbf2a2bcfbc6c1756e03960cb69c0470",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_gate_predicate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:dac1f15525909756ca3c2f0c59a91dda327a1c6796e1dc710ec87dc6ac813585",
+            "locator": {
+              "kind": "symbol",
+              "name": "item_open_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The covers an invariant row must hold, and its currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:990bc710c5e6e326f454b4c14f2278f6a6cec94c725cf749873d8c74292f4782",
+            "locator": {
+              "kind": "symbol",
+              "name": "required_covers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:9d90c79191ecfa0efc5a2144da6b1d43fb77f1d94f086abc8d7f2e5eac4142c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_row_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The family row's three reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:f8682943425ca775b728d57465ce217861ec73415b9988996011f66b39cdf1ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_row_open"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:eeb5319929c96c2fc422644c3afef139450e14aabb2868bc3c1bc51d891bf51b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_examined_set_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:c79e5f2da5074ebfe36e4dc7fd4ae12a219d9a97dcc5964f4b554dcd86d1e5ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_moved_members_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:5448e0ef869acb762bf95fab4bd8ff2419369dfffcf989ffa013799171cd5bec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_uncovered_members_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The route condition decided by subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:53ed51284a461e9c83c28a51ae91b466b430fa376c21c4b19760a28cbedd6a37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_condition_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The ten registrations.\n\nAnchor: \"register_gate_predicate(\\\"touched_invariant\\\", invariant_row_open)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "content": "sha256:a9a7031e241d1184ae2773c87a9d12712b2b74147d3674cc5de3e714ed58b238",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 282
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The dispatch test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "content": "sha256:24c19a7ec6d96a2314e2ea37a56a49d1ee3b6d87722f9fb8cfce4f0f9eea00b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_registered_kind_is_decided_by_its_own_predicate_never_a_generic_lookup"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

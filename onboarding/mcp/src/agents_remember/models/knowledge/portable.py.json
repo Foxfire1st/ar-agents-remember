@@ -1,0 +1,359 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/portable.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three splits that carry this module's contract, in the form a consumer reads them.\n\nAnchor: \"A request versus an admitted identity\"; \"A validated artifact versus a published dataset\"; \"A staging fact versus a destination fact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:c2c05096c400f6a94758ffc2b33848e30f6007899bfe9cac394b0934be054d43",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The refusal shape a refused validation or result carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusal"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:023d46b486f2a19c6153bac77dc20760a89ffe9f3730d45ce557d869ff0405a1",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The operation that consumes this vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:0be62da72f001d97ce253d56bb44b295257195ca930880f806f632a796522a0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "export_knowledge_dataset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:06151174013e44e331af82172cc318a927324dde033155f10d01c4c22ddebe5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "import_knowledge_dataset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:f4785f64fb4b514bf68a23838be0ad4c81a3e11fff9adf262b074a7d61f96f45",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:e4eb0e8876febc31f79d7bfd1ff99003f0c25d55d47a414b94cfebf66c9e824a",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The reader, validator and encoder this vocabulary describes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:14ca2a41abae855c46f43f8ebd2cf0c72adfc7edcb8f563e9f8aa39816ed7cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_export"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:b9a58f11c59bb2f9c5b8cfc87a9d843423975122932349d6d02ca8b4b56bf6a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_export"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:e66c61865f32a372faf44fbfc44dfa08332aa214e2a153109735509c954d4fdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "encode_export"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The nodes that hold the round trip, the preservation rule and the destination behaviour to this vocabulary.\n\nAnchor: \"test_a_populated_dataset_round_trips_to_an_equal_logical_dataset\"; \"test_accepted_origin_state_crosses_as_data_and_is_not_promoted\"; \"test_a_destination_is_replaced_only_for_the_admitted_identity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:a2630d4ff369a23afbe20ae6e902f48ebcd38de6a1f6b3df4e4ad4bb97775351",
+            "locator": {
+              "end": 427,
+              "kind": "line_range",
+              "start": 357
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:4bffbdbe2f64f8e510e8aa53f5ab115b5e9fa98f3f89b7e3159ca224392c8c53",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 473
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:01cf363ca507f5ee43a4fd4342ed377e9c71f798d07a2297ce9b4f30ad01de5e",
+            "locator": {
+              "end": 1080,
+              "kind": "line_range",
+              "start": 1023
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one portable format member, declared here so a caller can name it without importing storage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:0f62f78a67759b2f13fe075d40f45a6b9e7f3f46ec506386496839b756319634",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExportFormat"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:c7113affa4e41d1f2770ce3c673b5acf147e2c19ac0b874acb867eea078a34f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPORT_FORMAT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The export request whose admitted identity is required rather than optional.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:3d6af5f7326fab3443c985de2af70cc9b5e30a3bad91ca8ba45a43ebe0fe9a31",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExportRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The import request: the closed two-mode destination admission, with no third mode, and the namespace narrowing that admits nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:03b03760bbf8ecba1aad482e67a88ebb3eb87268144695dc57c8d6feffe783c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ImportRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The validation report: all tables counted including the empty ones, and no identity for a refused artifact.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:e61deadd6bbfbafe2a8c61f627bac0980da8b5d5909b6ad7f62a2e582f224680",
+            "locator": {
+              "kind": "symbol",
+              "name": "PortableValidation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The export result: the artifact carried as text because the encoder has no filesystem side effect.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:7361ab811fd5214067255dd275a20da1acbce8975a0e9e8db9001988df8d5800",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExportResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The import result: the verified identity carried independently of the state, and the two must agree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:87808853ed2a673aa649e6466da6b5b4761b50a9054f3528b8d6357e99a3e908",
+            "locator": {
+              "kind": "symbol",
+              "name": "ImportResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared pattern and length constants every field is validated against, and the model base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:8d07fc9b5543d8774e7702f3755879f79229e50b72531f6d6e87e17dbe7e0094",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHA256_PATTERN"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:f45b6f8cbdbb61e9d6cdcf41df6533e5f95b2519735715d4d91ebeebd2518aa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PATH_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The identity shape both requests and both results carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fdac6ac01faf6657f97ff7a38ee7383aa21332a",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

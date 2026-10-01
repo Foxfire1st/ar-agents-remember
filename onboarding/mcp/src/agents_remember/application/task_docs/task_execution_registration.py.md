@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_docs/task_execution_registration.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/task_docs/task_execution_registration.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T08:31+02:00 |
-| lastVerifiedCommitHash |  `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`|
-| lastVerifiedCommitDate |  2026-09-12T01:54:48+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [governing route overview](overview.md)
@@ -58,34 +48,19 @@ projection invalidation, and rebuild semantics as ordinary task authoring.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured domain-documentation source applies to this repository-internal route.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The typed result and central registration route bind address, role, and source evidence. | `TaskExecutionRegistrationResult`; `register_task_execution_evidence` | mcp/src/agents_remember/application/task_docs/task_execution_registration.py:42-55; mcp/src/agents_remember/application/task_docs/task_execution_registration.py:77-137 |
-| Reviewer-only `task.json` admission is classified through canonical topology before any leaf mutation; missing non-leaf authority blocks. | `_classify_missing_registration_source`; `_classify_non_leaf_reviewer`; `_registration_address` | mcp/src/agents_remember/application/task_docs/task_execution_registration.py:140-150; mcp/src/agents_remember/application/task_docs/task_execution_registration.py:165-193; mcp/src/agents_remember/application/task_docs/task_execution_registration.py:196-226 |
-| Source classification distinguishes current, retired, missing, and unreadable task state. | `_load_registration_source`; `_classify_missing_task_source` | mcp/src/agents_remember/application/task_docs/task_execution_registration.py:247-258; mcp/src/agents_remember/application/task_docs/task_execution_registration.py:261-281 |
-| Terminal-catalog and operator-inbox adapters use the same registration owner. | `register_terminal_catalog_execution_evidence`; `register_operator_inbox_execution_evidence` | mcp/src/agents_remember/application/task_docs/task_execution_registration.py:353-389; mcp/src/agents_remember/application/task_docs/task_execution_registration.py:392-423 |
+- The typed result and central registration route bind address, role, and source evidence. [1]
+- Reviewer-only `task.json` admission is classified through canonical topology before any leaf mutation; missing non-leaf authority blocks. [2]
+- Source classification distinguishes current, retired, missing, and unreadable task state. [3]
+- Terminal-catalog and operator-inbox adapters use the same registration owner. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
-
-## Update History
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_classify_missing_registration_source`, `_classify_missing_task_source`, `_classify_non_leaf_reviewer`, `_load_registration_source`, `_registration_address` repointed to mcp/src/agents_remember/application/task_docs/task_execution_registration.py:140-150, mcp/src/agents_remember/application/task_docs/task_execution_registration.py:165-193, mcp/src/agents_remember/application/task_docs/task_execution_registration.py:196-226, mcp/src/agents_remember/application/task_docs/task_execution_registration.py:247-258, mcp/src/agents_remember/application/task_docs/task_execution_registration.py:261-281. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-
-- 2026-08-31T08:31+02:00 — 260821-ARSPAWN-L5 final-round correction: made canonical
-  `task.json` reviewer classification precede payload-kind branching, so a malformed subtask claim
-  cannot enter leaf mutation.
-
-- 2026-08-31T08:05+02:00 — 260821-ARSPAWN-L5 A004 correction: documented the now-reachable,
-  reviewer-only master/sprint classifier, its no-mutation reclamation result, and fail-closed
-  missing/orphan boundaries while preserving worker/curator leaf-only mutation.
-
-- 2026-08-26T10:44:52+02:00 — Reconciled registration publication with the shared prepared-document API and removed the obsolete caller-owned transaction assembly narrative.
-
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: created the strict source-mirroring card from current code. Verification hash/date remain blank for architect-owned final stamping.

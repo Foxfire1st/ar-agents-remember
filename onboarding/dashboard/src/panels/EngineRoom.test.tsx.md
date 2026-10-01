@@ -1,15 +1,5 @@
 # dashboard/src/panels/EngineRoom.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/EngineRoom.test.tsx`       |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/ overview](overview.md)
@@ -54,15 +44,15 @@ contract (`LIFECYCLE_PHASES`), not the animation; the pulse itself is gated and 
 tests stay inside the top `EngineRoom` strip by seeding `providers` directly on the gallery projection; they
 do not assert or reshape the enclosure canvas' workspace-engine rendering.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test. | `EngineRoomHeader`; `LIFECYCLE_PHASES` | dashboard/src/panels/EngineRoom.tsx:59-66; dashboard/src/panels/EngineRoom.tsx:137-171 |
-| `OfficialStrip` groups official workspace providers by label + runtime state and exposes grouped repo labels via hover/title. | `OfficialStrip` | dashboard/src/panels/EngineRoom.tsx:109-132 |
-| The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility. | `seedOfficialProviders`; "aggregates same-state official CGC engines into one strip chip"; "keeps official CGC aggregate chips separated by runtime state" | dashboard/src/panels/EngineRoom.test.tsx:93-97; dashboard/src/panels/EngineRoom.test.tsx:198-213; dashboard/src/panels/EngineRoom.test.tsx:215-239 |
-| The `GALLERY` projection seed + the store `applySnapshot`. | `GALLERY`; `applySnapshot` | dashboard/src/data/store.ts:49-49; dashboard/src/dev/fixtures.ts:146-490 |
-| The honest-motion gate the pulse reads. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
+### Repo-Internal References
+
+- The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test. [1]
+- `OfficialStrip` groups official workspace providers by label + runtime state and exposes grouped repo labels via hover/title. [2]
+- The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility. [3]
+- The `GALLERY` projection seed + the store `applySnapshot`. [4]
+- The honest-motion gate the pulse reads. [5]
 
 ## Current L5I Maintenance
 
@@ -76,22 +66,3 @@ The suite seeds a blocked Engine Process projection and proves Diagnostics
 renders both the compact state and the full server summary. This is the
 operator-visible acceptance edge for refusing structural work before enclosure
 context is consumed.
-
-## Update History
-- 2026-08-12T20:10+02:00 — L23 curator: documented the blocked-lineage Engine Room rendering regression; verification remains closeout-owned.
-- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 61; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
-- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 4 citation claims; scoped result 0 findings.
-
-- 2026-07-24T13:17:17Z — Curator: recorded the model-memo and narrowed-subscription regression
-  coverage; verification fields remain pre-commit.
-
-- 2026-06-24T08:09+02:00 — Engine Room leaf identity: added a two-leaf browser-dashboard render regression proving the rail/header prefer `leafId` while keeping parent `taskName` context and ordering active work before cleanup-pending siblings. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:26+02:00 — Added official-line strip aggregation coverage: same-state workspace CGCs
-  collapse into one counted chip, mixed CGC states remain separate, grouped hover titles include repo labels,
-  and GrepAI stays separately visible. Verification metadata pinned until closeout stamps the official-strip
-  aggregation code commit.
-- 2026-06-23T13:45+02:00 — Task 11: added projected gate render coverage for diagnostics
-  `GateResponder` and canvas `data-gate-kind`. Verification metadata pinned until closeout stamps the
-  task-11 code commit.
-- 2026-06-16T03:50 — Created for slice 5f S5: render test pinning the header `data-phase-active` flag for
-  the human-gated lifecycle phases (T12–T18). Verification metadata pinned until closeout stamps the S5 commit.

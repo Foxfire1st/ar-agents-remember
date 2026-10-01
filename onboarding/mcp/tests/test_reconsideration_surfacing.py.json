@@ -1,0 +1,541 @@
+{
+  "path": "mcp/tests/test_reconsideration_surfacing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: the fixture's two decisions and the case shape.\n\nAnchor: \"MIK-R14@v2: reconsideration surfacing over real Git code\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:eea5e89ec3d7485be1c216662c8d60c4d6ecf1a545832fd4e617c1665f302392",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The task-owner stand-in and the writer call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:6f246f02dcccac17d798ff1d7c6833e961875d6cd721c913ce8e4cb0a2fa7a45",
+            "locator": {
+              "kind": "symbol",
+              "name": "FakeQuestions"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:dc41c1b28d202f7832f3958bd2155bf410bfc2493d593aad6e011914e0c9b8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Rules 4 and 5: `still_rejected`, `raise`, and the real `task_doc` append.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:350d2957762385ebe74fef43f68bcf4a9773658bef4946ef9ca505b8cec89c68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_raise_sets_the_status_and_appends_the_question_or_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:18cadce21e717b36e983598598a333e126050d8df920d77a42d0c3fb69753d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_task_document_append_preserves_questions_through_task_doc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The reorder guard and the registrations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:6c2ef4dc7cb430d9ca3d73589947736f199c964bc71a10bbecdedcce90418653",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reorder_of_linked_alternatives_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:712bb410527b2cbc91df02a7c2fb2ebd60d3703f3bfaa17fa011c2b130ea508d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_row_kind_and_the_item_kind_are_registered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Ruling 04:37:56: route targets, superseded decisions and the refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:46a4bf8f6dae7f08d53aef0fe61a88d0f2e1f4754a7bedb5fad15ddb7b196dcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_route_target_fires_only_through_a_rerouting_or_retiring_row"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:9fd142682109543bad561c8b96a336bf0a808138657b1506298724d178dbfc2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_superseded_decision_raises_nothing_and_its_links_are_listed_skipped"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:72d80bffa60bd42b3f0d5e1296bc81b0b2668f92aea555318b27822f00cfa7e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_repoints_a_persistent_requirement_link_so_it_raises_once"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:365346857ffe67b1c4fbe209997acd0fea0e8d0f47fea7165e0e1de38e641e2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_reanchors_a_linked_anchor_so_it_stays_live"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Ruling 05:31:11: F1, the unmappable range, F3 and F4.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:65ec616e0f52ea5b7f64933be0a6458f77a0ad8df4f0a7adcb30ea539503e5b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_refresh_maps_a_line_range_and_refreshes_only_the_fired_links"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:3b68be4fd0495ce700868c1d852ccfdf93978a4cea77af7f6b281a69da66f60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_range_that_cannot_be_mapped_refuses_the_row_naming_the_link"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:a5c75da77cb3bd6d0889b956584fd2fff6b8421008bbfae08aafbf7421b55e35",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_link_anchor_raises_and_still_rejected_reanchors_it"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:c77aa8110ef6fb639481ebc6cbd7f8187f7c5bf0e7842e317feda8736d49cacd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_repoint_takes_the_items_approved_version_not_a_fresh_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Ruling 06:17:11: N1 and N2.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:2886ee8d457ae5b2828d74250c28d022af81ba77c52850c668d8166a673c776d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refresh_refuses_a_fired_link_re_authored_or_moved_in_the_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "R3-1: idempotent reruns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:fc262877656e70e66686f2bc931f97768932a9b674d701f76a86b332c088029a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_after_a_requirement_refresh_is_written_and_bumps_nothing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:a9861c7109c86456683bf897140619450f6b3e51657839117d683f3de447287b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_after_an_anchor_refresh_is_written_and_bumps_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "R4: carried anchor, committed lookalikes, a reverted link, a newer approved version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:d3867696df0907a13f8f729ade336f015f5a928f47f066c70efa014f1d7ff638",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_after_more_code_changes_carries_the_refreshed_anchor"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:7bf2f2953b6b7a0e4e772c9d24eb88aa3fb5494c5bf92a21e2f4875ac3496969",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_committed_lookalike_or_re_author_stays_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:344e19355e1fad9bb7732a2e51dad1f5c637ba3d7219857cf542bd57ab52736c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_link_reverted_after_a_committed_refresh_is_refreshed_again"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:8059748f0a31af137051c62217caa804b95dd4c6ea2f51ffede25241cf81c5c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_version_approved_after_the_refresh_is_named_and_needs_the_new_item"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "R5: a second change in the range, an unapproved version, an anchor re-pointed to other code.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:a57c3c9c232e0f2716580bf3317cfe216a95e6a8dd2529661d2cda81a012537d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_second_change_inside_the_anchored_range_needs_the_new_item"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:000264a37f2639d479ac17433ac081e9721a9a5eae95888e88c50ab1540be7b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_curator_set_unapproved_version_is_re_authored"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:b31ef05ca237ad7be0a00045d82fdf95159e1ae8484b38708f3deed09729c12d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_anchor_link_re_authored_to_other_code_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The unit-lane row.\n\nAnchor: \"mcp/tests/test_reconsideration_surfacing.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "D18's three links: an assumption, a symbol anchor and a requirement endpoint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:1b2543bead23597c144d5788c8e73724bca25ca1341971cabc6921049f58f60f",
+            "locator": {
+              "kind": "symbol",
+              "name": "d18"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The catalog consumer row.\n\nAnchor: \"mcp/tests/test_reconsideration_surfacing.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
+            "locator": {
+              "end": 839,
+              "kind": "line_range",
+              "start": 839
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "D12, reconsidered on a family and on D18.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:79aeef9f12bf23c6f777eff1a7f90b45975fa950bfe274faf9f9779d686a7adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "d12"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The fixture world with both decisions and the assumption in K_B.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:b94951850f8e5a4a6e1e37f99853c07daf4741cff5742c9484979118a75df9e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The manifest and the owning task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:4496bf87e4795288f9df102f050ad73a2d830ab1a30b15ba399034d34aa359d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:5e1a4a978f415a47b88c7d696c6181b271741b19c9d203169da4a942d025c632",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Rule 2: the highest approved version by integer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:df053197906d07b2388c5dac23e09dedb0592a931742ca48c4a64f9c3d13e43e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_lookup_returns_the_highest_approved_version"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Rule 1 and the conforming example.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:17d370a39ad40eeb56613f73a67ee2e0aee828d67ff9916dc7fd24149f23a12c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_revised_assumption_surfaces_the_rejected_alternative"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Rule 1: rows, anchors and requirement endpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:17f4e3ab8099611dc3b6c4417fdc24158d43d882d224da6ae0b09ce67148b133",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_triggering_history_row_surfaces_and_other_dispositions_do_not"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:a125d2d23586b1b52cad8992cef936274a1dd516e6b591a698bb268713962f1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_linked_anchor_triggers_when_touched_or_absent_and_not_otherwise"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:86f465fce8223dc54488f65db50c374df8c351a04a6b0445b0787976f7ae15e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_requirement_endpoint_triggers_only_on_a_newer_approved_version"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Rule 3: one hop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:f17f7d18cbe0a75ceff4edae80da1139511ed14e71b6fdf48210545eb063c238",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_hop_a_decision_change_never_chains_on"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

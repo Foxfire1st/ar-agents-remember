@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/primitives/inbox_backoff.py
 
-| Field                  | Value                                                             |
-| ---------------------- | ------------------------------------------------------------------ |
-| repository             | agents-remember                                                    |
-| path                   | `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py`       |
-| doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-09-06T21:59:04+00:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
-| governingOverview      | `overview.md`                                                      |
-
 ## Governing Overview
 
 [kernel primitives overview](overview.md)
@@ -68,62 +58,25 @@ schedules and remains redeliverable; a correlated adapter acceptance writes `lan
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The A2A push-then-poll semantics (push = at-least-one-attempt, MAY-retry; durable task state is
 the only guaranteed path) and Temporal/Restate/Inngest persisted-timeout patterns (research
 `wf_5782a3a5-6a1`, cited in the leaf spec) motivate a durable backoff schedule over an in-memory
 retry loop.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None (research citation, no local doc). | N/A | N/A |
+None (research citation, no local doc).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The redelivery floor helper defaults to 900 seconds and refuses explicit sub-floor values; `next_attempt_at` applies the floor over the early ladder rungs. | `next_attempt_at` | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:77-94 |
-| The rate-limit predicate reuses the same floor helper before comparing elapsed time since `lastAttemptAt`. | `is_rate_limited` | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:112-128 |
-| The backoff ladder + rate-limit gate mirror `OrchestrationNudgeStore.record`'s elapsed-time check. | `_elapsed_seconds` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:168-172 |
+- The redelivery floor helper defaults to 900 seconds and refuses explicit sub-floor values; `next_attempt_at` applies the floor over the early ladder rungs. [1]
+- The rate-limit predicate reuses the same floor helper before comparing elapsed time since `lastAttemptAt`. [2]
+- The backoff ladder + rate-limit gate mirror `OrchestrationNudgeStore.record`'s elapsed-time check. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:59:04+00:00 — Confirmed clamp, floor and composed redelivery predicates against source; corrected retired model-consume wording. Removed test coverage is not claimed. Verification pins unchanged.
-
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `redeliverable` and confirmed that inbox backoff and ordering behavior remain as documented. Verification remains closeout-owned.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the two `n/a`-anchor
-  table citations with exact anchors (`is_rate_limited`, `_elapsed_seconds`) and fixer-generated
-  ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/kernel/primitives/inbox_backoff.py` since the L2 base commit is the whole-
-  tree `ruff format` pass in `00e8379`, which re-wrapped 4 line(s) with no token change
-  whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
-  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
-  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
-  card makes about its own source still holds.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
-  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
-  structure or responsibility change. The sidecar was re-read against the current source and
-  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: replaced the 30-second effective retry limit with the
-  shared 900-second `MIN_REDELIVERY_INTERVAL_SECONDS` floor, added fail-loud below-floor validation,
-  and made `next_attempt_at`/`is_rate_limited` apply that floor. Verification metadata pinned until
-  closeout stamps the 260707-HFX2-L9 commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: added `is_ladder_resolved` and made due/redeliverable
-  selection explicitly exclude ladder-resolved terminal rows. Verification metadata pinned until
-  closeout stamps the HFX2-L8 commit.
-- 2026-07-08T14:20+02:00 — 260707-HFX2-L1: created for R3 redelivery backoff math + per-target
-  rate limiting. Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
+None.

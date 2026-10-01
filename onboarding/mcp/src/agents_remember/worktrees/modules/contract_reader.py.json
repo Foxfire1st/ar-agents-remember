@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The kernel resolver declares the port this adapter implements.\n\nAnchor: \"class ContractReaderPort\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
+            "content": "sha256:9c8e1ccf99415a26c0a7740805b47e50789f46efd487c20df7b53a7d210a452d",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

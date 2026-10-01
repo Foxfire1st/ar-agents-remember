@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The subject catalogue (list_knowledge_review_entries) and the changed-intent summary (intent_summary_of) for one resolved review pair.",
+  "conditions": [
+    "The pair is resolved from canonical task context by the reviewer's resolution."
+  ],
+  "exclusions": [
+    "The per-subject review composition's own refusals (compose_review)."
+  ],
+  "id": "INV-8FWJM8RR",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "0342c3e2-c42d-4c0b-b2f1-b97c401cc278",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The subject catalogue and the changed-intent summary refuse a resolved pair by one rule in one order: closed-leaf record absence, an absent half, an unreadable half, then an unreadable candidate receipt.",
+  "status": "proposed",
+  "supersedes": []
+}

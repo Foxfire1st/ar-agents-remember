@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -38,9 +32,7 @@ Other operation kinds are untouched; unconverted direct landings keep no closing
 `test_cancelling_the_generation_restores_the_file_it_closed_but_never_a_later_edit` and
 `test_an_unreadable_closing_receipt_is_a_named_refusal_at_apply_and_at_cancel`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The receipt check before anything moves, and the restore after publication. | `_require_readable_direct_closings`; `_restore_direct_closing` | mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py:147-170 |
+- The receipt check before anything moves, and the restore after publication. [1]
 
 ## Generation Construction And Retained Resume
 
@@ -93,10 +85,18 @@ File-Level Onboarding Map above are unaffected — the map carries no deleted ca
 | `lifecycle_completed_disposition.py` | [lifecycle_completed_disposition.py.md](lifecycle_completed_disposition.py.md) | covered |
 | `control/cancellation.py` | [control/cancellation.py.md](control/cancellation.py.md) | covered |
 
-## Docs And Boundary References
+## Evidence
+
+### Docs And Boundary References
 
 No configured Domain Documentation or cross-repository source applies. The model/lifecycle and
 integration overviews are same-repository context.
+
+### Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+- Recovery state contains the actual two commit outputs. [2]
 
 ## CCR-R18@v1 Generation-Coherent Projection And Revision
 
@@ -119,10 +119,8 @@ This journal and projection work does not itself wire the R05 certificate-admiss
 library into the production closeout transaction. Preserve that distinction when diagnosing a
 recovered legacy operation or planning certificate reuse.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes. | "def _validate_identity_and_evidence_transition" | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-306 |
-| The exact-generation observer returns bounded change/timeout outcomes. | "def wait_for_lifecycle_change(" | mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py:105-146 |
+- Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes. [3]
+- The exact-generation observer returns bounded change/timeout outcomes. [4]
 
 ## CCR-L42 Refresh Validation Parity
 
@@ -136,52 +134,3 @@ transactions under fresh leases and current provenance. They preserve explicit a
 identity, source movement refusal, and ref safety while leaving strict code quality, memory quality,
 selected certification, curator coherence, and independent review outside normal execution. Full
 suites are an explicit developer request.
-
-## Repo-Internal References
-
-The following current source owns the changed behavior; no external domain source is configured for this slice.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Recovery state contains the actual two commit outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 Cancellation Restores A Direct Landing's Closing": for a `direct-landing` record, cancellation refuses first on an unreadable closing receipt and restores the history file the landing closed once the cancellation is published (review R1 F3, R2-5); one row. No verification stamp was advanced.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "def _validate_identity_and_evidence_transition" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-306. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "def _validate_identity_and_evidence_transition" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-306. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled journal/store/control routing to removal of ledger recovery authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def _validate_identity_and_evidence_transition" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:315-315. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: removed the `lifecycle_operation_lease.py` card with the deleted lock plane (commit `1a0919c1`) and added a removal note flagging the lease/door/worker-exit claims elsewhere on this page as written against the deleted plane and not re-derived. The File-Level Onboarding Map needed no change — it carried no deleted card. Verification metadata remains pinned because only the cut-affected claims were reconciled. Source documentation only; no acceptance or certification claim.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-
-- 2026-09-06T14:48:58+00:00 — Routed the extracted generation constructors and unchanged resume transition at `c69d5171187fa1957025e393270db9f5a864ab14`; other journal/projection contracts are not reverified by this routing update. Prior verification stamps and all earlier history are preserved.
-
-
-- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added intent-bound journal writes, exact legacy retirement, and claim/launch dependency checks. Verification records source review, not execution or acceptance.
-
-
-- 2026-09-05T06:12+00:00 — Combined coherent projection and status-wait ownership; clarified that journal recovery does not establish R05 certificate integration.
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage adds the read-only status-change wait observer (`observation/status_wait.py`) and refreshes store/adapter/observation cards for the CCR-R15 `meaningfulRevision` cursor; route index regenerated.
-
-
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the generation-coherent projection envelope, store revision discipline, termination/control/observation updates. File-level detail in the lifecycle sidecars.
-
-
-- 2026-08-29T10:16+02:00 — Separated failed-gate staging and successor repair bytes from protected
-  Git output identity so an output-free generation can be cancelled without discarding later work.
-- 2026-08-28T14:15+02:00 — PDLS closeout: reconciled the direct-recovery translator split. Typed
-  direct-landing failures are reclassified against current evidence; invariant runtime errors stay
-  loud instead of entering the public translation family. Stamped committed provenance.
-
-- 2026-08-26T19:27+02:00 — Reconciled the IAS cancelled-closeout successor rule: replacement
-  validates the current waiting door plus cancelled disposition and worker-exit proof; historical
-  door rows remain audit evidence rather than a uniqueness authority.
-
-- 2026-08-25T15:44+02:00 — Created for the enclosure-root journal, retry, cancellation, and legal
-  control architecture. Verification remains closeout-owned.

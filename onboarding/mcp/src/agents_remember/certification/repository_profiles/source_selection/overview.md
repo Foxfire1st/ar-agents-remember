@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification/repository_profiles/source_selection` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T14:50:20+00:00 |
-| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
-| governingOverview | `../../overview.md` |
 
 ## Governing Overview
 
@@ -53,22 +47,18 @@ repository-declared reason. The retained reader validates that decision for cons
 | `reader.py` | [reader.py.md](reader.py.md) | covered |
 | `validation.py` | [validation.py.md](validation.py.md) | covered |
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Git observation binds the exact complete base/candidate path delta. | `observe_candidate_source_selection` | mcp/src/agents_remember/certification/repository_profiles/source_selection/git.py:37-78 |
-| Decisions recompute prefix selection, applicability and identity. | `RailSourceSelection` | mcp/src/agents_remember/certification/repository_profiles/source_selection/models.py:69-94 |
-| Profile validation enforces publication, command and dependency contracts. | `validate_source_applicability`; `_validate_conditional` | mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py:24-97 |
+### Repo-Internal References
 
-## Docs References
+- Git observation binds the exact complete base/candidate path delta. [1]
+- Decisions recompute prefix selection, applicability and identity. [2]
+- Profile validation enforces publication, command and dependency contracts. [3]
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned by this route.
-
-## Update History
-
-- 2026-09-06T14:50:20+00:00 — Created the source-applicability route from actual source at c69d5171187fa1957025e393270db9f5a864ab14; distinguished path declarations from broader test dependency selection.

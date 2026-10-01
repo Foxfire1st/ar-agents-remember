@@ -1,15 +1,5 @@
 # dashboard/src/data/store.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/store.ts`                    |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash |                                                  `09329a7ee598920c519b06305b73ba8e48d72c88`|
-| lastVerifiedCommitDate |                                                  2026-09-26T00:58:43+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -120,122 +110,32 @@ change snapshot/delta queue ingestion, queue ordering/filtering, scheduling, or 
   `gen`, clears queue/event/suppression state for the next scenario, and must not be expanded into a
   production queue-retention policy.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). | "export const VOLATILE_AGE_FIELDS" | dashboard/src/data/servedAges.ts:16-16 |
-| `servingBuild` | `servingBuild` | dashboard/src/types/projection.ts:851-851 |
-| Observer event type for the Event River tail. | "export interface ObserverEvent" | dashboard/src/types/event.ts:9-9 |
-| Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once. | "export const dashboardStore"; `reset` | dashboard/src/data/store.ts:55-55; dashboard/src/data/store.ts:329-329 |
-| `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. | "export const useDashboard" | dashboard/src/data/store.ts:403-403 |
-| `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. | `EventRiver` | dashboard/src/panels/EventRiver.tsx:122-122 |
-| `AgentNotifierHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors; the wire fallback accepts the legacy `supervisorHeartbeat` key during the rename window. | `AgentNotifierHeartbeat` | dashboard/src/types/projection.ts:54-62 |
-| `AgentNotifierHeartbeatBadge` reads `s.agentNotifierHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. | `AgentNotifierHeartbeatBadge` | dashboard/src/cockpit/Cockpit.tsx:999-1026 |
-| `ScenarioPlayer` invokes the one store reset when a development scenario changes. | `ScenarioPlayer`; `reset` | dashboard/src/dev/ScenarioPlayer.tsx:21-107 |
-| The mounted queue consumer reads `closeoutQueues` directly, scopes by sprint, and renders nothing when no matching queue remains. | `CloseoutQueueImpl` | dashboard/src/panels/CloseoutQueue.tsx:69-84 |
+- The stable-equality + arrival-anchor module the merge is built on (volatile set mirror). [1]
+- `servingBuild` [2]
+- Observer event type for the Event River tail. [3]
+- Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once. [4]
+- `pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state. [5]
+- `EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap. [6]
+- `AgentNotifierHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors; the wire fallback accepts the legacy `supervisorHeartbeat` key during the rename window. [7]
+- `AgentNotifierHeartbeatBadge` reads `s.agentNotifierHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator. [8]
+- `ScenarioPlayer` invokes the one store reset when a development scenario changes. [9]
+- The mounted queue consumer reads `closeoutQueues` directly, scopes by sprint, and renders nothing when no matching queue remains. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `AgentNotifierHeartbeatBadge` repointed to dashboard/src/cockpit/Cockpit.tsx:999-1026. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 5 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `servingBuild` repointed to dashboard/src/types/projection.ts:828-828. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: documented the canonical scenario reset as
-  total over scenario-owned dashboard projections, including `closeoutQueues`, in one Zustand
-  transaction that increments `gen` once. Preserved the dev/test-only boundary: production
-  snapshot/delta ingestion, queue ordering/filtering, scheduling, and lifecycle authority remain
-  unchanged. Verification metadata remains pinned until governed closeout stamps the code commit.
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
-
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: recorded the `agentNotifierHeartbeat` store
-  field rename and the `projection.agentNotifierHeartbeat ?? projection.supervisorHeartbeat ??
-  null` legacy-wire fallback in `applySnapshot`. Verification metadata pinned until closeout
-  stamps the 260713-TES-L1 commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
-  anchors and source-backed ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6): `heartbeatEquals`
-  now compares `pendingInboxCount`, `redeliverableInboxCount`, and `lastSweepDurationSeconds` so
-  idle snapshots still write through real backlog/duration changes while preserving the no-op idle
-  path for unchanged heartbeat payloads. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L8 commit.
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added
-  `supervisorHeartbeat: SupervisorHeartbeat | null` to `DashboardState` (init `null`, reset-cleared).
-  Deliberately EXCLUDED from the `unchanged` change-gate equality check — `applySnapshot`'s
-  content-unchanged early-return path now still `set({ supervisorHeartbeat })` before returning, so
-  the live tick age rides through even when nothing else in the projection changed. Verification
-  metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
-- 2026-07-08T05:36+02:00 — 260707-HFX2-L2 fix round 2 (manager-caught regression, see
-  `260707-HFX2-L2-fix2-report.md`): corrected the R5 entry below — the content-unchanged
-  early-return path in `applySnapshot` does NOT unconditionally `set({ supervisorHeartbeat })`.
-  It now only writes when `heartbeatEquals(state.supervisorHeartbeat, supervisorHeartbeat)` is
-  false, then always returns, so a truly idle heartbeat (incl. `null`/`null`) across an idle
-  re-snapshot performs zero store writes. Added `heartbeatEquals`, a dedicated field-literal
-  comparator over `lastTickAt`/`ageSeconds`/`staleCutoffSeconds`/`stale`, used instead of the
-  general `stableEquals` gate specifically because `stableEquals` strips `ageSeconds` (a
-  `VOLATILE_AGE_FIELDS` member) — the exact field a genuine tick advance must be detected in, so
-  reusing `stableEquals` here would have silently defeated the point of a live tick.
-- 2026-07-07T05:18+02:00 — 260703-L15 (S1 + S3): both apply paths became identity-preserving and
-  change-gated — `mergeKeyed`/`reuse` over `stableEquals`, `reduceDelta` returns `null` for
-  no-ops, an unchanged snapshot performs zero store writes, applied nodes are age-anchored via
-  `stampServed`/`stampAnalytics`, `generatedAt` advances only with applied content; `byKey` left
-  (replaced by `mergeKeyed`). Added `servingBuild: ServingBuild | null` (snapshot-fed, reset-
-  cleared) for the top-bar stale-server stamp.
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-06-28T13:54+02:00 — Task 34: `pushEvent` now keeps a bounded **sliding window** of the raw feed
-  (`EVENT_WINDOW` = 2000), dropping the oldest past the bound, so `events` is no longer unbounded. This is
-  a memory bound for a long-lived tab, NOT the removed silent newest-N display cap — backend observer-log
-  retention is the real history bound and `EventRiver` virtualizes the window. Verification metadata pinned
-  until closeout stamps the task-34 code commit.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: removed stale bounded-tail documentation; the store now
-  keeps all received Event River rows until reset/reload, tracks raw-event hydration readiness, and holds
-  optimistic attention suppression ids for sluggish dismiss/clear POSTs. Verification metadata pinned
-  until closeout stamps the task-29 code commit.
-- 2026-06-28T07:30+02:00 — Task 33: added `activeWorktreeGroups: string[]` to `DashboardState` (init `[]`),
-  populated by `applySnapshot` (`projection.activeWorktreeGroups ?? []`), cleared by `reset()`, and
-  carried by a new `reduceDelta` case `"activeWorktreeGroups"` (whole-value replacement that unwraps the
-  `{activeWorktreeGroups}` marker). This is the Topology's active-scope input. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-22T16:00 — slice 05o: added the `gen` generation counter (init 0) and the `reset()` action
-  that clears every collection back to empty AND bumps `gen`, so the dev bench can force a clean
-  engine-room canvas REMOUNT (keyed by `gen`) on each scenario switch and avoid orphaned
-  previous-mode overlay bleed; production never calls `reset()`, so `gen` stays 0. Created this
-  sidecar for the previously-untracked store. Verification metadata pinned until closeout stamps the
-  05o code commit.
+No applicable cross-repository source was found.

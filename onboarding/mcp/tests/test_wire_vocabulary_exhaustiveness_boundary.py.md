@@ -1,15 +1,5 @@
 # mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -42,41 +32,27 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Every vocabulary cell degrades rather than stranding the task | `test_every_vocabulary_cell_degrades_rather_than_stranding_the_task` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:119-129 |
-| A rewrite heals the file and that is the recovery path | `test_a_rewrite_heals_the_file_and_that_is_the_recovery_path` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:131-139 |
-| The writer refuses what the reader tolerated | `test_the_writer_refuses_what_the_reader_tolerated` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:141-156 |
-| A live contract projects onto the wire model | `test_a_live_contract_projects_onto_the_wire_model` | mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py:159-171 |
+- Every vocabulary cell degrades rather than stranding the task [1]
+- A rewrite heals the file and that is the recovery path [2]
+- The writer refuses what the reader tolerated [3]
+- A live contract projects onto the wire model [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
-
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-11T19:58+02:00 — Reconciled `test_wire_vocabulary_exhaustiveness_boundary.py` with its current structural task/seat, tool-vocabulary, or quality-boundary regression contract and removed stale exact-id/leaf implications where present.
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+No external evidence is needed for these assertions.

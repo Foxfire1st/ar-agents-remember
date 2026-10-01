@@ -1,0 +1,261 @@
+{
+  "path": "mcp/tests/test_knowledge_worklist.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two real repositories each case builds.\n\nAnchor: \"a converted **memory** whose base commit records\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:15d9e47a30d69b0040f819b6c29364fe076498d8765869e70ecc59b63b90e41d",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:77a364452422acad2882e3a48614a2fc5e6ebf894018da90227a020ce42bb822",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registry_declares_four_things_per_kind_and_refuses_a_second_registration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "`incomplete` inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:e8a6eb41ff2cd1fd6cd25ed25aea110f66892a1254cda57b8184d24821836df4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_inputs_make_the_run_incomplete_and_name_them"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Both memory sides unconverted: no worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:f10a3a64b65279782b4ef80112f43e1b82f552200415d2988eedd9aa932a80e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_unconverted_memory_sides_get_no_worklist"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The definition-4 ruling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:8971fb569fb477e31ad6aa759579309c7772c7fee3c8184950b6034dc0038aad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_blob_is_untouched_whatever_its_recorded_content_says"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A partial inventory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:382ddd3ddc50e8b68c5f42796f9638e1e399019edc997e2c60c1d3818b8ef1b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_change_inventory_makes_the_run_incomplete_naming_the_paths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_knowledge_worklist.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:f1eb15b922e2fc0f023cf3d20bc6030966d637f78693ee2f7948e9cc24017663",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture's entries and locators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:4e6374871aa3940692e670761085f211ecf2d6b95ea7f91cc3331ea6a82c6567",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTRIES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixture world and its worklist run.\n\nAnchor: `worklist_for_sides`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:a2edc9903428a3d9d7e93037b811395429a45f118ec4dc8a8f7ef36606b0c2f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "World"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The knowledge items, without MIK-R10's unexplained kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:3be410d377918839ddb6471c6773b474a8359ac55cb0fee7683ac1f3657d582c",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNEXPLAINED_KINDS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:cb0af687629093d542efef0699b042bb881b862870023e0e40e016f299316979",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_items"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Hunk parsing and mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:07f3d64dacd95030b3b405e93335322d4d2aaa1ee0b4952fa3c6f88d97d5d51d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hunks_parse_and_line_ranges_map_through_the_zero_context_diff"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The conforming body-edit example.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:7411ae61f2078abe6ed909f1453e93310d39c31ce5f2dc05d46cf14b7e2b2ccf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_body_edit_raises_its_invariant_and_family_and_carries_the_rest_of_the_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The comment boundary: no knowledge item between functions, and exactly one unexplained hunk (MIK-R10).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:8893e27eae12ba08b533f38ba66496df98bea98d836b40dc78a49b9daa9bf14c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_comment_between_functions_raises_nothing_and_one_inside_raises"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Proofs in change detection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:b497431b73807fa774b556221d8a96522320acfd0bcfdd378eec27ad4a3ef557",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_proof_entries_take_part_in_change_detection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Knowledge-side changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:546cd8440134277c5d76f26e9ddeabceb8f5d3d5494f0a4dc923e127d3012853",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_added_retired_and_reanchored_entries_raise_and_new_records_do_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

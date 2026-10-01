@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/serving/injector.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`get_adapter` supplies every per-harness signature (`blocked_reason`, `turn_started`) this module reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5db338e1d579e16e5366553b32827aa86bea1940",
+            "content": "sha256:1e9ddce0314daef2d272e1cc0dd52537efceeeadec965cc046c6828ab5b2056f",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_adapters.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`TerminalPaster.paste` is the transport `deliver` calls exactly once per invocation; its own capture-verify/idempotent-retry loop is UNCHANGED by this leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:72a5c0c0362941d791ad220f69c394f945d98409e4988634b8bb6dcff939b1b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalPaster"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_paste.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`deliver_inbox_entry` builds a `DeliveryRow` (`envelope=False`) and calls `deliver` — the inbox-row half of the ONE path (dispatch/nudge/redelivery/signal-emit, all via `agent_notifier.py`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67fded18fc2f9a4626ba4ba293c8cd37145e1632",
+            "content": "sha256:7b698d71855fdeba55641ccec27c01658a4acbc59864f5d30d697227e56d8af1",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver_inbox_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/inbox_delivery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,13 +2,7 @@
 
 | Field                  | Value                                       |
 | ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
 | sourceRoute            | `docs/design/`                              |
-| doc_type               | `route-local-overview`                      |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview      | `../../overview.md`                         |
 
 ## Governing Overview
 
@@ -86,40 +80,34 @@ evidence documents listed below.
 - `observable-lifecycle.md` is covered by file-level onboarding; `harness-matrix.md` remains present but
   not yet file-onboarded, so document only verified harness-matrix facts when it is onboarded later.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The active memory repository's `system/sources.md` has no configured Domain Documentation entries. This
 overview was refreshed from the same-repository design documents, reviewed FEUI-L8 implementation/tests,
 and the accepted worker/reviewer evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external Domain Documentation source governs this route. | — | — |
+No configured external Domain Documentation source governs this route.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The FEUI-L8 design evidence and Chats ruling are repository-local. No cross-repository implementation was
 needed to establish the route model.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The engine-room design reference child route ([engine-room overview](engine-room/overview.md), living spec + prototype) governs the dashboard engine room. | — | — |
-| The dashboard engine-room renderer ([dashboard engine-room overview](../../dashboard/src/panels/engine-room/overview.md)) is governed by the engine-room design docs. | — | — |
-| FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. | `# Cockpit Dashboard — Workflow Scenario Catalog` | docs/design/dashboard/scenario-catalog.md:1-166 |
-| The explicit upstream gaps and one-Chats cutover ruling. | `# Session cockpit upstream register and Chats decision brief` | docs/design/dashboard/session-cockpit-upstream-register.md:1-66 |
-| The bounded series closeout evidence pack. | `# Session cockpit closeout evidence` | docs/design/dashboard/session-cockpit-closeout-evidence.md:1-155 |
+The engine-room design reference child route ([engine-room overview](engine-room/overview.md), living spec + prototype) governs the dashboard engine room.
+The dashboard engine-room renderer ([dashboard engine-room overview](../../dashboard/src/panels/engine-room/overview.md)) is governed by the engine-room design docs.
+- FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence. [1]
+- The explicit upstream gaps and one-Chats cutover ruling. [2]
+- The bounded series closeout evidence pack. [3]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The implementation produces/reuses memory content before refreshing its cache (since MIK-R09 validating a converted leaf's exact tree first). | `external_closeout_commits`; `_commit_memory_content` | mcp/src/agents_remember/worktrees/modules/closeout_external.py:50-96; mcp/src/agents_remember/worktrees/modules/closeout_external.py:140-185 |
+- The implementation produces/reuses memory content before refreshing its cache (since MIK-R09 validating a converted leaf's exact tree first). [4]
 
 ## R39 Design Evidence Disposition
 
@@ -180,73 +168,8 @@ the repository declares `unit_case_budget = 2000` and `integration_case_budget =
 (`pyproject.toml:168,176`), not 1,000 unit / 150 integration. The superseded values are recorded
 rather than deleted, and this is a `T45` find — no check reads a number in prose.
 
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No route impact: these design documents are unchanged. **Reopened claim re-read and reworded:** the closeout-implementation row, whose `_commit_memory_content` MIK-R09 (260928-MIK-L09) changed structurally; the claim holds, and it now names the exact-tree validation on converted memory. The installed fixer normalised this row (it added `_commit_memory_content`'s current extent but left the base extent `82-113`, now stale, which was dropped) and the evidence-pack row (`1-155`). No verification stamp was advanced.
-- 2026-09-18T17:14+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): **body update, not an annotation** — this route's governed source `python-pytest-bootstrap.md` changed (the Git-checkout prerequisite at `:22-24`), so the section above was added and the paragraph carrying the superseded 1,000/150 budget figure was corrected to `pyproject.toml`'s 2000/300 in the same operation (`T45`). Verification stamps stay at the recorded verification; the candidate is uncommitted and the governed closeout owns the real code commit.
-
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned observable-lifecycle route guidance with separate cache refresh. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-
-- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: converted the two engine-room
-  cross-memory rows to direct navigation links. Their relationship remains documented without
-  inventing a ledger mapping or verification stamp for the historical private code identity.
-
-- 2026-09-10T00:46+02:00 — CCR-L42 route reconciliation: recorded the current route-review owner
-  and atomic-child review altitude from `docs/design/python-test-evidence.md`. Source inspection
-  only; verification metadata remains closeout-owned.
-
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
-
-
-- 2026-09-05T07:10+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added current CCR selector/retry contract, broadened design route purpose, and marked the FEUI upstream-absence account historical. Verification records current source claims, not execution or acceptance.
-
-- 2026-08-28T14:15+02:00 — Closed the PDLS design route on the landed candidate: recorded the
-  three canonical Python evidence documents and the deliberate retirement of the two superseded
-  direct-diagnostic notes, then stamped committed code provenance.
-
-- 2026-08-25T17:21+02:00 — Reconciled the full PDLS evidence-authority and diagnostic-lane design.
-  Verification remains closeout-owned.
-
-- 2026-08-14T11:29+02:00 — R39 curator: recorded the Dagger-only measurement boundary in the
-  design route. Verification remains closeout-owned.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: `observable-lifecycle.md`'s recovery
 ## 260713-TES-L5 Route Impact — Fact-Relay Recovery Language
 
 `observable-lifecycle.md` (this route's design authority) refreshed its recovery runbook:
 `ladder-resolved` is legacy parse-compat (the timed escalation ladder is retired) and
 retired/absent-target rows resolve through the sweep's landing/ceiling/grace paths.
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: `observable-lifecycle.md`'s recovery
-  runbook now treats `ladder-resolved` as a legacy pre-formal-vocabulary state (the timed
-  escalation ladder is retired) and resolves retired/absent-target rows through the sweep's
-  landing/ceiling/grace paths instead of hand-parking them. Verification metadata pinned
-  until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: `observable-lifecycle.md` was refreshed to
-  agent-notifier wording (supervisor sweep/loop/heartbeat); design-spec prose is historical and
-  route shape unchanged. Verification metadata pinned until closeout stamps the 260713-TES-L1
-  commit.
-
-- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 5 citation claims
-  (Repo-Internal reference rows, including two memory-repo-relative sources); scoped result 0 findings.
-
-- 2026-07-18T07:43+02:00 — 260715-FEUI-L8 route impact: added the `dashboard/` evidence route to the
-  current model, routed scenario/accessibility/performance and closeout proof there, and preserved the
-  upstream-register boundary: the canonical Chats cockpit is the product surface, while UA-1 structured
-  transcript/history authority remains absent. Verification metadata stays pinned until closeout stamps the
-  accepted code commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact: `observable-lifecycle.md` now includes the
-  non-destructive operator-inbox storm recovery runbook for stale-supervisor incidents. Verification
-  metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
-- 2026-07-06T12:10+02:00 — No route impact: reviewed during the 260703-L10 one-vocabulary sweep — the design specs here are historical design records (engine-room visual language, observable-lifecycle 3.0 design) and are not rewritten by vocabulary sweeps; their only `orient` hits are SVG marker attributes.
-- 2026-06-26T14:16+02:00 — Task 25: route overview now points to `lifecycle_gate` as the observable-lifecycle design's public gate junction.
-- 2026-06-25T13:20+02:00 — Task 23/24: onboarded `observable-lifecycle.md` and recorded the interaction-retention design update for gate/inbox throwaway data.
-- 2026-06-21T23:35 — Created. Route overview for `docs/design/` (in-repo dashboard design documentation):
-  recorded the `engine-room/` child route (living spec + prototype) and noted the two top-level design notes
-  `observable-lifecycle.md` + `harness-matrix.md` as present-but-not-yet-file-onboarded. The engine-room
-  source files are newly added and not yet committed; verification metadata pinned to repo HEAD until a
-  commit stamps them.

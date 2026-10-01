@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/sessions-view/lifecycle.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/session-cockpit/sessions-view/lifecycle.test.tsx` |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`                  |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](../overview.md)
@@ -39,48 +29,21 @@ Assertions preserved from the monolithic suite.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The lifecycle file contains the legacy-duty, smart-default/handoff, authoritative landed-cleanup, and planned-retirement-window suites. | "describe(\"S5 legacy duty parity\", () => {"; "describe(\"smart-default focus + handoff + session cycling (L2: R9, F17)\", () => {"; "describe(\"authoritative landed cleanup through rail and palette callers (F5-S5-2)\", () => {"; "describe(\"planned retirement closes its own window (unplanned termination keeps it)\", () => {" | dashboard/src/panels/session-cockpit/sessions-view/lifecycle.test.tsx:64-423; dashboard/src/panels/session-cockpit/sessions-view/lifecycle.test.tsx:425-508 |
+- The lifecycle file contains the legacy-duty, smart-default/handoff, authoritative landed-cleanup, and planned-retirement-window suites. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the suite-coverage row's
-  first range stopped inside the third suite. Corrected the three earlier suites to `:64-423`, with
-  the planned-retirement suite at `:425-508`. Noting that this staleness is pre-existing.
-  Verification metadata remains closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `dashboard/src/panels/session-cockpit/sessions-view/lifecycle.test.tsx` changed since the recorded
-  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
-  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
-  Verification metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained a
-  fourth suite, "planned retirement closes its own window (unplanned termination keeps it)" at
-  `:425-508`, since the recorded verification commit. Added its anchor to the coverage row with its
-  range and stated the retirement-provenance rule in Purpose and Logic. Note the drift predates this
-  task line: the change landed with an earlier route change, not with this master. Verification
-  metadata remains closeout-owned.
-- 2026-08-11T15:20+02:00 — Replaced the ambiguous `describe` anchor with the three exact suite
-  declarations and stated the file-level coverage they evidence.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  lifecycle suite split from `SessionsView.test.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

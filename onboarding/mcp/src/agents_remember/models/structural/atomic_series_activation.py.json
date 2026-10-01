@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The activation store derives this contract's own fingerprint and refuses any record that is not this exact contract.\n\nAnchor: \"def contract_fingerprint(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:43fa914c6970f7935d94f2a425140ab5639b240575efb963f845ae9005ac30c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_record_identity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:10d1737c51836553255dfb464c23079367c2aa306fb3eaebb19d1f4e795c4b01",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Focused tests prove that two contracts sharing one protected source pair hold independent selection, that vacant and active are never waiting states, that release addresses only the released contract, and that another contract's record can never be adopted.\n\nAnchor: `class AtomicSeriesActivationTests(unittest.TestCase):`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec481109dc06d45cc3569e64354d4545f0a85294",
+            "content": "sha256:c062e91578cfb1b4519422df2d0a0c88eb7306555482d82ed9cb4980ba469252",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_contracts_sharing_one_source_pair_hold_independent_selection"
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ec481109dc06d45cc3569e64354d4545f0a85294",
+            "content": "sha256:30e94ca03276ffd3493206b6f1023107cdd2404f65b738ce467b1dfc0baba886",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_vacant_and_active_are_never_waiting_states"
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ec481109dc06d45cc3569e64354d4545f0a85294",
+            "content": "sha256:2b2821cc9654e625c2ee4838b0c714cdb24333411aece77c9fd98e0f2cb0e66e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_release_addresses_only_the_released_contract"
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ec481109dc06d45cc3569e64354d4545f0a85294",
+            "content": "sha256:c994d6631624e0b42bac96c1dc9152ced9ea882b373716bfb76c079d7a5995ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_another_contracts_record_can_never_be_adopted"
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

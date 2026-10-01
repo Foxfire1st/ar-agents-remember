@@ -1,15 +1,5 @@
 # dashboard/src/topology/model.test.ts
 
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `dashboard/src/topology/model.test.ts`      |
-| doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-08-01T10:30+02:00                      |
-| lastVerifiedCommitHash |                                             `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                             2026-08-10T12:28:42+02:00|
-| governingOverview      | `../overview.md`                            |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -95,75 +85,34 @@ value out cannot notice the absence of a value at all.
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation was found after checking the repository source registry; this is a
 project-local unit test.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This test documents the behavioral contract of the pure topology builder and, since 260731-EFA-L4,
 the state → status grammar it reads from.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `lifecycleStatus` describe: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the same answer under `inferred`, and the healthy-only degrade. | `lifecycleStatus`; "classifies every state the vocabulary declares" | dashboard/src/topology/model.test.ts:93-138 |
-| `fromANewerServer` — the single named widening the two unknown-state cases share. | `fromANewerServer` | dashboard/src/topology/model.test.ts:52-54 |
-| The two vocabulary-driven `buildTopology` cases: every state drawn with its declared status, and `awaiting-developer` explicitly not `"ok"`. | "draws every state in the vocabulary with the status that state declares"; "does not render an awaiting-developer lifecycle as a healthy node" | dashboard/src/topology/model.test.ts:155-168; dashboard/src/topology/model.test.ts:170-188 |
-| The grammar under test — `CONSTEL_STATUSES`, `CONSTEL_STATUS_BY_STATE`, `UNCLASSIFIED_STATUS`, `STATUS_BY_DECLARED_STATE`, `lifecycleStatus`. | `CONSTEL_STATUSES`; `CONSTEL_STATUS_BY_STATE`; `UNCLASSIFIED_STATUS`; `STATUS_BY_DECLARED_STATE`; `lifecycleStatus` | dashboard/src/topology/model.ts:16-16; dashboard/src/topology/model.ts:48-59; dashboard/src/topology/model.ts:68-68; dashboard/src/topology/model.ts:83-83; dashboard/src/topology/model.ts:85-93 |
-| The topology builder folds each enclosure's lifecycle through `lifecycleStatus` and parents providers by worktree group, repo id, or workspace core. | `lifecycleStatus` | dashboard/src/topology/model.ts:85-93 |
-| `LIFECYCLE_STATES` — the imported vocabulary the assertions iterate instead of restating; composed from `LIVE_STATES` (L42) + `TERMINAL_STATES` (L48), so the range holds all six names. | `LIFECYCLE_STATES`; `LIVE_STATES`; `TERMINAL_STATES` | dashboard/src/types/projection.ts:9-9; dashboard/src/types/projection.ts:11-11; dashboard/src/types/projection.ts:13-13 |
-| The provider-parenting fixtures and assertions: matching worktree groups, missing groups, aggregate workspace providers, repo-scoped workspace providers, and `worktreeGroup` precedence. | "joins a worktree provider to its enclosure when worktreeGroup formats differ (path vs basename)"; "parents worktree-scoped providers to their owning worktree node"; "falls back to the workspace core when a worktree provider has no matching group"; "keeps workspace-scoped providers parented to the workspace core"; "parents repo-scoped workspace providers to their covered repo node"; "keeps worktreeGroup precedence over repoId for provider parenting" | dashboard/src/topology/model.test.ts:190-200; dashboard/src/topology/model.test.ts:202-211; dashboard/src/topology/model.test.ts:213-219; dashboard/src/topology/model.test.ts:221-231; dashboard/src/topology/model.test.ts:233-251; dashboard/src/topology/model.test.ts:253-269 |
+- The `lifecycleStatus` describe: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the same answer under `inferred`, and the healthy-only degrade. [1]
+- `fromANewerServer` — the single named widening the two unknown-state cases share. [2]
+- The two vocabulary-driven `buildTopology` cases: every state drawn with its declared status, and `awaiting-developer` explicitly not `"ok"`. [3]
+- The grammar under test — `CONSTEL_STATUSES`, `CONSTEL_STATUS_BY_STATE`, `UNCLASSIFIED_STATUS`, `STATUS_BY_DECLARED_STATE`, `lifecycleStatus`. [4]
+- The topology builder folds each enclosure's lifecycle through `lifecycleStatus` and parents providers by worktree group, repo id, or workspace core. [5]
+- `LIFECYCLE_STATES` — the imported vocabulary the assertions iterate instead of restating; composed from `LIVE_STATES` (L42) + `TERMINAL_STATES` (L48), so the range holds all six names. [6]
+- The provider-parenting fixtures and assertions: matching worktree groups, missing groups, aggregate workspace providers, repo-scoped workspace providers, and `worktreeGroup` precedence. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. The test covers same-repository frontend model logic only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## Series-Contract Notes
 
 Topology tests construct `EnclosureNode` fixtures with the new `enclosureId`, `leafId`, and `taskRoot` fields so provider-parenting expectations run against the current projection shape. Since 260703-L11 the fixture also carries the required existence-truth flags `codeWorktreeExists`/`memoryWorktreeExists` (defaulted `true`); the Topology itself keeps filtering on `activeWorktreeGroups`, not on these flags.
-
-## Update History
-
-- 2026-08-03T10:00+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 10 assigned citation findings (5 missing anchors and 5 malformed sources); final scoped check is clean.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
-  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
-  every anchor below it. Re-anchored the one row citing that file: `LIFECYCLE_STATES` L21-L30 → L42-L59,
-  which now spans both declared halves and the composed tuple at L59. The iterate-never-enumerate claim
-  is unchanged — the tuple is still what the assertions import and walk.
-- 2026-08-01T09:28+02:00 — 260731-EFA-L4 curator: documented the grammar coverage this file gained.
-  A `lifecycleStatus` describe (four cases: totality over `LIFECYCLE_STATES`; the unclassified answer
-  pinned to `UNCLASSIFIED_STATUS` **by value** rather than by `.not.toBe("ok")`, which `undefined`
-  satisfies; the same answer under `inferred`; and the healthy-only degrade), the named
-  `fromANewerServer` widening helper, and two `buildTopology` cases that iterate the whole vocabulary
-  — one asserting every state draws with `CONSTEL_STATUS_BY_STATE[state]`, one pinning
-  `awaiting-developer` as not `"ok"`. Added the iterate-never-enumerate convention and the matching
-  invariants. Replaced the two Repo-Internal rows, whose ranges (`L49-L58; L80-L124` on `model.ts`,
-  `L6-L100` on this file) no longer contained the symbols they named, with seven ranges each holding
-  its proving symbol. Verification metadata left pinned; closeout stamps the code commit.
-- 2026-07-06T03:20+02:00 — 260703-L11: the `enclosure(...)` fixture defaults the new required
-  `codeWorktreeExists`/`memoryWorktreeExists` flags to `true`, matching the projection contract; no
-  assertion change — topology admission still keys on `activeWorktreeGroups`. Verification metadata
-  pinned until closeout stamps the L11 commit.
-- 2026-06-28T07:30+02:00 — Task 33: added an `activeTopologyInputs` describe (active-only inclusion,
-  terminal/orphan exclusion), a lifecycle-fold test (enclosure node carries id/status/sub, no task-kind
-  node), and a path-vs-basename provider-join test; added a `lifecycle()` fixture factory. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: topology fixtures now include `enclosureId`, `leafId`, `taskRoot`, and the leaf `series-contract.md` enclosure path required by the projection schema. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T21:46+02:00 — Task 12 S2: extended pure-model coverage for repo-scoped workspace provider
-  parenting and `worktreeGroup` precedence over `repoId`, while preserving S1 fallback/core behavior.
-  Verification metadata pinned until closeout stamps the S2 code commit.
-- 2026-06-23T15:08+02:00 — Created for task 12 S1: covers worktree-provider parenting, unmatched
-  worktree fallback, and workspace-provider core parenting for `buildTopology`. Verification metadata
-  will be stamped at closeout.

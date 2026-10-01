@@ -1,0 +1,130 @@
+{
+  "path": "mcp/tests/test_review_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Missing/zero state starts round one and pending replay is idempotent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "content": "sha256:a22f5ee9e2cc6f4951c07ff03a41fca3c2476bdbba504c19af4b774b870eeb10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_state_starts_round_one_and_replay_is_pending_idempotent"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "content": "sha256:d8c13db110af8cca666290d3927a05b8de8b595269c98eef9b01f5f4be274a63",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_explicit_zero_state_starts_round_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Baseline sealing and successor rounds only shrink remaining IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "content": "sha256:c47662482b9ad4f72d1b5c5d4d76b91e2d7156ce8154ae350cc897a4fc35bd68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_seals_findings_and_successors_only_shrink_remaining"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Successors reject new, duplicate, reintroduced and unresolved passing IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "content": "sha256:25a6532b52e6d0bb57b1fb4af1e5e155bd28259e523b672cd3f26659974707ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_successor_rejects_new_duplicate_reintroduced_and_unresolved_passing_ids"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Recording without begin starts the baseline and still requires a valid verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "content": "sha256:94123191f1b26b3447e76c1df238a4c73bf9253c1eb22099a73729144a3d1ac5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_without_begin_starts_the_baseline_and_still_requires_a_verdict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ordinary exhaustion refuses a fourth round with count and limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "content": "sha256:d580e0b3bccaf61dded7bed7c1aebc1740ffae60b72e55280c1c02d67bbfbb84",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_default_three_round_limit_refuses_fourth_with_actionable_count"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A direct developer permission adds cumulative rounds only after exhaustion and preserves findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "content": "sha256:10187e285a1af47d1b6bdf3d0f884418bb4a5d3909235180880ae118f4c3e643",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_explicit_extra_round_preserves_count_and_issue_list_then_refuses_fifth"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Malformed permission payloads leave exhausted state unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
+            "content": "sha256:1923f9a90d5f0e857eb56aa357ee967cdee0b429f335d05c0c75a10a8d2478a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_developer_exception_leaves_exhausted_state_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

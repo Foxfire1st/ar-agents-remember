@@ -1,0 +1,295 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/grammars.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `CallLiteral` (lines 123-131) — One direct quoted argument, its syntax identity, and its call's line extent..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:7c458b779beeca757ebaae74782d9c95b1912813ba0a72977f1e79d8f853736a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CallLiteral"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `_span` (lines 282-286) — The one-based line range ``node`` occupies..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:eb93b470e35f3ebcdc0299f3802ec5b6aa3b5170db92bade032d6d25482a7342",
+            "locator": {
+              "kind": "symbol",
+              "name": "_span"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:85016050d27af9698f490a78b50be4a646e94abaeee735647545d2495994da5e",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 282
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `_text` (lines 289-290).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:0ca335ebf67ed7e1e70f9ebdf42177b37ef3b0351fbae5ac8ff352f8cb411576",
+            "locator": {
+              "kind": "symbol",
+              "name": "_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `_python_names` (lines 293-299) — The names one Python construct binds..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:7fe5a83e47b7f26215ac340f6b1c1225a096f8bec9f6ecf3ef0240a28f737a1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_python_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `_python_targets` (lines 302-314) — The plain names an assignment target binds, unpacking nested tuples and lists..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:bf82d265fc24ef8ca49491f30cb6aeb1a04a60ea995a52d9c3c5cd381f00ecf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_python_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the function `_script_names` (lines 317-323) — The names one JavaScript or TypeScript construct binds..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:f72c75f9cf5be364570dfad89283f42bd1b18b450c0f14f549876a969b08fe27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_script_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `_script_targets` (lines 326-343) — The names a declarator binds, unpacking destructuring one alternative at a time..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:66ad6d345d6ebbcdaeee1582f7531c321b17d8063248a197a1391f3c9a7a635e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_script_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `grammar_of` (lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:2178893bd11e482f25817053ea2928cbdb6fe8bc5c44d5e83499f755dd1d6b86",
+            "locator": {
+              "kind": "symbol",
+              "name": "grammar_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `parsed` (lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:6fb6cbf9fab65503f090e926d159bdfe3d414852217f4453d1e4269e0f82e8dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "parsed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `typescript_anchor_identifier` (lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:6b250d3c9b7722bee6e25120bc75b75cb45a675156461d0d1af5ff8e51ab4f3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "typescript_anchor_identifier"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:76121093c6b7eb466f610e13bac11ae3fb11d2d0a00d7e251330d47e5804f9ad",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `call_argument_literals` (lines 188-213) — Every direct string argument and the call it belongs to, in document order..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:fd4700e6cc3227c858f11b31ab2740a1b2db5df07ea987e3755c698490b1c14b",
+            "locator": {
+              "kind": "symbol",
+              "name": "call_argument_literals"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:77096f1c6d14c04ac6e7678a948e941d30d3f0d503275027a40728a6399d1c67",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `language` (lines 216-228) — The loaded grammar, built once. A failure to load is fatal, never a fallback..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:0cef424167c021967be2e1f137eade95c3f8455fbf5e45e6c140135368c8aec6",
+            "locator": {
+              "kind": "symbol",
+              "name": "language"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `definitions` (lines 231-256) — Every name ``path`` binds, and the line span of the construct that binds it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:13b68ee021701532bd6d709f0200df35341f1b3c431481f50761bf8029f14519",
+            "locator": {
+              "kind": "symbol",
+              "name": "definitions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:13bae30bba664d12b6ae651d91c2b7b5c69e505f7cc942bf0980caef04f5edcf",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `_walk` (lines 259-272) — Every node in the tree, at any depth, in DOCUMENT ORDER..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:ce5ed35ba39d059fe0a0fdd9b9cff94fab2e4ca6ff1d5f4fe6c2dc5c8150a753",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `_widened` (lines 275-279) — ``node`` grown outwards through the syntax that decorates or exports it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75e546c682b003f4cb516aedab288cfb9daf02c2",
+            "content": "sha256:c45eec1278d1f14982a7034cdcc5c937863fbb4ecd00f72e2337b03bed11ac65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_widened"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

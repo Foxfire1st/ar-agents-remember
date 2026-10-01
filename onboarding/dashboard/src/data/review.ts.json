@@ -1,0 +1,992 @@
+{
+  "path": "dashboard/src/data/review.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "99a657e901a3a274e7393532701866730903f313",
+        "content": "sha256:d6c2f0cb4e05611a6ee870f5ac40440cd1b98f76becc8be2dfd54a95c43ae515",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewSourceExpansion"
+        }
+      },
+      "id": "RLZ-CHCMPQ0Y",
+      "invariant": "INV-T23G8ZJM",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Is the dashboard client's mirror of the served expansion: it declares the required admission and admission_detail fields and widens status to accept 'unchanged', so the client type carries why each path was opened as the server states it.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The header's own statement of what this file mirrors, the rule that a field the server omits is absent rather than defaulted, and the second model module the expansion types mirror.\n\nAnchor: `Mirrors`; `same way (ICR-R03)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilesApiError"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:635f83e1846e80f411f85c2a423cd281c202bef22c70570e321628d2ed70182c",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c8da7d3848373e1ba06c71f1d25a9244c95b03ff",
+            "content": "sha256:d7e0f790e5a88d7f926e71a86662767eed1f5fbb57f91cefed45ea8b2dd57d03",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "dashboard/src/data/changeset.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c8da7d3848373e1ba06c71f1d25a9244c95b03ff",
+            "content": "sha256:e5d0f4183543477238d05dfe2257bfe9856dabfe0fe0192f53b5be911d6f1495",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/data/changeset.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c8da7d3848373e1ba06c71f1d25a9244c95b03ff",
+            "content": "sha256:1732fd98782fc6d3ad47268b83c50d274b955147717bd964d7f01b450c202fa8",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/data/changeset.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:0f6ace113180807badb9c2aa564233c50bb797a8363183bfe8ebac814ded9d5a",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "content": "sha256:4ab2c98c21852f1df2d707e2002649214b3835abc899650d4c67718a39ca6bb3",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "dashboard/src/data/files.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "content": "sha256:b52744260b23bf4515c66a13e2355d1c26c5eda28afd42440e62db19f21ff412",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/data/files.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "content": "sha256:17c5131dbaa74a87a46bad34794aa396391ea104387aa744fb0d161c96e46535",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/src/data/files.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e11e054c74b0b12c9e993867ba049f902b36a4f7",
+            "content": "sha256:d7e0f790e5a88d7f926e71a86662767eed1f5fbb57f91cefed45ea8b2dd57d03",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/data/notes.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e11e054c74b0b12c9e993867ba049f902b36a4f7",
+            "content": "sha256:8aed0a367a05b2774faa3e34ff0cc9fd4ac96fc79a9ed19152d716989f807b42",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "dashboard/src/data/notes.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e11e054c74b0b12c9e993867ba049f902b36a4f7",
+            "content": "sha256:a27d15613065a091f5031a301c9812ddc39b919452f0d6992aabd34ab6c508e5",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/data/notes.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f5b28380c89f9b5f08100d5b26be0bdd91a63725",
+            "content": "sha256:a7478b497e4e89e6879074ff071ae9d737816f3cf1dadbb986e2b300b430a9f7",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f5b28380c89f9b5f08100d5b26be0bdd91a63725",
+            "content": "sha256:145ef4f373d5b922a766fd9c0386957a6294c034199120a5caa8d49cc208c9a7",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f5b28380c89f9b5f08100d5b26be0bdd91a63725",
+            "content": "sha256:450f731fcd68be838559e5b2fe1561031b668b0a07329ec4f0349d266c118c7e",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f5b28380c89f9b5f08100d5b26be0bdd91a63725",
+            "content": "sha256:9cf0162cfa6fd227a5523c7ee7ab52daf8aa3d942e65fd8069e8d60907f77ecd",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 295
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f5b28380c89f9b5f08100d5b26be0bdd91a63725",
+            "content": "sha256:9046047dc8ddcca50f5e81619f1c1664d91124cb2a193e7d745c0d830124389e",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
+            "content": "sha256:d7e0f790e5a88d7f926e71a86662767eed1f5fbb57f91cefed45ea8b2dd57d03",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
+            "content": "sha256:97b25a652c3ebdda3eb868f30421f29e59f8ea582105b466bb0c93be95f87a1d",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
+            "content": "sha256:ef033fcb8c9a26aee6e3c9878f5f221adc995c1d34d47eef1db603ecca2fefa5",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:75f9593fea76939d23696b9e0592a304e1c14880532ae9a59bfe161ce38abcc9",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:8c7e3a0544cedc8517576a5874dec5c3efe6c0911d32e999735798fd0c73d6e4",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
+            "content": "sha256:4ab2c98c21852f1df2d707e2002649214b3835abc899650d4c67718a39ca6bb3",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
+            "content": "sha256:f5386a914e8e6757d9ebe3f9a9f4724a06ec87a82417a9a8451dff5725f62ff8",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:939f4ca082ecace34220b18317fb59b8fbe3417f74752def52bbe96d8639074f",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The three panes, each carrying its own `unresolved` rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:33e36359efd8dd337f7f07c83b33db59401b55633d4a9e8c96a71f50d6fece3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgePane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:8180393cd0c5609e7551fcae068f9d4a94397f6829ea5768ff30b8c98aec0f40",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourcePane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:9bd2c3dbdad71203842dc3f48ff7a8749255dfa75781ebf32a023ccc70287283",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidencePane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The selected source location with its optional role and its three-member change state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:14e58bc263c1c04510c459484aaba7401976a630d44cfe306f20d48b61e0209c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLocation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The count shape whose optional value beside its optional reason is how a quantity with no meaning states why rather than reporting a zero.**\n\nAnchor: `value?: number`; `reason?: string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:f070fdc46e2aa0deac025a209506dd142cf571ba112e0f7b285934b77abe1814",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRemainingCount"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The evidence claim reference and the observation displayed exactly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:1131cbde963456cf786de68b7804f632e590f707bb59bb2517e3d5078a03e0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidenceLink"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:8b1b0bb41c61ffbd5b96cd5fe17d6659e9c5e71b55c9d36cc7b8bb63aff11504",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The two display unions with no favourable member.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:ddf039cf6d2d565ab835ebb360c8d26dcfe58601c01c32a0d5782c3a94be1ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewStaleness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:1b7965a754dc8f27bc03b4b25f42552a5e21ea411f93c199a2a9396ef933c4cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSubmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The whole payload — including the optional `family_context` whose absence is a fact of its own — and the two response shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:9624cf94c71075e6f6e98ec6e957d2057507ac25f87b466d7d11c0ed15d7adb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:d9771cfc764ef8c1ce8e4242749764030b0ea3450a75d95a9ff2120683266d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRefusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:24dfc2460ed59293a278a004057a152a127a02ccc656e876a2149eb953464178",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The comparison request: a task context, one recorded subject and a same-origin default, with no path.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:aac475366b1dc09b26851e65ea398b4b510aa661d0f863f7e5d1124d07525bc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntryListResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:cc0642b46db423ef16f86484fedbf882b3cb90e88fc204e9762472d6dbb9a084",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReviewEntries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The family mirror's re-export: five values and twenty-one types, including the three member-source locator types.**\n\nAnchor: `ReviewSourceLocator`; `ReviewSourceLineRange`; `ReviewSourceLocatorState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:34ce8217609a0f37bf1dfeff6034b12897652965873a0b20a94d2fac32b27d7a",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The six-member state literal a side may be, and the side value whose optional `text` is present only for the two textual states — so no missing or unrenderable side can arrive as an empty document.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:92f1296ffc3e502b070bc17e51563baa866342e1c5c3c1461bd6f23acae1b788",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceSideState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:75319702001c25b9863f52aece77d448458d187ed5fff17846d210bc1cde33d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The expansion value: both sides, both generation ids, the three-member currentness, `path_bound` naming which measured change set bounded the path, and `admission` naming why it was opened (a changed path, or unchanged context a recorded realization of the same comparison links).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:47ea5a69afc3849d68a123e1dd2947edbc7d8b0c646954f66b4ae1827591194e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceAdmission"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:d6c2f0cb4e05611a6ee870f5ac40440cd1b98f76becc8be2dfd54a95c43ae515",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceExpansion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:3077955a6263794f03a7acf7ae87de8b88be58ed1fe0c79d783f6952e9a80d83",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceContentResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The source-content request: the task context, the published path and both published generation ids, read through the route's own decode because the body is this route's answer whatever the status was.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:69b212b772094007f73dd9c44e490c832c9950fa7c29b63da605cc6bcafd0155",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewSourceContent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
+            "locator": {
+              "kind": "symbol",
+              "name": "getJson"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilesApiError"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:11bda74086b107d0f8086147192b1bb72ed321ba4a7307b33e0cba67e2a3ad2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "qs"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The sibling client whose shape this file mirrors, including its own no-store-mutation comment.\n\nAnchor: `FilesApiError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:a85e2cc9a5a731afed4fd8049a86cb9be07af2b3948fb6ceefd4894695138bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskChangeset"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:99ba941d5664f1991dabe79e8c373bf8dddc8c972d920a6eb66cab0c8c349486",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:5b866e2bf94edb14c1c40256452aa3ca41a4231c284008be8de7fdc988a3c4f8",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:7201f2685fea87802e77c66300d6ad17611b1a55209eabef20498f42c7fe817b",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:ad9e12546425576d3deae8c9b9dbf128d5d6ddaf5d7fe857934927deffa3b9dd",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReview"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:69b212b772094007f73dd9c44e490c832c9950fa7c29b63da605cc6bcafd0155",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewSourceContent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The catalogue consumer: since `260921-ICR-L47` the reviewer (not the task entry) reads this client's subject catalogue when it opens, keyed on the comparison's identity; the task entry reads the changed-intent summary instead, and a refused or empty catalogue still leaves the task-context review available.**\n\nAnchor: `intentReviewEntries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two client-side unions, each mirroring a server literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:4a5d72f4e6df2cb36d701f09599c7f0cb5fa6495dcb68f0390a1061e1c8e6734",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSideState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:9daf565c79e7e6a62f9f974f16a82498eb785ee7a24bc6f88a24e2a5075bc7a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSelectorKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The missing-side rule on the client: text is optional beside the state, so no empty string is manufactured.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:dfe9f255a9428d0c5cd6076a77be5615934cd566078199b7fccd09c1a005b982",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSideContent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared shape that makes an unresolved reference a displayed fact on every surface that can have one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:3d54922b35241ac4274b64244f96d19effc2d5a3c879eac28844fc50170f6328",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewUnresolvedReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The candidate reference, which carries task identities and no path, and the comparison identity carried rather than derived.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:0bb46dfc79f98f38cdaf1486167f00a530de97ac372327ef2a46db9bbde2cbfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCandidateRef"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:8c360500d2f45ded1ac5c1873960483d26dd7dccd7e48a99c18bc5ec20b176b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The per-side revision count and the field transition whose absent value is the recorded fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:a090ecb9ce0c6f2538c495854b7d9b4e642cc724ff2b1b79c0270d04c1b0f0be",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionGroup"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:d20e1fcfc8b0b5ff0e73031f20d364ea59b9c6f22f3acaea4b252f1e1b9e0b23",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFieldChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The authored record with its examined inputs, and the detection fact with its versions and scope limitations and no severity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:c034bc40f31bed628bfe3f87faaf944c63673c6461c5c9ff913130242dbbff1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAuthoredEffect"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:c598721d35fec90c0b54f139a1168f92e03f37127663e481b7df619dde107b5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSignal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The assessment display with its author, examined inputs, binding state and evidence refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:2a13e34b4c4633a7d4c0de9e0ba93793ddfad107866c455bb094c3b92b87c7e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAssessmentDisplay"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

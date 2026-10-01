@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/repair.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/repair.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T01:15+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -103,62 +93,33 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The five refusal codes, including the three new continuity-refusal codes. | `ANCHOR_ABSENT`; `ANCHOR_AMBIGUOUS`; `ANCHOR_LEFT_LIVE_FILE`; `ANCHOR_CONTINUITY_UNPROVEN`; `ANCHOR_KIND_CHANGED` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:39-43 |
-| Every decline code has a curator-facing remediation naming the next action. | `DECLINE_REMEDIATION` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:45-79 |
-| Defines the class `ResolvedLocation` (lines 81-93) - One anchor's chosen extent exactly as the shared oracle resolved it, carried on `Repair` (CCR-R10). | `ResolvedLocation` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:81-93 |
-| Defines the class `Repair` (lines 96-102) - The source list `--fix` would write for one claim, plus its resolved locations. | `Repair` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:96-102 |
-| Defines the class `Decline` (lines 104-114) - Why one claim stays for the curator, and the facts it needs to work it down. | `Decline` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:104-114 |
-| Defines the class `Cited` (lines 117-122) - One of a claim's sources and the file it named, when that file still exists. | `Cited` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:117-122 |
-| Defines the function `targets` (lines 125-128). | `targets` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:125-128 |
-| Defines the function `chosen` (lines 131-141) - The one extent this citation means, or `None` when the file offers a choice. | `chosen` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:131-141 |
-| What the claim's anchor was in its cited sources at its verification stamp, or why that cannot be established. | `Origin` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:144-156 |
-| The per-document verification provenance a relocation has to prove itself against, derived through the established classification/provenance/extent path. | `Continuity` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:159-240 |
-| A document with no metadata table, no stamp, or an unreadable one yields the empty continuity whose origin is unproven. | `continuity_for` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:243-253 |
-| Defines the class `_Plan` (lines 256-272) - One claim's repair as it accumulates: the spans found, the first refusal, and every resolved location. | `_Plan` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:256-272 |
-| The per-claim placement authority bundle that keeps the placement helpers under the armed parameter limits. | `_Placement` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:275-282 |
-| Defines the function `plan` (lines 285-309) - The tiebreaker, applied to one claim, now taking the document's continuity authority. | `plan` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:285-309 |
-| Defines the function `_carried` (lines 312-333) - The sources that survive unchanged because nothing here could regenerate them. | `_carried` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:312-333 |
-| Defines the function `_place` (lines 336-353) - Where this anchor's range comes from: a cited file first, the wider tree second. | `_place` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:336-353 |
-| The wider-tree admission order: a live cited file refuses first, then no/ambiguous sighting, then unproven origin, then a kind change. | `_retarget`; `_left_a_live_file`; `_no_single_sighting`; `_continuity_unproven`; `_kind_changed`; `_named_kind` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:356-387; mcp/src/agents_remember/memory_quality/style/citations/repair.py:390-403; mcp/src/agents_remember/memory_quality/style/citations/repair.py:405-412; mcp/src/agents_remember/memory_quality/style/citations/repair.py:414-426; mcp/src/agents_remember/memory_quality/style/citations/repair.py:428-439; mcp/src/agents_remember/memory_quality/style/citations/repair.py:441-446 |
-| Defines the function `_ambiguous_in_file` (lines 448-458). | `_ambiguous_in_file` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:448-458 |
-| Defines the function `_written` (lines 460-472) - The generated source list: one range per anchor, merged per file, then what survives. | `_written` | mcp/src/agents_remember/memory_quality/style/citations/repair.py:460-472 |
-| The origin is read through the established citation classifier, never a second derivation. | `classify_citation` | mcp/src/agents_remember/memory_quality/style/citations/claim_change_router.py:254-274 |
-| The verification-provenance owner the continuity proof reads cited evidence through. | `Histories` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:110-136 |
-| The code-commit-to-memory-commit ledger mapping the memory leg resolves through. | `memory_commit` | mcp/src/agents_remember/memory_quality/style/citations/provenance.py:138-147 |
-| The document metadata reader that supplies `lastVerifiedCommitHash`. | `parse_table_metadata` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py:17-19 |
-| The deterministic projection consumes the resolved locations a `Repair` carries. | `plan_projection` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:167-221 |
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `memory_commit` repointed to mcp/src/agents_remember/memory_quality/style/citations/provenance.py:138-147. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `memory_commit` at mcp/src/agents_remember/memory_quality/style/citations/provenance.py:138-147.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `memory_commit` repointed to mcp/src/agents_remember/memory_quality/style/citations/provenance.py:138-147. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-read the reopened claim in the row 133 of this card against the current code: its anchor still resolves inside the cited range, so the wording holds and the stamp advances
-
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: refreshed for the continuity-based relocation
-  rule. Body now records the three new refusal codes (`anchor_left_live_file`,
-  `anchor_continuity_unproven`, `anchor_kind_changed`), the `Origin`/`Continuity` types and
-  `continuity_for`, the `continuity` argument on `plan`, the `_Placement` bundle, and `_retarget`'s
-  cheapest-first admission order. Recorded *why* it matters and why the first design was wrong: an
-  earlier guard only refused while a cited file survived, so **deleting** the cited file fell through
-  to the same tree-wide lookup and reproduced the identical wrong binding while reporting success —
-  file deletion does not establish that the replacement evidence supports the claim, and
-  "provenance-based matching fails open when provenance is unavailable" is an argument for refusing,
-  not for a cheaper guard. Recorded that the origin is derived through the established path
-  (`classify_citation` → `Histories` → `FileView.extents` → the existing `chosen` tiebreaker), not a
-  second derivation, and that an unprovable origin refuses. Every module-surface bullet and reference
-  row re-anchored to the post-change source ranges.
-
-- 2026-09-04T01:15+02:00 - 260831-CCR-L10 Gate-5 memory pass: refreshed for the CCR-R10
-  deterministic anchor-range projection change-set (code commit 709dd076). Body now reflects the
-  new `ResolvedLocation` carrier, `Repair.locations`, the `_Plan.locations`
-  accumulator, and the anchor-bearing `add` signature in `_place`/`_place_elsewhere`;
-  every module-surface bullet and reference row re-anchored to the post-change source ranges;
-  verification metadata pinned to 709dd076.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- The five refusal codes, including the three new continuity-refusal codes. [1]
+- Every decline code has a curator-facing remediation naming the next action. [2]
+- Defines the class `ResolvedLocation` (lines 81-93) - One anchor's chosen extent exactly as the shared oracle resolved it, carried on `Repair` (CCR-R10). [3]
+- Defines the class `Repair` (lines 96-102) - The source list `--fix` would write for one claim, plus its resolved locations. [4]
+- Defines the class `Decline` (lines 104-114) - Why one claim stays for the curator, and the facts it needs to work it down. [5]
+- Defines the class `Cited` (lines 117-122) - One of a claim's sources and the file it named, when that file still exists. [6]
+- Defines the function `targets` (lines 125-128). [7]
+- Defines the function `chosen` (lines 131-141) - The one extent this citation means, or `None` when the file offers a choice. [8]
+- What the claim's anchor was in its cited sources at its verification stamp, or why that cannot be established. [9]
+- The per-document verification provenance a relocation has to prove itself against, derived through the established classification/provenance/extent path. [10]
+- A document with no metadata table, no stamp, or an unreadable one yields the empty continuity whose origin is unproven. [11]
+- Defines the class `_Plan` (lines 256-272) - One claim's repair as it accumulates: the spans found, the first refusal, and every resolved location. [12]
+- The per-claim placement authority bundle that keeps the placement helpers under the armed parameter limits. [13]
+- Defines the function `plan` (lines 285-309) - The tiebreaker, applied to one claim, now taking the document's continuity authority. [14]
+- Defines the function `_carried` (lines 312-333) - The sources that survive unchanged because nothing here could regenerate them. [15]
+- Defines the function `_place` (lines 336-353) - Where this anchor's range comes from: a cited file first, the wider tree second. [16]
+- The wider-tree admission order: a live cited file refuses first, then no/ambiguous sighting, then unproven origin, then a kind change. [17]
+- Defines the function `_ambiguous_in_file` (lines 448-458). [18]
+- Defines the function `_written` (lines 460-472) - The generated source list: one range per anchor, merged per file, then what survives. [19]
+- The origin is read through the established citation classifier, never a second derivation. [20]
+- The verification-provenance owner the continuity proof reads cited evidence through. [21]
+- The code-commit-to-memory-commit ledger mapping the memory leg resolves through. [22]
+- The document metadata reader that supplies `lastVerifiedCommitHash`. [23]
+- The deterministic projection consumes the resolved locations a `Repair` carries. [24]

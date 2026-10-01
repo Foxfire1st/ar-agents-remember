@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/types/terminalOpen.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Success returns the accepted structural binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:62cc64d0e75bd613d583f2acd916263e0dd2678abe3ad109fde7839af23eb7b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenSuccessBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Seat conflicts use task-document and role identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:466487578749dccc4436bdbf4da1fe1791a1d9c14ff5300d44857df7291905e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenSeatTakenBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Launch conflict remains a distinct live-occupant result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:b7e500d02134d4775364a406e4052c83ad309b2ccac7502db5507b42e4c76abe",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenConflictBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

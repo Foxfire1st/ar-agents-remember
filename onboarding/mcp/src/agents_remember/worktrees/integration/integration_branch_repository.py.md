@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [governing overview](overview.md)
@@ -29,15 +19,15 @@ The module canonicalizes local branch spellings and symbolic aliases, resolves r
 - Symbolic aliases, cycles, malformed targets, and Git errors do not degrade to ordinary branch spellings.
 - This module reports repository facts; task-derived protected-surface ownership remains in `integration_branch_authority.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical local-branch identity rejects ambiguous symbolic authority. | `canonical_local_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:10-39 |
-| Code and external-memory default resolvers keep their authority sources distinct. | `repository_default_branch`, `memory_repository_default_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:58-67; mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:51-79 |
-| Linked-worktree enumeration reports exact canonical branch owners. | `branch_worktree_owners` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:132-152 |
+### Repo-Internal References
 
-## Documentation References
+- Canonical local-branch identity rejects ambiguous symbolic authority. [1]
+- Code and external-memory default resolvers keep their authority sources distinct. [2]
+- Linked-worktree enumeration reports exact canonical branch owners. [3]
+
+### Documentation References
 
 No configured domain-documentation or cross-repository source applies to this file.
 
@@ -47,10 +37,8 @@ Git failures while resolving canonical branch authority or linked-worktree owner
 stable unreadable-authority messages. Raw stderr/stdout, repository paths, and backend-specific
 detail stay behind this lowest repository boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Symbolic branch resolution translates Git failure to a bounded authority message. | `canonical_local_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:10-36 |
-| Linked-worktree enumeration applies the same bounded failure posture. | `branch_worktree_owners` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:132-152 |
+- Symbolic branch resolution translates Git failure to a bounded authority message. [4]
+- Linked-worktree enumeration applies the same bounded failure posture. [5]
 
 ## 260918-TSIP-L6 `BranchAuthorityUnavailable`: A Condition, Not A Crash
 
@@ -67,14 +55,3 @@ a sibling tool already reports, and they keep raising — widening this type wou
 the authority tests hold. The first consumer is
 `application/memory_tools.py::memory_baseline_adopt_tool`, which now catches exactly this type
 (`T34`).
-
-## Update History
-- 2026-09-19T19:52+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded the new typed `BranchAuthorityUnavailable` and the boundary it does not cross — malformed or unresolvable recorded authority still raises. Every citation range re-derived against the repaired file. Verification metadata stays closeout-owned.
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled bounded Git authority failures. Verified at code commit `1d446724`.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
-
-
-- 2026-08-16T03:24+02:00 — 260815-DAG-L4: split exact Git repository and branch facts from the integration authority owner to satisfy the bounded source-file size gate without duplicating policy. Verification remains closeout-owned.

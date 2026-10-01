@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/contracts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Worktree contract parsing and task-root candidate logic live in the worktrees package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:195708fc2e79a89f16962f6725f4c37731cf52c3d148490da825ffb677f34faf",
+            "locator": {
+              "end": 462,
+              "kind": "line_range",
+              "start": 432
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Alias-aware leaf enclosure lookup for explicit leaf ids lives in the dedicated leaf-ref resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:c9941155b1d99610c0f55c6c769aec56ffd6ebe30cde986d0c48ef6fe84aed7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_leaf_enclosure_contract_for_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Resolver assembly consumes the optional contract payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

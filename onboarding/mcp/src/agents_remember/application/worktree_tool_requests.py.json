@@ -1,0 +1,269 @@
+{
+  "path": "mcp/src/agents_remember/application/worktree_tool_requests.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Raw closeout/control messages and landed commits contain only code/memory values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:a7020492bb8fa9b9310882cdd049a2751d45460b299c86ffbd78b902c63b13e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationControlRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:9c12386695597fb00526ef24658b95d03a43536e8c8d600fe8af71c7c2e8cd67",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutCommitMessages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task-start concepts and shared defaults have one definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:758bdbf0fd5bdc20f4ed1a4050023c69c029ab93772f633114a4e5808574c135",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIdentity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:57c733ce1e9d7ceb5dc1b9ad93b65afa7f4becb333b38c4eb1c9c20c19c25d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskBases"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:f205ae84cde66f1719bdbbbcd34edd2795206ba84ad19aa350a33eededfd46c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartExecution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Lifecycle control reconstructs only canonical typed public values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:a7020492bb8fa9b9310882cdd049a2751d45460b299c86ffbd78b902c63b13e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationControlRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:44e7c0e1c40d425d367562342cbb1a0be744021d0a147ea9c955fb94d5f6e444",
+            "locator": {
+              "kind": "symbol",
+              "name": "__post_init__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Closeout approval, messages, and finalization documents remain separate concepts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:9c12386695597fb00526ef24658b95d03a43536e8c8d600fe8af71c7c2e8cd67",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutCommitMessages"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:66d866b8ec052ac7ddab8696a358a74fa7191a06bfbe35b4d56044b8e23208e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutApproval"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:b001073a80b885f97b1ed8f6ecdb5137e0b7a9f45cfb2a7dbd508901cbe7ccab",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalizeTaskDocs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Start consumes its extracted request type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:a8f4da9fa7ab81c9252d77e8ffcf2d03a644b71eebb4f1ffa1a0eb6cfe4b9444",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:2ec23257800b92ba7b2b63d310c8fbec5aa82beb032e7e38afc50782c1ea2505",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Operation control consumes its extracted request type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:7f04092c9d3ac0289b8b2dd636c13a7159c16f97b86d534dc42e28f8874419b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_operation_control_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:b67dd692047526355f1203c51c32f1e373aa33bd0fb84fe315aee7aab281f75b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_operation_control_request_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:a880ea9680fad59e8d939cbfd02304efac969df0730660f572342e6ec6f1e38d",
+            "locator": {
+              "end": 585,
+              "kind": "line_range",
+              "start": 557
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The start tool consumes the request types this module extracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:a8f4da9fa7ab81c9252d77e8ffcf2d03a644b71eebb4f1ffa1a0eb6cfe4b9444",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:97f1e16a290625569b29b1a12557c89171d822aa308937c54abf6dfd58a57667",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Closeout apply consumes its extracted request type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_closeout_apply_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:f42b439cb9827ae1fcbd59c3817693b038464ae8107d89c3651b50ec776cd66b",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 381
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

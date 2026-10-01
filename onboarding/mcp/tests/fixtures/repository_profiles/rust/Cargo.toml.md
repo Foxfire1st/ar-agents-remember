@@ -1,15 +1,5 @@
 # mcp/tests/fixtures/repository_profiles/rust/Cargo.toml
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/fixtures/repository_profiles/rust/Cargo.toml` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
-| governingOverview | `../../../../overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](../../../../overview.md)
@@ -32,7 +22,9 @@ live in `tests/unit.rs` and `tests/service.rs`.
 - Fixture data only; never built or installed by the product's own build.
 - The lockfile must stay consistent with this manifest so `--locked` invocations resolve.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 CCR-R22@v1 requires two non-Agents-Remember fixture repositories with different languages,
 commands, artifacts, and E2E tools to complete the same Gate 1-4 protocol.
@@ -42,12 +34,6 @@ Two non-Agents-Remember fixture repositories complete the same Gate 1-4 protocol
 The governing CCR-R22@v1 packet is a task artifact, so this requirement fact is
 recorded as prose here (task artifact paths are not repo-relative citations).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Rust fixture manifest with its lockfile and test layout. | "repository-profile-rust-fixture" | mcp/tests/fixtures/repository_profiles/rust/Cargo.toml:1-6; mcp/tests/fixtures/repository_profiles/rust/Cargo.lock:1-7 |
-
-## Update History
-
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new Rust fixture manifest.
+- Rust fixture manifest with its lockfile and test layout. [1]

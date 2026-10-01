@@ -1,0 +1,231 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/rationale.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reference layer is declared non-injected, so it stays out of the normative path.\n\nAnchor: \"Reference-only: rationale, provenance, and credits consolidated out of the normative path.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:fa7248deae80fb06525f41cda321cbd3b4fcba82bb50930b9e67ed74789cabba",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 517
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The assembly order with no reference plane in it, which is the manifest half of the cannot-affect-a-capsule property.\n\nAnchor: \"composition_order\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:fb0fe50f78e69101db349a8be853b4d8b983dd1caa15399a9e180f4d8d1601c5",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 548
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compiler's frozen side of the same property.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:605c2bee8b0d54f4fe588a7becc0e193efc32cb36d5ccf70788f982e1e948e05",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_COMPOSITION_ORDER"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four-way separation, including the operations row's current \"nine blocks\".\n\nAnchor: `## Why the corpus is shaped this way`; \"nine blocks\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:a41a838bef1ac4fb8d17cd181e46459de15634684d784be4d79920c3c96216cb",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/rationale.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:bc4d69692c1a398555c83f05c61b52bd86c3da3aa696100457b4ef85ea7d4062",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/rationale.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The never-authority rule, read as the historical narrative it belongs to rather than as a registry count.\n\nAnchor: \"frequency of repetition is never authority\"; \"nine files\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:76f6de885fb88206cc93be2f4479d0ce8087b4437fe9847894b6dea7ac0aef8b",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/rationale.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:89fab4a28c0636e758a14317f910ce2559c94d86677660a8c2bd369541077ca9",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/rationale.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The launcher-is-not-a-registry-member argument, and the heading the tenth role makes worth reading carefully.\n\nAnchor: `## Why the launcher is not a tenth role`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:825bac0ccc2433b3044b2180671a459f569cc38975ce6b8b196bacda9918095a",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/rationale.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The paragraph that separates the count from the distinction: ten roles, the launcher not among them, and `bootstrap` the free agent reached by a session-open call rather than by dispatch.\n\nAnchor: \"The registry holds **ten** roles, and the launcher is not one of them.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:ccfa36a0ca8f12c1f2cab3e26fe149801e0149e07ed6135e90481b253e072b3c",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/rationale.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The tenth registry member, so a reader does not read \"tenth role\" as the launcher.\n\nAnchor: \"**bootstrap**\"; \"Exactly ten roles.\"; \"Why the launcher is not a tenth role\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:d029bc2253e5c2e9eaaae0e309475f0e3ca7b603fddad55c2c898701e1f6312d",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ea7c90c8ae558faed9ab19b4a8eb9bd4a87c2cb",
+            "content": "sha256:1791c6655d866da9d6e8aba5902a24b2fdda509adb22f2e14fb7836de8a1bac7",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/rationale.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The generated copies are proved current by the generator's own read-only check rather than by hand-editing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:cc0fc76d82fcb1ce49eccf65d18cc94932f99661e0467ab778bd59fca87baeac",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:466a77ac94614b264016678e50f3dde6708a2b5920a8be37e37f0b52d8bd43f3",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

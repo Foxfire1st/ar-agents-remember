@@ -1,0 +1,164 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/ids.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The kind tables, declared once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:5c6e2acab6221979c51b7e3cecaa47bb5014c22df43280afc92b2bb9c712491a",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORD_PREFIXES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:e6c5cce418e4c0fc6d0f3292f9e0a38b5fa8077261d9af1434b24ee2d7d1091a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTRY_PREFIXES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:8e90fdbf78b6041cf226914cb545867dc85567f8b511a723e77bc8cf47f71df7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROW_PREFIXES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The entry and row ID patterns history rows use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:ae3a4c71d033e4c304eaaf69e89b3d0bc461e07a702ae7d264f829f8a7677f26",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTRY_ID_PATTERN"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:a249147ac257d5f149be5cf09921ba918833ffd08d7c3356a059fbc8d55d17b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROW_ID_PATTERN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ID regex: six characters, optionally eight.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:754fec97b8791f7262f0a9ac1168fba49f50cd357bb6521ec57a5910705f88a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "id_pattern"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Random minting, for record, entry and row kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:312938a20419e709dfe80e1fb40f6bf3240a5d6ea4fc47910deacb2ede504eaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "mint_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "SHA-256, first 40 bits, most significant first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:f9ac76305187a48efcbac8dcf1a5e1aae7c21395182506556249edd0e86adaa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "crockford_base32"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:3ec1e75678424b17e03454fc915cdaa121f3b4d4e814f8d023acf125e57d51ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "derived_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The pinned realization material and its new-form locator rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:953c6ecb9661a6c685c9ff15eaad3bc4f7b140c832d0799843942bae9367142c",
+            "locator": {
+              "kind": "symbol",
+              "name": "derived_realization_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Golden values pin the derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
+            "content": "sha256:90419a2c9fd2c381197b8ad5217208dcd6078907bb2c7bda00581f5379461b72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_derived_ids_are_eight_characters_and_deterministic"
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

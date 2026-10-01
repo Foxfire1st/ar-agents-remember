@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.triage.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite's statement and its stubbed reads.\n\nAnchor: \"is the real component and only\"; \"is stubbed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08f5e14a4010eb94672d5a1d46f06cfb879fb029",
+            "content": "sha256:d3a72c925c8f2bb0cfb26974785a5c0a3faea80a5bd57df8e3a17b33b6f73204",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one case: the move, the kept context, focus and workspace, and the centre's order.\n\nAnchor: \"moves the selection to the next change and keeps family context, focus and workspace\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08f5e14a4010eb94672d5a1d46f06cfb879fb029",
+            "content": "sha256:86258fa074a4392cc8869b812d3d942a0b00099703a45261421569a549c3ebff",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,466 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/candidate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The entry point, its pre-lock lane check and its one lock and one transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:d4768ee039a4087e171b10d6adc37a9a9422984f199d282e1d75b5df3ceb2825",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:269cc93d12b46e18e8e3f712f68f3789456eb990ab658da884caff8263d3933d",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The preconditions this operation runs inside the transaction.\n\nAnchor: \"def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:8830c238d495bef328a25659d10da0750ea6b1e281baa6c960b5698272d50314",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The only writing step and the after-integrity re-proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:2dbd7b2e69c7bf9a8d2b242b13c736d8d5bd2c4f01b8ee3630a83a50d894a56a",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_commands"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:7de0fd7efde6e6cb8dd3428581ca7587eb3e7f51557ea6d3f79c36db30b2affa",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_after_integrity"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The lock the operation takes once, outside its transaction — declared on the opened store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:130e018fa5aca9ea593e79899e82d27a56fdffd114fa01df79ad01ab23b17861",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_candidate_lock"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The transaction wrapper the operation takes directly, because it spans many commands — also declared on the opened store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:aededc6f520f2f1420952a8cc82279c1a0b995c63a8edfd19ceb5e127c9e4cc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "immediate_transaction"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The task-lane refusal wording, which names the missing binding rather than the unsupported lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:ec33640a767fa00c5d9272f17033c4e472869ad90cb0c27140ea830857e1308e",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_task_binding_unresolved_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The composed-path case that drives this operation through the admitted destination.\n\nAnchor: \"test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:0f633280a8cb0e78861d74a93855346eac2adffba7e6127deb9d8c4727d89b3b",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane refusals' own nodes.\n\nAnchor: \"test_a_baseline_lane_is_refused_as_a_non_candidate_target\"; \"test_a_task_candidate_lane_is_refused_until_its_binding_can_be_resolved\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:0dd10293834af0013822b13b6f87bbb57e2c7c8fc5a33a6f3037b45c0efd18ae",
+            "locator": {
+              "end": 394,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:ab4b5d7e9207c48429ea810535a5949e85910fcbd9e3e855e87f4895e996ecac",
+            "locator": {
+              "end": 1188,
+              "kind": "line_range",
+              "start": 1162
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two fail-closed lane rules and the alias that keeps the earlier spelling working.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:c15e70ef44382074562f0cf36f99439dabe429eeecaff65bc6af3c57ef19fc3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_writable_lane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:543cfbaac901da5d595429f51999909f883611145001ae192621ec665f76cc25",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_candidate_lane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:4181892360c569236cc5c8cf2c0231670568624ca19056337db11cd460ea8d64",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The four in-transaction comparisons against the candidate actually held open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:fa8563ed2dbd4422a36424a8463228c390f81bcc273495fade560b3206f64521",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_bound_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:cb41affca2d276691bcdc5494f3e6ab7136aae7606f2cac58f959dd6a4334b36",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The transaction boundary and the observed-position mapping, including the no-position case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:28ee4f6eb130da0a355abd5d53f6ddd6917b4a395b80d896911d3b237aef0330",
+            "locator": {
+              "kind": "symbol",
+              "name": "_within_batch_transaction"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:e27cd0ccbe58b97d6be3d44e27b62b8bb55fb8948209afa770a4db43bd36f6eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_within_transaction"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:1215834e1ddac19b1691162b11f8a1b4603ca580cc9f7cdc7e2202ecc876f86c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mapped_failure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:e48286472ce40640b9ec852000c82bf018522d7e48a0dff3f2c66647e01a360e",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:df790c29b6638d03afe25cc7f62e16480f5bed9e731ca35e4e9f680a016273e2",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:1c9e934320b0eb5c7452f8a961a9864ef9cb8a3e95397197eabea36d67069069",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three result builders, including the after-equals-before rule for refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:d058ff082511e3f83c88f00d0b1e627e78b666226503cd4e290fe04249d3c8eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_success_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:66b85f233f02deaa23a50d222c91c76defbeac5085cf0f24d87b3ae79cf7f9d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_changed_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:afa9adae8a539e7d9d25dd6da94143cb5f5200818e87f7ef4a006cef9ddd7316",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The receipt model that makes the no-moved-dataset-without-an-entry case unrepresentable, and the operation's own builder for it.\n\nAnchor: \"class MutationResult(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:66b85f233f02deaa23a50d222c91c76defbeac5085cf0f24d87b3ae79cf7f9d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_changed_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:a66d71bd66baf3c21e194bbe7ed4192f858d7ef9c3bf04492dfe12f79fa9bd0f",
+            "locator": {
+              "end": 707,
+              "kind": "line_range",
+              "start": 707
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The preconditions this operation runs inside the transaction.\n\nAnchor: \"def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:8830c238d495bef328a25659d10da0750ea6b1e281baa6c960b5698272d50314",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The only writing step and the after-integrity re-proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:2dbd7b2e69c7bf9a8d2b242b13c736d8d5bd2c4f01b8ee3630a83a50d894a56a",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_commands"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:7de0fd7efde6e6cb8dd3428581ca7587eb3e7f51557ea6d3f79c36db30b2affa",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_after_integrity"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The receipt model that makes the no-moved-dataset-without-an-entry case unrepresentable, and the operation's own builder for it.\n\nAnchor: \"class MutationResult(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:66b85f233f02deaa23a50d222c91c76defbeac5085cf0f24d87b3ae79cf7f9d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_changed_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:a66d71bd66baf3c21e194bbe7ed4192f858d7ef9c3bf04492dfe12f79fa9bd0f",
+            "locator": {
+              "end": 707,
+              "kind": "line_range",
+              "start": 707
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

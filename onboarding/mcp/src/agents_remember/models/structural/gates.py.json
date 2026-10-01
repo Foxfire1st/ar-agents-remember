@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/models/structural/gates.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Structural requests are separated from internal exact-id responses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
+            "content": "sha256:0903ef848545f690f79f111c4c3cc8f5807e9c3922f52639c3c32891cd88926e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StructuralLifecycleGateRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public list summaries expose structural identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
+            "content": "sha256:c82a0c2ac32d1bc74ca54783a6c3ade60bd72fa2515311edfd2329fd0aedffdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "StructuralGateSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

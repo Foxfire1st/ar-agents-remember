@@ -1,0 +1,83 @@
+{
+  "path": "mcp/tests/test_suite_budget.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Proves selected-case budget admission without recursive pytest collection, over a synthetic population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
+            "content": "sha256:cc3e8849bac0b8d1afbedd3d2f8f3616195f6b014305fb612e86249da44ed182",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_selected_case_budgets"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
+            "content": "sha256:1124446ec97f490d03a274ca6bf80efc50758754a3123d210da234cb94b5c5d4",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Proves the enforced inifile and the running configuration's values are the root `pyproject.toml`'s own declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
+            "content": "sha256:9134ae5e2ff9950b195edf03b1b5b85f02939ac565ab2a0f533db786c703e9a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_effective_budgets_are_the_repository_rails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Refuses a `default=` on either budget declaration, so a dead number cannot return to the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
+            "content": "sha256:ab1421ffdda72ca6c0aef4e9d4f3129ab1400f21bf1e558912c42007bda56149",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_option_declarations_state_no_budget_of_their_own"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "States that an absent rail resolves to `0` and is refused by name instead of running unbounded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e6ec94ebb4d0bd06c74a80113fa5b5cad9fa44",
+            "content": "sha256:69ea7da23d36e3a8de6a02e2d18474d5bfd7ee0cc075ce22192fb1651013376c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_absent_rail_refuses_by_name_instead_of_running_unbounded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

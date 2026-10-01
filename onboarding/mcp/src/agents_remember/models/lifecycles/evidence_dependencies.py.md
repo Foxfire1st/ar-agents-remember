@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:30:43+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [lifecycle models overview](overview.md)
@@ -80,35 +70,31 @@ cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycl
 
 No additional file-local TODO is established by this candidate review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation applies; the dependency encoding is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The encoding has no external authority. | — | — |
+The encoding has no external authority.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every consumer record type binds its own edges through this single encoding; the mutation/cycle
 matrix in the evidence-dependency test suite fixes the contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. | `EvidenceDependencyKind`; `EVIDENCE_DEPENDENCY_POLICIES` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:31-50; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:141-211 |
-| The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | `memory_quality_attestation_dependencies`; `MEMORY_QUALITY_ATTESTATION_VALIDATOR` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:58-58; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:112-149 |
-| The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. | `closeout_door_dependencies`; `require_closeout_door_dependencies` | mcp/src/agents_remember/models/lifecycles/door.py:158-196; mcp/src/agents_remember/models/lifecycles/door.py:199-226 |
-| Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | `lifecycle_operation_dependencies`; `LifecycleOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:334-337; mcp/src/agents_remember/models/lifecycles/operation.py:438-493 |
-| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | `build_route_review`; `require_current_route_review_task_intent` | mcp/src/agents_remember/worktrees/route_review.py:292-347; mcp/src/agents_remember/worktrees/route_review.py:392-415 |
+- The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. [1]
+- The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. [2]
+- The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. [3]
+- Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. [4]
+- Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. [5]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository implementation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external implementation source applies. | — | — |
+No external implementation source applies.
 
 ## KS-R15@v1 Assessment Policy And The Coherence Record's Own Edge
 
@@ -126,28 +112,3 @@ nothing else: `candidate-state` is the exact knowledge snapshot identity, `code-
 `validator` is the resolver/policy version pair. `review-record` is deliberately **not** required
 there, for the direction reason above. This entry therefore adds one policy and no kind, which is the
 additive kind of change a new record type is supposed to make in this module.
-
-## Update History
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): **re-read this card against the changed source and recorded the two entries the leaf added.** The `curator-coherence/v1` policy gained the `review-record` optional **permission** (the kind already existed) so the coherence record can declare a typed edge to each stored assessment, and a new `review-assessment/v1` policy requires exactly the clause-five inputs. The body above states both, states that no kind vocabulary was widened, and states why `review-record` is deliberately not required inside the assessment. The reference rows this card carries were re-derived from the current file while re-reading it, because the leaf's insertions moved every anchor below them: `EvidenceDependencies` is now `:99-119`, `dependency` `:243-252`, `require_evidence_dependencies` `:267-302` and `canonical_sha256` `:354-358`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Retired the ledger-provenance kind and mandatory closeout-door edge. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_require_current_dependencies`, `build_route_review` repointed to mcp/src/agents_remember/worktrees/route_review.py:292-347, mcp/src/agents_remember/worktrees/route_review.py:449-491. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the `quality-report/v2` policy change - `admission` became an optional dependency kind so a published report binds the shared-Dagger-authority snapshot digest when present and stays valid without one.
-
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): repaired the prose cit anchor (quoted module docstring) and separated the two-range source with a semicolon.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): created the card for the new shared typed evidence-dependency encoding introduced by the R03 leaf; no prior sidecar existed.

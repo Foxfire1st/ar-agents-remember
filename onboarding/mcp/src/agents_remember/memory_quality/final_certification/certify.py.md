@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/final_certification/certify.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/final_certification/certify.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality overview](../overview.md)
@@ -63,36 +53,11 @@ the exact memory tree and plan digest through the closed models.
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The exact authority bundle the certification may read. | `FinalCertificationEvidence` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:44-60 |
-| Folds supplied executed checks and identities into a returned green/red/blocked result. | `certify_final_full_memory_coherence` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:62-137 |
-| Maps the caller's full-only rerun observation to pass or blocked for the affected-closure item. | `_affected_closure_status` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:140-144 |
-| The typed refusal helper. | `_refuse` | mcp/src/agents_remember/memory_quality/final_certification/certify.py:147-149 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/memory_quality/final_certification/certify.py` changed since the recorded
-  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
-  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
-  Verification metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit (the validated-coherence value now comes from the model module).
-  Re-read the card: no claim names a home module and every cited range still holds. No wording
-  changed; verification metadata remains closeout-owned.
-- 2026-09-09T22:39:30+02:00 — CCR-L42 failed-Gate1 repair: refreshed current certification function extents after the behavior-identical typed-model move; verification remains closeout-owned.
-
-- 2026-09-05T07:12:23Z — CCR L31 independent-review correction: reread the complete module at
-  ea359649 and distinguished actual result assembly from caller-owned check execution,
-  coherence validation and certificate/finalization publication. The former wording copied
-  the module docstring's broader protocol claim. Original source verification remains valid
-  because the module's source blob is unchanged; this is a semantic card correction, not a
-  new code acceptance or a claim that the missing production caller now exists.
-
-- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: created this file-level
-  onboarding card for the new CCR-R08 executable final full memory-coherence certification
-  module delivered in code commit 16d1a4d6; anchors and ranges derived from the current
-  worktree source and pinned to that commit.
+- The exact authority bundle the certification may read. [1]
+- Folds supplied executed checks and identities into a returned green/red/blocked result. [2]
+- Maps the caller's full-only rerun observation to pass or blocked for the affected-closure item. [3]
+- The typed refusal helper. [4]

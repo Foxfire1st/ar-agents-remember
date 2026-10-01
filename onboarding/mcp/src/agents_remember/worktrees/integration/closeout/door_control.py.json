@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_control.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public door commands publish under the canonical closeout-door journal after re-reading configured authority; the former `task_publication_lock` task CAS is deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11aeb55a4be379e46af58941c5ef0641b5eda362",
+            "content": "sha256:498b7d9b7726d51c79015ca1ab0e7df80c25c71c0c8794bd4dc492042c7fbb65",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_door_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Status response reports legacy missing-intent doors with the update-provenance route.\n\nAnchor: unavailable computation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11aeb55a4be379e46af58941c5ef0641b5eda362",
+            "content": "sha256:bf5194054f90218bd84791287e82e36bff950e377b081f39093d98ce41b5c6c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

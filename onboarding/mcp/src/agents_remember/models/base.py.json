@@ -1,0 +1,157 @@
+{
+  "path": "mcp/src/agents_remember/models/base.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Token serialization helpers accept the shared `ResponseModel` family, including concrete tool-response subclasses.\n\nAnchor: `ResponseModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:9cd4820955c8dee0a76e39a749b1eafbf2ecfbbe04d199267e82d42a58c6028e",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public tool payloads validate through concrete subclasses.\n\nAnchor: \"TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = { \\\"ping\\\": PingResponse,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:1df99edde2511cd78537b5decf0e374993fa90fb5d3f3625185363d8fcee2c91",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The next-step engine that computes `NextStep` for an active lifecycle; `next_step_for` returns the model, not a dump.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
+            "content": "sha256:51be012d8c1fb51ca4d362f7a3eb8025862f19d7729b7894e11e315c169d102b",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_step_for"
+            },
+            "path": "mcp/src/agents_remember/application/next_step.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The application boundary preserves a producer recovery hint or computes one, rejects contradictory task addresses, writes both banner names, and finalizes once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:b9a1f903280fdf70c544924c96f7717d7189f719708eac93720b3b059a8681be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_lifecycle_tail"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_next_step"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:8c6ce6cb3afcda77d14da74501bc9317aec63207eaa83ff57e536393afd03d6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The registry whose `dict[str, type[ResponseEnvelope]]` annotation is what `ResponseEnvelope` exists for.\n\nAnchor: \"TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = { \\\"ping\\\": PingResponse,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:1df99edde2511cd78537b5decf0e374993fa90fb5d3f3625185363d8fcee2c91",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current module exposes `StrictResponseModel`, `FlexibleResponseModel`, `NextStep` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:82b1223f6a2dfe69490f7dacf49a68f6da3450399b2d6266267c975685458548",
+            "locator": {
+              "kind": "symbol",
+              "name": "StrictResponseModel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:3a9b622246cce227e7c85ad545afea5310ba47ae0d819591b04eb16e8e48ae1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FlexibleResponseModel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:97ca067f4e2155179fed866700f9d054d3bf3dd0ca64d618c853e3ea894b37dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextStep"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,130 @@
+{
+  "path": "mcp/src/agents_remember/certification/final_certification_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The status and state vocabularies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:a90505302ba00da4c0b945c7212283c3134b7b118c894a5a377d43f76b470ff5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalItemStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:ce5e2b0768fb7707ce75148c3f0d5f41dfbcb385ad95eb520c65611e677f36b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCertificationState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One closed final-catalog member with a canonical key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:a08b767212ffc5c1389bbf5584c41794ac06ad5deebe4eef4667d440a608a9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCatalogItemIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One typed Gate-5 result with content-addressed subresult and status shape guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:eecc7565800b97269830632145c7337ea853dcd37e26dde98a89d88389a1bca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCatalogItemResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The deterministic complete plan with self-digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:72ef94e3cfce939062ada1599c627eede5cf0ca5b549b9dcfaa1e64ca6ddcebd",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalFullCatalogPlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The executed attestation that must exhaust its planned population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:c7df19377b5e8f5b189825c2a8e0a203553dcdd6d3867b381a3a881db78f96c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalFullCatalogAttestation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The typed green/red/blocked certification over the exact pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:19cfef217d83663856ca99d41b5fd7f85cd6cfb84ef31e5ef593c9a9b343f0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCertificationResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Shared uniqueness-and-canonical-order guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:d08f4babfa0a448bad9b996b73e6222b473360fa673018e80517cfd2875577c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_unique_canonical"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

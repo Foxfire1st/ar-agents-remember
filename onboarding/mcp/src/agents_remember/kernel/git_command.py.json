@@ -1,0 +1,539 @@
+{
+  "path": "mcp/src/agents_remember/kernel/git_command.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One immutable options object carries cwd, stdin, timeout and authorized identity facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:87f876d7fba393da591ef709d4defe2bc32a213ba91020032479fca65c83d943",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitRunnerOptions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Memory index/flag checks omit only root memory.md; code keeps the complete checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:c0bfeb6477d366be13eefe654f109043534ccb536dde53e5a5a7a0e028380ee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_preparation_index"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:3aee3a9b79c53ead69240c12c5cb5011a1e0236cd1d306b82add9c70a38614e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_preparation_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Raw HEAD/tree checks precede projected content proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:658a8aac1c8282e9444bfbfb030d2d882f09547a67fff567b005b4298e0c4049",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_existing_preparation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:3ef0e56fa49843ccee9bf854be40fad10113b9d18070eebf77b21021cebd43b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The required memory certificate subject is compared against raw HEAD with only cache removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:3aee3a9b79c53ead69240c12c5cb5011a1e0236cd1d306b82add9c70a38614e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_preparation_entries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:5349d96d730f0239944c334dbec501f587768feac8a0e5956501d5f668dad222",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_closeout_publication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Existing output is revalidated around reading exact raw commit bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:d6e601a17bc185d0885495f12b41adf50b514f3c3885efde325a7937ddc83573",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_existing_git_preparation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:1fb664a2e85de537229a0b930dce79c1b177a9acd2cb8156253ea91a603a2aa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_git_commit_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Context branch reads use the shared runner and its metadata timeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:2c71d5eedab6a3578ad0e726d1e22188e8240690161a923bf42a9b328e2e8624",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_branch"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Coverage support is a typed wrapper around the same production Git runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:132b410773395d652cb08df29ea7d7baac7f0093254a9f4772677c5893607e7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:7a149e9cc60dd64b0611e7a5f291e5e8eb4e37bea0ad84775190d7b0f2bf5125",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Remote cleanup selects the bounded remote timeout rather than creating a second runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:2487e4428301ad07f82ce90b5ae632ee586bdaba13687cdfdd2526423c5cfc21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remote_git"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Raw-output runs encode their stdin text, so a bytes-mode batch command can take input.\n\nAnchor: `_run_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:43ed6ab6158daa33cc92dec6b67707adfbad37d5efb8573be420e404089490d4",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 286
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A three-way line merge of three files' exact bytes that writes nothing and returns the conflict count; a Git failure raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:c8e601b2afcab622ae91ef823d293c4bb88c0940043fea6600a5d8b5d197ffb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_file_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Many blobs are read as exact bytes through one batch call; a missing or non-blob object raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:9ab25475a4dcf2eeef8c4eb58429348e811cfef1d786c0da924d98f7fe2ec0ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_git_blobs_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ambient repository selectors are removed before the actual Git invocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_environment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_REPOSITORY_SELECTOR_ENV"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The knowledge validator reads a memory tree's knowledge files through the batch reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:60df24e759ff9b87b8639cd1c22a352771e4b18c133fff4422fa4516a134d0e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_tree_from_git"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The module declares a separate 1800-second bulk-network timeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:d11da2e2aff7ba25c39c66c6ad120027f30dd38b13579752f00eb1fd4387cbd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_BULK_REMOTE_TIMEOUT_SECONDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Isolated execution state keeps index/object/environment redirection explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:c20cd01c693d76c8e14f1ab8cd21af9b8b64e70c2607c98712b7d0ca4df671cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "IsolatedGitState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:5d6aa665636eb1550936699d4cfb0a3bc1ed69266481470ded0e5339e9fef9d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git_with_isolated_index_and_objects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The environment scrub remains the shared command boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "All commands continue through the same runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The publication observation rejects cache-bearing new memory output and rechecks exact refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:5349d96d730f0239944c334dbec501f587768feac8a0e5956501d5f668dad222",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_closeout_publication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Admission creates only the caller-authorized publication capability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:1ed7386b9a8cdf20ab4a237f96bea92b25fc32ecfb7c6351fcd2081257f18033",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_git_closeout_publication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The actual CAS is issued once and both observations/command evidence are retained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:991c67fb3bd789e589a0602ff557aa73e06c9398db473535f0cd77f3d3f5ec82",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_git_closeout_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one Git runner preserves stdin, timeout and surrogate-safe command results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:87f876d7fba393da591ef709d4defe2bc32a213ba91020032479fca65c83d943",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitRunnerOptions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The census wrapper selects the metadata timeout and preserves typed failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0932723219e6d2d29a60670add3469a167a18286",
+            "content": "sha256:e9079feb9cf5b36bb17226bbb29a5cb4429372c31ca5d9774f13b9598c043efb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index_census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The census separately interprets NUL-delimited output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0932723219e6d2d29a60670add3469a167a18286",
+            "content": "sha256:fd7c7f9e3a08ac38bbf5f0c19d8eb94984baf01b09672fa5bedcfece0e275d27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nul_records"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index_census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Carryover delegates input-bearing calls to this runner through GitRunnerOptions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:9d32690603a91e719b6c5761f34782c4107a3168a42346a6c7f4e6e5a43d3c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_git"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Patch-id calculation supplies diff bytes through the shared input option.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:e776df70cb8ea443e545fe5981944af1612a110f99fbac66710ab40ba4efb7a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "patch_id"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Explicit memory-history rewriting preserves original author/committer identities and timestamps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "content": "sha256:97a84ac448786dc005cad59aed27c8948457dc1db92b8a9b78d7411b8e31ecc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_backfill.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The code-profile sandbox supplies a separate clone working directory and staged input bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:b4bac8c8e1399315494e84507a5155c8c19d071010a3c373a3786a8ec2f789c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare_sandbox"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

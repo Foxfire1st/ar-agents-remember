@@ -1,0 +1,123 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sync-propagated bundle copy of the canonical templates source.\n\nAnchor: `# Master-Handover-Packet Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09ce5c06dc90fd7d4589bd9f050696dee86bbd45",
+            "content": "sha256:d21d99bf9c908c234b29a20b26f6159dfdb2ee797a75bcfd52c7965701aeb2a4",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/master-handover-packet.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The manager posts this packet to the orchestrator at master exit; the manager's durable handoff artifact is this packet, validated by the orchestrator.\n\nAnchor: `# Manager`; `## Which artifact each seat hands over, and who validates`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:767f90a220cf3937f52a492d1e9a388836428f8df86ac37ae7ad43153be8c3c7",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:d001ba287f4893bf0a1cda06fd13beb83fcc7ec2e3417314879bdedfd07b2fc8",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "content": "sha256:516df12454f84b82450d778bcbc54c282cc5d62252801befb3be55e2c1e5b965",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The required verdict slot references the independent master-exit adversarial verdict artifact bound to the proposed candidate.\n\nAnchor: `# Verdict Template (adversarial reviewer)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "content": "sha256:e39abc9ed3cb7df91a821b23ae4ea6909669bfc0413fbfd431dad10237ace509",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The router lists the master-handover packet among the templates the spawning seats compile from.\n\nAnchor: `## Companion Files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9afc951c4cf2e13caa8651c2aadf74b38fd8eed",
+            "content": "sha256:d10215b4a091f740b080da68cddf91d53a94cfe54cd18b6da27be42d61302f43",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "This template and `verdict.md` are both declared among the manager's templates in the composition manifest.\n\nAnchor: \"master-handover-packet.md\\\", \\\"verdict.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3ab60b6e780b73cf9eea5d9de950566b03b5192",
+            "content": "sha256:f0116d2c13b9fc636ee7ae12c36af301c9c008f20c12cd728ea26804623ef4e8",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 331
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

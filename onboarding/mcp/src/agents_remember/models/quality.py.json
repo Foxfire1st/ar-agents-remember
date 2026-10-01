@@ -1,0 +1,62 @@
+{
+  "path": "mcp/src/agents_remember/models/quality.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Memory policy and explicit cap have closed, typed vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b30e6baef85ce72e87f1e298f7211eaaac8bdd5b",
+            "content": "sha256:7c1b0b2e30c4d3b52f26150246754982b87f1f6fc2927a878478854bc3be385d",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityMemoryPolicy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b30e6baef85ce72e87f1e298f7211eaaac8bdd5b",
+            "content": "sha256:57bde6aad52b28aa58fbcc47711751e823a2094c28917aeeea246f1683807cae",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityMemoryCap"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The quality response retains both stable wrapper and optional immutable publication paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b30e6baef85ce72e87f1e298f7211eaaac8bdd5b",
+            "content": "sha256:29e1715827c89954020be94fe7efb787db7e68fe159eea08d977806987158997",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityGateResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b30e6baef85ce72e87f1e298f7211eaaac8bdd5b",
+            "content": "sha256:4f39bc34873293a23068f051f1324784c34b27b7baf6a02c07e4a3dcbec8272b",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

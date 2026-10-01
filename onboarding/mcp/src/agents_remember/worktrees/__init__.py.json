@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Git worktree and task-branch services.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988197cde6d447faeba70f2659c778c89452152c",
+            "content": "sha256:411ba54e3eef36af46606a572bf583f0b24183d063558a62e373b35a43c73643",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

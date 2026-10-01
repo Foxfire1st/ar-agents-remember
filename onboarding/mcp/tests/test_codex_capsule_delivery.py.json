@@ -1,0 +1,229 @@
+{
+  "path": "mcp/tests/test_codex_capsule_delivery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The recording transport is the wire-shape boundary: cases assert the requests the session really sends.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:ce37b21f5d295f2ecebe84f664ce7202888b4b952b57e7ab8f1e65f21418fe91",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordingTransport"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The registry requires a lane row for every test module; this module's row is `provider-conformance`.\n\nAnchor: \"\\\"mcp/tests/test_codex_capsule_delivery.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:e986a4b6c9c2b3f829d238ff94129aa4a58fdabb218cf4d35710b8737c2698dd",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The live case is gated on the installed CLI version and reports a mismatch as a skip, never as a pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:7398043dd8c293490c515a7d7c6292dcc2892d5a98b25c47879cb2485c57c5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_app_server_observes_instruction_sources_and_accepts_the_capsule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The applied parameter is pinned as a key **set**, so a second instruction field cannot ride along.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:d51213ed66a3bc277b88d5ce2d468cfe620c6797f55242fd3a65c1338b339295",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_thread_instruction_params_carry_only_the_trusted_stream"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The conversion is driven over a genuine compilation built through the public compiler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:1308454ad8b1cd41aa61219a3e016c1f6758c44e9cf0d121c0b14486d8a7899d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_delivery_consumes_a_genuine_compilation_result"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The factory fills the carrier, the filled settings reach the thread-open request, and a channel-less harness refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:7be1e51cda3e416404d124f2b9379652aeb24aa95159dda6d3003365ea67c2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_production_factory_fills_the_capsule_carrier"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:6a0a7693b7e908270ae756956bb6c11443be87cbe27eaee97a3db2a70e1e78c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_factory_filled_settings_put_the_capsule_on_the_wire"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:66817f70a48cc432a57191f1bdf79ab1b534e462236874bb7163f2730fff9fb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_production_factory_refuses_a_capsule_for_a_harness_without_the_channel"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The launch boundary — real `_prepare_controlled_launch`, both factory calls, round-tripped carrier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:627a8cafda85002f8455e539c3f19660e9bf498df642fc54b4c3ec5f720a5726",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_launch_boundary_capsule_reaches_the_adapter_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The no-selection branch and the legacy configuration are pinned separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:51c73a4f72943a2adb2bf2b76d06d54a0972b6401f67b5507728cdc4c3722453",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_no_selection_branch_also_carries_the_capsule"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:b3091829806fc59be0175ee399bb09650ce0da462eeac765ffb657985f199e5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_capsule_free_launch_configuration_carries_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A malformed payload refuses before delivery, and the value type guards its own wire form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:6b2f20467d1859e86f192f327d2a61d19c282eeda65605627f97d7f8f7917c9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_malformed_capsule_payload_is_refused_before_delivery"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:e4c75f9e0e79b8e408279b4415bf065131c9dd15912b5aead51a842781cf93cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_carrier_value_type_guards_its_own_wire_form"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The session decision path compares the recorded binding and digest across four resume branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:adb0fb91a62222f8a52416329f7ae1fe7459ee0319aa6960edf2b63534c18e79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_session_decision_path_compares_the_recorded_binding_and_digest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The live case runs against the installed app-server; a version mismatch skips with its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:7398043dd8c293490c515a7d7c6292dcc2892d5a98b25c47879cb2485c57c5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_app_server_observes_instruction_sources_and_accepts_the_capsule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

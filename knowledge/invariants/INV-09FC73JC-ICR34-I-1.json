@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Retaining a live leaf comparison for subsequent historical review.",
+  "conditions": [
+    "Ordinary curation invokes the shipped comparison producer with an admitted, coherently composed source and knowledge pair.",
+    "The freeze owner retains and validates every referenced operand before publishing its per-leaf generation."
+  ],
+  "exclusions": [
+    "A leaf that never recorded a generation may only reconstruct its exact recorded endpoints with that provenance stated.",
+    "This is not evidence that a task published the knowledge it reviewed or that its final output matches the review.",
+    "One generation binds one recorded comparison; later explicit recordings may create successor generations for the same leaf."
+  ],
+  "id": "INV-09FC73JC",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "8c3729a4-9473-4b7f-85f8-bcf304b1ee32",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf's review comparison is recorded as one durable per-leaf generation through the freeze owner rather than recomposed per reader, so the comparison a reviewer read while the enclosure was live resolves from its own record after the leaf closes instead of falling back to a bare recorded source range.",
+  "status": "proposed",
+  "supersedes": []
+}

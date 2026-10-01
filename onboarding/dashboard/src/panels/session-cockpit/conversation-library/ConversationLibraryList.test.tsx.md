@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T11:35+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation-library overview](overview.md)
@@ -62,61 +52,29 @@ four cases prove:
   `"key-agent-1" as LibraryConversationKey` here. The brand carries no structure, so the mint is the
   only thing about these rows that a cast can still express.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The list component under test (child-row grammar, `agentChildRow`, agentsNote render); imported at L14. | `agentChildRow` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:89-102 |
-| `ConversationLibraryRow` — now the only wire type this file imports directly (L9); `HistoryCapabilities` and `LibraryConversationKey` reach it through the builders instead. | `ConversationLibraryRow` | dashboard/src/data/conversation-library/types.ts:26-36 |
-| The `conversationLibraryRow` fixture builder. | `conversationLibraryRow` | dashboard/src/test/fixtures/conversationWire.ts:247-260 |
-| The `conversationLibraryAgentRow` fixture builder. | `conversationLibraryAgentRow` | dashboard/src/test/fixtures/conversationWire.ts:262-272 |
-| The `historyCapabilities` fixture builder. | `historyCapabilities` | dashboard/src/test/fixtures/conversationWire.ts:155-168 |
-| The `libraryConversationKey` brand mint. | `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:63-65 |
-| The sanctioned-cast registry that records "as LibraryConversationKey" as a permitted site with its reason. | "as LibraryConversationKey" | dashboard/src/test/wireFixtureGuard.test.ts:172-172 |
+- The list component under test (child-row grammar, `agentChildRow`, agentsNote render); imported at L14. [1]
+- `ConversationLibraryRow` — now the only wire type this file imports directly (L9); `HistoryCapabilities` and `LibraryConversationKey` reach it through the builders instead. [2]
+- The `conversationLibraryRow` fixture builder. [3]
+- The `conversationLibraryAgentRow` fixture builder. [4]
+- The `historyCapabilities` fixture builder. [5]
+- The `libraryConversationKey` brand mint. [6]
+- The sanctioned-cast registry that records "as LibraryConversationKey" as a permitted site with its reason. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 6 table citations and 4 prose citations for conversation-library rows, keys, fixtures, and capability evidence; fixer-generated ranges verified.
-
-- 2026-08-01T11:35+02:00 — 260731-EFA-L4 curator: the Helpers paragraph described three fixtures that
-  no longer exist, so it was rewritten. The local `capabilities()` and `row()` builders and the
-  hand-written `AGENT` literal are replaced by `conversationLibraryRow` (imported as `row`),
-  `conversationLibraryAgentRow` and `historyCapabilities()` from `test/fixtures/conversationWire.ts`,
-  and the inline `"key-agent-1" as LibraryConversationKey` casts collapse into the single
-  `libraryConversationKey()` mint, which I confirmed is registered as a sanctioned site in
-  `test/wireFixtureGuard.test.ts` L158-L169 rather than merely tolerated. Also recorded the
-  assertion-site change the four case bullets depend on: `onSelect` is now
-  `vi.fn<(selected: ConversationLibraryRow) => void>()`, so the payload assertion reads
-  `onSelect.mock.calls[0]?.[0]` instead of casting it back with
-  `as ConversationLibraryRow` — the cast was what made the "promoted row" claim self-authored. All four
-  described behaviours still hold verbatim; I checked the one that reads capability content
-  (`selected.capabilities.completeness.state` is `"supported"`), which `historyCapabilities()` supplies
-  exactly as the deleted local helper did. Suite re-run: 4 cases pass. Citation repairs — the file
-  shrank 106 → 86 lines and every case range was stale: child rows L64-L73 → L44-L54; child selection
-  L75-L86 → L55-L67; no-agents L88-L91 → L68-L72; agentsNote L93-L105 → L73-L85; and the wire-types row
-  L9-L13 → L9, since `HistoryCapabilities` and `LibraryConversationKey` are no longer imported here at
-  all. Two rows added.
-
-- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: created the sidecar for the sub-agent nesting
-  suite — indented child rows with label/suffix/role badges, same-flow selection with the child's
-  own server-minted key (parent-inherited capabilities, no deeper nesting), no-child-rows-without-
-  agents, and the verbatim/absent `agentsNote` proof. Verification is pinned to the leaf base
-  (`842b487`) because the new source file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

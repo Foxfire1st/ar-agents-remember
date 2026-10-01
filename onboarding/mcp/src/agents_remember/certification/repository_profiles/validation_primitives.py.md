@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/repository_profiles/validation_primitives.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/repository_profiles/validation_primitives.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:09:25+00:00 |
-| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification contract overview](../overview.md)
@@ -38,30 +28,22 @@ Use these functions through the aggregate repository-profile validator and prese
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+No configured domain documentation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `_finding` implements the described validation step. | `_finding` | mcp/src/agents_remember/certification/repository_profiles/validation_primitives.py:10-11 |
-| `_duplicates` implements the described validation step. | `_duplicates` | mcp/src/agents_remember/certification/repository_profiles/validation_primitives.py:14-17 |
-| `_validate_gate_set` implements the described validation step. | `_validate_gate_set` | mcp/src/agents_remember/certification/repository_profiles/validation_primitives.py:20-28 |
+- `_finding` implements the described validation step. [1]
+- `_duplicates` implements the described validation step. [2]
+- `_validate_gate_set` implements the described validation step. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository reference is required. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T15:09:25+00:00 — Created from actual source at c69d5171187fa1957025e393270db9f5a864ab14; documented the declaration checks and their exact runtime limits.
+No cross-repository reference is required.

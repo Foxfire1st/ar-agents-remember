@@ -1,0 +1,278 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/capabilities.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The keyed dispatch that replaced the silent pi fall-through, and the selector that reads it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:974019f19e99435367753ee7b44bc8f528fea0db41d4d0ff39c3fdb63def00a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CONTROL_PLANE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:d178cb3e9af7566c2ce4d446ce1cfdd59451018f5e589405a37201afd595bfff",
+            "locator": {
+              "kind": "symbol",
+              "name": "capabilities_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "eve's own evidence builder — supported rows on the pinned native scenario, `unavailable` for a contract eve's stream does not carry, `unverified` for a real but unexercised one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:7f14315be276b4819360541ad3ed2c2a8d457359afae2616be7aede68cef5362",
+            "locator": {
+              "kind": "symbol",
+              "name": "_eve_capabilities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "eve's fixture id, runtime version and its own observation time, distinct from the other three harnesses'.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:4cb56bebcdb2dcd6bf85da099031ce28a69cffaee1b987b83e1a745299c8c3ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EVE_FIXTURE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:897549ccc26eb8b54f23804259ab97332c9398248a46725d12d7b86dcf437e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EVE_RUNTIME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:9af6b9c946ef7269be1e88661b861a81da9b5a90da0ee99086ce04413f6387df",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EVE_OBSERVED_AT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The evidence record now takes its observation time as a parameter, so a builder cannot inherit another harness's date.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:d2a8dee64cfa9ad12ca54fd6515c486423e0f011c6ef27778daa67d02b26b68f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixture_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three state constructors every builder shares, and the no-attachment declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:4ae4307a479ac7443fbf25acf52024a467b9080bc8cf1281b6c688ed480906f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_runtime"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:b3c9b7bd5a9b157b19fa100cacae2ded45ae3d0c3da15d400c5ca32225b5f462",
+            "locator": {
+              "kind": "symbol",
+              "name": "_adapter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:ec6e57a9d9411c630a7d716c26b98b73c7e565ba7c1498b559790cf8d0cbbf66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unavailable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:95dd2fb28f4b504142db582094b604a0bc0f5296e37135d75a44bfd28d8a67eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_no_attachments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The sibling builders this one must not resemble in evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:1e658feb13d21a5c33dea81064a0152162018ff4c94c3b7ac7735f25353b2bd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_codex_capabilities"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:0d38ec2e23ea90a959a1dbf4eafb894dd7fd1ae4d6be96c4bf8b4daa65349d28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claude_capabilities"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:e1904c205a453e2f9cad1b32f46943dc4e75d0849a02ab354521169d8fbd48b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pi_capabilities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The control gate's single-source interrupt verdict and eve's telemetry declaration, both consumed rather than restated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:a310f7b495aef27b4a1711748206a65c42410efc4d90f7a9dee24462ee264031",
+            "locator": {
+              "kind": "symbol",
+              "name": "interrupt_capability_for"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:0e0a80f357ec8225221ca79d36ed98dff36ba08cbe1e0a478479173fa6cb5fd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "telemetry_capabilities_for"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:4d75d0be470bb56d1063a32c30c395e6b883363b60b617b826f2c428e1ca6c9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_eve_controls"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:d04d933d19b05f8ba6a153fdf15160968d2bfa82970f802494354e0b2bd1f8bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_eve_telemetry"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The cases: the advertised catalog derives from the launch selection, eve never borrows another harness's evidence, and an unknown harness fails loudly instead of inheriting a catalog.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:4f057c6129f78549bc69c8c946beb77fb579ce0add4ceffaa2258e8305cac359",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveCapabilityHonestyTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The projector whose frames every eve `supported` reason names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:59aa1d7c9b7a801460da9f7a23d708d9f5fba1edd473a8d65bc14e148fb0dca2",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_evidence_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/eve.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

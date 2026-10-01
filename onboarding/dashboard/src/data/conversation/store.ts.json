@@ -1,0 +1,238 @@
+{
+  "path": "dashboard/src/data/conversation/store.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pure reducer whose page/event/recovery this store drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:e1045043988db2694eeba0207b2b55073418bc2592b8b428e51201752395021b",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyInitialPage"
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:b7bae069ded30e9c6b5c6276432be443ad092b43a2a0904d932180168e421889",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:69fb02fdde5609dc7d39f825ac9bb7941323917a9a4ae7a6b771f492a16b2717",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The page/telemetry/interrupt client this store fetches through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:7b98925669b53072b1e13ef6d90e3b16fb83f5026acc566abab531ce78515453",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchConversationPage"
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:b993f0914b38c865c815274d534fcdb018b4d499f66c93f2c3418c2b795fec90",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:4367a28076b41844ecd46b420995d74855ee3f581ef4f63b4fea7d83f2605fcd",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 260
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The SSE controller this store opens/reconnects/stops.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5bcbf91dd9e078714dc8aec7e3ef1aa7d230459",
+            "content": "sha256:c16bd2046607d0e08c4e86d3a2a61a8dab8e800c2ffbf359d88313242ae98328",
+            "locator": {
+              "kind": "symbol",
+              "name": "openConversationStream"
+            },
+            "path": "dashboard/src/data/conversation/stream.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5bcbf91dd9e078714dc8aec7e3ef1aa7d230459",
+            "content": "sha256:7ee61ac5823ba0fac94654a715abd5ed4f1d60278648f0933a6ebe42bdf6c435",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/data/conversation/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The store-level keep-alive + LRU-eviction suite (F4), plus the initial-connect retry pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately.\n\nAnchor: `LRU_LIMIT`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853a2868bfef664987bea99cac65f0720563aa12",
+            "content": "sha256:a1a8addd7fd50ebe885fb6432863a9050de83ddbac2391e5c4dddbfe6c89f543",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "dashboard/src/data/conversation/store.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "853a2868bfef664987bea99cac65f0720563aa12",
+            "content": "sha256:6817785007eda9b50efff9384c24e5eaedca814639ceb875ea247f27512f0312",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 382
+            },
+            "path": "dashboard/src/data/conversation/store.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The roster derivation + focus recompute this focus state defers to (`effectiveAgentFocus`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:df673582a2df7a1a489797175d65e6bbf59822ce31b31ec7ab5235b554219531",
+            "locator": {
+              "kind": "symbol",
+              "name": "effectiveAgentFocus"
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The focus LRU-survival + reset pins for `agentFocusBySession`.\n\nAnchor: `setAgentFocus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "468ca8341b7982fc03f6436e463d8fb97ba37831",
+            "content": "sha256:17b71b83aea141cea072b3a3f03b003d9abae844555a5763b7977b58522c7588",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "dashboard/src/data/conversation/agents.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The stage body that connects/disconnects on focus + epoch resolution.\n\nAnchor: \"connectConversation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "content": "sha256:9602fc0e16a54e9abfa886989bad9ae36441a433887e3d709d53151de2c7d842",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "content": "sha256:1bb9e9d654f2d8fc4ff2888fc844be069e47d0d7f1dc65240e6a2a9631da2dd6",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The house vanilla-zustand store idiom this matches.\n\nAnchor: \"import { createStore } from \\\"zustand/vanilla\\\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
+            "content": "sha256:3cdd252df802359df5133d491ad3d40242b8556cfcd13866dfa068ec07cba3c8",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

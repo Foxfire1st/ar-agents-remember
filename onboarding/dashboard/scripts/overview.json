@@ -1,0 +1,117 @@
+{
+  "path": "dashboard/scripts",
+  "references": {
+    "1": {
+      "note": "The canonical admission validator checks token shape, fixed-path readability, and exact nonce equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:aa10c6c1e8543a7962406400499148de4d7cd42667a97a69f61af0c0a5280616",
+            "locator": {
+              "kind": "symbol",
+              "name": "daggerTestEnvironmentError"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:1de2dde639c181144bafc495e4c5c0e171c566a10e6eb82bd2c14d11940e7a64",
+            "locator": {
+              "kind": "symbol",
+              "name": "requireDaggerTestEnvironment"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declaration mirrors the validator's runtime exports and optional diagnostic subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2dcd56c500d7e60426cd39df6b3a03e589da3ad",
+            "content": "sha256:964bced0f0ba69fe975cc6af95b6c4bb0f753a74b8aefa5a2b7496aede2413b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "daggerTestEnvironmentError"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.d.mts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2dcd56c500d7e60426cd39df6b3a03e589da3ad",
+            "content": "sha256:18d76d7e5a65f878d9670b98f644de279c70f45855573bb9701f643f5513ea79",
+            "locator": {
+              "kind": "symbol",
+              "name": "requireDaggerTestEnvironment"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.d.mts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The changed-line scorer is importable for diagnostic callers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:cb7730f6fc03c1359e26142f2b686d9fbaa3ee160492e41afd6440741b958631",
+            "locator": {
+              "kind": "symbol",
+              "name": "measureDiffCoverage"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The executable-statement contract suite proves both CLI refusal and pure accounting.\n\nAnchor: \"describe(\\\"check-diff-coverage executable-statement semantics\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e190d2457a4dad0b99fc4a3060474f98d7a7a5b",
+            "content": "sha256:43ab834e4ceecc7b5d4ff941c9405f8fa33869d169e44a625c5d886a8b555041",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/scripts/check-diff-coverage.test.mjs"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Vitest collects the route’s script tests.\n\nAnchor: \"scripts/**/*.test.mjs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "content": "sha256:fdb83473d75d8fc70dd87e307f7de7895edf7ea0bdeaef4967c00ef2fe3fa4ea",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/vitest.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

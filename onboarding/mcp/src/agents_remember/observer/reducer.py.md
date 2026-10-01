@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/observer/reducer.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/reducer.py`    |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -370,150 +360,26 @@ file I/O. Defaults empty, so prior structural/analytical callers remain unchange
   lifecycle id to match the attention item lifecycle id. Provider/setup/start alarms cannot be hidden by
   orphaned dismissal rows.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The projection schema this produces. | `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:1131-1153 |
-| The series-token helper that enriches `SeriesNode.seriesTokenTotal` before analytics assembly. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
-| The event envelope + kinds it folds. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
-| The write-side dormancy sweep the abandoned-projection mirrors, and the `end` signal whose `outcome` `_ended_updates` reads. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:90-594 |
-| The shared stale/TTL thresholds + age helper. | `STALE_AFTER_SECONDS`; `TTL_SECONDS`; `age_seconds` | mcp/src/agents_remember/controlplane/stamps.py:22-35; mcp/src/agents_remember/observer/timeutil.py:11-11; mcp/src/agents_remember/observer/timeutil.py:30-31 |
-| The provider stale-projection idiom the paused-projection mirrors. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
-| The `EngineProcessNode`/`EngineProcessFacts`/`EngineProcessEdge`/`CommitRefNode`/`ProviderBootNode` schema the 5e map composes. | `EngineProcessNode`; `EngineProcessFacts`; `EngineProcessEdge`; `CommitRefNode`; `ProviderBootNode` | mcp/src/agents_remember/observer/projection.py:886-906; mcp/src/agents_remember/observer/projection.py:909-922; mcp/src/agents_remember/observer/projection.py:925-944; mcp/src/agents_remember/observer/projection.py:972-1041; mcp/src/agents_remember/observer/projection.py:1044-1064 |
-| Reads the engine-process facts + pre-contract start-progress entries at the call edge. | "def read_engine_process_facts(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:240-240 |
-| The pre-contract `worktree_start` progress source (§5.4) the synthesized node reads. | `read_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:106-114 |
-| The durable gate set `_attach_gates` materializes onto lifecycles (slice 6c). | "def _attach_gates(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:227-227 |
-| Wires the engine facts + start-progress into `project_workspace`. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
-| Missing provider placeholders are created for expected code/memory roles when no matching worktree provider facts exist. | "def _provider_boot_nodes("; "def _missing_facts(  # pragma: no cover" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:443-443; mcp/src/agents_remember/observer/reducer_impl/_processes.py:658-658 |
-| Actionable drift queue rows carry repo/branch ids, provenance detail, and `checkedAt` signal timestamps. | "def _drift_attention(drift_snapshots: list[DriftSnapshotNode]) -> list[AttentionItem]:"; "def _drift_attention_detail(drift: DriftSnapshotNode) -> str:" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:284-284; mcp/src/agents_remember/observer/reducer_impl/_attention.py:303-303 |
-| `_is_dismissed` admits targetless suppression only for dismissible repo-level kinds. | "def _is_dismissed(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:79-79 |
-| The whole-vocabulary tuple `_STATES` is built from, the `coerce_end_outcome` `_ended_updates` routes through, and the partition that decides which states get a bucket. | `STATES`; `coerce_end_outcome` | mcp/src/agents_remember/observer/lifecycle_state.py:102-104; mcp/src/agents_remember/observer/lifecycle_state.py:118-127 |
-| `STATE_COUNT_FIELDS` — the state → `Metrics` bucket map `_metrics` expands, and the `extra="forbid"` model that makes a missing bucket raise. | `STATE_COUNT_FIELDS`; `Metrics` | mcp/src/agents_remember/observer/projection.py:273-273; mcp/src/agents_remember/observer/projection.py:282-282; mcp/src/agents_remember/observer/projection.py:287-313 |
-| The design: the reducer, inferred trust, corrections (§2.1, §2.5). | "### 2.1 Envelope"; `### 2.5 The observer and its projections` | docs/design/observable-lifecycle.md:136-136; docs/design/observable-lifecycle.md:241-251 |
+### Repo-Internal References
+
+- The projection schema this produces. [1]
+- The series-token helper that enriches `SeriesNode.seriesTokenTotal` before analytics assembly. [2]
+- The event envelope + kinds it folds. [3]
+- The write-side dormancy sweep the abandoned-projection mirrors, and the `end` signal whose `outcome` `_ended_updates` reads. [4]
+- The shared stale/TTL thresholds + age helper. [5]
+- The provider stale-projection idiom the paused-projection mirrors. [6]
+- The `EngineProcessNode`/`EngineProcessFacts`/`EngineProcessEdge`/`CommitRefNode`/`ProviderBootNode` schema the 5e map composes. [7]
+- Reads the engine-process facts + pre-contract start-progress entries at the call edge. [8]
+- The pre-contract `worktree_start` progress source (§5.4) the synthesized node reads. [9]
+- The durable gate set `_attach_gates` materializes onto lifecycles (slice 6c). [10]
+- Wires the engine facts + start-progress into `project_workspace`. [11]
+- Missing provider placeholders are created for expected code/memory roles when no matching worktree provider facts exist. [12]
+- Actionable drift queue rows carry repo/branch ids, provenance detail, and `checkedAt` signal timestamps. [13]
+- `_is_dismissed` admits targetless suppression only for dismissible repo-level kinds. [14]
+- The whole-vocabulary tuple `_STATES` is built from, the `coerce_end_outcome` `_ended_updates` routes through, and the partition that decides which states get a bucket. [15]
+- `STATE_COUNT_FIELDS` — the state → `Metrics` bucket map `_metrics` expands, and the `extra="forbid"` model that makes a missing bucket raise. [16]
+- The design: the reducer, inferred trust, corrections (§2.1, §2.5). [17]
 
 As of the 260703-L9 lifecycle convergence, the phase-inference comment speaks generic lifecycle vocabulary ("the lifecycle phase") rather than naming the retired session-job skill; the inference logic itself is unchanged.
-
-## Update History
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
-
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over the `reducer_impl/` subpackage (`_types`, `_metrics`, `_attention`, `_processes`); full surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: rebased the `_STATES` ranges and
-  removed duplicated Source ranges; exact non-fixing check returns zero findings.
-
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 15 repository-reference citations (15/15 anchored and sourced; scoped citation check clean).
-
-- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the two
-  `projection.py` pointers after a worker inserted ten lines above them. `STATE_COUNT_FIELDS`
-  L263 → L273, `Metrics` L268-L294 → L278-L304 (the class runs 278-304 with
-  `model_config = ConfigDict(extra="forbid")` at L294 and the bucket fields at L296-L304). No body
-  text changed.
-- 2026-08-01T00:42+02:00 — 260731-EFA-L4 curator: three claims here were wrong or incomplete
-  against the current source. (1) `_ended_updates` was described as "(→completed|abandoned)",
-  which was the hand-written conditional it no longer has; it is now
-`{"state": coerce_end_outcome(event.data.get("outcome"))}` — the outcome *names*
-  the terminal state. cit:([`_ended_updates`], mcp/src/agents_remember/observer/reducer.py:382-384) (2) The corrections paragraph named the "state enum" without saying where
-  it comes from; `_STATES` is now `frozenset(STATES)` rather than `frozenset(get_args(State))`,
-  and that matters concretely: on the union form of a `Literal`, `get_args` returns `Literal`
-  objects, so the set would match no event payload and every correction would be silently dropped. cit:([`_STATES`], mcp/src/agents_remember/observer/reducer.py:117-117)
-  (3) `_metrics` was undocumented; added a section for it — it counts once with a
-  `Counter` and expands `STATE_COUNT_FIELDS`, replacing three hand-written `sum(...)` lines that
-  had left `awaiting-developer` counted into `lifecycleCount`/`totalTokens` and into no bucket,
-  and `Metrics(extra="forbid")` now turns a future missing bucket into a raise rather than a
-  zero. Added two invariants. cit:([`_metrics`], mcp/src/agents_remember/observer/reducer_impl/_metrics.py:27-66) **Citation repairs** — all three self-citations pointed at the
-  wrong symbols and are corrected: the missing-provider row L980-L1079; L1240-L1265 →
-  `_provider_boot_nodes` L1403-L1432; `_missing_facts` L1614-L1639; the actionable-drift row
-  L770-L800 → `_drift_attention` L914-L930; `_drift_attention_detail` L933-L944; and
-  `_is_dismissed` L568-L590 → L712-L731. The Repo-Internal References header was two columns
-  while three rows already carried a third `Citations` cell (so none of those ranges rendered) —
-  widened the header and gave every row the third cell, the same repair L3 made in
-  `snapshots.py.md`. Added three reference rows for the vocabularies this file now reads instead
-  of restating.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty: `C901`/`PLR0912`/`PLR0915`/`PLR0913`
-  armed with no exemptions). Three public signatures changed, so this is a contract change, not a
-  tidy-up:
-  `project_workspace(logs, *, structure: WorkspaceStructure, now, given: AnalyticalInputs | None = None)`,
-  `build_analytics(given, *, series=None, attention_queue=None, engine_processes=None)`, and
-  `build_attention_queue(lifecycles, providers, given)`. The former keyword lists collapsed into
-  the two new frozen bundles; `active_worktree_groups` moved from the analytical set to
-  `WorkspaceStructure` (it is structural — it leaves via `WorkspaceProjection`, never `Analytics`),
-  and `stalest_limit` moved onto `AnalyticalInputs`. The `_apply_kind` if/elif chain became the
-  `_KIND_UPDATES` dispatch table over eight per-kind `_*_updates` functions. `_engine_process` was
-  split into `_code_refs`/`_memory_refs`/`_setup_facts` returning the frozen `_CodeRefs`/
-  `_MemoryRefs`/`_SetupFacts`; `_process_edges` was re-signed onto `_ProcessLanes` + `_SetupFacts`;
-  `_seed_edge_state` reads through the new `_DECISIVE_SETUP_EDGE_STATES` table; `_str_list` was
-  added for the recorded-sequence coercion both setup readers do. Every projection value is
-  unchanged — the fold, the inferred layer, the attention ranking and the engine map all produce
-  byte-identical output. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `build_analytics`/`project_workspace` gained an `expectation_rows` keyword threading `ExpectationRowNode`s into `Analytics.expectationRows` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
-- 2026-07-07T05:12+02:00 — 260703-L15 S2 (bounded served buffers): `token_series` now decimates
-  past `TOKEN_SERIES_MAX` (512) via `_decimate_token_series` — newest `TOKEN_SERIES_RECENT`
-  (256) exact, older history uniform-thinned with the first sample kept; cumulative stays
-  monotonic. Bounds the fuel gauge riding every lifecycle delta; the observer log stays
-  complete. Verification metadata pinned until closeout stamps the L15 commit.
-
-- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: phase-inference comment re-worded (lifecycle phase, not l-01 phase); behavior unchanged. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-07-04T12:32+02:00 — 260703-L4: `_gate_node` passes gate
-  `evidenceRefs` into the served `GateNode`, exposing delegated-approval reviewer
-  evidence refs without changing reducer ownership. Verification metadata pinned
-  until closeout stamps the L4 commit.
-- 2026-07-03T00:30+02:00 — L11 abandon terminality: `_terminalize_abandoned_anchor_lifecycles` projects `abandoned` onto event-backed lifecycles whose anchor enclosure was abandoned, and `_persistent_lifecycles` skips `cleanup in {abandoned, reopened}` enclosures.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: actionable-drift attention now uses
-  `repository:branch` ids, provenance-rich detail, and drift `checkedAt` as the repo-level dismissal
-  anchor; `_is_dismissed` keeps targetless suppression limited to whitelisted repo rows. Verification
-  metadata pinned until closeout stamps the task-29 code commit.
-- 2026-06-28T07:30+02:00 — Task 33: `project_workspace` gained the keyword-optional
-  `active_worktree_groups: list[str] | None` and sets `activeWorktreeGroups=sorted(active_worktree_groups
-  or [])` on the returned projection — the bounded active worktree-group set for the Topology, passed by
-  `projection_store` from the `active_enclosure_worktree_groups` admission already computed for the
-  Engine Room. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-28T03:52+02:00 — Task 28 S5.2 after source sync: `build_attention_queue`
-  now honors compact `AttentionDismissalRecord` acknowledgements only when item id and lifecycle id
-  match, with `stateEnteredAt` / `signalTs` preserving current-occurrence semantics. Verification
-  metadata pinned until closeout stamps the task-28 code commit.
-- 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: documented missing provider placeholders for expected code/memory worktree roles, keeping Engine Room honest when provider runtime facts are absent. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end + gate dedup):
-  `_apply_kind` gained a `lifecycle.awaiting-developer` arm (sets state
-  `awaiting-developer` and rides the turn-end `summary` on the projection's `ask`
-  carrier; the `lifecycle.resumed` arm clears `ask` back to `None`).
-  `_lifecycle_attention` gained an `awaiting-developer` info `AttentionItem`
-  ("Turn complete — your move", `detail` via the new `_await_summary` helper) and
-  its blocked branch was narrowed to
-  `elif lifecycle.state == "blocked" and lifecycle.gate is None:` — the one-line
-  dedup that suppresses the duplicate `blocked-gate` when a durable open gate is
-  already materialized by `_attach_gates` / emitted by `_gate_attention`. The
-  fold stays pure. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-26T20:18+02:00 — Task 21 series token rollup: `project_workspace` now enriches incoming
-  folder-keyed series nodes through `attach_series_token_totals` before passing them into analytics.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-26T15:13+02:00 — Task 25 lifecycle live-row cleanup: `project_workspace` now drops
-  stale non-fleeting event-backed lifecycles from the live projection when their enclosure is gone
-  or re-owned by a different `lifecycleId`, while keeping fleeting lifecycles and the fresh
-  non-terminal promotion/gate window. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-25T13:10+02:00 — Task 23/24: `project_workspace` / `build_analytics` now pass through `agent_pickups`, and `_gate_attention` includes `gateId` so dashboard queue actions can target gate records directly.
-- 2026-06-24T08:09+02:00 — Engine Room leaf identity: `_engine_process` maps `contract.leaf_id` onto `EngineProcessNode.leafId` while keeping `taskName` as the parent series label, so parallel leaves under one task no longer render as duplicate parent tasks. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-21T06:40+02:00 — slice 05m (carryover-before-cleanup): `_GUIDANCE_PHASE` gained `"carryover-pending": "carryover-pending"`, surfacing guidance.py's new carryover phase (between integration and cleanup) to the process-map vocabulary; and `_engine_process` maps `carryoverDoneAt = _str_or_none(status.get("carryoverDoneAt"))` onto the node (the carryover milestone time read off the official ledger, surfaced through `status_payload`; display-only, `None` until carried — 5k renders the seam). Both additive; the fold stays pure. Verification metadata pinned until closeout stamps the 05m code commit.
-- 2026-06-21T04:10+02:00 — slice 05l P1 (backend teardown visibility): `_GUIDANCE_PHASE` gained `"abandoned": "abandoned"` (surfaces guidance.py's new abandoned phase to the process-map vocabulary), and a new module-level `_is_disposed(fact)` (True when `contract["cleanup"]` is `completed`/`abandoned`) now filters `build_engine_processes` (`... for fact in facts if not _is_disposed(fact)`) so a disposed (cleaned-up/abandoned) enclosure drops from the active `engineProcesses` instead of rendering a phantom — the frontend (05k) animates the removal. `cleanup-pending` is intentionally kept (its de-materialise beat still needs a live node). Verification metadata pinned until closeout stamps the 05l-P1 code commit.
-- 2026-06-19T03:17+02:00 — slice 3c reopened (R1): `project_workspace` + `build_analytics` gained a keyword-optional `series` (list of `SeriesNode`) threaded straight into `Analytics(series=…)` — pure pass-through, read at the call edge by `read_series_documents`. Defaults empty, so prior contracts are unchanged. Verification metadata pinned until closeout stamps the R1 code commit.
-- 2026-06-18T18:00+02:00 — slice 5h ledger popover: `_engine_process` passes `fact.ledger_rows`/`ledger_row_count` through to `ledgerRows`/`ledgerRowCount` (the window is loaded in `snapshots._ledger_window`, so the reducer stays a pure fold). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T14:05 — Task 6 slice 6c Part A: `project_workspace` / `build_attention_queue` gained a `gates` input; `_attach_gates` materializes each lifecycle's latest open `GateRecord` onto `LifecycleProjection.gate`, and `_gate_attention` raises a `gate-open` attention item. The fold stays pure (gates read at the call edge by `snapshots.read_gates`). Verification metadata pinned until closeout stamps the 6c Part A code commit.
-- 2026-06-18T08:51+02:00 — slice 5h H1: `_engine_process` maps the additive `integrationStrategy` (from the contract) + `landing[]` (from the best-effort `status["landing"]` remote/PR probe) onto `EngineProcessNode`. Verification metadata pinned until closeout stamps the 5h code commit.
-- 2026-06-16T03:25 — slice 5f S6 (§9): `build_attention_queue` gained a `start_progress` param + the `_start_attention` builder (a pre-contract **blocked-start** raises a steady `warn` master-caution — chat parity), and `project_workspace` now threads `engine_start_progress` into it; a happy-path beat (no `blockedReason`) is not an alarm. Verification metadata pinned until closeout stamps the S6 code commit.
-- 2026-06-15T19:35 — slice 5e: slice 5e: build_engine_processes (pure enclosure-centered composer joining contract facts + providers + setup + lifecycle on the worktree-group basename) + pre-contract _start_process_node synthesis; threaded through project_workspace + build_analytics.
-- 2026-06-14T23:30+02:00: Slice 05 (5c) — `project_workspace` synthesizes paused persistent lifecycles from worktree enclosures (`_persistent_lifecycles`/`_persistent_from_enclosure`, note 01: a worktree-backed lifecycle persists `paused` when idle, never reaped); the attention queue's stale-session/dormant branches gate on `lastEventTs` so synthesized dormant worktrees surface in the hangar, not the queue. Verification metadata pinned until closeout stamps the 5c code commit.
-- 2026-06-14T16:58+02:00: Slice 05 (5b) — added `build_attention_queue` + per-source helpers (`_lifecycle_attention` / `_provider_attention` / `_drift_attention` / `_setup_attention`) and threaded the result through `project_workspace` → `build_analytics(attention_queue=…)` → the derived `Analytics.attentionQueue`; no call-edge change (`project_and_write` already passes every input). Verification metadata pinned until closeout stamps the 5b code commit.
-- 2026-06-13T22:34: Slice 3c commit 2 — `build_analytics` and `project_workspace` gained a keyword-optional `task_documents` input wired into `Analytics.taskDocuments` (empty by default, so 3a/3b callers are unaffected). The fold stays pure. Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
-- 2026-06-13T20:48+02:00: Slice 3b — added the analytical rollups (`token_series`
-  fuel gauge, `staleness_histogram`, `build_analytics`) and extended
-  `project_workspace` with keyword-optional analytical inputs (empty by default, so
-  3a callers are unaffected). The fold stays pure. Verification metadata is pinned
-  until closeout stamps the 3b code commit.
-- 2026-06-13T19:30+02:00: Created for slice 3a — the pure fold, the inferred layer
-  (paused/abandoned), the corrections fold, action availability, and workspace
-  assembly. Verification metadata is pinned until closeout stamps the 3a code commit.

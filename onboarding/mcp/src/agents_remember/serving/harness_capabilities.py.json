@@ -1,0 +1,398 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_capabilities.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The protocol, discovery, and launchable adapter ports consume `CapabilitySnapshot`, `LaunchKnobs`, and `SetResult`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:d1aa1ad3af2174915dced8bacf6a121ab7ba22865576a2f0573ee8e47382a93c",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessProtocolAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:38a8205b2c4d3c2528d84d10cbeaea89948a51a9cc470a137974fee25d4bd312",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessCapabilityDiscoverer"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:f500dfc48b288c687f100a06250b8d4edc8b934036e8bc46b4461a67f74e8e63",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchableHarnessProtocolAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:9f375dd54c922c9875252a0c0d6fc7ef58c6b02e76fc9fcec6f320afc087e899",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:7b24ae39c6c229be2bf442a1c7153c3cedd3ec2131ccfd803816290713d932c1",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:5dd11c0432670c00a2183ea1301323f7b1a819a21a68e7b90ad87491a3e7f2f6",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The submission authority validates the exact `SET_ACCEPTANCE_VALUES` vocabulary and the ok/effective-value relationship before releasing a setter result to its waiter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:2efb55fd7af9f84c3783f12e05d1aaee239297d9d1ac58e29adc85550b26eda3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_set_result_locked"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:88401fcf5e4d8e7e1c667a13d7190ec13035195f9c578f984ae7bebc54ac1195",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_set_result"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:94d325765ece00f2e0f63f280b96fdcef20de588af8ed5c6e7dbacbb3cacec29",
+            "locator": {
+              "end": 882,
+              "kind": "line_range",
+              "start": 856
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:155ee358ff65d67e2abd370c4a3a169fbcfd5ec087ee5e57b3ef385244bc70ec",
+            "locator": {
+              "end": 1023,
+              "kind": "line_range",
+              "start": 1010
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The launch boundary consumes owned selectors before token-free discovery and runtime construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:8b89671dd7b82f5cc19d5e258392e1dcf675c11fcf63bd678c2160026f733612",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_launch_selection"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:0f8b168f5a30fff77a09df73d0ed12673499922e90c9bdfba8d345c96509498d",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:88c7b5d93271525e3f1de568a30a53e0608e401d792f60738c925ba10d871358",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:c06dc87bdc8e24fc6de13bfd63ce4e4dbc60f4f1eef134b49c3c340c273e9132",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The exact-session client uses the strict inverse parsers for live advertise and set responses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:66a624287c8224c09cbdf40199718627aab66a4870e6d7445a0c57626a671560",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_control_capabilities"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:877de0d3fefd4e23707f38fae92a8eedeb0ca3b2bfac1d6303f084cb9895db73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_set_control_value"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The normalized capability and setter payloads have strict inverse parsers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:3e908bc690527904fff949cf6841c9c76380ec766484c1d3b53eae98f747249a",
+            "locator": {
+              "kind": "symbol",
+              "name": "capability_snapshot_from_json"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:11db145cbf97636552c0df38b320fcf662e1cbc1c0e30a5ebb07801c70dce8e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_result_from_json"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The daemon emits this unchanged normalized shape for both pre-session and live capability reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:119d1f66f839825452f3fe95bb0e73961c9d6a1348e82ce6a36677bed46fc26e",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_harness_capabilities"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:607d8c4f26050367e8c897e3b6d17033a6ea03a44f6c5309e370b93320b3c0ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_capabilities"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:52f7670497bc42d53181335f45590f4e3f452037708fefc4f684a200892ce25f",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 231
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:7c6846dfb653da4a80315416d2829fe03bb45c7b90c8a31bd331f94ec24359ee",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Claude produces native model/effort flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:dac48a01c6af918abe21fbfd802b518a53f990673c188eb672a80b416fc96be7",
+            "locator": {
+              "kind": "symbol",
+              "name": "claude_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:3c6b51f8f06e4f65ee507b013b3798fc80bd21f13e9fa3fb669987812603cc2a",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Codex declares session config plus owned CLI/config selectors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a0b40fbe32f77729fca935b8e7135e8656e173d",
+            "content": "sha256:9230cca454e47a3eb5ba92577453308928f99454ca63c8725c18a1a9adb15861",
+            "locator": {
+              "kind": "symbol",
+              "name": "codex_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a0b40fbe32f77729fca935b8e7135e8656e173d",
+            "content": "sha256:1c2bb278ed80d82fe9d38f4354b8226803bef39900831c7f0f5ba61d165059a0",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Pi declares provider-qualified model and thinking flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:463aadf8d623f3d4d3b4edd2a1e583e2e62878ece290491f10ab67357a0fa8b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "pi_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:84624ff45ce4683111031278123055402a574df626a44d73839e717a760777b4",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,87 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Bounded coverage term and CRAP formula",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fbe2e519b5448fefb73065d075615300f042042",
+            "content": "sha256:283e211cd140dd1a0cb36af39c19b20f76633c72372385349b002f924d56b43d",
+            "locator": {
+              "kind": "symbol",
+              "name": "crap_score"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Coverage reader and branch-data requirement",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fbe2e519b5448fefb73065d075615300f042042",
+            "content": "sha256:5b50c71fae5c9c3e870b9013655dba7ab83ac843fc1e1c1f19bcd023de34b48e",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_coverage_by_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Statement-plus-arc ratio and excluded-span behavior",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fbe2e519b5448fefb73065d075615300f042042",
+            "content": "sha256:f5550af5ed23d9d0d0ac9dc330ea4e98872dc88403edeb6cffb9feee3748c608",
+            "locator": {
+              "kind": "symbol",
+              "name": "coverage_ratio_for_function"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Diagnostic review label, function and file summaries",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fbe2e519b5448fefb73065d075615300f042042",
+            "content": "sha256:b4e32defb0f1a06a9c55544465ebe7401c0f3bc1f086ff670df49d7a2ffadadd",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_table"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Render scores without score-based failure",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fbe2e519b5448fefb73065d075615300f042042",
+            "content": "sha256:b8012d6c006ea1e04371c410f4eb16bf454a16d6f9de796ec07f657bfc5e1cb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

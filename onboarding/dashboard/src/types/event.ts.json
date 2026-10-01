@@ -1,0 +1,86 @@
+{
+  "path": "dashboard/src/types/event.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Closed provenance vocabularies and event field shape",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "content": "sha256:88ea3eb5e223e44084002ef7bdde6c430a52e864eb63c445a11140ca9a010808",
+            "locator": {
+              "kind": "symbol",
+              "name": "Trust"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "content": "sha256:25041a4b9fade9521ff99aadb081dfa50ce6f006ed35a12b9c7499efba2f3d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "Actor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObserverEvent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Python envelope supplies the corresponding wire names and provenance values",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:f05247bdd2226df2963af817877a8190f2cb43fa9b16222fcbb1fc49c2f027ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "Trust"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:5d440db2ec53db4e801ae88f57b6831e8985ddfcec07b85404616e277c358261",
+            "locator": {
+              "kind": "symbol",
+              "name": "Actor"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "locator": {
+              "kind": "symbol",
+              "name": "Event"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

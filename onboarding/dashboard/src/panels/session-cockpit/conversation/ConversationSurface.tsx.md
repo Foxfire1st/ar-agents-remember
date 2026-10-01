@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -102,37 +92,33 @@ owns no data/paging/cursor logic — the store/reducer do.
 - The reason shown on a failure is the server's typed reason, not a fabricated calm.
 - Data/paging/cursor logic stays in the reducer/store; this file is presentation + announcer only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Surface shell, focus model + keys incl. the ArrowDown hijack, announcer discipline, capability cues, agents strip, timeline mount. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
-| The roster/focus primitives this surface composes (`deriveAgents`, `effectiveAgentFocus`, `cycleAgentFocus`, `filterItemsForFocus`). | `deriveAgents`; `effectiveAgentFocus`; `cycleAgentFocus`; `filterItemsForFocus` | dashboard/src/data/conversation/agents.ts:71-86; dashboard/src/data/conversation/agents.ts:93-103; dashboard/src/data/conversation/agents.ts:106-112; dashboard/src/data/conversation/agents.ts:119-127 |
-| The reconstructable store's `agentFocusBySession` focus state and the `setAgentFocus` writer this surface reads/writes. | `setAgentFocus` | dashboard/src/data/conversation/store.ts:69-69 |
-| The `live`-delivery flag the announcers gate on. | `lastAppliedDelivery` | dashboard/src/data/conversation/reducer.ts:58-58 |
-| The shared polite/assertive announcer store. | `announcePolite` | dashboard/src/data/announcer.ts:33-35 |
-| The sub-agents strip (one compact line + listbox menu), the one feed timeline, the reconnect banner, the ambient telemetry, and the capability-reason primitive. | `AgentsArea`; `ConversationTimeline`; `ConversationReconnect`; `AmbientTelemetry`; `CapabilityReason` | dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx:180-247; dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:63-115; dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx:68-102; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:56-106; dashboard/src/panels/session-cockpit/conversation/primitives.tsx:140-158 |
-| The surface-level focus-cycling/filtering/Esc/hijack suite. | "ConversationSurface agent focus" | dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:144-410 |
-| The persisted hide-thinking preference. | `thinkingPreferenceStore` | dashboard/src/data/conversation/thinkingPreference.ts:25-36 |
+- Surface shell, focus model + keys incl. the ArrowDown hijack, announcer discipline, capability cues, agents strip, timeline mount. [1]
+- The roster/focus primitives this surface composes (`deriveAgents`, `effectiveAgentFocus`, `cycleAgentFocus`, `filterItemsForFocus`). [2]
+- The reconstructable store's `agentFocusBySession` focus state and the `setAgentFocus` writer this surface reads/writes. [3]
+- The `live`-delivery flag the announcers gate on. [4]
+- The shared polite/assertive announcer store. [5]
+- The sub-agents strip (one compact line + listbox menu), the one feed timeline, the reconnect banner, the ambient telemetry, and the capability-reason primitive. [6]
+- The surface-level focus-cycling/filtering/Esc/hijack suite. [7]
+- The persisted hide-thinking preference. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 ## Current Structured-Surface Maintenance
 
@@ -152,63 +138,3 @@ no request. Runtime singleflight makes the remount path exactly once.
 A failed selected-child route renders its typed detail beside a retry action cit:(["conversation-agent-history-retry"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:385-385). Retrying
 addresses only that child; the parent projection and reconnect surface remain live. The component
 still owns presentation/focus only—the store owns request orchestration and resource bounds.
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the conversationSurfaceParts/Styles extraction. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T18:15+02:00 — 260731-EFA-L6 S18-B17 curator: the source had drifted ~2-26 lines past
-  every inline cite. Rewrote all nine flagged `(L…)` prose cites as cit forms with re-measured
-  frozen-source ranges, did the same for the four drifted but unflagged bullets (focus keys,
-  announcer discipline, first-connect failure, capability cues — including the stale `surfaceRef`
-  L113/L265 → 125/290), and repaired the eight Repo-Internal rows whose links pointed at `.md`
-  cards instead of code: exact anchors and plain path:line-line sources for the shell, the four
-  roster/focus primitives, the store focus read/write pair (wording narrowed — the older-paging and
-  scroll-anchor writers are outside the cited store span), `lastAppliedDelivery`, the announcer
-  store, the five composed components, the focus test suite, and the thinking preference store.
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations, both read back
-  against the current source. `ownsAgentFocusKeys` L74-L84 → L88-L98 (L74-L84 now sits inside the
-  tail of the `agentHistoryError` css recipe plus the head of the focus-keys block comment);
-  `applyAgentFocus` L144-L159 → L163-L177 (L144-L159 now covers the
-  sub-agent-focus derivation block, not the callback). Both claims are unchanged and still true.
-  NOT fixed (beyond this worklist): the rest of the Logic bullets drifted the same way when the
-  IM-L2 hydration/error work landed — store reads L107-L133 → L121-L143, sub-agent focus model
-  L135-L143 → L145-L161, focus keys L160-L191 → L187-L221 with `surfaceRef` L113/L265 → L127/L292,
-  announcer discipline L196-L220 → L223-L247, stream-phase L222-L236 → L249-L261, first-connect
-  failure L238-L251 → L263-L275, capability cues L252-L261 → L277-L287 (rendered at L319-L327),
-  toolbar L269-L307 → L296-L328, agents strip L308-L310 → L335-L337, empty-vs-timeline L312-L337 →
-  L355-L379, and the self row's L86-L338 → L100-L382 (file is 383 lines). The two IM-L2 delta
-  citations (L145-L185, L335-L354) are current.
-
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented effective-focus-driven
-  one-shot hydration, persisted-versus-stale focus behavior, visible child-local error/retry, and
-  unchanged parent stream authority. Verification metadata remains pinned while uncommitted.
-
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the sub-agent navigation rework —
-  the uniform ArrowDown hijack (feed article AND scroll viewport) moving DOM focus INTO the
-  agents line as the primary path (the line owns Enter/menu; ArrowUp from the line returns focus
-  to the timeline's tabbable row), ArrowLeft/ArrowRight cycling kept as an additional path, the
-  surface-owned focus bar DELETED (the agents line now carries the viewing note + back-to-parent
-  affordance), and `surfaceRef` added for the hijack target. Re-anchored every line citation
-  against the post-rework source. Verification stays pinned (uncommitted); closeout re-stamps.
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the R7 sub-agent focus model —
-  `storedAgentFocus` → `deriveAgents` → `effectiveAgentFocus` (never applied blindly; stale focus
-  falls back to the parent), `filterItemsForFocus` driving the timeline, the ArrowLeft/ArrowRight/Escape
-  focus keys with the interactive-target exclusion list, the polite visibility-gated `viewing <label>`
-  announcements, the `AgentsArea` mount, the focus bar with `← back to parent conversation`, and the
-  focused-lane empty note replacing the welcome. All pre-L7 line citations re-verified against the
-  current source. The L7 source is uncommitted; lastVerified* stays at the leaf base and closeout
-  re-stamps verification.
-- 2026-07-24T13:17:17Z — Curator: corrected empty-well, process-readiness, scroll-memory, and
-  hidden-announcement invariants; verification fields remain pre-commit.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded R11 progressive disclosure — the
-  always-visible `history: <reason>` note div was removed; the history and live capabilities now render
-  as short `CapabilityReason` CUES (labeled `history`/`live`, state word visible, full reason in the
-  hover `title`) inside the toolbar. Announcer discipline, typed first-connect reason, empty state, and
-  timeline mount unchanged. Verification pinned to the leaf base (`352d5cd`) until closeout stamps the
-  candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the active-conversation
-  surface — the page/stream shell with `live`-only announcers (silent on replay/hydration, F21), the
-  typed first-connect reason (F15), the failing-capability history note (F13), and the thinking/telemetry
-  toolbar. Verification is pinned to the leaf base (`0be0099`) because the new source file is uncommitted;
-  closeout owns its first source stamp.

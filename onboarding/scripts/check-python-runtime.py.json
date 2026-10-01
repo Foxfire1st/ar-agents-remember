@@ -1,0 +1,72 @@
+{
+  "path": "scripts/check-python-runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact version, prefix, and native pidfd capability mismatches are actionable refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba5c21e9bd2eb25305b05fb1f1e7a9c032cf24d5",
+            "content": "sha256:a966ab1daa503054880208c6ddc1ddb61abe5cd1b2512f6bd87428206c7913ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba5c21e9bd2eb25305b05fb1f1e7a9c032cf24d5",
+            "content": "sha256:d97b24caf21e557dfb0b21ddb2805223b4cdc21e41ffcf33f6cfc4d062d1592b",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provenance and observed build identity produce one deterministic fingerprint and JSON report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba5c21e9bd2eb25305b05fb1f1e7a9c032cf24d5",
+            "content": "sha256:9df77706d7dd191ee082f717a924dd1079633f7e7c747d0108dbae5d2a638c32",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba5c21e9bd2eb25305b05fb1f1e7a9c032cf24d5",
+            "content": "sha256:599fc4927a7f8ae4e127f458123bb716c6925fc8d1051561203cd6220b654b36",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_fingerprint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba5c21e9bd2eb25305b05fb1f1e7a9c032cf24d5",
+            "content": "sha256:1c2cf5adaeefbb049c00ccd10af4084df8b6feca43307e08056ff57819b1a29e",
+            "locator": {
+              "kind": "symbol",
+              "name": "report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

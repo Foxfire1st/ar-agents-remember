@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_quality_report_publication_security.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Export cannot publish an artifact outside the profile inventory",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9068f2c62ce94a93f661824d4a8ab9802761324b",
+            "content": "sha256:04f6a612b53c4a93acba756a5abdd66def757e94565a84ec76634046069f7eba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_export_cannot_publish_an_artifact_outside_the_profile_inventory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Nested legacy directory symlink cannot delete external reports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9068f2c62ce94a93f661824d4a8ab9802761324b",
+            "content": "sha256:a045ad8d8f064cb93c62727a69cc2da3404efe8bcc11f840e98873b9f79509c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_legacy_directory_symlink_cannot_delete_external_reports"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generation symlink cannot substitute external evidence",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9068f2c62ce94a93f661824d4a8ab9802761324b",
+            "content": "sha256:f32ccfa89bb74f47da37912ebf41c81fb4bf385fa4871d1423f97d4e68be891e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_generation_symlink_cannot_substitute_external_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

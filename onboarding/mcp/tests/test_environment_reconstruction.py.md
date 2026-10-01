@@ -1,15 +1,5 @@
 # mcp/tests/test_environment_reconstruction.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_environment_reconstruction.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09 |
-| lastVerifiedCommitHash | `8133b6a9de2f787cb6c4527621a70123357aff31` |
-| lastVerifiedCommitDate | 2026-09-08T13:24:49+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -34,26 +24,20 @@ Tests the environment-dependency census identity and fail-closed reconstruction 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The suite's refusal claims are backed by its retained tests. | `test_missing_corrupt_or_different_reconstruction_never_matches_original` | mcp/tests/test_environment_reconstruction.py:71-105 |
+- The suite's refusal claims are backed by its retained tests. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The owner and bounded reconstruction request are loaded from the real source contract. | `_owner`; `_request` | mcp/tests/test_environment_reconstruction.py:18-46 |
-| Controlled roots include both scopes and a symlink. | `_tree` | mcp/tests/test_environment_reconstruction.py:49-55 |
-| Every listed corruption and an in-flight mutation must refuse. | `test_missing_corrupt_or_different_reconstruction_never_matches_original`; `test_file_mutation_during_census_cannot_be_certified` | mcp/tests/test_environment_reconstruction.py:71-126 |
+- The owner and bounded reconstruction request are loaded from the real source contract. [2]
+- Controlled roots include both scopes and a symlink. [3]
+- Every listed corruption and an in-flight mutation must refuse. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None; the suite uses the local environment census owner.
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited-source reconciliation: created the previously absent test sidecar from source bytes matching code commit `8133b6a9de2f787cb6c4527621a70123357aff31` (candidate-tree source SHA-256 `361f0feab875d266dc189f056330e116f0497025b2ad4a24b2955c7fdda5b311`). No test execution or future candidate verification stamp is claimed.

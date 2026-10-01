@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `7dcec036094768c5f50e571fb45e59a27ae78efc` |
-| lastVerifiedCommitDate | 2026-09-19T18:19:12+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory quality overview](../overview.md)
@@ -63,7 +53,9 @@ into a pass/fail, and there is no newest-result search in subresult selection.
 The R08 final full Gate-5 certification of the complete population remains mandatory before
 finalization; this module only executes the affected subset.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. The governing task artifact
 below closes the informational gap for subresult reuse.
@@ -74,38 +66,19 @@ subresults, resuming/reusing exact subresults on an unchanged interrupted closur
 newest-result search.
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The sole proven executor runs the selected-document citation-range checker on one planned unit. | `RangeResolutionAffectedExecutor` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:67-130 |
-| Reuse selects only byte-identical passing units by exact result identity. | `plan_affected_subresult_reuse` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:133-180 |
-| Closure execution revalidates candidate and executor, then publishes the complete aggregate. | `execute_affected_closure` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:183-250 |
-| Evidence shape is canonicalized and proven before a unit result can be published. | `_unit_result`; `_canonical_evidence`; `_checker_observation` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:253-422 |
-| The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution. | `_validate_context` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:94-130 |
-| The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution. | `_validate_context` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:94-130 |
+- The sole proven executor runs the selected-document citation-range checker on one planned unit. [1]
+- Reuse selects only byte-identical passing units by exact result identity. [2]
+- Closure execution revalidates candidate and executor, then publishes the complete aggregate. [3]
+- Evidence shape is canonicalized and proven before a unit result can be published. [4]
+- The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution. [5]
+- The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution. [6]
 
 | An unexpected checker exception is refused with its selected document and exception detail. | "checker-execution-failed" | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:212-219 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The executor delegates to the same-repository citation range-resolution checker. | `range_resolution` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:44-64 |
-
-## Update History
-
-- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: narrowed the executor reference to
-  the unique `RangeResolutionAffectedExecutor` anchor; its `execute` method remains covered by
-  the source range without relying on an ambiguous historical method name. Verification metadata
-  remains closeout-owned.
-
-- 2026-09-10T00:00+02:00 — CCR-L42 current-candidate curation: documented the selected-unit and exception-detail diagnostics emitted before an affected result can publish; verification metadata remains closeout-owned.
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Bound the selected-document executor to the exact Git candidate lease and recorded real checker composition and pre-execution refusal coverage; verified against 97e8ed2e1fae21756c3ad995c30613d4fbfcc503.
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 993953760ef65c4670a40c63a6d6ef0fbcddbe3b (CCR-R07@v3/L07): created the card for the new affected-closure executor and subresult reuse engine; no prior sidecar existed.
+- The executor delegates to the same-repository citation range-resolution checker. [7]

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/library/cursor.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/library/cursor.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T16:04+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Native conversation library overview](overview.md)
@@ -57,38 +47,26 @@ caller re-lists from native authority.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal token authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cursor suite round-trips every token family and probes tamper, wrong-purpose, and garbage
 rejection; the contract module owns the branded token types this authority mints.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The cursor authority signs and validates purpose-bound list/read coordinates and native identities. | `LibraryCursorAuthority` | mcp/src/agents_remember/serving/conversation/library/cursor.py:64-299 |
-| The cursor authority signs and validates purpose-bound list/read coordinates and native identities. | `LibraryCursorAuthority` | mcp/src/agents_remember/serving/conversation/library/cursor.py:64-299 |
-| Identity digests are stable and scope/vendor-sensitive; catalog generations are content-derived and positive. | `identity_digest`, `catalog_generation` | mcp/src/agents_remember/serving/conversation/library/cursor.py:72-87; mcp/src/agents_remember/serving/conversation/library/cursor.py:89-98 |
-| The purpose-branded token types and binding models are declared in the parent contract. | "class LibraryCursorBinding(WireModel):", "class LibraryKeyBinding(WireModel):" | mcp/src/agents_remember/models/conversations/cursors.py:54-54; mcp/src/agents_remember/models/conversations/cursors.py:61-61 |
+- The cursor authority signs and validates purpose-bound list/read coordinates and native identities. [1]
+- The cursor authority signs and validates purpose-bound list/read coordinates and native identities. [2]
+- Identity digests are stable and scope/vendor-sensitive; catalog generations are content-derived and positive. [3]
+- The purpose-branded token types and binding models are declared in the parent contract. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local token authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 4 repository-internal citations for cursor tests, digest/generation methods, and parent binding models.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the signed cursor/key authority
-  sidecar. Verification is blank until closeout commits and stamps the new source.
+No meaningful cross-repo references found.

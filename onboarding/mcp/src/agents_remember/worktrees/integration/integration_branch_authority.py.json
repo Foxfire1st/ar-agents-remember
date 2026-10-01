@@ -1,0 +1,197 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public census and target projection derive exact protected surfaces.\n\nAnchor: `integration_surfaces`, `integration_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:a4400fc1b4b5db186c15f621dba7ede09a9dd8aa4bc22ccc4cb7514591c45cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_surfaces"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:978eb22e58854450668bdfc55d19867dd09b5b83c0e8947640f9e1f71ab3ba98",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Topology publication validates candidate ownership before task facts can create a protected collision.\n\nAnchor: `require_topology_publication_authority`, `require_topology_migration_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:845a494aec8d39137d130582abc02cf6f4180872974b8919d92f1ae2029201fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_topology_publication_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:082efac41ec540c9dcc5f335b1ec54895f56a1bf5f1df8fac9cfecc89457f700",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_topology_migration_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "New-surface validation recognizes only the exact canonical atomic series contract and branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:d8d22ee79ceceaf96ab5c157877d935b48b99f9c0a54d88b3befaeea054c8bc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_atomic_surface_has_series"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Sync admits either an ordinary leaf workbench or exact task-owned series authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:2b90f7ae0e8a575f862a317b90259275ab352203f7b3bab25177d29f913141fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_sync_worktree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The parent-series resolver renamed from `require_parent_series_accepting_leaves`: it resolves and validates the exact parent series (organizational direct-super returns `None`; a missing contract and a stale identity raise) and no longer consults a child-admission seal.\n\nAnchor: \"authority.sprint_ref is not None and authority.execution_nature == \\\"organizational\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:893b8bf0575403da68244dee7c39f6726fa990713eb3e31e4adb99157e5b2aa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_parent_series"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The atomic-owner resolver that follows the rename at its call site, and the leaf target that follows it at integration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:5938c288fcc5fd5587c2e96be367937edec1a9fee6a29241cdf033628ccb1737",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_leaf_parent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:893b8bf0575403da68244dee7c39f6726fa990713eb3e31e4adb99157e5b2aa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_parent_series"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:00b74655699e34aa17db156c6340c56f1dbc579fa53fc9ca3da686440df99ad2",
+            "locator": {
+              "end": 833,
+              "kind": "line_range",
+              "start": 829
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:e9bf871923d31b0b9b16c428cdee4dd477f9d41602726a75d4d059ee4e27e1f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecyclePlaythroughTests"
+            },
+            "path": "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The terminal-task guard refuses abandon once the integration cell records a landed line, in either landing state.\n\nAnchor: \"contract.integration_status in {\\\"completed\\\", \\\"checkpointed\\\"}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:1e197b6149a772806531bf7f977cd1fab40aec99483c96ca8862b7def50a6cbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_series_task_terminal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Live leaf publication resolves the candidate through the unified topology API with accepted overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39d0350dd9928a21b0b471421b0dc80d10a0daac",
+            "content": "sha256:845a494aec8d39137d130582abc02cf6f4180872974b8919d92f1ae2029201fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_topology_publication_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

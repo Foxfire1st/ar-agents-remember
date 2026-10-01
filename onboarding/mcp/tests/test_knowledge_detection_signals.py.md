@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_detection_signals.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_detection_signals.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](../overview.md)
@@ -122,60 +112,42 @@ does not override it is exercising the rendering rule rather than bypassing it.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The declared field-set review plus the required set and the closed vocabularies' agreement with their tuples.** | "test_the_signal_field_set_is_required_and_carries_no_conclusion_bearing_field" | mcp/tests/test_knowledge_detection_signals.py:185-222 |
-| **The nine-parameter construction table: every required field, dropped one at a time.** | "test_a_signal_missing_a_required_field_fails_construction" | mcp/tests/test_knowledge_detection_signals.py:223-246 |
-| **A conclusion refused as an extra field, and a verdict refused inside the prose field.** | "test_a_payload_supplying_a_conclusion_bearing_field_is_refused_naming_it"; "test_a_verdict_written_into_the_detail_string_is_refused_as_the_same_defect" | mcp/tests/test_knowledge_detection_signals.py:247-284 |
-| The closed, versioned condition vocabulary and the refusal that quotes its version. | "test_a_condition_outside_the_declared_vocabulary_is_refused_with_the_vocabulary_version" | mcp/tests/test_knowledge_detection_signals.py:289-303 |
-| **The granularity refusal: a whole-file locator cannot support a span observation.** | "test_a_whole_file_observation_recorded_as_a_body_change_is_refused" | mcp/tests/test_knowledge_detection_signals.py:304-341 |
-| **The three declared input sets, each member's own discriminator, and the three refusals that keep them distinct.** | "test_the_declared_input_set_vocabulary_is_exactly_three_members_each_with_its_own_discriminator"; "test_a_both_sides_declared_signal_recording_one_side_is_refused_naming_both_halves"; "test_a_union_declaration_with_no_recorded_probe_outcome_is_refused_naming_the_missing_fact" | mcp/tests/test_knowledge_detection_signals.py:346-397 |
-| **One side as a complete fact rather than a degraded two-sided one, and the over-claim about the unread side refused.** | "test_a_trigger_side_only_signal_records_one_side_and_no_probe_and_is_not_degraded"; "test_a_trigger_side_only_signal_asserting_a_fact_about_the_unread_side_is_refused" | mcp/tests/test_knowledge_detection_signals.py:398-451 |
-| The omission and its limitation refused in both directions. | "test_a_signal_declaring_an_omission_without_the_limitation_and_the_reverse_are_both_refused" | mcp/tests/test_knowledge_detection_signals.py:452-490 |
-| The unconditional no-assessment statement, and the advertised truncation and unmapped-path gaps. | "test_every_signal_states_that_no_semantic_assessment_was_performed"; "test_an_incomplete_scan_must_declare_its_truncation_and_an_unmapped_path_its_gap" | mcp/tests/test_knowledge_detection_signals.py:491-522 |
-| **Retention refused at a destination that cannot retain, and the unresolved reference that names what would resolve it.** | "test_a_manifest_may_not_be_reported_retained_at_a_destination_that_cannot_retain_it"; "test_a_manifest_reference_that_cannot_be_resolved_names_what_would_resolve_it" | mcp/tests/test_knowledge_detection_signals.py:527-587 |
-| **A stale run keeps its recorded versions on the run and on every signal — currentness marks, it never relabels.** | "test_currentness_follows_from_the_version_comparison_and_never_relabels_a_signal" | mcp/tests/test_knowledge_detection_signals.py:592-665 |
-| The policy identity and the extractor version as named constants rather than paths. | "test_the_policy_identity_and_the_extractor_version_are_named_constants_not_paths" | mcp/tests/test_knowledge_detection_signals.py:670-690 |
-| **A dataset predating the detection table refused with both generation numbers as facts and no migration.** | "test_a_dataset_predating_the_detection_table_refuses_a_detection_write" | mcp/tests/test_knowledge_detection_signals.py:695-723 |
-| **Generation 4's additive rule as a prefix equality, with the appended table, its key tuple and its two triggers.** | "test_generation_4_appends_only_and_the_first_twenty_names_are_generation_3_s" | mcp/tests/test_knowledge_detection_signals.py:724-751 |
-| The one valid signal the cases vary, and the helper set that builds the sides and the recorded input set. | `signal`; `recorded_input_set`; `input_side`; `both_sides`; `snapshot` | mcp/tests/test_knowledge_detection_signals.py:134-183; mcp/tests/test_knowledge_detection_signals.py:110-132; mcp/tests/test_knowledge_detection_signals.py:83-96; mcp/tests/test_knowledge_detection_signals.py:77-81 |
-| The manifest helper whose retention answer the manifest cases assert — re-cited at its own extent. | `manifest` | mcp/tests/test_knowledge_detection_signals.py:98-108 |
-| The production record whose construction boundary these cases measure. | `DetectionSignalPayload`; `DetectionScopeManifest`; `conclusion_bearing_fields` | mcp/src/agents_remember/models/knowledge/detection.py:635-753; mcp/src/agents_remember/models/knowledge/detection.py:417-458; mcp/src/agents_remember/models/knowledge/detection.py:268-283 |
-| **The generation this module's rule is about: it pins generation 4 by name, which is now one generation behind the newest the registry supports.** | `REQUIRED_DETECTION_GENERATION` | mcp/src/agents_remember/memory/knowledge/detection.py:86-86 |
-| The generation builder this module measures against. | `create_schema_statements` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:196-202 |
-| **The registry that now holds eight generations, so "the newest supported generation" is generation 8 and generation 4 is the detection rule's own pinned generation rather than the tip.** | `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-466 |
-| **The generation this module's rule is about, and the generation builder/registry it is measured against.** | `REQUIRED_DETECTION_GENERATION`; `create_schema_statements`; `GENERATIONS` | mcp/src/agents_remember/memory/knowledge/detection.py:86-86; mcp/src/agents_remember/memory/knowledge/schema_generations.py:186-186; mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:196-196; mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-469 |
-| The lane row this module is registered under. | "unit-regression = [" | mcp/tests/test-evidence-lanes.toml:5-5 |
+- **The declared field-set review plus the required set and the closed vocabularies' agreement with their tuples.** [1]
+- **The nine-parameter construction table: every required field, dropped one at a time.** [2]
+- **A conclusion refused as an extra field, and a verdict refused inside the prose field.** [3]
+- The closed, versioned condition vocabulary and the refusal that quotes its version. [4]
+- **The granularity refusal: a whole-file locator cannot support a span observation.** [5]
+- **The three declared input sets, each member's own discriminator, and the three refusals that keep them distinct.** [6]
+- **One side as a complete fact rather than a degraded two-sided one, and the over-claim about the unread side refused.** [7]
+- The omission and its limitation refused in both directions. [8]
+- The unconditional no-assessment statement, and the advertised truncation and unmapped-path gaps. [9]
+- **Retention refused at a destination that cannot retain, and the unresolved reference that names what would resolve it.** [10]
+- **A stale run keeps its recorded versions on the run and on every signal — currentness marks, it never relabels.** [11]
+- The policy identity and the extractor version as named constants rather than paths. [12]
+- **A dataset predating the detection table refused with both generation numbers as facts and no migration.** [13]
+- **Generation 4's additive rule as a prefix equality, with the appended table, its key tuple and its two triggers.** [14]
+- The one valid signal the cases vary, and the helper set that builds the sides and the recorded input set. [15]
+- The manifest helper whose retention answer the manifest cases assert — re-cited at its own extent. [16]
+- The production record whose construction boundary these cases measure. [17]
+- **The generation this module's rule is about: it pins generation 4 by name, which is now one generation behind the newest the registry supports.** [18]
+- The generation builder this module measures against. [19]
+- **The registry that now holds eight generations, so "the newest supported generation" is generation 8 and generation 4 is the detection rule's own pinned generation rather than the tip.** [20]
+- **The generation this module's rule is about, and the generation builder/registry it is measured against.** [21]
+- The lane row this module is registered under. [22]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T19:54:18+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The registry row cited `schema_generations.py:456-456`, the comment line above the registry, for `GENERATIONS`; the tuple itself is declared at `459`, so the range was widened to `456-469` (the full `GENERATIONS: tuple[SchemaGeneration, ...] = ( … )` declaration). The claim, the anchors and the other four ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `create_schema_statements` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:196-202. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `GENERATIONS` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-466. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `create_schema_statements` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:186-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand while resolving the memory sync** — `create_schema_statements`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T06:30:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 1 generated projection bullet(s) by hand** — `GENERATIONS`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
-
-- 2026-09-18T04:05:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): **re-read the registry claim against the construct as it now stands.** `KS-R18@v1` appends generation 5, so the registry this case measures holds **five** members rather than four, and the row now says so and names why the case measures the sequence structurally (contiguous `1..N` with `ar-knowledge-sqlite/vN` names in register order) rather than as a hand-written list — a literal list would have gone stale exactly here. Each anchor now resolves to its own extent: the builder's declaration and the registry's own lines are cited separately instead of one range being repeated for both. No other row of this card was changed. Verification metadata advances to the leaf's base commit `e963a01c` because the claim was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
-
-- 2026-09-18T03:15:00+00:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): created this one-to-one card for the new unit-regression suite over the detection *signal*. It records the one-valid-record helper that makes every case name the field it varied, the nine-parameter construction table, the two halves of "a conclusion must not be representable" (an extra field and a verdict written into the prose field), the closed and versioned condition vocabulary, the granularity refusal that makes a whole-file change unable to stand for a span change, the three declared input sets with their three distinct refusals, one side as a complete fact with the unread-side over-claim refused, the declaration/omission agreement checked in both directions, the retention answer that refuses a destination that cannot retain and names what would resolve an unresolved reference, currentness that marks stale without relabelling, the named-constant policy identities, the predating-dataset refusal with both generation numbers as facts, and generation 4's additive rule asserted as a prefix equality. Verification metadata is the leaf's base commit `4264dcc9`: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

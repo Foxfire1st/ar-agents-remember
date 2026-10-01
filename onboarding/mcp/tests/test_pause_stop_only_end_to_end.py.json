@@ -1,0 +1,651 @@
+{
+  "path": "mcp/tests/test_pause_stop_only_end_to_end.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The measurement helpers: byte digest of a tree, one repository's full ref and object state, and a task document's status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:2405ecec6767a70047895e31891e2a49362b806421339be1cdbca28c1f70d397",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_digest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:738be54b8a3af5af636f79237bdcd805b23399242011b668b6d2f9b5c7692e27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_state"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:b15fea5e49d1f5c385783adb9c6a4a75c4e1e0558269d99df7776b67d6c2388b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_document_status"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with.\n\nAnchor: \"class QueueFixture:\"; \"MASTER_A = TaskDocumentRef(\"; \"MASTER_B = TaskDocumentRef(\"; \"def git(repo: Path, *args: str) -> str:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:ba28344f8ca924f9bb7915f32cd4344b59aa9c262be90e77e48240e81f038662",
+            "locator": {
+              "end": 694,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:6f0a439f491d32d9b6e1faee5b40a4e7317c4771b8f61083345b948789a5de0b",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:b4810c276fe1b334406a51e065abab8c0f3c243b1d76743534606b0fc9860b87",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:c194e5b9e8cd6475d6332663a68f4136bb814cfa6b55e09f6c557cf80e0d0155",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The lane this module is registered in.\n\nAnchor: \"mcp/tests/test_pause_stop_only_end_to_end.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with.\n\nAnchor: \"class QueueFixture:\"; \"MASTER_A = TaskDocumentRef(\"; \"MASTER_B = TaskDocumentRef(\"; \"def git(repo: Path, *args: str) -> str:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:f29e9531fb83c48ba90ef8440718dc83e54b181ad9833eab0eeb8471593d9b31",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:6f0a439f491d32d9b6e1faee5b40a4e7317c4771b8f61083345b948789a5de0b",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:b4810c276fe1b334406a51e065abab8c0f3c243b1d76743534606b0fc9860b87",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:c194e5b9e8cd6475d6332663a68f4136bb814cfa6b55e09f6c557cf80e0d0155",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane this module is registered in.\n\nAnchor: \"mcp/tests/test_pause_stop_only_end_to_end.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The shared-support artifact whose exact consumer list carries this module (its entry is at `:369` in the block).\n\nAnchor: \"mcp/tests/curator_coherence_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The separate publication no case here reaches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a816e4076dcc166e5d7e42c0346f56b8f240b224",
+            "content": "sha256:e08910fde0433cf4e5dd401ba3aeee7fd2d672dced015beb97314466a885e0c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_checkpoint_landing"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The integration-case budget this module's membership is accounted against.\n\nAnchor: `integration_case_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f3bd41068ad5495a640a6683e9bdc8a57904799",
+            "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The end-to-end playthrough that exercises pause and resume in lifecycle order and proves the master a pause stops still admits a leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:e9bf871923d31b0b9b16c428cdee4dd477f9d41602726a75d4d059ee4e27e1f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecyclePlaythroughTests"
+            },
+            "path": "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one-world-per-case fixture: two atomic masters on one shared source pair, each with its own contract-keyed record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:8663b7a7059d14674c07768204266eb31f00b22d1d77b5bc9e8fb84dd737cd9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PauseStopsAnAtomicMasterTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The public pause and the public select/resume route the module drives instead of inner helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:8ac9bc8d3ea00d69ccd382664755df31885396a205815e17c82fa583093d9836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pause"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:779b74483423dbbe0d5800e24682495a2000a81b03cb32aa44bfb4c2331e8aba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The measurement composite, the branch tips, the task-document walk, and the per-contract record read that make \"nothing else moved\" assertable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:2a3f520f2ed30f90eb1bd30fb8939c041f323c9072d8ab6a5aaaf9e4e6ba5f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_world"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:c7c07668cb11c3a073ae9a7a85e265ee4a78e810169e890d42b47fe0af88f6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tips"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:b8287ca7bf4e1096f8f56f846ef1c08365f8f990bce4dac0cecabfff4afa769f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_documents"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:13fa77f80b2c80304e6513183351313fb8a1e7973a3d2e1010ab09849b1ee470",
+            "locator": {
+              "kind": "symbol",
+              "name": "_activation_bytes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:c05d7747fde8eded417cbf29314a10abf934c701ccfcabf32f7f50b6f9949d42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The ten cases and the distinct protection each one buys. The never-selected case asserts the already-vacant SUCCESS, its explicitness (state is not `paused`, the summary names that nothing was held, the observation carries no `record`) and its inertness; before this change set it asserted the missing-selection refusal. The last three cases are the three refusal shapes: a leaf contract, an active foreign record (`…release-unreadable`) and an unreadable record (`…release-unreadable`), and a vacant foreign record (`…selected-contract-mismatch`), the one shape that reads `vacant`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:0c9a8c0acce7e5491bce9ed956132496c7fff07aa48eda90cac12f0f4686484f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pausing_a_master_moves_no_ref_and_creates_no_commit"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:e69ee34bf771b29dc452dc2819fb3896059aeadb7e386cd36bb1447ea6fcb028",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_paused_master_hands_the_turn_back_with_no_next_call"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:90ee185c562b337e048b03b4a6111f609f04bc1f1d4c74a520d302b3fe6652a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:35908f39f23e59921028b562c2af6e81d2cfc0109195a9bd7e2c1188752a0a77",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pausing_an_already_released_master_is_idempotent"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:fdc64caf85fe2fe2fb5cb3ca76b3f9313ef2c180b4e291497a56a42ae2bfa9ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pausing_a_leaf_contract_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:e16d848df49149016f354712e4e8e29f7dccf59c85a41603b7e913cd78625476",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pausing_one_master_leaves_the_other_masters_record_byte_identical"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:6b2ec005a344837fc18ec9982c9c05dfbe285b255377044b6562ed72bdc75ffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_this_contract_does_not_own_is_refused_not_released"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:54c74b8c611c27d6dad46d9f67999605f3cd2de26109ac8f41ffbc98c86f2e53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_record_is_refused_not_reported_stopped"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:29badfc47c3e17c80a5c5e1b9690a3a61b492950ad43b2bde7884d937d13fdf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_naming_another_master_is_refused_not_released"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "content": "sha256:5b01a920d22696ed149c92821b41bb92b277f86876b81929001fe755302a7ddc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_resuming_a_paused_master_restores_work_with_nothing_published"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The public operation under test and the release it performs, including the already-stopped branch the never-selected case now reaches.\n\nAnchor: \"def worktree_pause_tool(\"; \"def pause_result(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
+            "content": "sha256:be8ef36ce51fa9483a23838076371def6eeaed7e42576161d3273b2170fb4d96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_already_stopped_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
+            "content": "sha256:8b8219fdb3787bbffb65b31e471a996261471d5514aa292d6ff0c7000b4d2a1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_already_vacant_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:0e9408920ec8b670b23573e124be043e3d707057e54a8d5c10355537fb9852bc",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
+            "content": "sha256:b35d1d20587903e0e18361916804a77c4802f7a71cc5eaf35aca266e33440ed5",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The per-contract address and the observation the cases read to prove the released state is the existing `vacant`.\n\nAnchor: `contract_fingerprint`; `activation_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:8873f85453764b66074b38456dd555d2d7a1a5e400b0f7c6795998742010474c",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_atomic_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:8f185c22a95c3ed7c51df07d2b9764247886e8cd8ca1a91553979c42a36a58d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "activation_waiting_reason"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:10d1737c51836553255dfb464c23079367c2aa306fb3eaebb19d1f4e795c4b01",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:7c08e5a860b1bf82c64c5b31bda2cff218bb28404e571f30939e94e7fdb9b072",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The observation's own guard the *active* foreign record meets before the release's exact-owner guard, which is why the two foreign-record cases produce different refusal statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:342702da633b1b6632556ddb66c4ef0ac3ad2aa56d4e8bb6b8000e5b359ad96d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observation_from_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:a4ba1f8ce18bfee68304a404799d09ab8d97f79da59b5049ffb2ca56db64efae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_selected_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The exact-owner guard the *vacant* foreign record reaches, and the release that refuses it as a contract mismatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:539807dba19805716c7b75ddcc1cd2a03c97791b84cfb9f88c069b60fe2e934c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_selects_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:b72a92de1e17269d0df6e9df39b32068f257c2283c7577c93ef639e5144d3821",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_atomic_series_selection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

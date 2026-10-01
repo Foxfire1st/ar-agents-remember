@@ -1,0 +1,664 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/export_import.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's three shaping decisions and the never-does list, in the form a consumer may rely on.\n\nAnchor: \"The artifact is parsed with duplicate-key detection\"; \"What this operation never does\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:469f472e0f70f742f011d352c839506955fbd640af3f5f7b43ecac0dd12a9026",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The staged sealed-aggregate read that the review made load-bearing: every retained revision's payload re-derived before publish.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:5e3a8de879c0662d1cbe1c1a9ddb1512ad1d58985c7f0f115c0ad219c8533fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sealed_aggregate_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:1e108d262ba848c238f8d4ea6dfd9f654c9fc7db0beea9e9f625af4d7175aaa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revision_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:c1237b9e79e5f20dcad11026c89cb8a02f204de83da8e4d8d45d0927532c2478",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SEALED_AGGREGATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:7ea9eae2f231a03b2dab8b8bf23f939fdff887e43b439ec74bff11ff66684f4f",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 463
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:e26cf040daf3d977f863030589d582723bb62bfaecbdfd0de8b6439e7144ff2b",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The outcome rendering, including the independently carried verified identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:5ee326e29535876e25ecceb59e04b5244417a6050c7b96335532cd3ae00c7ec5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_import_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The single shared \"prove this finished file is a closed database\" step both producers call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:e734585edfb071d553862211b643967da5496bde641a815bb807cead82b0b8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_closed_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/closed_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The publication protocol every install goes through, and the admission reading the destination check uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bd49503b7daa1db164d0f12d39b2d8a92ad0d1",
+            "content": "sha256:d3a2e2e0aa23e2543a5557d1902ee574596af6ce1cbde971f45c527ca520e75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_prepared_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69bd49503b7daa1db164d0f12d39b2d8a92ad0d1",
+            "content": "sha256:e648509a6c5f89289800ca550fb7f821162e82876dc1001bf0017276728de8e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_observation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The shared decoders the sealed check owns the seal through, and the typed-column encoder the load uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:f485c9e10fbdbf67fbb1f9abe067aa8ef97cd202d31a69d8bfc42e32e611f493",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_revision_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:4b0ed64815e7d60e1a581661f2c7c349172981afe5ddfc43689a1083643702da",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_family_revision_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:e9c1111ee6bf72be8101edf98ed111962667fec7a39cc1518757ec82902f2e62",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_predecessor_rows"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:4bef03d01301b036d7418c15d2aeb6ab05d3fdd7d3e99465be81e5d4bcd33e6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "encode_typed_column"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The reader, encoder, envelope builder and validator this operation composes rather than re-implements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:14ca2a41abae855c46f43f8ebd2cf0c72adfc7edcb8f563e9f8aa39816ed7cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_export"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:b9a58f11c59bb2f9c5b8cfc87a9d843423975122932349d6d02ca8b4b56bf6a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_export"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:e66c61865f32a372faf44fbfc44dfa08332aa214e2a153109735509c954d4fdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "encode_export"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:c0479c58edc98124f894b4f89ccbb3dd25573d734c0e3b54931edb8e1eeea85c",
+            "locator": {
+              "kind": "symbol",
+              "name": "export_envelope"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:9300ac58ca8bc9c37bfe77f86a55da623fbceefa6fbd256ae31cc124afe97f42",
+            "locator": {
+              "kind": "symbol",
+              "name": "file_digest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The refusal vocabulary of this boundary, one factory per observable failure point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:f43e92b561938006f789cf6c4e6bb2e72bc11878eb98b1c08f221d5f1e9d8ffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "invalid_export_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:ba31420c713f9d527825a422d2d033540043a0c1382246089604fe158d23636c",
+            "locator": {
+              "kind": "symbol",
+              "name": "unsupported_schema_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:734ab88d00f0fe1c1b40dec90e7567cd5b25f832daaf245416eb63a69c8ad54b",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_occupied_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:b06dd98b7300280383f43366f1dbfcc439bca94132d11e5b310db845e4534390",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_absent_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:6e31bd86e694da725c47c883f85f8dbc4265ff947f11ef8bf06278cdd959c827",
+            "locator": {
+              "kind": "symbol",
+              "name": "import_validation_failed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The node that proves an artifact whose sealed payload contradicts its digest is refused before publish, over both revision tables.**\n\nAnchor: \"test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d941aec76565c7db851cd975de6e5add6535e54",
+            "content": "sha256:b89cd8421f1fdac797993a5c51d786d632d89e403b92c7ee84849be8d25c4195",
+            "locator": {
+              "end": 611,
+              "kind": "line_range",
+              "start": 611
+            },
+            "path": "mcp/tests/test_knowledge_portable_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The node that proves destination admission refuses before any staging work, with every state's own code.**\n\nAnchor: \"test_destination_admission_refuses_before_any_staging_work\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d941aec76565c7db851cd975de6e5add6535e54",
+            "content": "sha256:a1d7a040be0069270a6492fb3697772c7adb7a07a482f0e8fbb6956cc51a2d56",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 700
+            },
+            "path": "mcp/tests/test_knowledge_portable_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The nodes that prove a successful import leaves no stage journal or peer behind, and that a refused import preserves the destination byte-for-byte.\n\nAnchor: \"test_a_successful_import_leaves_no_stage_journal_or_peer_behind\"; \"test_a_refused_import_preserves_the_destination_bytes_and_leaves_no_stage\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:fc19360bac6f967ebb23bb8229820e78192406acf742eb6c35bd9a4b52e6f5ee",
+            "locator": {
+              "end": 1102,
+              "kind": "line_range",
+              "start": 1083
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:275cd5cab92eb5f3b0b2243966d1e6745706c756ed5add8be39ab4fd8d23deba",
+            "locator": {
+              "end": 1123,
+              "kind": "line_range",
+              "start": 1105
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two operation names a caller branches on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:2d8329697411d61140b6a20e3827de7d91f408462972c4c5499e520d3b0e675a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPORT_OPERATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:75c1f40f502da812e7ea94c4061abed847f72f169dcb826cbdb77724cc006ca9",
+            "locator": {
+              "kind": "symbol",
+              "name": "IMPORT_OPERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The export: the identity re-read that makes \"the artifact I produced is the dataset I admitted\" checkable, and the encode through the one encoder.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:0be62da72f001d97ce253d56bb44b295257195ca930880f806f632a796522a0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "export_knowledge_dataset"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:f4785f64fb4b514bf68a23838be0ad4c81a3e11fff9adf262b074a7d61f96f45",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The import sequence: validate, admit the destination, stage, verify, close, publish.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:06151174013e44e331af82172cc318a927324dde033155f10d01c4c22ddebe5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "import_knowledge_dataset"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:e4eb0e8876febc31f79d7bfd1ff99003f0c25d55d47a414b94cfebf66c9e824a",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The value-or-refusal file reader and its two different codes (`selected_input_unavailable` for unreadable, `invalid_export` for non-UTF-8).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:4d1110e83a1e7703d068305fac2b27a176bcffa80b62aee8d7457f5ade6a231b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_artifact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:b2a5df896c66932545026de0742328fe3a3cdc098dd1bb58ec3f4219aa7b07dd",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 257
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The refusal for a dataset that moved between admission and export.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:f9d4f9bcdb213165c972526af9d19170918353121a2f18fbd432ae1999eafac8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stale_export_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:4b3287c39eff4c62e8101a64186db38a590586e0bca5936a0def049fb393b658",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The destination admission before any staging work, with its three states and no third mode.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:d8dea223a40faac6688a6de20521f81f9cbfc457e8349866012324c4fbaad319",
+            "locator": {
+              "kind": "symbol",
+              "name": "_destination_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:5a588faf90bd2135bd76f18fa788734300b0ecddd710e67f95d8887a35cbc71e",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 336
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The private stage: schema from the manifest, one deferred-FK transaction, declared manifest order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:8172726532b88e102713116d8bb002d7028c3c03057f7266252275d7bc99ba65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stage_imported_dataset"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:303b85317b66a792c45e1f533193dfba5aa7e5b81943b701e1ad0cd01d78d6ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_tables"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:52444e85c7854f89c188eecf960b896608f52f9a2329bb763e13ce9cba486aa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_bindings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:849e470f372d029580d72a60d243b25b15c1ac7cc8688564722f95f0f7b41a62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:8b1d049faa89fc8bd9b8d3a7abd05769536473ebf1a36b03ae5e4bc7937b56bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_private_stage_directory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:01cb136cafc51b150a395535eff65aa4bf9dbd3cbe077ed16d40c4b5e52df0d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_discard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The staged verification: foreign-key read, sealed aggregates, typed aggregates and the recomputed identity — including the documented non-experiment.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:502a274aabb0db1e2641e51d61995997172b3d4b6dd82795a673432c9b6511b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_staged_dataset"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:aaf2deeefbcb8fd398c2ec4a04f9b44dfecca2c7d0d626ed3e7979b23c331a21",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 408
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

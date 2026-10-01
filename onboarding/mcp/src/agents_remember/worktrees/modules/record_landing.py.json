@@ -1,0 +1,318 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring's gate and probe-first paragraphs.\n\nAnchor: \"On converted memory the record route commits no memory but still checks the landed memory commit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:f3b036f83d474bd74722a5edaebe761dc013ae5bbae2a2e7f8451b617026c70c",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Cleanup refuses until the cell this route sets reads completed. (`integration_status`)\n\nAnchor: `integration_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:2d5849f73154971574d26c12a7104ae79292669db7434e318fbf051acb2c1903",
+            "locator": {
+              "end": 677,
+              "kind": "line_range",
+              "start": 677
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The dashboard PR probe whose `None`/`missing` polarity must not be read as \"never landed\". (`_pr_for`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5de31ce69954e70b225a14f5822ad4a58acfd83e",
+            "content": "sha256:f4797f34bc5b1ce411745d91020c5f41fce563d61837ac7ef7cfc381d8c690aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pr_for"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The MCP tool and payload that expose this operation. (`worktree_record_landing`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a816e4076dcc166e5d7e42c0346f56b8f240b224",
+            "content": "sha256:a7c4259dae4e7432e7a04bea6d1195d1e64059773a9dba44a1234a83e23e367f",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_record_landing"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:3a51b6a6cc0ebeede629aaf887bea427ca903d3029517f03e0c302a2289f73d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_record_landing_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The PR landing-tail recording step in operator doctrine. (`worktree_record_landing`)\n\nAnchor: `worktree_record_landing`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "system/git-workflow.md:50-50"
+        }
+      ]
+    },
+    "15": {
+      "note": "Unconverted memory: the lock decides, before a memory commit is required.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Probe the line first; an unconverted line's commit is only probed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:6edb891f498478825ee6f4dae434bdf0e06bf5f2957162656c61eda1ba855855",
+            "locator": {
+              "kind": "symbol",
+              "name": "_line_converted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:142e1ce0a7275d9ccc270af5231d9c4c8a937494d01a2fd2801579a649abb3ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_converted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:a1b596b6f0429719e7b4397794458ef506cbb5acb0fd7b2bedaa4a15628afefa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unnamed_memory_commit_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The gate's request over the landed commit, based on the task's memory base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:ce152a2b04c3cbd786ee7344c97ea3861f867cf652ecbce290fe76b9be4671b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_request"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:26447a338805e76253ac2be226fb1d747384f5a0668542febde9a45489442f3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_knowledge_gate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The gate runs before the dry-run and apply branches.\n\nAnchor: \"_require_knowledge_gate(contract, commit, args.landed_memory_content_commit.strip())\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:2dd77c3cb7f0b22ef748390e32660b647405d5dd8c40beb9441f62a3f486f60e",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`record_landing_result` validates the recorded code landing, since MIK-R09 checks the landed memory commit on converted memory (before the dry-run and apply branches), and forwards the actual code/memory facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:ba4270ec0157e79338912f11f9d78b4b12a8aeaeda4a5976751f046174799819",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared writer this route calls, and the cell it publishes. (`record_landed_integration`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ce07976f06d314990369996912d3c5b84189410",
+            "content": "sha256:918866a94e6e1728f25cf722b59f70e381c35f294f453e3de8df76b06011cdf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landed_integration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The local route that already recorded its own landing. (`_integrated_result`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c54d74e15aed78c79b08ce68bacb2a8c3aadcc4",
+            "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrated_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {\"completed\", \"checkpointed\"}`)\n\nAnchor: `integration_status`; \"already-recorded\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:9c3f5d2c194083193c864ed94c6628a421221898b376460ff11e8c801032e303",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:2dfdfd9a65625d68ba4b9bed1cbe5c2b804ff4f09c6a3a05006f731449c0c718",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The summary the checkpointed half returns, naming the still-open series and the route that completes it. (`This contract already records a checkpointed integration`)\n\nAnchor: \"This contract already records a checkpointed integration\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:9db17d68dfdaf16e8709349c7c942ea72fe3b4dba2de6fd6db2a1b21259f3611",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkpointed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:756cc38e13d31592539c0bad896f4c064849b2c2e74372eb78292d0e122c2776",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

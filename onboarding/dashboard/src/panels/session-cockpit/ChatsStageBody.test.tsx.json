@@ -1,0 +1,235 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Harness setup preserves real stores while replacing the authority and conversation network edges at their module boundaries.\n\nAnchor: \"mocked at their module boundary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c12420e2ee8ea3a16399ccdbd2f0f8dd07b96dd4",
+            "content": "sha256:d2cfa511e25f5d8d85325f14fbf0cdaaf80505ad1a9a153c29534aba34ca6650",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Teardown unmounts while timers are fake, discards the virtualizer's orphaned debounce, and only then restores real time.\n\nAnchor: \"TanStack Virtualizer owns a 150 ms scroll-observer debounce\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c12420e2ee8ea3a16399ccdbd2f0f8dd07b96dd4",
+            "content": "sha256:c9195c2ef6fb7033e07d9cd0f0b4fecb7f410ab2f6c05aede2c4299b0dd5c08c",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Boot, pool, epoch/freshness, scroll-restore, and persistent-layer matrices cover the stage seams (six describes).\n\nAnchor: \"ChatsStageBody fresh-chat boot (260721 D1/D2)\"; \"ChatsStageBody keep-alive pool (F-j)\"; \"ChatsStageBody epoch attribution (M3)\"; \"ChatsStageBody authority freshness (M9)\"; \"ChatsStageBody view-switch scroll restore (F-ac)\"; \"ChatsStageBody B1: persistent conversation + PTY layers\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c12420e2ee8ea3a16399ccdbd2f0f8dd07b96dd4",
+            "content": "sha256:d7f11ae78e69d335d216a4045cff1bc89d7ff7fbec51ae1b32b539e579f3185c",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c12420e2ee8ea3a16399ccdbd2f0f8dd07b96dd4",
+            "content": "sha256:9adf8f2ecaf14005d0d11c26e14642df87ac5c7cb3033808e59462d35dd36f97",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 282
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c12420e2ee8ea3a16399ccdbd2f0f8dd07b96dd4",
+            "content": "sha256:cb8b84b960b97e193b76ffcf24eb7debadcb1275724384c97fb63fb0ae44df53",
+            "locator": {
+              "end": 514,
+              "kind": "line_range",
+              "start": 411
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c12420e2ee8ea3a16399ccdbd2f0f8dd07b96dd4",
+            "content": "sha256:ac4dda586d08346c6ca61ea7268db3e298817bb0f81a179c07c2d8d97aa0a93b",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 516
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c12420e2ee8ea3a16399ccdbd2f0f8dd07b96dd4",
+            "content": "sha256:6f78d1ce98848d8b145f837f07197391a47bf04dfa87f07b75f87bb8a3b746f9",
+            "locator": {
+              "end": 756,
+              "kind": "line_range",
+              "start": 590
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c12420e2ee8ea3a16399ccdbd2f0f8dd07b96dd4",
+            "content": "sha256:43f46970cc75dbaea74f61090d750d652b22d4f54980722f3ed4760c56e3fd09",
+            "locator": {
+              "end": 976,
+              "kind": "line_range",
+              "start": 767
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Implementation under test (`ChatsStageBody`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "content": "sha256:d4ba658fb99a26f2b42f88b317c8d798fa6226494e751b3004754c71fec356dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChatsStageBody"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "content": "sha256:153565c91193af197938d2fea67be95ceef79a2f186b754f82b7849a4e34895f",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The typed page/item/status builders the warm seeds now use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:aa5e5884fe62b3a242f909a2f7571a501ad60e9d4172adc0376ef40ef927b801",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationIdentity"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:272f8617aece255062e79860409fb03625f2c697befebd61a3a794da1604bac5",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationStatus"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:5d2c7b8b4e6bd61dbd010beace48482d175e23bec9b036cd4a0eb2e10612673f",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationItem"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:72a2fb4edf364b89bf2d29ee74bc7663acf79aed8aea14330232e6846698eb05",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationPage"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `live.completeness` reason stays `null` under the all-`supported` tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:e3698496c58f36900eb0fac3fdc8235f3c260622f57e5b56266867b22d82999e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityReason"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `history.toolCompleteness`/`history.completeness` cue stays `null` under the all-`supported` tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:15d097df83af0902f744f5295ffe2ac6c1fd916453be27807eba4de34355e474",
+            "locator": {
+              "kind": "symbol",
+              "name": "historyCapability"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

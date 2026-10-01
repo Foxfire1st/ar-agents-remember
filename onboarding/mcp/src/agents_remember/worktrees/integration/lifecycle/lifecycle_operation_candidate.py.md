@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [lifecycle operation integration overview](overview.md)
@@ -45,19 +35,19 @@ identity.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 See task `260821-CLIVE-L1` L1-R3 and L1-R6.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Candidate identity has explicit state/tree/fingerprint/intent fields. | `LifecycleOperationCandidate` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:16-22 |
-| Canonical JSON binds normalized input, Git provenance, and task intent. | `lifecycle_operation_candidate` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:34-79 |
-| The binding carrier for the exact intent. | `task_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:30-35 |
+- Candidate identity has explicit state/tree/fingerprint/intent fields. [1]
+- Canonical JSON binds normalized input, Git provenance, and task intent. [2]
+- The binding carrier for the exact intent. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
@@ -73,16 +63,3 @@ differ at any authority surface cannot collapse into one replay identity.
 Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, candidate identity now includes
 the canonical task intent digest; a closeout or direct-landing operation whose intent differs cannot
 replay as the accepted generation. Part of the landed L25 candidate `99dc249b`.
-
-## Update History
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  the lifecycle-operation candidate and binding now carry typed `task_intent` and include it in the
-  durable fingerprint; documented the intent-bound replay identity invariant. Verified at code commit
-  99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded the typed candidate binding and door-aware fingerprint. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from candidate tree `4241908c`; verification metadata awaits closeout.

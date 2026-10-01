@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `AdoptedLifecycleArtifact`; `LifecycleEnclosureAdoptionReceipt`; `LifecycleEnclosureAdoptionPreview` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
+            "content": "sha256:70b90720a0363408065e5ba7703e59b448601a6903bc6b368659d45e8bb1ec13",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdoptedLifecycleArtifact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
+            "content": "sha256:e6b55eb427845fdd7fea0e8abc74c0cb5fc78229193b28d35321058731353917",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleEnclosureAdoptionReceipt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
+            "content": "sha256:2e20b55ab4cc81503a195060505bdd2be3756c77162ef74163b67fa9b04678e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleEnclosureAdoptionPreview"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
+            "content": "sha256:af625bc9542fc18432663120a72ed82a6ca060994bcfd25f032f40c36159b4c5",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
+            "content": "sha256:e8caa31e537590e7464065db8d55e782246057d21e64e322e2de57006294d8e5",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
+            "content": "sha256:5e7bb773c1e7bd35b939c1f8877078d2201d4aa05cf78547051b16cb49815191",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The missing-intent generation archive recognition predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
+            "content": "sha256:3def8f6fd184ee8f858413f007d33e86c43cbf89a918615337a937ef63d3bda6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LEGACY_MISSING_INTENT_ARTIFACT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
+            "content": "sha256:17371e2316208a8256929693a678f3c3eee410665c03edee3d5354d4e1944d4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_legacy_artifact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

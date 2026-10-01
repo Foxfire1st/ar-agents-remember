@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_codex_adapter_thread_routing_and_registry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Turn start sends only the policies the seat configured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eb7967d001b4af3171251ee284663e6c225d2e6",
+            "content": "sha256:319524804c0d5fb6661308c71be9bbdb0929ce402665ec4247df7511a6a40d9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_turn_start_sends_only_the_policies_the_seat_configured"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A turn the seat did not dispatch still makes it busy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eb7967d001b4af3171251ee284663e6c225d2e6",
+            "content": "sha256:25954114c0809949f96b0010a00daae30ef3ea0c8258a6ad61b27d942490fa53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_turn_the_seat_did_not_dispatch_still_makes_it_busy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A sub agents settings frame is evidence not the seats settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eb7967d001b4af3171251ee284663e6c225d2e6",
+            "content": "sha256:5ad8bcd19c968c06f3771574e79ff5020a1502e302677d10ef73fa6ddb2ebfbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sub_agents_settings_frame_is_evidence_not_the_seats_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

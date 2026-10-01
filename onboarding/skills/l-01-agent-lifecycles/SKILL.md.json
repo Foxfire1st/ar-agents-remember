@@ -1,0 +1,247 @@
+{
+  "path": "skills/l-01-agent-lifecycles/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The router is exactly three ordered conditions.\n\nAnchor: \"## Which Lifecycle Am I? (the router — exactly three conditions, in order)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:25af96624d32195662fa2f95c370c3ba801fa6ee51693258c0cf49fc50f721a1",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The companion files now include the producers' curator hand-off shape beside the brief schemas.\n\nAnchor: \"the **producer's output shape**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:ab69b92baaa29ce1c05898428302b50d1fbbc7d58e01bc94259fdc66baf7cac5",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registry assigns one canonical file to each role.\n\nAnchor: \"## The Role Registry\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:73f893c413cf21875ea98a6a520e96f53e6c7f2bc8d97c01ad98e678c901efd6",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:58175d14b56c66917a6ec87b8dee3ac5281dc0b4a60e23997f7b2e0ca07a46f8",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The minimal frame binds roles to canonical task-document altitude and relays silence mechanically.\n\nAnchor: \"the shared core\"; `# Core — The Minimal Lifecycle Frame`; `# Core — The Minimal Lifecycle Frame`; \"The seat binding is the catalog binding made at dispatch\"; \"Silence is supervised\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:ae465ec498021ee113ba345cb16e388df23d0ccdfec5b9b986f0381a87d41e8c",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "89a63a41f4dd7ffcc16b880922509e658ede9e8c",
+            "content": "sha256:7a825e5fa7330c232393ba521185cc16a8ec9f8a2013b24834dfa55e3f74c0fe",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d044d376148ccfb3194d34248e2a98c7201c3b99",
+            "content": "sha256:77c2d52c1a607968eaf72b2d743eaef87d6165533ca3113a9c354d322c46eb4d",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/lifecycle-frame.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared continuity and authority invariants are explicit.\n\nAnchor: `# Core — Shared Invariants (every role can count on these)`; `# Core — Shared Invariants (every role can count on these)`; `# Core — Seat Authority (shared by every role)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89a63a41f4dd7ffcc16b880922509e658ede9e8c",
+            "content": "sha256:800fbf439859b4fedba7eaefbb5d5328f83d9f0e99078ed42133f3a7326bb58a",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
+            "content": "sha256:8dcc78812092daf6f788be86ec379e186a990a3098247ebb7477d99e313cfadd",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/invariants.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Dispatch has two process-derived caller kinds and one shared transaction.\n\nAnchor: \"two disjoint caller kinds\"; \"Every launcher or role that dispatches a hosted role calls\"; \"two disjoint caller kinds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89a63a41f4dd7ffcc16b880922509e658ede9e8c",
+            "content": "sha256:f0f4a57ef77a56c7fc84782a6b34113369b777a4c9f5575125d73cd2ac3f7eee",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Ambient bootstrap compiles and pins one complete architect brief.\n\nAnchor: \"# Template — Architect Brief\"; \"Compiler notes for the launcher\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29aeaa8008c172e1821e394f03454eadd16dd0a2",
+            "content": "sha256:2318204e974451168a633445ec35a71e87abe6655fbf99cd7a0fe28a738af352",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/architect-brief.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion.\n\nAnchor: `## Acceptance is per stable ID and version, never aggregate`; `## Acceptance is per stable ID and version, never aggregate`; \"independent of requirement acceptance\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "content": "sha256:4e970b2fc818c268b67c85b9dc3ee85bab842a29bbf01d44f80c80bd56ac0fce",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat.\n\nAnchor: `## Requirement revisions and delivery attempts are separate axes`; `## Requirement revisions and delivery attempts are separate axes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Leaf journals are authority and the master summary is explicitly rebuildable and non-gating.\n\nAnchor: \"The detailed per-leaf worker and reviewer records are authority.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "content": "sha256:b19fa165fdb81f64d4c08822c5cc58916c018422c991bc6c630bf8d4603de123",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

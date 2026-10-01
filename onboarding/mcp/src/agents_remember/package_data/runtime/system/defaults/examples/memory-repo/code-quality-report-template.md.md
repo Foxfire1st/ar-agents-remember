@@ -1,15 +1,5 @@
 # code-quality-report-template.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T06:30+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `../../../../../../../../overview.md`      |
-
 ## Governing Overview
 
 [mcp/overview.md](../../../../../../../../overview.md)
@@ -71,39 +61,22 @@ project-specific copy, which received the same correction.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation is needed for this template example.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution. | `# Code Quality Report Template` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md:1-69 |
-| The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example. | `## Tool Results` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md:18-39 |
-| The findings sections separate touched-file findings from existing or out-of-scope pressure. | `## Findings` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md:40-59 |
+- The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution. [1]
+- The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example. [2]
+- The findings sections separate touched-file findings from existing or out-of-scope pressure. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The live memory layer carries a project-specific copy beside `system/tools.md`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The local memory-layer template is the project-specific copy used by `agents-remember` agents. | `# Code Quality Report Template` | system/code-quality-report-template.md:1-55 |
-
-## Update History
-
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 8 citation finding(s); scoped recheck clean.
-
-- 2026-07-31T06:30+02:00 — 260731-EFA-L2 gate honesty (requirement L2-R3): the Radon rows
-  can no longer be recorded as `passed` or `failed`, the CRAP row can no longer be
-  recorded as `reported`, and the template now states the general rule that a row may only
-  offer results its tool can actually produce. Recorded the generated-copy relationship to
-  the root `system/` source. Verification metadata is pinned to the leaf's reformat commit
-  until closeout stamps the code commit.
-
-- 2026-05-28T12:32+02:00: Created after adding the packaged memory-repo example for quality-report transparency.
+- The local memory-layer template is the project-specific copy used by `agents-remember` agents. [4]

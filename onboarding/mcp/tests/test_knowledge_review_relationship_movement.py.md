@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_review_relationship_movement.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_review_relationship_movement.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T19:40:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -101,42 +91,33 @@ unit lane.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the uncommitted candidate: the module's own docstring, the
 fixture builders, the read-back helpers and the eleven cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what it measures and of the near-copy content constant that makes the source movement a rename to Git's own detection. | `RENAMED_PATH_TEXT` | mcp/tests/test_knowledge_review_relationship_movement.py:1-32; mcp/tests/test_knowledge_review_relationship_movement.py:78-86 |
-| The two-snapshot fixture and the movement populations authored through the public store operations. | `build_movement_fixture`; `ClaimDraft`; `MovementFixture`; `author_claim`; `remove_claim`; `author_revision`; `_reassign_family` | mcp/tests/test_knowledge_review_relationship_movement.py:128-200; mcp/tests/test_knowledge_review_relationship_movement.py:94-100; mcp/tests/test_knowledge_review_relationship_movement.py:104-118; mcp/tests/test_knowledge_review_relationship_movement.py:265-293; mcp/tests/test_knowledge_review_relationship_movement.py:296-307; mcp/tests/test_knowledge_review_relationship_movement.py:310-336; mcp/tests/test_knowledge_review_relationship_movement.py:339-390 |
-| The route authoring at each snapshot's own scope, and the merge predecessors read from the candidate's rows. | `_record_baseline_route`; `_author_route`; `_govern`; `_merge_predecessors` | mcp/tests/test_knowledge_review_relationship_movement.py:214-229; mcp/tests/test_knowledge_review_relationship_movement.py:232-243; mcp/tests/test_knowledge_review_relationship_movement.py:246-262; mcp/tests/test_knowledge_review_relationship_movement.py:203-211 |
-| The read-back helpers: the composition call and the movement selection from the payload's relationship collection. | `review`; `review_of`; `realization_movements`; `movement_between` | mcp/tests/test_knowledge_review_relationship_movement.py:398-405; mcp/tests/test_knowledge_review_relationship_movement.py:408-414; mcp/tests/test_knowledge_review_relationship_movement.py:417-424; mcp/tests/test_knowledge_review_relationship_movement.py:427-441 |
-| **The packet's conforming example and the non-conforming reading measured beside it.** | `test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity`; `test_only_the_after_graph_is_read_so_the_old_association_vanishes` | mcp/tests/test_knowledge_review_relationship_movement.py:447-494; mcp/tests/test_knowledge_review_relationship_movement.py:497-528 |
-| **The withdrawal boundary and the selection boundary: a deleted file keeps its identity and reason, and present-outside-selection is never a deletion.** | `test_a_withdrawn_realization_stays_visible_with_its_deleted_file_and_its_identity`; `test_a_record_the_other_selection_did_not_reach_is_not_displayed_as_a_deletion` | mcp/tests/test_knowledge_review_relationship_movement.py:531-570; mcp/tests/test_knowledge_review_relationship_movement.py:573-601 |
-| **The labelled rename inference, and the same rename with no authored edge producing a retraction and an addition.** | `test_a_source_rename_is_displayed_as_a_labelled_git_inference`; `build_no_authored_edge_fixture`; `test_the_same_rename_with_no_authored_edge_is_a_retraction_and_an_addition` | mcp/tests/test_knowledge_review_relationship_movement.py:607-637; mcp/tests/test_knowledge_review_relationship_movement.py:640-672; mcp/tests/test_knowledge_review_relationship_movement.py:675-717 |
-| The authored split and merge read from the candidate's own predecessor rows. | `test_the_authored_split_and_merge_are_displayed_from_the_candidates_own_edges` | mcp/tests/test_knowledge_review_relationship_movement.py:723-753 |
-| The family reassignment, the route reassignment and the ungoverned identity. | `test_a_family_association_reassigned_to_a_new_revision_displays_both_recorded_sides`; `test_a_governing_route_reassignment_displays_both_recorded_routes`; `test_an_identity_with_no_route_is_displayed_as_ungoverned_and_never_as_the_root` | mcp/tests/test_knowledge_review_relationship_movement.py:759-800; mcp/tests/test_knowledge_review_relationship_movement.py:803-826; mcp/tests/test_knowledge_review_relationship_movement.py:829-857 |
-| **The unresolved anchor keeps its own state and reason.** | `test_a_side_that_did_not_resolve_exactly_keeps_its_own_state_and_reason` | mcp/tests/test_knowledge_review_relationship_movement.py:860-891 |
-| The two exact-scope support modules this case module consumes, registered on both consumer rows of the lifecycle catalog. | `build_diff_fixture`; `build_endpoint_fixture` | mcp/tests/diff_scope_test_support.py:197-241; mcp/tests/test_knowledge_review_source_endpoints.py:202-234 |
+- The module's own statement of what it measures and of the near-copy content constant that makes the source movement a rename to Git's own detection. [1]
+- The two-snapshot fixture and the movement populations authored through the public store operations. [2]
+- The route authoring at each snapshot's own scope, and the merge predecessors read from the candidate's rows. [3]
+- The read-back helpers: the composition call and the movement selection from the payload's relationship collection. [4]
+- **The packet's conforming example and the non-conforming reading measured beside it.** [5]
+- **The withdrawal boundary and the selection boundary: a deleted file keeps its identity and reason, and present-outside-selection is never a deletion.** [6]
+- **The labelled rename inference, and the same rename with no authored edge producing a retraction and an addition.** [7]
+- The authored split and merge read from the candidate's own predecessor rows. [8]
+- The family reassignment, the route reassignment and the ungoverned identity. [9]
+- **The unresolved anchor keeps its own state and reason.** [10]
+- The two exact-scope support modules this case module consumes, registered on both consumer rows of the lifecycle catalog. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **created.** The module is new in this leaf (`ICR-R08@v1`) and this is its one-to-one card. It records the eleven cases that measure the packet's Required Behavior, Failure And Recovery Behavior and boundary examples through actual store operations and the production composition, the fixture builders the two sibling case modules import, and the module's governed registration: a source-derived consumer of both `consumer_scope = "exact"` rows in `mcp/tests/evidence-lifecycle.toml` (the Eighteenth deliberate re-pin) plus its own `unit-regression` lane row in `mcp/tests/test-evidence-lanes.toml`. **Basis accounting:** the verification pair above names this leaf's base, the last real commit the reading was taken against; the candidate is named here in the body rather than in a metadata row, and closeout owns the stamp once the code commit exists.
+No applicable cross-repository source was found.

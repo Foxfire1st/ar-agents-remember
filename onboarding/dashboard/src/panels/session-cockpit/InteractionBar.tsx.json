@@ -1,0 +1,358 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/InteractionBar.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Multiplexing fan-out + per-payload bar: representation, badge, stale clear, focus, composer mode, id-matched round-trip, retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f05f3361e2c16bb8fdaee1e19704e09dd6db74",
+            "content": "sha256:efa3105c63c02605798b3ac5899308558b97403458791853c89985411a5f4ea1",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionBar"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The answer path + the plural-pending helpers (`pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction`).\n\nAnchor: `pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:49acdeee34ad381f4eab0eead29d968bfbccb03e0a23381a250f1f181cf87cc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "pendingInteractionPayloads"
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:eb930db27750d1c421a12c2ed18002ad742223093492c4fe41466fdb5864fd91",
+            "locator": {
+              "kind": "symbol",
+              "name": "pendingInteractionAgentLabel"
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:7ea467b849ee0f4fe83d2d4e3893497f8a488fd4c2bd42c3b9f729011af8559d",
+            "locator": {
+              "kind": "symbol",
+              "name": "representSessionPendingInteraction"
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The payload selector the rail/triage chrome previews (parent first, else first agent entry).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:6515fc565da5c3eb15e9cc00461e807b3e03c2dcefc8f46636a53e74b19630af",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionPendingInteractionPayload"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `interactionAnswer` per-seat slice this bar round-trips through.\n\nAnchor: \"const submitAnswer = useCallback(\"; \"const submitAnswers = useCallback(\"; \"setInteractionAnswer: (id: string\"; \"interactionAnswer: answer\"; \"stale round-trip state (review finding 5)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:656d9022edf6b852d534973b7ed48e372c75fc86d5a8186c3c0ad7136ef01a32",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:252670e2fc70cc4d2bde36da0f01fa7114c03ba56dd9eb8b7c8ce73b6951663b",
+            "locator": {
+              "end": 582,
+              "kind": "line_range",
+              "start": 582
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:6faf28b0b8e54fee624a7edf966dc079d316a20da0ecab5163fc347bd1d56f76",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90f05f3361e2c16bb8fdaee1e19704e09dd6db74",
+            "content": "sha256:682f20f9c6bc2673749484397f3689580ce1b0cb8096299034e0c6b6338cd44f",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f05f3361e2c16bb8fdaee1e19704e09dd6db74",
+            "content": "sha256:a7c0ef7ee5aeee76aaf6dcecaab105a7335eff304e472f7f6b1079622de58a53",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The centralized copy (honesty hint, answered/answering, composer-mode label).\n\nAnchor: `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERED`, `INTERACTION_ANSWERING`, `INTERACTION_COMPOSER_MODE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:38aac4e195126df3ca0e41785174282e9dbd5a2ac5ef8ca13db14a6b17bcfa5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_HONESTY_HINT"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:2235d08caaccade760b78fc1d5043ba39f1ced1fae61cd69fdc16fd4cde41701",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_ANSWERED"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:c1dc3ea8ca47b34a17d3fb651818e52b9dbdaaedbe876232f95cab3fb6bdf18d",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_ANSWERING"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:ca8b48b9a3793a50ef9da26acdeb7f7fb9529ea0f8bab89c8fc9ba66e9ccce21",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_COMPOSER_MODE"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The view mounting the bar above the composer + the palette triage that focuses it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f05f3361e2c16bb8fdaee1e19704e09dd6db74",
+            "content": "sha256:efa3105c63c02605798b3ac5899308558b97403458791853c89985411a5f4ea1",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionBar"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The inspector's verbatim payload the unrepresentable fallback points at.\n\nAnchor: \"renderRow={(entry) => <SubmitEvidenceRow entry={entry} />}\"; \"value={<InspectorRaw value={bridgeError} testId=\"; \"Pending interaction (raw)\"; \"unrepresentable kinds say so honestly — no dead buttons\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:019a2e24452c4fc2011f15d2d27ad51574763aa1e1a65e611ccc34247d27664e",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:73217518e1a9d4d670231e60ba17f55f57764bb8180954760435f22e77426289",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:49eb4d8591fe20d6c22354f289e341ff8fcf1847e8fffeadadd4be8c32a1316a",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:79c72e1fcaacc6f2d5b5e16e3f830de4616814437659dc798abd762cf532a956",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b4963511b537c77c83c3d2357d1c1a761872b28b",
+            "content": "sha256:1dbae9785fd6c5ae831fc1205f1553daa7e5452acefbd1e16ea9f173bca76b3a",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The jsdom suite (kind-awareness, round-trip, focus, stale clear, + the multiplexed block).\n\nAnchor: \"kind-awareness (F8)\", \"round-trip states (F7)\", \"stale round-trip state (review finding 5)\", \"focus + announce honesty\", \"structured questions (260718-CHATS-L5I)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:fe31b5baf8e1ae32d04cbdafd53933b4fef33f70e6dc6d34d3ed0be77036d308",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:75b9845021180718e2ad7960f415c02f6477ac951ff570a9e807805a12d1bc74",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:6faf28b0b8e54fee624a7edf966dc079d316a20da0ecab5163fc347bd1d56f76",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:bf60fd5fc05ad8dca5dbf8f0c5b3d68ec8a46df89dfc35057ea9f48de4682525",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f4f3be1519092b96c6da1b1cff184eccbcd60b55",
+            "content": "sha256:a8fdc5fb10bb970864eb323e099356f978c340301f0e3f0d66dfba7df44a0280",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

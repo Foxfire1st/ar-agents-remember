@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/structural/reviewer_parent.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Ambient parent derivation is topology- and altitude-specific.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4abc21deca63705a9cae6281688d15a84f70b52",
+            "content": "sha256:6dfca5d259a6a0e5c66148ead01ea0f6b8035c70cd2a2212dd3c2fb7237ea2eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ambient_reviewer_parent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dispatch provenance carries the exact reviewer parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4abc21deca63705a9cae6281688d15a84f70b52",
+            "content": "sha256:6a507f530390f8802ddb077a271bb1416098ae402db46c7d8462be194ca1e03d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_dispatch_provenance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # responses_server.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `scripts/e2e_harness/responses_server.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T22:20:19+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `scripts/e2e_harness/overview.md` |
-
 ## Governing Overview
 
 [Ambient Role-Chat E2E Harness](overview.md)
@@ -49,41 +39,21 @@ both accepted only when exactly one matching public tool exists.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. The real request payload is the runtime authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Tool discovery and schema validation operate on the request produced by real Codex. | `ScriptedResponses` | scripts/e2e_harness/responses_server.py:47-127; scripts/e2e_harness/responses_server.py:329-344 |
+- Tool discovery and schema validation operate on the request produced by real Codex. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The state script maps ambient, hosted, retirement, vacancy, and replacement prompts to public tools. | `_action` | scripts/e2e_harness/responses_server.py:144-204; scripts/e2e_harness/responses_server.py:277-300 |
-| Tool-search output is paired with its exact query call id. | `_has_completed_tool_search` | scripts/e2e_harness/responses_server.py:390-403 |
+- The state script maps ambient, hosted, retirement, vacancy, and replacement prompts to public tools. [2]
+- Tool-search output is paired with its exact query call id. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The server is a local test provider with no sibling-repository dependency. | `ResponsesServer` | scripts/e2e_harness/responses_server.py:207-226 |
-
-## Update History
-
-- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
-  canonical anchored citation format. Verification metadata remains closeout-owned.
-
-- 2026-08-30T22:11:35+02:00 — 260821-ARSPAWN-L5: delegated controlled negative
-  advertisement proof construction to its dedicated module while retaining live-tool validation and
-  event ownership here. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:59:40+02:00 — 260821-ARSPAWN-L5: replaced the local top-level schema
-  check with the canonical dispatch-advertisement validator, content digest, and two controlled
-  regression sentinels; malformed request diagnostics no longer mask themselves. Verification
-  metadata remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created onboarding for the deterministic real-Codex Responses provider. Verification metadata remains closeout-owned.
+- The server is a local test provider with no sibling-repository dependency. [4]

@@ -1,0 +1,188 @@
+{
+  "path": "mcp/tests/test_review_change_kinds.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture's members, one per badge kind, and the three families.\n\nAnchor: \"one member per badge kind\"; \"its members are reordered\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:86484a20d00a58803439c1442ca2be429d8e4b880aac5283ddb95252081d2934",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The world: a live leaf over four Git trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:e3569e7bd67140042a54daa2fef49ed342bc18ac3c3a5b4cc747d1dd55e647f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every occurrence's kind from the recorded comparison, and the shared member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:372023811e90b8b621ada511bea3a31d34d951866bf8cb482126397c4bad48cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_member_occurrence_carries_its_kind_from_the_recorded_comparison"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:d92d13ac6f1b676950d4b55e2698731a184cd89e78bc12df10adfe83139021d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_shared_member_shows_membership_where_it_joined_and_unchanged_elsewhere"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Returned members only, and the failure states that are unknown, never unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:67f74674ec717ca16ba50f22efb167e15c2dbd2f7dcf407aabd20fd47739adaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_page_describes_only_the_members_it_returned"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:30b04bf51c615a66f8295ed35bdda0cfe6f7c35234a511d7cc0cb945d33009c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_sidecar_leaves_implementation_unknown_never_unchanged"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:5861a4096491200ef9a8b300cef67aace9facd5894fc37e53c69558786736181",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_trees_that_cannot_be_read_make_every_fact_unknown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Definition 8, the moved entry, the unresolved range and the unread sidecar beside an established fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:097e8f52f99a3089f370fcace8ecb4246205265848b2a8a2f26256db579fbe8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_non_text_file_is_implementation_through_a_file_entry_only"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:cdcec9568be9c00753307ab96c5cf5d13a9efcd5e54351903456901015e58b32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unread_sidecar_of_a_changed_file_marks_unknown_beside_an_established_fact"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The total, the derived facts and the dataset review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:9589d2f76d2538b0914fdc7b6ddb7edfd3c8d64b4e356e58e5da22029f6a2ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_total_is_unknown_only_when_the_familys_own_records_fail"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:b7aabf5e694563190942a50e8f1f08f9bbda90a0ccfd2cf04a175cd2b1db351d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_facts_are_derived_and_describe_exactly_the_returned_members"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "83e73adcf1bfb62be2cf03fdc932193dc2f781ad",
+            "content": "sha256:b49c994700b0d430b0784459764a4c15f9b247c8b8e643f7815f6932b688729a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dataset_review_carries_no_change_facts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Its lane row.\n\nAnchor: \"mcp/tests/test_review_change_kinds.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:84e8e28085d7272fb6fef7819b97de4ff4cd019c2c583473b34aa596236c154c",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

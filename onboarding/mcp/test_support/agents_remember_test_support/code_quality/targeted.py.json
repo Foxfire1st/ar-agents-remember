@@ -1,0 +1,73 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/targeted.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The result carries exact rail scope plus typed ownership evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc9b31af4e37f71fda343827fc86c89db4dc9ea2",
+            "content": "sha256:a0d4f89c81908350c34e3167b09e169b4740a68dc160862a8abf9d3846b9335b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TargetedScopeResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The diff includes deletions and refuses Git failures.\n\nAnchor: \"def changed_paths(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc9b31af4e37f71fda343827fc86c89db4dc9ea2",
+            "content": "sha256:9fddc9a502fd9e74fe5857ea659386b795a08618a290c1ebdb099d4e33395877",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One graph derives closure and affected tests while explicit package authority derives product measurement scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc9b31af4e37f71fda343827fc86c89db4dc9ea2",
+            "content": "sha256:80868bdd2e424b182bf4e8f3a748a9607479e41278f6336c0614b5a11446eae2",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_targeted_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Consumer semantics, explicit global invalidation and unresolved-input decisions live at the canonical owner without deciding product ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9f286c5dde16fd945322e6788c7be6f0b2a3dc",
+            "content": "sha256:88d5e3ac8289a6db3944a0d9fa719f0a39b101483aa168b6f54a6bb231157bc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DependencyOwnershipGraph"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

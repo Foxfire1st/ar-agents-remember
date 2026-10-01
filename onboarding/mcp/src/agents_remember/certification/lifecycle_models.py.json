@@ -1,0 +1,112 @@
+{
+  "path": "mcp/src/agents_remember/certification/lifecycle_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Finalization order contains code, external memory, and contract publication only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8760f7afe3957c8bd4874b9556c9f7ec573ffe05",
+            "content": "sha256:248a1405901f841271c8c8427855847efca56cc1a2c33389448ba6d05792fd68",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalizationLeg"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exact-candidate observation is the admission boundary's owner-produced input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8760f7afe3957c8bd4874b9556c9f7ec573ffe05",
+            "content": "sha256:53de3ec693f1e82233d62e3ec2473cfc9443bf8919cec522a4ea16121ce3aeb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExactCandidateObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Prior-red corrective and recovery records bind digests to semantic envelopes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f220125db85b19a6b1b797e926e99bcbc0531c4e",
+            "content": "sha256:b9e1349304fc85ea0b48c07ab8a895d6f131e7ea84c9399284a3c20edcb6b6a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_disposition_shape"
+            },
+            "path": "mcp/src/agents_remember/models/certification/corrective.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8760f7afe3957c8bd4874b9556c9f7ec573ffe05",
+            "content": "sha256:2cb4d87bd8d996b851eb4664faa4659c92ab51a14e89958bbf879e78b47719f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PriorRedDispositionSemanticEnvelope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The durable leg journal fixes order, intent exclusivity, monotonic progress, and the resume edge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8760f7afe3957c8bd4874b9556c9f7ec573ffe05",
+            "content": "sha256:0f3e38f4f97d2cc947f373852696e2d5c697782605b043b48d3fcd4d94aecc43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_ordered_progress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Certificate identities and creation provenance are imported from the R21 certificate owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:13e15cb90796adde3d5b9c39cf6271a588cadef7cc00a88475e6b4d793a8bacd",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateCertificateIdentity"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:39fc5fd9f0e611ce0e3cd34fa2fe5a4c059eec7ade67262a98bdc42570f6b0b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreationProvenance"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

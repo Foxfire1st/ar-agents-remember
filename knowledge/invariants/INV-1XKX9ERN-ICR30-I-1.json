@@ -1,0 +1,26 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [
+    "Disposition source: this leaf's own measurement at the accepted line, 2026-09-24"
+  ],
+  "exclusions": [],
+  "id": "INV-1XKX9ERN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: refined by a new observation.",
+        "Evidence: Driven, not read: the installed console script rooted in the primary checkout answers 'undeclared Agents Remember execution from the primary checkout is refused' while the byte-identical package installed to a non-checkout location runs the taskless entry against the same settings document; the repository's own pin (260918-TSIP-L3, T30) records that any mode declaration lifts the confinement, which is why the reachability condition names how the process was loaded rather than the presence of the subcommand."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "bad62dd0-d67f-4efc-a733-c78eebc6a6b0",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Every reachable knowledge write goes through one of two command lines, the leaf-scoped knowledge-ingest and the taskless knowledge-bootstrap, and the mounted MCP tool surface exposes no knowledge writer of its own. Each command line selects its writer by the memory tree it writes: a converted tree (one that holds knowledge/layout.json) is written as knowledge files by the curator file writer, and an unconverted tree is written as one admitted batch by the single knowledge batch writer, which refuses a converted tree and is locked once its memory repository holds converted memory. Which of the two command-line entries a run can actually use is decided by how its process was loaded, because an undeclared process whose package came from a Git checkout is confined to that checkout's own disposable coordination root and undeclared execution from the primary checkout is refused, so the taskless entry is reachable from an installed package or from a declared daemon surface rather than from the checkout it was built in.",
+  "status": "proposed",
+  "supersedes": []
+}

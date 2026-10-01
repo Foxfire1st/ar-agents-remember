@@ -1,0 +1,86 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/update_history/history_order.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The memory quality runner entry is `run_memory_quality_check` (which, since MIK-R24, reports this check `not-applicable-converted` on a converted tree), and this checker exposes its registered style name.\n\nAnchor: \"style.update_history.history_order\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "249444436e02173de66927608d89aa3dadb7f666",
+            "content": "sha256:d546cc82da6704844a46b86e079f843a3629565d8cd9e421819e077afb1409eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_memory_quality_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/check.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "961d92b07979a970b038f73798a14caacdafa71c",
+            "content": "sha256:173c07be9eb05cc7d0c33215f89878f2de45df6aa9ccf91c671662ca4abf04a9",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The checker imports the `rel` path-relativization helper from the drift-check discovery module.\n\nAnchor: \"from agents_remember.memory_quality.integrity.onboarding_drift_check.discovery import rel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961d92b07979a970b038f73798a14caacdafa71c",
+            "content": "sha256:98ba924e5517efc3d93ff74150b114569a8cad91f971af49cd05578d96c49492",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The drift-check discovery module defines the `rel` path-relativization helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47fbe0fe7452568f5bb7f766308430b516d8f247",
+            "content": "sha256:7a9c34c9d98d9287ba75e16a2e4b3030569517b34f49d5d0e4eb2b3f198ee018",
+            "locator": {
+              "kind": "symbol",
+              "name": "rel"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The history-order checker entry is `check_onboarding_root`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961d92b07979a970b038f73798a14caacdafa71c",
+            "content": "sha256:8a4ace7c6ef7dbb0db5d8b94b43f29b0e602206cbed14e7a4bf9f5e108fa44bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_onboarding_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

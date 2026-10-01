@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The persisted global hide-thinking preference hook (the only durable UI bit).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa60969c5320630e9fe1a5b8ecfb3017b47eae42",
+            "content": "sha256:41689208e63f64b7627c545dbd52bf6f4c475a821f6b464284a49a6b7bfe49a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "useHideThinking"
+            },
+            "path": "dashboard/src/data/conversation/thinkingPreference.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The content-block/item types the thinking blocks come from.\n\nAnchor: `ConversationContentBlock`, `ConversationItem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:9b969cc15d4af13d23d484c687742aa7785896cabe8376b0aa0788cded921323",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationContentBlock"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:dc580072cfe96fda01c3de42598e5bc2f81d32569780f998186cba1df463599e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItem"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Streaming-safe Markdown renderer used for each thinking block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e017e9192e01c59b745e9e89cf94fb1712fb1d04",
+            "content": "sha256:f9977686d9ab8494f4f9d55ab2b2f744a7be9761e837f77c6c7f1ed99eba0ac5",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkdownBlock"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The kind dispatcher that routes thinking items here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b156fbba479b8bc6b33a0c1347cdee530f878b",
+            "content": "sha256:fca763ba027acd44b32b62e0f05001857d82abed6b01ff4ca32c859cd908fd1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItemView"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

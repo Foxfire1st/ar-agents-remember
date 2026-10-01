@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Explicit successor recovery from one named retained task-context comparison and its original validated curator record.",
+  "conditions": [
+    "The named parent and original curator record agree with the original source/repository line, and the parent did not already capture the assessment collection.",
+    "The retention owner consumes the recorded source capture without placing it into a live candidate identity.",
+    "Each copied knowledge operand matches the parent identity; disappearance of either expected retained snapshot at copy refuses.",
+    "Failure publishes no successor and reclaims its partial stage/new pin while leaving prior generations and authored judgments unchanged."
+  ],
+  "exclusions": [
+    "Automatic receipt discovery, current-source/current-knowledge substitution, or rewriting a named parent.",
+    "Treating expected retained input loss as ordinary intentional no-selection or historical absence."
+  ],
+  "id": "INV-9BH2BNCT",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "ccfe23f9-5262-4e7f-9240-99b7b79d6776",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Explicit recovery creates a successor from one named retained task-context comparison and the original validated curator record, preserving the original generations and judgments. Retention consumes the recorded source capture without making it live, and copied knowledge must retain the named parent identities. If either expected retained parent snapshot disappears before copy, recovery refuses and reclaims its stage/pin rather than recasting the missing operand as ordinary absence.",
+  "status": "proposed",
+  "supersedes": []
+}

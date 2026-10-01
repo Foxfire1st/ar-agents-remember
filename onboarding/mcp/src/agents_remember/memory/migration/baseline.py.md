@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/migration/baseline.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/migration/baseline.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -122,15 +112,15 @@ and returns either a value or a refusal.
 - **The grouping key carries both halves.** Two baselines differing in either side are two cohorts,
   and no accounting path can merge them by accepting a partial key.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The baseline is the value every other module of this package takes as an input: the inventory groups
 its rows by it, the reference resolution reports a mismatch against it, and the census records carry
@@ -139,34 +129,26 @@ refusal factory it returns instead of raising, the dependency it imports rather 
 snapshot identity it composes, the pair-keyed grouping its consumers depend on, and the two cases that
 exercise the refused and the accepted path.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what a baseline is and why it is a value rather than a parameter: two exact revisions by identity, neither recovered from `HEAD`, compared for equality so two baselines are two cohorts. | `FrozenBaseline` | mcp/src/agents_remember/memory/migration/baseline.py:1-18; mcp/src/agents_remember/memory/migration/baseline.py:35-36 |
-| The refusal's operation, named separately from the candidate write operations so a baseline refusal's operation stays honest. | `BASELINE_OPERATION` | mcp/src/agents_remember/memory/migration/baseline.py:30-32 |
-| The baseline value: two Git tree ids and the two human-facing revision spellings the report quotes. | `FrozenBaseline`; `code_tree_id`; `memory_tree_id` | mcp/src/agents_remember/memory/migration/baseline.py:35-48 |
-| The validation that lives on the value as well as in the factory, because a caller can construct the dataclass directly and a validation a constructor can bypass is a comment. | `__post_init__` | mcp/src/agents_remember/memory/migration/baseline.py:50-67 |
-| The imported identifier pattern both validation sites apply, declared once for the whole substrate instead of re-spelled per module. | `GIT_OBJECT_PATTERN` | mcp/src/agents_remember/memory/migration/baseline.py:26-26; mcp/src/agents_remember/models/knowledge/base.py:20-20 |
-| The baseline expressed in the knowledge vocabulary's own frozen-snapshot shape, sealing the memory tree because that is the corpus the census reads. | `snapshot_identity`; `SnapshotIdentity` | mcp/src/agents_remember/memory/migration/baseline.py:69-82; mcp/src/agents_remember/models/knowledge/candidate.py:195-208 |
-| The pair a census groups its observations by, so rows read at one baseline are never merged into the count of another. | `key` | mcp/src/agents_remember/memory/migration/baseline.py:84-87 |
-| The factory that returns a refusal rather than raising, carrying the observed value, the expected shape and the next action that says never to pass a branch name or a moving ref. | `require_frozen_baseline` | mcp/src/agents_remember/memory/migration/baseline.py:90-116 |
-| The refusal factories and the optional identifying facts the baseline refusal is built from. | `refusal`; `RefusalFacts` | mcp/src/agents_remember/memory/knowledge/refusals.py:47-81 |
-| The revision spellings set to the object ids the factory was given, because inventing a described revision here would put a second, unchecked spelling of the same baseline into the value. | `code_revision`; `memory_revision` | mcp/src/agents_remember/memory/migration/baseline.py:117-125 |
-| The operation vocabulary the refusal is filed under, one member of which is the recorded-scope read this module names. | `BASELINE_OPERATION`; `KnowledgeOperation` | mcp/src/agents_remember/memory/migration/baseline.py:32-32; mcp/src/agents_remember/models/knowledge/result.py:36-83 |
-| The first consumer: the scope inventory is built at a frozen baseline and groups its rows by the baseline's own key. | `build_inventory`; `baseline_key` | mcp/src/agents_remember/memory/migration/inventory.py:650-673; mcp/src/agents_remember/memory/migration/inventory.py:151-157 |
-| The second consumer: a mechanical mismatch carries the baseline it was observed at and renders both tree ids, truncated, so a report can quote the fact without adding an interpretation. | `Mismatch`; `FrozenBaseline` | mcp/src/agents_remember/memory/migration/resolution.py:101-123; mcp/src/agents_remember/memory/migration/resolution.py:29-29 |
-| The case that refuses a ref name as a baseline and accepts the two object ids, and the case that proves two baselines are two observations and never one cohort. | `require_frozen_baseline`; `FrozenBaseline` | mcp/tests/test_migration_census.py:292-310 |
+- The module's own statement of what a baseline is and why it is a value rather than a parameter: two exact revisions by identity, neither recovered from `HEAD`, compared for equality so two baselines are two cohorts. [1]
+- The refusal's operation, named separately from the candidate write operations so a baseline refusal's operation stays honest. [2]
+- The baseline value: two Git tree ids and the two human-facing revision spellings the report quotes. [3]
+- The validation that lives on the value as well as in the factory, because a caller can construct the dataclass directly and a validation a constructor can bypass is a comment. [4]
+- The imported identifier pattern both validation sites apply, declared once for the whole substrate instead of re-spelled per module. [5]
+- The baseline expressed in the knowledge vocabulary's own frozen-snapshot shape, sealing the memory tree because that is the corpus the census reads. [6]
+- The pair a census groups its observations by, so rows read at one baseline are never merged into the count of another. [7]
+- The factory that returns a refusal rather than raising, carrying the observed value, the expected shape and the next action that says never to pass a branch name or a moving ref. [8]
+- The refusal factories and the optional identifying facts the baseline refusal is built from. [9]
+- The revision spellings set to the object ids the factory was given, because inventing a described revision here would put a second, unchecked spelling of the same baseline into the value. [10]
+- The operation vocabulary the refusal is filed under, one member of which is the recorded-scope read this module names. [11]
+- The first consumer: the scope inventory is built at a frozen baseline and groups its rows by the baseline's own key. [12]
+- The second consumer: a mechanical mismatch carries the baseline it was observed at and renders both tree ids, truncated, so a report can quote the fact without adding an interpretation. [13]
+- The case that refuses a ref name as a baseline and accepts the two object ids, and the case that proves two baselines are two observations and never one cohort. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A baseline is two Git object ids and two
 revision spellings, validated as strings and returned as a frozen value or a refusal; nothing here
 opens a repository, reads a ref or reaches a remote, and the Git identities it mentions are values a
 caller resolved elsewhere and passed in.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the frozen baseline. It records the identity model `KS-R21@v1` §1.3 requires — two Git tree ids, never a ref, neither recovered from `HEAD`, because a baseline read off `HEAD` moves when somebody commits — and the two human-facing revision spellings the report quotes beside them. It records both validation sites: `__post_init__` on the frozen dataclass, so a directly constructed value cannot bypass the check, and `require_frozen_baseline`, which returns `KnowledgeRefusal` with the single code `invalid_reference` instead of raising, carrying the observed value and the next action that forbids a branch name or a moving ref. It records that the refusal is filed under `BASELINE_OPERATION = "read_knowledge_scope"` rather than under a candidate write, and that `GIT_OBJECT_PATTERN` is imported from `models/knowledge/base.py` rather than re-spelled. It records `snapshot_identity`'s deliberate choice of the memory tree as the logical digest, because that field means which knowledge dataset was read and both sides survive on the record's own provenance, and `key()`'s pair, which is what makes two baselines two cohorts in the inventory's grouping. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

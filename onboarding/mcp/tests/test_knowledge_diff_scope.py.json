@@ -1,0 +1,553 @@
+{
+  "path": "mcp/tests/test_knowledge_diff_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The unit marker, the fixture, the seed and the public-seam driver every case uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:9ab933a025c006b785e30de6053488b4f4df789d99d5ccef255413f54db5aa19",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:21e0116ccc01bad8e77724e0b820a374828bdc0d9136c366d71a045aaed78f17",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_seed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:9eb12fcbe341dcc7e38f40d3e4b30ebe873a4e888bf17948c22dd72885fa3737",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_diff"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.**\n\nAnchor: \"test_a_role_filter_narrows_the_display_and_never_the_comparison\"; \"test_the_filter_is_bound_into_the_comparison_identity_so_another_filter_cannot_reuse_it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:50cfb2d3dc2b563edadc7a64d7da4c87938d75d3ace4287debc0222214872c56",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 510
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:b9c487a090881ef59a4e4e9eb8ed8f188be31da7074c6df2bab209c910f3130d",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 578
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**`M26`'s node: the limitation validator, whose failing assertion on the frozen file is at `:658`.**\n\nAnchor: \"test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:611f5be20d8ac034b28c6e947862c06ace22d98d3895e0c932548f329947985b",
+            "locator": {
+              "end": 649,
+              "kind": "line_range",
+              "start": 577
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.**\n\nAnchor: \"test_a_truncated_comparison_cannot_be_presented_as_a_complete_one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:ff5a180781daa6da3f31375bea7079f5a33eb6b21e4a2290ebd7b63e45dea1a9",
+            "locator": {
+              "end": 713,
+              "kind": "line_range",
+              "start": 652
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The no-trees expansion that claims no change set.\n\nAnchor: \"test_the_expansion_of_a_comparison_that_observed_no_trees_claims_no_change_set\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:06040644e1177fef0bfb0b28f3bac7b152e792e217375a409b8062eb433afb24",
+            "locator": {
+              "end": 753,
+              "kind": "line_range",
+              "start": 716
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The fixture these cases run on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:001584ab745e28afcd6f1111f23193c034a107b180674d07b25de79659af14a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffFixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:09483ea98a393005a338e66ad2b22f9316da1a8238a005d5cbfe7facd1667d00",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:4f35fe3fefcfe7467dbe42f57d671de1779be58a683811fbddd4c6dc8a74536e",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The unit-lane row this module occupies, and the governed support artifact it consumes.**\n\nAnchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:6152fe3c6e4ca81f7267758e2203b8a7e113f335d720a5117ab9bf154c80d735",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The unit-lane row this module occupies, and the governed support artifact it consumes.**\n\nAnchor: \"evidence_node = \\\"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:6152fe3c6e4ca81f7267758e2203b8a7e113f335d720a5117ab9bf154c80d735",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two readers that let a case name a record rather than a position.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:23136c191d329bad8378a9b2c45e29808ca14e28223091197d79e58b17e526ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "items_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:35074603406adb2c76711bd67fd46ada7ff8c901a26a4125893d7e9925164780",
+            "locator": {
+              "kind": "symbol",
+              "name": "item_for"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:b575956844726843c58b011a49b1104d8ffac4c485d16117b20515576a3880b2",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:3287bf7da377d92a7ef8fd5353178ed04f33da0b3dcec054d6aec85a4bad0c36",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:3287bf7da377d92a7ef8fd5353178ed04f33da0b3dcec054d6aec85a4bad0c36",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:dc520a8d4119421b9fd73fc874a196a7f4dba97cbb9eed29d7464b8e9ea57270",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 572
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:8d4fdc6420b8827a3bebc48756c7a882920361b9d1894acf160c8c80fb64a999",
+            "locator": {
+              "end": 573,
+              "kind": "line_range",
+              "start": 573
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:fdff29c004c8e80b89e828c67ff5a5cd168d5e628579202ec225909d15a0b30c",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:218ef1964aa36b2935a2aa30960752b78b65c570082c4d6fd85fc3721aa3fa2a",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:741c1d5896ed3fc8c58f9d24cb847c805b4a0d96c8a7e8d949c85194e13a1530",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 238
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:30c4042f86c5a5a0faaf6d6ac15399f6c29e935c6b482765422050718d72f753",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 325
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:a02a0f46fada4b9d7dc75b93bb06408d0c479f26c1dca1b140000b15e7b2272b",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 415
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:ae8ff583b759d2d02e1f2775288e4f68d38a7b988b936dbf80aea4eee58eb8e6",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 416
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:d67983f6132945cb1b451d4c1b27e39d0806b6d7a2081fcf948f7798bef58859",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 450
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:30c4042f86c5a5a0faaf6d6ac15399f6c29e935c6b482765422050718d72f753",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 456
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:fc8535606bc8b23ec8db267ec52bd537fcfb4e35f4c8de3ee7722f68c90c1151",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 574
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The revised statement as a successor pair, and the divergent revision groups an identity seed retains per side.**\n\nAnchor: \"test_a_revised_statement_arrives_as_a_successor_alongside_the_revision_it_replaced\"; \"test_the_identity_seed_retains_a_revision_group_for_each_side_even_where_they_diverge\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:21ffed4ee00b8e151821410a3c39531d555aae4f22e00bb95c437878612a90ff",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:49d2eab48f645c70951654acd344b67acfad9013ad8fddfda93f82b918dfe630",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 350
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.**\n\nAnchor: \"test_a_source_only_change_is_reported_as_a_source_observation_and_no_record_field_changed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:a90102345b58e27b755615a2ab215d27b92c1fb90623fefe744224ec36ba55a1",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The statement-only change that still returns the attributed code.\n\nAnchor: \"test_a_statement_revision_with_an_unmoved_source_reports_the_change_and_keeps_the_code_visible\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:f3ed20619f70bdf491d98e42ca79b0f8cf1d3c3f5536f8759ca43d72c5a51dd1",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The unchanged sibling returned on both sides rather than omitted, with one item each way across the record/source split.**\n\nAnchor: \"test_an_unchanged_sibling_is_returned_identically_on_both_sides_rather_than_omitted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:9f7449d82e8d6e0cab83fa00585c60efc1f712b0e6208f9331ae6318b1438b77",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The packet's first non-conforming example, and the node `M1`/`M2` kill.**\n\nAnchor: \"test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:701eeeb9e956666efd3487adfd3bb7f6121d905792d4ef98de5d97b1f723a2a2",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The explicit per-side selectors addressing two different exact revisions of one identity.**\n\nAnchor: \"test_explicit_side_selectors_address_a_different_exact_revision_on_each_side\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:a10b6073bc9f4919f240f3ef038eff9eb7daae2f82abafea5072990cc6fe5eaf",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion with its dangling-edge failure lines.**\n\nAnchor: \"test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:81b010ef2c353f364db385bb89fd4931ca9d5fc9a672dc53c3b7e523d3862a36",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/ambient_seat.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/ambient_seat.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Serving overview](overview.md)
@@ -58,27 +48,14 @@ All failure cases are typed `AmbientSeatError` statuses so application tools can
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Plane caller resolution is a single trusted-context function. | `resolve_ambient_seat` | mcp/src/agents_remember/serving/ambient_seat.py:55-101 |
-| Ambient caller resolution returns the typed marker only when no plane identity exists. | `resolve_ambient_caller`; `AmbientCaller` | mcp/src/agents_remember/serving/ambient_seat.py:25-52 |
+- Plane caller resolution is a single trusted-context function. [1]
+- Ambient caller resolution returns the typed marker only when no plane identity exists. [2]
 
-## Cross-Repo References
-
-
-## Update History
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: made hosted identity
-  complete only as the role+session pair and made either half without the other fail closed instead
-  of entering ambient dispatch. Verification remains closeout-owned.
-
-- 2026-08-21T03:45+02:00 — 260821-ARSPAWN-L1 fix round 3: `resolve_ambient_caller` is now the ambient-first branch decider for dispatch (the both-fail path was dead code and is gone) and its plane-present→`None` branch is unit-tested in `test_dispatch_agent_ambient.py`. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: the file now owns BOTH dispatch caller resolutions — `resolve_ambient_seat` (plane) unchanged and the new `AmbientCaller`/`resolve_ambient_caller` (no plane identity means ambient, never a fallback; the dispatch path refuses when neither resolution yields a caller). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for trusted ambient caller resolution.
+### Cross-Repo References

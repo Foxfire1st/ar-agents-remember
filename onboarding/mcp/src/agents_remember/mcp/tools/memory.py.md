@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/tools/memory.py
 
-| Field                  | Value                                          |
-| ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `mcp/src/agents_remember/mcp/tools/memory.py`  |
-| doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-08-24T14:19+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                      |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                  |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -80,27 +70,3 @@ The transport continues to delegate memory-quality execution without reinterpret
 canonical application owner now lives at `application.memory_quality.controller`. This is a
 package extraction only: sync/start/poll semantics and response finalization remain owned by that
 controller.
-
-## Update History
-
-- 2026-08-26T10:44:52+02:00 — Updated the canonical memory-quality application-owner path after the package extraction; transport behavior is unchanged.
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: rewired the quality payload trio to strict sync/start/poll DTOs and the single controller API; removed flat wait/run-id interpretation from this layer. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: added `memory_quality_check_start_payload` /
-  `memory_quality_check_poll_payload` wrapping the async application envelopes (L15-R7, incl. the
-  `ok`-header gate-repair fix). Verified at code commit de3a0fd9.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `memory_baseline_adopt_payload` took `branches:
-  MemoryBranches`; the carryover pair took `selection: CarryoverSelection` (positional) and apply
-  took `messages: CarryoverCommitMessages`, keeping `intent_note` separate. Compaction, report
-  filing and the act-by-default `dry_run` contract are unchanged. Verification metadata pinned until
-  closeout stamps the L2 code commit.
-- 2026-06-10T09:00+02:00 — Carryover plan/apply responses compacted for 2.5.2 (GitHub #52): full result filed via `write_tool_report`, wire keeps per-decision capped path lists + `carriedPaths` + `reportPath`, drops `candidates`/`carried` (apply previously repeated every record twice; 7.7k tokens for a 28-file carryover).
-- 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the effectful memory payload builders.
-- 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).

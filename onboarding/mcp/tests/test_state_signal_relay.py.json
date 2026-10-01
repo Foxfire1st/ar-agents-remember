@@ -1,0 +1,167 @@
+{
+  "path": "mcp/tests/test_state_signal_relay.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Incident 1 finished worker without inbox row still signals manager",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:b3928420ef7be76c67daa9a2be7cf19e2988f792d81a09842e144459d6ca068b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_incident_1_finished_worker_without_inbox_row_still_signals_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "An open turn never wakes the owner before terminal evidence",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:37d706819a4e56fb6a3a744091006ac8a04c4e927dac6249400c79fd54770f18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_open_turn_never_wakes_the_owner_before_terminal_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Non reaction action revalidates current topology and landed episode",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:059b0e52c34084cce404eb41f000305bc5a4b19692043daf7c2f4beb91fb95b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_reaction_action_revalidates_current_topology_and_landed_episode"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Busy manager holds at boundary then lands exactly once",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:8d8591a44461e667c1420a6390cba544fcea8ba48b75a2e5f1c333288f71d371",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_busy_manager_holds_at_boundary_then_lands_exactly_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Owner rebinding after manager replacement",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:4d193329e558522635a6e8dfe19601c83560329533c85f5649d0c75ad7059469",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_owner_rebinding_after_manager_replacement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Master-bound reviewer reaches the current manager after replacement",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:4c11ef799443aedfcfbac336414c8f19a560c24f8c03d64e36c2bed8692ba215",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_master_exit_reviewer_signal_reaches_current_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Missing or ambiguous parent topology fences one subject while preserving an unrelated finding",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:a7acf058325611a41a306a6ccc42f0cd2bdfc186f12e440ba952eb384de1005a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_topology_refusal_fences_one_subject_and_keeps_unrelated_finding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Owner disappearance after finding revalidation leaves the source eligible and unmarked",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:d0849e019a6db8f92e569b0b2f5bdbf53d5b31b4393d80f3d64c5167421450c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_owner_disappearance_after_revalidation_keeps_source_eligible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Action-time topology refusal fences the subject without a marker",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:97a6aa106285ae387a0bef8dbc2e1f9bd8f19f2a86e83b3b9770e828fc7c49f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_action_topology_refusal_fences_subject_without_marker"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "No done signal for killed or hung seats",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:8d2b54643c95a23eb7674e34cf17df2a00876e338e6e45c6a1a17838b4e8fde6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_done_signal_for_killed_or_hung_seats"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

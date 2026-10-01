@@ -1,0 +1,421 @@
+{
+  "path": "mcp/tests/test_atomic_series_chain_pair_order.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The property the module pins: the chain orders on the landing pair rather than the code commit alone, so two leaves on one code commit remain two landings.\n\nAnchor: \"The atomic landing chain orders a memory-only leaf by the pair, not by the code commit alone.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:b89c3979730aead0f0c44de7f24c98b2bea26e654accf851522903e76fe4640e",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The production chain walk the order comes out of: the chain is proved landed, then ordered by asking the pair predicate against every other remaining leaf and refusing unless exactly one minimum exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:4c5d2339a33ef7a8f76813c08e82d633a62d5f7103f1f1e678d9d3438bcbc112",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_exact_atomic_landing_chain"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:bf922d3bdb63750a9371042c04da9e816b37bc7f9e28b0cc4c1c9cb0734f734e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ordered_atomic_landing_chain"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The spine proof behind the second refusal: each landing must be an ancestor of the ref, and each step may add only official positions the chain's own contracts synced with — or a line one of those positions, lying inside that step, reaches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:ab07871cef88c84c2c74e8097013fc97c19bde3692c09eae6878ee8d8b749c4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_landing_spine_side"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:dca3b8327d8d1f1bf5282e15e021051b98d566991892b6379b9879405d884e92",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admitted_step"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:85d8991c93b892593b656fa2d790eecf9f2e1b265ec5a62b68acb8c835bdc48f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_positions_inside_the_step"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:63f402c86a67c7aaf38e0d1833fb8c062fa2bf273926937c64c01d6369e99166",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reached_by_an_official_position"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:a5a6650407b839b259604e10bbd57edd570da9e0fb46bf7c15cd58350deeb14d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_source_positions"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The origin rule the chain still enforces: with no sync the oldest leaf starts at the recorded base, and with a sync its base must lie on one line with the position the first sync advanced from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:010b120cd5ce1edfe1b338a84e7800b2ef905bcedae8b90b78d5eb7a33ba9976",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_chain_origin"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The contract fields the fixtures set: the mid-task sync log, the integration status, and the leaf identity the chain is keyed by.\n\nAnchor: `integration_status`; `leaf_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:548077f6f23f9aa86178274c2f821ba23b277e4edc4a6982009d8d892bd81f08",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_log"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:d794e023df1c98d3b9b1e00a5a9973214b8970cccdba7d8102133682cb4cceb3",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:aa4d8803109517fd5c90e7623a2de9b6594037d5346d7ff91512c5f3cbf2e388",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The regression the case closes: both directions returned unordered once two leaves shared a code commit, so a complete atomic master containing a memory-only leaf could not be landed.\n\nAnchor: \"two leaves shared a code commit\"; \"atomic-series-leaf-chain-invalid\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:ed6134fcae874917c18fe906a311c8d633c4ad299c8cab9aab3bead8ab0b212d",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:b771bc0fdd0e7f941a01203a7414ea83f701834bb12e6dee0e93377c89313967",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The second, surviving refusal (register row D-45): a base advanced by a leaf-level sync was invisible to a spine that read the series contract alone.\n\nAnchor: \"the spine's admissible positions were read from the series contract alone\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:e5f09df3aa33b14a827c68e8c0c3008249a6c85c2b8fb99c2fd9ee0f826190b5",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The production predicates under test and the import that names them.\n\nAnchor: \"from agents_remember.worktrees.series_closeout import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:7272c77b8bccc7096536a1399595d46ee9511ffe66802c70620c24d5eae9a17e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_landing_precedes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:77411f7e8ec1d2eb2ae792a5e7e973d82ffb95e53ce58042fa32114b7c2d87ba",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Git fixture helpers: a checked-out repository on a named branch, a commit that returns its own id, and a ref placement the checked-out branch does not own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:fb34acd3d02cfc4b6611d6ae67ab2f6373300936fc4b77e29cc7f4a39027f5ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:881a2ca7b9d847e2010bfac6acf1ac60af16e075b52a6a62f95b61042507b7be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_branch"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:f4af377078198cf9ac28c46f16e1fcd6208b40df6c995ef0965f0c2fc1671f29",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Side"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The pair-order class and the contract builder that fixes each leaf's recorded pair independently of its work branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:803597c9ec09698af41360511976ddaaac63c4501fdf0da53cfb35bfbee007b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicSeriesChainPairOrderTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:09bc7c98c90baab3a9c875e502b16da8343953cece3bdef31f990b2541f46aff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The four pair-order cases: a shared code commit with ordered memory is a step, code ancestry still orders, an identical pair is one landing recorded twice in both fixture pairs, and disabled memory keeps the code-only rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:dd0e53609352d59d13ed98110d4757a650181e7ceb59c9a7d4a25fe3f8e244ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_shared_code_commit_with_ordered_memory_is_a_chain_step"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:36e06fb30bd621d854fa58cb53ed10f09dd0f2b0d69648870b2c18a79760ddab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_ancestry_still_orders_when_the_code_position_moved"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:e0a272752735430eefe7719a9389533b370228166de8c8049366c60aa6f02cb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_identical_pair_is_still_one_landing_recorded_twice"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:46b5eaccbd048d25ee6d5c2b9cce547b868b712304bcdd290534b6896063fe82",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_disabled_memory_keeps_the_code_only_rule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The leaf-sync class and its two builders: the canonical series contract, and a landed leaf that may carry its own sync log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:b0c224b141b9ca847e7515bb0db8237ca0c95650b263a0759b716a260ae5c255",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicSeriesLeafSyncPositionTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:b39bbee9ceb4ad9dd0eb1308ed058d188c2982497e55e3374bca84afec67d4af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:c8d3d391cb9c6a57b096764a5156addeda8df9f8b6de9c02216cfb7f61e5132a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The single case that pins all three directions: the recorded leaf-level sync position is admitted and ordered, a position no contract's sync recorded is refused with the foreign commit named, and a step whose endpoint merges the previous landing with a recorded position is admitted as that position's own line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0f5408a10c0eb96ffa347f355a328143f385081",
+            "content": "sha256:33b02132fd68638e4f65e1899991a685a6a4fd3f263db29525e79f3feb6e56ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

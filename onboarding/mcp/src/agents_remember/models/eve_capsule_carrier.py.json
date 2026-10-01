@@ -1,0 +1,273 @@
+{
+  "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The writer that builds this value from one compilation result plus its admitted projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:c3ac2db23042f3f633e7462ac0a5dcb713611ed4a7dc48dc2af94982ed7889a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_carrier"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:41bc4cffe90304a076c0f8625742a5b55ffadb078b94ebea36a5f249fab3aa4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "materialize_eve_binding"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Python reader that proves the declared digest, the binding identity and the git workspace before a process exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:d1dca4dde5ef44f056d15f901a37851f4da2f82cbf221a97f602ddfda5f9531a",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_capsule_binding"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:980edfc68032785938edd1337cc480af7c4218ca5f5f8b7bfd5e3706ae8d513d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admitted_git_worktree"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:25409a4745d190fcaeb6d9a99ac6e33a0eeb77070b35e82af8335437c098f498",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 447
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:eb7b7f581d40eef0024236d2721625ff04b7b570e3a3d521eb9d44199dff2cff",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 499
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The TypeScript reader that re-verifies the same carrier in-process and admits writes from its scope list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9db4c901d974892619158d546490e3dcc8ca5764",
+            "content": "sha256:744cdce3083db7bb1e9b6d30818ef0e172e4f53889dcd55ba8476a74698df06d",
+            "locator": {
+              "kind": "symbol",
+              "name": "loadVerifiedCapsule"
+            },
+            "path": "eve_runtime/agent/lib/capsule.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9db4c901d974892619158d546490e3dcc8ca5764",
+            "content": "sha256:bf20afa752aa73376e670526f316b13e68a530c5b36ba1ba37f62c4af52d6a60",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitWritePath"
+            },
+            "path": "eve_runtime/agent/lib/capsule.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9db4c901d974892619158d546490e3dcc8ca5764",
+            "content": "sha256:7b06774d46b1cada571074d8d72a998950769ff469b11014a5e510d8c3e57b77",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "eve_runtime/agent/lib/capsule.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The git-identity comparison the workspace fields exist for, in both halves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9657dd2760fd3bfd45a2eb101978a1b54b1b196a",
+            "content": "sha256:85dd700bbbd50f712d1adcaf8af3b6f79d6fcdff38a78587259508b91326e56e",
+            "locator": {
+              "kind": "symbol",
+              "name": "verifyAdmittedWorkspace"
+            },
+            "path": "eve_runtime/agent/lib/git-workspace.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9657dd2760fd3bfd45a2eb101978a1b54b1b196a",
+            "content": "sha256:9b5cefa1e9dfa8a7e7963509ff8541ee0329be29fded777f315666d65eb84606",
+            "locator": {
+              "kind": "symbol",
+              "name": "readGitHead"
+            },
+            "path": "eve_runtime/agent/lib/git-workspace.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The channel distinction is realized as two separately-authored dynamic instruction entries.\n\nAnchor: \"trusted system instructions\"; \"lower-authority context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de13668f16ec056e3e81d53bb38aad7f0d560f0d",
+            "content": "sha256:637d8214bb7cf3a392efdc84f8cf2bbdc5b7290bdfc4c920c6408ccedeb40504",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "eve_runtime/agent/instructions/ar-capsule.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6eb988624b4be0a53748009c81de9d49376f1918",
+            "content": "sha256:090b3ebfa337cedcdde8f5bfa8c1dba57b38d0739e8bf76a214957ffb990a244",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "eve_runtime/agent/instructions/ar-task-context.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The cases over this format's refusals: degenerate instruction sets, a workspace scope that is not the workspace, and the digest-versus-disk check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:ccb463f97ea67b3b87f871940b51ed9ae029c99a2b702e06dac525bf754923a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carrier_refuses_a_degenerate_instruction_set"
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:80dac68d61f45f6a36ca91cfff409842dc2ee50f8fc8484db349c735ed0f2408",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carrier_refuses_a_workspace_scope_that_is_not_its_workspace"
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:52653d2248e472facb637a531061c3630ae914fc60acb77bfb6757aa8d200700",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carrier_digest_addresses_the_exact_bytes_on_disk"
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:621e125c9849047fcd26aa7053b7596acc4019670771c6179e5f36cf61f234fb",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:25a56fa894868f16805008bf2f8665609a5b9c6f97c9f0b28e06064d93231bd0",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:7463b189427903af78adf090990474414cd54193e3c78edfa0e97d4231a19b01",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_review_final_output_receipt.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_review_final_output_receipt.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -134,16 +124,16 @@ measures 871 lines, inside the 900 soft rail.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The claims on this card are checkable in the module's own docstring and cases. What a reader should
 carry: the fixture's dataset setup is a **measured** requirement rather than a preference (the shared
@@ -152,43 +142,29 @@ the assertions compare against the store twice (the operation's own result and t
 disk); and the newest four cases exist because a verifier reproduced a false sentence and an unprotected
 narrowing, so each of them fails if that behaviour is reverted.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own map from property to case, and its statement that nothing here is a prebuilt payload.** | `test_review_receipt_binds_the_delivered_pair_to_the_selected_generation` | mcp/tests/test_review_final_output_receipt.py:1-23; mcp/tests/test_review_final_output_receipt.py:451-507 |
-| The catalogue rows this module occupies, and the one revision identity both halves must carry for a subject to be selectable at all. | `REVIEW_INVARIANT_ID`; `CANDIDATE_ONLY_INVARIANT_ID`; `REVIEW_REVISION_ID` | mcp/tests/test_review_final_output_receipt.py:103-103; mcp/tests/test_review_final_output_receipt.py:107-107; mcp/tests/test_review_final_output_receipt.py:110-110 |
-| **The measured reason this module creates its own datasets instead of using the shared read-scope fixture.** | `_seed_review_datasets` | mcp/tests/test_review_final_output_receipt.py:113-176 |
-| The one enclosure value the cases address, and the real fixture that builds it. | `_ReviewCloseout`; `_review_closeout_fixture`; `_write_review_task_documents` | mcp/tests/test_review_final_output_receipt.py:219-231; mcp/tests/test_review_final_output_receipt.py:234-296; mcp/tests/test_review_final_output_receipt.py:299-370 |
-| The real freeze, the real publication owners, and the real MCP tool calls the cases drive. | `_freeze_review`; `_publish_dataset`; `_preview`; `_closeout` | mcp/tests/test_review_final_output_receipt.py:373-389; mcp/tests/test_review_final_output_receipt.py:392-414; mcp/tests/test_review_final_output_receipt.py:417-426; mcp/tests/test_review_final_output_receipt.py:429-448 |
-| **The conforming case, whose every identity is compared against the contract, the Git objects, the published dataset and the reopened generation.** | `test_review_receipt_binds_the_delivered_pair_to_the_selected_generation` | mcp/tests/test_review_final_output_receipt.py:451-507 |
-| The integration phase records the refs it landed, after the move. | `test_integration_receipt_records_the_refs_it_landed` | mcp/tests/test_review_final_output_receipt.py:510-541 |
-| **The non-conforming case: a published dataset the review never compared reads `moved`, and the coverage string is asserted absent.** | `test_review_receipt_reports_a_published_dataset_the_review_never_compared` | mcp/tests/test_review_final_output_receipt.py:544-569 |
-| **The boundary case: the prior receipt's bytes are identical after a successor supersedes it.** | `test_a_moved_candidate_is_recorded_as_moved_and_superseded_not_relabelled` | mcp/tests/test_review_final_output_receipt.py:572-614 |
-| The no-gate case: no generation, no receipt, and the closeout still reaches a real commit. | `test_closeout_records_no_receipt_without_a_generation_and_still_closes` | mcp/tests/test_review_final_output_receipt.py:617-637 |
-| **The boundedness case: one file per phase, leaf-scoped, removed by the named owner.** | `test_final_output_receipts_are_leaf_scoped_and_reclaimed` | mcp/tests/test_review_final_output_receipt.py:640-673 |
-| A location holding something that is not a dataset is `unusable`, with the bytes left untouched. | `test_review_receipt_reports_an_unreadable_published_location` | mcp/tests/test_review_final_output_receipt.py:676-698 |
-| **The reproduced false sentence: the preview never claims a recording the store lacks, in both states.** | `test_preview_selection_sentence_never_claims_a_recording_the_store_lacks` | mcp/tests/test_review_final_output_receipt.py:701-752 |
-| **The narrowing that was unprotected: a selected knowledge operand with nothing published is `unmeasured`, never `bound`.** | `test_a_selected_knowledge_operand_with_nothing_published_is_never_bound` | mcp/tests/test_review_final_output_receipt.py:755-787 |
-| **The tamper case: canonical bytes carrying a forged `bound` read back `unreadable`.** | `test_a_forged_coverage_verdict_is_refused_when_read_back` | mcp/tests/test_review_final_output_receipt.py:790-822 |
-| **The consumer case: the reopened generation reports what the task delivered, phase by phase.** | `test_the_reopened_generation_reports_what_the_task_delivered` | mcp/tests/test_review_final_output_receipt.py:825-871 |
-| The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test-evidence-lanes.toml:222-222; mcp/tests/evidence-lifecycle.toml:807-807; mcp/tests/evidence-lifecycle.toml:1443-1443; mcp/tests/evidence-lifecycle.toml:1496-1496; mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
+- **The module's own map from property to case, and its statement that nothing here is a prebuilt payload.** [1]
+- The catalogue rows this module occupies, and the one revision identity both halves must carry for a subject to be selectable at all. [2]
+- **The measured reason this module creates its own datasets instead of using the shared read-scope fixture.** [3]
+- The one enclosure value the cases address, and the real fixture that builds it. [4]
+- The real freeze, the real publication owners, and the real MCP tool calls the cases drive. [5]
+- **The conforming case, whose every identity is compared against the contract, the Git objects, the published dataset and the reopened generation.** [6]
+- The integration phase records the refs it landed, after the move. [7]
+- **The non-conforming case: a published dataset the review never compared reads `moved`, and the coverage string is asserted absent.** [8]
+- **The boundary case: the prior receipt's bytes are identical after a successor supersedes it.** [9]
+- The no-gate case: no generation, no receipt, and the closeout still reaches a real commit. [10]
+- **The boundedness case: one file per phase, leaf-scoped, removed by the named owner.** [11]
+- A location holding something that is not a dataset is `unusable`, with the bytes left untouched. [12]
+- **The reproduced false sentence: the preview never claims a recording the store lacks, in both states.** [13]
+- **The narrowing that was unprotected: a selected knowledge operand with nothing published is `unmeasured`, never `bound`.** [14]
+- **The tamper case: canonical bytes carrying a forged `bound` read back `unreadable`.** [15]
+- **The consumer case: the reopened generation reports what the task delivered, phase by phase.** [16]
+- The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin. [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The cases build a real enclosure, a real
 generation store and a real published dataset inside one repository boundary; the publication read-back
 consults that repository's authority home, which is why the fixture is bound to the contract's own
 repository rather than to an invented one.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `mcp/tests/test-evidence-lanes.toml`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`mcp/tests/test_review_final_output_receipt.py`); no claim changed. No verification stamp was advanced.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 4 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-23T09:15:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): created this one-to-one card for the test module this leaf introduced to evidence **ICR-R21@v1** — the recorded comparison beside what closeout and integration delivered. It records what the cases actually prove: the fixture is a **measured** requirement rather than a shortcut (the shared read-scope fixture binds another repository's authority home, and the publication read-back consults it); the assertions compare every recorded identity against the store's own reopened truth rather than against the receipt's words; the three packet examples are cases rather than prose; and four of the eleven cases exist because a round-1 verifier reproduced a false coverage sentence and an unprotected narrowing, so reverting either behaviour fails a case. Two limits are carried as limits: the browser halves of A17/A20/A22 remain ICR-R25@v1's, and the failed/partial-transaction clause is evidenced by the no-generation case plus the `ok`-gated attachments rather than by a crashed-closeout fixture with a frozen generation. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `972b44cc07b307929535fe7974d6a30d53c9c4f1`, this leaf's recorded base, whose date is the worker report's own timestamp — because every construct cited here exists only in this leaf's uncommitted working tree; what was actually read is that working tree, and the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

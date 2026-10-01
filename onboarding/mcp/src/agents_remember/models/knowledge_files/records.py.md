@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge_files/records.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge_files/records.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -66,7 +56,9 @@ models refuse the fields that would give it a second owner.
 
 `ar-failure-mode/v1`, `ar-diagnostic/v1` and `ar-term/v1` are spellings chosen by this leaf; the packet did not fix them.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The format's design authority is the coordination-root note
@@ -74,38 +66,25 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R21@v1` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The facet payload models this mirrors live in the shipped knowledge vocabulary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The per-kind relation vocabulary. | `RELATIONS_BY_KIND` | mcp/src/agents_remember/models/knowledge_files/records.py:57-67 |
-| Prefix and relation checks shared by every record. | `_Record` | mcp/src/agents_remember/models/knowledge_files/records.py:77-97 |
-| Revision and status on incident and facet records. | `_FacetRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:104-114 |
-| The family record: members and routes, a route being a repository directory or `.`. | `FamilyRecord`; `RoutePath` | mcp/src/agents_remember/models/knowledge_files/records.py:141-160; mcp/src/agents_remember/models/knowledge_files/records.py:50-50 |
-| A family route is a repository path or the root route. | `test_a_family_route_is_a_repository_path_or_the_root_route` | mcp/tests/test_knowledge_family_routes.py:276-282 |
-| The invariant record: no second-owner fields. | `InvariantRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:117-138 |
-| Incident recovery is required once not unresolved. | `IncidentRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:196-221 |
-| The kind → model table. | `RECORD_MODELS` | mcp/src/agents_remember/models/knowledge_files/records.py:303-313 |
-| Facet fields equal today's payload fields. | `test_facet_records_carry_todays_payload_fields_plus_links` | mcp/tests/test_knowledge_file_formats.py:298-310 |
+- The per-kind relation vocabulary. [1]
+- Prefix and relation checks shared by every record. [2]
+- Revision and status on incident and facet records. [3]
+- The family record: members and routes, a route being a repository directory or `.`. [4]
+- A family route is a repository path or the root route. [5]
+- The invariant record: no second-owner fields. [6]
+- Incident recovery is required once not unresolved. [7]
+- The kind → model table. [8]
+- Facet fields equal today's payload fields. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module reads and writes only files of the memory
 repository layout it declares, and calls no sibling repository or external service.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated: a forward reference resolved.** The Invariants bullet that left the decision content rules to MIK-R13 now names where they live (`models/knowledge_files/decisions.py`, refused through `rules_decisions.py`). This card's source is unchanged; no row moved. No verification stamp was advanced.
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — `FamilyRecord.routes` accepts the root route `.` through `RoutePath` (MIK-R04 ruling Q3).** The Logic bullet is reworded; two rows added. `records` now imports `sidecars`, with no cycle. The other rows were re-pointed by the exact one-line shift, their claims unchanged. No verification stamp was advanced.
-- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): created this card for the new file MIK-R21 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

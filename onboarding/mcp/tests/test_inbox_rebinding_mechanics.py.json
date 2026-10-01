@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_inbox_rebinding_mechanics.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Landed superseded unresolved expired and rebind are idempotent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805512e2267ad5d3f5f7ec57e06c10f96f0e2294",
+            "content": "sha256:b11c6daaa57433fe2105d3881abd830a953e7ba24833a24e0934b2874dc5da0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_superseded_unresolved_expired_and_rebind_are_idempotent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ambiguous structural owner refuses instead of role mailbox guess.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805512e2267ad5d3f5f7ec57e06c10f96f0e2294",
+            "content": "sha256:51c70e2da0a5d441c16e6c88d4906bc47a38bb3a7a12ed185f5718835d6c7e7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ambiguous_structural_owner_refuses_instead_of_role_mailbox_guess"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Concurrent supersede survives a stale landing append.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805512e2267ad5d3f5f7ec57e06c10f96f0e2294",
+            "content": "sha256:54f13311d0f70921c87780e396299b46c82ee18aaad0ddadb8ec82b77301abd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_concurrent_supersede_survives_a_stale_landing_append"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Concurrent landed survives a stale unresolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805512e2267ad5d3f5f7ec57e06c10f96f0e2294",
+            "content": "sha256:0480c9867dbc3277acf4065791d0299915ef1909fbc73565f5d856b55eea3a2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_concurrent_landed_survives_a_stale_unresolved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Supersede during in flight delivery wins over landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805512e2267ad5d3f5f7ec57e06c10f96f0e2294",
+            "content": "sha256:b8f2e2861d10f047900464acdd885f265efef84ee211c254fe61df682c13eb93",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_supersede_during_in_flight_delivery_wins_over_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Rebound row is delivered to replacement in next sweep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "805512e2267ad5d3f5f7ec57e06c10f96f0e2294",
+            "content": "sha256:ca453e2d4b0f27b01461f943465113835d6e228fc4ea75e4b152ddadaf0404c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rebound_row_is_delivered_to_replacement_in_next_sweep"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

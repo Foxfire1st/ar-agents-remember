@@ -1,0 +1,2560 @@
+{
+  "path": "dashboard/src/data/catalogPoll.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The refcount driver, reconciler, hydrate helper, beat recording, and localStorage preference.\n\nAnchor: \"export function startCatalogPollDriver(): () => void {\"; \"export function startCatalogReconciler(): () => void {\"; \"export async function hydrateTerminalSessionsFromCatalog(\"; \"recordPollBeat: (ok) =>\"; \"export function writeLastActiveSessionId(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e1c040d98b8ecea8de0d887a1779ffb33a2f901",
+            "content": "sha256:2c4f781c78d6bed5da49712cbc5cf478769d4e8cbf0624ce9720f1d85c3ae80b",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e1c040d98b8ecea8de0d887a1779ffb33a2f901",
+            "content": "sha256:5171553d49a9e799f8608aff251369397abe7138a61173d97929dde568725a2b",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e1c040d98b8ecea8de0d887a1779ffb33a2f901",
+            "content": "sha256:c1dc139906eb371b5a40c180eaf645208e65df49a05bb5611846d6ef0cbb0afd",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e1c040d98b8ecea8de0d887a1779ffb33a2f901",
+            "content": "sha256:073315ee95d4cda75a996ff07a9891c6a2f207c3afe6c464991a03ea417d3fee",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e1c040d98b8ecea8de0d887a1779ffb33a2f901",
+            "content": "sha256:59dd2f649f8599bc9aa21a7c6bb234b9f2a7faee234ab398a79813b70c0207fa",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:294d421c73beaeaafc1b03ccad6ab08ff6b6b801e1b1b487940ff30f505e0933",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The catalog fetch this wraps (`fetchTerminalSessionsOrNull`, null on failure).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:4d7d34a2ddd26b81ead9993c9a00d9fcf31fde0d227a158ca73b16e274ca568e",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchTerminalSessionsOrNull"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The session-store hydrate + row conversion the helper feeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:e77b38dc6ea87d1e2be78f1426afa9bf2e9e717dd163c8e78c918b4de14a9ec5",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionStore"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:016090cbf36780cfae301c1dcc0fb5204a13d503e10f8c9feb5ef8d586823ce8",
+            "locator": {
+              "kind": "symbol",
+              "name": "fromTerminalSessionInfo"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The poll-health state the beats update: three misses mark the catalog stale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:7b439b0af7f45c35c768ce9b8096a4d33fa5b6fcffa56c22349fe3b105aaba5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordPollBeat"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:2c6ed85877296663c627e72391c5f3cd4bda2df86ba82cd1117b0d696f5dcf8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "POLL_STALE_MISSED_BEATS"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shell owns the shared timer and eager/cross-tab reconciler for every view lifetime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:6fdf1e0ad4f182baf776bf3ac64b7530e1f43832b9b646cb1f0c15a70085a52f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:1eda33cb057457f00b53b454c6b262f23d811d88b1fb828ff0cf6731aa329492",
+            "locator": {
+              "end": 666,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The sole shell subscriptions keep both the poll driver and reconciler alive with no view in front.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:6fdf1e0ad4f182baf776bf3ac64b7530e1f43832b9b646cb1f0c15a70085a52f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:1eda33cb057457f00b53b454c6b262f23d811d88b1fb828ff0cf6731aa329492",
+            "locator": {
+              "end": 666,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current manual hydration after bulk termination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:42fa66350e22fa9fa79f4d4128927dd115c41cad0a409991b56e6e96fc5b3bd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "endLandedDetailed"
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current manual hydration after launch confirmation or failed-launch recovery.\n\nAnchor: \"import { useState } from \\\"react\\\";\"; \"import type { LaunchPrefill } from \"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:bfe4aa300a42bd27e753eed83f14d79ac2ef9e116fc148e78e192f0cd2db564b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailedLaunchBanner"
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:610f256f47a59ebc50cbf869d58cbcb34fedc2f78329d7a82f2a5f9355fdc442",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:e271ff0572b980307aa133265166b215cfff1c30c29cb2608f01af04ed7f87ec",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:b1e8deb090ef470275858dc95f44213ac3a85f2211a62ef9c1e2202b02d611c5",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 353
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The unit suite: hydrate/beat recording, guards, exclusion set, refcount single-interval.\n\nAnchor: \"describe(\\\"hydrateTerminalSessionsFromCatalog\\\"\"; \"describe(\\\"startCatalogPollDriver (refcounted)\\\"\"; \"describe(\\\"startCatalogReconciler (eager + cross-tab)\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:90dac2c04bf0fee258598d203d5b3ca003b657714a659144621d7adbb682d38f",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:0e9c94c560ab5673147840eae0de8865f97f0d7b5c633d9452146d383df70d99",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:a9593d17b596d49cdf33a72caf54fbdb575175d3a185eb374283f53474b5b34d",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:1a91bba5e845758c2b7c001258356e08a8836003e0f52345ee910f3351ccae26",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:8dc3bec8fb4dc9617cc333d259be86062e4cf178e0d8350590af770afdb7eddc",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:54e5cab00d6225871e6b024bfd7817a6fb1309f2e1098fce01f249293c0599cc",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:80b5a1eacf193cc6fdc29db8826b8daec4b685653cd9e95fd0e6f67e8541418b",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:aa52f2b2933341a897d06ac6126891a0abf18eeb9a1cec8f0a9e282fabde012f",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:ad59d8c3af2f7be716b5e9ac8a0267715bbd5cdf8470a1cd43546150996f40e3",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:5c118e97b703d01fdd85a00c838f4125c2f0ecd46bd01167c67f8865f64f0909",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:649a44b9f3dfeeee50aa46d208aa0893ad5bd57a9b19c9208ac9726e0bb09d25",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:8da2aea1eb40c29bf215e20b2efbef624e39c80c16805fff6b852df2804e2849",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:9c0ea7c909a83a4c28eb8fb1d33653e4e75a100b672c014a756c426ff4f1c04d",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:20e34218b5e068db1ea82c98ed76c13fcf2ebead995a1e84ddb0718c89f9429a",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:47e4235ed7019236cc68426ef06651c45ec89ef6fa81b42dcfb6006a8d0a2c27",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:42b4c5440338bc9b0aa7ae025dd1721af64f231495e331dce36d4e6a76c66d51",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:94e9b60824101d881aae10376a1758b0814f10ab7bd9a0ae9253b89b47367d58",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:48ae66f1533a2190ffc30001e980188ff11d18c0c1a582cd3c6a42ee6d23ce0a",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:6f1d88f5c98092724f36db437fe070b599a32db24912ac52ddae84c81a5fa176",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:f6f5b40b158457d17864f21790786dd5a2ecdb64b66a651f788d4e25cd3303d2",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:5a2702ec6a7e0718f6df8703e7d15f6422f9381eb0172f94545244abaa2b7788",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:cf562a55b97179dff68bd23b5c0b70a88d9550db9f93bf16a15b1096c9ba7425",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:46238794ed6587c4ee9c1d5ee6a6dadf143baa0ebcacedaab2c48ec85d23eae2",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:f6f5b40b158457d17864f21790786dd5a2ecdb64b66a651f788d4e25cd3303d2",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:4abced39a5bb3555fda615011ff0481040d80a67fbfed1d61abb55468d10c035",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:23aaefc6f3a40b0609ce005bf691bda0053fca34d14df4d5cdf41322c2ab5de6",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:21e4baa3b8a5c364c498291ec746ea233ab4c02489dd5238f628242a8fdaa345",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:12908b125f5c7023328abe52681ef942a0cd49e77c059d9fc10ee3130f14c0f2",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:b56c6ceb6e260d0c064b62dffad84420e2ecba3fc3e3a4dcbc10f27a8ccbee07",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:23aaefc6f3a40b0609ce005bf691bda0053fca34d14df4d5cdf41322c2ab5de6",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:23aaefc6f3a40b0609ce005bf691bda0053fca34d14df4d5cdf41322c2ab5de6",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3eedf775c5b257851aba5a733f1c9955864ab2b7d20d43cc740119368d7cb965",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:23aaefc6f3a40b0609ce005bf691bda0053fca34d14df4d5cdf41322c2ab5de6",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:c1df82417d8dfccaba994519dd57cd5ac251cb1d40ef3008a97fb0f03a4b4c0c",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:7fb0d4e082dc4cd1a44e0dd21e18b7494a32b72baeceef8a151633301cfe7dca",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:605ec692f26b187ff5d41740b43e87adebce2c55b62ea2ea85616f2a767742c6",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:12908b125f5c7023328abe52681ef942a0cd49e77c059d9fc10ee3130f14c0f2",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3c3468e9896420db8d5914bcbf13b259439a029505c49f4820debc7ac501e9b2",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:0d18d758476a72f565db6efa71e0824bc0eecd26e65fc7ff0839f83ca6f92871",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:22d11caf43e97ef369e6beed1a268bd05838f29b9dd254bf69ba64884147234a",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:71346a36e52b57290b20c9f4e3deb9033c380683ea5eb84f5510ae24d6155428",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:8a681a0d4ed1d8d9bc5ed7ab671cbc601c5c869c68c27a8bf2910960ba443f53",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:b1f496384f6db209b281a17627b2c7fe4817e8782e5e249eec40cc0df5880b44",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:88ab58789a81c61e429e5dab8607d8459fd597c705e2ab68820d7ba6ddd127bc",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:a57a5a35e8697a844298fc370123a81df4439fb9d0861b5e3228faf463777e13",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:efd54398cb99f7c51c7eb5e8a5508369e9e4dd8051131b941c0f6981efb4f9dc",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:88ab58789a81c61e429e5dab8607d8459fd597c705e2ab68820d7ba6ddd127bc",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:22d11caf43e97ef369e6beed1a268bd05838f29b9dd254bf69ba64884147234a",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:f763ba2bd71afaee61deeb8ba2989aec6514a83174745f797e36b20f1d8989f5",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:764afaeff0591f4fcb05db98044646db288cc657d4f1e5d6f8f084c7f23548e5",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:413017da193e1f012b258284a27a61bbb86947cfe2e737581bdadc18edc31986",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:6a34e55b6834c57deda1bdb694f71c6f0c1a6ec090158eca1c4f1eb7b161a95c",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:466263ffe3185139febabe368c34fb293c48b13ef98fbb44c58ab85cf83e5059",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:60a6d0c50892f70fa7c0d5ca8f27d42044dcce31cce2d33948d02b3a21732343",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:9bc60344c57a9137b997bc024e05e86847fee3600295875e4dada0a031f23b32",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:41f97de6f9b50d0a8a2019ec2f57a2ba4a20b7951e429b0f85debdc29e66e741",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:31d348663db8a3be94a666aa273411c49e8bdd709ba453c1d19f6b9f45c0d88a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:2601d1af29f398be0d256c19f2d04e79b038cabb39a75dd04e292eca54d51459",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:43a2bc89f7c854868b3ac4ccd145ad4685425c97dd44be46323c6d64d681d7d9",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:d6bd9c3a343d6d0fa5f9e4b80d3c7161c44f6ee9097c899521a96381713fdbf9",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:405c9b34be069622c28ca80e7d12da5b0f7e3e57fcd312d8acc4cd8ebd416647",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:713401d9c33e53f4f3c6ee244bf7b8cb95b6936b6ce54ca170655175ad5e755b",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:9de9146f8035be54b4bbe572b02b77ce4302c5f915c7ce5df6f55471e5d1b262",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:7fb0d4e082dc4cd1a44e0dd21e18b7494a32b72baeceef8a151633301cfe7dca",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:23aaefc6f3a40b0609ce005bf691bda0053fca34d14df4d5cdf41322c2ab5de6",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:85519a7f701e2b11aaadcaf2394847ab721e6c3f6159f061ba9eb0a3f6a48242",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:605ec692f26b187ff5d41740b43e87adebce2c55b62ea2ea85616f2a767742c6",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:fb40bab398d12db74b64beabe7f8be2e6126305d8fc048688fc734d5dcdfe5cc",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:84e4208cd6ffb8c4a3547b2f54ada19978c3f365e78f9502ef5145cdd2aa8543",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:ec75a5b48a1a06b41bd9d04904757b7080330b79a60758becf4a9977c7aa38fb",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:1cfe8d30a130769cfd39929a37dd02b728f298d480cd1cf677a95dc8dcc87016",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3c3468e9896420db8d5914bcbf13b259439a029505c49f4820debc7ac501e9b2",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:0d18d758476a72f565db6efa71e0824bc0eecd26e65fc7ff0839f83ca6f92871",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:22d11caf43e97ef369e6beed1a268bd05838f29b9dd254bf69ba64884147234a",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:71346a36e52b57290b20c9f4e3deb9033c380683ea5eb84f5510ae24d6155428",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:8a681a0d4ed1d8d9bc5ed7ab671cbc601c5c869c68c27a8bf2910960ba443f53",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:9ff696b4dc32ec45ac06377d709d84d3b6d4ac09965312d0a70bfef9d156b38c",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:00d9fa27ea9b7fea22a5a0fa783dbbaa1563a18bd8fe9d23335de6a9979df8e3",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:a8c85035efebfaa709d5c501395cffd1a1e3e8a80d700b48bc9c6a4c0377260f",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:84e4208cd6ffb8c4a3547b2f54ada19978c3f365e78f9502ef5145cdd2aa8543",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:7fba49309e4e4baf0fb52072a0808d364d872ec3e1b8bf5ea9666e30f3fed577",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:88ab58789a81c61e429e5dab8607d8459fd597c705e2ab68820d7ba6ddd127bc",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:1cfe8d30a130769cfd39929a37dd02b728f298d480cd1cf677a95dc8dcc87016",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:a834424e6efea98a51574bbac7e7be539bc48d7d8a1e813cb58bf4ccb05f4972",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:84e4208cd6ffb8c4a3547b2f54ada19978c3f365e78f9502ef5145cdd2aa8543",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:23aaefc6f3a40b0609ce005bf691bda0053fca34d14df4d5cdf41322c2ab5de6",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:21305045bfd437bb280e7912752ac0fd6d8c691c441c6403f6a977de59c344c2",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:f32004952a3d04cb1e24dcdbb01e63a90d169ca45406798087199c3e451cb429",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:5d46a0621b6e5a7dbe43d9a1c82f1d84cdec22bbb1c5e555d91ca86e247b6499",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:2601d1af29f398be0d256c19f2d04e79b038cabb39a75dd04e292eca54d51459",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:b37864b746ba3649cae785a96073682967e84234fe108b96eec9acb9d2c22d48",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:02e72f3c39a21ae64169841ad2cbb7afdb2c0cc9bf8e9e6a55ab5c8752cb17cf",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:79333e0667f34abaa45fd59ad96d38c86507934a3d8f3ba1d9d85c6850ae0efa",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 188
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a260b27cc3d67242a84342c3c4f81ab63e5189e9f71874ce55da64bab78676c",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:2601d1af29f398be0d256c19f2d04e79b038cabb39a75dd04e292eca54d51459",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:a2a03eb2f0494490b42f6664ef59ed07fec3b2c8078c2e9e6decae2151dab2ab",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:56e363eadf746590d0bb28aa145fb6969d98cc07e6955be08cad92207e36d814",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:c51ea0db07407de6e0970a7dda6281dc9475185150060b5b5fc3d699cdbba5aa",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:db59021e771c7685adff4696fc54b5355227bf00aec0c8cb7e11ae9f55767c46",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:d60d3d9dad1dd67bb59a09c39066cb090287e00bb7566cd9ff56d927a69fdd66",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:6e6833dc787e27fa924ef0025148e85ad7578cf3829c4091202596028c528883",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:f6f5b40b158457d17864f21790786dd5a2ecdb64b66a651f788d4e25cd3303d2",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:764afaeff0591f4fcb05db98044646db288cc657d4f1e5d6f8f084c7f23548e5",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:c9dfe12384de4f99af14ffd23deb5e647423f1677bb3fb6dfd28d1cbfe007a6e",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:8a681a0d4ed1d8d9bc5ed7ab671cbc601c5c869c68c27a8bf2910960ba443f53",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:681ebf188a9dc013e51a85c3b7e18d0a7d31fc929f7bb53b704ba0497954dcde",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:13ccc2cc341c26c10bc1749e8173afb493d8bf3ebe842e0d5e6ad7de54760529",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:b54a34eb439a41a140d422abe97d0a187c8b905ee8de128ffd654eb916822066",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:c7045e817cdc2acefadb6e2077f38f55ef055d60fcc36353787cbfaa3de61f2c",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 214
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:e5a08f496937371ed0bc816fccea32771570e9c2e302fb80183ce87fd55a6175",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:a9e3f912a5868618bc1d4e14aebbe964f00dcf5ce7eb048f7101fd16aec39db8",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:b54a34eb439a41a140d422abe97d0a187c8b905ee8de128ffd654eb916822066",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:0fb03a28e8ca5f576b78232283d7ff09469f0b5b93703f4d3907c7b542745626",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:4e2d3ec68558cf370160e772429254bb1badcf96f5ba70bc32af40c80e5e0f8c",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:260bdb433a2c6628bb48ce75853eafdc7689ea69744a0657ce6339c8b4317cc0",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:28f1d2f372152df83666cfa639ae66f4277115d362fa96d7ff91bab994bfa52b",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:764afaeff0591f4fcb05db98044646db288cc657d4f1e5d6f8f084c7f23548e5",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:93b059789621c4b2aa96597dbd5441f52106e49f5bfb7abf5e77c89a4443ec00",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 235
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:4c6d2ffc545db2af954648e1f97d0fea19d43f0a697e3a1760a194c105bcde4e",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:8a681a0d4ed1d8d9bc5ed7ab671cbc601c5c869c68c27a8bf2910960ba443f53",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 239
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:fd641ea2ffa706a2a05d87ebaac94ce99c02843642e4448f978f1104fd6cf2c9",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:060b1f2413d5c9915e3031703628ed82ac5fdcfeb372a2a9967bcac742d66d32",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3f42bc1c20bd3e1e1c5acc42fe4bad320f2a395bc04986802e2200fe5ddee606",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:b3299deedc4bbf2bf70754f86dfc403ca15bfe770c9dfa9c3433aba9113ea5a0",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3f42bc1c20bd3e1e1c5acc42fe4bad320f2a395bc04986802e2200fe5ddee606",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:c44e5b3714d68a41fd4474a78819e836861570223a2001ea3287fa9404838b18",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:fef69007a7e75ccdb2c19efa9d95c43bf787f33a2b9c8265c4a5ce642fe6dbea",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:8d16f675e86e02f5152500e51c9f972b4b8f4b276c2b384167bfc5ac1d70bcfd",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:060b1f2413d5c9915e3031703628ed82ac5fdcfeb372a2a9967bcac742d66d32",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 254
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:43a2bc89f7c854868b3ac4ccd145ad4685425c97dd44be46323c6d64d681d7d9",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:db1cd100805a777d801318e64a73f62f1e6a3e532e56b76b685b49305a048309",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:c44e5b3714d68a41fd4474a78819e836861570223a2001ea3287fa9404838b18",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 257
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:af459f271ae1c25f90a6f075d303733050694ae0f1e2595a8edaf16b0cea8d27",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:f6f5b40b158457d17864f21790786dd5a2ecdb64b66a651f788d4e25cd3303d2",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:aaeed51a7023d078cadcb15c3b9919ea7f6311af159f76122bb7ead6baf8b850",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:f9f592313184956fbea05985d1f9ff24e37484e3e50a53d2c15051c8848d3110",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:2ac177fcc68798cf5b88c56b3d62c3ef23c350566a4cfd3137162e25dafa298f",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:8a681a0d4ed1d8d9bc5ed7ab671cbc601c5c869c68c27a8bf2910960ba443f53",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:0c7341946275231a51322d7e5a1958395362abd0973ea621ca9c5d1954f8f350",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:6739b9bfda5f8047bc5217231f10fc1a6216a0f1fd048479500cb9b9758eced3",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:fef69007a7e75ccdb2c19efa9d95c43bf787f33a2b9c8265c4a5ce642fe6dbea",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3f42bc1c20bd3e1e1c5acc42fe4bad320f2a395bc04986802e2200fe5ddee606",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 277
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:86dcbd402afaf2cb64f6d2bb518da82c3ceff4df7c1eb0fb221fad2cb37c1f74",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:71f8ed4690c1992cdf92d117a193e7b5be64d08a3d14adc18f1f44265e099e6c",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:a03661b67722a4b667b231081835aa3b27c88fa114b3e188c60e0a1fb1be3b80",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:a03661b67722a4b667b231081835aa3b27c88fa114b3e188c60e0a1fb1be3b80",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:e0f93b5e9ec34ce7875dc34aa0054f9ca4f99a90f9c133a41c163415c2469d2a",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3aeb76c38917e13e979f19f8769422fac219d0011567cc24e6c499460cdccbc4",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:717af1101c97b7c2f52540782e634cc4440f0e970341e52f9752311d78b7d7d0",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:371e6d70f648b7dd7acc6a08614c1b9b9fb1e30812016c7c272cd4b2a1fe8a1f",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:43a2bc89f7c854868b3ac4ccd145ad4685425c97dd44be46323c6d64d681d7d9",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:97d5b8f708b34249c162dbfc1b281c240ebeff4ec614af03ef7197c5420c7241",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:717af1101c97b7c2f52540782e634cc4440f0e970341e52f9752311d78b7d7d0",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 302
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:371e6d70f648b7dd7acc6a08614c1b9b9fb1e30812016c7c272cd4b2a1fe8a1f",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 303
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:6c33c7e2cbdd4400fa28861aa8d3d3ca0ce7bb71e0cb01a4f4dac501005e7aed",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 304
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:ac288fdb6b7323aed13262e42469d954d48c0b670932949fe20cf71ce1924ebb",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:773b9f66fb66ea09a251f78df6dcefe045d6a81fd70fed7b9a2fb972a189a3fe",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:717af1101c97b7c2f52540782e634cc4440f0e970341e52f9752311d78b7d7d0",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:13cba3527dab4aaae69c4cc60a131e72784b351048c0ffac3d9b0a700af24642",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 313
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:6c33c7e2cbdd4400fa28861aa8d3d3ca0ce7bb71e0cb01a4f4dac501005e7aed",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 314
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:a03661b67722a4b667b231081835aa3b27c88fa114b3e188c60e0a1fb1be3b80",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:ac288fdb6b7323aed13262e42469d954d48c0b670932949fe20cf71ce1924ebb",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 317
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:3a3e46f94276b6f6f4ed1f02af78bef6a2ee1c439dd5584b973948313214d2b7",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 319
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e052eee4c76b0020caa377da0cbe22ff6fdb1542",
+            "content": "sha256:f6f5b40b158457d17864f21790786dd5a2ecdb64b66a651f788d4e25cd3303d2",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "dashboard/src/data/catalogPoll.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

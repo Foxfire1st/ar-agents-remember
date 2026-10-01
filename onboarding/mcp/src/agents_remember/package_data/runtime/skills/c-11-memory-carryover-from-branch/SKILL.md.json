@@ -1,0 +1,105 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-11-memory-carryover-from-branch/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The skill defines the source-branch-to-official memory carryover use case, command shape, evidence tiers, output states, and boundaries.\n\nAnchor: `# c-11-memory-carryover-from-branch Memory Carryover From Branch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "224540623ac85fd7c013c5b27978136e64d49536",
+            "content": "sha256:1e8cac4eec73e401cc363bd651b2ccc5f2ff9040bd2eaba7b8aea776a82290a9",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The package service implements the public plan and the configured, leaf-contract-bound internal apply owner described by this skill.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:dbb171b64e93bd92eb353a3e12447ec1d3ec2e1cc93aa3478561f64fed68b934",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_plan_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:7b27b96851ed90b6080df0ea24930b76547ceb6e8abd7c628c80343b10cc31a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:b0ff23c3bfd0ca1227dc700b342da34c0dbc3e1a3490e0da9e15e2b6f1f40135",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 515
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:1fdd50e89fcead826f85983c89052ff1896f62a2c651fd8ad2fbb59fde73fb00",
+            "locator": {
+              "end": 598,
+              "kind": "line_range",
+              "start": 524
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:0abd13981ec925ba346b0b8c26b88923f771b784af7f6a9eaf7d22a945e58ba0",
+            "locator": {
+              "end": 791,
+              "kind": "line_range",
+              "start": 698
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:7d4773c02e876ad9f11fb6fdd4ee2a010710dd6b3280ba8ac561af7798b6e2e9",
+            "locator": {
+              "end": 852,
+              "kind": "line_range",
+              "start": 759
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

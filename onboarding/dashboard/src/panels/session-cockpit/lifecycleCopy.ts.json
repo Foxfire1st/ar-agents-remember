@@ -1,0 +1,323 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every exported string/predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:8fea82b84d60f215fa13578b65b169088b15b21af66e5b855b5dce56a599bb72",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminateConfirmCopy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:70bdfcc34aa89df3c4eaedf7242823b9e0340922bbfdaa8557cb9393e1309aed",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupOutcomeCopy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:1773ff8460afbe4a9ab418abc23e2947b9b30509c4710c27205bd3f94be2aeb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "STOP_TURN_DISABLED_REASON"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:5b7abdaf688e6816b443774c72fff5e9d709264072bd806eac928ca4ab081e27",
+            "locator": {
+              "kind": "symbol",
+              "name": "isControlledSession"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The grammar state word the confirm/name builders consume.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:e31b2ae53e0b44e3f02656b04af1d349d631a4c6284b2da6220e970bce1a3958",
+            "locator": {
+              "kind": "symbol",
+              "name": "seatVisualState"
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:a93fe090e3f6dcc02e1746dd8918c05033b0d4f19063020249417df99636a2cf",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The rail consumes confirm copy, and the landed-cleanup notice consumes cleanup-outcome copy.\n\nAnchor: \"          title={terminateConfirmCopy(session)}\"; \"  const outcomeCopy = cleanupOutcomeCopy(outcome);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2862c7253fabd8b4da6633a17aee9135985e4149",
+            "content": "sha256:c8fc1eb43930af2469e00fd02e43622c77915315d3b9b535dabbe931e708fa51",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e95159ef1d06b3e056523044a807c998b8eca5d6",
+            "content": "sha256:8037728fc03a7610ddf76efafc76d14a92181eb55f7a3e0118edfbb3f37b8d75",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessionRailParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The stage notes consuming residual copy.\n\nAnchor: `terminateResidualCopy`; `retireResidualCopy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "625749adb97f54824224d953ebaea79b433714af",
+            "content": "sha256:cb3c1c69e0369856e66fc63a10dc48dd540877dfd26dd4dbba2199b84c6a5d1e",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/panels/session-cockpit/StopResidualNotes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "625749adb97f54824224d953ebaea79b433714af",
+            "content": "sha256:aee74e8c0f5e0eeb9cee0f6d869e67532885067d3f42b44ff5bdfadd2999cf4d",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/session-cockpit/StopResidualNotes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The bar consuming the interaction constants.\n\nAnchor: \"  INTERACTION_HONESTY_HINT\"; \"  INTERACTION_COMPOSER_MODE\"; \"  INTERACTION_ANSWERING\"; \"  INTERACTION_ANSWERED\"; \"  INTERACTION_NO_PROMPT_TEXT\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235e8c4231b909f8ac6c8de9368f4838c402903a",
+            "content": "sha256:e9b5c470f83c5a9c66c34efbd4178dc38d1ce157fa1d625d0ea598e145107a06",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/src/panels/session-cockpit/interactionParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235e8c4231b909f8ac6c8de9368f4838c402903a",
+            "content": "sha256:2780a479d5c2acb3514b87260d70147ad8e09accc3ee07f21bf936bfb74aa024",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/session-cockpit/interactionParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235e8c4231b909f8ac6c8de9368f4838c402903a",
+            "content": "sha256:a4bdb02cc83ae165fc919ea72344a4dd6239c8b0dfad68b2291be5a25784432e",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "dashboard/src/panels/session-cockpit/interactionParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235e8c4231b909f8ac6c8de9368f4838c402903a",
+            "content": "sha256:5fef7e3d068a51b89e1d8b808f14c037e54fa6494c86439b290f1e2dffa6326a",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/panels/session-cockpit/interactionParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235e8c4231b909f8ac6c8de9368f4838c402903a",
+            "content": "sha256:d6fe08f4aef51164ae6ada6e2490e69afbb71a404f2c7bb0503e4b64f6f405c2",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/panels/session-cockpit/interactionParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The surface consuming archetype/name/toggle copy.\n\nAnchor: \"isControlledSession\"; \"paneAccessibleName\"; \"paneArchetypeCopy\"; \"SCREEN_READER_MODE_NOTE\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:e806ef1ed35bd1519a549b6600bb8865e9f42522dff639da0a5e4cb61a4c0eaf",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:2ce4a5c1fa4da0137816d410d809ba0684ca59578ffcc376a78df3b11d29c343",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:412ca345ccf75bf9c0806bce695be8de808b79984251a7a54d202cf6101dd451",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 305
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The inspector's evidence pane consumes archetype and retire-residual copy at its rendering sites.\n\nAnchor: \"value={paneArchetypeCopy(session)}\"; \"? retireResidualCopy(session.label, retireStopError)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:eed0c74e998900dec754e648355a23e41b31b5269d2f6407484faac0cf534dcd",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:49006386a8bb6c5e1a81b78dbbf19338e715a6dadaf69af60c2619cef70248be",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 342
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The server literal the archetype predicate mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccf02e3f6a22b4e05160cd79e1102f882011c162",
+            "content": "sha256:13d72ffa50a9f08ec7fa61bc73b001bd9ee09d44f93797b8922d6dc6f4b5f0f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessControlState"
+            },
+            "path": "dashboard/src/types/terminalCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

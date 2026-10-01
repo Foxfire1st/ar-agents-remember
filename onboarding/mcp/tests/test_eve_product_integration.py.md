@@ -1,15 +1,5 @@
 # mcp/tests/test_eve_product_integration.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_eve_product_integration.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -186,107 +176,42 @@ the floor (`conftest` isolates `HOME`, so the nvm candidate list is empty under 
 None known. The seeded-mutation corpus lives in the task's coordination tree rather than in this
 module, because it re-clones the tree per seed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No `Domain Documentation` category is configured for this repository, so no live domain-documentation
 pass was available for this file. The one external authority the module leans on is the pinned eve
 release's own event vocabulary, cited through the runtime README.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source exists in `system/sources.md`; the recorded event vocabulary is the pinned release's own, cited by the runtime README. | — | — |
+No configured `Domain Documentation` source exists in `system/sources.md`; the recorded event vocabulary is the pinned release's own, cited by the runtime README.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cases drive production owners across four routes — the registry, the capability catalog, the
 projector, and the terminal lift — and the mounted dashboard case consumes the capture this module's
 sibling produces.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own purpose statement names the product-integration surface this suite evidences. | "eve is selectable and observable through the existing AR product surface." | mcp/tests/test_eve_product_integration.py:1-12 |
-| `CAPS-R17@v1` behaviour 4 is the requirement the declared-exclusion case evidences. | "CAPS-R17 behaviour 4" | mcp/tests/test_eve_product_integration.py:828-850 |
-| The registry, readiness and terminal-launch surfaces, including the owned route exclusion. | `EveRegistryTests`; `EveTerminalLaunchTests`; `EveReadinessProbeTests`; `test_the_declared_exclusion_belongs_to_the_route_and_is_owned` | mcp/tests/test_eve_product_integration.py:694-750; mcp/tests/test_eve_product_integration.py:751-861; mcp/tests/test_eve_product_integration.py:862-987; mcp/tests/test_eve_product_integration.py:828-860 |
-| The capability catalog's discovery and honesty surfaces, whose effort axis is published at this candidate because its runtime consumer exists. | `EveCapabilityDiscoveryTests`; `EveCapabilityHonestyTests` | mcp/tests/test_eve_product_integration.py:1018-1133; mcp/tests/test_eve_product_integration.py:1134-1289 |
-| The two cases that keep the vocabulary honest without making the suite's verdict depend on the machine: the record-vs-vocabulary comparison, and the drift case that reads the live installed declaration when it exists. | `test_the_advertised_effort_vocabulary_is_the_installed_union_not_a_copy`; `EveEffortVocabularyDriftTests`; `_REASONING_UNION_AT_PIN`; `_installed_reasoning_union` | mcp/tests/test_eve_product_integration.py:1192-1221; mcp/tests/test_eve_product_integration.py:1290-1314; mcp/tests/test_eve_product_integration.py:186-205; mcp/tests/test_eve_product_integration.py:206-248 |
-| Behaviour 1's sentinel rule, which the provider boundary cannot observe and so is pinned as an authored source shape. | `EveEffortConsumerShapeTests`; `_authored_agent_definition`; `_code_only` | mcp/tests/test_eve_product_integration.py:1315-1361; mcp/tests/test_eve_product_integration.py:256-278; mcp/tests/test_eve_product_integration.py:250-254 |
-| The projector surface, including the two-boundary rule and the preserved unknown event. | `EveProjectorTests`; `EveAdapterToProjectionIntegrationTests` | mcp/tests/test_eve_product_integration.py:1366-1536; mcp/tests/test_eve_product_integration.py:1539-1603 |
-| The capture, interaction and terminal-lift surfaces. | `EveConversationCaptureTests`; `EveInteractionProjectionTests`; `EveTerminalProjectionTests` | mcp/tests/test_eve_product_integration.py:1703-1813; mcp/tests/test_eve_product_integration.py:1814-1931; mcp/tests/test_eve_product_integration.py:1932-1964 |
-| The asset and credential boundary. | `EveAssetAndCredentialBoundaryTests` | mcp/tests/test_eve_product_integration.py:1965-2034 |
-| The provenance census and the falsifiable label case over it. | `_PINNED_RUN_CENSUS`; `_RECORDED_PROVENANCE`; `test_every_scripted_frame_carries_an_honest_provenance_label` | mcp/tests/test_eve_product_integration.py:364-390; mcp/tests/test_eve_product_integration.py:391-409; mcp/tests/test_eve_product_integration.py:1481-1496 |
-| The real executable the probe actually runs, and the module's honest statement of the environment's limit. | `_stub_interpreter` | mcp/tests/test_eve_product_integration.py:279-294 |
-| The module's own lane row, which the fail-closed loader requires. | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5 |
-| The authored consumer the source-shape case parses, and the launch input it reads. | `PROVIDER_DEFAULT_EFFORT`; `reasoning`; `EFFORT_ENV` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35; mcp/src/agents_remember/serving/eve_runtime_launch.py:87-87 |
-| The production projector the projector cases drive. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/projectors/eve.py:147-159 |
-| The readiness probe the registry cases drive. | `eve_runtime_readiness` | mcp/src/agents_remember/kernel/eve_runtime_readiness.py:89-128 |
-| The mounted dashboard case consumes the capture produced alongside these cases, decoded through the wire mirror. | `eveConversationItems`; `eveConversationStatus` | dashboard/src/test/fixtures/eveConversationCapture.ts:376-379; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx:25-25; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx:35-36 |
+- The module's own purpose statement names the product-integration surface this suite evidences. [1]
+- `CAPS-R17@v1` behaviour 4 is the requirement the declared-exclusion case evidences. [2]
+- The registry, readiness and terminal-launch surfaces, including the owned route exclusion. [3]
+- The capability catalog's discovery and honesty surfaces, whose effort axis is published at this candidate because its runtime consumer exists. [4]
+- The two cases that keep the vocabulary honest without making the suite's verdict depend on the machine: the record-vs-vocabulary comparison, and the drift case that reads the live installed declaration when it exists. [5]
+- Behaviour 1's sentinel rule, which the provider boundary cannot observe and so is pinned as an authored source shape. [6]
+- The projector surface, including the two-boundary rule and the preserved unknown event. [7]
+- The capture, interaction and terminal-lift surfaces. [8]
+- The asset and credential boundary. [9]
+- The provenance census and the falsifiable label case over it. [10]
+- The real executable the probe actually runs, and the module's honest statement of the environment's limit. [11]
+- The module's own lane row, which the fail-closed loader requires. [12]
+- The authored consumer the source-shape case parses, and the launch input it reads. [13]
+- The production projector the projector cases drive. [14]
+- The readiness probe the registry cases drive. [15]
+- The mounted dashboard case consumes the capture produced alongside these cases, decoded through the wire mirror. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The transport double stands in for the pinned third-party eve process, which is a dependency rather
 than a sibling Agents Remember repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The transport the double replaces, and the pinned release whose event vocabulary the census records. | `dependencies` | eve_runtime/package.json:14-20; eve_runtime/README.md:10-22 |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `EveAssetAndCredentialBoundaryTests` repointed to mcp/tests/test_eve_product_integration.py:1965-2034. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **substantial body edit — the module gained three
-  cases and a route-disposition case, and one honesty case was inverted with the axis it pinned.**
-  (1) `EveCapabilityHonestyTests`: `test_the_pinned_runtime_reads_no_effort_value_and_the_catalog_agrees`
-  was **replaced** by `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it`
-  (1151) — the consumer is now asserted present on the authored TypeScript and the publication read off
-  the **serialized** envelope; a new vocabulary case (1192) compares `REASONING_EFFORTS` with the
-  module's recorded union constant; `test_no_advertised_control_lacks_a_runtime_consumer` (1222) now
-  holds the axis-to-consumer map equal to the published set in **both** directions. (2) Two new classes:
-  `EveEffortVocabularyDriftTests` (1290), which reads the **live** installed declaration behind the
-  shared install guard so the machine decides only whether drift is observable and never whether the
-  suite is green; and `EveEffortConsumerShapeTests` (1315), which pins behaviour 1's sentinel rule in
-  the authored source shape because the provider boundary cannot distinguish "omitted" from "forwarded
-  and mapped by the SDK". (3) `EveTerminalLaunchTests` gained
-  `test_the_declared_exclusion_belongs_to_the_route_and_is_owned` (828), carrying the route
-  exclusion's reason and owner as a product artifact. Corrected the Purpose census (was 68 cases over
-  thirteen classes; now **72** over thirteen case-bearing classes) and re-anchored **every** reference
-  row, all of which had shifted (+119 or more) or gone stale — each new range was read back against the
-  candidate's real class and function boundaries. Recorded **D27** as a carried caveat on
-  `EveRegistryTests` rather than a repair: the case is environment-sensitive, `AR_EVE_NODE` is the
-  confirmed one-variable falsifier (conftest does not scrub it), the defect is the assertion's shape,
-  and the repair belongs to whoever next owns that module. **Checker result (post-sync,
-  verbatim).** The refusal this entry first recorded was resolved by the leaf's `worktree_sync`:
-  the pair is now `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the
-  contract-scoped `memory_quality_check` ran against this worktree. Headline: `ok:false`,
-  `checklistStatus:"action-required"`,
-  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
-  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
-  unonboarded). This card's own contribution: one `integrity.onboarding_drift_check.summary`
-  finding — `onboarding_drift_drifted`, "Source has local staged changes not represented in
-  HEAD", which is the expected shape for documenting a staged, uncommitted candidate rather than
-  a claim about the wording. Verification metadata moves to the synced base `d8ed8c21`; the
-  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit
-  and no hash or fingerprint was invented here.
-
-- 2026-09-16T22:19+02:00 — 260915-CAPS-L16 curator: **the launch-dependent reaches now skip by name**
-  (defect D19, repaired by this leaf). `require_installed_eve_application` is called from `_start_eve`
-  (six callers), `_evidence_frames` and `_projected`, so a checkout without the machine-local
-  `eve_runtime/node_modules` install reports `skipped` with the missing path and the exact install
-  command instead of failing as a product defect — eight install-dependent cases across this module
-  and its sibling were the measured failing set, and the same guard makes the schedule-dependent
-  failure set deterministic (its cause, D20's half-staged-destination fail-open in
-  `stage_runtime_root`, is **reported and routed, not repaired here**). The body's Conventions and
-  Invariants sections now carry the reaches and the "named, never retried, never silently skipped"
-  boundary. Verification metadata moves to this leaf's synced base `8997e184`; the candidate is
-  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
-  fingerprint was invented here.
-
-- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: created this card for a file added by the eve
-  product-integration change set. Records the thirteen classes and the owner each drives, the
-  no-monkeypatching discipline and its one declared transport dependency, the transcription status of
-  `_PINNED_RUN_CENSUS` (and the module's own statement that the suite does not re-derive it), the five
-  ways the provenance-label case is falsifiable, the honest limit of `_stub_interpreter`, and the
-  load-bearing lane row. Verification metadata is pinned to the leaf's synced base commit `ff97072c`
-  because the candidate is deliberately uncommitted — the governed closeout stamps the real code
-  commit, and no hash or fingerprint was invented here.
+- The transport the double replaces, and the pinned release whose event vocabulary the census records. [17]

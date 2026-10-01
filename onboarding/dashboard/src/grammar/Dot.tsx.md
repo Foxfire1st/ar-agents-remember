@@ -1,15 +1,5 @@
 # dashboard/src/grammar/Dot.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/grammar/Dot.tsx`                  |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`       |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -99,77 +89,34 @@ is the reason `Dot.test.tsx` treats the fallback as a tenth citizen rather than 
 same unintended green described above. It is pre-existing and outside this leaf's file set — reported
 here, not fixed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. The WCAG 2.3.1 flash-threshold constraint the `pulse` keyframe is written
 against is recorded in the source comment rather than in an external reference this card could cite.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The dot is where a wire state becomes something visible, so the vocabulary it must cover is cited
 alongside the treatments it applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `cva` recipe, `DOT_VARIANTS`/`KNOWN`/`DotVariant`, the total `DOT_GLYPHS`, `UNKNOWN_DOT_GLYPH`, and the component. | "export const DOT_VARIANTS" | dashboard/src/grammar/Dot.tsx:92-92 |
-| The shared `pulse` keyframe used by `blocked`/`alarm`, documented as ≤3 flashes/s under WCAG 2.3.1. | "@keyframes pulse {" | dashboard/src/index.css:88-88 |
-| The `pulseSlow` keyframe used by `awaiting-developer` — the developer's 2026-07-16 ruling that the cockpit state pulse is a slow ease-in-out, never `steps()` blinking. | `pulseSlow` | dashboard/src/index.css:94-101 |
-| The unlayered `html[data-effects="off"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here. | "unlayered html[data-effects="off"] freeze" | dashboard/src/index.css:8-8 |
-| `LIFECYCLE_STATES` — the six states `DOT_VARIANTS` must cover; `Dot.test.tsx` asserts the two lists agree in both directions. The names are declared on the two halves (`LIVE_STATES` L42, `TERMINAL_STATES` L48) and composed at L59. | "export type State = " | dashboard/src/types/projection.ts:15-15 |
-| `LifecycleList` passes `lifecycle.state` through untouched as `item.variant` and renders the "Task progress: …" label beside the dot. | "export const LifecycleList" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
-| `AttentionQueue` passes the raw `q.severity`. | `AttentionQueue` | dashboard/src/panels/AttentionQueue.tsx:328-328 |
-| `Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail — the reason an `awaiting-developer` state and a `warn` severity are on screen together. | "export type CockpitView" | dashboard/src/cockpit/Cockpit.tsx:68-68 |
-| The three flat properties this component is held to: vocabulary equality, every variant distinguishable from every other and from the fallback, and every variant carrying its own ink. | "const ALL_VARIANTS" | dashboard/src/grammar/Dot.test.tsx:17-17 |
+- The `cva` recipe, `DOT_VARIANTS`/`KNOWN`/`DotVariant`, the total `DOT_GLYPHS`, `UNKNOWN_DOT_GLYPH`, and the component. [1]
+- The shared `pulse` keyframe used by `blocked`/`alarm`, documented as ≤3 flashes/s under WCAG 2.3.1. [2]
+- The `pulseSlow` keyframe used by `awaiting-developer` — the developer's 2026-07-16 ruling that the cockpit state pulse is a slow ease-in-out, never `steps()` blinking. [3]
+- The unlayered `html[data-effects="off"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here. [4]
+- `LIFECYCLE_STATES` — the six states `DOT_VARIANTS` must cover; `Dot.test.tsx` asserts the two lists agree in both directions. The names are declared on the two halves (`LIVE_STATES` L42, `TERMINAL_STATES` L48) and composed at L59. [5]
+- `LifecycleList` passes `lifecycle.state` through untouched as `item.variant` and renders the "Task progress: …" label beside the dot. [6]
+- `AttentionQueue` passes the raw `q.severity`. [7]
+- `Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail — the reason an `awaiting-developer` state and a `warn` severity are on screen together. [8]
+- The three flat properties this component is held to: vocabulary equality, every variant distinguishable from every other and from the fallback, and every variant carrying its own ink. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. The variant vocabulary mirrors the served lifecycle states,
 but the mirror itself lives in `types/projection.ts` inside this repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "export type CockpitView" repointed to dashboard/src/cockpit/Cockpit.tsx:67-67. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "export type CockpitView" repointed to dashboard/src/cockpit/Cockpit.tsx:66-66. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
-  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
-  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
-  every anchor below it. Re-anchored the one row citing that file: `LIFECYCLE_STATES` L21-L30 → L42-L59,
-  so the range still shows all six state names — they are now declared on the two halves rather than in
-  one tuple. Nothing about the variant vocabulary changed.
-- 2026-08-01T09:40+02:00 — 260731-EFA-L4 curator: rewrote the body, which described a component that
-  no longer exists. Corrections: the base is `muted` + `?`, not "nominal amber" (the old base was
-  literally `warn`'s colour, which is how `awaiting-developer` shipped looking like nothing special);
-  the treatment is `color`, not `background`, on a `1ch` monospace cell rather than a border-radius
-  dot; `awaiting-developer` is now a declared variant; the known-set is **derived** from the recipe
-  (`DOT_VARIANTS = dot.variantMap.variant`) instead of a hand-copied `KNOWN` list; a total
-  `DOT_GLYPHS: Record<DotVariant, string>` plus `UNKNOWN_DOT_GLYPH` separates the pairs colour
-  deliberately groups; `paused` moved off `dormant` to an **oklab**-mixed muted amber, because
-  `paused` and `abandoned` were previously indistinguishable on adjacent rows and an `oklch` mix of
-  amber and grey renders green through the short hue arc; and `blocked`/`alarm`/`awaiting-developer`
-  gained `_motionReduce` so reduced-motion reaches the Calm toggle's resting state.
-  Recorded explicitly, because three attempts at this fix produced a lot of prose about suppression
-  modes that were then ruled invented scope and cut: verified against the tree, `grammar/` contains
-  no `dotSuppression.ts`, neither `grammar/` nor `index.css` contains any `forced-colors` or print
-  handling, `index.css` is byte-identical to the leaf base, and no file was deleted relative to it —
-  the machinery never landed. Nothing in this card describes it, and nothing should.
-  Added `Conventions`, `Todos` (the pre-existing `StateDot.tsx` oklch mix, out
-  of scope), `Docs References` and `Cross-Repo References`, which the card was missing. Repaired the
-  one existing citation: `index.css` `L66-L75` no longer contains `@keyframes pulse` (now L86-L92),
-  and added ranges proving `pulseSlow`, the `data-effects="off"` freeze, `LIFECYCLE_STATES`, and the
-  three consumers. Verification metadata left pinned; closeout stamps the code commit.
-- 2026-06-15T17:00 — Created for slice 5d: `Dot` migrated to a Panda `cva` (was `.dot--*` classes).
-  Verification metadata pinned until closeout stamps the 5d code commit.
+No meaningful cross-repo references found.

@@ -1,0 +1,241 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/cutover_lock.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+        "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
+        "locator": {
+          "kind": "symbol",
+          "name": "converted_memory_location"
+        }
+      },
+      "id": "RLZ-JPVV25",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Defines when the lock holds: the first local branch tip, then the first registered worktree, that holds the layout marker; only a directory that is definitely not a repository holds none.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+        "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "cutover_lock_refusal"
+        }
+      },
+      "id": "RLZ-MQKF7W",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is the one question every route asks once it knows its memory is unconverted: it returns the refusal that names the operation, the line, where the converted memory is and the crossing sync, returns nothing for a repository that holds none, and words an unanswered probe as a refusal.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module docstring: what is refused, when the lock holds, and fail closed.\n\nAnchor: \"The lock holds for a memory repository once that repository\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:8a5926c78c149b554e664214fc2650a5d1abcf9e7a5bfddf97481135d294b994",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Every route refuses unconverted memory once the repository holds converted memory, and is unchanged once it does not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:96f64e290e130dcfb0d021c4bbb99822996be1e560c74d03807cfdda93e99b58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The converting candidate is gated, never locked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_converting_candidate_is_gated_never_locked"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A plain directory is unlocked; a pruned worktree, an ownership refusal and a permission error refuse by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Where the repository holds converted memory: a branch tip, then a registered worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_memory_location"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every local branch tip is asked for the marker in one batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:10c3ef6d58151b43b608e4a1d4a81225b1b9718b155bb0e1b6b1a24e74b0923a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_branch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A registered worktree whose working tree holds the marker locks too.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:4cdc7ab792e9e68c051a98e1793ca5a5e7853e90caf2cfb3f289ea63069af2ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_worktree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The refusal: an unanswered probe refuses by name, and a locked repository names the crossing sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_lock_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Only a definite non-repository reads as holding no converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:bd5135698b454a69d52919911a6118c20e41a9b045047ed85616b3b5f3b7b2f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_repository"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A `.git` entry in the directory or a parent, or a bare repository, says there is a repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:da4a6c9f0b18f55520cd6b1f01b15e9af086b806be202a12aa3b9fb84fc20552",
+            "locator": {
+              "kind": "symbol",
+              "name": "_holds_git_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A failed or timed-out Git probe is named, never read as empty output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:fc1d09d6f9b0a74b508a4eb9a35f5a3c6e21a768d349709e4a1f4ad4d012ab94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The worktree layer's routes reach the lock through one helper that names the leaf's line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcffc0622cbf7fcdfb2deb1919e2e50354d377b7",
+            "content": "sha256:0cca0c5b74d0a07af5e532b88dcc4a8c79a274e4d1f04b218bb2923a015dfcc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_cutover_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,205 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This package-data artifact contains the synchronized architect lifecycle, in the corpus's readable order.\n\nAnchor: `# Architect`; `## Inputs`; `## Process`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "901f3f99623e48e20e768dacdfee436c200fb861",
+            "content": "sha256:2cdf4f6b4b46116d48e1d6823c246aed7fcd1cb2e4143bbd33e7d1de448dc7dd",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The canonical source owns this doctrine.\n\nAnchor: `# Architect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "901f3f99623e48e20e768dacdfee436c200fb861",
+            "content": "sha256:3b3c18f066f9cdf7683c39c73f4950ac16a72b74aca66f0539be64d7aa09bd6f",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role is a self-contained capsule — its dispatch brief is its session start — and it declares no inherited shared sources.\n\nAnchor: \"Your brief is your session start.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "901f3f99623e48e20e768dacdfee436c200fb861",
+            "content": "sha256:0464583f5a060b589a8ad98a9e70ca29a399ca2745ad25f134138c2cb9cd5930",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip.\n\nAnchor: \"Strategist pass — propose, never auto-run.\"; \"Never dispatch the strategist without the developer's yes.\"; \"On a sanctioned skip the orchestrator must author the same reasoned plan\"; \"a graph-less choice is allowed, an unreasoned default is not\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "901f3f99623e48e20e768dacdfee436c200fb861",
+            "content": "sha256:f97fca263ea7b03784bae0c11b737cc2e1bc08d560f3c81d99a978932e151713",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Master attachment is one atomic attach_master call that writes the typed subTasks row, the orchestrates membership, and — on a sprint with a graph — the graph node, refusing a partial attach.\n\nAnchor: `attach_master`; \"on a sprint with a graph — the graph node, refusing a partial attach\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "901f3f99623e48e20e768dacdfee436c200fb861",
+            "content": "sha256:183e5578abe4dc83be5bfbf01bb3bb28945d5c59f60dac359af64186e6083f5e",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The attachment carries the master's explicit ruled executionNature, and size alone never makes a master atomic.\n\nAnchor: `executionNature`; \"size alone never makes a master atomic\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "901f3f99623e48e20e768dacdfee436c200fb861",
+            "content": "sha256:b437b416cd95a0a9a4292c2195c8350d154aa553943a29a5a4eea3cff8edc9e8",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shipped architect role still names the graph-less default rather than the removed source-pair-selected wording.\n\nAnchor: \"a reviewed graph-less atomic-sequential choice whose assumptions still hold\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "901f3f99623e48e20e768dacdfee436c200fb861",
+            "content": "sha256:5abf951aeb5cf53f9009a349ce456d661d1f592e2d24eceb5f88fec782c470e2",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The architect is the one seat that may wear another role's hat, and the corpus permits exactly that one sibling reference.\n\nAnchor: `## The one hat-collapse this lifecycle allows, and its limit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbcbef71601c1e5df3015c2de8419ccbbd084f98",
+            "content": "sha256:7884929095c6b0359249c65b25ec6fc2a4dbab3d60e7e873fdd576e97a238e35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SANCTIONED_SIBLING_REFERENCES"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "901f3f99623e48e20e768dacdfee436c200fb861",
+            "content": "sha256:d534488da0bc878d47c25db148111a1830612bfffaec8258e784c5a572bd1db2",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbcbef71601c1e5df3015c2de8419ccbbd084f98",
+            "content": "sha256:569040dfe8418f94347d814a3e3f8ba6ebbbb22505a18de1c225b29bdbac276a",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The router's registry still names architect as the developer-facing owner seat.\n\nAnchor: \"design conversation, decision-item relay, and drawing board\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9afc951c4cf2e13caa8651c2aadf74b38fd8eed",
+            "content": "sha256:136de80ed012ee0277352f7eeff6d18e47b2a136356f93dce660ad3ce37ddc34",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The design hat the architect wears inline: with no designer chat, the architect performs this same method inline.\n\nAnchor: `# Designer`; \"With no designer chat, the architect performs this same method inline.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f1b6191a484c254f8f8738145d09e1461f6e0a0",
+            "content": "sha256:803437cca70ee39ed64daf38820c57988e6ed1d5f36b0451221ca24fd355a3ff",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,119 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/changed_lines.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `ChangedLines` (lines 20-29) — Lines added or modified against HEAD, per absolute path..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ea67678e0944f4159d6883ad5f0f776185ee19d",
+            "content": "sha256:558dbc05e7bbb553cf53060c54084b87387cbee8a7c0765893210ed352037a73",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangedLines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `changed_lines` (lines 32-50) — The lines under ``root`` that differ from HEAD, staged or not, plus untracked files..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ea67678e0944f4159d6883ad5f0f776185ee19d",
+            "content": "sha256:624eab1e8cb7fd807345791925c83c85cf7310e34eb14249d9447bbe63e5e810",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `anchored` (lines 53-55) — Make ``root`` absolute without collapsing worktree symlinks..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ea67678e0944f4159d6883ad5f0f776185ee19d",
+            "content": "sha256:d60ea7e27ce37edbb1e87c0a7b5da4a108ad4dcbe99832f671f4653d79f1824c",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchored"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `repository_root` (lines 58-72) — The work tree ``root`` sits in, or ``None`` when it has no history to diff against..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ea67678e0944f4159d6883ad5f0f776185ee19d",
+            "content": "sha256:56a3e0ac5771a0540ae8d7f3161b222f6bfcaf1d9e475ecd3550e49379661170",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `collect_diff_lines` (lines 75-103) — Collect added lines from staged and unstaged diffs, with rename detection..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ea67678e0944f4159d6883ad5f0f776185ee19d",
+            "content": "sha256:5f334e8c5fcf7f8ab153efd288d7a7df1521f521f9ec90920e05cb0447149aa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_diff_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `diff_target` (lines 106-111) — The new-side path of a ``+++`` header, or ``None`` for a deletion..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ea67678e0944f4159d6883ad5f0f776185ee19d",
+            "content": "sha256:aba74c668dcedc6a767cc9e34e4fd34ee404bcb47aacb77bfe6d1290fc337895",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `collect_untracked_lines` (lines 114-135) — A file git has never seen is new in full, so every line of it is in scope..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ea67678e0944f4159d6883ad5f0f776185ee19d",
+            "content": "sha256:ca39b15b91c88dd1949b1fad8f40cd59b728fb3a53ffd3cb33d82547135f4487",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_untracked_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

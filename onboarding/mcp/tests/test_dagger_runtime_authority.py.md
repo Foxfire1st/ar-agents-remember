@@ -1,15 +1,5 @@
 # mcp/tests/test_dagger_runtime_authority.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_dagger_runtime_authority.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -36,36 +26,23 @@ No Dagger commands run in these unit fixtures. Historical declaration, transitio
 
 No file-local implementation change is requested by this reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Admits one shared authority and binds a deterministic snapshot. | `test_admits_one_shared_authority_and_binds_a_deterministic_snapshot` | mcp/tests/test_dagger_runtime_authority.py:113-134 |
-| Release only the exact owner and reject stale or foreign owners. | `test_release_only_the_exact_owner_and_reject_stale_or_foreign_owners` | mcp/tests/test_dagger_runtime_authority.py:137-195 |
+- Admits one shared authority and binds a deterministic snapshot. [1]
+- Release only the exact owner and reject stale or foreign owners. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
-
-
-- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass: created this file-level
-  onboarding card for the new host-authority proof suite (CCR-R12@v4) delivered in code commit
-  cfd09381; anchors and ranges derived from the current worktree source and pinned to that commit.
+Fixture repositories and protocol doubles do not establish a live external integration.

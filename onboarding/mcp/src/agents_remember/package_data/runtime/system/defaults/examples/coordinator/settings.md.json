@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The example states that coordinator settings are workspace-wide and do not replace per-repository memory settings.\n\nAnchor: `workspace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7224e575bc48b3e360b724cc68c344a1a84bd27",
+            "content": "sha256:254f8156116c619e8fb838df37f7ed6536ded424d40546d7264b2499e0f4079b",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The routing section tells agents to invoke \"c-08-ar-coordination-context-resolver\" and treat repository-specific memory guidance as more specific.\n\nAnchor: \"c-08-ar-coordination-context-resolver\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7224e575bc48b3e360b724cc68c344a1a84bd27",
+            "content": "sha256:36cb1c3e1e9c6238d4247e01748f43f0d12f296f987543ce125d9b77989592ca",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The provider section defines semantic, relationship, and intent retrieval substrates and keeps provider authority in MCP settings.\n\nAnchor: `semantic`, `relationship`, `intent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7224e575bc48b3e360b724cc68c344a1a84bd27",
+            "content": "sha256:07c5c6845ea8d2071d2ab3df4201319fc04bb0bd26ec614f08b9d89295c9b08e",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The provider lifecycle section routes behavior through MCP/package-owned tooling, removes `_bin` and `_venvs` from the managed contract, and prefers Docker-wrapped providers/backends over host services.\n\nAnchor: `lifecycle`, `_bin`, `_venvs`, `Docker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7224e575bc48b3e360b724cc68c344a1a84bd27",
+            "content": "sha256:2d4cf6b0b7144955479a9e0802c74b9092addab65b412ee7637f1443cd6fa548",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The GrepAI notes define workspace roots, live-root indexing, `.grepai/` containment, runner/config/log/data locations, and Docker-owned execution.\n\nAnchor: `GrepAI`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7224e575bc48b3e360b724cc68c344a1a84bd27",
+            "content": "sha256:57fb89ca68a6ff28450b0267c87da2e980af3d67d3d71389ebc627ba5c4cc2e0",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The CGC notes define configured code roots, per-repository runners, Docker-owned execution, shared FalkorDB state, environment separation, and explicit database deletion.\n\nAnchor: `CGC`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7224e575bc48b3e360b724cc68c344a1a84bd27",
+            "content": "sha256:e4d3da8a5eb4298728fffd4218b077cd39f7dfcbf703ed18445172f67b0790cb",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

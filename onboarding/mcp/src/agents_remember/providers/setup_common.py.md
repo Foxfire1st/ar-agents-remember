@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/setup_common.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/setup_common.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -46,26 +36,9 @@ while announcing phases (GitHub #53).
 - Child process helpers force UTF-8 and use `stdin=subprocess.DEVNULL` so lifecycle children cannot consume MCP stdio.
 - Shared helpers stay provider-agnostic; CGC and GrepAI decisions live in provider-specific setup modules.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The provider setup facade re-exports these helpers for existing callers and tests. | "re-exports only the narrow set of symbols callers and tests still use" | onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:15-18; onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:41-46; onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:48-48 |
-| Lifecycle calls are dispatched through the direct lifecycle facade. | "Callers import this facade directly" | onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:19-22; onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:36-39 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 2 facade rows to
-  memory-repo `onboarding/` citations with literal anchors (provider_setup.py.md 15-18 + 41-46,
-  lifecycle/__init__.py.md 19-22 + 36-39). Zero findings remain.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  added the frozen `LifecycleCommand` and re-signed `run_lifecycle(coordination_root,
-  command_spec, *, timeout, dry_run)`; `provider`/`action`/`extra_args`/`native_args` are no longer
-  separate parameters. The built argv is unchanged. Verification metadata pinned until closeout
-  stamps the L2 commit.
-- 2026-06-10T07:30+02:00 — Added `setup_progress_from(args)`: returns the `SetupProgress` sink riding on the args namespace (set by `run_provider_setup(request, progress)`) or a shared no-op, so the install/prepare functions keep their `(args, settings)` signatures while announcing phases (GitHub #53).
-- 2026-05-31T12:30+02:00 — `stable_provider_id` slug logic moved to `providers.identity` (now re-exported); added `provider_settings`; dropped unused `coordination_root` arg from `settings_path`/`load_settings` (1.0.0 review remediation).
-- 2026-05-25T19:50+02:00: Created when shared provider setup helpers were extracted out of `provider_setup.py`.
+- The provider setup facade re-exports these helpers for existing callers and tests. [1]
+- Lifecycle calls are dispatched through the direct lifecycle facade. [2]

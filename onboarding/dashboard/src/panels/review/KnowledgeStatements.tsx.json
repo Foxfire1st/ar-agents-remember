@@ -1,0 +1,546 @@
+{
+  "path": "dashboard/src/panels/review/KnowledgeStatements.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The header's own record of the defect and the rule: the pane drew the diff only when both sides were present while the side line returned null for the present side, and the four branches that replace it are decided by declared state.**\n\nAnchor: \"neither side `present`\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:ffac7ccc275128abc1bb78657cb3bbf83015c94d7562ac8dcf75aa148a0a7cbb",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The pane whose two statement fields feed this component.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:33e36359efd8dd337f7f07c83b33db59401b55633d4a9e8c96a71f50d6fece3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgePane"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:d33a72d2445e01f094245c83ba9e0d499538e184f9b5758cd549081cbc7cf999",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:c914d5c6dbcb6a6b42cb9614a45346f2b87c88501b159b2abb5d9f764b8e9f39",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 318
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The technical knowledge pane delegates its statement operands to KnowledgeStatements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:ffdf01a96b75a577dd0a4006ab295850c28fe3a47147332ad17c10a3d07a844c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgePane"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The one-sided diff engine, unchanged and reused: a split-mode CodeMirror diff over `before`/`after` with its own `diff-pane` host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffPane"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The content viewer the unreadable-opposite path reuses, and its own test id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilePane"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts the viewer's content with no diff pane present.**\n\nAnchor: \"draws an added invariant's full after statement beside an absent-before label\"; \"draws a removed invariant's full before statement beside an absent-after label\"; \"keeps the available text and claims no diff when the other side is unreadable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:dd704e84b2dbb0d6d565dae456bccb4736394285ec6a6271891dee15f8f8ea6f",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:d21e3b69e4e372f33b8da2b811308b1aa0b69b970c89e8f0f84af0f48d2414f3",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:72f8fd67774d0d8165894a86a74b157d73c72052aaf96c05e6fc68af44d64eed",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts `FilePane` content with no `diff-pane` present.**\n\nAnchor: \"draws an added invariant's full after statement beside an absent-before label\"; \"draws a removed invariant's full before statement beside an absent-after label\"; \"keeps the available text and claims no diff when the other side is unreadable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:dd704e84b2dbb0d6d565dae456bccb4736394285ec6a6271891dee15f8f8ea6f",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:d21e3b69e4e372f33b8da2b811308b1aa0b69b970c89e8f0f84af0f48d2414f3",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:72f8fd67774d0d8165894a86a74b157d73c72052aaf96c05e6fc68af44d64eed",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The case that a both-present area names no side, and the case that each of the three non-present states is carried through as its own token.\n\nAnchor: \"keeps both statements when both sides recorded one, and names no side\"; \"renders a %s side as that state and never as another one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:cc63b1ace7d4c09315cf566812f202049c4d9a620443b68a4f1cbfba27c38a27",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 231
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:c37c4fde29ccb2fd7d37d844c9d62447c014dc089ed652ecd8eaebfa3b206ae4",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The case that no subject compared renders two named states and neither pane.\n\nAnchor: \"draws no diff and both named states when no subject was compared\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:4fbfa2a76c5ea6eebaddc2e94271ce37326cf47072e49bcad829e4df998b26bc",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 277
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The server-side half of the same contract: the statement sides and the field rows these branches are a function of.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:2c88cb7e4ccc6e6f31b85f6737cf90ce462e537c5625002e27cbb567f7f15df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_added_statement_renders_its_after_text_beside_a_named_absent_before"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:a66dedf43017f357632ebd53db6a7da972e44024adeed1da988bc30787095c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The owner of the data half of this contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:3961a4b6c72c5b4f477246be4d13d7fb03c0863553354df84c2b61b548e189b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:3f19cfeb02bbec3766ec744b6426efe09af811dd27f20ef1a1014d89dd5a1006",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_conditions"
+            },
+            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two shipped renderers and the wire types this module imports, and the absence of any client import.\n\nAnchor: `ReviewSideContent`; `DiffPane`; `FilePane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:683e3e4568195e40760aed95f6e9d393843109ad991b002c937fce7eca8301d0",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The one predicate for the unavailable-content pair, which is what keeps `binary`/`unresolved` out of the diff branch.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:7db90a467187214b7f30326925ffbdd54e2c98125e8f8603f9d95606645adcc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "unavailable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The state line rendered for every non-two-sided area, carrying the state's own token in `data-side-state`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:5885bd5d02d282dd0387229b63716c3e679c07e8263f69f599c49bf36f2001eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The unchanged two-sided path, with the before side's declared language preserved exactly as the pre-R06 pane passed it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:16dc85b59f4906fcb11e8d143edb278a4e7c1d238ba826477a3a3a85df8c3a7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "bothPresent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The one-sided diff: the present operand on its own side, the known-absent side genuinely empty, and the drawn operand's own language.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:4ccc970e29938a672c4245c655e3d660c25193b026012a6ff8139e0d98548192",
+            "locator": {
+              "kind": "symbol",
+              "name": "oneSidedDiff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The available-content path: the explicit no-diff line and the readable operand as content, so no addition or removal is claimed from an unreadable side.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:0f4cb2904f86dbcea4ba4f37159c9e77183d6a5407643de2f0c1c6da38f8e1be",
+            "locator": {
+              "kind": "symbol",
+              "name": "availableContent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The branch itself: count the present sides, render both state lines for anything that is not two-sided, and split on `unavailable`. The two-present early return is why a both-present area names no side.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeStatements"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The model a side is: the closed four-member state literal and the value that carries `state`, optional `text`, `language` and `detail`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:4a5d72f4e6df2cb36d701f09599c7f0cb5fa6495dcb68f0390a1061e1c8e6734",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSideState"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:dfe9f255a9428d0c5cd6076a77be5615934cd566078199b7fccd09c1a005b982",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSideContent"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:b1bc8405dc81f3431e8033b19c5a5dd84c585575f20fdef18600302baec244ed",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:ae6731c2be621b586d87b48c40edd4d467449c359d39eb975c25b1db421e26fd",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:c5c94188c49107edc94da6428519691ca83b2877ccb12923aa748f3d14b199ea",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:b2f9ebe1a4df834c2c450bb582204968c8ba1604405928f82ff734397530661d",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:365c24091d3e0029352a08045aee4fe90e3a2f8d0b41e597d6ef9fce676d4804",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:d390041404bd0c1eea6bdc71a052478a88759925edae3fb96415bb4f1dbef89e",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

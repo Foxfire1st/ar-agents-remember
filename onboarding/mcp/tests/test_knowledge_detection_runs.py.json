@@ -1,0 +1,592 @@
+{
+  "path": "mcp/tests/test_knowledge_detection_runs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The scenario and its harmless control producing the same condition and the same signal identity, with no verdict on either.**\n\nAnchor: \"test_a_budget_change_and_a_comments_only_change_produce_the_same_condition_and_signal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:0e474ac2d032f140471203fb37e2e14fff74475c111e2b93adbd60ea01b6bc93",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 293
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Two signals with different declared sets recorded on one run rather than collapsed into a run default.\n\nAnchor: \"test_two_signals_with_different_declared_sets_are_both_recorded_on_one_run\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:b2daae76987706b078e226cd6d5f9caca9449f46007579aca699e720cabc7432",
+            "locator": {
+              "end": 818,
+              "kind": "line_range",
+              "start": 818
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The agreement refusal that also asserts zero rows were written.**\n\nAnchor: \"test_a_signal_that_disagrees_with_its_run_is_refused_and_nothing_is_written\"; \"test_a_run_whose_declared_order_names_other_signals_is_refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:881d236893562859ba460939e0c984d16c8d6a24296849a6a832cfcef1fec836",
+            "locator": {
+              "end": 864,
+              "kind": "line_range",
+              "start": 864
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:ac6adbcf5382eedc6a2992931374c1c4dc48c02ba79974de750782a208928dbc",
+            "locator": {
+              "end": 892,
+              "kind": "line_range",
+              "start": 892
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**Requirement 7.1: a detection write into an assessed database refused, so the measurement cannot invalidate itself.**\n\nAnchor: \"test_a_detection_write_into_an_assessed_database_is_refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:791f5dc4be10d0e76afcaf73ffad64b3f7f35dab6987d1ab821ab7c1fcc5bffa",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 909
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The recorded sequence that cannot be reordered or shortened, refused by generation 4's triggers.**\n\nAnchor: \"test_a_recorded_detection_sequence_cannot_be_reordered_or_shortened\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:85bbaa759344d6ba7ad902fd3d5eebade6bf1769cd304ea5534efc8df1e1f4b8",
+            "locator": {
+              "end": 946,
+              "kind": "line_range",
+              "start": 946
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**A re-execution over a changed snapshot as a distinct run naming the difference.**\n\nAnchor: \"test_a_reexecution_over_a_changed_snapshot_is_a_distinct_run_naming_the_difference\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:02c230d205a5dd7f3919395403c080bd1609452b4d90e20da17f1d156010514a",
+            "locator": {
+              "end": 981,
+              "kind": "line_range",
+              "start": 981
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A moved policy version marking the run stale while its signals keep their recorded versions.\n\nAnchor: \"test_a_run_whose_policy_version_moved_is_stale_and_its_signals_keep_their_versions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:89bbbd24d57699cf8c8f3c4ac8340c0a4529b3da88ded721ecf7898fe487030f",
+            "locator": {
+              "end": 1028,
+              "kind": "line_range",
+              "start": 1028
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**Retention reported through the operation names the destination, and a worktree-local home is not retention.**\n\nAnchor: \"test_a_manifest_reference_reported_through_the_operation_names_its_destination\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:1b70bb21b0fcc40773cd4f316d7d86842b2c3d560d6cb3076f854466d1d0fa19",
+            "locator": {
+              "end": 1058,
+              "kind": "line_range",
+              "start": 1058
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The exact inputs recorded as identities rather than as paths.\n\nAnchor: \"test_a_run_records_the_exact_inputs_it_read_as_identities\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:2d805b2e507b941e2d9c8f04ba620f6ef50a0fc3a83814713c8940a17e951ead",
+            "locator": {
+              "end": 1084,
+              "kind": "line_range",
+              "start": 1084
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The predating dataset: refused with both generation numbers as facts, migrated nowhere, table still absent.**\n\nAnchor: \"test_a_detection_dataset_predating_generation_4_cannot_be_created_by_migration\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:14b17c29bfaa9b9263120b3adcc4485810bd62d13952540f612db2ef8c17f7bc",
+            "locator": {
+              "end": 1108,
+              "kind": "line_range",
+              "start": 1108
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The synthetic build of union items, family memberships and anchor resolutions the conditions are provoked from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:caae64ec2d8a20cc7f5d190c87a9cf8945fa3cb0080deecfefa9f2f8e622da85",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_item"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:43fe267d1fc9ba2facbba8bce57564c3b92a1601b1b2e55a92dbf3aa08d92ed0",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_union"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:c36c2ca6ced02f356e33e62a5f30dfbeb73cc1782bf1d469eed370921b13ddf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:9449eb51f4d0dd49b164557fc62cbf45cb670deb36b249523bf6ebdf51e30a2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "walk"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:c4542b2c7fce6c792d5027294eb61ea9e27dd2b9b929614abaf0a3b5625bd68a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaimSpec"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The grouped signal that retains every contributing match with its path and edges.\n\nAnchor: \"test_a_grouped_signal_retains_every_contributing_match_with_its_path_and_edges\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:94f726fde67e3c7982a14bb0f06593c3cd1107509c155ce93f8db6bf49eb4581",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 325
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The one anchor-resolution constructor every synthetic item is built through — re-cited at its own extent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:e3aa2fd390b41dc4473f137d28db638fa3ed72c3d554074f59c29e0a6eb15b63",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The real store fixture and the run assembled from a walk's signals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:260850b9c4436cef7d725b90c23437b557789877c36ffbbdf0e9cc4380b54a7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "detection_store"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:c77b28ce68ee946f017daf40a55b7b257c100f6d8c6fde63619fdcf0e2dc36a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "assembled_run"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:62ae346e7fbb57399580617562c3e3cc3e2204dd282954a5e1b009bb1143bf8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "real_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:59c2f962cd2db7d81e5507602e2edff2d8dbd11d16532bc6332e2f4d2e9dafdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_real_diff"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:4575c38031330747d67d2c4cc3da651632f4d8c8265e7b4f0148c131d793be01",
+            "locator": {
+              "end": 592,
+              "kind": "line_range",
+              "start": 545
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The registered support fixtures this module consumes — **no new artifact and no new contract**.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:001584ab745e28afcd6f1111f23193c034a107b180674d07b25de79659af14a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffFixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The production entry points these cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:fec6474d614bd80104b11ee2eb5be0d35dbced81fb401f0827605c5478196ce6",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_detection_run"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:98b12c90f2206ac0ec74a042c9dcff8df0aba7fa76b6ec4e9ed0af23e6a74615",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_detection_run"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8c59bb3bc679ca7aaa7f391fda20f7ffe33ee61",
+            "content": "sha256:67750e8ddbfba4d6148e92c66e58af2058129974336abd1416b718db4970e4d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "detect_review_conditions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/detection_walk.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:6474d1a0d7765f51cb7823e97a1764aee7ddf498d5799ab095f17f95b436677d",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_detection_run"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The sequence table's two triggers, which are what refuse a reorder or a shortening of a recorded run.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "content": "sha256:83a515ba78005b853385a41dfb1ef6c864ead15a6adc55cd4fd04230a9f5c504",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TRIGGERS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v4.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The lane row this module is registered under, and the two catalog consumer rows it added.\n\nAnchor: \"unit-regression = [\"; \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The declared order as a total order over signal identity, independent of the order items were presented in.**\n\nAnchor: \"test_the_declared_order_is_total_over_signal_identity_and_independent_of_item_order\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:02dbf7aec18bb33ad7b1eea299039e593186440fb964ca8d06d51105eccb1a3f",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 339
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**An unsupported locator as a declared scope limitation rather than a negative match.**\n\nAnchor: \"test_an_unsupported_locator_is_a_declared_limitation_rather_than_a_negative_match\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:363069d935dd4cd659dd28ac64f9dc72f7d766a453102c5cc87a54d25c5de5b4",
+            "locator": {
+              "end": 399,
+              "kind": "line_range",
+              "start": 373
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The incomplete scan and the unmapped path advertised rather than dropped.\n\nAnchor: \"test_an_unmapped_changed_path_and_a_truncated_scan_are_advertised_rather_than_dropped\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:6737778ed4c8c76cb6acfebd70a760aab2b10d5a8e79481599f90120467fb647",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 400
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The probe outcome and the omission read from the comparison's own record.\n\nAnchor: \"test_the_walk_declares_the_probe_and_the_omission_the_comparison_actually_recorded\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:61d0e8be2b9a52849dd3ecc08f8416b9f4b1603182ff107214e6e995eb7055ed",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 421
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two-sided declaration refused rather than widened when one side was read.\n\nAnchor: \"test_a_both_sides_declared_walk_over_one_side_is_refused_rather_than_widened\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:b4a954e7ee48ab59d38fb00344b3a980a636b6b8e643d96d14e782d0ab516218",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 439
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The walk over a real two-snapshot comparison, driven through the shipped application seam.**\n\nAnchor: \"test_the_walk_consumes_the_shipped_comparison_and_emits_facts_only_signals\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:ac5350afaedbc813b07cdf87e79e9666a6081b03f239ef07b74427431fc20784",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 493
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The write/read round trip: the recorded order served back, and the two-place versions.**\n\nAnchor: \"test_a_recorded_run_reads_back_in_its_recorded_order_with_two_place_versions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:7f419e65eac1f75855730a800883b0f268b903546fb5610836baeb563f933469",
+            "locator": {
+              "end": 769,
+              "kind": "line_range",
+              "start": 769
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

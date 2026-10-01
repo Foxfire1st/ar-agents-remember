@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_currentness/state.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_currentness/state.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T19:59:41+02:00 |
-| lastVerifiedCommitHash | `719acba61e491d0b7f1ee82dbeea5314ecec5083`|
-| lastVerifiedCommitDate | 2026-09-29T20:27:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -62,7 +52,9 @@ every read is served from. `knowledge_read` and the published-intent block call 
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R03@v2` of task
@@ -71,36 +63,25 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one function, its consumers, the rule-2 order and the visibility rule. | "The first rule that applies wins" | mcp/src/agents_remember/application/knowledge_currentness/state.py:1-20 |
-| The state vocabulary in count order. | `InvariantState`; `INVARIANT_STATES` | mcp/src/agents_remember/application/knowledge_currentness/state.py:49-55 |
-| Rule 2: stale, then unverifiable, then unrealized (proofs do not count), then current. | `invariant_state` | mcp/src/agents_remember/application/knowledge_currentness/state.py:58-68 |
-| One invariant's differing entries, compact when a read-wide reason explains them. | `InvariantCurrentness`; `differing` | mcp/src/agents_remember/application/knowledge_currentness/state.py:71-96 |
-| The family header with its stale members. | `FamilyCurrentness` | mcp/src/agents_remember/application/knowledge_currentness/state.py:99-113 |
-| The block, its counts and the read-wide reason. | `Currentness`; `unverifiableReason` | mcp/src/agents_remember/application/knowledge_currentness/state.py:116-145 |
-| The function: family members expanded, realizations and proofs observed alike. | `invariant_currentness`; `knowledge.proofs` | mcp/src/agents_remember/application/knowledge_currentness/state.py:148-198 |
-| Unknown IDs are left out. | `_is_record` | mcp/src/agents_remember/application/knowledge_currentness/state.py:201-203 |
-| Precedence cases. | `test_precedence_stale_before_unverifiable_before_unrealized` | mcp/tests/test_knowledge_currentness.py:405-418 |
-| The stale-proof cases. | `test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale` | mcp/tests/test_knowledge_currentness.py:421-439 |
-| The per-side computation. | `test_one_function_computes_each_side_of_a_comparison` | mcp/tests/test_knowledge_currentness.py:442-461 |
+- The one function, its consumers, the rule-2 order and the visibility rule. [1]
+- The state vocabulary in count order. [2]
+- Rule 2: stale, then unverifiable, then unrealized (proofs do not count), then current. [3]
+- One invariant's differing entries, compact when a read-wide reason explains them. [4]
+- The family header with its stale members. [5]
+- The block, its counts and the read-wide reason. [6]
+- The function: family members expanded, realizations and proofs observed alike. [7]
+- Unknown IDs are left out. [8]
+- Precedence cases. [9]
+- The stale-proof cases. [10]
+- The per-side computation. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the function reads one memory tree's index and one code tree,
 both named by its caller.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): created this card for the new file MIK-R03 adds. It records the carried L28 stale-proof ruling (proofs are observed like realizations) and the 19:13:41 review ruling N4 (compact entries under a read-wide reason). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

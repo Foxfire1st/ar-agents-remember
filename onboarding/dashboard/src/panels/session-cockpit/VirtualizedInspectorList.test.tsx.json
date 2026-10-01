@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/VirtualizedInspectorList.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "100-row ordinary DOM case.\n\nAnchor: \"keeps 100 rows as ordinary DOM list items\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e40f0401ba76f3fefd24c7db2072ddd47b87c0d0",
+            "content": "sha256:c3ee523298bf093586749468056ce4182b9aabce1364f0e7794843e807bba83a",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "101-row virtualized logical-total case.\n\nAnchor: \"virtualizes past 100 without slicing the accessible total\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e40f0401ba76f3fefd24c7db2072ddd47b87c0d0",
+            "content": "sha256:1581242a531c320e956840be055de0a79608a20d97179b269b860c17460c684d",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "118e54cbf09e76dc826a4c5043839fa039d3dc3b",
+            "content": "sha256:4177c257f6d2b0df274659c07a7a81f4cd2eca1d238888021c792371873b6f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "VirtualizedInspectorList"
+            },
+            "path": "dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

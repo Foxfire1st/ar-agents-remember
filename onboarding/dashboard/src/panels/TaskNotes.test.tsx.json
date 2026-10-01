@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/TaskNotes.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
+            "content": "sha256:d8274e76e06cec70165ab206f3f5700b8405bb0643825cd82c8ac85c3200c401",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskNotes"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The listing entry type shaped by the suite's stub payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
+            "content": "sha256:d796d7020f69bd9fe3480f24e64393b5d647fa55be86395394125a7b5e16cc7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "NoteEntry"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c8dcbcb233f63d4847aa5b0712a3abe9583f375",
+            "content": "sha256:bf1e67d572767cd9c7648e08ea4837960c170fd25b6add002d8585f41cf7d17b",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The component suite's `stubNotesApi` returns the directly evidenced listing payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c8dcbcb233f63d4847aa5b0712a3abe9583f375",
+            "content": "sha256:4068c536b185a5b5fde259396972e0dd3ae1be950855cefd3914fa6948d0e192",
+            "locator": {
+              "kind": "symbol",
+              "name": "stubNotesApi"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The moved note-content suite (markdown, text fallback, binary placeholder, truncation) covering the reader this surface opens.\n\nAnchor: \"NotesReaderViewer content pane (reuses the File Viewer DualPane)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e501409efeb6cd92559d312b46f440503133ecde",
+            "content": "sha256:71e316127d190ad3ebbff59d54d210fe2f6034fefadb7cab5ba12b834418bc29",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

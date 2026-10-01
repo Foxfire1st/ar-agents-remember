@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/evidence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/evidence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -83,38 +73,30 @@ vocabulary was widened by this leaf.
 - **The generation gate reads the number off the record.** `REQUIRED_EVIDENCE_GENERATION` is the generation
   constant, and a renumber changes that binding rather than the gate's logic.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The generation this write path requires, read from the registry rather than spelled as a literal. | `REQUIRED_EVIDENCE_GENERATION` | mcp/src/agents_remember/memory/knowledge/evidence.py:88-88 |
-| The two standalone write entry points and the batch dispatch. | `add_evidence_claim`; `add_verification_observation`; `apply_evidence_command` | mcp/src/agents_remember/memory/knowledge/evidence.py:134-145; mcp/src/agents_remember/memory/knowledge/evidence.py:148-160; mcp/src/agents_remember/memory/knowledge/evidence.py:163-176 |
-| The two in-transaction application steps that raise a typed refusal for the batch to roll back. | `_apply_add_claim`; `_apply_add_observation` | mcp/src/agents_remember/memory/knowledge/evidence.py:183-262; mcp/src/agents_remember/memory/knowledge/evidence.py:265-314 |
-| The link resolution that refuses an unresolved subject, anchor or coverage endpoint before any row exists. | `require_claim_links`; `require_evidence_subject`; `require_facet_revision_subject` | mcp/src/agents_remember/memory/knowledge/evidence.py:413-427; mcp/src/agents_remember/memory/knowledge/evidence.py:431-452; mcp/src/agents_remember/memory/knowledge/evidence.py:456-466 |
-| The generation gate: a refusal naming both versions, never a migration. | `require_evidence_generation` | mcp/src/agents_remember/memory/knowledge/evidence.py:491-510 |
-| The origin rule that makes a supporting record a proposal and refuses accepted data. | `require_proposed_origin` | mcp/src/agents_remember/memory/knowledge/evidence.py:515-525 |
-| The write-time digest decision: measured against the bytes when a root is available, refused when the bytes contradict it. | `checked_artifact_reference` | mcp/src/agents_remember/memory/knowledge/evidence.py:532-582 |
-| The observation insert whose statement is derived from the codec's declared column order. | `_OBSERVATION_INSERT_COLUMNS`; `_OBSERVATION_INSERT` | mcp/src/agents_remember/memory/knowledge/evidence.py:117-120; mcp/src/agents_remember/memory/knowledge/evidence.py:122-125 |
-| The case that asserts the digest is checked against real bytes and recorded as checked. | "def test_the_write_time_digest_is_checked_against_the_bytes_and_recorded_as_checked(" | mcp/tests/test_knowledge_evidence_observations.py:329-380 |
-| The case that asserts a digest the bytes contradict is refused with exact facts. | "def test_a_digest_that_does_not_describe_the_bytes_is_refused_with_exact_facts(" | mcp/tests/test_knowledge_evidence_observations.py:381-415 |
+- The generation this write path requires, read from the registry rather than spelled as a literal. [1]
+- The two standalone write entry points and the batch dispatch. [2]
+- The two in-transaction application steps that raise a typed refusal for the batch to roll back. [3]
+- The link resolution that refuses an unresolved subject, anchor or coverage endpoint before any row exists. [4]
+- The generation gate: a refusal naming both versions, never a migration. [5]
+- The origin rule that makes a supporting record a proposal and refuses accepted data. [6]
+- The write-time digest decision: measured against the bytes when a root is available, refused when the bytes contradict it. [7]
+- The observation insert whose statement is derived from the codec's declared column order. [8]
+- The case that asserts the digest is checked against real bytes and recorded as checked. [9]
+- The case that asserts a digest the bytes contradict is refused with exact facts. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T06:20+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): created this one-to-one card for the supporting records' write path. It records the five shaping rules, the measured rather than asserted digest flag, the derived observation insert order, and the generation gate that refuses instead of migrating. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

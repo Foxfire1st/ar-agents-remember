@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper package defines a versioned JSONL serve loop, typed failure vocabulary, and paging primitives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:19299769ec918cbf22e87632ef5acbf56c9e92f42c296cb36800e1ad7a362fb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROTOCOL_VERSION"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:b5a17d10d6f82c6d95e40a1e160762a4d28d389d5df8069b07de466ab219a29f",
+            "locator": {
+              "kind": "symbol",
+              "name": "HelperFailure"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:20eff2b11d10b357b3b017b71d80a9ac8ac03e33d1c57d2e7d5603549f058ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "serveJsonLines"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:57d517c2b1b0a0e627e88c272ee26b7bd2f6257da5059d801cbfb635ae29faff",
+            "locator": {
+              "kind": "symbol",
+              "name": "pageByOffset"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:90f0cf5d425c58375b00dfef5b51ac2dcf6feef9391d12cde046444895b94a5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "windowByOrdinal"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

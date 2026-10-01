@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/engineRoomTypes.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/engine-room/engineRoomTypes.ts` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [engine-room overview](overview.md)
@@ -34,34 +24,13 @@ Two exported interfaces, both pure type declarations (no runtime code).
 - Process ordering is owned by the server; the client must preserve the supplied order rather than re-sort.
 - `fallbackStacks` is consumed only when `usesFallback` is true (no `engineProcesses` present); the two surfaces are mutually exclusive in practice.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `EngineProcessView` joins a process node + lifecycle + `enclosureKey` | `EngineProcessView` | dashboard/src/panels/engine-room/engineRoomTypes.ts:15-25 |
-| `EngineRoomModel` fields: processes, workspaceEngines, fallbackStacks, usesFallback | `EngineRoomModel` | dashboard/src/panels/engine-room/engineRoomTypes.ts:28-37 |
-| EngineProcessNode is the generated projection contract consumed by this surface. | "export interface EngineProcessNode {" | dashboard/src/types/projection.ts:233-233 |
-| LifecycleProjection is the generated projection contract consumed by this surface. | "export interface LifecycleProjection {" | dashboard/src/types/projection.ts:365-365 |
-| ProviderNode is the generated projection contract consumed by this surface. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:513-513 |
-| `EngineStack` source type + `groupEngines` fallback producer | `EngineStack`; `groupEngines` | dashboard/src/data/selectors.ts:132-137; dashboard/src/data/selectors.ts:147-165 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 3 citation claims
-  (Repo-Internal reference rows); scoped result 0 findings.
-
-- 2026-06-23T13:45+02:00 — Task 11: added `gate?: GateNode` to `EngineProcessView`, populated by
-  `buildEngineRoomModel` from the joined lifecycle for the secondary Engine Room Respond surface.
-  Verification metadata pinned until closeout stamps the task-11 code commit.
-- 2026-06-16T01:55 — slice 5f S0: added `enclosureKey: string` to `EngineProcessView` (= worktreeGroup,
-  the stable per-enclosure key for list rendering and the future promotion morph). Verification
-  metadata pinned until closeout stamps the S0 code commit.
-- 2026-06-15T19:35 — Created for slice 5e: EngineRoomModel + EngineProcessView types. Verification metadata pinned until closeout stamps the 5e code commit.
+- `EngineProcessView` joins a process node + lifecycle + `enclosureKey` [1]
+- `EngineRoomModel` fields: processes, workspaceEngines, fallbackStacks, usesFallback [2]
+- EngineProcessNode is the generated projection contract consumed by this surface. [3]
+- LifecycleProjection is the generated projection contract consumed by this surface. [4]
+- ProviderNode is the generated projection contract consumed by this surface. [5]
+- `EngineStack` source type + `groupEngines` fallback producer [6]

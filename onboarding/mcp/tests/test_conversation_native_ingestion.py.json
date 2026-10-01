@@ -1,0 +1,83 @@
+{
+  "path": "mcp/tests/test_conversation_native_ingestion.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`NativeEvidenceFrame` keeps item, parent, type, timestamp, and raw payload as separate transport fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:3fa7919a42c87455b3f4221291878956ad7599e8bc866b56bd2e7bb580226a04",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeEvidenceFrame"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared ingestion turns truncation or mapper failure into a bounded row keyed by transport identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:57836e29c0d78940707ab70be78fa36228fed062b71cad22bf476e809b51578b",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeEvidenceIngestion"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The scripted bridge and projector factory exercise production projector composition with doubled reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "438a7f17ee6070cb089cb16f8c4836a6615868ab",
+            "content": "sha256:ebacf693e4606639b1a966247f8ce83cd9474ab9003e813fa9bab3ed675de26f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ScriptedBridge"
+            },
+            "path": "mcp/tests/test_conversation_active_service.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "438a7f17ee6070cb089cb16f8c4836a6615868ab",
+            "content": "sha256:33892939896ae6bbec9bcd27463395480f825975c18fcf421c2548627a224161",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projector"
+            },
+            "path": "mcp/tests/test_conversation_active_service.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "438a7f17ee6070cb089cb16f8c4836a6615868ab",
+            "content": "sha256:af48aa732ce6964e5b9d19248ee23c5148f31b90bf0e8d5fb2bc4baf761e4557",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/tests/test_conversation_active_service.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

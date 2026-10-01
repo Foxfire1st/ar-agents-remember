@@ -1,15 +1,5 @@
 # skills/w-02-light-task-workflow/master-template.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/w-02-light-task-workflow/master-template.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `onboarding/overview.md` |
-
 ## Governing Overview
 
 [repository onboarding overview](../../overview.md)
@@ -68,20 +58,20 @@ None.
 
 A light-task handoff records relevant targeted checks and honest failed or not-run results before the authorized Git transaction. Its commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside closeout/integration remains unchanged. Full quality, full tests, full memory quality, certification, and review remain explicit operations and are not automatic closeout or integration prerequisites.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source governs this topology template.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The master projects requirements to manifestation subtasks. | "## Filtered Requirement Projection" | skills/w-02-light-task-workflow/master-template.md:53-65 |
-| Each subtask names one primary revision and adjacent constraints separately. | "## Primary Requirement Revision"; "## Adjacent Requirement Constraints" | skills/w-02-light-task-workflow/master-template.md:137-139 |
-| Usage rules preserve approval, versioning, and evidence boundaries. | `## Usage rules` | skills/w-02-light-task-workflow/master-template.md:125-159 |
-| The master summary exposes attempt state while preserving leaf-journal authority and a non-gating boundary. | "## Requirement Attempt Summary (rebuildable projection — never a gate)" | skills/w-02-light-task-workflow/master-template.md:67-83 |
+- The master projects requirements to manifestation subtasks. [1]
+- Each subtask names one primary revision and adjacent constraints separately. [2]
+- Usage rules preserve approval, versioning, and evidence boundaries. [3]
+- The master summary exposes attempt state while preserving leaf-journal authority and a non-gating boundary. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The target repository supplies its integration, check, and release policy; this template supplies
 only lifecycle topology.
@@ -92,23 +82,3 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
-
-- 2026-08-27T21:53+02:00 — M44@v2: summaries now exclude internal protocol events and project
-  lightweight leaf records that link content-addressed expanded evidence.
-- 2026-08-27T19:59+02:00 — M42 clarification: excluded unrelated candidate movement from the
-  accepted-attempt invalidation contract.
-- 2026-08-27T18:06+02:00 — M40-M45: added the rebuildable requirement-attempt summary, exact
-  failure/current-state fields, leaf authority links, and explicit non-gating recovery semantics.
-- 2026-08-27T14:52+02:00 — Created onboarding for filtered master projections, one-primary leaf
-  ownership, manifestation mapping, and exact-version review.

@@ -1,0 +1,109 @@
+{
+  "path": "mcp/certification-profile-v1.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Bounded dependency reconstruction environments\n\nAnchor: `environments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "924c5b790a1b739463e949ed44520a9148ffb4e6",
+            "content": "sha256:f389111330d3fa39846d47f51320c1e391f55e5500dd96820287a9e1068ca267",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pinned Dagger execution adapter and actual runtime digest\n\nAnchor: `executorAdapters`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "924c5b790a1b739463e949ed44520a9148ffb4e6",
+            "content": "sha256:96e43621a8df42749c029d309e91ab1211ee43ca1f4a64257832778d416c119e",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current canonical profile digest\n\nAnchor: `profileDigest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "924c5b790a1b739463e949ed44520a9148ffb4e6",
+            "content": "sha256:a94012e9135d62993d629031df0961da5d17b9255875a7ef04a3fac856d6b557",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "54 report paths including 32 rail-evidence captures\n\nAnchor: `publishedArtifacts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "924c5b790a1b739463e949ed44520a9148ffb4e6",
+            "content": "sha256:2cc412ca973fa0f762e97a2182ecd54cce84a9277a698880887b2fdd3f85362c",
+            "locator": {
+              "end": 679,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Full/targeted/local selections and explicit applicability\n\nAnchor: `selections`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "924c5b790a1b739463e949ed44520a9148ffb4e6",
+            "content": "sha256:2b0adb31a3a500c3f3d5b0a353360dc1bc230f5b640be1093f48b4b2c90050e7",
+            "locator": {
+              "end": 3616,
+              "kind": "line_range",
+              "start": 3117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current source-owned selector configuration digest\n\nAnchor: `selectors`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "924c5b790a1b739463e949ed44520a9148ffb4e6",
+            "content": "sha256:5b61e07e69a2162de6bd707be5042305c9d54dba74d88ccc813669ef8997d25b",
+            "locator": {
+              "end": 3744,
+              "kind": "line_range",
+              "start": 3744
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

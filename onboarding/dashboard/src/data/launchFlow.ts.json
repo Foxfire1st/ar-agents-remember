@@ -1,0 +1,318 @@
+{
+  "path": "dashboard/src/data/launchFlow.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selection reducers, wire-body rule, classifier, and the classifying open client.\n\nAnchor: `LaunchSelectionState`, `selectionComplete`, `launchSelectionBody`, `classifyOpenResponse`, `openHostedSession`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:17b053324753bc9868252ee5f8a2b0927ecc8bbdfe1c283b0eea484df67d5f6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchSelectionState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:c2ee747cdc99b18bf493a4682f8041bb769827373c78a5ce257e83bf83d154cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectionComplete"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:a0fb68c34dcc59f53c7ba790766778a88a8dc3feaec942b1723bcf0ad96fa818",
+            "locator": {
+              "kind": "symbol",
+              "name": "launchSelectionBody"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:e0ac254e6ad38ca662cb411e7d4f7f136288d4d1f19a096761530a738611472f",
+            "locator": {
+              "kind": "symbol",
+              "name": "classifyOpenResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:b9f8bbfa6be94c98cdd883d79ebcc1a453ff86014ba7dcbb46c5d8d0e2717fbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "openHostedSession"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The capability wire types the reducers read (snapshot/model/effort rows).\n\nAnchor: `CapabilitySnapshotWire`, `ModelCapabilityWire`, `EffortOptionWire`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:ecb8a62dcce2473d97da3970bc8b22dcb3f363cddfad309a3d5ca69dfa1a277b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitySnapshotWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:1253d044d016c7a0bf20a88403736c0d9a3a6d4a469c9bb78bd6eef6626405a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModelCapabilityWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:2c3241d3253e4aa9f919465a1166333c2a7cc8100463a5b68762f96e588556b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffortOptionWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The open-response wire shapes this classifies (200/400/409×2 bodies).\n\nAnchor: `TerminalOpenSuccessBody`, `TerminalOpenSelectionInvalidBody`, `TerminalOpenBadKindBody`, `TerminalOpenSeatTakenBody`, `TerminalOpenConflictBody`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:62cc64d0e75bd613d583f2acd916263e0dd2678abe3ad109fde7839af23eb7b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenSuccessBody"
+            },
+            "path": "dashboard/src/types/terminalOpen.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:cc2cb0ae1134c934c9aca0586f49c92cb877f96ea18b2caf2f18f2e2fd2efb63",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenSelectionInvalidBody"
+            },
+            "path": "dashboard/src/types/terminalOpen.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:af277b34670ee7ca9e690768b4e622b99c3d753a03a7ce5a8b43c5d5355a98fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenBadKindBody"
+            },
+            "path": "dashboard/src/types/terminalOpen.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:466487578749dccc4436bdbf4da1fe1791a1d9c14ff5300d44857df7291905e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenSeatTakenBody"
+            },
+            "path": "dashboard/src/types/terminalOpen.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:b7e500d02134d4775364a406e4052c83ad309b2ccac7502db5507b42e4c76abe",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenConflictBody"
+            },
+            "path": "dashboard/src/types/terminalOpen.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The server's synchronous-refusal boundary (split pair / non-native only).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:3a6c9adfe287e864a517d737819505a1473e717862217a009d74e6b61536b337",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_terminal_open_selection"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:bfc3f6b0f4aaddc652f58736856200e791f29a326560a85eb925e8b92720187b",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The dialog rendering these machines (options exclusively from the envelope).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:b1e8deb090ef470275858dc95f44213ac3a85f2211a62ef9c1e2202b02d611c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchFlow"
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Open-response fixtures the classifier is table-tested over.\n\nAnchor: `OPENED_STARTING`, `INVALID_PARTIAL_PAIR`, `LAUNCH_CONFLICT`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:cd786e3692b4d8989bb68a2e901dfbc7b51ec0606fe22eb0fa4620f73494621c",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPENED_STARTING"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:f8b54603d0ba68ffe206625d24db22317f53d819424c40578979876204ce88fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "INVALID_PARTIAL_PAIR"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:f92d47e57767761abcce1664e865f6d4d9fbaf1d092a84a3257fd7d753def4d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LAUNCH_CONFLICT"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:5c3e7fab1ed9d026bf8242f7b5c3aeee1d73de98f44d880da6cf5e8826c581c8",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The unit suite (reducer tables, classifier table, POST-body assertions).\n\nAnchor: \"selection reducers — complete pair or vendor defaults\", \"200 + session → opened\", \"POSTs the complete pair and classifies the answer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e09cd859c311d82fc980dfcfbe2fafa0b47b9c2",
+            "content": "sha256:1c01111e28860f1280408c6936f5ad22f2f01fbb60a2da022584fea48d9c741b",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/data/launchFlow.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9e09cd859c311d82fc980dfcfbe2fafa0b47b9c2",
+            "content": "sha256:8c9929f984e0d5cd4b82a8f8434f590b330e046decef4b8425c673d1c394eb69",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "dashboard/src/data/launchFlow.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9e09cd859c311d82fc980dfcfbe2fafa0b47b9c2",
+            "content": "sha256:ad7e762bb56ecc9a0909640da6afa9244afdb2e8f13662c77a508469a4ac1de1",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "dashboard/src/data/launchFlow.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,690 @@
+{
+  "path": "mcp/tests/test_knowledge_ingest_failure_windows.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the two failure halves it measures, the five windows, and where the successful path lives.\n\nAnchor: \"Five windows are measured\"; \"an **adopted** half\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:69ef25cc9c9d8e29cef583dac4ac4be68d98441785975d2d842b3bc6e75f3098",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Verification C2: an obstructed record path is damage, never an absent record.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:e82a57a7643d462516fbb299934121034832011894781f23d5528b997889db98",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_obstructed_generation_record_path_is_damage_and_not_an_absent_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**Verification F3, record leg: the clause says only \"did not report success\" and the read-back names what landed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:38531e863b23d77c8c54af86ef92a8fa0b5fa90c74798f68238f4492adccb5fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_leg_whose_flush_fails_reports_no_success_and_the_read_back_says_what_landed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**Verification F3, dataset leg: the bytes are on disk, so \"was not replaced\" would be a claim the caller never measured.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:ad1b235ad417072bae9cde4bcb238de26299c4ceaef5d08f448ff7fad54b72a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dataset_leg_whose_flush_fails_reports_no_success_while_the_bytes_are_present"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The production reader and the two publication legs these cases drive to failure.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:7be8d3ef5e32fa875b05d2d509d5eddef2f80de6236fe74fbf9685d1d06d8231",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_standing_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:99d66f87335d39ea25157cfc9c52cf38407befa93239fa0613eaa824d1197a17",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:fbcf199904d449413362400783f84a997fcd058ebdc7d26660d095f44be0d457",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_dataset_leg"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:8440daddcd67cbbd3780ef16d6acdae605048eb0956538084bad8beeebb8d594",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_record_leg"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:36d19cc38ae2aac82c9db9c9de8d5cd016af60e5000f52aff933f0bc8228e0f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_failed_placement"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The production entry points and values the direct cases use instead of the CLI: the placement decision, the first placement, the bytes-read-as-dataset read, the record writer and the derived id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:57943a15347c4fa5c167d10eda2a86e983cefb4bc00d59eba9f2449aee3233da",
+            "locator": {
+              "kind": "symbol",
+              "name": "fill_admitted_before_half"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:cef8993fac31e2d4c756b7227acdce80389c6a2f09850ae7e81ead9f3f33f0cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "place_original_baseline"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:35514e01b7b15b02fa78e9cfd6c2ed9eac39e882609ddff8498ba5f1159725e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_admitted_baseline"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:c59d23052df14b855c60051706d41bf270986437a4b9830cbbbd10ed0e272456",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_baseline_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:1a0702ed99e96b2047a184d58eca03b33c7909801a6a5c92a036dee3bd6d097a",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_identity"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:1a8abc5a074d48b28911ff25bdd820f58b6d3db1c904d78aa360261cf968cd49",
+            "locator": {
+              "kind": "symbol",
+              "name": "BaselineRun"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:46d1b1e1615c20847dfeba62e360a4de4a2b898b8201cf1f14e6e78bcc0f9433",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapturedBaseline"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:ba12331d99ed8e538f49506bd0c1762427701ea6eba83e3227b0f4082c7fc56e",
+            "locator": {
+              "kind": "symbol",
+              "name": "BaselineGeneration"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:65a76e107eacb089804d211942e14035ed4ec7e0fce32899b9d8c05f4f28f472",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline_generation_path"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:dd35a4c076ec81f01ec1ec47f4beb36787abb8e8902ca26a1eb87d45f9208179",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASELINE_GENERATION_NAME"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The kernel write the dataset leg fails at, and the flush the fault injection patches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The CLI entry point every CLI-driven case runs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:90568bdc8bd602e0e941eb5c9baa73d267646ad22be69c80b38184c8280d660a",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The shipped builders for a real dataset the write-site case publishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e789c05a1ffe8da8b7bdae9e0fb7d62d2f6ef666",
+            "content": "sha256:da3d4c91d97c6059e207dbd4e5d3f1ad28e4b5cc88ab103b7659db21454643ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_case"
+            },
+            "path": "mcp/tests/snapshot_lifecycle_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e789c05a1ffe8da8b7bdae9e0fb7d62d2f6ef666",
+            "content": "sha256:a8d73aa5bce4d8db2e37b2f6f065e736472f1e42f87cdffadaffdec2c7d90211",
+            "locator": {
+              "kind": "symbol",
+              "name": "create"
+            },
+            "path": "mcp/tests/snapshot_lifecycle_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The journey fixtures this module imports rather than copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:0d80b719dbf8427d04def68919f7c9062ad6c827039c8a3e0505c9d3efe02854",
+            "locator": {
+              "kind": "symbol",
+              "name": "_digest"
+            },
+            "path": "mcp/tests/test_knowledge_ingest_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:d23b3ffa44e5494adc808e4e0a437a5bed41f175d2f386bc3b8108d9601b5d17",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_of"
+            },
+            "path": "mcp/tests/test_knowledge_ingest_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:3d497ecb4d79ee6b340e88551bb3a9d4c877256edc8776bee3b1909f984b6b49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_a_later_line"
+            },
+            "path": "mcp/tests/test_knowledge_ingest_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The enclosure and CLI fixture helpers this module imports from the ingest-list module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:6eb5d098d17a631eae8fd3712d5f9d3b4cc265eb0ba988e4511256480105bb7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourcePair"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:b6c1333574475ce2715e160c8f18fdef29f20f379116449fd67097b61ada05d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_private_pair"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:32a1513ad5cb61c86cfd50a9ee18d6e3662b555cde7e61fa8afeff1c067ea697",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_sibling_contract"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:6bbb9f4f2f5cbe3f53b6471a7e9dcf1167f9aab99995921eb9760dac91842251",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_publish_baseline"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:2cb5ed851565f2059e19f80a0401d5bb3918d7bd93d7320086d527c1806f9831",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fork_ingest_argv"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:38357656af4d637d945ced0cf4509207926cbb855c7a0ff580551424ce3b9ec2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_before_half"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:ba3e26025d9660866f20808ee570ac38c21587264d7c065bc9a02620da296ffc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_one_entry_list"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:9971f7837baee6dd79f129ef57faf750eb74525f2a002aa593e356e8136971c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cli_json"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The fixture the whole failure surface starts from: a half placed before generation records existed, with the published dataset it is a copy of.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:c48fea193feb44d750e2f43de3e99cedf3f7d0a59e65c32726cf306c954fbb9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_adopted_half"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The note left where the moved write-site case stood, and the case's own statement of the precondition it measures. The note's own text names `test_knowledge_ingest_comparison_generation.py` as the destination, but the case actually lives **here** — the failure surface was extracted out of that module after the note was written, and the case travelled with it. Recorded here as the fact, with the note's stale destination named rather than silently reconciled.\n\nAnchor: \"The write site's own precondition\"; \"the write site's own precondition\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:6308b20f5f07ea89aabd2e3f88664c032bdc9f60019da1c29a2eca4a7424ff30",
+            "locator": {
+              "end": 2412,
+              "kind": "line_range",
+              "start": 2404
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:0087d0483fe2caed0d78551137f19cb3665bde1ab5a058eeda958f1b2a4e1210",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The note left where the moved write-site case stood. Its own text names `test_knowledge_ingest_comparison_generation.py` as the destination, but the case actually lives **here** — the failure surface was extracted out of that module after the note was written, and the case travelled with it. Recorded here as the fact, with the note's stale destination named rather than silently reconciled.\n\nAnchor: \"the write site's own precondition\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:0087d0483fe2caed0d78551137f19cb3665bde1ab5a058eeda958f1b2a4e1210",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The dataset name the write-site case asserts against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:41f589742d293ea113b9383d3fdd5dd040a7fef94f875ea4a4115ac3da6cc2cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANDIDATE_DATABASE_NAME"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The lane row that makes these cases ordinary unit-regression evidence.\n\nAnchor: \"unit-regression\"; \"mcp/tests/test_knowledge_ingest_failure_windows.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:1299b454748c61b82cf12aa6b4b8cabaef662f7f354073fcd43e95fef7b48dbe",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The fault injection that makes a leg fail after its bytes landed: the kernel owner's post-rename flush, for one directory and nothing else.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:015eb3c162a92407fd349db0c1f71d6bc2a5939bc98eacbd054d16dd777fcbee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fail_the_directory_flush"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**An adopted half is the comparison's baseline, never an empty slot a later run may fill.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:bd83d0e4b57faf16654c86e97c82db55888ae55858eaf213c3851bc699d93c65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_half_that_records_no_generation_keeps_its_baseline_as_the_original"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**A record that disagrees with its bytes is named damage, and nothing is placed over it — not even by an explicit rebase.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:70b569c985a033152ee7b40e107fe3b55837d21a390b9d6f0cabae232caf8034",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_generation_that_disagrees_with_its_bytes_is_named_not_trusted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The invocation refusal: the rebase action without the dataset it rebases onto.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:3578bdd84f90034a83e55702b34574ea854fc31f80ffd3dd4903d3408bec57a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rebase_without_a_baseline_is_refused_before_anything_is_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The write site's own precondition, moved here with the owner it measures.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:0087d0483fe2caed0d78551137f19cb3665bde1ab5a058eeda958f1b2a4e1210",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_write_site_publishes_only_bytes_that_read_as_a_dataset"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**Verification F1: a blocked record leg cannot lose the original, and a following run still reports the true original as the standing baseline.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:90911f58082309dc2f19350271cf94b250697f0353be9b63664c74eb1a702a27",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rebase_whose_record_leg_fails_leaves_the_original_baseline_in_place"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The one window a record-first rebase can leave: the previous bytes beside a record that disagrees with them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:54128d88b5b238efdb465679826596ec6256fe0cb20554166276ef382e0cad15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rebase_whose_dataset_leg_fails_names_the_damage_it_left"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

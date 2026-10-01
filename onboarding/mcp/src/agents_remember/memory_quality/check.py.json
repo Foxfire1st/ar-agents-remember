@@ -1,0 +1,336 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/check.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`memory_quality_check` MCP tool builds drift context and calls this runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
+            "content": "sha256:b09603e04b6cf4b9e5b34d9a79fe6b45ec4c7aa6be6dcfb94875d51f2f3bb880",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
+            "content": "sha256:148ca44a62dc07a852a3ec1043d8292e85ab2b5d14a2f712e83b92ab57f86721",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "An unusable source index becomes a reported result with the cause and the operator levers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:c0ca2310a4079889aff5ca558b1a3e7ba364913f01375fd9a6afdeefa1ce5fe4",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_index_unavailable_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The inner runner the guard wraps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:06a466d6f77357e82ce7fb300d6bb19a36069ebb9f73db70db2377a106a0d25e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The typed error the guard converts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:9be8f0aa1a0147cdd13c72e1f2b70c1e17e87232dcf00158cd8d9f5c635ad513",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceIndexError"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The checked-status reads and their `NotRequired` guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:f9aaf71a8011891b9997f5c2a1d6b3551d4d51cad441c6a0d3b3c894c14d9862",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_drift_quality_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The case pinning the reported state when an index cannot be built at all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:788c5f4cf0d38f8d6d01ff33aad0d4af38864aa7ccc95463a00bc8c0d4e84070",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_index_that_cannot_be_built_is_a_reported_state_with_a_next_step"
+            },
+            "path": "mcp/tests/test_citation_index_resilience.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The case pinning the closeout gate's own declared check group degrading the same way.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:f144cc0ab73bc59d4c512708a1cdd51a8da971fef3dec975c53045c5c388b7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_gates_own_check_group_degrades_the_same_way"
+            },
+            "path": "mcp/tests/test_citation_index_resilience.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The drift context carries the converted tree's comparison base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:8b1c897823a6f938c5aa7f09d014a7a79a37c660760e13f56fbecef815421617",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftCheckContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The converted check receives the base port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:14d2d4a47323a91bcd6415822b50ccb7c96517861036c7b8d272dc7d18cb3b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Update-history ordering is the first style checker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961d92b07979a970b038f73798a14caacdafa71c",
+            "content": "sha256:8a4ace7c6ef7dbb0db5d8b94b43f29b0e602206cbed14e7a4bf9f5e108fa44bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_onboarding_root"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/update_history/history_order.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Drift summary provides the integrity checker payload, now typed `-> DriftSummaryPacket`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:d1ac205dbaa6ffc19900eec8884c15383ec45c72e0d1971e0100a0327dd2380e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_drift_summary"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:cc71e59e34007427b7f27a80030370176d365d5edb7aab0bd94795bd9d862c38",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The packet's `status` field typed by the imported status vocabulary, plus its `NotRequired` keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
+            "content": "sha256:b1213e60508c3a33c3ef17d5a6328b3c7b35a75d0a9db124c1e8ade517e853dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummaryPacket"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7991e5e72ae5584f9fe752e92bda7355b840f3",
+            "content": "sha256:3b946e71858b7b0e689e16adca1b7140655537c2897b3ce816731bc5f386de0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_onboarding_root"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Style checks receive retained prepared-history anchors and forward them through the citation gate while current bytes remain the comparison surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:efc1aa59506891967a7898c792b295fe6e4e0fb63c5685a09314ccd72525b281",
+            "locator": {
+              "kind": "symbol",
+              "name": "StyleCheckInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A converted tree is dispatched by format: legacy-format checks do not apply, and the drift slot runs the validator plus the stale-reference report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:d546cc82da6704844a46b86e079f843a3629565d8cd9e421819e077afb1409eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_memory_quality_check"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:14d2d4a47323a91bcd6415822b50ccb7c96517861036c7b8d272dc7d18cb3b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_check"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "content": "sha256:1aad9ad4a07387fb919cf7a7136e828c7187ae9215a1c3e4da28198339c3ad01",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The guarded entry point that reports an unusable source index instead of raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:ad5e45d85dad9a6ebc6f38bd50fc67c8b27c0268a3824c7fe94d1d0f321cb795",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The status a reported unusable source index carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:4123488868c7d1a5ea41a7a92aadbf04c99af7c5a5691a53dd8bd9c6ecaaa5da",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_INDEX_UNAVAILABLE_STATUS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

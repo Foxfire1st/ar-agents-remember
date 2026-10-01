@@ -1,0 +1,239 @@
+{
+  "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+        "content": "sha256:5e7273270ed2d813c473958ee49a2c97510aa9f21aa0e317af39f74f56f99d72",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewTechnicalDetails"
+        }
+      },
+      "id": "RLZ-7V0Z0QCY",
+      "invariant": "INV-8VQR13WX",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Keeps the technical-details disclosure mounted but renders the knowledge, source, evidence and submission records only for the payload that answers the subject on screen.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of why it exists and that the disclosure stays mounted while another subject is pending or unavailable.**\n\nAnchor: \"WHY THIS IS ITS OWN MODULE\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:1eebd64e25e6924e5328a0a1b25db61f8ccf52b536cf9ddfd2e34c84acce1a03",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The disclosure: always mounted; records only for an answer, else one pending or unavailable line; the lane read passed to the source pane.**\n\nAnchor: \"export function ReviewTechnicalDetails({\"; `review-details-pending`; `review-details-unavailable`; `gridTemplateColumns`; \"<SourcePane payload={payload} laneRead={laneRead} />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:6a5347d0c09e52065e973d6ebde57fc66767090d8172374532c6b3009a1cc11b",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 446
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The surface hands it the answer alone, and the one lane read.\n\nAnchor: \"<ReviewTechnicalDetails\"; `unanswered`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
+            "content": "sha256:9d2e6b29ce2d63d04b9caf805a3d02edbf67b8190ad0f3c885d2dd527b373eaf",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 358
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pane helper's two load-bearing declarations.\n\nAnchor: \"minWidth: 0\"; \"overflowWrap\"; `data-pane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:fdc345b4cca4071f4f476013b944e8b0f347609a5bc03ac18fe9376ef4986ba2",
+            "locator": {
+              "kind": "symbol",
+              "name": "pane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The attribution labels, displayed never computed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:938a7d9be8a83c0ef8a4dec6a90fa32fd5830bc24c9051260894fbc4b59565ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "applicabilityNote"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:ece684394c69ad646ad99dc52aacfcde6ff7b91f2bf7a42d1739264792cb4df5",
+            "locator": {
+              "kind": "symbol",
+              "name": "contextList"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:448a9ce9bf8955d74631de209b69389f86863bfb8ae00b358f162b65e429fc1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "applicabilityCounts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Absent vs recorded-empty field values.\n\nAnchor: \"(absent)\"; \"(recorded empty)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
+            "locator": {
+              "kind": "symbol",
+              "name": "fieldValue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The knowledge pane delegates statements to `KnowledgeStatements`.\n\nAnchor: `KnowledgeStatements`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:ffdf01a96b75a577dd0a4006ab295850c28fe3a47147332ad17c10a3d07a844c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgePane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The landed count text, and the lane's two lists or its pending or unknown line (MIK-L32).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:1fa30d9255c077261a2d7819f144401c9a1e103669af05b9ad082ed98cecc7f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "landedCountText"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:be3e969eac31fc99b358f443b3761e6abe85456e618b486d912beeacfedd05a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneAttributionLists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The source pane points at the explorer rather than listing a second inventory; on a tree comparison its attribution counts and lists come from the lane (review F1).\n\nAnchor: \"function SourcePane({\"; `review-source-explorer-pointer`; \"const lane = laneRead ? laneAttributionFacts(laneRead) : null;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:2f005095456a8e0ce63128044bd2a9ba39cd64f0900461ea2b385b3d74ffe154",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 292
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The evidence pane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:d2dc8426c812d02df83b31c99969ee74c6e68c795814d77ea447b2eeccfbcb1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidencePane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The submission block: staleness, the unmeasured line, no control.\n\nAnchor: `review-staleness-unmeasured`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:a3470f6c9d68054c9ddec40d1221bcbf44faa639fdb985532999415afed9f422",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

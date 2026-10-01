@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/history_check.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two remedies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d697a7a0ac3c6b971ff4ba50f6816fdb7f478f22",
+            "content": "sha256:c57a75f0a25aa52a8c8a6e45108c1a1734ba06beaae78a50b30f151b5905424c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FROZEN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every row of the owner's file, as problems.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d697a7a0ac3c6b971ff4ba50f6816fdb7f478f22",
+            "content": "sha256:8d87dff04e2f5fbc4c73a2e53af7a2e7fbfa80ed7dd7edafb354408b732b0873",
+            "locator": {
+              "kind": "symbol",
+              "name": "owner_history_problems"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invariant and family row checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d697a7a0ac3c6b971ff4ba50f6816fdb7f478f22",
+            "content": "sha256:747042e44d8a17d08e2ac6f88f20a660dd387ad5d661931708cc981780dbfeae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_messages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A contradicted row refuses until it is named again; a closed file is frozen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:8c711c7d1c1ffe0e6e0e7c52a0707e84cabf3d5a41c21ed05580d2f28c4d8832",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_row_the_candidate_contradicts_refuses_until_it_is_named_again"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The revision a row's change counts from: the higher merge side's for an unmerged record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d697a7a0ac3c6b971ff4ba50f6816fdb7f478f22",
+            "content": "sha256:a3d28fc52505d21b8e41965767c5da4a5b3291441398c20b5b0187640ec2595a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

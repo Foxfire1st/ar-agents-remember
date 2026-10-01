@@ -1,0 +1,19 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "Nothing a stored record or a landing claims about its inputs is authored by the run that reports it: a code realization names a repository-relative path and the exact blob the recorded tree holds, a source that is not a repository file keeps its own document identity, and a leaf's code commit and its refreshed memory content land as one attributed pair.",
+  "id": "FAM-QWVGDSYX",
+  "members": [
+    "INV-103S55GN",
+    "INV-N213W04A"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L30",
+    "legacyId": "0b8124cd-c8d5-478d-bb8a-cbef14062c2f",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "routes": [],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "attribution-and-landing-pairing"
+}

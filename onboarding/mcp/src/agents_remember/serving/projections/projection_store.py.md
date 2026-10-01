@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/projections/projection_store.py
 
-| Field                  | Value                                                  |
-| ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember                                        |
-| path                   | `mcp/src/agents_remember/serving/projections/projection_store.py` |
-| doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-08-01T17:40+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`             |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
-| governingOverview      | `overview.md`                                          |
-
 ## Governing Overview
 
 [serving projections overview](overview.md)
@@ -185,22 +175,22 @@ The recurring projection path uses projected status plus the latest landing snap
   `ContractSnapshot` is immutable, and its `WorktreeContract` instances are shared across ticks —
   any future consumer that mutated one would corrupt cross-tick state.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared store-root resolver. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
-| The append-only store whose logs are read back. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| The pure fold this drives. | `project_lifecycle`; `project_workspace` | mcp/src/agents_remember/observer/reducer.py:81-108; mcp/src/agents_remember/observer/reducer.py:128-181 |
-| The worker-owned state refreshes task inputs. | `_refresh_tasks` | mcp/src/agents_remember/serving/projections/projection_inputs.py:277-287 |
-| The worker-owned state refreshes engine facts. | `_refresh_engine_facts` | mcp/src/agents_remember/serving/projections/projection_inputs.py:318-343 |
-| The worker-owned state refreshes progress inputs. | `_refresh_progress` | mcp/src/agents_remember/serving/projections/projection_inputs.py:393-399 |
-| Input acquisition and reclamation belong to the worker-owned state. | `ProjectionInputState` | mcp/src/agents_remember/serving/projections/projection_inputs.py:189-407 |
-| The complete acquired input bundle is represented by `ProjectionInputs`. | `ProjectionInputs` | mcp/src/agents_remember/serving/projections/projection_inputs.py:120-140 |
-| `project_and_write` invokes the input state rather than owning those reads itself. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
-| `ProjectionInputState._refresh_drift` prunes stale drift snapshots for deleted worktrees before the analytical read. | "def _refresh_drift(self"; "def prune_orphaned_drift_snapshots(" | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-23; mcp/src/agents_remember/serving/projections/projection_inputs.py:367-367 |
-| The shared per-tick contract snapshot is built once for the projection pass. | "_contract_snapshot_cache = ContractSnapshotCache()"; "def build(self"; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:82-82; mcp/src/agents_remember/serving/projections/projection_inputs.py:286-286; mcp/src/agents_remember/serving/projections/projection_store.py:103-103; mcp/src/agents_remember/serving/projections/projection_store.py:227-227 |
-| The input state refresh pass owns its delegated task, provider, and drift refreshes before returning the projection inputs. | `read`; `_refresh_tasks`; `_refresh_providers`; `_refresh_drift` | mcp/src/agents_remember/serving/projections/projection_inputs.py:214-264; mcp/src/agents_remember/serving/projections/projection_inputs.py:266-275; mcp/src/agents_remember/serving/projections/projection_inputs.py:297-316; mcp/src/agents_remember/serving/projections/projection_inputs.py:345-350 |
+### Repo-Internal References
+
+- The shared store-root resolver. [1]
+- The append-only store whose logs are read back. [2]
+- The pure fold this drives. [3]
+- The worker-owned state refreshes task inputs. [4]
+- The worker-owned state refreshes engine facts. [5]
+- The worker-owned state refreshes progress inputs. [6]
+- Input acquisition and reclamation belong to the worker-owned state. [7]
+- The complete acquired input bundle is represented by `ProjectionInputs`. [8]
+- `project_and_write` invokes the input state rather than owning those reads itself. [9]
+- `ProjectionInputState._refresh_drift` prunes stale drift snapshots for deleted worktrees before the analytical read. [10]
+- The shared per-tick contract snapshot is built once for the projection pass. [11]
+- The input state refresh pass owns its delegated task, provider, and drift refreshes before returning the projection inputs. [12]
 
 | The pure fold consumes the threaded `engine_process_facts` / `engine_start_progress` inputs. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:128-181 |
 | The compact lifecycle-scoped attention acknowledgement store is pruned by `project_and_write`. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
@@ -225,96 +215,3 @@ The reducer and atomic-write boundary are unchanged; input acquisition and recla
 the state object. `state.read(...)` is called with a `ProjectionReaders(lifecycle=read_lifecycle_logs,
 repo_surfaces=_gather_repo_surfaces_cached, landing_state=tick.landing_state)` and a
 `RefreshPass(now=moment, refresh=refresh or ProjectionRefresh.full())`.
-
-## Update History
-
-- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
-
-- 2026-08-04T16:28:49+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound delegated input refresh, provider ordering, and complete returned bundle claims to operative spans, and bound the shared contract snapshot to its cache threading and in-pass build plus the tick's refresher-before-read call order. Verification metadata unchanged.
-
-- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 14 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
-
-- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 self-file line citations that had been
-  stale since well before the L2 refactor. `ProviderStateRefresher` + the `ProviderStateRefresh`
-  Protocol now sit at L167-L199, and the tick drives `maybe_refresh` at L225-L226 (was L89-L137,
-  which is the `_RepoSurfaceCacheEntry`/`_lifecycle_log_cache` module state). The repo-surface cache
-  is now cited at its two real homes — the frozen `_RepoSurfaceCacheEntry` + `_repo_surface_cache`
-  dict at L80-L86 and `_gather_repo_surfaces_cached` + `_repo_surface_cache_key` at L334-L358 (was
-  L192-L240, which is inside `project_and_write`). Re-read both ranges; no claim text changed.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `project_and_write` is now `(config, *, now=None, refresh=None, tick=None)`. The
-  `provider_refresher` / `input_state` / `landing_state` keywords were folded into the new frozen
-  `ProjectionTickState`, and the reducer call was re-signed onto `reducer.WorkspaceStructure` +
-  `reducer.AnalyticalInputs` instead of ~sixteen keywords. `state.read(...)` now takes a
-  `ProjectionReaders` + `RefreshPass`. Pure plumbing: the read order, the provider-refresh
-  containment, the drift/retention pruning, the dismissal pruning and the atomic write are all
-  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: `project_and_write` now
-  delegates input acquisition to `ProjectionInputState`, accepting the worker-owned retained state
-  and exact `ProjectionRefresh`. The write/reducer edge remains unchanged; this removes unrelated
-  domain reads from narrow change and heartbeat ticks. Verification metadata remains pinned until
-  closeout.
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-- 2026-07-12T20:02+02:00 — 260712-PTS-L2: added the module-level `_contract_snapshot_cache`;
-  `project_and_write` builds ONE shared `ContractSnapshot` per tick and passes it to
-  `read_enclosures`, `prune_orphaned_drift_snapshots`, and `read_engine_process_facts`, replacing
-  their three independent walk+parse passes (py-spy 2026-07-12: 2.78s/3.68s/3.40s in a 15s sample).
-  Cache mutation stays inside the serialized tick; the snapshot and its contracts are immutable
-  shared state. Verification metadata pinned until closeout stamps the PTS-L2 commit.
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: projection-store status paths now distinguish interactive fresh landing reads from pre-observed projected landing facts.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F7/B2: split cached log events from the coalesced
-  heartbeat merge so heartbeat updates refresh projection state without reparsing the JSONL log;
-  recorded the accepted raw-compare follow-up. Verification metadata remains pinned until closeout
-  stamps the eventual L13 code commit.
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-08T14:35+02:00 — 260707-HFX2-L1: `project_and_write` now also calls `read_expectation_rows` and threads it into `project_workspace` (R5 projection surfacing). Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.
-- 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): `read_enclosures` hoisted above the retention prune
-  so `prune_expired_lifecycle_event_logs` receives
-  `protected_lifecycle_ids=series_retained_lifecycle_ids(enclosures, now=moment)`; a not-yet-retired
-  master series' leaf logs are exempt from inactivity pruning. Fixes the regression where a live task's
-  log was pruned and the worktree then vanished from the Engine Room. Verification metadata pinned until
-  closeout stamps the L5 code commit.
-- 2026-06-28T07:30+02:00 — Task 33: `project_and_write` now passes
-  `active_worktree_groups=sorted(engine_groups)` into `project_workspace`, so the served
-  `activeWorktreeGroups` (the Topology's active scope) reuses the same `active_enclosure_worktree_groups`
-  set already computed for the Engine Room. Verification metadata pinned until closeout stamps the code
-  commit.
-- 2026-06-28T05:38+02:00 — Task 29: projection now prunes expired lifecycle event logs at the I/O
-  edge, computes strict provider/setup admission and broader active-engine admission from enclosures +
-  lifecycle logs, caches slow per-repo analytical surfaces, and leaves provider/gate/pickup/task inputs
-  on the fast path. Live timing dropped a sampled projection tick from about 51.0s to about 1.1s after
-  filtering historical engine-process status probes. Verification metadata pinned until closeout stamps
-  the task-29 code commit.
-- 2026-06-28T03:52+02:00 — Task 28 S5.2 after source sync: `project_and_write` now threads
-  current attention acknowledgements into `project_workspace` and prunes acknowledgement rows for
-  non-live lifecycles before writing the projection. Verification metadata pinned until closeout stamps
-  the task-28 code commit.
-- 2026-06-28T03:33+02:00 — Task 32 memory-mirror pruning: `project_and_write` now calls
-  `prune_orphaned_drift_snapshots` before reading drift snapshots, so deleted-worktree entries are
-  physically removed at the projection I/O edge. Verification metadata pinned until closeout stamps the
-  task-32 code commit.
-- 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: documented the projector-edge `ProviderStateRefresher`, including why provider/Docker probe failures are contained to stale provider facts instead of killing the dashboard projection. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-25T13:20+02:00 — Task 23/24: threaded `read_agent_pickups` into `project_workspace` so pending inbox responses become task-row pickup feedback.
-- 2026-06-24T16:39+02:00 — Task 17 projection-store route correction: `project_and_write` still only
-  threads reader outputs, but the task-document reader it calls is now active-doc-first with optional
-  runtime lifecycle attachment. Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-21T02:44+02:00 — Slice 6g: `project_and_write` hoists `enclosures` to a local and passes it into both `project_workspace` and `read_task_documents(..., enclosures=...)`, so masters contract-pair and cross-master links resolve. Verification metadata pinned until closeout stamps the 6g code commit.
-- 2026-06-19T03:17+02:00 — slice 3c reopened (R1): `project_and_write` now also reads `read_series_documents(coordination_root, now=…)` and threads it into `project_workspace` as `series=` → `Analytics.series`. Pure read + thread (no engine logic here). Verification metadata pinned until closeout stamps the R1 code commit.
-- 2026-06-18T21:25+02:00 — slice 5h Tier 2: `_gather_repo_surfaces` now passes the scope's code root to `read_ledger` (`code_root=scope.path`) so the official-coupler ledger window carries the per-side commit message/date. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T14:05+02:00 — Task 6 slice 6c Part A: `project_and_write` now also reads `read_gates(coordination_root)` and threads `gates=` into `project_workspace`. Verification metadata pinned until closeout stamps the 6c Part A code commit.
-- 2026-06-15T19:35+02:00 — slice 5e: slice 5e: project_and_write now reads engine_process_facts + engine_start_progress and threads them into project_workspace.
-- 2026-06-13T22:34+02:00: Slice 3c commit 2 — `project_and_write` first started reading task documents (`read_task_documents`) and passing them to `project_workspace`; later Task 17 made that reader active-doc-first with optional lifecycle context. Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
-- 2026-06-13T20:48+02:00: Slice 3b — `project_and_write` now also reads the
-  analytical surfaces (coordination-level drift/setup/tool-reports + per-repo
-  sidecar staleness/route coverage/ledger via `_gather_repo_surfaces`) and passes
-  them to `project_workspace`. Verification metadata is pinned until closeout
-  stamps the 3b code commit.
-- 2026-06-13T19:30+02:00: Created for slice 3a — log reading, the atomic projection
-  writer, and the `project_and_write` orchestrator. Verification metadata is pinned
-  until closeout stamps the 3a code commit.

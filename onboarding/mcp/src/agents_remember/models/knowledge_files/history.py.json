@@ -1,0 +1,632 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/history.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The row kind's docstring, with MIK-R30's semantics and the root subject.\n\nAnchor: \"satisfies the onboarding gate's item\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:855ab7ba95c83a62a5bd9718e34b68e4af6847299fb4b7f68d0c1c2e53bf0679",
+            "locator": {
+              "kind": "symbol",
+              "name": "OnboardingTraceRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The model's refusals: another disposition, a blank reason, `covers`, a malformed subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:f94bd6bd95f95fbf1935cdcd7d981f6ab9a6c46cf771395f290d6f47a9c3f5ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_kinds_are_registered_and_no_invariant_is_the_only_row_disposition"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The row's subject pattern and dispositions come from the one spelling.\n\nAnchor: \"from agents_remember.models.knowledge_files.reconsideration import\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:22aeb49b7238f036e5aaebd57e767a81617373eca97f69d97c4a13a9e59d7ccc",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The reconsideration row: its kind, pattern and two dispositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:d3e54223a5cf8e1c583975d19d64357ac9e83e202c04e318830a33f39f3eb24a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReconsiderationRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Registered sixth, owned by MIK-R14.\n\nAnchor: \"HistoryRowKind(\\\"reconsideration\\\", ReconsiderationRow, \\\"MIK-R14\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:30eef198dc125e95c9dcc355bffb786e3af9027b747f4704fdd489a3bd964cea",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The row kind registered with its owner, and the subject parsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:712bb410527b2cbc91df02a7c2fb2ebd60d3703f3bfaa17fa011c2b130ea508d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_row_kind_and_the_item_kind_are_registered"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The invariant and family disposition vocabularies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:7b667c94f19b10c5b66ee1ae3e75945a2ac9854391d9a53ce7e7a0e044c89218",
+            "locator": {
+              "kind": "symbol",
+              "name": "INVARIANT_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:64dbf2bc3c23d3dcfbd1334ae4ab0c47b3edcf6ddd676ea721541a1b7f0f63c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The shared row shape and kind dispatch check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:084aa0c61362ab18710ea938e228826703cff801b1282b8ac929601e409c1e3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Covered entries: anchors with a path, or absent on one side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:e13ae718c8a61b07f59969d569519b3073f5a0df3464557b8f3fa81b6037b8ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoveredEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "What each disposition's covers must show.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:75ec6cd79906335cb58d4c2fb3902cd7cefc243eaf5ed84846c25e99bce0e403",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COVER_REQUIREMENTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:bd0fa670e2c4855e23667bb03527f9df3a4bbc024f849e0243ffa17d2a40e048",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_disposition_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The invariant row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:c6c0187985e18e563532cf52fa7f9a6aff02216d8f3a91e60ffb49dee669fedf",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The gate that reads these rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:0686ba178a4f325dbd09b7d19e76e76b89295b59ddeb42fe8071e31067b860e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history_rows"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The family row and its examined members.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:01949b2262a8695b23cb7eef1e0dcf1bec1ba15cbcc587210c08a5838c94eb1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExaminedMember"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:86e26bc15b051a4d9f44ec05df7158e742042fe9b8ebc8dcf9c5176f6cc959a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The onboarding-trace row: one disposition, and the moved marker lines as a structured list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:855ab7ba95c83a62a5bd9718e34b68e4af6847299fb4b7f68d0c1c2e53bf0679",
+            "locator": {
+              "kind": "symbol",
+              "name": "OnboardingTraceRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The row-kind registry, now with six kinds (MIK-R11 adds `planned`, MIK-R10 `unexplained`, MIK-R14 `reconsideration`), and dispatch.\n\nAnchor: \"HISTORY_ROW_KINDS: Final[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:c9dfdd17c75a5a59b78774dfb224f8c95f82ff809fdfaa6b45335cb09f584f60",
+            "locator": {
+              "kind": "symbol",
+              "name": "row_kind_for_subject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:0bcde5fce6f90d8dd1ecf427c7cbc0351264dfceb67ad75589ada51de0950c2a",
+            "locator": {
+              "end": 399,
+              "kind": "line_range",
+              "start": 392
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Many long marker lines move into one valid row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:a4429208556043268c2b04d6fb8e5c19deb7da5d2d734fe98531175c83ec4064",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_many_long_markers_move_into_one_valid_history_row"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The file: one owner, one row per subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:4dee800a8bb13c6e5f68f405f9021616ec9631665e2fe76bad24c4a958c708ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryFile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The freeze predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:c9bc2a049bca5ad578ccfcd517a942ae3c7e61d492025ff7712006da427f44cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_closed_history"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:2799b0cbe1e743ea523b7593ebb8498618c81f604095f8e51f25f9e61aa6cac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "frozen_history_violation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Re-anchoring checked against K_C.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:b2e2a06519fda78775f3d3c8e5bc78520ceffced8dbf30b7fda7bba09c2a8101",
+            "locator": {
+              "kind": "symbol",
+              "name": "reanchor_mismatches"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:93170041f9811e1c239dfb42f80e67f6f534fdf329107904b5b0219fd42769e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "sidecar_entry_anchors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The revision binding for invariant and family rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:ca81b48febaac1bd79f862cef4485e38569d78b401842dd8d95525539cef6303",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_revision_violation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:dffd0e4a0f3434b2b1b4172bc2216cbf3250eee0a2c4086ec8e9a5ac8d80b72f",
+            "locator": {
+              "kind": "symbol",
+              "name": "stale_examined_members"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The history schema is dispatched by `documents.py`.\n\nAnchor: `HISTORY_SCHEMA`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:b19066baadb97c7ba006e8a8b85fcabbce1a2963f78e7c0833c873ef7ede1bc8",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Closed files stay byte-identical, even when reformatted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:cc07275c03ffc4de7ac31092738e9c078adbe1e07f614d48baafd7615173367e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closed_in_base_implies_byte_identical_in_candidate"
+            },
+            "path": "mcp/tests/test_knowledge_history_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The docstring's list of landed row kinds (since MIK-R14 it names MIK-R10's and MIK-R14's, with MIK-R06 still to come).\n\nAnchor: \"MIK-R06 later\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:3b00505618007380f2f256308ac507ad66086806fcfe0ab459c47b78d9599caf",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The optional attempt of a reopened leaf's file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:4dee800a8bb13c6e5f68f405f9021616ec9631665e2fe76bad24c4a958c708ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryFile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The attempt a write or closeout goes to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:9b0dda0af1ee351eaff8e5438f865f3c920dc7015c367bc9a77079bda6653979",
+            "locator": {
+              "kind": "symbol",
+              "name": "writable_attempt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "All of an owner's history files read as one history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:274273b127cd7bae61dbedb33794d3d26a4da04425a05a43b2138f987a38aad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "merged_leaf_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The ref: exactly one key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:351ca76594016af73163b5744b84f92ac9ea626b79d1252cbe5dddff5500cafa",
+            "locator": {
+              "kind": "symbol",
+              "name": "PlannedRef"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:18a5549966def6d239fc77f8f7b50f57db5799e58b4e0baca6f6471f640eae85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_exactly_one"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The planned row and its disposition-bound ref.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:621bc2e6a508d74aa5f647066d6609eb5b704b98b1ae0c35578a234bf946e695",
+            "locator": {
+              "kind": "symbol",
+              "name": "PlannedEffectRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:df3d8991c6258a0c2d08e3d72f67a25324d1f6d2df7e219b4261469947219d06",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_ref_of_disposition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The registry test, since MIK-R14 six kinds compared as a set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:e22f532b1e78b5f7ca07006275cbd106aeacd7d80d7e515343bc1bb7a6aee0f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_row_kind_registry_owns_disjoint_subject_forms"
+            },
+            "path": "mcp/tests/test_knowledge_history_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The row's subject pattern and disposition come from the one spelling.\n\nAnchor: \"from agents_remember.models.knowledge_files.unexplained import\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:ec1e8589460e69a95f54bd56d104aef1718ef8d40cc61727186914c3b4585c3d",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The no_invariant row: its pattern, its one disposition, its owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:b297338c0e33a8419088ba8d4744a1f9dcfceecfb4895f5f8cfde191bb2ba85d",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnexplainedChangeRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Registered fifth.\n\nAnchor: \"HistoryRowKind(\\\"unexplained\\\", UnexplainedChangeRow, \\\"MIK-R10\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:ba79991de34ee7f95287408b481cc14936a2a2ad73ce7634169ae4f9ecec85e1",
+            "locator": {
+              "end": 397,
+              "kind": "line_range",
+              "start": 397
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

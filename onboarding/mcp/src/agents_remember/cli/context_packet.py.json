@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/cli/context_packet.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The application entry point that builds the printed packet and owns request semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:514fad889468a806ec57d17b62cd9ab44b6ebefa44cbd0699a45ced8dd108303",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_context_packet"
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:5d447d35f33dba40c66d1c4aff55d65dd1ed9c19199b789d5f91a7c3f67b330a",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CLI JSON output is covered by the context packet tests.\n\nAnchor: \"class ContextPacketTests(unittest.TestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a79aface2c4f39b630e117c45e48f88b20fb3ea",
+            "content": "sha256:8774f7c72ae3ed700cf52d9468bdc4370d7ab782904a13721f19389f19e861fb",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/tests/test_context_packet.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

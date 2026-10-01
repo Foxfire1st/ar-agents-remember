@@ -1,0 +1,224 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Tier 3 unresolved: context packets and skill-facing drift tools call this summary helper; `context_packet.py` calls `run_drift_summary`, while `skill_tools.py` exposes `skills_install_tool` and no drift-summary call.\n\nAnchor: \"return run_drift_summary(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
+            "content": "sha256:364e64a9ed7adbe0959731447cf332d8eab1df0d3ef2a126b90f79e86a3120a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "skills_install_tool"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:5d246fffd9db7dec40eb538866f499e691778abb88b97474cc0cefe71c0c3a43",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The memory quality runner wraps actionable rows from this summary as integrity findings, reading the status-conditional keys with `.get`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "081f643fabc8dc1c57edc4e281633945994d9ef9",
+            "content": "sha256:f9aaf71a8011891b9997f5c2a1d6b3551d4d51cad441c6a0d3b3c894c14d9862",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_drift_quality_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ACTIONABLE_CLASSIFICATIONS` and, since 260731-EFA-L4, `DriftSummaryPacket`/`DriftStatus` are sourced from the shared models module (`DriftStatus` declared in `models/drift.py`).\n\nAnchor: \"DriftStatus = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
+            "content": "sha256:b1213e60508c3a33c3ef17d5a6328b3c7b35a75d0a9db124c1e8ade517e853dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummaryPacket"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:a4fd9adef884dbb6ec257dea9499d51b7d671e333bf190b352afb44cb58b8b8f",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The context-packet wire model that validates this packet's `status` — the one that used to lack `error`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:a2f120037b4a3244a65f708669bdaf5da721a923c27f8840f5e61f28108cbf20",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:0673052126dfb9f14e4482f0ad5dc18d83e74317290c4bb65d77742f15f8038d",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The tool response model that validates the same packet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "857617fe31047a43ad150bdf66b424546e1db047",
+            "content": "sha256:dd8acbe5d3f8b1196081bb4d5941b664743da0ecb58d66008d23fdfa5d6a6f9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftCheckResponse"
+            },
+            "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "857617fe31047a43ad150bdf66b424546e1db047",
+            "content": "sha256:eae68a099e750bd7082ee4781091aad96ef7d6ad5141ca8319a227b2adb7a9dd",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The drift-snapshot dir + schema the b1 write targets (shared with the reader).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:96c9917dc79ed08fff6e1c58e65edfed74639e720ae40bb481c316f9722bee6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DRIFT_SNAPSHOT_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared drift-snapshot filename helper now used by the producer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:8232e9eb442c1a4f7fd24cc18ba36e924475e60ed78e7875784d38e33890aa9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "drift_snapshot_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The observer reader that consumes the persisted snapshot.\n\nAnchor: \"def read_drift_snapshots(coordination_root: Path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b50634a5bbb0c8632b1fb1b39504d9d38fedec89",
+            "content": "sha256:9c1266de9b259213b383f4567ce484dd6b3387dc84c17b25cc2330477bb95adf",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`_write_drift_snapshot` persists source/memory/report provenance beside counts and rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:433e1755ab5abb07f8c97d249f6909510febede82bb7c1b080691e18194525f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_drift_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:939937f982310879eb87e0fff7de9d71280c31e41a6d97c2bfa7c418eadb0531",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

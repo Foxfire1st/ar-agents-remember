@@ -1,0 +1,312 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/capabilities.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`ControlCapabilities`, `AttachmentCapabilities`, \"class TelemetryCapabilities(WireModel):\" DTOs; `FeatureCapability` carries the documenting NOTE that there is deliberately no `for_observed_runtime` version-demotion.\n\nAnchor: \"class FeatureCapability(WireModel):\", \"class AttachmentCapabilities(WireModel):\", \"class ControlCapabilities(WireModel):\", `TelemetryCapabilities`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c849c256e95887423d0c54ae9b3b657666fb0be",
+            "content": "sha256:d2c385ec1af68b22ec72342df407c832ccbec289aa28f7fdc3e43bc385b1608c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryCapabilities"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c849c256e95887423d0c54ae9b3b657666fb0be",
+            "content": "sha256:ec823c9dd9c37c6be33cadda10736a5f0611ed0806476a0a0350866cf6273820",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/models/conversations/capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c849c256e95887423d0c54ae9b3b657666fb0be",
+            "content": "sha256:42c463afa37f7585cf7d0c181fe9748d1119940054466c7331df603725bc47ad",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/models/conversations/capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c849c256e95887423d0c54ae9b3b657666fb0be",
+            "content": "sha256:5c3e047e459161258d4f9b484fccaccee80efecac47e47b8593238dafc3b3709",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/models/conversations/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The L2E asset MIME/count/byte constants used by this gate.\n\nAnchor: `MAX_SUBMIT_ASSETS`, `MAX_SUBMIT_ASSET_BYTES`, `SUBMIT_ASSET_MIME_TYPES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:46397b8147f0eb122e14b60eff2785992fa5338a09e15d8efd810a5b5499d2a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SUBMIT_ASSETS"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:863160343b104a973c66137b2eb63adb5b605a8042723750cbfb2f6e0151265f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SUBMIT_ASSET_BYTES"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:8be4b561d72be6e020b9e7677e2d2c7653a6322e80fe53c2c414c69779d6f049",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBMIT_ASSET_MIME_TYPES"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The L1 conservative page-level control/telemetry view (stale post-L2E; L4 gates on this module instead).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:d178cb3e9af7566c2ce4d446ce1cfdd59451018f5e589405a37201afd595bfff",
+            "locator": {
+              "kind": "symbol",
+              "name": "capabilities_for"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "eve's control set: exact-turn interrupt and policyRead supported on recorded native evidence, every other control `unavailable` because the adapter does not implement the surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:4d75d0be470bb56d1063a32c30c395e6b883363b60b617b826f2c428e1ca6c9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_eve_controls"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:df8300aa538f62fab4b9d569910c73a8cacb8ab440992e969371afe0b42ad072",
+            "locator": {
+              "kind": "symbol",
+              "name": "_no_asset_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "eve's telemetry declaration: every metric absent with a reason naming the stream, never borrowed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:d04d933d19b05f8ba6a153fdf15160968d2bfa82970f802494354e0b2bd1f8bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_eve_telemetry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "eve's own fixture id, runtime pin and observation time, distinct from the other three harnesses'.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:4cb56bebcdb2dcd6bf85da099031ce28a69cffaee1b987b83e1a745299c8c3ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EVE_FIXTURE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:897549ccc26eb8b54f23804259ab97332c9398248a46725d12d7b86dcf437e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EVE_RUNTIME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:9af6b9c946ef7269be1e88661b861a81da9b5a90da0ee99086ce04413f6387df",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EVE_OBSERVED_AT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The adapter capability that decides the asset rows: no `submit_with_assets`, so no supported kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:b99b92bb30379eefab17c4cd4b9d314bd90df3608eace895431440de00a8978d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveSessionAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:121c01593b88ddf87aaa386ee3f52fdffa765c1b992289d0c8f15f047a8d1aaa",
+            "locator": {
+              "end": 865,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The cases: the asset-carrying submission is refused by the authority, and eve's telemetry is declared absent rather than borrowed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:93b58d075c0845d9243df170f8944f78327f2a3b813255232f7d841faec30577",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_asset_carrying_submission_is_refused_by_the_authority"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:49aaee812aaea1c1edb24a687cd87f9e33b3f57c40390ab6a3c486421cff3a07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_eve_adapter_is_not_asset_submit_capable"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:473109da1218d797a2626253918740396423c38899c3a5d81c5f313a8bdbcc67",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_eve_telemetry_is_declared_absent_not_borrowed"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:9c378718b1541084f404f22f7bad63ce5335f12ce0b929603d71b2213d3f1b0b",
+            "locator": {
+              "end": 1103,
+              "kind": "line_range",
+              "start": 1098
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d52846d9b20b04f451fcf967751ff09482a8a8de52fcbc33f36e9a29b7bb5508",
+            "locator": {
+              "end": 1709,
+              "kind": "line_range",
+              "start": 1706
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d26ef69195d11dbd62c0d63d7c8f0ab8f9d5d63c0603a8bb07d3f116eb0e825c",
+            "locator": {
+              "end": 1745,
+              "kind": "line_range",
+              "start": 1711
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

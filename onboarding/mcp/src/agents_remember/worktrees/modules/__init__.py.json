@@ -1,0 +1,16 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package overview describes the module split.\n\nAnchor: `# mcp/src/agents_remember/worktrees/modules Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/worktrees/modules/overview.md:1-753"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/requirement_views.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/requirement_views.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T17:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -84,38 +74,30 @@ None recorded. As with the rest of the record group there is no production calle
 is reached from `requirements.py:read_requirement_revisions` and, today, only from the record group's
 own tests.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The one projection entry: every derived view for one record, from the rows and nothing else.** | `revision_scope` | mcp/src/agents_remember/memory/knowledge/requirement_views.py:248-272 |
-|The fork rule — more than one head is reported as more than one head, and no successor is designated.|`head_revision_ids`| mcp/src/agents_remember/memory/knowledge/requirement_views.py:93-110 |
-|The bounded predecessor walk, and the constant that makes a damaged store a report rather than a hang.|`predecessor_chain_view`; `CHAIN_BOUND`| mcp/src/agents_remember/memory/knowledge/requirement_views.py:111-142; mcp/src/agents_remember/memory/knowledge/requirement_views.py:58-62 |
-|**Currentness by value: both recorded states travel with their provenance, and no winner is chosen.**|`currentness_fact`; `current_state_view`| mcp/src/agents_remember/memory/knowledge/requirement_views.py:167-247 |
-|The ungoverned route as an explicit state rather than a default, with the packet's directory deliberately not an input.|`governing_route_view`| mcp/src/agents_remember/memory/knowledge/requirement_views.py:145-155 |
-| The three documented absences, each saying which absence it is. | `UNRESOLVED_OWNER_DETAIL`; `NOT_COMPARED_DETAIL`; `NO_REVISION_DETAIL` | mcp/src/agents_remember/memory/knowledge/requirement_views.py:63-73 |
-|The currentness value whose `state` must equal the value derived from the two recorded pairs.|`RequirementCurrentness`| mcp/src/agents_remember/models/knowledge/requirement.py:232-270 |
-|The acyclicity rule the write transaction applies, which is why the walk here is bounded rather than guarded.|`require_acyclic_lineage`| mcp/src/agents_remember/memory/knowledge/requirements.py:324-364 |
-|**The two cases that keep a view an answer rather than an authority: byte-identical rebuilds, and totality over a row set holding no revision.**|"test_every_derived_view_rebuilds_byte_identically_from_the_stored_rows"; "test_the_derived_views_are_total_over_a_row_set_holding_no_revision"| mcp/tests/test_knowledge_requirement_reference_contract.py:569-616; mcp/tests/test_knowledge_requirement_reference_contract.py:730-755 |
-| The no-winner cases: a fork, a disagreement, and an unresolved owner that has nothing to compare. | "test_a_fork_is_reported_as_more_than_one_head_and_no_winner_is_chosen"; "test_a_stored_state_that_disagrees_with_the_owners_state_reports_both_and_chooses_none"; "test_an_unresolved_owner_has_nothing_to_compare_even_when_a_state_is_supplied" | mcp/tests/test_knowledge_requirement_reference_contract.py:617-646; mcp/tests/test_knowledge_requirement_reference_contract.py:647-700; mcp/tests/test_knowledge_requirement_reference_contract.py:701-729 |
+- **The one projection entry: every derived view for one record, from the rows and nothing else.** [1]
+- The fork rule — more than one head is reported as more than one head, and no successor is designated. [2]
+- The bounded predecessor walk, and the constant that makes a damaged store a report rather than a hang. [3]
+- **Currentness by value: both recorded states travel with their provenance, and no winner is chosen.** [4]
+- The ungoverned route as an explicit state rather than a default, with the packet's directory deliberately not an input. [5]
+- The three documented absences, each saying which absence it is. [6]
+- The currentness value whose `state` must equal the value derived from the two recorded pairs. [7]
+- The acyclicity rule the write transaction applies, which is why the walk here is bounded rather than guarded. [8]
+- **The two cases that keep a view an answer rather than an authority: byte-identical rebuilds, and totality over a row set holding no revision.** [9]
+- The no-winner cases: a fork, a disagreement, and an unresolved owner that has nothing to compare. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-19T17:15+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`, base `497d9e9f`): M1-4 anchor repair, re-read against the code worktree at `e7998504`. The bounded-walk row had `predecessor_chain_view` and `CHAIN_BOUND` crossed: the constant is `:58-62` and the walk is `:111-142`, and the citations now pair them that way. Every other row was re-checked and stands (the literal-anchored node rows each name their own node inside their own range). No claim was deleted or softened. The stamp is unchanged because `a0665505`'s content for this file is byte-identical to `e7998504` (`git diff a0665505 HEAD` is empty).- 2026-09-18T06:05+02:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): created this one-to-one card for the requirement record group's derived views. It records the mechanism rather than the requirement: disposability is met **structurally**, because this module holds no connection and takes no store, so no view can write even if a later caller wanted it to. It states the three no-winner rules a reader would otherwise have to re-derive — a fork is reported as more than one head because designating a successor is an authority the substrate does not hold; currentness reports both recorded states with their provenance and never claims an agreement it cannot show; and an absent route is the explicit `ungoverned` state rather than an inference from the packet's directory. It also records that the predecessor walk is **bounded rather than cycle-guarded** (`CHAIN_BOUND = 512`, `truncated=True`), because acyclicity is enforced by the writing transaction and a damaged store should be described rather than hung on. Verification metadata advances to the leaf's base commit `e963a01c` because the body was read against the current source; the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

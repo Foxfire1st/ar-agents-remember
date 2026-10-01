@@ -1,0 +1,134 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/route_review.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The plane stamps reviewer payloads with the exact candidate and validates task-local evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:a19d6c217a92f988b92ac61567ac6004a483214ee67ae78f776fabec97932f93",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_review"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:b61da9d6eda573fbd5100bb19f4708ea5534f3c5a374f540ce3cc7cf6f9b0d67",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_evidence_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:a11f53195360d144843350f7167e02b86bfeecb424c1539d6c9b9e3dc7230f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_route_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The R03 evidence-digest stamping and dependency currentness seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:b71d1bb12180b822420f827acd2350e1bd839ad85a5622c6fec4536d0af43d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stamp_evidence_digests"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:1028f4d426807d513b9afabcfb1bb176bb6873d278d279c2a0237aee915e7cce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_dependencies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:26d60589ac252eb92e2edc8cf906f276e6416f1d43d82828aedc6b56cb107eb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_file_sha256"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "CCR-R25 maps observed route-review refusals into bounded structured recovery guidance.\n\nAnchor: \"def route_review_refusal_projection(\"; \"def route_review_refusal_fields(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:8010452ad22462d155eb6c552e294c2f0ca595c4e45246167bd254c939fcac73",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:0aa1777f692d1221d9ff36fe608a862949d251aabdc2c03151ced2180003e929",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The route-review record's content-addressed fields and self-digest validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:12f59076c4a930fa1b31117b0ca7b7b0d476d705d0de00a07975e53bbc6cc986",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewRecord"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

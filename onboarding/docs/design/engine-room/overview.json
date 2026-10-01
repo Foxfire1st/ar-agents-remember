@@ -1,0 +1,54 @@
+{
+  "path": "docs/design/engine-room",
+  "references": {
+    "1": {
+      "note": "The React engine-room renderer these design docs govern — the two-world canvas, boot/teardown choreography, and failure overlays built from this prototype.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b437f8e63677d88ed1359bfac8ec3911b4d7dcaa",
+            "content": "sha256:095080802562e76437c54c917e159da99b7945f7aac73f30e60e06cf38115984",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureCanvas"
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b437f8e63677d88ed1359bfac8ec3911b4d7dcaa",
+            "content": "sha256:243bea42f968d14c71b7b241e26079506c2a4ec7bc137816f24979637dd7850c",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parent in-repo design-documentation route this folder is a child of.\n\nAnchor: \"Engine-Room Visual Language\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9b9066a8809973d910f841f05c918c1889f1882",
+            "content": "sha256:167ed2d26455d58fa912bf6adbf014f24b2c7635d473cc57db1dac1c9b46c2f2",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "docs/design/engine-room/engine-room-visual-language.html"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

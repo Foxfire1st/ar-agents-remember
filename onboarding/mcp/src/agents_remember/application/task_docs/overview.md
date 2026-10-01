@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/application/task_docs` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -108,12 +102,10 @@ contract per concern.
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Task-first transactional publication and independent projection refresh. | `publish_task_doc_set`; `publish_prepared_task_documents`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:88-127; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173 |
-| Zero-or-one graph-bearing publication batch and in-memory title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
-| Atomic raw-section shape validation and missing-register scaffolding. | `scaffold_register_sections`; `_validated_section_list`; `_requires_register_scaffolding` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:54-55 |
-| The extracted step plane owns one exact addressing rule and the four step operations. | `exact_step_target`; `set_step`; `add_step`; `remove_step`; `step_payloads` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:97-124; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:153-165; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:193-223; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:168-190; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:264-275 |
+- Task-first transactional publication and independent projection refresh. [1]
+- Zero-or-one graph-bearing publication batch and in-memory title context. [2]
+- Atomic raw-section shape validation and missing-register scaffolding. [3]
+- The extracted step plane owns one exact addressing rule and the four step operations. [4]
 
 ## 260824-PDLS Final Task-Recovery Boundary
 
@@ -169,77 +161,13 @@ otherwise unchanged:
 - no real task document may carry the field before the L37 install, because the installed runtime refuses
   unknown task-document fields (ruling Q2).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The settable flat fields, now including the declaration. | `_MUTABLE_FIELDS`; "expectedKnowledgeEffects" | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:119-140 |
+- The settable flat fields, now including the declaration. [5]
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The following current source owns the changed behavior; no external domain source is configured for this slice.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Execution evidence checks real code and memory output cells. | `_contract_fact` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:249-317 |
-| None | `prove_task_unstarted` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:112-183 |
-
-## Update History
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "260928-MIK-L11 `set_field` Writes A Leaf's Declared Knowledge Effects" (`expectedKnowledgeEffects` in `_MUTABLE_FIELDS`, the refusals, the `intent` mutation class), recording architect rulings 2026-09-29T21:56:18 (Q2, Q3). No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No route impact: `task_doc_tools.py` added `knowledgeMaintenanceScope` (MIK-R08) to `_MUTABLE_FIELDS`, so `set_field` can set one more flat field; the route's structure, ownership and operation set are unchanged. The card records the field and architect ruling 4 (`LIFECYCLE`).
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `application/task_docs/task_doc_tools.py` changed one refusal message (`T43`); the application route's structure and ownership are unchanged.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented unstarted-task evidence after removal of ledger commit fields. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-14T07:05+02:00 — 260913-LCA-L5 route impact (curator, uncommitted change set on
-  `ar/260913-lca-l5-ar`, base `52875e7a`): recorded the fail-closed authoring guard on the route.
-  `_require_bindable_leaf_authoring` refuses a leaf document authored under a task root with no master
-  document — the case where the derived `seriesContractPath`/`enclosures[]` would have nothing that could
-  ever bind them — while the planning order (master document present, series contract not yet
-  bootstrapped) stays allowed by the explicit guarantee that the leaf's first start binds both fields.
-  Corrected the invariant that implied a leaf could be authored under any task root. Route documentation
-  only: verification metadata remains closeout-owned and no execution or acceptance claim is made.
-- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected this route's
-  remaining source-pair/selector phrasing to per-contract activation — an otherwise-valid task
-  mutation is never subordinate to queue or per-contract activation state, and per-contract
-  activation plus retained sync state are the downstream worktree authorities that re-evaluate the
-  changed plan at their next admission boundary. The dated history entry below that names
-  "source-pair activation" is retained as superseded history, not as a current claim. Source
-  documentation only; verification metadata remains closeout-owned and no acceptance or test claim
-  is made.
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the new `task_doc_steps` sibling in the
-  route purpose and conventions (the step plane is a shared-contract owner, and the dispatcher must
-  not grow a second addressing rule), added the step-plane source-evidence row, and added this
-  section describing the extraction, the operations split by intent, and the two developer rulings
-  for a reasoned `remove_step`. Route ownership, publication, and queue semantics are unchanged.
-- 2026-09-11T23:05:00+00:00: Master abandonment curation: `require_commanded_masters_completed` now resolves commanded masters through `master_is_terminal` instead of a local `!= "Completed"` test, so an abandoned commanded master counts as terminal. Content change, not a range repoint.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `preview_task_doc_projection_effects`, `preview_task_doc_transaction_projection_effects`, `publish_prepared_task_documents`, `publish_task_doc_set`, `publish_task_doc_transaction_and_refresh` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:88-127. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-
-- 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Recorded field-classified invalidation, exact resolved task intent for route review, and dry-run scope preflight. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
-
-- 2026-08-29T18:29+02:00 — Reconciled the graph-title citation coordinate after the runtime and
-  coherence refactor moved the cited symbol; task-publication behavior is unchanged.
-
-- 2026-08-26T08:30+02:00 — Rebounded the graph-title source range after the frozen structural
-  split; the task-first, always-unlocked authoring contract is unchanged.
-
-- 2026-08-26T02:55+02:00 — Direct IAS architecture refresh: made explicit that task authoring is
-  upstream of both queue projection and source-pair activation. Planning changes invalidate/rebuild
-  scheduling and are re-evaluated by later worktree admission; they never mutate in-flight journal
-  evidence. Verification remains frozen-candidate owned.
-
-- 2026-08-25T17:21+02:00 — Reconciled typed unstarted-task recovery with projection invalidation.
-  Verification remains closeout-owned.
-
-- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: made the task-first publication ownership current,
-  added the shared graph-cardinality/title and raw-section-scaffolding route owners, and removed the
-  stale queue-subordinate transitional account. Verification metadata remains pinned until
-  architect-owned closeout stamps the real code commit.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: created the `application/task_docs`
-  route — seven modules moved from `application/` (flat); `task_doc_tools` gained
-  `_sprint_doc_identity`. Verified at code commit e5cb139f.
+- Execution evidence checks real code and memory output cells. [6]
+- None [7]

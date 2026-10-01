@@ -1,0 +1,196 @@
+{
+  "path": "mcp/tests/test_task_document_body_lookup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it protects.\n\nAnchor: \"The on-demand task-document body reads one document, not the task corpus.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:c35836f79f7a16822387f797e6a1e77efaaca653e7c13bf759f739b77e6a0e76",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_task_document_body_lookup.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:e482c45e3d110a00982634d3608a4d43b38463d26bd5f3a5a4a7a06ab59ea07a",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The corpus fixture and its decoys, including the schema-less master the schema filter alone excludes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:4863ce9cde2ec96c8439f7ae4ee87549025c043435f3f474def99fe3780fa531",
+            "locator": {
+              "kind": "symbol",
+              "name": "_corpus"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reference projection: the corpus-wide enumeration fed to the unchanged join builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:eed2639788bea62ea33ab181a0d7c8b682857b3386259cf016a0a96e12f637ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_corpus_wide_body"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Byte identity for every document kind, the sprint's graph titles and fallback, and `None` for an absent path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:c58d52f97e6690c15e95fcd8bd702d8ca5cf8ae16fead946dc30b19f8f7d14a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_document_kind_projects_the_same_body_as_the_corpus_wide_join"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The recorder that counts listed directories and read files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:d2e3b094b7a3a6d9df29c17eac1e08a8f89c74d27ed07489554c0000a02701ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "touches"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The same touched files at 4 and at 40 unrelated tasks; no listing at all for a leaf or a master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:d1fda4fe44bcfa06e31703aa14cb656ecabf9212f3f7ea366d4d1c1a39d2aca2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_body_read_touches_the_same_files_whatever_the_corpus_size"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The enumeration equals the earlier recursive glob, including its exclusions and symlink behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:e4e7373a4db7d90ca804d5ca71f2dc4ad4f836df93ffe5d686418a483ba0799a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_enumeration_keeps_exactly_the_canonical_depth_documents_the_recursive_glob_kept"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The production read under test, and the only place that reads masters for it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:8c8a9080ec2470467a7e0a4ff4b51136f348aee65991f4e5fa1486cdd592a650",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_document_body"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph_master_docs"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The bounded enumeration and the named-path probe under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
+            "locator": {
+              "kind": "symbol",
+              "name": "_iter_task_json"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_task_json_candidates"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

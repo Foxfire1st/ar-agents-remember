@@ -1,15 +1,5 @@
 # mcp/tests/test_onboarding_trace_gate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_onboarding_trace_gate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -53,6 +43,10 @@ memory-quality run and the closeout validator hand the gate. The file runs in th
   written; `onboardingTrace.open` still names the two traces; `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list`
   pins ruling Q2 and the `(kind, subject)` order; `test_an_unconverted_leaf_keeps_todays_gate_unchanged`
   asserts that the sides and the worklist are `None` and today's gate runs.
+- **L37 (review R3-1).** `_run_controller` patches `run_memory_quality_check` with the module-level mock
+  `_QUALITY_RUN`, and `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` now also
+  asserts that the run's drift context carries a callable `knowledge_base`: the converted check is given its
+  comparison base (MIK-R24 rule 7). No case was added.
 
 ### Conventions
 
@@ -69,53 +63,42 @@ memory-quality run and the closeout validator hand the gate. The file runs in th
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R30@v1` of task
 `260928_maintained-invariant-knowledge`; it lives outside the code and memory repositories, so it is named
 here and not cited as a row.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixture's description: real repositories plus a leaf series contract. | "the inputs the curator's memory-quality run and the closeout validator hand the gate" | mcp/tests/test_onboarding_trace_gate.py:1-6 |
-| The leaf fixture. | `Leaf`; `leaf` | mcp/tests/test_onboarding_trace_gate.py:149-195; mcp/tests/test_onboarding_trace_gate.py:198-224 |
-| Only mechanical anchor fields never count. | `test_only_an_anchors_blob_line_numbers_and_content_do_not_count` | mcp/tests/test_onboarding_trace_gate.py:242-290 |
-| The conforming example and the nearest route. | `test_the_conforming_example_and_the_route_case` | mcp/tests/test_onboarding_trace_gate.py:298-332 |
-| A missing trace is named and refused. | `test_a_missing_trace_is_one_named_repair_finding_and_the_closeout_refuses` | mcp/tests/test_onboarding_trace_gate.py:335-349 |
-| The writer's carry is not a trace. | `test_the_writers_mechanical_anchor_update_is_not_a_trace` | mcp/tests/test_onboarding_trace_gate.py:352-365 |
-| Unnecessary rows and the registered rule. | `test_rows_are_only_about_changed_files_and_the_registry_rule_is_both_halves` | mcp/tests/test_onboarding_trace_gate.py:368-398 |
-| Moved markers count and survive a rewrite. | `test_a_moved_marker_row_satisfies_its_item_and_survives_a_rewrite` | mcp/tests/test_onboarding_trace_gate.py:401-435 |
-| Mixed formats refuse. | `test_mixed_formats_are_an_incomplete_side_never_a_vacuous_pass` | mcp/tests/test_onboarding_trace_gate.py:438-461 |
-| An unreadable K_C sidecar keeps its item open. | `test_an_unreadable_sidecar_never_satisfies_a_trace` | mcp/tests/test_onboarding_trace_gate.py:464-488 |
-| An unreadable K_B sidecar is an input problem; a repair counts. | `test_an_unreadable_base_sidecar_is_an_incomplete_input_and_a_repair_counts` | mcp/tests/test_onboarding_trace_gate.py:491-510 |
-| Unreadable history and unestablished sides are findings. | `test_unreadable_history_and_unestablished_sides_are_findings_never_a_pass` | mcp/tests/test_onboarding_trace_gate.py:513-533 |
-| The conversion counts for nothing; a v1 cache file is rewritten. | `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf` | mcp/tests/test_onboarding_trace_gate.py:552-604 |
-| No stamps and no history sort on converted trees. | `test_converted_trees_get_no_verification_stamps_and_no_history_sort` | mcp/tests/test_onboarding_trace_gate.py:607-620 |
-| Each open item counts once toward `curatorActionableCount`: since MIK-R09 the two traces and the uncovered file's `unexplained_hunk` (3). | `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` | mcp/tests/test_onboarding_trace_gate.py:702-722 |
-| The items are in the persisted worklist. | `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list` | mcp/tests/test_onboarding_trace_gate.py:725-747 |
-| An unconverted leaf keeps today's gate. | `test_an_unconverted_leaf_keeps_todays_gate_unchanged` | mcp/tests/test_onboarding_trace_gate.py:750-757 |
-| The unit-lane registration. | "mcp/tests/test_onboarding_trace_gate.py" | mcp/tests/test-evidence-lanes.toml:121-121 |
+- The fixture's description: real repositories plus a leaf series contract. [1]
+- The leaf fixture. [2]
+- Only mechanical anchor fields never count. [3]
+- The conforming example and the nearest route. [4]
+- A missing trace is named and refused. [5]
+- The writer's carry is not a trace. [6]
+- Unnecessary rows and the registered rule. [7]
+- Moved markers count and survive a rewrite. [8]
+- Mixed formats refuse. [9]
+- An unreadable K_C sidecar keeps its item open. [10]
+- An unreadable K_B sidecar is an input problem; a repair counts. [11]
+- Unreadable history and unestablished sides are findings. [12]
+- The conversion counts for nothing; a v1 cache file is rewritten. [13]
+- No stamps and no history sort on converted trees. [14]
+- Each open item counts once toward `curatorActionableCount`: since MIK-R09 the two traces and the uncovered file's `unexplained_hunk` (3). [15]
+- The items are in the persisted worklist. [16]
+- An unconverted leaf keeps today's gate. [17]
+- The unit-lane registration. [18]
 
-## Cross-Repo References
+- The memory-quality run gives the converted check its comparison base. [19]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the fixtures are temporary repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** The Enforcement bullet records that the controller helper captures real candidate trees and that the count is now 3 (the two traces plus the uncovered file's `unexplained_hunk`, each open item counted once by the gate). **Reopened claim reworded:** the test's row; this pass's generated bullet for it was removed. The other rows were re-pointed by the installed fixer (bullets kept), including the lane row (`:121`).
-- 2026-09-30T18:03:31+00:00: Generated citation repair: `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list` repointed to mcp/tests/test_onboarding_trace_gate.py:725-747. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T18:03:31+00:00: Generated citation repair: `test_an_unconverted_leaf_keeps_todays_gate_unchanged` repointed to mcp/tests/test_onboarding_trace_gate.py:750-757. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T18:03:31+00:00: Generated citation repair: "mcp/tests/test_onboarding_trace_gate.py" repointed to mcp/tests/test-evidence-lanes.toml:121-121. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): created this card for the new test file MIK-R30 adds (15 cases). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

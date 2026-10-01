@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/models/application_requests.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `LifecycleGateRequest` (lines 42-53) — The flat public lifecycle-gate request before domain record construction..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc425f0db7e6957a6ddc5d0acc9e4d06e0f10187",
+            "content": "sha256:464bfbef91c62931b01eea846788243d083f0acdfa5acb07b95f06eeb2194eda",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleGateRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `GateDecisionRequest` (lines 57-67) — One addressed gate verdict with its transport-owned attribution..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc425f0db7e6957a6ddc5d0acc9e4d06e0f10187",
+            "content": "sha256:2263be671d89da39bedb898a2d02d50319e5c715147a5ae3f15d801dc02a46e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateDecisionRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the class `OperatorInboxPostRequest` (lines 71-86) — The flat inbox post before application-owned routing and record construction..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc425f0db7e6957a6ddc5d0acc9e4d06e0f10187",
+            "content": "sha256:2583c9fe1bc6a6657b9b44a2b35bf88888fbf90599b073d7c5f4a90ae1b1ebff",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperatorInboxPostRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the class `OrchestrationNudgeRequest` (lines 90-100) — The flat manager-nudge request before target/subject construction..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc425f0db7e6957a6ddc5d0acc9e4d06e0f10187",
+            "content": "sha256:94a0a379aaeee1acc7902a9f7982cc37d2759b07c218a3004b78a8d19801a6e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrchestrationNudgeRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

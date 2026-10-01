@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_author_execution_graph.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Dry run previews and writes nothing then apply publishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c1e731d99a443c979492a9f79f5070d8f4a5df3",
+            "content": "sha256:c93502fc83f660ad1478420261f34213449bcceb68a687ed15c146aae6d8fa46",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dry_run_previews_and_writes_nothing_then_apply_publishes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Batch atomicity leaves everything untouched on failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c1e731d99a443c979492a9f79f5070d8f4a5df3",
+            "content": "sha256:9dcdbb1c0392f1ef197433424ec770214c2c3e40cf18da5f041a51041e90c9e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_batch_atomicity_leaves_everything_untouched_on_failure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

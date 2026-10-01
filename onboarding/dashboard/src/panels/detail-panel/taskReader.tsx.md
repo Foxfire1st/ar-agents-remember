@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/taskReader.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/taskReader.tsx`          |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -61,31 +51,27 @@ The reader renders `TaskDocNode`/`SeriesNode` content only and never mutates it.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reader entry and master overview mount optional graph content and the independently scoped queue. | `TaskContent`; `MasterOverview`; `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:85-132; dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:614-648 |
-| The sub-task index composes rows in received order. | "export function SubTaskIndex({" | dashboard/src/panels/detail-panel/taskReader.tsx:464-502 |
-| The slice list orders and opens authored task documents. | "export function SliceList({" | dashboard/src/panels/detail-panel/taskReader.tsx:505-541 |
-| StepList renders implementation steps, nested substeps, and explicit skip dispositions. | "export function StepList({" | dashboard/src/panels/detail-panel/taskReader.tsx:726-750 |
+- The reader entry and master overview mount optional graph content and the independently scoped queue. [1]
+- The sub-task index composes rows in received order. [2]
+- The slice list orders and opens authored task documents. [3]
+- StepList renders implementation steps, nested substeps, and explicit skip dispositions. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 
 ## 260815-DAG-L12 Sprint Graph Section
@@ -103,25 +89,3 @@ or completion count. The queue mount is outside the optional graph branch so a g
 still show exact-current scheduling projection state. `MasterOverviewHeader` is a behavior-preserving
 extraction of the existing kind/title/status header, body notice, change-set bar, and token summary;
 it keeps `MasterOverview` within the function-size gate without changing render order or conditions.
-
-## Update History
-
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `TaskRequirementBoundary` provider mount around `MasterOverview`/`TaskReader` (requirement listing scoped to the viewed task document, forwarded `onOpenNotes`).
-
-- 2026-08-24T15:04+02:00 — Added separate discard-before-start audit rendering, corrected the
-  sprint surface contract (optional graph, independent scoped projection), and recorded the
-  behavior-preserving `MasterOverviewHeader` extraction made during commit-hook closure.
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12: `MasterOverview` now mounts `SprintGraphSection` (the sprint execution graph wave-grid view plus this sprint's CloseoutQueue — L12-R5); claim re-read, citation ranges regenerated, stamp advanced to code commit b7f2c8e2.
-
-
-- 2026-08-20T04:32+02:00 — 260815-DAG-L14: `SubTaskIndex` renders typed `masterRef` rows as
-  `MasterRefIndexRow` (opens the commanded master document directly; unprojected targets fall
-  through to older behaviors), and `docPathForRef` is threaded through `TaskContent`,
-  `MasterOverview`, `MasterSection`, and `SubTaskIndex`. Verified at code commit 9c3180c1.
-
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the reader
-  grammar module extracted from `DetailPanel.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.

@@ -1,0 +1,276 @@
+{
+  "path": "mcp/tests/test_review_family_member_sources.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two texts, their attributed lines, the double definition and the past-end range the fixture writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:a007ec472d0f3b117848401de6aeb07cd2aacb82032d253c282193a46f2d4557",
+            "locator": {
+              "kind": "symbol",
+              "name": "BEFORE_TEXT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:f2c8597230e97ae0d88a1286d42de495f6f4bdb3fcc88d2ca3ea59d61ad59bf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ALPHA_LINES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:8134259e13c696eb5f8c634984975d22c97cdeef96617faf37687209eec0e929",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAST_END_LINES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:a6400f1c7b0b7a6af16973a1c38d94b968b9a8944634d2f6718b17f2dc60c7a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOUBLE_ALPHA_LINES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The legacy fields keep their values.\n\nAnchor: \"test_the_existing_source_fields_keep_their_published_values\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:a3901b80d1e05ba00baceeef1cf96cb080bd1bd206b4a8521be841ed1b7045b2",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The projection under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "079f2f248bff7cf7848d07a91542fb136f2a1e69",
+            "content": "sha256:5aef1ee14d041c35b1cc2167cd3d9c4e743b2b412fc584bb0b0f85ac80a558cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "member_source"
+            },
+            "path": "mcp/src/agents_remember/application/review_family_sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The resolver that fills the ranges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_line_range"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_review_family_member_sources.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:e111d9824c5c3b8661b7747afcdcbdcaaad1743618904d235184c6584fe3b78a",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The shared-fixture consumer registration.\n\nAnchor: \"mcp/tests/test_review_family_member_sources.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:e111d9824c5c3b8661b7747afcdcbdcaaad1743618904d235184c6584fe3b78a",
+            "locator": {
+              "end": 1547,
+              "kind": "line_range",
+              "start": 1547
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The legacy source fields whose values must not change.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:199549cc0168e711afb393c16d564d5cc05fb6a98cb6e9601aa27c6091cdf31f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_FIELDS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The fixture: seven before claims, a copied after dataset and the re-attested after claim over two real commits.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:33c1d10e04e3d6b1fde86165784b171d7cf78a032c2572ae86dac75387a9065f",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_sources_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**One side's roster read through the production owners, indexed by claim.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:249de5a96d04afa4e437f694b614924659681cfa84ddb7d5223e628901a56266",
+            "locator": {
+              "kind": "symbol",
+              "name": "roster_sources"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Two members in one file, and the line-range and file-locator states.\n\nAnchor: \"test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:db5a418a3c076a03ca27d659eb8334041f770e840d3eb18561cbd12125f8bfe4",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The unchanged attributed range on both sides of a changed file.\n\nAnchor: \"test_a_changed_file_keeps_its_unchanged_attributed_range_on_each_side\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:c2ff3b4c9fcd508151e2f6b490712ba4c14004ff9e0275a888fa6a107256bc5f",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 293
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Unresolved locators keep their recorded value and carry no range.\n\nAnchor: \"test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:b5c7289a9caaaff031a075dd6d77b6da46f251968d0c55544d3aeaf764754423",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 314
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A range past the blob end is unresolved on the exact blob.\n\nAnchor: \"test_a_recorded_range_past_the_blob_end_is_unresolved_with_no_range\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:974be0d8c6aad9c0556486f3a2b34d605f5188f720aed629c10b69d632df0b4e",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 339
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A doubly-defined symbol carries both ranges.\n\nAnchor: \"test_a_symbol_defined_twice_carries_every_defining_range\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:56d86807fe1700866bb64dbea52a81ff44f6336055fb71dbbd8e885f41045e21",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 354
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

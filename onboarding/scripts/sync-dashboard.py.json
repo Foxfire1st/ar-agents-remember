@@ -1,0 +1,183 @@
+{
+  "path": "scripts/sync-dashboard.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The script refuses an absent or non-current `dist`, places the tree, then writes the sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:896ed2925a1e55d6f373b20f4002df3a7f3f34c8d518217109c360b4f73c3daf",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:905b7ea6ce96814d4818eff78783a887de5494b647695774d37adee648ef06e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "replace_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:f101c588bd2c9c6ea71b5318277af2413735d341653e90df2f87965dff70a663",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:69be56a347d52a2edc0649e0ff1443286c885f594c7ff15a7206c3e2eb89a84c",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Vite compiles the same fingerprint into the bundle as `__AR_DASHBOARD_BUILD__`, which is the literal `bundle_is_current` searches for.\n\nAnchor: `__AR_DASHBOARD_BUILD__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a03f25459bbd020b6f25f0bf36bf1426ad202580",
+            "content": "sha256:2af82fddcbcb0fe1685e70e0deab40b02d2d6da3a41ba740711567fe52a0a40a",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardSourceFingerprint"
+            },
+            "path": "dashboard/vite.config.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03f25459bbd020b6f25f0bf36bf1426ad202580",
+            "content": "sha256:0c8fce771c825e03611f52bf97aa084a608af92e6861dd334e75029f033e25f0",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/vite.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The release job builds the frontend, runs this script, packages, then asserts both distributions carry the bundle and the sidecar.\n\nAnchor: \"Build dashboard bundle\"; \"Place dashboard bundle into MCP package data\"; \"Verify the distributions ship the dashboard bundle\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f317b6f98a957906e5147f6a91f0c1630340979d",
+            "content": "sha256:0f9731b1271db6297835ba0c3c4849a69a39dfcd255c2c368c074511a6087a1c",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The serving resolver mounts what this script placed, or answers 503 when nothing was placed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
+            "content": "sha256:94cffaf7be3ad1a86233ca6f33e36845f7785d80048df74111ac83755bc14a61",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboard_static_dir"
+            },
+            "path": "mcp/src/agents_remember/serving/static.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
+            "content": "sha256:1f606188e90d39e5ba2cfc48b354700f36033577e0e58aa84612f9e26c84a423",
+            "locator": {
+              "kind": "symbol",
+              "name": "mount_static"
+            },
+            "path": "mcp/src/agents_remember/serving/static.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
+            "content": "sha256:06dfc4226588f7c4716fc05f2f63ee501591ad0f08f69610b2e6695d7094aead",
+            "locator": {
+              "kind": "symbol",
+              "name": "MissingDashboardBundle"
+            },
+            "path": "mcp/src/agents_remember/serving/static.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sidecar this script writes is what the build stamp publishes as `dashboardBuild`.\n\nAnchor: \"dashboardBuild=self.dashboard_build,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a98d07922b6fc1d752ba17136ea7a1634652373",
+            "content": "sha256:f604a8f6b9ccf9c17adecde4659c1f1d8cfe98fd231688f8dce4c3ba6a4b726b",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/serving/build_info.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Both generated paths are git-ignored with the reason recorded inline.\n\nAnchor: \"mcp/src/agents_remember/package_data/dashboard/\"; \"mcp/src/agents_remember/package_data/dashboard.fingerprint\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15dff1e651aa655888d4b896cf0305d858b01eb5",
+            "content": "sha256:0a8c6e6c23100def0cb8ce7c9eb79f601a514201255389c857ec009112541e7e",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": ".gitignore"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

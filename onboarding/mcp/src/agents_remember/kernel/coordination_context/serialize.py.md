@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/coordination_context/serialize.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/coordination_context/serialize.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [coordination_context overview](overview.md)
@@ -35,34 +25,21 @@ emits the legacy tab-separated text format used by the CLI.
 - Empty optional paths serialize as empty strings in JSON output, preserving the
   old resolver contract.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation is needed for this local formatter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is needed. | n/a | n/a |
+No relevant external documentation is needed.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The CLI delegates JSON/text output to this module. | "context_to_dict("; "print_text(" | mcp/src/agents_remember/cli/coordination_resolver.py:108-108; mcp/src/agents_remember/cli/coordination_resolver.py:110-110; mcp/src/agents_remember/cli/coordination_resolver.py:112-112 |
-| The application context packet builds the packet with `context_to_dict()`. | `build_context_packet`; "context_to_dict(" | mcp/src/agents_remember/application/context_packet.py:59-102 |
+- The CLI delegates JSON/text output to this module. [1]
+- The application context packet builds the packet with `context_to_dict()`. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository evidence is needed for this formatter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-09-06T22:15:27+00:00 — Preserved actual asset/context semantics from retired test onboarding; verification pins unchanged.
-
-- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: anchored the CLI and application consumers of the formatter, including the packet builder's formatter call.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-05-25T20:57+02:00: Created by extracting `c-08-ar-coordination-context-resolver` skill JSON/text serialization from the monolithic resolver.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # scenario_runtime.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `scripts/e2e_harness/scenario_runtime.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T09:45+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `scripts/e2e_harness/overview.md` |
-
 ## Governing Overview
 
 [Ambient Role-Chat E2E Harness](overview.md)
@@ -54,44 +44,21 @@ claim success for other errors; `run.py` checks both its result and residual ses
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Resource ownership and teardown are bounded to the fixture's explicit tmux identity. | `teardown` | scripts/e2e_harness/scenario_runtime.py:19-72 |
-| Destructive tmux commands require the exact fixture root and no inherited server address. | `_isolated_tmux_environment` | scripts/e2e_harness/scenario_runtime.py:178-187 |
+- Resource ownership and teardown are bounded to the fixture's explicit tmux identity. [1]
+- Destructive tmux commands require the exact fixture root and no inherited server address. [2]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Teardown visits recorded seats and run-prefixed sessions before stopping the server. | `teardown` | scripts/e2e_harness/scenario_runtime.py:19-54 |
+- Teardown visits recorded seats and run-prefixed sessions before stopping the server. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Cleanup acts only on disposable fixture resources. | `teardown` | scripts/e2e_harness/scenario_runtime.py:19-72 |
-
-## Update History
-
-- 2026-08-31T09:45+02:00 — 260821-ARSPAWN-L5 closeout repair: made the isolated server's
-  `exit-empty` scope explicit while preserving role-pane exit behavior. Verification remains
-  closeout-owned.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: tightened the tmux
-  boundary from an assumed Dagger context to an explicitly proven fixture `TMUX_TMPDIR`, with
-  structured refusal when ownership cannot be established. Verification remains closeout-owned.
-
-- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
-  canonical anchored citation format. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:59:40+02:00 — 260821-ARSPAWN-L5: replaced silent cleanup suppression
-  with total structured evidence and corrected the tmux boundary: the broad stop owns the dedicated
-  Dagger server, not an arbitrary shared host server. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created onboarding for scoped resource preparation and teardown. Verification metadata remains closeout-owned.
+- Cleanup acts only on disposable fixture resources. [4]

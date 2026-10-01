@@ -1,0 +1,265 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+        "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_current_curator_coherence"
+        }
+      },
+      "id": "RLZ-24KZZ6YF",
+      "invariant": "INV-453ZPCZ5",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Keeps strict live readiness strict: it recomputes the live candidate observation (pair identity, code and memory trees, topology fingerprint, task intent, attestation digest, source candidates), requires recorded judgments to be current, and refuses curator-coherence-stale or task-mismatch when anything differs from the record.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Observation freezes code, memory, task, and attestation identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:11766a27fc8fc9d2058751fa071256453d4bec1fb8f955f87f95b30a720fa205",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_curator_coherence_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The closeout validator refuses until the gate passes and never runs ungated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "content": "sha256:cfe113e57b1695454646631dfbbc5289a1dcaa436245cdbcfc5f611a0d1362ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Current readiness still validates live inputs and dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_curator_coherence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "External memory must remain the exact contract-resolved paired worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:25b943ad4111ccc4d7cc54a97b354b5070a6cb385cdddc99ea6952af65739531",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_leaf_external_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Loading validates the sole manifest, generation bytes, generated projection, and evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:d62e4aa67b2079df27e343f54cb4dc0de4e3f180bdf756b4d68dbe4aa060fdce",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_curator_coherence_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "All admission paths share one currentness validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:0d64f1ab5341d6a3d0e97f6ee334e82815a00911e751e19551b22a39feb10521",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_curator_coherence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:07570f44cdca5c621a00386f4add3a1f40941941e40d47002b103931e5d17420",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact current judgments project into separate content and route no-impact sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:0c8e9cac1d71edcb624a14500cd5bd8b4b8e36174aa0d2560915741b5a336c04",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceNoImpact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:56882c8619d93235a2b4d95ad872c9eac2ad7f145095ff9088dc134c02d2f4d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_no_impact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:a2887ebd37831e059b2aa25b211c1614df0b1c954c3f08df49b5173a07a0ed33",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Candidate task context binds the authored graph once and returns the bound sprint generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:87bb890fce2ddf85045c57c02c1c2eb61490bfa737234035dbded7a5aecff462",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Explicit evidence namespaces prevent implicit-root fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:94a463dec1d3656f96c82e8488484c140b7605c0496bdcdc3613af08dfcdd303",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_curator_evidence_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:639557666dd44e79d32a672d51aa5afbe5463f44e3cc5ab8c28e9fe58e873eef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_dependencies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:8b1856c943b169ab7e5b6330b0d99cd311abeba3eb55ec74684c3f8ce15dbdf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_quality_attestation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A named retained generation is read without asserting live readiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:85636f49b9229c363f534ca9e31af20622e8240ac8d3e9b27262e7dfcfa8ccf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_curator_coherence_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09).\n\nAnchor: \"curator-coherence-knowledge-gate-refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:6772ad476d6034ab968dd523ccb86bc0f93ee4372cdfa9b4e5cc52e06e2f85b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_knowledge_gate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

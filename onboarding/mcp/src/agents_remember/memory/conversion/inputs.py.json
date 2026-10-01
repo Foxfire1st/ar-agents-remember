@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/inputs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A working tree and its database.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff2f98f33f24eddf92fa9c0303c4146445047de",
+            "content": "sha256:6c44bc49a9604ed28e9ed3dfaa50f794030dfded65243e5d1d264a3114fae195",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_from_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A Git tree, with its database blob copied to scratch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff2f98f33f24eddf92fa9c0303c4146445047de",
+            "content": "sha256:ec28bf31657353edf13a81c5373ddeb2a623f8ee5a7ff16bc76c545d9b0f980b",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_from_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Writing a finished conversion through a temporary file and a rename.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff2f98f33f24eddf92fa9c0303c4146445047de",
+            "content": "sha256:064bea808d97722fc1f9605f79bc909a71e4db7ea456add56299e169818d04c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_changed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

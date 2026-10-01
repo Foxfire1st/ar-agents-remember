@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/curator_coherence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter delegates one request and validates one named public result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "058f9fea4598920869eb51c4fe3b27fddeb16631",
+            "content": "sha256:9a9cb606009afaf8822780fc885b71b55d1bbff9aea40d62dad410de2006ffaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

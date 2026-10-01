@@ -1,0 +1,67 @@
+{
+  "path": "dashboard/src/dev/CockpitScenarioHarness.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Scenario facts, reset, and fake fetch installer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
+            "content": "sha256:7c5d46e377dff15934662c0526e6785b93e0455a9699b292eb6751f515217f29",
+            "locator": {
+              "kind": "symbol",
+              "name": "resetCockpitScenario"
+            },
+            "path": "dashboard/src/dev/cockpitScenarios.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
+            "content": "sha256:6e4bc81efa5885f655a5c2cbd7779f205728509b7ab18b795c6033aa46f25637",
+            "locator": {
+              "kind": "symbol",
+              "name": "installCockpitScenarioFetch"
+            },
+            "path": "dashboard/src/dev/cockpitScenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bench mounts `CockpitScenarioHarness` and wraps the shell in `CockpitScenarioExitBoundary`.\n\nAnchor: \"<CockpitScenarioHarness key={scenario.name} scenario={scenario.cockpit}>\"; \"<CockpitScenarioExitBoundary key={scenario.name}>{shell}</CockpitScenarioExitBoundary>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "content": "sha256:4ae938f3ed4e6db0537984db6d78670be02a81bfc99df7f7bfb8692998a669fa",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/dev/Bench.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "content": "sha256:0540631abb39c17b22d43eef9812b5c5847d47bf98f4f488da7a172898aa0e18",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "dashboard/src/dev/Bench.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

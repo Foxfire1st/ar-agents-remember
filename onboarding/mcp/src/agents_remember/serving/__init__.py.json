@@ -1,0 +1,16 @@
+{
+  "path": "mcp/src/agents_remember/serving/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The serving route overview.\n\nAnchor: `# mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/serving/overview.md:1-1126"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

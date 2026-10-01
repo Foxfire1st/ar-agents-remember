@@ -1,0 +1,25 @@
+{
+  "path": "dev-skills/dashboard-experience-review/templates/scenario-catalog-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The live catalog instantiated from this template.\n\nAnchor: `# Cockpit Dashboard — Workflow Scenario Catalog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0198845c73c6b60a84e77cd589bd5a9615fda7e4",
+            "content": "sha256:300cd5ed4d8cc117d30dbc4b1ad94303da82b39c799705aa2fae9bd9c4ee5817",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/dashboard/scenario-catalog.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

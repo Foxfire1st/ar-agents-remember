@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/onboarding-wave-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The onboarding wave template records wave metadata, cards, deferred targets, evidence needs, worker instructions, assignments, done criteria, and review questions.\n\nAnchor: `## Goal`; `## Included Cards`; `## Excluded Or Deferred`; `## Evidence Required`; `## Worker Instructions`; `## Worker Assignments`; `## Done When`; `## Developer Review Questions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd2e54ff280b1335f1f488a04916242fb6c5bcf9",
+            "content": "sha256:bffea1b06fee7385cbd9d9a4e8e672f9865dd3fd51eddf76c4b780e2125d531e",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`c-03-repo-bootstrap` Phase 4H writes onboarding wave manifests.\n\nAnchor: `### 4H — File-Level Onboarding Waves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4014891822eb5110082227e1b68355f17b6e96ef",
+            "content": "sha256:946e7a1f2a142b02491bfb38d52f4c51795398c20e126daf3815b70817c2925f",
+            "locator": {
+              "end": 1020,
+              "kind": "line_range",
+              "start": 985
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The onboarding-file worker instructions are governed by the c-05 skill routing section.\n\nAnchor: `## Routing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cd7f91e33f622501ed9d91a9107e9b5488ef7e4",
+            "content": "sha256:b38f0fe13c60ed20d15cd2812154de2b8221be56db733315ae3072789478524c",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

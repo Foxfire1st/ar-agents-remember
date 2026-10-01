@@ -1,0 +1,54 @@
+{
+  "path": "dashboard/src/dev/mockTerminalSocket.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The client contract this fakes (the socket surface + frame shapes).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c3b65431d6b63065de8f6cc62597b34dd6e7a3e",
+            "content": "sha256:6eb715f0d584f0ab2d46831defc88bf70c2c6a822e3f400b34923e5154d768b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalSocketFactory"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c3b65431d6b63065de8f6cc62597b34dd6e7a3e",
+            "content": "sha256:7cc82a8e21ec07f3727780d006c67e1d63ede19ab054245f4afa532b17b5c44b",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bench that provides this via context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "content": "sha256:b4df5ab1f0929cc5230f264ca569d5f7779be36faa23e04143b20cbbeb43d18d",
+            "locator": {
+              "kind": "symbol",
+              "name": "Bench"
+            },
+            "path": "dashboard/src/dev/Bench.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

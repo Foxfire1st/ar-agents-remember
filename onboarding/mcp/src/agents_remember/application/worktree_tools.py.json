@@ -1,0 +1,600 @@
+{
+  "path": "mcp/src/agents_remember/application/worktree_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:f3f1614497e4b0a687b3e3a04385c131a52d1615359d86fc5a320ee559b62d82",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_integrate_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:35295038efd28c962b205af19a058b7cf2124a636ffd728259205c3c7bbfb83e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_checkpoint_landing_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The closeout preview and closeout apply return paths now carry this leaf's final-output projection (ICR-R21@v1): the preview is decorated with the selected comparison generation and `prepared_is_reviewed_candidate`, the apply with the recorded receipt, and integration with the refs it landed — all attached after the Git transaction, so none of them can gate it.**\n\nAnchor: `attach_prepared_selection`; `attach_closeout_receipt`; `attach_integration_receipt`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:b419d7e08f9f0add5be0ae490f9339aacb7053f6473099b8228503cf0534983a",
+            "locator": {
+              "end": 1013,
+              "kind": "line_range",
+              "start": 1013
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:f93c813b1a66458b9632dad282744dc7f0741c545c1917c7de93be1a542f2088",
+            "locator": {
+              "end": 1016,
+              "kind": "line_range",
+              "start": 1016
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:645963c4485cea41bd7caed2105f8bcc10c15cb649e8b03297ef4fe90038eb52",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 456
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Worktree service behavior is owned by the worktree manager and modules.\n\nAnchor: `agents_remember`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89ee15e0a44fd22952d655dc7d2286a21a87ba45",
+            "content": "sha256:2a4d96a6908a181b96ff731c4bae392acd085d293bdb97d3ad83642b6af34caf",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Shared repo/path authority guards (`require_repo`, `require_within_coordination`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:cae5d208c1d8ec05196503e1db089c686c65b9c7216370666479dc5709c237b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_repo"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Lifecycle finalization behavior is delegated to the worktree finalizer module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7025775fd8acd40047a8500e4803211fd2ffb00",
+            "content": "sha256:dcb7aa69563bbc7deb0df357e25fba2ea1ca41d9ddef54bbc16b1599b8d019e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The on-disk provider authority reload consumed before provider setup (containment R1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:a8f4da9fa7ab81c9252d77e8ffcf2d03a644b71eebb4f1ffa1a0eb6cfe4b9444",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:3b540a0d83735a37840bf0b3f94a7a430c21e9d782753b587483243203c358f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "reload_provider_authority"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:d45aa1785cf5eb85f9b0e36a3f3205802d150161a09b9c2c6aa487f0d7d8a716",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_setup_config"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "`land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a30526c88d4c9cd3e076491b7bbe23155381351",
+            "content": "sha256:4ea7c4375a9fa852abe3fffc19d369751a9641fafaa589ff5e07a9622f8550b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "land_seats_for_task"
+            },
+            "path": "mcp/src/agents_remember/serving/landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Manual retire eligibility/role policy remains owned by `retire_policy.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b19659b95e284597c630b44a0f59b6344c261cb",
+            "content": "sha256:0167fb91d6522e5a0b088f3c8f63284148d7c1c9e9e0786f8d991d429f2f7ea6",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_retire_authority"
+            },
+            "path": "mcp/src/agents_remember/serving/retire_policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b19659b95e284597c630b44a0f59b6344c261cb",
+            "content": "sha256:98cd4349be5fd0eb711a30cca7f0f422a4cc17678acc0c9ff6de84569df0e51f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetirePolicyError"
+            },
+            "path": "mcp/src/agents_remember/serving/retire_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "`log_landed_event`, called once per landed entry after a successful auto-land.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:b8aa351028cb60279b48fd58f9333872cb196b0a4ab56d993e5852497316d453",
+            "locator": {
+              "kind": "symbol",
+              "name": "log_landed_event"
+            },
+            "path": "mcp/src/agents_remember/serving/seat_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "`TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:55daa48731d544c451294839190cc76f0b5c3c8b446e90d5b35cf10ba039e3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalog"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`RetirementSettings`/`config.retirement` gating the two auto-land hooks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:3adfa1b77358d0f2dc8f4d35d10f457c79ec0def99d7098b5697ef04000d3b53",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetirementSettings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public status observes the stable journal through the canonical locator and preserves it in the result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7025775fd8acd40047a8500e4803211fd2ffb00",
+            "content": "sha256:dcb7aa69563bbc7deb0df357e25fba2ea1ca41d9ddef54bbc16b1599b8d019e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Worktree service behavior is owned by the worktree modules, which this manager module re-exports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89ee15e0a44fd22952d655dc7d2286a21a87ba45",
+            "content": "sha256:5b820289a3bfca6a5e50133d985f88b342cb86018aa573494919b29b45cffad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync (`ICR-R22@v1`); what it measured is a carrying sync's own resolved pair, published additively on the result.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:cabb77aa88aead381f04b713ca52f9f3ce5e8bf7bdf00d7e0d0d79100b76bd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:348f06ccf3563045b1b90e04911bb8a4f68d95cf72976dc4cb13b27595f0838b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebinding_result_block"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:864b4a2b09b5bf0d4e5813682e9d748b63ca37c57cd1e5c4dadc4f3e1a24a28d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_pair_completed"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The facade's start entry point consumes the extracted task-start request types at this boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:a8f4da9fa7ab81c9252d77e8ffcf2d03a644b71eebb4f1ffa1a0eb6cfe4b9444",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:a8f4da9fa7ab81c9252d77e8ffcf2d03a644b71eebb4f1ffa1a0eb6cfe4b9444",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public sync forwards typed memory choice and continue/cancel control after configured-contract admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:cabb77aa88aead381f04b713ca52f9f3ce5e8bf7bdf00d7e0d0d79100b76bd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:70132e5a4115a17a4ba4fc250d715dd3ad285975b80ccc111b29cb07497e92ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_control_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:35295038efd28c962b205af19a058b7cf2124a636ffd728259205c3c7bbfb83e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_checkpoint_landing_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:03b3425f64a59a60642d717d4ecd167dde0f5097f5947c1cf6c183fd8222cb2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_pause_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:b05086aeb8d2c5c4ecbae68c73eb201ea9752fe2024d179121a394a049afe0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_policy_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Stable sync projection is read from the enclosure-root journal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_sync_operation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:f2d48e829c48e0115cac7a0d635247156399f2224432ba170608f7bb0f1157d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncJournalReadError"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:7589d51a4d6e9c7a67f55144cbe1b6a4b471362ce4ec250739a63f8227bced88",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89ee15e0a44fd22952d655dc7d2286a21a87ba45",
+            "content": "sha256:5b820289a3bfca6a5e50133d985f88b342cb86018aa573494919b29b45cffad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec29470061389a3d82dfc1c720b9bdf92829bb91",
+            "content": "sha256:7e68ce6c60facbee0b61149927f3e19b683d139b356250c928a32804a5d54338",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSummary"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec29470061389a3d82dfc1c720b9bdf92829bb91",
+            "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCheckpointLandingResponse"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Route-review refusals are projected once with exact contract guidance at start/admission and closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:0dc5af9d8a1982ce612762b8b674dd15766d32cac450f12c27efe7e0a3c33719",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_closeout"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:431fb418b0d54e3248cf586194613977c3720b9ecca105cb1a62736610d2c578",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_review_refusal_projection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:4341e46efbdfae6a0ca5076bf8c944921cd5c547f25c3a131015ad56962a41fa",
+            "locator": {
+              "end": 549,
+              "kind": "line_range",
+              "start": 549
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

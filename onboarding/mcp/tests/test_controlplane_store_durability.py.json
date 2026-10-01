@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_controlplane_store_durability.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No record is lost when an append races a compaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f57d9a67c3d574837cf46787b8ebcf8cbcb7e2c2",
+            "content": "sha256:6ebd981f9b043b964da11280e6fd9fcc38add9a867f324c82a910cebcceab827",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_record_is_lost_when_an_append_races_a_compaction"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Gate enforcement fold refuses a torn line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f57d9a67c3d574837cf46787b8ebcf8cbcb7e2c2",
+            "content": "sha256:11eb862ac33868b34cda9e1cad6182477bd2132e90286b30e17b1d15cd7d8e69",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gate_enforcement_fold_refuses_a_torn_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Gate projection fold degrades instead of crashing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f57d9a67c3d574837cf46787b8ebcf8cbcb7e2c2",
+            "content": "sha256:e79768f4c62ee36c9c5e354833c61bb2b3d128a6b76222aff23dc58b5e4cbcf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gate_projection_fold_degrades_instead_of_crashing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/cursor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cursor authority signs and validates purpose-bound list/read coordinates and native identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:2343cf82b38f21a2415be2f9d2882697b712a1ca8ce7647020ea48d3cce0546e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LibraryCursorAuthority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The cursor authority signs and validates purpose-bound list/read coordinates and native identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:2343cf82b38f21a2415be2f9d2882697b712a1ca8ce7647020ea48d3cce0546e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LibraryCursorAuthority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Identity digests are stable and scope/vendor-sensitive; catalog generations are content-derived and positive.\n\nAnchor: `identity_digest`, `catalog_generation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:7bb089073e9628824677bf2ba27eda79c3b925bf184fc57622afe8e0b6c8b097",
+            "locator": {
+              "kind": "symbol",
+              "name": "identity_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:c24ca2fa8f6d78b2bc04a6a762975eb6d80b1cfffb48edb806e89e481d735ee4",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalog_generation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:4c11855b811504aaca7f8ec7b92d36b497031667d65c9fe3efcc17dcd8aa3cb0",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdd59fd66f7619a6d7863ac303950de3c77155ce",
+            "content": "sha256:25d291dbccdfe654e9ec93dc2cb337572d83cf15d82ee96acc2051c0d24a7f26",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The purpose-branded token types and binding models are declared in the parent contract.\n\nAnchor: \"class LibraryCursorBinding(WireModel):\", \"class LibraryKeyBinding(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f206c743332649dd2a9a34eb38b52e400d0abf3",
+            "content": "sha256:74a8538466c091ffc1dab74b484c8c3cfd5820cfef2bf5a5eaeffb92f4e0f4e7",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/models/conversations/cursors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f206c743332649dd2a9a34eb38b52e400d0abf3",
+            "content": "sha256:65458e300ba2af5337a52dec906433e46658b8cdbf818fabbd447663229606b7",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/models/conversations/cursors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

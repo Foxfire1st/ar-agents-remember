@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/review/SourceExplorer.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`SourceExplorer` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:7a9918cfbbeca0fe8a60beee6bfca6dae9a51d703b41789f89f7c4a9233ae972",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceExplorer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`InventoryRows` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:eb0d94f603c3f21dcb6426d17428e00487a4e353eb973e050d57c4e430581f4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InventoryRows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`inventoryEntry` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:d6237d6db50ea62c295b613500bcfabea3b9f225c2be8e95100800ea196bc3a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventoryEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`byteNamedEntry` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:dd634c8abc3c5cbaba7972e433155b23438defcbdab07a46166e5698b6bb2e3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "byteNamedEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`InventoryDetails` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:042b936d46a78b4b6cedb0d937fcfe2a43278a562a71d21a147b517bad3d76f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "InventoryDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

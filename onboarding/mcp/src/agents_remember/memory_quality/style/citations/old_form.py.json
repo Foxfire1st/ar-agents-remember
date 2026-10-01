@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/old_form.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `Span` (lines 32-36) — One range read out of an old document, in the file it was written about..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a484c5170081817d94b0fff02dc733a93dc1730",
+            "content": "sha256:438404341d0fa154ced8f19d316a6bd0598f01a597a4be2aac35cb77aa3b5b81",
+            "locator": {
+              "kind": "symbol",
+              "name": "Span"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `link_targets` (lines 39-49) — Every path this Source Path cell names, in order, however it spelled them..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a484c5170081817d94b0fff02dc733a93dc1730",
+            "content": "sha256:c35f216898e327a7c6eaff62997dca8cd8813eae1137c79d6c3484f81dcdee2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "link_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `path_candidates` (lines 52-72) — Every repo-relative spelling of ``target`` worth trying, most specific first..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a484c5170081817d94b0fff02dc733a93dc1730",
+            "content": "sha256:d1d2fca6f76b201e6ecffbd4c9141226ef96243e832ee7425384594422afda83",
+            "locator": {
+              "kind": "symbol",
+              "name": "path_candidates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `_mirrored` (lines 75-87) — ``../src/x.ts`` read against the card's own place in the mirrored tree..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a484c5170081817d94b0fff02dc733a93dc1730",
+            "content": "sha256:b27aae036c192bd9b0410bd2675ca2f60bb7529d987f8323e423c1e6e04a2bbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mirrored"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `resolved_path` (lines 90-107) — The one spelling of ``target`` that names a file in either tree, or ``None``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a484c5170081817d94b0fff02dc733a93dc1730",
+            "content": "sha256:df93e96230b4ea8ab1e2a1482d45c36604acb9d754eed23e0c13109c90c9ec3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `old_span` (lines 110-117) — The first ``L`` range in a Citations cell, as numbers. A tiebreaker, never an output..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a484c5170081817d94b0fff02dc733a93dc1730",
+            "content": "sha256:1d349cdccf05fa6d9ab163d8eb764cb94f7fef316de310e6e3cff09bea827665",
+            "locator": {
+              "kind": "symbol",
+              "name": "old_span"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `verified_hint` (lines 120-130) — ``span`` if EVERY anchor really occurs inside it in ``path``, otherwise ``None``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a484c5170081817d94b0fff02dc733a93dc1730",
+            "content": "sha256:abaf74bf1a03e6fdf494ed564261b082e98dd7d45c95fc08921c45c2c5755226",
+            "locator": {
+              "kind": "symbol",
+              "name": "verified_hint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `is_marker` (lines 133-135) — Whether a cell is one of the four spellings this tree uses for 'nothing to cite'..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a484c5170081817d94b0fff02dc733a93dc1730",
+            "content": "sha256:784ff1673dae9a31a05b88a80927c2a0d9efe3300d704540cd38554bbb62c327",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_marker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `marker_of` (lines 138-144) — The no-citation marker a table already uses, so a padded row does not invent a fifth..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a484c5170081817d94b0fff02dc733a93dc1730",
+            "content": "sha256:f9be380cf03d1a4f7ffa12034e54251550f084b7fc60ec992849fcee1f19b698",
+            "locator": {
+              "kind": "symbol",
+              "name": "marker_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

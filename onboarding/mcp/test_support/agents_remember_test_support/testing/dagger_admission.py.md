@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/testing/dagger_admission.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/testing/dagger_admission.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python testing boundary](overview.md)
@@ -34,15 +24,10 @@ an instance carrying this module's private authority object.
   candidate-bound Dagger report generation establishes acceptance authority.
 - No old `code_quality.dagger_environment` compatibility reader remains.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Nonce/file facts are validated as a total refusal. | `dagger_admission_refusal` | mcp/test_support/agents_remember_test_support/testing/dagger_admission.py:55-70 |
-| Only the validator mints admission. | `require_dagger_admission` | mcp/test_support/agents_remember_test_support/testing/dagger_admission.py:73-90 |
-| Downstream caller-shaped capabilities refuse. | `require_dagger_admission_capability` | mcp/test_support/agents_remember_test_support/testing/dagger_admission.py:93-101 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-24T21:23+02:00 — Moved and narrowed the former code-quality environment validator into
-  the testing route; clarified route guard versus durable acceptance authority.
+- Nonce/file facts are validated as a total refusal. [1]
+- Only the validator mints admission. [2]
+- Downstream caller-shaped capabilities refuse. [3]

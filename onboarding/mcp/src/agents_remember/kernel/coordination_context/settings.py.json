@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "JSON parsing owns the preferred settings format.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03194c9cd44ad38387e9232b636feaddc3fa72fc",
+            "content": "sha256:f3179fcf5e4c3df872acd5359edf267c1cf0353330e69fbbc47655b828eeec20",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Markdown parsing owns the legacy fenced-settings fallback and invokes the parser body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05d78e05a0a305b80f68c57b419a86da92eb74b1",
+            "content": "sha256:415cca928037997c30a75bf07dcc5f41389823c8b31ab0939d2c819715de6aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_settings_block"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05d78e05a0a305b80f68c57b419a86da92eb74b1",
+            "content": "sha256:d6a6503abac144caad1b2a3eff4495a314b3c22fc77570364ceda3c66f70c369",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05d78e05a0a305b80f68c57b419a86da92eb74b1",
+            "content": "sha256:b02fbcae91fb2bfbe3037fe56bd54695aa0c42e0af06eefb2d6674eefb9983c2",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The settings facade prefers sibling JSON and otherwise scans fenced Markdown through `parse_coordination_settings`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c615fd86728b62479486cf8394ee6b5096d7fe6",
+            "content": "sha256:330333cc5d9a2188c727fe55eca874888474d9a0cdbfe441c276e68dd9faf8c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_coordination_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

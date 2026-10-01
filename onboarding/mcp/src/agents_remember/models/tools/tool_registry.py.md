@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/tools/tool_registry.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/tools/tool_registry.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba` |
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models overview](../overview.md)
@@ -46,29 +36,27 @@ orchestration nudge builders remain modeled for trusted callers but are delibera
 - Agent-facing structural response models do not expose runtime session, lifecycle, inbox, or gate ids.
 - Field-set strictness and producer-owned value vocabularies are separate contract axes.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain source governs this repository-local registry.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The exclusion set names trusted compatibility and administration operations. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:134-155 |
-| The complete registry includes structural agent and gate responses alongside internal exact models. | "\"dispatch_agent\": DispatchAgentResponse,"; "\"gate_decide\": GateDecideResponse," | mcp/src/agents_remember/models/tools/tool_registry.py:163-253 |
-| The advertised subset is derived rather than independently maintained. | `PUBLIC_TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:255-259 |
-| The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order. | `worktree_checkpoint_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:205-205 |
-| The stop tool's response model is registered immediately after its sync sibling, matching the advertised order. | `worktree_pause` | mcp/src/agents_remember/models/tools/tool_registry.py:201-201 |
-| The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order. | `worktree_record_landing` | mcp/src/agents_remember/models/tools/tool_registry.py:206-206 |
-| The three rows the capsule-and-skill registrar needs, at the mapping's tail to match their appended roster position. | `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read` | mcp/src/agents_remember/models/tools/tool_registry.py:245-247 |
-| The choke point validates against this registry before emitting the envelope. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
-| The five rows the knowledge registrar needs, at the mapping's tail to match their appended roster position. | `knowledge_read`; `knowledge_change`; `knowledge_diff`; `knowledge_integrity_check`; `knowledge_project` | mcp/src/agents_remember/models/tools/tool_registry.py:248-252 |
-| The five strict response contracts those rows map to, in the module that declares them and exports exactly those five names. | `__all__` | mcp/src/agents_remember/models/tools/knowledge_responses.py:33-39 |
-| The three strict contracts the capsule rows map to, including the shared success/refusal capsule envelope. | `RoleCapsuleResponse`; `SkillCatalogListResponse`; `SkillCatalogReadResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:86-115; mcp/src/agents_remember/models/role_capsule_resources.py:137-150; mcp/src/agents_remember/models/role_capsule_resources.py:153-167 |
+- The exclusion set names trusted compatibility and administration operations. [1]
+- The complete registry includes structural agent and gate responses alongside internal exact models. [2]
+- The advertised subset is derived rather than independently maintained. [3]
+- The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order. [4]
+- The stop tool's response model is registered immediately after its sync sibling, matching the advertised order. [5]
+- The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order. [6]
+- The three rows the capsule-and-skill registrar needs, at the mapping's tail to match their appended roster position. [7]
+- The choke point validates against this registry before emitting the envelope. [8]
+- The five rows the knowledge registrar needs, at the mapping's tail to match their appended roster position. [9]
+- The five strict response contracts those rows map to, in the module that declares them and exports exactly those five names. [10]
+- The three strict contracts the capsule rows map to, including the shared success/refusal capsule envelope. [11]
 
 ## L23 Lifecycle Model Package Review
 
@@ -89,9 +77,7 @@ The current source seams include the module-level vocabulary. The model change k
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes the module-level vocabulary at this ownership boundary. | "INTERNAL_COMPAT_TOOL_NAMES = frozenset("; "PUBLIC_TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {" | mcp/src/agents_remember/models/tools/tool_registry.py:134-155; mcp/src/agents_remember/models/tools/tool_registry.py:255-259; mcp/src/agents_remember/models/tools/tool_registry.py:255-255 |
+- The current module exposes the module-level vocabulary at this ownership boundary. [12]
 
 ## 260821-CLIVE Strict Door Response
 
@@ -206,97 +192,3 @@ handler cannot translate a refusal into an empty result or a default. `knowledge
 that re-rendered a view in its own format would create a second renderer and therefore a second place
 for that rule to be violated. `KnowledgeIntegrityCheckResponse` carries `compatible: null` beside an
 explicit `unresolved` list rather than manufacturing a verdict from a passing test.
-
-## Update History
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. `KnowledgeReadResponse` and `KnowledgeProjectResponse` gained optional response fields (MIK-R23: `memoryTree`, `indexComplete`); the claim that the registry rows map to the five strict response contracts was re-read against the working tree and still holds. It is re-cited to the location it is about: the declaring module's `__all__` (`knowledge_responses.py:33-39`), which names exactly the five contracts, instead of two of the five class bodies whose ranges the 2026-09-20 mechanical projection below had placed (that committed bullet is left as written). The finding now also says the module exports exactly those five names.
-- 2026-09-20T17:23:31+00:00: Generated citation repair: `KnowledgeReadResponse`; `KnowledgeProjectResponse` repointed to mcp/src/agents_remember/models/tools/knowledge_responses.py:35-52; mcp/src/agents_remember/models/tools/knowledge_responses.py:121-133. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): registered the five response-model rows the new `knowledge` registrar needs — `knowledge_read` → `KnowledgeReadResponse`, `knowledge_change` → `KnowledgeChangeResponse`, `knowledge_diff` → `KnowledgeDiffResponse`, `knowledge_integrity_check` → `KnowledgeIntegrityCheckResponse`, `knowledge_project` → `KnowledgeProjectResponse`, imported from `models.tools.knowledge_responses` and placed at the mapping's tail (`:248-252`) to match the appended tail position of the five names in `PUBLIC_TOOLS`. Recorded that the roster rows, the registrar declaration and these registry rows all landed in one change, and that the five envelopes share one shape whose `knowledge_read` member carries the view payload itself so the classification rule keeps a single implementation. Re-derived this card's registry ranges against the current source: `INTERNAL_COMPAT_TOOL_NAMES` 126-147 → **134-155**, `TOOL_RESPONSE_MODELS` 155-238 → **163-253** and `PUBLIC_TOOL_RESPONSE_MODELS` 241-244 → **255-259**; this leaf's five additions moved them. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_checkpoint_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:205-205. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_pause` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:201-201. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:206-206. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:245-245; mcp/src/agents_remember/models/tools/tool_registry.py:246-246; mcp/src/agents_remember/models/tools/tool_registry.py:247-247. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`, base
-  `b00a4ac2`): registered the three response-model rows the new capsule-and-skill-serving registrar
-  needs — `role_capsule_compile` → `RoleCapsuleResponse`, `skill_catalog_list` →
-  `SkillCatalogListResponse`, `skill_catalog_read` → `SkillCatalogReadResponse`, imported from
-  `models.role_capsule_resources` and placed at the mapping's tail (`:236-238`) to match the appended
-  tail position of the three names in `PUBLIC_TOOLS`. Recorded that the roster rows, the registrar
-  declaration and these registry rows all landed in one change, and that the new capsule envelope
-  carries its refusal as the same envelope rather than a second model. Re-derived this card's registry
-  ranges against the current source: `INTERNAL_COMPAT_TOOL_NAMES` 120-141 → **126-147**,
-  `TOOL_RESPONSE_MODELS` 150-231 → **155-238** and `PUBLIC_TOOL_RESPONSE_MODELS` 233-237 → **241-244**;
-  the removal of the `closeout_door` row and this leaf's three additions both moved them. Verification
-  metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_checkpoint_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:191-191. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 citation review (curator-authored, not a mechanical
-  projection): re-read the two `TOOL_RESPONSE_MODELS` claims and the module-level vocabulary row against
-  the current source and re-cited them to the extents those constructs now occupy —
-  `INTERNAL_COMPAT_TOOL_NAMES` `121-148`, `TOOL_RESPONSE_MODELS` `150-231`,
-  `PUBLIC_TOOL_RESPONSE_MODELS` `233-237`. The ranges cover the constructs the claims name and the
-  wording holds unchanged. The previous ranges had arrived from generated anchor-range projections,
-  which are not evidence that a claim still holds; these are curator-confirmed.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: registered `worktree_pause` →
-  `WorktreePauseResponse` between the sync and closeout-preview rows, recorded the by-name registry
-  lookup as the reason the row is mandatory, and re-derived this card's reference ranges
-  (`TOOL_RESPONSE_MODELS` 150-231, `PUBLIC_TOOL_RESPONSE_MODELS` 233-237, checkpoint row 190,
-  record-landing row 191). Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-12T20:53:11+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:22-24. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: registered
-  `worktree_checkpoint_landing` → `WorktreeCheckpointLandingResponse` between the integrate and
-  record-landing rows, recorded the by-name registry lookup as the reason the row is mandatory, and
-  re-derived this card's reference ranges. Verification metadata remains closeout-owned; no
-  acceptance claim.
-- 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: registered
-  `worktree_record_landing` → `WorktreeRecordLandingResponse` immediately after `worktree_integrate`,
-  recorded the by-name registry lookup as the reason an advertised-but-unregistered tool cannot
-  answer, and added its reference row. Verification metadata remains closeout-owned; no acceptance
-  claim.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`, `TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:118-139, mcp/src/agents_remember/models/tools/tool_registry.py:147-225, mcp/src/agents_remember/models/tools/tool_registry.py:227-231. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `INTERNAL_COMPAT_TOOL_NAMES` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:118-139. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:147-225. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:227-231. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:75-77. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `PUBLIC_TOOL_RESPONSE_MODELS` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:235-239. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:79-81. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait` response-model registry row.
-- 2026-08-29T08:52+02:00 — Registered strict response conformance for the one curator-coherence
-  tool. Verification remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: registered the strict closeout-door response model. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/models/tools/tool_registry.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: registers `direct_landing` → `DirectLandingResponse` in
-  `TOOL_RESPONSE_MODELS`. Verified at code commit a9d50e08.
-
-
-- 2026-08-15T09:10+02:00 — L3 content update: registered the strict closeout-queue response model;
-  verification remains closeout-owned.
-
-- 2026-08-13T09:05+02:00 — L23 curator: reviewed the split lifecycle response/finalize imports and
-  confirmed registry membership is unchanged; final provenance remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-11T12:15+02:00 — Reconciled the registry card with structural public responses and the
-  expanded exact-id internal exclusion set. Verification remains pinned pending governed closeout.
-- 2026-08-01T09:12+02:00 — The registry value type became `ResponseEnvelope`, making shared envelope
-  fields reachable before serialization and documenting field/value strictness as separate axes.
-- 2026-06-13T16:41+02:00 — Through 2026-08-08, response coverage grew across lifecycle, task, gate, inbox,
-  orchestration, terminal, and worktree operations while public coverage remained derived.

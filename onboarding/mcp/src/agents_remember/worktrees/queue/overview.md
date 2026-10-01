@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/queue` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -50,9 +44,24 @@ only deterministic readiness and order.
   master's state is never this contract's reason to wait, and the queue cannot select, release, or
   repair that authority.
 
-## Closeout Recovery Uses Git Output Evidence
+## Evidence
+
+### Closeout Recovery Uses Git Output Evidence
 
 `closeout_recovery.py` remains in this package location but owns journal recovery, not queue authority. Recovery reads exact current code/memory refs, compares them with accepted journal commits, proves substantive cleanliness and source ancestry, and reuses already-created outputs. A missing, unreadable, malformed or changed `memory.md` is irrelevant to those Git proofs. Refresh of the consumer cache is best effort after the actual output is proven.
+
+### MCAR-L02 Structured Curator Evidence
+
+The queue evidence adapter no longer parses a stable Markdown filename. It delegates curator
+evidence to the closeout integration route's sole structured currentness validator, then converts
+that exact evidence list into door/projection facts. Generated reports are evidence bytes only;
+historical files cannot compete with the stable manifest.
+
+### Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+- Recovery proves the accepted code and memory outputs without a cache lookup. [1]
 
 ## IAS Per-Contract Activation Projection
 
@@ -114,13 +123,6 @@ truth and waiting door generations. Invalidation publishes invalid-empty state, 
 fresh valid-built projection, and no queue row owns retry, claim, commit, certification, terminal,
 or compatibility evidence.
 
-## MCAR-L02 Structured Curator Evidence
-
-The queue evidence adapter no longer parses a stable Markdown filename. It delegates curator
-evidence to the closeout integration route's sole structured currentness validator, then converts
-that exact evidence list into door/projection facts. Generated reports are evidence bytes only;
-historical files cannot compete with the stable manifest.
-
 ## 260831-CCR-L01 Semantic Source Planes
 
 Member readiness now receives one already-computed task-domain topology fingerprint. Queue adapters
@@ -153,56 +155,3 @@ and is a scheduling invariant, not a courtesy: an abandoned master is never goin
 its dependents wait on, so leaving them blocked forever would make abandonment worse than doing
 nothing. `closeout_projection.py::capture_projection_source` uses the same judgement to classify a
 sprint source as `terminal`. Master-granular resolution is unchanged; only the terminal set widened.
-
-## Repo-Internal References
-
-The following current source owns the changed behavior; no external domain source is configured for this slice.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Recovery proves the accepted code and memory outputs without a cache lookup. | `resume_external_commits`; `_prove_memory_output` | mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:144-160; mcp/src/agents_remember/worktrees/queue/closeout_recovery.py:58-81 |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected preview and recovery authority; cache failures no longer refuse transactions. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-14T14:20+02:00 — 260913-LCA-L7 (uncommitted change set on `ar/260913-lca-l7`): the route's conventions now state that a capacity refusal is an `invalid` source rather than an unreadable one, and that the refusal codes and that classification are one declaration in `closeout_queue_errors.py`. `closeout_queue_graph.py` raises its master- and edge-capacity refusals through those constants and `closeout_projection._problem` classifies by membership of `CAPACITY_REFUSAL_CODES`, so a sprint past its graph bound is no longer reported as a source that could not be read; no refusal code was renamed and the other classifiers are unchanged. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T14:19+02:00 — Per-contract activation curation on this route: the queue now reads each live series' own contract-keyed activation record, so the invariant, hot-path and projection sections state that `atomic-series-reconciling` is the only waiting reason, vacant/active are never waits, a foreign master is never this contract's blocker, and the closeout projection remains a read-only observer that owns no transition. Retitled the section from source-pair to per-contract activation. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-11T23:05:00+00:00: Master abandonment curation: recorded that queue graph resolution and projection classification consume `master_is_terminal`, so an abandoned predecessor stops blocking its successors and a sprint with an abandoned master classifies as terminal. Content change, not a range repoint.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/queue`, so no route/member/prose/invariant change is required. route-member-count=14; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
-
-- 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added canonical task intent as a source-currentness input and qualified classified task invalidation. Verification records current source claims, not execution or acceptance.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: separated completion-readiness and
-  `semantic-topology/v2` source planes, added immutable source snapshots, and bound all graph-backed
-  member reads to one task-domain index. Verification remains closeout-owned.
-
-- 2026-08-29T08:52+02:00 — Replaced curator Markdown parsing with the shared structured authority
-  validator. Verification remains closeout-owned.
-
-- 2026-08-26T14:32+02:00 — Documented the closeout-recovery ledger distinction without expanding
-  queue authority: exact current reuse is idempotent and later same-code memory state appends
-  history.
-
-- 2026-08-26T02:55+02:00 — Direct IAS architecture refresh: linked the new worktrees parent
-  overview and recorded activation as read-only scheduling input. Multiple live series are normal;
-  task authoring stays upstream, and the queue gains no selection or lifecycle authority.
-
-- 2026-08-25T17:21+02:00 — Reconciled queue parsing and publication with disposable projection
-  ownership. Verification remains closeout-owned.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the transitional mutable queue route with invalidation/rebuild-only disposable projection ownership and removed obsolete queue cards. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: documented `closeout_queue_state.py` while preserving the explicit current-L2 versus waiting-only-L3 boundary, and verified the governed route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: created the `worktrees/queue` route —
-  ten modules moved from `worktrees/` (flat) and `worktrees/modules/`. Verified at code commit
-  e5cb139f.

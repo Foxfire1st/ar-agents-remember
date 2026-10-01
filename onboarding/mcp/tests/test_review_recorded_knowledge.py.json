@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_recorded_knowledge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`test_closed_code_only_leaf_reads_recorded_knowledge_and_continues_family` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bdee6f218ed7a589e297c1dd0691ed93e22524a",
+            "content": "sha256:e8ef4f7bbea5b0eb494c254667c6dc5f5a53530738234c4cbb66400cada41428",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closed_code_only_leaf_reads_recorded_knowledge_and_continues_family"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/PtySurface.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/PtySurface.test.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-04T00:41+02:00 |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -47,24 +37,29 @@ terminal behavior stays Terminal.tsx's own suite).
 Fixtures are the shared `L6_CONTROLLED_WORKING`/`L6_LEGACY_RAW` rows; stores + localStorage reset
 between cases. Test-only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component under test. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
-| The L6 archetype fixtures every case hydrates. | `L6_CONTROLLED_WORKING`; `L6_LEGACY_RAW` | dashboard/src/test/fixtures/catalogRows.ts:245-257; dashboard/src/test/fixtures/catalogRows.ts:261-268 |
-| The harvest store the bell case drives. | `ptyHarvestStore` | dashboard/src/data/ptyHarvest.ts:51-73 |
-| The mocked-away real terminal (its own suite covers xterm wiring). | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
+- The component under test. [1]
+- The L6 archetype fixtures every case hydrates. [2]
+- The harvest store the bell case drives. [3]
+- The mocked-away real terminal (its own suite covers xterm wiring). [4]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -73,40 +68,7 @@ Pins exact terminal-node/scrollback continuity across the transient removed-focu
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
 
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
 ## Current L5I Maintenance
 
 The PTY surface tests now cover the removed chrome, floating accessibility control, and visibility
 boundary that prevents hidden panes or ended states from participating in stage focus.
-
-## Update History
-
-- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
-
-- 2026-08-04T00:41:58+02:00 — 260731-EFA-L6 S18-SR1 worker: removed the B06 semantic-residual
-  scaffold for the retired scrollback badge slot. Live prose now follows the focused absence
-  assertion: pane chrome and `pty-scrollback-badge-slot` are gone, so the test promises no
-  reserved slot. Preserved the existing generated citation ranges and the prior curator entry; did not
-  run citation mechanics. Verification metadata remains pinned until closeout stamps the L6 code
-  commit.
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the focused PTY citations and marked the obsolete badge-slot statement as a semantic residual; final exact frozen-snapshot check is clean.
-- 2026-07-24T13:17:17Z — Curator: recorded PTY declutter and hidden-focus regression coverage;
-  verification fields remain pre-commit.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R1/R2/R3/R7/R9: the mocked-Terminal
-  surface suite — archetype labeling + hooks presence per archetype, renderer pass-through,
-  keep-alive hidden layers, read-only landed panes, accessible pane names, the persisted live
-  screen-reader toggle, the empty reserved badge slot, the chord filter, and
-  bell-acknowledge-on-focus. Verification metadata pinned to the leaf base until closeout stamps
-  the L6 code commit.

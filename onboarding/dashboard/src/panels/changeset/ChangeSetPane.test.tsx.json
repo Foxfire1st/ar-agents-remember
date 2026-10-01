@@ -1,0 +1,108 @@
+{
+  "path": "dashboard/src/panels/changeset/ChangeSetPane.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Mocks the CodeMirror panes so jsdom renders the markdown path only.\n\nAnchor: \"ChangeSetPane markdown rendered view\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9d97d518949ca0162d838aafe7ede631eee9b9",
+            "content": "sha256:b52ae1ea2223a1e15dc8d77a67c15c4eeab27b4bd2c1503fd8df6bc9e3687552",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Markdown diff fixture + per-case localStorage reset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9d97d518949ca0162d838aafe7ede631eee9b9",
+            "content": "sha256:bc5de365311f50072ad0bf008270975516993e7257f4b810abd7df9f22e06d30",
+            "locator": {
+              "kind": "symbol",
+              "name": "mdDiff"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rendered toggle swaps the diff for the `<Markdown>` prose view.\n\nAnchor: \"offers a 'rendered' toggle for markdown that draws the after-content as prose\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9d97d518949ca0162d838aafe7ede631eee9b9",
+            "content": "sha256:6f69531de6df536e1c205c104b86dd3ac489a48460491a6d7a8c6ce7bc1b2651",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Non-markdown files do not offer the rendered toggle.\n\nAnchor: \"does not offer the rendered toggle for non-markdown files\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9d97d518949ca0162d838aafe7ede631eee9b9",
+            "content": "sha256:b526e37c259bb99e5ae11beaacbb7386e4c557d5a2c3e7f93dbaf51cc9b7f9b1",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Subject under test: the diff column + its rendered-markdown toggle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
+            "content": "sha256:e5714cd8acc86de919bd14fa0b6a98406e1bfe7bb28c3c1925a88e7897ea6ab4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetPane"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The markdown renderer the rendered view mounts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eca2dd9be19afabd89fc0f1946d9d5f3bdcf41c",
+            "content": "sha256:073bc6db74059e4fc0b2f55f44b3351d596649087b6d94924759282acbccd7d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "Markdown"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

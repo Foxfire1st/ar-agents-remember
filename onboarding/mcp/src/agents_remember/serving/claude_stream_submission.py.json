@@ -1,0 +1,37 @@
+{
+  "path": "mcp/src/agents_remember/serving/claude_stream_submission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "State creates these records, correlates exact replays, and completes the terminal future in ordered result handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94bf5a628d99c3605a8e516c66b273ad545d3f97",
+            "content": "sha256:08a23b5e2040c8a2bd3a81b5af6d5baa678041dd7661915c33b70d65345d1fa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaudeStreamState"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94bf5a628d99c3605a8e516c66b273ad545d3f97",
+            "content": "sha256:5beab381cafe692fc7d1f55e8676c5f49b84acb0759078026c15499b2b810e2b",
+            "locator": {
+              "end": 1030,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

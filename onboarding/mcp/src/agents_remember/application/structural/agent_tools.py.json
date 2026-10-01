@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/application/structural/agent_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Dispatch performs contained-seat authorization and exact initial brief handling, now by caller kind (plane vs ambient).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db22bd82a92f3e503a3f4f116f714f94c9871a48",
+            "content": "sha256:1980815bfa2b3a601e17cc008e71e0c7b9ddd9adea82d8dc3942baad29d6d09f",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_agent_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db22bd82a92f3e503a3f4f116f714f94c9871a48",
+            "content": "sha256:008f44c65414e7f4aae38d408695a61bcad2d0d82d8de6dfa574bd6f1d54867d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_dispatch_caller"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Manager and worker dispatch resolve the canonical master and surface activation/sync refusal before spawn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db22bd82a92f3e503a3f4f116f714f94c9871a48",
+            "content": "sha256:9ad5c052fb123dfe4b72f9762ce96d95e8c1e4986ebf8c1859c2df69bb081fe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_implementation_series_admission_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db22bd82a92f3e503a3f4f116f714f94c9871a48",
+            "content": "sha256:6ba46baa4da3aac2325fb3562008300928227df58f59913285fd7027fa7e01f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dispatch_owning_master"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared series bootstrap owner binds durable contract identity to that contract's own activation: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and returns implementation authority only once it is active.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab4d6805b844ea164611828f557bda5397f45da2",
+            "content": "sha256:9c97819abee481de59d2b4614d56f0314b7ce7fb36fefa67e8efacae9e436995",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_master_series_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Relationship messaging and lifecycle operations expose structural intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db22bd82a92f3e503a3f4f116f714f94c9871a48",
+            "content": "sha256:0dc6591473468d9218f555ca75b3c91e73838120786c4186ecd776d338200521",
+            "locator": {
+              "kind": "symbol",
+              "name": "message_parent_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Dispatch caller resolution belongs to this current application entry point; removed fixtures do not establish live routing coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db22bd82a92f3e503a3f4f116f714f94c9871a48",
+            "content": "sha256:008f44c65414e7f4aae38d408695a61bcad2d0d82d8de6dfa574bd6f1d54867d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_dispatch_caller"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Rollback retires an unbriefed child as the authority-gated actor (plane) or a system closure (ambient).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db22bd82a92f3e503a3f4f116f714f94c9871a48",
+            "content": "sha256:b200c3c0954052538cdd73b4e550ac8e7189903524fea62ef057cb1ac783eb12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_unbriefed_child"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

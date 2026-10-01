@@ -1,0 +1,159 @@
+{
+  "path": "dashboard/src/data/taskHierarchy.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Tests define normalization, precedence, and identity-cache expectations.\n\nAnchor: \"normalizes ..-relative ref files across folders\"; \"prefers the first series in list order when two series name the same doc\"; \"prefers the earliest ref by creation order within a series\"; \"caches per seriesList identity: a fresh array observes new refs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72561e14493bc57268145e1ebca7a3d5aca0948a",
+            "content": "sha256:1f153120f0f1182816ea6223d7c54081ce064c4fc8c71bd7a06250a4afe305a1",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "72561e14493bc57268145e1ebca7a3d5aca0948a",
+            "content": "sha256:05256518fa6fe9bad3d7494168dd28b97f4a0388f4c6546d38d73a845b5891eb",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "72561e14493bc57268145e1ebca7a3d5aca0948a",
+            "content": "sha256:12333895b5c40e9af05871c0c0bbbf4f96ae0664f9f74a3c221c6a3153c29141",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "72561e14493bc57268145e1ebca7a3d5aca0948a",
+            "content": "sha256:6fb364d65ccc3cb0b6d812e22308a5691bd889dbc746805e141d36d66f63bc63",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `ref` / `series` factories, typed against the mirror rather than asserted past it.\n\nAnchor: \"function ref(\"; \"function series(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72561e14493bc57268145e1ebca7a3d5aca0948a",
+            "content": "sha256:1beb3d818fa6b16d19af79fcad71f7977019d60dae7af9af7a4e91af06d0d434",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "72561e14493bc57268145e1ebca7a3d5aca0948a",
+            "content": "sha256:03c77fd7b6041a03d21f1651941d289d3cce581593f66bdaa69f56f7d9039579",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The production lookup owns the WeakMap index and calls `orderedByCreation` over `series.subTasks`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:f86d2d2b3b470b09bca48768dc634712d657abcb4d6b1b22df566e48f5a4ef61",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderedByCreation"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The master task reference declares linkedLifecycleId and masterRef, with no createdAt field.\n\nAnchor: \"export interface TaskSubTaskRefNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:3fab73214ca880cb59c0e002ac1a72ef5e70806ba155c90548949c959093bc4e",
+            "locator": {
+              "end": 792,
+              "kind": "line_range",
+              "start": 792
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The series row declares optional createdAt and no linkedLifecycleId.\n\nAnchor: \"export interface SeriesSubTaskNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:4c1f95f4e1d533a9a7ccc9f28e2052505f66ca1be4ef5438235f23fcf3b66eae",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 560
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The hierarchy helper is repository-local projection logic.\n\nAnchor: \"describe(\\\"findParentTaskMatch\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72561e14493bc57268145e1ebca7a3d5aca0948a",
+            "content": "sha256:80fa6703b6812a1567d352e316f9b08928c63acf2f7ba1595b246ae58af37f39",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

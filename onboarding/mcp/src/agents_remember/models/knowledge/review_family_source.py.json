@@ -1,0 +1,273 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_family_source.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+        "content": "sha256:ff0dd523eefc2edc0438cc85e87c4a442204a47fedc4f3d71d168d95af8433cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "source_locator_state"
+        }
+      },
+      "id": "RLZ-KJ32C9NF",
+      "invariant": "INV-716Q6QMV",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "member_source (application/review_family_sources.py) projects each realization claim per side with its recorded locator, the side's resolved ranges and its locator state, carrying stored role and rationale; ReviewFamilyMemberSource (models/knowledge/review_family_source.py) is the value that carries and validates those fields; source_locator_state is the one rule the projection states and the validator checks.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+        "content": "sha256:3f2aadd8daa716c3904a6a1c34b1ad619bfcdf4807078f6e09f95e37d3bcd8cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewFamilyMemberSource"
+        }
+      },
+      "id": "RLZ-Q7KFEGCZ",
+      "invariant": "INV-716Q6QMV",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "member_source (application/review_family_sources.py) projects each realization claim per side with its recorded locator, the side's resolved ranges and its locator state, carrying stored role and rationale; ReviewFamilyMemberSource (models/knowledge/review_family_source.py) is the value that carries and validates those fields; source_locator_state is the one rule the projection states and the validator checks.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+        "content": "sha256:3f2aadd8daa716c3904a6a1c34b1ad619bfcdf4807078f6e09f95e37d3bcd8cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewFamilyMemberSource"
+        }
+      },
+      "id": "RLZ-X87NXRE1",
+      "invariant": "INV-NRSN2ABQ",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "AnchorResolution is declared in models/knowledge/read_anchor.py and ReviewFamilyMemberSource in models/knowledge/review_family_source.py; read.py and review_family_context.py import and re-export them so existing imports keep resolving.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+        "content": "sha256:3f2aadd8daa716c3904a6a1c34b1ad619bfcdf4807078f6e09f95e37d3bcd8cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewFamilyMemberSource"
+        }
+      },
+      "id": "RLZ-YAFXZC73",
+      "invariant": "INV-6W74GGC8",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "ReviewFamilyMemberSource in models/knowledge/review_family_source.py declares role and rationale as required non-empty strings; the same type in dashboard/src/data/reviewFamily.ts declares both as required.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The published surface of the member-source reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:c95c3410503081a5df2499d51036dcbdb50e4a0dc6260fa81906a21bf2feeb06",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The production-path cases for `resolved`, `whole_file` and `unresolved` on two real sides.**\n\nAnchor: \"test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale\"; \"test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:db5a418a3c076a03ca27d659eb8334041f770e840d3eb18561cbd12125f8bfe4",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/tests/test_review_family_member_sources.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:b5c7289a9caaaff031a075dd6d77b6da46f251968d0c55544d3aeaf764754423",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 314
+            },
+            "path": "mcp/tests/test_review_family_member_sources.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The dashboard's mirror of this reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:368a9962fc941889a9a3e78455d523832b0fbf9b232784a19b76d2a7bf6fa703",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyMemberSource"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The four locator states and what each one carries.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:7811b78b240d261d3ab8fdedb431c6782312c781700a8d64ed73ec0cb5dcc2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLocatorState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**One recorded realization claim as a side-bound source reference, with required role and rationale and the structured locator, ranges and state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:3f2aadd8daa716c3904a6a1c34b1ad619bfcdf4807078f6e09f95e37d3bcd8cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyMemberSource"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The validator keeping the address, its observation and its locator together.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:f92f4fa9fa720c0525b35c50d20f6fb401288f2afe8ceaa0b2ec0e2d0bfe1f1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_an_address_to_travel_with_its_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The validator refusing ranges off the exact blob and any state the carried facts do not support.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:95c92071f269bb1ac75085595f3ad266a09445d9eb8b47b15b1504859b90ddf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_locator_state_to_match_what_it_carries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The one locator-state rule shared by the projection and the validator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:ff0dd523eefc2edc0438cc85e87c4a442204a47fedc4f3d71d168d95af8433cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_locator_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The re-export that keeps every existing import from the family-context module working.\n\nAnchor: `ReviewFamilyMemberSource`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:0a1ff1877407e73880c8a23441accc8937e77690e2f26cf7d9c72ff03c2b83df",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The projection that fills a reference from one claim and its side's anchor observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "079f2f248bff7cf7848d07a91542fb136f2a1e69",
+            "content": "sha256:5aef1ee14d041c35b1cc2167cd3d9c4e743b2b412fc584bb0b0f85ac80a558cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "member_source"
+            },
+            "path": "mcp/src/agents_remember/application/review_family_sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The value case refusing a reference whose state, ranges or locator disagree, or that lacks role or rationale.**\n\nAnchor: \"test_a_member_source_may_not_state_a_region_its_observation_does_not_support\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:ce73af9573286bfca1b6a93eff832e53b34cd5855a52d85802a78d3cd5a60f2e",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "mcp/tests/test_review_family_context_values.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

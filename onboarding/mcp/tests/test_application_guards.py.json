@@ -1,0 +1,178 @@
+{
+  "path": "mcp/tests/test_application_guards.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two guards under test live in the application layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:cae5d208c1d8ec05196503e1db089c686c65b9c7216370666479dc5709c237b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_repo"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b796960fc74a9b30db4aa3ef0b9739906ba9205382c96e9b73141c8260ddeeb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_within_coordination"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:779d115e4f600250810d56478a00d8b217e5c480fa0660dc331fba97d87be490",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b977602b87edfa146bea5330d4c8a95b1b688fe8cbbe5cc367d2d2b844901c9e",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "AuthorityError is the typed repository/path refusal used by application guards.\n\nAnchor: \"class AuthorityError(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d584d2d788a3149eb72bbf9420b29b9a028e11f5",
+            "content": "sha256:22a5bfd02ad906e768ce552a2c7ba811dd149e56d73de2f5588ab3cc54cbae5f",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "All such domain errors inherit ValueError through AgentsRememberError.\n\nAnchor: \"class AgentsRememberError(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d584d2d788a3149eb72bbf9420b29b9a028e11f5",
+            "content": "sha256:20c20f4fc731011816f8a9403d598d5363e401ba2e3601ef7639543dfe232398",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:0d3b1a86df3de4b2b7f81828fd3dc25bd588d932ed545f8863363d4d68b777e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:c5738ba3812c2824dc7dd385bd062f74ab6d608d21aed6d5e8909de37f938cca",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryScope"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:034c7e359c605efda03d85d4b7bd1aded24ca7f3d65e4e37234ebb131288dffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "path_is_relative_to"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:cecffa79700d0ae2448bb1adf1f2d1ae1548ab555039ffdaa2b845ddc05f8510",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:0bec4fffe9579bc1784fbfa72119dd5a2b8debd760b6752a985c7700e0a98608",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:7f40e2cf01fda9c57fbc6130e19151703cd18e0db46fe045118851986083ab9b",
+            "locator": {
+              "end": 743,
+              "kind": "line_range",
+              "start": 738
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

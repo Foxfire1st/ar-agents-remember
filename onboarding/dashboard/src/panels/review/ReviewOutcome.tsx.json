@@ -1,0 +1,433 @@
+{
+  "path": "dashboard/src/panels/review/ReviewOutcome.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+        "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewOutcomeRegion"
+        }
+      },
+      "id": "RLZ-1V1G6WZE",
+      "invariant": "INV-WQZ2WFCN",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Suppresses the surface-level loading line and problem block when the workspace states them for the requested subject, so the problem is stated once.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The header's own vocabulary of the states a reader is owed distinctly, and its statement that nothing here invents a recovery route or renders an absent answer as an empty review.**\n\nAnchor: `known-empty`; `not-initialized`; `unavailable-history`; `validation`; `authority`; `domain-refused`; `network`; `unreadable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:7155db244c21ab9800da5f84ced9aad6d9b652ed3fc420405ab0b0fd8cb93cfc",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The note that keeps a refusal visible beside the inventory the reader asked for instead.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:7d06caead19f67b4c5d600047cc2acd8eab4cb8b70f7061210de4c965e4a84a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskContextInsteadNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The retained-generation label whose closing sentence is chosen by what the retained payload actually is.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:916fd039f071b6feee0dbdcb157074632aba2d86a1da3e1d2713543395c25e48",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedGenerationNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The one place the notes are decided, where the known-empty statement and the retained-generation label are mutually exclusive.**\n\nAnchor: `measuredNothing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutcomeRegion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:8c4cd3bd84a19b262ea80904818e9a6f09de3964a24230fd718b107cf8a7bb02",
+            "locator": {
+              "kind": "symbol",
+              "name": "retainedIsReal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:5d1afc8c355f4517c846f25e767ae60273ba11f52e2f6e43cdd1406b2c64e9cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "readingInWorkspace"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:26df749ad58f08cbb5c800532eb169e97483a5459ff07bdc842cf864f7245c1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "loadingLine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:1c66d2017a5e0e3c9b491d2f013662909886cc49ec9e9fe4e642b1b4f129fdce",
+            "locator": {
+              "kind": "symbol",
+              "name": "problemLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The surface wires the outcome region to the target-bound read and appropriate retry/source actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:a3b0ce3c907a1810a578b36a713cc9a3dde87c5d9ee8f7d2ee95634a1716ab39",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "readingStatusOf"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "SourceContent consumes the shared problem renderer for transported failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceContent"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The mounted cases that pin each state and the retained-generation rules, including the F3 region cases.**\n\nAnchor: \"shows a never-initialized refusal with its reason, offending input and next action\"; \"keeps source inspection reachable when only intent is unavailable, on request\"; \"says known empty for a measured empty answer and never for a failure\"; \"offers an explicit retry for a network failure, and the retry renders the answer\"; \"never renders a previous target's comparison under a new target's header\"; \"states a retained known-empty once, as the measured result it is, and never denies it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:1ef729ae671eee804c3eef29e61851c2605c891b1316998da1c87d877e16bdd6",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:c770bf32661f8b9815b952d6041ee038a61cffbb8bb301814491232d966f2c2e",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:80e5bcb614e0dbd294e9d4b4171557f5b99c268308aa1f910a069bf5c7ad4798",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 322
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:9b5fa09f08360e8f7fb1afc5e9ac6f4e39c7f2f3a39a7ecd05a52e9d706ff2f6",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 365
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:6572b8d561a4a4f3603becaec6515314b91b0af5fa491028d5f9bec6b11414db",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 424
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:dce4d2c191c71c2c1d9916d19c67c39ff94582ec3982f91f00f086a5a198c7ea",
+            "locator": {
+              "end": 505,
+              "kind": "line_range",
+              "start": 496
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The expansion pane's transport-level cases, which render through this module's one block.\n\nAnchor: \"carries the code, reason, offending input and next action of an unwired adapter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:d742b3775e4fca8a02d91b5f5e53d9f5e1b488b104a74c5b24204d7c25874ade",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/panels/review/SourceContentRefusal.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one projection and the one accessor this module imports, from the review client's public entry.\n\nAnchor: `intentOnlyRefusal`; `reviewProblemFromRefusal`; `unreadableAnswer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:d4852b00f6a8148274f1b04ddef915f69c64b63052f7dbc5799bacc3a38a438f",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The read's four phases as one value, so a refusal and a payload can never both be the read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:e39082ca176553e73744f3790cc07267e555fa0c9c8f780a9881093040e382bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The one place a typed result becomes a phase: an unadmitted or payload-less answer is a failure, never an empty review.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:dfea31cf2ab6562f7f4e605cd7421dfd6caa2bf26a36bbf29e3cda0a2d1d5eae",
+            "locator": {
+              "kind": "symbol",
+              "name": "readFrom"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**What the panes render: the answer, or — for a read that never answered — the last comparison the surface really read, while a typed refusal replaces the panes rather than sitting beside a comparison the server declined to stand behind.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:ab37f08206cb5ee172bbb0ed87c04ec48903c65f201e826908524033e1c24d23",
+            "locator": {
+              "kind": "symbol",
+              "name": "shownPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one accessor for the failure a phase carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:7388c3ffb5a1e41b07499dce95e997090a81f23ba50ee78befea4ed307da7b44",
+            "locator": {
+              "kind": "symbol",
+              "name": "problemOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The in-flight state as its own rendering, so \"nothing has answered yet\" is distinguishable from \"the answer was empty\" and from every refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:4089237ff12a58409bd160158813b5f10902250c0af4ef4acff03b5aab63884c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewLoading"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**Known-empty as a measurement of four facts, never a mood.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:6014a0b080dc2952cde2d5e3999084456efd418c2b8d1aa07a8f50344ec97695",
+            "locator": {
+              "kind": "symbol",
+              "name": "knownEmpty"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:fd917e550c3a63fb441b6b324aae90b280e1de2a3955e0e862280ecc42291181",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnownEmptyNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The one renderer for a `ReviewFailure`: every published field printed, an explicit sentence where the server published none, two test ids for the two refusal shapes, and the two conditional controls.**\n\nAnchor: `review-offending-input`; `review-next-action`; `review-retry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:6b9166d8315b9240e5c6e3daa4d1335413bf9f4ac740c62439f47fa3c1ee6e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

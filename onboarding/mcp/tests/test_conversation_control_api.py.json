@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_conversation_control_api.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Interrupt ack settle replay and single write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c983ffdcf29f302075a18214d89c0265249eddb",
+            "content": "sha256:184606039bc3a88f610bc5259189cf60af3e9b59c4bc80c15b9cbee596a93a9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupt_ack_settle_replay_and_single_write"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Remote peer fails closed typed 403.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c983ffdcf29f302075a18214d89c0265249eddb",
+            "content": "sha256:a1d14724cc58403676358adb92dbeb65a3112e5b720c00ffa0cca2b291b0db26",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remote_peer_fails_closed_typed_403"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Attachment stage submit status reconcile.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c983ffdcf29f302075a18214d89c0265249eddb",
+            "content": "sha256:6953efd5aa237d6e09e148470087f272fa412c41dc0a6800080c90c2070876b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attachment_stage_submit_status_reconcile"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_change_kinds.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_change_kinds.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:21:58+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -118,40 +108,31 @@ comparison (inert until MIK-R37). The browser orders, counts and traverses by th
 - Review R3-2 (accepted): when the whole comparison or an invariant identity cannot be read, `unknown_reasons` and
   `membership_reasons` carry the same detail, which the tree draws as two lines for two unknown facts.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R33@v1` (adopting `ICR-R32@v1`) and the architect's rulings in `33_review-triage-order-and-change-kind-badges.json` live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's statement: facts computed here, for returned members only, each read from the comparison itself. | "The facts are computed here, on"; "Nothing is inferred: a side that cannot be read makes the facts it would decide" | mcp/src/agents_remember/application/review_change_kinds.py:1-33 |
-| The entry point: one lane per read, a dataset review's context unchanged, unreadable trees make every fact unknown. | `with_change_kinds`; `_unread` | mcp/src/agents_remember/application/review_change_kinds.py:104-121; mcp/src/agents_remember/application/review_change_kinds.py:138-152 |
-| A fact's three states, and its reasons with the entries that established nothing first (review R2-3). | `_Fact` | mcp/src/agents_remember/application/review_change_kinds.py:164-206 |
-| The family's own row and its total over the family's own records (review R1 note). | `_guarantee`; `_members_total`; `_own_problem` | mcp/src/agents_remember/application/review_change_kinds.py:240-273; mcp/src/agents_remember/application/review_change_kinds.py:641-647 |
-| One member occurrence: three facts, bounded evidence, and the change kind's reasons apart from the membership's. | `_member`; `_position` | mcp/src/agents_remember/application/review_change_kinds.py:277-325 |
-| Intent: the revision, presence (retired counts as removed) and a same revision whose text differs. | `_intent`; `_presence`; `_WORDING` | mcp/src/agents_remember/application/review_change_kinds.py:335-353; mcp/src/agents_remember/application/review_change_kinds.py:534-546; mcp/src/agents_remember/application/review_change_kinds.py:94-94 |
-| Membership on each side of this family's record. | `_membership` | mcp/src/agents_remember/application/review_change_kinds.py:355-368 |
-| Implementation (a): added, retired or re-anchored; only the mechanical carry is exempt (review R1 F1); stale-at-base repairs worded apart. | `_entry_changes`; "carried_mechanically(old, new, entry_class)"; "(stale at base)" | mcp/src/agents_remember/application/review_change_kinds.py:385-416 |
-| Implementation (b) through the lane's links only, and definition 8 on a changed non-text file. | `_hunks`; `_hunk_linked`; `_file_covered` | mcp/src/agents_remember/application/review_change_kinds.py:418-437; mcp/src/agents_remember/application/review_change_kinds.py:554-585 |
-| The unconditional unknown for an unresolved range, the lane's reason in a reviewer's words, and a non-file entry at a non-text change. | `_withheld`; `_unresolved`; `_unintersectable` | mcp/src/agents_remember/application/review_change_kinds.py:588-638 |
-| The worklist classifier's class of one base entry, for definition 7. | `_base_class` | mcp/src/agents_remember/application/review_change_kinds.py:506-531 |
-| Records and entries read through each side's index; an unparsed record or sidecar answers why instead. | `_record`; `_entries` | mcp/src/agents_remember/application/review_change_kinds.py:449-480 |
-| The change inventory read once, and each changed path classified once by the lane. | `_change`; `_file` | mcp/src/agents_remember/application/review_change_kinds.py:482-504 |
-| Its one caller: the composed review's family context. | "family_context=with_change_kinds(family.context, resolved.trees)," | mcp/src/agents_remember/application/knowledge_review.py:555-555 |
+- The module's statement: facts computed here, for returned members only, each read from the comparison itself. [1]
+- The entry point: one lane per read, a dataset review's context unchanged, unreadable trees make every fact unknown. [2]
+- A fact's three states, and its reasons with the entries that established nothing first (review R2-3). [3]
+- The family's own row and its total over the family's own records (review R1 note). [4]
+- One member occurrence: three facts, bounded evidence, and the change kind's reasons apart from the membership's. [5]
+- Intent: the revision, presence (retired counts as removed) and a same revision whose text differs. [6]
+- Membership on each side of this family's record. [7]
+- Implementation (a): added, retired or re-anchored; only the mechanical carry is exempt (review R1 F1); stale-at-base repairs worded apart. [8]
+- Implementation (b) through the lane's links only, and definition 8 on a changed non-text file. [9]
+- The unconditional unknown for an unresolved range, the lane's reason in a reviewer's words, and a non-file entry at a non-text change. [10]
+- The worklist classifier's class of one base entry, for definition 7. [11]
+- Records and entries read through each side's index; an unparsed record or sidecar answers why instead. [12]
+- The change inventory read once, and each changed path classified once by the lane. [13]
+- Its one caller: the composed review's family context. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T22:21:58+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): created this card for the new server module of MIK-R33, recording rulings 2026-09-30T15:11:20 (start), 16:22:22 (items 1 to 11), 17:47:43 (review R1 F1, F2, F4 and its notes), 18:57:45 (review R2) and 21:41:02 (merge round), and three candidate invariants. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

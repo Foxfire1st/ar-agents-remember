@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -63,43 +53,35 @@ None recorded.
 
 Private preparation is selected after generation creation, never injected into a new record. Starting a private command requires the same fully identified active running worker, no cancellation and a validated preparation transition. A preparation update cannot simultaneously publish mutation/history/recovery tuples, consume approval, enter the irreversible boundary or finalize the contract. Retained preparation blocks retirement/supersession or terminal replacement without an explicit proved disposition; completed status requires finalization proof, and cancellation requires unchanged logical-ref evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current `_validate_private_preparation_transition` boundary implements the preparation contract above. | `_validate_private_preparation_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:384-430 |
+- The current `_validate_private_preparation_transition` boundary implements the preparation contract above. [1]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `_validate_recovery_commits_transition` prevents proven code/memory recovery commits from disappearing or changing. | `_validate_recovery_commits_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:89-102 |
-| `_validate_identity_and_evidence_transition` preserves generation identity and monotonic mutation/publication state. | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-381 |
+- `_validate_recovery_commits_transition` prevents proven code/memory recovery commits from disappearing or changing. [2]
+- `_validate_identity_and_evidence_transition` preserves generation identity and monotonic mutation/publication state. [3]
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Task intent joins the compared generation identity. (`_validate_identity_and_evidence_transition`) | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-381 |
-| Legacy missing-intent generation archive + successor write. (`_retire_missing_intent_generation`) | `_retire_missing_intent_generation` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:859-886 |
-| The write-side identity requirement for closeout/direct-landing records. (`_write`) | `_write` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:897-918 |
+- Task intent joins the compared generation identity. (`_validate_identity_and_evidence_transition`) [4]
+- Legacy missing-intent generation archive + successor write. (`_retire_missing_intent_generation`) [5]
+- The write-side identity requirement for closeout/direct-landing records. (`_write`) [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
+No additional cross-repository evidence applies.
 
 ## CCR-R02@v2 Legacy Retirement In The Store
 
@@ -124,46 +106,8 @@ revisions after validation and refuses transforms that pre-assign either. The su
 supersede writers bump `meaningfulRevision` alongside the generation/record-revision
 advance, so a successor is always visible to an old-generation waiter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Exactly-once cursor validation on the meaningful subset. (`_validate_identity_and_evidence_transition`) | `_validate_identity_and_evidence_transition` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:306-381 |
-| Both revisions assigned at the canonical writer boundary. (`_advance_record_revision`) | `_advance_record_revision` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:433-456 |
-| The canonical journal writer increments recordRevision on every write and meaningfulRevision only for meaningful state changes. (`_advance_record_revision`) | `_advance_record_revision` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:433-456 |
-| A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`) | `replace_terminal` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:741-829 |
-| The shared meaningful-change comparison. (`meaningful_state_changed`) | `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:557-563 |
-
-## Update History
-
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=0912b58b381a39097aa661c37abcd7990d53742afacda6bd40239ed18fbeaeb3. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def _validate_private_preparation_transition" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:394-394. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_retire_missing_intent_generation` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:869-896. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_advance_record_revision` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:443-466. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def _advance_record_revision" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:443-443. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def replace_terminal" repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:751-751. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `_retire_missing_intent_generation` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:873-900. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `_retire_missing_intent_generation` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:822-849. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `_advance_record_revision` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:447-470. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `meaningful_state_changed` repointed to mcp/src/agents_remember/models/lifecycles/operation.py:559-565. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
-
-
-- 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `_retire_missing_intent_generation` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:702-729. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `_write` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py:740-758. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the store's dual-revision advance rules (`recordRevision` every write, `meaningfulRevision` exactly once per meaningful state change) and the successor/supersede cursor bumps.
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the store-owned monotonic `recordRevision` advance (exactly once per accepted mutation, no-op short-circuit, revision-1 creation gate, successor +1/+2 arithmetic). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  the lifecycle operation store now includes `taskIntent` in generation identity, refuses
-  intent-less closeout/direct-landing writes, and archives + replaces legacy missing-intent
-  generations via `_retire_missing_intent_generation`. Verified at code commit
-  99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.
+- Exactly-once cursor validation on the meaningful subset. (`_validate_identity_and_evidence_transition`) [7]
+- Both revisions assigned at the canonical writer boundary. (`_advance_record_revision`) [8]
+- The canonical journal writer increments recordRevision on every write and meaningfulRevision only for meaningful state changes. (`_advance_record_revision`) [9]
+- A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`) [10]
+- The shared meaningful-change comparison. (`meaningful_state_changed`) [11]

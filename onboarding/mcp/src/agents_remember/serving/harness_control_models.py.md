@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/harness_control_models.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/harness_control_models.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -202,28 +192,26 @@ byte-identically to before.
 
 None known for the public serialization boundary.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The API consumes only the public projections, while private IPC keeps full internal serializers. The
 evidence DTOs are consumed by the bridge buffer, the three additive IPC actions, and the
 validated client reads. The plural pendings are filled by the codex adapter's
 per-thread demux and serialized end-to-end through `snapshot_json` into the control plane.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The daemon submit route selects the public raw-free receipt serializer. | `api_terminal_submit`; "public_receipt_json(" | mcp/src/agents_remember/serving/harness_control_api.py:370-403 |
-| The daemon reconcile route selects the public raw-free reconciliation serializer. | `api_terminal_reconcile`; "public_reconciliation_json(" | mcp/src/agents_remember/serving/harness_control_api.py:405-423 |
-| Private IPC still serializes full receipt evidence for exact-session peers. | `_submit` | mcp/src/agents_remember/serving/harness_control_ipc.py:229-248 |
-| Private IPC still serializes full reconciliation evidence for exact-session peers. | `_reconcile` | mcp/src/agents_remember/serving/harness_control_ipc.py:221-227 |
+- The daemon submit route selects the public raw-free receipt serializer. [1]
+- The daemon reconcile route selects the public raw-free reconciliation serializer. [2]
+- Private IPC still serializes full receipt evidence for exact-session peers. [3]
+- Private IPC still serializes full reconciliation evidence for exact-session peers. [4]
 
 | The bridge diverts `arEvidence` payloads into its bounded deque and stamps typed thread identity onto each frame. | `_divert_evidence`; `_evidence_thread_id`; `_append_evidence` | mcp/src/agents_remember/serving/harness_control_bridge.py:468-489; mcp/src/agents_remember/serving/harness_control_bridge.py:505-528; mcp/src/agents_remember/serving/harness_control_bridge.py:491-503 |
 | The three additive IPC actions serialize these evidence/provenance DTOs onto the private socket. | `_evidence`; `_evidence_native_page`; `_submission_provenance` | mcp/src/agents_remember/serving/harness_control_ipc.py:377-383; mcp/src/agents_remember/serving/harness_control_ipc.py:385-397; mcp/src/agents_remember/serving/harness_control_ipc.py:399-405 |
@@ -236,13 +224,11 @@ per-thread demux and serialized end-to-end through `snapshot_json` into the cont
 | Paging the retained ledger into `OperationTimeline` moved OUT of the authority in 260731-EFA-L6: `OperationRecord` and `SubmissionLedger` now live in their own module, and the never-bodies paging is `SubmissionLedger.operation_timeline`. | `OperationRecord`; `SubmissionLedger`; `operation_timeline` | mcp/src/agents_remember/serving/harness_submission_ledger.py:57-252; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by these local protocol models.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## Submission Authority Delta
 
@@ -282,57 +268,3 @@ The shared evidence and control-wire contracts moved to `models/conversations/ev
 status/lookup records, and their JSON projections. L11 will move the control-only set to
 `harness_control/`; no forwarding shim exists, and conversation modules import the shared names
 from `models.conversations`.
-
-## Update History
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the control-only scope after the
-  shared contracts moved to models; the L9 change section above documents the split. Verification
-  metadata pinned until closeout stamps the L9 code commit.
-- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: restored route-handler/serializer ownership, expanded the evidence-contract test matrix, split pending-interaction producers, and widened the L2E DTO/serializer coverage; the scoped fixer will generate citation ranges.
-- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: a prose line had been hard-wrapped at a ` + ` conjunction, leaving the plus at column zero where markdown reads `+ ` as a list bullet, so a wrapped sentence rendered as a spurious new list item mid-thought. The plus moved to the end of the previous line; the rendered prose is character-for-character unchanged. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: recorded that `_register_submission_routes` delegates submission writes to `_register_submission_write_routes`; the public submit and reconcile serializers and the two raw-free route tests remain the source owners.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `_TOP_LEVEL_IDENTITY_KEYS` and the `_bounded_identity_scalars` / `_nested_identity_scalars` split.
-- 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the evidence-wire demux fix —
-  `evidence_frame_json` now emits the optional `threadId` key when `EvidenceFrame.thread_id` is
-  set, so the multiplexed demux key crosses the evidence IPC wire; parent frames carry
-  no key and the pre-multiplex wire stays byte-identical. Recorded the root cause (a dashboard-side
-  projector received every frame thread-less and bound all agent content to the parent) and
-  corrected the two body statements that claimed the key was deliberately unserialized.
-  Verification metadata stays pinned — the change is uncommitted.
-- 2026-07-26T15:36+02:00 — 260718-CHATS-L7 curator: the earlier pre-fix note is historical only; at that point `evidence_frame_json` did not serialize the demux key, while the later correction and current source emit optional `threadId` when `EvidenceFrame.thread_id` is present.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the additive native-method
-  carry: reserved key `AR_EVIDENCE_METHOD_KEY` (`"arEvidenceMethod"`), the optional
-  `EvidenceFrame.native_method` field, and `evidence_frame_json`'s `nativeMethod`
-  serialization when present, with the additive/optional invariant. Verification
-  metadata stays pinned to the last committed source until closeout stamps the candidate commit.
-- 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: documented the clip-envelope terminal-identity
-  preservation — `clip_evidence_payload` now re-carries `type`/`message.stopReason`/`turn.id`/
-  `turn.status` at their original payload paths (`_preserved_evidence_identity` +
-  `_bounded_identity_scalar`, drop-whole bounded at `MAX_PRESERVED_EVIDENCE_SCALAR_CHARS = 256`) so
-  oversized-frame interrupt settlement stays honest for the unchanged L3 `_pi_stop_reason`/
-  `_codex_terminal_outcome` readers, with no content crossing the boundary and the giant-scalar
-  envelope-collapse raise (session-fatal in the bridge loop) fail-safed. Verification metadata stays
-  pinned to the last committed source until closeout stamps the candidate commit.
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive control-plane
-  family — `InterruptResult`, paged never-bodies `OperationTimeline{,Item}` with the shared
-  budget measurer, `AssetReference` (runner-local `spool_path` never serialized),
-  `WithdrawalRecovery` (key omitted on replay), the additive `PromptRequest.assets`/
-  `WithdrawalResult.recovery` optionals, the channel constants, and the typed `read_asset_bytes`
-  helper; refreshed the bridge/IPC citation ranges for the shifted sources. Verification metadata
-  stays pinned to the last committed source until closeout stamps the candidate commit.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive native evidence
-  family — the reserved `arEvidence` raw key, deque-domain `EvidenceFrame`/`EvidencePage`,
-  native-domain `NativeEvidenceFrame`/`NativeEvidencePage` with typed identity and opaque
-  continuation, `SubmissionProvenance{,Batch}`, the structural `NativePageReader` protocol, and the
-  byte-bounded clip/window helpers. Verification metadata stays pinned to the last committed source
-  until closeout stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5: added generation-bound submit records, full operation refs,
-  normalized status/withdraw DTOs, and explicit public/private serialization boundaries.
-
-- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented the explicit public receipt and
-  reconciliation serializers that preserve normalized evidence while omitting adapter-private raw.
-- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator pass: created onboarding for the normalized
-  control models, identity/correlation state, raw vendor detail, and R11 draft ownership.

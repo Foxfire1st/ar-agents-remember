@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/closed_snapshot.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/closed_snapshot.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -107,48 +97,36 @@ proof are L4's pre-existing lines and their coverage authority is L4's review �
 and proves the normalisation's effect on the published destination, and does not claim a mutation for every line
 inside the primitive.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one journal mode a published snapshot may carry, and the peer suffixes the probe and cleanup share. | `_CLOSED_JOURNAL_MODE`; `_JOURNAL_PEER_SUFFIXES` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:62-62; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:63-63 |
-| **The reusable "prove this finished file is a closed database" step both producers call — the import stages through it as well as the freeze.** | `require_closed_database` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-89 |
-| The ordered freeze procedure and its all-or-nothing refusal. | `freeze_closed_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:92-137 |
-| The pinned view, the in-view identity re-check and the through-the-engine copy. | `_copy_pinned_view`; `_run_backup`; `_pinned_read_view` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:140-153; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:156-167; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:240-249 |
-| The inherited-journal-mode problem and the fresh connection that establishes and reads back the mode. | `_normalize_stage` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:170-187 |
-| The read-only proof: no peer, closed mode, declared schema and the pinned dataset. | `_verify_closed_stage` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:190-220 |
-| The peer probe and the stage-only cleanup whose failure is suppressed. | `journal_peers`; `discard_stage`; `_discard_owned_stage` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:223-231; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:234-237; mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:269-280 |
-| The refusal for a candidate that moved between admission and acquisition. | `_stale_candidate_refusal` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:252-266 |
-| The file flush that the directory fsync in `atomic_replace` does not substitute for. | `fsync_file`; `atomic_replace` | mcp/src/agents_remember/kernel/atomic_write.py:129-140; mcp/src/agents_remember/kernel/atomic_write.py:78-92 |
-| The read-only connection and journal-mode reader the verification uses. | `open_read_only_database`; `journal_mode`; `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:52-63; mcp/src/agents_remember/memory/knowledge/connection.py:69-72; mcp/src/agents_remember/memory/knowledge/connection.py:106-122 |
-| The stage shape this procedure returns. | `PreparedKnowledgeSnapshot` | mcp/src/agents_remember/models/knowledge/snapshot.py:224-236 |
-| **The second producer this leaf added: the portable import stages its dataset and closes it through the same step.** | `_stage_imported_dataset` | mcp/src/agents_remember/memory/knowledge/export_import.py:364-405 |
-| The publication that installs a frozen stage, and the clone that reuses this same procedure. | `publish_prepared_snapshot`; `_build_cloned_candidate` | mcp/src/agents_remember/memory/knowledge/publication.py:114-170; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:246-291 |
-| The node that proves a WAL-resident batch is published whole while a main-file copy is not. | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
-| **The node this leaf owns for the closure, which measures the property on the published destination.** | "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:88-131 |
-| **The node that proves the import's stage is closed before it is published.** | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database" | mcp/tests/test_knowledge_portable_boundaries.py:662-662 |
+- The one journal mode a published snapshot may carry, and the peer suffixes the probe and cleanup share. [1]
+- **The reusable "prove this finished file is a closed database" step both producers call — the import stages through it as well as the freeze.** [2]
+- The ordered freeze procedure and its all-or-nothing refusal. [3]
+- The pinned view, the in-view identity re-check and the through-the-engine copy. [4]
+- The inherited-journal-mode problem and the fresh connection that establishes and reads back the mode. [5]
+- The read-only proof: no peer, closed mode, declared schema and the pinned dataset. [6]
+- The peer probe and the stage-only cleanup whose failure is suppressed. [7]
+- The refusal for a candidate that moved between admission and acquisition. [8]
+- The file flush that the directory fsync in `atomic_replace` does not substitute for. [9]
+- The read-only connection and journal-mode reader the verification uses. [10]
+- The stage shape this procedure returns. [11]
+- **The second producer this leaf added: the portable import stages its dataset and closes it through the same step.** [12]
+- The publication that installs a frozen stage, and the clone that reuses this same procedure. [13]
+- The node that proves a WAL-resident batch is published whole while a main-file copy is not. [14]
+- **The node this leaf owns for the closure, which measures the property on the published destination.** [15]
+- **The node that proves the import's stage is closed before it is published.** [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-18T19:52:24+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The file-flush row paired `fsync_file` with `atomic_write.py:95-105`, which is inside `atomic_replace`; `def fsync_file` now spans `129-140`, so that cell cites it. The `atomic_replace` cell at `78-92` and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database" repointed to mcp/tests/test_knowledge_portable_boundaries.py:662-662. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:39:57+00:00: Generated citation repair: "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database" repointed to mcp/tests/test_knowledge_portable_boundaries.py:618-618. No content impact: mechanical anchor-range projection bound to citation source snapshot b181d6d0b4e4cacc1833ff166c579061a1762313f644c682eec8ffc186d8d42f; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): **recorded the second producer of the closure and the one definition behind it.** The portable import stages a database and must publish it closed, so the freeze's last two steps were extracted into `require_closed_database(stage_path, expected)` — normalize on a fresh connection, then prove it by reopening read-only — and `freeze_closed_snapshot` now calls it, behaviour-preserving because the body is precisely the two calls the freeze made in the same order. The card records the extent of this leaf's claim exactly: the primitive is **called** by both producers (`export_import.py:399`, `closed_snapshot.py:123`) and its **normalisation** is what closes the file, while `_verify_closed_stage`, the peer proof and the normalisation's own re-read remain **L4's pre-existing lines** whose coverage authority is L4's review. It also records that this leaf owns a node for the closure measured on the **published destination** rather than on the private stage. Every citation range below was re-derived against the working tree, and the rows the L4 card carried that no longer held their anchors (the freeze, the peer probe, the stage cleanup, `_pinned_read_view`, `_stale_candidate_refusal`) were corrected. Verification metadata: lastUpdated advanced, commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
-- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new closed-snapshot freeze. It records the six ordered steps and why each is where it is — most importantly that a backup destination **inherits the source's journal mode**, so the closed mode has to be established and read back on a fresh connection to the finished copy, and that the file's own data is flushed because the directory fsync in the atomic replace records the new *name* and says nothing about the bytes it points at. It also records the stage-only cleanup rule (never a destination's peers) and the shared peer-suffix tuple that keeps the probe and the cleanup from diverging. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

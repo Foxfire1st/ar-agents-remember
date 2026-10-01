@@ -1,0 +1,508 @@
+{
+  "path": "mcp/tests/eve_adapter_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The seam this double implements is the production transport protocol, which is why the adapter stays under test.\n\nAnchor: `EveRuntimeProcess.send_message`; `EveRuntimeProcess.stream`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:3b88bb67a684a8f1a11560cff1cb9b0ba4432089686758fbe15040890b69487e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRuntimeTransport"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:1efc30204878897d85e06a8a6c895ca8c69e6a64a49745673fd6c937e5f114f9",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:7707a0eeaaac3856ab93f112cb9c50a3671c8a5dd8b996b095599078091b530d",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The cases that pin the two members statically and behaviourally, so a member that exists and does nothing also fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:d45e0873b38610087f0c6125ee26f97a99b93f935b789d1974b257dba35109e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRuntimeTransportFakeContractTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The named environment guard, its call sites, and the install it names. The two suites were cited as **bare paths** until this pass, so the three anchors could not resolve; they now carry the real ranges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:72b4da76b16439eb8fae8c252fb0c7834a8aab8be284e346a5b35f29c2626725",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_installed_eve_application"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:befddbd093a7fb4b8cd33a7786425cc896f47c5dd442f0ae8a7d2dc5b2bbd499",
+            "locator": {
+              "kind": "symbol",
+              "name": "_started"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:3d28fd288fca2585bf5dcde4ccfc9073a28df6e8a7a805186bc4e8767cdfc4cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_eve"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:27efe3ce7fbfb119486eea1ee4ba2bcb47354ac2daa684020f56da9ce60b5aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_frames"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:f93edbd187987213307228fcdf5c44aa18fc1344e8a6f01134a5a0b9dcd51811",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The recording provider boundary this module gained: the raw request body kept verbatim, and the instrument's own drop that models a boundary losing the value.\n\nAnchor: `drop_reasoning_effort`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:791cf0fc3f2016f727575031dab2f91577a31aed827f920c299082d7878ac3a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedModelRequest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:b3299d699f0926db246c8f980eb90a8279db3bedee9393162a512280ecf29485",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve_recording_provider"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:738f26c1b9905f9dbd9975e4cf5446ff0e71bc46fcdd50bacb4e8538de847e9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sse_frame"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:1a88338821132e904bbb36ec90611d8d5538a09b2cf5a8cc755f2b124c2b31bb",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 440
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The application root the bytes under test come from, and the machine-local install it links to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:1de4241db7ff61f0822572d3a3632c2e585304cf71607bb7d01d7427772e4520",
+            "locator": {
+              "kind": "symbol",
+              "name": "staged_runtime_root"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:c61aa84b3f5ed8cd3eae0dec3ba360f0802697978b148362adf2c53a50357c86",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_APPLICATION_ROOT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The cases that consume the recording boundary and the staged root, one application root and one process per level.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17653713e7d68f8fdca2a8608e6f40557afb42d4",
+            "content": "sha256:0bde5850bc8d01b143ce838ab83aced10d4cef73372e88d8157d6c60de45d9d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEffortConsumerTests"
+            },
+            "path": "mcp/tests/test_eve_effort_runtime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The cancel request this double records is the one the production client builds, including the target turn.\n\nAnchor: `FakeEveSession.cancel_requests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:a2b3dae7a56dbb2057c824c7e342f4fabec95f0a5e3c8ca922c071e562ce2be5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_turn_body"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:3e39aedbd4ed10e717b3d6dcb64e1a303a56a0e16aea42b25cbcebbc19b03c67",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frame decoding is delegated to the production parser, not re-implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:7b503c29ca35e63e432a814746454164be180d6702f776219234141d131a74cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_event_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The conformance suites that consume this double, one case class per named scenario.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:8f5e6f1c3a4379259f7f88c1196403e482e50fde929dbc538ca9b288e7b37e1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterSubmissionTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:0062daadc47481a647a99b2821d454d4504b9086b3214ce9746e297335476502",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterReconnectTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:6dad410fa54e270c0df91e505bbcdc46b1e414bf523d3eeac5cb1a6284f3909e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterReconcileTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:46f2baf33a07625deeace8369e392625cd2589b8f544dc0ca379303e3c762bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterInterruptTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:2a0b97a90f69d7b266f4e84ecc62da5f995677d4a1193c0b3c8297b8befc0723",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterIsolationTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The live native fixture is the non-deterministic counterpart and deliberately does **not** use this double.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:66fefecf26d7bc0283ccfdfb76206103a69ab53964dcb464068eff78d18cd6d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TracingEveRuntime"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The capsule binding this double's launches now carry, built through the capsule seam's own fixture support rather than hand-written environment values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:07865559f165c23c1652d86d3921ea35bda2e7de341dcb3a3107366b46d5a0a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_launch_binding"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:a1ef47a23cedb547006773ea368f895e24fcb22dacc3fb680b78d97ac8036808",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_carrier_for"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:d81009cbbd7b7059fcfc9d3e0424b257bd220b6f4a11d1a8ddff78ee9295dda9",
+            "locator": {
+              "kind": "symbol",
+              "name": "binding_env"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:d58b504cac9e0317afb5f0f230a08732318e50de82d88499360bad660617968c",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_with_commit"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:9936de05a51315fded0e34767d37060ea0fdb6ca1b6a326efeb4d770705704b4",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 336
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:10066186b817380a84963b4281d60c953c3907f7566da1b9e30a6f5e871613f4",
+            "locator": {
+              "end": 620,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The launch path that verifies the declared carrier before a process exists, which is why a partial binding would be refused before any protocol behaviour is observed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:d1dca4dde5ef44f056d15f901a37851f4da2f82cbf221a97f602ddfda5f9531a",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_capsule_binding"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:25409a4745d190fcaeb6d9a99ac6e33a0eeb77070b35e82af8335437c098f498",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 447
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The live native fixture is the only artifact that proves the *live runtime* half of the same seam; it drives a real eve process rather than this double.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:66fefecf26d7bc0283ccfdfb76206103a69ab53964dcb464068eff78d18cd6d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TracingEveRuntime"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:ae90452c4e7cb83989adef987ac176a500368758515269f14689319bc19278ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scenario_capsule_binding"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "None\n\nAnchor: \"async def compact_session(self, session_id: str) -> Mapping[str, object]: ...\"; \"async def clear_session(self, session_id: str) -> Mapping[str, object]: ...\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:aff0e3cda72beea0b6b21c88fdab45cda28aa180bf3060f7bbdb4ad125fa5006",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

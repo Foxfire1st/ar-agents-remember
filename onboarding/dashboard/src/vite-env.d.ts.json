@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/vite-env.d.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Consumes the declared build constant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "602ef4364a6a511d34742a7a8257a752cde6b35d",
+            "content": "sha256:db5deeed8fed4d4e36f2361dc62c115897511e365b1578fcd70778e7d1db7b77",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLIENT_DASHBOARD_BUILD"
+            },
+            "path": "dashboard/src/data/buildIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Supplies the build-time value.\n\nAnchor: `__AR_DASHBOARD_BUILD__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a03f25459bbd020b6f25f0bf36bf1426ad202580",
+            "content": "sha256:0c8fce771c825e03611f52bf97aa084a608af92e6861dd334e75029f033e25f0",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/vite.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

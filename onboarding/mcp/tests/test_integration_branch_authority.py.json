@@ -1,0 +1,88 @@
+{
+  "path": "mcp/tests/test_integration_branch_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Protected branch aliases and nested/foreign workbench identities refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:ffbef0dbd610da238979f7006a17ad83434c99c12bf38c7aa600aa7bd23f0c41",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_branch_alias_nested_checkout_and_memory_name_cannot_bypass_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A competing memory CAS is preserved after code has landed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:5531733451c3fb886f1cb15c34c058422fb4a06dba377947b0aaf566115ccb21",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cache absence/corruption cannot affect the accepted pair or create another memory commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:d1b769266ca2c06857744a419ea02ee250028be95719299bd5a1ff835a81951d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_damage_cannot_change_the_accepted_pair_or_block_its_ref_move"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Real accepted-object and source-ancestry failures remain enforced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:4c402db69c4d493450691f2a2c1328d95b5af2988575e5c814aad6155da8875b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_accepted_memory_commit_must_descend_from_the_exact_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Production ref preparation and publication proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:151351600c0a9a60f6881259fc9496650076dbbe07175f8b54cb75c03e32e920",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_integration_ref_move"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

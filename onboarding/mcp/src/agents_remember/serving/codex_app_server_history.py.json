@@ -1,0 +1,54 @@
+{
+  "path": "mcp/src/agents_remember/serving/codex_app_server_history.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter constructs one reader, delegates native pages to it, and resets the probe after reconnect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d216a0a0509cf778181e714c81ae340a7a83307",
+            "content": "sha256:372bd40cceebbdf0a8480134b09af60eadfc0e624ebacaf6588f75888074b768",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexAppServerAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d216a0a0509cf778181e714c81ae340a7a83307",
+            "content": "sha256:a17a885fd0febb1ce070a985d7389c696d399add1b7bfeb98ae3fc6be2a135f1",
+            "locator": {
+              "end": 1115,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The protocol defines the separate 128 MiB emergency payload fuse before decoding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c2c9c7cd6970c13d87df88985370acf600b3463",
+            "content": "sha256:b26a42456e3cce05c19b3eefffb2cd173f8fb3606ec5691bcbb351eb5273e3a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

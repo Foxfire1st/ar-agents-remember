@@ -1,0 +1,97 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_response.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Applied results and previews share one response shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80d35227fccf8aff9ca885669f4bbce415565fca",
+            "content": "sha256:af91d24747b7522f5b08438da0fa8b7da11639f2e2b0edc6be28cca870d0caa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80d35227fccf8aff9ca885669f4bbce415565fca",
+            "content": "sha256:d74b8a416b342d9668377541b1744138b08c5069e3ebb737ab8d7b69727bb0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_preview"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80d35227fccf8aff9ca885669f4bbce415565fca",
+            "content": "sha256:472d9768951fc28981b5b9ee691dd0eb3d37ee8a302ddfd6b8ef8c52c79258c7",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80d35227fccf8aff9ca885669f4bbce415565fca",
+            "content": "sha256:211fc03942e5e7337f7b2e3de8c528cbeddc737a167c8cbb2e64fcfda5af33b4",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Graph-title and master-sync helpers render bounded supporting evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80d35227fccf8aff9ca885669f4bbce415565fca",
+            "content": "sha256:6c3fb3a7b333032125808940022d85735b458e5e02662c4b276e3bb5158055f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "graph_titles_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80d35227fccf8aff9ca885669f4bbce415565fca",
+            "content": "sha256:3081042c98c28e1994ad99edf98bce986bb338f172e93847816517ff338871bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_sync_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80d35227fccf8aff9ca885669f4bbce415565fca",
+            "content": "sha256:d3d211fed663d70fbf6cf6c93bb9236cf7cd7435d6f516d6aa45baac5aa4b307",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

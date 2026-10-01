@@ -1,15 +1,5 @@
 # dashboard/src/data/knowledgeReader.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/knowledgeReader.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `dashboard/src/data/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/data route overview](overview.md)
@@ -62,41 +52,32 @@ link is a navigation (rule 5).
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the address and the typed answers. | "Answers are typed by" | dashboard/src/data/knowledgeReader.ts:1-13 |
-| The hash prefix and the read timeout. | `KNOWLEDGE_HASH`; `READER_TIMEOUT_MS` | dashboard/src/data/knowledgeReader.ts:17-18 |
-| The address a view is named by. | `ReaderAddress` | dashboard/src/data/knowledgeReader.ts:22-31 |
-| The selection block: code tree, its source and note, and the pin. | `ReaderSelection` | dashboard/src/data/knowledgeReader.ts:36-52 |
-| A decision as the reader shows it. | `DecisionView` | dashboard/src/data/knowledgeReader.ts:149-162 |
-| The path view, bounded for a directory; a subtree page. | `PathViewAnswer`; `SubtreeAnswer` | dashboard/src/data/knowledgeReader.ts:181-195; dashboard/src/data/knowledgeReader.ts:207-216 |
-| The timeline with per-source states; the truth view with `outgoingState`. | `Timeline`; `RecordViewAnswer` | dashboard/src/data/knowledgeReader.ts:266-269; dashboard/src/data/knowledgeReader.ts:276-300 |
-| The selector's choices with `commitsState`. | `SelectionOptions` | dashboard/src/data/knowledgeReader.ts:345-359 |
-| The shareable hash, read and written. | `parseReaderHash`; `readerHash` | dashboard/src/data/knowledgeReader.ts:384-397; dashboard/src/data/knowledgeReader.ts:400-409 |
-| A typed answer returned whatever its status; only transport failures throw. | `ReaderTransportError`; `readerGet` | dashboard/src/data/knowledgeReader.ts:413-420; dashboard/src/data/knowledgeReader.ts:424-441 |
-| An address's own read, and one subtree page. | `readAddress`; `readSubtree` | dashboard/src/data/knowledgeReader.ts:444-464; dashboard/src/data/knowledgeReader.ts:467-474 |
-| The code address of an anchor, and its label. | `codeAddress`; `locatorLabel` | dashboard/src/data/knowledgeReader.ts:477-490; dashboard/src/data/knowledgeReader.ts:492-498 |
-| The navigation case: links change the shareable hash, and the hash round-trips. | "navigates by URL: explorer and links change the shareable hash, and the hash round-trips" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:340-340 |
+- The module's own statement of the address and the typed answers. [1]
+- The hash prefix and the read timeout. [2]
+- The address a view is named by. [3]
+- The selection block: code tree, its source and note, and the pin. [4]
+- A decision as the reader shows it. [5]
+- The path view, bounded for a directory; a subtree page. [6]
+- The timeline with per-source states; the truth view with `outgoingState`. [7]
+- The selector's choices with `commitsState`. [8]
+- The shareable hash, read and written. [9]
+- A typed answer returned whatever its status; only transport failures throw. [10]
+- An address's own read, and one subtree page. [11]
+- The code address of an anchor, and its label. [12]
+- The navigation case: links change the shareable hash, and the hash round-trips. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new adapter MIK-R29 adds, recording the shareable hash (rule 5), the typed answers of rulings 09:42:58 N1 (`codeSource`, `codeNote`), N2 (`pinnedCommit`), F2 (the bounded directory and subtree pages) and F11 (`commitsState`, `outgoingState`, source states). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

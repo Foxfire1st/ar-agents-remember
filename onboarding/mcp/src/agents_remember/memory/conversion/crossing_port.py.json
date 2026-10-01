@@ -1,0 +1,81 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/crossing_port.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter.\n\nAnchor: `plan`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf1f63e5d4894418f9652c59aecbefc1b32b0ef",
+            "content": "sha256:0806ff8159b28f075cd569c53575cab2a083401a53dda313678ac0e7fb47fce1",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeCrossing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The port, its request and its view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeCrossingPort"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:e34f9c8dba1e627374789d808cc8164b9fe72317a29b0ea8244f32c2a2a3bcd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingPlanView"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The default composition binds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08156caa47bcb0e5495d481eac020f2d7efb6cba",
+            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

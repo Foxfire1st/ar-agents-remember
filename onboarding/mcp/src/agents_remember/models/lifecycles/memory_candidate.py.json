@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/memory_candidate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen pair identity retains ledgerPath as information excluded from its authority digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc66e6f6c1b8a6c8eb95a91ba4eca67a44262441",
+            "content": "sha256:7c4048ca018b3131c8a49a59b28eea3d4ff94ff7c0de017977badeb31170f8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCandidatePairIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The strict frozen pair wire contract declares every required authority cell.\n\nAnchor: \"Every contract cell that selects one worktree-backed memory candidate pair.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc66e6f6c1b8a6c8eb95a91ba4eca67a44262441",
+            "content": "sha256:7c4048ca018b3131c8a49a59b28eea3d4ff94ff7c0de017977badeb31170f8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCandidatePairIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The resolver is the sole producer of this identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
+            "content": "sha256:3abe5e591f9a2a07420ecc288ff6a9aea2d60f4fa7d39af093ba0797e91a7fb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_memory_candidate_pair"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

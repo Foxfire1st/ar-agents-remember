@@ -1,0 +1,147 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New admission uses actual profile, staged preparation, owner observations and prior selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:c17a03574fbe306a7ad0d15274068b70e5329d7b95e0ca404326d21add4d374a",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_closeout_certification"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:96056c9a8b11c9919d6cb1fc56b1d72c5461ff6eadc0d0362b46c69d0beee0f6",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only exact selected red evidence and supplied corrective decisions enter prior-red admission.\n\nAnchor: \"def _prior_red_context(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:3ba7901fdd2b460267c74c742c9b3f729c99bbb3ac8221eeb7c75cc98b853bd0",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 203
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An existing semantic authority address retains its original stored record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:6158cfeca703df02fe9ce47092d1e181461bfe1c02ebaec5baa5e833dbd71d90",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retain_original_authorities"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:014dcbff25ba5b7933dfeebe7e5590cba455528f487de82f70c12c294ea218b2",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 246
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Initial state binds original objects and is fully read back before it reaches journal selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:3587895d3f6cdefd0169fc0165515535347244a8bc4f2efc23e1cd2f5b4ad7c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "initial_certification_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:b05c266a452c1946f2d35d56ca2a86ca28322ad04c8b9b874b8f7cc68504c204",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_initial_certification"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:4b3c04808b8760ed5c9b15839b8d9b36deef320e83c967daf831b20e66bc5983",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Currentness rechecks profile, candidate/owner semantics, retained output and route review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:21bb54c9d29b6a19df9620fabc27f40f7b4af2a7c6fdf6acbbef54748bf0a847",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_selected_currentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:134e3fef2e73fcb0ee7dcf68b9535ac5d1faeb97a31349a912a6c2583db0f3b7",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 341
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

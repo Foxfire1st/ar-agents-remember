@@ -1,0 +1,25 @@
+{
+  "path": "dev-skills/dashboard-experience-review/templates/missing-view-matrix-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Method 2 (workflow × UI-state matrix) that drives this template.\n\nAnchor: `## Method 2 — Workflow × UI-state matrix → missing views (Stage 3b)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08f62e5f3898e41a9ff9aba51db3096ce63a4204",
+            "content": "sha256:78cb3e855462d37f7ab24ea70ebe8eb0b811b758178dbb776fc671f80cd6af20",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dev-skills/dashboard-experience-review/owned-methods.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

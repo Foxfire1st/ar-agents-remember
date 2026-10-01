@@ -1,0 +1,155 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Required profile authority governs execution and preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:343b3a5dfccfbe3e2f62dc5f964cc25c6adc3766b76c039b59b5fefa77c06845",
+            "locator": {
+              "kind": "symbol",
+              "name": "requires_strict_code_quality"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:c1c4c725f8875825ffbf289e9a27e3dd98489f514d9f0b851ae7b4e90be5f62b",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_quality_gate_preview"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:e9ca03946d2923d4ce55995942e3b11e30b47495807d3ae942507146148a0e57",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:350f536fbffa070e1938018a7e420d7b4e39fd9d4b8a62817da541d7ba5f1114",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Admission precedes Dagger and the exact staged tree is rechecked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:0b8e81dabc38bf52508d0b69e49181896d735d9c135cd227f69eed1d20e394a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_strict_code_quality_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:ec47c057b29b773e37b111630980ebbc724ecf79a307ff782e9cda7b2737c82e",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 243
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recovery reads the selected frozen run and original terminal publications, checks exact current candidate identity, and requires certifying evidence.\n\nAnchor: \"def render_selected_code_certification\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:fc7019a6ffe44757b66782b7380868dd2e8a2a3f3159084b672650392c0d1365",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Successful certification renders the exact evidence and manifest into the typed quality result.\n\nAnchor: \"def _strict_quality_success_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:5581d84289751fc5b19d748c23ea9dfd2d452ba33050eb1fdfa407e9beb06fad",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 405
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Host diagnostic entry refuses certification execution through this owner.\n\nAnchor: \"def run_local_quality_diagnostic\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:5e730a5b427814bece8267aa3794103ed3852f336931a83a6724aca09392c5ea",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 449
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Persist complete actual terminal catalogs, including red and interrupted gates.\n\nAnchor: \"def record_published_generation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d58780bb28c6c15635e8c65a06fb2c60a7a8843",
+            "content": "sha256:dd8ed88163a01c38d96f9b8d4dac39c101120d373c262b6262ecf842e075f4fe",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

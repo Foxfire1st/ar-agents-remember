@@ -1,0 +1,70 @@
+{
+  "path": "dashboard/src/data/selectors.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`selectQueue` coverage includes empty analytics and optimistic suppression.\n\nAnchor: \"reads the server-computed queue\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "811fe765c0325e4475111fc63ef99aee00d45802",
+            "content": "sha256:b5154289f10b45f9c906e946b349e16c38a69e304a4661c5d37d8e524f558639",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tree grouping and wait formatting tests cover the unchanged selector behavior.\n\nAnchor: \"BY PHASE groups by l-01 phase in pipeline order\"; \"scales seconds → s/m/h/d and renders unknown as a dash\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "811fe765c0325e4475111fc63ef99aee00d45802",
+            "content": "sha256:035ec6bcb3a963f8ec92a2f5d11ca4e77a131094f63212c53d42742b14ccfebd",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "811fe765c0325e4475111fc63ef99aee00d45802",
+            "content": "sha256:2ebeffc72ebab0fafbe4f52343de12824f0d8fed3efc859454fe43068ca02546",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The selector under test caches and filters attention rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectQueue"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

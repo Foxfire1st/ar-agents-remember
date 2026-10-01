@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/projector.py
 
-| Field                  | Value                                          |
-| ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember                                |
-| path                   | `mcp/src/agents_remember/serving/projector.py` |
-| doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview      | `overview.md`                                  |
-
 ## Governing Overview
 
 [serving route overview](overview.md)
@@ -128,37 +118,33 @@ non-awaiting notification step rather than a second publication owner.
 
 No task-independent follow-up was identified during MX-FIX-1 review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The resolved Domain Documentation registry has no entries. This module's atomicity and recovery
 contracts are repository-owned and are proven by source plus deterministic tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this repository-local projector update. | — | — |
+No configured domain documentation was available for this repository-local projector update.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The projector sits between the observer read/fold and the app's wire decoration. The source and
 regression suite below prove the ordering rather than relying on timing observations.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. | "def _publish_projection(" | mcp/src/agents_remember/serving/projector.py:292-292 |
-| Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. | "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" | mcp/src/agents_remember/serving/projector.py:346-346; mcp/src/agents_remember/serving/projector.py:354-354 |
-| The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. | "async with contextlib.aclosing(projector.subscribe())"; "is permitted; handwritten tail keys or another"; "payload.update(" | mcp/src/agents_remember/serving/_app_common.py:154-154; mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py:12-13; mcp/src/agents_remember/serving/_app_common.py:164-164; mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py:13-13 |
+- The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers. [1]
+- Subscription activation registers its queue before current-snapshot capture and removes it in `finally`. [2]
+- The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator. [3]
 
 | The pure stable-form diff supplies ordinary post-recovery entity events and excludes volatile ages. | "VOLATILE_AGE_FIELDS = frozenset("; "def diff_projection(" | mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:109-109 |
 | The observer tick entry performs the read/fold/atomic-file projection that this module publishes. | "def write_projection("; "def project_and_write(" | mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214 |
 | Change-driven pacing remains owned by `ChangePacer`/`ChangeWatch`; it changes wake timing, not publication semantics. | "class ChangePacer:"; "class ChangeWatch(Protocol):" | mcp/src/agents_remember/serving/change_watcher.py:275-275; mcp/src/agents_remember/serving/change_watcher.py:285-285 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No neighboring repository or external service governs this in-process publication boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reviewed projector, app, and tests are wholly repository-local. | — | — |
+The reviewed projector, app, and tests are wholly repository-local.
 
 ## 260727-CHATS-IM-L2 Current Delta
 
@@ -196,66 +182,3 @@ Projection ticks now run as shielded thread tasks. On serving shutdown,
 cancellation is returned to the caller only after the real filesystem tick is
 drained, preventing a late atomic projection write from racing temporary
 worktree cleanup while preserving cancellation as the public outcome.
-
-## Update History
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/serving/_app_common.py` (one import and the `knowledge_reader` collaborator field), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `_app_common.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/serving/_app_common.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the one enforced citation row was re-read and re-derived because this leaf's line shifts moved the constructs it names, and one of its ranges was a same-named coincidence rather than the construct.** The row's first anchor, `"async with contextlib.aclosing(projector.subscribe())"`, lives in `_app_common.py`, which this leaf's +16-line insertion pushed down: it is at 151 (was 146), so `_app_common.py:146-146` → `151-151`. The row's third anchor, `"payload.update("`, is at `_app_common.py:161-161` — its cited `_app_common.py:147-147` was pointing at the docstring sentence about the snapshot/delta asymmetry, not at the decoration call. Its fourth range, `wire_contract.py:147-147`, was `def produces_dump(...)` — a function that happens to mention the same name — while the claim's actual support is the module docstring's rule at `wire_contract.py:12-13`; the range was re-pointed to `13-13`, the line that literally carries ``payload.update(served_state_tail(...))`` is permitted; handwritten tail keys or another``. Every range was verified against the candidate with the anchors occurring literally inside them. The claim wording is unchanged and remains true. This is a citation-only repair; no verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `async with contextlib.aclosing` in the row 149 of this card from mcp/src/agents_remember/serving/_app_common.py:136-136 to mcp/src/agents_remember/serving/_app_common.py:143, the extent of the construct the claim is about (the checker named line(s) [143] as its live location)
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
-  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
-  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`). 2 further claim(s) were declined because the solution they name no longer
-  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
-  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
-  current position. Verification metadata remains closeout-owned.
-- 2026-08-12T20:10+02:00 — L23 curator: documented shield-and-drain semantics for threaded projection ticks; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 7 citation rows and normalized 3 prose citation groups; scoped citation check now passes.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations. The
-  `test_serving.py` row is anchored to the four `StreamEventsTests` cases that prove it
-  cit:([`test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription`], mcp/tests/test_serving.py:435-447; mcp/tests/test_serving.py:449-469; mcp/tests/test_serving.py:471-499; mcp/tests/test_serving.py:501-511), including identical-state suppression and later deltas. The pure-diff row is anchored to
-  cit:(["VOLATILE_AGE_FIELDS = frozenset("; "def _strip_volatile("; "def stable_projection_state("; "def diff_projection("; "def _collection_deltas("], mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:48-48; mcp/src/agents_remember/serving/delta.py:83-83; mcp/src/agents_remember/serving/delta.py:109-109; mcp/src/agents_remember/serving/delta.py:155-155), while the observer row is anchored to
-  cit:(["def write_projection("; "def project_and_write("], mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214). Read all ranges back.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations. The
-  `test_serving.py` row is anchored to the four `StreamEventsTests` cases that prove it
-  cit:([`test_snapshot_then_delta`; `test_snapshot_subscription_cannot_lose_an_interleaved_projection`; `test_failed_prime_recovery_emits_one_snapshot_then_normal_deltas`; `test_cancelled_waiting_stream_releases_its_subscription`], mcp/tests/test_serving.py:435-447; mcp/tests/test_serving.py:449-469; mcp/tests/test_serving.py:471-499; mcp/tests/test_serving.py:501-511), including identical-state suppression and later deltas. The pure-diff row is anchored to
-  cit:(["VOLATILE_AGE_FIELDS = frozenset("; "def _strip_volatile("; "def stable_projection_state("; "def diff_projection("; "def _collection_deltas("], mcp/src/agents_remember/serving/delta.py:36-36; mcp/src/agents_remember/serving/delta.py:48-48; mcp/src/agents_remember/serving/delta.py:83-83; mcp/src/agents_remember/serving/delta.py:109-109; mcp/src/agents_remember/serving/delta.py:155-155), while the observer row is anchored to
-  cit:(["def write_projection("; "def project_and_write("], mcp/src/agents_remember/serving/projections/projection_store.py:158-158; mcp/src/agents_remember/serving/projections/projection_store.py:214-214). Read all ranges back.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ProjectionCadence` / `ProjectionReplay` / `ProjectionRefreshers` constructor concepts and their module defaults; pacing behaviour unchanged.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the live projection worker now
-  owns one `ProjectionInputState`, converts watcher wakes into full/change/heartbeat refreshes, and
-  passes the exact invalidated domains to the projection write edge. Watcherless replay/tests keep
-  full-refresh behavior; watcher failure still fails open. Verification metadata remains pinned
-  until closeout.
-- 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: documented the single-owner atomic
-  subscribe-and-snapshot boundary, compute-then-publish-then-notify ordering, one full first-recovery
-  snapshot, identical-recovery suppression, ordinary later deltas, and explicit cancellation
-  cleanup. Verification metadata remains pinned until closeout stamps the candidate commit.
-- 2026-07-12T20:24+02:00 — 260712-PTS-L3: the unconditional `sleep(interval)` pacemaker became
-  change-or-heartbeat waking when a `change_watcher` is injected (`ChangePacer` built with
-  `heartbeat` when not `None`, else `DEFAULT_HEARTBEAT_SECONDS`; no watcher ⇒ exact legacy pacing,
-  which sim and injected-`now()` tests keep). Tick body, prime, diff/broadcast, and ETag revision untouched.
-  Watch-task lifecycle mirrors the landing-refresher task (shared `_shutdown_task` helper);
-  `_on_watch_task_done` degrades a dead watcher loudly to fixed-interval ticking (R7 fail-open).
-  Added `projection_count`/`last_wake_reason` instrumentation. Verification metadata pinned until
-  closeout stamps the PTS-L3 commit.
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: Projector owns refresher startup/cancellation, consumes network-free snapshots, and logs a dead refresher during cancellation so lifecycle shutdown continues safely.
-
-- 2026-07-07T05:08+02:00 — 260703-L15 S1: stable-form diffing with a per-tick cache
-  (`_latest_stable`), atomic `(seq, projection)` publish (`_published` tuple; threadpool tear
-  guard), and the `revision(seq)` content fingerprint (boot nonce + seq) behind the `/api/state`
-  ETag. Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: `Projector` now accepts an optional provider refresher and passes it to `project_and_write` on each tick, keeping sim fixed-input and live dashboard refresh behavior separate. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-14T11:30+02:00 — Updated for slice 04 commit 4b: added the `now` and `before_tick`
-  seams and the `_tick_sync(moment)` helper (one moment per tick, shared by the feeder hook and
-  `project_and_write`) so sim replays through the same loop. Verification metadata pinned until
-  closeout stamps the 4b code commit.
-- 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the shared `Projector`
-  (prime/run/current/subscribe) tick-and-fan-out loop. Verification metadata pinned until
-  closeout stamps the 4a code commit.

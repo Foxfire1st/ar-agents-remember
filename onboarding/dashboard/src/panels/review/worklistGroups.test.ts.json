@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/panels/review/worklistGroups.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real worklist and the MIK-R10-shaped unexplained items.\n\nAnchor: \"'../../data/reviewTrees.captured.json'\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6224360037305c3a3cff36f19d19de7278438ca5",
+            "content": "sha256:2f032f1ba1d347229fc62141ad5994de813f2275757c125428a7e934374953f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunk"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two cases.\n\nAnchor: \"marks knowledge items planned or unplanned and lists the declared effects no row delivered\"; \"groups unexplained items by file and coverage state and finds their rows by facts.row\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6224360037305c3a3cff36f19d19de7278438ca5",
+            "content": "sha256:ead2bc0ca8c363852ebe447d5dcdef8df8da66be187c5da37b85c2ac526c318f",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

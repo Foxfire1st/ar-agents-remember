@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/benchmarks/runner_modules/cli.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/benchmarks/runner_modules/cli.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-07T00:25+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [runner_modules overview](overview.md)
@@ -29,29 +19,17 @@ Argparse command wiring for benchmark list, prepare, run, and analyze commands.
 - CLI functions are adapters; benchmark behavior belongs in service, execution, workspace, or analysis modules.
 - Keep command payload shape aligned with the MCP service functions.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.cli import *" | mcp/src/agents_remember/benchmarks/runner.py:12-13 |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
+- The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
+- The route-local overview summarizes how this module fits into the benchmark runner split. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No configured sibling repository is required for this module.
-
-## Update History
-
-- 2026-09-07T00:25+02:00 — Removed the obsolete deleted-test coverage claim; production behavior and original verification history remain unchanged.
-
-- 2026-08-04T18:26+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the three malformed rows —
-  facade re-export bound to the verbatim `from agents_remember.benchmarks.runner_modules.cli
-  import *` literal (runner.py:12-13), the route overview cited as the memory card with its `#`
-  heading anchor, and the test-slice row given the corrected `WorktreeSupportTests` /
-  benchmark-provider-ids ranges (same correction as the analysis card). Spurious `agents-remember/`
-  path prefixes dropped; claim wording unchanged.
-- 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

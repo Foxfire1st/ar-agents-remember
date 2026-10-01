@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/src/test/setup.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`matchMedia` stub consumed by the honest-motion gate.\n\nAnchor: \"export function useShouldAnimate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:73f92e9ae789a221d43db6613042a96de87ec471bb2258bbd3974b498713179b",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Wired as the vitest setup file.\n\nAnchor: `setupFiles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdea2611cc34a3c7063534e3318374cbb216bb09",
+            "content": "sha256:df0eb71568932412be1fcd8f8ccf6c6ff433cce5a2fbffabf8eb7e04dad20b32",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/vitest.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The render test that depends on these stubs.\n\nAnchor: \"renders complete bodies for direct\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc45f9a5cce0df9ea04fbf21f7a6079e360c9d8b",
+            "content": "sha256:829d4366f973211f2be8695064dc0715d94d99e45d8ce76f9a244e5d3acc55a8",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 336
+            },
+            "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

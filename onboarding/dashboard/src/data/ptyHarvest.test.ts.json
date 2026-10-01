@@ -1,0 +1,73 @@
+{
+  "path": "dashboard/src/data/ptyHarvest.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2eb49e25b72503d0f728b57f7f3bf14df13fc7f",
+            "content": "sha256:49f9375349eec4c1805b63ed6e103deb2d6b0f609b80f99da16062c645b93550",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseOsc133"
+            },
+            "path": "dashboard/src/data/ptyHarvest.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The DOM-level archetype/bell cases (hooks per archetype, rail marker).\n\nAnchor: \"two archetypes (R1)\", \"bell acknowledgment (R7)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d09f1f11bc7e56ada9fec62b1c1a36ca055ec25",
+            "content": "sha256:8e9e86ef84986095a281f80b7c8a4b69198ca42c0c3fc13002abe27651af6b22",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d09f1f11bc7e56ada9fec62b1c1a36ca055ec25",
+            "content": "sha256:bd009ee011f583f07975ee837d5e71adabb097432e731d96c590872702df8f9b",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The rail's L6 block (bell marker + tooltip hints; the dot stays pure grammar).\n\nAnchor: \"a harvested bell renders the rail attention marker with a text equivalent (R7)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56b61f4e3ece27f20482db0ce86b22ddc22c7de",
+            "content": "sha256:1eb05aaac55ed336dc0eaddf8960151cc1a8c8123fee96d5fc59cc6df68f6677",
+            "locator": {
+              "end": 745,
+              "kind": "line_range",
+              "start": 737
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

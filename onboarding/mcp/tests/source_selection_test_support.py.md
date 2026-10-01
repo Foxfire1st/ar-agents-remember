@@ -1,15 +1,5 @@
 # mcp/tests/source_selection_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/source_selection_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T14:46:49+00:00 |
-| lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp tests overview](overview.md)
@@ -42,32 +32,24 @@ Use these helpers for modeled observations. Tests claiming actual candidate Git 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for these repository-owned test contracts.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source governs this file. | N/A | N/A |
+No configured external domain source governs this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These source anchors establish the actual owner calls, fixture inputs and execution limits described above.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Candidate identities and changed paths are explicit fixture values with a canonical digest. | `source_selection_fixture` | mcp/tests/source_selection_test_support.py:20-35 |
-| Targeted applicability is compiled from the declared fixture dependency prefix. | `ambient_selection_fixture` | mcp/tests/source_selection_test_support.py:38-55 |
-| The writer emits typed selection to a concrete test input file. | `write_ambient_selection` | mcp/tests/source_selection_test_support.py:58-61 |
+- Candidate identities and changed paths are explicit fixture values with a canonical digest. [1]
+- Targeted applicability is compiled from the declared fixture dependency prefix. [2]
+- The writer emits typed selection to a concrete test input file. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The modeled or temporary repositories belong to this isolated test composition. This file establishes no external repository or host lifecycle authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T14:46:49+00:00 — Created after reviewing actual source at `c69d5171187fa1957025e393270db9f5a864ab14`. Documented synthetic observation, canonical applicability and serialization boundaries. This source verification makes no gate or acceptance claim.
+No cross-repository evidence is required.

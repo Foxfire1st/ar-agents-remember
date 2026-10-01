@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_execution_registration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The typed result and central registration route bind address, role, and source evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:90fa18d76b0d8a13ec2a80e163dead6a27457c55c432ca50270a37f30bc4d161",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskExecutionRegistrationResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:30d73f5c56c210a5c76867cb284c403c50aa52907d23604bedd83d3a98e66de6",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_task_execution_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reviewer-only `task.json` admission is classified through canonical topology before any leaf mutation; missing non-leaf authority blocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:de4d8aa38c000cb0d1aff7854a4f025a576dc6c40b6e87dc37922991c60e6456",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_missing_registration_source"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:d0c23eb724162742f2d15e06bf1323867f57564a3129ce5666d4727a166cc0db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_non_leaf_reviewer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:6188afcf47be698ee5e2a772a232194a093046365c7752419ff0500cda3dd7d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_registration_address"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Source classification distinguishes current, retired, missing, and unreadable task state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:6b7932056a8bfc03509ad44739d843de77b962de7cfd53cd1e2f28327a1b60c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_registration_source"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:34d5f8efb9ec78335632e225a4ce0fa001b1a2ccca87c2d10e386da1ff6ebee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_missing_task_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Terminal-catalog and operator-inbox adapters use the same registration owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:478e14457b0208f1430232d88288efe6d0230118bf843f4edb0423a479bab330",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_terminal_catalog_execution_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:67b9eed62b07d9d22be3973c52ec1bf99528b0239326ec5b7661d4e6842e6a87",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_operator_inbox_execution_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

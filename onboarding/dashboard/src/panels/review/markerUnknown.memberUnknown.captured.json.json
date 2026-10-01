@@ -1,0 +1,100 @@
+{
+  "path": "dashboard/src/panels/review/markerUnknown.memberUnknown.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The composed family context.\n\nAnchor: \"family_context\"; \"Bounded notes listing with unchanged meaning\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d8bd248ab9ee5778179e480db132f9fdf5bece9",
+            "content": "sha256:1c8a9fa0204a6dd58f0f07502dd59081b880ccb4af0d6bb7aca6c194e6f87efb",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d8bd248ab9ee5778179e480db132f9fdf5bece9",
+            "content": "sha256:e08b6bee5a760182777a9dcfa3937f03732fcf2f1b236eb2d8aad3c3eba77451",
+            "locator": {
+              "end": 622,
+              "kind": "line_range",
+              "start": 622
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The comparison token and the partial after index.\n\nAnchor: \"review:trees:3\"; \"knowledge-index:after:partial\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d8bd248ab9ee5778179e480db132f9fdf5bece9",
+            "content": "sha256:60fe0d03a213f688844c902545478346c475d46cc176d6ca3b4e021e642d4be2",
+            "locator": {
+              "end": 799,
+              "kind": "line_range",
+              "start": 799
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d8bd248ab9ee5778179e480db132f9fdf5bece9",
+            "content": "sha256:16177deb4b95d70d6907645cf29c0a46642296c93a24ca0b6cfc0e8022927675",
+            "locator": {
+              "end": 803,
+              "kind": "line_range",
+              "start": 803
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerUnknown.memberUnknown.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92897c5349f3345fff3e532e3c2380b0ed621a1c",
+            "content": "sha256:641b640dc3cac71e0357b549583a38ed8f63565019a3a3eaea4b13c9412f66ff",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/panels/review/markerUnknown.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The family's change facts with every membership unknown (MIK-L33).\n\nAnchor: \"\\\"change_kinds\\\": {\"; \"\\\"guarantee\\\": \\\"unknown\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d8bd248ab9ee5778179e480db132f9fdf5bece9",
+            "content": "sha256:f298bbdcc3220e6b78102bbad64785ad9f837ed662edc963dbeaf5d8cbb2268f",
+            "locator": {
+              "end": 620,
+              "kind": "line_range",
+              "start": 508
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

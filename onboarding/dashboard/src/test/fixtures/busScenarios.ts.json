@@ -1,0 +1,210 @@
+{
+  "path": "dashboard/src/test/fixtures/busScenarios.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Full decision and sender-address variants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:da718ed741e9e9e26a6205ac62299b235d6d5d3a9702de252da6980ebaf46f1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_DECISION_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:d44549aa8b162c9783569ba03976b1deedf1fd9623e11333ecdf4af7090e7ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_SENDER_AGENT_ONLY_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:28afcf8ec00ce02ae0e3d2d8298ea13090a349ff90405dbe56f0af124b73fd40",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_SENDER_ROLE_ONLY_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:37d56672e2d44e1f1dc8e02daf6d5ca2a496d72af4c40c7d8154a89e84e69293",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_LIFECYCLE_ONLY_PICKUP"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Escalation, legacy absence, combined rows, and heartbeat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:4555454b4a9126545fa6e0ddac699be9a2050e4b44b1a4dc7aa376081b177ef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_ESCALATED_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:d0bca4bff88db6f6f3d1d189fcbb07e9479b5c8799f33df8b090e31c45c72752",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_LEGACY_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:09d5838430e42de8c840279e81f1e91db3fe24094e7e84902b5e4e222b6e46f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_PICKUPS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:36cc90686d1cadbdcd6790aacadb3af32c2fab48e63d7ed336a152da6903a38b",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_AGENT_NOTIFIER_HEARTBEAT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The six pickup fixtures satisfy the generated `AgentPickupNode` projection shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:da718ed741e9e9e26a6205ac62299b235d6d5d3a9702de252da6980ebaf46f1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_DECISION_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:d44549aa8b162c9783569ba03976b1deedf1fd9623e11333ecdf4af7090e7ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_SENDER_AGENT_ONLY_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:28afcf8ec00ce02ae0e3d2d8298ea13090a349ff90405dbe56f0af124b73fd40",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_SENDER_ROLE_ONLY_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:37d56672e2d44e1f1dc8e02daf6d5ca2a496d72af4c40c7d8154a89e84e69293",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_LIFECYCLE_ONLY_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:4555454b4a9126545fa6e0ddac699be9a2050e4b44b1a4dc7aa376081b177ef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_ESCALATED_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:d0bca4bff88db6f6f3d1d189fcbb07e9479b5c8799f33df8b090e31c45c72752",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_LEGACY_PICKUP"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The agent-notifier heartbeat fixture satisfies the generated `AgentNotifierHeartbeat` projection shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3569b7d140b9f6728a7ce6eab9a3316510deb304",
+            "content": "sha256:36cc90686d1cadbdcd6790aacadb3af32c2fab48e63d7ed336a152da6903a38b",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_AGENT_NOTIFIER_HEARTBEAT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The primary Bus regression consumer covers sender-to-owner, redelivery, escalation, heartbeat, and UA-3 limits.\n\nAnchor: \"defaults fleet-global and renders sender-to-owner, redelivery, escalation, heartbeat, and UA-3 limits\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0e448fc749042081e7d4687f9a9c7d42c66ad62",
+            "content": "sha256:7202d334a6d303e9b0c23ddef1111c69e09901f96f48aea42b885e36f68fcc35",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dashboard/src/panels/session-cockpit/BusPane.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

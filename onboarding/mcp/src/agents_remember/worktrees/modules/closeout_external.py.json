@@ -1,0 +1,165 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The converted leaf's history file is closed before the memory commit.\n\nAnchor: \"closing = close_owner_history(contract.memory_worktree, _owner(contract))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:b3da04f908195c30b9a75fac6ffb644efe136034ef15edaa30c9b5bef7ecff9d",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The owner, and the exact tree validated as a leaf publication against the parent tip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:cca6c023e9edb39ea6c2f2c46f00c83c67ed8c2c81bc0f273185f18259a6064b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:505ff343f40adcbcc74f44642af9e6cc526b257e74938e90144f187574db3c51",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_invalid_memory_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Any failure before the commit restores the file.\n\nAnchor: \"closing.restore()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:f42805eb6774d150f98de11e3a85ac0aaf847636b3e0fc97b7ac9423f264f663",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`external_closeout_commits` resumes or creates the memory output (since MIK-R09 closing a converted leaf's history file first; since L37 after asking the cutover lock for unconverted memory), then refreshes its informational cache.\n\nAnchor: \"def external_closeout_commits(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:3a29acdbf90d780b670d2760cb304936c8c3517807e4081a6ac68c2278d27665",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded; since MIK-R09 it validates a converted leaf's exact tree first and restores the closing on any failure before the commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:f42805eb6774d150f98de11e3a85ac0aaf847636b3e0fc97b7ac9423f264f663",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:0b819e606d55516db053afe7c44c1ae304eed817f524ba0d3a79e49e82a63319",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_external_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:aacbed3245544671ec9cdbebb43e65a9a21ee5fe355233a9cd58e98b7552b899",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_memory_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Cache rendering returns informational state and creates no Git commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lock is asked before any stamping or commit of unconverted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:3a29acdbf90d780b670d2760cb304936c8c3517807e4081a6ac68c2278d27665",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

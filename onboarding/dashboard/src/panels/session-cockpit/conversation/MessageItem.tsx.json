@@ -1,0 +1,96 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The content-block/item types this component narrows over (`image-ref`, `altProvenance`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:b712a4b8a91d3fc98d885362f3737cf5be0b4d35938e29e14ee7222318c5dd21",
+            "locator": {
+              "kind": "symbol",
+              "name": "altProvenance"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Streaming-safe Markdown renderer used for every prose/code block.\n\nAnchor: \"export const MarkdownBlock\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e017e9192e01c59b745e9e89cf94fb1712fb1d04",
+            "content": "sha256:f9977686d9ab8494f4f9d55ab2b2f744a7be9761e837f77c6c7f1ed99eba0ac5",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared ClampButton (real button, exact `+N`), `sourceLineCount`, `SourceBadge`, `useClampIds`.\n\nAnchor: \"export function ClampButton\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:1f02a04e7fbcd3ac429d686d2d4ccd0cce523dc447e6f7882ddef1670723c7b6",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The kind dispatcher that routes messages here.\n\nAnchor: \"export const ConversationItemView\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b156fbba479b8bc6b33a0c1347cdee530f878b",
+            "content": "sha256:2a08fc0fd840a8d10bfba71684871ae5b3bd9952d3fb46701554e076cbbac986",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The feed-ARIA/image-alt/clamp assertions covering this component.\n\nAnchor: \"exposes a role=feed and articles keyed to the server globalOrdinal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa535ac4ad4fc146f8f3ae1130a08816b6459968",
+            "content": "sha256:76c7f06ba72f931f0728b58c10ceffc242429c633fab62382ca055141bf21723",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

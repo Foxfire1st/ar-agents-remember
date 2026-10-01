@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/file-viewer/`              |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T20:36:31+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`       |
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
@@ -29,11 +23,9 @@ frames (review R2-F1, R3-F1, R3-F2). Below 40rem the gutter is sized to each mar
 and at teardown, the portals after its host); `changeset/DiffPane.tsx` takes the same prop per editor. Which line a
 mark sits on is always the caller's decision. The File Viewer passes no marks and renders exactly as before.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`. | `useMarkedPane` | dashboard/src/panels/file-viewer/markGutter.tsx:321-372 |
-| The bounded, passive hold released by the reader's pointer, key or wheel. | `HOLD_RELEASES`; `holdRevealed` | dashboard/src/panels/file-viewer/markGutter.tsx:176-218 |
-| The code pane's optional marks. | "marks?: PaneMarks;"; "drawn({ after: { view, first: firstLine } });" | dashboard/src/panels/file-viewer/FilePane.tsx:35-70 |
+- The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`. [1]
+- The bounded, passive hold released by the reader's pointer, key or wheel. [2]
+- The code pane's optional marks. [3]
 
 ## 260928-MIK-L31 The Code Pane Can Show An Excerpt With Its File's Line Numbers
 
@@ -44,10 +36,8 @@ numbers for an excerpt starting at `first`. [`FilePane.tsx`](FilePane.tsx.md) ga
 `fit` (a content-sized host capped at `32rem`); `changeset/DiffPane.tsx` uses the same gutter per side. The File
 Viewer passes neither prop and renders exactly as before.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The excerpt gutter. | `numberedFrom` | dashboard/src/panels/file-viewer/lineNumbering.ts:7-11 |
-| The code pane's optional first line and content-sized host. | `fitHost`; "numberedFrom(firstLine)," | dashboard/src/panels/file-viewer/FilePane.tsx:23-23; dashboard/src/panels/file-viewer/FilePane.tsx:53-53 |
+- The excerpt gutter. [4]
+- The code pane's optional first line and content-sized host. [5]
 
 ## Purpose
 
@@ -110,50 +100,17 @@ files API → a read-only CodeMirror dual-pane with bidirectional code↔onboard
 overview/onboarding docs render as markdown full-pane, and a faint siege-tank backdrop fills the pane until
 a file is selected; kept mounted so state survives a tab switch.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The L1 read-only files API this view consumes. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:298-327 |
-| The same-origin client wrapping that API. | `fetchRepos` | dashboard/src/data/files.ts:113-116 |
-| The shell that registers + keeps this view mounted. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:340-343; dashboard/src/cockpit/Cockpit.tsx:780-782; dashboard/src/cockpit/Cockpit.tsx:344-344 |
-| The markdown renderer the sidecar pane reuses. | `Markdown` | dashboard/src/grammar/Markdown.tsx:109-159 |
+### Repo-Internal References
+
+- The L1 read-only files API this view consumes. [6]
+- The same-origin client wrapping that API. [7]
+- The shell that registers + keeps this view mounted. [8]
+- The markdown renderer the sidecar pane reuses. [9]
 
 ## Current L5I Route State
 
 The mounted-hidden File Viewer does not fetch its repository catalog at dashboard boot. It waits for
 its first selected view, retains that settled result across later visibility changes, and shares an
 in-flight read during development effect replay.
-
-## Update History
-- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **route body updated for MIK-R34.** Added the section "260928-MIK-L34 A Code Pane Can Carry Marks On Its File Lines": the new [`markGutter.tsx`](markGutter.tsx.md) and its test (both carded here) and the optional `marks` prop of [`FilePane.tsx`](FilePane.tsx.md), recording ruling 2026-09-30T16:19:34 Q4 and review R1 F2, R2-F1, R3-F1 and R3-F2; three rows. The MIK-L31 section's `FilePane` row was re-pointed by the exact line shift (`22` → `23`, `47` → `53`). The route's purpose is unchanged: the File Viewer passes no marks.
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this route's governed sources are unchanged. MIK-R29 grew `dashboard/src/cockpit/Cockpit.tsx` (two imports, the `knowledge` destination, the reader-hash initial view and the `ViewBody` case), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Code Pane Can Show An Excerpt With Its File's Line Numbers" before Purpose (the new `lineNumbering.ts`, carded; `FilePane`'s optional `firstLine` and `fit`) and the Route Model entries. Two rows added.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `fetchRepos` repointed to dashboard/src/data/files.ts:113-116. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T18:22+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **this leaf's own code edit moved lines this route's body cites, so the carrier range was APPENDED to the row that cites them and this entry records that body change.** `dashboard/src/cockpit/Cockpit.tsx` gained the `ReviewSurface` import and the takeover's review branch, which shifted the cited declarations below the insertion; the row that names "const filesLayer = chatsLayer;" now also cites `dashboard/src/cockpit/Cockpit.tsx:339-339`, the line that actually carries it. **Every range the row already carried is kept** — the repair is a union, never a substitution and never a deletion — and no claim wording changed, because the claim's subject (the shell that registers and keeps this view mounted) is the same construct it always was. The verification stamp is **not** advanced: the code commit does not exist yet and closeout owns it.
-- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: FileViewer.tsx changed only by behavior-preserving lint remediation.
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 8 citation findings (4 rows); scoped recheck clean.
-
-- 2026-07-24T13:17:17Z — Curator: documented first-visible catalog loading and settled keep-alive
-  behavior. Verification metadata remains pre-commit.
-
-- 2026-07-17T02:30+02:00 — No route impact: 260715-FEUI-L2's only touch under file-viewer/ is a
-  reviewer-accepted one-line defensive guard in `FileViewer.tsx` (a `repos`-less catalog response
-  degrades to `[]` instead of crash-looping `repos.find` — a latent robustness bug the leaf's
-  test-timing shift surfaced). The route model (selectors, two trees, dual-pane, pairing) is
-  unchanged; detail lives in the `FileViewer.tsx` sidecar. Verification metadata pinned to the
-  leaf base until closeout stamps the L2 code commit.
-- 2026-07-06T03:20+02:00 — No route impact: 260703-L9 reviewed `DualPane.tsx`/`FilePane.tsx` as the sidecar-markdown precedent for the new task-reader notes view (`panels/TaskNotes.tsx`); nothing under file-viewer/ changed.
-- 2026-06-30T00:00:00+02:00 — operations-integration L5: the file-viewer now (a) renders an opened partnerless overview/onboarding doc as **markdown full-pane** (`openSidecar` carries the body; `DualPane` shows it in single and split mode) instead of an empty placeholder, and (b) fills the pane with a faint, effects-gated **siege-tank empty-state backdrop** (`/assets/sc2-siege-tank-boomerang.mp4`) until a file is selected, replacing the per-side "select a file" placeholders. `usePersistedFlag.ts` also gained `usePersistedNumber` (Cockpit rail widths). New `DualPane.test.tsx` covers the backdrop + overview rendering. Detail in the `DualPane.tsx` / `FileViewer.tsx` / `usePersistedFlag.ts` sidecars. Verification metadata pinned until closeout stamps the L5 code commit.
-- 2026-06-29T17:00+02:00 — No route impact: the L4 follow-up only adjusted the shared `codemirrorTheme.ts` comment + operators/punctuation colours (readability — `--grid` → an `ink`/`bg` blend); the file-viewer route model (the selectors, the two trees, the dual-pane, the read-only CodeMirror) is unchanged. Detail in the `codemirrorTheme.ts` sidecar. Verification metadata pinned until closeout stamps the L4 follow-up commit.
-- 2026-06-29T09:06+02:00 — Created for operations-integration L2: the File Viewer route — a full-bleed
-  centre tab over the L1 files API with repo/scope selectors, a code tree + an onboarding tree (Headless
-  Tree), a read-only CodeMirror dual-pane, and bidirectional code↔onboarding pairing; kept mounted across
-  tab switches. Verification metadata pinned to the task base until closeout stamps the L2 code commit.
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.

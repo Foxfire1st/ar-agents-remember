@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/SourceContentRefusal.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/SourceContentRefusal.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:14:26+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -84,51 +74,37 @@ what must not come back as well as what must appear.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own ownership statement and
 provenance, the two fixtures, the one mount, the three cases, and the pane and shared renderer they
 drive. Every anchor in a row occurs inside the range that row cites.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The header's own ownership statement — R03 owns the typed refusal and this module pins the other answer shape — and the provenance of the measured `503` body with its digest.** | `SourceContent`; `reviewSourceContent` | dashboard/src/panels/review/SourceContentRefusal.test.tsx:1-19 |
-| The real pane under test and the wire type of the entry it receives. | `SourceContent` | dashboard/src/panels/review/SourceContentRefusal.test.tsx:19-24 |
-| The one listed entry fixture, exactly as the inventory publishes a row. | `ENTRY` | dashboard/src/panels/review/SourceContentRefusal.test.tsx:21-26 |
-| **The route's own `503` body, with the detail and the next action the pre-fix rendering dropped.** | `UNWIRED` | dashboard/src/panels/review/SourceContentRefusal.test.tsx:27-33 |
-| The one mount, at the two code-tree ids the listing published. | `mount` | dashboard/src/panels/review/SourceContentRefusal.test.tsx:35-45 |
-| The cleanup and global-fetch restore between cases. | `afterEach` | dashboard/src/panels/review/SourceContentRefusal.test.tsx:16-19; dashboard/src/panels/review/SourceContentRefusal.test.tsx:48-51 |
-| **An unwired adapter rendered through the shared block with the owner's detail and next action, and the pre-fix paragraph asserted absent.** | "carries the code, reason, offending input and next action of an unwired adapter" | dashboard/src/panels/review/SourceContentRefusal.test.tsx:52-77 |
-| **An unadmitted query named as `validation` with its offending input and next action, and no retry offered for a typed refusal.** | "names an unadmitted query as a validation failure rather than as the thrown message" | dashboard/src/panels/review/SourceContentRefusal.test.tsx:79-112 |
-| **A socket that never answered offering the retry, and the retry rendering whatever the read then answers — here R03's own typed refusal, unchanged.** | "offers a retry for a socket that never answered, and the retry re-reads" | dashboard/src/panels/review/SourceContentRefusal.test.tsx:114-149 |
-| SourceContent retains transport failures and reuses the shared problem renderer while preserving its typed expansion refusal branch; since L48 the failure is held with the request key it answers, inside `useSourceContentRead`. | `SourceContent`; `useSourceContentRead`; "function refusalBlock(refusal: ReviewRefusal) {" | dashboard/src/panels/review/SourceContent.tsx:252-305; dashboard/src/panels/review/SourceContent.tsx:210-250; dashboard/src/panels/review/SourceContent.tsx:141-153 |
-| **The one block this module finds by `review-failure`, with the state and code attributes the cases read.** | `ReviewProblemBlock`; `review-offending-input`; `review-next-action`; `review-retry` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177 |
-| R03's own typed-refusal block, which the retry case asserts is still the renderer for a typed answer. | `refusalBlock`; `review-source-refusal` | dashboard/src/panels/review/SourceContent.tsx:141-153 |
+- **The header's own ownership statement — R03 owns the typed refusal and this module pins the other answer shape — and the provenance of the measured `503` body with its digest.** [1]
+- The real pane under test and the wire type of the entry it receives. [2]
+- The one listed entry fixture, exactly as the inventory publishes a row. [3]
+- **The route's own `503` body, with the detail and the next action the pre-fix rendering dropped.** [4]
+- The one mount, at the two code-tree ids the listing published. [5]
+- The cleanup and global-fetch restore between cases. [6]
+- **An unwired adapter rendered through the shared block with the owner's detail and next action, and the pre-fix paragraph asserted absent.** [7]
+- **An unadmitted query named as `validation` with its offending input and next action, and no retry offered for a typed refusal.** [8]
+- **A socket that never answered offering the retry, and the retry rendering whatever the read then answers — here R03's own typed refusal, unchanged.** [9]
+- SourceContent retains transport failures and reuses the shared problem renderer while preserving its typed expansion refusal branch; since L48 the failure is held with the request key it answers, inside `useSourceContentRead`. [10]
+- **The one block this module finds by `review-failure`, with the state and code attributes the cases read.** [11]
+- R03's own typed-refusal block, which the retry case asserts is still the renderer for a typed answer. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file. Every response is served by a stubbed
 same-origin `fetch` and names one repository namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted lines above `refusalBlock`, `useSourceContentRead` and `SourceContent` in `SourceContent.tsx`. The generated repair above re-points the `refusalBlock` row (`113-125` → `141-153`), and the three-anchor row was re-pointed by the exact Git-hunk shift (`222-271` → `252-305`, `180-220` → `210-250`, `113-125` → `141-153`). Claims unchanged. No stamp advanced.
-- 2026-09-30T18:06:49+00:00: Generated citation repair: `refusalBlock` repointed to dashboard/src/panels/review/SourceContent.tsx:141-153. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T21:55:52+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **re-citation of rows whose earlier range arrived by generated projection.** The memory-quality check reopened the transport-failure row because an older *Generated citation repair* bullet in this card names `refusalBlock`, so a range written there was never shown to be reviewed. Each row was re-read against the construct it is about in this candidate, the claim still holds, and its anchor was re-bound from the bare name to the exact declaration text the curator read (`function refusalBlock(refusal: ReviewRefusal) {`), which is the check's own remedy (re-cite the location the claim is about). The generated bullets below are left untouched as the dated record of the projection. No stamp advanced.
-- 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claim re-read — the content read moved into `useSourceContentRead`.** L48 extracted the read into a hook that binds the answer and the failure to their request key and reads through the surface's cache; a transport failure is still retained and rendered through the shared `ReviewProblemBlock` with retry, and a typed refusal still renders through `refusalBlock`, so this module's cases pin the same behaviour. The row now names the hook and every range was re-derived from its declaration. The mechanical-repair bullet below is superseded by this re-read. No verification stamp was advanced.
-- 2026-09-26T21:11:28+00:00: Generated citation repair: `refusalBlock` repointed to dashboard/src/panels/review/SourceContent.tsx:112-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **created.** The module is new in this leaf and this is its one-to-one card. It records the deliberate seam this module exists on: R03 owns `SourceContent` and its typed-refusal block, and this leaf's F1 fix routes only the pane's **transport-level** answers through the shared `ReviewProblemBlock` — so the card states that boundary first and then the three cases that pin it: an unwired adapter rendered with the owner's detail and next action **and** the pre-fix `review-source-error` paragraph asserted absent; an unadmitted query named as `validation` with no retry; and a socket that never answered offering a retry which then renders *whatever the read answers*, asserted through R03's own `review-source-refusal`. That last assertion is the seam itself, pinned rather than assumed. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00) — the line this candidate now sits on after the leaf's pair sync — while what was actually read is this leaf's **uncommitted** working tree at that base: this leaf's **uncommitted** candidate at that base. Nothing in this leaf is committed, so no commit contains the bytes a stamp would claim to have verified; closeout owns the stamp.
+No meaningful cross-repo references found.

@@ -1,0 +1,115 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/base.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The layout marker's pinned version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "content": "sha256:0d01b52ed95b66772d0aee9efa4706e9f1ef4cf3c5bd2208f2b78b5da10f6945",
+            "locator": {
+              "kind": "symbol",
+              "name": "pinned_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One base converted and memoized as a validator tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "content": "sha256:4b838a5d7d35a79b579d7086fe4049b3077ade8b5741cf6d3e27a6e9ee350cc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The base's own paired code commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "content": "sha256:0483befc4fc0fd18bc86d735867227e824c9ada17111467ddcbcd86ad1507ff4",
+            "locator": {
+              "kind": "symbol",
+              "name": "own_paired_code_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The commit route's converter, with the documented fallback-card difference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "content": "sha256:75c14335a1bed58790d86d4fc94943b7fcef5ab82f17aee9b11ad79804fd55f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitBaseConverter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Rule 7 for any comparison consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "content": "sha256:3faedd1b6cc0a694f6ddad75f8a8de7e8a16d3a83166e8f66c11fa6a632c721a",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_sides"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "content": "sha256:2975f8cbb973d91624e2b598e88cc7658907c6d142df5a31551495eb68689e61",
+            "locator": {
+              "kind": "symbol",
+              "name": "BeforeSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The commit route validates against the conversion of an unconverted base, at the base's own code commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "332a4fe6740f125bc2af30e9559bf2dd068bed92",
+            "content": "sha256:710ffa62bab4ded60e4038a8f12ebab029d34c2cbb3989aa471584da8261a0af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_commit_route_validates_against_the_conversion_of_an_unconverted_base"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

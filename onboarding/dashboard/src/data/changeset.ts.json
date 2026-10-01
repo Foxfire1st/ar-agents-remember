@@ -1,0 +1,171 @@
+{
+  "path": "dashboard/src/data/changeset.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Generation pins, the published generation identity, and the `committed`/`working` leaf-row state the master client threads and mirrors.\n\nAnchor: \"export interface MasterNetPins\"; \"export interface MasterNetGeneration\"; \"export interface MasterChangeset {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:c87098c78ba81a649a35582f80b2ce8ab8fe1bfaa70cfbda110c34cad0657b48",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:3653ba1ba3e72665595c656794db67d919c4c907aba3c304fc3b47ff62a21943",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation), and (260921-ICR-L25) the leaf view's `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one.\n\nAnchor: \"interface TaskChangeset\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:16f4fc80e1ee01ca1cf10038008ecf98f96f1d6ebf5e3ca1897d329aeb4a8722",
+            "locator": {
+              "kind": "symbol",
+              "name": "stateDetail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`.\n\nAnchor: \"export const taskChangeset\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:127983f0be5fd30082af5895c5685b96c40cc47a909437b6859378b13a0cf3f3",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Reuses the L1 files client's shared `getJson`/`qs` transport + `FilesApiError`.\n\nAnchor: \"export const qs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:a4ec5d18d9e2d69fc7161f77421ca6f300ae59ded246c4b59c8e1242906c6c57",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The serving layer that defines the endpoints + response shapes this client mirrors.\n\nAnchor: \"def register_changeset_routes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "content": "sha256:a1c6875e67d150246d40eb2ce98bfba02431de162fd326f2098a9315c9572e88",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 657
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`ChangeSetViewer` orchestrates `taskChangeset`/`fileDiff`/`masterChangeset` + renders `FilesApiError.code`.\n\nAnchor: \"export function ChangeSetViewer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:8990ca584a2c9c184bfd9925572668ff487773d133652ad50b8cb720e2c6ab52",
+            "locator": {
+              "end": 645,
+              "kind": "line_range",
+              "start": 645
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`DetailPanel`'s change-set button fetches counters via `taskChangeset`/`masterChangeset`.\n\nAnchor: \"masterChangeset(target.repo\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0c5e9dc847fb3e28e87709e1b8e9849d484f561",
+            "content": "sha256:f0fc39c848021c17128b9162a968b9260ec644e3e1cee3b433c263b22785570f",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping.\n\nAnchor: \"builds the task / file-diff / master URLs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8da7d3848373e1ba06c71f1d25a9244c95b03ff",
+            "content": "sha256:7b67309c208b206ea22249d95d9b0bdad801da2273299fc1331c2458f972f3a9",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/data/changeset.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

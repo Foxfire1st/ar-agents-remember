@@ -1,15 +1,5 @@
 # dashboard/src/data/submitMachine.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/submitMachine.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -55,43 +45,23 @@ A bare queued receipt is acceptance evidence, not proof that a request remains p
 withdrawable. Only the lifecycle authority's own queued word earns that claim; dispatching and unknown
 states start one bounded terminal-word watch shared with reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; the implemented state algebra and
 its tests are the authority for this internal protocol.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The lifecycle client feeds status, withdrawal, and response observations through this fold. | "possible-send-join" | dashboard/src/data/submissionLifecycleClient.ts:649-649 |
-| The transport driver preserves the same request id through submit and reconciliation. | `executeReliableSubmit`, `continueReliableReconcile` | dashboard/src/data/submitClient.ts:567-610; dashboard/src/data/submitClient.ts:612-618 |
-| The unit suite locks the partial order, availability-loss join, monotonicity, and deadlines. | "joins stale dispatching with newer authority loss as possible-send unknown", "finds only truly resolving submissions as active", "backs off 1s → 2s → 5s and stops before crossing the ~2 minute window" | dashboard/src/data/submitMachine.test.ts:102-120; dashboard/src/data/submitMachine.test.ts:136-151; dashboard/src/data/submitMachine.test.ts:192-211 |
+- The lifecycle client feeds status, withdrawal, and response observations through this fold. [1]
+- The transport driver preserves the same request id through submit and reconciliation. [2]
+- The unit suite locks the partial order, availability-loss join, monotonicity, and deadlines. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This state machine is repository-local. | — | — |
-
-## Update History
-
-- 2026-08-02T20:48:04+02:00 — 260731-EFA-L6 curator W2-B10: repaired 6 citation findings (3 reference rows); scoped recheck clean.
-
-- 2026-07-24T13:17:50Z — Corrected queued-receipt semantics and documented the bounded lifecycle
-  watch. Verification hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T21:39+02:00 — Created for 260715-FEUI-L5 after canonical review PASS; documented the
-  central evidence fold, real-time retry window, immutable request correlation, and the boundary
-  between availability loss and delivery truth. Verification metadata remains pinned to the leaf
-  base until closeout stamps the code commit.
+This state machine is repository-local.

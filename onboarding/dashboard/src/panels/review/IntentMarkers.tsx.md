@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/IntentMarkers.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/IntentMarkers.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:26:08+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -95,38 +85,29 @@ edits, comments on or assesses a change (the adopted Exclusions).
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R34@v1` (adopting `ICR-R34@v1`), the adopted `ICR-R24@v3` item 2 and the architect's rulings live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement: marks from the one classification, in the diff's own gutter; no editing, commenting or assessment. | "Every mark comes from the one per-file classification (MIK-R32)"; "Nothing here edits, comments on or assesses a change." | dashboard/src/panels/review/IntentMarkers.tsx:1-7 |
-| A pane's input, named so a return lands in the pane a marker was followed from. | `PaneMarkInput`; `PaneMarking` | dashboard/src/panels/review/IntentMarkers.tsx:109-127 |
-| Placing every owner hunk a pane draws, the reveal and list reopened on a return, and hunks past a bounded text named. | `returningHunk`; `usePaneMarking` | dashboard/src/panels/review/IntentMarkers.tsx:131-192 |
-| The mark: tone, spans, compact text below 40rem, and its accessible name (review R1 F2). | `MarkButton`; "_after: { content: 'attr(data-compact)' }," | dashboard/src/panels/review/IntentMarkers.tsx:37-64; dashboard/src/panels/review/IntentMarkers.tsx:194-229 |
-| The list: intents and tests apart, occurrences that follow their target, unknown lines, and the intersection-only sentence. | `MarkPanel`; `EntryList`; "Listed because a recorded range meets a changed line of this hunk" | dashboard/src/panels/review/IntentMarkers.tsx:231-346 |
-| The file-level mark and the past-text note. | `FileMark`; `FileMarkNote`; `PastTextNote` | dashboard/src/panels/review/IntentMarkers.tsx:348-380 |
-| The source-content view: marks only on the drawn blobs the classification names. | `describesDrawn`; `useSourceMarking`; `sourceInput` | dashboard/src/panels/review/IntentMarkers.tsx:382-454 |
-| Card excerpts: only the drawn sides compared (review R1 F1); an unchanged file's card never active. | `excerptWindow`; `drawnSidesMatch`; `useExcerptMarking` | dashboard/src/panels/review/IntentMarkers.tsx:456-523 |
-| Why a changed file shows no marks: unlisted, loading, unavailable or other content; never silence (review R1 F5). | `MarkReadNote` | dashboard/src/panels/review/IntentMarkers.tsx:525-564 |
-| One side's marks, and `Back to <file>`. | `sideMarks`; `MarkerReturn` | dashboard/src/panels/review/IntentMarkers.tsx:566-594 |
-| The renderers that place it: the source view, the lane windows and full file, and the card excerpts. | "const marking = useSourceMarking(expansion, mode, markers);"; `useWindowMarking`; "const marking = useExcerptMarking(card, layout, { before: true, after: true });" | dashboard/src/panels/review/SourceContent.tsx:83-83; dashboard/src/panels/review/LaneFileFocus.tsx:327-357; dashboard/src/panels/review/ExpressionCards.tsx:473-473 |
-| The renderer cases. | "marks each owner hunk on the owner's side lines, a deletion in the before editor"; "marks every hunk a window draws: the focused one and each neighbour its context shows"; "keeps the drawn side's marks when the other memory side cannot be read (review R1 F1)" | dashboard/src/panels/review/IntentMarkers.test.tsx:180-770 |
+- The module's own statement: marks from the one classification, in the diff's own gutter; no editing, commenting or assessment. [1]
+- A pane's input, named so a return lands in the pane a marker was followed from. [2]
+- Placing every owner hunk a pane draws, the reveal and list reopened on a return, and hunks past a bounded text named. [3]
+- The mark: tone, spans, compact text below 40rem, and its accessible name (review R1 F2). [4]
+- The list: intents and tests apart, occurrences that follow their target, unknown lines, and the intersection-only sentence. [5]
+- The file-level mark and the past-text note. [6]
+- The source-content view: marks only on the drawn blobs the classification names. [7]
+- Card excerpts: only the drawn sides compared (review R1 F1); an unchanged file's card never active. [8]
+- Why a changed file shows no marks: unlisted, loading, unavailable or other content; never silence (review R1 F5). [9]
+- One side's marks, and `Back to <file>`. [10]
+- The renderers that place it: the source view, the lane windows and full file, and the card excerpts. [11]
+- The renderer cases. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new marker UI module MIK-R34 adds, recording the L32 F5 carry (ruling 2026-09-30T13:07:38), rulings 2026-09-30T16:19:34 Q4 (card excerpts) and Q1 (the visible Back control), review R1 F1, F2 and F5, the review R2 gaps, and one candidate invariant. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

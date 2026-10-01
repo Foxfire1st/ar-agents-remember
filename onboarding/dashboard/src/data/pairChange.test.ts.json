@@ -1,0 +1,66 @@
+{
+  "path": "dashboard/src/data/pairChange.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pure machine under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:3a05288cf06ce1bea8bd87fc746f9b597db942146f3057213eda6099a1a5b84b",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyPairStepResult"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:169326367b71e865cdac382f4800b8e9b1c430e3509c71ba9093536874a4b8a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyPairRouteError"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:8519eaf304a46d494d50598dad873782d6da6cb5d96f47b828b6ef0b2a8f5fe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyPairReadback"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Production driver tests that prove actual POST ordering and route siblings.\n\nAnchor: \"serialized pair change (R5)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84bc53ef5dfb31d5d9b27448e091aa1e076002c0",
+            "content": "sha256:28ba6852d24f372e0244ad129637f0e44d625472ddbe4d4e8677f834800fc69d",
+            "locator": {
+              "end": 536,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "dashboard/src/data/setClient.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "A successor head revision of an invariant or family in the after snapshot of a leaf review comparison.",
+  "conditions": [
+    "The successor's statement fields (statement, applicability, conditions, exclusions) or joint guarantee are equal to the superseded head's, while its record status or version differs."
+  ],
+  "exclusions": [
+    "A successor with equal text and equal record status whose only change is realizations or members, which stays a typed relationship-only count."
+  ],
+  "id": "INV-SVZY1FHR",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "222f50bc-8293-4de4-9900-20d0abe43f5c",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "F3: the +/- counts are revision facts (master decision on count semantics); a record-only successor revision (identical text, changed status/version) counts once on each side like any revision, and a fixture pins it; wording presentation stays R35/L49's concern.",
+  "status": "proposed",
+  "supersedes": []
+}

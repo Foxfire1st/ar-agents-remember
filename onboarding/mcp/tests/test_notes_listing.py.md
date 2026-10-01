@@ -1,15 +1,5 @@
 # mcp/tests/test_notes_listing.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_notes_listing.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -108,45 +98,34 @@ not parsed JSON.
 No implementation scope is opened here. Re-timing the installed build on the live server belongs to
 L50 (worker observation O-C).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern the repository's
 own test fixtures and assertions, so the retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what it protects. | "The listing is fetched whenever a task opens" | mcp/tests/test_notes_listing.py:1-7 |
-| The isolated route harness: one repository, only the notes routes, a bare app. | `_client` | mcp/tests/test_notes_listing.py:31-43 |
-| The exact bytes `JSONResponse` renders, which the byte case compares against. | `_wire` | mcp/tests/test_notes_listing.py:59-61 |
-| The classification fixture, including the `ELOOP`/`ENOTDIR` symlinks and the in-root directory alias. | `_build_classification_tree` | mcp/tests/test_notes_listing.py:68-93 |
-| Byte identity over every entry kind, with the depth cap and `truncated`. | `test_listing_bytes_classify_every_entry_kind_and_prune_at_the_depth_cap` | mcp/tests/test_notes_listing.py:96-123 |
-| A directory swapped for an escaping symlink at its open is refused. | `test_a_directory_swapped_for_an_escaping_symlink_before_it_is_opened_is_refused` | mcp/tests/test_notes_listing.py:126-165 |
-| The `realpath` counter and the content-open refusal. | `_count_realpath`; `_refuse_file_opens` | mcp/tests/test_notes_listing.py:168-177; mcp/tests/test_notes_listing.py:180-184 |
-| Four resolutions at 6 × 1 B and at 240 × 64 MiB, with no note opened. | `test_listing_work_does_not_grow_with_note_count_or_content_size` | mcp/tests/test_notes_listing.py:198-218 |
-| A new or grown note appears on the next request. | `test_listing_reflects_a_new_or_grown_note_on_the_next_request` | mcp/tests/test_notes_listing.py:221-232 |
-| The refusal and read table. | `_REFUSALS`; `test_scoped_refusals_and_note_reads_keep_their_wire_answers` | mcp/tests/test_notes_listing.py:237-246; mcp/tests/test_notes_listing.py:249-256 |
-| The production walk under test: symlink-only confinement, descriptor descent, and the sort key's errno parity. | `_confined_stat`; `_open_subdir`; `_is_dir` | mcp/src/agents_remember/serving/notes.py:113-127; mcp/src/agents_remember/serving/notes.py:142-162; mcp/src/agents_remember/serving/notes.py:99-110 |
-| The routes under test. | `register_notes_routes` | mcp/src/agents_remember/serving/notes.py:279-288 |
-| The lane registration. | "mcp/tests/test_notes_listing.py" | mcp/tests/test-evidence-lanes.toml:201-201 |
+- The module's own statement of what it protects. [1]
+- The isolated route harness: one repository, only the notes routes, a bare app. [2]
+- The exact bytes `JSONResponse` renders, which the byte case compares against. [3]
+- The classification fixture, including the `ELOOP`/`ENOTDIR` symlinks and the in-root directory alias. [4]
+- Byte identity over every entry kind, with the depth cap and `truncated`. [5]
+- A directory swapped for an escaping symlink at its open is refused. [6]
+- The `realpath` counter and the content-open refusal. [7]
+- Four resolutions at 6 × 1 B and at 240 × 64 MiB, with no note opened. [8]
+- A new or grown note appears on the next request. [9]
+- The refusal and read table. [10]
+- The production walk under test: symlink-only confinement, descriptor descent, and the sort key's errno parity. [11]
+- The routes under test. [12]
+- The lane registration. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card covers test behavior only. There is no separate cross-repository protocol or live
 installation involved.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:30:45+00:00: Generated citation repair: "mcp/tests/test_notes_listing.py" repointed to mcp/tests/test-evidence-lanes.toml:201-201. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:07:38+02:00 — 260921-ICR-L55 curator (uncommitted candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`, re-validated after the L44/L45/L47 sync): created this card for the new module (5 functions, 6 cases). It covers the L55-A2 loop and file-traversing symlink entries and the directory-swap case. The card is derived from the candidate source, the worker report and reviews R1/R2. The stamp names the code base, and closeout owns the real commit stamp.
+No meaningful cross-repo references found.

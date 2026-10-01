@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -82,7 +72,9 @@ decision record of the candidate tree. The checks themselves are the pure functi
   worklist's `reconsideration.links` summary. The validator itself still resolves no endpoint (no coordination root
   on commit routes); the reads stay with L29.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R13@v2` of task
@@ -91,36 +83,24 @@ No domain documentation source is configured for this repository (`system/source
 shapes, and the coordination-root note Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`,
 section 4.5); they live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The five rules and their registration.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The decision files the raw superseded check reads. | `_DECISION_DIRECTORY` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:51-51 |
-| Every parsed decision with its path, and each problem as a finding. | `_decisions`; `_findings` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:54-57; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:60-62 |
-| The three refusing content checks, one per rule. | `check_alternatives`; `check_reconsider_when`; `check_reconsider_on` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:65-67; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:70-72; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:75-77 |
-| A stored superseded is named from the raw JSON, with the remedy. | `check_superseded_not_stored` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:80-97 |
-| A decision with no governs link is reported. | `check_governs` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:100-109 |
-| The five rules, four refusing and one report-only, registered on import. | `DECISION_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:112-144 |
-| The rule table the module docstring states, including why the rules apply to every decision. | "They apply to every decision" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py:1-24 |
-| D12 and D18 as records pass every rule. | `test_the_packets_d12_and_d18_decisions_pass_every_rule` | mcp/tests/test_knowledge_decisions.py:172-177 |
-| A governs-less decision is reported, not refused. | `test_a_decision_that_governs_nothing_is_reported_not_refused` | mcp/tests/test_knowledge_decisions.py:242-248 |
+- The decision files the raw superseded check reads. [1]
+- Every parsed decision with its path, and each problem as a finding. [2]
+- The three refusing content checks, one per rule. [3]
+- A stored superseded is named from the raw JSON, with the remedy. [4]
+- A decision with no governs link is reported. [5]
+- The five rules, four refusing and one report-only, registered on import. [6]
+- The rule table the module docstring states, including why the rules apply to every decision. [7]
+- D12 and D18 as records pass every rule. [8]
+- A governs-less decision is reported, not refused. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the rules read the validation context's candidate tree only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): this card's source is unchanged. **A forward reference to L14 is resolved in the Todos:** MIK-R14 adds the validator rule `R14.1-linked-alternative-order` (index stability, L13's carried Q6/F1) and reports `reconsider_on` requirement endpoints in the worklist's `reconsideration.links` summary (Q5/F2, partly: commit routes still resolve none, and the reads stay with L29). The installed fixer only normalised ranges here. No verification stamp was advanced.
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): created this card for the new file MIK-R13 adds, recording rulings 01:45:56 Q1, Q2, Q3, Q5 and Q6, and the review F6 note on admission. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,15 +1,5 @@
 # dashboard/src/panels/HighlightComposer.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/HighlightComposer.tsx`     |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-11T23:40+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`       |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -104,33 +94,29 @@ create a `useSyncExternalStore` update loop.
 
 No task-independent technical debt was identified during MX-FIX-2 review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The mouse-up selection snapshot it attaches to, including optional task leaf metadata. | `SelectionContext` | dashboard/src/data/selection.ts:9-16 |
-| Session creation supplies only accepted server ids; task-document lookup supplies structurally routed targets. | `createSession`; `findSessionForTask` | dashboard/src/data/sessions.ts:596-608; dashboard/src/data/sessions.ts:824-844 |
-| Reliable highlight submission, readiness, same-id retry, and endgame reconciliation. | `submitSessionText`; `retryRouteFailure`; `keepWaitingForSubmit`; `waitForSubmissionReady` | dashboard/src/data/submitClient.ts:828-873; dashboard/src/data/submitClient.ts:889-907; dashboard/src/data/submitClient.ts:921-949; dashboard/src/data/submitClient.ts:952-976 |
-| Harness discovery supplies detected create options. | `fetchHarnesses` | dashboard/src/data/terminal.ts:391-393 |
-| Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. | "leafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:716-716 |
-| The behavior tests cover direct leaf paste and fallback routing. | "direct leaf pill click submits through /submit; selection alone never acts"; "keeps a rejected direct submit visible with the verbatim detail" | dashboard/src/panels/HighlightComposer.test.tsx:380-420; dashboard/src/panels/HighlightComposer.test.tsx:422-457 |
-| The pre-projection task-document selector uses one stable empty snapshot, and its focused regression rejects React's uncached-snapshot warning. | `EMPTY_TASK_DOCUMENTS`; "keeps the pre-projection task-document snapshot stable" | dashboard/src/panels/HighlightComposer.tsx:52-55; dashboard/src/panels/HighlightComposer.test.tsx:140-153 |
+- The mouse-up selection snapshot it attaches to, including optional task leaf metadata. [1]
+- Session creation supplies only accepted server ids; task-document lookup supplies structurally routed targets. [2]
+- Reliable highlight submission, readiness, same-id retry, and endgame reconciliation. [3]
+- Harness discovery supplies detected create options. [4]
+- Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. [5]
+- The behavior tests cover direct leaf paste and fallback routing. [6]
+- The pre-projection task-document selector uses one stable empty snapshot, and its focused regression rejects React's uncached-snapshot warning. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## 260715-FEUI-L5 Reliable Submit Delta
 
@@ -150,55 +136,3 @@ leaf base; closeout owns commit stamping.
 
 The persistent highlight composer is now memoized. Unchanged shell props on a cockpit view switch
 skip its subtree while its own local and store-backed state still updates normally.
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "leafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:715-715. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "leafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:706-706. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "leafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:704-704. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `createSession`, `findSessionForTask` repointed to dashboard/src/data/sessions.ts:596-608, dashboard/src/data/sessions.ts:824-844. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "leafKey={viewedLeafKey}" repointed to dashboard/src/cockpit/Cockpit.tsx:689-689. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-12T04:04+02:00 — Documented the stable pre-projection task-document snapshot that prevents
-  the always-mounted composer from entering React's external-store update loop; added the focused
-  empty-analytics regression evidence. Verification metadata remains pinned until governed closeout.
-
-- 2026-08-11T23:40+02:00 — No content impact: `directLeafChatFor` now delegates the running-harness
-  validation, but direct highlight submission still requires the current structurally selected
-  chat and the reliable explicit-click path described above. Verification metadata remains pinned
-  until governed closeout.
-
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `HighlightComposer.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 5 citation claims; scoped recheck clean (0 findings).
-
-- 2026-07-24T13:17:17Z — Curator: documented the persistent-composer memo boundary; verification
-  fields remain pre-commit.
-
-- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: gated new-target highlight delivery on the accepted
-  server session id and surfaced typed open failure before readiness or submit. Verification
-  metadata remains pinned until closeout.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5: replaced highlight PTY paste with reliable, provenance-aware
-  create-ready submission and no-resend endgame handling.
-
-- 2026-07-02T20:55+02:00 — L8-r1 correction (developer feedback): the direct leaf-chat path no longer
-  auto-pastes on selection and no longer hides the pill — every selection raises the same "Add to chat"
-  pill, and only the pill CLICK routes: direct draft paste when the obvious leaf-chat target exists
-  (selector/message box skipped), generic composer otherwise; an unconfirmed direct paste opens the
-  composer. Restores the visible-intentional-interaction invariant the auto-paste had broken.
-  Verification metadata pinned until closeout stamps the L8-r1 commit.
-- 2026-07-02T16:18+02:00 — L8: added the direct leaf-chat draft-paste route. When the selection's
-  captured `leafKey` matches the displayed leaf and the right rail is actively showing that leaf's live
-  chat, the component calls `pasteDraftToSession` and renders no Add-to-chat UI; unconfirmed draft paste
-  falls back to the generic composer. The generic path still uses `deliverToSession` and submits only on
-  explicit Send.
-- 2026-06-23T13:45+02:00 — Task 11: `HighlightComposer` accepts `selectedLifecycleId`; open-chat
-  targets are filtered to sessions tagged with that lifecycle, and create targets pass the lifecycle
-  to `createSession` so new hosted chats become routeable for Gate Respond. Verification metadata pinned
-  until closeout stamps the task-11 code commit.
-- 2026-06-19T15:59 — Created for task 6 slice 6f-1: the two-stage highlight→context-package composer — an "Add to chat" pill on a mouse-up selection → a fixed-width composer box (snapshot-driven so clicking into it doesn't dismiss it; 5rem-min resizable message box; Enter=send+submit / Shift+Enter=newline). The target control lists open chats + a create option per **detected harness** (＋ Claude Code / ＋ Codex / ＋ Terminal), defaulting to an agent not a shell; delivery dismisses the composer immediately and runs in the **background**, gated on the harness being ready (`sendWhenReady` → `whenReady`) so a fresh agent doesn't drop the package mid-boot (two stdin frames: bracketed paste + Enter). Verification metadata pinned until closeout stamps the 6f-1 code commit.

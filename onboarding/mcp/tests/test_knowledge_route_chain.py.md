@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_route_chain.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_route_chain.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -53,7 +43,9 @@
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R05@v2` of task
@@ -61,38 +53,25 @@ No domain documentation source is configured for this repository (`system/source
 `05_route-chain-family-retrieval.json`); it lives outside the code and memory repositories, so it is named
 here and not cited as a row.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement. | "Route-chain family retrieval (MIK-R05)" | mcp/tests/test_knowledge_route_chain.py:1-11 |
-| The reused L01 and `read_ar_files` helpers. | "from test_knowledge_leaf_read import"; "from test_read_ar_files import" | mcp/tests/test_knowledge_route_chain.py:40-41 |
-| The world: the layout, routed families and the nested fixture. | `_tree`; `_family`; `_nested` | mcp/tests/test_knowledge_route_chain.py:44-65; mcp/tests/test_knowledge_route_chain.py:68-70; mcp/tests/test_knowledge_route_chain.py:77-92 |
-| The chain over nested directories, never a child or a sibling. | `test_the_chain_is_the_directory_and_its_ancestors_never_a_child_or_a_sibling` | mcp/tests/test_knowledge_route_chain.py:95-130 |
-| The exact compact entry. | `_F4_ENTRY` | mcp/tests/test_knowledge_route_chain.py:133-148 |
-| Compact entries after the leaf, `memberAtSeed` with live counts, and `no_governing_family`. | `test_chain_entries_are_compact_after_the_leaf_and_name_a_member_at_the_seed`; `test_a_chain_entry_flags_a_family_expanded_above_and_counts_live_members`; `test_entries_no_route_covers_state_no_governing_family` | mcp/tests/test_knowledge_route_chain.py:163-187; mcp/tests/test_knowledge_route_chain.py:190-204; mcp/tests/test_knowledge_route_chain.py:207-221 |
-| The conforming example. | `test_the_conforming_example_returns_the_governing_family_of_an_unattributed_file` | mcp/tests/test_knowledge_route_chain.py:224-252 |
-| Expansion from a family seed, and its spellings. | `test_a_family_seed_returns_the_full_family_content`; `test_a_family_seed_is_named_by_id_revision_or_projected_uuid` | mcp/tests/test_knowledge_route_chain.py:255-283; mcp/tests/test_knowledge_route_chain.py:297-307 |
-| The walk helper and the long fixture. | `_walk`; `long_tree` | mcp/tests/test_knowledge_route_chain.py:314-334; mcp/tests/test_knowledge_route_chain.py:340-359 |
-| The budget, the family-seed resume under any spelling, a lacking revision refused on resume, and the v1 token refused. | `test_chain_entries_count_toward_the_threshold_and_resume_like_the_leaf`; `test_a_family_seed_walk_resumes_under_any_spelling_of_its_family`; `test_a_family_seed_walk_resumed_naming_a_revision_the_tree_lacks_is_refused`; `test_a_continuation_minted_under_the_v1_policy_is_refused` | mcp/tests/test_knowledge_route_chain.py:362-373; mcp/tests/test_knowledge_route_chain.py:376-395; mcp/tests/test_knowledge_route_chain.py:398-414; mcp/tests/test_knowledge_route_chain.py:417-428 |
-| Only the `read_ar_files` rendering shortens a served entry. | `lifecycle`; `test_only_the_read_ar_files_rendering_shortens_a_chain_entry_served_earlier` | mcp/tests/test_knowledge_route_chain.py:431-465; mcp/tests/test_knowledge_route_chain.py:473-522 |
-| The lane row. | "mcp/tests/test_knowledge_route_chain.py" | mcp/tests/test-evidence-lanes.toml:111-111 |
+- The module statement. [1]
+- The reused L01 and `read_ar_files` helpers. [2]
+- The world: the layout, routed families and the nested fixture. [3]
+- The chain over nested directories, never a child or a sibling. [4]
+- The exact compact entry. [5]
+- Compact entries after the leaf, `memberAtSeed` with live counts, and `no_governing_family`. [6]
+- The conforming example. [7]
+- Expansion from a family seed, and its spellings. [8]
+- The walk helper and the long fixture. [9]
+- The budget, the family-seed resume under any spelling, a lacking revision refused on resume, and the v1 token refused. [10]
+- Only the `read_ar_files` rendering shortens a served entry. [11]
+- The lane row. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the cases build their repositories under `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:29:54+00:00: Generated citation repair: "mcp/tests/test_knowledge_route_chain.py" repointed to mcp/tests/test-evidence-lanes.toml:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): created this card for the new test module MIK-R05 adds (13 collected cases). It records the rulings of 2026-09-30 03:32:18 (Q1 family seed, Q2 `memberAtSeed` rows, Q4 policy `v2`), review R1 F1/F2/F4 (04:12:49) and ruling R2-1 (04:45:22). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

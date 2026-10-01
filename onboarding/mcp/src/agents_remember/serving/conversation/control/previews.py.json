@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/previews.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The repository `redact_secrets` policy applied to every preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96d40632f177b320536d7d5714aa414da5585df1",
+            "content": "sha256:efaa653e283d1ddd8953bda0d34edfc4faaa375e9e1385aa4f50d1410bae7df1",
+            "locator": {
+              "kind": "symbol",
+              "name": "redact_secrets"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `AssetReference` type covered by the asset-form digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:5ef6aa815c0aa0160332df6071787d7d6f9264f8dd05fd08ce643c58e588d9a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssetReference"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The submission authority's payload-digest construction this mirrors byte-for-byte.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bbfd2ca90b117c4a84a2a7541e741783c6af5a6",
+            "content": "sha256:5b5891be7070dd21032ff13a82bec16c0b67709337f25cc74fd7c4e6c612db86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_payload_digest"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bbfd2ca90b117c4a84a2a7541e741783c6af5a6",
+            "content": "sha256:64593e571206af580e8b8babd8e94bb1811ec9b63c29156b28e3518e848edb14",
+            "locator": {
+              "end": 1008,
+              "kind": "line_range",
+              "start": 987
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/adapter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The port implementation: recompute over the exact trees, decide, validate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc9d129e43bc39aafd9fb367b61c3b0abce5e664",
+            "content": "sha256:321135dc6437125426b29067e3c5a37f51171016fe28dc9b03a11b9d372a5818",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeGate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The leaf refusal over the candidate trees.\n\nAnchor: \"def leaf_refusal(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc9d129e43bc39aafd9fb367b61c3b0abce5e664",
+            "content": "sha256:6ea914dcd8d6ab1ac157d74afc565ebfb96445f80c1813ed3ebdde6444f0cc1f",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The direct and landing answers.\n\nAnchor: \"def direct_verdict(\"; \"def landing_refusal(self, request: LandingGateRequest)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc9d129e43bc39aafd9fb367b61c3b0abce5e664",
+            "content": "sha256:1072ee9cd332889e549e145fdffd517808873ff7176fe096a5d6c702527c5526",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The default composition binds it.\n\nAnchor: \"knowledge_gate=KnowledgeGate(),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08156caa47bcb0e5495d481eac020f2d7efb6cba",
+            "content": "sha256:cffde9c4f56f6f69b5b9ce77b7806d7cc9ad2993c7eff13aca5ba3f8d30de17d",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

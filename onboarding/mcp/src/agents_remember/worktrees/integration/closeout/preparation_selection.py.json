@@ -1,0 +1,119 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`selected_preparation_intents` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:7ba7c5fca3aecea0293eacd8b8632ff8bf507c93d9a67cf7f4f1e3a9cf5a2947",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_preparation_intents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`selected_prepared_code_history_commits` validates selected code and explicit predecessor history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:eac209b3805133f5c44832117e8af7f65437b471c1a6d8cdd5ddc312d1fb7b45",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_prepared_code_history_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`select_preparation_intent` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:af8f8bd40126af5bbfffe0adbf5408bc38e685040c666f58286944e8e97e6679",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_preparation_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_require_intent_owner` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:227d617982c38355938143ebec66ae06f43e55dc1309bf8ec34b71ecde5bc75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_intent_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_last` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:b48d1177196bd304b105b9b7e2ac70a7d5c8ef1cd5764e359989afb2e572d32e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_last"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_replace_last` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:a1923f8bdf1b8d776a2b688c2635e80032b20fe9587539841517736e86072448",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replace_last"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`_select` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:b3a19421a7a1dd6478cd8d448f0bd6593e023ae314507b701c1b9b188234bf73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

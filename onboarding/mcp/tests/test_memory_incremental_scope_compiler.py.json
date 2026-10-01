@@ -1,0 +1,183 @@
+{
+  "path": "mcp/tests/test_memory_incremental_scope_compiler.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Direct transitive and reverse only dependencies are complete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:44195f0d999476feb89b8410fb965e0f523f269799ed8f7fce9d6541ff29e3c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_transitive_and_reverse_only_dependencies_are_complete"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:b11be73a7459db8318c5c1fea51ea81f7a2c8a8d28381552733748cac0179125",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 226
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Full only checker remains pending without silent full fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:00702d2cc446e2937f04680618c4fce7afa819b239d16fb897c00bfb43e697f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_full_only_checker_remains_pending_without_silent_full_fallback"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:4bd898a6195560233ceb7a52b472e92aa05464609c936c3cdaef52b64df96051",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Stale index and adjacent candidate snapshot are scope unproven.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:cae51d23ceebbe97a5b65c2f3ea3bb40821a477250d8ea9f95ea1a19dcf37312",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_index_and_adjacent_candidate_snapshot_are_scope_unproven"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:0ec2dc107c65da6cf15bfb8ce783ae0180bba3965a7a8698cea5801f5465266c",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Missing or ambiguous r01 r02 authority is scope unproven.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:153305d338ae592ce9553baa0414cede6191f68acc3a0e51c35683f62ff6e81f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_or_ambiguous_r01_r02_authority_is_scope_unproven"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "R07 execution publishes every member and never promotes incremental success.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:26ed3775a0babbbe52efd58dcb1340508fa00bec03002f01db7046477bffca65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r07_execution_publishes_every_member_and_never_promotes_incremental_success"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:02bb9ec30ad69ef9783773a9bda4b7144d58bc3122cb938f963bb0981820b4af",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 570
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "R07 blocked unit preserves code and blocks aggregate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:460d8e7bdbad777f2a36dffa5c2760a294335cf5b1ab5c6d4c0a9d20a74675f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r07_blocked_unit_preserves_code_and_blocks_aggregate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "R07 unchanged interruption reuses exact passes without executing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:5b3037070eeae91769573a3a8491544f15192b50ff8b987b71228c7704cc481d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r07_unchanged_interruption_reuses_exact_passes_without_executing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "R07 memory change reuses only units with identical dependency inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f97f07e290b6c2d3d83d0dd7e5f5e9e847b69e05",
+            "content": "sha256:c1105b6e3af271eba933c1f99c7566167c36bcf3a6f7a0e9d86b77046e20bff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r07_memory_change_reuses_only_units_with_identical_dependency_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

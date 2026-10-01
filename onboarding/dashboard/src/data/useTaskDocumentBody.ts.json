@@ -1,0 +1,180 @@
+{
+  "path": "dashboard/src/data/useTaskDocumentBody.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The hook keys requests and body-payload storage by path/revision, merges into the current summary, records terminal availability, and discards late results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bf51b0a984191e58aeaf7c6434f659bb37dac0a",
+            "content": "sha256:0d6ffc85f1a3edeb5da304402725eb14f95437a157cb23bc8c307b97856cf82e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTaskDocumentBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`DetailPanelImpl` resolves the displayed reader document and passes it through the body hook.\n\nAnchor: \"function DetailPanelImpl({\"; \"export function useTaskDocumentBody(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bf51b0a984191e58aeaf7c6434f659bb37dac0a",
+            "content": "sha256:0d6ffc85f1a3edeb5da304402725eb14f95437a157cb23bc8c307b97856cf82e",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "content": "sha256:3e75639dc967c5251bc603dfa3620f2b36b8ff690c74215c355fdf044a6bea04",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The enclosure change-set controls wait until the body reader is no longer loading.\n\nAnchor: \"import { ChangeSetButton } from \\\"./changeSetBar\\\";\"; \"const { documentFor: fullTaskDoc\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:1f251117bc549daf67a1c264d6fa01e7158a78ec43aa08b83b9f276ae91b2994",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:7d5cf8caafd020b417a03d88b57c257b444a5481480e6d9acd8b5f69cb13552d",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "dashboard/src/panels/detail-panel/state.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The task-document reader delays its notes until the body reader is no longer loading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
+            "content": "sha256:d8274e76e06cec70165ab206f3f5700b8405bb0643825cd82c8ac85c3200c401",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskNotes"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
+            "content": "sha256:c06c43dd2b9dd67466ff17a202cc625577d29adb1d58f26b63c1b4ddb4c376d7",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The transport adapter owns the same-origin endpoint and non-OK rejection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e556f123a00e478e3cda966c38b2f5f480d44563",
+            "content": "sha256:d23293d031664a859281a7265df52025938e3fdac9a61838eb3ea0b58b43dad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchTaskDocument"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Component regressions hold the body request open, assert body-first ordering, cover full fields and fallback, and pin revision caching.\n\nAnchor: \"DetailPanel doc-reader change-set bar (L4a)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5b8df084c6385db1d80e60a120dd223bfd7dd9",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca5b8df084c6385db1d80e60a120dd223bfd7dd9",
+            "content": "sha256:7af1a225fc7e267d320260cbfb3d9e44a3981692e63fd0a321cdd37971dc0489",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Cockpit composition regressions cover direct leaf, master, drilled, lifecycle-bound, analytics-churn, and pending A-to-B late-response selection paths.\n\nAnchor: \"Operations click-to-detail body hydration\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc45f9a5cce0df9ea04fbf21f7a6079e360c9d8b",
+            "content": "sha256:d759b51404419114782f79de36f7ad7b29ee94f28584784d87bee08bf7cafa14",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Existing code uses a strict typed binding, while enabled code delegates to the private executor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "608eb4a161059821499e546a4dc6fffba39906a1",
+            "content": "sha256:02636bf3a0471886e8eeefc90c1cc36be1e42b78c6fba9c658ffdf8445d09af2",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_code_output"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "608eb4a161059821499e546a4dc6fffba39906a1",
+            "content": "sha256:69a9b825c95283c75d05f5965090ca5fe8c23e6abaa89d5fc586a9b107c05279",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_code_output"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Prepared or existing raw code output is retained through the shared selected-output owner.\n\nAnchor: \"retain_code_output(selected, raw)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "608eb4a161059821499e546a4dc6fffba39906a1",
+            "content": "sha256:69a9b825c95283c75d05f5965090ca5fe8c23e6abaa89d5fc586a9b107c05279",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_code_output"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The kernel rechecks actual HEAD/ref/tree and physical output around the raw commit read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:d6e601a17bc185d0885495f12b41adf50b514f3c3885efde325a7937ddc83573",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_existing_git_preparation"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:658a8aac1c8282e9444bfbfb030d2d882f09547a67fff567b005b4298e0c4049",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_existing_preparation"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:c0bfeb6477d366be13eefe654f109043534ccb536dde53e5a5a7a0e028380ee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_preparation_index"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

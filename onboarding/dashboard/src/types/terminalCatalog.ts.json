@@ -1,0 +1,63 @@
+{
+  "path": "dashboard/src/types/terminalCatalog.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The wire row separates runtime identity, structural binding, replacement, and dispatch receipt evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccf02e3f6a22b4e05160cd79e1102f882011c162",
+            "content": "sha256:53eef9300501823319a3ab96b4b238c9b207e82b43680e8d50045b52d5e38180",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalogRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ccf02e3f6a22b4e05160cd79e1102f882011c162",
+            "content": "sha256:6110d76bdc8e31f0c132825389b3482d2f44c4c024fb5c49d73f2f78a8278c74",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical task-document pair is declared locally for this catalog wire.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccf02e3f6a22b4e05160cd79e1102f882011c162",
+            "content": "sha256:72e3785ec63050b98da4b1b0b3dc2b205567d5c203f8443fd0f084f70a9fcda2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentRef"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ccf02e3f6a22b4e05160cd79e1102f882011c162",
+            "content": "sha256:10298b2370f5795724a3c1da154a0fec215e0474cf36c56c12b2b51875323b99",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

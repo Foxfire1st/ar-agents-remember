@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/requirement_links.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each requirement link target of the run's records, with the owner's resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9308bcce180144f9325e731ff2da7c4659162199",
+            "content": "sha256:9bb1294213cf33a4b1cdb5a94250bd0eb12a42d9650e3f39bd11d09267aed135",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_endpoints"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A lifted decision round-trips; one endpoint resolved, one reported unresolved; the rerun is unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eae6b589390b6de2545ea9d07bf58c1dfded606",
+            "content": "sha256:c3f9e8959460806f9fabd77bc3d0db4dfa0972fdd61e4b08dc2f12363642b97b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

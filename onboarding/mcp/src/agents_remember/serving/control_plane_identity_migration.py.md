@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/control_plane_identity_migration.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/control_plane_identity_migration.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Serving overview](overview.md)
@@ -46,19 +36,14 @@ remain strict after migration.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Startup log migration is explicit and context-bounded. | `migrate_control_plane_identity_logs` | mcp/src/agents_remember/serving/control_plane_identity_migration.py:44-107 |
-| Row mapping is one-way and field-specific. | `_migrate_row` | mcp/src/agents_remember/serving/control_plane_identity_migration.py:109-188 |
+- Startup log migration is explicit and context-bounded. [1]
+- Row mapping is one-way and field-specific. [2]
 
-## Cross-Repo References
-
-
-## Update History
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the one-way durable control-plane identity migration.
+### Cross-Repo References

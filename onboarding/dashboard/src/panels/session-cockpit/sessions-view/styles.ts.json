@@ -1,0 +1,56 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/styles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The layout recipes and constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "006e290bded152f1822d3fc223de72bed7bbc18b",
+            "content": "sha256:f44f714adca8bbab11bf0b4e1ef9195ec731af519f8a295f14faacf25bee0882",
+            "locator": {
+              "kind": "symbol",
+              "name": "root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "006e290bded152f1822d3fc223de72bed7bbc18b",
+            "content": "sha256:dd0502871ff9a03a756f941242c9ff38b53551925a9e5ebd8c8478fca96c6371",
+            "locator": {
+              "kind": "symbol",
+              "name": "stagePane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "006e290bded152f1822d3fc223de72bed7bbc18b",
+            "content": "sha256:a1c60ef9893382327c913cfd6f1ab3ffa7feab9ba732e6cd8307e09ce3586e2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspectorScroll"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "006e290bded152f1822d3fc223de72bed7bbc18b",
+            "content": "sha256:151975355359a20801963bac064cd8f5cf17e8210c48a16c4527e5a9cbc77556",
+            "locator": {
+              "kind": "symbol",
+              "name": "RAIL_MIN_PERCENT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

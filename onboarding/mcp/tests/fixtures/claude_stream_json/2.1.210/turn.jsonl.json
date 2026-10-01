@@ -1,0 +1,54 @@
+{
+  "path": "mcp/tests/fixtures/claude_stream_json/2.1.210/turn.jsonl",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture loader selects the 2.1.210 directory and parses each JSONL frame.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf7c8893dff6dca09491f55de24228a1d6930ac",
+            "content": "sha256:982a3091a36b4369d176ae608381df9328c3836d1a123984f7e2292901c27712",
+            "locator": {
+              "kind": "symbol",
+              "name": "FIXTURE_ROOT"
+            },
+            "path": "mcp/tests/test_harness_control_claude.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The correlated-turn test proves replay acceptance, retry settling, and terminal completion remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fa5ec10dad78b82fd474ed42904afeccbf02a4c",
+            "content": "sha256:a1aad07e126526447e40a0dccc347ae8c3165363b0b78dfd32a0492efd63fdcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_correlated_acceptance_retry_activity_and_terminal_result_are_distinct"
+            },
+            "path": "mcp/tests/test_harness_control_claude_stream_1.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2fa5ec10dad78b82fd474ed42904afeccbf02a4c",
+            "content": "sha256:7e3aa8ddd4c5c19b30c688c7bcb608733dcb863a1d6ac9c27a914a71fe49540f",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "mcp/tests/test_harness_control_claude_stream_1.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/serving/codex_app_server_protocol.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture pins the CLI version, protocol, and stable method inventory.\n\nAnchor: \"codex-app-server/0.144.3\", \"generatedBy\": \"npx --yes @openai/codex@0.144.3 app-server generate-json-schema\", \"model/list\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9acd6695169d0629fac981918f75be9251399eb",
+            "content": "sha256:da127b2b6dd4d9bc9b03123011e74dd2bafe930917710ecaaa8556d92f3f357d",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "mcp/tests/fixtures/codex_app_server_0_144_3.json"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adapter uses this transport for correlated fresh-turn settings application on the existing thread.\n\nAnchor: \"class CodexAppServerSession:\", \"async def set_model(\", \"async def set_effort(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "107323ca12efbef4744dffaaab55d0939866fa22",
+            "content": "sha256:b8304800b562b8985eea1914616589180db0d5f6e5abb21bc2061f3f8e123324",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "107323ca12efbef4744dffaaab55d0939866fa22",
+            "content": "sha256:0fd94a0741d048353be56095b109a9bea3412eeed85a2c7336f51b2493ac5c84",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 242
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:5103481c57d0f0dc0f76cd2cc8b3604c4e8296da4122add19e81745dc7e331a6",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:b3634dcc52527ac54a76fb8abd1e185207afe50553294a0a4cecc1b35c162443",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

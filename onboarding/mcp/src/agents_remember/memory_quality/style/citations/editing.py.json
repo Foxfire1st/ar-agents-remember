@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/editing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `Site` (lines 9-15) — The exact span of one claim's source list, in one line of one document..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc4378b3ec7e1694baccce5f2e8598a008668470",
+            "content": "sha256:b502de07960dd2f30e7e613d1c2a47451c8162f9985bf2d1f9a2b47be1fe08dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "Site"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `Documents` (lines 18-27) — The memory documents one run reads, split so that rejoining is lossless..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc4378b3ec7e1694baccce5f2e8598a008668470",
+            "content": "sha256:781fbd5445b27b7d11294f54f2f005fa963a20f9857e8e9796ca1275566e8f6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "Documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `spliced` (lines 30-34) — ``line`` with the source list replaced and the cell's own padding untouched..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc4378b3ec7e1694baccce5f2e8598a008668470",
+            "content": "sha256:bc1e5cb85f920afb6ef7086a1fcfbefe22838b4c09af408a336dcd0e69aa3ad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "spliced"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `rewritten` (lines 37-42) — ``lines`` with each site's source list replaced, right to left so offsets hold..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc4378b3ec7e1694baccce5f2e8598a008668470",
+            "content": "sha256:b47bc69a0d39bf7083a968bf4835d7f6344734933b6b595fe9cc881d24ae5759",
+            "locator": {
+              "kind": "symbol",
+              "name": "rewritten"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

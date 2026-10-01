@@ -1,0 +1,151 @@
+{
+  "path": "dashboard/src/panels/sprint-graph",
+  "references": {
+    "1": {
+      "note": "The wave-grid component groups projected nodes into wave rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8829a127167d50f8d61ecb19931a9ea01f2a4cd4",
+            "content": "sha256:97a09c391790911e5e80370caa44a6c2d9109dc5b05ae4e03c253ecd36acb591",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphView"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exported responsive layout contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc87a76606193c60a16b87908c901278951e8362",
+            "content": "sha256:c2a38597e09b2f1568795b2529db88b97948ec861b7950908616a9b62a923519",
+            "locator": {
+              "kind": "symbol",
+              "name": "waveGridStyles"
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc87a76606193c60a16b87908c901278951e8362",
+            "content": "sha256:4607313f16f9a165f471221d4a4ff8727d45751431c806dbefbaafe1b809bda1",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafLineStyles"
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The master reader mounts the scoped queue independently of its optional graph section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:870f45dc6d4b00dc1d5a9a77d0b6aec42efb4c4df16fd13c52b6e9fe1580d60f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterOverview"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:a69d6c3ed7680a2369192bb27d9a48da292c1e4a4d1b59b7116126ca9d20e2ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphSection"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shell suite proves graph/queue reachability, graphless queue access, and mounted canonical-reset clearance.\n\nAnchor: \"sprint page shell (L12-R5)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1b733ab38f367f1c6ed72ba59926c718fb1860e",
+            "content": "sha256:ff353cc0dd6338a7111856285952b326b785485d0e559fc0c6d877c84142ddf9",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The render-ready wire model this route consumes.\n\nAnchor: \"export interface TaskExecutionGraphView {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:aaf4594f61d735a88a3580e6cd5f5763836b37158ba663039a45051a4dc7aedd",
+            "locator": {
+              "end": 720,
+              "kind": "line_range",
+              "start": 720
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The deterministic mermaid document-diagram sibling of this view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce4fa944a1f9e7f2fbfad5273e0b058c437d29b3",
+            "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execution_graph_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one-shot mounted-UI evidence surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95a59d4a85525f50216856b227bd1864e2dcb773",
+            "content": "sha256:89acca4aa72ca1af52d10dd2614b0f13d7437e01c52ca83507a39751ee65d4d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphPage"
+            },
+            "path": "dashboard/src/dev/sprintGraphPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

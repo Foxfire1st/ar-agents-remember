@@ -1,0 +1,80 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "A single owning route with strict containment was drafted, weighed and rejected, and the choice binds how every family record places its routes."
+  },
+  "alternatives": [
+    {
+      "option": "Several local routes per family: each route is a local subtree, possibly deep in the tree, where part of the family's code lives",
+      "reason": "Local routes are not a total container. Together they make it easy to find all code across the codebase that belongs to the one family.",
+      "status": "chosen"
+    },
+    {
+      "option": "One owning route that contains every realization of the family",
+      "reason": "A family whose code spans subtrees is pushed to the repository root, where the route describes nothing locally and is never accurate.",
+      "reconsider_when": "Families rarely span subtrees in practice.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Coverage and Non-empty are checked over a family's whole route set, not per route owner.",
+    "The family record owns its routes; overviews never register families, and a family is not repeated at every overview above its code.",
+    "Routes are placed as deep as makes sense; a moved or emptied route is route maintenance for the leaf that causes it."
+  ],
+  "context": "A family's realizations live in several subtrees of the code. Its routes must make all of that code easy to find across the codebase, and must stay accurate as code moves.",
+  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D12)",
+  "id": "DEC-G7B1DV",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/memory_quality/knowledge_validator"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+        "content": "sha256:261d47704476fd97f63d9a30c59d5ae33591bd3a11346ae580a2a6588d2b552c",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_route_state"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R04",
+        "packet": "requirements/MIK-R04-v2-family-routes.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": "ASM-XBBQ30"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION D12 (260928-MIK, developer ruling of 2026-09-28)"
+      ],
+      "path": "10-decisions.json"
+    },
+    "handoffEntry": "RULING-D12",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

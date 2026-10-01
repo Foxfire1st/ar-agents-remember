@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/files.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/serving/files.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T07:05+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -148,19 +138,19 @@ rejected, never silently re-rooted).
   `serving/response_contract.py` in the same change — `extra="forbid"` makes an undeclared key a
   failure, which is the point.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_resolve_within`) extracted to and imported from here (L3). | `_resolve_within` | mcp/src/agents_remember/serving/scope.py:205-213 |
-| The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`. | `add_middleware` | mcp/src/agents_remember/serving/app.py:287-287 |
-| The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
-| The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. | "test_worktree_support.py" | mcp/src/agents_remember/kernel/coordination_context_resolver.py:157-157 |
-| The repo allow-list authority guard (`require_repo` → `RepositoryScope`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
-| `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. | `allowed_repo_ids` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:150-152 |
-| The leaf-enclosure contract enumerator the catalog walks. | `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/tasks/task_paths.py:61-66 |
-| The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. | "coordination.worktree_group" | mcp/src/agents_remember/worktrees/worktree_contract.py:1031-1031 |
-| The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. | `discover_route_overviews` | mcp/src/agents_remember/kernel/onboarding_doc.py:70-87 |
+### Repo-Internal References
+
+- The shared scope layer (`FileScope`, `resolve_scope`, `run_scoped`, `language_for`, `_resolve_within`) extracted to and imported from here (L3). [1]
+- The app factory that calls `register_files_routes(app, config)` immediately before `mount_static`. [2]
+- The shared, side-effect-free sidecar pairing + path-confinement helpers this module reuses. [3]
+- The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. [4]
+- The repo allow-list authority guard (`require_repo` → `RepositoryScope`). [5]
+- `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. [6]
+- The leaf-enclosure contract enumerator the catalog walks. [7]
+- The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. [8]
+- The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. [9]
 
 | The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:714-720 |
 | Current production declaration; the removed broad suite supplies no current execution proof. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:303-325; mcp/src/agents_remember/serving/files.py:298-298 |
@@ -170,58 +160,3 @@ rejected, never silently re-rooted).
 `list_repos` now walks the task surface once, buckets entries by repository, and applies a short TTL memo. The repository-files API no longer repeats the same whole-task-tree traversal for each repository in one request.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/serving/app.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: `add_middleware` repointed to mcp/src/agents_remember/serving/app.py:286-286. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `add_middleware` repointed to mcp/src/agents_remember/serving/app.py:285-285. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "test_worktree_support.py" repointed to mcp/src/agents_remember/kernel/coordination_context_resolver.py:157-157. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `allowed_repo_ids` repointed to mcp/src/agents_remember/kernel/primitives/runtime_config.py:150-152. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "coordination.worktree_group" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:1031-1031. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "coordination.worktree_group" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:1016-1016. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator: repointed one reference row after the 260913-LCA-L5
-  move. `iter_leaf_enclosure_contracts`, the enumerator this catalog walks, is now defined in
-  `mcp/src/agents_remember/tasks/task_paths.py:61-66` rather than in `worktrees/task_resolver.py` (whose
-  `:80-85` now holds a different function); `worktrees/task_resolver.py` re-exports it, so this card's
-  behavior claim is unchanged and only the anchor moved. No source file this card documents changed.
-  Verification metadata remains closeout-owned; no execution or acceptance claim.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "coordination.worktree_group" repointed to mcp/src/agents_remember/worktrees/worktree_contract.py:1022-1022. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T21:54:05+00:00 — Preserved response-shape and validation boundaries while removing active enforcement claims for the retired conformance suite. Source declarations were inspected; no replacement coverage is asserted.
-
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `add_middleware` repointed to mcp/src/agents_remember/serving/app.py:284-284. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T21:25:17+02:00 — 260731-EFA-L6 curator W2-B10: repaired 26 citation findings (12 reference rows and 2 prose pointers); scoped recheck clean.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T08:36+02:00 — 260731-EFA-L4 curator: recorded the four `response_model`
-  declarations cit:([`register_files_routes`], mcp/src/agents_remember/serving/files.py:296-325) and the shared `SCOPED_READ_RESPONSES` table, including why
-  `/api/files/repos` alone declares no refusal shape (no refusal branch — the catalog is built
-  from the allow-list) and why `/api/files/onboarding` declares a five-shape union rather than
-  the forward shape only. Noted that FastAPI validates none of these handlers, because all four
-  return a `JSONResponse` directly, so the gate is `test_serving_response_conformance.py`; added
-  that boundary and two reference rows. No bytes moved on the wire. Verification metadata pinned
-  until closeout stamps the L4 commit.
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): `read_file` and
-  `_onboarding_doc_body` now cap through the shared `scope.decode_capped`, which cuts at a UTF-8
-  codepoint boundary — an oversize text file (or overview) whose multi-byte char straddles the 2-MiB
-  cap returns its first ~2 MiB with `truncated:true` instead of misdecoding into empty `binary`.
-  Boundary test added to `test_serving_files.py`. Verification metadata pinned until closeout stamps
-  the L18 commit.
-- 2026-06-30T00:00:00+02:00 — operations-integration L5: the reverse-pairing overview node now carries its own
-  markdown `body` via the new `_onboarding_doc_body(scope, rel)` (confined, size-capped,
-  binary-tolerant; `None` on missing/unreadable/binary or no onboarding root), so the File Viewer can
-  render an opened route overview's prose instead of an empty "no code partner" placeholder. Pinned in
-  `test_serving_files.py` (the partnerless overview asserts the markdown `body`). Verification metadata
-  pinned until closeout stamps the L5 code commit.
-- 2026-06-29T15:30+02:00 — operations-integration L3: extracted the shared scope layer (`FileScope`, `resolve_scope`, the `run_scoped` error mapper [was `_run`], `language_for` [was `_language_for`], `_iter_repo_contracts`/`_find_enclosure_contract`, `_resolve_within`, `_LANG_BY_EXT`) into the sibling `serving/scope.py` so the L3 change-set backend (`serving/changeset.py`) reuses one resolver + 404/400 error map; `files.py` now imports them from `.scope` and re-exports `FileScope` + `_resolve_within` for existing callers/tests (behavior-preserving — L1 tests unchanged). Verification metadata pinned to the task base until closeout stamps the L3 code commit.
-- 2026-06-28T22:41+02:00 — Created for operations-integration L1: the read-only `serving/files.py` files API (repo/enclosure catalog, list-dir, read-file, forward/reverse onboarding pairing) bridging the dashboard to the kernel `CoordinationContext`, registered before the static mount in `create_app`. Reuses `kernel/sidecar_pairing.py`; degrades to code-only browsing for memory-less repos (missing onboarding is not an error); confines every path with `confine_rel`. Verification metadata pinned until closeout stamps the L1 code commit.

@@ -1,0 +1,99 @@
+{
+  "path": "mcp/tests/test_terminal_liveness_deferred_work.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The full and starting sweeps collect pending syncs inside the catalog batch, then drain them and invoke callbacks after the batch exits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:ecf9805e5170a4d00f3b6f3490b33284da3f03a5a6d367381d719c50eb6ed2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:a49169e89e3d7dc80c0eaa02e6fcaa842e6872ce33a14038f4866f4f6867beec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_starting_rows"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The deferred drain re-reads committed rows before invoking the observer, while the row-local guard records `interactionSyncError` and continues on later rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:d6fb26736681fc4863ff0017f03458d6e46c8184d8c557b0a7339bd9bdd8eb04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_deferred_interaction_syncs"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:5e11f5f89f3bcefad9cd9dfb69a7d90c6eca02481b176af0a2f4a30f5babaa3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_control_snapshot"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module exercises full/starting order, aborted-pass suppression, guarded continuation, and post-commit failure durability with the real catalog and sweeper seams.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf78922a0a7f0dc4427faaf5244b93310d32e96",
+            "content": "sha256:de3cd890139d012f0a0edf84abbf089942bf18e7672194b2e7f3905a127c65eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalLivenessDeferredWorkTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The candidate classifies this module once in the explicit unit-regression lane.\n\nAnchor: \"mcp/tests/test_terminal_liveness_deferred_work.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:66ba62c7018ca131265254892e4a914851a8eac12533f89732cd496a9154386f",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_controlplane_gates_tool_2.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Cancel deletes gate and pending inbox entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8220fcf57ac89cd915cbfc35f8a7a0b59e10fc7b",
+            "content": "sha256:9c43add6a6d188d5cdb7deedb3e934ad1280a10b706c1666c38bea86adfe4f3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancel_deletes_gate_and_pending_inbox_entries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Wait times out while open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8220fcf57ac89cd915cbfc35f8a7a0b59e10fc7b",
+            "content": "sha256:4b7782437d4fada3d83771c6fcba2ae476fa321d16a9d462dc663637b63eafa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_wait_times_out_while_open"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Response wait returns matching inbox entry without consuming.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8220fcf57ac89cd915cbfc35f8a7a0b59e10fc7b",
+            "content": "sha256:8ace52c9279448efa7b759920d7ab72bedde2a2a35ef38a9abcc69b2fa4562a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_response_wait_returns_matching_inbox_entry_without_consuming"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Decide for lifecycle rejects stale expected gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8220fcf57ac89cd915cbfc35f8a7a0b59e10fc7b",
+            "content": "sha256:d15c312f400c6c514facd866de7750b2d8227b29a47e6d7e0f1fe8171373fa04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_decide_for_lifecycle_rejects_stale_expected_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

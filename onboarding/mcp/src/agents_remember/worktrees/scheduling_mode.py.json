@@ -1,0 +1,100 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Mode resolution: graph selects dag; absence selects the atomic-sequential default that describes the sprint's shape and serializes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ac9e96196019e4ee2e1b2c29f00e136b3d582",
+            "content": "sha256:5a7affa7cb290d9c42d24f3b951c9744ac8c48ba10a0b8ea08bfad82e0e75b6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_scheduling_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Membership derivation under either mode, with neither contract presence nor graph absence adding a dependency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ac9e96196019e4ee2e1b2c29f00e136b3d582",
+            "content": "sha256:ed5fa27e69eba658424d50d7fd8e740931f78fbc822dff7cb65647da0e4664e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "commanded_sprint_masters"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The single effective-nature resolution every consumer shares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ac9e96196019e4ee2e1b2c29f00e136b3d582",
+            "content": "sha256:a6cb2f2495d516f8ed57f18d4c8ef5c7e22d45ff883adb7d05eb8046ecb09cb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "effective_execution_nature"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Terminal series artifacts under organizational masters degrade to a reported fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ac9e96196019e4ee2e1b2c29f00e136b3d582",
+            "content": "sha256:8bd6cf3c67659eef1620073f60172c4bb94c9cbea9e80bed09cd74cec760e05d",
+            "locator": {
+              "kind": "symbol",
+              "name": "stale_series_artifact_fact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Per-contract selection is a separate strict authority: the observation is addressed by `contract_fingerprint` with vacant/reconciling/active states, and the strict reader takes the contract.\n\nAnchor: \"contract_fingerprint: str\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:67f981d99ac9e851f2030e936ad98a43b4ec55f0c226036dd48a5228d87e0c2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicSeriesActivationObservation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:8873f85453764b66074b38456dd555d2d7a1a5e400b0f7c6795998742010474c",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_atomic_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

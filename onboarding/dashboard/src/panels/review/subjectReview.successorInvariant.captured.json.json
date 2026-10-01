@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/subjectReview.successorInvariant.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case or response retains its declared selected input.\n\nAnchor: \"revision_selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0c1b6a6b4981291e0fa730a5af8c0eb65e647ba",
+            "content": "sha256:1de497d707676f3258bad3d0a4df1e128dfa47cc3ddc0fbec78d2a45e2c17da0",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,78 @@
+{
+  "path": "dashboard/src/panels/HighlightComposer.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The composer under test.\n\nAnchor: \"export const HighlightComposer = memo(HighlightComposerImpl)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa80cd235860d5cf52dd34f48e44fb6882c5c312",
+            "content": "sha256:a1de84cf690853f183c6565764021c1e112b10be13ae54053aff8d04fcee308c",
+            "locator": {
+              "end": 1140,
+              "kind": "line_range",
+              "start": 1140
+            },
+            "path": "dashboard/src/panels/HighlightComposer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The accepted-row create helper and routed session store.\n\nAnchor: \"export async function createSession(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:95c2ce88894ed70cd77db6c143c2e3f1e54c36afd88a7aab27d0d57d8dd0f2a1",
+            "locator": {
+              "end": 824,
+              "kind": "line_range",
+              "start": 824
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mocked reliable readiness, submission, retry, and reconcile seam.\n\nAnchor: \"export async function executeReliableSubmit(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:5ea71e75581b6566bcb8022121aecee9567286ed3165daaca559d9318a28a5ea",
+            "locator": {
+              "end": 567,
+              "kind": "line_range",
+              "start": 567
+            },
+            "path": "dashboard/src/data/submitClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The stable-snapshot regression clears analytics, renders the composer, and refuses React's uncached-snapshot warning.\n\nAnchor: \"keeps the pre-projection task-document snapshot stable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4da791e58b50c56e88235301576afa5c87173f16",
+            "content": "sha256:ead39980dd24a0b15c8e276254a2e5a82c6480e23193fc62ab4a9597e3fee32a",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

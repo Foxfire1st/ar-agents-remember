@@ -1,0 +1,195 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/task_leaf_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Binding models and resolution establish the canonical leaf identity through the shared pure task-domain owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:76ae148bbae9b2437460a12250a791beef34b4796e372eb36a47bc2cae8d1e5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafTaskBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:ef37556250e8fa61f448f404268705147a3a24c7f475a127257f23cf07d984d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_leaf_task_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parent and child source readers enforce exact regular-file authority after canonical row/source derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:df231f4cc43e9a6461a410a4d754be3abc7cef80ac1b8c5e553687a652584f28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_leaf_parent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:cd0371915c7fe1900f600cbdd49ab3b5df1696ebb7420530e2906af1c66bb26e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_leaf_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Start admission rechecks the same canonical composite binding before reserving lifecycle authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:3ec5ba065f36ffac54272dd31fd20effa415e14ded2a54b7ff5d7191c9fa2dcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_start_task_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The registration planner this module delegates to, and the admission gate that now names the missing master link instead of reading it as present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:0ffd79b744b7109023faaac368528614523a417295e9b5a447af892600b67003",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_current_leaf_enclosure_registration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:53e338ecd6b60e94356ce55a36630d7831af36729cf3c38f0e5dde95b2aa8210",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_leaf_enclosure_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The typed facts carried by the new refusal, including the named recovery operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:7ef354ea7b1d7d0ed619604a2aaa59025a91710828df9d4382b3a411fa84e763",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enclosure_binding_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The planner whose `master-link-missing` state this gate reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:ac187f17699856e16148daef0e2c23405896254239757086dc1c67c12bdb2ed4",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_leaf_doc_enclosure_registration"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:67d173a11adfb1315913dca948f6964a0b30a6ca7309863994a9fa658146c3d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enclosure_registration_state"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The start/attach publisher that is the named recovery, and therefore the operation that actually binds the field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:8af478d5fd0c649ee215e10416d04cbaf1110d83d672561697f4ddf107ebb15d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_leaf_task_enclosure_binding"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two shared fixtures that had to carry the derived fields once this refusal existed, because they were modelling the damage state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:d053e6131889082104d9b1784cb21740718548924a9008c15f25aa6e4c98ff50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:ec84bd3f5d58f33e92c80b0126b61cb23655d9c8abf899d99b928c7e24fe1c38",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bind_task_without_review"
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

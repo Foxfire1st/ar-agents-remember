@@ -1,0 +1,366 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/citations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The two entry points and the transaction split that makes a refused write leave nothing behind.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:7cd4502288b8aead426cf3301505e0ad9b4b5028c777629491d312d6af0db727",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_citation_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:886a5360a9e5da55fcec2ca0b79c213645e849bb5d15a9e6883a17baab74bb58",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_citation_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The boundary cases that measure the write refusals: a wrong-kind target, a target the namespace does not hold, and a dangling governing route beside an accepted ungoverned binding.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:cccb27c89b6971df731ebba587a1d1bfafb5c0348ef5e33541c810e7700661b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrong_kind_target_is_refused_at_the_write_boundary"
+            },
+            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:e3f9addc2ed785533e7f546173f4c33a6e34cebe69e2a2b59c48852a018cdf25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_target_record_the_namespace_does_not_hold_is_refused"
+            },
+            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:e1e6f5ea984d612f4e6e81436c8dbab5a8aa3b84e2e9f07937748e581f0fde94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dangling_governing_route_is_refused_and_an_ungoverned_binding_is_not"
+            },
+            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The boundary case that proves the store itself refuses two bindings claiming one key in one owner revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:58f1f17f7a38f3a8ef8be3a7d8a64df87936aad6d216e6ce7ceea377e1e74a5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_bindings_claiming_one_key_in_one_owner_revision_are_refused_by_the_store"
+            },
+            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The one payload decision point, and the reference check that refuses a wrong-kind or absent target before any row exists.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:6c395413915dd76473912a5952192e65adc597e236a55b9a9cfbd3c353f96024",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:75758aa0298a00ddf0670168b75e7a0ef522888152a6669bb11d8858960ca5d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_target_reference"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:d6bc536978de278aa51d256874e02ede6427e49103bfe4f599677745560a6a9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_target_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The governing-route check: a named route that is not authored here is refused, and `None` is the explicit ungoverned state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:bb35e577110111e03641285f520c0cae87edfa68ec145784e6001e3db4215674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_governing_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The generation gate: a dataset that predates the binding table is refused with the observed generation as a fact.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:d57ed25c08b53f2e29129de1bf478d2b197a5f643df979f254d072915cab3ac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_binding_generation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:69d7bede498b897e89a85c984440ea8cdd1d1a55de63e8e534735d17ff5526e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIRED_BINDING_GENERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The row codec, the canonical key text and the row digest over the recorded columns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:ddb383a5ed07f5bc87771056107f0bcb41621d0787a7758f69c2a66cb84f0ff5",
+            "locator": {
+              "kind": "symbol",
+              "name": "binding_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:39c08c3f1a3d6d031b9af1b807c0f4d50c6984ef4e384e4f20b886732ad2d993",
+            "locator": {
+              "kind": "symbol",
+              "name": "local_key_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:9ff5fc2f446800fb695dd2bc7740550ad6eb010dce883cd7052582040fd46cc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "binding_row_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The ordered binding identities the read path enumerates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5bdc578ab7dd7db66df221fddda7a962605002d",
+            "content": "sha256:65b964318eaf350037f1ea58bb3d20f469f38d5f435c21014d38e0c1c9c5dccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_binding_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one envelope seam this write path validates through, and the registry its decision reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:a70c5252d91317d7a1e283ddcb483f6714da87613f16dd6229fe84b06582cb7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_record_payload"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:08f75fed96d49a9787dc60c10f9dbc4e7d79487c6e07713d5a2f7e0f83d9c199",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:8fe3fc2f5f410f1f38f1332530e7d3b13105fc1bd346cf97bd9c06ee4750f497",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The revision-row helper the sealed revision is written with, and the draft it takes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:b38b6fbb29fb867703f862d220d7aa57326cf6d5323016da20093cb2e427a251",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordRevisionDraft"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:90875c8c92b4e276f61848d5ee919776a7112beba0c6166582de7b893ca80d8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:6cbf65be7503a14ba23c76e66daa20ebd58741813b9d4e9fc3c3f092e4517698",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_digest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:1286b9f1eb5ca5f9139a68ef6b2799d1b449c4a80ee74545685a368d4eb91329",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:ce0d5a39ed214caa2596e29ec11f3aa1222bef2792434fbb16c09f7bad8d5338",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two operation members this write path and its read partner register.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

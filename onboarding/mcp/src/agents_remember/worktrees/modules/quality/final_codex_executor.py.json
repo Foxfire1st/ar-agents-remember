@@ -1,0 +1,232 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Certifying repetitions bind the frozen R12 host authority and never select, copy, replace, or privately provision infrastructure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "content": "sha256:258eaa5d6fe4ade56e39b13f9b7c46d1962ef159f76272cf4d1099f8f9bb78f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41a89dbdabc0301f09afec0b6d6b3e766df374fe",
+            "content": "sha256:5f3a3344b5c5d5ab2c212bebef152b1d6cd0b8b35cb6941f7709d7060ce67080",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_dagger_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41a89dbdabc0301f09afec0b6d6b3e766df374fe",
+            "content": "sha256:5f3a3344b5c5d5ab2c212bebef152b1d6cd0b8b35cb6941f7709d7060ce67080",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_dagger_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41a89dbdabc0301f09afec0b6d6b3e766df374fe",
+            "content": "sha256:7e7dc47a742753da2d7797c9f144ad0644de688aa36a537a1a78da22fdd626f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityRegistry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41a89dbdabc0301f09afec0b6d6b3e766df374fe",
+            "content": "sha256:ddcfe4ed4be952e2c0e15bdc7335395474fcbe1100767a5393be7765f0fc8b5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_dagger_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Validate a complete terminal catalog and publish one immutable gate disposition.\n\nAnchor: \"def compile_gate_result_manifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:cf66e3b2e5eaf8978a1b4158f48a4f19d13be247bd3aa2b4377791cd5980da82",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/certification/results.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence.\n\nAnchor: \"class GateResultManifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ee9bd6fd62848e54b9ca45db90d0826d4933cc8",
+            "content": "sha256:5632dd982f1758da5b27af1f1d9ceaf0d37cec772bc3101501a482f87789020f",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The durable final-codex store owns reservation, running, publish, and the CAS chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "content": "sha256:069c43ba7fc094b43e3a20bd58bc3b1ef58d2c46ea07c16528e13641b8b37cfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexManifestStore"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The lane projection gates certificate readiness for the run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d82206df65a4d165e76fd1edb7adec29c8a328cb",
+            "content": "sha256:fe5cc6780811476e8324e74090cf0be095f86929c3a5c69d675cfbb54d8f17e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_final_codex_lane"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The certification facade imports final-lane contracts and projections; the concrete run-control entry point belongs to the higher worktree quality module.\n\nAnchor: \"from agents_remember.certification.final_codex import (\"; \"class FinalCodexExecutionEngine:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
+            "content": "sha256:1a0377296fa8c56ac1e4865df2d0b956e41146d9e9f865228d9fa157ec8a1173",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "content": "sha256:51056314c7bca395c54b0101dc3f0a7b9f0db61687c234c3235dd41d14ca52af",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The controller passes each generated identity to an injected runner; identity generation uses the controller PID and is not itself process launch evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "content": "sha256:2aedc78e7ea59dcb914e7d09acfae1f7cac2317a13da94f5fbb831148218cdda",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_repetition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "content": "sha256:198b72f287311aaf88ac3b1fd2b243c3fe6dc3210f7db7cb327984a166048bcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The R12 host declaration/registry lives outside every repository and worktree and is never re-selected here.\n\nAnchor: `admit_dagger_authority`; `release_dagger_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "content": "sha256:4df37ebd88c4ab7753debb683337401b8d6398a599aeb913be109fea374f75e0",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 346
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "content": "sha256:de522b50d64f3de22b802816d323eaf34f105da857b09e0c2813b76974d3992c",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

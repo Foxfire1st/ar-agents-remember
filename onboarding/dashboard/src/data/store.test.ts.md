@@ -1,15 +1,5 @@
 # dashboard/src/data/store.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/store.test.ts`               |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`       |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -118,104 +108,32 @@ mounted derived-view clearance belongs to `SprintGraphPage.test.tsx` rather than
 
 No file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation found after checking live sources. This file exercises repo-local
 dashboard store behavior with the in-repo vitest harness.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found after checking live sources for the dashboard store unit tests. | n/a | n/a |
+No relevant external documentation found after checking live sources for the dashboard store unit tests.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The suite is the contract guard for the dashboard store reducers; the task-34 sliding-window test pins
 the bounded buffer documented in the store sidecar.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| System under test: the Zustand store these reducers belong to, including its one full reset transaction. | `dashboardStore`; `reset` | dashboard/src/data/store.ts:55-55; dashboard/src/data/store.ts:329-401 |
-| Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. | `EVENT_WINDOW` | dashboard/src/data/store.ts:62-62 |
-| Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. | "folds a snapshot into id-keyed maps and goes live" | dashboard/src/data/store.test.ts:71-102 |
-| The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment. | `RESET_QUEUE`; "clears a seeded closeout queue and increments generation exactly once on reset" | dashboard/src/data/store.test.ts:22-40; dashboard/src/data/store.test.ts:104-114 |
-| `agentNotifierHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. | "applies an idle re-snapshot with an unchanged agentNotifierHeartbeat (incl. null/null) with zero store writes"; "applies an idle re-snapshot with a genuinely changed agentNotifierHeartbeat" | dashboard/src/data/store.test.ts:153-190 |
-| The fixture narrowing and the fixture-derived lifecycle count. | "export function asServedProjection" | dashboard/src/test/servedProjection.ts:22-43 |
-| The parameter type that IS the check, and why the double cast was not one. | `AsJsonModule`; `asServedProjection` | dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/servedProjection.ts:41-43 |
-| `reparsed` (the `structuredClone` behind `volatileBump`) and the `agentNotifierHeartbeat` builder. | `reparsed`; `agentNotifierHeartbeat` | dashboard/src/test/fixtures/wire.ts:354-368; dashboard/src/test/fixtures/wire.ts:398-400 |
-| Projection / observer-event types the store maps over. | `WorkspaceProjection` | dashboard/src/types/projection.ts:840-854 |
+- System under test: the Zustand store these reducers belong to, including its one full reset transaction. [1]
+- Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. [2]
+- Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. [3]
+- The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment. [4]
+- `agentNotifierHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases. [5]
+- The fixture narrowing and the fixture-derived lifecycle count. [6]
+- The parameter type that IS the check, and why the double cast was not one. [7]
+- `reparsed` (the `structuredClone` behind `volatileBump`) and the `agentNotifierHeartbeat` builder. [8]
+- Projection / observer-event types the store maps over. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. These tests are local to the dashboard store.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 2 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). 1 claim(s) were declined as ambiguous or not the subject
-  and were left for a reading curator. No claim wording changed; every rewritten range was read back
-  at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `WorkspaceProjection` repointed to dashboard/src/types/projection.ts:817-830. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: recorded the typed nonempty closeout-queue
-  fixture and direct canonical-reset regression that proves exact store clearance and one `gen`
-  increment without manual cleanup. Kept the proof at the dev/test state-authority seam; production
-  queue behavior remains outside this suite's contract. Verification metadata remains pinned until
-  governed closeout stamps the code commit.
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 6 citation rows
-  (deduplicated the servedProjection citation; bound the fold, heartbeat and fixture rows to
-  51-82, 121-159 and 4-20) and rewrote the historical single-number line shorthand below (the
-  snapshot-fold and long-session line references) as plain prose, which the checker otherwise
-  counts as unchecked prose ranges. Zero findings and zero unchecked spans/ranges remain.
-
-- 2026-08-01T09:16+02:00 — 260731-EFA-L4 curator: corrected two Conventions/Logic claims the diff
-  against `abc7cbc` falsified. (1) "`../fixtures/snapshot.json` is cast to `WorkspaceProjection`" —
-  the `as unknown as WorkspaceProjection` double cast is gone; the fixture now narrows through
-  `test/servedProjection.ts::asServedProjection`, whose parameter type is a real structural check,
-  so this file gained assignability checking it did not have. (2) "`volatileBump` … (JSON
-  round-trip, like a real wire parse)" — it now calls `test/fixtures/wire.ts::reparsed`, which is a
-  `structuredClone`; the JSON round-trip is gone precisely because it answered `any`. Also recorded
-  `FIXTURE_LIFECYCLES`, which replaced the hard-coded `2` in the snapshot-fold and
-  long-session assertions (then at lines 57 and 238) — the fixture now carries six lifecycles, so the literal was about
-  to become wrong. Re-anchored the three test citations, all of which the +15-line header shift had
-  broken: L22-L35 → L36-L49 (the sliding-window `it`), L37-L68 → L51-L82 (fold/delta/metrics/conn),
-  L106-L146 → L121-L159 (the two `supervisorHeartbeat` cases).
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6): updated the
-  `supervisorHeartbeat` change-gate fixtures to include the inbox backlog count fields and last sweep
-  duration that `heartbeatEquals` now compares. Verification metadata pinned until closeout stamps
-  the 260707-HFX2-L8 commit.
-- 2026-07-08T05:36+02:00 — 260707-HFX2-L2 fix round (`260707-HFX2-L2-fix2-report.md`): added two
-  `supervisorHeartbeat` regression cases to the change-gate describe, covering the
-  `store.ts` `applySnapshot` idle-branch fix that gates `set({ supervisorHeartbeat })` on
-  `heartbeatEquals` (field-literal comparison) instead of writing unconditionally on every idle
-  re-snapshot — one case pins the zero-write no-op (incl. `null`/`null`), the other pins the
-  single-write pass-through on a genuine `ageSeconds` advance. Verification metadata pinned until
-  closeout stamps the fix-round commit.
-- 2026-07-07T05:20+02:00 — 260703-L15: added the change-gate describe (`volatileBump` idle-tick
-  builder; zero-writes/identity across 50 idle re-snapshots; redundant delta + absent removed-
-  marker no-writes; real-delta semantics preserved; per-node identity reuse; `servingBuild`
-  identity) and the long-session guard (500 idle ticks + 2,500 events stay flat); `beforeEach`
-  baseline gained `servingBuild: null`.
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-06-28T13:54+02:00 — Created for task 34: this previously-untracked store test file gained a
-  bounded sliding-window guard (`slides the event window …`) asserting `EVENT_WINDOW` (2000) caps the
-  client buffer (newest retained, oldest dropped), alongside the existing snapshot/delta/metrics/conn
-  reducer tests. Verification metadata pinned until closeout stamps the task-34 code commit.
+No meaningful cross-repo references found.

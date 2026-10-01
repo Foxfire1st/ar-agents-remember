@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "R04's semantic invalidation and evidence/audit exclusion are implemented by the schema-owned classifier and deterministic scope union.\n\nAnchor: \"def classify_task_document_mutation(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce1fbcef1dbacb27ddfea658ee8161bf3af7679b",
+            "content": "sha256:57afec841d48a7ee53e4f47bea0f13d657ff995fa35b8ba545ba94627c07c9af",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_projection_scope_union"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a86108972b18702721ab58db93ad0d13abd4a0af",
+            "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public resolver classifies each change and returns a deterministic old/new sprint union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce1fbcef1dbacb27ddfea658ee8161bf3af7679b",
+            "content": "sha256:e09a4f107944a6676da3ba337c35da10b70b85414c7e3ae947179b1d83a06238",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocScopeChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce1fbcef1dbacb27ddfea658ee8161bf3af7679b",
+            "content": "sha256:57afec841d48a7ee53e4f47bea0f13d657ff995fa35b8ba545ba94627c07c9af",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_projection_scope_union"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Leaf scope is derived through the canonical parent master with the full batch override set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce1fbcef1dbacb27ddfea658ee8161bf3af7679b",
+            "content": "sha256:a35478de48337e253d1e2aa556a3492784f2a1f1945be68f15824d69ac24a202",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_projection_scopes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The schema-owned classifier decides whether a delta invalidates projections.\n\nAnchor: `TaskDocumentMutationClassification.invalidates_projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a86108972b18702721ab58db93ad0d13abd4a0af",
+            "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_task_document_mutation"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a86108972b18702721ab58db93ad0d13abd4a0af",
+            "content": "sha256:a9e52a834bf87343152e69f3d6f87a37555d0af87a0e38d78d08aa7fea410b00",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

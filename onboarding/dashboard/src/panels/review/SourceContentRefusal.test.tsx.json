@@ -1,0 +1,245 @@
+{
+  "path": "dashboard/src/panels/review/SourceContentRefusal.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The header's own ownership statement — R03 owns the typed refusal and this module pins the other answer shape — and the provenance of the measured `503` body with its digest.**\n\nAnchor: `SourceContent`; `reviewSourceContent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:5e30f4812f9092bfb941c3e9fa62261f054f4c4613e16cc81ccb7bb52655ce4e",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "SourceContent retains transport failures and reuses the shared problem renderer while preserving its typed expansion refusal branch; since L48 the failure is held with the request key it answers, inside `useSourceContentRead`.\n\nAnchor: \"function refusalBlock(refusal: ReviewRefusal) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceContent"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSourceContentRead"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:434a0d861518953aa331a027354ef83829fc8cd7a658175b94c02ae4cc3a6177",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The one block this module finds by `review-failure`, with the state and code attributes the cases read.**\n\nAnchor: `review-offending-input`; `review-next-action`; `review-retry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:6b9166d8315b9240e5c6e3daa4d1335413bf9f4ac740c62439f47fa3c1ee6e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "R03's own typed-refusal block, which the retry case asserts is still the renderer for a typed answer.\n\nAnchor: `review-source-refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:434a0d861518953aa331a027354ef83829fc8cd7a658175b94c02ae4cc3a6177",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusalBlock"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real pane under test and the wire type of the entry it receives.\n\nAnchor: `SourceContent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:1406fd8ec1e8b535e76dbf1c668d43dee99edb91e0b14a3afc1ddd526bdcaf7c",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one listed entry fixture, exactly as the inventory publishes a row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:b133d81cca3429a4df3d6f797e1154bf0250109ea456b661d0990129f278fcfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTRY"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The route's own `503` body, with the detail and the next action the pre-fix rendering dropped.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:552d7dff9fdeb6b133365811bd60a0aa56aa713edb1418fc89d98b630a92f2f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNWIRED"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one mount, at the two code-tree ids the listing published.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:fb57adaa07cac1385ccc83838fe6b4dea8d8b24091e24a9e1145357b46b949d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "mount"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The cleanup and global-fetch restore between cases.\n\nAnchor: `afterEach`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:f9042216b5620e6a2380fb9bf17390b7f35f32abafcd3c6980438e11ed49819d",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:9f111e2f5845c3c7bcc2afd0caeb3c635745332cb490923785fba36157f15b22",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**An unwired adapter rendered through the shared block with the owner's detail and next action, and the pre-fix paragraph asserted absent.**\n\nAnchor: \"carries the code, reason, offending input and next action of an unwired adapter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:f5b767d775c3479b0b104bbdc5d11478ca59f3b4a2b7418e2d5198c57518ee77",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**An unadmitted query named as `validation` with its offending input and next action, and no retry offered for a typed refusal.**\n\nAnchor: \"names an unadmitted query as a validation failure rather than as the thrown message\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:6babaea41b4fbd0b3f5be81f4b45543a3681c8be571dfebf63fb1f1cfbf21fc2",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**A socket that never answered offering the retry, and the retry rendering whatever the read then answers — here R03's own typed refusal, unchanged.**\n\nAnchor: \"offers a retry for a socket that never answered, and the retry re-reads\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
+            "content": "sha256:acf8c4fc4bcc8bbb8436b8c5b1eae9c93e2c32c5ae7f887f91ec5a4e20153e09",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

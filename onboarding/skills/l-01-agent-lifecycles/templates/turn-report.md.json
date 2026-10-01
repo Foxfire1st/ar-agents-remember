@@ -1,0 +1,70 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/turn-report.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope.\n\nAnchor: \"## Requirement Attempt Journal Records Appended For This Handoff\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9862adff2c23b08f8e13d6e96303742a4a077474",
+            "content": "sha256:410c315faa64afedfb91dcd9e072b40f16b54bc6c7f2668effdcd63ff48fea66",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact commands and outcomes have a first-class report section.\n\nAnchor: \"## Checks\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9862adff2c23b08f8e13d6e96303742a4a077474",
+            "content": "sha256:96a464a692529054b42c6c0111ffa696bb0d01bef15e3a91e064a4885ee936ff",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Artifact lifecycle and task continuity are recorded separately.\n\nAnchor: \"## Durable-Evidence Promotion Hold Point (separate concern)\"; \"## Respawn State (onboard a successor from this — no transcript needed)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9862adff2c23b08f8e13d6e96303742a4a077474",
+            "content": "sha256:fe0511ac6270d1088839ec1c18125dd18d9c69e3c787368dadb3d07311eda1ff",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9862adff2c23b08f8e13d6e96303742a4a077474",
+            "content": "sha256:09fc3341fad9960866b6337f2ca3aac49c8449f051fb5997ec1ad02ec3795ec5",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 204
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

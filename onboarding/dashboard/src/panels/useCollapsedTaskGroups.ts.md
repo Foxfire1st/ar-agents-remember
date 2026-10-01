@@ -1,15 +1,5 @@
 # dashboard/src/panels/useCollapsedTaskGroups.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/useCollapsedTaskGroups.ts` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T12:58+02:00                           |
-| lastVerifiedCommitHash | `d9e7e6e79ce532d16c689435ae95a63aab430f94`       |
-| lastVerifiedCommitDate | 2026-09-25T22:40:41+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/ overview](overview.md)
@@ -89,35 +79,23 @@ caller resolves the next state and the hook only stores it. **Nothing about the 
 weakened:** both payloads are still the app-written v1 JSON arrays this hook trusts, keyed by stable
 typed task-selection keys, and the hook still owns presentation preference only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation found after checking the resolved `system/sources.md`; it has no configured
 Domain Documentation entries. The storage behavior is a local application contract covered by tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain-documentation source was available for this local hook. | — | — |
+No configured domain-documentation source was available for this local hook.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. | `LifecycleListImpl` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:224-259 |
-| Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. The landed-master cases this row used to name (`holds a fully landed master closed by default…`, `never closes a row that carries OTHER rows…`) **were deleted with the L33 revert** and no longer exist in `hierarchy.test.tsx`; the row now names the three cases the reverted file really carries. | "operations.tasks.collapsed.v1"; "defaults hierarchy disclosures to expanded and renders controls only for parents"; "keeps sprint and master collapse independent without changing selection or BY PHASE"; "persists stable sprint and master keys across remounts" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:150-168; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:169-210; dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:211-233 |
-| The existing persisted-flag pattern was the worker's local implementation reference. | `usePersistedFlag` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:6-25 |
+- The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. [1]
+- Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. The landed-master cases this row used to name (`holds a fully landed master closed by default…`, `never closes a row that carries OTHER rows…`) **were deleted with the L33 revert** and no longer exist in `hierarchy.test.tsx`; the row now names the three cases the reverted file really carries. [2]
+- The existing persisted-flag pattern was the worker's local implementation reference. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The preference is local to the dashboard browser surface and has no cross-repository interface. | — | — |
-
-## Update History
-
-- 2026-09-25T22:40:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, memory worktree only; no code changed; leaf base `a9a1a41bba535803421470bd17d858657177cb5f`): **the L33 body is withdrawn and the card is re-read against the reverted 28-line module.** Commit `a9a1a41b` (*"Revert L33's operations-list change"*) removed this module's `openedKeys`/`setCollapsed`/`CollapseState` and the `operations.tasks.opened.v1` key, and no curator pass followed that emergency commit — so this card described an API that is in no tree. Purpose, Logic, Conventions, Invariants and Todos now state the one-set, `toggleCollapsed` shape; the L33 section is kept as history under a dated withdrawal banner; the row whose anchors no longer exist was deleted rather than re-pointed (a rename is repairable, a deletion is not), and the focused-tests row was narrowed to the keys and cases the reverted `hierarchy.test.tsx` really contains, re-derived against the candidate. **Delete-vs-repoint, stated plainly:** the module this card documents survives, so the card is corrected; `panels/lifecycle-list/landedLeaves.ts.md` was a card for a file that exists in **neither** tree and was deleted by the same curation. No verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **body update — the hook now owns both halves of the collapse state.** The Purpose, Logic, Invariants and the section above record `openedKeys`/`setCollapsed` and the new `operations.tasks.opened.v1` key; the sentence that described `toggleCollapsed` as the hook's single callback was false at this candidate and was corrected in place. The one range this pass moved (the focused-tests row, into a `hierarchy.test.tsx` this leaf grew) was re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 3 repository-internal citations for the parent list, focused persistence tests, and persisted-flag reference.
-- 2026-07-12T12:58+02:00 — Created for 260712-TRH-L3. Candidate source is uncommitted; verification metadata
-  is pinned to the leaf base until closeout stamps the eventual code commit.
+The preference is local to the dashboard browser surface and has no cross-repository interface.

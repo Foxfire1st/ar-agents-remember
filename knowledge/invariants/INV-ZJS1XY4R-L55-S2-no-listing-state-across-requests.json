@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The notes listing behind GET /api/notes/list (list_notes and its walk helpers in mcp/src/agents_remember/serving/notes.py) over one series master's tasks/<repo>/<master>/notes/ root.",
+  "conditions": [
+    "Every request walks the live notes tree from the root."
+  ],
+  "exclusions": [
+    "Browser-side caching or polling cadence in the dashboard client."
+  ],
+  "id": "INV-ZJS1XY4R",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "eee02477-7779-4cdd-acb2-f491d2096bba",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The notes listing keeps no state between requests, so a note written or grown after one listing appears with its current size in the next one (ICR-R17 live refresh).",
+  "status": "proposed",
+  "supersedes": []
+}

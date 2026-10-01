@@ -1,0 +1,222 @@
+{
+  "path": "dashboard/src/data/stateGrammar.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pulse constants, visuals table, and precedence mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:55b5891f80f625f685d5578b667b8d4229848806ead573e68519ce5765bba1ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "PULSE_DURATION_S"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:baa79129d78e0f49f92bd47dbd5cf2b0df30562efa793b2fbd20c4291e9a80c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PULSE_TIMING"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:79740767efccc0858dd08cdc0a40b7a4fb40b26aeee45bff9846058a92b8a916",
+            "locator": {
+              "kind": "symbol",
+              "name": "PULSE_ANIMATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:4d923854490918e8ee47e3f6f1792cf94cf4079b3e9a920788ac40b461050a25",
+            "locator": {
+              "kind": "symbol",
+              "name": "VISUALS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:e31b2ae53e0b44e3f02656b04af1d349d631a4c6284b2da6220e970bce1a3958",
+            "locator": {
+              "kind": "symbol",
+              "name": "seatVisualState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:a93fe090e3f6dcc02e1746dd8918c05033b0d4f19063020249417df99636a2cf",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The ONLY renderer of these visuals (Panda literal pinned to `PULSE_ANIMATION`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5021374525ac7482aac8ff6fe6d35ca1e0635215",
+            "content": "sha256:9d15234b559e699861daf20a55c57d9cd9b0396312f13e9958c9c2d92506f8f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "StateDot"
+            },
+            "path": "dashboard/src/panels/session-cockpit/StateDot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `pulseSlow` keyframe + the effects-off freeze that governs it.\n\nAnchor: `pulseSlow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:85ab22d82d9fe8c2fbc194c14737d452050809ffb6feff1ac80d252515a8615e",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The server classifier whose words this mirrors (turn state, sweep cadence).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:715e1749b8f76639fd144e6647220892a6df13d3bf5e01a1cc4abe92c4b84933",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_turn_state"
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:3f7e968dee09540953f08428545aecc6b2ee0f94a865bbabbf567914ea937f59",
+            "locator": {
+              "kind": "symbol",
+              "name": "boot_ready"
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:39ad86567891256b584c16d3e80ec472daa9add08aae58b40012922e63b667f6",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:7f6549cfda1ded173aa2888ed58cf9013845d18bcfd7d13a6c23ae723fc3f424",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The ANY-pending derivation (N1) the blocked-on-human guard now calls — singular slot OR non-empty multiplexed plural.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:2fe501099906df427d6b936651cfe3841e7144eb3226acece7c0e9935a9e468d",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionHasPendingInteraction"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The SOLE producer of `liveTurnWorking` (R9): computed for the focused seat from the conversation projection status and merged into `focused`.\n\nAnchor: \"{ ...focusedBase\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:bb367349968005a81d29d68e5f2a1886d424b75fae443a96d0b30d8593d25e84",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The unit suite: per-state mapping, precedence, waiting(reason), the no-steps pulse ruling, the R9 override winning only below terminal/fault/blocked, and the N1 agent-only-blocked pin.\n\nAnchor: \"seatVisualState mapping (spec §2.4)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4116fb8e18bd4ac9db13db393d04afda88ffc04",
+            "content": "sha256:1f76547e2496f2cda29f01be888cddd2496fcb54b10153e9551ae750145ac73e",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/data/stateGrammar.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,698 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/closeout.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:d28c4f12de419f138eb55900c4c2f07f4657123404ed9e8b357d3780ec1d54af",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_preview_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:6d2ac93b3f78de41170f341f85626bb84114988a587598003fa796d7b73497e1",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 235
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`CONSUMED_APPROVAL_GATE_KINDS` — why the `applied` snapshot this module writes is no longer reclaimed at any age, which is the other half of the replay fix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:c43409f84bf7bc84003c36ae0e676299be6a2244c72101edcdb80cfbc057dac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSUMED_APPROVAL_GATE_KINDS"
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The strict source-quality adapter decides applicability, executes the current worktree wrapper under the selected mode/executor, and fails before mutation. (`code_quality_gate_preview`; `requires_strict_code_quality`; `run_strict_code_quality_gate`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:c1c4c725f8875825ffbf289e9a27e3dd98489f514d9f0b851ae7b4e90be5f62b",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_quality_gate_preview"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "content": "sha256:5777bc0b0c3621a8045a8da3a987b5244a609c00b57b01cd3ceffa06cc74901a",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_git"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Closeout imports the self-healing lineage guard that carries a settleable stale break through the existing sync. (`heal_current_source_lineage,`)\n\nAnchor: `heal_current_source_lineage`; \"heal_current_source_lineage,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:ca25847faae6280c0d3b8d101453d1626646a66d82cd26afc1a33c821616dbec",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Closeout's import block takes the queue preview and recovery owners and imports no code-quality gate; the staged-quality owner `gate_staged_code` lives only in its own module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_staged_code"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. (`_revalidate_candidate`; `closeout_result`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revalidate_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The extracted owner binds and certifies the exact staged candidate. (`gate_staged_code`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_staged_code"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The closeout transaction runs no code-quality gate and no memory pre-refresh; the memory-quality phase owners remain standalone in their own module. (`run_memory_quality_phase`; `combine_memory_quality`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10bb6161832a6940af1f8770935ba0e8bcd36f96",
+            "content": "sha256:dd0ea0e02f5b8c072c65f3dafc3de1e73b416f2fb73b1f3b3808cdb0b7d8b182",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_memory_quality_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10bb6161832a6940af1f8770935ba0e8bcd36f96",
+            "content": "sha256:0351640ea0822848124f11c44252b9e125e3d3606fadd49d73453715c4ebe1d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "combine_memory_quality"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "`recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:f2d81d7f90dd19a4123e31afd6ac3ee1329a8a29a705df77de5161fef7f8d8cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovery_guidance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:45b26a8b0a279bdd72416d85b11c3e768d1ee61c66a78bbbbde9b7b784427f6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "status_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:712da10bba8ce5636491a4e0eb872c484514f4ab63afaa1479ef684ddd5a37a8",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:16e72a2af773dd094199d574372125067f890125c176cc3569d35a36c980ec41",
+            "locator": {
+              "end": 571,
+              "kind": "line_range",
+              "start": 563
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`ContractCells` and `amend_contract` define the contract-cell amendment API.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:6233fd7a927ec9708dcd82a543270f16b9d64d74115ad83af7efcb864a6c3ab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractCells"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_validate_closeout_source_heads` proves code and memory source tips against their recorded base or landed output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:d3cd50045f8b6c79d866084720477390733553d0ab7262bd149c9e9659d091c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_closeout_source_heads"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:d75a7e75c4e4313d2de606a6264eb581d3853c5707efa4bf58357c6553977396",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. (`_amended_closeout_contract`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_amended_closeout_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:4f07051566e418e09ff95e8f4cceba083780b2c03d0bdefcde5cd3e6b1e4a154",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 459
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_changed_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:29c6ca7208dd0891b999f8e9522d1f4f31eeae66a761b3c5df8c1eb8c511e913",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_closeout_source_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revalidate_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:2a392373031fc637afa2ec67e56055b63e8f43375f44843e6b4ff9daba4fc945",
+            "locator": {
+              "end": 646,
+              "kind": "line_range",
+              "start": 611
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {\"completed\", \"checkpointed\"} and integrated`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landed_source_heads"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:6261ac2793c349868c1f8558ac523024d853f49d9c84738a7e985bd2c48672f4",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:bbde8eab44ea1f54e23c8b86a236712eb2acd56d544d84cafc2cd50fb679eaa1",
+            "locator": {
+              "end": 749,
+              "kind": "line_range",
+              "start": 715
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revalidate_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {\"completed\", \"checkpointed\"} and integrated`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landed_source_heads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The single closeout entry and the entry helper that reaches the validator for series contracts too. (`closeout_result`; `_closeout_entry`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:bbde8eab44ea1f54e23c8b86a236712eb2acd56d544d84cafc2cd50fb679eaa1",
+            "locator": {
+              "end": 749,
+              "kind": "line_range",
+              "start": 715
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The closeout entry threads the healed contract through preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:bbde8eab44ea1f54e23c8b86a236712eb2acd56d544d84cafc2cd50fb679eaa1",
+            "locator": {
+              "end": 749,
+              "kind": "line_range",
+              "start": 715
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_amended_closeout_contract` records actual code/memory output and clears integration fields only when reopening.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_amended_closeout_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:4f07051566e418e09ff95e8f4cceba083780b2c03d0bdefcde5cd3e6b1e4a154",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 459
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_recover_closeout_finalization` re-proves existing output commits before exact contract publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:c75a65dd54ae2f1a0b4295e91971c25518454b2c646bff5c3cd4400c149d8612",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recover_closeout_finalization"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:95d8025a217c5cbd94225c3a12cb79721a72bab566b21611120a93700e08f8bc",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 504
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. (`refresh_onboarding_metadata`; `refresh_route_overview_metadata_for_context`; `refresh_route_indexes_for_context`; `refresh_entity_fingerprints_for_context`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e8a1495400eb762fd4f80e791d84ab59e6192fd",
+            "content": "sha256:ab4809bfaf5016dc9c458ff8b5e0acf8e57a377b60385ca1357696be66c90ce5",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_onboarding_metadata"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a36bc182b43134c2cf03c76dba11f075bfa7e70",
+            "content": "sha256:335d0788ff134fe33f1c142afae65d2bd0c1d843bb42b48fa5de07b748bd506b",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeArgs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a36bc182b43134c2cf03c76dba11f075bfa7e70",
+            "content": "sha256:1b003e5a12d46dd72a1fa29f2829cb137ffea34dde374b693eb8771ec1de08e5",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The pure closeout-gate policy this module enforces (slice 6b). (`GateGuard`; `evaluate_gate`; `evaluate_closeout_gate`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098584045028586661c04fda59d447990277db8a",
+            "content": "sha256:f8fcbe61b497d6d8e2cf5c2f17ce21639f89e38c6003eaf07815c728cd1bcfa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateGuard"
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The gate policy threaded through `WorktreeArgs`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a36bc182b43134c2cf03c76dba11f075bfa7e70",
+            "content": "sha256:335d0788ff134fe33f1c142afae65d2bd0c1d843bb42b48fa5de07b748bd506b",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeArgs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a36bc182b43134c2cf03c76dba11f075bfa7e70",
+            "content": "sha256:1b003e5a12d46dd72a1fa29f2829cb137ffea34dde374b693eb8771ec1de08e5",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`GateStore.claim_approval` — the compare-and-swap this module now spends an approval through: fold, policy verdict and the `applied` append inside one held `exclusive_access`. It is the only way to spend one; `_mark_closeout_gate_applied` was deleted. (`claim_approval`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
+            "content": "sha256:68a7c9b3fe2dc4def5adf883b8f4d04ac604b712c5f840585026984d93cc3d2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_approval"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

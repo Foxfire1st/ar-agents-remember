@@ -1,0 +1,252 @@
+{
+  "path": "mcp/src/agents_remember/serving/app.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The import and the registration after the tree view route, before the static mount.\n\nAnchor: \"from agents_remember.serving.knowledge_reader import register_knowledge_reader_route\"; \"register_knowledge_reader_route(app, collaborators.knowledge_reader)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:2030a2ac23c227833587f61d07da0179279f34b3d22cfbb5b572522968d27e54",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:c289c5fa2a0fbfb8ca80eee09a7ce0b2016670f24d9b4b3a80727d9be0919831",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 307
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The composition root that binds the real compiler into the collaborator record every `create_app` call uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:7d7c7b2717bc82f7a76bfb072223dfdb3713afb902384f32655118cbd247386b",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The gate whose behaviour the port's presence decides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route it registers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
+            "content": "sha256:5781c8215b5a6f6de9beb976f79d707fcd24810e3bf4859034a1508daa19895d",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_reader_route"
+            },
+            "path": "mcp/src/agents_remember/serving/knowledge_reader.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The import and the registration after the summary route.\n\nAnchor: `register_review_trees_route`; `collaborators.review_trees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:cdd08edb1abba5868b61f4ee77f8daac26ae9da527743e6c2124543a0c27da97",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:b63f400ac5ad1cbf8de2893803b46f438b3b511273d26af1623465a0acf4b4f5",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 306
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The import and the registration after the reviewer family.\n\nAnchor: `register_review_summary_route`; `collaborators.review_intent_summary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:5d43ea42da06f6778eff034def39998adc9e9f6c7a7656083ad36b7cbdc0ca16",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:e04b749fe36fc805b5c8bef3eadd3f2599165fef9526448b7fbf60b6a2f90890",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "App creation composes the serving route and lifespan families.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:f283eec28d13eae9e01fc8bfe9030ecf5a98690d3b375da40f966808071a6569",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_app"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One serving clock, and the observer-health publisher built on it and on the observer root, so the record's completion stamp and every age computed from it share one source.\n\nAnchor: `TerminalObserverHealthPublisher`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:8ad714338389e9cf8976ea3afafc69530c092cbe1b5d5240d5818480bedef219",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The facade exports structural task-assignment names.\n\nAnchor: \"\\\"TerminalAttachTaskRequest\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:712a5a7c69f6612abd82f2e790114410b658314652146a4a9da0a0bdb55987b2",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 347
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one line that places the capsule-compiler port on the serving runtime.\n\nAnchor: `capsule_launch`; `LaunchCapsuleResolver`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:8ad714338389e9cf8976ea3afafc69530c092cbe1b5d5240d5818480bedef219",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:183d76622b79f303570bb66ee444f23103fcbc0b39ce1f4e3fbcc01a99f583e0",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 517
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The reviewer route family registered with all three collaborator ports, the third one being this leaf's entry-content port.**\n\nAnchor: `register_review_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_source_content"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:3d2d49b2c19aacef658bdc6ebd53ef81b693f9adb0de3415963b44db91f51f8b",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

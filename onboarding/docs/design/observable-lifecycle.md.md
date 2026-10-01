@@ -1,15 +1,5 @@
 # docs/design/observable-lifecycle.md
 
-| Field                  | Value                                   |
-| ---------------------- | --------------------------------------- |
-| repository             | agents-remember                         |
-| path                   | `docs/design/observable-lifecycle.md`   |
-| doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-08T23:59+02:00                      |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                           |
-
 ## Governing Overview
 
 [docs/design overview](overview.md)
@@ -43,23 +33,10 @@ metrics and compact normally.
 - Recovery guidance never deletes transcripts or unsaved live-agent state; inbox storm handling is
   quarantine plus audited terminal-row resolution.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Retention policy implementation follows this design split. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
-| Projection readers apply interaction TTL and pickup feedback. | "def read_agent_pickups(" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:144-144 |
-| MCP `lifecycle_gate` exposes the unified public gate junction. | `lifecycle_gate_tool` | mcp/src/agents_remember/application/gate_tools.py:384-454 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 3 citation entries (6 findings); no Tier-3 findings.
-
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R6): added the documented
-  non-destructive operator-inbox storm recovery runbook: save live work first, quarantine
-  `operator-inbox.jsonl` to `.bak`, resolve only provably dead terminal rows, restart cleanly, verify
-  heartbeat/backlog metrics, and compact without deleting transcripts. Verification metadata pinned
-  until closeout stamps the 260707-HFX2-L8 commit.
-- 2026-06-26T14:16+02:00 — Task 25: design now names `lifecycle_gate` as the public lifecycle-gate junction and removes the split create/block/wait choreography from the documented public path.
-- 2026-06-25T13:20+02:00 — Created for task 23/24 after the design doc gained interaction-retention tiers and the five-minute `gate_response_wait` default.
+- Retention policy implementation follows this design split. [1]
+- Projection readers apply interaction TTL and pickup feedback. [2]
+- MCP `lifecycle_gate` exposes the unified public gate junction. [3]

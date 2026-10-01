@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/engine-room/engines.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The branch-node renderer with landing/pruned registers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "content": "sha256:e194f41623f1cc3a215c0f2f16e86ea0647034b09cf9fa2df064108f892beb8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "BranchNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The runtime-state gauge renderer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "content": "sha256:a71608de6369d15bed0fe0b61ee92d3a631a0892e7f24cc5da99294a0cd36efd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineGauge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

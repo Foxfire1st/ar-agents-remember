@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/build_info.py
 
-| Field                  | Value                                           |
-| ---------------------- | ----------------------------------------------- |
-| repository             | agents-remember                                 |
-| path                   | `mcp/src/agents_remember/serving/build_info.py` |
-| doc_type               | `file-level-onboarding`                         |
-| lastUpdated | 2026-09-14T17:20+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -157,121 +147,37 @@ fingerprint is read from package resources rather than recomputed at request tim
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was found after checking the configured sources; packaged-build behavior
 is proven by repository source and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local build stamp. | — | — |
+No relevant external or domain documentation was found for this repository-local build stamp.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. | "payload.update(served_state_tail("; "before = served_state_tail(build=runtime.build, heartbeat=heartbeat_payload)"; `_state_response`; "payload = dict(_projection_body_cache.body(delta.data))" | mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py:13-13; mcp/tests/test_terminal_observer_health.py:764-764; mcp/src/agents_remember/serving/_app_routes.py:77-106; mcp/src/agents_remember/serving/_app_common.py:123-163 |
-| The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:47-55; mcp/src/agents_remember/serving/served_state.py:63-78 |
-| `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9). | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
-| The cockpit compares and renders the serving/client identity. | "function ServingBuildStamp()" | dashboard/src/cockpit/Cockpit.tsx:966-966 |
-| The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. | "if not bundle_is_current(fingerprint):"; "FINGERPRINT_FILE.write_text("; `bundle_is_current` | scripts/sync-dashboard.py:236-246; scripts/sync-dashboard.py:115-125 |
-| The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. | "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" | .github/workflows/publish-mcp-to-pypi.yml:110-111 |
-| The serving payload carries optional dashboard build identity; omission does not fabricate a built or clean state. | `payload` | mcp/src/agents_remember/serving/build_info.py:59-73 |
-| The canonical selector list identifies inherited Git variables to remove. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:55-64 |
-| The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:140-146 |
-| The shared Git runner applies caller-selected bounds and isolated repository environment; both probes here pass their 2s bound as `GitRunnerOptions(timeout=...)`. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
+- The two merge points: the SSE snapshot and the `/api/state` body, both now via `served_state_tail` onto a copy of the memoized projection dump. [1]
+- The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`. [2]
+- `SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9). [3]
+- The cockpit compares and renders the serving/client identity. [4]
+- The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value. [5]
+- The release job fails if either the bundle or this sidecar is missing from the wheel or sdist. [6]
+- The serving payload carries optional dashboard build identity; omission does not fabricate a built or clean state. [7]
+- The canonical selector list identifies inherited Git variables to remove. [8]
+- The Git environment removes canonical repository selectors before execution. [9]
+- The shared Git runner applies caller-selected bounds and isolated repository environment; both probes here pass their 2s bound as `GitRunnerOptions(timeout=...)`. [10]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local build stamp.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | — | — |
+The reviewed behavior is wholly repository-local.
 
 ## 260718-CHATS-L5I Current Delta
 
 Serving build identity now distinguishes a proven dirty checkout from an unprovable one. Only a successful `git status --porcelain` with output emits `dirty`; probe failure omits the claim instead of fabricating a clean build state.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "function ServingBuildStamp()" repointed to dashboard/src/cockpit/Cockpit.tsx:963-963. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "function ServingBuildStamp()" repointed to dashboard/src/cockpit/Cockpit.tsx:950-950. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "function ServingBuildStamp()" repointed to dashboard/src/cockpit/Cockpit.tsx:948-948. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `FINGERPRINT_FILE.write_text` in the row 177 of this card from scripts/sync-dashboard.py:147-147 to scripts/sync-dashboard.py:172, the extent of the construct the claim is about (the checker named line(s) [172] as its live location); re-pointed `if not bundle_is_current` in the row 177 of this card from scripts/sync-dashboard.py:172 to scripts/sync-dashboard.py:162, the extent of the construct the claim is about (the checker named line(s) [162] as its live location)
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base `7317108b`): `_git_short_head` and `_git_worktree_dirty` now pass their 2s bound as `GitRunnerOptions(timeout=_PROBE_TIMEOUT_SECONDS)`, the timeout keyword having become a field of the runner's one options object; the timeout class each probe names is unchanged and stays deliberately tighter than the runner's 300s local default. Re-derived the ranges the migration shifted (`_git_short_head` 104-114 → 104-118, `_git_worktree_dirty` 117 → 121, and the runner row `124-130; 133-184` → `140-146; 149-213`).
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "agents_remember/package_data/dashboard/index.html"; "agents_remember/package_data/dashboard.fingerprint" repointed to .github/workflows/publish-mcp-to-pypi.yml:110-110; .github/workflows/publish-mcp-to-pypi.yml:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "function ServingBuildStamp()" repointed to dashboard/src/cockpit/Cockpit.tsx:933-933. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: repointed the strict payload authority to
-  `models/core.py` after removing the transient extra model module. Verification remains
-  closeout-owned.
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: extended the shared process identity with
-  content-addressed Python source, exact interpreter, and package root; extracted its strict wire
-  model and made app/MCP consumers share `process_serving_build()`. Verification remains
-  closeout-owned.
-- 2026-08-12T20:25+02:00 — L23 curator: re-read the serving identity claim after package-version resolution moved behind `_resolve_server_version`; behavior remains installed metadata with a source-checkout fallback. Verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-12T10:20+02:00 — Citation maintenance only: re-anchored the kernel version identity
-  after the release leaf named its existing metadata/fallback resolver; serving behavior is
-  unchanged. Verification metadata remains pinned until closeout.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 13 citation items (7 table rows and 6 prose citations); scoped citation check now passes.
-
-- 2026-08-01T08:30+02:00 — 260731-EFA-L4 curator: recorded the new `ServingBuildPayload`
-  cit:(["class ServingBuildPayload(BaseModel):"], mcp/src/agents_remember/models/core.py:14-14) and `payload()`'s cit:(["def payload(self) -> ServingBuildPayload:"], mcp/src/agents_remember/serving/build_info.py:59-59) return-type change from `dict[str, Any]` to that model,
-  including where the honest-unknown rule now lives — `None` on every best-effort field plus the
-  caller's `exclude_none=True`, with the tri-state `dirty` still collapsed in code so
-  proven-clean and unprovable both drop out. Corrected the FEUI-L9R sentence that still described
-  `payload()` as returning a camelCase dict, and the boundary bullet that said the stamp is
-  "injected" — the `servingBuild` key is now declared on
-  `served_state.ServedWorkspaceProjection`. Repaired 4 citations: the two in-file probe ranges
-  the 24 new lines above them invalidated (`_git_short_head` L67-L77 → L91-L101,
-  `_git_worktree_dirty` L80-L94 → L104-L118); the `app.py` row, whose `L195-L202` is now the
-  `served_state` import block and never held the injection points at all — replaced with the two
-  real merge sites, L328-L329 (SSE snapshot) and L979-L982 (`/api/state`); and the
-  `test_serving.py` row, whose `L945-L951` now spans the class header and the first asserts —
-  the present-or-omitted branch is at L947-L962, cited with the new `_build_wire` helper at
-  L128-L136. Wire bytes unchanged. Verification metadata pinned until closeout stamps the L4
-  commit.
-
-- 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: this module lost its two local `subprocess.run`
-  copies. Corrected the FEUI-L9R sentence that described `_git_short_head` as a subprocess of its
-  own and added the delta section: both probes now call `run_git`
-  (`agents_remember.kernel.git_command`) with `timeout=_PROBE_TIMEOUT_SECONDS` (2), so they inherit
-  the `GIT_DIR`-family scrub — the removed local runner passed no `env=`, and an exported `GIT_DIR`
-  would have stamped another repository's HEAD and dirtiness onto this process — plus
-  `-c safe.directory=<anchor>`. The 2 s bound, the fixed argv, the `DEVNULL` stdin and the
-  fail-open `None`/`None` honesty are all unchanged. Re-verified the `test_serving.py` L945-L951
-  citation against the current file (still the present-or-omitted `dashboardBuild` assertion) and
-  added references for the runner and its decoy-repository proof. Verification metadata pinned
-  until closeout stamps the L3 commit.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran past
-  the end of `mcp/src/agents_remember/mcp/__init__.py`, which is 11 lines, not 20. `SERVER_VERSION`
-  is the `importlib.metadata.version("agents-remember-mcp")` lookup at L7-L11 with a
-  `PackageNotFoundError` fallback literal for source checkouts; narrowed the range to L7-L11 and
-  said so in the claim.
-
-- 2026-07-31T04:28+02:00 — 260731-EFA-L1: the dashboard bundle and its `dashboard.fingerprint`
-  sidecar left version control and are now generated by the release job, so `dashboardBuild` is
-  routinely absent in a source checkout and routinely present in an installation. Corrected the
-  docstring-derived reading that `None` means "legacy bundle". No behavioral change to this
-  module beyond its docstring. Verification metadata pinned to the pre-leaf source authority until
-  closeout stamps the code commit.
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded the packaged dashboard fingerprint and honest
-  omission fallback; verification metadata remains pinned pending candidate closeout.
-
-- 2026-07-07T05:00+02:00 — Created for 260703-L15 S3 (stale-server visibility): boot-time
-  `ServingBuild` stamp + best-effort `_git_short_head` + `resolve_serving_build`.
-  Verification metadata pinned until closeout stamps the L15 commit.

@@ -1,15 +1,5 @@
 # dashboard/src/panels/knowledge-reader/PathViews.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/knowledge-reader/PathViews.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -63,38 +53,29 @@ and its paged subtree, the without-proof list, the census view, and a code file 
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component's own statement of the path-side views. | "The reader's path-side views (MIK-R29 rule 2)" | dashboard/src/panels/knowledge-reader/PathViews.tsx:1-3 |
-| Invariants with their states; unverifiable states named. | `InvariantItem`; `InvariantsSection` | dashboard/src/panels/knowledge-reader/PathViews.tsx:45-60; dashboard/src/panels/knowledge-reader/PathViews.tsx:68-88 |
-| A family here or routed over the path, with its locations elsewhere; a linked record, a decision in full. | `FamilyItem`; `LinkedRecordItem` | dashboard/src/panels/knowledge-reader/PathViews.tsx:90-116; dashboard/src/panels/knowledge-reader/PathViews.tsx:118-135 |
-| A directory's children and the way to its subtree (F2). | `DirectorySummary` | dashboard/src/panels/knowledge-reader/PathViews.tsx:143-177 |
-| The path view. | `PathView` | dashboard/src/panels/knowledge-reader/PathViews.tsx:179-217 |
-| The without-proof list and the census view. | `WithoutProofView`; `CensusView` | dashboard/src/panels/knowledge-reader/PathViews.tsx:219-245; dashboard/src/panels/knowledge-reader/PathViews.tsx:247-321 |
-| The located lines marked; a code answer that is not text named. | `CodeLines`; `CodeView` | dashboard/src/panels/knowledge-reader/PathViews.tsx:329-358; dashboard/src/panels/knowledge-reader/PathViews.tsx:360-382 |
-| The pages read so far, one next page in flight at a time. | `useSubtreePages` | dashboard/src/panels/knowledge-reader/PathViews.tsx:400-431 |
-| The subtree view, its refusal and a failed next page named. | `SubtreeRefused`; `SubtreeNextPageFailure`; `SubtreeView` | dashboard/src/panels/knowledge-reader/PathViews.tsx:433-439; dashboard/src/panels/knowledge-reader/PathViews.tsx:441-448; dashboard/src/panels/knowledge-reader/PathViews.tsx:451-480 |
-| The directory, root-summary and double-click cases. | "opens a directory with its overview, routed families elsewhere and the route decisions"; "lands on the bounded root summary and follows a subtree page to the next" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:157-224 |
+- The component's own statement of the path-side views. [1]
+- Invariants with their states; unverifiable states named. [2]
+- A family here or routed over the path, with its locations elsewhere; a linked record, a decision in full. [3]
+- A directory's children and the way to its subtree (F2). [4]
+- The path view. [5]
+- The without-proof list and the census view. [6]
+- The located lines marked; a code answer that is not text named. [7]
+- The pages read so far, one next page in flight at a time. [8]
+- The subtree view, its refusal and a failed next page named. [9]
+- The directory, root-summary and double-click cases. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new views MIK-R29 adds, recording rulings 09:42:58 F2 (the bounded directory summary and the paged subtree), 10:44:14 (the in-flight guard on "more") and F6's located-lines test. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

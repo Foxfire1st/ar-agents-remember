@@ -1,0 +1,167 @@
+{
+  "path": "dashboard/src/grammar/Dot.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `cva` recipe, `DOT_VARIANTS`/`KNOWN`/`DotVariant`, the total `DOT_GLYPHS`, `UNKNOWN_DOT_GLYPH`, and the component.\n\nAnchor: \"export const DOT_VARIANTS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "content": "sha256:ab0482c579d3c4f2bc618bd18acc0d0aa39a46ef3e0321030d5e58d36a636d04",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared `pulse` keyframe used by `blocked`/`alarm`, documented as ≤3 flashes/s under WCAG 2.3.1.\n\nAnchor: \"@keyframes pulse {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:7a5cd245db969b10f90c184c0da06ed1cafed71f7318e8ec7203cf1d4e121ac5",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `pulseSlow` keyframe used by `awaiting-developer` — the developer's 2026-07-16 ruling that the cockpit state pulse is a slow ease-in-out, never `steps()` blinking.\n\nAnchor: `pulseSlow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:c99157bfbb246757bd22b124d4473f0d0f828facb52f77c59fac18d4620cd07d",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The unlayered `html[data-effects=\"off\"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here.\n\nAnchor: \"unlayered html[data-effects=\"off\"] freeze\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:9532920553cc70c97159cd9f44de6a0516ae51fc591be7664d830222ac044808",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`LIFECYCLE_STATES` — the six states `DOT_VARIANTS` must cover; `Dot.test.tsx` asserts the two lists agree in both directions. The names are declared on the two halves (`LIVE_STATES` L42, `TERMINAL_STATES` L48) and composed at L59.\n\nAnchor: \"export type State = \"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:9d9b036ca7b758530fc951f101646842785d8c93b5d47ba9ae79b6d724630fc7",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`LifecycleList` passes `lifecycle.state` through untouched as `item.variant` and renders the \"Task progress: …\" label beside the dot.\n\nAnchor: \"export const LifecycleList\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 357
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`AttentionQueue` passes the raw `q.severity`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
+            "content": "sha256:32058af5806636b323dbe55b7fe2aaffbdd04a21a81faf14e33278b2dce67229",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionQueue"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`Cockpit.tsx` renders `AttentionQueue` and `LifecycleList` as siblings in one always-visible rail — the reason an `awaiting-developer` state and a `warn` severity are on screen together.\n\nAnchor: \"export type CockpitView\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:bfeaf57796ee542d46cf39a6a14592f32b01475c2f57d3970685d8a2cfcd7c70",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The three flat properties this component is held to: vocabulary equality, every variant distinguishable from every other and from the fallback, and every variant carrying its own ink.\n\nAnchor: \"const ALL_VARIANTS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "content": "sha256:05564ae2982b10ba2b48f196392042f06683b33b1b072ebf9f9d16319de85207",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/grammar/Dot.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

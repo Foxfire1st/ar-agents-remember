@@ -1,0 +1,115 @@
+{
+  "path": "mcp/tests/curator_coherence_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture writes a complete leaf/master/sprint lineage and returns the architect's exact sprint reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b8781cc8a79476fb86d9189fd7dcf40e14f968",
+            "content": "sha256:d79caa88b58cbc3aac95c197293cf22dc36a0d006246e30a8fa98c5ab3de9f57",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_curator_task_topology"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "04b8781cc8a79476fb86d9189fd7dcf40e14f968",
+            "content": "sha256:494007d01b4aa4a3726c4eff467275a4b582f37e0cda027f58fea0b6eb228a41",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture authors structured source evidence and routes prepare/publish through the production action owner with exact CAS identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b8781cc8a79476fb86d9189fd7dcf40e14f968",
+            "content": "sha256:1701b497158e17ab86d2d1a1ba4056e29135f2b4ce902130289076893de59495",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_curator_evidence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "04b8781cc8a79476fb86d9189fd7dcf40e14f968",
+            "content": "sha256:f7786db78573df5957625ce21afc804cd20933f4a15f46c80218999d55e6449d",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Production resolves the exact leaf, master, and sprint and rejects missing topology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9640efd7b0c9ed4cc116d5a551e6e110a58b1b2a",
+            "content": "sha256:87bb890fce2ddf85045c57c02c1c2eb61490bfa737234035dbded7a5aecff462",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Production publication refuses a changed contract under the task lock before atomically replacing the authority.\n\nAnchor: \"curator-coherence-contract-stale\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:4bb80fed631c26664cf39811c8d7e403685bb7035d6e739047e2ca9941fd6c63",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "R03 attestation declaration builder used by the fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:4676069cc230f2d693f3d2151b6f44515a5fb8acf09f1c4c70fd9aa076319157",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_attestation_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

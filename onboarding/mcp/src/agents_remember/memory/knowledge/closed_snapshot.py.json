@@ -1,0 +1,429 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/closed_snapshot.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one journal mode a published snapshot may carry, and the peer suffixes the probe and cleanup share.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:e47554c79cbcaaf8151473fa08096b02afb3e0414ea9d08adbd95a52932a169b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CLOSED_JOURNAL_MODE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:82d1bc77e7d5a21327c1f8da9fd931c68269aa9db9b40719b1148c3fdc26bb5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_JOURNAL_PEER_SUFFIXES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The read-only connection and journal-mode reader the verification uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:a4aa379c6b1f4f9416d8a0e3fd5ff718288b12097224b2c333c3a869c3ba0c61",
+            "locator": {
+              "kind": "symbol",
+              "name": "journal_mode"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_schema"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:17978620019399e75ec35e6eacb0e89b68fd4f5e5ea66f9077a0bdcee29d4353",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:d9be0ce5c10efa97d699edb7a9cb15c310dd6187295c6107e662336f40be6298",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The stage shape this procedure returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:b4976d515679b5d53e8d19cc703d7576614a57038104bbac75b7c4dc7fe1a15a",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedKnowledgeSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The second producer this leaf added: the portable import stages its dataset and closes it through the same step.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:8172726532b88e102713116d8bb002d7028c3c03057f7266252275d7bc99ba65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stage_imported_dataset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:bff6d1e0d499ba2e378271a96f45a7057628c461624e4e232c93c3c629ce2c47",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 364
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The publication that installs a frozen stage, and the clone that reuses this same procedure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bd49503b7daa1db164d0f12d39b2d8a92ad0d1",
+            "content": "sha256:d3a2e2e0aa23e2543a5557d1902ee574596af6ce1cbde971f45c527ca520e75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_prepared_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d531b3318016ae477789be1f8d6eb3fd2fad01fe",
+            "content": "sha256:7a8de948b0221004a55e3eca138dcc5fa50ac65f0b5f935b96c0c7955a917ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_cloned_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The node that proves a WAL-resident batch is published whole while a main-file copy is not.\n\nAnchor: \"test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c63d3786063cf858be3f628ffa5c42f521a97a",
+            "content": "sha256:e0a366bf433ae22a4f5041ad90816ddd89cb955268435809552b610b3486b177",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/tests/test_knowledge_snapshot_publication.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The node this leaf owns for the closure, which measures the property on the published destination.**\n\nAnchor: \"test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d941aec76565c7db851cd975de6e5add6535e54",
+            "content": "sha256:bd5eb552190e88f74378d9cf25d9575346cbe6c58f756d119e9bc2f231abf1a8",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/tests/test_knowledge_portable_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The node that proves the import's stage is closed before it is published.**\n\nAnchor: \"test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d941aec76565c7db851cd975de6e5add6535e54",
+            "content": "sha256:e91ea7da2db791c517c2b50883bb7a53134d7f572cc653aba9eff3314308e9f9",
+            "locator": {
+              "end": 662,
+              "kind": "line_range",
+              "start": 662
+            },
+            "path": "mcp/tests/test_knowledge_portable_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The reusable \"prove this finished file is a closed database\" step both producers call — the import stages through it as well as the freeze.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:e734585edfb071d553862211b643967da5496bde641a815bb807cead82b0b8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_closed_database"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ordered freeze procedure and its all-or-nothing refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:476bef8bf10732464341e0a814e0974b157895e5f4b389720787363b94e2fb87",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_closed_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pinned view, the in-view identity re-check and the through-the-engine copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:d82dbd6c01f4437b98d3b88fc90ca5b2f61c9ef0c8a43700468b2286f8fa8c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_copy_pinned_view"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:aac77e0490a09256da33160a5cdaf6941679a3706f6eb6c62ca523d6f8768512",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_backup"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:63cd0b49f437654ab4eb6b9b61a79257771d4db9e077a0195de0d0c616e6d91a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pinned_read_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The inherited-journal-mode problem and the fresh connection that establishes and reads back the mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:ca26819267b8ea3f6ab0a9f9bd29b79eb523d3ef3836825ab08e3c1ae64fc319",
+            "locator": {
+              "kind": "symbol",
+              "name": "_normalize_stage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The read-only proof: no peer, closed mode, declared schema and the pinned dataset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:0e96c1ad2f493432182c69a32a1fdebc3cceae313d8990ab25a2ae036ba10876",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_closed_stage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The peer probe and the stage-only cleanup whose failure is suppressed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:59dba7da20f72dc574a72e5d97566db3db74af34a63177275b879f956653e300",
+            "locator": {
+              "kind": "symbol",
+              "name": "journal_peers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:28afd8266f687b1b43c8ad7dcb34cd15b90c5d94f703a6880b0a995ec0a6d53b",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_stage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:a1231dc327b45f8e136e21b95589bf6ba013c6a6d4b7973bc554f4d7cc14d85b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_discard_owned_stage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The refusal for a candidate that moved between admission and acquisition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:f11ec9b95a6e9cf886fcb6423f1a45fdbe94f8758d6693a4a8b857329864a176",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stale_candidate_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The file flush that the directory fsync in `atomic_replace` does not substitute for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:b00a0390c779c7f1ca68625682145aab3906d25bb36151c362969278e7674ded",
+            "locator": {
+              "kind": "symbol",
+              "name": "fsync_file"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:c9512bef140c79174a59e947c84b245427033dc3e9a15b70406cef8e7ab22ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_replace"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:f648dc97f2cfe59f333dec70596c2e3143d3352c5ddce45330f424d3eab5fc6d",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

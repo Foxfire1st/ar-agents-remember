@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/install/experiment.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/install/experiment.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -112,29 +102,17 @@ and checkable.
 - The pinned versions and the corpus anchor are read from the install source, never from the
   product's own output.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The per-run selection input, its vocabulary, and the resolved value that records which input won. | `EXPERIMENT_ENV`; `EXPERIMENTS`; `ExperimentSelection`; `resolve_experiment_selection` | mcp/src/agents_remember/install/experiment.py:59-61; mcp/src/agents_remember/install/experiment.py:65-66; mcp/src/agents_remember/install/experiment.py:127-146; mcp/src/agents_remember/install/experiment.py:147-189 |
-| The explicit "selected nothing" value the installer's scope defaults to. | `unselected_experiment` | mcp/src/agents_remember/install/experiment.py:190-200 |
-| The three-answer delivery decision in which a selected-but-unable run is refused rather than degraded. | `decide_instruction_delivery`; `InstructionDelivery` | mcp/src/agents_remember/install/experiment.py:212-241; mcp/src/agents_remember/install/experiment.py:201-211 |
-| The startup targets a capsule-mode installation withholds. | `WITHHELD_STARTUP_TARGETS` | mcp/src/agents_remember/install/experiment.py:103-118 |
-| The pinned versions, the corpus anchor, the minimum node major, and the one-line dependency install command. | `PINNED_DEPENDENCIES`; `CORPUS_ANCHOR`; `MINIMUM_NODE_MAJOR`; `dependency_install_command` | mcp/src/agents_remember/install/experiment.py:83-98; mcp/src/agents_remember/install/experiment.py:320-333; mcp/src/agents_remember/install/experiment.py:537-566 |
-| The capability report and the blocking/non-blocking probes. | `probe_capabilities`; `CapabilityReport` | mcp/src/agents_remember/install/experiment.py:479-566; mcp/src/agents_remember/install/experiment.py:262-294 |
-| One run record per run, in the packet's shape plus the mode, reason, selection source and capability detail. | `ExperimentRunRecord`; `build_run_record` | mcp/src/agents_remember/install/experiment.py:568-609; mcp/src/agents_remember/install/experiment.py:633-665 |
-| The rendered undo rows for the unmodified configuration, and the labelled skills-install row. | `experiment_rollback_plan`; `rollback_payload` | mcp/src/agents_remember/install/experiment.py:713-769; mcp/src/agents_remember/install/experiment.py:770-773 |
-| The installer consumes an already-resolved selection and refuses an unselected scope. | `resolve_experiment_install`; `install_experimental_runtime` | mcp/src/agents_remember/install/runtime.py:564-614; mcp/src/agents_remember/install/runtime.py:654-670 |
-| The compiler resolves its corpus from the packaged tree, not the coordination root's copy. | `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/provider.py:50-63 |
+### Repo-Internal References
 
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **created.** This candidate adds the module
-  (773 lines, untracked on `ar/260915-caps-l9-ar`), so the card documents the selection
-  (`AR_EXPERIMENT`/`role-capsules`, request-then-environment precedence, unknown id refused by
-  name, `unselected_experiment()` as the scope default), the three-answer delivery decision with
-  `legacy` unreachable for a selected run, the five probes and which three block, the run record and
-  its `selectionSource`, `WITHHELD_STARTUP_TARGETS`, and the run-produced rollback plan — plus the
-  no-persistent-switch statement this module exists to make true. Verification metadata names the
-  leaf's base commit because the candidate is uncommitted; the real stamp is closeout-owned.
+- The per-run selection input, its vocabulary, and the resolved value that records which input won. [1]
+- The explicit "selected nothing" value the installer's scope defaults to. [2]
+- The three-answer delivery decision in which a selected-but-unable run is refused rather than degraded. [3]
+- The startup targets a capsule-mode installation withholds. [4]
+- The pinned versions, the corpus anchor, the minimum node major, and the one-line dependency install command. [5]
+- The capability report and the blocking/non-blocking probes. [6]
+- One run record per run, in the packet's shape plus the mode, reason, selection source and capability detail. [7]
+- The rendered undo rows for the unmodified configuration, and the labelled skills-install row. [8]
+- The installer consumes an already-resolved selection and refuses an unselected scope. [9]
+- The compiler resolves its corpus from the packaged tree, not the coordination root's copy. [10]

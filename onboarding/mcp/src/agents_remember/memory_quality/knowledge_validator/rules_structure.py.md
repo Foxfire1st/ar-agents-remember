@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -44,7 +34,9 @@
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The validator's design authority is the coordination-root note
@@ -52,35 +44,23 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R22@v1` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The structure rules and their registration.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Shape keeps the layout marker; canonical formatting is its own rule. | `check_shape`; `check_canonical` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:44-51; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:54-55 |
-| Unique IDs across records and entries; a merge duplicate is a conflict naming both files. | `check_identity` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:58-80 |
-| A relationship on the wrong side is a rule-4 refusal. | `check_single_owner` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:83-90 |
-| An unconverted base is refused unless this is a standalone conversion. | `check_bases_converted` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:101-111 |
-| A closed history file is frozen. | `check_history_frozen` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:114-131 |
-| The eight registered structure rules. | `STRUCTURE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py:134-163 |
-| Duplicate IDs after a merge are a conflict naming both files. | `test_duplicate_ids_after_a_merge_are_a_conflict_naming_both_files` | mcp/tests/test_knowledge_validator.py:160-173 |
-| A closed history file is frozen, including deletion and closure in one merge parent; since MIK-R09 its trees keep the retired subject `INV-RET1R3` (records are never deleted, rule 3), assertions unchanged. | `test_a_closed_history_file_is_frozen` | mcp/tests/test_knowledge_validator.py:479-494 |
+- Shape keeps the layout marker; canonical formatting is its own rule. [1]
+- Unique IDs across records and entries; a merge duplicate is a conflict naming both files. [2]
+- A relationship on the wrong side is a rule-4 refusal. [3]
+- An unconverted base is refused unless this is a standalone conversion. [4]
+- A closed history file is frozen. [5]
+- The eight registered structure rules. [6]
+- Duplicate IDs after a merge are a conflict naming both files. [7]
+- A closed history file is frozen, including deletion and closure in one merge parent; since MIK-R09 its trees keep the retired subject `INV-RET1R3` (records are never deleted, rule 3), assertions unchanged. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact on the rules: this card's own source is unchanged. **Reopened claim reworded:** the rule-7 test row, whose case MIK-R09 (260928-MIK-L09, review R2-1) changed structurally: its trees now keep the retired record `INV-RET1R3`, because MIK-R09's history-row rule checks every history file's subjects; the assertions are unchanged. This pass's generated bullet for it was removed; the other test row was re-pointed by the installed fixer (bullet kept). No verification stamp was advanced.
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

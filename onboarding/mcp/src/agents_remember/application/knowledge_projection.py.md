@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_projection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_projection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T15:30+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544` |
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -85,57 +75,37 @@ Public surface is declared rather than implied: `__all__` names exactly five ent
   `oversized_row`, and a row is never cut short (MIK-R02, the carried L23 ruling).
 - **An empty request set is refused before any context is opened.** `project_knowledge` raises `ValueError` for an empty `requests` tuple, so a projection cannot proceed without at least one view request to resolve its namespace.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the whole shape: sibling views from one resolved record set, one renderer/profile version, neither being the portable export, the renderer that places rather than produces text, the three recorded values, the condition rule and the separated attribution of a signal from a description. | `PROJECTION_NOT_AN_EXPORT`; "Markdown and JSON as sibling views from the same resolved records" | mcp/src/agents_remember/application/knowledge_projection.py:1-18; mcp/src/agents_remember/application/knowledge_projection.py:84-87 |
-| The public surface, declared as exactly the two renderers, the operation, its options value and the profile version. | `__all__` | mcp/src/agents_remember/application/knowledge_projection.py:73-79 |
-| The marker written into both artifacts, with the reason it is written there rather than documented: a reader who finds the file cannot mistake it for the portable round trip. | `PROJECTION_NOT_AN_EXPORT` | mcp/src/agents_remember/application/knowledge_projection.py:84-87 |
-| The one renderer/profile version both sibling views record, inherited as an alias of the views seam's value rather than spelled a second time. | `PROJECTION_PROFILE_VERSION` | mcp/src/agents_remember/application/knowledge_projection.py:89-89 |
-| One projection configured as one frozen value, naming the per-path overwrite authorization requirement 5.8 requires, the deterministic interruption seam and, since MIK-R01, whether each view is read whole (`whole_views`, a converted tree). | `ProjectionOptions`; `authorized_overwrites`; `whole_views` | mcp/src/agents_remember/application/knowledge_projection.py:92-105 |
-| The destination derivation: one path segment per projected subject under its view, never a symbol name, a path prefix, a depth or an extension, with collisions left to the writer. | `_document_path` | mcp/src/agents_remember/application/knowledge_projection.py:108-120 |
-| The Markdown sibling view: the recorded header block, the per-row bodies, the unresolved-limitation section and the export marker, and nothing composed. | `render_payload_as_markdown` | mcp/src/agents_remember/application/knowledge_projection.py:123-146 |
-| One row rendered with its ordered position, its ordering input, its provenance class beside the value, its conditions before the prose they qualify, its consequence and its unassessed state. | `_row_markdown`; `essential_conditions`; `conditions_omitted` | mcp/src/agents_remember/application/knowledge_projection.py:149-187 |
-| One no-consequence statement rendered with the class that produced it, and the authored form that names its author and the stored claim it cites. | `_consequence_markdown`; `claim_ref` | mcp/src/agents_remember/application/knowledge_projection.py:190-202 |
-| The JSON sibling view over the same resolved rows, carrying the projection note, the renderer version, the snapshot, the schema generation, the completeness statement and the rows themselves. | `render_payload_as_json` | mcp/src/agents_remember/application/knowledge_projection.py:205-220 |
-| The operation: the refused-input report that emits no artifact without the identity, snapshot and renderer version requirement 4.3 requires, and the plan handed to the writer once every view resolved. | `project_knowledge`; "a projection names at least one view request to resolve its namespace"; "unresolved_projection_input" | mcp/src/agents_remember/application/knowledge_projection.py:223-277 |
-| MIK-R01: a view read whole, every slice, with no 64-row cap on a converted tree. | `_whole_view`; `read_whole_view`; "A converted memory tree is projected whole" | mcp/src/agents_remember/application/knowledge_projection.py:29-32; mcp/src/agents_remember/application/knowledge_projection.py:280-294 |
-| The sibling artifacts for one payload, one per declared format for each part, and the artifact constructor that always carries the three recorded values. | `_outputs_for`; `_output` | mcp/src/agents_remember/application/knowledge_projection.py:297-319; mcp/src/agents_remember/application/knowledge_projection.py:380-397 |
-| MIK-R02: parts of whole rows, each within the artifact bound; a row too large alone is refused by name. | `_parts`; `_fits`; `_oversized_row` | mcp/src/agents_remember/application/knowledge_projection.py:328-332; mcp/src/agents_remember/application/knowledge_projection.py:335-357; mcp/src/agents_remember/application/knowledge_projection.py:364-377 |
-| The artifact type whose required fields enforce requirement 4.3, its destination profile, and the recorded renderer version the header block quotes. | `RenderedOutput`; `DestinationProfile`; `renderer_version`; `VIEW_RENDERER_VERSION` | mcp/src/agents_remember/models/knowledge/projection_manifest.py:156-178; mcp/src/agents_remember/models/knowledge/projection_manifest.py:181-196; mcp/src/agents_remember/models/knowledge/view.py:728-745; mcp/src/agents_remember/application/knowledge_views.py:67-70; mcp/src/agents_remember/application/knowledge_projection.py:39-39; mcp/src/agents_remember/application/knowledge_projection.py:72-72; mcp/src/agents_remember/application/knowledge_views.py:78-78 |
-| The writer port and its deterministic hooks the operation drives, plus the refusal report it returns for a refused input. | `ManagedProjectionWriter`; `ProjectionHooks`; `refusal_report` | mcp/src/agents_remember/memory/knowledge/managed_projection.py:84-88; mcp/src/agents_remember/memory/knowledge/managed_projection.py:91-100; mcp/src/agents_remember/memory/knowledge/managed_projection.py:263-625 |
-| The operation's own pinned behaviour: two byte-identical runs of every view at one snapshot and one renderer, and a delete-then-reproject that loses nothing canonical because the destination is derived rather than authoritative. | `project_knowledge` | mcp/tests/test_knowledge_projection_vault_safety.py:259-262; mcp/tests/test_knowledge_projection_vault_safety.py:358-420 |
-| The differential that keeps this module's manifest from becoming a second identity authority over the dataset's own tables and columns. | `test_no_record_table_gained_an_identity_column_and_no_identity_reads_the_manifest` | mcp/tests/test_knowledge_projection_vault_safety.py:429-451 |
+- The module's own statement of the whole shape: sibling views from one resolved record set, one renderer/profile version, neither being the portable export, the renderer that places rather than produces text, the three recorded values, the condition rule and the separated attribution of a signal from a description. [1]
+- The public surface, declared as exactly the two renderers, the operation, its options value and the profile version. [2]
+- The marker written into both artifacts, with the reason it is written there rather than documented: a reader who finds the file cannot mistake it for the portable round trip. [3]
+- The one renderer/profile version both sibling views record, inherited as an alias of the views seam's value rather than spelled a second time. [4]
+- One projection configured as one frozen value, naming the per-path overwrite authorization requirement 5.8 requires, the deterministic interruption seam and, since MIK-R01, whether each view is read whole (`whole_views`, a converted tree). [5]
+- The destination derivation: one path segment per projected subject under its view, never a symbol name, a path prefix, a depth or an extension, with collisions left to the writer. [6]
+- The Markdown sibling view: the recorded header block, the per-row bodies, the unresolved-limitation section and the export marker, and nothing composed. [7]
+- One row rendered with its ordered position, its ordering input, its provenance class beside the value, its conditions before the prose they qualify, its consequence and its unassessed state. [8]
+- One no-consequence statement rendered with the class that produced it, and the authored form that names its author and the stored claim it cites. [9]
+- The JSON sibling view over the same resolved rows, carrying the projection note, the renderer version, the snapshot, the schema generation, the completeness statement and the rows themselves. [10]
+- The operation: the refused-input report that emits no artifact without the identity, snapshot and renderer version requirement 4.3 requires, and the plan handed to the writer once every view resolved. [11]
+- MIK-R01: a view read whole, every slice, with no 64-row cap on a converted tree. [12]
+- The sibling artifacts for one payload, one per declared format for each part, and the artifact constructor that always carries the three recorded values. [13]
+- MIK-R02: parts of whole rows, each within the artifact bound; a row too large alone is refused by name. [14]
+- The artifact type whose required fields enforce requirement 4.3, its destination profile, and the recorded renderer version the header block quotes. [15]
+- The writer port and its deterministic hooks the operation drives, plus the refusal report it returns for a refused input. [16]
+- The operation's own pinned behaviour: two byte-identical runs of every view at one snapshot and one renderer, and a delete-then-reproject that loses nothing canonical because the destination is derived rather than authoritative. [17]
+- The differential that keeps this module's manifest from becoming a second identity authority over the dataset's own tables and columns. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A projection renders records one namespace's dataset already holds into a destination directory the caller configured, and every identity it carries is a store-local reference or a renderer/profile version this repository defines.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **a converted tree's view is projected whole (the obligation carried from L02 Q7, accepted by the ruling of 2026-09-29 23:21:57).** Added a Logic paragraph on `whole_views` and `_whole_view`, an Invariants bullet and one row. **Reopened claim re-read and reworded:** the `ProjectionOptions` row now names `whole_views`; this pass's generated-repair bullet for it was removed because its claim was reworded. The other generated bullets of this pass are kept: their claims were not reworded.
-- 2026-09-29T23:55:58+00:00: Generated citation repair: `__all__` repointed to mcp/src/agents_remember/application/knowledge_projection.py:73-79. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:55:58+00:00: Generated citation repair: `PROJECTION_NOT_AN_EXPORT` repointed to mcp/src/agents_remember/application/knowledge_projection.py:84-87. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:55:58+00:00: Generated citation repair: `PROJECTION_PROFILE_VERSION` repointed to mcp/src/agents_remember/application/knowledge_projection.py:89-89. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:55:58+00:00: Generated citation repair: `_document_path` repointed to mcp/src/agents_remember/application/knowledge_projection.py:108-120. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:55:58+00:00: Generated citation repair: `_row_markdown`; `essential_conditions`; `conditions_omitted` repointed to mcp/src/agents_remember/application/knowledge_projection.py:149-187; mcp/src/agents_remember/application/knowledge_projection.py:169-169; mcp/src/agents_remember/application/knowledge_projection.py:174-174. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:55:58+00:00: Generated citation repair: `_consequence_markdown`; `claim_ref` repointed to mcp/src/agents_remember/application/knowledge_projection.py:190-202; mcp/src/agents_remember/application/knowledge_projection.py:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:55:58+00:00: Generated citation repair: `render_payload_as_json` repointed to mcp/src/agents_remember/application/knowledge_projection.py:205-220. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T19:58:59+00:00: Generated citation repair: `PROJECTION_PROFILE_VERSION` repointed to mcp/src/agents_remember/application/knowledge_projection.py:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **a projection over the 20,000-character artifact bound continues in parts or refuses `oversized_row`, and never raises.** Added the Logic paragraph, an Invariants bullet and one row, and reworded the `_outputs_for` row (one per declared format for each part). Records the ruling carried from the L23 review (2026-09-29, recorded between 06:39:28 and 17:10:08) and architect ruling Q7 of 19:56:40 (parts split by the file limit; the first-64-rows cap is carried to L01).
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The pinned-behaviour row cited `test_knowledge_projection_vault_safety.py:358-392` — the delete-then-reproject half of the claim — for `project_knowledge`, but the range stopped short of the two byte-identical runs the same sentence names, at `409` and `420`. The range was widened to `358-420`, so the cited span now covers both halves of the claim; the `259-262` vault-safety range and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `test_no_record_table_gained_an_identity_column_and_no_identity_reads_the_manifest` repointed to mcp/tests/test_knowledge_projection_vault_safety.py:429-451. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): created this one-to-one card for the external projection operation. It records that Markdown and JSON are sibling renderings of one resolved record set under one renderer/profile version while neither is the portable export, that the renderer places authored text and composes none (requirement 4.4 by construction), that every artifact carries its stable identity, source snapshot and renderer version or is refused as an unresolved projection input, that conditions precede the statement they qualify with an explicit omission line instead of a silent drop, and that a detection signal and an authored description stay separately attributed. It states the deliberate absences plainly: no model call, no summary, no score, no reassessment, no file write outside the writer port, and no identity minted from a destination path. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

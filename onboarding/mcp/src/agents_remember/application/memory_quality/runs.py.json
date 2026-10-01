@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/runs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The canonical identity and typed registry values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "content": "sha256:97385fd80810c9b721fac063ba5fe3a8a7cb9d32beb934b73736fc4f8bbf7757",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityRunIdentity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "content": "sha256:cce232136fcf2bc9ce14736c719ab18f6d12f49e75f840713acc3f68fc9016b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityRunAdmission"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "content": "sha256:1b4ca342ac43bf92aaf0222a65a8b9c2916e0511e6e74bfc74a0c4d7028a7518",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityRunSnapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Admission reuses equivalent live work before terminal pruning and hard live-cap refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "content": "sha256:411d2ae09531f60d396f7bf6fb0d7eae98738c6abff0b282df5b2c24d2ef864e",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_quality_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Polling requires repository ownership and returns a detached snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "content": "sha256:0ef8c57ea710186ef1b3b5c8d37b80c696e6bc7f62057b227b8bb6bcbd6cc665",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll_quality_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pruning removes terminal rows only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "content": "sha256:afb5b9fe27f63187e71e93daee41a0731ddc51e356730e770c2c1898e40c4dba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prune_terminal_locked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The typed controller owns public capacity and nondisclosure translations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:6a715d528af54912cb5e19cbbb9267475531b5cf87e46a27f8391883c9d1a0a5",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:b44e71007fa0a88f6ec17177f8979cd313678136b1e847464815851f03a9d461",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

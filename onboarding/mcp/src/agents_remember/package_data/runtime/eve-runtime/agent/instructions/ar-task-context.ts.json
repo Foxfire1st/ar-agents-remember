@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/eve-runtime/agent/instructions/ar-task-context.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The task document is the JSON-primary authoring surface; instruction material does not replace it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
+            "content": "sha256:70b17206fab5788c32dddfc9fc1065bfbfb23e1677b40f0dc8282f445252977a",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_install_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The generator declares the `eve-runtime` target with its per-target ignore set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
+            "content": "sha256:932bb172d3f0bdc333a4d6bf5f8f5cbc97ec6251fdb20a345cedd1bce76ac585",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

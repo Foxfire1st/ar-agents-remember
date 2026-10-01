@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/diagnostics/store.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/diagnostics/store.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T17:50+02:00 |
-| lastVerifiedCommitHash | `4ba18bb23ba90e201bb37341d61c0efc64161fcf` |
-| lastVerifiedCommitDate | 2026-09-04T17:23:11+02:00 |
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification contract overview](../overview.md)
@@ -47,33 +37,23 @@ All refusals raise `CertificationContractError` with typed finding code/path/det
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. CCR-R13@v2 (frozen digest f0387b1627c5e8f48073b55d40dc362065e46943c5688f0f863fddb480770d3a) requires one stable diagnostic manifest per exact candidate in an isolated namespace; task artifact paths are not repo-relative citations, so the clause is recorded as prose.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The store must keep one stable manifest per exact candidate that never overwrites or satisfies the certifying quality-report manifest. | `_require_isolated_namespace` | mcp/src/agents_remember/certification/diagnostics/store.py:273-288 |
+- The store must keep one stable manifest per exact candidate that never overwrites or satisfies the certifying quality-report manifest. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Atomic read-modify-write uses the shared kernel atomic writer. | `atomic_write_bytes` | mcp/src/agents_remember/kernel/atomic_write.py:1-80 |
-| Digest helpers and typed findings come from the certification contract foundation. | `content_digest`; `CertificationContractFinding` | mcp/src/agents_remember/certification/digests.py:1-22; mcp/src/agents_remember/certification/models.py:120-180 |
-| The store revalidates the frozen records defined in the diagnostics models. | `DiagnosticRunManifest`; `DiagnosticAttemptRecord` | mcp/src/agents_remember/certification/diagnostics/models.py:149-177; mcp/src/agents_remember/certification/diagnostics/models.py:347-375 |
-| The run controller publishes attempt and terminal results exclusively through this store. | `DiagnosticExecutionEngine` | mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py:176-267 |
+- Atomic read-modify-write uses the shared kernel atomic writer. [2]
+- Digest helpers and typed findings come from the certification contract foundation. [3]
+- The store revalidates the frozen records defined in the diagnostics models. [4]
+- The run controller publishes attempt and terminal results exclusively through this store. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The store is filesystem-local and repository-neutral; no Dagger, service, or external store is touched. | `_update` | mcp/src/agents_remember/certification/diagnostics/store.py:228-246 |
-
-## Update History
-
-- 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
-
-- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass: created this card for the new CCR-R13@v2 durable diagnostic manifest store delivered in code commit 4ba18bb2; anchors and ranges derived from the current worktree source and pinned to that commit (tree 631145bf3e0d5899b1dcbccf8c0d4a8257821f0d).
+- The store is filesystem-local and repository-neutral; no Dagger, service, or external store is touched. [6]

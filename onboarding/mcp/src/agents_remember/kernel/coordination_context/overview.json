@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context",
+  "references": {
+    "1": {
+      "note": "The package-local facade keeps existing callers pointed at the split implementation.\n\nAnchor: \"_resolver.resolve_coordination_context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:65eded254886823405bb56e4121f233239cfafb11d2b9e524acc0e316772932d",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The current resolver constructs the context; retired parity suites provide no current pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:bb7b9186ab81a004eb8bcb47dae78f103a00e5c1bd53febee7739f01465ad6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_coordination_context"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

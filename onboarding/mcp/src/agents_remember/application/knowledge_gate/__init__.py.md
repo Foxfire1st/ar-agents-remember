@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_gate/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_gate/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -64,33 +54,24 @@ re-exports the public surface.
 
 - None of its own. The carried L37 items are on the [`gate`](gate.py.md) card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R09@v2` of task
 `260928_maintained-invariant-knowledge` and the leaf document `09_mandatory-invariant-closeout-gate.json`; they live
 outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package docstring: the rule, the six modules and where each route calls the gate. | "Invariant work is mandatory, never report-only (D5)." | mcp/src/agents_remember/application/knowledge_gate/__init__.py:1-22 |
-| The public surface. | "from agents_remember.application.knowledge_gate.adapter import KnowledgeGate" | mcp/src/agents_remember/application/knowledge_gate/__init__.py:26-56 |
+- The package docstring: the rule, the six modules and where each route calls the gate. [1]
+- The public surface. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the package reads the leaf's code and memory repositories through Git.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new package MIK-R09 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

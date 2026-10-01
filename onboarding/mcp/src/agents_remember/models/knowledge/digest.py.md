@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/digest.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/digest.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:24+02:00 |
-| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -67,37 +57,28 @@ because that order is the author's.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The exact invariant sealed mapping, including the sorted predecessor set and the excluded digest. | `canonical_revision_payload` | mcp/src/agents_remember/models/knowledge/digest.py:30-52 |
-| The digest computation and the single sealing operation for the invariant payload. | `revision_payload_digest`; `sealed_revision` | mcp/src/agents_remember/models/knowledge/digest.py:55-58; mcp/src/agents_remember/models/knowledge/digest.py:61-68 |
-| The exact family sealed mapping, which seals the joint guarantee and the same sorted predecessor set. | `canonical_family_revision_payload`; `family_revision_payload_digest`; `sealed_family_revision` | mcp/src/agents_remember/models/knowledge/digest.py:71-90; mcp/src/agents_remember/models/knowledge/digest.py:93-96; mcp/src/agents_remember/models/knowledge/digest.py:99-102 |
-| The recorded payload versions, separate so one payload's digest cannot be read as the other's. | `REVISION_PAYLOAD_VERSION`; `FAMILY_REVISION_PAYLOAD_VERSION` | mcp/src/agents_remember/models/knowledge/digest.py:26-27 |
-| The read path re-derives both seals and refuses a rewritten row or edge. | `decode_revision_row`; `decode_family_revision_row` | mcp/src/agents_remember/memory/knowledge/records.py:153-189; mcp/src/agents_remember/memory/knowledge/records.py:327-356 |
-| The store seals the draft rather than accepting a caller-supplied digest, on both aggregates. | `sealed_revision_from_draft`; `sealed_family_revision_from_draft` | mcp/src/agents_remember/memory/knowledge/records.py:190-214; mcp/src/agents_remember/memory/knowledge/records.py:303-326 |
-| The node that proves each sealed field is load-bearing rather than incidentally covered. | "test_an_invariant_revision_digest_seals_its_predecessor_set" | mcp/tests/test_knowledge_revision_seals.py:63-95 |
-| The canonical encoder the digest is computed through. | `sha256_digest` | mcp/src/agents_remember/kernel/canonical_json.py:34-37 |
+- The exact invariant sealed mapping, including the sorted predecessor set and the excluded digest. [1]
+- The digest computation and the single sealing operation for the invariant payload. [2]
+- The exact family sealed mapping, which seals the joint guarantee and the same sorted predecessor set. [3]
+- The recorded payload versions, separate so one payload's digest cannot be read as the other's. [4]
+- The read path re-derives both seals and refuses a rewritten row or edge. [5]
+- The store seals the draft rather than accepting a caller-supplied digest, on both aggregates. [6]
+- The node that proves each sealed field is load-bearing rather than incidentally covered. [7]
+- The canonical encoder the digest is computed through. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): recorded the family payload and its own version constant, extended the read-path rule to both seals (each recomputed over stored rows plus stored predecessor edges), and recorded that the field-isolating evidence for the sealed predecessor set now exists on both payloads. The two versions are separate so a digest can never be read as the other object's identity. Verification metadata remains empty until closeout stamps the code commit.
-- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new revision-payload seal. It records that the predecessor set is inside the digest and that the digest field is the only excluded member. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

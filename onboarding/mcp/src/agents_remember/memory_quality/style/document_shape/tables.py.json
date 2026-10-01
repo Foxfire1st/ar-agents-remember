@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/document_shape/tables.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `Row` (lines 36-41) — One line of a candidate table: where it was, and how many cells it holds..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "412f67bc168112ae53030656fc1e3af8e9a5d85d",
+            "content": "sha256:7433e61ad611a59d697ca51b0db460b5789ed4217870b2e58c93be6f297381fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "Row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `check_onboarding_root` (lines 44-52).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "412f67bc168112ae53030656fc1e3af8e9a5d85d",
+            "content": "sha256:a16acf59c2426aa4611c19e59b320b7cbcb77d4d598e051cba85dfdd9e65a667",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_onboarding_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `check_file` (lines 55-60).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "412f67bc168112ae53030656fc1e3af8e9a5d85d",
+            "content": "sha256:74aedc17ccda62ab0cda2149c9c75bdf0299b76aa226e17bdd8166cdf7b27698",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `rows_of` (lines 63-66).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "412f67bc168112ae53030656fc1e3af8e9a5d85d",
+            "content": "sha256:53db85db95e1734478793c9422a4a8cc1dd12f21f68010f7875d311cbf14dddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "rows_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `tables` (lines 69-86) — Every GFM table in the file, as its header row and its body rows..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "412f67bc168112ae53030656fc1e3af8e9a5d85d",
+            "content": "sha256:c5535f8b2dc3f47b8c0691aeb8a69a17458ce3ea24dbc8d2392ec33eaf69288f",
+            "locator": {
+              "kind": "symbol",
+              "name": "tables"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `starts_table` (lines 89-96).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "412f67bc168112ae53030656fc1e3af8e9a5d85d",
+            "content": "sha256:cbe970b8557b51053a313d5b2a175d5f500e70d6b63627400336c551404ff2c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "starts_table"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `read_body` (lines 99-112).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "412f67bc168112ae53030656fc1e3af8e9a5d85d",
+            "content": "sha256:2a72328d405bfee4f6144a8916abcbbdd4e529b747b014f3aec16dd51c48b88b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `ragged_findings` (lines 119-141).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "412f67bc168112ae53030656fc1e3af8e9a5d85d",
+            "content": "sha256:74318a0872ccc0e575e0432c05ae8fbe4c1a0d49f70950da0788f78798b7334d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ragged_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `ragged_message` (lines 144-168) — Return the complete repair for a short or long table row..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "412f67bc168112ae53030656fc1e3af8e9a5d85d",
+            "content": "sha256:18fb22eb4d021d62535e68866c4ec371587544ff2cc761a320aa834674528e26",
+            "locator": {
+              "kind": "symbol",
+              "name": "ragged_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

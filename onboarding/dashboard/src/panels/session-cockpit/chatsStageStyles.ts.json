@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/chatsStageStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stage body recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4478a2f3ee676e298124b70e903a187c09b72d5a",
+            "content": "sha256:8b7c543cd0442c99d5385ba5141bfed6b91328b38c061445231267d02d85b242",
+            "locator": {
+              "kind": "symbol",
+              "name": "body"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4478a2f3ee676e298124b70e903a187c09b72d5a",
+            "content": "sha256:f31e482f359e0417db8fc4ed0049d1d1af8f234296960604540d388cfa8ed236",
+            "locator": {
+              "kind": "symbol",
+              "name": "hiddenBehind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4478a2f3ee676e298124b70e903a187c09b72d5a",
+            "content": "sha256:491a9c8cb0522ec3cbfc624c928c7c854df3dae6f8ae3de2bb55becac7b3fed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "keptHidden"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

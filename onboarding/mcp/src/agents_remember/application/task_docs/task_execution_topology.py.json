@@ -1,0 +1,333 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The incremental authoring operation applies one validated judgment-provenanced mutation batch and bootstraps graph-less sprints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:2f95bbaffd921ff5d9f5c9f41de1fdef57c39f78ec1fa2e554c61e3e339ac20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_execution_graph"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:89e0666b6e332e84d31f3d00bf651e604c361164aa062a94f8461b11875ca923",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The current module exposes `ExecutionTopologyError`, `ExecutionTopologyAuthoringRequest`, `ExecutionTopologyEditRequest` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:876156c70d32939f8c7a138d487fbdff9aad03c7eb1d4b1c70c974810fa531d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExecutionTopologyError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:4d0cb9e8f2f98cff1a400d11c4fb250b6a815aacbc9b385e522fbdb3daed78e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExecutionTopologyAuthoringRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:d9a511fa7c245ef27472220b6562d64c453590c376203308f229c3ca3ed3abc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExecutionTopologyEditRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:6eb95f4e76f8dc43577270ce06092f964f2e48a1af060918b43971c0bf138123",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:82ee5e9ab4156da2c1108bb758b0ceef0b33a3a486cc4fb03ad020ca4114721f",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:05aecba693be8004244813573def99fb672fecf268b815f2ffd0112e18781c0e",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Claimed judgment ids resolve against the sprint's canonical Judgment Register (since 260815-DAG-L14 `_verify_authoring_judgments` delegates to the extracted shared `verify_sprint_judgment_ids`, also used by the sprint linkage operations).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:40590ab01226f51118b527bb3ab4763f88cb184b3694e4322f5cedbab1dd6ed5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_authoring_judgments"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:6458be6f7ea0fa60376d257779399bdaa16e6a351f96fc168f08de9c50fd386d",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_sprint_judgment_ids"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:b5dac65ef71a4a9a956945edba8185f7c638cfd4e846be537f06877c53b8bc70",
+            "locator": {
+              "end": 430,
+              "kind": "line_range",
+              "start": 404
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:5ca03bab23f46a6cc0ca640edff89fb184a8e7f70ecebfc29b5d0c8f612ad463",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 433
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:279907d31cdc8a0fd671a8b42f4d76652a2c0ee0dac0e8b9d085683c208027cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_complete_partitions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:242e54c157c2917dcf89dbd93bee43ae7ebaf35a819db1550720e58e06b37987",
+            "locator": {
+              "end": 741,
+              "kind": "line_range",
+              "start": 713
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The read-only inventory previews every sprint and commanded master's proposed nature and blockers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:17bcd8f3428838464157c8c0498fc854914df5f446dbdb3a26a075a36c1e7d80",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_execution_topology"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:113963c7ebc35bc03d6648d0194431f2647c4ed84a5288f030ec4a1c6abb461b",
+            "locator": {
+              "end": 1015,
+              "kind": "line_range",
+              "start": 953
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:5b71b192fac3365d3cf704a9cfc18bbdb3dafe82b9e19a55f557a183820bb392",
+            "locator": {
+              "kind": "symbol",
+              "name": "enforce_execution_topology_edit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The served-build preflight refuses a topology write whose serving runtime cannot parse the schema (model self-probe + non-editable wheel floor).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ed29e76db451fc4d8dc28be4c1476b0cb615e4c",
+            "content": "sha256:031f34472164fadd42917d1321e0d3fc494d066df14503c1293ab2a5691e49ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_serving_topology_schema"
+            },
+            "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A move whose leaf samples an edge endpoint refuses with the named retargets-edge cause before any acyclicity check (L15-R8 F3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:8b8513201023fd734113e53fe5ef01ff624975daa05320b791e5874b096bbdb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_move_does_not_retarget_edge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:60616b836fd6d5ef9672682f79f89aed95d68b8cb73517f6f8da3ed70bded843",
+            "locator": {
+              "end": 659,
+              "kind": "line_range",
+              "start": 638
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The draft node-kind scan runs before graph construction; unresolvable segment refs record an explicit `None` so membership validation names them (L15-R8 F6, L15-FIX-1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:67a25e872207098d36dd6b197982b18406a1cfbdae548d8a63a0071e4bebf69e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_draft_node_kinds"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:1948c2164603fd5a12c5f2660a5cc5412f8640e9d68fe7b220daff9632c34085",
+            "locator": {
+              "end": 710,
+              "kind": "line_range",
+              "start": 683
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The edit preflight fires only for edits that emit topology schema bytes (L15-R4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:eaa96c502a1d79807c3490f0a45edd68e3a14de904f31a6ba9e0b9d3079d1d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_edit_emits_topology_schema"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:8c758733f5e95dfe39b52a2ab80b82ced0acb813d6e8a30270cef1cf4ad6bde3",
+            "locator": {
+              "end": 878,
+              "kind": "line_range",
+              "start": 864
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

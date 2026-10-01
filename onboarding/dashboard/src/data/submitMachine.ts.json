@@ -1,0 +1,98 @@
+{
+  "path": "dashboard/src/data/submitMachine.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lifecycle client feeds status, withdrawal, and response observations through this fold.\n\nAnchor: \"possible-send-join\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e62d3c995f9eae68a7efc0cb2afa1a2a075cc492",
+            "content": "sha256:94bcee9df32d803d19ec398ec8f3bd9bc6d93cfdac529419ebaf355a0adeabef",
+            "locator": {
+              "end": 649,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "dashboard/src/data/submissionLifecycleClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The transport driver preserves the same request id through submit and reconciliation.\n\nAnchor: `executeReliableSubmit`, `continueReliableReconcile`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:9a751e442fb2135b1fd6ba172b0a0bbddd8dfdd69de9a7261f303a37dedf0362",
+            "locator": {
+              "kind": "symbol",
+              "name": "executeReliableSubmit"
+            },
+            "path": "dashboard/src/data/submitClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:9a4c107a2ff65b96c7008edd2c30f79bc2271f9275e196477f6707742970ddf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "continueReliableReconcile"
+            },
+            "path": "dashboard/src/data/submitClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The unit suite locks the partial order, availability-loss join, monotonicity, and deadlines.\n\nAnchor: \"joins stale dispatching with newer authority loss as possible-send unknown\", \"finds only truly resolving submissions as active\", \"backs off 1s → 2s → 5s and stops before crossing the ~2 minute window\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70de46ad2b2c63c0f3f540e828f56bff190334ad",
+            "content": "sha256:99939faa084ad6afc8c8f5295d3e2947f3aec32bde565d0051e3daaa734648a1",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "dashboard/src/data/submitMachine.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "70de46ad2b2c63c0f3f540e828f56bff190334ad",
+            "content": "sha256:fc4d18e1766c899f571a539184cc0a092e50b9b1102bae60f76663c62be5b721",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/data/submitMachine.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "70de46ad2b2c63c0f3f540e828f56bff190334ad",
+            "content": "sha256:4a3603d1a873ca7605613ccebb64f2203540d505051e8f79b582ab6c60444bdb",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "dashboard/src/data/submitMachine.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

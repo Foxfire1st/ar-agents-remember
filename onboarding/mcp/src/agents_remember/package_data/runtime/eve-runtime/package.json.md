@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/package_data/runtime/eve-runtime/package.json
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/eve-runtime/package.json` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
-| governingOverview      | `../../../../../overview.md`               |
-
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
@@ -42,17 +32,10 @@ output.
 - The four dependency pins are exact versions with no ranges; a range is a refusal, not a warning.
 - `node_modules/` is not committed and not part of the mirror.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The pins this file is compared against, and the one-line install command recorded for the operator. | `PINNED_DEPENDENCIES` | mcp/src/agents_remember/install/experiment.py:83-91 |
-| The packaged-application probe reads this file together with `agent/agent.ts`. | `probe_capabilities` | mcp/src/agents_remember/install/experiment.py:479-566 |
-| The generator declares the `eve-runtime` target with its per-target ignore set. | `TARGETS` | scripts/sync-runtime.py:61-78 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **created** for the packaged mirror this leaf
-  adds as a generator target. The card records generated content, the exact-pin contract the
-  capability probe enforces, and the authored source. Verification metadata names the leaf base
-  commit because the candidate is **uncommitted**; the real stamp is closeout-owned.
+- The pins this file is compared against, and the one-line install command recorded for the operator. [1]
+- The packaged-application probe reads this file together with `agent/agent.ts`. [2]
+- The generator declares the `eve-runtime` target with its per-target ignore set. [3]

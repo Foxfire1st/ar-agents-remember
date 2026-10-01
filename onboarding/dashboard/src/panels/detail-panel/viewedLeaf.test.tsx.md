@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/viewedLeaf.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/viewedLeaf.test.tsx`     |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-11T15:20+02:00                                      |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                  |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -35,33 +25,21 @@ Assertions preserved from the monolithic suite.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The viewed-leaf reporting suite. | "describe(\"DetailPanel viewed-task reporting\", () => {" | dashboard/src/panels/detail-panel/viewedLeaf.test.tsx:11-52 |
+- The viewed-leaf reporting suite. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-11T15:20+02:00 — Replaced the generic test-runner anchor with the suite's unique
-  declaration and complete current extent.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  viewed-leaf suite split from `DetailPanel.test.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

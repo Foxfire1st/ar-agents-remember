@@ -1,0 +1,35 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFeed.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The feed renderer entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb4b830eaa39f3271cc9ad094bdd09274411787",
+            "content": "sha256:7666cb75670c4b3ce0af2bf44c8e82ddd9c483563020f2551bda9ef8753f63f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TimelineFeed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5fb4b830eaa39f3271cc9ad094bdd09274411787",
+            "content": "sha256:9dd25785955d81b15d92afc6d0d5d713acf848a0a40f6e8313eb90f4de933003",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

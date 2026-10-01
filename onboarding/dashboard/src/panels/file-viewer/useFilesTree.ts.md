@@ -1,15 +1,5 @@
 # dashboard/src/panels/file-viewer/useFilesTree.ts
 
-| Field | Value |
-| ---------------------- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/file-viewer/useFilesTree.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-29T09:06+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [file-viewer/ overview](overview.md)
@@ -44,20 +34,10 @@ async loading, selection, keyboard nav, and Enter-to-open. The per-id cache is t
 must stay a character that cannot occur in a path, and the scope segment must remain in the id, or
 re-rooting could collide across scopes.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `FileTree` renders this tree and owns the mouse click handler (folder toggle + file open). | `FileTree` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
-| `listDir`, `DirEntry`, and `Scope` come from the L1 files client. | `listDir`, `DirEntry`, `Scope` | dashboard/src/data/files.ts:13-13; dashboard/src/data/files.ts:31-37; dashboard/src/data/files.ts:113-114; dashboard/src/data/files.ts:118-118 |
-| `FileViewer` mounts one tree per side, re-keyed on `{repo}:{scope}:{side}`. | `FileViewer` | dashboard/src/panels/file-viewer/FileViewer.tsx:299-299 |
+### Repo-Internal References
 
-## Update History
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-
-- 2026-08-03T02:42:21+02:00 — W3-B04 curator: curated 1 table citation (1 total), supplying exact anchors and path; the scoped fixer generated all final extents.
-
-- 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the per-side async
-  Headless Tree hook (one tree per `code`|`onboarding` side, rooted at `{repo, scope}`, `getChildren`
-  over `/api/files/list` with a per-id `DirEntry` cache and Enter-to-open). Verification metadata pinned
-  to the task base until closeout stamps the L2 code commit.
+- `FileTree` renders this tree and owns the mouse click handler (folder toggle + file open). [1]
+- `listDir`, `DirEntry`, and `Scope` come from the L1 files client. [2]
+- `FileViewer` mounts one tree per side, re-keyed on `{repo}:{scope}:{side}`. [3]

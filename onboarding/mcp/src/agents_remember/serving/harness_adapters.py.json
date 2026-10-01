@@ -1,0 +1,69 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_adapters.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external/domain document defines a per-harness delivery adapter; the leaf task doc (R2) and this implementation are the source of truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5db338e1d579e16e5366553b32827aa86bea1940",
+            "content": "sha256:1e9ddce0314daef2d272e1cc0dd52537efceeeadec965cc046c6828ab5b2056f",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessAdapter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`get_adapter` is the sole entry point `serving.injector.deliver` calls to resolve per-harness behavior for the blocked-check and post-submit-confirmation corroboration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d61509a5729f3bc17908fdd7e111859e5cd77529",
+            "content": "sha256:179a57ebd4651816971c08db623f59f67544bd3090e58f89890d8469e912140d",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliver"
+            },
+            "path": "mcp/src/agents_remember/serving/injector.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`boot_ready`/`composer_state` compose `turn_state.classify_turn_state`/`turn_state.boot_ready` and `pane_signals.classify_pane_signal`/`pane_signals.composer_state`/`pane_signals.blocked_reason_label` — the single source of truth for every pattern table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82bae0d9e6e48ae9718a3cf3ed2f9a1337ce9e44",
+            "content": "sha256:715e1749b8f76639fd144e6647220892a6df13d3bf5e01a1cc4abe92c4b84933",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_turn_state"
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82bae0d9e6e48ae9718a3cf3ed2f9a1337ce9e44",
+            "content": "sha256:3f7e968dee09540953f08428545aecc6b2ee0f94a865bbabbf567914ea937f59",
+            "locator": {
+              "kind": "symbol",
+              "name": "boot_ready"
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

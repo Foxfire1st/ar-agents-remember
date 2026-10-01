@@ -1,0 +1,311 @@
+{
+  "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+        "content": "sha256:96fbae51c041a77b745790c2267462b9abef6aff06ca3489390ded77a0b6e35a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewCenterBody"
+        }
+      },
+      "id": "RLZ-1PT6BEVC",
+      "invariant": "INV-VPX81HXV",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Derives linksIncomplete from centerSelection (true while the selected family's members are not complete) and passes it into the one expressions element that every center variant renders. It also passes onRosterNext to the member, family and unavailable-member centers, so the partial-links notice and the user-driven roster continuation survive whichever view is shown.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+        "content": "sha256:6e85744d51880d00fd34feb58f7dbe50462b7d6c5c6f3f53a43a755f697d670f",
+        "locator": {
+          "kind": "symbol",
+          "name": "MemberCenter"
+        }
+      },
+      "id": "RLZ-KPXX9Y7G",
+      "invariant": "INV-BR5MTSTY",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Renders the same member reading path whether or not a family entry exists: without one it drops only the guarantee comparison and roster continuation, while the selected intent statement, the bound source expressions and the subject evidence still render. The header comes from memberContextLabel, which says 'No recorded family' only for the backend's no_family_recorded state and 'Family context unavailable' otherwise.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+        "content": "sha256:6e85744d51880d00fd34feb58f7dbe50462b7d6c5c6f3f53a43a755f697d670f",
+        "locator": {
+          "kind": "symbol",
+          "name": "MemberCenter"
+        }
+      },
+      "id": "RLZ-NF0112J4",
+      "invariant": "INV-H8EM1VJR",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Lays out the member view as one section: the family guarantee comparison when a family entry is present, the selected intent statement, and the bound source expressions directly after it, with the roster member's own statement and realization claims under a disclosure in the same section.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The family centre: guarantee, carried members, the expressions slot, family evidence, then the leaf's knowledge panel.\n\nAnchor: \"function FamilyCenter({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:1c03c04dd6c7f73bf43e9f2e85d317f5784ced76c7217239b3a2982f55a732e4",
+            "locator": {
+              "end": 719,
+              "kind": "line_range",
+              "start": 646
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`FamilyMemberContext` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:a7e72b33b5cb9df4eca702f5997c953dbb6e5ee5e37f6eb35e7857d7e211cb99",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "On a tree comparison the family centre's member list follows the tree's order (MIK-L33).\n\nAnchor: \"const distinct = orderMemberRows(\"; \"useTreeOrder(),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:1a73cb9d093c9af44df7c2fe5bacac7cb33e35dd01036b081e46d347649bad9f",
+            "locator": {
+              "end": 679,
+              "kind": "line_range",
+              "start": 672
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The member centre: guarantee, the selected statement with the subject's member rows kept per side (MIK-L35, review R1 F1), the expressions slot, evidence, then the knowledge panel.\n\nAnchor: \"function MemberCenter({\"; \"function subjectRows(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:6e85744d51880d00fd34feb58f7dbe50462b7d6c5c6f3f53a43a755f697d670f",
+            "locator": {
+              "end": 847,
+              "kind": "line_range",
+              "start": 773
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:c026124300e10d656672f8d767421b037188277e16c3e91845744d84960febba",
+            "locator": {
+              "end": 857,
+              "kind": "line_range",
+              "start": 849
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The centre entry: a thin wrapper that sets the tree-comparison scope (MIK-L35) around the body, which wires selection, the expressions slot and the knowledge panel for every centre from the workspace's leaf-wide read.\n\nAnchor: \"export function FamilyReviewCenter(props: FamilyReviewCenterProps)\"; \"function ReviewCenterBody(props: FamilyReviewCenterProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:d2becd4650eb27683155b5db0b7ad8d7e15d9975bbf2a353961f6e48dd8f68bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyReviewCenterProps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:408e7cb88a27615fc41130330b4542d62380ada9df1aa78acf26c137f6c7db06",
+            "locator": {
+              "end": 903,
+              "kind": "line_range",
+              "start": 903
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:0136b112598b155aea7b24a819dd041b008b8c4e90a54295538783ed2d818ed9",
+            "locator": {
+              "end": 911,
+              "kind": "line_range",
+              "start": 911
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Planning marks only from the same comparison, and the knowledge panel only from a tree read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
+            "locator": {
+              "kind": "symbol",
+              "name": "pinnedWorklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:a9d5dccefd0526085a46ab405aac74fa1c3034aa92a2a40df9c62e937ae37bc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledgePanel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cards for a tree comparison, the landed file view for a dataset review, and the invariants one selection reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:bdbf7e9caade4cd25b816d3f74dc0aebf37c73cd1a9455cb7c8e924ecb725ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CenterExpressions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:83a5e0d2563d6cb3c95a4e2703398f9266533abecb267ee5a532f3d1973ab95b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cardInvariants"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Identical guarantee text shown once as wording unchanged, with compact revision labels; on a tree comparison a changed guarantee text, even at one revision, is the word-diffed block first, and a one-sided guarantee carries its R06 label (MIK-L35).\n\nAnchor: \"const textChange = wordDiff ? guaranteeTextChange(entry) : null;\"; `guaranteeRevisionLabels`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:bf97083e7c87d83ccc765b41a2b8fa3d9ec40849c659024c65a660a3cbce0ede",
+            "locator": {
+              "kind": "symbol",
+              "name": "GuaranteeComparisonBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The centre details print the independent facts; on a tree comparison the guarantee fact names one revision whose texts differ `same_revision_text_changed` (MIK-L35, review R1 F2).\n\nAnchor: \"function IndependentFacts({\"; \"guaranteeFact(entry, tree)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:2c6781d39960e1c72f46cc3b195c463595b4085f55f9e13c13d455cf9d8727e1",
+            "locator": {
+              "end": 771,
+              "kind": "line_range",
+              "start": 721
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The member centre's family line: the review's label, or a followed marker's unknown membership with the review's reading beside it (MIK-L34).\n\nAnchor: \"<MemberFamilyLabel subject={subject} payload={payload} entry={entry} />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:74a02be2082df868d060fd6e6873574bfb64ac179807e87d09970ea0772e8a68",
+            "locator": {
+              "end": 806,
+              "kind": "line_range",
+              "start": 806
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The label component and the moved review label.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:0910f3aeb46b49518184049b8643d518aff2751c2846a54a7bee25a97d7dbae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberFamilyLabel"
+            },
+            "path": "dashboard/src/panels/review/MarkerTargetState.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
+            "content": "sha256:3842b55ef5705fc42e4bfc8eebb7eea7032f9df052946b1431dd58710e073395",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberContextLabel"
+            },
+            "path": "dashboard/src/panels/review/MarkerTargetState.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

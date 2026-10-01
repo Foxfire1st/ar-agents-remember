@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/registration/providers.py
 
-| Field                  | Value                                                        |
-| ---------------------- | ------------------------------------------------------------ |
-| repository             | agents-remember                                               |
-| path                   | `mcp/src/agents_remember/mcp/registration/providers.py`       |
-| doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-08-02T01:05+02:00                                        |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                    |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                                 |
-
 ## Governing Overview
 
 [registration route overview](overview.md)
@@ -45,21 +35,9 @@ payloads are report-filed and compacted there, not here.
 - Keep raw provider troubleshooting behind `provider_diagnostics`.
 - `provider_watchers` is mutating except `action="status"`, and registers `dry_run=False`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The payload builders and their compact/report-filing helpers. | `provider_status_payload`, `provider_diagnostics_payload`, `provider_watchers_payload` | mcp/src/agents_remember/mcp/tools/providers.py:33-37; mcp/src/agents_remember/mcp/tools/providers.py:40-52; mcp/src/agents_remember/mcp/tools/providers.py:73-87 |
-| Watcher action handling and the `refresh` rejection. | `provider_watchers_tool` | mcp/src/agents_remember/application/provider_tools.py:48-87 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T21:06:18+02:00 — 260731-EFA-L6 curator W2-B10: repaired 4 citation findings (2 reference rows); scoped recheck clean.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The three provider
-  declarations moved out of `server.py` unchanged. Verification metadata pinned to the pre-change
-  commit until closeout stamps the L2 code commit.
+- The payload builders and their compact/report-filing helpers. [1]
+- Watcher action handling and the `refresh` rejection. [2]

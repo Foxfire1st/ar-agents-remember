@@ -2,13 +2,7 @@
 
 | Field                  | Value                                                               |
 | ---------------------- | ------------------------------------------------------------------- |
-| repository             | agents-remember                                                     |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation-library/`        |
-| doc_type               | `route-local-overview`                                              |
-| lastUpdated            | 2026-08-01T13:28+02:00                                              |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                         |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `../overview.md`                                                    |
 
 ## Governing Overview
 
@@ -101,78 +95,25 @@ this overview is their governing pillar.
 | Read-only preview | [ConversationHistoryPreview.tsx](ConversationHistoryPreview.tsx.md) |
 | Sole exact-open resume action | [OpenConversationAction.tsx](OpenConversationAction.tsx.md) |
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This route relies on its direct agents-remember source/tests and the reviewed
 task/worker/verdict evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for the in-stage history browser. | — | — |
+No configured Domain Documentation source exists for the in-stage history browser.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The browser composes repository-local components over this package's own library contract; no
 cross-repository implementation source governs it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reconstructable library projection this browser reads. | `# dashboard/src/data/conversation-library/ — Dormant Conversation Library Projection Overview` | onboarding/dashboard/src/data/conversation-library/overview.md:1-150 |
-| The one-roof composition that mounts this browser in-stage. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
-| The live renderer whose block grammar the read-only preview reuses. | `# dashboard/src/panels/session-cockpit/conversation/ — Structured Conversation Renderer Overview` | onboarding/dashboard/src/panels/session-cockpit/conversation/overview.md:1-360 |
-
-## Update History
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the in-stage open path to describe
-  canonical task-document-and-role launch context and the removal of leaf-key addressing.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: conversation-library panels changed only by behavior-preserving lint remediation.
-
-- 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 3 Repo-Internal onboarding-overview citation
-  rows with exact current headings and memory-repository-relative paths; verification metadata and
-  route prose remain unchanged.
-
-- 2026-08-01T13:28+02:00 — No route impact: 260731-EFA-L4's single change under this route is
-  `ConversationLibraryList.test.tsx`, and the whole diff is fixture plumbing — the local
-  `capabilities()` and `row()` builders and the hand-written `AGENT` literal are replaced by
-  `conversationLibraryRow` (imported under the alias `row`), `conversationLibraryAgentRow` and
-  `historyCapabilities()` from `test/fixtures/conversationWire.ts`, the two inline
-  `as LibraryConversationKey` casts collapse into that module's single `libraryConversationKey()` mint,
-  and the `onSelect` spy is typed `vi.fn<(selected: ConversationLibraryRow) => void>()` so the payload
-  assertion reads `onSelect.mock.calls[0]?.[0]` instead of casting its own result back. No component
-  source, no `it(...)` title, and no `expect` changed. Every route-model claim this suite backs is
-  therefore intact and re-proven, not merely unrefuted: the indented child rows with label/suffix/role
-  badges, `agentChildRow` promotion carrying the CHILD's server-minted `conversationKey`/`identityDigest`
-  with the parent's read-path capabilities and `agents: []`, no child rows without `agents`, and the
-  verbatim-or-absent `agentsNote`. I checked the one assertion that reads capability CONTENT
-  (`selected.capabilities.completeness.state` is `"supported"`) against the shared
-  `historyCapabilities()` default, which supplies it exactly as the deleted local helper did; the four
-  cases run green. The surface's `agentsNote` pass-through, the sole-exact-open authority, and the
-  `nowrap` + container-query height-containment idiom are untouched. Verification metadata pinned until
-  closeout stamps the commit.
-
-- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: recorded the harness sub-agent grouping in this
-  route — the list's nested child rows (`agentChildRow` promotion: own server-minted key, parent-
-  inherited capabilities, `agents: []`, `agent`/role badges), the verbatim `agentsNote` render, the
-  surface's one-line `agentsNote` pass-through, and the new `ConversationLibraryList.test.tsx` suite
-  added to the File Onboarding Map. The L7 source is uncommitted, so lastVerifiedCommit* stays on the
-  prior stamp and closeout re-stamps verification.
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: minimal body update for the V10 responsive fix —
-  the Route Model's stale `@container (max-width:640px)` stacking threshold is corrected to `56rem` (the
-  two columns crush below ~56rem, so the surface stacks earlier), and the sibling `MarkdownBlock`
-  whole-word/inline-code-nowrap wrap policy (dependent on the RV-1 root override) is noted. The
-  `nowrap` + container-query height-containment idiom (F22/F23/L4.R5) is unchanged; no data/authority/
-  focus behavior changed. Verification pinned to the leaf base (`352d5cd`) until closeout stamps the
-  candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the governing pillar for the in-stage
-  previous-conversation browser — the read-only preview in the shared block grammar, the sole exact-open
-  resume action with focus-only-on-opened-proof (R4) and same-requestId reconcile, the §4.4 return paths
-  on one focus-return token, and the single-line-flex + container-query height-containment idiom that the
-  F23 regression fix established (L4.R5). Verification is pinned to the leaf base (`0be0099`) because the
-  new source route is uncommitted; closeout owns its first source stamp.
+- The reconstructable library projection this browser reads. [1]
+- The one-roof composition that mounts this browser in-stage. [2]
+- The live renderer whose block grammar the read-only preview reuses. [3]

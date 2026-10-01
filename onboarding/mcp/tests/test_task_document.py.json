@@ -1,0 +1,225 @@
+{
+  "path": "mcp/tests/test_task_document.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The leaf-operation fixture's master prerequisite: every `_create` ensures a parent master exists before authoring its leaf, which is the authoring flow the plane allows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:e50ed3e9939be2d5be57be1ee6652a0d401c7af12c9c1d53f80e24c921bb668d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:71907957833bd3f8c47d25d9f58f8094ae8fb3692564bb4baa9a0e97e5504ce8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_parent_master"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:c73569baffe1a7adf13ca9010921a524683f969fb10deee3cbc0ae893c651e6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_parent_master"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:f6cef423a81ea131f09ee2d2069f2232a563407e64eb32305f7f0a02180b9661",
+            "locator": {
+              "end": 496,
+              "kind": "line_range",
+              "start": 476
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:07da629bf3d12b7fc86db54fa48d94b531915fdb01be863dd9dde7f05d747f84",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 498
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:b4a7cd00e92427322da879e6ec1375b01cd407751c30fa5ee3feec935931a33b",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 503
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Batch failure removes new files published before later document",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:e59e9e67f60c4322ae8224ba3313bd5b2bd04101c969729463d5270c47906b94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_batch_failure_removes_new_files_published_before_later_document"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Progress counts every declared parent and child",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:94f200be58fc5304d3693812802e72a6b5e32d58fecb4f0b50a0296177798042",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_progress_counts_every_declared_parent_and_child"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current step prefers active then first unfinished then none",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:2eca9e0fce4cfa641055e6c6d81f7d898a484f620f02e65d9e49e1d966cc296d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_step_prefers_active_then_first_unfinished_then_none"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Golden small light doc",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:c464b988f1e67ea27c643cc5309abf37c3bead9ce5fdaf48db941b9cf966514c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_golden_small_light_doc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Decision cell escapes pipe and newline",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:967eb2ac62d58a6cd186fc5f40e48f1b1b382f42066252df7d69c5d540aeff97",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_decision_cell_escapes_pipe_and_newline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Code example fence preserves blank lines",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:e35b2fa7308d6ffe7bd96b868a1159f5eca4184fa8001ec69a9fc4cc169189ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_example_fence_preserves_blank_lines"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Real subtask extensions round trip content complete",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:01e9eca5f166471950a42ecbf9a967e6fc520c46a02a5ddd43eecb7680dbf77d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_subtask_extensions_round_trip_content_complete"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Golden master",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:2b662920db96ccf68bf6afa6afb3396f8f88a39338ebea63740e6dea621f3dee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_golden_master"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Write then read roundtrips and leaves no tmp",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8780cfae5e26c38df4f4727e0574d8d2584df8",
+            "content": "sha256:a0e59d86088a12674a405da49a712f377fca579eb4811cc1eea364ac8e46b805",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_write_then_read_roundtrips_and_leaves_no_tmp"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

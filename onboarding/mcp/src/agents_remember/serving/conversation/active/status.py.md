@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/status.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/status.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active conversation serving overview](overview.md)
@@ -69,36 +59,32 @@ native evidence only.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. The canonical vocabulary and
 revision rules are the repository-owned strict wire contract cited below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this authority. | — | — |
+No configured domain documentation was available for this authority.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The canonical evidence→state map and status envelope models live in the parent contract module;
 orchestration consumes this authority through the one delegated projection; the projector feeds
 it observations and terminal settlements.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| "CANONICAL_TURN_STATE_BY_EVIDENCE" fixes the evidence-to-turn-state vocabulary this service classifies into (declared in models/conversations/status.py since L9). | "CANONICAL_TURN_STATE_BY_EVIDENCE: Mapping[" | mcp/src/agents_remember/models/conversations/status.py:42-42 |
-| `ConversationStatus` and its freshness/process/turn products define the revisioned envelope shape. | "class ConversationStatus(WireModel):" | mcp/src/agents_remember/models/conversations/status.py:137-137 |
-| Orchestration's `snapshot_turn_state` delegates here with a documented function-local import; signature unchanged. | `snapshot_turn_state` | mcp/src/agents_remember/serving/hosted_control_projection.py:78-101 |
-| The projector observes snapshots and pending terminal settlements through this service per poll. | "self._status = ConversationStatusService(", `poll_once` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:88-88; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:129-144 |
-| `SeatTurnState` is the orchestration vocabulary the single projection rule emits. | `SeatTurnState` | mcp/src/agents_remember/models/terminal_catalog.py:32-32 |
+- "CANONICAL_TURN_STATE_BY_EVIDENCE" fixes the evidence-to-turn-state vocabulary this service classifies into (declared in models/conversations/status.py since L9). [1]
+- `ConversationStatus` and its freshness/process/turn products define the revisioned envelope shape. [2]
+- Orchestration's `snapshot_turn_state` delegates here with a documented function-local import; signature unchanged. [3]
+- The projector observes snapshots and pending terminal settlements through this service per poll. [4]
+- `SeatTurnState` is the orchestration vocabulary the single projection rule emits. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this status authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -116,36 +102,3 @@ overwrite the last one. Deciding them separately is how a weak observation overw
 The precedence rules themselves are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=1, citation_prose_not_in_cit_form=4, citation_source_malformed=1); final scoped citation check clean.
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations in Logic, all
-  read back. `classify_process` L91-L100 → L101-L110; `snapshot_seat_turn_state` L178-L190 → its
-  full body L205-L223, and `seat_turn_state_for` in the same sentence L155-L175 → L165-L202 (the
-  cited span stopped before the `starting`/no-prior-claim rule the sentence describes). The
-  observation bound was cited at L49, which is now the `EVIDENCE_EXPECTED_TURN_STATES` frozenset;
-  `OBSERVATION_BOUND = "poll"` is L59-L60. `STALE_AFTER_MS` L46 was verified still correct. NOT
-  fixed (beyond this worklist): the same paragraph's remaining anchors also drifted —
-  `classify_turn` L103-L140 → L113-L150, the codex turn id L193-L200 → `_active_turn_id` L226-L237,
-  settling raw keys L203-L234 → `_classify_settling` L240-L271, `ConversationStatusService`
-  L252-L447 → L306-L508, `_apply` L324-L365 → L361-L412, the completed-outcome carry L348-L354 →
-  L390-L397, `_set_turn` L350-L379 → L414-L434, the revision advance L283-L300 → L346-L354 inside
-  `observe`, and `_envelope` L437-L465 → L480-L508.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation whose target
-  file no longer exists. `serving/conversation/active/projector.py` was split into the
-  `active/projector/` package; the per-poll observation the row names now lives in
-  `projector/rebuild_coordinator.py` — the coordinator constructs `ConversationStatusService` at L84
-  and `poll_once` calls `self._status.observe(snapshot, harness_id, terminal=self._stream.consume_terminal())`
-  at L129-L144. Repointed both the link path and the range; no claim text changed.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `TurnTransition` as the one proposed change plus the strength that justifies it.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the canonical
-  status authority — the one evidence classification, revisioned envelope, single seat
-  projection, terminal-outcome handling. Verification is blank because the new source file is
-  uncommitted; closeout owns its first source stamp.

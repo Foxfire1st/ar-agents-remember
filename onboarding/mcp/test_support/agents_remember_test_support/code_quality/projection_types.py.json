@@ -1,0 +1,292 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fail-closed generation error raised for an unrepresentable schema shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:b09a71490fabc081c2af46645efab97d191ce2020a766266e0c134756ff64cfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionTypeGenerationError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The derived state partition and the closed TypeScript vocabulary blocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:e5812badcd58e830abed9d82f1362cda405cac5459b89e800b4a4bac73bddff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_partition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:06a85d22abf8e87be150b4930f320d9cff7039ddeea4af8a0e16140319066c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_vocabulary_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The served projection's own definitions are folded into the same generated module, and the definition set is compared exactly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:2a11615adab5fa9a588b04d68eb64aaafe0fc08d2af7b7cfee396f2fbe2fb0e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_typescript"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The drift check the repository gates on: a stale generated artifact is named rather than regenerated silently.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:d56247d3369444dc682e9e9ff9e5cff89413965eac428d01c8a5bcf753c2b6dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "stale_generated_files"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:209a110a258c431add84483fd081c08b80644c1d4712240f52b04c3c81e57c2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_generated_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:9e8a7d12df5f9951cc95107ce2a62f444a0e669a3c75e931a88de28efe2b01eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_null"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The persisted projection schema, copied for safe mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:a569c7646716c1ae00a54565799a22090be441e13f5155a5b8f8b0a19a7506b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace_projection_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declared HTTP/SSE snapshot schema, including its serve-time tail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:5b6c38a1c5505f8c69620f18c17e19fdc4f18b0f4f691030dd6dfb64eec8a09b",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_projection_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stable bytes for the committed JSON Schema artifact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:81837f9d84490d2a4883c42a7f152104cc7d3501b31252cd783ad610ec6e7297",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_json"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The exact declaration sets the renderer folds into TypeScript, including the served projection's payload rename.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:d8efc64a9c1348b8efe35d22afa406ffbee6e4cc9f8b8086f452e4e9b2e8c40e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFINITION_RENAMES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:028b3aa12f7a3f7f4606704e79c2b5590225ecf09772db51b5069b4e99caff31",
+            "locator": {
+              "kind": "symbol",
+              "name": "NAMED_VOCABULARIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The models whose nulls are MEANINGFUL and therefore stay required `T \\| null` on the output contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:cd287079d45b293b1fce3e43d87c1d419bd8f0183e4ac9ccd120ad3a5e1fd489",
+            "locator": {
+              "kind": "symbol",
+              "name": "NULL_PRESERVING_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one vocabulary for runtime-only JSON Schema refinements, `maximum` included, and the shape each refinement may attach to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:b9bbb52a5a54f945fb4b26558a725b10ff2ebe72f46bbdb4714ceb673fa4a6a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_REFINEMENT_KEYWORDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:6bd406b0f45d499854d3d2dc25abf8262e6ad140e44ead99228a630b8257ada1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_schema_allowed_keywords"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Refinements are serialized deterministically beside their property instead of being dropped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:bc0398b21187a9f44798fbabaedf33d02da4ab7c0fa1f789e9f6520dd79ef927",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refinement_schema"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:a624a59afb849f526b747bbccf423f91dfc6ee6051bba946027d860069ca3983",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refinement_comment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The recursive, fail-closed schema walk that refuses any unknown or shape-inapplicable keyword.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:5d46b41124411453310f6b95e76a2496e09f5e65c8b11ca7d3ec60db93a5b963",
+            "locator": {
+              "kind": "symbol",
+              "name": "_schema_children"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:8b37dae543ce4ced28fd556d64f60131945de905194483be231c634178d04f0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_schema_node"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aabd85311d5c932ce2bce0616daf7bf00321e16",
+            "content": "sha256:17f6a0b6dcd495ad8b9e5a369d39a01e6ce0b6cd9e9baf0849bc44272f26f026",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

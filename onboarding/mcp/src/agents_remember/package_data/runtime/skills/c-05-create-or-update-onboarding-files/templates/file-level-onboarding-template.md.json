@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/file-level-onboarding-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`c-05-create-or-update-onboarding-files` skill routes file-level onboarding creation to this template and requires strict one-to-one mirroring with source files and route-local governing overview links.\n\nAnchor: `# c-05-create-or-update-onboarding-files Create Or Update Onboarding Files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb8d47925e8fb54ea2aa9885c08512c785b1d385",
+            "content": "sha256:434b831fab4be7f86827a2723ce0b69504a99ee7d15bd1ccc693312af73ed461",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template defines metadata including `governingOverview`, the governing overview section, purpose, code commentary, top-level reference sections, and append-only update-history guidance.\n\nAnchor: `# <SourceFileName.ext>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8104c5cc82eed5d66957c6e73804c5ca70d31625",
+            "content": "sha256:be20a68b837607bb8d9a3850f4296a3bb41011c5c220504c6d8b2bbf6a0fa9df",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Docs reference placeholder text requires actual online, intranet, library, or product documentation, treats local mirrors as orientation caches, links canonical live references, and records no relevant docs only after live-source checks.\n\nAnchor: `# <SourceFileName.ext>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8104c5cc82eed5d66957c6e73804c5ca70d31625",
+            "content": "sha256:be20a68b837607bb8d9a3850f4296a3bb41011c5c220504c6d8b2bbf6a0fa9df",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

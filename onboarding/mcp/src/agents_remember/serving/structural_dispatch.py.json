@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/serving/structural_dispatch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One bounded process-plus-POSIX lock path linearizes only the addressed seat transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a1b445aa70967e46c3acda823bf6fa3fb95c9ff",
+            "content": "sha256:ff737f16c36e0f0378c5a55ca6ac01d4e9ccf778aacb0866a2cd13cc70dff850",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_structural_dispatch_lock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pinned-brief lookup binds the inbox row to document, role, and private occupant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a1b445aa70967e46c3acda823bf6fa3fb95c9ff",
+            "content": "sha256:1922ecf4cc47161014aa6c879e74b4cc06b57fcc4f06154da6612731f9126f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "pinned_dispatch_brief"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Viability and status are derived from durable inbox state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a1b445aa70967e46c3acda823bf6fa3fb95c9ff",
+            "content": "sha256:bdd36ce581328a7398f17ae9db5f34094058d109b661a46a21f47060f8e4cb0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_brief_viable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a1b445aa70967e46c3acda823bf6fa3fb95c9ff",
+            "content": "sha256:3cd629dd9c81d1c8847bd796118e3b5068e4fdd3b6829b7c2abb2f6fecee2bae",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_brief_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

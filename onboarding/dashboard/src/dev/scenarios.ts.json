@@ -1,0 +1,208 @@
+{
+  "path": "dashboard/src/dev/scenarios.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`erFrame` wraps a named engine-room scenario into a full projection and throws on an unknown name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
+            "locator": {
+              "kind": "symbol",
+              "name": "erFrame"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:9dc66ac9a7115f87130d6a8d36e86258d89b34b1c8e7d2f5343670381016b2fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "reindexReroute"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`SCENARIOS` — timelines first, then the folded-in resting frames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:dbd4e595ed8877c525078fde8c58d9cb61b85a3707902aa8424c4dea29ce4f35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCENARIOS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved.\n\nAnchor: \"engine-cgc-seed-refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26976beab443429be148efbc9ed27a1dc8507fa0",
+            "content": "sha256:dc3d533f4116127b5df39faefb769bfbf78c1cc3fbe6d76186cd26b24499c789",
+            "locator": {
+              "end": 834,
+              "kind": "line_range",
+              "start": 834
+            },
+            "path": "dashboard/src/panels/engine-room/fixtures.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them.\n\nAnchor: \"def _seed_edge_state(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f5202770805a4016e906e848217bb239e3c013",
+            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra=\"forbid\"` model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d04955cbb250322e2ad17081008246b0664ce85",
+            "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states).\n\nAnchor: `engineRoomProjection`, `GALLERY`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:e5c3bb10a165a85da05cca88c4c1aca1686e7747eed09465df5889b1dbbde8ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "engineRoomProjection"
+            },
+            "path": "dashboard/src/dev/fixtures.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:494192985f8d2f2ea7f9f79c571aed7020551fcece88e01e2cb4b4e396f00cf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "GALLERY"
+            },
+            "path": "dashboard/src/dev/fixtures.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Consumed by the player transport + the bench picker.\n\nAnchor: `Bench`, `applyFrame`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "content": "sha256:b4df5ab1f0929cc5230f264ca569d5f7779be36faa23e04143b20cbbeb43d18d",
+            "locator": {
+              "kind": "symbol",
+              "name": "Bench"
+            },
+            "path": "dashboard/src/dev/Bench.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a496ea3787ae9c16702581c81e2793eb459d67e",
+            "content": "sha256:5a65c16b3394f3b1c8070abb55b1ef16528fc5dac85ada3ed7ca7120f438b165",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyFrame"
+            },
+            "path": "dashboard/src/dev/ScenarioPlayer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a496ea3787ae9c16702581c81e2793eb459d67e",
+            "content": "sha256:128a0aaf78b2eeb5170ebacc9c666b143e7328fe711c25fbaae3cafcd91a4df9",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/dev/ScenarioPlayer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`WorkspaceProjection` / `ObserverEvent` types each frame carries.\n\nAnchor: `WorkspaceProjection`, `ObserverEvent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:0f6e963168be5aeccb761d64603f4c4f77cace12721e5e7ca5d9f1e8e26a1ebd",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObserverEvent"
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

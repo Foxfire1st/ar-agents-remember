@@ -1,0 +1,221 @@
+{
+  "path": "dashboard/src/data/ptyHarvest.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Store, parsers, and hint vocabulary.\n\nAnchor: `ptyHarvestStore`, `parseOsc133`, `parseOsc94`, `turnHintWord`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2eb49e25b72503d0f728b57f7f3bf14df13fc7f",
+            "content": "sha256:9e2671a5c5f635ac1f5d106dea71a160a8e8fc7a85b9f9177e51aafc98020a51",
+            "locator": {
+              "kind": "symbol",
+              "name": "ptyHarvestStore"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2eb49e25b72503d0f728b57f7f3bf14df13fc7f",
+            "content": "sha256:49f9375349eec4c1805b63ed6e103deb2d6b0f609b80f99da16062c645b93550",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseOsc133"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2eb49e25b72503d0f728b57f7f3bf14df13fc7f",
+            "content": "sha256:0837177206eaaf9826d9d0dbd15e5210c8c56d25bb5cd93e15f7b2ff73b093e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseOsc94"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2eb49e25b72503d0f728b57f7f3bf14df13fc7f",
+            "content": "sha256:06d5c1c7a9ddc11f98fd803fe6e70245cc18ea14b216706ed685b0398786f18d",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHintWord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The xterm-side hooks (onBell/onTitleChange/OSC 133/OSC 9), observe-only.\n\nAnchor: \"hooks?: TerminalStreamHooks;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3ee93dd1552027a86f954846b0b7a374559094",
+            "content": "sha256:f37f86c4ca5377e022306ee648442c40ef78950ca905e5d8502b8a90136b1684",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/panels/Terminal.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f3ee93dd1552027a86f954846b0b7a374559094",
+            "content": "sha256:554d7e72f7852666ba0b408b683c1e9bcc25ec79acd8c57c4545a8dc2aba98bc",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/Terminal.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The archetype gate (hooks only when NOT controlled) + acknowledge-on-focus.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:f3ae2d8247ee862b9326abc5b63fd396c7f5d78a785cf2a62da157f38eb747e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PtySurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:80cb61820129d00bdcb3538095ea1ae52b0ebcc3d5415a18c79048b2f5500c83",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rail consumers: bell attention marker + labeled tooltip hints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede35ad614b800bbfdfd6ff9ef3c7ce7c5eb17e8",
+            "content": "sha256:da42d81d22584adda5e272539bb57d8853c897c3f6788969371f47b64d7ad43e",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionRail"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The grammar this store must never feed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:e31b2ae53e0b44e3f02656b04af1d349d631a4c6284b2da6220e970bce1a3958",
+            "locator": {
+              "kind": "symbol",
+              "name": "seatVisualState"
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:a93fe090e3f6dcc02e1746dd8918c05033b0d4f19063020249417df99636a2cf",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The unit suite: parser matrices, clamps, no-fabrication, bell/ack semantics.\n\nAnchor: \"parseOsc133 (shell-integration marks)\", \"parseOsc94 (ConEmu progress)\", \"turnHintWord\", \"harvest store\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a7fbdd7bacdc6431ad598765a1bff23ead25d6b",
+            "content": "sha256:39d6f033f43aaa16f7ab21d5f2611c843a1e29b8809b715ce458553c227f9308",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "dashboard/src/data/ptyHarvest.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9a7fbdd7bacdc6431ad598765a1bff23ead25d6b",
+            "content": "sha256:292d3c43f5c80c4ba3f4dd2cdc661376aba16a318037fc473a1e7888db0a7732",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/data/ptyHarvest.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9a7fbdd7bacdc6431ad598765a1bff23ead25d6b",
+            "content": "sha256:9a5f8208124f7ea30a1a2cff68a6a7928d2f62bd1c6250ee39570a1bdd711432",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/data/ptyHarvest.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9a7fbdd7bacdc6431ad598765a1bff23ead25d6b",
+            "content": "sha256:9e6800c4939835052ec9ca3271c9700066de00edfdc4c7b1d22270b7d1ca86d1",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dashboard/src/data/ptyHarvest.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,117 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/startup/start_memory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source state, named-branch admission, and informational Git-derived metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
+            "content": "sha256:e29bba6b38904884cca4f760d456859b8a16e1dad2a56bb29ea3888820aa5e30",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_source_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
+            "content": "sha256:afe54630aff8b908592856079bf91429535302aabb46b9d79a76ba6aac68857d",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_branch_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Mtime reuse and divergence handling preserve the current indexing behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
+            "content": "sha256:502457006ef99f338ecc37910f8d85b818154bd1a9b3e581a421935f24f52505",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sync_worktree_memory_mtimes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
+            "content": "sha256:55d416daf53bdd2ae16e8400f3137043fa5c77da1a4a2b1930df831f0af7afd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_divergence_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
+            "content": "sha256:d09a341b7063cdd826658fcca618dec57f21b8f11bf6d5e77a8a76ef36e36d43",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Missing external repository and explicit disabled-memory outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
+            "content": "sha256:7ed26db55831e99036542b8b1f902892cad3961403cee590dfdfffce6b5d0e75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_disabled_memory_choice"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
+            "content": "sha256:382c2163f7861afd126bd14588da2780ed74cf79f9471f717beb579b1768ca3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_missing_memory_repo_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The informational ledger is reconstructed from commit attribution without a cache read.\n\nAnchor: \"without consulting a cached file or a ledger commit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

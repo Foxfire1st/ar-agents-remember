@@ -1,0 +1,87 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/scope_reporting.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact selection reasons and incomplete ownership",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2328a9a649d8d0e07147e16d95d2c06568db2381",
+            "content": "sha256:b12fd33d3263e6b4edeb7641f7259842f703c789734cb9da1012c82b0416e481",
+            "locator": {
+              "kind": "symbol",
+              "name": "targeted_scope_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Production-only diagnostic review threshold label",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2328a9a649d8d0e07147e16d95d2c06568db2381",
+            "content": "sha256:372ab5654c69a563f287b80805a30e02f3e54937e4f98d0cc03e88c7a42e47c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "crap_scope_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Diagnostic diff inputs without a floor",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2328a9a649d8d0e07147e16d95d2c06568db2381",
+            "content": "sha256:09b68cfdf029d1425e88e55fcd940271ef0582a1dfb69a226113c96baf894856",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_scope_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Project-relative TypeScript file resolution",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2328a9a649d8d0e07147e16d95d2c06568db2381",
+            "content": "sha256:a95c01baea71fc4b47db4679a36031323131bfe740027a849f5213a9415867ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "tsconfig_project_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Read-only provenance reporting dispatch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2328a9a649d8d0e07147e16d95d2c06568db2381",
+            "content": "sha256:66cc50b8e4ed4b9679544d8bae28f83f7796d07393cb5e00a6cd436871ce5af9",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

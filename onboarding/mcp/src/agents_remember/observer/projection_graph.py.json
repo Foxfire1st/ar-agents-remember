@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/observer/projection_graph.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The structural title protocol requires master-qualified leaf keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:581894bb44cb259c9092f3630395eaa1578e923c0201c524a0447e4d441f0ac5",
+            "locator": {
+              "kind": "symbol",
+              "name": "GraphNodeLike"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:8db791857e68ea8e5e249a7216002cd2c72483920aab6fc40f7b0a2d596babab",
+            "locator": {
+              "kind": "symbol",
+              "name": "GraphTitlesLike"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:e92f491b30b7186686235ced915c39305d53731e299559b3e09529c74d7f6c15",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:333263397ba73982b45521d84e92d30a1682b3cd6bee839ecb956a4817b46f8f",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_node_view` projects titles only through `(node.ref, leaf_id)` and retains local raw-id fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:7c8bc39433a691155dea349646270e97fe137820c85d3f39adb55f0d06f142b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_node_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public projection forcing proves duplicate local numbers retain the owning master's title.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b945f967e82a452517661e658b5ae231b174c447",
+            "content": "sha256:6406eca38995a7a001b21f87b56665b9066358483da932e82a40d01795e7ac5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentsGraphViewProjectionTests"
+            },
+            "path": "mcp/tests/test_task_documents_graph_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,203 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement that a decision is shown whole wherever it appears.\n\nAnchor: \"**A decision** is always shown whole wherever it appears\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:89de69aaae9f3957081f92f6be2b772dfaf6aef0135b357fa1d8510ed847427c",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The decision case: alternatives, and superseded derived at the later commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:aa44a1dedc3db2bab142d620572c5896682b98cb777e9f1b8d8a538c09f8e63e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_truth_view_shows_alternatives_and_derived_supersession"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The title field per kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:c49c7131f7c9511e03c0bc01543690dc38588e2785a594809e6ba59e19f96803",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TITLE_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A record's summary, or `missing`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:23b178b8feb3feb2531b30c69e14b684f347b490d3250eb7842530c93b72b46f",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_summary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:4c0313c20484fce06de94ffbe6451c4eeb93a1730ee1ac8721930311ffb42e41",
+            "locator": {
+              "kind": "symbol",
+              "name": "summary_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every decision of the tree read once; the superseding map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:ddfaccd5e0396fe814a8a2f6bb6b65f291dc081c6443212265fcc64e8ac83736",
+            "locator": {
+              "kind": "symbol",
+              "name": "Decisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A decision in full: alternatives, stored and derived status, supersession, governs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:01e6d9d8a602542ebbcec24c3b2a084dd25e7881b66bb44f0f383b3ec9a671ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "decision_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The L13 helpers every decision field is read through.\n\nAnchor: \"from agents_remember.models.knowledge_files.decisions import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:83f6b2f129ca3f68fbde918e0b27b95097a624cba28e57d2bef48fafb8c811e9",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A link target's kind; one indexed link with its record ends summarised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:2b77da180398b61d5c30254f19d25d3baf12abe18fa0d892e862161596babe63",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_link_target"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:08b85e0cc5f177576e4edeb32af3d30d0c4020fe4346dd98e16b41ca0e4d055c",
+            "locator": {
+              "kind": "symbol",
+              "name": "link_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Numbered references, every target resolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:e3915423595ba732560317afe98a87a3b176b5b1a00aac173fe37cacb506b3bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "reference_items"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:3d6bdbe06853165ef7c7f811db0eaa78822f7f8898ca3e98049f98c7cd880159",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reference_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Linking records, each once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f0aca27308ff6d0bf48d85dce1b014f4f01634",
+            "content": "sha256:d90a8d4dfc9a071cf8f7326c528e8be56a56b02b4b55678fad4a8bb08f341255",
+            "locator": {
+              "kind": "symbol",
+              "name": "records_linking"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The reviewer opened with no subject, when the subject catalogue answers after the bounded first-read wait (SUBJECT_HOLD_MS) has already released the task-context read.",
+  "conditions": [
+    "A reader gesture is a pointerdown, keydown, wheel or touchstart observed passively on the surface root.",
+    "Engagement is ignored while the hold is still settling, and never overwrites an explicit selection made by the same gesture."
+  ],
+  "exclusions": [
+    "A catalogue that answers within the bounded wait, which selects its first subject as before.",
+    "A refused or empty catalogue."
+  ],
+  "id": "INV-RMTHRQ0K",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "fbe573f5-a662-433d-842c-6211b227de24",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When the subject catalogue answers after the bounded first-read wait, a reader who has acted in the reviewer (pointer, key, wheel or touch) keeps the subject, view and focus they have and the catalogue only fills the navigation; a reader who has not acted is landed on the first family in the same mounted workspace.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,173 @@
+{
+  "path": "mcp/src/agents_remember/kernel/authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`RepositoryScope`, `McpRuntimeConfig`, `allowed_repo_ids`, `coordination_root`, and `path_is_relative_to` are defined here.\n\nAnchor: \"class RepositoryScope:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:c84a28884cf2fdfd7cdb26db62298358debe3f2aa74ad6f2a4229536b2c998f7",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:767ec0cac7ee1e6b71bc9428106181d3988c47f96da0d118b96995e6cf37d579",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:1ea732ed10ee413f94984de472f230cabcd09f7e0a382952228ed78b1296bbfa",
+            "locator": {
+              "end": 640,
+              "kind": "line_range",
+              "start": 635
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`AuthorityError` is the authority-violation error type raised by both guards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:7f26b29a1f0b715def1de7f7d30a324a15e3f00cce6914d124078511b7b7f2c5",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Worktree application entry points consume these guards for repo resolution and path confinement.\n\nAnchor: \"from agents_remember.kernel.authority import require_repo\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:5f05fa8f39116c592d415766a4c44d247bd90b906a9280cb2b396dfde4ecaed0",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Provider application entry points route repo validation through \"from agents_remember.kernel.authority import require_repo\".\n\nAnchor: \"from agents_remember.kernel.authority import require_repo\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:4b0edbd564c2a95549f4d352442f9bb5125dea17c9e7d66b54882558308ae4de",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Authority guard returning the repository scope for a configured `repo_id` or raising `AuthorityError`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:cae5d208c1d8ec05196503e1db089c686c65b9c7216370666479dc5709c237b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_repo"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:779d115e4f600250810d56478a00d8b217e5c480fa0660dc331fba97d87be490",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Authority guard resolving and confining a caller value to the coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b796960fc74a9b30db4aa3ef0b9739906ba9205382c96e9b73141c8260ddeeb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_within_coordination"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b977602b87edfa146bea5330d4c8a95b1b688fe8cbbe5cc367d2d2b844901c9e",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

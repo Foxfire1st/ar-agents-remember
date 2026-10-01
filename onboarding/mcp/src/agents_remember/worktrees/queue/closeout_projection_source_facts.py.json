@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_source_facts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Task facts contain only address, presence, and schema-owned completion-readiness fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06855bcdc14bcc2751f96e57b06101c24db978dd",
+            "content": "sha256:5d55a9a0d66f0f439197ad4c309d902e49164e2ffca62d93d0492becdf862c92",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_source_fact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Semantic topology is emitted as a separate explicit v2 source plane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06855bcdc14bcc2751f96e57b06101c24db978dd",
+            "content": "sha256:a61d6a7c965d667ff76da0437c920b9f415e88e3493a6bca07f4dfb236dca02a",
+            "locator": {
+              "kind": "symbol",
+              "name": "semantic_topology_source_fact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

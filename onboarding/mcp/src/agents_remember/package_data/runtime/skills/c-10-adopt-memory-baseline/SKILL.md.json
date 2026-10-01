@@ -1,0 +1,83 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-10-adopt-memory-baseline/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The skill defines the adoption use case, uses `--code-repository-name`/`--code-repository-root` command examples, and makes `c-02-memory-quality-control` skill drift plus explicit acceptance the central trust boundary.\n\nAnchor: `## MCP Tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4a472bf07782f0b5dc9adb134b22ed7d553efc",
+            "content": "sha256:adc9739ae2627821fa3c6421dcfd9ca85b40f13e819d1cf395a16c4af4d6c0e6",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The package baseline service implements the documented states and delegates baseline creation to `c-09-git-worktree-manager` skill.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:9e6973de4e2671f0c8e24cd553757810fb292b01199360184238048a54b4d2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline_status"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:5120c75cd847d31608b00c8de3034947eb706366ddd84c0d851686477b9dff30",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline_adopt"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:7b1d45cc8be40a3115d239d6a8e55756b96cfc2364de86feafb3aef5414b8c19",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-10-adopt-memory-baseline` skill's drift run delegates report path resolution to `c-02-memory-quality-control` skill with the resolved `coordination_root` and `temp_root`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:98fc40418c250af856e7f54436593fb8ed216bf4093f3320534e778b0e7f597e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_drift"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,135 @@
+{
+  "path": "mcp/tests/test_state_signal_boundary_delivery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Persist-before-marker ordering, one row on retry, no submission while the append fails",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273141a95215158f28752e6293a1635077fd39e7",
+            "content": "sha256:c689ea4ed409f349588133ead9acd0773ffd7bca9dd24ca097316e8a744fd730",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_persist_failure_keeps_marker_unset_and_retry_publishes_one_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A held row re-addressed to the replacement occupant lands once on the same row id",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273141a95215158f28752e6293a1635077fd39e7",
+            "content": "sha256:2e1743e614caaed2c49df44eacad9fe065d545deff7a05073e4fff320f6a4d82",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_signal_follows_replacement_manager_on_the_same_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A row persisted by one notifier context is delivered by a later fresh context",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273141a95215158f28752e6293a1635077fd39e7",
+            "content": "sha256:6a9164f575116a81d50df360c94222682b32d8a45810578494683538ba09042a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_signal_survives_a_fresh_notifier_context"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Each classified boundary state drains the same held row through the protocol path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273141a95215158f28752e6293a1635077fd39e7",
+            "content": "sha256:b2fe88c90306191ae8a133bbb3ac0cd06f48c644f6d9b8ad0da8781f42a9d1a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_signal_lands_at_each_classified_turn_boundary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An already ready-idle manager is admissible for the initial post without a hold",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273141a95215158f28752e6293a1635077fd39e7",
+            "content": "sha256:5606b94139740b6f2fdef105b2c4824529d86910ec01ef1adcf3fb99c63f31c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ready_idle_manager_receives_the_signal_without_a_hold"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A failed submission keeps one pending row with its backoff, later landed unchanged",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273141a95215158f28752e6293a1635077fd39e7",
+            "content": "sha256:733e3363165df0fdbaf2c31d613e08944524cc8647bef122331ca0a3829f6b92",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_submission_keeps_the_same_row_pending_until_the_next_boundary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Fresh store objects over the same durable files model a restarted notifier process",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273141a95215158f28752e6293a1635077fd39e7",
+            "content": "sha256:6142822c63ea20e685d57d545a202484dacb521cef167c91d4350a2d4ddbcfdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_World"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The accepted-receipt patch keeps the delivery assertion on the shared protocol seam",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "273141a95215158f28752e6293a1635077fd39e7",
+            "content": "sha256:ef7bcf7928c2197074ca813ab8fa1762815f6a5ba8b208d22620a8746371c0eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_submit_patch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

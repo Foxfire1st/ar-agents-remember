@@ -1,0 +1,96 @@
+{
+  "path": "dashboard/src/data/announcer.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Store, transition detector, and refcounted watcher.\n\nAnchor: \"export function announcePolite\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10c66e5d84f945029c828f5c0205edaa23e7a910",
+            "content": "sha256:fde96304ae96fd7e68136a5c29b8a7b107a0bb63e32b3a5f2dfed83f110d540e",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The ANY-pending derivation (N1) the focused-seat suppression now uses.\n\nAnchor: \"export interface OpenSession\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "content": "sha256:19ce8e15e29f018f440c3eb4d8adc794bb853e49a2844a88130cacd5d6ae2557",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact announcement copy and sequencing coverage.\n\nAnchor: \"SetResult arrival strings\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d54cdc21260f355c4066a32737a1985686555c9",
+            "content": "sha256:ab5503cebddf7c92a3eedf21407f5a9295cb9fdae41dbb4313bf7a86e1d1c560",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "dashboard/src/data/announcer.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The N1 agent-only-blocked pin: unfocused speaks seat-level, focused stays silent (the bar announces every pending payload).\n\nAnchor: \"promotion + assertive state strings\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d54cdc21260f355c4066a32737a1985686555c9",
+            "content": "sha256:d412d6694fada1eb41342234d4546262b589c90c64db2bb5031262b562cdaae0",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/data/announcer.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Permanent DOM regions consuming both channels.\n\nAnchor: \"export function CockpitLiveRegions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03a3272c464ed8c76961e96dd1838ef072c8269d",
+            "content": "sha256:619f6191df591a158c79b7d067331d87a2f75cb7d7c84fa9116cfc7f5e504ab5",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

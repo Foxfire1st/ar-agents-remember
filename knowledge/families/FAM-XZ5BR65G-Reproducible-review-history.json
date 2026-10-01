@@ -1,0 +1,34 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "A reopened review identifies the comparison it can reproduce and preserves its recorded operands; reconstruction or missing channels remain explicit instead of borrowing unrelated state.",
+  "id": "FAM-XZ5BR65G",
+  "members": [
+    "INV-09FC73JC",
+    "INV-453ZPCZ5",
+    "INV-53MJW8V0",
+    "INV-7W11WKKN",
+    "INV-8Q6DZTDB",
+    "INV-9BH2BNCT",
+    "INV-9NCBGQSY",
+    "INV-B3GYVZTJ",
+    "INV-S26EBC8P",
+    "INV-T9M21FB4",
+    "INV-VXA7SZ0Z"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "b5e4aaf8-cd20-45bc-b5a2-b485f7983ca5",
+    "task": "260921-ICR"
+  },
+  "revision": 4,
+  "routes": [
+    "dashboard/src/panels/review",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/models/lifecycles",
+    "mcp/src/agents_remember/worktrees/integration/closeout"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Reproducible review history"
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_spawn_agent_session.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Spawns bound seat without brief or readiness claim",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbd7bccb9064da11c5e23817982e134f8ef95db7",
+            "content": "sha256:86fa946d6f98231125ce4f2a0922e1de5b4fa688d1f8ebb75baab868d9851b2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_spawns_bound_seat_without_brief_or_readiness_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Seat taken is surfaced never overridden",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbd7bccb9064da11c5e23817982e134f8ef95db7",
+            "content": "sha256:d8566dcdce2b4c020d535ca667d5a1b27027044e737309251f49f9d61af0518b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_seat_taken_is_surfaced_never_overridden"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Spawn refuses forged structural parent before host creation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbd7bccb9064da11c5e23817982e134f8ef95db7",
+            "content": "sha256:711f1f3d37c2a74ec52a437ef610256e8f08f0f527fe52d163efe9d9078eca1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_spawn_refuses_forged_structural_parent_before_host_creation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

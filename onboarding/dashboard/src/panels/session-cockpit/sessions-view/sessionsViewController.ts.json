@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The controller entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:12fbfd3248322f63d9d9a3a30c3751e483ffc550bd9f442eb7135ed80aa5c5ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSessionsViewRefs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:0823b362c3287c322718aa7ea9a3ea264a434fa3e6898305dc6a9b759aa81ad8",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSessionsViewState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:34f221a16f157e2a263367601df46db586cb94aea8c968a858b76444c405d2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFocusAndLibraryHandlers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

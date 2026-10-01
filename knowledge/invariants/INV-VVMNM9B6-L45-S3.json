@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Retries of one curator creation operation under the same retry key within one candidate.",
+  "conditions": [
+    "The operation's allocation is recorded in the candidate's allocation journal."
+  ],
+  "exclusions": [
+    "Different entry ids or different enclosures, which are different operations."
+  ],
+  "id": "INV-VVMNM9B6",
+  "origin": {
+    "leaf": "260921-ICR-L45",
+    "legacyId": "11c07ddd-0d3b-4f55-bd7c-a5da158df34d",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A target's own stated rationale and role are part of its entry's retry content digest, while a target that states neither digests exactly as before, so an exact replay stays idempotent, a reworded per-target rationale under one key is refused as allocation_content_conflict, and allocation journals written before this change still replay.",
+  "status": "proposed",
+  "supersedes": []
+}

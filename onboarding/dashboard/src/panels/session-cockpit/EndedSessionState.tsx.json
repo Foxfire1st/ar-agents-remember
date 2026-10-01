@@ -1,0 +1,36 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/EndedSessionState.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Host and inspectability boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dac5f7df61d70c61265a6e2538a5ee61dea2196d",
+            "content": "sha256:c2730e7ccb5539929a561d1c0e869151e8b9b63c67ca78fd390becd4778487a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "isInspectable"
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dac5f7df61d70c61265a6e2538a5ee61dea2196d",
+            "content": "sha256:512284730930d53698fbeda3e9374bd43a29fc94b4bbd2e1763f128eba4122f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PtySurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

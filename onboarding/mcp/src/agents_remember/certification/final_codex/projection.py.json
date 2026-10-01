@@ -1,0 +1,145 @@
+{
+  "path": "mcp/src/agents_remember/certification/final_codex/projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Two-fresh-pass requires a current green aggregate and flips certificate readiness on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ba236f61eba957ca185a802b3e74140a390ac3",
+            "content": "sha256:fe5cc6780811476e8324e74090cf0be095f86929c3a5c69d675cfbb54d8f17e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_final_codex_lane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25ba236f61eba957ca185a802b3e74140a390ac3",
+            "content": "sha256:01c420db1455b001af49afbc619764d46528fa1544170795e98e69b91505bd8c",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The projection reads the newest candidate run manifest from the durable store.\n\nAnchor: `FinalCodexManifestStore`.`manifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "content": "sha256:069c43ba7fc094b43e3a20bd58bc3b1ef58d2c46ea07c16528e13641b8b37cfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexManifestStore"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The run manifest aggregate and completeness drive the terminal dispositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:4ea8d59a0ce2c37986d2b70bb7f60748a4c3fe67175b4f0ee3c8d45b08c12730",
+            "locator": {
+              "kind": "symbol",
+              "name": "aggregate"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:a45483bc601fa7a97c6d648bbe0c7d337504613f9935332504f442dc01903640",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The frozen plan identity comes from the plan record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:ac872726d97388f8489c3b019c4e361fee7c40c888ecbda85186958257a8d9ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexPlanRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:251516d3bca00dcbb71a8e1fd67c032451f5fd23b81bd9e713f45c1fea77abc8",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Content digests use the shared certification digest helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/digests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The projection stays repository-neutral and never consults repository-selected engines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:b1421f1822bb337644025986fafb3e6bb2354b506496d480a8a5e0041c4746ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateIdentity"
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

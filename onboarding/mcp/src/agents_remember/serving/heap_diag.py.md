@@ -1,15 +1,5 @@
 # heap_diag.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/heap_diag.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:18:47Z |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -36,33 +26,23 @@ The module must not start tracing, allocate diagnostic work, or schedule a loop 
 
 No durable follow-up is recorded here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry has no entries. This is repository-local operational diagnostics.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is configured for this opt-in daemon diagnostic. | — | — |
+No relevant external documentation is configured for this opt-in daemon diagnostic.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The serving lifespan owns scheduling; this module owns only flags, snapshots, formatting, and allocator trimming.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The app lifespan starts the diagnostic and trim loops only when their flags are enabled. | "def _serving_lifespan(" | mcp/src/agents_remember/serving/_app_lifespan.py:288-288 |
+- The app lifespan starts the diagnostic and trim loops only when their flags are enabled. [1]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary participates in this module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The diagnostic is wholly repository-local. | — | — |
-
-## Update History
-
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 4 citation finding(s); scoped recheck clean.
-
-- 2026-07-24T13:18:47Z — Created for 260718-CHATS-L5I: documented the opt-in heap diagnostic, worker-thread report path, and optional glibc arena reclamation. Verification metadata remains empty until the code commit.
+The diagnostic is wholly repository-local.

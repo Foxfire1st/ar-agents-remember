@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/EmptyStateBackdrop.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test (effects-gated empty-state backdrop with direct static video; media motion is baked into the MP4 asset).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
+            "content": "sha256:1fdb99f22b57f7bf665c0b14bd93b1c6eda2fe294352e1fce9d7f0dd9705e608",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyStateBackdrop"
+            },
+            "path": "dashboard/src/panels/EmptyStateBackdrop.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The honest-motion gate whose two branches the test exercises via `data-effects`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

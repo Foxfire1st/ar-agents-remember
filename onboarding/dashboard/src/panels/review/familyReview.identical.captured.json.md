@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/familyReview.identical.captured.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/familyReview.identical.captured.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -123,57 +113,39 @@ the whole point: the same two sentences must not be interchangeable.
 
 None recorded for this file.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every row was re-derived against this candidate, and every anchor in a row occurs on the line the row
 cites. Because each captured body is one minified line, the cited range is the whole file and the
 finding names the exact key path and value a reader can re-check.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The envelope: the one review read the surface makes, its surface version, and its state.** | "\"operation\":\"read_knowledge_review\""; "\"surface_version\":\"knowledge-review-surface/1\""; "\"state\":\"review\"" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
-| **The enclosure the bytes were recorded over, and the single normalization: the per-run fixture repository uuid is written as a placeholder.** | "\"leaf_id\":\"260921-icr-l1\""; "review-source-endpoints-fixture"; "<repository_id>" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
-| **The family context and the row count that differs from the `complete` body: seven measured rows and four distinct member revisions.** | "\"family_context\":{\"detail\":\"this family context is partial"; "\"membership_rows_total\":7"; "\"unique_member_revision_total\":4" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
-| **The unchanged shape: the same family revision on both snapshots, carrying the same guarantee text.** | "\"display_label\":\"retry-budget-family\""; "The retry budget is shared by integration and synchronization."; "\"state\":\"first_page\"" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
-| **The identical-text shape: two distinct family revisions whose guarantee text is the same string while their payload digests differ.** | "\"display_label\":\"retry-and-anchor-family\""; "\"joint_guarantee\":\"The retry budget and the anchor identity rule hold together.\""; "\"payload_digest\"" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
-| **Three sides supplied their two member updates on a first page of a continuing walk, and the identical-text family's one-row after roster was read whole.** | "was read whole: 1 recorded membership(s), all carried here"; "holds 2 recorded membership(s) and this page supplies 2 member context update(s)" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
-| The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. | `captured("familyReview.identical.captured.json")`; `firstFamilyId` | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:74-77; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:78-81; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:87-110|
-| **Each member source's structured locator and state: `whole_file` and `unresolved` file locators, and a recorded 3-7 line range on the exact blob that is `unresolved` with no range.** | "\"locator\":{\"end_line\":7,\"kind\":\"line_range\",\"start_line\":3}"; "\"locator_state\":\"whole_file\""; "\"locator_state\":\"unresolved\""; "\"resolution\":\"recorded_blob_mismatch\""; "\"resolved_ranges\":[]" | dashboard/src/panels/review/familyReview.identical.captured.json:1-1 |
-| **The provenance of this body: made over HTTP by ICR-L44's producer in its own run at source tree `a8039b8e`, which the receipt records at its top level, carrying each member source's structured locator, resolved ranges and locator state.** | "familyReview.capture-provenance.json"; "its own run, at source tree a8039b8e" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:9-11 |
-| **The receipt row for this body: its digest, scenario, request and normalization, under the receipt's command, source tree and selection rule.** | "familyReview.identical.captured.json"; "captured_source_tree" | dashboard/src/panels/review/familyReview.capture-provenance.json:1-35 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
-| The fixture case distinguishes separate guarantee revisions with identical text ("Wording unchanged", both revisions named, the text once) from the same unchanged revision. | "it(\"distinguishes two distinct revisions with identical text" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:550-579 |
-| **The comparison union these bytes are read through, and the decision order that keeps the three "did not change" shapes apart: identity first, text second.** | `GuaranteeComparison`; `identical_text`; `unchanged_revision`; `one_sided`; `joint_guarantee`; `memberComparison` | dashboard/src/data/reviewFamily.ts:293-298; dashboard/src/data/reviewFamily.ts:300-309; dashboard/src/data/reviewFamily.ts:41-41; dashboard/src/data/reviewFamily.ts:330-330; dashboard/src/data/reviewFamily.ts:333-333; dashboard/src/data/reviewFamily.ts:361-372 |
-| The guarantee block distinguishes the same revision, distinct revisions with identical text and a known one-sided guarantee. | `GuaranteeComparisonBlock` | dashboard/src/panels/review/FamilyReviewCenter.tsx:130-212 |
+- **The envelope: the one review read the surface makes, its surface version, and its state.** [1]
+- **The enclosure the bytes were recorded over, and the single normalization: the per-run fixture repository uuid is written as a placeholder.** [2]
+- **The family context and the row count that differs from the `complete` body: seven measured rows and four distinct member revisions.** [3]
+- **The unchanged shape: the same family revision on both snapshots, carrying the same guarantee text.** [4]
+- **The identical-text shape: two distinct family revisions whose guarantee text is the same string while their payload digests differ.** [5]
+- **Three sides supplied their two member updates on a first page of a continuing walk, and the identical-text family's one-row after roster was read whole.** [6]
+- The one constant that binds this body to its case, and the runtime narrowing that keeps a body with a missing field from mounting the surface. [7]
+- **Each member source's structured locator and state: `whole_file` and `unresolved` file locators, and a recorded 3-7 line range on the exact blob that is `unresolved` with no range.** [8]
+- **The provenance of this body: made over HTTP by ICR-L44's producer in its own run at source tree `a8039b8e`, which the receipt records at its top level, carrying each member source's structured locator, resolved ranges and locator state.** [9]
+- **The receipt row for this body: its digest, scenario, request and normalization, under the receipt's command, source tree and selection rule.** [10]
+- **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** [11]
+- The fixture case distinguishes separate guarantee revisions with identical text ("Wording unchanged", both revisions named, the text once) from the same unchanged revision. [12]
+- **The comparison union these bytes are read through, and the decision order that keeps the three "did not change" shapes apart: identity first, text second.** [13]
+- The guarantee block distinguishes the same revision, distinct revisions with identical text and a known one-sided guarantee. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file: it is one recorded response body from this
 repository's own route over this repository's own fixture enclosure.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`FamilyReviewCenter.tsx`, `reviewFamily.ts`) moved with the leaf's inserted lines: 1 passing row(s) normalised by the fixer; 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted one import line in `FamilyReviewCenter.tsx`, so the fixer normalised the `GuaranteeComparisonBlock` row (`127-209` → `128-210`). The claim is unchanged. No stamp advanced.
-- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: the guarantee-block row into `FamilyReviewCenter.tsx`, which this leaf changed, was normalised by the installed fixer (`114-188` → `127-209`). The block still distinguishes the same revision, distinct revisions with identical text and a known one-sided guarantee; on a tree comparison it now word-diffs a changed text first (MIK-L35), which this body's identical text never reaches. Claim wording unchanged. No stamp advanced.
-- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): citation re-anchored; the fixture bytes are unchanged. The worker's comment-only rewrite of the `ReviewWorkspace.family.test.tsx` header (MIK-L31 follow-up) no longer says "re-captured over HTTP"; the provenance row is reworded to the header's new text (this body is from ICR-L44's own run at `a8039b8e`, the receipt's top level) and re-measured (`8-13` → `9-11`). The rows below the header were re-pointed by the exact −1 line shift.
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update; the fixture bytes are unchanged. The case that reads this body now asserts MIK-R31 rule 3's rendering of identical guarantee text on two revisions ("Wording unchanged · revision a → b", the text once, both IDs in details). **Reopened claim reworded and re-anchored** on an `it(` quote; this pass's generated bullet for it was removed.
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the body was re-captured over HTTP from the real review route (44,684 bytes; sha256 `fa7a257f…c660`, recorded in `familyReview.capture-provenance.json`). Corrected the counts (`unique_member_revision_total` is 4) and the roster description (three first-page sides and one after roster read whole), replaced per-build UUIDs and digests with labels and sentences, described the four sources' locator states — including a recorded 3-7 line range on a 3-line exact blob that is `unresolved` with no range — and pointed provenance at the receipt. The identical-text and unchanged shapes it pins are unchanged. No verification stamp was advanced.
-
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T03:00:00+02:00 — 260921-ICR-L36 curator, **citation repair only, second move:** the F1 fix round moved the guarantee-level blocks in `panels/review/FamilyReviewCenter.tsx` again, so this card's three ranges became `:132-1230`, `:156-1230` and `:156-1234`; the anchors still resolve inside them. The captured body itself is unchanged. No verification stamp was advanced.
-- 2026-09-26T02:35:00+02:00 — 260921-ICR-L36 curator (memory worktree only; no code changed by this card's own pass; the code worktree is uncommitted at base `09329a7ee598920c519b06305b73ba8e48d72c88`): **citation repair only — the row naming the two renderings this body's case reads was re-anchored, and no claim wording changed.** L36's insertion moved the guarantee-level blocks those anchors live in, so the three ranges became `:132-1200`, `:156-1200` and `:156-1204`; the anchors (`review-center-guarantee-identical-text`, `review-center-guarantee-unchanged`, `identical_text`, `one_sided`) all resolve inside them. The captured body itself is unchanged and this leaf re-measured A3's member order on the new build as untouched. No verification stamp was advanced: the candidate is uncommitted, so the governed closeout owns the real stamp.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`): **created this one-to-one card for the leaf's identical-text guarantee body.** It records the file's exact identity (45,393 bytes; sha256 `b018b63cd2df28e6a2a3dc16d639bf8f4bcdbc4541e2e1639e6e23bb92bd7062`) and the state it pins apart from its six siblings: **two DISTINCT family revisions whose authored guarantee text is identical**, carrying two different payload digests and the same `joint_guarantee` string, beside the one shape that really is one revision on both snapshots (same revision, same digest) — so this single body holds both the `identical_text` shape and the `unchanged_revision` shape the case must keep apart. **Stamp accounting:** no verification stamp was advanced beyond the leaf base commit — the candidate is uncommitted, and governed closeout owns the real stamp.
+No meaningful cross-repo references found.

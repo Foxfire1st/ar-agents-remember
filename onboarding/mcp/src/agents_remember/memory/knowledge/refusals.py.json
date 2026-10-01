@@ -1,0 +1,643 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/refusals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The defect-report exception versus the internal control-flow exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b5b99d723dd9e5dbdb29b03039cd159a5c704387f61a01abc7b9953e52d828e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeStorageError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:a20aa8e24c970a21ef9498ba230b83564cbddc7ac3f9629460d071fe363a87dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The SQLite-error mapping, its caller-supplied failure context, and the trigger-message prefix that steers it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:e2b50a84684ec68c90ce1dd4d9f7e136c13618c129600598dfba692af13879f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_sqlite_error"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:2be6b55dda189edd657c5219f1a82df423de4ac67a76bb11328d6938008c6182",
+            "locator": {
+              "kind": "symbol",
+              "name": "SqliteFailureContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The candidate-lifecycle and publication group this leaf added: one factory per observable failure point.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:f48790c1b07bc231b16073f34a37a549d1e8f9b869946017bbfe23ebc06afd82",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_input_unavailable_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:05fc1becd457e50d63d06cc557fe119d01ecc56590c3b7d1d1a8765b6a60f220",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_binding_changed_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:da6ed2cf23de3e1d1ea924ac7c9941abbb5efbb787a3cdcfbcaedcbdb97c6b8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_snapshot_unpublished_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:225678f86495abd65a71a723214516d3c224e88826fd071b373014942af949cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_incomplete_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The destination and install failures, including the honest durability code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b6e422cafebca20874ba2ea31ab76ab66f7ee621c67cb8a69f5eee0237b686f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_stale_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:7f112abcc389856e00541f6c583890e592b98d3dc74a37378d30f353c82cda04",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_failed_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:65679cee07fb1b244f16445fa55fd9b7abdfd0ba22a70c90a60f27ae14be113f",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_durability_unconfirmed_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The trigger messages the mapping depends on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:1dd11c1b646570c907c8cbc2a63ea875780a3e8d5439ef2775ff18e4ce5b513a",
+            "locator": {
+              "kind": "symbol",
+              "name": "IMMUTABILITY_TRIGGERS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:dfa3f9918b9688a4fbc95964b3e76498d09783a25f11fd16d0bfca3013414f45",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The refusal codes these factories must stay within, now including the batch codes and the seven this leaf added.\n\nAnchor: \"KnowledgeRefusalCode = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:c04556bdbea20bc875526c5bb9763dfd29d4e246da734e26610e9e650e4b43ff",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The operation that produces the batch codes, and the alias that keeps the earlier lane-check name working.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:d4768ee039a4087e171b10d6adc37a9a9422984f199d282e1d75b5df3ceb2825",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:c15e70ef44382074562f0cf36f99439dabe429eeecaff65bc6af3c57ef19fc3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_writable_lane"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:543cfbaac901da5d595429f51999909f883611145001ae192621ec665f76cc25",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_candidate_lane"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:269cc93d12b46e18e8e3f712f68f3789456eb990ab658da884caff8263d3933d",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:4181892360c569236cc5c8cf2c0231670568624ca19056337db11cd460ea8d64",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The two nodes that reach the batch lane refusals on a real store.\n\nAnchor: \"test_a_baseline_lane_is_refused_as_a_non_candidate_target\"; \"test_a_task_candidate_lane_is_refused_until_its_binding_can_be_resolved\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:6017649a44ffe4ef00040624b73cadce8608474fc000ef041e9ee0019dbc45c5",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:ab4b5d7e9207c48429ea810535a5949e85910fcbd9e3e855e87f4895e996ecac",
+            "locator": {
+              "end": 1188,
+              "kind": "line_range",
+              "start": 1162
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The facts bundle and the one generic factory every refusal is built through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b83598a7c3d65dacbbc27f3e7e334a28f5be63918e3c741be171f543bc4acafe",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusalFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:6df445afe35c2439f71f175bd7b9eef7fb8453546f96623e279db50b013f2c27",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two-branch cycle refusal whose text must be true in both directions, and the family sibling that shares its wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:76ad3fa09c62442818e34421b20adc33e29c8d521542a18f4293f20ddb07c102",
+            "locator": {
+              "kind": "symbol",
+              "name": "lineage_cycle_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:3113ba52bb65d593ea649a9f1aa81a4d67154bc1a400e803be50c90a29a67767",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_lineage_cycle_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:0819f21ada715805e741b9d5c824b4d1b2f07bb7e1d600cf3d1a7c32f93e0701",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lineage_cycle_wording"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The family, anchor and relation factories added with the graph half, one per failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:e8d47eac147fdd5c6e2c548788869fc3e7203bd68d0472245f9a831f1937f7f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "unknown_family_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8598ce7b5b4c9f32a762ca412f685afafca2c8ccd5492ba4117f4118a3b5c394",
+            "locator": {
+              "kind": "symbol",
+              "name": "duplicate_family_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8fe53914c72fe695e4a8b4263dc14db5d4538709d09f1ce40bd1e653aca488fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "duplicate_anchor_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:e815915bfff9a05d2f198d0a1e2b0ed9a3d1675ffbe8b9f7e8e0efbb0b29f9a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "duplicate_relationship_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:02d19a372134a80d14fade47f3f6f458571a070a37faea9a3797700521bb1812",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_expected_row_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:ff4535c5a27b2e2d699c59967eb08a0b5397825ab6ff99690aa4cf617c20dc35",
+            "locator": {
+              "kind": "symbol",
+              "name": "stale_expected_row_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:16e6c31c249f646fbeb23d6708b1557488340e40f8accb67ba3ba9c42c9bdab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "referenced_anchor_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The batch-scoped factories, including the two codes this leaf made reachable and the fail-closed task-lane refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:32c34f80fa328909ecbd353eab4de1a5d9f9981076d9c7d16e8b5a28d6f551d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_target_not_candidate_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:ec33640a767fa00c5d9272f17033c4e472869ad90cb0c27140ea830857e1308e",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_task_binding_unresolved_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b6125e69d64512faee04a53c4ae9e5b7bd14c285ddc871697323ad6a0ed07b5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_promotion_not_supported_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The relabelling factory that preserves a command's own code, record and remedy while naming the batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:ebfec3ac7a6fb59ade7a0e80d7b5efa58141d0204dccdb07a5e40e82a739432e",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The builder whose `command` argument carries both the failing position and its kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:1b07e8b30cc2794ad344d0e1da8ab19d9dc370bd539dff624cebb633eb6862a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_command_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The context and stale-record refusals that name both digests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b33b8f702222e29591daf4840098eab58e942077ac9379199fec70bbfab42d4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_context_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:2ffcc115b460aa4ca17f3419f8e1cded5f9c1e70795f3f8b832d03638ee02744",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_context_digest_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:7a67309753cd1c95fff01fde3a36b293717a1c0c4105eb7a43914742f7b1ef34",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_stale_record_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The write-path rule the descending branch describes, and its post-insert graph scope, now owned by the shared lineage module.\n\nAnchor: \"def find_cycle(\"; \"def declared_cycle(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:3e86aa0c87c1d891a01afce397159052e75f6ad0b6554e4781cc8974047c327e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_lineage"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:f3762c066bf7ad83f1bf28df3178d266ca86d8131d63acf84bb92a56abc0cd65",
+            "locator": {
+              "end": 728,
+              "kind": "line_range",
+              "start": 698
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:6f9e7e0d842d124be81b6a9e58c3194d454c07d758bcd2b7fb8fb529dfb0c163",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:03ffb7994e450f5d0f5321092035d4a276824955e911a7aa51f02c28f976bce9",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:a723a8f681f0e48f3a8072eff13fa5adb5550f05b14eeffbd30b3d8ff6e6fc2a",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:f19ea8827ec6b8d2dca1fd940b9b80664c0c164410a0e1430417383364e750a9",
+            "locator": {
+              "end": 649,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

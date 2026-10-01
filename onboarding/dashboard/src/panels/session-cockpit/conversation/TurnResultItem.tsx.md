@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -45,47 +35,26 @@ unknown-vendor item is preserved as LABELED evidence — never guessed into a me
   successful stop produces — the interrupt hook announces settlement separately (see
   `useConversationControls.ts`).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The item/`unknown-vendor`-block types (`vendorType`, `safeSummary`, `evidenceRef`) narrowed here. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
-| Streaming-safe Markdown renderer used for result detail. | `MarkdownBlock` | dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
-| The pure grouping that folds runs of identical unknown-vendor rows (per-member addressable by ordinal/evidenceRef). | "describe(\"groupUnknownVendorRuns (F10)\", () => {" | dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24 |
-| The kind dispatcher that routes result items here. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-69 |
+- The item/`unknown-vendor`-block types (`vendorType`, `safeSummary`, `evidenceRef`) narrowed here. [1]
+- Streaming-safe Markdown renderer used for result detail. [2]
+- The pure grouping that folds runs of identical unknown-vendor rows (per-member addressable by ordinal/evidenceRef). [3]
+- The kind dispatcher that routes result items here. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 4 repository-internal references for result-item types, markdown rendering, unknown-vendor grouping, and dispatch; final scoped result 0 (checker-clean).
-
-- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. `labelFor` is
-  the `switch (item.kind)` reader at L27-L44 (the old single-line L31 landed inside the
-  `turn-result` case, not on the definition); the range now covers the whole function, whose kind →
-  `{ text, toneKey }` mapping is unchanged.
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the FB7.4/A8 flow-line restyle — the
-  turn-boundary label is now `· turn complete` dim lowercase (tone class keeps the color), replacing the
-  boxed uppercase web chip. Kind mapping + unknown-vendor evidence preservation unchanged. Verification
-  pinned to the leaf base (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the turn-result item —
-  labeled turn-complete/failed/interrupted/notice states (text plus color) and unknown-vendor events
-  preserved as labeled evidence with their evidenceRef. Verification is pinned to the leaf base
-  (`0be0099`) because the new source file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

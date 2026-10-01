@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/tasks/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The schema, renderer, and store owned by this package.\n\nAnchor: \"class TaskDocument(_Doc):\"; \"def render_markdown(doc: TaskDocument, *, graph_titles:\"; \"def write_task_docs(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:35060cdf1a6f2cf8755ce8a6e9e698c5d3268f8e7c527e2f29104d38d458382f",
+            "locator": {
+              "end": 649,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce4fa944a1f9e7f2fbfad5273e0b058c437d29b3",
+            "content": "sha256:040de9046446bc00301360ec9f4d3f535074d79d16a103878abe4638484715ff",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:6e53dbcb18a140b75d4bfeb218f4873ea7447c100ca3d7c74d73a56455f452b5",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current facade re-exports of the typed task-intent slot models.\n\nAnchor: \"from agents_remember.models.task_intent import (\"; \"__all__ = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcbcd2450673a9084cb595e6bfadfacc27aa9da",
+            "content": "sha256:96e6b89fd9d1e8879d08f0ab6f0a537ce90a6756e10026c4479274dbe0ee721d",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dcbcd2450673a9084cb595e6bfadfacc27aa9da",
+            "content": "sha256:9f2e321c169b8082aa87f8e77a21c03ad267c793d10af561f94ea3ef592d89ce",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations.\n\nAnchor: \"from .document import (\"; \"from .store import (\"; \"__all__ = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcbcd2450673a9084cb595e6bfadfacc27aa9da",
+            "content": "sha256:d2622e51d0765e45b27e6115da1c776a7b64811687bbba6cad83212d1b74c980",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dcbcd2450673a9084cb595e6bfadfacc27aa9da",
+            "content": "sha256:6d215ca34d652dd2376c7b5d4a12c6bdfa5ab067e67787fb62b88f69eae66ffb",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dcbcd2450673a9084cb595e6bfadfacc27aa9da",
+            "content": "sha256:9f2e321c169b8082aa87f8e77a21c03ad267c793d10af561f94ea3ef592d89ce",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

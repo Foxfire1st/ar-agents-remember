@@ -1,0 +1,225 @@
+{
+  "path": "mcp/src/agents_remember/serving/codex_app_server_session.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`parse_model_page` validates model descriptions, effort menus/defaults, visibility, and identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:18fbf2bd8f0e059bffc7c70d5e1a4332d2e6360a46818753d810a9cc83867a62",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_model_page"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Session-owned desired-model and desired-effort setters stage the next selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:fc9d39bdfe79b3d02cbc9001992e69e810210f55efad2f762cbfdddd90113248",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_desired_model"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:0e0a57e9994bd54d28d92619fe49ab6baed9ebfcc1233b5c9c38ac1005e0e277",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_desired_effort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Fresh adapter `turn/start` acceptance promotes the submission's captured pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "107323ca12efbef4744dffaaab55d0939866fa22",
+            "content": "sha256:ae11db893a40735a65653d47667434a0e4db3907a959cb02588e5dbf5702cb3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_turn"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "107323ca12efbef4744dffaaab55d0939866fa22",
+            "content": "sha256:a09b5e1841981b09d9f2d3b8f61ac5b409bc5a6eee18f0820aecab511757f485",
+            "locator": {
+              "kind": "symbol",
+              "name": "_accept_started_turn"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The factory deliberately leaves a roleless Codex selection empty so this session resolves catalog defaults, and it is the only producer of these settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2b5088b617b61478353dc2280de551ce38e85be3d6491a95f22fe51e3caf806c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_harness_protocol_adapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Initialize sends and then reuses the exact client identity when validating the host response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:80c46ffffb827958d152a7a6325c8d132627301581f5a3db44cf6e02eb2b3fe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_initialize"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The capsule carrier on the settings is consumed here and nowhere else; the value type and the refresh rules live in their own module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:97ed545fab260dae5710718ce358487d0ea9fb7c94c73d212fe25d73dbb72328",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexAppServerSettings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:ac85cda9aab14aa9ec375063ba4c2c10695f08b7d863fb6d1d188c20d3b62d52",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexCapsuleDelivery"
+            },
+            "path": "mcp/src/agents_remember/serving/capsule_delivery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:9b15cf7b2fdc66e05d8d3c3cd74a735a739b70ccf89ea14303c6ce347afad27b",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/capsule_delivery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The refresh decision compares the recorded binding and digest and never substitutes the incoming one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:54380cc146483b56181ae1bb4640bbda8dc4eb60468a3a329c66703d730a5a99",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capsule_refresh_plan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:f29a4ffc2d4cf89b50ff5d233babd49bbc462af0dee42c576047c88905a6c49d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capsule_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The instruction parameter and the scoped legacy switch are applied on the thread-open parameters; a refusal drops `threadId`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:fa02168c81a4a9858d299b11ec07312008216bf11b40be9913c52f14f910e03e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_thread_params"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The host's own loaded instruction documents are parsed from the thread-open response and published verbatim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:434eb027fb76f5e294a76280e21a125045177b8ebaa5ccd3cd152dba5199e556",
+            "locator": {
+              "kind": "symbol",
+              "name": "_instruction_sources"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:b1ad6b54324a6f5f47f36ab66440838f54e620aacd9ab4814e15e3f0fbc3b4e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexThreadEvidence"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

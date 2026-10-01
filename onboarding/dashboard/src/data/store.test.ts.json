@@ -1,0 +1,208 @@
+{
+  "path": "dashboard/src/data/store.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "System under test: the Zustand store these reducers belong to, including its one full reset transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "content": "sha256:a481771a6a1f49857fdf4bab41702258222f16824150f29d9da3b3906411dccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardStore"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "content": "sha256:2f18f6e7b4d67baf5a8247a5f1b7ef458b6058c1f0ed8858151d5ad447397bbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVENT_WINDOW"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel.\n\nAnchor: \"folds a snapshot into id-keyed maps and goes live\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37d6067ffde2ebebbddb7257ae4a7a9413852bd0",
+            "content": "sha256:80082b9b7adca79128e1c4a9355a18b37596ca7fea3aa40ad3cc36af32281ac1",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment.\n\nAnchor: \"clears a seeded closeout queue and increments generation exactly once on reset\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37d6067ffde2ebebbddb7257ae4a7a9413852bd0",
+            "content": "sha256:7764cdc7395b1f2fcbf09e7ebdc4a64059b6f44f382b1026db90c4e5494e1fad",
+            "locator": {
+              "kind": "symbol",
+              "name": "RESET_QUEUE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37d6067ffde2ebebbddb7257ae4a7a9413852bd0",
+            "content": "sha256:2ddace034235d12de83acf23a4332c1410aff7ccf933f340caf39996f613a624",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`agentNotifierHeartbeat` no-op (incl. null/null) vs. genuine-change write-through cases.\n\nAnchor: \"applies an idle re-snapshot with an unchanged agentNotifierHeartbeat (incl. null/null) with zero store writes\"; \"applies an idle re-snapshot with a genuinely changed agentNotifierHeartbeat\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37d6067ffde2ebebbddb7257ae4a7a9413852bd0",
+            "content": "sha256:71528650ebfebf1220c45faf7422b47eaf1881844331d9cb7a8df6e266692146",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The fixture narrowing and the fixture-derived lifecycle count.\n\nAnchor: \"export function asServedProjection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:c7e61d42d261aac53cb623d38b22375278a06d1f4a75d10767fd9936ed06e862",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The parameter type that IS the check, and why the double cast was not one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:30723aabe219bb62232e8a0734e2040f71a412509e3b93904379b5647311c0d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AsJsonModule"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:12df43ff00e9127957d3b1b6424e4bd3dd39c9d43b08489a2906d08c6dee0cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "asServedProjection"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`reparsed` (the `structuredClone` behind `volatileBump`) and the `agentNotifierHeartbeat` builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
+            "locator": {
+              "kind": "symbol",
+              "name": "reparsed"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:a9048f655c4d676fece20706b0e7c844157d2c5dc360bdd6f592c8017d9ef05c",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentNotifierHeartbeat"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Projection / observer-event types the store maps over.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:0f6e963168be5aeccb761d64603f4c4f77cace12721e5e7ca5d9f1e8e26a1ebd",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

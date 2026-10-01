@@ -1,0 +1,161 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact inputs one assessment examined, every field an identity the coherence observation already captured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:ae62a25ec8561c1ec88aaeffbcd943c2b9ed440033bd362274aefd3340090d97",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declaration builder and the required-kind policy it validates against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:d2ce47dd1ec632491f6bb8d90fde70530a3e89e5b4622f4ce5af0f06fbdf953f",
+            "locator": {
+              "kind": "symbol",
+              "name": "examined_input_declaration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The persistence entry that stamps the authenticated author and role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:e136ad98a7304f0f0e2a6adf8e93121b53320c372d6698a6b46d106bad0bba26",
+            "locator": {
+              "kind": "symbol",
+              "name": "bind_assessment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The collection-level currentness reads and the identification refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:78fbd82e89e26fb723ff81b474e1a074f8d7cb8713243a17cc49a7cb16c2fad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_assessments_are_identified"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:9affb848611a612f628c2dce13989b46636bd349c2ce874f46a5d7fc40fdb0f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_currentness_for_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:b951c0a3bcf9ba30950e970d09dc1dbaba6380ec8745b116b441cf34b6acf9a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_assessments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The record's own edge per stored assessment, and the edge-name spelling a reader resolves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:38255b0113f3cc0c42cae3c747775ef01e8fb18d6a9a2bc84dccd56b34f65f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_record_edges"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65175dd3f3506d931ce763a31658565e5ee1a265",
+            "content": "sha256:af8fcc429e26b6dc5145462c2bb1a05a9c924274266efcdd61ee0187e82e40b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_edge_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The evidence-dependency contract and policy registry this module declares against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:318f7c626aa5adeb0ae2ba7163798ffb40cc57890a143665c1f2ffdc1e792557",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_evidence_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:5b6612f499b9cdb5f329c7c2bfc729e0f925d528e6804f8b0e709609a5e734cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "dependency"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:ad0862ac2a1361ae755a88c92e51edca629d34721ef01d299f45cf4037086b8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_sha256"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

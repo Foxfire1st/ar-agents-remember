@@ -1,0 +1,321 @@
+{
+  "path": "mcp/tests/test_final_full_memory_coherence_certification.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scenario builds the configured disposable code/memory pair.\n\nAnchor: \"def _scenario(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:683d20b918f215ab53b8ed2d8d00a715a2ef5610b11944084d45f9f76c248bf6",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 444
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The scenario builds the configured disposable code/memory pair.\n\nAnchor: \"def _scenario(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:cd9d3d7606fb22fcbbc2dfc76a715e0746b4acf4672f16b5965ab4d379072126",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 433
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The affected-plan fixture selects the selected mode for the scenario.\n\nAnchor: \"def _affected_plan(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:76d4ae36a51a65f4c7b5957f2a52b833963f4d092dd1e9933b704c62836c0e25",
+            "locator": {
+              "end": 788,
+              "kind": "line_range",
+              "start": 788
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The coherence fixture binds the exact candidate pair and memory inputs.\n\nAnchor: \"def _coherence(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:0545260f03525e8d622dc304c27968ec135fafa30cb29f85eb61c1e181434966",
+            "locator": {
+              "end": 827,
+              "kind": "line_range",
+              "start": 796
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The evidence builder composes the exact pair, plan, prefix and check authorities.\n\nAnchor: \"def _evidence(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:1ea735fc15d79d24dbf39078e7ca0e1ec166c2e340a52a2192fa0565ca615bcc",
+            "locator": {
+              "end": 883,
+              "kind": "line_range",
+              "start": 856
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The green certification binds the exact memory tree, pair authority, and Gate-5 inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:42e6b2f08b784cd655bd10b00ec574711bc2addf33cf7d1070b9bec5897e7837",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_final_certification_green_binds_exact_pair_and_gate_five_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A red final certification blocks finalization.\n\nAnchor: \"def test_final_certification_red_blocks_finalization(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:f8592f9046b6aeec1afd5814a1d06deb56a72b6f842bb92eff2f5d6a1866228f",
+            "locator": {
+              "end": 916,
+              "kind": "line_range",
+              "start": 916
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The same manifest row, which is the module's lane registration.\n\nAnchor: \"mcp/tests/test_final_full_memory_coherence_certification.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:48eb186cec1a0483eb1523362528090870e29ed4b87f59cfb84698e788903f8f",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The second half of the L23 split, which now owns the publication-input cases this card used to describe.\n\nAnchor: \"The curator-coherence request states its own publication inputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:0068fec1cc46f27e742bf5240be76ef22a58ea56c0684bb82f1643be155f3511",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_curator_coherence_publication_discoverability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The affected-plan fixture selects the selected mode for the scenario.\n\nAnchor: \"def _affected_plan(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:7bafe236322c1db14aa9077c01bbccfffb03a6110b78326886e3090e84940917",
+            "locator": {
+              "end": 794,
+              "kind": "line_range",
+              "start": 788
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The coherence fixture binds the exact candidate pair and memory inputs.\n\nAnchor: \"def _coherence(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:b96992c8d18def3cfe568878eb10d1d4797fde30be8dd5d1e3f8b9e0c37c3635",
+            "locator": {
+              "end": 838,
+              "kind": "line_range",
+              "start": 807
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The evidence builder composes the exact pair, plan, prefix and check authorities.\n\nAnchor: \"def _evidence(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:d143032cdb4b477972f7037a7e96d2aa91d7362e2d231f560d78509034c37340",
+            "locator": {
+              "end": 894,
+              "kind": "line_range",
+              "start": 867
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The green certification binds the exact memory tree, pair authority, and Gate-5 inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:42e6b2f08b784cd655bd10b00ec574711bc2addf33cf7d1070b9bec5897e7837",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_final_certification_green_binds_exact_pair_and_gate_five_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A red final certification blocks finalization.\n\nAnchor: \"def test_final_certification_red_blocks_finalization(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:9e5c51cc1f190b49e37e8af10aff2e409d0b548cbbc8c774b18dd2ed54f9a89f",
+            "locator": {
+              "end": 926,
+              "kind": "line_range",
+              "start": 916
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The single declaration the moved publication-input cases assert on, and the two members `prepare` does not derive.** Those cases now live in `mcp/tests/test_curator_coherence_publication_discoverability.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:bf16185fc4471584a353e4b3a235a287cb2d0263bc2baa66a1ca58efc8d703fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicationMember"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:bb049a3555b26c9f959e9e5d3289d2e9c71f4641c68da2fb93ffe66838fd75a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLICATION_MEMBERS"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The refusal every omission case drives, and the statement the prepare case drives — both now asserted from the new module.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:1b0f109e9d0b9776c0155281ec86ef05d3ef91fdc74e82f1fb5e6f3552103747",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_refusal"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:429e832cb0e41a92a217f7a0009dc3ef4f874f13fbe872d7e2478b1669b545c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_input_statement"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The suite's own row in the evidence manifest, inside `unit-regression`.\n\nAnchor: \"mcp/tests/test_final_full_memory_coherence_certification.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:48eb186cec1a0483eb1523362528090870e29ed4b87f59cfb84698e788903f8f",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

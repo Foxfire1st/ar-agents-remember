@@ -1,15 +1,5 @@
 # docs/reference/settings-json.md
 
-| Field                  | Value                                   |
-| ---------------------- | --------------------------------------- |
-| repository             | agents-remember                         |
-| path                   | `docs/reference/settings-json.md`       |
-| doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-07-10T13:03+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`|
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
-| governingOverview      | `../../overview.md`                     |
-
 ## Governing Overview
 
 [root repo overview](../../overview.md) — the `docs/reference` route has no route-local overview
@@ -72,50 +62,12 @@ spawn-surface manual.
   a valid precedence rung; HFX2-L10 makes settings the spend authority and treats those caller
   fields as compatibility refusals.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Agentic settings parser that implements the documented `orchestration.*` families. | "Read + merge the global (and optional repo-local) agentic settings, per use." | mcp/src/agents_remember/kernel/agentic_settings.py:213-213 |
-| Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. | `spawn_agent_session_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63 |
-| Serving app that reads supervisor settings per sweep. |"logger.exception(\"agent-notifier sweep failed; retrying next interval\")"|mcp/src/agents_remember/serving/_app_lifespan.py:259-259|
-| Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:93-195 |
-| Backoff math enforcing the shared 900-second redelivery floor documented here. | "redelivery interval" | mcp/src/agents_remember/kernel/primitives/inbox_backoff.py:67-67 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: repaired agent-notifier settings and sweep citations.
-
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the `escalationBudget` re-wiring in
-  the settings reference — load-shed cap on owner-signal emissions (twin of
-  `redeliverBudget`), superseding the L4 "reserved and removed with the demolition leaf"
-  wording; dispatch-brief deadline-row wording updated. Verification metadata pinned until
-  closeout stamps the 260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the `escalationBudget` reserved
-  wording (N3 — ladder demolished as policy; knob no longer gates sweep behavior; removed with
-  the L5 demolition leaf). Verification metadata pinned until closeout stamps the 260713-TES-L4
-  commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-"- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 5 citation claims; scoped result 0 findings.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: refreshed the settings contract for Codex argv knobs,
-  bound-log command verification, and the supervisor's one-row redelivery budget. Verification
-  metadata remains pinned until closeout stamps the eventual L15 code commit.
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): the settings reference now
-  states that role/level settings are the ordinary spend surface for spawned seats and that legacy
-  caller spend fields plus maintained harness-native spend/endpoint env keys return
-  `spend-override-unsupported`. It also removes the old explicit-argument precedence rung from
-  `orchestration.spawn.harness`. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L10 commit.
-- 2026-07-09T11:19+02:00 — 260707-HFX2-L9 (settings docs): refreshed the supervisor settings
-  reference for the 900-second redelivery floor, new `signalCooldownSeconds`, fail-loud sub-floor
-  validation, and `enabled: false` kill-switch mitigation wording. Verification metadata pinned
-  until closeout stamps the 260707-HFX2-L9 commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (settings docs): created sidecar after the settings
-  reference gained the `orchestration.supervisor` section including `redeliverBudget` default 250
-  and the safe-empty-block posture. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L8 commit.
+- Agentic settings parser that implements the documented `orchestration.*` families. [1]
+- Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals. [2]
+- Serving app that reads supervisor settings per sweep. [3]
+- Supervisor implementation consuming the redelivery budget and repeated-signal cooldown. [4]
+- Backoff math enforcing the shared 900-second redelivery floor documented here. [5]

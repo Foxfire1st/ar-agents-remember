@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/tool_response.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/tool_response.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T19:52+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](overview.md)
@@ -49,15 +39,15 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the function `_agent_notifier_banner` (lines 22-31) — Return the stale-supervisor banner without blocking a tool response.. | `_agent_notifier_banner` | mcp/src/agents_remember/application/tool_response.py:100-109 |
-| Defines the function `_attach_lifecycle_tail` (lines 34-44). | `_attach_lifecycle_tail` | mcp/src/agents_remember/application/tool_response.py:112-128 |
-| Defines the function `complete_tool_response` (lines 47-61) — Validate, enrich, count, and observe one application result.. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:131-145 |
+- Defines the function `_agent_notifier_banner` (lines 22-31) — Return the stale-supervisor banner without blocking a tool response.. [1]
+- Defines the function `_attach_lifecycle_tail` (lines 34-44). [2]
+- Defines the function `complete_tool_response` (lines 47-61) — Validate, enrich, count, and observe one application result.. [3]
 
 ## L23 Final Candidate Disposition
 
@@ -94,16 +84,3 @@ and was narrowed in the same leaf; the behaviour is pinned at its own level by
 `mcp/tests/test_response_address_binding.py` (4 cases), and the producer half — the closed payload
 declaring its own `contractPath` in the envelope's spelling — is pinned there and driven end to
 end by `mcp/tests/test_transaction_only_worktree_delivery.py:275-284`.
-
-## Update History
-- 2026-09-19T19:52+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded `T54`'s guard repair — unvalidatable guidance is withheld and any disagreeing path spelling withholds the hint — and `_names_the_same_place`'s narrowed tolerance (the contract file, or its immediate container). Every citation range re-derived against the repaired file. Verification metadata stays closeout-owned.
-
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the `bound_next_step` task-address guard on lifecycle tool responses (cross-task guidance omitted). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
-
-- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the source only repoints `finalize_tool_response` to its moved `models.tools` package. Verified at code commit `1d446724`.
-- 2026-08-14T06:30+02:00 — No contract expansion: L23 keeps tool-response completion bounded while
-  carrying the existing task-addressed lifecycle-operation projection; private recovery identity
-  remains excluded. Verification stays closeout-owned.
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

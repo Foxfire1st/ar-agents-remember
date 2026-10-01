@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The start-of-task trust gate requires `c-08-ar-coordination-context-resolver` skill context resolution, a configured-provider check, `c-02-memory-quality-control` skill memory quality control, clean-source versus dirty-source drift classification, developer review of drift, approved `c-05-create-or-update-onboarding-files` skill refresh, a second `c-02-memory-quality-control` skill check, and drift report deletion.\n\nAnchor: `## Start-of-Task Onboarding Trust Gate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "content": "sha256:4bf1717d3502ca83713d255021ded9fb9207094e39510e96f61c08c1b47b3c51",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Gate 2 runs provider readiness through `context_packet` MCP tool only when the MCP server is configured and provider settings are enabled.\n\nAnchor: `include_providers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "content": "sha256:de72b7e667b3c6cb26c6e266e99a7db50abbaecd8531780da1e33de4216215da",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cross-repository drift handling runs the first three gates for every allowed repo before asking about onboarding refresh.\n\nAnchor: `### Cross-Repository Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "content": "sha256:622890cd7ebc088d9c7ecef080f6395a6f0b756eb7c5d86c0f3441d6a809b134",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Post-gate planning and research routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation.\n\nAnchor: `## Post-Gate Planning and Research`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "content": "sha256:f4c8970fd6d305670b875d7dc6b40016aa1ce68fbb47a1f44470ae0e5e877676",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Post-gate implementation updates or creates onboarding through `c-05-create-or-update-onboarding-files` skill when changed source files alter current-state knowledge.\n\nAnchor: `## Post-Gate Implementation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "content": "sha256:d6c30c83372bbc502fee72b30171bd37982e21601c43b96207840e2c7833e7e8",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules.\n\nAnchor: `## Code Quality Instructions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "content": "sha256:b7570c1b1bc43d91d3d897a1b025c02179dfe98e629dd0ed7f02144482d2af54",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

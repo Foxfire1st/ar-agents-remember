@@ -1,0 +1,69 @@
+{
+  "path": "mcp/src/agents_remember/application/runtime/skills.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
+        "content": "sha256:364e64a9ed7adbe0959731447cf332d8eab1df0d3ef2a126b90f79e86a3120a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "skills_install_tool"
+        }
+      },
+      "id": "RLZ-A7QMT7T7",
+      "invariant": "INV-GRVXS8R9",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The sync script is the propagation owner and the install tool is where the copy reaches a harness skill root, which is the pair that makes one source authoritative.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Split application route explains the new application layer layout.\n\nAnchor: `# mcp/src/agents_remember/application/ - MCP Application Layer Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/application/overview.md:1-2059"
+        }
+      ]
+    },
+    "2": {
+      "note": "MCP payload builders import this file only for `skills_install`.\n\nAnchor: `skills_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
+            "content": "sha256:6025c648c34a2fce9d13c09daac94d42aa4b31478fd6c171abd6c502c13633e4",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Skill install response model lives in the models package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83818be2ab016f2129e4d8f64ecd4c74fcfa60b6",
+            "content": "sha256:4f403014ab76082e45d9e3d6567dde3d6fcface81e2dc91f0add652c775f0c27",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillsInstallResponse"
+            },
+            "path": "mcp/src/agents_remember/models/skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

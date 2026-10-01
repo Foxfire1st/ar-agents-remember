@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/seat_events.py
 
-| Field                  | Value                                            |
-| ---------------------- | ---------------------------------------------------- |
-| repository             | agents-remember                                        |
-| path                   | `mcp/src/agents_remember/serving/seat_events.py`        |
-| doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-08-02T01:05+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`              |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
-| governingOverview      | `overview.md`                                           |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -75,69 +65,31 @@ fire-and-forget logging, called by the caller AFTER a successful catalog mutatio
 
 No known follow-up in this file.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation found after checking the repo Domain Documentation for
 observer-event-specific behavior; this file follows an existing internal event-logging convention,
 not an external standard.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external/domain document defines this event shape; the existing `orchestration_nudge_manager` precedent and the `ar-observer-event/v1` schema are the source of truth. | "def log_retire_event" | mcp/src/agents_remember/serving/seat_events.py:28-28 |
+- No external/domain document defines this event shape; the existing `orchestration_nudge_manager` precedent and the `ar-observer-event/v1` schema are the source of truth. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 `seat_events.py` reuses the `observer/` event infrastructure and mirrors an existing event-logging
 pattern; it is called by every retire/rename/turn-state mutation path.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `Event`/`now_iso` define the record shape and timestamp helper this module builds every event from. | `Event`; `now_iso` | mcp/src/agents_remember/observer/events.py:34-36; mcp/src/agents_remember/observer/events.py:39-64 |
-| `observer_root`/`EventStore` are the append-only durable log this module writes to. | `observer_root` | mcp/src/agents_remember/observer/store.py:106-107 |
-| `new_ulid` generates the event `id`. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
-| `orchestration_nudge_manager` is the existing event-logging pattern this module mirrors (same `EventStore(observer_root(config)).append(Event(...))` shape). | "def orchestration_nudge_manager_payload" | mcp/src/agents_remember/mcp/tools/orchestration.py:19-19 |
-| `session_retire_payload`/`session_rename_payload` call `log_retire_event`/`log_rename_event` after a successful mutation. | `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
-| `api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. | `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app` | mcp/src/agents_remember/serving/_app_terminal_routes.py:815-827; mcp/src/agents_remember/serving/_app_terminal_routes.py:753-755; mcp/src/agents_remember/serving/_app_terminal_routes.py:829-835; mcp/src/agents_remember/serving/app.py:253-314 |
-| `auto_complete_seats` calls `log_retire_event` for default automatic closes and `log_landed_event` for the settings opt-out; both remain subordinate to edge success. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:27-108 |
+- `Event`/`now_iso` define the record shape and timestamp helper this module builds every event from. [2]
+- `observer_root`/`EventStore` are the append-only durable log this module writes to. [3]
+- `new_ulid` generates the event `id`. [4]
+- `orchestration_nudge_manager` is the existing event-logging pattern this module mirrors (same `EventStore(observer_root(config)).append(Event(...))` shape). [5]
+- `session_retire_payload`/`session_rename_payload` call `log_retire_event`/`log_rename_event` after a successful mutation. [6]
+- `api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. [7]
+- `auto_complete_seats` calls `log_retire_event` for default automatic closes and `log_landed_event` for the settings opt-out; both remain subordinate to edge success. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The observer event feed is consumed by the local dashboard/watcher surface, not a cross-repo boundary. | — | — |
-
-## Update History
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **re-read this claim against the construct its mechanically projected range now covers, and retired that projection record after the read.** The claim says the serving endpoints `api_terminal_retire` / `api_terminal_rename` call the same functions, that `api_terminal_landed_cleanup` logs each cleanup retirement, and that `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper. Every anchor resolves inside the cited ranges on this candidate — the three handlers in `_app_terminal_routes.py` and the `create_app` call site — and this leaf's own change to `serving/app.py` moves that call site without altering the lambda, the sweeper wiring or any of the three handlers, so the claim's wording holds as written and its ranges stand. The generated repair bullet for this range was **retired** because that projection resolves exact NAMES rather than the claim's subject, and it had already been superseded once. No other bullet or row was deleted and no verification stamp was advanced.
-- 2026-09-18T18:20+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **re-read this card's reopened claim against the construct its range now covers, and RETAINED its wording** — `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app`, cited at mcp/src/agents_remember/serving/_app_terminal_routes.py:717-719, `:779-791`, `:793-799` and mcp/src/agents_remember/serving/app.py:253-314. The claim states that the three terminal endpoints call the same functions from the serving endpoints and that `create_app` wires the turn-state-change logger into the liveness sweeper; the cited `app.py` range holds `create_app` and its `on_turn_state_change=lambda observation: log_turn_state_change_event(` line at `:211`, so the claim is true as written and needed no re-wording. The generated projection that had rewritten the range is why it stayed reopened; this is the reading that resolves it. No range was substituted or deleted, and the verification stamp is **not** advanced — the code commit does not exist yet and closeout owns it.
-- 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `api_terminal_retire`; `api_terminal_landed_cleanup`; `api_terminal_rename`; `create_app` at mcp/src/agents_remember/serving/_app_terminal_routes.py:717-719; mcp/src/agents_remember/serving/_app_terminal_routes.py:779-791; mcp/src/agents_remember/serving/_app_terminal_routes.py:793-799; mcp/src/agents_remember/serving/app.py:253-314.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `api_terminal_landed_cleanup` in the row 100 of this card from mcp/src/agents_remember/serving/_app_terminal_routes.py:798-799 to mcp/src/agents_remember/serving/_app_terminal_routes.py:718, the extent of the construct the claim is about (the checker named line(s) [718] as its live location); re-pointed `api_terminal_rename` in the row 100 of this card from mcp/src/agents_remember/serving/_app_terminal_routes.py:718 to mcp/src/agents_remember/serving/_app_terminal_routes.py:798, the extent of the construct the claim is about (the checker named line(s) [798] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `api_terminal_landed_cleanup` in the row 100 of this card from mcp/src/agents_remember/serving/_app_terminal_routes.py:790-791 to mcp/src/agents_remember/serving/_app_terminal_routes.py:718-719, the extent of the construct the claim is about (the checker named line(s) [718] as its live location); re-pointed `api_terminal_rename` in the row 100 of this card from mcp/src/agents_remember/serving/_app_terminal_routes.py:718-719 to mcp/src/agents_remember/serving/_app_terminal_routes.py:798-799, the extent of the construct the claim is about (the checker named line(s) [798] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `api_terminal_landed_cleanup` in the row 100 of this card from mcp/src/agents_remember/serving/_app_terminal_routes.py:798-799 to mcp/src/agents_remember/serving/_app_terminal_routes.py:718-719, the extent of the construct the claim is about (the checker named line(s) [718] as its live location); re-pointed `api_terminal_retire` in the row 100 of this card from mcp/src/agents_remember/serving/_app_terminal_routes.py:718-719 to mcp/src/agents_remember/serving/_app_terminal_routes.py:790-791, the extent of the construct the claim is about (the checker named line(s) [790] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/serving/_app_terminal_routes.py:790-791 in the row 100 of this card; the repetition added no pooled evidence
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `seat_events.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1 relationship update: default completion emits
-  system-attributed `seat.retired`; the explicit landed opt-out still emits `seat.landed`.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
-  anchors and removed duplicated ranges; exact non-fixing check returns zero findings.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added current binding-role provenance to seat events
-  while retaining immutable spawn-role history.
-
-- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: documented `log_landed_event`
-  (`seat.landed`) and corrected the completion-edge reference from auto-retire to auto-land; retire
-  events now describe explicit/manual or landed-cleanup termination paths, while successful
-  integration/finalize edges emit landing events. Verification metadata pinned until closeout stamps
-  the HFX2-L11 commit.
-- 2026-07-08T02:43+02:00 — Created for 260707-HFX-L8 (seat retirement + live identity + turn-state):
-  `log_retire_event`/`log_rename_event`/`log_turn_state_change_event`, mirroring the existing
-  `orchestration_nudge_manager` event-logging pattern to feed the watcher/architect NEEDS-ATTENTION
-  feed with `ar-observer-event/v1` records (`seat.retired`/`seat.renamed`/
-  `seat.turn-state-changed`). Turn-state events fire only on an actual transition, gated by the
-  caller. Verification metadata pinned until closeout stamps the HFX-L8 commit.
+The observer event feed is consumed by the local dashboard/watcher surface, not a cross-repo boundary.

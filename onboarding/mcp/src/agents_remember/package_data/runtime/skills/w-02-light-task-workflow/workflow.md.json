@@ -1,0 +1,177 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The workflow goal is to run the in-between task lifecycle.\n\nAnchor: \"Run the in-between task lifecycle\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:8a1100ca6e9f474666fdc6496effb9f125fd8be2ec26c4fcb0fe79bfcda47f39",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The master owns the final release step, while sub-tasks never bump the version.\n\nAnchor: \"The master owns only the final release step\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:780e2ff9c56bed642e9580757cff327a28dfdbe24b49142574aa2bee124ddc1a",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 367
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The workflow requires drift checking, approval before implementation, onboarding updates, and separate commit approval.\n\nAnchor: \"drift check before planning\"; \"approval before implementation\"; \"onboarding update through\"; \"separate commit approval\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:17909dd504d4f984500042cc6f15648dfe9b43322c567d94b57e58a78e72142e",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The durable artifact shape is a wrapper folder plus `task.md` under the resolved task root.\n\nAnchor: \"The durable artifact shape\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:049ef35c21e87d63d03d713aa748a6ae70f9a5d7033f2e89a36da146b6fb0795",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A leaf contract lives at `enclosures/<leaf-id>/series-contract.md`.\n\nAnchor: \"places its leaf contract at\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:6f60b26062bf974ea9999391b3ef3c3e18cd6982a18679db8881b1200fb25ba0",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The task document is JSON-primary with schema `ar-task-document/v1`.\n\nAnchor: \"ar-task-document/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:04fa4a5adbe94eec20015e218b5c8fd75b6bbd9873340b97f3386434293a6780",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`codeExamplesNote` records deferred code examples distinctly from none-needed.\n\nAnchor: `codeExamplesNote`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:f41ad5851a68d400a028def603105d3ef6765c5c9c897d75b8cbe0c0cd517f5b",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Closeout may call `lifecycle_finalize_task` only after every declared work unit is done or intentionally skipped.\n\nAnchor: `lifecycle_finalize_task`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:a25c1ec9ca55cc08d02c909180bae1ba0cf6e9c44f14a7c09d2c1fc939577288",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 256
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Final closure verifies that referenced workflow or skill paths still resolve.\n\nAnchor: \"verify any referenced workflow or skill paths still resolve\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:db6b4f7da39ac50936a4dd7e1b022d7b12392148e188c3ec36379aae9ecd6667",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A master series uses one master integration branch plus leaf enclosure worktrees.\n\nAnchor: \"one master integration branch plus leaf enclosure worktrees\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:e372555e7cfdfd77e85ef9ade2d6a91d838d380d784751045dccfa7e33d5e54b",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 359
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,62 @@
+{
+  "path": "dashboard/src/panels/file-viewer/DualPane.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test — the `empty` backdrop branch, the partnerless-overview branch, and `SidecarSide`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
+            "content": "sha256:b7d09e1dfa9ff6cfed47c439a853ed250342a83c8124fff97f051031b7146d28",
+            "locator": {
+              "kind": "symbol",
+              "name": "DualPane"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
+            "content": "sha256:0a4378dfa6f17c4f993624c6c3292c92bce80f6f47b898acb3a58459b0496712",
+            "locator": {
+              "kind": "symbol",
+              "name": "SidecarSide"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The effects-gated boomerang backdrop whose `video` `src`/`opacity` are asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
+            "content": "sha256:1fdb99f22b57f7bf665c0b14bd93b1c6eda2fe294352e1fce9d7f0dd9705e608",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyStateBackdrop"
+            },
+            "path": "dashboard/src/panels/EmptyStateBackdrop.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The route overview that governs this test.\n\nAnchor: `## Route Model`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:47-79"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/change_set.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/change_set.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T10:31+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -96,40 +86,32 @@ rows reproduces it byte for byte.
 - **Nothing here writes.** The write path is `memory/knowledge/effects.py`; this module declares shapes
   and derives views, so a card that read it as an authority would be reading the wrong module.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The change set's kind and the one frozen shape it resolves to, declared as the registry's key. | `SEMANTIC_CHANGE_SET_KIND`; `SEMANTIC_CHANGE_SET_SCHEMA`; `CHANGE_SET_PAYLOAD_MODELS` | mcp/src/agents_remember/models/knowledge/change_set.py:66-66; mcp/src/agents_remember/models/knowledge/change_set.py:67-67; mcp/src/agents_remember/models/knowledge/change_set.py:134-136 |
-| The record group's one served operation, named beside the result so the two cannot disagree about which act ran. | `EffectReadOperation` | mcp/src/agents_remember/models/knowledge/change_set.py:73-73 |
-| The frozen payload: both snapshot identities, the opaque requirement references and the exact realization-claim identities — with no second copy of a member's identity. | `SemanticChangeSetPayload` | mcp/src/agents_remember/models/knowledge/change_set.py:76-136 |
-| The two construction refusals: a baseline and candidate from different namespaces, and a reference declared twice. | `_require_one_namespace`; `_require_distinct_references` | mcp/src/agents_remember/models/knowledge/change_set.py:98-112; mcp/src/agents_remember/models/knowledge/change_set.py:114-130 |
-| The unresolved-reference fact: the holder, the closed field set, the verbatim reference, and no slot for a resolved value. | `UnresolvedReference` | mcp/src/agents_remember/models/knowledge/change_set.py:139-158 |
-| The three member views, each carrying the envelope's own lifecycle, route, provenance and content digest. | `InvariantEffectClaimView`; `PreservationClaimView`; `UnresolvedQuestionView` | mcp/src/agents_remember/models/knowledge/change_set.py:161-182; mcp/src/agents_remember/models/knowledge/change_set.py:185-198; mcp/src/agents_remember/models/knowledge/change_set.py:201-212 |
-| The computed membership fact, with an empty list meaning exactly that no member declares this change set. | `ChangeSetMembership` | mcp/src/agents_remember/models/knowledge/change_set.py:215-225 |
-| The change set's view, with all six declared parts readable and the stored successor-to-predecessor edges addressable rather than overwritten. | `SemanticChangeSetView` | mcp/src/agents_remember/models/knowledge/change_set.py:228-250 |
-| The whole derived scope and the outcome that carries it — the scope or one refusal, never both. | `AuthoredEffectScope`; `EffectReadResult` | mcp/src/agents_remember/models/knowledge/change_set.py:253-267; mcp/src/agents_remember/models/knowledge/change_set.py:270-287 |
-| The `extra="forbid"` base these shapes derive from, which is what refuses a generated summary or a severity field. | `model_config` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
-| The snapshot identity both sides of the comparison are stored as, which the envelope does not otherwise carry. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:185-206 |
+- The change set's kind and the one frozen shape it resolves to, declared as the registry's key. [1]
+- The record group's one served operation, named beside the result so the two cannot disagree about which act ran. [2]
+- The frozen payload: both snapshot identities, the opaque requirement references and the exact realization-claim identities — with no second copy of a member's identity. [3]
+- The two construction refusals: a baseline and candidate from different namespaces, and a reference declared twice. [4]
+- The unresolved-reference fact: the holder, the closed field set, the verbatim reference, and no slot for a resolved value. [5]
+- The three member views, each carrying the envelope's own lifecycle, route, provenance and content digest. [6]
+- The computed membership fact, with an empty list meaning exactly that no member declares this change set. [7]
+- The change set's view, with all six declared parts readable and the stored successor-to-predecessor edges addressable rather than overwritten. [8]
+- The whole derived scope and the outcome that carries it — the scope or one refusal, never both. [9]
+- The `extra="forbid"` base these shapes derive from, which is what refuses a generated summary or a severity field. [10]
+- The snapshot identity both sides of the comparison are stored as, which the envelope does not otherwise carry. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A payload shape and its derived views are
 properties of one namespace's stored records.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T10:31+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): created this one-to-one card for the semantic change set's payload and its derived views. It records the complete declared composition without a duplicated member identity, the computed membership fact, the successor-as-new-record rule, the unresolved-reference shape that has no slot for a resolved value, and the deliberate absences (no generated summary, no severity, no acceptance or promotion verdict). This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

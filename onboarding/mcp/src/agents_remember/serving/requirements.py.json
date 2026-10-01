@@ -1,0 +1,163 @@
+{
+  "path": "mcp/src/agents_remember/serving/requirements.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Route registration + the two handlers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85a3a02973b34672c800d8f87ddcf93e990c245",
+            "content": "sha256:0859a8d583478a30f9f40020480edb0b8a074646d79ddf5825d3b47b658b0456",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_requirements_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task-context root selection and the registered-root guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85a3a02973b34672c800d8f87ddcf93e990c245",
+            "content": "sha256:da07c2ff3f3e4927dfd2855e860aa27b4594ae02fd9489e773f4cd34eb16aef6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b85a3a02973b34672c800d8f87ddcf93e990c245",
+            "content": "sha256:7cb9aefba7fa1691aecee0a15da8f8d5d2e492bba7022c9eb347b70d0427e868",
+            "locator": {
+              "kind": "symbol",
+              "name": "_registered_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The stricter no-symlink confinement reused by read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "content": "sha256:012c2b16d2d96ae71785c8482741ff733c7cb8760396fc591ce689dee3a98318",
+            "locator": {
+              "kind": "symbol",
+              "name": "confine_non_symlink_rel"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declared models + shared scoped-read refusal table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "349facb665cc0dcc616688aff1b1133a015435dc",
+            "content": "sha256:782791c3cd05433922795234d512ee1a8ff2a3042c40d16fbb767df735716241",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementRow"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "349facb665cc0dcc616688aff1b1133a015435dc",
+            "content": "sha256:99832bb812f601e4f3672c43db6736b3f42c0a86a23124df3d3f513f7a6e9fee",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementsListing"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "349facb665cc0dcc616688aff1b1133a015435dc",
+            "content": "sha256:c1ed3cf496ed0e748651c38ab0a08f2745b003f3b70e67c19ea77b877572f59b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementContents"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "349facb665cc0dcc616688aff1b1133a015435dc",
+            "content": "sha256:7b27dd0903646ae944feecd369ce9dfd548bfcb3c95b9baac2c849372adbcc57",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCOPED_READ_RESPONSES"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "349facb665cc0dcc616688aff1b1133a015435dc",
+            "content": "sha256:cd97d375cb3b464ed7b9439cac520893de621a6a93073783e59cb72e2972a693",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Composition: the app registers this surface.\n\nAnchor: `register_requirements_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fb8342710d4c656f6b96db95aff3098c253d0ef",
+            "content": "sha256:bffd39a29cd154172442a8af607e5d23dd7e8ff3e4d8e7eaabc99ed40e06092c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_app"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3fb8342710d4c656f6b96db95aff3098c253d0ef",
+            "content": "sha256:f17ff362e409ed00184a4b1a3744c094c8f40e961d08441052353c447f8117cd",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 254
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

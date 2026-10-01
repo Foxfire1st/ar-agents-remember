@@ -2,13 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/lifecycle/` |
-| doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
@@ -57,12 +51,12 @@ visualizer commands.
 - Status surfaces should include backend and watcher container state so MCP
   current-state packets can report what is running now.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The parent lifecycle facade imports the CGC package facade. | `__getattr__` | mcp/src/agents_remember/providers/lifecycle/__init__.py:27-34 |
-| Watcher aggregation imports CGC all-root start/status/stop behavior from this package. | `watcher_cgc_result` | mcp/src/agents_remember/providers/lifecycle/watchers.py:165-183 |
+### Repo-Internal References
+
+- The parent lifecycle facade imports the CGC package facade. [1]
+- Watcher aggregation imports CGC all-root start/status/stop behavior from this package. [2]
 
 ## 260731-EFA-L2 — The Backend Invocation Is A Value
 
@@ -85,29 +79,3 @@ published port is a new `CgcBackendPort` constant, not a new keyword group.
 
 `core.py` builds its layout through `CgcRepo(...)` (see the [context route](../context/overview.md))
 — the explicit `--from-settings` requirement recorded below is untouched.
-
-## Update History
-
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 2 repository-reference citations (2/2 anchored and sourced; scoped citation check clean).
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `backend.py`'s five-tuple invocation became the frozen
-  `CgcBackendContext` (with `layout` as a property over `layouts[0]`, making the shared-backend /
-  primary-layout rule explicit), published ports became the `CgcBackendPort` constants
-  `FALKORDB_PORT` / `BROWSER_PORT` plus `CgcHostPorts`, and `core.py` constructs its layout via
-  `CgcRepo`. No lifecycle behaviour, container topology or settings rule changed. Verification
-  metadata pinned until closeout stamps the L2 commit.
-- 2026-07-06T23:55+02:00 — L13 owner follow-up (body): core.py's settings-backed layout now states the explicit --from-settings requirement in the route model (the earlier ride-along was history-only). Verification metadata pinned until closeout stamps the L13 commit.
-
-- 2026-07-06T23:08+02:00 — 260703-L13 ride-along: `core.py`'s settings-backed layout reads
-  call `cgc_settings_from_file` with the explicit `--from-settings` path only (the implicit
-  coordinator-settings fallback was deleted route-wide; the manual
-  `--repo-id`/`--code-repo-root` override path is unaffected). Route model unchanged.
-  Verification metadata pinned until closeout stamps the L13 commit.
-
-- 2026-06-06T12:15: Re-verified against the current CGC lifecycle package; backend, runner, installation, process, refresh, and query boundaries still match.
-- 2026-05-28T12:32+02:00: Updated after CGC status began surfacing backend/watcher container state for provider current-state reporting.
-- 2026-05-26T13:58+02:00: Updated after CGC backend and runner lifecycle gained shared Docker network wiring and host-user runner execution.
-- 2026-05-26T12:51+02:00: Updated after CGC moved to a Docker runner image/container instead of a host provider venv.
-- 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/cgc/lifecycle/` route.
-- 2026-05-25T21:14+02:00: Split the former process module into process control, refresh, and query modules to clear Radon MI pressure.
-- 2026-05-25T19:09+02:00: Created when flat `cgc_*` lifecycle modules moved under `lifecycle_modules/cgc/` with prefix-free filenames.

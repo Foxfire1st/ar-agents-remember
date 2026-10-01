@@ -1,0 +1,109 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The five real bodies, including the cards read and the leaf-wide tree view.\n\nAnchor: \"gitTrees.family.captured.json\"; \"gitTrees.invariant.captured.json\"; \"gitTrees.entries.captured.json\"; \"gitTrees.cards.captured.json\"; \"reviewTrees.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
+            "content": "sha256:9d5bc711e04cb4b2549b8e084406e7bab3799fd8ff03e2f032d60a5b1d9bf6f6",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stub: cards body for a named selection, a lane-less answer for the lane read (MIK-L32), leaf-wide body otherwise, every URL recorded.\n\nAnchor: \"const withoutLane = (body: ReviewTreesResult) => ({\"; \"function serve(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
+            "content": "sha256:4edb5c240e0e27befeec13a4c2457bd14d761a042e20178a813daa0610908f4a",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Case 1: the family review from trees, then the touched member with its own entries first.\n\nAnchor: \"renders a converted leaf family review from its trees and opens the touched member\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
+            "content": "sha256:d587138a89494a8c25231826814ac6fd72d93ae35ba88cfdb12499c6d2ca6d8d",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Case 2: the conforming example as focused cards, pinned reads, marks and the knowledge panel; the lane unavailable and never a zero, and the explorer and details unknown (MIK-L32).\n\nAnchor: \"shows the family around _not_listed as focused cards: one changed range, the rest unchanged\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
+            "content": "sha256:406d47da5d25c0cb064fa98bf0cfd24c702d382cb1750ae8e4b91dd95121892e",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Case 3: a dataset review makes no tree read, and keeps the landed explorer labels and details (MIK-L32).\n\nAnchor: \"leaves a dataset review exactly as it was: no tree read, the landed file view\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
+            "content": "sha256:76560ccf75c247da024f7d4ae647d0d74a9045569a10a4390c4bf8eb9dc46ae3",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Case 4: no planning mark from another comparison's read (R2-3).\n\nAnchor: \"takes no planning mark from a leaf-wide read of another comparison (review R2-3)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
+            "content": "sha256:ba8773ff1ee926ae0a9c700f4d31ce0bf488d98f9f825a812b8ae076c889c124",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

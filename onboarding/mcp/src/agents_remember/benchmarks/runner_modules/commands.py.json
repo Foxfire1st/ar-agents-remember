@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules/commands.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.\n\nAnchor: `run_git_command`; `repo_has_commit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:2c9784cc207804a7dc96149a34435df1df8210d86f3c29c9e09ad89e333c15c7",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route-local overview summarizes how this module fits into the benchmark runner split.\n\nAnchor: `## Hot Path Summary`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:20-68"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one Git runner both call sites go through, and the option object that carries `work_dir` and the timeout class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "225bd50e187ff878594b3b6ac01455c78adbe07b",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "225bd50e187ff878594b3b6ac01455c78adbe07b",
+            "content": "sha256:87f876d7fba393da591ef709d4defe2bc32a213ba91020032479fca65c83d943",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitRunnerOptions"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`git_environment()` and the `GIT_REPOSITORY_SELECTOR_ENV` tuple the runner strips with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "225bd50e187ff878594b3b6ac01455c78adbe07b",
+            "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_REPOSITORY_SELECTOR_ENV"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "225bd50e187ff878594b3b6ac01455c78adbe07b",
+            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_environment"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The destructive argv this module is handed: `clone`, `fetch --all --tags`, `checkout --detach`, `reset --hard`, `clean -fdx`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7b9169b9121e30aa03a531cf3b8fda097c806c4",
+            "content": "sha256:e67f2032f57bcb9285d3f0269861a4d7f3c73385341f2f4f3651934613a1ba3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_repo"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

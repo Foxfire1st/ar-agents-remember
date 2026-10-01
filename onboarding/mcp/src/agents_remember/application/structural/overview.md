@@ -2,14 +2,9 @@
 
 | Field | Value |
 |---|---|
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/application/structural/` |
 | onboardingRoute | `mcp/src/agents_remember/application/structural/overview.md` |
 | parentOverview | [`application/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-31T12:00+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
 
 ## ARSPAWN-L5 A005 Serialized Dispatch Owner
 
@@ -130,19 +125,19 @@ failures raised by the protected transaction.
 - Missing or ambiguous seats fail closed; no same-role global fallback is permitted.
 - This package composes existing primitives and must not create a second lifecycle implementation.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public structural operations are registered through one adapter module. | `dispatch_agent_payload` | mcp/src/agents_remember/mcp/tools/structural_agent.py:31-114 |
-| Structural resolution qualifies document+role seats and refuses ambiguity. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:24-157 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The public structural operations are registered through one adapter module. [1]
+- Structural resolution qualifies document+role seats and refuses ambiguity. [2]
+
+### Cross-Repo References
 
 No cross-repository runtime dependency governs this package.
 
 
-## Docs References
+### Docs References
 
 The resolved memory source registry has no configured Domain Documentation entry. The implementation
 contract is therefore evidenced by repository source, tests, and the approved task design.
@@ -214,48 +209,3 @@ so planning and messaging remain valid while a seat is vacant or replaced.
 ## CCR-L42 Refresh Validation Parity
 
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
-
-
-## Update History
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-
-- 2026-08-31T12:27+02:00 — A005 recorded the serialized dispatch owner extraction in this route
-  overview: the lock plus transaction boundary moved into `dispatch_transaction` while the public
-  dispatcher retained orchestration ownership. Verification remains closeout-owned.
-
-- 2026-08-26T16:03+02:00 — Post-failure repair: recorded the receipt-store collaborator and
-  rechecked the bounded two-generation transaction without changing public seat identity.
-  Verification remains closeout-owned.
-
-
-- 2026-08-26T12:30+02:00 — Reconciled the complete ARSPAWN-L2 canonical-seat transaction, bounded recovery,
-  serializer, replacement, and public-outcome architecture onto the audited IAS overview.
-  Verification remains closeout-owned.
-
-- 2026-08-26T08:55+02:00 — Finalized the IAS structural-admission boundary label against the
-  frozen pass-13 candidate.
-
-- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` is the one public spawn tool for both caller kinds — plane seats keep the structural path; ambient launchers (no `AR_HOSTED_SESSION_ID`) are resolved from the process environment (distinct from the L16 gate-tools declared caller) and spawn with the pinned brief + same rollback, no parent seat, role altitude still validated, provenance `spawnedByKind="ambient"`. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: import-path updates to the moved task_docs package. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: the structural gate boundary gains the
-  declared-caller fallback (`caller` request data on `lifecycle_gate`/`gate_decide`/`gate_list` when
-  no plane seat exists; hosted seat wins; contradiction refuses). F3 sweep: the overview no longer
-  claims the boundary translates only "an ambient hosted seat's intent" or resolves callers only
-  from trusted hosted-process context. Verified at code commit a9d50e08.
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: manager series bootstrap in
-  `agent_tools.py` gates on the effective execution nature (nature-less masters default atomic;
-  organizational semantics only under an authored graph) and surfaces an atomic-sequential
-  lane-blocked bootstrap as a failed `StructuralOutcome` carrying the ordering payload; the
-  structural-route model is unchanged. Verification remains closeout-owned.
-
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-
-- 2026-08-14T06:20+02:00 — L23 curator: documented pre-host lineage and candidate-bound route-review
-  admission for curator dispatch. Verification provenance remains closeout-owned.
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the new structural application package.

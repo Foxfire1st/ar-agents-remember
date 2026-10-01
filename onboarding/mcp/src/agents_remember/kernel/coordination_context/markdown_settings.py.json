@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`parse_coordination_settings` selects JSON settings when present, parses Markdown settings blocks otherwise, and returns the `StorageSettings` defaults — `DEFAULT_STORAGE_MODE` = `\"memory-repo\"` — when no settings file exists. It takes no `topology` parameter any more.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c615fd86728b62479486cf8394ee6b5096d7fe6",
+            "content": "sha256:330333cc5d9a2188c727fe55eca874888474d9a0cdbfe441c276e68dd9faf8c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_coordination_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The topology-derived storage default is gone; `StorageSettings.mode`/`.default` are the one non-topology default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
+            "content": "sha256:ba610545f723deb0d8c206b064e83b99fde2b7895434d67aa6174790bd64f4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_STORAGE_MODE"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -58,35 +48,26 @@ prettier-formatted. The `_provenance` key records where the bodies came from and
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The provenance: the re-capture, the scratch commits, the source and the trims. | "review fix round R1 (bounded directory view, subtree pages, re-anchored label, pinnedCommit/codeSource)"; "code-integrate.text to 240 lines" | dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json:2-11 |
-| The root summary's body. | "\"path-root\": {" | dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json:1274-1274 |
-| The superseded decision: stored active, derived superseded. | "\"record-decision-superseded\": {" | dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json:4363-4398 |
-| The invariant's body with its timeline. | "\"record-invariant\": {" | dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json:5444-5444 |
-| The commit list named as listed. | "\"commitsState\": {" | dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json:7095-7097 |
-| One subtree page under the reader's policy. | "\"subtree-worktrees\": {"; "\"selectionPolicy\": \"knowledge-reader-subtree\"" | dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json:7108-7119 |
-| The test that reads it. | `captured` | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:16-21 |
+- The provenance: the re-capture, the scratch commits, the source and the trims. [1]
+- The root summary's body. [2]
+- The superseded decision: stored active, derived superseded. [3]
+- The invariant's body with its timeline. [4]
+- The commit list named as listed. [5]
+- One subtree page under the reader's policy. [6]
+- The test that reads it. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new real-data fixture MIK-R29 adds (17 served bodies, re-captured after review round R1), recording its SCRATCH-AUTHORED provenance, its three trims and the reviewer's N3 note. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

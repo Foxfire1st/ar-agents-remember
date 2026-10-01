@@ -1,0 +1,168 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_ref.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Attach consumes the supplied TaskRef.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "content": "sha256:9045d7762dda44815f54b0ba65315dd11009f8f1f7cc823307ad9885aa439e3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_attach_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Status consumes the supplied TaskRef.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The facade projects TaskRef locators into the resolver namespace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "content": "sha256:afd17866954a761f397079dd714dc328424795bdf6404f44f5646e24f7dae0d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_ref_namespace"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "content": "sha256:41d1a0d19d1fc6db989454dbc9031ec7af08259c928437154ec7d3957abeddc4",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 303
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`resolve_context_tool` takes a `TaskRef`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee94de2fda380ffd2af74d9c5b4bac3c947ca754",
+            "content": "sha256:d7f8d7badb1fde99fb950dbf85d2116f58310b6dddcf3e9b7d64e28d8ddd3e44",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_context_tool"
+            },
+            "path": "mcp/src/agents_remember/application/coordination_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee94de2fda380ffd2af74d9c5b4bac3c947ca754",
+            "content": "sha256:8949cee6796831ea4905816368f8a80da32c1266a852725d81deb24b3f92dce0",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/application/coordination_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Context resolution accepts the common task locators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee94de2fda380ffd2af74d9c5b4bac3c947ca754",
+            "content": "sha256:d7f8d7badb1fde99fb950dbf85d2116f58310b6dddcf3e9b7d64e28d8ddd3e44",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_context_tool"
+            },
+            "path": "mcp/src/agents_remember/application/coordination_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Attach accepts the common task reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "content": "sha256:9045d7762dda44815f54b0ba65315dd11009f8f1f7cc823307ad9885aa439e3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_attach_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Status accepts the common task reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The frozen task reference carries repo and optional task/contract/leaf/parent locators; precedence remains resolver-owned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7d94fc2a811ecaa875d929ec1242369625dadc",
+            "content": "sha256:099fc8a76c1c3855e16525e55b4246e43e679d8c7af08b945c90347ee2c062d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRef"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

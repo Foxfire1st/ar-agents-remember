@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `w-02-light-task-workflow` skill lists `master-template.md` as a companion and adds the master-task composition section + invariant 13.\n\nAnchor: `# w-02-light-task-workflow Light Task Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8f69e05dfb985510893fb3e92a78747bdea7609",
+            "content": "sha256:1341c9299de01d686a0928350ecbde812bb57dcfd968fec2bcb54b408dc02f81",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `w-02-light-task-workflow` skill workflow's \"Master Task Series\" section describes the one-worktree / commit-per-slice / one-integrate lifecycle.\n\nAnchor: `# Light Task Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:acf58c7bd567adf1ad7b00eff0ac6fa39a885fa0e0847070ce7e82131328a370",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

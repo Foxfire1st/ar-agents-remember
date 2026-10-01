@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/actions.py
 
-| Field                  | Value                                        |
-| ---------------------- | -------------------------------------------- |
-| repository             | agents-remember                              |
-| path                   | `mcp/src/agents_remember/serving/actions.py` |
-| doc_type               | `file-level-onboarding`                      |
-| lastUpdated            | 2026-08-02T01:05+02:00                       |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`   |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -91,41 +81,13 @@ repo-level one-shot signal. The UI is still never the gate *enforcement*.
 - **Reject reason is required** — this is a product/workflow invariant so the agent has an
   actionable reason when a developer rejects a gate.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The precomputed availability + node shapes validated against. | `ActionAvailability`, `WorkspaceProjection` | mcp/src/agents_remember/observer/projection.py:49-62; mcp/src/agents_remember/observer/projection.py:1131-1153 |
-| The `Actor` provenance literal reused for attribution. | `Actor` | mcp/src/agents_remember/observer/events.py:31-31 |
-| The app that routes `POST /api/actions/{action}` to this and executes the gate write. | "def _action_response(runtime: _ServingRuntime", "def _register_action_routes(app: FastAPI" | mcp/src/agents_remember/serving/_app_routes.py:316-316; mcp/src/agents_remember/serving/_app_routes.py:396-397 |
-| The control-plane gate write path the router calls for a gate-decision verb (slice 6b). | `record_gate_decision`, `record_lifecycle_gate_decision` | mcp/src/agents_remember/controlplane/gate_decisions.py:83-128; mcp/src/agents_remember/controlplane/gate_decisions.py:131-156 |
-| The compact acknowledgement store used for lifecycle attention dismissals. | `AttentionDismissalStore`, `dismiss` | mcp/src/agents_remember/controlplane/attention_dismissals.py:45-135 |
-| `_dismiss_action_outcome` allows target omission only for gate-open+gateId or actionable-drift. | `_dismiss_action_outcome` | mcp/src/agents_remember/serving/actions.py:170-219 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_register_action_routes` in the row 100 of this card from mcp/src/agents_remember/serving/_app_routes.py:388-388 to mcp/src/agents_remember/serving/_app_routes.py:396, the extent of the construct the claim is about (the checker named line(s) [396] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_register_action_routes` in the row 100 of this card from mcp/src/agents_remember/serving/_app_routes.py:316-317 to mcp/src/agents_remember/serving/_app_routes.py:396-397, the extent of the construct the claim is about (the checker named line(s) [396] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_action_response` in the row 100 of this card from mcp/src/agents_remember/serving/_app_routes.py:396-397 to mcp/src/agents_remember/serving/_app_routes.py:316-317, the extent of the construct the claim is about (the checker named line(s) [316] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_action_response` in the row 100 of this card from mcp/src/agents_remember/serving/_app_routes.py:308-308 to mcp/src/agents_remember/serving/_app_routes.py:316-317, the extent of the construct the claim is about (the checker named line(s) [316] as its live location); re-pointed `_register_action_routes` in the row 100 of this card from mcp/src/agents_remember/serving/_app_routes.py:316-317 to mcp/src/agents_remember/serving/_app_routes.py:396-397, the extent of the construct the claim is about (the checker named line(s) [396] as its live location)
-- 2026-08-03T02:32:19+02:00 — Curator W3-B02 repaired 4 Repo-Internal citation rows, resolving 8 manifest findings with exact evaluator, router, gate-service, projection, and acknowledgement-store anchors; verification metadata was preserved.
-- 2026-08-02T01:05+02:00 — No content impact: repaired this document's `Repo-Internal References` table shape. Rows carrying a citation cell were rendering short: the header declared two columns while those rows held three, and GFM TRUNCATES the extra cell, so the citation was in the source but invisible in the rendered table (`memory_quality/style/document_shape/tables.py`, `table_row_cell_count_mismatch`). Widened the header and its delimiter row to `| Finding | Citations | Source Path |` — the shape 1,941 rows in this tree already use — and padded the two-cell rows with `n/a`, which is this tree's own no-citation value (489 uses; zero empty citation cells exist). No finding text and no citation was changed by the widening. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: `evaluate_action` now takes one `ActionEvaluationContext`
-  built by the caller instead of six keywords; recorded that context as the named request-context
-  concept and recorded that `app.py` deleted its two duplicate shape guards because this module is
-  the single place those shapes are refused. Verification metadata stays pinned until closeout.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `dismiss` now allows targetless actionable-drift rows
-  while preserving lifecycle scope for lifecycle rows and gate-id scope for gate-open consumption.
-  Verification metadata pinned until closeout stamps the task-29 code commit.
-- 2026-06-28T03:58+02:00 — Task 28 sync cleanup: split the pure action dispatcher into
-  `ActionEvaluationContext`, `_dismiss_action_outcome`, `_gate_decision_outcome`, and
-  `_precomputed_action_outcome` so the touched file no longer carries the Radon D-grade dispatcher
-  body. Verification metadata pinned until closeout stamps the task-28 code commit.
-- 2026-06-28T03:05+02:00 — Task 28 S5.2: added the pure `dismiss` action path with `DismissalIntent`, requiring `itemId` plus lifecycle scope for non-gate items while allowing gate-open consumption by `gateId`. Verification metadata pinned until closeout stamps the task-28 code commit.
-- 2026-06-25T14:02+02:00 — Task 24 reopened: made `target` optional only for `cancel` with `gateId`, so stale workspace-shaped gate rows can be deleted without enabling lifecycle-less approve/reject/revision decisions.
-- 2026-06-25T07:17+02:00 — Task 19: action requests and gate-decision intents now carry optional targeted `gateId` plus decision `note`, and `reject` requires a non-empty reason before the router records a decision. Verification metadata pinned until closeout stamps the task-19 code commit.
-- 2026-06-18T12:10+02:00 — Task 6 slice 6b: `evaluate_action` now emits a `GateDecisionIntent` for the gate-decision verbs (approve/reject/request-revision/cancel) — staying pure — and `app.py` executes it as a developer/dashboard-attributed gate decision. Revises the 4b "dashboard never mutates gate state" stance for gate *decisions* only. Verification metadata pinned until closeout stamps the 6b code commit.
-- 2026-06-14T11:30+02:00 — Created for slice 04 commit 4b: the POST action skeleton —
-  `ActionRequest` + the pure `evaluate_action` / `ActionOutcome` mapping action availability to
-  202 / 409 / 404 with attribution, no mutation. Verification metadata pinned until closeout
-  stamps the 4b code commit.
+- The precomputed availability + node shapes validated against. [1]
+- The `Actor` provenance literal reused for attribution. [2]
+- The app that routes `POST /api/actions/{action}` to this and executes the gate write. [3]
+- The control-plane gate write path the router calls for a gate-decision verb (slice 6b). [4]
+- The compact acknowledgement store used for lifecycle attention dismissals. [5]
+- `_dismiss_action_outcome` allows target omission only for gate-open+gateId or actionable-drift. [6]

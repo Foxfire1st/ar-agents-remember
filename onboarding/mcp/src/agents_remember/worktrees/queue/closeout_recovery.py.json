@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`MemoryCloseoutOutcome` contains the memory commit and informational refresh results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:8a32424d760853fa1b67080bf0345a3697e17d8e36a2f566b7c316947f6c30d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCloseoutOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`prove_closeout_recovery_commits` proves exact output refs without consulting a cache table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:9aad08be1ba59d94bac34779f4a1dcf871999eb945971a94b30b49b7bbce6c26",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_closeout_recovery_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:4ec7e5239cb2836f0be017bc1d72d991a80014f4b1494dee12da1c692c9a904b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prove_memory_output"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`accepted_code_commit` commits or reuses the exact accepted code tree and records its proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:a95110a112274d9ee175790ec88d0d8aa1831e86be1b02f8bfd1937d32c1e649",
+            "locator": {
+              "kind": "symbol",
+              "name": "accepted_code_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`resume_external_commits` re-proves existing memory output and republishes only the code/memory pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:9a29e5ed527c5587233cfc90ef255470ccc36cafca5122584a3ffd0709152adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resume_external_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

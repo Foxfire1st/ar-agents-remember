@@ -1,0 +1,207 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**Content facts are functions of the id; availability is never remembered here; only complete ids are admitted; answers only.**\n\nAnchor: \"What is *not* a function of the id\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:1b6ff17f20f17bcdce4e952b5fcb4b57839244d3fedd3e9fd4cf43b1dc6decc3",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one admission test for a key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:c4ba63173ceac4c2cbe54e5f9fc9b50dbd88e7258425f570017b9bc44d16bf4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_complete_object_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The weight-bounded LRU table: the one-tuple hit, the refused oversized value, eviction past the bound, and a lock never held across Git or parsing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:da9c2b35a5d015c5b865515497b144a2ebff59b01ef5b295070caa6360a28ad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedMemo"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The definitions value shape and the two weigh functions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:6cd60d6a37f5ae307dc4e5c38b4fddf2da6445ffcc141abb926b604b3ff2092d",
+            "locator": {
+              "kind": "symbol",
+              "name": "Definitions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:99b959da4ce6745179b087bbf07e82922c2550089b609fc1e6683d99889e2429",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lines_weight"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:f3f4d5c274f6a21e932e45aa545c0c821fc1ea72d07d217117cc636a32fd7b3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_definitions_weight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The three tables, their keys and capacities, and the approximate-weight statement above them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:a1e619b09a94dc7184ec1cddedce393267506cd55c6b29341d82885c08d8b05c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TREE_ENTRIES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:891f54bfde7ea955ccfd00677b92922fda14e8be7672f51bdcf33a802eb58c8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "BLOB_LINES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:ed6a6768e30a5ae6ce728d95ce8d94089466ddf369ed22d678550f1a1b9b1f4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BLOB_DEFINITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The complete-id pattern is the storage models' own object-id pattern (imported from `models/knowledge/base.py`), compiled once for the admission test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:712cefe57298b0f6dae74656a096d4c23fc70206b81aeb6583acf29e025098a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COMPLETE_OBJECT_ID"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The consumer that decides what is put, keyed by root plus ids, and only after Git or the parser answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:5af787370ce4411072fd753185ec3ebadbc2553e231c6cf12b33c96f766c5c31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_lines"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:92c9da2995279e3b764e4cc6fe382bbcc5a8d9f1b61084a7ce1e474c6a21ab73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:98ad77f96dbefbe914ffd43fd0d599365cc160d6938b470fef4d3183f09f0708",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_entry"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The cases that pin the bound and concurrency.**\n\nAnchor: \"test_the_memo_evicts_the_least_recently_used_past_its_weight_bound\"; \"test_concurrent_readers_share_answers_and_the_bound_holds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:68d55265668480b20862f65515738bf9bdd0bee7d87be763d483e44546e94ad1",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 301
+            },
+            "path": "mcp/tests/test_read_anchor_memo.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every realization-claim source reference a family revision's roster read publishes for a member, on each of the review comparison's two sides.",
+  "conditions": [
+    "The side's read context resolves anchors against that side's own code tree.",
+    "Ranges come only from the side's anchor observation of the exact recorded blob."
+  ],
+  "exclusions": [
+    "Rendering of the region in the dashboard.",
+    "Claims whose rationale text quality is placeholder authoring, which other admission work owns."
+  ],
+  "id": "INV-716Q6QMV",
+  "origin": {
+    "leaf": "260921-ICR-L44",
+    "legacyId": "ecdf9c9e-003e-439f-b3fe-80d7da1f0e63",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each family member realization source carries, per side and per realization claim, the anchor's structured recorded locator, the line ranges the anchor resolver placed it on in that side's exact recorded blob, an explicit locator state, the claim id, and the claim's stored role and rationale unchanged; no range is read from diagnostic prose or placed on bytes other than the recorded blob.",
+  "status": "proposed",
+  "supersedes": []
+}

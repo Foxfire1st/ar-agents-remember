@@ -1,15 +1,5 @@
 # mcp/tests/test_record_integrity.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_record_integrity.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -155,95 +145,44 @@ the fixture's `DECLARED_LEAVES` is a second place the master's leaf list is writ
 lands a contract must expect to update it. That is a deliberate, visible cost of freezing the world
 rather than a defect.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this repository: `system/sources.md`
 carries no entries, so no `Domain Documentation` category is available to cite. These are
 repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| External domain documentation is not configured in this memory root. | N/A | N/A |
+External domain documentation is not configured in this memory root.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The retained source anchors below support the fixture roles and assertion boundaries described above.
 The historical evidence lives under task roots in the coordination tree and in the memory
 repository's revision `e116e5ee`, and is cited by the source that reads it rather than linked as
 durable memory. Every range was derived against the current 1140-line source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The historical case for the leaf/contract comparison and for D42's class. | `HISTORICAL_MASTER` | mcp/tests/test_record_integrity.py:49-49 |
-| This master, whose contracts and documents agree, read through a frozen register snapshot. | `CURRENT_MASTER` | mcp/tests/test_record_integrity.py:51-51 |
-| The two leaves the frozen snapshot declares, and their count. | `DECLARED_LEAVES`; `DECLARED_LEAF_COUNT` | mcp/tests/test_record_integrity.py:56-60 |
-| The revision that committed T45's stale figures, and the two route documents it carried. | `T45_FREEZE`; `T45_ROUTE_DOCUMENT`; `T45_SUITE_DOCUMENT` | mcp/tests/test_record_integrity.py:63-67 |
-| The two labels spelled so neither can match the tail of the other's name. | `INSTRUMENT_LABEL`; `SUITE_LABEL` | mcp/tests/test_record_integrity.py:76-77 |
-| The coordination root the session was told about, or a named skip rather than a silent pass. | `_coordination_root` | mcp/tests/test_record_integrity.py:80-92 |
-| Task roots are copied into a disposable coordination tree, so the real tree is only read. | `_control_world`; `_task_root` | mcp/tests/test_record_integrity.py:95-99; mcp/tests/test_record_integrity.py:102-109 |
-| The bytes a named revision committed, written out so the case reads history rather than the tree. | `_frozen_document` | mcp/tests/test_record_integrity.py:120-141 |
-| The register snapshot that carries R11's arrows by construction, so the case cannot assert the world's defect count. | `_frozen_register_snapshot` | mcp/tests/test_record_integrity.py:144-162 |
-| The frozen leaf world every live-state case now reads: declared documents, pruned leaves, reduced rows. | `_frozen_leaf_snapshot`; `_write_declared_document`; `_prune_to_declared_leaves`; `_reduce_to_declared_rows` | mcp/tests/test_record_integrity.py:165-176; mcp/tests/test_record_integrity.py:179-202; mcp/tests/test_record_integrity.py:205-215; mcp/tests/test_record_integrity.py:218-249 |
-| The historical master fails as required and this master passes, with both populations stated. | `LeafDocumentAgainstContractTests` | mcp/tests/test_record_integrity.py:257-352 |
-| The rule D42 crossed, pinned from both sides of the step-completeness conjunct. | `MasterRowAgainstLeafDocumentTests` | mcp/tests/test_record_integrity.py:360-555 |
-| Only the State cell is graded, and a master with no leaf set refuses. | `RegisterOwnerArrowTests` | mcp/tests/test_record_integrity.py:563-660 |
-| A prose figure is compared with its source at the revision the prose describes. | `DeclaredFigureCurrencyTests` | mcp/tests/test_record_integrity.py:668-1007 |
-| Every comparison states its two populations, and the CLI writes nothing. | `RecordIntegrityReportTests` | mcp/tests/test_record_integrity.py:1015-1140 |
-| The module whose four comparisons these cases pin. | `check_leaf_document_against_contract`; `check_master_rows_against_leaf_documents`; `check_register_row_ownership`; `check_declared_figure_currency` | mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:441-542; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:569-662; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:697-751; mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py:872-939 |
-| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_record_integrity.py" |mcp/tests/test-evidence-lanes.toml:387-387|
+- The historical case for the leaf/contract comparison and for D42's class. [1]
+- This master, whose contracts and documents agree, read through a frozen register snapshot. [2]
+- The two leaves the frozen snapshot declares, and their count. [3]
+- The revision that committed T45's stale figures, and the two route documents it carried. [4]
+- The two labels spelled so neither can match the tail of the other's name. [5]
+- The coordination root the session was told about, or a named skip rather than a silent pass. [6]
+- Task roots are copied into a disposable coordination tree, so the real tree is only read. [7]
+- The bytes a named revision committed, written out so the case reads history rather than the tree. [8]
+- The register snapshot that carries R11's arrows by construction, so the case cannot assert the world's defect count. [9]
+- The frozen leaf world every live-state case now reads: declared documents, pruned leaves, reduced rows. [10]
+- The historical master fails as required and this master passes, with both populations stated. [11]
+- The rule D42 crossed, pinned from both sides of the step-completeness conjunct. [12]
+- Only the State cell is graded, and a master with no leaf set refuses. [13]
+- A prose figure is compared with its source at the revision the prose describes. [14]
+- Every comparison states its two populations, and the CLI writes nothing. [15]
+- The module whose four comparisons these cases pin. [16]
+- The lane this module is registered in, so the fail-closed manifest admits it. [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. The configured cross-repository
 allowance is empty and no external source is relied upon here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 8 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`record_integrity.py`, `test_record_integrity.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:31:10+00:00: Generated citation repair: "mcp/tests/test_record_integrity.py" repointed to mcp/tests/test-evidence-lanes.toml:387-387. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_record_integrity.py" repointed to mcp/tests/test-evidence-lanes.toml:334-334. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_record_integrity.py" repointed to mcp/tests/test-evidence-lanes.toml:312-312. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_record_integrity.py" repointed to mcp/tests/test-evidence-lanes.toml:305-305. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: "mcp/tests/test_record_integrity.py" repointed to mcp/tests/test-evidence-lanes.toml:248-248. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T14:58+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`,
-  base `a12c511f`): this file is one of the leaf's five changed paths — **L2's landed test module,
-  changed deliberately** — so the card gained a **body** update rather than a restamp. The repair
-  round rewrote the four live-state sites by class (`T51`) and added `DECLARED_LEAVES` /
-  `DECLARED_LEAF_COUNT` and the four helpers behind `_frozen_leaf_snapshot`; the case population is
-  unchanged at **37 cases** and the file is **1000 → 1140 lines**. Recorded: the new fixture and what
-  it freezes, why the repair is of a fixture rather than of a check (`result.ok` held while the
-  hard-coded population failed), that the four cases' counts are now the case's own, and the one
-  standing cost — `DECLARED_LEAVES` is a second place the master's leaf list is written, so the leaf
-  that lands a contract must expect to update it. **All thirteen retained citation rows were
-  re-derived against the new bytes**: eight moved with their prefix intact and six were re-scoped
-  because an insertion now lies inside their extent (the shape the shipped citation fixer declined on
-  L1), each new boundary verified to hold exactly the line its old boundary held; one row was added
-  for `DECLARED_LEAVES`. The card's prose ranges were re-derived in the same pass — the six other
-  numbers in `Logic`/`Conventions` moved with the classes they name, and stale in-prose figures are
-  invisible to `range_resolution` and `claim_reopen` alike (`T45`), which is why they were grepped
-  rather than assumed. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash` /
-  `lastVerifiedCommitDate` are deliberately unchanged because the candidate is uncommitted and the
-  governed closeout owns the real code commit.
-- 2026-09-18T13:39+02:00 — 260918-TSIP-L2 curator (uncommitted change set on `ar/260918-tsip-l2-ar`,
-  base `d9becade`): created this card for the new test module the leaf added, so the source file has
-  its 1-to-1 onboarding pair before closeout. The case count was **re-measured on this candidate**
-  rather than carried from any report: `grep -c '^    def test_'` = **37** class methods, `grep -c
-  '^def test_'` = **0** module-level cases, `pytest --collect-only -q` → **`37 tests collected`**, so
-  collected and defined agree. The card states the file's own two revisions rather than hiding them:
-  599 lines / 27 cases as delivered, 911 / 35 after the first repair round, **1000 / 37** here. Two
-  behaviours are recorded because they are the ones a reader of this suite most needs: fourteen cases
-  read the record and **skip** without `AR_COORDINATION_ROOT`, and the `T45` documents are read by Git
-  object at `e116e5ee` rather than from a working tree that moves. `lastUpdated` tracks this body
-  edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are left at the leaf's frozen code base
-  because the source is an uncommitted candidate and the governed closeout owns the real code commit.
-  This seat writes no source and ran no product test beyond read-only collection.
+No cross-repository evidence is required for these file-local claims.

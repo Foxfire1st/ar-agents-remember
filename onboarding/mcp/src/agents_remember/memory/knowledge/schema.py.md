@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/schema.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/schema.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -103,38 +93,28 @@ Two decisions are stated once in the module docstring and are load-bearing:
 None recorded. `REQUIRED_SQLITE_FEATURES` is declared and consumed as a manifest member; no runtime probe asserts
 the features beyond what the DDL itself requires to succeed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The canonical table manifest order, which a later leaf's logical encoder must follow. | `CANONICAL_TABLES` | mcp/src/agents_remember/memory/knowledge/schema.py:29-42 |
-| The declared column order per table, used for positional changeset rows. | `CANONICAL_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema.py:44-112 |
-| The ten `STRICT` tables with explicit NOT NULL keys, composite deferred FKs and the self-edge CHECK. | `TABLE_DDL` | mcp/src/agents_remember/memory/knowledge/schema.py:117-266 |
-| The fifteen immutability triggers whose names the merge preflight compares. | `IMMUTABILITY_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema.py:284-350 |
-| The structural manifest and the fingerprint over manifest plus DDL text. | `schema_manifest`; `schema_fingerprint` | mcp/src/agents_remember/memory/knowledge/schema.py:412-422; mcp/src/agents_remember/memory/knowledge/schema.py:425-442 |
-| The ordered DDL the creation path executes. | `create_schema_statements` | mcp/src/agents_remember/memory/knowledge/schema.py:449-455 |
-| The open-time validation that refuses a partial schema or a dropped trigger. | `_require_declared_tables`; `_require_declared_triggers` | mcp/src/agents_remember/memory/knowledge/connection.py:174-191; mcp/src/agents_remember/memory/knowledge/connection.py:194-204 |
-| The label's deliberate mutability is what the `invariant_no_rebind` trigger's column list encodes. | `invariant_no_rebind` | mcp/src/agents_remember/memory/knowledge/schema.py:345-348 |
+- The canonical table manifest order, which a later leaf's logical encoder must follow. [1]
+- The declared column order per table, used for positional changeset rows. [2]
+- The ten `STRICT` tables with explicit NOT NULL keys, composite deferred FKs and the self-edge CHECK. [3]
+- The fifteen immutability triggers whose names the merge preflight compares. [4]
+- The structural manifest and the fingerprint over manifest plus DDL text. [5]
+- The ordered DDL the creation path executes. [6]
+- The open-time validation that refuses a partial schema or a dropped trigger. [7]
+- The label's deliberate mutability is what the `invariant_no_rebind` trigger's column list encodes. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **superseded this card's account of the schema.** The card described one versioned SQL schema whose `SCHEMA_USER_VERSION` moved when the DDL changed; that is now false. `SCHEMA_USER_VERSION = 1` is generation 1's `user_version` and is inside generation 1's fingerprint, so it no longer moves — a created store declares `schema_generations.CURRENT_GENERATION` instead, and a new shape is a new registered generation record (`GENERATION_2` = `ar-knowledge-sqlite/v2` / `2`, declared in `schema_v2.py`). The card now records that `schema_manifest()`, `schema_fingerprint()` and `create_schema_statements()` are driven by a generation record rather than by this module's globals, that `PRIMARY_KEYS` and `JSON_COLUMNS` were relocated here from `logical.py` (byte-identical, re-exported), that `REQUIRED_SQLITE_FEATURES` is generation 1's set while generation 2 adds `json_functions`, and that generation 1's declarations are frozen and additive-only — no `ALTER TABLE` against one of its tables is admissible, which is why generation 2's governing-route association lives in new join tables. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `_require_declared_tables`; `_require_declared_triggers` repointed to mcp/src/agents_remember/memory/knowledge/connection.py:174-191; mcp/src/agents_remember/memory/knowledge/connection.py:194-204. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new versioned SQL schema and its manifest/fingerprint. It records the all-tables-in-v1 decision, the database-level immutability rule, and the deliberate mutability of the friendly label. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

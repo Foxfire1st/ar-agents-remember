@@ -1,0 +1,34 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/setup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The setup facade calls this module during install and prepare.\n\nAnchor: `install_enabled_provider`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:398b423bad956a8e22b283bb2ee9a30e10ffb5fb2a5104ad03f1963c5df3d0ef",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Docker-owned GrepAI lifecycle behavior lives in the GrepAI lifecycle modules.\n\nAnchor: \"Docker-owned\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/core.py.md:17-20"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

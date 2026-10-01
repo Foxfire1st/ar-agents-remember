@@ -1,0 +1,16 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package overview describes the provider-owned CGC route.\n\nAnchor: `# mcp/src/agents_remember/providers/cgc/ - CodeGraphContext Provider Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/cgc/overview.md:1-151"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

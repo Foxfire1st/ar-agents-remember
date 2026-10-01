@@ -1,0 +1,1067 @@
+{
+  "path": "dashboard/src/test/fixtures/wire.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A type assertion performs no check and removes excess-property checking — the mechanism by which `as SomeWireType` let a `refusedPolarity` and a master-row `createdAt` compile.\n\nAnchor: \"as SomeWireType\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:8164a66d74351e8aa91df939055a98ff37e89e14c52065eca95f66fce3a8e099",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Every sampled registered vocabulary value must be legal.\n\nAnchor: \"carries only values the mirror's vocabulary declares, at every registered path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:da779c827da3795c878647e500000544381770373d5fd6645487b11952e94740",
+            "locator": {
+              "end": 526,
+              "kind": "line_range",
+              "start": 517
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The contract keeps master and series sub-task row fields distinct.\n\nAnchor: \"keeps the master and series sub-task row models distinct\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:7819f6803da0787a2500fee9b4165ef52ada8aefd19dc7e5ff8fa9cec8b903bf",
+            "locator": {
+              "end": 636,
+              "kind": "line_range",
+              "start": 606
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "How the defaults stay honest: required fields only, every value taken from a served row, optionals deliberately omitted.\n\nAnchor: \"HOW THE DEFAULTS STAY HONEST\"; \"annotated with the mirror type\"; \"a required field the server adds fails to compile\"; \"Only the REQUIRED fields are carried\"; \"staleSeconds\"; \"silently change what an attention-queue test is measuring\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:c13cd1e912daf0a1b709084429ede3f46694a201c77086a57baa5233ea55743e",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_LIFECYCLE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:35fbe4110a458a323c0e11cd264556b3fb7a2111388c354baa88aac92458a888",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_GATE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:47888ed2b3884253c8b0dce0b88d8e417e6590382b2aeb89408751ea88ad123a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_ENCLOSURE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:c0b8a323f11bfa285e8748988d2849f4623d3fe7135cd20ec4f5113a39279698",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_PROVIDER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:2942f7290fe07a3e1f5f535df4cf04e9f8a63020b473869ab40b7ded70ac305a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_TASK_DOC"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:1b498e73d9e3a5e58d9a4779a83cdc357aae360979d9e549b6a68d10b73be057",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_ENGINE_PROCESS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:00156992b3b8e69dd6a2464093dc6c6af30da1fc330032c0e9e30361422e7113",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:7a7e990e6307d1c4db508cc19c44ca9d96e7d98c5f907757527d2140cec98aca",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_ATTENTION"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:7f3e54aa5ea411f6eb27d02d334564fea459cf585c360fcec82b95cdff43a509",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:4c0b75f4cd4dc1c268994a53321b532a7a60b7f487c8c1d3647ff499f137fb9a",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:633fa3afe5672e8a11193d1223b0474636fde06ff5ce6256a9340b1a83d03d21",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:426d3f2115932011d605e143082d3e4c4e1dac63baac5582f8aa330efbc96aae",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "`demandServed` and the eight served anchors it demands the snapshot keep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:a807aac5fc6f61ac1d43b129bc0ebf6e7570d1eeb846d6be3022661be4517ba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "demandServed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:0534cf1582e34631a47f2cbd7edb0f72e90fc6c331031ed4a256df6fc8ff3002",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_LIFECYCLE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:a514c42f45f021d0f339e400033f06dbb32f3be3515afab9c4b5c807402b5fe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_ENCLOSURE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:726b64c6a79d05991e8f6f944d910d04e886c036a711f575d8fab0beb841c327",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_PROVIDER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:60aef46ba5eab6c2b0d82f1e38a1149f2cbe39d8904005b1fc92a7e8c3a5c60a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_TASK_DOC"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:c2037242bfc5c107492f8b5cd1e88e78be5a32f99f050c65353a366d92af914e",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_ENGINE_PROCESS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:77a84cf99ce6f625a5f3ed09999dcda27a1b5562e8222dbd1e46cec126e8df74",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:f014ad8a1d96aeb7f377ecafb1325cadfdcfb2c39517b66e104859829c4435c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_ATTENTION"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:f1c2971df00b0c346f64104a040efe065897007d8bdd5a282272850ef7080751",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_GATE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The eight bases, each annotated with a generated mirror type and filled from `SERVED`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:c13cd1e912daf0a1b709084429ede3f46694a201c77086a57baa5233ea55743e",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_LIFECYCLE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:35fbe4110a458a323c0e11cd264556b3fb7a2111388c354baa88aac92458a888",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_GATE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:47888ed2b3884253c8b0dce0b88d8e417e6590382b2aeb89408751ea88ad123a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_ENCLOSURE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:c0b8a323f11bfa285e8748988d2849f4623d3fe7135cd20ec4f5113a39279698",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_PROVIDER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:2942f7290fe07a3e1f5f535df4cf04e9f8a63020b473869ab40b7ded70ac305a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_TASK_DOC"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:1b498e73d9e3a5e58d9a4779a83cdc357aae360979d9e549b6a68d10b73be057",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_ENGINE_PROCESS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:00156992b3b8e69dd6a2464093dc6c6af30da1fc330032c0e9e30361422e7113",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_PICKUP"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:7a7e990e6307d1c4db508cc19c44ca9d96e7d98c5f907757527d2140cec98aca",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_ATTENTION"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:4c0b75f4cd4dc1c268994a53321b532a7a60b7f487c8c1d3647ff499f137fb9a",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:633fa3afe5672e8a11193d1223b0474636fde06ff5ce6256a9340b1a83d03d21",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:426d3f2115932011d605e143082d3e4c4e1dac63baac5582f8aa330efbc96aae",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "`EMPTY_ANALYTICS` — every key present and empty, which is a shape the reducer produces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:cd12deed036264ddb61f2bcb0acd86f6d4505cfe896969e64520a2458294214a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_ANALYTICS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:44b77b005143fe1803fedaa8387a4c5e8a1afc1bdcb034b559f52c6da78aebcb",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "`projection()` deriving `metrics` from the lifecycles via `metricsFor` rather than restating buckets.\n\nAnchor: \"metrics: metrics ?? metricsFor(lifecycles)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:57d60c8e86b437ffe78719722f5887f40e0cba080dccc1217045be497702c32f",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 344
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "`reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
+            "locator": {
+              "kind": "symbol",
+              "name": "reparsed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 396
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "`asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:12df43ff00e9127957d3b1b6424e4bd3dd39c9d43b08489a2906d08c6dee0cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "asServedProjection"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The fixture bases draw their lifecycle sample from the hand-maintained oracle.\n\nAnchor: \"\\\"lifecycles\\\": [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:90eacbf4ff7420dc1aaf065089860bdaa4c971a00ced9d2254baa41933c877a2",
+            "locator": {
+              "end": 1791,
+              "kind": "line_range",
+              "start": 1791
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Excess-property checking applies to fresh object literals, which is why an override written inline at the call site is checked and one routed through a variable is not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
+            "locator": {
+              "kind": "symbol",
+              "name": "Overrides"
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The fixture bases draw their enclosure sample from the same oracle.\n\nAnchor: \"\\\"enclosures\\\": [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:5fb6ad954b1a0bd3ba3d34687846f71ff36db17c7d589c2306150cc3a615c229",
+            "locator": {
+              "end": 1822,
+              "kind": "line_range",
+              "start": 1166
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The oracle carries its independent analytics sample.\n\nAnchor: \"\\\"analytics\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:94aa01c9083c90562ec6d1847f6fd5400885290416160dff2bd4d630828d99be",
+            "locator": {
+              "end": 1112,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The agent-pickup builder takes its sample from analytics.\n\nAnchor: \"\\\"agentPickups\\\": [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:dcd08d40c7dbfd0be3e46bc2d3f57907ea80e3d5638205d56237a6d4f0702754",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The task-document builder takes its sample from analytics.\n\nAnchor: \"\\\"taskDocuments\\\": [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:5a4c0d5fbe1b46d2aece4f6acaf8beaaaab3e2ba0c1c3a959f5b17ef0bbff59e",
+            "locator": {
+              "end": 1103,
+              "kind": "line_range",
+              "start": 728
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The attention-item builder takes its sample from analytics.\n\nAnchor: \"\\\"attentionQueue\\\": [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:0540b78baf3fc9965d9185bf415e9788a46bef35d00c039e1328a0318a2a1349",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The engine-process builder takes its sample from analytics.\n\nAnchor: \"\\\"engineProcesses\\\": [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:18e98b68664b63d9530a3549bec6222b6f240bf33443f83a1f2f5c31a3a3820e",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The provider builder takes its sample from the top-level providers array.\n\nAnchor: \"const SERVED_PROVIDER = demandServed(SERVED.providers[0], \\\"providers[0]\\\");\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:726b64c6a79d05991e8f6f944d910d04e886c036a711f575d8fab0beb841c327",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The served snapshot supplies the code provider and memory provider in its top-level provider array.\n\nAnchor: \"\\\"totalTokens\\\": 2800 }, \\\"providers\\\": [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:5844642e7e67100914a7b381cf0de0cd9fb859a9c034f6cdd78f71dd3ae0d9e4",
+            "locator": {
+              "end": 1941,
+              "kind": "line_range",
+              "start": 1939
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The override constraint every builder takes, and the three limits it documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
+            "locator": {
+              "kind": "symbol",
+              "name": "Overrides"
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake.\n\nAnchor: \"catches a smuggled field where there is no assertion to ban\"; \"fixtures/wire.ts::reparsed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:237b3e8f2302974ca5a2ed5c3bd6676c8e3cea8f8cd844556d2e4305a669fb72",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 512
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`structuredClone` deep-clones a value at runtime; unlike a `JSON.parse(JSON.stringify(…))` round-trip it does not launder the value's static type into `any`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
+            "locator": {
+              "kind": "symbol",
+              "name": "reparsed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 396
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "`KnownUnsampled`, which names `agentNotifierHeartbeat` as absent from the snapshot and therefore a typed literal here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:92c6be3a3f8b5b2315de340b42ba13553963d58c397d65bc01529bbcacf39021",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnownUnsampled"
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "`ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObserverEvent"
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The companion builder module for the conversation grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:72a2fb4edf364b89bf2d29ee74bc7663acf79aed8aea14330232e6846698eb05",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationPage"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The in-repo `WorkspaceProjection` producer model uses `extra=\"forbid\"` and declares the complete projection boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:39f472cfada99fc40b77caa93bbd20fb4863311c11ceed498bc3d54f3f270cce",
+            "locator": {
+              "end": 1153,
+              "kind": "line_range",
+              "start": 1131
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "R6 and the two proven defects, both of which compiled because they were written with `as SomeWireType`.\n\nAnchor: \"R6 in one sentence\"; \"drift. This leaf proved it twice\"; \"fixture that set the field itself\"; \"tests built a master\"; \"fixtures were written with\"; \"both compiled\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:f51bf451e52cbd60dab42d23a4ff11b3b155436ee93eced9600d143735f1a851",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`snapshot.json` remains the hand-maintained sample while the source names the producer-to-TypeScript link as generated and checked.\n\nAnchor: \"is NOT generated; it remains a hand-maintained\"; \"producer-to-TypeScript link is generated and checked\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:7e42a5e0e377e61378d25b8c95e783e30197562b5aa89d6979a6c9574b65fed0",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`projection.ts` marks itself generated and names its schema, generator, regeneration command, and drift check.\n\nAnchor: \"GENERATED FILE; DO NOT EDIT\"; \"Canonical core model\"; \"Schema artifact\"; \"Served-only tail\"; \"Generator:\"; \"Regenerate:\"; \"Drift check:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:048d2be48e5d33c20e3cf9ed45c3edc5ca0c7ab1bb6ad6008e2c4c2d29162b8b",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The projection generator implements both check and generation paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:b7406c17cc72921b4db23c556877f4445defbd89af6bd62340ffc15b0d513c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c18f31c577f41468edd16e036b0729ca9394f2cda2fe7364274e3f716a20df86",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:03b063fa79a28e97e10a9bbeae9e64cdbaf6b644eaa4e5f348b2055e0e819df4",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c9c0f2f098b8ec38b8037451981c839051aad21d9d187b5ee38c58c67fd01bd6",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The sample introduces no served field missing from the mirror.\n\nAnchor: \"has no served field the mirror is missing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:b84bb5fef68c7da2997f26eacdf572410d2f35298b0e8d5959899a076ad27eea",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 477
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The sample covers declared structural paths except explicit residue.\n\nAnchor: \"reaches every declared path except the named residue\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:d6c0ad2ecf61ded8cec4675948e5fee874c2e09d5da705cdcc73bf125e507b70",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 493
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

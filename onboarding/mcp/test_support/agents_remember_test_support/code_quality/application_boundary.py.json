@@ -1,0 +1,215 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/application_boundary.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `BoundaryContractError` (lines 27-28) — The declared package order cannot define the application boundary..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:9976df8df272a74eff1206ac15b7cc9c0bafa50b6b3fdd7a427a1a7493e2e094",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundaryContractError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `_module_imports` (lines 144-147).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:b52679073f01327fc976e3c47529d0c43fad11d287c815725e5bc9eb2304791d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_module_imports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `_transport_violations` (lines 150-175).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:095b5bb4b9b866356a47a7e03d2b116322f769c2d72b36f7f249c432094b5efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_transport_violations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `_reverse_serving_violations` (lines 178-214).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:d9fed390839bfaa41d238977239b4377a28286077f7c69970029812b619aa0e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reverse_serving_violations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `application_boundary_violations` (lines 217-228) — Return every MCP transport bypass and reverse serving edge in stable source order..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:abeee61796b1154fbbc63326a950010a62120649300126b7113b0d0d2794f023",
+            "locator": {
+              "kind": "symbol",
+              "name": "application_boundary_violations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `BoundaryViolation` (lines 39-52) — One import that crosses the MCP/application boundary..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:a2d2a14610b55350c2154f88418f3407f0382b35ee7e46a03b8122ce46ca260f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundaryViolation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the class `_LayerContract` (lines 56-58).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:17adfd99bcaaf875659542ccdab93de853778e75079e4d0876e699f15c82448e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LayerContract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `_read_contract` (lines 61-85).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:f34ef04f73fef0db24ce956eff49fa262308a51b4b8f775ccf9ae9dc75401053",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `_resolved_imports` (lines 88-100).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:a38c50d2e613bab8a020e79670441af4b32c28df40a0b722840c313848e81e82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_imports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `_top_package` (lines 103-107).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:5127a685e7de89207126c62118829c9e19125c9cf759765edc3643a8aac12c04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_top_package"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `_permitted` (lines 110-114).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:a9c4806ebfadceb43d18b9314f91fe74a4ff6a360b20ba88b583c74d022526e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_permitted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `_required_modules` (lines 117-131).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:e4fd0f9ec9032e3aabbe159fd812c4744e2a791ec4544e578ce1e10ea650b215",
+            "locator": {
+              "kind": "symbol",
+              "name": "_required_modules"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `_serving_modules` (lines 134-141).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af20e5083c2f87469b14a73edbe2d7bb1385a9f7",
+            "content": "sha256:c962bfa408f75a1babfd953a0b0b8b6591f9d09df0905bd5cf8e2262a0bdc5b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serving_modules"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/structural/gate_tools.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/structural/gate_tools.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-20T09:35+02:00 |
-| lastVerifiedCommitHash | `a9d50e08b830c4a34c14e495706c19fe697f47ab` |
-| lastVerifiedCommitDate | 2026-08-20T09:26:15+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structural application services](overview.md)
@@ -57,29 +47,16 @@ risk is deployment-level (who may reach the server).
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Lifecycle-gate creation resolves a structural target before invoking internal gate creation. | `structural_lifecycle_gate_tool` | mcp/src/agents_remember/application/structural/gate_tools.py:116-149 |
-| Gate decisions and listing authorize through the same ambient structural context. | `structural_gate_decide_tool` | mcp/src/agents_remember/application/structural/gate_tools.py:160-280 |
+- Lifecycle-gate creation resolves a structural target before invoking internal gate creation. [1]
+- Gate decisions and listing authorize through the same ambient structural context. [2]
 
-## Cross-Repo References
-
-
-## Update History
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: the gate tools gain the declared-caller fallback
-  (L16-R3): `_context` builds a duck-typed `DeclaredGateCaller` on `ambient-seat-unavailable`,
-  refuses a missing declaration (`structural-caller-required`) and a seat contradiction
-  (`structural-caller-conflict`), and the same `authorize_child` policy validates the declared
-  identity exactly like a seat. Claim re-read and citation ranges regenerated (F1/F3 fold).
-  Verified at code commit a9d50e08.
-
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for structural delegated-gate operations.
+### Cross-Repo References

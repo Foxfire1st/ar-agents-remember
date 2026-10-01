@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The canonical task-document enumeration (_iter_task_json) that the always-on summary, series and closeout-queue projections consume, and that bounds which paths the body read's named-path probe may return.",
+  "conditions": [
+    "A task root is exactly tasks/<repository>/<task>/; only its direct entries named *.json are candidates, of any entry type, and the reader accepts or refuses each.",
+    "A folder that cannot be listed contributes nothing, as the recursive glob behaved."
+  ],
+  "exclusions": [
+    "Historical copies under notes/, report and enclosure folders, 0_archive, top-level JSON in a repository folder, and anything reached only through a symlinked directory.",
+    "The unrelated TaskDocumentTopology master-ref walk in tasks/document_refs.py, which is a different code path."
+  ],
+  "id": "INV-P0YZDCS9",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "5e8efb0c-ad34-47d3-b540-d40a7d0df5ad",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The task-document enumeration lists only tasks/<repository>/<task>/ entries named *.json, does not descend symlinked directories, excludes any path through 0_archive or enclosures, and sorts only those entries, yielding exactly the list the previous recursive glob produced.",
+  "status": "proposed",
+  "supersedes": []
+}

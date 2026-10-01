@@ -2,13 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/lifecycle/` |
-| doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-08-13T07:53+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
-| governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
 
@@ -69,17 +63,17 @@ an invalid UID/GID override.
 - Lifecycle service callers should dispatch to implementation functions through
   the `providers.lifecycle` facade, not through CLI subprocess capture.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 Watcher aggregation is owned by the current lifecycle entry point. Current source: `watchers_run` (mcp/src/agents_remember/providers/lifecycle/watchers.py:186-205).
 
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Public lifecycle exports are collected by the package facade. | `_EXPORT_MODULES` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24 |
-| Package execution delegates to the lifecycle CLI. | `main` | mcp/src/agents_remember/providers/lifecycle/__main__.py:1-8 |
-| CGC lifecycle implementation is grouped under the CGC provider package. | `## Purpose` | onboarding/mcp/src/agents_remember/providers/cgc/lifecycle/overview.md:17-22 |
-| GrepAI lifecycle implementation is grouped under the GrepAI provider package. | `## Purpose` | onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/overview.md:17-22 |
+- Public lifecycle exports are collected by the package facade. [1]
+- Package execution delegates to the lifecycle CLI. [2]
+- CGC lifecycle implementation is grouped under the CGC provider package. [3]
+- GrepAI lifecycle implementation is grouped under the GrepAI provider package. [4]
 
 
 ## 260731-EFA-L2 — One More Shared Primitive, One Fewer Unused Knob
@@ -105,31 +99,3 @@ present so the response keeps its shape) and `_drop_verbose_plumbing` (drop the 
 mirror, then either drop the debug-only keys outright on success or keep them redacted on failure,
 because that detail is what makes a failure debuggable). The success/failure asymmetry is the point
 of the module and is now readable at the call site.
-
-## Update History
-- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 separates compose planning from executable discovery: dry-run plans render the symbolic `docker` command, while real provider execution still resolves the native executable at the execution boundary. Verification provenance remains closeout-owned.
-
-- 2026-08-04T18:23+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 5 citation rows with exact anchors (`_EXPORT_MODULES`, `main`, the sibling-overview `## Purpose` headings, and the named provider-lifecycle tests) and ledger-verified ranges; the CGC/GrepAI overview citations now use the `onboarding/`-prefixed memory path form. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `compose_runtime.py` gained the shared
-  `BackendStartReconciliation` bundle both provider backends now pass; `command_runner.run_command`
-  lost its never-supplied `env` override, so the sanitized provider environment is the only one;
-  `log_capture.py`'s trim split into `_shrink_logs` + `_drop_verbose_plumbing` with no change to
-  what is emitted. Route model, facade boundary and the explicit `--from-settings` rule are
-  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-06T23:04+02:00 — 260703-L13 (GQ3): the implicit coordinator `system/settings.json`
-  fallback was deleted from `provider_settings.py` (readers now demand the explicit
-  `--from-settings`; the `coordination_root` parameter dropped, call sites in `watchers.py`
-  and both provider lifecycle cores updated; `cli.py` help text rewritten). Route model
-  otherwise unchanged. Verification metadata pinned until closeout stamps the L13 commit.
-
-- 2026-06-08T09:57+02:00: Re-verified the provider lifecycle route after the Compose host-user helper switched to callable `getuid`/`getgid` checks for non-POSIX safety.
-- 2026-06-06T12:15: Re-verified against the current shared provider lifecycle package; CLI, watcher aggregation, Docker helpers, result rendering, state files, and log trimming still match.
-- 2026-06-01T00:00+02:00 — Added `log_capture.py` to the shared modules listing in Hot Path Summary.
-- 2026-05-28T12:32+02:00: Updated after shared Docker helpers began exposing container-state summaries for provider current-state reporting.
-- 2026-05-25T21:14+02:00: Updated when provider lifecycle implementation moved to provider-first packages and shared lifecycle helpers were split by responsibility.
-- 2026-05-25T19:16+02:00: Updated after the legacy `provider_lifecycle.py` compatibility shim was removed and `providers.lifecycle` became the sole facade.
-- 2026-05-25T19:09+02:00: Updated after CGC and GrepAI lifecycle modules moved into `cgc/` and `grepai/` subpackages with prefix-free filenames.
-- 2026-05-25T19:01+02:00: Created after provider lifecycle was split out of the monolithic implementation into focused modules.

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/certification_observation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`observe_certification_publication` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "794ec2793b13af9976926c8dcc779141def79d08",
+            "content": "sha256:155bcf1b91b9a2453c505a4fb3f0531a28709cede7207e510ab20827d345acac",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_certification_publication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

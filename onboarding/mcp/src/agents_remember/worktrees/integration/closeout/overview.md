@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/closeout` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -98,9 +92,7 @@ key, so this read is served from the gate's memo. Tested through the real valida
 `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated`. The certified (prepared) path of
 [`certification/`](certification/overview.md) refuses on converted memory (gap 3). **Inert until the cutover.**
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The closeout validator's gate over the authority's exact candidate. | `_require_knowledge_gate`; "curator-coherence-knowledge-gate-refused" | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:349-369 |
+- The closeout validator's gate over the authority's exact candidate. [1]
 
 ## Local Invariants And Traps
 
@@ -127,10 +119,17 @@ key, so this read is served from the gate's memo. Tested through the real valida
 | `curator_coherence_render.py` | [curator_coherence_render.py.md](curator_coherence_render.py.md) | covered |
 | `integration_reopen.py` | [integration_reopen.py.md](integration_reopen.py.md) | covered |
 
-## Docs And Boundary References
+## Evidence
+
+### Docs And Boundary References
 
 No configured external source applies. The lifecycle and queue overviews describe adjacent owners.
 
+### Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+- Door source facts use current Git and task authority. [2]
 ## MCAR-L03 Pair-Bound Closeout
 
 The coherence authority, its source attestation, immutable record, publication fingerprint,
@@ -153,13 +152,6 @@ Preparation selection requires the exact four original code certificates and, fo
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
 
 
-## Repo-Internal References
-
-The following current source owns the changed behavior; no external domain source is configured for this slice.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Door source facts use current Git and task authority. | `_declare_generation` | mcp/src/agents_remember/worktrees/integration/closeout/door_source.py:381-475 |
 ## 260915-KS-L15 The Assessment Evidence Destination
 
 This route gains one module: `curator_assessment_evidence.py`, which owns the one destination an
@@ -204,71 +196,6 @@ and then passed as `stale_ids` — was deleted with the `assessment_currentness_
 Its one replacement is the private `_measured_state`, which converts the caller's mapping once and is the
 single path both public entry points take, so the collection projection and the per-subject projection
 cannot classify the same record two different ways.
-
-## Update History
-
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **route body updated for MIK-R09.** Added the section "260928-MIK-L09 The Closeout Validator Recomputes The Mandatory Invariant Gate": `require_current_curator_coherence` now ends with `_require_knowledge_gate`, refusing `curator-coherence-knowledge-gate-refused` on converted memory while any gate finding exists (MIK-R09 rule 3); unconverted leaves, the record and pair identity are unchanged; one row. No verification stamp was advanced.
-- 2026-09-27T05:02:28+00:00 — Reconciled this route's durable assessment-history ownership and failure boundaries. Existing source/knowledge/evidence owners and authored judgment meaning are preserved; verification stamps remain closeout-owned.
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **added the `260921-ICR-L15 Measured assessment currentness` section above.** It records the route's own behaviour change: `curator_coherence_assessments` and `curator_coherence_subject_assessment_state` now classify per record through `supplied_measurement_statuses`, an omitted or empty measurement answers `not-measured` instead of defaulting every record to `stale`, and `_stale_assessment_ids` is deleted rather than kept as an alias. This is a body change and not a metadata-only refresh: the route's governed source changed under this leaf. The two enforced `citation_anchor_absent_from_range` rows this pass cleared live on the `curator_coherence.py` card, not on this overview (`:501-502` → `:501-504` for `curator_coherence_evidence` and `:115-141` → `:115-160` for `curator_coherence_no_impact`), and are recorded in full there; this overview carried no citation finding of its own and no range on it was touched. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T18:55+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the `260915-KS-L15` landing the section above already carries (`65e3791b`): the new `curator_assessment_evidence.py` with its one evidence destination and its read-back, `_exact_review_assessments` and `_published_evidence_bytes` in `curator_coherence_publication.py`, and the read projection and record-side edge recomputation in `curator_coherence.py`. Each was re-read against the file rather than trusted, including the three properties that chose the destination and the blocked state a failed read-back produces. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained `curator_assessment_evidence.py` and two publication extensions; the body records the evidence-byte destination and its three measured reasons, the read-back that makes survival proven rather than asserted, and that the shipped exact-coverage obligation is untouched. The reference rows were re-derived from the current files: `require_current_curator_coherence` is `:327-385` and `curator_coherence_evidence` `:487-488`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-
-- 2026-09-18T03:30+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): recorded, for this route's nearest-governed change, that `prepare` composes its summary from the request model's publication declaration and therefore states the complete `publish` input set — the judgments, all nine members, and the two identities it does not derive — instead of only the judgments. The section states the defect that produced (`notes/DISCLOSURES.md` D-11, where the undocumented members were reported twice as an impassable tool defect), that the text is derived rather than copied, and that nothing else in the module changed: `prepare` invents no identity and `_publish` is untouched. Only the preparation/publication material in this route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Removed deleted ledger recovery routing and documented cache-independent door evidence. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
-  `mcp/src/agents_remember/worktrees/integration/closeout/` route changed since the recorded
-  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
-  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
-  Verification metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the route moved since the
-  recorded verification commit — door storage left the worktree contract for the contract's own door
-  journal. Re-read the route card: its deletion and retention claims still match the tree, its
-  journal invariant is now literally true, and it carries no line ranges. No wording changed;
-  verification metadata remains closeout-owned.
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: moved the `future_code_candidate.py`, `memory_candidate_pair.py` and `memory_census_scope.py` sidecars out to `memory_quality/` and moved the `prepared_certification.py` sidecar in, repaired the dead `future_code_candidate.py.md` map link, and recorded that the public closeout-door tool entry point was deleted while the closeout-internal door modules remain. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/integration/closeout`, so no route/member/prose/invariant change is required. route-member-count=42; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
-
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
-
-
-### 2026-09-06T17:13:06+00:00 — L34 implementation memory
-
-Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
-
-- 2026-09-06T14:58:25+00:00 — Added the selected certification child route from source at `c69d5171187fa1957025e393270db9f5a864ab14` and corrected the obsolete all-unwired claim. Preserved all earlier history and the broader route verification stamps; other closeout owners are outside this bounded update.
-
-
-- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added current task-intent and direct evidence dependencies across coherence, door and operation admission, with bounded legacy census. Verification records source review, not execution or acceptance.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: door and curator-coherence task contexts now
-  bind the authored graph once and consume the same immutable sprint graph generation as projection
-  currentness. Verification remains closeout-owned.
-
-- 2026-08-30T06:08+02:00 — MCAR-L03 A005: added the extracted completed-integration reopen policy
-  owner and its exact code/memory leg boundary. Verification remains closeout-owned.
-
-- 2026-08-29T21:46+02:00 — MCAR-L03: bound coherence and all closeout report/recovery surfaces to
-  one exact contract pair. Verification remains closeout-owned.
-
-- 2026-08-29T18:29+02:00 — Added disposition-exact no-impact projection for the shared onboarding
-  body gates without weakening untraced-content refusal.
-
-- 2026-08-29T10:40+02:00 — Adopted the exact future-code candidate identity owner from the
-  worktrees root so candidate identity and curator-coherence consumption share the closeout route.
-
-- 2026-08-29T08:52+02:00 — Added the single structured curator-coherence authority, exact CAS,
-  generated projection, and shared consumer validator. Verification remains closeout-owned.
-
-- 2026-08-25T15:44+02:00 — Created for the recoverable closeout-door/journal boundary.
-  Verification remains closeout-owned.
 
 ## Shared curator integrity and live readiness
 

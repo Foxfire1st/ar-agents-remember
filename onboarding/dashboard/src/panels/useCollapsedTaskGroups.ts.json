@@ -1,0 +1,85 @@
+{
+  "path": "dashboard/src/panels/useCollapsedTaskGroups.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:5b487559c73456bae39b7786613a353219273ea6f3723c6f4f972a9411df18c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleListImpl"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. The landed-master cases this row used to name (`holds a fully landed master closed by default…`, `never closes a row that carries OTHER rows…`) **were deleted with the L33 revert** and no longer exist in `hierarchy.test.tsx`; the row now names the three cases the reverted file really carries.\n\nAnchor: \"operations.tasks.collapsed.v1\"; \"defaults hierarchy disclosures to expanded and renders controls only for parents\"; \"keeps sprint and master collapse independent without changing selection or BY PHASE\"; \"persists stable sprint and master keys across remounts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "content": "sha256:68392e15d4774c60ba481fc00408e731f83b9168593e00969a4ca1ed5b3e3ad3",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "content": "sha256:dcc80aa9a03a9687b86dbc7dbff48bc469e8ca5f3feb6f076877966256be6d74",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "content": "sha256:bbdfb0639f6bfcf6687b0b3eac53ebb9f7fe32bb1be7c28fafa610bfabfdf3b6",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The existing persisted-flag pattern was the worker's local implementation reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b1d2d480c871325b9ea74ec9e5e598ff63c3f12",
+            "content": "sha256:ad936f43dfcb7947dbbfe837a85a3767febc155c73fa2c41c9365d5d8d26522d",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePersistedFlag"
+            },
+            "path": "dashboard/src/panels/file-viewer/usePersistedFlag.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

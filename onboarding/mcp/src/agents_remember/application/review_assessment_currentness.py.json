@@ -1,0 +1,460 @@
+{
+  "path": "mcp/src/agents_remember/application/review_assessment_currentness.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+        "content": "sha256:c69a1b076c21695fba519ff5bf51dafc05071358e18bafbdbf1a6688b30b9e43",
+        "locator": {
+          "kind": "symbol",
+          "name": "currentness_channel"
+        }
+      },
+      "id": "RLZ-002H88VC",
+      "invariant": "INV-53MJW8V0",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Derives the currentness channel from the assessment channel before any measurement is used. An uncaptured (not_selected) collection becomes not_measured, an unavailable authority or measurement stays unavailable with its reason, none_recorded is a real zero with no binding measured, and only an actual measurement is reported as recorded.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the defect it closes, the three questions it answers, and the owner boundary it refuses to cross.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:0486250febc32c1840c6211f102864b69412430d1c2e9225feca2abc19fd3a87",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_currentness_measurement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:c69a1b076c21695fba519ff5bf51dafc05071358e18bafbdbf1a6688b30b9e43",
+            "locator": {
+              "kind": "symbol",
+              "name": "currentness_channel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The availability vocabulary the channel is built in, and the validator that makes \"a count nobody measured\" unrepresentable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:dafe017fda5c133ffcdc982c070c12de7eedc57930f07153e09db3295c2b788e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordChannel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:00685c1ca1d8ea3fec1d2faae41ce43abc4ce1afbe7113967c104a33b4e48fe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordChannelState"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The digest the declaration builder used, reused here so a measured spelling and a declared spelling are one name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:ad0862ac2a1361ae755a88c92e51edca629d34721ef01d299f45cf4037086b8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_sha256"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The two validator identities the shipped assessment publication declares as constants — the reason a resolution binding nothing is still measurable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:0df47d5e95f482b62663e283015d18574424ab4bb3cc7ce889590e859256414a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ASSESSMENT_RESOLVER_VERSION"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:2afdf450c7f68612f36a5a6975c837e103c59556a2f20f4a4e64cfe7289a161e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ASSESSMENT_POLICY_VERSION"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The one production caller: the record bundle produces this measurement for the comparison the review is viewing, and names this module as the collection's owner.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:b88625a4dc6b405dbc35cef0068cf749e39f876385d589528db1da47715f92a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_records_for_resolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:739ccdcfda9e3d327794e7ec3076c85a7286115ba109a774a94a57c1303b00fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COLLECTION_OWNERS"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:6ad5e0b49b2b9ff61de5f79fb25d573124f0d0080b32fb013d48330c2ce9d637",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_records_for"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The resolution whose bound endpoints and recorded references are the identities measured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3d217a4d6d609112d499be391c3c5b81ef3af88",
+            "content": "sha256:58db95157ca96a7ea081420afa9d4f1aac49b494f52c47c6f580e7c21f8e6778",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCandidateResolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Uncaptured assessment history stays not-measured rather than empty or current.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:c69a1b076c21695fba519ff5bf51dafc05071358e18bafbdbf1a6688b30b9e43",
+            "locator": {
+              "kind": "symbol",
+              "name": "currentness_channel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface, and the one declaration naming which authority answers for this collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:3e655d4eb27fcb4fa0cd47f15cbd02975b2abfb07ffe4c8a49eef1973cad86dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:c62e49c322454ffa53d333c37d8ae1766fc8b553a54824fb3405ac04a5bb40d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENTNESS_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:d75e7d24f4c20a2fe533f971ddfe509b750f6e3b8cb8e864210522534fdded13",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The measurement: the identities the viewed comparison publishes, read from the resolution, with the two validator identities appended unconditionally — which is why its state is always `measured`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:0486250febc32c1840c6211f102864b69412430d1c2e9225feca2abc19fd3a87",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_currentness_measurement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:f9d4de9d7c385ba605ea106fc857a49e9bef0e42127df7efad09a3ea5bb0b10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SCOPE_MANIFEST"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:c23bfaa749b6b6472b34f337ab27032e1be2f9cec4f27ee1cd66aa53cb31587c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COMPARISON"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The availability statement: the three product states a resolved candidate can earn, and the assertion that a measurement nobody performed has no channel here.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:c69a1b076c21695fba519ff5bf51dafc05071358e18bafbdbf1a6688b30b9e43",
+            "locator": {
+              "kind": "symbol",
+              "name": "currentness_channel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The count that says how many bindings were *compared*, and the per-binding not-measured statement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:11b4d61c61c815c0951b271bc5b65334772154742c7929ba7a2a93e2b88d97c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measured_detail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:21b1f5bd378f323608217f3410ebf3b3cbf3dd658650c09a7f363daa5956d582",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unmeasured_spellings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one unavailability construction, carrying its own reason and remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:8aff9eb87fba0192b42e53b009f935537ce25a1f3e17e5e2595d94534f6d90af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unavailable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
+            "content": "sha256:5482e957bce1f32674f0eb48a427f7df4fb859f3acdb64cc2eb8f8335ddddbf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REPAIR_ACTION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The measurement value and the vocabulary it is built from — the state, the values whose keys are the coverage, and the unmeasured remainder.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:28cc97d0fbcf3685e476fa5f7c9790b91dcd62e25797f5dff8517af061186abb",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentCurrentnessMeasurement"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:00be188908c78d461f71903124aca3097c923243e541b2e3a26514e78956949f",
+            "locator": {
+              "kind": "symbol",
+              "name": "measured_currentness"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:b0cb43c86a30c01e7414e7bea9b8764f22e217b9cffdfec0d063bd4abe8199dd",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The whole equality rule this module feeds but never makes: a measured disagreement is stale, a complete agreement is current, everything else — including an empty measurement — is not-measured.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:75b628a1a2c32d5ba341c2565dde5cda98ab23bda0287b0fdf6841abf49b434c",
+            "locator": {
+              "kind": "symbol",
+              "name": "measured_binding_status"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:57d1a61ea8b818c4742f7bffb0608fa7d89202cb91b65f2c406a3667be9f9e63",
+            "locator": {
+              "kind": "symbol",
+              "name": "measured_binding_statuses"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:d9277efe641fb1be1f19a35486de6970504e6e254efdc91bc1142c5b76b8240c",
+            "locator": {
+              "kind": "symbol",
+              "name": "unmeasured_identities"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The comparison's own equality authority and its declared-dependency edges, which this module supplies values for and never re-implements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:c488228a3c443a2a3b725a9e499919f5bde7a9aeaf17f33a8f44de3694df7d8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "disputed_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:f6264e233ed510ee1f0b90c9448eb03aebe039860d41c935813f8f4bb09f38b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_currentness"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

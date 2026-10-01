@@ -1,0 +1,111 @@
+{
+  "path": "mcp/src/agents_remember/application/curator_coherence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One admitted contract executes the coherence action and translates the complete domain family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a14d1417c77430c1752a4f601d84fc01ff09a11e",
+            "content": "sha256:e0f943dab07b0883dffe848c007387e0497b631159a8364dd4c9879a360c5c99",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a14d1417c77430c1752a4f601d84fc01ff09a11e",
+            "content": "sha256:3a4546c7b75e4411b9f217c812cbe4568f6cc11bfdf69c3d4617eaded3d741b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_domain_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a14d1417c77430c1752a4f601d84fc01ff09a11e",
+            "content": "sha256:696a1a9f8b9bfc8bf658ceeac0b07287cd5874c3e820d02119ad5446e2a8ecf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a14d1417c77430c1752a4f601d84fc01ff09a11e",
+            "content": "sha256:c951a1aea0558ff49732955867f0acc22859b572725806a765078f87722a8fd3",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a14d1417c77430c1752a4f601d84fc01ff09a11e",
+            "content": "sha256:5de26532a14d80d5dea97b9b22498f4606acd0c9ceeb49e932d716df14f62c5d",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Configured admission is the shared lower-level API rather than repeated exception lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "content": "sha256:47c7281ec0415ef87b601a396b28a6754ba1dd72e5d02d18d71f503c2049fedb",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_configured_contract"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "content": "sha256:95a6b82ba17ba1a53654ccc370194a40588468f5679c084f4a271b094cc59ec5",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_configured_contract_operation"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "content": "sha256:3626a737f58e24ed7bedbabad711659a48ca03bfe3f3c876aaba6ddb095c1445",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 314
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

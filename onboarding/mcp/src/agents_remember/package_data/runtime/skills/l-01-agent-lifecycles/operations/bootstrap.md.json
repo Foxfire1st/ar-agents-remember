@@ -1,0 +1,204 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/bootstrap.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical source this package-data copy is sync-propagated from.\n\nAnchor: `# Operation — Session Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "content": "sha256:0a167d25b360e154c02dd9fdac113e52bbb0b78f701733c88a7ceee773d3179f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The operation vocabulary extension that publishes `bootstrap` as the ninth operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_OPERATIONS"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The role card this operation is the procedure for.\n\nAnchor: `# Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "content": "sha256:8f845dee464db4a5160719a0480c89ec2afbc210842501ac005ed7a14311ec9f",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Selection rule, carrier start route, and the one-carrier table.\n\nAnchor: \"When it is selected:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "content": "sha256:ed88a7efa96752ec6e6fc3f0904a790bb4b91d1dc3f4760f71e9a7b20fe9cbd5",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Required inputs, including the three developer decisions.\n\nAnchor: \"Required inputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "content": "sha256:f4e01bb7c6a142a5872c47e6b73ecbbc75d985d937b4b24d77ac765269943bc7",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The seven-step ordered workflow, each step naming its owner.\n\nAnchor: \"Normal workflow\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "content": "sha256:c684f3728e65efecfd6e42e04b5e500ba7fdec3b243306670bb2e9a512d62b1a",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The seven-row failure inventory a new user actually hits.\n\nAnchor: \"The failure states a new user actually hits\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "content": "sha256:8ded118e5a88278b5f356bf717dfacf074b03853a52add74591fc2c32d7b9674",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The conformance standard: re-derivability, no independent acceptor, failures reported as failures.\n\nAnchor: \"How conformance is evidenced\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "content": "sha256:4ba6bfbea5830c82d8fbcc62dbc1cf7e8e17b4415582b52e86df893a477e8b1f",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The authority gates, including the absent-altitude-is-the-shape rule.\n\nAnchor: \"Authority gates\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "content": "sha256:f5c4a294403fd5f33a9414bd1a77f10f43a707c77a69850b8c84bf60cfdc525a",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two known failure-handling rows, including the capsule-delivery gap.\n\nAnchor: \"Failure handling\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a23f5b44e754e4da5bcee68076a04de1759893e1",
+            "content": "sha256:b1e59fa9736d9592ef4970a56bb204c1066b559353fc534c2bf4e102cc742342",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The manifest entry binding this operation to its single carrier.\n\nAnchor: \"applies_to_roles\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:8e0dad2612c7aee74545c55668858a40ef92e6624727eec26621b040deb6f554",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

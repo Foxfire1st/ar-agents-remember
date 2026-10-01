@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/models/conversations/control_wire.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Conversation control identity is declared in this shared wire owner. The deleted architecture suite no longer enforces import direction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:b132748e350a37ef449e8165cd5c3c9e3bc9fde8b2bbe479aec306852ebd0ab6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ControlIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

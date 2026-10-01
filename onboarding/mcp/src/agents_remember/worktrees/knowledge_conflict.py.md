@@ -2,14 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/knowledge_conflict.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
 | verificationStatus | working-candidate |
-| governingOverview | `overview.md` |
 
 This module is **new and uncommitted** in the CYCLE-02 candidate: no commit contains it, so the two
 commit fields name the base commit the candidate sits on rather than a commit that touched this file,
@@ -133,51 +126,34 @@ orientation keeps the refusal and its own `next_action`; it is recorded in the l
 rather than as settled behaviour, and no claim here should be read as saying the referential shape is fully
 reconcilable.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain-documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The automatic pass over the conflicted paths and the settlement it returns. | `settle_knowledge_conflicts`; `KnowledgeConflictSettlement` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:101-126; mcp/src/agents_remember/worktrees/knowledge_conflict.py:241-257 |
-| **The single-path pipeline, which is also the authored retry: the decision travels in, the engine's fresh explanation travels out.** | `settle_knowledge_conflict` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:201-238 |
-| **The refusal that carries the engine's own conflict and refusal with the path, and the decisions that conflict admits.** | `RefusedKnowledgeStage` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:73-98 |
-| **Which refusal's explanation belongs in the public response, and why the structured one is preferred.** | `guidance` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:113-126 |
-| The per-path stage builder and the three reasons it declines to settle. | `_stage` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:175-198 |
-| Binary-safe stage materialisation through `git checkout-index` rather than a text-decoding read. | `_materialise_stages` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:138-158 |
-| The unique-common-base proof that refuses rather than choosing between candidates. | `_common_base` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:161-172 |
-| The stage positions, named once and matching the adapter's own roles. | `_STAGE_ROLES` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:70-70 |
-| The application half this module hands three paths to, the settlement it returns, and the one authored decision it passes through. | `merge_conflicted_stages`; `KnowledgeStageSettlement`; `AuthoredReconciliation` | mcp/src/agents_remember/application/knowledge_merge.py:94-110; mcp/src/agents_remember/application/knowledge_merge.py:113-181; mcp/src/agents_remember/models/knowledge/merge.py:182-218 |
-| **The transaction seam that calls this module, journals the refusal it returns, and narrows the agent's conflict list (its outcome also carries, since MIK-R24, a crossing sync's report path).** | `_continue_memory_merge`; `SideMergeOutcome` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:52-67; mcp/src/agents_remember/worktrees/sync_transaction_git.py:383-415; mcp/src/agents_remember/worktrees/sync_transaction_git.py:35-48 |
-| The layer rule that forces the two-module split, and the test that enforces it. | `test_lower_ranked_owners_do_not_import_the_memory_domain` | mcp/tests/test_knowledge_store.py:839-857 |
-| The declared ranks and the sentence stating that lower owners receive `models/knowledge` values and never import the storage package. | "[package.worktrees]" | layers.toml:188-194; layers.toml:217-218 |
-| The integration case that drives a real divergent knowledge dataset through the transaction and asserts both sides survive. | `_assert_knowledge_database_conflict_settles` | mcp/tests/test_worktree_sync.py:150-186 |
-| **The integration cases that assert the diagnosis reaches the public response, that one authored decision settles it, that the row-less shape is retracted, that the orientation with nothing to retract advertises only a route that works, and that a schema disagreement is reported rather than reconciled.** | `_assert_knowledge_conflict_is_diagnosed_and_reconciled`; `_assert_delete_reference_conflict_is_retracted`; `_assert_unretractable_delete_reference_advertises_its_real_route`; `_assert_schema_disagreement_is_reported_not_reconciled` | mcp/tests/test_worktree_sync.py:268-354; mcp/tests/test_worktree_sync.py:357-399; mcp/tests/test_worktree_sync.py:402-455; mcp/tests/test_worktree_sync.py:458-490 |
+- The automatic pass over the conflicted paths and the settlement it returns. [1]
+- **The single-path pipeline, which is also the authored retry: the decision travels in, the engine's fresh explanation travels out.** [2]
+- **The refusal that carries the engine's own conflict and refusal with the path, and the decisions that conflict admits.** [3]
+- **Which refusal's explanation belongs in the public response, and why the structured one is preferred.** [4]
+- The per-path stage builder and the three reasons it declines to settle. [5]
+- Binary-safe stage materialisation through `git checkout-index` rather than a text-decoding read. [6]
+- The unique-common-base proof that refuses rather than choosing between candidates. [7]
+- The stage positions, named once and matching the adapter's own roles. [8]
+- The application half this module hands three paths to, the settlement it returns, and the one authored decision it passes through. [9]
+- **The transaction seam that calls this module, journals the refusal it returns, and narrows the agent's conflict list (its outcome also carries, since MIK-R24, a crossing sync's report path).** [10]
+- The layer rule that forces the two-module split, and the test that enforces it. [11]
+- The declared ranks and the sentence stating that lower owners receive `models/knowledge` values and never import the storage package. [12]
+- The integration case that drives a real divergent knowledge dataset through the transaction and asserts both sides survive. [13]
+- **The integration cases that assert the diagnosis reaches the public response, that one authored decision settles it, that the row-less shape is retracted, that the orientation with nothing to retract advertises only a route that works, and that a schema disagreement is reported rather than reconciled.** [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Reopened claim re-read (MIK-R24).** `SideMergeOutcome` changed: it gained `crossing_report`. The row still holds and was reworded to name the new field. No claim about this card's own source changed.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the authored retry re-enters this pipeline with every decision already accepted, not only the newest one.** `settle_knowledge_conflict` now takes `reconciliations: Sequence[AuthoredReconciliation] = ()` and forwards `reconciliations=tuple(reconciliations)` into `merge_conflicted_stages`. The pass-through boundary the card records is unchanged and was re-stated with it: this module still decides nothing about a decision, each decision still answers only the row it named, and every conflict no decision names is still refused exactly as it was. The sequence exists because a retained merge is answered one conflict at a time — a decision that settles the first reveals the second, and the attempt that answers the second has to carry the first, or the two alternate forever. **Stamp accounting:** the recorded working candidate is this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.
-- 2026-09-20T12:00:25+00:00: Generated citation repair: `_STAGE_ROLES` repointed to mcp/src/agents_remember/worktrees/knowledge_conflict.py:70-70. No content impact: mechanical anchor-range projection bound to citation source snapshot 23094be373d669ad77475ab6ebb610401913ce4b65c82d3b4cc642eb6bb44e43; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (citation repair in this document; this card's own source file is unchanged): **the row naming the integration cases was re-cited to those cases' own extents, and it now names the fourth case this change set added.** The three helpers it cited at `:250-338` / `:339-383` / `:384-418` were pushed down the file by this leaf's two new module-level helpers, and they now stand at `:268-354` / `:357-399` / `:458-490`; the row also gained `_assert_unretractable_delete_reference_advertises_its_real_route` at `:402-455`, which is the case for the orientation where the row-less retraction is unavailable and whose whole point is that the response advertises only a route that changes the state. The same read corrected the neighbouring row's `_assert_knowledge_database_conflict_settles` extent (`:150-188` → `:150-186`). No claim was weakened, no anchor renamed and no citation dropped; this card's metadata was not touched and no verification stamp was advanced.
-
-- 2026-09-20T05:55+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the boolean is replaced by a typed settlement, and this card's "receives one boolean" claim is retracted rather than annotated.** The card now records `RefusedKnowledgeStage` (path + the engine's `MergeConflict` + the typed `KnowledgeRefusal` + this layer's own `detail` + the decisions that conflict admits), `KnowledgeConflictSettlement(remaining, refused)` with the `guidance` preference that puts the *structured* refusal in the public response when several paths refused, and `settle_knowledge_conflict` as the single-path pipeline the authored retry re-enters with `reconciliation` — so the one public entry point is no longer the whole surface, and `__all__` grows to four names because the transaction journals and publishes those fields. `_settle_one` is gone: the per-path pipeline is `settle_knowledge_conflict`, and the three declines are now named details instead of one `None`. The invariant section gained the disjointness of this layer's reasons from the engine's and the pass-through boundary for an authored decision, and the Todos line now records the *one deliberately unexpressible orientation* (restore-the-removed-row) as an open limitation. Verification metadata is **advanced to the candidate's base `f79f4db7`**; the module remains new and uncommitted, so closeout owns the real stamp.
-
-- 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): created this one-to-one card for the new module. It records the Git half of the conflict settlement — binary-safe `git checkout-index` stage materialisation, the unique-common-base proof, the one exported entry point and the unresolved-path contract — and the layer rule that forces the two-module split, with the enforcing test cited rather than paraphrased. The file has no commit yet, so the commit fields name the candidate's base and closeout owns the real stamp.
-
+No meaningful cross-repo references found.

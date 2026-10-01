@@ -1,0 +1,71 @@
+{
+  "path": "scripts/e2e_harness/scenario_runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Resource ownership and teardown are bounded to the fixture's explicit tmux identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c29a8873fdbf041dbee008328dd0002c6d930cad",
+            "content": "sha256:09a955b1f5fec1804a22efefad398d2ddb5f4c85a3a4ab51b713207f95d37b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "teardown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Destructive tmux commands require the exact fixture root and no inherited server address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c29a8873fdbf041dbee008328dd0002c6d930cad",
+            "content": "sha256:23e368433a27b83ade1fd7f626153fdacfa6d0ba4748a72f4555d4ef2d1187de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_isolated_tmux_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Teardown visits recorded seats and run-prefixed sessions before stopping the server.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c29a8873fdbf041dbee008328dd0002c6d930cad",
+            "content": "sha256:09a955b1f5fec1804a22efefad398d2ddb5f4c85a3a4ab51b713207f95d37b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "teardown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cleanup acts only on disposable fixture resources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c29a8873fdbf041dbee008328dd0002c6d930cad",
+            "content": "sha256:09a955b1f5fec1804a22efefad398d2ddb5f4c85a3a4ab51b713207f95d37b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "teardown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

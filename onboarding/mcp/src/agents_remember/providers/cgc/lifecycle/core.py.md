@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/cgc/lifecycle/core.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/core.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [Provider Lifecycle Modules Overview](overview.md)
@@ -53,28 +43,10 @@ runner image/build/lock/container settings for CGC command execution.
   the return of `cgc_layout_from_args` and the list element of the
   `*_layouts_from_settings` helpers.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CGC backend container lifecycle consumes backend settings from this module through `cgc_backend_start`. | `cgc_backend_start` | mcp/src/agents_remember/providers/cgc/lifecycle/backend.py:390-409 |
-| CGC lifecycle actions consume the selected runtime layout through `cgc_start`, `cgc_refresh`, and `cgc_run`. | `cgc_start`; `cgc_refresh`; `cgc_run` | mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:175-201; mcp/src/agents_remember/providers/cgc/lifecycle/query.py:87-107; mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py:106-143 |
-| CGC Docker runner helpers consume runner image/build/lock/container fields from this layout through `cgc_runner_image_build`. | `cgc_runner_image_build` | mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-74 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 3 table citations for CGC backend start, refresh/run, and image-build paths; fixer-generated ranges verified.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `cgc_runtime_layout`'s new
-  signature (`CgcRepo` bundle). Same resolved layout. Verification metadata pinned until closeout
-  stamps the L2 commit.
-- 2026-07-06T22:36+02:00 — 260703-L13 ride-along: the three `cgc_settings_from_file` call
-  sites dropped the `coordination_root` argument (the implicit coordinator-settings fallback
-  was deleted; explicit `--from-settings` behavior unchanged, manual override path
-  unaffected). Verification metadata pinned until closeout stamps the L13 commit.
-
-- 2026-06-10T06:20+02:00 — Body-quality pass: `dataDestination` now named in the Logic list of derived backend settings (documentation only).
-- 2026-06-09T22:10+02:00 — `cgc_backend_settings()` gained `dataDestination` (default `/var/lib/falkordb/data`, mirroring the GrepAI `dataDestination` pattern): the container path the FalkorDB data volume binds to, fixing graph persistence across container recreates.
-- 2026-05-31T12:50+02:00 — Re-typed `layout` params, `layouts` lists, and the `cgc_layout_from_args` / `*_layouts_from_settings` return types from bare `Any` to `CgcRuntimeLayout` (newly imported from `agents_remember.providers.context`); behavior-preserving, added a layout-type note to Invariants And Boundaries (1.0.0 review remediation).
-- 2026-05-26T12:51+02:00: Updated after CGC layouts gained Docker runner image/build/lock/container fields and stopped creating provider venv directories.
-- 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
-- 2026-05-25T19:01+02:00: Created from CGC settings and layout logic extracted out of provider lifecycle.
+- CGC backend container lifecycle consumes backend settings from this module through `cgc_backend_start`. [1]
+- CGC lifecycle actions consume the selected runtime layout through `cgc_start`, `cgc_refresh`, and `cgc_run`. [2]
+- CGC Docker runner helpers consume runner image/build/lock/container fields from this layout through `cgc_runner_image_build`. [3]

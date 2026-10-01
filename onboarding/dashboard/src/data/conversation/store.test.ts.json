@@ -1,0 +1,160 @@
+{
+  "path": "dashboard/src/data/conversation/store.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The store orchestration under test (`connectConversation`, `disconnectConversation`, `enforceLru`, and `failStream`) records typed stream errors in `errorBySession`.\n\nAnchor: \"failStream: (sessionId\"; \"return { bySession\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:86a5d6735630043728b45635763697b2f0d151d410fab04e2028ec810363f06b",
+            "locator": {
+              "kind": "symbol",
+              "name": "connectConversation"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:abc602068ae5d1d67506426543778917d305339a446abe37c5d4ce2064942bf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "disconnectConversation"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:26c05e76199d3309a088f3e5be377fc9226edaac1138b2183daf5957a778cfcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "enforceLru"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:80630b17fa36230a49f0b863a027e3328b3aa1a74ce0b64985fb4172f6e82281",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:e983097e52d3428c6eab6f56fede562c516981009c98256a95c218bbc15eab70",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `FakeEventSource` is a no-op `EventSourceCtor` transport double; the F15 case passes it as `eventSourceCtor`.\n\nAnchor: \"A no-op EventSource\"; \"eventSourceCtor: FakeEventSource\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853a2868bfef664987bea99cac65f0720563aa12",
+            "content": "sha256:dff2aaff7f2dd1ebe210044500d6cf4cb64e5a74d768b5f9cb6222cda228cf97",
+            "locator": {
+              "kind": "symbol",
+              "name": "FakeEventSource"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "853a2868bfef664987bea99cac65f0720563aa12",
+            "content": "sha256:f7fc8182ce374da51984e6031a877ecb8cea934b229482b402138892b286d91d",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 385
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The F15 first-connect case records the server's typed error and leaves no fabricated projection.\n\nAnchor: \"threads the server's typed error to the store on a first-connect page failure (F15)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853a2868bfef664987bea99cac65f0720563aa12",
+            "content": "sha256:578e226cc841863318170e0fb85abaa9ab78cb2a5065b70376a1ebaa2dc9f4d4",
+            "locator": {
+              "end": 394,
+              "kind": "line_range",
+              "start": 382
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared page/status/identity builders the fake `fetch` answers with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:72a2fb4edf364b89bf2d29ee74bc7663acf79aed8aea14330232e6846698eb05",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationPage"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:272f8617aece255062e79860409fb03625f2c697befebd61a3a794da1604bac5",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationStatus"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:aa5e5884fe62b3a242f909a2f7571a501ad60e9d4172adc0376ef40ef927b801",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationIdentity"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

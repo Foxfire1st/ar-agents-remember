@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/observer/ambient.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/ambient.py`    |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`       |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -230,105 +220,20 @@ existing seam rather than adding a second one.
   and the process registry. Durable gate records/enforcement and the projection
   read side belong to later slices.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158). | `TERMINAL_STATES`; `coerce_end_outcome`; `LifecycleState` | mcp/src/agents_remember/observer/lifecycle_state.py:108-108; mcp/src/agents_remember/observer/lifecycle_state.py:118-127; mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
-| The append-only store the ambient writes events to. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| The `ar-observer-event/v1` envelope every signal emits. | `OBSERVER_EVENT_SCHEMA` | mcp/src/agents_remember/observer/events.py:23-23 |
-| The application response boundary finalizes the payload and emits the completed tool call when an ambient lifecycle exists. | "def complete_tool_response(" | mcp/src/agents_remember/application/tool_response.py:131-145 |
-| The optional stale-notifier banner reads the ambient root and contains errors before response enrichment. | "def _agent_notifier_banner(" | mcp/src/agents_remember/application/tool_response.py:100-109 |
-| The agent-notifier heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). | "the watcher must be code AND watched" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:1-1 |
-| The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). | `ServedStore` | mcp/src/agents_remember/observer/served_store.py:78-121 |
-| The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface. | `emit_read_packet`; `is_served` | mcp/src/agents_remember/application/read_files.py:180-180; mcp/src/agents_remember/application/read_files.py:363-363 |
-| The heartbeat/stale idiom this generalizes. | `SetupProgressFile` | mcp/src/agents_remember/providers/setup_progress.py:54-170 |
-| The shared timing thresholds + `Clock` this imports (the `age_seconds` stamp-ager now lives in `controlplane.stamps`). | `HEARTBEAT_SECONDS`; `age_seconds` | mcp/src/agents_remember/observer/timeutil.py:29-29; mcp/src/agents_remember/controlplane/stamps.py:22-35 |
-| The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned). | `project_lifecycle`; `_project_inferred` | mcp/src/agents_remember/observer/reducer.py:120-147; mcp/src/agents_remember/observer/reducer.py:432-446 |
-| The dashboard retention policy whose inactivity TTL ages out a log once its heartbeat decays. | `FLEETING_INACTIVE_TTL_SECONDS`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:37-37; mcp/src/agents_remember/observer/event_retention.py:73-107 |
-| The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8). | `### 1.2 States and the state machine`; `### 2.2 The v1 kind families (four, plus heartbeat)`; `## 8. Deferred to Implementation Phases` | docs/design/observable-lifecycle.md:40-133; docs/design/observable-lifecycle.md:156-171; docs/design/observable-lifecycle.md:397-408 |
+### Repo-Internal References
 
-## Update History
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): No content impact: citation-only repair. This card's source is unchanged. Rows citing `mcp/src/agents_remember/application/read_files.py` were re-pointed to the lines MIK-R05 moved, by the installed fixer or by the exact line shift where it declined (each such row byte-identical to memory HEAD, its anchors checked in the base and the shifted ranges); no claim was reworded.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`read_files.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
-- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): re-derived one reference row's two ranges against the candidate rather than shifting them. This card's own source (`observer/ambient.py`) is untouched by the leaf; the row cites the `read_ar_files` entry point that calls `emit_read_packet` and the served-ledger surface, and that module's insertions moved both call sites — `emit_read_packet` to `read_files.py:158` (was `:141`) and `is_served` to `read_files.py:327` (was `:310`). The claim, both anchors and every other row are unchanged; no verification stamp was advanced.
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated ambient event emission from notifier-root lookup and made the ambient-presence condition explicit. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13
-  production fix — `_default_ticker_wait`'s monotonic-deadline chunked wait with stop recheck
-  replaces `Event.wait` (no wedged-wait path), `start(ticker_wait=...)` is the keyword-only
-  seam, and `_heartbeat_tick` owns the activity cutoff plus the gone/terminal loop exit.
-  Verification metadata stays pinned until closeout stamps the code commit.
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired all 13 citation rows and converted 5 superseded prose line citations to cit: forms against the frozen source (end guard L260-L263, conversion L267, discard branch L436-L465, end L243-L274). Three claims re-bound to moved code: the choke point now lives in application/tool_response.py (`complete_tool_response`, delegated from mcp/tools/base.py L73-L75), the served dedup surface is `amb.served.is_served`/`record`/`reset`, and `age_seconds` now lives in controlplane/stamps.py. Two unflagged stale line numbers in touched sentences corrected. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T00:28+02:00 — 260731-EFA-L4 curator: the card described `end` only as "emits
-  `lifecycle.ended` before clearing the ambient" and never mentioned that this method held the
-  last hand-written copy of the live/terminal split. Verified against the diff and the current
-  source and corrected it: the accept-tuple `("completed", "abandoned")` is now
-  `if outcome not in TERMINAL_STATES:`
-  cit:(["if outcome not in TERMINAL_STATES:"], mcp/src/agents_remember/observer/ambient.py:291-291)
-  (message from `sorted(TERMINAL_STATES)`) and
-  the outcome→state conditional is now `terminal = coerce_end_outcome(outcome)`
-  cit:(["terminal = coerce_end_outcome(outcome)"], mcp/src/agents_remember/observer/ambient.py:298-298) — the
-  identity conversion, called anyway rather than `cast`, so the rule has one owner. Recorded the
-  deliberate asymmetry (`end` refuses an unknown outcome; `coerce_end_outcome` defaults it,
-  because the reducer reads foreign logs), and the one surviving `"abandoned"` literal in the
-  `discard` branch of `_leave_current_locked`
-  cit:([`_leave_current_locked`], mcp/src/agents_remember/observer/ambient.py:467-496), which names one outcome as a decision and
-  is deliberately not `DEFAULT_END_OUTCOME`. Added `end`'s line range
-  cit:([`end`], mcp/src/agents_remember/observer/ambient.py:243-274), two invariants,
-  and a reference row for the structural test that pins `end` to hold no such string constant.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  the `AmbientLifecycle` constructor's `heartbeat_seconds` / `ttl_seconds` /
-  `inactivity_cutoff_seconds` keywords were replaced by one frozen `AmbientTiming` parameter
-  object passed as `timing=` (defaulting to `AmbientTiming()`, i.e. the same module constants).
-  Callers that pinned a duration for tests must now build an `AmbientTiming`. Nothing about the
-  state machine, the emission path, the ticker or the TTL sweep changed. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added a read-only `root` property
-  (`self._store.root`) so `mcp/tools/base.py`'s `_tool_payload` choke point can resolve the observer
-  root and surface a stale-supervisor banner on any tool call without its own `McpRuntimeConfig`.
-  No other behavior changed. Verification metadata pinned until closeout stamps the 260707-HFX2-L2
-  commit.
-- 2026-06-28T13:54+02:00 — Task 34: the heartbeat ticker now DECAYS with activity. Added
-  `_inactive_seconds_locked()` and the `inactivity_cutoff_seconds` ctor param (+ module consts
-  `INACTIVITY_CUTOFF_SECONDS`=600 and `_HEARTBEAT_KIND`); `_emit_locked` stamps `_last_activity_iso`
-  for every non-heartbeat kind, and `_heartbeat_loop` skips the emit past the cutoff and resumes on
-  real activity — so an idle/parked lifecycle's log ages out and becomes cleanable instead of being
-  held alive by its own keepalive. Verification metadata pinned until closeout stamps the task-34 code commit.
-- 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): added
-  `await_developer(*, summary)` (`running`→`awaiting-developer`, emits
-  `lifecycle.awaiting-developer` carrying `summary`) and `resume_from_await`
-  (`awaiting-developer`→`running`, emits `lifecycle.resumed`). Modeled on
-  `block`/`resume` but with no gate/inbox and no wait; `resume_from_await` is
-  deliberately a separate method so `resume` keeps its blocked-only guard and the
-  parked gate path is untouched. The choke point auto-resumes via
-  `resume_from_await` on the next non-notification tool call. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-26T14:16+02:00 — Task 25: clarified that `AmbientLifecycle.block`/`build_ask` now serve `lifecycle_gate` as the public gate path while the lower-level lifecycle-block builder remains compatibility-only.
-- 2026-06-23T01:40+02:00 — Slice 07b v1: `emit_read_packet` now takes the read's `repo_id` (signature `emit_read_packet(repo_id, files)`) and carries it as `data.repoId` on the `read.packet` (a fact — the repo the files belong to, distinct from the envelope `repoId`); the facts-only per-file projection is unchanged. Body and invariant note only — verification metadata pinned until closeout stamps the slice-07b code commit.
-- 2026-06-22T22:33+02:00 — Slice 07: documented `emit_read_packet` (the facts-only, allowlist-projected `read.packet` emitter — the privacy invariant is the structural projection, not `Event.extra`) and the per-lifecycle served-onboarding dedup ledger (`is_served`/`record_served`/`reset_served`/`served_keys`, the optional `served_store` ctor arg + in-memory `_served` set hydrated from `served.jsonl`, and the prune on end/discard/pause). Body and references only — verification metadata pinned until closeout stamps the slice-07 code commit.
-- 2026-06-13T19:30+02:00: Slice 3a — the timing thresholds
-  (`HEARTBEAT_SECONDS`/`STALE_AFTER_SECONDS`/`TTL_SECONDS`) and `_age_seconds` +
-  the `Clock` alias moved to the shared `timeutil` leaf; this module now imports
-  `HEARTBEAT_SECONDS`/`TTL_SECONDS` + `age_seconds`/`Clock` from it (behavior
-  unchanged). Verification metadata is pinned until closeout stamps the 3a code commit.
-- 2026-06-13T18:45+02:00: Slice 2c — added `promote`, `attach`, and the save gate
-  (`_leave_current_locked` / `_promote_to_landing_zone_locked` / `_pause_locked`);
-  `switch` now routes leave-from-fleeting through the save gate (explicit
-  `on_unsaved`; blocking `SaveGateRequired`), and `_emit_locked` carries the
-  envelope `enclosure`/`repoId`. The pure save-gate vocabulary moved to
-  `save_gate.py`. Verification metadata is pinned until closeout stamps the 2c
-  code commit.
-- 2026-06-13T16:41+02:00: Created for slice 2b — the ambient lifecycle: signal
-  state machine, choke-point emission, heartbeat ticker, TTL project-and-prune
-  sweep, and the process registry. Verification metadata is pinned until closeout
-  stamps the 2b code commit.
+- The state/phase vocabulary, `LifecycleState`, and typed errors this module drives — and, since 260731-EFA-L4, the `TERMINAL_STATES` / `coerce_end_outcome` pair `end` reads instead of restating (`TERMINAL_STATES` L139, `coerce_end_outcome` L149-L158). [1]
+- The append-only store the ambient writes events to. [2]
+- The `ar-observer-event/v1` envelope every signal emits. [3]
+- The application response boundary finalizes the payload and emits the completed tool call when an ambient lifecycle exists. [4]
+- The optional stale-notifier banner reads the ambient root and contains errors before response enrichment. [5]
+- The agent-notifier heartbeat store this `.root` accessor lets the tool choke point locate (260707-HFX2-L2 R5). [6]
+- The served-onboarding ledger store this owns (per-lifecycle `served.jsonl`). [7]
+- The `read_ar_files` application entry point that calls `emit_read_packet` + the `amb.served.is_served`/`record`/`reset` dedup surface. [8]
+- The heartbeat/stale idiom this generalizes. [9]
+- The shared timing thresholds + `Clock` this imports (the `age_seconds` stamp-ager now lives in `controlplane.stamps`). [10]
+- The projection reducer that consumes the heartbeat/TTL signals (paused/abandoned). [11]
+- The dashboard retention policy whose inactivity TTL ages out a log once its heartbeat decays. [12]
+- The design: state machine (§1.2-1.6), v1 event set (§2.2), TTL prune (§1.5), config (§8). [13]

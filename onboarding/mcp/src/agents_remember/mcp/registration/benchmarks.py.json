@@ -1,0 +1,158 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/benchmarks.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The payload builders these forward to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3d08e81b88c8b601e5ecae2f64ee22fe91302fd",
+            "content": "sha256:c9dac9e3eb85804d6c3d87eb4a32bc2027cd6000fbdb657532cceebfb8ebcf8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "codex_benchmark_prepare_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/benchmark.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3d08e81b88c8b601e5ecae2f64ee22fe91302fd",
+            "content": "sha256:136bdb1f3b7a6839deca588acd86b116163281ec09f57f369f9e3d132e869082",
+            "locator": {
+              "kind": "symbol",
+              "name": "codex_benchmark_run_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/benchmark.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`BenchmarkSelection`, `BenchmarkPreparation`, `CodexBenchmarkRun`, and the `benchmarksEnabled` refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:2bce1b492d0e54a7937f559cc67eeefd137e2474ea2f450d07263dfac7cd66cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "BenchmarkSelection"
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:797e080b40ce86fef14b496f9754962b8e42f42d83012098012d5a9d0e68d41a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BenchmarkPreparation"
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:e8d7ec8552bcf857c4473d85c45108760c50ec5f54420ea7fa5a040db5fa7848",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexBenchmarkRun"
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:c73e571fd5c8708b97d4b9263500f634bcd4d9e8627bc3146fb883bda5afaf0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_benchmarks_disabled"
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:28ec8794f9bb268b46f1bf920ac42b0df76728e3e4e7028d9f74c8d74a0061a3",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:591f24b6139231b41d56b8ebc311b0f34a4f51d239e9d1af5778e718645738e7",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:c0f76762ebcb6dc89dd36f8bde47b59a6e469caef0751201e7587bfcba1b9fa0",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:c5c78680e52403507f46ebf63f5bec47cc107943ea0dbf035cbc7a1eaf378d46",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`CODEX_BENCHMARK_SANDBOX` and the sandbox allowlist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9001944699cad56fc66efddc956aa4c2408bd38",
+            "content": "sha256:a57117078a92ace097e7115752e70990de21255c9dad8ee7bbacc54e9505e015",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODEX_BENCHMARK_SANDBOX"
+            },
+            "path": "mcp/src/agents_remember/models/benchmarks.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

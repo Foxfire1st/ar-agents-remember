@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_gate/memo.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_gate/memo.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -69,38 +59,29 @@ always recomputed.
 
 - None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is `MIK-R09@v2` and `09_mandatory-invariant-closeout-gate.json`,
 outside the repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: the key, inputs outside the trees, the bounds, what is never kept. | "A verdict that carries an unreadable input or a run that failed" | mcp/src/agents_remember/application/knowledge_gate/memo.py:1-35 |
-| The bounds and the key. | `CAPACITY`; `MAX_AGE_SECONDS`; `GateMemoKey` | mcp/src/agents_remember/application/knowledge_gate/memo.py:58-71 |
-| A kept verdict with its read set, hashed again before reuse. | `_Kept`; "def still_read_the_same(self)" | mcp/src/agents_remember/application/knowledge_gate/memo.py:74-83 |
-| The key of one evaluation, or no memo. | `memo_key` | mcp/src/agents_remember/application/knowledge_gate/memo.py:94-113 |
-| Reuse and keep. | `remembered`; `remember` | mcp/src/agents_remember/application/knowledge_gate/memo.py:116-134 |
-| Only identical inputs reuse a verdict. | `test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs` | mcp/tests/test_knowledge_closeout_gate.py:1049-1097 |
-| A changed approval state recomputes a kept pass. | `test_a_kept_pass_is_recomputed_once_an_endpoint_s_approval_state_changes` | mcp/tests/test_knowledge_closeout_gate.py:1176-1198 |
+- The module docstring: the key, inputs outside the trees, the bounds, what is never kept. [1]
+- The bounds and the key. [2]
+- A kept verdict with its read set, hashed again before reuse. [3]
+- The key of one evaluation, or no memo. [4]
+- Reuse and keep. [5]
+- Only identical inputs reuse a verdict. [6]
+- A changed approval state recomputes a kept pass. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The read set may name files of another task's folder under the coordination root (a `reconsider_on` link's
 requirement manifest and packet), outside both repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo code boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new file MIK-R09 adds, recording ruling 14:38:47 gap 4 (the bounded memo), 15:09:25 (the recorded requirement-file reads; refusals over complete inputs are kept), review R1 F6 (the tip in the key) and F9 with its notes (Git failures and conflicting reads never kept; the settings fallback in the read set). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo code boundary is crossed by this file.

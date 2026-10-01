@@ -1,0 +1,53 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Notice store and detailed cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:3993f534015d8e08d9083f094fdaafbdd1cd898c581f36ac3f728c03efb45dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleNoticeStore"
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:42fa66350e22fa9fa79f4d4128927dd115c41cad0a409991b56e6e96fc5b3bd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "endLandedDetailed"
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Root host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca0ce2b1c506aaedbb68337eaf039d40cc19c9ed",
+            "content": "sha256:17024dec3e22d9be92510984860643994344ee1abde13899bc5764d85ceaf817",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionsView"
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,33 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation-library",
+  "references": {
+    "1": {
+      "note": "The reconstructable library projection this browser reads.\n\nAnchor: `# dashboard/src/data/conversation-library/ — Dormant Conversation Library Projection Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/data/conversation-library/overview.md:1-150"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one-roof composition that mounts this browser in-stage.\n\nAnchor: `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506"
+        }
+      ]
+    },
+    "3": {
+      "note": "The live renderer whose block grammar the read-only preview reuses.\n\nAnchor: `# dashboard/src/panels/session-cockpit/conversation/ — Structured Conversation Renderer Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/panels/session-cockpit/conversation/overview.md:1-360"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

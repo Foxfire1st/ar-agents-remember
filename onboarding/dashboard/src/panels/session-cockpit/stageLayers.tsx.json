@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/stageLayers.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stage layer components.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b9632adcc6905dab717483247cc426b6e383707",
+            "content": "sha256:28975725cf4f78056be6d6b8eadc6fb0a17e60a6024e96f2c98d216f203debf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyChatStage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b9632adcc6905dab717483247cc426b6e383707",
+            "content": "sha256:1316b3b2b97dca214d13cd841004b18a896d6ba55a1d58189b501041d2c91ff5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationPool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b9632adcc6905dab717483247cc426b6e383707",
+            "content": "sha256:a12fac7869f503cf730ed88c4be889c60919d8c633d8eda721020e11b4792965",
+            "locator": {
+              "kind": "symbol",
+              "name": "PtyLayer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

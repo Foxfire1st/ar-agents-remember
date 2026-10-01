@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `../../../overview.md`                         |
 
 ## Governing Overview
 
@@ -27,10 +21,8 @@ to the refusal's 1,024-character field by the application (review R1 F2, ruling 
 added; the entry's count travels on the landed changed-intent summary route (`attribution`), and a dataset review
 never calls this route.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The lane's bounds and the one-question rule. | `MAX_FILE_PATH_LENGTH`; `LANE_FILES`; `_focus_problem` | mcp/src/agents_remember/serving/review_trees.py:42-43; mcp/src/agents_remember/serving/review_trees.py:111-119 |
-| The query's two new questions and `focused`. | "def focused(self) -> bool:"; "lane=selection.lane == LANE_FILES," | mcp/src/agents_remember/serving/review_trees.py:57-65; mcp/src/agents_remember/serving/review_trees.py:153-162 |
+- The lane's bounds and the one-question rule. [1]
+- The query's two new questions and `focused`. [2]
 
 ## 260928-MIK-L29 The Knowledge Reader Route, A Port Of Its Own
 
@@ -47,10 +39,8 @@ right after the tree view route and before the static mount, and `cli/dashboard.
 `application/knowledge_reader.read_knowledge_reader`. The route is GET-only and never writes; the landed routes keep
 their bodies byte for byte (the unconverted comparison, base against worktree).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The query, the port and the GET handler with its three answer classes. | `KnowledgeReaderQuery`; `register_knowledge_reader_route` | mcp/src/agents_remember/serving/knowledge_reader.py:34-46; mcp/src/agents_remember/serving/knowledge_reader.py:61-93 |
-| The collaborator port and the registration before the static mount. | "knowledge_reader: KnowledgeReaderPort"; "register_knowledge_reader_route(app, collaborators.knowledge_reader)" | mcp/src/agents_remember/serving/_app_common.py:510-515; mcp/src/agents_remember/serving/app.py:307-307 |
+- The query, the port and the GET handler with its three answer classes. [3]
+- The collaborator port and the registration before the static mount. [4]
 
 ## 260928-MIK-L31 The Tree View Route Answers The Focused Cards
 
@@ -65,10 +55,8 @@ The client pins every read to the payload's own comparison number (review F11). 
 (review F9) is settled: the application re-keys the embedded documents, so the body is snake_case throughout. No
 route was added, and a dataset review never calls this route.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The bounds and the one selection value the route checks. | `MAX_ENTRY_INVARIANTS`; `MAX_INVARIANT_KEY_LENGTH`; `ReviewTreesSelection` | mcp/src/agents_remember/serving/review_trees.py:38-38; mcp/src/agents_remember/serving/review_trees.py:40-40; mcp/src/agents_remember/serving/review_trees.py:80-119 |
-| The query carries the named invariants to the port. | `ReviewTreesQuery` | mcp/src/agents_remember/serving/review_trees.py:46-65 |
+- The bounds and the one selection value the route checks. [5]
+- The query carries the named invariants to the port. [6]
 
 ## 260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port
 
@@ -82,10 +70,8 @@ The landed reviewer routes keep their shapes: for a converted leaf only their da
 indexes of the memory trees (rule 6). A read may pin a live candidate (rule 1), idempotently (ruling 2026-09-29T22:22:37
 Q5, review F6). The body's mixed key casing is carried to L31 (review F9).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The route and its three answer classes, with the selection's own 400 since MIK-L31. | `register_review_trees_route` | mcp/src/agents_remember/serving/review_trees.py:125-162 |
-| The registration after the summary route. | `register_review_trees_route` | mcp/src/agents_remember/serving/app.py:306-306 |
+- The route and its three answer classes, with the selection's own 400 since MIK-L31. [7]
+- The registration after the summary route. [8]
 
 ## 260921-ICR-L32 The Taskless Seat Set Gains The Curator
 
@@ -99,19 +85,6 @@ other role still takes the structural path — and the second reader of the set
 `mcp/tests/test_memory_branch_authority.py`'s pinning assertions were updated with the constant, and a
 route-level case pins the five-arm status table so the admission is held by behaviour and not by the constant
 alone.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No route impact: citation repair only; this document's own route is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 1 passing row(s) normalised by the fixer. No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **route body updated.** Added the section "260928-MIK-L32 The Tree View Route Answers The Unexplained-Changes Lane" at the top: `lane=files` and `file=<path>`, the one-question rule and its 400s, `focused`, and review R1 F2 (every admitted path answers the typed 200 refusal); two rows. The moved rows of L31's and L25's sections were re-pointed by the installed fixer (normalisation) or by the exact base-to-staged shift. No verification stamp was advanced.
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Knowledge Reader Route, A Port Of Its Own" at the top (the new `knowledge_reader.py` route, its answer classes, the collaborator port and its registration; rulings F3 and F15), with two rows. Rows citing the grown collaborator record and `create_app` were re-pointed by the installed fixer or by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): **route body updated for MIK-R31.** Added the section "260928-MIK-L31 The Tree View Route Answers The Focused Cards" at the top: `invariants=` (ruling 05:36:19 Q2), `ReviewTreesSelection` with the 500-key and 64-character bounds (review F10 at 06:10:21), the payload-pinned reads (F11), and the settled key casing (MIK-L25 review F9). **Reopened claim reworded:** L25's route row; this pass's generated bullet for it was removed. Two rows added.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **route body updated for MIK-R25.** Added the section "260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port" at the top (the new `review_trees.py`, carded and governed here; the collaborator field; the registration; rulings Q5, F6 and F9), with two rows. Rows citing moved lines were normalised by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): re-pointed 6 citations into `mcp/tests/test_knowledge_review_source_endpoints.py`, `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_review_resolution_and_route.py`. One claim was re-worded after re-reading. The selector-kind row said the case asserts that omitting both selector parameters is admitted, and the case (moved verbatim) does not. It now states what the two cited cases assert, and its generated-repair bullet was retired. No stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`): No route impact: L55 (`ICR-R24@v3`) bounded the notes listing inside `serving/notes.py`. It now makes one followed `stat` per entry, realpath-checks only symlinks, and enters directories through `O_DIRECTORY|O_NOFOLLOW` descriptors. The route set, the registration order before the static mount, the shared `SCOPED_READ_RESPONSES` idiom and the `NotesListing`/`NoteContents` contracts are unchanged, and no cache, store or daemon joined the route. The file-level account, including the accepted read-without-search deviation and the two residual windows, is on `notes.py.md`. No stamp was advanced.
-- 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body updated — a fourth reviewer route, `/api/review/intent/summary` (`ICR-R24@v3`).** The route table gains its row; the route is registered from `serving/review_summary.py` beside the reviewer family, answers every typed state (`counted`, `partial`, `unavailable`) with 200 and the state in the body — deliberately unlike the catalogue's refusal statuses, so an uninitialized leaf puts no console error on the page — and answers 503 only when the port is not wired. Displaced rows were re-pointed. No stamp advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): the source-content port row named `_admit`, which moved to `application/review_source_admission.py` as `admit_source_path`; the row now cites it and names the second admitted population (unchanged context a recorded realization of the same comparison links, per the 2026-09-28 ruling). No route impact otherwise: the port, route and composition are unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00 — retired by the 260921-ICR-L57 curator: this mechanical bullet bound the selector-kind case to `test_knowledge_review_surface.py:1098-1116` and the task-context case to `test_knowledge_review_source_endpoints.py:842-918`. L57 moved the selector-kind case verbatim into `mcp/tests/test_knowledge_review_resolution_and_route.py`, where it is cited at its own extent (`:285-303`), and the task-context case at `:829-905`. On re-reading, the claim's words did not match the case: the case no longer asserts that omitting both parameters is admitted. The claim was re-worded to what the two cases assert. No stamp was advanced.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the taskless seat set gains the curator.** The new section records the constant's new membership on the developer's 2026-09-24 ruling, the capsule a document-less curator session now receives, that every other behaviour of the gate is unchanged, and the updated pinning assertions plus the route-level five-arm case. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## ARSPAWN-L5 A005 Shared Task-Binding Admission
 
@@ -309,20 +282,18 @@ final-verification leaf. Product pin:
 `chat` seat, a worker on `claude`) are **byte-identical** on both trees: the capsule-free payload is the
 same eight keys, no `capsuleDelivery` key appears, and diffing the two transcripts is empty.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal. | `resolve_launch_capsule`; `LaunchCapsule`; `LaunchCapsuleMode`; `legacy_seat_reason`; `capsule_channel_reason` | mcp/src/agents_remember/serving/launch_capsule.py:73-78; mcp/src/agents_remember/serving/launch_capsule.py:107-159; mcp/src/agents_remember/serving/launch_capsule.py:233-248; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:251-272 |
-| The one workspace rule and the selection that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
-| The runner's own agreement check, which makes the rule product-enforced rather than test-enforced. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:144-171 |
-| The two channels that exist, named as the only two. | `CAPSULE_CARRIER_HARNESSES` | mcp/src/agents_remember/serving/launch_capsule.py:60-60 |
-| The compiler behind the port, and the workspace read back out of the carrier the consumer re-verifies. | `compile_launch_capsule`; `_compile_eve_task` | mcp/src/agents_remember/application/role_capsules/launch.py:273-294; mcp/src/agents_remember/application/role_capsules/launch.py:362-404 |
-| The opener's two carrier readers, and the defensive refusal beside them. | `_codex_capsule_delivery`; `_eve_capsule_env`; `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:542-553; mcp/src/agents_remember/serving/terminal_opener.py:556-561; mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
-| The codex-only guard that stayed untouched, because the eve carrier does not use the Codex field. | `_require_capsule_channel`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:110-119; mcp/src/agents_remember/serving/harness_control_factories.py:104-117; mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
-| The enumeration guard: every `TerminalLaunchRequest(` site is wired or declares its legacy chain, and the set cannot change silently. | `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:805-844 |
-| The declared legacy exclusion, with its reason. | `LIBRARY_REOPEN_LEGACY_REASON` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-119 |
-| The two acceptance transcripts read from each started session's own first prompt, and the production-chain eve case. | `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:485-528; mcp/tests/test_capsule_launch_wiring.py:531-576; mcp/tests/test_capsule_launch_wiring.py:859-915 |
-| The production-chain evidence: the consumer's own gate from the launch point's own cwd and env, the live system-block read, and the negative control. | `resolve_runtime_spec`; `verify_capsule_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
-| The two limitations, with their owner and the evidence that measures them. | `_resolve_harness_dispatch`; `session_backend` | mcp/src/agents_remember/application/terminal_tools.py:386-479; mcp/src/agents_remember/serving/terminal_opener.py:163-163 |
+- The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal. [9]
+- The one workspace rule and the selection that follows it. [10]
+- The runner's own agreement check, which makes the rule product-enforced rather than test-enforced. [11]
+- The two channels that exist, named as the only two. [12]
+- The compiler behind the port, and the workspace read back out of the carrier the consumer re-verifies. [13]
+- The opener's two carrier readers, and the defensive refusal beside them. [14]
+- The codex-only guard that stayed untouched, because the eve carrier does not use the Codex field. [15]
+- The enumeration guard: every `TerminalLaunchRequest(` site is wired or declares its legacy chain, and the set cannot change silently. [16]
+- The declared legacy exclusion, with its reason. [17]
+- The two acceptance transcripts read from each started session's own first prompt, and the production-chain eve case. [18]
+- The production-chain evidence: the consumer's own gate from the launch point's own cwd and env, the live system-block read, and the negative control. [19]
+- The two limitations, with their owner and the evidence that measures them. [20]
 
 ## Purpose
 
@@ -1269,14 +1240,14 @@ from 61 to 63 HTTP routes; composition adds one `register_requirements_routes(ap
 call in `create_app` after the notes routes and before the static mount.
 
 
-## Shared Lock Owner References
+## Evidence
+
+### Shared Lock Owner References
 
 The watcher keeps one naming dependency on the actual lock owner; it does not acquire coordinator authority or change projection input scope.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared naming primitive appends the same physical lock suffix. | `lock_path_for` | mcp/src/agents_remember/kernel/file_lock.py:36-38 |
-| Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
+- The shared naming primitive appends the same physical lock suffix. [21]
+- Every-directory filtering retains lock suffix exclusion. [22]
 
 ## 260915-CAPS-L7 The Eve Capsule Launch Proof
 
@@ -1317,14 +1288,12 @@ consumer's gate"); the **live-seat** half was open at L15's tip and is **closed 
 launch and the provider-boundary measurement rather than the catalogue's word (D22, discharged by
 L17).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The launch-time proof, its six refusals and its unbound case. | `verify_capsule_binding`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:129-143; mcp/src/agents_remember/serving/eve_runtime_launch.py:466-515 |
-| The git-identity requirement that distinguishes the admitted worktree from a directory at the same path. | `_require_admitted_git_worktree`; `_read_git_head` | mcp/src/agents_remember/serving/eve_runtime_launch.py:518-545; mcp/src/agents_remember/serving/eve_runtime_launch.py:548-569 |
-| The ambient-binding pops and the launch-spec-only reader. | `launch_spec_binding` | mcp/src/agents_remember/serving/eve_runtime_launch.py:449-463 |
-| The two body-less session controls and the resolver-not-rerun fact behind the system-role choice. | `session_control_body`; `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:91-99; mcp/src/agents_remember/serving/eve_runtime_client.py:242-254; mcp/src/agents_remember/serving/eve_runtime_client.py:256-268 |
-| The channel-level binder that refuses an unbound launch before any model work, guarding every session route. | `arCapsuleAuth` | eve_runtime/agent/channels/eve.ts:26-56 |
-| The cases pinning the proof in both directions, including the wrong-branch workspace. | `test_launch_verification_refuses_every_declared_defect`; `test_launch_verification_refuses_a_workspace_on_another_branch` | mcp/tests/test_eve_capsule_binding.py:368-398; mcp/tests/test_eve_capsule_binding.py:401-422 |
+- The launch-time proof, its six refusals and its unbound case. [23]
+- The git-identity requirement that distinguishes the admitted worktree from a directory at the same path. [24]
+- The ambient-binding pops and the launch-spec-only reader. [25]
+- The two body-less session controls and the resolver-not-rerun fact behind the system-role choice. [26]
+- The channel-level binder that refuses an unbound launch before any model work, guarding every session route. [27]
+- The cases pinning the proof in both directions, including the wrong-branch workspace. [28]
 
 ## 260915-CAPS-L11 The Argv Bound Is Stated, Enforced, And Measured
 
@@ -1424,24 +1393,22 @@ must be registered before the greedy static mount — and the module's own docst
 alongside the statement that the registrar accepts the runtime config for symmetry and resolves nothing
 from it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The comparison route's handler over its injected port.** | "def api_review_intent(" |mcp/src/agents_remember/serving/review.py:577-662|
-| **The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.** | "def api_review_intent_entries(" |mcp/src/agents_remember/serving/review.py:560-645|
-| **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).** | "def api_review_intent_source_content(" |mcp/src/agents_remember/serving/review.py:573-658|
-| **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action — and, since `260921-ICR-L3`, its sibling for the expansion route.** | `_UNWIRED_ENTRIES`; `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:115-124; mcp/src/agents_remember/serving/review.py:129-138|
-| **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` |mcp/src/agents_remember/serving/review.py:89-89|
-| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` |mcp/src/agents_remember/serving/review.py:106-106|
-| The query parser that admits only those two. | "def review_request_from_query(" |mcp/src/agents_remember/serving/review.py:281-294|
-| **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** | `_status_for` |mcp/src/agents_remember/serving/review.py:607-624|
-| The refusal code a process with no adapter produces. | `review_adapter_unavailable` |mcp/src/agents_remember/serving/review.py:530-615|
-| The 400 a selector kind outside the admitted set gets. | `status_code` |mcp/src/agents_remember/serving/review.py:704-704|
-| The 404 for a candidate that does not resolve. | `status_code` |mcp/src/agents_remember/serving/review.py:709-709|
-| **The registration that must precede the static mount and that takes all three ports.** | "def register_review_routes(" |mcp/src/agents_remember/serving/review.py:542-627|
-| **The entry port type: the task context in, one typed entry result out — and, since `260921-ICR-L3`, the expansion port beside it.** | `KnowledgeReviewEntriesPort`; `ReviewSourceContentPort` |mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:109-109|
-| **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action.** | `_UNWIRED_ENTRIES` |mcp/src/agents_remember/serving/review.py:115-124|
-| **The registration that must precede the static mount and that takes both ports.** | "def register_review_routes(" |mcp/src/agents_remember/serving/review.py:542-627|
-| **The entry port type: the task context in, one typed entry result out.** | `KnowledgeReviewEntriesPort` |mcp/src/agents_remember/serving/review.py:109-109|
+- **The comparison route's handler over its injected port.** [29]
+- **The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.** [30]
+- **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).** [31]
+- **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action — and, since `260921-ICR-L3`, its sibling for the expansion route.** [32]
+- **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** [33]
+- The two admitted selector kinds, refused rather than mapped. [34]
+- The query parser that admits only those two. [35]
+- **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** [36]
+- The refusal code a process with no adapter produces. [37]
+- The 400 a selector kind outside the admitted set gets. [38]
+- The 404 for a candidate that does not resolve. [39]
+- **The registration that must precede the static mount and that takes all three ports.** [40]
+- **The entry port type: the task context in, one typed entry result out — and, since `260921-ICR-L3`, the expansion port beside it.** [41]
+- **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action.** [42]
+- **The registration that must precede the static mount and that takes both ports.** [43]
+- **The entry port type: the task context in, one typed entry result out.** [44]
 
 ## 260915-KS-L22 The Intent-Review Transport Over An Injected Port
 
@@ -1473,18 +1440,16 @@ share — the route must be registered before the greedy static mount — and th
 records it, alongside the statement that the registrar accepts the runtime config for symmetry and
 resolves nothing from it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The GET-only route handler over the injected port. | "def api_review_intent(" |mcp/src/agents_remember/serving/review.py:577-662|
-| The two admitted selector kinds, refused rather than mapped. | `SELECTOR_KINDS` |mcp/src/agents_remember/serving/review.py:106-106|
-| The query parser that admits only those two. | "def review_request_from_query(" |mcp/src/agents_remember/serving/review.py:281-294|
-| **The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.** | "def _status_for(" |mcp/src/agents_remember/serving/review.py:522-607|
-| The refusal code a process with no adapter produces. | `review_adapter_unavailable` |mcp/src/agents_remember/serving/review.py:530-615|
-| **The 400 a selector kind outside the admitted set gets, inside the comparison handler.** | "def api_review_intent(" |mcp/src/agents_remember/serving/review.py:577-662|
-| **The 404 for a candidate that does not resolve, is not live, or has no dataset half.** | "def api_review_intent(" |mcp/src/agents_remember/serving/review.py:577-662|
-| **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.** | "def api_review_intent_entries(" |mcp/src/agents_remember/serving/review.py:560-645|
-| The registration that must precede the static mount. | "def register_review_routes(" |mcp/src/agents_remember/serving/review.py:542-627|
-| **The status mapping both routes inherit from the change-set routes; the signature now accepts either typed result and reads success as `refusal is None`.** | "def _status_for(" |mcp/src/agents_remember/serving/review.py:522-607|
+- The GET-only route handler over the injected port. [45]
+- The two admitted selector kinds, refused rather than mapped. [46]
+- The query parser that admits only those two. [47]
+- **The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.** [48]
+- The refusal code a process with no adapter produces. [49]
+- **The 400 a selector kind outside the admitted set gets, inside the comparison handler.** [50]
+- **The 404 for a candidate that does not resolve, is not live, or has no dataset half.** [51]
+- **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.** [52]
+- The registration that must precede the static mount. [53]
+- **The status mapping both routes inherit from the change-set routes; the signature now accepts either typed result and reads success as `refusal is None`.** [54]
 
 ## 260921-ICR-L1 The Committed Change-Set Range Binds Recorded Commits, Never HEAD
 
@@ -1525,12 +1490,10 @@ a measurement the caller never made.
 **`mode=working` is unchanged and stays a separate population**: `worktree-HEAD → worktree`, the one view
 whose after-side is a filesystem location, and its own `mode` says so. The two modes are never mixed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** | `recorded_committed_range`; `RecordedEndpointAbsent`; `NOT_RECORDED` | mcp/src/agents_remember/serving/changeset_endpoints.py:50-50; mcp/src/agents_remember/serving/changeset_endpoints.py:68-84; mcp/src/agents_remember/serving/changeset_endpoints.py:87-125 |
-| **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** | `_leaf_range`; `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:386-440; mcp/src/agents_remember/serving/changeset.py:596-630 |
-| **The doc-reader entry point that publishes the unrecorded state in the body.** | `leaf_changeset`; `LeafChangeSet` | mcp/src/agents_remember/serving/changeset.py:455-494; mcp/src/agents_remember/serving/response_contract.py:843-860 |
-| **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head`; `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:629-679; mcp/tests/test_knowledge_review_source_endpoints.py:682-728; mcp/tests/test_knowledge_review_source_endpoints.py:731-779; mcp/tests/test_knowledge_review_source_endpoints.py:782-815 |
+- **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** [55]
+- **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** [56]
+- **The doc-reader entry point that publishes the unrecorded state in the body.** [57]
+- **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.** [58]
 
 ## 260921-ICR-L13 The Master Net Is Generation-Bound, And Selection Is A Module Of Its Own
 
@@ -1555,999 +1518,10 @@ declares the shared refusal table. `serving/changeset.py`'s card carries the cor
 body correction and citation re-derivation; the two new modules' cards (`master_net_generation.py`,
 `test_master_net_generation.py`) carry the selection and the nine measuring cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** | `select_master_net`; `master_net_digest`; `MasterEndpointAbsent` | mcp/src/agents_remember/serving/master_net_generation.py:73-82; mcp/src/agents_remember/serving/master_net_generation.py:158-168; mcp/src/agents_remember/serving/master_net_generation.py:171-200 |
-| **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** | `master_changeset`; `master_file_diff`; `_master_json` | mcp/src/agents_remember/serving/changeset.py:247-322; mcp/src/agents_remember/serving/changeset.py:325-356; mcp/src/agents_remember/serving/changeset.py:581-593 |
-| **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** | `MasterNetGeneration`; `MasterChangeSet`; `LeafSummary` | mcp/src/agents_remember/serving/response_contract.py:863-868; mcp/src/agents_remember/serving/response_contract.py:871-883; mcp/src/agents_remember/serving/response_contract.py:886-896 |
-| **The nine cases that measure this route's half of the change, through real contracts, repos and routes.** | `test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero`; `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` | mcp/tests/test_master_net_generation.py:248-275; mcp/tests/test_master_net_generation.py:483-499 |
-
-## Update History
-- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **route body updated — the L1 section's refusal claim is superseded in place, and no route was added or removed.** The section said an unrecorded `committed` endpoint "is a **named `404`**" and that "the **code** half keeps the refusal"; at this tip `_leaf_range` carries that sentence in its own return value and `leaf_changeset` answers with the body's `state: "unrecorded"` + `stateDetail`, because a legitimate state every live leaf passes through was being reported as a missing resource and the change-set bar probes the view on every open (register B6). The corrected paragraph records the three untouched refusals (unknown leaf `404`, bad/absent `mode` `400`, enclosure `scope` `404`), that `HEAD` is still never substituted, and that `no-repository`/`unresolvable` still refuse on both sides. **Citation accounting:** the L1 section's rows were re-derived from each construct's own declaration at this tip (`_leaf_range` `:386-429` → `:386-440`, `leaf_file_diff` `:577-612` → `:596-630`, and the three case ranges → `:642-692` / `:695-741` / `:744-792`), and the renamed case is cited by its new name. The later L13 section's `changeset.py` master rows were checked against the same tip and are unchanged. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
-- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync-merge resolution of the parked candidate against the landed ICR-L7 curation.** The memory sync fast-forwarded the code side cleanly and parked this leaf's memory candidate against L7's landed curation; the single header conflict resolves as an additive union: the verification pair names the merged production line `f33f58eab87bd4db0eb944999d01808821ef9c3a` (L7 landed), and this leaf's candidate row states its uncommitted reading re-derived at the sync. Both sides' sections, rows and history entries are preserved (L7's revision-selection sections beside this leaf's generation-bound master-net section). No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **route body updated.** The section above is added at the end of this route's change narrative, immediately before this history, so no heading above it moved and no off-route card that cites this document by line needed repointing. It records this route's own impact for the leaf: the master net is now generation-bound (new `serving/master_net_generation.py` selector, `generation`+`currentness`+`scope` published, pins on both master routes, `state`-labelled breakdown, missing-endpoint refusal, F1 unreadable-range refusal), with no route added or removed and one shared 400/404 mapping. The L1 section's two `changeset.py` rows are re-derived against this candidate (`_leaf_range` `:345-389` → `:386-429`, `leaf_file_diff` `:456-489` → `:577-612`); the L1 claims are retained unchanged. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def api_review_intent_entries(" repointed to mcp/src/agents_remember/serving/review.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def register_review_routes(" repointed to mcp/src/agents_remember/serving/review.py:143-143. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def api_review_intent(" repointed to mcp/src/agents_remember/serving/review.py:169-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def _status_for(" repointed to mcp/src/agents_remember/serving/review.py:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def api_review_intent_entries(" repointed to mcp/src/agents_remember/serving/review.py:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "def register_review_routes(" repointed to mcp/src/agents_remember/serving/review.py:143-143. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **post-sync citation re-derivation, forced by the merge rather than by a claim change.** The sync brought leaf `260921-ICR-L5`'s landed work into this candidate, which moved the review adapter and the review-surface test module; the row naming the transport case was re-pointed at the merged module's extent (`test_knowledge_review_surface.py:979-997`). No claim was re-worded, no anchor dropped and no stamp advanced.
-
-- 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, code base `f745e166`): **route body updated.** The section above is added at the end of this route's change narrative, immediately before this history, so no heading above it moved and no off-route card that cites this document by line needed repointing. It records this route's own impact for the leaf: the committed leaf range is now the contract's two recorded commits (resolved by the new `serving/changeset_endpoints.py`) rather than the worktree `HEAD` fallback the earlier narrative describes, an unrecorded code endpoint is a named 404 that does not name the live head, an unrecorded memory endpoint degrades only its own half, `no-repository`/`unresolvable` stay refusals on both sides, and `mode=working` is unchanged. `serving/changeset.py`'s card carries the corresponding body correction and citation re-derivation. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: "def api_review_intent(" repointed to mcp/src/agents_remember/serving/review.py:146-146. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: `SELECTOR_KINDS` repointed to mcp/src/agents_remember/serving/review.py:63-63. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: "def review_request_from_query(" repointed to mcp/src/agents_remember/serving/review.py:83-83. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: `review_adapter_unavailable` repointed to mcp/src/agents_remember/serving/review.py:108-108. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: "def register_review_routes(" repointed to mcp/src/agents_remember/serving/review.py:120-120. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the reviewer is now two routes over two ports, and this overview gained the section that says so.** `/api/review/intent/entries` lists the subjects the resolved pair can be compared on and `/api/review/intent` renders one of them; the split is a second **path** rather than a second adapter, because a caller that had to guess a subject id to reach the comparison route would be choosing the candidate. Both answer from one application resolution, so an offered entry and the review it opens cannot disagree. `_status_for` now reads success as `refusal is None` — which is how an `entries` state and a `review` state both serve `200` without a second table — and `subject_unresolved` joined the candidate codes answering `404`. The entry route answers an unwired process with `_UNWIRED_ENTRIES` (`status: "unavailable"`) rather than an empty list, because an empty list would say "nothing is reviewable here", a different fact from "this process cannot answer". The L22 section is retained below with its count superseded in place. No verification stamp was advanced.
-- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the transport module `serving/review.py`, its 200/400/404/503 status idiom, the two selector kinds it admits and refuses by name, and the `KnowledgeReviewPort` it takes because `serving` ranks below `application`. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
-- 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `serving/operator_inbox_posts.py` now returns a typed refusal envelope and sets the success `status`; the route's seam, ownership and boundaries are unchanged.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `parse_runner_config` repointed to mcp/src/agents_remember/serving/harness_control_runner.py:144-171. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` repointed to mcp/tests/test_capsule_launch_wiring.py:805-844. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `launch_spec_binding` repointed to mcp/src/agents_remember/serving/eve_runtime_launch.py:449-463. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T16:05+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): this route's `harness_control_runner.py` changed, so the body gained the section above rather than a no-impact entry. It states **D12's** delivered contract — the three constants (`MAX_ARGV_TOKEN_BYTES` 131072, `ARGV_TOKEN_SAFETY_MARGIN_BYTES` 2048, `ARGV_TOKEN_BOUND_BYTES` **129024**) and `_refuse_over_bound_token` refusing **before any spawn** — together with the two facts the leaf measured: the bound is **enforced** (refused by name at a `PATH_MAX` cwd), and the route to it is a path length as much as a capsule (~1.3320 encoded bytes per `cwd` character, first crossing ~2,297 characters beyond the server workspace root), so **a headroom figure is only meaningful with its inputs named**. The card's stale forward-routing line ("routed to the final-verification leaf, not to this seam") and L15's superseded 120,536 B / 92.0 % headline were replaced with the measured values. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Earlier entries are preserved exactly as written.
-- 2026-09-17T11:00+02:00 — 260915-CAPS-L15 curator: **route meaning changed for the entire launch path,
-  so the body was updated rather than given a no-impact entry.** The new
-  `## 260915-CAPS-L15 The Launch Paths Compile And Supply The Capsule` section is the current account:
-  one decision point with three answers, one workspace authority read back out of the carrier the
-  consumer re-verifies, each harness supplied through **its own** chain (Codex unchanged from L5, eve
-  through its launch environment, the codex-only guard real and untouched), the per-launch-point table
-  (two wired, one declared-excluded with its reason), and the acceptance evidence read from each started
-  session's own first prompt plus `E8`'s production chain. It stated **two limitations rather than
-  smoothing them**: a role-configured eve seat could not be dispatched because the next refusal was
-  the inherited settings-chain effort gate (`D22`, owner **L17**), and the dashboard route could not start
-  the *shipped* eve row (pre-existing, measured here, owner **L17**). Behaviour 6 is recorded as measured
-  (three legacy launch shapes byte-identical, no `capsuleDelivery`, packet behaviour 6). The L7 section's
-  closing paragraph was **corrected in place**: it said the produce side "still has no production
-  caller" — the candidate falsifies it, and the paragraph now names which half of `L7R-4` is discharged
-  and which is not. Verification metadata moves to this leaf's base `15fa0e2c`; the candidate is
-  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
-  fingerprint was invented here.
-- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **the route's own `D22` limitation is discharged
-  by this leaf, so the body was corrected rather than given a no-impact entry.** The L15 section's
-  "two limitations" block was rewritten into a `## 260915-CAPS-L17` section that states what is now
-  true: the pinned application consumes `AR_EVE_EFFORT` through eve's own `defineAgent({ reasoning })`
-  and the adapter publishes the axis, so a settings-file eve seat for a role resolves through the real
-  dispatch and the effort reaches the model request the runtime issues — measured at the provider
-  boundary, not read from the catalogue. Recorded that **no file in this chain moved**
-  (`harness_launch.py`, `terminal_tools.py`, `_app_terminal_routes.py` are all unchanged by this leaf;
-  what changed is that the catalogue stopped refusing), and kept the dashboard route's exclusion as a
-  **declared, owned** limitation with its reason, its four measured answers (including the
-  operator-taught PATH row that returns `200 running` with `legacy` instructions — a green `eve`
-  session that is not the AR runtime) and its owner. Two earlier sentences that this change falsified
-  were corrected where they were claims rather than history: the L7 section's "limitation 1 … D22,
-  owner L17" pointer, and the L15 entry's present-tense "still cannot be dispatched", which now reads
-  as the past-tense state that entry described. **Checker result (post-sync, verbatim).** The
-  refusal this entry first recorded was resolved by the leaf's `worktree_sync`: the pair is now
-  `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the contract-scoped
-  `memory_quality_check` ran against this worktree. Headline: `ok:false`,
-  `checklistStatus:"action-required"`,
-  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
-  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
-  unonboarded). This card's own contribution: one `onboarding_drift_drifted` finding, plus
-  **three** `style.update_history.history_order` "not newest-first" findings. The ordering ones
-  are **not** this entry's content: this entry is stamped with the real wall-clock time of the
-  edit while the entry immediately below it claims `2026-09-17T11:00`, a **future** stamp
-  inherited from the L15 pass, and no honest stamp of mine can sort above a future one —
-  satisfying the check would require inventing a future stamp, which this leaf's rules forbid.
-  Reported as an attributed residual rather than papered over. Verification metadata moves to
-  the synced base `d8ed8c21`; the candidate is deliberately uncommitted, so the governed
-  closeout stamps the real code commit and no hash or fingerprint was invented here.
-
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): **No route impact:** This route's governed sources under `mcp/src/agents_remember/serving/` are byte-identical to the leaf's code base `c22beb0121946c0637e113ec4cf29da29fd4aec7` (`git diff` over that directory is empty), so no source this overview documents moved in this leaf. The only edits this task made to the document were to its own Update History bodies, restored verbatim from the memory baseline `4b4e4271` after a repair pass had deleted them; no route prose, no invariant and no ownership statement was rewritten, and every citation still resolves inside the range it names.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
-- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **route meaning changed for the eve adapter, so the
-  body was updated rather than given a no-impact entry.** The new
-  `## 260915-CAPS-L7 The Eve Capsule Launch Proof` section records that `eve_runtime_launch.py` stopped
-  being a pass-through for the capsule binding's environment values and became an **all-or-nothing
-  admission gate that runs before a process exists**: `verify_capsule_binding` is called first in
-  `resolve_runtime_spec`, with six refusals each naming a distinct defect, an entirely undeclared binding
-  staying **unbound** rather than defaulting, and the workspace requirement reading git metadata because
-  a directory at the admitted path is not the admitted worktree. Also recorded: `build_runtime_env` now
-  pops the three ambient binding names alongside the existing `AR_EVE_RUNTIME_ROOT`/`AR_EVE_NODE` pops so
-  an inherited shell value cannot become a binding nobody verified; `launch_spec_binding` reads only the
-  launch spec; `eve_runtime_client.py` gained two body-less ID-addressed session controls, which matter
-  here because a cleared or compacted session does not rerun instruction resolvers; and the channel-level
-  `arCapsuleAuth` refuses an unbound launch before any model work. The section also states where the
-  produce side lives and that it **still has no production caller** — that wiring is `CAPS-R15@v1`'s
-  obligation under an explicit transfer. Verification metadata moves to the leaf's synced base
-  `23cc7a72`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
-  commit and no hash or fingerprint was invented here.
-- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: **route meaning changed for one new member plus five
-  touched ones, so the body was updated rather than given a no-impact entry.** Added
-  `capsule_delivery.py` (the delivery value type, the refresh decision, the legacy-chain switch) and
-  the carrier chain that now runs `TerminalLaunchRequest.control.capsule_delivery` → `RunnerConfig` →
-  the **conditionally** emitted `capsuleDelivery` payload key → parse → both factory calls →
-  `CodexAppServerSettings.capsule_delivery`. Recorded the two invariants a later editor must not break —
-  the capsule-free wire is byte-identical to base (same eight keys, 344-char token, same sha256) and a
-  malformed or channel-less capsule **refuses** rather than dropping — plus the lifetime rule the
-  installed protocol forces (no `turn/start` instruction field, one capsule per admitted binding, a
-  changed revision opens a bounded fresh thread) and the three declared limits (unmeasured vendor
-  `thread/resume` effect, `FORK_THREAD` without a production caller, the `D12` payload bound at 92.0 %
-  of `MAX_ARG_STRLEN` with an `E2BIG` failure mode). Updated the two Route Model bullets the change
-  reaches. Verification metadata stays pinned to the last committed source (`c1dbebf8`); the candidate
-  is uncommitted and closeout owns the stamp.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **No route impact from the A2
-  revision.** The route meaning recorded at 09:00 below is unchanged — the A2 round repaired and
-  strengthened the same seven modules without adding, removing or repurposing a route member. Three A2
-  corrections are recorded on the file cards rather than as route changes, because each stays inside
-  one module's contract: the two launch selectors (`AR_EVE_RUNTIME_ROOT`, `AR_EVE_NODE`) became live
-  rather than documented-but-inert; the queued `turnPolicy` is now spelled on the **follow-up** as well
-  as the create, from the wire module's one literal; and the replay window has a single owner
-  (`EveEventDeduplicator`) after the inline copy was deleted. Verification metadata remains
-  closeout-owned; the source is uncommitted and no stamp was advanced.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: **route meaning changed**, so this overview's body
-  was updated rather than given a no-impact entry. Added the native eve session adapter to the Route
-  Model with its load-bearing properties (absolute event-index cursor over stable envelope ids;
-  acceptance distinct from turn completion and session retirement; explicit queued ordinary delivery
-  instead of eve's cancellation-backed `steer`; reconcile that never repeats a possibly accepted
-  write; turn-addressed replay-once interrupt reporting acceptance only; session identity and cursor
-  published on the existing `AdapterSnapshot`, no second registry; carries a capsule binding without
-  compiling or selecting one; honest `unsupported` model/effort setters). Corrected the built-in
-  harness roster from three to four ids and recorded that the protocol-adapter registry is separate
-  from the kernel's developer-curated terminal harness set, which still has no `eve` row. Bounded the
-  route explicitly: the controlled `eve_runtime/` application sits at the repository root, outside
-  this route and outside the onboarding `pathRules`. Verification metadata stays pinned to the last
-  committed source until closeout stamps the candidate commit.
-
-
-- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
-  `99534dc5`, `_app_lifespan.py` +63/−2 with the new `terminal_observer_health.py`): the startup
-  contract changed again, so the body was corrected rather than annotated. The lifespan order this
-  route documents is now migrate → compact → **observer-health lifetime start and its initial
-  record** → observation prime → projection prime → recurring loops → yield: the
-  serving-lifetime accumulator is begun before the prime so the prime's own outcome is the first
-  transition published and a failed initial write costs the counters nothing. **Superseded:** the
-  previous entry's statement that this route defines no health or readiness payload for a prime
-  outcome. `LOCR-R17@v1` landed it — `_observe_terminal_catalog(runtime, phase)` publishes success
-  and failure for the prime (`phase="startup"`) and for every steady pass, and the served reading is
-  a separate `terminalObserverHealth` payload beside the notifier heartbeat, additively on the same
-  state body. What stands is the boundary: no readiness gate, cursor, marker, queue or task-authoring
-  authority derives from health, the read routes never rewrite the record, and the cutoff is the
-  configured sweep cadence rather than browser traffic. Recorded with it as an owner-visible negative
-  fact: the notifier's pre-existing inline refresh publishes no health transition, so a live notifier
-  beside a dead observer loop ages the record into `stale` — conservative, never a false `healthy`.
-  Verification metadata remains closeout-owned; no stamp advanced.
-
-
-
-- 2026-09-15T15:02+02:00 — 260831-LOCR-L18 curator (uncommitted change set on `ar/260831-locr-l18`,
-  base `d868486c`, `_app_lifespan.py` +26/−0): the route's startup contract changed, so this
-  overview's current-intent section was extended in the body rather than annotated. The route now
-  takes one pre-serve observation prime before `runtime.projector.prime()` and before any recurring
-  loop exists, so the lifespan order this route documents is migrate → compact → one contained
-  observation prime → projection prime → recurring loops → yield, and the initial projection and the
-  first notifier sweep read a catalog a canonical pass has already committed instead of depending on
-  the first scheduled tick or on a request. Recorded with it: the prime is the same canonical sweeper
-  entry point with no startup-only reader or mutation and is a due full sweep rather than an extra
-  one; its `except Exception` containment is the requirement, because observation degradation must not
-  become a serving outage, while `CancelledError` still reaches the shutdown drain; this route defines
-  no health/readiness payload for a prime outcome (that is `LOCR-R17@v1`'s contract); and the
-  prime-versus-migration/compaction edge rests on the production straight-line order, not on the
-  delivered ordering witness. The steady-state ownership account, the GET route's projection-only
-  contract, and the sweeper's own clocks are unchanged. Verification metadata remains closeout-owned;
-  no stamp advanced.
-
-
-- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
-  base `67b21aeb`): the route account changed, so this overview's served-surface list was corrected
-  in the body rather than annotated. The `GET /api/terminal/sessions` clause said the route returned
-  `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()` — a producer with a rate-limited fast
-  path and a committed-snapshot contention read. It now states the current contract: the route
-  serializes `runtime.catalog.list()` through `_catalog_payload` and cannot make its own snapshot
-  newer, names no sweeper, probes nothing, writes nothing, and compacts nothing; observation is the
-  serving lifespan's own clock. The `list()`-versus-`list_committed()` ruling is recorded with its
-  reason (a request thread waits on the batch `RLock` and then reads committed bytes, while
-  `list_committed()` is the sweeper's own contention read and can serve an older snapshot), together
-  with the accepted bounded wait on a threadpool worker and the unchanged WebSocket-attach/paste
-  direct observations. The sweeper's own card carries the matching correction to its caller account.
-  Verification metadata remains closeout-owned; no stamp advanced.
-
-
-- 2026-09-15T13:19+02:00 — 260831-LOCR-L01 curator (uncommitted change set on `ar/260831-locr-l01`,
-  base `67b21aeb`): the route's terminal-observation ownership changed, so this overview gained a
-  current-intent section rather than a history-only note. `_app_lifespan.py::_terminal_observation_loop`
-  is now the serving lifespan's one steady-state caller of the existing
-  `TerminalCatalogLivenessSweeper.refresh`, on a completion-relative non-overlapping attempt cadence
-  that needs no HTTP request, no open dashboard, no model turn, and no enabled agent notifier. The
-  ARSPAWN-L5 paragraph was corrected rather than deleted: its account of the notifier refreshing
-  liveness before each sweep remains true for the notifier path, and it now names the serving
-  lifespan as the steady-state owner so it no longer reads as the ownership contract. The GET route,
-  the notifier's inline refresh, and both sweeper clocks are unchanged; whether the notifier's inline
-  refresh should remain a second recurring caller is not decided here. Verification metadata remains
-  closeout-owned; no stamp advanced.
-
-- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: extended the current structural seat and routing contract with the state-signal durable order and its recovery identity. The row is persisted before the emitted marker, which is now stamped from `OwnerSignalOptions.after_persist` inside `_post_owner_signal` and strictly before any delivery attempt; delivery eligibility is re-checked at the shared action by `_state_signal_awaits_marker`, which `_drain_boundary` inherits, so predicate order is not the protection. Coalescing for `state-signal` rows is the exact `subjectAgentId` plus the normalized ask, while every other kind keeps the structural task-document + role key. Canonical seat selection, boundary-drain admission, and the shared delivery path itself are unchanged.
-- 2026-09-11T23:05:00+00:00: Reviewed this route against the current candidate's changed sources. No route impact: none of the changed sources in this candidate falls under `mcp/src/agents_remember/serving/`, and this overview's body is otherwise unchanged by that candidate. It is in the refresh set only because a prior curator pass in this same memory worktree reordered two pre-existing Update History entries (a history-only edit), so its inclusion is a consequence of that edit, not of a serving-source change. Route ownership, the served surfaces and the hot path stand as written.
-- 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.
-
-- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: extended the `GET /api/terminal/sessions` route account with the current sweeper boundary — bounded starting-row fast path while rate-limited, committed-atomic-snapshot return on sweep-lock contention (instead of a snapshot read that waits on the active batch), and one dirty-gated catalog batch per admitted path. Cadence, hysteresis, registration/compaction order, and cross-store post-commit ownership are unchanged and remain with their leaves.
-
-- 2026-09-08T14:39+02:00 — 260831-LOCR-L20 curator reconciliation: added the current
-  terminal-evidence cursor consumer and its no-loss envelope boundary to the serving hot path.
-  The candidate preserves the existing bounded Pi route and canonical projector ownership;
-  verification metadata remains pinned until governed closeout stamps the code commit.
-
-
-
-- 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: extended the current structural seat and routing contract with action-time state-signal derivation, no-current-occupant retry eligibility, and per-subject task-document refusal fencing. Existing structural ownership and shared delivery authorities remain unchanged.
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-06T00:28+02:00 — Updated watcher naming ownership to kernel.file_lock, retained filtering and pacing behavior, restored the nearest MCP overview backlink, and made hot-path routing concise without dropping the retained operating account.
-
-- 2026-09-05T07:27+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reviewed the requirement routes, corrected current conversation/initialize ownership and repaired a literal truncated paragraph while retaining recoverable historical provenance. Verification records source review, not execution or acceptance.
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the task-local requirement routes (`/api/requirements/{list,read}`), the 61-to-63 route growth, and the `requirements.py` module in this route. File-level detail lives in the serving sidecars and the new requirement cards.
-
-- 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded exact operation/request-id
-  projection on parent Codex completion and deterministic queued-row convergence. Verification
-  remains closeout-owned.
-
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 recorded connected-`dispatch_agent` role startup, bounded one-call brief convergence, headless liveness refresh, and honest socket-state diagnostics. Verification remains closeout-owned.
-
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: recorded `models/core.py` as the shared
-  serving-build wire authority. Verification remains closeout-owned.
-
-
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: recorded the one process-scoped,
-  content-addressed build identity shared by dashboard and MCP surfaces, plus the production
-  self-update versus disposable exact-candidate acceptance boundary. Verification remains
-  closeout-owned.
-
-
-- 2026-08-28T14:15+02:00 — No parent-route content impact: the landed candidate changes only the
-  Claude mapper inside the governed conversation/projectors child route, whose own overview carries
-  the interaction/mutation-diff semantics. Stamped the serving route to committed provenance.
-
-
-- 2026-08-26T16:03+02:00 — Recorded dispatch receipt ownership in its dedicated collaborator and removed a pre-existing
-  tool-output truncation banner. The atomic catalog persistence boundary remains singular;
-  verification remains closeout-owned.
-
-
-
-- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 bounded seat serialization, durable brief evidence, and
-  delivery-time replacement semantics onto the IAS serving overview. Verification remains
-  closeout-owned.
-
-
-- 2026-08-26T10:44:52+02:00 — Documented atomic task-projection refresh and heartbeat retry after transient failure; runtime lifecycle-projection import relocation has no additional route impact.
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented task-first execution registration, projection-only closeout serving, and discarded-subtask history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `serving/ambient_seat.py` now owns BOTH dispatch caller resolutions (plane seat + ambient launcher resolved from the process environment); spawn provenance gains caller kind (`spawned_by_kind` write-once via `_preserved`, wire `spawnedByKind`). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: projection/snapshot import paths updated to the moved queue packages. Verified at code commit e5cb139f.
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready graph view wiring in the task-documents readers. Verified at code commit b7f2c8e2.
-
-- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: served task docs project sprint
-  `seats` + `masterRef` rows. Verified at code commit 8071a644.
-
-
-
-- 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: task snapshot serving now exposes the
-  execution-topology facts carried by TaskDocNode; HTTP/catalog authority remains otherwise unchanged.
-
-
-- 2026-08-14T12:31:43+02:00 — R44 curator: recorded the metrics worker drain that closes the
-  lifespan-shutdown write race. Verification remains closeout-owned.
-
-- 2026-08-14T06:25+02:00 — No route impact: L23's serving-side delta is confined to the projection
-  child route attaching the latest task-addressed durable operation; serving ownership and public
-  transport composition remain unchanged. Verification stays closeout-owned.
-
-- 2026-08-12T20:20+02:00 — L23 curator: documented serving-side pre-host lineage admission and safe projector cancellation; verification remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 adds batched notifier expiry writes, product-agnostic Codex initialize diagnostics, lifecycle-operation projection on enclosures, and volatile elapsed-time stripping. Durable task state remains the authority; no private operation identity crosses the serving boundary. Verification provenance remains closeout-owned.
-
-- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded the clean-cut current
-  Desktop initialize grammar, exact Agents Remember client identity, and unchanged primary
-  host-version/thread agreement.
-
-
-- 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: recorded the notifier's
-  protocol-typed hierarchy seam; structural routing behavior and production topology authority are
-  unchanged.
-
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled serving with plane-owned occupant
-  launch/delivery and structural task-document projections; conversation and projection child
-  overviews own the route-specific details.
-
-
-- 2026-08-10T19:57:55+02:00 — No route impact: 260731-EFA-L21 repairs
-  `terminal_liveness.py`'s type-only `HarnessId` import to the canonical
-  `models.conversations.identity` owner exposed by L9. Serving behavior, liveness authority, and
-  route responsibilities are unchanged. Verification metadata remains pinned until closeout
-  stamps the L21 code commit.
-
-
-- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: refreshed the serving/ route body for the current
-  staged delivery, terminal-catalog, notifier, projection, and conversation seams; the four
-  renamed/repaired sidecar paths are included in this review. Verification metadata remains pinned
-  until closeout.
-
-
-- 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "THE LIMIT OF THE
-  GUARANTEE" said *"The dashboard's own tests enforce `fixture ⊆ mirror`; `mirror ⊆ server` is
-  enforced by nothing"*, which keeps only the outer two nodes of a four-node chain and so reads as
-  though **nothing** measures the mirror against the snapshot. It does: `test/contract.test.ts`
-  measures `types/projection.ts` against `dashboard/src/fixtures/snapshot.json` in three TYPE-level
-  directions (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror` — L29-L53 of that file) plus
-  runtime `VOCABULARIES` assertions (L269, L348, L368) for the string unions `resolveJsonModule`
-  widens to `string`. The section now names all three links, attributes the fixture→mirror link to
-  `tsc -b` + `Overrides<O, Node>` + `test/wireFixtureGuard.test.ts`, and states the unheld one as
-  **`snapshot.json` ↔ `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one
-  letter from "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the
-  strength the evidence carries: no in-repo generator **and no in-repo mechanism keeping the two
-  sides in step**, with the caveat that no search of this tree can exclude a generator kept outside
-  it. Same correction applied to the 09:10 entry's restatement below. No route-model claim,
-  citation, or verification field changed.
-
-
-- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: added the wire-contract route impact for the two
-  new modules (`response_contract.py`, `served_state.py`) and the seven changed files they touch,
-  written as the mechanism rather than the intent. The load-bearing corrections: **the declaration
-  is not the gate.** 61 of 62 route decorators carry `response_model=` (the 62nd is the websocket,
-  an `APIWebSocketRoute` with no such parameter, exempted BY ROUTE CLASS), but FastAPI validates
-  only the two handlers returning a bare `dict` — 57 return a `Response` and 2 are SSE generators,
-  so on 59 the decorator is schema only. The enforcement is
-  `test_serving_response_conformance.py`, whose score is pinned at 286 declared pairs / 133 driven /
-  153 undriven-with-a-reason, with every route driven on at least one status. Recorded the real
-  behaviour change on `/api/terminal/sessions` and `/api/harnesses` (a drifted payload is now a 500,
-  not a passthrough) and the AST key-set equality test that fires first, and the `202` now declared
-  on `POST /api/actions/{action}` where the implicit 200 was a pair no request could produce.
-  Stated the limit explicitly: `dashboard/src/types/projection.ts` and
-  `dashboard/src/test/fixtures/wire.ts` are hand-maintained, **no generator exists** anywhere in
-  this repository, and the `snapshot.json` ↔ `observer/projection.py` crossing is held by nothing —
-  this leaf pinned the server half only. (This bullet originally said "`mirror ⊆ server` is enforced
-  by nothing", which dropped the middle link; corrected in the 14:05 entry.) Also recorded the served-state assembly (why the two-key tail is deliberately not a
-  projection field, and the opposite null rules per half). Added a `Current Wire Contract` reference
-  subsection (8 rows, all ranges read back). Repaired 6 stale line citations: `models.py`
-  L1-L1282 → L1-L1302 (file grew to 1302); `harness_control_api.py` L166-L201 → L182-L217
-  (`register_harness_control_routes`, whose L195 is the single `register_conversation_routes` call);
-  `app.py` L181-L203 → L300-L330 (`stream_events` — the old range was an import block, stale before
-  this leaf); `projector.py` L207-L269 → L268-L295; L314-L330 (`_publish_projection` and
-  `subscribe`, the latter entirely outside the old range — also pre-existing);
-  `test_serving.py` L416-L492 → L419-L503 (`StreamEventsTests`, whose
-  `test_cancelled_waiting_stream_releases_its_subscription` at L493 was outside the old end);
-  `harness_submission_authority.py` L452-L489 → L528-L565 (`provenance` — the old range held an
-  unrelated operator-resolution branch, pre-existing). Verification metadata pinned until closeout
-  stamps the L4 commit.
-
-- 2026-07-31T21:02+02:00 — 260731-EFA-L3 curator: corrected the `build_info.py` Route Model bullet,
-  which described the build stamp's honesty rules without saying which repository the stamp reads.
-  `_git_short_head` and `_git_worktree_dirty` no longer own local `subprocess.run` calls; both now
-  call `run_git` (`kernel/git_command.py`), whose `GIT_DIR`-family scrub is what guarantees the
-  stamp identifies the checkout the server booted from rather than an inherited one — the property
-  the whole ghost-process surface depends on. The 2s bound is now the named `_PROBE_TIMEOUT_SECONDS`
-  passed explicitly against the runner's `GIT_LOCAL_TIMEOUT_SECONDS = 300`. `ServingBuild`'s fields,
-  the tri-state `dirty` fail-open rule and the version-only fallback are unchanged, as is every
-  other serving surface. Verification metadata pinned until closeout stamps the L3 commit.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 4 cross-file line citations. The codex
-  adapter row now cites each thing it names: `_ThreadState` L99-L135 (per-thread demux), `interrupt`
-  L375-L422 (exact-active-turn `turn/interrupt` with the `_last_interrupt` replay-once pair),
-  `_handle_server_request` → `_sync_pending_snapshot` L950-L1071 (per-thread pending-interaction
-  maps, the `PENDING_INTERACTIONS_PER_THREAD` cap, unknown-method declines), `_enqueue` →
-  `_verified_asset_path` L1160-L1247 (load-shed queue and verified `localImage` construction),
-  `_thread_for` L1309-L1346 (registry with `THREAD_REGISTRY_LIMIT` eviction) and
-  `_learn_collab_identity` → `_publish_agent_registry` L1385-L1469. `models.py` is 1282 lines, so
-  the whole-module row is L1-L1282. The harness-control factory row is
-  `register_harness_control_routes` L166-L201, whose L179 is the single
-  `register_conversation_routes(app, runtime)` call. The regression row is `StreamEventsTests`
-  L416-L492 — later delta, interleaved-projection handoff, failed-prime recovery (whose L473-L478
-  is the identical-state silence), and cancellation cleanup. All ranges read back; no claim text
-  changed.
-
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: added the route-impact section naming every parameter object introduced in this route, the three new modules (`cadence.py`, `hosted_session_runtime.py`, `conversation/active/projector/wiring.py`), the six deletions made at the cause, and the liveness-config relocation; corrected the `create_app` signature in the Route Model. Verification metadata stays pinned until closeout.
-- 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: the cockpit bundle and its fingerprint sidecar
-  left version control and are now built at release, so a source checkout legitimately serves no
-  cockpit. Recorded `static.py`'s new missing-bundle surface (503 with expected location and build
-  command under `no-store`, GET/HEAD only with 405 elsewhere so the greedy `/` mount cannot change
-  `/api` method semantics, no placeholder or fallback UI) and the shift in `dashboardBuild` from
-  "absent means legacy bundle" to "absent means no build happened here". Verification metadata
-  remains pre-commit.
-
-
-- 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: gave the Claude subprocess transport's restart contract
-  a route-level home — a completed stop releases process and stderr-task ownership so the floor-gated
-  re-launch can reuse the object, while a live start still refuses — and named the control-readiness
-  and model/effort loss that a retained process caused.
-
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded the transport/source/cache/output
-  boundary split, runtime-probed history reader, typed IPC, selected-child active route, necessary
-  capacity bounds, parent/sibling continuity, and dormant library follow-up. Refreshed the active
-  hot-path route count. Verification metadata remains pinned while uncommitted.
-
-
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the multiplexing remediation in the
-  route-impact section — per-thread pending-interaction maps (concurrency is normal traffic; the
-  multi-request raise deleted), the method-first degrade split (unknown/experimental request
-  METHODS decline + degrade on any thread; known-method malformed shapes keep the old split), the
-  entry-thread parent guard in the authority's `respond`, the projector's all-pendings projection
-  with singular rotation, and the load-shed adapter event queue (256→1024, shed-oldest-deltas,
-  counted, one `ar/load-shed` notice on catch-up). Re-anchored the authority (L276-L334;
-  L502-L542; L549-L601; L1141-L1162) and codex-adapter (L356-L403; L681-L847; L1056-L1122)
-  reference rows against the post-remediation source. Aggregate route-index generation remains
-  manager-owned; verification metadata stays pinned (remediation uncommitted).
-
-- 2026-07-26T15:52 — 260718-CHATS-L7 curator: recorded the sub-agent control-substrate changes
-  (evidence `thread_id` demux, plural pendings end-to-end, parent-only authority respond guard,
-  codex per-thread registry, claude floor-gated sub-agent text flag) and re-anchored the L0E/L2E
-  substrate citation ranges the L7 insertions shifted (verified against the current worktree
-  source). Aggregate route-index generation remains manager-owned; verification metadata stays
-  pinned (L7 uncommitted).
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional fixes across
-  the conversation slice (detail in the `conversation/` sub-overviews). R4 version-gate REMOVAL
-  (developer ruling 2026-07-21): THE CONTRACT IS THE ONLY GATE — no version-string comparison gates or
-  demotes any capability at any of the seven former sites (grep-proven); observed runtime/helper
-  versions are informational metadata only; corrected the L1 capability line's now-false "installed
-  2.1.214 vs locked 2.1.211" version-demotion wording to the never-probed contract reason. Also landed
-  in this leaf: R1 codex notification identity (`EvidenceFrame.native_method` carried; the codex
-  projector drops the known 0.144.5 startup burst by method, names truly-unknown methods), R2 claude
-  acceptance (requested-alias-wins-on-resolved-model), R3 claude 2.1.216 frame contracts
-  (`command_lifecycle`/`rate_limit_event`), R5 per-session bounds/release (`_locks`/`queue_rows`
-  bounded; dormant projector idle-release; `release_session` unwired — F1 accepted-bounding), R6 the
-  honest control-socket exit note + the bounded `providers/metrics.py` docker-ps timeout, and the
-  durable `dashboard/e2e-chats/` opt-in suite (R7). Verification stays pinned until L5F closeout.
-
-- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: extended the `terminal_liveness.py` bullet with
-  the H1/F2 hosted-interaction synchronizer quarantine — `_observe_control_snapshot` contains a
-  poisoned `on_control_snapshot` failure fail-loud on its own row instead of aborting the whole
-  catalog sweep + 500-ing `/api/terminal/sessions`, with the load-bearing fact that an orphan
-  `vendorCorrelationId` is the normal steady state of cockpit-driven hosted chats (so this path is
-  hot) and F2's log-on-state-change bound; the completion-correlation contract is unchanged (F3
-  master-exit, F8 residual). The twin-projection + input-authority-pin fixes land inside the active
-  conversation slice, whose detail is routed to `conversation/overview.md` and its child governors,
-  leaving this route's conversation paragraph accurate. Verification metadata stays pinned until L5
-  closeout stamps the candidate commit.
-
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: added the "260718-CHATS-L3 implements the control
-  child" paragraph to the structured-conversation contract section — the seventeen control routes
-  (interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments, read-only
-  policy, evidence-bound telemetry) over the closed L2E/L3E substrate, routed to
-  `conversation/control/overview.md` — and corrected the L5-authority-boundary invariant from "three
-  behavior-empty child routers" to the now-implemented reality (active L1, library L2, control L3).
-  The substrate contracts, hot paths, and route model are unchanged. Verification metadata stays
-  pinned until L3 closeout stamps the candidate commit.
-
-- 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: No route impact: the L3E clip-envelope
-  terminal-identity preservation is a file-level additive refinement of `clip_evidence_payload`
-  (documented in the `harness_control_models.py` sidecar); the route overview's L0E "32 KiB clip
-  with a visible marker" description and the L2E content-less `message_end` note both remain
-  accurate and complete for the clip semantics this route describes. Verification metadata remains
-  pinned until closeout stamps the candidate commit.
-
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive native control-plane
-  substrate — the structural-sub-protocol interrupt write (bridge epoch guard, codex exact-turn,
-  pi expected-operation guard, replay-once, claude fail-closed, settlement untouched), the paged
-  never-bodies operation-timeline enumeration with eviction-floor honesty, the digest-verified
-  asset channel with resolve-and-verify spool confinement and native codex/pi construction, and
-  the once-only withdrawal-recovery payload — plus a hot-path entry and a Current-L2E reference
-  section. Verification metadata remains pinned until closeout stamps the candidate commit.
-
-- 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
-  library paragraph/hot-path/history with the L1 active-serving content after the master memory
-  branch advanced; both implemented slices are documented under the L9/L0 contract section with
-  detail routed to `conversation/overview.md` and the `conversation/active/`,
-  `conversation/projectors/`, `conversation/library/` governors. Verification metadata remains
-  pinned until L1 closeout stamps the candidate commit.
-
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: documented the implemented active
-  conversation serving under `serving/conversation/active/` and the per-harness mappers under
-  `serving/conversation/projectors/` — the two authorized production routes, signed cursor
-  authority, the bounded per-app service and projector engines, the idempotent store with the
-  review-F1 tool block union, the canonical status service now also backing orchestration's
-  seat projection, and fixture-gated capabilities — consumed from the untouched L0 composition
-  and L9 contract; detail routed to `conversation/overview.md` and the new
-  `conversation/active/overview.md` + `conversation/projectors/overview.md`. Verification
-  metadata remains pinned until closeout stamps the candidate commit.
-
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the implemented native
-  conversation library under `serving/conversation/library/` — authorized list/read routes,
-  live capability gates, the per-app signed cursor/key authority, narrow-only scope, the
-  locked-helper and direct app-server ports, and the idempotent exact open/status/reconcile
-  service with honest retirement — consumed from the untouched L0 composition and L9 contract;
-  detail routed to `conversation/overview.md` and the new `conversation/library/overview.md`.
-  Verification metadata remains pinned until closeout stamps the candidate commit.
-
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive native evidence and
-  resume substrate — reserved-key diversion into the bounded bridge evidence deque with byte-
-  identical projections, the three epoch-scoped additive IPC reads across two disjoint coordinate
-  domains, per-harness stop-dropping forwarding and codex/pi native pages (claude honestly
-  fail-closed), the sole-path submission-provenance batch, and the codex-only resume launch
-  channel. Verification metadata remains pinned until closeout stamps the candidate commit.
-
-- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the conversation runtime
-  composition repair — one immutable app-scoped `ConversationRuntime` installed once through the
-  existing harness-control registration, the server-resolved local-operator authorization ruling,
-  and the two request dependencies that keep child leaves out of the shared composition files.
-  Verification metadata remains pinned until closeout stamps the candidate commit.
-
-- 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: refreshed the serving route for one atomic
-  projector subscription/publication owner, publish-before-notify ordering, one full failed-prime
-  recovery snapshot with identical-state silence, ordinary later deltas, and explicit iterator/
-  subscriber cleanup. Root and `mcp/` ancestors were inspected and remain accurate at their
-  public-surface granularity. Verification metadata remains pinned until closeout stamps the
-  candidate commit.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: added packaged-client identity, HTML revalidation, narrow
-  pre-session discovery, record-safe raw cursor semantics, and owned tmux-client environment.
-  Verification metadata remains pinned pending candidate closeout.
-
-
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the strict normalized
-  structured-conversation roof, separate active/library read ports and cursor purposes, three
-  behavior-empty owned child routers, single harness-control registration seam, and the rule that
-  helper/fixture observations cannot promote capabilities. Verification remains pinned to the
-  last committed source until closeout stamps the candidate.
-
-- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: established the sole
-  `HarnessSubmissionAuthority` current contract; documented epoch/full-ref identity, atomic
-  withdrawal-vs-dispatch, event-before-publication completion, early-terminal dominance, response
-  bypass, safe-retry certificate, raw-free status, bounded retention, and dispatch-now native
-  adapters. Marked the former queue facade and ACPUI queue semantics historical.
-
-- 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: recorded discovery-only Claude MCP-selector
-  replacement across the accepted argv grammar, byte-preserved normal startup, the live three-harness
-  acceptance asymmetries, dynamic evidence boundary, and the visible non-leaking startup-failed stop
-  residual. Verification metadata remains pinned until closeout stamps the L5 code commit.
-
-- 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented the daemon advertise/launch/set/
-  submit/reconcile boundary, bounded install/auth cache and failed-refresh quarantine, exact-session
-  first-byte ambiguity and request-id idempotency, raw-free public serialization, liveness-first
-  status ordering, and cross-process live-reopen truth with fresh dead replacement. Preserved
-  settings-owned role spawn and the durable inbox/brief bus. Verification metadata remains pinned
-  until closeout stamps the L4 code commit.
-
-- 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: documented the normalized same-session set
-  graph, exact `SetResult` truth table, shared queue ordering and cancellation reclamation, Claude
-  exact correlated replay-plus-terminal evidence with the live Fable correction, Codex ordered
-  desired/pending/effective fresh-turn behavior, Pi bounded coherent error/clamp readback, and the
-  transitive no-paste boundary. Preserved role-based spawn and durable-bus ownership. Verification
-  metadata remains pinned until closeout stamps the L3 code commit.
-
-- 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the typed settings-resolved launch
-  path, pre-discovery owned-selector refusal, token-free dynamic validation, Claude/Codex/Pi native
-  launch channels and asymmetric acceptance evidence, persistent exact launch failures, roleless
-  Codex temporal default, and retirement of static/paste native knob mapping. Final audit removed
-  a duplicate capability/adapter route inventory so the current contract has one governing home.
-
-- 2026-07-15T20:04+02:00 — 260714-ACPUI-L1 curator: documented the normalized own-adapter
-  capability port, dynamic token-free Claude/Codex/Pi catalog paths, model-gated effort, cached
-  running advertise, and transient prompt-free discovery. Verification metadata remains pinned
-  until closeout stamps the L1 code commit.
-
-- 2026-07-14T17:52:13+02:00 — 260713-PHA-L6 curator: documented the narrow IPC peer-disconnect reply/close
-  boundary and delayed-reply bridge reconciliation result.
-
-- 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented protocol-owned Codex null-requestId
-  correlation, same-row pending completion, loud failures, and replacement-only queued state.
-
-- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized obsolete exact-version
-  language in the serving route model and made structured consumed capabilities normative.
-
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the serving route for structured capability
-  negotiation and the complete reload boundary; recorded R10 as deferred.
-
-- 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled the serving route's normative hosted authority to protocol
-  snapshots, inbox-rooted delivery, explicit consume acknowledgement, and diagnostic-only panes/logs.
-
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed hosted cutover, bridge semantics, legacy unsupported,
-  dashboard/package parity, R13 inbox-rooting, R14 explicit consume, and diagnostic-only pane signals.
-
-- 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: documented the unregistered, exact Claude Code
-  2.1.207 stream-json adapter. Readiness is structured initialize/system-init only; replay acceptance
-  is distinct from terminal completion; and disconnect reconciliation never resends. The pinned live
-  smoke uses the local `/cost` command. API-429 terminal frames remain failed and retain only safe
-  status metadata, never result text or credentials. Verification remains pinned until closeout.
-
-- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added the stable Codex app-server route model,
-  exact `0.144.3` protocol pin, protocol-only reasoning effort, structured interaction and
-  reconnect boundaries, and explicit no-registration/no-cutover scope. Verification remains pinned
-  until closeout stamps the leaf commit.
-
-- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: documented the unregistered pinned Pi RPC
-  protocol/process/event/adapter chain, strict framing, settlement, UI, and cursor-reconciliation
-  boundaries. Verification metadata remains pinned until closeout stamps the L4 code commit.
-
-- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: added the normalized control contract,
-  one-adapter bridge, bounded shared queue, private IPC, transcript/draft surface, unsupported
-  adapter boundary, and deliberate no-production-cutover scope to the serving route.
-
-- 2026-07-12T20:24+02:00 — 260712-PTS-L3 route impact (change-driven projection pacing): route
-  gains `change_watcher.py` (derived watch roots + input-event filter + `ChangePacer` +
-  `ProjectionInputWatcher` on the new `watchfiles>=1.1,<2` core dep); `projector.py`'s
-  unconditional `sleep(interval)` became change-or-heartbeat waking when a watcher is injected
-  (tick body untouched; loud fixed-interval fallback; `projection_count`/`last_wake_reason`);
-  `app.py` gained `heartbeat=`/`watch_changes=` (watcher iff `before_tick is None`);
-  `cli/dashboard.py` + `daemon.py` gained `--heartbeat` (default 15s) with `--interval`
-  re-documented as the fast-path cadence floor. Why: the projector re-projected the whole world
-  every 1s regardless of change — py-spy 2026-07-12 showed `_tick_sync` at 11.1s of a 15s sample.
-  Change-driven delta latency ≈ debounce + projection time (measured ~0.2s); adaptive pacing
-  reaches a live daemon only via explicit stop + spawn. Adversarial review INTEGRATE with two
-  adopted hardenings (inbox-lock filter, retryable root derivation). Updated the Hot Path Summary,
-  the `app.py`/`daemon.py`/`projector.py` Route Model bullets, and added the `change_watcher.py`
-  bullet + pacing invariant. Verification metadata pinned until closeout stamps the PTS-L3 commit.
-
-- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: refreshed the serving route for the new
-  inbox-reclamation policy, one-catalog-read/one-snapshot boundedness, same-sweep compaction before
-  redelivery, body-free aggregate telemetry, no-op silence, 5-second lock-hold characteristics,
-  and F3-F6 non-blocking reviewer residuals. Verification metadata remains pinned until closeout.
-
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: serving lifecycle wiring starts and cancels the landing refresher outside the projection tick and preserves host shutdown after refresher failure.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-12T12:55+02:00 — 260712-TRH-L2 route impact: `changeset.py` now scopes contract discovery to the requested master enclosure, canonicalizes persisted/requested leaf ids, and exposes an opt-out for expensive master leaf summaries while retaining the net range semantics. Verification metadata pinned until closeout stamps the L2 code commit.
-
-- 2026-07-10T18:30+02:00 — No route impact: 260707-HFX2-L18 replaced repeated terminal-catalog
-  optional-field parsing/projection branches with typed helpers and added a complete round-trip
-  regression. Required/optional/legacy JSON semantics and the serving route's ownership are
-  unchanged; the work is a strict-CRAP quality decomposition within the existing catalog module.
-
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 serving route impact: added the seat-binding module,
-  pair catalog/open/attach/retire semantics, binding-first supervisor/landing behavior, explicit
-  role-required attach, and sweep-clock delivery persistence. Verification metadata remains pinned
-  until closeout stamps L17.
-
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 serving route impact: replaced pane-rendering acceptance
-  with bound harness-log evidence, added calibrated duplicate-safe recovery and catalog provenance,
-  explicit Codex argv, replacement-leaf support, and one-row supervisor redelivery. Verification
-  metadata remains pinned until closeout stamps the eventual L15 code commit.
-
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 route impact: added live virtual-cursor river
-  compaction, the on-demand task-body endpoint, chain-aware/current-manager supervisor behavior, and
-  one-rung-per-row-per-sweep enforcement; recorded the unbound-worker S1 follow-up. Verification
-  metadata remains pinned until closeout stamps the eventual L13 code commit.
-
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): route gained `landing.py`,
-  `TerminalCatalog.status == "landed"` + landing provenance, `seat_events.log_landed_event`, and
-  `POST /api/terminal/landed-cleanup`. Successful integrate/finalize paths now auto-land seats for
-  archive inspection instead of auto-retiring/killing them; manual retire remains the terminating path.
-  Verification metadata remains pinned until closeout stamps the HFX2-L11 commit; route index was not
-  refreshed in this worker seat because the brief forbids route-index tools.
-
-
-- 2026-07-09T11:19+02:00 — 260707-HFX2-L9 route impact: supervisor redelivery now passes the
-  configured/shared 900-second floor through delivery snapshots; pane/seat-liveness signal emission
-  checks persisted cooldown state before posting repeated owner inbox rows; `pane-signal: mid-turn`
-  is skipped as busy-state noise; and `app.py` wires the new cooldown store/settings into
-  `AgentNotifierContext`. Verification metadata pinned until closeout stamps the 260707-HFX2-L9
-  commit.
-
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm, R1-R6): `supervisor.py`
-  now builds one in-sweep inbox snapshot/index, resolves terminal-rung dead/no-hosted-session rows
-  to durable `ladder-resolved`, limits redelivery actions by `redeliver_budget`, and ticks heartbeat
-  metrics with pending/redeliverable backlog counts and last sweep duration. `supervisor_heartbeat.py`
-  carries the new volatile fields; `app.py` forwards the budget from settings and surfaces the
-  metrics on `/api/state`/SSE; `inbox_delivery.py` accepts the shared current snapshot. Verification
-  metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
-
-- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact (P-15 tier 3 escalation ladder + dead-man
-  respawn, R1-R6): `supervisor.py` gains two predicates (`evaluate_escalation_findings`/
-  `evaluate_dead_upstream_findings`) and two actions (`_escalate_rung`/`_signal_dead_upstream`),
-  calling through NEW `controlplane/escalation_ladder.py` (the pure rung walker) and
-  `controlplane/signal_routing.py`'s NEW two-hop `derive_skip_level_owner`/`is_seat_dead` (a
-  SEPARATE function from L1's one-hop `derive_signal_owner`, which is unchanged). Past the respawn
-  threshold, `_escalate_rung` calls new `_respawn_suspect`: retires the suspect seat via
-  `retire.py::retire_entry`, re-delivers its pending queue to the successor, and — via NEW
-  `controlplane/orphan_policy.py::find_orphaned_workers` — surfaces (never auto-reparents) a retired
-  manager's still-running workers in the same respawn event. `AgentNotifierContext` gains
-  `escalation_sla_seconds`/`escalation_rung_seconds`/`respawn_after_rung`; `OperatorInboxEntry`
-  gains `rung`; `OperatorInboxStore` gains `advance_rung`. No new lifespan task, no new
-  `InboxMessageKind` values. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L4 commit.
-
-- 2026-07-08T22:30+02:00 — 260707-HFX2-L3 route impact (paste injector hardening, R1-R5): route
-  gains `harness_adapters.py` (the one per-harness delivery adapter interface — claude-code, codex,
-  generic fallback) and `injector.py` (the ONE delivery path, `deliver(row) -> {acked, landed-
-  unacked, blocked(reason), failed(reason)}`). `inbox_delivery.py::deliver_inbox_entry` and
-  `mcp/tools/terminal.py::_deliver_spawn_pastes` (the spawn-brief path) both now route through
-  `injector.deliver` instead of calling `terminal_paste.TerminalPaster.paste` directly — the
-  raw-spawn seam's separate delivery loop is retired into the same path the inbox/supervisor side
-  already used. `pane_signals.py` gained `_HARNESS_BLOCKED_PATTERNS["codex"]` (issue #20 quota/
-  rate-limit modal markers), `blocked_reason_label`, and `composer_state`; `turn_state.py` gained
-  `boot_ready`. `TerminalPaster`/`terminal_paste.py` and `InboxDeliveryState`'s four existing values
-  are UNCHANGED (a `blocked` outcome rides as a `NEEDS-ATTENTION:`-prefixed `deliveryDetail` string,
-  a deliberate scoping decision to keep this leaf off the dashboard type and `inbox_backoff.py`).
-  Every pre-existing test in `test_terminal_paste.py`, `test_pane_signals.py`, `test_supervisor.py`,
-  `test_terminal.py`, `test_spawn_agent_session.py`, and `test_operator_inbox.py` passes UNCHANGED.
-  Covered by two new suites: `test_harness_adapters.py` (per-harness fixtures: boot/ready/mid-turn/
-  chip-stacked/quota-modal for both harnesses) and `test_injector.py` (every `DeliveryOutcome`
-  branch + an end-to-end injection test against a scripted in-memory tmux pane). Verification
-  metadata pinned until closeout stamps the 260707-HFX2-L3 commit.
-
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep + predicates, R1-R6):
-  route gains `supervisor.py` (the deterministic sweep — five R2 predicate families, R4 action
-  dispatcher, `run_agent_notifier_sweep`), `pane_signals.py` (the R2a pane-state classifier), and
-  `supervisor_heartbeat.py` (the R5 self-liveness store). `app.py` gains a third lifespan task
-  (`supervisor_loop`, following the `metrics_loop` template) and `supervisorHeartbeat` on
-  `/api/state`/the SSE snapshot. Gives `missing_artifact()` its first caller and reserves the
-  `mark_missed`/`mark_escalated` transitions for HFX2-L4's ladder. Covered by
-  `test_pane_signals.py` (8 tests) and `test_supervisor.py` (16 tests, including one seeded-drift
-  sweep integration test). Verification metadata pinned until closeout stamps the 260707-HFX2-L2
-  commit.
-
-- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 route impact (release-tail supervisor fix): the route's
-  existing `supervisor.py` path now defers generic unacked escalation for `"no-hosted-session"` and
-  `"unconfirmed"` delivery-failure rows until `PERSISTENT_FAILURE_ATTEMPTS` or an explicit
-  `escalatedAt` handoff. No new predicate family, lifespan task, setting, or inbox kind; this is a
-  liveness-contract fix inside `evaluate_escalation_findings`, covered by the existing HFX2-L5
-  liveness simulations.
-
-- 2026-07-08T02:55+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
-  turn-state, issues #12/#4): route gains `retire_policy.py` (server-side retire authority policy),
-  `retire.py` (shared retire mechanics), `turn_state.py` (marker-based live turn-state classifier),
-  and `seat_events.py` (observer event emitters); `app.py` gains `POST /api/terminal/{session}/retire`
-  and `POST /api/terminal/{session}/rename`; `terminal_catalog.py` gains retirement provenance +
-  `spawned_label` + `turn_state`/`turn_state_changed_at` columns and their copiers/write-points;
-  `terminal_liveness.py` folds turn-state classification into the existing alive-probe sweep (no new
-  hot loop) and gains an `on_turn_state_change` callback; `terminal_paste.py` gains the public
-  `capture_pane` wrapper reused by the classifier. Covered by `test_seat_lifecycle.py` (45 tests / 5
-  subtests). R2 fix round (F1, `controllers/worktree_tools.py`) widened the auto-retire completion-edge
-  guard to the whole retire body so a catalog I/O fault can never fail an already-succeeded
-  integrate/finalize — see that file's own sidecar for detail (out of this route's file list).
-  Verification metadata pinned until closeout stamps the HFX-L8 commit.
-
-- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `app.py`'s metrics sampling loop
-  now also calls `await asyncio.to_thread(evaluate_provider_degradation, config)` right after
-  recording the metrics snapshot, sharing the loop's existing exception-tolerant handling and 30s
-  cadence — no new task, no new endpoint. The detector's own behavior (state machine, durable
-  events, inbox alerts, critical failsafe) is owned by `providers/degradation.py` under the `mcp/`
-  package overview, not this route. Verification metadata pinned until closeout stamps the
-  HFX-L7 commit.
-
-- 2026-07-07T23:45+02:00 — 260707-HFX-L5 route impact (catalog liveness hysteresis): the route
-  gains `terminal_liveness.py` — `TerminalCatalogLivenessSweeper` (rate-limited 10s, non-overlapping;
-  rate-limited/concurrent callers get the persisted catalog without probing) +
-  `observe_terminal_liveness`, the shared observation path behind `GET /api/terminal/sessions`,
-  WebSocket attach, and `/paste` (all on the app's ONE injected clock). `terminal.py`'s probe is now
-  evidence-bearing and stderr-aware (`TmuxProbeResult`; only explicit missing-session stderr ⇒
-  definitive `pane-gone`, everything else ⇒ transient `tmux-command-failed`), and
-  `terminal_catalog.py` persists the hysteresis state (`livenessFailures`/timestamps/evidence +
-  `exitEvidence`) with `record_liveness_probe` + the success/failure transition copiers — a tmux
-  command-failure storm can no longer mass-exit the fleet, false exits self-heal within one sweep,
-  and `app.py`'s `_refresh_catalog_entries` is deleted. Covered by `test_terminal_liveness.py`.
-  Verification metadata pinned until closeout stamps the HFX-L5 commit.
-
-- 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: terminal opener and attach-leaf routes now
-  normalize accepted leaf refs to canonical qualified task-doc ids before catalog mutation and return
-  `400 leaf-ref-not-found` / `400 leaf-ref-ambiguous` before any mutation on invalid refs; added
-  `leaf_ref_validation.py` as the serving adapter. Verification metadata pinned until closeout stamps the
-  260707-HFX-L4 commit.
-
-- 2026-07-07T22:15+02:00 — 260707-HFX-L3 route impact (capture-verified delivery):
-  `terminal_paste.py` reports delivery only after pane capture-verification against ONE
-  pre-delivery origin baseline (both harness chip vocabularies; re-capture before any re-paste, so
-  duplicate stacking is impossible; payload via stdin `load-buffer`; Escape refused, only Enter);
-  failures are loud — `PasteResult.capture` rides the spawn tool's `deliveryCapture`, the `/paste`
-  endpoint's unconfirmed `capture`, and the inbox push's bounded capture-tail `deliveryDetail`
-  (`inbox_delivery.py`); `app.py`'s paste route is the same paster mechanic, no separate path.
-  Verification metadata pinned until closeout stamps the HFX-L3 commit.
-
-- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 5 adds the shared
-  `scope.decode_capped` codepoint-boundary read cap and wires it through `notes.read_note` /
-  `files.read_file` + `_onboarding_doc_body` — an oversize file whose multi-byte char straddles the
-  2-MiB cap now returns its first ~2 MiB with `truncated:true` instead of empty `binary`; the serving
-  route model this overview describes is unchanged (detail in the file sidecars).
-  (Stamp is part of the known pre-L2 timestamp-rot corpus condition — the entry predates the
-  16:50 one below despite its stamp; MHR-L2 owns the forensic restamp.)
-
-- 2026-07-07T16:50+02:00 — 260707-HFX-L1 route impact (containment R4): `app.py`'s lifespan now
-  runs the provider metrics sampling task beside the projector — `sample_provider_containers` →
-  `ProviderMetricsStore.record` every 30s (decoupled from the projection tick),
-  exception-tolerant, cancelled at shutdown — making the serving daemon the central containment
-  sampler feeding `provider_status`, the statistics board, and the HFX-L7 degradation protocol.
-  Verification metadata pinned until closeout stamps the HFX-L1 commit.
-
-- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `harnesses.py` grew the per-harness
-  knob→flag mapping (two-vehicle claude effort vocabulary incl. session-level `ultracode`),
-  effective-registry lookups, and the dispatch refusal helpers; `terminal_opener.py` applies the
-  env-riding knobs onto the harness argv at launch resolution (validating effort/model, appending
-  verbatim `launch_args`) and records the free-form + level spawn provenance on the catalog row;
-  `terminal_catalog.py` carries the five new optional provenance columns; `app.py`'s
-  `GET /api/harnesses` + open route resolve against the effective GLOBAL registry. Route relations
-  unchanged (one opener, no parallel spawn path). Verification metadata pinned until closeout
-  stamps the L16 commit.
-
-- 2026-07-07T05:36+02:00 — 260703-L15 route impact (the change gate + the build stamp): `delta.py`
-  compares stable forms (`VOLATILE_AGE_FIELDS` stripped; volatile-only ticks emit nothing —
-  measured ~780 KB/tick → 0), `projector.py` caches the stable form per tick, publishes
-  `(seq, projection)` atomically and exposes `revision(seq)` (boot nonce + content seq),
-  `app.py`'s `/api/state` honors `If-None-Match` → 304 under a weak ETag and carries
-  `servingBuild`, and NEW `build_info.py` resolves the boot-time serving stamp (version +
-  best-effort short-hash + boot time) the SSE snapshot also carries. Updated the
-  `app.py`/`projector.py`/`delta.py` Route Model bullets and added the `build_info.py` bullet.
-  Verification metadata pinned until closeout stamps the L15 commit.
-
-- 2026-07-06T23:59:54+02:00 — L14 review follow-up (L14R-3): the catalog column census now names `spawn_role`/`spawnRole` in both places (columns sentence + sessions-wire sentence) — a body edit, superseding the attestation-only entry. Verification metadata pinned until closeout stamps the L14 commit.
-
-- 2026-07-06T23:59:24+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: `terminal_catalog.py` gained the migration-safe `spawn_role` column (JSON `spawnRole`) and `terminal_opener.py` records `env["AR_SPAWN_ROLE"]` onto the row at first spawn (write-once, preserved across a role-less re-open) — the Chats command-tree grouping key; the sessions listing exposes it automatically via `entry.to_json()`. Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-06T09:30+02:00 — L9 adversarial-review follow-up (L9R-1): both the notes and files status mappers now map ValueError (null-byte paths) to 400 bad-path; regression tests in both suites. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-07-06T03:30+02:00 — No route impact: 260703-L11's additive `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags pass through the serving layer unchanged (booleans are never `exclude_none`-dropped); `test_serving.py` re-run green with no serving-code change.
-- 2026-07-06T01:40+02:00 — agent-orchestration L9 route impact: the route gains `notes.py`, the
-  read-only coordination-notes API (`GET /api/notes/{list,read}` confined to
-  `tasks/<repo>/<master>/notes/` via allow-list + single-segment master + `confine_rel`; missing
-  folder → empty list; depth-capped honest listing; binary-tolerant size-capped reads), registered
-  in `app.py` between the change-set routes and the static mount. Closes friction F-M (the notes
-  tree had no dashboard surface). Verification metadata pinned until closeout stamps the L9 commit.
-
-- 2026-07-04T23:43+02:00 — L8 route impact: `changeset.py`'s master net routes now resolve the series tip as the contract work branch while it exists, falling back to the source branch after landing/deletion; `/api/changeset/master` counters and `/api/changeset/file-diff?master=...` content share that resolver for code and memory. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-04T12:31+02:00 - L3 route impact: `/api/operator-inbox` now accepts
-  agent-role/message/artifact metadata, attempts hosted push through
-  `inbox_delivery.py`, and `terminal_paste.py` confirms delivery only on a real
-  pasted draft/chip echo across the boot window. Verification metadata pinned
-  until closeout stamps the L3 commit.
-
-- 2026-07-04T11:10+02:00 — agent-orchestration L2 route impact: the route gains `terminal_opener.py`
-  (the shared hosted-session opener extracted from `app.py`'s inline opener handler — leaf claim +
-  env-seeded tmux ensure + catalog upsert; `resolve_terminal_launch`/`_terminal_label`/the role-scoped
-  conflict check moved here) and `terminal_paste.py` (the server-side echo-confirmed stdin paste mirror
-  of the frontend). `app.py`'s `POST /api/terminal/{session}` opener now delegates to the shared opener
-  (so it and the `spawn_agent_session` MCP tool share ONE spawn path) and gains `POST
-  /api/terminal/{session}/paste` + a `terminal_paster` `create_app` param; `terminal.py` gains the `env`
-  knob-injection seam (`tmux new-session -e`); `terminal_catalog.py` gains spawned-by provenance columns
-  (via `dataclasses.replace` copiers). Covered by `test_terminal_opener.py`, `test_terminal_paste.py`,
-  `test_spawn_agent_session.py`. Verification metadata pinned until closeout stamps the L2 commit.
-  (Distinct from the 260703-L2 daemon-supervision entry below.)
-
-- 2026-07-03T12:57+02:00 — 260703 L2 route impact: the route gains `daemon.py` — the dashboard
-  daemon supervisor (flock-guarded ensure: adopt/spawn/restart-on-mismatch; atomic `daemon.json`;
-  identity-checked liveness; TERM→KILL stop; the threaded `maybe_autostart_dashboard` MCP boot
-  hook). Covered by `mcp/tests/test_dashboard_daemon.py`. Verification metadata pinned until
-  closeout stamps the code commit.
-
-- 2026-07-03T12:50+02:00 — No route impact: L15 changed only pyright-visible narrowing inside changeset.py; the serving surface and behavior are unchanged.
-- 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape route impact: `terminal.py`'s `write_session`
-  now cancels tmux copy-mode (new injectable `TmuxModeCanceller`, `tmux send-keys -X cancel` default)
-  on the first typed input after mouse-report traffic, because copy-mode captures the keyboard and
-  scrolled-up non-mouse panes swallowed typing until scrolled back to the bottom. At most one cancel
-  per scroll-then-type cycle; mouse-aware panes never trigger it. Verification metadata pinned until
-  closeout stamps the follow-up commit.
-
-- 2026-07-02T17:04+02:00 — L9 route impact: added `terminal_leaf_assignment.py` and made
-  `app.py`'s existing `attach-leaf` route a move/reassign route over the shared helper. The route now
-  shares server-authoritative catalog conflict handling with the agent-facing MCP tool and preserves
-  `leaf-taken` no-mutation semantics. Verification metadata pinned until closeout stamps the L9 commit.
-
-- 2026-07-02T16:35+02:00 — Reopened L6 wheel fix route impact: `terminal.py` gained the injectable
-  `TmuxConfigurer` seam (default `_tmux_enable_mouse`: per-session `tmux set-option mouse on`, failures
-  suppressed, DEVNULL hygiene), asserted by `ensure` after create/probe and by every `attach`. Browser
-  wheel input now reaches tmux as mouse reports, scrolling pane history for normal-buffer TUIs and
-  passing through to mouse-aware TUIs; pane text selection becomes Shift+drag. Verification metadata
-  pinned until closeout stamps the follow-up commit.
-
-- 2026-06-30T00:00:00+02:00 — L5 follow-up route impact: leaf uniqueness is now per **(leaf, role)**. `terminal_catalog.py`
-  gained `TerminalSessionRole` / `role_for_kind` / `entry.role` and a role kwarg on `active_for_leaf`; in
-  `app.py` `_claim_leaf_or_409` is role-aware — the opener passes `role_for_kind(kind)` and `attach-leaf`
-  passes `entry.role`, so a terminal can sit beside the leaf's agent chat (no 409) while a second chat or
-  terminal still 409s. Updated the `app.py` opener/attach-leaf + `terminal_catalog.py` Route Model bullets.
-  Verification metadata pinned until closeout stamps the L5 commit.
-
-- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat) route impact: `app.py` gained the leaf→chat registry routes — the
-  opener now takes a `leafKey`, claims the leaf via `_claim_leaf_or_409` (`409 leaf-taken`, running-only),
-  persists + echoes it, and a new `POST /api/terminal/{session}/attach-leaf` claims a leaf for an existing
-  session (`404` unknown/terminated). `terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
-  (migration-safe `to_json`), `with_leaf_key`, and `active_for_leaf` (running-only single-owner lookup).
-  Updated the `app.py` + `terminal_catalog.py` Route Model bullets. Verification metadata pinned until
-  closeout stamps the L5 commit.
-
-- 2026-06-29T23:00+02:00 — operations-integration L4a route impact: `changeset.py`'s `task` + `file-diff`
-  routes gained a `leaf` + `mode` selector (precedence `leaf > master > scope`) for the doc-reader leaf
-  views — `committed` (`base → code_commit`) / `working` (`HEAD → worktree`), resolved by leaf-id off the
-  persisted enclosure contract (works with no live worktree), with selector validation (400/404). Updated
-  the `changeset.py` Route Model bullet. Verification metadata pinned until closeout stamps the L4a commit.
-
-- 2026-06-29T17:00+02:00 — operations-integration L4 follow-up route impact: `changeset.py`'s `master`
-  endpoint is now the **NET** series diff (`git diff <master-base> <series-tip>` for code + memory, per-file
-  inspectable) rather than the sum-of-leaves, and `/api/changeset/file-diff` gained an optional `master`
-  param (the series net file-diff). Updated the `changeset.py` Route Model bullet. Verification metadata
-  pinned until closeout stamps the L4 follow-up commit.
-
-- 2026-06-29T15:30+02:00 — operations-integration L3 route impact: added `scope.py` (the shared browse-scope layer extracted from `files.py` — `FileScope`/`resolve_scope`/`run_scoped`/`language_for`/active-enclosure enumeration) and `changeset.py` (the read-only `GET /api/changeset/{task,file-diff,master}` change-set API: per-task `base → current` code+memory counts + status + `hasSidecar`, BEFORE/AFTER file content for the L4 MergeView, and master accumulation) to the Route Model, both registered before the static mount; `files.py` now shares `scope.py`. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
-- 2026-06-28T22:41+02:00 — operations-integration L1 route impact: added `files.py` (the read-only `GET /api/files/{repos,list,read,onboarding}` files API) to the Route Model — the first serving module to bridge to the kernel `CoordinationContext`, registered before the static mount. Verification metadata pinned until closeout stamps the L1 code commit.
-- 2026-06-28T13:54+02:00 — Task 34 route impact: the raw `/api/events` channel (`events.py`) now does
-  **one** retained-backlog scan per connect, streams that bounded backlog in **chunks** instead of
-  materializing the whole history, **filters `lifecycle.heartbeat`** out of the river, and prunes expired
-  logs on a slow cadence. Updated the `events.py` Route Model bullet, the Hot Path Summary, and the
-  two-resume-models invariant. Verification metadata pinned until closeout stamps the task-34 code commit.
-
-- 2026-06-28T07:45+02:00 — Task 33 route impact: `delta.py` now emits an `activeWorktreeGroups` whole-value
-  delta (wrapped `{"activeWorktreeGroups": [...]}`) when the set changes. Verification metadata pinned
-  until closeout stamps the code commit.
-
-- 2026-06-28T07:43+02:00 — Task 29 S7 route impact: raw `/api/events` now emits a one-shot `ready`
-  event after retained backlog replay, and `/api/actions/dismiss` accepts targetless actionable-drift
-  acknowledgements while keeping provider/gate dismissals scoped. Verification metadata pinned until
-  closeout stamps the task-29 code commit.
-
-- 2026-06-28T06:08+02:00 — Task 29 route impact: the raw `GET /api/events` channel now applies
-  lifecycle-aware backend retention on fresh connections through `observer.event_retention`.
-  Terminal lifecycle logs are pruned after the grace window, workspace/lifecycle-less rows are
-  age-bounded, active lifecycle histories remain uncapped, and valid `Last-Event-ID` cursors retain
-  exact byte-offset resume. Verification metadata pinned until closeout stamps the task-29 code
-  commit.
-
-- 2026-06-28T03:21+02:00 — Task 31 route impact: live `create_app` installs a `ProviderStateRefresher`
-  into `Projector` so each projection tick can refresh provider current-state before diffing and serving
-  the snapshot; sim mode disables that refresher and continues to replay fixture provider state. Detail
-  lives in the `app.py`, `projector.py`, and serving-test sidecars. Verification metadata pinned until
-  closeout stamps the task-31 code commit.
-
-- 2026-06-27T18:43+02:00 — No route impact: terminal.py added stdin=subprocess.DEVNULL on its 3 tmux subprocess.run sites (#49 stdio-pipe guard) — behavior-preserving hygiene; no change to serving architecture or surfaces.
-- 2026-06-27T02:28+02:00 — Task 22 follow-up: the terminal opener now uses
-  `TerminalHost.ensure` to create a detached tmux session instead of opening and closing a starter PTY
-  client. This fixes new chats immediately becoming `exited` while preserving per-tab attach.
-
-- 2026-06-27T01:25+02:00 — Task 22 follow-up: terminal WebSockets now attach independent
-  `TerminalHost.attach` clients to the same durable tmux session, and the opener detaches its starter
-  client after catalog persistence. This fixes multi-tab sharing without competing reads on one PTY fd.
-
-- 2026-06-27T00:45+02:00 — Task 22 follow-up: WebSocket disconnect now detaches the local PTY client
-  without ending the durable tmux/catalog row, fixing blank terminal rehydrate after browser refresh.
-
-- 2026-06-27T00:25+02:00 — Task 22 follow-up: terminal catalog termination is now sticky against later
-  WebSocket/PTY exit bookkeeping, so the `End` button cannot leave a row visible after refresh.
-
-- 2026-06-26T23:05+02:00 — Task 22: added `terminal_catalog.py` and documented the durable terminal
-  session flow across serving: opener persistence, `/api/terminal/sessions`, WebSocket rehydrate with
-  tmux probe, explicit terminate, and catalog-backed image upload after restart. Verification metadata
-  pinned until closeout stamps the task-22 code commit.
-
-- 2026-06-25T14:02+02:00 — Task 24 reopened: serving actions now support gate-id-only cancel for stale workspace gates while keeping approve/reject/revision lifecycle-targeted.
-- 2026-06-25T13:20+02:00 — Task 23/24: serving route now includes the operator-inbox dismiss endpoint used to delete stale pickup warnings.
-- 2026-06-25T07:26+02:00 — Task 19: `/api/actions/{approve,reject}` now accepts targeted `gateId` and
-  optional `note`, rejects blank No/reject reasons, maps stale targeted gate ids to `409 stale-gate`,
-  and leaves `/api/operator-inbox` as the message-only Chat path. Verification metadata pinned until
-  closeout stamps the code commit.
-
-- 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: documented `POST /api/operator-inbox` as the serving-layer write side for external-chat responses, routing to `operator_inbox_post_payload` with developer/dashboard attribution when the frontend has no hosted session to inject into. Verification metadata pinned until closeout stamps the task-10 code commit.
-- 2026-06-19T20:30 — Task 6 slice 6f: `app.py` gained `POST /api/terminal/{session}/image` (save a validated screenshot under `<cwd>/.dashboard-pastes/` for path-injection) and now opens harnesses `suspend_unsafe`; `terminal.py`'s `write` strips Ctrl-Z (`0x1a`) for suspend-unsafe (bare-pane harness) sessions only — a shell keeps job control. Updated the `app.py`/`terminal.py` Route Model bullets. Verification metadata pinned until closeout stamps the 6f code commit.
-- 2026-06-19T14:05+02:00 — Task 6 slice 6e-4: `terminal.py`'s `_spawn_pty` now gives the child a controlling terminal via `os.login_tty` (`preexec_fn`, setsid + `TIOCSCTTY`) + a seeded default winsize, so tmux honors browser resizes instead of staying at 80×24; the explicit `stdin/stdout/stderr=slave` keeps the child off the MCP stdio pipe (GitHub #49). Updated the `terminal.py` Route Model bullet. Verification metadata pinned until closeout stamps the 6e-4 code commit.
-- 2026-06-18T21:27+02:00 — Task 6 slice 6e-2b: added `harnesses.py` (the curated harness launch registry — Claude Code/Codex/Pi.dev + `shutil.which` detection) to the Route Model; `app.py` gained `GET /api/harnesses` (`detect_harnesses()`) and a `kind="harness"` opener branch (`resolve_terminal_launch` resolves the registry argv; absent/unknown/not-installed ⇒ 400). Updated Purpose + the `app.py` Route Model bullet. Verification metadata pinned until closeout stamps the 6e-2b code commit.
-- 2026-06-18T17:40+02:00 — Task 6 slice 6e-2a: `app.py` gained the `POST /api/terminal/{session}` **opener** — the dashboard spawns + owns a session (`TerminalOpenRequest` `kind` → the pure `resolve_terminal_launch` → `host.open(cwd=config.workspace_root, command=[$SHELL])`; server-resolved command, unknown kind ⇒ 400), so the WebSocket has a real session to attach to. Updated the `app.py` Route Model bullet. Verification metadata pinned until closeout stamps the 6e-2a code commit.
-- 2026-06-18T16:10+02:00 — Task 6 slice 6d-2: `app.py` gained the `@app.websocket("/api/terminal/{session}")` Mode B2 bridge (attach to the `TerminalHost` or `close(4404)`; PTY output via `loop.add_reader` → binary frames; JSON `stdin`/`resize` in via the pure `_apply_terminal_input`; `{type:exit}` on child exit; tmux-persistent on disconnect) + the module-level bridge helpers + the `terminal_host` `create_app` param; `pyproject.toml` added the `websockets` core dep. Updated the `app.py`/`terminal.py` Route Model bullets + Hot Path + Purpose. Verification metadata pinned until closeout stamps the 6d-2 code commit.
-- 2026-06-18T15:40+02:00 — Task 6 slice 6d-1: added `terminal.py` (the Mode B2 terminal host — `TerminalHost` over tmux-wrapped stdlib-`pty` sessions, injectable spawn, fixed-argv/localhost posture) to the Route Model + Invariants; the WebSocket bridge + `websockets` dep are 6d-2, the xterm.js viewport 6e. Also corrected the stale "(inert) POST action return-channel" wording in Purpose (6b made gate decisions binding). Verification metadata pinned until closeout stamps the 6d-1 code commit.
-- 2026-06-18T12:10+02:00 — Task 6 slice 6b: the POST action plane became enforcing-adjacent — `actions.py`'s `evaluate_action` emits a `GateDecisionIntent` for gate-decision verbs and `app.py` records it as a developer/dashboard-attributed decision (`gate_decide_for_lifecycle`); lifecycle transitions stay the 4b no-mutation skeleton. Verification metadata pinned until closeout stamps the 6b code commit.
-- 2026-06-14T23:30+02:00 — Slice 05 (5c): `sim.py`'s `build_sim` materializes the fixture's structural surfaces into the sim root (`_materialize_surfaces`); `events.py` single-encodes the raw channel (`stream_raw_events` emits `json.loads(line)`, matching `/api/stream`; was double-encoded). Verification metadata pinned until closeout stamps the 5c code commit.
-- 2026-06-14T11:30+02:00 — Updated for slice 04 commit 4b: added `events.py` (raw `event`
-  channel + byte-offset resume), `sim.py` (replay clock + feeder over the projector seams), and
-  `actions.py` (the POST action skeleton) to the Route Model; `app.py` now carries
-  `GET /api/events` + `POST /api/actions/{action}` and `projector.py` the `now`/`before_tick`
-  seams. Verification metadata pinned until closeout stamps the 4b code commit.
-
-- 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the dashboard serving spine
-  (`app.py`, `projector.py`, `delta.py`, `static.py`) over the observer read side — one
-  shared projector, snapshot + per-entity SSE deltas, the static mount, localhost posture.
-  The raw `event` channel, sim mode, and the POST action skeleton land in 4b. Verification
-  metadata pinned until closeout stamps the 4a code commit.
-
-### 260713-PHA-L6 Reload Boundary
-
-The serving cutover is shared by the dashboard daemon, MCP-owning clients, bridge-backed session
-runners/adapters, and browser tabs; reloading only the dashboard can leave in-memory inbox/catalog
-schemas incompatible with durable rows. This is an operational contract, not a resource-polling
-change.
+- **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** [59]
+- **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** [60]
+- **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** [61]
+- **The nine cases that measure this route's half of the change, through real contracts, repos and routes.** [62]
 
 ## 260921-ICR-L2 The Review Route Admits "No Selector At All"
 
@@ -2564,13 +1538,11 @@ omit both, and `offendingInput` falls back to whichever of the two was supplied,
 still reported with the value that was wrong. Nothing else on the route moved: the two port fields, the
 unwired `503`/refusal answers, the status mapping and the serializer are unchanged.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** | `review_request_from_query`; `ReviewSurfaceRequest` |mcp/src/agents_remember/serving/review.py:294-327; mcp/src/agents_remember/models/knowledge/review.py:262-324|
-| **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** | `register_review_routes`; `api_review_intent` |mcp/src/agents_remember/serving/review.py:661-709; mcp/src/agents_remember/serving/review.py:627-709|
-| The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). | `_status_for`; `_json` |mcp/src/agents_remember/serving/review.py:712-717; mcp/src/agents_remember/serving/review.py:607-624|
-| **The composition the task-context answer reaches, which is where the complete inventory is measured.** | `compose_review`; `task_context_review` | mcp/src/agents_remember/application/knowledge_review.py:335-577; mcp/src/agents_remember/application/review_task_context.py:93-191 |
-| **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds`; `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all` |mcp/tests/test_knowledge_review_source_endpoints.py:829-905; mcp/tests/test_knowledge_review_resolution_and_route.py:285-303|
+- **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** [63]
+- **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** [64]
+- The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). [65]
+- **The composition the task-context answer reaches, which is where the complete inventory is measured.** [66]
+- **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** [67]
 
 ## 260921-ICR-L3 The Reviewer Gains Its Expansion Route, And The Inventory Rows Open Into Their Bound Content
 
@@ -2610,20 +1582,18 @@ application owner, its vocabulary and the dashboard renderer are on their own ro
 (`mcp/src/agents_remember/application/overview.md`, `mcp/src/agents_remember/models/overview.md`,
 `dashboard/src/panels/overview.md`); this section records only what the serving route model gained.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` |mcp/src/agents_remember/serving/review.py:96-96|
-| **The expansion's whole selector as one value: the task context, the entry path, and both camel-case tree ids, which travel together because any one alone selects nothing.** | `SourceContentRef`; `before_code_tree_id` |mcp/src/agents_remember/serving/review.py:215-215; mcp/src/agents_remember/serving/review.py:199-216|
-| **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** | `source_content_request_from_query` |mcp/src/agents_remember/serving/review.py:584-604|
-| **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` |mcp/src/agents_remember/serving/review.py:720-738; mcp/src/agents_remember/serving/review.py:657-659|
-| **The expansion route's own unwired answer: "not served rather than served as an empty file".** | `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:129-138|
-| **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** | `ReviewSourceContentPort`; `review_source_content` | mcp/src/agents_remember/serving/review.py:83-83; mcp/src/agents_remember/serving/_app_common.py:484-484 |
-| **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** | `_status_for`; `source_content_unresolved` |mcp/src/agents_remember/serving/review.py:607-624; mcp/src/agents_remember/models/knowledge/review.py:151-160|
-| The `400` body for a query that did not name the generation whole, and the exact expected set it names. | `_incomplete_generation` |mcp/src/agents_remember/serving/review.py:741-757|
-| The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:297-303 |
-| **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** | `review_source_content_port`; `read_review_source_content` | mcp/src/agents_remember/cli/dashboard.py:123-133; mcp/src/agents_remember/cli/dashboard.py:85-85 |
-| **The application owner behind the port: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** | `read_review_source_content`; `admit_source_path` | mcp/src/agents_remember/application/review_source_content.py:110-131; mcp/src/agents_remember/application/review_source_admission.py:86-128 |
-| **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set` | mcp/tests/test_knowledge_review_source_content.py:773-795; mcp/tests/test_knowledge_review_source_content.py:798-821; mcp/tests/test_knowledge_review_source_content.py:641-676 |
+- **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** [68]
+- **The expansion's whole selector as one value: the task context, the entry path, and both camel-case tree ids, which travel together because any one alone selects nothing.** [69]
+- **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** [70]
+- **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** [71]
+- **The expansion route's own unwired answer: "not served rather than served as an empty file".** [72]
+- **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** [73]
+- **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** [74]
+- The `400` body for a query that did not name the generation whole, and the exact expected set it names. [75]
+- The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount. [76]
+- **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.** [77]
+- **The application owner behind the port: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [78]
+- **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** [79]
 
 ## 260921-ICR-L16 One 400/404 Mapping In The Review Transport, And Two Bodies That Now Carry An Action
 
@@ -2647,17 +1617,10 @@ Rank is unchanged and is still the reason for the port indirection — `serving`
 `application`, so an injected port remains the only way this module reaches an answer, and an injected port
 is therefore how a test reaches the mapping at all.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The one mapping and the one body builder: the `400`/`404` idiom cannot differ between the two adapters.** | `_port_outcome`; `_transport_refusal` | mcp/src/agents_remember/serving/review.py:155-167; mcp/src/agents_remember/serving/review.py:170-196 |
-| **The two actions the bodies gained, and where they are named.** | `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` |mcp/src/agents_remember/serving/review.py:149-152; mcp/src/agents_remember/serving/review.py:145-148|
-| The expansion read's whole transport, whose docstring now states the shared mapping. | `_source_content_response` |mcp/src/agents_remember/serving/review.py:720-738|
-| The published surface, unchanged: the three route constants, the three ports and the two parsers. | `__all__`; `SourceContentRef` |mcp/src/agents_remember/serving/review.py:53-73; mcp/src/agents_remember/serving/review.py:199-216|
-
-## Update History
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The section above records the review transport's single change on this route: one `_port_outcome` mapping and one `_transport_refusal` body builder reached by both adapters, with the two bodies that published only their message now carrying the action their failure implies (and the offending path for `not-found`). It also records that nothing was removed — no route, status, key or model — and that the port indirection's reason (rank) is unchanged. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
-- 2026-09-21T23:05:00+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, code base `d80a0513`): **route body updated, the L45 section's counts superseded in place, and one sentence of this route model corrected rather than extended.** The reviewer surface gained a third GET route (`/api/review/intent/source-content`), a third port (`ReviewSourceContentPort`, its own field on `ServingCollaborators`) and a third entry in the route inventory table; the new section at the end of this narrative records the split's reason (a payload carrying every changed file's text would be a document dump), the corrected boundary (**this is the one review route that accepts a path, and it is a repository-relative entry path read only from a measured change set — never a filesystem path and never a root**), and the refusal shape (`_UNWIRED_SOURCE_CONTENT` refuses an unwired process as "not served rather than served as an empty file", and the expansion's `source_content_unresolved` reaches `400` through the same fall-through as `comparison_refused`). The L45 heading keeps its historical wording and its section now opens by naming the superseded count, because two of its sentences ("two GET routes", "accepts no path on either route", "takes both ports") had become false. **Citation accounting:** every row this document carries into `serving/review.py` was re-derived against the candidate — that file grew 223 → 349 lines, so the L45 table's rows (`146-190`/`137-143`/`68-80`/`54-58`/`60-63`/`83-99`/`125-140`/`120-136`/`66`) and the L22 table's rows (`146`/`63`/`83`/`102-117`/`120`) were re-pointed to the extents they occupy now (`249-298`/`236-243`/`85-111`/`63-67`/`76-79`/`134-173`/`199-216`/`219-247`/`82-83`), and three rows were added for the new route's own constructs. No claim was dropped to silence a finding, and none was invented. **No verification stamp was advanced** — the candidate is uncommitted, and the governed closeout owns the real stamp.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The review route now admits a third answer — omitting **both** selector parameters — which is the task context, and its `400` body names that option while still reporting a half-named selector with the value that was wrong. The section is appended at the end of this route's narrative; the rows above were derived against the candidate, and the five rows of this route that cited `serving/review.py` by line were re-derived in the same pass because the file grew by 30 lines above the registrar. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
+- **The one mapping and the one body builder: the `400`/`404` idiom cannot differ between the two adapters.** [80]
+- **The two actions the bodies gained, and where they are named.** [81]
+- The expansion read's whole transport, whose docstring now states the shared mapping. [82]
+- The published surface, unchanged: the three route constants, the three ports and the two parsers. [83]
 
 ## 260921-ICR-L10 The Route Admits The Page In Its Own Vocabulary, And Names The Input Each Refusal Is About
 
@@ -2676,10 +1639,6 @@ input, not silently routed to an owner.
 
 The route remains transport-only: it reaches every answer through its port, so the page it publishes is
 the composition's page and never one this layer built.
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-23T00:20:00+02:00 — 260921-ICR-L10 curator (candidate `ar/260921-icr-l10`, uncommitted; base `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`): **route body updated.** **the route admits the page in its own vocabulary and names the input each refusal is about.** `serving/review.py` gained `ReviewPagingRef`/`ReviewSelectorRef` (with `NO_PAGING`/`NO_SELECTOR`), `AdmittedPaging`/`UnadmittedReviewQuery`, `paged_review_request` and `_admitted_paging`, so an out-of-range page size is this route's own `400` naming the value and the maximum instead of an uncaught request-model error, and a refused cursor names the input that failed. Existing rows that cited `serving/review.py` were re-derived against this candidate. No verification stamp was advanced: nothing in this leaf is committed, so the merge/commit stamp is closeout's.
 
 ## 260921-ICR-L12 The Route Admits One Historical Spelling And Packages The Question Whole
 
@@ -2702,15 +1661,6 @@ not declare, and the route's own comment records why that is correct rather than
 offered for a *leaf*, and a leaf whose enclosure is closed lists the subjects of the comparison its
 records hold — the one record a review of that leaf can be opened on.
 
-## Update History
-- 2026-09-23T04:31:21+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **route body updated for the review's record admission (ICR-R12@v1).** The section above records the
-one admitted historical form, the question ref that carries the subject and the record together, the
-by-name refusal of every other spelling, and why the entries route takes no record parameter.
-**Citation accounting:** every row on this overview that cited `serving/review.py` by line was
-re-derived against this candidate. **Stamp accounting:** no verification stamp was advanced — the header
-already names this leaf's base as the production line the reading was taken against, and nothing in
-this leaf is committed, so the governed closeout owns the real stamp.
-
 ## 260921-ICR-L17 The Review Route Admits The Previous Binding In Its Own Vocabulary
 
 `260921-ICR-L17` (`ICR-R17@v1`) gives the review route one more admitted query parameter and one more
@@ -2729,7 +1679,3 @@ admission step, and it keeps the transport's division of labour intact.
 - **The transport only checks shape.** It does not compare, resolve or repair the digest: whether it is
   the comparison that is there now is the owners' answer, and a digest that no longer matches is reported
   as `stale` rather than refused.
-
-
-## Update History
-- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the review route admits the previous binding identity in its own vocabulary (`ICR-R17@v1`).** `ReviewQuestionRef` gains `previousBindingDigest`; `_SHA256_DIGEST` compiles the models' pattern, `_admitted_binding_digest` collapses the empty spelling and refuses a non-digest by name, and `AdmittedQuestion`/`_admitted_question` answer for the record and the previous identity together. The transport checks shape only — a non-matching digest is `stale`, not refused. **Citation accounting:** the rows this leaf's insertions moved were re-derived from each construct's own declaration on the 757-line candidate — `__all__` `:53-73`, `SELECTOR_KINDS` `:106`, `KnowledgeReviewPort` `:108`, `KnowledgeReviewEntriesPort` `:109`, `api_review_intent_entries` `:645`, `api_review_intent_source_content` `:658`, `_source_content_response` `:720`, `register_review_routes` `:627`. **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.

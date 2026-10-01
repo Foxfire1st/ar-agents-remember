@@ -1,0 +1,96 @@
+{
+  "path": "dashboard/src/data/files.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stubs `fetch` and unstubs globals after each test.\n\nAnchor: `fetch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "content": "sha256:8baf9ce6b8bf1ff624304e033db61184ae1e35efc9441507d95dd85c129f0a1b",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Asserts the catalog / list / read / onboarding URLs (including `%2F` path encoding and `direction`).\n\nAnchor: `direction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "content": "sha256:e1b175c95c3dcf26d469a25b8faac337fae84dc61401497ab0eeaff1b425367b",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Asserts a non-ok response throws `FilesApiError`.\n\nAnchor: `FilesApiError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "content": "sha256:b91f6e64aace2b1ef31b03bf25ade6b48b454912a1e39bead293bf906501689e",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Subject under test: the helpers, result types, and `FilesApiError` mapping pinned here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f2483fc1ff117c7493520a2612b011566d4fd35",
+            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilesApiError"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Contract counterpart: the serving layer emits the 404/400 status codes this test stubs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5385539254cf5632e0a4fda5d1fbb1f808235d1b",
+            "content": "sha256:cf18e1b4612890662ae0cedcde62fdb7fd5948c9539a62b2526c69a1ea1f46c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_scoped"
+            },
+            "path": "mcp/src/agents_remember/serving/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "kind": "unresolved",
+          "text": "mcp/src/agents_remember/serving/scope.py:207-227"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

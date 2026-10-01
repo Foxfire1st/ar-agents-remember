@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Review source-content reads (/api/review/intent/source-content) of one leaf's review comparison, for a path its requested measured tree pair does not list as changed.",
+  "conditions": [
+    "The requested pair's change set was measured and does not list the path.",
+    "A realization claim in the before or after knowledge bound to that same comparison is anchored at exactly the requested spelling; in an index-backed (tree) comparison a proof entry anchored at exactly that spelling links the path as well, while a dataset snapshot records no proof entries.",
+    "Content is read only at the comparison's two requested tree ids, never from a working tree or HEAD."
+  ],
+  "exclusions": [
+    "Paths a measured change set lists (the changed admission is unaffected).",
+    "Pairs whose change set could not be measured.",
+    "Knowledge of any other comparison, leaf, master or published dataset."
+  ],
+  "id": "INV-9ECAFVTQ",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "fa28e9a2-8ba1-40ef-bda5-f38db16e4e23",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "The source-content read opens a path the requested pair's measured change set does not list only when a realization claim anchored at exactly that path -- or, in a tree comparison's derived index, a proof entry anchored at exactly that path -- is recorded in the before or after knowledge of the comparison that pair names, and states it as admission attributed_unchanged with status unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

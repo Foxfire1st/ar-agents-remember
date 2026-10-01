@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_leaf/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_leaf/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`|
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -45,7 +35,9 @@
 
 - **MIK-R05: resolved by 260928-MIK-L05.** Route-chain families (L01 ruling Q6, 2026-09-29 23:21:57) are now `chain_family` rows after the advertised frontier, and a path with no entry but a governing family is a page stating `registration_absent`. Only a path with no entry and no governing family is still refused `registration_absent` (ruling Q3, 2026-09-30 03:32:18).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R01@v2` of task
@@ -54,27 +46,15 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package statement: one seed path, the whole family neighbourhood, paged by the shared threshold. | "The family-complete leaf read of a converted memory tree" | mcp/src/agents_remember/application/knowledge_leaf/__init__.py:1-13 |
-| The re-exported surface, with the family seed's selection and the refusal's chain. | `prepare_leaf`; `select_leaf`; `select_family`; `absent_chain`; `family_names` | mcp/src/agents_remember/application/knowledge_leaf/__init__.py:17-39 |
+- The package statement: one seed path, the whole family neighbourhood, paged by the shared threshold. [1]
+- The re-exported surface, with the family seed's selection and the refusal's chain. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the package reads one memory tree's derived index.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): MIK-R05. The module map names `chain`; the family seed (ruling Q1, 2026-09-30 03:32:18) and the re-exports `select_family` and `absent_chain`; the carried MIK-R05 Todo is marked resolved (Q3 keeps the refusal for a path no route covers); the unconverted-read candidate invariant is restated for this leaf.
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): created this card for the new package MIK-R01 adds. It records the architect rulings of 2026-09-29 23:21:57 (Q6: route-chain families are MIK-R05's) and 2026-09-30 00:08:39 (N2: identity seeds keep the scope read). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

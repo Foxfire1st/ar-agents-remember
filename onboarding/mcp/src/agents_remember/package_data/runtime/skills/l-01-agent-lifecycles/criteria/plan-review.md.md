@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/criteria/plan-review.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-26T05:20+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -74,28 +64,24 @@ This criteria catalog supplies evidence only when the corresponding review is ex
 
 No external domain documentation applies to this repository-local catalog.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This package-data catalog copy defines the complete current plan-review floor, including effective-priority resolution and explicit-graph or graph-less topology review. | `# Criteria Catalog — Plan Review (the strategist loop)` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:1-140 |
-| Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. | "class SkillTarget" | scripts/sync-skills.py:27-27 |
-| The reviewer role binds `plan-review` with `report-verification` for orchestration-task plan reviews, and keeps the promotion ratchet as the catalog amendment path. | `## Promotion Ratchet`; "plan review (orchestration task)"; `report-verification` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:35-42; skills/l-01-agent-lifecycles/criteria/plan-review.md:129-140 |
-| The orchestration-task template requires cited shown work, one effective priority per candidate, an explicit topology choice, and complete graph bootstrap when a graph is adopted. | `# Orchestration-Task Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md:1-215 |
-| The strategist lifecycle produces the orchestration task and treats a persisted graph as optional while keeping topology reasoning mandatory. | `# Strategist`; "Planning is mandatory; a persisted graph is not"; "deliver the **orchestration task**" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:8-10; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:44-48 |
-| The shipped plan-review catalog now states the corrected graph-less rule instead of the removed source-pair exposure wording. | "proceed concurrently and no master is held because another is selected" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md:64-68 |
+### Repo-Internal References
 
-## Cross-Repo References
+- This package-data catalog copy defines the complete current plan-review floor, including effective-priority resolution and explicit-graph or graph-less topology review. [1]
+- Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. [2]
+- The reviewer role binds `plan-review` with `report-verification` for orchestration-task plan reviews, and keeps the promotion ratchet as the catalog amendment path. [3]
+- The orchestration-task template requires cited shown work, one effective priority per candidate, an explicit topology choice, and complete graph bootstrap when a graph is adopted. [4]
+- The strategist lifecycle produces the orchestration task and treats a persisted graph as optional while keeping topology reasoning mandatory. [5]
+- The shipped plan-review catalog now states the corrected graph-less rule instead of the removed source-pair exposure wording. [6]
+
+### Cross-Repo References
 
 No sibling repository evidence is needed for this catalog.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260815-DAG-L2 Plan Ownership And Traceability
 
@@ -163,65 +149,3 @@ returns 0 hits in the code worktree.
 ## CCR-L42 current candidate
 
 The plan-review criteria now apply exploratory and promotion duties only to a baseline review. Fix-verification uses the sealed plan issue IDs and cannot recensus the plan, add a criterion, or broaden an issue.
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `# Lifecycle — Adversarial Reviewer` repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:6-263. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `# Lifecycle — Strategist` repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md:6-197. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
-  shipped-source debt row and debt paragraph and replaced them with the corrected shipped range —
-  the catalog now says "nothing serializes the masters" and that a graph-less sprint "declares no
-  dependencies, so independent atomic masters proceed concurrently and no master is held because
-  another is selected" at `:64-68`, cited via a single-line anchor. Body prose now states the
-  developer ruling (nothing serializes a graph-less sprint; `atomic-sequential` is sprint shape, not
-  a serialization mechanism; per-contract activation is admission state, not dependency evidence and
-  serializes nothing across masters; only explicit `executionGraph` waves gate on
-  `predecessor-incomplete:`), and every other range was re-grepped and repointed to
-  `plan-review.md:1-140`, `reviewer.md:1-390`, `orchestration-task.md:1-215`, and
-  `strategist.md:1-263`. Source documentation only; verification metadata remains closeout-owned and
-  no acceptance or test claim is made.
-- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: rewrote PR-4's graph-less
-  guidance from source-pair activation exposing one master at a time to the per-contract activation
-  record — a sibling master sharing the protected source pair is never paused, replaced, or blocked,
-  and the only waiting reason is `atomic-series-reconciling` — and recorded the shipped-source debt
-  that the frozen mirrored plan-review catalog still states the removed source-pair rule at its own
-  `:66-67`, flagged for a future code leaf. That debt observation is superseded by the
-  260831-LOCR-L36 round-2 entry above: the shipped text is corrected and the debt note is removed.
-  Source documentation only; verification metadata remains
-  closeout-owned and no acceptance or test claim is made.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The plan-review criteria now apply exploratory and promotion duties only to a baseline review. Fix-verification uses the sealed plan issue IDs and cannot recensus the plan, add a criterion, or broaden an issue.
-
-- 2026-08-26T05:20+02:00 — Corrected generated PR-4 onboarding: graph-less selection is a
-  source-pair activation boundary, not a full-integration dependency. Final ranges remain
-  post-Dagger-owned.
-
-- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled one effective candidate priority,
-  portfolio-comparison ownership, reasoned graph-less planning, optional explicit graphs, and the
-  no-fabricated-example result. Canonical/generated sync is complete; Dagger acceptance remains
-  closeout-owned and pending.
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: PR-8 added — no plan self-review and requirement
-  verdicts must match their evidence class (mounted-UI / operation-level / artifact-level proof).
-  Verified at code commit de3a0fd9.
-
-- 2026-08-20T05:10+02:00 — 260815-DAG-L14: PR-4 extended to typed-row/graph agreement.
-  Verified at code commit 2f494982.
-
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: aligned plan-loop authority and added auditable
-  fact/judgment plus graph-edge traceability checks. Verification remains closeout-owned.
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
-  exact anchors (headings/class) and fixer-generated ranges; exact non-fixing check returns zero
-  findings.
-
-- 2026-07-09T10:40+02:00 — 260707-HFX2-L8: refreshed after synced PR-6 scaling &
-  reclamation at design time entered the plan-review candidate catalog, requiring plans to name
-  caps, budgets, compactor/reclamation owners, and scaling proof before code exists. Verification
-  metadata pinned until closeout stamps the HFX2-L8 commit.
-
-- 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `criteria/plan-review.md` catalog (leaf 260703-L12): PR-1 refute uncited edges, PR-2 missed-shared-surface hunt (incl. declared-new surfaces and parent-route CONFLICT risk), PR-3 blast-radius re-derivation via cgc, PR-4 order-respects-edges, PR-5 findings honesty — the fifth catalog, seeded by ruling for the strategist loop. Verification metadata pinned until closeout stamps the L12 commit.

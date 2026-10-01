@@ -1,14 +1,5 @@
 # w-02-light-task-workflow/SKILL.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-18T18:48+02:00                     |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-
 ## Purpose
 
 This skill defines `w-02-light-task-workflow` skill, the light durable task workflow for medium-risk or multi-step changes that need a task artifact; work that outgrows a single-page plan escalates to a master + light sub-task series rather than a separate heavy workflow.
@@ -37,54 +28,24 @@ No current todo is recorded for this workflow skill.
 
 No external domain documentation applies to this repository-local workflow skill.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 `w-02-light-task-workflow` skill is the approved workflow used by the preliminary onboarding task and the worktree task stack.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work. | `## Task Artifact` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:26-38 |
-| Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, waiting for commit approval before closeout commits, and leaving completion to `lifecycle_finalize_task` after the branch lands. | `## Agent Responsibilities` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:61-76 |
-| Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline — refreshed onboarding content committed with the computed ledger cache excluded — before `c-09-git-worktree-manager` skill start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state. | `## Invariants` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:87-112 |
+- The skill defines the task wrapper plus `task.md` as the durable plan/checklist artifact for medium work. [1]
+- Agent responsibilities include creating the wrapper artifact, stopping for implementation approval, implementing checklist items, presenting a worktree-backed commit preview, waiting for commit approval before closeout commits, and leaving completion to `lifecycle_finalize_task` after the branch lands. [2]
+- Invariants require wrapper folders, resolved roots, no implementation before approval, a clean committed external-memory baseline — refreshed onboarding content committed with the computed ledger cache excluded — before `c-09-git-worktree-manager` skill start, separate commit approval before closeout commits, recording the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and no stale task state. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for the current workflow skill.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## Series-Contract Notes
 
 The packaged light-task workflow describes master series as integration-branch wrappers and leaf sub-tasks as the worktree-backed units with their own enclosure contracts and closeout/finalization.
-
-## Update History
-
-- 2026-09-18T18:48+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **repaired a claim the source had already falsified.** The skill's `## Invariants` item 5 now reads *"Refreshed external-memory onboarding content is committed, with the computed ledger cache excluded, before the `c-09-git-worktree-manager` skill starts worktrees"*, and the source delta since this card's old stamp is exactly that one line. The card said *"Refreshed external-memory onboarding **and ledger changes** must be committed"* in its `### Invariants And Boundaries` prose, which the source no longer says: the ledger cache is now deliberately **excluded** from the commit rather than required in it. That sentence and the summary row on the `## Invariants` citation were both corrected to the source's wording — the retired sentence was a real false claim about what the workflow requires, not a wording preference, so correcting it is the repair rather than a re-read. Everything else the card says about this skill was re-read and still holds, and the cited range `:87-112` is still exactly the `## Invariants` section. Verification stamp advanced to `c5a74a85`, the revision read; closeout re-stamps.
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 3 citation items; scoped citation check now passes.
-
-- 2026-07-06T12:30+02:00 — L10 owner ruling (builder escalation #1): the JSON-primary paragraph's 'chat build' thin-doc example is re-anchored to the smallest single-session build — chat is never a build route; the thin doc IS the minimum artifact. Verification metadata pinned until closeout stamps the L10 commit.
-
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged light-task workflow now says JSON task docs bind to leaf enclosures, master series use an integration branch, and each active slice gets its own enclosure/worktree. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T22:50+02:00 — Dashboard task 14: documented that worktree-backed light tasks become `Completed` through `lifecycle_finalize_task` after the landed edge is proven, not immediately after closeout. Verification metadata pinned until closeout stamps the source commit.
-- 2026-06-19T07:23+02:00: Slice 3c reopened (R5, dry-run/preview) — documented `dry_run=true`: previews (rendered + diff + `wouldLose`) without writing, the safe way to adopt a hand `.md`. Synced from canonical `skills/`. Verification metadata pinned until closeout stamps the R5 code commit.
-- 2026-06-19T06:03+02:00: Slice 3c reopened (R4, leaf-doc fidelity) — documented the leaf extensions: a `statusNote` suffix, `headerNotes` extra header lines, and freeform `sections` (the escape hatch, appended after References; the standard sections stay the backbone). Synced from canonical `skills/`. Verification metadata pinned until closeout stamps the R4 code commit.
-- 2026-06-19T05:15+02:00: Slice 3c reopened (R3, deferred-examples honesty) — documented `codeExamplesNote`: a planning slice that defers its code examples to the plan gate records that via `set_field` so the render reads as deferred rather than none-needed. Synced from canonical `skills/`. Verification metadata pinned until closeout stamps the R3 code commit.
-- 2026-06-14T00:16: Slice 3c commit 3 — the JSON-primary format now also covers a series master (`kind:"master"`: a `subTasks` index + ordered `sections`); corrected the Conventions note (the prior "master files stay hand-authored" rationale — a clobbering re-render — no longer applies; masters stay markdown only until the runtime ships `task_doc`). Synced from canonical `skills/`. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-- 2026-06-13T22:34: Slice 3c commit 2 — documented the JSON-primary task-document format: the `task_doc` MCP tool authors the `ar-task-document/v1` JSON and renders `task.md`; `template.md`/`master-template.md` are the render spec; series master files stay hand-authored markdown (synced from canonical `skills/`). Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
-- 2026-06-02T04:25+02:00: Removed heavy-workflow references after W-01 retirement — the Purpose, When To Use, and naming notes no longer point at the heavy workflow; escalation now routes to a master + light sub-task series. L-01 series, Sub-task B/S6, mcp 1.1.0.
-- 2026-06-02T04:10+02:00: Added master-task composition — a new `master-template.md` companion, a "Master-Task Composition (task series)" section, and invariant 13 (escalate a too-large task to a master + light sub-task series; one wrapper folder with flat `NN_<name>.md` sub-tasks, one shared worktree, a commit per slice, one integrate + release at the end). `l-01-session-job-lifecycle` skill series, Sub-task B/S5, mcp 1.1.0.
-- 2026-05-31T01:06+02:00: Added invariant 12 requiring the settled design in the task file's `## Design` section when the Task Collaboration Doctrine warrants it, and noted the optional design section in conventions.
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-24T04:34+02:00: Updated task-start references after `c-02-memory-quality-control` skill was renamed to memory quality control.
-- 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `w-02-light-task-workflow` name.
-- 2026-05-11T19:42: Refreshed verification metadata to `aa85d3862bf21fed791e3170e6957f9288c319e8` after confirming `w-02-light-task-workflow` skill remains current after the coordination rename.
-- 2026-05-10T01:19: Updated after `w-02-light-task-workflow` skill gained an explicit worktree-backed commit approval handoff before `c-09-git-worktree-manager` skill closeout commits.
-- 2026-05-10T00:56: Updated after adding the committed external-memory baseline requirement before `c-09-git-worktree-manager` skill start.
-- 2026-05-10T00:47: Updated after light tasks moved from flat task files to wrapper folders containing `task.md`.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for `w-02-light-task-workflow` skill documentation.

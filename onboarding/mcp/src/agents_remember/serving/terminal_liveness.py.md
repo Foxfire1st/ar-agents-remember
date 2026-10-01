@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/terminal_liveness.py
 
-| Field                  | Value                                                    |
-| ---------------------- | -------------------------------------------------------- |
-| repository             | agents-remember                                          |
-| path                   | `mcp/src/agents_remember/serving/terminal_liveness.py`   |
-| doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-09-15T13:36+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                             |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                            |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -273,39 +263,35 @@ migration archaeology; they do not override the protocol-backed L5 contract abov
 Hysteresis constants remain code defaults, not settings-backed knobs (builder-disclosed residual);
 `exitEvidence` is persisted/API-visible but not yet surfaced in the dashboard UI.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation governs this module; the HFX-L5 leaf doc and review are the design
 record.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No domain document defines the sweep/hysteresis semantics; the implementation is the source of truth. | `observe_terminal_liveness` | mcp/src/agents_remember/serving/terminal_liveness.py:325-367 |
+- No domain document defines the sweep/hysteresis semantics; the implementation is the source of truth. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. | `TmuxProbeResult` | mcp/src/agents_remember/serving/terminal_tmux.py:62-66 |
-| The persisted liveness state + locked `record_liveness_probe` write point this module drives. | `with_liveness_success`; `with_liveness_failure` | mcp/src/agents_remember/models/terminal_catalog.py:486-516; mcp/src/agents_remember/models/terminal_catalog.py:518-551 |
-| The app wiring: one sweeper whose steady-state caller is the serving lifespan's observation loop, direct observations on WebSocket attach + the live-paste target, injected clock. `GET /api/terminal/sessions` is not a caller — it projects `runtime.catalog.list()` and names no sweeper (see `## 260831-LOCR-R02 Current Delta`). | `create_app` | mcp/src/agents_remember/serving/app.py:244-307 |
-| Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification, committed-snapshot contention, dirty-gated single-write batches. | "class TerminalCatalogLivenessTests(unittest.TestCase):" | mcp/tests/test_terminal_liveness.py:127-570 |
-| The marker-based classifier this module's `_observe_alive` calls on every alive harness row. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:159-173 |
-| The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). | "Public pane capture used by liveness and bounded dispatch retry/failure evidence." | mcp/src/agents_remember/serving/terminal_paste.py:201-203 |
-| `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. | `create_app` | mcp/src/agents_remember/serving/app.py:244-307 |
-| The explicit contention read and dirty-gated batch the sweep depends on. | `list_committed`; `batch` | mcp/src/agents_remember/serving/terminal_catalog.py:86-92; mcp/src/agents_remember/serving/terminal_catalog.py:281-313 |
-| The pure projection helpers the alive path composes before its single final upsert. | `control_snapshot_entry`; `legacy_control_unsupported_entry` | mcp/src/agents_remember/serving/hosted_control_projection.py:36-58; mcp/src/agents_remember/serving/hosted_control_projection.py:72-83 |
+- The evidence-bearing tmux probe (`TmuxProbeResult`, `probe_session`, stderr-aware classification) this module consumes. [2]
+- The persisted liveness state + locked `record_liveness_probe` write point this module drives. [3]
+- The app wiring: one sweeper whose steady-state caller is the serving lifespan's observation loop, direct observations on WebSocket attach + the live-paste target, injected clock. `GET /api/terminal/sessions` is not a caller — it projects `runtime.catalog.list()` and names no sweeper (see `## 260831-LOCR-R02 Current Delta`). [4]
+- Regression tests: failure-storm hysteresis, pane-gone fast-mark, self-heal, rate limit, overlap suppression, landed-row sweep exclusion, stderr classification, committed-snapshot contention, dirty-gated single-write batches. [5]
+- The marker-based classifier this module's `_observe_alive` calls on every alive harness row. [6]
+- The public pane-capture wrapper `_observe_alive`'s default `pane_capturer` uses (same capture shape paste verification already uses). [7]
+- `create_app` wires `on_turn_state_change` to `log_turn_state_change_event` so a sweep-detected transition becomes an observer event. [8]
+- The explicit contention read and dirty-gated batch the sweep depends on. [9]
+- The pure projection helpers the alive path composes before its single final upsert. [10]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes this local liveness plumbing. | — | — |
+No cross-repo boundary owns or consumes this local liveness plumbing.
 
-### 260713-PHA-L5 Protocol Liveness
+#### 260713-PHA-L5 Protocol Liveness
 
 Process existence remains tmux evidence, while hosted activity and turn state come from the exact
 adapter snapshot. Bridge failures remain explicit disconnected/unknown states; pane classifiers are
@@ -442,38 +428,6 @@ card's account of it:
 Not owned here: evidence identity (`LOCR-R10`), retention-period values, workspace-river compaction, and
 the evidence-lifecycle registration of the new test (all excluded by the requirement packet).
 
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `refresh` repointed to mcp/src/agents_remember/serving/terminal_liveness.py:174-221. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `refresh` repointed to mcp/src/agents_remember/serving/terminal_liveness.py:174-221. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-15T13:36+02:00 — 260831-LOCR-L27 curator (uncommitted change set on `ar/260831-locr-l27`,
-  base `b368b661`). **No content impact from this leaf's change set:** the leaf is a *preservation*
-  obligation and its delivery is evidence-only, so this module is byte-identical to the base
-  (`terminal_liveness.py` sha256 `151f1004…713f`, `git status --porcelain -- mcp/src` = 0 rows) and no
-  clause, ownership boundary or invariant of this card moves with it. The leaf's executable proof for
-  the same contract is the new card
-  [test_terminal_liveness_pane_authority.py](../../../tests/test_terminal_liveness_pane_authority.py.md).
-  **Recorded in the same pass — a body correction this leaf was asked to verify, not a change made by
-  this leaf's diff:** the `### Invariants And Boundaries` bullet claimed the module writes turn state
-  through `record_turn_state` "(since HFX-L8)". The source does not call it: the only turn-truth write
-  is `seat_turn_truth.record_turn_projection` at `terminal_liveness.py:619`, imported at `:35`.
-  `record_turn_state` remains on the port (`serving/ports.py:179`) and on `TerminalCatalog`
-  (`serving/terminal_catalog.py:265`) and is exercised by `mcp/tests/test_terminal_catalog.py:151`, so
-  it is not dead — only this card's claim about who calls it was stale, and the bullet now states the
-  current contract with a pointer to the stale docstring line at `terminal_catalog.py:285`. The
-  `### 260707-HFX-L8` history block below keeps the original pre-authority description, which was
-  accurate when written and is framed there as historical. Verification metadata stays pinned to the
-  base commit until closeout stamps the leaf code commit.
-
-- 2026-09-15T13:20+02:00 — 260831-LOCR-L23 curator: reconciled the sweeper card with the retained
-  registration-before-compaction order. **Corrected a stale body claim**: `### 260707-HFX2-L12 CS-6
-  Update` said compaction runs *inside* the observation batch; the source puts it after the commit
-  (`terminal_liveness.py:193-213`), so that sentence now states the current contract instead of being
-  overridden by a later block. Body additions: the `register_execution_evidence` stage, the
-  `include_terminated=True` terminated-row read, the proved-id set as the only argument `compact`
-  receives, the fail-closed `else frozenset()` default, and the starting-row fast path's exclusion from
-  both stages, plus a new `## 260831-LOCR-R23 Current Delta` section and the current-order proof in
-  `mcp/tests/test_terminal_liveness_registration_order.py`. No production byte changed for this leaf.
-  Verification metadata remains pinned until closeout stamps the leaf code commit.
 ## 260831-LOCR-R02 Current Delta — The GET Route Is No Longer A Sweeper Caller
 
 `260831-LOCR-L02` removed the terminal-session GET route's call to
@@ -503,102 +457,3 @@ non-overlapping, the bounded one-second starting-row fast path, the committed-sn
 read, one dirty-gated catalog batch per admitted path, and the post-batch registration-then-compaction
 order. Those are owned by LOCR-R12/R21/R22/R23/R27 and are untouched here. This leaf also does **not**
 decide the notifier's pre-existing inline refresh, which remains a second recurring caller.
-
-## Update History
-- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
-  base `67b21aeb`). **No change to this module's source** — the leaf removes the terminal-session GET
-  route's call to `liveness_sweeper.refresh()`, so this card's *caller* account moved while the
-  sweeper's own contract did not. Three stale body claims were corrected in place rather than
-  overridden: the `## Purpose` sentence naming the sessions endpoint among `observe_terminal_liveness`
-  callers, the `## Repo-Internal References` app-wiring row's "one sweeper behind
-  `GET /api/terminal/sessions`", and the L22 contention note's characterization of a contended
-  `refresh()` as the GET path (kept as historical with its current callers named). The new
-  `## 260831-LOCR-R02 Current Delta` section records the correction and re-affirms that
-  `refresh()`'s rate limits, fast path, contention read, batching and post-commit order are unchanged
-  and remain with R12/R21/R22/R23/R27. Verification metadata stays closeout-owned: the candidate is
-  uncommitted, so no stamp advanced.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: reconciled the sweeper card with the
-  committed-snapshot contention read, the starting-path admission-before-list ordering, and the
-  final-only liveness projection; repaired the moved `observe_terminal_liveness`,
-  `TerminalCatalogLivenessTests`, `create_app`, `classify_turn_state`, `capture_pane`,
-  `TmuxProbeResult`, and `with_liveness_*` citations. Adjacent ownership (R12/R21/R23/R27/R28) is
-  explicitly preserved. Verification metadata remains pinned until closeout.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `TerminalCatalogLivenessTests` repointed to mcp/tests/test_terminal_liveness.py:109-196. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented post-batch task registration before terminal-catalog reclamation. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-10T18:31+02:00 — No content impact: 260731-EFA-L21's targeted reverse-import gate exposed
-  L9's stale type-only `serving.conversation.models` import. `HarnessId` now comes directly from
-  its canonical `models.conversations.identity` declaration; this changes static import ownership
-  only and does not change the liveness behavior, invariants, or boundaries documented above. No
-  compatibility re-export was added. Verification metadata remains pinned until approved closeout
-  stamps the L21 code commit.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T20:20+02:00 — 260731-EFA-L16 curator: mechanism correction — the collector is a
-  `LivenessProbe` field (`replace(probe, sync_collector=...)` at `_observe_catalog_entry`), not a
-  sixth parameter of `observe_terminal_liveness`; the bundled probe keeps the five-argument
-  signature the four-parameter mistake taught (PLR0913 stays enforced). The forcing tests gained
-  the starting-fast-path placement pin, its early returns, and the legacy inline direct-observe
-  path, and the quality-wrapper ruff/type findings were repaired. Verification metadata stays
-  pinned until closeout stamps the L16 commit.
-- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: documented the deferred hosted-interaction
-  synchronizer — `_PendingInteractionSync` collected inside `catalog.batch()`,
-  `_run_deferred_interaction_syncs` draining after the commit with a `catalog.get` re-read before
-  each quarantine upsert, `sync_collector=None` keeping the legacy inline call for direct callers —
-  the never-under-the-catalog-lock invariant, and the 2026-08-05 ABBA provenance (two py-spy-verified
-  production deadlocks; the event loop parked on the catalog RLock). Verification metadata stays
-  pinned until closeout stamps the L16 commit.
-- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 5 citation claims and preserved verification metadata.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `LivenessProbe` / `DEFAULT_LIVENESS_PROBE` and the relocation of the hysteresis config to `terminal_catalog.py`.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: documented the H1 hosted-interaction
-  synchronizer quarantine (`_observe_control_snapshot`: per-entry fail-loud `interactionSyncError`,
-  the sweep survives; the broad `except Exception` justified because a pipe/disk failure in the same
-  durable side effect must equally not 500 the catalog; the load-bearing fact that orphan
-  `vendorCorrelationId`s are the NORMAL steady state of cockpit-driven hosted chats, so this path is
-  hot, not exceptional), the F2 log-on-state-change bound, the F3 master-exit disposition for the
-  untouched completion-correlation contract, and the F8 phantom-transition re-warn residual.
-  Availability hardening only; the completion-correlation contract in `hosted_interactions.py` is
-  unchanged. Verification metadata stays pinned until L5 closeout stamps the candidate commit.
-- 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled normative liveness/activity to adapter snapshots and marked
-  pane, log, copy-mode, and turn classifiers diagnostic-only.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented adapter-derived liveness and diagnostic-only pane signals.
-
-- 2026-07-10T13:03+02:00 — No content impact: 260707-HFX2-L15 removed a stale comment that called
-  liveness pane capture part of dispatch acceptance. Runtime liveness behavior is unchanged;
-  harness-log acceptance is owned by the delivery path. Verification metadata remains pinned until
-  closeout stamps the eventual L15 code commit.
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: recorded the known landed-archive
-  limitation from review — sweep-cold rows are not reclaimed when their tmux session later dies;
-  attach performs the on-demand check and explicit cleanup remains the reclamation path.
-  Verification metadata pinned until closeout stamps the HFX2-L11 commit.
-- 2026-07-09T13:36+02:00 — 260707-HFX2-L11 round 2: `TerminalCatalogLivenessSweeper`
-  now passes `status:"landed"` rows through without calling `observe_terminal_liveness`; the landed
-  archive remains returned to callers but no longer adds per-row tmux capture, turn-state
-  classification, or catalog-write work to each background sweep. Verification metadata pinned until
-  closeout stamps the 260707-HFX2-L11 commit.
-- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: live turn-state): live turn-state
-  classification folded into the existing alive-probe path via a new `_observe_alive` helper —
-  harness rows only, classified with `turn_state.classify_turn_state` over `pane_capturer`'s
-  captured text, persisted via `catalog.record_turn_state`. `TerminalLivenessObservation` gained
-  `turn_state_changed`; `TerminalCatalogLivenessSweeper` gained `pane_capturer` +
-  `on_turn_state_change` constructor seams, and `refresh()` fans the change callback out after
-  collecting the full observation list. No new hot loop, no new tmux round-trip cadence beyond one
-  capture per alive harness row per existing sweep. Verification metadata pinned until closeout
-  stamps the HFX-L8 commit.
-- 2026-07-07T23:45+02:00 — Created for 260707-HFX-L5 (catalog liveness hysteresis):
-  `TerminalCatalogLivenessSweeper` (rate-limited by `sweep_interval_seconds` — default 10s —
-  non-overlapping via a non-blocking lock with a double-checked rate limit; rate-limited/overlapped
-  callers get the current catalog without probing) + `observe_terminal_liveness` (the shared
-  single-row observation path: in-process `is_alive` → evidence-bearing `probe_session` → legacy
-  `has_session`, persisting through `record_liveness_probe`) + the frozen
-  `TerminalCatalogLivenessConfig` over the four code-default constants (3 failures / 5s window /
-  pane-gone=1 / 10s sweep). Replaces `serving.app._refresh_catalog_entries`; the L5R2 fix round
-  wired the app's injected clock through attach/paste observations. Verification metadata pinned
-  until closeout stamps the HFX-L5 commit.

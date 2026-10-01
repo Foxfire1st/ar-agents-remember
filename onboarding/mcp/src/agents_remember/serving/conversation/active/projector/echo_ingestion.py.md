@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active projector package overview](overview.md)
@@ -44,18 +34,18 @@ unknown-vendor row.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Claude echo mapping. | `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:621-662 |
+- Claude echo mapping. [1]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
@@ -68,14 +58,3 @@ transcript entry against the pending frames) and `_drain_one_turn_body` (close o
 flush its buffered frames); the zip/turn semantics themselves are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 4 citation findings (2 rows); scoped recheck clean.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: constructor now takes `SessionProjectionSpine` + `BridgeReaders`; drain loop split into `_zip_entry` / `_drain_one_turn_body`.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the Claude
-  echo-zipper sidecar after projector decomposition. Verification metadata remains blank until
-  commit.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/package_data/runtime/eve-runtime/agent/instructions/ar-task-context.ts
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/eve-runtime/agent/instructions/ar-task-context.ts` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
-| governingOverview      | `../../../../../../../overview.md`         |
-
 ## Governing Overview
 
 [overview.md](../../../../../../../overview.md)
@@ -35,16 +25,9 @@ owns.
   authored source.
 - Instruction material for the seat, not task-document authority.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The task document is the JSON-primary authoring surface; instruction material does not replace it. | `runtime_install_payload` | mcp/src/agents_remember/mcp/tools/core.py:80-106 |
-| The generator declares the `eve-runtime` target with its per-target ignore set. | `TARGETS` | scripts/sync-runtime.py:61-78 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **created** for the packaged mirror this leaf
-  adds as a generator target. The card records generated content and names the authored source as the
-  edit route. Verification metadata names the leaf base commit because the candidate is
-  **uncommitted**; the real stamp is closeout-owned.
+- The task document is the JSON-primary authoring surface; instruction material does not replace it. [1]
+- The generator declares the `eve-runtime` target with its per-target ignore set. [2]

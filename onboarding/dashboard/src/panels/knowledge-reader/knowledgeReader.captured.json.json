@@ -1,0 +1,126 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The provenance: the re-capture, the scratch commits, the source and the trims.\n\nAnchor: \"review fix round R1 (bounded directory view, subtree pages, re-anchored label, pinnedCommit/codeSource)\"; \"code-integrate.text to 240 lines\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b6e1c06d6cbaffca3d88d4a3be2a2deccf6d75",
+            "content": "sha256:a484aa47ea881832af89dd233e26102ff42990e5fca46129cf4710f39d72830b",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The root summary's body.\n\nAnchor: \"\\\"path-root\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b6e1c06d6cbaffca3d88d4a3be2a2deccf6d75",
+            "content": "sha256:d9286a8ea087c0fbf733eb4dd1a2beacfd89ef79f4e4b410d6692e01277084d1",
+            "locator": {
+              "end": 1274,
+              "kind": "line_range",
+              "start": 1274
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The superseded decision: stored active, derived superseded.\n\nAnchor: \"\\\"record-decision-superseded\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b6e1c06d6cbaffca3d88d4a3be2a2deccf6d75",
+            "content": "sha256:4ff3df421311c067323fa92cee7fcdaff8b7b198b94fb78518ac27d678264cd4",
+            "locator": {
+              "end": 4398,
+              "kind": "line_range",
+              "start": 4363
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The invariant's body with its timeline.\n\nAnchor: \"\\\"record-invariant\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b6e1c06d6cbaffca3d88d4a3be2a2deccf6d75",
+            "content": "sha256:6314670019e8fc6dccc273385382d3d82fb0d9bf1f3d7cece9f94337e315116a",
+            "locator": {
+              "end": 5444,
+              "kind": "line_range",
+              "start": 5444
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The commit list named as listed.\n\nAnchor: \"\\\"commitsState\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b6e1c06d6cbaffca3d88d4a3be2a2deccf6d75",
+            "content": "sha256:2353b892109de4a925448624ec1b5e153b62f3ee3f439c9ac735d161390e0c54",
+            "locator": {
+              "end": 7097,
+              "kind": "line_range",
+              "start": 7095
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One subtree page under the reader's policy.\n\nAnchor: \"\\\"subtree-worktrees\\\": {\"; \"\\\"selectionPolicy\\\": \\\"knowledge-reader-subtree\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b6e1c06d6cbaffca3d88d4a3be2a2deccf6d75",
+            "content": "sha256:64aa0fb59074f2a30c81cecce722ca37f08aa667460db3a5f85baa8aef7550f2",
+            "locator": {
+              "end": 7119,
+              "kind": "line_range",
+              "start": 7108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The test that reads it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "content": "sha256:200a934aefc9e25938bd7d14fc63fa985f347902fa40c7b73c3327226373c21e",
+            "locator": {
+              "kind": "symbol",
+              "name": "captured"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,118 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component gates its welcome state on optional `processState`, selecting `UNKNOWN_LINK` when it is undefined and otherwise `LINK_STATES[processState]`.\n\nAnchor: \"processState === undefined\"; \"LINK_STATES[processState]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "267fd09d2bb63ffbe2045ca3def3110833da6bf5",
+            "content": "sha256:5197062f557cfb20988cc981be49e17f54b89d9e66dcc6234db2b1269eb9d273",
+            "locator": {
+              "kind": "symbol",
+              "name": "processState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "267fd09d2bb63ffbe2045ca3def3110833da6bf5",
+            "content": "sha256:f9f5e196e6d2c44ce44c549455161febf33e73cb8c9a91fe4b457b25d4dca583",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNKNOWN_LINK"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "267fd09d2bb63ffbe2045ca3def3110833da6bf5",
+            "content": "sha256:60f3c7422be59cfef02f60180b497925909571634cc5530f5912ad133519677f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LINK_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "267fd09d2bb63ffbe2045ca3def3110833da6bf5",
+            "content": "sha256:7a6aafa4df6d5ab4cf28b3bf57fb20890dfab6b1f2e7d1408d88b08e09db1add",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The surface supplies harness and current process state only for an empty live timeline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Focused cases cover each readiness wording.\n\nAnchor: \"never claims the link is ready when the process is %s\"; \"mirrors the uncertainty when the projection has applied no status frame yet\"; \"says the link is ready — with the mint live dot — only for a connected process\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "966881d73f40fbc6f12f76ed5ffdf627a5903db8",
+            "content": "sha256:fa0a466ee66c20d106f9bae7815a5ebc74784ae821567f53aa70b8441afeb18d",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "966881d73f40fbc6f12f76ed5ffdf627a5903db8",
+            "content": "sha256:e0c8b997d10b18d862a5618668c364b35888a184e891ddeaaca57b731af159ab",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "966881d73f40fbc6f12f76ed5ffdf627a5903db8",
+            "content": "sha256:bf11b57ee0179b2b85e15e22a1e3506db8db238b0dc69c36b3bff6eae13e56a4",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWelcome.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

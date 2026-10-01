@@ -1,0 +1,170 @@
+{
+  "path": "mcp/src/agents_remember/application/review_legacy_comparison.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The state word and the detail a pre-conversion comparison reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
+            "content": "sha256:cb64997378594e496a8b02957bc42daef4c8270e8a1449d4e8d833c5b046f897",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_UNAVAILABLE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
+            "content": "sha256:294a8495315960e583a646991f99df5a7ff52024532e3656be924d2ad40463c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LEGACY_DETAIL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A closed leaf of a converted repository with no tree record: generation, recorded range, or refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
+            "content": "sha256:91acadd600eec28db3d5b0b1f9b12f7dc836f70e63e5ed746281d682a7825c89",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_comparison_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The newest or named generation, read as a record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
+            "content": "sha256:3738bfc491a17adf6075b55b8b6a7504299642f58a897dc58341999e1ddf3b2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_latest_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Converted recorded endpoints become a committed four-tree comparison named by the task directory.\n\nAnchor: `review_task_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
+            "content": "sha256:150811fd5749bb760534f133187b28ebcf7eb121090520b8a4e4083662440083",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_trees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The code sides kept and both knowledge sides `legacy-unavailable`, naming no file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
+            "content": "sha256:ab55e678eb8601534ddddf0b103149368fc525b5ea1b814c9b83112ff634c16f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_legacy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The refusal, declared facts and detail of a legacy or partly unavailable comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
+            "content": "sha256:ae77b60deefe9557ee7a808748d98716b211c9805f1ec1aae449f4fecfa1e019",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_unavailable_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
+            "content": "sha256:b1361bf8077ebe8b3db61a73f304dc14dbd4b6e4e885777af6b0c54f3d03c630",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_unavailable_limitations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
+            "content": "sha256:389302ece2de90fd476dbae067700719cf3db9cef76654e15fae3b91ab16cebc",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_unavailable_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The closed-leaf branch that reaches this module only for a converted official line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
+            "content": "sha256:b58bb4c52c447da55636653319faf412a955ddb2c4eaff5091b350e0018c657f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_repository_resolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Code sides kept, knowledge `legacy-unavailable`, zero database opens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4a8d09b6e433e8c473c42922b1b514f03eb7c38",
+            "content": "sha256:9b55eadf29a65ce646de736ae75334f73985ab66938875624c03b699950950a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_comparison_recorded_before_the_conversion_keeps_its_code_sides_only"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

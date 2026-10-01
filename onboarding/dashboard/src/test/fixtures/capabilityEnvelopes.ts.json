@@ -1,0 +1,235 @@
+{
+  "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Builders, catalogs, envelopes, snapshots, SetResults, later sequences, and both route-error families.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:c1f3224153359058bdd1e7b152af9083155293095b75474f6cde706d3f46da81",
+            "locator": {
+              "kind": "symbol",
+              "name": "effortOption"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:5c3057343678e205cbb78b35acbc965696fd1c25b674fc8f985e010d4bfb2a57",
+            "locator": {
+              "kind": "symbol",
+              "name": "modelRow"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:5f273040e83c6f2d884fe6d322f1c6e7f44f9fb05f28f96850955d69ed8d4cb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLAUDE_MODEL_ROWS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:d9dae2d06b27fec416f34d4f9205aa858ad5d8710732996b6da253930ec72ea3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODEX_MODEL_ROWS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:50337a6911fa0de6e7838c76782acb7eab54b02b5e59d1a35cdf6abb635bf5ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "PI_MODEL_ROWS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:8627dc17e11bae2d13d345c5f9cdd999d856dbaad1b1915bcb08bcb1a8a272c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "capabilityEnvelope"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:4e878db726b4e22cac49eee59a2266ddf5a3d44fa8c59ea229446860fb656a4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SET_RESULTS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:38af33732b0c131abecf92bf8b87394541f56e028f1eb125d61f63764f620584",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPABILITY_ERROR_BODIES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The wire mirrors everything is typed against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:2c3241d3253e4aa9f919465a1166333c2a7cc8100463a5b68762f96e588556b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffortOptionWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:1253d044d016c7a0bf20a88403736c0d9a3a6d4a469c9bb78bd6eef6626405a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModelCapabilityWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:ecb8a62dcce2473d97da3970bc8b22dcb3f363cddfad309a3d5ca69dfa1a277b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitySnapshotWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:2e121ed0f4c2aa4e56f950f85a9f1314a17a8d77eef71ba6d20fefa9c4193d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityEnvelope"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:b1befa54b27b561cf82b3b486d0448c3962c7596c6f49ff14ee3709e59de53b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetResultWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Python serializers the shapes mirror.\n\nAnchor: \"def to_json(self) -> dict[str, object]:\"; \"def capability_snapshot_json(value: CapabilitySnapshot) -> dict[str, object]:\"; \"def model_capability_json(value: ModelCapability) -> dict[str, object]:\"; \"def effort_option_json(value: EffortOption) -> dict[str, object]:\"; \"def set_result_json(value: SetResult) -> dict[str, object]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a37cd75a2441474a1f0af28765de4cd209333994",
+            "content": "sha256:6cbc5ff82e8344b1b640b79aaebb34e46dee810564a63c9e9f6144e705726c1f",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:bf4de469c0940f3b5ab632c1b5850427fd8f00e086eed4e94e240d1954052be1",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:c4c251d622dc27f9722eeb98615671a95710f4abd4bd32f0634065aa42034bda",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:fc7abbbaf4038dae2680bae194fc79d52792af2fcaf3f62d65957579919edddb",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:8d71eaba874d28c9cf9a2b70af4525503799796677a5f23c460c9a25f9be056e",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

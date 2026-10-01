@@ -1,0 +1,147 @@
+{
+  "path": "dashboard/src/panels/AttentionQueue.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The server-side attention queue this reads.\n\nAnchor: \"def build_attention_queue(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
+            "content": "sha256:a80a5c3aa2bb46cf4f093950d7ccdeaf16e5830545d9c5f6f05780f8d248ffe3",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `selectQueue` selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectQueue"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
+            "content": "sha256:a17a6f9bb4a110dbbea515340c1f40cfa5082eef05fb39946e1ddf12f4e54405",
+            "locator": {
+              "kind": "symbol",
+              "name": "canDismiss"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs.\n\nAnchor: `dismissItem`, `clearAll`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
+            "content": "sha256:29cb176b7ff1aacaf5d6d7e20ce62721925f8df2587be2b94ce689844742971d",
+            "locator": {
+              "kind": "symbol",
+              "name": "dismissItem"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
+            "content": "sha256:ad8341a28ede20afc9cb8058d0d78e99af3486ce241d7b29017cacface72d432",
+            "locator": {
+              "kind": "symbol",
+              "name": "clearAll"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`severityMark` — the CSS style applied to the severity wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
+            "content": "sha256:4da913dc14a3e98a8ce72d4b61b50e8d3f46ae16ba959d5ee98c19cc28ab152f",
+            "locator": {
+              "kind": "symbol",
+              "name": "severityMark"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `role=\"img\"` / `aria-label` span rendered around the decorative `Dot`.\n\nAnchor: \"import { AnimatePresence, motion } from \\\"motion/react\\\";\"; \"import { Dot } from \"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
+            "content": "sha256:c15f81e0727ca898863062fe4b95f83e3da570e1f8d01420a2b4be761fcd7696",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
+            "content": "sha256:e0ac59425cf560dcc21b9b62729ea2d5703ba66765aea5a6d1aa471b30ea1a42",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`Dot` is `aria-hidden`, so its consumers own the announced name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "content": "sha256:8c2edda1c2305b95f5517495c5620ad3444d736a6b014a5c4aa72335f3be9d3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "Dot"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

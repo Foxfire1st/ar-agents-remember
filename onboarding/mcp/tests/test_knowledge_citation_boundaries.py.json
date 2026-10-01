@@ -1,0 +1,318 @@
+{
+  "path": "mcp/tests/test_knowledge_citation_boundaries.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The real Git memory repository the resolution cases bind against, and the real store the write cases run on, each cited at its own declaration.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:58b2c546b20a0f4ec48f045923eb6797b792e8adac3df15c7367ee8302aefa8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MemoryRepository"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:4f72d6c5630740eb6db6849eec07d9ee9712b9130a006d19becbdbb35312cf6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BindingCase"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The integration lane row this module occupies.\n\nAnchor: \"mcp/tests/test_knowledge_citation_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:e1073a51b884e70e8e18c0150503c9f9cf7c4aa5904f9600597ba65d3951501d",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The integration lane row this module occupies.\n\nAnchor: \"mcp/tests/test_knowledge_citation_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:e1073a51b884e70e8e18c0150503c9f9cf7c4aa5904f9600597ba65d3951501d",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The integration lane row this module occupies.\n\nAnchor: \"mcp/tests/test_knowledge_citation_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:e1073a51b884e70e8e18c0150503c9f9cf7c4aa5904f9600597ba65d3951501d",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**A binding against a real measured corpus revision, with kind, lifecycle and authority home travelling with the item.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:c50eb33684c16b7ca9ce394221f84c981feaa60c48c994d9b530ffdcbfc73476",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_binding_recorded_against_a_real_document_revision_resolves_to_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The rewritten-document case: the binding keeps its recorded revision and is never silently re-bound, with the stale count measured.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:255f709a33ae624a5e8d7703bc30590243b9770f69cdd0985768738f44f1bd0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rewritten_document_leaves_the_binding_stale_and_never_re_bound"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The fallback catcher: the document is on disk at the recorded path and the resolver still reports unavailable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:8403855dfbf6a98a451193bf30c11dea69a60dcb20f892bed6815f643a2e670b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_owner_revision_the_object_store_cannot_obtain_is_reported_as_unavailable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The write refusals: a wrong-kind target with the kinds named and nothing written, a target the namespace does not hold, and a dangling governing route beside an accepted ungoverned binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:cccb27c89b6971df731ebba587a1d1bfafb5c0348ef5e33541c810e7700661b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrong_kind_target_is_refused_at_the_write_boundary"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:e3f9addc2ed785533e7f546173f4c33a6e34cebe69e2a2b59c48852a018cdf25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_target_record_the_namespace_does_not_hold_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:e1e6f5ea984d612f4e6e81436c8dbab5a8aa3b84e2e9f07937748e581f0fde94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dangling_governing_route_is_refused_and_an_ungoverned_binding_is_not"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:abdf3ae0e496524b156d835557e0def0ebb06d8bd968bc2e5c6cde5901f07e2b",
+            "locator": {
+              "end": 538,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The store itself refusing two bindings that claim one key in one owner revision.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:58f1f17f7a38f3a8ef8be3a7d8a64df87936aad6d216e6ce7ceea377e1e74a5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_bindings_claiming_one_key_in_one_owner_revision_are_refused_by_the_store"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The dataset's own declared tables holding the binding rows, and a generation-4 dataset refused the binding table rather than widened.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:719b9d6526e495b542021cb1f333f279d36c40f8a6b6b9370a3664427c8c2807",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_binding_rows_live_in_the_datasets_own_declared_tables"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:156a77b96e6332aedd4b29d54a27e4e384c414f3940cd478d826d9dd69c3a78f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_generation_4_dataset_is_refused_the_binding_table_rather_than_widened"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:27e10d99e3ce56f1a6f2b7bc4253c22822a9009270dde962eb6ace5c83bbcce3",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 613
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The retention cases: a published artifact reads back matched, a missing destination is blocked, changed bytes are mismatched, and the destination is outside the enclosure and the archive by construction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:58e7f9b373a602a2e492a929e435c3596dac5667cf72cc49c73178cbca9ac2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_published_artifact_reads_back_with_its_published_digest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:f30427b2c20b9013f1c262f53e84b9cad9689d2b5f2d56a119d3701d69d74eb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_destination_is_outside_the_enclosure_and_the_archive_by_construction"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:811f2ed333469c7250e9785755a7cc4022953fcd85cf71de5780bdc036c231bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_durable_destination_reads_back_as_a_blocked_state"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:636da0d7f8b0bbd159f54f80707e23b342c2d2b6a6338824399a7e21422e26f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_destination_whose_bytes_changed_reads_back_as_mismatched"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:51ebc06231c0f5f3fb0b26e94fd024bb930254814ff6a561e15287c40d11305b",
+            "locator": {
+              "end": 727,
+              "kind": "line_range",
+              "start": 709
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The uncovered form produced on a real store by a directly written row pair, counted in a denominator of two and asserted distinct from the recorded-blob mismatch.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:c155bad7e4d1f0ee75dc432ee055baa0dbfecb4d78e014f194d92be94d6b6272",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_uncovered_key_form_is_counted_and_reported_on_a_real_store"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,200 @@
+{
+  "path": "dashboard/src/panels/review/intentMarkerScope.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement: a tree comparison provides the scope; a dataset review or a diff outside the workspace has none.\n\nAnchor: \"Only a tree comparison provides a scope.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:8f7ae2577fd4fabdfba40da4ba6a307029f33e08705f007538c27469b597528b",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Where a followed marker sat, the workspace's moves, a pane's read and the scope's value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:31583cf338b6755b57254254644ab6fc700ed4a96868807a82efce5e54cf7c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkerAt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:353e523a7224359db48be2dd15b836ad50230bebd35739102e0b33825b83ae05",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkerMoves"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:5deac2438834e3bb94b0ee2097da50737577f18b302e40d4314293688972bed3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:74974bad70debd80da77d0474a3e814f00cd489bbaa7289c1c49c9d310c6edce",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentMarkerScopeValue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A return that never finds its mark stops waiting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:7dd48b68d00ca06047d2cb17945ce8bab777dacd07a6cb742ed7232e6285d129",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETURN_WINDOW_MS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A partial or unmeasured inventory counts as partial (review R2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:22d82c3f7699dd9ae13f4299d94eb4948ed5d648081ec13e1e92d5880a6c7617",
+            "locator": {
+              "kind": "symbol",
+              "name": "markerInventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The scope: listed paths, origin, target and return only for the same comparison; follow, back and settle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:462ae2d4435ac736e591813783fe6f120420dfa25a0e0e6fad849efd9d176ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentMarkerScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One read per listed path per scope; a failed read forgotten.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:bb363c45b81f4853f805e6feb89da48e7dcc7cec6b957a10f4e1226133c6daa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "useClassificationCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A pane's read: the caller's classification, `unlisted` under a partial inventory, the kept answer, or loading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:fa1ac77ab6f77f98f5ac3011920b6c41da0b2394f86a4a2c5a64ebfed16340da",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMarkClassification"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:f97c686acb10260281e10cf902509807cc473a2078b29ca24a28c1f23a0cca1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "shownRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The workspace that provides it.\n\nAnchor: \"<IntentMarkerScope.Provider value={markers}>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:bf5024ba037b3cca73ec26937c14b01a4c83ee978736ef2b974e8c2eae3f1dad",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 281
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The scope cases: one read per surface, never an unlisted path; partial and unmeasured inventories.\n\nAnchor: \"classifies a listed path once per surface, and never an unlisted one\"; \"counts an inventory that is partial, or not measured at all, as partial (review R2)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745e29c9225323bdb1441c166028b1e07650d3aa",
+            "content": "sha256:9214fee7ee4effd30218c43d93a80317bc86e6c2c1bf5d68aa90106524400b9a",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

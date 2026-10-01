@@ -1,0 +1,102 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_format.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
+            "content": "sha256:59d6797cdfe276925773aa379520e22400ea84cfb55c9262dac47adc36bc5707",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cache files and hidden directories are skipped through the validator's shared predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
+            "content": "sha256:f92bfbf299e6245829812ffb5c6f0e29b453005a56e327d9120172061b11ab4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "iter_json_files"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_excluded_from_knowledge"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exit statuses and the atomic rewrite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
+            "content": "sha256:eb5fd9546e0db5a1f81f94a4cc67fb856a4ad1e5292ff29d2e069695feb1b7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Registration in the umbrella.\n\nAnchor: \"knowledge-format\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:3388fbb7e7f9b0c026db8d63e6e9e2b9c92f6d44ccebe8f06a6a0b45b97f516c",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The command's check, rewrite and skip behaviour is tested end to end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
+            "content": "sha256:218d5b1303ee29ab8c8f199c4965e801ccad2985a0d147ce67a32543ee9c4701",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_format_command_checks_rewrites_and_skips_caches"
+            },
+            "path": "mcp/tests/test_knowledge_file_canonical.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

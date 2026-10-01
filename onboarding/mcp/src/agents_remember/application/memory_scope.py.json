@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen scope identity includes authority and both resolved trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "content": "sha256:79c38491a2024c9ac0a828ac715c5af603d91e6b206a871d671ae7c660e11daa",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryScopeIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Official scope resolves configured repository and onboarding authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "content": "sha256:a9befde4b5936a384a7ed09a1e2ddc0a9c52af4a88f1955b2b44d9a99200c818",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_memory_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Leaf scope rejects cross-repository, non-leaf, missing-memory, and removed-worktree cases without fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "content": "sha256:a6fcc7a15019b01f3e3984df1fa653a8ff8650070ac1d0b537f19b24797e8249",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_leaf_memory_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

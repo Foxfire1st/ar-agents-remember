@@ -1,0 +1,151 @@
+{
+  "path": "mcp/tests/test_git_command.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A commit lands in the real repository not the decoy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2359456273484fad044fd0b1c059c94b9f99cce",
+            "content": "sha256:0f4f1cd66f17852d8cd7ec8e71e7a329e6da8535e550846518ba40089d9657bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_commit_lands_in_the_real_repository_not_the_decoy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An explicit timeout still bounds a stalled command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2359456273484fad044fd0b1c059c94b9f99cce",
+            "content": "sha256:4b16812653fc57fc4937115026a20550493074bcbe56c58aa31ac14679c043e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_explicit_timeout_still_bounds_a_stalled_command"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Candidate tree isolates concurrent observers with one scratch namespace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2359456273484fad044fd0b1c059c94b9f99cce",
+            "content": "sha256:9ebd63ea50408c860c36c8fd6f79b401eee886264921f87b38edd63e5af9ebbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_candidate_tree_isolates_concurrent_observers_with_one_scratch_namespace"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact private commit preserves logical state and normal hook policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2359456273484fad044fd0b1c059c94b9f99cce",
+            "content": "sha256:97756cb78dfcb1b3c510805ae2ab9461ed5fb1e85c70488f3118100c0ac3bd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exact_private_commit_preserves_logical_state_and_normal_hook_policy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Raw commit readback preserves crlf and opaque signature header.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2359456273484fad044fd0b1c059c94b9f99cce",
+            "content": "sha256:6cfbbdefdb16d95a39858f32f9000e9337772762da0eaab134d844637bcbcccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_raw_commit_readback_preserves_crlf_and_opaque_signature_header"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cancelled owner and forged capability start no commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2359456273484fad044fd0b1c059c94b9f99cce",
+            "content": "sha256:9653d72771c44f3a2eb725ec45b56f4179a4efd202b6c7e17cae981eda19883d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancelled_owner_and_forged_capability_start_no_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Hidden index flags and changed physical bytes refuse commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2359456273484fad044fd0b1c059c94b9f99cce",
+            "content": "sha256:70edfb3ecc061f2b2af9836e3fe6d4fec4de2f92c6e77cf6069f8f7b62d3164d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hidden_index_flags_and_changed_physical_bytes_refuse_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Stale logical tip and rebound private metadata refuse before mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2359456273484fad044fd0b1c059c94b9f99cce",
+            "content": "sha256:d52251d881fd07dee72a37a2774b0437006eea0583c2285589dbba7a896cebd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_logical_tip_and_rebound_private_metadata_refuse_before_mutation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Failed hook returns original failure and does not retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2359456273484fad044fd0b1c059c94b9f99cce",
+            "content": "sha256:c6228247e4a1eb6605c03f9678dedb03e1dacdb1979a08b057721975b5a3dac7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_hook_returns_original_failure_and_does_not_retry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

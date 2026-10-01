@@ -1,0 +1,595 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `Sources` (lines 65-91) — Line-cached reads of the code and memory files a run touches..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:47e22ba431f861fab0cfc74962a2b07cae093cecb90856c07865b0f37cb28883",
+            "locator": {
+              "kind": "symbol",
+              "name": "Sources"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:2cd797aa7859ea6e68f8feeb28eb732ff12ba195094a8ce7cf2c8474e153349c",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `table_format_finding` (lines 196-215) — A table still in the superseded shape -- the whole migration, named in one message..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:b26648697558e0e2ded01d60e62727f47f464c5b4220056d0b0fc5b99ee27495",
+            "locator": {
+              "kind": "symbol",
+              "name": "table_format_finding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:4f34a50f2f5a92a4bd8cf284abafef820201ba301b1741baf1386d3b0604396f",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `malformed_findings` (lines 218-228).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:6319ea4b17daa03dc708421c5277ac8e563d4c9c07470f3a363832ece75f4a93",
+            "locator": {
+              "kind": "symbol",
+              "name": "malformed_findings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:f7240a407ed58ea5baf0e7686ecd903d485871cafd20f9db9db05dc8e2edfebc",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 218
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `pairing_findings` (lines 231-265) — A claim holding one half of a citation. Neither half means anything alone..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:e233e05d17974b9406e13701757cd89f21b2e671b20073eedd2ea0c3242ca6fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "pairing_findings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:06a98e571d9c5e8acda092684edec5abd3f698ead3d74911c1e0efcb53a068bc",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `repeated_sources` (lines 268-273) — Exact repeated source texts within this Claim, in first-seen order..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:f5491b431030a4b8a0d58fe53d7d0846faa403408dc09d92243f63fa6dfde6c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "repeated_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the function `duplicate_source_findings` (lines 276-288) — Exact repeated sources within this Claim; separate Claims remain independent..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:2a072ab80fe441d74f04bbe53fc954aa0cfbe6c668730c72c20c2d762c570017",
+            "locator": {
+              "kind": "symbol",
+              "name": "duplicate_source_findings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:ef26edfa66ada70491c6fca645c3cf867abead1c162ceb6f06ab035b13cbe039",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 276
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `out_of_bounds` (lines 291-293) — Every citation of this claim whose range runs past the end of its own file..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:e1494ebed06b544fc59e93b761640fa3780e280e1ca79a892184876b6e5ad35f",
+            "locator": {
+              "kind": "symbol",
+              "name": "out_of_bounds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Defines the function `unsatisfied` (lines 296-314) — Every anchor of this claim that no resolved range holds..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:530259da453179d6d168e7d921f69fbf811004ede1780daee1c84a24509f996f",
+            "locator": {
+              "kind": "symbol",
+              "name": "unsatisfied"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:de1fbedca667e2ecc5771bd05d2fc599dece94224e1bf90fc52fd81513003aa7",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Defines the function `bounds_findings` (lines 317-331) — A range past the end of the file its own citation names..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:5edb9644cbb471b82bde925e0842f43601e7229a5d4410d5640c8197f5de1dd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounds_findings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:5f540bb32c72453073b919b919b0b317900495aae6e038ba6ce67e457094957d",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 317
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Defines the function `absent_findings` (lines 334-356) — The anchors no range held, each naming EVERY location in the tree that does hold it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:450ca72635a5995b2b5c2c564ba1e2faf21a5ecd1e221945c4ad0e12a75b3691",
+            "locator": {
+              "kind": "symbol",
+              "name": "absent_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Defines the function `vanished_finding` (lines 359-378) — A source into THIS repository at a path that no longer exists..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:b6edfc6085dca3ca08336472e6a7b0ed95bd61c0b19ebeeeffee5e982c214737",
+            "locator": {
+              "kind": "symbol",
+              "name": "vanished_finding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:5d69196f0dcd7f9570c2e9a122a56feac7dce59cbd7acda8e5470dff5f84e0f6",
+            "locator": {
+              "end": 428,
+              "kind": "line_range",
+              "start": 409
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `Tally` (lines 95-107) — What the run measured, beside the findings -- see modes 2, 5 and the ceiling..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:4cf8e34262d36157e97dfbb8fa1483163f0282a89ea10b171ed23d749983387d",
+            "locator": {
+              "kind": "symbol",
+              "name": "Tally"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:f3b22cebc0540c094e1c2b9374277cf48c79095434d3efcdfc1f308ca6e2cb97",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Defines the function `claim_findings` (lines 381-404).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:b723203273acf43a34d65da967324f7e5c4bd73dd369220a554ee5fc62989331",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Defines the function `prose_findings` (lines 407-440) — The prose serialisation: ``cit:`` constructs, and the spelling that preceded them..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:18acc55f1a716188d1e34acad9d323355aa2703738ea2866e8ee229ef29aca46",
+            "locator": {
+              "kind": "symbol",
+              "name": "prose_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Defines the function `misplaced_findings` (lines 443-461) — The prose form written into a table cell -- the wrong serialisation, not a defect-free row..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:87d46242439827997046bb5ab6a8e2b8c85857a6c5ff89e2806f4f15ddface98",
+            "locator": {
+              "kind": "symbol",
+              "name": "misplaced_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Defines the function `check_document` (lines 464-481).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:c7b94fce9874916897f17aced531c46c0c296247a8a585f79a0073a2247971a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Defines the function `overshoot` (lines 484-487) — How far past the end of the file a bounds finding reaches -- for worst-first order..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:e7fc00b68cb80964abd1849a240be8a63a9bf97c685f066678b6a80c0b4d6021",
+            "locator": {
+              "kind": "symbol",
+              "name": "overshoot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Defines the function `worst_first` (lines 490-496) — The complete offender list, deepest overrun first (L6-R15)..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:3b52069822c14c201da4fd102d32d94d5dd6fc3e4cda69ed5ee83b17345f564c",
+            "locator": {
+              "kind": "symbol",
+              "name": "worst_first"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Defines the function `check_onboarding_root` (lines 499-532) — Every citation in the memory tree, resolved against both repositories..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:29ceb4754671b4fa47198685759e2b6d8709436d85f98da950f11ccedf9dd3f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_onboarding_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Defines the function `_check_documents` (lines 535-568) — Check the selected documents against one already-validated source generation..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:2b52be31f87d880c891615709259973ae4dca2252eb41ba25c35a62c57309052",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the class `Run` (lines 111-123) — Everything one document sweep carries, including its immutable source index..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:6ec61bcc1d2dac62b07fb0dd5fa4144419498269b63ca84dd32b960c77443ae6",
+            "locator": {
+              "kind": "symbol",
+              "name": "Run"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:fc2ed29c1af1552e8a301fb2b174023f1a2565101d34c44379101b85c9767294",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the class `Resolved` (lines 127-131) — One citation and the file it named..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:0dacdda383c868439a80a207c0089efdc075ab2a01430acab9e18e8530a97f64",
+            "locator": {
+              "kind": "symbol",
+              "name": "Resolved"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the class `ClaimScope` (lines 135-147) — One row, what it resolved to, and how to read those files..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:9464b4f5f3eb4055fd60774c67203fa985086c27f485e4ba26be4781215775d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaimScope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:74fda1be0a129b0c97535950881c538ae820a4edbcbb211a4723becd568bcac3",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `containing_identifiers` (lines 150-154) — Longer identifiers in ``body`` that carry ``symbol`` -- mode 1's evidence..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:ad8bc51554f80f95a595547c891de60b22e53c866c9ba9b196094c0d1730736a",
+            "locator": {
+              "kind": "symbol",
+              "name": "containing_identifiers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `elsewhere_in_file` (lines 157-161) — Every line of the file holding the anchor, capped -- the fix, usually..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:15c5b5d044a0730ba9eed7a2a89adbb90be93adc55e7d88f01b97018ae8c20a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "elsewhere_in_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `anchor_evidence` (lines 164-182) — Where the anchor actually is, or what the range holds instead..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:5b71bc51c000d09c984abe83eea5ab0c709118519a08656fdb5e24a43e22c797",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:2bdac04a7f9b7769d63240e43834198b2ae3587062f82ed5f9e4b88b26884a8a",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `finding` (lines 185-193).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:1f78c983ae3701610d9573716a73ba4c653b2dddca833fc1a1a90abb205025bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "finding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:e35fd06040ea20748c509a370221fda87badff125d1ee2a725679581b73f8485",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

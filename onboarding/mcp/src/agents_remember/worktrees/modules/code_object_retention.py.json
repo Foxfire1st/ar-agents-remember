@@ -1,0 +1,642 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the three properties — one commit and one ref, measured custody over named history only, explicit release with a record — and of what it does not decide.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:c27fc00460c90c4a2bf15e0ff0c1cc4f62f4692b8a029ca1f8607ef2744de7dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_code_object"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_custody"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:28562643d6200cc9347bb4e88bb5cb635a31b039ba44d05e1a5f00b280f909f2",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Custody over named history only, bounded by the number of names and never walking ancestry.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_custody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The three-way observation, and the reason `absent` is a separate type from the two custody values.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:874ace4ceb964e42fca51d95238b53398b65e9f281bde01d0ddb915da2497f06",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_observation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:d1bcde1f82748fa0aec26a39e9278170f1b124830a9be34ff26a477b692ca99f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The reader's question about a recorded pin: gone, or re-pointed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:f9bf8dc42f67156b384de43f6486c23156208dad567ec64c19f26716ad28c76f",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained_object_readable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**Release: refuse a moved ref, converge on an absent one, and return the record with custody measured before deletion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_retained_code_object"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The identity-supplied commit, and the base commit's own date that keeps the pin meaningful in `git log` while staying derived.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:b23f34db5b3a1d584b9072644a6f88ca4295250b350866ad1fc27a7fbfca88ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retention_commit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:7844d23972d841741930e4a0433d7c26a786dc3106d5201427711c4a8479772c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retention_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The named-commit resolution that drops what does not resolve to a commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:fc9fbc87c8adcdda88fd95dd099a164f1ddda4f15896094fe1536f30c05512da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_named_commits"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:496b77aae3cb162d2ec5d793e7267bb904cec4cfb1e5df9d2204f97e36004209",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:61624eaf7f3e8492eaab7d7d1ef57fba61022a286b876e9e9e32d5ddf2d2e294",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:cd621f88ffa54ccd061bd8f9087fde4b52b89d891b950ffee5108714e4dedf79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parent_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:1ecae56f0b263e31657e90aea43d2b5233a845f23e176f07dd536472b508ed5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ref_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The Git failure's own words, rendered transport-safe for an actionable refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:d09f86d5360ecba7edd10ca4d889920ccf8ef0508ebaa0dc37687c995edfe85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_diagnostic"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:97542bb8bb3e53f8af448e90872168f3b5a240a2961741e118ff302f59fe595f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_namespaced"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:bd197e8ed14745dac7247afe515b88fdcee9af9703309361591978be099c789a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_present"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:c8e0e92743e9adb8a8869c2e88de0c4d3a2fae641abe41d2e2ba040d84b957a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_or_refuse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The Git runner and the identity option that makes an explicit commit identity possible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:87f876d7fba393da591ef709d4defe2bc32a213ba91020032479fca65c83d943",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitRunnerOptions"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The typed failure this module raises for every one of its ref outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:2274d2c732dc02f1a1446d8b254aa836da88e671b3b6ad42de1656eb83fead61",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectRetentionError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The sibling Git-mechanics owner this module sits beside, and the branch-ref spelling its callers use for the protected source branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:bb671106c4738c19abd0c46b0a440e8c5e9dbc3ca686d0fd05b9be1e262a02b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "local_branch_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface, the namespace, the two custody literals and the third observation's literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:fd3aa5f5bbc9c7d38aa249a8780f82144c235b9e016909baf26790bca943e75f",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:3717da8981d0036f920a613473af5b65b0ee294d7480ac558a565c91ccdb43c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETAINED_CODE_REF_NAMESPACE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:e4ab1427e170ae7ac73ff5794f7779070fc99dfe0da7faff2b1782ed7a678002",
+            "locator": {
+              "kind": "symbol",
+              "name": "CUSTODY_RETAINED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:09ce475a82caf159afd2373a3d150dcefa60ed86a4c0f989921a7f873f8fbbfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CUSTODY_COMMITTED_HISTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:8768acdd73aa2c484fe84053de67feec4a3b281229f396b7ae20887ce80940f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CUSTODY_UNREADABLE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The create-side consumer: custody measured against the contract's names, and a pin created only when named history does not hold the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:b434548ce5950f69923fdeab1d86c7ddf29758e41725532ecd2ed67b1e018415",
+            "locator": {
+              "kind": "symbol",
+              "name": "custody_names"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:b36a7bc722f8ba102a35f8098e3f012a9f231f68bd262db28825a0043cd6f580",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pinned_outcome"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The release-side consumer: the fast-fail re-check, the record written first, and the record withdrawn when this module refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:8ea7439e1b26cd6454e4e363a2f9d6d95e09d045ca2ab19e61d4b3a4d6792f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_comparison_code_object"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:df54760da3521d4429511706c704e37bb28fa5aacaf26333fdd289313b847310",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_ref_names_the_record"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The cases that measure the pin against a real repository: the leaf's own work branch is not custody and the pin survives losing it, genuine protected history stops the pin, and a moved ref is never deleted.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:3ab2c7c416950b356ec46d542b66412e6beae23aa37014881761dd974d6dc48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:5b50a133f74f13c3d98febd5ee526b2fe75346f8a6d11957dba36cbcdd32828d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:26f0fcf4ae264a72b733ce134400182b3ac996a478cc5e418eafc98df0f15bfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retention_ref_that_moved_is_never_deleted"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The case whose control object proves `git gc --prune=now` really reclaimed while the pinned objects survived.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:1250e3851a53dfd9512df6c9a57649f32b3ca388ce0aeacc4753145611e122d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:be357be1481664a0204c410e102d689769483e2f0f7e770a50d297035acb7430",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_control_object"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The constants that make a retention commit's id independent of the ambient identity and the clock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:384e95e2790897e4b2be22b36db6c5b02f2e72ee99f484c8c1bc09bb4f30e213",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RETENTION_EMAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:437927118db92dfe745a4464941dc986ec60a06fba29165d56ce702244a10012",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EPOCH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:0399bccbce1dcce698b024da296b1132a87ed65b7f54092576ced504fbc9b6c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GIT_OBJECT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The durable history a custody measurement is allowed to find the tree in, and the empty set as a statement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:4456ef183916291ef3c37b7ada50bc861b0104429880e05e092a9e5835cc34c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CustodyNames"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The pin record — ref, commit, tree, base — whose four fields release requires together.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:e89b7667e78f4ab4a0fb17204ec719f8acd854a2d7618481061120cca515c9f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedCodeObject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The release record a caller stores as unavailable history, including the custody measured at release and the honest `absent` case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:8a8afcc589d9634366247b3a7daedb65a5f7b7ef547762d8200bfe01751cfd74",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReleasedCodeObject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The ref builder and its namespace-escape refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:e76f9ad5dc9f46c8d16618b86de70915f91eb60be55203d6cf276cb616328271",
+            "locator": {
+              "kind": "symbol",
+              "name": "retention_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one Git question that answers a boolean rather than raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:3a9744366ad5a42017bbb96c37d6679389ddf4eb3df0b05ddbdcbdf0b2e7e031",
+            "locator": {
+              "kind": "symbol",
+              "name": "object_readable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**Retention: the recorded base as parent, the one-directional idempotence, and the refusal to re-point a ref another generation owns.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:c27fc00460c90c4a2bf15e0ff0c1cc4f62f4692b8a029ca1f8607ef2744de7dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_code_object"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

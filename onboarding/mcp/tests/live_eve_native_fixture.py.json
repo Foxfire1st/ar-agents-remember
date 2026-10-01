@@ -1,0 +1,542 @@
+{
+  "path": "mcp/tests/live_eve_native_fixture.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter under live test, driven through its real production transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:b99b92bb30379eefab17c4cd4b9d314bd90df3608eace895431440de00a8978d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveSessionAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:65f4d062b6c46ef53987340bb549a1deef96b65b95c1206dc4f14d09473f08ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRuntimeProcess"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:394caa5efcce6b3195b0197c7416093f14539df2440d2f908c2f6d6c944dafb2",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:65cb9ce5543f1b8daceb483851afd73986189bb397828e47f8d918add546fe91",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The capsule world is built through the capsule seam's own support module, so the fixture consumes the producer instead of re-deriving a carrier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:e6258151e0dcb679c4b5b4f5f446c42f2b501d0ec11fa2d3e7b29a6d95e2ef8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capsule_world"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:4a51051801665e9f353d8b60a6c7a718eace43f8e792ee072e6f651f4ffaa7b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FixtureWorld"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:a1ef47a23cedb547006773ea368f895e24fcb22dacc3fb680b78d97ac8036808",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_carrier_for"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:666b5b9a74917056299f49a664da48b9fd9bb0b5536ea670e915c30f4ece0a15",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:10066186b817380a84963b4281d60c953c3907f7566da1b9e30a6f5e871613f4",
+            "locator": {
+              "end": 620,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The trace gained the provider's own `messages` view, which is what lets the assertion be made against the effective prompt rather than the plan the fixture wrote.\n\nAnchor: `messages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e43a9a5faeb7066fa52b59977ca820f35c7efd6",
+            "content": "sha256:adaf16fec2732700f2e8273336451f76c63b0532268b23afc6932edb0bdf7d57",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/tests/eve_fixture_model.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shipped TypeScript the capsule scenarios actually observe, since no Python case can see it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e46a81e8a0ed7a1f534cc17fd24ef7ac979f9e36",
+            "content": "sha256:4d5e26af7ae3f91e4a142f3f23db456a5ff5ff71c91c920a4fd9f4f764c7d440",
+            "locator": {
+              "kind": "symbol",
+              "name": "arCapsuleAuth"
+            },
+            "path": "eve_runtime/agent/channels/eve.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9db4c901d974892619158d546490e3dcc8ca5764",
+            "content": "sha256:744cdce3083db7bb1e9b6d30818ef0e172e4f53889dcd55ba8476a74698df06d",
+            "locator": {
+              "kind": "symbol",
+              "name": "loadVerifiedCapsule"
+            },
+            "path": "eve_runtime/agent/lib/capsule.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9657dd2760fd3bfd45a2eb101978a1b54b1b196a",
+            "content": "sha256:85dd700bbbd50f712d1adcaf8af3b6f79d6fcdff38a78587259508b91326e56e",
+            "locator": {
+              "kind": "symbol",
+              "name": "verifyAdmittedWorkspace"
+            },
+            "path": "eve_runtime/agent/lib/git-workspace.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The unit-level counterpart of the same binding, which asserts the format and the launch-time verification without a process.\n\nAnchor: \"test_eve_capsule_runtime.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d23b661924f6cda0fe5ff695fe834b9e7a582a6e",
+            "content": "sha256:0d249e44dd49364a7e7267ea8d260eb4eb85966b72d850cb4b230f15fef81cfd",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/tests/test_eve_capsule_binding.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The runtime under test is the pinned published `eve` package and its Node engine requirement, not a sibling repository.\n\nAnchor: exact pins; `engines`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:d7d54c70ab30598a051e4e82c998af26502333e5e5550f5d3f46fcecca768b64",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:10da0e5a23f994365072bcc65ee74931b66e6db534d7f5efd93695cbc7d9a82b",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The request bodies the scenarios assert against are the production builders, so a policy change breaks the live proof too.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:76fc3ba2b4a5ae21fbe00976819e924ef259ae80ee0d6dfd410bfc9d9ee54be0",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_session_body"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:e7014d7a5bd832451a20f24148a0add445818f72937a4133851b7e5bec9fa63f",
+            "locator": {
+              "kind": "symbol",
+              "name": "follow_up_body"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:a2b3dae7a56dbb2057c824c7e342f4fabec95f0a5e3c8ca922c071e562ce2be5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_turn_body"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The deterministic provider this fixture starts as the model backend.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e43a9a5faeb7066fa52b59977ca820f35c7efd6",
+            "content": "sha256:476332b4014c38031cdb1384b7295eba330f26a0de8b7cd1455d59f0b311fefb",
+            "locator": {
+              "kind": "symbol",
+              "name": "FixturePlan"
+            },
+            "path": "mcp/tests/eve_fixture_model.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7e43a9a5faeb7066fa52b59977ca820f35c7efd6",
+            "content": "sha256:be7f7b201d6feb941988630e7a4de93d4970d09e9ae038f1f627983fe7da1221",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            },
+            "path": "mcp/tests/eve_fixture_model.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7e43a9a5faeb7066fa52b59977ca820f35c7efd6",
+            "content": "sha256:188b6a27df36677b26a6711d12bdd06404dd54fb320a4d0cbc4a65a2db039730",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "mcp/tests/eve_fixture_model.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The deterministic counterpart that proves the same contract without a process, and why both exist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:49ee8e68e20ee0e82ee78c7e3eace0d829e5cbaa71bcb802daf8635c666d9e31",
+            "locator": {
+              "kind": "symbol",
+              "name": "FakeEveRuntime"
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:12e8b10b190f3068f8433cd1c2de684d58b922c4955f419bf54d97c4566807ba",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "None\n\nAnchor: \"Write one UTF-8 text file inside a surface this seat was admitted to write\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "500396b56bd598cf39359e86268f4f0d79ff24cb",
+            "content": "sha256:4108d9402c40751315e3a4e845a7b614ce3c1c0f3b20c152b7e6d7476dda665d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveWorkspacePath"
+            },
+            "path": "eve_runtime/agent/lib/workspace.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe90f8d85af51060aa70a9968b83e91711cfccda",
+            "content": "sha256:d91d6bb921e4eb328f6a5941dedc3fbf5aff297f6fbd777e1a0a76e4dfb2b6af",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "eve_runtime/agent/tools/ar_workspace_write.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Node resolution and the runtime root the fixture relies on are the adapter's own launch module, and the interpreter override it seeds is read as given there.\n\nAnchor: `AR_EVE_NODE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:1d13ad4ff8c7cab545a59ed4e663dece603eff9797111a32fd6295b638a76804",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_node_executable"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:19cda5555f03bf915477aba7ab1af77453d01f8a611967753e71d974c9922736",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_runtime_root"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:485004a2eeb34d682d66dd8713184fc61ee6c87d7fb9d85ce7c2a206b9e4fcf9",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:97ad188609d6295d6380291df389c72aacf242e15f1f9ff7ed55dd6cdec7189e",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:3dc1787c69b48626b4e9266061888a452b03f1bf23fe95f89308f78345efe3c9",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 406
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:9c9b8c644cb8f1eb87904544f19a50a4b6c0442fb923ec7eb4c83d6d7b36ac72",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The blocked-artifact contract covers every start-failure shape and records the failure class.\n\nAnchor: `failureType`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:8fbcc6f6d6d44f9b318eefff84dfd296e423674e2ea505faf26a83a6a3677869",
+            "locator": {
+              "kind": "symbol",
+              "name": "START_FAILURES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:fc5f9d9515059627c4e929fbc6540053b2516ba2ef7aaceac5ee8ead9883a8df",
+            "locator": {
+              "end": 1870,
+              "kind": "line_range",
+              "start": 1855
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The capsule scenario and the observation that makes the forging claim falsifiable: nine labels read from the first effective prompt's binding block.\n\nAnchor: `bindingBlockFields`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:ae90452c4e7cb83989adef987ac176a500368758515269f14689319bc19278ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scenario_capsule_binding"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:b755b2f1460926e5553ececabf2898dee9c8ace022b0eae5f6f5209d078dde60",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_admitted_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The guard's conflict-sensitivity lives in the parser's return type, so a repeated identity key is visible rather than collapsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:3260541bf9cd37badc52a93c64120df5bc7f34a14854754ac520dd6cf80f21d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_binding_fields"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:e819cc30ff24cc2a22c09db10c29ab7c98253d59537050db095852e5ddef2170",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_values"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

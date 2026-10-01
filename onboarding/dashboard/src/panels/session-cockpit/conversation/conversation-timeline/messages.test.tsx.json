@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/messages.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The grammar/diagnostics/axe suite.\n\nAnchor: `describe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba413102a8a0434a3786d858af99a7ecd6eb4b95",
+            "content": "sha256:ab9506b21f483dc95df2f2b35f70c0a443b053a7b9649f77467e688a33200404",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

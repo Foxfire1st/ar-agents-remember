@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_schema_generations.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_schema_generations.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T22:00+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](../overview.md)
@@ -94,46 +84,36 @@ shared support module, the connection helpers and the logical encoder.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's stated contract: one consequential fact per case, and a gate must be observed in its failing direction. | "a gate observed only in the passing direction" | mcp/tests/test_knowledge_schema_generations.py:1-16 |
-| The pin is checkable: constant, recomputed fingerprint and the passing gate agree. | `test_the_pinned_generation_1_fingerprint_recomputes_to_its_recorded_constant` | mcp/tests/test_knowledge_schema_generations.py:67-72 |
-| The gate's failing direction, parametrized over three perturbed fields applied to copies of the record. | `test_the_pin_gate_fails_when_one_recorded_generation_1_field_is_perturbed` | mcp/tests/test_knowledge_schema_generations.py:63-106 |
-| Generation 2 appends to generation 1 without touching its first ten tables. | `test_generation_2_appends_to_generation_1_without_touching_its_first_ten_tables` | mcp/tests/test_knowledge_schema_generations.py:121-131 |
-| Type-strict artifact dispatch: `1.0` and `true` do not resolve to generation 1. | `test_the_artifact_key_lookup_is_type_strict_on_the_declared_version` | mcp/tests/test_knowledge_schema_generations.py:122-134 |
-| An unregistered version is refused rather than migrated, repaired or re-read. | `test_an_unregistered_version_is_refused_rather_than_repaired_or_re_read` | mcp/tests/test_knowledge_schema_generations.py:137-155 |
-| Creation declares the newest supported generation while selection reads the dataset. | `test_creation_declares_the_newest_supported_generation_and_selection_reads_the_dataset` | mcp/tests/test_knowledge_schema_generations.py:158-172 |
-| A generation-2 table row must enter the generation-2 digest, which the live-manifest encoder failed to do. | `test_a_generation_2_table_row_enters_the_generation_2_digest` | mcp/tests/test_knowledge_schema_generations.py:175-204 |
-| An unchanged version-1 dataset reproduces its own body and identity, and the same rows under generation 2 are a different dataset. | `test_a_generation_1_dataset_keeps_its_own_body_under_generation_1` | mcp/tests/test_knowledge_schema_generations.py:207-240 |
-| A version-1 file opened by generation-2 code validates and reports generation 1. | `test_a_generation_1_dataset_is_still_validated_by_the_registry_it_declares` | mcp/tests/test_knowledge_schema_generations.py:243-258 |
-| Every generation's key and typed-JSON registries, and the no-`ALTER TABLE` rule over the create statements. | `test_every_supported_generation_declares_its_own_key_and_json_registries` | mcp/tests/test_knowledge_schema_generations.py:400-422 |
-| The symbols the cases drive, including the pinned constant and the gate. | `GENERATION_1_FINGERPRINT`; `require_pinned_generation_unchanged`; `generation_of_database`; `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:193-200; mcp/src/agents_remember/memory/knowledge/schema_generations.py:413-444; mcp/src/agents_remember/memory/knowledge/schema_generations.py:388-393; mcp/src/agents_remember/memory/knowledge/schema_generations.py:346-363; mcp/src/agents_remember/memory/knowledge/schema_generations.py:206-206; mcp/src/agents_remember/memory/knowledge/schema_generations.py:450-460; mcp/src/agents_remember/memory/knowledge/schema_generations.py:475-492; mcp/src/agents_remember/memory/knowledge/schema_generations.py:216-216; mcp/src/agents_remember/memory/knowledge/schema_generations.py:507-510|
-| The symbols the cases drive, including the pinned constant and the gate. | `GENERATION_1_FINGERPRINT`; `require_pinned_generation_unchanged`; `generation_of_database`; `generation_of_new_store` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:121-200; mcp/src/agents_remember/memory/knowledge/schema_generations.py:285-298; mcp/src/agents_remember/memory/knowledge/schema_generations.py:304-307; mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-444; mcp/src/agents_remember/memory/knowledge/schema_generations.py:206-206; mcp/src/agents_remember/memory/knowledge/schema_generations.py:475-492; mcp/src/agents_remember/memory/knowledge/schema_generations.py:216-216; mcp/src/agents_remember/memory/knowledge/schema_generations.py:507-507; mcp/src/agents_remember/memory/knowledge/schema_generations.py:501-510 |
-| The encoder whose table mapping and digest the generation cases measure. | `logical_body`; `logical_digest`; `logical_body_from_tables` | mcp/src/agents_remember/memory/knowledge/logical.py:80; mcp/src/agents_remember/memory/knowledge/logical.py:74; mcp/src/agents_remember/memory/knowledge/logical.py:95 |
-| The creation and inspection paths the cases call. | `create_or_validate_schema`; `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:88; mcp/src/agents_remember/memory/knowledge/connection.py:111 |
-| The shared support that builds a genuine version-1 dataset for the generation-1 cases. | "def create_generation_1_store(database_path: Path, repository_id: str) -> OpenedKnowledgeStore:" | mcp/tests/generation_test_support.py:67-70 |
+- The module's stated contract: one consequential fact per case, and a gate must be observed in its failing direction. [1]
+- The pin is checkable: constant, recomputed fingerprint and the passing gate agree. [2]
+- The gate's failing direction, parametrized over three perturbed fields applied to copies of the record. [3]
+- Generation 2 appends to generation 1 without touching its first ten tables. [4]
+- Type-strict artifact dispatch: `1.0` and `true` do not resolve to generation 1. [5]
+- An unregistered version is refused rather than migrated, repaired or re-read. [6]
+- Creation declares the newest supported generation while selection reads the dataset. [7]
+- A generation-2 table row must enter the generation-2 digest, which the live-manifest encoder failed to do. [8]
+- An unchanged version-1 dataset reproduces its own body and identity, and the same rows under generation 2 are a different dataset. [9]
+- A version-1 file opened by generation-2 code validates and reports generation 1. [10]
+- Every generation's key and typed-JSON registries, and the no-`ALTER TABLE` rule over the create statements. [11]
+- The symbols the cases drive, including the pinned constant and the gate. [12]
+- The symbols the cases drive, including the pinned constant and the gate. [13]
+- The encoder whose table mapping and digest the generation cases measure. [14]
+- The creation and inspection paths the cases call. [15]
+- The shared support that builds a genuine version-1 dataset for the generation-1 cases. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-18T19:54:18+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows, the selector symbols they name). The first row cited `schema_generations.py:507-507` (the `return CURRENT_GENERATION` of `generation_of_new_store`) for `generation_of_database`, whose definition now sits at `510`; that range was widened to `507-510`. The second row cited `501-501` (`require_pinned_generation_unchanged(GENERATION_1)`) for both selectors, whose definitions are at `504` and `510`; that range was widened to `501-510`. The claim, the two pinned-constant anchors and the remaining ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand** — `GENERATION_1_FINGERPRINT`, `require_pinned_generation_unchanged`, `generation_of_database`, `generation_of_new_store`, `create_generation_1_store`, `test_the_pinned_generation_1_fingerprint_recomputes_to_its_recorded_constant`, `test_generation_2_appends_to_generation_1_without_touching_its_first_ten_tables`, `test_every_supported_generation_declares_its_own_key_and_json_registries`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-17T20:00:00+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`; the module is untracked in the leaf's code worktree): created this one-to-one card for the leaf's new generation-registry case module. It records the ten cases, the perturbed-copy technique that makes the pin gate observable in its failing direction, the creation-versus-selection split, the digest regression the generation-2 case guards, and the generation-1 body/identity claim.
+No meaningful cross-repo references found.

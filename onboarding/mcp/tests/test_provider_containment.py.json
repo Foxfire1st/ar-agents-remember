@@ -1,0 +1,35 @@
+{
+  "path": "mcp/tests/test_provider_containment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stale armed snapshot is vetoed by disk",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab207e2470ab1e009b0ffb0cfca50777e6e92d",
+            "content": "sha256:dea67cd0dea03a2ccbca36ade60efa475519727d1f91f576708dcf8bc5332eff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_armed_snapshot_is_vetoed_by_disk"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "80ab207e2470ab1e009b0ffb0cfca50777e6e92d",
+            "content": "sha256:e1ddf69dbeae5c29e948c77387bfd63de2f96f99c582c61a6a0f7d81018b7fef",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

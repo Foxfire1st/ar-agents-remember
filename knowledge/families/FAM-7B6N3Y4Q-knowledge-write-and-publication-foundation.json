@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "Every reachable knowledge write goes through the two admitted command lines and the one writer of the memory tree's format -- the curator file writer for a converted tree, the knowledge batch writer for an unconverted one -- lands in the repository's one declared knowledge location, and is admitted only from real setup authority, so a writer and a reader of the same repository's knowledge can never disagree about where it lives or by what right it was written.",
+  "id": "FAM-7B6N3Y4Q",
+  "members": [
+    "INV-1XKX9ERN",
+    "INV-753SKJFF",
+    "INV-QN53GPRB"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L30",
+    "legacyId": "23ce40dc-51de-4eda-926c-25a2948f8e00",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/kernel/primitives",
+    "mcp/src/agents_remember/memory/knowledge"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "knowledge-write-and-publication-foundation"
+}

@@ -1,0 +1,353 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The state table, the check order, the no-fallback rule and the cache contract.\n\nAnchor: \"The checks run in the table's order\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:78b5f53e0bc8c15cc4ade8bc3b05f058407ccb4568ebc7ef6bd2dc8a310c5f16",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A persistent unavailability is not a Git failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:fdb75fddd53df0103ead6e66fad8fa27b890e3844c02a93d09fad9fb74452252",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectUnavailable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:cc50d8fd5ee59050deade6bb90db8551ee00700ffdd2aa3b1e24dd324e5f1a16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_read_failure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The ruling-N1 order: no tree, absent path, unchanged blob, then an unsupported kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:7ac87a67709e922ea13ad89963a250dca297b002f56046e699fb2dbf64ce8d54",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decided_without_resolving"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Which locator kinds cannot be re-resolved in a changed blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:7842019588f33658714ff1fcc73999436f48102bfa7bedaf7eb46b1449fb1860",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unsupported"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Resolution through the worklist's resolver; a missing line-range blob is raised as `CodeObjectUnavailable`, and only answers are put in the cache.\n\nAnchor: `cache.put`; \"raise CodeObjectUnavailable(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:ecad8fd1bb3ef36c0c97c84b005c4ecac69a4f0a0fdf6b64e539f66565f35a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The reused resolver: the worklist's tree reader and its `resolve`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fd41127da6e3a6af1dd01f319f5c60b6f2a6d37",
+            "content": "sha256:f70beddff6b31e691412efeded570e9743aaf0353948b9d35b6f5bc32f9a2b3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeTrees"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fd41127da6e3a6af1dd01f319f5c60b6f2a6d37",
+            "content": "sha256:e1ef3f03df40f48e9a34cacfe7da3e0a1111ec90ccbc777dd812d8790c048d77",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_blob"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The order cases: unchanged Markdown is current, changed is unverifiable, deleted is stale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:76f360523e4d81230992fb73e53e75815f37025d3a7be3c3f97d1654bb032aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A timed-out Git call is unverifiable and is not cached.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:b4b5303e01008d309a914dfee70cce629dc9ec69fdc15264cf4c27442b77bab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The cache key's contents and its reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:267d3264fac15b309b96232f0ebfd76909e72bb0603438c3ddf3e231d9a86923",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observations_are_keyed_by_blob_locator_and_extractor_version_and_reused"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The extractor version, the supported kinds and the 8,192-entry bound with its memory estimate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:312552ef66922051912ec00ede808f1c47a4f4d01306e620556820b6af8356cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXTRACTOR_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:567bf919a4b0fbc6c6f7a8aee1b75bc3480cbb91ee2c829573db5eb910adcac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SUPPORTED_LOCATORS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:f4d87364c601c9f0382632640c19877d29ea5a2b4356866ea14ec68c53c9e64f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_OBSERVATION_CAPACITY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The process-wide observation cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:213844bfa8138e7ce637095e1874e3fdd30ee69561a438c69f4c02c892be1b02",
+            "locator": {
+              "kind": "symbol",
+              "name": "OBSERVATIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The requested tree, and one read of its file list with a named problem for none or an unreadable tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:0abe2ee4e0d31421a27d15f6fb73c3c8f8876489bcf8630ae37920345e2797a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeTree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:35abf4a195263604c455c0d071fa1789f6dcf70c87d486e04374c7b0e0272a13",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_code_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One entry's observation and its wire shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:6eac248e8b37e2d6b00e02ea8cfe1976dc192a1fa816fc3c4206ac4d08bad770",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The cache key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:148593ddb39045b36b33abb0a1de178ca62ce956c8f6ed8e0e27376c81cf828f",
+            "locator": {
+              "kind": "symbol",
+              "name": "observation_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The verdict: the checks that need no resolution, then resolution and comparison; since MIK-R09 its read errors propagate to `observe_entry`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:8d10aa0fc5bafb426d5b210d1b12f052229d0780ff12c8d73c025340c1110abb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two causes of a failed read, told apart (L09 review R2-3).\n\nAnchor: \"tells two causes apart (L09 review R2-3)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:f07e5584c838cf36c395e821bda695ac18c298073aadc0830b6612a42dc596a9",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The observation catches every read error and sets `read_failed` only for a Git failure.\n\nAnchor: \"read_failed: bool = False\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:ee93a9c8148a807a00acf53891f0f82157670da29fd7d49ba3f0888ff9a4f01a",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
+            "content": "sha256:8a1fabd44d73631b1c60c4584ccb710e30396c4d0d6eb60ba1450d765946627e",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

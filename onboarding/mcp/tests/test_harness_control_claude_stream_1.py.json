@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_harness_control_claude_stream_1.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Discover uses only token free bootstrap and list models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6818166b06ff099afbb1af325b3f1f83cbc04e14",
+            "content": "sha256:c7662d9f2c53a04439ebf9c699bffdc77822d3de329adb2bf1a6657dc8819d2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_discover_uses_only_token_free_bootstrap_and_list_models"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Launch preserves arguments environment and requires structured init.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6818166b06ff099afbb1af325b3f1f83cbc04e14",
+            "content": "sha256:8f1b2ed8bbabe3943567e74367d950cdd91a4b4765a823e38345d0e2a2cfb30d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_preserves_arguments_environment_and_requires_structured_init"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Missing protocol capability fails loudly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6818166b06ff099afbb1af325b3f1f83cbc04e14",
+            "content": "sha256:91a5714d6415d32c7ee067917198b18378a297c3c26463003b29617613b837e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_protocol_capability_fails_loudly"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Expected launch model mismatch closes and propagates as failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6818166b06ff099afbb1af325b3f1f83cbc04e14",
+            "content": "sha256:4e72e3ccd2dd0f0d972daaa4422dd6bea9b6ff53b84aefe76db4c1863ae61ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_expected_launch_model_mismatch_closes_and_propagates_as_failure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Correlated acceptance retry activity and terminal result are distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6818166b06ff099afbb1af325b3f1f83cbc04e14",
+            "content": "sha256:a1aad07e126526447e40a0dccc347ae8c3165363b0b78dfd32a0492efd63fdcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_correlated_acceptance_retry_activity_and_terminal_result_are_distinct"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Permissions and ask user question use durable interaction response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6818166b06ff099afbb1af325b3f1f83cbc04e14",
+            "content": "sha256:d8be2db9f6445d7b2b13c18487d41fd10f51974f18bb776d6fe08ec1f4fee58c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_permissions_and_ask_user_question_use_durable_interaction_response"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,69 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Threshold, ordinary list, and virtualized list implementations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "118e54cbf09e76dc826a4c5043839fa039d3dc3b",
+            "content": "sha256:d5f0b3bd09c318bcca6b644dd4d5fc50a21c1d056ce0374096c92cc4cf1cda2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "INSPECTOR_VIRTUALIZE_THRESHOLD"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bus caller that lifts interaction state above virtual rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56362cc1ad09f36c12587aa17fb6f5753059cc59",
+            "content": "sha256:e876e7cf85b4bd79b48b02cc1c2d5cc8ead2038b056b60aa7ccd2c94cfba44a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "pickupMatchesFocusedSeat"
+            },
+            "path": "dashboard/src/panels/session-cockpit/BusPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Evidence caller for large set/receipt ledgers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36c4cf83b7f43f90d0b5eaebf2a7e2686721d993",
+            "content": "sha256:0f2a8eb7f7e25fd8d263753a528d6f7d854bf4a855b0ab24e50d9380bef45e82",
+            "locator": {
+              "kind": "symbol",
+              "name": "setLedgerEntryLine"
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36c4cf83b7f43f90d0b5eaebf2a7e2686721d993",
+            "content": "sha256:12da4fe2c3b52b8f1ecbd63f2b4abab8b291ca091f60b3952a4eacd2deff7ad9",
+            "locator": {
+              "kind": "symbol",
+              "name": "submitEvidenceLines"
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

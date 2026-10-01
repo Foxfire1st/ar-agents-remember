@@ -1,0 +1,370 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/schema_v6.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The six-name appended-table tuple whose prefix rule makes generation 6's manifest begin with generation 5's twenty-two tables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:7af9b8f2acc433a66ba0ba6ce33e61f2bfccd6b91a765c639ee2fa71d0f36222",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The declared-but-empty feature tuple, so \"no new SQLite feature\" is stated rather than inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:846958ed5776f88992812fe9a6aa343215317e23ae19d052f3cc72413f779aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_FEATURES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The one generic append that composes every generation, and generation 6's own one-line call naming `GENERATION_5` as its base.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:2e3431b78357da6223cfaf09e7c4bd387194097559deac8be074af5509bf3630",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_generation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b11d937c185998fe3e8c18fee909ea0a9b2ea229f797eb2f8e2ff74bbd0a7cf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_6"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:572febb5ed1bf2b0158278fab02e43237b8847d0eb78439b6720b1c71eadf5f8",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:be6209e673fe1f03479eb853abeb256e578a5119a37b8a986efe1c2a0a9fcfe5",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 346
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:f77a8a016aa123162c854b72ff9e48a028f51681878e6c4c19fb6bdf307fa5aa",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 361
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:32beef02b32e41069db863a32f301e44c3b45352d3bd981f0e961486c5e1399b",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The published additive predicate the generation case uses.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:1192b4e543d37b99f6ffdc87d010b507af405780120b39f094c3f7cd2de3b6c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "descends_from"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The registry whose last entry is the newest supported generation — generation 8 since `KS-R13@v1` renumbered its append — and the created generation it names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATIONS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:c954da44fc1cb1e734e9bfa69681a7a466150cb94dcadac44e0688afef4fdaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENT_GENERATION"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:ee8890993746a582400ce823dc7ae072381eef0593bf5511f7066db205781686",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 425
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:2a10a01d0583ed6bcd5fce90e832f1e7c17f3eb3dc9ce18fa88e867ec69fa8ca",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 447
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The created store's own schema name, so a created dataset declares `ar-knowledge-sqlite/v6`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:267df43fb75aae5da39490029c8e15116f8845ec4a562f561095a7ee407570bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_6_SCHEMA_NAME"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The case that measures the append, the six names, `descends_from` and the created generation.**\n\nAnchor: \"test_the_registered_generation_appends_the_six_tables_to_the_generation_it_descends_from\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:5f1627ab72dfe527996dc4faf0318c47b16ddc7eea3d35ae11e102e554d61075",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 376
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared column order the encoder serializes rows through, including the edge's nullable `(policy_id, policy_version_id)` pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:33482fab25ee0689bb2a52a03c313756a71d3c72768a78659f7e119738ab6387",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declared composite primary keys, including the route table's key that makes \"at most one canonical owning route per family revision\" a constraint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:d8719e18690411ff96722d44eda1dc830c4d152b550525bba0d907a60006131a",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_PRIMARY_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declared typed-JSON mapping, so \"no JSON column\" is stated per table rather than inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:807fbfc73481970df8e52f40c5e9e1dc6e38fe2c8e60edffe09021fe0437bfeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_JSON_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The six `STRICT` `CREATE TABLE` statements: the two typed endpoint keys with no polymorphic target column, the one-node-cycle `CHECK`, and the four policy `CHECK`s.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:0b005e4e3c6073932a29889348ec23137ac3244344cc9f895ad3f2a185a3fa82",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLE_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The index-name collision, recorded where the rename happened: an index may not carry a table's name.**\n\nAnchor: `family_composition_policy_version_edge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:1dcc6f0ee949c2895b51442bbbb7f72a88fe87e6f005875bb5f2d035048c6163",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The declaration the collision renamed: the index over the edge's `policy_version_id`.**\n\nAnchor: `family_composition_policy_version_edge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:1120d25fd091ea4b37d5c112484151bf9770101a59c134fc204dec4cc8a382d4",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The declared unique tuple as two partial unique indexes, because a table `UNIQUE` over a nullable column does not enforce uniqueness for `NULL`s.**\n\nAnchor: `family_composition_pair_with_policy`; `family_composition_pair_without_policy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:915b73f0eef1dfc958198a73517aa1e5ea4f54bd5dd54ca8b5c0b66df650bf70",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:c5825ac074636580c6c7c87b0eb4a0a7347b36e82ab1c97760c41d8a274f7ed7",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The twelve immutability triggers, a no-repoint and a no-delete pair per table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd64ad4c5bdd692f15f6dbcc775b1ec4ca1e0092",
+            "content": "sha256:5be1055511be3ddbbe61ef521296f79cbf76ce5238bf4b64ea9815a291282a10",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TRIGGERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

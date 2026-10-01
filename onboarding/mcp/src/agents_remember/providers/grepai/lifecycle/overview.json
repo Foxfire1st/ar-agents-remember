@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/lifecycle",
+  "references": {
+    "1": {
+      "note": "The parent lifecycle facade imports the GrepAI package facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e8b470d74215b38afe84d85693a7f42351ea7e",
+            "content": "sha256:a4c3cb15b6baf711eddd9967df575a9777d9f64941a3c48622b073af1d9aa9ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -1,0 +1,257 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/tool_registry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exclusion set names trusted compatibility and administration operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_COMPAT_TOOL_NAMES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The five strict response contracts those rows map to, in the module that declares them and exports exactly those five names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e486538455e398170a3aa612a1fad5ab163b13f",
+            "content": "sha256:c1e383ab68e5843dbec29d6192224846cca2516c057d1c0792710ec6cde177e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The three strict contracts the capsule rows map to, including the shared success/refusal capsule envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:c60e6b82416934f780fdf1ce59eff9840476c4c307fc19b9b2089f211449a4c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleCapsuleResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:c3fcf3648ee9a334adea687e5219d8eaa03852026cc43e2a36e5c481ef8a5cd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogListResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:101b00e18d3e8cfe9badf6f0a19c0b0bd84063be7b88c8504e56a399b33234c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogReadResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The current module exposes the module-level vocabulary at this ownership boundary.\n\nAnchor: \"INTERNAL_COMPAT_TOOL_NAMES = frozenset(\"; \"PUBLIC_TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:6a8ad15391153df8c0e8ef6d3e158e1e76f0d70bbca93d7df82029d6f0b2f248",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The complete registry includes structural agent and gate responses alongside internal exact models.\n\nAnchor: \"\\\"dispatch_agent\\\": DispatchAgentResponse,\"; \"\\\"gate_decide\\\": GateDecideResponse,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The advertised subset is derived rather than independently maintained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOL_RESPONSE_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order.\n\nAnchor: `worktree_checkpoint_landing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:ee8417feebfc3e86e1cab9834f91fdedb6974035ccf8db2d5114d5ffd6fb8184",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The stop tool's response model is registered immediately after its sync sibling, matching the advertised order.\n\nAnchor: `worktree_pause`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:fcd08cb2085b842e309edbce6d4f9965dd019c2dba710c44a95280a9f6b33199",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order.\n\nAnchor: `worktree_record_landing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:7d21c99cdaca5611c9049b18b91ae30bc67caeabf2dec8fbb21270de9835e406",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The three rows the capsule-and-skill registrar needs, at the mapping's tail to match their appended roster position.\n\nAnchor: `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:d4a8b4d417baf9ab43fafd8f756a9809e29778f62410e84428ad5b2f5d7ef49f",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The choke point validates against this registry before emitting the envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The five rows the knowledge registrar needs, at the mapping's tail to match their appended roster position.\n\nAnchor: `knowledge_read`; `knowledge_change`; `knowledge_diff`; `knowledge_integrity_check`; `knowledge_project`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:a30808185d7b0f10991bd70239f2fc0622317c9a1c2c6e5efd5e2c41f7651818",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

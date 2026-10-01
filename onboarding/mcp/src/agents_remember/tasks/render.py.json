@@ -1,0 +1,191 @@
+{
+  "path": "mcp/src/agents_remember/tasks/render.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The header line is drawn only when the field is true.\n\nAnchor: \"**Knowledge maintenance scope:**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_header_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The block is drawn only when the field is set.\n\nAnchor: \"**Expected knowledge effects:**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_header_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The step renderer suffixes a top-level note onto the checkbox line and draws that line when a note is the only reason to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:8139caea92c6724240cc28d18f596e5b348b96e0fe463fa0bda59ebabde6484b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_step_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The renderer allocates private leaf ids once and supplies the same map to declarations and edges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execution_graph_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declarations use qualified title identity and edge endpoints reuse the ordinal allocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:438b013392b3b2ea016579e6904827709cff96f2de795bd04f4147913cdcc06e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mermaid_node_lines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:4b2bcadfd37bab97438a7a3b4c5ac867eeb4a3548f42b7560eeb3e3f0d5ee053",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mermaid_segment_lines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:9a7bd108253926ee04cbb9f6c22d5acf8ba72f934971c99cb639dad5152b5ad5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mermaid_edge_lines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:c99939524914cfb4097970fe2abc4c079ce8e3db309882971face50560c039cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mermaid_endpoint_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The graph node model provides structural keys for the allocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintExecutionNode"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The typed requirement/question renderers and the review task-intent line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:dab15127874a6faca082c2c89a1ff50cd9fd14d9e0a7e4534fdcfff2a1faebcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirement_lines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:70b3e7c579112c56ee08a0039ccd6461d122f0f147498a0d7e235e9ae5fe729a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_question_lines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:da30910faffa5606c471509f982b4e62616740804f58ac7f25336857cdc0784b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_review_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The status marker table is a direct lookup covering every `DocStatus`, including `abandoned`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:5aff2bbe351758a6f7744f6fab401c3bed09292617d6207c6a9d9b9216e335da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MARKER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

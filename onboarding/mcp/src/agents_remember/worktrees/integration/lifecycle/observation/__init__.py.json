@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Lifecycle journal observation services.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929e093a42bb7114846c67fc3fad3683d64b85dc",
+            "content": "sha256:f40c504f74977df002dc3c0ab608a4beedb2d269cf059d793640fff7cdfdda17",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

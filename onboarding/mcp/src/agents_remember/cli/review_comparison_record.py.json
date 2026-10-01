@@ -1,0 +1,562 @@
+{
+  "path": "mcp/src/agents_remember/cli/review_comparison_record.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+        "content": "sha256:e34b533d1f9ae5a0779f9e41ce956ec05698ecbd9ec8b6a6308144f779e63b04",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recovery_arguments"
+        }
+      },
+      "id": "RLZ-GRQ01WW8",
+      "invariant": "INV-9BH2BNCT",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Validates the recovery flags at the command line: --recover-generation and --curator-record-digest must be given together, cannot be combined with --unchanged-knowledge or --historical-absence, and must be an exact generation UUID and an exact lowercase SHA-256. Recovery is therefore only reachable as the explicit, fully named operation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of why the command exists, why `--contract` is the write guard, why `--config` is required, what it deliberately does not do, and why planning is not offered.**\n\nAnchor: `freeze_review_comparison`; `history:recorded-source-range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:d00c508022603f41cfb5f218276122b112b1ffffba053d2baaebe6b8ec5368d9",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**A citation that is not a citation: the separator split, the two empty halves, and the absolute-or-`..` path a task-relative citation may not be.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:ea5b9864ab75f3b534e007edeea555322344ac5bdcf5426e0e294fc827372a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The report built from the record's own fields, with a refusal in the comparison vocabulary's own four and the published half read off the manifest block by block.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:f1abd2e3fbfe71f9baac8ec9f223daaf0b46d000c59466dbc26b94932ddf619b",
+            "locator": {
+              "kind": "symbol",
+              "name": "report_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The same facts as lines, with the predecessor line stating `nothing (first generation)` when none was named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:5eb644edbea7af0e74f46825146c27145765f4acd3e80fb00c9c147ebd0dfd5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_print_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The freeze owner this adapter gives its production caller: resolve and compose exactly as the surface does, then freeze only what that composition bound.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e18deed773393f1673b6a72e09be3307ec2cd37",
+            "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_review_comparison"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e18deed773393f1673b6a72e09be3307ec2cd37",
+            "content": "sha256:fceb04ae1ef4deeeab9e6942683a5a7ccd347c86ca1bd786a11d8d463c089c9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_comparison_generation"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The caller-known facts that travel together, one of which is the predecessor — the field this adapter is the first shipped caller to supply.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e18deed773393f1673b6a72e09be3307ec2cd37",
+            "content": "sha256:d23b88bfe5806982c241f16ab82833e81ee4eba54fe4c519aa5684e7530d096c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonFreezeOptions"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e18deed773393f1673b6a72e09be3307ec2cd37",
+            "content": "sha256:e5f8884191c6c2fd8d5296fa8299848fab0b92688b3e62f3ae9d5a4f9245b4ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_FREEZE_OPTIONS"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The outcome value the report and the exit code both read.\n\nAnchor: `published`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e18deed773393f1673b6a72e09be3307ec2cd37",
+            "content": "sha256:0c6f8ad06fcbfb1c69a12864fc7c27efd30bdc894f73f4415c582ecef4a8384a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationFreeze"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The lineage a named predecessor produces: the generation id *and* that generation's manifest digest, and the successor's recorded index.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e18deed773393f1673b6a72e09be3307ec2cd37",
+            "content": "sha256:f613419c5781bf8facf731132c8e25267208d3ba879e12cd611ff04f2a8176e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lineage"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:cd86731de23da33a01dfa8bde4c3ced074c1065c1952493400e697143feaa5a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonPublicationLineage"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The seal's own omission set, which is why naming a predecessor changes the binding digest and therefore the derived id — the fact behind this card's carried limitation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:55264320a7f56bb3b5bd6ed460e6a5f397fee7ef24bd87ae6794dda269ab0a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNSEALED_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The discovery the predecessor decision reads, and the address it answers with.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:87757e4339e7c19f1a026e13d00e4aa193e7a0755fb81b60e184edf04ae29031",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_generation_refs"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:99ec4ea3783af488b05781f374e7347d32a146a6f9979325f95ddbc9b04ffa92",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationRef"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The one manifest file name the recorded instant is read through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:eca5c99e15a60f69045c9d64bc9bcc0d9ddb5a7551a744475f5b2176230da4aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_MANIFEST_NAME"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the two exits, the argument declaration, the report builder and the run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:3b0192eaccb6e3239f756bbf8efa77be94d9bb7c49ab8377a4e3c0a5bd414c8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The request value composed from the contract's own recorded identities rather than from anything the caller spelled.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:309800d1e476be02617431a5b949573576643852804a690979848579f42e621b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurfaceRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The contract loader whose typed failure the invocation answer carries, and the contract whose recorded task root the generation is published under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The authority loader and its typed failure, so an unreadable settings document is a named refusal rather than a traceback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:57afd11ee4cb0155d38f7174417397460259c8c9897017ca76417f0749efaa0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_config"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:d108926269fc314e86850349b744afd849bc1f442d4620dbe3545ffa6ac47cf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConfigError"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The registration that makes the command reachable: one of the umbrella's subparsers, and the declarative pair that wires it.**\n\nAnchor: `review_comparison_record`; \"review-record-comparison\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:93b85c35410cc5524f6d7c15ae01699b9405dc7f0f1e86a65f81d3d98aa6a9ac",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The read the recorded refusal and the recorded source range are named by, so this command's record is what the surface reopens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5375e4feefde13ed3e25da4820c417b91514b0a",
+            "content": "sha256:2c60f2206692a6fc6bf1b6350c4f004a2e0da19b82fb8cb67a5665df39ad10c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_RECORDED_COMPARISON"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5375e4feefde13ed3e25da4820c417b91514b0a",
+            "content": "sha256:69b11d7d16505cd8244b9dfcfe4783d23885eb5caa2d42399f305d6aec473155",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_RECORDED_SOURCE_RANGE"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The case that protects the journey this command completes: a baseline placed by a `--baseline` run is opened under the namespace its own record names.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:821e178f264cb401d143f64e10b134d9a06ca79be55e7652932555e16decb770",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_placed_baseline_is_opened_under_its_own_recorded_namespace"
+            },
+            "path": "mcp/tests/test_knowledge_ingest_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Recovery controls are paired and incompatible live selections refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:e34b533d1f9ae5a0779f9e41ce956ec05698ecbd9ec8b6a6308144f779e63b04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recovery_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The two exits, and the one that is an outcome rather than an error code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:5b602d381212b9ddd174d21d23f8c126fd8081d1062857c3908b6ac7216514ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXIT_PUBLISHED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:88b138d3e5f0cd1b1695e69b7d014f64d6d1a41a8e448d75ee72f5ff271449e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXIT_REFUSED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one evidence separator, chosen so an owner cannot be read out of a path, and the two sides an absence may be declared for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:d8330a4406ae3e22a62b17fd9ab17f100999385fa3b8e66528cb6e57d2f9bec9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EVIDENCE_SEPARATOR"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:539e3202b144ab3499bf40c47810e7578d20551016b7abe36155fee52530be36",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ABSENCE_SIDES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The declared inputs: required authority and contract, repeatable evidence and historical absence, unchanged-knowledge mode, paired explicit recovery identifiers, and report format.**\n\nAnchor: `--config`; `--contract`; `--evidence`; `--historical-absence`; `--json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:388f7f351ce2a0b6e2abe4ecd906233ebebcf33db77136f0fb1734de7839530a",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The whole run: the argument-list answer, the predecessor, the request composed from the contract, the one freeze call and the outcome as the exit code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:ac93c117e054be66dddce69f25bf514d90e22cd0ffea0210bd6455ce4e019288",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The predecessor decision: the highest recorded index, the tie broken by the record's own instant, and `None` for a leaf that has published nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:cc8e7240b0aa4f5a01b17889b1801175d115ef370b4bf76865b6c03c2d52a64e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_standing_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One generation's own recorded instant, and the empty string that keeps an unreadable record from raising mid-report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:1c3d51211e58254ee4fbd9932bb5b13ef50dc220b55258f9af4028355efc066c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_at"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The argument-list facts answered before anything is read: the two blank checks, the contract load carrying its owner's typed failure, and the two option fields this command supplies.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:3fe181887abb4dbf87c3b7e67a543133430d16ddde5d1d6d7e999783ca854ba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invocation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

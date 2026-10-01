@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/cross-repo-boundary-pack-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The boundary pack records allowed adjacent repos, boundary summaries, confirmed interfaces, and shared contracts.\n\nAnchor: `## Allowed Adjacent Repos`; `## Boundary Summary`; `## Confirmed Interfaces`; `## Shared Contracts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbf691b2c006d7676d44e5b256b4032ef29be816",
+            "content": "sha256:0495aa975fc06626cdc0441de2719c70c41786c0263f3ac51202914447d859f7",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template records branch/topology notes, same-repo facts that must not be classified as cross-repo, boundary risks, and developer-confirmation needs.\n\nAnchor: `## Branch And Topology Notes`; `## Same-Repo Facts That Must Not Be Classified As Cross-Repo`; `## Boundary Risks`; `## Needs Developer Confirmation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbf691b2c006d7676d44e5b256b4032ef29be816",
+            "content": "sha256:b0cff865e5e9ed64dfbf5d7ff5e9702bc38ef066e5b7b3fea429208d94764392",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-03-repo-bootstrap` skill Phase 4F writes boundary packs for priority routes with inbound or outbound cross-repo signals.\n\nAnchor: `### 4F — Cross-Repo Boundary Pass`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c01b60378194af6bdc864a84f3d1fb04a6b1f246",
+            "content": "sha256:2a55fa517364935bcfed5db5f085e5e2cef1ce88ccce7242e9674420fe5fd1b4",
+            "locator": {
+              "end": 959,
+              "kind": "line_range",
+              "start": 936
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,673 @@
+{
+  "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mount/target-change effect selects the leaf, task, or master request (the master branch now threads the entry `generation` as pins), fetches it through `req.then`, and reruns when target inputs change.\n\nAnchor: \"const req = changesetListRequest(repo\"; \"void req.then(\"; \"const listRequest = leafChangeset(repo, m, leaf, \\\"working\\\");\"; \"masterChangeset(repo\"; \"taskChangeset(repo, scope ?? \\\"\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:b427fe59ba9f9ab18c98f5520609a6f223e20b6c6e1fcc127cbe6de23cdaeec5",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 452
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:3c077081586e120db02a386e8882a3e0338cf040f6017fb3b6412fade5733174",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 453
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:ca1ba0a97b71a327d679df83d0d421596c04871be1ba5ad90dc178fc5bab67d7",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 484
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:2c0278c9021c1dcd6880b7e2f577ee855a3747055483582d8110e6ef8c812a21",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:ae11b00f75988d846d4388c403092733ed7d87a900aeb787b36d3be8a2ee7846",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The loading, back, and master-file NET-diff behavior pinned in the tests, plus the new generation-binding case.\n\nAnchor: \"shows loading until the request resolves instead of rendering a zero-file result\"; \"calls onBack when the back link is clicked\"; \"opens a per-file NET diff from a clickable row in master mode\"; \"binds master file expansions to the generation the net listing published\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca6c2da0c47d3cbe007c43ec57730180b37706b4",
+            "content": "sha256:2696e0039cb630ea28c35d4b88362024d0c2751e215c42038243daf0a7c8a50f",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca6c2da0c47d3cbe007c43ec57730180b37706b4",
+            "content": "sha256:3cf9c086fe55e2fbed4248845e06021aa30d52968d6ffc91faf5a83b4e0edebe",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca6c2da0c47d3cbe007c43ec57730180b37706b4",
+            "content": "sha256:aa13c61b656a23dfe31ade6df8b603b56ba32a103569f964390f1fc295912fb7",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca6c2da0c47d3cbe007c43ec57730180b37706b4",
+            "content": "sha256:46834af85fd788d35b1736a7bbf93dbc0e6ef9b9a74bd0a0d709c8a44c40b89f",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The master branch of the list request now asks for the per-leaf breakdown; a task/leaf payload has no `leaves` field, so presence is the discriminant.\n\nAnchor: `includeLeaves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:c9d86d8b727ec2e2f7874d14dd6cbd6bac26ced7e2dddee775f1a24539495455",
+            "locator": {
+              "kind": "symbol",
+              "name": "seriesLeaves"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:2c0278c9021c1dcd6880b7e2f577ee855a3747055483582d8110e6ef8c812a21",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The rail that renders the breakdown: one row per leaf with its own state chip and both halves' counters.\n\nAnchor: \"by leaf (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:0846cde134a51e804cdcf97c268f83cfcda9ae1db548fc05ff9e0048b0691ee6",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafBreakdown"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:45ab7274dc87bc992c8d3ce888ffc7f534bd43faa2747882c92bbe51062eee03",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafCountText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A leaf row opens that leaf's own range — `committed` for a landed leaf, `working` for one still in flight — through the hook the cockpit supplies.\n\nAnchor: `onOpenLeaf`; \"data-leaf-state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:67b53cb1747c5d68f16b31ebcd0ead3e2ffd836bf608d431e9cb50201489eaac",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 397
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:56b06bc45835568762677e8cefe56932dc78de7d0f77c4f72b8be9b83c614735",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 649
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:656a2e690992b4cd3c9d4ccc34d3565bc44c43101d95c97773d63d5d7fa8db6a",
+            "locator": {
+              "end": 721,
+              "kind": "line_range",
+              "start": 715
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The refusal is carried as an answer: the owner's code and status, its reason, the offending input and the next action.\n\nAnchor: `reviewProblemFromCause`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:e9e6a748e8910e1f666dd80af9cb8eb286c4035b744ddf6f258f50e458cf48aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetRefusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:ca761a7b348a71c8abf9742530828a155f718870e18c150f1a6d8a0e88dac735",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:5b8cef3ce3f90ad2da3a9003085b421757f6dcae74b57c9d33a2e8086981301b",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 460
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The measured-empty statement, and the three states of the middle pane.\n\nAnchor: \"this change-set is measured empty\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:53cb8f15809c09e81c3df1b68504652105e2c5dc67def37496eab939d900f261",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetMainPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The cockpit re-target that keeps a leaf opened from the net in the same takeover.\n\nAnchor: `onOpenLeaf`; `onOpenChangeSet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:1df0e6755b92c3200a30da14548c3070ca748d0074704eb611d637a054669aad",
+            "locator": {
+              "end": 577,
+              "kind": "line_range",
+              "start": 567
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 601
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:c268cebf367c9570b1e04ac751fc41e24902bb1e222182c35638e9664eaa1417",
+            "locator": {
+              "end": 944,
+              "kind": "line_range",
+              "start": 912
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The delivered cases: per-leaf counters, opening a landed leaf and a working leaf from the rail, the named refusal, and the named measured-empty.\n\nAnchor: \"lists the master net's leaves, each with its own code and memory counters (R33.2)\"; \"opens a landed leaf's committed change-set — and a working leaf's working delta — from the net (R33.3)\"; \"names the refusal when a landed leaf's committed range cannot be shown (R33.3)\"; \"names a measured-empty change-set instead of leaving the pane to the pick-a-file backdrop (R33.3)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca6c2da0c47d3cbe007c43ec57730180b37706b4",
+            "content": "sha256:334cca9999ae52d344539e9a37b76fb5e4dbc3af150e38c360a30df7e6f9ca78",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 363
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca6c2da0c47d3cbe007c43ec57730180b37706b4",
+            "content": "sha256:83cd1a4d8fd44b30410380df25bcb45a370fb6e94a8e925d214711f345a83a49",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca6c2da0c47d3cbe007c43ec57730180b37706b4",
+            "content": "sha256:d30f3ec6d27c8440cdb907ec07a83916631fbbd309903300fedf606b6184c399",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 421
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca6c2da0c47d3cbe007c43ec57730180b37706b4",
+            "content": "sha256:5fc1fd04e412cb8d02b4d03472656b94fa1dc72e791928d057ebfeaa81b01e9c",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 454
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The series view is bound to its listed generation: the list response's own generation when it names one (else the entry's pins) flows into every file expansion, with a digest/currentness/scope caption.\n\nAnchor: \"boundSeriesGeneration\"; \"seriesListMeta\"; \"SeriesGenerationTag\"; \"changeset-generation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:e78c1ce8942f8330c54654e10c05777b00fad62df8cd2b33d52a383b369db036",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:da8c7fe08ac9128bc9acf3b2d7e7dda7d36f751ec51c875287463d6dceff5591",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:d1656d7fc6e251489caf5f21cd40a4224e92cf22110dfe5ef58d8e2586d7c762",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 317
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:97ca33713d9413d7f9c034d8ec767ce6a6b2cc264a86da5570b180cefe9b2c1f",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 324
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `open` handler invokes `loadDiff`, whose branch chooses the master (generation-bound), leaf, or scoped file-diff path.\n\nAnchor: \"const loadDiff\"; \"masterFileDiff(\"; \"fileDiff(\"; \"const open\"; \"void loadDiff(kind\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:2fbdd69663c247cecac7463d73bc8f38f572b6795fafc4e2f9f03379479e57e8",
+            "locator": {
+              "end": 684,
+              "kind": "line_range",
+              "start": 684
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:f6e170cc1d64a4e9520e9af3306a62efe705845c6bc9e6efd837399209d938f2",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:00ce4681b285321a33f170741a9d62acf415327dc15527744fc0fc916f6333db",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:52058f0a3792389f9bb307e86cd81aa64be26bb3730c298ac7d26839704730a1",
+            "locator": {
+              "end": 687,
+              "kind": "line_range",
+              "start": 687
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:c471c85c62ee47023aea86cc76ef044b63a50e5db188083c8d2611c5f0b42d68",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 692
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Code↔sidecar partner mapping uses the forward and reverse helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:cec344fdc84965e94eb1676c4a2eaa85ef79542653dd8c7580352c5ec48b2e22",
+            "locator": {
+              "kind": "symbol",
+              "name": "partnerCodePath"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The viewer invokes the L3 leaf, master, task, and file-diff client calls.\n\nAnchor: \"leafChangeset(repo, master ?? \\\"\\\", leaf, mode ?? \\\"committed\\\")\"; \"masterChangeset(repo\"; \"taskChangeset(repo, scope ?? \\\"\\\")\"; \"fileDiff(repo, scope ?? \\\"\\\", kind, path)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:01443d223bc3efa96f9d4a2f7a32381e9b06317b4bb5d3a762d06d45ca6e719f",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:2c0278c9021c1dcd6880b7e2f577ee855a3747055483582d8110e6ef8c812a21",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:ae11b00f75988d846d4388c403092733ed7d87a900aeb787b36d3be8a2ee7846",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:00ce4681b285321a33f170741a9d62acf415327dc15527744fc0fc916f6333db",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists.\n\nAnchor: \"ChangeSetPane diff={diff}\"; \"ChangeSetPane diff={partner}\"; \"partner ?\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:6028d140f5f9e7f1c04eb223b2fe7f19bcc345b844b4726a5d584fd5d77deeb0",
+            "locator": {
+              "end": 531,
+              "kind": "line_range",
+              "start": 531
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:bbf17be70c3f93f142c2bfc33846945d3849baf14ef03d65af6576adf159ad3b",
+            "locator": {
+              "end": 637,
+              "kind": "line_range",
+              "start": 637
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:15ce98128b023270bebcaf4f37f82675243200b3420834be9b1acf10995c0077",
+            "locator": {
+              "end": 633,
+              "kind": "line_range",
+              "start": 633
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Cockpit takeover that mounts it full-bleed and supplies `onBack`.\n\nAnchor: \"<ChangeSetViewer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 601
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The middle pane's three states — the picked file's diff, a NAMED measured-empty change-set, and only otherwise the backdrop with the \"Select a changed file\" prompt.\n\nAnchor: \"Select a changed file\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:53cb8f15809c09e81c3df1b68504652105e2c5dc67def37496eab939d900f261",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetMainPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The DetailPanel controls that open it with a change-set target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:e35cabbbff34cd2a8ca427ea32bb54c51df1efc804f65d529106da5de03ea2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetButton"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocChangeSetBar"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

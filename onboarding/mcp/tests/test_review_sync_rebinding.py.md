@@ -1,15 +1,5 @@
 # mcp/tests/test_review_sync_rebinding.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_review_sync_rebinding.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp tests route overview](overview.md)
@@ -153,16 +143,16 @@ lines**, inside the 1200-line hard rail, and adds no `# noqa` and no timers.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository — the memory layer's `system/sources.md`
 records no entries at all. The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The claims on this card are checkable in the module's own docstrings, its fixture and its cases, and in
 the owners those cases drive. What a reader should carry: the fixture is the product path (the endpoint
@@ -170,56 +160,54 @@ fixture's own datasets are refused by the publication route, so the leaf's halve
 store); the assertions compare against the store's own reopened truth; and the four `F` cases exist
 because each of them pins one sentence a verifier could otherwise reproduce as false.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own frame: the file-size seam, and that the four cases drive the real managed path with nothing injected.** | `worktree_sync` | mcp/tests/test_review_sync_rebinding.py:1-14 |
-| The sibling that keeps every pre-existing managed-sync case, which is why the seam falls here. | `WorktreeSyncTests` | mcp/tests/test_worktree_sync.py:493-900 |
-| The two review identities, the candidate-only invariant that makes the halves different datasets, and the two fixed row identities the union case uses. | `CANDIDATE_ONLY_INVARIANT_ID`; `CONFLICT_ANCHOR_ID`; `CASE_ANCHOR_ID`; `NEWLINE` | mcp/tests/test_review_sync_rebinding.py:92-92; mcp/tests/test_review_sync_rebinding.py:95-95; mcp/tests/test_review_sync_rebinding.py:98-99 |
-| **The enclosure itself: the shipped endpoint fixture's pair, the authority binding, the store-created review datasets.** | `ReviewSyncFixture`; `_seed_review_datasets` | mcp/tests/test_review_sync_rebinding.py:102-378; mcp/tests/test_review_sync_rebinding.py:165-222 |
-| The MCP authority the tool's own contract admission reloads, written and loaded by the fixture. | `_bind_authority`; `load_config`; `publish_new_lifecycle_operation_location` | mcp/tests/test_review_sync_rebinding.py:126-126; mcp/tests/test_review_sync_rebinding.py:147-163 |
-| The authored common ancestor a three-way knowledge merge needs, and its adoption as review candidate and published line. | `build_knowledge_base`; `adopt_base_dataset` | mcp/tests/test_review_sync_rebinding.py:224-270; mcp/tests/test_review_sync_rebinding.py:272-281 |
-| The two ways the official line is advanced here: a committed leaf candidate, and a source-branch action that restores the previous checkout. | `commit_leaf_candidate`; `on_official_line` | mcp/tests/test_review_sync_rebinding.py:283-295; mcp/tests/test_review_sync_rebinding.py:297-315 |
-| **The real freeze and the real publication owners at the read route's own declared location.** | `freeze_review`; `publish_reviewed_candidate`; `declared_publication_location`; `publish_prepared_snapshot` | mcp/tests/test_review_sync_rebinding.py:325-331; mcp/tests/test_review_sync_rebinding.py:333-358 |
-| The production sync tool, and the owners the cases read the store back with. | `worktree_sync_tool`; `capture_tree`; `generation_directory` | mcp/tests/test_review_sync_rebinding.py:363-363; mcp/tests/test_review_sync_rebinding.py:370-373; mcp/tests/test_review_sync_rebinding.py:375-378 |
-| **Case 1: the moved official line measured against the reviewed generation, the real merge parents, the byte-identical judged manifest, and the durable read-back.** | `test_official_source_movement_is_measured_against_the_reviewed_generation`; `read_review_sync_rebinding` | mcp/tests/test_review_sync_rebinding.py:391-464 |
-| **Case 2: the conforming example — a real union, both sides' changes surviving, the parked WIP returned with no stash entry left.** | `test_clean_knowledge_union_is_measured_and_the_parked_wip_returns`; `assert_rebinding_measures_the_location` | mcp/tests/test_review_sync_rebinding.py:466-512; mcp/tests/test_review_sync_rebinding.py:853-867 |
-| **The two-sided divergence stage, including the store's own derived lock kept out of the park/restore path.** | `stage_knowledge_divergence`; `.knowledge.sqlite.lock` | mcp/tests/test_review_sync_rebinding.py:870-921 |
-| **Case 3: the eight forged verdict shapes the record's own validator refuses, in the order the case checked them.** | `test_a_forged_rebinding_verdict_is_refused_by_the_record_itself`; `"dependency_dropped"` | mcp/tests/test_review_sync_rebinding.py:514-633 |
-| **The validator's blind spot, pinned against the sealed manifest instead: a forged reviewed identity stops describing the generation.** | `rebinding_names_the_generation` | mcp/tests/test_review_sync_rebinding.py:620-633 |
-| `F1`: the four states that carried nothing each name their own store fact, and the durable location stays empty. | `test_every_state_that_carried_nothing_says_which_one_it_is`; `rebinding_file_name` | mcp/tests/test_review_sync_rebinding.py:635-693 |
-| `F2`: the state where the head does not carry the add-all capture, and the wording that locates it instead. | `test_the_source_clause_names_a_locator_not_a_carrier` | mcp/tests/test_review_sync_rebinding.py:695-733 |
-| `F3`: no generation and an unreadable generation store are two states, with the selection owner's sentence kept under its own key. | `test_a_carrying_sync_without_a_measurable_generation_says_which`; `"none holds a readable manifest"` | mcp/tests/test_review_sync_rebinding.py:735-777 |
-| `F4`: the named reclamation owner removes the record, and the reader reports an empty location that says which fact it observed. | `test_the_reader_observes_the_location_after_its_own_reclamation`; `discard_review_sync_rebindings` | mcp/tests/test_review_sync_rebinding.py:779-818 |
-| The helpers the cases read the dataset, the publication admission and Git with. | `anchor_paths_of`; `admitted_destination_identity`; `git` | mcp/tests/test_review_sync_rebinding.py:821-837; mcp/tests/test_review_sync_rebinding.py:840-850; mcp/tests/test_review_sync_rebinding.py:934-938 |
-| **The sync-side owner's own statement of what it measures, that it re-implements no owner, and that nothing there can refuse a sync.** | `discard_review_sync_rebindings` | mcp/src/agents_remember/application/review_sync_rebinding.py:505-528 |
-| **The three carrying states, and the table of every state that carried nothing with the reason no pair was resolved.** | `_CARRYING_SYNC_STATES`; `_CARRIED_NOTHING` | mcp/src/agents_remember/application/review_sync_rebinding.py:155-161; mcp/src/agents_remember/application/review_sync_rebinding.py:167-193 |
-| **The success conjunct and its own stated reason for existing, which `G2` on the sibling module pins.** | `resolved_pair_completed` | mcp/src/agents_remember/application/review_sync_rebinding.py:196-220 |
-| One durable file per leaf and judged generation, under the shipped reports root. | `rebinding_file_name` | mcp/src/agents_remember/application/review_sync_rebinding.py:265-268 |
-| **The recorder: the store's own selection, the resolved capture, the sealed manifest, and the published record with its read-back.** | `record_review_sync_rebinding`; `select_review_generation` | mcp/src/agents_remember/application/review_sync_rebinding.py:271-313 |
-| **The never-raising entry point the sync tool calls, with each state it can report instead of raising.** | `rebinding_result_block` | mcp/src/agents_remember/application/review_sync_rebinding.py:316-373 |
-| The reader's three states, its sentence, and its own statement that a discarded record and one never written read the same. | `read_review_sync_rebinding` | mcp/src/agents_remember/application/review_sync_rebinding.py:376-438 |
-| **The half that compares a record against the generation store rather than against itself.** | `rebinding_names_the_generation` | mcp/src/agents_remember/application/review_sync_rebinding.py:441-476 |
-| The named reclamation owner, and its own statement that no mounted tool calls it yet. | `discard_review_sync_rebindings` | mcp/src/agents_remember/application/review_sync_rebinding.py:505-528 |
-| **R22's own words for a carried pair with no measurable generation, and the selection owner's answer carried under its own keys.** | `_no_generation_block`; `"generation-selection-ambiguous"` | mcp/src/agents_remember/application/review_sync_rebinding.py:597-638 |
-| Assembly that selects nothing and re-derives no reviewed value, asking the vocabulary for the channel matches and the verdict. | `_assemble`; `code_channel_match`; `review_sync_verdict` | mcp/src/agents_remember/application/review_sync_rebinding.py:641-678 |
-| The resolved knowledge channel read through the route a later reader selects its knowledge with. | `_resolved_knowledge`; `resolve_published_intent` | mcp/src/agents_remember/application/review_sync_rebinding.py:703-727 |
-| The record's own version, selection rule, channel-match vocabulary and three-valued verdict. | `REVIEW_SYNC_REBINDING_VERSION`; `ReviewSyncRebindingVerdict` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:76-78; mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:97-97 |
-| The one verdict rule, stated once so a writer and the record's validator cannot disagree. | `review_sync_verdict`; `knowledge_channel_match` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:120-139; mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:142-161 |
-| **The validator the eight forgeries are aimed at: every verdict re-derived from the identities the record carries.** | `_the_rebinding_agrees_with_itself` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:242-300 |
-| **The clause `F2` pins: the head locates the capture, it does not carry it.** | `_code_clause` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:342-363 |
-| **The production call site: the rebinding is attached to the tool result after the transaction has finished and the contract is written.** | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:378-378 |
-| The shipped capture owner that derives the resolved source side after the sync. | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
-| The freeze owner whose options name the predecessor — the operation the record's remedy names. | `ComparisonFreezeOptions`; `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:152-165; mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
-| The generation store's own layout and manifest readers, which these cases use and never rewrite. | `leaf_generation_root`; `generation_directory`; `read_manifest`; `COMPARISON_MANIFEST_NAME` | mcp/src/agents_remember/application/review_comparison_generation.py:530-533; mcp/src/agents_remember/application/review_comparison_generation.py:536-539; mcp/src/agents_remember/application/review_comparison_generation.py:615-649; mcp/src/agents_remember/application/review_comparison_generation.py:133-133 |
-| The durable-evidence pair every record is published and read back through. | `durable_reports_root`; `publish_durable_evidence`; `read_back_evidence` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203 |
-| The shipped endpoint fixture whose enclosure this module's fixture stands on. | `build_endpoint_fixture` | mcp/tests/test_knowledge_review_source_endpoints.py:207-239 |
-| The merge-case support whose authored identities and readers the module reuses. | `BASE_REVISION_ID`; `set_label`; `add_anchor`; `labels_of` | mcp/tests/merge_case_test_support.py:54-54; mcp/tests/merge_case_test_support.py:309-314; mcp/tests/merge_case_test_support.py:323-338; mcp/tests/merge_case_test_support.py:635-644 |
-| The read-scope support's authorship factory both halves of every dataset are authored with. | `make_read_authorship` | mcp/tests/read_scope_test_support.py:246-256 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_rebinding.py" | mcp/tests/test-evidence-lanes.toml:360-360 |
-| The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
-| **The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.** | `read_review_sync_rebinding`; `sync_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:68-71; mcp/src/agents_remember/application/review_comparison_reopen.py:202-202; mcp/src/agents_remember/application/review_comparison_reopen.py:378-378 |
+- **The module's own frame: the file-size seam, and that the four cases drive the real managed path with nothing injected.** [1]
+- The sibling that keeps every pre-existing managed-sync case, which is why the seam falls here. [2]
+- The two review identities, the candidate-only invariant that makes the halves different datasets, and the two fixed row identities the union case uses. [3]
+- **The enclosure itself: the shipped endpoint fixture's pair, the authority binding, the store-created review datasets.** [4]
+- The MCP authority the tool's own contract admission reloads, written and loaded by the fixture. [5]
+- The authored common ancestor a three-way knowledge merge needs, and its adoption as review candidate and published line. [6]
+- The two ways the official line is advanced here: a committed leaf candidate, and a source-branch action that restores the previous checkout. [7]
+- **The real freeze and the real publication owners at the read route's own declared location.** [8]
+- The production sync tool, and the owners the cases read the store back with. [9]
+- **Case 1: the moved official line measured against the reviewed generation, the real merge parents, the byte-identical judged manifest, and the durable read-back.** [10]
+- **Case 2: the conforming example — a real union, both sides' changes surviving, the parked WIP returned with no stash entry left.** [11]
+- **The two-sided divergence stage, including the store's own derived lock kept out of the park/restore path.** [12]
+- **Case 3: the eight forged verdict shapes the record's own validator refuses, in the order the case checked them.** [13]
+- **The validator's blind spot, pinned against the sealed manifest instead: a forged reviewed identity stops describing the generation.** [14]
+- `F1`: the four states that carried nothing each name their own store fact, and the durable location stays empty. [15]
+- `F2`: the state where the head does not carry the add-all capture, and the wording that locates it instead. [16]
+- `F3`: no generation and an unreadable generation store are two states, with the selection owner's sentence kept under its own key. [17]
+- `F4`: the named reclamation owner removes the record, and the reader reports an empty location that says which fact it observed. [18]
+- The helpers the cases read the dataset, the publication admission and Git with. [19]
+- **The sync-side owner's own statement of what it measures, that it re-implements no owner, and that nothing there can refuse a sync.** [20]
+- **The three carrying states, and the table of every state that carried nothing with the reason no pair was resolved.** [21]
+- **The success conjunct and its own stated reason for existing, which `G2` on the sibling module pins.** [22]
+- One durable file per leaf and judged generation, under the shipped reports root. [23]
+- **The recorder: the store's own selection, the resolved capture, the sealed manifest, and the published record with its read-back.** [24]
+- **The never-raising entry point the sync tool calls, with each state it can report instead of raising.** [25]
+- The reader's three states, its sentence, and its own statement that a discarded record and one never written read the same. [26]
+- **The half that compares a record against the generation store rather than against itself.** [27]
+- The named reclamation owner, and its own statement that no mounted tool calls it yet. [28]
+- **R22's own words for a carried pair with no measurable generation, and the selection owner's answer carried under its own keys.** [29]
+- Assembly that selects nothing and re-derives no reviewed value, asking the vocabulary for the channel matches and the verdict. [30]
+- The resolved knowledge channel read through the route a later reader selects its knowledge with. [31]
+- The record's own version, selection rule, channel-match vocabulary and three-valued verdict. [32]
+- The one verdict rule, stated once so a writer and the record's validator cannot disagree. [33]
+- **The validator the eight forgeries are aimed at: every verdict re-derived from the identities the record carries.** [34]
+- **The clause `F2` pins: the head locates the capture, it does not carry it.** [35]
+- **The production call site: the rebinding is attached to the tool result after the transaction has finished and the contract is written.** [36]
+- The shipped capture owner that derives the resolved source side after the sync. [37]
+- The freeze owner whose options name the predecessor — the operation the record's remedy names. [38]
+- The generation store's own layout and manifest readers, which these cases use and never rewrite. [39]
+- The durable-evidence pair every record is published and read back through. [40]
+- The shipped endpoint fixture whose enclosure this module's fixture stands on. [41]
+- The merge-case support whose authored identities and readers the module reuses. [42]
+- The read-scope support's authorship factory both halves of every dataset are authored with. [43]
+- **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** [44]
+- The catalog digest the added consumer rows move, pinned by the structural check. [45]
+- **The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.** [46]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every case builds a real enclosure, a real
 generation store, a real published dataset and a real transaction inside one repository boundary; the
@@ -227,24 +215,4 @@ publication read-back consults that repository's authority home, which is exactl
 its datasets bound to the repository the contract names instead of reusing the endpoint fixture's
 invented namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:32:14+00:00: Generated citation repair: "mcp/tests/test_review_sync_rebinding.py" repointed to mcp/tests/test-evidence-lanes.toml:360-360. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-- 2026-09-27T05:29:48+00:00: Generated citation repair: "mcp/tests/test_review_sync_rebinding.py" repointed to mcp/tests/test-evidence-lanes.toml:314-314. No content impact: mechanical anchor-range projection bound to citation source snapshot a9e4bf20669ecb356be8a208a2ac77489c28fc161e108a6d1b20c61579617d84; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee`): created this one-to-one card for the module this leaf introduced as **ICR-R22@v1**'s sync-side case evidence — the managed sync that measures the source/knowledge pair it resolved against the comparison generation the leaf published and records the measurement as one durable `ar-review-sync-rebinding/v1` artifact. It records what the cases actually prove: `ReviewSyncFixture` is the product path (the enclosure is the shipped endpoint fixture's own, but the leaf's two review datasets are created through the store, because a dataset bound to another repository's authority home is another repository's publication and the route refuses it); `CANDIDATE_ONLY_INVARIANT_ID` makes the two halves different datasets so "the published dataset is the reviewed candidate" is a measurement rather than a file name; the assertions compare against the store's own reopened truth (the sealed manifest re-read from disk, the reader's state and sentence, `git rev-list --parents`, the dataset identity); the sync's real merge parents are asserted; and recording movement never rewrites the judged generation. Three boundaries are carried as boundaries and not as defects: `F3`'s docstring names three generation-store states while the case drives two — the ambiguous tie is covered only by the owner's table and is **not** driven here; the record's own validator cannot refuse a forged identity carried beside a matching verdict, so `rebinding_names_the_generation` against the sealed manifest is the half the case pins; and the durable location is one file per (leaf, generation), which is why the four not-carried states assert an absent file. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name this leaf's recorded base commit `e605822eb3bf83bf63a45963c5f51d5fc28859ee` because every construct cited here exists only in this leaf's uncommitted working tree — the module and its four catalog rows are not in any commit yet; what was actually read is that working tree, and the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

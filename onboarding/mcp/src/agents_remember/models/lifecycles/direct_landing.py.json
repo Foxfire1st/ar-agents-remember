@@ -1,0 +1,107 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/direct_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The accepted input contains code/memory identity and validates route plus intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "feca10f9ea780816bbeae9ebad3b6b2501ba7813",
+            "content": "sha256:6d9bec47a3ce05ec5ba85973654dc3b4317c0440f45e1bc3afee9f4758562752",
+            "locator": {
+              "kind": "symbol",
+              "name": "_accepted_direct_plan_is_exact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared snapshot keeps actual object identity and optional content-only comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:1d2213697e54872749956c9f46bcec11d94fd8d6c15fb918b47608230c689933",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMutationSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The coordinator captures the accepted candidate from actual Git facts.\n\nAnchor: `candidateTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1f748812a0854f62ff6364e3dbefa70294b4c0d",
+            "content": "sha256:0fec0d018cc7316c21def5fe0988c9dc7b7fd6276e829cbea4295d0d8547f58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare_direct_landing_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The strict model carries code/memory identity and its `_accepted_direct_plan_is_exact` validator requires the direct-landing route plus a nonblank approval note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "feca10f9ea780816bbeae9ebad3b6b2501ba7813",
+            "content": "sha256:6d9bec47a3ce05ec5ba85973654dc3b4317c0440f45e1bc3afee9f4758562752",
+            "locator": {
+              "kind": "symbol",
+              "name": "_accepted_direct_plan_is_exact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared snapshot's `_require_state_evidence` validator keeps actual object identity: `observed is not before` is refused while `observed == before` is reconciled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:69a38b46d070cbccebd05166a142eee0ff56be775f8c93248431488ad2b5a89b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_state_evidence"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Recovery checks the typed facts against the current repositories and refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be974cfb747b9a8d6a659199e705f46c2d155e57",
+            "content": "sha256:bb957c9d78a2300e16abeab2e90c595dbca16da3d9cbcf3b2c721b1a5a1cfc05",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_direct_landing_recovery"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

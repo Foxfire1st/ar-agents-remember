@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/serving/_app_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The state response merges the serve-time tail onto a copy of the memoized body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:b503a4b9b1198b6890e892eed0f101821c3310e4686df511f290ad13ba622461",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The SSE route hands the same readers to the projection stream.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:1c604721f00c2d26ce206f320899c397f698091fb6dda01cc576ca85c416ceb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_projection_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The observer-health reader whose `None` makes the key absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:afacf3ef594ddf38aabbc8dc5e96bd42780901f12e524710e72120f8ba9e086e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observer_health_payload"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

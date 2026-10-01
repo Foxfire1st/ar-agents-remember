@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/leaf_refs.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/leaf_refs.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [mcp overview](../../../overview.md)
@@ -40,32 +30,18 @@ legacy fallback for already-existing contracts.
 - Ambiguous aliases fail closed.
 - Unrelated JSON artifacts are inert; malformed task documents are not swallowed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain source governs this repository-local compatibility resolver.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Resolution returns canonical document identity or a typed not-found/ambiguous error. | `resolve_leaf_ref`; `LeafRefResolutionError` | mcp/src/agents_remember/worktrees/leaf_refs.py:39-68; mcp/src/agents_remember/worktrees/leaf_refs.py:88-141 |
-| The bounded canonical-id skip index `canonical_leaf_doc_ids` is built per task root for contract healing. | `canonical_leaf_doc_ids` | mcp/src/agents_remember/worktrees/leaf_refs.py:144-154 |
-| The heal sweep `heal_contract_leaf_ids` rewrites legacy leaf ids using that per-root index. | `heal_contract_leaf_ids` | mcp/src/agents_remember/worktrees/worktree_contract.py:491-566 |
-| Worktree start is the live caller of leaf-document resolution. | `resolve_start_leaf_doc_id` | mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py:15-32 |
-| Existing enclosure contracts can still be found through proven aliases or the explicit raw legacy path. | `resolve_leaf_enclosure_contract_for_ref` | mcp/src/agents_remember/worktrees/leaf_refs.py:175-222 |
-
-## Update History
-
-- 2026-09-03T12:30+02:00 — 260831-CCR provenance-debt repair: split the heal-index row so `canonical_leaf_doc_ids` cites only its definition in leaf_refs.py:144-154 and `heal_contract_leaf_ids` cites only its definition in worktree_contract.py:491-566. `canonical_leaf_doc_ids` previously resolved 3 times because the row cited worktree_contract.py as well, where the name occurs twice (docstring line 30, call site line 528) in addition to its leaf_refs.py definition; each claim now maps to exactly one definition and verifies uniquely.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
-
-- 2026-08-11T12:25+02:00 — Removed obsolete hosted-seat references and clarified the surviving
-  worktree compatibility scope. Verification remains pinned pending governed closeout.
-- 2026-08-01T09:20+02:00 — The not-found/ambiguous status vocabulary was centralized at its producer.
-- 2026-07-07T20:50+02:00 — Through 2026-07-12, candidate discovery, task-document validation, legacy alias
-  handling, and bounded contract-heal indexing were established.
+- Resolution returns canonical document identity or a typed not-found/ambiguous error. [1]
+- The bounded canonical-id skip index `canonical_leaf_doc_ids` is built per task root for contract healing. [2]
+- The heal sweep `heal_contract_leaf_ids` rewrites legacy leaf ids using that per-root index. [3]
+- Worktree start is the live caller of leaf-document resolution. [4]
+- Existing enclosure contracts can still be found through proven aliases or the explicit raw legacy path. [5]

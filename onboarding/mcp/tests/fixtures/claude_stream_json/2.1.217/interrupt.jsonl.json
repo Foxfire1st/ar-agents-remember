@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The assistant frame records interrupted streaming.\n\nAnchor: \"aborted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73ff4d0e60e9135879fee69d4754aa56052f5121",
+            "content": "sha256:b5256253da367d25f7d10a7ad8747c9c5802d3e92e49679ad1c2bb5613d5bdc0",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The terminal error result records the abort reason; it is not a successful completion.\n\nAnchor: \"aborted_streaming\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73ff4d0e60e9135879fee69d4754aa56052f5121",
+            "content": "sha256:580f9393af7f7d6de2a4ecc5673823d041ff799920f5f7193681c431a8f023c8",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

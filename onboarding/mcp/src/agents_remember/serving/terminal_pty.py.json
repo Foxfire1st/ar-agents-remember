@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal_pty.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `PtyProcess` (lines 59-75) — A spawned child attached to a PTY master fd, with lifecycle controls..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14119c4215af6032bab7ab7e75bbcfcde7225c6c",
+            "content": "sha256:c6a3298f6f3e79a0d18aad1afe2af5c508502a1acc34dd85e539ec95f9b0d2ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "PtyProcess"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `TerminalSession` (lines 83-166) — One live terminal client: a tmux-wrapped PTY child plus its lifecycle/worktree correlation..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14119c4215af6032bab7ab7e75bbcfcde7225c6c",
+            "content": "sha256:feb7950d9b798dc3b2c3ca4dc82c6751f52332abef00553e5dec2f14391adf98",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalSession"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `spawn_pty` (lines 169-216) — Spawn ``argv`` in ``cwd`` on a fresh PTY; the master fd is left non-blocking..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14119c4215af6032bab7ab7e75bbcfcde7225c6c",
+            "content": "sha256:331688c2d375db8e7b8c85be8e4d674bfe3bf9ae94416b9e60ebe77ef50e686b",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn_pty"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

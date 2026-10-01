@@ -1,0 +1,316 @@
+{
+  "path": "mcp/tests/test_tool_response_conformance.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Registration and adapter id sets are derived from source and asserted equal both ways.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:71008f419ddeb28d82ad7d9e3deee3ba0467de59dedc94cbe79b486c1b8abd55",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registration_and_adapter_surface_agree_in_both_directions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The registered description and the refusal name the same `kind` vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:c01ec63e077c1f54f8d409ce8df2e0c0bced59b01234b9961f631814f2f7099b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_task_doc_description_and_refusal_name_the_same_kind_vocabulary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every `next_tool=` literal the lifecycle package passes is declared on the response model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:269e347b7998fc111fadd348da9e5ee7e4b1ed533c20f7d96cf957c6a4519891",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_next_tool_its_own_refusals_advertise_is_declared"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The `sprint-owner-required` refusal is a typed payload, driven through the real tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:dd0b17022497288cc92d70957c4d9078c6eaa355b91ca76554cfdac3b093099c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_operator_inbox_post_sprint_owner_refusal_is_a_typed_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A queued operator post must still report `entryId`, `state`, `messageKind`, `deliveryState`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:c33e700b779973c57a1d0611c819e41f5c8d15a18b8bc649b2b9de0dd82abc6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_queued_operator_inbox_post_still_must_report_its_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "`session_retire` reports the stranded row after the seat is already gone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:ba73bb49dc8e61a4b45cc6933c76eea58117d7d5b538b42c8e05d5837ebfc5b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_session_retire_reports_the_stranded_row_after_the_seat_is_gone"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The structural delivery projection is declared on the shared base every consumer inherits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:e661867c6ff7d344365267bdaf53415fed314675cbdb7cf9f56d79ae365e99fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_structural_delivery_projection_is_declared_on_every_consumer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane row that keeps this module in the default lane.\n\nAnchor: \"mcp/tests/test_tool_response_conformance.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:9bedbc4065fdfc05429289b99eac1e9736fd504528bdcf8432e49d781e4c3f98",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 383
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The choke point whose guarantee this module moves into the suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The registry whose models the structural layer sweeps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The advertised public roster the surface layer checks against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The 17 internal compatibility registrations are named, not implied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:fa77efa16b2fd7b9c964415e6d6b9788a28bfc87162708ce96b98b801ddf3a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_seventeen_internal_registrations_are_named_not_implied"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixtures' models are the registry's own objects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:652a88dfd0a8b6444a5b35c2c25c51d2e5d891bfc59ab831225a5c0e762fdf79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_models_these_fixtures_validate_are_the_registered_ones"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every registered model is strict or declared flexible; the 48/36 split is pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:a30646fc8a8af95305e19572cb143889b84ea0510b28dae90fa1888a400710b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_registered_model_is_strict_or_declared_flexible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:da2ab1dfe577f07a990695bf995d691617d8c9dae0bb14c1537ac68f604f05f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_tool_adapter_module_routes_through_the_choke_point"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:29bbc6291ff08de8522956701ed7e06a87550720eedb292a3012105e1a7d252e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lifecycle_finalize_validates_with_the_series_release_produced"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The same response validates on the `activation-release-blocked` arm, where only the release key is present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:77fb2fc4c029d7c3830a75adbc316db7b6a7afea31777b10b10f8cf8e970d63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lifecycle_finalize_validates_on_the_release_blocked_arm"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The declaring set for the two atomic-series keys is exactly `lifecycle_finalize_task`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:afd6f7681d39f08c133ae77cc7fcf455726b80680450f9479c2cd045526b9717",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_two_atomic_series_keys_are_declared_together"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "`task_doc`'s `read_steps` validates and returns the authored units.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
+            "content": "sha256:11a051b483f19cc4c742304757e5481aa647bdf67dacf0a287246bfd1459ccc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_task_doc_read_steps_validates_and_returns_the_checklist"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

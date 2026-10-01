@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation/reducer.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/conversation/reducer.ts`     |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [data/conversation overview](overview.md)
@@ -77,48 +67,29 @@ after stable rendering, without changing cursor, replay, or recovery semantics.
 - **Pure.** No side effects, no transport; the dedupe structures are copy-on-write so a caller can never
   mutate a prior state through them.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The wire page and event-envelope types consumed by the reducer entry points. | `ConversationPage`; `ConversationEventEnvelope` | dashboard/src/data/conversation/types.ts:286-298; dashboard/src/data/conversation/types.ts:327-336 |
-| The reducer's initial and older-page entry points apply typed page baselines. | `applyInitialPage`; `applyOlderPage` | dashboard/src/data/conversation/reducer.ts:168-202; dashboard/src/data/conversation/reducer.ts:205-229 |
-| The reducer's live event entry point applies identity, cursor, dedupe, and gap rules. | `applyEvent` | dashboard/src/data/conversation/reducer.ts:246-286 |
-| The store applies pages/events and consumes the reducer's `recovery` signal. | `activeConversationStore`; `handleRecovery` | dashboard/src/data/conversation/store.ts:207-215; dashboard/src/data/conversation/store.ts:467-475 |
-| The active conversation reducer suite is the focused regression source for cursor, dedupe, gap, revision, identity, replacement, and replay behavior. | "active conversation reducer" | dashboard/src/data/conversation/reducer.test.ts:50-193 |
-| The interrupt hook reads reducer status and ordered item ids for working-turn correlation. | `resolveWorkingTurnId` | dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:90-97 |
-| The active serving API supplies page and event evidence consumed by the reducer. | `conversation_page`; `conversation_events`; `applyInitialPage`; `applyEvent` | dashboard/src/data/conversation/reducer.ts:168-202; dashboard/src/data/conversation/reducer.ts:246-286; mcp/src/agents_remember/serving/conversation/active/api.py:126-155; mcp/src/agents_remember/serving/conversation/active/api.py:204-247 |
+- The wire page and event-envelope types consumed by the reducer entry points. [1]
+- The reducer's initial and older-page entry points apply typed page baselines. [2]
+- The reducer's live event entry point applies identity, cursor, dedupe, and gap rules. [3]
+- The store applies pages/events and consumes the reducer's `recovery` signal. [4]
+- The active conversation reducer suite is the focused regression source for cursor, dedupe, gap, revision, identity, replacement, and replay behavior. [5]
+- The interrupt hook reads reducer status and ordered item ids for working-turn correlation. [6]
+- The active serving API supplies page and event evidence consumed by the reducer. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled the frozen-source ledger, split pooled reducer references by source owner, and supplied exact anchors with scoped fixer input for generated ranges. Verification metadata unchanged.
-
-- 2026-07-24T13:17:50Z — Removed the stale reducer-owned scroll-anchor description and recorded the
-  protocol/UI boundary. Verification hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the authority-sensitive
-  pure reducer — cursor-ordered apply, bounded copy-on-write `eventId+cursor` dedupe (F17), block-delta
-  revision gating and `previousCursor` gap tolerance (L1.4/L1.5) as conservative re-page,
-  same-revision-divergence reset, anchor-preserving older prepend, replace-page rehydrate, and the
-  no-optimistic-item rule. Verification is pinned to the leaf base (`0be0099`) because the new source
-  file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

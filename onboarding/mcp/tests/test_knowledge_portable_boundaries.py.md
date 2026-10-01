@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_portable_boundaries.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_portable_boundaries.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -90,80 +80,37 @@ Five properties live here, each because the ordinary path cannot fail it:
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The five properties that live here because the ordinary path cannot fail them. | "Five properties live here" | mcp/tests/test_knowledge_portable_boundaries.py:1-14 |
-| The lane marker, and the three shared support artifacts this module's registry row must declare. | `pytestmark`; `BranchingKnowledgeFixture`; `MergeCase`; `SnapshotCase` | mcp/tests/test_knowledge_portable_boundaries.py:74-74; mcp/tests/knowledge_fixture_test_support.py:160-186; mcp/tests/merge_case_test_support.py:81-132; mcp/tests/snapshot_lifecycle_test_support.py:130-175 |
-| The helpers imported from the round-trip module, so the two modules keep one definition of an artifact and a refusal. | `test_knowledge_portable_roundtrip` | mcp/tests/test_knowledge_portable_boundaries.py:60-71 |
-| The journal-mode reader the WAL cases assert the **published destination** through. | `journal_mode_of` | mcp/tests/test_knowledge_portable_boundaries.py:84-91 |
-| **The freeze's closure proved on the published destination, from the producer this leaf shares with L4.** | "test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed" | mcp/tests/test_knowledge_portable_boundaries.py:88-131 |
-| **The node the whole guarantee rests on: every non-canonical spelling axis, the `canonical_document` assertions, and all seven header types pinned — the header's namespace guard (`bound`) is the one reachable guard the population does not kill (an observation for L9).** | "test_the_canonical_form_of_the_whole_document_is_the_only_form_the_reader_accepts"; `bound`; `_assert_the_header_types_are_pinned`; `_header_type_respellings`; `_non_canonical_axes`; `_reordered_document`; `_respelled_encoding`; `_permuted_value`; `_permuted_origin_refs`; `_canonical_value`; `_nested_spelling_mutants` | mcp/tests/test_knowledge_portable_boundaries.py:141-141; mcp/tests/test_knowledge_portable_boundaries.py:284-395; mcp/tests/test_knowledge_portable_boundaries.py:466-497; mcp/tests/test_knowledge_portable_boundaries.py:512-531; mcp/tests/test_knowledge_portable_boundaries.py:568-578; mcp/src/agents_remember/memory/knowledge/export_portable.py:981-981; mcp/tests/test_knowledge_portable_boundaries.py:549-565; mcp/tests/test_knowledge_portable_boundaries.py:398-433; mcp/tests/test_knowledge_portable_boundaries.py:424-453; mcp/tests/test_knowledge_portable_boundaries.py:456-465; mcp/tests/test_knowledge_portable_boundaries.py:500-509; mcp/tests/test_knowledge_portable_boundaries.py:581-605; mcp/tests/test_knowledge_portable_boundaries.py:534-546 |
-| **The staged sealed-aggregate read, tampering every retained row of both revision tables with the destination held identical.** | "test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused" | mcp/tests/test_knowledge_portable_boundaries.py:611-611 |
-| The import's close/verify step, proved by a stage opened in WAL mode. | "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database" | mcp/tests/test_knowledge_portable_boundaries.py:662-662 |
-| **Destination admission before any staging work: three states, their own codes, and no stage directory even requested.** | "test_destination_admission_refuses_before_any_staging_work" | mcp/tests/test_knowledge_portable_boundaries.py:700-700 |
-| The typed read of an artifact that is not readable UTF-8 text. | "test_an_artifact_that_cannot_be_read_as_text_is_refused_with_a_typed_code" | mcp/tests/test_knowledge_portable_boundaries.py:763-763 |
-| The unreachable defence-in-depth branch whose mutation survives for a stated reason. | `_out_of_canonical_order` | mcp/src/agents_remember/memory/knowledge/export_portable.py:928-961 |
-| The integration-lane row this module occupies. | `integration` | mcp/tests/test-evidence-lanes.toml:286-286 |
-| The snapshot-lifecycle artifact whose consumer list gained this module. | "id = \"knowledge-snapshot-lifecycle-cases\"" | mcp/tests/evidence-lifecycle.toml:40-40 |
-| The merge-cases artifact whose consumer list gained this module. | "id = \"common-base-merge-cases\"" | mcp/tests/evidence-lifecycle.toml:45-45 |
-| The identity-branching fixture artifact whose consumer list gained this module. | "id = \"knowledge-identity-branching-fixture\"" | mcp/tests/evidence-lifecycle.toml:25-25 |
-| The L4 node this module corroborates rather than replaces, and its own marker caveat. | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
-| The round-trip module whose helpers this one imports, and the onboarding card that records the shared set. | "# mcp/tests/test_knowledge_portable_roundtrip.py" | onboarding/mcp/tests/test_knowledge_portable_roundtrip.py.md:1-1 |
+- The five properties that live here because the ordinary path cannot fail them. [1]
+- The lane marker, and the three shared support artifacts this module's registry row must declare. [2]
+- The helpers imported from the round-trip module, so the two modules keep one definition of an artifact and a refusal. [3]
+- The journal-mode reader the WAL cases assert the **published destination** through. [4]
+- **The freeze's closure proved on the published destination, from the producer this leaf shares with L4.** [5]
+- **The node the whole guarantee rests on: every non-canonical spelling axis, the `canonical_document` assertions, and all seven header types pinned — the header's namespace guard (`bound`) is the one reachable guard the population does not kill (an observation for L9).** [6]
+- **The staged sealed-aggregate read, tampering every retained row of both revision tables with the destination held identical.** [7]
+- The import's close/verify step, proved by a stage opened in WAL mode. [8]
+- **Destination admission before any staging work: three states, their own codes, and no stage directory even requested.** [9]
+- The typed read of an artifact that is not readable UTF-8 text. [10]
+- The unreachable defence-in-depth branch whose mutation survives for a stated reason. [11]
+- The integration-lane row this module occupies. [12]
+- The snapshot-lifecycle artifact whose consumer list gained this module. [13]
+- The merge-cases artifact whose consumer list gained this module. [14]
+- The identity-branching fixture artifact whose consumer list gained this module. [15]
+- The L4 node this module corroborates rather than replaces, and its own marker caveat. [16]
+- The round-trip module whose helpers this one imports, and the onboarding card that records the shared set. [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 4 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`export_portable.py`, `test_knowledge_portable_boundaries.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:28:46+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:286-286. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:233-233. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:214-214. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:207-207. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 1 enforced `citation_anchor_absent_from_range` row in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/test_knowledge_portable_boundaries.py:73-73` → `mcp/tests/test_knowledge_portable_boundaries.py:73-74` (row 108). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused" repointed to mcp/tests/test_knowledge_portable_boundaries.py:611-611. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database" repointed to mcp/tests/test_knowledge_portable_boundaries.py:662-662. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_destination_admission_refuses_before_any_staging_work" repointed to mcp/tests/test_knowledge_portable_boundaries.py:700-700. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_an_artifact_that_cannot_be_read_as_text_is_refused_with_a_typed_code" repointed to mcp/tests/test_knowledge_portable_boundaries.py:763-763. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:201-201. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:40-40. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:45-45. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "id = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:25-25. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1120-1120. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1145-1145. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:29:42+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1118-1118. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:29:42+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1143-1143. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:29:42+00:00: Generated citation repair: "id = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:1035-1035. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T04:55:18+00:00: Generated citation repair: "id = \"knowledge-snapshot-lifecycle-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1114-1114. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T04:55:18+00:00: Generated citation repair: "id = \"common-base-merge-cases\"" repointed to mcp/tests/evidence-lifecycle.toml:1139-1139. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T04:55:18+00:00: Generated citation repair: "id = \"knowledge-identity-branching-fixture\"" repointed to mcp/tests/evidence-lifecycle.toml:1033-1033. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:39:57+00:00: Generated citation repair: "test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database" repointed to mcp/tests/test_knowledge_portable_boundaries.py:618-618. No content impact: mechanical anchor-range projection bound to citation source snapshot b181d6d0b4e4cacc1833ff166c579061a1762313f644c682eec8ffc186d8d42f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:39:57+00:00: Generated citation repair: "test_destination_admission_refuses_before_any_staging_work" repointed to mcp/tests/test_knowledge_portable_boundaries.py:656-656. No content impact: mechanical anchor-range projection bound to citation source snapshot b181d6d0b4e4cacc1833ff166c579061a1762313f644c682eec8ffc186d8d42f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-
-- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): created this one-to-one card for the leaf's boundary population. It records each of the five properties and why the ordinary path cannot fail it: the freeze's closure measured on the **published destination**, the whole-document canonical-form node (every spelling axis, and **all seven header keys respelled with a different JSON type** — each refused and each passing the gate, which proves the refusal is the header check's), the **staged sealed-aggregate read** that made the review's HIGH finding unfalsifiable by tampering every retained row of both revision tables with the destination held identical, destination admission asserted before any staging work with no stage directory requested, and the typed read of a non-UTF-8 artifact. It records the two mutations that legitimately survive with their stated reasons — `_out_of_canonical_order` unreachable defence in depth, and the header namespace-binding guard at `:911` reachable with no killing node, reported for **L9** — so neither is mistaken for coverage, and it states that the final fix round extended these cases rather than adding one. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

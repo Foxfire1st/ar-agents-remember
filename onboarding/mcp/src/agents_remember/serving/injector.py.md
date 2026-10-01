@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/injector.py
 
-| Field                  | Value                                                     |
-| ---------------------- | ---------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `mcp/src/agents_remember/serving/injector.py`               |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-07-10T13:03+02:00                                      |
-| lastVerifiedCommitHash | `1c1629fc97dd4daf352cf9b3529d210be167d2af`|
-| lastVerifiedCommitDate | 2026-08-08T22:29:45+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -56,30 +46,26 @@ Reviewer residual: Codex session commands have no command-record parser today; c
 not configure them and Codex effort rides argv. A future change must either add real-record evidence
 or refuse that settings shape rather than claiming generic command verification.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation applies to this local delivery module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation applies to this local delivery module. | n/a | n/a |
+No relevant external documentation applies to this local delivery module.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `get_adapter` supplies every per-harness signature (`blocked_reason`, `turn_started`) this module reads. | `HarnessAdapter` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
-| `TerminalPaster.paste` is the transport `deliver` calls exactly once per invocation; its own capture-verify/idempotent-retry loop is UNCHANGED by this leaf. | `TerminalPaster` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
-| `deliver_inbox_entry` builds a `DeliveryRow` (`envelope=False`) and calls `deliver` — the inbox-row half of the ONE path (dispatch/nudge/redelivery/signal-emit, all via `agent_notifier.py`). | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
+- `get_adapter` supplies every per-harness signature (`blocked_reason`, `turn_started`) this module reads. [1]
+- `TerminalPaster.paste` is the transport `deliver` calls exactly once per invocation; its own capture-verify/idempotent-retry loop is UNCHANGED by this leaf. [2]
+- `deliver_inbox_entry` builds a `DeliveryRow` (`envelope=False`) and calls `deliver` — the inbox-row half of the ONE path (dispatch/nudge/redelivery/signal-emit, all via `agent_notifier.py`). [3]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes this local delivery path. | — | — |
+No cross-repo boundary owns or consumes this local delivery path.
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -104,25 +90,3 @@ branch. A durable brief that cannot be proven accepted must still fail rather th
 a duplicate.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-02T20:43+02:00 — W2-B08: anchored 2 injector reference claims, removed the unsupported R1/R3 task-authority claim from the prose and its placeholder row, and removed one deleted stale-reference row; no Tier 3 rows remain. Verification metadata stays pinned until closeout.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `paste_dispatch` vs `paste` split — the acceptance-probe requirement is now enforced by the signature instead of a runtime `ValueError`.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented removal of hosted log-flush/paste authority.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: made harness JSONL the sole submitted
-  acceptance authority, added calibrated per-harness windows and retroactive isolated command
-  verification/reissue, and reduced pane use to retry safety/failure diagnostics. Verification
-  metadata remains pinned until closeout stamps the eventual L15 code commit.
-
-- 2026-07-08T22:30+02:00 — Created for 260707-HFX2-L3 (paste injector hardening, R1 + R3): the ONE
-  delivery path — `DeliveryRow`/`DeliveryResult`/`DeliveryOutcome`, `envelope_text`, `deliver`.
-  Unifies the previously-separate spawn-brief (`mcp/tools/terminal.py`) and inbox-row
-  (`serving/inbox_delivery.py`) paste call sites onto one function and one four-way outcome
-  contract, reusing `TerminalPaster`'s existing capture-verify/idempotent-retry loop unchanged and
-  `harness_adapters.HarnessAdapter` for the blocked-check + turn-started corroboration. Verification
-  metadata pinned until closeout stamps the 260707-HFX2-L3 commit.

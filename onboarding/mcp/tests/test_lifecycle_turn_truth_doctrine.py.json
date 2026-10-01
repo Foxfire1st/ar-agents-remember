@@ -1,0 +1,200 @@
+{
+  "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The doctrine's one home, which the census and the shared-root case follow.\n\nAnchor: `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "content": "sha256:d6fdc752cf3d36bc074666312242c03c496b4b985f9aaf3a6614a36dbf1eac26",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared roster and the vocabulary whose speakers it must equal, in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:ad356ce7e3ba8637bbf6916860893578e64abc9ae3b384cda14dee01009f6bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPLETION_TRUTH_ROSTER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:53e5f76153d8946cde38f784d15496fae2efc137f8f64c56c1ef1705878e9306",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPLETION_TRUTH_VOCABULARY"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The per-surface owed clauses, and the relay-mechanics surfaces the corpus still names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:26d677fe34c9d7b0acd9de9a6105b629392574287d657218f94f6dd9319946a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "OWED_STATEMENTS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:03f5fd58a45b5f32de73acc98d24558425cd274dd0182a7a5ccf9fbc783589df",
+            "locator": {
+              "kind": "symbol",
+              "name": "RELAY_MECHANICS_SURFACES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:10c8e62a31ee488281bc15e6028805ebe2d964778dab27a2b483e7d78e464316",
+            "locator": {
+              "end": 529,
+              "kind": "line_range",
+              "start": 478
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The contradiction sweep and its three-state reading classification.\n\nAnchor: \"Every retired-claim shape this text promises; first evidence per claim, in document order.\"; \"Three-state reading of one surface: stated, silent, or contradicted.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:657ff324b7263572cb4993769a1afea5f93b9bdcb10a986d6fd4f748294ba072",
+            "locator": {
+              "end": 577,
+              "kind": "line_range",
+              "start": 397
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:ae874c7ac9d61bf0e511e34073776e69d79a8f2449c74178fc3352ec49b83297",
+            "locator": {
+              "end": 610,
+              "kind": "line_range",
+              "start": 598
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The protected teeth classes, byte-unchanged by this leaf and the reason a limit cannot be edited to pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:37e187cb99bf9dac347b9cb19bbe30e1cce2a79ba47c819207ee96217137bd71",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectorTeethTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:d71edfb2ebe126f7c502b46929fbc270f2109b5801a4aa565ce9acac6f925d2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeclaredLimitsTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:62f5071540042843f8ad8008ff2889f8b8a793cf08532e478f1a4e24ee2176c4",
+            "locator": {
+              "end": 1016,
+              "kind": "line_range",
+              "start": 949
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "content": "sha256:37447236196b3896fafbee931d5fed8c667b57c22694b01a0abba362d93a46ed",
+            "locator": {
+              "end": 1052,
+              "kind": "line_range",
+              "start": 1017
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The projection-side sibling that re-asserts the same clauses against canonical plus the nine generated copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa6b99bc359f684819c0a8df22f9ba1246bec976",
+            "content": "sha256:2fd9565c1694edc13ad32b80f722ab7cc18d04d4904c2a2dc7e153cc1704b6d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTED_BOUNDARY_CLAUSES"
+            },
+            "path": "mcp/tests/test_sync_scripts.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa6b99bc359f684819c0a8df22f9ba1246bec976",
+            "content": "sha256:7b95197c93f288ae1830ba7b56ae9ea89b7be9746ad053dbe3c6b02ea778e3e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundaryClause"
+            },
+            "path": "mcp/tests/test_sync_scripts.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,13 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/context/` |
-| doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                  |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../overview.md`                  |
 
 ## Governing Overview
 
@@ -63,22 +57,3 @@ symlink. The defaults
 (`<coordination_root>/providers/requirements/codegraphcontext.txt` and
 `<coordination_root>/providers/patches/codegraphcontext`), the produced `CgcRuntimeLayout`, and
 the runner-image/layer-revision doctrine are unchanged.
-
-## Update History
-
-- 2026-08-05T03:47+02:00 — 260731-EFA-L6: extracted `CgcInstance` construction into
-  `_cgc_instance` and documented why the two templated path fields are deliberately left
-  unresolved (`_unresolved_template_path` — read-back comparison against the runtime installer on
-  symlinked checkouts). Layout fields, defaults, and image doctrine unchanged. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `cgc_runtime_layout`'s nineteen flat keywords became the
-  `CgcRepo` / `CgcInstance` / `CgcWatcher` / `CgcBackend` bundles with frozen module-level defaults
-  standing for conventional placement. The produced `CgcRuntimeLayout` is identical; the runner
-  image rule and layer-revision doctrine below still hold. Verification metadata pinned until
-  closeout stamps the L2 commit.
-- 2026-07-03T01:55+02:00 — L12 route impact: materialize targets the watch-context global .cgcignore; constants add per-repo exclusions + timer-pop patch (revision ar2); patches.py applies it idempotently.
-- 2026-06-10T07:40+02:00 — No route impact: `core.py` re-exports `to_container_path` from its new canonical home `providers/context_common.py`; `cleanup.py`/`patches.py` only updated the import path (GitHub #58).
-- 2026-06-10T05:30+02:00 — Route body caught up with 2.5.0/2.5.1: the single `cgc_runner_image()` derivation rule and the layer-revision bump doctrine (GitHub #50). Previous closeouts had only stamped the verification header (developer-flagged gap).
-- 2026-05-29T18:35+02:00: Split `core.py` (668 lines) — extracted `materialize.py` (runtime dir/config-file writers) and `cleanup.py` (stale-artifact removal); `core.py` (now 522) keeps the layout dataclass + construction (commit `01f503d`).
-- 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/cgc/context/` route.
-- 2026-05-25T19:16+02:00: Created when CGC provider context behavior moved into its own subpackage.

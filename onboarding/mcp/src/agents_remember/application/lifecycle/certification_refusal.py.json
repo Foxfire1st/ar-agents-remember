@@ -1,0 +1,63 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/certification_refusal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_json_value` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "784e1bc60483d8754a1f8bbfbe4607e4559dbeaf",
+            "content": "sha256:78ad50d2de04c6ba14dcbf7f6a817678f221de316d6b1f7423c829516a038c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_json_value"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "784e1bc60483d8754a1f8bbfbe4607e4559dbeaf",
+            "content": "sha256:84c2f32cdd41ed5fc2b2c9fd7939d864aaa7aa87bc2509d1d166f018ebadf09d",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`certification_admission_refusal` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "784e1bc60483d8754a1f8bbfbe4607e4559dbeaf",
+            "content": "sha256:f071f2df71447409d705565b552d9dab5ec2bd293c28b03dee73872fa34f17d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "certification_admission_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "784e1bc60483d8754a1f8bbfbe4607e4559dbeaf",
+            "content": "sha256:1563f8faaf4b9e6c19b6b3b5040e91fd28dd060f868bebd32bf5a639d7f91da1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

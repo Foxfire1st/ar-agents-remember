@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/facet_records.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/facet_records.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -114,41 +104,33 @@ be invisible until a removal refused a row that had not changed.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The recomputed-on-the-way-out seals and the damaged-store rule they enforce.** | `decode_facet_revision_row`; `decode_explanation_revision_row` | mcp/src/agents_remember/memory/knowledge/facet_records.py:227-271; mcp/src/agents_remember/memory/knowledge/facet_records.py:630-655 |
-| **The two mutable-field digests the guards compare against.** | `attachment_row_digest`; `explanation_row_digest` | mcp/src/agents_remember/memory/knowledge/facet_records.py:356-371; mcp/src/agents_remember/memory/knowledge/facet_records.py:534-558 |
-| The versioned payload constants that make a change to the sealed field set a recorded decision. | `RECORD_REVISION_PAYLOAD_VERSION`; `EXPLANATION_REVISION_PAYLOAD_VERSION` | mcp/src/agents_remember/memory/knowledge/facet_records.py:67-68 |
-| The three drafts that make one authored row a value rather than six positional arguments. | `FacetEnvelopeDraft`; `RecordRevisionDraft`; `AttachmentDraft` | mcp/src/agents_remember/memory/knowledge/facet_records.py:74-101 |
-| The record-envelope encoder and the schema resolution that refuses an undeclared kind. | `facet_record_row`; `facet_record_schema_of` | mcp/src/agents_remember/memory/knowledge/facet_records.py:104-130 |
-| The revision seal that excludes only itself, and the digest a served record row carries. | `record_revision_digest`; `facet_record_row_digest` | mcp/src/agents_remember/memory/knowledge/facet_records.py:209-224; mcp/src/agents_remember/memory/knowledge/facet_records.py:133-154 |
-| **The four endpoint columns filled explicitly, and the decoder's two refusals for an unknown kind and a bypassed constraint.** | `attachment_endpoint_columns`; `decode_attachment_endpoint` | mcp/src/agents_remember/memory/knowledge/facet_records.py:277-301; mcp/src/agents_remember/memory/knowledge/facet_records.py:304-337 |
-| The supersession edge's encoder, digest and decoder. | `supersession_row_digest`; `decode_supersession_row` | mcp/src/agents_remember/memory/knowledge/facet_records.py:410-426; mcp/src/agents_remember/memory/knowledge/facet_records.py:429-441 |
-| **The explanation's checked subject group, its decoder's refusals, and the designation inside the row digest.** | `subject_columns`; `decode_explanation_subject`; `explanation_row_digest` | mcp/src/agents_remember/memory/knowledge/facet_records.py:447-462; mcp/src/agents_remember/memory/knowledge/facet_records.py:465-501; mcp/src/agents_remember/memory/knowledge/facet_records.py:534-558 |
-| The explanation revision's seal and the encoder that stores it. | `explanation_revision_digest`; `explanation_revision_row` | mcp/src/agents_remember/memory/knowledge/facet_records.py:611-627; mcp/src/agents_remember/memory/knowledge/facet_records.py:588-608 |
-| **The six stored-value readers a caller's expectation comes straight from a read through.** | `attachment_endpoint_digest`; `record_revision_content_digest`; `explanation_record_digest` | mcp/src/agents_remember/memory/knowledge/facet_records.py:680-688; mcp/src/agents_remember/memory/knowledge/facet_records.py:698-702; mcp/src/agents_remember/memory/knowledge/facet_records.py:716-720 |
-| The write path that owns every statement this module converts rows for. | `apply_remove_facet_attachment`; `apply_designate_explanation` | mcp/src/agents_remember/memory/knowledge/facets.py:419-457; mcp/src/agents_remember/memory/knowledge/facets.py:589-639 |
-| **The cases that hold the removal guard, the recomputed seal and the damaged-store refusal.** | "test_removing_an_attachment_names_its_row_and_deletes_that_row_only"; "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" | mcp/tests/test_knowledge_facets.py:455-491; mcp/tests/test_knowledge_facets.py:1037-1141; mcp/tests/test_knowledge_facets.py:557-564; mcp/tests/test_knowledge_facets.py:1239-1246; mcp/tests/test_knowledge_facets.py:576-576; mcp/tests/test_knowledge_facets.py:1266-1266 |
+- **The recomputed-on-the-way-out seals and the damaged-store rule they enforce.** [1]
+- **The two mutable-field digests the guards compare against.** [2]
+- The versioned payload constants that make a change to the sealed field set a recorded decision. [3]
+- The three drafts that make one authored row a value rather than six positional arguments. [4]
+- The record-envelope encoder and the schema resolution that refuses an undeclared kind. [5]
+- The revision seal that excludes only itself, and the digest a served record row carries. [6]
+- **The four endpoint columns filled explicitly, and the decoder's two refusals for an unknown kind and a bypassed constraint.** [7]
+- The supersession edge's encoder, digest and decoder. [8]
+- **The explanation's checked subject group, its decoder's refusals, and the designation inside the row digest.** [9]
+- The explanation revision's seal and the encoder that stores it. [10]
+- **The six stored-value readers a caller's expectation comes straight from a read through.** [11]
+- The write path that owns every statement this module converts rows for. [12]
+- **The cases that hold the removal guard, the recomputed seal and the damaged-store refusal.** [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the facet row codecs. It records the two **recomputed-on-the-way-out** seals and the damaged-store rule they enforce, the two **mutable-field digests** the removal and designation guards compare against, what each digest covers (the endpoint *identity* rather than the column that holds it; the subject identity **and** the recorded designation; the payload and exact predecessor), the versioned payload constants, the explicit filling of all four endpoint and subject columns so the DDL's `CHECK` is satisfied by construction, the six stored-value readers that let a caller carry an expectation straight from a read, and the one-row lookups declared beside their readers. It records the shared local constant name `EXPLANATION_BY_ID` as a deliberate non-coupling rather than a second definition of a rule, and the asymmetry that these readers return `None` for an absent row while the write path is what turns that into a typed refusal. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

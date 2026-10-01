@@ -1,0 +1,171 @@
+{
+  "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Four persisted toggles map onto the change-set / full-file / highlight-off / rendered states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
+            "content": "sha256:e5714cd8acc86de919bd14fa0b6a98406e1bfe7bb28c3c1925a88e7897ea6ab4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Highlight-off renders the plain L2 FilePane on the after-content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
+            "content": "sha256:e5714cd8acc86de919bd14fa0b6a98406e1bfe7bb28c3c1925a88e7897ea6ab4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Markdown files get a `rendered` toggle that swaps the diff for a `<Markdown>` view.\n\nAnchor: \"data-testid=\\\"changeset-rendered-toggle\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
+            "content": "sha256:6577e15cb433a3fa87ee590fdad65b256efb8ffa41bcc8e4eccc5e0d609ac42c",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
+            "content": "sha256:880e74582cfcc0e7562bd4275a6fc3331a30b88537c2ac7198c199f3e91da3a3",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The markdown renderer reused for the rendered-markdown view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
+            "content": "sha256:46e6b914756bebae0699a0997ff3d22903e92a1910c7c2228fe012b30e5116d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "Markdown"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Otherwise it mounts the DiffPane with mode/collapse.\n\nAnchor: \"export function DiffPane({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The localStorage-backed flag hook it reuses (per-column keyPrefix).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b1d2d480c871325b9ea74ec9e5e598ff63c3f12",
+            "content": "sha256:ad936f43dfcb7947dbbfe837a85a3767febc155c73fa2c41c9365d5d8d26522d",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePersistedFlag"
+            },
+            "path": "dashboard/src/panels/file-viewer/usePersistedFlag.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The plain read-only pane reused for highlight-off / full-file-plain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilePane"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The `FileDiff` shape it renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:e2bd5054ddc3d96a280a97eb71993abb8ce521baaa0fc07d3a3c1ed7e2a6d8d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileDiff"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The screen that mounts it for the file + partner columns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:1f10a3128c89a000c85fb61ae59c98da7ad64e75ad46dcb85d1202e1bf163cdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetViewer"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

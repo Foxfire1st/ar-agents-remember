@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The format map and the shape-only boundary.\n\nAnchor: \"Integrity (IDs resolve, markers match\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8ac4dd703c29a4c4d267adce8f4f66840cef8cb",
+            "content": "sha256:e4724bbaae20da6be98ea1a83d9553ca422572db823db154cdbed919eea468f2",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The marker and escaping rule the validator will enforce.\n\nAnchor: \"only an unescaped\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8ac4dd703c29a4c4d267adce8f4f66840cef8cb",
+            "content": "sha256:67cc891e70aa4f74e8d458757a3d9c2b7ead0bd51d341fb918c6eee697d1d27f",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The public surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8ac4dd703c29a4c4d267adce8f4f66840cef8cb",
+            "content": "sha256:c2a1f3b1f30f91621b90a2b42f393c471059a7f261e77c6c2042f7ea04d60241",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The formatter command is the package's only production consumer.\n\nAnchor: `format_bytes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
+            "content": "sha256:dd654275bc76988b6924f9ea65de9fefd9648edbefd7f97740dc9565547e8573",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_format.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # skills/l-01-agent-lifecycles/SKILL.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/SKILL.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T17:09+02:00|
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
-| governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
-
 ## Governing Overview
 
 [l-01-agent-lifecycles overview](overview.md)
@@ -116,28 +106,26 @@ separate protocol events as delivery attempts.
 
 Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run scoped checks with honest failed or not-run status. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Full code quality, full tests, full memory quality, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain source governs this repository-owned lifecycle doctrine.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The router is exactly three ordered conditions. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)" | skills/l-01-agent-lifecycles/SKILL.md:13-51 |
-| The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:67-67; skills/l-01-agent-lifecycles/SKILL.md:69-80 |
-| The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "the shared core"; `# Core — The Minimal Lifecycle Frame`; `# Core — The Minimal Lifecycle Frame`; "The seat binding is the catalog binding made at dispatch"; "Silence is supervised" | skills/l-01-agent-lifecycles/SKILL.md:126-131; skills/l-01-agent-lifecycles/core/authority.md:181-188; skills/l-01-agent-lifecycles/core/lifecycle-frame.md:1-26 |
-| Shared continuity and authority invariants are explicit. | `# Core — Shared Invariants (every role can count on these)`; `# Core — Shared Invariants (every role can count on these)`; `# Core — Seat Authority (shared by every role)` | skills/l-01-agent-lifecycles/core/authority.md:1-6; skills/l-01-agent-lifecycles/core/invariants.md:1-11 |
-| Dispatch has two process-derived caller kinds and one shared transaction. | "two disjoint caller kinds"; "Every launcher or role that dispatches a hosted role calls"; "two disjoint caller kinds" | skills/l-01-agent-lifecycles/core/authority.md:50-73 |
-| Ambient bootstrap compiles and pins one complete architect brief. | "# Template — Architect Brief"; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | `## Acceptance is per stable ID and version, never aggregate`; `## Acceptance is per stable ID and version, never aggregate`; "independent of requirement acceptance" | skills/l-01-agent-lifecycles/core/acceptance.md:44-77; skills/l-01-agent-lifecycles/core/acceptance.md:140-142 |
-| Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | `## Requirement revisions and delivery attempts are separate axes`; `## Requirement revisions and delivery attempts are separate axes` | skills/l-01-agent-lifecycles/core/acceptance.md:79-116 |
-| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/core/acceptance.md:120-120 |
-| The companion files now include the producers' curator hand-off shape beside the brief schemas. | "the **producer's output shape**" | skills/l-01-agent-lifecycles/SKILL.md:139-143 |
+- The router is exactly three ordered conditions. [1]
+- The registry assigns one canonical file to each role. [2]
+- The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. [3]
+- Shared continuity and authority invariants are explicit. [4]
+- Dispatch has two process-derived caller kinds and one shared transaction. [5]
+- Ambient bootstrap compiles and pins one complete architect brief. [6]
+- Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. [7]
+- Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. [8]
+- Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. [9]
+- The companion files now include the producers' curator hand-off shape beside the brief schemas. [10]
 
 ## L23 Dispatch Admission
 
@@ -167,74 +155,3 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
-
-## Update History
-- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`). The diff is five added lines in `## Companion Files` (`:139-143`) introducing `templates/curator-handoff-list.md` as the **producer's output shape** for the requirement-shaped items the builder, the reviewer and the orchestrator hand to the curator — a hand-off artifact rather than a brief-schema. Body: corrected the Conventions statement that "templates carry dispatch inputs" (the layer now also carries that output shape) and added the curator-hand-off-list bullet stating what the router now names on its own; added the companion row to Repo-Internal References. Citations: re-derived every row against the file as it stands — the registry row's second extent `:119-119` was an empty line and is re-pointed to the registry table `:69-80`; the minimal-frame row's `SKILL.md:140-175` extent no longer carried any of that row's anchors and is re-pointed to the router's `core/…` pointer at `:126-131`, where the added anchor "the shared core" occurs (its `core/authority.md:181-188` and `core/lifecycle-frame.md:1-26` extents still hold "Silence is supervised" at `:184` and the frame heading at `:1`). Verified ranges/claims: `:13-51` and `:67-67` anchors still resolve; the new `:139-143` row resolves against the added bullet.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "The detailed per-leaf worker and reviewer records are authority." repointed to skills/l-01-agent-lifecycles/core/acceptance.md:120-120. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "## The Role Registry" repointed to skills/l-01-agent-lifecycles/SKILL.md:67-67. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "## Shared Invariants (every role can count on these)" repointed to skills/l-01-agent-lifecycles/SKILL.md:229-229. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "Requirement acceptance is per stable ID and version, never aggregate." repointed to skills/l-01-agent-lifecycles/SKILL.md:321-321. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "Requirement revisions and delivery attempts are separate axes." repointed to skills/l-01-agent-lifecycles/SKILL.md:346-346. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "The detailed per-leaf worker and reviewer records are authority." repointed to skills/l-01-agent-lifecycles/SKILL.md:387-387. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `Caller kind comes only from process context` in the row 130 of this card from skills/l-01-agent-lifecycles/SKILL.md:466-466 to skills/l-01-agent-lifecycles/SKILL.md:492, the extent of the construct the claim is about (the checker named line(s) [492] as its live location); re-pointed `Every launcher or role that dispatches a hosted role calls` in the row 130 of this card from skills/l-01-agent-lifecycles/SKILL.md:492 to skills/l-01-agent-lifecycles/SKILL.md:499, the extent of the construct the claim is about (the checker named line(s) [499] as its live location)
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Requirement acceptance is per stable ID and version, never aggregate." repointed to skills/l-01-agent-lifecycles/SKILL.md:295-295. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Requirement revisions and delivery attempts are separate axes." repointed to skills/l-01-agent-lifecycles/SKILL.md:320-320. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "The detailed per-leaf worker and reviewer records are authority." repointed to skills/l-01-agent-lifecycles/SKILL.md:361-361. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented fail-closed
-  malformed hosted role identity and the plane-stamped polymorphic reviewer parent contract.
-  Verification remains closeout-owned.
-
-- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: clarified that an explicit
-  task-seat takeover converges idempotently on the canonical seat and never authorizes manual
-  incumbent replacement or duplicate brief publication. Verification remains closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the one-call ambient launcher,
-  separated ordinary architect bootstrap from explicit named-role takeover, made lineage-conflict
-  continuation explicit, and kept structural authority outside settings overrides. Verification
-  remains closeout-owned.
-
-- 2026-08-28T14:18+02:00 — Reconciled lifecycle-router citations against the committed PDLS
-  candidate after the final role-routing wording settled; behavior is unchanged.
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
-
-- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: delivery attempts now advance only at review handoff or
-  after rejection; internal protocol events remain separate, and lightweight records link frozen
-  expanded evidence instead of duplicating the master corpus.
-- 2026-08-27T19:59+02:00 — M42 clarification: distinguished pre-adjudication candidate replacement
-  from unrelated post-acceptance candidate movement, which cannot silently reopen accepted work.
-- 2026-08-27T18:06+02:00 — M40-M45: documented immutable worker/reviewer attempt lineage, exact
-  candidate binding, the closed failure taxonomy, owner-recorded bounded regression invalidation,
-  and leaf-authoritative/rebuildable non-gating summary semantics.
-- 2026-08-27T14:04+02:00 — Clarified M39's revision authority: approved packets are immutable,
-  version-addressed, and carry the durable corpus ruling consumed by every downstream seat.
-- 2026-08-27T13:32+02:00 — M39@v1: recorded the upstream requirement-compilation gate and exact
-  ID + version propagation into acceptance. Canonical packets and developer corpus approval now
-  precede task topology. Verification remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: documented the mandatory per-requirement worker envelope,
-  independent reviewer adjudication, exact stable-ID set, and separate durable-evidence hold
-  point. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented fact-versus-judgment ownership,
-  architect-owned plan review, organizational/atomic lineage, and the pre-landing full-master gate.
-  Verification remains closeout-owned.
-- 2026-08-12T20:10+02:00 — L23 curator: documented canonical source-lineage dispatch admission; verification remains closeout-owned.
-
-- 2026-08-11T14:10+02:00 — Reconciled the sidecar directly to current structural lifecycle
-  doctrine and removed duplicated task-delta/history blocks. Verification remains pinned pending
-  governed closeout.
-- 2026-08-09T12:08+02:00 — Fact-relay supervision replaced timed escalation-ladder doctrine.
-- 2026-08-08T02:00+02:00 — Quality checks were assigned to leaf and master altitudes.
-- 2026-07-12T14:20+02:00 — Established canonical lifecycle route coverage and generated-copy
-  ownership.

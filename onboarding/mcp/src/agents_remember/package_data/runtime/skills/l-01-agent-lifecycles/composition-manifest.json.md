@@ -1,15 +1,5 @@
 # composition-manifest.json
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80` |
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
-| governingOverview      | `../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../overview.md)
@@ -135,69 +125,37 @@ still parses and compiles for every role (returning no requests and no skill ref
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation governs this repository-local instruction file; it is canonical
 repository prose consumed by the skill router.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources. | n/a | n/a |
+No relevant documentation found after checking live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The manifest is consumed by the deterministic capsule compiler through the package
 `agents_remember.models.role_capsules`; the rows below are the consuming seams and the shipped
 guards that hold this file's declarations true.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The manifest resolves every role and operation source and keeps the registry at ten roles. | `test_manifest_resolves_every_role_and_operation_source`; `ROLE_ORDER`; `OPERATION_KEYS` | mcp/tests/test_role_instruction_corpus.py:248-300; mcp/tests/test_role_instruction_corpus.py:32-43; mcp/tests/test_role_instruction_corpus.py:59-69 |
-| A manifest entry pointing at a missing source, an unknown operation, an unknown core block, or a missing criteria catalog is reported instead of silently accepted. | `test_manifest_reports_a_missing_source_instead_of_accepting_it` | mcp/tests/test_role_instruction_corpus.py:468-507 |
-| The canonical source of this metadata plane. | "\"schema\": \"ar-role-capsule-composition/v1\"" | skills/l-01-agent-lifecycles/composition-manifest.json:2-2 |
-| Declared tool identities are **requests** narrowed against the admitted policy snapshot, never grants; an id outside it is refused. | `narrow_tool_requests` | mcp/src/agents_remember/models/role_capsules/tools.py:24-58 |
-| **The declared skill registry and the skill entry shape** — the parser that turns `skills.<name>` into `CapsuleSkillEntry`. | `CapsuleSkillEntry`; `_parse_skills` | mcp/src/agents_remember/models/role_capsules/manifest.py:94-110; mcp/src/agents_remember/models/role_capsules/manifest.py:455-478 |
-| **Skill references are carried, not narrowed.** | `skill_references`; `skills_declared_identity` | mcp/src/agents_remember/models/role_capsules/compiler.py:153-191; mcp/src/agents_remember/models/role_capsules/sources.py:175-185 |
-| A declared skill must resolve in the registry, and its root file must be admitted. | `_require_role_skills_are_declared`; `_require_declared_skills_present` | mcp/src/agents_remember/models/role_capsules/manifest.py:479-508; mcp/src/agents_remember/models/role_capsules/source_set.py:195-228 |
-| The parser treats `tools` and `skills` as optional and refuses a manifest that disagrees with the frozen vocabulary. | `parse_composition_manifest`; `CapsuleRoleEntry` | mcp/src/agents_remember/models/role_capsules/manifest.py:168-216; mcp/src/agents_remember/models/role_capsules/manifest.py:63-82 |
-| Every tool id this plan declares exists in the published roster — the guard that makes a typo an error rather than an inert request. | `test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster` | mcp/tests/test_role_capsule_admission.py:221-230 |
-| The plan still parses and compiles for every role with `tools`/`skills` absent, and emptying `launcher.operations` refuses instead of compiling — the launcher's own case, the one that replaced the older launcher-refusal case this row used to name. | `test_every_shipped_role_compiles_deterministically_under_every_declared_operation`; `test_emptying_the_launcher_operations_refuses_instead_of_compiling`; "operation-not-applicable" | mcp/tests/test_role_capsule_admission.py:520-542; mcp/tests/test_role_capsule_compiler.py:570-582; mcp/tests/test_role_capsule_admission.py:864-905 |
-| The plan still parses and compiles for every role with `tools`/`skills` absent, and the launcher refusal is `operation-not-applicable` when `launcher.operations` is empty. | `test_every_shipped_role_compiles_deterministically_under_every_declared_operation`; `test_the_launcher_seat_composes_its_own_core_and_inherits_no_role_operation`; `test_emptying_the_launcher_operations_refuses_instead_of_compiling`; "operation-not-applicable" | mcp/tests/test_role_capsule_admission.py:520-542; mcp/tests/test_role_capsule_compiler.py:561-580; mcp/tests/test_role_capsule_admission.py:864-916 |
-| The carried skill channel against the shipped corpus: one reference per declaration, revision follows the admitted bytes. | `test_every_shipped_role_that_declares_a_skill_carries_one_reference_per_declaration`; `test_the_skill_revision_follows_the_admitted_skill_bytes` | mcp/tests/test_role_capsule_admission.py:599-613; mcp/tests/test_role_capsule_admission.py:653-691 |
-| The L13 additions as the compiler reads them: the tenth role's source, altitude and single-carrier operation. | "\"altitude\": \"free-agent\"" | skills/l-01-agent-lifecycles/composition-manifest.json:472-472 |
+- The manifest resolves every role and operation source and keeps the registry at ten roles. [1]
+- A manifest entry pointing at a missing source, an unknown operation, an unknown core block, or a missing criteria catalog is reported instead of silently accepted. [2]
+- The canonical source of this metadata plane. [3]
+- Declared tool identities are **requests** narrowed against the admitted policy snapshot, never grants; an id outside it is refused. [4]
+- **The declared skill registry and the skill entry shape** — the parser that turns `skills.<name>` into `CapsuleSkillEntry`. [5]
+- **Skill references are carried, not narrowed.** [6]
+- A declared skill must resolve in the registry, and its root file must be admitted. [7]
+- The parser treats `tools` and `skills` as optional and refuses a manifest that disagrees with the frozen vocabulary. [8]
+- Every tool id this plan declares exists in the published roster — the guard that makes a typo an error rather than an inert request. [9]
+- The plan still parses and compiles for every role with `tools`/`skills` absent, and emptying `launcher.operations` refuses instead of compiling — the launcher's own case, the one that replaced the older launcher-refusal case this row used to name. [10]
+- The plan still parses and compiles for every role with `tools`/`skills` absent, and the launcher refusal is `operation-not-applicable` when `launcher.operations` is empty. [11]
+- The carried skill channel against the shipped corpus: one reference per declaration, revision follows the admitted bytes. [12]
+- The L13 additions as the compiler reads them: the tenth role's source, altitude and single-carrier operation. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract defines this instruction file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-20T01:06+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range). The row named `test_launcher_is_refused_an_operation_no_role_inherits_to_it`, which commit 7e6936c0 folded into `test_the_launcher_seat_composes_its_own_core_and_inherits_no_role_operation` (which keeps the same `operation-not-applicable` refusal for an operation no role inherits), so the Anchor cell now names that case and its citation reads `mcp/tests/test_role_capsule_compiler.py:561-580`, the case's own extent. No claim wording or anchor was re-worded beyond the dead case's name, the row's other two citations were re-read and stand, and no verification stamp was advanced.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "\"altitude\": \"free-agent\"" repointed to skills/l-01-agent-lifecycles/composition-manifest.json:472-472. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `composition-manifest.json.md:164` (test_emptying_the_launcher_operations_refuses_instead_of_compiling) — re-read the claim against the current module: the named case was renamed or consolidated, and the successor's own docstring names the consolidation.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: "\"altitude\": \"free-agent\"" repointed to skills/l-01-agent-lifecycles/composition-manifest.json:468-468. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the corpus's tenth role**
-  (`CAPS-R13@v1`). `role_order` is now ten roles and `operations` nine names, so the Purpose, the
-  Logic's two enumerations, the tool census (27 ids across nine roles / 14 distinct → **32 across ten
-  / 18 distinct**, the tenth contributing five) and the closed-registry invariant were all corrected.
-  Added the tenth role's entry as its own Logic paragraph — `altitude: "free-agent"` (the only
-  non-task altitude), three operations with `bootstrap` unique to it, and empty `templates`/`criteria`
-  — plus the append-not-insert property that keeps earlier roles' positions stable, and the free-agent
-  invariant. **This card's Repo-Internal section had lost its `| Finding | Anchor | Source |` header
-  row**, so its rows were rendering as prose; the header and delimiter are restored and every range
-  re-derived, and three stale case names were replaced with the cases that actually exist
-  (`test_every_shipped_role_compiles_deterministically_under_every_declared_operation`,
-  `test_launcher_is_refused_an_operation_no_role_inherits_to_it`). Verification metadata is left at
-  the leaf base commit because the source is uncommitted — the governed closeout stamps the real code
-  commit.
-
-- 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate, which grew this change. The diff against L1's shipped file is now **41 keys added, 0 removed, 0 values changed** (was 38) because the manifest gained a **new top-level `skills` object** declaring the skill registry — `l-01-agent-lifecycles` = `{origin: "agents-remember/skills", uri: "skill://agents-remember/skills/l-01-agent-lifecycles", source: "SKILL.md"}`. Documented that registry and the `CapsuleSkillEntry` shape it parses into, and corrected this card's central distinction: the previous entry called all three key families "declared requests, never grants" and leaned on the tool-narrowing rule. That is right for `tools` and **wrong for `skills`** — a skill reference is **carried**, `skill_references` consults no policy, and identity is `origin + skill` because a bare name collides across servers. Added two invariants (carried-not-narrowed; a skill name must resolve in the registry) and four reference rows, and refreshed every range. The file remains a **cross-leaf change carried by the L2 candidate**, ruled ACCEPTED by the owning seat on 2026-09-16. All ten copies still share one sha256. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit.
-
-- 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: body updated for the three key families this leaf added to the routing plane. Documented the per-role `tools` array (27 declared ids across the nine roles, 14 distinct, each held against the published roster) and `skills` array (one corpus skill reference per role) as **declared requests, never grants**, and `launcher.operations` changing from `[]` to `["orientation", "coordination"]` — the one addition with a behavioral consequence, since reverting it makes every launcher compilation refuse `operation-not-applicable` by design. Added five invariants (request-versus-permission, roster/source existence, independent removability of the three families, the launcher exception, and the never-hand-edit-the-generated-copy rule) and five Repo-Internal rows. The change is a **cross-leaf change carried by the L2 candidate** — `skills/l-01-agent-lifecycles/composition-manifest.json` is L1's artifact — ruled ACCEPTED by the owning seat on 2026-09-16 after independently reproducing the structural diff (38 keys added, 0 removed, 0 values changed), L1's corpus test (6 passed, unedited) and `scripts/sync-skills.py --check` (exit 0). All ten copies of this file share one sha256. **Governing-link repair:** this card's `governingOverview` and its `## Governing Overview` link were corrected from five steps to **six** (`../../../../../../overview.md`), which is the level that actually resolves to `onboarding/mcp/overview.md` — the `skills/` segment above this directory does not exist, so the card sits five real levels below `onboarding/`, and the five-step form resolved to a nonexistent `onboarding/mcp/src/overview.md`. The same defect and the same repair apply to the sibling `SKILL.md.md` card, which records the correction in its own history; both were found while creating this leaf's cards for this directory. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit.
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: created this card for `skills/l-01-agent-lifecycles/composition-manifest.json` — a file added by the role-instruction corpus consolidation. The canonical source is It is the routing-metadata plane the deterministic capsule compiler (a later leaf) selects from.; the packaged copy is produced by `scripts/sync-skills.py` and is not hand-edited. Verification metadata is left at the leaf base commit because the source is uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.
+No meaningful cross-repo references found.

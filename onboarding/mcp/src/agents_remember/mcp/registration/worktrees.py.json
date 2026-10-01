@@ -1,0 +1,300 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/worktrees.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stop declaration: single flat `contract_path`, registered description carrying the pause/publish-nothing/hand-back contract and naming the separate publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "content": "sha256:1a2d5c0bfd974173ae4f7aa0faec00287a8ed8228e2f090f9de0f1c07b6953ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_pause"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "content": "sha256:93575aa4e5c097197a8e581a70ff117df0811562f86d232797395868ce114de1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_worktree_stop_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`TaskRef` — the shared task locator attach and status pack.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7d94fc2a811ecaa875d929ec1242369625dadc",
+            "content": "sha256:099fc8a76c1c3855e16525e55b4246e43e679d8c7af08b945c90347ee2c062d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRef"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_ref.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The pairing this registrar performs, and the vocabulary the decision is typed by.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec29470061389a3d82dfc1c720b9bdf92829bb91",
+            "content": "sha256:dfd90727d7d8cee7c5348fb4ab7714cf8495238a806a05c40c8f3564aa3a0454",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncResolutionInput"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:a5c7bdac7dcd0b4c4cc5fab082b5ca5e7c0ddd9cdbd366baa19adfc95b72958d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoredReconciliation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:3d43a2536afdd248137c82402f9d46fb0793e13a6be16c5305051ff482bae805",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The current module exposes `register_worktree_tools` at this ownership boundary, re-read and re-cited at the current declaration.\n\nAnchor: \"def register_worktree_tools(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "content": "sha256:de35b6e0021f31dccd710dfe7f0fd695e258e2b75556001f88bbd7129250c298",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The public sync declaration: typed memory choice, contract-addressed continue/cancel, and the flat `knowledge_resolution` argument whose description carries the engine's diagnosis and both decisions' meanings.**\n\nAnchor: `knowledge_resolution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "content": "sha256:f390777c26364df0cfd0f70f7298ce9882db420226a2441df8aebd99c6fbfb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9903808aadb875de3adad81429b014ec3cdcf98",
+            "content": "sha256:504260fa81864403e63110e034abc910c4d5b63ac70fe270fce6aed6b110d3eb",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 177
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The start payload forwards task identity, bases and execution configuration to the application owner.\n\nAnchor: \"def worktree_start_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ca5f754679645c69bfde58ceaec70643364e95",
+            "content": "sha256:694f16aa54f237b6118667f2358ae060cbd57488dc709d3938ae8a89dec0ed6a",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The attach payload forwards the requested worktree attachment to the application owner.\n\nAnchor: \"def worktree_attach_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ca5f754679645c69bfde58ceaec70643364e95",
+            "content": "sha256:23440330059ad18128a37d5b739a65d259e83188c806a3583eae5a286a4d1971",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The status payload reads status through the application owner.\n\nAnchor: \"def worktree_status_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ca5f754679645c69bfde58ceaec70643364e95",
+            "content": "sha256:9cf6ecacfec5c9e90c3b876e9ac26822943eef82fb4ed93de4b13cb292a27f79",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The sync payload forwards the paired resolution value to the application owner.\n\nAnchor: \"def worktree_sync_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ca5f754679645c69bfde58ceaec70643364e95",
+            "content": "sha256:243080e4c85ff72e2212a1f2ce2d138e6cc1c892db7b4a1dc49019760f66715c",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:758bdbf0fd5bdc20f4ed1a4050023c69c029ab93772f633114a4e5808574c135",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIdentity"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:06408e1990c9561355c6c1d27dc39c8dfcbac13d529ae3e7000fbd61cd4ced84",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:57c733ce1e9d7ceb5dc1b9ad93b65afa7f4becb333b38c4eb1c9c20c19c25d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskBases"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:b8999cf2f44d37b85b98170da20e0f82fb022254331af6268854533049d3429e",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:f205ae84cde66f1719bdbbbcd34edd2795206ba84ad19aa350a33eededfd46c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartExecution"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:7f78ce2f53d72daa790b418ba14a21e6d39cc2decf643c78346b92d14a222775",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_cold_start.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The server starts with cold caches and no network.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef801deaa27e358ede61f4497e72165051c9c2d8",
+            "content": "sha256:d87e67001777a332c84e38337fdcc27fce435b09e12860c0e9371e24cfb0ac20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_server_starts_with_cold_caches_and_no_network"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A counter will not build on a corrupt copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef801deaa27e358ede61f4497e72165051c9c2d8",
+            "content": "sha256:a568378bd283e0008844ca021324ad96e16b4be9051c4e130282880c21ac4284",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_counter_will_not_build_on_a_corrupt_copy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

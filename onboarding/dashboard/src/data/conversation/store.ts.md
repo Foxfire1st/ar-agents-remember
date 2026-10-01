@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation/store.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/conversation/store.ts`       |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-27T14:20+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [data/conversation overview](overview.md)
@@ -97,37 +87,33 @@ view memory; no `setScrollAnchor` action remains here.
   strip. This hardens ONLY the initial hydrate — the epoch-resolve/repage path in `ChatsStageBody` is a
   separate, pre-existing cried-wolf class (routed as a product follow-on).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The pure reducer whose page/event/recovery this store drives. | `applyInitialPage` | dashboard/src/data/conversation/reducer.ts:33-40; dashboard/src/data/conversation/reducer.ts:168-202; dashboard/src/data/conversation/reducer.ts:246-286 |
-| The page/telemetry/interrupt client this store fetches through. | `fetchConversationPage` | dashboard/src/data/conversation/client.ts:74-98; dashboard/src/data/conversation/client.ts:101-119; dashboard/src/data/conversation/client.ts:260-269 |
-| The SSE controller this store opens/reconnects/stops. | `openConversationStream` | dashboard/src/data/conversation/stream.ts:86-242 |
-| The store-level keep-alive + LRU-eviction suite (F4), plus the initial-connect retry pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately. | `LRU_LIMIT` | dashboard/src/data/conversation/store.test.ts:245-303; dashboard/src/data/conversation/store.test.ts:382-417 |
-| The roster derivation + focus recompute this focus state defers to (`effectiveAgentFocus`). | `effectiveAgentFocus` | dashboard/src/data/conversation/agents.ts:106-112 |
-| The focus LRU-survival + reset pins for `agentFocusBySession`. | `setAgentFocus` | dashboard/src/data/conversation/agents.test.ts:197-235 |
-| The stage body that connects/disconnects on focus + epoch resolution. | "connectConversation" | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:20-20; dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:265-276 |
-| The house vanilla-zustand store idiom this matches. | "import { createStore } from \"zustand/vanilla\";" | dashboard/src/data/store.ts:2-2 |
+- The pure reducer whose page/event/recovery this store drives. [1]
+- The page/telemetry/interrupt client this store fetches through. [2]
+- The SSE controller this store opens/reconnects/stops. [3]
+- The store-level keep-alive + LRU-eviction suite (F4), plus the initial-connect retry pins: a transient 503 retries quietly and never flashes the alarm; a hard 409 fails loud immediately. [4]
+- The roster derivation + focus recompute this focus state defers to (`effectiveAgentFocus`). [5]
+- The focus LRU-survival + reset pins for `agentFocusBySession`. [6]
+- The stage body that connects/disconnects on focus + epoch resolution. [7]
+- The house vanilla-zustand store idiom this matches. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 ## 260727-CHATS-IM-L2 Selected-Child Store Delta
 
@@ -142,39 +128,3 @@ unbounded browser state; capacity refusal is a visible `local-resource-limit`, n
 Disconnect/reconnect clears child acquisition state with its runtime, while the existing raw focus
 survives and is revalidated against the next roster. A failed child is retryable; a successful
 child is not re-posted within the same runtime.
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized 8 repo-internal rows from
-  markdown links to plain anchored sources, and corrected the child-history prose citations — the
-  old L470-L563 named `repageAndResume` (which does call `failStream`), so the no-`failStream`
-  claim now binds `hydrateAgentConversation` at 656-748, and the `agentHistoryBySession` prose
-  citation is in cit form. Zero findings remain.
-
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented child-scoped history state,
-  same-child singleflight, visible retry/failure, the necessary 64-entry in-flight/retained bounds,
-  and strict separation from parent stream failure. Verification metadata remains pinned while
-  uncommitted.
-
-- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: recorded the operator agent-focus state —
-  `agentFocusBySession` + `setAgentFocus` (null clears), keyed OUTSIDE `bySession` so an LRU
-  eviction keeps the operator's place with the keep-warm runtime and the surface revalidates via
-  `effectiveAgentFocus`; `reset()` clears the focus map too. Additive; no orchestration behavior
-  changed. Source uncommitted; closeout re-stamps verification.
-- 2026-07-24T13:17:50Z — Corrected the stale `setScrollAnchor` and non-disconnecting-LRU claims, and
-  documented current bounded recovery, keep-warm, and exact-LRU behavior. Verification hash/date remain
-  pinned to the pre-commit source stamp.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R10 (audit V13) initial-hydrate
-  boot-race retry. `hydrateAndStream` is now a bounded loop (`INITIAL_CONNECT_ATTEMPTS=8`,
-  `INITIAL_CONNECT_RETRY_MS=400`) that stays on the quiet `connecting` phase while the first page fetch
-  fails transiently (`isTransientBootFailure`: null drop / `httpStatus === 0` / `>= 500`) and escalates
-  to `failStream` only when the window exhausts; a hard 4xx (409/404) still fails loud immediately, so
-  the codex launch cried-wolf strip is deferred, never masked. Noted the epoch-resolve/repage path as a
-  separate pre-existing class (product follow-on). Source uncommitted; closeout re-stamps verification.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the reconstructable
-  active-conversation store — the no-durable-index projection (R1), the connect/recovery/older-page
-  orchestration that resumes only from a fresh cursor (§6.8), the keep-alive-on-disconnect + bounded
-  LRU-rehydrate (F4), and the typed first-connect failure surfacing (F15). Verification is pinned to the
-  leaf base (`0be0099`) because the new source file is uncommitted; closeout owns its first source stamp.

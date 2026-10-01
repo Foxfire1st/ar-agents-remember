@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/runtime/startup.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/runtime/startup.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T19:24+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](overview.md)
@@ -56,36 +46,17 @@ which process may migrate which log.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP startup migrates its owned logs before ambient installation. | `initialize_mcp_application` | mcp/src/agents_remember/application/runtime/startup.py:22-27 |
-| The application boundary returns the one cached, strict serving-build payload. | `mcp_serving_build_payload` | mcp/src/agents_remember/application/runtime/startup.py:30-33 |
+- MCP startup migrates its owned logs before ambient installation. [1]
+- The application boundary returns the one cached, strict serving-build payload. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-18T19:24+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the second serving-build reader this leaf's item 26 added, which this card did not mention.** `measuring_build_stamp` (`:36-51`) returns the process's resolved boot identity as `{"servingBuild": …}` wire JSON — a dict copy of the identity `process_serving_build()` caches once per process, `dirty` included — and is consumed by the memory-quality controller's three public entry points and by `citation_fix_tool`/`citation_migrate_tool`; the Purpose and `### Logic` sections now state it and its reason (D-33: a fixed serving build measuring a different candidate, indistinguishable in the output). It is a stamp, not a second resolution, and it does not move `initialize_mcp_application` or `mcp_serving_build_payload`. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real stamp; the reference rows are left to the citation-range repair pass that owns them.
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: added the application-owned serving-build
-  payload gateway so MCP transport no longer imports the serving domain directly. Verification
-  remains closeout-owned.
-
-- 2026-08-13T08:40+02:00 — L23 integration-gate repair: moved this preserved startup card with its source into the cohesive `application/runtime/` package and rebound all current citations; startup behavior is unchanged. Verification metadata remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current application-layer card for `server_startup.py` with qualified seat resolution and terminal/session orchestration boundaries.
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: split out the idempotent pre-config MCP trust
-  declaration while preserving `prepare_mcp_process` as the supervision operation. Verification
-  metadata remains pinned until approved closeout.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

@@ -1,0 +1,388 @@
+{
+  "path": "mcp/tests/test_knowledge_review_attributed_source_content.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the admitted population and one case per property.**\n\nAnchor: \"ICR-R03\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:bdd6f0ed16356eb721161d31d08bf23927aaa37dbc95fe536010cb05715803be",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The owners under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:38e8843a8cebfb16f766d607a7dee7674eb699fa1a559e313a7a5af4a6d746fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_source_path"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c44437cfac6ee519a532c3ce675f46baa01148fe",
+            "content": "sha256:8ef4c43fc85de2eca313ac24b362b166d2034dc3e91b56e1671f4e5d73858773",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_realization_link"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_realization_link.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lane marker, the three population paths and the two refusal constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:1a812b2849935197426cba8220c7abfdd262f42a6aa6996dd82b0853a5a9c1d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTRIBUTED_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:0f754b43fd63791e29387fababdb861875a0a60c0fb68b2466ce69e15519eba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "BEFORE_ONLY_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:b0ab8cc61dbf3447d1a3dfd4e21a03e0bb23757ced6e354ea1737bc0c55aba16",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNRELATED_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:00d596fd0f326fc3252e950fafdc41647cec37bbdf8c526a7fac5ff249eef2f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PADDINGS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:00a74d031232d304bc05cf714e991ec30bfa360104385886bc287022377488d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NOT_LINKED"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Fixture and helpers: fresh enclosure with knowledge halves, freeze, refusal and attributed assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:dff5e509fefc11b18c3e443b02758be11433ae430ef80597d5ccee38c24fb86a",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributed_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:03a4f018ff6294deb46a1f374e2933ae1dbdb1b5244cd84376352d6d216fe561",
+            "locator": {
+              "kind": "symbol",
+              "name": "_freeze"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:1382075cea65fc794e01e9c1cf4c59ee0b09ff7c5628a81ae974e907385258db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:4fca3165eb8ef7271029e5081cf811bcaf04321186fc17ceb71efffa652a70c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attributed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Attributed admission without counting, and the unlinked refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:a91f9b24a303265586c5bbd016bdf3e7233c2897ce74f821ce03ebf130172a60",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:c405e549eab3887145bc7f2ee49d30d66dad755472e4b3e744f0fb1b940c6075",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_path_no_recorded_realization_links_is_still_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Comparison isolation and historical bytes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:c8d4944c85a19f02a6fdb0d278d9a9de1bb0f8f69aec5c9fa54cd29de21094b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_linked_only_in_another_comparison_is_refused_for_this_one"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:1ac66ae3aeb994c338c865c195eb25d4f2feee0e2e5753b1924c37b4cdc898c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:f0a82b1a00a776952096e0d0d56a5e1d6148cde33e1cc07f941e5d6fc3ef504b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The two review-fix cases: exact spelling, and a link scope size cannot fail or an unread half cannot negate.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:2edac6227df8eb74aadea566ce8f9193e3b1d6a7ff8b4ce12a12d9be9f2cff01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_padded_spelling_is_never_admitted_as_attributed_context"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:37acee70ec0266ae29337e5b2d3e803ab252fab720fa9fa9a71f922f8063c11d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:e7e8349ee6dbf01820889bfe44cd5c9bf7581763bab975eb30ac2a05ba7db799",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The MIK-L31 cases: the never-initialized remedy, and a proof entry's path linked in a tree index but not in a dataset.**\n\nAnchor: \"def _proof_at_path(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:92ebea492fbe15d48389f2f018c2c51cf9b81e6eeee3f773a7eed40140057148",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_never_initialized_knowledge_asks_to_initialize_it"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:12119e15d7780f0ab0fb4af89ed345ec2825a0ce86bfd0f18ea007d863adc694",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tree_index_links_a_path_its_proof_entry_is_anchored_at"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c44437cfac6ee519a532c3ce675f46baa01148fe",
+            "content": "sha256:de197048b69592f6a2f5db36b73419ab0b4458216a6ba94de800dbcfe96168a4",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 298
+            },
+            "path": "mcp/src/agents_remember/application/review_source_realization_link.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The population paths the fixture's knowledge links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:33c93a5f2d5c04b33720a374772dbcb76749a98b08faa21fb593d3e9a52633ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTEGRATION_PATH"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:0b00f5255c37dc5fd57b3b942ffdb91a543a7f34724e9d716a23ef127a4ce142",
+            "locator": {
+              "kind": "symbol",
+              "name": "RESOLUTION_PATH"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:5002299a9b2256d93001896dcd0a3299b967c27aee379a89f2b9894948cfe134",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNPARSED_PATH"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lane row and the read-scope consumer row this module adds.\n\nAnchor: \"mcp/tests/test_knowledge_review_attributed_source_content.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:8f2e358476a0aef2798cc602658c4dafdc7f9dbaf765bc9fa8c81eab1af75c6c",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d111436f816900c8ee32efc6a3864a3f484cae7befe34a1cffa55a4a39c318b2",
+            "locator": {
+              "end": 1531,
+              "kind": "line_range",
+              "start": 1531
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/`                                 |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview      | `../../overview.md`                              |
 
 ## 260928-MIK-L29 The Cockpit Gains A Knowledge Mode
 
@@ -21,11 +15,9 @@ link opens on its view. The reader owns its state in that hash; the shell holds 
 other shell behaviour changed: takeovers, rails, polls and streams are as before, and the existing panels are
 unchanged. The hash persists across a tab switch, so a reload returns to Knowledge (review R1 note N4, harmless).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The Knowledge destination in the registry. | `CockpitView`; `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:70-78; dashboard/src/cockpit/Cockpit.tsx:80-89 |
-| A reader URL opens the shell on the Knowledge view. | "parseReaderHash(window.location.hash) ? \"knowledge\" : undefined" | dashboard/src/cockpit/Cockpit.tsx:394-395 |
-| The transient Knowledge view renders the reader. | "return <KnowledgeReader />;" | dashboard/src/cockpit/Cockpit.tsx:958-959 |
+- The Knowledge destination in the registry. [1]
+- A reader URL opens the shell on the Knowledge view. [2]
+- The transient Knowledge view renders the reader. [3]
 
 ## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
 
@@ -70,10 +62,8 @@ no dashboard master reader is a net-only caller any more. What could not be show
 refused read renders the route's own code, status, reason, offending input and next action, and a
 change-set that measured empty in both halves says so instead of showing the pick-a-file backdrop.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts ("task entries this list carries"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as "task entries" on the strength of this card. | "Tasks · {count}" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:574-574 |
-| Both master readers now ask for the per-leaf breakdown. | `includeLeaves` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 |
+- The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts ("task entries this list carries"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as "task entries" on the strength of this card. [4]
+- Both master readers now ask for the per-leaf breakdown. [5]
 
 ## 260921-ICR-L25 Four Accepted-Design Defects Fixed Across This Route's Panels
 
@@ -139,20 +129,6 @@ deliberate `overflow: hidden` (`cockpit/Cockpit.tsx:323`, *"the viewport does no
 scrolls on its own"*, shared by every view) and the **13** cockpit-chrome elements, owned by R24's
 cockpit takeover. **The shell consequence, stated so it is not lost:** any other panel in this shell that
 renders taller than the viewport without its own scrollport has the same defect.
-
-## Update History
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes): **route body updated for MIK-R29.** Added the section "260928-MIK-L29 The Cockpit Gains A Knowledge Mode" at the top (the transient `knowledge` destination and the `#knowledge?…` initial view; review note N4), with three rows. The installed fixer normalised eight rows in this pass, and the rows citing the shell below the new imports were re-pointed by the exact base-to-staged line shift. No verification stamp was advanced: the change set is staged and uncommitted, and closeout owns the stamp.
-- 2026-09-28T17:14:56+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **route body reviewed — the cockpit shell wraps its tree in `IntentEntryRevalidation` (`ICR-R24@v3`; ruling 16:27:28 on L47-R1-F2).** Recorded on `cockpit/Cockpit.tsx.md`; one new cockpit test module (`Cockpit.intentEntry.test.tsx`) has its own card. The route's structure is otherwise unchanged. Rows into `Cockpit.tsx` and `changeSetBar.tsx` displaced by L47 were re-pointed from the base-to-candidate line mapping, and the two entry rows were reworded: the entry carries no subject and the catalogue is the reviewer's. No stamp advanced.
-- 2026-09-26T21:08:08+00:00: Generated citation repair: `leafIsLive` repointed to dashboard/src/panels/detail-panel/changeSetBar.tsx:560-572. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — Repointed shared catalogue/grouping ownership to the extracted source; source-review entry remains available independently of knowledge.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `AsJsonModule`; `Overrides` repointed to dashboard/src/test/servedProjection.ts:22-32; dashboard/src/test/fixtures/overrides.ts:60-66. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T00:15:00+02:00 — 260921-ICR-L25 curator, round 3 (uncommitted change set, now also carrying `panels/review/ReviewSurface.tsx` and the new `panels/review/ReviewSurface.narrow.test.tsx`; round-2 verifier `verify-l25-round2.md` sha256 `dd34cee2b5bc2068023ba9e7af1f7b037edc995bc6019d9bacbed9f00619870b`; round-3 report `report-l25-round3.md` = `cf6fb86e4d20cf5a1baf6bd093e4d9b1ccbf017062503da23bf40d44e52b86`): **route body updated — B7's residual is superseded a second time and the B3 caveat is corrected.** The B7 paragraph now records all three states of one claim (round 2's "outside the review surface" phrasing, the verifier's refutation of it with the reviewer's own root, and round 3's fix of both the horizontal and the vertical half) rather than only the last number, and it names the cause round 3 removed — a grid-item minimum, with the panes 565 px in a 294 px column. The B3 caveat's "nothing is user-scrollable at 320 px" described the pre-round-3 state and now records that round 3 supplied the reviewer's own scrollport (`userScrollableCount` 0 → 1). **What remains routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate `overflow: hidden` decision and the 13 cockpit-chrome elements, owned by R24's cockpit takeover — with the consequence stated that any other panel in this shell lacking its own scrollport shares the defect. **Citation accounting:** the section's rows now cite the reviewer root's own current line and the shell's decision line; no earlier claim was weakened to fit. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
-- 2026-09-25T23:58+02:00 — 260921-ICR-L25 curator, round 2, **correction against the independent verifier** (same uncommitted change set; verifier `verify-l25-round2.md` first line `pass-with-findings`, sha256 `dd34cee2b5bc2068023ba9e7af1f7b037edc995bc6019d9bacbed9f00619870b`; findings F1/F2/F5): **the B7 sentence this route's L25 section carried was false as worded and is corrected in place.** The residual at 320 px is **not** cockpit chrome alone: the Intent Reviewer's own root is `[data-testid="review-surface"]` while `review-workspace` is an **inner** root, and classified against the reviewer's own root **51 of the 64** overflowing elements are **inside** the reviewer (13 are chrome) with `pannableCount 0`, so the residual sits inside B7's own criterion and is **routed as a named residual rather than placed outside the surface**. The verifier's F2 adds the vertical half — at 320 px **nothing in the document is user-scrollable** (`MAIN` `overflow-y: hidden`, 5 375–7 620 px of content). The B1 claim is likewise narrowed to the form that is true (raw amber-wash literal gone, wash computes `oklab` through `var(--amber)`, hue 215 absent), because "zero `oklch` users remain in the review surface" is false while the dashboard's own tokens are defined in `oklch`. **What did not change:** the path/explorer fix is real and measured, and the page no longer overflows horizontally at either width. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
-- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **route body updated — the section above records the four accepted-design defects fixed across this route's panels, with the detail left on each panel's own route.** B6 (the unrecorded change-set range answered and named, with its total withheld), B3 (the jump above the tree, and the empty centre's plane-naming sentence — stated as a **wording** fix, not a false-state fix, because the measured `data-selection-kind` was `none`), B1 (the review surface's only raw `oklch` literals replaced by one token-derived `oklab` helper) and B7 (the path button wraps). The section also names what is **routed** rather than absorbed: the cockpit chrome's residual 320 px overflow, owned by R24. **Citation accounting:** the rows on this route that cite the changed panels were re-derived from each construct's declaration at this candidate (`leafIsLive` `:607` → `:673-688`, `useReviewCatalogue` `:337-384` → `:371-424`, `DocChangeSetBar` `:585-634` → `:619-672`, the explorer's inventory rows `:234-315`/`:78-129`/`:137-149` → `:246-327`/`:90-148`/`:149-164`). **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
-- 2026-09-25T22:50:00+02:00 — 260921-ICR-L34 curator (leaf `260921-ICR-L34`, memory worktree only; no code changed; leaf base `a9a1a41bba535803421470bd17d858657177cb5f`): **route body corrected — the L33 operations-list half is withdrawn because commit `a9a1a41b` reverted it.** A withdrawal banner now heads the L33 section and the withdrawn paragraph carries its own marker; two reference rows citing the deleted `landedLeaves.ts` and the removed `openedKeys`/`setCollapsed` were **deleted rather than re-pointed** (a rename is repairable, a deletion is not), and every other row this pass touched had its range re-derived by locating the anchor literally in the candidate. The section's **second** half — the per-leaf breakdown in the change-set readers — is unaffected by the revert and was left standing. The revert was a direct emergency commit with no curator pass behind it, which is why this route described a module that exists in neither tree. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **route body updated — a landed master's leaves reach the operations list, and the per-leaf scale reaches both change-set readers.** The new section records the landed-leaf admission and its two bounds (the default-collapse rule and the row-carries-rows exclusion), the new `landedLeaves.ts` module, the collapse hook's second storage key, the header count's stated meaning, the `includeLeaves: true` request on both master readers with the superseded optimisation named and its retention recorded, and the two named states (refusal, measured-empty). **Citation accounting:** every row this leaf's line movement displaced on this route was re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the D01 refusal is carried end to end.** The new section records that this route's change-set client no longer discards a rejected read's own code and reason, that loading/refused/answered are three distinguishable states, and that the rendering half and its cases live on the detail-panel route. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## Hot Path Summary
 
@@ -578,44 +554,38 @@ must not recreate that coupling.
 | `dev/` | File cards governed by this overview; dev scenario authority starts at [cockpitScenarios.ts](dev/cockpitScenarios.ts.md). |
 | root ambient types | [vite-env.d.ts](vite-env.d.ts.md) declares the dashboard build fingerprint consumed by the data layer. |
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; it contains no configured Domain Documentation entries.
 The L8 architecture statements were verified from repository-local source/tests, task/reports, and
 the recovered same-repository history pack.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for `dashboard/src`. | — | — |
+No relevant domain documentation was found for `dashboard/src`.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation is imported as the dashboard authority. Historical Toad/T3
 references informed product framing only; current code truth stays in agents-remember.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository implementation source governs this route. | — | — |
+No applicable cross-repository implementation source governs this route.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Shell navigation, default, persistent layers, and shared drivers. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:892-948 |
-| State and authority architecture. | `# dashboard/src/data/ — Cockpit State And Authority Overview` | onboarding/dashboard/src/data/overview.md:1-936 |
-| Panel composition. | `# dashboard/src/panels/ — Cockpit Panels Overview` | onboarding/dashboard/src/panels/overview.md:1-3622 |
-| Sole Chats route, deletion map, and future boundary. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-595 |
-| Dev scenario authority and end-to-end states. | `COCKPIT_SCENARIOS` | dashboard/src/dev/cockpitScenarios.ts:108-205 |
-| Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. | "the five rules"; `SCANNED_ROOTS`; "can a test assert against a payload the server could never send?" | dashboard/src/test/wireFixtureGuard.ts:2-3; dashboard/src/test/wireFixtureGuard.ts:53-53; dashboard/src/test/wireFixtureGuard.ts:136-136 |
-| State/phase/severity vocabularies and the derived `Metrics` bucket fields. | `Metrics` | dashboard/src/types/projection.ts:460-464 |
-| Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. | `UNCLASSIFIED_STATUS`; `constelColors` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/constel.ts:31-39 |
-| JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. | `AsJsonModule`; `Overrides` | dashboard/src/test/fixtures/overrides.ts:60-66; dashboard/src/test/servedProjection.ts:22-32 |
+- Shell navigation, default, persistent layers, and shared drivers. [6]
+- State and authority architecture. [7]
+- Panel composition. [8]
+- Sole Chats route, deletion map, and future boundary. [9]
+- Dev scenario authority and end-to-end states. [10]
+- Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
+- State/phase/severity vocabularies and the derived `Metrics` bucket fields. [12]
+- Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback. [13]
+- JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. [14]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Public lifecycle recovery commits contain only real code and memory outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
+- Public lifecycle recovery commits contain only real code and memory outputs. [15]
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -714,10 +684,8 @@ operation envelope. The revision is a server-owned observation cursor and the in
 counter. `fixtures/snapshot.json` includes the matching sample alongside the coherent projection
 fields; the task-artifact takeover remains independently discriminated by notes/requirements.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The generated lifecycle mirror carries the cursor beside coherent identity and version fields. | "export interface LifecycleOperationProjection {" | dashboard/src/types/projection.ts:334-363 |
-| The fixture supplies a meaningful revision for the sample operation. | "\"meaningfulRevision\": 1," | dashboard/src/fixtures/snapshot.json:1223-1224 |
+- The generated lifecycle mirror carries the cursor beside coherent identity and version fields. [16]
+- The fixture supplies a meaningful revision for the sample operation. [17]
 
 
 ## Integrated IAS Recovery Contract
@@ -765,783 +733,13 @@ reviewer with no second takeover path. `260921-ICR-L3` changed nothing here — 
 component (`panels/review/SourceContent.tsx`, which a listed inventory row opens into) and one client
 function (`reviewSourceContent`), and its own record lives in the `panels/` route overview.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The target variant that turns the existing takeover into a review. | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
-| The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. | "never mounted for one, so no change-set" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:46-47 |
-| The dispatch, and the `intent-review` view marker it selects. | `target`; "intent-review" | dashboard/src/cockpit/Cockpit.tsx:419-419; dashboard/src/cockpit/Cockpit.tsx:583-583 |
-| The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. | `ReviewSurface` | dashboard/src/cockpit/Cockpit.tsx:35-35 |
-| **The reviewer entry: offered for every leaf; since `260921-ICR-L47` it carries no subject (the reviewer chooses one) and shows the comparison's changed-intent counts.** | "Intent review" | dashboard/src/panels/detail-panel/changeSetBar.tsx:2-4 |
-| **The one predicate both gated entries share.** | `leafIsLive` | dashboard/src/panels/detail-panel/changeSetBar.tsx:397-409 |
-| The shared catalogue hook takes repository/task context and calls the existing subject catalogue client. | `useReviewCatalogue`; `intentReviewEntries` | dashboard/src/data/useReviewCatalogue.ts:79-111; dashboard/src/data/review.ts:709-715 |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
-- 2026-09-22T17:20:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`, this leaf's base): **route body update for the subject catalogue (`ICR-R09@v1`).** The governed sources of this route changed (the entry half's catalogue rewrite and its client/picker consumers), so this overview's body rows naming the renamed constructs (`useReviewSubject` → `useReviewCatalogue`, `ReviewSubjectRead` → `ReviewCatalogueRead`, the selected-row target spelling) and the ranges this leaf's candidate moved were re-read and re-derived by hand; no route-level fact was otherwise changed. **Stamp accounting:** the verification pair names the leaf's base; closeout owns the stamp once the code commit exists.
-- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync-carried row re-derivation recorded: no route-level fact changed.** Two entry-read rows cite the merged tree's `changeSetBar.tsx` (`useReviewSubject`/`intentReviewEntries` at `:16`/`:116`/`:130`/`:224`; `useReviewSubject`/`DocChangeSetBar` at `:98-170`/`:208`) — every anchor verified holding in its cited range against the working candidate. No route, panel, takeover dispatch or target shape changed. No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **No route-level fact changed.** This leaf's dashboard change is confined to the `panels/review/` child and the `data/` route: `panels/review/SourceContent.tsx` is added there (222 lines, one listed inventory entry opened into the actual content of both bound code trees), `ReviewSurface.tsx` grew 462 → 549 lines so an inventory row can open it, and `data/review.ts` grew 320 → 414 lines with the expansion wire types and `reviewSourceContent`. **The route-level facts this document states are untouched**: the reviewer takeover dispatch (`ChangeSetTakeover`, `data-view="intent-review"` and the target variant) is unchanged, the target shape is unchanged (still `repo`/`master`/`leaf` plus the optional recorded subject, still no path), no cookie, session or store behaviour is involved at all, no route was added or removed, and no other panel was touched. It adds one child component and one client function. **Citation accounting:** the one current-claim row that cites the child's `ReviewSurface.tsx` was re-derived against the moved lines (`Inventory`/`inventoryEntry`/`byteNamedEntry` `238-264`/`207-223`/`224-237` → `291-335`/`214-260`/`270-282`), as were the three rows citing `data/review.ts` (`ReviewSourceInventory` `168-178` → `169-179`, `intentReview` `271-290` → `323-342`, and `intentReviewEntries` `252-260` → `369-377` in the L22 section), and the L22 paragraph now states plainly that this leaf changed nothing here. **Stamp accounting:** the verification pair now names the master line `d80a0513e928ef29a973527d09597c82c96fde87` (2026-09-21T19:51:20+02:00) — the last real commit the reading was taken against — and this card records this leaf's uncommitted candidate beside the older one it still carries; no commit contains the new bytes, so closeout owns the real stamp.
-- 2026-09-21T17:30:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`, base `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9`): **No route impact.** This leaf's dashboard change is confined to the `panels/review/` child: `KnowledgeStatements.tsx` is added there, `ReviewSurface.tsx` delegates its statement area to it, and `fieldValue` prints `(absent)` versus `(recorded empty)` on a field row. The `dashboard/src/` route model is unchanged — no new or removed route, no change to the reviewer takeover dispatch (`ChangeSetTakeover`, `data-view="intent-review"` and the target variant are untouched), no change to `data/review.ts`, and no change to any other panel. One current-claim row of this document that cites the child's `ReviewSurface.tsx` was re-derived against the moved lines in the same pass; the route-level facts the L22 and L45 sections state remain true. No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **the paragraph that described the reviewer entry's gate was corrected in place, because as written it described the defect.** It said `DocChangeSetBar` "gained optional `selectorKind`/`selectorId` props and renders a third `ChangeSetButton` labelled \"Intent review\" only when its target is a live admitted curator candidate and a selector was named (`live && selectorId`)" — accurate about the shipped code and exactly why the takeover this route describes was unreachable: no production caller supplied a selector. The props are gone; the subject is read from `GET /api/review/intent/entries` by `useReviewSubject`, and the gate is `live && subject` with liveness extracted into one `leafIsLive` predicate shared with the working action. The card states that the gate is not weakened — a refusal, an empty list, a rejected promise and a non-live leaf all leave the subject undefined, so no subject still means no button. Two rows citing the removed props and the old gate were replaced with rows citing the current gate, the shared predicate and the read. No verification stamp was advanced.
-- 2026-09-18T18:10+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **added the L22 section** — the reviewer takeover the cockpit reaches through the existing change-set target's `review` variant, the `intent-review` view marker that dispatches it to the `panels/review/` surface, and the "Intent review" entry the change-set bar adds beside its working/committed actions for a live candidate that names a selector. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns that stamp.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`, base
-  `99534dc5`, `types/projection.ts` +25, `fixtures/snapshot.json` +17, `test/contract.test.ts` +24):
-  the route gained a serve-time key, so the producer-contract subsection was extended rather than
-  annotated. Recorded the rule this leaf measured rather than asserted: adding a key to
-  `ServedWorkspaceProjection` forces the companion pair to move together — the generator's folded
-  definition set is compared exactly, the mirror is regenerated, `contract.test.ts`'s
-  `VOCABULARIES`/`KnownUnsampled` registry is updated, and the served sample carries a value for every
-  newly closed union — verified with `npm run typecheck` plus the contract vitest, because a
-  type-only allowlist turns `tsc` green while the runtime walk still fails. The sample's new
-  `terminalObserverHealth` reading is degraded on purpose (three of the five unions are nullable, so
-  only a non-null reading can satisfy a string-vocabulary check), and it is sampled rather than
-  allowlisted. Detail lives in the three file cards. Verification metadata remains closeout-owned; no
-  stamp advanced.
-
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented generated wire vocabulary and fixture/test alignment without removing consumer ledger displays. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 5 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). 1 claim(s) were declined as ambiguous or not the subject
-  and were left for a reading curator. No claim wording changed; every rewritten range was read back
-  at its current position. Verification metadata remains closeout-owned.
-- 2026-09-13T22:22+02:00 — No route impact: 260913-LCA-L6 removed the closeout candidate cap, and its
-  only `dashboard/src` footprint is regenerated content inside the existing `types/` artifacts — the
-  `maxItems: 256` refinement on `CloseoutQueueNode.members` in `types/projection.schema.json` and its
-  matching comment in `types/projection.ts` (regenerated via `scripts/sync-projection-types.py`, never
-  hand-edited). No route, module layout, component tree or transport boundary changed; the generated
-  artifacts keep their ownership and the dashboard still renders whatever rows the producer serves.
-  Detail lives in the `types/projection.ts` and `types/projection.schema.json` sidecars. Verification
-  metadata remains closeout-owned; no stamp advanced.
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
-
-
-
-
-- 2026-09-05T07:24+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Removed stale dev-file census, corrected schema owner and added normative intent to the current lifecycle mirror account. Verification records source review, not execution or acceptance.
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: types coverage refreshes the generated `LifecycleOperationProjection` wire mirror with the optional `meaningfulRevision` cursor (interface, schema, fixture sample); route index regenerated.
-
-
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the regenerated lifecycle operation envelope mirror, fixture samples, and contract vocabulary registrations. File-level detail in the dashboard/src sidecars.
-
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the notes-takeover kind distinction (notes vs requirements reader) in the cockpit shell route.
-
-
-- 2026-08-30T15:15:36+02:00 — ARSPAWN-L4 route impact: regenerated the diagnostic serving-build
-  mirror with exact Python candidate provenance. Verification remains closeout-owned.
-
-- 2026-08-29T19:04+02:00 — Reconciled the Python 3.13 named-literal `$defs` representation without
-  changing the dashboard wire vocabulary or frontend ownership. Verification remains closeout-owned.
-
-- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 final curation: recorded the dashboard-local
-  `TaskDocumentRef` declaration and final 66-field producer/consumer parity while keeping the brief
-  receipt diagnostic-only. No test execution is claimed.
-
-- 2026-08-26T12:30+02:00 — 260821-ARSPAWN-L2 route impact: the terminal-catalog projection accepts
-  the private pinned-brief receipt without changing the task-document-plus-role chat identity.
-  Verification remains closeout-owned.
-
-- 2026-08-26T10:44:52+02:00 — No route impact: refreshed exact projection-schema and generated-mirror citation anchors after source movement; the dashboard source-layer architecture is unchanged.
-
-- 2026-08-25T17:21+02:00 — Reconciled the final invalidation outcome and contract-forcing change.
-  Verification remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Added the final CLIVE disposable scheduling and discard-audit route
-  contract, corrected graph-less queue visibility, and retained the newer root-journal lifecycle
-  operation projection boundary.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: the snapshot fixture gained a super-to-leaf relation entry and two execution-graph view nodes. Verified at code commit e5cb139f.
-
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready sprint graph view types, the new sprint-graph panel route, the dev evidence surface, and the fixture vocabulary. Verified at code commit b7f2c8e2.
-
-- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: the dashboard task projection gains
-  `seats` + typed `masterRef`; detail-panel rows open the commanded master directly. Verified at
-  code commit 8071a644.
-
-
-- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
-
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: generated dashboard projection types and
-  fixtures now expose explicit master nature, the persisted reasoned sprint graph, and derived waves.
-  This leaf adds visibility contracts only; it does not yet add queue or graph UI judgment.
-
-- 2026-08-14T06:25+02:00 — L23 final candidate review: the dev scenario server now models accepted
-  interaction consumption/replay/attention behavior and uses the shared fleet task-document fixture;
-  cockpit route ownership is unchanged. Verification provenance remains closeout-owned.
-
-- 2026-08-13T12:26+02:00 — L23 live-progress clarification: recorded the Hangar rendering of the
-  already-durable lifecycle command as a responsive one-line ellipsized projection with full title,
-  without adding operation authority or identity to the frontend. Verification provenance remains
-  closeout-owned.
-- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
-- 2026-08-12T20:20+02:00 — L23 curator: documented dashboard ownership of read-only lineage visibility and contract parity; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: added the task-addressed lifecycle-operation status projection used by Hangar and enclosure rows; verification provenance remains closeout-owned.
-
-- 2026-08-12T04:15+02:00 — 260731-EFA-L22 dashboard repair: recorded the route-wide consequence
-  of stable empty external-store snapshots in selection-driven panels; child panel cards own the
-  exact regression and implementation.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the dashboard route with
-  plane-owned seat routing, document-addressed role control, and the corresponding projection and
-  cockpit changes; detailed evidence remains in the affected child-route cards.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the dashboard-wide sprint-provenance projection
-  invariant. Verification metadata remains pinned until closeout.
-
-- 2026-08-09T22:22+02:00 — No route impact: the master integration repair changes only
-  scroll-memory test timer hygiene under the existing conversation-timeline route. Dashboard
-  runtime behavior and source layout are unchanged.
-
-- 2026-08-09T13:59+02:00 — 260713-TES-L5 route impact: recorded the regenerated projection
-  schema (`AgentPickupNode` landing semantics; attribution-only consume). Verification
-  metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: the top-bar badge and store field were
-  renamed to `AgentNotifierHeartbeatBadge` / `agentNotifierHeartbeat` with
-  `agent-notifier ok/stale` wording and `data-testid="agent-notifier-heartbeat"`; the store
-  accepts the legacy `supervisorHeartbeat` wire key as a fallback during the rename window.
-  Per-file detail lives in the `Cockpit.tsx` and `data/store.ts` sidecars. Verification metadata
-  pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking wiring and the file-size scope for `dashboard/src`. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the Frontend Rail section for this route. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T18:00+02:00 — 260731-EFA-L6 S18-B17 curator: resolved the S18-T3 leftover `:1-1`
-  placeholders and the malformed route rows. The projection-provenance prose cit and table row now
-  carry exact frozen-source ranges for all nine anchors (`check_state_partition`,
-  `state_count_fields`, `workspace_projection_schema`, `_state_partition`, `_vocabulary_block`,
-  `stale_generated_files`, the codegen staleness test, and the two fixture-comment literals — the
-  wire.ts anchor re-spelled to the verbatim "BE PRECISE ABOUT WHAT PINS WHAT"); the seven remaining
-  route rows gained anchors and plain path:line-line sources (three sibling overview cards cited as
-  `onboarding/...` with their `#` heading anchors); the L4 history entry's superseded parenthesized
-  L59/L72 spellings were rewritten as cit forms against the regenerated `types/projection.ts` lines
-  13 and 21. No claim wording changed.
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: replaced the obsolete four-node/no-generator
-  account with the current split: Pydantic schema → generated/stale-checked TypeScript mirror, plus
-  independently measured manual sample coverage. New ranges are explicit `:1-1` curator input.
-
-- 2026-08-01T10:50+02:00 — 260731-EFA-L4 curator, **fixture-provenance label repair**. The chain
-  bullets said `fixture ⊆ mirror` — enforced / `mirror ⊆ server` — enforced by nothing, and the
-  first bullet's *body* then correctly described three directions including the opposite
-  containment. Everything after the label was right; the label is the part that travels, and three
-  other cards copied the two-set shorthand and lost the middle link entirely. The chain is now
-  stated as **four nodes and three links** (`test/fixtures/wire.ts` →A→ `types/projection.ts` →B→
-  `fixtures/snapshot.json` →C→ `observer/projection.py`) with one bullet per link, each labelled by
-  its two endpoint files rather than by a set relation: A enforced by `tsc -b` (mirror-annotated
-  bases, `Overrides<O, Node>`, `wireFixtureGuard.test.ts`), B enforced by `contract.test.ts` in
-  three type-level directions (`ServedOnlyPaths`/`mirrorMustDeclare`, `asServedProjection`,
-  `fixtureMustSample`) plus runtime `VOCABULARIES`, C enforced by nothing. Added the one-letter
-  trap explicitly: `mirror ⊆ served` **is** enforced (by `asServedProjection`) while
-  `mirror ⊆ server` is not. Restated the no-generator negative at the strength the evidence
-  supports — seven files reference `snapshot.json` and all seven are readers, no script writes it,
-  `package.json`'s `codegen` is `panda codegen`, neither dependency set carries a schema-to-type
-  tool — which establishes **no in-repo generator and no in-repo mechanism keeping the two sides in
-  step** and cannot exclude a generator outside this repository. Re-pointed the Repo-Internal
-  References row and the state-vocabulary section's closing line from `mirror ⊆ server` to link C,
-  and added there that nothing enforces the two partitions' agreement in either direction. Marked
-  the two clauses in the 09:33 entry that the post-wave source change falsified (the two-set
-  shorthand; "the TypeScript side did **not** adopt the partition") in place rather than rewriting
-  them, so the historical record stands and the false reading cannot be picked up by grep. The
-  partition body itself had already been corrected by the 10:45 entry below; independently
-  re-verified here — double-filing `"completed"` onto `LIVE_STATES` fails with
-  `error TS2344: Type '"completed"' does not satisfy the constraint 'never'`, a duplicate *within*
-  one half compiles clean (exit 0), and that duplicate then fails three assertions in
-  `contract.test.ts` (3 failed / 12 passed). Verification metadata pinned until closeout.
-- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change), **one corrected section
-  only**: `types/projection.ts` adopted the server's partition after the 09:33 entry below was
-  written, so "The state vocabulary — parallel to the server, not tied to it, and not the same
-  shape" was describing a file that no longer exists. It said the mirror declares `LIFECYCLE_STATES`
-  as one tuple of six with `TERMINAL_STATES` as a second tuple beside it and `ActiveState` as the
-  subtraction `Exclude<State, TerminalState>`; verified against the current file, the halves are
-  written out first (`LIVE_STATES` L42, `TERMINAL_STATES` L48), `LIFECYCLE_STATES` is spread from
-  them cit:([`LIFECYCLE_STATES`], dashboard/src/types/projection.ts:13-13), and `ACTIVE_STATES = LIVE_STATES` cit:([`ACTIVE_STATES`], dashboard/src/types/projection.ts:21-21) with no subtraction anywhere. The heading and
-  the paragraph were corrected, and the section now states the ONE asymmetry that survives, because
-  "same shape" on its own would overclaim: TypeScript refuses double-filing at compile time
-  (`StatesAreFiledOnce`, verified by mutation to fail with `TS2344`) but cannot refuse a duplicate
-  within one half, which `Literal` collapses and a tuple does not — `contract.test.ts` catches that
-  at runtime with three failing tests. The 09:33 entry below records the pre-change reading and is
-  left as written. Nothing else on this route was touched.
-- 2026-08-01T09:33+02:00 — 260731-EFA-L4 (wire contracts and typed vocabularies; 22 governed files
-  under `dashboard/src/`, nine of them new): added the `260731-EFA-L4` body section and amended
-  Layered Architecture point 1. The load-bearing addition is a provenance statement this card had
-  never made in any form: `fixtures/snapshot.json` is **hand-maintained** and no generator exists
-  (verified by search — nothing under `mcp/`, `scripts/` or `dashboard/`, and no `package.json`
-  script, writes it; no Python source or test reads it or the mirror — `projection.py` and
-  `test_observer_projection.py` only *describe* the mirror in comments and docstrings), so
-  `fixture ⊆ mirror` is
-  enforced by `test/wireFixtureGuard.test.ts` + `test/contract.test.ts` while `mirror ⊆ server` is
-  enforced by nothing and codegen is what would close it.
-  **[Corrected 2026-08-01T10:50 — two things. That two-set shorthand is what this entry got wrong,
-  and it is what three other cards copied: it reads as one link where the chain has three, and
-  `contract.test.ts` is a link of its own (link B), not a co-enforcer of the first. And read "no
-  generator exists" above as "no generator exists *in this repository*" — the search is exhaustive
-  over this tree and cannot speak to anything outside it. See the body section, which now names the
-  four nodes, all three links, and the exact strength of the negative.]** Also recorded, each with the mechanism
-  that breaks if it is undone: what `wireFixtureGuard.ts` scans (`SCANNED_ROOTS`), the fixture
-  surface rules 2–5 are confined to, the `SANCTIONED_WIRE_SITES` registry, and the precise coverage
-  boundary — `isWireModule` discovers the vocabulary from a `// TypeScript mirror of` /
-  `// Browser mirror of` first line, which is fail-closed only against a mirror that *loses* its
-  marker, so the five unmarked `data/` API clients (`harnessCatalog`, `submissionLifecycleClient`,
-  `changeset`, `files`, `notes`) are a real, reproduced blind spot; the sixth `awaiting-developer`
-  state, and the fact — checked against `projection.py`'s own "STATE OF THE MIRROR" comment — that
-  the TypeScript side did **not** adopt the server's new partition shape but keeps
-  `LIFECYCLE_STATES` and a separate `TERMINAL_STATES` that can silently disagree
-  **[NO LONGER TRUE — a worker landed the partition in `types/projection.ts` after this entry was
-  written; `projection.py`'s "STATE OF THE MIRROR" comment was updated with it and now records the
-  mirror as holding the same partition in the same shape. Read the body section, not this clause.]**;
-  `Metrics extends
-  LifecycleStateCounts` deriving one required bucket per `ActiveState` (plus `stateCountField()` /
-  `metricsFor()`); the `TaskSubTaskRefNode` / `SeriesSubTaskNode` split, the new `SeriesSectionNode`,
-  the removal of `EngineProcessEdge.refusedPolarity`, the tuple-derived attention/process
-  vocabularies, and the three `LATE MIRROR` fields; `topology/` totality
-  (`CONSTEL_STATUS_BY_STATE: Record<State, ConstelStatus>`, `UNCLASSIFIED_STATUS`, the
-  `STATUS_BY_DECLARED_STATE` read view that makes `?? UNCLASSIFIED_STATUS` load-bearing to `tsc -b`,
-  and `constelColors()` replacing `COLORS[status] ?? COLORS.ok`); the conditional `awaiting you`
-  top-bar segment in `cockpit/Cockpit.tsx`; `asServedProjection()` and `Overrides<O, T>` with the
-  measured reason `exactOptionalPropertyTypes` stays off; and the checking note that this project's
-  solution-style `tsconfig.json` makes `tsc --noEmit` vacuous, so `tsc -b` is the only real
-  typecheck. Per-file detail belongs to the file cards under `test/`, `topology/`, `types/`,
-  `cockpit/` and `dev/`; `data/`, `panels/`, `grammar/` and `fixtures/snapshot.json` are owned by
-  their own cards and are referenced here only where the architecture requires it. Verification
-  metadata pinned until closeout stamps the L4 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: no production cockpit change. `dev/` gained
-  `benchProbes.ts`, the single declaration of the browser→driver probe contract (and the `Window`
-  augmentation), deliberately import-free so the new `tsconfig.driver.json` project can name it
-  without pulling in the app module graph; `cockpitScenarios.ts` and `PtyRenderBench.tsx` import
-  those types instead of duplicating them. The e2e/perf suites and Playwright configs are now
-  type-checked at all, as is `panda.config.ts`. Corrected the stale "two files" claim about `dev/`.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-30T12:51+02:00 — No route-level architecture change for
-  260727-CHATS-IM-L2. Roster identity narrowing is owned by `data/conversation/`; the sparse
-  Engine Room effects overlay is owned by `panels/engine-room/`; structured child-history
-  selection remains in `panels/session-cockpit/conversation/`. Verification metadata remains
-  pinned until closeout.
-
-- 2026-07-26T18:30+02:00 — 260718-CHATS-L7 curator: added one paragraph to the Product Truth And
-  Conversation Boundary section covering the sub-agent surface — additive per-item agent refs and
-  the LRU-surviving agent-lane focus in the conversation data plane, library child rows plus the
-  verbatim `agentsNote`, and multiplexed pending interactions feeding all attention chrome through
-  one shared predicate with the adapter-bound agent label. No route composition or authority model
-  changed; detail lives in the `data/` and `panels/session-cockpit/` child overviews. Verification
-  metadata remains pre-commit; closeout re-stamps.
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the shared dashboard/src route for the whole frontend change without modifying nested overview ownership. Verification metadata remains pre-commit.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: added a discoverability pointer to the new
-  sibling [e2e-chats overview](../e2e-chats/overview.md) — the durable, opt-in Chats E2E suite
-  (R7/FB5) that boots an isolated real dashboard daemon from the worktree and drives the real
-  installed harnesses through this cockpit. The suite lives at `dashboard/e2e-chats/` (a sibling of
-  `src/`, governed by its own route overview under the root); the `dashboard/src/` route model is
-  otherwise unchanged. Verification metadata pinned; the L5F change is uncommitted and closeout
-  re-stamps.
-- 2026-07-21T05:30+02:00 — No route impact: the `dashboard/src` route model
-  (`cockpit/`/`grammar/`/`panels/`/`data/`) is unchanged by 260718-CHATS-L5P (cockpit chrome visual
-  polish, PASS-WITH-NOTES; dashboard-only, zero backend edits). The two app-wide `dashboard/src/`-direct
-  CSS/token changes are captured at the child/sidecar level, not in this route body (which has no styling
-  section): (1) `index.css` gained an unlayered `word-break: normal` root override on `html, body,
-  [data-view="sessions"]` that neutralizes `@webtui/css`'s inherited `word-break: break-all` app-wide
-  (RV-1, LOAD-BEARING — a third-party scoped reset in a lower layer silently defeated every
-  component-level `overflow-wrap` patch; the test is computed-value verification; raw-id spans keep
-  explicit `break-all`) — recorded in the `index.css` sidecar and the `panels/session-cockpit/` overview's
-  "Cockpit chrome conventions" section; (2) `styles/tokens.css` + `panda.config.ts` gained the `well`
-  (`#070b0f`) terminal-well token (the xterm pty inset, FB7.1) — recorded in the `tokens.css` sidecar. The
-  regenerated `package_data/dashboard/` bundle is shipped output governed by the mcp overview's sync
-  mechanism, not an mcp source contract. Verification metadata unchanged.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 route impact (structured Chats renderer; reviewer FINAL
-  PASS, 26/26 findings closed): `data/` gains the reconstructable `conversation/` and
-  `conversation-library/` projection child routes; `panels/session-cockpit/` gains `ChatsStageBody`
-  and the `conversation/` + `conversation-library/` grandchild renderer routes (structured
-  `ConversationSurface` is the controlled-session default; the runner line-log is demoted to the
-  default-off read-only terminal-diagnostics drawer + legacy-raw body; the exact-turn interrupt rides
-  the WorkingLine as the `conversation.stop` chord). Rewrote the Product-Truth/Conversation-Boundary
-  and Chats sections: UA-1 history/index/resume is now landed as a reconstructable projection with no
-  durable browser conversation index. Additive edits also touched `SessionsView`/`WorkingLine`/
-  `ChatContextBar`/`PtySurface`/`SessionComposer`/`data/keymap` (detail in those sidecars). The
-  synchronized `package_data/dashboard/` bundle is regenerated shipped output governed by the mcp
-  overview's sync mechanism, not an mcp source contract. Verification metadata remains pinned pending
-  L4 candidate closeout.
-
-- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: recorded the sole authoritative browser opener,
-  accepted-server-row-only materialization, contradiction handling, and request-matched dev fixture
-  seam; corrected route ownership so bounded cockpit/dev files remain governed here. Verification
-  metadata remains pinned pending candidate closeout.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: added bundle comparison, bounded boot-owned reread/reattach,
-  explicit reload, and durable-session transport boundaries. Verification metadata remains pinned
-  pending candidate closeout.
-
-- 2026-07-18T07:22+02:00 — 260715-FEUI-L8 strategic refactor: split data authority and canonical
-  Chats detail into focused child overviews, recorded one Chats/Operations-default product truth,
-  and preserved the future adapter-normalized conversation/history boundary without claiming UA-1.
-  Metadata remains pinned to the leaf base.
-
-- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 route impact: the existing
-  `panels/session-cockpit/` child route gains the stable-mounted three-pane inspector, complete
-  evidence/capability/Bus surfaces, sender-only reverse reply, shared accessible virtualization,
-  and honest StatusLine; `types/projection.ts` gains optional pickup owner/redelivery facts and
-  `test/fixtures/busScenarios.ts` adds coherent/legacy wire cases. Detailed organization remains
-  in the focused child overview rather than further loading this packed root file. Verification
-  metadata remains pinned to the leaf base until closeout.
-- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced stub/paste current-state claims with
-  the shared CodeMirror reliable-submit path, central evidence fold, epoch/request transport,
-  authoritative status/withdraw/pop-back, revision-safe recovery, and bounded retention. Recorded
-  `dashboard/src/data` route pressure for the final master route-architecture pass rather than
-  inventing a non-mirrored route during this leaf.
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 route impact (live set controls; final reviewer PASS
-  after three fix rounds): `data/` gains the exact-session capability, five-state acceptance,
-  serialized pair, sole I/O driver, chip/copy, and announcer modules; the cockpit store gains
-  typed snapshot/echo/route/pair evidence; `panels/session-cockpit/` gains the live control,
-  accepting chip, ledger/rail attention, persistent background toasts, queued hint, and dual live
-  regions; capability fixtures gain clamp/queue/unknown readback sequences. Six nonblocking sev-4
-  observations remain preserved in file cards. Verification metadata is pinned to the contract
-  base until code commit.
-- 2026-07-17T06:25+02:00 — 260715-FEUI-L3 route impact (capability catalog client and launch
-  flow; review FINAL PASS after two fix rounds; 66 files / 753 tests green): `data/` gains the
-  launch layer — `capabilityCatalog.ts` (memory-only envelope store, drop-on-error, verbatim
-  errors, honest refresh semantics), `launchEvidence.ts` (the pure tier machine; Claude launch
-  pairs never readback), `launchFlow.ts` (pure launch machines + the classifying open client),
-  all + suites; `types/` gains `harnessCapabilities.ts` + `terminalOpen.ts` (the capability and
-  open wire mirrors; `terminalCatalog.ts` untouched); `grammar/` gains `EvidenceBadge.tsx`
-  (+ test); `test/fixtures/` gains the R3 contract pack (`capabilityEnvelopes`,
-  `controlMessages`, `openResponses`) + `test/contractCapabilities.test.ts`;
-  `panels/session-cockpit/` gains `LaunchFlow` + `FailedLaunchBanner` and derives the R7
-  evidence tier from control-state truth (see that overview); `data/terminal.ts` extends the
-  open POST with the model/effort selection. Upstream ask: an operator retire actor identity if
-  provenance-recording retire is wanted from the dashboard. Verification metadata pinned to the
-  leaf base until closeout stamps the L3 code commit.
-- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 route impact (PTY stage surface, structured
-  interactions, session lifecycle actions; review FINAL PASS after a 1×sev-3 + 5×sev-4 fix
-  round, all CLOSED): `data/` gains the interaction/lifecycle layer — `interactionAnswer.ts`
-  (the SOLE gate-channel answer path), `sessionLifecycle.ts` (detailed terminate/cleanup +
-  residual notice store + the focus-independent retire-residual sweep), `ptyHarvest.ts`
-  (client-side legacy-raw OSC/bell/title harvesting), all + suites; `actions.ts` gains
-  `postGateDecisionDetailed`, `terminal.ts` the additive `onSocketState`;
-  `panels/session-cockpit/` gains PtySurface/InteractionBar/WorkingLine/StopResidualNotes/
-  lifecycleCopy (see that overview); `panels/Terminal.tsx` gains additive optional props (DOM
-  default, lazy webgl escalation, live screenReaderMode, harvesting hooks, named `role="group"`
-  landmark); `test/fixtures/catalogRows.ts` appends the `L6_*` rows (FLEET byte-identical);
-  `dev/` gains `/dev/pty-bench` (`PtyRenderBench.tsx` + `lineLogFixture.ts`; driver at
-  `dashboard/e2e/ptyRenderBench.mjs`). Two exact-pinned deps entered `package.json`:
-  `@xterm/addon-webgl` (lazy escalation chunk, loaded only if the renderer constant flips) and
-  `@xterm/addon-serialize` (bench probe only — evaluated cheap-enough, deliberately NOT adopted
-  in product code until an LRU cap or the pane-freeze repaint package defines the discipline).
-  Verification metadata pinned to the leaf base until closeout stamps the L6 code commit.
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 route impact (session data layer, rail, and stage
-  container; review FINAL PASS): `data/` gains the sessions-cockpit data layer —
-  `catalogPoll.ts` (the poll driver hoisted OUT of Chats; Chats is now a consumer),
-  `seatEvents.ts` (the gated `/api/events` seat reconciler; poll stays authoritative),
-  `stateGrammar.ts` (the one dot grammar + 2.4 s pulse ruling), `railModel.ts` (the ruled
-  hierarchy/attention/joins), `sessionCockpitStore.ts` (per-seat honesty-invariant client state),
-  all + suites; `types/` gains `terminalCatalog.ts` (the full catalog wire mirror,
-  `data/terminal.ts` re-exports); `test/fixtures/` is the new shared-fixture home
-  (`catalogRows.ts`); `panels/session-cockpit/` gains the rail/stage/inspector components (see
-  that overview); `sessions.ts`/`stream.ts`/`commands.ts`/`index.css` extended as their sidecars
-  describe; plus a reviewer-accepted one-line defensive fix in `panels/file-viewer/FileViewer.tsx`.
-  Open sev-3 developer ruling: status-chip vocabulary width (`stale`/`exited`/`retired`/
-  `starting`). Verification metadata pinned to the leaf base until closeout stamps the L2 code
-  commit.
-- 2026-07-17T00:30+02:00 — 260715-FEUI-L1 route impact (view shell, WebTUI spike, keyboard/palette
-  foundation): the cascade gained the `webtui` layer slot (S1, OQ-D = adopt — `styles/webtui.css`
-  is the one mapping file, build-time scoped under `[data-view="sessions"]`, spike assertions kept
-  in `test/webtuiSpike.test.ts`); `cockpit/Cockpit.tsx` registered the full-bleed keep-alive
-  **Sessions** view; `panels/` gained the **`session-cockpit/`** child route and `data/` gained
-  `commands.ts`, `sessionLayout.ts`, and the **`keymap/`** child route (the PTY reserved set with
-  the R6 chord replacement Ctrl+Alt+[ / ] → Ctrl+Alt+PageUp/PageDown and five-source verification
-  records); `styles/tokens.css` gained `--muted`. Four exact-pinned deps entered `package.json`
-  (`@webtui/css@0.1.9`, `cmdk@1.1.1`, `tinykeys@4.0.0`, dev `postcss-prefix-selector@2.1.1`).
-  Detail lives in the `panels/session-cockpit/` + `data/keymap/` overviews and the touched
-  sidecars. Verification metadata pinned to the task base until closeout stamps the L1 code
-  commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
-- 2026-07-12T18:00+02:00 — 260712-TRH-L7: paired the landing-freshness body update with this history entry; projection landing refs remain visible and age-labeled when stale, while Engine Room motion is limited to observed refs and remote observation stays server-side.
-
-- 2026-07-12T16:45+02:00 — 260712-TRH-L1 reopened-memory refresh: clarified stable path/revision
-  request identity, separate body storage plus current-summary merge, late-response discard,
-  terminal failure semantics, composition regression coverage, and the pre-existing scalar
-  staleness window. Verification metadata remains blank until closeout stamps the code commit.
-
-- 2026-07-12T13:36+02:00 — No route impact: 260712-TRH-L2 body review confirms the changeset refinements remain inside the existing `data/changeset` and `panels/changeset` surfaces; the `dashboard/src` route model and top-level organization are unchanged. Verification metadata remains pinned until closeout.
-- 2026-07-12T12:55+02:00 — No additional route impact from 260712-TRH-L2: its changeset refinements stay inside the existing `data/changeset` and `panels/changeset` surfaces; the dashboard/src route model and top-level organization remain unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
-- 2026-07-12T12:07+02:00 — 260712-TRH-L1 dashboard-source route impact: added the focused
-  `data/useTaskDocumentBody.ts` state seam and documented complete visible task content as the first
-  reader request priority. Notes and change-set counters resume after success or fallback; no new
-  frontend route was created. Verification metadata remains pinned until closeout.
-
-- 2026-07-10T21:59+02:00 — 260707-HFX2-L21 dashboard-source route impact: documented the
-  persisted, bounded Chats sidebar and its pointer/keyboard separator. The behavior stays inside the
-  existing `panels/` route and preserves terminal working width without animating direct manipulation.
-  Verification metadata remains pinned until closeout.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 dashboard-source route impact: documented explicit
-  role claim, binding-first client identity, pair-scoped assignment/rendering, and the
-  source/build/serve package boundary. Verification metadata remains pinned until closeout.
-
-- 2026-07-10T13:41+02:00 — 260707-HFX2-L16 route impact: documented repo-qualified sprint
-  grouping, complete spawn-edge forest rendering, bounded/hover-complete rail rows, honest on-demand
-  task-body fallback, and single-rendered implementation steps. No new route was created.
-  Verification metadata stays pinned until closeout stamps the eventual L16 code commit.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6 route impact: added the on-demand task-document data
-  adapter and `bodyRevision` wire field; full reader bodies no longer ride the always-on projection.
-  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
-
-- 2026-07-09T14:05+02:00 — No route impact: 260707-HFX2-L11 (landed chat archive + group cleanup)
-  extends `data/{sessionGroups,sessions,terminal}.ts` (new `"landed"` status, landing provenance
-  fields, `cleanupLandedTerminalSessions()`) and `panels/{Chats,SessionList,Terminal}.tsx` (landed
-  archive group, group-cleanup control, read-only landed terminals). This is data-shape and panel
-  behavior content, not a change to this route's own module layout or routing; per-file detail lives
-  in the already-updated `dashboard/src/data/` and `dashboard/src/panels/` sidecars/sub-overview.
-  Verification metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm observability, R6):
-  `SupervisorHeartbeat` now includes pending/redeliverable inbox backlog counts and last sweep
-  duration; `data/store.ts` compares those fields in `heartbeatEquals`; and
-  `cockpit/Cockpit.tsx` renders them in the top-bar `SupervisorHeartbeatBadge` beside heartbeat age.
-  Verified with dashboard typecheck and `src/data/store.test.ts`. Verification metadata pinned until
-  closeout stamps the 260707-HFX2-L8 commit.
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep, R5): `cockpit/Cockpit.tsx`
-  gains `SupervisorHeartbeatBadge` in the `TopBar` (beside `ServingBuildStamp`); `data/store.ts`
-  gains the `supervisorHeartbeat` field, deliberately excluded from the change-gate `unchanged`
-  check so the live tick age still applies on a content-unchanged reconnect; `types/projection.ts`
-  gains the `SupervisorHeartbeat` type and optional `WorkspaceProjection.supervisorHeartbeat?` — a
-  second app-injected, non-`projection.py` field alongside `servingBuild?`. No route/component-tree
-  shape change beyond the one new top-bar badge. **Known limitation (builder-flagged, unverified
-  in this environment):** these TS changes are unverified by `tsc`/a build (no `dashboard/
-  node_modules` installed); a follow-up should run the dashboard's own build/test suite once
-  available. Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
-- 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: the `data/sessionGroups`
-  model and terminal data mirror now include architect/curator role provenance so Chats grouping and
-  row chips can represent the split developer-facing architect, backend orchestrator, and curator
-  closeout seat without changing the cockpit route structure. Verification metadata pinned until
-  closeout stamps the HFX-L6 commit.
-- 2026-07-07T14:00+02:00 — agent-orchestration L17 route impact: `panels/` gains the **`notes-reader/`**
-  child route (the Notes Reader takeover, reusing the File Viewer `DualPane` over the unchanged L9
-  `/api/notes/*` API), and `cockpit/Cockpit.tsx` gains a second full-bleed takeover hosting it (retained
-  mounted-hidden after Back so selection survives back/forward). `panels/TaskNotes.tsx` becomes the compact
-  entry surface (inline reader retired) and `panels/LifecycleList.tsx`'s gate chip drops the wait-loop `ask`
-  fallback. Details in the `panels/` + `panels/notes-reader/` overviews and the touched sidecars.
-  Verification metadata pinned until closeout stamps the L17 commit.
-- 2026-07-07T05:38+02:00 — 260703-L15 route impact (long-session memory): `data/` gains
-  `servedAges.ts` (+ suite; the volatile-age mirror, stable equality, arrival anchors, display
-  ticker); `store.ts` apply paths became identity-preserving/change-gated (zero writes on idle
-  payloads) and carry `servingBuild`; `types/projection.ts` mirrors the app-injected
-  `ServingBuild`; `cockpit/Cockpit.tsx` renders the muted serving-build stamp; the four
-  age-display panels advance served ages locally. NOTE: `data/` has no route overview of its own —
-  this file governs it directly, so the genuine body update lives here (same call as L14).
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-07-06T23:57:36+02:00 — 260703-L14 route impact (visual hierarchy + chat grouping): `data/` gains
-  `sessionGroups.ts` (+ unit suite, the G1 command-tree derivation) and `taskHierarchy.ts` gains the
-  orchestration-command helpers; `grammar/` gains `RankBadge.tsx` (+ test, the V4 chevron insignia);
-  `types/projection.ts` mirrors `TaskDocNode.orchestrates?`; `styles/tokens.css` gains the six
-  gold/purple tier vars (mirrored as Panda tokens in `panda.config.ts`). Behavior detail lives in the
-  `panels/`/`grammar/` overviews and the changed sidecars. Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-06T15:40+02:00 — No route impact: 260703-L12's dashboard change is content-only inside `panels/` — `flowModels.ts` gains the STRATEGIST model (8-model census) and loop-doctrine lines, `FlowTab.test.tsx` grows to 11 cases; the dashboard/src route model, data layer, and grammar this overview describes are unchanged — detail lives in the `panels/` overview and the two file sidecars. Verification metadata pinned until closeout stamps the L12 commit.
-- 2026-07-06T12:10+02:00 — No route impact: 260703-L10's dashboard change is a single phase-label string inside `panels/flowModels.ts` (designer `frame` → `reframe`); the dashboard/src route model, data layer, and grammar this overview describes are unchanged — detail lives in the `panels/` overview and the `flowModels.ts` sidecar. Verification metadata pinned until closeout stamps the L10 commit.
-- 2026-07-06T03:25+02:00 — 260703-L11 route impact: `data/selectors.ts` gains the shared
-  `hasLiveWorktree` tasks-surface visibility rule and `types/projection.ts` mirrors the new required
-  `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags; `dev/fixtures.ts` and the
-  `topology`/`panels` test fixtures default them `true`. The Hangar/LifecycleList behavior change is
-  documented at the panels route. Verification metadata pinned until closeout stamps the L11 commit.
-- 2026-07-06T03:00+02:00 — 260703-L9 route impact (friction F-M): `data/` gains `notes.ts` (+ unit
-  suite), the third serving read client — `listNotes`/`readNote` over the shared `getJson`/`qs`
-  transport plus the pure `resolveNoteReference` — feeding the new task-reader notes view
-  (`panels/TaskNotes.tsx`); the `data/` route-model bullet now names it beside `files.ts` and
-  `changeset.ts`. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-07-05T19:55+02:00 — No route impact: the dashboard/src route model is unchanged — the cycle-7 manager-raise-node enclosure addition is documented at the panels route (260703-L8 cycle 7).
-- 2026-07-05T19:10+02:00 — No route impact: the dashboard/src route model is unchanged — the cycle-6 seam-node prose update is documented at the panels route (260703-L8 cycle 6).
-- 2026-07-05T18:24+02:00 — No route impact: dev-only index label aligned with the converged canvas (DevApp.tsx); no production route or component change (260703-L8 cycle 5).
-- 2026-07-05T16:32+02:00 — No route impact: the dashboard/src route model is unchanged — the FlowTab redraw is documented at the panels route (260703-L8 cycle 4).
-- 2026-07-04T12:31+02:00 - L3 route impact: dashboard data/types now mirror
-  agent-to-agent inbox metadata and hosted-delivery state for `AgentPickupNode`
-  and `/api/operator-inbox`. Verification metadata pinned until closeout stamps
-  the L3 commit.
-- 2026-07-04T10:05+02:00 — 260703-L0 route impact (small): `dev/` gained the `/dev/flows` lifecycle-design
-  canvas route (DevApp mounts the generalized `panels/FlowTab` over the new `panels/flowModels.ts` registry);
-  detail lives in the `panels/` overview and the file sidecars. Verification metadata pinned until closeout
-  stamps the L0 commit.
-- 2026-07-03T00:35+02:00 — L11 route impact: reopened leaves render as planned doc rows via the stable leaf id; abandoned enclosures leave the active operations rows (see panels/LifecycleList).
-- 2026-07-02T20:15+02:00 — L8 route impact (small): `data/selection.ts` selections now carry the
-  qualified `leafKey` when anchored inside a task reader marked `data-task-leaf-key`, and
-  `cockpit/Cockpit.tsx` threads `viewedLeafKey` + `leafChatActive` into `HighlightComposer` so the
-  direct leaf-chat paste path can resolve its target. The route structure is otherwise unchanged;
-  behavior detail lives in the `panels/` overview and file sidecars. Verification metadata pinned until
-  closeout stamps the L8 commit.
-- 2026-07-02T17:04+02:00 — No route impact: L9 extends the existing `data/sessions.ts` and
-  `panels/Chats.tsx` / `RailChat.tsx` routes so hosted chats can move between durable leaves after
-  creation, and open dashboard tabs rehydrate `"leaf"` catalog invalidations or polling refreshes. The
-  `dashboard/src/` route model is unchanged; detail lives in the `panels/` overview and changed sidecars.
-  Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-07-02T16:35+02:00 — No route impact: the reopened-L6 wheel/paste fixes stay inside `panels/` and
-  `data/`. `panels/Terminal.tsx` yields wheel to xterm mouse reporting when the app tracks the mouse;
-  `data/terminal.ts` gained `pasteAndConfirm` (echo-confirmed, boot-deadline-retried draft paste) and
-  `data/sessions.ts`'s `pasteDraftToSession` delegates to it. The `dashboard/src/` route model is
-  unchanged. Verification metadata pinned until closeout stamps the follow-up commit.
-- 2026-07-02T15:03+02:00 — No route impact: the L6 alternate-buffer wheel follow-up stays inside the
-  existing shared `Terminal` wrapper under `panels/`. Normal-buffer scrollback still uses xterm viewport
-  scrolling, while alternate-buffer hosted agent TUIs receive PageUp/PageDown wheel steps instead of
-  xterm Up/Down history input. The `dashboard/src/` route model is unchanged. Verification metadata
-  pinned until closeout stamps the follow-up commit.
-- 2026-07-02T13:16+02:00 — Reopened L6 route impact/no route impact: the follow-up stays inside the
-  existing `cockpit/` + `panels/` + `data/` model, but `data/sessions.ts` now separates leaf-context
-  draft paste from submit so `RailChat` can place context in the selected hosted chat without pressing
-  Enter. Chat scrollback remains documented in the `panels/` overview and `Terminal.tsx` sidecar. The
-  `dashboard/src/` route model is unchanged; verification metadata pinned until closeout stamps the L6
-  follow-up commit.
-- 2026-07-01T01:19+02:00 — No route impact: L6 adds bind-time leaf context handoff inside the existing
-  `cockpit/` + `panels/` + `data/` model. `CockpitShell` passes `analytics.engineProcesses` to the existing
-  right-rail `RailChat`, and `RailChat` injects a projected leaf context package when a chat is started on a
-  displayed leaf or a free chat is successfully attached. The `dashboard/src/` route model is unchanged;
-  detail lives in the `panels/` overview and the `Cockpit.tsx`/`RailChat.tsx`/`RailChat.test.tsx` sidecars.
-  Verification metadata pinned until closeout stamps the L6 commit.
-- 2026-06-30T00:00:00+02:00 — No route impact: L5 (Sidebar chat) adds leaf-keyed attachment + a right-rail River⇄Chat
-  toggle. The change lives in `cockpit/Cockpit.tsx` (a `railView` toggle + `selectedLeafKey` derivation),
-  `data/` (`sessions.ts` leaf binding, `terminal.ts` `attach-leaf` client, `taskIdentity.ts` leaf-key
-  helpers), and `panels/` (the new `RailChat.tsx`, plus `Chats.tsx`/`SessionList.tsx` leaf-attach + name
-  label) — all within the already-documented `panels/` route. The `dashboard/src/` route model
-  (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged; detail lives in the `panels/` overview
-  and the `cockpit/`/`data/`/`panels/` file sidecars. Verification metadata pinned until closeout stamps
-  the L5 commit.
-- 2026-06-29T23:00+02:00 — No route impact: L4a refines the already-documented `panels/changeset/`
-  sub-route (leaf committed/working change-set views, a diff-highlight rectangle, a live working-view
-  auto-refresh), adds the doc-reader change-set bars in `panels/DetailPanel.tsx` + leaf helpers in
-  `data/changeset.ts`, and changes `cockpit/Cockpit.tsx` so the change-set takeover overlays (rather than
-  replaces) the railed body so the back link returns to the leaf it was opened from. The `dashboard/src/`
-  route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged; detail lives in the `panels/`
-  + `panels/changeset/` overviews and the `Cockpit.tsx`/file sidecars. Verification metadata pinned until
-  closeout stamps the L4a commit.
-- 2026-06-29T17:00+02:00 — No route impact: the L4 follow-up refines the already-documented `panels/changeset/` sub-route — the series/master change-set is now the NET inspectable diff (was accumulated-only) — plus shared code-view polish (`codemirrorTheme` comment/punctuation readability, `DiffPane` split-diff scroll). The `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged; detail lives in the `panels/changeset/` overview + the file sidecars. Verification metadata pinned until closeout stamps the L4 follow-up commit.
-- 2026-06-29T16:40+02:00 — Operations Integration L4 (Change-Set Viewer) route impact: `cockpit/Cockpit.tsx`
-  gained a `changeSet` **TAKEOVER** (a `DetailPanel` change-set button replaces the railed Operations body
-  with a full-bleed `<ChangeSetViewer>`; a back link restores it); a new **`panels/changeset/`** sub-route
-  lands — the Change-Set Viewer screen (a read-only `@codemirror/merge` diff over the L3 `/api/changeset/*`
-  API, reusing the L2 `FilePane`); and `data/` gains the `changeset.ts` serving client (sharing `files.ts`'s
-  `getJson`/`qs`/`FilesApiError`). Detail in the `panels/` + new `panels/changeset/` overviews and sidecars.
-  Verification metadata pinned to the task base until closeout stamps the L4 code commit.
-- 2026-06-29T09:06+02:00 — Operations Integration L2 (File Viewer) route impact: `cockpit/Cockpit.tsx`
-  registers a new full-bleed **File Viewer** view (`"files"` in the `View` union + the `fullBleed` set, a
-  `VIEWS` tab between Operations and Engine Room), **kept mounted** (CSS-hidden) like Chats so its
-  repo/scope/open-file/tree state survives a tab switch; and a new **`panels/file-viewer/`** sub-route
-  lands — a read-only code+onboarding dual-pane (two Headless Tree explorers, a read-only CodeMirror 6
-  pane, bidirectional code↔onboarding pairing) that is the first consumer of the L1 read-only files API,
-  plus the reusable `FilePane`/`DualPane` for the L4 Change-Set Viewer. Detail in the `panels/` + new
-  `panels/file-viewer/` overviews and sidecars. Verification metadata pinned until closeout stamps the L2
-  code commit.
-- 2026-06-28T16:17+02:00 — Task 35 route impact: `panels/LifecycleList.tsx` reopen-task nesting — the
-  Operations list admits a reopened leaf's suffixed enclosure by shared lifecycle + suffixed-leaf shape and
-  nests doc-less enclosure-backed runtime rows under their master, ending the standalone-phantom row. No
-  other `dashboard/src` route structure changed. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-28T13:54+02:00 — Task 34 route impact: the raw Event River store (`data/store.ts`) now keeps a
-  bounded **sliding window** of the newest ~2000 rows (memory-bounded rather than the unbounded
-  session-growth the prior text described), which `EventRiver` virtualizes over so there is still no hard
-  display cap. Refreshed the `data/` Route Model bullet's event-store description. Verification metadata
-  pinned until closeout stamps the task-34 code commit.
-- 2026-06-28T07:45+02:00 — Task 33 route impact: the `topology/` view became an active-enclosure constellation
-  (lifecycle/task rim removed, each enclosure folds in its 1:1 lifecycle, `activeTopologyInputs` filters to
-  the served active set, basename `groupKey` join fixes the latent task-12-S1 provider join); `types/projection.ts`
-  mirrors the new required `activeWorktreeGroups`, and `data/store.ts` + `data/stream.ts` thread it through.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-28T07:43+02:00 — Task 29 S7 route impact: the cockpit now hides the former Lifecycle Flow
-  tab, the raw Event River waits for the backend `ready` event before rendering an empty history, and
-  frontend storage no longer truncates received Event River rows. Attention queue dismiss/clear actions
-  optimistically suppress visible rows while the backend physically removes or acknowledges the source,
-  including targetless actionable-drift notices. Verification metadata pinned until closeout stamps the
-  task-29 code commit.
-- 2026-06-28T03:21+02:00 — Task 31 route impact: projection types now mirror the provider boot-node
-  `missing` state, letting Engine Room render expected-but-absent provider roles distinctly from
-  configured/observed provider rows. Operations task grouping also accepts the authored task-document id
-  when matching a leaf document to its enclosure, so leaf 31 stays nested under the browser-dashboard
-  master even when the task JSON file stem is descriptive. Verification metadata pinned until closeout
-  stamps the task-31 code commit.
-- 2026-06-27T18:43+02:00 — Task 26 route impact: `cockpit/Cockpit.tsx` registers a new full-bleed
-  **Lifecycle Flow** view — `"flow"` in the `View` union + the `fullBleed` set, a `VIEWS` tab second
-  after Operations, and a `ViewBody` case rendering `<FlowTab />` from `panels/FlowTab.tsx`. FlowTab is
-  a /dev-stage diagnostic visualizing the build-job lifecycle (the task-27 next-step engine spec); the
-  production bundle was not rebuilt this task. Verification metadata pinned until closeout stamps the
-  task-26 code commit.
-- 2026-06-27T03:04+02:00 — Task 22 follow-up: `data/sessions.ts` removed the hidden-label reservation
-  state with the Hide UI path, and terminal catalog create/terminate broadcasts now carry the changed
-  `sessionId` so other tabs can remove ended rows deterministically.
-- 2026-06-27T01:25+02:00 — Task 22 follow-up: `data/sessions.ts` now broadcasts backend-persisted
-  terminal catalog create/terminate invalidations across browser tabs, while `data/terminal.ts` exposes a
-  nullable catalog fetch so receivers can distinguish empty success from fetch failure.
-- 2026-06-27T01:03+02:00 — Task 22 follow-up: `data/sessions.ts` now allocates session labels from the
-  lowest available live per-prefix ordinal, then releases End/terminated labels.
-- 2026-06-27T00:25+02:00 — Task 22 follow-up: the Chats view now mounts restored sessions on first
-  selection and keeps visited terminals mounted while hidden, avoiding broken hidden xterm hydration for
-  restored Claude/Codex sessions after refresh without losing tab-switch buffers.
-- 2026-06-26T23:15+02:00 — Task 22 route impact: the Chats data/panel route now hydrates
-  dashboard-owned terminal sessions from `/api/terminal/sessions`, tracks running/exited/terminated
-  catalog status, restores the last active session, and routes explicit End through backend terminate.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-26T20:18+02:00 — Task 21 route impact: frontend projection types mirror
-  `SeriesNode.seriesTokenTotal`, and DetailPanel master readers display the server-composed aggregate.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-26T19:40+02:00 — Task 20 reopened route impact: `data/taskIdentity.ts`
-  now participates in Event River lifecycle-label fallback by exposing direct
-  task-document title labels for lifecycle-only history rows. Detailed behavior
-  lives in the data helper and panel formatter sidecars. Verification metadata
-  pinned until closeout stamps the reopened task-20 code commit.
-- 2026-06-26T18:23+02:00 — No route impact: task 20 adds Event River readable-feed
-  formatting inside `dashboard/src/panels/` (`EventRiver.tsx`, `eventSummary.ts`, and tests). The
-  `dashboard/src/` route model remains cockpit/grammar/panels/data/dev; detailed behavior lives in
-  the panels overview and file sidecars. Verification metadata pinned until closeout stamps the code
-  commit.
-- 2026-06-25T14:02+02:00 — Task 24 reopened: frontend data/panels now support gate-id-only Clear for stale gate rows while keeping normal decisions lifecycle-targeted.
-- 2026-06-25T13:20+02:00 — Task 23/24: frontend route now includes gate dismissal, attention clear, inbox-warning deletion, and `AgentPickupNode` projection types.
-- 2026-06-25T07:26+02:00 — Task 19 gate interaction polish: `dashboard/src/` now treats Gate Respond as
-  three explicit paths — Yes/No record targeted durable gate decisions through `data/actions`, while Chat
-  remains message-only through hosted chat or the operator inbox. The data route also adds
-  `actions.test.ts` coverage. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T18:11+02:00 — Task 17 route correction: `TaskDocNode.id` is now mirrored in the projection
-  types and used by `data/taskHierarchy.ts`, `LifecycleList`, and `DetailPanel` as the authored leaf
-  display number; parent sub-task `number` remains fallback data. Verification metadata pinned until
-  closeout stamps the code commit.
-- 2026-06-24T18:02+02:00 — Task 17 route correction: `data/taskHierarchy.ts`, `LifecycleList`, and
-  `DetailPanel` now use structured task metadata for visible leaf labels while keeping creation
-  metadata as the ordering source. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T17:51+02:00 — Task 17 Operations hierarchy route update: added `data/taskHierarchy.ts` as
-  the shared structured parent-series helper behind BY REPO leaf indentation and direct leaf parent
-  backlinks. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T16:39+02:00 — Task 17 Operations route correction: dashboard selection is now typed
-  (`taskdoc:` / `series:` / `lifecycle:`), task documents can be listed/read before lifecycle binding,
-  and projection types mirror optional `TaskDocNode.lifecycleId`. Detail lives in `data/taskIdentity.ts`,
-  `LifecycleList.tsx`, `DetailPanel.tsx`, and `types/projection.ts` sidecars. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-24T12:21+02:00 — Task 17 route impact: projection types now mirror task/series
-  `createdAt`, `SeriesNode`, and `Analytics.series`, and dev fixtures default `series: []` in the
-  analytics shape. DetailPanel-specific behavior is recorded in the panels overview and sidecars.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T08:59+02:00 — Data route addition: added `taskIdentity.ts` to the route model as the
-  shared lifecycle label/direct-task-document helper used by Operations and Detail. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: dashboard projection types now carry explicit `enclosureId`, `leafId`, and `taskRoot` fields, and Engine Room renders the projected integration/source branch instead of hardcoding `main`. Detail lives in the `types/projection.ts`, engine-room fixture, and `EnclosureCanvas.tsx` sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T22:31+02:00 — Clarified Task 12 S2 topology wording: repo-scoped GrepAI dots come from
-  addressable `targetRepos` inside one aggregate provider instance, while worktree providers remain
-  bound by `worktreeGroup`. Verification metadata pinned until closeout stamps the S2 code commit.
-- 2026-06-23T21:46+02:00 — Task 12 S2 route impact: `topology/model.ts` now includes repo-covered
-  workspace providers in the repo ring and parents provider satellites by `worktreeGroup`, then `repoId`,
-  then workspace core; `types/projection.ts` clarifies the binding comments and `model.test.ts` covers
-  repo-scoped parenting plus precedence. Verification metadata pinned until closeout stamps the S2 code
-  commit.
-- 2026-06-23T16:02+02:00 — Task 12 S1 route impact: `topology/model.ts` now records worktree
-  groups while building topology nodes and parents worktree-scoped providers to the owning worktree
-  node, with fallback/workspace providers staying on the workspace core. `topology/model.test.ts`
-  adds pure-model coverage for matching, fallback, and workspace-provider behavior. No backend
-  projection shape change; per-repo main-stack provider placement remains deferred to S2.
-- 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: `data/operatorInbox.ts` joined the data route and `GateResponder` now falls back to `POST /api/operator-inbox` for lifecycles without a hosted chat session, preserving the agent-owned gate-release model. Verification metadata pinned until closeout stamps the task-10 code commit.
-- 2026-06-23T14:31+02:00 — Task 11 route impact: `dashboard/src/` now treats gate response as a
-  hosted-chat direct-inject surface instead of the old developer gate-decision `/api/actions` drawer.
-  `cockpit/Cockpit.tsx` threads selected lifecycle identity into Chats and HighlightComposer,
-  `data/sessions.ts` owns lifecycle-tagged hosted sessions, and `panels/GateResponder.tsx` is the shared
-  Respond control used by DetailPanel plus secondary engine-room/Hangar gate surfaces.
-- 2026-06-23T13:35+02:00 — No route impact: slice-12 topology render-robustness — `topology/constel.ts` gained a file sidecar (the renderer now paints synchronously on resize/update, not rAF-only) and `panels/Topology.tsx` made the canvas absolutely-positioned + the `Panel` `fill`. Behaviour-preserving render/layout fixes within the existing `dashboard/src` route model; no structural change.
-- 2026-06-22T11:00+02:00 — No route impact: slice 05o T7B–T18's `dashboard/src/`-direct changes are `dev/scenarios.ts`
-  gaining six more failure-mode timelines (`seed-fault` T9B, `reindex-reroute` T9C, `provider-block` T7B,
-  `live-sync` T12B, `integration-conflict` T14C, `abandon` T18) and `types/projection.ts` gaining the
-  `refusedPolarity` edge field + a `refused` state — both additive within the existing `dev/`/`data/` route model
-  (named `erFrame`-wrapped `Scenario`s + projection-type fields, not a shape change). The renderer primitives
-  (refused-conduit flash, moved-badge, engine-dropout) and the six wirings are internal to `panels/engine-room/`
-  (its overview + sidecars). The `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is
-  unchanged. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T01:40+02:00 — No route impact: slice 05o T1B's only `dashboard/src/`-direct change is the `dev/`
-  scenario player — `dev/scenarios.ts` gains the `stale-base` preflight→fast-forward failure-mode timeline (F0→F8,
-  + `dev/scenarios.test.ts` a case) — which is data within the existing `dev/` route model, not a shape change.
-  The T1B renderer primitives (the pruned `main` node), the indicator anchoring / z-order fixes, the
-  `FleetingEnclosure` box, and the alert transitions are internal to `panels/engine-room/`, and the §10 spec note
-  is under the sibling `docs/design/engine-room/`; the `dashboard/src/` route model
-  (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged — detail in those overviews + sidecars.
-  Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T00:29+02:00 — No route impact: slice 05o T3B's only `dashboard/src/`-direct change is the `dev/`
-  scenario player — `dev/scenarios.ts` gains the `memory-block` failure-mode timeline (+ `dev/scenarios.test.ts`
-  a case) — which is data within the existing `dev/` route model, not a shape change. The failure-mode renderer
-  primitives (scan ring, ghosted lane), fixtures, and the engine-gauge polish are internal to
-  `panels/engine-room/`, and the §10 spec section is under the sibling `docs/design/engine-room/`; the
-  `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged — detail in those
-  overviews + sidecars. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-21T23:35+02:00 — slice 05k tear-down + design-review refinements: the only `dashboard/src/`-direct
-  change is `index.css` deleting the `@keyframes powerup` (the last engine-room canvas keyframe — the
-  indexing→nominal engine flash, now a Motion opacity pulse on the charge rect). All the rest — the tear-down
-  dispose sequence + power-down diagnostics, the second-loop engine-fill fix, the three-column re-spacing, the
-  closeout-train breadcrumb, and the memory integration arrow — is internal to `panels/engine-room/` (its
-  overview + sidecars). The `cockpit/`/`grammar/`/`panels/`/`data/`/`dev/` route model is unchanged. (Separately,
-  `docs/design/` was brought into onboarding scope — a sibling route, not under `dashboard/src/`.) Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-21T09:57+02:00 — slice 05n (engine-room DrawSVG/MotionPath migration): the only `dashboard/src/`-direct
-  change is `test/setup.ts` adding a jsdom **SVG-geometry stub** (`getBBox`/`getTotalLength`/`getPointAtLength`)
-  so the engine-room GSAP DrawSVG/MotionPath plugins construct under the effects-on GSAP-gate test. The render
-  rework (draw-on → DrawSVG one-shot, packet → MotionPath, the `flowConduit` recipe) is internal to
-  `panels/engine-room/` (its overview + sidecars). The `dashboard/src/` route model
-  (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged. Verification metadata pinned until closeout
-  stamps the 05n commit.
-- 2026-06-21T02:44+02:00 — slice 6g: the cockpit gained **task-document navigation** — `panels/DetailPanel` renders a series **master** (overview + clickable sub-task index) with in-panel **drill-in** into each slice (the back/parent up-link in the sticky panel header), **markdown-rendered** task prose via the new `grammar/Markdown` primitive, and **cross-master "→" navigation** that jumps between series lifecycles (`onOpenLifecycle`). Detail in the `grammar/` + `panels/` overviews. Verification metadata pinned until closeout stamps the 6g code commit.
-- 2026-06-21T02:26+02:00 — slice 05k (engine-room motion → GSAP/Motion): the only `dashboard/src/`-direct
-  change is `index.css` deleting the nine engine-room canvas `@keyframes` (`chargeSweep`/`conduitDraw`/`pktRun`/
-  `attnBreath`/`stopFlash`/`closeoutSweep`/`warpSurgeUp`/`warpSurgeDown`/`landingIn`) that prior slices parked
-  in the effects layer; the engine-room canvas motion now runs on GSAP timelines (`useEngineTimeline`) + Motion,
-  CSS static (the app-wide `crt-overlay`/`flicker`/`pulse` keyframes stay). The render rework + the new hook are
-  internal to `panels/engine-room/` (its overview + sidecars). The `cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`
-  route model is unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T23:58+02:00 — slice 5i: the `dev/` sub-route gained the **scenario player** — new
-  `dev/scenarios.ts` (timeline model) + `dev/ScenarioPlayer.tsx` (transport) + `dev/scenarios.test.ts`, with
-  `dev/Bench.tsx` reworked from the static gallery into a scenario picker + player and `dev/fixtures.ts`
-  extracting the shared `engineRoomProjection` wrap; `dev/Bench.tsx` also gained a sidecar (a prior gap). The
-  only other `dashboard/src/`-direct change is the `index.css` `landingIn` keyframe (engine-room landing-tail
-  detail). The engine-room render rework is internal to `panels/engine-room/` (its overview + sidecars). The
-  `cockpit/`/`grammar/`/`panels/`/`data/` route model is otherwise unchanged. Verification metadata pinned
-  until closeout stamps the code commit.
-- 2026-06-19T15:59+02:00 — Task 6 slice 6f-1: the cockpit gained the **highlight → context-package** composer — `panels/HighlightComposer.tsx` (mounted in `CockpitShell`) + the `data/selection.ts` selection hook; a text selection raises it to send the selection + a message into a chat session's stdin (the `data/sessions` store became the cockpit-wide inject seam; `data/terminal.ts` buffers pre-open stdin for create-then-send). No silent action; reuses the live B2 channel (not ACP). Detail in the `panels/` + `data/` sidecars. Verification metadata pinned until closeout stamps the 6f-1 code commit.
-- 2026-06-19T14:05+02:00 — Task 6 slice 6e-4: terminal/session **hardening** — the open-session registry moved into a new `data/sessions` Zustand store, and a live terminal now survives both a cockpit *view* switch (`cockpit/Cockpit.tsx` keeps `<Chats>` mounted, hidden via CSS) and a *session-tab* switch (`panels/Chats.tsx` keeps every session's `<Terminal>` mounted) instead of being unmounted; the backend PTY spawn (`serving/terminal.py`) gained a controlling terminal so tmux honors resize, and `data/terminal.ts` replays the first winsize on socket open. Detail in the `data/` + `panels/` sidecars. Verification metadata pinned until closeout stamps the 6e-4 code commit.
-- 2026-06-19T06:39+02:00 — No route impact: an engine-room crash fix relaxes `EngineProcessNode.landing` to optional (`landing?:`) in `types/projection.ts` so the canvas tolerates a pre-5h/persisted projection that omits it; the `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged — detail in the `types/projection.ts` sidecar. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T05:48+02:00 — Task 6 slice 6e-3: the **Chats** terminal gained **context injection** — a `SessionComposer` (React Aria `TextField`/`TextArea` + `Button`) docked below the terminal injects a block of text into the active session's stdin as a bracketed paste (the on-ramp to 6f). Refreshed the Behavior layer. Verification metadata pinned until closeout stamps the 6e-3 code commit.
-- 2026-06-19T04:38+02:00 — Task 6 slice 6e-2c: the **Chats** view's open sessions moved into a dedicated left-rail **`SessionList`** switcher (a React Aria `GridList` — single-select = active session, per-row close ✕), replacing the horizontal tab strip; the launch controls stay in the top strip and the harness buttons now share ＋ Terminal's golden look. Refreshed the Behavior layer (the switcher's `GridList`) + the `panels/` route-model line. Verification metadata pinned until closeout stamps the 6e-2c code commit.
-- 2026-06-18T21:27+02:00 — No route impact: a dev-bench review-ergonomics pass collapsed the `/dev/bench` gallery strip into a compact `<select>` picker + trimmed the 6 `engine-boot-*` step tabs and the unused `engine-empty` fixture (mirroring task 5's `b3f2491`). All internal to the DEV-only `dev/` harness (dropped from the production bundle); the `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) this overview describes is unchanged — detail in the `dev/` sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:27+02:00 — Task 6 slice 6e-2b: the **Chats** view gained per-harness launch buttons — `data/terminal.ts` `fetchHarnesses` (`GET /api/harnesses`) drives a detection-driven button per *installed* harness (Claude Code / Codex / Pi.dev) beside ＋ Terminal. Detail in the `panels/` overview + the `Chats.tsx`/`terminal.ts` sidecars. Verification metadata pinned until closeout stamps the 6e-2b code commit.
-- 2026-06-18T21:25+02:00 — No route impact: slice 5h Tier 2's only `dashboard/src/`-direct change is mirroring the four optional `LedgerRefNode` fields (`codeSubject?`/`codeDate?`/`memorySubject?`/`memoryDate?`) in `types/projection.ts`; the 6-column popover render lives in `panels/engine-room/` (its overview + sidecars). The `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T18:00+02:00 — No route impact: slice 5h's ledger popover mirrors `LedgerRefNode` + the additive `LedgerNode.rows` / `EngineProcessNode.ledgerRows`/`ledgerRowCount` fields in `types/projection.ts` and wires the demo `analytics.ledgers` in `dev/fixtures.ts`; the `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged — detail lives in the `engine-room/` overview + the `types/projection.ts` sidecar. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T17:40+02:00 — Task 6 slice 6e-2a: the **Chats** view became a **create** surface — "＋ Terminal" spawns a dashboard-owned session via the new `data/terminal.ts` `openTerminalSession` → the `POST /api/terminal` opener (no longer just attaching to a store lifecycle). Detail in the `panels/` overview + the `Chats.tsx`/`terminal.ts` sidecars. Verification metadata pinned until closeout stamps the 6e-2a code commit.
-- 2026-06-18T16:50+02:00 — Task 6 slice 6e-1: the cockpit gained its first **interactive terminal** — a full-bleed **Chats** view (`panels/Chats.tsx` + the lazy `panels/Terminal.tsx` xterm wrapper) over the new `data/terminal.ts` Mode B2 WebSocket client (binary PTY bytes in, `{type:stdin|resize}` out), reachable from the cockpit mode bar. **Corrected the stale "Read-only — no POST" invariant** (write surfaces have existed since 6c; 6e adds the bidirectional terminal). Dev bench supplies a mock socket so it renders without a backend; the real launch is 6e-2. Verification metadata pinned until closeout stamps the 6e-1 code commit.
-- 2026-06-18T15:50+02:00 — No route impact: the 5h cleanup pass's only `dashboard/src/`-direct change is `dev/fixtures.ts` filtering the `engine-boot-*` frames out of the bench gallery tab strip (a DEV-harness curation); the rest is render polish internal to `panels/engine-room/` (conduit wiring + backdrop vignette + a dropped fixture). The `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`/`dev/`) is unchanged — detail lives in the `engine-room/` overview + sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T15:00+02:00 — Task 6 slice 6c Part B: the cockpit gained its **one write** — `DetailPanel`'s Gate Review drawer POSTs a developer gate decision to `/api/actions` via the new `data/actions.ts` (+ a `gate-review` bench scene in `dev/fixtures.ts`). The rest stays read-only. Verification metadata pinned until closeout stamps the 6c Part B code commit.
-- 2026-06-18T14:05+02:00 — No route impact: task 6 slice 6c Part A only extended the projection **type mirror** (`types/projection.ts` gained `GateNode` + the optional `LifecycleProjection.gate`); the `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`) is unchanged. The gate review **drawer** (`panels/DetailPanel.tsx` + `data/`) lands in 6c Part B — surfaced here then. Verification metadata pinned until closeout stamps the 6c Part A code commit.
-- 2026-06-18T13:01+02:00 — No route impact: the 5h coupler fix's only `dashboard/src/`-direct change is the `index.css` `warpSurgeUp`/`warpSurgeDown` keyframes (the coupler warp-core surge, frozen by `effects=off`); the render lives in `panels/engine-room/`. The `dashboard/src/` route model is unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T11:55+02:00 — No route impact: slice 5h H2's only `dashboard/src/`-direct change is the `index.css` `closeoutSweep` keyframe (the closeout-train fill, frozen by the `effects=off` rule); the render lives in `panels/engine-room/` (its overview + sidecars). The `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`) is unchanged. Verification metadata pinned until closeout stamps the 5h H2 code commit.
-- 2026-06-18T08:51+02:00 — No route impact: slice 5h H1 mirrors `LandingRefNode` + the additive `EngineProcessNode.landing` / `integrationStrategy` fields in `types/projection.ts` (and adds landing fixtures under `panels/engine-room/`); the `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`) this overview describes is unchanged — detail lives in the `engine-room/` overview + the `types/projection.ts` sidecar. Verification metadata pinned until closeout stamps the 5h code commit.
-- 2026-06-17T22:45+02:00 — No route impact: the engine-room visual-parity pass (the 5g G6 blueprint backdrop + the
-  cockpit Effects/Calm toggle, the `engine-room/` SVG decal layer, and the `grammar/Panel` `fill` height fix)
-  is internal to those sub-routes; the `dashboard/src/` route model (`cockpit/`/`grammar/`/`panels/`/`data/`)
-  this overview describes is unchanged — detail lives in those overviews + sidecars.
-- 2026-06-17T16:15+02:00 — No route impact: slice 5g G5 lands the Engine Room live/teardown states
-  (t12b/t14c/t18) + a green=active engine palette + a left-rail scroll fix — all internal to
-  `panels/engine-room/` — plus an `index.css` `stopFlash` keyframe. The `dashboard/src/` route model
-  (`panels/`/`grammar/`/`data/`/`cockpit/`) is unchanged; detail lives in the `engine-room/` overview +
-  sidecars. Verification metadata pinned until closeout stamps the G5 code commit.
-- 2026-06-17T14:00+02:00 — No route impact: `index.css` gained the `attnBreath` keyframe (the failure-overlay
-  attention-badge breathing, 5g G3). Engine-room detail (surfaced in the `panels/engine-room` overview);
-  the dashboard/src architecture this overview describes is unchanged. Verification metadata pinned until
-  closeout stamps the G3 commit.
-- 2026-06-17T13:30+02:00 — No route impact: `index.css` gained the Engine Room pod-stage motion keyframes
-  (`chargeSweep` / `conduitDraw` / `pktRun`, 5g G2) + a `conduit-packet` freeze rule. These are engine-room
-  detail (surfaced in the `panels/engine-room` overview); the dashboard/src architecture this overview
-  describes is unchanged. Verification metadata pinned until closeout stamps the G2 commit.
-- 2026-06-16T02:30+02:00 — slice 5f S1: the cockpit shell's machine-map views (Engine Room / Topology) go
-  full-bleed (rails hidden, §4.1); added the dashboard suite's first component-render test
-  (`cockpit/Cockpit.test.tsx`) and the shared jsdom stubs in `test/setup.ts`. The `dashboard/src/`
-  route model is otherwise unchanged (detail in the `cockpit/` + `engine-room/` sidecars/overviews).
-  Verification metadata pinned until closeout stamps the S1 code commit.
-- 2026-06-15T19:35+02:00 — No route impact: slice 5e adds the `panels/engine-room/` sub-route (its own route overview + file sidecars) plus `types/projection.ts` / `dev/fixtures.ts` changes; the `dashboard/src/` route model this overview describes (the `panels/` / `grammar/` / `data/` / `cockpit/` split) is unchanged — detail lives in the `panels/` + `engine-room/` overviews and the file sidecars.
-- 2026-06-15T17:00+02:00 — Created for slice 5d: the frontend re-architecture (Panda + React Aria,
-  layered). Documents the layered styling architecture, the grammar/panels split, and the read-only
-  boundary. Verification metadata pinned until closeout stamps the 5d code commit.
+- The target variant that turns the existing takeover into a review. [18]
+- The declaration's own reason: the change-set viewer is never mounted for a review — the field's **presence** is what marks a review target, and an empty object is the task-context entry. [19]
+- The dispatch, and the `intent-review` view marker it selects. [20]
+- The surface a review target mounts in the change-set viewer's place — whose listed inventory entries, since `260921-ICR-L3`, also open into the entry's own content. [21]
+- **The reviewer entry: offered for every leaf; since `260921-ICR-L47` it carries no subject (the reviewer chooses one) and shows the comparison's changed-intent counts.** [22]
+- **The one predicate both gated entries share.** [23]
+- The shared catalogue hook takes repository/task context and calls the existing subject catalogue client. [24]
 
 ## 260921-ICR-L2 The Task-Context Review Reaches The Surface
 
@@ -1555,14 +753,12 @@ a review target and an empty object is the task context. The client (`data/revie
 panel (`panels/review/ReviewSurface.tsx`) carry the rest: the inventory's wire types, an optional
 comparison identity, and the rendering of an inventory in all three of its states.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.** | `useReviewCatalogue`; `DocChangeSetBar` | dashboard/src/data/useReviewCatalogue.ts:79-111; dashboard/src/panels/detail-panel/changeSetBar.tsx:315-365 |
-| **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
-| **The takeover branch that mounts the surface for a target with or without a selector.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:567-606 |
-| **The client's inventory types and the request that omits the selector when there is none.** | `ReviewSourceInventory`; `intentReview` | dashboard/src/data/review.ts:296-306; dashboard/src/data/review.ts:558-574 |
-| **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** | `SourceExplorer`; `inventoryEntry`; `byteNamedEntry` | dashboard/src/panels/review/SourceExplorer.tsx:224-302; dashboard/src/panels/review/SourceExplorer.tsx:58-116; dashboard/src/panels/review/SourceExplorer.tsx:118-130 |
-| The case that measures the browser half: no subject offered, and the target is still a review. | `stubCounters` | dashboard/src/panels/detail-panel/changeSetBar.test.tsx:11-12 |
+- **The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.** [25]
+- **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** [26]
+- **The takeover branch that mounts the surface for a target with or without a selector.** [27]
+- **The client's inventory types and the request that omits the selector when there is none.** [28]
+- **The panel's inventory rendering, in all three states, with byte-form rows beside the named ones — re-derived against this candidate, where the review surface's lower half moved.** [29]
+- The case that measures the browser half: no subject offered, and the target is still a review. [30]
 
 ## 260921-ICR-L16 The Review Route's Refusals Reach The Reader
 
@@ -1584,17 +780,10 @@ the task-document reader. Two limits are recorded as **routed, not fixed**: an i
 change can still settle an earlier read under a newer header (pre-existing; **R17** with R24), and the
 browser-class A01/A13 journeys are not verified here (**R25** with R24/R17).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The shared client this route deliberately does not change, whose throw-on-non-2xx is right for the other serving routes.** | `getJson`; `FilesApiError` | dashboard/src/data/files.ts:76-84; dashboard/src/data/files.ts:95-102 |
-| **The review route's own decode: the body is the answer whatever the status.** | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:161-171; dashboard/src/data/reviewTransport.ts:97-98 |
-| **The one renderer every non-review state goes through.** | `ReviewOutcomeRegion`; `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177; dashboard/src/panels/review/ReviewOutcome.tsx:247-278 |
+- **The shared client this route deliberately does not change, whose throw-on-non-2xx is right for the other serving routes.** [31]
+- **The review route's own decode: the body is the answer whatever the status.** [32]
+- **The one renderer every non-review state goes through.** [33]
 
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **route body updated.** The section above records the one change that crosses this route: the review reads' refusals now reach the reader, through a route-owned transport decode plus one outcome renderer, with the shared `data/files.ts` client deliberately untouched. It also records that **no route-model, takeover or layout change** accompanies it, and the two measured limits routed to R17/R24 and R25. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation re-derivation in the L2 record above, forced by this leaf's changes to its cited files; no route impact.** The section cites `panels/review/ReviewSurface.tsx` and `data/review.ts`, and this leaf moved every construct in both: `Inventory`/`inventoryEntry`/`byteNamedEntry` `238-264`/`207-223`/`224-237` → `291-335`/`214-260`/`270-282`, `ReviewSourceInventory` `168-178` → `169-179`, and `intentReview` `271-290` → `323-342`. Nothing the section claims was falsified — the entry is still offered for every live leaf, the target's selector is still optional with presence marking a review, and the instrument still renders the whole-task inventory in all three states; the inventory's rows additionally open into their content now, which the row's claim says. This leaf (`260921-ICR-L3`) added one child component and one client function and changed no route-level fact. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, code base `702714fc`): **route body updated.** The dashboard route's reviewer entry is now offered for every live leaf (the server's subject is a refinement, not a gate), the review target's selector is optional with an empty object meaning the task context, and the review panel renders the whole-task source inventory in all three states. The section is appended at the end of this route's narrative, and the row of this document that cited `Cockpit.tsx` by line was re-derived against the candidate in the same pass. **No verification stamp was advanced** — the candidate is uncommitted and closeout owns the real stamp.
 ## 260921-ICR-L12 The Cockpit Hands The Review's Record To The Surface
 
 `260921-ICR-L12` (`ICR-R12@v1`) adds one prop at the cockpit's change-set takeover:
@@ -1608,14 +797,6 @@ series/leaf change-set views are untouched, and the entry that produces the hist
 change-set bar's closed-leaf branch (see the panels route overview), which is also where the "Intent
 review (recorded)" label is chosen. The mounted surface states the record it read in its own header, so
 a reader never has to infer from the panes which comparison is on screen.
-
-## Update History
-- 2026-09-23T04:31:21+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **route body updated for the takeover's record prop (ICR-R12@v1).** The section above records the one
-prop this leaf added and that the browser adds no resolution of its own. **Citation accounting:** every
-row on this overview that cited `Cockpit.tsx` or `changeSetBar.tsx` by line was re-derived against this
-candidate. **Stamp accounting:** no verification stamp was advanced — the header already names this
-leaf's base as the production line the reading was taken against, and nothing in this leaf is
-committed, so the governed closeout owns the real stamp.
 
 ## 260921-ICR-L17 The Review Read Cycle, The Refresh Control And The Entry's Invalidation
 
@@ -1637,8 +818,3 @@ route, takeover dispatch or target shape:
 
 The rule a reader of this route should carry: a generation claim is only ever rendered when a read
 answered for the identity it describes, and the identity belongs to exactly one question.
-
-
-## Update History
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **five enforced findings on two rows cleared, wording unchanged.** The client row's `intentReview` citation now points at the request's own declaration extent (`data/review.ts:533-549`) instead of a range the module's growth had left holding nothing the row names, and the rendering row was re-read against this leaf's move of the complete source change explorer out of `ReviewSurface.tsx` into `SourceExplorer.tsx`: the old `Inventory` component is gone, the construct that renders the inventory in all three states with the byte-form rows beside the named ones is the exported `SourceExplorer` (`SourceExplorer.tsx:234-315`), and `inventoryEntry`/`byteNamedEntry` moved verbatim into that module (`:78-129`, `:137-149`) — so the anchor was corrected to the construct the range actually holds and the claim's sub-heading was left as written. The same edit clears this row's reopened claim: every anchor now resolves once in a cited file with its declaration inside a cited range. Contributing citations (`review.ts:244-480`, `:189-189`, `:202-202`) are kept verbatim. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the review read cycle, the refresh control and the entry's invalidation signal (`ICR-R17@v1`).** Two new modules under `panels/review/`, a lighter `ReviewSurface.tsx`, a projection-invalidated catalogue read with its own refresh control in `changeSetBar.tsx`, and three additions to `data/review.ts`. No route-level fact changed. **Citation accounting:** the rows into the changed modules were re-derived from each construct's own declaration. **Stamp accounting:** the verification pair names this leaf's base; closeout owns the stamp.

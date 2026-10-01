@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Graph construction binds the caller's authored graph to one validated deep-immutable semantic index, then derives the exact queue revision and indexes with the strict/tolerant register split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:4ca60ddceceae9d7c2781ab9dbfd67b75fea3e8d9c1d8d98ed8f4582e0e53084",
+            "locator": {
+              "kind": "symbol",
+              "name": "graph_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:b42cbc2c670bec2e82b92f25cc15b038edc9a13580b9e707762631f4c8a4807f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sprint_with_bound_graph"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Incomplete predecessors are built in one bounded adjacency pass with master-granular terminal resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:ddae3b602099ac3653e920d902a8d2dc1196f68c6b6adf25ff9e378a08154b8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "incomplete_predecessor_map"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Leaf-aware candidate lookups resolve a candidate to its lump or segment node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:80b4fa85f533a9abf0697577acbda42cd1efde0d63c651014585b2a48be684ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_node"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:aae9cd27f7cd55baaa522a6028c65c4943afcd9bae992defd1035b3c7dfe4df0",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_predecessors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The queue's sort key and waiting reasons consume the candidate's own node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:ad9e41ea2a7940795c77586a46c382280abc6603a74deb821febf88725a84bf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ready_sort_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:dd5f0605056bfe6d4b5ca3a73457934d431b9aceebce3ff0761ea712724a3e19",
+            "locator": {
+              "kind": "symbol",
+              "name": "predecessor_waiting_reasons"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Graph construction bounds failures at sprint, semantic topology, and planning-register stages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:4ca60ddceceae9d7c2781ab9dbfd67b75fea3e8d9c1d8d98ed8f4582e0e53084",
+            "locator": {
+              "kind": "symbol",
+              "name": "graph_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:cd738b505db1b9516b6d5fbdfe646e2b9588b07310ea59639c03892d82e6ffa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_graph_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Graph admission refuses only graph-shape capacity (masters, then edges) before topology validation, raising through the constants the errors module declares; the declared-leaf count is no longer summed or bounded.\n\nAnchor: `MAX_CLOSEOUT_MASTERS`; `MAX_CLOSEOUT_GRAPH_EDGES`; `MASTER_CAPACITY_EXCEEDED`; `EDGE_CAPACITY_EXCEEDED`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:ecb4973bc3d3156c6eef920ddc47460a5012fbc4179902a928afa6ec20a7cca7",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

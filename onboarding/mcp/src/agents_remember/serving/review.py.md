@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/review.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/review.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash |  `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate |  2026-09-30T12:51:55+02:00|
-| governingOverview | `mcp/src/agents_remember/serving/overview.md` |
-
 ## Governing Overview
 
 [serving route overview](overview.md)
@@ -226,80 +216,53 @@ than a second error model.
 
 None recorded. An assessment-publication route is deliberately not shipped by this increment.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the shim's own docstring, the three
 route constants, the three ports and their unwired answers, the selector value, the two parse
 functions, the result-to-status mapping, the registrar and its three handlers, the serializer, the
 port fields the composition supplies, and the cases that drive the routes with and without an adapter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shim's own statement of what it decides (nothing), why the ports exist rather than direct imports, and the fact that no filesystem path is accepted. | `SELECTOR_KINDS` |mcp/src/agents_remember/serving/review.py:106-106|
-| The published surface: three route constants, three port types, the expansion's selector value, two parsers and one registrar. | `__all__`; `SourceContentRef`; `ReviewSourceContentPort` |mcp/src/agents_remember/serving/review.py:53-73; mcp/src/agents_remember/serving/review.py:110-110; mcp/src/agents_remember/serving/review.py:199-216; mcp/src/agents_remember/serving/review.py:102-102|
-| The comparison route constant, GET-only, and the comment recording that the surface produces no record. | `KNOWLEDGE_REVIEW_ROUTE` |mcp/src/agents_remember/serving/review.py:83-83|
-| **The entry route constant and the comment recording why it is a second path rather than a second adapter.** | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` |mcp/src/agents_remember/serving/review.py:89-89|
-| **The expansion route constant and the comment recording why it is a third path: the inventory is the whole task's change set, and a payload carrying every file's text would be a document dump.** | `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` |mcp/src/agents_remember/serving/review.py:96-96|
-| The two admitted selector kinds, and the three port types as one-request-in-one-result-out callables. | `SELECTOR_KINDS`; `KnowledgeReviewPort`; `KnowledgeReviewEntriesPort` |mcp/src/agents_remember/serving/review.py:109-109; mcp/src/agents_remember/serving/review.py:106-106; mcp/src/agents_remember/serving/review.py:108-108|
-| **The entry route's unwired answer: an empty entry list would say "nothing is reviewable here", a different fact from "this process cannot answer".** | `_UNWIRED_ENTRIES` |mcp/src/agents_remember/serving/review.py:115-124|
-| **The expansion route's own unwired answer, which refuses rather than serving an empty file.** | `_UNWIRED_SOURCE_CONTENT` |mcp/src/agents_remember/serving/review.py:129-138|
-| **The expansion's whole selector as one value: the task context, the entry path and the two camel-case tree ids, travelling together because any one alone selects nothing.** | `SourceContentRef` |mcp/src/agents_remember/serving/review.py:199-216|
-| **The parse that admits two shapes and refuses a half-named selector or an unadmitted kind with `None` rather than a default.** | `review_request_from_query`; `InvariantIdentitySeed`; `FamilyIdentitySeed` |mcp/src/agents_remember/serving/review.py:36-36; mcp/src/agents_remember/serving/review.py:294-327; mcp/src/agents_remember/models/knowledge/read.py:173-177|
-| **The expansion's own parse: the path and both tree ids required together, and a blank component refused rather than defaulted, because a defaulted tree id would make the server choose a generation.** | `source_content_request_from_query` |mcp/src/agents_remember/serving/review.py:584-604|
-| **The result-to-status mapping derived from the refusal's own published code, now over three result types: the four candidate codes go to `404`, `review_adapter_unavailable` to `503`, and everything else — including the expansion's `source_content_unresolved` — to `400`.** | `_status_for`; `ReviewSourceContentResult`; `source_content_unresolved` |mcp/src/agents_remember/serving/review.py:607-624; mcp/src/agents_remember/models/knowledge/review_source_content.py:234-254; mcp/src/agents_remember/models/knowledge/review.py:151-160|
-| **The registrar: the three optional ports, the entry route's missing-port `503` and unadmitted-selector `400`, the expansion route's one-line registration, the comparison route's `503`/`400`, the two caught exception types, and the ordering requirement against the greedy static mount.** | `register_review_routes`; `api_review_intent_entries` |mcp/src/agents_remember/serving/review.py:627-709; mcp/src/agents_remember/serving/review.py:644-655|
-| **The expansion route's handler and the module-level transport it delegates to: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** | `api_review_intent_source_content`; `_source_content_response` |mcp/src/agents_remember/serving/review.py:657-659; mcp/src/agents_remember/serving/review.py:720-738|
-| The comparison route's handler: the task context, the optional selector pair, and the `400` body that names "or no selector at all" and reports the value that was wrong. | `api_review_intent` |mcp/src/agents_remember/serving/review.py:661-709|
-| The one serializer, which keeps an omitted field absent rather than null and so serves all three result types. | `_json` |mcp/src/agents_remember/serving/review.py:712-717|
-| The `400` body for a query that did not name the generation it wants opened: the offending component, the exact expected set, and the inventory as the address of the content. | `_incomplete_generation` |mcp/src/agents_remember/serving/review.py:741-757|
-| **The three port fields on the collaborators the composition supplies, and their reasons in the layer ranking.** | `knowledge_review`; `knowledge_review_entries`; `review_source_content` | mcp/src/agents_remember/serving/_app_common.py:463-463; mcp/src/agents_remember/serving/_app_common.py:474-474; mcp/src/agents_remember/serving/_app_common.py:484-492 |
-| The registration call, made before the greedy static mount and now passing all three ports. | `register_review_routes` | mcp/src/agents_remember/serving/app.py:297-303 |
-| The composition root that supplies all three ports, so an omitted adapter refuses rather than serving empty. | `review_port`; `review_entries_port`; `review_source_content_port` | mcp/src/agents_remember/cli/dashboard.py:97-111; mcp/src/agents_remember/cli/dashboard.py:113-121; mcp/src/agents_remember/cli/dashboard.py:123-133 |
-| **The case that the transport admits exactly the two reviewable selector kinds.** | `test_the_transport_admits_exactly_the_two_reviewable_selector_kinds` | mcp/tests/test_knowledge_review_resolution_and_route.py:285-303 |
-| **The case that the route serves the typed result and refuses by name with no adapter.** | `test_the_route_serves_the_typed_result_and_refuses_by_name_with_no_adapter` | mcp/tests/test_knowledge_review_resolution_and_route.py:306-363 |
-| **The cases that drive the expansion route through the real composition: a query missing a tree id refused by the transport, and an unwired process refused by name with `_UNWIRED_SOURCE_CONTENT` rather than an empty file.** | `test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport`; `test_an_unwired_process_refuses_the_route_by_name`; `_UNWIRED_SOURCE_CONTENT` |mcp/tests/test_knowledge_review_source_content.py:773-795; mcp/tests/test_knowledge_review_source_content.py:798-821; mcp/src/agents_remember/serving/review.py:129-138|
-| The client that names this route and reads its typed body whatever the status, so a refusal renders instead of becoming a transport error. | `reviewSourceContent` | dashboard/src/data/review.ts:742-760 |
+- The shim's own statement of what it decides (nothing), why the ports exist rather than direct imports, and the fact that no filesystem path is accepted. [1]
+- The published surface: three route constants, three port types, the expansion's selector value, two parsers and one registrar. [2]
+- The comparison route constant, GET-only, and the comment recording that the surface produces no record. [3]
+- **The entry route constant and the comment recording why it is a second path rather than a second adapter.** [4]
+- **The expansion route constant and the comment recording why it is a third path: the inventory is the whole task's change set, and a payload carrying every file's text would be a document dump.** [5]
+- The two admitted selector kinds, and the three port types as one-request-in-one-result-out callables. [6]
+- **The entry route's unwired answer: an empty entry list would say "nothing is reviewable here", a different fact from "this process cannot answer".** [7]
+- **The expansion route's own unwired answer, which refuses rather than serving an empty file.** [8]
+- **The expansion's whole selector as one value: the task context, the entry path and the two camel-case tree ids, travelling together because any one alone selects nothing.** [9]
+- **The parse that admits two shapes and refuses a half-named selector or an unadmitted kind with `None` rather than a default.** [10]
+- **The expansion's own parse: the path and both tree ids required together, and a blank component refused rather than defaulted, because a defaulted tree id would make the server choose a generation.** [11]
+- **The result-to-status mapping derived from the refusal's own published code, now over three result types: the four candidate codes go to `404`, `review_adapter_unavailable` to `503`, and everything else — including the expansion's `source_content_unresolved` — to `400`.** [12]
+- **The registrar: the three optional ports, the entry route's missing-port `503` and unadmitted-selector `400`, the expansion route's one-line registration, the comparison route's `503`/`400`, the two caught exception types, and the ordering requirement against the greedy static mount.** [13]
+- **The expansion route's handler and the module-level transport it delegates to: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** [14]
+- The comparison route's handler: the task context, the optional selector pair, and the `400` body that names "or no selector at all" and reports the value that was wrong. [15]
+- The one serializer, which keeps an omitted field absent rather than null and so serves all three result types. [16]
+- The `400` body for a query that did not name the generation it wants opened: the offending component, the exact expected set, and the inventory as the address of the content. [17]
+- **The three port fields on the collaborators the composition supplies, and their reasons in the layer ranking.** [18]
+- The registration call, made before the greedy static mount and now passing all three ports. [19]
+- The composition root that supplies all three ports, so an omitted adapter refuses rather than serving empty. [20]
+- **The case that the transport admits exactly the two reviewable selector kinds.** [21]
+- **The case that the route serves the typed result and refuses by name with no adapter.** [22]
+- **The cases that drive the expansion route through the real composition: a query missing a tree id refused by the transport, and an unwired process refused by name with `_UNWIRED_SOURCE_CONTENT` rather than an empty file.** [23]
+- The client that names this route and reads its typed body whatever the status, so a refusal renders instead of becoming a transport error. [24]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The routes serve one repository namespace's
 candidate and carry no identity that ranges beyond it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/cli/dashboard.py` (the reader import and the `knowledge_reader_port` binding); `mcp/src/agents_remember/serving/_app_common.py` (one import and the `knowledge_reader` collaborator field); `mcp/src/agents_remember/serving/app.py` (one import and one route registration), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `dashboard.py`, `_app_common.py`, `app.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 3 citations into `mcp/tests/test_knowledge_review_surface.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base; the ranges whose cited case or codec moved verbatim now cite `mcp/tests/test_knowledge_review_resolution_and_route.py`. The two transport rows were re-derived to each case's own extent. A stray single-line range, stale since before this leaf, was dropped, and the two generated-repair bullets for these rows were retired. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/serving/_app_common.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`models/knowledge/read.py` lost the moved anchor vocabulary; the evidence TOMLs gained one row) were re-measured against the candidate by the curator so each anchor lands on its construct again; no claim wording changed.
-
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `api_review_intent` repointed to mcp/src/agents_remember/serving/review.py:661-709. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **the 400/404 mapping collapsed into one implementation, and the two bodies that published no next action now do.** The duplicated `try/except AuthorityError/FileNotFoundError` pair that the comparison handler and `_source_content_response` each carried is now one `_port_outcome(port, request)` reached by both adapters, building its two bodies through one `_transport_refusal(status, detail, *, next_action, offending_input=None)`; both call sites now read `result = _port_outcome(...)` and return it unchanged when it is a `Response`. The **substantive** half of the change is what the bodies say: `bad-path` gained `_AUTHORITY_NEXT_ACTION` and `not-found` gained `_NOT_FOUND_NEXT_ACTION` plus the offending input (the path, in both the `path` and `offendingInput` spellings), because ICR-R16 requires every refusal on this route to carry a usable next action. No status, route, key or model was removed and no other client read those fields — the change is additive on this route's own bodies inside S08. Line count 349 → 401. The card's earlier paragraph that said the two exception types were "caught at each port call" and that the status idiom was "unchanged" has been **replaced** rather than carried. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00), and the leaf's own recorded working candidate states what was actually read; nothing in this leaf is committed, so closeout owns the stamp.
-- 2026-09-21T23:25+02:00 — 260921-ICR-L3 curator (same uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation-range repair that clears a `claim_reopen` without any commit.** The finding was not a provenance problem: this leaf's new construct resolves exactly once in the working tree, but its **declaration line** fell outside the range the row cited, so the gate could not see the pointer landing on the new content. The row now cites the declaration beside the statement it already cited (the statement and the construct are one evidence unit, so both ranges belong on the row), and the claim's wording is unchanged because it was already true. Nothing was deleted, weakened, invented or re-stamped.
-
-- 2026-09-21T23:00:00+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the shim became three routes over three ports, and the invariant that said no path is accepted was corrected rather than carried.** ICR-R03@v1 added `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` (`/api/review/intent/source-content`), `SourceContentRef` (the whole expansion selector as one `Depends()` value, the `ChangesetFileRef` idiom the change-set routes already use), `ReviewSourceContentPort`, `source_content_request_from_query`, `_source_content_response` and `_incomplete_generation`, and widened `_status_for`/`_json` by the third result type. The card now records the three facts a reader of the transport needs. First, the split's reason: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump, so the expansion is a third **path** and the browser asks for exactly the row a reader opened. Second, the corrected boundary: this is the one route that accepts a `path` — a repository-relative entry path, always sent with both bound code tree ids, and read only if a **measured** change set lists it, with the two tree ids named by the caller rather than resolved by the server so an expansion stays bound to the generation the reader was looking at; no route accepts a filesystem path or a root. Third, the refusal shape: `_UNWIRED_SOURCE_CONTENT` refuses an unwired process as "not served rather than served as an empty file" (an empty document would read as a file this repository does not hold), the expansion's `source_content_unresolved` reaches `400` through the same fall-through as `comparison_refused`, and a blank path or tree id is a `400` naming the exact expected set rather than a server-chosen generation. It also records the extraction that cleared the complexity and argument-count rails without a suppression: the expansion's whole transport became `_source_content_response` and the compare route's parse now takes the selector value instead of six positional scalars. **Citation accounting:** every row of this document was re-derived against this candidate, because the file grew 223 → 349 lines and every construct below the new route constant moved (the selector kinds `:51-63` → `:76-79`, the port types `:65-66` → `:81-83`, `_status_for` `:125-140` → `:199-216`, `register_review_routes` `:143-217` → `:219-247`, `api_review_intent` `:146-190` → `:249-298`, `_json` `:220-223` → `:301-306`, `review_request_from_query` `:83-99` → `:134-173`, `_UNWIRED_ENTRIES` `:68-80` → `:85-97`, and the two `_app_common.py` port rows `:456`/`:467` → `:460`/`:471`); two rows were added for the new route's own constructs and one for its production cases. **No verification stamp was advanced** — the candidate is uncommitted, so the stamp names the master line this card was read against (`d80a0513…`, committed `2026-09-21T19:51:20+02:00`) and the governed closeout owns the real stamp.
-
-- 2026-09-21T15:17:00+02:00 — 260921-ICR-L2 curator, **post-sync citation re-derivation, forced by the merge rather than by a claim change.** The sync brought leaf `260921-ICR-L5`'s landed work into this candidate, which moved the review adapter and the review-surface test module; the two case rows were re-pointed at the merged module's extents (`test_knowledge_review_surface.py:979-997` and `1000-1057`). No claim was re-worded, no anchor dropped and no stamp advanced.
-
-- 2026-09-21T14:59:00+02:00 — 260921-ICR-L2 curator (uncommitted change set on `ar/260921-icr-l2`, base `702714fc05363cb28eacaf101ba8384475a6aa56`): **the selector became optional at the boundary, and the refusal learned to name the omission.** `review_request_from_query` now returns the task-context request when both selector parameters are absent, refuses a half-named selector and an unadmitted kind with `None` exactly as before, and the route signature declares both parameters optional. The `400` body gained the "or omit both" option in `expected`/`nextAction` and falls back to `selectorId` for `offendingInput` when only that parameter was supplied. Every row in the reference table was re-derived against this candidate — this file grew by 30 lines above the registrar — and the case row now cites the transport case's new lines. **Stamp accounting:** the verification rows still name the last real commit whose bytes this card was verified against, because nothing in this leaf is committed; claims whose evidence this leaf's change moved were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
-
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): the shim now serves **two routes from one resolution**. `KNOWLEDGE_REVIEW_ENTRIES_ROUTE` (`/api/review/intent/entries`) lists the subjects the resolved pair can be compared on, and `KnowledgeReviewEntriesPort` is its own port — the task context alone and no selector, because discovering the subject is what that call is for. This card records the three consequences a reader of the transport needs: `_status_for` now accepts both typed results and reads success as `refusal is None` (the entry list has no `state == "review"`), `subject_unresolved` joined the four candidate codes that answer `404`, and the entry handler answers an unwired process with `_UNWIRED_ENTRIES` rather than an empty list, because "no subject is reviewable here" and "nothing can answer that question" are different facts. It also records that the split is a second **path** and never a second adapter, since a caller that had to guess a subject id to reach the comparison route would be choosing the candidate the browser may not choose.
-- 2026-09-19T22:28:52+00:00 — retired by the 260921-ICR-L57 curator: this mechanical bullet bound the selector-kind case to `test_knowledge_review_surface.py`. L57 moved the case verbatim into `mcp/tests/test_knowledge_review_resolution_and_route.py`, where the row now cites its own extent (`:285-303`). A stray single-line range, stale since before this leaf, was dropped. The claim was re-read and holds. No stamp was advanced.
-- 2026-09-19T22:28:52+00:00 — retired by the 260921-ICR-L57 curator: this mechanical bullet bound the no-adapter route case to `test_knowledge_review_surface.py`. L57 moved the case verbatim into `mcp/tests/test_knowledge_review_resolution_and_route.py`, where the row now cites its own extent (`:306-363`). The claim was re-read: the case serves the typed result (200) and refuses by name (400, and 503 with no adapter). No stamp was advanced.
-- 2026-09-18T18:05+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): created this one-to-one card for the Intent Reviewer's HTTP shim. It records that the module is **transport only** — it selects nothing, ranks nothing, computes no scope and resolves no reference — and the three facts a reader of this route needs: the port exists because `layers.toml` ranks `serving` below `application`, so the shim may not import the operations the adapter composes; the candidate is never addressed by path, because the four query parameters are a task context and one recorded subject and nothing else; and a process with no adapter **refuses by name** (`503`, "not served rather than served empty") instead of rendering an empty surface. It also records the 400/404/503 mapping as derived from the refusal's own published code, and the registration-order requirement against the greedy static mount. This card carries **no `lastVerifiedCommitHash` and no `lastVerifiedCommitDate`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.
 
 ## 260921-ICR-L10 The Route Admits The Page Itself And Names The Input It Refused
 
@@ -314,15 +277,6 @@ existing callers, which is why two spellings exist rather than one widened signa
 
 The route stays transport-only: it reaches every answer through its port, so the page it publishes is the
 composition's page and never one this layer built.
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-23T00:30:00+02:00 — 260921-ICR-L10 curator (candidate `ar/260921-icr-l10`, uncommitted; production line at this leaf's base `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`): **the route admits the page size in its own vocabulary and names the input it refused.**
-`ReviewPagingRef`/`ReviewSelectorRef` (with `NO_PAGING`/`NO_SELECTOR`), `AdmittedPaging`/
-`UnadmittedReviewQuery`, `paged_review_request` and `_admitted_paging` are new, so an out-of-range size is
-this route's own `400` naming the value and the maximum and a refused cursor names the value that failed.
-Every row on this card that cited `serving/review.py` by line was re-derived against this candidate,
-because this leaf moved them. No verification stamp was advanced: nothing in this leaf is committed, so the commit/closeout stamp remains closeout's.
 
 ## 260921-ICR-L12 The Route Admits One Historical Spelling And Refuses Every Other By Name
 
@@ -348,15 +302,6 @@ else about it:
   records hold — the one record a review of that leaf can be opened on. The read is therefore
   unambiguous without a selector, and the route's 400 detail now names the history form alongside the
   selector and the cursor.
-
-## Update History
-- 2026-09-23T04:30:48+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): **the route admits one historical spelling and refuses every other by name (ICR-R12@v1).** The
-admitted form is the request model's own literal (`RECORDED_HISTORY`); the selector ref became
-`ReviewQuestionRef` (subject **and** record) with the old name kept as an alias; `_admitted_history`
-refuses any other name in the route's own vocabulary and never resolves it to the leaf's record; and the
-entries route deliberately takes no record parameter, documented at the route. **Citation accounting:**
-every row into this module was re-derived against the candidate. **Stamp accounting:** no verification
-stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
 
 ## 260921-ICR-L17 The Route Admits The Previous Binding In Its Own Vocabulary
 
@@ -385,8 +330,3 @@ reach.
 is the comparison that is there now is the owners' answer, and a digest that no longer matches is
 reported as `stale` rather than refused — which is why the shape check is the whole of this route's
 business with the value.
-
-
-## Update History
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate uncommitted; basis: leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **one enforced citation row re-pointed.** The transport-admission case is declared at `mcp/tests/test_knowledge_review_surface.py:1098`, not inside the cited range: `1016-1034`→`1098-1116`. Wording, Finding and Anchor all unchanged. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, the header's stamp values are untouched, and the governed closeout owns the real stamp.
-- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the route admits the previous binding identity in its own vocabulary (`ICR-R17@v1`).** `ReviewQuestionRef` gains the `previousBindingDigest` query parameter; `_SHA256_DIGEST` compiles the models' published pattern instead of re-spelling it; `_admitted_binding_digest` collapses the empty spelling to absent and refuses a non-digest by name; `AdmittedQuestion`/`_admitted_question` answer for the record and the previous identity as one decision, and `paged_review_request` forwards both onto the request without comparing either. **Citation accounting:** the rows this leaf's insertions moved were re-derived from each construct's own declaration on the 757-line candidate — `InvariantIdentitySeed` (declared in `models/knowledge/read.py:174`, imported at `serving/review.py:36`), `__all__` `:53-73`, `SELECTOR_KINDS` `:106`, `KnowledgeReviewPort` `:108`, `KnowledgeReviewEntriesPort` `:109`, `api_review_intent_entries` `:645`, `api_review_intent_source_content` `:658`, `_source_content_response` `:720`, `register_review_routes` `:627`. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the parameter and its admission exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.

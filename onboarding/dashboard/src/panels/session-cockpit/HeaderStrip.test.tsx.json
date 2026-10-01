@@ -1,0 +1,85 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two components under test.\n\nAnchor: \"export function HeaderStrip({\", \"export function SessionStage({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11cb9d3d86d4edd9dabeea9aeda87d65ce94cdb4",
+            "content": "sha256:07b2fb2d3e804a0de70dbaf661891555e96bdfb28a21552f554e20912125a471",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f9630b4b378858e59322c88e524b4938faf55e02",
+            "content": "sha256:67b30ea209affee308a69e1a8951ba442a161ddbbd1d900612f608689f346441",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionStage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stage container (slot order, handoff note, empty identity).\n\nAnchor: \"export function SessionStage({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9630b4b378858e59322c88e524b4938faf55e02",
+            "content": "sha256:67b30ea209affee308a69e1a8951ba442a161ddbbd1d900612f608689f346441",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionStage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tier machine whose derivation the R7 cases pin.\n\nAnchor: `launchTier`, `TIER_SENSE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:ff76d7c1946f463adeb382f50b8dd834fd2846b7076135f308e8994403472584",
+            "locator": {
+              "kind": "symbol",
+              "name": "launchTier"
+            },
+            "path": "dashboard/src/data/launchEvidence.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:c273c97a76797f7fd2433dcf637c84ca8ebd4309a623827258e6f8577c550cd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TIER_SENSE"
+            },
+            "path": "dashboard/src/data/launchEvidence.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

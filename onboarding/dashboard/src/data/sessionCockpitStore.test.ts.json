@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/data/sessionCockpitStore.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:337650a88631793fb09446374696c4bb14d48a6bb6f69c5e0561e48279fa73a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "setOrchestrationTreeView"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registry the mirror case writes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:2bef21171c1e6ce94ae1523611bc4cf2486eb9e5d597f5410e955975d9f0872f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSessions"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

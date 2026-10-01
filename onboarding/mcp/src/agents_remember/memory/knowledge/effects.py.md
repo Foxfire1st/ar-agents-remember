@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/effects.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/effects.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T10:37+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -112,44 +102,36 @@ it rather than recomputing it.
 - **Two enforcement points, one rule.** The cardinality predicate and the admitted-label set are
   imported from `models/knowledge/effect.py`; neither is restated here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one entry point that applies a command inside the caller's open transaction, and raises rather than returns so the whole batch rolls back. | `apply_effect_command` | mcp/src/agents_remember/memory/knowledge/effects.py:129-154 |
-| The measured order — validate at the envelope seam, then resolve on the validated payload, then check duplicates — before any row exists. | `_admissible_payload` | mcp/src/agents_remember/memory/knowledge/effects.py:157-182 |
-| The envelope row and its one sealed revision, written together. | `_write_record` | mcp/src/agents_remember/memory/knowledge/effects.py:185-206 |
-| The one succession edge, inserted inside the successor's own batch and cycle-checked in the same transaction. | `_write_succession_edges` | mcp/src/agents_remember/memory/knowledge/effects.py:209-226 |
-| The shape check: the nine admitted labels and the shared cardinality rule, reading no content, no diff and no text. | `require_admitted_declaration` | mcp/src/agents_remember/memory/knowledge/effects.py:254-286 |
-| The refusal of accepted origin data, with no promotion operation anywhere in the group. | `require_proposed_origin` | mcp/src/agents_remember/memory/knowledge/effects.py:312-336 |
-| The generation gate, compared against the dataset's own recorded generation rather than the build's support. | `require_effect_generation`; `require_effect_generation_or_raise` | mcp/src/agents_remember/memory/knowledge/effects.py:339-360; mcp/src/agents_remember/memory/knowledge/effects.py:363-368 |
-| The four resolved reference families and the two deliberately unresolved ones. | `require_payload_references` | mcp/src/agents_remember/memory/knowledge/effects.py:371-410 |
-| The duplicate scan, bounded to the one change set and comparing only label and the two reference sets. | `require_no_stored_duplicate` | mcp/src/agents_remember/memory/knowledge/effects.py:432-466 |
-| The shared acyclic walk over generation 8's table, so no second cycle rule grows beside the first. | `require_acyclic_successions` | mcp/src/agents_remember/memory/knowledge/effects.py:484-507 |
-| The derived read that refuses by state rather than by exception, and the thin builder entry point under it. | `read_effect_scope`; `build_effect_scope` | mcp/src/agents_remember/memory/knowledge/effects.py:510-531; mcp/src/agents_remember/memory/knowledge/effects.py:534-541 |
-| The named-route check: a dangling named route is refused, the explicit ungoverned state is not. | `require_governing_route` | mcp/src/agents_remember/memory/knowledge/effects.py:544-557 |
-| The command-to-kind table read instead of the payload, so a caller cannot store a pair the registry would refuse. | `_COMMAND_DECLARATION` | mcp/src/agents_remember/memory/knowledge/effects.py:121-126 |
-| The operation and the generation this module's refusals and writes belong to. | `READ_OPERATION`; `REQUIRED_EFFECT_GENERATION` | mcp/src/agents_remember/memory/knowledge/effects.py:115-115; mcp/src/agents_remember/memory/knowledge/effects.py:116-116 |
-| The one place a relation write says which endpoint kinds exist, which this module reuses rather than paralleling. | `require_realization_claim_endpoint`; `require_effect_revision_endpoint`; `require_change_set_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:172-195; mcp/src/agents_remember/memory/knowledge/endpoints.py:274-305; mcp/src/agents_remember/memory/knowledge/endpoints.py:308-332 |
+- The one entry point that applies a command inside the caller's open transaction, and raises rather than returns so the whole batch rolls back. [1]
+- The measured order — validate at the envelope seam, then resolve on the validated payload, then check duplicates — before any row exists. [2]
+- The envelope row and its one sealed revision, written together. [3]
+- The one succession edge, inserted inside the successor's own batch and cycle-checked in the same transaction. [4]
+- The shape check: the nine admitted labels and the shared cardinality rule, reading no content, no diff and no text. [5]
+- The refusal of accepted origin data, with no promotion operation anywhere in the group. [6]
+- The generation gate, compared against the dataset's own recorded generation rather than the build's support. [7]
+- The four resolved reference families and the two deliberately unresolved ones. [8]
+- The duplicate scan, bounded to the one change set and comparing only label and the two reference sets. [9]
+- The shared acyclic walk over generation 8's table, so no second cycle rule grows beside the first. [10]
+- The derived read that refuses by state rather than by exception, and the thin builder entry point under it. [11]
+- The named-route check: a dangling named route is refused, the explicit ungoverned state is not. [12]
+- The command-to-kind table read instead of the payload, so a caller cannot store a pair the registry would refuse. [13]
+- The operation and the generation this module's refusals and writes belong to. [14]
+- The one place a relation write says which endpoint kinds exist, which this module reuses rather than paralleling. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The write path resolves identities inside one
 namespace's own store, and the generation it requires is that dataset's own.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T10:37+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): created this one-to-one card for the authored-effect record group's write path, preconditions and read. It records the measured validate-then-resolve-then-deduplicate order, the four resolved reference families against the two deliberately unresolved ones, the one succession edge written with its successor and cycle-checked in the same transaction, the group's own citation-ordering rule, the derived read that refuses by state, and the deliberate absences (no derived label, no derived preservation claim, no promotion). This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

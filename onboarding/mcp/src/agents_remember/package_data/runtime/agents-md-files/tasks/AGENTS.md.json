@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The template covers meta-questioning, task reframing, top-down/bottom-up design philosophy, assumptions, and truth gaps.\n\nAnchor: `## The Design Philosophy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3521cf246c78c710ec0a3725d63ac9f36ba5e3",
+            "content": "sha256:c6e39d02656b99e9b2b5f0a4ad70c295d6f561220619871d6407c9a68e9bdd89",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Evidence-first reasoning and representative examples are required when correctness depends on interpretation or risky structure.\n\nAnchor: `## Evidence-First Reasoning`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3521cf246c78c710ec0a3725d63ac9f36ba5e3",
+            "content": "sha256:8a9c8915d96beea466bda2e5f7bb4ac435354ac14d4581dce5903159e1f245b8",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The visible planning standard lists the context agents should surface before non-trivial implementation.\n\nAnchor: `## Visible Planning Standard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3521cf246c78c710ec0a3725d63ac9f36ba5e3",
+            "content": "sha256:b88a90c82031d1c271725751ade0405b47feec5a97107690aef6bcea875569da",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

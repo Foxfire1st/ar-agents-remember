@@ -2,14 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/projectors/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/projectors/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
 
 ## What This Area Is
 
@@ -172,38 +167,34 @@ identity arrives in-band, and pi and eve have no sub-agent threads.
   (review finding F1, in `active/projector.py`, keyed on the shared `turnId`/`clientId`). Pi shares one namespace
   across channels and claude has no native pages, so neither can produce the twin.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The engine route drives these mappers and owns everything stateful; the strict contract
 validates every emitted product; the evidence substrate defines the frame products; the runtime
 fixtures record which shapes are gate-observed. The mapper suite pins every grammar.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The engine consumes the mapper channel flags and converts `UnmappableShape` into preserved unknown-vendor evidence. | "or not self._mapper.uses_native_pages"; "if self._mapper.uses_transcript_echo:"; "or self._mapper.eager_native_continuation" | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:107-108; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:147-147; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:64-75 |
-| The store converges the split tool items these mappers emit. | "def apply_item(self"; "def _union_blocks(" | mcp/src/agents_remember/serving/conversation/active/store.py:165-249; mcp/src/agents_remember/serving/conversation/active/store.py:470-482 |
-| The evidence/native frame products the mappers parse. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/models/conversations/control_wire.py:267-278; mcp/src/agents_remember/models/conversations/control_wire.py:281-284; mcp/src/agents_remember/models/conversations/evidence.py:79-102; mcp/src/agents_remember/models/conversations/evidence.py:105-113; mcp/src/agents_remember/models/conversations/evidence.py:116-124; mcp/src/agents_remember/models/conversations/evidence.py:127-134 |
-| Historical evidence (retired with the d3610903 suite reduction): The runtime fixtures recorded the observed (never enabling) shapes per harness. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
+- The engine consumes the mapper channel flags and converts `UnmappableShape` into preserved unknown-vendor evidence. [1]
+- The store converges the split tool items these mappers emit. [2]
+- The evidence/native frame products the mappers parse. [3]
+Historical evidence (retired with the d3610903 suite reduction): The runtime fixtures recorded the observed (never enabling) shapes per harness. These removed artifacts provide no current execution or capability-enablement proof.
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this route. All three harnesses are local
 subprocesses reached through this repository's own adapters.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant cross-repo evidence found. | — | — |
+No relevant cross-repo evidence found.
 
-## Docs References
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. Each mapper names its schema
 authority (the codex app-server v2 generated protocol, the locked claude stream-json fixtures,
 the locked Pi RPC documentation); those are repository-owned and cited in the file sidecars.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this projector gate. | — | — |
+No configured domain documentation was available for this projector gate.
 
 ## File-Level Onboarding Map
 
@@ -341,81 +332,3 @@ rows that hide the genuinely unknown ones — an unclassified event still lands 
 
 Scope note: eve exposes **no native-history page**, so the mapper's `map_native_frame` fails closed
 rather than inventing one. Durable replay is the stream cursor's job, in the adapter's route.
-
-## Update History
-
-- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: recorded the fourth mapper. `eve.py` joins the
-  slice, `_EveProjector` joins `PROJECTORS` (so every registered harness id resolves a projector), and
-  the route gained the two-boundary rule it exists for: `turn.*` settles a turn, `session.waiting`
-  parks the session and must never mint a `MappedTurnOutcome` — otherwise a turn settles twice and a
-  cancelled turn displays as completed. Also recorded the streaming-text-revises-one-item rule, the
-  by-name silence set, the envelope-`type` discriminator, and that eve has no native-history page so
-  `map_native_frame` fails closed. Body updated on Hot Path Summary, What Belongs Here, Load-Bearing
-  Files, File-Level Onboarding Map and Child Overviews. Verification metadata moves to the leaf's
-  synced base `ff97072c`; the candidate is deliberately uncommitted, so the governed closeout stamps
-  the real code commit and no hash or fingerprint was invented here.
-
-- 2026-08-28T14:15+02:00 — Closeout-stamped the already documented Claude structured-interaction,
-  interrupt-correlation, and focused mutation-diff parsing changes against the landed candidate;
-  malformed vendor input remains preserved rather than guessed.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-
-- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the codex facade split and the `turn/diff/updated` silent-method routing. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-
-- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 5 table citations and normalized 6 source paths; no unresolved Tier-3 claims.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. The engine row
-  was repointed off the deleted `active/projector.py` onto the package that replaced it: channel-flag
-  consumption plus the `UnmappableShape` → `MappedUnknownVendor` conversion now reads at
-  `projector/native_ingestion.py` L148-L200 and `projector/echo_ingestion.py` L64-L66, L165-L178, and
-  the claim was reworded to name the three flags (`uses_native_pages`, `uses_transcript_echo`,
-  `eager_native_continuation`) it actually consumes. The mapper suite row now spans L84-L901 (the three
-  mapper test classes) in `test_conversation_active_projectors.py`, was L49-L553.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: both mappers' routers were split into narrow per-kind
-  routers with per-type leaves, and the facts they threaded became values — `ItemPlacement` and
-  `_LiveItemContext` (codex frame placement vs per-item context), `_CollabCall` (the single proof
-  that an item matched the documented collab shape), `_TaskIdentity` (claude, preserving the
-  displayed-vs-retained description distinction and the sparse-frame fallback rule). Purity,
-  schema-strictness, the `unknown-vendor` fallback and every mapped output are unchanged.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: Codex persisted
-  sub-agent activity now records historical existence without claiming current liveness;
-  `registered`/`running` becomes `unknown` on native-history hydration until current adapter
-  registry authority overlays status. Mapper purity and native item identity are unchanged.
-  Verification metadata remains pinned until closeout.
-
-- 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the sub-agent mapping grammars (codex
-  roster/collab, claude `task_*` correlation, the `parent_thread_id` demux context, the
-  `thread/started` silent-set change) in the Hot Path Summary and Structures list. Mappers stay
-  pure; protocol surface unchanged apart from the additive keyword. Aggregate route-index
-  generation remains manager-owned; verification metadata stays pinned (L7 uncommitted).
-- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental CRAP curation: recorded the
-  stable Claude mutation-diff facade, focused parser split, malformed-input
-  preservation, and original-position MultiEdit identity. Verification metadata
-  remains pre-commit.
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time frame-contract truths.
-  R1 (codex notification identity) — the native method is preserved as `EvidenceFrame.native_method`
-  and is the primary discriminator; `_SILENT_NOTIFICATION_METHODS` drops the known 0.144.5 startup/
-  status/telemetry burst by method (zero unknown-vendor rows on a stock open) and truly-unknown
-  methods are NAMED. R3 (claude 2.1.216) — `command_lifecycle` (strict 3-state, mints no row, drift →
-  visible malformed) and `rate_limit_event` (dropped telemetry) are learned first-class. Corrected the
-  Needs-Verification claude line to the never-probed contract reason (L5F R4 removed the version gate)
-  and recorded reviewer F3 (pi `turn_start`/`turn_end` unlearned rows) as a follow-on. Mappers stay
-  pure. Verification stays pinned until L5F closeout stamps the candidate commit.
-- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: added the durable disjoint-id-namespace invariant
-  (no mapper source changed) — codex's live notification channel emits UUID/`msg_*` ids while
-  `thread/read` returns positional `item-N` for the same settled turn, so the native-history twin the
-  engine's F1 filter suppresses can only arise on the codex hosted topology; the mappers stay pure and
-  correlate no channels (pi shares one namespace, claude has no native pages). The suppression itself
-  lives in `active/projector.py`, not here. Verification metadata stays pinned until L5 closeout
-  stamps the candidate commit.
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the governing overview for the
-  per-harness active projectors — the pure mapper protocol/registry, shared strict-parsing and
-  provenance primitives, and the codex/claude/pi frame grammars with native identity and
-  unknown-vendor preservation — after same-reviewer PASS-WITH-NOTES closed findings F1–F3.
-  Verification is blank because the new source route is uncommitted; closeout owns its first
-  source stamp.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/migration/mappings.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/migration/mappings.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -142,15 +132,15 @@ four functions.
 - **The registry version is recorded and never read.** `MAPPING_REGISTRY_VERSION` is declared so an outcome
   can name the registry that produced it, and no module or test in the shipped candidate reads it.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The registry is the join between the artifacts the parser observed and the record kinds the census payload
 models declare, and it is the module that decides which of those records an artifact can become. The rows
@@ -158,34 +148,26 @@ below cite the entry shape and what it declares, the four entries and their thre
 selector and its two limits, the wildcard and the fields every rationale refuses, the named unmapped state
 with its one production site, and the recorded facts this candidate leaves in the file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The registry's own statement of its status as data: §2.1's explicit mapping, §2.2's three forbidden moves, and the absence of any scoring function. | `ExplicitMapping`; `MAPPINGS` | mcp/src/agents_remember/memory/migration/mappings.py:1-26; mcp/src/agents_remember/memory/migration/mappings.py:54-74; mcp/src/agents_remember/memory/migration/mappings.py:80-149 |
-| The registry itself: four entries, each naming its source form, target record kind, supplied fields, provenance fields and rationale. | `MAPPINGS`; `ExplicitMapping` | mcp/src/agents_remember/memory/migration/mappings.py:77-149 |
-| The four mapping identifiers and the three record kinds they target, with the inventory row kind reached by two entries. | `MAPPINGS` | mcp/src/agents_remember/memory/migration/mappings.py:80-149 |
-| The record kinds imported from the census payload models rather than spelled as literals. | `CENSUS_INVENTORY_ROW_KIND`; `CENSUS_CLAIM_KIND`; `CENSUS_DISPOSITION_KIND` | mcp/src/agents_remember/memory/migration/mappings.py:33-37; mcp/src/agents_remember/models/knowledge/census.py:53-57 |
-| The selector: an equality test on the declared format and doc type, with an undeclared format refused before any entry is examined. | `select_mapping`; `DECLARED_FORMATS` | mcp/src/agents_remember/memory/migration/mappings.py:161-182; mcp/src/agents_remember/memory/migration/mappings.py:158-158 |
-| The wildcard entry, which matches any declared doc type including none and supplies only the disposition kind. | `MAPPINGS`; `artifact-to-disposition` | mcp/src/agents_remember/memory/migration/mappings.py:134-147; mcp/src/agents_remember/memory/migration/mappings.py:77-80 |
-| The claim mapping's boundary: original text and location supplied, no claim kind, no applicability and no assessment, because those are a curator's authored work. | `MAPPINGS`; `file-card-to-claim` | mcp/src/agents_remember/memory/migration/mappings.py:120-132; mcp/src/agents_remember/memory/migration/mappings.py:77-80 |
-| The route-overview entry and the reason it supplies an observed route path instead of a declared source path. | `MAPPINGS`; `route-overview-to-inventory-row` | mcp/src/agents_remember/memory/migration/mappings.py:100-119; mcp/src/agents_remember/memory/migration/mappings.py:77-80 |
-| The unmapped state as a value of the closed disposition vocabulary, and the empty identifier that distinguishes no mapping from a named one. | `UNMAPPED`; `NO_MAPPING_ID`; `mapping_identity` | mcp/src/agents_remember/memory/migration/mappings.py:44-51; mcp/src/agents_remember/memory/migration/mappings.py:185-188; mcp/src/agents_remember/models/knowledge/census.py:74-82 |
-| The one place that produces the unmapped disposition, so the state is chosen rather than defaulted at a call site. | `unmapped_disposition` | mcp/src/agents_remember/memory/migration/mappings.py:191-198 |
-| The second access path, by target record kind, which reaches a mapping whose selector pair another entry already claims. | `mappings_for_kind` | mcp/src/agents_remember/memory/migration/mappings.py:152-155 |
-| The registry version recorded beside every outcome, and the payload field — a disposition's rationale — that the wildcard entry deliberately leaves empty. | `MAPPING_REGISTRY_VERSION`; `rationale` | mcp/src/agents_remember/memory/migration/mappings.py:39-42; mcp/src/agents_remember/memory/migration/mappings.py:141-147; mcp/src/agents_remember/models/knowledge/census.py:222-236 |
-| Two entries declare the same format and doc type, and the first match in registry order wins, so the claim mapping cannot be reached through the selector. | `select_mapping`; `MAPPINGS` | mcp/src/agents_remember/memory/migration/mappings.py:161-182; mcp/src/agents_remember/memory/migration/mappings.py:80-133 |
-| The registry comment that counts three entries where the tuple declares four, and the format vocabulary derived from those entries, which has exactly one member. | `MAPPINGS`; `DECLARED_FORMATS` | mcp/src/agents_remember/memory/migration/mappings.py:77-80; mcp/src/agents_remember/memory/migration/mappings.py:158-158 |
-| The registry properties the migration test module does assert, and the supplied-field declaration they are asserted against. | `supplied_fields`; `MAPPINGS` | mcp/src/agents_remember/memory/migration/mappings.py:54-74; mcp/tests/test_migration_census.py:318-346 |
+- The registry's own statement of its status as data: §2.1's explicit mapping, §2.2's three forbidden moves, and the absence of any scoring function. [1]
+- The registry itself: four entries, each naming its source form, target record kind, supplied fields, provenance fields and rationale. [2]
+- The four mapping identifiers and the three record kinds they target, with the inventory row kind reached by two entries. [3]
+- The record kinds imported from the census payload models rather than spelled as literals. [4]
+- The selector: an equality test on the declared format and doc type, with an undeclared format refused before any entry is examined. [5]
+- The wildcard entry, which matches any declared doc type including none and supplies only the disposition kind. [6]
+- The claim mapping's boundary: original text and location supplied, no claim kind, no applicability and no assessment, because those are a curator's authored work. [7]
+- The route-overview entry and the reason it supplies an observed route path instead of a declared source path. [8]
+- The unmapped state as a value of the closed disposition vocabulary, and the empty identifier that distinguishes no mapping from a named one. [9]
+- The one place that produces the unmapped disposition, so the state is chosen rather than defaulted at a call site. [10]
+- The second access path, by target record kind, which reaches a mapping whose selector pair another entry already claims. [11]
+- The registry version recorded beside every outcome, and the payload field — a disposition's rationale — that the wildcard entry deliberately leaves empty. [12]
+- Two entries declare the same format and doc type, and the first match in registry order wins, so the claim mapping cannot be reached through the selector. [13]
+- The registry comment that counts three entries where the tuple declares four, and the format vocabulary derived from those entries, which has exactly one member. [14]
+- The registry properties the migration test module does assert, and the supplied-field declaration they are asserted against. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The registry is a tuple of values selected by
 string equality, every vocabulary it consults is an imported repository-local constant, and nothing here
 opens a path, reads a store or reaches another repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the explicit mapping registry. It records §2.1's requirement that a mapping be readable data rather than an inference at parse time, the four entries and the three census record kinds they target, the selector's equality test over two declared values with the undeclared-format refusal ahead of it, the one wildcard and the single field it supplies, and the two named states the module produces for absence — `UNMAPPED` as a member of the closed disposition vocabulary and the empty `NO_MAPPING_ID`. It also records what the rationales refuse: no entry supplies a claim kind, an applicability or an assessment, and the disposition mapping never supplies a rationale, so the importer has no field in which to interpret prose. Three recorded facts are stated as facts rather than corrected: two entries share a selector pair so the claim mapping is unreachable through `select_mapping`, the derived `DECLARED_FORMATS` vocabulary has exactly one member, and the registry's own comment counts three entries where the tuple declares four while the payload-model check its docstring describes is performed nowhere in this candidate. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_harness_control_claude.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fake stream ownership, relaunch frames and write ordering.\n\nAnchor: \"class _FakeClaudeTransport\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf7c8893dff6dca09491f55de24228a1d6930ac",
+            "content": "sha256:4cd4520ad10741353c4bd6b68a3001c30fb3b21d746eca9bc903bd496ca72d01",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adapter dependencies are injected explicitly.\n\nAnchor: \"def _adapter(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf7c8893dff6dca09491f55de24228a1d6930ac",
+            "content": "sha256:366ea988159dadcfb05e998e29bc6fc01d64cb807a0454db38ac3bf732baf18f",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Slash-command replay preserves the command/arguments representation.\n\nAnchor: \"def _replay(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf7c8893dff6dca09491f55de24228a1d6930ac",
+            "content": "sha256:7174885145b8f41d07675c1a18ab5fce15319c1aabc0ae29eeb28c48f7094c3b",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Operation identity is unique within the helper sequence.\n\nAnchor: \"def _operation(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf7c8893dff6dca09491f55de24228a1d6930ac",
+            "content": "sha256:1a541dc1cd5e8cf0abaf85e9c94e30d6c47a47632e97561a573cd1d5ed452ce7",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Model setters preflight the operation before invocation.\n\nAnchor: \"def _set_model(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf7c8893dff6dca09491f55de24228a1d6930ac",
+            "content": "sha256:bbd1d860509f92fd6aaebffeae8fe946315dedddebaf586a285922f8edf5f675",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Activity waits have a bounded failure path.\n\nAnchor: \"def _wait_for_activity(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebf7c8893dff6dca09491f55de24228a1d6930ac",
+            "content": "sha256:4a587aa700e2720a47628cecf0024e485ee50e13d6718d810d634d3cc10146bc",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 266
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

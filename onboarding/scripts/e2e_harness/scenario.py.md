@@ -1,15 +1,5 @@
 # scenario.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `scripts/e2e_harness/scenario.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T22:37:01+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `scripts/e2e_harness/overview.md` |
-
 ## Governing Overview
 
 [Ambient Role-Chat E2E Harness](overview.md)
@@ -58,40 +48,21 @@ canonical task document plus role.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The scenario's authority is its live public-boundary observations and stable requirement checkpoints. | `C01` | scripts/e2e_harness/scenario.py:56-108; scripts/e2e_harness/scenario.py:141-178 |
+- The scenario's authority is its live public-boundary observations and stable requirement checkpoints. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Ambient launch, structural chain, and canonical brief are separate acceptance phases. | `_launch_architect` | scripts/e2e_harness/scenario.py:181-415 |
-| Vacancy, queued rebinding, and post-replacement routing are independently asserted. | `_check_vacancy` | scripts/e2e_harness/scenario.py:417-531 |
+- Ambient launch, structural chain, and canonical brief are separate acceptance phases. [2]
+- Vacancy, queued rebinding, and post-replacement routing are independently asserted. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| All task and repository addresses come from the disposable fixture. | `_fixture_addresses` | scripts/e2e_harness/scenario.py:616-622 |
-
-## Update History
-
-- 2026-08-30T22:37:01+02:00 — 260821-ARSPAWN-L5 added the fixture-start checkpoint and
-  exception-to-checkpoint wrapper so every unexpected stage failure retains expected, actual,
-  requirement, and corrective-owner evidence.
-
-- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
-  canonical anchored citation format. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:59:40+02:00 — 260821-ARSPAWN-L5: added the explicit identity-free
-  same-seat repeat, exact ambient/hosted 0.151.0 assertions, and separately retained teardown
-  evidence. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created onboarding for the phased real-consumer spawn and replacement scenario. Verification metadata remains closeout-owned.
+- All task and repository addresses come from the disposable fixture. [4]

@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared resolver and `LeafRefResolutionError` payload facts, plus the `LeafRefStatus` alias `error.status` is typed as.\n\nAnchor: \"LeafRefStatus = Literal[\"; \"class LeafRefResolutionError\"; \"def resolve_leaf_ref(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:92127721ca7213e4c704a7d420dff8df47cb31852746b89e56f7fe1d0597e379",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/models/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:9f8fa1a9ed191ad793197c858a17219f7a748276de2e4cca28c33d0651c9ae5f",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:43366334bdfc056d4e67e0f781f1515d874b21f176c844b5cd0295266ff04e73",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Start contract builder that calls these helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
+            "content": "sha256:9e69e27071001caeb167f23ef3f07e17e174686965f530071c4521f5a431469c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_start_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on.\n\nAnchor: `ContractError`, `_task_vocabulary`, `ContractCells`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:d691052aa2ddd33bb7e551016a406704876a55fe73978c266b4c70fcb015b0ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractError"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_vocabulary"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:6233fd7a927ec9708dcd82a543270f16b9d64d74115ad83af7efcb864a6c3ab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractCells"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:b701690fa31ab142e0b84c9ec93e4cf3f74d8eafc5e0b94a771f65ff7216d53a",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:c36973447a984987b2c1eff20f85d946ed00cded00f21df2358d95cd70fd78a5",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:0749af96a39a4f9c9c3e6f215ae2d6c41515e5938ca0cfe68edd204dd337733c",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

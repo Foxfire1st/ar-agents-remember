@@ -1,0 +1,296 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/SessionStage.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixed header, empty identity, handoff status, and popover bridge.\n\nAnchor: \"data-stage-header\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9630b4b378858e59322c88e524b4938faf55e02",
+            "content": "sha256:006abb8e283d0b2756d4043f68e873d4017e9844090202035b5bf9f95cd26b60",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionStage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f9630b4b378858e59322c88e524b4938faf55e02",
+            "content": "sha256:6c53797390077dc8e2441c0d6272a22093e868f3e631c14b2212b8d0aa3794c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "handoffNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The `HeaderStrip` suite asserts no `WorkingLine` slot in `SessionStage` chrome, covers handoff, and covers explained empty identity.\n\nAnchor: \"reserves NO WorkingLine slot\"; \"shows the focus-handoff note\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80203609074fd6c7a78de917b31ff95465667643",
+            "content": "sha256:3f2cb15d5386cf16270d6335116317db143d69a1d774a9cb312255d3952c4174",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "80203609074fd6c7a78de917b31ff95465667643",
+            "content": "sha256:6f3a6704e3fe1b4e2f28c856dafa26d3ef64fce38dca708a7e0ff88631f54d65",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The header line rendered for the focused seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11cb9d3d86d4edd9dabeea9aeda87d65ce94cdb4",
+            "content": "sha256:7328d308ae5c5d874810f6fd3ecde1818c6d35501bfd4f15ce3a3de38c6b1d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeaderStrip"
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11cb9d3d86d4edd9dabeea9aeda87d65ce94cdb4",
+            "content": "sha256:e857858a26585402bd795058185bb80a323e3b7f0cdafd7d65dc3fa246ab8bfc",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`SessionStage` owns the fixed header and the child stage-body slot below it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9630b4b378858e59322c88e524b4938faf55e02",
+            "content": "sha256:006abb8e283d0b2756d4043f68e873d4017e9844090202035b5bf9f95cd26b60",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionStage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`SessionsView` supplies `ChatsStageBody` to that child slot.\n\nAnchor: \"cockpit={data.focused ? data.perSession[data.focused.id] : undefined}\"; \"onToggleDiagnostics={handlers.toggleChatsDiagnostics}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:cbd7fdc1054c49ca8637b4fda77e0dc64b67714c94bfbb289b80b5f1715d7adf",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:75865871b0bafff967987009f8c7f3dc2dafc4d6b0a520598cd106e9d0396c7b",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 260
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`SessionsView` chooses `ConversationWorkingLine` when the focused live conversation is a harness.\n\nAnchor: \"focused.kind === \\\"harness\\\" && focusedConversationLive\"; \"<ConversationWorkingLine\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:3d956f1e2604a89c42bf719729a7a28bdc53556d8f506c4ced88e312916a606b",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a807afd1b2c1db7d9df1b668d1eaa699b79b182d",
+            "content": "sha256:d1d8cb167cd5fc9c522c29adb8a63229fa6d631c03fa9962971a531c47e204e5",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "skills/w-02-light-task-workflow/master-template.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:79f15591aac13e045ecba7485affb19568de2a17a37875e08a7503ea5d3e6c58",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`SessionsView` chooses `WorkingLine` in the other branch of that focused-conversation condition.\n\nAnchor: \"focused.kind === \\\"harness\\\" && focusedConversationLive\"; \"data-testid=\\\"sessions-stage\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:3d956f1e2604a89c42bf719729a7a28bdc53556d8f506c4ced88e312916a606b",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:d46b9042f2ddd082323ff73e99ec65e52c007b7ad8655c2b5c6b4c0689712cab",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`SessionsView` places `InteractionBar` after the selected harness/non-harness working-line slot.\n\nAnchor: \"data-slot=\\\"working-line\\\"\"; \"focused.kind === \\\"harness\\\" && focusedConversationLive\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:a8bdf281b0c1230b260a7e270f9eb77a2caa4570c1b0d673f3db6319a05c72ce",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:3d956f1e2604a89c42bf719729a7a28bdc53556d8f506c4ced88e312916a606b",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "content": "sha256:144a8c48a1b10e50d23068b4145fb1e2776f98f712c895549754ccc3d41d565a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The focus selectors that target `data-stage-header`.\n\nAnchor: \"[data-stage-header]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "773a54dd0e6201011e17b6dbca73b3d2e25ca148",
+            "content": "sha256:f0ee395b189e203fcd92081bfec82473985c431c70f02680f23fbbcd7d18970b",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/data/keymap/focus.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`SessionStage` exposes the assistive handoff status when a handoff note exists.\n\nAnchor: \"handoff ?\"; \"role=\\\"status\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9630b4b378858e59322c88e524b4938faf55e02",
+            "content": "sha256:1cf84836140b4a3609b752802a68d252629a257e3ba53169b065d9cd4023fa3a",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

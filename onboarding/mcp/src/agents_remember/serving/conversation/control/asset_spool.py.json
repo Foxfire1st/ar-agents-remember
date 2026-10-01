@@ -1,0 +1,237 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/asset_spool.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `AssetReference` type and `read_asset_bytes` this module produces/consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:5ef6aa815c0aa0160332df6071787d7d6f9264f8dd05fd08ce643c58e588d9a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssetReference"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:fe244ba1cea35e073ce6d2aa0a74656640b9d338a590cc5a198a4b77032646db",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_asset_bytes"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lifecycle policy that stages/exchanges/deletes through this boundary: `stage`, `submit`, `attachment_status`, `rebind`, `mark_recoverable`, `delete_recoverable`, plus the expiry sweep, live-store eviction, and spool byte deletion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:c17ae6d08fe2778308ea9c902d088b2e398c8678714ef96ba472db0445cc8908",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:66f5308586bd86584f2254688c1b2aae8581e618a8de8d72b876b879bc62d74f",
+            "locator": {
+              "kind": "symbol",
+              "name": "submit"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:aa8b8b3306a6c635eae440cb887df48592add4158df90947459ab48507d42cac",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachment_status"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:5dccbe49c8725fcca541cac86ca933b9bc823cc7041135a351ae04cff2a8ff83",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebind"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:46405548d8a07ff79ce17bcb77989ca97c89e35738425dbdd0c438c2103abd15",
+            "locator": {
+              "kind": "symbol",
+              "name": "mark_recoverable"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:d2f5bd00579415c8f4e6251200cfa043c7a9707346b2627f93ed75e3d111a132",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_recoverable"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:3122f1ada9fefd7f0a3b589f16fb366ca1792aebe5c71fb6171e2eeeb19af6d5",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:587f91f5ca4b90acb06156904e808e3f48559abae2f0d3b1546ce34daf31cbd8",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:279e722d5b438af5867dcbeb96935a40c0684340f5b327ad0580ffdf05403c38",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:0c8d6f9ee4ef378894ee854e444c5e7d34a2a1ca2bbdc97be9abcf6bd7271ef7",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 375
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:830f0e22c6955db0aa9fcbdb04f0f0f9855065caa07ed18cbb8fa8f01f9b0a4f",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b7e98297b220fc460b326bbfa5293847a2ad185",
+            "content": "sha256:033d7bfe596fbca7bcbdf7da6034968a9a936f5e3f11451b50ba6ae0e62637f3",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 484
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `AttachmentCapability` limits `validate_upload` enforces (allow-listed MIME types, `max_bytes`, `max_count`, `description` required/fallback, and the supported-state actionability validator).\n\nAnchor: \"class AttachmentCapability(FeatureCapability):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c849c256e95887423d0c54ae9b3b657666fb0be",
+            "content": "sha256:4d78634ce52e294237596fb7246000d55ba1acd076c2ac483d9c49a72c0e6483",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/models/conversations/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The upload validator applies those limits at the spool boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a8a5074b72ac58a652c54b0830c0f05c5c47bb2",
+            "content": "sha256:4bd4b323e1bf341d36a4678fa2910099b8012dce7f9f841a17591368051d0997",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_upload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a8a5074b72ac58a652c54b0830c0f05c5c47bb2",
+            "content": "sha256:7be3ee365e624f7fb3055e1d2eff43037026738dec9f421c89f3de1637c50024",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

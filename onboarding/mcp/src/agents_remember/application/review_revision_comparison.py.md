@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_revision_comparison.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_revision_comparison.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -123,49 +113,39 @@ invariant identities, though the code reads the same `fetch_predecessor_edges` u
 the before-empty + multi-head-after corner routes to ambiguity by construction with no dedicated
 case; dashboard rendering of `revision_selection` is out of packet scope (R25's assembly).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own docstring and
 policy, the four published names, the pure head rule, the entry point's population source, the
 three-way decision, the invalid-graph read, the one-sided reuse, and the ten cases that measure it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the one rule, what it reads, what it returns, and why it is its own module. | `select_subject_revisions`; `revision_heads` | mcp/src/agents_remember/application/review_revision_comparison.py:1-31; mcp/src/agents_remember/application/review_revision_comparison.py:144-187; mcp/src/agents_remember/application/review_revision_comparison.py:81-94 |
-| The published surface: one value, two readers, one entry point. | `__all__` | mcp/src/agents_remember/application/review_revision_comparison.py:51-56 |
-| The reviewed identity's head selection with the union items its statements render from — and the one-sided item the R06 rendering already reads. | `SubjectRevisionSelection` | mcp/src/agents_remember/application/review_revision_comparison.py:63-78 |
-| The whole rule in one pure function: heads are members no other member names as predecessor; both-endpoints-in-population filter; sorted order as rendering determinism only. | `revision_heads`; `_touching` | mcp/src/agents_remember/application/review_revision_comparison.py:81-94; mcp/src/agents_remember/application/review_revision_comparison.py:291-303 |
-| The read-only edge read: one snapshot opened read-only, both predecessor tables, closed before returning. | `read_snapshot_edges` | mcp/src/agents_remember/application/review_revision_comparison.py:97-110 |
-| The one entry point: populations from the comparison's own union, edges from each snapshot's own authored relations; no-identity selector and empty populations as explicit non-pairs. | `select_subject_revisions`; `_populations`; `_side_population`; `_selector_identity` | mcp/src/agents_remember/application/review_revision_comparison.py:144-187; mcp/src/agents_remember/application/review_revision_comparison.py:190-213; mcp/src/agents_remember/application/review_revision_comparison.py:256-264; mcp/src/agents_remember/application/review_revision_comparison.py:267-288 |
-| The three-way routing: invalid graph first, one-sided for a known-empty side, combine for two nonempty sides. | `_decide`; `_invalid_graph_detail`; `_unretained_endpoint` | mcp/src/agents_remember/application/review_revision_comparison.py:216-234; mcp/src/agents_remember/application/review_revision_comparison.py:306-331; mcp/src/agents_remember/application/review_revision_comparison.py:334-365 |
-| Two nonempty sides: cycle with no head fabricated, multi-head ambiguity with no pair, unique heads compared. | `_combine`; `_compared`; `_ambiguous`; `_unresolved` | mcp/src/agents_remember/application/review_revision_comparison.py:237-253; mcp/src/agents_remember/application/review_revision_comparison.py:378-407; mcp/src/agents_remember/application/review_revision_comparison.py:470-506; mcp/src/agents_remember/application/review_revision_comparison.py:509-526 |
-| A known-empty side stays an R06 addition/removal with the nonempty side's unique head — and a crowded nonempty side is ambiguity, not a one-sided side. | `_one_sided` | mcp/src/agents_remember/application/review_revision_comparison.py:410-467 |
-| Operands keyed by stored revision identity, never by stream position or both-sides presence. | `_item_with` | mcp/src/agents_remember/application/review_revision_comparison.py:529-552 |
-| The adapter's one call site: the selection computed once in `compose_review` from the comparison's union items and the two snapshots' own authored edges, rendered by the pane. | `select_subject_revisions`; `_knowledge_pane` | mcp/src/agents_remember/application/knowledge_review.py:471-471; mcp/src/agents_remember/application/knowledge_review.py:968-1020; mcp/src/agents_remember/application/knowledge_review.py:1005-1057 |
-| The recorded value the policy returns into, with the state/pair/heads validators that make a fabrication unrepresentable. | `ReviewRevisionSelection` | mcp/src/agents_remember/models/knowledge/revision_selection.py:54-150 |
-| The ten cases that measure the policy through the real comparison: two chain defaults, selectable history, two forks, one-sided removal, cycle, dangling edge, order-independence, and the pane's own statements. | `test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head`; `test_a_fork_on_the_after_side_is_an_explicit_ambiguity`; `test_a_successor_cycle_is_unresolved_and_names_no_pair`; `test_heads_come_from_successors_not_from_sorted_order`; `test_the_review_pane_renders_the_selected_head_pairs_own_statements` | mcp/tests/test_knowledge_review_revision_selection.py:259-279; mcp/tests/test_knowledge_review_revision_selection.py:333-345; mcp/tests/test_knowledge_review_revision_selection.py:416-466; mcp/tests/test_knowledge_review_revision_selection.py:524-535; mcp/tests/test_knowledge_review_revision_selection.py:571-615 |
+- The module's own statement of the one rule, what it reads, what it returns, and why it is its own module. [1]
+- The published surface: one value, two readers, one entry point. [2]
+- The reviewed identity's head selection with the union items its statements render from — and the one-sided item the R06 rendering already reads. [3]
+- The whole rule in one pure function: heads are members no other member names as predecessor; both-endpoints-in-population filter; sorted order as rendering determinism only. [4]
+- The read-only edge read: one snapshot opened read-only, both predecessor tables, closed before returning. [5]
+- The one entry point: populations from the comparison's own union, edges from each snapshot's own authored relations; no-identity selector and empty populations as explicit non-pairs. [6]
+- The three-way routing: invalid graph first, one-sided for a known-empty side, combine for two nonempty sides. [7]
+- Two nonempty sides: cycle with no head fabricated, multi-head ambiguity with no pair, unique heads compared. [8]
+- A known-empty side stays an R06 addition/removal with the nonempty side's unique head — and a crowded nonempty side is ambiguity, not a one-sided side. [9]
+- Operands keyed by stored revision identity, never by stream position or both-sides presence. [10]
+- The adapter's one call site: the selection computed once in `compose_review` from the comparison's union items and the two snapshots' own authored edges, rendered by the pane. [11]
+- The recorded value the policy returns into, with the state/pair/heads validators that make a fabrication unrepresentable. [12]
+- The ten cases that measure the policy through the real comparison: two chain defaults, selectable history, two forks, one-sided removal, cycle, dangling edge, order-independence, and the pane's own statements. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The module reads two snapshot files of one
 repository's candidate and carries no identity that ranges beyond the repository namespace the
 comparison was opened under.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 3 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_knowledge_review_revision_selection.py`). One extra range already dead at the base, which the fixer's normalisation left unshifted, was shifted exactly (`knowledge_review.py:1002-1054` → `1005-1057`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **L7-aftershock citation repair: the adapter call-site row re-cited to the landed declarations** (`select_subject_revisions` import `:90-93`, `_knowledge_pane` `:712-759`). Wording retained; no stamp advanced.
-- 2026-09-22T10:40:00+02:00 — 260921-ICR-L7 curator (uncommitted change set on `ar/260921-icr-l7`, base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **created.** The module is new in this leaf and this is its one-to-one card. It records the head-selection policy `ICR-R07@v1` owns (heads from authored predecessor edges only; unique heads compare head-to-head; known-empty sides stay R06 additions/removals; multi-heads, cycles and dangling edges yield explicit ambiguous/unresolved selections that still list every head and retained revision; intermediate revisions selectable on demand through the comparison's own per-side selector), the seam (the adapter resolves, calls and assembles; this module owns the rule; no alias because the replaced both-sides preference was private), and the boundaries the packet states (no order/presence/timestamp/similarity participation; kind-agnostic; R08/R09 movement display and R25 browser rendering out of scope). Every range was measured against the 552-line candidate module. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate and no commit contains the bytes a stamp would claim to have verified. The recorded working candidate states what was actually read; closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

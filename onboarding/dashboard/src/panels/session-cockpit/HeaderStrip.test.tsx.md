@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -48,29 +38,25 @@ The anatomy-order and mounted-control-slot cases are the R10/L4 regression net; 
 the R7 honesty net; the purpose-built derived-tier rows are the R7 control-state-gating net (they
 must not be swapped back to shared FLEET rows — finding 7). Test-only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two components under test. | "export function HeaderStrip({", "export function SessionStage({" | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:132-132; dashboard/src/panels/session-cockpit/SessionStage.tsx:46-46 |
-| The stage container (slot order, handoff note, empty identity). | "export function SessionStage({" | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-46 |
-| The tier machine whose derivation the R7 cases pin. | `launchTier`, `TIER_SENSE` | dashboard/src/data/launchEvidence.ts:29-41; dashboard/src/data/launchEvidence.ts:44-51 |
+- The two components under test. [1]
+- The stage container (slot order, handoff note, empty identity). [2]
+- The tier machine whose derivation the R7 cases pin. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## 260715-FEUI-L5 Reliable Submit Delta
 
@@ -81,31 +67,3 @@ expanded cockpit state while keeping model/effort header assertions independent 
 
 The header tests now pin the absence of duplicate provenance/seat chrome and the accessible
 unclassified-state fallback, alongside existing identity and control rendering checks.
-
-## Update History
-
-- 2026-08-03T02:43:48+02:00 — W3-B04 curator: curated 3 table citations and 3 prose citations (6 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
-
-- 2026-07-24T13:17:17Z — Curator: recorded header declutter and state-accessibility regressions;
-  verification fields remain pre-commit.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: updated the freshness-honesty pin — the no-pane
-  case now asserts the `ws —` placeholder COLLAPSES (`not.toContain("ws —")`) rather than rendering a
-  bare dash (R3); the sweep-bound tooltip pin is unchanged. Verification pinned to the leaf base
-  (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5 fixture-only refresh; no HeaderStrip semantic impact.
-
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2 replaced the empty-slot assertion with proof that
-  the reserved controls segment mounts one `ModelEffortControl` and its trigger; fixture state
-  also carries the L4 snapshot/echo defaults. Verification metadata remains pinned to the
-  contract base until code commit.
-- 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R7, fix round 1 finding 7): the derived-tier assertion
-  rewritten in place onto a purpose-built claude/ready row asserting "(model-validated)" + the
-  badge tier (the L2 `worker-l4` fixture quirk can no longer silently flip it), plus a new
-  starting→"(requested)"/pending case. This is the R7 behavior change working as specified — the
-  old `(requested)` pin only held because L2's tier source was the store default. Verification
-  metadata pinned to the leaf base until closeout stamps the L3 code commit.
-- 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S5 (R11): HeaderStrip anatomy/empty-slot/
-  grammar/freshness/provenance cases + the SessionStage working-line-slot position, handoff note,
-  and explained empty state. Verification metadata pinned to the leaf base until closeout stamps
-  the L2 code commit.

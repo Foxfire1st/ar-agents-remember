@@ -1,0 +1,86 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation",
+  "references": {
+    "1": {
+      "note": "Selected intent and command CAS remain outside the transport package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
+            "content": "sha256:af8f8bd40126af5bbfffe0adbf5408bc38e685040c666f58286944e8e97e6679",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_preparation_intent"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selected bundle contains code and one memory-content output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:326eaf8a79569e344a853bcd4721046c38c716de24511f52c1b85bb9430d383e",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedMemoryOutputs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing memory reuse binds raw Git facts and a separately certified content tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cd60f42499bfabcd82b0e2a42808e6a68cc4ef",
+            "content": "sha256:707612708ed2bcdd82bc8bdc84963a50bb5865f2aac7ef9921e2d4f546332c24",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_existing_memory_proof"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Final publication proves and publishes the pair, then refreshes the cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:7111b512bf40b6b16264b9052ba14893a22752ddd0ca6f963fcd15b6cb317319",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_prepared_closeout"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:753fb858f6d2cb6846bb7c929ca0fea654f37212808de45ffd366647b53136b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publication_intent"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

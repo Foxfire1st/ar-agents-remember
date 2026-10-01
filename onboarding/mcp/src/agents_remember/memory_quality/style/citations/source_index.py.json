@@ -1,0 +1,326 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A generation is leased with query telemetry and its candidate selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:d75ede9d110165edf875b7cda7433ba33247624ebead81e20bef10681fe190af",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryIndex"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The default walk's population comes from Git, not from what the skip lists happen to not name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:608d4a0914d37ff3a3b90b61ab9563100283ac983d102436f91db62161fb0b58",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_candidate_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A directory with no candidate beneath it is not part of the candidate and is pruned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:0b64b2ba24183a75fcf74564b269b806f9c9491fa295689bb91fb1e09a025123",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_directories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The walk's directory and file pruning decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:0380e87e9605ec4abd776680bd0e97c95dfc52c04d90ee9f15c08bd958537205",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walkable_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "One walked file is indexed only when it is inside the Git-reported candidate set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:cb5f85f2594c83259b691ad878eca176f33185d2652f07313549b3d5d21ff5ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_indexed_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The walk's exclusion decisions, split so a directory rule and a file rule are asked separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:7c0a04e588aaf41a723e09771644373981328e817c0256cc8e58da790ba09cac",
+            "locator": {
+              "kind": "symbol",
+              "name": "WalkScope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:5e2cc47b4c2176571f3dd05221cb15fb56e68814a1573356b5d7bf46434fae94",
+            "locator": {
+              "kind": "symbol",
+              "name": "excluded_directory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:537db3923dfdf293f8a2d63afb922b1197a0b4c93ccec9b4b76d3b99ea74ceac",
+            "locator": {
+              "kind": "symbol",
+              "name": "excluded_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The fallback walk that descends when a negation exists instead of pruning the directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:36c2adbb45205468e7bc1bfd31e023298b36a9df4fa2daaf7845af838ba3e38e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walked_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The authority recorded for the ignore file: Git applied it, the register did, or there is none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:ee020cdc673529ec2a2df1657837ca6f7c78222de6b1d56fbab7c1d938640b1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gitignore_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The Git population this walk asks for, and the bounded executor it uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:87f876d7fba393da591ef709d4defe2bc32a213ba91020032479fca65c83d943",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitRunnerOptions"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:4e9712efdc5e47916c2dbb622ba70183d1df366b5fb155e7aaba5c37c0972fe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_METADATA_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Managed authority or root-keyed fixed slots select cache storage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:9bc106a54e4fb97afec79401f56b8567d59f75fdb50c1ea6b1361a6d58f03d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cache_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Default acquisition validates, refreshes, or rebuilds under the existing locks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:e2f343ff9a4e6af1114910f1ea83d70c0a16ee1c83b605b21883a6f8893eb1c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_repository_index"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Frozen acquisition uses bounded published metadata and refuses an unavailable expected snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:26c95aa7883326d7ce8ef67d7c4d1d983b5f464ba0127c7382cf2721bdc83130",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_expected_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The generation a lease or a fresh build is served from, carrying the state that produced it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:c0f44116de9ee0fb7563f33fd876878dba0462f6400dc466e8c5a9ab4ccb21c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_repository_index"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Readiness must match both roots and the exact candidate selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:ec0fca8eec387f5e4c62f4d6f61eb837c0fba551e921f25964e25cf6283c6b9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ready_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Changed source identities drive content and metadata refresh decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:4a9fc1aa136ab01bc7a679a931d3db9bb89f33f9985c885294f818d15c1a2a64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A bounded, validated temporary database is tied to repeated source observations before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:6675a9fb0b489a9c3735abf5fff27ee3424623b1d8125b2e94b8210509acf889",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_once"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Candidate census and ordinary filesystem traversal retain separate selection semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:f1172f52c4ea6f8b5a705a546aa794ffb9241fa9d812c1799874406c504dbe02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

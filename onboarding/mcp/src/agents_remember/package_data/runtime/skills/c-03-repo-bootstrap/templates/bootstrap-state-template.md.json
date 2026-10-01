@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-state-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The state template records bootstrap mode, memory root, onboarding root, branch, topology, source inventory status, and phase status across the full `c-03-repo-bootstrap` skill lifecycle.\n\nAnchor: `# Bootstrap State — <repo>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
+            "content": "sha256:b6931d2cae5cf7d89b80283c8e29d2ed94d08db11995a6f74da7094fb5f027f7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The state template tracks areas, governing routes, slice maintenance, waves, decisions, parking lot items, blockers, deferred files, closeout boundary status, and next action.\n\nAnchor: `## Areas`; `## Governing Routes`; `## Slice Maintenance`; `## Waves`; `## Decisions`; `## Parking Lot`; `## Blockers`; `## Deferred Files`; `## Closeout Boundary`; `## Next Recommended Action`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0514c95ee8e115043f9cbc9aed04159e39348c70",
+            "content": "sha256:016804f9b28ead43f10e620ef044adc6b28dff143a4b9598176e5023a76c76f7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-03-repo-bootstrap` skill requires every bootstrap to maintain `bootstrap/STATE.md` from this template.\n\nAnchor: `## Bootstrap State File`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c01b60378194af6bdc864a84f3d1fb04a6b1f246",
+            "content": "sha256:d28753034da47c3c724baf4bbec46806a687e21247e06c564194b0c9d5af0425",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 428
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,208 @@
+{
+  "path": "dashboard/src/data/submitClient.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Transport parsing, deadline, reconciliation, submit driver, and store integration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:269195bec62fb3349bf2ea4bcf434897dc523114305a90319a2aceb20636207d",
+            "locator": {
+              "kind": "symbol",
+              "name": "createFetchSubmitTransport"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:9a751e442fb2135b1fd6ba172b0a0bbddd8dfdd69de9a7261f303a37dedf0362",
+            "locator": {
+              "kind": "symbol",
+              "name": "executeReliableSubmit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:9a4c107a2ff65b96c7008edd2c30f79bc2271f9275e196477f6707742970ddf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "continueReliableReconcile"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:04520662cd470a9cae56de08ebae74a34cf77c30e390bab1621927c10a9af60f",
+            "locator": {
+              "kind": "symbol",
+              "name": "submitSessionText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The evidence state machine supplies receipt/reconcile transitions and retry scheduling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fc943903f2a407ffb09523813734595d4bf10b2",
+            "content": "sha256:c6817bce6727aaef3b56abe2c4c16643ac79d7118b38b96bc8c1547dcc618cb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "reduceReceipt"
+            },
+            "path": "dashboard/src/data/submitMachine.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3fc943903f2a407ffb09523813734595d4bf10b2",
+            "content": "sha256:a617f0b088021e808b3deb0bbe714833cd2509a3303bc6d79caea7066d598bf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "reduceReconciliation"
+            },
+            "path": "dashboard/src/data/submitMachine.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3fc943903f2a407ffb09523813734595d4bf10b2",
+            "content": "sha256:1f1fd9a875b20304d0dccc737b679a27d3398068f7b9a0ea0a0824b9464a236d",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcileDelay"
+            },
+            "path": "dashboard/src/data/submitMachine.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The browser authority client owns polling, withdrawal, and recovery after initial delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e62d3c995f9eae68a7efc0cb2afa1a2a075cc492",
+            "content": "sha256:5f891de881b0e7558a0d7613a1361699c12e1e812a621e43d3c0b629c46cd5a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensureSubmissionLifecyclePolling"
+            },
+            "path": "dashboard/src/data/submissionLifecycleClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68fe8b8888f23d00845c97687b3f4196df2474ab",
+            "content": "sha256:bda119625a911cefca2d34b8779bdf9c5e611f65a2983c7eaead905aa18e578f",
+            "locator": {
+              "kind": "symbol",
+              "name": "restoreWithdrawnRecovery"
+            },
+            "path": "dashboard/src/data/submissionWithdrawal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68fe8b8888f23d00845c97687b3f4196df2474ab",
+            "content": "sha256:e3f74f15860a9bc4046dc032d941fbbe5461cdc435e8d284da402ee83fc32e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "withdrawLastQueuedSubmission"
+            },
+            "path": "dashboard/src/data/submissionWithdrawal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Tests cover safe certificates, ambiguous loss, no-resend reconciliation, readiness, and provenance.\n\nAnchor: \"retries only an explicitly proven pre-dispatch loss\"; \"treats a browser rejection as ambiguous and reconciles without resending\"; \"never resends an unclassified post-dispatch loss; it reconciles the same id at 1s → 2s\"; \"allows composing before ready but submits only a ready controlled session\"; \"records a background queue receipt without clearing or joining composer pop-back state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33bd92d5d8227cd2414087d2386e5be8612540b2",
+            "content": "sha256:fe286af3c1859bc137736b4b04bd7ac94bef654442067c1a12710c1eb483ee2f",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "dashboard/src/data/submitClient.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "33bd92d5d8227cd2414087d2386e5be8612540b2",
+            "content": "sha256:38b55056dba1da841befc860e5541ca310f40a5f1f15f7bc69c86fa2e6b6e0ae",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "dashboard/src/data/submitClient.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "33bd92d5d8227cd2414087d2386e5be8612540b2",
+            "content": "sha256:e33870631700d5eafa06665258ca18c40af090cbb7b285a115ad39881dc5405d",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "dashboard/src/data/submitClient.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "33bd92d5d8227cd2414087d2386e5be8612540b2",
+            "content": "sha256:835a9e934ad79b9a5dad8fdcd3513857457a91171845ac486a33494d78879f50",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 432
+            },
+            "path": "dashboard/src/data/submitClient.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "33bd92d5d8227cd2414087d2386e5be8612540b2",
+            "content": "sha256:0f111cf1470ee762883ab07e37f758436fb40c95dd74db1c17742188422e206a",
+            "locator": {
+              "end": 664,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "dashboard/src/data/submitClient.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

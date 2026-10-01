@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/context/__init__.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/context/__init__.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [mcp/overview.md](overview.md)
@@ -53,44 +43,26 @@ paths while the host-side layout remains provider-owned.
 - Keep old public symbol names available here while callers use the direct
   `providers.context` facade.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No live external documentation was needed for this closeout note. Provider
 version pins and patch logic are represented directly in source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is needed to prove the current package-local provider layout helpers. | n/a | n/a |
+No relevant external documentation is needed to prove the current package-local provider layout helpers.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Same-repository source defines the active provider layout and patch behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Shared provider context helpers live in the common context module. | `ContextProviderError` | mcp/src/agents_remember/providers/context_common.py:18-19 |
-| CGC provider context constants, layout, cleanup, and patches live under the CGC provider package. | `# mcp/src/agents_remember/providers/cgc/context/ - CGC Context Overview` | onboarding/mcp/src/agents_remember/providers/cgc/context/overview.md:1-63 |
-| GrepAI provider context layout, live-root workspace config, and artifact cleanup live under the GrepAI provider package. | `# mcp/src/agents_remember/providers/grepai/context/ - GrepAI Context Overview` | onboarding/mcp/src/agents_remember/providers/grepai/context/overview.md:1-58 |
+- Shared provider context helpers live in the common context module. [1]
+- CGC provider context constants, layout, cleanup, and patches live under the CGC provider package. [2]
+- GrepAI provider context layout, live-root workspace config, and artifact cleanup live under the GrepAI provider package. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed; provider package behavior is mediated
 through this package-local code and provider install/runtime modules.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Provider setup and lifecycle modules import this facade for runtime layout and install work. | `ProviderSetupRequest` | mcp/src/agents_remember/providers/provider_setup.py:57-120 |
-
-## Update History
-
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 8 citation findings; scoped check passed.
-
-- 2026-06-10T07:30+02:00 — Shared helpers moved out to `providers/context_common.py`: importing `providers.context.common` initialized this facade, whose star-import of a mid-init `cgc.context` collected nothing and left the facade permanently missing every CGC name (import-order-dependent ImportError; GitHub #58). The facade now star-imports `context_common` alongside the two provider packages, and nothing loaded during their package inits re-enters this module.
-- 2026-06-06T12:28+02:00: Corrected the GrepAI context reference from the old mirror-root model to current live-root workspace behavior; source behavior unchanged.
-- 2026-05-29T18:35+02:00: Removed the unsupported computed `__all__` (relies on default star-export like the `cgc/context` facade), clearing the `reportUnsupportedDunderAll` warning; behavior-preserving (commit `0549b28`).
-- 2026-05-25T21:14+02:00: Updated after provider context implementation moved into provider-owned packages.
-- 2026-05-25T19:16+02:00: Renamed from `context_providers.py` to `context.py`; implementation moved into `context_modules/` with CGC and GrepAI subpackages and no compatibility fallback.
-- 2026-05-25T18:07+02:00: Updated after the GrepAI runtime layout dropped the host binary path; the Docker runner image owns GrepAI binaries.
-- 2026-05-25T17:40+02:00: Updated after GrepAI gained Docker network/runner/Ollama constants and workspace config support for container-visible project paths.
-- 2026-05-24T19:25+02:00: Updated after CGC FalkorDB layout defaults stopped reading host `FALKORDB_*` environment variables.
-- 2026-05-23T22:37+02:00: Created during quality-pass closeout after direct-closeout preview found the changed file lacked sidecar onboarding.
+- Provider setup and lifecycle modules import this facade for runtime layout and install work. [4]

@@ -1,0 +1,495 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/projectors/eve.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The projector registers under the `eve` harness id, so every registered harness id has a projector and the engine reaches it without a special case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9d9c4e78b62dcd9e1f69a01963dc0b6507b668",
+            "content": "sha256:6c421071acd4d3a28a334731efa028651dee401f85e602d8fd655b58ace5e179",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EveProjector"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d9d9c4e78b62dcd9e1f69a01963dc0b6507b668",
+            "content": "sha256:2badaa126a3845ab8f06eee7a6279197cf90bf48e79cdaf2ded879905c75c26c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTORS"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The projector's whole event vocabulary is classified, and the recorded run's types are pinned against it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:a48b1844418be7919c5381c1cbabcf62d9525ed6c1a47f63f168e00d43c30884",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projector_classifies_the_adapters_whole_event_vocabulary"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:374a8e10640ea00ce8c57f0c07fbba23d775e027788c85f7d63599f9acb928ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_recorded_run_only_emits_types_the_adapter_can_yield"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:6c3e185b1cdcf9d516d504cec4baa3e2de065533a743c0605cc1ac74a4fff714",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PINNED_RUN_CENSUS"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:43ec8ff757a1eaf3967e0604c7d78be00b67e70d94a03bbce5357a387849ae1c",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:2b4306ca3f4c5db242f592fadf5a9eab7edc3a9f5df3ec0cad1e1bc14474b91d",
+            "locator": {
+              "end": 1245,
+              "kind": "line_range",
+              "start": 1238
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:8577ac02eaa25ef71949341b99618de35da5d2b4e214e9546442116243c55557",
+            "locator": {
+              "end": 1251,
+              "kind": "line_range",
+              "start": 1247
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The same facts on frames the real adapter and the real bridge produced in-process, so the fixture is not the only evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:4a8cdb4e35ec9238ecedf8dad1bb67175b732cfe6c96aa704da818e4c3b12c79",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterToProjectionIntegrationTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The catalogue's own terminal lift over a cancelled-then-parked page still reports interrupted.\n\nAnchor: `latest_terminal_evidence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:59b6f590b273a4f19f63cd01c46d5ce561c6a5a6c71e6c51bf1b67effa28ab38",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveTerminalProjectionTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+            "locator": {
+              "end": 1674,
+              "kind": "line_range",
+              "start": 1673
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:ffb91a0a9126edbc17931c957c2343f8bee64af8496bd73f30f82c703e9cc83f",
+            "locator": {
+              "end": 1683,
+              "kind": "line_range",
+              "start": 1682
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:880c62ba256beae0597b16fb5128eebbed87fd775b593aed2281d5cf3f551fe6",
+            "locator": {
+              "end": 1695,
+              "kind": "line_range",
+              "start": 1691
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The event names this projector switches on are the pinned release's own vocabulary, authored by the AR-owned runtime application's channel.\n\nAnchor: `turnPolicy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e46a81e8a0ed7a1f534cc17fd24ef7ac979f9e36",
+            "content": "sha256:e3462c2cb8e343363ba79825a453d54a96e7630821f62c9f3851bc43eea6e7f4",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "eve_runtime/agent/channels/eve.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:cc4374719a61b525f8d8aba3a818d60f7e1074918d2f92173cfe499e913fc811",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registered projector declares the durable stream as its only evidence surface, so both other channels fail closed.\n\nAnchor: `uses_native_pages`; `uses_transcript_echo`; `eager_native_continuation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9d9c4e78b62dcd9e1f69a01963dc0b6507b668",
+            "content": "sha256:14dafe59c9f0a858826b5e93a8e063eed986589faea8cf2fa13ce6e3b97618e3",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one dispatch, and the deliberate silence of the named control set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:59aa1d7c9b7a801460da9f7a23d708d9f5fba1edd473a8d65bc14e148fb0dca2",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_evidence_frame"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:6390a98bf54989b6f5cca9c769034e320c8face1e42895d126cef713b39f6d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_HANDLERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:196788968cf5c03c6497bfda8adab138d9d2672e092dc16be5b4c6933f553d87",
+            "locator": {
+              "kind": "symbol",
+              "name": "_silent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:819a6540900f12ad7b763ac16d5e9b1a703bfc263b7cb78c5f7c0e6f72c02683",
+            "locator": {
+              "kind": "symbol",
+              "name": "SILENT_CONTROL_EVENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The envelope discriminator is read from the diverted payload, not from an out-of-band carrier, and a frame with none is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:92b02f4e9507c41bd5964c1fe68badbc4c319fdb88b82712276e18931b1de421",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_TYPE_KEY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:9ca5988a54833136d2727f0cc372f36ee873e96016d0f451efe96e2d930e0f2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:ec33f3d63e7b059e94ed68ab4c1f9b9f752512f79f6a9c474c80e788bf4f4b4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Frame"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The only constructor of a turn outcome, and the park that deliberately is not one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:53e39d8e33a3b911cd2dc1f4b38b6ca0a2afba82c0b2edaab500a68db309600d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settled"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:a2d393cbfc49f699877257743a7192bc687d8a9f955e29b96b1fd33127caf348",
+            "locator": {
+              "kind": "symbol",
+              "name": "_waiting_frame"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:260d993b86c883f37635a3f1c42bbd10e71e5329e6b799e46c4990557f54c8c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_session_parked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:6bc85ba46e55b9e1e458e7ac8bd93ff57e132da9c33dda113ff21495eef773c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PARKED_ITEM"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Streaming text mints one item and the completion revises it, with ids derived so delta and completion cannot disagree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:3af15f01a192401b1a11ebc313f02f681de72ee98fb9271da8fc497cbacbdcb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_appended"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:ce93d8f75975fbca60d44a610123c86c40024e4e8f50800f4dc3ab3560997342",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:68230c1b7d41eef5113f27b6daf9720e4599eb7fa29fc210e6697507bbcf9f02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_channel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:e23236646f05fd4d9aab2ecc0aba6b697e8ff751076bf22ce1320b83f95698f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed_channel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:27e350706cad01e12bc5fa246476794d795beb885bb6cef07b74682c5ce72f66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_channel_item_id"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:94ec322cf044075063245c49c18f8b33c35ef3213dc9eef95de72dad211ba10e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_empty_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The honest-provenance rule for a durable-record copy whose producer the stream cannot prove.\n\nAnchor: `unknown_input_provenance`; `harness_provenance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:dc36882e64402058301e5e25e70928f7de73a484896c7a9ae5a21b4c70cad649",
+            "locator": {
+              "kind": "symbol",
+              "name": "_item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The `HarnessId` union gained `eve`, which the projector protocol types `harness_id` with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7c0957e9ed10ec573ba9174f6f5ecf16aeeb408",
+            "content": "sha256:85789c1ad9e411bb6a34db719542af23014cc3de1c7e9e6cd75d634f7221d606",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessId"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The cases: one settlement per turn, the park as a notice, cancellation as interrupted, one tool round trip as one item, the preserved unknown event, and silence for recognized control state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d05b242f485214a32b662827d3f93f210681ab65c6b74be6765e8e20fd23c30c",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveProjectorTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

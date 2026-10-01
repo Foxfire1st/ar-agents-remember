@@ -1,0 +1,97 @@
+{
+  "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The in-memory join keys leaf titles by owning ref plus local row number; missing documents are skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:c4382ba01c1d80996e07f6a1edccdbd4a78db686a840d52c57dfe8a8d723d9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphTitles"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:d5bf546949a8addb138d84f720ac440231c6825daa742993e5950bb8dc698623",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_graph_titles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The disk-backed join tolerates missing or invalid master documents and delegates to the same owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:1e1c02713fdb45b235e6d9665a13474e13c46d1dbfefd369061c97a66df92ef6",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_graph_titles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Mermaid and observer consumers use the qualified key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "511d3fb407f169e95fbb59b201b9bdde757f27b8",
+            "content": "sha256:4b2bcadfd37bab97438a7a3b4c5ac867eeb4a3548f42b7560eeb3e3f0d5ee053",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mermaid_segment_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "511d3fb407f169e95fbb59b201b9bdde757f27b8",
+            "content": "sha256:d3ed1fd1b4034f855c326c15f7a8ff6f29617901586708de76818d24305a39fa",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 331
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Projection maps every leaf title through `(node.ref, leaf_id)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:7c8bc39433a691155dea349646270e97fe137820c85d3f39adb55f0d06f142b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_node_view"
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

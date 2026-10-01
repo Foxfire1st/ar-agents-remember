@@ -1,0 +1,248 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Diagnostics bind the frozen R12 host authority and never select, copy, replace, or privately provision infrastructure.\n\nAnchor: \"def _admit_authority(\"; \"def admit_dagger_authority(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "content": "sha256:5155ce8ad1b357209a28f2ea7490363ce4704c5d04c1710258743049b8783f50",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 271
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:507451629885641898aae9e07e06447962f0c075b52d399f27054432e0202b66",
+            "locator": {
+              "end": 995,
+              "kind": "line_range",
+              "start": 948
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner.\n\nAnchor: \"def admit_dagger_authority(\"; \"class AuthorityRegistry\"; \"def release_dagger_authority(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:507451629885641898aae9e07e06447962f0c075b52d399f27054432e0202b66",
+            "locator": {
+              "end": 995,
+              "kind": "line_range",
+              "start": 948
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:50c80e0220bb1e599bd46ba63abcf1b7cc455ec48f695c2c4570f40a55e5b18f",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 588
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:08dcf082a26658e74b27cbaf700bac843cfe1abf76552d69d36322ef0b32fee2",
+            "locator": {
+              "end": 1128,
+              "kind": "line_range",
+              "start": 1118
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Validate a complete terminal catalog and publish one immutable gate disposition.\n\nAnchor: \"def compile_gate_result_manifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c0fed2e2cbeae446f6d58c03c095b0eeadfe3d",
+            "content": "sha256:cf66e3b2e5eaf8978a1b4158f48a4f19d13be247bd3aa2b4377791cd5980da82",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/certification/results.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence.\n\nAnchor: \"class GateResultManifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:02bfb2ef935ea082c5bc4d1796e006f9f90b2e67340b81566859b2a496244cc0",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The durable diagnostic manifest store owns reservation, running, publish, and abandon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:c24f0d0e1cc55976bf6d664fec116c62bcb4119011fe7162f35a8fbc809e29b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticManifestStore"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Diagnostic event builders produce started/terminal envelopes; the engine invokes them only for an installed telemetry sink.\n\nAnchor: \"def compile_diagnostic_started(\"; \"def compile_diagnostic_terminal(\"; \"def _emit_started(\"; \"def _emit_terminal(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:921fece4a6b6d2cfd0f9892780738a44c3398d6bfbbd3aa8c80ee7f2c0ca1c80",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 432
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/adapters.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:b9e07be3763b337cec77af12583f4792a81ef7faebe6cea8a1b7cfe33e9b05cc",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 450
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/adapters.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "content": "sha256:28a125c4d7fe8cf761c96c43f68513b45023fe2ec0ad69cf8d0d2836677da9a5",
+            "locator": {
+              "end": 545,
+              "kind": "line_range",
+              "start": 535
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "content": "sha256:9c2f072cab9ebcbb04c5977590ef653a405351658b40bcb0ed0e2e9572fa831b",
+            "locator": {
+              "end": 563,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The certification facade imports diagnostic contracts and projections; run-control entry points remain in the higher worktree quality module.\n\nAnchor: \"from agents_remember.certification.diagnostics import (\"; \"class DiagnosticExecutionEngine:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
+            "content": "sha256:299fa1b67a1b6ef31886367078e3bc4e4eabaf9b8dbc4b4ebd662be0b4014084",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "content": "sha256:43b97fce4896279ede72f42c4f8e369050c933363cd1140eaf9c56f69d4023c0",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The R12 host declaration/registry lives outside every repository and worktree and is never re-selected here.\n\nAnchor: \"return admit_dagger_authority(\"; \"release_dagger_authority(attempt.admitted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "content": "sha256:ae8142f729a9f97f7a553e4412f400dcdd22bfce8a2810ada5ffc866234d924f",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "content": "sha256:9913aee99313f1a7f7ac7b311c32c06db98de9926d14b86dcf7d5e6bc76bf7d8",
+            "locator": {
+              "end": 430,
+              "kind": "line_range",
+              "start": 422
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

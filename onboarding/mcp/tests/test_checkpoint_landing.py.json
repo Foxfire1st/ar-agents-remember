@@ -1,0 +1,122 @@
+{
+  "path": "mcp/tests/test_checkpoint_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checkpoint versus final durable integration cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
+            "content": "sha256:96ac336245c4ad8bf10158e13924f4e5a90672e2e6c3cad223df0cf74dd923f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_final_landing_still_records_completed_and_marks_cleanup_pending"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
+            "content": "sha256:bce4587c5faf7f54a7c90a4de6a9a4b57db7cc82d139bde003006d007fc14739",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationCellRecordingTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The checkpoint result retains the pre-existing cleanup state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
+            "content": "sha256:7618628d3c53e569c5b0f9863fa5cc2fa18d6c237309a1f6819e2b56a576ea93",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_checkpoint_result_publishes_without_running_cleanup"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Completion and stale candidate publication refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
+            "content": "sha256:d507f445548f06473cc7ba03182454ebca6a02522e7567205c1f2d5c46168981",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publication_refuses_a_candidate_that_moved_after_its_capture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The landed-master abandon guard remains enforced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
+            "content": "sha256:f2dba5e24d8665218b6a0c13aa018e81f579c9af771a4ff0acdf041c43384973",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandon_guard_still_refuses_a_completed_master"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4e551549a5b2827a92b78f53e9ef9a9c43fa7921",
+            "content": "sha256:d4f8ceadcb0e8a0051500672bd33269f77ff6e685f75fa897ccaf505646f259b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesAbandonGuardTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Production checkpoint capture and publication authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d56d1ab6a3b5a2f38ca3dab2f04a69735107b775",
+            "content": "sha256:f29121511bbb37dd1d9c4d8e086569cd3fdb7b208a89e057df811e2e4c0f3464",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_series_checkpoint_refs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d56d1ab6a3b5a2f38ca3dab2f04a69735107b775",
+            "content": "sha256:6442f060dcdab6811d634a250c0b737bd57fd830bbecd6d811266c5f74ac2197",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_series_checkpoint_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

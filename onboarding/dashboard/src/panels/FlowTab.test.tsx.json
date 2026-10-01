@@ -1,0 +1,53 @@
+{
+  "path": "dashboard/src/panels/FlowTab.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The renderer + nav under test (default model, nav radiogroup, initialModel fallback, segment counts).\n\nAnchor: `FlowTab`, `FLOW_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2448f87bab9a04dd5ea11428abbbfdc77d2c8524",
+            "content": "sha256:72d79e3fff3278fcf32a5f6ec3a5be835f3c2246715b5684b30913a912a9a3bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "FlowTab"
+            },
+            "path": "dashboard/src/panels/FlowTab.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registry the census derives expectations from and whose invariant prose the suite asserts.\n\nAnchor: `ROUTER`, `FLOW_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa587e123e73e13dc582f33ab0e93cb3c487bef2",
+            "content": "sha256:6a03c76a98ffa602bb35ff4f92c211d73d37a384da119331aab3294233a0cc0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROUTER"
+            },
+            "path": "dashboard/src/panels/flowModels.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa587e123e73e13dc582f33ab0e93cb3c487bef2",
+            "content": "sha256:494ce15eef6cc2c449f5b9aac251f61ab45f530ba112e883bda82d5cc22e4690",
+            "locator": {
+              "kind": "symbol",
+              "name": "FLOW_MODELS"
+            },
+            "path": "dashboard/src/panels/flowModels.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

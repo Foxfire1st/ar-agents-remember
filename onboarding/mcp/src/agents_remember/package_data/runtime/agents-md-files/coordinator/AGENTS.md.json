@@ -1,0 +1,160 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The template routes spawned agents by their role brief and keeps the developer-facing chat as a free-chat launcher that spawns a settings-profile architect for role-shaped work.\n\nAnchor: `## Start Here — Route By Role`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
+            "content": "sha256:7e4e0ed8ba6322d03d66691d0b3fb2ecdda0ccdfebfe249aa4729402df81069a",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions.\n\nAnchor: `### Installed AGENTS.md Routing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
+            "content": "sha256:02f31803b1820ea437dc6431f3b3193740cdaa8e15127192bc5c1cbcda7e13f2",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation.\n\nAnchor: `### Onboarding Documentation`, `c-04-retrieval-strategy-router`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
+            "content": "sha256:1a786a10f38c4f51f9ee5a00ab39b8fee3b3708acfab115cf0553ce61522c3ce",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks.\n\nAnchor: `### Developer Clarifications`, `c-01-findings-capture`, `c-05-create-or-update-onboarding-files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
+            "content": "sha256:2fc685e22c5e5ca97af1ab5c1480a450b0383688eb66debb4f9bdd085404e7bd",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The resolver section requires `c-08-ar-coordination-context-resolver` skill before relying on memory/task surfaces, then checks provider readiness through the `context_packet` MCP tool when the MCP server is configured and providers are enabled.\n\nAnchor: `## Ar-coordination & Memory Layer Resolver`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
+            "content": "sha256:d02d9833a33fef9e214f05be9e471b37342f2e1f543338d22ce311dc46a951c8",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`.\n\nAnchor: `### Memory Repo User Settings, Instructions, and Guidelines`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
+            "content": "sha256:1041f92612baf62f7c5c76462eadba99314e9aafbfb6e7dc9473b63f52a8aee6",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The template says not to run Git commands against `ar-coordination/` as a whole; Git belongs to resolved code roots or memory roots that are Git repositories, and task files under `ar-coordination/tasks/` are local coordination artifacts unless a workflow says otherwise.\n\nAnchor: `### Boundaries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
+            "content": "sha256:4862e7691a01ece5e4fba428198d550fa4bf7b0d5fcb27985e2c07ff928ca77d",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Branch/worktree approval boundaries and memory-layer authority remain listed in the template.\n\nAnchor: `### Boundaries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
+            "content": "sha256:4862e7691a01ece5e4fba428198d550fa4bf7b0d5fcb27985e2c07ff928ca77d",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules.\n\nAnchor: `## Code Quality Instructions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36afdbe58d31fd794320260121e35d4b9ecd9fd8",
+            "content": "sha256:0d595ad8a97a1e345377a2f7919e7745f25c81514e8f2a516dc87cbb31944894",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

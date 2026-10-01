@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/harness_submission_authority.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/harness_submission_authority.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-02T01:42+02:00 |
-| lastVerifiedCommitHash | `09329a7ee598920c519b06305b73ba8e48d72c88` |
-| lastVerifiedCommitDate | 2026-09-26T00:58:43+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -190,39 +180,35 @@ immediately before `_mark_terminal`, so the exact body crosses once inside the a
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; the authority protocol is
 repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Locks, idempotent admission, dispatch/withdraw, exact completion, the recovery capture, and the entry-thread multiplexed respond. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
-| The records, the retention and the timeline read named in the old single-row claim are no longer in this module: 260731-EFA-L6 split `OperationRecord` and `SubmissionLedger` into their own file, which is where enrolment, eviction (`make_room`) and `operation_timeline` now live. | `OperationRecord`; `SubmissionLedger` | mcp/src/agents_remember/serving/harness_submission_ledger.py:57-252; mcp/src/agents_remember/serving/harness_submission_ledger.py:255-437 |
-| The bridge wires direct adapter events here before coalesced publication. | `_run_events` | mcp/src/agents_remember/serving/harness_control_bridge.py:415-458 |
-| The API registers the submission-ledger routes. | `_register_submission_ledger_routes` | mcp/src/agents_remember/serving/harness_control_api.py:301-339 |
-| The API exposes the submission-authority route. | `api_submission_authority` | mcp/src/agents_remember/serving/harness_control_api.py:306-316 |
-| The status serializer produces the raw-free submission batch. | `submission_status_batch_json` | mcp/src/agents_remember/serving/harness_control_models.py:274-278 |
-| The status wire model carries the raw-free batch projection. | `SubmissionStatusBatchWire` | mcp/src/agents_remember/serving/response_contract.py:1031-1031 |
-| The public receipt wire preserves the raw-free response shape. | `PublicReceiptWire` | mcp/src/agents_remember/serving/response_contract.py:1065-1065 |
+- Locks, idempotent admission, dispatch/withdraw, exact completion, the recovery capture, and the entry-thread multiplexed respond. [1]
+- The records, the retention and the timeline read named in the old single-row claim are no longer in this module: 260731-EFA-L6 split `OperationRecord` and `SubmissionLedger` into their own file, which is where enrolment, eviction (`make_room`) and `operation_timeline` now live. [2]
+- The bridge wires direct adapter events here before coalesced publication. [3]
+- The API registers the submission-ledger routes. [4]
+- The API exposes the submission-authority route. [5]
+- The status serializer produces the raw-free submission batch. [6]
+- The status wire model carries the raw-free batch projection. [7]
+- The public receipt wire preserves the raw-free response shape. [8]
 
 
 
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The authority is internal to agents-remember's hosted-control bridge. | — | — |
+The authority is internal to agents-remember's hosted-control bridge.
 
 ## Queued Receipt Grace Delta
 
@@ -235,53 +221,3 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 `respond` now matches an interaction response against the union of the parent-thread singular pending and the multiplexed plural pending tuple. The active-operation guard became parent-only: sub-agent entries own no parent operation and cross with `operation=None`. Not-pending, already-responded, and post-response identity checks are unchanged and apply to both classes.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `SubmissionStatusBatchWire` repointed to mcp/src/agents_remember/serving/response_contract.py:998-1002. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `PublicReceiptWire` repointed to mcp/src/agents_remember/serving/response_contract.py:1032-1041. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound the operation-none and dedupe/identity claim to the complete `respond` body, including the operative adapter replacement.
-
-- 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `BridgeSnapshotPort` / `SubmissionLimits`
-  constructor concepts, the three-step locked admission (`_pre_admission_receipt_locked`,
-  `_enrol_prompt_locked`, `_unsupported_prompt_locked` as the single capability decision point),
-  the four-step `_dispatch_one` decomposition, and the reduction of the dispatch-side capability
-  re-check to an assert. Verification metadata stays pinned until closeout.
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the entry-thread parent guard in
-  `respond`: parent-ness is no longer which SLOT carries the entry (concurrent parent pendings
-  beyond the singular slot's oldest ride the plural tuple now that the adapter keeps a per-thread
-  pending map) — a tuple entry whose `raw.threadId` is the session's vendor thread gets the
-  active-operation guard exactly like the singular slot, while genuinely foreign agent entries
-  still cross with `operation=None`. Re-anchored the respond behavior to cit:([`respond`], mcp/src/agents_remember/serving/harness_submission_authority.py:300-356) and added the
-  conformance-suite row. Verification metadata stays pinned to the pre-commit source history until
-  closeout (the change is uncommitted).
-- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the multiplex-aware `respond` — match
-  against singular parent pending OR plural sub-agent tuple, parent-only active-operation guard,
-  `operation=None` for sub-agent responses, unchanged not-pending/dedupe/identity checks — in
-  Purpose, Logic, and Invariants. Verification metadata stays pinned to the pre-commit source
-  history until closeout (the L7 change is uncommitted).
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the paged never-bodies
-  `operation_timeline` enumeration (count+budget greedy loop, `latestSequence`, the eviction floor
-  tracked at the sole pop site, epoch-checked), the pre-tombstone `WithdrawalRecovery` capture at
-  the true transition only, and the asset channel (capability gate with `unsupported` receipt,
-  `submit_with_assets` dispatch routing, asset-conditional digest extension, additive receipt
-  `assetIds`, assets tombstoned with text). Verification metadata stays pinned until closeout
-  stamps the candidate commit.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive read-only
-  `provenance` batch — epoch-checked disclosure of exact source/state/timestamps/vendor-correlation
-  for all three submission sources from the existing records, 1..64 unique ids, honest not-found,
-  and no mutation surface. Verification metadata stays pinned until closeout stamps the candidate
-  commit.
-- 2026-07-17T21:39+02:00 — Created for 260715-FEUI-L5 after canonical review PASS; documented the
-  sole epoch-bound prompt/setter timeline, atomic dispatch/withdrawal, full operation references,
-  early-completion dominance, safe-retry certificate boundary, bounded privacy-aware retention, and
-  the removal of adapter/native queue authority. Verification metadata remains pinned to the leaf
-  base until closeout stamps the code commit.

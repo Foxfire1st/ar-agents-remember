@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/sceneLayers.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/engine-room/sceneLayers.tsx`          |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
@@ -46,32 +36,22 @@ packet only.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shell and wire/engine layer entry points. | `EnclosureShell`; `OfficialLineLayer`; `WorktreeEngineLayer` | dashboard/src/panels/engine-room/sceneLayers.tsx:99-132; dashboard/src/panels/engine-room/sceneLayers.tsx:272-295; dashboard/src/panels/engine-room/sceneLayers.tsx:337-385 |
-| The overlay/failure layer entry points. | `FleetingOverlay`; `RefusedOverlay`; `FxOverlay` | dashboard/src/panels/engine-room/sceneLayers.tsx:517-534; dashboard/src/panels/engine-room/sceneLayers.tsx:535-551; dashboard/src/panels/engine-room/sceneLayers.tsx:684-719; dashboard/src/panels/engine-room/sceneLayers.tsx:30-30 |
+- The shell and wire/engine layer entry points. [1]
+- The overlay/failure layer entry points. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the new
-  scene-layers module extracted from `EnclosureCanvas.tsx`. Verification pinned to
-  the leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

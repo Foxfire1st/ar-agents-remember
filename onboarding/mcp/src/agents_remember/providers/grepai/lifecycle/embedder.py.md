@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [Provider Lifecycle Modules Overview](overview.md)
@@ -78,33 +68,12 @@ fallback runs. The failed seed result is attached to the response as
   `GrepaiRuntimeLayout` dataclass (re-exported via the `core` star-import), not
   an opaque `Any`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Embedder settings and container endpoint are derived in GrepAI core. | `grepai_embedder_backend_settings` | mcp/src/agents_remember/providers/grepai/lifecycle/core.py:220-290 |
-| `grepai_install_workspace` is the GrepAI install/start entry. | `grepai_install_workspace` | mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:358-378 |
-| `grepai_backend_start` is the GrepAI backend startup entry. | `grepai_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:444-463 |
-| The embedder lifecycle is the compose-owned startup path that consumes the migrated settings. | `grepai_embedder_backend_start` | mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py:392-415 |
-| `isolated.py` populates `seedFromContainer` in worktree embedder settings. | `seedFromContainer` | mcp/src/agents_remember/providers/grepai/isolated.py:283-283 |
+### Repo-Internal References
 
-
-
-## Update History
-
-- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `grepai_embedder_start_context` now returns `GrepaiEmbedderContext` instead of a tuple. Emitted
-  payloads are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-06-25T09:55+02:00 — `auto` host-port selection now uses the centralized GrepAI Ollama preferred host port (`61434`) instead of preferring host `11434`; existing mappings and explicit configured ports still win.
-- 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
-- 2026-06-10T05:30+02:00 — Leaf import replaces the `providers.context` aggregator import (circular-import fix; see core.py 2026-06-10 entry).
-- 2026-06-01T00:00+02:00 — `docker_ensure_ollama_model` now seeds the model from the workspace Ollama via `_seed_ollama_model_from_source` (local tar pipe) before falling back to `ollama pull`; `seedFromContainer` key drives the seed path; updated Logic, added two new Invariants, added Repo-Internal References section.
-- 2026-05-31T12:50+02:00 — Re-typed the `layout` params of `grepai_embedder_health`, `grepai_embedder_remove_mismatched_container`, `grepai_embedder_inspect`, and `grepai_embedder_create_start_result`, plus the `grepai_embedder_start_context` return tuple, from `Any` to the `GrepaiRuntimeLayout` dataclass (re-exported via the `core` star-import); behavior-preserving, recorded the layout typing in Invariants And Boundaries (1.0.0 review remediation).
-- 2026-05-29T18:35+02:00: `grepai_embedder_dry_run_result` `commands` -> `list[dict[str, Any]]`; behavior-preserving (commit `0549b28`).
-- 2026-05-28T12:32+02:00: Updated after GrepAI embedder status began including normalized container-state summaries.
-- 2026-05-27T00:25+02:00: Updated after Ollama startup began reusing existing
-  Compose port mappings and shared GrepAI project migration.
-- 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
-- 2026-05-25T19:01+02:00: Created from GrepAI Ollama embedder lifecycle extracted out of provider lifecycle.
+- Embedder settings and container endpoint are derived in GrepAI core. [1]
+- `grepai_install_workspace` is the GrepAI install/start entry. [2]
+- `grepai_backend_start` is the GrepAI backend startup entry. [3]
+- The embedder lifecycle is the compose-owned startup path that consumes the migrated settings. [4]
+- `isolated.py` populates `seedFromContainer` in worktree embedder settings. [5]

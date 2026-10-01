@@ -1,15 +1,5 @@
 # dev-skills/dashboard-experience-review/templates/review-report-template.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dev-skills/dashboard-experience-review/templates/review-report-template.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-23T05:31 |
-| lastVerifiedCommitHash | `8e39b62c3550e974486479203d191aac39a0f0f3`|
-| lastVerifiedCommitDate | 2026-06-23T06:11:39+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../../overview.md)
@@ -40,28 +30,16 @@ Mirrors the design-review triage convention so the report slots into the gated f
 
 No open file-local todos.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+### Docs References
 
-## Repo-Internal References
+No relevant external documentation found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Stage 6 of the pipeline, which emits this report. | `Emit` | dev-skills/dashboard-experience-review/SKILL.md:79-79 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Stage 6 of the pipeline, which emits this report. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+### Cross-Repo References
 
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 2 citation findings; scoped check passed.
-
-- 2026-06-23T05:31 — Created with the skill (issue #92).
+No meaningful cross-repo references found.

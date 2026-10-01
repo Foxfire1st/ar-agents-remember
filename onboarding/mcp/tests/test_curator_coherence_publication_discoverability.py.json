@@ -1,0 +1,387 @@
+{
+  "path": "mcp/tests/test_curator_coherence_publication_discoverability.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the property, and of its place in the split.\n\nAnchor: \"The curator-coherence request states its own publication inputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:0068fec1cc46f27e742bf5240be76ef22a58ea56c0684bb82f1643be155f3511",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "One member omitted alone, and all nine omitted, in declaration order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:7d67736ab681640b043a8e6c7f6e218b141d1863dc55d1995f7e6c4ab2791853",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_refusal_names_the_one_missing_publication_member"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:02f4c337fad1a1106fcfcf691fd5c643968601e98468721340bdd5afc857d415",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_refusal_without_any_member_names_all_nine_in_declaration_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The positive control: the declaration is the model's own field order, with the content members named from the module's constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:b6595c00a097f0bc4a68c12f5fa9cce072eea4d26a1935db9367c0c7574c3bb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_with_every_publication_member_validates"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The `prepare` case: all nine names in order, the judgments phrase, and the two identities echoed as not derived.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:3e1c789146cc606887cae4406d773129917460bab3dbe064d25fbb68b2fe61ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prepare_states_the_complete_publication_input_set"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The added-member case: one declaration edit reaches the refusal and the text, with neither text touched.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:e965cb56d633e22037c41a625eac1e05f2fa035a1bde2e43a1c86a5fb47f960a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_added_to_the_declaration_reaches_both_messages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The non-publish refusals, by name and in model order, and the freeze branch's preserved message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:a134bf1bc317b296e726f92b3bf52456ce8f3f9aee347817affc72fcdad98c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_publish_actions_name_the_publication_member_they_received"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:14ea410173dfa53b6a1340dedf99171f92985f6be48e9c36292c40371fdb5a99",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_publish_refusal_names_every_supplied_field_in_model_order"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:53a4277ec61094a10193a07af475040e01c53e10fbc100087a42205422968a98",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_freeze_snapshot_keeps_its_own_named_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The module this one was split out of, which keeps the Gate-5 orchestration and the shared scaffold.\n\nAnchor: \"Split from ``test_final_full_memory_coherence_certification.py``\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556139b7088cc654255b2ddd244709f44047ffd6",
+            "content": "sha256:120d9f6d522ef339fbebe24d528634c555d4ab266ab624b48fc614ef0ab77e89",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_final_full_memory_coherence_certification.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane row this module was appended to.\n\nAnchor: \"mcp/tests/test_curator_coherence_publication_discoverability.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:0060146bbb3b5c2baa12506a71304262d78a482eab41c6ba94c0e2a6d3c2b0b5",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The one declaration: nine members in the request model's own order, the first two flagged caller-supplied.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:bb049a3555b26c9f959e9e5d3289d2e9c71f4641c68da2fb93ffe66838fd75a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLICATION_MEMBERS"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The member record the declaration is built from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:bf16185fc4471584a353e4b3a235a287cb2d0263bc2baa66a1ca58efc8d703fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicationMember"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The refusal that names the missing members, and the text `prepare` renders from the same declaration.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:1b0f109e9d0b9776c0155281ec86ef05d3ef91fdc74e82f1fb5e6f3552103747",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_refusal"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:429e832cb0e41a92a217f7a0009dc3ef4f874f13fbe872d7e2478b1669b545c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_input_statement"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The request model whose field order the positive control compares against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:81d06cb55a30457b2990e0ddac9c13dadfc7f977ee133cc1a53a3994254fdda6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRequest"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two content members that are publication inputs but not among the nine.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:af60a6ce1dfc50cb92c1c204539dd5d79bc99578a2c899fa6352eb04cb86b226",
+            "locator": {
+              "kind": "symbol",
+              "name": "JUDGMENTS_MEMBER"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:59c16b6df5d83c57a79468a633418e0f52e03cc621e363c0da0aff81d98e38bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_ASSESSMENTS_MEMBER"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shipped action entry point, and the `prepare` branch whose text the cases read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_action"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:813407828185fd943b0eb1b8b8fc2a0d1afe5fb4118024bb3a59b8b8284ef599",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The module's own mirrors of the declaration, of a full request, and the three helpers that turn a request into the refusal's detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:b43a248bbb718086c38dc7c36625f5588234ff41a02ac92633ecf2d28c813603",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PUBLICATION_INPUT_NAMES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:77355d25922d3b9e68b6ad5c28e5c9a081b627e79345b07a19c2a28641364940",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MEMBER_VALUES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:82927a0f505799190f80180f7aa3d37c3ead0581140a2228f12ee8b51af325e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publication_request"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:febcdc7f377c1631789d19049890707d7e55b81662a49ede6e2b2eeb35cb6942",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_message"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:bbed34f999f18d2c383ff749542f2efcfac70f15d56ed144cf1b6fe29ff8955c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_missing_detail"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The one stubbed boundary: the real `prepare` over a stubbed observation, so the asserted summary is the one a caller receives.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9901ab65ec40f3a558b0efe13f76012e31131e28",
+            "content": "sha256:b220b298359baccadb7e4490b38923d04da38f05f15fc4c5bb0eb15e513a5f6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepared_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,158 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one-definition-per-endpoint-kind rationale this module exists for.\n\nAnchor: \"the endpoint does not exist\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
+            "content": "sha256:648f786be4b0b9cfe4d913e6176b4d31e0adf17d68a7995179cb27d78c656cd7",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closed relation-operation vocabulary a refusal may name.\n\nAnchor: \"RelationWrite = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
+            "content": "sha256:8ce436f11735514b5b0077dcbf6c14dde008852922e29003a7e0519ee2128c7d",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The family-revision endpoint check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
+            "content": "sha256:c55e697cc3a75f47ac1638615785527cc7ccd91971d9dcaf7f1c784c091b2727",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_family_revision_endpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The invariant-revision endpoint check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
+            "content": "sha256:4825d1f82b17a3a05ed99a7a2213ba8ee9e0f471e14a095cb541b295c831ec33",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_invariant_revision_endpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The refusal these checks raise, with its endpoint kind and identity facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:605f5638b0d747484db1367885b8f3d0f5f681d715c39f35feea045bfaf506fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_relation_endpoint_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The narrow ownership read that answers the family half.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:a80b6c15a28cd229b10b0d4ef0bb75d70ceef4f21c5de27eb52ef58ec0c6498f",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_id_of_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The seal-verifying read that answers the invariant half.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:233b5e39d22a77c1490a468223a647da8f638bd0614e927fda725edc73b0e9aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The membership operation that calls both checks before its write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "content": "sha256:f06149691c314c03160f8cacacbb1cade99811e96ca3986c19b56dce20b0f00c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_family_member"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The realization operation that calls the invariant check before its write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
+            "content": "sha256:10a013393578987f89739b4813d908ae7a48bfa830b2bf3500f7c21e993bf19a",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_realization_claim"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

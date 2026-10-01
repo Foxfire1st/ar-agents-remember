@@ -1,0 +1,219 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/reconsideration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: the subject, the triggers, the rows and the one satisfying rule.\n\nAnchor: \"Reconsideration candidates (MIK-R14@v2)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:6290b0977c99f47e93cb497d2d8377f3650d0c1260a05ae3c2b964b794cfa1d8",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The row kind, the subject parser and the item kind are registered with MIK-R14 as owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:712bb410527b2cbc91df02a7c2fb2ebd60d3703f3bfaa17fa011c2b130ea508d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_row_kind_and_the_item_kind_are_registered"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The stored predicate agrees with `satisfiedBy` on the answered item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The kind and the two row dispositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:05bd514fbcca6164283757265a8ff61999faddc9c67bafef1b95066c41e69f7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONSIDERATION_ITEM_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:97b4c305f0392ed5ed4249d01b0892816bd1b9ca47219fb16aa51b34b3c5695d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONSIDER_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The history-row dispositions that count as a change of the row's subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:f6458876ed595a509c8ca1931e5c7b3c6af522ba3dbbd94805ed8c56ab31b9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TRIGGERING_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The five triggers, and the three a `still_rejected` answer refreshes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:e527b260e6e1f9d7a7daf0201957aa93445603e501e44f2021f495a7e785c963",
+            "locator": {
+              "kind": "symbol",
+              "name": "TRIGGERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:5d3869691ae424644e5501cd5d97bb3edc87d7ba9594e60481332392eff2d77a",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFRESHED_TRIGGERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The subject pattern over the shared decision ID pattern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:0006ceaecb6230c1bedf879110bab18aa9f67954ade5ca569b765ce680e475eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONSIDER_SUBJECT_PATTERN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The subject spelled and parsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:2a4a6589d3fb13673301999bb2e4ae5de4d47a10baa1f5a7af30f683fe5fcffc",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsider_subject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:8b29952a1b68f643cb6e2c441557da6a49b9ddb3d67db073b9c2bde9eec80bd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_reconsider_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One question per subject and leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:47ee4ad4b205d31da33eef5debffd1255006c7d7019dd107977236cf5921209a",
+            "locator": {
+              "kind": "symbol",
+              "name": "question_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one spelling of a link target, compared before a refresh (N1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:2932a907e6720df1bec89e1b1fd9b66517b46196b9d4bb030e3556cb53078dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "link_target_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The satisfying rule over a stored item, for the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58334ba5f68df4d25f46adef9beceb408863da59",
+            "content": "sha256:101cd958471aeb9cff4c7082fb839b56dd03196d81c0e27337200b3ad8e8a75e",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsideration_item_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

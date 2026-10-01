@@ -1,0 +1,456 @@
+{
+  "path": "dashboard/src/test/fixtures/openResponses.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every response-path fixture + the failed/pending rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:cd786e3692b4d8989bb68a2e901dfbc7b51ec0606fe22eb0fa4620f73494621c",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPENED_STARTING"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:50b85fa42af45f036a60181f4db1fcc55996622c57b79e38f834b5054ec37699",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPENED_VENDOR_DEFAULTS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:f8b54603d0ba68ffe206625d24db22317f53d819424c40578979876204ce88fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "INVALID_PARTIAL_PAIR"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:d473d3c823146fef6ad13ab285883b486cbe92ffb17a9f6658d2e75e356834c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "INVALID_NON_NATIVE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:e72db7f728413543c6437aaa8c414ae958bf4463e085269b5a78581bddfbcf29",
+            "locator": {
+              "kind": "symbol",
+              "name": "BAD_KIND"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:ecb4a3d8729f3d028b4c52fac48fe0d6ddc7089cd2e28ab4ad6a7dc746aefad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SEAT_TAKEN"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:f92d47e57767761abcce1664e865f6d4d9fbaf1d092a84a3257fd7d753def4d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LAUNCH_CONFLICT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:98ec529fea22b5e443685a6a5b057dab04a4c8096f8fa273dc86cdfc2fb0e6bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_CLAUDE_ROW"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:bcab530b73d0c8873b94868160c2ef3097226dabcfe158ff13eb77a9e64775a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_CODEX_ROW"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:971aa9d68cf5a0db6000da00e29d1c0a91393a1e280748bae39851821288cf58",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_PI_ROW"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:a1ea823cb996dc455902e56523e2f1b15662487e77af8125bbf2422b1b70781e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_LAUNCH_ROWS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:aea7f9a2e7f6745ffed2ded7fd9230a37748d12e9194e0a1f285c43b8473549d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_CLAUDE_EFFORT_ROW"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:f9ca1661a55ad5e8d886e73b5f9f8b2b5d10eb7737d8d73f01a7bddaaad2eaff",
+            "locator": {
+              "kind": "symbol",
+              "name": "PENDING_INTERACTION_ROW"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:5c3e7fab1ed9d026bf8242f7b5c3aeee1d73de98f44d880da6cf5e8826c581c8",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:5d2f0b43307fded80a485920e433bbdb4a81a62f20aaa641380d602006ef3691",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:2a880f9a32d14ab8d2edfd3ee3aa65e9657d6c0a1d8c5bdc96da821a6c0a75df",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:147312125fa27c5e5d4e9e38de79b50f76b8e04b33cfbf1932861999b6afe145",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:228b44f02b92c6f4115266c9f57629573af4e76d9fce2b52888c43e7f8637ddc",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:021e065afdc4c15463837cd0f3b93fa2c6f3014d20eea7680551d92a654462c9",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:73448e713649d3a3250d1bdd75782e0db93d7ba8f8a0f752c0e38fa89a9a74f9",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The response-body mirrors these instantiate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:62cc64d0e75bd613d583f2acd916263e0dd2678abe3ad109fde7839af23eb7b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenSuccessBody"
+            },
+            "path": "dashboard/src/types/terminalOpen.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:cc2cb0ae1134c934c9aca0586f49c92cb877f96ea18b2caf2f18f2e2fd2efb63",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenSelectionInvalidBody"
+            },
+            "path": "dashboard/src/types/terminalOpen.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:af277b34670ee7ca9e690768b4e622b99c3d753a03a7ce5a8b43c5d5355a98fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenBadKindBody"
+            },
+            "path": "dashboard/src/types/terminalOpen.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared row builder the failed/pending rows extend.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:9db694deeedeb33760607e5cff5f1733bf29c524d2ae0cc9a66df87abbb5e8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalogRow"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:5c4919c3d620e5d2d6379f4816b7cf697977d70c4aa6980f35a0b6ecc4d10185",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The route decorator exposes the terminal-open API.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:2ee1c1a55fcd0d6aa00c9c452fdcd3f0037b93ee5072ce9835b7b43df8b29bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_open"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:cdbf83c25dbe8e30a8e3e1ef60acd9d9b1f7e0d44d398471395c7433629701ea",
+            "locator": {
+              "end": 736,
+              "kind": "line_range",
+              "start": 721
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The terminal response body is assembled by `_terminal_entry_payload`.\n\nAnchor: \"def _terminal_entry_payload(entry: TerminalCatalogEntry) -> dict[str\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:a30ca700283f877afe5e4f07473de4faf3cf4fe76cd217cda432680fb781ad5c",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:220c657e4e0ecbfc16c4bfa0bdde8f35ca94cdaf29f7807e9cd6302757ed8a70",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared opener returns the resolved terminal-open response.\n\nAnchor: \"def _open_terminal_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:4319809e2442aad9f2cf797d789279cb251e58d9ae6878a0398d310645bd2657",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:67b5ef3375f8c610b0c8ca54e5bfa7a606d62ef7418e515501cb160ba892e19d",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 239
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `launchFlow` classifier is declared for the response-path cases.\n\nAnchor: `launchFlow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e09cd859c311d82fc980dfcfbe2fafa0b47b9c2",
+            "content": "sha256:ae02d04bea476d4c7cc911e7e4a45b06a22b061e12179ed8f78ab7f9a01fef2f",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "dashboard/src/data/launchFlow.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Tier uniformity ×3 harnesses over `FAILED_LAUNCH_ROWS`.\n\nAnchor: `FAILED_LAUNCH_ROWS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ffc01ed45aa69d3b365b39705d4cbccb870c03",
+            "content": "sha256:56cd612747b5259f4a5c10be8ad622e7f4e9065d2fa1aff94a160d051e94ecfb",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/data/launchEvidence.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Verbatim bridgeError rendering over the failed rows.\n\nAnchor: \"describe(\\\"FailedLaunchBanner (R6) — uniform across Claude, Codex, and Pi\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8176b0f247a9ebcb737ba9ae673f10d92f6de4d2",
+            "content": "sha256:cf418af80cd4322c57b4ba68ea8fa91b2b772e7eaca1eb3fdd0f70677a8c0785",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

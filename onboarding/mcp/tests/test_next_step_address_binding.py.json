@@ -1,0 +1,229 @@
+{
+  "path": "mcp/tests/test_next_step_address_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of D-13 and of the two fixes it pins.\n\nAnchor: \"A next-step hint must describe the task the response addressed, never a process cursor.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "content": "sha256:03c7aea9982233ac213eb3413bf30ef1358f384577710222593204a8b9fa6621",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The plan's case, driven as a sequence: two addressed contracts yield two different hints and neither body carries the other's path.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "content": "sha256:edaa730e1ba583d88a4a217c98f0ef4f13e4a9de5f8e36511ed99a0efc4f4532",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_addressed_contracts_in_sequence_yield_two_different_hints"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The stated reach: the one carrier that declares no address — `TaskDocResponse` — has its hint WITHHELD, asserted against the model's own fields. `260918-TSIP-L10` renamed this case because it asserted the opposite until that leaf; the row is corrected with it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "content": "sha256:9612031039a374929d654988fda4070ea4bd63a743ed45cf25731aded99e640f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_envelope_with_no_address_has_its_hint_withheld"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8e0ece38028ab07b6ff7c84e014b4ad43d1b29c1",
+            "content": "sha256:1e5257ee5abf6aaa21d85b41b0382ffc80a2a4e4f393c5532c4b34b1c070e487",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocResponse"
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The lane row this module was appended to.\n\nAnchor: \"mcp/tests/test_next_step_address_binding.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:6897c1086d34692ed244fe2a89df0b31f713b774b295274504d481dfe90dbc65",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 275
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The binder's one rule: a hint whose arguments contradict the response's own address is omitted; an ambiguous address is a refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_next_step"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two field tuples the comparison reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:bcb4397f067ede0b0d258767ef8479189851508c12189ec69b383ba0963a9991",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RESPONSE_PATH_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:28e88d2fdd54c0eb2f29cc2a4dba93fec3183e1fc4c6731ae273e75a9d3fedef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ARGUMENT_PATH_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The contract-derived hint, which is why no global cursor can reach a caller.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
+            "content": "sha256:a201fb436ead2894241e335bf4ccd0c7fb196f314ddea960606233ce56ee1561",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_next_step"
+            },
+            "path": "mcp/src/agents_remember/application/next_step.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One running lifecycle, so the linear half is the branch under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "content": "sha256:3ee7ee091d37048b52b41ec7d2fa7afcc34eccb14ac2945100e1047f693e2832",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "One addressed contract, with the closeout state its hint is derived from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "content": "sha256:69d588fbed850776f79eab11ea5f133b8df286d31fa1bcd0dbe9657fe403038d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The address-carrying envelope of the carrier D-13 was measured on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "content": "sha256:53c69e5026dbf42e34c8d9f2e69f446c54bc6bf21a2958c6e29d5981c455ff27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_response"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The contradicting-address case: the hint is omitted, not forwarded.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "content": "sha256:33cf0545f8736cc93833a672b4e1200d97cfe1bf3adb89a7ca85e6dbbf3ed4d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hint_naming_another_contract_is_omitted_not_forwarded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The positive control: the omission is a contradiction check, not blanket suppression.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
+            "content": "sha256:8b9b897aa6701e89769118cce9ac239e18e242f2bcaddfe7f011de2aa4af5511",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hint_naming_the_addressed_contract_is_kept_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

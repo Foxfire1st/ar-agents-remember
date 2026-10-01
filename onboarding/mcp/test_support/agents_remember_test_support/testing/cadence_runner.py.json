@@ -1,0 +1,53 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/cadence_runner.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only scheduled, provider-bump, and migration triggers can execute.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a9cad7d986c1c01cde9b4fd3e110cc2b7605a88",
+            "content": "sha256:a10c84a6b1caa00a80144f92deb8ab501bf124895360b0956f79b95480803f1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_cadence_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Dagger public route remains explicitly non-accepting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9164eedd6d38059234d2abb288d6bd294325063",
+            "content": "sha256:b4a72efc959acef8e5f546c3abbea341a5b82739473f8c0264acc32af8e57a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "cadence_evidence"
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f9164eedd6d38059234d2abb288d6bd294325063",
+            "content": "sha256:21d767e59f78609072d95ae0eef9f058346af215556ef224804c8c00f9961aaa",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

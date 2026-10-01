@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "HTTP answers of GET /api/review/intent/summary served by the dashboard process.",
+  "conditions": [
+    "The process is composed with the review_intent_summary port for 200 answers; without it the route answers 503 by name."
+  ],
+  "exclusions": [
+    "The other reviewer routes (/api/review/intent, /entries, /source-content), which keep their own refusal statuses."
+  ],
+  "id": "INV-8BYGSPZF",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "b5d1ae36-71c6-4f30-8008-bb4face7bb65",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "GET /api/review/intent/summary answers every typed state (counted, partial, unavailable with its refusal) with HTTP 200 and the state in the body, and 503 only when the process was composed without the port.",
+  "status": "proposed",
+  "supersedes": []
+}

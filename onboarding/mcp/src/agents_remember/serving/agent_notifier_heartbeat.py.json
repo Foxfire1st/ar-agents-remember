@@ -1,0 +1,102 @@
+{
+  "path": "mcp/src/agents_remember/serving/agent_notifier_heartbeat.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external/domain document defines this heartbeat mechanism; the leaf task doc's R5 and this implementation are the source of truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f502fd398e2ca6d7fce379c4dcb1d9c2dadfb5da",
+            "content": "sha256:9b389839e38f014b4cb9a1f6e5ec90c91816a41292f6005c4265bc4a5fff0d2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierHeartbeatStore"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f502fd398e2ca6d7fce379c4dcb1d9c2dadfb5da",
+            "content": "sha256:ae07be0c38a5f892d3de8d755cda9262698f683ce293d4e95db7fa534db8ad3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_notifier_staleness_banner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The application computes response-time heartbeat age/staleness, while the served body declares both wire keys and `served_state_tail` serializes the payload without `exclude_none`.\n\nAnchor: \"def _agent_notifier_heartbeat_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:c7a650fc8418729b75834341247c3ad77d5644b3bc0f545327e636fbf292cbff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedWorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:b25506b3516db7bd29cf86e398cba73c3eb89f9ee23ea438eb6e4463798e7c82",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_state_tail"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:fca314889fe88eb19d3eaa74c2a6b6b5b7a9021e7918b24a57a01939d90167b2",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 354
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:0382dafe56352404160de3afb3ac5ad69eabad5ec1b4d73827ddd3bad8205b16",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:c0f1a0912b464cd05b79c309746d6268a9964617552738ef996a23a0ce5d6e78",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,389 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rendering only: the section itself counts nothing, and since MIK-R09 the gate turns each open item into one `knowledge-gate` repair finding.\n\nAnchor: \"The section itself counts nothing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:fe4b93372a368d34f2267d913e639355b5808354274d412334b08d349c24f4f7",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "An unexplained item's facts: where, coverage, delete-only, and what answers it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:d3f4538a1940bb2b07d0a934f3436def86bb05f31feecbf46b4bce742744d85a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unexplained_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A `planned_untouched` item's facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:6f799ebc452b69d1dcd94e184667072e442dcb4a74591dde1436b81d0580ddfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_planned_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The planned-effects block, one line per declaration.\n\nAnchor: \"Planned effects (MIK-R11)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:d9411b77681707546aad1105fc0db5cd2a8372091dc491cc3d088a54bc21d71f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_planned_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The section lines, the incomplete branch, the planned block and the item table with its **Plan** column.\n\nAnchor: \"Plan\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:f6e7b04d886b2b70d6021b8a9446c1cb40f7058bb5c26bf923b9c3fb5d5b70e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The ambiguous-rename checklist line: no suggestion, every candidate named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:f5ba934ea4487690c3daeaa704b7fb322b7354cb80b789154322e54c23821a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_ambiguous_rename_target_lists_every_candidate_and_suggests_nothing"
+            },
+            "path": "mcp/tests/test_family_route_conditions.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The checklist and the tool show the marks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "content": "sha256:03705ab883dc23fa580d2c163e51a3cd11082d4f2b2a1ac97c09e179538a8f7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_reads_its_declaration_and_the_checklist_and_tool_show_the_marks"
+            },
+            "path": "mcp/tests/test_planned_knowledge_effects.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The checklist renders it only when a worklist exists.\n\nAnchor: `knowledge_worklist_lines`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:73647c6be89bab95f610a9645de985a46cc0e1a37f13bd995f97f3104ffafc12",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:de4f02b1e44842c8637ba9133d354932844b4647ce457db52dca1569b246d947",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 290
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The controller renders the section; since MIK-R09 its four open items count (`curatorActionableCount` 4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f599e6cb7ae08370dc907627108697cd4c118803",
+            "content": "sha256:760603c37479f3c55f9774626c7bd71d0f3e556c64a2ed9b763e59a1bdf4707e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The section heading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:285bf2e299f8d7f9bbca458a114a7f8321808e86129602acae23cee9b3cf31a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKLIST_SECTION_HEADING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compact wire summary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:c0ef806c3a17ccb37df6addaae75d1819939925def0d6d9726835a656b021670",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Per-kind facts, dispatched by kind; since MIK-R09 the public one-line form the gate quotes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:89814ebd04e1b5797dfcd6f4ea815046599472301bdb4a320025c6164f8dc21d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:4a8a28fd1d43d6f5c5ca3e4177bd8ba1eaec42387e122442596e6957bf027cfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "item_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:8e9a1b820ae9ceb5f31629ece814e859e8d2c77103895e2a511b688a0cb1db51",
+            "locator": {
+              "kind": "symbol",
+              "name": "_item_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The stale and reached-family renderers, split out of the ladder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:432d9a6e4a6ed352ad9af4aa934eae0b5c7f840af80e71d3acbc9aaab00eb591",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stale_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:a449f336ea7a9e45f4f35c8d1bc8465578cbb479d82a1e5feb27c4845f6c7c1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A `family_route_condition` item's facts, its affected set and its suggestion text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:86a5717f062bf68b101a89ab12806803c64edcb63fd4edfd5d40164aaac12e9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:2592f4bcbd7fefdbf17f577fb8e28507d10e6bc93ba9ec982bd6847f85de1ab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_affected"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:ddccdf8acb3370e8fa8752d0175cda0dfe48895d0ab3eed93816b3ec67d2d1b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_suggestion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The kind-to-renderer table, since MIK-R10 with both unexplained kinds.\n\nAnchor: \"_FACT_RENDERERS: Final[\"; \"\\\"unexplained_hunk\\\": _unexplained_facts,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:2876e0f477bc06f62ef9d47f76e350162de417fa7c814d694351d9b545b0a0da",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:2c37dc00e63e99ec4d8210ab4f769ab7dbc1ffac3607156aa79bc24b71220e9b",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A reconsideration item's facts: the alternative, each changed target and trigger, and what answers it; its renderer entry.\n\nAnchor: \"\\\"reconsideration_candidate\\\": _reconsideration_facts,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:f7e57c68db4ecf83c9e4a9f41f5f563d4547249ab7ebe7f2627876937ad2a2c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconsideration_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:e0aa95addcc380e057e89db303c9598d364e0d7a4084d9137b4685c3552b2251",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "An onboarding-trace item's facts and its renderer entry (MIK-R09).\n\nAnchor: \"\\\"onboarding_trace\\\": _trace_facts,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:46d69c2eb87b4003fa212a45d0efbfe8ea7be55099e64d7962d9168f68d834f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_trace_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:f82cb9e083c551f28dcb48f3db2f5a60e770029f15549064639aafc4725968c4",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 226
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

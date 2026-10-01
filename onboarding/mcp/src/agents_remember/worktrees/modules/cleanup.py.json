@@ -1,0 +1,361 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The authorized memory target clears its disposable cache before ordinary Git removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_registered_worktree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Shared drift snapshot removal helper used by cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:1b0c3421cd46f50e7fa1265d4f027d6ddb96ab078b53a1c3546fa6bd5efc804b",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_drift_snapshot"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`_remote_git` runs both remote-talking calls with `run_git` plus `GIT_REMOTE_TIMEOUT_SECONDS`, passed as `GitRunnerOptions(timeout=...)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:2487e4428301ad07f82ce90b5ae632ee586bdaba13687cdfdd2526423c5cfc21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remote_git"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:fbfa8472a098bcd75d67a5d7bf39fb9f4f9dd902aa130d654f77efe08ec86503",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_REMOTE_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:d11da2e2aff7ba25c39c66c6ad120027f30dd38b13579752f00eb1fd4387cbd0",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`CleanupStatus`, `ContractCells` and `amend_contract` — the vocabulary the `completed` stamp belongs to and the typed write it takes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:93106f4627f5d51b7669b2ba39255fb45eddd4ee73bf573f03e9dbf19bbb41fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "amend_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:4c492def0fcec9a9c086320a49e3c5ca243c8dde4021df8886a79d4a0e33d0a7",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The bundle the cleanup outputs are validated through, and the builder that refuses a blockage with no reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "073c9d5fa9aa753f1dca441e4cd97c1aeaa281e2",
+            "content": "sha256:7e524ab2da1ff9f98bcf389858f79a16569bb012367c7f625500eec228c237cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalResult"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "073c9d5fa9aa753f1dca441e4cd97c1aeaa281e2",
+            "content": "sha256:c7ead5df25432e9f05e0a488c88b2184326907ce30eea410c8c09b6fbfafe055",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_result_blockers"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The forced L6-shape case: an already torn-down provider runtime finalizes on the first call, and a provider runtime that cannot be removed blocks with its own reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2b1b93acb0f7db23174750073908066ca2e372b",
+            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b2b1b93acb0f7db23174750073908066ca2e372b",
+            "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Worktree tests cover cleanup preconditions and completed cleanup state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSupportTests"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The current module exposes `remove_registered_worktree`, `delete_branch_if_merged`, `delete_branch_if_merged_into` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_registered_worktree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:8e58b4070331d3fcd12f77132d203db94d86f77c85aa6cfc9370533dd5dcaa20",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_branch_if_merged"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:0bcd100808995f11e0f99fec2fff12b3b05c64cd965cffc2df4ab3c21e231fba",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_branch_if_merged_into"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Successful cleanup and exact terminal replay pass through the terminal activation-release bridge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:44d2b008191206b294dd234bf15673d4f0b510373db61fb21039bce38a8dd2f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bridge releases only an exact selected series and reports durable release failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4df4324735948c916744cbd6d02298769da89c55",
+            "content": "sha256:3a00552ad62fb39e17881fca1a99e72e77ec42e0376a23afba78315f45693c59",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_terminal_atomic_series_release"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the `WorktreeArgs` dataclass that types the `cleanup_result` input.\n\nAnchor: \"class WorktreeArgs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a36bc182b43134c2cf03c76dba11f075bfa7e70",
+            "content": "sha256:6176e15d556279e190db0b0cbe43f1e74fbacade0aee4f1087fb8446956978cc",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`cleanup_result` hard-guards on `carryover_done` (imported from here) and reuses `status_payload`.\n\nAnchor: \"def carryover_done\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81b23e64d6dbede412527e290bd02d05e5b3073a",
+            "content": "sha256:c773772c477e0a2152a0edb5e62dff7715402b045b5c6b15b82d3f173b053fdd",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "073c9d5fa9aa753f1dca441e4cd97c1aeaa281e2",
+            "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_series_reports_is_child_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:e364d555946e1664facb9c6bc8d5655af03e34794f2208fe1633499b3c91a277",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_mutation_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Provider teardown is delegated to this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:2aa48a21f45fe58ab4750793d6e04cb30fa24541e46271d4235ebc8f95b8b1ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "teardown_worktree_providers"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`delete_branch_force` and `remove_registered_worktree(force=...)` are reused by abandon.\n\nAnchor: \"def _abandon_branches\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38fe72fb66fa0fa72e9bb6b552087da8cec2bd0e",
+            "content": "sha256:a71d45a066a075899416f985c4a919722c84bb2e1d13642a1896d5e20e9664dd",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 481
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

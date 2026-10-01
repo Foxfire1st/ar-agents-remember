@@ -1,0 +1,77 @@
+{
+  "path": "mcp/tests/test_worker_child_processes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A retained real child exits and has already been reaped by its owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2757e2550cb9fe495c605576bbaf5f277f265412",
+            "content": "sha256:10b91fb642f080e9b541cbf4357f609f11e7ab7dd7665809cb939e74e734715c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retained_worker_child_is_reaped_by_its_owner"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Registry identity is idempotent for one object and safe against PID aliasing or reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2757e2550cb9fe495c605576bbaf5f277f265412",
+            "content": "sha256:745b7798ebf15c9b39fdba551f804dd37484b6aa4406f0639f520e0f97005b12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_child_registry_is_idempotent_and_refuses_numeric_pid_aliasing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2757e2550cb9fe495c605576bbaf5f277f265412",
+            "content": "sha256:fd7eaad92fb44cb709c37a41c691cb44d7d6d3c4a60cab857933609bb9509c08",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reaper_does_not_release_a_pid_now_owned_by_another_process"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Linux refuses missing pidfd APIs while non-Linux remains importable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2757e2550cb9fe495c605576bbaf5f277f265412",
+            "content": "sha256:aa345af2410f27b17e7b7ed6b3654a83600d1d731c60362bf266e60a6301b4b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_linux_worker_boundary_refuses_a_python_without_native_pidfd"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2757e2550cb9fe495c605576bbaf5f277f265412",
+            "content": "sha256:6699bbb0d359497b065b4f060b5e2d6b9c66cf9088cc3e7ae81da1e900077418",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_linux_import_boundary_does_not_require_pidfd"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

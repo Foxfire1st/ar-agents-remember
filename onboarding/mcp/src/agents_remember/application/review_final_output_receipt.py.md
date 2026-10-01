@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_final_output_receipt.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_final_output_receipt.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:23:46+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -155,16 +145,16 @@ job: `_PublishedKnowledge` (`:302-309`), `_ReceiptInputs` (`:339-347`), `_Delive
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own docstrings and functions and in the cases that
 drive the real tools. The three details a reader should carry: **the record is a measurement, not
@@ -173,54 +163,44 @@ bytes are never rewritten); **the selection rule is the store's own order** and 
 nothing; and **`prepared_is_reviewed_candidate` is `None` when either side is unknown**, because an
 unmeasured candidate is not an agreeing one.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the gap it closes, the three things it owns, and why recording is not a gate.** | `record_final_output_receipt` | mcp/src/agents_remember/application/review_final_output_receipt.py:258-299 |
-| The published surface: the record re-export, both read directions, the projections and the three attachments. | `__all__` | mcp/src/agents_remember/application/review_final_output_receipt.py:105-128 |
-| The one durable file-name prefix, one file per leaf, generation and phase. | `FINAL_OUTPUT_RECEIPTS_PREFIX` | mcp/src/agents_remember/application/review_final_output_receipt.py:132-132 |
-| **The four selection states, and why "never reviewed" is not "review lost".** | `ReviewGenerationSelection` | mcp/src/agents_remember/application/review_final_output_receipt.py:135-148 |
-| One published receipt: the durable artifact, the record, and the read-back that proves it. | `FinalOutputReceiptPublication` | mcp/src/agents_remember/application/review_final_output_receipt.py:151-157 |
-| **The read-back's three states beside the successors — supersession measured at read time, never written into the record.** | `FinalOutputReceiptRead` | mcp/src/agents_remember/application/review_final_output_receipt.py:160-176 |
-| **The selection rule: the store's own order, with `unreadable` and `no-generation` as separate answers.** | `select_review_generation` | mcp/src/agents_remember/application/review_final_output_receipt.py:182-213 |
-| **The refusal that keeps a tie from being resolved by directory order.** | `_selected` | mcp/src/agents_remember/application/review_final_output_receipt.py:216-246 |
-| The one durable destination a phase publishes to. | `receipt_file_name` | mcp/src/agents_remember/application/review_final_output_receipt.py:252-255 |
-| **Measuring one phase and publishing it: the owners' values, the read-back, and `replaced_existing` rather than a hidden rewrite.** | `record_final_output_receipt` | mcp/src/agents_remember/application/review_final_output_receipt.py:258-299 |
-| **The published-knowledge channel read through the route a later planner uses, with the owner's own three states and sentence.** | `_PublishedKnowledge`; `_published_knowledge` | mcp/src/agents_remember/application/review_final_output_receipt.py:302-309; mcp/src/agents_remember/application/review_final_output_receipt.py:312-336 |
-| The inputs one receipt is assembled from, and the delivered identities read out of the repositories that hold them. | `_ReceiptInputs`; `_DeliveredOutput`; `_delivered_output` | mcp/src/agents_remember/application/review_final_output_receipt.py:339-347; mcp/src/agents_remember/application/review_final_output_receipt.py:350-357; mcp/src/agents_remember/application/review_final_output_receipt.py:360-375 |
-| **Assembly that selects nothing and re-derives no identity, asking the vocabulary for the one verdict rule.** | `_assemble_receipt` | mcp/src/agents_remember/application/review_final_output_receipt.py:378-417 |
-| The tree of a commit, read from the repository that holds it. | `_commit_tree` | mcp/src/agents_remember/application/review_final_output_receipt.py:420-423 |
-| **The reader, and the docstring that names the reopen owner as its consuming route.** | `read_final_output_receipt` | mcp/src/agents_remember/application/review_final_output_receipt.py:429-448 |
-| **Reading every phase in order, with the supersession set measured once.** | `read_final_output_receipts` | mcp/src/agents_remember/application/review_final_output_receipt.py:451-485 |
-| **A missing file is `not-recorded` naming the location, a broken file is `unreadable` with the error — never conflated.** | `_ReadDestination`; `_read_destination` | mcp/src/agents_remember/application/review_final_output_receipt.py:488-495; mcp/src/agents_remember/application/review_final_output_receipt.py:498-539 |
-| Every readable generation that came after the one a receipt names. | `_superseding_in` | mcp/src/agents_remember/application/review_final_output_receipt.py:542-550 |
-| **The named reclamation owner, and the code's own plain statement that no shipped route calls it and why (routed to ICR-R25@v1, secondary R11).** | `discard_final_output_receipts` | mcp/src/agents_remember/application/review_final_output_receipt.py:553-582 |
-| **The prepared-work projection: the one comparison it makes, and `None` rather than `True` when either side is unknown.** | `final_output_selection_block` | mcp/src/agents_remember/application/review_final_output_receipt.py:588-650 |
-| A manifest that cannot be read back is reported in the block itself rather than raised. | `_selected_manifest` | mcp/src/agents_remember/application/review_final_output_receipt.py:653-664 |
-| **The three attachments and the `ok`-plus-a-real-commit gate that keeps a failed transaction from carrying a receipt.** | `attach_prepared_selection`; `attach_closeout_receipt`; `attach_integration_receipt` | mcp/src/agents_remember/application/review_final_output_receipt.py:667-681; mcp/src/agents_remember/application/review_final_output_receipt.py:684-701; mcp/src/agents_remember/application/review_final_output_receipt.py:704-723 |
-| **The never-raising entry point and its three states, including `not-applicable` for a series contract.** | `final_output_result_block` | mcp/src/agents_remember/application/review_final_output_receipt.py:726-768 |
-| The wire projection of a published receipt, including the derived sentence. | `_recording_block` | mcp/src/agents_remember/application/review_final_output_receipt.py:771-804 |
-| **The three production call sites: closeout preview, closeout apply and integration.** | `attach_closeout_receipt`; `attach_integration_receipt`; `attach_prepared_selection` | mcp/src/agents_remember/application/worktree_tools.py:405-460; mcp/src/agents_remember/application/worktree_tools.py:1016-1016; mcp/src/agents_remember/application/worktree_tools.py:1013-1013 |
-| **The reopen owner's fourth channel, which is what makes the reader a production consumer.** | `ComparisonReopen.final_output`; `_read_and_measure` | mcp/src/agents_remember/application/review_comparison_reopen.py:308-361 |
-| The generation store's own order and the manifest this module reads and never rewrites. | `read_generation_refs`; `read_manifest`; `generation_directories` | mcp/src/agents_remember/application/review_comparison_generation.py:615-649; mcp/src/agents_remember/application/review_comparison_generation.py:697-711; mcp/src/agents_remember/application/review_comparison_generation.py:725-753 |
-| The freeze route that publishes the successor a `moved` receipt's remedy names. | `freeze_review_comparison`; `ComparisonFreezeOptions` | mcp/src/agents_remember/application/review_comparison_freeze.py:152-165; mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
-| The publication route whose declared location the published channel is read at, and the read route that resolves it. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:1-80; mcp/src/agents_remember/application/published_intent.py:1-80 |
-| The durable-evidence pair every receipt is published and read back through. | `publish_durable_evidence`; `read_back_evidence`; `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203 |
-| **The cases that drive the real tools: the conforming pair, the non-conforming dataset, the moved candidate with a successor, the leaf with no generation that still closes, and the forged verdict.** | `test_review_receipt_binds_the_delivered_pair_to_the_selected_generation`; `test_a_moved_candidate_is_recorded_as_moved_and_superseded_not_relabelled`; `test_closeout_records_no_receipt_without_a_generation_and_still_closes`; `test_a_forged_coverage_verdict_is_refused_when_read_back` | mcp/tests/test_review_final_output_receipt.py:451-507; mcp/tests/test_review_final_output_receipt.py:572-614; mcp/tests/test_review_final_output_receipt.py:617-637; mcp/tests/test_review_final_output_receipt.py:790-822 |
-| **The case that measures reclamation and leaf scoping through the named owner.** | `test_final_output_receipts_are_leaf_scoped_and_reclaimed` | mcp/tests/test_review_final_output_receipt.py:640-673 |
+- **The module's own statement of the gap it closes, the three things it owns, and why recording is not a gate.** [1]
+- The published surface: the record re-export, both read directions, the projections and the three attachments. [2]
+- The one durable file-name prefix, one file per leaf, generation and phase. [3]
+- **The four selection states, and why "never reviewed" is not "review lost".** [4]
+- One published receipt: the durable artifact, the record, and the read-back that proves it. [5]
+- **The read-back's three states beside the successors — supersession measured at read time, never written into the record.** [6]
+- **The selection rule: the store's own order, with `unreadable` and `no-generation` as separate answers.** [7]
+- **The refusal that keeps a tie from being resolved by directory order.** [8]
+- The one durable destination a phase publishes to. [9]
+- **Measuring one phase and publishing it: the owners' values, the read-back, and `replaced_existing` rather than a hidden rewrite.** [10]
+- **The published-knowledge channel read through the route a later planner uses, with the owner's own three states and sentence.** [11]
+- The inputs one receipt is assembled from, and the delivered identities read out of the repositories that hold them. [12]
+- **Assembly that selects nothing and re-derives no identity, asking the vocabulary for the one verdict rule.** [13]
+- The tree of a commit, read from the repository that holds it. [14]
+- **The reader, and the docstring that names the reopen owner as its consuming route.** [15]
+- **Reading every phase in order, with the supersession set measured once.** [16]
+- **A missing file is `not-recorded` naming the location, a broken file is `unreadable` with the error — never conflated.** [17]
+- Every readable generation that came after the one a receipt names. [18]
+- **The named reclamation owner, and the code's own plain statement that no shipped route calls it and why (routed to ICR-R25@v1, secondary R11).** [19]
+- **The prepared-work projection: the one comparison it makes, and `None` rather than `True` when either side is unknown.** [20]
+- A manifest that cannot be read back is reported in the block itself rather than raised. [21]
+- **The three attachments and the `ok`-plus-a-real-commit gate that keeps a failed transaction from carrying a receipt.** [22]
+- **The never-raising entry point and its three states, including `not-applicable` for a series contract.** [23]
+- The wire projection of a published receipt, including the derived sentence. [24]
+- **The three production call sites: closeout preview, closeout apply and integration.** [25]
+- **The reopen owner's fourth channel, which is what makes the reader a production consumer.** [26]
+- The generation store's own order and the manifest this module reads and never rewrites. [27]
+- The freeze route that publishes the successor a `moved` receipt's remedy names. [28]
+- The publication route whose declared location the published channel is read at, and the read route that resolves it. [29]
+- The durable-evidence pair every receipt is published and read back through. [30]
+- **The cases that drive the real tools: the conforming pair, the non-conforming dataset, the moved candidate with a successor, the leaf with no generation that still closes, and the forged verdict.** [31]
+- **The case that measures reclamation and leaf scoping through the named owner.** [32]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It reads a task root and a repository path the
 worktree contract names, and it resolves the declared publication location inside the same repository
 boundary; the relocation boundary that follows from a recorded absolute path is stated above and is the
 same one ICR-R12/R13 own for the generation record.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-26T21:15:00+00:00: Generated citation repair: `freeze_review_comparison`; `ComparisonFreezeOptions` repointed to mcp/src/agents_remember/application/review_comparison_freeze.py:233-252; mcp/src/agents_remember/application/review_comparison_freeze.py:147-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T09:10:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): created this one-to-one card for the module this leaf introduced as **ICR-R21@v1's operation** — the selection, the receipt and the read-back that bind one comparison generation to the exact source and knowledge outputs a normal closeout/integration selected. It records what a consumer has to act on: the selection is the generation store's own order with an ambiguous tie recording nothing; recording is **not a gate** (the never-raising wrapper is what the transaction owners call, and every failure becomes a state); a phase measured twice converges on one file while the generation's manifest and retained bytes are never rewritten; and the reader distinguishes absence from unreadability and measures supersession at read time rather than writing it into the record. Three boundaries are carried as boundaries and not as defects: `discard_final_output_receipts` has **no shipped caller** and is routed debt (L21 → R25, secondary R11) — reclamation is *not* automatic at this candidate; a `moved` receipt deliberately does not block the transaction, because the packet forbids adding a gate; and direct in-process callers of `git_worktree_manager.closeout_result` see no receipt, because the production result surface is the MCP tool. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `972b44cc07b307929535fe7974d6a30d53c9c4f1`, this leaf's recorded base, whose date is the worker report's own timestamp — because every construct cited here exists only in this leaf's uncommitted working tree; what was actually read is that working tree, and the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

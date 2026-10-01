@@ -1,0 +1,214 @@
+{
+  "path": "mcp/tests/test_read_anchor_memo.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real repository, the Git and parser spies, and the per-case emptied tables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:20e162f68d16cc53edb4e2bb236eaf6561b887c8ab1bc0a90f238c078ec79964",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:02ef1986bdda60dc7cd99b14dc943ec2e76c9a0b91195c80d85deb901be9f434",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_calls"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:7cdf086f7e789ce5e418d5c5dcb40974a1e2a243d8a061cd9918439f09c61aa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parses"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:a003605ef7abab2d2abbb43fa91de607ffe701a79dfa2e4202335de3a0d954e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_forgotten"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every outcome the memo sits behind, a fresh resolver per pass, and the unremembered reference path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:1370c906a0909f3cf6cf2e56cbfc53d19a245c99a860d03752dd3b9e81267559",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claims"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:e8114fe3679f1fe7bec80e4b7409f57f36f5384d5716635c0c8dfc1fec54568b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:c6e09fcce162d8f34c94343eb297117fb1bc4590943d4bb5e4d0028abe4924cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unremembered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Identical answers from one Git read per object and one parse per blob.\n\nAnchor: \"test_repeated_observations_answer_identically_from_one_read_per_object\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:f29c257531c7791fee689525c484dc174730973f435d4024d38183b422f3c46c",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A failed probe, lookup or blob read is asked again; only the success is remembered.\n\nAnchor: \"test_a_failure_is_never_remembered_and_the_later_success_is_observed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:542e3455b138a0ac3ffcd99864388527c4cd95486b82aef1714698851c81f786",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An abbreviated id is never remembered; the admission test's refusals.\n\nAnchor: \"test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:c21804b8374b53727df73f3f921af320d3e72473d9c4cfbc7bd2790ce96a34bf",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Weight-bounded LRU eviction, refusal of oversized values, and the concurrent bound.\n\nAnchor: \"test_the_memo_evicts_the_least_recently_used_past_its_weight_bound\"; \"test_concurrent_readers_share_answers_and_the_bound_holds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:68d55265668480b20862f65515738bf9bdd0bee7d87be763d483e44546e94ad1",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**A pruned or revoked tree reported unavailable for every anchor, not answered from memory.**\n\nAnchor: \"test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:4ad5738a44d4ea42f0144bfc81f1bc3bbcd95bdce1c621373fe42e1764fc8bc7",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 372
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**No repository's answers served for another, and one parse per grammar.**\n\nAnchor: \"test_one_repositorys_answers_are_never_served_for_another\"; \"test_one_blob_is_parsed_per_grammar_whichever_is_asked_first\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:8adda94e224865a217d2a55d075efded2476d465068f11f2fa03d6cf39327dc1",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 417
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_read_anchor_memo.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:4b8e768a1795b2b9d2ef240da08f1b9455c19ac05ce7bbfce6d5d6b3c277f368",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

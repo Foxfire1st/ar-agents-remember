@@ -1,0 +1,244 @@
+{
+  "path": "mcp/src/agents_remember/serving/seat_events.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external/domain document defines this event shape; the existing `orchestration_nudge_manager` precedent and the `ar-observer-event/v1` schema are the source of truth.\n\nAnchor: \"def log_retire_event\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:bda2f6d9dcd470d5b9a63b818cb4e34362ca15aaf29492c71591f8bf0d5ec806",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`Event`/`now_iso` define the record shape and timestamp helper this module builds every event from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "locator": {
+              "kind": "symbol",
+              "name": "Event"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:4975cf0d686bab612247f9b5363a43be6125c87486ec28869f701a66da6dc46a",
+            "locator": {
+              "kind": "symbol",
+              "name": "now_iso"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`observer_root`/`EventStore` are the append-only durable log this module writes to.\n\nAnchor: `observer_root`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:1b3c6999889b5c09013caadd4ae1893de4290b28c3d2d56b5a94a8b2d3d5e405",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`new_ulid` generates the event `id`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca1e65d5adf705f43b2e7e7645571d514f033d44",
+            "content": "sha256:6fccc769ef95e64d5c53e3ec6afd3a1828fc5ac5b1385c032b2b52665415ce52",
+            "locator": {
+              "kind": "symbol",
+              "name": "new_ulid"
+            },
+            "path": "mcp/src/agents_remember/observer/ulid.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`orchestration_nudge_manager` is the existing event-logging pattern this module mirrors (same `EventStore(observer_root(config)).append(Event(...))` shape).\n\nAnchor: \"def orchestration_nudge_manager_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23f4c87954b6eac5eef2d1046a0c54d7b4c643c6",
+            "content": "sha256:67abe5493b128da00fcab6beb3b6c85414d6633c80bea97609670b9ce235778d",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/orchestration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`session_retire_payload`/`session_rename_payload` call `log_retire_event`/`log_rename_event` after a successful mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:4f73f86cc04aefc86418a701c6461b30118702bbd298c809aa57f3766a5ec6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_retire_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:b10d012adb0f2f73d8c20c0f6121b1e78ef21aa790aad112d137fef8dd61a53f",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_rename_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:d9bd30d9e88dfbbbac7e074f3be8c919bb14ac18f2482a04ed27c6ccd51cbd35",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:f5fb17967d37259b44554700f4b9a32b4639284813cd3d9f64e2688c0b81565b",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`api_terminal_retire`/`api_terminal_rename` call the same functions from the serving endpoints; `api_terminal_landed_cleanup` logs each cleanup retirement; `create_app` wires `on_turn_state_change=lambda observation: log_turn_state_change_event(config, observation.entry)` into the liveness sweeper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:0654d724ae49205aae148939ba1b75bd85274a9a76f90bbb9e8556c70f947185",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_retire"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:993feadb751fe3b18e960120e36cd9a268e16a90074b03360c01a30ede9bd630",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_landed_cleanup"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:7d840fd5a143fa93121368f600d20cc95c62c8e1f08bc2eb61f0382200093cd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_rename"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1c35a18c05d8d266c4505ccf49ac40fff976923",
+            "content": "sha256:9ef1441df7a5321cef2e253d8fa9095b377c507d6704127c207ec8cc2c81f9af",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_app"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1c35a18c05d8d266c4505ccf49ac40fff976923",
+            "content": "sha256:ac39376e07af8c9887f3489732b0b15e52ef10789c35aa883755e8c626329b92",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`auto_complete_seats` calls `log_retire_event` for default automatic closes and `log_landed_event` for the settings opt-out; both remain subordinate to edge success.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f99f9da8a7bb063cb5835d1be6dedc81daec302",
+            "content": "sha256:1963fc600eb3bd5a682b5786379b5e665870cc5e6daee11dd2831076a3690254",
+            "locator": {
+              "kind": "symbol",
+              "name": "auto_complete_seats"
+            },
+            "path": "mcp/src/agents_remember/application/completion_cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

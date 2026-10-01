@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/lifecycleBody.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/lifecycleBody.tsx`       |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -54,35 +44,21 @@ in `taskReader.tsx` / `taskDocPanels.tsx`.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The lifecycle body entry and its derivation helpers. | `LifecycleDetailBody`; `resolveMasterAndSlices`; `resolveParentLink` | dashboard/src/panels/detail-panel/lifecycleBody.tsx:64-102; dashboard/src/panels/detail-panel/lifecycleBody.tsx:367-412 |
+- The lifecycle body entry and its derivation helpers. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the shared task-artifact target import (`data/taskArtifacts.ts`) replacing the notes-reader-owned type.
-
-- 2026-08-20T04:36+02:00 — 260815-DAG-L14: `DetailBody` threads `docPathForRef` into all three lifecycle-path render branches (seriesDoc, master, TaskContent). Verified at code commit 9c3180c1.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  lifecycle body extracted from `DetailPanel.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+No applicable cross-repository source was found.

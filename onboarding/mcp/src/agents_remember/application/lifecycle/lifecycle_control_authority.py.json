@@ -1,0 +1,45 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/lifecycle_control_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `LifecycleCallerError`; `resolve_lifecycle_caller`; `completed_disposition_owner` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "684278feeae82800c6e5d90929d99046d6144fd1",
+            "content": "sha256:d2ed42bf7ad138394c127fadd24de34d3cb182e3864634e9889ad003dc5f92e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleCallerError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "684278feeae82800c6e5d90929d99046d6144fd1",
+            "content": "sha256:7eb445a1539595d18c2446aa2cbeb682736f8e45a57c7bd6500471d179048d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_lifecycle_caller"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "684278feeae82800c6e5d90929d99046d6144fd1",
+            "content": "sha256:7f49e1953ac0b8ff8de436678234b086b2695f6b2e8737245d811aa23fb63611",
+            "locator": {
+              "kind": "symbol",
+              "name": "completed_disposition_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

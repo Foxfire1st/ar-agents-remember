@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_tool_response_budgets.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Write creates report and returns path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a7088cb2db10a42d437454a548cc272977e0d8d",
+            "content": "sha256:45baaa457d63c2b4fd75c2569b4d446d34a0d48191920135a6d3fc3fd30737f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_write_creates_report_and_returns_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Secrets are redacted in reports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a7088cb2db10a42d437454a548cc272977e0d8d",
+            "content": "sha256:4719af4b56d84cd6d1680f51db013bb6c80b86e6a73312c6bb05b0b8d61c56fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_secrets_are_redacted_in_reports"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Prune keeps last five",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a7088cb2db10a42d437454a548cc272977e0d8d",
+            "content": "sha256:4cac41cd612bfb49d44c227fe8dcc2fa445aec6f1a869f74aebd4b8cc9578934",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prune_keeps_last_five"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Prune drops reports older than max age",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a7088cb2db10a42d437454a548cc272977e0d8d",
+            "content": "sha256:0c4f34f7c4bd772e3f9bad628120206e70e6c72335c90a1cc6f04ad344d45dd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prune_drops_reports_older_than_max_age"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Carryover report retains full records",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a7088cb2db10a42d437454a548cc272977e0d8d",
+            "content": "sha256:c19ff6654f0a4f77ab834adeda9f3822fd58b799525303bcad1d45b2beab1e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carryover_report_retains_full_records"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

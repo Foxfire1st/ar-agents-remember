@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shell suite.\n\nAnchor: `describe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63eea4bd1f9d5462193341b7a1b75a2dc42e855b",
+            "content": "sha256:ee8be6446065d572ab07c006104b363d851b1362d31f5835a86761da0d33d9dd",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `?` page lists the reviewer's chords, and `j` is unhandled in the sessions view (MIK-L33).\n\nAnchor: \"? opens the keyboard-reference page listing the real chord tables (one options source)\"; \"Intent reviewer — while focus is inside it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63eea4bd1f9d5462193341b7a1b75a2dc42e855b",
+            "content": "sha256:075203b7d8ed38beac1ae7e7d6d87a1d55f8a995b1367595eb56a53c096ccb3a",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

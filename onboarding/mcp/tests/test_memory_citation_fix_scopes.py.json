@@ -1,0 +1,152 @@
+{
+  "path": "mcp/tests/test_memory_citation_fix_scopes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An anchor that left a still-existing cited file is declined instead of retargeted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e1971ed51233f3d419d942219cc4c4fc45ea4",
+            "content": "sha256:1519be33785e56dde49914afc251c41fb2b2b3cbf62682761fcea07e7377004c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_anchor_that_left_a_live_cited_file_is_declined_not_retargeted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A deleted cited file without continuity at the stamp is declined.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e1971ed51233f3d419d942219cc4c4fc45ea4",
+            "content": "sha256:561238ea76b6f5833948b17484c46e2e6a06b5498887b142561f21c92bf85be7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_deleted_cited_file_without_provable_continuity_is_declined"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The same anchor relocates once the cited file is gone and continuity holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e1971ed51233f3d419d942219cc4c4fc45ea4",
+            "content": "sha256:6edf7cb6233f178c0cb14f9d16eb392324b8bf5b7f244912dc46b0028c27cb42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_same_anchor_relocates_once_the_cited_file_is_gone"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A mention rebound to that name's declaration is declined as a kind change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e1971ed51233f3d419d942219cc4c4fc45ea4",
+            "content": "sha256:2d82f7bc65efefcb3b5d9a987dc62e81a3e024d7fbd01e95b94f4f73ca9b77f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_mention_rebound_to_that_names_declaration_is_declined"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Two anchors that left one cited file, each still declared where the move put it.\n\nAnchor: \"    def _two_failing_cards(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e1971ed51233f3d419d942219cc4c4fc45ea4",
+            "content": "sha256:a5fa5a34a57e2510364b749e3d88b1a1a6a65bcf35dca352aec39f98b205bc7d",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A scoped fix leaves every other document byte identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e1971ed51233f3d419d942219cc4c4fc45ea4",
+            "content": "sha256:43a120f7469d5566753f9980ef2882a9b267d1c3cce5df8af8d898f68703ae92",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_scoped_fix_leaves_every_other_document_byte_identical"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Invalid exact paths refuse without memory discovery or source acquisition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e1971ed51233f3d419d942219cc4c4fc45ea4",
+            "content": "sha256:6289e3c9c736fbc84bf305039bbed92f35f7ef8c3384f1d33a2308c7a4b43335",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_exact_paths_refuse_without_memory_discovery_or_source_acquisition"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Expanded sources are deduplicated and the second run is byte identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e1971ed51233f3d419d942219cc4c4fc45ea4",
+            "content": "sha256:d46574d5ec9520f8f1993db06e4b6d05e82f8e4e4fe1b0f29fc2a9da2b7dbfd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_expanded_sources_are_deduplicated_and_the_second_run_is_byte_identical"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A malformed source segment blocks normalisation without deleting evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e1971ed51233f3d419d942219cc4c4fc45ea4",
+            "content": "sha256:034fbbf5bdb52ebbfe5b7e88c47f30ce1f89f4860e812d539d5b7c3949c623e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_malformed_source_segment_blocks_normalisation_without_deleting_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

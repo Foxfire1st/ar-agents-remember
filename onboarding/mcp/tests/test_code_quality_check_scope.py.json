@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_code_quality_check_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New importable package requires explicit product or verification owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c52d652cb83448c180898bc934f58e4ca4e91699",
+            "content": "sha256:033725524241dd2d0b2d6fb912a7d1f3aebc6f902b253651037fbd5cb9a56d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_new_importable_package_requires_explicit_product_or_verification_owner"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Package authority rejects overlap and stale declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c52d652cb83448c180898bc934f58e4ca4e91699",
+            "content": "sha256:1f61127e91d9b9f1e230472a403143cac2b6a2a62a9a54098b2f64374e3c5cae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_package_authority_rejects_overlap_and_stale_declarations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

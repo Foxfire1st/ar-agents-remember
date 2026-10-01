@@ -1,14 +1,5 @@
 # c-03-repo-bootstrap/SKILL.md
 
-| Field                  | Value                                                  |
-| ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember                                     |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md` |
-| doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-05T01:32+02:00 |
-| lastVerifiedCommitHash | `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` |
-| lastVerifiedCommitDate | 2026-09-24T14:09:40+02:00|
-
 ## Purpose
 
 This skill describes repository onboarding bootstrap. It defines a minimum root-overview bootstrap, a larger route-local memory build, and an existing-memory slice maintenance mode for added, moved, deleted, refreshed, or newly important source routes, with preservation-first handling for moved or deleted route memory.
@@ -35,32 +26,28 @@ If bootstrap gains executable helpers, use `c-08-ar-coordination-context-resolve
 
 No external documentation is needed for this repository-local skill.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `c-03-repo-bootstrap` skill defines root overview as the minimum bootstrap, under the resolved onboarding root, and introduces targeted work for existing-memory source slices. | `# Repo Bootstrap` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:6-1265 |
-| The design requires durable route-local overview placement directly in the mirrored onboarding hierarchy, generated route indexes with hot-path hints, and self-sufficient file-level onboarding. | `### Locality-first memory` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:37-61 |
-| `c-03-repo-bootstrap` skill preserves thin orchestrator behavior, confidence tags, `c-08-ar-coordination-context-resolver` skill topology resolution, cross-repo read-only semantics, and `c-05-create-or-update-onboarding-files` skill ownership of file-level onboarding. | `## Behavior To Preserve` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:148-162 |
-| Automated mode starts only after source inventory is accepted or corrected, writes artifacts relative to the resolved `onboarding_root`, and treats common excludes as `settings.json` path-rule defaults. | `## Control Modes` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:179-241 |
-| The skill lists all bootstrap templates used for ledgers, state, plans, route maps, evidence packs, cards, waves, reviews, and handoff. | `## Templates` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:364-385 |
-| Phase 3 and Phase 4D require route-based overview verification metadata and `Hot Path Summary` sections so `c-02-memory-quality-control` skill can compare recorded `sourceRoute` scopes and `c-04-retrieval-strategy-router` skill can use compact route hints inside the Intent substrate. | `sourceRoute` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:686-721 |
-| Existing-memory slice maintenance reuses current memory, covers expansion, refresh, move handling, deleted-slice cleanup, asks whether moved/deleted route behavior relocated before removal, and supports cleanup, move, preservation, or removal plans. | `### Existing-memory slice maintenance` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:491-532 |
-| Phase 4 classifies deleted, moved, and stale onboarding routes; Phase 5 handoff records removed/moved/retired memory and keeps closeout outside automated bootstrap. | `## Phase 4 — Bottom-Up Memory Build` | mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md:745-1064 |
+### Repo-Internal References
+
+- `c-03-repo-bootstrap` skill defines root overview as the minimum bootstrap, under the resolved onboarding root, and introduces targeted work for existing-memory source slices. [1]
+- The design requires durable route-local overview placement directly in the mirrored onboarding hierarchy, generated route indexes with hot-path hints, and self-sufficient file-level onboarding. [2]
+- `c-03-repo-bootstrap` skill preserves thin orchestrator behavior, confidence tags, `c-08-ar-coordination-context-resolver` skill topology resolution, cross-repo read-only semantics, and `c-05-create-or-update-onboarding-files` skill ownership of file-level onboarding. [3]
+- Automated mode starts only after source inventory is accepted or corrected, writes artifacts relative to the resolved `onboarding_root`, and treats common excludes as `settings.json` path-rule defaults. [4]
+- The skill lists all bootstrap templates used for ledgers, state, plans, route maps, evidence packs, cards, waves, reviews, and handoff. [5]
+- Phase 3 and Phase 4D require route-based overview verification metadata and `Hot Path Summary` sections so `c-02-memory-quality-control` skill can compare recorded `sourceRoute` scopes and `c-04-retrieval-strategy-router` skill can use compact route hints inside the Intent substrate. [6]
+- Existing-memory slice maintenance reuses current memory, covers expansion, refresh, move handling, deleted-slice cleanup, asks whether moved/deleted route behavior relocated before removal, and supports cleanup, move, preservation, or removal plans. [7]
+- Phase 4 classifies deleted, moved, and stale onboarding routes; Phase 5 handoff records removed/moved/retired memory and keeps closeout outside automated bootstrap. [8]
 
 As of the 260703-L9 lifecycle convergence, the bootstrap-trigger table row names `l-01-agent-lifecycles` (an active orchestrator job entering an uncovered area may trigger targeted bootstrap); the bootstrap flow itself is unchanged.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this skill.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260921-ICR-L27 Onboarding Is Not The Repository's Knowledge Foundation, And The Handoff Now Says So
 
@@ -80,30 +67,3 @@ carries the same obligation.
 **This card describes a generated copy.** The canonical instruction home is
 `skills/c-03-repo-bootstrap/SKILL.md`; `scripts/sync-skills.py` propagates the root tree into this
 package-owned copy and the eight harness starter packages, and nothing here is edited by hand.
-
-## Update History
-- 2026-09-24T12:40:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the onboarding/knowledge-foundation boundary.** The skill gained the paragraph stating that this skill produces no knowledge records, that the foundation is `c-14-knowledge-bootstrap`'s step carried by the curator, that onboarding is optional input to it, and that an unrun foundation is a named fact of the handoff rather than an omission; plus the relationship-table row and acceptance criterion 17. **Citation accounting:** the rows this card carries into the file were re-read against this candidate rather than shifted by a remembered delta. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-
-
-
-- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **current-tense claim corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`). The Logic section claimed "Internal bootstrap uses `ar-memory/`; external-memory bootstrap uses the selected per-repo memory repo", a branch the corrected generated skill no longer contains — it resolves `onboarding_root` through `c-08-ar-coordination-context-resolver` and takes `topology` only as an optional pass-through hint. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 14 citation findings; scoped check passed.
-
-- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the trigger table row now names l-01-agent-lifecycles. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-06-02T04:25+02:00: Replaced the `W-01-heavy-task-workflow` row in the related-skills table with `l-01-agent-lifecycles` after W-01 retirement. L-01 series, Sub-task B/S6, mcp 1.1.0.
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-24T04:34+02:00: Updated references after `c-02-memory-quality-control` skill was renamed to memory quality control.
-- 2026-05-22T16:39+02:00: Updated after existing-memory slice maintenance gained explicit preservation-first handling for moved or deleted route behavior. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-21T03:05+02:00: Updated the `c-04-retrieval-strategy-router` skill relationship to `c-04-retrieval-strategy-router`, with bootstrapped onboarding as its Intent substrate.
-- 2026-05-19T02:45+02:00: Updated for route-index `hotPath` support, including required root/route overview `## Hot Path Summary` sections and generated index refresh expectations.
-- 2026-05-18T21:44+02:00: Refreshed after pulling the committed `c-04-retrieval-strategy-router` skill onboarding read-mode rename from `origin/main`.
-- 2026-05-18T21:38+02:00: Refreshed against the current committed `c-03-repo-bootstrap` skill, restoring the `c-04-retrieval-strategy-router` skill relationship to discovery techniques and updating verification metadata.
-- 2026-05-18T16:42+02:00: Updated the `c-04-retrieval-strategy-router` skill relationship to point to `c-04-retrieval-strategy-router` as the consumer of bootstrapped overviews and file maps.
-- 2026-05-15T11:46+02:00: Refreshed after `c-03-repo-bootstrap` skill overview templates and instructions gained route-based verification metadata for deterministic `c-02-memory-quality-control` skill overview drift. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-14T21:38+02:00: Refreshed after the skill frontmatter was tightened and the exclusion baseline was clarified as `settings.json` path-rule defaults rather than a hidden skill filter. Verification metadata remains pinned to the last committed source until closeout.
-- 2026-05-14T21:16+02:00: Refreshed for resolved onboarding-root paths, source inventory as the pre-automation gate, default bootstrap excludes, existing-memory slice maintenance, deleted-slice cleanup, `c-05-create-or-update-onboarding-files` skill routing, and handoff-before-closeout semantics. Verification metadata remains pinned to the last committed source until closeout.
-- 2026-05-14T18:00+02:00: Refreshed for the route-local bootstrap memory model, evidence packs, file cards, onboarding waves, curator reviews, and new template set. Verification metadata remains pinned to the last committed source until closeout.
-- 2026-05-12T18:51+02:00: Refreshed after the skill frontmatter moved to the lowercase `c-03-repo-bootstrap` name.
-- 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
-- 2026-05-09T22:57: Refreshed verification metadata and expanded source-backed references.
-- 2026-05-09T21:59: Created onboarding after `c-03-repo-bootstrap` skill was aligned to the resolved memory root model.

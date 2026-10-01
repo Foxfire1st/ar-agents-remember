@@ -1,0 +1,136 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The request/result separate prepared inputs from observed candidate and authority records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:356f5116086f34f397dc828c9bf1f3ec1888533683c15eca9544dc90014bac09",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateObservationRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:cf1f569db2ff5b085673c11491fa235afcb8b5dfe84ef836e3152f2851c9e6fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObservedCertificationCandidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical input snapshots and structured refusal preserve real nested evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:303ac5988a88d76a8175f78638f9ccbd156324296ac5faa449aa81256038bea9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:c9399fc7fd60d86c869d310f1734097cfc95b2f1bf848dbf804368b6ab234481",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finding_value"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:c4d91de04b3476bff7e646fc9baaec5384e877a00b93d2b7bab7b36af3e83e15",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Task/door authority, generated declarations and semantic projections are assembled from actual owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:2bdea6fbf0870fe0b1e0c1bacdb6478ea0e7d42a19ad43964b363ac8cedafbab",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_certification_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Mutation authority binds effective input and the actual memory work branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:3673f663b3acfef674052da58ff14ab933270b81a895c58017269d05268b9768",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mutation_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The linked checkout, prepared index and add-all tree must agree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:99e26b62e68ddd38960bf340f8d09bed75138a1a66f2c0b3cf4ecc01a8603ef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_rules"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Every source edge is current, ancestral and unchanged across paired ref observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d230cb750354844167da03003c3aeddd690ba3c",
+            "content": "sha256:bb3c7762599c1cb1f27a21457ed813258c89ccb245e13c03caafeaf1180fb948",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

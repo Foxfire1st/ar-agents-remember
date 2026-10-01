@@ -1,15 +1,5 @@
 # dashboard/src/panels/Terminal.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/Terminal.test.tsx`         |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash |                                                  `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate |                                                  2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -79,20 +69,20 @@ alternate-buffer TUI case. Backend and live xterm integration details remain own
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The mocked test replaces xterm (incl. the L6 extensions: `options`, `parser.registerOscHandler`, `onBell`/`onTitleChange`, `focus`, `attachCustomKeyEventHandler`), exposes fake buffer state, and records constructor options / scroll calls instead of mounting the real renderer. | `mocks` | dashboard/src/panels/Terminal.test.tsx:11-33 |
-| The always-named group-landmark case (fallback name + explicit label wins). | "the group landmark is ALWAYS named — explicit label or the sessionId fallback (L6 review finding 6)" | dashboard/src/panels/Terminal.test.tsx:132-143 |
-| The regression assertions pin `scrollback: 5000`, normal-buffer wheel-to-viewport behavior, alternate-buffer PageUp routing, mouse-tracking non-interception, and partial-pixel swallowing. | "enables scrollback on the xterm instance"; "uses wheel events to scroll the xterm viewport instead of terminal input"; "maps wheel events to page navigation when the terminal is in the alternate buffer" | dashboard/src/panels/Terminal.test.tsx:145-156; dashboard/src/panels/Terminal.test.tsx:227-251; dashboard/src/panels/Terminal.test.tsx:253-279 |
-| The component under test enables the xterm viewport, passes the explicit scrollback option, captures wheel input to either `term.scrollLines` or PageUp/PageDown input depending on buffer state, and names the group host. | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
+- The mocked test replaces xterm (incl. the L6 extensions: `options`, `parser.registerOscHandler`, `onBell`/`onTitleChange`, `focus`, `attachCustomKeyEventHandler`), exposes fake buffer state, and records constructor options / scroll calls instead of mounting the real renderer. [1]
+- The always-named group-landmark case (fallback name + explicit label wins). [2]
+- The regression assertions pin `scrollback: 5000`, normal-buffer wheel-to-viewport behavior, alternate-buffer PageUp routing, mouse-tracking non-interception, and partial-pixel swallowing. [3]
+- The component under test enables the xterm viewport, passes the explicit scrollback option, captures wheel input to either `term.scrollLines` or PageUp/PageDown input depending on buffer state, and names the group host. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
@@ -101,32 +91,3 @@ No meaningful cross-repo references found.
 The terminal tests now exercise unchanged-box refit suppression, visible-box recovery, clipped-row
 correction, and platform-correct selection copy. In particular they prove a copied selection is
 released so a second interrupt chord is delivered to the running terminal.
-
-## Update History
-
-- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 4 citation entries (8 findings); no Tier-3 findings.
-
-- 2026-07-24T13:17:17Z — Curator: recorded terminal geometry and copy-versus-interrupt regression
-  coverage; verification fields remain pre-commit.
-
-- 2026-07-17T04:20+02:00 — 260715-FEUI-L6: extended the fake xterm class for the wrapper's new
-  surface (`options` record, `parser.registerOscHandler`, `onBell`/`onTitleChange` disposables,
-  `focus`, `attachCustomKeyEventHandler`) and added the always-named group-landmark case (review
-  finding F6: `role="group"`, sessionId-fallback `aria-label`, explicit label wins on rerender).
-  Mock surface only — the wheel/scrollback cases are untouched. Verification metadata pinned to
-  the leaf base until closeout stamps the L6 code commit.
-- 2026-07-02T16:35+02:00 — Reopened L6 wheel-precedence fix: the fake xterm gained a `modes` getter
-  (`mouseTrackingMode`, reset to `"none"` per test) and a case pinning that an active mouse-tracking
-  mode leaves the wheel event un-intercepted (no `scrollLines`, no synthesized input, default not
-  prevented, propagation intact) so xterm's native mouse-report path owns it. Verification metadata
-  pinned until closeout stamps the follow-up commit.
-- 2026-07-02T15:03+02:00 — Reopened L6 served-page follow-up: the fake xterm buffer now exposes
-  normal vs alternate state, and coverage asserts alternate-buffer wheel input sends PageUp instead of
-  calling xterm `scrollLines` or leaking arrow-history input. Verification metadata pinned until
-  closeout stamps the source commit.
-- 2026-07-02T14:28+02:00 — Reopened L6 wheel follow-up: extended the focused component test to assert
-  that wheel input calls xterm `scrollLines`, partial pixel deltas are swallowed, default/bubbling is
-  prevented, and wheel movement never reaches terminal stdin. Verification metadata pinned until closeout
-  stamps the source commit.
-- 2026-07-02T13:07+02:00 — Created for the reopened L6 follow-up: focused component coverage for the
-  terminal scrollback regression. Verification metadata is pending until closeout stamps the source commit.

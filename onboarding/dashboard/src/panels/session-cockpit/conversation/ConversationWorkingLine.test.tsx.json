@@ -1,0 +1,124 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixed-anatomy case pins the live working cue and elapsed value derived from `stateSince`.\n\nAnchor: \"renders the fixed anatomy on a live working turn\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c763264ca0df3aec14635974eec7e96f8e2f34",
+            "content": "sha256:153f6baec2610e7f9b55877ef1c4b92092e334435c73346b528a515f68635933",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The remaining cases pin canonical working states, live/working gating, elapsed omission, stale rendering, and the absence of a line-hosted stop control.\n\nAnchor: \"shows the canonical wire word for the other working-set states — never an invented verb\"; \"renders ONLY while the stream is live AND the turn state is in the working set\"; \"omits elapsed when stateSince is null\"; \"appends the visible stale marker ONLY on a stale freshness block\"; \"renders NO stop control (F-at: the ⏹ stop lives in the composer beside send)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c763264ca0df3aec14635974eec7e96f8e2f34",
+            "content": "sha256:080171548f4b305b421f396223b7f9d5530e45feed3b38097a077dd5f4b42e8a",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92c763264ca0df3aec14635974eec7e96f8e2f34",
+            "content": "sha256:e617e72a01f4603e91992e264585acd0f21841036caa46e0a52c751349350f60",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92c763264ca0df3aec14635974eec7e96f8e2f34",
+            "content": "sha256:f2d2a285171bf6cad88c48832b230884a4731ee83c8031623d5557956bf4e444",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92c763264ca0df3aec14635974eec7e96f8e2f34",
+            "content": "sha256:6822bd0ea1736fc4ea9199381f1f5cd391df3687eaccff5995d731d46023e3a7",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92c763264ca0df3aec14635974eec7e96f8e2f34",
+            "content": "sha256:2467666afa3b2f9b2fe982134399e8ccafed1cd116891af9b1153601e3c730ef",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9671e660bb1b94ee1ce3ac15a5d40b4d1b0bd3ca",
+            "content": "sha256:f1f9dc82473c5da490cb9f9824a1b39366ca02b2064bd437ad9bd8f29f2eda2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKING_TURN_STATES"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Controlled stop owner.\n\nAnchor: \"data-disabled-reason\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c030b585b258416ee5b6c8d728bec96b908da15",
+            "content": "sha256:ffbbea7ac301c17c7cbf5dcc60e3a062be2caffadfb1f8e553d03eae96b72869",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/panels/sessionComposerParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

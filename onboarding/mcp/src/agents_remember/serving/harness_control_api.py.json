@@ -1,0 +1,194 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_control_api.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pre-session catalog supplies the dynamic cached envelope and failed-refresh quarantine.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:149282dfd781a80c70d98a059169561792df1ec3cfd4e930aa22e2c4d22f2012",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessCapabilityCatalog"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The submit-specific pre-dispatch refusal carries retry-safe and stage evidence for zero socket-byte delivery.\n\nAnchor: \"class PreDispatchFailureRefusal(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:7b559c9f1464bf7195fc8966957c2e9080e855e0da7e437ed2cb9e9534a501d3",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exact-session client reads advertised capabilities and applies model/effort setters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:66a624287c8224c09cbdf40199718627aab66a4870e6d7445a0c57626a671560",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_control_capabilities"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The exact-session client distinguishes first-byte ambiguity from a request accepted before disconnect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:f5d43007878c4e61693102c5a7877ee25f2597a86ae24b8d832a72285564bb62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exchange_control"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The exact-session client submits whole messages and preserves request correlation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:b3efdb1a38a081ab704d9f83f8d231422095971acf5849041788e0674c879d0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "submit_control_prompt"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The exact-session client reconciles a possibly lost submission by request id and bridge epoch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:18c24c3c7566cb48b8a108abacdf5d2e8b788df025bb7197aedc38cbaee761dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_control_prompt"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Public serializers deliberately omit the internal raw evidence mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:ea57df2eb40f427428ed41bd07ddc1162732cd83ab5da95cf65ffa133740b987",
+            "locator": {
+              "kind": "symbol",
+              "name": "public_receipt_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope.\n\nAnchor: \"register_harness_control_routes(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:0314eb46d2dc98754d884260154a08d1d8d1a913968e563616077695abef3c00",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 301
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:f6aee0befde8f102013de1f2b12b3d00fcbedc184b2e7d2e5348e69d58cd0ca8",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`.\n\nAnchor: \"resolve_terminal_open_selection(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:771fb25760573c4a121fa104bffa8416b3584f6b86f2cdd22c93c6466dbdae35",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared control-response table declares missing-session, unsupported/stale-seat, and control-unavailable refusals.\n\nAnchor: \"SESSION_CONTROL_RESPONSES: dict[int\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:b2c2eadc13a9c011a7303e1cacd82eafac3d9fc3b9096d581b51757fefbd72a6",
+            "locator": {
+              "end": 1146,
+              "kind": "line_range",
+              "start": 1146
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

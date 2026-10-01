@@ -1,0 +1,458 @@
+{
+  "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+        "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafEntries"
+        }
+      },
+      "id": "RLZ-7N70C8T7",
+      "invariant": "INV-T0EWDB7H",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Composes the leaf's entry row from only the working change-set button (live leaves) and IntentReviewEntry, handing it the leaf's facts and onOpen; the former Intent-review change-set button and any subject picker are no longer part of the row.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+        "content": "sha256:5893e0ccb478f7ddb7f5363b31684d2172f3a903818cf528a472e0fc0521b5ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "leafFacts"
+        }
+      },
+      "id": "RLZ-P083H9NQ",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Builds the entry's facts key from only this leaf's liveness, closeout, integration and cleanup status and whether its code worktree exists. The summary read, which is keyed on these facts, is therefore re-run when these move and not when unrelated parts of the global analytics document change.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+        "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafEntries"
+        }
+      },
+      "id": "RLZ-TQ123AV2",
+      "invariant": "INV-2E8MG43K",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Renders the task entry row from only the working change-set button and IntentReviewEntry, whose one read is the changed-intent summary; nothing in the row reads the subject catalogue.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+        "content": "sha256:b538defda103ff9349badef81ccce44b1f1b5010a275ef703559a6ed173b56ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetReadState"
+        }
+      },
+      "id": "RLZ-YNHTQMA1",
+      "invariant": "INV-TH4KXFTX",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Reduces the change-set control's read to a single-word state carrying data-review-state (and data-review-code for a problem): briefProblem's word, 'unrecorded', '…' while loading, or 'empty' when neither half lists a changed file. It prints no backend paragraph.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module's own statement of which entries a master and a leaf get, and that the Intent review is its own component.\n\nAnchor: \"intentReviewEntry.tsx\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:f4a7aed8100db99e8f239d60c9f5f1f3b42093d7bced0cc7bbe7958b4c35f240",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The one liveness predicate both live-dependent entries read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:71cd159561dfafcdf346e22ba29fd069090dca1ef6108584c65a420dcae544ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafIsLive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The Intent review control and its summary read.\n\nAnchor: `useIntentReviewSummary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shared brief-state and disclosure helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryStateDetails"
+            },
+            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:55614d11c93c21ea706b6586989d20ee5a10b9e74c627d7613e9102629f2c9bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "briefProblem"
+            },
+            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:99c3ed0cc1ea5ac520ebcd472aa1bd2052e105e2d3f42141ad6c611fa131923e",
+            "locator": {
+              "kind": "symbol",
+              "name": "problemSentence"
+            },
+            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The re-validation generation the facts carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "content": "sha256:b318e73b1d3563a4015e6ce73a092543e11bce1758c54e8ecbf8c30e4cf82717",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentEntryGeneration"
+            },
+            "path": "dashboard/src/data/intentEntryRevalidation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The change-set client the counter read belongs to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:a85e2cc9a5a731afed4fd8049a86cb9be07af2b3948fb6ceefd4894695138bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskChangeset"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
+            "content": "sha256:1d08d2d1e3b9ee475152be5029ffa52b02d3079169aeca5d205633f21c468331",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskChangeset"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The compact entry's cases: one control, request economy, brief states, leaf-scoped invalidation.\n\nAnchor: \"is one control with the comparison's changed-intent counts and nothing beside it\"; \"makes one summary read, no catalogue read and one committed change-set read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:46bfd4743067f13b1f3d46b57c9e21f8cd1db58079f97f14d3cd4ba61d97b76e",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:5c58a33f6b8294557f19143782143fadf93148ac970ae24a55086d43154b1582",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The closed leaf's recorded entry and the failed-summary case.\n\nAnchor: \"offers the Intent review for a closed leaf, bound to its recorded comparison\"; \"keeps the entry when the summary read itself fails\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
+            "content": "sha256:3fcf1b2573650edcce603f253bec296ab4b8a12b77dfc1b60a968486d45f6718",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
+            "content": "sha256:50400ccb8e1d9b1c18d05b3784cc1ecdf638fd7058afeef210de5bee7472cc3f",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 413
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The net's leaf attribution, rendered only when the answer carried a breakdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:55a6f36386827134ae03d6d26f985c11cfe31e6e3b7c4134223598550787b27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafAttribution"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:fcb911d82cc539f1a15caad42cea72e6b269843840362abedc22c9792d066f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafAttribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The total withheld for an unrecorded range.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:14900451fbebe4f90a222b189a32d495f591e4fa898838cb6a4ac457812006e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "changesetTotal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The change-set control: its own counter read, the generation threaded into the viewer target, the unrecorded state, the refusal filed rather than swallowed, and the disclosure beside the button.\n\nAnchor: \"<ChangeSetStateDetails\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:e35cabbbff34cd2a8ca427ea32bb54c51df1efc804f65d529106da5de03ea2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetButton"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:0e12a38e9a6c0abfcd653bf77d01ea1e5f5732609c6a81b3f8b94b431b41a9f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "setUnrecorded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:b39c613b87564e70addda80223790a5d95758b477ee34d11588c7ad9ebc5fbac",
+            "locator": {
+              "kind": "symbol",
+              "name": "setProblem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The counter read's brief states.\n\nAnchor: `briefProblem`; \"unrecorded\"; \"known-empty\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:b538defda103ff9349badef81ccce44b1f1b5010a275ef703559a6ed173b56ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetReadState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The explanation in a closed disclosure: the refusal sentence or the unrecorded sentence.\n\nAnchor: `problemSentence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:09659e029445bf166a6e1e57f33f02d73696b73e28229fca4462ee6475d3331c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetStateDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**A leaf's entries: working while live, then the Intent review control (not a change-set button).**\n\nAnchor: `IntentReviewEntry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The bar: the master/leaf branch, the one liveness predicate, and the leaf-scoped facts plus re-validation generation the summary is keyed on.**\n\nAnchor: `useIntentEntryGeneration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocChangeSetBar"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:5893e0ccb478f7ddb7f5363b31684d2172f3a903818cf528a472e0fc0521b5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafFacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "This leaf's lifecycle facts as one comparable value.\n\nAnchor: `closeoutStatus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:c5f56ba11cf4f9ad8ca6044f9b0fa32dc07e077962f9d5aa32e8965d0ea82ec2",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafEnclosure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:5893e0ccb478f7ddb7f5363b31684d2172f3a903818cf528a472e0fc0521b5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafFacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/card_authoring.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: the grammar, re-authoring by number, sidecar creation, and the refusals.\n\nAnchor: \"so a run never stops with some cards written and others\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "content": "sha256:9210615047e16b8cdbbd1f3bb46931ca523347556be8a9763a77ac8446097285",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The entry: author in memory first, then write the cards that passed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_card_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One card: its tables removed, its rows authored, a leftover line refused, unused references removed for the named card.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "content": "sha256:8daa6629906d4c216d6ce6135c557b82d9c064f4c8c0ef755fcd60cbf5d6777e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_card"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One row: a placeholder stays prose; otherwise a numbered line and a resolved reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "content": "sha256:14d5f4ea97b2f8ed7170ff5549d33528e493359b93959273ce694e621b9fe148",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A re-authoring is refused while another evidence line still cites its number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "content": "sha256:c8fb1829ffe2f8da2520f380d0fe0d9bd7c48974b7861e33b7cacc2444a4634c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leftover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The sidecar a card without one gets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "content": "sha256:3c14c12500a9f14b25be8fd9c376810b7d6716a252d633d9435d951122bdb7d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_new_sidecar"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The fixer calls this module on a converted tree, scoped to one document when one is named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:b5997ec1a8de4019d0f2182c551c008e9b4cb5fc84dedafab04b440121279f2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_citation_fix"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

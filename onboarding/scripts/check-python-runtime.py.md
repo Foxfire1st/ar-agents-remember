@@ -1,15 +1,5 @@
 # scripts/check-python-runtime.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `scripts/check-python-runtime.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:10+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [repository overview](../overview.md)
@@ -45,31 +35,22 @@ running interpreter; no build is accepted from its version label alone.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; this executable contract reports the exact
 runtime it observes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external source is required to interpret the structured internal proof. | — | — |
+No external source is required to interpret the structured internal proof.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Exact version, prefix, and native pidfd capability mismatches are actionable refusals. | `_refuse`; `main` | scripts/check-python-runtime.py:24-65 |
-| Provenance and observed build identity produce one deterministic fingerprint and JSON report. | `build_identity`; `build_fingerprint`; `report` | scripts/check-python-runtime.py:67-107 |
+- Exact version, prefix, and native pidfd capability mismatches are actionable refusals. [1]
+- Provenance and observed build identity produce one deterministic fingerprint and JSON report. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation source governs this probe.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The probe executes solely against the selected local interpreter. | — | — |
-
-## Update History
-
-- 2026-08-29T16:10+02:00 — Created for exact Python 3.13.15 provenance, standard-library, and
-  native-pidfd capability proof. Verification remains closeout-owned.
+The probe executes solely against the selected local interpreter.

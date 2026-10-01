@@ -1,15 +1,5 @@
 # dashboard/src/dev/dev.css
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/dev/dev.css`                      |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-19T23:58+02:00                          |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -44,25 +34,8 @@ beats or scenarios; over-long titles truncate with an ellipsis instead.
 DEV-only; never the production cockpit (which is entirely Panda + React Aria). Kept as plain
 co-located CSS deliberately — it is dev tooling, not a shipped component family.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Imported by the DEV harness router. | `DevApp` | dashboard/src/dev/DevApp.tsx:12-42 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 1 repository-reference citation (1/1 anchored and sourced; scoped citation check clean).
-
-- 2026-06-22T16:00 — slice 5o: pinned the player transport's size — `.player` switched from `min-width: 32rem`
-  to a FIXED `width: 40rem` (`box-sizing: border-box`, `max-width: 92vw`) and `.player__caption` became a
-  single-line ellipsis (`white-space: nowrap`/`overflow: hidden`/`text-overflow: ellipsis`/`width: 100%`), so a
-  long beat caption no longer widens the centred player or jolts the controls row between beats/scenarios.
-  Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-19T23:58+02:00 — slice 5i: swapped the `.bench__nav` button wall for the compact
-  `.bench__picker`/`.bench__select` scenario selector and added the bottom-docked `.player*` transport
-  styles (caption, controls + `.is-on`, scrub, count). Verification metadata pinned until closeout stamps
-  the code commit.
-- 2026-06-18T21:27 — Dev-bench review-ergonomics: added `.bench__picker` (+ its `select`) for the compact state picker that replaced the `bench__nav` link strip; left the `.bench__nav` rules in place (task 5 still uses them; slice 5i supersedes). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-15T17:00 — Created for slice 5d: the dev-gallery styles extracted from the retired monolith
-  into this co-located sheet. Verification metadata pinned until closeout stamps the 5d code commit.
+- Imported by the DEV harness router. [1]

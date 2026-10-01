@@ -1,0 +1,382 @@
+{
+  "path": "dashboard/src/data/conversation-library",
+  "references": {
+    "1": {
+      "note": "The browser client and native serving route expose library listing for a harness with optional query fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:dc601bdfe9763ff941115acaf570a7db31daf1971939172c0aaa93d92bc960a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchLibraryList"
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:73c910414d1bd81da8f01f0bfa228218d2c2881f67e243c9ad733b4966b759d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_library_list"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:18e0408cffaf42eeadf940aa63d2131bcd4b15a0625ea1babcb86ca0b874a337",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:1fec6701e6a040fbc58f65c6b0c2435db979b5a32ca444176979af7a078a7f01",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The browser client and native serving route read a historical conversation page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:66d02394d16a66ca85b38e87f55ebb9333e3b6b40402beb7b10afdaca3157cba",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchLibraryRead"
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:8ffb8f980725fb3c1238eb3d2a4f396e234a1a7ec82aaf8c5b71e7d97e83a26a",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_library_read"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:28c03db41ce9033ce2b572f390562e94f156f4bcbd65ca3ece18f940fd312743",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:7c57b9b642588b2251ef547e858583417fd1175f65ef29a258b177bb9ce23f84",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The browser client and native serving route open a conversation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:269260c8b7855e7808f9d9959c31c2c0a6f73825c1859b445812fa96beb61d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "openConversation"
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:b665f7d5aad064cc0ba03ada2ca8e408653a2f0b9ef556353ab565b67d0aa4e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_library_open"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:950d6f8a7214799902c1ed415e303ec90484913aea7acec8a8696af80c5779c4",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:dd068fb3212712d04e9259fc711bc90c720c535ed217775b3fc6a0748d3d0d94",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The browser client and native serving route report open-request status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:39fcc1dcdf4823be3b2f50c1b70d810d882355a61bcf7c8e5d019ea001a1a9f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "openStatus"
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:85d05d816da5291bc863a4afb7f6dc6a99cc1cc1b5ea9e989ad881dfce6e4c11",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_library_open_status"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:42b4b63030c6e2a4f3fcb2c7ba9b9f04c0113c66d44258f020c904a91cc902ac",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:33b7c24cae82d1b02d3c3cb0048cc7ca2955f6641869f2472069e30eb1a93e80",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The browser client and native serving route reconcile an open request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:99b345ec1401d4341d7759b9011e6498b15810b0cab39d777fc9e5d7adc9ec0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "openReconcile"
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:b6040941f7a29323605e1fef27c3fe05809cbd7f105ed6a8f04146be899552cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_library_open_reconcile"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:07ee589398c249a98c183fbe871a4cd8505104a30c7a0a0839c7fb945d0f81db",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:94a0f43f2382b2d8d5e55bc4cbed7c5cc857032c9fe1f61a36f4e97d5c2143c5",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The in-stage browser view reads this library state and starts list loading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "179fe52c67ccf3d450dc0a657ba772b077be613b",
+            "content": "sha256:0d0a53bd2e2f3c45f10bca5cf3e27c08dba871f559bc0bad91ea5752314c1016",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibrarySurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The sibling active-conversation state is a separate projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:a7ae24c55328ac48ae400a1753b9bd6319c56aa94e810ce19c2bfe801bfda516",
+            "locator": {
+              "kind": "symbol",
+              "name": "ActiveConversationProjection"
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The parent data boundary keeps `dashboardStore`/`DashboardState` separate from `conversationLibraryStore`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
+            "content": "sha256:c087e6029b510723c7c167853a10129555923959dd4fe068fe1869ad7e92fc94",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardState"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
+            "content": "sha256:61e469df69fbfd06c3ecb14bff70dc3abfb84964d505e9177532450126e2a7b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardStore"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:b3e1ad2f9d0bd21123bc02f95b9d824ad6d55a8a72931714f5410fe959c0ef8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationLibraryStore"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:157496507c2c22724a11ba85f32bfd3f8da8a261d61528a05737acd3edec2958",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
+            "content": "sha256:ae79eb955cac722bf25bff3070d89c42cd500c958bca7b6b5d70877df007c1b6",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

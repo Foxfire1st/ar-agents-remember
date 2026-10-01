@@ -1,15 +1,5 @@
 # mcp/tests/test_state_signal_worker_wake.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| path | `mcp/tests/test_state_signal_worker_wake.py` |
-| doc_type | `file-level-onboarding` |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -100,63 +90,38 @@ demonstrably reached rather than a host it never touched. Cases drive the retain
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The exact source declarations below establish the current behavior; this inventory is not execution
 evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The incident shape: a completed worker with no inbox row wakes its current manager with one durable state-signal carrying seat, leaf, role, outcome and evidence identity, and re-projection mints no second row. | `test_completed_worker_without_inbox_row_wakes_current_manager` | mcp/tests/test_state_signal_worker_wake.py:324-368 |
-| Dedupe is per terminal-evidence identity, not per seat: a second turn on the same stored row wakes the manager again. | `test_a_second_terminal_turn_for_the_same_seat_wakes_the_manager_again` | mcp/tests/test_state_signal_worker_wake.py:370-421 |
-| `failed` and `unknown` outcomes never wake the manager and leave the seat unstamped and eligible, however real the evidence identity. | `test_failed_or_unknown_terminal_turn_never_wakes_the_manager` | mcp/tests/test_state_signal_worker_wake.py:423-455 |
-| An interrupted turn wakes the manager as `interrupted` with its origin, not as a completed turn. | `test_interrupted_worker_wakes_manager_as_interrupted` | mcp/tests/test_state_signal_worker_wake.py:457-478 |
-| The wake leaves the leaf and master task documents byte-unchanged; it never closes task work. | `test_worker_wake_leaves_task_documents_untouched` | mcp/tests/test_state_signal_worker_wake.py:480-509 |
-| A turn-end without a terminal evidence identity wakes nobody; stamping the adapter identity alone makes it wake. | `test_turn_end_without_terminal_evidence_identity_wakes_nobody` | mcp/tests/test_state_signal_worker_wake.py:511-535 |
-| A worker below a managerless master wakes nobody, stamps no marker, guesses no global owner, and stays eligible for the next sweep. | `test_worker_below_a_managerless_master_wakes_nobody_and_stays_eligible` | mcp/tests/test_state_signal_worker_wake.py:537-574 |
-| The terminal host records every contact the sweep makes, so an empty live terminal-session read is a measured zero on a host the delivery path reached. | `_RecordingHost` | mcp/tests/test_state_signal_worker_wake.py:72-89 |
-| The accepted paster keeps delivery assertions on the shared protocol seam. | `_accepted_paster` | mcp/tests/test_state_signal_worker_wake.py:92-104 |
-| One owned worker seat reporting canonical terminal truth from the adapter. | `_worker` | mcp/tests/test_state_signal_worker_wake.py:145-167 |
-| The manager seat, addressed by current occupancy rather than by a recorded sender. | `_manager` | mcp/tests/test_state_signal_worker_wake.py:130-142 |
-| The sprint-scoped orchestrator, the manager's own structural owner, present so the sweep's unrelated dead-upstream fact stays quiet and the whole store can be asserted. | `_sprint_orchestrator` | mcp/tests/test_state_signal_worker_wake.py:170-185 |
-| The temporary world writes real sprint, master, leaf and unrelated-master documents before the sweep resolves structural owners. | `setUp` | mcp/tests/test_state_signal_worker_wake.py:203-277 |
-| Every agent the whole store names, as address or as owner, used to prove no unrelated manager was woken. | `_addressed_agents` | mcp/tests/test_state_signal_worker_wake.py:304-312 |
-| The module's `unit-regression` lane row, added by the same change set that created the module. | "mcp/tests/test_state_signal_worker_wake.py" |mcp/tests/test-evidence-lanes.toml:241-241|
+- The incident shape: a completed worker with no inbox row wakes its current manager with one durable state-signal carrying seat, leaf, role, outcome and evidence identity, and re-projection mints no second row. [1]
+- Dedupe is per terminal-evidence identity, not per seat: a second turn on the same stored row wakes the manager again. [2]
+- `failed` and `unknown` outcomes never wake the manager and leave the seat unstamped and eligible, however real the evidence identity. [3]
+- An interrupted turn wakes the manager as `interrupted` with its origin, not as a completed turn. [4]
+- The wake leaves the leaf and master task documents byte-unchanged; it never closes task work. [5]
+- A turn-end without a terminal evidence identity wakes nobody; stamping the adapter identity alone makes it wake. [6]
+- A worker below a managerless master wakes nobody, stamps no marker, guesses no global owner, and stays eligible for the next sweep. [7]
+- The terminal host records every contact the sweep makes, so an empty live terminal-session read is a measured zero on a host the delivery path reached. [8]
+- The accepted paster keeps delivery assertions on the shared protocol seam. [9]
+- One owned worker seat reporting canonical terminal truth from the adapter. [10]
+- The manager seat, addressed by current occupancy rather than by a recorded sender. [11]
+- The sprint-scoped orchestrator, the manager's own structural owner, present so the sweep's unrelated dead-upstream fact stays quiet and the whole store can be asserted. [12]
+- The temporary world writes real sprint, master, leaf and unrelated-master documents before the sweep resolves structural owners. [13]
+- Every agent the whole store names, as address or as owner, used to prove no unrelated manager was woken. [14]
+- The module's `unit-regression` lane row, added by the same change set that created the module. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:32:39+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:241-241. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:189-189. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:171-171. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:164-164. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:161-161. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:160-160. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:159-159. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:157-157. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:137-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand while resolving the memory sync** — `mcp/tests/test_state_signal_worker_wake.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand** — `mcp/tests/test_state_signal_worker_wake.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: `"mcp/tests/test_state_signal_worker_wake.py"` → `mcp/tests/test-evidence-lanes.toml:132-132`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_state_signal_worker_wake.py" repointed to mcp/tests/test-evidence-lanes.toml:129-129. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-15T19:40:00+00:00 — 260831-LOCR-L05 curator, **re-dispatch**: created this sidecar for the seven-case worker turn owner wake module (incident-shape completed wake, second-turn re-wake, `failed`/`unknown` refusal, interrupted boundary, task-document immutability, evidence-identity discrimination, managerless-master refusal with retained eligibility). Recorded the instrument-reach convention (`_RecordingHost` counts, whole-store assertion, both-sided outcome and dedupe pins) that makes each case's negative half falsifiable. Lane registration lives on the `test-evidence-lanes.toml` card. Verification metadata pinned to the leaf candidate base `67c91534` until closeout stamps the leaf commit; no execution or acceptance claim is made.
+No external evidence is needed for these assertions.

@@ -1,0 +1,205 @@
+{
+  "path": "mcp/src/agents_remember/serving/scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The L1 files API that now imports + re-exports these helpers.\n\nAnchor: `resolve_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
+            "content": "sha256:07529da616c5edb1c5b9aadfda044208b0858941ffe31069f936362a0825c54a",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/serving/files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The L3 change-set API that reuses `FileScope` / `resolve_scope` / `run_scoped` / `language_for`.\n\nAnchor: \"from agents_remember.serving.scope import FileScope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fce1f986349fa61c312ffe82c885f9eb4bda00f",
+            "content": "sha256:32d7dfca551b254e4aaa11fc55532a12b54b91aaba912e3e2bd96129c5494201",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fce1f986349fa61c312ffe82c885f9eb4bda00f",
+            "content": "sha256:66b56015678e6a808098b76cdaf13c413267b851d4bf851d8827f7817ce66c47",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared path-confinement helper (`confine_rel`) the scope uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "content": "sha256:e7439e42dfde2e3ca132f294c995f2162845dad8496330e19b214d075be85ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "confine_rel"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The scope resolver bridge + \"MissingMemoryError,\".\n\nAnchor: \"_resolver.resolve_coordination_context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:65eded254886823405bb56e4121f233239cfafb11d2b9e524acc0e316772932d",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The repo allow-list authority guard (`require_repo`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:cae5d208c1d8ec05196503e1db089c686c65b9c7216370666479dc5709c237b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_repo"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The leaf-enclosure contract enumerator the catalog walks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:47e5201e5b1d133febcbb89eefa6f0ca7e1473347442477513ad46e266e91d2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "iter_leaf_enclosure_contracts"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:d691052aa2ddd33bb7e551016a406704876a55fe73978c266b4c70fcb015b0ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractError"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:b701690fa31ab142e0b84c9ec93e4cf3f74d8eafc5e0b94a771f65ff7216d53a",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:628c47860f788ebd9c7ed9fad7814ca9275a3983ea79aef1b54c80388e101e93",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:195708fc2e79a89f16962f6725f4c37731cf52c3d148490da825ffb677f34faf",
+            "locator": {
+              "end": 462,
+              "kind": "line_range",
+              "start": 432
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

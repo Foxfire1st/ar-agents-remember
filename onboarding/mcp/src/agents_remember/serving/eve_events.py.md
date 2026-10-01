@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/eve_events.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/eve_events.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -88,47 +78,23 @@ bridge can report which session it attached to before any new event arrives.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; eve's documented event set is the external authority this table mirrors. | — | — |
+No configured `Domain Documentation` source; eve's documented event set is the external authority this table mirrors.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The normalized snapshot, transcript entry, terminal result and event types are AR's existing adapter model, not eve-shaped types. | `AdapterSnapshot`; `TranscriptEntry`; `TerminalResult`; `AdapterEvent`; `AR_EVIDENCE_KEY` | mcp/src/agents_remember/serving/harness_control_models.py:1-260; mcp/src/agents_remember/models/conversations/evidence.py:1-120 |
-| The event vocabulary and identity fields the mapping consumes are declared once in the wire module. | `INTERACTION_REQUEST_EVENT_TYPE`; `AUTHORIZATION_REQUIRED_EVENT_TYPE`; `EveStreamEvent.turn_id` | mcp/src/agents_remember/serving/eve_protocol.py:59-70; mcp/src/agents_remember/serving/eve_protocol.py:76-99 |
-| Pending interactions are projected into the bounded queue this mapper owns. | `EveInteractionQueue` | mcp/src/agents_remember/serving/eve_interactions.py:34-109 |
-| The adapter advances the persisted cursor before handing the event to this mapper, and owns the single replay window the mapper relies on. | `EveSessionAdapter._translate`; `EveEventDeduplicator` | mcp/src/agents_remember/serving/eve_adapter.py:615-644; mcp/src/agents_remember/serving/eve_protocol.py:224-268 |
-| Conformance cases assert both directions for each named scenario: the behavior that must happen and the double-render / cross-contamination failure it would otherwise hide. | `EveAdapterIsolationTests`; `EveAdapterSessionCompletionTests`; `EveAdapterQueuePolicyTests`; `EveAdapterSubmissionTests` | mcp/tests/test_eve_adapter.py:1024-1128; mcp/tests/test_eve_adapter.py:959-1023; mcp/tests/test_eve_adapter.py:604-660; mcp/tests/test_eve_adapter.py:371-603 |
+- The normalized snapshot, transcript entry, terminal result and event types are AR's existing adapter model, not eve-shaped types. [1]
+- The event vocabulary and identity fields the mapping consumes are declared once in the wire module. [2]
+- Pending interactions are projected into the bounded queue this mapper owns. [3]
+- The adapter advances the persisted cursor before handing the event to this mapper, and owns the single replay window the mapper relies on. [4]
+- Conformance cases assert both directions for each named scenario: the behavior that must happen and the double-render / cross-contamination failure it would otherwise hide. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The translated event set is eve's published durable stream contract at the pinned release. | `EveStreamEvent` | mcp/src/agents_remember/serving/eve_protocol.py:66-97 |
-
-## Update History
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **no code change in this module
-  between the A1 and A2 candidates** — the A2 round strengthened the case that guards this module's
-  first invariant rather than the module itself. The card therefore keeps its body, adds the fact that
-  the A2 revision made the double-render guard able to fail (premise asserted, duplicate named, whole
-  ordered sequence checked), and adds the replay-window owner its mapper depends on. All three citation
-  tables were rewritten into the `Finding | Anchor | Source` shape (identifier alone in Anchor,
-  `path:start-end` plain in Source), because the superseded `Finding | Citations | Source Path` form is
-  a live memory-quality finding family. Verification metadata moves to the leaf's current base
-  `e9300687`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code
-  commit and no hash or fingerprint was invented here.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: created this card for a file added by the native
-  eve session-adapter change set. Records the three translation rules, the total state precedence, the
-  single-owner cursor boundary, and the two negative-knowledge items a successor must not undo
-  (double-rendering a block; treating `session.waiting` as session retirement). Verification metadata
-  is pinned to the leaf's base commit `67b21aeb` because the candidate is deliberately uncommitted —
-  the governed closeout stamps the real code commit, and no hash or fingerprint was invented here.
+- The translated event set is eve's published durable stream contract at the pinned release. [6]

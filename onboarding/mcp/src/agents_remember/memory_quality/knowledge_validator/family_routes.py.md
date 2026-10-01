@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -51,7 +41,9 @@
 
 MIK-R06 is expected to reuse `family_route_state` and `suggest_family_routes` for its route-maintenance item facts.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The route design authority is the coordination-root note Doc14
@@ -59,34 +51,23 @@ No domain documentation source is configured for this repository (`system/source
 requirement packet `MIK-R04@v2` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The route state, the coverage test and the mechanical suggestion.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Realization entries only, located by the source path of their sidecar. | `realization_locations` | mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:50-63 |
-| A route covers a path by prefix; the root route covers every path. | `route_covers` | mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:66-69 |
-| One family's route state: retired, unrealized, unassigned, uncovered, emptied, routeless. | `FamilyRouteState`; `family_route_state` | mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:73-132; mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:135-141 |
-| The suggestion is labelled mechanical and lists root-level realization files. | `RouteSuggestion` | mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:150-169 |
-| Siblings collapse into a parent only when it holds nothing but family code. | `_only_family_code`; `_collapse_once` | mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:180-184; mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:187-198 |
-| The mechanical suggestion, and its family-record form. | `suggest_routes`; `suggest_family_routes` | mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:201-223; mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py:226-234 |
-| The suggestion's five parametrised cases. | `test_the_mechanical_suggestion` | mcp/tests/test_knowledge_family_routes.py:363-404 |
-| The root route is suggested only for a realization at the root. | `test_the_root_route_is_suggested_only_for_a_realization_at_the_repository_root` | mcp/tests/test_knowledge_family_routes.py:407-412 |
+- Realization entries only, located by the source path of their sidecar. [1]
+- A route covers a path by prefix; the root route covers every path. [2]
+- One family's route state: retired, unrealized, unassigned, uncovered, emptied, routeless. [3]
+- The suggestion is labelled mechanical and lists root-level realization files. [4]
+- Siblings collapse into a parent only when it holds nothing but family code. [5]
+- The mechanical suggestion, and its family-record form. [6]
+- The suggestion's five parametrised cases. [7]
+- The root route is suggested only for a realization at the root. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module reads one parsed memory tree and a set of code paths the caller supplies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): created this card for the new file MIK-R04 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

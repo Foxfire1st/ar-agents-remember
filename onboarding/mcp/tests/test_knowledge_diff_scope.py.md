@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_diff_scope.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_diff_scope.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -134,59 +124,37 @@ None recorded. `M25`/`M26`'s citations are correct **here** and must not be copi
 artifacts, whose pair is stale; if a successor needs the exact nodes, use the two entries in the
 "honesty properties" list above.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. The statements below are grounded in
 repository source and package-local evidence only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The unit marker, the fixture, the seed and the public-seam driver every case uses. | `pytestmark`; `fixture`; `diff_seed`; `run_diff` | mcp/tests/test_knowledge_diff_scope.py:54-54; mcp/tests/test_knowledge_diff_scope.py:61-65; mcp/tests/test_knowledge_diff_scope.py:68-75; mcp/tests/test_knowledge_diff_scope.py:78-113 |
-| The two readers that let a case name a record rather than a position. | `items_of`; `item_for` | mcp/tests/test_knowledge_diff_scope.py:88-105; mcp/tests/test_knowledge_diff_scope.py:116-116; mcp/tests/test_knowledge_diff_scope.py:196-196; mcp/tests/test_knowledge_diff_scope.py:273-273; mcp/tests/test_knowledge_diff_scope.py:572-572; mcp/tests/test_knowledge_diff_scope.py:573-573; mcp/tests/test_knowledge_diff_scope.py:123-123; mcp/tests/test_knowledge_diff_scope.py:156-156; mcp/tests/test_knowledge_diff_scope.py:157-157; mcp/tests/test_knowledge_diff_scope.py:238-238; mcp/tests/test_knowledge_diff_scope.py:325-325; mcp/tests/test_knowledge_diff_scope.py:415-415; mcp/tests/test_knowledge_diff_scope.py:416-416; mcp/tests/test_knowledge_diff_scope.py:450-450; mcp/tests/test_knowledge_diff_scope.py:456-456; mcp/tests/test_knowledge_diff_scope.py:574-574 |
-| **The revised statement as a successor pair, and the divergent revision groups an identity seed retains per side.** | "test_a_revised_statement_arrives_as_a_successor_alongside_the_revision_it_replaced"; "test_the_identity_seed_retains_a_revision_group_for_each_side_even_where_they_diverge" | mcp/tests/test_knowledge_diff_scope.py:111-148; mcp/tests/test_knowledge_diff_scope.py:350-378 |
-| **The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.** | "test_a_source_only_change_is_reported_as_a_source_observation_and_no_record_field_changed" | mcp/tests/test_knowledge_diff_scope.py:151-193 |
-| The statement-only change that still returns the attributed code. | "test_a_statement_revision_with_an_unmoved_source_reports_the_change_and_keeps_the_code_visible" | mcp/tests/test_knowledge_diff_scope.py:196-226 |
-| **The unchanged sibling returned on both sides rather than omitted, with one item each way across the record/source split.** | "test_an_unchanged_sibling_is_returned_identically_on_both_sides_rather_than_omitted" | mcp/tests/test_knowledge_diff_scope.py:229-277 |
-| **The packet's first non-conforming example, and the node `M1`/`M2` kill.** | "test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union" | mcp/tests/test_knowledge_diff_scope.py:283-316 |
-| **The explicit per-side selectors addressing two different exact revisions of one identity.** | "test_explicit_side_selectors_address_a_different_exact_revision_on_each_side" | mcp/tests/test_knowledge_diff_scope.py:364-395 |
-| **The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion with its dangling-edge failure lines.** | "test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence" | mcp/tests/test_knowledge_diff_scope.py:398-504 |
-| **The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.** | "test_a_role_filter_narrows_the_display_and_never_the_comparison"; "test_the_filter_is_bound_into_the_comparison_identity_so_another_filter_cannot_reuse_it" | mcp/tests/test_knowledge_diff_scope.py:510-547; mcp/tests/test_knowledge_diff_scope.py:578-603 |
-| **`M26`'s node: the limitation validator, whose failing assertion on the frozen file is at `:658`.** | "test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction" | mcp/tests/test_knowledge_diff_scope.py:577-649 |
-| **`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.** | "test_a_truncated_comparison_cannot_be_presented_as_a_complete_one" | mcp/tests/test_knowledge_diff_scope.py:652-713 |
-| The no-trees expansion that claims no change set. | "test_the_expansion_of_a_comparison_that_observed_no_trees_claims_no_change_set" | mcp/tests/test_knowledge_diff_scope.py:716-753 |
-| The fixture these cases run on. | `build_diff_fixture`; `DiffFixture` | mcp/tests/diff_scope_test_support.py:189-233; mcp/tests/diff_scope_test_support.py:148-186 |
-|**The unit-lane row this module occupies, and the governed support artifact it consumes.**|"evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\""| mcp/tests/evidence-lifecycle.toml:62-62 |
+- The unit marker, the fixture, the seed and the public-seam driver every case uses. [1]
+- The two readers that let a case name a record rather than a position. [2]
+- **The revised statement as a successor pair, and the divergent revision groups an identity seed retains per side.** [3]
+- **The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.** [4]
+- The statement-only change that still returns the attributed code. [5]
+- **The unchanged sibling returned on both sides rather than omitted, with one item each way across the record/source split.** [6]
+- **The packet's first non-conforming example, and the node `M1`/`M2` kill.** [7]
+- **The explicit per-side selectors addressing two different exact revisions of one identity.** [8]
+- **The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion with its dangling-edge failure lines.** [9]
+- **The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.** [10]
+- **`M26`'s node: the limitation validator, whose failing assertion on the frozen file is at `:658`.** [11]
+- **`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.** [12]
+- The no-trees expansion that claims no change set. [13]
+- The fixture these cases run on. [14]
+- **The unit-lane row this module occupies, and the governed support artifact it consumes.** [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behaviour is exercised here. The fixture's Git trees are temporary and local, and
 the comparison's source resolution is driven through the fixture's own committed trees.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured cross-repository evidence is claimed. | — | — |
-| **The unit-lane row this module occupies, and the governed support artifact it consumes.** | "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" | mcp/tests/evidence-lifecycle.toml:62-62 |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): **the attribution section moved out, verbatim.** The worker moved the nine `ICR-R04@v1` attribution-partition cases into `test_knowledge_diff_attribution.py` (1384 → 790 lines here, 22 → 13 cases). The collected node names are identical apart from the module name. Their six reference rows moved to that module's new card, and Purpose now points there and names the current lane row. The helper row's four ranges were re-derived (`pytestmark` `:54`, `fixture` `:61-65`, `diff_seed` `:68-75`, `run_diff` `:78-113`). They had already drifted by 28 to 29 lines before this leaf. Every other range was re-pointed through the exact base-to-candidate line map. The prose line numbers stay as measured on the frozen 779-line file, and now say so. No stamp was advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **two enforced rows re-cited** (identity-seed `:376-404`, filter-bound `:604-629`). Wording unchanged; no stamp advanced.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **nine new cases for the attribution partition (789 → 1384 lines).** The module now measures ICR-R04@v1 through the production composition: the once-partitioned measured changes with disjoint/exhaustive buckets; the outside-selection boundary; the family-subject membership; the stale/unresolvable-mapping precedence (both the arithmetic case and the production-composition case that authors the claims into the candidate snapshot and asserts the shipped reader's own resolutions); the half-inspected undetermined rule; the legitimately-empty side; the unavailable-partition honesty rule; and the partial-observation denominator scope. The pre-existing rows are untouched — the new cases are appended after the module's former end, so no earlier range moved. **Stamp accounting:** old verification rows name the last real commit; this leaf's claims were re-read against the candidate and are stamp-class leftovers that only closeout can stamp.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" repointed to mcp/tests/evidence-lifecycle.toml:62-62. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" repointed to mcp/tests/evidence-lifecycle.toml:62-62. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" repointed to mcp/tests/evidence-lifecycle.toml:1271-1271. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" repointed to mcp/tests/evidence-lifecycle.toml:1271-1271. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:06:32+00:00: Generated citation repair: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" repointed to mcp/tests/evidence-lifecycle.toml:1268-1268. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:06:32+00:00: Generated citation repair: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" repointed to mcp/tests/evidence-lifecycle.toml:1268-1268. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:29:42+00:00: Generated citation repair: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" repointed to mcp/tests/evidence-lifecycle.toml:1264-1264. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T05:29:42+00:00: Generated citation repair: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" repointed to mcp/tests/evidence-lifecycle.toml:1264-1264. No content impact: mechanical anchor-range projection bound to citation source snapshot 06573647d943a17f74a593342fb552db93e49e5db447dd1a77e4b0a61b2cdf2a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T04:55:18+00:00: Generated citation repair: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" repointed to mcp/tests/evidence-lifecycle.toml:1259-1259. No content impact: mechanical anchor-range projection bound to citation source snapshot 116840615150c9097436b691cc4243186059d79f882e7a6c73cd85d688950e12; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read every claim in this card whose cited range the leaf's own source edits had moved. This leaf's insertion of `mcp/tests/test-evidence-lanes.toml` rows and a test module shifted the anchors below them, and the re-cited range of each claim was checked against the construct it is about rather than accepted from the mechanical projection. Ranges re-cited: `mcp/tests/evidence-lifecycle.toml:1254-1254` -> `mcp/tests/evidence-lifecycle.toml:1255-1255`. The generated projection bullets that recorded the same moves are retired here, so no mechanically rewritten range remains recorded as unverified evidence. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-
-- 2026-09-17T03:15+02:00 — 260915-KS-L8 curator (uncommitted change set on `ar/260915-ks-l08`, base `1ff1893f`): created this one-to-one card for the comparison's unit population (thirteen cases, unit-regression lane row `:76`). It records the two nodes the review made load-bearing (`:309` — the packet's first non-conforming example and the node `M1`/`M2` kill; and `:424` — the present-outside-versus-absent distinction with the per-table rule-2 subsumption assertion), the **measured coverage-rule ablations** in the form the final verification round reproduced them on these bytes (`A` 2 kills; `B` 7 passed; `C` 7 passed with all 28 nodes surviving; `C'` 2 kills; `D`/`E`/`G` 2 kills), and the statement that collapsing the three rules is wrong because it **turns a missing selection into a real absence**. **It records the `M25`/`M26` line numbers measured on the frozen 779-line file — `:678`/`:716` and `:603`/`:658` — and says explicitly that the leaf's artifacts republish a stale pair that does not exist on these bytes and that the ledger is authoritative for it** (ledger **A9**, `L8-W1`), so a successor following this card lands on the assertions rather than on a `def` line and a field initialiser. It also states the taxonomy's four non-kill classes as disclosures with their carried closers and that no case was skipped, xfailed, deselected or weakened. Verification metadata: lastUpdated advanced, the reviewed candidate moved to `ar/260915-ks-l08`, and the commit fields left at the last real commit because the code commit does not exist and closeout owns the stamp.
+No configured cross-repository evidence is claimed.
+- **The unit-lane row this module occupies, and the governed support artifact it consumes.** [16]

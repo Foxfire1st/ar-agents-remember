@@ -1,0 +1,294 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what the vocabulary is, why it is its own module, and the five distinguishable facts.\n\nAnchor: \"The record-collection availability vocabulary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:9784a6b03e132b020876adcd8662e5af460bce320000bcdb64705cd097badb68",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The cases that measure the vocabulary's own refusals and its presence in the served wire schema.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
+            "content": "sha256:267376b4c9601cef7b2c35994ca2d936d6117818a81af8e300dd797990d990a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_channel_model_refuses_a_count_no_owner_measured"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
+            "content": "sha256:e49c7d29905d602f9bc3bfbb0efba7a929aa6e4740afa538568dad2e3d96d671",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_wire_payload_carries_the_channels"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface and the collections named by record class rather than by pane, with the reason spelled out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:945e3e25737efbf20e1ddd2d94c8ea7d0f0b69f84e8bc3727adcaba5327e32bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:59a6ea927db104ff6cad27992d68134f0ae84529e2bf3f34d57c36affc4f6c8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordClassName"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The five-state vocabulary and why each state is a different fact rather than one empty tuple with a label.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:00685c1ca1d8ea3fec1d2faae41ce43abc4ce1afbe7113967c104a33b4e48fe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordChannelState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The one declaration of which states are an owner's answer.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:69b746ed1eb4297470ec10728b80c1ffc42890b24d86efbc72e7f45ea9f92db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COUNTED_CHANNEL_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The channel value: the state, the owner that answered, the count that exists exactly when an answer does, the named unreadable identities and the next action.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:dafe017fda5c133ffcdc982c070c12de7eedc57930f07153e09db3295c2b788e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordChannel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The validator that makes \"a count nobody measured\" unrepresentable — four refusals plus the required next action on every non-answer.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:521631dd89a977f06fc55654bbafb263f0bf65c9d34015180d86f6b258951078",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_an_answer_to_carry_its_count"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared bounds the model takes rather than restating.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROSE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFERENCE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The payload module that re-exports the three names and carries the resulting list on the evidence pane.**\n\nAnchor: `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:ded0ececa681b97be07a9edc7127ef6fe71498bd84fa89e7cfe01e575d892624",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidencePane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:7a5fbb0ba955c031a54745841891d9ff9f5bcb970536bed9d05b3489da4621ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "channels"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:76b4855ea420035e7e9aab5f310ee5329d05a1b7b94b2822793e5c191704fb8b",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:64332db1ccc84d56f20f220ccf1c6aa43801636da9f0296c925152b3a444030a",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:fa2ed29eb75a750b9dabdb26a2cee4f86c4d015befb0fea4b96bdb5d673e1db1",
+            "locator": {
+              "end": 958,
+              "kind": "line_range",
+              "start": 918
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:bcebe01f92d4a74985d50e70efd7605ebfd6c5c599b39233e69c573c8fba9efe",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The composition that resolves every channel through the owner of each collection this vocabulary names.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:739ccdcfda9e3d327794e7ec3076c85a7286115ba109a774a94a57c1303b00fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COLLECTION_OWNERS"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:af180c3535f9f4200d19acd15505c1fdf56bce9c72608d8a1fbf329a5451fae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_channel"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "989047a4b62d3e7ed88bfc3227aa93e3f523b308",
+            "content": "sha256:dafe017fda5c133ffcdc982c070c12de7eedc57930f07153e09db3295c2b788e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordChannel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

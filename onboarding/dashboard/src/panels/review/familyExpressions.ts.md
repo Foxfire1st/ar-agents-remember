@@ -1,15 +1,5 @@
 # familyExpressions.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/familyExpressions.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T19:49:05Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`|
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -36,33 +26,25 @@ Different recorded blobs at the same path remain distinct. A path resolved on on
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. The implementation-specific account is grounded in the repository source below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+No configured domain source could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The named constructs own this behavior; reads and validation use their existing callers and models.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `carriedMembership` owns the behavior described above. | `carriedMembership` | dashboard/src/panels/review/familyExpressions.ts:21-26 |
-| `familyExpressionExcerpts` owns the behavior described above. | `familyExpressionExcerpts` | dashboard/src/panels/review/familyExpressions.ts:185-202 |
-| `excerptKey` owns the behavior described above. | `excerptKey` | dashboard/src/panels/review/familyExpressions.ts:64-66 |
-| `recordSideReadings` owns the behavior described above. | `recordSideReadings` | dashboard/src/panels/review/familyExpressions.ts:147-168 |
+- `carriedMembership` owns the behavior described above. [1]
+- `familyExpressionExcerpts` owns the behavior described above. [2]
+- `excerptKey` owns the behavior described above. [3]
+- `recordSideReadings` owns the behavior described above. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No independent cross-repository interface is introduced by this source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence is required. | — | — |
-
-## Update History
-
-- 2026-09-26T19:49:05Z — Moved the existing pure family-expression grouping account from the center to its extracted owner.
+No additional cross-repository evidence is required.

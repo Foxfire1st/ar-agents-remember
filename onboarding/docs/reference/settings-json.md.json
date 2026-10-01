@@ -1,0 +1,108 @@
+{
+  "path": "docs/reference/settings-json.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Agentic settings parser that implements the documented `orchestration.*` families.\n\nAnchor: \"Read + merge the global (and optional repo-local) agentic settings, per use.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67fa388747fc66fbe35405485cd99e3e80f4f5ae",
+            "content": "sha256:ccdd710fc4adf1647466e7dc80cc6f36b04a32e8f93c1eac31cf192f64adb914",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Spawn payload builder that enforces the settings-only spend surface and `spend-override-unsupported` refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:0dd93910f7bbe2ab45902195c7c9493a9c1742f63cf5ed7f9402bd6697a843bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn_agent_session_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:3a174871131d3eef92a2af8c931602acb4b34e131e0d6c2c97658c41e2f8a31b",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Serving app that reads supervisor settings per sweep.\n\nAnchor: \"logger.exception(\\\"agent-notifier sweep failed; retrying next interval\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:c6d6c6bcffc5811584f00458e86427bd8699c52227a2cb46a11be71b9b9a6699",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Supervisor implementation consuming the redelivery budget and repeated-signal cooldown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b035bc25fcf8bfb657d6246b3a3bdd2df4e637c8",
+            "content": "sha256:3d4793dd9feb0a10ce5bdcc82bdb1b88f42dd316551020faf2aa6500cd44aa70",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_agent_notifier_sweep"
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Backoff math enforcing the shared 900-second redelivery floor documented here.\n\nAnchor: \"redelivery interval\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
+            "content": "sha256:a95b6ef893fcb37a5b0643e9bb1e82fc7c364fc9e26e25c1a4f7166817843a3a",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/inbox_backoff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,1789 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The view names the panel, floor-chip, calibration, narrow-rule, and keyboard-wiring seams.\n\nAnchor: \"useKeyboardZones({ active\"; \"The ~80-col floor chip\"; \"~280px rail default\"; \"Narrow-width rules: rail behavior is unchanged.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbf8ed02373f4d1ed0b4d715ede728b73e70463d",
+            "content": "sha256:6b1f3b880c859a3694a6a28f06f479189446fd25b54adc59a38f534e232a42c8",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/data/sessionLayout.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:4b173453ee881e29e1e3fa2d9c8d62544882efd099b775ecff6dfa0a04ed70e6",
+            "locator": {
+              "end": 757,
+              "kind": "line_range",
+              "start": 757
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:a1595058ae6e90b3a4bd7959958395b2dc8c5be77b4416adceb3ad575dac284d",
+            "locator": {
+              "end": 772,
+              "kind": "line_range",
+              "start": 772
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:075dc8e95534d5092c5ad6661167cba3112face8a1e2a301a3dff689fc5c222e",
+            "locator": {
+              "end": 1052,
+              "kind": "line_range",
+              "start": 1052
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shell passes the active expression to this view.\n\nAnchor: \"active={view === \\\"chats\\\" && !takeover}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:321dfb2796157b97cccb9a0074dd3d4c41ce87bff8defc8119177d8b736f3ea9",
+            "locator": {
+              "end": 811,
+              "kind": "line_range",
+              "start": 811
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The pure decisions this shell feeds widths into.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:5da137ff3ad9701ff3d71085b63e557442136531e1645ea2a6a202194ec46b37",
+            "locator": {
+              "kind": "symbol",
+              "name": "ptyFloorPx"
+            },
+            "path": "dashboard/src/data/sessionLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:0a3221f962ef012e7bd7dd4f86f291226108647a11b22fd8110670f05b748757",
+            "locator": {
+              "kind": "symbol",
+              "name": "railDefaultPercent"
+            },
+            "path": "dashboard/src/data/sessionLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:746319c596455ef54d2d2e6c0feb46c9a3e83cebd91104cca26cce662f84611e",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasPersistedPanelLayout"
+            },
+            "path": "dashboard/src/data/sessionLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:72bfb6acdd8521bb0c952ccce69a23a5c34650d088c6d77c514b0a427cf0c351",
+            "locator": {
+              "kind": "symbol",
+              "name": "stageBelowPtyFloor"
+            },
+            "path": "dashboard/src/data/sessionLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:14d55eca4af6373e4e083d48f3fbf65af454094bad8663732cc46c6f9da3a398",
+            "locator": {
+              "kind": "symbol",
+              "name": "autoCollapseTransition"
+            },
+            "path": "dashboard/src/data/sessionLayout.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The registry + default commands the context actions serve.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:87fadab0a7cdd79c22f0cacea4a4a91774adcb1dcc7984251f2afebc0fa9e1ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "createCommandRegistry"
+            },
+            "path": "dashboard/src/data/commands.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:c84e84c34993294e9bd3bed50b9ab64df754c8b865342356c10f1c9e8713b14a",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerDefaultCommands"
+            },
+            "path": "dashboard/src/data/commands.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:058f38361b92b74bc32eecb148afdf2fedb639bb4336619fea6cd0731d9ca123",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/data/commands.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The snapshot/set/pair/cycle/promotion drivers are defined in `setClient.ts`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:1727a2b194dce457d5c2e618159e35ca6eecbfdb6bfdec873343ef6e0e247420",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshSessionSnapshot"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:5c9b106eb6d13eae4e1869dc85d471ac90db81c4e8cef24daa37879d4141f5df",
+            "locator": {
+              "kind": "symbol",
+              "name": "sendSet"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:c0ba27ddf06208226ac847d155c326da394282fe5c111c03e7cd4f9621988c05",
+            "locator": {
+              "kind": "symbol",
+              "name": "startPairChangeFlow"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:a9f32847179baf7c52fde8ff95901616d1c6bb127442da7d44fd361cc9790331",
+            "locator": {
+              "kind": "symbol",
+              "name": "cycleEffortRequested"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:20093927c0e6bc632c67ed3e9400814f384c02c94fdb5b18e96007eb695a73a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "startSetPromotionWatcher"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The `ModelEffortControl` component is declared here.\n\nAnchor: \"export function ModelEffortControl({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7244eb21672fd89aa04a39047e7d5273b3ee1",
+            "content": "sha256:f03afcb6d2ee657e01792fa51602e58f8af953b3d2b873bfba3f31f3d4152cda",
+            "locator": {
+              "end": 635,
+              "kind": "line_range",
+              "start": 635
+            },
+            "path": "dashboard/src/panels/session-cockpit/ModelEffortControl.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Persistent background outcomes and screen-reader regions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "710bfa44cbf21bb6632da6a7d248fbcc48d61769",
+            "content": "sha256:311b0c69f7b06cdee8e15fdedffde93acb34c4ab969fc69c84c6906cb3ef8aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetOutcomeToasts"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "710bfa44cbf21bb6632da6a7d248fbcc48d61769",
+            "content": "sha256:8de2a2017356a3c04a7da62cf176ac155a0b22661917f7befefe1de88548692b",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "dashboard/src/panels/session-cockpit/SetOutcomeToasts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Persistent screen-reader regions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03a3272c464ed8c76961e96dd1838ef072c8269d",
+            "content": "sha256:5733e63f655067773014e34890226955c3dd5813858a948920c3fb9394b401b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitLiveRegions"
+            },
+            "path": "dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "`nextRegion` supplies the ordered F6 region transition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "773a54dd0e6201011e17b6dbca73b3d2e25ca148",
+            "content": "sha256:b73da07fae0513fc580423eef2984f608229072f66fefa33c3d74a55b0b58c8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "nextRegion"
+            },
+            "path": "dashboard/src/data/keymap/focus.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The rail renderer receiving the once-derived model/rollup as props.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:cd97a64dc1b9b7ee7a84b776bd75c657e02a4f1b896d9745402a21d609738b03",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionRail"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:9b8d877b104ce19f37d492edaec4f09e6c19a6b1b93db29cf56cafb0dbc44c34",
+            "locator": {
+              "kind": "symbol",
+              "name": "model"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:7848af30c1f429b6ca6162d611f1c3cb86fbe3e7d6fe537eb0bac14330953200",
+            "locator": {
+              "kind": "symbol",
+              "name": "rollup"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:c35cc5ef9738dc2f56674dc5950e8efa90d2b3dddf4dcb33005f8794a2e64f61",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`SessionStage` is the stage container component.\n\nAnchor: \"export function SessionStage({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9630b4b378858e59322c88e524b4938faf55e02",
+            "content": "sha256:67b30ea209affee308a69e1a8951ba442a161ddbbd1d900612f608689f346441",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionStage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stage fill mounts the sweep, live-turn selector, `conversation.stop` registration fields, `ChatsStageBody`, and `InteractionBar`.\n\nAnchor: \"useEffect(() => startRetireResidualSweep()\"; \"const focusedLiveTurnWorking = useActiveConversation((state) => {\"; \"id: \\\"conversation.stop\\\"\"; \"title: \\\"Stop turn\\\"\"; \"keywords: [\\\"stop\\\", \\\"interrupt\\\", \\\"cancel\\\", \\\"turn\\\", \\\"abort\\\"]\"; \"when: () => deps.chatsInterruptRef.current.available\"; \"run: () => deps.chatsInterruptRef.current.onStop?.()\"; \"<InteractionBar session={focused} composerRef={refs.composerRef} />\"; \"onToggleDiagnostics={handlers.toggleChatsDiagnostics}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:38a2c04df3b8d1d3945e3e0c7ba51ab203983c08091a4c749744204e128db6ba",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:13767e24f015692464845cbb56291d653b7305bfc0b58d7c5b0f5833e7255574",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:3626ba74215fa06405670828a68ece5a49f428488241f842647d386a2f721c6d",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:d2d52b8427612405f0c54000a7b50dbea7f39ca96092b7c4da5b4bdc1849b217",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 812
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "874f6bb9be6c9cedd4170b34a5f8b60fa593427a",
+            "content": "sha256:0fe4f7f9e9cc2570021d4a89061353f183d6fc57262b5e12fa3f6223cd11e0b9",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/useSessionsPaletteCommands.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "874f6bb9be6c9cedd4170b34a5f8b60fa593427a",
+            "content": "sha256:f70346afc960b4b1628199cb9cb33dfb8e6a5221b05ab62641d371d873f72c80",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/useSessionsPaletteCommands.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The accessible stable-mounted Evidence / Capabilities / Bus tab host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:cf6921ed2102d45126e0de529c02858f0882a8e6f24889c24ffc1708fa7fe532",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeatInspector"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SeatInspector.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:ae987932e111c8637bd0624f3d98e0a8ce6b2c8efc89812d5edf84c9d65db128",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "dashboard/src/panels/session-cockpit/SeatInspector.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The pure task-document rail, attention, and focus derivations are defined in `railModel.ts`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:cb246c84cd67b13d018a14318050aeaaf2b7dbbb23881b5879637d68135b833f",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildRailModel"
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:d09765d99cc234c26300e371dd171de930d1941c18e92a21bf2a8ac26e12af08",
+            "locator": {
+              "kind": "symbol",
+              "name": "attentionRollup"
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:b9fd82d08ecac8b05c60276f74407065eabdbe0f810ce5c4ca8038ccd505d035",
+            "locator": {
+              "kind": "symbol",
+              "name": "smartDefaultFocus"
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:55451313e11eb1dd74fe9976b4869b5f3ff372991ad9f312ab8191ed6e58edbc",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 397
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:9eff5cf8b4e88bbbe1ee5b6045f05f6fad84b01dce1332601c16a14198e299c3",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 507
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:916534308a15a68d62a90b941bd66ecc98eb6665647e68c713238c8c4668f7ea",
+            "locator": {
+              "end": 598,
+              "kind": "line_range",
+              "start": 582
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The cockpit store and catalog mirror are defined in `sessionCockpitStore.ts`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:4ce91b1de2ede1af30146eefb690e1a4f70ca2b5e3429658a30cdb142391141a",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionCockpitStore"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:71c1b80b0eaecfd20cd50ef50333f1f01eb6fea051041cc1629aa6a890fbc7ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "startCockpitMirror"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The shared poll driver subscription is owned by the shell.\n\nAnchor: \"useEffect(() => startCatalogPollDriver()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:7e4584d608e9f8f7d75af43e8bd6d897ed577027ae97c31885945e0a2616df81",
+            "locator": {
+              "end": 890,
+              "kind": "line_range",
+              "start": 890
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The `LaunchFlow` component implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:b1e8deb090ef470275858dc95f44213ac3a85f2211a62ef9c1e2202b02d611c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchFlow"
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The `FailedLaunchBanner` component implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:bfe4aa300a42bd27e753eed83f14d79ac2ef9e116fc148e78e192f0cd2db564b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailedLaunchBanner"
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "SessionsView reads `focusedLiveTurnWorking` from the active conversation projection.\n\nAnchor: \"const focusedLiveTurnWorking = useActiveConversation((state) => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:3626ba74215fa06405670828a68ece5a49f428488241f842647d386a2f721c6d",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The seat-state grammar declares `liveTurnWorking`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:7652714a0a46e41106d34229464fca112342f87a66c41d07b77002416431fcd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "liveTurnWorking"
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The payload selector + agent label the question-triage preview resolves (N1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:6515fc565da5c3eb15e9cc00461e807b3e03c2dcefc8f46636a53e74b19630af",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionPendingInteractionPayload"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pending interaction agent label used by the question-triage preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:eb930db27750d1c421a12c2ed18002ad742223093492c4fe41466fdb5864fd91",
+            "locator": {
+              "kind": "symbol",
+              "name": "pendingInteractionAgentLabel"
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pane surface the stage mounts per focused seat (archetypes, keep-alive, cols reporting).\n\nAnchor: \"hidden={!terminalFocused}\"; \"onVisibleCols={terminalFocused ? onVisibleCols : undefined}\"; \"import { ChatsStageBody } from \\\"../ChatsStageBody\\\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b9632adcc6905dab717483247cc426b6e383707",
+            "content": "sha256:b0d6a8e524e6584774ef9de480a3c740fcd4a301f9caa0d198a13481e36aac69",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/panels/session-cockpit/stageLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b9632adcc6905dab717483247cc426b6e383707",
+            "content": "sha256:e5744311b3382b8bb7cf0b4f45998e7e7e55d5e99161e7968dd63f36a6eca484",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "dashboard/src/panels/session-cockpit/stageLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:14e0637f4902002835a3ce72acc97d482792729e2fd8aa05c875289780f5b0fa",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stage renders one `InteractionBar` above the composer.\n\nAnchor: \"<InteractionBar session={focused} composerRef={refs.composerRef} />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:38a2c04df3b8d1d3945e3e0c7ba51ab203983c08091a4c749744204e128db6ba",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The stage renders `ConversationWorkingLine`/`WorkingLine` and the complete `conversation.stop` command registration.\n\nAnchor: \"<ConversationWorkingLine sessionId={focused.id} />\"; \"id: \\\"conversation.stop\\\"\"; \"title: \\\"Stop turn\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:79f15591aac13e045ecba7485affb19568de2a17a37875e08a7503ea5d3e6c58",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:542058a4d2c80467f39006f836a295c9b7f81f1c30a18283ffe42713c4f7e194",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "874f6bb9be6c9cedd4170b34a5f8b60fa593427a",
+            "content": "sha256:7670671b52d0c996723e93bef0b95668a14534e3fe07322622c63c49ba9ed15f",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/useSessionsPaletteCommands.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:61f89b7752afa7e27c311d1e384bfe37b3f5a9761cfbc8bca033d7f5c9b2715d",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:e31b46ce8778a69fa6f227d7d893c585596d649822a178863520a027cb2884c5",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:bd46ce6728ed9c9dd4efeeff65ffeb8aa0a4bfc019e87cb1939f85a7f90d2502",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:3fe654cc2722fc237663d4c09757e2fbbb0f920fca8e83611ab8c157576866b9",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:11d017ca0296ecbbfd22528049ad1bd585a1b9cd65363082b526a4bfcbb9a7d2",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:f3b191ec0c7c79d9d6376534de344f4793282713216e9f9d1ef6e9ba47fff465",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:537d95c58bb8512a3dbdf1697beae2ff330b8de394be41634b11141d6898b2dd",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:2030004573956e571a92ca9b8ac61ec9ee9e32b405e1c4d5df9988605920d98d",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:f6f27b80781b4d3040e42aca3489c87974cb518fe5ee7ea6e7e4b3e4c49372d9",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:65eef890e1a99b5f588e2a6412011b2ed1da6cb12779d43f639ef84e8795373e",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:edb4e93c76e22e71b8c2b8d6866e7d2920dd6f2b38259da1de94f28eebb6d997",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:c5b6eae37393d57c1de39ba759dc2ae0b0860532dc93ba8157baa8584da98f1d",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:576e53824460a657861ce0efa08f1dc08fb4e52e9a654ff86425ce0ac415ebb5",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:14e0637f4902002835a3ce72acc97d482792729e2fd8aa05c875289780f5b0fa",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:8990fd3542f8089beb38a5a4a1fbe03a7cf2a58ef2d1d7015e8bd2face299870",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:2d476696ce715ccf51de13b846183c16ccb1dcc955f8fa85ec244621af755d11",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:83607505e0acde06f503645c01f6554250db85d11f6299b1629af27f9b5b10d2",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:dcb8379f5658649c38557a9400cacbeb0fb0de2766e7f4d27667c249535f9dd6",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:6608bb500a0b14f54570e83097baec05ee6fbb335eb744cbc63ba612171ca26f",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:b4dde7bdc38ec74cecaddf9ef73723d0a2ff84e6fa9a32360d706a3b5a233b05",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:15ac4fc8b19c7d948290c2178cb2a150ae5ea6dd5246d1222e36f97f7fb9b504",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:f03dd55e299782334345af5b0456cb3f1b3116eea93014aaf2f8df1f26d10cac",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:54969226a31264d7663807281fd4413ce98fc29c1adffee2763a2835e1c44713",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:209638993cdc7dd08ae6743f761b2947df327298d7bc133db8d9e4f4e38726b6",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:465f637dbd2532f812b4e91e0c5596b90a1171bd0215015f2565e836e2d40212",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:e8dcf4393def95b8e6f2729ca137f75e8291773edc904243c474079910753cbc",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:959c42572ae3cdd5a4efcc5e722ce2d9f3c407a7053d319ec2e68f9fd2be1f55",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:a1810e447aa41f9516944ee204b980ba53cdb8e8df9695960b133c9d87c89f6b",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:413017da193e1f012b258284a27a61bbb86947cfe2e737581bdadc18edc31986",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:a852cd5bb914270f49a2f7aae2af907a8494628131de55162ee617ac553f75fa",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:73d8486b6696c588064822398a02ae72d2dea378a8b2628ba137f681672a1463",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:4e462bd85ea3522822a9ad3eb24099b032a1b627becfd7c5831e9927d4bac40e",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:465f637dbd2532f812b4e91e0c5596b90a1171bd0215015f2565e836e2d40212",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:982ae9412a6db28b4a5f998d8d079c3321ee960e6c4856b1acb7b43e99fe1071",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:995e527294242ec9b97068c8027e7081b470de1b54c1d54c94792ed127261c01",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:a81f98a72ff9342b265b6b96c4b0668504fcee4efd85f7385027402f44931211",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:2278a1d12c94ea40073070b3d363d998a98953bedb26c594797917b2b20d1e2b",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:120dff8faebdd1120caefb6cf1ac7a7e6497cdc82a6dc5fa70b7a18a24b1d377",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:1c2d2f104e56151f825e2a848c639c7430f288b98f7e794a7f60b3dc056f4e62",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:d078a928f346399ad6fa91454f33ef5abcdceee8927958c1de5dcbbeb0a22bb8",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:1538d3b15fb29ce932368ab542c60c5b5ae5558c3f1369afdecfb1c8510a5425",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:215277e5dc41a063316bd97fda4dfda0b5cc918f42eaab12ae69b26990b7143e",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:8f07f338f1aa64dcfab116c352f84f89b4f716f23e9466d788803fbc5d10a21f",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:b758071374addaa3cca26a5ec2592271be534d61963289ffad726f7b7296ea73",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:91060e35aeed16d34f104f241a0febfc449649f244e3292c2709966d682ddd9d",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:5004af7ee5d21f7784a7e4698279a6636a70deeb1f6722d5b0ebce2e429bc4d1",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:ca1a5e9646f3897a98dc7ab08d67d71db34083eb607a7af122e42ba47fd21a84",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:b758071374addaa3cca26a5ec2592271be534d61963289ffad726f7b7296ea73",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:34ca2f5d273f77fb9930e17a440e17f61171074cb688add9b62540c2bbd03ebc",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:9104a765b06839a807f137bf23c7f9e4ecfd39ca9b9782419827c1d4a395149a",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:c2865839d39c171e4b30361573d3db15caf3bc8034cdef80d3db60f5139fc9ff",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:44ed22ad141bfe1dd0cebf76c1e6c6808cee1e7d0be87f77e0665ba11554b440",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:5c6ab6e58a8e5e894fd011f1895dc54b3f2ac5c20e14e92d29e0c8d3b9c19e1e",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 275
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 304
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:5c6ab6e58a8e5e894fd011f1895dc54b3f2ac5c20e14e92d29e0c8d3b9c19e1e",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:441233c4e1b84ffdb2173ca9d4bd76b0cd8a56866810d7e7ebcf1ca3ff77fc56",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:e42294f402d6588c6bc48dcb6d38da0a98101faa4751ff0abedc4fe3d8ba97a7",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 366
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:7080527078c7428852f33a274fb788aa4d78d738d6e59b8283e9ed41a40b4f8d",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:5858c2f01eaafd007251c480d31cef695626d580f6ff14e35d84f2b4fd15216c",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 392
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 400
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 429,
+              "kind": "line_range",
+              "start": 429
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The retire-residual sweep implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:1c31486622f48dfee78e156a15ba53c8120e75cda8612541bbd3d03f9763f35d",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRetireResidualSweep"
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The view mounts the focus-independent retire-residual sweep.\n\nAnchor: \"useEffect(() => startRetireResidualSweep()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:d2d52b8427612405f0c54000a7b50dbea7f39ca96092b7c4da5b4bdc1849b217",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 812
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

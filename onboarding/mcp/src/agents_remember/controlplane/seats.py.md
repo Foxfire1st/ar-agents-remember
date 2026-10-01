@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/controlplane/seats.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/controlplane/seats.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](overview.md)
@@ -59,15 +49,15 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the class `SeatRow` (lines 36-90) — One seat's row, as the control plane reads it.. | `SeatRow` | mcp/src/agents_remember/controlplane/seats.py:36-90 |
-| Defines the read-only catalog protocol consumed by structural selectors. | `SeatDirectory` | mcp/src/agents_remember/controlplane/seats.py:95-108 |
-| Resolves one canonical current generation and fails closed on duplicate primaries or heirs. | `current_seat_occupant` | mcp/src/agents_remember/controlplane/seats.py:142-164 |
+- Defines the class `SeatRow` (lines 36-90) — One seat's row, as the control plane reads it.. [1]
+- Defines the read-only catalog protocol consumed by structural selectors. [2]
+- Resolves one canonical current generation and fails closed on duplicate primaries or heirs. [3]
 
 ## 260713-TES-L5 Completion Round — Fix-Round Docstring
 
@@ -76,32 +66,3 @@ fix round rewrote it to "The routing and rebind predicates in this package" (the
 ladder and orphan-policy modules are deleted; dead-owner rows surface through the rebind
 machinery). `SeatRow`/`SeatDirectory` behavior is unchanged: pure catalog reads of the seat
 shape declared by the control plane.
-
-## Update History
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: extended the read-only
-  seat protocol with reviewer parent document+role provenance for shared structural consumers.
-  Verification remains closeout-owned.
-
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration for seat claimant selection and confirmed that incumbent/heir precedence and ambiguity refusal remain as documented. Verification remains closeout-owned.
-
-- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
-
-- 2026-08-25T22:27+02:00 — No content impact: final ARSPAWN-L2 review confirmed the documented
-  independent cardinality checks and incumbent-before-heir precedence. Verification remains
-  closeout-owned.
-
-- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: added the shared canonical incumbent/staged-heir
-  selector and typed ambiguity. Verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Replaced leaf/sprint protocol fields with primary, replacement, and
-  binding `TaskDocumentRef` properties owned by the control plane.
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: clarified the named sprint-seat set and its separation
-  from role-neutral manager-subordinate supervision. Verification metadata remains pinned until
-  closeout stamps the code commit.
-
-- 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: recorded the
-  fix-round docstring refresh (ladder/orphan predicates wording removed; "routing and rebind
-  predicates" per the demolition). Verification metadata pinned until closeout stamps the
-  260713-TES-L5 commit.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

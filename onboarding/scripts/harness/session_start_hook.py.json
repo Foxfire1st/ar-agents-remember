@@ -1,0 +1,74 @@
+{
+  "path": "scripts/harness/session_start_hook.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generator that assembles these fragments and emits the conditional `WORKSPACE_ROOT` constant and per-harness trailer.\n\nAnchor: `WORKSPACE_ROOT`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:6a0edb187816155a5e240f7df923e78737aca8d7bb39e621fd621aff7787db23",
+            "locator": {
+              "end": 556,
+              "kind": "line_range",
+              "start": 556
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The directive body every hook reads at run time.\n\nAnchor: \"Otherwise you are the developer-facing **free chat**: read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e3b032eb10a8417bbe3823715259c98e6ebe797",
+            "content": "sha256:93380be957a042a10920f0de99a285ea80db781d2bfbb535f7f478726234b580",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "scripts/harness/shared/session-start-directive.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The classification recording that the envelope and the workspace guard are protocol requirements.\n\nAnchor: `started_inside_workspace`; \"payload envelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9da5860bd14bef74bc1c3b989b28c190edb154",
+            "content": "sha256:2e31ed19d416f0522c711a8fcf98d87e37863eb0f7976d4fa3ce77a824f0c9bf",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "scripts/harness/README.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d9da5860bd14bef74bc1c3b989b28c190edb154",
+            "content": "sha256:efdb153059b83e4f06efb4a80d7e794867a93a43e0941bee57642db032a597ef",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "scripts/harness/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/data/reviewIntentSummary.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/reviewIntentSummary.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
-| governingOverview | `dashboard/src/data/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/data route overview](overview.md)
@@ -64,35 +54,26 @@ the review surface classify the same codes the same way.
 `realization_only` and `membership_only` are carried but not displayed (worker observation O7); showing
 them is a presentation choice owned by the later presentation leaves, not current intent.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The wire types mirroring the server model. | `ReviewIntentCounts`; `ReviewIntentSummaryResult` | dashboard/src/data/reviewIntentSummary.ts:39-47; dashboard/src/data/reviewIntentSummary.ts:49-58 |
-| The route request through the shared decode. | `intentReviewSummary`; `getReviewJson`; "/api/review/intent/summary" | dashboard/src/data/reviewIntentSummary.ts:60-68 |
-| The render state and the answer mapping; an unrecognised body is unreadable, never drawn. | `IntentSummaryRead`; `summaryRead`; `unreadableAnswer` | dashboard/src/data/reviewIntentSummary.ts:72-90 |
-| The hook: one read per task context and per `facts`, superseded answers dropped. | `useIntentReviewSummary`; `reads.current === seq` | dashboard/src/data/reviewIntentSummary.ts:96-121 |
-| The lane's count carried on both answered states (MIK-L32). | "attribution?: ReviewLaneSummary;"; "const attribution = result.attribution ? { attribution: result.attribution } : {};" | dashboard/src/data/reviewIntentSummary.ts:57-57; dashboard/src/data/reviewIntentSummary.ts:79-90 |
-| The server model it mirrors. | `ReviewIntentSummaryResult` | mcp/src/agents_remember/models/knowledge/review_intent_summary.py:93-123 |
-| The consumer. | `useIntentReviewSummary` | dashboard/src/panels/detail-panel/intentReviewEntry.tsx:131-171 |
+- The wire types mirroring the server model. [1]
+- The route request through the shared decode. [2]
+- The render state and the answer mapping; an unrecognised body is unreadable, never drawn. [3]
+- The hook: one read per task context and per `facts`, superseded answers dropped. [4]
+- The lane's count carried on both answered states (MIK-L32). [5]
+- The server model it mirrors. [6]
+- The consumer. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): **body update for MIK-R32.** Logic records the optional `attribution` (the lane's `ReviewLaneSummary`) and that `summaryRead` keeps it on the counted/partial and refused states (ruling 2026-09-30T12:19:20 Q6); an Invariants bullet records that it arrives on this same response. One row added. The moved rows were re-pointed by the installed fixer's normalisation or by the exact base-to-staged shift. No verification stamp was advanced.
-- 2026-09-28T17:06:50+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): created this card for the changed-intent summary client and hook (`ICR-R24@v3`). The verification pair names the code base; closeout owns the real stamp.
+No meaningful cross-repo references found.

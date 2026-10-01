@@ -1,0 +1,182 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package boundary statement: schema, codecs and the insert-only operation, but not approval, task status or Git attribution.\n\nAnchor: \"The package owns the schema, the row codecs and the insert-only revision operation.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c05f97f3b944fd2bdb7b9be6682048cfb4cc2042",
+            "content": "sha256:6a00b9c4d1223d6ca9a265d51d404779317f756bae5868b5ab125b6be0681d9c",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The served storage surface as an explicit re-export list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c05f97f3b944fd2bdb7b9be6682048cfb4cc2042",
+            "content": "sha256:17171fa52793813609eea4e064fd6b387c605f93fd2c842e04c37f47042f0785",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c05f97f3b944fd2bdb7b9be6682048cfb4cc2042",
+            "content": "sha256:717cd25da88c1d17ca71ec7a0c8e162710e680334dad7847b82c1ec4e9d26a4f",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The connection contract re-exported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:443116d5d7ec42b5e741759b495286c4fe4d15aa5f75ea5038f71c378f3fa3b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "BUSY_TIMEOUT_MILLISECONDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:0ade81c5cb9c5790671542b21896edaa0640f14246b71d2e3725870cb85e0926",
+            "locator": {
+              "kind": "symbol",
+              "name": "immediate_transaction"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The schema manifest and fingerprint re-exported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:6feb1da7702db4f19134857c1233bc1fa288925fa0b603a5174a37150637a0c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:29a6d9c9d6c89fa263c9a0d451141486b08acb15775b0791fef47d99a21ea8a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_manifest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:74d79276760442616a5d96d92b3bf2e0ecf18a351a9f3f74bd38d1f61dbdb74e",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_fingerprint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The composition seam that is this package's only consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:37f4a37358ef210f407f97714aa9b909beef0a851e2bffe84c2f6ce893d33386",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_knowledge_revision"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:cc0b3146f3436d6780f23c08ff7d324f408cdc1dd9cb87ee1d7fc58f3d969755",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_admitted_knowledge_store"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:cc32269c3b4ebd16686906f9e6aae64ea58dbe591c7e914928e4202cb544ac17",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The layer charter paragraph that records this storage home in `[package.memory]`.\n\nAnchor: \"[package.memory]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:b5ce22a2976bf73fd6222714f81e28174f2c7891749a7920868bca582ddb0163",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

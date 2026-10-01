@@ -1,0 +1,59 @@
+{
+  "path": "dev-skills",
+  "references": {
+    "1": {
+      "note": "`sync-skills.py` copies only `REPO_ROOT/\"skills\"` into its fixed targets, so `dev-skills/` is never distributed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0377d4f717b152989552b3cdd7adeb9d57cebc5e",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0377d4f717b152989552b3cdd7adeb9d57cebc5e",
+            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0377d4f717b152989552b3cdd7adeb9d57cebc5e",
+            "content": "sha256:ab3ca49b6d161cb7bca17234cb4db5f17c72edd25a5846d23fd5fb0821733471",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_target"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0377d4f717b152989552b3cdd7adeb9d57cebc5e",
+            "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_target"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

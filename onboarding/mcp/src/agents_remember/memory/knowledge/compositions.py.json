@@ -1,0 +1,223 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/compositions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one composition-edge write, which resolves both endpoints and names the offending identity in its refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:831bb1379f42b7f6beae86c22eac4a0437df0e2b51366bd049f04a39a2761c92",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_composition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The case that drives three tables past the write path and proves no update and no delete exists.**\n\nAnchor: \"test_an_authored_edge_a_policy_and_a_context_are_immutable_at_the_database\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:31a9b9e862095b5d001f9833b4e230b3950dda69e44a09ded46d2986c8016a55",
+            "locator": {
+              "end": 606,
+              "kind": "line_range",
+              "start": 606
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The case that proves both policy rows over one pair are reported and neither is preferred.**\n\nAnchor: \"test_one_pair_under_one_policy_is_stored_once_and_a_second_policy_is_a_second_edge\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:4e54d49d2d812c600ccfa80688a7a2bcbefe48869a41b0c61528334606b4ee8a",
+            "locator": {
+              "end": 550,
+              "kind": "line_range",
+              "start": 550
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The case that proves a recorded route governs and the ungoverned state is reported rather than filled.\n\nAnchor: \"test_a_recorded_route_governs_and_the_ungoverned_state_is_reported_not_filled\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:ca3be39730a70a5dd12967ad7d98f0d4d178d35b0f3e979598212b275706a20d",
+            "locator": {
+              "end": 705,
+              "kind": "line_range",
+              "start": 705
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The case that proves the context is bound to the exact revision and a successor appends without rewriting the guarantee.\n\nAnchor: \"test_a_context_is_bound_to_the_exact_revision_and_a_successor_appends\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:a4077ad3c3549b5d98ebf2236a8134867e791de8d75fe54d9e3a5f58ec8b919f",
+            "locator": {
+              "end": 787,
+              "kind": "line_range",
+              "start": 787
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The duplicate lookup that refuses a second row for the same declared tuple before either partial unique index is reached.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:58cdd8f51d66f1b2c62a8c71095b3c4ffdfa7ed2641a532bbcf6d5a2328c055d",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_composition_by_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The read that reports every stored link of one revision in declared order, including two policies over one pair.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:a976a93509519db8b51861d749566236ebd8f16ec8741782b595a2e0c1155096",
+            "locator": {
+              "kind": "symbol",
+              "name": "composition_links_of_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The revision-altitude owning-route write, which refuses a route this namespace does not hold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:e3ef8ae16b592b09c477a60698ff7f252628633c50f39da670ea3939a75eef1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_family_revision_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The owning-route read that returns the explicit ungoverned state rather than inferring a route.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:8d13b2a6e144ce30cfd5932da2105e64e0bd9820b0fe5258558dc86d3feb213e",
+            "locator": {
+              "kind": "symbol",
+              "name": "owning_route_of_family_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The context write, whose subject is bound to the exact family revision and whose predecessor must already be stored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:37972a3dff5883ec3db72967100058341fed6e61af72c5ca2b8fda9e02346b73",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_context_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The read that returns the earlier context text after a successor appends.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:e4bafd875ec64b79066fdd42cbb6ad581dfbcb0a0141d2f335d6174eaf9874fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_context_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The read the projection uses for one revision's recorded context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:766d95d81189be5b034fe6bec95c30c2c34f9d2eda147ab7484f4e20c6817d06",
+            "locator": {
+              "kind": "symbol",
+              "name": "context_of_family_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The edge fingerprint the receipt surface compares, which is an authored-row identity and not a content address on the context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:43713b7fdecad73d0293804eba93c3cd40b5f0066114ad77013e07ba7fbfd2ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_edge_fingerprint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

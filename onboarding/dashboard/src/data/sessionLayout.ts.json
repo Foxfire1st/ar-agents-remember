@@ -1,0 +1,116 @@
+{
+  "path": "dashboard/src/data/sessionLayout.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Thresholds, floor math, rail conversion/clamps, persisted-layout probe, and the edge-transition rule.\n\nAnchor: `RAIL_AUTO_COLLAPSE_PX`, `railDefaultPercent`, `hasPersistedPanelLayout`, `stageBelowPtyFloor`, `autoCollapseTransition`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:22d30fa33f9c4c78d45212e357f0a48d7053552b7eda7a625d7d9a5354ce2d9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RAIL_AUTO_COLLAPSE_PX"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:0a3221f962ef012e7bd7dd4f86f291226108647a11b22fd8110670f05b748757",
+            "locator": {
+              "kind": "symbol",
+              "name": "railDefaultPercent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:746319c596455ef54d2d2e6c0feb46c9a3e83cebd91104cca26cce662f84611e",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasPersistedPanelLayout"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:72bfb6acdd8521bb0c952ccce69a23a5c34650d088c6d77c514b0a427cf0c351",
+            "locator": {
+              "kind": "symbol",
+              "name": "stageBelowPtyFloor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "498929c13c6209c1d3c9c5be40b2ca02b52f3a5a",
+            "content": "sha256:14d55eca4af6373e4e083d48f3fbf65af454094bad8663732cc46c6f9da3a398",
+            "locator": {
+              "kind": "symbol",
+              "name": "autoCollapseTransition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The consumer: root/stage measurement, one-shot `calibrateRail`, and the collapse/expand wiring.\n\nAnchor: `calibrateRail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:16574e0a9ddb2ba60ced6a609038dc9bc3d09ddfdd5718f809b05676f35b53e3",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The unit suite: crossings, quiet-below-threshold, floor edges, conversion/clamps/fallback, storage probing.\n\nAnchor: \"the ~80-col PTY floor\", \"the ~280px rail default (review round 2\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbf8ed02373f4d1ed0b4d715ede728b73e70463d",
+            "content": "sha256:872af7e5723e69b4d3f72ced817795a62b184f26550fd1a5a7395874e61b8468",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/data/sessionLayout.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dbf8ed02373f4d1ed0b4d715ede728b73e70463d",
+            "content": "sha256:6b1f3b880c859a3694a6a28f06f479189446fd25b54adc59a38f534e232a42c8",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/data/sessionLayout.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

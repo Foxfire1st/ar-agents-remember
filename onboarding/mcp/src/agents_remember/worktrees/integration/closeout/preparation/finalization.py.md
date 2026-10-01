@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Preparation overview](overview.md)
@@ -44,53 +34,31 @@ This card describes the explicit prepared-publication owner. It does not assert 
 
 No additional source-local TODO is asserted by this maintenance pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is configured. | — | — |
+No external domain source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Prepared output references and exact raw commit bytes are revalidated. | `_output`; "finalization-output-bytes-moved" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:90-106 |
-| Live ownership, contract identity, and selected preparation remain bound. | `_owner`; "finalization-contract-moved" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:109-145 |
-| Existing historical memory retains its raw tree while proving the separate certified content. | `_physical_memory`; `certified_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:243-268; mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:285-289 |
-| The fifth certificate is checked against the correct content subject and current authorities. | `_live`; `gateFiveInputs` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:271-353 |
-| Post-publication proof uses a memory-only normalized snapshot and preserves actual HEAD/tree equality. | `_record_proof`; `_publication_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:356-387; mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
-| The original per-leg prestate is journaled with the same memory-domain snapshot semantics. | `_publication_intent`; "finalization-prestate-moved" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:443-477 |
-| Publication checks original state, uses the exact CAS, and records its proof. | `_publish_leg`; `_record_proof` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:480-509; mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:356-387 |
-| The accepted pair is proven before the best-effort cache refresh. | `_closed_payload`; "Closeout completed; integrate the task branches into their source branches." | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:512-530 |
-| Only code and memory outputs are published before canonical contract completion. | `finalize_prepared_closeout`; "code and memory outputs" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:533-569 |
-| Resume requires the same generation and exactly two selected output legs. | `resume_prepared_closeout` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:572-606 |
+- Prepared output references and exact raw commit bytes are revalidated. [1]
+- Live ownership, contract identity, and selected preparation remain bound. [2]
+- Existing historical memory retains its raw tree while proving the separate certified content. [3]
+- The fifth certificate is checked against the correct content subject and current authorities. [4]
+- Post-publication proof uses a memory-only normalized snapshot and preserves actual HEAD/tree equality. [5]
+- The original per-leg prestate is journaled with the same memory-domain snapshot semantics. [6]
+- Publication checks original state, uses the exact CAS, and records its proof. [7]
+- The accepted pair is proven before the best-effort cache refresh. [8]
+- Only code and memory outputs are published before canonical contract completion. [9]
+- Resume requires the same generation and exactly two selected output legs. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Removed the ledger publication/recovery account; recorded independent raw/certified memory proof, two-output finalization, all three normalized memory snapshots, and non-authoritative cache refresh. Source SHA-256 `5d5b77b235f8fa91080e88a14da1b13430ea8150b6104b31d4675da1c4edbf0d`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No content impact: this source behavior and source-to-card meaning remain unchanged while the shared sidecar and route body validators run independently. No acceptance claim is made.
-- 2026-09-08T14:45:44+00:00: CCR-L24 preparation re-read `resume_prepared_closeout` and its finalization helpers against the current source; wording retained and ranges regenerated. Verification metadata remains pinned pending final pair composition.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `_materialize_ledger` repointed to mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:433-468. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `_publish_leg` repointed to mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:577-610. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `_closed_payload` repointed to mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:613-630. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `finalize_prepared_closeout` repointed to mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:633-670. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `resume_prepared_closeout` repointed to mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py:673-710. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T21:46:58+00:00 — Reconciled landed IAS helper ownership and source anchors. Verification pins and historical evidence remain unchanged; no certification or delivery is asserted.
-
-### 2026-09-06T17:14:07+00:00 — Initial L34 implementation card
-
-Recorded the released implementation without claiming tests, certification or acceptance.
+No distinct cross-repository evidence source is configured for this file.

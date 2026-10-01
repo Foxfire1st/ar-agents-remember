@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/MarkerTargetState.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/MarkerTargetState.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -42,30 +32,20 @@ the review's family entries, as a review that composed no family has none.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R34@v1` (adopting `ICR-R34@v1`), the adopted `ICR-R24@v3` item 2 and the architect's rulings live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The real payload and target. | "markerUnknown.memberUnknown.captured.json"; `inScope` | dashboard/src/panels/review/MarkerTargetState.test.tsx:20-20; dashboard/src/panels/review/MarkerTargetState.test.tsx:34-53 |
-| The two cases. | "marks the member's row when the named family is in the tree, and only that row"; "shows the state on the invariant view when the named family is not in the review" | dashboard/src/panels/review/MarkerTargetState.test.tsx:55-93 |
-| The components under test. | `MemberTargetNote`; `MemberFamilyLabel` | dashboard/src/panels/review/MarkerTargetState.tsx:71-93; dashboard/src/panels/review/MarkerTargetState.tsx:172-194 |
+- The real payload and target. [1]
+- The two cases. [2]
+- The components under test. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`MarkerTargetState.tsx`) moved with the leaf's inserted lines: 2 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`MarkerTargetState.test.tsx`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new target-state test module MIK-R34 adds (2 cases), recording ruling Q3. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,15 +1,5 @@
 # dashboard/src/cockpit/Cockpit.intentEntry.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/cockpit/Cockpit.intentEntry.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T17:06:50+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview | `dashboard/src/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -56,36 +46,28 @@ by URL path and `leaf` parameter.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this test module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The ruled triggers and the request-counting method. | "(a) the task detail is opened or shown again" | dashboard/src/cockpit/Cockpit.intentEntry.test.tsx:1-10 |
-| Two live leaves seeded into the real store. | `seedTwoLiveLeaves` | dashboard/src/cockpit/Cockpit.intentEntry.test.tsx:97-126 |
-| The route stub with the knowledge switch and the read counters. | `serve`; `summaryReads`; `catalogueReads` | dashboard/src/cockpit/Cockpit.intentEntry.test.tsx:131-197 |
-| The first-ingest sequence every case starts from. | `openStaleEntry`; "no knowledge yet" | dashboard/src/cockpit/Cockpit.intentEntry.test.tsx:200-211 |
-| (a) re-show, once per showing, no catalogue read. | "(a) re-validates when the task detail is shown again, once per showing, with no catalogue read" | dashboard/src/cockpit/Cockpit.intentEntry.test.tsx:213-232 |
-| (a) opening a task from another view reads once. | "(a) opening a task from another view reads its entry exactly once" | dashboard/src/cockpit/Cockpit.intentEntry.test.tsx:234-245 |
-| (b) leaving the reviewer re-validates. | "(b) re-validates when the developer leaves the reviewer back to the entry" | dashboard/src/cockpit/Cockpit.intentEntry.test.tsx:247-264 |
-| (c) the reviewer's refresh re-validates. | "(c) re-validates when the reviewer's own refresh runs" | dashboard/src/cockpit/Cockpit.intentEntry.test.tsx:266-280 |
-| The provider under test. | `IntentEntryRevalidation` | dashboard/src/data/intentEntryRevalidation.tsx:29-54 |
+- The ruled triggers and the request-counting method. [1]
+- Two live leaves seeded into the real store. [2]
+- The route stub with the knowledge switch and the read counters. [3]
+- The first-ingest sequence every case starts from. [4]
+- (a) re-show, once per showing, no catalogue read. [5]
+- (a) opening a task from another view reads once. [6]
+- (b) leaving the reviewer re-validates. [7]
+- (c) the reviewer's refresh re-validates. [8]
+- The provider under test. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T17:06:50+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): created this card for the cockpit-level re-validation cases added in L47-A3 (L47-R1-F2 under the 16:27:28 ruling). The verification pair names the code base; closeout owns the real stamp.
+No meaningful cross-repo references found.

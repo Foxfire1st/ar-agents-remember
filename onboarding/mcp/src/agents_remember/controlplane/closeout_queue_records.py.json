@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/closeout_queue_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The build record is complete off-side projection input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9080d9b05b7f0e5f5498192c883b25cbcd632779",
+            "content": "sha256:f85299356d8a8189e1d4e90c3d4988e1943fe0b4a479908d5b2f967977815e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutProjectionBuild"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

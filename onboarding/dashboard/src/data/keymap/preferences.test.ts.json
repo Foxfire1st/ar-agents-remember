@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/data/keymap/preferences.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Unit under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb1400045f13dbb70b3167ab3cc4d00ace34229e",
+            "content": "sha256:b88df79f032b176d4f5e5f8effac280aa1e7ca4905433b16cb42cc6e2eefdf53",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveKeymap"
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,174 @@
+{
+  "path": "mcp/src/agents_remember/certification/validation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Validation checks the work census before building indexes and returns all bounded findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:30389e161b45df1fefaf5a7a9e2a7181f93081a5229aad6fe1a8d3b49fba6571",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_registry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Profile validation enforces declared gate order and population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:abbedebbcbb7fd4303719160afeb5f7fa5873162f7be47c007bb366cd2f4155a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_profiles"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:404a260553cf85ff72df46e9e89688b73144bf24a2de02a54d33cb5cad811815",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_profile_gates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:32f74c1a355971ba77368e6aa688abd6be62bfe9769f6eb0b1dd29f97df563f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_profile_population"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each rail is checked against gate classification, authority, runtime, uniqueness, applicability, dependencies, and artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:00dba5ec0638a5f2928d2f763e85598225d15e2d067ff156f56472880d550ce1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_rail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dependency checks reject missing, backward, cross-gate, and profile-inapplicable prerequisites.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:72956a68bcdba75611a074b9459515007e3f8071902daf9cbc7a3f3f3c3daa04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_dependencies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:8b606317fd2c7cc29b7d5911796d72f92480996c9f6e2a0e4b6bd006e6a84924",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_dependency_applicability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Artifact validation binds consumers to exact legal producers and gate direction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:d2eca9f306e1a47f7cc9c72036014273d0d2a271c41f3917176476f1f69a5274",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_artifacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:aba59bb8d387bebb7962159c1f1766a69002091c51e01c3f57fc1c5bfe0a7bbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_rail_artifacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Dependency cycles are reported without unbounded traversal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:90deb307a760c0da9647d6bf4e99827ac4a06271266ea4349fe4d309c9e04839",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_cycles"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:e52c6b1a717360e7a1994d01359ebc10e9df31be8f216e78004303d738858625",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_acyclic_nodes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The validator receives only a canonical registry contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68c3fa37684363426fac9d96ae9baaf5020f47fb",
+            "content": "sha256:30389e161b45df1fefaf5a7a9e2a7181f93081a5229aad6fe1a8d3b49fba6571",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_registry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

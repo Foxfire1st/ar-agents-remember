@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/scripts/check-diff-coverage.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Executable statement-line accounting",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:0227974000e1aff9e885c86a05263aecdd735df1f54f2c3a91dacc8e9020128b",
+            "locator": {
+              "kind": "symbol",
+              "name": "executableStatementLines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Covered statement ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:42135e5f222e4528924938a23936b77b7b0cd251963dc083b96abd1104103548",
+            "locator": {
+              "kind": "symbol",
+              "name": "coveredStatementLines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Production filtering and changed-line tally",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:cb7730f6fc03c1359e26142f2b686d9fbaa3ee160492e41afd6440741b958631",
+            "locator": {
+              "kind": "symbol",
+              "name": "measureDiffCoverage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dagger admission and comparison-base selection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:4b32d703087866562863ddad91d669e9c436679d00b97f1211fd6c4b2de17fcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Required coverage artifact and diagnostic result without a floor",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:9872a5cf1834bb9c387793d93b01105ccd27abd478726c8f21f28b0106b8f233",
+            "locator": {
+              "kind": "symbol",
+              "name": "coverage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

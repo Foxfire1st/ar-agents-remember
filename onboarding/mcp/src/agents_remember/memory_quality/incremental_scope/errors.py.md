@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/incremental_scope/errors.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/incremental_scope/errors.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:38:37+00:00 |
-| lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
-| lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory quality overview](../overview.md)
@@ -48,7 +38,9 @@ unstructured failure, so callers can discriminate proof failures from environmen
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. The governing task artifact
 below closes the informational gap for the typed Gate-5 refusal.
@@ -58,29 +50,15 @@ CCR-R07@v3 (requirements/CCR-R07-v3-incremental-affected-closure-validation.md,
 stale input, unknown consumer, missing result, or changed certificate.
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The R07 planner raises typed closure refusals. | `_refuse` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py:375-385 |
-| The R07 executor raises typed closure refusals. | `_refuse` | mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:505-515 |
-| The R07 subresult store raises typed closure refusals. | `_refuse` | mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py:146-154 |
-| The base error carries the canonical agents-remember failure status machinery. | `AgentsRememberError` | mcp/src/agents_remember/errors.py:18-21 |
+- The R07 planner raises typed closure refusals. [1]
+- The R07 executor raises typed closure refusals. [2]
+- The R07 subresult store raises typed closure refusals. [3]
+- The base error carries the canonical agents-remember failure status machinery. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external boundary is exercised by the error vocabulary. | — | — |
-
-## Update History
-
-- 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Separated three same-named refusal owners into distinct evidence claims so historical source resolution is unique; retained unchanged-source verification provenance.
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Corrected incoming references and schema ownership against the reviewed candidate; unchanged source retains its genuine verification stamp.
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References row as prose.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 993953760ef65c4670a40c63a6d6ef0fbcddbe3b (CCR-R07@v3/L07): created the card for the typed scope failure vocabulary, including the new `GateFiveClosureRefusedError`; no prior sidecar existed.
+No external boundary is exercised by the error vocabulary.

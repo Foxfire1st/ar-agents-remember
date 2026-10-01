@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_controlplane_gates.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Create and decide are pure snapshots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53c80515ed17bcca20449d277e53faef42b6bb36",
+            "content": "sha256:a35e2e66ce92380c6b502e4ef815695d1dc6b3d5d26d7a856aca4df6a10b74e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_create_and_decide_are_pure_snapshots"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Append keeps history and current folds last wins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53c80515ed17bcca20449d277e53faef42b6bb36",
+            "content": "sha256:c1da76f244a14a24e01467c8e34f6aaaeede8d4b71afb7c0762acc1468a3c003",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_append_keeps_history_and_current_folds_last_wins"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

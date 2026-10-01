@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/grepai/context/layout.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/grepai/context/layout.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -51,22 +41,9 @@ coordination log tree at `logs/providers/grepai`.
 - Indexed roots are watched live in place (read-write bind-mounted into the watcher); grepai's `.grepai/` working dir is kept out of git via each root's `.gitignore` rather than by mirroring to a throwaway copy.
 - Root paths with unresolved placeholders or missing directories raise `ContextProviderError`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Workspace YAML rendering consumes `GrepaiRuntimeLayout` and its normalized roots. | `grepai_workspace_config_text`; `write_grepai_workspace_config` | mcp/src/agents_remember/providers/grepai/context/workspace.py:23-42; mcp/src/agents_remember/providers/grepai/context/workspace.py:112-128 |
-| Lifecycle GrepAI backend and runner code use this layout through the public context facade. | `grepai_backend_state`; `grepai_watcher_workspace_status` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:178-213; mcp/src/agents_remember/providers/grepai/lifecycle/runner.py:155-175 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-04T00:22:04+02:00 — 260731-EFA-L6 S18-B05 curator: repaired and normalised mechanical citation findings with current source anchors and fixer-generated ranges; no semantic claim changes. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `grepai_runtime_layout` was re-signed onto `GrepaiWorkspace` + the optional `GrepaiInstance` /
-  `GrepaiBackend` bundles (with `DEFAULT_GREPAI_*` frozen singletons as defaults). The resolved
-  `GrepaiRuntimeLayout` is unchanged. Verification metadata pinned until closeout stamps the L2
-  commit.
-- 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
-- 2026-06-02T01:15+02:00: Dropped the mirror redirect and `sync_grepai_index_roots`/`_sync_grepai_index_root`; roots are now indexed live in place. Added `ensure_grepai_root_gitignore` (called from `prepare_grepai_workspace`) and removed `GrepaiMemoryRoot.source_path`.
-- 2026-05-28T12:32+02:00: Updated after GrepAI watch log defaults moved under `logs/providers/grepai`.
-- 2026-05-25T19:33+02:00: Created when GrepAI runtime layout and mirror syncing were split out of `grepai/core.py`.
+- Workspace YAML rendering consumes `GrepaiRuntimeLayout` and its normalized roots. [1]
+- Lifecycle GrepAI backend and runner code use this layout through the public context facade. [2]

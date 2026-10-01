@@ -1,0 +1,313 @@
+{
+  "path": "mcp/tests/test_knowledge_route_chain.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement.\n\nAnchor: \"Route-chain family retrieval (MIK-R05)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:93b17042cc8221e32f51b82927430b9f7cdae6776c1c129cb154538b9138c241",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The budget, the family-seed resume under any spelling, a lacking revision refused on resume, and the v1 token refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:db81e961da60dfa823c274455f4fdb9abcddbf63a34984f204e41e35909f2f6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_chain_entries_count_toward_the_threshold_and_resume_like_the_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:563b9cc3de5e9981f4a67338b55e253a12664cf60367766e55959668dab2b1b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_seed_walk_resumes_under_any_spelling_of_its_family"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:51151a78027a41b37855bd1a00b1e7739ef375ef6c39b7d05fc3796fb10b79de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_seed_walk_resumed_naming_a_revision_the_tree_lacks_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:07c4f6a5bd2ba7a331e8d2c9feff7d2e8e5774e4bd1958a3cc4b2bf667d67508",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_continuation_minted_under_the_v1_policy_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Only the `read_ar_files` rendering shortens a served entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:aeb22f9c8665153fbf41ab1e791c40d14b10ef357e4bc327b61843ef8cbd4950",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:cb2a3538e3b80e8cf2b65ebf32d659f58e4d53c8dd1b7c9db5cca5573742133b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_the_read_ar_files_rendering_shortens_a_chain_entry_served_earlier"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_knowledge_route_chain.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reused L01 and `read_ar_files` helpers.\n\nAnchor: \"from test_knowledge_leaf_read import\"; \"from test_read_ar_files import\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:864e7de47d3e75e4e384032b115e24727518ba83a61df59175a7f653c2cd5d4c",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The world: the layout, routed families and the nested fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:1f8500bef6ee6965885edf593f28fd5a168382a907ae59d8c39c10a01bf7c6b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:ba7e10968eab4fd89c42000c400da4e8308eb3649423a6e7872f646e850d434e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:3886f694dd2874956bc448d092ef4fdfc6b9f34e9b91fe948385db848988a112",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nested"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The chain over nested directories, never a child or a sibling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:8340124c6f59763eda86e63ed6b68867f7dd4b953f70403f5d7477b577103fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_chain_is_the_directory_and_its_ancestors_never_a_child_or_a_sibling"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The exact compact entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:387bf18319c438bc75814d983e2264004bdfc49a100e93e03235c1264c3ef420",
+            "locator": {
+              "kind": "symbol",
+              "name": "_F4_ENTRY"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Compact entries after the leaf, `memberAtSeed` with live counts, and `no_governing_family`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:b8d09c3ba34cebb8874402cf94c420113c58863ace1c74e54728146610f6ad72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_chain_entries_are_compact_after_the_leaf_and_name_a_member_at_the_seed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:b2cd64332264f1298e3fcb586cb04957951153d8bb2aa2f997f34ae58a1b65cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_chain_entry_flags_a_family_expanded_above_and_counts_live_members"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:bd45b67c3a4ee2762148222c79b8a298697f6fd4895bd551b775a50bd1d8ba9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_entries_no_route_covers_state_no_governing_family"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The conforming example.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:93a9b4a6333c2ec1b1273fa20484e3ecab5aab16b5544324cd6e388b0b09770f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_conforming_example_returns_the_governing_family_of_an_unattributed_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Expansion from a family seed, and its spellings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:8ce823939c47ded952098f4ac267721ca3bc7b77698f0a1ab93d87f33dad0faf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_seed_returns_the_full_family_content"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:c60d020fded0789eb170bbd59c49624bf00c932d74041a25b4292ef74ee55668",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_seed_is_named_by_id_revision_or_projected_uuid"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The walk helper and the long fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:be9cf656183402ba2b0745e42feaeeff148ae3fbad25c51ecbb40ae4a10ca7ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6660c5337b78e3b9019c0b4d214bc8e040e909d",
+            "content": "sha256:1d4688c55f85d6d634f0444831d3e497b5e00cf25534072e0c1033dba7a6b853",
+            "locator": {
+              "kind": "symbol",
+              "name": "long_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [worktrees/modules overview](../overview.md)
@@ -76,47 +66,31 @@ private engine or volume.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. This module implements the repository-owned CCR-R12 host authority contract; the source references below establish its current behavior, without an external documentation claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain documentation source. | N/A | N/A |
+No configured external domain documentation source.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The declaration, registry and frozen continuation are production owners. The focused test provides coordinator containment and lock composition evidence; the engine inspector double does not prove live engine health.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Strict declaration, live inspection and immutable authority snapshot. | `DaggerHostDeclaration`; `DockerEngineInspector`; `DaggerAuthoritySnapshot`; `authority_snapshot` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:81-109; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:202-331; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:123-147; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:516-544 |
-| Declaration parsing, host location and connection-only endpoint policy. | `parse_host_declaration`; `_require_host_level_root`; `_endpoint_value` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:390-406; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:409-435; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:465-487 |
-| Launch environment is bound to the admitted snapshot. | `authority_environment`; `load_host_declaration` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:547-566; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:569-585 |
-| Host registry transaction entry, domain refusal, census, barriers and exact owner mutations. | `AuthorityRegistry` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-846 |
-| Admission freezes one authority and changes registry state under its lock. | `admit_dagger_authority`; `_admit_with_registry` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:948-1002; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:1005-1037 |
-| Continuation and terminal release share the same physical registry lock. | `reuse_authority_for_continuation`; `release_dagger_authority` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:1069-1115; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:1118-1127 |
-| Process-start liveness and operation-scoped owner identities. | `process_fingerprint_live`; `_host_process_fingerprint`; `current_process_fingerprint`; `owner_identity` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:874-877; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:880-891; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:894-899; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:923-937 |
-| Host-local registry root configuration. | `default_registry_root` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:940-945 |
-| One physical lock protocol, actual thread/process exclusion and capability probe. | `lock_path_for`; `exclusive_file_lock`; `_verify_lock_capability` | mcp/src/agents_remember/kernel/file_lock.py:36-38; mcp/src/agents_remember/kernel/file_lock.py:87-114; mcp/src/agents_remember/kernel/file_lock.py:58-84 |
-| Typed lock and authority refusal surfaces. | `LockCapabilityError`; `DaggerRuntimeAuthorityError` | mcp/src/agents_remember/errors.py:22-23; mcp/src/agents_remember/errors.py:56-67 |
+- Strict declaration, live inspection and immutable authority snapshot. [1]
+- Declaration parsing, host location and connection-only endpoint policy. [2]
+- Launch environment is bound to the admitted snapshot. [3]
+- Host registry transaction entry, domain refusal, census, barriers and exact owner mutations. [4]
+- Admission freezes one authority and changes registry state under its lock. [5]
+- Continuation and terminal release share the same physical registry lock. [6]
+- Process-start liveness and operation-scoped owner identities. [7]
+- Host-local registry root configuration. [8]
+- One physical lock protocol, actual thread/process exclusion and capability probe. [9]
+- Typed lock and authority refusal surfaces. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The host declaration and owner registry are outside repositories/worktrees, but this file introduces no separate cross-repository implementation dependency. Their repository-owned location and policy are cited above.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No separate cross-repository implementation dependency. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-06T00:28+02:00 — Documented host-owned exclusive_access over the shared kernel primitive, preserved authority.lock.lock and typed lock-capability refusal, and reconciled the real admission/continuation/release call graph without role impersonation.
-
-
-- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass: created this file-level
-  onboarding card for the new host-level shared Dagger authority layer (CCR-R12@v4) delivered in
-  code commit cfd09381; anchors and ranges derived from the current worktree source and pinned to
-  that commit.
+No separate cross-repository implementation dependency.

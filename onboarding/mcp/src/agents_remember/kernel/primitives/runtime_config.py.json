@@ -1,0 +1,530 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The process entry point owns `load_config`; `create_server` receives the resulting typed config and passes it to application initialization and every tool registrar.\n\nAnchor: \"def main(argv:\"; \"def create_server(config: McpRuntimeConfig) -> Any:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:1e977d0c261a0d54e5a3cc8b5ff3940757ceda487f7bc238eae2d62075138adb",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:5440abf4d376eb4e3ae1f3bd57caab9a1858be20c57e74f7f04a18d5528dff1c",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`provider_watchers_tool` reloads live launch authority for start, restart, and index invalidation while status, stop, and shutdown remain deliberately ungated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:dacaa2467f3c54b789747a5f7f70ecdd5f5669876e3c74593da589d937d7b696",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_watchers_tool"
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:84ee6eab60de6306603de53c0410b3ff49e52e8eab3dd800307d349dd8a17a42",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The provider query funnel reloads launch authority for operations with a required provider and rejects a query when that specific provider is absent.\n\nAnchor: `ProviderOperation.required_provider`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:878cc098e12080a858e6ddae9f6d1d6105c020ecff4eaf42ad702c75c96067b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_provider_operation_result"
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:bcf50c44c2df8df9a55fad5353bf09f281c6268777fedf0e25e2b64b5ac97251",
+            "locator": {
+              "end": 1008,
+              "kind": "line_range",
+              "start": 961
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Worktree start derives background provider setup from `reload_provider_authority`, skipping setup on disabled or unreadable live authority while still creating the worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:a8f4da9fa7ab81c9252d77e8ffcf2d03a644b71eebb4f1ffa1a0eb6cfe4b9444",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:fae4c0f3996bec2951a295654b0444e81c6201ed513813d7f74af7b5cfffc1a9",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Benchmark preparation and execution both pass provider ids from the live on-disk authority into their requests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:90767b1cf7f32042d517f81c517ba348d61e953cca5a576ed7576f96c2c9198e",
+            "locator": {
+              "kind": "symbol",
+              "name": "codex_benchmark_prepare_tool"
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:313d69677bd41d25962fb7278dad42a5847cf254465729d62dafe4d017fb5d46",
+            "locator": {
+              "kind": "symbol",
+              "name": "codex_benchmark_run_tool"
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:adc8833b207a0d8b99835c2c4c3649211752d6e09d43890c5c3db219cbca33e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_provider_ids"
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:c30aaedfd499eafa8fa4bb70c89fe8d78d17c3154a177fd4b33f20e83f840242",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:47e54d81d3830d81f16ba66844987fdd03ce3286fe909fcf93543069505b3bdd",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8da66b9217bad740b31a5e3536e79dc37ef197e2",
+            "content": "sha256:12e6f34a396975d2013c9a659eef4c2f4d674aabf64fbe084cc7eb622a18c2cc",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/application/benchmark_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Runtime install derives provider dependency and watcher-rebind settings from the live on-disk authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_runtime"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:cffe7f3c5c49cdff5cf1afaca964375ed03f1bb382c70213e451dc14660dabf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_runtime_from_config"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:33d0396ab8accec0bb3dd6a756809e50e15576932ecb1e7f69fa9308ab2f3fc7",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 462
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:8dcd2fcff6eb0a7b76f02c988afe01510b66acf0aa3664ef616b0c4645f2f0e3",
+            "locator": {
+              "end": 615,
+              "kind": "line_range",
+              "start": 556
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Config tests cover authority rejection, harness-root inference, provider derivation, and include containment.\n\nAnchor: \"class McpConfigTests(unittest.TestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "content": "sha256:849938a43f060976f3706239bfa9ea975db50a69a8c81f2db8f4485acb6b5a7b",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/tests/test_config.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`DashboardSettings` defines the boot-snapshot auto-start and port values; the daemon supervisor consumes them to gate autostart and choose the endpoint port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardSettings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86c3b2be96c126893168d463c2382ef107b5bc07",
+            "content": "sha256:4988cff4af7aa12bf35be2bd4fbf5135840ac6fc0d8fcde7c8f847b1e6729ced",
+            "locator": {
+              "kind": "symbol",
+              "name": "maybe_autostart_dashboard"
+            },
+            "path": "mcp/src/agents_remember/serving/daemon.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86c3b2be96c126893168d463c2382ef107b5bc07",
+            "content": "sha256:9e8f44b35605e32a1c5705d0a6e919d46339ff3927dce9455727426b87f1efe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_autostart"
+            },
+            "path": "mcp/src/agents_remember/serving/daemon.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:312cf63064dcdb1b2231db05d5b6d5d8271d8601b4e3afc5bd6eb84a83a8b747",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Gate delegation policy validation lives in controlplane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:31ff3167c0cd775aaa1f899ce1e5e481abdc1328328f9f2d1beaca7ef9410982",
+            "locator": {
+              "kind": "symbol",
+              "name": "make_gate_policy"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:5a43f39887c93f0f4c28fd22d7e98be9b489dc7af5ff7aae3dcde74265ccfd46",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_seam_verdict_requirement"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The dedicated `providerDegradation` parser validates the authority block and constructs typed settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
+            "content": "sha256:ce43babfd03390d4ae2b411938d2a74bbe37e6dab4ba8f489a10266bf7574e93",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_provider_degradation_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`config_from_mapping` calls that parser and translates `ProviderDegradationSettingsError` into `ConfigError`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:dae7fa1b3ad2ab220545f8eec83653034bc21a281977776fc58b3c055f2413f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "config_from_mapping"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:04f913abdc305eab5d5166ec139a518d5c1f54ccd29b68b18596c8e8c3498c97",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 241
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`evaluate_provider_degradation` consumes `config.provider_degradation` for enablement, sample limits, and classification thresholds on every evaluation.\n\nAnchor: `provider_degradation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:8afbf9c6eb69bf5c788c0dee107788c717d31829ca9417501296c174edf133f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_provider_degradation"
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:963ee1671e9a7d807c97b60622a62f43d2922b64e7a3671619181360eddb9373",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`load_agentic_settings` layers and merges agentic settings; `_parse_orchestration` applies the shared `parse_gate_delegation` parser to the resulting block.\n\nAnchor: \"def parse_gate_delegation(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67fa388747fc66fbe35405485cd99e3e80f4f5ae",
+            "content": "sha256:1e84c582820532b6b0c42267fbcc0b8d126ccdf7b67d88c1eb3183577791ef7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_agentic_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67fa388747fc66fbe35405485cd99e3e80f4f5ae",
+            "content": "sha256:f8162da33b9110fc0395a4f6dc87bebd81e84630746caf7eb8e380636cfadf5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_orchestration"
+            },
+            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0713c0ebe520e197d1fefa5c4604429920f9a1a9",
+            "content": "sha256:d42bfce911cf2d3195326731323aba5e468478ccfff5398a15b6bc0e8d22cf10",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`parse_orchestration_settings` supplies the global boot snapshot to `McpRuntimeConfig.orchestration`; its authority-file legacy path delegates to `_parse_legacy_authority_gate_delegation`, which uses the same gate parser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:1999c42b7585142fe47fd695d4d63a63d60b00f0615e3e502045a1248fd54ba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_orchestration_settings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:7492668e7105712e78c760b0a7ea28cbe935436fbe691633f794b5ac4056c1eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_legacy_authority_gate_delegation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:dd62d34994957471e6870945ca3392b6a2c5f4a5a758902fa8f525d04cd7ef55",
+            "locator": {
+              "end": 571,
+              "kind": "line_range",
+              "start": 538
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:30de19261c247f2299bfe05591dd0643d7185a9c10750c4c4538d0cca864a28c",
+            "locator": {
+              "end": 606,
+              "kind": "line_range",
+              "start": 574
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

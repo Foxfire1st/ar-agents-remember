@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/cursor.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/cursor.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-19T17:35+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active conversation serving overview](overview.md)
@@ -63,43 +53,28 @@ are gap events, never HTTP resets.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. The cursor grammar is the
 repository-owned strict wire contract cited below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this authority. | — | — |
+No configured domain documentation was available for this authority.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The strict cursor brands and identity/binding models live in the parent contract module; the
 service holds the secret and runs the pre-stream checks; the reviewer ran a 19-vector forgery
 battery against this authority (all held).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The purpose-branded token prefixes and root validators define the four non-interchangeable cursor brands. | "class ActivePageCursor(_OpaqueToken):", "class ActiveEventCursor(_OpaqueToken):", "class LibraryListCursor(_OpaqueToken):", "class LibraryReadCursor(_OpaqueToken):" | mcp/src/agents_remember/models/conversations/cursors.py:20-20; mcp/src/agents_remember/models/conversations/cursors.py:24-24; mcp/src/agents_remember/models/conversations/cursors.py:28-28; mcp/src/agents_remember/models/conversations/cursors.py:32-32 |
-| `ActiveConversationRef` and `AuthorizationBinding` carry the identity/caller fields every cursor binds. | "class ActiveConversationRef(NativeConversationRef):", "class AuthorizationBinding(WireModel):" | mcp/src/agents_remember/models/conversations/identity.py:51-51; mcp/src/agents_remember/models/conversations/identity.py:56-56 |
-| The service decodes and generation-checks every cursor before any stream exists. | "before_ordinal = decode_page_cursor(", "decoded = decode_event_cursor(", "require_same_generation(decoded" | mcp/src/agents_remember/serving/conversation/active/service.py:105-105; mcp/src/agents_remember/serving/conversation/active/service.py:125-126 |
-| The routes map dual resume inputs and every cursor error to typed pre-stream statuses. | `_map_typed_error`, `_resume_cursor` | mcp/src/agents_remember/serving/conversation/active/api.py:77-99; mcp/src/agents_remember/serving/conversation/active/api.py:111-123 |
+- The purpose-branded token prefixes and root validators define the four non-interchangeable cursor brands. [1]
+- `ActiveConversationRef` and `AuthorizationBinding` carry the identity/caller fields every cursor binds. [2]
+- The service decodes and generation-checks every cursor before any stream exists. [3]
+- The routes map dual resume inputs and every cursor error to typed pre-stream statuses. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this cursor authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 11 initial citation findings (4 anchor, 3 prose, 4 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
-
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the active cursor
-  authority — signed purpose-branded tokens, per-wire binding re-checks, the typed cursor error
-  family. Verification is blank because the new source file is uncommitted; closeout owns its
-  first source stamp.
+No meaningful cross-repo references found.

@@ -1,0 +1,149 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/drafts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The curator-facing remediation for every decline code, including the three continuity refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16eb6418a95f026f0addc845c9da62ba2ba46749",
+            "content": "sha256:16963956118ffe0bde6555563d053cbf91a38906a0aa9894d2f73c3ee78992cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ACTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only the anchor-found-nowhere code overrides the default curator tier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16eb6418a95f026f0addc845c9da62ba2ba46749",
+            "content": "sha256:7fc82a45f082e0f2334167a808cc22649107540c205a1e61937878fd0c9c2773",
+            "locator": {
+              "kind": "symbol",
+              "name": "TIERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the class `Subject` (lines 132-139) — One document and the source file its own metadata table says it is about..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16eb6418a95f026f0addc845c9da62ba2ba46749",
+            "content": "sha256:9e9aeb3b2a231d3aa2872491c7c627d17767e44a20e7d04b42e388e6fa8c197f",
+            "locator": {
+              "kind": "symbol",
+              "name": "Subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the class `Draft` (lines 142-175) — One citation being migrated: where it is, what it states, and why it was refused..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16eb6418a95f026f0addc845c9da62ba2ba46749",
+            "content": "sha256:acb215b4cf0653976a7c1507cc28ed172754ce7b9919481297aeda3ecd185239",
+            "locator": {
+              "kind": "symbol",
+              "name": "Draft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the class `TableDraft` (lines 178-191) — One superseded table: where its header is, its rows, and the marker a padded row uses..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16eb6418a95f026f0addc845c9da62ba2ba46749",
+            "content": "sha256:20bb534fe9437b4065a1f6af624b52b65ebd7f2d0f67ead57591ad8258ffa2ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "TableDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the class `Result` (lines 194-214) — What one pass read, converted and declined..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16eb6418a95f026f0addc845c9da62ba2ba46749",
+            "content": "sha256:7f4debea05a5121bfd5aeef16930d48c583d4e307be2856686f242f21793c7a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "Result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The refusal recorder resolves an unlisted code to the default curator tier.\n\nAnchor: \"    def refuse(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16eb6418a95f026f0addc845c9da62ba2ba46749",
+            "content": "sha256:46a250b024cf31410a3230deed295ee58525bf909f8421782d1528347e55830b",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The tier constants the override resolves against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c392fd5f92dc1958edf4f0f6246e1f21bf2502a",
+            "content": "sha256:1039fc862e35e6ba14019f898503590838a53c9de2defb298197e061af6df6e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATOR_TIER"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/work_order.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c392fd5f92dc1958edf4f0f6246e1f21bf2502a",
+            "content": "sha256:88a47f426ac682a5f43131fed439d8e1ff5e06c7c5a41e231661964f108ee972",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEVELOPER_TIER"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/work_order.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

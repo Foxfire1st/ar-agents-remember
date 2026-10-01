@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle",
+  "references": {
+    "1": {
+      "note": "Public lifecycle exports are collected by the package facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e8b470d74215b38afe84d85693a7f42351ea7e",
+            "content": "sha256:a4c3cb15b6baf711eddd9967df575a9777d9f64941a3c48622b073af1d9aa9ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Package execution delegates to the lifecycle CLI.\n\nAnchor: `main`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3618b611ab30969c657b8ecc528d3cf909c9bd6",
+            "content": "sha256:daacb0b59c3b8d19608e0d89187cdbbf687b557bfb6f9a9679ed34bb70f72148",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "CGC lifecycle implementation is grouped under the CGC provider package.\n\nAnchor: `## Purpose`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/cgc/lifecycle/overview.md:17-22"
+        }
+      ]
+    },
+    "4": {
+      "note": "GrepAI lifecycle implementation is grouped under the GrepAI provider package.\n\nAnchor: `## Purpose`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/overview.md:17-22"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -1,0 +1,131 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sync-propagated bundle copy of the canonical templates source.\n\nAnchor: `# Onboarding-Coherency Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e6c3335da9ac9bcc773f77ef48f7fb042d705",
+            "content": "sha256:463e73c7adad00422e0520939c0e7a93cf7cee2dc8ca5f9447a6a3ca80488fe6",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/onboarding-coherency.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence, and the reviewer's Outputs section names it among the durable route reports.\n\nAnchor: `# Reviewer`; \"durable sub-agent route reports\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:24cc837d3d3839346fd454a75f924f9e13328ed64dad27f63c88d8b41b335e93",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:0425ca3544a1fc543962227d31944e1cbeba335a169207b110d654c535643dfb",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The orchestrator's checks consume this report, written by its own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop; the no-native-sub-agents rule moved into the shared operation block in 260915-CAPS-L1.\n\nAnchor: \"No native sub-agents on this seat.\"; `# Operation — Coordination`; \"AR state mutations stay in the owning seat's main loop\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
+            "content": "sha256:7b0b69b98711fd99b22f80d3ee50b38e76b645c28be092bd7a2041966755654d",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "336b8b98b29fbc904f68b807187ebf531eb4247b",
+            "content": "sha256:5219e1017c2c5486fad8e8e1fe8d365c6229f4a46b0f0f7ced399cce1c2706d7",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "336b8b98b29fbc904f68b807187ebf531eb4247b",
+            "content": "sha256:844168ddcf16e398337933d5b7236356605ccade00f10e4f4e954bc7cd7e35f1",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The reviewer's onboarding-vs-code lens pairs `read_ar_files` with `grepai_search`, and the curation exception makes the complete memory-quality operation the reviewer's one non-optional check.\n\nAnchor: \"onboarding against code\"; \"Curation is the exception\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:0b27b897504acc5dd147ccda53e31e56db35bde775f71aa7beec5e18dde48e76",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:bb153aa3cb9459611945cdd4dbf6b58d9ad152dd590eb922986fa7043bdd5f9a",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

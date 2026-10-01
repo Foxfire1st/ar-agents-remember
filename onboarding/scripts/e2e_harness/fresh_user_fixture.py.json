@@ -1,0 +1,215 @@
+{
+  "path": "scripts/e2e_harness/fresh_user_fixture.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one construction point for a disposable fixture repository, memory root and authority settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:94bb5e83d16840c06ad5123ae62303323ecaf03f5628da78a7da1f7b3f5164cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_fresh_user_fixture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The cases that pin the fixture's shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
+            "content": "sha256:7f5a486cffcc57bdfef4c883922c6ad397b97d8d162d660596a7cca531bfea69",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_over_cap_fixture_really_crosses_the_cap"
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
+            "content": "sha256:b8e6e6018ffd1c30289d78de9dbaa69b81a96408a62951629ad01ae2164be25a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_plain_fixture_stays_inside_every_cap"
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
+            "content": "sha256:5460b292f9a65abbdad07620944308e167dff75f844da8a0d372aead0ca07c5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_fixture_owns_everything_under_its_own_run_root"
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The frozen fixture value and the two branches the harness needs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:092575932941327f8e7fb5058310622eb59e25051fd2454df3112ab4b2d0676e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FreshUserFixture"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:cfbb33c47dd1622564be871cacc5328584ef3a3139794ebf6c1c821f7bd836fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:8748d1cc0ad7cb5cdb6a2119c02606e48342af47758ffbd4477585d82b44f118",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sprint branch is neither `main` nor the spear, because the authority refuses both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:6ad23e4b5070012d746fc4834108b496c24e3bde6b482d43a39ab8b129342438",
+            "locator": {
+              "kind": "symbol",
+              "name": "SPRINT_BRANCH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The oversized source is the shipped per-file cap plus one byte.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:d907c00caba93ff19d6a6831ccd09b8ecfc7432f8064efb98099b34b05d069ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "OVERSIZED_BYTES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The truncating writer that materialises it without copying bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:adfdba603d9485148bd439284f8e959035d6bf21616e319960a95e3662606f4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sparse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A fixture Git failure is surfaced with its real stderr rather than swallowed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:029bcb34e8dba1a72e1e38b5f017bb696291517eff0303235fb9263fb5f5f12a",
+            "locator": {
+              "kind": "symbol",
+              "name": "git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The exclusion review's rules are persisted under the key every register reader honours.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:bc8d8673b5000b63a5323437a58f74bc6abc45719c3b471983852720046e204a",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_exclusion_register"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The `c-03` bootstrap content whose absence is `invariant-1`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:7b9b3d1fb59601e017438dd694040b6b8bcbdcf0ad6014952cb796ccc0cfdf57",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_thin_bootstrap"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The per-file cap the fixture must cross.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:8db6e294f7527bb8fee91cd9d660c341c87a9d342ffb93439f385561f810d627",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_FILE_BYTES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

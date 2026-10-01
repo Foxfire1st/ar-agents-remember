@@ -1,0 +1,146 @@
+{
+  "path": "dashboard/src/panels/Hangar.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `EnclosureNode` statuses (closeout/integration/cleanup) and existence flags shown/filtered on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d83cfecaa3d819180c6fe7a39b300401b20aa9d",
+            "content": "sha256:1c2b73cbaa53b79c6703aeaff311bf6895a12ca8fd7c17c97fc3f1541418ffb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d83cfecaa3d819180c6fe7a39b300401b20aa9d",
+            "content": "sha256:e07a507c93da8bfbb113914034d33d9da09abc1040c2f0965f1827491f1b1eb4",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared `hasLiveWorktree` tasks-surface visibility rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:11343a45a01ef202166e96ededd7d402cf42e7ea3465e4f17e95fb9e94f4812b",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasLiveWorktree"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared chat-routed gate responder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
+            "content": "sha256:847bc6a130fc562990a803182e005dd6b8e5262a8290bd519278b9077d4f6936",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateResponder"
+            },
+            "path": "dashboard/src/panels/GateResponder.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The render tests pinning existence-only visibility (reopened hidden, visible again after restart, completed/abandoned gone).\n\nAnchor: \"renders a row ONLY while a worktree physically exists — never from a cleanup-state proxy\"; \"hides a reopened contract with no worktrees on disk (reset-awaiting-restart\"; \"shows a reopened leaf again once worktree_start recreates its worktrees\"; \"fully reduces to the empty state once every worktree is physically gone\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e6916d2f8f9bb833336da8e02a252b323215190",
+            "content": "sha256:e0c6f109acba28a76fafcd44b9ee9a1f38a15d57970f5a4aaf77e88c4b18c1a5",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/panels/Hangar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9e6916d2f8f9bb833336da8e02a252b323215190",
+            "content": "sha256:91e5c84c2577ee5f13a014fd3e4777b016b1983c39399efefd13b59070a4e0e0",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/Hangar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9e6916d2f8f9bb833336da8e02a252b323215190",
+            "content": "sha256:7597df39e918b005de031772c375004792d684d64e35ce6ec70726ff6a91775a",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "dashboard/src/panels/Hangar.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9e6916d2f8f9bb833336da8e02a252b323215190",
+            "content": "sha256:63c165cba2ae38355a83dec9a3c679de4e02766a58c10e1f89e9d2379a31d5d6",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "dashboard/src/panels/Hangar.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The running-operation regression proves the durable command is visible and preserved as the full badge title.\n\nAnchor: \"shows the durable live command for a running lifecycle operation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e6916d2f8f9bb833336da8e02a252b323215190",
+            "content": "sha256:5ce92ce202bb4f537abcf81579a645d61e39ba9f7be6c8f65f5f3309f2790168",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/panels/Hangar.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

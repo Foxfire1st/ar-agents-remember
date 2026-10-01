@@ -1,15 +1,5 @@
 # skills/l-01-agent-lifecycles/roles/reviewer.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | skills/l-01-agent-lifecycles/roles/reviewer.md |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-29T23:27:43+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00`|
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
-| governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -94,23 +84,23 @@ its plane-stamped structural parent.
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Worker envelope, reviewer verdict template, manager exact-set dispatch, and governing route overview.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Every exact requirement attempt and candidate receives a separate independent accepted/rejected record. | "Adjudicate every requirement revision separately" | skills/l-01-agent-lifecycles/roles/reviewer.md:70-73 |
-| The verdict template structurally repeats one adjudication block per stable ID. | "## Mandatory Requirement Adjudication Block" | skills/l-01-agent-lifecycles/templates/verdict.md:72-72 |
-| The reviewer emits its own curator hand-off list in the shared producer shape. | "Your own curator hand-off list" | skills/l-01-agent-lifecycles/roles/reviewer.md:91-98 |
-| A leaf's declared knowledge effects are checked against its packet; a mismatch is a finding (MIK-R11). | "check that declaration against the" | skills/l-01-agent-lifecycles/roles/reviewer.md:74-76 |
-| The seat's seam table fixes the five seams and where each verdict goes. | "The seam you are reviewing" | skills/l-01-agent-lifecycles/roles/reviewer.md:18-27 |
+- Every exact requirement attempt and candidate receives a separate independent accepted/rejected record. [1]
+- The verdict template structurally repeats one adjudication block per stable ID. [2]
+- The reviewer emits its own curator hand-off list in the shared producer shape. [3]
+- A leaf's declared knowledge effects are checked against its packet; a mismatch is a finding (MIK-R11). [4]
+- The seat's seam table fixes the five seams and where each verdict goes. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
 
@@ -128,51 +118,3 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
-
-## Update History
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Added the Logic paragraph on step 7's new line (check a leaf's declared `expectedKnowledgeEffects` against its packet; architect ruling 2026-09-29T21:56:18 Q3), and one row. The hand-off-list row and the prose line hints below the insertion were re-pointed by the exact +3 line shift. No verification stamp was advanced.
-- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`): re-read this card against the source at `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678` (previous verification stamp `14582854955223f75588c23c9f29f9d51bde9675`). The diff is eight added lines in `## Outputs` (`:88-95`) adding **the reviewer's own curator hand-off list** — its verdicts and findings in the shape `../templates/curator-handoff-list.md` owns, emitted as data in the same list shape the worker emits, naming where the thing lives rather than where the reviewer looked and carrying its own statement and evidence verbatim. Body: added that output to the Logic and added two Repo-Internal References rows (the hand-off list, `:88-95`; the seat's seam table, `:18-27`). Correction made while re-deriving: the Logic's "the role table classifies reviewer as target-only" and "its dispatch/tools rows are structural documentation" named a table the rewritten role file no longer carries — the classification now lives in `composition-manifest.json` — and the reviewer's inability to dispatch is now stated from its own `## What you may do` surface (`:132-138`). Verified ranges/claims: both pre-existing rows still resolve ("Adjudicate every requirement revision separately" at `:70` inside `:70-73`; the verdict block heading at `templates/verdict.md:72`), and both new rows' anchors resolve inside their extents.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the role file this card cites was rewritten into the function shape, and the card was re-derived against it.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) replaced the numbered sections and the `## Knobs, Tool Surface, And Dispatch Authority` block with `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do` and a closing `## Stop and …` section, so every Repo-Internal References row here that named an old heading or an out-of-range extent was re-pointed by reading the rewritten file: each anchor below is text that exists in the cited range, and each range is in bounds of the file as it stands. Where a claim described a construct the rewrite removed, the claim itself was re-worded to what the file now says. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "## Mandatory Requirement Adjudication Block" repointed to skills/l-01-agent-lifecycles/templates/verdict.md:72-72. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "## Mandatory Requirement Adjudication Block" repointed to skills/l-01-agent-lifecycles/templates/verdict.md:67-67. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "## Mandatory Requirement Adjudication Block" repointed to skills/l-01-agent-lifecycles/templates/verdict.md:66-66. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: replaced the leaf-only
-  parent description with the four-context reviewer model and its fail-closed ambient sprint
-  boundary. Verification remains closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified reviewer as target-only plus explicit
-  ambient-takeover target, corrected ordinary plane ownership to the manager only, and kept
-  structural authority outside settings. Verification remains closeout-owned.
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
-
-- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: reviewers now validate lightweight
-  content-addressed worker records and keep internal protocol events outside formal adjudication.
-- 2026-08-27T20:45+02:00 — Clarified same-journal append-only adjudication and link-only verdict
-  consumption.
-- 2026-08-27T19:59+02:00 — M42 clarification: separated stale in-review candidate replacement from
-  unrelated post-acceptance movement and preserved the two legal invalidation triggers.
-- 2026-08-27T18:06+02:00 — M41-M43: bound independent adjudication to an exact immutable attempt
-  and candidate, added closed failure classes, and separated regression proof from owner-recorded
-  bounded invalidation.
-- 2026-08-27T14:04+02:00 — Tightened M39 adjudication to inspect the approved,
-  version-addressed packet and its packet-local durable corpus ruling before evidence review.
-- 2026-08-27T13:32+02:00 — M39@v1: independent adjudication now verifies the canonical packet and
-  rejects missing, stale, or mismatched requirement revisions. Verification remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: replaced aggregate review description with independent per-ID
-  adjudication, forcing rejection rules, delta preservation, and the separate durable-evidence
-  hold point. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: aligned master-exit scope with the pre-landing candidate
-  and made integration-branch repair routing fail closed to leaf-shaped work. Verification remains
-  closeout-owned.
-
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

@@ -1,0 +1,35 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`PreparedCloseoutContinuation` owns the described behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
+            "content": "sha256:40757eadc95735685c47d292e216082eb307fa75f2edc755bd5fbcbc7aa4c6f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedCloseoutContinuation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
+            "content": "sha256:7f852fb3ea501dc4f2781678203b690c58b69b9116543b7d065af9b8d9694cbf",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

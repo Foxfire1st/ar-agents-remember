@@ -1,0 +1,137 @@
+{
+  "path": "mcp/tests/test_closeout_certification_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Recovery behavior is repository-owned by the exact retained tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:46e49c5483b65124f4ef98a9e33cabf3456b765c6f16dfbaccce38ec7317a708",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_gate_input_delta_selects_only_its_required_suffix"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Snapshot and certificate fixtures bind exact recovery inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:5091c1f1c62aad307e134cfcffabcb7145ca97a3a870482cd62a450173e48db0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:d92a201741194d86619c8bc0cedae95d190aed3c861043d5c601fb8a80f411b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_catalog"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:636be7922c62da8c30e16458f75df388b46f91af783215f5fd617ce5419326f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_chain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Gate input deltas reopen only their required suffix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:46e49c5483b65124f4ef98a9e33cabf3456b765c6f16dfbaccce38ec7317a708",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_gate_input_delta_selects_only_its_required_suffix"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:ea826f88a4639e272d0561f788b2ee6b1a475216bd0bbbf62583f26d745a39fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_change_invalidates_all_gates_and_does_not_reuse_old_certificates"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:d13a81e13566e3b354278530f0a4c8c929129def72ca11ca96c44c642dc04c12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unchanged_interruption_reuses_the_original_exact_certificates"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Prior-red recovery requires the exact original catalog and evidence dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:a0be5c2ec351105af5a12e3f7d22949b06fa703dda1ffb2306ce528ceaf80115",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prior_red_requires_every_independent_root_and_blocked_dependant"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:a56aa92c1f177636e694cb8a5c133e4e2dce3611ca60786ca525b262c176272f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prior_red_gate_two_requires_the_exact_original_gate_one_certificate"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b9b1a8b570335fac9e123347ff085ac584032e1b",
+            "content": "sha256:512c3f288385a1c05c4924201dca65d0f7cf299eef6f2c0cd5492e8ab4ba905f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retained_report_inventory_refuses_mismatched_evidence_before_any_source_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

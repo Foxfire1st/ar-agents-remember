@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_reader/selection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_reader/selection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -84,41 +74,32 @@ Three spellings are accepted:
   "for now"; a code-tree selector, or a leaf's uncommitted code, would change it for the reader and the
   published-intent block together.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the three spellings and the code-tree rule. | "**The code tree** each MIK-R03 state is measured at" | mcp/src/agents_remember/application/knowledge_reader/selection.py:1-26 |
-| Hexadecimal names only, and the 40 recent commits. | `_HEX`; `_RECENT_COMMITS` | mcp/src/agents_remember/application/knowledge_reader/selection.py:77-78 |
-| The named read failures (F11). | `READ_FAILURES` | mcp/src/agents_remember/application/knowledge_reader/selection.py:89-99 |
-| A refusal, typed and named. | `ReaderUnavailable` | mcp/src/agents_remember/application/knowledge_reader/selection.py:103-114 |
-| The opened selection and the block every answer carries: code tree, source, note and pin. | `ReaderSelection` | mcp/src/agents_remember/application/knowledge_reader/selection.py:118-164 |
-| The three spellings, and a branch name refused. | `open_selection` | mcp/src/agents_remember/application/knowledge_reader/selection.py:167-187 |
-| A leaf only when an active enclosure has the scope. | `_leaf_selection` | mcp/src/agents_remember/application/knowledge_reader/selection.py:190-201 |
-| Published and leaf: not-converted first, the captured tree, `HEAD`, the pin when clean. | `_directory_selection` | mcp/src/agents_remember/application/knowledge_reader/selection.py:204-242 |
-| A commit: the layout marker, the Git-tree index, the paired code tree. | `_commit_selection` | mcp/src/agents_remember/application/knowledge_reader/selection.py:245-278 |
-| `HEAD` of the checkout, with the leaf note; the `Code-Commit` pairing, or the reason there is none. | `_checkout_code_tree`; `_paired_code_tree` | mcp/src/agents_remember/application/knowledge_reader/selection.py:281-292; mcp/src/agents_remember/application/knowledge_reader/selection.py:295-309 |
-| The selector's choices, and a commit list that cannot be read named. | `selection_options`; `_commit_choices`; `_recent_commits` | mcp/src/agents_remember/application/knowledge_reader/selection.py:336-356; mcp/src/agents_remember/application/knowledge_reader/selection.py:359-368; mcp/src/agents_remember/application/knowledge_reader/selection.py:371-397 |
-| The active leaves, read from their contracts. | `_leaves` | mcp/src/agents_remember/application/knowledge_reader/selection.py:400-423 |
-| The selection cases: hexadecimal only, published with a pin, a leaf, and a partial index with no code tree. | `test_any_commit_is_selectable_by_its_hexadecimal_name_only`; `test_the_published_tree_reads_uncommitted_state_writes_nothing_and_offers_a_pin`; `test_a_live_leafs_candidate_is_selectable_and_names_what_its_code_tree_leaves_out`; `test_a_partial_index_and_an_unavailable_code_tree_are_named_where_they_apply` | mcp/tests/test_knowledge_reader.py:957-978; mcp/tests/test_knowledge_reader.py:981-1004; mcp/tests/test_knowledge_reader.py:1007-1017; mcp/tests/test_knowledge_reader.py:1064-1083 |
+- The module's own statement of the three spellings and the code-tree rule. [1]
+- Hexadecimal names only, and the 40 recent commits. [2]
+- The named read failures (F11). [3]
+- A refusal, typed and named. [4]
+- The opened selection and the block every answer carries: code tree, source, note and pin. [5]
+- The three spellings, and a branch name refused. [6]
+- A leaf only when an active enclosure has the scope. [7]
+- Published and leaf: not-converted first, the captured tree, `HEAD`, the pin when clean. [8]
+- A commit: the layout marker, the Git-tree index, the paired code tree. [9]
+- `HEAD` of the checkout, with the leaf note; the `Code-Commit` pairing, or the reason there is none. [10]
+- The selector's choices, and a commit list that cannot be read named. [11]
+- The active leaves, read from their contracts. [12]
+- The selection cases: hexadecimal only, published with a pin, a leaf, and a partial index with no code tree. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new module MIK-R29 adds, recording rulings 09:42:58 Q1/N1 (a memory commit uses its Code-Commit pairing; published and a leaf use HEAD of the code checkout, matching L03; every answer names codeTree, codeSource and codeNote; revisit with L03 gap 1), Q2 (the index cache is L23's design), N2 (a pinned link when the tree is clean), F6 (hexadecimal names only), F10 (accepted note) and F11 (a commit list that cannot be read is named). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

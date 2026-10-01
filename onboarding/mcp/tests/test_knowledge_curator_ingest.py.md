@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_curator_ingest.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_curator_ingest.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T17:14+02:00 |
-| lastVerifiedCommitHash | `69883386d36d7cdb7faeed5bdf275ddd66d87aea` |
-| lastVerifiedCommitDate | 2026-09-28T23:28:51+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -142,60 +132,36 @@ rather than assumed: the module is not registered in `mcp/tests/test-evidence-la
 commit — it and its list-level sibling are the only two test modules that registry does not carry — so
 no lane placement is asserted here and no test run was executed to produce one.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rows below cite the module's own constructs and the seams it measures, with each anchor resolving
 inside the range cited for it. Ranges are the exact construct extents at the verification commit.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixed spellings the cases vary a fact around, bound to the model's own identity and locator types. | `WRONG_RECORDED_BLOB`; `SYMBOL_LOCATOR`; `RANGE_LOCATOR`; `SymbolLocator`; `LineRangeLocator`; `GitBlobIdentity` | mcp/tests/test_knowledge_curator_ingest.py:76-76; mcp/tests/test_knowledge_curator_ingest.py:81-81; mcp/tests/test_knowledge_curator_ingest.py:85-85; mcp/src/agents_remember/models/knowledge/source.py:60-73; mcp/src/agents_remember/models/knowledge/source.py:44-57; mcp/src/agents_remember/models/knowledge/source.py:28-32 |
-| One authored entry paired with the citation its assertions name later, beside the real dataset-and-Git-tree fixture. | `Authored`; `fixture` | mcp/tests/test_knowledge_curator_ingest.py:90-95; mcp/tests/test_knowledge_curator_ingest.py:98-102 |
-| The drive helpers: admit the fixture's own dataset, resolve the candidate inputs, author one citation, and commit it — raising with the refusal when the batch is not `changed`. | `admitted`; `resolution`; `authored`; `committed` | mcp/tests/test_knowledge_curator_ingest.py:99-108; mcp/tests/test_knowledge_curator_ingest.py:111-120; mcp/tests/test_knowledge_curator_ingest.py:123-155; mcp/tests/test_knowledge_curator_ingest.py:164-169 |
-| The read helpers: the stored anchor decoded to the typed union, the mounted source-context view, the single row a claim produced, and the observation handed the decoded locator. | `stored_anchor`; `view_rows`; `row_for`; `observed` | mcp/tests/test_knowledge_curator_ingest.py:166-173; mcp/tests/test_knowledge_curator_ingest.py:176-187; mcp/tests/test_knowledge_curator_ingest.py:190-196; mcp/tests/test_knowledge_curator_ingest.py:199-215 |
-| A symbol citation survives the round trip whole, and the lane reports the kind it cannot resolve instead of resolving it as a file. | "test_a_symbol_citation_reads_back_with_its_path_identity_and_locator" | mcp/tests/test_knowledge_curator_ingest.py:218-245 |
-| A line-range citation reads back as its recorded extent rather than as an identity. | "test_a_line_range_citation_reads_back_as_its_recorded_extent" | mcp/tests/test_knowledge_curator_ingest.py:271-271 |
-| The read surface decodes the locator of a row the ingest did not write — the defect the decode closes. | "test_the_read_surface_decodes_the_locator_of_a_row_the_ingest_did_not_write" | mcp/tests/test_knowledge_curator_ingest.py:266-296 |
-| The claim really is the recorded revision-to-anchor edge, with its role and rationale, and the view row names the statement it belongs to. | "test_the_claim_is_the_edge_from_the_revision_to_its_anchor" | mcp/tests/test_knowledge_curator_ingest.py:299-324 |
-| The recorded identity is what the observation can verify: the exact blob passes and a false success is refused. | "test_the_recorded_blob_identity_is_what_the_observation_can_verify" | mcp/tests/test_knowledge_curator_ingest.py:350-350 |
-| No sealed revision byte moves: equal sealed content digests equally with and without a citation, and every pre-existing revision row is byte-identical after an ingest. | "test_a_citation_moves_no_sealed_revision_byte" | mcp/tests/test_knowledge_curator_ingest.py:352-412 |
-| The private readers the two measurements are built from. | `_revision_rows`; `_harness_entry`; `_harness_revision_row` | mcp/tests/test_knowledge_curator_ingest.py:438-448; mcp/tests/test_knowledge_curator_ingest.py:428-436; mcp/tests/test_knowledge_curator_ingest.py:439-451 |
-| The committed-command seam the module drives: the citation and entry models, the one-entry commit, the admitted destination and the authorship envelope. | `commit_curator_entry`; `CuratorEntry`; `CuratorCitation`; `admitted_knowledge_destination`; `write_authorship` | mcp/src/agents_remember/application/knowledge_ingest.py:179-186; mcp/src/agents_remember/application/knowledge_ingest.py:89-108; mcp/src/agents_remember/application/knowledge_ingest.py:68-88; mcp/src/agents_remember/application/knowledge.py:140-156; mcp/src/agents_remember/application/knowledge.py:117-137 |
-| The read and observation seams the round trip is measured through: the mounted view, the resolved read context, the rail's symbol answer and the two realization readers. | `read_knowledge_view`; `open_read_context`; `observe_anchor`; "unsupported_locator"; `get_realization_claim`; `find_claim_by_pair` | mcp/src/agents_remember/application/knowledge_views.py:86-112; mcp/src/agents_remember/application/knowledge_read.py:103-136; mcp/src/agents_remember/memory/knowledge/read_anchors.py:130-192; mcp/src/agents_remember/memory/knowledge/realizations.py:246-254; mcp/src/agents_remember/memory/knowledge/realizations.py:257-268 |
-| The shipped support fixtures this module consumes — no new governed artifact. | `ReadScopeFixture`; `build_read_scope_fixture`; `CandidateHarness`; `build_candidate_harness`; `table_counts` | mcp/tests/read_scope_test_support.py:174-239; mcp/tests/read_scope_test_support.py:266-283; mcp/tests/candidate_batch_test_support.py:92-234; mcp/tests/candidate_batch_test_support.py:237-276; mcp/tests/candidate_batch_test_support.py:288-294 |
+- The fixed spellings the cases vary a fact around, bound to the model's own identity and locator types. [1]
+- One authored entry paired with the citation its assertions name later, beside the real dataset-and-Git-tree fixture. [2]
+- The drive helpers: admit the fixture's own dataset, resolve the candidate inputs, author one citation, and commit it — raising with the refusal when the batch is not `changed`. [3]
+- The read helpers: the stored anchor decoded to the typed union, the mounted source-context view, the single row a claim produced, and the observation handed the decoded locator. [4]
+- A symbol citation survives the round trip whole, and the lane reports the kind it cannot resolve instead of resolving it as a file. [5]
+- A line-range citation reads back as its recorded extent rather than as an identity. [6]
+- The read surface decodes the locator of a row the ingest did not write — the defect the decode closes. [7]
+- The claim really is the recorded revision-to-anchor edge, with its role and rationale, and the view row names the statement it belongs to. [8]
+- The recorded identity is what the observation can verify: the exact blob passes and a false success is refused. [9]
+- No sealed revision byte moves: equal sealed content digests equally with and without a citation, and every pre-existing revision row is byte-identical after an ingest. [10]
+- The private readers the two measurements are built from. [11]
+- The committed-command seam the module drives: the citation and entry models, the one-entry commit, the admitted destination and the authorship envelope. [12]
+- The read and observation seams the round trip is measured through: the mounted view, the resolved read context, the rail's symbol answer and the two realization readers. [13]
+- The shipped support fixtures this module consumes — no new governed artifact. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-derived the seams row's two `read_anchors.py` ranges as the one `observe_anchor` extent (`:130-192`, which holds its `"unsupported_locator"` outcome), after this leaf added the memo code above it. Wording is unchanged, and no stamp was advanced.
-- 2026-09-20T00:58+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): this card's enforced rows were carried by the 00:31 mechanical projection above; this pass re-read the seven ranges it wrote against the sources by hand and left them unchanged because each already holds the anchor its claim names — `Authored`/`fixture` at `mcp/tests/test_knowledge_curator_ingest.py:90-95`/`98-102`, `RANGE_LOCATOR` at `:85-85`, `SYMBOL_LOCATOR` at `:81-81`, `committed` at `:164-169`, `_revision_rows` at `:438-448`, and `commit_curator_entry` at `mcp/src/agents_remember/application/knowledge_ingest.py:166-173`. No range was changed here, so no claim, anchor or citation moved, and no verification stamp was advanced. No commits.
-- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 7 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `Authored`; `RANGE_LOCATOR`; `SYMBOL_LOCATOR`; `_revision_rows`; `commit_curator_entry`; `committed`; `fixture`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "test_a_line_range_citation_reads_back_as_its_recorded_extent" repointed to mcp/tests/test_knowledge_curator_ingest.py:271-271. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "test_the_recorded_blob_identity_is_what_the_observation_can_verify" repointed to mcp/tests/test_knowledge_curator_ingest.py:350-350. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 4 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `test_knowledge_curator_ingest.py.md:160` (`WRONG_RECORDED_BLOB`, `SYMBOL_LOCATOR`, `RANGE_LOCATOR`, `SymbolLocator`, `LineRangeLocator`, `GitBlobIdentity`); `test_knowledge_curator_ingest.py.md:161` (`Authored`, `fixture`); `test_knowledge_curator_ingest.py.md:162` (`admitted`, `resolution`, `authored`, `committed`); `test_knowledge_curator_ingest.py.md:170` (`_revision_rows`, `_harness_entry`, `_harness_revision_row`).
-
-- 2026-09-19T17:14+02:00 — 260915-KS-L28 curator (sealed finding M1-5 repair): created this
-  one-to-one card for `mcp/tests/test_knowledge_curator_ingest.py`. It records the single-entry half of
-  the reachable curator ingest — the shipped dataset-and-Git-tree fixture and its drive and read
-  helpers, and the six cases that pin the symbol and line-range round trip, the reader-side locator
-  decode for a row the ingest did not write, the recorded revision-to-anchor claim edge with its role
-  and rationale, the blob identity the observation verifies (including the mismatch refusal), and the
-  two measurements that show a citation moves no sealed revision byte. Every range is the construct
-  extent at the committed revision this card names (`d0c1d1cf`, 2026-09-19T12:15:35+02:00), which is
-  byte-identical at the code worktree HEAD `e7998504`; a sibling seat is editing the same file in the
-  working tree, so the card is deliberately anchored to the committed revision rather than to that
-  uncommitted change set, and closeout owns the final stamps.
+No meaningful cross-repo references found.

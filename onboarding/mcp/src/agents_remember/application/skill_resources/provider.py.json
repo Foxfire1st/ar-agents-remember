@@ -1,0 +1,166 @@
+{
+  "path": "mcp/src/agents_remember/application/skill_resources/provider.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The served tree is the packaged runtime skills copy, which is what makes a served revision reproducible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:146af4dd9067ef159d8b70397b09e4592363f09462b22c07fb4b4d241a885469",
+            "locator": {
+              "kind": "symbol",
+              "name": "PACKAGED_SKILLS_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:5c093fea021c330d2c618bb11ee7902c52a15b4e661c6dbcceb21dffa645efd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "shipped_skill_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The corpus root, its manifest and its publishing origin travel together as one admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:b1aa6db26f9495b7eac841b60e70fbfb0730b9dbbdeb2a63197ed4bac2c762b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "shipped_composition_corpus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The publishing origin is both the URI prefix and the identity half that keeps two servers' same-named skills distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:875b398ac284909470c22cd590b00381f0cc7d34b9d6a426faa82a6bd215d57b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHIPPED_SKILL_ORIGIN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The packaging helper both managers open, which may materialize the package data for the duration of the call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba19e2655b01b38b9fca0b29d551c2968f09b1f4",
+            "content": "sha256:5be2cba06be15243c86735517a603d41c91e68fd0c2e2c32154fe9b217638781",
+            "locator": {
+              "kind": "symbol",
+              "name": "packaged_source_root"
+            },
+            "path": "mcp/src/agents_remember/install/assets.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The generated package-data copy the served tree is read from.\n\nAnchor: \"ar-role-capsule-composition/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:ed0968c56e210e3a3f5ca7e43da46a85eaf7168353b63081db06af2f9ef2622d",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The canonical skills source tree the package copy is generated from.\n\nAnchor: \"name: l-01-agent-lifecycles\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:0db60930468c4109b635df66e40698069bc764b25af8f2df4a9783ac27257e10",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The consumer obligation stated for a caller supplying a corpus root without its origin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:e3bc789bb66a1a3037cba8acfa21524e65966e045a47f3451ae9898f39ddf2c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceSelectionRequest"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that keeps same-named skills from two servers distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:d2a83faf4056b7018bd031659fd434d19731737dd24a6605d864747c63dbd081",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_same_named_skills_from_two_servers_remain_distinct"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:8d6df0233db28dae8af94ba99886353a17a1b6ec20716662319b91b6643ee7b6",
+            "locator": {
+              "end": 879,
+              "kind": "line_range",
+              "start": 862
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

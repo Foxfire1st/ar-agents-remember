@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_curator_family_retention.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Preview, cross-leaf publication, old-row preservation and exact retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3115dfb99b0db0106ee898a1a256b1945a7912",
+            "content": "sha256:5307cf3ee35af4661d0ba20446ce5a7975d812c7da0a089ac9000a4ed439ec5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_successor_retains_exact_siblings_and_publishes_across_leaf_scopes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Invalid and foreign references refuse without changing current knowledge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3115dfb99b0db0106ee898a1a256b1945a7912",
+            "content": "sha256:3c1c2f15a3093bfb0bc1e5a3233d9b401d8319824eab04b9717632d9c3c91fa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_retention_refuses_without_changing_existing_knowledge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Different old edges cannot duplicate one new endpoint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3115dfb99b0db0106ee898a1a256b1945a7912",
+            "content": "sha256:23a54c1e65b4ddbe08f44edc4e7c1a2ce6013c5af34befaa8371c866bf56feba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_distinct_old_memberships_cannot_duplicate_one_successor_endpoint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Retain/retire conflict refuses in the same or different entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3115dfb99b0db0106ee898a1a256b1945a7912",
+            "content": "sha256:e1559226f7b31d922cc800c6cb94a74e0011e442ce8cfdc866999ab93f455b68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retaining_and_retiring_the_same_source_membership_refuses_without_history_change"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Changing the retained set or a basis conflicts with its allocated declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3115dfb99b0db0106ee898a1a256b1945a7912",
+            "content": "sha256:7ca272704d1905ff373539b87d6e5320ca722bda4879e6909d1321a29c9b5431",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_changed_retention_cannot_reuse_an_allocated_family_declaration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

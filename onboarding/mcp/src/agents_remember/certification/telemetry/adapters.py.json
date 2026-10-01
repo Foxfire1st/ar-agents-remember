@@ -1,0 +1,209 @@
+{
+  "path": "mcp/src/agents_remember/certification/telemetry/adapters.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Execution-coherent identity is fixed before any event is compiled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:5b12559cd742bc1acaefd7923fea6be5c42aa635ee3c007c87b3d593bcf770ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryExecutionContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Admission telemetry derives the candidate-admitted event from its owned inputs.\n\nAnchor: \"def compile_candidate_admitted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:a76d780d15fc7f3a191b433a18894f4eaa1961c72e86f1a34e60a803e0180d03",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pass telemetry derives the publication event from its owned gate evidence.\n\nAnchor: \"def compile_gate_pass_published\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:6700275257796ad47bf9d716c56cbe96d9e38499d78091b5ebbdc1c631d04e73",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 278
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Rail telemetry projects the terminal rail observation.\n\nAnchor: \"def compile_rail_terminal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:be5c25fe61d3104442fa816dff561154c727d6f260462bae44b9e52b3841f396",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Finalization telemetry projects completion from its owned finalization inputs.\n\nAnchor: \"def compile_finalization_completed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:7ff58d4e6b5cea80b97abc6f48793b6e427872e129f03501ae1d6890cb44cdc7",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 497
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Every event is assembled through one matrix-driven base path that requires candidate and profile.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:87b944fccda6cb8931c1c9e35f319fd53b34ae7b058bc12516b920c2c7eae826",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_event"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Separate spans carry executor time without ever becoming gate evidence.\n\nAnchor: \"def span(\"; \"class TelemetrySpan(FrozenContractModel)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659307d86e9788c42a6a1eec6237b35d5c2909de",
+            "content": "sha256:a295a44245d6d01db19ece78d7205489167868bb308d57deb6e0cc87cc7ae4b2",
+            "locator": {
+              "end": 580,
+              "kind": "line_range",
+              "start": 566
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:4eec145f687760e4faa5fdecd8a123357b53602d35c1d453fa598576018166a4",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 220
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The event kind vocabulary the adapters emit is fixed by the models layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:7ee4a208a380df44a3146448e8e1372f02ac7eff59e4a5d72a65d75a32c34ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventKind"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:c0cd5bc9bf46c72ee483ffb6f864c8f66564de29ae400ea9f379103600080696",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVENT_MATRIX"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:5e7ba8bcb817e513558003482d749cd20fbd8bc69cb734073f4345a32442a9f9",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:9af27de7f7e87be9ea2bc6481fea30394c357349b2b09a28379996ab6602df99",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The facade exposes the full adapter set through its explicit export table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2e4ecb6935f8d19eb1915c6bda641048c5f0ef7",
+            "content": "sha256:60ef9a1796fa0a944965d7e62026e474e8908b5bbce7b49fc723dcc66b7158bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

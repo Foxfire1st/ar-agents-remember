@@ -1,0 +1,159 @@
+{
+  "path": "dashboard/src/panels/review/recordsPageRefusal.captured.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The provenance header: the capture command, the raw body's hash and size, the one normalisation, and why the file is captured rather than assembled.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef0e6c93124064ddf3d8eb528ef4d49aa78e0757",
+            "content": "sha256:53055aa4b022248d511f60efafe21dd1ad46477fe4dd4eeb795fa558f3dabc3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORDS_PAGE_REFUSAL_RESPONSE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef0e6c93124064ddf3d8eb528ef4d49aa78e0757",
+            "content": "sha256:f32ff379ef2a18f2eaa21b8e97e1fe0e577ae8a817e423f5bb952e4d72d823eb",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The captured body itself, exported as the one value the mounted case consumes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef0e6c93124064ddf3d8eb528ef4d49aa78e0757",
+            "content": "sha256:53055aa4b022248d511f60efafe21dd1ad46477fe4dd4eeb795fa558f3dabc3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORDS_PAGE_REFUSAL_RESPONSE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mounted case that asserts the `page` key is absent and renders the refusal from these bytes.\n\nAnchor: \"states a refused records page from the CAPTURED server body, with its code, identities and a live first-page action\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f9ee5650f85ae6b8e66ad16825ccc52318dcab7",
+            "content": "sha256:c237511560e387cc87d598689c421601efb41d5d0218a74a1340f8a296b14e1d",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.paging.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The client decode these bytes travel through, exactly as the browser's do.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d8894e228aa7934d4a7508e2536e63a3bfa6410",
+            "content": "sha256:3b55093c66702463240622b5e86748f1459b59915c203077e5575d872049441f",
+            "locator": {
+              "kind": "symbol",
+              "name": "carriedPage"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d8894e228aa7934d4a7508e2536e63a3bfa6410",
+            "content": "sha256:9cf06397e4777a4c439a50a8e5d11e5a1b8336193954501b0cc20c9c1c0605f7",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 545
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The route's own serialization setting that makes the key absent rather than null.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:d3658b65c38eaf8ef26632324bccda2e7fabada39d524ad7f3c4243dafe3d652",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_review_intent"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The published page and refusal shapes the captured body carries.\n\nAnchor: `comparison_page_reset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:d231f5d80a2730aab1061832becb5f2d5f3b3bd9ead09eb7a107fa018380ad30",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCollectionPage"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:492cdcadfa200f10935273b475926123be2537b1f436e9d981fcd5a71158397e",
+            "locator": {
+              "end": 488,
+              "kind": "line_range",
+              "start": 412
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:92e08f692ea00fdb8852968ef6c4505506a82510e4181c414e420e19520974be",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

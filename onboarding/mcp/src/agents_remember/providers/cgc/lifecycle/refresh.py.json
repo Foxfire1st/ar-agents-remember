@@ -1,0 +1,115 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The per-layout compose command plan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:3453f157e693c52a99587feaf45b75054079422744f92a0f444a42be0100e164",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_refresh_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The dry-run payload and backend/doctor preflight.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:2786ff35545c140a23344b7381ac959ad77cd43fb2849ac0629d4575c3d3f6c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_refresh_dry_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:022f8ed1662f58497512df033f9efabc4153c5a22125331f48a50ff9dd7dc008",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_refresh_preflight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Refresh state records the live command result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:a7e19c6a6bbe8febb90b22b2a4b57401824895dcb8251319983fed865d3a4f4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_write_refresh_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live refresh uses the uncapped command runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:dde624991b47eee275f846529e6153c0315d85112a95b8f8cfc3e564432f693f",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_refresh"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Refresh-all combines watcher startup, parallel layout actions, and aggregation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:1a4e88d8e8c78fc0d1a65aa25703b9038ab829b0081d1cb5a0f32aa3efb11bbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_refresh_all"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Refresh-all reports the selected concurrency.\n\nAnchor: \"indexConcurrency\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:406dbf85506b8855e6621e57ca187afe659ae7dbb7448aaefdc28d785eba29e2",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

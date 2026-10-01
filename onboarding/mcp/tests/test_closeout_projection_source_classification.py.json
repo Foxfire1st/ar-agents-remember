@@ -1,0 +1,428 @@
+{
+  "path": "mcp/tests/test_closeout_projection_source_classification.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One node past the master bound, every node a well-formed master reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8782b8087fda99980b7af7701739e7ff9a3541f3",
+            "content": "sha256:a2df8e6f0cedf7e4dadf0f5dfc31fdaa2cadc8d667694cedffe70eb91edaff7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_oversized_graph"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The integration lane row the fail-closed manifest requires.\n\nAnchor: \"mcp/tests/test_closeout_projection_source_classification.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 305
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The fixture's repositories are real temporary Git repositories created per case, not mocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:ba28344f8ca924f9bb7915f32cd4344b59aa9c262be90e77e48240e81f038662",
+            "locator": {
+              "kind": "symbol",
+              "name": "QueueFixture"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The fixture's repositories are real temporary Git repositories created per case, not mocks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:ba28344f8ca924f9bb7915f32cd4344b59aa9c262be90e77e48240e81f038662",
+            "locator": {
+              "kind": "symbol",
+              "name": "QueueFixture"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real raiser refuses the sprint's own authored graph, and its declared code classifies `invalid`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8782b8087fda99980b7af7701739e7ff9a3541f3",
+            "content": "sha256:350a63aff9751c01adea17e3d7a56e652beadce3b5e48ddedc3561d4f58b7659",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_graph_past_its_bound_refuses_by_its_own_declared_code"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ordinary source stays readable with no problems, and unreadable sources still report `unreadable`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8782b8087fda99980b7af7701739e7ff9a3541f3",
+            "content": "sha256:fb644c9fdc3fd5ad942d814620e116885059d7c6bb87bc37da8153ed40fcc985",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_source_and_the_ordinary_case_are_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every declared capacity code classifies `invalid`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8782b8087fda99980b7af7701739e7ff9a3541f3",
+            "content": "sha256:9d4b6e717e143e04c5bae6820abb28d8565d55c0749db9efe21bebe7e47da788",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_declared_capacity_code_classifies_as_invalid"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The classification the module pins: membership of the declared set, with the other vocabularies' markers untouched.\n\nAnchor: \"error_type in CAPACITY_REFUSAL_CODES\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ac9063ddf25a2849fb479acdb7827267c29afc2",
+            "content": "sha256:9e2c4586cfa4767dc641dc8f7525d26b2f6cdff84d6d304c5f4183a238ccf1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_problem"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The single declaration that owns the capacity codes and their classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:ab997ab1555fa24cf63ea3a1f5c00f8c46cbe05f0ce34504bd45ff9476c4d007",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPACITY_REFUSAL_CODES"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83a3143cac46080c6aed10e1754cd214ffaa45f9",
+            "content": "sha256:36669672e1883df064c9e4f87c56185a88bd4bf6302c2aa08c6c258805273433",
+            "locator": {
+              "kind": "symbol",
+              "name": "MASTER_CAPACITY_EXCEEDED"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The raiser that publishes the code the first case reads back.\n\nAnchor: `MASTER_CAPACITY_EXCEEDED`; `EDGE_CAPACITY_EXCEEDED`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:ecb4973bc3d3156c6eef920ddc47460a5012fbc4179902a928afa6ec20a7cca7",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fixture this module composes instead of rebuilding the world.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:ba28344f8ca924f9bb7915f32cd4344b59aa9c262be90e77e48240e81f038662",
+            "locator": {
+              "kind": "symbol",
+              "name": "QueueFixture"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:910790e222ac3e8bfc7ada5a2211c67caf04d4ace58f37d95f461738f55c3c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPO"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:f40f91721ef63ccd60878bf41fbde04857b0a319dc11883acf140d00a5cfb55b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SPRINT"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two artifact rows that declare this module as an exact consumer, both through `test_closeout_queue`.\n\nAnchor: \"path = \\\"mcp/tests/closeout_input_test_support.py\\\"\"; \"path = \\\"mcp/tests/curator_coherence_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:de83f488f88020f7255eafb7d41a4876d9b95dd2ca4f41fcddb2947badf11563",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 338
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0f292e20fda47e89c95b66db2d6e8c8b60e8c4cdceebed82f829c10d62abb51c",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 410
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d0926c8c1f57bbea6d80de42810de32c783ecc4c52491effef81f4f93b3fa5da",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f13ad3eb09d3db67497f8b914b1e89d1eaa9f763594e555d3b1b115d38525875",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0f27b7254e53cf0acf5925430255f60ae39b05a2c852ec35b5ef718237eb4468",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 469
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d098d630259aa8a0f79b0b8096b1f31c1ccf405197d61d5cef91f3d9512b2eaf",
+            "locator": {
+              "end": 1181,
+              "kind": "line_range",
+              "start": 1181
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:9ce8fe93701008820a258cffabe7a06811ec3109912978ff67d25d23cf32a3d6",
+            "locator": {
+              "end": 1205,
+              "kind": "line_range",
+              "start": 1205
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:2ac834234ebd23055ea5c2ed3327b907ba55b8365586cd65ba3794d94bd5dbfd",
+            "locator": {
+              "end": 1234,
+              "kind": "line_range",
+              "start": 1234
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1254,
+              "kind": "line_range",
+              "start": 1254
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7e027222c96ad14c1c4341d24a8b3af6f32f8c3230040db2e2f1ff07eddd9be8",
+            "locator": {
+              "end": 1498,
+              "kind": "line_range",
+              "start": 1498
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:2e156d69bd8743f631d04cf0cc864e81162959227248a282270742be7cf28786",
+            "locator": {
+              "end": 1641,
+              "kind": "line_range",
+              "start": 1641
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:3e9ae756369cee96672a8765d506c1cea4b9b5f5ab63e9a657100b9bc3c70dfc",
+            "locator": {
+              "end": 1680,
+              "kind": "line_range",
+              "start": 1680
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:bc56a1bbd67af8e04d484bf3ca5d0b69f4da1e8bdc044bcee4b70675fade35e5",
+            "locator": {
+              "end": 1716,
+              "kind": "line_range",
+              "start": 1716
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

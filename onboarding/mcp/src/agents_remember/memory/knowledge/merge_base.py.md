@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/merge_base.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/merge_base.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T17:15+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -54,41 +44,29 @@ The base claim is a closed union and neither member is a guess:
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The closed two-member base claim: a supplied commit or an ancestry-proven unique common base. | `SuppliedGitBase`; `ResolvedGitBase` | mcp/src/agents_remember/models/knowledge/merge.py:81-86; mcp/src/agents_remember/models/knowledge/merge.py:89-101 |
-| The outcome value that separates a proven resolution from its refusal. | `BaseResolution` | mcp/src/agents_remember/memory/knowledge/merge_base.py:61-72 |
-| The resolution entry point and the deliberate identity-before-ancestry order. | `resolve_merge_base` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105 |
-| The sequential, lock-free materialization of the three immutable inputs. | `_materialize_inputs` | mcp/src/agents_remember/memory/knowledge/merge_base.py:108-146 |
-| The ancestry adjudication and the two refusals a base claim can earn. | `_adjudicate_git_base`; `_ancestry_refusal`; `_uniqueness_refusal` | mcp/src/agents_remember/memory/knowledge/merge_base.py:149-178; mcp/src/agents_remember/memory/knowledge/merge_base.py:181-196; mcp/src/agents_remember/memory/knowledge/merge_base.py:199-224 |
-| The two read-only Git questions and the refusal that names the repository. | `_is_ancestor`; `_common_bases`; `_git_refusal` | mcp/src/agents_remember/memory/knowledge/merge_base.py:227-231; mcp/src/agents_remember/memory/knowledge/merge_base.py:234-240; mcp/src/agents_remember/memory/knowledge/merge_base.py:243-262 |
-| The refusal for an input that is not there or could not be read. | `_unavailable` | mcp/src/agents_remember/memory/knowledge/merge_base.py:265-277 |
-| The two operation names this module owns for the merge vocabulary. | `RESOLVE_OPERATION`; `MERGE_OPERATION` | mcp/src/agents_remember/memory/knowledge/merge_base.py:52-53 |
-| The schema preflight and logical-identity readers this step reuses. | `require_supported_structure`; `dataset_identity` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:226-258; mcp/src/agents_remember/memory/knowledge/logical.py:153-175 |
-| The node that drives every base and input defect, including the criss-cross history. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:307-379 |
+- The closed two-member base claim: a supplied commit or an ancestry-proven unique common base. [1]
+- The outcome value that separates a proven resolution from its refusal. [2]
+- The resolution entry point and the deliberate identity-before-ancestry order. [3]
+- The sequential, lock-free materialization of the three immutable inputs. [4]
+- The ancestry adjudication and the two refusals a base claim can earn. [5]
+- The two read-only Git questions and the refusal that names the repository. [6]
+- The refusal for an input that is not there or could not be read. [7]
+- The two operation names this module owns for the merge vocabulary. [8]
+- The schema preflight and logical-identity readers this step reuses. [9]
+- The node that drives every base and input defect, including the criss-cross history. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-19T17:15+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`, base `497d9e9f`): M1-4 anchor repair, re-read against the code worktree at `e7998504`. The reuse row named `require_supported_structure` and `dataset_identity` but cited them the wrong way round across their two modules — `logical.py:153-175` defines `dataset_identity` and `merge_schema.py:226-258` defines `require_supported_structure` — so the citations now follow the anchors' own order. The criss-cross node was cited at `test_knowledge_guarded_merge.py:301-369`; the node now starts at `:307` and runs to `:379`, and the range names that extent. Every other row was re-checked and stands. No claim was deleted or softened. The stamp is unchanged because `4904e08f`'s content for this file is byte-identical to `e7998504` (`git diff 4904e08f HEAD` is empty).- 2026-09-17T20:39:57+00:00: Generated citation repair: `require_supported_structure`; `dataset_identity` repointed to mcp/src/agents_remember/memory/knowledge/merge_schema.py:226-258; mcp/src/agents_remember/memory/knowledge/logical.py:153-175. No content impact: mechanical anchor-range projection bound to citation source snapshot b181d6d0b4e4cacc1833ff166c579061a1762313f644c682eec8ffc186d8d42f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `require_supported_structure`; `dataset_identity` repointed to mcp/src/agents_remember/memory/knowledge/merge_schema.py:121-139; mcp/src/agents_remember/memory/knowledge/logical.py:141-161. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate` in the row 78 of this card from mcp/tests/test_knowledge_guarded_merge.py:392-486 to mcp/tests/test_knowledge_guarded_merge.py:248-250, the extent of the construct the claim is about (the checker named line(s) [19, 248] as its live location)
-
-- 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new base-resolution module. It records the closed two-member claim (a caller-supplied commit, or a claim the ancestry evidence must confirm as the unique common base), the deliberate identity-and-structure-before-ancestry order, the sequential lock-free materialization that keeps the destination lock the only lock the merge ever takes, and the boundary a later reader most needs: nothing here reads a Git object to decide what a dataset *is*, and no path reaches `HEAD` or an arbitrary merge-base result. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

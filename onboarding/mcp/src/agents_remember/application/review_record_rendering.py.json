@@ -1,0 +1,736 @@
+{
+  "path": "mcp/src/agents_remember/application/review_record_rendering.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it renders, why it is separate, and the three rules its values obey.\n\nAnchor: `unassessed`; `none_recorded`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:ace956a58988817362f135c2145715129388b53f062fe49f36e368cabbe1ca2a",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**A detection fact carried with its inputs, versions and scope limitations only — no voice, no severity, no disposition.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:d53053d65db9fd5467978678d42c86317161bba321e24da0d718754e22bc56ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "signal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36930b807fd0f24bc978c6c8f0f3c57ee03f3b89",
+            "content": "sha256:6012b3a5a13fa4f2aac335ee8e202fc6e1dda4cb340856fa1b50cecd55d36591",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionSignalPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/detection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36930b807fd0f24bc978c6c8f0f3c57ee03f3b89",
+            "content": "sha256:1969ddaa55d70ff154a7644016c414ae9a667eab31ca98188e0a8da73aa78c53",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/detection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The adapter that re-exports the record input set and its empty value, so the existing importers keep resolving without a new home to learn.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:2cb096ef366b92d0c4900ff4e0052c720803707eb438e5d96d834dbd55d75a34",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:6f91dd5339df6df91b5cdede991b96f3711ea0c9ecb6855d56f64c894750396e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_REVIEW_RECORDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The two callers: the subject composition, which renders the matrix rows beside these records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:dce97d78bd0b2a2f0f4f6a0a732c49e193da5234093b36c96ea066651e4ef99c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_pane"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The second caller, which is why this module exists: the task-context composition renders the same records with no matrix and no comparison.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:a1e9951a80e3c0599f4087957acc15fdd6975af780628bdc7b4f330a9c65845d",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_context_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:7d1071b571bbff289d4970fd937c12afd69555ca0d276e8ad908e430e9433c70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_context_pane"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:abc73994f7598df139bf708ba331e7f37dda899bd6d8c0ea161d32c9d1f9be9a",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The published assessment collection the adapter reads from the curator authority's own publication, with an absent authority treated as empty rather than as an error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:6ad5e0b49b2b9ff61de5f79fb25d573124f0d0080b32fb013d48330c2ce9d637",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_records_for"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:d62e4aa67b2079df27e343f54cb4dc0de4e3f180bdf756b4d68dbe4aa060fdce",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_curator_coherence_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The published surface: the record input set, the empty value, the claim renderer input and the seven renderers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:8d14c8474ea5e51bafbccc95d0b0dfdc2b2727623090b620862a436a884fbcac",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The collections the renderer is given — including the supplied claims and the availability list — with the currentness measurement optional and its absence meaning \"unmeasured\".**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:2cb096ef366b92d0c4900ff4e0052c720803707eb438e5d96d834dbd55d75a34",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:6f91dd5339df6df91b5cdede991b96f3711ea0c9ecb6855d56f64c894750396e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_REVIEW_RECORDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**One claim's own recorded fields as the evidence owner serves them, with the authored limitations verbatim and nothing derived.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:3d899646783857164f0c9edd0ed13045f0ee84e74e5711286bc0a7c26bcfe355",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewClaimRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**Pane 3: the links rendered from each claim's own record, the observations displayed exactly, the two absence states computed from the collections, and the availability list carried onto the pane unchanged.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:1df1b35fd945f09e5018fd0cd4ce46acd1120d0f4e1e3363a25abcdd2cf1c092",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_pane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:09a38e0817bee597a77b6f114bd71170232553350e4477e68fd113c39b976253",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidenceLink"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:ded0ececa681b97be07a9edc7127ef6fe71498bd84fa89e7cfe01e575d892624",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidencePane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The one per-claim projection and its two shapes: a supplied claim's own author, lifecycle, limitations and coverage, or an identity whose missing content is named as unresolved.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:37833373569f99f25657ba881df562ce43f81f4bbffb7093c34f532a2c268caf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_link"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the record input set, the empty value, and the seven renderers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:8d14c8474ea5e51bafbccc95d0b0dfdc2b2727623090b620862a436a884fbcac",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The record owner that resolves the collections and builds each claim's renderer input, and which the adapter re-exports instead of owning.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:6ad5e0b49b2b9ff61de5f79fb25d573124f0d0080b32fb013d48330c2ce9d637",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_records_for"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:47b8108dae8b88cc5cc5c2c6d451e2a0e445492e7693ebd6a0ab8d1966fc9a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_record"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The cases that measure the rendered values: unassessed is never defaulted to compatible, a passing observation is never invariant-satisfied, and a detection signal carries no severity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:865fd63935dd59bd9a58bb5df21fbf5a82d2f1a02bd4da96a4422d1d3e9ef1c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unassessed_subject_is_displayed_unassessed_and_never_defaulted_to_compatible"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:1f3010a0dedf0225179fea0f21b5cb03a13804c69c22f68d89b84cf5cdb795cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_passing_observation_is_displayed_as_an_observation_and_never_as_invariant_satisfied"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:5e6625aa75ac04e82d6a12c214a35c1dc59082fa7a6ae74cd0fb57357cbbe740",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_detection_signal_carries_its_facts_and_scope_limitations_and_no_severity"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:9761a00e2945187edc15a04263eb5376e4aefed80eb836b67ff511a49475bfe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_surface_reports_the_absent_submission_path_instead_of_growing_a_private_one"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The rendering a task-context review produces for the same records, measured through the real composition.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:618694acaac3b3addb44a457fedda5723b373051acf3391df76ded38c069e017",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The cases that measure the two new claim-link shapes: an authored claim rendering its own limitations and coverage, and a damaged claim's identity kept with its content named unresolved.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
+            "content": "sha256:407b581c83319a5b5ee9d6b622f4f2d75e25b749177087c6b216b1fd9b03ef17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_production_composition_supplies_every_owner_produced_record_class"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
+            "content": "sha256:9d94d1f1181c23e2f3af3405dd683e998a88f791ae7a6767f8db3da6d4008e15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Owner artifacts accompany the record collections without becoming a second store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:2cb096ef366b92d0c4900ff4e0052c720803707eb438e5d96d834dbd55d75a34",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The collections the renderer is given, with the currentness measurement optional and its absence meaning \"unmeasured\".**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:2cb096ef366b92d0c4900ff4e0052c720803707eb438e5d96d834dbd55d75a34",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:6f91dd5339df6df91b5cdede991b96f3711ea0c9ecb6855d56f64c894750396e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_REVIEW_RECORDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The one refused-result builder the whole surface reaches, so a refusal is a state and never a degraded success.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:41be09c43fa88b5387d556120c363032f03a9a77dc5b82dc1abbe890bf0429c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refused"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:3f6ad78447f26df5cb81727e95df3e43f23cf60810c0ca2d9693c4b59ead4926",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:30d4c59eea8f40032ea73d24a827457b2ef45c5641f5e184605fc2e2322d8445",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:7c9a9ffa883a2730633b53c5ff9894f2e9b818e6b378791cf2afb84fa72d4ad9",
+            "locator": {
+              "end": 1134,
+              "kind": "line_range",
+              "start": 1119
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Whether an assessment may be submitted: `disabled_stale` or `unavailable`, and never a private write path — the next action names the existing curator authority.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:b5d9ba51fb12b3d8f75f56225b0ad35b2e9b276a7a749d2bb8359a3e32ef608d",
+            "locator": {
+              "kind": "symbol",
+              "name": "submission"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:44969738b0b14d020aaa8b2a96d595dd3c379de488e0cb68690b3f10f742df19",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROPOSED_ASSESSMENT_DISPOSITIONS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**Pane 3: the evidence links with their unresolved coverage, the observations displayed exactly, and the two absence states computed from the collections themselves.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:1df1b35fd945f09e5018fd0cd4ce46acd1120d0f4e1e3363a25abcdd2cf1c092",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_pane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:09a38e0817bee597a77b6f114bd71170232553350e4477e68fd113c39b976253",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidenceLink"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:ded0ececa681b97be07a9edc7127ef6fe71498bd84fa89e7cfe01e575d892624",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidencePane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The per-subject projection that reports an unmeasured assessment `stale` rather than promoting it to current.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:8d0f1ba791caa384ff4f4894836f1bb8604882089f5c7dcc7c105380e66b7cd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_states"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:0b44d7805fec6afeab23ec939d2a7cdba560f0b0f2b65ea8da7d97b637fcc1ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_state_for"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The assessment display, its per-record projection, and the examined-inputs fallback to the record's own comparison reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:ec33869b9a88bb18078dbf63746c40135f781a0ae8ad3e9f60f81f5200e555e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_displays"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:9b960289a7f0ebe5891535a2f924eb6f4427117e145cdc7f4e7497357b5eb19a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assessment_display"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:6d5c31b5ab056ff9b66c2abfe30670aeeac958f52062367c544054f40015d7c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAssessmentDisplay"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:4fdf7fafffa1c6ad0dfa1d4b638bf474631fd67c1dacae84c54b466d3c533ae7",
+            "locator": {
+              "end": 566,
+              "kind": "line_range",
+              "start": 527
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**A verification observation displayed exactly, with no sufficiency field and no invented limitation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:59ead7ba2d7315ea8f983d9ea993bc56be7839c6ece03d8a74a4ade64d4e05da",
+            "locator": {
+              "kind": "symbol",
+              "name": "observation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:34ab7f99bf31d44e464d994357dae74aa34aefb9ac027fc685f4b7821279da6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "VerificationObservationPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:df8183495f5caf690b4921134d8e1c8660fd895d190d6b519dc467cd39b99246",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

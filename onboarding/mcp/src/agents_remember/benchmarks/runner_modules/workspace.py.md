@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/benchmarks/runner_modules/workspace.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/benchmarks/runner_modules/workspace.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-07T00:25+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce` |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [runner_modules overview](overview.md)
@@ -61,41 +51,17 @@ direct-script run.
 - Benchmark provider setup is hermetic: `prepare_case` never passes a seed-source coordination root, so a benchmark run cannot start or clone the live workspace provider backends. Seeding from the live workspace previously cascaded a full re-embed across main and every worktree (task 260619).
 - The case manifest is not launch authority (containment R1): provider ids outside the caller's `allowed_provider_ids` are dropped — and reported — before any registration or launch; `None` is fail-closed as well (review B4), and only the explicit `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` env escape arms an unfiltered direct-script run.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | `prepare_repo` | mcp/src/agents_remember/benchmarks/runner.py:28-33 |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
+- The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
+- The route-local overview summarizes how this module fits into the benchmark runner split. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No configured sibling repository is required for this module.
-
-## Update History
-
-- 2026-09-07T00:25+02:00 — Removed the obsolete deleted-test coverage claim; production behavior and original verification history remain unchanged.
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 6 citation findings (3 rows); scoped recheck clean.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `prepare_case` was re-signed onto `BenchmarkPreparation`, and it now builds a
-  `BenchmarkWorkspace` that both `write_benchmark_mcp_registration` and
-  `prepare_configured_providers` consume. The materialized workspace and the written registration
-  are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B4: `filter_benchmark_provider_ids`'s
-  `None` semantics flipped from unfiltered to FAIL-CLOSED (loud skip naming the escape hatch);
-  the new `UNFILTERED_PROVIDERS_ENV` constant (`AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1`) is
-  the explicit developer act that restores an unfiltered direct-script run. Verification
-  metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): added
-  `filter_benchmark_provider_ids` (manifest is not launch authority; skipped ids reported
-  loudly; None = unfiltered direct script use) and `prepare_case` now filters before any
-  workspace registration or provider launch. Verification metadata pinned until closeout stamps
-  the HFX-L1 commit.
-- 2026-06-19T13:42: Benchmark provider setup is now hermetic — `prepare_case` passes no seed source, so each benchmark stack indexes its own pinned fixture from scratch and never starts/clones the live workspace provider backends (task 260619: that cross-stack disturbance had cascaded a full re-embed across main + every worktree).
-- 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

@@ -1,0 +1,383 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes.\n\nAnchor: \"This extension introduces three protocol methods.\"; \"The extension introduces no other methods, message types, or schema changes.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:f799ca2eba40977a8ed0834d018008a1cca3f6dad866bfc96653a9c354367f68",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The declaration beside it: the capability and the methods are installed together, so the advertisement cannot outrun the implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:26281eee4775d550c00a4096005fab1ee68897893b8a99ed510e17193c953c63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_skill_resources"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:d69893f1c3bd695c92b4588515bc735d2b057f5267f28a9cf9cf8ddbeaeed941",
+            "locator": {
+              "kind": "symbol",
+              "name": "declare_skills_extension"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:767833d45872b6a7a015f00f8d40a455bcaa7519bd423a97b02d2c64d196d45b",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:547ee2d3390940b8a8fc7ba4a000e2da08fe7ae8903ba2bba80d4c9e4327dbf8",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The entry shape the methods return: verbatim frontmatter plus per-file digest and size.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:8b3460de256e9488c1bcf005764605e8fa56496b0c59d589424108ae83898a9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_document"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:7b5878539ddf0aa5f291a1d54bd3df0480488c836c8d9bc909cc014a60358a68",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_documents"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The reading half both handlers depend on, including the containment and revision guards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:76b22bd75690a801cc184c674c5681b1d52d169ff66b02d3c5479a9e5d512647",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_skill_catalog"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:d45210ffe40e81f0978179d1a159633f4f71ea4c67ae9a73fc703e4c53fb415f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_served_file"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The real-process exchange that exercises the declared capability and both methods against the shipped entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:b8e12a88c690222106abb3e467066887f175eac7ea90103e3c71b33d0c844b3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_client_and_server_exchange_over_the_installed_sdk"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:bbf8e9abc5153061cc1ab722ff28e4cf18e96fdd7cdcea32589f21a4155e3e6f",
+            "locator": {
+              "end": 1268,
+              "kind": "line_range",
+              "start": 1198
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The case that pins the install-once idempotence of the declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:a464c5c90ae7e6c60b75a33933f6ea136eefc3dbb7650e907500009240e000b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_extension_declaration_is_installed_once_per_server"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:58c5cdb5eac0f54b16df586a0c0499539d707908cbbb1e899c1b1bba85f26971",
+            "locator": {
+              "end": 1407,
+              "kind": "line_range",
+              "start": 1393
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**Declaring the extension itself commits the server** to `skills/list` and `skills/get`.\n\nAnchor: \"Declaring the extension itself commits the server to\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:48107d0669af4168e3a83f64d1f32721178c8cf42fe86cc52363ba96a22ef02f",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The optional `resources/directory/read` method is gated behind the `directoryRead` capability a server may decline, and \"a server that does not declare it never receives the call\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:c5db9011ca3be0d0309dcff87c7d6c947b34721e1a61a5670d2943577a654adb",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIRECTORY_READ_CAPABILITY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An entry's `frontmatter` is a **verbatim copy** of the skill's `SKILL.md` frontmatter rendered as JSON — \"every field the author wrote, not a curated subset\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:b3ae921b012b93712d2d6ade83499e5f77db32809ca6da4e1665b836007c3963",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MappingReader"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/frontmatter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one entry point, making three additive changes; the process-wide session patch is idempotent.\n\nAnchor: `_INSTALLED`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:cc4845b47643583a8b98ac754e62902b8c3afa0d20223d7a77ef2c6167511c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_extension_methods"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:99f480fb78ae99318a23a1acf888da8aab05b61fe7022ba72d39b2795f303842",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_request_union"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The dispatcher hook, without which an extension request is silently dropped rather than refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:e9d6402689ffe51c82f16133a711cdcf602f61a35a0d7f4116588c001207d3f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_dispatcher"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:a1a7d7ccd80b5f49f543c63a0700c4c25cb776f409f74390ac5cda495447f89c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DISPATCH_INSTALLED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`skills/list` answers one page and omits `nextCursor`, which is the completion signal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:dff2844fde0f4c222393a15010a2a6985f11267e5d6925e10c031798049c1a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skills_list_handler"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:7bc3f3f02c91cea4872d3727b104586999bca3b812dcc29bab02e0dcffe1a4cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillsListResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`skills/get` answers for any served skill, listed or not, and refuses an absent URI with `-32602`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:b08b4801ba0159c6d6ce30e7954cdf483bb8dc02fce88346d37290e94de5d598",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skills_get_handler"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:4b1b799f742f28de0b0e573f3d87f84181b79208176871915c06bf5d8f637177",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_for_root_uri"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Both handlers answer from the same catalog the resources are registered from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:0fbe55693a843a3d6284e3cb9fe90d679e4b1070073e0acbd51f3845fb92a8ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_catalog_for_request"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:fb402ce58bc816d55bfeb4236524d04d2b33059a46c454a1a862c82a67ca11ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_servable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

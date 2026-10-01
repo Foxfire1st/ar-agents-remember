@@ -1,0 +1,351 @@
+{
+  "path": "dashboard/src/panels/review/IntentMarkers.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement: marks from the one classification, in the diff's own gutter; no editing, commenting or assessment.\n\nAnchor: \"Every mark comes from the one per-file classification (MIK-R32)\"; \"Nothing here edits, comments on or assesses a change.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:198b98943a2907fadbea6a8c3c2d2e2d99c66f3ae1b55170e0f02687ffb403cc",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "One side's marks, and `Back to <file>`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:c5b2075833e60d243bd8dcdc692b1be16dc1454a340b7622ed48ac0a3a5e4c50",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideMarks"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:ba8d7b7983fb62ba83c62531f9b591d503b79dde054a0aa1fc3025a53cb54642",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkerReturn"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The renderers that place it: the source view, the lane windows and full file, and the card excerpts.\n\nAnchor: \"const marking = useSourceMarking(expansion, mode, markers);\"; \"const marking = useExcerptMarking(card, layout, { before: true, after: true });\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:fc9a442c8911448259bfa1bdf25681805db6c795d8ea365b2b1f2b0b11073b5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWindowMarking"
+            },
+            "path": "dashboard/src/panels/review/LaneFileFocus.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:b8e3f2745f88dfdc6e2ce715e12c2ba5dd8864a6bca91dfb7f84e7d1b1fbffa9",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:b93f055060817237e2a4f5860dff63afc1788ae20e08dfdfd15b3ddf8ebd1aef",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 473
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The renderer cases.\n\nAnchor: \"marks each owner hunk on the owner's side lines, a deletion in the before editor\"; \"marks every hunk a window draws: the focused one and each neighbour its context shows\"; \"keeps the drawn side's marks when the other memory side cannot be read (review R1 F1)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:918cbf623b58606acd11bd307ad6d8dd4fef80d16933f42a649a551339102c0f",
+            "locator": {
+              "end": 770,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A pane's input, named so a return lands in the pane a marker was followed from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:89a3e9e3543ed7ac2acb10c9fe1b5328ae1d9f05c870247d0a2601f90b56e44d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaneMarkInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:53806678add605b6b4be32c75f300791f7fab0bf0050a22ea6c69f84a16a6e07",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaneMarking"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Placing every owner hunk a pane draws, the reveal and list reopened on a return, and hunks past a bounded text named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:2343401d5929bb1bcb5579bcf909a7f8d091d810501c633701dbea99ebae117f",
+            "locator": {
+              "kind": "symbol",
+              "name": "returningHunk"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:a2c4f25f79f714247bc38b9f8630b515864faa51e5376da64eb04a43156ad2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePaneMarking"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The mark: tone, spans, compact text below 40rem, and its accessible name (review R1 F2).\n\nAnchor: \"_after: { content: 'attr(data-compact)' },\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:8740af6c5674a94c7df3fa3cc33e720779590594e897bae8172f9187de47fe0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkButton"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:6eddfcfe89962c16b5a292dde70b6eefbbff7b75bc494203c02353784da15d00",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The list: intents and tests apart, occurrences that follow their target, unknown lines, and the intersection-only sentence.\n\nAnchor: \"Listed because a recorded range meets a changed line of this hunk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:34217c32f6fd01bc01267731a3440774d562a947fd4840404838a83a045d72cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkPanel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:7917a5bc13886ec95b9caf0bad5f56c3315338a14080f54217357aacf76c9b41",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryList"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The file-level mark and the past-text note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:7677b544b0a58f82f6e075e6079034f2b644a21d161475bcb1439dcd25fb5761",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileMark"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:760a621c045d90601f8e3fcff468369a3f1d631453fbb0fd75452a187bcc58ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileMarkNote"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:3ca32808ff9d0cc6c668f4657626fdc203b62330ec9c094ee042a7485259b541",
+            "locator": {
+              "kind": "symbol",
+              "name": "PastTextNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The source-content view: marks only on the drawn blobs the classification names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:d0a53eb545ca362ceb43b2a853256e8a44c2b17391c6d3a425da7d506f6e09bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "describesDrawn"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:5719d3559c74924526debec476ee66e7ae00b137167270f1919a327aa137ab23",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSourceMarking"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:0df8ca1395e587080a8590f6b022032247a1efe7bfbff4d686eb0c0405dca644",
+            "locator": {
+              "kind": "symbol",
+              "name": "sourceInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Card excerpts: only the drawn sides compared (review R1 F1); an unchanged file's card never active.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:176802e693b493038de71fd6b289003744970c02fb3ed37b7961e017bb6bb0e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "excerptWindow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:3564649a4d4a827324e90f65bc3fc6f6662e712301dcdfb0a96345620682d0ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "drawnSidesMatch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:6efb39f0ef04f2bfa09f7385d6e45542d90f98e9249a685ae4018cca6790c19e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useExcerptMarking"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Why a changed file shows no marks: unlisted, loading, unavailable or other content; never silence (review R1 F5).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:02baeb7e92de6a8e9e0767b179f1993bbca2c78946f33acfa01766a477b0ee41",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkReadNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

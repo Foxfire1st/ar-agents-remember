@@ -1,0 +1,237 @@
+{
+  "path": "mcp/tests/test_curator_review_assessment_publication.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The integration-lane row this module's classification rests on, and the lane header that declares the classification.\n\nAnchor: \"mcp/tests/test_curator_review_assessment_publication.py\"; \"integration = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 363
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The integration-lane row this module's classification rests on, and the lane header that declares the classification.\n\nAnchor: \"mcp/tests/test_curator_review_assessment_publication.py\"; \"integration = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 363
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared support module this module is registered as a consumer of.\n\nAnchor: \"mcp/tests/test_curator_review_assessment_publication.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:102df1dd793dece048d133c0f7b3db51bf4215db6c7b3e273a03cae72ab1c9d0",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 333
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:362375c7e4097edf595dde2e80d056f3cc19fb58c14508b9f962db12a0de31f9",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 360
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:cbcba193c288fff6c7f8fdd6ab253eada8e4fdcff7b2f7187f392378be0814cf",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 403
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5c7f8ed196c6ece73f58d03dceaeb70b3ba8c289fa8c62d93f62f7c248eb3930",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 414
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The publication wiring the cases drive, including the exact-coverage obligation they leave untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_action"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:421f477ff7368bb7bb4f0fb49df1bc279818f14e55fcc06d36e177f27bdc0bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_review_assessments"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:0766441c3e12b7a252bb998c70fa9331a757930b64f1865fb119090a09bb523b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The destination and read-back the survival and blocked cases measure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:8198e7fefad0a2c63f36bc1582c3259af93bd845300ca7f53b21f67fc5b9f30a",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_assessment_evidence_bytes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:3d88c60cccf3d0995e146f9e24fee7ff018f32175836b17074e6843cabbfbb29",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_back_published_bytes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:76d957457b27e52873d79c429b55f88f83830c02f9ee16d312e1c86188300060",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentEvidenceBlockedError"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The typed collection the publish action accepts and the uniqueness rule it enforces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:890c9736acb344ad4e335a24a0bbf4670fa0b997c835052dcf94133cacd330d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRecord"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:81d06cb55a30457b2990e0ddac9c13dadfc7f977ee133cc1a53a3994254fdda6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRequest"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

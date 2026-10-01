@@ -1,15 +1,5 @@
 # dashboard/src/panels/eventSummary.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/eventSummary.ts`           |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-28T05:38+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/ overview](overview.md)
@@ -74,42 +64,24 @@ fallbacks are intentionally honest and diagnostic.
   presentation gate, not raw-event deletion.
 - Raw unknown kinds must remain visible as raw kinds rather than guessed prose.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation applies; this is dashboard-local presentation logic over the
 repository's observer event contract.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The raw observer event envelope rendered by this formatter. | `ObserverEvent` | dashboard/src/types/event.ts:9-22 |
-| Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback. | `findLifecycleEnclosure`, `taskLabel`, `taskDocsForLifecycle`, `taskDocumentLabel` | dashboard/src/data/taskIdentity.ts:253-260; dashboard/src/data/taskIdentity.ts:262-279; dashboard/src/data/taskIdentity.ts:281-286; dashboard/src/data/taskIdentity.ts:288-293 |
-| Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields. | "\"tool.completed\","; "\"read.packet\", \"observed\", \"model\", repoId=repo_id, files=projected"; "self._emit_locked(\"lifecycle.phase-changed\", \"declared\", \"model\", phase=phase)"; "\"lifecycle.blocked\"," | mcp/src/agents_remember/observer/ambient.py:418-418; mcp/src/agents_remember/observer/ambient.py:452-452; mcp/src/agents_remember/observer/ambient.py:312-312; mcp/src/agents_remember/observer/ambient.py:217-217 |
-| The Event River component consumes these summaries for rendering. | `eventSummaryContextReady`, `summarizeEvent` | dashboard/src/panels/EventRiver.tsx:62-73 |
-| Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids. | "uses task document labels when event history no longer has a live lifecycle row" | dashboard/src/panels/EventRiver.test.tsx:312-332 |
-| `eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context. | `eventSummaryContextReady` | dashboard/src/panels/eventSummary.ts:143-156 |
-| `EventRiver` drops not-ready rows before calling `summarizeEvent`. | `eventSummaryContextReady`, `summarizeEvent` | dashboard/src/panels/EventRiver.tsx:62-73 |
-| The reload-order regression covers a lifecycle-bound row hidden until task-document context arrives. | "uses task document labels when event history no longer has a live lifecycle row" | dashboard/src/panels/EventRiver.test.tsx:312-332 |
+- The raw observer event envelope rendered by this formatter. [1]
+- Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback. [2]
+- Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields. [3]
+- The Event River component consumes these summaries for rendering. [4]
+- Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids. [5]
+- `eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context. [6]
+- `EventRiver` drops not-ready rows before calling `summarizeEvent`. [7]
+- The reload-order regression covers a lifecycle-bound row hidden until task-document context arrives. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T03:59:59+02:00 — Curated 14 citation claims (7 table rows, 7 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-06-28T05:38+02:00 — Task 29: added `eventSummaryContextReady`, the Event River display-shaping
-  gate that suppresses lifecycle/enclosure-bound rows until lifecycle, enclosure, or task-document context
-  exists. Verification metadata pinned until closeout stamps the task-29 code commit.
-- 2026-06-26T19:40+02:00 — Task 20 lifecycle label follow-up: grouped projected
-  task documents by lifecycle id and extended `lifecycleContext` so retained
-  event-history rows without a live lifecycle projection render the task
-  document title before using raw enclosure or lifecycle ids. Verification
-  metadata pinned until closeout stamps the reopened task-20 code commit.
-- 2026-06-26T18:14+02:00 — Created for task 20: introduced the schema-aware
-  Event River summary layer for readable tool, lifecycle, gate, task-context,
-  actor, time, heartbeat, and unknown-fallback presentation. Verification
-  metadata pinned until closeout stamps the task-20 code commit.

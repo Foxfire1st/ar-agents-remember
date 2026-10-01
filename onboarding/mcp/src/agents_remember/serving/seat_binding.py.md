@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/seat_binding.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/seat_binding.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T12:15+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -38,25 +28,16 @@ state. Structural assignment validates the canonical task document and role alti
 - An untyped harness requires an explicit role.
 - Role-suffixed leaf forms are rejected; they are not alternate canonical addresses.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain source governs this repository-local helper.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Attach-role normalization is deliberately narrow and fail-closed for an untyped harness. | `attach_seat_role` | mcp/src/agents_remember/serving/seat_binding.py:32-48 |
-| Legacy role suffixes are detection-only. | `role_suffixed_leaf_base` | mcp/src/agents_remember/serving/seat_binding.py:51-64 |
-| Structural assignment validates canonical task identity, altitude, and live pair ownership. | `assign_terminal_session_to_task` | mcp/src/agents_remember/serving/terminal_task_assignment.py:96-170 |
-
-## Update History
-
-- 2026-08-11T12:15+02:00 — Clarified that this file is a legacy/operator normalization helper, not
-  the source of canonical structural identity. Verification remains pinned pending closeout.
-- 2026-07-10T15:07+02:00 — Created for role normalization, explicit hand-opened role claims, and
-  rejection of role-suffixed leaf workarounds.
+- Attach-role normalization is deliberately narrow and fail-closed for an untyped harness. [1]
+- Legacy role suffixes are detection-only. [2]
+- Structural assignment validates canonical task identity, altitude, and live pair ownership. [3]

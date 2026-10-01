@@ -1,15 +1,5 @@
 # dashboard/src/topology/constel.test.ts
 
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `dashboard/src/topology/constel.test.ts`    |
-| doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-08-01T09:32+02:00                      |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `../overview.md`                            |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -74,45 +64,29 @@ injected per test, so no test depends on a stylesheet, a canvas, or `getComputed
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card is verified from its direct source and the module under test.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The suite is the runtime half of a claim the type system already makes, so both halves are cited: the
 `Record<ConstelStatus, string>` that fails `tsc -b`, and the vocabulary tuple both sides read.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The three `constelColors` cases cover vocabulary colors, undefined for unknown status, and themed tokens with concrete fallbacks. | "gives every status in the vocabulary a colour of its own"; "declares no colour for a status the vocabulary does not contain"; "asks for a themed token per status and offers a concrete fallback for each" | dashboard/src/topology/constel.test.ts:21-30; dashboard/src/topology/constel.test.ts:32-39; dashboard/src/topology/constel.test.ts:41-57 |
-| `constelColors(cssVar): Record<ConstelStatus, string>` and the `CssVarReader` type are extracted from `mountConstel` for jsdom. | `constelColors`; `CssVarReader`; `mountConstel` | dashboard/src/topology/constel.ts:16-16; dashboard/src/topology/constel.ts:31-39; dashboard/src/topology/constel.ts:408-468 |
-| `col` indexes the palette with no `??` fallback, which makes test 2's `undefined` expectation correct. | `col` | dashboard/src/panels/changeset/ChangeSetPane.tsx:18-18 |
-| `CONSTEL_STATUSES` is the `as const` tuple from which `ConstelStatus` is derived. | `CONSTEL_STATUSES`; `ConstelStatus` | dashboard/src/topology/model.ts:16-16; dashboard/src/topology/model.ts:18-18 |
-| The topology model maps `LIFECYCLE_STATES` into `CONSTEL_STATUS_BY_STATE` rather than restating the vocabulary. | `LIFECYCLE_STATES`; `CONSTEL_STATUS_BY_STATE` | dashboard/src/topology/model.ts:40-40; dashboard/src/topology/model.ts:48-59 |
+- The three `constelColors` cases cover vocabulary colors, undefined for unknown status, and themed tokens with concrete fallbacks. [1]
+- `constelColors(cssVar): Record<ConstelStatus, string>` and the `CssVarReader` type are extracted from `mountConstel` for jsdom. [2]
+- `col` indexes the palette with no `??` fallback, which makes test 2's `undefined` expectation correct. [3]
+- `CONSTEL_STATUSES` is the `as const` tuple from which `ConstelStatus` is derived. [4]
+- The topology model maps `LIFECYCLE_STATES` into `CONSTEL_STATUS_BY_STATE` rather than restating the vocabulary. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. The palette and its vocabulary are entirely within the
 `agents-remember` dashboard.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: rebound the three constel cases to their complete test bodies under the adversarial verdict, then the exact scoped fixer/check passed.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-01T09:32+02:00 — 260731-EFA-L4 curator: created. New suite covering `constelColors` —
-  totality over `CONSTEL_STATUSES`, distinct hue per status, `undefined` (never a healthy default)
-  for a key outside the vocabulary, and one `--token` plus a `#rrggbb` fallback per status. Written
-  because the palette was the un-migrated twin of `model.ts`'s defect and, living inside
-  `mountConstel`, was unreachable from jsdom. Verification metadata pinned to the leaf base
-  (`abc7cbc`); the source file is still uncommitted and closeout stamps the code commit.
+No meaningful cross-repo references found.

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/final_certification/certify.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact authority bundle the certification may read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94e1bceb2c31903583149ccf83b97a561f3f154",
+            "content": "sha256:4c355f1fbddca6b55a0f71cf978ed6f3348840524fdd5f9a0fc2de43ea907d9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCertificationEvidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Folds supplied executed checks and identities into a returned green/red/blocked result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94e1bceb2c31903583149ccf83b97a561f3f154",
+            "content": "sha256:90f68a6d51a8945ea4d75f0eede91b8a9473654755ee15fbb13d6f3a1c270ee1",
+            "locator": {
+              "kind": "symbol",
+              "name": "certify_final_full_memory_coherence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Maps the caller's full-only rerun observation to pass or blocked for the affected-closure item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94e1bceb2c31903583149ccf83b97a561f3f154",
+            "content": "sha256:f0f3e099427cc072d53289f148fea9036ba71699ae2d38f92ca9992171da27ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_affected_closure_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The typed refusal helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94e1bceb2c31903583149ccf83b97a561f3f154",
+            "content": "sha256:8bc9ca44791b6f2ac7b2bd3099f3803f585aa628c35524d399c75b5a3bbc2390",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

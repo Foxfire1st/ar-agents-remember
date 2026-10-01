@@ -1,0 +1,290 @@
+{
+  "path": "dashboard/src/panels/review/familyReview.emptyRoster.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The envelope: the one review read the surface makes, its surface version, and its state.**\n\nAnchor: \"\\\"operation\\\":\\\"read_knowledge_review\\\"\"; \"\\\"surface_version\\\":\\\"knowledge-review-surface/1\\\"\"; \"\\\"state\\\":\\\"review\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bae8c8ed167a0ba77ce051f16633d450edffd65",
+            "content": "sha256:94e5701de9583bfb5de759d92f7ab7f0926757673148dc593c63f51493362620",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.**\n\nAnchor: \"These are not browser evidence\"; \"Dagger-only\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:77daab791b8d46dc60365f21f54af89ae2e273a412aa605db47feafbc341cd95",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The actual measured-zero fixture remains distinct from a bounded page carrying no member rows.\n\nAnchor: \"still says the measured zero when the read really measured zero memberships\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:174b45794a0397217f168a5ad45d62f80c9cd9a0d46f440d44e72577fbbce930",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 493
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Since MIK-L31, the one-sentence case runs over this body: the centre's empty-roster line is the tree's own string.\n\nAnchor: \"it(\\\"prints one empty-roster sentence in both columns\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:f1991a38053d43fc5fcf62c801739d5eba02718e31fc6691583d857953d66b95",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 632
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A body without family context is treated as absent attribution, not a measured zero.\n\nAnchor: \"renders a body that carries no family context as that fact, never as a measured zero\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:1b8657b87e519eb396218b514f7ae4b2d6f1c30d93d5fb0f3b3e504de0b69e75",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**Where the two sentence branches are composed: the owner's `read whole` branch for a single-page walk and its completing-walk sibling, decided by the walk's own flag.**\n\nAnchor: \"read whole\"; \"completes the read walk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:98c4cf9471c703536896ae538dd0aa0372c1ad0b9132f72ced18150418bd79a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "single_page_walk"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "863986f5f429c7e0e5821471bcf7cd11a3543cbf",
+            "content": "sha256:cd89bbdd5f290bbe31470a213792a123c49e1a793141d77b159e84bc2980f720",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 381
+            },
+            "path": "mcp/src/agents_remember/application/review_family_rosters.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "863986f5f429c7e0e5821471bcf7cd11a3543cbf",
+            "content": "sha256:cdd785aa3ccde6676b355757b9ab03e54548f06aaa27854c8a88254c95df7cbc",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "mcp/src/agents_remember/application/review_family_rosters.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The enclosure the bytes were recorded over, the one normalization, and the scratch directory of the capture.**\n\nAnchor: \"\\\"leaf_id\\\":\\\"260921-icr-l1\\\"\"; \"review-source-endpoints-fixture\"; \"<repository_id>\"; \"l31-empty\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bae8c8ed167a0ba77ce051f16633d450edffd65",
+            "content": "sha256:94e5701de9583bfb5de759d92f7ab7f0926757673148dc593c63f51493362620",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The family context: recorded, complete, and all zero.**\n\nAnchor: \"every recorded family the two snapshots place this selection in is composed\"; \"\\\"membership_rows_total\\\":0\"; \"\\\"unique_member_revision_total\\\":0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bae8c8ed167a0ba77ce051f16633d450edffd65",
+            "content": "sha256:94e5701de9583bfb5de759d92f7ab7f0926757673148dc593c63f51493362620",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The owner's measured-zero sentence and the roster it describes.**\n\nAnchor: \"was read whole: 0 recorded membership(s), all carried here\"; \"\\\"members_total\\\":0\"; \"\\\"page\\\":{\\\"complete\\\":true\"; \"\\\"state\\\":\\\"first_page\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bae8c8ed167a0ba77ce051f16633d450edffd65",
+            "content": "sha256:94e5701de9583bfb5de759d92f7ab7f0926757673148dc593c63f51493362620",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The walk's own arithmetic, which is what makes \"read whole\" the honest branch.**\n\nAnchor: \"\\\"primary_items_remaining\\\":0,\\\"primary_items_returned\\\":1,\\\"primary_items_total\\\":1\"; \"\\\"memberships_total\\\":0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bae8c8ed167a0ba77ce051f16633d450edffd65",
+            "content": "sha256:94e5701de9583bfb5de759d92f7ab7f0926757673148dc593c63f51493362620",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The one family, the revision both snapshots record, and the authored guarantee the case is named for.**\n\nAnchor: \"ca5607f0-8b9d-48fe-a8db-f57e2b5859dc\"; \"8082be8c-b360-488d-850a-47ae399330c8\"; \"recorded-before-its-members\"; \"A guarantee recorded for a family with no members.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bae8c8ed167a0ba77ce051f16633d450edffd65",
+            "content": "sha256:94e5701de9583bfb5de759d92f7ab7f0926757673148dc593c63f51493362620",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The one place this body itself says \"measured zero\": another owner's channel, not the roster.**\n\nAnchor: \"the evidence owner's own answer is a measured zero, not an unread authority\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bae8c8ed167a0ba77ce051f16633d450edffd65",
+            "content": "sha256:94e5701de9583bfb5de759d92f7ab7f0926757673148dc593c63f51493362620",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The receipt row for this file in the MIK-L31 re-capture.**\n\nAnchor: \"familyReview.emptyRoster.captured.json\"; \"_author_recorded_empty_family\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146eb12e3f11da3c7cd7448c107f8bda4a135c6a",
+            "content": "sha256:6b0cdaae159d566c7f0a250ab84d626ac1ea65fa5a1eb5fbae817927aa9f3b00",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "dashboard/src/panels/review/familyReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The one constant that binds this body to its cases, and the runtime narrowing that reads the family id out of the body instead of typing it.\n\nAnchor: \"const EMPTY_ROSTER\"; \"function firstFamilyId\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:d5fbba49ddc2f678c0eaa405b22a0fb426f2c5066c0221b3eb3c6634b4b8edec",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:e9880751ae765a5cd7311a6bdfd34fb45abbfaae1b124652acb31b63c26f5a80",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

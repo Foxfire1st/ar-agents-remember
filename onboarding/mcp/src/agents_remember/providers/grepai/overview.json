@@ -1,0 +1,117 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai",
+  "references": {
+    "1": {
+      "note": "GrepAI setup delegates to provider lifecycle commands.\n\nAnchor: `install_enabled_provider`, `prepare_enabled_provider`, `refresh_enabled_provider`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f45213a811767ecb30498884a6cbbc9fe53b85d",
+            "content": "sha256:e6d94674d95d5337ec716f674b9a1c10a3e33c09d75d45253701d51da54f3a55",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_enabled_provider"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f45213a811767ecb30498884a6cbbc9fe53b85d",
+            "content": "sha256:616cbba1ae96ecc60912600c46d5282f6a8453b87cd0e48de0b3cd5b00e5652e",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enabled_provider"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f45213a811767ecb30498884a6cbbc9fe53b85d",
+            "content": "sha256:fcf07bf7e2e264198c2db4cc9c006ab17ef170cf609d61b375c124f57c20dd3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_enabled_provider"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI context behavior is grouped under the provider-owned context package.\n\nAnchor: `grepai_runtime_layout`, `ensure_grepai_runtime_layout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:c4afc87a64f4d24cd7343b296ad6ab7c72e9ff36cd9d2395b3542dcbdbdcd0e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_runtime_layout"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:ebccf9595c5adede2d773680ea36a14cb5a793656dda805baf07d6b6de62e5ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_grepai_runtime_layout"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "GrepAI lifecycle behavior is grouped under the provider-owned lifecycle package.\n\nAnchor: `grepai_docker_start`, `grepai_docker_refresh`, `grepai_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:8cd2f8a597b7c39ccf3a3789ed6a9f15733b598f4bc8e7651b6be9d9dd9ad1cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_docker_start"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:cfa64ed516032527e1a62e922c717411c82bed078d477334f4f28c8c9775d80a",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_docker_refresh"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:fe86e459d7ceaa3beb7965dd400610926a5138cca131fd5becfdb4b82dfdd057",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_install"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

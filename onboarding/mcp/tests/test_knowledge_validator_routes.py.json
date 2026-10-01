@@ -1,0 +1,136 @@
+{
+  "path": "mcp/tests/test_knowledge_validator_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Git readers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:fa057418ad5d31763eec79e6c14e24de4b3f34df2c76cb183b4ec5a9c34bc8cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_git_trees_are_read_exactly_and_the_route_index_cache_is_ignored"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adapter and the worktree gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:6de00b263b85b95c6e0447009eb7667b131f8281a78600baf0a6a1a7e26ef1e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_commit_route_adapter_refuses_naming_every_violation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:62151ea2bf987bce7d8838359f0c442a79464ef9234f04006c48193750924082",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_worktree_route_never_commits_converted_memory_unvalidated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The managed sync refusal and repair, and the conforming parallel sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:d73742d5ac37b6faa2d79865d288edaae714ac2231a2e8147bdc911c5fd9e969",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_sync_refuses_a_merge_with_duplicate_ids_until_it_is_repaired"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:10b4110588da22ed1912bfe03c1cc25d45b1124cd355eafa33a8e16647913aeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parallel_minted_ids_sync_cleanly"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The standalone command: the pass line counts the one report-only legacy finding, and the JSON refusal's full violation list is pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:72281b1010c8682009aedd5f4b5c3b050f645f2098811f2a9e676d1bd76f4cd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_standalone_command_validates_a_converted_fixture_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A sync merge refuses a history row only when the leaf's own side had it wrong (MIK-R09).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:ca8026f753e814efb423427ba9db47666900ae917825a632db04f9b936f8b72c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sync_merge_refuses_a_history_row_only_when_the_leaf_s_own_side_had_it_wrong"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:d4fa1b453b584cb73e8c0def0bd2e5e73113f99c76d322e7588a1d6469ac095c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_moved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The retained-conflict continuation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:926929a9c6f4048837c859485bfb3575a1284c9a0147ad8e00cbb7a2902c4474",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_resolved_memory_conflict_that_breaks_validation_is_refused_on_continue"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

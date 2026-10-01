@@ -1,0 +1,131 @@
+{
+  "path": "scripts/e2e_harness/scenario_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical address and one-tool discovery are explicit evidence contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
+            "content": "sha256:d43ed7d9eb8d27fb62595a075a530e92f632f47ca27342b680f192b12bbdcc1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiscoveryEvidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
+            "content": "sha256:1f14874636131a8c44e1ec366762196d2d52881320133e8d937842b6a21ab635",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
+            "content": "sha256:823dc47377ad3036c98797e93556183abcb2e5c2fbf839391804987d265de4ec",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tmux evidence is bounded and redacts the credential value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
+            "content": "sha256:9790270e4c73a0fe2f3f01c7d53e57f5177e876ef08de010852eb971c4d025f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "tmux_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
+            "content": "sha256:f334399ba3188787e50deb9a5d970eb91d54a74cea1c5a58373763372c1b4c03",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Failure evidence joins response, catalog, inbox, hosted control, and Codex observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
+            "content": "sha256:e3dd6d29f37f6a176bacf0af0f2823f4d18f32b1f8cde7cf9c3411d1431e6021",
+            "locator": {
+              "kind": "symbol",
+              "name": "failure_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
+            "content": "sha256:27ff47fdce3fc6e2b025742c794e76467a4479a027bdb01d1ffe7504999dff80",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 238
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Evidence is produced from the run-owned fixture and current candidate only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
+            "content": "sha256:e3dd6d29f37f6a176bacf0af0f2823f4d18f32b1f8cde7cf9c3411d1431e6021",
+            "locator": {
+              "kind": "symbol",
+              "name": "failure_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e788953be49e4a393bccfd2a6087461748d4534",
+            "content": "sha256:27ff47fdce3fc6e2b025742c794e76467a4479a027bdb01d1ffe7504999dff80",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 238
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

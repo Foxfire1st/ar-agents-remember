@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_currentness/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package statement and its map of rules to modules.\n\nAnchor: \"Stale invariants flagged at read time\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e01b2307db0a23288f34d1d2e45912738a3758f3",
+            "content": "sha256:6fe77bc4e20d84f6c40bd3859c622bf684a576a1fd012b3bf748aa61e6a76060",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The re-exported names.\n\nAnchor: `invariant_currentness`; `read_currentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e01b2307db0a23288f34d1d2e45912738a3758f3",
+            "content": "sha256:c16f58046aac03f00e24d719ac05072523ba3b93134b9a9bcb2f36d9d016b6d1",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two consumers import through the package.\n\nAnchor: \"from agents_remember.application.knowledge_currentness import\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3937ed80c8c13005aa0074d8c34ff108b57099e",
+            "content": "sha256:0b0be195023b4e17a04e87ead82e84d2c6bc1af697fba1772c01b3b409da6ef0",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "090fa35ed33c2e4b6288527b91e25bfa11320575",
+            "content": "sha256:9d276ed3bd2f724b81e2711bbc572475c956ce1303154fc62077edb6105ad74f",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/conversation/`               |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f`       |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
-| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
@@ -205,109 +199,35 @@ this overview is their governing pillar.
 | Presentation conventions | [format.ts](format.ts.md) · [format.test.ts](format.test.ts.md) |
 | Hide-thinking preference | [thinkingPreference.ts](thinkingPreference.ts.md) |
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This route's statements were verified from its direct agents-remember source/tests and the
 reviewed worker report and final-PASS review verdict.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this route. | — | — |
+No configured Domain Documentation source exists for this route.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The route mirrors this repository's own landed conversation wire contract and talks only to this
 package's serving endpoints; no cross-repository implementation source governs it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The active serving API exposes page, selected-child history, and event routes. | `conversation_page`; `hydrate_agent_history`; `conversation_events` | mcp/src/agents_remember/serving/conversation/active/api.py:126-155; mcp/src/agents_remember/serving/conversation/active/api.py:160-198; mcp/src/agents_remember/serving/conversation/active/api.py:204-247 |
-| The dashboard client fetches the active page. | `fetchConversationPage`; "if (query.before)"; "return { ok: true"; "return { ok: false" | dashboard/src/data/conversation/client.ts:74-98; dashboard/src/data/conversation/client.ts:83-83; dashboard/src/data/conversation/client.ts:94-94; dashboard/src/data/conversation/client.ts:96-96 |
-| The dashboard client requests selected-child history. | "export async function requestAgentHistory("; "const response = await fetchImpl(url, withTimeout({ method: \"POST\" }));"; "history?"; "return parseAgentHistory(body" | dashboard/src/data/conversation/client.ts:191-191; dashboard/src/data/conversation/client.ts:198-198; dashboard/src/data/conversation/client.ts:200-200; dashboard/src/data/conversation/client.ts:205-205 |
-| The dashboard stream opens the active events URL built by `conversationEventsUrl`. | "export function conversationEventsUrl("; "const url = conversationEventsUrl("; "const next = new runtime.eventSourceCtor(url);" | dashboard/src/data/conversation/client.ts:294-294; dashboard/src/data/conversation/stream.ts:158-158; dashboard/src/data/conversation/stream.ts:164-164 |
-| The wire grammar this route mirrors (moved to `models/conversations/` by 260731-EFA-L9). | "class WireModel(BaseModel):"; "class ActiveConversationRef(NativeConversationRef):"; "class ConversationItem(WireModel):"; "class ConversationStatus(WireModel):"; "class ConversationEventEnvelope(WireModel):"; "class ConversationCapabilities(WireModel):"; "class ConversationPage(WireModel):" | mcp/src/agents_remember/models/conversations/primitives.py:15-15; mcp/src/agents_remember/models/conversations/identity.py:51-51; mcp/src/agents_remember/models/conversations/content.py:160-160; mcp/src/agents_remember/models/conversations/status.py:137-137; mcp/src/agents_remember/models/conversations/stream_events.py:88-88; mcp/src/agents_remember/models/conversations/capabilities.py:102-102; mcp/src/agents_remember/models/conversations/history.py:38-38 |
-| The codex backend mints one evidence-bound roster item per sub-agent. | "def _roster_item(" | mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py:103-103 |
-| The Claude backend maps task lifecycle evidence into the roster. | `_map_task_lifecycle` | mcp/src/agents_remember/serving/conversation/projectors/claude.py:305-385 |
-| The control API exposes interrupt, status, and reconcile routes. | `conversation_interrupt`; `conversation_interrupt_status`; `conversation_interrupt_reconcile` | mcp/src/agents_remember/serving/conversation/control/api.py:151-181; mcp/src/agents_remember/serving/conversation/control/api.py:184-215; mcp/src/agents_remember/serving/conversation/control/api.py:218-249 |
-| The dashboard client posts interrupt requests through one shared body. | `postInterrupt`; "body: JSON.stringify({ turnId"; "return parseInterrupt(await readJson(response)" | dashboard/src/data/conversation/client.ts:232-252; dashboard/src/data/conversation/client.ts:246-246; dashboard/src/data/conversation/client.ts:248-248 |
-| The dashboard client exposes the exact-turn interrupt wrapper. | "export function requestInterrupt("; "return postInterrupt(\"interrupt\", sessionId, epoch, turnId, requestId, base, fetchImpl);" | dashboard/src/data/conversation/client.ts:260-260; dashboard/src/data/conversation/client.ts:268-268 |
-| The dashboard client exposes status and reconcile wrappers. | "export function interruptStatus("; "return postInterrupt(\"interrupt-status\", sessionId, epoch, turnId, requestId, base, fetchImpl);"; "export function interruptReconcile("; "return postInterrupt(\"interrupt-reconcile\", sessionId, epoch, turnId, requestId, base, fetchImpl);" | dashboard/src/data/conversation/client.ts:271-271; dashboard/src/data/conversation/client.ts:279-279; dashboard/src/data/conversation/client.ts:282-282; dashboard/src/data/conversation/client.ts:290-290 |
-| The active conversation surface owns projection/focus behavior and renders the reconnect, agent, and timeline body. | `applyAgentFocus` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-269; dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts:153-153; dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:71-71; dashboard/e2e-chats/support/drive.ts:48-48; dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx:1-1; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory2.test.tsx:33-33; dashboard/src/panels/session-cockpit/conversation/conversationSurfaceParts.tsx:178-178; dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx:70-70; dashboard/src/panels/session-cockpit/conversation/conversationSurfaceParts.tsx:172-172 |
-| The chats stage body mounts the active conversation surface. | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: the data/conversation changes are behavior-preserving lint remediation only.
-
-- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: split active/control route claims by server
-  and client owner, bound the ConversationSurface projection/focus/render body including the reconnect
-  and agents-area renders, cited the events-URL builder beside the stream consumer, retained the
-  chats-stage renderer split, and deleted the unsupported parent data-authority row.
-
-- 2026-08-01T10:30+02:00 — No route impact: 260731-EFA-L4 changed three files in this route and
-  all three are tests — `git status --short -- dashboard/src/data/conversation/` lists exactly
-  `reducer.test.ts`, `store.test.ts`, `stream.test.ts` and no source. The change is a fixture
-  conversion: locally hand-written wire nodes and branded-cursor casts were replaced by the shared
-  builders in `test/fixtures/wire.ts`'s companion `test/fixtures/conversationWire.ts`
-  (`conversationIdentity`, `conversationItem`, `conversationPage`, `conversationStatus`, and the
-  `eventCursor` mint that replaces the scattered `"evt-0" as ActiveEventCursor` assertions). What
-  the suites PROVE is unmoved, and that was checked rather than assumed: for each of the three
-  files the full set of `describe`/`it`/`test` titles hashes identically before and after
-  (`git show HEAD:<file> | grep -E '^\s*(it|test|describe)\(' | md5sum` against the same command on
-  the working tree), and the `it(` and `expect(` counts match exactly — reducer 14 its / 29 expects,
-  store 17 / 84, stream 11 / 47. Every reducer, store, stream, LRU, recovery and liveness assertion
-  named in the Route Model and Invariants above is the same assertion it was.
-  What DID improve is the honesty of the inputs, not the contract: `store.test.ts` used to hand the
-  store `capabilities: {} as unknown as ConversationCapabilities` — an EMPTY capability tree, where
-  the wire declares twenty-three `FeatureCapability` leaves and the server fills every one — and a
-  `ConversationStatus` cast from a single `turn` field. Both now come from builders that produce the
-  full shape and are type-checked against `data/conversation/types.ts`. The casts that remain in
-  these files are browser transport doubles (`Response`, `typeof fetch`, `EventSourceCtor`), which
-  are DOM types rather than wire vocabulary; the wire-shape casts are gone. `npm run typecheck`
-  (`tsc -b`) exits 0. Note for anyone reading the pinning strength: the mirror these fixtures are
-  checked against is hand-maintained, and nothing enforces that it agrees with
-  `serving/conversation/models.py` — no generator exists in this repository. Verification metadata
-  untouched; closeout stamps the commit.
-
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented selected-child-only hydration,
-  effective persisted-focus behavior, same-child singleflight, visible retry/failure, necessary
-  64-entry resource bounds, and the strict child-state/parent-stream separation. Updated client,
-  store, hot path, invariants, and file map. Verification metadata remains pinned while uncommitted.
-
-- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: recorded the sub-agent roster + timeline focus
-  model (R7/D2/D3). Added `agents.ts` to the Route Model and File Onboarding Map (with its test
-  card): the roster stays server-derived (backend projectors mint one notice/system roster item per
-  sub-agent from bound evidence — `agents.ts` only reads it), labels are evidence-bound
-  (`agent <short-id>` last resort), and the store's NEW `agentFocusBySession` is keyed OUTSIDE
-  `bySession` so it survives LRU eviction and is revalidated via `effectiveAgentFocus`. Added the
-  L7 section, an invariant pair, and the projector backend rows. Source uncommitted; closeout
-  re-stamps verification.
-
-- 2026-07-24T13:17:50Z — Route impact: recorded warm-projection disconnect ownership, the deliberate
-  scroll-geometry boundary, bounded conversation HTTP, and boot/half-open stream liveness. Added the
-  `stream.test.ts` file card; verification metadata remains pinned until the code commit.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R10 initial-hydrate cried-wolf fix
-  in the Hot Path Summary — `hydrateAndStream` now retries transient (network / 5xx) first-page
-  failures quietly on the `connecting` phase across a bounded window before marking `projection-failed`,
-  while a hard 4xx still fails loud immediately, so a healthy codex launch on a slow bridge no longer
-  flashes the false "structured surface unavailable" red strip (audit V13). Noted the epoch-resolve
-  repage path stays un-hardened (recorded follow-on). Governs `conversation/store.ts`; verification
-  metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the `format.ts` widening — `humanizeDuration`
-  is now the single duration authority across the cockpit chrome and a new `shortId` (R6) was added; the
-  reducer/store/stream authority contracts are unchanged (presentation-only). Verification pinned to this
-  leaf's base (`352d5cd`) while the polish candidate is uncommitted; closeout owns candidate stamping.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the governing pillar for the
-  reconstructable active-conversation projection — the pure authority-sensitive reducer, the
-  no-durable-browser-store rule (R1), the retention-gap re-page tolerance (L1.4/L1.5), the manual
-  SSE cursor-conflict avoidance (L4.3), the LRU-rehydrate contract, and the L5-facing register
-  (capability gating, hosted-codex turn-id correlation, the E1/E2 faults, virtualization baseline).
-  Verification is pinned to the leaf base (`0be0099`) because the new source route is uncommitted;
-  closeout owns its first source stamp.
+- The active serving API exposes page, selected-child history, and event routes. [1]
+- The dashboard client fetches the active page. [2]
+- The dashboard client requests selected-child history. [3]
+- The dashboard stream opens the active events URL built by `conversationEventsUrl`. [4]
+- The wire grammar this route mirrors (moved to `models/conversations/` by 260731-EFA-L9). [5]
+- The codex backend mints one evidence-bound roster item per sub-agent. [6]
+- The Claude backend maps task lifecycle evidence into the roster. [7]
+- The control API exposes interrupt, status, and reconcile routes. [8]
+- The dashboard client posts interrupt requests through one shared body. [9]
+- The dashboard client exposes the exact-turn interrupt wrapper. [10]
+- The dashboard client exposes status and reconcile wrappers. [11]
+- The active conversation surface owns projection/focus behavior and renders the reconnect, agent, and timeline body. [12]
+- The chats stage body mounts the active conversation surface. [13]

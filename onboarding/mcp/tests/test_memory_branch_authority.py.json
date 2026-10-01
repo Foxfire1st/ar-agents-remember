@@ -1,0 +1,468 @@
+{
+  "path": "mcp/tests/test_memory_branch_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the property, the four seams, and the two-sides rule.\n\nAnchor: \"The memory repository is founded on a chosen code branch, not on\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:8e41c4113824b60aff9c58c84ec5916662ee63d2295b3139294c2638b920f2fe",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The recorded-name validation the first group holds, and its malformed-name refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:3c39132c4dd5431a58bfe3c8ee9f44cee937a8e04817b5104d6b5061a05b542c",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_repository_default_branch"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The taskless admission the second and fourth groups hold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:41ebaad1a45d219fd40decb0ea0f455eb2f7d55afb6b49d3fe05ade539c21739",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASKLESS_SEAT_ROLES"
+            },
+            "path": "mcp/src/agents_remember/serving/task_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:0c9b608aa9711ce4e5702fd640e276603f1e58de787634706c2fed4ca331d317",
+            "locator": {
+              "kind": "symbol",
+              "name": "_binding_refusal"
+            },
+            "path": "mcp/src/agents_remember/serving/task_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:3220bd5eefd9aedb87104cdf4e881df25eb9ca6041880626d052dd952929caa5",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/src/agents_remember/serving/task_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The exclusion policy the third group pins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90848f80f5692b8abaeb3b2d3f7abe6b7344bed1",
+            "content": "sha256:713e1afb20cfa4c1cb6f5b2b3a9cac350984d950d549f2b1298434fcff637aa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_CONTENT_EXCLUDES"
+            },
+            "path": "mcp/src/agents_remember/models/memory_content_excludes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The staging helper the third group's failure mode lives in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_excluded_pathspec"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_if_dirty"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The lane row that keeps the fail-closed evidence registry loading clean.\n\nAnchor: \"test_memory_branch_authority.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:b20b064c91520d94fcdf7dc82d5b2995f278685264e074f07a9a11eef4d4addf",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Group 1 — minting, inheriting and refusing to invent a branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:569c8c796139db83968044af79c457c7b11cd0fb98e66809e583ac64f29e5202",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_mints_and_records_the_named_initial_branch"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:710429e84c4c9b8449fad791d73409895b0bd9a1d30c783df2948521949c3a15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_inherits_the_code_repositorys_current_branch_by_default"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:8cebc77b35ac07fb21cac8683fe0d21848a398ef05f58267f56c67bac5ae6e75",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_refuses_rather_than_inventing_a_branch_when_it_has_no_answer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Group 1 — the repair path, the name narrowing, and the recorded spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:5aedad94fe481bb42b9680bd688727f9934dc95f8cc24e02e5737055b76d235b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_unborn_repair_path_accepts_the_configured_branch_instead_of_main"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:aebeca7d3176713ad162828fe21075045451d2affde09a872fc4279c19eff053",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_unborn_repair_path_still_refuses_a_repository_that_already_has_refs"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:0abb94e0799cf5d7f454365c62ea244db5d9bab195e81dd35102c34672c206d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_initial_branch_that_is_not_one_local_branch_name_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:a4c1a6309fb2ee974080250dfd50d44b13b3ba9c894bb0e7c377afa95a1d64b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_recorded_refs_heads_spelling_is_accepted_and_normalized"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:97538ae5ecb1a2d1f3cc1d670f98a2c984e7a1014a03de4130f4c704692f7f46",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_adoption_follows_the_configured_branch"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:4dc9bf1c786bee0736b7acfe41d7423733f7e910b106bcd8250e604520c1ea72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_adoption_refuses_a_branch_the_memory_repository_does_not_record"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:72485d1467db6784131e73d632a93867f1c13d92383ef5e4d4c1705685e877cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memory_default_branch_validates_the_recorded_name_against_its_refs"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:a54642343a32c3bb049d9ff212ee44c9fac283cf65bd8033781bd3cc20c2dee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memory_default_branch_still_refuses_a_recorded_name_with_no_ref"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Group 2 — the free agent's shape, with the ruling the group protects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:aadc49e178a2b945b96d2131083fc888f56a92a2394b96f7806f7f99c89ce618",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_bootstrap_role_is_a_free_agent_and_has_no_task_altitude"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:6eecb3e4bcf77651132763dab64865af78de49e34aa64d2c09eef824212f2fa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_without_a_task_document_only_the_taskless_seat_roles_are_admitted"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:4bc3275ddad8860738a7c108bbfb139566a6158716682c873523f88ac15cccaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_free_agent_set_is_named_and_readable_not_a_bare_literal"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:a5214dd1938fe30437c0057d86cc3c15326a7d5adb849bd940bbf06dc60c098f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_task_altitude_set_in_the_source_names_bootstrap"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Group 3 — the exclusion, pinned on the commit tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:a177857033c2160f6da833552bf85e43325f6befc2f6e2e419070bb9f3af96ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_first_baseline_never_commits_bootstrap_scaffolding"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:b3808b5b3e1331d4df5d2315a414c566be9e768b6f486ef2b8f28763ca74ca31",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_memory_content_commit_stages_bootstrap_scaffolding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Group 4 — a supplied document still resolves, and the manifest exception stays scoped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:92226cd9a35060dbd5567d0c75b49675559cd38d972ab3fa0f68668437d55e3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_supplied_to_a_taskless_role_still_resolves_but_skips_the_altitude_check"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:c46a3133b8d2e30740d05d48c17c6400801f8382c6ee2a8c777c93a4b721e7ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_declares_no_task_altitude_for_the_free_agent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The branch authority the first group drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7324ba46dc77d6e4048f1923a4fceea77a12ccd3",
+            "content": "sha256:146937e16fd824a608ac19762df41deef935edb47841424ee14191f9d319c783",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_init_result"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_init.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7324ba46dc77d6e4048f1923a4fceea77a12ccd3",
+            "content": "sha256:17d6b151a1a6cab6499a784b624374619cc10bb2bc662f0e563be79e5808af7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_repair_unborn_memory_repository"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_init.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7324ba46dc77d6e4048f1923a4fceea77a12ccd3",
+            "content": "sha256:f84ab27ebc2b039315ba342c8fa57216bb189da9bd6fb3efb3f21450b0c1119c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_initial_branch"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_init.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7324ba46dc77d6e4048f1923a4fceea77a12ccd3",
+            "content": "sha256:a8bf483e9d0c92132707b9fd2be141c04b1eb58ec69f8582b79c5b19f63fbaf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_BRANCH_CONFIG_KEY"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_init.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The adoption seam whose hard-coded `main` the first group replaced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
+            "locator": {
+              "kind": "symbol",
+              "name": "_baseline_default_branch"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "path": "mcp/tests/test_global_state_isolation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `GlobalStateLeakDetectionTests` (lines 14-38).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da1d34e53d6cd10e1dc4bc42d7201db6a7f46c7",
+            "content": "sha256:e786bcb531951c63f4ea1b3f4c91fca490e8b49f055c5e4fa0f04c94652f7faf",
+            "locator": {
+              "kind": "symbol",
+              "name": "GlobalStateLeakDetectionTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6da1d34e53d6cd10e1dc4bc42d7201db6a7f46c7",
+            "content": "sha256:f4d4d8e8c1f41880fe739a20640629662b7a0f720233add74d81875e06ae19af",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

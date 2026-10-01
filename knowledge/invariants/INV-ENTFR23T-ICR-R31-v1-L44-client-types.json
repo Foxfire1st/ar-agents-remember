@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The dashboard client's type mirror of the family review payload's member source reference.",
+  "conditions": [
+    "The review transport delivers the server payload to the client without a runtime decoder."
+  ],
+  "exclusions": [
+    "How a component renders the region."
+  ],
+  "id": "INV-ENTFR23T",
+  "origin": {
+    "leaf": "260921-ICR-L44",
+    "legacyId": "9b2cb501-ec95-4e5d-b18e-4a4eafb03593",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dashboard client mirrors the member source's structured locator, resolved ranges and locator state without defaulting a field the server omits.",
+  "status": "proposed",
+  "supersedes": []
+}

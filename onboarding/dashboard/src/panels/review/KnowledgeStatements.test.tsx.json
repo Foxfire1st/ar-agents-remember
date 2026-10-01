@@ -1,0 +1,542 @@
+{
+  "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The suite's own scope statement: the real component and the real client with only `fetch` stubbed, the values' provenance from the server-side cases, and the defect these cases catch.**\n\nAnchor: `ReviewSurface`; `KnowledgeStatements`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:4fae2cd5a46211bfd2fd150502711170ab18ceee1564b5bf4f3c15ccc5823941",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The unreadable-opposite case: the reason beside the text, the explicit no-diff line, the operand in `file-pane`, and `diff-pane` absent.**\n\nAnchor: \"keeps the available text and claims no diff when the other side is unreadable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:72f8fd67774d0d8165894a86a74b157d73c72052aaf96c05e6fc68af44d64eed",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The three declared states carried through as their own tokens and never collapsed into one another.\n\nAnchor: \"renders a %s side as that state and never as another one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:c37c4fde29ccb2fd7d37d844c9d62447c014dc089ed652ecd8eaebfa3b206ae4",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The task-context case: two named states, no diff and no content pane.\n\nAnchor: \"draws no diff and both named states when no subject was compared\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:4fbfa2a76c5ea6eebaddc2e94271ce37326cf47072e49bcad829e4df998b26bc",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The field-row case: absent, changed-text, changed-structured (asserted unequal) and recorded-empty in one render, none printed as a blank.**\n\nAnchor: \"names an absent field value and a recorded empty one without printing either as blank\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:22321129b9c9f3dd2b71fa09cb3f43898f7a73b49d42925ec55f18b136e10d86",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 292
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The jsdom answers that let the shipped CodeMirror primitives render in these cases.\n\nAnchor: `Range.getClientRects`; `ResizeObserver`; `matchMedia`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15a7cad93247304f4472e3a7cd603fdc710517ab",
+            "content": "sha256:8b21824ea687967ae98e02b8c74960f8a920aa381ab1bdf64812bff96ab30b04",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/test/setup.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "15a7cad93247304f4472e3a7cd603fdc710517ab",
+            "content": "sha256:0155386420a1bc1a3a80ba3a92ba3e3d0d723502cf626e7d996b1770be09775a",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "dashboard/src/test/setup.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The component under test and the rule it implements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeStatements"
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:7db90a467187214b7f30326925ffbdd54e2c98125e8f8603f9d95606645adcc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "unavailable"
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:5885bd5d02d282dd0387229b63716c3e679c07e8263f69f599c49bf36f2001eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideLine"
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The shipped renderers whose DOM these cases read back: the diff engine and the viewer, each asserted through its own host element.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffPane"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilePane"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The shipped renderers whose DOM these cases read back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffPane"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilePane"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The server-side half these cases mirror: the same statements and details measured through the real composition.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:2c88cb7e4ccc6e6f31b85f6737cf90ce462e537c5625002e27cbb567f7f15df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_added_statement_renders_its_after_text_beside_a_named_absent_before"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:b87075404e39a14342660043a0e36da8e5e184daf13e2ff48c8f048a00cb3a19",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:ee1098a65dfd5c1400da329ddfc55569773a7a1a1f5a6c28b4119ff196270c00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real surface the cases mount, and the real client it calls — neither is stubbed.\n\nAnchor: `ReviewSurface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReview"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:39e7a0e21cc4a1d011fa772b8839fbe0e90c0f91dc60c63bbcffc4ab749472a0",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:3b0f0a3ad30f60a96080832f4c07adf124e34e72292b9c69b1884d60db7252ad",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The measured server strings, the pane's two structured projections, and the declared-state `binary` fixture with its own labelling comment.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:ba004f39bae3df9ad602495837fbe9fd64bead10f3608385ceb936c5ad83262a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ADDED_STATEMENT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:ccd73b521588642f908a09e1d6501badc73ff00fe6e1569e8a75945945f35df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_STATEMENT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:cf9398684e161f19090115fea80a5e2e7aec5435f40185266caabd746e46fd18",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHARED_ACCEPTANCE_REF"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:581fa618cb4c419d36f1a19c292dfecd1b90271ec064c709fa130e43c0dc1808",
+            "locator": {
+              "kind": "symbol",
+              "name": "STRUCTURED_BEFORE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:36409fa1608f46fa2902e72212d1c7c2bb0f50d624f267e9fa55b043bf8472d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "STRUCTURED_AFTER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:d35fda579e861b9a4801e25c1edf02bcac2b45c586cd0e0c741daed732b76869",
+            "locator": {
+              "kind": "symbol",
+              "name": "BINARY_AFTER"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four typed side builders and the two payload builders the cases spread overrides into.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:d3793516a92d3aacab6d43b82337482482bc1ed8131714bcf38dde687281c290",
+            "locator": {
+              "kind": "symbol",
+              "name": "present"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:de47b0025f2b7b71d297f27600bb301c8dd4fe553ca7e887591661762d7aa7bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "absent"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:a191e97aa2ddbe3b4128db129c328f1b0155eba778dad79398ab12528bb50b76",
+            "locator": {
+              "kind": "symbol",
+              "name": "unresolved"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:bce1de9eb0041fc62f3db3e9ea864f6f08a28f8483a865d1fc02aad665bdf4ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "binary"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:c930fb9d292fccd2dc22757bca093706bc361e6da24c2f1340b8c4ab4ec3cc15",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:6668178e295c5706d20a3824f3a4d3c6c762f8ccb4b2b17587d52b725112a64a",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The transport stub and the mount helper: `fetch` and nothing else, so the payload travels the production route.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:e249958baba4be27d7761e82885f98aea8f4029cf24467faeb75d2f5a45dde23",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:5444370d7ebe8590f39f82f197d5ac96c1e9304c3b5d6e8dc06788aa1224ccd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The teardown that keeps a stubbed global from leaking between cases.\n\nAnchor: `afterEach`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:709678fc8a3e3276292ff8eefbaeb270dad7ea5b28e5330e3ea97d581c9eb8d6",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The addition: the absent before line, the present after line, and the full after statement read out of the rendered diff pane.**\n\nAnchor: \"draws an added invariant's full after statement beside an absent-before label\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:dd704e84b2dbb0d6d565dae456bccb4736394285ec6a6271891dee15f8f8ea6f",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The removal, symmetrically.\n\nAnchor: \"draws a removed invariant's full before statement beside an absent-after label\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:d21e3b69e4e372f33b8da2b811308b1aa0b69b970c89e8f0f84af0f48d2414f3",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The control that a two-sided area names no side — the one case that must keep passing under both the old and the new implementation.**\n\nAnchor: \"keeps both statements when both sides recorded one, and names no side\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fc7ae026d3ce705b15a299244ef1ac429f0e7c6",
+            "content": "sha256:cc63b1ace7d4c09315cf566812f202049c4d9a620443b68a4f1cbfba27c38a27",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

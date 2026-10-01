@@ -1,0 +1,56 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/interactionStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The interaction recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "044688fd4b067c871d1ae7623c3def59c4cf5576",
+            "content": "sha256:ab56925bf9aac51499878b4dedbaec2754e9018c944662e3678502a8edb38234",
+            "locator": {
+              "kind": "symbol",
+              "name": "bar"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "044688fd4b067c871d1ae7623c3def59c4cf5576",
+            "content": "sha256:e12276a4ffdc19546d73343fc7e4bd114c2c11d387786c45e5f6be3ccc023de6",
+            "locator": {
+              "kind": "symbol",
+              "name": "choicesRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "044688fd4b067c871d1ae7623c3def59c4cf5576",
+            "content": "sha256:46606a4f19f3934037f6828daaee46afb9d86477c8f4684a36c761b8293644c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "questionsGrid"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "044688fd4b067c871d1ae7623c3def59c4cf5576",
+            "content": "sha256:2e65b2399cb6ac5a83bb3a116e31cb80e0b0e39e389ba0f8663b8979e5141031",
+            "locator": {
+              "kind": "symbol",
+              "name": "announce"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

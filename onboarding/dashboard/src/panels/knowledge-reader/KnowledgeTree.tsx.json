@@ -1,0 +1,106 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component's own statement of the explorer.\n\nAnchor: \"The reader's explorer (MIK-R29 rule 1)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
+            "content": "sha256:2f7b5c4bca66d903b350c0c41a5b2d04b774e6935fcb5179734e4a4e9f3d3cce",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One read per opened level; an answer after a switch is dropped (F13).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
+            "content": "sha256:fa5ab5f2f8a25024ccc123a21f9b6b263286674c1afb899ff0805fec1a98102a",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTreeLevels"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A row: toggle, name, count, \"(onboarding only)\"; descends only below its directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
+            "content": "sha256:da01cbc155e656111d31b96d1dd6aa8963a5975ba98aef2601f479d4fbe06019",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A level, with a failed read and an unlisted code tree named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
+            "content": "sha256:144f2cede34a120a2fc427dd3acebb4acdb3fae601956072ef072ad3feeb0386",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeLevel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The explorer, with the current path's ancestors open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
+            "content": "sha256:a11ecef76850872a763d36cf02868bef1495d00c8559c518ab66a8ec5f003028",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stale-answer case.\n\nAnchor: \"names side reads that failed, pins a clean published view, and drops stale explorer answers\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "content": "sha256:bff1e04776aca10f7ca010fdf65e5a0e50af9e53bf265ab2a78ad3e9adb4649b",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 455
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

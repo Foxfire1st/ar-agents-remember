@@ -1,0 +1,251 @@
+{
+  "path": "dashboard/src/test/contractCapabilities.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three describe blocks (envelopes / vocabularies / open+failed).\n\nAnchor: \"capability envelopes\"; \"SetResult / receipt / reconciliation vocabularies\"; \"open responses + failed rows\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25e242336945b80e0c39072abcd37917cd1dcfd3",
+            "content": "sha256:ab07c73624ff7a058657f52899a3d3a9a15264630f2163c3f0ad6d16662010f2",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25e242336945b80e0c39072abcd37917cd1dcfd3",
+            "content": "sha256:ae351c33dfe19d4b7b709b09bd65edb34bd0b0467bf6222660f50a4755a45f1e",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25e242336945b80e0c39072abcd37917cd1dcfd3",
+            "content": "sha256:80290f422a97f34752373a1516a3628e3d7613b9b3056eabe8c718995d43b217",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Envelope/model/SetResult/error fixtures under assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:335ebc95811aa44bdb77df145c5859cc459b8df4785b92c32b69f1d478e646a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPES_BY_CACHE_STATUS"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:4e878db726b4e22cac49eee59a2266ddf5a3d44fa8c59ea229446860fb656a4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SET_RESULTS"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:38af33732b0c131abecf92bf8b87394541f56e028f1eb125d61f63764f620584",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPABILITY_ERROR_BODIES"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Receipt/reconciliation fixtures under assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9bd8566c3d316d5267022573703a19a3c7d93eb",
+            "content": "sha256:b69a8a5770a799ae16849bd11f0af398a2900d8ffc6f802c7dc61e9e43181507",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBMISSION_RECEIPTS"
+            },
+            "path": "dashboard/src/test/fixtures/controlMessages.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9bd8566c3d316d5267022573703a19a3c7d93eb",
+            "content": "sha256:793325b9942a694f3bba060178e647ed238b3baeca0bbce244b28276e1eeb545",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONCILIATIONS"
+            },
+            "path": "dashboard/src/test/fixtures/controlMessages.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Open-response + failed-row fixtures under assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:cd786e3692b4d8989bb68a2e901dfbc7b51ec0606fe22eb0fa4620f73494621c",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPENED_STARTING"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:50b85fa42af45f036a60181f4db1fcc55996622c57b79e38f834b5054ec37699",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPENED_VENDOR_DEFAULTS"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:ecb4a3d8729f3d028b4c52fac48fe0d6ddc7089cd2e28ab4ad6a7dc746aefad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SEAT_TAKEN"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:f92d47e57767761abcce1664e865f6d4d9fbaf1d092a84a3257fd7d753def4d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LAUNCH_CONFLICT"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:a1ea823cb996dc455902e56523e2f1b15662487e77af8125bbf2422b1b70781e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_LAUNCH_ROWS"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:f9ca1661a55ad5e8d886e73b5f9f8b2b5d10eb7737d8d73f01a7bddaaad2eaff",
+            "locator": {
+              "kind": "symbol",
+              "name": "PENDING_INTERACTION_ROW"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:5c3e7fab1ed9d026bf8242f7b5c3aeee1d73de98f44d880da6cf5e8826c581c8",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:228b44f02b92c6f4115266c9f57629573af4e76d9fce2b52888c43e7f8637ddc",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:73448e713649d3a3250d1bdd75782e0db93d7ba8f8a0f752c0e38fa89a9a74f9",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The wire mirrors the assertions type against (`SetAcceptance`, schema).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:1f65b6d4501a188ff7ff765951e77f5b7d67eafe150379c7ec7ace9769912279",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetAcceptance"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/KnowledgeStatements.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/KnowledgeStatements.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:14:26+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -110,16 +100,16 @@ statement-side builder), so the renderer's `binary` case is a declared-state fix
 the test's own words rather than a server value. The branch is still required: the renderer must
 treat unsupported content distinctly from a known absence whether or not a producer exists yet.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the component's own header comment
 and its four branches, the shipped renderers it reuses, the model types it consumes, the surface
@@ -130,61 +120,29 @@ client.
 double-quoted string the case passes to `it`: a test name is several words, so a backticked span is not
 identifier-shaped and the citation grammar refuses it as an anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The header's own record of the defect and the rule: the pane drew the diff only when both sides were present while the side line returned null for the present side, and the four branches that replace it are decided by declared state.** | "neither side `present`" | dashboard/src/panels/review/KnowledgeStatements.tsx:21-21 |
-| The two shipped renderers and the wire types this module imports, and the absence of any client import. | `ReviewSideContent`; `DiffPane`; `FilePane` | dashboard/src/panels/review/KnowledgeStatements.tsx:28-30 |
-| **The one predicate for the unavailable-content pair, which is what keeps `binary`/`unresolved` out of the diff branch.** | `unavailable` | dashboard/src/panels/review/KnowledgeStatements.tsx:34-35 |
-| **The state line rendered for every non-two-sided area, carrying the state's own token in `data-side-state`.** | `sideLine` | dashboard/src/panels/review/KnowledgeStatements.tsx:37-45 |
-| The unchanged two-sided path, with the before side's declared language preserved exactly as the pre-R06 pane passed it. | `bothPresent` | dashboard/src/panels/review/KnowledgeStatements.tsx:51-61 |
-| **The one-sided diff: the present operand on its own side, the known-absent side genuinely empty, and the drawn operand's own language.** | `oneSidedDiff` | dashboard/src/panels/review/KnowledgeStatements.tsx:67-78 |
-| **The available-content path: the explicit no-diff line and the readable operand as content, so no addition or removal is claimed from an unreadable side.** | `availableContent` | dashboard/src/panels/review/KnowledgeStatements.tsx:81-92 |
-| **The branch itself: count the present sides, render both state lines for anything that is not two-sided, and split on `unavailable`. The two-present early return is why a both-present area names no side.** | `KnowledgeStatements` | dashboard/src/panels/review/KnowledgeStatements.tsx:94-121 |
-| The model a side is: the closed four-member state literal and the value that carries `state`, optional `text`, `language` and `detail`. | `ReviewSideState`; `ReviewSideContent` | dashboard/src/data/review.ts:63-63; dashboard/src/data/review.ts:15-21; dashboard/src/data/review.ts:36-36; dashboard/src/data/review.ts:122-122; dashboard/src/data/review.ts:123-123; dashboard/src/data/review.ts:66-66; dashboard/src/data/review.ts:93-98; dashboard/src/data/review.ts:37-37 |
-| The pane whose two statement fields feed this component. | `ReviewKnowledgePane` | dashboard/src/data/review.ts:125-125; dashboard/src/data/review.ts:119-119; dashboard/src/data/review.ts:318-318; dashboard/src/data/review.ts:220-242|
-| The technical knowledge pane delegates its statement operands to KnowledgeStatements. | `KnowledgePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:223-248 |
-| The one-sided diff engine, unchanged and reused: a split-mode CodeMirror diff over `before`/`after` with its own `diff-pane` host. | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:123-193 |
-| The content viewer the unreadable-opposite path reuses, and its own test id. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:25-78 |
-| **The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts the viewer's content with no diff pane present.** | "draws an added invariant's full after statement beside an absent-before label"; "draws a removed invariant's full before statement beside an absent-after label"; "keeps the available text and claims no diff when the other side is unreadable" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:195-213; dashboard/src/panels/review/KnowledgeStatements.test.tsx:215-229; dashboard/src/panels/review/KnowledgeStatements.test.tsx:244-260 |
-| **The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts `FilePane` content with no `diff-pane` present.** | "draws an added invariant's full after statement beside an absent-before label"; "draws a removed invariant's full before statement beside an absent-after label"; "keeps the available text and claims no diff when the other side is unreadable" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:195-213; dashboard/src/panels/review/KnowledgeStatements.test.tsx:215-229; dashboard/src/panels/review/KnowledgeStatements.test.tsx:244-260 |
-| The case that a both-present area names no side, and the case that each of the three non-present states is carried through as its own token. | "keeps both statements when both sides recorded one, and names no side"; "renders a %s side as that state and never as another one" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:231-242; dashboard/src/panels/review/KnowledgeStatements.test.tsx:262-275 |
-| The case that no subject compared renders two named states and neither pane. | "draws no diff and both named states when no subject was compared" | dashboard/src/panels/review/KnowledgeStatements.test.tsx:277-290 |
-| **The server-side half of the same contract: the statement sides and the field rows these branches are a function of.** | `test_an_added_statement_renders_its_after_text_beside_a_named_absent_before`; `test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after` | mcp/tests/test_knowledge_review_one_sided_statements.py:249-269; mcp/tests/test_knowledge_review_one_sided_statements.py:272-285 |
-| The owner of the data half of this contract. | `side_content`; `side_conditions` | mcp/src/agents_remember/application/review_statement_sides.py:86-117; mcp/src/agents_remember/application/review_statement_sides.py:120-124 |
+- **The header's own record of the defect and the rule: the pane drew the diff only when both sides were present while the side line returned null for the present side, and the four branches that replace it are decided by declared state.** [1]
+- The two shipped renderers and the wire types this module imports, and the absence of any client import. [2]
+- **The one predicate for the unavailable-content pair, which is what keeps `binary`/`unresolved` out of the diff branch.** [3]
+- **The state line rendered for every non-two-sided area, carrying the state's own token in `data-side-state`.** [4]
+- The unchanged two-sided path, with the before side's declared language preserved exactly as the pre-R06 pane passed it. [5]
+- **The one-sided diff: the present operand on its own side, the known-absent side genuinely empty, and the drawn operand's own language.** [6]
+- **The available-content path: the explicit no-diff line and the readable operand as content, so no addition or removal is claimed from an unreadable side.** [7]
+- **The branch itself: count the present sides, render both state lines for anything that is not two-sided, and split on `unavailable`. The two-present early return is why a both-present area names no side.** [8]
+- The model a side is: the closed four-member state literal and the value that carries `state`, optional `text`, `language` and `detail`. [9]
+- The pane whose two statement fields feed this component. [10]
+- The technical knowledge pane delegates its statement operands to KnowledgeStatements. [11]
+- The one-sided diff engine, unchanged and reused: a split-mode CodeMirror diff over `before`/`after` with its own `diff-pane` host. [12]
+- The content viewer the unreadable-opposite path reuses, and its own test id. [13]
+- **The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts the viewer's content with no diff pane present.** [14]
+- **The renderer cases: the addition and the removal assert the statement text in the real diff DOM, and the unreadable-opposite case asserts `FilePane` content with no `diff-pane` present.** [15]
+- The case that a both-present area names no side, and the case that each of the three non-present states is carried through as its own token. [16]
+- The case that no subject compared renders two named states and neither pane. [17]
+- **The server-side half of the same contract: the statement sides and the field rows these branches are a function of.** [18]
+- The owner of the data half of this contract. [19]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The component renders one repository
 namespace's records and carries no identity that ranges beyond it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 moved `DiffPane` below its extracted view builders and gave `FilePane` an optional `marks` prop. The fixer normalised both rows to the components' current extents (`DiffPane.tsx:123-193`, `FilePane.tsx:25-78`); each row also carried a pre-existing one-line extra range that held no anchor at the base (`DiffPane.tsx:117-117`, `FilePane.tsx:49-49`, meant for the test-id host lines), which the normalised range now contains, so it was dropped. The claim "unchanged and reused" still holds for this caller, which passes no `marks`. No stamp advanced.
-- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewRecordPanes.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/data/review.ts`, `dashboard/src/panels/changeset/DiffPane.tsx`, `dashboard/src/panels/file-viewer/FilePane.tsx`); no claim changed. No verification stamp was advanced.
-- 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claim re-read — `KnowledgePane` moved, unchanged, from `ReviewSurface.tsx` into the new `ReviewRecordPanes.tsx`.** The claim that the technical knowledge pane hands its before/after statements to `KnowledgeStatements` was re-read against the moved declaration and still holds word for word; only the citation was re-pointed. No verification stamp was advanced: the candidate is uncommitted and closeout owns the stamp.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T20:20:54Z — Carried the central layout into the existing statement renderer without changing one-sided or unavailable operand semantics.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** The two client rows followed their own anchors down `data/review.ts` — `ReviewSideState` to its literal at `63-63`, `ReviewSideContent` to its own extent `90-95` (taking the range that had stopped holding it), and `ReviewKnowledgePane` to `217-238` — and the delegation row followed `KnowledgePane` to `ReviewSurface.tsx:275-300`, because this leaf shortened that surface while the knowledge pane kept its body. Every other citation these rows carry (`15-21`, `36-36`, `37-37`, `122-122`, `123-123`, `125-125`, `119-119`, `318-318`, and the `ReviewSurface.tsx` set) is kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T23:13+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair only, forced by this leaf's second curation pass.** the same anchor repair for the four case-title anchors this card carries: each backticked prose title became the case's exact `it(...)` title as a double-quoted literal inside the range that already held it. No claim was re-worded and no range changed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout's metadata refresh owns the real one.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **citation repair, forced by this leaf's edit to a file this card cites — and the same test-name defect already recorded on the suite's own card.** This leaf changed `dashboard/src/panels/review/ReviewSurface.tsx` (462 → 549 lines: its inventory rows open into their content through the new `SourceContent.tsx`), which moved two constructs this card cites into that file, so the delegation row was re-derived (`ReviewSurface.tsx:179-201` → `182-205`). In the same pass, four rows that cite `KnowledgeStatements.test.tsx` by case were repaired: they named their case with a **backticked** test name, which the citation grammar refuses as an anchor (a several-word span is not identifier-shaped and must be written as a double-quoted literal), so each of those rows was a row with Source content and no anchor. Each now names the case's own name as the double-quoted literal the suite passes to `it`: `194-212`, `214-228`, `243-259`, `230-241`/`261-274` and `276-289`. No claim's meaning changed, no range moved except the two above, and `KnowledgeStatements.test.tsx` itself is **not** touched by this leaf (its bytes equal `d80a0513`'s). **Stamp accounting:** the verification pair still names `9043a82ec…` — the last real commit whose bytes this card's claims were verified against — and a recorded working candidate now states the candidate this repair was read in; nothing in this leaf is committed, so closeout owns the real stamp.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `KnowledgeStatements` repointed to dashboard/src/panels/review/KnowledgeStatements.tsx:93-118. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-21T17:30:00+02:00 — 260921-ICR-L6 curator (uncommitted change set on `ar/260921-icr-l6`):
-  **created.** The component is new in this leaf and this is its one-to-one card. It records the four
-  branches and the rule that decides them (a side's declared `state`, never its text), the one-sided
-  diff with the named absent side above it and the drawn operand's own language, the
-  available-content-with-reason path that draws no diff and claims no addition or removal, the
-  neither-present task-context case, and the reused `DiffPane`/`FilePane` rather than a second diff
-  engine. It also records the defect the component closes — the old two-present gate plus a
-  `sideState` that returned null for the present side — because the state line and the data
-  attributes are the readable evidence that the present-side statement is drawn. **Stamp
-  accounting:** the verification pair names production line
-  `7f8dc82829d0dc824d1ab9846c5ec6a6f13f8ba9` — the leaf's base, and the last real commit the reading
-  was taken against — because every construct this card cites exists only in this leaf's uncommitted
-  candidate and no commit contains the bytes a stamp would claim to have verified.
-  What was actually read is stated beside it; closeout owns the stamp.
+No meaningful cross-repo references found.

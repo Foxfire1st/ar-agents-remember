@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_writer.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_writer.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -67,6 +57,14 @@ in the `unit-regression` lane; 20 collected cases, each over real Git repositori
     now an object with the entry and the lifted D12, the fake `admitted` carries `authority.coordination_root`, and it
     asserts `[("links.2", "resolved"), ("links.3", "unresolved")]`. The file writer's bare-list branch stays covered
     by `_write(world, [proven])`.
+- **L37.** `test_knowledge_bootstrap_refuses_unconverted_memory_once_the_repository_holds_converted_memory`: the
+  taskless database route is locked, naming the crossing sync (MIK-R09 rule 6).
+  `test_a_master_line_crossing_records_its_rows_through_the_writer`: `knowledge-ingest --crossing` writes a
+  `crossing` owner's rows into `<task-id>-crossing-<n>.json`; a non-series contract, another task's or an unopened
+  crossing id, a closed file and database-only flags are refused. The leaf route passes `code_base ==
+  contract.code_base_commit`, and the crossing route passes the series' code work branch (review R1 F10b).
+  One earlier expectation changed with the reopen ruling: a write after a **committed** closed history file now
+  writes attempt 2; a file closed only in the working tree is still refused as closed and frozen.
 
 ### Conventions
 
@@ -80,7 +78,9 @@ in the `unit-regression` lane; 20 collected cases, each over real Git repositori
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R12@v2` of task
@@ -89,43 +89,32 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The conforming example. | `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files` | mcp/tests/test_knowledge_writer.py:133-159 |
-| Every kind through the command line. | `test_the_command_line_round_trips_every_kind` | mcp/tests/test_knowledge_writer.py:244-282 |
-| Unresolvable evidence reported and kept. | `test_evidence_that_names_no_resolvable_test_is_reported_and_kept` | mcp/tests/test_knowledge_writer.py:298-323 |
-| A bootstrap of converted memory writes as a wave. | `test_a_bootstrap_of_converted_memory_writes_as_a_wave` | mcp/tests/test_knowledge_writer.py:464-492 |
-| A rerun that changes a locator removes this leaf's old entry only. | `test_a_rerun_that_changes_a_locator_removes_this_leafs_old_entry` | mcp/tests/test_knowledge_writer.py:560-580 |
-| The bootstrap command dispatch. | `test_the_bootstrap_command_dispatches_converted_memory_to_the_file_writer` | mcp/tests/test_knowledge_writer.py:583-606 |
-| MIK-R27: the writer refuses an unsupported admission claim and writes nothing, and writes once the proof is added. | `test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support` | mcp/tests/test_knowledge_writer.py:663-679 |
-| Route rules: report in the writer, refusal at commit. | `test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route` | mcp/tests/test_knowledge_writer.py:622-660 |
-| MIK-R06 (ruling Q6): a moved row relocates its entry; malformed paths and remove-plus-path are refused. | `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` | mcp/tests/test_knowledge_writer.py:682-753 |
-| The requirement packet the owner resolves, and D12 lifted with governs, reconsider and requirement links. | `_requirement_packet`; `_lifted_d12` | mcp/tests/test_knowledge_writer.py:764-769; mcp/tests/test_knowledge_writer.py:772-784 |
-| A lifted decision round-trips; its endpoints are reported, resolved and unresolved. | `test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported` | mcp/tests/test_knowledge_writer.py:787-813 |
-| A content-rule break refuses the write and writes nothing. | `test_a_decision_that_breaks_a_content_rule_is_refused_and_nothing_is_written` | mcp/tests/test_knowledge_writer.py:816-830 |
-| The bootstrap wave resolves a requirement endpoint through the admitted coordination root (review F4). | "The wave resolves requirement endpoints through the admitted coordination root" | mcp/tests/test_knowledge_writer.py:603-606 |
+- The conforming example. [1]
+- Every kind through the command line. [2]
+- Unresolvable evidence reported and kept. [3]
+- A bootstrap of converted memory writes as a wave. [4]
+- A rerun that changes a locator removes this leaf's old entry only. [5]
+- The bootstrap command dispatch. [6]
+- MIK-R27: the writer refuses an unsupported admission claim and writes nothing, and writes once the proof is added. [7]
+- Route rules: report in the writer, refusal at commit. [8]
+- MIK-R06 (ruling Q6): a moved row relocates its entry; malformed paths and remove-plus-path are refused. [9]
+- The requirement packet the owner resolves, and D12 lifted with governs, reconsider and requirement links. [10]
+- A lifted decision round-trips; its endpoints are reported, resolved and unresolved. [11]
+- A content-rule break refuses the write and writes nothing. [12]
+- The bootstrap wave resolves a requirement endpoint through the admitted coordination root (review F4). [13]
 
-## Cross-Repo References
+- knowledge-bootstrap refuses unconverted memory once the repository holds converted memory. [14]
+- A master line's crossing records its rows through the writer. [15]
+
+### Cross-Repo References
 
 No cross-repo boundary is crossed: the writer reads the paired code worktree and writes the paired memory
 worktree of one repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** Purpose now counts 20 cases. A Logic bullet records `_requirement_packet`, `_lifted_d12`, the two new decision cases and the bootstrap dispatch test's new endpoint assertion (review F4, ruling 02:05:07); four rows were added. The existing bootstrap-dispatch row was re-pointed by the installed fixer and not reworded. No verification stamp was advanced.
-- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated for MIK-R06.** Purpose now counts 18 cases; a Logic bullet and one row record the moved-row relocation test and its four refusals (ruling Q6; review F1 and N7). The test was appended after L27's (the sync kept both), so no existing row moved. No verification stamp was advanced.
-- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — one MIK-R27 case (17 collected) and the meaning-change case's origin now carries the base record's `legacyId`.** Purpose, two Logic bullets and one row; the later rows re-pointed by the exact +4 shift. No verification stamp was advanced.
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

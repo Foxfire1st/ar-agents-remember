@@ -1,0 +1,160 @@
+{
+  "path": "dashboard/src/panels/review/IntentWordDiff.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real bodies the cases start from, and the accessible-text reader.\n\nAnchor: \"const payload = captured('gitTrees.invariant.captured.json');\"; \"function spoken(node: Node): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:3a352187e85d60b64608123f75f0a033af9325fc168fbe27f140c99fb934fffe",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one-field successor, per-side rows and the tree or dataset scope.\n\nAnchor: \"function review(change: Partial<ReviewFamilyMember> = {}, options: Options = {}) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:86a3ce346364e3e63da8c224bd22a95777c84fc999d969ac6d679c82875b3a76",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The conforming example, condition-only, R2-1, list alignment and applicability cases.\n\nAnchor: \"marks the changed words of the statement in place, in one passage\"; \"offers no layout control when a paired condition changed only its whitespace\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:fa27296cb843828a0b8e86ff075c1bc1a0dfcd607bc6c3c638738df01b22035d",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Ruling Q4 on both paths, and the three F1 probes.\n\nAnchor: \"reads only the selected revisions' field rows, on tree and dataset reviews alike\"; \"diffs one revision whose texts differ when %s\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:5a98aedde4a6446aeea971599098cbbd6c99d4bcb0db622f978a5d3b4e4d033c",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "F4's cases and the same-revision label.\n\nAnchor: \"labels an applicability recorded on one side only as a known absence, with no diff\"; \"shows a list the comparison only reported joined as reported, never aligned\"; \"diffs one revision whose text differs between the two sides, and says so\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:8fc2495eb768c63586d1a169d10219e65d769e14c603200a00f7b44a9a02fd11",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 266
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Whitespace-only, the rewrite and the preference.\n\nAnchor: \"renders a whitespace-only change once, labelled, with both exact texts disclosed\"; \"shows a rewrite side by side by default, says why, and can still show it inline\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:8e369c4d1e83878b226432af0a7b6af888f5a6377da864d72df6ae6c5f21564a",
+            "locator": {
+              "end": 422,
+              "kind": "line_range",
+              "start": 351
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "One-sided, unavailable, ambiguous and dataset statements.\n\nAnchor: \"describe('one-sided, unavailable and ambiguous statements'\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:30b321904edadd727d05c0392f899f87eab6872979af094c0315efccf9abd547",
+            "locator": {
+              "end": 505,
+              "kind": "line_range",
+              "start": 424
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The family guarantee.\n\nAnchor: \"describe('the family guarantee'\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:1cae4b3014c1e18b713b74beb9d1027795d1d77eb10310e6516995560690e06d",
+            "locator": {
+              "end": 580,
+              "kind": "line_range",
+              "start": 507
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "F2's labels: the navigator's guarantee and member tag, and the details fact.\n\nAnchor: \"describe('labels of one revision whose texts differ'\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:6b5af8975502ce167f980cb355a17fc752d0f3e74d4719ef1f0bb637be0ccb2f",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 582
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

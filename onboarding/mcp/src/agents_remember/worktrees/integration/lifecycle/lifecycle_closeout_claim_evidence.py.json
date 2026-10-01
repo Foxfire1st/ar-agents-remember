@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_closeout_claim_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`closeout_preview_args` renders contract-addressed preview arguments with enabled code/memory messages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb9511b797da5868202fb1312611a231910456bf",
+            "content": "sha256:33dbe7f78d123a58d8202e6d6b1817d5298943ab6c6ac286c636d7e030f9a8a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_preview_args"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

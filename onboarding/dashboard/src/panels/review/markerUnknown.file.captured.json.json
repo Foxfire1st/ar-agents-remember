@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/review/markerUnknown.file.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The per-file response with the unknown memberships.\n\nAnchor: \"file_classification\"; \"\\\"state\\\": \\\"membership_unknown\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bc997a4696f285c98c3f480f738f2e09f13edae",
+            "content": "sha256:2824ab9d8ba9b71d0451f152908276c9013f63eb25b11c5fedef68ee5c112bcc",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The partial after index and its problem.\n\nAnchor: \"\\\"index_state\\\": \\\"partial\\\"\"; \"FAM-4V4GSQCS-Bounded-notes-listing-with-unchanged-meaning.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bc997a4696f285c98c3f480f738f2e09f13edae",
+            "content": "sha256:e14ce1a4a3b66100c70016c9c88af12755d3fbfc6757e218b19123b833d3940c",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 379
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerUnknown.file.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92897c5349f3345fff3e532e3c2380b0ed621a1c",
+            "content": "sha256:5a9918e4badc73bd26c6fbb78a33bfebe86e70c0bc7cc63f1da66faa9a5f45c8",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/panels/review/markerUnknown.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

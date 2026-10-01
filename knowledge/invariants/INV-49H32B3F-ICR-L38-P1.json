@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Projection of a bounded family roster page for an exact selected family revision in a bound review snapshot.",
+  "conditions": [
+    "The page is selected by the existing knowledge read policy and carries content, membership or realization items.",
+    "Only revision IDs represented by those page items are resolved through the recorded membership owner."
+  ],
+  "exclusions": [
+    "Unselected revision content and whole-roster fetches.",
+    "Family or invariant revision selection, semantic grouping, and authored guarantee or assessment inference."
+  ],
+  "id": "INV-49H32B3F",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "0416de25-38f2-4399-a805-c61978519875",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A bounded family page transports member context for every exact member revision represented by content, membership or realization items, using the existing recorded membership owner without fetching unselected content.",
+  "status": "proposed",
+  "supersedes": []
+}

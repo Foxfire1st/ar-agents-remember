@@ -1,0 +1,87 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/check.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Admission and execution transaction",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d2e3bdaec73704fcab2d471521a0a38ad7c806",
+            "content": "sha256:31880f360ee5033ccabb9e67d6e21536c2f070642b4c66454b6ef7366320444b",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_quality_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Finalize current evidence before diagnostic reporting",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d2e3bdaec73704fcab2d471521a0a38ad7c806",
+            "content": "sha256:9c7db70f6b9e0bf96cb2f862da86bf7c2e415f047f8d692c7329989d4ed043d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_coverage_rails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ordered enforcing checks and causal continuation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d2e3bdaec73704fcab2d471521a0a38ad7c806",
+            "content": "sha256:1a5dd7b5807146be746f6ef838c5f566bfd9d81fac94a6690faaa676cbc1177e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_fixed_checks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact retry inputs without a coverage-floor field",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d2e3bdaec73704fcab2d471521a0a38ad7c806",
+            "content": "sha256:dd8383c6fec9609947dd435c59bdccf72360c427caf8110bc5c4734cd1b1718e",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_retry_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Dagger admission and short temporary-root initialization",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d2e3bdaec73704fcab2d471521a0a38ad7c806",
+            "content": "sha256:fda817e164b9f647a507e9a2cf77dcb0f026e5f0e22d214d5fdfca4f655f21c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,318 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/reopen.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Terminal preflight, accepted memory ancestry, and integrated source-position checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:b9f7bc95bbbaa05b87dd8fa4c1578337c824c8af17170c536705eee74cd570e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopen_preflight_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The reopen clears the review counter a completion spent, and only when the counter carries history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:961daa9775534e26777820365d0bbbf928f84386885779d352fda24c91e0d340",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_state_carries_history"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_series_document_reset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The publication `mode` (`reset` or `publish`) is decided by the arrival, not by a caller flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:0fe4e5f2b94af6a5f6576a562adea5a9718eb2f9cb62a038a56c674be4509ee9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_reopen_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The publication `mode` (`reset` or `publish`) is decided by the arrival, not by a caller flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:0fe4e5f2b94af6a5f6576a562adea5a9718eb2f9cb62a038a56c674be4509ee9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_reopen_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "An unnamed leaf's master through the shared helper; a named reference by reopen's own rule.\n\nAnchor: \"def _reopen_master_path(\"; \"return master_sync.folder_master_json_path(task_root, doc)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:1e4968e20cfdfae7fc5bb459f86e48a1523e5f31da82d57a6e5045d390e83738",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 647
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The master reset refuses a misplaced master before planning its row, and keeps the demotion rule.\n\nAnchor: \"require_task_document_in_place(master_path, master, ReopenTaskDocumentError)\"; \"updated = master_sync.demote_completed_master_if_unresolved(TaskDocument.model_validate(data))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:75b6a14113e8636cd552d6e7d070b63c8fe108c738715a5c718e5974662fbb9f",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 588
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The leaf reset refuses a misplaced leaf before planning its reset.\n\nAnchor: \"require_task_document_in_place(json_path, doc, ReopenTaskDocumentError)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "locator": {
+              "end": 477,
+              "kind": "line_range",
+              "start": 435
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The shared rule.\n\nAnchor: \"def folder_master_json_path(task_root: Path, leaf: TaskDocument)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Parent lineage compares exact prestart output positions to the configured parent source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:94e08600c7701d5b5d55804a9bc4db0493ff8176781be940c5cd89b96a098d4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "parent_source_lineage"
+            },
+            "path": "mcp/src/agents_remember/worktrees/source_lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Contract reset preserves identity while clearing two-output provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:6d3689db95b8a2bc176c968a1bb0662a870335d936d02066b9e3265428fd6a5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopened_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen observation, task plans, and canonical publication remain coordinated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:18849a22f6422d15585b60237d37d467380867bb90ee039271f48892ebeafadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_frozen_landing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:0dd974ab4bea8ab3815d1abc10a4d98f21c0848163efa95bb63602ceba55b43c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReopenPublication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Whether a series still owns its integration line, read from the two progress cells a completion writes rather than from `cleanup`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_in_flight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Whether a series still owns its integration line, read from the two progress cells a completion writes rather than from `cleanup`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_in_flight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A series is live but unaddressed only when the locator at its own address is `terminal-archived` and both progress cells are untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:6f76d11d967ef1fb2c051e6f87386385c0d22c61b95dc28b23fab5df4dac9066",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_is_live_unaddressed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A series is live but unaddressed only when the locator at its own address is `terminal-archived` and both progress cells are untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:6f76d11d967ef1fb2c051e6f87386385c0d22c61b95dc28b23fab5df4dac9066",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_is_live_unaddressed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An advanced integration branch is the in-flight series' own landed work: reported as `advance`, never moved; divergence still refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:9ea03eced1a2215a49cecf290c94ccbc727d96250f4393b2a920350ca1cc0c0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_ref_recut"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The reopen clears the review counter a completion spent, and only when the counter carries history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:961daa9775534e26777820365d0bbbf928f84386885779d352fda24c91e0d340",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_state_carries_history"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_series_document_reset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

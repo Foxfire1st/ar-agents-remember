@@ -1,0 +1,142 @@
+{
+  "path": "mcp/src/agents_remember/kernel/memory_cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Terminal removal discards only the root memory cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:3ce2dafbfeb64e05c0e9d47e4ff9e69d06c53c8adc7ffbac6089f73b70f7d392",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_memory_cache_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Derivation reads Git attribution and computes current/base metadata.\n\nAnchor: \"def derive_memory_ledger\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Preparation excludes the cache and refresh reports materialization outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:5100d97eebd9e4a3f1b68fc62189e707e02528dd8d298f788e69d1fdbf252d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_cache"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_memory_cache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Committed attribution and row mapping have one reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:5312462f9cbaef429f83037bf04d70d5eaf62ff55593fc25bf4d15aed3486d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributed_commits"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:a47f579480dbf6595e8da37d0a54d1e4da5172f99f9e0f52a743353313b35db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledger_rows_from_attribution"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The consumer representation supports empty derived history.\n\nAnchor: \"class MemoryLedger\"; \"an empty memory ledger cannot claim a current mapping\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "content": "sha256:87ddbdc5c5355bdd30f9ca03bddf68a52d88db51159b38c0b309d75abb11dabd",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "content": "sha256:3e6a39d79a5889b07049a719cf3d76706f766a74d393226b497a33314f53074a",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cache independence and exact local-ref derivation are exercised by the retained projection tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7c7a08f0826c6f143907af618e5c57b6685955e",
+            "content": "sha256:b058f96c73f94fefb1220563a85cdbc7630c4b4375238fc0de5d917c5caa54dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_misses_preserve_contract_and_named_ref_history"
+            },
+            "path": "mcp/tests/test_memory_ledger.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

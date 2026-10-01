@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/lifecycle_enclosure_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required for this repository-owned test contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5adf43fb3f43d10f20b90233a0f6a30032007863",
+            "content": "sha256:f070cf3c1b6247f330c44529cb342ebc172ca4cbf2fc62384aad6d5ab601a23f",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosure_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selected scenarios and assertions implement this test unit's forcing proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5adf43fb3f43d10f20b90233a0f6a30032007863",
+            "content": "sha256:f070cf3c1b6247f330c44529cb342ebc172ca4cbf2fc62384aad6d5ab601a23f",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosure_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5adf43fb3f43d10f20b90233a0f6a30032007863",
+            "content": "sha256:f070cf3c1b6247f330c44529cb342ebc172ca4cbf2fc62384aad6d5ab601a23f",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosure_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

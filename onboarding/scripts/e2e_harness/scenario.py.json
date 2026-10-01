@@ -1,0 +1,95 @@
+{
+  "path": "scripts/e2e_harness/scenario.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scenario's authority is its live public-boundary observations and stable requirement checkpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4cdbb8e2ca84e990abe4f6573265c945ea5def0",
+            "content": "sha256:5bec0c0c73d5d961e8d340ddc03109b04f398b0a80289da08b4eadd2cc825f12",
+            "locator": {
+              "kind": "symbol",
+              "name": "C01"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4cdbb8e2ca84e990abe4f6573265c945ea5def0",
+            "content": "sha256:ec42369ab61f20d5926d5eccb19fa7af5140fee32e2245992baffc0bb665d77a",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ambient launch, structural chain, and canonical brief are separate acceptance phases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4cdbb8e2ca84e990abe4f6573265c945ea5def0",
+            "content": "sha256:4d181e83c118ebfe74f7e2012caf0d06092774722f1138619e9a8cfc3ab969a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_architect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Vacancy, queued rebinding, and post-replacement routing are independently asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4cdbb8e2ca84e990abe4f6573265c945ea5def0",
+            "content": "sha256:72b56d785914eb7a626b6256bb2bf6282ec6dd78d5a869113f4a3b63bdf83e67",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_vacancy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "All task and repository addresses come from the disposable fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4cdbb8e2ca84e990abe4f6573265c945ea5def0",
+            "content": "sha256:6470d5f29b48ea9ad74cac86a4b83566ddf45dbb9d414f827521dfb7951aaadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixture_addresses"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4cdbb8e2ca84e990abe4f6573265c945ea5def0",
+            "content": "sha256:9a46f9c5af58a521f0823e1a8af19c2ce8bbe219f85316e1ff6d7da75c22a6d3",
+            "locator": {
+              "end": 622,
+              "kind": "line_range",
+              "start": 616
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

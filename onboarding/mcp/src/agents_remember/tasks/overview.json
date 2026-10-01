@@ -1,0 +1,535 @@
+{
+  "path": "mcp/src/agents_remember/tasks",
+  "references": {
+    "1": {
+      "note": "Canonical task intent is hashed from the validated normative projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_identity"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Task source snapshots and publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:598b8b132356383cbe0e3888140fd0962fd4bb9ac330950d41110bbb664f3922",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocSourceSnapshot"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:1111e6701d15ca4b5661e60a98b581d3cb4e35df96c050c0dcafd9a7047c1ba3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocSourceReadError"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Application publication transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:609566939ff3f24cd3010781e5ad5c7f64b1f1d22abdad6d8e21ff7e7c1191d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocPublicationTransaction"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Structural execution-node equality/hash and explicit reference ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintExecutionNode"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Qualified leaf-title join.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:c4382ba01c1d80996e07f6a1edccdbd4a78db686a840d52c57dfe8a8d723d9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphTitles"
+            },
+            "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:d5bf546949a8addb138d84f720ac440231c6825daa742993e5950bb8dc698623",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_graph_titles"
+            },
+            "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8461d2e7183c79dc0bdaa9be6235475150a40623",
+            "content": "sha256:1e1c02713fdb45b235e6d9665a13474e13c46d1dbfefd369061c97a66df92ef6",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_graph_titles"
+            },
+            "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Ordinal Mermaid identity allocation and rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execution_graph_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The field.\n\nAnchor: \"MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:db858789ca3aa914c98fd790427e71d30c620e9082de56a1b6a5e6bcaf43ec48",
+            "locator": {
+              "end": 722,
+              "kind": "line_range",
+              "start": 720
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Its classification.\n\nAnchor: \"knowledgeMaintenanceScope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Its header line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_header_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The declaration model and its refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpectedKnowledgeEffect"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:0ceb4aa7f9a4698685f87ce33780733ed6c745f1403d91057039fda37cdaa401",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_expected_knowledge_effects"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The field on the task document.\n\nAnchor: \"MIK-R11: the invariant and family effects the leaf expects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
+            "locator": {
+              "end": 725,
+              "kind": "line_range",
+              "start": 723
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact task text remains mandatory alongside supplemental packet references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirements"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Its normative classification.\n\nAnchor: \"expectedKnowledgeEffects\"; `ExpectedKnowledgeEffect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:54cd3c8190fb0392574c7a66f56c6795e7355449c00a2bd44457c3596a827db9",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:36ea23db1c3db012fc05f73163d4fa4440dbd8c79775eecb66063ec36bb1662b",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The optional intent slot, absent when undeclared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:bc0008dcfb0552d79d1272539868bf5412443e2c659cb097e1734fe3c3736bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentExpectedKnowledgeEffect"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:d598aff2361d7e1ad20de5798e5efc4950e914037e19af29c96ea9052c1aeef0",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_value"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The header block.\n\nAnchor: \"**Expected knowledge effects:**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_header_lines"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The strict lookup and the decision answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
+            "content": "sha256:ba00d32e44dd1fa790aa0be86d08a64c069ab896a62f3feff3010ea2290f3aec",
+            "locator": {
+              "kind": "symbol",
+              "name": "strict_leaf_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
+            "content": "sha256:a49644bb3d75c59716525a78db9d08a7d8bdb96d7bf38cefd861ff9e4196d407",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_decision_refusal"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The one rule for a leaf naming no master, and the sync's own call.\n\nAnchor: \"def folder_master_json_path(task_root: Path, leaf: TaskDocument)\"; \"return folder_master_json_path(task_root, leaf)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "content": "sha256:f55b331e6a809043ba7ea4f76bf332d518456eadb9ed8b8bc730663c9c15e4eb",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The placement guard.\n\nAnchor: \"def require_task_document_in_place(\"; \"target = json_path_for(json_path.parent, doc)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:e6584c09e9aecd5d9370b777f4eb632869ba4e102abfa86cf5efcc55a812a286",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Task-document publication rejects a route review missing intent identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:40eb1d5e4a70cd19695ae6ed12124d2b6c44bca8a44d3b2384324cf1384b9a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_publishable_task_document"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Mutation classification consumes the accepted/candidate field delta.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_task_document_mutation"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `task_doc` application entry point authors documents through this package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_tool"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Leaf writes keep same-root master rows synchronized through the dedicated planner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "content": "sha256:9aea4bae9d1437a621af305990d96b9b02ffe8c5c38a5c1a3d77ff24e4de70ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_master_sync"
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The task-document renderer regenerates markdown from the validated `TaskDocument`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:51aef0a1e2ff4d9bb5f9682a42026aa1b606642e4e9554068960c1424c63cbec",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_markdown"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The persisted worktree contract is the analogous model-to-text precedent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:875cbb062bb8e01255e5935e57d3bda65f140198acc470119e125108ccb398c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_to_text"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The persisted-contract peer this schema mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

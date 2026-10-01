@@ -2,14 +2,9 @@
 
 | Field | Value |
 |---|---|
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/models/structural/` |
 | onboardingRoute | `mcp/src/agents_remember/models/structural/overview.md` |
 | parentOverview | [`models/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-26T08:55+02:00 |
-| lastVerifiedCommitHash | `f05ba167cd6dfb56b48a775f3da5d45528c09c82` |
-| lastVerifiedCommitDate | 2026-09-18T17:19:31+02:00|
 
 ## What This Area Is
 
@@ -75,18 +70,18 @@ into plane-internal exact operations.
   a repository/branch identity: two atomic masters that share one pair keep independent records, and a
   snapshot that is not the addressed contract is refused rather than adopted.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Current dispatch caller resolution owns the structural boundary; removed doctrine/relationship tests provide no current execution evidence. | `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:403-442 |
-| The route's activation vocabulary is contract-scoped: the record carries the contract fingerprint, the canonical contract path, the selected master, the writable selection state, a monotonic revision, and selection time. | `AtomicSeriesActivationRecord`; "class AtomicSeriesActivationRecord(BaseModel):" | mcp/src/agents_remember/models/structural/atomic_series_activation.py:16-27 |
-| The store derives the fingerprint from the canonical resolved contract path and refuses any record that is not this exact contract. | "def contract_fingerprint("; `_require_record_identity` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-134; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:360-372 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Current dispatch caller resolution owns the structural boundary; removed doctrine/relationship tests provide no current execution evidence. [1]
+- The route's activation vocabulary is contract-scoped: the record carries the contract fingerprint, the canonical contract path, the selected master, the writable selection state, a monotonic revision, and selection time. [2]
+- The store derives the fingerprint from the canonical resolved contract path and refuses any record that is not this exact contract. [3]
+
+### Cross-Repo References
 
 
-## Docs References
+### Docs References
 
 The resolved source registry contains no Domain Documentation entry.
 
@@ -113,35 +108,3 @@ identity vocabulary.
 
 - Commit-derived verification metadata awaits governed closeout; the activation-model path,
   contract-scoped vocabulary, and citations are reconciled to the frozen candidate.
-
-## Update History
-- 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `models/structural/agent.py` gained the two delivery keys its own shared producer already emitted, on the base class rather than on any of its consumers, so this route's structure, ownership and boundaries are unchanged.
-
-- 2026-09-13T14:21:37+02:00 — LOCR-L36 contract-scoped activation re-key: corrected this route's
-  description of the activation vocabulary, which still said one selected master per normalized source
-  pair. The record is keyed by the canonical series contract, so two atomic masters sharing one
-  sprint's protected code/memory pair hold independent records; the record now carries
-  `contractFingerprint` (SHA-256 of the canonical resolved contract path), and the deleted
-  `AtomicSeriesSourceRef` / `AtomicSeriesSourcePair` models no longer appear. Updated the area
-  description, the "What Belongs Here" and "Load-Bearing Files" roles, the file-level map reason, and
-  added the per-contract invariant. Reference table: the duplicated dispatch-caller row was collapsed
-  to one and two contract-scoped activation rows were added (the model record range and the store's
-  fingerprint/identity validators). No verification stamp advanced.
-
-- 2026-08-26T08:55+02:00 — Promoted the activation model from provisional to frozen covered
-  status after pass 13.
-
-- 2026-08-26T08:20+02:00 — Final frozen reconciliation of the structural activation model route;
-  verification metadata remains closeout-owned.
-
-- 2026-08-26T06:05+02:00 — Added the moved atomic-series activation model as the route's internal
-  structural selector vocabulary; no compatibility model remains at the old flat path.
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: structural gate requests gain an optional
-  `caller` (`DeclaredCaller`) used only when no plane seat exists; public response models are
-  unchanged. Verified at code commit a9d50e08.
-
-
-- 2026-08-11T14:29+02:00 — Re-read the agent-doctrine boundary test and widened its citation to
-  include the parametrized declaration; verification metadata remains pending for governed closeout.
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the public structural model package; absorbed the relevant `models/gates.py` card during its behavior relocation.

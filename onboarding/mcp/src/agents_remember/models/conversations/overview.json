@@ -1,0 +1,70 @@
+{
+  "path": "mcp/src/agents_remember/models/conversations",
+  "references": {
+    "1": {
+      "note": "Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d75a9e32532b64e44414452d83b703244377c292",
+            "content": "sha256:0e88c3082e2ff042d40ea1bdc13438e1ee6660054ca28b73e65602fe536d571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "WithdrawalOperationProjection"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/withdrawals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d75a9e32532b64e44414452d83b703244377c292",
+            "content": "sha256:0e88c3082e2ff042d40ea1bdc13438e1ee6660054ca28b73e65602fe536d571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "WithdrawalOperationProjection"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/withdrawals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical ports consume these models without owning behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "056576c6bd94d53f956f5ae179b87d0abc833114",
+            "content": "sha256:b578393eee940e6ab1a3e5c67260d124bab82a2f7bd92a46851c48fb455efdcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ControlPlanePort"
+            },
+            "path": "mcp/src/agents_remember/serving/ports.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "056576c6bd94d53f956f5ae179b87d0abc833114",
+            "content": "sha256:0c2ef51994f3c51f972e6196141cc3341a94941ef78492211937ba1638471168",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/src/agents_remember/serving/ports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

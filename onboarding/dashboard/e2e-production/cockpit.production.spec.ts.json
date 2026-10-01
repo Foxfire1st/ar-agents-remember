@@ -1,0 +1,246 @@
+{
+  "path": "dashboard/e2e-production/cockpit.production.spec.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The header's three-answer rule (L8-L29), the `snapshot.json` read (L32-L34), and the module-level `dashboard.fingerprint` read that makes import fail without a release-generated file (L35-L38).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b844b57b7388074702cd02c68880b2bb8b6aea1b",
+            "content": "sha256:c257ada4f02bb426f32ed340cc72a42f76f205fae96cb501660ad12e3a2407e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardBuild"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "`dashboard.fingerprint` is gitignored, so the file this spec reads at import does not exist in a working tree.\n\nAnchor: \"/mcp/src/agents_remember/package_data/dashboard.fingerprint\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15dff1e651aa655888d4b896cf0305d858b01eb5",
+            "content": "sha256:f7537f2ef12a5438dd2c23444fdf458c5034d5579db8c55d9b908e8f82a39600",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": ".gitignore"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`source_fingerprint` — the release-path writer of that file, byte-for-byte the algorithm the bundle carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:c33fce36d2f95de60f42d2c366aff4dcdb45eb043f34049a8cb689e97cb70fb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FINGERPRINT_FILE"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:c3f4b3982eafccea92bef8c6e9fad6a3f641d6c6725eff45711fb94fa1a95a49",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_fingerprint"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:372f3d9f0445e74baed8e4b2b3dcf556e0e6ade38b37ca06bc788c44b1ce3484",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:206a9c560ead89c441709b66eb0774f873470661959e929ecc2c7d17640601fb",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fault-injection dispositions — the `OpenDisposition` union declaring `missing`/`malformed`/`contradictory` (L47-L54) and the arms that fulfil them alongside the `503`/`400` bodies (L93-L122), all deliberately untyped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b844b57b7388074702cd02c68880b2bb8b6aea1b",
+            "content": "sha256:c00e216bb027b0f341468d57eb8ea7c088d2bc770f79de5ec49418edbd408db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenDisposition"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The catalog row `satisfies TerminalCatalogRow` (L141) and the open response `satisfies TerminalOpenSuccessBody` (L163), with `harness` (L149), `controlState` (L156), `controlEndpoint` (L159) and `controlProtocol` (L160) written unconditionally.\n\nAnchor: \"controlProtocol: null\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b844b57b7388074702cd02c68880b2bb8b6aea1b",
+            "content": "sha256:8bace63f0a0a33b37a70063513aa634b0a97b8830fbaefc219d62e37c172d3c2",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The five-way failure loop asserting the error text and zero `rail-row-*` elements (the count assertion at L297).\n\nAnchor: \"production raw ${failure} failure stays visible with zero ghost rows\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b844b57b7388074702cd02c68880b2bb8b6aea1b",
+            "content": "sha256:0a897b174897592c13204db29cd779836dfb9097ec83de8984066265b38fe7c0",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 286
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared typed capability fixture the envelopes come from — annotated with the `types/harnessCapabilities` wire mirrors, which is why it is a stronger claim than the reused projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:8627dc17e11bae2d13d345c5f9cdd999d856dbaad1b1915bcb08bcb1a8a272c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "capabilityEnvelope"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Nothing generates `snapshot.json`: every reference in the repository reads it.\n\nAnchor: \"NOT generated\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:0fe35945de3839b430de57e38d38345b5ea32cd57ba071ec316fe800bdc3d6f2",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`TerminalOpenSuccessBody` — every field required, including the two that were absent before the `satisfies` pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dbc2ac879acd324d8a24f65df967893734ee5d",
+            "content": "sha256:62cc64d0e75bd613d583f2acd916263e0dd2678abe3ad109fde7839af23eb7b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalOpenSuccessBody"
+            },
+            "path": "dashboard/src/types/terminalOpen.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`TerminalCatalogRow` — `harness`, `lifecycleId`, `leafKey` and `seatRole` are optional, which is why the row's conditional spreads stay valid.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccf02e3f6a22b4e05160cd79e1102f882011c162",
+            "content": "sha256:53eef9300501823319a3ab96b4b238c9b207e82b43680e8d50045b52d5e38180",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalogRow"
+            },
+            "path": "dashboard/src/types/terminalCatalog.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ccf02e3f6a22b4e05160cd79e1102f882011c162",
+            "content": "sha256:05ba3fa9bbac9128d6907366526162ac963a8400a24c5c5cc40cf067ff64d93d",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/types/terminalCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`testDir: \"./e2e-production\"` and the `npm run preview` web server on `127.0.0.1:4173` — the built bundle, no daemon.\n\nAnchor: \"./e2e-production\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fe1db2fda77932735ffa32f5ecb4cf86708b918",
+            "content": "sha256:4e8dc9bf56c00141ac1afe20229650f408f56b4e4d99c5faac8cf2d0bb9ae403",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/playwright.production.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,132 @@
+{
+  "path": "mcp/src/agents_remember/mcp/server.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`create_server` builds the FastMCP instance and invokes the registered tool families.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring.\n\nAnchor: \"from .core import register_core_tools\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1149a450bdeeb1c3fd5ac1a6582df92484fcab4d",
+            "content": "sha256:9fd42bf8e19137209f43dfdb2ab7dbe2d5884f2f233af46f523c38ebe7be7192",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_REGISTRARS"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1149a450bdeeb1c3fd5ac1a6582df92484fcab4d",
+            "content": "sha256:dc2073ea4ae2f2e7197038a9a969ff15134dcb8da4095d3c87d7d2b70b1e8d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1149a450bdeeb1c3fd5ac1a6582df92484fcab4d",
+            "content": "sha256:a6fb5d4d6f0448e097032a504c7c1bcf016c8928f9aa411b31b30d629970088b",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1149a450bdeeb1c3fd5ac1a6582df92484fcab4d",
+            "content": "sha256:0775198a6b2b44ae40b4bbe07d846a142eb9c0face35570436d44859b17c6082",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The stable tools package declares the public import surface for payload builders.\n\nAnchor: \"Pure payload builders for Agents Remember MCP tools.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:68e08fd0af1d0f9e7709b3ebca2332ace9b888551b696607dcfca0fe46dae953",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The package imports worktree payload builders from the owning module.\n\nAnchor: \"from .worktree import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:7e384b95c08958d4ebd2088a2e5a043c805551caa34f5710d6b607b4a8d3762e",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The package explicitly exports its builder vocabulary.\n\nAnchor: \"__all__ = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

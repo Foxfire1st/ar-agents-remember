@@ -1,0 +1,87 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Admission and exact retry selection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+            "content": "sha256:ca9aa19702de2285d1d8592c608a4f0ec267287eb9ffbd4621a4c059ae8edc5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current snapshot/config/tool identity without diff floor",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+            "content": "sha256:499e8f07cf2bffc3c1af998dde4cad70ace8f1c6215dbf2e2e0cd81998d50c44",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compatibility_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Complete dependency ownership required for delta",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+            "content": "sha256:4650d2c074a31a253eb0389d2be89da916200881ac06545ce895ad13b12162d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retry_impact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Manifest identity and artifact mismatch detection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+            "content": "sha256:6b3c7ef81fd63f198d5240c0d272a87eb3deff26ef47b6a69ba5f10ab404806c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Retained/fresh evidence and proof publication lifecycle",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+            "content": "sha256:146bb16fcf3e1524f6341930ee49505e85c08384724628b9013fa37ea2d3f9a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetryPlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_agent_notifier_seat.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Seeded drift produces expected actions and ticks heartbeat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d17f88ae05852f77a9595510001a4eda038535",
+            "content": "sha256:996833348fd77c34e7187c3d62eaf52827292e65d09af7cacba27140651a7743",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_seeded_drift_produces_expected_actions_and_ticks_heartbeat"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Redeliver budget limits attempts and heartbeat reports backlog.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d17f88ae05852f77a9595510001a4eda038535",
+            "content": "sha256:1b839a2cae4e57d063a5e8b515e74123baed510928c87b0e52de8266892aacbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_redeliver_budget_limits_attempts_and_heartbeat_reports_backlog"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Repeated seat liveness sweeps coalesce into one signal row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d17f88ae05852f77a9595510001a4eda038535",
+            "content": "sha256:e757e72383ebe9ec5bb7029d8ae48845bbecc3fffd996f8c54f22211eaeafeb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_seat_liveness_sweeps_coalesce_into_one_signal_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pending backlog does not burst redeliver before floor after restart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d17f88ae05852f77a9595510001a4eda038535",
+            "content": "sha256:5b985246b990792685c01263e9b147ecc5d03782330afd0fab8ea6d9b72cd640",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pending_backlog_does_not_burst_redeliver_before_floor_after_restart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

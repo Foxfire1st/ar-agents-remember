@@ -1,0 +1,305 @@
+{
+  "path": "mcp/src/agents_remember/serving/capsule_delivery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The instruction parameter and the refresh-report key are named constants, chosen against the vendor's own base prompt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:413073460d38f754b08157d5ba99cb725d6b06ead0fad042ca45160ba6682e52",
+            "locator": {
+              "kind": "symbol",
+              "name": "INSTRUCTION_PARAM"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:13173617a3679a3111e4209bb4a5e98b211ae220c235c84363d11c3b12daaa9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFRESH_REPORT_KEY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The frozen shapes this conversion depends on are asserted against the real landed types by this leaf's tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:07abd15797d5b2ed8e9dc2b47aee521e15aa065b15aae179edc5835feb68d991",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_frozen_shapes_this_conversion_depends_on"
+            },
+            "path": "mcp/tests/test_codex_capsule_delivery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:1308454ad8b1cd41aa61219a3e016c1f6758c44e9cf0d121c0b14486d8a7899d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_delivery_consumes_a_genuine_compilation_result"
+            },
+            "path": "mcp/tests/test_codex_capsule_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The instruction fields per thread-open request and the absence of a turn-level field are fixture evidence generated from the installed app-server.\n\nAnchor: \"\\\"instructionFields\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d21283af3c9e795af3df99a7fda9121b8defa52",
+            "content": "sha256:834463976dd610af12498a284f536654d02653c3d2080e3cb227958d180aa13e",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/fixtures/codex_app_server_instruction_channels.json"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The delivery value refuses an empty instruction stream and a non-`sha256:` digest at construction.\n\nAnchor: \"sha256:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:35aa311051c3d1009c509795afe42e8cfa6b360f010b5dd6a7a5098617d8f7f8",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "None\n\nAnchor: \"an error so the caller decides: the runner refuses it at its own boundary, which keeps this value type free of transport policy.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:efe1a7e8ee0dbb480575ff3756a2b08019f91abd7696fd5190132879a359bcd4",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The binding identity refuses blank or untrimmed fields and can be read back from a published report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:38ee366f31feb633d5c4d5a2cd1915166edbcd3863bea73145daa310f3cbe1a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleBindingIdentity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:62d3aa3835e4f1e2b54e99cfe373f1340e65da415154b83e5a225776ea3d2eb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "from_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The compilation converter reads L2's frozen shapes structurally and copies the rendered stream verbatim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:95c291765c0b38f62d5bf91603a88446d7cdad9f3ebadf47ad60f7695d73dae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "capsule_delivery_from"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:6e128308c932bcaac5e64025d28c76f6dc639883ddb435613197aa8d37236817",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seat_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The refresh decision returns a supported boundary or an explicit refusal; a refusal yields no parameters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:9b15cf7b2fdc66e05d8d3c3cd74a735a739b70ccf89ea14303c6ce347afad27b",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_refresh"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:5bd9796eb6d2c0ae8421034fbc2b5244ff3c1508dc7ee344321d510fc3a06788",
+            "locator": {
+              "kind": "symbol",
+              "name": "thread_instruction_params"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The legacy-chain switch is scoped to a capsule launch and names what the host actually loaded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:dc21efb69a00ff95db1f26d07a476436274a52be234a53b3ac433c6e6d8f3239",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_instruction_switch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:1ef2cb8cb774568d1eec5578635dd52153a6876f212363d750bc4950cf2fb404",
+            "locator": {
+              "kind": "symbol",
+              "name": "LegacyInstructionSwitch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:761d29b7e44a5d65e9ee846d3e5feb9cb4cdbdef363f503820cf01e67604297a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_PROJECT_DOC_KEY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The seam consumes this value from the session settings, which the production factory fills.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:97ed545fab260dae5710718ce358487d0ea9fb7c94c73d212fe25d73dbb72328",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexAppServerSettings"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2b5088b617b61478353dc2280de551ce38e85be3d6491a95f22fe51e3caf806c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_harness_protocol_adapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The wire form travels the encoded launch configuration, emitted only when a capsule is present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:de62d5e6211955b55f9b2f0b68ff56a324a728c5f97213822f50c4ca5704a6c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "control_runner_command"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:21b0d9b9b694e6d8b7ee37f7a54aec434feff634c90aa7257d5149084ddc675a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_optional_capsule_delivery"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:cf66f0baed1a84dfb09ccd3bda72342dbe559d328281356dedcd4d61deb4e627",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

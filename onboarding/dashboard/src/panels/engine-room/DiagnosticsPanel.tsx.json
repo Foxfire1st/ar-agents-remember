@@ -1,0 +1,286 @@
+{
+  "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`CommitRow` formats branch/commit + absent/dirty/behind flags behind a `factChip`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d30db957c81c2551f69f43be9bae56bcfdca8c6",
+            "content": "sha256:b0448c920f01a9e14300fb5c17751232ed4536dbf63c27667d28e819ae48f78b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommitRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`DiagnosticsPanel` derives `poweringDown`, builds `setupLine`, renders facts, phases, seed, actions, missing facts, sources",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d30db957c81c2551f69f43be9bae56bcfdca8c6",
+            "content": "sha256:b41bb633ec07da26dae5bd37dedc59daee4db048649e116289f6261c2ac872e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticsPanel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`poweringDown` flag (`cleanup-pending`/`abandoned`) drives the \"powering down\" setup line and the muted `◦` completed-phase glyph (5k F3)\n\nAnchor: \"const poweringDown = node.phase\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d30db957c81c2551f69f43be9bae56bcfdca8c6",
+            "content": "sha256:0693d69fb010f7e2e2e804d63311a55cc3f14abefd151cf40fc790c573906213",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`EngineProcessNode` / `CommitRefNode` / `ProcessFactState` source shapes\n\nAnchor: `EngineProcessNode`, `CommitRefNode`, `ProcessFactState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73ec03de3276e26fc76b8341d52a9438518cfc1d",
+            "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73ec03de3276e26fc76b8341d52a9438518cfc1d",
+            "content": "sha256:50f9ff4de6d7ea1b819ab16e492bc8eff46f9491168de6e4c82d8bce0c2c8ba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommitRefNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73ec03de3276e26fc76b8341d52a9438518cfc1d",
+            "content": "sha256:8e8886b140a2acdffb0c32730ebec13ecf0845f2cea0ec84dd2e2ae6bd1cb126",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProcessFactState"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`Affordance` display-only action button (aria-disabled, no POST)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9fb22cc5f4b41d80db68b8648a6041886c13c80",
+            "content": "sha256:6fe14c2299ba2fab63251972715c6b52f48438fb251c2e676543aa3126dabdb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "Affordance"
+            },
+            "path": "dashboard/src/grammar/Affordance.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`GateResponder` compact worktree-gate control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
+            "content": "sha256:847bc6a130fc562990a803182e005dd6b8e5262a8290bd519278b9077d4f6936",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateResponder"
+            },
+            "path": "dashboard/src/panels/GateResponder.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`fmtWait` formats `heartbeatAgeSeconds` into s/m/h/d",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:62037153cf0b147b87950ac58603f70f56d3ea0b2daf892759e0fdf10a74a172",
+            "locator": {
+              "kind": "symbol",
+              "name": "fmtWait"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel` recipes\n\nAnchor: `factChip`, `diagPanel`, `diagRow`, `diagKey`, `diagValue`, `missingNotice`, `missingTitle`, `phaseLineList`, `actionRow`, `sectionLabel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:b5eb89541759bd74a4d581988aea1c1a12f77995838dac730b894e8e868882c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "factChip"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:cbc8e14c07cc0d6763d65950e76d29f4b3a03b0aa9f70d7185d74c8ff5d1b801",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagPanel"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:12ea845a3eafbd4552f76a3946eedc5c574194560d194f070f806ac921ed09aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagRow"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:8dd0b63cab8f1ca80bc1fa90a933e157f42ee5b9a8b0ffbcd32676025ba9546a",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagKey"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:cb925b92ff4a11ed52767227a8350dae028a6e9d38078efda2fb74dd89d0148a",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagValue"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:7627dadac0274d24151527feed082a2361e315b3f7485f44241d1dcf27f12753",
+            "locator": {
+              "kind": "symbol",
+              "name": "missingNotice"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:c69d2b1d832160fbfcf06fd813482d964f7ed7e6ca66c17bd158ad469d0510e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "missingTitle"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:83b749586287d88835cb92a170e247a9da5633069013a5adaa95f9c0182b160b",
+            "locator": {
+              "kind": "symbol",
+              "name": "phaseLineList"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:2d8fb424210aa0ec1a34bdf52262477d1cbf95a525292d407d0f5afa55703158",
+            "locator": {
+              "kind": "symbol",
+              "name": "actionRow"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:70553ded75cdcf4ef92a62554dbb46c39d0c41b084df527315a00dab2800aaeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "sectionLabel"
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "content": "sha256:0549e273ac67b45b04a201c722dcd815cfee17848d293f1f97effbe737cd828c",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

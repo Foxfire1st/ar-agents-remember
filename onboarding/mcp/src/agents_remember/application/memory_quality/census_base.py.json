@@ -1,0 +1,89 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/census_base.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: why the census compares with K_B's conversion, and that only objects are written.\n\nAnchor: \"Only objects are written\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dd5c6953304b006dd24b383874f5f7dfc8f4571",
+            "content": "sha256:68f5c130dd34004884de883f3360b6030793bccdd8280e30a85ccedf42355b2f",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The comparison base for a contract: K_B, or its conversion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dd5c6953304b006dd24b383874f5f7dfc8f4571",
+            "content": "sha256:bc35a123062497ac8db4d738a3d5556acf0f45b52ca9809a00caf3a30ec6cd0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "census_comparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The baseline's tree with every cached kind replaced by the conversion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dd5c6953304b006dd24b383874f5f7dfc8f4571",
+            "content": "sha256:a3f133361f975a51152c87fbd25c4678d07e5af3726db00b87a6508640930a69",
+            "locator": {
+              "kind": "symbol",
+              "name": "_overlay"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The root tree, built deepest directories first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dd5c6953304b006dd24b383874f5f7dfc8f4571",
+            "content": "sha256:9db7835f3dd166c26217031cf97b31698742c7623ed0df0a3602187ff4741eed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_make_trees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The census scope is captured with this comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944c5398c671d9e36ddd09db0b79da7b2b0534ea",
+            "content": "sha256:57a52337512b3854c7bc561febcfc2b792457032f38c8a5acf06f87c99216548",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_census"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

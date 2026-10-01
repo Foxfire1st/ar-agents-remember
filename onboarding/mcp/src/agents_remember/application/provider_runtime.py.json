@@ -1,0 +1,113 @@
+{
+  "path": "mcp/src/agents_remember/application/provider_runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`docker_command` and `run_command` are provided by the provider lifecycle shared layer (re-paired to their real owners; the previous row had the two anchors swapped).\n\nAnchor: \"def run_command\"; \"def docker_command\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7548ad8fa6ef7ff70da29921cf6de403a2224236",
+            "content": "sha256:d07740071a26e48f00680a992b67403463c24834ff51b0dca629662803963f0a",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6029fadb8d818bad5f7a8acb17fcedb6929a6439",
+            "content": "sha256:22556fd8c05c76ba55363f10ad0981f134fc4f87e0941d54eea393462f4164bb",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/docker_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one removal path: a not-present path, a dry run, a plain `rmtree`, and the permission-denied reclaim retry whose surviving tree now carries its own reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:8f1226779d8cabe09fc5bf84b4a3e3964ec2727373b556a444a5a660b698e605",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The port the worktree layer reaches this module through; its `teardown` and `remove_tree` members are what a worktree operation can call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0ac408f897ccc1406cb15afcb9db76d1b54d01",
+            "content": "sha256:3d6f92d4fd05bcf8bd9fa3cf903fb62b86a74954e4a3189df33cecea220b7d9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderLifecyclePort"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The focused cases that pin the reason on every non-removal result and the surviving-tree cause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "content": "sha256:7a0f04ef049f20ca4ad3b0521fb3759e492f6eb1a71061d927835a47c101e421",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "content": "sha256:cf0fca4dddba6037a11a2aace70fc52c6799556318aa5d803988f4061d6b7cd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "content": "sha256:18b7b166310b208aea22c19d18ac0567a2442ec92f1607a76d2845b9e1c2e9ce",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/lifecycle_service.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/lifecycle_service.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c` |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -57,23 +47,9 @@ structured `ok: false` payloads for MCP callers.
 - The dev/operator CLI facade is `lifecycle.py`; MCP provider tools should call
   this service layer instead of the CLI `main()` path.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP provider tool application entry points call this service layer. | ["from agents_remember.providers import lifecycle_service"] | mcp/src/agents_remember/application/provider_tools.py:22-22 |
-| CLI/operator implementation functions remain behind the lifecycle facade. | `_EXPORT_MODULES`, `__getattr__` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24; mcp/src/agents_remember/providers/lifecycle/__init__.py:27-34 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 3 repository-internal application, facade, and service-boundary test references; final scoped result 0 (checker-clean).
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `run_cgc_lifecycle` was re-signed from five keywords to `(service_config, request:
-  CgcLifecycleRequest)`. The supported actions, the refusal and the returned payload are unchanged.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-05-26T12:51+02:00: Updated after removing the CGC provider Python executable from the typed service config.
-- 2026-05-25T19:16+02:00: Updated after the `provider_lifecycle.py` compatibility shim was deleted and service imports wired to `providers.lifecycle` directly.
-- 2026-05-23T20:56+02:00: Created for F-04 so MCP provider tools call a typed lifecycle service instead of the provider lifecycle CLI main.
+- MCP provider tool application entry points call this service layer. [1]
+- CLI/operator implementation functions remain behind the lifecycle facade. [2]

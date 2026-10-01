@@ -1,0 +1,226 @@
+{
+  "path": "mcp/src/agents_remember/tasks/task_paths.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two constants and the slug rule that decide the enclosure directory name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:f886850d232d85690cf363d56a55cd5feac0c1b02ea185fed4318bade95f87f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERIES_CONTRACT_FILENAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:501358120e6e399516bcd301f90a84f7a658c6f0aa9bcd3472f6c49a299b6d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENCLOSURES_DIR"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:01dae166890935fa3f4d09ee9ca49ad0e76ba24d84cb6d5808a25c3722b9a554",
+            "locator": {
+              "kind": "symbol",
+              "name": "ARCHIVE_DIR"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:a56d6a17d3f53e4ab8cd35b02e630b86c15f5fd41b4afe5eb80489f13cd09b45",
+            "locator": {
+              "kind": "symbol",
+              "name": "slugify"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two path builders the derived-master-link binding calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:07aa32c0e77d63c049371f15d5886529004d1e17196a290f9ee4b2fd00c8539b",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_contract_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:5a6fa392e1f7610062dd278030098648d72aabda7cf4cacb138194006dfed9b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_enclosure_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:468dab315dedf798ee9bcaa4564f178effddecf0072eadc49a84465f03a93d45",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_enclosure_dir"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The predicates and the leaf-contract enumerator the resolution and catalogue paths rely on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:e07e641d796aeeb13604649d1ecb9e06d86bd62be213e0871a97dcb5537226b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_archived_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:b1fc657481ff3d993c7c2dde2401eb14736d0560ba8f6baf96e92931ec2a0b2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_enclosure_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:47e5201e5b1d133febcbb89eefa6f0ca7e1473347442477513ad46e266e91d2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "iter_leaf_enclosure_contracts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The re-export surface that keeps every existing caller working while the definition sits here.\n\nAnchor: \"from agents_remember.tasks.task_paths import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:6c1455ed80efdc58adedd62a93333653587b02e905f52689b874aae4a43bf67b",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:3505eff900ef40ec541972cf9ee4826a2b43cc18aeaa6191d00ce97b770e85e3",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The consumer whose binding need created this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:86abd7865bdbebe948fda3ff8163c01d53c0b235507d070670f5fad398f1165a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_derived_bindings"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:9cb170d14835d4e9ff522c3427f88a1fa1c48fc2b4e52ab527e6971de545c311",
+            "locator": {
+              "kind": "symbol",
+              "name": "_derived_leaf_bindings"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The package order that makes this module the correct home, with no baseline and no exception.\n\nAnchor: \"a module in package P may import package Q only when rank(Q) < rank(P)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:ded9434595ee95aa22bb7a4663f23ce66d79f845bb753c206d9512e29970ee22",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The armed rail step that measures it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "content": "sha256:d8567095454d3719c73cef2c7f50dbc0d6e7b9da657cdb5f961600618a6e9046",
+            "locator": {
+              "kind": "symbol",
+              "name": "_layering_step"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

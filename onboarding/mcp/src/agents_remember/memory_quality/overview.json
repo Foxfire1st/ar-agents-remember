@@ -1,0 +1,1626 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality",
+  "references": {
+    "1": {
+      "note": "The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:a615899736aae3f8c317123c8f935e70b75405d00193ba9fb8691d63cd70a36a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_memory_quality"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A relocation proves continuity through the established provenance path before a tree-wide match is admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6ab4fdf5954cab850fa458d4348552adc4e31c6",
+            "content": "sha256:ce1f0e66eda454cf7c72d981bb81b17c5377c5d519adf7f1508f6633c93a7660",
+            "locator": {
+              "kind": "symbol",
+              "name": "Continuity"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/repair.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6ab4fdf5954cab850fa458d4348552adc4e31c6",
+            "content": "sha256:bff3856a53316f9d05d945e0bba38bf1e4d6de887846f8027ad2f01d03259970",
+            "locator": {
+              "kind": "symbol",
+              "name": "continuity_for"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/repair.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6ab4fdf5954cab850fa458d4348552adc4e31c6",
+            "content": "sha256:2bcdb7582830a5de3478f7686286e2d4669271c8b424ada82b79782b67e37b40",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retarget"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/repair.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The walk resolves one document's continuity and feeds it to the planner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6009b173e9e1bcb6f4b4f9ccc85c36a3347a1623",
+            "content": "sha256:711c0aa61626676446bacbf2e9ad740caba552a95fe0dde52c1363fdc5a20609",
+            "locator": {
+              "kind": "symbol",
+              "name": "Walk"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/fixer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6009b173e9e1bcb6f4b4f9ccc85c36a3347a1623",
+            "content": "sha256:16316e66d7965cd5838af2e1481d65cd6fd76ca3261b106b19b77460ad4e7732",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_onboarding_root"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/fixer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The migration pass consults the same continuity authority before a cross-file relocation, although its continuity branches are unreachable from that entry point by construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:c8966c3ed638766025997b008bcca0a2d5f8882fc64c5b909cb1ec3a7848df13",
+            "locator": {
+              "kind": "symbol",
+              "name": "Pass"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/migration.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:6bc77bb5c29f8b7249574dea22f5d957013e44ad462a9b60cf2d4471bc7cab0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "place"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/migration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A mechanically projected range is ENFORCED at `error` severity with the support question instead of asserting currency; the ordinary evidence-change item stays `warning`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e22b8a189443e1872b2ff5e2769a5f8e30e59b6b",
+            "content": "sha256:1bd141964bdc68c82fe508c3399641d2ed7397de86c4272a94f34f2aba1fc504",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projected_review_message"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e22b8a189443e1872b2ff5e2769a5f8e30e59b6b",
+            "content": "sha256:d70f66729aec761fc71f4c77acb3416c2d6751544d44eed6cea5051a2833446f",
+            "locator": {
+              "kind": "symbol",
+              "name": "surfaced_finding"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/claim_reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Accepted batches check complete document bytes and held source/cell bindings before atomic publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:cc49329bd1aeaf9ff0c541e0fe159358ff0927d7dbbae84ed4cbe97cf07ac420",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentTransaction"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest.\n\nAnchor: \"def gate_five_memory_rails(\"; \"def _catalog_configuration_digest() -> str:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26719c5d7e9c988756b79b55e18927f26b99b5f3",
+            "content": "sha256:a183f82d378bb8e3304b736fbf3074f8a05a0dc43a38756aecfef59cfd7fe0bd",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/memory_quality/gate_five_rails.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The application surface projects readiness with no affected-closure plan.\n\nAnchor: \"def _attach_final_full_catalog(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 648
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:edd4e53b3a92f67842ae50ef0a4484cd315a1cc3f4460053f86c5e4feb06281b",
+            "locator": {
+              "end": 941,
+              "kind": "line_range",
+              "start": 905
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Full certification requires explicit evidence and predecessor authority supplied by its caller.\n\nAnchor: \"def certify_final_full_memory_coherence(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94e1bceb2c31903583149ccf83b97a561f3f154",
+            "content": "sha256:f07663c61d2e6d22be0e118143df219d33da50311386c9fbda69056221eb37cb",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/certify.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The one construction point folding settings, ignore file and call into one register.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:20020838d373136e42692e21a260a7b1302f2f01be3ae99309895229824a70a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_exclusion_register"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The two settings keys, and the refusal-by-name discipline for a malformed value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:2ebdad3b6cc58262447a3368cb98cd2df97bc581968d816f95e7dbd6841ae647",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_citation_index_settings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tool metadata and server registration expose `memory_quality_check` to agents.\n\nAnchor: `memory_quality_check_payload`, `create_server`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "content": "sha256:a9de81dbbdf4642cdad7ec87883e50f74e457a6689267d0c456b3eda641ebe61",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The bounded non-Git matcher and its pinned divergence from Git.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:e1178873ba78e845bb1889327ce7a0b3c34e5d81b2de0ad991b3dc2dc00302da",
+            "locator": {
+              "kind": "symbol",
+              "name": "FallbackIgnoreMatcher"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A caller exclude that cannot mean anything is refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:368608e2d09339a4916de6c9897892fdc337a785450c36f6e29e4f484d7892f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_caller_excludes"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The ruled numbers, the skip vocabulary and the status vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:6d221d8f2e6efeb197ebf30d35b106ccaed906b9647049cc0b0753b5fe8c41b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_BYTES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:8db6e294f7527bb8fee91cd9d660c341c87a9d342ffb93439f385561f810d627",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_FILE_BYTES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:f184694585ecf810989c0bec7cdfc2569e6e69f93e632edbf3a237f5c4ee4192",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_HARD_STOP_BYTES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:4da2d3370bad042167f95d61c7e85d4489e2adbef914a64a54b03e7fee0d6c71",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKIP_REASONS"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:1607ddb5ec303904a5a169d7381d62f181479655e96ade69fce0d408bda16221",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_CAPPED"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:b897787e4972782960ef55f17b3e3b7ec9181a231e070fbfb7166d3490817754",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_WITHIN_CAPS"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The register's three sources and recorded authority values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:d55a1035c4d051767bf9c81e0f3304f12f51f01ca6b721bd1526016d555dc477",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXCLUSION_SOURCES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:a42cc2e4f889ec1fc32a20f232f8fdc75446ac0655780e78099451bceef1d6de",
+            "locator": {
+              "kind": "symbol",
+              "name": "GITIGNORE_AUTHORITIES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The closeout gate refuses by name rather than letting a bare error out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
+            "content": "sha256:e95c7406b3fd4a71e46394f433e182e91fe6c83efb58d4927af93b8e84563a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted_source_index"
+            },
+            "path": "mcp/src/agents_remember/application/prepared_certification.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The caller-exclude surface on the registered tool and the CLI.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
+            "content": "sha256:a7590b36fcfa68944541ca8b7d61860d33e1478e53c9101a4cfe2218e83fb958",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "One root gives one authority on both acquisition routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:a6bbc2348ea5925b4e56baf98b005b891b4ddf8601b64356b1f526032e8abc5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_root_gives_one_gitignore_authority_on_both_acquisition_routes"
+            },
+            "path": "mcp/tests/test_citation_index_resilience.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The index opens either the explicit candidate selection or the ordinary filesystem policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:e2f343ff9a4e6af1114910f1ea83d70c0a16ee1c83b605b21883a6f8893eb1c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_repository_index"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "R06 checks candidate selection and exact indexed membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8549000c4b5f19f39a816f19e727da51a1c51c28",
+            "content": "sha256:1458ec22df65864e842308d7722e32a5a79e966d70c0a21bdaf23f8abe69ad95",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_source_index"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/owners.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8549000c4b5f19f39a816f19e727da51a1c51c28",
+            "content": "sha256:0514e72229cd5fdf72b3a1b08e5d73127df83c41fb942060cab833e4c83c2ab1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_index_matches_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/owners.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "R07 validates and forwards the unit candidate tree to its selected-document checker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:5d181caa6a0ff64942e755c5d5291840ba3246355c56abf5ef9d312019b5b384",
+            "locator": {
+              "kind": "symbol",
+              "name": "RangeResolutionAffectedExecutor"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
+            "content": "sha256:b09603e04b6cf4b9e5b34d9a79fe6b45ec4c7aa6be6dcfb94875d51f2f3bb880",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_check"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The package's module map and public API.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9022c98629b43fff5146389154cafda8efe6853",
+            "content": "sha256:2227e920a47dfb31e1e613eb780c44df7c38b820c1a638abfdbb66994cdf6c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The single registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:93d5f335443f6b1c4144a68c70a68d5bd998f8c00c5f50d5e245801a736ca7d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_rule"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:b686db237a84460cf8dc4004905167d727daf56b73c375de4008a12d9f1bb32d",
+            "locator": {
+              "kind": "symbol",
+              "name": "registered_rules"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The commit route's call, with no skip parameter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:624fa9d6a4d2330f50ab697674b03f9ac47af0853524208f54718fb9c871dfac",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_valid_commit"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:094ef17761f5eb9ce46f5fb6cd8ef49a30cf278a9c1b46dfa979358481ae3193",
+            "locator": {
+              "kind": "symbol",
+              "name": "validation_applies"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:dac3529981df3ce0032b18a29adb9602f1a15eb1ee36d5179dd692ec366bf018",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The Git adapter the worktree port binds to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:7dce94a987c6103da6908cfe0a1167b479263995df126d1907da7fb0f28ba36e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeValidation"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The registered rule sets, with their report-only flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68aecac834f2ca5fdc4107ed1cd253a0771a0f0",
+            "content": "sha256:37a949b8d928e8a4a6aa537a4a70eeedf40f087d6886c7277aa4fbee20d49bba",
+            "locator": {
+              "kind": "symbol",
+              "name": "STRUCTURE_RULES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49bda5f1240dd58ded9362f9ab21d32b46081b57",
+            "content": "sha256:e1e5525613935345898e97ce70cd2d90d8e80556bf561d0672635df75461bfed",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFERENCE_RULES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "One family's route state over its members' realizations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:1011fd5e9265e0839ca3f28fd96e21787a7b7a1c106cf22a58050fa54448235c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRouteState"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The six registered rules, three report-only and three writer-reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:3bac0ea2049cfa7256b321605d02cf1d685f28583a58cb62d16a9ac158079dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROUTE_RULES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The registry flag a writer reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:912287966d4ad2fe95234b62f0cfb089d5c40649015a914445b40054ba8d0797",
+            "locator": {
+              "kind": "symbol",
+              "name": "writer_reported_rule_ids"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The nine census rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:cf70e7c3d365105b16aa6d68d2be288c6e0786c372a410cb976c5733ada87c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_RULES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_census/checks.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The measures in Doc12's order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97553bd370add844af2e6dedc7ed07a0319351fa",
+            "content": "sha256:5cce5e63d593ed77e01ed09bc378a934d06efde90bfdbead39b6e2e968710ade",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_measures"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_census/measures.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The missing-onboarding checker catches newly added worktree files before code commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173c634c2a673a71154a2bb8704a9b0b9929d40b",
+            "content": "sha256:a913d9dc81d27cff5f47e651ed413e4af66e6f47f2043133b9864bf62282a5da",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_missing_onboarding"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The registration with the validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45cac0c748878e06d01a7c85d469380570fd96bf",
+            "content": "sha256:a23beb3b20c893930918fb7cbe72d62c417911a737eca778df69fba75f24804d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_VALIDATION_RULES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Stale references are report-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:d2802ad365047d4ef2e74f95d6031439bb1e4cdcea8286e0ebd28b1b11768944",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_references"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The converted run's legacy-format checks and its validator slot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "content": "sha256:ecfbfe33ca6ca959a7089a708440062186d28a630d620ac9ca9e26158918b503",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_FORMAT_CHECKS"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "content": "sha256:1aad9ad4a07387fb919cf7a7136e828c7187ae9215a1c3e4da28198339c3ad01",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The runner's dispatch by format.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
+            "content": "sha256:14d2d4a47323a91bcd6415822b50ccb7c96517861036c7b8d272dc7d18cb3b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The commit route's optional base converter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:7dce94a987c6103da6908cfe0a1167b479263995df126d1907da7fb0f28ba36e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeValidation"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The escaping rule on the validator's grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:c6d4832ad5896d4390f0b4a00c87d5086d5578f50cad5d8f1a82f0bfef85e78a",
+            "locator": {
+              "kind": "symbol",
+              "name": "escape_markers"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The one symbol-binding rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eebc5b0f77b9c84611738fc4420e2599f3582a9",
+            "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualified_spans"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The defaulted input and its section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:0a28de839a68793db013b6144092b73f9b481b53ce7e64aef0649aca96b56909",
+            "locator": {
+              "kind": "symbol",
+              "name": "WithoutProof"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:9d64cf4ef6fbf61872da9ecbad420c5066f97ee0b024b83a5f3c78d5b6d106ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_without_proof"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:de25952f4238188c46711c4b8e473e4349a4db18c80cb9025c62361aaf933a5a",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "The section and the summary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:f6e7b04d886b2b70d6021b8a9446c1cb40f7058bb5c26bf923b9c3fb5d5b70e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist_lines"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:c0ef806c3a17ccb37df6addaae75d1819939925def0d6d9726835a656b021670",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_summary"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The checklist's defaulted inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:73647c6be89bab95f610a9645de985a46cc0e1a37f13bd995f97f3104ffafc12",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:89f3f0eca8b92c18875ce78fd071bb13a539700e8fcb95183a327462c7c7d83f",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist_path"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared drift model declares the vocabulary used by drift-check wire responses.\n\nAnchor: \"class DriftSummary(StrictResponseModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:0673052126dfb9f14e4482f0ad5dc18d83e74317290c4bb65d77742f15f8038d",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
+            "content": "sha256:b60450b5d1079612564ea0b6387574656c6f8707e1abf010bde9acfa6f6b8afb",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "The fixer's converted-tree early return.\n\nAnchor: \"not-applicable-converted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381d6b2bcb51b43282869d8033507d8dfff065fd",
+            "content": "sha256:f5401e81b4c5fbc5fc4373ce6441692f9de8c8d0741587731fc6abf864b49834",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_onboarding_root"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "The planned-effects block and the `planned_untouched` facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:d9411b77681707546aad1105fc0db5cd2a8372091dc491cc3d088a54bc21d71f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_planned_lines"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:6f799ebc452b69d1dcd94e184667072e442dcb4a74591dde1436b81d0580ddfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_planned_facts"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "The item table's **Plan** column.\n\nAnchor: \"Plan\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:f6e7b04d886b2b70d6021b8a9446c1cb40f7058bb5c26bf923b9c3fb5d5b70e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist_lines"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "A new record is refused for an unsupported claim, legacy-unassessed or a reference-only justification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:3c918e2da84a47cea7db603139138c6e6449401f4c5f24ea92a45981c56c143a",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_new_record_admission"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "An export is a record whose legacy ID derives its ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:ea17ccdd0945abadf165282bdc72a4f0dfb830e132696250b0d74b9fb6f1da72",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exported"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "The three rules, one refusing and two report-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:edc351652f7665c162a1e202b27a4f5647d0f505295f45f2634f4d819701e41f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ADMISSION_RULES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "The route item's facts, its affected set and its suggestion text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:86a5717f062bf68b101a89ab12806803c64edcb63fd4edfd5d40164aaac12e9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_facts"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:2592f4bcbd7fefdbf17f577fb8e28507d10e6bc93ba9ec982bd6847f85de1ab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_affected"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:ddccdf8acb3370e8fa8752d0175cda0dfe48895d0ab3eed93816b3ec67d2d1b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_suggestion"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "The kind-to-renderer table (since MIK-R10 it also maps the two unexplained kinds).\n\nAnchor: \"_FACT_RENDERERS: Final[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:2876e0f477bc06f62ef9d47f76e350162de417fa7c814d694351d9b545b0a0da",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "The five rules, four refusing and one report-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "content": "sha256:48d5ebed88d5412d0bcb2cff3bb954c4afbd2d2323bdbeec03c7fe53103ca818",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECISION_RULES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "A stored superseded is named from the raw document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
+            "content": "sha256:a2148c1be1509f6169b2b49d45f809d67d691b21612f149335e9b418ee3c90fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_superseded_not_stored"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:514fad889468a806ec57d17b62cd9ab44b6ebefa44cbd0699a45ced8dd108303",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_context_packet"
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "A decision is never an export for admission.\n\nAnchor: \"if isinstance(record, DecisionRecord):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:2208746a1a33b3fdea0cb67417fbed8e562c0adf174452631e3fa247a61bcafc",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "An unexplained item's facts: where, coverage, delete-only, and what answers it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:d3f4538a1940bb2b07d0a934f3436def86bb05f31feecbf46b4bce742744d85a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unexplained_facts"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "The two unexplained kinds in the renderer table.\n\nAnchor: \"\\\"unexplained_file\\\": _unexplained_facts,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:b4cc134d34dde7bade29e9692873eee156051587b3fc76a194f972b4e819a322",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "Moves followed from both sides by unique option text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d53d75c0de9f4b7c54edf3c96142cdcd1f4c9cc2",
+            "content": "sha256:96442805cb33aad47927e26f08b7296f806f532e8d770d3439ad66636142d432",
+            "locator": {
+              "kind": "symbol",
+              "name": "moved_linked_alternatives"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "The refusing guard, registered on import.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d53d75c0de9f4b7c54edf3c96142cdcd1f4c9cc2",
+            "content": "sha256:c962509826d8cf9ec6d6e7b4dc521b4e938f3d5260c34807a622c2d7089e2815",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONSIDERATION_RULES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "A reconsideration item's facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:f7e57c68db4ecf83c9e4a9f41f5f563d4547249ab7ebe7f2627876937ad2a2c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconsideration_facts"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "The files the re-anchor check reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
+            "content": "sha256:607e314390e67e9afd96f5a5250ab1c06ade4287f753d465ee917e9de5219c20",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_history_files"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "The refusing and the merge-reported rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
+            "content": "sha256:26594f68a1698246e77a95bbf03efddae9d67d53d2a0af672488ad6cfaa2e92e",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_history_rows"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
+            "content": "sha256:08f2d807a28da98b65a7dd1b88fcca427d7f99ec4af82708b3a4fc50ff1b6f03",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_merged_history_rows"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "The registering import.\n\nAnchor: `rules_history`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "content": "sha256:edb0d5948b13f47b679dd00bde75cc27d16721e425b8f627cdfd67927fcda242",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "The leaf-publication route of the adapter.\n\nAnchor: \"def leaf_refusal(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:11f69f9c7f232759e5796843f35fca9a613e6c7eea0f8a17a5fd67bdc6ae4f79",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:f9fb57f1aa32f4a75466c8dd3449b67f263f6df7a6656f2c79e17cedf593a5d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_curator_checklist"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "The section's lead: the gate counts each open item.\n\nAnchor: \"The section itself counts nothing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:fe4b93372a368d34f2267d913e639355b5808354274d412334b08d349c24f4f7",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "A converted card's kind and source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57b4d4627000d4e3084540ceb70be6c6728e23d5",
+            "content": "sha256:4f46a4b6208e6312f3e70cab4ffcb88e25248c7b818eff4b80c2b8930954efdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_card_metadata"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_cards.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "What the task edited on a converted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "919b68f2b22e3faaf05016ea3a6a49eaf9a3881a",
+            "content": "sha256:d8b3c6087ef5ebdbacc1a150737592f1fb26fbfd1cc3887ccb8253e5320de376",
+            "locator": {
+              "kind": "symbol",
+              "name": "edited_paths"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/memory_census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "The converted check's bases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f01c09d92d3d3b023ebfba03adb0a99d6330565f",
+            "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_bases"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "The re-recording scoped to one sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:e35d54d4d08535fcbc2e88e5556c31be6819e30175054d4b0641c2c1f80d4bba",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Memory candidate identity excludes consumer cache availability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc66e6f6c1b8a6c8eb95a91ba4eca67a44262441",
+            "content": "sha256:7c4048ca018b3131c8a49a59b28eea3d4ff94ff7c0de017977badeb31170f8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCandidatePairIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/memory_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Projection admission precedes staging; declined claims retain their original bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6009b173e9e1bcb6f4b4f9ccc85c36a3347a1623",
+            "content": "sha256:502a9eb1d6a45360d4edbdfc1bb93ef896cb3bc2e2ad41125ebcf7c600f87dfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decide"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/fixer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

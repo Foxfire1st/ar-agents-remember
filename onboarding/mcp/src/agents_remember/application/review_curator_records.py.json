@@ -1,0 +1,229 @@
+{
+  "path": "mcp/src/agents_remember/application/review_curator_records.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+        "content": "sha256:e0921179e6256ca12e047d62cdf326f107b2ecd8104764b222de519775d7e927",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_historical_pin"
+        }
+      },
+      "id": "RLZ-71BST0AD",
+      "invariant": "INV-VXA7SZ0Z",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Accepts a historical curator pin only when the manifest captured the curator owner's assessment channel, the pin's path is exactly the content-addressed generation record for its SHA, and every bound curator artifact is still available. Otherwise it raises instead of letting generic evidence or a damaged artifact supply assessments.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+        "content": "sha256:6b249ae4f242314ab287747a6393c1e644de29107ad84fbbb8f35740b816d9f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_without_pin"
+        }
+      },
+      "id": "RLZ-DDZ2XJQD",
+      "invariant": "INV-53MJW8V0",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Answers a historical comparison that has no curator pin. Reserved artifacts without a pin, or recorded assessments with no owner reference, are unavailable; a captured channel is returned as recorded (so a measured empty collection stays measured); and a manifest that captured nothing is not_selected, with the explicit note that this does not mean no assessments existed.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+        "content": "sha256:3b3baf556cbf33c307c4aecc76c4752c62c062cb0d80dccfc71d368decb4861e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_historical_records"
+        }
+      },
+      "id": "RLZ-Q309E7RB",
+      "invariant": "INV-VXA7SZ0Z",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Reads a closed leaf's assessments only through the single curator-record pin in its frozen comparison manifest. With no pin it defers to _without_pin, and competing pins are refused. The pinned generation is read through records_from_curator_generation and must match the manifest's reserved artifact set and frozen assessment count, so later pointer or source movement cannot change which judgments are shown.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+        "content": "sha256:0986f4528d067a840b77d7680f439ef7e9363d8e7ab4cfc58b5cd2fe265e5d8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_curator_record_inputs"
+        }
+      },
+      "id": "RLZ-W7SB7NYW",
+      "invariant": "INV-7W11WKKN",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Requires explicit assessment inputs to be exactly what the immutable curator owner supplies. There must be one assessment channel; an empty input may not claim records; a positive input needs exactly one curator-record pin with only reserved-owner artifacts; and the assessments, artifact set and channel provenance must equal records_from_curator_generation for that pin.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Live and recorded reads select different explicit owner addresses; an unreadable owner is an `unavailable` channel with every artifact listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+            "content": "sha256:b435bd29b84200c6088aef7ce1a7231617dec7bf71412d69952db82d11623abc",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_curator_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The detail keeps its landed wording when it fits the prose bound, and otherwise names the count and the first three artifacts with the error bounded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+            "content": "sha256:c249143ab58438910c217f2fa415dacf13cd887ecc3244853fbe8c3dc14254c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NAMED_ARTIFACTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+            "content": "sha256:80d8c16839fb0f2be4e8c3a5aa05029c44982be7778e69148047ca473bff54d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ERROR_CHARACTERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+            "content": "sha256:92a583b1da73900df4d9802323f04044622e4686d058af0697d7a693b669bdf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreadable_detail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+            "content": "sha256:43e50b6efa39fd05ae4034ae828ce64eb08e7b846665727f7a608a5a99744c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_artifacts_named"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+            "content": "sha256:a4d09c95968000e5b4c4099cc14ea4560318ac13f3ec5a9fc137b0df3ad4f2ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bounded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Both branches pinned apart: 100 artifacts summarised, 10 kept exactly (review F6, R2-2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6d41b2816ba04d4038a707d6b983c09cb8bde42",
+            "content": "sha256:00e11660befdb7b48c68961dd7bc13ec93acdd2b9ae37ce05082e93e3b7c2009",
+            "locator": {
+              "kind": "symbol",
+              "name": "_curator_channel"
+            },
+            "path": "mcp/tests/test_review_assessment_history.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c6d41b2816ba04d4038a707d6b983c09cb8bde42",
+            "content": "sha256:9442c37c494ef6de03712fb5169d0ac2d7e3d773fccaa41fc2321316d284ac52",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable"
+            },
+            "path": "mcp/tests/test_review_assessment_history.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Positive supplied records require complete matching owner provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+            "content": "sha256:0986f4528d067a840b77d7680f439ef7e9363d8e7ab4cfc58b5cd2fe265e5d8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_curator_record_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "History reads only the pinned immutable generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+            "content": "sha256:3b3baf556cbf33c307c4aecc76c4752c62c062cb0d80dccfc71d368decb4861e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_historical_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Uncaptured history is distinct from missing expected content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66abdfd99c8d4afc8df06e9a2e1c212646839627",
+            "content": "sha256:6b249ae4f242314ab287747a6393c1e644de29107ad84fbbb8f35740b816d9f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_pin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

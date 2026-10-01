@@ -1,0 +1,506 @@
+{
+  "path": "mcp/tests/test_knowledge_portable_roundtrip.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three properties the cases falsify, and why the cases are consolidated rather than split.\n\nAnchor: \"Completeness.\"; \"Refusal without partial acceptance.\"; \"Preservation.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:de8139b4f72a223f0eac162aa80d11090732042ee14e82c87b65872a6cc6ddce",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The lane row that keeps this module in the certifying collection path.\n\nAnchor: `integration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The branch-fixture record whose consumer list this module is declared in.\n\nAnchor: \"contract:knowledge-identity-branching-fixture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:674cc0e45bcaa39e972d5253c4e0a4e204d360ea774269c0c705222b6bb574fe",
+            "locator": {
+              "end": 1237,
+              "kind": "line_range",
+              "start": 1237
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The merge-cases record whose consumer list this module is also declared in.\n\nAnchor: \"contract:common-base-merge-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c297b2a047cd8e3a340a492b281531ba5ac7f16e9f01ef90251e23fc8f5ba518",
+            "locator": {
+              "end": 1339,
+              "kind": "line_range",
+              "start": 1339
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The boundary module that imports this module's helpers, so the two are one evidence set, and the onboarding card that records it.\n\nAnchor: \"# mcp/tests/test_knowledge_portable_boundaries.py\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/tests/test_knowledge_portable_boundaries.py.md:1-1"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lane marker, and the two shared support imports that make the registry rows mandatory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:cef7f773ba983abbab18d3fedff66bb85806f063456038e8bd00c0562718af00",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:054298d9523f318d16eec2f4ff4ebd514b91237afb3d6f60a04b9468dfa8e8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "BranchingKnowledgeFixture"
+            },
+            "path": "mcp/tests/knowledge_fixture_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:247e9454c171cf5d77bd97c07ad9f3b7a7d578506eec05b0450dcf5a7b743bdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeCase"
+            },
+            "path": "mcp/tests/merge_case_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The helper set the boundary module imports rather than copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:8df3b456764dd3d1f6c1e27f3b6e865fa0096ed770c5bde9413d45960fff6b84",
+            "locator": {
+              "kind": "symbol",
+              "name": "identity_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:e4fda9e7c120419ecfffce634200cf1a63eb7c7621195a71814e6dc47b72ffd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "exported"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:4f86b3100a0ced15268548e7155f593aa3645ac38a272a85f25cbf76d1973513",
+            "locator": {
+              "kind": "symbol",
+              "name": "artifact_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:53b375b161a65819f1682051b088b55d8a9528154484224b78fbd251c024e17a",
+            "locator": {
+              "kind": "symbol",
+              "name": "envelope_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:08b9343f54c53ee12cd8254f85407bdbdffec8d6399986ec1838f7e04d29fd2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "reencode"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:5a6e27cb0368fb55ce5c6c219c2680e51b3c544eaf0ca45c58899d9c2d05647a",
+            "locator": {
+              "kind": "symbol",
+              "name": "reseal"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:38649c7079ad7eb8ec0c0cbf56aac4a4f5b7f0938aeb4541e295d7d39dab4122",
+            "locator": {
+              "kind": "symbol",
+              "name": "import_into"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:034ee7c0104f5fb834ca1dff8b35614455de7c9655f8cce800f52a4d582c629e",
+            "locator": {
+              "kind": "symbol",
+              "name": "sqlite_entries"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:6762d8b2d9a688c0f65140c95598a20d208f76d8073f59896260f81dce3d6192",
+            "locator": {
+              "kind": "symbol",
+              "name": "row_counts_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:9add92c7539510c59a86d570b0ce7acdb65d383bd628c7f2031c966a976bd684",
+            "locator": {
+              "kind": "symbol",
+              "name": "table_rows"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:dfad8a51d67ffb2d978b9efb81ae6395be335bc1c492a0b3886ca84d1984e48a",
+            "locator": {
+              "kind": "symbol",
+              "name": "identifiers_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:5622c53416f279c2d67c66ceb73fe17be365a62c163ba1fa5869b6ab2351e708",
+            "locator": {
+              "kind": "symbol",
+              "name": "labels_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:d6acffdbab3b001b5aafd45f4b2dbab9a5ad82e51780552700c9e8457db43c04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_staging_directories"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:2bd3b2b1e4b83b95021c0331e17fd3b6cb33a816945d6344fbfd13d06f81d612",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_digest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:553a7f7039f413fbb8b0c8ef84b9f4404a2c49b6440452522150d6f0e2010084",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The node that makes the artifact deterministic and self-accepting: one document of the declared shape that this reader accepts.**\n\nAnchor: \"test_the_artifact_is_one_deterministic_document_of_the_declared_shape\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:ad2a79821116b69fd456ad043b7ad10f00c4b25ca4fedfc3158bed1004834fc7",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 317
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The completeness group, its mutation set and the filtered-response pair that keeps it honest.\n\nAnchor: \"test_an_incomplete_or_inconsistent_artifact_is_refused\"; \"test_a_filtered_read_response_cannot_validate_as_a_complete_export\"; \"test_a_complete_projection_of_the_source_tables_still_validates\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:6409a5e93f7128a9ab79a73ce2962f262b3cd86a256cb5e1422abd37b84307ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inconsistent_artifacts"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:9150591dffd38d40e8679658c9e0ee0d07bdf228de39fa137c8d9508730b18a2",
+            "locator": {
+              "end": 646,
+              "kind": "line_range",
+              "start": 646
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:9d7b04925388b195e80561de616d410f540efa5b27603aa3eda3bd883077d84e",
+            "locator": {
+              "end": 739,
+              "kind": "line_range",
+              "start": 712
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:e301f00f465e8844fb1be2bbb0b895beed1611459c10a630214a6e9ac238fa81",
+            "locator": {
+              "end": 758,
+              "kind": "line_range",
+              "start": 742
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The preservation nodes: every stored value held to the round trip, and `accepted` crossing as a value that promotes nothing.**\n\nAnchor: \"test_a_populated_dataset_round_trips_to_an_equal_logical_dataset\"; \"test_accepted_origin_state_crosses_as_data_and_is_not_promoted\"; \"test_rows_and_strings_cross_the_boundary_exactly\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:2faa7fa27f5d31bc4d598f0e52dd3eae827c8c405b26180eb4571d854aebb394",
+            "locator": {
+              "end": 470,
+              "kind": "line_range",
+              "start": 401
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:4bffbdbe2f64f8e510e8aa53f5ab115b5e9fa98f3f89b7e3159ca224392c8c53",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 473
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:57513b9771185863618b4796b33030e4cf2e124c48d70a50ea02ef4aff28508b",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 371
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The node that exports a dataset which came through the merge — the composition the next leaves consume.\n\nAnchor: \"test_a_merged_dataset_is_also_exportable_and_restorable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:c9e2fcf98e29fcd9baea8727540f8c86b20b4a420159b3a3f0336a75abbd7020",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 489
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The destination-behaviour nodes: replacement only for the admitted identity, and byte preservation with no surviving stage.\n\nAnchor: \"test_a_destination_is_replaced_only_for_the_admitted_identity\"; \"test_a_refused_import_preserves_the_destination_bytes_and_leaves_no_stage\"; \"test_a_successful_import_leaves_no_stage_journal_or_peer_behind\"; \"test_a_dangling_reference_is_refused_at_commit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:01cf363ca507f5ee43a4fd4342ed377e9c71f798d07a2297ce9b4f30ad01de5e",
+            "locator": {
+              "end": 1080,
+              "kind": "line_range",
+              "start": 1023
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:275cd5cab92eb5f3b0b2243966d1e6745706c756ed5add8be39ab4fd8d23deba",
+            "locator": {
+              "end": 1123,
+              "kind": "line_range",
+              "start": 1105
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:fc19360bac6f967ebb23bb8229820e78192406acf742eb6c35bd9a4b52e6f5ee",
+            "locator": {
+              "end": 1102,
+              "kind": "line_range",
+              "start": 1083
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:8a946a34c3b124dd95b03ea6ad9d5d476e475af48bb58e945515c5636d0c0084",
+            "locator": {
+              "end": 1017,
+              "kind": "line_range",
+              "start": 974
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The node that holds the export's identity admission and its no-Git-ancestry boundary.\n\nAnchor: \"test_exporting_a_moved_or_absent_dataset_is_refused\"; \"test_an_export_carries_no_git_ancestry_and_a_repeat_import_is_a_no_change\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:f5ae98da318bf16a191dcbed89162ce9cd8c6a76e4f64486df78b68a8d14620e",
+            "locator": {
+              "end": 1156,
+              "kind": "line_range",
+              "start": 1129
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:d35db5680fb8214da4f33c857db570c66198f4c209e7c3e0ff5e82c3ed7e369a",
+            "locator": {
+              "end": 524,
+              "kind": "line_range",
+              "start": 502
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

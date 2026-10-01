@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/onboarding_trace.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/onboarding_trace.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:44:12+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [worktrees/modules route overview](overview.md)
@@ -72,6 +62,12 @@ report-only findings and the closeout refusal. It reads no Git; the application 
   change or a row; otherwise it is open when `countedChange` is not `true` and no row has its subject.
   `TraceItem.to_document` writes `countedChange: false` and `satisfiedBy: null` for an unreadable item, so
   the stored document and the live gate cannot disagree.
+- **Every history file of the leaf counts (L37, reopen ruling).** `_history_rows` reads the leaf's plain history
+  file and each attempt-qualified file (`owner_history_attempt`) from the candidate, in attempt order, and merges
+  them with `merged_leaf_history`: a later attempt's row about a subject supersedes the earlier one, and a row of
+  the closed file still counts. Trace rows are presence-based, so a closed `no_impact` row still answers a
+  reopened leaf's item for the same card. Any one unreadable file is the `onboarding-trace-history-unreadable`
+  problem, naming that file.
 
 ### Conventions
 
@@ -104,7 +100,9 @@ report-only findings and the closeout refusal. It reads no Git; the application 
 - MIK-R09 (L09) must enforce stored `onboarding_trace` items through `onboarding_item_open`, not through the
   registry's generic row lookup alone, which covers only the row half.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R30@v1` of task
@@ -113,43 +111,33 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: items, satisfaction, the counted-change rule and findings. | "The onboarding refresh gate on history files (MIK-R30), for converted memory trees." | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:1-27 |
-| The kind name and the finding codes. | `ITEM_KIND`; `BASE_SIDECAR_UNREADABLE_CODE` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:49-49; mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:58-58 |
-| Card and route subjects, the root route as `onboarding:overview`. | `card_subject`; `route_subject` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:69-70; mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:73-76 |
-| Anchors lose `blob`, `content` and line numbers before a sidecar comparison. | `_without_mechanical_fields` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:92-112 |
-| An unparseable sidecar is never a counted change; a readable repair of one is. | `counted_sidecar_change` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:138-148 |
-| Sides that could not be established carry a named reason. | `OnboardingTraceSides` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:166-178 |
-| One item, its open state and its stored document. | `TraceItem`; `to_document` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:181-232 |
-| The result, its repair and report-only findings, and the refusal. | `OnboardingTraceResult`; `refusal` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:235-336 |
-| Each unnecessary-row finding names its subject (MIK-R10). | `report_only_findings`; "\"subject\": subject," | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:282-295 |
-| The leaf's `no_impact` rows, or the unreadable-history problem. | `_history_rows` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:339-361 |
-| The nearest governing route of a changed path. | `nearest_governing_route` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:377-388 |
-| The gate: card and route items, the incomplete side and the unreadable base sidecar. | `onboarding_trace_result` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:402-482 |
-| The stored-item predicate L09 uses. | `onboarding_item_open` | mcp/src/agents_remember/worktrees/modules/onboarding_trace.py:485-492 |
-| The row model a `no_impact` row validates against. | `OnboardingTraceRow` | mcp/src/agents_remember/models/knowledge_files/history.py:258-280 |
-| The memory-quality and closeout entry points that call the gate. | `onboarding_trace_gate_for_context`; `validate_onboarding_traces_for_context` | mcp/src/agents_remember/worktrees/modules/onboarding.py:970-996; mcp/src/agents_remember/worktrees/modules/onboarding.py:999-1011 |
-| Only mechanical fields changed: the item stays open. | `test_only_an_anchors_blob_line_numbers_and_content_do_not_count` | mcp/tests/test_onboarding_trace_gate.py:242-290 |
-| The stored predicate and the live gate agree on an unreadable K_C sidecar. | `test_an_unreadable_sidecar_never_satisfies_a_trace` | mcp/tests/test_onboarding_trace_gate.py:464-488 |
+- The module docstring: items, satisfaction, the counted-change rule and findings. [1]
+- The kind name and the finding codes. [2]
+- Card and route subjects, the root route as `onboarding:overview`. [3]
+- Anchors lose `blob`, `content` and line numbers before a sidecar comparison. [4]
+- An unparseable sidecar is never a counted change; a readable repair of one is. [5]
+- Sides that could not be established carry a named reason. [6]
+- One item, its open state and its stored document. [7]
+- The result, its repair and report-only findings, and the refusal. [8]
+- Each unnecessary-row finding names its subject (MIK-R10). [9]
+- The leaf's `no_impact` rows, or the unreadable-history problem. [10]
+- The nearest governing route of a changed path. [11]
+- The gate: card and route items, the incomplete side and the unreadable base sidecar. [12]
+- The stored-item predicate L09 uses. [13]
+- The row model a `no_impact` row validates against. [14]
+- The memory-quality and closeout entry points that call the gate. [15]
+- Only mechanical fields changed: the item stays open. [16]
+- The stored predicate and the live gate agree on an unreadable K_C sidecar. [17]
 
-## Cross-Repo References
+- The leaf's rows come from all of its history files, read as one history. [18]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module compares two in-memory views of one memory
 repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** The Output bullet records the additive `subject` on each report-only finding and why (ruling 01:56:39 Q3); a Todo records MIK-R10's binding of uncovered items to this gate's items; one row added. No verification stamp was advanced.
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): created this card for the new file MIK-R30 adds, recording the architect rulings of 18:49:50 (1, 3), 19:23:45 (N1, N5) and 19:53:54 (R2-1, R2-2). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

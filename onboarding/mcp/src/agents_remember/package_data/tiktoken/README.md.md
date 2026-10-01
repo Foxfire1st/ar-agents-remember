@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/package_data/tiktoken/README.md
 
-| Field                  | Value                                                          |
-| ---------------------- | -------------------------------------------------------------- |
-| repository             | agents-remember                                                |
-| path                   | `mcp/src/agents_remember/package_data/tiktoken/README.md`      |
-| doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `420669c459aab3650cdaa5b3e5271e71d7d94c0e`                     |
-| lastVerifiedCommitDate | 2026-09-17T10:54:08+02:00|
-| governingOverview      | `../../../../overview.md`                                      |
-
 ## Governing Overview
 
 [mcp overview](../../../../overview.md)
@@ -90,70 +80,20 @@ red.
 None known. The README already names its own trigger for change: a refresh is needed only when
 `mcp/tests/test_cold_start.py` reports a new URL.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 Every claim in this README is enforced somewhere else in the repository: by the loader that reads
 the blob, by the attribute that protects its bytes, by the packaging glob that ships it, and by the
 test that re-derives its two hashes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The token module defines the vendored URL, directory, and digest constants. | `VENDORED_VOCABULARY_URL`; `VENDORED_VOCABULARY_DIR`; `VENDORED_VOCABULARY_SHA256` | mcp/src/agents_remember/models/tokens.py:38-38; mcp/src/agents_remember/models/tokens.py:47-48 |
-| The loader derives the hash-named path and verifies the file before loading. | `vendored_vocabulary_path`; `_verify_vendored_vocabulary` | mcp/src/agents_remember/models/tokens.py:57-67; mcp/src/agents_remember/models/tokens.py:70-106 |
-| The cache context scopes `TIKTOKEN_CACHE_DIR` to the verified file and restores it after the load. | `vendored_vocabulary_cache` | mcp/src/agents_remember/models/tokens.py:109-146 |
-| `TiktokenTokenCounter` is the production counter that reads the verified vocabulary. | `TiktokenTokenCounter` | mcp/src/agents_remember/models/tokens.py:183-202 |
-| `DEFAULT_TOKEN_COUNTER` constructs the default token counter at module scope. | `DEFAULT_TOKEN_COUNTER` | mcp/src/agents_remember/models/tokens.py:205-205 |
-| The `-text` attribute this README says must be renamed on refresh, with a comment that points back at this file and names the test that stays red until it is renamed. | "-text" | .gitattributes:12-13 |
-| The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`). | "tiktoken>=0.12"; "package_data/**/*" | mcp/pyproject.toml:29-29; mcp/pyproject.toml:84-84; mcp/pyproject.toml:90-90 |
-| The corruption cases this README describes, each applied to a *copy* in a temp directory and never to the blob here: CRLF-mangled, truncated to half its bytes, one flipped byte through the production `TiktokenTokenCounter()` entry point. | "class CorruptVendoredVocabularyTests(unittest.TestCase):" | mcp/tests/test_cold_start.py:208-281 |
-| The contrast the README draws: the cockpit bundle and its fingerprint sidecar are git-ignored, while this content-addressed blob is committed. | "this file is committed"; "/mcp/src/agents_remember/package_data/dashboard/" | .gitignore:26-26; mcp/src/agents_remember/package_data/tiktoken/README.md:64-64 |
-
-## Update History
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `package_data/**/*` in the row 107 of this card from mcp/pyproject.toml:23-23 to mcp/pyproject.toml:90, the extent of the construct the claim is about (the checker named line(s) [90] as its live location); re-pointed `tiktoken>=0.12` in the row 107 of this card from mcp/pyproject.toml:90 to mcp/pyproject.toml:29, the extent of the construct the claim is about (the checker named line(s) [29] as its live location)
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
-  range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
-  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
-  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
-  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
-  current position. Verification metadata remains closeout-owned.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `CorruptVendoredVocabularyTests` repointed to mcp/tests/test_cold_start.py:208-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: extended the hash/provenance paragraph through local verifier evidence, narrowed the module-scope row, and regenerated both final ranges with the scoped fixer.
-
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: replaced the stale direct-import claim with
-  the current three-hop application/model response-finalization chain into token finalization. New
-  ranges were normalized by the scoped fixer.
-
-- 2026-08-03T10:30+02:00 — 260731-EFA-L6 W3-B07 curator: repaired 25 of 28 retained citation findings (16 table anchors/sources and 9 prose citations); 3 Tier-3 findings remain for the stale direct-import claim. Deleted five external-source rows (10 diagnostics) under the max-reviewer 2026-08-02 14:10 disposition because those sources are outside the frozen roots. Max-reviewer Tier-2 subject-binding addendum bound both sides of the ignored-versus-committed contrast.
-
-- 2026-07-31T22:35+02:00 — 260731-EFA-L3 curator: reconciled against the rewrite the README itself
-  received after the sidecar below was created. The false claim was the attribution of the byte
-  check: this sidecar said the SHA-256 is "the value tiktoken itself asserts on load ... so the
-  shipped file is byte-identical" and left it there, but tiktoken's check **does not fail closed** —
-  `read_file_cached` answers a mismatch with `os.remove(cache_path)` then `read_file(blobpath)` and
-  a write-back (`tiktoken/load.py` 0.13.0 L54-L66, L75-L84), which against this directory is a
-  startup download that rewrites the installed package, or a `PermissionError` on a read-only
-  install. The README now says `models/tokens.py` verifies the digest itself *because* of that, and
-  the sidecar documents it as its own section ("Who checks the bytes, and why it cannot be
-  tiktoken", README L26-L33). Added the section the README gained on what holds it shut
-  (L35-L40: hashes re-derived from installed tiktoken, corruption applied to *copies* only, the
-  `.gitattributes` name test), and the second refresh obligation the README now states —
-  `VENDORED_VOCABULARY_SHA256` in `models/tokens.py` must be replaced alongside the blob. Re-derived
-  every line range against the README as it now stands (67 lines): "why the name is a hash"
-  L13-L28 → L13-L24, "how to refresh" L30-L47 → L42-L62, "why committed" L49-L52 → L64-L67
-  (L1-L11 was unchanged). Fixed the reference table: `tokens.py` citations L44-L54/L57-L95/L132-L151/L154 →
-  L57-L67/L109-L146/L191-L195/L205 plus the new `_verify_vendored_vocabulary()` at L70-L106;
-  `.gitattributes` L5-L11 → L5-L13; `test_cold_start.py` L174-L192 → L222-L244, with new rows for
-  the `.gitattributes` name test (cit:([`test_the_gitattributes_entry_names_the_shipped_file`], mcp/tests/test_cold_start.py:246-259)) and `CorruptVendoredVocabularyTests` (cit:([`CorruptVendoredVocabularyTests`], mcp/tests/test_cold_start.py:208-281)).
-  Corrected the blob size from 3.4 MB to 3.6 MB (3,613,922 bytes, re-measured). Verified
-  `sha256` of the shipped blob still equals `446a9538...1a2d`, matching `expected_hash` at
-  `tiktoken_ext/openai_public.py` L98 in the installed tiktoken 0.13.0, and confirmed the blob was
-  untouched after running the corruption tests. Metadata cells untouched.
-
-- 2026-07-31T20:52+02:00 — 260731-EFA-L3 curator: Created for the vendored tiktoken vocabulary
-  README added by this leaf. Verification metadata is pinned to the leaf's base commit until
-  closeout stamps the code commit.
+- The token module defines the vendored URL, directory, and digest constants. [1]
+- The loader derives the hash-named path and verifies the file before loading. [2]
+- The cache context scopes `TIKTOKEN_CACHE_DIR` to the verified file and restores it after the load. [3]
+- `TiktokenTokenCounter` is the production counter that reads the verified vocabulary. [4]
+- `DEFAULT_TOKEN_COUNTER` constructs the default token counter at module scope. [5]
+- The `-text` attribute this README says must be renamed on refresh, with a comment that points back at this file and names the test that stays red until it is renamed. [6]
+- The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`). [7]
+- The corruption cases this README describes, each applied to a *copy* in a temp directory and never to the blob here: CRLF-mangled, truncated to half its bytes, one flipped byte through the production `TiktokenTokenCounter()` entry point. [8]
+- The contrast the README draws: the cockpit bundle and its fingerprint sidecar are git-ignored, while this content-addressed blob is committed. [9]

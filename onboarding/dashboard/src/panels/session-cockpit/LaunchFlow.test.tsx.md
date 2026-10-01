@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T10:15+02:00                           |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -109,28 +99,33 @@ code in exactly the reviewed failure modes.
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for this file. | — | — |
+No relevant domain documentation was found for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The dialog under test. | "export function LaunchFlow" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:353-353 |
-| The envelope fixtures the routers serve. | "function capabilityEnvelope" | dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-160 |
-| The open-response fixtures (200/400/409×2). | "const OPENED_STARTING" | dashboard/src/test/fixtures/openResponses.ts:17-17 |
-| The shared row builder used for the F9 appeared-row rerenders. | "function catalogRow" | dashboard/src/test/fixtures/catalogRows.ts:12-12 |
-| The store the 200-path evidence assertion reads. | "export const sessionCockpitStore" | dashboard/src/data/sessionCockpitStore.ts:588-588 |
-| `HarnessInfo` — the three-field type the `HARNESSES` const is annotated with, and its runtime `parseHarness` validator. | "export interface HarnessInfo"; "function parseHarness" | dashboard/src/data/harnessCatalog.ts:5-5; dashboard/src/data/harnessCatalog.ts:22-22 |
-| `DetectedHarness` — the server model that fixes the three fields; `WireResponse` is what makes it `extra="forbid"`. | `DetectedHarness`; `WireResponse` | mcp/src/agents_remember/serving/response_contract.py:89-101; mcp/src/agents_remember/serving/response_contract.py:372-377 |
-| The guard whose vocabulary is discovered from a `// TypeScript mirror of` header, and its own note naming the five unmarked modules `harnessCatalog.ts` is one of. | "const MIRROR_MARKER"; "harnessCatalog.ts" | dashboard/src/test/wireFixtureGuard.ts:59-59; dashboard/src/test/wireFixtureGuard.ts:108-108 |
+- The dialog under test. [1]
+- The envelope fixtures the routers serve. [2]
+- The open-response fixtures (200/400/409×2). [3]
+- The shared row builder used for the F9 appeared-row rerenders. [4]
+- The store the 200-path evidence assertion reads. [5]
+- `HarnessInfo` — the three-field type the `HARNESSES` const is annotated with, and its runtime `parseHarness` validator. [6]
+- `DetectedHarness` — the server model that fixes the three fields; `WireResponse` is what makes it `extra="forbid"`. [7]
+- The guard whose vocabulary is discovered from a `// TypeScript mirror of` header, and its own note naming the five unmarked modules `harnessCatalog.ts` is one of. [8]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -138,57 +133,3 @@ Adds lifecycle inheritance and create-invalidation assertions plus a deferred-op
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `LaunchFlow.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 21 citation items; scoped citation check now passes.
-
-- 2026-08-01T10:15+02:00 — 260731-EFA-L4 curator: the card asserted a guarantee the suite no longer
-  provides, so it was corrected rather than merely extended. The FEUI-L9R delta ended "a stale legacy
-  `control: 'starting'` field is explicitly not rendered"; all three `control: "starting"` keys are
-  gone from `HARNESSES` — one per row, and `git diff` over the whole `dashboard/` tree shows these
-  three are the only such removals — so the surviving
-  `not.toContain("adapter starting")` assertions at L167-L178 have nothing planting the field and can
-  no longer fail — the sentence is now flagged superseded, with the reason (`DetectedHarness` declares
-  exactly `id`/`name`/`detected` and `WireResponse` sets `extra="forbid"`, so the daemon could never
-  send it, and nothing in the dashboard read it). Documented the replacement guarantee as a new Logic
-  bullet: the describe at L121-L131 asserts `Object.keys(row).sort()` equals `["detected","id","name"]`
-  per row, backed by the new `const HARNESSES: { harnesses: HarnessInfo[] }` annotation which catches
-  the fresh-literal case at `tsc -b`. I checked the guard rather than assuming the hole is closed:
-  `test/wireFixtureGuard.ts` discovers vocabulary from a `// TypeScript mirror of` first-line marker
-  cit:(["const MIRROR_MARKER"], dashboard/src/test/wireFixtureGuard.ts:108-108), `harnessCatalog.ts` has none, and the guard's own note cit:(["harnessCatalog.ts"], dashboard/src/test/wireFixtureGuard.ts:59-59) lists five live
-  instances — `harnessCatalog.ts`, `submissionLifecycleClient.ts`, `changeset.ts`, `files.ts`,
-  `notes.ts` — so the card says this FILE is guarded and the CLASS is not. Suite re-run: passes.
-  Citation repairs, all six Logic ranges plus Conventions, each re-anchored on its describe or helper:
-  dynamic-only L85-L165 → L133-L214 (inner L151-L162 → L167-L178, L140-L164 → L189-L214); catalog
-  recovery L200-L370 → L216-L386; cost honesty L167-L190 → L388-L411; complete-pair L192-L250 →
-  L413-L471 (inner L236-L249 → L457-L470); response paths L252-L337 → L473-L652; fix-round nets
-  L339-L424 → L654-L739; `stubFetch` L28-L57 → L45-L71 with `defaultRouter` L73-L86 and `renderFlow`
-  L88-L113 named separately. Three reference rows added.
-
-- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: changed the launch-flow router to real HTTP responses so
-  the full component matrix exercises the sole authoritative opener. Verification metadata remains
-  pinned until closeout.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: replaced the retired adapter-word claim with the complete
-  catalog timeout/abort/retry/boot-replacement regression matrix; verification metadata remains
-  pinned pending candidate closeout.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 S6 (R1/R2/R4/R5, extended in fix rounds 1-2
-  with the dismiss-ends-watch and reopen-starts-clean F9 regression cases and the visible
-  adapter-status assertion): the full jsdom matrix over dynamic-only pickers, cost parity, pair
-  rules, and every open-response path. Verification metadata pinned to the leaf base until
-  closeout stamps the L3 code commit.

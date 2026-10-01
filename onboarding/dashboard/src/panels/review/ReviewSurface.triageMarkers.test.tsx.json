@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.triageMarkers.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite's statement: the merge round on real data, comparison 3 and its cards.\n\nAnchor: \"MIK-L33 x MIK-L34 (the merge round)\"; \"triageMarker.cards.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c127bf72d102ea7e5c8e247ef28078a29d556a",
+            "content": "sha256:322e789f807904963e033443a3c3a5a534181e7389aac7a41c6458e3d307cf52",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One membership statement on the followed member, below the way back.\n\nAnchor: \"states the followed unknown membership once on the member, below the way back\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c127bf72d102ea7e5c8e247ef28078a29d556a",
+            "content": "sha256:82028740975131a5ee1238d1f2425cc1d451383eeaedf92e51b9403261475292",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "j after a marker return, focus never taken back by the hold.\n\nAnchor: \"moves with j after a marker return, never taking focus from the held return first\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c127bf72d102ea7e5c8e247ef28078a29d556a",
+            "content": "sha256:541f9a53cf1c28a0f326760c1f278acb9a28b3cbe3ef016f00e0b89f5dbdc338",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 207
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

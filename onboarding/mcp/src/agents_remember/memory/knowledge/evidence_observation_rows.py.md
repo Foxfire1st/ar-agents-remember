@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -76,36 +66,28 @@ group they rebuild.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement that it is the observation half of `evidence_records`, re-exported there, and why it separates. | `__all__` | mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:1-37 |
-| The observation's cells and the declared column order the insert statement is derived from. | `observation_cells`; `OBSERVATION_COLUMNS` | mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:40-78; mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:80-102 |
-| The observation's row and its observable-row digest. | `observation_row`; `observation_row_digest` | mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:105-109; mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:112-130 |
-| **The all-or-nothing column-group decoders and the toolchain decoder, each refusing a partial group by name.** | `_snapshot_of_columns`; `_artifact_of_columns`; `_publication_of_columns`; `_toolchain_of_column` | mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:133-150; mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:153-175; mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:178-195; mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:228-243 |
-| The decode, which recomputes the row digest rather than reading one. | `decode_observation_row` | mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py:198-225 |
-| **The re-export that keeps every caller naming `evidence_records`.** | "from agents_remember.memory.knowledge.evidence_observation_rows import ("; `__all__` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:39-45; mcp/src/agents_remember/memory/knowledge/evidence_records.py:944-1006 |
-| The insert statement built from the declared order, and the write that uses the row tuple. | `_OBSERVATION_INSERT_COLUMNS`; `observation_row` | mcp/src/agents_remember/memory/knowledge/evidence.py:113-121; mcp/src/agents_remember/memory/knowledge/evidence.py:280-280 |
-| A case that decodes stored rows through the re-export. | `test_the_write_time_digest_is_checked_against_the_bytes_and_recorded_as_checked` | mcp/tests/test_knowledge_evidence_observations.py:331-380 |
+- The module's own statement that it is the observation half of `evidence_records`, re-exported there, and why it separates. [1]
+- The observation's cells and the declared column order the insert statement is derived from. [2]
+- The observation's row and its observable-row digest. [3]
+- **The all-or-nothing column-group decoders and the toolchain decoder, each refusing a partial group by name.** [4]
+- The decode, which recomputes the row digest rather than reading one. [5]
+- **The re-export that keeps every caller naming `evidence_records`.** [6]
+- The insert statement built from the declared order, and the write that uses the row tuple. [7]
+- A case that decodes stored rows through the re-export. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): created this one-to-one card for the observation row codec, which the worker moved verbatim out of `evidence_records.py` to bring that module under the 1200-line rail. It reuses the `OBSERVATION_COLUMNS` and column-group text from `evidence_records.py.md`, where the text was removed. It adds the refusal rule for partial groups and the re-export boundary. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

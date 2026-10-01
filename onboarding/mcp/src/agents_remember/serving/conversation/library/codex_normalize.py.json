@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/codex_normalize.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native Codex thread turns are flattened into chronological ConversationItem ordinals by the normalization owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f3f03063371419b682e2de9ba453143ee06b82a",
+            "content": "sha256:03eaf91083eaa88f41f47dd51068add1d19b693a5c6119dd3e93a205eb6029d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_items_from_thread"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared capping, provenance, and text-extraction primitives this parser builds on.\n\nAnchor: `capped_text`, `native_provenance`, `text_content_parts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34a424ef35b5e0a9bf486d0837300973dc6e00e2",
+            "content": "sha256:1e4882cbacfff287f0ce8d8fd8c703b2eec761d1f740d3f8da733e44730b9446",
+            "locator": {
+              "kind": "symbol",
+              "name": "capped_text"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/normalize_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34a424ef35b5e0a9bf486d0837300973dc6e00e2",
+            "content": "sha256:7bfa03434e1efda4ffa6d85b32d0d475db760c73bce8dec50f7d75d9058c9684",
+            "locator": {
+              "kind": "symbol",
+              "name": "native_provenance"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/normalize_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34a424ef35b5e0a9bf486d0837300973dc6e00e2",
+            "content": "sha256:123bd51f0bc28795ff1d99e4e873a99740889aedbe07524c8abf255f0bf439da",
+            "locator": {
+              "kind": "symbol",
+              "name": "text_content_parts"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/normalize_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34a424ef35b5e0a9bf486d0837300973dc6e00e2",
+            "content": "sha256:1d780ed0a1978cae1675b1377340a66b2fa60bf0f1b2d4cf96f3fea84118f350",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/normalize_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34a424ef35b5e0a9bf486d0837300973dc6e00e2",
+            "content": "sha256:ac3241616eb32533570aab37bd3a2de3ef2bd7e433698601ec59a547ac9b521d",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/normalize_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34a424ef35b5e0a9bf486d0837300973dc6e00e2",
+            "content": "sha256:de3f9842bc2f1153858a4ae3a55d90a6110eccb0b415b41e2225b78e0afdf26e",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/normalize_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The normalized item/block/provenance grammar this parser targets.\n\nAnchor: \"class ConversationItem(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35089139cef4ef6981a20c8ef9314ff20a450a8d",
+            "content": "sha256:54e09774f599ec3d1f7664cf253a804854aa5eeea03af2faa5dc991a13a5b535",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/models/conversations/content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

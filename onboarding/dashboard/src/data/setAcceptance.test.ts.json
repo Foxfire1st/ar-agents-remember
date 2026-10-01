@@ -1,0 +1,65 @@
+{
+  "path": "dashboard/src/data/setAcceptance.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pure reducer and promotion implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da4f1c6ffddb8a1cb523b9deb379df3ce4ee123e",
+            "content": "sha256:52b49af7458fa71a381db34c403a28e8b46c92122a1df96a7ec4e7c427cc77eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "reduceSetResult"
+            },
+            "path": "dashboard/src/data/setAcceptance.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Clamp, queued, and unknown fixture extensions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:8229315f801e2bd6d346cd3e714ba965cea550cd77fa86a1c05bc7a5a97d3b5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SET_RESULT_CLAMP"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:c9c7f7a04436f78255218d83ed2cf76d16a0de08337610f5fbff62111f7a3647",
+            "locator": {
+              "kind": "symbol",
+              "name": "QUEUED_THEN_IMMEDIATE_SEQUENCE"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:5dd59dca1b40dae4fb415ab78d4385cd940c2291a8b89a7a370175ca54bacd72",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNKNOWN_THEN_READBACK"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

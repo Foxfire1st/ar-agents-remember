@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/primitives/version.py
 
-| Field                  | Value                                                         |
-| ---------------------- | ------------------------------------------------------------- |
-| repository             | agents-remember                                               |
-| path                   | `mcp/src/agents_remember/kernel/primitives/version.py`         |
-| doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`                    |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                                 |
-
 ## Governing Overview
 
 [kernel primitives overview](overview.md)
@@ -39,49 +29,21 @@ fallback tests deterministic and gives every upper layer one kernel-owned value.
 
 No known follow-up.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external/domain documentation is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Package metadata and source-checkout fallback are selected through the explicit resolver. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-23 |
-| Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity. | `_resolve_server_version` | mcp/src/agents_remember/kernel/primitives/version.py:14-20 |
+- Package metadata and source-checkout fallback are selected through the explicit resolver. [1]
+- Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/kernel/primitives/version.py` changed since the recorded verification
-  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
-  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
-  metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source advanced the
-  source-checkout fallback from `3.0.0rc7` to `3.0.0rc8`. Corrected the Logic sentence; the earlier
-  history entry keeps its original wording as the record of what was true then. Verification
-  metadata remains closeout-owned.
-- 2026-08-12T22:04+02:00 — 260731-EFA-L23 post-code curator: replaced the stale `__version__` description with the committed `_resolve_server_version` seam and its installed-metadata-first source fallback. Final verification stamping remains closeout-owned.
-
-- 2026-08-12T10:08+02:00 — Advanced the source-checkout fallback to `3.0.0rc7` and extracted
-  the existing installed-metadata/fallback branch into `_resolve_server_version()`. Behavior and
-  kernel layering are unchanged; the named function makes a constant-only release delta
-  non-vacuously measurable by targeted CRAP. Verification metadata remains pinned until closeout.
-
-- 2026-08-12T01:38+02:00 — 260731-EFA-L22 citation maintenance: re-anchored the version fallback
-  proof after the structural test split; documented behavior is unchanged.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the kernel version-identity
-  extraction. Verification metadata pinned until closeout stamps the L9 code commit.
+No meaningful cross-repo references found.

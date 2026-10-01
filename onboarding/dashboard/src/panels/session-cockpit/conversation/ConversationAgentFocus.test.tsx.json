@@ -1,0 +1,128 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The surface under test; imported at L34.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c83dce30df8a11fb208befb8b76c12d66747c98c",
+            "content": "sha256:3afea8a1dd2a8d14d4b94782e9280d1710a45774029da0623dc3cb265ede9110",
+            "locator": {
+              "kind": "symbol",
+              "name": "statusRevision"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exported scroll-key set the ArrowDown-absence pin imports; imported at L35.\n\nAnchor: `ArrowDown`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe35126e216da6b8c168d485c93a127b6ea73dd",
+            "content": "sha256:b652282296d0c95785007cc33a8193c5a0af6bd7c76ed2d551c93c4cffcd2417",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/measurements.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real store seeded with projections (`activeConversationStore`, `connectConversation`, `disconnectConversation`); imported at L16-L20.\n\nAnchor: \"export const activeConversationStore =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:8e7de1e954842bac4ded5f325961bfcc05d728f606063e42cfbc2d557e81b095",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The projection type + `emptyProjection` the fixtures extend; imported at L14-L15. `applyInitialPage` at L182-L195 is what copies a page's `capabilities`/`totalItems` onto the projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:e1045043988db2694eeba0207b2b55073418bc2592b8b428e51201752395021b",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyInitialPage"
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The item/identity/status/page wire types the fixtures build (incl. the `agent` ref); imported at L22-L27.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:db87dd254bb34315c7e701287424c18abb15df75c6d16e991d8523bd44beb79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The mocked announcer side channel the visibility gate is asserted against; imported at L13, mocked at L37-L40.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10c66e5d84f945029c828f5c0205edaa23e7a910",
+            "content": "sha256:2ab409d2ac6969e4c9d698c946c985c7a799f866d6840cc142e1b17c6faf3e50",
+            "locator": {
+              "kind": "symbol",
+              "name": "announcePolite"
+            },
+            "path": "dashboard/src/data/announcer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`conversationIdentity` / `conversationItem` / `conversationStatus` / `conversationPage` — the builders the fixtures now use; imported at L28-L33.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:5d2c7b8b4e6bd61dbd010beace48482d175e23bec9b036cd4a0eb2e10612673f",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationItem"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

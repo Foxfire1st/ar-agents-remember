@@ -1,15 +1,5 @@
 # mcp/tests/test_review_subject_catalogue.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_review_subject_catalogue.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T14:38:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -102,40 +92,31 @@ owner's `read_subject_catalogue`; the two support imports (`diff_scope_test_supp
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the uncommitted candidate: the module's own docstring, the
 shared-fixture population helpers, the route config helpers, and the ten cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what it measures and how its populations are built. | `create_invariant`; `create_revision` | mcp/tests/test_review_subject_catalogue.py:1-7 |
-| The shared fixture and the population helpers that extend it through shipped store operations. | `fixture`; `resolution_for`; `_copy_database`; `_author_extra_invariant`; `_insert_bare_identity` | mcp/tests/test_review_subject_catalogue.py:47-58; mcp/tests/test_review_subject_catalogue.py:54-69; mcp/tests/test_review_subject_catalogue.py:71-77; mcp/tests/test_review_subject_catalogue.py:79-116; mcp/tests/test_review_subject_catalogue.py:118-133 |
-| The route-level helpers that drive the entries route as it is served. | `_entry_route_config`; `_place_pair`; `ENTRY_MASTER`; `ENTRY_LEAF` | mcp/tests/test_review_subject_catalogue.py:155-217; mcp/tests/test_review_subject_catalogue.py:219-230; mcp/tests/test_review_subject_catalogue.py:151-152 |
-| **The union with labels and presence, and the fix-round F1 pin that the rows stay globally kind-grouped when retired subjects exist.** | `test_the_catalogue_unions_both_snapshots_with_labels_and_presence`; `test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist` | mcp/tests/test_review_subject_catalogue.py:232-250; mcp/tests/test_review_subject_catalogue.py:252-283 |
-| **The retired and added rows: a before-only subject stays listed and opens one-sided; an after-only subject is listed beside the retired half.** | `test_a_retired_before_only_subject_stays_listed_and_reviewable`; `test_a_newly_added_after_only_subject_is_listed_beside_the_retired_half` | mcp/tests/test_review_subject_catalogue.py:285-309; mcp/tests/test_review_subject_catalogue.py:311-332 |
-| The statement-free family listing and the packet's conforming example: every row opens through the normal review. | `test_a_family_subject_is_listed_without_an_establishable_statement_side`; `test_every_catalogue_row_opens_through_the_normal_review` | mcp/tests/test_review_subject_catalogue.py:334-358; mcp/tests/test_review_subject_catalogue.py:360-386 |
-| **The failure/recovery boundary: a recorded but unselectable subject is listed and its open carries the comparison's own reason.** | `test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason` | mcp/tests/test_review_subject_catalogue.py:388-430 |
-| The labelled totals on the served entry result, and the zero-subject boundary beside the measured source inventory. | `test_the_entry_route_carries_labelled_totals_for_the_whole_catalogue`; `test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory` | mcp/tests/test_review_subject_catalogue.py:432-459; mcp/tests/test_review_subject_catalogue.py:461-509 |
-| **The bounded-loading tripwire: both diff bindings rigged, the route answers with the whole catalogue, so loading never compared.** | `test_catalogue_loading_runs_no_comparison`; `monkeypatch.setattr` | mcp/tests/test_review_subject_catalogue.py:511-545; mcp/tests/test_review_subject_catalogue.py:525-533 |
+- The module's own statement of what it measures and how its populations are built. [1]
+- The shared fixture and the population helpers that extend it through shipped store operations. [2]
+- The route-level helpers that drive the entries route as it is served. [3]
+- **The union with labels and presence, and the fix-round F1 pin that the rows stay globally kind-grouped when retired subjects exist.** [4]
+- **The retired and added rows: a before-only subject stays listed and opens one-sided; an after-only subject is listed beside the retired half.** [5]
+- The statement-free family listing and the packet's conforming example: every row opens through the normal review. [6]
+- **The failure/recovery boundary: a recorded but unselectable subject is listed and its open carries the comparison's own reason.** [7]
+- The labelled totals on the served entry result, and the zero-subject boundary beside the measured source inventory. [8]
+- **The bounded-loading tripwire: both diff bindings rigged, the route answers with the whole catalogue, so loading never compared.** [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-22T14:38:00+02:00 — 260921-ICR-L9 curator (candidate `ar/260921-icr-l9`, uncommitted; production line `f141d164265e926be9249acf6ae680ccf9ffae61`): **created.** The module is new in this leaf and this is its one-to-one card. It records the ten-case catalogue suite: union with labels and presence, the fix-round F1 kind-grouping pin, the retired/added one-sided openings, the statement-free family, the whole-row traversal, the unselectable subject's carried reason, the labelled totals, the zero-subject boundary, and the no-comparison tripwire. It also records the module's evidence-lifecycle registration: as a source-derived consumer of the two exact-scope support rows (`diff_scope_test_support.py`, `read_scope_test_support.py`) in `mcp/tests/evidence-lifecycle.toml`, plus its own unit-regression lane row in `mcp/tests/test-evidence-lanes.toml`. **Stamp accounting:** the verification pair names this leaf's base — the production line `f141d164265e926be9249acf6ae680ccf9ffae61`, the last real commit the reading was taken against — because the module exists only in this leaf's uncommitted candidate; closeout owns the stamp once the code commit exists.
+No applicable cross-repository source was found.

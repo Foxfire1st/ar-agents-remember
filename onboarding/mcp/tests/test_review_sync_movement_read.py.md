@@ -1,15 +1,5 @@
 # mcp/tests/test_review_sync_movement_read.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_review_sync_movement_read.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp tests route overview](overview.md)
@@ -131,81 +121,57 @@ lines**.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository — the memory layer's `system/sources.md`
 records no entries at all. The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The claims on this card are checkable in the module's own docstrings and cases and in the read-side owners
 they drive. What a reader should carry: the module is the read half of one obligation and imports its
 sibling's fixture rather than rebuilding it; `None`, `not-measured` and `unavailable` are three different
 facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the seam, of what it owns, and that it shares the enclosure fixture rather than duplicating it.** | `read_knowledge_review` | mcp/tests/test_review_sync_movement_read.py:1-16 |
-| **The imports that make the sibling's fixture the one enclosure construction, and the cases' own `NEWLINE`.** | `ReviewSyncFixture`; `NEWLINE`; `commit_file`; `git` | mcp/tests/test_review_sync_movement_read.py:25-37 |
-| The shipped review read the cases drive, and the read-side owner names they assert on. | `read_knowledge_review`; `rebinding_file_name`; `rebinding_result_block`; `resolved_pair_completed` | mcp/tests/test_review_sync_movement_read.py:26-34 |
-| The case class, and the one shared read assertion the `F6` phase ends in. | `LiveReviewMovementTests`; `assert_the_read_renders_the_movement` | mcp/tests/test_review_sync_movement_read.py:330-358; mcp/tests/test_review_sync_movement_read.py:40-327 |
-| **`F6`: the three states of the primary read — no measurement, a measured agreement, and a measured movement — ending in the packet's own phase.** | `test_the_live_review_read_renders_what_the_sync_moved`; `sync_movement` | mcp/tests/test_review_sync_movement_read.py:41-102 |
-| **`G1`: an uncompared knowledge channel is `not-measured` with the record's reason, with the agreement clause asserted absent.** | `test_an_uncompared_knowledge_channel_is_rendered_unmeasured`; `"still describes the pair it resolved"` | mcp/tests/test_review_sync_movement_read.py:106-169 |
-| **`G1`: both causes of an unusable record, and the `H2` pin that `record_readable` cannot separate them.** | `test_a_record_that_cannot_be_used_is_reported_unavailable`; `"not a readable"`; `record_readable` | mcp/tests/test_review_sync_movement_read.py:169-225 |
-| **`G2`: the success conjunct, and a failed result that cannot be measured.** | `test_a_carrying_state_reported_as_a_failure_is_not_measured`; `resolved_pair_completed`; `rebinding_result_block` | mcp/tests/test_review_sync_movement_read.py:227-256 |
-| **`H1`: the four per-clause forgeries, each departing from exactly one clause of the movement validator.** | `test_the_movement_validator_refuses_each_false_shape`; `"stale_without_identity"` | mcp/tests/test_review_sync_movement_read.py:260-327 |
-| **The read-side owner: the projection, its three outcomes, and the acceptance that requires the record to describe this very generation.** | `review_sync_movement`; `_measured`; `rebinding_names_the_generation` | mcp/src/agents_remember/application/review_sync_movement.py:89-107; mcp/src/agents_remember/application/review_sync_movement.py:110-137 |
-| **The record's three verdicts mapped once, because reading "did any channel differ" would promote `unmeasured` to agreement.** | `_MOVEMENT_STATES` | mcp/src/agents_remember/application/review_sync_movement.py:77-81 |
-| The `unavailable` value: an absence reported with its reason and without an agreement clause. | `_unavailable` | mcp/src/agents_remember/application/review_sync_movement.py:140-157 |
-| One accepted record projected, with resolved identities carried exactly on the channel that moved. | `_project` | mcp/src/agents_remember/application/review_sync_movement.py:167-215 |
-| The unmeasured reason in the record's own words, and the one sentence each state publishes. | `_unmeasured_reason`; `_statement`; `_measured_clause` | mcp/src/agents_remember/application/review_sync_movement.py:218-236; mcp/src/agents_remember/application/review_sync_movement.py:239-283; mcp/src/agents_remember/application/review_sync_movement.py:286-308 |
-| **The fold that makes a measured movement outrank the reader's carried identity, which is what `F6` renders.** | `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
-| The read route that renders the movement and folds the staleness beside it. | `review_sync_movement`; `sync_movement` | mcp/src/agents_remember/application/knowledge_review.py:453-453; mcp/src/agents_remember/application/knowledge_review.py:519-519 |
-| **The four-valued movement vocabulary, and the validator clause the `H1` forgeries are aimed at.** | `ReviewSyncMovementState`; `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_staleness.py:48-48; mcp/src/agents_remember/models/knowledge/review_staleness.py:141-197 |
-| **The two fields the `H2` ambiguity turns on, and the reviewed/resolved identity fields `F6` asserts.** | `record_readable`; `reason` | mcp/src/agents_remember/models/knowledge/review_staleness.py:125-125; mcp/src/agents_remember/models/knowledge/review_staleness.py:137-137 |
-| The submission vocabulary whose `disabled_stale` state ends the `F6` phase. | `ReviewSubmission`; `"disabled_stale"` | mcp/src/agents_remember/models/knowledge/review_staleness.py:190-204; mcp/src/agents_remember/application/review_record_rendering.py:199-226 |
-| **The block that says why nothing was bound, which `G2` calls with a failed payload.** | `rebinding_result_block`; `"not-measured"` | mcp/src/agents_remember/application/review_sync_rebinding.py:316-373; mcp/src/agents_remember/application/review_sync_rebinding.py:565-582 |
-| **The reader whose `not-recorded` and `unreadable` states the two `G1` cases exercise.** | `read_review_sync_rebinding`; `"unreadable"` | mcp/src/agents_remember/application/review_sync_rebinding.py:376-438 |
-| **The half that makes a valid record naming another comparison unusable: it is compared against the sealed manifest.** | `rebinding_names_the_generation` | mcp/src/agents_remember/application/review_sync_rebinding.py:441-476 |
-| The one durable location per (leaf, generation) the cases write, read and unlink. | `rebinding_file_name`; `durable_reports_root` | mcp/src/agents_remember/application/review_sync_rebinding.py:265-268; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
-| The record model and its self-consistency validator the projected movement reads. | `ReviewSyncRebinding` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:193-390 |
-| The generation manifest the reviewed identities and binding digest come from. | `ComparisonGenerationManifest`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:405-498; mcp/src/agents_remember/application/review_comparison_generation.py:615-649 |
-| The remedy the successor action names, which no case here performs. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
-| The production sync tool whose payload the read-side block is attached to. | `rebinding_result_block` | mcp/src/agents_remember/application/worktree_tools.py:378-378 |
-| **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** | "mcp/tests/test_review_sync_movement_read.py" | mcp/tests/test-evidence-lanes.toml:361-361 |
-| The catalog digest the added consumer rows move, pinned by the structural check. | `LIFECYCLE_CATALOG_SHA256` | mcp/tests/test_dependency_ownership_ast_helpers.py:46-46 |
-| The sibling module that owns the sync-side cases, the fixture and the shared helpers. | `ReviewSyncFixture`; `assert_rebinding_measures_the_location` | mcp/tests/test_review_sync_rebinding.py:102-378; mcp/tests/test_review_sync_rebinding.py:853-867 |
+- **The module's own statement of the seam, of what it owns, and that it shares the enclosure fixture rather than duplicating it.** [1]
+- **The imports that make the sibling's fixture the one enclosure construction, and the cases' own `NEWLINE`.** [2]
+- The shipped review read the cases drive, and the read-side owner names they assert on. [3]
+- The case class, and the one shared read assertion the `F6` phase ends in. [4]
+- **`F6`: the three states of the primary read — no measurement, a measured agreement, and a measured movement — ending in the packet's own phase.** [5]
+- **`G1`: an uncompared knowledge channel is `not-measured` with the record's reason, with the agreement clause asserted absent.** [6]
+- **`G1`: both causes of an unusable record, and the `H2` pin that `record_readable` cannot separate them.** [7]
+- **`G2`: the success conjunct, and a failed result that cannot be measured.** [8]
+- **`H1`: the four per-clause forgeries, each departing from exactly one clause of the movement validator.** [9]
+- **The read-side owner: the projection, its three outcomes, and the acceptance that requires the record to describe this very generation.** [10]
+- **The record's three verdicts mapped once, because reading "did any channel differ" would promote `unmeasured` to agreement.** [11]
+- The `unavailable` value: an absence reported with its reason and without an agreement clause. [12]
+- One accepted record projected, with resolved identities carried exactly on the channel that moved. [13]
+- The unmeasured reason in the record's own words, and the one sentence each state publishes. [14]
+- **The fold that makes a measured movement outrank the reader's carried identity, which is what `F6` renders.** [15]
+- The read route that renders the movement and folds the staleness beside it. [16]
+- **The four-valued movement vocabulary, and the validator clause the `H1` forgeries are aimed at.** [17]
+- **The two fields the `H2` ambiguity turns on, and the reviewed/resolved identity fields `F6` asserts.** [18]
+- The submission vocabulary whose `disabled_stale` state ends the `F6` phase. [19]
+- **The block that says why nothing was bound, which `G2` calls with a failed payload.** [20]
+- **The reader whose `not-recorded` and `unreadable` states the two `G1` cases exercise.** [21]
+- **The half that makes a valid record naming another comparison unusable: it is compared against the sealed manifest.** [22]
+- The one durable location per (leaf, generation) the cases write, read and unlink. [23]
+- The record model and its self-consistency validator the projected movement reads. [24]
+- The generation manifest the reviewed identities and binding digest come from. [25]
+- The remedy the successor action names, which no case here performs. [26]
+- The production sync tool whose payload the read-side block is attached to. [27]
+- **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** [28]
+- The catalog digest the added consumer rows move, pinned by the structural check. [29]
+- The sibling module that owns the sync-side cases, the fixture and the shared helpers. [30]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every case runs the shipped review read against
 an enclosure, a generation store and a published dataset inside one repository boundary, and it reads the
 record the same leaf's own managed syncs published at that repository's durable reports root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`, `test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:32:09+00:00: Generated citation repair: "mcp/tests/test_review_sync_movement_read.py" repointed to mcp/tests/test-evidence-lanes.toml:361-361. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-
-- 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 1 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
-- 2026-09-27T05:29:43+00:00: Generated citation repair: "mcp/tests/test_review_sync_movement_read.py" repointed to mcp/tests/test-evidence-lanes.toml:315-315. No content impact: mechanical anchor-range projection bound to citation source snapshot a9e4bf20669ecb356be8a208a2ac77489c28fc161e108a6d1b20c61579617d84; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:20:23+00:00: Generated citation repair: `freeze_review_comparison` repointed to mcp/src/agents_remember/application/review_comparison_freeze.py:233-252. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **the module's docstring now names its own half of the movement question, and four reference rows here were re-anchored.** The summary line reads "what the *live* review read renders about the movement a managed sync measured" and the closing paragraph points at `test_review_external_git_movement_read.py` for the raw-Git half (`:1`, `:15-17`). The repaired rows are the four whose anchors sit in this file: the shared fixture import block (`:20-37`), the case class (`:40-327`), the read route's composition call (`knowledge_review.py:483-495`, `:555`) and the production sync tool's call site (`worktree_tools.py:378`). **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee`): created this one-to-one card for the module this leaf introduced as **ICR-R22@v1**'s read-side case evidence — what the shipped `read_knowledge_review` renders about a sync that moved the reviewed inputs. It records what the five cases actually prove: the split from the sync-side module is the **file-size rail's**, and the seam is the one the production owners already have, so this module imports its sibling's enclosure fixture (`ReviewSyncFixture`, `NEWLINE`, `commit_file`, `git`) instead of building a second one; the primary phase asserts the movement, the composed comparison's differing binding digest, the folded staleness and the `disabled_stale` submission; an uncompared knowledge channel is `not-measured` with the record's own reason and the agreement clause asserted **absent**; both causes of an unusable record render `unavailable`; and the success conjunct is pinned as a requirement rather than an observed producer. Two boundaries are carried as boundaries and not as defects: `H2` is a recorded ambiguity — both `unavailable` causes report `record_readable` False, so the sub-fact travels in `reason`, and the field-level fix needs a production-byte change in `models/knowledge/review_staleness.py` and is held for the master's ruling; and the `H1` sweep covers the four clauses a per-clause audit found unpinned, not every branch of the validator. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name this leaf's recorded base commit `e605822eb3bf83bf63a45963c5f51d5fc28859ee` because every construct cited here exists only in this leaf's uncommitted working tree — this module and its four catalog rows are not in any commit yet; what was actually read is that working tree, and the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

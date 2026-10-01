@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -78,65 +68,36 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the class `Sources` (lines 65-91) — Line-cached reads of the code and memory files a run touches.. | `Sources` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:65-91 |
-| Defines the class `Tally` (lines 95-107) — What the run measured, beside the findings -- see modes 2, 5 and the ceiling.. | `Tally` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:95-107 |
-| Defines the class `Run` (lines 111-123) — Everything one document sweep carries, including its immutable source index.. | `Run` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:111-123 |
-| Defines the class `Resolved` (lines 127-131) — One citation and the file it named.. | `Resolved` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:134-139 |
-| Defines the class `ClaimScope` (lines 135-147) — One row, what it resolved to, and how to read those files.. | `ClaimScope` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:135-147 |
-| Defines the function `containing_identifiers` (lines 150-154) — Longer identifiers in ``body`` that carry ``symbol`` -- mode 1's evidence.. | `containing_identifiers` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:158-162 |
-| Defines the function `elsewhere_in_file` (lines 157-161) — Every line of the file holding the anchor, capped -- the fix, usually.. | `elsewhere_in_file` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:165-169 |
-| Defines the function `anchor_evidence` (lines 164-182) — Where the anchor actually is, or what the range holds instead.. | `anchor_evidence` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:164-182 |
-| Defines the function `finding` (lines 185-193). | `finding` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:185-193 |
-| Defines the function `table_format_finding` (lines 196-215) — A table still in the superseded shape -- the whole migration, named in one message.. | `table_format_finding` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:196-215 |
-| Defines the function `malformed_findings` (lines 218-228). | `malformed_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:218-228 |
-| Defines the function `pairing_findings` (lines 231-265) — A claim holding one half of a citation. Neither half means anything alone.. | `pairing_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:231-265 |
-| Defines the function `repeated_sources` (lines 268-273) — Exact repeated source texts within this Claim, in first-seen order.. | `repeated_sources` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:276-281 |
-| Defines the function `duplicate_source_findings` (lines 276-288) — Exact repeated sources within this Claim; separate Claims remain independent.. | `duplicate_source_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:276-288 |
-| Defines the function `out_of_bounds` (lines 291-293) — Every citation of this claim whose range runs past the end of its own file.. | `out_of_bounds` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:299-301 |
-| Defines the function `unsatisfied` (lines 296-314) — Every anchor of this claim that no resolved range holds.. | `unsatisfied` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:296-314 |
-| Defines the function `bounds_findings` (lines 317-331) — A range past the end of the file its own citation names.. | `bounds_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:317-331 |
-| Defines the function `absent_findings` (lines 334-356) — The anchors no range held, each naming EVERY location in the tree that does hold it.. | `absent_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:362-414 |
-| Defines the function `vanished_finding` (lines 359-378) — A source into THIS repository at a path that no longer exists.. | `vanished_finding` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:409-428 |
-| Defines the function `claim_findings` (lines 381-404). | `claim_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:530-555 |
-| Defines the function `prose_findings` (lines 407-440) — The prose serialisation: ``cit:`` constructs, and the spelling that preceded them.. | `prose_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:558-591 |
-| Defines the function `misplaced_findings` (lines 443-461) — The prose form written into a table cell -- the wrong serialisation, not a defect-free row.. | `misplaced_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:594-612 |
-| Defines the function `check_document` (lines 464-481). | `check_document` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:615-632 |
-| Defines the function `overshoot` (lines 484-487) — How far past the end of the file a bounds finding reaches -- for worst-first order.. | `overshoot` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:635-638 |
-| Defines the function `worst_first` (lines 490-496) — The complete offender list, deepest overrun first (L6-R15).. | `worst_first` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:641-647 |
-| Defines the function `check_onboarding_root` (lines 499-532) — Every citation in the memory tree, resolved against both repositories.. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:650-683 |
-| Defines the function `_check_documents` (lines 535-568) — Check the selected documents against one already-validated source generation.. | `_check_documents` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:686-720 |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `Resolved` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:134-139. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `containing_identifiers` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:158-162. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `elsewhere_in_file` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:165-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `repeated_sources` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:276-281. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `out_of_bounds` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:299-301. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `absent_findings` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:362-414. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `claim_findings` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:530-555. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `prose_findings` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:558-591. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `misplaced_findings` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:594-612. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `check_document` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:615-632. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `overshoot` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:635-638. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `worst_first` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:641-647. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `check_onboarding_root` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:650-683. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `_check_documents` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:686-720. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `vanished_finding` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:409-428. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `claim_findings` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:431-454. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `prose_findings` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:457-490. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `misplaced_findings` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:493-511. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `check_document` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:514-531. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `overshoot` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:534-537. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `worst_first` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:540-546. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `check_onboarding_root` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:549-582. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_check_documents` repointed to mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:585-618. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T19:21+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the pure-move classification this change adds, which the card did not carry. `absent_findings` no longer bills every absent anchor alike: a new `moved_extent` decides the row structurally — the anchor still resolving EXACTLY ONCE in a cited file, outside every cited range, is a stale range caused by somebody's inserted registration, and it is published `reportOnly=True` at `warning` (same `citation_anchor_absent_from_range` code, a message saying the range is STALE BY A MOVE and naming the lines the anchor now occupies) so it is counted and reviewed without entering `findingCount` or the curator-actionable arithmetic. Resolving nowhere or more than once stays enforced, which is why the classification cannot swallow the class it separates. Documentation only: no source byte was touched by this pass. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are NOT advanced — these sources are uncommitted, so no commit carries their bytes; the candidate is named in the the recorded working candidate metadata row and the governed closeout owns the real commits.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- Defines the class `Sources` (lines 65-91) — Line-cached reads of the code and memory files a run touches.. [1]
+- Defines the class `Tally` (lines 95-107) — What the run measured, beside the findings -- see modes 2, 5 and the ceiling.. [2]
+- Defines the class `Run` (lines 111-123) — Everything one document sweep carries, including its immutable source index.. [3]
+- Defines the class `Resolved` (lines 127-131) — One citation and the file it named.. [4]
+- Defines the class `ClaimScope` (lines 135-147) — One row, what it resolved to, and how to read those files.. [5]
+- Defines the function `containing_identifiers` (lines 150-154) — Longer identifiers in ``body`` that carry ``symbol`` -- mode 1's evidence.. [6]
+- Defines the function `elsewhere_in_file` (lines 157-161) — Every line of the file holding the anchor, capped -- the fix, usually.. [7]
+- Defines the function `anchor_evidence` (lines 164-182) — Where the anchor actually is, or what the range holds instead.. [8]
+- Defines the function `finding` (lines 185-193). [9]
+- Defines the function `table_format_finding` (lines 196-215) — A table still in the superseded shape -- the whole migration, named in one message.. [10]
+- Defines the function `malformed_findings` (lines 218-228). [11]
+- Defines the function `pairing_findings` (lines 231-265) — A claim holding one half of a citation. Neither half means anything alone.. [12]
+- Defines the function `repeated_sources` (lines 268-273) — Exact repeated source texts within this Claim, in first-seen order.. [13]
+- Defines the function `duplicate_source_findings` (lines 276-288) — Exact repeated sources within this Claim; separate Claims remain independent.. [14]
+- Defines the function `out_of_bounds` (lines 291-293) — Every citation of this claim whose range runs past the end of its own file.. [15]
+- Defines the function `unsatisfied` (lines 296-314) — Every anchor of this claim that no resolved range holds.. [16]
+- Defines the function `bounds_findings` (lines 317-331) — A range past the end of the file its own citation names.. [17]
+- Defines the function `absent_findings` (lines 334-356) — The anchors no range held, each naming EVERY location in the tree that does hold it.. [18]
+- Defines the function `vanished_finding` (lines 359-378) — A source into THIS repository at a path that no longer exists.. [19]
+- Defines the function `claim_findings` (lines 381-404). [20]
+- Defines the function `prose_findings` (lines 407-440) — The prose serialisation: ``cit:`` constructs, and the spelling that preceded them.. [21]
+- Defines the function `misplaced_findings` (lines 443-461) — The prose form written into a table cell -- the wrong serialisation, not a defect-free row.. [22]
+- Defines the function `check_document` (lines 464-481). [23]
+- Defines the function `overshoot` (lines 484-487) — How far past the end of the file a bounds finding reaches -- for worst-first order.. [24]
+- Defines the function `worst_first` (lines 490-496) — The complete offender list, deepest overrun first (L6-R15).. [25]
+- Defines the function `check_onboarding_root` (lines 499-532) — Every citation in the memory tree, resolved against both repositories.. [26]
+- Defines the function `_check_documents` (lines 535-568) — Check the selected documents against one already-validated source generation.. [27]

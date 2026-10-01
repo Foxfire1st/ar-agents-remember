@@ -1,15 +1,5 @@
 # mcp/tests/knowledge_index_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/knowledge_index_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T08:01:17+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba`|
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -38,7 +28,9 @@
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The index's design authority is the coordination-root note Doc14
@@ -46,30 +38,19 @@ No domain documentation source is configured for this repository (`system/source
 packet `MIK-R23@v1` of task `260928_maintained-invariant-knowledge`; both live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The fixture writers and the converter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two fixture kinds and the converter's limits. | "It is not the MIK-R24 conversion" | mcp/tests/knowledge_index_test_support.py:1-15 |
-| The conforming-example tree. | `write_review_tree`; `REVIEW_PATH`; `FAMILY` | mcp/tests/knowledge_index_test_support.py:144-339; mcp/tests/knowledge_index_test_support.py:37-37; mcp/tests/knowledge_index_test_support.py:48-48 |
-| The fixture converter and its head selection. | `convert_dataset`; `_convert`; `_heads`; `_convert_realizations` | mcp/tests/knowledge_index_test_support.py:377-384; mcp/tests/knowledge_index_test_support.py:387-449; mcp/tests/knowledge_index_test_support.py:347-361; mcp/tests/knowledge_index_test_support.py:452-488 |
-| The store-authored parity database and the extra candidate claim. | `build_parity_dataset`; `add_parity_claim` | mcp/tests/knowledge_index_test_support.py:504-683; mcp/tests/knowledge_index_test_support.py:686-745 |
+- The two fixture kinds and the converter's limits. [1]
+- The conforming-example tree. [2]
+- The fixture converter and its head selection. [3]
+- The store-authored parity database and the extra candidate claim. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the fixtures are written under the caller's `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): created this card for the new file MIK-R23 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

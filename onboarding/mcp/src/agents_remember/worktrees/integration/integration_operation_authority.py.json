@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Final output authority is the contract's exact accepted pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b0725eab3ab9c5e495d7df04ea00787035f0faa",
+            "content": "sha256:06056f43dd9ba40bc074cba950eb70c0b4856aae70c80f19d408236961724f73",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_authorized_integration_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source and ref proof remain at the prepared movement boundary.\n\nAnchor: \"Perform every refusing read before the lifecycle marks the move irreversible.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:151351600c0a9a60f6881259fc9496650076dbbe07175f8b54cb75c03e32e920",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_integration_ref_move"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

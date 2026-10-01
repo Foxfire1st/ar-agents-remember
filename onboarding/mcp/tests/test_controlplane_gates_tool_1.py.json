@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_controlplane_gates_tool_1.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Create then decide records attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46cd7b09c412b8fd0f462642c782bb44b981448a",
+            "content": "sha256:b00fd83b106278e7c42931a5a29f094744c5de31387b3c001bbbdcfe7392fdc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_create_then_decide_records_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Orchestration decision rejects owner self approval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46cd7b09c412b8fd0f462642c782bb44b981448a",
+            "content": "sha256:68badc15d34eb327eac3ab61a8c4c9bc6d17abc034cc006065b686551cb9c198",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_orchestration_decision_rejects_owner_self_approval"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Orchestration decision requires verdict when policy requires it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46cd7b09c412b8fd0f462642c782bb44b981448a",
+            "content": "sha256:ef1e5ae54441759e2212e09adcb559dd4fe9a82eab55764ca045219ba7da5498",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_orchestration_decision_requires_verdict_when_policy_requires_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Create expires previous open lifecycle gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46cd7b09c412b8fd0f462642c782bb44b981448a",
+            "content": "sha256:7172a68f7744b19e468eecba9b07eec9b144ac86f33fa05cb2f77192e638a4be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_create_expires_previous_open_lifecycle_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Lifecycle gate default returns after developer decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46cd7b09c412b8fd0f462642c782bb44b981448a",
+            "content": "sha256:ce052e23b49664512152358439d320f407e355006677f8eef6f2565f28b34ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lifecycle_gate_default_returns_after_developer_decision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Lifecycle gate rejects explicit lifecycle mismatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46cd7b09c412b8fd0f462642c782bb44b981448a",
+            "content": "sha256:63b3f6328912fd7e5cbd57042cd5c81f46ed28fe9a46db7828d53b19db058929",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lifecycle_gate_rejects_explicit_lifecycle_mismatch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

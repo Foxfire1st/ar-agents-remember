@@ -1,15 +1,5 @@
 # dashboard/src/data/keymap/chords.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/keymap/chords.ts`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [data/keymap overview](overview.md)
@@ -70,32 +60,28 @@ keyboard-reference surfaces.
   (see the invariant above). If the rule that every chord's id is a registered command should hold without
   exception, the reviewer's traversal needs registry entries; nothing asserts it today.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two zone-scoped chord tables and the generic-suppression comment on `?`. | `CHROME_CHORDS`; `COMPOSER_CHORDS` | dashboard/src/data/keymap/chords.ts:20-81; dashboard/src/data/keymap/chords.ts:83-104 |
-| The binding that installs both tables and enforces the per-chord zone lists. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
-| The `?` page renders these tables under the Chrome/Composer group headings. | "Chrome — the shell around the panes"; "Composer — the editor owns its keys" | dashboard/src/panels/session-cockpit/CommandPalette.tsx:260-260; dashboard/src/panels/session-cockpit/CommandPalette.tsx:268-268 |
-| The command ids these chords dispatch (registered defaults). | "palette.open"; "keyboard.reference" | dashboard/src/data/commands.ts:90-90; dashboard/src/data/commands.ts:97-97 |
-| The reviewer's `j`/`k` table, `review` zone only (MIK-L33). | `REVIEW_CHORDS`; "review.nextChange" | dashboard/src/data/keymap/chords.ts:106-122 |
-| The reviewer binds them itself on its zone from the effective keymap. | `useChangeTraversal`; "const binding = bindingFor(keymap, commandId);" | dashboard/src/panels/review/changeTraversal.ts:119-164 |
+- The two zone-scoped chord tables and the generic-suppression comment on `?`. [1]
+- The binding that installs both tables and enforces the per-chord zone lists. [2]
+- The `?` page renders these tables under the Chrome/Composer group headings. [3]
+- The command ids these chords dispatch (registered defaults). [4]
+- The reviewer's `j`/`k` table, `review` zone only (MIK-L33). [5]
+- The reviewer binds them itself on its zone from the effective keymap. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## 260715-FEUI-L5 Reliable Submit Delta
 
@@ -114,24 +100,3 @@ EFFECTIVE assignment via `preferences.ts`'s `ariaKeyshortcuts` (never a phantom 
 dispatches the id only when the palette `when`-gate reports the turn is interruptible. Additive to the
 zone-scoping contract; the reviewed L4 candidate is uncommitted, verification stays pinned to the
 FEUI-L1 base until closeout.
-
-## Update History
-
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-R33 rule 7:** `REVIEW_CHORDS` (`J`/`K` → `review.nextChange`/`review.previousChange`, `review` zone only, rebindable, listed on the `?` page). Purpose, Logic and Invariants updated; the rule that chord ids are registered commands now names its exception (the reviewer binds its two chords itself; no `data/commands.ts` entry), recorded as a Todo for the keymap owner. Two rows added.
-- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 4 repo-internal citation rows and preserved verification metadata.
-
-- 2026-07-24T13:17:50Z — Updated the default composer submit chord to Enter. Verification hash/date
-  remain pinned to the pre-commit source stamp.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
-  the new `conversation.stop` chord (`Control+Shift+Period`, chrome+composer, pty-excluded,
-  collision-audited) replacing the stale `turn.stop` (F2); the effective assignment drives the
-  derived `aria-keyshortcuts` (F25). Verification metadata remains pinned to the leaf base until
-  closeout.
-- 2026-07-17T21:39+02:00 — FEUI-L5: recorded the composer/chrome Alt+Up ownership split.
-
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4: the chrome/composer chord tables with
-  per-chord zone lists (harness-owned Alt chords chrome-only; ctrl+k never over PTY; composer Esc
-  → stage header). Review round 2 (finding 3) removed the never-read `printable` field in favor of
-  the documented generic `routeKey` suppression. Verification metadata pinned to the task base
-  until closeout stamps the L1 code commit.

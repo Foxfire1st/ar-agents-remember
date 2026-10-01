@@ -1,0 +1,78 @@
+{
+  "path": "dashboard/src/panels/review/triageOrderPreference.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement: browser-local, triage by default, no server state.\n\nAnchor: \"It is a browser-local UI preference\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1e442b7382604253a52720fffe0a9aff95ff246",
+            "content": "sha256:783621160a26dd97da593ef45b07afef17275e92271758b8a076aaf53e89f4bd",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The key and the read that falls back to triage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1e442b7382604253a52720fffe0a9aff95ff246",
+            "content": "sha256:3e81e8b4c04481f32cb6d8344fab5645df090a95cb6c910947c3f0c622172f34",
+            "locator": {
+              "kind": "symbol",
+              "name": "TREE_ORDER_KEY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1e442b7382604253a52720fffe0a9aff95ff246",
+            "content": "sha256:0db5ce1345589c3013b131fd60d60da85c02de8a89f8490756a6715ffceb72fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "readTreeOrder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store and its hook.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1e442b7382604253a52720fffe0a9aff95ff246",
+            "content": "sha256:58eca6365e06cc47fc80c90a7d473be86d9e59c8d61efc74992e592492f1af68",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeOrderStore"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1e442b7382604253a52720fffe0a9aff95ff246",
+            "content": "sha256:38816289230d38ad15f86a52b07c97b63db42b974813f651c86b5411dbfa0b89",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTreeOrder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

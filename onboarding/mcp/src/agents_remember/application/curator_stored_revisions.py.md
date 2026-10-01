@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/curator_stored_revisions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/curator_stored_revisions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T17:09:54+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -53,33 +43,26 @@ module has no write path and holds no state.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement: replay and admission are answered by the candidate's rows, never by the journal.** | "The same answer decides admission." | mcp/src/agents_remember/application/curator_stored_revisions.py:1-12 |
-| Every stored revision, read over a read-only connection. | `stored_revisions` | mcp/src/agents_remember/application/curator_stored_revisions.py:22-32 |
-| **The recorded revisions the candidate already stores; empty with no dataset yet.** | `committed_revisions` | mcp/src/agents_remember/application/curator_stored_revisions.py:35-41 |
-| The read-only opener it uses. | `open_read_only_database` | mcp/src/agents_remember/memory/knowledge/connection.py:52-63 |
-| **The callers: the committed set filled at the start of the run, the admission exemption, and the replay marking.** | `ingest_curator_list`; `_resolve_creation`; `_with_replays` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1116-1243; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2221-2254; mcp/src/agents_remember/application/knowledge_curator_ingest.py:2050-2056 |
-| **The cases: a committed legacy operation replays (with and without base history), and a recorded-but-uncommitted one is still refused.** | `test_a_committed_operation_without_rationale_replays_with_no_base_history_needed`; `test_a_recorded_but_uncommitted_allocation_without_rationale_is_still_refused` | mcp/tests/test_curator_realization_authoring.py:387-397; mcp/tests/test_curator_realization_authoring.py:400-432 |
+- **The module's own statement: replay and admission are answered by the candidate's rows, never by the journal.** [1]
+- Every stored revision, read over a read-only connection. [2]
+- **The recorded revisions the candidate already stores; empty with no dataset yet.** [3]
+- The read-only opener it uses. [4]
+- **The callers: the committed set filled at the start of the run, the admission exemption, and the replay marking.** [5]
+- **The cases: a committed legacy operation replays (with and without base history), and a recorded-but-uncommitted one is still refused.** [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T17:09:54+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`; primary ICR-R20@v1, review R4 PASS): created this card. **Semantic transition:** the stored-revision reader moved here from the ingest unchanged, and gained a second consumer — the committed-allocation admission exemption ruled by the Architect on review R1 (2026-09-28T12:17:09+02:00, finding F1) and guarded history-independently per the 16:15:11 ruling (O3). Verification stamp names the code base; closeout owns the real stamp.
+No meaningful cross-repo references found.

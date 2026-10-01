@@ -1,0 +1,84 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/orchestration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Nudge record and rate-limit policy live in controlplane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be4175dba3da7dc3d3c67bc8ed85a100657439d0",
+            "content": "sha256:7ddc6d7cfc1b212204938abe2de825038e3d9ed5392e3d979688d9f24e9d2cb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrchestrationNudgeStore"
+            },
+            "path": "mcp/src/agents_remember/controlplane/orchestration_nudges.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Agent-to-agent message enqueue and hosted-session push live in the operator inbox builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:72d19071d1f2b4d092fe2e3ac9fcabc4bacc4be5ddb0f7511c2479f741b52733",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_post_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/operator_inbox.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:c33f9216f5c34d4233ffcd5ebf71f9f4a8fec0195026e3057d14b13622a81054",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/operator_inbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Response validation uses the public orchestration response model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f5cc66daca5f30fc924fd78b0a73812c73875d",
+            "content": "sha256:2e5e511015f3f36a1da910bc4e1cf4ab95cb7cf39b12addf635205bfb8455b76",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrchestrationNudgeManagerResponse"
+            },
+            "path": "mcp/src/agents_remember/models/orchestration.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10f5cc66daca5f30fc924fd78b0a73812c73875d",
+            "content": "sha256:658b2feb036ee3ae2c46f29779508378a218ac909871376a13cd389901cd7fb8",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/models/orchestration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

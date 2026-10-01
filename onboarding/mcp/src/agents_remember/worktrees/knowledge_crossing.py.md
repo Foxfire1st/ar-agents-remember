@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/knowledge_crossing.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/knowledge_crossing.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T14:21:42+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [worktrees route overview](overview.md)
@@ -56,10 +46,12 @@ memory-quality runs and (later) closeouts call.
   stages, each `knowledge/history/<task>-crossing-<n>.json` that the merge adds and that neither parent
   holds, so the file is frozen from that commit on (MIK-R07 rule 7).
 - `unconverted_line_refusal(*, memory_worktree, memory_repository, official_branch, operation)` returns
-  `None` when the leaf tree is converted, when there is no repository or branch, when the official tip
-  cannot be read, or when that tip is unconverted. Only when the leaf tree is unconverted **and** the
-  official tip holds the layout marker does it return a refusal. The refusal names the crossing sync
-  (`worktree_sync`) and MIK-R24 rules 8 and 9.
+  `None` when the leaf tree is converted or there is no repository directory. When the leaf tree is
+  unconverted **and** the official tip holds the layout marker (`_official_line_converted`), it returns
+  the rule 9 refusal, which names the crossing sync (`worktree_sync`) and MIK-R24 rules 8 and 9. In
+  every other case (no branch, a tip that cannot be read, an unconverted tip) the cutover lock decides
+  (`cutover_lock.cutover_lock_refusal`, L37): the unconverted tree is refused as well once its memory
+  repository holds converted memory anywhere, and gets `None` in a repository that holds none.
 
 ### Conventions
 
@@ -76,8 +68,9 @@ memory-quality runs and (later) closeouts call.
   validator with the converted base.
 - **A crossing sync that cannot complete leaves the line unchanged and names the failing step.** The plan
   is computed before Git touches the worktree.
-- **Rule 9 refusals are inert until the official line is converted (architect ruling, 2026-09-29).** No line
-  is converted before MIK-R37, so no route changes behaviour before the cutover. **Conversion and crossing
+- **Rule 9 refusals are inert until the repository holds converted memory (architect ruling, 2026-09-29; L37).**
+  A repository that holds no converted memory is not locked, so no route changes behaviour there. From the
+  cutover (MIK-R37 rule 6) other masters' unconverted lines are only read until they cross. **Conversion and crossing
   are separate routes:** the crossing sync is only for lines that descend from a converted official line.
   An unconverted official line, or a repository without one, converts by running `agents-remember
   knowledge-convert` and committing through its normal route.
@@ -85,9 +78,11 @@ memory-quality runs and (later) closeouts call.
 
 ### Todos
 
-The closeout refusal of rule 9 belongs to L09; `unconverted_line_refusal` is ready for it.
+None recorded. The closeout refusal of rule 9 is wired (L09's gate plus L37's cutover lock in `knowledge_gate.py`).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -96,35 +91,27 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The crossing helpers and the rule 9 refusal.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A crossing sync: one tree unconverted and one converted. | `crossing_applies`; `merge_base` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:70-77; mcp/src/agents_remember/worktrees/knowledge_crossing.py:66-67 |
-| The plan through the bound port, refused without a paired code commit or a bound crossing. | `crossing_plan` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:80-112 |
-| The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages. | `apply_crossing`; `_write_plan_files`; `_unmerge` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:150-160; mcp/src/agents_remember/worktrees/knowledge_crossing.py:120-132; mcp/src/agents_remember/worktrees/knowledge_crossing.py:135-147 |
-| The rule 9 refusal, only when the official line is converted. | `unconverted_line_refusal` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
-| A master-line crossing history file is closed in the merge commit. | `close_crossing_history` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:201-222 |
-| The durable report and its bounded summary, with the how-to. | `write_crossing_report`; `crossing_summary`; `HOW_TO_RESOLVE` | mcp/src/agents_remember/worktrees/knowledge_crossing.py:237-262; mcp/src/agents_remember/worktrees/knowledge_crossing.py:265-285; mcp/src/agents_remember/worktrees/knowledge_crossing.py:226-233 |
-| The managed sync crosses an unconverted leaf into a converted line. | `test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line` | mcp/tests/test_knowledge_crossing.py:403-431 |
-| Overlapping edits go to the curator with markers; a failed step changes nothing. | `test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing` | mcp/tests/test_knowledge_crossing.py:434-499 |
-| The refusal fires only once the official line is converted. | `test_an_unconverted_leaf_is_refused_only_once_its_official_line_is_converted` | mcp/tests/test_knowledge_conversion_toolchain.py:138-167 |
+- A crossing sync: one tree unconverted and one converted. [1]
+- The plan through the bound port, refused without a paired code commit or a bound crossing. [2]
+- The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages. [3]
+- The rule 9 refusal when the official line is converted; every other unconverted tree is left to the cutover lock. [4]
+- A master-line crossing history file is closed in the merge commit. [5]
+- The durable report and its bounded summary, with the how-to. [6]
+- The managed sync crosses an unconverted leaf into a converted line. [7]
+- Overlapping edits go to the curator with markers; a failed step changes nothing. [8]
+- The refusal fires only once the official line is converted. [9]
 
-## Cross-Repo References
+- Rule 9, then the cutover lock for every other unconverted tree. [10]
+- Whether the official line's tip holds the marker; no line or an unreadable one reads as no. [11]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

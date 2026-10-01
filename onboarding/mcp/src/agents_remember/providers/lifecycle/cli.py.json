@@ -1,0 +1,52 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/cli.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public facade imports `main()` from this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd331e5eaa941cc632b3a6f1a2a673f8b7055d1",
+            "content": "sha256:0721bac647cf183f892886f825683813f26dddb6380e10d99e040f4f95451155",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC and GrepAI implementations are dispatched from this CLI layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
+            "content": "sha256:22f218c1d83409dc3d5ea53fb158ea303b2cd7190add8f85ce2904be7552c092",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_backend_start"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:f29bc217a0573cda7813943aeda5ca57a98aaa30e6e3078df1c20a16942f8754",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_run"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

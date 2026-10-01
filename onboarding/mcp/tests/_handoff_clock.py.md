@@ -1,15 +1,5 @@
 # mcp/tests/_handoff_clock.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/_handoff_clock.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T21:25+02:00 |
-| lastVerifiedCommitHash | `8ee51cc2cea0be7326937a3b1bbfdad6cafdbd33` |
-| lastVerifiedCommitDate | 2026-09-15T21:57:55+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -84,50 +74,28 @@ starts no process, opens no socket and reads no durable state.
 None. The three primitives are complete for the handoff proof's scenarios; a second consumer that needs
 a different release rule should subclass or extend here rather than fork the class.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved memory root. Every claim on this card is
 about repository-owned test support, so no external domain source is cited.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 The declarations below establish the current instrument; this inventory is not execution evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module is test support only and declares no case; it exists to make a two-loop timeline coherent. | `_DeadlineClock` | mcp/tests/_handoff_clock.py:30-74 |
-| The imported shared clock this one corrects for two simultaneously parked loops, left byte-unchanged. | `_VirtualClock` | mcp/tests/test_serving_observation_loop.py:115-159 |
-| Sleeps park with their own deadline recorded, and a cancelled sleep is removed before the error propagates. | `sleep` | mcp/tests/_handoff_clock.py:47-57 |
-| A parked sleep of an exact delay is how the driver proves an attempt settled without racing the loop's cadence. | `has_pending` | mcp/tests/_handoff_clock.py:59-62 |
-| Release advances time to the released sleep's own deadline, never backwards, and raises when nothing is parked at that delay. | `release_delay` | mcp/tests/_handoff_clock.py:64-74 |
-| One chosen pass is parked until the case releases it; arming is also the reset. | `_Gate`; `arm` | mcp/tests/_handoff_clock.py:77-101; mcp/tests/_handoff_clock.py:90-93 |
-| A gate that is never reached fails within a bounded wait instead of hanging the run. | `__call__` | mcp/tests/_handoff_clock.py:95-101 |
-| One real-time total order across threads, which is what makes "the read returned before the commit" decidable while virtual time stands still. | `_Sequence`; `next` | mcp/tests/_handoff_clock.py:104-124; mcp/tests/_handoff_clock.py:121-124 |
-| The source-root preamble the sibling test-support modules share. | `MCP_SRC` | mcp/tests/_handoff_clock.py:24-25 |
-| The handoff proof that is this module's only consumer in the candidate change set. | `ServingNotifierHandoffTests` | mcp/tests/test_serving_notifier_handoff.py:52-376 |
+- The module is test support only and declares no case; it exists to make a two-loop timeline coherent. [1]
+- The imported shared clock this one corrects for two simultaneously parked loops, left byte-unchanged. [2]
+- Sleeps park with their own deadline recorded, and a cancelled sleep is removed before the error propagates. [3]
+- A parked sleep of an exact delay is how the driver proves an attempt settled without racing the loop's cadence. [4]
+- Release advances time to the released sleep's own deadline, never backwards, and raises when nothing is parked at that delay. [5]
+- One chosen pass is parked until the case releases it; arming is also the reset. [6]
+- A gate that is never reached fails within a bounded wait instead of hanging the run. [7]
+- One real-time total order across threads, which is what makes "the read returned before the commit" decidable while virtual time stands still. [8]
+- The source-root preamble the sibling test-support modules share. [9]
+- The handoff proof that is this module's only consumer in the candidate change set. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository authority is established by this repository-owned test-support module.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-
-- 2026-09-15T21:25+02:00 — 260831-LOCR-L04 curator (uncommitted change set on `ar/260831-locr-l04`,
-  base `e9678c56`, `mcp/tests/_handoff_clock.py` new, 124 lines, sha256 `30cb716d…`): created this
-  card for the leaf's second new support module. It is an instrument rather than a suite, so the card
-  records what each primitive is **for** and where its boundary is, not a case census. Three
-  properties are recorded as the reason the module exists rather than as decoration: the deadline rule
-  (`seconds = max(seconds, deadline)`) is what keeps a second concurrently parked loop's wake-up from
-  being dated late; `_Gate`'s bounded wait converts a lost race into a failure instead of a hang; and
-  `_Sequence` exists because "the read returned before the commit" has no expression in virtual time
-  once a pass is working. The class is a subclass of the sibling fixture's `_VirtualClock` precisely so
-  that fixture's own consumers keep the clock they were verified against. `LOCR-R04@v1` is a
-  preservation requirement — the module adds no production behaviour and no production file is touched
-  by this change set. Verification metadata is pinned to the leaf base only; the source is an
-  uncommitted candidate, so normal closeout owns the final stamping.

@@ -1,0 +1,830 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/detection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generation a detection write requires, and the generation refusal that carries the observed and required versions as facts without migrating anything.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:fd21a16f3e5a32406423b0bc43254a356f794d84a66b679158c164546e77b9c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIRED_DETECTION_GENERATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:08dc86e298f52cd5c6b2c20cb37ff6dcc8804f9388d9a3e7f5040ff4f90d8323",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_detection_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The agreement check that keeps the two-place version publication true: namespace, order, policy version, extractor version, declared input set and condition.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:ea5b53cd00f7da0557a0e646679cd5565a63aca5951d7606f8b5bf81cb5fbffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_run_signal_agreement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:e4796f587b2a3417ff2e1743303c04b800b7740cea9228adf62177a067243b31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_signal_disagreement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The read path: the recorded order from the sequence table, and the seal recheck that reports an altered payload as a damaged store.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:98b12c90f2206ac0ec74a042c9dcff8df0aba7fa76b6ec4e9ed0af23e6a74615",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_detection_run"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:37e973629bf53dcc747d0ffe462fc05db5a181f7bdef77f84d2b66b628c9265a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:783811e8977404a84cec52fd279be03a8da20dcb6b523314d1e3c2ce6f37291e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_intact_revision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:77391587026df48399a6e1974d045f492518f7e040ed9eb4aaa2683403dbdbc8",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The run-identity listing a composing reader addresses its per-run reads by: identities only, in identity order, decoding nothing — so a damaged run does not make the listing unreadable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:5c4ee06b060112390f24fd9a4f289a7c02acaa3f8c2759591e282cf8657b5cc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_run_ids"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:0140f54fd7e04498f498e1a2156dba2abb47c1a05e731c3823ca6b0dac3e0a0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECORDED_RUN_IDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The one composing reader this listing exists for, and the per-record guard it composes with the read above.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:6a5c4e5438ffd0155f4b841e9b06f799141b636a963126214a401df37cc988f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_detection_signals"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:640468c8157be6f78c10114d44a0cff4825da2440a89d18f801c6652d4548f4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_signal_runs"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**Reproducibility as two ordered sequences plus every differing input or version, writing nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:44516b95a71ac58a207a0eee1c049bcfd324e39d195de03e242774bc84b2700c",
+            "locator": {
+              "kind": "symbol",
+              "name": "compare_detection_runs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:981a9e63cb05bf6497825133fe502670be0dbee849c9c73627353124677c14d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_differences"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The per-side differences: snapshot logical digest, code tree and selector digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:83106b229fdfa5221c428e3982d2c9ada9668156c90da2b871f3792e919292e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_differences"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**Currentness marks a run stale from the version comparison alone and returns no signal to reinterpret.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:3301b139455470b007743b2ab1f5a339c3391cf5e731036af8714b383f7d77e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_currentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The retention answer, delegated to the manifest's own resolution so there is one definition of retained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:a93b351dc5660b1e7fe4eb700a2812b4445b1a38ffb6b0d360a92948203cde7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_manifest_reference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The declared input set vocabulary as a value, and the payload digest helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:e30adb32ee80182cf58c1a3bfc56750f8cda3de884c1f2321ec95a6da4e7fc14",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_input_set_members"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:67468d1349e9627ea95fb3f067012b9ba4f2aa7ab2cacb1b53f0d9f9a20f3670",
+            "locator": {
+              "kind": "symbol",
+              "name": "detection_payload_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The run's exact inputs as one canonical identity, and the digest over it that a mounted caller names to bind a reported run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:dee7bb1f0bc1aced9e5cc617b7cd46d6d1c07c623b7405d5978c9e8c3891cc88",
+            "locator": {
+              "kind": "symbol",
+              "name": "detection_input_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:324bc2d3568dfc3aca7fbe7888f4058a1f66cc752dbe9158a4b9928bc5909583",
+            "locator": {
+              "kind": "symbol",
+              "name": "detection_input_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**Requirement 7.1 as a structural refusal: real-path identity of the detection store against every assessed database, refused with `detection_self_reference` before any row is written.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:b12c252b52340c3424e211ebdec094a4bf8784d8d279f172a8087ea89bddcbae",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_separate_from_assessed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The envelope seam every written payload passes through, which is the only place a write path decides admissibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:a70c5252d91317d7a1e283ddcb483f6714da87613f16dd6229fe84b06582cb7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_record_payload"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:08f75fed96d49a9787dc60c10f9dbc4e7d79487c6e07713d5a2f7e0f83d9c199",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The composition this module's generation comes from — one anchor, one source, because a row naming several anchors across several files cannot resolve to a single extent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:735da1dbaf87a32f5bc059969d4c1df25e59632a8c17d6865fd93e4935802a7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_4"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:88b37fabf324bf5f20e1125c844f2f84f99e62af8259346e1bc67b25e069b443",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The two immutability triggers that seal a recorded detection sequence — the reason a later code path that forgot the rule still cannot reorder or shorten it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b235caaa860201ca3f665b5e28832b8e076812a7",
+            "content": "sha256:83a515ba78005b853385a41dfb1ef6c864ead15a6adc55cd4fd04230a9f5c504",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TRIGGERS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v4.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The revision draft, row tuple and digest the detection write and read reuse rather than re-implementing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:b38b6fbb29fb867703f862d220d7aa57326cf6d5323016da20093cb2e427a251",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordRevisionDraft"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:90875c8c92b4e276f61848d5ee919776a7112beba0c6166582de7b893ca80d8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:6cbf65be7503a14ba23c76e66daa20ebd58741813b9d4e9fc3c3f092e4517698",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_digest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:18d95fac3aaede7c3e75d55a13fefe631b480b15117b69d9ff3f2d641a3fd883",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:ce0d5a39ed214caa2596e29ec11f3aa1222bef2792434fbb16c09f7bad8d5338",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The two operation members and the one refusal code only a detection write can reach.\n\nAnchor: `record_detection_run`; `read_detection_run`; `detection_self_reference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:cd57351cae5f7d001e16b799993ac807b43491757d9b74f2c42f9b4c3d85ed73",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:7cf7e1d46c818e6ce72d1be7baa3232036328fbbb76a615c62d93cb5cf519e95",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:fbb6fec627e6443ddffab14898738ec7ea16544443226e9f0948e19f2adebe39",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:77391587026df48399a6e1974d045f492518f7e040ed9eb4aaa2683403dbdbc8",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:5273ebce3d479b789121cee0929625f6c6e98987568b3784c60e73c706150ff8",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:cc1e87b1e0b90bba33370005fb3f022c6e615ea583d38d84070c634b1fff84fa",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 220
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:22b4cf75f49a78a0da1b0822707612f70dd91c3c8ac5e7c6b4ec22abc5b4b1f6",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The two operation members and the one refusal code only a detection write can reach.\n\nAnchor: `record_detection_run`; `read_detection_run`; `detection_self_reference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:7944af9852faefa83659e92ab042d43d3956ce591d480c2c1066a803a00ce559",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:1d68d2ca69bf8e95d5d197366b783ad2cea11c80a976a001e09a361a4f6fb046",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:cc1e87b1e0b90bba33370005fb3f022c6e615ea583d38d84070c634b1fff84fa",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 220
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:22b4cf75f49a78a0da1b0822707612f70dd91c3c8ac5e7c6b4ec22abc5b4b1f6",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The store the write runs inside, its immediate-transaction helper and its exclusive candidate lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:65f773940d2652b38ae7ff7ed60b8d670db430acb41394cad7ef56fdd2ac4917",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenedKnowledgeStore"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The cases that measure the ordered round trip, the two-place versions, the self-reference refusal and the sealed sequence.**\n\nAnchor: \"test_a_recorded_run_reads_back_in_its_recorded_order_with_two_place_versions\"; \"test_a_detection_write_into_an_assessed_database_is_refused\"; \"test_a_recorded_detection_sequence_cannot_be_reordered_or_shortened\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:b797d7728d8463511030571f457475ec9d208174461ab4440381b58927ce58db",
+            "locator": {
+              "end": 945,
+              "kind": "line_range",
+              "start": 909
+            },
+            "path": "mcp/tests/test_knowledge_detection_runs.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:0e55b39e58c0c2f8c3331e4f806e87dc72b8f7f77239b61f10d201d49543b560",
+            "locator": {
+              "end": 980,
+              "kind": "line_range",
+              "start": 946
+            },
+            "path": "mcp/tests/test_knowledge_detection_runs.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "376297baa5993e7adfc7b4c5d7092f563105a60a",
+            "content": "sha256:ad843e10ba29dd38b7366edf4ecf7cf79999c512bc31f8a186d15589b7fa0e4b",
+            "locator": {
+              "end": 799,
+              "kind": "line_range",
+              "start": 769
+            },
+            "path": "mcp/tests/test_knowledge_detection_runs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The write path: the four gates in order, the exclusive candidate lock, and the one immediate transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:fec6474d614bd80104b11ee2eb5be0d35dbced81fb401f0827605c5478196ce6",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_detection_run"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:5273ebce3d479b789121cee0929625f6c6e98987568b3784c60e73c706150ff8",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Requirement 7.1 as a structural refusal: real-path identity of the detection store against every assessed database, refused with `detection_self_reference` before any row is written.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:b12c252b52340c3424e211ebdec094a4bf8784d8d279f172a8087ea89bddcbae",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_separate_from_assessed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The write path: the four gates in order, the exclusive candidate lock, and the one immediate transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:fec6474d614bd80104b11ee2eb5be0d35dbced81fb401f0827605c5478196ce6",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_detection_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The envelope write and the reason its governing-route association is left unset: the route lives in the assessed namespace and a copied association would be a second authority.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:7624dd054f857a40bd76cd2d0fa3ab415eb70cf683b6afe0a372c116afc27aa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EnvelopeWrite"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:fee296af9f9224378dd5421c407728c2392aa441145aedcc3e7283b16c41f8af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_envelope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:6499797475729d1a8422063e1b49b2292ea52545a9d74d868fc67c94eb52b3e1",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The run's binding as one value: identity, namespace, assessed namespace, route, sides and the two published versions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:f291e0ec0d824e04c7cad97ba0e9f604df04ae9a108aaa5b0d95deae7ac7706f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionRunAssembly"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:6474d1a0d7765f51cb7823e97a1764aee7ddf498d5799ab095f17f95b436677d",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_detection_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The sequence write: one `detection_run_signal` row per ordinal, in the order the walk produced the signals.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:13b8aa70ea9dae0d47823b497e5503fd50ae52eaee94fe8788e2fd9a91280de9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The authority home read from the store's own repository row rather than accepted from a caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:2aa7eb6f14b8f3a1cbad245416fa02578445bfdd2ed282bbe7fc1e878abfb0bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_home"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

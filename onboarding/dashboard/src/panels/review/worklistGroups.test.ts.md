@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/worklistGroups.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/worklistGroups.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T09:59:20+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -44,28 +34,19 @@ has none.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packets live outside the repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The real worklist and the MIK-R10-shaped unexplained items. | "'../../data/reviewTrees.captured.json'"; `hunk` | dashboard/src/panels/review/worklistGroups.test.ts:1-31 |
-| The two cases. | "marks knowledge items planned or unplanned and lists the declared effects no row delivered"; "groups unexplained items by file and coverage state and finds their rows by facts.row" | dashboard/src/panels/review/worklistGroups.test.ts:32-86 |
+- The real worklist and the MIK-R10-shaped unexplained items. [1]
+- The two cases. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new test module (the carried L10 grouping, L11 marks and the PS-1 lookup). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

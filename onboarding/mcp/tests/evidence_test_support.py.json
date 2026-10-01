@@ -1,0 +1,232 @@
+{
+  "path": "mcp/tests/evidence_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture's own type and the one entry point that builds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:831bf234a02ebc3fdcfc5676caaa73ff6bb4d343ad3f52fa55af0633bdc3e73e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:a837205a60e646c291df935d03e2f06f99e031c02a01f5b90285eae2a4be8baf",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_evidence_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The namespace's records, built through the production operations rather than by inserting rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:cb04ce04497a9b62bcb5857ce7a41fd6f5c7492a9f38d2c03785dfc1c6e52d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store_invariants"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:bc33d223ae29c88b0ead878f7a881c9890358c59578d27796d36b2fab7d13190",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store_realizations"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:549366bf5a702251a6e4b5a39d5fa3090dd39a6baff1d28c08cd993847fab47d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store_facet"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The command and payload builders the two modules share.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:1a27842824feeb3239346fc43751d3a82737500b2aa8e0bbee84a0a0d551304e",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_command"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:5f6cf6b13535b4fc9376650e66de7755a54a43f57b0baaeeef467a4adc7668bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "observation_command"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:c6002920ef3960eb8a8ad7cecdf31a5cbfbb8865fbe088923ef963a3f80d1555",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_payload"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:bfe4a3f3a943f3ba2fa8f518dbe0e95dadda0d85004bb7368ca726e1774bd58a",
+            "locator": {
+              "kind": "symbol",
+              "name": "observation_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The artifact, publication and read-context helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:616996d8bd9861fee4fc2f2f6ed51daa57088bb5a15c5bee721cbc71e4889008",
+            "locator": {
+              "kind": "symbol",
+              "name": "artifact_reference"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:0028083749aaa8060cffafc6f64da9e10ed800d23b49baf03528e21814e086be",
+            "locator": {
+              "kind": "symbol",
+              "name": "expect_artifact"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:054598e6f30def4535f9dd8f53fb66a552f51e822b1b20dfc9d6963c4d218086",
+            "locator": {
+              "kind": "symbol",
+              "name": "expect_publication"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "53732a02567afabc14f6ce0e7f98adf49d06a359",
+            "content": "sha256:b2bbcb2eeae1b852be28a8587469d82f5cb5c2952637e2da1237de64d44478eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_context"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The registered owning contract and artifact row that make this file governed evidence: the contract id, its owner and its evidence node, and the artifact's kind and exact consumer scope.\n\nAnchor: \"[[contract]]\"; \"[[artifact]]\"; \"shared-support\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:a305fd6158a94b045e32888badf3c7dd40f3a3ff7c8c4364d3397218449e329c",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7e027222c96ad14c1c4341d24a8b3af6f32f8c3230040db2e2f1ff07eddd9be8",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The unit-regression lane rows for this artifact's two consumers.\n\nAnchor: \"mcp/tests/test_knowledge_evidence_claims.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:43478d1df6e2a1c85ff191aedcd99c0bf4c6aee07ccce3d2eae3e3856018c0a3",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

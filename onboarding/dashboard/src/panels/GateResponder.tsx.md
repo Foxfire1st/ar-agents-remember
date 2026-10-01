@@ -1,15 +1,5 @@
 # dashboard/src/panels/GateResponder.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/GateResponder.tsx`         |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -73,20 +63,20 @@ the worktree-bound gate families: closeout, push, integration, and cleanup.
 - `compact` only changes presentation so the same routing/control logic is used in Detail, Hangar, and
   Engine Room diagnostics.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Dashboard gate decision client used by Yes/No. | "export type GateDecisionStatus" | dashboard/src/data/actions.ts:7-7 |
-| Hosted session identity and delivery helpers. | "export interface OpenSession" | dashboard/src/data/sessions.ts:29-29 |
-| External inbox helper used when no hosted session is attached. | "export interface OperatorInboxPostRequest" | dashboard/src/data/operatorInbox.ts:4-4 |
-| Request/status formatting helpers extracted from this component. | "export function humanKey" | dashboard/src/panels/GateResponderText.ts:20-20 |
-| Canonical lifecycle detail surface that renders this only when a durable gate exists. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
-| Engine Room diagnostics secondary surface. | "export function DiagnosticsPanel" | dashboard/src/panels/engine-room/DiagnosticsPanel.tsx:40-40 |
-| Hangar secondary surface for worktree-bound gates. | "export function Hangar" | dashboard/src/panels/Hangar.tsx:76-76 |
-| Projection gate and lifecycle shapes. | "export interface GateNode" | dashboard/src/types/projection.ts:289-289 |
+### Repo-Internal References
 
-### 260713-PHA-L5 Adapter Interaction Context
+- Dashboard gate decision client used by Yes/No. [1]
+- Hosted session identity and delivery helpers. [2]
+- External inbox helper used when no hosted session is attached. [3]
+- Request/status formatting helpers extracted from this component. [4]
+- Canonical lifecycle detail surface that renders this only when a durable gate exists. [5]
+- Engine Room diagnostics secondary surface. [6]
+- Hangar secondary surface for worktree-bound gates. [7]
+- Projection gate and lifecycle shapes. [8]
+
+#### 260713-PHA-L5 Adapter Interaction Context
 
 Gate responses render adapter-owned interaction prompt, choices, and identity, and submit the chosen
 response through the durable gate path. Completion or acceptance does not consume an inbox row.
@@ -97,33 +87,3 @@ A reopened hosted-interaction gate can carry `packet.adapterDecisionFailure`. Th
 shows the prior decision/note, the proven delivery certainty, and its reason before offering a
 fresh response. It distinguishes `not-sent` (safe to decide again) from `unknown` (the harness may
 already hold the decision) and preserves unfamiliar wire values verbatim rather than guessing.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
-  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-24T13:17:17Z — Curator: corrected the reopened-gate contract to surface the failed prior
-  delivery with evidence-bounded copy; verification fields remain pre-commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed adapter interaction rendering and response boundary.
-
-- 2026-07-02T16:18+02:00 — L8: removed the message-only `Chat` mode and its textarea/send path from
-  the gate responder. The component still records explicit approve/reject/cancel decisions and notifies
-  the agent after successful approve/reject; non-decision conversation now belongs in the adjacent leaf
-  chat.
-- 2026-06-25T13:10+02:00 — Task 23/24: added Dismiss/cancel, close-on-success response behavior, and extracted request/status formatting to `GateResponderText.ts`.
-- 2026-06-25T07:17+02:00 — Task 19: split Gate Respond into durable decision paths (`Yes` approves, `No` rejects with required reason) and message-only `Chat`, added targeted stale-gate handling, rendered gate requests as human-readable previews with diagnostics JSON collapsed, and added the 480px resizable request panel. Verification metadata pinned until closeout stamps the task-19 code commit.
-- 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: Gate Respond now queues a developer response in the external operator inbox when `findSessionForLifecycle` finds no hosted chat, and exposes queued/error status text instead of disabling the response path. Verification metadata pinned until closeout stamps the task-10 code commit.
-- 2026-06-23T13:45+02:00 — Created for Task 11: shared chat-routed Gate Respond control with
-  Yes/No/Chat modes, full request display, hosted-session lookup by lifecycle id, missing-session
-  status, and active untagged chat attach.

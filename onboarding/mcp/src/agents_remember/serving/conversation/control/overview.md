@@ -2,14 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/control/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/control/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
 
 ## What This Area Is
 
@@ -203,31 +198,31 @@ withdrawal + bounded recovery) with `recovery_assembly.py`, `attachments.py` (R4
 - **Identity digests are domain-scoped (precision note 4).** L1/L2/L3 services each hold their own app
   secret, so L4 must match conversations by identity fields, never by digest equality across services.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The parent contract route supplies the wire grammar and composition seams; the L2E/L0E/L3E substrate
 supplies the native writes, timeline, asset channel, evidence window, and recovery payload; the
 foundation and four+installed suites pin the slice.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `get_conversation_runtime` is the runtime dependency entry. | `get_conversation_runtime` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23 |
-| The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The conversation models define `protect_queue_source_privacy`. | `protect_queue_source_privacy` | mcp/src/agents_remember/models/conversations/submissions.py:34-41 |
-| `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. | "def operation_fingerprint(" | mcp/src/agents_remember/models/conversations/telemetry.py:100-100 |
-| `PolicyPart` is declared in the route-local `control/policy.py`. | `PolicyPart` | mcp/src/agents_remember/serving/conversation/control/policy.py:36-43 |
-| `ConversationPolicyProjection` is declared in the route-local `control/policy.py`. | `ConversationPolicyProjection` | mcp/src/agents_remember/serving/conversation/control/policy.py:46-55 |
-| `_map_typed_error` is the control API error-mapping entry. | `_map_typed_error` | mcp/src/agents_remember/serving/conversation/control/api.py:124-141 |
-| `CONTROL_RESPONSES` is the six-status shared refusal table for the control surface. | `CONTROL_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:95-108 |
-| `INTERRUPT_OUTCOME_RESPONSES` declares the interrupt outcome response table. | `INTERRUPT_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:140-153 |
-| `WITHDRAW_OUTCOME_RESPONSES` declares the withdrawal outcome response table. | `WITHDRAW_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:160-173 |
-| The control client sends the epoch-guarded interrupt write. | `interrupt_control` | mcp/src/agents_remember/serving/harness_control_client.py:425-445 |
-| The control client validates paged operation-timeline reads before returning them. | "opaque cursor coordinates are invalid in the operation timeline domain" | mcp/src/agents_remember/serving/harness_control_client.py:454-478 |
-| The control client validates the additive asset channel on prompt submission. | `submit_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:214-252 |
-| `clip_evidence_payload` is the truncation-envelope entry. | `clip_evidence_payload` | mcp/src/agents_remember/models/conversations/evidence.py:301-353 |
-| Pi settlement reads the preserved terminal identity through its stop-reason reader. | `_pi_stop_reason` | mcp/src/agents_remember/serving/conversation/control/operations.py:484-511 |
-| `HarnessSubmissionAuthority` owns setter and prompt admission/dispatch on the shared authority. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
-| `capabilities_for` is the active capability-view entry. | `capabilities_for` | mcp/src/agents_remember/serving/conversation/active/capabilities.py:440-457 |
+- `get_conversation_runtime` is the runtime dependency entry. [1]
+- The authorization dependency resolves that runtime and delegates peer authorization to its bound resolver. [2]
+- The conversation models define `protect_queue_source_privacy`. [3]
+- `operation_fingerprint` hashes the canonical operation identity without retaining raw request content. [4]
+- `PolicyPart` is declared in the route-local `control/policy.py`. [5]
+- `ConversationPolicyProjection` is declared in the route-local `control/policy.py`. [6]
+- `_map_typed_error` is the control API error-mapping entry. [7]
+- `CONTROL_RESPONSES` is the six-status shared refusal table for the control surface. [8]
+- `INTERRUPT_OUTCOME_RESPONSES` declares the interrupt outcome response table. [9]
+- `WITHDRAW_OUTCOME_RESPONSES` declares the withdrawal outcome response table. [10]
+- The control client sends the epoch-guarded interrupt write. [11]
+- The control client validates paged operation-timeline reads before returning them. [12]
+- The control client validates the additive asset channel on prompt submission. [13]
+- `clip_evidence_payload` is the truncation-envelope entry. [14]
+- Pi settlement reads the preserved terminal identity through its stop-reason reader. [15]
+- `HarnessSubmissionAuthority` owns setter and prompt admission/dispatch on the shared authority. [16]
+- `capabilities_for` is the active capability-view entry. [17]
 
 
 | `QueueProjectionTests` covers queue projection behavior. | `QueueProjectionTests` | mcp/tests/test_conversation_control_queue.py:51-208 |
@@ -235,25 +230,21 @@ foundation and four+installed suites pin the slice.
 | `ControlApiTests` covers the real-wire control routes. | `ControlApiTests` | mcp/tests/test_conversation_control_api.py:26-378; mcp/tests/test_conversation_control_api.py:24-24 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this route. All three harnesses are local
 subprocesses reached through this repository's own adapters, and the resolved memory policy allows no
 neighboring repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant cross-repo evidence found. | — | — |
+No relevant cross-repo evidence found.
 
-## Docs References
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. This route therefore uses the
 repository-owned contract, the L2E/L0E/L3E substrate, fixtures, and tests as its direct evidence and
 does not fabricate an external citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this control gate. | — | — |
+No configured domain documentation was available for this control gate.
 
 ## File-Level Onboarding Map
 
@@ -404,64 +395,3 @@ error mappings are untouched.
 ## 260731-EFA-L9 Route Impact — Contract Imports Moved
 
 The control child routes now import the shared wire contracts from `models/conversations/` (`control_wire.py`, `evidence.py`) and the canonical control port from `serving/ports.py` after the L9 monolith split. Control behavior is unchanged.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1` (the recorded relationship union, its vocabulary, its five application owners and its three case modules). The only edit to this document is citation-coordinate regeneration: rows that cite the review adapter, the source inventory, the review vocabulary, the two evidence manifests or the review route by line were re-derived from the anchors' real positions after this leaf moved those lines. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `capabilities_for` repointed to mcp/src/agents_remember/serving/conversation/active/capabilities.py:440-457. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-
-- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the async/offloaded `resolve_entry` choke point and the mechanical `await` sweep across the route modules. Verification metadata pinned until closeout stamps the code commit.
-- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 deterministic whole-claim repairs; corrected operative source ranges and focused assertions, removed the false Pi gate-field claim, and rechecked this card through the locked exact-document fixer/check.
-
-- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the seventeen route declarations and,
-  more importantly, the distinction the declarations had to encode — three of this route's statuses
-  carry the operation itself and not a refusal (202/422/503 on the interrupt trio, 202/404/409 on
-  withdraw, 200/202/422 all on submit), so the shared refusal table alone was a wrong declaration
-  and the conformance suite caught it on a real 422. Recorded that `_map_typed_error` being the
-  single mapper is what makes one six-status table the COMPLETE refusal surface of all seventeen,
-  and the `{**a, **b}`-is-a-merge trap every outcome table works around. Stated the enforcement
-  boundary: every handler returns a `JSONResponse` it built, so FastAPI validates nothing here and
-  the declarations mean only what `test_serving_response_conformance.py` drives. Repaired 2 line
-  citations in the `models.py` row, both moved +20 by the parent's field-default edits: L915-L1242 →
-  L935-L1262 (`InterruptOperation` → `ConversationTelemetry`) and L1265-L1282 → L1285-L1302
-  (`operation_fingerprint`). Added 2 reference rows (`control/api.py` declarations,
-  `conversation/response_contract.py` tables); all ranges read back. Verification metadata pinned
-  until closeout stamps the L4 commit.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `models.py` citation and narrowed
-  the claim, which was partly false. The span is now L915-L1242 (`InterruptOperation` through
-  `ConversationTelemetry`) plus L1265-L1282 (`operation_fingerprint`) — verified against what the
-  route's own modules import: `operations.py` takes `InterruptOperation`/`OperationFingerprint`,
-  `queue_projection.py` takes the three queue models (the privacy validator is
-  `OperationQueueItem.protect_queue_source_privacy` at L961-L968), `withdrawals.py` +
-  `recovery_assembly.py` take the withdrawal/recovery set, `attachments.py` the submit/receipt
-  set, `telemetry.py` the metric set. **Dropped "policy" from the claim**: `models.py` defines no
-  policy wire product — `PolicyPart` and `ConversationPolicyProjection` are declared in
-  `control/policy.py` and only borrow `FeatureCapability`/`CapabilityEvidence` from `models.py`.
-  The old start at L786 also over-reached into `ConversationLibraryPageScope`, which this route
-  does not touch.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: the re-authorization contract became structural —
-  `ControlRequest` carries the four facts no operation may proceed without, `ControlScope` carries
-  the **verified** epoch past the check, and `RefBinding`/`RefTarget` make mint and decode share one
-  binding value. `WithdrawalTicket`/`InterruptTicket`/`SubmittedContent`/`StageAttachmentsForm` bind
-  one attempt's facts together. No route, error mapping or authorization rule changed. Verification
-  metadata pinned until closeout stamps the L2 commit.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional truths for
-  the control route. R4 version-gate REMOVAL (developer ruling 2026-07-21) — corrected the now-false
-  "version mismatch demotes" capability-gate language to the contract-only gate; claude control/
-  telemetry is `unverified` for a never-probed contract reason, not an installed-vs-locked version
-  reason. R5 — `_locks` is a bounded `OrderedDict` (128, idle-first eviction, held lock never
-  dropped) with `release_session`, and `queue_rows` is capped (256, oldest-evicted), closing the old
-  unbounded-`queue_rows` Todo; `release_session` is unwired from terminate/retire (F1
-  accepted-bounding, wiring locus recorded). Routes, ref authority, and ledger contract unchanged.
-  Verification stays pinned until L5F closeout stamps the candidate commit.
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the governing overview for the
-  implemented authoritative control slice — the seventeen registered routes, the opaque signed
-  reference authority, the per-app service with bounded ledgers and per-session locks, the R1–R6
-  owning modules over the closed L2E/L3E substrate, and the durable L4-facing reviewer rulings
-  (setter-row exclusion, empty-held preview, pi turnId, stale L1 capability gate, domain-scoped
-  digests). Verification is blank because the new source route is uncommitted; closeout owns its
-  first source stamp.

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/selected.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`SelectedCloseoutPreparation` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3015246cfdf1686387959081793562cf0af108f6",
+            "content": "sha256:3556b642501f05f03372b3623fb94415d55ca28aa9a30b0a3dc88558b1070aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedCloseoutPreparation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

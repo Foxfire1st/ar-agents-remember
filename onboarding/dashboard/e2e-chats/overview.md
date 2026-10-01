@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/e2e-chats/`                           |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-07-21T11:30+02:00                           |
-| lastVerifiedCommitHash |                                                  `38c3fd81bdf851dce96e9b2b14e2bff741e7b383`|
-| lastVerifiedCommitDate |                                                  2026-07-21T11:31:07+02:00|
-| governingOverview      | `../../overview.md`                              |
 
 ## Governing Overview
 
@@ -143,16 +137,3 @@ follow-ons, not binding defects:
 - **F9** — `support/global-setup.ts` writes a fixed `/tmp/ar-chats-e2e-state.json` STATE_FILE that
   teardown never reads (teardown uses a same-process handle) and that collides across concurrent
   runs. Follow-on: drop it or make it per-run and actually consume it.
-
-## Update History
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: created this governing route overview for the
-  new durable, opt-in Chats E2E tree (R7/FB5). Documented the tree as a single governing overview
-  rather than per-file sidecars because the dashboard side has NO existing e2e onboarding precedent
-  (`e2e-production/` is itself undocumented in memory). Captured the opt-in `AR_RUN_CHATS_E2E` gate,
-  the isolated-real-daemon pattern (free port + scratch coordination root + by-construction
-  `CODEX_HOME` — the L5P collision truth), the four-spec manifest, the assertion→screenshot map, and
-  the honest live-state at handoff (codex green; claude F6; pi F3; F2/F4/F7/F9 follow-ons).
-  Verification is blank because the new source tree is uncommitted; closeout owns its first source
-  stamp, and `route_index_refresh` should be run so this overview gains its generated
-  `overview.index.json`.

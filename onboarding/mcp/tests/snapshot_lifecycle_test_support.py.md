@@ -1,15 +1,5 @@
 # mcp/tests/snapshot_lifecycle_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/snapshot_lifecycle_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -80,70 +70,32 @@ operations** so a case cannot prove something the operations do not do.
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The deterministic candidate inputs a case's receipt carries. | `DEFAULT_AUTHORITY_HOME`; `CODE_TREE_ID`; `MEMORY_TREE_ID` | mcp/tests/snapshot_lifecycle_test_support.py:79-81 |
-| The real-child-interpreter crash script and its open uncommitted transaction. | `_CRASH_SCRIPT` | mcp/tests/snapshot_lifecycle_test_support.py:85-129 |
-| The one case runner and its lifecycle verbs. | `SnapshotCase`; `build_case`; `create`; `clone`; `clone_from`; `derive_case`; `open_candidate` | mcp/tests/snapshot_lifecycle_test_support.py:130-176; mcp/tests/snapshot_lifecycle_test_support.py:177-205; mcp/tests/snapshot_lifecycle_test_support.py:207-211; mcp/tests/snapshot_lifecycle_test_support.py:213-221; mcp/tests/snapshot_lifecycle_test_support.py:235-244; mcp/tests/snapshot_lifecycle_test_support.py:223-233; mcp/tests/snapshot_lifecycle_test_support.py:246-250 |
-| The authored-write helper that drives the real batch boundary. | `write_record`; `write_label_on_live_store`; `add_raw_invariant` | mcp/tests/snapshot_lifecycle_test_support.py:261-291; mcp/tests/snapshot_lifecycle_test_support.py:301-321; mcp/tests/snapshot_lifecycle_test_support.py:333-345 |
-| The publication and read-gate drivers. | `publish`; `publication_state` | mcp/tests/snapshot_lifecycle_test_support.py:357-380; mcp/tests/snapshot_lifecycle_test_support.py:382-390 |
-| The file-level probes the durability claims rest on. | `journal_peer_names`; `read_journal_mode`; `file_digest`; `byte_copy`; `row_counts`; `logical_identity_of`; `vacuum` | mcp/tests/snapshot_lifecycle_test_support.py:410-418; mcp/tests/snapshot_lifecycle_test_support.py:433-441; mcp/tests/snapshot_lifecycle_test_support.py:404-408; mcp/tests/snapshot_lifecycle_test_support.py:453-459; mcp/tests/snapshot_lifecycle_test_support.py:420-431; mcp/tests/snapshot_lifecycle_test_support.py:443-451; mcp/tests/snapshot_lifecycle_test_support.py:323-331 |
-| The real-process crash probe, which asserts the committed batch survived rather than only reporting it. | `crash_and_abandon`; `CrashOutcome` | mcp/tests/snapshot_lifecycle_test_support.py:477-533; mcp/tests/snapshot_lifecycle_test_support.py:468-475 |
-|  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1289-1289  |
-| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:71-71; mcp/tests/test-evidence-lanes.toml:92-92; mcp/tests/test-evidence-lanes.toml:90-90; mcp/tests/test-evidence-lanes.toml:91-91; mcp/tests/test-evidence-lanes.toml:93-95; mcp/tests/test-evidence-lanes.toml:77-84; mcp/tests/test-evidence-lanes.toml:101-108; mcp/tests/test-evidence-lanes.toml:112-112; mcp/tests/evidence-lifecycle.toml:42-42; mcp/tests/evidence-lifecycle.toml:1270-1270; mcp/tests/test-evidence-lanes.toml:110-110; mcp/tests/evidence-lifecycle.toml:1268-1268; mcp/tests/evidence-lifecycle.toml:1315-1315; mcp/tests/test-evidence-lanes.toml:86-86; mcp/tests/test-evidence-lanes.toml:87-87 |
-|  The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. | "contract:knowledge-snapshot-lifecycle-cases" | mcp/tests/evidence-lifecycle.toml:1289-1289  |
-| The lane registration that keeps both consumer modules collectable. | "mcp/tests/test_knowledge_candidate_workspace.py"; "mcp/tests/test_knowledge_snapshot_publication.py" | mcp/tests/test-evidence-lanes.toml:71-71; mcp/tests/test-evidence-lanes.toml:92-92; mcp/tests/test-evidence-lanes.toml:90-90; mcp/tests/test-evidence-lanes.toml:91-91; mcp/tests/test-evidence-lanes.toml:93-95; mcp/tests/test-evidence-lanes.toml:77-84; mcp/tests/test-evidence-lanes.toml:101-108; mcp/tests/test-evidence-lanes.toml:112-112; mcp/tests/evidence-lifecycle.toml:42-42; mcp/tests/evidence-lifecycle.toml:1270-1270; mcp/tests/test-evidence-lanes.toml:110-110; mcp/tests/evidence-lifecycle.toml:1268-1268; mcp/tests/evidence-lifecycle.toml:1315-1315; mcp/tests/test-evidence-lanes.toml:86-86; mcp/tests/test-evidence-lanes.toml:87-87 |
-| The application seam this harness admits destinations through. | `admitted_candidate_destination`; `create_knowledge_candidate`; `publish_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82; mcp/src/agents_remember/application/knowledge_snapshot.py:102-107; mcp/src/agents_remember/application/knowledge_snapshot.py:134-139 |
+- The deterministic candidate inputs a case's receipt carries. [1]
+- The real-child-interpreter crash script and its open uncommitted transaction. [2]
+- The one case runner and its lifecycle verbs. [3]
+- The authored-write helper that drives the real batch boundary. [4]
+- The publication and read-gate drivers. [5]
+- The file-level probes the durability claims rest on. [6]
+- The real-process crash probe, which asserts the committed batch survived rather than only reporting it. [7]
+- The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. [8]
+- The lane registration that keeps both consumer modules collectable. [9]
+- The registry contract and artifact row that declare this module's owner, fidelity and exact consumers. [10]
+- The lane registration that keeps both consumer modules collectable. [11]
+- The application seam this harness admits destinations through. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 8 citations into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1279-1279. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1279-1279. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **citation re-anchoring and history only; no claim wording changed and no row deleted.** This leaf's change set moved the lines several of this card's rows cite — `mcp/src/agents_remember/application/knowledge_curator_ingest.py` grew 3587 → 3861 while `mcp/tests/test-evidence-lanes.toml` gained one `unit-regression` row and `mcp/tests/evidence-lifecycle.toml` gained two consumer rows, each shifting every row below it — so every affected range was re-derived against the candidate's own bytes rather than shifted by a remembered delta and re-anchored to the construct it names. Nothing in the body above was deleted to clear a finding, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1266-1266. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1266-1266. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1261-1261. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1261-1261. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1263-1263. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1263-1263. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 2 enforced `citation_anchor_absent_from_range` rows in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1260-1260` → `mcp/tests/evidence-lifecycle.toml:1260-1261` (rows 103, 105). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1260-1260. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1260-1260. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1257-1257. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1257-1257. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1253-1253. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1253-1253. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1136-1136. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1136-1136. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "contract:knowledge-snapshot-lifecycle-cases" repointed to mcp/tests/evidence-lifecycle.toml:1134-1134. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand while resolving the memory sync** — `contract:knowledge-snapshot-lifecycle-cases`, `mcp/tests/test_knowledge_candidate_workspace.py`, `mcp/tests/test_knowledge_snapshot_publication.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `mcp/tests/test_knowledge_candidate_workspace.py`, `mcp/tests/test_knowledge_snapshot_publication.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-17T19:11:00+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `mcp/tests/test_knowledge_candidate_workspace.py` in the row 104 of this card from mcp/tests/test-evidence-lanes.toml:69-69 to mcp/tests/test-evidence-lanes.toml:70, the extent of the construct the claim is about (the checker named line(s) [70] as its live location); re-pointed `mcp/tests/test_knowledge_snapshot_publication.py` in the row 104 of this card from mcp/tests/test-evidence-lanes.toml:70 to mcp/tests/test-evidence-lanes.toml:79, the extent of the construct the claim is about (the checker named line(s) [79] as its live location)
-
-- 2026-09-16T09:30:00+00:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new shared snapshot-lifecycle harness. It records the one-runner/one-probe-set design and why it is shared rather than copied (both suites measure isolation, closure, durability and recovery the same way), the through-the-public-operations rule with its two declared raw-state exceptions, the real-child-interpreter crash probe that makes the recovery claim a process fact rather than a simulated one, and the registry contract with an exact two-consumer list whose node is a real node in a consumer. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

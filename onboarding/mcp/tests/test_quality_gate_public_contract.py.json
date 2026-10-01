@@ -1,0 +1,83 @@
+{
+  "path": "mcp/tests/test_quality_gate_public_contract.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Closeout readiness is lossless on every surface",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
+            "content": "sha256:9881fc66658ae3e701a98b28fbcde02326f523eb7b9d36ad3e03b7ad724cb6db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_readiness_is_lossless_on_every_surface"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Diagnostic readiness stays non certifying with matching rails",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
+            "content": "sha256:a8f6c56eda0ee6edfa35b5d95bb5c2c99fd95e18cf896494913ee6940745194c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_diagnostic_readiness_stays_non_certifying_with_matching_rails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Stale certificates and invalid profile remain non green",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
+            "content": "sha256:8cd8129b2bff3cd13ef794a630934dc230acfe683adb827ab00f9ef78132cc90",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_certificates_and_invalid_profile_remain_non_green"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Recovery refuses same id decoder byte drift",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
+            "content": "sha256:61a962b56a8deee253dbbae7e010b84b5fd1b24141b64c8551561cd47d2005a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recovery_refuses_same_id_decoder_byte_drift"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "098c95e349d5ad612918557d3ab578b4974ef58a",
+            "content": "sha256:b8d6ca0d7df36c79bac252392c3f00f06bbd778806b4bb274c4be31b7d9d82ff",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

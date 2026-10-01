@@ -1,0 +1,229 @@
+{
+  "path": "mcp/tests/test_terminal_observer_health.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The record, writer and accumulator contract: exact v1 bytes, one atomic replacement, saturating counters, the failed-write source of truth, and the status ladder at the exact cutoff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:3585ce2616b8154660c105a14d708d7a694a49ddcce6f4e43794c806a619f2a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthRecordTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The module is registered exactly once, in the explicit unit-regression lane.\n\nAnchor: \"mcp/tests/test_terminal_observer_health.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:e744fee51ce52882ad915fe7ce9e4808c12aaa8e48032b26fec1c361f22337c9",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every unusable source omits the wire key and is never repaired, including a prior-lifetime row and an above-ceiling counter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:5f494d1b4246e756309e9e23d7c505ed795af1a7141b27aed14933cf9219c3b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_unusable_source_omits_health_and_is_never_repaired"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Classification is bounded, ordered and secret-safe; a custom subclass publishes its base category.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:51a3d181c1b541e68529adad9970626b3e0182e5cae84d4844b097f544375864",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failure_classification_is_bounded_ordered_and_secret_safe"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Publication rides the observer call: the prime's own outcome is the first transition and both outcomes publish distinctly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:9648a5554e9d36bbddf06e931a64187f9766cab8f2b9d47fc124d09350e59a30",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthLifespanTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:e391a8208853ad7a537bfaaed5c320eaba42c9e93acb5756a12528542c7a5255",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_prime_and_every_steady_pass_publish_success_and_failure_distinctly"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A health-write failure emits only the fixed log line and retries the complete record next observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:8d514948c344ce0914df4dcecabb188ffb64dbd4d7c7df21d6178f381ab23d63",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_health_write_failure_logs_only_the_fixed_line_and_retries_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The served tail is additive and omissive, and the read routes never mutate the row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:a2fe0aa4feeeb6823b8f7b2769b9d473e4df165d0829a51e8dfc9a30dc48c86e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalObserverHealthServedTailTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cross-read table: a fresh notifier cannot mask a stale or failed observer, and a current success beside a fresh notifier reads healthy from its own row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:3eefb3f79c9e156184aa5ba38fc21d1cc638725e58ef4eb78988864054fd437b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fresh_notifier_cannot_mask_a_stale_or_failed_observer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "137eead55c43f2e13d6ee3da61a9782829439d02",
+            "content": "sha256:48c7a5e543a8ff17ffbff5cb314dfcb77c7c1860b041de747431844f1eaab4fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_current_success_beside_a_fresh_notifier_reads_healthy_from_its_own_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The served surface the cases drive: the fourth tail key and the payload model it carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:c7a650fc8418729b75834341247c3ad77d5644b3bc0f545327e636fbf292cbff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedWorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
+            "content": "sha256:b25506b3516db7bd29cf86e398cba73c3eb89f9ee23ea438eb6e4463798e7c82",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_state_tail"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The publication seam and the served payload the cases enter through the real lifespan and the real route handler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:1894d805addf06d9766de7d643aff795a788d3ad0c5bc2e89300abf9e6ec8f76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_terminal_catalog"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:afacf3ef594ddf38aabbc8dc5e96bd42780901f12e524710e72120f8ba9e086e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observer_health_payload"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:b503a4b9b1198b6890e892eed0f101821c3310e4686df511f290ad13ba622461",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_response"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

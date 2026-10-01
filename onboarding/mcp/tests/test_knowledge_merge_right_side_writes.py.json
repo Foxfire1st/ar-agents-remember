@@ -1,0 +1,318 @@
+{
+  "path": "mcp/tests/test_knowledge_merge_right_side_writes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the two replayed-write properties it protects.\n\nAnchor: \"What the merge does with the right side's own writes: replay them, then judge the result.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:28ae3a3f08571ce9664049cfcb8d6cf7d81263dadb0e0d01384060fa53fbf626",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The reparent case, with the two sibling assertions that separate \"the right row moved\" from \"something moved\".**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:841217c4b0945134551522857fd8eb2ddf91a7c33ee232feefb1e26c6fb1d7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_replayed_reparent_moves_the_row_it_names_and_no_other"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The cycle case: `lineage_cycle` attributed to the merge, nothing published, the three inputs byte-identical.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:59f73c9505d9f95266f5dc05bbbd1a18b75c5b03aa7e8669719a3f2abd97e887",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_replayed_route_reparent_that_closes_a_cycle_refuses_the_whole_merge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The lane row this module was appended to.\n\nAnchor: \"mcp/tests/test_knowledge_merge_right_side_writes.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:f6d958debdb3662abfe75a33a269d7a089b6b02dec242131c28d7ad46af5499d",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 277
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane row this module was appended to.\n\nAnchor: \"mcp/tests/test_knowledge_merge_right_side_writes.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:f6d958debdb3662abfe75a33a269d7a089b6b02dec242131c28d7ad46af5499d",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 277
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lane marker, which declares this module's retained evidence category.\n\nAnchor: \"pytestmark = pytest.mark.evidence_unit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The key rule: read from the side that carries it, old side first, which is what makes a right-side `UPDATE` mergeable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2d9cf92005ae84b6447176beb27269078e6de3c",
+            "content": "sha256:2834bbade67b100c08f11e71181f7e31062fa24c61bae984a2b759914b4dccf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MaterializedChange"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2d9cf92005ae84b6447176beb27269078e6de3c",
+            "content": "sha256:4aa111146b8fc617d763c20ebaa3a119b747451f2883a786e70f96dc7b8d25a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "primary_key"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The acyclicity rule the replayed reparent is judged by, inside the merge's own transaction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:743536918d07f037ce0bcdf3e273ac92a309241f25590a95d5c29c8ddd26169d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_routes"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The public merge entry points the cases actually invoke.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:b7fa1b611fb6baf6bc030b2c887575c1505d51fac1a76f1309222e4efe53b36a",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_knowledge_merge_base"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:38fb095e0f7d35beaabf27eb1ec1c82910351577296cfe8843b916cb678a12ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_resolved_knowledge_datasets"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared three-dataset case and the helpers that shape and read it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:247e9454c171cf5d77bd97c07ad9f3b7a7d578506eec05b0450dcf5a7b743bdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeCase"
+            },
+            "path": "mcp/tests/merge_case_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:6ad32801bb47dc160ae769989211ff37346cb4165ef7b7102b73544d4d66d535",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_case"
+            },
+            "path": "mcp/tests/merge_case_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:917f63641558b6d24b220fa0736c2a49f436022d6b5562a1b6511d01bc72c4aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "labels_of"
+            },
+            "path": "mcp/tests/merge_case_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "37a7c760cd9aaee170b4b70b413e887aab844ba5",
+            "content": "sha256:f24b13e9cc4cb00ec559d3031bb61637cb39370f070d447a6b565ee5aa07c5e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_label"
+            },
+            "path": "mcp/tests/merge_case_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The route ids and the one-statement shapers that author and reparent the hierarchy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:a8bbc8f5ce9b6eeb5484b96b1a2b3469bc38c735fc95d8f6fff5415820b15b5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_routes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:efccca50dc2ba672582cc135d86b1e126343c9d20556ff44daedf05384cbc7cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "reparent_the_leaf_under_the_root"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:0dddd71f1b2605031b671d285c1d29c9d34b5e3ce2183e800d1dbbccb754fc9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "reparent_the_root_under_the_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The base resolution and the optional publication every case goes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:7c25861d9f1b2f1c393d552d1ecf1b7657727ce0e0faa08dd40cf33b03ef9e0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_base"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:393ee3af48808c5a7ea838f98c76da4c56a1e600983cc0b90a007d43c388236a",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The published-candidate case: the right side's own label is read back out of the merged file.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199b413573912a9c9363714360b0ce8f95950a61",
+            "content": "sha256:3b236e1a4058dc4aa4c691e122ed6c74b3ded1dab37eccf61f69b43a72a3d5f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_right_side_update_is_replayed_and_the_published_candidate_carries_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

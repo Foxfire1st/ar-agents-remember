@@ -1,0 +1,84 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate construction explicitly excludes memory.md and reobserves the selected code view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00a76f029161875d21abd5aee84c11eee304d358",
+            "content": "sha256:a4b95c534526f094d828aa45ead235d32583fc7b098dab87fdabfa5efce89b3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_prepared_memory_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cache setup is conditional on real non-cache changes before invoking the registered producer.\n\nAnchor: \"prepare_memory_cache(handoff.contract.memory_worktree)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00a76f029161875d21abd5aee84c11eee304d358",
+            "content": "sha256:1ce39f60ebf282faee22761ef8208da8b508817fbbd430598db323fd70720981",
+            "locator": {
+              "kind": "symbol",
+              "name": "certify_prepared_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The selected fifth terminal must bind the actual cache-free tree and logical pair.\n\nAnchor: \"actual selected fifth terminal\"; \"result.memoryInputs.memoryTree.value != actual.memoryTree\"; \"result.memoryInputs.candidatePairAuthorityDigest != view.logicalPair.contractDigest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00a76f029161875d21abd5aee84c11eee304d358",
+            "content": "sha256:822a8201a4bb49fca991a11379c1de957aa246f18d8ab005b4391ab258486d3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_prepared_memory_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The memory reuse record carries distinct raw and certified tree identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:8822d274a6b0f07f882cf4736a6c1acb8a3bee74f2485578b29d40c9662aee3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExistingMemoryPreparationProof"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:2588d432d884dab5a17be77145ce76c1edb261ab8b797042bb046e38fe0dad6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "certifiedContentTree"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

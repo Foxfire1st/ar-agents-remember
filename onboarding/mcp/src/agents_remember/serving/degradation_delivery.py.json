@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/serving/degradation_delivery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The degradation detector declares the alert port this module implements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "content": "sha256:e69afb8070d7e66ee8f166fa59899f8b411ec50cda56298a870746c37dc1643b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DegradationAlertPort"
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

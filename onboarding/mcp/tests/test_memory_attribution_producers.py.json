@@ -1,0 +1,156 @@
+{
+  "path": "mcp/tests/test_memory_attribution_producers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one-definition guard and explicit five-producer census.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "content": "sha256:6f9fe2bef8dca1db0776bd5cecc7e80119f2df99f799ad26820d27b2314898b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PRODUCERS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_census_producer_reaches_the_shared_renderer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The hostile-body case preserves the message and parses the final attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "content": "sha256:086b19f745277f6fcd7bd201e6975f2a66d8b7715da14724707f9f9a32404156",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_one_renderer_keeps_the_callers_body_verbatim_and_its_trailer_final"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The public carryover case verifies one commit and no extra repeat commit with absent cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "content": "sha256:f5a9f40bcc0a1fbcfb056e2e1deca71f3de2c21f3c0577bea425d3a6bae847ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carryover_attributes_its_memory_content_commit_to_the_official_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The existing baseline case verifies unborn readiness, cache-independent reuse, and unavailable-history refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "content": "sha256:84474b916d80410176e1759c0102ee6b31d0291336f2df2512c051d54f170133",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The kernel owns the key and the single writer.\n\nAnchor: \"CODE_COMMIT_TRAILER_KEY = \\\"Code-Commit\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:cac1e23697a3434a11cee71fcbb951fe998c7a5be61e3dad9742c6dfb4fff134",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_COMMIT_TRAILER_KEY"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:7dfaeda4b482976051b933ca036ea3320e85eee5a37e226b97f384cf38d89ed8",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_memory_content_message"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Closeout-shaped producers reach that writer through the effective input model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:27080a1f03fa1174fbaf751a244ae5e116cb782523bded9c4b4c60e60c3f17f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_message"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:b5e66c5b68b109768d7f9b3fa3b46cef7c18c9b10729650e94dee8263695b769",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectiveCloseoutInput"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Carryover never writes converted memory and takes the cutover lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "content": "sha256:bc5c043af086c3e51c880b10223be8624c949d67783070dac5793f19d1cd3ae6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carryover_never_writes_converted_memory_and_takes_the_cutover_lock"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

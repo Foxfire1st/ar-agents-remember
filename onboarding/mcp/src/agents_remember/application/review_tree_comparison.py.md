@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_tree_comparison.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_tree_comparison.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:46:54+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563`|
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -119,51 +109,42 @@ created, retained or read** (ruling 22:22:37 Q1: the derived index is the permit
 - **L37 (ruling 22:22:37 Q4):** the cutover notes state that the tree review, and the archive hook, apply once
   this build is installed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement packet
 `MIK-R25@v1` of task `260928_maintained-invariant-knowledge`, with its architect rulings in the leaf document
 `25_reviewer-on-git-trees.json` (2026-09-29T22:22:37, 23:15:34; 2026-09-30T00:08:39, 01:00:07, 01:37:42, 02:12:06,
 02:32:42); they live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The comparison and each memory side's index, with the live flag and the reopened code sides. | `TreeKnowledge`; `ReviewTrees` | mcp/src/agents_remember/application/review_tree_comparison.py:115-142 |
-| A leaf's review is a tree review when its memory worktree or its official line holds the layout marker. | `official_line_converted`; `memory_converted` | mcp/src/agents_remember/application/review_tree_comparison.py:148-170 |
-| The review-ref task segment is the task directory name, and nothing read from the folder. | `review_task_id` | mcp/src/agents_remember/application/review_tree_comparison.py:173-181 |
-| The ref name, refusing a segment that could leave its place. | `review_ref` | mcp/src/agents_remember/application/review_tree_comparison.py:184-190 |
-| Where a leaf's records live, and every readable record by number. | `comparison_directory`; `comparison_records` | mcp/src/agents_remember/application/review_tree_comparison.py:193-211 |
-| Capture, pin and record a live leaf's four trees; none for an unconverted leaf. | `live_review_trees` | mcp/src/agents_remember/application/review_tree_comparison.py:217-235 |
-| The four sides of a live draft, K_B through the worklist's pairing. | `_live_draft`; `paired_memory_commit` | mcp/src/agents_remember/application/review_tree_comparison.py:245-291 |
-| A live memory candidate that moved during composition is refused. | `recheck_memory_candidate` | mcp/src/agents_remember/application/review_tree_comparison.py:304-326 |
-| Committed only when the durable line's tip holds exactly this tree. | `_candidate_side` | mcp/src/agents_remember/application/review_tree_comparison.py:329-335 |
-| An unconverted memory base read as its conversion, written as a Git tree. | `converted_base_side`; `write_files_tree` | mcp/src/agents_remember/application/review_tree_comparison.py:338-365; mcp/src/agents_remember/application/review_tree_comparison.py:390-412 |
-| Reuse on the same trees, else number, pin, then write the record. | `_record` | mcp/src/agents_remember/application/review_tree_comparison.py:437-472 |
-| Create-only pins, rolled back and refused naming repository and ref. | `_pin`; `_pin_refusal` | mcp/src/agents_remember/application/review_tree_comparison.py:490-526 |
-| Each memory side opened through its tree's index; an index failure is `unavailable-history`. | `_open_sides`; `_open_side` | mcp/src/agents_remember/application/review_tree_comparison.py:532-597 |
-| Reopen from the recorded tree ids, marking every tree Git can no longer produce, code trees included. | `reopen_review_trees`; `reopened_trees`; `_code_sides` | mcp/src/agents_remember/application/review_tree_comparison.py:603-666 |
-| A missing converted base is re-derived and its id checked; a missing tree is named. | `_before_state`; `_missing_tree` | mcp/src/agents_remember/application/review_tree_comparison.py:669-701 |
-| The refusal and the declared facts of a tree comparison. | `tree_sides_refusal`; `tree_limitations` | mcp/src/agents_remember/application/review_tree_comparison.py:704-739 |
-| The landed resolution over two index files; an unavailable side names no file. | `tree_resolution`; `_absent` | mcp/src/agents_remember/application/review_tree_comparison.py:745-778 |
-| Pins, reuse and the refused pin. | `test_a_live_review_is_four_trees_with_its_uncommitted_candidates_pinned_and_reused`; `test_committed_candidates_need_no_ref_and_a_failed_pin_refuses_naming_repository_and_ref` | mcp/tests/test_review_git_trees.py:334-379; mcp/tests/test_review_git_trees.py:423-447 |
-| A repeat read writes nothing. | `test_a_read_writes_only_review_refs_and_comparison_objects_and_a_repeat_writes_nothing` | mcp/tests/test_review_git_trees.py:400-420 |
+- The comparison and each memory side's index, with the live flag and the reopened code sides. [1]
+- A leaf's review is a tree review when its memory worktree or its official line holds the layout marker. [2]
+- The review-ref task segment is the task directory name, and nothing read from the folder. [3]
+- The ref name, refusing a segment that could leave its place. [4]
+- Where a leaf's records live, and every readable record by number. [5]
+- Capture, pin and record a live leaf's four trees; none for an unconverted leaf. [6]
+- The four sides of a live draft, K_B through the worklist's pairing. [7]
+- A live memory candidate that moved during composition is refused. [8]
+- Committed only when the durable line's tip holds exactly this tree. [9]
+- An unconverted memory base read as its conversion, written as a Git tree. [10]
+- Reuse on the same trees, else number, pin, then write the record. [11]
+- Create-only pins, rolled back and refused naming repository and ref. [12]
+- Each memory side opened through its tree's index; an index failure is `unavailable-history`. [13]
+- Reopen from the recorded tree ids, marking every tree Git can no longer produce, code trees included. [14]
+- A missing converted base is re-derived and its id checked; a missing tree is named. [15]
+- The refusal and the declared facts of a tree comparison. [16]
+- The landed resolution over two index files; an unavailable side names no file. [17]
+- Pins, reuse and the refused pin. [18]
+- A repeat read writes nothing. [19]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The module writes refs and objects into the leaf's own code and memory repositories, the two its series contract
 names; it reaches no other repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T03:46:54+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): created this card for the new file MIK-R25 adds, recording rulings 22:22:37 (Q1, Q2, Q4, Q5, Q7), 23:15:34 (F4, F5, F6) and 02:32:42 (a), and four of the five candidate invariants. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/package_data/runtime/eve-runtime/agent/agent.ts
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/eve-runtime/agent/agent.ts` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
-| governingOverview      | `../../../../../../overview.md`            |
-
 ## Governing Overview
 
 [overview.md](../../../../../../overview.md)
@@ -44,19 +34,10 @@ authored one. Byte identity between `eve_runtime/` and this mirror is what that 
   packaged probe path (`runtime/eve-agent`), so a source checkout keeps resolving its own
   `eve_runtime/`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The packaged-application probe reads this file together with `package.json`. | `probe_capabilities` | mcp/src/agents_remember/install/experiment.py:479-566 |
-| The installed application root is `<coordination_root>/runtime/eve-agent`, reached through `AR_EVE_RUNTIME_ROOT`. | `install_eve_application`; `resolve_runtime_root` | mcp/src/agents_remember/install/runtime.py:537-563; mcp/src/agents_remember/serving/eve_runtime_launch.py:168-203 |
-| The generator declares the `eve-runtime` target with its per-target ignore set. | `TARGETS` | scripts/sync-runtime.py:61-78 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **created** for the packaged mirror this leaf
-  adds as a generator target. The leaf's second sync regenerated it after L17 changed the authored
-  `agent.ts` (the eve effort consumer), so the bytes at this tip are L17's authored content through
-  this leaf's generator; the card records generated content and names the authored source as the
-  edit route. Verification metadata names the leaf base commit because the candidate is
-  **uncommitted**; the real stamp is closeout-owned.
+- The packaged-application probe reads this file together with `package.json`. [1]
+- The installed application root is `<coordination_root>/runtime/eve-agent`, reached through `AR_EVE_RUNTIME_ROOT`. [2]
+- The generator declares the `eve-runtime` target with its per-target ignore set. [3]

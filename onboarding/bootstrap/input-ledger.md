@@ -2,7 +2,6 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | mode | automated existing-memory-slice-maintenance |
 | task | 260824-PDLS test evidence-system reform |
 | capturedAt | 2026-08-25T15:44+02:00 |

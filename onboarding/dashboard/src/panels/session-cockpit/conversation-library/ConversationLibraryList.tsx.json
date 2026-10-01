@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Row/cursor/key wire types this list renders (now including `ConversationLibraryAgentRow`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:56e241052520045b1a74b05a9c90ba366192d68970af9b94945a65208d927076",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryAgentRow"
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The A4/A5 presentation helpers (`humanizeAge`, `truncateMiddle`, `harnessLabel`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3eaecec4dc7f066a3b6666c682a1a181267f4",
+            "content": "sha256:5060b1233e2ea1d6cdabf50081bf4445b9e40b7186f777c843c7c5ed6c440e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "humanizeAge"
+            },
+            "path": "dashboard/src/data/conversation/format.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The surface that owns selection/paging callbacks into the store and passes `agentsNote` through.\n\nAnchor: \"agentsNote={listView.agentsNote}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "179fe52c67ccf3d450dc0a657ba772b077be613b",
+            "content": "sha256:8afa06e51ee125ebd640aa59b62dc26c6ff21e481e8d06848f587efe58335fb3",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sub-agent nesting + agentsNote regression suite for this list.\n\nAnchor: \"ConversationLibraryList agent nesting\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63c9d0432a93377b7cf529f4134536ec9c91653f",
+            "content": "sha256:08c6d45275e399319d54d6bdfa53e3646d9232ef262c892fdc3b9171ec8aa958",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/triage.familyContinued.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The continued family context with its facts.\n\nAnchor: \"family_context\"; \"\\\"change_kinds\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a0208d2d6ff36cf0f32f10f6f3ec51eb44ab810",
+            "content": "sha256:c1726d4aeaed8631fd9bcf370422a9faf9aa7f8350d4f7c69a6fc4a4cefee6e3",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/triage.familyContinued.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b898b0f2d0033f2e41c815ea7c0af7c66833337b",
+            "content": "sha256:c41dcc4a93c64ac36f93a76a2e98e8758bf046cd1161175eb0c9573d144eecd4",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/panels/review/triage.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

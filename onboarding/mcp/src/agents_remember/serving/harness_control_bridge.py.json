@@ -1,0 +1,322 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_control_bridge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter protocol requires both live setters and supplies explicit unsupported results when no adapter exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:d1aa1ad3af2174915dced8bacf6a121ab7ba22865576a2f0573ee8e47382a93c",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessProtocolAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:b6f949e59ff075994036ea9cca4b698c9e829f4a78798178d81bc4538ce22717",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnsupportedHarnessProtocolAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:9f375dd54c922c9875252a0c0d6fc7ef58c6b02e76fc9fcec6f320afc087e899",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b17276b3ca18ffcb0da991c05f9b23a67f87edc",
+            "content": "sha256:b56f260c119637fc51144cfbb293c493ce284b911abd04554d8b7c6c2d6f6e5d",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bridge exposes its running, epoch-bound \"def submissions(self) -> HarnessSubmissionAuthority:\" through `submissions()`. The authority owns ordinary-operation dispatch order and result validation, including \"async def set_model(self\" and \"async def set_effort(self\"; the bridge applies the running-state guard before each caller takes the authority.\n\nAnchor: \"def submissions(self) -> HarnessSubmissionAuthority:\"; \"def submissions(self) -> HarnessSubmissionAuthority:\"; \"async def set_model(self\"; \"async def set_effort(self\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:4a7ab9d1381e8d5a4d00255665f62391fc3f561ca59791630714d98fb5dce3d7",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 323
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:0dbebbf3069744afd8f59c879b66460c0100f5cfb9aa6dcc18b5a749da2cf826",
+            "locator": {
+              "end": 1023,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:46a1ada8a858c8086d3afdad0e987d9df26c98b5dd756f7063e2089d62d3e552",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:769b32528d05736ba050a16af59d4da55ac1597f101f2889d0eced83a8fcb488",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retained `SubmissionLedger` owns provenance and paged operation-timeline reads; private IPC reaches the timeline as `bridge.submissions().ledger.operation_timeline`.\n\nAnchor: \"async def _submission_provenance(\"; \"async def _operation_timeline(\"; \"class SubmissionLedger:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:6e9c9c2ef3d8c066aa8c47582143bd0cd1e464e09c9ebab31405a420a1998539",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:7ceccd51aceb8055a17176896dc6d7831fd88848d5a672616bacbfc86b4ccbc2",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 399
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:142b52fa9627b5f0ff653ba913ae30c61be7f8a6a983631395c843b0ddb2ed60",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:369330a4d3e58664c30c9fd7154f90a71ebf302744367487c5870fd38fd3fefe",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Private IPC exposes bridge advertise/set actions under the same exact identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:9596ac20aa246932ef81631c1465197a8534ef5228f0cacecbb2a19c7333fc3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessControlServer"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:1cada299c0e1a17878a8e80e9616142198bf6840aa9557c022603f64cf1869c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_advertise"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:46d835370e9aeeb0012e147aba21e330956e1554ca84bb378a97818412c906c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_set_model"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:e85ceba3098d49d5b6b015479ff161a9de9f9650ad52da30c0fc0077b833de4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_set_effort"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The evidence DTOs, reserved keys, clip/window helpers, and structural native-page protocol live in the models module; `AR_EVIDENCE_METHOD_KEY` + `EvidenceFrame.native_method` are the method-carry pair this divert preserves, alongside `EvidenceFrame.thread_id` (the demux key this bridge stamps) plus `AdapterSnapshot.pending_interactions` (the plural multiplexed set).\n\nAnchor: \"class AdapterSnapshot\"; \"class EvidenceFrame\"; \"class EvidencePage\"; \"class NativeEvidencePage\"; \"class NativePageReader\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:7c44052095c46ad2c86133026044236e07006fba65168c04179a7d15ff5395c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AR_EVIDENCE_KEY"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:c57a45f86037f1cd5b8e6b26c59f24ba8809a9d930dd72a5d8f4442ba5f06123",
+            "locator": {
+              "kind": "symbol",
+              "name": "AR_EVIDENCE_METHOD_KEY"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:6081e659c0eaad0b9c5a6ccd173f47bf61b369d2ee2c618174478cd40522eb2b",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:471861d295c8e9e89e2af45e80ee21dab08031422c6a5aa3733bc31dbcac6d43",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:e095aed7dfaa5c260841fedb600dc69cdfcb8c270bedda08196158532d61df40",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:3e6bb0ccbb3cd7fbe66334f2b17cbd6c065993f60f8705b7c858bcb7fd0611dd",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:a6e52ddbf2e72b1ba75d3df8ff44367644799957945853ff0d4007de80d09932",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,232 @@
+{
+  "path": "dashboard/src/panels/engine-room/BootTimeline.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`).\n\nAnchor: \"export interface EngineProcessNode {\"; \"function steadyState(node: EngineProcessNode): StepState {\"; \"node.health === \\\"failed\\\"\"; \"node.providers.some\"; \"function bootSteps(node: EngineProcessNode): Step[] {\"; \"node.edges.find\"; \"node.codeWorktree.exists\"; \"Memory (${node.memoryMode})\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:ed922a8cea866a8b2c3e127b59b81ab6f1aa6d13cd44d5968cf6f04ac1c44348",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:2a13ddaa1bfe9b2a03dcd13ced0e482d6168f07e03840fb61c538b32a07c2b10",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:86a24e3b169e9590101ed78d462c0b7de45f6bcb6ec3603d1af9e5fc3dbbfdb2",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:3df5a073799c2e377268f95ace656bd7cc731f742d45732fa584945f04e170c8",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:c5c79d18083d274fb29eee7997ec2963afd493731731960a864626a7ae57449d",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:8b6806385925909228f947b0f50a8e87d5aa29e57a6c69e33b8562b18a60acc3",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:adc5e70699b6beb4f6da806e367cc006d742e94259f35a0eafbb048349540fd4",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`EngineProcessEdge.state` is mapped through the known `EDGE_TO_STEP` values.\n\nAnchor: \"node.edges.find\"; \"EDGE_TO_STEP[found.state] ?? \\\"pending\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:ed91b3293e751fd037a99921f5d9273f97f5a91967266017aaa232db3d98c61e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EDGE_TO_STEP"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:d0fcb3e6a2b8cd31fb31fad5de57ceefcbbb506587de711c2d2c1066c49d0bd3",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`DISPOSE_PHASES`, `disposeFrontier(node)`, and `teardownSteps(node)` drive tear-down mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:28abac8c02d21ae2f066d7fae2bfba8659fc0c2549db082966c7c3cedfdf3700",
+            "locator": {
+              "kind": "symbol",
+              "name": "DISPOSE_PHASES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:61f589c5c9db15c7a1f2f1bb25c82ca846af1fe99d32ee49469285c1e820b542",
+            "locator": {
+              "kind": "symbol",
+              "name": "disposeFrontier"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:044468d2da86177b5ff76cb127f2c69423abfd20f0fa3903991fdbb3f3411b8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "teardownSteps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`timeline`, `timelineStep`, `timelineMark`, and `sectionLabel` are the state-keyed timeline style recipes declared in the engine-room layout styles.\n\nAnchor: \"export const timeline = css({\"; \"export const timelineStep = cva({\"; \"export const timelineMark = cva({\"; \"export const sectionLabel = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:ddb22371d1431e4693c119fe49084434b7e81799e979d23ad788cdf2edb59bcb",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:3f62f35905f1b5da1739610389611ce4583a871998327fc69ee41431540182ee",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 474
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:8d0406bc7822642f02d87e58aeebe9412c47f49c4a8c0c13d1077819c8772a1c",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 482
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:825a2a514e7505fb618c6534c08c70c660c4394d12ab4a8589cc26e817cc000d",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 503
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

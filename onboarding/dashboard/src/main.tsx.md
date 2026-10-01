@@ -1,15 +1,5 @@
 # dashboard/src/main.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/main.tsx`                          |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T00:25+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [dashboard/src overview](overview.md)
@@ -42,25 +32,10 @@ Development builds now periodically clear React's accumulating performance marks
 minute janitor is dev-only, preventing a long-running cockpit tab from retaining an unbounded timeline
 while leaving production bundles and live DevTools recording behavior untouched.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The Panda entry + layer order it loads. | "@layer reset" | dashboard/src/index.css:9-9 |
-| The `:root` design tokens it loads. | ":root" | dashboard/src/styles/tokens.css:5-5 |
-| The scoped WebTUI skin it loads third (260715-FEUI-L1). | "base.css" | dashboard/src/styles/webtui.css:12-12 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 6 citation findings for the three stylesheet reference rows using exact CSS literals.
-
-- 2026-07-24T13:17:50Z — Added the development performance-timeline cleanup boundary. Verification
-  hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-17T00:25+02:00 — 260715-FEUI-L1 S1: added the third global stylesheet import,
-  `./styles/webtui.css` (the one WebTUI mapping file), after `index.css` so its `layer(webtui)`
-  rules land in the slot the layer-order statement declares. Verification metadata pinned to the
-  task base until closeout stamps the L1 code commit.
-- 2026-06-15T17:00 — Created for slice 5d: now imports `index.css` (the Panda/layers entry) ahead of
-  `tokens.css`, and wraps the app in `MotionConfig reducedMotion="user"` (the prefers-reduced-motion
-  a11y upgrade). Verification metadata pinned until closeout stamps the 5d code commit.
+- The Panda entry + layer order it loads. [1]
+- The `:root` design tokens it loads. [2]
+- The scoped WebTUI skin it loads third (260715-FEUI-L1). [3]

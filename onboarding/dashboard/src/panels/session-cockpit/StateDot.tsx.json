@@ -1,0 +1,124 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/StateDot.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cva variants + dual accessibility-mode renderer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5021374525ac7482aac8ff6fe6d35ca1e0635215",
+            "content": "sha256:6bcc7e10372aef7726cdfb35a656ec4e07f76943b38ae83203d24185926e2d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "dot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5021374525ac7482aac8ff6fe6d35ca1e0635215",
+            "content": "sha256:9d15234b559e699861daf20a55c57d9cd9b0396312f13e9958c9c2d92506f8f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "StateDot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The grammar whose visuals this renders (single source).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:79740767efccc0858dd08cdc0a40b7a4fb40b26aeee45bff9846058a92b8a916",
+            "locator": {
+              "kind": "symbol",
+              "name": "PULSE_ANIMATION"
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:f57325eceb0bda4821864b51af6b6db1c1dfdc4cfb62dc0a33afb538e6f531da",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeatVisualState"
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:e31b2ae53e0b44e3f02656b04af1d349d631a4c6284b2da6220e970bce1a3958",
+            "locator": {
+              "kind": "symbol",
+              "name": "seatVisualState"
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:a93fe090e3f6dcc02e1746dd8918c05033b0d4f19063020249417df99636a2cf",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `pulseSlow` keyframe + the sovereign effects-off freeze.\n\nAnchor: `pulseSlow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:c99157bfbb246757bd22b124d4473f0d0f828facb52f77c59fac18d4620cd07d",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The cross-surface consistency test (rail dot ≡ HeaderStrip dot).\n\nAnchor: \"the rail dot and the HeaderStrip dot render the SAME grammar state for the same seat\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56b61f4e3ece27f20482db0ce86b22ddc22c7de",
+            "content": "sha256:a07fb6935e219a872248e04dc33237415bd7291feabf056db33333b3ffa5720e",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 461
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

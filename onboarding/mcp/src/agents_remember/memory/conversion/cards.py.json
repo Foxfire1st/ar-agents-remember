@@ -1,0 +1,230 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/cards.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The seven dropped metadata fields and the Evidence heading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:dec738216e5b718f0a4bfa41e21a719705f09ba472f2dedd13c629de9f1af331",
+            "locator": {
+              "kind": "symbol",
+              "name": "DROPPED_METADATA"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:3efe5621e814dfde9022c843f158029f23a01c5a4a1b3a88e9446b8ccd3b3682",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_HEADING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A card becomes prose, one Evidence section and numbered references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:a4331704d00458c653941537c9f3609c4eba11c917aa9acbf28d7040601b07ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_card_becomes_prose_one_evidence_section_and_numbered_references"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Rendered back without history, a card reproduces its content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:a71b4a198e6856dd6a81ffade7e4d0451767342554951eb83d074cab766dfa09",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_card_renders_back_to_its_content_without_history"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:ed3f43e01259a95aed3fd94782b254f185013c10d64670c9e664ccd31752000a",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_legacy"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A card taken apart: metadata, rows in output order, template, stray rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:55c221b6dbb0443b5429a61510504fb046f40fcc57c684dbe6f90346be3f5fdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SplitCard"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:17b8b0fe628bf46e9b91b1af06b270e528b1967417a038073f6e67bc17b5fee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The metadata rows are dropped; other rows stay in a smaller table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:2c5322ea07817dbb7ff1546caa24ab750ccee3dc3f2b1cf511179d1690422060",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replace_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Update History is dropped and its bytes counted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:d3840bc9e0c56095c502efa6b6fbb1b8aa679cfe1b26f55d430d8ce0457d7567",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drop_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A citation table becomes finding lines; a placeholder stays prose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:d82352792680188cc86ac26bb66fc9aa970e2e3d185d3e1fbc61a227276a945d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_take_table"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:7cdf245f910cce3ac3a79a794a4f2c5fbf77c380db81d46f5fe596357247d254",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_placeholder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:22d5edf52d706ebf119b971e010878986fbfa95e0d998134b44889ac2c4363aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "split_card"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Stray citation-shaped rows are left alone and listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:872786d9c107a9c52de337c7f8d8fad7cd120cbff825a2aa6cd61106c55d1677",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stray_citation_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The reference sections move into one Evidence section, one level lower.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:2d9b352052527fb4fcbf6b44aa58b6c47688a7918afcaeba0223e3e7c81f708c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assemble"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The render: sentinels, then the validator's escaping, then the numbers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09912be091f1b354f4331cf9b9cbc330dfff8344",
+            "content": "sha256:d95e4c0cc80ffb59b80a31ee7a538815520872654b47238a98150190bd0e4469",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_card"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

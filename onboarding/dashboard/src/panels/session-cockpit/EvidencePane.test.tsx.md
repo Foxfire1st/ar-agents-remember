@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/EvidencePane.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/EvidencePane.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -38,31 +28,27 @@ classes, and exact dismissal behavior before and after a seat leaves the catalog
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Focused-seat case covers launch, receipt/reconciliation, bridge, pane, retire-stop residual, and liveness evidence. | "reveals launch" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:32-113 |
-| Missing-receipt honesty case. | "keeps missing receipt evidence explicitly absent in the pure detail projection" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:115-127 |
-| Terminate and retire residuals remain inspectable without focus and share dismissal across surfaces. | "keeps terminate and retire residuals inspectable without focus and shares exact dismissal" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:129-177 |
-| A successful terminate residual remains visible after the terminated seat is removed. | "reveals a successful terminate residual after the terminated seat is removed" | dashboard/src/panels/session-cockpit/EvidencePane.test.tsx:179-201 |
-| Component under test. | "export function EvidencePane({" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:411-411 |
+- Focused-seat case covers launch, receipt/reconciliation, bridge, pane, retire-stop residual, and liveness evidence. [1]
+- Missing-receipt honesty case. [2]
+- Terminate and retire residuals remain inspectable without focus and share dismissal across surfaces. [3]
+- A successful terminate residual remains visible after the terminated seat is removed. [4]
+- Component under test. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
+No cross-repo evidence applies.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -70,12 +56,3 @@ Updates lifecycle notice fixtures for the new `cleanupFailure` state so evidence
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Update History
-
-- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Verification
-  metadata remains pinned to the leaf base until closeout.

@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/_store_durability.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared real-store write/reclaim boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd57af35dc5fcb84222c6203ae1114567d01c521",
+            "content": "sha256:04253362ae56d4951bd47365265ccfe3a320d3da957e96470811924d297c9d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StoreAdapter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider stores share the same instrument",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd57af35dc5fcb84222c6203ae1114567d01c521",
+            "content": "sha256:10f6b859ecbec67484b3d8310e7c465cf6355c0a01f4a2854363e147e930a853",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderStoreAdapter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Independent durable-record/torn-line accounting",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd57af35dc5fcb84222c6203ae1114567d01c521",
+            "content": "sha256:d6ab85159789f8902d00dcef5cfec0420febc9ee1ceed4a964f2d78a08a05eaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "surviving_ids"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Controlled actual rewrite rendezvous",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd57af35dc5fcb84222c6203ae1114567d01c521",
+            "content": "sha256:23546e321d59a5b4a33e5614097f8d71c91fdf2682a5aa18dca1e01ed989abd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_rewrite"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Per-root receipt isolation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd57af35dc5fcb84222c6203ae1114567d01c521",
+            "content": "sha256:30483abc80c455fd11df5722abe606f61ca5018bb45da3644762f17a8697e6d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_work_dir"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Forked append/reclaim orchestration and bounded joins",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd57af35dc5fcb84222c6203ae1114567d01c521",
+            "content": "sha256:bea110730ed26779d99af061be2f4477a9b6489af99d1ce00e37a7aa234f72ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_forced_lost_update"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

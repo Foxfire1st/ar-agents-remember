@@ -1,0 +1,61 @@
+{
+  "path": "examples/mcp/settings.example.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids.\n\nAnchor: \"class McpRuntimeConfig\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:ecc3c3c8f78a3ede9ad1e547359d16fd6cec6adb344ad3557c5576b198e5f830",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider lifecycle settings are generated from MCP config instead of read from coordinator settings.\n\nAnchor: \"def lifecycle_settings_from_config\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:67b072abea5fa645d2dde768432b7ff05b7fc770b9fc513c9276e1d18596afa6",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `providerDegradation` shape shown here validates through the dedicated fail-loud parser (260707-HFX-L7).\n\nAnchor: \"class ProviderDegradationSettings:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
+            "content": "sha256:e00a8d830eef8c896f8b1ad32e4d5e45419f5352fe0d283fe514f5b3424e3de9",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

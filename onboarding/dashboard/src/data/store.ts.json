@@ -1,0 +1,190 @@
+{
+  "path": "dashboard/src/data/store.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stable-equality + arrival-anchor module the merge is built on (volatile set mirror).\n\nAnchor: \"export const VOLATILE_AGE_FIELDS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:e3e89abebec8e35550e13e3deedb967b532b982aa446df7d7e98f341784997de",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The mounted queue consumer reads `closeoutQueues` directly, scopes by sprint, and renders nothing when no matching queue remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62251f313ef49ee93fea2fbbf69165052b43f298",
+            "content": "sha256:4caac3df490d4a28c8dd5a0f548d4a5edd9c7f35a947cd5aed8a6394f22d90df",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueueImpl"
+            },
+            "path": "dashboard/src/panels/CloseoutQueue.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`servingBuild`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "servingBuild"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Observer event type for the Event River tail.\n\nAnchor: \"export interface ObserverEvent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "content": "sha256:92025411c28d48e4f249ed8f091eb66e04313a21b50b65eb2448dd8436e0f39e",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once.\n\nAnchor: \"export const dashboardStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "content": "sha256:53dd32decd9ed22d1b726bfcccda7d714314cb94874c8fd47c3b9e76c730fd16",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 329
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state.\n\nAnchor: \"export const useDashboard\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "content": "sha256:3df43af66aa8b16bb3c6c2a3005ae4d5a4cfaaf7bdf810fa802eabe4e46d605f",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 403
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d15a0455d7d09fc7f066615ef67e1560f9d37a9",
+            "content": "sha256:8fa41b882b39f2c01f2b107ba9975c64f63f70d38c2a82599c2186bded150e4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventRiver"
+            },
+            "path": "dashboard/src/panels/EventRiver.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`AgentNotifierHeartbeat` type this store carries, including the L8 backlog/duration fields, and the app-injected payload it mirrors; the wire fallback accepts the legacy `supervisorHeartbeat` key during the rename window.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:beb31ab5870fb86707cbcaf925ed9404919ee72463ac00eb6889d846dcf8915e",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierHeartbeat"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`AgentNotifierHeartbeatBadge` reads `s.agentNotifierHeartbeat` from this store to render the top-bar tick-age and inbox-backlog indicator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:5508205699e2921a6ee43f076c77433055462f36900b4236837b797b06254e6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierHeartbeatBadge"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`ScenarioPlayer` invokes the one store reset when a development scenario changes.\n\nAnchor: `reset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a496ea3787ae9c16702581c81e2793eb459d67e",
+            "content": "sha256:c67b646a46bed2de12342c2fe18e6db41a3d5641dc6c6242b9202e85db1a7e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScenarioPlayer"
+            },
+            "path": "dashboard/src/dev/ScenarioPlayer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # hosted_interactions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/hosted_interactions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-14T17:18:47+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 [serving overview](overview.md)
 
@@ -37,17 +27,19 @@ inbox acknowledgement. Missing, non-text, unmatched, or ambiguous correlation fa
 cannot degrade to a parser or fallback. Adapter failures leave durable state truthful and
 retryable.
 
-## Docs References
+## Evidence
+
+### Docs References
 No relevant external/domain documentation was configured; gate, inbox, and interaction tests are authoritative.
 
-## Repo-Internal References
+### Repo-Internal References
 - [operator_inbox_store.py](../controlplane/operator_inbox_store.py) persists delivery evidence.
 - [operator_inbox_transitions.py](../controlplane/operator_inbox_transitions.py) owns completion
   transitions (`record_adapter_completion`, `AdapterCompletion`).
 - [GateResponder.tsx](agents-remember/dashboard/src/panels/GateResponder.tsx) renders interaction context.
 - [harness_control_client.py](harness_control_client.py) sends interaction responses.
 
-## Cross-Repo References
+### Cross-Repo References
 No meaningful cross-repo references.
 
 ## 260718-CHATS-L5I Current Delta
@@ -75,17 +67,3 @@ Completion evidence is no longer written by a store method. `_sync_completions` 
 detail) and the same folded `current` snapshot. The transition module owns the same-row
 `adapterDeliveryState` / `adapterCompletedAt` projection while the inbox row stays `pending` and
 unconsumed; the loud-failure rules are unchanged.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: recorded the completion persistence move into
-  `controlplane/operator_inbox_transitions.py::record_adapter_completion` with an
-  `AdapterCompletion` payload; same-row pending/unconsumed semantics and loud correlation
-  failures are unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `GateAnchor` / `GateRequest` call shape for the agent-question gate; gate contents unchanged.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-- 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented protocol-owned null-requestId/vendor-correlation
-  completion projection, explicit pending/unconsumed inbox semantics, and loud correlation failures.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented durable interaction gates and completion-without-consumption.

@@ -1,15 +1,5 @@
 # dashboard/src/data/setControlsCopy.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/setControlsCopy.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -41,37 +31,22 @@ decision. Requested and effective values remain distinct in every relevant sente
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Shared copy and announcement formatters. | `setWaitingCopy`, `clampChipCopy`, `queuedChipCopy`, `setRouteErrorCopy`, `setResultAnnouncement`, `sessionAwaitingInputAnnouncement` | dashboard/src/data/setControlsCopy.ts:19-21; dashboard/src/data/setControlsCopy.ts:25-27; dashboard/src/data/setControlsCopy.ts:29-31; dashboard/src/data/setControlsCopy.ts:60-74; dashboard/src/data/setControlsCopy.ts:83-101; dashboard/src/data/setControlsCopy.ts:125-127 |
-| Presentation-model consumer. | `deriveSetChips` | dashboard/src/data/setChips.ts:58-216 |
-| I/O and live-region consumer. | "The set-controls driver (260715-FEUI-L4 S1/S3/S4)" | dashboard/src/data/setClient.ts:42-42 |
+- Shared copy and announcement formatters. [1]
+- Presentation-model consumer. [2]
+- I/O and live-region consumer. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
-
-## Update History
-
-- 2026-08-03T02:38:23+02:00 — W3-B04 curator: curated 3 table citations (3 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R2/R4/R5/R8 after final reviewer PASS.
-  Verification metadata is pinned to the contract base until the code commit exists.
+No cross-repo evidence applies.

@@ -1,0 +1,147 @@
+{
+  "path": "mcp/tests/test_capsule_experiment_install.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The no-persistence guard digests every regular file under the coordination root before and after the selected run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "content": "sha256:6937596471fbd3178e3d0c51712a0564c4252c1252e95ade13fd0155bee393d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_selection_is_recorded_per_run_and_never_persisted"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "content": "sha256:fd0dd527ae990fe8ccc3afba35935ba92a003b598e298288ab42b52e51edc502",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 449
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The installed root's corpus is measured as authored source rather than compiled a second time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "content": "sha256:9600de45164afd92f54d4fc9c9220eedb71cc4729220ba6591bda91b13d270f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_installed_root_carries_the_canonical_corpus_only_as_authored_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registered tool takes the selection as this run's own input and the record names the input that won.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "content": "sha256:2c1e85a208b5c8e4fe930b5baa8d31cb3ae6415992e50216a6fcca4f08d54ff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_tool_takes_the_selection_as_this_run_s_own_input"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "content": "sha256:bd71551bdee2cbffde0c61702fb7191d466c1048f4e2536683022f6cf1216f7d",
+            "locator": {
+              "end": 584,
+              "kind": "line_range",
+              "start": 543
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The installed application keeps machine-local trees out of the mirror and its `node_modules` is a real directory, not a symlink.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "content": "sha256:149cfea082184ca050887a3419ba8c11ffc884395f566636884fe193cdc0f826",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The rollback plan renders the installed artifacts and the restore command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "content": "sha256:cd71b33ca7dd52761c04ced05d8112c51d1d3333565ce553a15fc3f4f33188cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rollback_plan_names_the_installed_artifacts_and_the_restore_command"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two consumer rows this leaf adds to the catalog's consumer proof.\n\nAnchor: `test_capsule_experiment_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "locator": {
+              "end": 693,
+              "kind": "line_range",
+              "start": 693
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two consumer rows this leaf adds to the catalog's consumer proof.\n\nAnchor: `test_capsule_experiment_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "locator": {
+              "end": 693,
+              "kind": "line_range",
+              "start": 693
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,208 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/digest.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact invariant sealed mapping, including the sorted predecessor set and the excluded digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:bf82a17c91fe9724b782c711419f091eeecdebe93cc2087b9d7194c9a48bdce3",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_revision_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The digest computation and the single sealing operation for the invariant payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:cf84d0f055b923f67d3f0c588b2aafff265032b51ca3642945d65da50bd9729d",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_payload_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:6b66503f047ac0199d0d8126744086a0d839124f3625454c04a12b491afd48d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "sealed_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The exact family sealed mapping, which seals the joint guarantee and the same sorted predecessor set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_family_revision_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:50dd05ab638940b7a334858cebee588c309c288d58b283907bc2aafeb7e760eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_revision_payload_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:8cca302a754f85f33d051a7cbe1fd91de833d6dcd5d73e9c9f317d6b9e707483",
+            "locator": {
+              "kind": "symbol",
+              "name": "sealed_family_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The recorded payload versions, separate so one payload's digest cannot be read as the other's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:84d06d481b9e512873703f69ac2585a911f8f5922936f78ba723e7bdfcff911f",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVISION_PAYLOAD_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0508e56c262c031606a2a86fd8ddba54f1cb6c33",
+            "content": "sha256:28fcb8e45ce755fd7e97703e72b3f61aa53324dc4b923aa73bba05424e9afe78",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_REVISION_PAYLOAD_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read path re-derives both seals and refuses a rewritten row or edge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:f485c9e10fbdbf67fbb1f9abe067aa8ef97cd202d31a69d8bfc42e32e611f493",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_revision_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:4b0ed64815e7d60e1a581661f2c7c349172981afe5ddfc43689a1083643702da",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_family_revision_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The store seals the draft rather than accepting a caller-supplied digest, on both aggregates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:8a185d09b90b72864aa7651332f9fdeec9b015368b7474a5c746bd4a4bb1bf87",
+            "locator": {
+              "kind": "symbol",
+              "name": "sealed_revision_from_draft"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:bfc23fffe2a216c0dd498e4993946354abcd205e0abee4302e83044f31bbfe9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sealed_family_revision_from_draft"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The node that proves each sealed field is load-bearing rather than incidentally covered.\n\nAnchor: \"test_an_invariant_revision_digest_seals_its_predecessor_set\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
+            "content": "sha256:e8b325b40d5b5cbece8f5fa54a814f0da30bbe7437fce5b9ea0887c6f96e8d5d",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/tests/test_knowledge_revision_seals.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The canonical encoder the digest is computed through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a939ca21bb16d7edca85c2bc76c955a42e67ad06",
+            "content": "sha256:6014728eba1656282dfde160fc7befd2794422d005031effd3d2315aed7a0715",
+            "locator": {
+              "kind": "symbol",
+              "name": "sha256_digest"
+            },
+            "path": "mcp/src/agents_remember/kernel/canonical_json.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

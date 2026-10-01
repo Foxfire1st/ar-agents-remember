@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_unchanged_knowledge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`test_code_only_recorder_retains_unchanged_knowledge_and_reopens_after_cleanup` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c80c1c16c92ffa5fa0989680646358439085ca52",
+            "content": "sha256:e37a14d306c7a99f03a132ead2b61a4ead8e2bcd82391b2f78d63f3309fb63b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_only_recorder_retains_unchanged_knowledge_and_reopens_after_cleanup"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

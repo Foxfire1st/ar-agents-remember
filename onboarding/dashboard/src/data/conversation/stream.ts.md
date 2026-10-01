@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation/stream.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/conversation/stream.ts`      |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-20T22:30+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [data/conversation overview](overview.md)
@@ -62,45 +52,26 @@ Before its first successful open, the stream retries the bridge boot window quic
 drops retain the normal backoff. An open deadline and shared liveness watchdog distinguish an
 unopened or half-open channel from an honestly live one, while a quiet resume remains visually quiet.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The event-URL builder (`after=` only) this controller opens. | `conversationEventsUrl` | dashboard/src/data/conversation/client.ts:294-303 |
-| The envelope type this controller parses and forwards. | `eventCursor` | dashboard/src/data/conversation/types.ts:286-315 |
-| The store recovery path that stops and recreates the stream. | `startStream` | dashboard/src/data/conversation/store.ts:382-425 |
-| The active-conversation cursor authority names the `cursor-conflict` refusal. | "cursor-conflict" | mcp/src/agents_remember/serving/conversation/active/cursor.py:84-84 |
+- The event-URL builder (`after=` only) this controller opens. [1]
+- The envelope type this controller parses and forwards. [2]
+- The store recovery path that stops and recreates the stream. [3]
+- The active-conversation cursor authority names the `cursor-conflict` refusal. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: split boot versus established reconnect delays,
-  corrected store/controller ownership, and converted transport references to source-backed citations.
-
-- 2026-07-24T13:17:50Z — Recorded boot-aware reconnect, open-deadline, and half-open watchdog
-  behavior. Verification hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the resumable SSE
-  controller — the manual fresh-EventSource reconnect from `after=<cursor>` (no `Last-Event-ID`) that
-  avoids the landed cursor-conflict preflight (L4.3), the malformed-frame swallow, and the
-  transport-only boundary. Verification is pinned to the leaf base (`0be0099`) because the new source
-  file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

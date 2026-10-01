@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/_app_terminal_routes.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/serving/_app_terminal_routes.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-17T09:40+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `overview.md`                                          |
-
 ## Governing Overview
 
 [Serving overview](overview.md)
@@ -91,23 +81,23 @@ is task document plus role.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Session route registration owns terminal open/catalog/assignment endpoints. | `_register_terminal_session_routes` | mcp/src/agents_remember/serving/_app_terminal_routes.py:136-178 |
-| Catalog/open payloads use current structural binding. | `_terminal_entry_payload` | mcp/src/agents_remember/serving/_app_terminal_routes.py:221-237 |
-| Task assignment delegates validation and generalized mutation. | `_attach_task_response` | mcp/src/agents_remember/serving/_app_terminal_routes.py:392-451 |
-| The wired launch point: the capsule is resolved before any host side effect, a refusal is HTTP 400 `capsule-unavailable`, the workspace comes from the one rule, and the per-run record rides the response as `instructionMode`. | `_open_terminal_response`; `resolve_launch_capsule`; `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/_app_terminal_routes.py:239-348; mcp/src/agents_remember/serving/launch_capsule.py:275-314; mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
-| The application-rank compiler is injected here rather than imported, because `serving` ranks below `application`. | `ServingCollaborators.capsule_launch`; `serving_collaborators` | mcp/src/agents_remember/serving/_app_common.py:457-464; mcp/src/agents_remember/cli/dashboard.py:67-89 |
-| The route's launchability question and the pre-existing reason an adapter-owned harness is refused here. | `session_backend`; `terminal_launch_detail` | mcp/src/agents_remember/serving/terminal_opener.py:163-173; mcp/src/agents_remember/serving/harnesses.py:110-124; mcp/src/agents_remember/serving/harnesses.py:127-153 |
-| The cases: a free agent reads its capsule out of its own first prompt through this route, and an un-compilable role refuses before any host effect. | `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt`; `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect`; `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` | mcp/tests/test_capsule_launch_wiring.py:529-574; mcp/tests/test_capsule_launch_wiring.py:577-607; mcp/tests/test_capsule_launch_wiring.py:816-872 |
+- Session route registration owns terminal open/catalog/assignment endpoints. [1]
+- Catalog/open payloads use current structural binding. [2]
+- Task assignment delegates validation and generalized mutation. [3]
+- The wired launch point: the capsule is resolved before any host side effect, a refusal is HTTP 400 `capsule-unavailable`, the workspace comes from the one rule, and the per-run record rides the response as `instructionMode`. [4]
+- The application-rank compiler is injected here rather than imported, because `serving` ranks below `application`. [5]
+- The route's launchability question and the pre-existing reason an adapter-owned harness is refused here. [6]
+- The cases: a free agent reads its capsule out of its own first prompt through this route, and an un-compilable role refuses before any host effect. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
@@ -161,49 +151,3 @@ mistakes the instrument for a total guarantee.
 Terminal open and task-attach routes map source-lineage refusals to HTTP 409 and
 preserve status, detail, and the strict projection. The dashboard receives
 operator-actionable evidence while the catalog remains unchanged.
-
-## Update History
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/cli/dashboard.py`, `mcp/src/agents_remember/serving/_app_common.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/cli/dashboard.py`, `mcp/src/agents_remember/serving/_app_common.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-17T09:40+02:00 — 260915-CAPS-L15 curator: **route meaning changed — this route is now a
-  wired production launch point, so the body was updated rather than annotated.** `_open_terminal_response`
-  resolves the launch's instruction delivery before any host side effect through the one gate, across the
-  injected application-rank port; a refusal is HTTP 400 `capsule-unavailable` with the role named and
-  nothing started; the session workspace comes from the one rule (with the settings selection following
-  it, so cwd / `ResolvedLaunch.workspace` / `AR_WORKSPACE_ROOT` cannot disagree); and the per-run record
-  is published as `instructionMode` beside the entry payload. Added the four invariants and the
-  **disclosed reachability limit** measured by this leaf: the route does not set `session_backend`, so the
-  shipped eve row is refused here as a PATH-program shape (`bad-kind`, no session started) — pre-existing
-  at the base tree, owner **L17**, and stated rather than smoothed so no reader takes the route's
-  free-agent coverage for adapter-owned-harness coverage. Reference rows re-anchored
-  (`_register_terminal_session_routes`, `_terminal_entry_payload`, `_attach_task_response`) with four rows
-  added. Verification metadata moves to this leaf's base `15fa0e2c`; the candidate is deliberately
-  uncommitted, so the governed closeout stamps the real code commit and no hash or fingerprint was
-  invented here.
-
-- 2026-09-15T13:57+02:00 — 260831-LOCR-L02 curator (uncommitted change set on `ar/260831-locr-l02`,
-  base `67b21aeb`): body update, not a history-only note. `api_terminal_sessions` stopped calling
-  `runtime.liveness_sweeper.refresh()` and now serializes `runtime.catalog.list()`; the module names
-  no sweeper. The card gained the projection invariant in `### Invariants And Boundaries` and the
-  `## 260831-LOCR-R02 Current Delta` section, which records why `list()` rather than
-  `list_committed()` was ruled correct by measurement (a request thread blocks on the batch `RLock`
-  and then reads committed bytes, while `list_committed()` is the sweeper's own contention read and
-  returned a demonstrably older snapshot), the accepted bounded-blocking trade-off, the no-fallback
-  failure behaviour, and the measured residual reach limit of the new regression instrument. Route
-  path, declared model, conditional-key behaviour and status semantics are unchanged. Verification
-  metadata stays closeout-owned: the candidate is uncommitted, so `lastVerifiedCommitHash` remains
-  pinned to the last commit that actually verified this card.
-
-- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded HTTP retirement
-  propagation of reviewer parent provenance into the shared plane-specific authority policy.
-  Verification remains closeout-owned.
-
-- 2026-08-12T20:10+02:00 — L23 curator: documented HTTP transport of lineage admission failures; verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `_app_terminal_routes.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

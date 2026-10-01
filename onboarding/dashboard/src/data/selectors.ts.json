@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/data/selectors.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectQueue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Lifecycle tree grouping and wait formatting are pure display derivations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:b7d8d2f08c7133249b2f9e95e24cfe22c08f422f577c2fa7accefe7d51b0f870",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,37 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical item/revision behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:0295b8279ae8923bb0f4281c69bdb7d5979277ae7e377287467fa178ec16aeba",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_item"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:b940ffefbc39a2454d64a1abc57c7a062878010bbd91488897ad4fc2db31ec05",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

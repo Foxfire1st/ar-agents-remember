@@ -1,14 +1,5 @@
 # mcp/src/agents_remember/memory/baseline.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/baseline.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:05:00+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-
 ## Governing Overview
 
 [Nearest governing overview](../../../overview.md)
@@ -87,111 +78,37 @@ cache computation, while the shared Git module owns content staging.
 
 No new file-local follow-up is established by this documentation pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | n/a | n/a |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets were checked in the L13 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Context, drift, and Git-history adoption decisions. | `resolve_request_context` | mcp/src/agents_remember/memory/baseline.py:71-82 |
-| Bootstrap branch proof and the one attributed content commit. | `_baseline_default_branch` | mcp/src/agents_remember/memory/baseline.py:133-169 |
-| Cache preparation and refresh are separate from Git commit publication. | `prepare_memory_cache`; `refresh_memory_cache` | mcp/src/agents_remember/kernel/memory_cache.py:44-62; mcp/src/agents_remember/kernel/memory_cache.py:65-91 |
-| Shared staging excludes derived paths from the content commit. | `stage_worktree_content` | mcp/src/agents_remember/worktrees/modules/git.py:191-197 |
-| The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-394 |
-| Context, drift and Git-history adoption decisions. | `BaselineRequest`; `resolve_baseline_context`; `base_payload`; `ledger_status`; `baseline_status`; `baseline_adopt` | mcp/src/agents_remember/memory/baseline.py:46-53; mcp/src/agents_remember/memory/baseline.py:93-122; mcp/src/agents_remember/memory/baseline.py:270-298; mcp/src/agents_remember/memory/baseline.py:258-268; mcp/src/agents_remember/memory/baseline.py:300-304; mcp/src/agents_remember/memory/baseline.py:306-345 |
-| Bootstrap branch proof from the branch `memory_init` recorded, and the one attributed content commit. | `_baseline_default_branch`; `adopt_initial_baseline` | mcp/src/agents_remember/memory/baseline.py:149-192; mcp/src/agents_remember/memory/baseline.py:195-250 |
-| The shared memory-content policy the content commit excludes, and the reason the exclusion belongs on the staging call. | `MEMORY_CONTENT_EXCLUDES` | mcp/src/agents_remember/models/memory_content_excludes.py:32-35 |
-| Shared staging, and the re-stage that makes a bare `git add` exclusion inert. | `stage_worktree_content`; `commit_if_dirty` | mcp/src/agents_remember/worktrees/modules/git.py:191-198; mcp/src/agents_remember/worktrees/modules/git.py:200-208 |
-| The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. | `test_baseline_adoption_follows_the_configured_branch`; `test_baseline_adoption_refuses_a_branch_the_memory_repository_does_not_record`; `test_the_first_baseline_never_commits_bootstrap_scaffolding` | mcp/tests/test_memory_branch_authority.py:230-261; mcp/tests/test_memory_branch_authority.py:263-283; mcp/tests/test_memory_branch_authority.py:469-493 |
-| The recorded-default authority this file now follows instead of a literal. | `memory_repository_default_branch` | mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py:51-87 |
+- Context, drift, and Git-history adoption decisions. [1]
+- Bootstrap branch proof and the one attributed content commit. [2]
+- Cache preparation and refresh are separate from Git commit publication. [3]
+- Shared staging excludes derived paths from the content commit. [4]
+- The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal. [5]
+- Context, drift and Git-history adoption decisions. [6]
+- Bootstrap branch proof from the branch `memory_init` recorded, and the one attributed content commit. [7]
+- The shared memory-content policy the content commit excludes, and the reason the exclusion belongs on the staging call. [8]
+- Shared staging, and the re-stage that makes a bare `git add` exclusion inert. [9]
+- The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit. [10]
+- The recorded-default authority this file now follows instead of a literal. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Configured code and memory repositories or temporary fixture repositories are described through
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional configured cross-repository evidence is claimed. | n/a | n/a |
-
-## Update History
-- 2026-09-18T14:05:00+02:00 — 260915-KS-L13 owning seat: re-read the `BaselineRequest` claim against the current module: the class is declared at :46 and the cited range :46-53 still holds it, so the wording and the range are unchanged; the construct changed structurally since 420669c4 and the claim still states it.
-
-- 2026-09-16T17:59+02:00 — 260915-CAPS-L13 curator: **body rebased on the branch-authority and
-  content-exclusion changes this leaf made** (`CAPS-R13@v1`, the absorbed `260820` runtime-correctness
-  scope). Two claims were wrong and are corrected rather than deleted: `_baseline_default_branch`
-  no longer "supports the exact unborn `main`" — it proves the branch `memory_init` recorded and names
-  that value in its own refusal — and the content commit no longer stages with an inline
-  `exclude_paths=("memory.md",)`. The card now records the real mechanism
-  (`exclude_paths=MEMORY_CONTENT_EXCLUDES`, `("memory.md", "bootstrap")`) riding the call that
-  actually stages, and why a bare `git add` exclusion is inert. Added two invariants (default branch
-  is data; `bootstrap/` excluded-not-deleted), rewrote the three reference tables into the required
-  `| Finding | Anchor | Source |` shape — which is what cleared this card's three
-  `citation_table_columns_wrong` findings — and re-derived every range against the working source.
-  Verification metadata is left at the leaf base commit because the source is uncommitted — the
-  governed closeout stamps the real code commit.
-
-- 2026-09-15T01:16+00:00 — Documented status classification from the already-derived observation, the existing-HEAD unavailable-history refusal before Git/content/cache mutation, and legitimate unborn readiness under the existing drift rules. Working candidate verified against the formatted source; real commit metadata and earlier history remain unchanged.
-
-- 2026-09-15T01:06+00:00 — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
-
-
-- 2026-09-15T00:51+00:00 — Replaced cache-existence and ledger-only publication contracts with attributed-history adoption, one content commit, and best-effort cache reporting; retained drift and bootstrap branch authority. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
-
-- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
-  base `5bb124d4`): baseline adoption became one of the five memory-content producers, and it was the
-  one whose commit message is nobody's argument — its hard-coded adopt subject was the whole message, so
-  a fresh baseline's only memory commit carried no attribution and the projected ledger had no first
-  row. Recorded that the code source-branch commit is now resolved once (`:208`) and used twice — the
-  renderer call (`:210-216`) and `create_initial_ledger` (`:217-221`) — that the trailer is rendered by
-  `kernel.memory_attribution.render_memory_content_message` rather than by a route-local format, that the
-  `memory.md`-only ledger commit (`:224`) stays unattributed by rule, and the public end-to-end case that
-  proves both documented git readers see the trailer. Rebound the stale `memory_baseline_status_tool`
-  range (353-360 → 353-361). Verification metadata remains closeout-owned; no acceptance claim and no
-  verification stamp advanced.
-
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `load_ledger`, `write_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:202-205, mcp/src/agents_remember/kernel/memory_ledger.py:216-238. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: regenerated the memory-tool ranges
-  via the scoped fixer; exact non-fixing check returns zero findings.
-
-- 2026-08-02T20:43+02:00 — W2-B08: anchored 2 baseline reference claims and repointed the MCP call-site reference from the removed `application/skill_tools.py` to `application/memory_tools.py`; ranges remain generated by the scoped fixer. Verification metadata stays pinned until closeout.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for the resolver's new signature —
-  `resolve_request_context` now wraps `topology`/`coordination_root` in a `CoordinationHints`.
-  Behaviour unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-05-31T12:50+02:00 — Renamed the argparse adapter `resolve_context` to `resolve_baseline_context` in the source; noted the new name in Logic (behavior-preserving, thin delegate to `resolve_request_context(request_from_args(args))`) (1.0.0 review remediation).
-- 2026-05-29T18:35+02:00: Typed drift rows as `list[drift.DriftRow]`, normalized `topology` to `Literal['internal','external'] | None` at the argparse boundary, and added a ledger-path guard in `baseline_adopt`; behavior-preserving (commit `0549b28`).
-- 2026-05-24T02:47+02:00: Updated after drift imports moved under `memory_quality.integrity`.
-- 2026-05-24T00:35+02:00: Updated after adding request/service entry points for MCP controllers.
-- 2026-05-23T13:09+02:00: Copied into the MCP package and patched to package imports.
+No additional configured cross-repository evidence is claimed.

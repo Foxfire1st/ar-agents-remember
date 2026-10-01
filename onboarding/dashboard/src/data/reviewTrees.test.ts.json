@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/data/reviewTrees.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real captured body.\n\nAnchor: \"reviewTrees.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dc09adce51f1234914f591afc712dc9db6a92ae",
+            "content": "sha256:f6a52336ad7c29838b5e551265a2740e74881702f9d931642f0b09c913447e35",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tree view of a converted leaf.\n\nAnchor: \"the tree view of a converted leaf\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dc09adce51f1234914f591afc712dc9db6a92ae",
+            "content": "sha256:cfaa0d66ecdac07d03cee0c9fa30b51f4d6fe4380d3ea1c51da749b4031707be",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "One wire convention, and the comparison and selection a request names.\n\nAnchor: \"one wire convention (MIK-L25 review F9)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dc09adce51f1234914f591afc712dc9db6a92ae",
+            "content": "sha256:167b9316679262cfafaf49872c5d76cba7f31bcd5a0d59a9ddefb68c89929417",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The answers that are not a tree view.\n\nAnchor: \"the answers that are not a tree view\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dc09adce51f1234914f591afc712dc9db6a92ae",
+            "content": "sha256:7acb87f463985c5f2bb0d6d8d3e48bc94f6a87f69fc30c43e3aefc527261cdb1",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

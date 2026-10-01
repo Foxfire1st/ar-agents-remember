@@ -1,0 +1,388 @@
+{
+  "path": "mcp/src/agents_remember/kernel/harnesses.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the row type, including the `runtime_probe` field that decides how a harness is proved launchable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:ea56ad8241ce24e5b93c7dffd10bcd24139ab7b406f3cea152cc9d37e33ebebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "Harness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The cases: the eve row is last and the others are unchanged, it consults its probe and never PATH, and the path harnesses keep the ordinary lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d7a14d6ef2ea9e00d35d53b3eef3801566ce381f2ba9f187241bbcf738e34f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRegistryTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The settings case pinning that an override of a builtin keeps its runtime readiness probe, and that a settings-defined id declares none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:75f14323cb00ebfe6d4ac5fcf3e7f14efdf6000df0ddcb61c4efcdaa7c27146e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_builtin_override_keeps_its_runtime_readiness_probe"
+            },
+            "path": "mcp/tests/test_agentic_settings.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:1c6e155dd5c56f208f1d8e8deaf47dac157f8ade06f352405543020f06702609",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_new_id_adds_a_harness_with_defaults_derived"
+            },
+            "path": "mcp/tests/test_agentic_settings.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The curated set: four rows, `eve` last and the only one carrying a readiness probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:fe54da6f1eb24c77412375eda6e1bf6e847f9d466b12fa75b2fd09a97833cc55",
+            "locator": {
+              "kind": "symbol",
+              "name": "HARNESSES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:157c9a587ba817f64d2f0471ce2bc9363e72e315b28b822f86cf343bbc00c4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_RUNTIME_PROBE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:5a465b03ee038d06f2e6422bd57954932f9bb0c9d4d23f7780bb9f7e3be8d88b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_RUNTIME_COMMAND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The probe registry: the name→resolver map, the registration decorator, and the loader that runs the registrations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:46214a1e2d9e7694dfcb07fc25668abd4d17347379e37586a50253a39b4f23b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RUNTIME_PROBES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:5d3210811454503a1c58cd4b09949a46421683b0e4824d273b6155f59dd450db",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_runtime_probe"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:25769831dde6a0e1fdb13129b67e5938e9d0b3ffb114fc35e71b035fd91c8eb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_runtime_probes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:23acbf03d59d0393ad821c440f7e7301550469ad684f447f4daa2e5288913e3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProbeResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:8ee31f9fec65e1d60ea2aaba7058a2e6b96fe1df9b2d532971dad4348d41751e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeProbe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Detection's two branches: the probe for a probe-declaring row, `which` for everything else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:843489d2d03594493e8c03f6449fb312680754069c3b153525213f91298d19ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_harness_available"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:c2d4f48964201201597c682d4004271476f9edee00a091f32ed7d51bd3acd95a",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_availability_detail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:c9658f95bd364cffc04f00c32856a8352aef920ddd40c066eeaa83dc538bc942",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_runtime_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The probe implementation detection now asks, and the floor it owns for both readers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:6efb4185237561f902d9379d22d993ee76ce30ac5a0dd15b5edd0c11b870c9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "eve_runtime_readiness"
+            },
+            "path": "mcp/src/agents_remember/kernel/eve_runtime_readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:33bdd4d264999d84beb4c955d281a376492894dcacc826e2e669b610ad0cf843",
+            "locator": {
+              "kind": "symbol",
+              "name": "MINIMUM_NODE_MAJOR"
+            },
+            "path": "mcp/src/agents_remember/kernel/eve_runtime_readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The settings merge carries a builtin's probe across an override instead of dropping it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b0f97f41ccb521b0b843c9a3da322228565d363",
+            "content": "sha256:b0016a0900cf47457bf0a0857488d7687bcb7a13d519b4cb7b0a522a1322c33d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merged_harness"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The serving-side consumers: detection detail and the narrower terminal-launchability question.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:8c6bc9376ed28ff01c34b573993cb4f11ca3fdb93a1f407d2823bac775f25a63",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_detected"
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:e406ca1b33b350b6d62b1b2638773b92dcd8dc2205b191bfa6b9698ce92bed4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_detection_detail"
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:bfee572d0d59b61ad26583d1dd96ca136e9f0ccff6b8bca1f40fb9a3cba3da62",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_launch_detail"
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:5550c3be9a0f2a8cceea6b9f007c5b50303501ad922af2119eaf00359e70619f",
+            "locator": {
+              "kind": "symbol",
+              "name": "detect_harnesses"
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The capability catalog gates on the readiness verdict rather than on `which`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:149282dfd781a80c70d98a059169561792df1ec3cfd4e930aa22e2c4d22f2012",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessCapabilityCatalog"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:27b504d8b0391295183926fe744dcf379a99427b09878036e9239dd5a17824a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_probed_install"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The separate protocol-adapter registry that an `eve` id also resolves through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2e695cecec67fb7d9031b3df220bac94b9acc26636a355b75f07d314383d1ee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "BUILTIN_PROTOCOL_HARNESSES"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2b5088b617b61478353dc2280de551ce38e85be3d6491a95f22fe51e3caf806c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_harness_protocol_adapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:74548952fd8000f9e7ffa65683b32b094d005081f1247d3daa6e3d6f7a5d5ea4",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2d2926f0f01916d1e25a66b000d86f4a16ba267b709792be5a90474890d009cc",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

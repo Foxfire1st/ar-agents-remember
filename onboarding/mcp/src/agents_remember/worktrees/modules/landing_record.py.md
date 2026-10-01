@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/landing_record.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/worktrees/modules/landing_record.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -98,84 +88,32 @@ second route is the exact failure this shape prevents.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `LandedIntegration` contains strategy, code commit, and optional memory-content commit. | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33 |
-| `record_landed_integration` writes the same actual outputs for final and checkpoint landing states. | `record_landed_integration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66 |
+- `LandedIntegration` contains strategy, code commit, and optional memory-content commit. [1]
+- `record_landed_integration` writes the same actual outputs for final and checkpoint landing states. [2]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) | `integration_strategy` | mcp/src/agents_remember/worktrees/worktree_contract.py:264-264 |
-| The landed facts this writer now takes as one frozen record. (`LandedIntegration`) | `LandedIntegration` | mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33 |
-| The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:576-609 |
-| The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) | `_checkpoint_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:939-976 |
-| The pull-request route calls the same writer. (`record_landed_integration(`) | `updated`; "record_landed_integration(" | mcp/src/agents_remember/worktrees/modules/record_landing.py:232-239 |
-| Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) | `integration_status` | mcp/src/agents_remember/worktrees/modules/cleanup.py:677-677 |
-| The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) | `_require_series_task_terminal` | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:232-276 |
+- The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) [3]
+- The landed facts this writer now takes as one frozen record. (`LandedIntegration`) [4]
+- The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) [5]
+- The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) [6]
+- The pull-request route calls the same writer. (`record_landed_integration(`) [7]
+- Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) [8]
+- The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This is an in-process contract write with no separate repository or external-system boundary, so
 there is no cross-repository protocol to cite.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No change to the landing writer: its own source is unchanged. **Reopened claim reworded:** the caller sentence naming `record_landing_result`, which MIK-R09 (260928-MIK-L09) changed structurally (it checks the landed memory commit through the mandatory gate on converted memory before recording); this pass's generated bullet for it was removed. The other prose citations were re-pointed by the installed fixer (bullets kept). No verification stamp was advanced.
-- 2026-09-30T18:01:59+00:00: Generated citation repair: `_checkpoint_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:939-976. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T18:01:59+00:00: Generated citation repair: `updated`; "record_landed_integration(" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:232-239; mcp/src/agents_remember/worktrees/modules/record_landing.py:232-232. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T18:01:59+00:00: Generated citation repair: "def _checkpoint_result(" repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:939-939. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=4db2c4475bc64fafbcf231bdeb2c00f0a7d60bf84b9337add2ef413b2a24bfc5. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
-  claim(s) whose anchor no longer sat in its cited range and normalised 4 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-14T15:05+02:00 — No content impact: mechanical citation re-derivation after the
-  260913-LCA-L8 change set added one import line to `worktrees/modules/cleanup.py`, shifting the
-  `integration_status` refusal read from line 664 to 665. The anchor was re-read at
-  `cleanup.py:665-665`, where `if contract.integration_status != "completed":` still sits; the cited
-  construct and its meaning are unchanged.
-- 2026-09-13T18:02+02:00 — 260831-LOCR-L36 terminology: `checkpoint` distinguishes an unfinished
-  master landed at a checkpoint from a finished one, not a "paused" master from a finished one.
-  Wording only; the two recorded cells (`checkpointed` without cleanup, `completed` with cleanup
-  pending) are unchanged and no verification stamp advanced.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-13T08:49:05+00:00: Generated citation repair: `_integrated_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:598-633. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T08:49:05+00:00: Generated citation repair: `_checkpoint_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:922-961. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T08:49:05+00:00: Generated citation repair: `_integrated_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:598-633. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T08:49:05+00:00: Generated citation repair: `_checkpoint_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:922-961. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:26:36+00:00: Generated citation repair: "record_landed_integration(" repointed to mcp/src/agents_remember/worktrees/modules/record_landing.py:121-121. No content impact: mechanical anchor-range projection bound to citation source snapshot 1b5cbe38ab438de766feb0fc3860228f5125b623ebbee641f90211d51326d68e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: widened the single writer with
-  `checkpoint: bool = False` and bundled the landed facts into the frozen `LandedIntegration`
-  record, so the two landing outcomes (`completed` + `cleanup="pending"` versus `checkpointed` with
-  cleanup untouched) stay one decision behind one writer; recorded the third caller
-  (`integrate.py::_checkpoint_result`), why the bundling was required (a fifth keyword would have
-  tripped the argument-count rule), and updated every reference range in this card. Verification
-  metadata remains closeout-owned; no acceptance claim.
-- 2026-09-11T23:05:00+00:00: The `write_contract`, `record_landed_integration`, and `integration_status != "completed"` anchors were ambiguous or not anchors at all, so four claims could not be compared with their verification provenance; each now names the construct that carries the behaviour — the exact writer call `write_contract(contract.contract_path, updated)` at `landing_record.py` line 47, the shared-writer call in `integrate.py` line 376, the same call in `record_landing.py` line 106, and the `integration_status` identifier the cleanup refusal reads at `cleanup.py` line 664. Claim wording and cited extents are otherwise unchanged; the missing-anchor row previously cited `cleanup.py:664-664` with a backticked expression that the anchor grammar cannot read.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `cleanup_result` repointed to mcp/src/agents_remember/worktrees/modules/cleanup.py:632-707. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_integrated_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:369-400. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-12T00:33+02:00 — Created by the LOCR-L29 curator pass (task-terminal retirement, PR
-  landing record, and series resume). Documents the extracted single writer that both landing routes
-  now share, the two callers that reach it, and the two guards that read the cell it writes.
-  Verification metadata is pinned to the leaf base commit and remains closeout-owned.
+No additional cross-repository evidence applies.

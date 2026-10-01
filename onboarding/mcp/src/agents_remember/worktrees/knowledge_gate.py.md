@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/knowledge_gate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/knowledge_gate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [worktrees route overview](overview.md)
@@ -37,8 +27,10 @@ closing across calls in per-generation receipts until that generation is decided
   - `checkout_memory_converted(repository)`: a direct landing's working tree or `HEAD`, before anything is captured;
   - the landing request's memory commit and bases (`landing_gate_refusal`).
 
-  Where no side holds the marker every function returns `None` (or `False`) after the probe, and the route behaves
-  exactly as before this master.
+  Where no side holds the marker the memory is unconverted. The cutover lock (`cutover_lock.py`, rule 6's second
+  bullet) then refuses the route once the memory repository holds converted memory anywhere, naming the crossing
+  sync. In a repository that holds none, every function returns `None` (or `False`) after the probe and the route
+  behaves exactly as before this master.
 - **No bypass (rule 5).** `GATE_UNBOUND`: a converted route with no bound `knowledge_gate` is refused ("converted
   memory is never committed or landed ungated"). No function takes a flag that skips the gate.
 - **`parent_memory_tip(contract)`** is the tip of `memory_source_branch`, the validator's base for a leaf, so every
@@ -53,9 +45,13 @@ closing across calls in per-generation receipts until that generation is decided
 - **`prepared_closeout_refusal(contract)`** (ruling 14:38:47 gap 3): the certified (prepared) closeout binds its memory
   commit to the curator-attested candidate, so it cannot set `closed: true`; on converted memory it refuses with
   `PREPARED_CLOSEOUT_UNCLOSABLE` (`prepared-closeout-knowledge-history-unclosable`), naming why and that the leaf
-  should close out through the worktree closeout commit. Unconverted memory gets `None`.
-- **`close_owner_history(memory_root, owner)`** sets `closed: true` in `knowledge/history/<owner>.json`, creating the
-  file with no rows when absent; the rows are never rewritten and the file stays canonical; a file that does not parse
+  should close out through the worktree closeout commit. Unconverted memory gets `None` there;
+  `prepared_closeout_lock(contract)` is the cutover lock on the same two entries for unconverted memory. It returns
+  `None` for converted memory and for a probe Git cannot answer, which `prepared_closeout_refusal` names.
+- **`close_owner_history(memory_root, owner)`** sets `closed: true` in the owner's latest history file
+  (`latest_owner_history`: `knowledge/history/<owner>.json`, or the highest `<owner>-attempt-<n>.json` of a leaf
+  reopened after its closeout), creating the plain file with no rows when absent. When the latest attempt is already
+  closed (the reopened leaf wrote no row), nothing is written; the rows are never rewritten and the file stays canonical; a file that does not parse
   is left for the validator to name. It returns a `HistoryClosing(path, previous)` whose `restore()` puts the previous
   bytes back (or removes a file it created).
 - **A direct landing's closing outlives the call (review R1 F3; R2-2 and R2-5; R3-1).**
@@ -75,6 +71,15 @@ closing across calls in per-generation receipts until that generation is decided
     naming the file and how to clear it (`_unreadable`: find the leaf history file that is closed although no memory
     commit closed it, reopen it by hand if its landing did not land, delete the receipt and retry); a `HEAD` probe Git
     cannot answer raises the same.
+- **The cutover lock at this layer's routes (L37, MIK-R09 rule 6).** `leaf_cutover_refusal(contract, operation)` asks
+  `cutover_lock.cutover_lock_refusal` about the contract's memory repository and names the line with
+  `leaf_line(contract)`: the leaf (or task) and its memory worktree. It returns `None` for a contract whose memory is
+  not external. It is called only after a probe found the memory unconverted on every side:
+  - `leaf_gate_refusal`: when `_leaf_gate_applies` says the gate does not apply, the closeout validator asks the lock;
+  - `landing_gate_refusal`: when neither the landed commit nor its bases hold the marker, the landing asks the lock,
+    naming the landed memory commit;
+  - the closeout commit, direct landing, record landing and a leaf's integration call `leaf_cutover_refusal`
+    themselves.
 
 ### Conventions
 
@@ -83,7 +88,9 @@ closing across calls in per-generation receipts until that generation is decided
 
 ### Invariants And Boundaries
 
-- **On unconverted memory every route behaves exactly as before the gate.** Candidate invariant (not ingested).
+- **On unconverted memory, in a repository that holds no converted memory, every route behaves exactly as before the
+  gate.** Once the repository holds converted memory the cutover lock refuses instead, and a converting candidate is
+  gated, never locked (`test_knowledge_cutover.py`). Candidate invariant (not ingested).
   Realized by the probes above, which read one file's existence and tree entries and nothing else; proved by
   `test_an_unconverted_leaf_is_not_gated_at_any_route` (every helper returns `None` with no services bound;
   `count-objects` and `status` unchanged) and by `unconverted.sh` (base `904e804b` against this build on the real
@@ -101,42 +108,39 @@ closing across calls in per-generation receipts until that generation is decided
   inside `_landed` during a cancel's settle surfaces only after the cancellation is published, and a repeated cancel
   settles again.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is `MIK-R09@v2` and `09_mandatory-invariant-closeout-gate.json`,
 outside the repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: applicability, no bypass, the closing and its receipts. | "A probe Git cannot answer refuses; an unreadable" | mcp/src/agents_remember/worktrees/knowledge_gate.py:1-28 |
-| The unbound refusal and the marker probe. | `GATE_UNBOUND`; `GateProbeError`; `converted_memory` | mcp/src/agents_remember/worktrees/knowledge_gate.py:89-105 |
-| The parent tip and the leaf probes. | `parent_memory_tip`; `leaf_memory_converted`; `_leaf_gate_applies` | mcp/src/agents_remember/worktrees/knowledge_gate.py:112-148 |
-| The prepared path fails closed on converted memory. | `PREPARED_CLOSEOUT_UNCLOSABLE`; `prepared_closeout_refusal` | mcp/src/agents_remember/worktrees/knowledge_gate.py:151-173 |
-| The closeout validator's gate. | `leaf_gate_refusal` | mcp/src/agents_remember/worktrees/knowledge_gate.py:176-196 |
-| Direct landing's probe and verdict. | `checkout_memory_converted`; `direct_gate_verdict` | mcp/src/agents_remember/worktrees/knowledge_gate.py:199-227 |
-| A landing: the validator through the route entry point, plus the port. | `landing_gate_refusal` | mcp/src/agents_remember/worktrees/knowledge_gate.py:230-260 |
-| The closeout's own write and its restore. | `HistoryClosing`; `close_owner_history` | mcp/src/agents_remember/worktrees/knowledge_gate.py:263-300 |
-| Per-generation receipts, the blob in the repository's own format. | `ClosingReceiptError`; `direct_closing_receipt`; `_closed_blob`; `keep_direct_closing`; `forget_direct_closing` | mcp/src/agents_remember/worktrees/knowledge_gate.py:308-392 |
-| Settling each receipt; an unreadable one refuses by name. | `settle_direct_closing`; `require_readable_closings`; `_receipts`; `_unreadable`; `_landed`; `_restore_receipt` | mcp/src/agents_remember/worktrees/knowledge_gate.py:395-497 |
-| Unconverted memory is not gated at any route. | `test_an_unconverted_leaf_is_not_gated_at_any_route` | mcp/tests/test_knowledge_closeout_gate.py:993-1026 |
+- The module docstring: applicability (with the cutover lock for unconverted memory), no bypass, the closing and its receipts. [1]
+- The unbound refusal and the marker probe. [2]
+- The parent tip and the leaf probes. [3]
+- The prepared path fails closed on converted memory. [4]
+- The closeout validator's gate. [5]
+- Direct landing's probe and verdict. [6]
+- A landing: the validator through the route entry point, plus the port. [7]
+- The closeout's own write and its restore. [8]
+- Per-generation receipts, the blob in the repository's own format. [9]
+- Settling each receipt; an unreadable one refuses by name. [10]
+- Unconverted memory is not gated at any route. [11]
 
-## Cross-Repo References
+- The lock over a contract whose memory is unconverted on every side, and how the line is named. [12]
+- The certified closeout's lock; converted memory and an unreadable probe are left to the refusal beside it. [13]
+- The closeout closes the latest attempt of a reopened leaf. [14]
+- The closeout closes the latest attempt and never reopens a closed one. [15]
+- The converting candidate is gated at every route, never locked. [16]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module probes the leaf's memory repository and writes receipts under
 the worktree group.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new file MIK-R09 adds, recording gap 3 (the prepared path fails closed) and gap 1 (not wired here; carried to L37) of 14:38:47, review R1 F2, F3, F6 and F9 (16:07:55), R2-2 and R2-5 (17:59:48) and R3-1 (19:16:07, the hash-object backstop). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

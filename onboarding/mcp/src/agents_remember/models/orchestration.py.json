@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/models/orchestration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `orchestration_nudge_manager_payload` builder returns this response through `_tool_payload`.\n\nAnchor: \"def orchestration_nudge_manager_payload(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23f4c87954b6eac5eef2d1046a0c54d7b4c643c6",
+            "content": "sha256:e7d16317c0cfab22b2d139f7364354edfa1dfc2cea874dccfbe55baa5416193b",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/orchestration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The response registry maps the administrative orchestration nudge operation to this model.\n\nAnchor: \"\\\"orchestration_nudge_manager\\\": OrchestrationNudgeManagerResponse\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:304ac0d32c6355f45ffbf37617989ccc54ac1fe91aab4820b61deaf508d136d3",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 242
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

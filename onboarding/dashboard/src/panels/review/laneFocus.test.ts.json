@@ -1,0 +1,116 @@
+{
+  "path": "dashboard/src/panels/review/laneFocus.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real bodies read.\n\nAnchor: \"laneReview.file.captured.json\"; \"laneReview.lane.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a2a2e407d99e2879d694dfa39e2516461d27d69",
+            "content": "sha256:e48ed99ff4e027203c81f0e65ecdad7d604ec1c6e51a4f80b7af3060f92e447a",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Case 1: the destination's hunks of an attributed file.\n\nAnchor: \"opens an attributed file on its hunks of the destination class, a bucket file on all of them\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a2a2e407d99e2879d694dfa39e2516461d27d69",
+            "content": "sha256:cfe450558584a41a4188e8be102d9646a86e1406c0706666b0870f78430555db",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Case 2: windows on the server's line numbers.\n\nAnchor: \"cuts each window on the server side line numbers, with context, clamped to the text\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a2a2e407d99e2879d694dfa39e2516461d27d69",
+            "content": "sha256:00a0c292a85a6182957a2e3245dbad5c82db7b0c88883acbd1814d358833f050",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Case 3: file and hunk totals, in the server's order.\n\nAnchor: \"reports a destination file total and hunk total separately, in the server order\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a2a2e407d99e2879d694dfa39e2516461d27d69",
+            "content": "sha256:50667c20b3c29e29cebe47525853941cf7a5fead436cc68783c34cc947ab4d79",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The rules under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:6b04a5811f97c0b354574a674e05a7b8acd8cf4b9350d08d9edb672eeb6165b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "focusedHunks"
+            },
+            "path": "dashboard/src/panels/review/laneFocus.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:5bb38cf1126df8314be2cdafa6c20b28dcecfd5bf071eb4840e7e9ac3d77bb3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunkWindow"
+            },
+            "path": "dashboard/src/panels/review/laneFocus.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8243b035440b1267d5867c420a6f5e97d4434875",
+            "content": "sha256:99874271ed266efb8321373154d63f608fa7945313795cd0737ff9e92a6d0a0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "destinationTotals"
+            },
+            "path": "dashboard/src/panels/review/laneFocus.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

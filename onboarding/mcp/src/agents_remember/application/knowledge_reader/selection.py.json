@@ -1,0 +1,297 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the three spellings and the code-tree rule.\n\nAnchor: \"**The code tree** each MIK-R03 state is measured at\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:b8390a6e3c6ba468e2d87ddb1c720964f8b8ab5cff8370518f1586ec41dcd12e",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`HEAD` of the checkout, with the leaf note; the `Code-Commit` pairing, or the reason there is none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:1e9dd0dc5d2b84520e5992567e05648f4da81d7e24188e338f82caf38d7b733c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_checkout_code_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:d1a273ded85c0e030b82ef961bae0a41a21e63529c7ff10657b06d02ff623783",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paired_code_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The selector's choices, and a commit list that cannot be read named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:38dc983a036003c06557e3e26f04604b36910fc00e243cf7e5cac719466984b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_options"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:32f6e0ef2dc783c1506bc31d23026038c5eeed26a188023547ebdd656cc1bd6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_choices"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:5a725f4ad7afc381b0d98e6f2c3fe3250f32c536eb96e297f2a4a65f3d6e075e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recent_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The active leaves, read from their contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:a5eff42b4dcece42d4d62e81cb207b5dee61314551c8a10b86bcaed08e99badd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaves"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The selection cases: hexadecimal only, published with a pin, a leaf, and a partial index with no code tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:20dea8da31a88de46854922338de60c279f59f310d30dc87822cf32b26e99e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_any_commit_is_selectable_by_its_hexadecimal_name_only"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:3a33f23e636a1dc6724100475094f0c70c0b3f67543a6666600260c53cd3726a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_published_tree_reads_uncommitted_state_writes_nothing_and_offers_a_pin"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:d64bbdc08aca662eaea96d5e531025d449cbf9b84099f74f1caff203b52605c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_live_leafs_candidate_is_selectable_and_names_what_its_code_tree_leaves_out"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:7ba76dccb0277ce2e031287870cfc6441590966069bee5e4aee72542a979ea82",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_index_and_an_unavailable_code_tree_are_named_where_they_apply"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Hexadecimal names only, and the 40 recent commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:5e1d7762eb8695d2a7d76ee5f576fe49381d1d29f9684ced323b26377cd100d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_HEX"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:e36f2cfa4c88b9af9dba3b178762c9298e41eca820c62ddd5f20ea76cd793990",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECENT_COMMITS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The named read failures (F11).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:846660c8ebe97a602822b7f8807d6bcc720d817d374f9eab18eb19a275e1b455",
+            "locator": {
+              "kind": "symbol",
+              "name": "READ_FAILURES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A refusal, typed and named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:c6f215306b1063a0252c42c01916d683dbb02bb3be80df8aaf119608a076b7fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReaderUnavailable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The opened selection and the block every answer carries: code tree, source, note and pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:96beca5a5b2f69ceb2a8bfdd21cb1544e1baccfa41273d132b6a25bac5f2b427",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReaderSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The three spellings, and a branch name refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:34ce97237a8bc0d6599d3902d5dde2828c6aaa58deb366b1ebe9c6918784a10b",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A leaf only when an active enclosure has the scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:c8da76436be11c9d212fa3362a21889594bc44b1923844fdc8c9401b039ea97c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Published and leaf: not-converted first, the captured tree, `HEAD`, the pin when clean.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:d53aad4c464fd2e88132eea746c8206139808ae3e4557b2b407770eef29e559e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_directory_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A commit: the layout marker, the Git-tree index, the paired code tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0746863e21297db7a1be382eb3a2f3f65155f50",
+            "content": "sha256:80a701e5984176c1d54b6f7f98ded347526615272601bfb9dee4955bdf7231e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

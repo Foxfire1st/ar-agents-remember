@@ -1,0 +1,900 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/facets.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The six standalone operations, each naming the act it performs so a refusal is reported under the operation the caller asked for.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:763be276eb5e45e6a39359ac43c4fc3b2f5c3e90b1759f090da86b658f87ce11",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_facet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:7944a00dfe4db541aa5bdc3c5225c5aeb8eacf95157a1333fb996bc3f2520e05",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_facet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:439f284a4de28b369f5f2002e739391bfe4c488e1580b732bb100e5d2a353afa",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_facet_attachment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:f0bc690bb4e745e0c6946b1c687a21dcf8448a1b42dd2f4e6033a2143dea4ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_explanation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:de4c068127c9dd3e73a08c8376dd713d5e2d746410b5de07387d6031f39be6da",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_explanation_revision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:d1f8b80ca43004a4f4066edcf46aef23c94e6d9e61f9f3b89c8e647db3084b36",
+            "locator": {
+              "kind": "symbol",
+              "name": "designate_explanation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The explanation pair: the first revision with no designation, and the successor that must name a stored revision of its own explanation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:43897a7f28f6ab6bf11b60d87ddd1a1916342c2f1cc355a3d5b108c901d44af7",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_author_explanation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:102bb9b7eee7b6a8ae200ee5063da979515c34cc8e383a8141a9c4190c4d6555",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_add_explanation_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The subject check that keeps a family subject from being satisfied by an invariant revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:f2ce01b5489fd32f9f951c47f9a2bb9dcd2ec5db683ce715faa81e648119935c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_explanation_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The dispatch table over the six command kinds and the two uniform-signature adapters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:7f8be147cfac9deeaa88ea744756bb487392462d0dc43ea20a9176bd3ab38951",
+            "locator": {
+              "kind": "symbol",
+              "name": "_STEPS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:0532aaadaac4fa58913f8a60aef98934741e70dc42d9717c73281c1ac9c2c34c",
+            "locator": {
+              "end": 694,
+              "kind": "line_range",
+              "start": 673
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The standalone boundary: lock, one immediate transaction, scope and generation checks, and the receipt for a refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:a15cf46f61e42622fd97fadfbe626860a7bba4415c342d8b3cda7e843782258b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_facet_operation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:9948a0eba2892f511a9f8386b6c056b8e02dd9879202af9a7bacb984b5d6a4d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:45035134db18938fb1040d72fe4743ee5c0209a6baafb76f7d701a7a8f3ae8e5",
+            "locator": {
+              "end": 720,
+              "kind": "line_range",
+              "start": 697
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The operation-name check that refuses a command presented to another operation's entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:24fa8835a73c26d62ef42e9cb50e290d1f1c082359565bf0a0368f7dfa497b2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_command_matches_operation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:8d30f3c13af2450e6268bcc262ed3c88d9a0ee662330d3bb21b88a4d090b3b43",
+            "locator": {
+              "end": 781,
+              "kind": "line_range",
+              "start": 745
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The generation gate read from the dataset's own recorded version rather than the build's.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:ba5aa2674a02bf255090d4195d8ff60b88a7b1060cdac6aab15090a36859fc5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_facet_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The authority home a facet envelope inherits from the namespace it was written into.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:acccca0e980848fb15ecfedde8f119ed4e365e5ada4677e46c38ea8aeb650a39",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_home"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The governing-route reference check, with the ungoverned state never refused.\n\nAnchor: \"def route_exists(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:29868ee980a19ad55a2cc8bcaeb067536218873e2dadc50f2fbdbb879eabf349",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_governing_route"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:6d1cf5af45954c326572fff46f1a0542e778564ce1e27449dbd311fecd3119c8",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The shipped factories this module reports through, including the four the facet leaf added.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:e99bce9e4d542746a05c9082b552fe729744e4ba7830b9b52f22854643278e01",
+            "locator": {
+              "kind": "symbol",
+              "name": "facet_promotion_not_supported_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:fa3768ed58ef775b3b5da88dbb1f011f4d4684879db6b345fa473d2700053c6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "facet_supersession_cycle_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:19b3ef1abfd5ab2701ebba2d0690b2026707cdb199f0931edf9dcb14097d7e2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_mismatch_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:99bb634262dd34b1890807c67dea7a8bcdde63393a5d8e1f913fd7696779d14e",
+            "locator": {
+              "kind": "symbol",
+              "name": "explanation_revision_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The shared graph rule the third lineage graph is judged by.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:723b781b23d350f42fdb33ef6df196c88fcb616c5a09205fac7cd9095d26bb02",
+            "locator": {
+              "kind": "symbol",
+              "name": "supersession_edges"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:d1db378bd4e8db580e661a4979fc83bf080ab5c08a30769dc02950c21203bb8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "cycle_vertices"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The one dispatch the batch path and the standalone driver share, and the alias that documents the split.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:e312fabd63fb23f194dd44a28145e1d45d37098eedf761a940cc5156f85d9080",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_facet_command"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:4584e8f9da600652ddefe5e1caa78975d89b910cd055282141a1dd3248495ae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PendingIdentities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The pre-write endpoint existence check the attachment reaches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
+            "content": "sha256:bd7e9273b74fa5506d1961abb6ceea35bb563df11c6187e2b51959f196b68b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_attachment_endpoint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The cases that hold the two entry points, the cycle rollback, the sealed rows and the generation refusal.**\n\nAnchor: \"test_the_two_entry_points_agree_and_a_refused_write_writes_nothing\"; \"test_accepted_origin_data_is_refused_at_both_entry_points\"; \"test_a_supersession_cycle_rolls_back_and_a_sealed_decision_cannot_be_rewritten\"; \"test_a_dataset_predating_the_facet_tables_refuses_a_facet_write\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:25ab0bcfea3e82add625bbb192ba8d6107d16d83e3a539aed1b109ba713ac160",
+            "locator": {
+              "end": 875,
+              "kind": "line_range",
+              "start": 840
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:a30a4ad08cb5e5ce2d39483d496f48cc59ef249c984eff5fcc9a76aaf4a7c521",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 363
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:793737484f8c500a0e7b2607344d1d0e70f2b11ad62224c961c6ca9cf04d5cfb",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 606
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:dbf173e85fa3105ca073a1535ad2758e627debc480cd5f2869a5ffbec44146fe",
+            "locator": {
+              "end": 1035,
+              "kind": "line_range",
+              "start": 985
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:912f30396310657a0a933e82db1f2e32a62522498ee81d3d224464db6547a087",
+            "locator": {
+              "end": 965,
+              "kind": "line_range",
+              "start": 958
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:fd954e39293c838d2a7b8d76c1e8aa528edc6dbe7f6c3e10ab84daed1727ecaa",
+            "locator": {
+              "end": 1142,
+              "kind": "line_range",
+              "start": 1135
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:f0a4831e622f314425d7e24afa087617ff815b1ff6a6ff006ce7a77810e2752f",
+            "locator": {
+              "end": 467,
+              "kind": "line_range",
+              "start": 467
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:8151a7761000959bbf8598262ab0b80b61783fac4efcc9995690951168a7e87e",
+            "locator": {
+              "end": 710,
+              "kind": "line_range",
+              "start": 710
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:20cb916b5bd14888d2333859db30255ab2ec511dad33678b83304120bd5d2374",
+            "locator": {
+              "end": 1162,
+              "kind": "line_range",
+              "start": 1162
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The pre-write endpoint existence check the attachment reaches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "312759424f9894d31fd1fcb2ae1aafc7062d5a80",
+            "content": "sha256:bd7e9273b74fa5506d1961abb6ceea35bb563df11c6187e2b51959f196b68b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_attachment_endpoint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/endpoints.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The cases that hold the two entry points, the cycle rollback, the sealed rows and the generation refusal.**\n\nAnchor: \"test_accepted_origin_data_is_refused_at_both_entry_points\"; \"test_a_supersession_cycle_rolls_back_and_a_sealed_decision_cannot_be_rewritten\"; \"test_a_dataset_predating_the_facet_tables_refuses_a_facet_write\"; \"test_the_two_entry_points_agree_and_a_refused_write_writes_nothing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:a68927361e80c46118b0a3996409fd2158839acb6ddc5311d2a0457bb73f948e",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 346
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:04a82d315828481ced40c167fdc15e93d733e4a40d65c642736b6c48373c60b2",
+            "locator": {
+              "end": 671,
+              "kind": "line_range",
+              "start": 589
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:71a97ea38c8127b59f5851f26f6efe3643d2b482a6545a672576988b5abeee9d",
+            "locator": {
+              "end": 1017,
+              "kind": "line_range",
+              "start": 935
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:c1f6f3b5d35d098a8b108c415bb7732200fcc45899e8656654df236a287b6c61",
+            "locator": {
+              "end": 875,
+              "kind": "line_range",
+              "start": 809
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:b669c2fb9a26a214e172736bb2bfe3b2da251c74afef3f5d93a88d25624715a7",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 448
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:d3809deec07d09d88ba6bd2a3ef1171b6ae0d427874e52c976cd1170596204ca",
+            "locator": {
+              "end": 698,
+              "kind": "line_range",
+              "start": 691
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:fd954e39293c838d2a7b8d76c1e8aa528edc6dbe7f6c3e10ab84daed1727ecaa",
+            "locator": {
+              "end": 1142,
+              "kind": "line_range",
+              "start": 1135
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:f0a4831e622f314425d7e24afa087617ff815b1ff6a6ff006ce7a77810e2752f",
+            "locator": {
+              "end": 467,
+              "kind": "line_range",
+              "start": 467
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:8151a7761000959bbf8598262ab0b80b61783fac4efcc9995690951168a7e87e",
+            "locator": {
+              "end": 710,
+              "kind": "line_range",
+              "start": 710
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:20cb916b5bd14888d2333859db30255ab2ec511dad33678b83304120bd5d2374",
+            "locator": {
+              "end": 1162,
+              "kind": "line_range",
+              "start": 1162
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The payload seam as the only payload decision point, and the envelope-plus-first-revision write.**\n\nAnchor: \"def validate_facet_payload(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:f25fcd611725e929bb1c7814877c2bf478594ac78d9e2672123e54e4aa996145",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_add_facet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:a9c0cb4bdd3835bf557ac9ba256d870712a25f0df87da3e92f42e554c9b389f1",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:502bb420f8fc7da8ed6d50787f6b049b4c0cda271ccdf26736d2bb522c6134b9",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:1493f262af8bc1444cd5367457e857f6bc4d81d931ad8c513b692b505aaa02a4",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:b80bbbf15239620d33ecce433ca507a2008c0971dd587b2b95a97ac02f37a435",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:7176d1b702dace06d10957f877beca133435f483f93e378a3c387ca5535d67eb",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The payload seam as the only payload decision point, and the envelope-plus-first-revision write.**\n\nAnchor: \"def validate_facet_payload(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:f25fcd611725e929bb1c7814877c2bf478594ac78d9e2672123e54e4aa996145",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_add_facet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:7176d1b702dace06d10957f877beca133435f483f93e378a3c387ca5535d67eb",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Proposed origin only, refused at both entry points with the shipped code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:d0618171ae7a6efa4e2bc8317bfc3635fb5ecae178789fcc38786c1fc060ff12",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_proposed_origin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The recorded supersession edge and the shared cycle rule applied to it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:8dd17d19efa1133f295610b6c33d2f39cd29db9dc423838aa7b4efea6b68e7e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_supersession"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:64215f23c59072174766245bc7d9b4ffbd97cd40a04233139cc877029bbf6143",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_supersessions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The exact earlier decision revision the edge requires, refused by name before any row is written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:136bf94bd62bba9d2c6a082521cb3a028022b0951d5322fc2c8d28f9ec8bed51",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_decision_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The typed attachment write, with the facet revision and the typed endpoint both checked first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:a5602fb23426d6a15bcbbce4c930bedd4eeeccec67a984ce781a3375e99f6486",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_attach_facet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:10dad06639bf4877c0feff88da07bc5a97c6dff6a257d69700044ebdb7e9dc1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_facet_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The removal that names its row and deletes that row only, and the designation guarded by the expected row digest.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:0a6bec07db6c0aa506879c9ce27cae36b2eda3664917ed6ef72921294152d894",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_remove_facet_attachment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:52b36739e93e2109c4acec1fe1dc7a87be1285acfe5a1765573af67337575ff4",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_designate_explanation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

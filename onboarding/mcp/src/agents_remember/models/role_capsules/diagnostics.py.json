@@ -1,0 +1,178 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The content half whose digest must stay independent of these shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:57b0718a3ae9e2c8769b9728d72996c910023d64d1b783d49aaf471a3ab4c350",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCapsule"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:372b60031c0d67597a35a00adfa085d1e81e08fded7627846c3e61026916c63d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationResult"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:0bec921fc81bcef7099c072fed58c2f1cc03055115386f7cc3a4d1ba798d5f80",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:2b89c8b5b829b4c7aee6c3d04716f38516d808c54d06d59ddab700d15a20c067",
+            "locator": {
+              "end": 475,
+              "kind": "line_range",
+              "start": 451
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The builder that fills the success-shaped manifest, and the two refusal-shaped builders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:857ee315e7a4216f7f357c3718293b3a9b2ce8351cb9cd0319ca60c06d864321",
+            "locator": {
+              "kind": "symbol",
+              "name": "compiled_manifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:772c8ca7013f9f40b5a4c05a5124d0c45795371436650dd7ac954af2edbc6e2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "refused_manifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:5d7c9f1d7735f98c4b098b6e4a7b412edd89ddd19280a02eca3480058011b7b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "manifest_for_error"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The digest document that must not reference any field of this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:24e597bc39f27710d9a95b8b39c255ff485a17e23e1bce53e77e51cc39ba55cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "semantic_digest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The application outcome that pairs a capsule or a refusal with this manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:4ad4fda7849becb55875d86df6cfcefe5d8c823a5a47ab0e419232b19d48c618",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_explanation"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The conflict kind vocabulary these rows are expressed in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:175243f6d78a1c54cd0e34eb48850dcf620c1b14cd593daee5f05054d6841e27",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONFLICT_EQUAL_AUTHORITY"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:e54346f18962a603a2e7a587b4afb4bd67f85e362d8bb4b1f9a21ea6f48d178e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONFLICT_DUPLICATE_IDENTITY"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

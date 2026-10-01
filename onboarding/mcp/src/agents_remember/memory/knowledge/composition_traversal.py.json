@@ -1,0 +1,156 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/composition_traversal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The one traversal: policy resolved first, then the bounded declared-direction walk.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc18afd6e8d50009cc7c633a77f111633648a069",
+            "content": "sha256:1a2aa4e7675fd8f031eedb50ea7fc15c44c0e73a1879234d17b94f73c783bb0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "follow_composition_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The traversal's own operation member, which is a different operation from the retrieval selection rather than a variant of it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc18afd6e8d50009cc7c633a77f111633648a069",
+            "content": "sha256:425d46d3fc371477383b6dbaa1d5e9940b7adedc58adb0309a02c95f750069c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TRAVERSAL_OPERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The result value carrying the reached set, the depth reached and the policy identity and version it executed under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc18afd6e8d50009cc7c633a77f111633648a069",
+            "content": "sha256:f60970b5a176e680a7e209a7d5c2aa8db22f7aa7cb023d0e8dba90658c7dfe6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CompositionScope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc18afd6e8d50009cc7c633a77f111633648a069",
+            "content": "sha256:cbf35643b11ad79e7c86baeb199b379c1c45b054b5e12aff7d71f5dd9cf3d0f8",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The third edge source that feeds the shared cycle rule, so this module needs no walk of its own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d0721f5eea95e5adfaf6a99a644dc704be8d2f",
+            "content": "sha256:c957734d720c23362e115b08779345625af69b921711c0a83b7bc2c0e16390a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "composition_edges"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineages.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The case that proves no second cycle walk or recursive CTE exists beside the shared rule.**\n\nAnchor: \"test_no_second_cycle_implementation_exists_beside_the_shared_rule\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:7cfb7f7a7912f47681deb0d90fb41ff192a8363b8279263b53e7f7b8f5b08af1",
+            "locator": {
+              "end": 1005,
+              "kind": "line_range",
+              "start": 1005
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The case that proves a traversal under a declared policy reports its version and widens nothing else.**\n\nAnchor: \"test_a_traversal_under_a_declared_policy_reports_its_version_and_widens_nothing_else\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d55216d76124e171004006d0ddce90fafccd9de7",
+            "content": "sha256:e4b7f365640136ccb79c32f2a69bc38ab4c551f9cd06a5336e78fdc13b8c6395",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 288
+            },
+            "path": "mcp/tests/test_knowledge_family_composition_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The case that proves a traversal past its declared bound is refused, not truncated.**\n\nAnchor: \"test_a_traversal_that_would_exceed_its_declared_bound_is_refused_not_truncated\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d55216d76124e171004006d0ddce90fafccd9de7",
+            "content": "sha256:aaac374b867e705382b2f0d1aaeb946f7def305ef4a2b6043240cd912d0e6828",
+            "locator": {
+              "end": 429,
+              "kind": "line_range",
+              "start": 429
+            },
+            "path": "mcp/tests/test_knowledge_family_composition_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The case that proves the shipped read never consults the composition table.**\n\nAnchor: \"test_no_shipped_read_path_consults_the_composition_table\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d55216d76124e171004006d0ddce90fafccd9de7",
+            "content": "sha256:b48a10559ca986e89f4dc61763024af554d3f10ed4a9dbb75d65935193eafdeb",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/tests/test_knowledge_family_composition_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

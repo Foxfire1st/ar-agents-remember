@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_knowledge_census_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Formats and slugs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:85190e1cdfd7f60b6cedd65ff1c3c273eda95f83dd3e713326da326e45368b57",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_census_file_parses_by_schema_and_is_canonical"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:a7e571fe4b55fae42b75b97c8ed86496d3091c8fdca578456711d5de3beaea44",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_slugs_are_readable_and_injective"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer appends and refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:90035513d967f0bfee28adbb47aa4c524c90b6073e718758b12bb6e2472f3cf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_appends_observations_and_its_tree_passes_the_validator"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:6ea4f74d7efc4feec6da3115001e9c5194d3da7a9a36ef7202961ffbd1cc654d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_refuses_and_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pinned files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:a6be626bdb0078679181a8163b9aecb8eb6e745f59e8f4c58234143c7dc5366c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_baseline_and_inventory_are_pinned"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Integrity rules name file, field and rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:3cf8438df9582b58cf5df4c9f1cbb4d2d0bd108eea8f0bbc15a126d5b84781a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_census_integrity_rules_name_file_field_and_rule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Stable claim fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:f8672b5113e13ae7bfd4824516043496a26a1dda4cc95718d2c75c5739785ca9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_claims_identity_and_cohort_fields_are_stable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

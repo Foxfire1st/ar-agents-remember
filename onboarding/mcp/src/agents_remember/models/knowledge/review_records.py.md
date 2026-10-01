@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/review_records.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/review_records.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:31:41+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -109,47 +99,35 @@ nothing and writes nothing.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in this module's own docstring, vocabulary and validator, in the
 payload module that re-exports it and carries the resulting list, in the composition that resolves it,
 and in the cases that measure both the vocabulary's refusals and the wire payload that carries it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what the vocabulary is, why it is its own module, and the five distinguishable facts. | "The record-collection availability vocabulary" | mcp/src/agents_remember/models/knowledge/review_records.py:1-12 |
-| The published surface and the collections named by record class rather than by pane, with the reason spelled out. | `__all__`; `ReviewRecordClassName` | mcp/src/agents_remember/models/knowledge/review_records.py:26-45 |
-| **The five-state vocabulary and why each state is a different fact rather than one empty tuple with a label.** | `ReviewRecordChannelState` | mcp/src/agents_remember/models/knowledge/review_records.py:47-63 |
-| **The one declaration of which states are an owner's answer.** | `_COUNTED_CHANNEL_STATES` | mcp/src/agents_remember/models/knowledge/review_records.py:65-65 |
-| **The channel value: the state, the owner that answered, the count that exists exactly when an answer does, the named unreadable identities and the next action.** | `ReviewRecordChannel` | mcp/src/agents_remember/models/knowledge/review_records.py:68-89 |
-| **The validator that makes "a count nobody measured" unrepresentable — four refusals plus the required next action on every non-answer.** | `_require_an_answer_to_carry_its_count` | mcp/src/agents_remember/models/knowledge/review_records.py:91-123 |
-| The shared bounds the model takes rather than restating. | `PROSE_MAX_LENGTH`; `REFERENCE_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:1-60 |
-| **The payload module that re-exports the three names and carries the resulting list on the evidence pane.** | `ReviewRecordChannel`; `ReviewRecordChannelState`; `ReviewRecordClassName`; `ReviewEvidencePane`; `channels` | mcp/src/agents_remember/models/knowledge/review.py:71-127; mcp/src/agents_remember/models/knowledge/review.py:51-51; mcp/src/agents_remember/models/knowledge/review.py:918-958; mcp/src/agents_remember/models/knowledge/review.py:52-52; mcp/src/agents_remember/models/knowledge/review.py:956-996 |
-| **The composition that resolves every channel through the owner of each collection this vocabulary names.** | `_COLLECTION_OWNERS`; `_channel`; `ReviewRecordChannel` | mcp/src/agents_remember/application/review_evidence_records.py:136-143; mcp/src/agents_remember/application/review_evidence_records.py:781-792; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
-| **The cases that measure the vocabulary's own refusals and its presence in the served wire schema.** | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:887-912; mcp/tests/test_knowledge_review_evidence_channels.py:959-966 |
+- The module's own statement of what the vocabulary is, why it is its own module, and the five distinguishable facts. [1]
+- The published surface and the collections named by record class rather than by pane, with the reason spelled out. [2]
+- **The five-state vocabulary and why each state is a different fact rather than one empty tuple with a label.** [3]
+- **The one declaration of which states are an owner's answer.** [4]
+- **The channel value: the state, the owner that answered, the count that exists exactly when an answer does, the named unreadable identities and the next action.** [5]
+- **The validator that makes "a count nobody measured" unrepresentable — four refusals plus the required next action on every non-answer.** [6]
+- The shared bounds the model takes rather than restating. [7]
+- **The payload module that re-exports the three names and carries the resulting list on the evidence pane.** [8]
+- **The composition that resolves every channel through the owner of each collection this vocabulary names.** [9]
+- **The cases that measure the vocabulary's own refusals and its presence in the served wire schema.** [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It declares a payload vocabulary and touches
 no boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 1 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **three enforced citation rows re-pointed; this card's own source module is unchanged by the leaf.** `models/knowledge/review_records.py` is not a governed source of `260921-ICR-L15` (that leaf changes `models/lifecycles/review_assessment.py`, `models/lifecycles/review_assessment_binding.py` and, by docstring only, `models/knowledge/review.py`), so nothing this card states about the record-availability vocabulary moved and no claim wording changed. **Citation accounting:** the owner row's `_COLLECTION_OWNERS` range `mcp/src/agents_remember/application/review_evidence_records.py:128-135` now reads `:137-144`; the case row's `test_the_channel_model_refuses_a_count_no_owner_measured` range `mcp/tests/test_knowledge_review_evidence_channels.py:761-787` now reads `:887-912`, and `test_the_wire_payload_carries_the_channels` `:789-796` now reads `:959-966`. Each range was re-read against the declaration it names in this candidate and contains it; finding and anchor wording is unchanged. **No verification stamp was advanced**, because the candidate is uncommitted: `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned. The two `citation_provenance_invalid` rows this card carries are closeout-owned — they need a real code commit and a ledger-mapped memory commit — so no curator range edit discharges them.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-22T09:20:00+02:00 — 260921-ICR-L4 curator (gate repair pass on the merged line): **one enforced row re-cited.** The re-export row cited `models/knowledge/review.py:643-666` for the pane, which the six-counts and partition growth moved; it now cites `:665-701`. Wording unchanged; no stamp advanced.
-- 2026-09-21T21:25:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced by **extracting the availability vocabulary out of `models/knowledge/review.py`**. The card records what the vocabulary is rather than only where it moved: the six collection names taken by record class rather than by pane (with the reason — availability is a fact about the owner, and one fact has to serve whichever pane renders the records); the five states and what each one distinguishes; and the validator that makes the defect's shape unrepresentable, since a state that measured no count may not carry one and every non-answer must say what would produce an answer. It also records the extraction's provenance: `models/knowledge/review.py` had crossed the 900-line soft rail (940 → 851), and the three names are **re-exported** from it so no importer had to learn a new home. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `d80a0513e928ef29a973527d09597c82c96fde87`, the master line `ar/260921_complete-code-and-intent-review` at its current tip and this leaf's own base — because every construct cited here exists only in this leaf's uncommitted candidate and no commit contains the content a stamp would otherwise claim to have verified. That is a statement of what the reading was against, not a claim that these constructs exist in that commit; the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates, and that remains the real stamp.
+No meaningful cross-repo references found.

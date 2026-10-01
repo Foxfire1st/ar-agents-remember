@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/registration/skills_extension.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/mcp/registration/skills_extension.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [registration route overview](overview.md)
@@ -112,51 +102,34 @@ unchanged.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The specification this module implements, quoted in its own docstring:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes. | "This extension introduces three protocol methods."; "The extension introduces no other methods, message types, or schema changes." | mcp/src/agents_remember/mcp/registration/skills_extension.py:7-10 |
-| **Declaring the extension itself commits the server** to `skills/list` and `skills/get`. | "Declaring the extension itself commits the server to" | mcp/src/agents_remember/mcp/registration/skills_extension.py:10-11 |
-| The optional `resources/directory/read` method is gated behind the `directoryRead` capability a server may decline, and "a server that does not declare it never receives the call". | `DIRECTORY_READ_CAPABILITY` | mcp/src/agents_remember/mcp/registration/skills_extension.py:62-64 |
-| An entry's `frontmatter` is a **verbatim copy** of the skill's `SKILL.md` frontmatter rendered as JSON — "every field the author wrote, not a curated subset". | `_MappingReader` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:97-100 |
+- The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes. [1]
+- **Declaring the extension itself commits the server** to `skills/list` and `skills/get`. [2]
+- The optional `resources/directory/read` method is gated behind the `directoryRead` capability a server may decline, and "a server that does not declare it never receives the call". [3]
+- An entry's `frontmatter` is a **verbatim copy** of the skill's `SKILL.md` frontmatter rendered as JSON — "every field the author wrote, not a curated subset". [4]
 
 Canonical live reference: <https://github.com/modelcontextprotocol/modelcontextprotocol> (the skills
 extension specification, SEP-2640).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one entry point, making three additive changes; the process-wide session patch is idempotent. | `install_extension_methods`; `_install_request_union`; `_INSTALLED` | mcp/src/agents_remember/mcp/registration/skills_extension.py:133-177 |
-| The dispatcher hook, without which an extension request is silently dropped rather than refused. | `_install_dispatcher`; `_DISPATCH_INSTALLED` | mcp/src/agents_remember/mcp/registration/skills_extension.py:180-214 |
-| `skills/list` answers one page and omits `nextCursor`, which is the completion signal. | `_skills_list_handler`; `SkillsListResult` | mcp/src/agents_remember/mcp/registration/skills_extension.py:95-103; mcp/src/agents_remember/mcp/registration/skills_extension.py:243-257 |
-| `skills/get` answers for any served skill, listed or not, and refuses an absent URI with `-32602`. | `_skills_get_handler`; `skill_for_root_uri` | mcp/src/agents_remember/mcp/registration/skills_extension.py:260-280; mcp/src/agents_remember/models/skill_resources.py:177-187 |
-| Both handlers answer from the same catalog the resources are registered from. | `_catalog_for_request`; `_require_servable` | mcp/src/agents_remember/mcp/registration/skills_extension.py:235-240; mcp/src/agents_remember/mcp/registration/skills_extension.py:283-294 |
-| The declaration beside it: the capability and the methods are installed together, so the advertisement cannot outrun the implementation. | `_register_skill_resources`; `declare_skills_extension` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:143-154; mcp/src/agents_remember/mcp/registration/capsule_serving.py:157-184; mcp/src/agents_remember/mcp/registration/capsule_serving.py:155-166 |
-| The entry shape the methods return: verbatim frontmatter plus per-file digest and size. | `entry_document`; `entry_documents` | mcp/src/agents_remember/models/skill_resources.py:115-130; mcp/src/agents_remember/models/skill_resources.py:192-198 |
-| The reading half both handlers depend on, including the containment and revision guards. | `build_skill_catalog`; `read_served_file` | mcp/src/agents_remember/application/skill_resources/catalog.py:75-95; mcp/src/agents_remember/application/skill_resources/catalog.py:117-148 |
-| The real-process exchange that exercises the declared capability and both methods against the shipped entry point. | `test_a_real_client_and_server_exchange_over_the_installed_sdk` | mcp/tests/test_capsule_serving.py:1198-1268 |
-| The case that pins the install-once idempotence of the declaration. | `test_the_extension_declaration_is_installed_once_per_server` | mcp/tests/test_capsule_serving.py:1393-1407 |
+- The one entry point, making three additive changes; the process-wide session patch is idempotent. [5]
+- The dispatcher hook, without which an extension request is silently dropped rather than refused. [6]
+- `skills/list` answers one page and omits `nextCursor`, which is the completion signal. [7]
+- `skills/get` answers for any served skill, listed or not, and refuses an absent URI with `-32602`. [8]
+- Both handlers answer from the same catalog the resources are registered from. [9]
+- The declaration beside it: the capability and the methods are installed together, so the advertisement cannot outrun the implementation. [10]
+- The entry shape the methods return: verbatim frontmatter plus per-file digest and size. [11]
+- The reading half both handlers depend on, including the containment and revision guards. [12]
+- The real-process exchange that exercises the declared capability and both methods against the shipped entry point. [13]
+- The case that pins the install-once idempotence of the declaration. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency. `mcp==1.29.1` is a pinned external dependency this
 module extends additively without moving it.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_a_real_client_and_server_exchange_over_the_installed_sdk` repointed to mcp/tests/test_capsule_serving.py:1198-1268. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_the_extension_declaration_is_installed_once_per_server` repointed to mcp/tests/test_capsule_serving.py:1393-1407. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, closing pass: created the card for the new
-  `skills_extension.py` module. Recorded the three additive changes (request union, dispatcher hook,
-  handler registration), why the dispatcher hook is load-bearing (a dropped request hangs rather than
-  errors), that the handlers answer from the same catalog the resources come from, that the
-  declaration and the methods install together so the capability cannot outrun the implementation, and
-  that `resources/directory/read` is declined by design through the specification's own capability
-  gate. This module is the repair for round 1's `F-L4-05`. Verification metadata remains
-  closeout-owned; no acceptance claim is made.

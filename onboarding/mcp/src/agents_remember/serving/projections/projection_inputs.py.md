@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/projections/projection_inputs.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/projections/projection_inputs.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving projections overview](overview.md)
@@ -77,19 +67,19 @@ retention and invalidation explicit rather than heuristic.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Projection write edge consumes this retained input state. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:212-275 |
-| The serialized worker maps watcher wakes to refresh kinds. | `Projector` | mcp/src/agents_remember/serving/projector.py:126-330 |
+- Projection write edge consumes this retained input state. [1]
+- The serialized worker maps watcher wakes to refresh kinds. [2]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
@@ -99,24 +89,3 @@ Task-domain refresh now sets a pending bit before reading and publishes contract
 documents, and series only after every read succeeds. A failure preserves the complete last-good
 snapshot and leaves the bit set; a later heartbeat retries even without another task-domain change.
 Successful publication clears the bit.
-
-## Update History
-
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `_advance_model_age` and confirmed that projection age advancement remains as documented. Verification remains closeout-owned.
-
-- 2026-08-26T10:44:52+02:00 — Reconciled retained projection input state with atomic task refresh and heartbeat retry after transient failure.
-- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
-
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 3 citation items; scoped citation check now passes.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `ProjectionInputState.read` and every `_refresh_*` method were re-signed onto three new frozen
-  parameter objects — `RefreshPass`, `ActiveGroups`, `ProjectionReaders`. The `read()` contract
-  changed: `now` / `refresh` / `landing_state` / `lifecycle_reader` / `repo_surface_reader` are
-  gone as individual parameters, replaced by `readers` and `pass_`. `_advance_model_age` lost its
-  `# noqa: UP047`. Behaviour is unchanged — the refresh decisions, admission-set comparisons and
-  whole-domain replacement are the same; only how the values reach each refresher moved.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created onboarding for
-  domain-invalidated projection inputs and whole-domain reclamation. Verification metadata remains
-  blank until commit.

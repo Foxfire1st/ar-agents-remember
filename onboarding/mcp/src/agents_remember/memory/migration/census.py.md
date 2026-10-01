@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/migration/census.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/migration/census.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -135,15 +125,15 @@ marker rather than a second literal declaration. `census_records` is imported as
 - **No second identity scheme.** Every row this module reports carries the record id, route id and
   baseline the envelope and the records already store; the module mints no digest and no name.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This module is the census's read and assembly half: it answers the record group's readers and produces
 the report the measures module renders, and it owns the one predicate that decides whether a coverage
@@ -151,37 +141,29 @@ figure may exist at all. The rows below cite the report assembly and its two num
 review gate in both of its forms, the derived review state, the recorded-only slice keys, and the
 record vocabulary and readers it imports rather than re-declares.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of its division: the read side of the census, with no code path that derives the coverage denominator from the corpus. | `build_report`; `CensusReport` | mcp/src/agents_remember/memory/migration/census.py:1-17 |
-| The reference inventory's closed source vocabulary, which deliberately excludes the corpus the denominator is measured against. | `ReferenceSource`; `REFERENCE_SOURCES` | mcp/src/agents_remember/memory/migration/census.py:51-64 |
-| The two states a reference inventory's review seat can be in, and the reason `reviewed` is the only publishable one. | `ReviewState` | mcp/src/agents_remember/memory/migration/census.py:43-46 |
-| The corpus-derived assertion the record declares but no shipped path reads: the field exists as a `Literal[False]` default and is absent from the draft, so nothing carries or checks a caller's value. | `ReferenceInventory` | mcp/src/agents_remember/memory/migration/census.py:86-107 |
-| The two denominators the inventory owns, read as its truth count and its realization count. | `size`; `realization_count` | mcp/src/agents_remember/memory/migration/census.py:109-119 |
-| The reviewer gate: an unsettled review seat and a reviewer who is the author are refused by the same check, because `Doc12:110` requires review by someone other than the author. | `require_independent_reviewer` | mcp/src/agents_remember/memory/migration/census.py:121-138 |
-| The boolean form of the gate: false for a missing inventory, a missing reviewer and a self-reviewed one. | `coverage_is_publishable` | mcp/src/agents_remember/memory/migration/census.py:172-186 |
-| The narrowing form: the only way to obtain an inventory to measure against is through the gate, so a forgotten boolean test cannot reach an unreviewed one. | `published_inventory` | mcp/src/agents_remember/memory/migration/census.py:189-197 |
-| The derivation, rather than acceptance, of the review state: `reviewed` is computed from a named reviewer, so the two facts cannot disagree. | `reference_inventory`; `ReferenceInventoryDraft` | mcp/src/agents_remember/memory/migration/census.py:141-169 |
-| The coverage numerator: a literal zero while an independently reviewed inventory is supplied, and no branch that could count over the corpus. | `_represented_truths` | mcp/src/agents_remember/memory/migration/census.py:306-315 |
-| The realization attribution count, read out of the claims' stored relations rather than derived from any code reading. | `_known_realizations` | mcp/src/agents_remember/memory/migration/census.py:318-331 |
-| One occurrence per extracted claim, built in stored order with the blank-text case skipped. | `_occurrences_of` | mcp/src/agents_remember/memory/migration/census.py:200-213 |
-| The recorded-only slice keys: the authored claim kind, the envelope's explicit governing-route association, and the `unrecorded` state for the two axes this record group has no carrier for. | `_slice_keys` | mcp/src/agents_remember/memory/migration/census.py:216-235 |
-| The four axes iterated, each slice re-filtered to the cohort inside the slice builder rather than by the caller. | `_slices` | mcp/src/agents_remember/memory/migration/census.py:238-254 |
-| The assembly itself, with the published inventory narrowed once and the denominator taken as an argument, and the `unmapped`-visible disposition path on the same module's public surface. | `build_report`; `disposition_report`; `disposition_counts` | mcp/src/agents_remember/memory/migration/census.py:257-303; mcp/src/agents_remember/memory/migration/census.py:334-337; mcp/src/agents_remember/memory/migration/census_measures.py:531-543 |
-| The read helpers this module is handed the store for, and the stored-schema check that refuses a row whose envelope disagrees with its declared schema. | `read_inventory_rows`; `read_claims`; `read_dispositions`; `_require_declared_schema` | mcp/src/agents_remember/memory/knowledge/census_records.py:750-778; mcp/src/agents_remember/memory/knowledge/census_records.py:781-829; mcp/src/agents_remember/memory/knowledge/census_records.py:832-891; mcp/src/agents_remember/memory/knowledge/census_records.py:722-731 |
-| The eligibility rule and the cell reader the assembly applies, and the report vocabulary it fills from the imported model rather than restating. | `claim_enters_cohort`; `cell_of`; `COHORT_APPLICABILITY`; `CensusClaim`; `CensusInventoryRow` | mcp/src/agents_remember/memory/migration/census_measures.py:265-277; mcp/src/agents_remember/memory/migration/census_measures.py:487-507; mcp/src/agents_remember/models/knowledge/census.py:100-103; mcp/src/agents_remember/models/knowledge/census.py:41-41; mcp/src/agents_remember/models/knowledge/census.py:376-383 |
-| The evidence relation that carries a curator's authored verdict and its absence-as-`unassessed` state, which is what makes `P` derivable without being invented. | `CensusClaimEvidence`; `CensusClaimRealization` | mcp/src/agents_remember/models/knowledge/census.py:239-257; mcp/src/agents_remember/models/knowledge/census.py:260-271 |
+- The module's own statement of its division: the read side of the census, with no code path that derives the coverage denominator from the corpus. [1]
+- The reference inventory's closed source vocabulary, which deliberately excludes the corpus the denominator is measured against. [2]
+- The two states a reference inventory's review seat can be in, and the reason `reviewed` is the only publishable one. [3]
+- The corpus-derived assertion the record declares but no shipped path reads: the field exists as a `Literal[False]` default and is absent from the draft, so nothing carries or checks a caller's value. [4]
+- The two denominators the inventory owns, read as its truth count and its realization count. [5]
+- The reviewer gate: an unsettled review seat and a reviewer who is the author are refused by the same check, because `Doc12:110` requires review by someone other than the author. [6]
+- The boolean form of the gate: false for a missing inventory, a missing reviewer and a self-reviewed one. [7]
+- The narrowing form: the only way to obtain an inventory to measure against is through the gate, so a forgotten boolean test cannot reach an unreviewed one. [8]
+- The derivation, rather than acceptance, of the review state: `reviewed` is computed from a named reviewer, so the two facts cannot disagree. [9]
+- The coverage numerator: a literal zero while an independently reviewed inventory is supplied, and no branch that could count over the corpus. [10]
+- The realization attribution count, read out of the claims' stored relations rather than derived from any code reading. [11]
+- One occurrence per extracted claim, built in stored order with the blank-text case skipped. [12]
+- The recorded-only slice keys: the authored claim kind, the envelope's explicit governing-route association, and the `unrecorded` state for the two axes this record group has no carrier for. [13]
+- The four axes iterated, each slice re-filtered to the cohort inside the slice builder rather than by the caller. [14]
+- The assembly itself, with the published inventory narrowed once and the denominator taken as an argument, and the `unmapped`-visible disposition path on the same module's public surface. [15]
+- The read helpers this module is handed the store for, and the stored-schema check that refuses a row whose envelope disagrees with its declared schema. [16]
+- The eligibility rule and the cell reader the assembly applies, and the report vocabulary it fills from the imported model rather than restating. [17]
+- The evidence relation that carries a curator's authored verdict and its absence-as-`unassessed` state, which is what makes `P` derivable without being invented. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every read it performs goes to the one
 knowledge store it is handed, every identity it reports is a store-local row identity or a declared
 vocabulary member, and nothing here reaches another repository, another dataset or a remote.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the census's read-and-assembly module. It records the report assembly that reads three census tables through `census_records` and produces one `CensusReport` while issuing no statement of its own, and the two — and only two — sources of a number in it: the reads and the denominator passed as an argument. It records the publishability gate in its three shapes, the raising `require_independent_reviewer`, the boolean `coverage_is_publishable` and the narrowing `published_inventory`, together with the derived-not-passed `reviewed` state and the five closed reference source classes that exclude the corpus. It records the coverage numerator as a literal zero that cannot count over the corpus, the realization count read out of the claims' stored `attributed` relations, the stored-order occurrence builder that skips blank text, and the recorded-only slice keys where `family` and `consequence` honestly report `unrecorded` instead of a derived key. It records the deliberate absences as well: no write, no digest of its own, no inferred route association, no verdict, and no `__all__`. It also records the one honest gap it found — `corpus_derived` is declared as an always-`False` literal, is absent from the draft that `reference_inventory` accepts, and is read by nothing in the package, so the author's assertion is recorded nowhere and checked against nothing. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

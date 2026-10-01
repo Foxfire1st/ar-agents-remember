@@ -1,0 +1,100 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/leaf_refs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Resolution returns canonical document identity or a typed not-found/ambiguous error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:6f7e573fe79d9f4d925406648783d32f0dcc57de7de80db4367bd2a6e2f3326d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_leaf_ref"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:db2b0eae047cc97474e39b38127c77dd16417e2ef657d8d6a5c92f83a0958d91",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafRefResolutionError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bounded canonical-id skip index `canonical_leaf_doc_ids` is built per task root for contract healing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:b50e5decfa7b7cf034dc203dd491ed9821660535bf139519c9e0b41170ea7e4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_leaf_doc_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The heal sweep `heal_contract_leaf_ids` rewrites legacy leaf ids using that per-root index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a3f79546ecc975c921e15eb2335b80eacea704b",
+            "content": "sha256:47e1d3767355bc54493cb7dd35c20385d84ffe7a953bb2cfabea7959bafd7d71",
+            "locator": {
+              "kind": "symbol",
+              "name": "heal_contract_leaf_ids"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worktree start is the live caller of leaf-document resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ae6ef0f51453e765a4da2e4624bb099e2c140b7",
+            "content": "sha256:197ea61af130b6e64b3892d70196de26360f11d4e0fe13f2d4d16f15d397de7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_start_leaf_doc_id"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Existing enclosure contracts can still be found through proven aliases or the explicit raw legacy path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:c9941155b1d99610c0f55c6c769aec56ffd6ebe30cde986d0c48ef6fe84aed7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_leaf_enclosure_contract_for_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/review_recorded_knowledge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`RecordedKnowledge` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ae88376a256d5eb5e063e593569ea4d210bc955",
+            "content": "sha256:b0681dcf2515a4eda6d00b72a8bb3ec78eeaa84d190d17cddac1b83301e98112",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedKnowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`read_recorded_knowledge` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ae88376a256d5eb5e063e593569ea4d210bc955",
+            "content": "sha256:c9682976d1d187c85ecd8f9b52139845aaa99b9ddd998641c1dffae62027d907",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_recorded_knowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`read_memory_knowledge` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ae88376a256d5eb5e063e593569ea4d210bc955",
+            "content": "sha256:c99bc4e17e6b879040ffddbabcb23c88ad7ce142e2ac10a7d8458301d1763c5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_memory_knowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_store.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_store.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`|
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -95,54 +85,33 @@ code, offending record, row counts) rather than internal call order.
 None recorded. Later leaves (KS-R02 … KS-R08) extend the fixture and add their own modules rather than growing this
 one.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The divergent-successor read, the node registered as the shared fixture's evidence node. | `test_two_same_label_successors_reopen_as_separate_revisions` | mcp/tests/test_knowledge_store.py:87-113 |
-| The two-caller identity contract the `KS-R03` repair restored, added to this suite in that same change. | `test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses` | mcp/tests/test_knowledge_store.py:180-217 |
-| The identity reuse refusal and its unchanged stored row. | `test_reused_revision_identity_with_other_content_refuses` | mcp/tests/test_knowledge_store.py:257-282 |
-| The write-path guard's descending branch, including the wording assertions. | `test_lineage_guard_refuses_a_candidate_descending_from_a_stored_cycle` | mcp/tests/test_knowledge_store.py:453-502 |
-| The before-the-insert evaluation a disabled guard fails. | `test_lineage_guard_fires_before_the_candidate_insert` | mcp/tests/test_knowledge_store.py:590-623 |
-| The database-level immutability proof against the stored revision rows. | `test_stored_revision_rows_refuse_update_and_delete` | mcp/tests/test_knowledge_store.py:680-706 |
-| The seal covering more than the statement. | `test_payload_digest_seals_more_than_the_statement` | mcp/tests/test_knowledge_store.py:709-727 |
-| The seam case that drives the production composition path, including the batch entry points this leaf added to that module. | `test_application_seam_initializes_and_extends_one_namespace` | mcp/tests/test_knowledge_store.py:736-788 |
-| The layer-direction case. | `test_lower_ranked_owners_do_not_import_the_memory_domain` | mcp/tests/test_knowledge_store.py:838-856 |
-| The shared fixture every case builds from. | `build_branching_knowledge_fixture` | mcp/tests/knowledge_fixture_test_support.py:203-261 |
-|  The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions). | "unit-regression" | mcp/tests/test-evidence-lanes.toml:5-5  |
-|  The fixture's registered stable contract and evidence node. | "contract:knowledge-identity-branching-fixture" | mcp/tests/evidence-lifecycle.toml:1217-1217  |
-| The store contract the added node pins, including the two-caller distinction. | `insert_invariant`; `_insert_invariant` | mcp/src/agents_remember/memory/knowledge/store.py:572-608; mcp/src/agents_remember/memory/knowledge/store.py:396-404 |
+- The divergent-successor read, the node registered as the shared fixture's evidence node. [1]
+- The two-caller identity contract the `KS-R03` repair restored, added to this suite in that same change. [2]
+- The identity reuse refusal and its unchanged stored row. [3]
+- The write-path guard's descending branch, including the wording assertions. [4]
+- The before-the-insert evaluation a disabled guard fails. [5]
+- The database-level immutability proof against the stored revision rows. [6]
+- The seal covering more than the statement. [7]
+- The seam case that drives the production composition path, including the batch entry points this leaf added to that module. [8]
+- The layer-direction case. [9]
+- The shared fixture every case builds from. [10]
+- The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions). [11]
+- The fixture's registered stable contract and evidence node. [12]
+- The store contract the added node pins, including the two-caller distinction. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1207-1207. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1195-1195. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1190-1190. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1192-1192. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 1 enforced `citation_anchor_absent_from_range` row in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1190-1190` → `mcp/tests/evidence-lifecycle.toml:1190-1191` (row 122). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1190-1190. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1187-1187. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1183-1183. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): citation ranges re-derived against the working tree after this leaf enlarged the modules this card cites (`schema.py` gained the relocated `PRIMARY_KEYS`/`JSON_COLUMNS`, and the knowledge modules and their test modules grew), so ranges that were exact at the base commit no longer held the constructs their rows name. Every re-derived range was verified to contain the construct its own row names; no row, citation or claim was deleted or weakened, and the claim wording was retained where it still holds. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `build_branching_knowledge_fixture` repointed to mcp/tests/knowledge_fixture_test_support.py:203-261. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **extended this card for the node the review forced.** The suite is now 23 nodes: `test_a_repeated_identical_invariant_is_no_change_and_a_relabel_refuses` was added because the candidate-batch refactor moved the invariant insert into a shared helper and silently dropped its `no_change` branch, so a repeated identical `create_invariant` refused `duplicate_identity` where the base commit confirmed it (sealed finding `260915-KS-L3-RV-2`). The fix restored the branch behind `confirm_repeat` and this node pins it. The card records why the node is not a duplicate of `test_identical_aggregate_is_no_change` (identity versus aggregate) and that the 54 upstream cases passed while the behaviour was wrong — a passing suite is not a preservation proof. Citation ranges were re-derived against the grown file and the lane row re-cited. Verification metadata remains closeout-owned.
-- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new focused suite. It records the 22-node census with what each node protects, the two mutation-proved enforcement nodes (sealed findings `RV-1`/`RV-2`/`RV-4`), the labelled outside-the-operation construction of cyclic state, and the load-bearing `unit-regression` registration. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

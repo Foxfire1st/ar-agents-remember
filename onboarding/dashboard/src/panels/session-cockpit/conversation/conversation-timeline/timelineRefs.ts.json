@@ -1,0 +1,34 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineRefs.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stable ref container.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d9e39b98b0ba77d319a33910cbb68a2470f9fd",
+            "content": "sha256:6d289c026f76487a74079d855ffd5c7093e0f82c0a39d8929a6a61396a8f78d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TimelineRefs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91d9e39b98b0ba77d319a33910cbb68a2470f9fd",
+            "content": "sha256:f305d5fca492574e97a578929f015d962587e23c9e4eb4ba4921bb84a5ea5b75",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTimelineRefs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

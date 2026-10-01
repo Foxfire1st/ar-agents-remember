@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/docs-evidence-pack-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The docs pack template records scope, source checks, confirmed documentation findings, constraints, terms, affected files, no-evidence records, and open questions.\n\nAnchor: \"Docs Evidence Pack — <area-or-route>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "747a395693c7026d90c23bc92a98965a6d3e5d3c",
+            "content": "sha256:c59024d92dfc239ac84c389b51add59b07d48e1414da735a176c0d882e0f9994",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`c-03-repo-bootstrap` skill Phase 4E writes docs evidence packs for priority routes where documentation affects behavior.\n\nAnchor: `# Repo Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44f14f781dba7d51c2892929b46289e59662ebc6",
+            "content": "sha256:f5d411e3fc7eea0f54a8a9c46174aeb9fb55ff91d5b56833332e31a6b49f5d78",
+            "locator": {
+              "end": 1265,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

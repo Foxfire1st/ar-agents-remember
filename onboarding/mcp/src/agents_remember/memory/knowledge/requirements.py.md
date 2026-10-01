@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/requirements.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/requirements.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:10+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -102,52 +92,40 @@ per-revision state would *be* the second revision aggregate `KS-R19@v1` requirem
 
 None recorded. The two new test modules in `mcp/tests/` are the only callers.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-|**The one write entry point, its pre-lock checks and its one immediate transaction.**|`record_requirement_revision`| mcp/src/agents_remember/memory/knowledge/requirements.py:89-112 |
-|**The transactional body: every guard before either INSERT, so a refusal leaves no row behind.**|`_write_revision`| mcp/src/agents_remember/memory/knowledge/requirements.py:113-161 |
-|The single payload seam this record group validates through, delegated to rather than restated.|`_admissible_payload`| mcp/src/agents_remember/memory/knowledge/requirements.py:162-176 |
-|The read that answers through the derived views and refuses a record nothing stores.|`read_requirement_revisions`| mcp/src/agents_remember/memory/knowledge/requirements.py:177-207 |
-| Requirement 2.6 answered here: resolved names exactly one record, ambiguous names more than one, and neither is won by the substrate. | `resolve_requirement_reference` | mcp/src/agents_remember/memory/knowledge/requirements.py:208-268 |
-| Promotion refused as an attempt on a stored revision, with the owner named as the next action. | `require_promotion_not_attempted` | mcp/src/agents_remember/memory/knowledge/requirements.py:269-323 |
-| **The shared acyclic-lineage rule this record group composes instead of re-implementing.** | `require_acyclic_lineage` | mcp/src/agents_remember/memory/knowledge/requirements.py:324-364 |
-| The shared rule itself, decided over the stored predecessor edges plus the new edge. | "def find_cycle(" | mcp/src/agents_remember/memory/knowledge/lineage.py:133-159 |
-| A predecessor stored under another record and a predecessor stored nowhere, refused as different facts. | `require_predecessor` | mcp/src/agents_remember/memory/knowledge/requirements.py:365-401 |
-| **The governing route authored once: a later revision cannot repoint the record's sealed association.** | `require_record_route_unchanged` | mcp/src/agents_remember/memory/knowledge/requirements.py:402-434 |
-| The pre-lock route check, with the ungoverned state never refused. | `require_governing_route` | mcp/src/agents_remember/memory/knowledge/requirements.py:435-453 |
-| The two operation names this record group declares once, one per operation. | `RECORD_OPERATION` | mcp/src/agents_remember/memory/knowledge/requirements.py:85-85 |
-| The read operation name, declared beside the record operation rather than inside the write path. | `READ_OPERATION` | mcp/src/agents_remember/memory/knowledge/requirements.py:86-86 |
-| The narrow local literal, asserted by the suite to be a subset of the shipped vocabulary rather than a second one. | `RequirementRevisionOperation` | mcp/src/agents_remember/models/knowledge/requirement.py:383-386 |
-| The shipped lock and one-immediate-transaction contract whose rollback this module relies on. | `exclusive_candidate_lock`; `within_immediate` | mcp/src/agents_remember/memory/knowledge/store.py:503-525; mcp/src/agents_remember/memory/knowledge/store.py:545-562 |
-| The envelope tables these operations write into, and the immutable-revision trigger behind them. | `record_revision_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:223-224 |
-|**The one-payload-seam entry point this record group calls, with its three refusal paths and one code.**|`validate_record_payload`| mcp/src/agents_remember/memory/knowledge/record_envelope.py:253-297 |
-| The lineage, promotion, reference and namespace cases that pin this module's refusals one by one. | "test_a_promotion_attempt_is_refused_and_no_stored_byte_changes"; "test_a_self_predecessor_is_refused_as_a_cycle_and_writes_nothing"; "test_a_dangling_predecessor_is_refused"; "test_a_request_addressed_to_another_namespace_is_refused" | mcp/tests/test_knowledge_requirement_revisions.py:247-276; mcp/tests/test_knowledge_requirement_revisions.py:403-425; mcp/tests/test_knowledge_requirement_revisions.py:448-461; mcp/tests/test_knowledge_requirement_revisions.py:529-547 |
-| The route cases: ungoverned as a state, and a sealed association that cannot be repointed. | "test_ungoverned_is_reported_as_a_state_and_never_defaulted"; "test_a_named_route_must_be_authored_and_is_never_repointed" | mcp/tests/test_knowledge_requirement_reference_contract.py:366-383; mcp/tests/test_knowledge_requirement_reference_contract.py:384-434 |
-| The reference-resolution case: unresolved, then resolved to exactly one, then ambiguous over two holders. | "test_a_reference_from_another_record_group_resolves_to_this_record_group" | mcp/tests/test_knowledge_requirement_reference_contract.py:528-568 |
+- **The one write entry point, its pre-lock checks and its one immediate transaction.** [1]
+- **The transactional body: every guard before either INSERT, so a refusal leaves no row behind.** [2]
+- The single payload seam this record group validates through, delegated to rather than restated. [3]
+- The read that answers through the derived views and refuses a record nothing stores. [4]
+- Requirement 2.6 answered here: resolved names exactly one record, ambiguous names more than one, and neither is won by the substrate. [5]
+- Promotion refused as an attempt on a stored revision, with the owner named as the next action. [6]
+- **The shared acyclic-lineage rule this record group composes instead of re-implementing.** [7]
+- The shared rule itself, decided over the stored predecessor edges plus the new edge. [8]
+- A predecessor stored under another record and a predecessor stored nowhere, refused as different facts. [9]
+- **The governing route authored once: a later revision cannot repoint the record's sealed association.** [10]
+- The pre-lock route check, with the ungoverned state never refused. [11]
+- The two operation names this record group declares once, one per operation. [12]
+- The read operation name, declared beside the record operation rather than inside the write path. [13]
+- The narrow local literal, asserted by the suite to be a subset of the shipped vocabulary rather than a second one. [14]
+- The shipped lock and one-immediate-transaction contract whose rollback this module relies on. [15]
+- The envelope tables these operations write into, and the immutable-revision trigger behind them. [16]
+- **The one-payload-seam entry point this record group calls, with its three refusal paths and one code.** [17]
+- The lineage, promotion, reference and namespace cases that pin this module's refusals one by one. [18]
+- The route cases: ungoverned as a state, and a sealed association that cannot be repointed. [19]
+- The reference-resolution case: unresolved, then resolved to exactly one, then ambiguous over two holders. [20]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: `exclusive_candidate_lock`; `within_immediate` repointed to mcp/src/agents_remember/memory/knowledge/store.py:545-562; mcp/src/agents_remember/memory/knowledge/store.py:503-525. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `validate_record_payload` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:253-297. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `validate_record_payload` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:202-246. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T04:10:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): created this one-to-one card for the requirement record group's operation surface. It records the four facts a future agent would otherwise have to re-measure: the record group **adds no table and declares no schema generation**, because the delivered envelope already carries every needed fact and a per-revision state table would be the second revision aggregate `KS-R19@v1` requirement 1.1 forbids; the order of the write path (scope and route before the lock, everything else inside the one immediate transaction, so a refused write leaves no row, no revision and no edge); that **no new refusal member was added** — every code this module issues is shipped, with one distinct fact per code; and that acyclicity is **composed from the shared `lineage.find_cycle`** rather than re-implemented, so this record group's lineage graph is judged by the same rule as the package's two older graphs. It also records two boundaries a reader is likely to misread: `accepted` is **storable** and the substrate still never produces an approval (there is no update path at all, so a promotion attempt is `promotion_not_supported`), and the governing route is authored once per record with a later repoint refused as `immutable_revision` rather than silently ignored. The standing reachability gap is recorded rather than implied: no production module imports this record group yet. Verification metadata advances to the leaf's base commit `e963a01c` because the body was read against the current source; the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

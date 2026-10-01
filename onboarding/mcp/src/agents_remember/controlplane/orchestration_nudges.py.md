@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/controlplane/orchestration_nudges.py
 
-| Field                  | Value                                                             |
-| ---------------------- | ----------------------------------------------------------------- |
-| repository             | agents-remember                                                   |
-| path                   | `mcp/src/agents_remember/controlplane/orchestration_nudges.py`    |
-| doc_type               | `file-level-onboarding`                                           |
-| lastUpdated | 2026-09-05T22:25+00:00 |
-| lastVerifiedCommitHash |                                                                   `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                                                   2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                                     |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -102,53 +92,11 @@ does the read, the filter and the rewrite inside that one hold.
   reclaims from it, so a torn row is dropped for good. Acceptable only while nothing decides on
   these rows; the moment one does, this store needs a strict read for its rewrites.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public nudge tool records these rows and emits the manager inbox message. | `orchestration_nudge_manager_payload` | mcp/src/agents_remember/mcp/tools/orchestration.py:19-36 |
-| Nudge events are written into the observer workspace event log. | `EventStore` | mcp/src/agents_remember/observer/store.py:103-171 |
-| `append` at L64-L68 checks the declared writer and locks; the new `compact` at L91-L107 holds one lock across read, filter and rewrite; `replace_records` at L145-L155 raises unless the caller already holds the lock, and `_rewrite` at L158-L165 delegates to `rewrite_lines` without unlinking. | `replace_records` | mcp/src/agents_remember/controlplane/orchestration_nudges.py:143-153 |
-| `ORCHESTRATION_NUDGE_OWNERSHIP` names both processes as writers and the dashboard as compaction owner even though no production reclaim pass exists yet. | `ORCHESTRATION_NUDGE_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:206-216 |
+### Repo-Internal References
 
-
-## Update History
-
-- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
-
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the three `n/a`-anchor
-  table citations with exact anchors and fixer-generated ranges; exact non-fixing check returns
-  zero findings.
-
-- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded the 9.20 percent
-  measured loss and the routing of all file I/O through `durable_store.py` under
-  `ORCHESTRATION_NUDGE_OWNERSHIP` (both processes write, the dashboard is named compaction owner
-  ahead of any production reclaim pass). Recorded the new `OrchestrationNudgeStore.compact(keep=)`,
-  which holds one lock across the read, the filter and the rewrite, and the re-armed
-  `replace_records`, which now calls `require_lock_held` and raises `DurableStoreError` on an
-  unlocked caller — the raw primitive was the leaf's own defect reachable through this store's
-  public API. Recorded the shared `_rewrite` delegation to `rewrite_lines`, which never unlinks an
-  emptied log, and that `OrchestrationNudgeRecord` now inherits `DurableRecord` for
-  `extra="forbid"` plus a validated `schemaVersion`. Stated plainly that the tolerant read drives
-  the rewrite here, so compaction drops an unparseable row, which is safe only because nothing
-  decides on these rows. Verification metadata pinned until closeout stamps the L5 commit.
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/controlplane/orchestration_nudges.py` since the L2 base commit is the
-  whole-tree `ruff format` pass in `00e8379`, which re-wrapped 2 line(s) with no token change
-  whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
-  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
-  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
-  card makes about its own source still holds.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
-  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
-  structure or responsibility change. The sidecar was re-read against the current source and
-  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-04T12:31+02:00 - L3: created the orchestration nudge store card for rate-limited manager nudges. Verification metadata pinned until closeout stamps the L3 commit.
+- The public nudge tool records these rows and emits the manager inbox message. [1]
+- Nudge events are written into the observer workspace event log. [2]
+- `append` at L64-L68 checks the declared writer and locks; the new `compact` at L91-L107 holds one lock across read, filter and rewrite; `replace_records` at L145-L155 raises unless the caller already holds the lock, and `_rewrite` at L158-L165 delegates to `rewrite_lines` without unlinking. [3]
+- `ORCHESTRATION_NUDGE_OWNERSHIP` names both processes as writers and the dashboard as compaction owner even though no production reclaim pass exists yet. [4]

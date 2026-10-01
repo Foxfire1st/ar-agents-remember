@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/data/capabilityCatalog.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module under test.\n\nAnchor: \"export function fetchHarnessCapabilities\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3e8f01973965be62ac2d4ba76d32966299ad0f9",
+            "content": "sha256:04d1108ea61762b0f769f3e18fec4cf99c02b52f72d7643cf70ff2e097016341",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "dashboard/src/data/capabilityCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The envelope builder + verbatim error-body fixtures the suite loops.\n\nAnchor: \"export const CAPABILITY_ERROR_BODIES\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:c256f9a38d7570a849c5972828ec017b18ba45e967ae61462680e67514cd2f92",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 336
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

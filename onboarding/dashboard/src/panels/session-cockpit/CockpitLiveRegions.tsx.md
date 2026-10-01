@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -40,29 +30,25 @@ does not decide which events deserve polite or assertive delivery.
 
 None recorded; the announcer transition caveat is recorded on `announcer.ts.md`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Persistent polite/assertive DOM bridge. | `CockpitLiveRegions` | dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx:19-45 |
-| Mount-before-message and repeated-message coverage. | "renders one polite and one assertive region" | dashboard/src/panels/session-cockpit/CockpitLiveRegions.test.tsx:16-26 |
-| Refcounted announcement stores. | `announcerStore` | dashboard/src/data/announcer.ts:25-28 |
+- Persistent polite/assertive DOM bridge. [1]
+- Mount-before-message and repeated-message coverage. [2]
+- Refcounted announcement stores. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
+No cross-repo evidence applies.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -70,12 +56,3 @@ Polite and assertive messages render through sequence-keyed spans. Repeating ide
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Update History
-
-- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 3 citation rows; scoped citation fixing regenerated the source ranges.
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R8 after final reviewer PASS. Base
-  verification metadata remains temporary until the code commit exists.

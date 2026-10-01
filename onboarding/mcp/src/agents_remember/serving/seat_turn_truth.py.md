@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/seat_turn_truth.py
 
-| Field                  | Value                                                      |
-| ---------------------- | ---------------------------------------------------------- |
-| repository             | agents-remember                                            |
-| path                   | `mcp/src/agents_remember/serving/seat_turn_truth.py`       |
-| doc_type               | `file-level-onboarding`                                    |
-| lastUpdated            | 2026-09-15T13:15+02:00|
-| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6`                                    |
-| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
-| governingOverview      | `overview.md`                                              |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -68,49 +58,29 @@ directly; every terminal-truth mutation rides `get`+`upsert` through this module
 
 None for this module.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved `system/sources.md`; the
 write semantics are same-repository runtime behavior proven by source and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external/domain document defines these catalog writes; the atomic seam contract is the source of truth. | `record_turn_projection` | mcp/src/agents_remember/serving/seat_turn_truth.py:73-86 |
+- No external/domain document defines these catalog writes; the atomic seam contract is the source of truth. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The module consumes `TerminalCatalog`/`TerminalCatalogEntry`/`CatalogTurnEvidence` and is
 called by the liveness sweep and the interrupt route and the state-signal actions.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The frozen catalog row, evidence stamp, and public get/upsert seams it writes through. | "class TerminalCatalogEntry:"; "class CatalogTurnEvidence:"; "class TerminalCatalog:" | mcp/src/agents_remember/models/terminal_catalog.py:68-72; mcp/src/agents_remember/models/terminal_catalog.py:42-50; mcp/src/agents_remember/serving/terminal_catalog.py:48-92 |
-| The liveness sweep's read-before-projection ordering that calls `record_terminal_cursors`. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:343-426 |
-| The interrupt route stamping developer provenance after an accepted interrupt. | `conversation_interrupt` | mcp/src/agents_remember/serving/conversation/control/api.py:151-187 |
-| The state-signal and non-reaction action markers. The state-signal marker is written from the emitter's post-persistence callback — after the row is durable and on the sweep fold, before any delivery attempt — while the non-reaction marker stays a post-return write. | `_emit_state_signal`; `_emit_non_reaction` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:489-561; mcp/src/agents_remember/serving/_agent_notifier_actions.py:631-702 |
-| The compound-idle action-time marker write (ask + marker share the fresh signature). | `_emit_compound_idle` | mcp/src/agents_remember/serving/_agent_notifier_actions.py:564-629 |
+- The frozen catalog row, evidence stamp, and public get/upsert seams it writes through. [2]
+- The liveness sweep's read-before-projection ordering that calls `record_terminal_cursors`. [3]
+- The interrupt route stamping developer provenance after an accepted interrupt. [4]
+- The state-signal and non-reaction action markers. The state-signal marker is written from the emitter's post-persistence callback — after the row is durable and on the sweep fold, before any delivery attempt — while the non-reaction marker stays a post-return write. [5]
+- The compound-idle action-time marker write (ask + marker share the fresh signature). [6]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes these catalog writes. | — | — |
-
-## Update History
-
-- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: the state-signal marker's caller changed, so this card's claim about it is corrected rather than left stale. `_emit_state_signal` now stamps `state_signal_emitted_for` through the posting primitive's post-persistence callback (row durable and on the sweep fold, before any delivery attempt) instead of writing it after the post returned; the non-reaction and compound-idle markers keep their post-return writes. This module's own write path is unchanged — only when it is called moved — and both moved construct ranges were re-derived against the current source.
-
-- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: refreshed the body and citations for the current
-  `TerminalCatalogEntry`/`CatalogTurnEvidence` model move; verification metadata remains pinned
-  until closeout.
-
-- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: added the compound-idle write helpers
-  (`with_compound_idle_emitted` / `record_compound_idle_emitted`), the signature-keyed
-  idempotent-marker invariant, and the emitter citation. Verification metadata pinned until
-  closeout stamps the 260713-TES-L3 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: created this sidecar for the new
-  seat-turn-truth write module (get+upsert helpers for turn evidence, cursors, interrupt
-  provenance, and signal markers; no-loss cursor rule). Verification metadata pinned to the leaf base `1c1629fc` until closeout stamps the 260713-TES-L2 commit.
+No cross-repo boundary owns or consumes these catalog writes.

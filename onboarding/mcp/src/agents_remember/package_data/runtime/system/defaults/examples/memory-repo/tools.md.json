@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The memory-repo tools example says it belongs in memory-layer `system/tools.md`, can carry branch workflow notes/checks/code-quality commands, and should point implementation reporting at a project-adjusted quality report template.\n\nAnchor: `# Tools Example`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "483497baee86549a21ba1671e8846c9df81e9edf",
+            "content": "sha256:b63b40751f98102d49267bc287553464ec114ffb893696a747a1b203b0068488",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

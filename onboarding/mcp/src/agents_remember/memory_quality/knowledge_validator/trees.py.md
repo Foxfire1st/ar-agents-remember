@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T08:49:57+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -46,7 +36,9 @@
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The validator's design authority is the coordination-root note
@@ -54,37 +46,24 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R22@v1` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The predicate, the tree types and the two readers.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared exclusion predicate: cache files and hidden directories only. | `is_excluded_from_knowledge`; `is_knowledge_path` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:50-63; mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:66-69 |
-| A tree is converted exactly when it holds the layout marker. | `KnowledgeTree` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:72-86 |
-| The code-tree protocol and its two implementations, each answering file and directory existence. | `CodeTree`; `CodePathSet`; `CodeDirectory` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:89-97; mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:101-121; mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:125-135 |
-| Both code trees answer directory existence, the root route included. | `test_code_trees_answer_directory_existence` | mcp/tests/test_knowledge_family_routes.py:263-273 |
-| The directory reader prunes dot directories. | `knowledge_tree_from_directory` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:138-153 |
-| The Git readers: regular files only, blobs read in one batch as exact bytes. | `_tree_blobs`; `knowledge_tree_from_git`; `code_tree_from_git` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:168-179; mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:182-195; mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:198-202 |
-| The formatter shares the predicate. | `iter_json_files` | mcp/src/agents_remember/cli/knowledge_format.py:35-45 |
-| A dot-named card and its sidecar are validated. | `test_a_dot_named_card_and_its_sidecar_are_validated` | mcp/tests/test_knowledge_validator.py:296-316 |
-| The Git reader reads exact bytes, ignores the cache, and matches the directory reader. | `test_git_trees_are_read_exactly_and_the_route_index_cache_is_ignored` | mcp/tests/test_knowledge_validator_routes.py:73-95 |
+- The shared exclusion predicate: cache files and hidden directories only. [1]
+- A tree is converted exactly when it holds the layout marker. [2]
+- The code-tree protocol and its two implementations, each answering file and directory existence. [3]
+- Both code trees answer directory existence, the root route included. [4]
+- The directory reader prunes dot directories. [5]
+- The Git readers: regular files only, blobs read in one batch as exact bytes. [6]
+- The formatter shares the predicate. [7]
+- A dot-named card and its sidecar are validated. [8]
+- The Git reader reads exact bytes, ignores the cache, and matches the directory reader. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — `CodeTree.has_directory` on the protocol and both implementations (MIK-R04 rule 1).** Purpose, Logic, Conventions and Invariants now state the second question, the root route `.` and the working-tree/Git difference (review R1 finding 3). The reopened `CodeTree`/`CodePathSet`/`CodeDirectory` row was re-read, reworded and re-derived from the three constructs' real extents; one row added. No verification stamp was advanced.
-- 2026-09-29T06:45:40+00:00: Generated citation repair: `knowledge_tree_from_directory` repointed to mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:138-153. No content impact: mechanical anchor-range projection bound to citation source snapshot 1a5c7dd5cb87835c8b4e585975574124e545ed7ed5b56804bf2cecaf1ab8ce6b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

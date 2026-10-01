@@ -1,15 +1,5 @@
 # dashboard/src/panels/changeset/ChangeSetPane.test.tsx
 
-| Field                  | Value                                                     |
-| ---------------------- | --------------------------------------------------------- |
-| repository             | agents-remember                                           |
-| path                   | `dashboard/src/panels/changeset/ChangeSetPane.test.tsx`   |
-| doc_type               | `file-level-onboarding`                                   |
-| lastUpdated            | 2026-06-30                                                |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                             |
-
 ## Governing Overview
 
 [changeset/ overview](overview.md)
@@ -45,23 +35,13 @@ Pure unit test: the CodeMirror panes are mocked, `localStorage` is cleared per c
 toggle state never leaks between tests. It pins the markdown-only rendered toggle and the rendered ↔ diff
 swap — not the live `<Markdown>` styling or the CodeMirror diff (both covered elsewhere / by build).
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Mocks the CodeMirror panes so jsdom renders the markdown path only. | "ChangeSetPane markdown rendered view" | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:33-61 |
-| Markdown diff fixture + per-case localStorage reset. | `mdDiff` | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:16-26 |
-| Rendered toggle swaps the diff for the `<Markdown>` prose view. | "offers a 'rendered' toggle for markdown that draws the after-content as prose" | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:34-49 |
-| Non-markdown files do not offer the rendered toggle. | "does not offer the rendered toggle for non-markdown files" | dashboard/src/panels/changeset/ChangeSetPane.test.tsx:51-60 |
-| Subject under test: the diff column + its rendered-markdown toggle. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:177-218 |
-| The markdown renderer the rendered view mounts. | `Markdown` | dashboard/src/grammar/Markdown.tsx:98-121 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 12 citation findings; scoped check passed.
-
-- 2026-06-30T00:00:00+02:00 — Created for operations-integration L5 (diff-viewer polish): vitest/jsdom test for
-  `ChangeSetPane`'s markdown **"rendered" toggle** — mocks the CodeMirror `DiffPane`/`FilePane`, then
-  pins that a markdown diff offers `changeset-rendered-toggle` (swapping the raw diff for the
-  `changeset-rendered` `<Markdown>` prose view) while a non-markdown diff does not. Verification metadata
-  pinned to the task base until closeout stamps the L5 commit.
+- Mocks the CodeMirror panes so jsdom renders the markdown path only. [1]
+- Markdown diff fixture + per-case localStorage reset. [2]
+- Rendered toggle swaps the diff for the `<Markdown>` prose view. [3]
+- Non-markdown files do not offer the rendered toggle. [4]
+- Subject under test: the diff column + its rendered-markdown toggle. [5]
+- The markdown renderer the rendered view mounts. [6]

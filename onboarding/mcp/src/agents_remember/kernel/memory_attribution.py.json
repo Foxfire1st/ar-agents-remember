@@ -1,0 +1,205 @@
+{
+  "path": "mcp/src/agents_remember/kernel/memory_attribution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The single key, log format, renderer, and attribution value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:cac1e23697a3434a11cee71fcbb951fe998c7a5be61e3dad9742c6dfb4fff134",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_COMMIT_TRAILER_KEY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:e4f0df0b661c7860e09dd3f26c0c5987d1f5f589930dbb72e7d0d65a6fa95747",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LOG_FORMAT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The history walk and message/value parsers define the actual read behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:5312462f9cbaef429f83037bf04d70d5eaf62ff55593fc25bf4d15aed3486d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributed_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Row conversion and optional object validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:11f2940a667951488e93ea6110afca3934f5a222b0bd5bb6202951835f35ea67",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_commit_exists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Runtime ledger derivation never consults cache text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The source census and behavioral renderer case keep the producer seam visible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "content": "sha256:2d54a909f329b7644cb4e9d713567c0c0efd8d0c4fd2b369998949e685d01a51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_attribution_key_is_named_and_rendered_in_exactly_one_module"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_census_producer_reaches_the_shared_renderer"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:5312462f9cbaef429f83037bf04d70d5eaf62ff55593fc25bf4d15aed3486d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributed_commits"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:549b7dca7555e2e9f95eac3e0b7286968ec4f3f78eeafa26d2392c2d9c5188d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_code_commit_trailer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:2a15b6efc99090852aa719429ea2479d90c2ace337c4e7db08c77eb46e091010",
+            "locator": {
+              "kind": "symbol",
+              "name": "_trailer_value_from"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:f37232c222bded3140c881ea6ee459ddcb1653b40e20c86746789607ca93b973",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributedCommit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:11f2940a667951488e93ea6110afca3934f5a222b0bd5bb6202951835f35ea67",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_commit_exists"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:a47f579480dbf6595e8da37d0a54d1e4da5172f99f9e0f52a743353313b35db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledger_rows_from_attribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "None\n\nAnchor: \"without consulting a cached file or a ledger commit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

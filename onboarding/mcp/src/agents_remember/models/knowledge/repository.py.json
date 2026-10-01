@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/repository.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The namespace model and its nonblank authority-home rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3ec48e021d7d76d6910369d094c39829c3f921a",
+            "content": "sha256:974f5ab27a7e0fbde4dd3ce5b614a492148e243f0a3573a302444c15db02f47b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `repository` table this identity keys, and its no-update/no-delete triggers.\n\nAnchor: `repository`; `repository_no_update`; `repository_no_delete`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:d1fb1ba23e9166fd72fab8a268903dd967ac66ebbb40ba6073aa011089a94011",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:3af5982a81b1ac20e0c0455e33681e976661b9104fbc971bca2af85f91ab84f7",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rebinding a populated store to another namespace or authority home is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b77ccf8536705efdf8dd268120ca040cb3e2b0a482ae025515e67759e2151383",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_rebind_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A request naming a foreign namespace refuses before any DML.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:6d6326bea615a1a40b0130e04d65f23d989f88282e9863efc05b03efa129e7ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "scope_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

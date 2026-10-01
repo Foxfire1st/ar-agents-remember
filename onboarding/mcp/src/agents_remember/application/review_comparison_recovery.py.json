@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_recovery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9c60b89562b446eecb17721e10f0e9b1e4370f2b",
+        "content": "sha256:bdf7d8d328ad08acc26a75f80585536019cf5090b73efcb940080a6b7da5a817",
+        "locator": {
+          "kind": "symbol",
+          "name": "recover_review_comparison"
+        }
+      },
+      "id": "RLZ-GGQ6QYTX",
+      "invariant": "INV-9BH2BNCT",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Refuses conflicting live or record options, resolves the named retained generation, and loads the original curator generation by its digest. That generation must bind the parent's candidate tree, code base, memory base and repository, and records are then read from it; recovery freezes a successor with that exact parent and retain_parent_inputs, without touching the parent.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The exact parent and original curator digest feed one shared freeze.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c60b89562b446eecb17721e10f0e9b1e4370f2b",
+            "content": "sha256:bdf7d8d328ad08acc26a75f80585536019cf5090b73efcb940080a6b7da5a817",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_review_comparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parent scope, availability and absence of prior captured assessments are required.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c60b89562b446eecb17721e10f0e9b1e4370f2b",
+            "content": "sha256:cb1ba60a77c6997f17b114641f6dd71f55f9cedec12801a8404fc321b4b32604",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parent_issue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

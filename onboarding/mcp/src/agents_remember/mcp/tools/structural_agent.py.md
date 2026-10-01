@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/tools/structural_agent.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/mcp/tools/structural_agent.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T06:47+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [MCP tools overview](overview.md)
@@ -41,19 +31,14 @@ and serving layers.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Six payload adapters expose the structural agent operation family. | `dispatch_agent_payload` | mcp/src/agents_remember/mcp/tools/structural_agent.py:31-114 |
-| The application service owns authorization and mutation. | `dispatch_agent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:279-542 |
+- Six payload adapters expose the structural agent operation family. [1]
+- The application service owns authorization and mutation. [2]
 
-## Cross-Repo References
-
-
-## Update History
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created; supersedes the true-deleted `mcp/tools/leaf_ref.py` public adapter without a compatibility path.
+### Cross-Repo References

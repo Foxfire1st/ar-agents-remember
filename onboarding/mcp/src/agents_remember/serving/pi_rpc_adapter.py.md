@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/pi_rpc_adapter.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/pi_rpc_adapter.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T00:08+02:00 |
-| lastVerifiedCommitHash | `25841d0ddc2d93c4950abf097168fa24b220c5ad` |
-| lastVerifiedCommitDate | 2026-08-18T11:30:22+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -95,41 +85,37 @@ no-RPC; discovery is asynchronous because it owns a transient Pi process.
 
 None known for the L3 Pi configuration seam.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Protocol helpers own launch transformation, state sanitization, catalog mapping, and thinking-level
 rules; process/event modules remain transport and event boundaries.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Configuration owns the finite locked mutation/readback/catalog transaction, exact provider split, selected-model effort gate, clamp evidence, and atomic commit decision. | `PiRpcConfiguration`, `set_effort` | mcp/src/agents_remember/serving/pi_rpc_configuration.py:50-193 |
-| Pi protocol parsing provides RPC launch validation, safe state identity, and provider-qualified model-local effort menus. | `parse_pi_state`, `parse_pi_models`, `pi_rpc_launch` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:135-151; mcp/src/agents_remember/serving/pi_rpc_protocol.py:197-215; mcp/src/agents_remember/serving/pi_rpc_protocol.py:218-255 |
-| The launch validator requires exact Pi catalog keys and model-local launch effort before the configured process starts. | `verify_effective_launch` | mcp/src/agents_remember/serving/harness_launch.py:122-148 |
-| The subprocess boundary correlates requests, reclaims cancellation state, and ignores valid late responses without tombstones. | `PiRpcSubprocess` | mcp/src/agents_remember/serving/pi_rpc_process.py:43-287 |
-| The event mapper owns normalized state, settlement, and extension interaction projections. | `PiRpcEventMapper`, `translate` | mcp/src/agents_remember/serving/pi_rpc_events.py:55-358 |
-| Entry identity/timestamp helpers keep native paging coordinates honest. | `pi_entry_identity`, `pi_entry_created_at` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:285-296; mcp/src/agents_remember/serving/pi_rpc_protocol.py:299-309 |
+- Configuration owns the finite locked mutation/readback/catalog transaction, exact provider split, selected-model effort gate, clamp evidence, and atomic commit decision. [1]
+- Pi protocol parsing provides RPC launch validation, safe state identity, and provider-qualified model-local effort menus. [2]
+- The launch validator requires exact Pi catalog keys and model-local launch effort before the configured process starts. [3]
+- The subprocess boundary correlates requests, reclaims cancellation state, and ignores valid late responses without tombstones. [4]
+- The event mapper owns normalized state, settlement, and extension interaction projections. [5]
+- Entry identity/timestamp helpers keep native paging coordinates honest. [6]
 
 | The content-less `message_end` evidence mapping that keeps a real abort from failing the bridge. | ["pi:message_end"] | mcp/src/agents_remember/serving/pi_rpc_events.py:260-260 |
 
 | Historical evidence (retired with the d3610903 suite reduction): The installed-runtime suite captures the live 0.80.7 abort, timeline, and asset evidence behind the fixture rows. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 | Historical evidence (retired with the d3610903 suite reduction): The fixture recorded the redacted `control-plane/*` observed rows this adapter produced through the production seam. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this adapter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -147,49 +133,3 @@ plus the mutation timeout are **one bounded budget** for a single live Pi sessio
 alone just moves where the session first misbehaves under load. The default values are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 11 repository-internal references for Pi configuration, protocol, launch, process, event, contract-test, installed-runtime, and fixture evidence; final scoped result 0 (checker-clean).
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `pi_rpc_configuration.py` citation
-  (2 ranges), verified by reading the 220-line file end to end. Now L29-L193 — the finite
-  `DEFAULT_PI_MUTATION_TIMEOUT_SECONDS` bound at L29, the six-port `ConfigurationPorts` at L32-L47,
-  the `asyncio.Lock` taken by both setters at L80/L126, the selected-model effort vocabulary gate at
-  L106-L124, the clamp-evidence detail at L143-L146, the two `self._commit` atomic-commit decisions
-  at L96 and L142, and `_transaction`'s bounded mutation/readback/catalog body at L155-L193 — plus
-  L196-L202 for `_provider_model`, the exact `provider/model-id` split. Claim unchanged.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `PiAdapterLimits` / `DEFAULT_PI_ADAPTER_LIMITS` as the single per-session budget (defaults unchanged).
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the `InterruptCapableAdapter`
-  implementation (RPC `abort` guarded pre-write by the expected active-operation identity,
-  `turn_id` refused typed, replay-once per pair, native failure → `rejected` acknowledgement) and
-  the `AssetSubmitCapable` implementation (verified base64 `images[]` content on the prompt
-  command, construction-time re-verification, additive receipt `assetIds`). Verification metadata
-  stays pinned until closeout stamps the candidate commit.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the `get_entries(since)`-backed
-  `read_native_page` — native cursor continuation, typed entry id/parentId/type identity,
-  duplicate-id fail-closed, honest optional timestamps, and window minting from the current native
-  branch. Verification metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented no-native-queue dispatch, fresh-state/token guards,
-  exact binding, and settled-plus-idle completion.
-
-- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented the bounded serialized Pi
-  mutation/readback/catalog transaction, candidate-state isolation, atomic coherent commit,
-  selected-model effort gating, honest clamp evidence, and queue-releasing timeout behavior.
-- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented exact provider-qualified
-  `--model`, native `--thinking`, protocol-owned RPC mode, and post-start model/thinking echo
-  verification that exposes rather than trusts Pi's clamp behavior.
-- 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented state/catalog/entry startup order,
-  state-plus-catalog-only discovery, cached current-selection validation, provider-qualified models,
-  and fail-clean retry semantics.
-- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: made the version-neutral
-  structured Pi contract normative and retained 0.80.6 only as fixture/smoke evidence.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented version-free Pi production startup and retained
-  `0.80.6` only as fixture/smoke evidence.
-- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: created onboarding for L1-backed handshake,
-  queue behavior, settlement, extension UI, reconnect, cursor reconciliation, and no-resend policy.

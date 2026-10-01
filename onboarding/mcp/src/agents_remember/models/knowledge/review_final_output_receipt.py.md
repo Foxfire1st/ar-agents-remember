@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T09:05:00+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -114,44 +104,42 @@ is this, under which rule?" must travel with the record instead of living in whi
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The claims on this card are checkable in the module's own docstrings, in the two pure functions, in the
 validator, and in the cases that measure each state. The detail a reader should carry: **`not-comparable`
 is not a soft `differs`, and `unmeasured` is not a soft `bound`** — both exist because the two-valued
 version stated something false, and both are enforced by the validator rather than by writer discipline.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what it owns (the vocabulary alone) and of why every field is an owner-produced fact. | `FinalOutputReceipt` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:1-14; mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:136-320 |
-| The published surface: two literals, four vocabularies, three functions, one record. | `__all__` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:33-44 |
-| The version and selection-rule literals, carried as fields so the answer travels with the record. | `FINAL_OUTPUT_RECEIPT_VERSION`; `FINAL_OUTPUT_SELECTION_RULE` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:46-54 |
-| **The two phases are separate records because each is a measurement taken at its own moment, and the published dataset can move between them.** | `FinalOutputPhase` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:56-60 |
-| **`not-comparable` is a channel with nothing on one side to compare, and it never makes the receipt `moved`.** | `MatchState` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:62-66 |
-| The three states of the declared publication location, in the resolving route's own vocabulary. | `PublishedKnowledgeState` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:68-71 |
-| **The one verdict rule and why it has three values: `unmeasured` is not a mismatch, and `bound` is reserved for a measured match on every selected channel.** | `FinalOutputVerdict` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:73-80 |
-| The code channel's comparison: delivered tree against reviewed candidate tree. | `code_match_state` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:83-88 |
-| **The knowledge channel: `not-comparable` whenever one side is not a dataset at all, and never `matches` when nothing was compared.** | `knowledge_match_state` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:91-111 |
-| **The single verdict expression both the writer and the validator call, so they cannot disagree.** | `final_output_verdict` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:114-133 |
-| The record itself: the generation's identities, the delivered commits and trees, the published identity, the two match verdicts and the one state. | `FinalOutputReceipt` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:136-188 |
-| **The validator that refuses a record whose verdicts do not follow from the identities it carries — detectable without the store, which is what stops a forged `bound`.** | `_the_receipt_agrees_with_itself` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:190-259 |
-| **The one sentence the record publishes, derived from its own fields, one clause per verdict.** | `statement` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:261-289 |
-| The code clause, which names both trees it compared. | `_code_clause` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:291-299 |
-| **The knowledge clause, which cannot claim an unmeasured comparison: coverage and mismatch are reachable only with a published identity in hand.** | `_knowledge_clause` | mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py:301-320 |
-| The shared shapes this vocabulary reuses rather than re-declaring. | `KnowledgeModel`; `GIT_OBJECT_PATTERN`; `SHA256_PATTERN`; `UUID_PATTERN` | mcp/src/agents_remember/models/knowledge/base.py:1-60 |
-| The identity the published channel carries when a dataset really was read. | `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:1-111 |
-| **The cases that measure each verdict: full match `bound`, a published dataset the review never compared `moved`, a selected knowledge operand with nothing published `unmeasured` and never `bound`, and a forged `bound` refused at read-back.** | `test_review_receipt_binds_the_delivered_pair_to_the_selected_generation`; `test_review_receipt_reports_a_published_dataset_the_review_never_compared`; `test_a_selected_knowledge_operand_with_nothing_published_is_never_bound`; `test_a_forged_coverage_verdict_is_refused_when_read_back` | mcp/tests/test_review_final_output_receipt.py:451-508; mcp/tests/test_review_final_output_receipt.py:544-570; mcp/tests/test_review_final_output_receipt.py:755-788; mcp/tests/test_review_final_output_receipt.py:790-823 |
+- The module's own statement of what it owns (the vocabulary alone) and of why every field is an owner-produced fact. [1]
+- The published surface: two literals, four vocabularies, three functions, one record. [2]
+- The version and selection-rule literals, carried as fields so the answer travels with the record. [3]
+- **The two phases are separate records because each is a measurement taken at its own moment, and the published dataset can move between them.** [4]
+- **`not-comparable` is a channel with nothing on one side to compare, and it never makes the receipt `moved`.** [5]
+- The three states of the declared publication location, in the resolving route's own vocabulary. [6]
+- **The one verdict rule and why it has three values: `unmeasured` is not a mismatch, and `bound` is reserved for a measured match on every selected channel.** [7]
+- The code channel's comparison: delivered tree against reviewed candidate tree. [8]
+- **The knowledge channel: `not-comparable` whenever one side is not a dataset at all, and never `matches` when nothing was compared.** [9]
+- **The single verdict expression both the writer and the validator call, so they cannot disagree.** [10]
+- The record itself: the generation's identities, the delivered commits and trees, the published identity, the two match verdicts and the one state. [11]
+- **The validator that refuses a record whose verdicts do not follow from the identities it carries — detectable without the store, which is what stops a forged `bound`.** [12]
+- **The one sentence the record publishes, derived from its own fields, one clause per verdict.** [13]
+- The code clause, which names both trees it compared. [14]
+- **The knowledge clause, which cannot claim an unmeasured comparison: coverage and mismatch are reachable only with a published identity in hand.** [15]
+- The shared shapes this vocabulary reuses rather than re-declaring. [16]
+- The identity the published channel carries when a dataset really was read. [17]
+- **The cases that measure each verdict: full match `bound`, a published dataset the review never compared `moved`, a selected knowledge operand with nothing published `unmeasured` and never `bound`, and a forged `bound` refused at read-back.** [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It declares a wire shape whose path fields
 (`task_root`, `contract_path`, `published_knowledge_path`) are recorded as the owner produced them; the
@@ -159,9 +147,4 @@ relocation boundary that follows from a recorded absolute path is stated on
 `application/review_final_output_receipt.py` and is the same one ICR-R12/R13 own for the generation
 record.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T09:05:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): created this one-to-one card for the module this leaf introduced as **the vocabulary half of ICR-R21@v1** — the typed record that identifies the exact source and knowledge outputs a normal closeout/integration selected. It records what a consumer keys on: `bound` is the only value that claims coverage and it requires a measured match on every channel the generation actually selected; `unmeasured` exists because a selected knowledge operand that was never compared is **unknown, not matched**; `not-comparable` is not a softer `differs`; and a carried identity is never recomputed. The validator re-derives every verdict from the record's own fields, which is what makes a forged `bound` unreadable as one. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `972b44cc07b307929535fe7974d6a30d53c9c4f1`, this leaf's recorded base, whose date is the worker report's own timestamp — because every construct cited here exists only in this leaf's uncommitted working tree; what was actually read is that working tree, and the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

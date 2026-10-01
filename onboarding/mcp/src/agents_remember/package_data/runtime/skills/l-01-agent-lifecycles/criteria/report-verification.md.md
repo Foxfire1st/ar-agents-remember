@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/criteria/report-verification.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/report-verification.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T13:51:26+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -65,35 +55,22 @@ This criteria catalog supplies evidence only when the corresponding review is ex
 
 No external domain documentation applies to this repository-local catalog.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Report Verification`; `SkillTarget`; `TARGETS`; "mcp package data" | skills/l-01-agent-lifecycles/criteria/report-verification.md:1-130; scripts/sync-skills.py:26-29; scripts/sync-skills.py:43-56 |
-| The reviewer role that binds this catalog in every review type. | `# Reviewer`; `report-verification` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:6-6; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:35-42 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Canonical source this bundle copy is sync-propagated from. [1]
+- The reviewer role that binds this catalog in every review type. [2]
+
+### Cross-Repo References
 
 No sibling repository evidence is needed for this catalog.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-## 260815-DAG-L15 Review-Doctrine
-
-RV-1 is extended: the "tree contains only intended changes" claim is refuted against BOTH content
-and mode rows — `git status --short` plus `git diff HEAD --numstat` for content, and `git diff
-HEAD --summary` for mode-only changes (exec-bit drops on hooks/scripts are behaviorally meaningful
-and silent to content diffs). The extension records the 260815-DAG-L12 catch (L12-F1): 10 files
-carried mode-only changes (100755→100644, incl. `.githooks/pre-commit`) absent from the worker's
-file list.
-
-## 260821-DAGQC-L4 Untracked Candidate Evidence
+### 260821-DAGQC-L4 Untracked Candidate Evidence
 
 RV-1's complete-tree claim now includes every nonignored untracked path, enumerated with a
 NUL-delimited Git inventory or an equivalently path-safe API. Each exact path is inspected with
@@ -104,22 +81,11 @@ intended or unintended. A disappearing or identity-changing path is reported as 
 and the view is re-established; it is never silently skipped. This remains semantic review work,
 not a new verifier and not authority to dump unlimited or sensitive bytes.
 
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Updated the catalog-evidence sentence so routine handoff reads the worker's targeted-check record together with the curator's complete memory-quality result.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `## Criteria Catalogs (the review test bench — bound here)` repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:106-128. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+## 260815-DAG-L15 Review-Doctrine
 
-- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: added NUL-safe, no-follow untracked candidate
-  evidence covering type, mode, bounded content, disposition, and race limitations. Canonical and
-  generated copies are synchronized; Dagger acceptance remains closeout-owned and pending.
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: RV-1 extended — "the tree contains only intended
-  changes" is also refuted against `git diff HEAD --summary` mode rows (mode-only changes; the
-  L12-F1 catch). Verified at code commit de3a0fd9.
-
-- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 2 table citations and added the exact canonical-to-package sync evidence; no unresolved Tier-3 claims.
-
-- 2026-07-07T20:55+02:00 — agent-orchestration L18: body de-staled to the current catalog — RV-2 and RV-4 PROMOTED to standing at their second catches (L18R-3, L18R-4); candidates now RV-3 + RV-5 (worktree-shadowed regression pins, catch L18R-1). Covers both the 984a303 direct commit (RV-4 seeding, previously unreflected in this sidecar) and this leaf's promotions. Verification metadata pinned until closeout stamps the L18 commit.
-- 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-2): RV-2 and RV-3 re-tiered STANDING → CANDIDATE (one catching engagement each, honestly marked; promote at ≥2 per the catalog's own ratchet); content unchanged. Verification metadata pinned until closeout stamps the L12 commit.
-- 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `criteria/report-verification.md` seed catalog (leaf 260703-L12): RV-1 report-vs-artifact on every claim (three L8 catches incl. the owner's own), RV-2 CLASS-completeness (L10 six-surface catch), RV-3 partial-fix-creates-falsehoods (L10 install-docs), standing from day one in every review type. Verification metadata pinned until closeout stamps the L12 commit.
+RV-1 is extended: the "tree contains only intended changes" claim is refuted against BOTH content
+and mode rows — `git status --short` plus `git diff HEAD --numstat` for content, and `git diff
+HEAD --summary` for mode-only changes (exec-bit drops on hooks/scripts are behaviorally meaningful
+and silent to content diffs). The extension records the 260815-DAG-L12 catch (L12-F1): 10 files
+carried mode-only changes (100755→100644, incl. `.githooks/pre-commit`) absent from the worker's
+file list.

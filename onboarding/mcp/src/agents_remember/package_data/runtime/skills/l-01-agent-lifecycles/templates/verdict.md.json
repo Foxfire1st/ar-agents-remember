@@ -1,0 +1,257 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sync-propagated bundle copy of the canonical templates source.\n\nAnchor: `# Verdict Template (adversarial reviewer)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "content": "sha256:a280e283c39a223735a14ac25493b0a3ee27686a5398730ea08f58512d4418dd",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence.\n\nAnchor: \"as judge evidence\"; `## Master-Exit Variant`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "content": "sha256:a973c83c93981eda9b422d0d2529308b892d75bb727b5bf1b3864ce127322a47",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 238
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "content": "sha256:9e48a5b880362e7d94e9a4ac7540b37b8f0cab9e35ac38e4e839f9455a99bf02",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The master-exit completion and code-quality lenses name impact-analysis and quality/impact backing evidence.\n\nAnchor: \"# Adversarial Verdict — master-exit\"; `# Impact-Analysis Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dd8e2f888279dd972359df497317d26724e9ea7",
+            "content": "sha256:1ecb7a9c7206001454a2008c0582930954bc1a66e9d5d60168d55ef10d45ce6a",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "content": "sha256:47c06c561d5c327343685268a46b3391f3998eee890d2be51f0d21cc4a53ae6d",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "content": "sha256:a45e660d7d80c66e3241773e14ec7da11d042cef76bd83c8ff9c845a7207814f",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 241
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The master-exit onboarding lens names a backing onboarding-coherency report.\n\nAnchor: \"# Adversarial Verdict — master-exit\"; `# Onboarding-Coherency Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "524e6c3335da9ac9bcc773f77ef48f7fb042d705",
+            "content": "sha256:463e73c7adad00422e0520939c0e7a93cf7cee2dc8ca5f9447a6a3ca80488fe6",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "content": "sha256:47c06c561d5c327343685268a46b3391f3998eee890d2be51f0d21cc4a53ae6d",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "content": "sha256:a45e660d7d80c66e3241773e14ec7da11d042cef76bd83c8ff9c845a7207814f",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 241
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The frame defines the evidence-not-decision doctrine in `core/loop.md` and `operations/review.md`, and the block-decomposes-into-fix-leaves doctrine in the reviewer role.\n\nAnchor: \"verdicts are evidence\"; \"Verdicts are evidence, not decisions.\"; \"a master-exit block without an applicable listed repair is invalid\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "322cc875aa139a4897183647270bc4da211a148a",
+            "content": "sha256:9357f70d536f6d74252a667d23baea6a5f5b9fac9b52d716f3b9ec17e4c04949",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/core/loop.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f75a0c66f2fa8a1b7647d149f633f24873ad9ff6",
+            "content": "sha256:a2d789ce9f5174cc5b42a70a19ee8735443e2b4422981bacefca1d4bb19aebbd",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:630d661f56caa155c60c87d057f0633beb087b7abd94262641d2d0503662b038",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence, and each seam's blocking rule returns fix leaves to its owner.\n\nAnchor: \"Master-exit (before manager → orchestrator handover).\"; \"Super-exit (before orchestrator → architect handover).\"; \"Blocking rule, both seams:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:bdde864e193387263731cdd066f3fceac9c073557afb12f618b8e90a8b51b9d1",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:ca04194485304fe905d26b1663078884c16d5d36f479d9d3e1179a77fdf24011",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:afe4d46254ffa875b8d24856a06bb4a4e94f143f5108cc8ee5c24d537a56354a",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two seams and the evidence-not-decision doctrine now live in `core/loop.md` and `operations/review.md`; the block-decomposes-into-fix-leaves doctrine lives in the reviewer role.\n\nAnchor: `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`; `# Operation — Review`; \"**Verdicts are evidence, not decisions.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "322cc875aa139a4897183647270bc4da211a148a",
+            "content": "sha256:a56a14bcf77023e1396ade536d359e367e07d9e0c3e517005d479307f63e04f4",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/loop.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f75a0c66f2fa8a1b7647d149f633f24873ad9ff6",
+            "content": "sha256:4b09862352063cec86e66096610a53b122e83dd3367edefc821eda0b67bab777",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

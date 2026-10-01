@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_code_quality_check.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Run git.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b20aa4ab780dd73fea739978337153679b4b2360",
+            "content": "sha256:dc028333d8268a389f845ada28ea07dffcd60fd9250bab8c7bf147d636affef7",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Write sample repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b20aa4ab780dd73fea739978337153679b4b2360",
+            "content": "sha256:4c5269cd7a1109e25f37621fe575b4fc1c72585d3ae5ab4629ee2f298cd7721d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_sample_repository"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

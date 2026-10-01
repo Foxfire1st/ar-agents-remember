@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [closeout integration overview](overview.md)
@@ -54,22 +44,22 @@ identity and refuses legacy absence:
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 See task `260821-CLIVE-L1` L1-R2, L1-R3, L1-R5, and L1-R6.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Raw admission becomes stable validated admission before authority observation. | `prevalidate_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:79-115 |
-| Duplicates retain their accepted plan. | `resolve_closeout_operation_admission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:122-152 |
-| Recovery identity admits only the accepted candidate state or the exact finalized contract hash. | `_require_recovery_identity` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:255-272 |
-| Currentness re-assertion for retained closeout candidates. | `_current_operation_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:319-330 |
-| The door-intent currentness source. | `current_door_task_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py:70-86 |
-| The candidate binding field carrying the exact intent into the durable fingerprint. | `task_intent` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py:26-37 |
+- Raw admission becomes stable validated admission before authority observation. [1]
+- Duplicates retain their accepted plan. [2]
+- Recovery identity admits only the accepted candidate state or the exact finalized contract hash. [3]
+- Currentness re-assertion for retained closeout candidates. [4]
+- The door-intent currentness source. [5]
+- The candidate binding field carrying the exact intent into the durable fingerprint. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
@@ -79,9 +69,7 @@ The current source seams include `CloseoutOperationAdmission`, `CloseoutAdmissio
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `CloseoutOperationAdmission`, `CloseoutAdmissionSnapshot`, `ValidatedCloseoutAdmission` at this ownership boundary. | `CloseoutOperationAdmission`; `CloseoutAdmissionSnapshot`; `ValidatedCloseoutAdmission` | mcp/src/agents_remember/worktrees/integration/closeout/operation_admission.py:53-78 |
+- The current module exposes `CloseoutOperationAdmission`, `CloseoutAdmissionSnapshot`, `ValidatedCloseoutAdmission` at this ownership boundary. [7]
 
 ## 260821-CLIVE Door-Bound Admission Identity
 
@@ -102,37 +90,3 @@ stale/unavailable reason and `retire-and-republish` route. Part of the landed L2
 ## Current Landed Composition
 
 The immutable operation input includes the supplied typed corrective dispositions. Existing-generation reuse accepts the door publication only when the canonical door classifier says `published`; a matching door identifier alone is insufficient. Exact accepted input equality and recovery identity remain required.
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): every line number in this
-  card was off, and the previous entry's "the cited ranges still hold" was therefore wrong —
-  recorded plainly rather than quietly overwritten. Re-read the frozen source and repointed all of
-  them: `prevalidate_closeout_operation_admission` 85-121 (call at 106, binding at 116),
-  `resolve_closeout_operation_admission` 122-152 (unreusable branch 134-137),
-  `_validate_existing_closeout_request` 162-209 (191, 205), `_require_recovery_identity` 255-272,
-  `_current_operation_task_intent` 319-330, and `current_door_task_intent` at
-  `task_intent_identity.py:70-86`. The claims themselves are unchanged. Verification metadata
-  remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit — a fresh admission no longer requires a door and the recovery
-  identity no longer admits the door-publication contract hash. Corrected the recovery-identity
-  reference row and the door-bound admission section; the cited ranges still hold. Verification
-  metadata remains closeout-owned.
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=3df722ca9b22167bf059068105a0de4468d1624744fd1999f25f75eec678b33e; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): named the `task_intent` field anchor instead of the dotted attribute span.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  closeout admission now includes canonical task intent in the candidate fingerprint, refuses
-  reusable/missing-intent generations, and re-asserts currentness on retained candidates
-  (`_current_operation_task_intent`). Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: added the exact door-generation component of operation admission identity. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from accepted candidate tree `4241908c`; verification metadata is deliberately unstamped.

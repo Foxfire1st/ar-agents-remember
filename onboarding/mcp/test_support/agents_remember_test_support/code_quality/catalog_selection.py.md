@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:52:19+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Quality verification overview](overview.md)
@@ -36,24 +26,16 @@ Schema, scope, contract, artifact addition/removal and lifecycle-policy changes 
 
 No source-local TODO is asserted.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source applies. | N/A | N/A |
+### Docs References
 
-## Repo-Internal References
+No configured external domain source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Pure old/new consumer comparison preserves removed consumers and refuses broader narrowing. | `changed_catalog_consumers` | mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py:9-40 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Pure old/new consumer comparison preserves removed consumers and refuses broader narrowing. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository authority is used. | N/A | N/A |
+### Cross-Repo References
 
-## Update History
-
-- 2026-09-06T21:52:19+00:00 — Created from landed IAS source during missing-baseline recovery. Verification metadata remains unset; no execution or acceptance is claimed.
+No cross-repository authority is used.

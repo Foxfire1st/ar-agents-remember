@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The re-validation of the task entry's changed-intent summary in the dashboard cockpit.",
+  "conditions": [
+    "The cockpit shell provides IntentEntryRevalidation with shown = Operations view and no takeover.",
+    "Each trigger costs exactly one summary read."
+  ],
+  "exclusions": [
+    "A live push of the count while the same panel stays open.",
+    "Any new watcher, projection field or event channel for knowledge writes."
+  ],
+  "id": "INV-EZ8QKFX6",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "d91b1603-4a7e-4bfa-9b8a-861d23242fc8",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Architect ruling on blocked L47-R1-F2: no new event or projection system; the entry summary re-reads whenever the task detail is opened or re-shown, whenever the reviewer is left back to the entry, and on the reviewer's own refresh.",
+  "status": "proposed",
+  "supersedes": []
+}

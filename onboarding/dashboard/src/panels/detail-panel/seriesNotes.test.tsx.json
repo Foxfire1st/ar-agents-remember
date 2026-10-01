@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/detail-panel/seriesNotes.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The series-notes suite.\n\nAnchor: `describe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a07b55cb5d602765bc81c68472f0f5fb7bec03b6",
+            "content": "sha256:381f3feb08e9273813ad0803441a71b48ce4edb66a85fe040708433a221bc1bf",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/lifecycle/certification_observation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/lifecycle/certification_observation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:12:42+00:00 |
-| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing integration overview](overview.md)
@@ -38,28 +28,20 @@ The caller verifies evidence first, invokes this read immediately before publica
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+No configured domain documentation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `observe_certification_publication` owns the described selection or observation boundary. | `observe_certification_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/certification_observation.py:12-51 |
+- `observe_certification_publication` owns the described selection or observation boundary. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository reference is required. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T15:12:42+00:00 — Created from actual source at c69d5171187fa1957025e393270db9f5a864ab14; documented original evidence, current owner checks and selection/completion boundaries. Source verification does not claim suite execution or CCR acceptance.
+No cross-repository reference is required.

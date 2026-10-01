@@ -1,0 +1,330 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package map's MIK-R30 entry.\n\nAnchor: \"kind (registered on import), the\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:ff36f327482ee76df1c5a969b604e6e04cab0584c6d592798a59c0806227e72d",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The registering import and the new public name.\n\nAnchor: \"from agents_remember.application.knowledge_worklist.reconsideration import\"; \"\\\"RECONSIDERATION_KIND\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:8df8ac2c57600ba2dabd45ffc69224b9ceca4b5d803ce4710a7864e35ce80b93",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:1884a23f3e2b23abfa9807502b30c19bcbd1d50c9ad84352cb54cb0f9cbadbd0",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The package map and the three raising cases.\n\nAnchor: \"a change elsewhere in the same file raises nothing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:f688627fedd5d176990c00699348badaa904e0b22dac0674be5c637498915c6b",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The re-exported public names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:51d77c7894fd3c39093ef05f76d35ea241a27b33d794964b910c875c5893f4f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The run entry point it re-exports (since MIK-R09 a Git call that fails or times out makes the run `incomplete` naming `git`).\n\nAnchor: \"def compute_worklist(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:fb3b20aa8774fb1145395bfad3294a0c90c036c27d964036c37807365e3e9bae",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The one recompute entry point it re-exports for L08's triggers (since MIK-R09 a Git failure is named `git`; the mandatory gate recomputes through `leaf_worklist` over its exact candidate).\n\nAnchor: \"def recompute_leaf_worklist(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:c7b91ceaca73355262ca0e9d27c432120569dabfaef884dce3609f26741dc31b",
+            "locator": {
+              "end": 694,
+              "kind": "line_range",
+              "start": 659
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registering import and the two new public names.\n\nAnchor: `ONBOARDING_TRACE_KIND`; `leaf_onboarding_trace_sides`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:40c61ee9fcf085e584f4de31df535068f9cc149226632c64082e85230f9eb785",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:1b2a849bec4ada05ea13b9dcd33b25cab856ca9eb5837c2ae0e6efe5299cfa04",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The package map's MIK-R11 entry.\n\nAnchor: \"-- MIK-R11's\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:149a293c36512cd6b9ce01fce91715d5eb933864310f9ade88511bd196ec4f99",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The registering import and the new public name.\n\nAnchor: `PLANNED_UNTOUCHED_KIND`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:cb66d72ae4fe187968b4b48a61bfb936b089cfef2668cc2a46a8f49bf327eaa2",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:6265384539a97960835859f52c6be38ae1b822ec9f5435ee7fbff0beda820437",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The package map's MIK-R06 entry.\n\nAnchor: \"MIK-R06's\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:b0eeedd98f553cd784182981ee9feb89683596043a8418078006697d7cd0f290",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The import and the two new public names.\n\nAnchor: `FAMILY_ROUTE_CONDITION_KIND`; `family_route_item_open`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:94d1870e4d06eece6d8bbcf014d81744a9071c26781937f4143ef7f178ba3dce",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:58cf9e936b3292544e01c97ba9cbe0826f87c00bc2d3daa73008292603d1e8c4",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:bcc03793f1961ee596b2fe2865bf179b08c8c79222ca807ba990fac53e009653",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The package map's MIK-R10 entry.\n\nAnchor: \"MIK-R10's\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:eb16b5857a9d97bc8c99be9877d9b6752a35165a533c49123c18a77436bde324",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The registering import and the three new public names.\n\nAnchor: `UNEXPLAINED_HUNK_KIND`; `answering_trace_subjects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:2d0a0a00baf1a6d9ce8dc9bcc3e2fb6f2eca9b224b30c646e852f9a39ce68bd0",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:2f61295115d850200e25b01b8c901d22b6e192ef8145221ab3b7a144cea9c809",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:dc9df1b0420117bd3e672d9ed61c4b9d5ed18963b1d7810d9a047458a83578a8",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The package map's MIK-R14 entry.\n\nAnchor: \"MIK-R14's\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3193de109180056792f36682988d548411aadc1",
+            "content": "sha256:08235f5e32bca717e5c98222e528b0fccd44785c5b81416f3c19665de9f294e7",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

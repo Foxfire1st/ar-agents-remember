@@ -1,0 +1,385 @@
+{
+  "path": "mcp/tests/test_leaf_doc_master_link_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pre-contract authoring path and the exact sequence that lost the master link: master and leaf authored through `task_doc` with no series contract, then started.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:14ad26c78eee8aa35b72079cd0a8f38cf0b9a81fda210b17f5895e199b75fa0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_authored_before_its_series_contract_gets_its_link_at_start"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:d596404c7f4747831be58e55fbef22cbaafbbeac4232cfe065a8e8dce83bc0ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_master"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:35f46ca16f662a3caaf03fc484350556c6c99f2ae16ed7c3d65aa7b0969cda79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:df8232a71964a9a77457a267efb0d7de5a34ff62ca4d7704732413ac2cea1a3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The two artifact rows that declare this module as an exact consumer, both through `test_worktree_support`.\n\nAnchor: \"path = \\\"mcp/tests/closeout_input_test_support.py\\\"\"; \"path = \\\"mcp/tests/curator_coherence_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f86f167f597fbde405c66d8f8dd5078b989c2a38bbb57683e362933effe5b306",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:cdfe6b89975b92062224baf59395e70e8687cd699475f5dd83314438b819cb7d",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 363
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b5cbe62d1dda85a291374f928bdca09b669751badcc5932c71375fdcac3c81a2",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 326
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b9ba51dede7651af0e900037f1ec7622a0b0b8f887b4d550ccb38c092b47fbce",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 373
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:8ea54e565db40f3b607c7df2ce5c20514935e36be2693cc885962f37ba14b433",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5ebdca0cbbe1ff56a15aa091a774bd14ac859bc451c7f9f76955d73295ffc4bd",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 384
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The transitive importer that makes the module a consumer of both supports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:4fe441fe9a17e98a7c88cc46f4b52f93562b675cf1ab18fbeb944ef4ce434da4",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialized_memory_repo"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The integration lane row the fail-closed manifest requires.\n\nAnchor: \"mcp/tests/test_leaf_doc_master_link_binding.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:1d207f7d2930249781c43576862bf64c8bd1df3f4bac4491156a47e8f2753e02",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The transitive importer that makes the module a consumer of both supports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:4fe441fe9a17e98a7c88cc46f4b52f93562b675cf1ab18fbeb944ef4ce434da4",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialized_memory_repo"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The integration lane row the fail-closed manifest requires.\n\nAnchor: \"mcp/tests/test_leaf_doc_master_link_binding.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:1d207f7d2930249781c43576862bf64c8bd1df3f4bac4491156a47e8f2753e02",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The external-memory side of each case is a real second repository created by the fixture, not a mock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:9ff1b3879f15abd4cc5414a7f8dd6c0d562969ddb53ffae65d410f900cecccee",
+            "locator": {
+              "kind": "symbol",
+              "name": "init_repo"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:4fe441fe9a17e98a7c88cc46f4b52f93562b675cf1ab18fbeb944ef4ce434da4",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialized_memory_repo"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The repair path for an already-damaged document, asserted additive (authored content unchanged).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:770c686c79c2d48e58b05719976b3e49c1d1e97998822bbef555f197c66b0f9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_existing_damaged_document_is_repaired_by_its_next_start"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:e17b0b6368e60772882c4f77faa1e1fda19f4b6d8d7543b16d5b75a27991f5e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_leaf_document"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fail-closed half: a leaf under a task root with no master document is refused with its remedy and writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:13897a1ebfcea415f70f0abf3c6df92052cc00fe50c0a4e234c3150b08114950",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The counter-case that keeps planning usable: master plus two leaves before any start, still unstamped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:3b63c0044428e340e875126d98ac86cbdd1b6800ba45726b3c3ba25522a35f48",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The refusal this module asserts, with its remedy text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:a7fd12f2f360521356de2f8fd2a7d81a56f4c8145891e9b90a6e9cd20c7672c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_bindable_leaf_authoring"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The start publisher that binds the missing link, entered from the real start path.\n\nAnchor: \"def _publish_leaf_task_enclosure_binding(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:e85b64566fc9eec6ab9aa1b3a2c3643dbbf5e4e88f8820e429b960d589828e15",
+            "locator": {
+              "end": 933,
+              "kind": "line_range",
+              "start": 858
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The worktree-side wrapper that resolves the canonical parent row and delegates to the task-domain planner.\n\nAnchor: \"def plan_current_leaf_enclosure_registration(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:0ffd79b744b7109023faaac368528614523a417295e9b5a447af892600b67003",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_leaf_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The task-domain planner that decides whether the derived master link is bound.\n\nAnchor: \"def plan_leaf_doc_enclosure_registration(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:d71fe69e3407ebb870e057085a3b088cd6e5a95409cdf46df8699381a8d2a68e",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The focused restamp decision-table class in the sibling module, which this module's docstring points at.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:1b8db3129e1a73b1fef3c71d9abbaf4af894d9eac337cb66a80f55cacbeadaf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafDocMasterLinkBindingTests"
+            },
+            "path": "mcp/tests/test_task_document_application_1.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

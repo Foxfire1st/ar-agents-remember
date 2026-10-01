@@ -1,15 +1,5 @@
 # mcp/tests/test_workflow_chain_guidance.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_workflow_chain_guidance.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -212,81 +202,77 @@ whatever change next touches the module: the three registered residuals above (`
 (either assert them or delete them), and the `nextRequiredArgs` pin `T109` asks for once the tool
 surface ships the field.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured in this memory root. These are
 repository-owned contract and assertion facts; no external library behaviour is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The anchors below identify current behaviour of this module; they are not execution evidence and they
 make no acceptance claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The workflow statement: nine operations, with the two preview/apply pairs appearing twice on purpose. | `WORKFLOW_OPERATIONS` | mcp/tests/test_workflow_chain_guidance.py:98-108 |
-| Each operation's own state vocabulary, and the terminal cleanup cell. | `EXPECTED_STATES` | mcp/tests/test_workflow_chain_guidance.py:112-121 |
-| The phase progression, read from the product's state machine and never restated from a literal. | `EXPECTED_PHASES` | mcp/tests/test_workflow_chain_guidance.py:124-129 |
-| The callability pin, with the repair rule stated at the constant. | `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS` | mcp/tests/test_workflow_chain_guidance.py:165-167 |
-| The withhold pinned by tool and count, so repairing the producers is a visible edit. | `WITHHELD_GUIDANCE_HOPS` | mcp/tests/test_workflow_chain_guidance.py:178-183 |
-| The raisers that escape as an exception instead of a typed refusal (`T34` on `T87`'s state). | `STALE_BASE_RAISERS` | mcp/tests/test_workflow_chain_guidance.py:196-196 |
-| Values for arguments a recommendation leaves to the caller — values, never a population. | `FIXTURE_ARGS` | mcp/tests/test_workflow_chain_guidance.py:200-206 |
-| The two refusal arms separated by model identity, never by wording. | `classify_call` | mcp/tests/test_workflow_chain_guidance.py:237-251 |
-| The fields a tool's own argument model named as required and absent. | `missing_required_args` | mcp/tests/test_workflow_chain_guidance.py:254-262 |
-| One operation, what its own guidance supplied, and what came back. | `Hop` | mcp/tests/test_workflow_chain_guidance.py:271-316 |
-| One response's own operational triple, and what calling it exactly as published produced. | `RecommendedCall` | mcp/tests/test_workflow_chain_guidance.py:319-333 |
-| The disposable world: real repositories, a real server, one session per call. | `WorkflowWorld` | mcp/tests/test_workflow_chain_guidance.py:336-569 |
-| Invoking one registered tool exactly as a consumer does, with the raise itself as the arm. | `call` | mcp/tests/test_workflow_chain_guidance.py:402-414 |
-| The single walk of the chain, the hops it produced, and the three arrangements. | `WorkflowChainObservation` | mcp/tests/test_workflow_chain_guidance.py:572-1020 |
-| What the guidance supplies for a hop, and the arguments it declares as required. | `_recommendation` | mcp/tests/test_workflow_chain_guidance.py:615-644 |
-| The first call exactly as given, then again with only what the model named as missing. | `_as_given_call` | mcp/tests/test_workflow_chain_guidance.py:680-700 |
-| Execute one recommended step as given, then again with only the arguments it omitted. | `_record` | mcp/tests/test_workflow_chain_guidance.py:702-743 |
-| The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe. | `_walk` | mcp/tests/test_workflow_chain_guidance.py:745-797 |
-| The `T54` arrangement, asserted before the property so a green cannot mean it tested nothing. | `_sibling_arrangement` | mcp/tests/test_workflow_chain_guidance.py:799-847 |
-| The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`. | `_stale_base_arrangement` | mcp/tests/test_workflow_chain_guidance.py:849-884 |
-| Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see. | `_probe_operational_triples` | mcp/tests/test_workflow_chain_guidance.py:902-918 |
-| The second producer of the same recommendation, driven in the same world rather than cited. | `_retry_provider_setup_arrangement` | mcp/tests/test_workflow_chain_guidance.py:920-993 |
-| The union of the walk's own as-given calls and every probe, asserted equal to the pin. | `callability_population` | mcp/tests/test_workflow_chain_guidance.py:997-1012 |
-| The order, asserted against what the run actually did rather than stated beside it. | `test_the_chain_runs_in_the_declared_order_through_the_registered_entry_points` | mcp/tests/test_workflow_chain_guidance.py:1038-1053 |
-| The order derived from the guidance, with the derivation's own bound. | `test_each_hop_was_the_move_the_previous_response_named` | mcp/tests/test_workflow_chain_guidance.py:1070-1104 |
-| Guidance must name the response's own place, on every channel it uses (`T54`). | `test_every_guidance_channel_names_the_callers_own_task` | mcp/tests/test_workflow_chain_guidance.py:1108-1126 |
-| The sibling arrangement asserted first, then the property (`T54`'s arm). | `test_a_concurrent_siblings_guidance_never_reaches_this_task` | mcp/tests/test_workflow_chain_guidance.py:1128-1162 |
-| The derived population, asserted equal to the pin over both channels. | `test_every_recommended_step_is_callable_with_the_args_its_guidance_supplies` | mcp/tests/test_workflow_chain_guidance.py:1166-1185 |
-| The population of the case above, so it cannot silently shrink — with its own boundary stated. | `test_every_response_that_published_an_operational_triple_was_called_with_it` | mcp/tests/test_workflow_chain_guidance.py:1187-1237 |
-| The classifier's control: an unusable recommendation must be seen as one. | `test_the_callability_arm_can_actually_fail` | mcp/tests/test_workflow_chain_guidance.py:1239-1269 |
-| The withhold is real, counted, and explained in both directions. | `test_the_guidance_that_could_not_be_validated_is_withheld_and_counted` | mcp/tests/test_workflow_chain_guidance.py:1271-1292 |
-| `T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed. | `test_every_preview_step_answered_and_the_drift_snapshot_was_actually_read` | mcp/tests/test_workflow_chain_guidance.py:1296-1336 |
-| The stale base driven, and the raiser pinned by set equality. | `test_a_stale_base_closes_the_envelope_by_raising_and_is_counted` | mcp/tests/test_workflow_chain_guidance.py:1338-1367 |
-| `T109`: the declaring channel asserted where it is defined, and its four-phase population stated. | `test_the_declared_requirement_channel_is_real_and_its_one_needed_case_is_unreachable` | mcp/tests/test_workflow_chain_guidance.py:1371-1442 |
-| The lane row that keeps this module in the default selection, inside the array opening at `:5`. | "mcp/tests/test_workflow_chain_guidance.py" |mcp/tests/test-evidence-lanes.toml:280-280|
-| The operational triple's declared home, and the reason it is a channel of the response's own contract. | `nextArgs` | mcp/src/agents_remember/models/worktree.py:406-406 |
-| The overlay's model, which can declare what it leaves to the caller and the operational triple cannot. | `nextRequiredArgs` | mcp/src/agents_remember/models/base.py:63-63 |
-| The guard that withholds a hint which cannot name the response's own place. | `bound_next_step` | mcp/src/agents_remember/application/tool_response.py:58-97 |
-| The process-global ambient lifecycle the overlay is derived from, which is why the guard exists. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
-| The producer that writes `approved_for_commit` and `closeout_status: completed` in one contract write. | `_amended_closeout_contract` | mcp/src/agents_remember/worktrees/modules/closeout.py:481-515 |
-| The snapshot path the preview's drift collection actually reads, derived from worktree and branch. | `drift_snapshot_path` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-24 |
-| The real reclamation the preservation claim is measured against. | `remove_drift_snapshot` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:27-35 |
-| The exception a stale base escapes as, carrying the remedy in prose only. | `SourceLineageRefusal` | mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:68-78 |
-| The repaired pre-integration recommendation the walk reaches (`guidance.py:451`). | `_pre_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:375-453 |
-| The repaired `checkpointed` recommendation the module does **not** reach (`guidance.py:369`). | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:287-372 |
-| The declaration `T109` pins where it is defined; it is at `:433`, not the `:432` two reports cite. | `required_args` | mcp/src/agents_remember/worktrees/modules/guidance.py:433-433 |
-| The declaration `A5c` shows is not asserted (`carryover-pending`). | `required_args` | mcp/src/agents_remember/worktrees/modules/guidance.py:321-321 |
-| The `recommendedAction` residual (`T127`): the call at `:450`, the `tool=` argument at `:452`. | `LifecycleRecommendedAction` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:450-453 |
-| The `RecoveryRoute` producer (`T130`) that publishes an uncallable triple as `nextTool`/`nextArgs`. | `_projection_without_control` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:535-545 |
-| The tuple shape `T130` rests on: the value is a tuple element, not a tool-shaped key. | `RecoveryRoute` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:48-48 |
-| Where the tuple becomes the operational triple a seat reads. | `public_payload` | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:68-81 |
+- The workflow statement: nine operations, with the two preview/apply pairs appearing twice on purpose. [1]
+- Each operation's own state vocabulary, and the terminal cleanup cell. [2]
+- The phase progression, read from the product's state machine and never restated from a literal. [3]
+- The callability pin, with the repair rule stated at the constant. [4]
+- The withhold pinned by tool and count, so repairing the producers is a visible edit. [5]
+- The raisers that escape as an exception instead of a typed refusal (`T34` on `T87`'s state). [6]
+- Values for arguments a recommendation leaves to the caller — values, never a population. [7]
+- The two refusal arms separated by model identity, never by wording. [8]
+- The fields a tool's own argument model named as required and absent. [9]
+- One operation, what its own guidance supplied, and what came back. [10]
+- One response's own operational triple, and what calling it exactly as published produced. [11]
+- The disposable world: real repositories, a real server, one session per call. [12]
+- Invoking one registered tool exactly as a consumer does, with the raise itself as the arm. [13]
+- The single walk of the chain, the hops it produced, and the three arrangements. [14]
+- What the guidance supplies for a hop, and the arguments it declares as required. [15]
+- The first call exactly as given, then again with only what the model named as missing. [16]
+- Execute one recommended step as given, then again with only the arguments it omitted. [17]
+- The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe. [18]
+- The `T54` arrangement, asserted before the property so a green cannot mean it tested nothing. [19]
+- The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`. [20]
+- Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see. [21]
+- The second producer of the same recommendation, driven in the same world rather than cited. [22]
+- The union of the walk's own as-given calls and every probe, asserted equal to the pin. [23]
+- The order, asserted against what the run actually did rather than stated beside it. [24]
+- The order derived from the guidance, with the derivation's own bound. [25]
+- Guidance must name the response's own place, on every channel it uses (`T54`). [26]
+- The sibling arrangement asserted first, then the property (`T54`'s arm). [27]
+- The derived population, asserted equal to the pin over both channels. [28]
+- The population of the case above, so it cannot silently shrink — with its own boundary stated. [29]
+- The classifier's control: an unusable recommendation must be seen as one. [30]
+- The withhold is real, counted, and explained in both directions. [31]
+- `T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed. [32]
+- The stale base driven, and the raiser pinned by set equality. [33]
+- `T109`: the declaring channel asserted where it is defined, and its four-phase population stated. [34]
+- The lane row that keeps this module in the default selection, inside the array opening at `:5`. [35]
+- The operational triple's declared home, and the reason it is a channel of the response's own contract. [36]
+- The overlay's model, which can declare what it leaves to the caller and the operational triple cannot. [37]
+- The guard that withholds a hint which cannot name the response's own place. [38]
+- The process-global ambient lifecycle the overlay is derived from, which is why the guard exists. [39]
+- The producer that writes `approved_for_commit` and `closeout_status: completed` in one contract write. [40]
+- The snapshot path the preview's drift collection actually reads, derived from worktree and branch. [41]
+- The real reclamation the preservation claim is measured against. [42]
+- The exception a stale base escapes as, carrying the remedy in prose only. [43]
+- The repaired pre-integration recommendation the walk reaches (`guidance.py:451`). [44]
+- The repaired `checkpointed` recommendation the module does **not** reach (`guidance.py:369`). [45]
+- The declaration `T109` pins where it is defined; it is at `:433`, not the `:432` two reports cite. [46]
+- The declaration `A5c` shows is not asserted (`carryover-pending`). [47]
+- The `recommendedAction` residual (`T127`): the call at `:450`, the `tool=` argument at `:452`. [48]
+- The `RecoveryRoute` producer (`T130`) that publishes an uncallable triple as `nextTool`/`nextArgs`. [49]
+- The tuple shape `T130` rests on: the value is a tuple element, not a tool-shaped key. [50]
+- Where the tuple becomes the operational triple a seat reads. [51]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local contract claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No repository or external-system boundary is proved by this module. | N/A | N/A |
+No repository or external-system boundary is proved by this module.
 
 ## 260918-TSIP-L8 The Workflow Statement's Own Acceptance Module
 
@@ -360,16 +346,3 @@ is a code change to `mcp/tests/evidence-lifecycle.toml` and the pin files
 (`test_dependency_ownership_ast_helpers.py:44-46`), this pass may not edit any code file, and the
 ruling already assigns it to **L10** as a scope addition — which is also the correct sequencing,
 because the rows name modules that only exist once L8 and L9 have landed.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 11 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`closeout.py`, `closeout_lineage.py`, `drift_snapshot.py`, `guidance.py`, `next_step.py`, `task_unstarted_evidence.py`, `test_workflow_chain_guidance.py`, `tool_response.py`, `worktree.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:33:29+00:00: Generated citation repair: "mcp/tests/test_workflow_chain_guidance.py" repointed to mcp/tests/test-evidence-lanes.toml:280-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_workflow_chain_guidance.py" repointed to mcp/tests/test-evidence-lanes.toml:227-227. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_workflow_chain_guidance.py" repointed to mcp/tests/test-evidence-lanes.toml:208-208. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T00:08+0200 — 260918-TSIP-L8 curator (uncommitted change set on `ar/260918-tsip-l8-ar`, memory worktree base `877a5a00`): **created.** The module is new in this leaf (**1442 lines / 12 cases**, sha256 `2225c95b…`) and had no file-level onboarding at all. Recorded the walk and its declared order (`WORKFLOW_OPERATIONS` nine operations with the two preview/apply pairs doubled), the two guidance channels and why they must be read as two, the `T54` sibling arrangement asserted before its property, the derived callability population and the union it is asserted over, the operational-triple probe and the driven retry producer, the withhold pinned by count, the `T62` drift-snapshot presence/preservation/reclamation, the `T87` stale-base arrangement and its raiser, and the `T109` declared-requirement case. It also records the three boundaries the successor verification named **as boundaries** — the phase channel pinned at only `guidance.py:451` (`:369` alone leaves the module green), the coverage case's population derived from `self.hops`, and `A5c` green by design — and the two registered residuals outside its producer set (`T127`, `T130`). It records one citation correction: the `intent_note` declaration is at `guidance.py:433`, not `:432` as the leaf's fix-round report has it. The trees are named with both commits, the scoped quality refusal is quoted rather than cleared, and the `T129` second-registry obligation is measured on this leaf's own tree and handed to L10. **The pin measurement is stated rather than implied**: the card adds 0 rows in every class on the pair it lands (`292 / 121 / 3 / 2`, report-only 491, identical before and after it), the +9 enforced and +3 report-only rows that do move those numbers are this leaf's *code* change set and are named, and the single row behind the `T52` `120 → 121` move is `startup/start_result.py.md:60`. Verification metadata is the recorded base commit, which does not contain this file; the candidate is uncommitted and the governed closeout stamps the real code commit.

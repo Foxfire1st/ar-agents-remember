@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/skill_resources.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/skill_resources.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [models overview](overview.md)
@@ -102,63 +92,38 @@ curated subset.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The extension specifies the entry shape, the enumeration methods and the security posture:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| An entry's `frontmatter` is a **verbatim copy** of the skill's `SKILL.md` frontmatter rendered as JSON — "every field the author wrote, not a curated subset". | `entry_document` | mcp/src/agents_remember/models/skill_resources.py:115-130 |
-| The extension introduces **three** protocol methods; enumeration is `skills/list`, not an index resource. | `SKILL_INDEX_URI` | mcp/src/agents_remember/models/skill_resources.py:34-37 |
-| The extension identifier, the index schema version and the reserved `_meta` prefix. | `SKILLS_EXTENSION_ID`; `SKILL_INDEX_SCHEMA`; `SKILL_META_PREFIX` | mcp/src/agents_remember/models/skill_resources.py:31-43 |
-| A host MUST NOT honor a skill's declared tools. | `ALLOWED_TOOLS_KEY`; `declared_allowed_tools` | mcp/src/agents_remember/models/skill_resources.py:45-46; mcp/src/agents_remember/models/skill_resources.py:270-285 |
+- An entry's `frontmatter` is a **verbatim copy** of the skill's `SKILL.md` frontmatter rendered as JSON — "every field the author wrote, not a curated subset". [1]
+- The extension introduces **three** protocol methods; enumeration is `skills/list`, not an index resource. [2]
+- The extension identifier, the index schema version and the reserved `_meta` prefix. [3]
+- A host MUST NOT honor a skill's declared tools. [4]
 
 Canonical live reference: <https://github.com/modelcontextprotocol/modelcontextprotocol> (the skills
 extension specification, SEP-2640).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The SEP-2640 entry the two mandatory methods return: verbatim frontmatter plus per-file digest and size. | `entry_document` | mcp/src/agents_remember/models/skill_resources.py:115-130 |
-| The enumeration surface: one entry per skill in stable order, carrying no body. | `entry_documents` | mcp/src/agents_remember/models/skill_resources.py:192-198 |
-| What `skills/get` answers from: the skill whose `SKILL.md` URI is given, listed or not. | `skill_for_root_uri` | mcp/src/agents_remember/models/skill_resources.py:177-187 |
-| This server's own listing surfaces hand out metadata only and cannot reach a body. | `discovery_metadata` | mcp/src/agents_remember/models/skill_resources.py:200-221 |
-| This server's own index keeps the Agent Skills discovery shape and is explicitly not the enumeration result. | `index_document` | mcp/src/agents_remember/models/skill_resources.py:223-250 |
-| Identity is origin plus name, which keeps two servers' same-named skills distinct. | `identity` | mcp/src/agents_remember/models/skill_resources.py:100-104 |
-| A declared tool set is normalized as an observation and applied by no code path. | `declared_allowed_tools` | mcp/src/agents_remember/models/skill_resources.py:270-285 |
-| Provenance and the constant trust statement every served file carries. | `skill_meta`; `SKILL_META_PREFIX` | mcp/src/agents_remember/models/skill_resources.py:253-267; mcp/src/agents_remember/models/skill_resources.py:43-43 |
-| The frontmatter reader that fills the verbatim map, refusing constructs it does not implement. | `_MappingReader` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:97-100 |
-| The reading half that builds these values and re-checks the revision on delivery. | `build_skill_catalog`; `read_served_file` | mcp/src/agents_remember/application/skill_resources/catalog.py:75-95; mcp/src/agents_remember/application/skill_resources/catalog.py:117-148 |
-| The two mandatory methods that return these entries. | `_skills_list_handler`; `_skills_get_handler` | mcp/src/agents_remember/mcp/registration/skills_extension.py:243-280 |
-| The response contracts that project these values onto this server's own tool surface. | `SkillCatalogEntryPayload`; `SkillCatalogReadResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:118-127; mcp/src/agents_remember/models/role_capsule_resources.py:153-167 |
-| The same no-`mcp`-import constraint recorded for the roster leaf. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-90 |
-| The cases that execute the entry completeness, verbatim-frontmatter and no-grant guarantees. | `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter`; `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names` | mcp/tests/test_capsule_serving.py:1040-1040; mcp/tests/test_capsule_serving.py:811-811; mcp/tests/test_capsule_serving.py:1044-1075; mcp/tests/test_capsule_serving.py:815-849 |
-| The case that pins this server's own index as the Agent Skills discovery shape. | `test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape` | mcp/tests/test_capsule_serving.py:1012-1041 |
+- The SEP-2640 entry the two mandatory methods return: verbatim frontmatter plus per-file digest and size. [5]
+- The enumeration surface: one entry per skill in stable order, carrying no body. [6]
+- What `skills/get` answers from: the skill whose `SKILL.md` URI is given, listed or not. [7]
+- This server's own listing surfaces hand out metadata only and cannot reach a body. [8]
+- This server's own index keeps the Agent Skills discovery shape and is explicitly not the enumeration result. [9]
+- Identity is origin plus name, which keeps two servers' same-named skills distinct. [10]
+- A declared tool set is normalized as an observation and applied by no code path. [11]
+- Provenance and the constant trust statement every served file carries. [12]
+- The frontmatter reader that fills the verbatim map, refusing constructs it does not implement. [13]
+- The reading half that builds these values and re-checks the revision on delivery. [14]
+- The two mandatory methods that return these entries. [15]
+- The response contracts that project these values onto this server's own tool surface. [16]
+- The same no-`mcp`-import constraint recorded for the roster leaf. [17]
+- The cases that execute the entry completeness, verbatim-frontmatter and no-grant guarantees. [18]
+- The case that pins this server's own index as the Agent Skills discovery shape. [19]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape` repointed to mcp/tests/test_capsule_serving.py:1012-1041. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: refreshed this card against the
-  settled candidate. The registry now owns the **SEP-2640 entry shape**, not merely a JSON index:
-  recorded `entry_document()` (`{uri, frontmatter, resources:[{uri,digest,size}]}`) as what `skills/list`
-  and `skills/get` return, `entry_documents()` as the enumeration surface, `skill_for_root_uri()` as
-  what `skills/get` resolves, the verbatim-frontmatter requirement, the flat publication of nested
-  skills and the both-entries rule for nested files, and the `size`-from-`byte_length` provenance.
-  Corrected the description of `skill://index.json`: it is **this server's own** convenience resource in
-  the Agent Skills discovery shape and explicitly **not** the extension's enumeration result (SEP-2640
-  enumerates through `skills/list`), which is the distinction the round-1 review rejected the candidate
-  over. Re-anchored every citation range against the current 305-line source and added the entry-shape,
-  enumeration, `skills/get`, frontmatter-reader and method-handler rows. Verification metadata remains
-  closeout-owned; no acceptance claim is made.
-
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator: created the card for the SEP-2640 value types.
-  Recorded the origin-plus-name identity that keeps same-named skills distinct, the discovery-only
-  registry contract (metadata cannot reach a body), the additive `_meta` provenance and constant trust
-  statement, the observed-never-applied `allowed-tools` value, and the no-`mcp`-import boundary. Its
-  description of the index document as the discovery surface is superseded above.

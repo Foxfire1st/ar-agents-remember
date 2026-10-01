@@ -1,0 +1,215 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three kinds of record that must not be promoted into each other.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:cff7d39f12dfbf00980e304b6b041a9e1cc2f724673d97086701236a7fe6cb3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAssessment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:3515be5c996dc461c6589ac3549461547bcbf48a3f0deeb9bc875d52daad9ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentEvidenceReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "What a caller may author, and the stored record that adds provenance and the examined-input binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:16d69ce24987cd3f5dfb1caf822527e05631acf439a3b9d2a015be26e47a1019",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAssessmentRevision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:cff7d39f12dfbf00980e304b6b041a9e1cc2f724673d97086701236a7fe6cb3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAssessment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:0c22c5b0395667f8b229876c30a0bd5da6e1920c9be69cf6349bffd2b9258e3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AuthoredAssessmentFields"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:a49e9bc757add94996cbdf161c47ca5b827ed9afdb9b48cf027410333d4723a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExaminedInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:505c03f7a0cdc6a57ff0bc1ff81775a2435d468f7b5902c9c1b9791cac5e04bb",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:d0190d13f06fef3f2c0328f78a63af57060c24330d5e220af8a92dba688e02ff",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 343
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The closed disposition vocabulary and the validator that keeps the three values from being spelled with each other's shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:f779c85d53ae8a0bc0f8848c8c071de34c9b90850c14530aa4684073bfbcbc81",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAssessmentDisposition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:8d791346f531f82cbbb3a572d01980e9ece8ced35b0d196ccc7f9959567a67b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_disposition_and_subject_agree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The subject kinds, the identity any kind carries, and the shape rule that pairs revisions with the kinds that have them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:32b3054f7acf128052a2256214e0178140c834aec4c0cfa1f6169de1513d800e",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentSubject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:3ca232fcad819b9b8880e0a7f38b8a84b317cdafc15843b5f05075754dc9d2f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_shape_matches_its_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The subject states a read reports and the one function that decides which one a subject is in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:1f39f1a245c8ddf6ed8949eb5f339e28bd6228fa698dfe92849913975a0f48c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectAssessmentStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:0b44d7805fec6afeab23ec939d2a7cdba560f0b0f2b65ea8da7d97b637fcc1ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_state_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The read projection a caller receives, which carries identity, disposition and currentness and never a signal's payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:f1688eed84db7f84d6f5903ca89ba4b1efcb4e1d5a9aafc850b9b80b6df3488d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentEntry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:4faf2f2634b984c53e7008b3efeefafe750a9af482e72f5c96d16a475fe3d561",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectAssessmentState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/memory_mode_refusal.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/memory_mode_refusal.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T14:25+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../overview.md)
@@ -86,49 +76,30 @@ generic-clause bug's observable symptom was exactly that misreporting.
 **Reporting only.** Nothing here writes, migrates or repairs state. The module turns an already-decided
 refusal into operator-facing facts.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned
 transport-shape and evidence-envelope contracts, not external library behaviour.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reporter exists because the typed refusal subclasses `ValueError` and would otherwise be caught as generic unreadability. | `MemoryModeUnsupportedError` | mcp/src/agents_remember/errors.py:637-685 |
-| The evidence-state marker distinguishes a removal refusal from any other read failure. | `REMOVED_MODE_EVIDENCE_STATE` | mcp/src/agents_remember/application/memory_mode_refusal.py:23-23 |
-| The removal facts travel in the established public failure-evidence envelope. | `memory_mode_refusal_evidence` | mcp/src/agents_remember/application/memory_mode_refusal.py:27-41 |
-| The same facts are available as a boundary-owned payload, with the artifact when one exists. | `memory_mode_refusal_payload` | mcp/src/agents_remember/application/memory_mode_refusal.py:44-63 |
-| The inverse direction rebuilds the operator fields and returns `None` for a non-removal failure. | `removed_memory_mode_fields_from_evidence` | mcp/src/agents_remember/application/memory_mode_refusal.py:66-104 |
-| The reconstruction rebuilds the refusal text from the vocabulary rather than trusting a carried copy. | `memory_mode_refusal_message` | mcp/src/agents_remember/kernel/memory_mode.py:78-86 |
-| Surface 1 of 7 catches the typed refusal ahead of its generic clause in the worktree-status contract read; the surrounding function is `worktree_status_packet`. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:72-99 |
-| Surface 2 publishes the refusal through the reporter rather than the generic failure path. | `memory_mode_refusal_evidence` | mcp/src/agents_remember/application/worktree_status.py:410-425 |
-| Surfaces 3 and 4 classify a configured contract's removal on both admission paths. | `configured_contract_reread_refusal` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:374-388 |
-| Surface 5 carries the refusal into the direct-landing answer. | "except MemoryModeUnsupportedError" | mcp/src/agents_remember/application/lifecycle/direct_landing.py:226-226 |
-| Surface 6 reports the removal as its own fact in the unstarted-evidence answer. | "except MemoryModeUnsupportedError" | mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:276-276 |
-| Surface 7 keeps the worktree-start payload typed instead of falling through to the generic clause. | "except MemoryModeUnsupportedError" | mcp/src/agents_remember/worktrees/modules/start.py:151-151 |
+- The reporter exists because the typed refusal subclasses `ValueError` and would otherwise be caught as generic unreadability. [1]
+- The evidence-state marker distinguishes a removal refusal from any other read failure. [2]
+- The removal facts travel in the established public failure-evidence envelope. [3]
+- The same facts are available as a boundary-owned payload, with the artifact when one exists. [4]
+- The inverse direction rebuilds the operator fields and returns `None` for a non-removal failure. [5]
+- The reconstruction rebuilds the refusal text from the vocabulary rather than trusting a carried copy. [6]
+- Surface 1 of 7 catches the typed refusal ahead of its generic clause in the worktree-status contract read; the surrounding function is `worktree_status_packet`. [7]
+- Surface 2 publishes the refusal through the reporter rather than the generic failure path. [8]
+- Surfaces 3 and 4 classify a configured contract's removal on both admission paths. [9]
+- Surface 5 carries the refusal into the direct-landing answer. [10]
+- Surface 6 reports the removal as its own fact in the unstarted-evidence answer. [11]
+- Surface 7 keeps the worktree-start payload typed instead of falling through to the generic clause. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local reporting-shape claims.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `MemoryModeUnsupportedError` repointed to mcp/src/agents_remember/errors.py:637-685. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-
-- 2026-09-16T14:25+02:00 — 260915-CAPS-L12 curator (closeout-gate follow-up): the two verification fields above, which this card's creation entry left un-advanced, were populated on the closeout gate's refusal — `external-memory closeout requires onboarding verification metadata before memory commit`. They follow the canonical file-level model (`file-level-onboarding-workflow.md` § Metadata Rules: "use the latest commit that touched the source file once the content has been verified") and now read hash `b281bcd68261866be306cc80a48241921b6dd0d2`, date `2026-09-16T14:24:58+02:00` — the `[260915-CAPS-L12]` code commit that actually contains this source file, matching the value closeout's own `refresh_onboarding_metadata_for_context` writes for every required card. An earlier revision of this entry named the pre-commit base `c1dbebf8`, which does not contain this file; that value was replaced rather than retained, and no earlier history entry was rewritten. The creation entry's sentence that no stamp was advanced is superseded here, added rather than edited because `Update History` is append-only. Closeout re-stamps both fields authoritatively at the real commit.
-- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **created the missing sidecar**. This module is the
-  round-2 repair for `L12R-1`, which established that the typed refusal never reached the operator on
-  four contract-report surfaces because it subclasses `ValueError`. Recorded the two publish shapes, the
-  inverse reconstruction and its one-text discipline, the evidence-state marker, and the seven consuming
-  boundaries with the typed clause ahead of each generic catch. Verification metadata remains
-  closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.

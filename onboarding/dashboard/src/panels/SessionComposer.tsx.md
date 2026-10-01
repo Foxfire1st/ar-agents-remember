@@ -1,15 +1,5 @@
 # dashboard/src/panels/SessionComposer.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/SessionComposer.tsx`       |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -54,30 +44,26 @@ is unit-tested directly (`SessionComposer.test.tsx`). `SessionsView` mounts it o
 non-terminal seat; ordinary drafts use the reliable submission client, while the vendor TUI owns raw
 terminal input.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `SessionsView` names the focused-live seat condition used by the composer boundary. | "const { focused" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:172-172 |
-| Ordinary composer drafts call `submitSessionDraft`. | "void submitSessionDraft" | dashboard/src/panels/sessionComposerHooks.ts:125-125 |
-| Pending interaction answers call `submitInteractionAnswer`. | "export async function submitInteractionAnswer(args: {" | dashboard/src/data/interactionAnswer.ts:570-570 |
-| The test suite declares the `SessionComposer` render/interaction block. | "describe(\"SessionComposer" | dashboard/src/panels/SessionComposer.test.tsx:56-56 |
+- `SessionsView` names the focused-live seat condition used by the composer boundary. [1]
+- Ordinary composer drafts call `submitSessionDraft`. [2]
+- Pending interaction answers call `submitInteractionAnswer`. [3]
+- The test suite declares the `SessionComposer` render/interaction block. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## 260715-FEUI-L5 Reliable Submit Delta
 
@@ -132,29 +118,3 @@ It renders queue preview/counts only after server-confirmed pre-dispatch queue e
 boot-time send deferral as `connecting… · composer draft unchanged`, and keeps static capabilities
 in a tooltip rather than standing footer chrome. The exact-turn stop action belongs beside Send for
 working controlled seats; raw terminal seats mount no dashboard composer.
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the composer split (hooks/parts/styles) and the exhaustive-deps refs fix. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
-
-- 2026-07-24T13:17:17Z — Curator: corrected composer input, queue-honesty, declutter, boot-deferral,
-  and stop-control ownership semantics; verification fields remain pre-commit.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the composer polish — `editorFrame`
-  `background: well` (FB7.1) + `:focus-within` amber ring (V4); capability-derived footer hint (V9 —
-  terminal seats show `raw terminal keys pass through`, not the markdown/reliable-submit claims); `draft
-  saved` only with a non-empty draft (V14); `sendButton` `flexShrink:0`+`nowrap` so it never hides under
-  the inspector (V3). Reliable-submit/receipt/withdrawal authorities unchanged. Verification pinned to
-  the leaf base (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
-  the presentation-only composer-hint restructure (F7/A3) — grouped by concern with one interpunct
-  separator, the honest-boundary wall moved into a `reliable submit` tooltip; no submit/authority
-  change. Verification metadata remains pinned to the leaf base until closeout.
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5: rewrote the sidecar from the obsolete textarea/paste model to
-  the shared CodeMirror reliable-submit, queue, pop-back, recovery, and answer-mode contract.
-
-- 2026-06-19T05:48 — Created for task 6 slice 6e-3: the context composer (React Aria `TextField`/`TextArea` + `Button`) that reports a draft for `Chats` to inject into the active session's stdin as a bracketed paste (no auto-submit). Verification metadata pinned until closeout stamps the 6e-3 code commit.

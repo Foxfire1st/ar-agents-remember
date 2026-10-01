@@ -1,0 +1,302 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/SessionRail.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:cd97a64dc1b9b7ee7a84b776bd75c657e02a4f1b896d9745402a21d609738b03",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionRail"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:c35cc5ef9738dc2f56674dc5950e8efa90d2b3dddf4dcb33005f8794a2e64f61",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared fixtures every case builds from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:8c763bfc43b9667cee7ee81d2b0f9dc0c034a93b2cbbbdeff34ac0ce8640f769",
+            "locator": {
+              "kind": "symbol",
+              "name": "FLEET"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:9db694deeedeb33760607e5cff5f1733bf29c524d2ae0cc9a66df87abbb5e8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalogRow"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:5c4919c3d620e5d2d6379f4816b7cf697977d70c4aa6980f35a0b6ecc4d10185",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:65dcf65d0a8062250eb40604948c76d0031a0edcc0d6b2a47c2097ce113a480b",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The grammar the matrix compares against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:e31b2ae53e0b44e3f02656b04af1d349d631a4c6284b2da6220e970bce1a3958",
+            "locator": {
+              "kind": "symbol",
+              "name": "seatVisualState"
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b51921c3a9beb549654254430d762b078582c0",
+            "content": "sha256:a93fe090e3f6dcc02e1746dd8918c05033b0d4f19063020249417df99636a2cf",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The notice store + harvest store the L6 block seeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:3993f534015d8e08d9083f094fdaafbdd1cd898c581f36ac3f728c03efb45dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleNoticeStore"
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2eb49e25b72503d0f728b57f7f3bf14df13fc7f",
+            "content": "sha256:9e2671a5c5f635ac1f5d106dea71a160a8e8fc7a85b9f9177e51aafc98020a51",
+            "locator": {
+              "kind": "symbol",
+              "name": "ptyHarvestStore"
+            },
+            "path": "dashboard/src/data/ptyHarvest.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The harvest store the bell/hint cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2eb49e25b72503d0f728b57f7f3bf14df13fc7f",
+            "content": "sha256:9e2671a5c5f635ac1f5d106dea71a160a8e8fc7a85b9f9177e51aafc98020a51",
+            "locator": {
+              "kind": "symbol",
+              "name": "ptyHarvestStore"
+            },
+            "path": "dashboard/src/data/ptyHarvest.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The typed wire builders the gate/brief cases now call (`lifecycleWithGate`, `taskDoc`, `agentPickup`, `analytics`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:448638e8b43065e159a6e38a7c3563594184d417208d1515959ac988815a7227",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleWithGate"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:b6f4449a610c853dc02c93cbd467d7e51859462c455d37452856c2db473369b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDoc"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:bb9bd1fb24b14583fd0928a52ecacd7eb69b6786b3580cc67a516a033639631b",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentPickup"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:a15733962996e3acbbb0d77f4238558c1da70ffdb2332d31938c0074ebb00880",
+            "locator": {
+              "kind": "symbol",
+              "name": "analytics"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:66d3c3a324316e102aa61545f47523af80f82eb1489041bf356ea75275620049",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:7787bef99d426bc546b2ab40461310dcc30baff6bbbc70805d626108c14e1087",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:43849332380b785d2899f3a109e73ffb2f431d2909a287d6110b717ae72389d2",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:2d6d2a442afca9f781e5458eac3e7c037f09adfdedc5e1d4887442d144d1849e",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 317
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`heldGatesByLeafKey` + `briefPendingSessionIds` — the only readers of the seeded lifecycles/pickups, and the reason the richer bases change nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9194824a637715f8e1c10fdfd093c25792e170a7",
+            "content": "sha256:a5d255a69f174cb0f2b83a92b07e4c95c39d5b84a899c0560a4de6eae61e1678",
+            "locator": {
+              "kind": "symbol",
+              "name": "heldGatesByLeafKey"
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9194824a637715f8e1c10fdfd093c25792e170a7",
+            "content": "sha256:fc7e37792625cdc0ccfd8cc8d0e049f7913bd4fbf19b3052d5a4c8726eaf9125",
+            "locator": {
+              "kind": "symbol",
+              "name": "briefPendingSessionIds"
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/roles/architect.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -151,35 +141,30 @@ membership equality required only when a graph exists.
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; curation is the exception — the curator always runs the complete memory-quality operation, and closeout and integration carry its completed result as a prerequisite rather than rerunning it. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- This package-data artifact contains the synchronized architect lifecycle, in the corpus's readable order. [1]
+- The role is a self-contained capsule — its dispatch brief is its session start — and it declares no inherited shared sources. [2]
+- Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. [3]
+- Master attachment is one atomic attach_master call that writes the typed subTasks row, the orchestrates membership, and — on a sprint with a graph — the graph node, refusing a partial attach. [4]
+- The attachment carries the master's explicit ruled executionNature, and size alone never makes a master atomic. [5]
+- The shipped architect role still names the graph-less default rather than the removed source-pair-selected wording. [6]
+- The architect is the one seat that may wear another role's hat, and the corpus permits exactly that one sibling reference. [7]
+- The router's registry still names architect as the developer-facing owner seat. [8]
+- The design hat the architect wears inline: with no designer chat, the architect performs this same method inline. [9]
+- The canonical source owns this doctrine. [10]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This package-data artifact contains the synchronized architect lifecycle, in the corpus's readable order. | `# Architect`; `## Inputs`; `## Process` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:6-30 |
-| The role is a self-contained capsule — its dispatch brief is its session start — and it declares no inherited shared sources. | "Your brief is your session start." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:9-11 |
-| Strategist recommendation depends on current reasoning, recognizes graph-less atomic-sequential validity, and transfers full duty on a sanctioned skip. | "Strategist pass — propose, never auto-run."; "Never dispatch the strategist without the developer's yes."; "On a sanctioned skip the orchestrator must author the same reasoned plan"; "a graph-less choice is allowed, an unreasoned default is not" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:70-77 |
-| Master attachment is one atomic attach_master call that writes the typed subTasks row, the orchestrates membership, and — on a sprint with a graph — the graph node, refusing a partial attach. | `attach_master`; "on a sprint with a graph — the graph node, refusing a partial attach" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:82-86 |
-| The attachment carries the master's explicit ruled executionNature, and size alone never makes a master atomic. | `executionNature`; "size alone never makes a master atomic" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:86-87 |
-| The shipped architect role still names the graph-less default rather than the removed source-pair-selected wording. | "a reviewed graph-less atomic-sequential choice whose assumptions still hold" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:73-74 |
-| The architect is the one seat that may wear another role's hat, and the corpus permits exactly that one sibling reference. | `SANCTIONED_SIBLING_REFERENCES`; `## The one hat-collapse this lifecycle allows, and its limit` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:215-223; mcp/tests/test_role_instruction_corpus.py:110-114 |
-| The router's registry still names architect as the developer-facing owner seat. | "design conversation, decision-item relay, and drawing board" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:71-71 |
-| The design hat the architect wears inline: with no designer chat, the architect performs this same method inline. | `# Designer`; "With no designer chat, the architect performs this same method inline." | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md:6-11 |
-| The canonical source owns this doctrine. | `# Architect` | skills/l-01-agent-lifecycles/roles/architect.md:1-14 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this orchestration role file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260815-DAG-L14 Doctrine Sync
 
@@ -260,128 +245,3 @@ approved revision when semantics change.
 The packaged architect role now keeps ordinary repairs on delivery-attempt lineage and routes a
 verified requirement contradiction to developer-approved semantic revision. Worker/reviewer
 classification never rewrites the canonical packet.
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `SANCTIONED_SIBLING_REFERENCES`; `## Knobs, Tool Surface, And Dispatch Authority` repointed to mcp/tests/test_role_instruction_corpus.py:110-114; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:366-383. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "design conversation, decision-item relay, and drawing board" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:71-71. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Replaced the shared transaction-boundary boilerplate sentence, which presented full memory quality as an explicit request, with the completed-curation rule.
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
-  canonical architect role was rewritten (383 lines) into the corpus's readable order and declares its
-  ten inherited sources with `**Inherits:**`. Updated Purpose (readable order, inherited sources, and why
-  this remains the longest role file — it is the one seat that may wear another role's hat), Logic (a new
-  "where the doctrine this card used to describe now lives" paragraph mapping every shared rule to its
-  single `core/` home), and Repo-Internal References (the three citations whose anchors no longer exist —
-  `Strategist pass — propose, never auto-run.`, `## Adding A Master To A Running Sprint`, `Sprint attach`
-  — replaced by current anchors, plus rows for `**Inherits:**`, the knob block,
-  `SANCTIONED_SIBLING_REFERENCES`, and the canonical source). The graph-less claim this card tracks is
-  preserved verbatim in the shipped role at `:188-189`. **Metadata repair:** `governingOverview` pointed
-  at `../../../../../../../overview.md` (the repository root overview) while its link text said "MCP
-  package overview"; corrected to `../../../../../overview.md`, and the missing blank line between the
-  metadata table and `## Governing Overview` was restored. Verification metadata remains closeout-owned —
-  the source is uncommitted, so no stamp was advanced and no commit hash invented.
-
-- 2026-09-13T15:02:41+02:00 — 260831-LOCR-L36 round 2 shipped-text correction: removed the
-  shipped-source debt row and debt paragraph and replaced them with the corrected shipped range —
-  the frozen architect role now says a first graph bootstrap onto a graph-less sprint runs "the
-  graph-less atomic-sequential default, where nothing serializes the masters" at `:142-143`, cited
-  as `:134-143`. Body prose now states the developer ruling (nothing serializes a graph-less sprint;
-  `atomic-sequential` is sprint shape; independent atomic masters proceed concurrently;
-  per-contract activation records each contract's own `reconciling -> active`; only explicit
-  `executionGraph` waves gate on `predecessor-incomplete:`), and the document-scope and
-  `## Adding A Master To A Running Sprint` ranges were re-grepped and repointed to `:1-391` and
-  `:123-160`, with the orchestrator relay ranges repointed to `:1-21`/`:135-182`. Source
-  documentation only; verification metadata remains closeout-owned and no acceptance or test claim
-  is made.
-- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: rewrote this card's graph-less
-  planning boundary from source-pair selection with a paused former master to the per-contract
-  activation record — each series contract owns its record, the only waiting reason is
-  `atomic-series-reconciling`, and a sibling master that shares the protected source pair is never
-  paused or waited on — and recorded the shipped-source debt that the frozen mirrored architect role
-  still names the removed source-pair-selected graph-less default at its own `:142`, flagged for a
-  future code leaf. That debt observation is superseded by the 260831-LOCR-L36 round-2 entry above:
-  the shipped text is corrected and the debt note is removed. Source documentation only; verification metadata remains closeout-owned and no
-  acceptance or test claim is made.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Sprint attach" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:187-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: synchronized architect
-  ownership and retirement bounds for the sprint plan-review generation. Verification remains
-  closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized ordinary architect bootstrap versus
-  explicit takeover, sole public dispatch vocabulary, and fixed structural-row ownership.
-  Verification remains closeout-owned.
-
-- 2026-08-27T21:53+02:00 — Synchronized M40@v2 revision-versus-attempt/event authority.
-
-- 2026-08-27T18:06+02:00 — M43: synchronized requirement-revision authority and attempt/version
-  separation from the canonical architect role.
-
-- 2026-08-27T14:04+02:00 — Clarified immutable packet addressing, packet-local corpus approval,
-  and new-file revision handling in the synchronized architect doctrine.
-- 2026-08-27T13:32+02:00 — M39@v1: added the architect-owned requirement-compilation gate before
-  any sprint/master/leaf topology, including clause splitting, canonical packets, fresh-agent cold
-  reads, developer corpus approval, one-primary leaf projection, and targeted version invalidation
-  plus rebriefing. Verification remains closeout-owned.
-
-- 2026-08-26T08:45+02:00 — Restored the canonical Docs reference section for this changed
-  synchronized architect-role card.
-
-- 2026-08-26T05:20+02:00 — Reconciled the generated architect role with source-pair activation,
-  pause preservation, and task-authoring primacy. Final citation ranges and verification remain
-  post-Dagger/closeout-owned.
-
-- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled the synchronized
-  architect role to graph-optional planning, complete strategist-skip transfer, and conditional
-  graph-node membership. Canonical/generated sync is architect-reported green; Dagger acceptance
-  and verification stamping remain closeout-owned.
-- 2026-08-20T05:10+02:00 — 260815-DAG-L14: "Adding A Master" rewritten to the atomic
-  `attach_master` flow. Verified at code commit 2f494982.
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13: synchronized the scheduling-default doctrine —
-  `author_execution_graph` owns graph edits including the graph-less bootstrap; the
-  `migrate_execution_topology` reference is gone. Verification remains closeout-owned.
-
-- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized explicit topology admission and
-  architect-owned strategist/reviewer authority. Verification remains closeout-owned.
-- 2026-08-12T20:10+02:00 — L23 curator: documented replacement-safe thematic-master sync recovery; verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Recorded `architect.md` as a synchronized runtime artifact of the current canonical lifecycle doctrine; it introduces no independent role contract.
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: aligned the packaged architect lifecycle with
-  sprint-qualified custody and spool-up. Verification metadata remains pinned until closeout
-  stamps the code commit.
-
-- 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: refreshed this synced
-  runtime copy for the custody doctrine (mailbox surface; ladder retired; attribution-only
-  consume); verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-"- 2026-08-05T23:30+02:00 — 260731-EFA-L16 curator: recorded the drawing-board doctrine naming — the Design And Drawing Board section now points at `tasks/AGENTS.md` (task-collaboration doctrine) as the decomposition discipline for the phase: reviewable reframing, explicit assumptions/truth gaps/invariants/non-goals, typed evidence plan, examples before risky change, plan derived from the framing (developer ruling; corrected from an initial whether-a-task-is-needed misreading). Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-05T22:10+02:00 — 260731-EFA-L16 curator: recorded the spawn-doctrine binding (role seats only via `spawn_agent_session`; native fan-out scoped to solo build per the developer correction) and the Opening-Move `system/tools.md` standing read — as the repo's tool inventory, phrased generically because the shipped role files span repos whose memory layers name different tools; widened from the solo-build-only naming after the developer noted tools.md is not just the quality gate. Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: restored canonical/package-data source ownership
-  citations and removed the unsupported hosted-cutover impact section.
-- 2026-08-01T17:40+02:00 — 260731-EFA-L4 markdown repair: removed a leaked diff marker. A body section (heading plus paragraph) had been pasted into this Update History list on 260712-TRH-L4 carrying the diff's `+`. Because `+##` has no space after the plus, markdown rendered it as literal text, so the heading was not a heading and the surrounding bullet list was broken. The same section already existed correctly earlier in the file; where the pasted copy said more, its wording was promoted into that section before the paste was deleted. No claim changed. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
-
-- 2026-07-10T02:39+02:00 — HFX3 retro curation: reconciled the architect card with the free-chat
-  launcher, settings-owned clean spawn, propose-first strategist and short-root questions, and
-  architect terminal custody. Added the governing-overview backlink. Verification metadata remains
-  pinned until closeout stamps the eventual two-parent code commit.
-
-- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 doctrine refinement: event routing now tells the
-  developer-facing architect to run Developer Clarification Triage before choosing note-only
-  handling. Close/current/small clarifications fold into the active task and implementation; future
-  queue is recorded durably; unclear fit asks the developer which route they intend.
-- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: created onboarding
-  for the new developer-facing architect lifecycle, including design ownership, role-seat
-  immutability, one-at-a-time decision-item relay over the existing operator inbox, backend
-  role spawning, and architect-only solo/flat hat-collapse. Verification metadata is blank until
-  closeout stamps the first commit containing this new package-data source file.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_sync_rebinding.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_sync_rebinding.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -159,16 +149,16 @@ shipped durable reports root.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own docstrings and functions and in the cases that
 drive the real tool. The three details a reader should carry: **the record's verdict is derived from one
@@ -176,64 +166,48 @@ rule shared with its own validator**; **a sync that cannot be measured is still 
 the reason on the payload; and **the record is checked against the store before it is read as a
 measurement of a generation**, because a forged record is internally consistent.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the gap it closes, the owners it reuses, and why it can never refuse a sync.** | `record_review_sync_rebinding` | mcp/src/agents_remember/application/review_sync_rebinding.py:1-42; mcp/src/agents_remember/application/review_sync_rebinding.py:271-313 |
-| The published surface: the record re-export, the two dataclasses, the readers and the block. | `__all__` | mcp/src/agents_remember/application/review_sync_rebinding.py:96-112 |
-| The one durable file-name prefix, one file per leaf and judged generation. | `REVIEW_SYNC_REBINDINGS_PREFIX` | mcp/src/agents_remember/application/review_sync_rebinding.py:119-119 |
-| **The one action that produces a comparison current with the resolved pair, stated once.** | `_SUPERSESSION_ACTION` | mcp/src/agents_remember/application/review_sync_rebinding.py:125-130 |
-| **The three states in which the transaction carried the official line, and why `already-current` is not one.** | `_CARRYING_SYNC_STATES` | mcp/src/agents_remember/application/review_sync_rebinding.py:155-161 |
-| **The five states that carried nothing, each with the store fact it observed.** | `_CARRIED_NOTHING` | mcp/src/agents_remember/application/review_sync_rebinding.py:167-193 |
-| **The three checked facts, including the success conjunct carried for a producer that does not exist yet.** | `resolved_pair_completed` | mcp/src/agents_remember/application/review_sync_rebinding.py:196-220 |
-| The resolved source side as a state, with the named reason it could not be measured. | `_ResolvedCapture` | mcp/src/agents_remember/application/review_sync_rebinding.py:223-229 |
-| One published rebinding: the durable artifact, the record, and the read-back that proves it. | `ReviewSyncRebindingPublication` | mcp/src/agents_remember/application/review_sync_rebinding.py:232-238 |
-| **The read-back's three states, with the predicate a consumer branches on.** | `ReviewSyncRebindingRead` | mcp/src/agents_remember/application/review_sync_rebinding.py:241-262 |
-| The one durable destination a generation's rebinding is published to. | `rebinding_file_name` | mcp/src/agents_remember/application/review_sync_rebinding.py:265-268 |
-| **Measuring one finished sync and publishing it, and the two cases that publish nothing at all.** | `record_review_sync_rebinding` | mcp/src/agents_remember/application/review_sync_rebinding.py:271-313 |
-| **The never-raising entry point the sync tool calls, and the states it writes instead of raising.** | `rebinding_result_block` | mcp/src/agents_remember/application/review_sync_rebinding.py:316-373 |
-| **Reading one generation back: `recorded`, `not-recorded` naming the location, `unreadable` with the reason.** | `read_review_sync_rebinding` | mcp/src/agents_remember/application/review_sync_rebinding.py:376-438 |
-| **The check against the store that a forged-but-consistent record cannot pass.** | `rebinding_names_the_generation` | mcp/src/agents_remember/application/review_sync_rebinding.py:441-476 |
-| **The leaf-wide reader, and the code's own statement that no mounted tool calls it yet.** | `read_review_sync_rebindings` | mcp/src/agents_remember/application/review_sync_rebinding.py:479-502 |
-| **The named reclamation owner: a derived measurement whose removal costs no retained input.** | `discard_review_sync_rebindings` | mcp/src/agents_remember/application/review_sync_rebinding.py:505-528 |
-| **The carried-nothing vocabulary, one entry per observed state.** | `_nothing_to_bind_block` | mcp/src/agents_remember/application/review_sync_rebinding.py:534-594 |
-| **The generation vocabulary in this block's own words, with the selection owner's answer carried beside it.** | `_no_generation_block` | mcp/src/agents_remember/application/review_sync_rebinding.py:597-638 |
-| Assembly that selects nothing and re-derives no reviewed value, asking the vocabulary for the one verdict rule. | `_assemble` | mcp/src/agents_remember/application/review_sync_rebinding.py:641-678 |
-| The shipped capture owner's refusal converted into a state rather than an exception. | `_resolved_capture` | mcp/src/agents_remember/application/review_sync_rebinding.py:681-700 |
-| **The resolved knowledge side read through the route a later planner selects knowledge with.** | `_resolved_knowledge` | mcp/src/agents_remember/application/review_sync_rebinding.py:703-727 |
-| The canonical `sha256:<hex>` reference of one published artifact's bytes. | `_digest` | mcp/src/agents_remember/application/review_sync_rebinding.py:730-733 |
-| **The one verdict rule the writer and the record's validator share.** | `review_sync_verdict` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:142-161 |
-| The sealed record itself: the reviewed pair, the resolved pair, both channel matches and the state. | `ReviewSyncRebinding` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:193-390 |
-| The generation store's own order and the manifest this module reads and never rewrites. | `read_generation_refs`; `read_manifest` | mcp/src/agents_remember/application/review_comparison_generation.py:615-649; mcp/src/agents_remember/application/review_comparison_generation.py:725-753 |
-| The selection rule this record names, owned by the final-output receipt module. | `select_review_generation` | mcp/src/agents_remember/application/review_final_output_receipt.py:182-213 |
-| The freeze route that publishes the successor this record's remedy names. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:239-258 |
-| The durable-evidence pair every rebinding is published and read back through. | `publish_durable_evidence`; `read_back_evidence`; `durable_reports_root` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:58-69 |
-| **The shipped capture owner whose add-all tree is the resolved source side.** | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
-| The publication route whose declared location the resolved knowledge side is read at. | `declared_publication_location`; `resolve_published_intent` | mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/published_intent.py:302-326 |
-| **The production call site: the sync tool's result, after its Git work and contract write.** | `worktree_sync_tool` | mcp/src/agents_remember/application/worktree_tools.py:356-378 |
-| **The reopen owner's fifth channel, which makes the per-generation reader a production consumer.** | `ComparisonReopen`; `_measured_rebinding` | mcp/src/agents_remember/application/review_comparison_reopen.py:164-225; mcp/src/agents_remember/application/review_comparison_reopen.py:367-390 |
-| **The live read that renders the measurement, and the movement that outranks a carried identity.** | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:335-577 |
-| **The cases that drive the real production sync tool: the movement measurement, the clean union with parked WIP returned, the forged verdict, every carried-nothing state, the locator clause, and the reader after its own reclamation.** | `ManagedSyncReviewRebindingTests` | mcp/tests/test_review_sync_rebinding.py:381-818 |
-| The live code/memory worktree pair the managed-sync cases are built on. | `ReviewSyncFixture` | mcp/tests/test_review_sync_rebinding.py:102-378 |
-| **The read-side cases: the live read's rendering, the uncompared knowledge channel, the unusable record, the carrying-state-as-failure, and the validator refusals.** | `LiveReviewMovementTests`; `test_the_live_review_read_renders_what_the_sync_moved`; `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_sync_movement_read.py:40-327; mcp/tests/test_review_sync_movement_read.py:43-104; mcp/tests/test_review_sync_movement_read.py:260-327 |
+- **The module's own statement of the gap it closes, the owners it reuses, and why it can never refuse a sync.** [1]
+- The published surface: the record re-export, the two dataclasses, the readers and the block. [2]
+- The one durable file-name prefix, one file per leaf and judged generation. [3]
+- **The one action that produces a comparison current with the resolved pair, stated once.** [4]
+- **The three states in which the transaction carried the official line, and why `already-current` is not one.** [5]
+- **The five states that carried nothing, each with the store fact it observed.** [6]
+- **The three checked facts, including the success conjunct carried for a producer that does not exist yet.** [7]
+- The resolved source side as a state, with the named reason it could not be measured. [8]
+- One published rebinding: the durable artifact, the record, and the read-back that proves it. [9]
+- **The read-back's three states, with the predicate a consumer branches on.** [10]
+- The one durable destination a generation's rebinding is published to. [11]
+- **Measuring one finished sync and publishing it, and the two cases that publish nothing at all.** [12]
+- **The never-raising entry point the sync tool calls, and the states it writes instead of raising.** [13]
+- **Reading one generation back: `recorded`, `not-recorded` naming the location, `unreadable` with the reason.** [14]
+- **The check against the store that a forged-but-consistent record cannot pass.** [15]
+- **The leaf-wide reader, and the code's own statement that no mounted tool calls it yet.** [16]
+- **The named reclamation owner: a derived measurement whose removal costs no retained input.** [17]
+- **The carried-nothing vocabulary, one entry per observed state.** [18]
+- **The generation vocabulary in this block's own words, with the selection owner's answer carried beside it.** [19]
+- Assembly that selects nothing and re-derives no reviewed value, asking the vocabulary for the one verdict rule. [20]
+- The shipped capture owner's refusal converted into a state rather than an exception. [21]
+- **The resolved knowledge side read through the route a later planner selects knowledge with.** [22]
+- The canonical `sha256:<hex>` reference of one published artifact's bytes. [23]
+- **The one verdict rule the writer and the record's validator share.** [24]
+- The sealed record itself: the reviewed pair, the resolved pair, both channel matches and the state. [25]
+- The generation store's own order and the manifest this module reads and never rewrites. [26]
+- The selection rule this record names, owned by the final-output receipt module. [27]
+- The freeze route that publishes the successor this record's remedy names. [28]
+- The durable-evidence pair every rebinding is published and read back through. [29]
+- **The shipped capture owner whose add-all tree is the resolved source side.** [30]
+- The publication route whose declared location the resolved knowledge side is read at. [31]
+- **The production call site: the sync tool's result, after its Git work and contract write.** [32]
+- **The reopen owner's fifth channel, which makes the per-generation reader a production consumer.** [33]
+- **The live read that renders the measurement, and the movement that outranks a carried identity.** [34]
+- **The cases that drive the real production sync tool: the movement measurement, the clean union with parked WIP returned, the forged verdict, every carried-nothing state, the locator clause, and the reader after its own reclamation.** [35]
+- The live code/memory worktree pair the managed-sync cases are built on. [36]
+- **The read-side cases: the live read's rendering, the uncompared knowledge channel, the unusable record, the carrying-state-as-failure, and the validator refusals.** [37]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It reads a task root, the leaf's own worktree and
 a publication location that all lie inside the contract's own repository boundary; the relocation boundary
 that follows from a recorded absolute path is stated above.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 2 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`published_intent.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): No content impact: citation-only repair. This card's source is unchanged. Rows citing `mcp/src/agents_remember/application/published_intent.py` were re-pointed to the lines MIK-R05 moved, by the installed fixer or by the exact line shift where it declined (each such row byte-identical to memory HEAD, its anchors checked in the base and the shifted ranges); no claim was reworded. The fixer also normalised ranges into unchanged files (`mcp/src/agents_remember/application/knowledge_publication_route.py`).
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; MIK-R01 moved lines in `application/published_intent.py`, so citation ranges into it were projected by the installed `memory-citations --fix` or, for multi-anchor rows it declined, re-pointed by the exact base-to-staged line shift (each such row was byte-identical to memory HEAD).
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_review.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 2 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee`): created this one-to-one card for the module this leaf introduced as **ICR-R22@v1's operation** — measuring one comparison generation against the exact source/knowledge pair a managed sync resolved, and publishing that measurement as a durable `ar-review-sync-rebinding/v1` record. It records what a consumer has to act on: a completed sync is three checked facts (the operation, `ok`, and one of three carrying states), and every state that carried nothing has its own sentence rather than a blanket one; **nothing here can refuse a sync**, because the block runs after the Git transaction and turns every failure into a state; a capture the worktree refused publishes **no** record rather than an invented candidate tree; the read-back separates `recorded`, `not-recorded` and `unreadable`; and the record is checked against the **store** before it is read as a measurement of a generation, because a record forged field-by-field with its verdict is internally consistent. Two boundaries are carried as boundaries and not as defects: the leaf-wide reader `read_review_sync_rebindings` and the reclamation owner `discard_review_sync_rebindings` have **no mounted tool caller** and say so in their own docstrings (the per-generation read is reached in production from the reopen owner); and the record's remedy is the freeze owner's act, which this module names and never performs. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `e605822eb3bf83bf63a45963c5f51d5fc28859ee`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted working tree; what was actually read is that working tree, and the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

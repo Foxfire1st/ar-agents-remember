@@ -1,15 +1,5 @@
 # mcp/tests/test_operation_certification_selection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_operation_certification_selection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -34,40 +24,19 @@ Builds production-shaped closeout operation records and published certification 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Operation selection fixture behavior is local test evidence. | `_fixture`; `_publish` | mcp/tests/test_operation_certification_selection.py:93-179 |
+- Operation selection fixture behavior is local test evidence. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture state binds the exact operation and frozen admission. | `_Fixture`; `_fixture` | mcp/tests/test_operation_certification_selection.py:66-111 |
-| Publication records artifact identities and terminal outcomes through production owners. | `_publish` | mcp/tests/test_operation_certification_selection.py:114-179 |
+- Fixture state binds the exact operation and frozen admission. [2]
+- Publication records artifact identities and terminal outcomes through production owners. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None; the fixtures use local lifecycle and certification owners.
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the `live_closeout_door`
-  import added one line above every fixture, so all three cited ranges were one line low. Repointed
-  them to `93-179`, `66-111` and `114-179`; the wording claims are unchanged and the previous
-  entry's "every cited range still holds" was too generous. Verification metadata remains
-  closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/tests/test_operation_certification_selection.py` changed since the recorded verification
-  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
-  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
-  metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit (its fixture now reads `live_closeout_door(contract)` instead of
-  `contract.closeout_door`). Re-read the card against the current source: every cited range still
-  holds, no claim names the changed door accessor, and no wording changed. Re-verified, not
-  re-stamped; verification metadata remains closeout-owned.
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited-source reconciliation: created the previously absent test sidecar from source bytes matching code commit `8133b6a9de2f787cb6c4527621a70123357aff31` (candidate-tree source SHA-256 `20510328932cc9965813e033a2f9345e1146b5265b9c23aad1602f74c9227f1d`). No test execution or future candidate verification stamp is claimed.

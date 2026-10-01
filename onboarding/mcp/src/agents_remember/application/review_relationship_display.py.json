@@ -1,0 +1,629 @@
+{
+  "path": "mcp/src/agents_remember/application/review_relationship_display.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of what it owns: both sides, the lineage and unresolved states, the address view, and that nothing here selects, ranks or concludes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:8a5a091a5ffdc35fd29bc7ecaf5a0352431c3b706814476a3c28b4aa6022bbac",
+            "locator": {
+              "kind": "symbol",
+              "name": "paired_movement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:b8459f6028ebcfb8073b1982734a3bb43848f6d5c5863d24e993fb80e2bb2c89",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The authored lineage: succession, split and merge read from the snapshots' own predecessor rows, and the withdrawal lineage that states what was read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:e57d451b9d0d408f94a20bd9c3b8e479fddd47f267de023017565aaecb145e9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:889c79b89bc795efea7116c94f4206e5e960c106a21f06cb31a6298c777d080a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_succession"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:feb12188ed94b2aadeea922123603c69c88cb328df8f7ee9c6acd3de039bc77d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_split"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:80193d6988058f9e1e3a26b85e328b801416573fec930c57b317187ed473beb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_merge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:60366ee512e535f3985b58699c5d5d53e257a2d459a2f7517924f6758bdca10f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_withdrawal_lineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:5308e9c308c3b5b494326d8a90d3ea2ebde4148f346d218d34ef468a0daf41b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_successors"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:e143135fe86ab2b38a712a91dda10f696f39684d274385a4a08852625fdbf8f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_predecessors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The gaps one movement states: paired gaps, per-side gaps, the resolved-anchor gap, the identity difference and the recorded predecessor that holds no relationship.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:02d9f63efd8d44193f935c94abfe1430e973092e2bedfb1b3528de4e9b8901a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paired_gaps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:6a52c69ede14fa80b098f1781aca71ace33e157b4a30d7a84d2847b1ceb9e746",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_gaps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:374d7d07024cfed045dd5431240d706e1ddac074c7f0db16f6c0aef45631fefc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_gap"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:c03e941f207d832222078817d430f5882e284a6c8c4e62aae7fc4f70030a3ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_gaps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:d4001a1d7b73537ba2cb0a9ea202f2e7bf597c70960fc05495e213af6ca1f497",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unpaired_predecessor_gaps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:c2476b6a3fdfe25d9b846cf696f80b6e09c40cd9e827cd3630e21301f475eb18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_unresolved_gap"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**An address is named as the counterpart only when the other side records exactly one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:56ddaefb73f0811e980231edc862d5af15247e046d0064aaf70bc9711c53045c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_counterpart_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:9a31b847a569f56a004d8a9bf5396ea50d09cdae9934702f88b8a9c3485c8858",
+            "locator": {
+              "kind": "symbol",
+              "name": "_other_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:b5fa01f96fcb561d397ad1c2fb4e0d892ff78f5938ac3807dd6cc4e9e5d6038e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_baseline_only"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The wire vocabulary the display fills: the sides and their states, the lineage, the gap with its code and reason, and the movement's validators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
+            "content": "sha256:4f50da618aef51d589ff04c2eae034e7bf3ba3e6f1a7fb4a9d723ec933e24886",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRelationshipSide"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
+            "content": "sha256:4c9f06485ec066a3dcbefdf4a875da9eb3a9d298dc96f683737a27d4c7496912",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAuthoredLineage"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
+            "content": "sha256:dbb303f7154392ff1ba8e3c3282cb88136c0bf2900c10461e7cf3ba0af409717",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRelationshipGap"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
+            "content": "sha256:88313a99b690437de0e806fac0ad2c236476cf98fa1869d1e61d7147b0b7ea73",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRelationshipMovement"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The pane row the address view builds, with the movement carried beside the pane's own long-standing fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:a534925c08ceec61e373170de934a2ef1563aa0de669feb112624761dfcd2f2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLocation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:65dafa202f40ba2a5d96f2c3b652c751c562b0dcd38af89bd10f5ff56bc434b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourcePane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The cases that measure the displayed sentences: the split line that names its rows, the multi-ended line that never claims a head, the split that records nothing, the intermediate descendant, and the withdrawal that never denies what the same payload displays.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:d2fa3dbc1ae5ff4db88dc6c39a004af41044aab58616f0372e0e912cdc0328b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_split_line_that_records_relationships_names_them_and_never_denies"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_line.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:887e669a5699e36b7e8edb003f765832b2ea5cea4ddaf0b070b388bc65a08c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_multi_head_line_with_relationships_never_claims_a_unique_head"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_line.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:8295c93d0addffdc5a7e686ef74c819d553efa6f23fddd2454dbba9bb0f1ab79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_split_line_that_records_nothing_states_only_what_was_read"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_line.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:2c823e1e287336470cf7d0239e5972b1124fa591a6002d927639513e369720dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_relationship_on_an_intermediate_descendant_is_displayed"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_line.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:30dc48de3117cc2d439286edbbf4bb9c0de4168fce8d13faa2a5b6ec3878610c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_withdrawal_never_denies_a_relationship_the_same_payload_displays"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The qualification cases: a pairing states the recorded relation it was made on, and an address resemblance never pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:6904c4cc51acc8c613eb17707a1bb4a6339e124821fff90961fa709fcaa2b19b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pairing_states_the_recorded_relation_it_was_made_on"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:a233254a6f74fa66fce0f8af2fba90246d5e64ec4e4a5c39159a127bb39c6393",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the search value, the two movement builders and the address view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:4a298247f1d15c800010496ffddc7c6fd77d1630db7e9f5c45240f3ee82c862f",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The tested search value a one-sided sentence must be built from.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:f4bb77a883cc079d69cd1bfc4f8017281c7c5dadf88418502a9d58be0fbd2504",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContinuationSearch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The address view: one location per recorded realization side, deduped by relationship and path, each carrying its movement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:488294f448978f08c347ed6e78b75b026ca7ffe9441de98ea87954771188599e",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_locations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:938582ea39d10f2636545329624f6283a787e9e93ab71a8da40f027948bd569b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_displayed_sides"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:230d2c3bea6e49ded6cf05c3d8e4009255fd428b9ddfb7b24347ccea5f7410f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_location"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The two-sided movement: both recorded sides, the transition from the recorded facts, the authored lineage, the paired gaps and the statement that names its basis.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:8a5a091a5ffdc35fd29bc7ecaf5a0352431c3b706814476a3c28b4aa6022bbac",
+            "locator": {
+              "kind": "symbol",
+              "name": "paired_movement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:60dd0dc528aee8c6c5554d7daba10f274afdc43de1d2340bf501150c78a56763",
+            "locator": {
+              "kind": "symbol",
+              "name": "_transition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:576af4d4c85a066f49308f9d75580640ef4914861b46b9f6ed2dbff539c99bb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paired_statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The one-sided movement: retraction and outside-selection are different states, and the sentence states only what the search read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:c3985f97818b1dc5e6deaba6ad8df7340a8ac686e580254e5ff81c07c264bfdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "single_sided_movement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:2b06a228e289da8c34f7c78ab3940a44f63a33f214e874b4b4e73e4efd1bfda7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outside_selection_statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The side rendering with the fact it states, and the reason a recorded address is unresolved rather than absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:8fd4e4fad79f177ac243ab200e32966ad1fd9525dd1e796a091bc5258c5386f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:2b1da92ba699ad777fca59699587bb0efa172139690d960bd689fa36e65e04c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The basis table: one recorded relation per basis, with the head basis reserved for a row that is the line's uniquely established head.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:a20d33a13131697cd93686c568c0ce69947ece2ada35320581f3304a10ed6848",
+            "locator": {
+              "kind": "symbol",
+              "name": "_basis_sentence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:f68ccbd06cbf1d68e52a852bec345c4a49a5af8be93519b2a5af021b64f1baae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BasisSentence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:f17ce4af92394ee7e37c0d306784bba064036abb3c171092f91fe9b6b13dc74d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BASIS_SENTENCES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The four-state withdrawal sentence: the same-citation rows named, the line's rows named, a non-unique head stated unresolved, only an established negative asserted.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:cfc09e4ad2c35952c3b3f12547784a0a4b509916bb032afbcd2e2d0ccfdbf811",
+            "locator": {
+              "kind": "symbol",
+              "name": "_withdrawal_statement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:1cbb8867af221bf095ff867648effa70ff9b1c24079809e03208540b7307b572",
+            "locator": {
+              "kind": "symbol",
+              "name": "_single_sided_gaps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

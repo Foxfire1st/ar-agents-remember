@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_terminal_evidence_mapping.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The native lift skips `UnmappableShape`, ignores non-terminal mapper outputs, and retains the latest mapped projection.\n\nAnchor: \"except UnmappableShape:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43e9c45fa7b4e0b0792ae68233c039949b7304fa",
+            "content": "sha256:5f5015a5075bc7eac32e54f76129c3f789b385fb664a5272d940503487111a67",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A malformed or open frame makes no claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279272a64e38e392dc3cd8506215a6b6ca4c5e8",
+            "content": "sha256:e1312d9188b687f7d5531109a0cbc9fb8d0368105f423896b574a8bdb6d1b997",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unmappable_and_nonterminal_frames_make_no_terminal_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A later Pi stop frame remains canonical and identifiable after an unmappable frame.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279272a64e38e392dc3cd8506215a6b6ca4c5e8",
+            "content": "sha256:c48d2b924eceb3996ad260580555dab0c41f03658369d211a459a95646c8ec0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unmappable_frame_does_not_hide_later_canonical_terminal_frame"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pi `stop` maps to a completed terminal outcome through the registered projector.\n\nAnchor: `MappedTurnOutcome`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89b1defd5a850e84e78d90bb9e3589b0b39901ae",
+            "content": "sha256:3e253a01aa1e52a5b1471366be0650a049ad488f251ed3a7aca7604cd79e8cd6",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/pi.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

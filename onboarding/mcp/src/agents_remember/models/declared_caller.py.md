@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/declared_caller.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/declared_caller.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [models overview](overview.md)
@@ -53,30 +43,19 @@ identity is validated identically everywhere. No copied validators.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; this is an internal authority-boundary model.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The strict bounded shape of a request-carried ambient identity. | `DeclaredCaller`; `_nonblank_role` | mcp/src/agents_remember/models/declared_caller.py:19-39 |
-| Consumed by the closeout-queue ambient fallback. | `_declared_queue_actor` | mcp/src/agents_remember/application/closeout_queue.py:64-72 |
-| Consumed by the structural gate-tools ambient fallback (duck-typed `DeclaredGateCaller`). | `_context`; `DeclaredGateCaller` | mcp/src/agents_remember/application/structural/gate_tools.py:36-45; mcp/src/agents_remember/application/structural/gate_tools.py:48-71 |
-| The request field that carries the declaration on the queue wire model. | "caller: DeclaredCaller" | mcp/src/agents_remember/models/queue/closeout_queue.py:37-37 |
+- The strict bounded shape of a request-carried ambient identity. [1]
+- Consumed by the closeout-queue ambient fallback. [2]
+- Consumed by the structural gate-tools ambient fallback (duck-typed `DeclaredGateCaller`). [3]
+- The request field that carries the declaration on the queue wire model. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 2 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: created for the seat-independent task-execution
-  fallback (L16-R2/R3): the typed request-carried ambient caller identity shared by the
-  closeout-queue and structural gate-tools fallbacks. Verified at code commit a9d50e08.

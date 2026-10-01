@@ -1,0 +1,501 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The selection policy in its declared order, with `F0` frozen before membership expansion, and the one seed read L8 added.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:c4b61ef2a26bb608e577de2c376640ac2dbff9bf2f808672da15ebc38e138cd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_recorded_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:a63adea7dca12bf389265eb8ce34dd62a320db8c692aa4a21085ba261a3ed893",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionSets"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:f49eb7bfeabe9085e49129a64dcbf52673fec2a691ac75ad1ca7e4358f04f0b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionQuery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Whole-item paging, and the corrected count semantics: the declared total on every page, `returned` cumulative, the slice size in `len(page.items)`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:f31ccdbfb14be21f46c2a811839a03123f17670644d767a6031e845451b81a69",
+            "locator": {
+              "kind": "symbol",
+              "name": "page_of_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:6660bfeaa8127fea648109a3d2171d91c5408ff5912044ff0b1164285cb4c14d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_page_counts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:7cc7b3fe334dd143fa5cfb6e89a453c2291842b528b034937d5cb58a5f61fe3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_too_small_page"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:4cc7ee0971e59a79cb988a5618f647ace44763542845034392990fb432e97b8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_page_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The exception the application turns into `selection_incomplete`, raised when the selected set exceeds the declared bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:86e463e0484ca8f7361676acc9d26475b2adc4917f86ca8faabfd9c2bb0dd242",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionIncomplete"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The declared execution bound itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:8adde364bdcb8bf1323cbf6e5775b8d93c5c33ee91734fbda8086d11e1c5d0c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SELECTION_ITEM_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The nodes that measure the packet's `P/I1/F/J1/G/K1` rule, including the explicit `G` expansion that reaches K1.**\n\nAnchor: \"test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family\"; \"test_selecting_the_advertised_family_explicitly_is_what_reaches_the_further_realizations\"; \"test_an_exact_family_revision_seed_stops_after_its_own_members\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:475ccf188b7e5abf74f9696c4db8b4cdde268c9db9625744257726442daf76d0",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:7e099c4ed2830b80080a634c590edfa56cee30e8226884d1c55b5e87bad6b502",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:2f60ec5589e475f812be82436c8119cb456808f25f7060016f7c9f53064116a1",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The nodes that measure the corrected page counts: a one-item page still advertising the second location, and the union of all pages equalling the declared set.**\n\nAnchor: \"test_a_page_budget_of_one_item_still_advertises_the_second_location\"; \"test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:a2c619472ca9b368f23fa40b61a0136e2820f31179365be08f68ed63506924fb",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 547
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:4c5b989e5948e781c88b2faddcfd3fb80d23bd856a32bbc1629e8d5b85b53d3d",
+            "locator": {
+              "end": 721,
+              "kind": "line_range",
+              "start": 658
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The ordering, truncation, budget, bound and absence nodes.\n\nAnchor: \"test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label\"; \"test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness\"; \"test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position\"; \"test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:4651404abbab03832a57a3c0db0e96b1e087813b8c29c45004713ba095a76130",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 722
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:5c200ca49c45669de000675c5a401a09add06308a336302714740e7a633f8b1c",
+            "locator": {
+              "end": 871,
+              "kind": "line_range",
+              "start": 838
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:d43818481b79967ccbba1437ec42bc0044e2b26cf2aaffad4b9efdd5e91bd906",
+            "locator": {
+              "end": 901,
+              "kind": "line_range",
+              "start": 872
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:974652ad71b65eef3ac6dad523a9ac5eb25052a305cb4311d361b95cc1b7545f",
+            "locator": {
+              "end": 929,
+              "kind": "line_range",
+              "start": 902
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The node that kills mutation `R30` — the per-side exact-revision address the override exists for.**\n\nAnchor: \"test_explicit_side_selectors_address_a_different_exact_revision_on_each_side\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:a10b6073bc9f4919f240f3ef038eff9eb7daae2f82abafea5072990cc6fe5eaf",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 364
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share.\n\nAnchor: `read_scope_test_support.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:19b24fa8965b32406c0fa4cb94cb6a51b998f6acca88447458c8eca6b30446ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "cell_value"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:6fcc062947fdea7dd24c7c6dcda0be5c4fcfc7ebf09df35e0797bfe5d04f6052",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The seed half: a path selects through its claims, an identity selects every retained revision, an exact revision selects one, a family seed selects none here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:ed64f08e49a2390cfb5db08f7f43ca35a9e4b4915d0473b53071e259dc10bd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_invariant_revisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**`F0` read from the recorded membership rows**, and the family seed's own revisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:1a7f68bdff5ed95a5bcb832a24471a5adbbd3b6f527c0c24723c9bf5ab768c09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_directly_containing_families"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The stopping rule itself: members of the frozen family set, never \"which other families a member belongs to\".**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:d3edaa6d56a3bd7f62f9c97523d29327a164626c0a772c0cd65060a3e3f69aeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_member_revision_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The advertised frontier: `memberships_of(I) − F0`, deduplicated, sorted, never traversed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:62f81c31b301acb35f676e85e50dda78fad20c7d38a59930e06f9eff195ed13b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_frontier_expansions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The declared item order, built only from stored identifiers.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:1881c6dd9e4b12b95e082e48160cd7a9148ea8e470041d3a062ed9761acd61ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_item_stream"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:49320c96f34fcf4fd784760e71b332a19c1e71966e0836e73910a3be33b5a406",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sort_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:fe56b49b517d916cf065c397297cd4af1a25f0ce701145d97f9bf8d03527fd0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_KIND_ORDER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The realization items and the anchor seam, and the two selection stages a per-side diff reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:00636cbb2b623798afa852ea1cf66820c3edadb382e4fd23426f76793308de06",
+            "locator": {
+              "kind": "symbol",
+              "name": "_realization_items"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:41de1b88a4daa995465a8c920482f7556593fd8551b8b9ee5edcb8d66ac3e4b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SEED_STAGES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:c705b0b2c62027fb53386b06572c323fc5918f38f392886ba83a92411eabba1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_stage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The assembled scope, the counts and the revision groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:982202c2f07eca908e2721133930729564d2f8862b3d8fc073c2415026e7106a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assembled_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:7f97340526085f19f9192120636a2bd722daf18cf36f67ea0c381e6e1633cb45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revision_groups"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:c6a51d272870aff5dca79789e5bcb422e8eeccc967a72ba4e7dc1685dcf1517c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The manifest digest: kind, identity and selection reasons — and not how the page was cut.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:11d7eb12870e50baa1697bc473bc1768424e05aa8a2d58f0daebbd0551530bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

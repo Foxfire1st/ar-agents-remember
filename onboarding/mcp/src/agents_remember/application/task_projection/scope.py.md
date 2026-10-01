@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_projection/scope.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/application/task_projection/scope.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T10:30+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -79,51 +69,34 @@ counterpart — the resolved document the plan points at instead of reading.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking the configured sources. | N/A | N/A |
+No relevant documentation found after checking the configured sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The resolution entry point, the three owners it reconciles, and the two gates that make the plan
 binding.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one resolution call: admitted binding plus hints in, bound scope or refusal out. | `resolve_task_projection_scope`; `ProjectionScopeRequest`; `ResolvedProjectionScope` | mcp/src/agents_remember/application/task_projection/scope.py:292-373; mcp/src/agents_remember/application/task_projection/scope.py:94-106; mcp/src/agents_remember/application/task_projection/scope.py:110-121 |
-| The canonical task reference parser — the admitted identity's only accepted form. | `parse_task_reference` | mcp/src/agents_remember/application/task_projection/scope.py:63-90 |
-| The two gates that make the read plan binding: read exactly these, reference those. | `read_documents`; `referenced_documents` | mcp/src/agents_remember/application/task_projection/scope.py:376-391; mcp/src/agents_remember/application/task_projection/scope.py:394-405; mcp/src/agents_remember/application/task_projection/scope.py:420-435; mcp/src/agents_remember/application/task_projection/scope.py:438-449 |
-| The admitted-identity reconciliation against what the enclosure declares. | `_require_admitted_identity`; `_require_task_ownership`; `_altitude_of` | mcp/src/agents_remember/application/task_projection/scope.py:146-165; mcp/src/agents_remember/application/task_projection/scope.py:195-213; mcp/src/agents_remember/application/task_projection/scope.py:216-234; mcp/src/agents_remember/application/task_projection/scope.py:192-211; mcp/src/agents_remember/application/task_projection/scope.py:241-259; mcp/src/agents_remember/application/task_projection/scope.py:262-280 |
-| The leaf-only parent read, and why a master's or sprint's parent is not resolved. | `_parent_of` | mcp/src/agents_remember/application/task_projection/scope.py:283-305 |
-| The exact accepted task-document bytes this module digests, rather than re-reading the file. | `capture_task_doc_source`; `TaskDocSourceSnapshot` | mcp/src/agents_remember/tasks/store.py:73-82; mcp/src/agents_remember/tasks/store.py:24-36 |
-| The topology owner that decides whether a reference resolves and which altitude may carry the seat. | `TaskDocumentTopology`; `TaskDocumentRefError`; `TaskAltitude` | mcp/src/agents_remember/tasks/document_refs.py:87-634; mcp/src/agents_remember/tasks/document_refs.py:39-44; mcp/src/agents_remember/tasks/document_refs.py:32-32 |
-| The enclosure contract and its reader — the owner of branch, base commit and leaf identity. | `WorktreeContract`; `load_contract`; `WorktreeContractReader` | mcp/src/agents_remember/worktrees/worktree_contract.py:229-283; mcp/src/agents_remember/worktrees/worktree_contract.py:432-463; mcp/src/agents_remember/worktrees/modules/contract_reader.py:27-29 |
-| The resolution shape this module mirrors rather than reinvents. | `resolve_coordination_context` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:129-143 |
-| The case that proves every unresolvable input returns its own source-resolution status. | `test_every_unresolvable_input_returns_its_own_source_resolution_status` | mcp/tests/test_task_projection.py:834-997 |
-| The case that proves a refused and a successful projection leave the task tree byte-identical. | `test_a_refused_and_a_successful_projection_leave_the_task_tree_byte_identical` | mcp/tests/test_task_projection.py:1079-1096 |
+- The one resolution call: admitted binding plus hints in, bound scope or refusal out. [1]
+- The canonical task reference parser — the admitted identity's only accepted form. [2]
+- The two gates that make the read plan binding: read exactly these, reference those. [3]
+- The admitted-identity reconciliation against what the enclosure declares. [4]
+- The leaf-only parent read, and why a master's or sprint's parent is not resolved. [5]
+- The exact accepted task-document bytes this module digests, rather than re-reading the file. [6]
+- The topology owner that decides whether a reference resolves and which altitude may carry the seat. [7]
+- The enclosure contract and its reader — the owner of branch, base commit and leaf identity. [8]
+- The resolution shape this module mirrors rather than reinvents. [9]
+- The case that proves every unresolvable input returns its own source-resolution status. [10]
+- The case that proves a refused and a successful projection leave the task tree byte-identical. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract consumes this scope resolver.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `_parent_of` repointed to mcp/src/agents_remember/application/task_projection/scope.py:283-305. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_every_unresolvable_input_returns_its_own_source_resolution_status` repointed to mcp/tests/test_task_projection.py:834-997. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_a_refused_and_a_successful_projection_leave_the_task_tree_byte_identical` repointed to mcp/tests/test_task_projection.py:1079-1096. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: created this card for the branch/worktree binding
-  module added by the scoped-task-context leaf (`CAPS-R03@v1`). Records the three owners it
-  reconciles rather than reimplements, the nine distinct source-resolution refusals with their
-  `owner_status` preservation, the leaf-only parent read and its reason, `read_documents` as the
-  single document-visibility gate, and the read-only invariant. Verification metadata is left at the
-  leaf base commit because the source is uncommitted — the governed closeout stamps the real code
-  commit.
+No meaningful cross-repo references found.

@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/tasks.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `task_doc` / `task_reopen` payload builders.\n\nAnchor: `task_doc_payload`, `task_reopen_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f831067a0a889a37f8501c831dbcefa3aa86540d",
+            "content": "sha256:454d46b1fd16712c3fb739fd0e5bd143ba39e230dbe3dd8a4eb0f6692b609d8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/task_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f831067a0a889a37f8501c831dbcefa3aa86540d",
+            "content": "sha256:4caf7f8561354a9a934e4821eb1d038fe69d7bc4381ac7d789b9dc97e124aa53",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_reopen_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The finalize description: the folder-master row and the sub-task refusal (MIK-R38).\n\nAnchor: \"existing immediate parent, or names none and its folder's task.json master lists it, the\"; \"assertions are omitted; a sub-task naming none whose folder task.json is not a master is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8112a3a2d347b6add092425f471a2ccc00f7c4aa",
+            "content": "sha256:6b54f04430c4427a4a342127cc9eb7b3a9af7b6db979086c45e0827f3f382235",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The finalize builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc2a027fa8329302b9ba1a1af26589d7940d865",
+            "content": "sha256:1401ce89181b17dff2611b4f0e8f325b4a79dc9190966ebb4fd77cab54c32db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`FinalizeTaskDocs`.\n\nAnchor: \"class FinalizeTaskDocs:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:2aa6972042cf46b4dcdffedd6f3ee2dea1f7eda2e67ac094f909a60deb7467cb",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

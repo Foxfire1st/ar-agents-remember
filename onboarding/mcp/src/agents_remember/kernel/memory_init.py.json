@@ -1,0 +1,350 @@
+{
+  "path": "mcp/src/agents_remember/kernel/memory_init.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`memory_init` is wired through the Phase 04 application entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
+            "content": "sha256:7bab24b998635280567cd1af10c29a57166796dae057cb5669ebedcecd9c3b87",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_init"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The failed-Git early return reports the marker as not created.\n\nAnchor: \"layoutMarker\": \"not-created\" if layout == \"created\" else layout",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:2a909f8b85b647d4529d39f103d0ce341f67d651ea6bf07f56c99ab113db1a1c",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 290
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A new memory repository is created with the layout marker; an existing or legacy root is never marked.\n\nAnchor: \"layoutMarker\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:b7c70df72a0edef3458b02428b0556c7960dbc8dd3926584f6d6b0cc3cb521f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "LAYOUT_MARKER_TEXT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:f8476a4a9bd418d7ccb9cbdaaf8f04c73c2956c31312a47eb084ccbcae842490",
+            "locator": {
+              "kind": "symbol",
+              "name": "_holds_legacy_memory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:587484ac75a00b949c508c4fea55004afbea52d11acc68ca04c76c306f8dd29d",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:282a23e73c4cb4e7e6fda823c049423c3aea8bb435d088899ef9e3275e67c8e7",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 317
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The marker case: only a new root is created in the text format.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:6090ce7ef3c04c42c8448bb9179d3c922c8abfe88f4dfe7cd27cd7d9b35fd4ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_creates_new_memory_in_the_text_format_only"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "MCP config defines repository memory roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:0d3b1a86df3de4b2b7f81828fd3dc25bd588d932ed545f8863363d4d68b777e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The branch resolution this file performs: explicit argument, code-repository branch, or a refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:19a8555fed15dd12b565ec61ae84734c2cfac4245654a62a1d57f65bb75ff18f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_normalize_initial_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:11f8b19c143204199817c713df7cfacd2e81bfe5162f4b2d90def612e8a4cebf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_code_repository_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:f84ab27ebc2b039315ba342c8fa57216bb189da9bd6fb3efb3f21450b0c1119c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_initial_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:146937e16fd824a608ac19762df41deef935edb47841424ee14191f9d319c783",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_init_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The bounded unborn-repository repair path and its refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:17d6b151a1a6cab6499a784b624374619cc10bb2bc662f0e563be79e5808af7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_repair_unborn_memory_repository"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:d484afaf0040716b49aa3756db2d208a4dd282447cf0516f94b3044fd0dff2fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_unborn_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
+            "content": "sha256:83e0319ab723facf2388b15a762d836b3e8d4ab7d7e95a618d2bc1196d3ac161",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The recorded authority's consumers: first-baseline adoption and branch mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
+            "locator": {
+              "kind": "symbol",
+              "name": "_baseline_default_branch"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:3c39132c4dd5431a58bfe3c8ee9f44cee937a8e04817b5104d6b5061a05b542c",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_repository_default_branch"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:8f81441ee34f08815ab0cb6e6fb9a15fa3e8dfcd990509707e32136391bfa820",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The branches case set that holds this behavior end to end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:569c8c796139db83968044af79c457c7b11cd0fb98e66809e583ac64f29e5202",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_mints_and_records_the_named_initial_branch"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:710429e84c4c9b8449fad791d73409895b0bd9a1d30c783df2948521949c3a15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_inherits_the_code_repositorys_current_branch_by_default"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:8cebc77b35ac07fb21cac8683fe0d21848a398ef05f58267f56c67bac5ae6e75",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_refuses_rather_than_inventing_a_branch_when_it_has_no_answer"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:5aedad94fe481bb42b9680bd688727f9934dc95f8cc24e02e5737055b76d235b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_unborn_repair_path_accepts_the_configured_branch_instead_of_main"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The one git runner this module's `git init` goes through: `git_environment` scrubs `GIT_REPOSITORY_SELECTOR_ENV` (L56-L72), `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default bound (L93-L93), and `run_git` applies both (L150-L215).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_environment"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_LOCAL_TIMEOUT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,218 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/revision_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it owns: the value the comparison is made with, the pair-or-explicit-non-pair rule, the heads beside the pair, and the vocabulary no fabrication can occupy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:20d0caaa29ddeed4149843915c3866b9867af707b27905938a430d226d3c9b4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionSelection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:eadd8bd10e303fcb11b37b49465b6ec2209882406f2ea259ca22a9fd58d238e4",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The policy that computes this value from authored heads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:e869785b3bfadaf409edcfe34e1a6db893cca324a55a6b94e04c953f1196bddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_subject_revisions"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the model and its state union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:151a444b9b78cdf47dc08e82ee57a52913a62b5ed82793a4c1033487b2cd4d12",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The closed five-member union of which question one subject comparison answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:f22674f988da12cbe069f1d19733a1edc660f02981481c3a8ce2e23c5c94e87a",
+            "locator": {
+              "kind": "symbol",
+              "name": "RevisionSelectionState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One subject's explicit selection with its own statement: the pair present exactly when the snapshots were compared on one revision each.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:20d0caaa29ddeed4149843915c3866b9867af707b27905938a430d226d3c9b4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The state/pair agreement: a compared selection names both heads, a one-sided selection names its one head, an ambiguous or unresolved selection names none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:0a56a4b3da6aba50ac4f891aed9926259206eebe05959fdcb9887bba61f29ed8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_state_to_match_the_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The pair drawn from the heads: a selected revision outside the recorded heads is not a head selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:eb04e51873f3ddf74ac20f6725f845bf276232b86ddca901092735a49d026be9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_pair_to_come_from_the_heads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The heads drawn from the retained: a head outside its side's retained list is invented beside the snapshots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:7cf7d09a4fc072404f2c5476dae5caf3642fad45f73aaa0a5980b3b83aeef94d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_heads_to_come_from_the_retained"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared bounds every field reads rather than restating.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROSE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFERENCE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The pane field that carries this value, absent exactly when no subject was compared, with its one-direction validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b7f41cd297b8e46875e6ad6ede9af553c935730",
+            "content": "sha256:cbdcd572a23fc6e8182083d61d637275f0c46f2d864a4038af40681f7900f8cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_selection"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7f41cd297b8e46875e6ad6ede9af553c935730",
+            "content": "sha256:7595d5578633490dde3d9ef4ee22d542536d440bd20bce0c720bea95db8535dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_a_compared_subject_to_record_its_selection"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

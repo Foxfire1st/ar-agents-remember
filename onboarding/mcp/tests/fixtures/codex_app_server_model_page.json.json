@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/fixtures/codex_app_server_model_page.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The captured page is a single complete row with a null cursor, the shape the session's model reader validates.\n\nAnchor: \"\\\"data\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "830e2f67e3e8fa5ea2da7df259f5a2c46543d11e",
+            "content": "sha256:7f703bb8b7f8cf661fc0b5cae14cf5a833dfafa470412405d3f0c3b40d346bb8",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The live case opens its thread with the model this page describes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:7398043dd8c293490c515a7d7c6292dcc2892d5a98b25c47879cb2485c57c5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_app_server_observes_instruction_sources_and_accepts_the_capsule"
+            },
+            "path": "mcp/tests/test_codex_capsule_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The row carries the vendor's own model id, display name and reasoning-effort list.\n\nAnchor: \"\\\"displayName\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "830e2f67e3e8fa5ea2da7df259f5a2c46543d11e",
+            "content": "sha256:f0788474d74957b2fdcb8fe8eeff2a0b1d29de4d2817f9d65899ab44adede862",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

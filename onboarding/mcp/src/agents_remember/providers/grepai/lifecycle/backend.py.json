@@ -1,0 +1,83 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Backend settings and Docker network name are derived in GrepAI core.\n\nAnchor: `grepai_backend_settings`, `grepai_network_name`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:c70a7392e4d3ebb00c18e8f9054b0d0815021ddac5e6f425476984032dfbb295",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_backend_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:56b12c4a4b340de52127e414eadc4be43d8c533b66b5206075baa6a4ff2a13c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_network_name"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tests require the Postgres wait helper to run both \"test: [\\\"CMD-SHELL\\\", \\\"pg_isready -U grepai -d grepai\\\"]\" and a database query.\n\nAnchor: \"test: [\\\"CMD-SHELL\\\", \\\"pg_isready -U grepai -d grepai\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd1530802655f8b234cffda5497fc09e42912ffb",
+            "content": "sha256:4672acbd84cfc1a5161d913cce0b18839403c2852264d1cc3ec5a8325449df5d",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "providers/compose/grepai.compose.yaml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared Compose helpers provide unmanaged container and network migration.\n\nAnchor: `remove_unmanaged_compose_container`, `remove_unmanaged_compose_network`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ca35b1bdeb11df6bda90e2f8adeaac187825cd5",
+            "content": "sha256:f339ade8760c4c3eec023cb6e11e30fbd679e5488037992797022c310e0eda0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_unmanaged_compose_container"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ca35b1bdeb11df6bda90e2f8adeaac187825cd5",
+            "content": "sha256:34db8b98c385b41e04b76e43d1cd95ab4d9bb601ca1a7fae496cabc9699717d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_unmanaged_compose_network"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

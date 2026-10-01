@@ -1,0 +1,134 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/hosted_readiness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The readiness predicate, `ReadinessWait`, and `MAX_HOSTED_READINESS_WAIT_SECONDS`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d39912523d32d6d65b7c7b9f3120a9475022337d",
+            "content": "sha256:f34a5b336c001b94ee50c8fce1905d0975c9de538f02b629cb34359f3492dfd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "hosted_session_readiness"
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d39912523d32d6d65b7c7b9f3120a9475022337d",
+            "content": "sha256:053fd2080b0a5134f84df76d8eebbff7f3020df4ba6a85a0da91b997c45b439e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadinessWait"
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d39912523d32d6d65b7c7b9f3120a9475022337d",
+            "content": "sha256:0e44b43f8c062ea09fa27173070879751fc1aad2803c91d1f00804e3a9da7364",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_HOSTED_READINESS_WAIT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d39912523d32d6d65b7c7b9f3120a9475022337d",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d39912523d32d6d65b7c7b9f3120a9475022337d",
+            "content": "sha256:c9dcd66c8c0a2362a9fd8b8c44112d6429e3ac15ff5a8467f2061d56723bc6e7",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d39912523d32d6d65b7c7b9f3120a9475022337d",
+            "content": "sha256:b9730a6e033620f88788d7065bbe6e654619fd2de631e6092ef5ff9d176423f6",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tool declaration that exposes `session_id` / `wait_seconds`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d39912523d32d6d65b7c7b9f3120a9475022337d",
+            "content": "sha256:f34a5b336c001b94ee50c8fce1905d0975c9de538f02b629cb34359f3492dfd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "hosted_session_readiness"
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dispatch path that requires `status=ready` before creating a durable brief row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de039359a3a94924adb8d1d0673ec27752706467",
+            "content": "sha256:6fe0aa2b1e27a7a82395ed55443a26101aeaa7f210fcfb47ab07b1b509bc5171",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_dispatch_target"
+            },
+            "path": "mcp/src/agents_remember/serving/dispatch_brief.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de039359a3a94924adb8d1d0673ec27752706467",
+            "content": "sha256:f6eb5fbf940e364cd3279cdcc3ae3498ccc84c0e8a93e579517a41410f591271",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/serving/dispatch_brief.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

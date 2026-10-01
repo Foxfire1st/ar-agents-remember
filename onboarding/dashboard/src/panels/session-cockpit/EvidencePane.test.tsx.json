@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/EvidencePane.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Focused-seat case covers launch, receipt/reconciliation, bridge, pane, retire-stop residual, and liveness evidence.\n\nAnchor: \"reveals launch\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ca037ce349f09eebafb4fb1300d2cc6711f3b0d",
+            "content": "sha256:87691bc9c7db3830ed77d2c73cf1a5bf0233f111ca4dfda0ff85f94f65c2be4c",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Missing-receipt honesty case.\n\nAnchor: \"keeps missing receipt evidence explicitly absent in the pure detail projection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ca037ce349f09eebafb4fb1300d2cc6711f3b0d",
+            "content": "sha256:49080650d2bd2c42fac998ca1765673a84533d900619c7c77489b2e7914a0c60",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Terminate and retire residuals remain inspectable without focus and share dismissal across surfaces.\n\nAnchor: \"keeps terminate and retire residuals inspectable without focus and shares exact dismissal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ca037ce349f09eebafb4fb1300d2cc6711f3b0d",
+            "content": "sha256:7e9688762d6b27363593554be12aea63cc239eb28930aa8b4fd5ae22733e2168",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A successful terminate residual remains visible after the terminated seat is removed.\n\nAnchor: \"reveals a successful terminate residual after the terminated seat is removed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ca037ce349f09eebafb4fb1300d2cc6711f3b0d",
+            "content": "sha256:bf462a0781659e60c2597b9c9ea589a445f66c941f9559e5656210232700ecf0",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Component under test.\n\nAnchor: \"export function EvidencePane({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:7a31b2c2f1d252ca76cdbc99ea33bfdd02e417fc02a95bd632927b861be9b048",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 411
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

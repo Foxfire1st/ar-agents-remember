@@ -1,0 +1,85 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The contract census observes actual code/memory and integrated output evidence, with no cache requirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:b0409d0df5f5c85fdc04feb0b21787d2e816d36dccfb3383dd8fc9240423583b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_fact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:c2dd23a0a8d579b9c53b8510203c7c91ad31844ddfb965057f177af004863083",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EvidenceCensus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:cff4cdecf35f3e664d10f5640dba777eb7aa1ea5e5aa5def86590354439a3de6",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The read-only census collects task, enclosure, operation, seat, artifact, and commit evidence before discard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:b0409d0df5f5c85fdc04feb0b21787d2e816d36dccfb3383dd8fc9240423583b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_fact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:bb0910bee354b62b90ed9fcb043d5fb93c39a14c484098ac7fe364847010c4fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_operation_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:cff4cdecf35f3e664d10f5640dba777eb7aa1ea5e5aa5def86590354439a3de6",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,191 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The sole proven executor runs the selected-document citation-range checker on one planned unit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:5d181caa6a0ff64942e755c5d5291840ba3246355c56abf5ef9d312019b5b384",
+            "locator": {
+              "kind": "symbol",
+              "name": "RangeResolutionAffectedExecutor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reuse selects only byte-identical passing units by exact result identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:ebbd811ef474cc76823461bb6dc3d370891097a02030faab95750f09a09f8309",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_affected_subresult_reuse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:0d81a90cb30d9a49855cfc18e3c9c8721ba009cfb74231490b26dc50f4943baf",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Closure execution revalidates candidate and executor, then publishes the complete aggregate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:f71698b2266fc43ba50bed008c1976463e13a864cc93dbef77c99238cc87d7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_affected_closure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:29aa9cb035c5b7c39108ee0ec846aecdb05af54cbe33538e0c83fc095b7f9763",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Evidence shape is canonicalized and proven before a unit result can be published.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:a998c802f96234790a79ea029191956568ffea2a81c6837b18b053d853f13383",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unit_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:0ef7150e49162487b4de9725b2ff008cfa3f2969aa3896cec3b20d696f9dd355",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:2f184f59aebde9a9af7bfaf30d1445b2aed6a064af4f138226b65c5c67d2410d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_checker_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:3e6632523b1607ccdeb53219d45b476502fffb7f2e7b996b1ed6cf93ea63d81f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:4dd6cf9d2677b0693e51540dee72d8256d1bb8394b3782c856742bfc76141840",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The executor refuses mismatched roots, checker, source-index snapshot or Git candidate tree before checker execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:3e6632523b1607ccdeb53219d45b476502fffb7f2e7b996b1ed6cf93ea63d81f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "200b7755a7cd7b498c952ee1c2cf0d83caa6a7a5",
+            "content": "sha256:4dd6cf9d2677b0693e51540dee72d8256d1bb8394b3782c856742bfc76141840",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The executor delegates to the same-repository citation range-resolution checker.\n\nAnchor: `range_resolution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "318129ad5dc3cef88152c2e954d2efbddb04f122",
+            "content": "sha256:35cc579deac69bf4e27f0b0282fd08094dc99fc1e86e86dc74de75a436b13bfe",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

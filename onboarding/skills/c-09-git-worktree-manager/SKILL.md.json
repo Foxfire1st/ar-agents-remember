@@ -1,0 +1,92 @@
+{
+  "path": "skills/c-09-git-worktree-manager/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical contract-scoped admission and task/queue separation.\n\nAnchor: \"Atomic-series implementation admission is a separate, contract-scoped authority.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:07d0a1f9b62f3472228b098386bf593631716ca922f77c4d558bf0595d49221c",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Resumable retained-conflict transaction and explicit cancellation doctrine.\n\nAnchor: `## Mid-Task Sync`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:6bb20940da2a28d941b98dd945aff8c59ea93b419d4f4824dc4f5d7c3003baca",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact cleanup/finalization boundary.\n\nAnchor: `## Lifecycle Finalization And Cleanup`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 436
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38).\n\nAnchor: \"master lists it, the finalizer always derives that\"; \"assertions are omitted. A sub-task naming none whose folder\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 496
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Public implementation facade preserves the same contract-addressed API.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21969ed5fdd3d0a96855f1d252badef880c5febc",
+            "content": "sha256:263b46b9addc50759981f98b71636c39f48bd59bdaf15b6e5bee6459c680afe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

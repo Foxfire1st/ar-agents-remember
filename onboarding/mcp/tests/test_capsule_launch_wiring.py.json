@@ -1,0 +1,529 @@
+{
+  "path": "mcp/tests/test_capsule_launch_wiring.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The acceptance case for a task-attached seat: the spawn primitive's own argv, the real runner and factory, and the capsule read from the session's own `thread/start`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:95087f358b1ee7c78e6d453fd4f9327cec8d6171b2b443cf1811f4f0829586b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:4615eb17fb5e890f19adfa252c2e16e0e6c79708f0699dcb524ecce7e1ac4212",
+            "locator": {
+              "end": 530,
+              "kind": "line_range",
+              "start": 486
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The spawn side's agreement with its own capsule about the workspace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:091c20add45437449ea6046dceaaf2b79b52687a44d1320b2fdfff2e49270678",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:f2cb9b404b15d8c8f7c2264000d1b7ff9fd28249dc567cb45e5afad6d0dcc6d5",
+            "locator": {
+              "end": 918,
+              "kind": "line_range",
+              "start": 874
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "D13: the registered MCP operation resolves a repository through its declared schema, and a schema losing the field fails the case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:1da30b548faaf479ac900db05bca426b879c58bf5c89fb0d399ebb1fe11c189c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_capsule_operation_resolves_a_repository_through_its_schema"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:09358a5dcd5b067d34dc8d0643d61570bce84a380e4b2af3d84c679e64edb401",
+            "locator": {
+              "end": 1070,
+              "kind": "line_range",
+              "start": 1020
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The free agent's named absence, and the identity that moves with the seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:e4c939bbf5aab6df79375349b3f8c8dd53e7b4ab8926410fc9dc7a925c916cd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_free_agent_admission_names_its_absent_task_plane"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:9de8129c9b08389844caf4d588ecbb84a0e6a691a10fd8bced1a5bc430bb64ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_free_agent_capsule_identity_moves_with_the_seat"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "D20: a refused stage refuses again in the same process, never passing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:73dc8711d02c0517d4b2401ba5633548ded80964b94dee4ffa7a21bdb612e861",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_stage_refuses_again_in_the_same_process"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The two boundary doubles: the vendor-process recorder and the tmux host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:4befe858f166f435d25ed35a5d8c45157a3ff16246b638ac094f2ad3a42df0c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordingTransport"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:3a2c496be7878dd2f1e7391e925a9a0c5bfdff8a920f6f78feffd512715d1e3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FakeHost"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The lane row D9's fail-closed loader requires for every new test module.\n\nAnchor: \"mcp/tests/test_capsule_launch_wiring.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "819c3a7a77b9b9d9bd0e10eea1d58fbc3bbd3782",
+            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The three governed-artifact consumer rows this module added, which re-derived the catalog's byte pin at this leaf's tip without changing the populations.\n\nAnchor: `consumers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e19cee01311b80dc8a806840263da0697707efde",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e19cee01311b80dc8a806840263da0697707efde",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e19cee01311b80dc8a806840263da0697707efde",
+            "content": "sha256:b3a6b5da79b8051abfba35a5a40d6400c0a74b72193c0029c318befedb60d938",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e19cee01311b80dc8a806840263da0697707efde",
+            "content": "sha256:2e156d69bd8743f631d04cf0cc864e81162959227248a282270742be7cf28786",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e19cee01311b80dc8a806840263da0697707efde",
+            "content": "sha256:c3c59085d1d37b63d071e8cba451d96d639ad8a7595c1e0a4c1f2f6f5588cb9e",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The pin is a byte contract at one tip and re-derives again for whoever changes the catalog last.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58f2dda33423171798ccb1bfdb03ce87d38b4202",
+            "content": "sha256:78b38d19c4813bf7d32d06d9323d30a65a37bf7ff643f378803e40eb0a688cf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58f2dda33423171798ccb1bfdb03ce87d38b4202",
+            "content": "sha256:9a063f5ee39fb983276b847588ae23ae168263862e99d9fdc05836c5ae2ce68e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The launch points this module drives, and the modules whose wiring it pins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:a15cb05c65a9a27845e0aa98f9bc734b42c472e8fc5bb1a1344560748a486c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn_agent_session_tool"
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:160a90a082c8c63a6d5ab9a778cd8e4b4ccf67d9f48295e8173882ff617dd393",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_terminal_response"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**Superseded evidence pointer, kept for the record** — `L15`'s round-1 production-chain transcript no longer exists at this path (`citation_source_vanished`; the enclosing `notes/reports/` tree holds only the master's own artifacts, and L15's evidence directory was never carried into this memory repo). The **live** equivalent claimed by the module is `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` below, plus `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace`. Do not re-cite the deleted file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:d721fec7a1ec333e78514ceae21ad3891307bedf01ba514f6870595a2fddb165",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:ff1f83d16983c02fc8fa9ea67c4e02f8bff442e10b38809de01270eb4d8dbd8e",
+            "locator": {
+              "end": 916,
+              "kind": "line_range",
+              "start": 860
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The acceptance case for a free agent with no task document, through the production dashboard route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:e63878f1d8d84c3eb1c8dae92b740660a0be1589c72f3fecc5825b6954d92a25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:c27c4248de50bfbaed35da35e46687e5b46ce3796a2f1ec2be5a857fe9a5e84e",
+            "locator": {
+              "end": 577,
+              "kind": "line_range",
+              "start": 532
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The recorded vendor boundary is the thread-open request, and the capsule travels the instruction field it declares.\n\nAnchor: `developerInstructions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:44f16c658fd259dc2aeff21e221abbb23dfb89a832e2b6af0f2f630d92f825d4",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/serving/capsule_delivery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The negative case: an un-compilable role refuses by name before any host effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:67df6697e853be30ae74d7cc0850e722d8570d04e1c6bd5db614ab67ec12eeba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_uncapsulable_role_refuses_by_name_before_any_host_effect"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one decision point, for every seat class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:c72c9502d044f2b6eaaa075f35dfc113c1de8f6a52be81574a2204811f7fa11a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Behaviour 6 measured as bytes: the capsule-free payload is identical to the pre-capsule one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:c30c7e562d8e99bd332ebe4e4611b825e4ed1aa4a17bb2a98ccb18fc4c6511e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_legacy_launch_payload_is_byte_identical_to_the_pre_capsule_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The single-carrier bound: exactly one `trustedInstructions` key, and no task context in argv. **L11 extends this case with D12's argv bound** — the delivered token is asserted under `ARGV_TOKEN_BOUND_BYTES` and a padded carrier is refused by name, with no argv returned.\n\nAnchor: `ARGV_TOKEN_BOUND_BYTES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:d3fc3cf46298ae7a39a264bf97c8865c9af3e54b5bae652e4fcdd897cf5b071c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_delivered_payload_carries_the_capsule_once_and_no_task_context"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The enumeration case: every production launch site is wired or declares its legacy chain, and the site set cannot change silently.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:ea60cb40eb13c58721fd67eaab4dcc1537ceeca0a55004f8761512b34f86408f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one declared legacy exclusion, named with its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:4fb5039022189714018f9a64b35f23a23dd00d88ddda0f23486bbfd8d804237d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The production-chain eve case: the route's own cwd and env, then the consumer's own gate, then the workspace agreement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:d721fec7a1ec333e78514ceae21ad3891307bedf01ba514f6870595a2fddb165",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:7fa1ad6e111130019f2e0854a22339abaf6d20b87d4f0100da8a55589a90e100",
+            "locator": {
+              "end": 872,
+              "kind": "line_range",
+              "start": 816
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

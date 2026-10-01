@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/agents-md-files/skills/AGENTS.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Core-skill routing maps common memory, retrieval strategy, lifecycle, baseline, and carryover needs to C-* IDs.\n\nAnchor: \"c-08-ar-coordination-context-resolver\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c9c3c74a0988737d030d20487660139d6eae085",
+            "content": "sha256:d0fe2b658da57ff83c32acdd7c7e639800e127c4a400b3211536c5d01cfd2df3",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

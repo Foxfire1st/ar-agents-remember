@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Family and member review of recorded before/after family context.",
+  "conditions": [
+    "The context owner supplies exact selected family revisions and member rows; unchanged carried siblings remain visible."
+  ],
+  "exclusions": [
+    "A partial roster remains partial until its continuation is read; no absent sibling content is invented.",
+    "Displayed context is not an authored assessment or proof that a family guarantee is preserved."
+  ],
+  "id": "INV-H8EM1VJR",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "0517fa51-6723-4bbc-9eec-93df3079c3ba",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The family tree keeps the independently authored guarantee and unchanged member statements beside the selected intent and its bound source expressions.",
+  "status": "proposed",
+  "supersedes": []
+}

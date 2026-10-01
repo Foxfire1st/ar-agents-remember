@@ -1,0 +1,144 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/lineages.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The one composition edge statement, scoped by `repository_id` alone and copied into the shape the shared rule reads.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d0721f5eea95e5adfaf6a99a644dc704be8d2f",
+            "content": "sha256:90e670e96d63f58d9bb378ee35b721e4907d513bd803ed88a9325942a3ccc671",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COMPOSITION_EDGES_SQL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The edge supplier: it reads the composition table alone and cannot synthesise an edge from a label, a path or prose.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d0721f5eea95e5adfaf6a99a644dc704be8d2f",
+            "content": "sha256:c957734d720c23362e115b08779345625af69b921711c0a83b7bc2c0e16390a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "composition_edges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one declared-cycle rule the composition graph is judged by, rather than a second rule grown beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:6f9e7e0d842d124be81b6a9e58c3194d454c07d758bcd2b7fb8fb529dfb0c163",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_cycle"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The walk both check levels call, including the branch where a candidate descends from a stored cycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:03ffb7994e450f5d0f5321092035d4a276824955e911a7aa51f02c28f976bce9",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_cycle"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The cycle-membership read the second branch reports through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:d1db378bd4e8db580e661a4979fc83bf080ab5c08a30769dc02950c21203bb8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "cycle_vertices"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The case that proves the composition graph is judged at both check levels and rolls back with its ids named.**\n\nAnchor: \"test_one_shared_rule_judges_the_composition_graph_at_both_check_levels\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:7e16e5a80cae41db16d0f171e746882d613543539fa20c0d5951ea0485e450fc",
+            "locator": {
+              "end": 925,
+              "kind": "line_range",
+              "start": 925
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The case that proves the shared rule's second branch applies uniformly to the cross-family graph.**\n\nAnchor: \"test_the_shared_rules_second_branch_applies_uniformly_to_the_cross_family_graph\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:08db52a070716b45721288b949d724fa162b7ba60c158e613e41a63c54b81f9f",
+            "locator": {
+              "end": 969,
+              "kind": "line_range",
+              "start": 969
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The case that asserts no second cycle implementation and no recursive CTE exists.**\n\nAnchor: \"test_no_second_cycle_implementation_exists_beside_the_shared_rule\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e27620631ca19069cf4b13ea518fac3d4d6667e",
+            "content": "sha256:7cfb7f7a7912f47681deb0d90fb41ff192a8363b8279263b53e7f7b8f5b08af1",
+            "locator": {
+              "end": 1005,
+              "kind": "line_range",
+              "start": 1005
+            },
+            "path": "mcp/tests/test_knowledge_family_composition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

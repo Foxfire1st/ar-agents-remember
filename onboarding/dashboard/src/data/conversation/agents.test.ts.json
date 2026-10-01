@@ -1,0 +1,88 @@
+{
+  "path": "dashboard/src/data/conversation/agents.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The roster/focus module under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:78167f586ca4902fddc4ae1094fbf1b96890660e786a6765714b30a8af3c5be2",
+            "locator": {
+              "kind": "symbol",
+              "name": "deriveAgents"
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store whose `agentFocusBySession`/`evict`/`reset` the store-level cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0179eeb6f990fe3a101133c1cd0c8176781d08fe",
+            "content": "sha256:9f65f40c5b80f7a3d7d0f13f7e187570f4d64ef3ca7ecb8ac55718294b0d6dc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "setAgentFocus"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0179eeb6f990fe3a101133c1cd0c8176781d08fe",
+            "content": "sha256:d037e4552fa7cf218e1a4cccd4ecd283de02f3d54abaa5d25eca4bb9e551eb22",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `emptyProjection` helper used to seed an evictable projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67a78e47336930a6df8beef45fb278c87f1f44b0",
+            "content": "sha256:1e072037cbefaf5582fc3c69b898e8ffd03f852bde7e70de545499ad32d332cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "emptyProjection"
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The wire types the fixtures build (`ConversationAgentRef`, `ConversationItem`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:73df6d19d3c7609687b644bc7aa91c01a94bf40a4a32af546ee9bcc2875442d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationAgentRef"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

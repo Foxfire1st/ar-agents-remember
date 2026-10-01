@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/review/subjectReview.invariant.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case or fixture preserves its own selected input.\n\nAnchor: \"revision_selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca6e4258c6d1dc7a2862f9b52f439b2c9584e006",
+            "content": "sha256:9f14e925c341258086d56ccaf04cd8bdb7e479b4445c14dbe90f1e7ccdec466a",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The member sources carry their structured locator state as the route emits it.\n\nAnchor: \"locator_state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca6e4258c6d1dc7a2862f9b52f439b2c9584e006",
+            "content": "sha256:71926526671d2a6b1ea63650cee02c12493435a396533a2fd1c49a8772a0d7c6",
+            "locator": {
+              "end": 3003,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The receipt row naming this body's re-capture command, source tree and requests.\n\nAnchor: \"subjectReview.invariant.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d698a1feb30972c1ad39b0ab6859cb9f1832ec4d",
+            "content": "sha256:6f65d6086bbb29a790c80bac72eb31d17a7b242d0097bfac9f46f53595bebd50",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/panels/review/subjectReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

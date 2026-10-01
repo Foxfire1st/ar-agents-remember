@@ -1,0 +1,284 @@
+{
+  "path": "mcp/src/agents_remember/observer/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The route this package exposes.\n\nAnchor: `# mcp/src/agents_remember/observer/ — Observable-Lifecycle Substrate And Projection Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/observer/overview.md:1-1042"
+        }
+      ]
+    },
+    "2": {
+      "note": "The ambient lifecycle singleton re-exported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:d2eeec1c8c6e6fc8d9c8da84dbeb2175f828aa0fb955a2c168655a003b1c47d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AmbientLifecycle"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:dddaf894b6f57492fd9c15c2de513cceb7ca19e205b3f76a37830341b2a5ca7c",
+            "locator": {
+              "end": 594,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The state vocabulary re-exported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:68300b739da1927db29cec45b98779726e7acc34b5ab1a6256f0a9bc79d96672",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleState"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The projection schema re-exported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:29369c7f281ea735b666465ebd37c9ad86671cdd5ddb29586da7d6e7c8fc604f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleProjection"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:233278bded72d6c670eec854b0de78fb37b977537eb68ce360bf1db37fac8d0b",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reducer functions re-exported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:ee007ae986db048bb8506c817ea9a73f2265c6d546027d4c07d8621d1a03f7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_lifecycle"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:ab83c116c74db2528abf18cf5a30e3d951b0708fab08914b7e32c3bfd0eb770b",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_workspace"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:1af8dd9600c20c20c4873f295e1b108fbb6d6a8cf5c3337ddcb479a1ca2bb265",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:6f42dd9b6382bf7482a850fc3dafd63996fb0c0f3ae495249ffcfc414d3790b0",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared store-root resolver re-exported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:e480f569304f8192087d573b7bb07fc208c8a458bbfd6cde0184b341edb758a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "observer_root"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:1c92ddd1107a8c2abf728dacfe91796645a8a4da9ede40a454c9900431fd2480",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The timing config + age helper now sourced here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9da3bf265e34b2b14caff3d4f834635c3ee55f3",
+            "content": "sha256:52c1c779f9509dbee75721dac2f08957e66c4a132a86f885ddce3a6085590f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "HEARTBEAT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/observer/timeutil.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9da3bf265e34b2b14caff3d4f834635c3ee55f3",
+            "content": "sha256:3810571c495a9d12911e78ba5ef66fc32c995c14c188597b20593aa5c97e75fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_AFTER_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/observer/timeutil.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9da3bf265e34b2b14caff3d4f834635c3ee55f3",
+            "content": "sha256:1a2a3fb162bf97300b7841f15d7f3f5d1be437b096886c0909abe4a78394f8a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TTL_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/observer/timeutil.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9da3bf265e34b2b14caff3d4f834635c3ee55f3",
+            "content": "sha256:dafaef05df0891e675bc913f743304fddfcaa9b989e5a8ac90bed8c1d3b71dec",
+            "locator": {
+              "kind": "symbol",
+              "name": "Clock"
+            },
+            "path": "mcp/src/agents_remember/observer/timeutil.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The served-onboarding ledger re-exported here (`ServedStore`/`ServedRecord`/`served_key`/`SERVED_RECORD_SCHEMA`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "content": "sha256:857300ce08b97b2670b6396a264f03bb281d1fce3f315f3ca51dc56ef3ae3099",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedStore"
+            },
+            "path": "mcp/src/agents_remember/observer/served_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "content": "sha256:454676e6ba10ca5dd14b876ff480c29989c9c87c8397307b8e3e9336363686d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedRecord"
+            },
+            "path": "mcp/src/agents_remember/observer/served_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "content": "sha256:210ab313df8309e8045d0942cda2d11423f682faf50ce18a7173c97125dce7ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_key"
+            },
+            "path": "mcp/src/agents_remember/observer/served_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23889f280dd2300d1320bda5940aa39dc264c4df",
+            "content": "sha256:384fa3f4f3d9ce72c9dabb2eabee14c4ee0acd4ca845d44217eb13826b438ea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_RECORD_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/observer/served_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

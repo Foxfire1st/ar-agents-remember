@@ -1,15 +1,5 @@
 # mcp/tests/test_unexplained_change_disposition.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_unexplained_change_disposition.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -74,46 +64,34 @@ checks that the stored-item predicate the gate uses (`unexplained_item_open`) ag
   delete-only hunk takes only a disposition; `no_invariant` answers only covered items; and the stored
   predicate agrees with `satisfiedBy`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R10@v2` of task `260928_maintained-invariant-knowledge`, outside the code and memory repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: the reused worklist world and the predicate check. | "every unexplained change needs an authored disposition" | mcp/tests/test_unexplained_change_disposition.py:1-8 |
-| The items, checked against the gate's predicate. | `unexplained` | mcp/tests/test_unexplained_change_disposition.py:82-91 |
-| Registration and the row model's refusals. | `test_the_kinds_are_registered_and_no_invariant_is_the_only_row_disposition` | mcp/tests/test_unexplained_change_disposition.py:161-181 |
-| Coverage by entries or the latest census status. | `test_coverage_is_entries_in_k_b_or_the_latest_census_status_of_the_governing_route` | mcp/tests/test_unexplained_change_disposition.py:222-271 |
-| The three answers of a covered hunk; never onboarding. | `test_a_covered_hunk_is_answered_by_no_invariant_attach_or_author_and_never_by_onboarding` | mcp/tests/test_unexplained_change_disposition.py:279-328 |
-| Delete-only: only no_invariant. | `test_a_delete_only_hunk_admits_only_no_invariant` | mcp/tests/test_unexplained_change_disposition.py:331-347 |
-| Non-text changes bound to the C blob. | `test_a_non_text_change_opens_a_file_item_bound_to_its_c_blob` | mcp/tests/test_unexplained_change_disposition.py:355-374 |
-| An edit elsewhere never reopens. | `test_an_edit_elsewhere_in_the_file_never_reopens_an_answered_item` | mcp/tests/test_unexplained_change_disposition.py:377-395 |
-| Symlink, deleted binary and uncovered deletion (review N6). | `test_symlinks_deleted_non_text_and_uncovered_deletions_take_their_own_records` | mcp/tests/test_unexplained_change_disposition.py:398-455 |
-| An uncovered new file and its onboarding trace. | `test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace` | mcp/tests/test_unexplained_change_disposition.py:463-505 |
-| The writer's refusals, including a retired invariant. | `test_the_writer_refuses_what_the_packet_refuses` | mcp/tests/test_unexplained_change_disposition.py:513-537 |
-| An answering onboarding row is not unnecessary (Q3). | `test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary` | mcp/tests/test_unexplained_change_disposition.py:540-579 |
-| The unit-lane row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/test-evidence-lanes.toml:130-130 |
-| The catalog consumer row. | "mcp/tests/test_unexplained_change_disposition.py" | mcp/tests/evidence-lifecycle.toml:837-837 |
+- The module docstring: the reused worklist world and the predicate check. [1]
+- The items, checked against the gate's predicate. [2]
+- Registration and the row model's refusals. [3]
+- Coverage by entries or the latest census status. [4]
+- The three answers of a covered hunk; never onboarding. [5]
+- Delete-only: only no_invariant. [6]
+- Non-text changes bound to the C blob. [7]
+- An edit elsewhere never reopens. [8]
+- Symlink, deleted binary and uncovered deletion (review N6). [9]
+- An uncovered new file and its onboarding trace. [10]
+- The writer's refusals, including a retired invariant. [11]
+- An answering onboarding row is not unnecessary (Q3). [12]
+- The unit-lane row. [13]
+- The catalog consumer row. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the cases build their own temporary code and memory repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 2 row(s) re-pointed by the installed fixer (its generated bullets kept). The fixer's normalisation also re-measured ranges into files this leaf did not change (`evidence-lifecycle.toml`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:33:25+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/test-evidence-lanes.toml:130-130. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:33:25+00:00: Generated citation repair: "mcp/tests/test_unexplained_change_disposition.py" repointed to mcp/tests/evidence-lifecycle.toml:837-837. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T04:41:36+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): created this card for the new test module (10 cases), including the review N2 assertion and the N6 case, and recording reviewer R2-1. The verification stamp is left empty: the file is new and uncommitted, so closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

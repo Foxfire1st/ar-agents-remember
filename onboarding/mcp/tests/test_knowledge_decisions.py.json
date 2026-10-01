@@ -1,0 +1,234 @@
+{
+  "path": "mcp/tests/test_knowledge_decisions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The packet's D12 and D18 as decision documents, and the assumption they reopen on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:00ebfcee027b5a13425349e563e4eb4eed44909fde34452e8580107907372ffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_d12"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:bd22a9da07be576c32343674a7d6a00c9357bd032c8d906b47e7a250c6da4c77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_d18"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:065d856d8795d7dff4b4e4fbc1e5f4d9784f5e86625b5711508846cf69aa52ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assumption"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Requirement endpoints resolve through the owner and never refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:e6da3ab34e59a129b755374a77b7dd28270b5ae8ed3ce4ca0a73c1fd5ef0adaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_requirement_endpoints_resolve_through_the_owner_and_never_refuse"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A decision is never an export (review F6).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:0a49ae753910a15eea88f7e1ad72cb65d068f2edcb877f9afde23cbd83ecad1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_is_never_an_export_so_a_legacy_id_exempts_it_from_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_knowledge_decisions.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:fde5414644db933687ef3dc92a72c705e41bb48100b4411cf4d910e62dc8d752",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A converted tree with the given decisions, validated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:8ca1c16f904b474c9481ba98ccd2d07ac4555eabba21c2a3526f25555baf0896",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:2d94b08d2a2b2a80c9e0ad3a7e8da0320fb1deee3e4d020e07e22ebef48d75aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Both examples pass every rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:4ca001d21db856acaeb71d219ae6306b8f3379f4e9bf647a28366984dd60f935",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_packets_d12_and_d18_decisions_pass_every_rule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Alternative counts and the one chosen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:041a6d92c7d147c1a67c8f95d7fb456e39ab4db112da44404a043aa12cc23a54",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_alternative_counts_and_the_one_chosen_are_refused_by_rule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A rejected or deferred alternative without `reconsider_when`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:efd6c9246d5e4a38b137ac25cc13448f9f777da4a1673f8d4f559b70a8429169",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rejected_or_deferred_alternative_without_reconsider_when_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A stored superseded, named by field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:a7b0cad4363419264b237210ab46870b3c4e50c802b0b7338e2ccafd6189e8ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stored_superseded_status_is_refused_naming_the_field"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`reconsider_on` must name an existing rejected or deferred alternative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:31668923be8e9b0770c4d48f1ef6790e80c28d93e625f0e010642699ff2eb409",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reconsider_on_names_an_existing_rejected_or_deferred_alternative"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A decision that governs nothing is reported, not refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:1f95c5a197cca2cdba9f97e24e1289f0e89c5116165e336d554d96900271bfbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_that_governs_nothing_is_reported_not_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Superseded is derived; reconsider links carry their subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:df56f45608267caeb19b619e646a0d07657c6a25fa065328de66c332cfe3edd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_superseded_is_derived_and_reconsider_links_carry_their_subject"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

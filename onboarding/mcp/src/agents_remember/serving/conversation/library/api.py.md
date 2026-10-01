@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/library/api.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/library/api.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T09:18+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Native conversation library overview](overview.md)
@@ -100,37 +90,30 @@ clamp through one bounded rule (default 50, max 100).
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal route module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The ASGI suite drives these routes through the real FastAPI composition with a loopback peer;
 the foundation pin asserts exactly this five-route surface; the parent contract owns the wire
 models these handlers serialize.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-
 
 | The L0 request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`, `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
 | The eight-member `outcome` `Literal` that `_OPEN_STATUS_BY_OUTCOME` must stay total over. | ["class OpenConversationOperation(WireModel):"] | mcp/src/agents_remember/models/conversations/opening.py:16-16 |
 | The `LIBRARY_RESPONSES` and `OPEN_OUTCOME_RESPONSES` tables these routes declare, and the dict-merge rule that makes the outcome table union in each refusal model. | `LIBRARY_RESPONSES`; `OPEN_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:125-135; mcp/src/agents_remember/serving/conversation/response_contract.py:178-198 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local route module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -140,31 +123,3 @@ body is unchanged; `_launch_context(body)` still assembles the launch context. S
 [open_service.py](open_service.py.md) for why the four form one fingerprinted value.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Replaced the conversation-open leaf launch key with canonical
-  task-document identity while preserving the strict request and typed-outcome contract.
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 6 repository-internal reference rows for the route tests, foundation seam, request dependencies, outcome literal, and conformance suite; final scoped result 0 (checker-clean).
-
-- 2026-08-01T09:18+02:00 — 260731-EFA-L4 curator: recorded the five `response_model`
-  declarations with their lines, the `LIBRARY_RESPONSES` table (a transcription of
-  `_ERROR_STATUS_TABLE` plus the `LibraryCapabilityError` 422 branch), and the two-family answer
-  on the open trio — `_OPEN_STATUS_BY_OUTCOME` picks the status off the operation's own outcome
-  and the body IS that operation, while `_error_response` still answers the same statuses with
-  refusals, so `OPEN_OUTCOME_RESPONSES` must UNION the refusal member into each overlapping
-  status because `{**a, **b}` is a dict merge. Recorded the removal of `_open_call`'s
-  `.get(..., 500)` fallback: cit:([`_OPEN_STATUS_BY_OUTCOME`], mcp/src/agents_remember/serving/conversation/library/api.py:75-84) is now indexed directly and is
-  total over the eight-member `outcome` `Literal` cit:(["class OpenConversationOperation(WireModel):"], mcp/src/agents_remember/models/conversations/opening.py:16-16), so a ninth outcome is
-  a loud `KeyError` instead of a silent, undeclared, undrivable 500 carrying a full operation
-  body. Corrected the Logic sentence about the outcome table and added both as invariants.
-  Verification metadata pinned until closeout stamps the L4 commit.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `OpenRequest` call shape (wire body unchanged).
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: rewrote the route-shell sidecar for the
-  implemented leaf — five routes, strict request models, the outcome→status table, and the
-  subclass-before-base O4 error ladder — and re-pointed the governing overview to the new
-  library route overview. Verification stays pinned at the L9 shell commit until closeout
-  stamps the candidate commit.
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the native-library route-shell
-  sidecar. Verification is blank until closeout commits and stamps the new source.

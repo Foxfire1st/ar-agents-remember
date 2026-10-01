@@ -1,15 +1,5 @@
 # dashboard/src/dev/mockTerminalSocket.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/dev/mockTerminalSocket.ts`        |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `e3f94568a0f5f78efc5ce7c26d94e6d103caae5f`       |
-| lastVerifiedCommitDate | 2026-07-18T07:47:42+02:00|
-| governingOverview      | `../overview.md`                                |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -37,22 +27,27 @@ DEV-only — `/dev/*` is dropped from the production bundle, so this never ships
 context provider and uses a real same-origin socket. It emulates only enough of the wire (binary
 echo + a banner) to exercise xterm rendering + resize, not a real shell.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The client contract this fakes (the socket surface + frame shapes). | `TerminalSocketFactory` | dashboard/src/data/terminal.ts:46-46 |
-| The bench that provides this via context. | `Bench` | dashboard/src/dev/Bench.tsx:18-83 |
+- The client contract this fakes (the socket surface + frame shapes). [1]
+- The bench that provides this via context. [2]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -60,21 +55,3 @@ The mock socket can emit open, suppress its banner, or drop after opening. Close
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 2 citation claims; scoped recheck clean (0 findings).
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-06-18T16:50 — Created for task 6 slice 6e-1: the dev mock terminal socket (banner + stdin echo + resize ack) so the Chats view renders without a backend. Verification metadata pinned to the task base until closeout stamps the 6e-1 code commit.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/role_capsule_resources.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/role_capsule_resources.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [models overview](overview.md)
@@ -80,55 +70,30 @@ validation rather than misleading a consumer.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The extension's security posture is the source of the trust field's fixed value and of the
 recorded-not-applied tool declaration.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A declared tool set is an observation, never a permission channel. | `declared_allowed_tools` | mcp/src/agents_remember/models/skill_resources.py:270-285 |
-| The per-read provenance block whose trust statement is a fixed string. | `skill_meta` | mcp/src/agents_remember/models/skill_resources.py:253-267 |
+- A declared tool set is an observation, never a permission channel. [1]
+- The per-read provenance block whose trust statement is a fixed string. [2]
 
 Canonical live reference: <https://github.com/modelcontextprotocol/modelcontextprotocol> (the skills
 extension specification, SEP-2640).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The capsule envelope: required explanation, optional identity/provenance, and the refusal fields. | `RoleCapsuleResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:86-115 |
-| The nested capsule payloads, one per fact family. | `CapsuleInstructionBlockPayload`; `CapsuleSkillReferencePayload`; `CapsuleRequestedToolPayload`; `CapsuleTaskContextPayload`; `CapsuleSourceRecordPayload` | mcp/src/agents_remember/models/role_capsule_resources.py:35-44; mcp/src/agents_remember/models/role_capsule_resources.py:47-53; mcp/src/agents_remember/models/role_capsule_resources.py:56-60; mcp/src/agents_remember/models/role_capsule_resources.py:63-69; mcp/src/agents_remember/models/role_capsule_resources.py:72-83 |
-| The listing carries relative file names and no content; the read carries two distinct revisions. | `SkillCatalogEntryPayload`; `SkillCatalogListResponse`; `SkillCatalogReadResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:118-127; mcp/src/agents_remember/models/role_capsule_resources.py:137-150; mcp/src/agents_remember/models/role_capsule_resources.py:153-167 |
-| The constant trust statement every served file declares. | `SERVER_SUPPLIED_CONTENT_TRUST` | mcp/src/agents_remember/models/role_capsule_resources.py:32-32 |
-| The registry rows that make these three names returnable. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:155-239 |
-| The builder that fills these contracts from owner-produced values only. | `role_capsule_response`; `_fill_manifest` | mcp/src/agents_remember/application/skill_resources/responses.py:34-55; mcp/src/agents_remember/application/skill_resources/responses.py:58-119 |
-| The requested-versus-granted boundary the compiler narrows against: the policy type is declared in the `models` leaf, and the operation snapshots the published roster into it. | `CapsuleToolPolicy`; `admitted_tool_policy` | mcp/src/agents_remember/models/role_capsules/types.py:182-182; mcp/src/agents_remember/application/skill_resources/capsule.py:394-409; mcp/src/agents_remember/application/skill_resources/capsule.py:446-461 |
-| The case that executes the no-grant guarantee on a served skill's declared tools. | `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names` | mcp/tests/test_capsule_serving.py:811-845 |
+- The capsule envelope: required explanation, optional identity/provenance, and the refusal fields. [3]
+- The nested capsule payloads, one per fact family. [4]
+- The listing carries relative file names and no content; the read carries two distinct revisions. [5]
+- The constant trust statement every served file declares. [6]
+- The registry rows that make these three names returnable. [7]
+- The builder that fills these contracts from owner-produced values only. [8]
+- The requested-versus-granted boundary the compiler narrows against: the policy type is declared in the `models` leaf, and the operation snapshots the published roster into it. [9]
+- The case that executes the no-grant guarantee on a served skill's declared tools. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-16T10:41:01+00:00: Generated citation repair: `skill_meta` repointed to mcp/src/agents_remember/models/skill_resources.py:253-267. No content impact: mechanical anchor-range projection bound to citation source snapshot d000fd9192b3f076fd4f39e5e775a368dd70d71b172c679cb9d28176bdc33096; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-16T10:41:01+00:00: Generated citation repair: `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names` repointed to mcp/tests/test_capsule_serving.py:811-845. No content impact: mechanical anchor-range projection bound to citation source snapshot d000fd9192b3f076fd4f39e5e775a368dd70d71b172c679cb9d28176bdc33096; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: citation work on this document,
-  scoped to it alone (`citation_fix --document mcp/src/agents_remember/models/role_capsule_resources.py.md`).
-  Two generated repairs landed: `skill_meta` repointed to `models/skill_resources.py:253-267` and
-  `test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names` to
-  `mcp/tests/test_capsule_serving.py:811-845` (the repairs moved it). The tool then **declined two rows
-  as `anchor_ambiguous` rather than guessing**, and I resolved both by reading the candidates:
-  `declared_allowed_tools` repointed from `219-234` to the **function** at `270-285` (the other candidate
-  is the unrelated `SkillResourceEntry` field at `:96`), and the policy row's `CapsuleToolPolicy` anchor
-  corrected to its actual declaration in `models/role_capsules/types.py:182` — it was never declared in
-  `capsule.py`, where the row had cited it. Verification metadata remains closeout-owned; no acceptance
-  claim is made.
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator: created the card for the capsule and skill wire
-  contracts. Recorded the shared refusal/success envelope, the deliberate
-  requestedTools-versus-grantedTools split that makes the compiler's narrowing auditable, the constant
-  trust field, the observed-never-applied declared tool list, and the two distinct revision fields on a
-  served file. Verification metadata remains closeout-owned; no acceptance claim is made.

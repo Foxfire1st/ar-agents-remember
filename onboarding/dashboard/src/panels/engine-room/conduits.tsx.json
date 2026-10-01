@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/engine-room/conduits.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The per-edge conduit renderer with replay/ghost handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "locator": {
+              "kind": "symbol",
+              "name": "Conduit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The landing-tier flow renderer and its ref resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:98598c934f80c1305d7d7d1680010aaca0134918246c4aed9fe3d2c98ac8ffde",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingFlows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

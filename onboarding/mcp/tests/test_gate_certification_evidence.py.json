@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_gate_certification_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Arrange.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a6418c835a89da50366c18015d9b262427bd3c",
+            "content": "sha256:815ebcad0ee2e1c027f701f017b6cb0a7acfe92ba74165cffcf01aad127f9d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_arrange"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publish.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a6418c835a89da50366c18015d9b262427bd3c",
+            "content": "sha256:508e9ef24fefc85e3dcedd2a52fd7442bf510de21729ab99752c697d087edbcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a6418c835a89da50366c18015d9b262427bd3c",
+            "content": "sha256:323fc6cfebb16cccfd65a5b5be7ad6f0c254193ac55d4cce0053c826950049a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

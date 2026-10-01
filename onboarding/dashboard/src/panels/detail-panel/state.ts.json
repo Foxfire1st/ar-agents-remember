@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/detail-panel/state.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The state hook and its pure resolvers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:834b1bcd0d244fc6aec23928628d52d475ea02470ed734bb80224b7de4fe3be4",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDetailPanelState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:0394f2a477d477cc2191b648c89ee0a8d42d917ba423af3e201f788b44689d8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveSelectedTaskDoc"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:0af1a93793933d803801952edaddcd6f9c03d9db77459d0302628702dd6babd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveViewedLeafKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,59 @@
+{
+  "path": "scripts/harness/shared/render-starter.sh",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generator that fans this file out verbatim to all eight starter packages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:1558c093be0e087e187b21ff6e42f2a7cdbda8555d6072199861142e5160295b",
+            "locator": {
+              "kind": "symbol",
+              "name": "generated_files"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The program this script launches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48702d860710153a5eceeaead202c3492b62aeb9",
+            "content": "sha256:93045a2273d7cf473e81a8519aaaf8da516b64337feb2865565180be0bc6a768",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/harness/render_starter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The PowerShell counterpart.\n\nAnchor: \"render-starter.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f1bcb96cd1a7f67dc2b62566459540ea2d53b74",
+            "content": "sha256:2c41aab4a23dcde927b4845140f90b3d52608ae62d3d80ef8452e455e3c067e9",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "scripts/harness/shared/render-starter.ps1"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

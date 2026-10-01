@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_index_surfaces.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_index_surfaces.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -27,6 +17,10 @@
 - **Mounted tools:** a read by root and by the `knowledge.sqlite` spelling returns a family view with `memoryTree` and writes exactly one cache file named by the key, and is refused without a coordination root; diff between two tree directories names both sides in `memoryTrees` and project publishes with `memoryTree`; an unconverted selection gets today's `selected_input_unavailable` with no `memoryTree` and no cache.
 - **Partial and unbuildable:** every surface reports a partial index as incomplete (read: `completeWithinDeclaredScope`, the payload's completeness and `indexComplete` all `false`; diff and project: `indexComplete: false`), with a complete control; with the coordination root pointing at a file, diff and project return `state: refused` rather than raising.
 - **Preservation:** a store-authored `knowledge.sqlite` in an unconverted Git root reads identically with and without a coordination root, with no new fields and no cache directory.
+- **L37 (P2 task 4).** `test_a_converted_tree_refuses_a_seed_it_does_not_hold_and_a_database_read_is_unchanged`:
+  on a converted tree a database-era UUID, a bare `INV-…`, a family UUID and an unheld family are each refused
+  `selector_absent`, naming where seeds come from, for `knowledge_read` and for the view seeds of
+  `knowledge_project`; a database read with an unknown seed is still `view` and complete.
 
 ### Conventions
 
@@ -40,7 +34,9 @@
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The index's design authority is the coordination-root note Doc14
@@ -48,34 +44,23 @@ No domain documentation source is configured for this repository (`system/source
 packet `MIK-R23@v1` of task `260928_maintained-invariant-knowledge`; both live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The registered scope over the index equals the scope over the database. | `test_the_registered_scope_constructs_the_same_scope_over_the_index` | mcp/tests/test_knowledge_index_surfaces.py:147-230 |
-| Retired records are never live. | `test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired`; `test_a_retired_family_is_never_selected_as_live` | mcp/tests/test_knowledge_index_surfaces.py:243-278; mcp/tests/test_knowledge_index_surfaces.py:392-415 |
-| The mounted tools over converted and unconverted selections. | `test_knowledge_read_resolves_a_converted_memory_tree_through_its_index`; `test_knowledge_diff_and_project_resolve_converted_trees`; `test_an_unconverted_selection_keeps_the_database_path` | mcp/tests/test_knowledge_index_surfaces.py:292-316; mcp/tests/test_knowledge_index_surfaces.py:319-369; mcp/tests/test_knowledge_index_surfaces.py:372-385 |
-| Partial and unbuildable indexes on every surface. | `test_every_tool_surface_reports_a_partial_index_as_incomplete`; `test_an_unbuildable_index_is_refused_not_raised` | mcp/tests/test_knowledge_index_surfaces.py:427-490; mcp/tests/test_knowledge_index_surfaces.py:496-525 |
-| A real database in an unconverted root reads identically. | `test_a_real_database_in_an_unconverted_root_reads_identically` | mcp/tests/test_knowledge_index_surfaces.py:531-553 |
-| The lane row. | "mcp/tests/test_knowledge_index_surfaces.py" | mcp/tests/test-evidence-lanes.toml:107-107 |
+- The registered scope over the index equals the scope over the database. [1]
+- Retired records are never live. [2]
+- The mounted tools over converted and unconverted selections. [3]
+- Partial and unbuildable indexes on every surface. [4]
+- A real database in an unconverted root reads identically. [5]
+- The lane row. [6]
 
-## Cross-Repo References
+- A converted tree refuses a seed it does not hold, and a database read is unchanged. [7]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: every case builds its own repository under `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 2 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_knowledge_index_surfaces.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:28:16+00:00: Generated citation repair: "mcp/tests/test_knowledge_index_surfaces.py" repointed to mcp/tests/test-evidence-lanes.toml:107-107. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): created this card for the new file MIK-R23 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

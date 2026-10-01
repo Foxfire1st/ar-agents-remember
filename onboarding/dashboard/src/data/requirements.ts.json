@@ -1,0 +1,115 @@
+{
+  "path": "dashboard/src/data/requirements.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared JSON transport and query-string helper the client is built on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
+            "locator": {
+              "kind": "symbol",
+              "name": "getJson"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:11bda74086b107d0f8086147192b1bb72ed321ba4a7307b33e0cba67e2a3ad2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "qs"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The listing and content shapes this client returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6804a766caa5f3a903d673cff23f59847af2df0b",
+            "content": "sha256:e112adc586d3558978291d50e7aeb379c25bc0ca8b91c603de4f41c8c53d1b35",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementsListing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6804a766caa5f3a903d673cff23f59847af2df0b",
+            "content": "sha256:df7afd337f8b3215b49049f791c1bea50ff61c4026e2f307b056b69e0409ad51",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementContent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The server surface behind the two endpoints (task-context root selection + packet walk).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b85a3a02973b34672c800d8f87ddcf93e990c245",
+            "content": "sha256:0859a8d583478a30f9f40020480edb0b8a074646d79ddf5825d3b47b658b0456",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_requirements_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/requirements.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The grammar provider that supplies the registered-packet listing to Markdown/TaskNotes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47d88d92d0296e82d057a3746ef8baa8ce3ebdb2",
+            "content": "sha256:7170f5cce3413e4ead9a49997bfa769faece56320c2607cb0ba0c0e52ff6a464",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRequirementLinksProvider"
+            },
+            "path": "dashboard/src/grammar/TaskRequirementLinks.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The client test suite.\n\nAnchor: \"data/requirements client\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c15572499d1e541df7bdc7d6bf39923b7857ed5e",
+            "content": "sha256:e56f7acdec04852e1f3bf2eb2c08c2a7a85a2540adad018e96e1904a051cf6f6",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/data/requirements.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

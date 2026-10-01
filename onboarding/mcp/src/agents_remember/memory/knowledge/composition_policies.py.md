@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/composition_policies.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/composition_policies.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:12+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -81,48 +71,31 @@ this module says so rather than supplying one.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The version write: identity first if new, then the sealed version row. | `insert_policy_version` | mcp/src/agents_remember/memory/knowledge/composition_policies.py:87-87 |
-| The version read addressed by the immutable row identity. | `get_policy_version` | mcp/src/agents_remember/memory/knowledge/composition_policies.py:162-162 |
-| The version list ordered by the author's own version spelling. | `list_policy_versions` | mcp/src/agents_remember/memory/knowledge/composition_policies.py:187-187 |
-| **The resolution that refuses an unknown identity and an unknown version of a known identity as two different facts, and never resolves to a default.** | `require_declared_policy` | mcp/src/agents_remember/memory/knowledge/composition_policies.py:200-200 |
-| The policy-identity triple a traversal's result carries. | `policy_identity` | mcp/src/agents_remember/memory/knowledge/composition_policies.py:81-81 |
-| **The value-boundary half of the two-place validation, where a half-declared policy is refused before it can reach a store.** | `FamilyCompositionPolicyDraft` | mcp/src/agents_remember/models/knowledge/composition.py:83-83 |
-| **The one registered scope a policy may widen, and nothing else.** | `REGISTERED_REVIEW_SCOPE` | mcp/src/agents_remember/models/knowledge/composition.py:45-45 |
-| The closed direction vocabulary, which is a rule rather than a hint: it decides which endpoints a traversal may step through. | `FOLLOW_DIRECTIONS` | mcp/src/agents_remember/models/knowledge/composition.py:51-51 |
-| **The case that proves an undeclared policy reference is refused and no row is written.** | "test_an_undeclared_policy_reference_is_refused_and_no_row_is_written" | mcp/tests/test_knowledge_family_composition.py:479-479 |
-| **The case that proves an edge with no declared policy is stored, readable and not traversable — the default is off.** | "test_an_edge_with_no_declared_policy_is_stored_readable_and_not_traversable" | mcp/tests/test_knowledge_family_composition.py:453-453 |
-| The case that proves an unknown, a malformed and a not-permitted policy are each refused by name. | "test_an_unknown_a_malformed_and_a_not_permitted_policy_are_each_refused_by_name" | mcp/tests/test_knowledge_family_composition_boundaries.py:335-335 |
+- The version write: identity first if new, then the sealed version row. [1]
+- The version read addressed by the immutable row identity. [2]
+- The version list ordered by the author's own version spelling. [3]
+- **The resolution that refuses an unknown identity and an unknown version of a known identity as two different facts, and never resolves to a default.** [4]
+- The policy-identity triple a traversal's result carries. [5]
+- **The value-boundary half of the two-place validation, where a half-declared policy is refused before it can reach a store.** [6]
+- **The one registered scope a policy may widen, and nothing else.** [7]
+- The closed direction vocabulary, which is a rule rather than a hint: it decides which endpoints a traversal may step through. [8]
+- **The case that proves an undeclared policy reference is refused and no row is written.** [9]
+- **The case that proves an edge with no declared policy is stored, readable and not traversable — the default is off.** [10]
+- The case that proves an unknown, a malformed and a not-permitted policy are each refused by name. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_an_undeclared_policy_reference_is_refused_and_no_row_is_written" repointed to mcp/tests/test_knowledge_family_composition.py:479-479. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_an_edge_with_no_declared_policy_is_stored_readable_and_not_traversable" repointed to mcp/tests/test_knowledge_family_composition.py:453-453. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "test_an_unknown_a_malformed_and_a_not_permitted_policy_are_each_refused_by_name" repointed to mcp/tests/test_knowledge_family_composition_boundaries.py:335-335. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "test_an_undeclared_policy_reference_is_refused_and_no_row_is_written" repointed to mcp/tests/test_knowledge_family_composition.py:454-454. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "test_an_edge_with_no_declared_policy_is_stored_readable_and_not_traversable" repointed to mcp/tests/test_knowledge_family_composition.py:428-428. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T06:30:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 2 generated projection bullet(s) by hand** — `test_an_edge_with_no_declared_policy_is_stored_readable_and_not_traversable`, `test_an_undeclared_policy_reference_is_refused_and_no_row_is_written`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
-
-- 2026-09-18T04:12:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): created this one-to-one card for the declared-policy module. It records the two sentences this leaf's remit fixes: **the policy defaults to off** — an edge with no declared policy is stored, readable and not traversable, and `require_declared_policy` never resolves to a default or to the only version stored — and the policy is **validated in two places**, at the value boundary and at the table's own `CHECK`. It records why the policy is an append-only version set rather than a nullable column pair on the edge, why an unknown identity and an unknown version of a known identity are two different refusals, and that a policy may only widen a *named* scope. Verification metadata is the leaf's base commit `e963a01c`: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

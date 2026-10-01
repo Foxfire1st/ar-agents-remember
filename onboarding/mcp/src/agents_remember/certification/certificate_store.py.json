@@ -1,0 +1,282 @@
+{
+  "path": "mcp/src/agents_remember/certification/certificate_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The R21 packet requires atomic content-addressed storage and exact-reference lookup.\n\nAnchor: \"Expected Implementation Evidence\"; \"Failure And Recovery\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md:118-136"
+        }
+      ]
+    },
+    "10": {
+      "note": "`_object_digest` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:175831bb1a00f51cd2b46fbedee8e0f1d08fc5294c441c8618c416265fa07d09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_object_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`_read_regular_file` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:80af35d197b35db5be80f4de35a364f8a7eb8b0694f168df55dfa911dacf8e3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_regular_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`_capacity_error` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:7e1da5651286df92065dbc1ec5930fbf984972188d84f11c40dbcd604cc3d807",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capacity_error"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`_raise` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:8e0c6173ac845006fbd43df9474ad88a5f994568568427c9498030c3393c94d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_raise"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publish/load are digest-addressed with collision and readback checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:949f85d6b5cf920e17651fc03eb0421a399293c6aa65fd0862188e3a5533d8ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:4480d9834e6a6ecf57ee7f5966e94cb7af29cec36928d0d37e9459f289f15831",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:126e6d241b54c7e04c4138f415ded60f1bff5b920e02faba60dc154e6f8c8d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "exact_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:51c98d004e9b3aefcd986b7abf87605a3e416d0c4c4376f68bd48bcbba0ca8be",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:cef1e23ef26601e868260dc8d489e14a41108427af9cac624fda971da74b74af",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:203250b07f4100288d0c3fa438b2085eb7dceca58513dc4dcd2e644e19e92435",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store checks bounded capacity before accepting another object.\n\nAnchor: \"def _require_capacity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:dbdae98bd672a1c6d635ffcba3cb55d6e2a2feefb99c27549f3dc2aa93807299",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 228
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Capacity refusal exposes the store policy and reclamation boundary.\n\nAnchor: \"def _capacity_error\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:7e1da5651286df92065dbc1ec5930fbf984972188d84f11c40dbcd604cc3d807",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 322
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Stored object bytes use canonical serialization.\n\nAnchor: \"def _canonical_bytes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:682f26f353219335fdffae238964e3b4fd6489391d41f909053901f7ce260746",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 257
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The store resolves the object digest by certificate object kind.\n\nAnchor: \"def _object_digest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:175831bb1a00f51cd2b46fbedee8e0f1d08fc5294c441c8618c416265fa07d09",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 276
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Only safe readable regular files are accepted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:80af35d197b35db5be80f4de35a364f8a7eb8b0694f168df55dfa911dacf8e3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_regular_file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:931369b179cc2e69612e2215827c0cf79f70c90468413979851388d0d279dd3a",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`CertificateStorePolicy` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:5b4eca3ed5119384395c29ea48796074f9fab3f1ef99cc116907c3d995927895",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificateStorePolicy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`ContentAddressedCertificateStore` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc9b9617d2a5bdb3c26eaa3b34f15b83c72a40d0",
+            "content": "sha256:4f38248787729e4af5ea7146e35ad1bc6a68de7ddac145f2aa60d4624a9dbb6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContentAddressedCertificateStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

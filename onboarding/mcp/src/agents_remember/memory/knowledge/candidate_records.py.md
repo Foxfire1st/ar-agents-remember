@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/candidate_records.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/candidate_records.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -95,67 +85,39 @@ extended with it in the same change. A record group that adds kinds the batch wr
 the census group's three relation tables are the current case — adds them to its own declared table set and to
 neither dispatch table, which is the same shape the authored-effect succession edge has.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The writable-table union the refusal reads — the shipped seven, the two envelope tables, and each record group's own set subtracted to its non-envelope remainder, which is where this leaf's authored-effect group contributes nothing and the census group contributes its six. | `WRITABLE_TABLES`; `EFFECT_ONLY_WRITABLE_TABLES` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:114-122; mcp/src/agents_remember/memory/knowledge/candidate_records.py:94-96 |
-| The per-table readers, each delegating to the owning concept's own read. | "_RECORD_READERS: dict[str, RecordReader] = {"; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:280-315; mcp/src/agents_remember/memory/knowledge/candidate_records.py:157-161 |
-| The one-identity-per-kind map, with the multi-row commands handled separately. | "_WRITTEN_IDENTITY: dict[str, Callable[[Any], tuple[str, str]]] = {"; "def written_identities(command: ChangeCommand) -> IdentityPairs:" | mcp/src/agents_remember/memory/knowledge/candidate_records.py:320-379; mcp/src/agents_remember/memory/knowledge/candidate_records.py:399-408 |
-| The commands that address an existing row and therefore create nothing. | "_ADDRESSES_EXISTING: tuple[str, ...] = ("; `inserted_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:383-396; mcp/src/agents_remember/memory/knowledge/candidate_records.py:495-500 |
-| The batch's declared identity set. | `pending_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:503-509 |
-| **The existence question that admits the declared set: a record counts as present if it is already stored or will be by the time this batch is applied.** | `present` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:512-519 |
-| The writable-table union the refusal reads, and the digest reader it uses for a stored row. | `WRITABLE_TABLES`; `stored_record_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:114-122; mcp/src/agents_remember/memory/knowledge/candidate_records.py:128-134 |
-| The per-table readers, each delegating to the owning concept's own read. | "_RECORD_READERS: dict[str, RecordReader] = {"; `_anchor_digest` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:280-315; mcp/src/agents_remember/memory/knowledge/candidate_records.py:157-161 |
-| The one-identity-per-kind map, with the multi-row commands handled separately. | "_WRITTEN_IDENTITY: dict[str, Callable[[Any], tuple[str, str]]] = {"; "def written_identities(command: ChangeCommand) -> IdentityPairs:" | mcp/src/agents_remember/memory/knowledge/candidate_records.py:320-379; mcp/src/agents_remember/memory/knowledge/candidate_records.py:399-408 |
-| The commands that address an existing row and therefore create nothing. | "_ADDRESSES_EXISTING: tuple[str, ...] = ("; `inserted_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:383-396; mcp/src/agents_remember/memory/knowledge/candidate_records.py:495-500 |
-| The batch's declared identity set and the existence question that admits it. | `pending_identities`; `present` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:503-509; mcp/src/agents_remember/memory/knowledge/candidate_records.py:512-519 |
-| The preconditions that consume these answers. | `require_expected_records`; `require_insertions_absent`; `require_command_targets` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:185-206; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:368-384; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:387-399 |
-| The vocabulary the writable table set mirrors. | "MutableRecordTable = Literal[" | mcp/src/agents_remember/models/knowledge/candidate.py:140-140 |
-| The anchor row digest the anchor reader derives rather than stores. | `anchor_row_digest` | mcp/src/agents_remember/memory/knowledge/records.py:366-381 |
-| **The census group's own table set, subtracted to its non-envelope remainder and appended to the union: its three record tables and three relation tables, declared beside its commands rather than restated here.** | `CENSUS_ONLY_WRITABLE_TABLES` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:110-112 |
-| **The three census record tables' readers — every census expectation is answered by the census module's own read, and the group's three relation tables are deliberately absent because no command addresses one.** | `census_records.inventory_row_digest`; `census_records.claim_digest`; `census_records.disposition_digest`; "census_inventory_row"; "census_claim"; "census_disposition" | mcp/src/agents_remember/memory/knowledge/candidate_records.py:308-314 |
-| **The three census commands' identities: each names one record table and one `record_id`, so a duplicate check and a receipt address the row the command creates.** | `"add_census_inventory_row": lambda command: ("census_inventory_row", command.record_id)`; `"add_census_claim": lambda command: ("census_claim", command.record_id)`; `"add_census_disposition": lambda command: ("census_disposition", command.record_id)`; "add_census_inventory_row"; "add_census_claim"; "add_census_disposition" | mcp/src/agents_remember/memory/knowledge/candidate_records.py:363-371 |
-| **The census reads the three reader rows delegate to.** | `inventory_row_digest`; `claim_digest`; `disposition_digest` | mcp/src/agents_remember/memory/knowledge/census_records.py:893-901; mcp/src/agents_remember/memory/knowledge/census_records.py:904-911; mcp/src/agents_remember/memory/knowledge/census_records.py:914-923 |
-| **The census vocabulary's own declared table set, which the union's census constant is derived from rather than restated.** | `CENSUS_WRITABLE_TABLES` | mcp/src/agents_remember/models/knowledge/census.py:364-373 |
+- The writable-table union the refusal reads — the shipped seven, the two envelope tables, and each record group's own set subtracted to its non-envelope remainder, which is where this leaf's authored-effect group contributes nothing and the census group contributes its six. [1]
+- The per-table readers, each delegating to the owning concept's own read. [2]
+- The one-identity-per-kind map, with the multi-row commands handled separately. [3]
+- The commands that address an existing row and therefore create nothing. [4]
+- The batch's declared identity set. [5]
+- **The existence question that admits the declared set: a record counts as present if it is already stored or will be by the time this batch is applied.** [6]
+- The writable-table union the refusal reads, and the digest reader it uses for a stored row. [7]
+- The per-table readers, each delegating to the owning concept's own read. [8]
+- The one-identity-per-kind map, with the multi-row commands handled separately. [9]
+- The commands that address an existing row and therefore create nothing. [10]
+- The batch's declared identity set and the existence question that admits it. [11]
+- The preconditions that consume these answers. [12]
+- The vocabulary the writable table set mirrors. [13]
+- The anchor row digest the anchor reader derives rather than stores. [14]
+- **The census group's own table set, subtracted to its non-envelope remainder and appended to the union: its three record tables and three relation tables, declared beside its commands rather than restated here.** [15]
+- **The three census record tables' readers — every census expectation is answered by the census module's own read, and the group's three relation tables are deliberately absent because no command addresses one.** [16]
+- **The three census commands' identities: each names one record table and one `record_id`, so a duplicate check and a receipt address the row the command creates.** [17]
+- **The census reads the three reader rows delegate to.** [18]
+- **The census vocabulary's own declared table set, which the union's census constant is derived from rather than restated.** [19]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **re-read every citation this card carries against the staged working candidate and recorded the census record group's share of the batch vocabulary.** The leaf added `CENSUS_ONLY_WRITABLE_TABLES` — the census vocabulary's eight-name `CENSUS_WRITABLE_TABLES` minus the two envelope tables — and appended it to `WRITABLE_TABLES`, so the union is now **thirty** tables, equal to `MutableRecordTable`'s thirty members; the union paragraph and the writable-table convention were both re-worded to that count and now name every group's own constant, including the census's. Three reader rows (`census_inventory_row`, `census_claim`, `census_disposition`) and three identity rows (`add_census_inventory_row`, `add_census_claim`, `add_census_disposition`) joined the two dispatch dicts, and the card now states why the group's three *relation* tables are absent from both: they are written only as part of the aggregate that owns them, so no command addresses one — the disposition the authored-effect succession edge already takes — and they stay in the union because the batch does write them. Two stale Logic claims were corrected rather than softened: `written_identities` is no longer "one per command kind for eleven kinds" (twenty-five kinds sit in `_WRITTEN_IDENTITY` and the multi-row commands are answered by two earlier dispatch shapes), and `_ADDRESSES_EXISTING` holds **eight** kinds, not five, with the Todos closure count moved from eighteen to **thirty-one** command kinds. Eleven rows whose cited ranges this leaf's insertions had moved were **re-cited by hand to each construct's declaration extent** — the union and `EFFECT_ONLY_WRITABLE_TABLES`, both reader rows, both identity rows, `_ADDRESSES_EXISTING`/`inserted_identities`, `pending_identities`, `present`, `stored_record_digest`, the two preconditions rows into `batch_preconditions.py` and the three identity readers — and five rows were added for the census union constant, the census readers, the census identities, the census digest functions and the vocabulary the union is derived from. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `pending_identities` repointed to mcp/src/agents_remember/memory/knowledge/candidate_records.py:476-482. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `present` repointed to mcp/src/agents_remember/memory/knowledge/candidate_records.py:485-492. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "MutableRecordTable = Literal[" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:140-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand while resolving the memory sync** — `_ADDRESSES_EXISTING`, `inserted_identities`, `MutableRecordTable`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T05:00:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read this card's claims against the source and re-cited the rows the leaf's additions moved.** The writable-table tuple is now `WRITABLE_TABLES` — the base seven plus this leaf's six composition tables — with six new digest readers, and the identity set the batch declares is `inserted_identities`, `pending_identities` and `present` (the last of which ends one line earlier than a projected range claimed). The `pending_identities`/`present` row was split so each anchor has its own extent, and the generated repair bullet that had kept `claim_reopen` enforced on it was removed and replaced by this entry. Verification metadata is **not** advanced; the code commit does not exist yet and closeout owns that stamp.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand** — `_ADDRESSES_EXISTING`, `inserted_identities`, `pending_identities`, `present`, `MutableRecordTable`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **re-read every citation this card carries against the current source and repaired the ranges this leaf's addition moved.** This entry recorded the writable-table union spelled per record group and the kind-agnostic envelope digest reader that `knowledge_record`'s four writers require. Verification metadata is unchanged and the code commit does not exist yet; closeout owns that stamp.
-
-- 2026-09-18T02:55:00+00:00 — 260915-KS-L11 owning seat (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this claim against the source and re-cited it by hand, replacing a generated projection.** The claim said *seven* directly writable tables; `WRITABLE_TABLES` now declares **thirteen** (`candidate_records.py:39-53`, counted from the declaration itself, and equal to `MutableRecordTable`'s thirteen members in `models/knowledge/candidate.py`). The wording and the range were both rewritten by an agent that read the declaration, so the citation is no longer a mechanical anchor-range projection: the range is the declaration the claim's own words describe.
-
-- 2026-09-18T02:55:00+00:00 — 260915-KS-L11 owning seat (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this claim against the source and re-cited it by hand, replacing a generated projection.** The claim said *seven* directly writable tables; `WRITABLE_TABLES` now declares **thirteen** (`candidate_records.py:39-53`, counted from the declaration itself, and equal to `MutableRecordTable`'s thirteen members in `models/knowledge/candidate.py`). The wording and the range were both rewritten by an agent that read the declaration, so the citation is no longer a mechanical anchor-range projection: the range is the declaration the claim's own words describe.
-
-- 2026-09-17T23:18:00+00:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this card against the source for the round-2 citation work and recorded a contradiction instead of softening the row.** The row above reading "The thirteen directly writable tables and the refusal of a table outside them" is **no longer true**: `WRITABLE_TABLES` (`mcp/src/agents_remember/memory/knowledge/candidate_records.py:39-53`) now holds **thirteen** names — the seven it held at `76c7697c` plus `knowledge_record`, `record_revision`, `facet_attachment`, `facet_decision_supersession`, `explanation` and `explanation_revision`, which this leaf's facet write path added. The row's citation was re-pointed to that tuple and its anchor left naming the tuple; its *count* was not rewritten, because a claim's meaning belongs to the owning seat rather than to the citation curator. The one-word correction owed is `seven` → `thirteen`. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp. No content impact: this entry records a review, not a content change.
-
-- 2026-09-17T23:18:00+00:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this card against the source for the round-2 citation work and recorded a contradiction instead of softening the row.** The row above reading "The thirteen directly writable tables and the refusal of a table outside them" is **no longer true**: `WRITABLE_TABLES` (`mcp/src/agents_remember/memory/knowledge/candidate_records.py:39-53`) now holds **thirteen** names — the seven it held at `76c7697c` plus `knowledge_record`, `record_revision`, `facet_attachment`, `facet_decision_supersession`, `explanation` and `explanation_revision`, which this leaf's facet write path added. The row's citation was re-pointed to that tuple and its anchor left naming the tuple; its *count* was not rewritten, because a claim's meaning belongs to the owning seat rather than to the citation curator. The one-word correction owed is `seven` → `thirteen`. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp. No content impact: this entry records a review, not a content change.
-
-- 2026-09-16T08:10:00+00:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): created this one-to-one card for the new batch identity vocabulary. It records the one-identity-scheme rule (a digest here is exactly what a read exposes), the read-only boundary that lets the preconditions and the apply step share it, the addressing-versus-creating distinction that lets one row be edited and removed in one batch, and the whole-sequence pending set that makes a forward reference legal. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

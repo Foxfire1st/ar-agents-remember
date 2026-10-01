@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/records.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/records.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -87,41 +77,31 @@ predecessor set without rewriting the row itself, and the reason the seal is ver
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The canonical JSON typed-column encoding used for every structured column. | `encode_typed_column`; `decode_typed_column` | mcp/src/agents_remember/memory/knowledge/records.py:56-61; mcp/src/agents_remember/memory/knowledge/records.py:64-67 |
-| The read path re-derives the seal and treats a mismatch as a damaged store. | `decode_revision_row` | mcp/src/agents_remember/memory/knowledge/records.py:153-189 |
-| Sealing a draft, including the sorted predecessor set that enters the digest. | `sealed_revision_from_draft` | mcp/src/agents_remember/memory/knowledge/records.py:190-214 |
-| The exact twelve-column revision tuple written by the operation. | `revision_row` | mcp/src/agents_remember/memory/knowledge/records.py:134-152 |
-| The predecessor edge rows and their sorted decode. | `predecessor_rows`; `decode_predecessor_rows` | mcp/src/agents_remember/memory/knowledge/records.py:215-225 |
-| The anchor codec, which derives the canonical identity text at the storage boundary. | `anchor_row`; `anchor_row_digest`; `decode_anchor_row` | mcp/src/agents_remember/memory/knowledge/records.py:226-236; mcp/src/agents_remember/memory/knowledge/records.py:366-381; mcp/src/agents_remember/memory/knowledge/records.py:237-246 |
-| The family identity and family revision codecs, including the seal-verifying decode that reads the stored edges. | `family_row`; `family_revision_row`; `sealed_family_revision_from_draft`; `decode_family_revision_row`; `family_predecessor_rows` | mcp/src/agents_remember/memory/knowledge/records.py:253-286; mcp/src/agents_remember/memory/knowledge/records.py:287-302; mcp/src/agents_remember/memory/knowledge/records.py:303-326; mcp/src/agents_remember/memory/knowledge/records.py:327-356; mcp/src/agents_remember/memory/knowledge/records.py:357-365 |
-| The relation codecs and their table-scoped expected-row digests. | `member_row`; `member_row_digest`; `decode_member_row`; `claim_row`; `claim_row_digest`; `decode_claim_row` | mcp/src/agents_remember/memory/knowledge/records.py:382-391; mcp/src/agents_remember/memory/knowledge/records.py:392-412; mcp/src/agents_remember/memory/knowledge/records.py:413-428; mcp/src/agents_remember/memory/knowledge/records.py:429-440; mcp/src/agents_remember/memory/knowledge/records.py:441-462; mcp/src/agents_remember/memory/knowledge/records.py:463-483 |
-| The closed stored-role vocabulary a stored row is narrowed against. | `stored_realization_role` | mcp/src/agents_remember/memory/knowledge/records.py:484-498 |
-| The digest the read path recomputes, for both payloads. | `revision_payload_digest`; `family_revision_payload_digest` | mcp/src/agents_remember/models/knowledge/digest.py:55-58; mcp/src/agents_remember/models/knowledge/digest.py:93-96 |
-| The canonical encoder and duplicate-key-refusing decoder this module stores through. | `canonical_json_bytes`; `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:27-31; mcp/src/agents_remember/kernel/canonical_json.py:46-61 |
+- The canonical JSON typed-column encoding used for every structured column. [1]
+- The read path re-derives the seal and treats a mismatch as a damaged store. [2]
+- Sealing a draft, including the sorted predecessor set that enters the digest. [3]
+- The exact twelve-column revision tuple written by the operation. [4]
+- The predecessor edge rows and their sorted decode. [5]
+- The anchor codec, which derives the canonical identity text at the storage boundary. [6]
+- The family identity and family revision codecs, including the seal-verifying decode that reads the stored edges. [7]
+- The relation codecs and their table-scoped expected-row digests. [8]
+- The closed stored-role vocabulary a stored row is narrowed against. [9]
+- The digest the read path recomputes, for both payloads. [10]
+- The canonical encoder and duplicate-key-refusing decoder this module stores through. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `encode_typed_column`; `decode_typed_column` repointed to mcp/src/agents_remember/memory/knowledge/records.py:56-61; mcp/src/agents_remember/memory/knowledge/records.py:64-67. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T08:24+02:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): **superseded the L1 statement that the anchor codec is for a table nothing writes**, and extended the card to the graph half. The anchor codec now carries the anchor module's writes and reads, and the canonical identity text it derives (`str(anchor.anchor_id)`) is what makes the vocabulary's real `UUID` field legal. Fifteen codecs were added for the family, family-revision, family-predecessor, membership and claim tables; the family-revision decode recomputes the seal over the stored row **plus the stored predecessor edges**, and every expected-row digest is table-scoped by construction. Verification metadata remains empty until closeout stamps the code commit.
-- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new row codec module. It records that the read path re-derives the seal, that only the predecessor set is sorted, and that an out-of-vocabulary stored origin state is a storage defect rather than a refusal. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

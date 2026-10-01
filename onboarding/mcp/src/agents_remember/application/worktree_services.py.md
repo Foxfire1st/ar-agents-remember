@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/worktree_services.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/worktree_services.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -36,6 +26,10 @@ Since MIK-R25 the bundle also binds `review_artifact_cleanup=ReviewArtifactClean
 
 Since MIK-R09 the bundle also binds `knowledge_gate=KnowledgeGate()` (`application/knowledge_gate/adapter.py`), which implements `worktrees.services.KnowledgeGatePort`: the closeout validator, direct landing, record landing and master and checkpoint landing reach the mandatory invariant gate through it without the worktree layer importing the application layer. It is the only place the port is bound; a converted route in a process built without it refuses (`GATE_UNBOUND`, rule 5), and an unconverted route never asks it.
 
+- **L37 (review R3-1).** `MemoryQualityAdapter` passes `knowledge_base=context_check_base(code_repository_root,
+  context)` into the drift context, so the closeout's memory-quality phases validate a converted working tree
+  against `HEAD`'s conversion when `HEAD` is unconverted, through the shared converted-base cache.
+
 ### Conventions
 
 Keep imports of providers and memory_quality at this composition boundary. Worktree modules consume protocols from worktrees.services; they do not locate those packages dynamically or construct fallback implementations.
@@ -58,73 +52,33 @@ The rail-definition adapter is implemented; the complete R07/R08 production exec
 
 The default application bundle installs `PreparedCloseoutContinuation` and `PreparedMemoryCertificationAdapter` explicitly. This supplies production memory/finalization composition through the existing service ports; binding the adapters neither bypasses certification nor establishes a successful execution.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current `build_default_worktree_services` boundary implements the preparation contract above. | "def build_default_worktree_services" | mcp/src/agents_remember/application/worktree_services.py:204-212 |
+- The current `build_default_worktree_services` boundary implements the preparation contract above. [1]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| External domain documentation is not configured. | N/A | N/A |
+External domain documentation is not configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Provider translation/delegation | `ProviderLifecycleAdapter` | mcp/src/agents_remember/application/worktree_services.py:41-145 |
-| Memory-rail and memory-quality adapters | `CertificationMemoryRailsAdapter`; `MemoryQualityAdapter` | mcp/src/agents_remember/application/worktree_services.py:148-152; mcp/src/agents_remember/application/worktree_services.py:155-193 |
-| The citation guard delegates terminal namespace protection. | `CitationGuardAdapter` | mcp/src/agents_remember/application/worktree_services.py:196-208 |
-| The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing. | `build_default_worktree_services`; `GitKnowledgeValidation`; `GitBaseConverter`; `GitKnowledgeCrossing` | mcp/src/agents_remember/application/worktree_services.py:211-224; mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py:41-124; mcp/src/agents_remember/memory/conversion/base.py:101-139; mcp/src/agents_remember/memory/conversion/crossing_port.py:24-52 |
-| The default bundle's MIK-R09 binding: the mandatory gate's port adapter. | "knowledge_gate=KnowledgeGate()," | mcp/src/agents_remember/application/worktree_services.py:222-222 |
-| The default bundle's MIK-R08 binding: the worklist recompute port adapter. | `LeafWorklistRecompute`; `knowledge_worklist` | mcp/src/agents_remember/application/worktree_services.py:210-222; mcp/src/agents_remember/application/knowledge_worklist/leaf.py:437-446 |
-| The default bundle's MIK-R25 binding: the review-artifact archive hook. | "review_artifact_cleanup=ReviewArtifactCleanup()" | mcp/src/agents_remember/application/worktree_services.py:223-223 |
-| The canonical binding owner installs the explicit service bundle. | `bind_worktree_services` | mcp/src/agents_remember/worktrees/services.py:347-350 |
+- Provider translation/delegation [2]
+- Memory-rail and memory-quality adapters [3]
+- The citation guard delegates terminal namespace protection. [4]
+- The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing. [5]
+- The default bundle's MIK-R09 binding: the mandatory gate's port adapter. [6]
+- The default bundle's MIK-R08 binding: the worklist recompute port adapter. [7]
+- The default bundle's MIK-R25 binding: the review-artifact archive hook. [8]
+- The canonical binding owner installs the explicit service bundle. [9]
 
-## Cross-Repo References
+- The closeout's quality phases get the converted-base port. [10]
+
+### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** Logic gains the paragraph on `knowledge_gate=KnowledgeGate()`, the only binding of the new `KnowledgeGatePort` (a converted route without it refuses, `GATE_UNBOUND`); one row added. The composition rows were re-pointed or normalised by the installed fixer (its bullets are kept, since no claim was reworded).
-- 2026-09-30T17:59:41+00:00: Generated citation repair: "review_artifact_cleanup=ReviewArtifactCleanup()" repointed to mcp/src/agents_remember/application/worktree_services.py:223-223. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:59:41+00:00: Generated citation repair: `bind_worktree_services` repointed to mcp/src/agents_remember/worktrees/services.py:347-350. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): **body updated for MIK-R25.** Purpose-level Logic paragraph and Invariants bullet for the `review_artifact_cleanup=ReviewArtifactCleanup()` binding, with one row. The `bind_worktree_services` row was projected by the installed fixer. No verification stamp was advanced.
-- 2026-09-30T01:47:00+00:00: Generated citation repair: `bind_worktree_services` repointed to mcp/src/agents_remember/worktrees/services.py:280-283. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T15:43:05+00:00: Generated citation repair: `bind_worktree_services` repointed to mcp/src/agents_remember/worktrees/services.py:253-256. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Logic gains the `knowledge_worklist=LeafWorklistRecompute()` binding (the `KnowledgeWorklistPort` adapter a completed managed sync recomputes the worklist through; inert and non-raising for unconverted leaves), with a citation row.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Body updated for MIK-R24. The validator is now bound with `base_converter=GitBaseConverter()` (rule 7), and the bundle binds `knowledge_crossing=GitKnowledgeCrossing()` (rule 8). The Purpose, the Logic paragraph and the invariants say so, including that an unbound crossing refuses and never merges as plain Git. The bundle row was re-measured and now cites the two new adapters.
-
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): documented the MIK-R22 binding of `GitKnowledgeValidation` in `build_default_worktree_services` and its boundary (bound only here; an unbound validator refuses a converted memory commit). Re-measured the bundle row after the three-line import insertion. The verification stamp is unchanged; closeout owns it.
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
-  prepared-certification adapter import moved to the closeout plane. Re-read every cited range
-  against the frozen source: the adapter and bundle ranges hold as the earlier entry records, and no
-  claim names the moved module. No wording changed. Verification metadata remains closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/application/worktree_services.py` changed since the recorded verification
-  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
-  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
-  metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved the
-  prepared-certification adapter import to the closeout plane. Re-derived the adapter and bundle
-  ranges against the current source (they were offset before this diff as well); no claim text
-  changed. Verification metadata remains closeout-owned.
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=179eb40af2203494e4402efc7bf9c478d044c3199ce787062c6f7a990eff576e; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-06T23:07:14+00:00 — History-format repair at the actual recorded repair time. The earlier reconciliation note recorded only a local calendar date; its time of day is unknown. Original note preserved verbatim: "- 2026-09-07 — Reconciled the preparation contract introduced by 245057 against surviving d361 source; retained prior history and verification pins."
-
-
-- 2026-09-05T06:14:14+00:00 — Extended the preserved dependency-composition account with the Gate-5 rail port and its non-execution boundary.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the composition-root services
-  bundle. Verification metadata pinned until closeout stamps the L9 code commit.
+No cross-repository evidence is required for these file-local claims.

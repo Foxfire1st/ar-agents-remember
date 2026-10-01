@@ -1,0 +1,145 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/projectors/common.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native evidence ingestion maps `UnmappableShape` (and an over-budget truncated frame) to preserved `MappedUnknownVendor` evidence, never a stream failure; thread binding and roster reconciliation still apply to malformed agent-thread frames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:57836e29c0d78940707ab70be78fa36228fed062b71cad22bf476e809b51578b",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeEvidenceIngestion"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:988e4d8d90683149fb9baf7798657a4fad64e59c937230166b3f645363f36278",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Echo ingestion takes the same containment for a submission echo it cannot parse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:a2fb25f95ee21ace02c0807a98e610596dd2b1e2d0c106da6f5734742492c4a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "EchoIngestion"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:b770f9b193fb6e1bf6b65becde1a86bb2fce48f333ddb5cecc99b1b6aae43867",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ProjectionMutationStream.apply_outputs` routes `MappedItem`/`MappedBlockDelta`/`MappedUnknownVendor` into the store and buffers `MappedTurnOutcome` as the pending terminal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08eaede8436d2c6b58f60b6bb5e1b89a2cacff5e",
+            "content": "sha256:26d09ec7ef38ce1dce594a31624ad055f4ead4e987a5a397987078c2dd5fd010",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionMutationStream"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08eaede8436d2c6b58f60b6bb5e1b89a2cacff5e",
+            "content": "sha256:9de0fa79b86607f72744483b6c53f1516f056b327e33a25abdfc91779df34500",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/mutation_stream.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rebuild coordinator resolves pending user-item provenance in a bounded batch and applies each record to the store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa0b2b836fceffeb7a79b177e77a3e328bdd838e",
+            "content": "sha256:9c5ca6aa0ac6718b86da017f1f1004c6cf022b7fc40bb09e6279bb50681c20a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RebuildCoordinator"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa0b2b836fceffeb7a79b177e77a3e328bdd838e",
+            "content": "sha256:7ae608f96f9ea3b4b049326e61bd33174a82b2cb4509097de4aea44814b2249c",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`ProvenanceEvidence` and the strict item validator define the products these builders fill.\n\nAnchor: \"class ProvenanceEvidence(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eefcb6c4789991423d20c864c1583ff7386a0090",
+            "content": "sha256:d44598d1c11bca0ea2526d6cc89f2d383b272f67324cb4bb1c1684cd87bad8bb",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/models/conversations/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

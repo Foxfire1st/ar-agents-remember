@@ -1,0 +1,152 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/attachments.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The staged-bytes filesystem boundary and staged asset types.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a8a5074b72ac58a652c54b0830c0f05c5c47bb2",
+            "content": "sha256:c7f33b36b01f4f907f906b6deb31334f3ecad37869b55ee5ad1bda4bcddf0c8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_one"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/asset_spool.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a8a5074b72ac58a652c54b0830c0f05c5c47bb2",
+            "content": "sha256:6e14b347fe2be441d5f0373eba7df4a188eb63ff24624d5a7b7659ec304dfeee",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/asset_spool.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a8a5074b72ac58a652c54b0830c0f05c5c47bb2",
+            "content": "sha256:773eb770b220490698d84865ff96b0acbadcfcd900d0d093b3243f2115eaf6b4",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/asset_spool.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The L2E asset channel (refs on the wire, digest verify at admission/construction) and MIME/count/byte constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:46397b8147f0eb122e14b60eff2785992fa5338a09e15d8efd810a5b5499d2a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SUBMIT_ASSETS"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:5ef6aa815c0aa0160332df6071787d7d6f9264f8dd05fd08ce643c58e588d9a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssetReference"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:fe244ba1cea35e073ce6d2aa0a74656640b9d338a590cc5a198a4b77032646db",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_asset_bytes"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retained operation timeline this lifecycle advances from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:d0c4b18adbf47c6be173e901de7d6f8bc7bcdbaf6b3e8cc442844258a14ce6ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_full_timeline"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:f916d0bd28f5a95e114e81f517a987a5c60a81dbd6b21a22fb428d3fb44181c4",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Recoverable assets ride the same 900 s lease as the text recovery.\n\nAnchor: \"RECOVERY_TTL_SECONDS =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:ce9fd6470f8a687f5e68bea85d2ee5ba10efca61f46e75ae1686e4f51a04d2ff",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9d7923994261529e7d8d0fb956335c393505ea1",
+            "content": "sha256:aabdc020354ad306833db5077f5380b490ea1f4410caa19bd402661ac0c6fa3c",
+            "locator": {
+              "end": 467,
+              "kind": "line_range",
+              "start": 458
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/withdrawals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

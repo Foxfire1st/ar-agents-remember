@@ -1,0 +1,615 @@
+{
+  "path": "mcp/src/agents_remember/application/review_lane_classification.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement: one classification, no hunk arithmetic of its own, and where it differs from the gate.\n\nAnchor: \"An entry supplies a range on a side only at its own recorded blob.\"; \"Only changed lines are intersected.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:1d08ad48bb183092ae91e6f56a11de9f703293d5f2631dca1f90228fdd050053",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The trees opened once; a side with no index or an unopenable one named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:f53c8461e253c6b1ef28be076ab6d5b9c810b35072086f7f842c6f5daa84fd71",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_tree_lane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:f2df5bb8676ce123c0121c3b6f96825c94441787444ed9ede6d9a6076422b432",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A range resolved at its own recorded blob, through the placements the cards read shares.\n\nAnchor: \"PLACEMENTS.get(key)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:ffe46a5955b7afb271627c2feb4251364f679188f78099565ffdb606571110d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_placement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The three buckets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:416d108dc4f75a83b38ead38fe4cb5fc87503079df98478cc8dd2d83ef90c472",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bucket"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Bounded text and at most ten named entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:a6afd6662ae71a3372afd95457ca78a2c8a8a9c3550d26ef8cda5aad9bb2d648",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:a80264633e463ea72a0026f5c5a657292245fb0e5d2d0bcbae794aa89ee1b160",
+            "locator": {
+              "kind": "symbol",
+              "name": "_named"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The bucket reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:efe79b414dc48cdf280d1dab4d26c01ced75221c0769c8683f2a5d74538b9062",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attributed_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:523ae266b6dac8da9aa7fc825d4dcd02b4e180b63cbe15ece3c318930e37c8a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:2ad076452fd3cf9f0adf8339b430764b2582496c4d919e47f9b828ad61f43214",
+            "locator": {
+              "kind": "symbol",
+              "name": "_withheld"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Only sides with changed lines are intersected (the exported `changes_lines`, MIK-L33); linked, unknown or unexplained.\n\nAnchor: \"def changes_lines(hunk: Hunk, side: LaneSideName) -> bool:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:260dca97689fa4262ff24f733962d1d478b6066349a45460fa79fa16b2ce1ef3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_intersects"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:48fc0ba5390e33779dbffe0064a41c50c8c7146c9967b5a00ddca2899e6e398d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_links"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:d2746fda32c57d5439bbfc6f4627158d4df1fb445481b2ef646eb3322b8b60fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classified"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:fb0e979d776b181b1c93c2c43a069f1e403e459c5034bfb7b6668e4578cf9fee",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 473
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Why a hunk is attribution unknown, per side, with every withheld entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:61107841a282960d49da6900b453ef9b15b44ae0f067c9e7cd88e1f7ee6a828a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The gate's non-text linkage, unknown unless both sides were read whole (review F3).\n\nAnchor: \"if not (before.side.complete and after.side.complete):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:81960dd4bb06c32004d823d4e158521af49ea6edd22a6037de9a6362ebd407fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The hunks the gate and the lane share (definition 2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fd41127da6e3a6af1dd01f319f5c60b6f2a6d37",
+            "content": "sha256:11585a1ae94100e7cdae9228394a6ce0d0d41fa109edf13642d3c29ad5a055a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_hunks"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The gate's non-text predicate, now shared (definition 8).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:37a6335fc10fcc09a120845217ca9d018c84ee4a1988d1d6cb675849b3b226c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "non_text_linked"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bounds on a reason: ten named entries, clipped details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:019a8ca3e7f6baecaa79ddfdd8e215d1ee75cc161fff33badb24c115c6a1603b",
+            "locator": {
+              "kind": "symbol",
+              "name": "NAMED_ENTRIES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:be490b3021702767234f6729e458602d30477586fc5c04ec5c3c6096e0ef05ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "DETAIL_LIMIT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The lane's reads over this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
+            "content": "sha256:de55749b523c54125a20a8012a3d21e4213513a6362866e19cfbbd4abc6fca71",
+            "locator": {
+              "kind": "symbol",
+              "name": "lane_summary"
+            },
+            "path": "mcp/src/agents_remember/application/review_unexplained_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
+            "content": "sha256:2320cef1a9917fc0103b0a719669b24a6920f9f4046d17f1ecac1818b8964f54",
+            "locator": {
+              "kind": "symbol",
+              "name": "unexplained_lane"
+            },
+            "path": "mcp/src/agents_remember/application/review_unexplained_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
+            "content": "sha256:d2c330c6473570b740b0f45e319fe82465a52934e2b5a07a6d32068b14a8dc14",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_changed_path"
+            },
+            "path": "mcp/src/agents_remember/application/review_unexplained_lane.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Buckets, exact-blob hunks, pre- and post-curation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:620d4c189edbd120db7f2bb91c474d027aabc04c57aae5fa80ac6618fc764ebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_changed_file_takes_one_bucket_and_the_destinations_reconcile"
+            },
+            "path": "mcp/tests/test_review_unexplained_lane.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:dd64e90fd7071044f48ec01d688a0e6b58510d49b2c4b047d839977e26220c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hunks_are_classified_on_their_changed_lines_at_each_sides_recorded_blob"
+            },
+            "path": "mcp/tests/test_review_unexplained_lane.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "An unread side, a partial index, and bounded reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:aa503b171d9d4befae3099468be654723d1f61b5440c2052d420d2b9aecfb594",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_side_is_never_unexplained_and_the_readable_side_still_links"
+            },
+            "path": "mcp/tests/test_review_unexplained_lane.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:6aac683aae1ffc076fd275fd883c8bfb3ea60340194fad762d9f730e0b2ee620",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_index_makes_only_its_unparsed_files_unknown"
+            },
+            "path": "mcp/tests/test_review_unexplained_lane.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:931e0b9237960a1240cbb2108aa64677f8512b886405414ff5e938bd8ac87198",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reason_names_a_bounded_number_of_entries"
+            },
+            "path": "mcp/tests/test_review_unexplained_lane.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "`changes_lines` is exported, the lane's own helper renamed with its one caller, and the change kinds reuse it (MIK-L33, review R1 note).\n\nAnchor: \"\\\"changes_lines\\\",\"; \"if not (\"; \"_non_text_content(result) or any(changes_lines(one.hunk, name) for one in result.hunks)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:bb5ccb4f43ef6292a4249946b1a6f72779e5f3a3e5e5c72847f97e28bd1a0262",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:cfe656fa1aeeca680d7c565aa8ad3b01d491cb4817e6ec36fcaac98cbdab22ef",
+            "locator": {
+              "end": 617,
+              "kind": "line_range",
+              "start": 615
+            },
+            "path": "mcp/src/agents_remember/application/review_change_kinds.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A side's knowledge of one path: an unread side, or the path's own unparsed sidecar.\n\nAnchor: \"problem = self.problems.get(sidecar)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:f3d7c4b089e4d8df5faeed1c9724a79d7f5af2638485f2b1619527d3167a6bbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A side read whole; realization and proof entries at a path; family records all read.\n\nAnchor: \"return self.index is not None and not self.problems\"; \"return (*found.realizations, *found.proofs)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:4f8733d94c2ad4ce85da1cc15ed97a61637c43c6ad02b6d12e1ab82ddcd85225",
+            "locator": {
+              "kind": "symbol",
+              "name": "families_complete"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:d9b7cfa345735df32e8355055e690a73d3720802f9238f2974979e7abde57804",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:d8c84439632396946987e33915d7a0c0bdede6be7a0ec8c3920dc3e15357981d",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One entry placed, one side of a path, one hunk and one file's result with its counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:e06b60e428c24458a65468522ef70f878d1a255657d7dd125844c385903a01b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "Placed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:2dccb2499f2921534e90df5c95025690df6f63a9206250cc0f8c138aaa3c7bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideReading"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:8f524c2424b75872857f5d88b2b76f76f486fc43aaf856e83d24b81fc36a7f1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "HunkResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:e6329f36900467d86afa80520e51dfbd7f9dc42c45a180fd9bf4644abaebbb19",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The comparison's changed paths, from the landed change inventory.\n\nAnchor: \"def observe(self) -> TreePaths:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:4efb7a26bbb0447c1d3a2a586556f9b0066d833dbccd0e22aa690b5ca1d87f0e",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 257
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The file bucket, read without any hunk.\n\nAnchor: \"def bucket(self, path: str)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:6ce7625629e51ece0c00a91a08be980b463fc6b181fd870ec06a37d6c5b31daa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reading"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:e87a816ff6a43fc8d8279193042e8c07217072c97a4c8650a26a445fe96f4029",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The exact-blob rule and the other reasons an entry supplies no range.\n\nAnchor: \"if recorded != blob:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:e9aa2ac44c4ed1514a633c737f1da5379fabe6a79a00e2d4154ab984dcdd1b1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One path whole: bucket, the gate's hunks, and the non-text fact.\n\nAnchor: \"def classify(self, change: TreeChange) -> FileResult:\"; \"hunks = change_hunks(self.code, change, before.blob, after.blob)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91508f84f484281ed56e0b92bfa267724f647e35",
+            "content": "sha256:bcaa0092be97853bcdfb197e4c72d1c6d35de24d00dd27601f906c8df56c2f44",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 317
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

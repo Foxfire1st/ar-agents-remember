@@ -1,15 +1,5 @@
 # dashboard/src/data/interactionAnswer.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/interactionAnswer.ts`        |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -78,35 +68,31 @@ the ONE interaction looked up across BOTH slots.
 - An unavailable submission authority blocks before POST; response failures keep the server's words
   verbatim.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Kind classification, the agent label, the multiplexed payload set, and the per-interaction lookup. | `representPendingInteraction`; `pendingInteractionAgentLabel`; `pendingInteractionPayloads`; `representSessionPendingInteraction` | dashboard/src/data/interactionAnswer.ts:146-183; dashboard/src/data/interactionAnswer.ts:191-198; dashboard/src/data/interactionAnswer.ts:207-222; dashboard/src/data/interactionAnswer.ts:230-245 |
-| Exact-session POST + epoch retry and the locked submit. | `answerViaInteractionRoute`; `submitInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:394-429; dashboard/src/data/interactionAnswer.ts:570-615 |
-| The `OpenSession` mirror of both pending slots + the catalog mapping that carries them. | `OpenSession` | dashboard/src/data/sessions.ts:28-83 |
-| The exact-session backend response endpoint used by all modes. | `api_terminal_interaction_response` | mcp/src/agents_remember/serving/harness_control_api.py:430-487 |
-| The bar that renders one bar per pending payload and badges the agent label. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
-| The rail preview naming WHO asks via the same label helper. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
-| The waiting-seat triage titles deriving asker + preview from the helpers. | `SessionsView` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
-| The round-trip state slice this path's outcomes land in. | `sessionCockpitStore` | dashboard/src/data/sessionCockpitStore.ts:588-601 |
-| The suite: kind matrix, lifecycle-free structured/scalar round-trips, epoch retry, and agent-label pins. | "submitInteractionAnswer — the session-direct route" | dashboard/src/data/interactionAnswer.test.ts:317-519 |
+- Kind classification, the agent label, the multiplexed payload set, and the per-interaction lookup. [1]
+- Exact-session POST + epoch retry and the locked submit. [2]
+- The `OpenSession` mirror of both pending slots + the catalog mapping that carries them. [3]
+- The exact-session backend response endpoint used by all modes. [4]
+- The bar that renders one bar per pending payload and badges the agent label. [5]
+- The rail preview naming WHO asks via the same label helper. [6]
+- The waiting-seat triage titles deriving asker + preview from the helpers. [7]
+- The round-trip state slice this path's outcomes land in. [8]
+- The suite: kind matrix, lifecycle-free structured/scalar round-trips, epoch retry, and agent-label pins. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## Reliable Submit Delta
 
@@ -114,41 +100,3 @@ Answer delivery preserves the exact pending interaction plus answer text and dra
 retry. The shared lock admits only the matching current interaction, and successful clearing is
 revision-CAS so a concurrent operator edit survives. Lifecycle membership is irrelevant: a normal
 message, PTY write, or lifecycle gate can never substitute for the exact-session response.
-
-## Update History
-- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: updated interaction-answer routing claims and current submit/retry citations.
-
-- 2026-08-09T19:36+02:00 — 260713-TES-L5F2: removed the lifecycle-gate fallback. Every
-  representable vendor interaction now uses the exact-session interaction-response endpoint;
-  documented lifecycle-free arbitrary-choice and composer handling.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 4 repeated path:start-end Citation objects from 2 same-claim citation group(s) at card line(s) 111, 112; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
-- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 18 citation entries (27 findings); no Tier-3 findings.
-
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: documented the R6 multiplexed pending-interaction
-  path — `pendingInteractionPayloads` (singular slot first, then the additive plural, de-duplicated
-  by interactionId), `pendingInteractionAgentLabel` (`raw.agentLabel` evidence only, never
-  fabricated), and `representSessionPendingInteraction`, with `submitInteractionAnswer` channel
-  routing now looking the interaction up across BOTH slots (the singular-only routing silently
-  dropped agent answers into the legacy gate fallback). Refreshed every stale line citation to the
-  current source. The L7 code is uncommitted in the code worktree; closeout re-stamps verification.
-
-- 2026-07-24T13:17:50Z — Corrected the dangerous claim that gates are the only answer channel.
-  Documented direct structured/permission responses, exact-map validation, epoch retry, and the retained
-  gate fallback. Verification hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented stored answer/revision retry, shared answer lock,
-  and revision-safe clearing on the gate-only path.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R4 (incl. fix round 1 finding 2): the sole
-  gate-channel answer path — kind-aware representation (choices / composer / honestly
-  unrepresentable), open-gate matching by the synchronizer's stamped identity, the
-  answer-as-decision-note POST on the approve verb, verbatim failure text, and the NOT-YET vs
-  CANNOT copy split on the seat's lifecycle binding. Verification metadata pinned to the leaf
-  base until closeout stamps the L6 code commit.

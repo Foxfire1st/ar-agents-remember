@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/review/hunkMarkers.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The six scenarios of real bodies.\n\nAnchor: \"hunkMarkers.classifier.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3d4f183bafc876057b43b513fd8e98da0a85f2",
+            "content": "sha256:ce5459e5fa9ae9ab616fa596389b3317ac9a6f3719d5b5909914229cf4220ea6",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "What each hunk names: occurrences, targets, proofs, unknown membership and its reason, the unread side, file marks.\n\nAnchor: \"names every intersecting invariant of a replace hunk, with each family occurrence\"; \"carries the reason an unknown membership is not established to its target\"; \"gives a confirmed-unregistered file, or one no side of which is readable, one file mark\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3d4f183bafc876057b43b513fd8e98da0a85f2",
+            "content": "sha256:25e77508916781c0ad238f8d95dacde73684dd57606cf440946dd71cb37058a6",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Where each mark sits, including a window's neighbours and an inline mid-file deletion.\n\nAnchor: \"places an inline deletion on the after line below its removed lines, or the last one\"; \"marks every hunk a window draws, a neighbour shown as context too\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c3d4f183bafc876057b43b513fd8e98da0a85f2",
+            "content": "sha256:99f089e02ea1f86e0d2a132bcc5fefa536c15e1d6fedfa940927fcce745bf1eb",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The model under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:6631beca27475d00c2de617584c9d10c8fde865ef86233e58b6fff24b8e69d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "fileMarks"
+            },
+            "path": "dashboard/src/panels/review/hunkMarkers.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
+            "content": "sha256:1bddce5f9c00710167d40a899ef5b18e07bfb16629f8b3fd893ff778b1e449f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "markAnchor"
+            },
+            "path": "dashboard/src/panels/review/hunkMarkers.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

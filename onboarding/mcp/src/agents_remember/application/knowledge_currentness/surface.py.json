@@ -1,0 +1,237 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_currentness/surface.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: returned records are the UUIDs the index translates, and the answer is never edited.\n\nAnchor: \"The answer itself is never edited\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:f6d3d1d8b14241d9ace87394d58c2a0414ef234da57c3ae9c8a4841383091a73",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block.\n\nAnchor: `WalkCurrentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19e9c1c7706f2472c14be565e56c09af2ca92581",
+            "content": "sha256:fe62f6922d09b0a8c45d7735d9da499c5892065318fec4509b85124eac79ef8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_published_intent"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "No tree, or only a repository, is unverifiable and never reads `HEAD`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:a5a23df64e8b4bd5366430a3e80d049b43770ee44894375733f350207e20d399",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A failing step degrades to a reason and never refuses the read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:e183a2d74a57440dfd414fdac038941d816a450c2727f7809775ad31ab88d2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every failure class the step degrades on, now public for the paged caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:cf4d4bda64b4c8c168d81d275d583cc722591240a2a9c309cd43a6de290e1fde",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENTNESS_FAILURES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The records an answer returns, built on the per-UUID helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:bae4faafde4730fc1ea275598135852154df3f973ece3807663dcacd8450d7e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "returned_records"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:89ae383fa0648190dd829fabbc072d1c38aec6df5eee52b4fda97376a3a5bc17",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The UUIDs an answer carries, and the index's reverse map for one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:323266a24432bd68d4cb5ce440d03826ff1b4216ea6dcf8db2d083271abe73f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "named_uuids"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:0f6d5abced5a129c359f7e4ef14f958ec07d688fe9b3f36e4286200cdecfd86b",
+            "locator": {
+              "kind": "symbol",
+              "name": "text_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one evaluation a paged caller cuts candidates from; it raises instead of degrading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:abcb620fc6591616ca287e313ea02d3ba8dda068040937702855d8c46d3e8b07",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Only a named tree ID is a request; `HEAD` is never substituted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:cf3942eafbe8b4856d4c9252d2e2030b558574c317fd3dd28cc678e6be0a79b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "requested_code_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The block, which degrades to the failure document and never raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:364f6e7478a17287709d0d1b4edc1bbbedd89336ee8fa7fa3b25702edc0d42ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_currentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:af20866a9e0e196ece227711b6656c595f7548fb99af9ac0fa8b011ef25fe7a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "failure_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The degraded block's reason text.\n\nAnchor: \"currentness could not be computed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
+            "content": "sha256:af20866a9e0e196ece227711b6656c595f7548fb99af9ac0fa8b011ef25fe7a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "failure_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The `knowledge_read` consumer since MIK-R02: currentness once per page at the walk's code tree.\n\nAnchor: `WalkCurrentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_extras"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,233 @@
+{
+  "path": "mcp/tests/test_eve_capsule_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The producer under test and the format its output must satisfy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:41bc4cffe90304a076c0f8625742a5b55ffadb078b94ebea36a5f249fab3aa4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "materialize_eve_binding"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:c3ac2db23042f3f633e7462ac0a5dcb713611ed4a7dc48dc2af94982ed7889a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_carrier"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:7b70655206e67231389d15539125636dd91c7fbcabce083605db181e095fdbee",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveCapsuleCarrier"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Python verifier these cases drive in both directions: accept the admitted binding, refuse each declared defect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:d1dca4dde5ef44f056d15f901a37851f4da2f82cbf221a97f602ddfda5f9531a",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_capsule_binding"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:a2f4a673745eb8c49666f8cbf82b4fdfae40c17b919b49f51430874823b502f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveWorkspaceBinding"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:25409a4745d190fcaeb6d9a99ac6e33a0eeb77070b35e82af8335437c098f498",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 447
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The role authority table the write-surface cases assert against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:cfd12fb53caa99a78e41c8f9a438176202212bbcb4695dae4fb57e712e8e9bbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_WRITE_SURFACES"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:5733184c9470454262095700f434b751b03c2ff029accf1ce4b0ff8a9e818a9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_scopes_for"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:2c9520921f36c93361a312055ab272b354c9343fc6b70f18efbd2d24887c4595",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKER_WRITE_SURFACES"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:0167aefbff1ca31e6a11bae4252e3db9ca5524b3a1ed3006c48215c85b135488",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATOR_WRITE_SURFACES"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The fixture world supplying the real repositories, worktrees, corpus and task documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:4a51051801665e9f353d8b60a6c7a718eace43f8e792ee072e6f651f4ffaa7b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FixtureWorld"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:c53596433631395cca9ade14a0ed0ef027a335e216bbea54fa7b50d3315879d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_world"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:666b5b9a74917056299f49a664da48b9fd9bb0b5536ea670e915c30f4ece0a15",
+            "locator": {
+              "end": 455,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:642171fbd0e667d3f3555e507fd32dc5ab300ba356f6501283aac40d10b45674",
+            "locator": {
+              "end": 549,
+              "kind": "line_range",
+              "start": 457
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The runtime cases that execute the shipped TypeScript for the same seam, which no Python case can observe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc4707f0134d1fef3f5f6dcbd20cbc68c185f992",
+            "content": "sha256:1d98ccbfb2d4638e72f2b58a4ae86169c99f06a1f1b39a0b6a3c1512f2d88ad5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_verifier_refuses_each_declared_defect"
+            },
+            "path": "mcp/tests/test_eve_capsule_runtime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The live native fixture that proves the same binding against a real eve process.\n\nAnchor: \"capsule-binding\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:4b6cbf058ed163d0577984e0a36fa3f85a10d4519b4f8fcf11f88432ec4ce07d",
+            "locator": {
+              "end": 1137,
+              "kind": "line_range",
+              "start": 1137
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

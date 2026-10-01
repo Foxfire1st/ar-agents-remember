@@ -1,0 +1,188 @@
+{
+  "path": "mcp/src/agents_remember/certification/certificate_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Certificate semantic envelopes bind the candidate inputs, predecessor prefix, inventories, and deterministic digest-bearing contracts.\n\nAnchor: \"class CertificationAdmissionSemanticEnvelope(\"; \"class GateCertificateSemanticEnvelope(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:61f456366f6cb9afc40d0fd0f997274f8b163655b167a08673bb86e123397b8c",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:99bda3402f66040f4087a0f5a330385766622f413d57951c65b45b0532114181",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Evidence inventory must use canonical ordering and valid identities.\n\nAnchor: \"def _require_canonical_inventory\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:ec90305a5f5bee3d7501c1b6ce5089002b126d9ce625bfbb5cd1ac3343fb4620",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Admission semantic inputs bind the exact code, memory and certification authorities.\n\nAnchor: \"class CertificationAdmissionSemanticEnvelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:61f456366f6cb9afc40d0fd0f997274f8b163655b167a08673bb86e123397b8c",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The admission manifest binds its semantic envelope and content digest.\n\nAnchor: \"class CertificationAdmissionManifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:502a47afe5095ae4ae49a8349efd7a12c9fef52dc5f91ef4a21be8d8e21ff71f",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A gate certificate binds its semantic envelope and digest.\n\nAnchor: \"class GateCertificate(FrozenContractModel)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:71e25b16d25273c4d9d8946364bb322e963bf06f62b4808520d6739984750c71",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Certificate semantics bind candidate inputs, predecessor prefix and evidence inventories.\n\nAnchor: \"class GateCertificateSemanticEnvelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:99bda3402f66040f4087a0f5a330385766622f413d57951c65b45b0532114181",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Gate 5 binds the memory/coherence inputs only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:58e83879c0da21bc0133eaaa836374638383b8e1dc6baa2e5960a94685f53f2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateFiveSemanticInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Finalization authority bundles the selected certificates and their current input authorities.\n\nAnchor: \"class FinalizationCertificateAuthority\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:9832e548f05682da3c01c510954d4f90a3daeb42ba6f2b78093d1e58cec50b62",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 267
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Exact mutable-edge authorities revalidated by transactional finalization.\n\nAnchor: \"class FinalizationCurrentInputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:7659bd6128294bdf542056f522b9c50d6b71a8f8f6af59e9d8136c90b669a959",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Semantic inputs must use canonical ordering.\n\nAnchor: \"def _require_canonical_inputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:3a4c3a2ccbfa845e66fb51337d5bd59c0e6c9966d1c58e86b7e4360e8e657ad0",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 282
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

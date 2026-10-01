@@ -1,0 +1,97 @@
+{
+  "path": "mcp/tests/_adapter_event_scripts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The replay port and Codex, Pi, and Claude scripts own only external frames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f039513a0bfe66b78a9ce298beb39a63510661",
+            "content": "sha256:c8fd1970ff4730f743d6cf925adee61ff8c76aa552f1cc2a21faca1fdd61983e",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdapterReplayPort"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lifecycle catalog identifies this support file as provider-derived and binds it to conversation-provider event conformance with an exact consumer list.\n\nAnchor: \"conversation-provider-event-conformance\"; \"caller-owned Codex, Pi, and Claude terminal frame scripts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b216305992e17402fb16e015a4afa703214e0c27",
+            "content": "sha256:e69fcf9dd6bea58c53da23b3b3bb9df1b8fe79f968c9b2a6d93a9774c939db90",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b216305992e17402fb16e015a4afa703214e0c27",
+            "content": "sha256:9e9b00dfb4ce86bdd4c84b4e64ca0ebf6437f905be429eec64364c125c314e87",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b216305992e17402fb16e015a4afa703214e0c27",
+            "content": "sha256:bb3837ab2c0f07370888469ee7d83f7fe0132ba1960159c6e2c71091eae2dcc1",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b216305992e17402fb16e015a4afa703214e0c27",
+            "content": "sha256:a0dca06457d734f79cb1e6dbf91819cca41e16a0d89f6768cc1dec7f137ee7f0",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real composition remains in the structural control port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "589d0ad9b2431646acdaba1ec870264655fbadd6",
+            "content": "sha256:f442835661a29641b222d4cc4e347d1d046f503c32be74bb1e4f0b495282a0a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ControlHarness"
+            },
+            "path": "mcp/tests/_control_plane.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

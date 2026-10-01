@@ -1,0 +1,407 @@
+{
+  "path": "dashboard/src/test/fixtureOverrides.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`ts.Program#getSemanticDiagnostics` and `ts.flattenDiagnosticMessageText` are the documented compiler-API surface these assertions read.\n\nAnchor: `getSemanticDiagnostics`, `flattenDiagnosticMessageText`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:9d1d07129c8f3cc5387672f2436c06e4bc86307638c10f321e7174b232efa5bc",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The builders whose parameters are being pinned.\n\nAnchor: `lifecycle`, `taskDoc`, `projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:d0a2ab51fc39e99c785427195b81e8d28bda217130654c318b480eaad0b95c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:b6f4449a610c853dc02c93cbd467d7e51859462c455d37452856c2db473369b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDoc"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:d2af665eedc8a50a5532a15b550ca9fa03188b3a307676167301b39926ac8c24",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:0b6d7588b51c25d183925852d3c4c394b777fc423f105c8f412e89933cf8d266",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:7787bef99d426bc546b2ab40461310dcc30baff6bbbc70805d626108c14e1087",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:435d7d309c961ac09c5e93b3e50151bf9c1aab8ea91ec53c2f475748bd2ea40d",
+            "locator": {
+              "end": 345,
+              "kind": "line_range",
+              "start": 329
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The conversation builders, including the `capabilities`-required page the first probe attacks.\n\nAnchor: `conversationPage`, `conversationItem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:72a2fb4edf364b89bf2d29ee74bc7663acf79aed8aea14330232e6846698eb05",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationPage"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:5d2c7b8b4e6bd61dbd010beace48482d175e23bec9b036cd4a0eb2e10612673f",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationItem"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The current fixture-override regression deliberately supplies undeclared `refusedPolarity` to `lifecycle` and `createdAtButMisspelled` to `taskDoc`, and asserts two unknown-property diagnostics.\n\nAnchor: `refusedPolarity`; `createdAtButMisspelled`; \"still rejects a field the mirror does not declare\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:e1e17b33e7a1462483a3065cbcb7767beac274282e3483fe1f8ed9d6ce1a2fed",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:e38fc562b0e7ea3cf845bfe980a002d10e926bdbf1cba0f2f110d5efac0aaebc",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The schema distinction is deliberate: the full `TaskDocNode` legitimately carries `createdAt`; a master's `TaskSubTaskRefNode` does not and instead may carry `linkedLifecycleId`; `SeriesSubTaskNode` may carry `createdAt`; the contract type assertions pin the master/series distinction.\n\nAnchor: \"class TaskDocNode(BaseModel):\"; \"class TaskSubTaskRefNode(BaseModel):\"; \"class SeriesSubTaskNode(BaseModel):\"; \"keeps the master and series sub-task row models distinct\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:ddb191f3d9a6f808cd69fd8fc3347dbf5487eae66924bd13ecf1aed48fea3b3f",
+            "locator": {
+              "end": 615,
+              "kind": "line_range",
+              "start": 585
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:68b99325902ac69315f5e188f186d0b2421f56333a992af097b6e8438a80822b",
+            "locator": {
+              "end": 656,
+              "kind": "line_range",
+              "start": 626
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:6520211641614e8c0c3ab88e09ef3d926a19d7ea317fc355f02022a338e2e846",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 590
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:cf34cd8801fcc7ff74a08348c28e55e776d4d5696f4e64a85c1e74950683cd25",
+            "locator": {
+              "end": 736,
+              "kind": "line_range",
+              "start": 736
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:a5cec98b47e0ad6353d0dcc68a3359b4b6686a61e4216251732a1d232b0c5464",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 804
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Every probe import resolves inside this repository (`../test/fixtures/wire`, `../test/fixtures/conversationWire`, `../types/projection`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:23adf6d038c7a824263c3fa7fe0689a43d09b9bc87a8c4bc85413603d5bb4f70",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROBE_FILES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "With `exactOptionalPropertyTypes` off, an optional property implicitly admits `undefined` — the rule that makes a bare `Partial<T>` override able to state that a required field is absent.\n\nAnchor: `exactOptionalPropertyTypes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:53664f361037866ac39bc5d2343d194230bd87a7e5f2ca2200aa31dff112ffd3",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The header: what no guard rule can see, and why running over the guard's flag-free program is the point.\n\nAnchor: `PROBE_FILES`, `GUARD_COMPILER_OPTIONS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:23adf6d038c7a824263c3fa7fe0689a43d09b9bc87a8c4bc85413603d5bb4f70",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROBE_FILES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
+            "locator": {
+              "kind": "symbol",
+              "name": "GUARD_COMPILER_OPTIONS"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four impossible calls, the two excess-property calls, and the eleven honest shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:23adf6d038c7a824263c3fa7fe0689a43d09b9bc87a8c4bc85413603d5bb4f70",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROBE_FILES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three exact-count assertions and their message checks.\n\nAnchor: \"a builder override cannot state that a required field is absent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:3394f195238b36c051bc34713244ed3308a31c288dca925292da8cb2bd66e162",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The residue asserted as a known pass: a pre-widened `Partial<LifecycleProjection>` override still compiles.\n\nAnchor: \"LC-2\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:019b3385712f19a5940af7762607a7aa50f638381524de157fd04dd4d8f4fab7",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The constraint under test, and the three limits it documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
+            "locator": {
+              "kind": "symbol",
+              "name": "Overrides"
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`buildProgramWithVirtualFiles` and `GUARD_COMPILER_OPTIONS` — the harness these probes borrow, whose option set is strict/bundler/`resolveJsonModule` and contains no `exactOptionalPropertyTypes` entry.\n\nAnchor: `buildProgramWithVirtualFiles`, `GUARD_COMPILER_OPTIONS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:8ecca33cdfb7e0b823d4923484faf52c8b455c7c8c5b93334df94dc82f59e9c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildProgramWithVirtualFiles"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
+            "locator": {
+              "kind": "symbol",
+              "name": "GUARD_COMPILER_OPTIONS"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The guard's own statement of the same hole — item 5, \"A VALUE\" — which names this file as the answer.\n\nAnchor: \"A VALUE\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:42591ea764277b6bf9d9daa70b48f5c575a872f43d5e7b32c8e5d0b2a88e2b26",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

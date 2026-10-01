@@ -1,15 +1,5 @@
 # mcp/tests/test_worker_child_processes.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_worker_child_processes.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T16:10+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [MCP tests overview](overview.md)
@@ -46,31 +36,22 @@ fallback implementation.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured external documentation applies; the process contract is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external source is required for the forcing proof. | — | — |
+No external source is required for the forcing proof.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A retained real child exits and has already been reaped by its owner. | `test_retained_worker_child_is_reaped_by_its_owner` | mcp/tests/test_worker_child_processes.py:19-29 |
-| Registry identity is idempotent for one object and safe against PID aliasing or reuse. | `test_child_registry_is_idempotent_and_refuses_numeric_pid_aliasing`; `test_reaper_does_not_release_a_pid_now_owned_by_another_process` | mcp/tests/test_worker_child_processes.py:32-58 |
-| Linux refuses missing pidfd APIs while non-Linux remains importable. | `test_linux_worker_boundary_refuses_a_python_without_native_pidfd`; `test_non_linux_import_boundary_does_not_require_pidfd` | mcp/tests/test_worker_child_processes.py:61-77 |
+- A retained real child exits and has already been reaped by its owner. [1]
+- Registry identity is idempotent for one object and safe against PID aliasing or reuse. [2]
+- Linux refuses missing pidfd APIs while non-Linux remains importable. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The suite executes only local child processes under the candidate interpreter. | — | — |
-
-## Update History
-
-- 2026-08-29T16:10+02:00 — Created for the Python 3.13 migration's native-pidfd and separate
-  child-reaping proof. Verification remains closeout-owned.
+The suite executes only local child processes under the candidate interpreter.

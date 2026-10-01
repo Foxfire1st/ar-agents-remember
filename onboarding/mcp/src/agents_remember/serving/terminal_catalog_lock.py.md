@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/terminal_catalog_lock.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | mcp/src/agents_remember/serving/terminal_catalog_lock.py |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | mcp/src/agents_remember/serving/overview.md |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -27,18 +17,16 @@ Cross-process catalog writers are fully serialized across one read, sweep body, 
 
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Worker source inventory, reviewer verdict, and governing route overview.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
-
-## Update History
-
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

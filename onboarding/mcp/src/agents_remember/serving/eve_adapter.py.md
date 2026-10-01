@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/eve_adapter.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/eve_adapter.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:43+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -153,104 +143,32 @@ of creating a replacement.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; eve's published session/streaming documentation is the external authority, mirrored by the wire module and the runtime README. | — | — |
+No configured `Domain Documentation` source; eve's published session/streaming documentation is the external authority, mirrored by the wire module and the runtime README.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The adapter implements AR's existing protocol, capability and interrupt ports rather than introducing a new seam. | `LaunchableHarnessProtocolAdapter`; `InterruptCapableAdapter`; `AdapterHandshake`; `SubmissionReceipt`; `ReconciliationResult`; `InterruptResult` | mcp/src/agents_remember/serving/harness_control_adapter.py:26-26; mcp/src/agents_remember/serving/harness_control_adapter.py:34-37; mcp/src/agents_remember/serving/harness_control_models.py:1-260; mcp/src/agents_remember/models/conversations/control_wire.py:1-200; mcp/src/agents_remember/serving/harness_control_adapter.py:80-90; mcp/src/agents_remember/serving/harness_control_adapter.py:93-108 |
-| Registration is through the existing factory owner, which is the seam this leaf deliberately used instead of adding a kernel harness row. | `create_harness_protocol_adapter`; `_LAUNCH_KNOBS`; `_eve_expected_selection` | mcp/src/agents_remember/serving/harness_control_factories.py:35-40; mcp/src/agents_remember/serving/harness_control_factories.py:56-102; mcp/src/agents_remember/serving/harness_control_factories.py:105-130; mcp/src/agents_remember/serving/harness_control_factories.py:170-195 |
-| The wire contract, cursor decoder, transport seam, launch composition and interaction queue are the adapter's own dependencies. | `EveStreamEvent`; `EveNdjsonDecoder`; `EveRuntimeTransport`; `EveRuntimeSpec`; `EveInteractionQueue` | mcp/src/agents_remember/serving/eve_protocol.py:67-269; mcp/src/agents_remember/serving/eve_stream_cursor.py:13-13; mcp/src/agents_remember/serving/eve_stream_cursor.py:18-69; mcp/src/agents_remember/serving/eve_runtime_client.py:91-372; mcp/src/agents_remember/serving/eve_runtime_launch.py:90-372; mcp/src/agents_remember/serving/eve_interactions.py:34-109 |
-| Event translation and normalized state are the mapper's, not the adapter's. | `EveEventMapper` | mcp/src/agents_remember/serving/eve_events.py:102-646 |
-| The one replay window the adapter delegates to is declared beside the wire contract it serves. | `EveEventDeduplicator`; `EVE_REPLAY_WINDOW` | mcp/src/agents_remember/serving/eve_protocol.py:224-224; mcp/src/agents_remember/serving/eve_protocol.py:234-267 |
-| Acceptance on a reconciled request is proved from the durable record holding the exact message. | `_proves_delivery`; `_RECONCILE_READ_LIMIT` | mcp/src/agents_remember/serving/eve_adapter.py:868-868; mcp/src/agents_remember/serving/eve_adapter.py:877-889; mcp/src/agents_remember/serving/eve_adapter.py:907-919; mcp/src/agents_remember/serving/eve_adapter.py:898-898 |
-| The conformance suites drive this real adapter through the transport seam, one class per named scenario. | `EveAdapterHandshakeTests`; `EveAdapterSubmissionTests`; `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests`; `EveAdapterRestartTests` | mcp/tests/test_eve_adapter.py:271-328; mcp/tests/test_eve_adapter.py:373-603; mcp/tests/test_eve_adapter.py:663-723; mcp/tests/test_eve_adapter.py:726-811; mcp/tests/test_eve_adapter.py:814-907; mcp/tests/test_eve_adapter.py:910-958; mcp/tests/test_eve_adapter.py:960-1008 |
-| The live native fixture proves the same six scenarios against the real runtime over real HTTP. | `_scenario_protocol`; `_scenario_reconnect`; `_scenario_reconcile`; `_scenario_cancel`; `_scenario_restart`; `_scenario_concurrent` | mcp/tests/live_eve_native_fixture.py:572-622; mcp/tests/live_eve_native_fixture.py:625-672; mcp/tests/live_eve_native_fixture.py:675-738; mcp/tests/live_eve_native_fixture.py:774-833; mcp/tests/live_eve_native_fixture.py:849-888; mcp/tests/live_eve_native_fixture.py:1012-1054; mcp/tests/live_eve_native_fixture.py:899-939; mcp/tests/live_eve_native_fixture.py:1088-1130 |
-| The capability snapshot this adapter publishes: both axes are real, and the effort menu is the accepted vocabulary with its default. | `_capability_snapshot`; `supports_effort`; `effort_options`; `default_effort` | mcp/src/agents_remember/serving/eve_adapter.py:699-748 |
-| The AR sentinel, the accepted reasoning vocabulary mirrored from eve's own union, and the setter that validates against it without echoing it back. | `PROVIDER_DEFAULT_EFFORT`; `REASONING_EFFORTS`; `set_effort` | mcp/src/agents_remember/serving/eve_adapter.py:91-91; mcp/src/agents_remember/serving/eve_adapter.py:100-110; mcp/src/agents_remember/serving/eve_adapter.py:312-334 |
-| The capability catalog consumes this snapshot, so the published axis is what the dashboard actually reads. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212 |
-| The authored consumer that makes the axis real: the application reads the effort input and applies it through eve's own agent definition, omitting the property for the sentinel. | "AR_EVE_EFFORT"; "provider-default"; "export default defineAgent({"; "reasoning === PROVIDER_DEFAULT_EFFORT ? {} : { reasoning }" | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35; eve_runtime/agent/agent.ts:37-37; eve_runtime/agent/agent.ts:48-48 |
-| The launch input the consumer reads, and the two places the selection is carried into the child environment rather than re-derived. | `EFFORT_ENV`; `build_runtime_env`; `eve_launch_knobs` | mcp/src/agents_remember/serving/eve_runtime_launch.py:87-87; mcp/src/agents_remember/serving/eve_runtime_launch.py:351-375; mcp/src/agents_remember/serving/eve_runtime_launch.py:404-404; mcp/src/agents_remember/serving/eve_runtime_launch.py:392-407 |
-| Cases pin the published axis in both directions: the pinned runtime consumes the effort input and the catalog publishes the axis the client would read, and the setter refuses every candidate including its own vocabulary. | `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it`; `test_the_effort_setter_refuses_every_candidate_including_its_own_vocabulary`; `test_no_advertised_control_lacks_a_runtime_consumer` | mcp/tests/test_eve_product_integration.py:1151-1191; mcp/tests/test_eve_product_integration.py:1193-1221; mcp/tests/test_eve_product_integration.py:1222-1261 |
+- The adapter implements AR's existing protocol, capability and interrupt ports rather than introducing a new seam. [1]
+- Registration is through the existing factory owner, which is the seam this leaf deliberately used instead of adding a kernel harness row. [2]
+- The wire contract, cursor decoder, transport seam, launch composition and interaction queue are the adapter's own dependencies. [3]
+- Event translation and normalized state are the mapper's, not the adapter's. [4]
+- The one replay window the adapter delegates to is declared beside the wire contract it serves. [5]
+- Acceptance on a reconciled request is proved from the durable record holding the exact message. [6]
+- The conformance suites drive this real adapter through the transport seam, one class per named scenario. [7]
+- The live native fixture proves the same six scenarios against the real runtime over real HTTP. [8]
+- The capability snapshot this adapter publishes: both axes are real, and the effort menu is the accepted vocabulary with its default. [9]
+- The AR sentinel, the accepted reasoning vocabulary mirrored from eve's own union, and the setter that validates against it without echoing it back. [10]
+- The capability catalog consumes this snapshot, so the published axis is what the dashboard actually reads. [11]
+- The authored consumer that makes the axis real: the application reads the effort input and applies it through eve's own agent definition, omitting the property for the sentinel. [12]
+- The launch input the consumer reads, and the two places the selection is carried into the child environment rather than re-derived. [13]
+- Cases pin the published axis in both directions: the pinned runtime consumes the effort input and the catalog publishes the axis the client would read, and the setter refuses every candidate including its own vocabulary. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The controlled application is the pinned published `eve` package, unmodified; nothing is forked or vendored. | "the runtime is the unmodified published" | eve_runtime/package.json:15-20; eve_runtime/README.md:3-8 |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: **corrected in place: the effort axis is no longer
-  retired.** This leaf's candidate gives the pinned application a real `AR_EVE_EFFORT` consumer
-  (`eve_runtime/agent/agent.ts` reads it and applies it through `defineAgent({ reasoning })`, omitting
-  the property for the `provider-default` sentinel), so the previous entry's whole Logic paragraph and
-  its "no effort option is advertised" invariant were **false against this candidate** — this is the
-  L8 honest retraction being lifted because the capability became real, not a relaxation of the rule
-  that produced it. Rewrote both: `_capability_snapshot` publishes `supports_effort=True`, an
-  `effort_options` tuple that **is** `REASONING_EFFORTS` (not a second catalogue), and
-  `default_effort=PROVIDER_DEFAULT_EFFORT`; all options `launch_settable` and not `session_settable`.
-  Added `PROVIDER_DEFAULT_EFFORT` as a named constant, the vocabulary's provenance (eve's own installed
-  union, with the drift case and the recorded-union fallback), and the positive form of the generic
-  rule: the axis may be advertised **only while** the consumer exists. Kept the launch/live split
-  explicit — `set_effort` still reports `unsupported` for every candidate including the advertised
-  ones, and `selected_effort` is still configuration-as-fact, now a configuration the runtime honours.
-  All six reference rows re-anchored to the candidate's real line numbers, plus rows for the authored
-  consumer and the launch input it reads. **Checker result (post-sync, verbatim).** The refusal
-  this entry first recorded was resolved by the leaf's `worktree_sync`: the pair is now
-  `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the contract-scoped
-  `memory_quality_check` ran against this worktree. Headline: `ok:false`,
-  `checklistStatus:"action-required"`,
-  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
-  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
-  unonboarded). This card's own contribution: one `integrity.onboarding_drift_check.summary`
-  finding — `onboarding_drift_drifted`, "Source has local staged changes not represented in
-  HEAD", which is the expected shape for documenting a staged, uncommitted candidate rather than
-  a claim about the wording. Verification metadata moves to the synced base `d8ed8c21`; the
-  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit
-  and no hash or fingerprint was invented here.
-
-- 2026-09-16T11:41:11+00:00: Generated citation repair: `EveAdapterHandshakeTests`; `EveAdapterSubmissionTests`; `EveAdapterReconnectTests`; `EveAdapterReconcileTests`; `EveAdapterInterruptTests`; `EveAdapterRestartTests` repointed to mcp/tests/test_eve_adapter.py:271-328; mcp/tests/test_eve_adapter.py:373-603; mcp/tests/test_eve_adapter.py:663-723; mcp/tests/test_eve_adapter.py:726-811; mcp/tests/test_eve_adapter.py:814-907; mcp/tests/test_eve_adapter.py:910-958. No content impact: mechanical anchor-range projection bound to citation source snapshot 0660715def1042680448936e65be361ff85885dc4b74c0f6d91afac6b5f24074; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: **the effort axis is retired from the catalog.**
-  `_capability_snapshot` now publishes `supports_effort=False`, `effort_options=()` and
-  `default_effort=None`, and `EffortOption` is no longer imported. Recorded the measured reason (the
-  pinned application reads no effort value, so a menu would advertise a control whose every value
-  produces the same run) and the distinction a reader must keep straight: `REASONING_EFFORTS` survives
-  as a **launch-validation vocabulary only** — a settings-owned selection naming an undocumented level
-  is refused at launch — and is *not* a catalog source; `selected_effort` is still reported because the
-  configuration a session started under is a fact rather than a menu. Body updated on Logic and
-  Invariants, and three reference rows added for the snapshot, the surviving vocabulary and the cases
-  that pin both directions. Verification metadata moves to the leaf's synced base `ff97072c`; the
-  candidate is deliberately uncommitted, so the governed closeout stamps the real code commit and no
-  hash or fingerprint was invented here.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): re-read this card against the A2
-  revision of the same uncommitted candidate and updated four contracts. (1) `_proves_delivery` /
-  `reconcile`: the delivery-id branch was **deleted** because a lost response never delivers the
-  request's own id, so acceptance is proved only by the durable record holding the exact accepted
-  message, and the detail string now says exactly that. (2) Launch-environment resolution reads the
-  environment as given, so `AR_EVE_RUNTIME_ROOT` / `AR_EVE_NODE` are live selectors rather than
-  documented-but-inert names, while `_runtime_env` still strips both from the child. (3) `_is_replay`
-  holds no window: the adapter delegates to the single `EveEventDeduplicator`, and a second inline
-  copy is now stated as a regression. (4) `interrupt` is pinned to the **observed** turn id. Citation
-  tables were rewritten into the `Finding | Anchor | Source` shape. Verification metadata moves to the
-  leaf's current base `e9300687`; the candidate is still deliberately uncommitted, so the governed
-  closeout stamps the real code commit and no hash or fingerprint was invented here.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: created this card for a file added by the native
-  eve session-adapter change set. Records the native session contract, the acceptance-versus-completion
-  separation, the never-repeat-a-possibly-accepted-write rule, the turn-addressed interrupt with
-  replay-once, the honest `unsupported` setters, and the explicit boundaries (no capsule compilation,
-  no second registry, no asset submission, no replacement session). Verification metadata is pinned to
-  the leaf's base commit `67b21aeb` because the candidate is deliberately uncommitted — the governed
-  closeout stamps the real code commit, and no hash or fingerprint was invented here.
+- The controlled application is the pinned published `eve` package, unmodified; nothing is forked or vendored. [15]

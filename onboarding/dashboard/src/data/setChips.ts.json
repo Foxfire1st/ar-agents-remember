@@ -1,0 +1,105 @@
+{
+  "path": "dashboard/src/data/setChips.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Chip ordering, copy selection, composer hint, and attention gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:5caeace12da70209e81af7e333c61a300a2be4b9f94b5fdee4e8c1d48266b745",
+            "locator": {
+              "kind": "symbol",
+              "name": "deriveSetChips"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:70ba7d9f849c2ed2e7375f9980baa9ec249301ca86b270be86ee85883e28dd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "queuedComposerHint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:df1156424a28f2c46dcddd8d5a831d3ea1b9bb36eab8d042bac8a0ecf684f126",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasUnackedSetAttention"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Full chip/pair/route/hint matrix.\n\nAnchor: \"a 503 route error renders alarm with retry; other route errors carry no retry\"; \"true for unacked ledger entries and finished failed pairs; false otherwise\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b062bbc7fc69e6e7968256ce40f29b8510892b44",
+            "content": "sha256:656106bdbd8ee862c00db55a2a02df7365c691c1a8d14bbf700a2638b2235702",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "dashboard/src/data/setChips.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b062bbc7fc69e6e7968256ce40f29b8510892b44",
+            "content": "sha256:b305115f2e02dc355923200d9a4ef9736b7a909ec2803a4ac16e3226acff7223",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "dashboard/src/data/setChips.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Copy source consumed by every chip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:9cf652bfd2a1a42ff75e11c8ef3763e762de74b8c8da717526c3638b7fb61692",
+            "locator": {
+              "kind": "symbol",
+              "name": "setWaitingCopy"
+            },
+            "path": "dashboard/src/data/setControlsCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fb8c554e5b0d2b4cc2bf73742889dd423134396",
+            "content": "sha256:1f1eae3485cd5613f8ee834baa0d7a890d14d48c5e02eea9daba22befbde505e",
+            "locator": {
+              "kind": "symbol",
+              "name": "setRouteErrorCopy"
+            },
+            "path": "dashboard/src/data/setControlsCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,54 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_terminal_surface.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Draft and transcript models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:4dfde4801037d2becd2501d4bb10c94057ddb2ff8ad19e3a7e3dc2cbdab2046a",
+            "locator": {
+              "kind": "symbol",
+              "name": "UncommittedDraft"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared queue owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:caa1472d16063f2c59d7ada99fc6cebb016cf7b5dbfb0b0112e908ff78e19596",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessControlBridge"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:baaa9b7fecb1662c1f8135dc4364c9452e8d4459ec0e2966599128e97b87ffa5",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

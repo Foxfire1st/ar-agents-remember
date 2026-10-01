@@ -1,0 +1,149 @@
+{
+  "path": "dashboard/src/data/capabilityCatalog.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The store, cost-honesty copy, envelope validation, and single-flight/refresh machinery.\n\nAnchor: \"export const capabilityCatalogStore\"; \"export function capabilityCostNote(\"; \"function isEnvelope(body: unknown): body is CapabilityEnvelope {\"; \"export function fetchHarnessCapabilities(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3e8f01973965be62ac2d4ba76d32966299ad0f9",
+            "content": "sha256:ef0c095a40f10c202103d96ebafa83c099203a220f8ad41fed3d54b93ffb7254",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3e8f01973965be62ac2d4ba76d32966299ad0f9",
+            "content": "sha256:28d01a2ba6586df99b473862679727a074a73aaa29c9757261b4dbaaf95f13f8",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3e8f01973965be62ac2d4ba76d32966299ad0f9",
+            "content": "sha256:648cecbc0f4c03bfb005d95c732050b54598f665052ac8ca9473402e0db9f1df",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3e8f01973965be62ac2d4ba76d32966299ad0f9",
+            "content": "sha256:04d1108ea61762b0f769f3e18fec4cf99c02b52f72d7643cf70ff2e097016341",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The wire mirror the envelope validates against (`CAPABILITY_SCHEMA`, envelope/snapshot/row types).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:4003e9336a3b8cdde4f88c72521dc5b520ec7954906a7edb80cb26ba0052eb38",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPABILITY_SCHEMA"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The daemon route + quarantine posture this mirrors (failed refresh pops the cache entry).\n\nAnchor: \"class HarnessCapabilityCatalog:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a37cd75a2441474a1f0af28765de4cd209333994",
+            "content": "sha256:7a73a12358532cc4e18172699d2903f00710a4f102542a32b64764df871c29d7",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The primary consumer (picker options exclusively from the envelope; verbatim error + retry).\n\nAnchor: \"const snapshot = entry?.envelope?.capabilities;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:88aeb20b6dfee6330c2638675a995923adc707a695c72f01b0a014ca6514fdf0",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Envelope/error fixtures (all three cacheStatus values; verbatim 404/409/503 bodies).\n\nAnchor: \"export function capabilityEnvelope(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:7ec43f9608c411f40a8adde93fd14179005b4cdb20d19a86ed0fca83e2258713",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The unit suite (state transitions, verbatim errors, drop-on-error, refresh chaining, malformed rows, cost honesty).\n\nAnchor: \"single-flight: concurrent reads of one harness share ONE request\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a643795aa2ee2cdfaf5e30f790c6d2bd97985a2",
+            "content": "sha256:09307f8384a1eb82d5da423251dae382d7fa5c5c6e06d7e0fdeb6e9ee84376d8",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "dashboard/src/data/capabilityCatalog.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

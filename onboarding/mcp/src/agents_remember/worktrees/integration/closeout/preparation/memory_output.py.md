@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675`|
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Owning overview](overview.md)
@@ -44,71 +34,28 @@ The inspected production tree still has no caller of `certification/execution.ex
 
 No additional source-local TODO is asserted by this maintenance pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is configured. | — | — |
+No external domain source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The bundle has code and memory outputs only. | `PreparedMemoryOutputs`; "code and memory outputs" | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:44-48; mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:202-202 |
-| Created memory uses the one renderer; no-write intent has no message or private root. | `_intent` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:59-122 |
-| Memory attribution is appended to the caller's body by one shared renderer. | `render_memory_content_message`; `MemoryAttributionError` | mcp/src/agents_remember/kernel/memory_attribution.py:67-92; mcp/src/agents_remember/kernel/memory_attribution.py:95-96 |
-| Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. | `reobserve`; `_prepare` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:159-198 |
-| Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. | `prepare_memory_outputs`; `actual_tree` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py:201-236 |
-| The stored normalized message becomes the private commit message. | `private_git_binding` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py:49-66 |
-| The committed census checks that every listed producer reaches the shared renderer. | `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:119-137 |
+- The bundle has code and memory outputs only. [1]
+- Created memory uses the one renderer; no-write intent has no message or private root. [2]
+- Memory attribution is appended to the caller's body by one shared renderer. [3]
+- Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory. [4]
+- Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes. [5]
+- The stored normalized message becomes the private commit message. [6]
+- The committed census checks that every listed producer reaches the shared renderer. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Retired ledger-output preparation and documented two-output selection, real trailer attribution, raw/certified tree separation, disabled-write no-op reuse, and exact cache-excluding staging. Source SHA-256 `2ee68ae731e22bddf20478e1181247c758e145c097ebf86fa7aca1386711f886`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
-
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
-  `7317108b`): `_ledger_tree` now hands the runner one
-  `GitRunnerOptions(input_text=content.decode("utf-8"))` object instead of an `input_text=` keyword,
-  which is the whole of the change to this module. No content impact: this card stated no `run_git`
-  call form, so the attribution claims above are unchanged. The five-line call and the one-line import
-  grew the file, so every citation was re-derived against the current source: `_ledger_tree`
-  227-244 → 228-248 (its end moved five lines, not one), `prepare_memory_outputs` 246-308 → 251-313,
-  `_prepare` 178-225 → 179-225, `_output` 164-176 → 165-176, `_intent` 74-142 → 75-142,
-  `PreparedMemoryOutputs` 57-64 → 57-63, and the inline ranges in the Logic paragraph
-  (`_intent` `:73-137` → `:75-142`, the per-leg branch `:91-97` → `:92-98`, the renderer call
-  `:92-94` → `:93-95`, the ledger leg `:96` → `:97`, `normalizedMessage` `:123` → `:124`, and the
-  payload row 106-126 → 107-139, plus `_PRODUCERS` 55-65 → 55-63); verification metadata remains
-  closeout-owned.
-
-- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
-  base `5bb124d4`): this module is the producer the master's 2026-09-13T22:05 census missed and the
-  2026-09-13T23:50 decision added. `_intent` now chooses the normalized message per leg (`:91-97`): the
-  memory-content leg renders through `kernel.memory_attribution.render_memory_content_message` against
-  `result.candidate.codeView.codeCommit`, while the ledger leg keeps the plain `message_for("ledger")`,
-  and `:123` stores the result under `normalizedMessage`, which `private_execution.py:61` commits and
-  `finalization.py` publishes to the live memory ref — so the trailer is inside the object the ref
-  receives. Added the Logic paragraph, the attribution invariants (including the deliberate absence of a
-  behavioural case for this route and the census case that covers it instead) and the renderer/message
-  reference rows, and rebound every stale symbol range in the table to the grown file
-  (`_intent` 73-129 → 74-142, `_output` 152-163 → 164-176, `_prepare` 166-212 → 178-225,
-  `_ledger_tree` 215-231 → 227-244, `prepare_memory_outputs` 234-296 → 246-308). Verification metadata
-  remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-- 2026-09-06T21:46:58+00:00 — Reconciled landed IAS helper ownership and source anchors. Verification pins and historical evidence remain unchanged; no certification or delivery is asserted.
-
-### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
-
-Created from the current source. Verification metadata is intentionally unset until a genuine commit-based verification occurs; no test or acceptance result is asserted.
+No distinct cross-repository evidence source is configured for this file.

@@ -1,0 +1,154 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/published_manifest.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The immutable quality manifest retains profile identity separately from gate certificates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:266fb0430d40e5a44f428ebcb965ccac22eacc94fdc8fb3df09feefce8fa3f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedQualityManifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Report dependencies bind actual candidate, profile plan, bytes and optional runtime authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:c35e332dc029444ea67a20223a306b144b7528d09fd73e7968b389e5dc044c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_report_dependencies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pointer loading and retained-payload parsing use one strict schema-3.1 owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:fd4d3a09c4800636123e66f50a36d186d86265c3097043c3f34b9c5d4ee1e953",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_published_quality_manifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:59ebb90ea8c09abc6797ba8944e5b1781d5affa6d771c69a716c4272e7bc65f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_published_quality_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Serialization preserves the complete accepted snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:5ece367c1c78275ddb0c2c63b2956c04fd8dd21c990538843953e61011aaeb1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_manifest_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Generation and dependency records are derived from exact bound input fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:7bfc956ddbd8e2d496382f3ade83ce47644bf118d9f339b7c8d69e9aedaf589c",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_generation_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:b1538b1db70737422fe4e69bafa822d701940ae62a238c40862a9427f05f9c30",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_dependencies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:c35e332dc029444ea67a20223a306b144b7528d09fd73e7968b389e5dc044c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_report_dependencies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Manifest file keys are canonical safe relative paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b154372c782a3983f21384e169bb11bb6cc84525",
+            "content": "sha256:fb254588e7c3cc6cb6e49bdb86952125db88c0c0b52d3d0eec134e592e453a77",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_safe_relative_report_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Render an exact journal selection after full original-object and artifact readback.\n\nAnchor: \"def render_selected_code_certification\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8f1228605ceccc1731e4d02052461e8cceedc6",
+            "content": "sha256:b7adf1a60cc7819601454d18810f9674861a36ed7952a4b3efee3c9797f0dd59",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 364
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

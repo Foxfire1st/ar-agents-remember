@@ -1,0 +1,219 @@
+{
+  "path": "dashboard/src/panels/EventRiver.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The raw event channel (single-encoded) it consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "557621687e7e8238a5f892f1663045a6fe629754",
+            "content": "sha256:8655b987cfbe8b88eca4d7ab5ce44df0a03ab98dea7644e3c3bf8b42eca1b08c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RawEvent"
+            },
+            "path": "mcp/src/agents_remember/serving/events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "557621687e7e8238a5f892f1663045a6fe629754",
+            "content": "sha256:db41d5712b3c35b4099c93ae6a6e562f5b8803bc109859359f791558291ef204",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/serving/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The reload-order regression keeps a lifecycle-bound tool row hidden until task-document context arrives.\n\nAnchor: \"waits for lifecycle summary context before rendering lifecycle-bound rows\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d521cc4cafa5397f979cdde2bc036536689f73d7",
+            "content": "sha256:b75e3ef2aedd1b326445000dd34afa15712d9955432b270eb12688683ba08208",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "dashboard/src/panels/EventRiver.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "`EventRiver` virtualizes the displayed rows with `@tanstack/react-virtual` (`useVirtualizer`) over a state-backed scroll ref; only the visible window mounts as absolutely-positioned measured rows, with no newest-N slice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d15a0455d7d09fc7f066615ef67e1560f9d37a9",
+            "content": "sha256:42cec3cbb6c23129e71e36b45e24593f1412147d1e0934f2d37a2e28acc8a54a",
+            "locator": {
+              "kind": "symbol",
+              "name": "virtualizer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `ObserverEvent` shape (trust/actor/kind/data).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObserverEvent"
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The formatter layer that owns per-kind Event River copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3197c79bd1aec076f39a5e65e6d0a3b3d99052ce",
+            "content": "sha256:ef649fbdcf67961ba5bccd75c6b25d32135ff1e0fe1b5e6b80f96550d18acb28",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarizeEvent"
+            },
+            "path": "dashboard/src/panels/eventSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The emitter of `tool.completed` and `read.packet` facts this row renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:5c3169494e2eca962c3b1ceff848d3eb42176f17d09ea0a6807d1a59634797f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "emit_tool"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:fa7783dbb8fcf07b0759fd347f89bcf01d62f0a98a0a12650e0cdee7c87ddb3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "emit_read_packet"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Existing lifecycle/enclosure/task-document helpers used for task labels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:86383b3c238500b02d8f7732008333316d1708d25977d666e54e156794db34ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskLabel"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The store's bounded sliding window this virtualizes over.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5602ac3c146d20656384d061cc99d26f28d2751",
+            "content": "sha256:2f18f6e7b4d67baf5a8247a5f1b7ef458b6058c1f0ed8858151d5ad447397bbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVENT_WINDOW"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The render tests pinning readable event rows (now over a virtualized list).\n\nAnchor: \"EventRiver readable activity feed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d521cc4cafa5397f979cdde2bc036536689f73d7",
+            "content": "sha256:0eb374e1ef46e28c50e81f10af0bbd223ea2296d7802f3000deda158751f3628",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "dashboard/src/panels/EventRiver.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`EventRiver` memoizes the displayed list (reverse to newest-first, gate on `eventSummaryContextReady`, drop hidden rows).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d15a0455d7d09fc7f066615ef67e1560f9d37a9",
+            "content": "sha256:8fa41b882b39f2c01f2b107ba9975c64f63f70d38c2a82599c2186bded150e4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventRiver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`eventSummaryContextReady` requires lifecycle/enclosure/task-document context for bound events.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3197c79bd1aec076f39a5e65e6d0a3b3d99052ce",
+            "content": "sha256:ff4226bd5ed17704780445b06a57d0a29161f1e105b288bc293d963d7dcce2d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "eventSummaryContextReady"
+            },
+            "path": "dashboard/src/panels/eventSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

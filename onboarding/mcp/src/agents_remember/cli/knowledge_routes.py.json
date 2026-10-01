@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The command's arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68a6a8af7d012feb08dcf4e3e635b9d5ab6771de",
+            "content": "sha256:499c29f9d5b5c446409bbc07ed98d1ef20bf6ce9e3b946d69838cd9907d7b685",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The working tree's tracked and untracked, not ignored, files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68a6a8af7d012feb08dcf4e3e635b9d5ab6771de",
+            "content": "sha256:ae41e128967fcf7fab5c986994e285f9683f8aa81c03908d2c054c90d6fc008e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_working_tree_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each family's routes, state and suggestion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68a6a8af7d012feb08dcf4e3e635b9d5ab6771de",
+            "content": "sha256:851fb559ec6e8e1e4f7213953a6c9950fc30c5d14c56aceb48154ae759129112",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_document"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68a6a8af7d012feb08dcf4e3e635b9d5ab6771de",
+            "content": "sha256:91de9ee6e67f8ef11a5b2cd02effc7e944496eba947e609b784027c5086d03a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Reading, rendering, unknown families and the exit status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68a6a8af7d012feb08dcf4e3e635b9d5ab6771de",
+            "content": "sha256:05d149fe34766d0365173618cebaa58f8fe6416162f5ae43e84f7918e93903d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68a6a8af7d012feb08dcf4e3e635b9d5ab6771de",
+            "content": "sha256:59c5eedf2cfcdf3ef5e6d67ed1fbc63a0ed5f50876314c54a636321ee1ee66f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The subcommand is registered.\n\nAnchor: `knowledge_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:3cd02b3a87c4067c5071de1c2f26065d96e6d02d4593f5fd040732f5e6fa5fc1",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The command offers the suggestion and writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3bce1135e246b91bf929dcbcf6ba4b2e23aaa7",
+            "content": "sha256:034c7db9f02a88cc7966b625b5aa237a6b8bc1ecb15dd5c9f9dd594086504cc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_routes_command_offers_the_suggestion_and_writes_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

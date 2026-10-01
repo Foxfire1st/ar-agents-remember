@@ -1,0 +1,102 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Absent-not-zero chips, ambient refresh, quiet-stale freshness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c83dce30df8a11fb208befb8b76c12d66747c98c",
+            "content": "sha256:b468dc7219939e9fe2e2aef1b40dc314e7dc17c87a74b3ad8c766258d751ceb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AmbientTelemetry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c83dce30df8a11fb208befb8b76c12d66747c98c",
+            "content": "sha256:2dcea56e36b80d03529b37173d2cf5582aaab9db3d0bd07c0b3590ca19fc4ae8",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The telemetry read client (previously orphaned, now consumed — F3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:b993f0914b38c865c815274d534fcdb018b4d499f66c93f2c3418c2b795fec90",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchConversationTelemetry"
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The A-convention presentation module (`joinChips`/`freshnessTone`/`humanizeAge`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3eaecec4dc7f066a3b6666c682a1a181267f4",
+            "content": "sha256:09ac5e9f5d50736625d96cae471fe487286c3b01337a141635516349173f4bf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "joinChips"
+            },
+            "path": "dashboard/src/data/conversation/format.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `ConversationTelemetry` wire type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:4e6e203410e09b59da0a626393b78d93d276a660d23ba7814034dfda029da659",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationTelemetry"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The toolbar host that mounts this component.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c83dce30df8a11fb208befb8b76c12d66747c98c",
+            "content": "sha256:3afea8a1dd2a8d14d4b94782e9280d1710a45774029da0623dc3cb265ede9110",
+            "locator": {
+              "kind": "symbol",
+              "name": "statusRevision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

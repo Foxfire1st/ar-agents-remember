@@ -1,0 +1,547 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+        "content": "sha256:0fd1011447c58683e2f8903a3e6e6afaaf079b83579e9e1028228d4cf63719c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run"
+        }
+      },
+      "id": "RLZ-Y766ENWA",
+      "invariant": "INV-1XKX9ERN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the gap, the two refused shortcuts and the three modes.**\n\nAnchor: \"the knowledge write plane did not have\"; \"EXIT ZERO IS NOT A PUBLICATION CLAIM\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:0f215642b7eba56ee8d5d68b79d6eb359651e044ec06b694e4c2c0c989cdd53b",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Settings resolution through the umbrella CLI's own discovery, with no second convention.**\n\nAnchor: `load_config`; `discover_config`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:c17bae8dfc4136214fc543c77ed57b07a32ca8ae85ade53684ed28859eaf4375",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The one admission this invocation runs under, or the refusal that stopped it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:14d04c9638aaa7d67ddc98afd49fe873a55eac07cc8c41e7ed9e7960e8488ac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The typed refusal payload a refusal is rendered from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:e048c10064bd07cea20253608d5ee9eb3344775f9d356d7ddc586da2d368b4f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The read-only status payload: what the staging retains and what the location holds now.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:3315b1017aa01354b5b049b2d8b407d78bd020fb39d6c20bc11e76c599c64cfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The run payload the report is rendered from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:4cd691aa0a65712df76ba986934e0fc28ba694f487c7ffb5e613e8d451351b54",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The identity record one payload renders, and the cleanup payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:9fa8580e1f082ce4b3819b177c5344d66e772179d5dab4104a49919fb0749c5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:f498d4bd12921c8ebb160e5cdcf5155364e88afef61950644486f648b9dca0b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleanup_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**`run`: the invocation refusal answered first, then the one selected mode; the run mode is `_run`.**\n\nAnchor: `run`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:81fdc51abf210549b2c422ceeae203259a3970c5aa2694c42aae6e3bdd0ad9f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dispatch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:66400cb968340f627a5dc7d7374dc9da0ac59e0cf04870e0dd479e3e994e91b9",
+            "locator": {
+              "end": 495,
+              "kind": "line_range",
+              "start": 488
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The run mode: a converted admitted memory root is written by the curator file writer as a wave, with the bootstrap scope as task; an unconverted one takes the cutover lock (L37) and then `bootstrap_knowledge` as before.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:0fd1011447c58683e2f8903a3e6e6afaaf079b83579e9e1028228d4cf63719c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:a81b2b4c32bf039dec508bfed35d1de0fa80de59400a181194537f876893955d",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_wave_write"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The `--wave` argument, required only for converted memory.\n\nAnchor: \"--wave\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:e971d7c20d9669314978ecedb997e481c9b2d0f10271e473ebcc7edcab195802",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The cleanup's one outcome, and the exit that is refused unless nothing was at stake.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:a076c7c9d0246881224ca0dcdbc11525e8d93a008e9ad1e5c354a9cf438cbb6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleanup"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two exit meanings: a report was produced, or the invocation was refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:4b9013c07da4998bc9342df8403f50643b7efbd1f9355b30ff36e03fcb8c4817",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXIT_REPORTED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:88b138d3e5f0cd1b1695e69b7d014f64d6d1a41a8e448d75ee72f5ff271449e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXIT_REFUSED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The admission resolver this entry point is the public face of.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:60cb10c962c281de167b8c9f199e2c4b7a7eccaa8279ae40fe7b64a5560b1eb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_bootstrap_context"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:dac4c3b59ebe0e1d2b495423aae98a64684c5cf87f48c82bee98242b4b375c6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BootstrapRefusal"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:2c5c98381a6c4dff56f61de11e8d54dbcc799982d6ad3ef5932cf36fc9a6f159",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmittedKnowledgeBootstrap"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The run this subcommand drives, and its refusal value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2537932adaf1fcf2a546d95ac62646867cebb363",
+            "content": "sha256:0d57fd6f289496dc77dfe17b91110d262abd387b3aae9eb6ed071aea9eb55156",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrap_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2537932adaf1fcf2a546d95ac62646867cebb363",
+            "content": "sha256:68ac7f3b262775449f8162997f9af420464611fab3d41a2c363bbd2d2a74db7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BootstrapRunRefusal"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The bounded cleanup owner behind `--discard-staging`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9f14291da442a8fcdc018e7c36f6058ea172fc5",
+            "content": "sha256:1b171130a4de17187aaa2d630f340e7403b12c4ab621925cb460e2cce8e9059e",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_bootstrap_staging"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_staging.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9f14291da442a8fcdc018e7c36f6058ea172fc5",
+            "content": "sha256:2a909200ba534974266880a353b53498df937933404e29a8da8b00a4ac772e04",
+            "locator": {
+              "kind": "symbol",
+              "name": "StagingCleanup"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_staging.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The subcommand registration that makes this file reachable.\n\nAnchor: `knowledge_bootstrap`; \"knowledge-bootstrap\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:7bdbb95caabeaca4ce16ddf268478171079b072e72001651cb2f8cc25a3a17b1",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4).\n\nAnchor: \"coordination_root=admitted.authority.coordination_root\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:f2f25508bb9033e1f7a8f60582129fd5f914c7b1e5568274200e895353584869",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 527
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "A bootstrap run: the file writer for converted memory, the cutover lock, then the database ingest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:0fd1011447c58683e2f8903a3e6e6afaaf079b83579e9e1028228d4cf63719c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "knowledge-bootstrap refuses unconverted memory once the repository holds converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:5feda41c18ebfcf19a2014219c9a2232bc935006e28564ade7ac9e704af4282c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_bootstrap_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The whole argument surface, including the absent destination argument.**\n\nAnchor: \"--repo\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:02162a27b306020b74f13354d29d2a96993ffd2e2b0dbb59d6d2ceae8d82aa2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**`--commit` documented as the whole write act, with \"Without it this reports and writes nothing, which is the dry run.\"**\n\nAnchor: \"--commit\"; \"which is the dry run\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:f03e95d8703cbcf936aa4414de74d217416cc828aaa3ffa24081b55d540b67b1",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two read-only modes and their own stated boundaries.\n\nAnchor: \"--status\"; \"--discard-staging\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:e6fac86ccb1d83d8fd48967dfa277f28f04f51c3d329e6ef693b8c7c0491663b",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The authorization reference that is both the admission's authority and the authorship actor.\n\nAnchor: \"--authorization-ref\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:c45c4b5eecba6173cf416059183f22cbcaca6b852da22134d7ec9393855255ea",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**Why contradictory modes are refused rather than resolved by precedence.**\n\nAnchor: \"silently picking one is how a dry run becomes a real one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:3bec25e786a072003e1e04a4313330582ce7aa8d85fe2d9befbf0ee1c1067f8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invocation_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The two refusals that keep `--status`, `--discard-staging` and `--commit` from meaning two things at once.**\n\nAnchor: \"one run cannot mean both\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:70c2ec422d151f849aac6777ef8d619e26ccddf9d3bc4f097513f99b47a22f9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mode_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The run's own requirements: a readable list and a non-blank authorization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:2fcebf1fe8e9cc8abbdaf50a0c1a65bab7fc9f3269c8b73b90fc25c786319950",
+            "locator": {
+              "kind": "symbol",
+              "name": "_list_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

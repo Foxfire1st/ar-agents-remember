@@ -1,0 +1,400 @@
+{
+  "path": "mcp/src/agents_remember/serving/launch_capsule.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The operation a launch compiles, and the two role sets that decide the first branch of the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:fa8b741094611f7411a293642034a01bf54152b49dd6fb57001f728eb88d1e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LAUNCH_OPERATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:60fd6fc8f2472175c533148e80496be3b5a56192362a5534f4ae794d8201246b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEGACY_SESSION_ROLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The port the serving launch points resolve through; the composition root fills it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:0dd05ce9bf0e3c1a372e6edfe3be719e30d2a8be653af23d219824f78b171783",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchCapsuleResolver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The application-tier implementation the port is bound to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Both launch points resolve through this module before any host side effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:a71c2da852099ae3ec9c8d735c41ede3831e66d3eb6b7e12df8812dc3ce23b39",
+            "locator": {
+              "kind": "symbol",
+              "name": "_spawn_launch_request"
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:160a90a082c8c63a6d5ab9a778cd8e4b4ccf67d9f48295e8173882ff617dd393",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_terminal_response"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The runner's own agreement check, which is the product-side second axis of the one-workspace rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:84abd36051d3c8cb2592a6830ff38d2cbf1356738395662af08da59970c039d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_runner_config"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The one launch point left on the legacy chain, with its named reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:228d4da7030d7cfb30f7abd4610932afca8590683a8a4993d082926adb869eea",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIBRARY_REOPEN_LEGACY_REASON"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The cases pinning the gate for every seat class, and the production-chain workspace agreement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:c72c9502d044f2b6eaaa075f35dfc113c1de8f6a52be81574a2204811f7fa11a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:091c20add45437449ea6046dceaaf2b79b52687a44d1320b2fdfff2e49270678",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:be5e3e07bb1dc1aa70cf3217672a6368d6426f16bd8a00cde43a8afa3fb1ad31",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 615
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:f2cb9b404b15d8c8f7c2264000d1b7ff9fd28249dc567cb45e5afad6d0dcc6d5",
+            "locator": {
+              "end": 918,
+              "kind": "line_range",
+              "start": 874
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The reader's own environment-name constants, which `eve_binding_env()` returns so writer and reader cannot drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:98443210ff187a5c1a7a4389e1c30e2a6824e9258444e8f7960eeb1ab28bdc6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BINDING_REF_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:b0082851957c57882ea1410385280bcf9ea224e02ed595998d5cc499a03f77de",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_PATH_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a504b810a5749ac33b6994d5a9d7f56eb8656d0",
+            "content": "sha256:2bba1964c3be276b013b090cb2e3933d47c27696d7381cca39b9f5a8e762451f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_DIGEST_ENV"
+            },
+            "path": "mcp/src/agents_remember/models/eve_capsule_carrier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two harnesses with a verified channel, and why every other harness is legacy by declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:8d181cd28ebd2913419f37d834ed2e5426acb300d9d6fb6bac05e6b62eb4eb8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_CARRIER_HARNESSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The three modes, the resolved value's carriers and its admitted workspace, and the operator-facing explanation.\n\nAnchor: `LaunchCapsule.explain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:b190e4936151386a15119132d254bbafcec9da1060dce8e578404695177166e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchCapsuleMode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:85feba1f481929b44d9a51ccaaddcbc12f7f0c2666b91df4179aa16288da9ffc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchCapsule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The request the launch point fills from values it already holds; `is_role_configured` is the frozen-vocabulary membership test.\n\nAnchor: `LaunchCapsuleRequest.is_role_configured`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:c830a91527600dbb275387d09b92107d661bafe042d42f1417d21d96e72f44d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchCapsuleRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:3eec5179b5cb37d45f58a3338b616e49b27f2e1363ccbd8303c7f60c9c873cc3",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one workspace rule and the selection rule that follows it.\n\nAnchor: `session_workspace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:ade4924a285ec8e455a4b7c52effb75428d732a60f71eaad8379b0fb70b7ad71",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_for_workspace"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:72a11c884fb7a7643a155c8dad9d7f81975bfe5fd7dc39ed4897de8db8557a77",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The declared-legacy constructor refuses a blank reason, so \"no capsule\" always names why.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:27d608ca504fe3734522c680d25789c47307aa3064dccc2ac4d2129d89e94ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_launch_capsule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The fail-closed answer for a role-configured seat whose capsule cannot be supplied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:eb802ffd5c7bf44ef8898de418a7bfc60ac49e0a0114a70d95c68e60e49a2343",
+            "locator": {
+              "kind": "symbol",
+              "name": "refused_launch_capsule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two reason functions: which role is a declared legacy seat, and which harness has no channel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:3aee9ac1bb981e0d14d598c481bbeb2d7b4acdabe19ae4355955d21c1817385e",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_seat_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:c0a4a0d99162a3a8042ca40907ba0472d242718d9d81535f389761e99b2d53c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "capsule_channel_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The whole decision tree in one function, including the no-resolver refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_launch_capsule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

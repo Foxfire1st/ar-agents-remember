@@ -1,0 +1,353 @@
+{
+  "path": "mcp/tests/test_eve_effort_runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The vocabulary the cases iterate and the sentinel they single out — the adapter's one declaration, which the launch gate validates against and the catalogue publishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:d72e0f89cef5023bc8e6f7b5ef20baa71c8e9269e77cc88d9bb292cfcb01aa7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "REASONING_EFFORTS"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:a359715fcbc90887e030318c81e33017d431a70fa43afc2ca4049f7c676a1a4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROVIDER_DEFAULT_EFFORT"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real runtime process the cases start, and the launch environment the selected level is carried into.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:65f4d062b6c46ef53987340bb549a1deef96b65b95c1206dc4f14d09473f08ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRuntimeProcess"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:a172cc340f55a94fd9b0d5efe4fb73130ea8364468d0324fae735bf1a4982eab",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_runtime_spec"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:f6cd6e7966b4d5d67b2c1ec26b08f839c2613b2b8b90ef3a71ce9f713e2a7371",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveLaunchSelection"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:a2f4a673745eb8c49666f8cbf82b4fdfae40c17b919b49f51430874823b502f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveWorkspaceBinding"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The recording provider boundary and the staged application root, which are what make the body the evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:791cf0fc3f2016f727575031dab2f91577a31aed827f920c299082d7878ac3a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedModelRequest"
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:b3299d699f0926db246c8f980eb90a8279db3bedee9393162a512280ecf29485",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve_recording_provider"
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:1de4241db7ff61f0822572d3a3632c2e585304cf71607bb7d01d7427772e4520",
+            "locator": {
+              "kind": "symbol",
+              "name": "staged_runtime_root"
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:c61aa84b3f5ed8cd3eae0dec3ba360f0802697978b148362adf2c53a50357c86",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_APPLICATION_ROOT"
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "content": "sha256:72b4da76b16439eb8fae8c252fb0c7834a8aab8be284e346a5b35f29c2626725",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_installed_eve_application"
+            },
+            "path": "mcp/tests/eve_adapter_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The complete verified capsule binding the runtime refuses to start without, built through the capsule seam's own fixture support.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:6b671124ecc14f15956774f75c0911e63cfadb6c7265247ee1079255aad427e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FixtureCarrierRequest"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:a1ef47a23cedb547006773ea368f895e24fcb22dacc3fb680b78d97ac8036808",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_carrier_for"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:d81009cbbd7b7059fcfc9d3e0424b257bd220b6f4a11d1a8ddff78ee9295dda9",
+            "locator": {
+              "kind": "symbol",
+              "name": "binding_env"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "content": "sha256:d58b504cac9e0317afb5f0f230a08732318e50de82d88499360bad660617968c",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_with_commit"
+            },
+            "path": "mcp/tests/eve_capsule_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The consumer under measurement: the authored application reads the effort input and applies it through eve's own definition, omitting the property for the sentinel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e7657e36f886ab4d4ed61f8016f36e1ec6a778",
+            "content": "sha256:867c72efdfebf3628e4c3c29011b5d25f7c5d6f0c8e6a4fe867a5bcf1743f412",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROVIDER_DEFAULT_EFFORT"
+            },
+            "path": "eve_runtime/agent/agent.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e7657e36f886ab4d4ed61f8016f36e1ec6a778",
+            "content": "sha256:d3cabc0453dfb6cfc27e89c89641d09a84d933edc15a63660362601125083cda",
+            "locator": {
+              "kind": "symbol",
+              "name": "reasoning"
+            },
+            "path": "eve_runtime/agent/agent.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:a104e09d45bd98cb9e00145d5b1bc706fce198f1e30297e9912e69abbb47d274",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capability_snapshot"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:5170528a5238ba25382f32eac0ba1719cc19d108be9ef5c90b9521eb80b9601b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d6f70d8f428b434bf7cb13747e0b604c0cc6ac4b1766b5838625db5d2a8a0b5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEffortConsumerShapeTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The module's own lane row, which the fail-closed loader requires.\n\nAnchor: `integration`; `mcp/tests/test_eve_effort_runtime.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The pinned runtime the cases start, the exact dependency pins, and the machine-local install command that the README documents and the guard enforces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17653713e7d68f8fdca2a8608e6f40557afb42d4",
+            "content": "sha256:0bde5850bc8d01b143ce838ab83aced10d4cef73372e88d8157d6c60de45d9d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEffortConsumerTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "17653713e7d68f8fdca2a8608e6f40557afb42d4",
+            "content": "sha256:30504c846024a176bdb9b0c317d508b5e1304f74862cf2ab5b3b61062274ca57",
+            "locator": {
+              "kind": "symbol",
+              "name": "_one_level"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:6c82aaae98e7cc9c92b49f277c6ae5e38690c3f97471b92615c1ab8c39aba990",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:f93edbd187987213307228fcdf5c44aa18fc1344e8a6f01134a5a0b9dcd51811",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

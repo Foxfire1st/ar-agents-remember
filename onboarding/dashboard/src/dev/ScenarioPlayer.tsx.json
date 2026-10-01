@@ -1,0 +1,125 @@
+{
+  "path": "dashboard/src/dev/ScenarioPlayer.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`applyFrame` snapshots + replays a frame into the real store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a496ea3787ae9c16702581c81e2793eb459d67e",
+            "content": "sha256:5a65c16b3394f3b1c8070abb55b1ef16528fc5dac85ada3ed7ca7120f438b165",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyFrame"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `Scenario`/`ScenarioFrame` model it walks.\n\nAnchor: `ScenarioFrame`, `Scenario`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:9d5aa6f13b3a22ba56c5590d4d7b8a5e0aafd208e86b2448b59480799de56803",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScenarioFrame"
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:e547a7f28653050027531809a0cdd1651a9030eb3b5fab8f6c9e468e76f6472c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Scenario"
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:1e34b86535b99692c1955e99ce5c8e51407251c660443732fb984cc5f21de303",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:6c6e54fae9c9d54136f9529d57efc8d03833ffa72afc1233f5f69d5811f4369d",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real store it drives (`applySnapshot` / `pushEvent`).\n\nAnchor: `applySnapshot`, `pushEvent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5602ac3c146d20656384d061cc99d26f28d2751",
+            "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
+            "locator": {
+              "kind": "symbol",
+              "name": "applySnapshot"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5602ac3c146d20656384d061cc99d26f28d2751",
+            "content": "sha256:cfaa8c197ff248d56341c5e0bf820ac51ae5eb2ae7a67efbc825e67a3cf42274",
+            "locator": {
+              "kind": "symbol",
+              "name": "pushEvent"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Mounted (keyed by scenario) beneath the cockpit by the bench.\n\nAnchor: `ScenarioPlayer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
+            "content": "sha256:de95705a53f8072fcbd973e8e8d001910c2ae039845d4f2595ac347acf14c0bd",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/dev/Bench.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

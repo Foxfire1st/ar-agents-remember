@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the views, read-only reads and named failures.\n\nAnchor: \"**Read-only** (rule 6): the reader never writes a repository.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
+            "content": "sha256:513eaa04a678e7d4df642ff7fb392b1b94e632a455248e71c41d1fde4373c7e9",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The nine views.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
+            "content": "sha256:ce954bb3fb2718f6b665c8eaca99a127986d1537b7c4c73d51c11240a04eb497",
+            "locator": {
+              "kind": "symbol",
+              "name": "READER_VIEWS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One question: selections first, the selection opened, the typed failures and the envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
+            "content": "sha256:5994963e88a2b6ee153ed4662f3c4d9ea6ff3a85775501bf515ba7689ab5c74d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_knowledge_reader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dispatch by view; a record the tree does not hold is `not-found`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
+            "content": "sha256:bd5faddd826ecddbf234fe6d96caa91fc27c3819cb715a87df913e52105b6b12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_answer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
+            "content": "sha256:38874c83740e243dc0f787784750dce65e8c52bca4d1489bf883a34ce3e3aa1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `invalid-request` answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
+            "content": "sha256:804ae1b4e0b21360163af553a3ed9828e08b375686a9b3ca0cfee24187a6190d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invalid"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The measured selection block a subtree page returns in place of the default (R3-1).\n\nAnchor: \"return {\\\"state\\\": \\\"view\\\", \\\"selection\\\": selection.to_document(), **body}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
+            "content": "sha256:752b020c6ab4eab97b9f15f96e4491fa133fb7ae5a701815aebc80f1bd706c6d",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/subtree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The composition root's port that calls this function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:1c6c11d8a7208b00eced9d78059bf83be0a5c212a20261dffe372635a52b0788",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_reader_port"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The route case: every view served, nothing written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:113eedcddca789aecec61858881ddfcf7f25b94b2cebf5495bd52b5a8c16b9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_serves_every_view_and_the_reader_writes_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

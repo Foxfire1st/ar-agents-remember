@@ -1,0 +1,98 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:d433e021143b2eb3add330c413d0175a4bf1d478aec845448d2e9142eb7d4021",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutMutationLeg"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:1d2213697e54872749956c9f46bcec11d94fd8d6c15fb918b47608230c689933",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMutationSnapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The four-state vocabulary is closed and explicit.\n\nAnchor: \"MutationEvidenceState = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:0ca6d1044b6bf0dc344749039b36a4041238d891e0452b640c475d0ef12185aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "MutationEvidenceState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Snapshot identity includes reflog, index, candidate, and status facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:1d2213697e54872749956c9f46bcec11d94fd8d6c15fb918b47608230c689933",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMutationSnapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "State-specific proof is model validated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:69a38b46d070cbccebd05166a142eee0ff56be775f8c93248431488ad2b5a89b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_state_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:1d2213697e54872749956c9f46bcec11d94fd8d6c15fb918b47608230c689933",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMutationSnapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

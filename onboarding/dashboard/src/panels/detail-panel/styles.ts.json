@@ -1,0 +1,143 @@
+{
+  "path": "dashboard/src/panels/detail-panel/styles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three disclosure classes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:2063c5121eb7c1c49b39b37f93a47cce83512d06e61daee202f060cdcd469669",
+            "locator": {
+              "kind": "symbol",
+              "name": "entryStateDetails"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:546ce106c54de41bb5fffa39ab5f6e482d7472db352483c39e6ce9d46a44ff44",
+            "locator": {
+              "kind": "symbol",
+              "name": "entryStateSummary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:03f9427fcb001c9bd73da7812fdff4877fda682f17dd9d20f6957af4c6ad1fe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "entryStateBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The panel layout/stepper/badge recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:44165541b2682e021e2dc99aaab44a51dc76bf3ec5250040b3e933b6d9636cb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "sizing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:7d1868998bc75d03268170e00209fafcea859fc93c61257035afaf5cff7f5580",
+            "locator": {
+              "kind": "symbol",
+              "name": "stepper"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:6a4ae25869b1941650f88463ccd248a15b2c580ff2afd331ab4c25b4203b2e9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:a89433942b2876257ac6aaaba16fb21ac8f2b24189c3242bc5bceb0d86d3429e",
+            "locator": {
+              "kind": "symbol",
+              "name": "badge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The slice/cross/spine recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:77edbd05c27953d5d05884003ab4827a1201d91e6ef92a7a9109cce91056bef8",
+            "locator": {
+              "kind": "symbol",
+              "name": "slice"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:936441ef9c23fc788b58660bb716ecd81003ade739066c12a63b6e7f87cb4173",
+            "locator": {
+              "kind": "symbol",
+              "name": "sliceButton"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:1878566b0114f3bdb5bbc4689feea8654159293b8e924b17542a6a00abb7b488",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossButton"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:f83d8166c27eca11a3bff5e686c53c774c629fc4472a7d02d53b8f35075960f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "lane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

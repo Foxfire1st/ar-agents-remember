@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/observer/store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The event envelope serialized and validated by the observer model.\n\nAnchor: \"class Event\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:b475a5b8491fe6b783223d7c1b26257d74dddab44165049dfa45f767536b96ab",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store layout, retention tiers, and TTL prune rule.\n\nAnchor: \"TTL is fleeting-only\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4851337fbc47ed9d84d7dd8edffff9b778d2805",
+            "content": "sha256:c852d3fd8997736875423fc6c1ef9f8381c4aa2286b89b1856dbed0108a5197e",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

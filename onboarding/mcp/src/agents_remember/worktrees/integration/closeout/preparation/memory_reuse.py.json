@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_reuse.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The observer excludes cache status and binds actual HEAD/tree plus the certified content subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cd60f42499bfabcd82b0e2a42808e6a68cc4ef",
+            "content": "sha256:707612708ed2bcdd82bc8bdc84963a50bb5865f2aac7ef9921e2d4f546332c24",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_existing_memory_proof"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97cd60f42499bfabcd82b0e2a42808e6a68cc4ef",
+            "content": "sha256:5f01d2c77f9082318d1e8cbd44b06566526e27f7a5cd5f7e43fd966621bc054f",
+            "locator": {
+              "kind": "symbol",
+              "name": "head_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exact raw HEAD tree is checked before projected content is inspected.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:658a8aac1c8282e9444bfbfb030d2d882f09547a67fff567b005b4298e0c4049",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_existing_preparation"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:3ef0e56fa49843ccee9bf854be40fad10113b9d18070eebf77b21021cebd43b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_tree"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only root memory.md is removed when proving equality with a required memory certificate subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:3aee3a9b79c53ead69240c12c5cb5011a1e0236cd1d306b82add9c70a38614e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_preparation_entries"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:658a8aac1c8282e9444bfbfb030d2d882f09547a67fff567b005b4298e0c4049",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_existing_preparation"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closed record hashes the raw and certified identities separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c08cf71950d410e4897d54881cfca9ed1909f3",
+            "content": "sha256:8822d274a6b0f07f882cf4736a6c1acb8a3bee74f2485578b29d40c9662aee3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExistingMemoryPreparationProof"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared exact Git pathspec names only the derived root cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "content": "sha256:fe8c801c1101f2ea09438c141664d03f55189cd2474a9e9ffd57d075d423f5bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_CACHE_EXCLUDE"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

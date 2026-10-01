@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python quality verification overview](overview.md)
@@ -102,23 +92,23 @@ aggregate.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain contract governs this repository-local verification cache.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Admission and exact retry selection | `prepare` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:211-235 |
-| Current snapshot/config/tool identity without diff floor | `_compatibility_key` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:439-459 |
-| Complete dependency ownership required for delta | `_retry_impact` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:321-337 |
-| Manifest identity and artifact mismatch detection | `_manifest_findings` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:504-549 |
-| Retained/fresh evidence and proof publication lifecycle | `RetryPlan` | mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py:119-208 |
+- Admission and exact retry selection [1]
+- Current snapshot/config/tool identity without diff floor [2]
+- Complete dependency ownership required for delta [3]
+- Manifest identity and artifact mismatch detection [4]
+- Retained/fresh evidence and proof publication lifecycle [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The proof is Dagger-owned verification state and does not enter product or memory Git history.
 
@@ -127,40 +117,3 @@ The proof is Dagger-owned verification state and does not enter product or memor
 Retry preparation now stays enabled on the actual CI/Dagger route and consumes the same mounted
 cache across attempts. A diagnostic runner cannot publish or restore this proof, and a matching
 diagnostic candidate digest is not a certifying reuse key.
-
-## Update History
-
-- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
-
-- 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Re-read the real Dagger retry and matrix delegates and corrected their moved source ranges; retained unchanged-source verification provenance.
-
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Kept the forcing claim but separated the entry points from the actual scenario catalog. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
-  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 exact-selection
-  retry binding — schema v5 with `selection_digest` in inputs/plan/manifest, refused
-  `exact-selection-identity-changed` cache hits, unresolved-input ownership reporting, and the
-  selection-digest disable/finding checks. Verification is pinned to the owning commit.
-
-- 2026-08-28T11:32+02:00 — Bound missing tool distributions into retry compatibility as the
-  explicit `absent` state.
-
-- 2026-08-27T19:13+02:00 — Added explicit known-empty retained-context state so an
-  all-contexts-affected delta remains valid without weakening missing-artifact refusal.
-- 2026-08-27T18:33+02:00 — Replaced in-place pytest-cov append with isolated retained/fresh
-  databases, explicit Coverage.py merge, regenerated scored JSON, and fail-closed atomic
-  publication so xdist cannot erase reusable contexts.
-- 2026-08-27T17:19+02:00 — Clarified the non-overlapping retry responsibilities: cached
-  collection context is discarded, current canonical collection is rebuilt, and only affected
-  module bodies execute.
-- 2026-08-27T15:11+02:00 — Classified Dagger's per-exec OpenTelemetry endpoints, trace parent, and
-  baggage as explicit runtime transport so identical fresh containers share a compatibility key;
-  retained fail-closed invalidation for every unclassified environment change.
-- 2026-08-27T11:14+02:00 — Corrected the production-route contract: retry planning stays enabled
-  in CI, persists through the locked Dagger cache, binds explicit lane identity, and exposes every
-  miss or disabled reason before running fresh in the same admitted route.
-- 2026-08-25T01:56+02:00 — Replaced changed-test-only retry eligibility with shared
-  dependency-owned impact and source-context filtering.
-- 2026-08-24T21:23+02:00 — Added the typed Dagger admission boundary.
-- 2026-08-10T07:30+02:00 — Created for the developer-approved cheap-first content-addressed retry
-  pipeline. Verification metadata remains blank until closeout stamps the code commit.

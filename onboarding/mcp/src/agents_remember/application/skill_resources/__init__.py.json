@@ -1,0 +1,291 @@
+{
+  "path": "mcp/src/agents_remember/application/skill_resources/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The extension identifier, this server's own index URI and schema, and the reserved `_meta` prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:15709ccd2d1b8ead314f0ec02cce6fc8f34d0ff200577540c0bd2982c4f37489",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILLS_EXTENSION_ID"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:58c016d5d00419fb702bb4af84c9d0821c623243465c3075a67935987082694a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_INDEX_URI"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:42fdbff61eb5f9f7d4496b6b43c956f5e11c069a7d5ce66524d3b473cbb0beb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_INDEX_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:0e233812d3731d24b8832cd0428382543c3d8c0de11152d8a73d1834bae75085",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_META_PREFIX"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The governing section separates per-task capsule composition from stable reusable skill delivery and states the admission and provenance boundary between them.\n\nAnchor: `## 260915-CAPS-L4 The Capsule And Skill-Resource Application Boundary`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/application/overview.md:898-938"
+        }
+      ]
+    },
+    "2": {
+      "note": "The SEP entry the two mandatory methods return.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:8b3460de256e9488c1bcf005764605e8fa56496b0c59d589424108ae83898a9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_document"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The served corpus is the package's own generated runtime skills copy, which is what makes a served revision reproducible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:146af4dd9067ef159d8b70397b09e4592363f09462b22c07fb4b4d241a885469",
+            "locator": {
+              "kind": "symbol",
+              "name": "PACKAGED_SKILLS_DIRECTORY"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:5c093fea021c330d2c618bb11ee7902c52a15b4e661c6dbcceb21dffa645efd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "shipped_skill_tree"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The package's two halves and the separation contract they exist to enforce.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:c3d2144310d2a38eeed8be4d4c358291431cf1e2cd8b6b4b0fd84182fd42189c",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_task_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:a6a64bca0b39730bfbbfc8c428388f9f2d9c4c931c3c8f5f6ade917f16c37318",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The revision-checked delivery half: one addressed file, containment proven before the read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:d45210ffe40e81f0978179d1a159633f4f71ea4c67ae9a73fc703e4c53fb415f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_served_file"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The verbatim frontmatter reader the entries depend on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:d5f1bd374fccc72a69be7c9f9de4b903730e978efd6b27b402476e303e0573f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_skill_frontmatter"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/frontmatter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two planes stay separate in the compiled capsule: a declared skill becomes a reference, not instruction content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:69557d94bd303d745183303df14a686ac1ee1f02092e3a6d14ccfe6828f7ad7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSkillReferencePayload"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:c60e6b82416934f780fdf1ce59eff9840476c4c307fc19b9b2089f211449a4c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleCapsuleResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The application entry points the MCP registration layer calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:2a778309bf92a9929919ae0209c369036fd2adf9dca6c28339059322f38c4320",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_capsule_compile_tool"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:5fbdf557958300c14da8a4f0432c62e3bc804136fe2221d2e9cbf3c8779f6346",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_list_tool"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:82eefdaf02b663fb22ca10337f2dab01ae502c37c1bfbf162f533f48288ead12",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_read_tool"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "How the boundary is registered: three public MCP tools, the resource set, and the two mandatory protocol methods.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:2f45c654bbec0d447d009eb6b10b263566657ec1f3f95f63f0afc3195330d00e",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_capsule_and_skill_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:cc4845b47643583a8b98ac754e62902b8c3afa0d20223d7a77ef2c6167511c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_extension_methods"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:af09a704ad0f793aca0cee575e8d2765d92c8b66320ac4069451649dc8b29592",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

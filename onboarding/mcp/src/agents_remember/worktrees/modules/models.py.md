@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/models.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/worktrees/modules/models.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-22T10:39+02:00     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -57,36 +47,12 @@ marks the settings path as an application-owned temp file whose lifetime must
 extend into the background setup thread, which then owns the unlink
 (GitHub #53).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP skill tools type result envelopes and provider setup config through this facade-exported model. | "def skills_install_tool" | mcp/src/agents_remember/application/runtime/skills.py:13-13 |
-
-## Update History
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: replaced the deleted
-  `_external_closeout_commits` ownership claim with the current split: `closeout.py` constructs the
-  frozen `VerifiedChange`, and `closeout_external.external_closeout_commits` consumes it for the
-  external-memory path. Candidate tree `4241908c`; verification metadata remains pinned until
-  governed closeout.
-- 2026-08-12T22:25+02:00 — 260731-EFA-L23 curator follow-up: clarified `RouteOverviewRefreshPlan` as the source-matched plus task-edited route transaction plan. Body/history evidence remains classification-owned rather than encoded as a permissive plan flag. Verification remains closeout-owned.
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 1 citation item; scoped citation check now passes.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  added the frozen `VerifiedChange(commit, commit_date, changed_paths, working_paths=None)` — the
-  landed code change every onboarding refresher stamps against. Additive to this module; the
-  signature changes land in `closeout.py` and `onboarding.py`. Verification metadata pinned until
-  closeout stamps the L2 commit.
-- 2026-06-12T19:06+02:00 — Issue #83: `OnboardingRefreshPlan` gained the non-blocking `unonboarded` list (committed-range paths without onboarding) and the module gained `PATH_SAMPLE_LIMIT` (30) for count+sample payload bounding.
-- 2026-06-10T07:30+02:00 — `WorktreeProviderSetupConfig` gained `unlink_settings_after_setup` (default False): marks the settings path as a controller-owned temp file whose lifetime must extend into the background setup thread, which then owns the unlink (GitHub #53).
-- 2026-06-10T05:20+02:00 — Issue #56 sub-task 2: added `RouteOverviewBodyClassification` (stale / untraced / attested_no_impact / stamped_without_body_review).
-- 2026-06-10T04:47+02:00 — Added `SidecarBodyClassification` (stale / untraced / attested_no_impact) for the issue #56 four-case sidecar body gate.
-- 2026-05-29T18:35+02:00: Added the onboarding refresh-plan TypedDicts (`OnboardingRefreshPlan`, `RouteOverviewRefreshPlan`, `EntityFingerprintRow`, `EntityFingerprintRequiredItem`, `EntityFingerprintRefreshPlan`); behavior-preserving (commit `0549b28`).
-- 2026-05-25T20:41+02:00: Created during worktree manager module extraction.
+- MCP skill tools type result envelopes and provider setup config through this facade-exported model. [1]

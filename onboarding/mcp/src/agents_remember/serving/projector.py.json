@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/serving/projector.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.\n\nAnchor: \"def _publish_projection(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 292
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Subscription activation registers its queue before current-snapshot capture and removes it in `finally`.\n\nAnchor: \"self._subscribers.add(queue)\"; \"self._subscribers.discard(queue)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:18cca4d32ee2d3c3397ff23be7c1560237452174f7e631917420743020adb519",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 346
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:0174f49a6c0f72cd96c6a5c567604dc84f4a2a766afd12af379076c88dbca096",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 354
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The app consumes one projector subscription, decorates every snapshot with build/heartbeat identity, and explicitly closes the iterator.\n\nAnchor: \"async with contextlib.aclosing(projector.subscribe())\"; \"is permitted; handwritten tail keys or another\"; \"payload.update(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:3ce9acbc6e3cd416d422301dabd1c484486a0b928f33fd7da8d77d54f6110226",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:c7f79056394b2ea9a2ff34430d5ac5d775c5d66b0514d80a514393c0fc30cbdc",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:c594b38d0f2e4d1d4c5ce198985264a7036698c796c40e01403082b5aeabfdae",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:b2e58e17cdfc4b73829048700bb8c222bb8ea3923f54f4fb4b6b95b4f0c6264a",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

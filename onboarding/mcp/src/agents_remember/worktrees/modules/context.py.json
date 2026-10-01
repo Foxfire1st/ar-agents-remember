@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/context.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The kernel resolver facade and the coordination-context builder own topology, storage, path rules, and cross-repo resolution.\n\nAnchor: \"def build_coordination_context(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:8be558dfd19d944a64de16a830fbebea3660b5af442ba6b2cb68741a1f686353",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Closeout preview resolves candidate-rooted context for route-index and sidecar classification.\n\nAnchor: \"def _memory_refresh_preview(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:c028e5bc73e3e9185aca1a3d9c90966ef86993ee73ca273c6dcf53cde4e7573d",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Closeout replaces the resolved context's code root with the task worktree.\n\nAnchor: \"def _closeout_contract_context(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:e52c3872e9cd0e33ac543095d2818953841c85185c0a7d3e878dac14cb84f100",
+            "locator": {
+              "end": 741,
+              "kind": "line_range",
+              "start": 741
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The external-memory phase resolves that contract context before refreshing onboarding and running post-refresh quality.\n\nAnchor: \"def _refresh_external_memory(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a934436db159583d6ae1ed9f6e053914cc794c7",
+            "content": "sha256:628d7750e9e9c9fc28ff780210a5c4071ef85a9b86a6c05ebf811fe70ba8be29",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

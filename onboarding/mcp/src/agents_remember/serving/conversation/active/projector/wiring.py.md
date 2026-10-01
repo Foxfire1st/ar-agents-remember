@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/projector/wiring.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/projector/wiring.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-31 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [projector overview](overview.md)
@@ -75,11 +65,13 @@ checkable rather than a convention repeated across five parameter lists.
   `AgentAuthority`, `ProjectionMutationStream`, `ProjectionEvidenceRefs`) live under
   `TYPE_CHECKING`; this module holds no behaviour beyond the two properties.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository.
 
-## Repo-Internal References
+### Repo-Internal References
 
 - [facade.py](facade.py.md) assembles the spine and readers and hands them to the components.
 - [native_ingestion.py](native_ingestion.py.md), [echo_ingestion.py](echo_ingestion.py.md),
@@ -87,13 +79,6 @@ No domain documentation source is configured for this repository.
   take the spine instead of re-listing its fields.
 - [harness_control_client.py](../../../harness_control_client.py.md) owns the five live reads.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: created for the new module. Verification metadata stays
-  pinned to the pre-commit source history until closeout.

@@ -1,0 +1,216 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The driver treats this store as the sole current generation and routes recovery from its strict outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8755dbb2fcf0a8edfa492a3d956df2e51bdf9497",
+            "content": "sha256:a40c02202996c5392b3c97d7b5fc62421a46ff4db0d5a0db71efe9cbbbddc531",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_sync_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8755dbb2fcf0a8edfa492a3d956df2e51bdf9497",
+            "content": "sha256:5cb521b77d1619eef718c46f1f59a359abeac65de936f96324e689f42be06d9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_sync_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "content": "sha256:281c7b4b0435e9938358c5cf452b0edb9478f113094ca158e3f66baffa5efa3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_sync"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "content": "sha256:02d4c1b7b9aed8051fbe1d5465a8ab5a3e6f2322a9994c54e75c1f1c4dd937c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_unreadable_journal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b270b7531a67b779c4e7d3a0fddc63fd285e89b0",
+            "content": "sha256:4b86e7314fe45d353706268c078dacedf163136fb30d0c1ceb3f29ffd69dd306",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_missing_journal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public status embeds this journal projection without moving its authority into task/queue state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00d06ec6ebe2a4416c2f4549b9c5cb39e7e2e93",
+            "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_packet"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The strict side record now journals the parked candidate's state, stash identity, bounded path sample, true path count, the engine's explanation of a retained knowledge conflict, and every authored decision this side has already accepted for it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:0a248d827bf5947bba02227b053bfccc57abb65eba5c4413f6eaf001bd0bbafd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncSideRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:ad55ee2f9ee46f8ee7b263bd07d4d91f295208e2469a2c3fec28ef4ca4e6d1eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncWipState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:7fb37790a4f9a7e9be61fccd715298bed404ef54a46f177b9ffa08cc240860f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledgeReconciliations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:0ef4aa134b30a89ba89b646cfd67e735e1534b692763d36a3e8f367f8e857eb2",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The crossing report path is journaled for a crossing sync only; an empty one is omitted, so ordinary journals stay readable by the installed runtime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:0a248d827bf5947bba02227b053bfccc57abb65eba5c4413f6eaf001bd0bbafd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncSideRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:34dc0d8b366cfbba56d31674c05b5b9fdbaa53cb8e71eeacfe0d8b8564b4bf74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_omit_empty_crossing_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The active projection distinguishes a parked-candidate reapply from a retained merge, and re-projects the journaled knowledge diagnosis.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:794a92531a3138acd3afaf3f2fd5d4cee6e2c16f46eefdbbf8a01351f79d671c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_active_sync_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The journaled diagnosis's own vocabulary: the row the engine refused, the action it advertised, and the decisions that conflict admits.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
+            "content": "sha256:bdb8f98561611dc3b35125696d51ca42ff30160931761a98f5c6b768e2d7f7f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncKnowledgeConflict"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
+            "content": "sha256:1cb8c7340ea0be6fed4b4f4c0f21e4ab69a60202834f372de477be0fe65e8cb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncOperationProjection"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

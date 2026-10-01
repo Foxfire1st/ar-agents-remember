@@ -1,0 +1,354 @@
+{
+  "path": "mcp/tests/test_instrument_discipline.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared licensing probe: corrected pattern positive, faulty pattern negative, both against the record's own row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:90c102b2e1f53bd4b1cf99dcd2ef5415c061db66b3128580ac7450a9a2ee75ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_probe"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A clean result is evidence only when the artifact also shows the check could have failed; an exit status with no result is a crash and prose is not a run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:1ef8e70804900e174d8f6b8bde383044be46ac0c7f51924c710fefb8ec426bcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ArtifactAdmissibilityTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A record names the producer that made it, or it is not a record of a measurement — and a failing producer is a non-reproduction, not an exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:bdb953bc9dfce229bc8d21c821e371b620b6638078f686ff4d150e048b5f3825",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProducerIdentityTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The transcription is the one the record carries, checked against the record where it still exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:62290b67fa1765f2ff5513e117e8fc9da491048394068e6b71903d42a127e816",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_evidence_transcription_is_the_one_the_record_carries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The module whose admissibility conditions these cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:9f58299e5a80da11cf747863cc855aa6a2f1d3d5e961e883875a078f574a1ff2",
+            "locator": {
+              "kind": "symbol",
+              "name": "counted_pattern"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:12e76c6e57730a53b81664c9f241e071d7cd79ad3d8a7a1f25d6e9b9fb21edd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_bounded_window"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:900fd944325d47f1fd7a68d9f413e10f68c9fcca7552e1cc0b4da28147d2f948",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_artifact_refusal"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:f663fc5a0f9a90500479b2cb97724c2632a0bdf3bca6c2a3d782d609da0a4502",
+            "locator": {
+              "kind": "symbol",
+              "name": "producer_identity_refusal"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The narrow exit-status rule and the vacuity rule's non-zero quantity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:c9ab221188d5a6b974b90f2716cde8ee6b0fb8bb95c0d994bfb532975659c5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "TRANSCRIPT_EXIT"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38ba0fbb1e3c1070556fed3c224139fcf6e16bb7",
+            "content": "sha256:e391221697b994eede6707c8a0c3cca98dbad41d3e050ad82d5340b3f5241507",
+            "locator": {
+              "kind": "symbol",
+              "name": "NONZERO_FINDINGS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The lane this module is registered in, so the fail-closed manifest admits it.\n\nAnchor: \"mcp/tests/test_instrument_discipline.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:ee4eb7586ba07eecc385389cc326ab1d5410e536abb37587aa94612e2f21128e",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The record's 1,343-character attestation message, transcribed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:7c42b9480fc8df0040a558ddb2ea454f86f2ae908642a515c516698e4d12b334",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTESTATION_MESSAGE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The checklist row carrying that message, in a table with no blank lines between rows, and the two rows below it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:897344d72dfcbe681ae3d913d95f9eab1420f0286fc394d3eceda791b419e458",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTESTATION_ROW"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:e1b9783198988e084b19a6b0f39ceb1d24bbc8446dad82f346f01cf84398d0be",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHECKLIST_TAIL"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live `n/a`-link row, the pattern that returned 0 on it, and the pattern the curator ran instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:a7cc6a0fc58d7a5c10fc2123e212d2a0165d30fe82d83d2d792281c7e95ff571",
+            "locator": {
+              "kind": "symbol",
+              "name": "NA_LINK_ROW"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:222a7b5edac8fb9974c3f3e154680322f9f7eda52ce6e76ceff279cf29e14da0",
+            "locator": {
+              "kind": "symbol",
+              "name": "NA_FAULTY_PATTERN"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:1d6e2926ff3b6a5c31485304af90f095ce930d0c1a68052178ce476db50f9644",
+            "locator": {
+              "kind": "symbol",
+              "name": "NA_CORRECTED_PATTERN"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `E13` transcript whose crashed `awk` invocations sit above the pass line — a reconstruction in the verdict's own terms, because the raw file was overwritten in place — and the repaired producer's clean transcript.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:970b4f7352c818ff5957536b537c5f1d27c3ee96478c0130518038264ea76774",
+            "locator": {
+              "kind": "symbol",
+              "name": "E13_CRASHED"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:b66f1ac0cf59b14d8551964112ffb88583bd33887f2bd68b0865c0961a68f157",
+            "locator": {
+              "kind": "symbol",
+              "name": "E13_REPAIRED"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shipped declared-tools baseline and the silent before-file that evidences no run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:8f118883d6fc4563f99afd9607c2d31504c62d3101af16bd9e788411e7440266",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECLARED_TOOLS_RESULT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:b88c20ae4a145b783bf0d8e88bcde17948d3927245bc4db4da3ed0e20f96e6a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECLARED_TOOLS_SILENT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A zero from a text probe is admissible only when the probe was shown to see the other answer — and only for the pattern it proved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:9ec636cb160f094fb38e81f8adee042c0e1d043484501d085030ee22cfc9b797",
+            "locator": {
+              "kind": "symbol",
+              "name": "PatternProbeWitnessTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A count taken from a capture that ran past its unit is a count of something else, and a capped window says so.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:5c4fb74de6933cc5453c38c57b7cdaae2abb8c7be57eaafc11b8c8e481d0f866",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedCaptureTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A pass line printed after a crashed command does not describe the command that produced it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "509503bdf36eecc4fa1bf8a141285835c6fb0a58",
+            "content": "sha256:8cdc1b3b8d6c93fc0330c7b1439faf07b80ca8f1b456076646078d37ef41011c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrashReadAsPassTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

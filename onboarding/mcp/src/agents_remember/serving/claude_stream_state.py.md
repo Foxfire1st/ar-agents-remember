@@ -1,15 +1,5 @@
 # claude_stream_state.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/claude_stream_state.py` |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-19T09:15+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 [serving overview](overview.md)
 
@@ -65,15 +55,15 @@ when bounded evidence cannot prove effect.
 
 None known for the L3 correlation state.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The protocol supplies canonical replay text, and the submission record stores both evidence phases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Protocol parsing derives the canonical native-command replay body and keeps identity-changing commands blocked. | `session_command_replay_text`; `command_unsupported_detail` | mcp/src/agents_remember/serving/claude_stream_protocol.py:330-349; mcp/src/agents_remember/serving/claude_stream_protocol.py:352-360 |
-| Submission records retain wire/replay text, acceptance and terminal futures, and abandoned/completed state. | `ClaudeSubmission` | mcp/src/agents_remember/serving/claude_stream_submission.py:18-30 |
-| The adapter waits for terminal evidence and maps absent/refused/exact results without a paste fallback. | `_submit_set_command`; `_wait_set_terminal`; `_terminal_set_result`; `_completed_set_result` | mcp/src/agents_remember/serving/harness_control_claude.py:402-442; mcp/src/agents_remember/serving/harness_control_claude.py:589-607; mcp/src/agents_remember/serving/harness_control_claude.py:627-646; mcp/src/agents_remember/serving/harness_control_claude.py:649-674 |
+- Protocol parsing derives the canonical native-command replay body and keeps identity-changing commands blocked. [1]
+- Submission records retain wire/replay text, acceptance and terminal futures, and abandoned/completed state. [2]
+- The adapter waits for terminal evidence and maps absent/refused/exact results without a paste fallback. [3]
 
 
 
@@ -111,27 +101,3 @@ unchanged — the session-identity change and the body-changed-for-its-retained-
 still raise `HarnessControlError`; they now live in one helper each instead of being written twice.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: removed source-clear domain/cross-repo placeholders and bound replay, submission, adapter, and evidence claims to exact anchors.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ClaudeStreamSession` / `TranscriptCorrelation` concepts and the `_handle_abandoned_replay` / `_require_faithful_replay` extraction (replay refusals byte-preserved).
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented full-frame `arEvidence`
-  forwarding at the assistant/result/unhandled emit sites and the `_emit` reserved-key exclusion
-  from the adapter's own snapshot merge (the implementation-found second leak point); the Claude
-  native page stays honestly fail-closed because the adapter class lives outside this leaf's
-  ownership. Verification metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5: replaced multi-queued implications with sole-operation
-  preflight, guarded writes, full-ref correlation, and exact terminal completion.
-
-- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented exact session/UUID/body command
-  correlation, separate terminal evidence, abandoned-command tombstones, duplicate-replay
-  suppression, ordered result pairing, and bounded eviction.
-- 2026-07-14T12:45:11+02:00 — 260713-PHA-L2 source-tip reconciliation: refreshed verification
-  metadata to accepted candidate `acb308c50072d8cde0015c4828e39d12480872ed`.
-- 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: created sidecar.

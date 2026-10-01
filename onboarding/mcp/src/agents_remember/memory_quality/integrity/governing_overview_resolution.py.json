@@ -1,0 +1,156 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/governing_overview_resolution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The section body is extracted between the card's own heading and the next `## ` heading, and its heading line is returned for the reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "039f213cf4bd2561ff4c170a191edd2d83736126",
+            "content": "sha256:13961a3dc7ae8bb7a28b1a5f271b262194ccc0c8143d7ca73580e0197cc5d1b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_section_body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The field is probed under three bases — card directory, onboarding root, and the root's parent — because two conventions ship.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "039f213cf4bd2561ff4c170a191edd2d83736126",
+            "content": "sha256:8c4bfdd2b278bc623b08ae8fe9e941ad7f3bdd2761b5601317823af10320e187",
+            "locator": {
+              "kind": "symbol",
+              "name": "_field_resolves"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The per-card decision that reports both declarations independently and classifies no-section / no-link as observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "039f213cf4bd2561ff4c170a191edd2d83736126",
+            "content": "sha256:873da14f55f6a73cd40773649e642476480f1d1db504061c2d818e5d595b32d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_card"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The corpus walk and the five counters, with `ok` derived from findings alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "039f213cf4bd2561ff4c170a191edd2d83736126",
+            "content": "sha256:7eb00d42c337d4d45cec607f7d14c408ba6697e786bac89e90c30274f3991f27",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_governing_overview_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The failable standalone runner: five counters, one row per finding, non-zero exit while any declaration is dead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "039f213cf4bd2561ff4c170a191edd2d83736126",
+            "content": "sha256:dc1a3d33d58ab8dd6762005488bfd3ea52d666e42b05da420a2db27bc1beb1ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The metadata reader strips the value's backticks and skips the header and separator rows, which is why a declared target arrives unquoted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:2cf0212c074e6e503105011826ed3a023433b3017f523d37b9fb88c36c1eb5ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "table_metadata"
+            },
+            "path": "mcp/src/agents_remember/kernel/onboarding_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Existence probes, including the Windows long-path prefix, are the shared helper's rather than a second implementation's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a134fcdc07997c9dc931f9f9c835c8cf0fb5906",
+            "content": "sha256:bc23ed7e3aa324bf33065e1783c06f5aa5e980913544dcbb5327f47f3190fbe4",
+            "locator": {
+              "kind": "symbol",
+              "name": "exists"
+            },
+            "path": "mcp/src/agents_remember/kernel/filesystem.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The consumer: inside `_attach_curator_checklist` the findings are extended into the gated curator repair set, and the counts are published on the response as `governingOverviewResolution` for the curator's loop.\n\nAnchor: `check_governing_overview_resolution`; \"governingOverviewResolution\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:902f0767b6abf83f5b1e68168cc93585d397f95feb476983899295c2cbe3002d",
+            "locator": {
+              "end": 618,
+              "kind": "line_range",
+              "start": 592
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The falsifiable guard for this module's discrimination, with its green control in the same tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "639894cd0bcaddea4f47a96beec5067705a2371e",
+            "content": "sha256:f49a300af67dbcfe665c7d1348d144ff236c44e84aab2fec85b4cc51748cdab6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_dead_declaration_form_is_reported_and_no_clean_card_is"
+            },
+            "path": "mcp/tests/test_governing_overview_resolution.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

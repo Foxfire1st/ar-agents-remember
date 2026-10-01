@@ -1,0 +1,440 @@
+{
+  "path": "mcp/tests/test_knowledge_ingest_comparison_generation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the defect, the three successful-path facts it measures, and where the failure surface lives.\n\nAnchor: \"The defect these cases seal (ICR-R18, A21)\"; \"two successful writes over one shared path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:a45c1c1b9da1af92b876c8fd029675a164de893d3fc9e6a626e47dd557559fc1",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The publication owner and selection this module drives the later line through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:1e68e38b1d88e42cbf232455a533b8ff42545fd09694ebe83890024f9cd1ccb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ingest_curator_list"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:b31a270e4a9968a72fc8350f65816fb39df52c04d733cda52667411907622c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "IngestSelection"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:80c636a532276a687c96452b4754666f6f4c299cb815c74b8845c3393aa6fac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IngestPublication"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:9cb28d58a1da9a7456d41f5cfec99aa42075f373165a34b7b093ad4f76abba66",
+            "locator": {
+              "end": 1036,
+              "kind": "line_range",
+              "start": 1020
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:fb0e9435fd88e602ea4e72e72b97bf55ad8535876654c14fcf946f71bcf96474",
+            "locator": {
+              "end": 1016,
+              "kind": "line_range",
+              "start": 1003
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shipped reader the identity helper uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:793a7cb2f90b6d7e9ffd268240928c1f4241714c1d1581cc59150741b7fdd51d",
+            "locator": {
+              "kind": "symbol",
+              "name": "dataset_identity"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The identity value the identity helper answers with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The journey fixtures this module owns and the failure-window module imports rather than copies.**\n\nAnchor: `_digest`; `_identity_of`; `_publish_a_later_line`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:9c3695406615152453096a8b43a2f3d12e18c9d47d7afd3ec300f1e2fa8dc268",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/tests/test_knowledge_ingest_failure_windows.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:61d4c5bee242deda053d755efc1e39c73a523a31722c8928beea1e51a1a15393",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/tests/test_knowledge_ingest_failure_windows.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The ingest-list fixture module every one of these cases builds its enclosure from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:6eb5d098d17a631eae8fd3712d5f9d3b4cc265eb0ba988e4511256480105bb7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourcePair"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:b6c1333574475ce2715e160c8f18fdef29f20f379116449fd67097b61ada05d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_private_pair"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:32a1513ad5cb61c86cfd50a9ee18d6e3662b555cde7e61fa8afeff1c067ea697",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_sibling_contract"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:6bbb9f4f2f5cbe3f53b6471a7e9dcf1167f9aab99995921eb9760dac91842251",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_publish_baseline"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:2cb5ed851565f2059e19f80a0401d5bb3918d7bd93d7320086d527c1806f9831",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fork_ingest_argv"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:38357656af4d637d945ced0cf4509207926cbb855c7a0ff580551424ce3b9ec2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_before_half"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:ba3e26025d9660866f20808ee570ac38c21587264d7c065bc9a02620da296ffc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_one_entry_list"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:9971f7837baee6dd79f129ef57faf750eb74525f2a002aa593e356e8136971c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cli_json"
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The lane row that makes these cases ordinary unit-regression evidence, and the run budget they are counted against.\n\nAnchor: \"unit-regression\"; \"mcp/tests/test_knowledge_ingest_comparison_generation.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:1855e0f91038612de1804d29d1a01c49a0789d372e3314b652ecfb99b72e0020",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared-path journey fixture every case starts from, built from shipping owners only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:a2c3dceb15493260623fe5be2d84dcd0c41e6bf76d9a573e17b895e632c9d632",
+            "locator": {
+              "kind": "symbol",
+              "name": "_opened_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The repository's line moving on, driven through the application owner because a CLI run would fill this leaf's half on the way.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:3d497ecb4d79ee6b340e88551bb3a9d4c877256edc8776bee3b1909f984b6b49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_a_later_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two measurement helpers: the bytes at a path, and the dataset's own logical identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:0d80b719dbf8427d04def68919f7c9062ad6c827039c8a3e0505c9d3efe02854",
+            "locator": {
+              "kind": "symbol",
+              "name": "_digest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:d23b3ffa44e5494adc808e4e0a437a5bed41f175d2f386bc3b8108d9601b5d17",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_of"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The packet's non-conforming example as a regression: the second successful write lands while the before half stays byte-identical to the fork point and still holds the original identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:e1a53292c8b86f3b19769d6f3e3a8c0f1592cea9fce95ff59ea186904aa034e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_second_successful_ingest_over_one_path_keeps_the_original_baseline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The packet's boundary example: an exact retry restates nothing and a refused changed retry is not a second way to move the before side.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:358434fbf9beca861932c9a0df4c4772e8714056b67d7c0395e6b52c3f79ec7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_exact_retry_and_a_refused_changed_retry_keep_the_original_baseline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The one act allowed to replace a standing baseline, measured as lineage by id and by exact dataset identity, plus an id the reader can recompute.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:2e74ed404357d4a9ceb88ca29b61d238ef0562329ff2129abeb711bc9d626938",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_deliberate_rebase_begins_a_recorded_generation_with_explicit_lineage"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The case `260921-ICR-L34` added: the half a `--baseline` run placed is opened under the namespace its own `baseline-generation.json` names, which is what makes the comparison recordable at all — and it bites when the receipt-only read is restored.**\n\nAnchor: `review_namespace`; `read_baseline_generation`; `open_read_only_store`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f790b54273001ec4a9cff3021d8b192c7d5a8b73",
+            "content": "sha256:821e178f264cb401d143f64e10b134d9a06ca79be55e7652932555e16decb770",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_placed_baseline_is_opened_under_its_own_recorded_namespace"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The generation id the rebase case recomputes and the record reader it compares against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:1a0702ed99e96b2047a184d58eca03b33c7909801a6a5c92a036dee3bd6d097a",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_identity"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:f5e3dc842b344811cd8ad59ebc8201cf4d0e408b83126d7addc6e400eb12ec22",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_baseline_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

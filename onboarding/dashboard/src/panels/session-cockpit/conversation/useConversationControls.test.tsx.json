@@ -1,0 +1,116 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The hook + `resolveWorkingTurnId` under test (imported at L17).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:c12f9e49f9911c655b40d0d60f9905592bf609d208c04d7baf946798a57143b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveWorkingTurnId"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store seeded with projections (`activeConversationStore`, imported at L5).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:7b0e8a90c1bed09c86800be640a7d95a4ffeb42b8ddcef69e2e57b457dad1955",
+            "locator": {
+              "kind": "symbol",
+              "name": "activeConversationStore"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reducer `emptyProjection`/projection type (imported at L4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:1e072037cbefaf5582fc3c69b898e8ffd03f852bde7e70de545499ad32d332cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "emptyProjection"
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The status/capability/item wire types the fixtures build (imported at L6-L10).\n\nAnchor: `ConversationStatus`, `ConversationCapabilities`, `ConversationItem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:6f2b009ccf4af7a5ae409eb7085d63289c0f9768de32279d5de27146ce47434a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationStatus"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:0942e913ab7814c4dcb6f0a77c44ce06b84b126979211ab5214cb7f83bace52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationCapabilities"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:dc580072cfe96fda01c3de42598e5bc2f81d32569780f998186cba1df463599e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItem"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`capabilitiesWithInterrupt` (aliased to `capabilities` here) and the full `conversationCapabilities` tree it overrides one leaf of.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:0efbea8983884c66c2a47f292de6658efd092734d0ed1fdb04164db8a0752e2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "capabilitiesWithInterrupt"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

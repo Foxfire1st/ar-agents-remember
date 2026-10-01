@@ -1,0 +1,98 @@
+{
+  "path": "mcp/tests/knowledge_census_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The six routes and their cards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ca4c00c50175eed7741c0c264cc970c4bd59bb6",
+            "content": "sha256:811fd83349faa2e6e65ee7aac5b3cbfb19bc0861893788f952c9a888b515cc99",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROUTES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ca4c00c50175eed7741c0c264cc970c4bd59bb6",
+            "content": "sha256:8f67cff08ff1a88ce627fb6ac7a9680b558d0d8fe4d31b84aa30993e9e376e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROUTE_ARTIFACT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A claim document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ca4c00c50175eed7741c0c264cc970c4bd59bb6",
+            "content": "sha256:e1e28acd25d7ee1b9ae0d3cb3b191d623d2ab91d35e795fadf798fb7abb3ef79",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The converted tree with a pinned census.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ca4c00c50175eed7741c0c264cc970c4bd59bb6",
+            "content": "sha256:8d1e10acdd37f5c66720849de3e517fa7b09d1bd35167dd16c50a3d48638e643",
+            "locator": {
+              "kind": "symbol",
+              "name": "census_tree_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "42 claims: 31 T, 4 F, 5 U, 2 P.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ca4c00c50175eed7741c0c264cc970c4bd59bb6",
+            "content": "sha256:6440af2eb838f71c1ae7d46facdc873c30bbb722a441adf09203f4117c939633",
+            "locator": {
+              "kind": "symbol",
+              "name": "wave_one_claims"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every route migrated, with two status entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ca4c00c50175eed7741c0c264cc970c4bd59bb6",
+            "content": "sha256:52ab6f7afd20cd8f3bf6aeebf7f66447fb63491f2fb1afff3169d4588205f91e",
+            "locator": {
+              "kind": "symbol",
+              "name": "wave_one_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

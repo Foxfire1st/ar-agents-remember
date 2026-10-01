@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/models/certification/base.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Gate identifiers are closed to the five gates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:de483d624f4d5e9ac34d041ecac647f93bd9ac41e8ed075f0cb3f9bc99160626",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateId"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Semantic text rejects blank and padded values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:8dbd41a7c8d5237827ca70cf08e2b4b2ea864de1685ee05d6c35c7a763e6dc0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_semantic_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:7c626e0f94d76e38c400a359bd3d609ebc0b7abe975e56f12c3695c41a0ed310",
+            "locator": {
+              "kind": "symbol",
+              "name": "SemanticText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared model base rejects extra fields and freezes model assignment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:f7a5ea8901e77c6b05bef81b105d77eeb31dc6624c20f98ca48378d817c7305f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrozenContractModel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Rail identities validate identifier/version shape and derive a stable key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:628f20b3dd283d5b3f5dc34d5edc2656a649e7f37d476fe4b74c37b5744ac7d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,310 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`gate_response_wait_payload` is imported from `gates`.\n\nAnchor: \"from .gates import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:438284fca14c63ad999773b951157d608051d57de6eb1e5d9958c6cf6edb2cc8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The lifecycle finalizer payload builder is owned by the `lifecycle_finalize` submodule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc2a027fa8329302b9ba1a1af26589d7940d865",
+            "content": "sha256:1401ce89181b17dff2611b4f0e8f325b4a79dc9190966ebb4fd77cab54c32db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The lifecycle finalizer payload builder is re-exported by this facade.\n\nAnchor: \"from .lifecycle_finalize import lifecycle_finalize_task_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:218d13cfa0841258c627be215df00b1f9e19bcb9d40a8b411b297ae088958f81",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The terminal payload builders (`attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) are owned by the `terminal` submodule.\n\nAnchor: `attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:701faaee676d384f691142930a5d5b4ac9712ce23e8efc03b78d96431d6ed9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_terminal_session_to_task_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:0dd93910f7bbe2ab45902195c7c9493a9c1742f63cf5ed7f9402bd6697a843bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn_agent_session_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:4f73f86cc04aefc86418a701c6461b30118702bbd298c809aa57f3766a5ec6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_retire_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:b10d012adb0f2f73d8c20c0f6121b1e78ef21aa790aad112d137fef8dd61a53f",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_rename_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The terminal payload builders are re-exported by this facade.\n\nAnchor: \"from .terminal import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:8f8e8dcfff2c6c1171451ad26878db4b4e152bd866a2ad6bd63f5b6bd6fcedd9",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The current module exposes the module-level vocabulary at this ownership boundary; the anchor is the stop builder's own `__all__` entry, which pins the list this claim is about.\n\nAnchor: \"\\\"worktree_pause_payload\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:0d782a4699d5432f3e66fb1cc878f5b4bf7d8c27ac746f5f7f12fe6efba91678",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The pause payload builder is re-exported by this facade from the `.worktree` import block and listed in the `__all__` extent, exactly per the documented pattern.\n\nAnchor: \"from .worktree import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:e6443b4cdf8964805deae5492964ae123dd9fbc349747b01c0f6dff498372ebe",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:0d782a4699d5432f3e66fb1cc878f5b4bf7d8c27ac746f5f7f12fe6efba91678",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`gate_response_wait_payload` is listed in `__all__`.\n\nAnchor: \"__all__ = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The gate response wait payload builder is owned by the `gates` submodule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38cf83279988cbcecd8e45164ef3986c630f3b20",
+            "content": "sha256:ed00419defc3a2e29139fc4381282faeecc8c336ffe5d6a380921436e011d5cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_response_wait_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The post payload builder is owned by the `operator_inbox` submodule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:72d19071d1f2b4d092fe2e3ac9fcabc4bacc4be5ddb0f7511c2479f741b52733",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_post_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/operator_inbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The poll payload builder is owned by the `operator_inbox` submodule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:23e8507f187917c75e77b9381d573acb21d127099218b55d6cdf5c2b24fdcc49",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_poll_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/operator_inbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The consume payload builder is owned by the `operator_inbox` submodule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:d6448461a08344dd40d08cd2e509b110da292a7280111613df2d91c0c8f35116",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_consume_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/operator_inbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade.\n\nAnchor: \"from .operator_inbox import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:cecfae3cb4b0d4d8643cb5455ee04bc593fb17e2877d1071efacabde7220497b",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The orchestration nudge payload builder is owned by the `orchestration` submodule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23f4c87954b6eac5eef2d1046a0c54d7b4c643c6",
+            "content": "sha256:e7d16317c0cfab22b2d139f7364354edfa1dfc2cea874dccfbe55baa5416193b",
+            "locator": {
+              "kind": "symbol",
+              "name": "orchestration_nudge_manager_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/orchestration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The orchestration nudge payload builder is re-exported by this facade.\n\nAnchor: \"from .orchestration import orchestration_nudge_manager_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "content": "sha256:6885abeb8ba145e8fca758ac8fb90e71ec45cb4f9d09202db5b04aa1af21de09",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

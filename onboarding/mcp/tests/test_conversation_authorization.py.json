@@ -1,0 +1,91 @@
+{
+  "path": "mcp/tests/test_conversation_authorization.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The production resolver, loopback classification, and OS-resolved principal under test.\n\nAnchor: \"class LocalOperatorAuthorizationResolver\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929e17bcc3d9f1e8d94ce1eed9ecfba647520c93",
+            "content": "sha256:ff6efbba599d8c44e0e2a73d4d1ccbd9f5dccc51b13debfe52a3b544ac7d645f",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/authorization.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The request dependency that forwards only the ASGI TCP peer.\n\nAnchor: \"def resolve_conversation_authorization\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:8833e7eef2307a42c01c7a34c63666612dc1ed92dd1aa3910b28b3f0c3d336e8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The strict binding, cursor, scope, and fingerprint carriers used as own/foreign evidence.\n\nAnchor: \"class ConversationEventEnvelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a39cfa82e04e111ebfd08355da0a038eb888ab",
+            "content": "sha256:2a00663514e360fa87a2e922c9cc6bc42aa705519cd719b21527324c2ef947c9",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/models/conversations/stream_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The typed `AuthorityError` refusal asserted across the suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71c438e368c8a4a156f85d3d5c47949c7977accd",
+            "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71c438e368c8a4a156f85d3d5c47949c7977accd",
+            "content": "sha256:762f038e0af0133eaa6d72be105a85bcc0088bad93702ddabdbda434bbb6ae61",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

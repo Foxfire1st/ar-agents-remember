@@ -1,0 +1,125 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it pins and why its replies are held.\n\nAnchor: \"The first two cases answer immediately\"; `ReviewSurface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc83da719f8285f665ad5ffc469062a76a783e26",
+            "content": "sha256:996d6152e6e48593adf3ef7283a4b76241d339e78c9d99ae43a471b875456b62",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The held-reply server: every review reply can be answered, refused or lost; catalogue and content reads are counted.\n\nAnchor: `heldFor`; `answer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc83da719f8285f665ad5ffc469062a76a783e26",
+            "content": "sha256:6057f709786225700c886ba5419109a30ec80220bddea0d44af20a042b41695c",
+            "locator": {
+              "kind": "symbol",
+              "name": "delayedServer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Mounted shell, subject-labelled pending area and zero-request return.\n\nAnchor: \"keeps the reviewer mounted across family → invariant → family, pending only in the reading area, and reuses what it read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc83da719f8285f665ad5ffc469062a76a783e26",
+            "content": "sha256:92937e5c37a06fb02c236c91a1bd6e36dd4e4ad307604bc48f4e1e538fbe3b2e",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Latest selection wins; a superseded answer is not kept.\n\nAnchor: \"settles on the latest of rapid selections and never shows a superseded answer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc83da719f8285f665ad5ffc469062a76a783e26",
+            "content": "sha256:68fe3ca015bcb743b9ce22614fccb16d6d97dee84b60853a56c2c5ef1a2d781f",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 412
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Late catalogue with and without reader engagement.\n\nAnchor: \"does not move a reader who is working when the catalogue answers after the bounded wait\"; \"lands a reader who has not acted on the first family when the catalogue answers late, without remounting\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc83da719f8285f665ad5ffc469062a76a783e26",
+            "content": "sha256:86fc4c29021af0ab94e583322c53b1f2236a18bb144470b03446d47f0503c465",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 460
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Failed or refused selection stated in the reading area for the requested subject.\n\nAnchor: \"keeps the workspace and navigation when a newly selected subject is %s, stating it for that subject\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc83da719f8285f665ad5ffc469062a76a783e26",
+            "content": "sha256:c6281660c215a116277160112ee07276b37e525abfd324dff1f6f5299912d293",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 523
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Focus the reader moved while pending is kept.\n\nAnchor: \"leaves focus where the reader moved it while the selected subject was pending\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc83da719f8285f665ad5ffc469062a76a783e26",
+            "content": "sha256:016acf3007bcd55517c447c74f8c8546ef014de60572eea586724d6e7561c283",
+            "locator": {
+              "end": 631,
+              "kind": "line_range",
+              "start": 603
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

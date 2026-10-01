@@ -1,0 +1,287 @@
+{
+  "path": "dashboard/src/data/reviewTrees.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The side states and the comparison record's client type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:e91725cb90eee8e16e5f422d36eb4c3c5d60f03e5bf7e9200be2b4a9932fd2b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeSideState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:f2a1da06c404b53b8f7653360cc2e6abd6f24d671a4801c95546dbc1710edd48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A knowledge side and a reopened code side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:77fb9f402fd4db9baab28822e96524b8ef23d7b7bfdca432e8a7462ccc6d111e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgeSide"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:479d4fd6cbcf9a1208f62171f69686abff020e7b90cc87981951fd7bc8750944",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCodeSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tree view's answer, with a selection's entries on the cards read.\n\nAnchor: \"export interface ReviewTreesResult\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:cb1d6a3d437f5c0f0a68f283288c1a28c3fe5eb636486b94c9696e8f7f83a59e",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The worklist's items, history rows and view, snake_case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:6954e3250aafb62c1e781f59d353ce9b48eab024812a34c7826b24692bce82c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewWorklistItem"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:d71d056e2f3f49a497eaf077e01a37b99a60c989b195b4fba3abf1f24cdbd846",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewWorklistHistoryRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:ac623a989c9fdf4a0fa53c98746eebc2476b2e7d7bae2f6145abad212a268018",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewWorklistView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One entry on both code sides, and one side's state, range, excerpt, authored fields and MIK-R03 state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:6fbf604720b8c52862c1f8f202136d6b626d3f32ceb5c6491f1500161a7f7c9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntryRangeState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:9f7f18a60fc47136f90b96e501acec13a975b6685055a2ae5df99c27d96b0336",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeEntrySide"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:97721e68d0054cb2f2d703ac6d3af03d65725ddf332a62068b147090e630c36c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The request, addressed by number, `recorded` or a selection's invariants, never by path.\n\nAnchor: \"export interface ReviewTreesAddress\"; \"export const reviewTrees\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:90c92ec5ebe32234532cd96a56a4cffd95aac7a99752a456d7dc9537e6c392f8",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 242
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:feb9893c5dbdb3eadf6179acb53372d4a3df6de49ce9ec99c4b180916d301f49",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Three answers kept apart; anything else is unreadable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:81a11dfb791b2edc493db8a893333ac5cbce9b3b5b65050f3875edc86f6da04a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:55e99e194c1c1409679f0f227721a4a9f8adc7a41423e7d67dd71b7d5779532b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewTreesRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Degraded sides, per-side currentness, unexplained hunks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:702e99ff2c828947146c8c7e38431074418d1899a30561240ffcd8787bc342cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "degradedKnowledgeSides"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:9fca579dbabd058bda5921c5684beb99fe77f628123abdcc467da4d41d384e8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariantCurrentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:35115297b3df5d132f23ef19f1ffb8958e2f3c40a43c7264b7ff9800e8d4a752",
+            "locator": {
+              "kind": "symbol",
+              "name": "unexplainedHunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The comparison a payload names; a selection's entries kept with their question; the leaf-wide hook with its `enabled` flag.\n\nAnchor: \"export function useReviewTrees(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeComparisonNumber"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:8377fc9fda79e7eb6f2c44b4f645f38dca90780b3a0ce94d92c774ce6f0f0c0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewTreeEntries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:0f6528c5cff8fbc2aa607915c3539e0db8d0594c3a5d63494a0a78dd9778ec09",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/fixtures/knowledge_files/4.4-test_direct_landing.py.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture names its schema.\n\nAnchor: \"ar-onboarding-file/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd9b5e939fb3b968d7815e0e7cdb2c5a66822791",
+            "content": "sha256:30ab7f8679dc27777066d17178e55bcc5b043e1dd4c681f06a041ce9796ae30b",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Its distinguishing identity.\n\nAnchor: \"PRF-T3ST0K\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd9b5e939fb3b968d7815e0e7cdb2c5a66822791",
+            "content": "sha256:e182f0f439418b6717318ec561150bc1e77aa2831823ca8362880826a1491288",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test maps this file to its model.\n\nAnchor: \"4.4-test_direct_landing.py.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b77ecb71863271304d8626c32c5a96b3930bf4cc",
+            "content": "sha256:3388c6607e47194749da482bcf51033aa29b3d5f7248844d27afec4f3ab3f13d",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

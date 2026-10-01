@@ -1,0 +1,63 @@
+{
+  "path": "mcp/src/agents_remember/serving/pi_rpc_submissions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `PiSubmissionEvidence` (lines 16-25) — What one submitted prompt is known to be, and the entry cursor it was sent after..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121bb50fd46a2b7ca53540cb944f11b831a8bb73",
+            "content": "sha256:889eb2ea4041dbcd2381324efa6e206c2ab2e842158357229a19629f95b9aa58",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiSubmissionEvidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121bb50fd46a2b7ca53540cb944f11b831a8bb73",
+            "content": "sha256:d90a48f37786c841d97651aabddc433227cea82dca964c5c26fa0f6f7facae97",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `PiSubmissionLedger` (lines 28-64) — Bounded request-id ledger for Pi prompts, from which only a settled row may be evicted..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121bb50fd46a2b7ca53540cb944f11b831a8bb73",
+            "content": "sha256:ad2fbb81c7f7a99d8fc7f4785e2759e29f198c73cf5f6275c1c286fb3621448d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiSubmissionLedger"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121bb50fd46a2b7ca53540cb944f11b831a8bb73",
+            "content": "sha256:14f3149e4fa6a8b86206755abeca64b422a5f131686c5a4c740c9f6ecd5d8094",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

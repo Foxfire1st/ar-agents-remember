@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `473ad8242bb4c22bdabed5d5253767350381eb3e` |
-| lastVerifiedCommitDate | 2026-09-23T17:26:55+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -127,16 +117,16 @@ answer in, each carrying in its own comment why its members are the ones they ar
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own docstrings, fields and validators. The three
 details a reader should carry: **the verdict has three values and only `current` claims coverage**;
@@ -144,40 +134,33 @@ details a reader should carry: **the verdict has three values and only `current`
 **the record validates itself from its own fields**, so an internally inconsistent success cannot be
 constructed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the transition it makes readable, the owner-produced fields, and why the verdict can only claim measured coverage.** | `ReviewSyncRebinding` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:1-43; mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:193-390 |
-| The published surface: the two literals, the three vocabularies, the observation model and the three rules. | `__all__` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:62-72 |
-| The record's own version literal, so records from different layouts are distinguishable. | `REVIEW_SYNC_REBINDING_VERSION` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:74-78 |
-| Which generation a rebinding judges, spelled here so a reader need not import the selecting owner. | `REVIEW_SYNC_SELECTION_RULE` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:80-82 |
-| **The channel-match vocabulary, including why `selected-not-retained` is a fact about the review rather than a third mismatch.** | `SyncChannelMatch` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:84-88 |
-| **The three-value verdict, and the reason `unmeasured` is neither coverage nor a measured difference.** | `ReviewSyncRebindingVerdict` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:90-97 |
-| The two states a knowledge channel can hold instead of a readable dataset. | `SyncKnowledgeState` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:99-104 |
-| **The code channel: a pure comparison of two identities one owner produced.** | `code_channel_match` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:107-117 |
-| **The knowledge channel: `unmeasured` whenever one side is not a dataset at all, and never an agreement.** | `knowledge_channel_match` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:120-139 |
-| **The one verdict rule, shared by the writer and the record's own validator.** | `review_sync_verdict` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:142-161 |
-| **What the declared location held, with an identity carried exactly when a dataset was read.** | `SyncKnowledgeObservation` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:164-190 |
-| **The record itself: every owner-produced identity, both channel matches, the verdict and the successor action.** | `ReviewSyncRebinding` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:193-240 |
-| **The self-consistency validator, including the refusal of an `unmeasured` channel beside a readable dataset.** | `_the_rebinding_agrees_with_itself` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:242-300 |
-| The one predicate a consumer branches on instead of re-deriving the verdict rule. | `covers_resolved_pair` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:302-310 |
-| **The sentence: one clause per verdict, each saying only what the record measured.** | `statement` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:312-340 |
-| **The source clause that names the head as where the capture was taken, not as what carries it.** | `_code_clause` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:342-363 |
-| **The knowledge clause, which never claims a comparison nobody made.** | `_knowledge_clause` | mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:365-390 |
-| **The writer that assembles this record from the owners' values and asks this module's rule for the state.** | `_assemble` | mcp/src/agents_remember/application/review_sync_rebinding.py:641-678 |
-| The durable publication and read-back the record travels through. | `publish_durable_evidence`; `read_back_evidence` | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:137-166; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:169-203 |
-| **The read half that projects this record's own verdict into the review's measured-currentness vocabulary.** | `_project` | mcp/src/agents_remember/application/review_sync_movement.py:165-213 |
-| The successor route this record's remedy names and never performs. | `freeze_review_comparison` | mcp/src/agents_remember/application/review_comparison_freeze.py:232-276 |
-| **The case that forges this record's verdict and shows the validator refusing it.** | `test_a_forged_rebinding_verdict_is_refused_by_the_record_itself` | mcp/tests/test_review_sync_rebinding.py:514-634 |
+- **The module's own statement of the transition it makes readable, the owner-produced fields, and why the verdict can only claim measured coverage.** [1]
+- The published surface: the two literals, the three vocabularies, the observation model and the three rules. [2]
+- The record's own version literal, so records from different layouts are distinguishable. [3]
+- Which generation a rebinding judges, spelled here so a reader need not import the selecting owner. [4]
+- **The channel-match vocabulary, including why `selected-not-retained` is a fact about the review rather than a third mismatch.** [5]
+- **The three-value verdict, and the reason `unmeasured` is neither coverage nor a measured difference.** [6]
+- The two states a knowledge channel can hold instead of a readable dataset. [7]
+- **The code channel: a pure comparison of two identities one owner produced.** [8]
+- **The knowledge channel: `unmeasured` whenever one side is not a dataset at all, and never an agreement.** [9]
+- **The one verdict rule, shared by the writer and the record's own validator.** [10]
+- **What the declared location held, with an identity carried exactly when a dataset was read.** [11]
+- **The record itself: every owner-produced identity, both channel matches, the verdict and the successor action.** [12]
+- **The self-consistency validator, including the refusal of an `unmeasured` channel beside a readable dataset.** [13]
+- The one predicate a consumer branches on instead of re-deriving the verdict rule. [14]
+- **The sentence: one clause per verdict, each saying only what the record measured.** [15]
+- **The source clause that names the head as where the capture was taken, not as what carries it.** [16]
+- **The knowledge clause, which never claims a comparison nobody made.** [17]
+- **The writer that assembles this record from the owners' values and asks this module's rule for the state.** [18]
+- The durable publication and read-back the record travels through. [19]
+- **The read half that projects this record's own verdict into the review's measured-currentness vocabulary.** [20]
+- The successor route this record's remedy names and never performs. [21]
+- **The case that forges this record's verdict and shows the validator refusing it.** [22]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every identity it carries was produced inside
 the contract's own repository boundary; the one absolute path it does not carry — the publication location
 — is resolved by its owner at read time and is reported there.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee`): created this one-to-one card for the module this leaf introduced as **ICR-R22@v1's record vocabulary** — the value that binds one comparison generation to the exactly resolved source/knowledge pair a managed sync produced. It records what a consumer has to act on: the verdict has **three** values and only `current` claims coverage, so it requires a measured match on every channel the generation actually retained; `unmeasured` is the honest answer for a retained knowledge operand that could not be compared and is **never** a softer `moved`; every field is an identity an owner produced (the sealed manifest, the shipped capture owner, the publication route) rather than a derivation of this module's; and the record validates itself from its own fields, so an inconsistent success cannot be manufactured — reading one as consistent is, in the code's own words, how a false success is made. Two boundaries are carried as boundaries and not as defects: the one sentence is derived from the fields and cannot outrun them, in particular the source clause names the work branch head as **where the capture was taken** rather than as what carries the add-all tree, which Git denies in exactly the WIP-restored state the packet requires a sync to preserve; and the record records a supersession and performs none, leaving the successor to the freeze owner. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `e605822eb3bf83bf63a45963c5f51d5fc28859ee`, this leaf's recorded base — because every construct cited here exists only in this leaf's uncommitted working tree; what was actually read is that working tree, and the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

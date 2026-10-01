@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_observer_projection_snapshot.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Project and write end to end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2584f15da7623be2953198a2ac1eb5430a55ddff",
+            "content": "sha256:17c51e52de74505774eb5a73f0b2c23f1d8273812a180fc2d1c909df69bbe926",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_project_and_write_end_to_end"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

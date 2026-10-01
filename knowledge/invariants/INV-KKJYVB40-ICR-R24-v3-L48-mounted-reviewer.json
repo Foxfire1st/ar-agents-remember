@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The Intent Reviewer surface (ReviewSurface) when the reader selects a family, an invariant or the whole task after the task context has at least one admitted review payload.",
+  "conditions": [
+    "A frame (the task context's last admitted payload for the same repo, master, leaf and record) exists.",
+    "The selected subject's review has not answered yet; only then is the reading area replaced by the pending statement keyed to the requested question."
+  ],
+  "exclusions": [
+    "The reviewer's first read, which has no frame and is stated at the surface level.",
+    "A different leaf or record, whose frame is never reused.",
+    "Server-side read latency of a first visit to a subject."
+  ],
+  "id": "INV-KKJYVB40",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "2d3ec327-63a7-468e-a94c-ae08c3e6a277",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Selecting a family, an invariant or the whole task keeps the review workspace, its navigation, family tree, source explorer and open disclosures mounted as the same DOM; while the selected subject is being read only the reading area changes, to a pending state bound to the requested question's key and labelled with the requested subject, and navigation stays usable.",
+  "status": "proposed",
+  "supersedes": []
+}

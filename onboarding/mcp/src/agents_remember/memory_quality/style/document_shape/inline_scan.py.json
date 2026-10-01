@@ -1,0 +1,199 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/document_shape/inline_scan.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `backtick_runs` (lines 20-37) — Every maximal run of backticks, as ``(start, length)``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:c68b6ce0809606a0a427d0b33518fffe89dec5373324726693ef053d1ef87b29",
+            "locator": {
+              "kind": "symbol",
+              "name": "backtick_runs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:1d46b431bb97c2e417d1f20c51aa9d511cd2575902f7bf5344615a3ee91f78a4",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `code_span_ranges` (lines 40-63) — Half-open ``(start, end)`` ranges covering each code span, delimiters included..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:37ebce4d2796dfec4d324a36f3d64fb9c5afa19a8c7dfdf9b379a0762c352a77",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_span_ranges"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:ce512e41537303678a31d897a1a59d6f0a8f586075014aa5c34d6391a1ca23ca",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `cell_boundaries` (lines 66-83) — Indexes of the pipes that divide this line into table cells..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:88af3125b32ae1fea53ea77a4eeebcbd55219ae935d66ba2f30fb41b74354745",
+            "locator": {
+              "kind": "symbol",
+              "name": "cell_boundaries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `enclosing_span_end` (lines 86-90).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:ef8d7c7d3046534ef312b5eb9da5e4b851b5b935fa87275a0067f2fbd84b113f",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosing_span_end"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `cell_spans` (lines 93-116) — Where each cell of a table row sits, with GFM's optional outer pipes removed..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:65c7ea86b01e60472dd1eb15e7bd3036af255e9d61b2a8b1c68b7b325715246a",
+            "locator": {
+              "kind": "symbol",
+              "name": "cell_spans"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:4e5c1374705e3eb999c3510777cfaba5ff045725120af55b2c547334e087df35",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `split_row` (lines 119-121) — The cells of a table row, stripped..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:807529a8c51f16f63781fab833f2995dc32aea2a9f8a9664e463efadadeeff8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "split_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Re-exports the kernel `fence_delimiter` helper used for fenced scanning.\n\nAnchor: \"    fence_delimiter,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:8fc6df1212535a977c9793b26dc3a5ec308be1c96e02a37d3970cee21da94a7d",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/kernel/onboarding_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:5e5b7bb39ce895364b7eccfd432d2b3d56f8d1c8af3c43f4ee75928d0f30a546",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Re-exports the kernel `unfenced_lines` helper used for fence-aware scanning.\n\nAnchor: \"    unfenced_lines,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:eb45ca1be52907f0a7f70c29810c746608c9546f337970388382219cd67c3023",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/kernel/onboarding_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87b7ff4e2dac3aa16721681e99120e776915361d",
+            "content": "sha256:5e5b7bb39ce895364b7eccfd432d2b3d56f8d1c8af3c43f4ee75928d0f30a546",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

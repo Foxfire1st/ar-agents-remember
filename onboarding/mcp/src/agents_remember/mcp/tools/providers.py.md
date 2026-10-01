@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/tools/providers.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                               |
-| path                   | `mcp/src/agents_remember/mcp/tools/providers.py` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T01:05+02:00     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                        |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -61,19 +51,3 @@ The published MCP signatures stay flat; `mcp/registration/code_search.py` builds
 - `provider_watchers_payload` and the `cgc_*`/`grepai_*` query builders default
   `dry_run=False` (act-by-default): a plain query returns results, and
   `dry_run=true` returns the planned provider command without executing it.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the eight query builders took `scope: ProviderQueryScope`
-  in place of the separate `worktree`/`dry_run`/`timeout` keywords, and the GrepAI pair took
-  `GrepaiSearchQuery`/`GrepaiTraceQuery` plus `repos: GrepaiRepoScope`. The three provider-control
-  builders and all compaction are unchanged. Verification metadata pinned until closeout stamps the
-  L2 code commit.
-- 2026-06-10T05:30+02:00 — `provider_diagnostics_payload` and `provider_watchers_payload` file their full payloads via `write_tool_report` and return compact builders (`compact_diagnostics_payload` drops rawStatus/currentState bodies; `compact_watchers_payload` keeps per-provider outcomes only) with `reportPath` inline. Compaction lives in this MCP tool layer only — internal consumers keep full data.
-- 2026-06-01T00:00+02:00 — `provider_watchers_payload` now applies `summarize_command_logs`; all CGC/GrepAI builders gained a `worktree` parameter forwarded to the controller.
-- 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the provider/query payload builders.
-- 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).

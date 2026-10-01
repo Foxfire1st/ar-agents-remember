@@ -1,0 +1,69 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection",
+  "references": {
+    "1": {
+      "note": "Git observation binds the exact complete base/candidate path delta.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d55e2692c99495eae9157c4898d17ecff5de9da",
+            "content": "sha256:be119a9fab9c063d7ffc4fe55d4fcf3f2b3a12e69e4dff1d3821d1e62560b1ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_candidate_source_selection"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Decisions recompute prefix selection, applicability and identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dff5fe7cea9d34427080499a2c3d746ae635734e",
+            "content": "sha256:cd48b218c9b1ace5ca54c80b79e80dbf489c37877d951e351eb9ea62b6c87bf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailSourceSelection"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Profile validation enforces publication, command and dependency contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3353426eefed3e05f356f1bbb0747ce628a6ae5",
+            "content": "sha256:c8840fcc38fa66017d74e944f343c2d27161db32c6ce9a50822027b5925c0226",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_source_applicability"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3353426eefed3e05f356f1bbb0747ce628a6ae5",
+            "content": "sha256:9ce45cf1cb8cb7a7f749aaf7da28d3c0dd75161bc7bac161f4613448340b6d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_conditional"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

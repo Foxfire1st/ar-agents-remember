@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/skill_resources/catalog.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/skill_resources/catalog.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -92,7 +82,9 @@ makes `SKILL.md` explicit rather than implied. Digests are always rendered `sha2
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The Agent Skills specification requires every skill's root file to carry YAML frontmatter with at least
 `name` and `description`; SEP-2640 additionally requires an entry's `frontmatter` to be a **verbatim**
@@ -100,54 +92,30 @@ rendering of that block, and makes each skill file an MCP resource addressed at 
 publishing server's origin. Enumeration is the `skills/list` **protocol method** — this module feeds it,
 and no index document substitutes for it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Identity is the declared frontmatter name, and skills are addressed as resources under a publishing origin. | `SKILL_ROOT_FILE`; `SKILL_META_PREFIX` | mcp/src/agents_remember/models/skill_resources.py:48-49; mcp/src/agents_remember/models/skill_resources.py:42-43 |
-| The entry `skills/list` returns, and the `resources` completeness this module's walk must satisfy. | `entry_document` | mcp/src/agents_remember/models/skill_resources.py:115-130 |
-| A `SKILL.md` MAY appear in a descendant directory, so skills nest and are published flat. | `_skill_paths` | mcp/src/agents_remember/application/skill_resources/catalog.py:160-178 |
-| The Agent Skills index schema version **this server's own** index emits — a convenience resource, not the enumeration surface. | `SKILL_INDEX_SCHEMA` | mcp/src/agents_remember/models/skill_resources.py:39-40 |
+- Identity is the declared frontmatter name, and skills are addressed as resources under a publishing origin. [1]
+- The entry `skills/list` returns, and the `resources` completeness this module's walk must satisfy. [2]
+- A `SKILL.md` MAY appear in a descendant directory, so skills nest and are published flat. [3]
+- The Agent Skills index schema version **this server's own** index emits — a convenience resource, not the enumeration surface. [4]
 
 Canonical live reference: <https://github.com/modelcontextprotocol/modelcontextprotocol> (the skills
 extension specification, SEP-2640).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Discovery and delivery are kept apart: one build records a revision per file, one read re-checks it. | `build_skill_catalog` | mcp/src/agents_remember/application/skill_resources/catalog.py:75-95 |
-| Containment is proven before any byte is read, and the recorded revision must still match the bytes. | `read_served_file` | mcp/src/agents_remember/application/skill_resources/catalog.py:117-148 |
-| A tree edit cannot quietly delete a published skill: delivery refuses while one is unreadable. | `require_servable`; `unreadable_skills` | mcp/src/agents_remember/application/skill_resources/catalog.py:98-114 |
-| The declared name must equal the final skill-path segment — the declared name, not the path, is the identity. | `_read_skill` | mcp/src/agents_remember/application/skill_resources/catalog.py:181-213 |
-| The walk descends through a skill directory, so a nested skill is discovered and published flat; the 32-level bound is a resource guard. | `_skill_paths`; `_MAX_SKILL_DEPTH` | mcp/src/agents_remember/application/skill_resources/catalog.py:37-42; mcp/src/agents_remember/application/skill_resources/catalog.py:160-178 |
-| A nested skill's files belong to the enclosing skill's entry too, which completeness requires. | `_relative_files` | mcp/src/agents_remember/application/skill_resources/catalog.py:216-234 |
-| The value types, the entry and index renderers, and the per-read `_meta` provenance block this module produces. | `SkillResourceFile`; `SkillResourceEntry`; `SkillResourceCatalog`; `skill_meta` | mcp/src/agents_remember/models/skill_resources.py:59-73; mcp/src/agents_remember/models/skill_resources.py:76-130; mcp/src/agents_remember/models/skill_resources.py:146-250; mcp/src/agents_remember/models/skill_resources.py:253-267 |
-| The frontmatter reader this module refuses a non-conforming skill through, and the verbatim map it returns. | `parse_skill_frontmatter`; `SkillFrontmatter` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:40-71 |
-| The served corpus and its publishing origin, bound together. | `SkillSourceTree`; `shipped_skill_tree` | mcp/src/agents_remember/application/skill_resources/provider.py:49-53; mcp/src/agents_remember/application/skill_resources/provider.py:39-47 |
-| The registration layer that turns these values into MCP resources and the two protocol methods. | `skill_file_resource`; `index_resource`; `install_extension_methods` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:194-251; mcp/src/agents_remember/mcp/registration/skills_extension.py:133-153 |
-| The cases that execute the containment, revision, unreadable-refusal and nesting rules. | `test_a_catalog_record_that_escapes_its_skill_directory_is_refused`; `test_a_read_refuses_a_body_whose_bytes_changed_since_the_catalog`; `test_the_index_reader_refuses_while_a_skill_cannot_be_served`; `test_a_nested_skill_is_published_flat_like_any_other` | mcp/tests/test_capsule_serving.py:1321-1321; mcp/tests/test_capsule_serving.py:796-796; mcp/tests/test_capsule_serving.py:1348-1348; mcp/tests/test_capsule_serving.py:1489-1489; mcp/tests/test_capsule_serving.py:1325-1349; mcp/tests/test_capsule_serving.py:800-812; mcp/tests/test_capsule_serving.py:1352-1367; mcp/tests/test_capsule_serving.py:1496-1542 |
-| The traversal case that reads a path outside a skill directory from a live process. | `test_the_server_process_never_serves_a_file_outside_a_skill_directory` | mcp/tests/test_capsule_serving.py:1271-1302 |
+- Discovery and delivery are kept apart: one build records a revision per file, one read re-checks it. [5]
+- Containment is proven before any byte is read, and the recorded revision must still match the bytes. [6]
+- A tree edit cannot quietly delete a published skill: delivery refuses while one is unreadable. [7]
+- The declared name must equal the final skill-path segment — the declared name, not the path, is the identity. [8]
+- The walk descends through a skill directory, so a nested skill is discovered and published flat; the 32-level bound is a resource guard. [9]
+- A nested skill's files belong to the enclosing skill's entry too, which completeness requires. [10]
+- The value types, the entry and index renderers, and the per-read `_meta` provenance block this module produces. [11]
+- The frontmatter reader this module refuses a non-conforming skill through, and the verbatim map it returns. [12]
+- The served corpus and its publishing origin, bound together. [13]
+- The registration layer that turns these values into MCP resources and the two protocol methods. [14]
+- The cases that execute the containment, revision, unreadable-refusal and nesting rules. [15]
+- The traversal case that reads a path outside a skill directory from a live process. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies. The served tree is this repository's own generated
 package-data copy of its canonical `skills/` tree.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_the_server_process_never_serves_a_file_outside_a_skill_directory` repointed to mcp/tests/test_capsule_serving.py:1271-1302. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: refreshed this card against the
-  settled candidate. **Corrected the nesting contract**: `_MAX_SKILL_DEPTH` is 32 and the walk descends
-  *through* a skill directory — a nested `SKILL.md` is discovered and published flat, and the depth
-  bound is a resource guard rather than a "skills never nest" rule. Recorded that the entry now carries
-  the **verbatim** frontmatter (so the reader's job is completeness, not a two-field subset), that a
-  nested skill's files belong to the enclosing entry as well, that `byte_length` is the entry's `size`,
-  and that `require_servable`'s refusal surfaces as `-32602` through the method handlers. Re-anchored
-  every citation range against the current 292-line source, replaced the containment case reference with
-  the one that drives the guard directly, and added the nesting, completeness and frontmatter rows.
-  Verification metadata remains closeout-owned; no acceptance claim is made.
-
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator: created the card for the SEP-2640 discovery
-  registry and revision-checked delivery half. Recorded the named-identity rule, containment proven
-  before the read, the recorded-revision re-check on every delivery, and the recorded-not-dropped
-  unreadable-skill gate. Its "skills never nest" claim is corrected above.

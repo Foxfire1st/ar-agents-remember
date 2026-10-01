@@ -1,0 +1,232 @@
+{
+  "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:f44fc9a5411b50ad06ae79bc2481b87e3fbf3fa9882a08caf0a2b70031ca10ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "phaseStage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:276948f79882b615335c7288a36de3c641ef77ca59bf7cd0a2178c83ccbe9845",
+            "locator": {
+              "kind": "symbol",
+              "name": "fxSignature"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:9cf0093e3e87ad76663804c28440bca8e102dd9acea312982b0e343bd1660863",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildFx"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "useEngineTimeline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract.\n\nAnchor: \"EnclosureCanvas — GSAP gate (05f §8.4 — no ticker under effects=off)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa22e0bdde3542e21ced22322ef428f95c60aea3",
+            "content": "sha256:d297ab0c9f8168b9f5e8b30811c74edb7f1efe38257262c2b2a5ec95255ec3b1",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`fxSignature`'s refused fold-in now filters `failed`/`stale` only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:276948f79882b615335c7288a36de3c641ef77ca59bf7cd0a2178c83ccbe9845",
+            "locator": {
+              "kind": "symbol",
+              "name": "fxSignature"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_seed_edge_state` — the states a seed edge can actually carry; `refused` is not among them.\n\nAnchor: \"def _seed_edge_state(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f5202770805a4016e906e848217bb239e3c013",
+            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d04955cbb250322e2ad17081008246b0664ce85",
+            "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete.\n\nAnchor: `clearProps`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:ec6c8a92fe60e866c893835bc50f3db70dcf9a7af921e051de4129d2035e170a",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Draw-on stamps `data-drawn` on `onComplete` (5o StrictMode fix); the `refuse` one-shot and the gentle ~1.7s sine `fault` breathe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:9cf0093e3e87ad76663804c28440bca8e102dd9acea312982b0e343bd1660863",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildFx"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "useEngineTimeline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The honest-motion gate that suppresses the whole hook under effects-off/reduced-motion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The canvas that renders the `data-draw='on'` / `data-fx=…` elements + wires this hook to the `<svg>` root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureCanvas"
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`EngineProcessNode` / `EngineProcessEdge` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads; `EngineProcessEdge` no longer declares `refusedPolarity`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

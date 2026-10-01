@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/agent_notifier.py
 
-| Field                  | Value                                         |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                   |
-| path                   | `mcp/src/agents_remember/serving/agent_notifier.py`  |
-| doc_type               | `file-level-onboarding`                           |
-| lastUpdated            | 2026-09-06T22:06:54+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                     |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -360,40 +350,35 @@ Tracked HFX2-L11 gap: `_signal_emit` currently calls the new signal-cooldown sto
 pane/seat-liveness finding, and that store is an unbounded append-only full-file read with no
 compactor yet. The precise limitation lives in `controlplane/agent_notifier_signals.py`'s sidecar.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation found after checking the repo Domain Documentation for
 agent-notifier-sweep-specific behavior; this is same-repository control-plane plumbing whose design
 source is the pilot-observer log (P-15) and the leaf task doc, not an external spec.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `_agent_notifier_loop`/`_agent_notifier_context` in `_app_lifespan.py` construct one `AgentNotifierContext` per sweep iteration (with the resolved last-good settings since 260713-TES-L4) and call `run_agent_notifier_sweep` via `asyncio.to_thread` on the settings-driven interval. | "def _agent_notifier_context(", "async def _agent_notifier_loop(runtime: _ServingRuntime) -> None:", "def run_agent_notifier_sweep" | mcp/src/agents_remember/serving/_app_lifespan.py:177-180; mcp/src/agents_remember/serving/_app_lifespan.py:219-219; mcp/src/agents_remember/serving/agent_notifier.py:96-96 |
-| The pane classifier `evaluate_pane_findings` calls per running harness row. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
-| The heartbeat store `run_agent_notifier_sweep` ticks unconditionally at the end of every sweep, and the staleness helpers built on top of it. | `AgentNotifierHeartbeatStore` | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-109 |
-| The expectation-row store is read only for the compaction pass — the relay never evaluates expectation rows (owner-visible deadline surface, 260713-TES-L5). | `ExpectationRowStore`; "def compact(" | mcp/src/agents_remember/controlplane/expectation_rows.py:163-347 |
-| The operator inbox store is read and written directly through the landing/terminal/rebind/renew transitions (the ladder transitions are deleted, 260713-TES-L5). | `record_delivery`; `rebind_entry` | mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:163-212; mcp/src/agents_remember/controlplane/operator_inbox_transitions.py:359-397 |
-| The liveness check the rebind/dead-target and dead-upstream machinery reads (one-hop provenance; no ladder walk remains). | `is_seat_dead` | mcp/src/agents_remember/controlplane/signal_routing.py:243-249 |
-| The current sweep does not own the retired missing-artifact/SLA predicates. | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-190 |
-| The owner-derivation helper `_signal_emit` calls before posting an owner-addressed inbox row. | `derive_signal_owner` | mcp/src/agents_remember/controlplane/signal_routing.py:206-240 |
-| The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. | `deliver_inbox_entry` | mcp/src/agents_remember/serving/inbox_delivery.py:141-191 |
-| The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. | "def _signal_emit(" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:345-351 |
-| HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` (moved to `serving/owner_signals.py` in 260713-TES-L2) returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. | "def _redeliver(  # pragma: no cover"; "def _post_owner_signal("; "def _signal_emit("; "def deliver_inbox_entry" | mcp/src/agents_remember/serving/_agent_notifier_actions.py:126-126; mcp/src/agents_remember/serving/owner_signals.py:117-122; mcp/src/agents_remember/serving/_agent_notifier_actions.py:345-351; mcp/src/agents_remember/serving/inbox_delivery.py:171-171 |
-| The terminal catalog every pane/seat-liveness predicate reads directly (R3). | "class TerminalCatalog:", "def evaluate_pane_findings(", "def evaluate_seat_liveness_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:49-49; mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:300-300; mcp/src/agents_remember/serving/terminal_catalog.py:65-65 |
+- `_agent_notifier_loop`/`_agent_notifier_context` in `_app_lifespan.py` construct one `AgentNotifierContext` per sweep iteration (with the resolved last-good settings since 260713-TES-L4) and call `run_agent_notifier_sweep` via `asyncio.to_thread` on the settings-driven interval. [1]
+- The pane classifier `evaluate_pane_findings` calls per running harness row. [2]
+- The heartbeat store `run_agent_notifier_sweep` ticks unconditionally at the end of every sweep, and the staleness helpers built on top of it. [3]
+- The expectation-row store is read only for the compaction pass — the relay never evaluates expectation rows (owner-visible deadline surface, 260713-TES-L5). [4]
+- The operator inbox store is read and written directly through the landing/terminal/rebind/renew transitions (the ladder transitions are deleted, 260713-TES-L5). [5]
+- The liveness check the rebind/dead-target and dead-upstream machinery reads (one-hop provenance; no ladder walk remains). [6]
+- The current sweep does not own the retired missing-artifact/SLA predicates. [7]
+- The owner-derivation helper `_signal_emit` calls before posting an owner-addressed inbox row. [8]
+- The current injector entry point `_redeliver`/`_post_owner_signal` deliver through. [9]
+- The signal cooldown store `_signal_emit` consults before minting repeated pane/seat-liveness inbox rows. [10]
+- HFX2-L9 redelivery and signal behavior: `_redeliver` passes the redelivery floor, `_post_owner_signal` (moved to `serving/owner_signals.py` in 260713-TES-L2) returns delivery state, and `_signal_emit` skips mid-turn, checks cooldown, and appends a cooldown record. [11]
+- The terminal catalog every pane/seat-liveness predicate reads directly (R3). [12]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes this local sweep; the level-triggered-reconciliation design rationale cites an external incident (Inngest, Oct 2025) only as research justification, not a code boundary. | — | — |
+No cross-repo boundary owns or consumes this local sweep; the level-triggered-reconciliation design rationale cites an external incident (Inngest, Oct 2025) only as research justification, not a code boundary.
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -452,126 +437,3 @@ Each sweep snapshots the inbox, asks the injected task-plane registrar to durabl
 leaf execution reports, and supplies the exact registered ids to `reconcile_and_compact`. This
 occurs before any TTL/cap or confirmed-gone reclamation. With no registrar the set is empty, so
 task-bound execution rows remain protected rather than being guessed safe to delete.
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "def _signal_emit(" repointed to mcp/src/agents_remember/serving/_agent_notifier_actions.py:345-345. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "def _signal_emit(" repointed to mcp/src/agents_remember/serving/_agent_notifier_actions.py:345-345. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_agent_notifier_context` in the row 376 of this card from mcp/src/agents_remember/serving/_app_lifespan.py:140-140 to mcp/src/agents_remember/serving/_app_lifespan.py:177, the extent of the construct the claim is about (the checker named line(s) [177] as its live location); added mcp/src/agents_remember/serving/_agent_notifier_actions.py:345 to the row 385 of this card as the citation for `_signal_emit`: no cited file carried the construct, and the checker named line(s) [345] in this file as its live location; re-pointed `_signal_emit` in the row 386 of this card from mcp/src/agents_remember/serving/_agent_notifier_actions.py:311-311 to mcp/src/agents_remember/serving/_agent_notifier_actions.py:345, the extent of the construct the claim is about (the checker named line(s) [345] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_agent_notifier_context` in the row 376 of this card from mcp/src/agents_remember/serving/_app_lifespan.py:219-220 to mcp/src/agents_remember/serving/_app_lifespan.py:177-180, the extent of the construct the claim is about (the checker named line(s) [177] as its live location); added mcp/src/agents_remember/serving/_agent_notifier_actions.py:345-351 to the row 385 of this card as the citation for `_signal_emit`: no cited file carried the construct, and the checker named line(s) [345] in this file as its live location; re-pointed `_signal_emit` in the row 386 of this card from mcp/src/agents_remember/serving/_agent_notifier_actions.py:126-132 to mcp/src/agents_remember/serving/_agent_notifier_actions.py:345-351, the extent of the construct the claim is about (the checker named line(s) [345] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_agent_notifier_loop` in the row 376 of this card from mcp/src/agents_remember/serving/_app_lifespan.py:177-180 to mcp/src/agents_remember/serving/_app_lifespan.py:219-220, the extent of the construct the claim is about (the checker named line(s) [219] as its live location); re-pointed `_redeliver` in the row 386 of this card from mcp/src/agents_remember/serving/_agent_notifier_actions.py:345-351 to mcp/src/agents_remember/serving/_agent_notifier_actions.py:126-132, the extent of the construct the claim is about (the checker named line(s) [126] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_agent_notifier_loop` in the row 376 of this card from mcp/src/agents_remember/serving/_app_lifespan.py:98-98 to mcp/src/agents_remember/serving/_app_lifespan.py:219-220, the extent of the construct the claim is about (the checker named line(s) [219] as its live location); re-pointed `_agent_notifier_context` in the row 376 of this card from mcp/src/agents_remember/serving/_app_lifespan.py:219-220 to mcp/src/agents_remember/serving/_app_lifespan.py:177-180, the extent of the construct the claim is about (the checker named line(s) [177] as its live location); re-pointed `_post_owner_signal` in the row 386 of this card from mcp/src/agents_remember/serving/owner_signals.py:94-94 to mcp/src/agents_remember/serving/owner_signals.py:117-122, the extent of the construct the claim is about (the checker named line(s) [117] as its live location); re-pointed `_redeliver` in the row 386 of this card from mcp/src/agents_remember/serving/_agent_notifier_actions.py:96-96 to mcp/src/agents_remember/serving/_agent_notifier_actions.py:126-132, the extent of the construct the claim is about (the checker named line(s) [126] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_signal_emit` in the row 385 of this card to mcp/src/agents_remember/serving/_agent_notifier_actions.py:345-351, the extent the claim is about (the checker named line(s) [345] as the live location)
-
-- 2026-09-06T22:06:54+00:00 — Reconciled current relay composition and explicitly marked pre-demolition milestones historical; preserved history and verification pins.
-
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: added the register-before-reconcile retention boundary. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: refreshed the renamed sweep card and its current facade/action citations.
-
-
-- 2026-08-09T21:10+02:00 — Master integration gate repair: extracted the aggregate
-  `inbox-compacted` event assembly into `_log_inbox_compaction`. Sweep ordering, reconciliation,
-  predicates, action dispatch, heartbeat timing, and event payload are unchanged; the hard
-  function-length rail now passes. Verification metadata stays pinned until closeout.
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the judgment-demolition wiring --
-  the sweep is a fact relay (no suspect classification, no rungs, no respawn, no expectation
-  evaluation), the facade `__all__` drops the deleted symbols, and `escalationBudget` is the
-  per-sweep owner-signal load-shed cap; legacy `ladder-resolved` remains written by the
-  confirmed-gone fold (reviewer F4). Verification metadata pinned until closeout stamps the
-  260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the deliver-until-LANDED sweep
-  wiring — `_fold_legacy_landed` (N13 migration fold, latest-fold, snapshot refresh), the
-  rebind/grace/expiry predicate+action composition, the attempt-ceiling `unresolved` terminal
-  in `_redeliver`, the dormant ladder (N3), and the expanded facade `__all__`. Verification
-  metadata pinned until closeout stamps the 260713-TES-L4 commit.
-- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded the compound-idle relay wiring
-  (fourth predicate family in `evaluate_predicates`, `compound-idle-due` action mapping,
-  facade `__all__` exports of `COMPOUND_IDLE_SWEEP_LATENCY_SECONDS` /
-  `compound_idle_response` / `compound_idle_signature` / `evaluate_compound_idle_findings` /
-  `_emit_compound_idle`, non-reaction residue now worker+manager). Verification metadata
-  pinned until closeout stamps the 260713-TES-L3 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the state-signal relay wiring —
-  ten predicate families, three relay actions, owner-signals re-export, `turn-report-stale`
-  retirement, no-model-consume. Verification metadata pinned until closeout stamps the
-  260713-TES-L2 commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: moved this card to the renamed module path; recorded the compatibility window (event dual emission, legacy durable-row values, ask-prefix identity, retained durable artifact names) and refreshed current-truth identifiers (`run_agent_notifier_sweep`, `AgentNotifierContext`, `_agent_notifier_loop`/`_agent_notifier_context`). Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_supervisor_actions.py` and `_supervisor_evaluation.py`; full surface re-exported and pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-
-- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: documented the reconcile catalog read hoisted
-  before the inbox transaction (a pre-fetched `catalog.list(include_terminated=True)` consumed by
-  the closure; the lock-held fold→resolve→compact and the bounded fail-closed tmux snapshot
-  unchanged), the one-directional benign staleness analysis, and the 2026-08-05 ABBA deadlock
-  provenance. Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-03T03:59:59+02:00 — Curated 10 citation findings (5 table rows, 5 source-form repairs); deleted 1 unanchorable substantive Tier-3 citation row and recorded it in the batch report.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `EscalationSchedule` and `OwnerSignal`; sweep posture and predicates unchanged.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
-- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: documented the final confirmed-gone
-  reconciliation ordering, fail-closed evidence matrix, body-free/no-op-silent event contract,
-  bounded snapshot behavior, and non-blocking F3-F6 follow-ups (canonical tmux naming, stale
-  append-mutator refold, lock-read characteristics, and duplicated terminal-update shape).
-  Verification metadata remains pinned until closeout stamps the candidate commit.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T21:05+02:00 — Super-exit curator correction: reconciled the predicate-count prose
-  with the eight landed `evaluate_predicates` families, including ladder-terminal and dead-upstream.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: propagated leaf-role identity through all supervisor
-  predicates/actions/coalescing/cooldowns/events, switched current seat tests to binding role, and
-  unified delivery writes on the sweep clock. Recorded reviewer O4 as a bounded test consequence.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: aligned supervisor redelivery with the one-row
-  harness-log wait budget and documented explicit replacement-leaf chain credit. Verification
-  metadata remains pinned until closeout stamps the eventual L15 code commit.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: made supervisor predicates chain-aware,
-  manager-first, and current-owner-readdressing; added the one-transition-per-row-per-sweep guard;
-  recorded the accepted unbound-worker S1 follow-up. Verification metadata remains pinned until
-  closeout stamps the eventual L13 code commit.
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: `_redeliver`/`_post_owner_signal` now pass the
-  configured redelivery floor into hosted delivery; `_signal_emit` skips `pane-signal: mid-turn`,
-  checks the persisted signal cooldown store by owner/leaf/kind/detail, and records the delivery
-  state after posting. Also documented the HFX2-L11 scaling deferral for the new signal store.
-  Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8: added `_SweepState`, redeliver budgeting,
-  ladder-terminal dead-seat resolution, the `orchestration.supervisor.ladder-resolved` event, and
-  backlog/duration heartbeat metrics. Verification metadata pinned until closeout stamps the HFX2-L8
-  commit.
-- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (P-15 tier 3, escalation ladder + dead-man respawn,
-  R1-R6): two new predicates (`evaluate_escalation_findings`/`evaluate_dead_upstream_findings`) and
-  two new actions (`_escalate_rung`/`_signal_dead_upstream`), calling through the new
-  `controlplane/escalation_ladder.py` walker and `signal_routing.derive_skip_level_owner`/
-  `is_seat_dead`. `_escalate_rung` durably stamps rung transitions via the new
-  `OperatorInboxStore.advance_rung` and, past `respawn_after_rung`, calls new `_respawn_suspect`
-  (retires the husk via HFX-L8's `retire_entry`, re-delivers the pending queue to the successor via
-  the signal payload, and surfaces any now-orphaned workers via new `orphan_policy
-  .find_orphaned_workers` when the retired seat was a manager). `AgentNotifierContext` gained the
-  `escalation_sla_seconds`/`escalation_rung_seconds`/`respawn_after_rung` plain-primitive knobs,
-  resolved per-use by `serving/app.py`'s `_agent_notifier_context()`. No new `InboxMessageKind` values
-  were added (rung 1 reuses `"nudge"`, rung 2/3/respawn/dead-upstream reuse `"escalation"`) —
-  distinguishable via the dedicated `orchestration.escalation.rung`/`.respawn`/`.dead-upstream`
-  observer events and the row's own `rung` field. Two gaps documented, not silently absorbed: rung
-  3 surfaces via the existing dashboard-visible inbox row (no 260628 developer-notification seam
-  exists in this repo yet); orphan re-parenting is detection/surfacing only (no auto-reparent
-  action). Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
-- 2026-07-08T18:45+02:00 — Created for 260707-HFX2-L2 (supervisor sweep + predicates, R1-R6): the
-  deterministic sweep — `AgentNotifierContext`, the five R2 predicate families
-  (`evaluate_pane_findings`/`evaluate_expectation_findings`/`evaluate_turn_report_findings`/
-  `evaluate_inbox_findings`/`evaluate_seat_liveness_findings`), the R4 action dispatcher
-  (`act_on_finding` → `_redeliver`/`_auto_nudge`/`_signal_emit`, each logging an
-  `orchestration.supervisor.*` event), and `run_agent_notifier_sweep` (evaluate → act → tick heartbeat
-  unconditionally, R5). Gives `missing_artifact()` its first caller and
-  `ExpectationRowStore.mark_missed`/`OperatorInboxStore.mark_escalated` their reserved-transition
-  caller. Builds no escalation ladder itself (HFX2-L4's job) and touches no
-  `terminal_paste.py` internals (HFX2-L3's job) — calls through their current public surfaces only.
-  Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
-- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 release-gate fix: added
-  `_delivery_failure_still_retrying` and taught `evaluate_escalation_findings` to skip
-  `"no-hosted-session"`/`"unconfirmed"` delivery-failure rows while their `attemptCount` is below
-  `PERSISTENT_FAILURE_ATTEMPTS` and `escalatedAt` is unset. This keeps the persistent redelivery
-  threshold authoritative before the generic unacked ladder takes over; it fixes the liveness
-  simulations that were escalating at attempt 2 instead of after the redelivery path exhausted.

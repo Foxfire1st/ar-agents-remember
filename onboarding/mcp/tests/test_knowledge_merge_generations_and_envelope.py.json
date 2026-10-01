@@ -1,0 +1,610 @@
+{
+  "path": "mcp/tests/test_knowledge_merge_generations_and_envelope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three requirement groups the module covers and why they share one file.\n\nAnchor: \"what generation 2 makes possible and what it must refuse\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:ed2ddf8883b259b64a324c4c748dbbe03bf2804359d9334cb592a146c78bfaae",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The merge preflight the generation cases drive: per-input generation, agreement selection, and structural validation against the selected generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:1376089e491f4040916440a4d60b52624368ef6acd81cccb8e61e2d79cd291fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_generation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:642a852cbc4ba4d487a9d8fdab603b9c56f8321e12be45a674da7c1e1c25ae85",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_generation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:5a35e6ab2215dcab92ff892722eb9743cc87762e3dc8f2cda49900745ee10f5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_supported_structure"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The delta builder the passing case calls with an explicit generation, and the empty-delta fact it asserts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c95bcb425e1c716b862611879d84198adc0473",
+            "content": "sha256:0cb73cd111327bc3089ee48590491798b0e9dcd7a3eba567be74b0e8fcf662a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_delta"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The registry this case's seam resolves against — re-cited by hand, and now holding three groups because `KS-R14@v1` registered the two mechanical-detection kinds beside the eight facet kinds and the internal conformance kind.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:073d446601ea1ffe4587b00c78fd5ce4088c6b7ac8046952ffa8c3b3f47d0057",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The one entry point that returns a validated payload or a refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:a70c5252d91317d7a1e283ddcb483f6714da87613f16dd6229fe84b06582cb7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_record_payload"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:08f75fed96d49a9787dc60c10f9dbc4e7d79487c6e07713d5a2f7e0f83d9c199",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The marked-internal kind that exercises the seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:002dbe7b27a0889ed92295375a7d4bacfda983ec36bb0a443b47ce1eb7baa5a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_CONFORMANCE_KIND"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e9d19273fd0ae55e930aa7827da5ba65a5dc961afb9f58a164bd27d620d33cee",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The registry this case's seam resolves against — re-cited by hand, and now holding three groups because `KS-R14@v1` registered the two mechanical-detection kinds beside the eight facet kinds and the internal conformance kind.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:b261d7863d3eac60e1a1590cf46927132236b7378e0fc6692525dc4cba0e228b",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The one entry point that returns a validated payload or a refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:a70c5252d91317d7a1e283ddcb483f6714da87613f16dd6229fe84b06582cb7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_record_payload"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:08f75fed96d49a9787dc60c10f9dbc4e7d79487c6e07713d5a2f7e0f83d9c199",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The marked-internal kind that exercises the seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:002dbe7b27a0889ed92295375a7d4bacfda983ec36bb0a443b47ce1eb7baa5a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_CONFORMANCE_KIND"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The two route rules the module exercises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:9fa472344f72aea98219a3f28e0a1f35fef05c66a059bf2f8d5fdf67df180ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_route_path"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:743536918d07f037ce0bcdf3e273ac92a309241f25590a95d5c29c8ddd26169d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_routes"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:f1bff91928de2540eff05b965b2fd0675924ce652b110f71965d2fab38af9db1",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:8ac6dfa03a523f18888d808d8eafbf19d32d32327a67596cbcb6b8e8acdab4f0",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The generation-2 declarations the DDL case reads as facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:4cfd6498646b7d9893c5a13a0a4fbd667c85ff8ad35a625ed59c340ce3ebebc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLE_DDL"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:c5d3f823c0c17cd3d77f8cd5a6eac32f204b53b536178ff4cea2b76563f22515",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_PRIMARY_KEYS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:841fd9df455d21b660732943c373550faff14efb903cf7d9a2b6945dba4eb697",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_COLUMNS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one-namespace helper for the three merge positions, and why the caller supplies the namespace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:d753d7dfa725ecfc8dc6a56b646caa60ffa4fbfbed0a5d58f7f72390c221eaff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_v1_dataset"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:6684c0fca9b83c225b9ba049ab7a4039243143c3b35a1940a5a2eed67a03591c",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The genuine version-1 datasets the merge cases use.\n\nAnchor: \"def create_generation_1_store(database_path: Path, repository_id: str) -> OpenedKnowledgeStore:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112f7a18a62526d17d968ad7c89f6c0c7c761e77",
+            "content": "sha256:3aa3c9d328298728ea7ff54d238395598dc79aa586179611ae4cc2b4441bdae8",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/tests/generation_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The required passing case: a version-1 merge on the generation-2 build selects generation 1 and attaches generation 1's ten tables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:a38f0bd230322e760e7e21e0b0963d0a89771f407f6a96b033f2d579bc95b77c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_version_1_merge_on_the_generation_2_build_selects_generation_1"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:d522f747e8d0b3531ecab1300a806428edeced85caf9b71d698cf59566eca20f",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A mixed-generation merge refuses before any session exists, names the disagreeing input, and leaves both files byte-identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:966e54ab61cfddd21722747bee4db237f13bd5aa3b6b0b4b8b16fd3265bd95b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_mixed_generation_merge_is_refused_before_any_session_exists"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:1991bdc95740080e07072f2a7bd76bed7e1f4ae18b61c63bdcaba1c1e584bfd6",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The same mechanism selects the newest generation when the inputs agree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:0ccad3713748f7dbb30dc783539ec1967cdd48462e4e92252b3dfec0ab624755",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_generation_2_merge_on_the_generation_2_build_selects_generation_2"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:f2a329e2e292bc7d43fa94728268a262e894a957082062a8d72d57bb3a653560",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "One registry, one entry point, a frozen validated value, and five inadmissible payloads refused with the shipped code.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:b0050f8bb421fab97a16ed0b67fe807cacb414bd51dace346a974d7bdf629892",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_payload_seam_registers_one_shape_and_refuses_every_inadmissible_payload"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:9800c3e9c75186307c0d81ed244179949ab82b80e90dbfc4a43037c31d25d2ea",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Confinement measured in both directions, with the refused spelling carried in the refusal's `observed`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:c0e0519079623c0d076edcb004b742a388f16a76694993faee3de18370c818f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_confined_route_path_normalises_to_itself"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:12f2589674dc0ceee09c8a96649a8af02dfde4ad04ea4f54852e0a969e09bc31",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_route_path_outside_the_admitted_form_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:db2532834ce60b066ce68a27e48585f069a6a282cb6bf398a822ab9fc3c081a9",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:9b9caa575a3a29f94b32cb41b30a365ba3194df913707d8dc4c89171d5308df2",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Acyclicity measured in both directions, including the rollback and the one-node cycle the table's own CHECK catches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:a06dcb1794e815e04fa618251e78ce0af348c3e70c797e2a50c5d1243995b5ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_hierarchy_is_acyclic_and_a_cycle_rolls_the_batch_back"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:9008762fd88a2d05e11051bb5de4068927a4d581677dae583b3736fb8117c43a",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The generation-2 DDL facts: no identity column on the envelope, payload on the revision, the joins keyed by the governed row, no altered generation-1 table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:5badd88b13b70230dc563d837cc706ee4f1090bec3914488a558a0ff0975b92e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gen_2_record_tables_carry_no_competing_identity_and_the_association_is_a_constraint"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:c6383dfe4a1be9baed1e3a24bb1f48a80a9c70a88089c9bf9207cf50aa636fcd",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 287
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,154 @@
+{
+  "path": "mcp/tests/test_knowledge_conversion.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rule 1 and 2 over every row case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:a4331704d00458c653941537c9f3609c4eba11c917aa9acbf28d7040601b07ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_card_becomes_prose_one_evidence_section_and_numbered_references"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Rule 4, the export.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:ec0d9bde3bf1ef7efa5741d8855c2a92425ee46d790e9443ff70a11afbae0c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_database_exports_head_records_and_entries_in_their_recorded_blobs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rule 6, determinism, the version refusal and the no-op.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:27d8c8a624b0821eb9b38bbb0bd49df08055def344e540994fc5cdb2ad788e7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A refused conversion writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:2a5dc5965c9d6725574fe207ce21fa8be0902e7c35fb98845d511eaa20ab8c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_conversion_writes_nothing_and_names_what_failed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Back to prose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:a71b4a198e6856dd6a81ffade7e4d0451767342554951eb83d074cab766dfa09",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_card_renders_back_to_its_content_without_history"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:ed3f43e01259a95aed3fd94782b254f185013c10d64670c9e664ccd31752000a",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_legacy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The version 1 golden digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:ee79d4f39b9404172fd58db407faabf29b0e15a2c184e1585a57fcf014f8abf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversion_digest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:baf240ed900a0eba55e5c706cb874864e0196ce092aade08000543c19933d43e",
+            "locator": {
+              "kind": "symbol",
+              "name": "VERSION_1_FIXTURE_DIGEST"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:b957cd854d742c4db187144943705413883d638a12f415e233b5f4e4938d4017",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conversion_format_version_1_reproduces_its_pinned_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Its lane row.\n\nAnchor: \"mcp/tests/test_knowledge_conversion.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:c1982547bb989f163509da14ecb063cbb188711a3d8cc19491c6f2ad577f669e",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

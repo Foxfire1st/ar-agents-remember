@@ -1,0 +1,197 @@
+{
+  "path": "mcp/src/agents_remember/serving/claude_stream_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Protocol parsing derives the canonical native-command replay body and keeps identity-changing commands blocked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:40c81d68fba05c4a084c925b46610176523254f2650bd9a995a6152b6d6c28c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_command_replay_text"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:31df4fec7abcaee51f6008531385b3f9642c69f2b4bb6f15e9e4474383a2a219",
+            "locator": {
+              "kind": "symbol",
+              "name": "command_unsupported_detail"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:1b21f2221bd3caecbf6f8d003020a558bdd951ef5b6e723588bfa63813f487d3",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 330
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:5b0eb0832a60349dc227bb8c0c4f7dd78391f29ba486da9502a9c66587eeb65f",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 352
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Submission records retain wire/replay text, acceptance and terminal futures, and abandoned/completed state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "710b014222e35bf1435fb7165d4c4ac4151b7cb6",
+            "content": "sha256:00343d77bcab4238c00cd5109d2339d27bdf6b81c58732f137763f3b3d784fdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaudeSubmission"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_submission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "710b014222e35bf1435fb7165d4c4ac4151b7cb6",
+            "content": "sha256:c51c8c9874c77d857077a6adcda1a595043ba8dacde4f728240b8d01ce98c217",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_submission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The adapter waits for terminal evidence and maps absent/refused/exact results without a paste fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:6bd3316bcd027a6268f0e4b904d2b97a3a37c3f8d0d6019019a6a1c0cff607b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_submit_set_command"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:666263b65b83d9717614adf437e6d8ef38700956d2e351d28cccbba69be09be0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_wait_set_terminal"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:1eaa596e2fd2b63b4225e9418daf66ed9397130e813bce8b3dcf436d8f4556e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_set_result"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:34c37f0786c18b31aae6d9c49b6e526885563cc0205069a597128aca461b092a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed_set_result"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:30e27b388f5994c450181c6de03dd96262289d78f9c33558d8f043e3f434f5ec",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 402
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:dd7e80f70c00e178abafed889022378665fb673274c98c10de8ae7d905dfe69b",
+            "locator": {
+              "end": 607,
+              "kind": "line_range",
+              "start": 589
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:a172b7eec30400b54e563ce84021182b820cd955b5b45bcf85b007f33207bae6",
+            "locator": {
+              "end": 646,
+              "kind": "line_range",
+              "start": 627
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:992382b6ef29d67b0b01aeff152f002c171f8132058597d59852c59af3eb8f89",
+            "locator": {
+              "end": 674,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

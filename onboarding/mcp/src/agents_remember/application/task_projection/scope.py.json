@@ -1,0 +1,451 @@
+{
+  "path": "mcp/src/agents_remember/application/task_projection/scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one resolution call: admitted binding plus hints in, bound scope or refusal out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:b5f0bf5bde1ae1a2fc3d09be0af5f6a41c4a6aaf28aae3f2dd6026c09d0c431e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_task_projection_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:6e2a8819937a2f28766954f64f1b6c828f8cc7fb4cb77da5b791bd5c26acc190",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionScopeRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:8bf03011ce3cbe350aad3fcf5350fcd6652e9b199603f90aec1efe273e3c28a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResolvedProjectionScope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:81126b0f7a03d02cc085700c5e38b241c87e43e9e548465253f0f0b14f466533",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 292
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:4b734f64b1f229c35545e1ada0b9ec1ab012f967ad0761bd2ff80c231f38ae4d",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:0fa1a963b52d41944086947ea2ef40a0cb8d7e820f1b30d5c86c4f97cfb91aeb",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The case that proves every unresolvable input returns its own source-resolution status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:7a9e4dcce48dbe2a6b8e0bb6beb09ed88d822e81987a3e654937f981bcba1708",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_unresolvable_input_returns_its_own_source_resolution_status"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The case that proves a refused and a successful projection leave the task tree byte-identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:21950a202f0518236df30a3b9217f3dab3c4323e8aae90e53e852e1a389a7a18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_and_a_successful_projection_leave_the_task_tree_byte_identical"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical task reference parser — the admitted identity's only accepted form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:0ece7c10a16e94c10487f1e8699c76eb2817ae9bc055ecc193f505017d1b6760",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_task_reference"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:55fda0d9e552bf51e48d35a8b460df5987bb5ef94dc61ab03cbb75f35d96c1cf",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two gates that make the read plan binding: read exactly these, reference those.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:15d1e21b6de0cc5eab87e37db3e71fe1b0f12cdf369635b9317d44f50e4bdfc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_documents"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:e82f2d5dedba62d23f18930b0e583898c0606a083f6cc81fbb3a7f5887c882fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "referenced_documents"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:3370cbeed73afc658d7f88ef6754dbf1adc5d584c8bcffa2b0ef6485664fce0b",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 376
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:77d70275d3b93fe4f8ff338767657e1b91e3e9c176ec93fe90eb8b7c5d9308e9",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 394
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The admitted-identity reconciliation against what the enclosure declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:127f4fb9e590cde302ed6829c02757000693e8cafc900c0e65348ae67511b690",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admitted_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:e0f9af4c3f80c89f5584c921b09782a91ef8ec85ee4540ae652596a5c23b4c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_task_ownership"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:4d84cdbce09d5a8c4e73e575887b85a58a3601f92b8083d0de1fa8f50a5ca32e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_altitude_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:28ac698b26212ddda441ae43cec0266b2285f337ee14839e25cc952fac83bbd3",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:55972c44ee40a11043254beb3964f9d29c5d45084e04d3406e76929b2c0f7d43",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:c8793ec70c862704e9f0c5c27c5c8a1fb97bff91bcbfe88463a6fcb99c48726f",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The leaf-only parent read, and why a master's or sprint's parent is not resolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:3c3beeb3dd1083a3c46ab9f14e9ae0d0fcceff98aacc3ab0a5383aee10928b74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parent_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The exact accepted task-document bytes this module digests, rather than re-reading the file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:580bc2ba7b11f508edd6bbf52a6b4ce9fee772c8c537addc0f34b8b1ea086920",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_task_doc_source"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:598b8b132356383cbe0e3888140fd0962fd4bb9ac330950d41110bbb664f3922",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocSourceSnapshot"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The topology owner that decides whether a reference resolves and which altitude may carry the seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:245ad882a42c3bee97cdf6ffa88bb042047c0248e25b400acd68cc5f7f1aaa83",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentTopology"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:642419e94cd714e906607e971fc0160b7367c3de3fab5ef8baaa629ae9ebce88",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentRefError"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:c183cac20e62cc80dbfacbff47df1c44dc14cf0da50cbaed25aedc93f553b288",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskAltitude"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The enclosure contract and its reader — the owner of branch, base commit and leaf identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2839bd8153b4ebbc2bb89e86da08e84840c848e5",
+            "content": "sha256:4c5254d69f10d674d7ed9d6dec6c8dd44eeb2703fed21c69221d9829899bb252",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContractReader"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/contract_reader.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:b5538d3d87466b1af2902ccd01d110f5363b44f3af22cf841ff96c97d242a6d2",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:577cb109a6d729c5c376912d407f750475b5d33d7f9164e79eda91776bd7c6f6",
+            "locator": {
+              "end": 463,
+              "kind": "line_range",
+              "start": 432
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The resolution shape this module mirrors rather than reinvents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:074d23ad3c16087dd09d888a493616eaec483e5581927e53efa05850bfff8449",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:d8b24e8cece9094d276124b234a49f661063cd619954dd174d121c3712cb30db",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

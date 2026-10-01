@@ -1,15 +1,5 @@
 # dashboard/src/panels/FlowTab.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/FlowTab.test.tsx`          |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -84,41 +74,11 @@ exact on-canvas prose, so they double as a regression guard on the drawn spec.
 - **No store, no network, no xterm.** FlowTab is pure, so the suite mocks nothing; that store-free
   posture is itself part of what these tests protect.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The renderer + nav under test (default model, nav radiogroup, initialModel fallback, segment counts). | `FlowTab`, `FLOW_MODELS` | dashboard/src/panels/FlowTab.tsx:111-148 |
-| The registry the census derives expectations from and whose invariant prose the suite asserts. | `ROUTER`, `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:56-102; dashboard/src/panels/flowModels.ts:451-451 |
+### Repo-Internal References
+
+- The renderer + nav under test (default model, nav radiogroup, initialModel fallback, segment counts). [1]
+- The registry the census derives expectations from and whose invariant prose the suite asserts. [2]
 
 As of the 260703-L8 remediation the tests asserted the then-converged canvas: router default + retired models absent from the nav, the ladder and no-chat-builds invariants on the ROUTER drawing, the branch-not-worktree intent and delegated handover decision on the coordination event loop, reopen-not-redo on the manager, brief-started/no-machinery worker, hat-framed designer, and the ruled deciders on the reviewer. Cycle 6 pinned the ruled seam channel verbatim: the coordination assertion matched decide-by-packet-carried-gateId, and a manager assertion matched the gateId-rides-the-packet raise line. Cycle 7 adds a manager assertion pinning the raise node's enclosure address (`enclosure="<master task name>" — the exact address integration enforcement matches the gate by`).
-
-## Update History
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded focused
-  assertions for fail-closed router admission and all four reviewer structural-parent mappings.
-  Verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `FlowTab.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: moved the flow fixture onto canonical sprint-bound
-  command-seat provenance. Verification metadata remains pinned until closeout stamps the code
-  commit.
-
-- 2026-08-03T03:59:59+02:00 — Curated 4 citation claims (2 table rows, 2 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: updated FlowTab tests for
-  the new Architect model, architect router target, backend-orchestrator wording, escalation
-  ladder through architect, architect designer hat, and architect-mediated quo-vadis/developer
-  review strings. Verification metadata pinned until closeout stamps the HFX-L6 commit.
-
-- 2026-07-06T15:40+02:00 — 260703-L12 (three-party loops): two new cases — the strategist model (mandatory pre-run gate, cited-edges method, unplannable-as-scoped junction, reader-not-mutator adoption) and the cross-model loop invariants (tier scoring, 3-full-round cap, quo-vadis, criteria-catalog binding, builder/reviewer resume, strategist pre-run + reviewable-environment handover) — 11 tests total; the Logic body was de-staled from the pre-convergence build-job/frame census to the current suite. Verification metadata pinned until closeout stamps the L12 commit.
-- 2026-07-05T19:55+02:00 - L8 builder cycle 7: new assertion pins the manager raise node's enclosure address (AR4-4). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T19:10+02:00 - L8 builder cycle 6: seam-channel assertions updated to the wait=false raise + decide-by-packet-carried-gateId prose (AR3-6a). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): tests rewritten for the converged canvas (9 tests). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-04T09:40+02:00 — Created for 260703-L0 (Canvas & playground): 8 vitest cases for the FlowTab
-  canvas — default model, nav switching + `aria-checked`, `initialModel` + unknown-id fallback, a
-  per-model render census (node/gate/rundown DOM counts vs the registry), and verbatim invariant
-  assertions (master-granular DAG rule, the two adversarial seams, bird's-eye-only spirit test, manager
-  escalation, designer adversarial-review handover, frame junction, Wollmilchsau self-id, reviewer
-  evidence-not-decisions + decomposable blocks). Verification metadata pinned until closeout stamps the
-  L0 commit.

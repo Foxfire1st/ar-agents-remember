@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/codex_app_server_state.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/codex_app_server_state.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -80,66 +70,27 @@ version remains the negotiated Codex version and must later agree with thread ev
 
 None known for the L3 submission-evidence model.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The session retains parsed pages and projects them into the normalized catalog; the adapter consumes
 the same strict thread and event helpers.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Session reads all model pages and validates desired/effective model-local settings against these rows. | `discover` | mcp/src/agents_remember/serving/codex_app_server_session.py:245-255 |
-| Adapter reserves each prompt with the current desired selection and dispatches the retained pair on `turn/start`. | `submit`; `_start_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:285-310; mcp/src/agents_remember/serving/codex_app_server_adapter.py:484-530 |
-| Initialize parsing extracts the primary Codex product version while requiring exact client identity on host-first responses. | `validate_initialize_response` | mcp/src/agents_remember/serving/codex_app_server_state.py:139-169 |
-| Thread-open parsing now also reads the host's own loaded instruction documents onto the evidence object. | `_instruction_sources`; `parse_thread_open_response`; `CodexThreadEvidence` | mcp/src/agents_remember/serving/codex_app_server_state.py:274-294; mcp/src/agents_remember/serving/codex_app_server_state.py:297-327; mcp/src/agents_remember/serving/codex_app_server_state.py:59-75 |
+- Session reads all model pages and validates desired/effective model-local settings against these rows. [1]
+- Adapter reserves each prompt with the current desired selection and dispatches the retained pair on `turn/start`. [2]
+- Initialize parsing extracts the primary Codex product version while requiring exact client identity on host-first responses. [3]
+- Thread-open parsing now also reads the host's own loaded instruction documents onto the evidence object. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this parser module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: documented the thread-open `instructionSources`
-  observation on `CodexThreadEvidence` — absent/null yields `()`, a malformed present value raises with
-  the method named, and the value is host-reported observation published verbatim (the legacy-chain
-  switch's reason is built from it). Re-anchored `discover` and `validate_initialize_response` and added
-  the observation's ranges. Verification metadata moves to the last committed source `c1dbebf8`;
-  closeout re-stamps the real code commit.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: documented the clean-cut current
-  Desktop initialize grammar, exact client suffix, and unchanged initialize/thread version
-  agreement; no unused CLI compatibility branch remains.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T20:43+02:00 — W2-B08: anchored 2 Codex app-server session/adapter reference claims with exact lifecycle method anchors; ranges remain generated by the scoped fixer. Verification metadata stays pinned until closeout.
-
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the stored-order
-  `native_evidence_frames_from_thread` flatten — typed item id/type, turn parent identity,
-  duplicate-id fail-closed, and whole-item raw payloads. Verification metadata stays pinned until
-  closeout stamps the candidate commit.
-- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented model/effort selection epochs on
-  bounded prompt evidence so later setters cannot retroactively rewrite queued work.
-- 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented retained display/description
-  metadata, descriptive model-local effort options, hidden/default selection, and default-menu
-  validation.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented opaque structured-version extraction and strict
-  initialization capability validation.
-- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for typed protocol state,
-  exact effort validation, server interactions, terminal mapping, and bounded reconciliation.
-  Verification remains unset until closeout stamps the code commit.
+No meaningful cross-repo references found.

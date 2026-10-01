@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_attribution.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_attribution.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -109,40 +99,32 @@ readers.
 None recorded in this module. The `family_revision` production-composition coverage gap is tracked
 on leaf `260921-ICR-L4`'s worker report (§4, "Not run, and why").
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The one anchor resolution that establishes a registered mapping, with stale and unresolved states named as purported.** | `_RESOLVED_MAPPINGS` | mcp/src/agents_remember/application/review_attribution.py:92-107 |
-| **The subject the membership question needs, narrowed per seed kind rather than reached through `getattr`.** | `SelectedSubject`; `selected_subject` | mcp/src/agents_remember/application/review_attribution.py:111-178 |
-| **One bound snapshot: its binding, its handle, and the carried reason when it never became readable.** | `AttributionSideInput` | mcp/src/agents_remember/application/review_attribution.py:124-149 |
-| **The entry point: the caller's own observation partitioned by the bound snapshots' mappings.** | `review_attribution` | mcp/src/agents_remember/application/review_attribution.py:181-211 |
-| **One side's mappings read by exact path equality with each anchor observed, or the reason it could not be read.** | `_read_side`; `_registered_mappings` | mcp/src/agents_remember/application/review_attribution.py:214-285 |
-| **The per-row subject predicate, with family membership from the family's own rows and degradation to membership-unknown.** | `_subject_matcher`; `_family_revision_ids` | mcp/src/agents_remember/application/review_attribution.py:288-331 |
-| **Completely inspected versus legitimately known-empty, claimed only for a checked first-generation before half.** | `_inspection_state`; `_identified_first_generation` | mcp/src/agents_remember/application/review_attribution.py:334-389 |
-| **A present-but-not-what-it-claims before half is unavailable with R05's own reason, and supports no negative conclusion.** | `_damaged_half` | mcp/src/agents_remember/application/review_attribution.py:359-379 |
-| **The same lookup the registered-scope construction reads, so the two cannot disagree.** | `fetch_realizations_at_path` | mcp/src/agents_remember/memory/knowledge/read_queries.py:226-226 |
-| **The comparison's reader over its own two open snapshots — no second open, no second namespace.** | `_registered_mapping_reader` | mcp/src/agents_remember/application/knowledge_diff.py:451-486 |
-| **The task-context route's own pair measurement, for a review that compares no dataset.** | `pair_attribution` | mcp/src/agents_remember/application/review_task_context.py:227-285 |
+- **The one anchor resolution that establishes a registered mapping, with stale and unresolved states named as purported.** [1]
+- **The subject the membership question needs, narrowed per seed kind rather than reached through `getattr`.** [2]
+- **One bound snapshot: its binding, its handle, and the carried reason when it never became readable.** [3]
+- **The entry point: the caller's own observation partitioned by the bound snapshots' mappings.** [4]
+- **One side's mappings read by exact path equality with each anchor observed, or the reason it could not be read.** [5]
+- **The per-row subject predicate, with family membership from the family's own rows and degradation to membership-unknown.** [6]
+- **Completely inspected versus legitimately known-empty, claimed only for a checked first-generation before half.** [7]
+- **A present-but-not-what-it-claims before half is unavailable with R05's own reason, and supports no negative conclusion.** [8]
+- **The same lookup the registered-scope construction reads, so the two cannot disagree.** [9]
+- **The comparison's reader over its own two open snapshots — no second open, no second namespace.** [10]
+- **The task-context route's own pair measurement, for a review that compares no dataset.** [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Reads stay inside the two bound snapshots
 of the pair under review; no second repository, ledger or coordination path is read.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced as the **acquisition half of the ICR-R04@v1 accounting**. It records the four truthfulness rules (exact-path lookup through the shared primitive; only `exact_recorded_blob` resolves with stale/unresolved carried; unread sides support no negative conclusion with R05's damage and empty-generation readers consumed, not re-decided; caller-owned denominator), the subject narrowing with the family-membership degradation, the single `licenses_absence` predicate shared with the partition, and the no-second-owner boundary. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the production line at this leaf's recorded base, because every construct cited here exists only in this leaf's uncommitted candidate; what was actually read is this leaf's uncommitted working tree, and closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

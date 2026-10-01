@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/effect_records.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/effect_records.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T10:25+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -88,41 +78,33 @@ a receipt entry straight into an expectation.
   `CHANGE_SET_PREDECESSOR_EDGES` (ordered, for the acyclic walk) and `CHANGE_SET_PREDECESSORS_OF` are
   the group's whole ownership of the generation-8 table.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The group's four kinds, derived from the vocabulary and the change-set kind so a kind cannot join the registry without joining the readers. | `EFFECT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/effect_records.py:61-61 |
-| The union of the four frozen payload shapes, which makes a fifth kind a type error rather than a silent omission. | `EffectPayload` | mcp/src/agents_remember/memory/knowledge/effect_records.py:66-71 |
-| The three owned statements: the envelope insert, the sealed revision insert, and the one succession-edge insert. | `EFFECT_RECORD_INSERT`; `EFFECT_REVISION_INSERT`; `CHANGE_SET_PREDECESSOR_INSERT` | mcp/src/agents_remember/memory/knowledge/effect_records.py:73-76; mcp/src/agents_remember/memory/knowledge/effect_records.py:78-81; mcp/src/agents_remember/memory/knowledge/effect_records.py:83-86 |
-| The group's three scoped readers: one record by identity, every record of a kind, and every revision of one record. | `EFFECT_RECORD_BY_ID`; `EFFECT_RECORDS_OF_KIND`; `EFFECT_REVISIONS_OF_RECORD` | mcp/src/agents_remember/memory/knowledge/effect_records.py:88-91; mcp/src/agents_remember/memory/knowledge/effect_records.py:93-96; mcp/src/agents_remember/memory/knowledge/effect_records.py:98-101 |
-| The join through the envelope that answers "every stored revision of one kind" without reading another group's rows. | `EFFECT_REVISIONS_OF_KIND` | mcp/src/agents_remember/memory/knowledge/effect_records.py:106-113 |
-| The ordered edges read the shared acyclic walk runs over, and the per-successor predecessors read the views use. | `CHANGE_SET_PREDECESSOR_EDGES`; `CHANGE_SET_PREDECESSORS_OF` | mcp/src/agents_remember/memory/knowledge/effect_records.py:115-118; mcp/src/agents_remember/memory/knowledge/effect_records.py:120-123 |
-| The value one envelope is carried in, so a write is not seven positional arguments. | `EffectRecordDraft` | mcp/src/agents_remember/memory/knowledge/effect_records.py:127-135 |
-| The decoded revision type whose payload is the validated frozen model rather than the mapping it came from. | `StoredEffectRevision` | mcp/src/agents_remember/memory/knowledge/effect_records.py:152-167 |
-| The decoder that verifies the seal and the declared kind, and the damaged-store report a mismatch produces. | `decode_effect_revision_row` | mcp/src/agents_remember/memory/knowledge/effect_records.py:263-310 |
-| The reader shared by the duplicate scan and the after-batch seal pass, whose one query keeps the two from disagreeing about a kind's rows. | `stored_revisions_of_kind` | mcp/src/agents_remember/memory/knowledge/effect_records.py:333-346 |
-| The envelope registry the payloads are decoded through rather than restated from. | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:118-157 |
-| The generic revision column tuple and digest this module reuses instead of re-implementing. | `record_revision_row`; `record_revision_digest` | mcp/src/agents_remember/memory/knowledge/facet_records.py:193-206; mcp/src/agents_remember/memory/knowledge/facet_records.py:209-224 |
+- The group's four kinds, derived from the vocabulary and the change-set kind so a kind cannot join the registry without joining the readers. [1]
+- The union of the four frozen payload shapes, which makes a fifth kind a type error rather than a silent omission. [2]
+- The three owned statements: the envelope insert, the sealed revision insert, and the one succession-edge insert. [3]
+- The group's three scoped readers: one record by identity, every record of a kind, and every revision of one record. [4]
+- The join through the envelope that answers "every stored revision of one kind" without reading another group's rows. [5]
+- The ordered edges read the shared acyclic walk runs over, and the per-successor predecessors read the views use. [6]
+- The value one envelope is carried in, so a write is not seven positional arguments. [7]
+- The decoded revision type whose payload is the validated frozen model rather than the mapping it came from. [8]
+- The decoder that verifies the seal and the declared kind, and the damaged-store report a mismatch produces. [9]
+- The reader shared by the duplicate scan and the after-batch seal pass, whose one query keeps the two from disagreeing about a kind's rows. [10]
+- The envelope registry the payloads are decoded through rather than restated from. [11]
+- The generic revision column tuple and digest this module reuses instead of re-implementing. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A row codec converts one namespace's own
 stored columns, and the identities it carries are store-local.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T10:25+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): created this one-to-one card for the authored-effect record group's row codecs. It records the three owned conversions and who owns each, the derived kind tuple, the join that scopes a kind without reading another group's rows, the seal recomputed on the way out, and the damaged-store reporting that replaces silent decoding. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

@@ -1,0 +1,429 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: what is read, the five triggers, route and superseded rulings, and the items.\n\nAnchor: \"item kind: a decision whose reconsider target changed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:cec5784e9a60da8fd08dbcbb3d50bb123a59be08dd5fa8246bf21f521828ab99",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A route fires only through a rerouting, retiring or deleting row (Q1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:9d38b294785d36cca32810b3ac2bdf0a3e6542e735bd86cfedd67e02bbadb2b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_trigger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "An anchor classified like an entry; `stale_at_base` fires `anchor_stale` (F3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:d6ee3bfe3d391c53fa27204ebefaece87b2432695beb4bd4ae7642dd6dee92ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_trigger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A requirement fires only when resolved and a newer version is approved; facts carry `latestPacket` (F4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:75bbb68c6c6872c0d60514d701340ccb48bcf950a8ef4bbabead546eb3ef0dfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirement_trigger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The item: facts, `changed`, the ID over fired identities, and `satisfiedBy` from the stored predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:af8303022df3540263daa4e1c19b239c879b03c7c398419fc1d14458e65e63b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The entry point `compute.py` calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:200daf225cfa89dc2d3bd3381d23fedf06cb798b47b05f4d877292200f4c98bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsideration_candidates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The packet's conforming example: a revised assumption surfaces the rejected alternative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:17d370a39ad40eeb56613f73a67ee2e0aee828d67ff9916dc7fd24149f23a12c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_revised_assumption_surfaces_the_rejected_alternative"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "`rerouted` fires and `no_impact` does not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:17f4e3ab8099611dc3b6c4417fdc24158d43d882d224da6ae0b09ce67148b133",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_triggering_history_row_surfaces_and_other_dispositions_do_not"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "`touched` and `moved_or_absent` fire, `carried` does not, and the link joins no entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:a125d2d23586b1b52cad8992cef936274a1dd516e6b591a698bb268713962f1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_linked_anchor_triggers_when_touched_or_absent_and_not_otherwise"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Only a newer approved version fires; no manifest, an unresolved endpoint or no root never does.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:86f465fce8223dc54488f65db50c374df8c351a04a6b0445b0787976f7ae15e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_requirement_endpoint_triggers_only_on_a_newer_approved_version"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "One hop: D12 raises nothing when D18 changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:f17f7d18cbe0a75ceff4edae80da1139511ed14e71b6fdf48210545eb063c238",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_hop_a_decision_change_never_chains_on"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route dispositions and the decision prefix of the one-hop guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:026da1e55eadb29ec2bf9ea00e93add744bff5ac99163f69adb1dc18084cce3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROUTE_TRIGGERING_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:ac9599bfa08f63ade5e063798bbf5fa84cb39d82181cdee58de60e82b58b23ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DECISION_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "A route target fires only on a retiring row; code gone with no row raises nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:46a4bf8f6dae7f08d53aef0fe61a88d0f2e1f4754a7bedb5fad15ddb7b196dcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_route_target_fires_only_through_a_rerouting_or_retiring_row"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "A superseded decision raises nothing and its links are listed skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:9fd142682109543bad561c8b96a336bf0a808138657b1506298724d178dbfc2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_superseded_decision_raises_nothing_and_its_links_are_listed_skipped"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "A stale link anchor raises `anchor_stale`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:a5c75da77cb3bd6d0889b956584fd2fff6b8421008bbfae08aafbf7421b55e35",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_link_anchor_raises_and_still_rejected_reanchors_it"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The manifest read happens in the resolver module, from the resolved task root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "194afba3a06b60fbc55befca9b32518291a6a08e",
+            "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_approval"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The kind registered with its facts, satisfying row and owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:23935b8de46c24f242e9e34a8696c23bcdaf823bf1dabfe8e880ca582a1bf923",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONSIDERATION_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "What the triggers read: both sides, the anchor classifier, the owner and the coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:0d1bcb29470038bb749e70df9a88f21826c34859ee04c6544dcc2021c350cd71",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReconsiderationInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The run's items and link summary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:062c46159fa53ad876d6f568759d79fc1f7bf3158a977211761d4a410e7606b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReconsiderationRun"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A superseded decision's link, listed as skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:a6fbaee349e37ab657426b8d71ed3c3ed7e15f251a17545693cd826b4d8b8054",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skipped"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "K_B decisions only, the superseded skip, and one item per changed alternative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:3d9fd9a83cd4063f7a27d9d05b4d8cebdfad283492ad0890b95d49fd8e175669",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One link into the summary, with its fired facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:2400e58c2f405f89398a1c83dfdbe7aa209a809616cc5d8ab9139b045993cdc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_summarize"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:09f3b1054acaffd94138e779729df5bbfc67ae6f674844cbd21d723ab8c0bc63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evaluate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Record targets: route, one-hop note, record file, then a triggering row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:26bebea65268667e59223440cdeeed60da381cdc439088ffdbf0b8b8b9bdc48d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_trigger"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:29b1b4ba2e8677cb64e919494ec843c51541aa367441e3efcd59a2a107869147",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_file_trigger"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:cbf104e46677bd98ee493021ab8b9dd191c156c9d687b2376b127ea39cbf817f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_trigger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

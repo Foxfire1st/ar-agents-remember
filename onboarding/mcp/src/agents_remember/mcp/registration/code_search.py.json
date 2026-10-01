@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/code_search.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The payload builders these forward to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cc081c2a57c4ca0554bef043856542937b65fc",
+            "content": "sha256:ffab4167f4a52883d51df05fd13af2b528f6918335f381d6bd23f6501b808906",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_search_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/providers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56cc081c2a57c4ca0554bef043856542937b65fc",
+            "content": "sha256:128dff96dd96c4b16f52c4fe9a166d02ed7445e51bcca0f96feedd6d3464388d",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_symbol_search_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/providers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery`.\n\nAnchor: \"class ProviderQueryScope:\"; \"class GrepaiRepoScope:\"; \"class GrepaiSearchQuery:\"; \"class GrepaiTraceQuery:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:b32d8beb82890acf15fb02b0d35cc9332df244814f4876d54e46ee2e2a35165e",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 305
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:4f5d98db2c037d31e7ba0363de4874f48703488e1411a9915539d50d893abce3",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:30e4bc2f9d55b0089f2fb250f7b4b9abca8d64e1e09fedc3d818dec4672144f6",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:14a3e0131c96a48f7fa5eabf17888fd61759d1fb3383a2ceeb2951ed81999ae8",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 348
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

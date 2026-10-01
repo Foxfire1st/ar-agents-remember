@@ -1,0 +1,374 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Explicit product/verification package authority is exhaustive and non-overlapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:3bbad010941cad21e84f78b436af8fbd08a177be8ce0ae2b5560796519dd29c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PackageAuthority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:f61cf8f9a051b605a4575cddd0ff12ed2045d6f2c788d24ed4784e861ffd2bde",
+            "locator": {
+              "kind": "symbol",
+              "name": "configured_package_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `pytest_testpaths` (lines 107-116) — Where the suite lives, read from pytest's own declaration..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:0d15ec019e8a822f90eac4740726277fd4e1bef233cc87256d03ec0789f8a973",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_testpaths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `validate_quality_config` (lines 119-169) — Refuse missing or inert configuration used by an ordinary wrapper run..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:91c2962c345f6ec7e5a8c9f9838f8f1cd561080bfca11150e66560b9e20115f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_quality_config"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `validate_pyright_venv` (lines 172-192) — Reject a declared virtual environment that cannot resolve in this checkout..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:94e66fa6279c4437b73bb678a7455ac04a3223b988684d2508cb7e21233c5561",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_pyright_venv"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `path_is_within` (lines 195-202).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:d382669768a07f99e99f41584b221ba06043e4be30a2381fe40e6fbe34601d77",
+            "locator": {
+              "kind": "symbol",
+              "name": "path_is_within"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the function `derive_scope_roots` (lines 205-220) — Roots where an untracked sibling is relevant to an existing quality rail..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:f5e4340dc1c4be7e4da6e7aa9acf9b2fd570dffe017fa01dbb6b6ca948a425fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_scope_roots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `python_files_under` (lines 223-232) — Python files currently present below configured roots, including untracked ones..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:f2f1105a368fd063c587ec79a2ae0a62f6b6d0d4ce0b731e962c2c061fa67e28",
+            "locator": {
+              "kind": "symbol",
+              "name": "python_files_under"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Defines the function `eslint_result_files` (lines 235-278) — The exact result set resolved by the dashboard's installed ESLint..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:77a657691a7e173523c6d96d33dffd9234b6ac6aa1f1bcc718f8b44b74b665ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "eslint_result_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Defines the function `config_string_array` (lines 281-292).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:48c19448e593e3e733bd86184f990840c64d1350a664699f7ef9e88ac67516a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "config_string_array"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Defines the function `dashboard_build_inputs` (lines 295-311).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:9647933b4d176855f456b1911a12cd9a35bb0ed8c3d6945738a0ba3a9a28894a",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboard_build_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Defines the function `coverage_json_file_count` (lines 314-322).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:6b5a839a64815aec79d579f2a2e13f81b23f975e6dc0fefa6115cf1916d54b1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "coverage_json_file_count"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `ScopeError` (lines 16-17) — The gate could not work out what it is supposed to certify..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:b4cdc4d251aebe414bda3e93bc4a67d332d22915c36a503992de95bbe9516257",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Defines the function `derive_scope` (lines 325-345) — Derive index paths, configured roots, and report-only untracked exposure..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:180034bc767c1eb40e029e3cab1e52160386f38e9f4c3ba537f78a8e71e5e520",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the class `GateScope` (lines 21-35) — The concrete paths each quality rail receives..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:87fd19fefbf93b5fb1177a66cfdedea69d634d3b9e164c6b187f69c70e497c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the class `DashboardBuildInputs` (lines 39-41).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:6f7ef2f04075b8d8ddfcc690c775b60da05dcc7f2349294a6e7ede1faa95135a",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardBuildInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:86ca242d0a68b202f4d4e5cffced924a8568f766c39a6832c6dcbbb14601ca4a",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `git_ls_files` (lines 44-54) — Tracked paths matching ``patterns``, relative to ``project_root``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:1b149f18bf004fdcce1c3d4c51dfc279f97372d9aaa6e3dc2514d5381f00c0a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_ls_files"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:74f3752d90fe35adc130d205e0727aaf149947f9d6fae0735b6f90e05762f390",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `git_untracked_files` (lines 57-74) — Non-ignored untracked files below ``roots``, preserving all path characters..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:0fb57324146830ee4e139dfe2e256928de0cbce4e17a8b07ffab0b962c603f8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_untracked_files"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:34963ff28763b7d3f83aecd4dab2adbd17b4751909ccd579c2cdbfe5f2b37dd5",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `top_level_packages` (lines 77-84) — Tracked importable packages whose parent is not itself a package..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:fb609be146f921a68023d00ef0b8ba9b767d6cb73f5b3b0f03c786cfc8263654",
+            "locator": {
+              "kind": "symbol",
+              "name": "top_level_packages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `toml_section` (lines 87-93).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:b88d6fe1d31a393ddcd2f6e0a70d4f01485447f15b478aba9957d4490d98c47c",
+            "locator": {
+              "kind": "symbol",
+              "name": "toml_section"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `read_pyproject` (lines 96-104).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe6438c423892e75c93b3f4dc67f33c7374939e",
+            "content": "sha256:55ad5cc3088a5f8cda472bca1e93ed045dfaf68942c41a330b8ef2a3fc79a2d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_pyproject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

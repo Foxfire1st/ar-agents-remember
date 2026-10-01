@@ -1,0 +1,248 @@
+{
+  "path": "mcp/tests/generation_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The version-1 creation path: generation 1's DDL, generation 1's `user_version`, the repository row, then the production open.\n\nAnchor: \"def create_generation_1_store(database_path: Path, repository_id: str) -> OpenedKnowledgeStore:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112f7a18a62526d17d968ad7c89f6c0c7c761e77",
+            "content": "sha256:3aa3c9d328298728ea7ff54d238395598dc79aa586179611ae4cc2b4441bdae8",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's own reason for existing: a generation-1 fact cannot use the ordinary creation path, and downgrading a generation-2 database would test something else.\n\nAnchor: \"which schema is this\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112f7a18a62526d17d968ad7c89f6c0c7c761e77",
+            "content": "sha256:524221ed42aaaeb8112ff999411c1158726b5bf654e1d5c237a058f1e0143503",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The pair reader, and why the schema name it reports is the registry's rather than the file's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112f7a18a62526d17d968ad7c89f6c0c7c761e77",
+            "content": "sha256:48d030dd4a4fc4b6272086bdd72bee2fb89ec11e6b323fcb960973c64e7e7bdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_pair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "112f7a18a62526d17d968ad7c89f6c0c7c761e77",
+            "content": "sha256:71c0bcd78a0154f355324e42eed24d26bf84fff875856d244892878f1e0132cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_schema_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The production builder that turns a generation record into its statements — re-cited by hand after the registry grew to four generations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:13b7164f9eb6a90920218a8110ddeb7afb58b0d3a3fb1b29b6dda16961af25cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_schema_statements"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Generation 1's own record, which the support reads both the DDL and the version from rather than from a literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:36ccf0f4e0c08ba3d81efe5cd2366bc178cbec87822781a7981b1bc4fafc2fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_1"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:5ca25f4ab818935a9ff798d75fc782492d73961588a68e95d49a18834d6b53bd",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The version-to-generation resolution this support reads a file through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:df71cd59834f84f47d9b81237a87ef8a72b4807206cc2a53fe877579955f9fde",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_for_version"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:107585f15ffc43ce7f83eb3fb022a51aae8bc135d2eab7f51b0d12fbbdab60c5",
+            "locator": {
+              "end": 530,
+              "kind": "line_range",
+              "start": 527
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The production open paths the support deliberately goes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:c292cce359d20655f10cdddc27136f07c4a0c034ea1c136ac02ca4ec9f55223a",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:c1d74e076f57f3fd1dcd30cb6b9efa0339e872799436ef20794ebb392e4caf23",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_existing_knowledge_store"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:560b3b65d8c0d18b5fe590675acbbc0902305902ccca027dd2463a59babc2828",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:d2a22d1d5ba5dc4d1dd4d7fbc3aec7fb19f1b6e20c2d926cb855a5420a9d4f74",
+            "locator": {
+              "end": 751,
+              "kind": "line_range",
+              "start": 751
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The unit module that consumes this support, whose import is its consumer declaration.\n\nAnchor: \"from generation_test_support import create_generation_1_store, create_generation_2_store\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:b73ce0874d0275f2fb953ca4f46affcc17bbe162b4e79448093ba347787cdb23",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/tests/test_knowledge_schema_generations.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The merge module that joined this support's consumer scope with this leaf.\n\nAnchor: \"from generation_test_support import create_generation_1_store, create_generation_2_store\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:b73ce0874d0275f2fb953ca4f46affcc17bbe162b4e79448093ba347787cdb23",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/tests/test_knowledge_merge_generations_and_envelope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

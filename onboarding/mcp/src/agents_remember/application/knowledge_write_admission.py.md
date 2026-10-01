@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_write_admission.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_write_admission.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a` |
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -89,57 +79,49 @@ surface.
 - `memory_repo_path` may be `None`; `memory_worktree` is the requirement the operation refuses on.
 - `scope` is the **retry** scope: it is what makes "an exact retry does not duplicate knowledge" true
   without the retry key ever becoming an identity input.
+- **The frozen database (L37, MIK-R37 rule 3).** `as_write_admission` is the database batch writer's front door:
+  after resolving the admission it calls `_require_unfrozen_database`. An admission whose memory worktree holds
+  `knowledge/layout.json` raises `KnowledgeDatabaseFrozen`, naming the curator file writer
+  (`publication.FILE_WRITER_ROUTE`: `knowledge-ingest`, or `knowledge-bootstrap --wave`); the tree's
+  `knowledge.sqlite` stays in place, unwritten, until MIK-R26 removes it. An unconverted tree in a memory
+  repository that holds converted memory raises the same class with the cutover lock's refusal (MIK-R09 rule 6).
+  An unconverted tree in a repository with no converted memory is admitted as before. `_require_unfrozen_database`
+  is a realization of INV-1XKX9ERN.
 
 ### Todos
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; `BOOTSTRAP-HANDOVER.md` is the process authority
 this value implements, and it is a task-tree document rather than a configured domain source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external documentation is required for the write-admission value. | — | — |
+No external documentation is required for the write-admission value.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the gap it closes and of why a second write path was refused.** | "repository's *first* knowledge"; "line 11" | mcp/src/agents_remember/application/knowledge_write_admission.py:1-35 |
-| The published surface: the two kind constants, the value, the provenance and the two builders. | `__all__` | mcp/src/agents_remember/application/knowledge_write_admission.py:45-53 |
-| **The two admissions as a declared, stored vocabulary rather than a boolean.** | `AdmissionKind`; `ENCLOSURE_ADMISSION_KIND`; `BOOTSTRAP_ADMISSION_KIND` | mcp/src/agents_remember/application/knowledge_write_admission.py:57-57; mcp/src/agents_remember/application/knowledge_write_admission.py:59-60 |
-| **Provenance as a value: what admitted the write, from which document, and the one fact that made it an admission.** | `AdmissionProvenance`; "authority" | mcp/src/agents_remember/application/knowledge_write_admission.py:63-76 |
-| **The facts one admitted write is bound to, including the retry scope and the two exact source revisions.** | `KnowledgeWriteAdmission`; "``scope`` is the **retry scope**" | mcp/src/agents_remember/application/knowledge_write_admission.py:79-106 |
-| The optional memory repository against the required memory worktree the operation refuses on. | `memory_repo_path`; `memory_worktree` | mcp/src/agents_remember/application/knowledge_write_admission.py:114-115 |
-| Which authority admitted this write, and whether it was derived without an enclosure. | `kind`; `is_bootstrap` | mcp/src/agents_remember/application/knowledge_write_admission.py:121-125; mcp/src/agents_remember/application/knowledge_write_admission.py:127-131 |
-| **The enclosure adapter that derives nothing and states that a real contract admitted the write.** | `enclosure_admission`; "It derives nothing" | mcp/src/agents_remember/application/knowledge_write_admission.py:134-165 |
-| **The one coercion at the front door: an existing admission is passed through untouched, never re-derived.** | `as_write_admission`; "is passed through untouched" | mcp/src/agents_remember/application/knowledge_write_admission.py:168-184 |
-| The shipped contract loader and the document type the enclosure adapter reads. | `WorktreeContract`; `load_contract` | mcp/src/agents_remember/worktrees/worktree_contract.py:233-286; mcp/src/agents_remember/worktrees/worktree_contract.py:437-467 |
-| **The second real admission this value exists to carry, and the resolver that builds it.** | `admit_bootstrap_context`; `bootstrap_scope` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:154-162 |
-| The one operation both admissions reach. | "def ingest_curator_list(" | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1116-1243 |
+- **The module's own statement of the gap it closes and of why a second write path was refused.** [1]
+- The published surface: the two kind constants, the value, the provenance and the two builders. [2]
+- **The two admissions as a declared, stored vocabulary rather than a boolean.** [3]
+- **Provenance as a value: what admitted the write, from which document, and the one fact that made it an admission.** [4]
+- **The facts one admitted write is bound to, including the retry scope and the two exact source revisions.** [5]
+- The optional memory repository against the required memory worktree the operation refuses on. [6]
+- Which authority admitted this write, and whether it was derived without an enclosure. [7]
+- **The enclosure adapter that derives nothing and states that a real contract admitted the write.** [8]
+- **The one coercion at the front door: an existing admission is passed through untouched, never re-derived.** [9]
+- The shipped contract loader and the document type the enclosure adapter reads. [10]
+- **The second real admission this value exists to carry, and the resolver that builds it.** [11]
+- The one operation both admissions reach. [12]
 
-## Cross-Repo References
+- The front door resolves the admission, then refuses a frozen or locked database. [13]
+- The database writer is frozen on a converted tree and names the file writer. [14]
+
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file: it reads no repository at all. The resolved
 settings' `crossRepo.allow` is empty, so nothing here names, reads or writes another repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T17:19:34+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): re-read the reopened "one operation both admissions reach" row against the changed `ingest_curator_list` (L45 added the committed-revision read that feeds the realization admission exemption; the admission it receives and its single-operation role are unchanged). The claim still holds; the leaf-relative word "unchanged" was dropped, and the row is re-cited on the function's own definition line, which is what the claim is about, superseding the earlier generated projection as its evidence. Range re-pointed through the exact base-to-candidate line map. No stamp advanced.
-- 2026-09-26T21:14:21+00:00: Generated citation repair: `ingest_curator_list` repointed to mcp/src/agents_remember/application/knowledge_curator_ingest.py:1111-1235. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
-  base `0d7910f9d646161c414ed6543453536a3c749d49`): created this one-to-one card for the module
-  `ICR-R29@v1` introduced as **the write admission**. The stamp basis is the leaf's base commit,
-  because the module is untracked there. The sentence a reader must not lose is that the admission is
-  a **value a resolver built**, not a flag a caller supplied: there is no `admitted=True` anywhere, and
-  `AdmissionProvenance` names the authority kind, the exact document and the fact that was read. The
-  second sentence is that this is not a second write path — `enclosure_admission` and
-  `admit_bootstrap_context` both produce this one value, and `ingest_curator_list` is still the only
-  writer. No verification stamp beyond the leaf's base is advanced: the candidate is uncommitted and
-  the governed closeout owns the real commit.
+No meaningful cross-repo references found.

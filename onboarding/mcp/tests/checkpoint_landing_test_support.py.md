@@ -2,14 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/checkpoint_landing_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
 | verificationStatus | working-candidate |
-| governingOverview | `overview.md` |
 
 The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
@@ -46,42 +39,21 @@ A flat support module owns shared construction steps; scenario-specific assertio
 
 No new file-local follow-up is identified by this source reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Leaf and accumulated-master pairs are built from real code/memory commits. | `close_out_leaf`; `commit_memory_content` | mcp/tests/checkpoint_landing_test_support.py:59-82; mcp/tests/checkpoint_landing_test_support.py:104-115 |
-| Temporary branch ownership and real source-content reconciliation. | `branch_checkout`; `absorb_source_into_master_line` | mcp/tests/checkpoint_landing_test_support.py:47-56; mcp/tests/checkpoint_landing_test_support.py:133-139 |
-| Public checkpoint and canonical master status helpers. | `checkpoint`; `master_status`; `set_master_status` | mcp/tests/checkpoint_landing_test_support.py:148-156; mcp/tests/checkpoint_landing_test_support.py:159-165; mcp/tests/checkpoint_landing_test_support.py:168-184 |
-| The public boundary scenarios consume the shared builders. | `test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate`; `checkpoint_landing_test_support` | mcp/tests/test_checkpoint_landing_end_to_end.py:41-479; mcp/tests/test_checkpoint_landing_end_to_end.py:23-37 |
+- Leaf and accumulated-master pairs are built from real code/memory commits. [1]
+- Temporary branch ownership and real source-content reconciliation. [2]
+- Public checkpoint and canonical master status helpers. [3]
+- The public boundary scenarios consume the shared builders. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Replaced shared three-commit builders with actual attributed memory outputs; removed unused cache-row mutations/readers and retained the three consumers' shared APIs. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator: created the one-to-one sidecar for this new
-  shared-support module. It holds the checkpoint-landing world builders extracted from
-  `test_checkpoint_landing_end_to_end.py`, and the card records that provenance plainly: the move
-  exists to clear a duplicated fixture and a size rail, not to add behaviour, so nothing here
-  changes what the cases prove. Records the catalog's declared facts — `shared-support`, owner
-  `checkpoint-landing-test-port`, introduced by `260913-LCA-L12`, `exact` consumer scope — the
-  three consumers and their import sites, and why this module carries no lane row of its own.
-  Verification metadata remains closeout-owned; no verification stamp advanced and no acceptance
-  claim is made.

@@ -1,15 +1,5 @@
 # mcp/tests/test_catalog_selection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_catalog_selection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09 |
-| lastVerifiedCommitHash | `8133b6a9de2f787cb6c4527621a70123357aff31` |
-| lastVerifiedCommitDate | 2026-09-08T13:24:49+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -34,26 +24,20 @@ Checks that test-evidence catalog consumer metadata selects both removed and add
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Consumer-selection behavior is defined by the retained tests. | `test_removed_and_added_consumers_both_remain_affected`; `test_non_consumer_policy_changes_keep_global_selection` | mcp/tests/test_catalog_selection.py:19-22; mcp/tests/test_catalog_selection.py:39-44 |
+- Consumer-selection behavior is defined by the retained tests. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixture emits the catalog shape consumed by the selection helper. | `_catalog` | mcp/tests/test_catalog_selection.py:10-16 |
-| Consumer differences select both sides while comments/order and policy-only changes do not. | `test_removed_and_added_consumers_both_remain_affected`; `test_comment_and_consumer_order_changes_do_not_select_tests`; `test_non_consumer_policy_changes_keep_global_selection` | mcp/tests/test_catalog_selection.py:19-44 |
-| Global input ownership is asserted separately from consumer metadata. | `test_population_configuration_is_global_but_consumer_metadata_is_not` | mcp/tests/test_catalog_selection.py:47-50 |
+- The fixture emits the catalog shape consumed by the selection helper. [2]
+- Consumer differences select both sides while comments/order and policy-only changes do not. [3]
+- Global input ownership is asserted separately from consumer metadata. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None; these are local selection contracts.
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited-source reconciliation: created the previously absent test sidecar from source bytes matching code commit `8133b6a9de2f787cb6c4527621a70123357aff31` (candidate-tree source SHA-256 `90b637e74dd462cdc9fa72603b27d87821988ae67ba24502c02d318eea66c00b`). No test execution or future candidate verification stamp is claimed.

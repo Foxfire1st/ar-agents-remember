@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/observer/series_tokens.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reducer returns an enriched `WorkspaceProjection` from the lifecycle projection path.\n\nAnchor: \"class WorkspaceProjection(BaseModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:b07b0c0ce081e9ecb6af378da03c7ab3ec9ba2dec2aab4c7ac3a13fa879f4c60",
+            "locator": {
+              "end": 1142,
+              "kind": "line_range",
+              "start": 1142
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reducer module defines `build_analytics` for analytics enrichment.\n\nAnchor: \"def build_analytics(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c75fc4b7f68ccc70a4e65a13e9e6098c65963e2",
+            "content": "sha256:1dea019ad356aa7df62d82195273725cf7c6d95221aeeb6e35b6f16bbc66023b",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "SeriesNode exposes the served seriesTokenTotal field, defaulting to zero.\n\nAnchor: \"seriesTokenTotal: int = 0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:b3214f60362f3749d179f884166c78d51855982adab5da076a327795b35483c3",
+            "locator": {
+              "end": 856,
+              "kind": "line_range",
+              "start": 856
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

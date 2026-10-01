@@ -1,0 +1,166 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_census/writer.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Model refusals are write refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31b8f4bf7d33de65114d9eb5e5a9fec83e524e25",
+            "content": "sha256:2b0af2e9127f88e7a8501ca8f249ce9ce1a0ffdb76db13634f1ea1ba78e74651",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusing_invalid"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unconverted tree is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31b8f4bf7d33de65114d9eb5e5a9fec83e524e25",
+            "content": "sha256:b14cdc614f1dc39add7007101a0e2c061a6106c535e029f67dc9652d407d5d5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Check against the current tree, then write atomically.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31b8f4bf7d33de65114d9eb5e5a9fec83e524e25",
+            "content": "sha256:0562c049362cdd6a2c13e90b055f341690e96e03ac59f46c3119e2a645e677cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Create once; the baseline is the commit point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31b8f4bf7d33de65114d9eb5e5a9fec83e524e25",
+            "content": "sha256:3a5ab3cf5ba3b6bb9f40ffd53852788c2243e45a01af2177eecc0f858bd4b672",
+            "locator": {
+              "kind": "symbol",
+              "name": "create"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Append claims, assessments and statuses; set a disposition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31b8f4bf7d33de65114d9eb5e5a9fec83e524e25",
+            "content": "sha256:e94e6e2a08e970a5bb02b5910d61242bb68511c4330b95120ba5efd019bd834d",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_claims"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "31b8f4bf7d33de65114d9eb5e5a9fec83e524e25",
+            "content": "sha256:1571d3dc306c177b618cc49e24701b4186979401d72d6d17b9d85a2ad02ddf5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "append_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The writer's tree passes the validator after appends.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:90035513d967f0bfee28adbb47aa4c524c90b6073e718758b12bb6e2472f3cf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_appends_observations_and_its_tree_passes_the_validator"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The writer refuses and writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:6ea4f74d7efc4feec6da3115001e9c5194d3da7a9a36ef7202961ffbd1cc654d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_refuses_and_writes_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An interrupted create can be repeated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:1e8fcd70f372ce3afc281bdd89e879621a8a9b7ea91bd406a6cf8571851504c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_interrupted_create_leaves_no_baseline_and_can_be_repeated"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Model refusals in the writer are `CensusWriteError`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:56b26023a6b89a751ca41ebbef88b0bf6bf12c9ba94d00f98404f41cd9c644f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_model_refusals_in_the_writer_are_census_write_errors"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

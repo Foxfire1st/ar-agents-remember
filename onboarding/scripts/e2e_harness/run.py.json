@@ -1,0 +1,135 @@
+{
+  "path": "scripts/e2e_harness/run.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate and replication evidence is repository-owned and recorded directly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:4d1a7acc2ec88b42672b3f263f5141fc99d2f3774ffe9aecb250ca56ad35b2b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RunContext"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:fd4627d8655a7b6c9ab28a388a24404ac451b477f2f5cbcafd529265714eaf9f",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Two fresh runs are performed without a retry branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:ceb6180bc66da8038b08acdca6580469bebec9ba4c056dd68c37e4cb608a00c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "RUN_COUNT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:241288feb930060806343e22480250ecc4d3694f1ab2974d534877a99a50a356",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Residual tmux ownership is a named acceptance checkpoint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:7b7aa903b1037ebe2c19d0fa7f51e65e4d4c7e5de9b009a4db9b9fa322926cd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_residual_tmux"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:d95d79b829dae0683ef9dc722aff99367deada6fa704ff8a8a6a242f98d66a2d",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:f8a34d84ac33d6421d15235be38d5d0d87db233ee7be9ec881e0f8b64cfe9c56",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "R03 outside-repo candidate-index staging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:81d5cce58d1bd82641fd38ce4ccefb7ac228dea6fa9ac3ff9a7b87ed101d7f63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Run roots and candidate identity stay within the current candidate and disposable fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:e71e244e3eb0971bb448b0e04dff0df7825e2662fb4ee6c66a26cbc799b2d5fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fresh_run_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

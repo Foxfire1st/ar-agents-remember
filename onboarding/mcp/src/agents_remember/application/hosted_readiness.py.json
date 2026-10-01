@@ -1,0 +1,35 @@
+{
+  "path": "mcp/src/agents_remember/application/hosted_readiness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `hosted_session_readiness_tool` (lines 21-60) — Run one read-only predicate wait for the exact catalog session id..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62080dc34fee476b76f7b66120321e5e2378d8bc",
+            "content": "sha256:085e8f73bb12443a4a8288114d50a903d8865b82879048006b3c5c52d6609568",
+            "locator": {
+              "kind": "symbol",
+              "name": "hosted_session_readiness_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62080dc34fee476b76f7b66120321e5e2378d8bc",
+            "content": "sha256:66e73f588b42753d4b1687ddedb13fcd474cf04f234b41d84d4c08a7e9386643",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

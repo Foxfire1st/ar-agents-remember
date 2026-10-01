@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The directory-first sort key of the notes listing walk (_is_dir) for every entry of a listed directory.",
+  "conditions": [
+    "The entry's followed stat raises OSError."
+  ],
+  "exclusions": [
+    "Errors outside ENOENT, ENOTDIR, EBADF and ELOOP, which propagate as they did through Path.is_dir()."
+  ],
+  "id": "INV-DA7D417G",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "0a39d993-3be5-4a15-909c-4aaff565e17d",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The notes listing's directory-first sort key treats ENOENT, ENOTDIR, EBADF and ELOOP from a followed stat as not-a-directory and propagates every other error, so a looping or file-traversing symlink is skipped and never fails the listing.",
+  "status": "proposed",
+  "supersedes": []
+}

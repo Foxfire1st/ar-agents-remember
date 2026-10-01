@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/codex_app_server_history.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/codex_app_server_history.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -68,35 +58,31 @@ to this reader and is scoped to the accepted contract, exact thread, and live re
 Assess the dormant `conversation/library/codex.py` full-read path separately before enabling it in
 production.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 `system/sources.md` has no configured Domain Documentation entries, so no live Codex/OpenSrc
 documentation route was authorized for this pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The adapter owns connection/session lifecycle and delegates only native-history acquisition to this
 reader. Focused tests pin every probe, continuation, cycle, fallback, and capacity contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The adapter constructs one reader, delegates native pages to it, and resets the probe after reconnect. | `CodexAppServerAdapter` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:91-1115 |
-| The protocol defines the separate 128 MiB emergency payload fuse before decoding. | `CODEX_REMOTE_COMPATIBILITY_CEILING_BYTES` | mcp/src/agents_remember/serving/codex_app_server_protocol.py:27-27 |
+- The adapter constructs one reader, delegates native pages to it, and resets the probe after reconnect. [1]
+- The protocol defines the separate 128 MiB emergency payload fuse before decoding. [2]
 
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 The module speaks the external Codex app-server JSON-RPC contract, but the repository's source
 registry did not authorize a live external documentation route for this pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No externally health-checked reference was available. | — | — |
+No externally health-checked reference was available.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -109,23 +95,3 @@ thread's frames. `_scan_bounded_source` and both bounded contracts (`bounded-ite
 `bounded-turns`) take the request; only `contract` stays a separate keyword.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-03T02:50:24+02:00 — W3-B01 curator: curated 4 Repo-Internal table citations with exact adapter, protocol, unit-regression, and production-path anchors. Verification metadata remains unchanged for closeout.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 3 cross-file line citations into
-  `codex_app_server_adapter.py`. Reader construction is now L152-L164 (`class CodexAppServerAdapter`
-  through `self._native_history = CodexNativeHistoryReader()` on L164 — the old L133-L146 stopped at
-  the `__init__` signature and never actually covered the construction), native-page delegation is
-  L489-L515 (`read_native_page` calling `self._native_history.read_page`), and the probe reset is
-  L1081-L1091 (`_reconnect` through `self._native_history.reset_probe()`). The old third range
-  L969-L980 was wrong even at the pinned commit — it landed on `_handle_settings_updated`, which
-  never touches the probe.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `BoundedPageRequest` as the single bounded native-history page selector.
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: created strict 1:1 onboarding for the
-  runtime-probed items/turns/legacy contract, one-shot opaque continuation, 16 MiB source-response
-  ceiling, 64 MiB/64-walk LRU, exact `-32601` fallback, typed cycle/capacity outcomes, shared-fatal
-  transport boundary, and dormant library follow-up. Verification metadata remains blank because
-  the new source is uncommitted.

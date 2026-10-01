@@ -1,0 +1,191 @@
+{
+  "path": "mcp/tests/_handoff_clock.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module is test support only and declares no case; it exists to make a two-loop timeline coherent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:5c36e5c52e2948074ddff2a3c12c3299db2da6d403e6f3540fd54f28c425fc03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DeadlineClock"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The handoff proof that is this module's only consumer in the candidate change set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:12b7c4d1ffd07b558f6255ac6d942d56a443f835085f828cb5318d07e0ed6489",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingNotifierHandoffTests"
+            },
+            "path": "mcp/tests/test_serving_notifier_handoff.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The imported shared clock this one corrects for two simultaneously parked loops, left byte-unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "954683941bfcf9aec937b0070c1cac437d1f6224",
+            "content": "sha256:233e76a706f6e4f93c34dd69b01c3ae9c88d1e3e6911091acbeec09aadfb2d63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_VirtualClock"
+            },
+            "path": "mcp/tests/test_serving_observation_loop.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Sleeps park with their own deadline recorded, and a cancelled sleep is removed before the error propagates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:dd44bcf6c6966fa325ec35d662374ef1af04c51cfbc6d29ffc49973344cbcea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "sleep"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A parked sleep of an exact delay is how the driver proves an attempt settled without racing the loop's cadence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:7d34a3a7584852eea3cf0be431dc17ea5445430bd1c80306b63e23ea99c055a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_pending"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Release advances time to the released sleep's own deadline, never backwards, and raises when nothing is parked at that delay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:692bdb63ce9007a83cf28c6fb5cd7cbad3072800ce33453abc4da1959da72f1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_delay"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "One chosen pass is parked until the case releases it; arming is also the reset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:a90da9c1e3e62623f1bbafee972145cc8583623a5e39c19737f8a23bba9f92fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Gate"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:8ac08e54089a9e5733fcf8c0303fecc8aa2efd552b72556ee3939e6860c37235",
+            "locator": {
+              "kind": "symbol",
+              "name": "arm"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A gate that is never reached fails within a bounded wait instead of hanging the run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:7c027f6c52f5a7b71b3d7718c5f967df049379407281fa1a2922c865f0d46083",
+            "locator": {
+              "kind": "symbol",
+              "name": "__call__"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "One real-time total order across threads, which is what makes \"the read returned before the commit\" decidable while virtual time stands still.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:e7ea34bf8eb51e867c55135b15708dacf59c17f453a597fe4066754ea65b00df",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Sequence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:be169226296b72266b94308591351ef467de0a091424295b0ccbac96ea210269",
+            "locator": {
+              "kind": "symbol",
+              "name": "next"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The source-root preamble the sibling test-support modules share.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "315e04af474dadce3a0e3cb39290f79270c73864",
+            "content": "sha256:524c1d1bec144c311c3213b152fda35e493d1abf27437b16fe850bf58ab953e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "MCP_SRC"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

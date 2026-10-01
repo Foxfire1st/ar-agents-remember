@@ -1,15 +1,5 @@
 # dashboard/src/cockpit/Cockpit.memo.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/cockpit/Cockpit.memo.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T11:40+02:00 |
-| lastVerifiedCommitHash |  `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`|
-| lastVerifiedCommitDate |  2026-09-28T20:02:47+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -39,110 +29,33 @@ The test guards tab-switch reconciliation cost without accepting unmount/remount
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory worktree's source registry; no external
 documentation was invented.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is configured. | — | — |
+No relevant external documentation is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The seven `vi.mock` render-count probes (`counts`, `CountedEngineRoom` … `CountedEventRiver`). | "function CountedEngineRoom()", "function CountedDetailPanel(props: ComponentProps<typeof Real>)", "function CountedSessionsView(props: ComponentProps<typeof Real>)", "function CountedFileViewer(props: ComponentProps<typeof Real>)", "function CountedAttentionQueue(props: ComponentProps<typeof Real>)", "function CountedLifecycleList(props: ComponentProps<typeof Real>)", "function CountedEventRiver()" | dashboard/src/cockpit/Cockpit.memo.test.tsx:32-32; dashboard/src/cockpit/Cockpit.memo.test.tsx:43-43; dashboard/src/cockpit/Cockpit.memo.test.tsx:54-54; dashboard/src/cockpit/Cockpit.memo.test.tsx:65-65; dashboard/src/cockpit/Cockpit.memo.test.tsx:76-76; dashboard/src/cockpit/Cockpit.memo.test.tsx:87-87; dashboard/src/cockpit/Cockpit.memo.test.tsx:98-98 |
-| The keep-alive DOM-identity case (same `.rail--left` / `engine-room` / `sessions-view` nodes across switches). | "keeps the visibility/aria contract and DOM identity across switches (keep-alive intact)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:253-290 |
-| The persistent layer layout is declared once for Chats. | "const chatsLayer = css({" | dashboard/src/cockpit/Cockpit.tsx:328-334 |
-| The file layer reuses the persistent layout. | "const filesLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:340-340 |
-| The Operations layer reuses the persistent layout. | "const operationsLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:345-345 |
-| The Engine Room layer reuses the persistent layout. | "const engineLayer = chatsLayer;" | dashboard/src/cockpit/Cockpit.tsx:351-351 |
-| The shell hides each layer through display and aria-hidden while retaining its children. | "function ViewLayer({" | dashboard/src/cockpit/Cockpit.tsx:728-728 |
-| The Engine Room instance remains mounted. | "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" | dashboard/src/cockpit/Cockpit.tsx:784-784 |
-| The Operations reader remains mounted. | "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:789-789 |
-| The File Viewer remains mounted and receives visibility as active. | "<ViewLayer visible={view === \"files\"} className={filesLayer}>" | dashboard/src/cockpit/Cockpit.tsx:801-801 |
-| Chats remains mounted; takeover suppresses its active state. | "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" | dashboard/src/cockpit/Cockpit.tsx:809-809 |
+- The seven `vi.mock` render-count probes (`counts`, `CountedEngineRoom` … `CountedEventRiver`). [1]
+- The keep-alive DOM-identity case (same `.rail--left` / `engine-room` / `sessions-view` nodes across switches). [2]
+- The persistent layer layout is declared once for Chats. [3]
+- The file layer reuses the persistent layout. [4]
+- The Operations layer reuses the persistent layout. [5]
+- The Engine Room layer reuses the persistent layout. [6]
+- The shell hides each layer through display and aria-hidden while retaining its children. [7]
+- The Engine Room instance remains mounted. [8]
+- The Operations reader remains mounted. [9]
+- The File Viewer remains mounted and receives visibility as active. [10]
+- Chats remains mounted; takeover suppresses its active state. [11]
 
 | The current series sub-task model owns optional createdAt; the historical fixture split below records why that distinction matters. | "export interface SeriesSubTaskNode {" | dashboard/src/types/projection.ts:561-568; dashboard/src/types/projection.ts:560-560 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This is dashboard-local test coverage. | "persistent layers skip the setView reconcile (260721 tab-switch CPU)" | dashboard/src/cockpit/Cockpit.memo.test.tsx:218-322 |
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "function ViewLayer({" repointed to dashboard/src/cockpit/Cockpit.tsx:727-727. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:783-783. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:788-788. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "<ViewLayer visible={view === \"files\"} className={filesLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:800-800. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:808-808. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:774-774. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:779-779. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "<ViewLayer visible={view === \"files\"} className={filesLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:791-791. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:799-799. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "const filesLayer = chatsLayer;" repointed to dashboard/src/cockpit/Cockpit.tsx:339-339. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "const operationsLayer = chatsLayer;" repointed to dashboard/src/cockpit/Cockpit.tsx:344-344. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "const engineLayer = chatsLayer;" repointed to dashboard/src/cockpit/Cockpit.tsx:350-350. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "<ViewLayer visible={view === \"engine\"} className={engineLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:772-772. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "<ViewLayer visible={view === \"operations\"} className={operationsLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:777-777. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "<ViewLayer visible={view === \"files\"} className={filesLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:789-789. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "<ViewLayer visible={view === \"chats\"} className={chatsLayer}>" repointed to dashboard/src/cockpit/Cockpit.tsx:797-797. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T02:33:03+02:00 — W3-B04 curator: curated 4 table citations and 3 prose citations (7 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
-
-- 2026-08-01T11:40+02:00 — 260731-EFA-L4 curator (correction pass): **three corrections to the entry
-  below, whose own stated purpose was repairing out-of-bounds citations.** (1) It said the file shrank
-  "325 → 320 lines". The working tree is **319** (`wc -l dashboard/src/cockpit/Cockpit.memo.test.tsx`
-  = 319; `git show HEAD:… | wc -l` = 325 — read off the working tree, not the index). (2) Its own new
-  Cross-Repo citation `L1-L320` was therefore **one line past EOF**; corrected to `L1-L319`, and the
-  last statement in the file is confirmed at L319 (`});` closing the outer `describe`). (3) It claimed
-  the master's `subTasks[0]` shed a `createdAt` "that `TaskSubTaskRefNode` declares on neither side" —
-  **false in both directions**. `git show abc7cbc:dashboard/src/types/projection.ts` declares
-  `createdAt?: string` on `TaskSubTaskRefNode` at L206-L214, and this same leaf removed it there
-  (now L368-L375) and moved it onto the new `SeriesSubTaskNode` (historical-source provenance (recorded source commit `e52edaf5b655f495580efd93306afdf922b19b51` in memory commit `a289dbcd3db405a0b63a4183b4affad7d60fb541`; original narrative coordinates `dashboard/src/types/projection.ts` L380-L387; later pre-L31 citation coordinates `dashboard/src/types/projection.ts:496-503`; anchor `SeriesSubTaskNode`)) as part of splitting one
-  interface back into the two `extra="forbid"` server models it had collapsed. So the fixture edit was
-  compile-forced by that mirror split, not a tidy-up. The card's conclusion survives — nothing reads
-  the subtask row's `createdAt` either way — so only the stated reason changed. Also re-verified the two
-  kept ranges by opening them: the first starts at `const counts = vi.hoisted(() => ({` and ends at the
-  close of the `CountedEventRiver` probe (cit:(["const counts = vi.hoisted(() => ({", "function CountedEventRiver()"], dashboard/src/cockpit/Cockpit.memo.test.tsx:18-18; dashboard/src/cockpit/Cockpit.memo.test.tsx:98-98));
-  the keep-alive identity case is exactly the test cited by cit:(["keeps the visibility/aria contract and DOM identity across switches (keep-alive intact)"], dashboard/src/cockpit/Cockpit.memo.test.tsx:253-290). Widened the `Cockpit.tsx`
-  row from `L579-L628` to `L579-L629`: the four `className={*Layer}` divs open at L581/L590/L606/L618
-  and the fourth one's `</div>` is at L629, so the old range stopped one line short of enclosing it
-  (the four `*Layer` consts at L322/L332/L337/L343 are all inside `L318-L343` as written). Verification
-  metadata untouched.
-
-- 2026-08-01T09:30+02:00 — 260731-EFA-L4 curator: **No content impact:** the file changed only in its
-  fixtures — the local `taskDoc` now delegates to `test/fixtures/wire.ts`'s typed builder, the master's
-  `subTasks[0]` shed a `createdAt`, and the
-  hand-listed `metrics` literal became `metricsFor([lc])`. I checked each against what this suite
-  measures. `lc.state` is `"running"`, so `metricsFor` differs from the old literal by exactly one added
-  key, `awaitingDeveloperCount: 0`; `TopBar` renders the `awaiting you` segment only above zero, so the
-  header string is byte-identical — and `TopBar` is not one of the seven counted probes in any case, so
-  no render count could move. The dropped `createdAt` was **compile-forced, not a tidy of a field that
-  never existed**: at `abc7cbc`, `types/projection.ts` L206-L214 declared `createdAt?: string` on
-  `TaskSubTaskRefNode`, and this same leaf split that one interface into two server-faithful mirrors —
-  `TaskSubTaskRefNode` (now L368-L375, `createdAt` gone) and the new `SeriesSubTaskNode` (L380-L387,
-  where `createdAt` moved) — so once the fixture became a contextually-typed `wireTaskDoc({…})`
-  argument instead of an `as TaskDocNode` cast, `subTasks[0].createdAt` no longer type-checked against
-  `TaskDocNode.subTasks: TaskSubTaskRefNode[]`. The conclusion is unchanged, because nothing reads it
-  either way: `LifecycleList.tsx` L625 reads
-  `doc.createdAt` (the `TaskDocNode` field, still declared and still set by the base), never the subtask
-  row, and the drill assertion goes through `getByText("Ops Master")`. The four described behaviours
-  (probe sweep, ARIA/display + DOM identity, real-prop-change pass-through, River⇄Chat swap) still match
-  the four `it` blocks one-for-one. Citation repairs only: the file shrank 325 → **319** lines
-  (`git show HEAD:… | wc -l` = 325, working-tree `wc -l` = 319), putting both
-  `L…-L324` ranges out of bounds — split into `L18-L103` (the `counts` probes) and `L250-L287` (the
-  identity case), cross-repo row to `L1-L319`, and the `Cockpit.tsx` row narrowed from `L263-L760` to
-  `L318-L343; L579-L629`, which is where the four `*Layer` consts and their divs actually are.
-
-- 2026-07-24T13:17:50Z — Created for persistent cockpit-layer memoization and keep-alive regression
-  coverage. Verification hash/date remain pinned to the pre-commit source stamp.
+- This is dashboard-local test coverage. [12]

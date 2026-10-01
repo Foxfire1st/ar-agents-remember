@@ -1,0 +1,201 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/worker.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The worker is one leaf-scoped builder whose terminal state is checks plus report.\n\nAnchor: \"You build one leaf.\"; `# Worker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:d462263a93baacf673979c3836c21206fcd15649362ef32efa1bf5bd925aaeaa",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The worker builds one leaf in one session and delivers one scoped change set plus one report.\n\nAnchor: \"**You build one leaf.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:a501710569d8e458d1519fd5c2a3c6b1aa3945b44db4d3ee27c91785fce26278",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Intake binds writes to the named code worktree and report path.\n\nAnchor: \"Where your inputs live.\"; \"Your writable areas are your\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:47bec936551ea654aa1e6bc73815903fcb6963a1c4ab7610f299c6b5e75b2020",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Orientation requires current worktree reads and coding guidelines before edits.\n\nAnchor: \"**Before your first edit:**\"; \"native read is your edit precondition\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:f117261a429dde617561ef3f3f286e40618a06101096c65ace79b3137e799823",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:47bec936551ea654aa1e6bc73815903fcb6963a1c4ab7610f299c6b5e75b2020",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Build produces implementation plus evidence for the separate curator.\n\nAnchor: \"Implement exactly the leaf plan\"; `## Process`; \"Produce the builder facts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:759201dc9d95385bdff09b6224272f5854d2d59dedc23821e72fab6cc65944a3",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:5d60be55cb43514535c8b501f09303daadcb9adaa50c8cae8bad1d39bfce7cc5",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The worker appends authoritative attempts to the single journal and links them from the mandatory turn report.\n\nAnchor: \"**The requirement attempt record**\"; \"**The turn report**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:034df4582c26de843bd6b97402d45e6f2b9d7e717d68c26713f7acee5057c585",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The worker emits its requirement-shaped items as one curator hand-off list in the shared producer shape.\n\nAnchor: \"**The curator hand-off list**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:c0362d3ee86a3707352b2a8d42e2959b413c24480efee563865ea3f68ee31e0e",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Tool authority excludes lifecycle, gates, task state, and memory writes.\n\nAnchor: `## What you must not do`; \"No closeout, integration, gates, task-document bookkeeping\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:7a236f1f25fb1a9a458cf897a1af24cb1123058726aedcd9de2ed677c441078a",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The worker records the complete acceptance envelope once for every stable requirement ID.\n\nAnchor: `## Outputs`; \"the one Requirement Acceptance Envelope for your owned primary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:df69c8dc45a709eb59fcf8cfa5cec6d9655b682485f7799e08a2160ad38be8a8",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Checks have their own explicit reportable step.\n\nAnchor: \"### The checks you owe\"; \"Record the exact commands, the selected scope and the results\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
+            "content": "sha256:f6b71ccfeecb150dc8b37d54b7060544f2a2799b4d57b99c37bfa9ea3c3ee9c3",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

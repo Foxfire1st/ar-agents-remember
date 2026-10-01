@@ -1,15 +1,5 @@
 # dashboard/src/data/announcer.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/announcer.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:40+0200                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md`                                   |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -54,32 +44,28 @@ sub-agent entry) must not be announced twice.
 Reviewer sev-4 observation 9 remains open: when `turnState: awaiting-input` and its interaction
 payload arrive on separate poll beats, the watcher and `InteractionBar` can both announce.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation was available; the resolved source registry configures no
 Domain Documentation sources.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies to this same-repository announcement seam. | — | — |
+No external domain citation applies to this same-repository announcement seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Store, transition detector, and refcounted watcher. | "export function announcePolite" | dashboard/src/data/announcer.ts:33-33 |
-| The ANY-pending derivation (N1) the focused-seat suppression now uses. | "export interface OpenSession" | dashboard/src/data/sessions.ts:29-29 |
-| Exact announcement copy and sequencing coverage. | "SetResult arrival strings" | dashboard/src/data/announcer.test.ts:36-52 |
-| The N1 agent-only-blocked pin: unfocused speaks seat-level, focused stays silent (the bar announces every pending payload). | "promotion + assertive state strings" | dashboard/src/data/announcer.test.ts:54-60 |
-| Permanent DOM regions consuming both channels. | "export function CockpitLiveRegions" | dashboard/src/panels/session-cockpit/CockpitLiveRegions.tsx:19-19 |
+- Store, transition detector, and refcounted watcher. [1]
+- The ANY-pending derivation (N1) the focused-seat suppression now uses. [2]
+- Exact announcement copy and sequencing coverage. [3]
+- The N1 agent-only-blocked pin: unfocused speaks seat-level, focused stays silent (the bar announces every pending payload). [4]
+- Permanent DOM regions consuming both channels. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
+No cross-repo evidence applies.
 
 ## Reviewed Candidate Delta
 
@@ -87,24 +73,3 @@ No meaningful cross-repo boundary is owned by this file.
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Update History
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the superseded `(L…)`
-  prose citation and the `n/a` rows with exact anchors and fixer-generated ranges; exact
-  non-fixing check returns zero findings.
-
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the fix-round review-N1 plural pending
-  suppression. The focused-seat awaiting-input skip now derives from
-  `sessions.ts`'s `sessionHasPendingInteraction` (singular slot OR non-empty multiplexed sub-agent
-  list): the InteractionBar announces EVERY pending payload, so the region stays silent for the
-  focused seat whenever any payload pends; unfocused seats keep the seat-level "awaiting input"
-  wording and never claim the question is the parent's. Source is uncommitted; closeout re-stamps
-  verification.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R8 after final reviewer PASS. The sev-4
-  split-beat double-announcement edge remains recorded above. Verification metadata is pinned to
-  the contract base while the code is uncommitted; closeout must stamp the real code commit.

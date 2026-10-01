@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/adapters.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The read-only store over an index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba85ecacde0bf2e6965d85ad9beff6f5c3c58d5c",
+            "content": "sha256:3bda4a50e339d60c49ea0d6373076738a1465ec16b33dea788b7688d65dbc472",
+            "locator": {
+              "kind": "symbol",
+              "name": "index_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One declared side and its declaration, bound to the index's exact snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba85ecacde0bf2e6965d85ad9beff6f5c3c58d5c",
+            "content": "sha256:32ea7d7ecb1711839381b5f018d0f1012bfc824aeee295078165943c152dcd95",
+            "locator": {
+              "kind": "symbol",
+              "name": "scope_snapshot_source"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba85ecacde0bf2e6965d85ad9beff6f5c3c58d5c",
+            "content": "sha256:8fd74c58a4b9be3f761093f1a11916a3dc96324422401b176359ebe8d2cdc7da",
+            "locator": {
+              "kind": "symbol",
+              "name": "scope_snapshot_declaration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba85ecacde0bf2e6965d85ad9beff6f5c3c58d5c",
+            "content": "sha256:d64d49b1f3857a0d1434566988a4a2686cc365b44bffd64fd0682e3ab851afe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCOPE_SELECTOR_POLICY_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registered scope over the index equals the scope over the equivalent database, for same sides and for a changed candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64a4109200a539c487d0c3c6007725349f630986",
+            "content": "sha256:7a7e810e94b09682d52aa9afc58ce42f77b86858f13f7ec59305b629e0a7733c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_scope_constructs_the_same_scope_over_the_index"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/role_capsules/types.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/models/role_capsules/types.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T08:56+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [models overview](../overview.md)
@@ -82,46 +72,28 @@ fields, so an in-place edit would silently desynchronize identity from content.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources. | n/a | n/a |
+No relevant documentation found after checking live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The frozen role and operation vocabulary these types are declared against. | "type CapsuleRole = Literal["; "type CapsuleOperation = Literal["; `CAPSULE_ROLES`; `CAPSULE_OPERATIONS` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:36-47; mcp/src/agents_remember/models/role_capsules/vocabulary.py:50-60; mcp/src/agents_remember/models/role_capsules/vocabulary.py:82-93; mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-108 |
-| The stable refusal codes a binding or selection defect resolves to. | `CAPSULE_STATUSES` | mcp/src/agents_remember/models/role_capsules/statuses.py:27-41 |
-| The pure compiler that consumes these shapes and produces the sealed result. | `compile_role_capsule` | mcp/src/agents_remember/models/role_capsules/compiler.py:84-139 |
-| The diagnostic half of the contract, kept structurally out of the digest. | `CapsuleManifest`; `CapsuleSourceRecord`; `CapsuleRejection` | mcp/src/agents_remember/models/role_capsules/diagnostics.py:105-137; mcp/src/agents_remember/models/role_capsules/diagnostics.py:38-56; mcp/src/agents_remember/models/role_capsules/diagnostics.py:73-94 |
-| The application boundary that does the I/O this module refuses to do. | `compile_admitted_capsule`; `admit_capsule_sources` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/sources.py:68-89 |
-| Compound identity, digest and order properties are pinned by executable cases. | `test_identical_input_compiles_to_identical_ordered_content_and_digest`; `test_reordering_the_composed_blocks_changes_the_semantic_digest` | mcp/tests/test_role_capsule_compiler.py:377-388; mcp/tests/test_role_capsule_compiler.py:422-446 |
+- The frozen role and operation vocabulary these types are declared against. [1]
+- The stable refusal codes a binding or selection defect resolves to. [2]
+- The pure compiler that consumes these shapes and produces the sealed result. [3]
+- The diagnostic half of the contract, kept structurally out of the digest. [4]
+- The application boundary that does the I/O this module refuses to do. [5]
+- Compound identity, digest and order properties are pinned by executable cases. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract defines these value types. The reference implementation this
 master studied is eve's dynamic resolver, which is a design input to CAPS-R02 rather than a
 runtime boundary of this module; no eve code is imported here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `CapsuleCapsule` repointed to mcp/src/agents_remember/models/role_capsules/types.py:450-463. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
-
-- 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: created this card for the frozen role-capsule
-  contract added by the deterministic capsule compiler leaf (`CAPS-R02@v1`). Records the
-  three-plane separation (admitted input / content output / diagnostic output), the two-shaped
-  seat union that keeps the launcher out of the role registry, the two digest functions, and the
-  `models` layer placement that keeps file and network I/O in the application boundary.
-  Verification metadata is left at the leaf base commit because the source is uncommitted — the
-  governed closeout stamps the real code commit, and no hash was invented here.
+No meaningful cross-repo references found.

@@ -1,0 +1,62 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/child_history.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public `AgentHistoryHydration` records status/detail/code, and `agent_history_state_item` renders unavailable/recovered child-local rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83303f65cb657a28dfd0acb6fd3231cf2ecbf5eb",
+            "content": "sha256:f2a06050f816de727ce4f6f1e60d88047394519abdf0f302b8fac8c04ca84e37",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentHistoryHydration"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/agent_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83303f65cb657a28dfd0acb6fd3231cf2ecbf5eb",
+            "content": "sha256:b581aae38b915eecab41acbf25b5af80b8b554fef01d53131f4b17be89913eb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_history_state_item"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/agent_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83303f65cb657a28dfd0acb6fd3231cf2ecbf5eb",
+            "content": "sha256:41f05421c9f6551f8c73fc8a5047a291ad72ce432f2c92dcc3e6de4c2f9c9eeb",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/agent_history.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83303f65cb657a28dfd0acb6fd3231cf2ecbf5eb",
+            "content": "sha256:cf07261f79dc4777a7789babf5767173c68dbd392355a6ea1c1f6ba9eea16d6a",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/agent_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

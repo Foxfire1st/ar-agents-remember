@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/panels/review/changeTriage.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite's statement and its bodies.\n\nAnchor: \"These tests\"; \"check that the tree orders, counts and merges the delivered facts and never decides one.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "002cca1f3e142b9788cc8047f3020ea95c1b82f8",
+            "content": "sha256:e4f92cf43f0daa3e9ecc3a80ee8a1ff72553fb02662af20960a03d02312227c3",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Family triage: counts, partial and scoped breakdowns, the guarantee's weight.\n\nAnchor: \"scopes a partial page to the members it returned and names the total\"; \"scopes a complete-looking family whose total is unknown (SYNTHETIC: no total)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "002cca1f3e142b9788cc8047f3020ea95c1b82f8",
+            "content": "sha256:0568a697b1ee2dd051ceef97d5b64ba05b4288670a5ceb8983ae9b82b045fe67",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tree order: changes first with every sibling kept, pure authored order, families by weight, a dataset review untouched.\n\nAnchor: \"lists changes first by weight then authored position, keeping every sibling\"; \"leaves a dataset review (no change facts) in its landed order\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "002cca1f3e142b9788cc8047f3020ea95c1b82f8",
+            "content": "sha256:7726554abe14973becf4ce0f3baa3443247b1a23edab07e2e25096adc73dbbaf",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The roster walk keeps every returned member's facts.\n\nAnchor: \"keeps the facts of every member the walk has returned\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "002cca1f3e142b9788cc8047f3020ea95c1b82f8",
+            "content": "sha256:dc91a9e18dfdf03e0650519db4aae359998e34b255aad789364008970e0304d3",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

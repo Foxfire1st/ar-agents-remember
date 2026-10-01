@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_port.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_port.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T17:13:06+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Owning overview](overview.md)
@@ -36,28 +26,18 @@ The documented types and paths do not themselves establish execution, certificat
 
 No source-local TODO is asserted here.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+### Docs References
 
-## Repo-Internal References
+No configured domain documentation applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `PreparedMemoryCertificationRequest` owns the corresponding behavior described above. | `PreparedMemoryCertificationRequest` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_port.py:19-23` |
-| `PreparedMemoryCertificationResult` owns the corresponding behavior described above. | `PreparedMemoryCertificationResult` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_port.py:27-39` |
-| `PreparedMemoryCertificationPort` owns the corresponding behavior described above. | `PreparedMemoryCertificationPort` | `mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_port.py:42-51` |
+### Repo-Internal References
 
-## Cross-Repo References
+- `PreparedMemoryCertificationRequest` owns the corresponding behavior described above. [1]
+- `PreparedMemoryCertificationResult` owns the corresponding behavior described above. [2]
+- `PreparedMemoryCertificationPort` owns the corresponding behavior described above. [3]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+### Cross-Repo References
 
-## Update History
-
-### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
-
-Created from the current source. Verification metadata is intentionally unset until a genuine commit-based verification occurs; no test or acceptance result is asserted.
+No cross-repository source is needed for this card.

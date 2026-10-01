@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Subject selection inside the normal task Intent Reviewer, and the task entry that opens it.",
+  "conditions": [
+    "The catalogue read returns recorded invariant and family subjects for the selected repository, master and leaf.",
+    "The catalogue is read when the reviewer is mounted, keyed on the comparison (repository, master, leaf and history) and its snapshot generation, not on the global analytics document."
+  ],
+  "exclusions": [
+    "Unavailable or refused catalogue reads do not establish an empty knowledge dataset.",
+    "The task entry's changed-intent summary read, which is not a catalogue read.",
+    "Re-reads caused by the reviewer's own refresh or by a new snapshot generation of the same comparison."
+  ],
+  "id": "INV-2E8MG43K",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "b29ac528-8221-4ff7-a581-251589aead2e",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The task entry reads no subject catalogue; the reviewer reads the recorded-subject catalogue once when it is opened, keyed on its comparison, and exposes that complete catalogue for subject selection inside the review.",
+  "status": "proposed",
+  "supersedes": []
+}

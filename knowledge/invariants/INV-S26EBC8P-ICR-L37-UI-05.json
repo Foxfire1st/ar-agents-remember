@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The review header for historical responses carrying the recorded-endpoint reconstruction marker.",
+  "conditions": [
+    "The backend identifies history:reconstructed-recorded-endpoints in the comparison limitations."
+  ],
+  "exclusions": [
+    "The label does not assert that a frozen review generation exists or that missing knowledge was recovered."
+  ],
+  "id": "INV-S26EBC8P",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "b27081d8-51bc-4d44-96ef-ef1c4dcbb54c",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Historical review reconstructed from recorded endpoints is labelled as reconstruction instead of claiming a previously frozen comparison.",
+  "status": "proposed",
+  "supersedes": []
+}

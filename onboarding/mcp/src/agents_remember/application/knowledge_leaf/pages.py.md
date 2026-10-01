@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_leaf/pages.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_leaf/pages.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`|
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -61,7 +51,9 @@
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R01@v2` of task
@@ -70,36 +62,22 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: one prepared leaf for both surfaces, and the header reference as a literal first row. | "Pages of the family-complete leaf read" | mcp/src/agents_remember/application/knowledge_leaf/pages.py:1-16 |
-| The view a leaf walk resumes on, and the request with its path or family seed. | `LEAF_VIEW`; `LeafRequest` | mcp/src/agents_remember/application/knowledge_leaf/pages.py:77-77; mcp/src/agents_remember/application/knowledge_leaf/pages.py:80-102 |
-| The prepared leaf with its page, deferred and collapsed forms, each minting a `leaf` token. | `PreparedLeaf`; `_first_continuation` | mcp/src/agents_remember/application/knowledge_leaf/pages.py:105-161 |
-| The preparation: `selector_absent` for an unknown family seed, `registration_absent` (naming proof claims too) for a path with no entry and no governing family, the binding, and the position check of a resumed walk. | `prepare_leaf`; `registration_absent_refusal`; `selector_absent_refusal` | mcp/src/agents_remember/application/knowledge_leaf/pages.py:164-208 |
-| Currentness computed once per selection, advisory on failure, family headers counting live members. | `_currentness` | mcp/src/agents_remember/application/knowledge_leaf/pages.py:211-233 |
-| The first queued seed's manifest, selected through the path-or-family step, and the refusal of a queued seed that selects nothing. | `_next_manifest`; `_select` | mcp/src/agents_remember/application/knowledge_leaf/pages.py:236-252; mcp/src/agents_remember/application/knowledge_leaf/pages.py:255-261 |
-| What a path's `registration_absent` refusal adds on both surfaces: its route chain, which found no family. | `absent_chain` | mcp/src/agents_remember/application/knowledge_leaf/pages.py:264-267 |
-| The token after a page: within the seed, or moving on to the next queued seed. | `_continuation` | mcp/src/agents_remember/application/knowledge_leaf/pages.py:270-285 |
-| The page: the reference row first, the counts with the walk's position, a partial index never complete, and a path seed's `routeChain` with `registration` when it has no entry. | `_page`; "headerReference"; "routeChain" | mcp/src/agents_remember/application/knowledge_leaf/pages.py:288-322 |
+- The module statement: one prepared leaf for both surfaces, and the header reference as a literal first row. [1]
+- The view a leaf walk resumes on, and the request with its path or family seed. [2]
+- The prepared leaf with its page, deferred and collapsed forms, each minting a `leaf` token. [3]
+- The preparation: `selector_absent` for an unknown family seed, `registration_absent` (naming proof claims too) for a path with no entry and no governing family, the binding, and the position check of a resumed walk. [4]
+- Currentness computed once per selection, advisory on failure, family headers counting live members. [5]
+- The first queued seed's manifest, selected through the path-or-family step, and the refusal of a queued seed that selects nothing. [6]
+- What a path's `registration_absent` refusal adds on both surfaces: its route chain, which found no family. [7]
+- The token after a page: within the seed, or moving on to the next queued seed. [8]
+- The page: the reference row first, the counts with the walk's position, a partial index never complete, and a path seed's `routeChain` with `registration` when it has no entry. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the pages read one memory tree's derived index.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): MIK-R05. `LeafRequest` takes a path or a `family` seed (`seed_json`); `prepare_leaf` and `_next_manifest` select through `_select`; an unknown family seed is `selector_absent`; a path is refused `registration_absent` only with no entry and no governing family (ruling Q3, 2026-09-30 03:32:18); each path page states `routeChain`, and `registration` when it has no entry; new `absent_chain`; policy `v2` (Q4). Review R1 F3 (the page-1 cut moves by one row) recorded as accepted. Reworded the reopened `_next_manifest` and `_page` rows and the request and preparation rows, removing this pass's generated bullets that bound the two reopened rows.
-- 2026-09-30T03:50:42+00:00: Generated citation repair: `_currentness` repointed to mcp/src/agents_remember/application/knowledge_leaf/pages.py:211-233. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T03:50:42+00:00: Generated citation repair: `_continuation` repointed to mcp/src/agents_remember/application/knowledge_leaf/pages.py:270-285. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): created this card for the new file MIK-R01 adds. It records the carried obligations (the header reference as a literal first row, 2026-09-29 19:56:40; no local path in the token, 2026-09-29 21:17:07), and the rulings of 2026-09-29 23:21:57 (Q4 one selection by manifest, Q7 one declared order) and 2026-09-30 00:08:39 (N6 the `registration_absent` wording). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

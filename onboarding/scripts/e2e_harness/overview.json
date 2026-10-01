@@ -1,0 +1,308 @@
+{
+  "path": "scripts/e2e_harness",
+  "references": {
+    "1": {
+      "note": "The controller runs exactly two fresh, retry-free replications and emits a candidate-bound summary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:e6297af676e399a560bf3ad111b4291ad1554e5c6cec8ddf272542f6349e9075",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/e2e_harness/run.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:af2ed773caeb59017488789031a72efc1db0947a29b71b47838b6b5c0b4a49d3",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "scripts/e2e_harness/run.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:fd4627d8655a7b6c9ab28a388a24404ac451b477f2f5cbcafd529265714eaf9f",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "scripts/e2e_harness/run.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "No external repository supplies implementation logic to this harness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b019d783315d02763781e3fb22f332d2a31552",
+            "content": "sha256:5835a675a88712326d969e01945d6829c2b7ead04803f6da40ce18d0c3bc79c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_fixture"
+            },
+            "path": "scripts/e2e_harness/fixture.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Runtime evidence records the negotiated Codex client/app-server boundary used by the scenario.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b74b5690b0a8cf1c51a74bbc5e947ea868a7086",
+            "content": "sha256:41be3ef34bc95bf9764fb4a030193d8a086c979de3a216a1cd57f9fe09f7f19c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_ambient_codex"
+            },
+            "path": "scripts/e2e_harness/codex_driver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b74b5690b0a8cf1c51a74bbc5e947ea868a7086",
+            "content": "sha256:6d9533da7d8e8abfe4a0ddc69b802d3bcf616485f99a1dacb3047605e180511b",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "scripts/e2e_harness/codex_driver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The scenario proves the live spawn chain and replacement-routing sequence through named checkpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4cdbb8e2ca84e990abe4f6573265c945ea5def0",
+            "content": "sha256:9da7ec82b72eacce3778586e2ac5406b78f93a4baf6d6fc2b02266878cea594b",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_scenario"
+            },
+            "path": "scripts/e2e_harness/scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4cdbb8e2ca84e990abe4f6573265c945ea5def0",
+            "content": "sha256:c7925b6e035a01c47c4cf89f555011381269495af72c0e6cbb9102eaaa8db448",
+            "locator": {
+              "end": 531,
+              "kind": "line_range",
+              "start": 368
+            },
+            "path": "scripts/e2e_harness/scenario.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The deterministic provider discovers tools from the real request and validates the public dispatch schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39b13f56e2c7a50a2df4719f591675e4e7d081fc",
+            "content": "sha256:b738157c4326e305b02af72aafa57eaef1ef7498573e6bd0d71fbe7c331c47eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScriptedResponses"
+            },
+            "path": "scripts/e2e_harness/responses_server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39b13f56e2c7a50a2df4719f591675e4e7d081fc",
+            "content": "sha256:ed2d34a1511528992eb6265ba00cc4473a6bfb5a1156df10b4ff02b562c0195a",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 329
+            },
+            "path": "scripts/e2e_harness/responses_server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Controlled malformed advertisements must fail through the same canonical validator as the live advertisement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b647b7ad18ba7d2f68c7958cf19e3a4d2535261",
+            "content": "sha256:9b6dd00aadaf7892043ecf09ff51ea76dbc53f39153d48abd9ef28e8b44168f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_rejection_sentinels"
+            },
+            "path": "scripts/e2e_harness/dispatch_sentinels.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fresh-user acceptance's disposable fixtures, created from nothing under one run root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1278faa6b68a3af50046422353bcee5f7d239a",
+            "content": "sha256:94bb5e83d16840c06ad5123ae62303323ecaf03f5628da78a7da1f7b3f5164cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_fresh_user_fixture"
+            },
+            "path": "scripts/e2e_harness/fresh_user_fixture.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The fresh-user flow, one `StepRecord` per product call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:5ff3b75e41a81df14c941982ddf07836c0a03b278543edef6df6380cdf9dbae4",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_fixture_scenario"
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:ac4a6d944717aeb5831a27fc4d49773700aa06e107d2f94405e6cc3bc7db14e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_fresh_user_acceptance"
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:4b70cd2364b888be587436fb29691929c0c7cc7bd07e3a3cacbb4e7217c53104",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 579
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:91e5e4a5185fc889aa74883899aa1f65467ba59820e3c5f0f787dbfa6fb9875c",
+            "locator": {
+              "end": 1195,
+              "kind": "line_range",
+              "start": 1111
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The free agent's capsule, read back from the launch token the session was started with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:69202d132c60f5436e55737ecbb06870f15c022c8500d6b9180c3493c54db008",
+            "locator": {
+              "kind": "symbol",
+              "name": "free_agent_acceptance"
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fresh-user acceptance entry point and its transcript.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "766d156231453da6663ed15bea2b9bac79eb30cd",
+            "content": "sha256:440f3fd8fe4d19a66afa3ecddf13c0f91c9fb2f4726ac8c020ede725dd828257",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "766d156231453da6663ed15bea2b9bac79eb30cd",
+            "content": "sha256:0ebd69c7f2f756c10cc61570742ea9630c3128a285fb0ed31d57ce800d4796e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPORT_DIRECTORY"
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The consumer of record that keeps the three modules' lifecycle rows honest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
+            "content": "sha256:7e195c87e6a36e46ccedc444705cf265d35cce4d41df94a93fd32863638b8dd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_governed_harness_module_this_suite_answers_for_exists"
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

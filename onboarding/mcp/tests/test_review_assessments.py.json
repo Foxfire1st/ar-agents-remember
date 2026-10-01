@@ -1,0 +1,179 @@
+{
+  "path": "mcp/tests/test_review_assessments.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lane row this module's classification rests on, and the lane header that declares the classification.\n\nAnchor: \"mcp/tests/test_review_assessments.py\"; \"unit-regression = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:150e66e357bc146775235033162172839b6b6d1b88bdec1c85b56bf386ca2149",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The record, its submission shape and the validator the shape cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:cff7d39f12dfbf00980e304b6b041a9e1cc2f724673d97086701236a7fe6cb3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAssessment"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:16d69ce24987cd3f5dfb1caf822527e05631acf439a3b9d2a015be26e47a1019",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAssessmentRevision"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:0c22c5b0395667f8b229876c30a0bd5da6e1920c9be69cf6349bffd2b9258e3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AuthoredAssessmentFields"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The equality comparison and the stale-marking the binding cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:c488228a3c443a2a3b725a9e499919f5bde7a9aeaf17f33a8f44de3694df7d8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "disputed_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:d4733fc7de6ff3d3b2069e81728f8ea3edff467fc5c1acf3ddd50b4225bcd2cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentCurrentness"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:b473336b40583d544b8595f92a8bd3214fecc8c6880477cfb1a86c66c8c6c197",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_assessment_binding"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05509e52a557a2b316d92a2dfe5732012e426202",
+            "content": "sha256:e8ca985164b9f0f80851790f0eb02c7933a03fd44e50dd1aa69b50a43fb0e45d",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The state projection the read cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:0b44d7805fec6afeab23ec939d2a7cdba560f0b0f2b65ea8da7d97b637fcc1ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_state_for"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:4faf2f2634b984c53e7008b3efeefafe750a9af482e72f5c96d16a475fe3d561",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectAssessmentState"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The report-only section the checklist cases assert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:5bc4727760a8fdcae578b641cfd1345f9807744a5bff05a3ab8d86856d9813ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_review_section"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

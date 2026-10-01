@@ -1,0 +1,54 @@
+{
+  "path": "mcp/tests/test_benchmark_analysis.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`analyze_jsonl` and the per-event metric extraction under test live in the benchmark analysis module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "116438c260885ed8f6a908cf588f6c2a1675eca7",
+            "content": "sha256:f3b4a49f295260386a9d278e9258c2fc71be5c862e12c4cb383ba057e9b944a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "analyze_jsonl"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/analysis.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The token-key set summed from `turn.completed.usage` is defined in benchmark runner constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b60f2b26e9abe66ca975bdbdfa2a0a916f9c573",
+            "content": "sha256:a1fbe3549bb93baf6a20461338527d92e5a929f4802a78527e7fa080df7f4f5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "USAGE_TOKEN_KEYS"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b60f2b26e9abe66ca975bdbdfa2a0a916f9c573",
+            "content": "sha256:cb6792aacff9716886a9e78ac53a306f84401006115f7e77fdcec03a519db0a9",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/constants.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

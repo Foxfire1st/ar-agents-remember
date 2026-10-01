@@ -1,0 +1,131 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Recovery snapshots carry the actual frozen run, candidate and optional memory observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:b4e591391f89b295e864f53c1b5b58726936f84611fa9a5ecb3149d8f48a2023",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryInputSnapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Change classification first validates both admissions and the exact task address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:18ce8e7f93cecc7db5da991ac4472efb36d0b1f0ecb8408df75bbb97cefb40e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_certificate_input_changes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:4535fed14f4ab17372b15231b662d4355c954acc29ff1873dfe0c221945b56db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:498dd279ca63dda39d07f9a7364440462f3cef04ed00fc33bb68f8ff1e7a2f66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_same_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Gate/runtime and memory/coherence changes derive from actual admitted inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:b849258e667cb0e464cb9d0ba4640449286ffaef6b105644a255d76f01f75a70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_changes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:cf0fa22c57df76a65e77d9b104b24b009dd4548bf4b827b9c6d402c5d46cc4e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Topology/intent and journal/approval/provenance changes remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:8732635331eca6ed4e193be89e43dc93249676931fc209ec46358d73c381ba6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Prior-red context requires a complete original catalog, prefix and corrective admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:9c62eae87147694591f7ab429a97f79fbabfd0fa441b08c89a903dfee23d5ea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_prior_red_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:66b697ae406c996f0f20489da7cee6f7ccca77265fbee45d39fd0edab24e0b79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_complete_red_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

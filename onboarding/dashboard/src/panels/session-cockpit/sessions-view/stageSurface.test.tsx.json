@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/stageSurface.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stage-surface suite.\n\nAnchor: `describe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfcc50d9448af151a0ac4551b7c0127b150419d1",
+            "content": "sha256:7c4af59e77bf919c224dd1c54ac5406a0ce57bff93ab5f6539131b6bcd741d25",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,105 @@
+{
+  "path": "mcp/tests/test_knowledge_file_formats.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture list and the byte-for-byte round trip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
+            "content": "sha256:a0cb6c2a87065c5796c18d4c2a4151c2ad92102fcc9a55a5a39548d6d17b1992",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_doc14_worked_examples_validate_and_round_trip_byte_for_byte"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Doc14's verbatim spellings are refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
+            "content": "sha256:09b9084ce718cc3e131274385f0c971270b7471673365dbd8f61e315d21461be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_doc14_verbatim_illustrative_shapes_are_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every kind round-trips and refuses a foreign prefix and foreign relations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
+            "content": "sha256:0ab5773b79ede7b51b8996691c2527befe0bf4c7668a80b1e02cddedc31cd88c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_record_kind_parses_round_trips_and_refuses_a_foreign_prefix"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Second-owner fields are refused on an invariant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
+            "content": "sha256:29083ed2e21e9385f7abc772c5b15b1a4d299107f27779b7054593f2eb01ce4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_records_refuse_second_owners_and_malformed_record_fields"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Sidecar, reference and anchor refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
+            "content": "sha256:c6a3cc48323aa4ae222af18c3e4a94bbd6c4abc5ed0c30670407a4b677583653",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sidecars_references_and_anchors_refuse_malformed_shapes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Lane registration.\n\nAnchor: \"mcp/tests/test_knowledge_file_formats.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:cc80fc3ab3b91d70e98443711d6381a8ad6bca7810a332d1ab36e2fca35eb724",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

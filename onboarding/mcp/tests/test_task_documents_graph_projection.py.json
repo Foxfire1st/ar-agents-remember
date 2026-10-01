@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_task_documents_graph_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Segmented master scenario projects titles and predecessors",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "content": "sha256:4ec369040c46575201637cbfdc7308f0df7627fa6f3cb58076d76f50402acdea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_segmented_scenario"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "content": "sha256:2c1aeb545f85214b7b2d03d8ef3254b4e0c47be405fd00586364a0529f8a0d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_segmented_master_scenario_projects_titles_and_predecessors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An abandoned master reads `abandoned` and no longer gates its successor, whose frontier becomes ready",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "content": "sha256:0572d4f20154ff11f6b33743136f08af0bc768c3d481d041f535a5082e05db16",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_master_reads_abandoned_and_stops_gating_its_successor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Duplicate local leaf numbers keep master qualified titles",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "content": "sha256:4d93455816bc4e952e32f9396ccf5d5632ed00913a6f13a67647a57d557a0a13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_local_leaf_numbers_keep_master_qualified_titles"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The dashboard's own index rule, reproduced: a row drills in only when the pool holds a document in the master's own directory whose file stem is the row's `file`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "content": "sha256:962a4d4459b521a48802a072556f03624ebf30e8d5995f31f6d9369077d0a73d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_doc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reachability contract: a completed leaf written by a newer build stays reachable, an unstarted one stays reachable, and a broken document is still withheld.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "content": "sha256:aa04eca73a6a07e989197558bbf62e62f3db60904ca951a925002bb2a88a1c85",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubTaskIndexReachabilityTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "content": "sha256:9bae24d9a0f60e686b8b06d01e49975ac7129574cb09afa513f62cf5a4bcc889",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_completed_leaf_written_by_another_build_stays_reachable_from_the_index"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

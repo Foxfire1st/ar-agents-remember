@@ -1,15 +1,5 @@
 # mcp/tests/test_instrument_discipline.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_instrument_discipline.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -131,92 +121,42 @@ None. This card was written by reading the current 537-line source in the code w
 measuring the case population on this candidate; no case in this file is known to be vacuous, and no
 case was added or removed by the curator.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this repository: `system/sources.md`
 carries no entries, so no `Domain Documentation` category is available to cite. These are
 repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| External domain documentation is not configured in this memory root. | N/A | N/A |
+External domain documentation is not configured in this memory root.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The retained source anchors below support the fixture roles and assertion boundaries described above.
 The historical evidence constants live under the previous master's task root in the coordination tree
 and are cited by the source that transcribes them, not linked as durable memory. Every range below was
 re-derived against the current 537-line source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared licensing probe: corrected pattern positive, faulty pattern negative, both against the record's own row. | `_probe` | mcp/tests/test_instrument_discipline.py:112-126 |
-| The record's 1,343-character attestation message, transcribed. | `ATTESTATION_MESSAGE` | mcp/tests/test_instrument_discipline.py:24-43 |
-| The checklist row carrying that message, in a table with no blank lines between rows, and the two rows below it. | `ATTESTATION_ROW`; `CHECKLIST_TAIL` | mcp/tests/test_instrument_discipline.py:48-48; mcp/tests/test_instrument_discipline.py:51-61 |
-| The live `n/a`-link row, the pattern that returned 0 on it, and the pattern the curator ran instead. | `NA_LINK_ROW`; `NA_FAULTY_PATTERN`; `NA_CORRECTED_PATTERN` | mcp/tests/test_instrument_discipline.py:64-67; mcp/tests/test_instrument_discipline.py:69-69; mcp/tests/test_instrument_discipline.py:71-71 |
-| The `E13` transcript whose crashed `awk` invocations sit above the pass line — a reconstruction in the verdict's own terms, because the raw file was overwritten in place — and the repaired producer's clean transcript. | `E13_CRASHED`; `E13_REPAIRED` | mcp/tests/test_instrument_discipline.py:78-84; mcp/tests/test_instrument_discipline.py:87-92 |
-| The shipped declared-tools baseline and the silent before-file that evidences no run. | `DECLARED_TOOLS_RESULT`; `DECLARED_TOOLS_SILENT` | mcp/tests/test_instrument_discipline.py:96-103; mcp/tests/test_instrument_discipline.py:107-109 |
-| A zero from a text probe is admissible only when the probe was shown to see the other answer — and only for the pattern it proved. | `PatternProbeWitnessTests` | mcp/tests/test_instrument_discipline.py:129-179 |
-| A count taken from a capture that ran past its unit is a count of something else, and a capped window says so. | `BoundedCaptureTests` | mcp/tests/test_instrument_discipline.py:182-231 |
-| A pass line printed after a crashed command does not describe the command that produced it. | `CrashReadAsPassTests` | mcp/tests/test_instrument_discipline.py:234-247 |
-| A clean result is evidence only when the artifact also shows the check could have failed; an exit status with no result is a crash and prose is not a run. | `ArtifactAdmissibilityTests` | mcp/tests/test_instrument_discipline.py:250-365 |
-| A record names the producer that made it, or it is not a record of a measurement — and a failing producer is a non-reproduction, not an exception. | `ProducerIdentityTests` | mcp/tests/test_instrument_discipline.py:368-520 |
-| The transcription is the one the record carries, checked against the record where it still exists. | `test_the_evidence_transcription_is_the_one_the_record_carries` | mcp/tests/test_instrument_discipline.py:523-537 |
-| The module whose admissibility conditions these cases pin. | `counted_pattern`; `capture_bounded_window`; `check_artifact_refusal`; `producer_identity_refusal` | mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:173-192; mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:202-247; mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:300-351; mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:354-370 |
-| The narrow exit-status rule and the vacuity rule's non-zero quantity. | `TRANSCRIPT_EXIT`; `NONZERO_FINDINGS` | mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:67-71; mcp/test_support/agents_remember_test_support/code_quality/instrument_discipline.py:79-79 |
-| The lane this module is registered in, so the fail-closed manifest admits it. | "mcp/tests/test_instrument_discipline.py" |mcp/tests/test-evidence-lanes.toml:372-372|
+- The shared licensing probe: corrected pattern positive, faulty pattern negative, both against the record's own row. [1]
+- The record's 1,343-character attestation message, transcribed. [2]
+- The checklist row carrying that message, in a table with no blank lines between rows, and the two rows below it. [3]
+- The live `n/a`-link row, the pattern that returned 0 on it, and the pattern the curator ran instead. [4]
+- The `E13` transcript whose crashed `awk` invocations sit above the pass line — a reconstruction in the verdict's own terms, because the raw file was overwritten in place — and the repaired producer's clean transcript. [5]
+- The shipped declared-tools baseline and the silent before-file that evidences no run. [6]
+- A zero from a text probe is admissible only when the probe was shown to see the other answer — and only for the pattern it proved. [7]
+- A count taken from a capture that ran past its unit is a count of something else, and a capped window says so. [8]
+- A pass line printed after a crashed command does not describe the command that produced it. [9]
+- A clean result is evidence only when the artifact also shows the check could have failed; an exit status with no result is a crash and prose is not a run. [10]
+- A record names the producer that made it, or it is not a record of a measurement — and a failing producer is a non-reproduction, not an exception. [11]
+- The transcription is the one the record carries, checked against the record where it still exists. [12]
+- The module whose admissibility conditions these cases pin. [13]
+- The narrow exit-status rule and the vacuity rule's non-zero quantity. [14]
+- The lane this module is registered in, so the fail-closed manifest admits it. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. The configured cross-repository
 allowance is empty and no external source is relied upon here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 6 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`instrument_discipline.py`, `test_instrument_discipline.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:26:25+00:00: Generated citation repair: "mcp/tests/test_instrument_discipline.py" repointed to mcp/tests/test-evidence-lanes.toml:372-372. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_instrument_discipline.py" repointed to mcp/tests/test-evidence-lanes.toml:319-319. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_instrument_discipline.py" repointed to mcp/tests/test-evidence-lanes.toml:297-297. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_instrument_discipline.py" repointed to mcp/tests/test-evidence-lanes.toml:290-290. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: "mcp/tests/test_instrument_discipline.py" repointed to mcp/tests/test-evidence-lanes.toml:233-233. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T12:30+02:00 — 260918-TSIP-L1 curator, **second pass** (uncommitted change set on
-  `ar/260918-tsip-l1-ar`, base `f0313143`): the leaf's independent review returned three blocking
-  findings, the fix worker revised this suite **350 → 537 lines and 16 → 27 cases**, and the body was
-  **corrected, not annotated**. The case count was **re-measured on this candidate** rather than
-  carried: `grep -c '^    def test_'` = **26** class methods, `grep -c '^def test_'` = **1**
-  module-level function, `pytest --collect-only -q` → **`27 tests collected`**, with **0**
-  `parametrize` decorators and **0** subtests — so the 26-versus-27 gap is the module-level
-  transcriber test and nothing else, and this card reports **27** with the 26+1 decomposition stated
-  beside it. The 11 added cases pin the enforcement points that had escaped mutation (line cap, blank
-  line, unproved probe before verdict, record naming no producer script, producer exiting non-zero)
-  and close the revision's five defects: the pattern-licence binding, the unwritten output argument,
-  the write-beside-the-evidence behaviour, the loose exit-status rule, and the vacuity rule that
-  admitted a disclaimer. Every range on the card was re-derived (the class blocks moved
-  `PatternProbeWitnessTests` 126-166 → 129-179, `BoundedCaptureTests` 169-188 → 182-231,
-  `CrashReadAsPassTests` 191-204 → 234-247, `ArtifactAdmissibilityTests` 207-252 → 250-365,
-  `ProducerIdentityTests` 255-333 → 368-520, `_probe` 109-123 → 112-126, the transcriber case
-  336-350 → 523-537, and the constants likewise). The card now also records what the suite itself
-  states: `E13_CRASHED` is a **reconstruction in the verdict's own terms**, not a transcription of
-  bytes that no longer exist. `lastUpdated` tracks this body edit; `lastVerifiedCommitHash`/
-  `lastVerifiedCommitDate` are deliberately unchanged because the source is an uncommitted candidate
-  and the governed closeout owns the real code commit. This seat writes no source and ran no product
-  test beyond read-only collection.
-
-- 2026-09-18T11:46+02:00 — 260918-TSIP-L1 curator (uncommitted change set on `ar/260918-tsip-l1-ar`,
-  base `f0313143`): created this card for the new test module the leaf added, so the new source file
-  has its 1-to-1 onboarding pair before closeout. The shipped case count was measured on that
-  candidate rather than taken from prose (**16**: 15 class methods + 1 module-level function), and
-  every range was derived by reading the then current 350-line source. The card recorded the suite's
-  own limitation — those 16 cases passed while the module under test still carried the `\b` bug, so a
-  hand-written fixture cannot license a pattern. Verification metadata is left at the leaf's frozen
-  code base `f031314345b674d0733c4619fe34d78c1b02ba26` with the reviewed working candidate named.
+No cross-repository evidence is required for these file-local claims.

@@ -1,0 +1,2086 @@
+{
+  "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`displayedReaderDoc`; `useTaskDocumentBody`; `taskDocumentBodyState`; `TaskNotes`; `DocChangeSetBar`; `MasterOverview`; `TaskReader`; \"change-set\"; \"loading\"; \"Loading complete task document…\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:01e811f85fdb385096a0bc66a68a52bd8e5f89fa68d08e7275991cdc9e7bec3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDocumentBodyState"
+            },
+            "path": "dashboard/src/panels/detail-panel/state.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Cockpit preserves typed selection keys and qualifies a raw lifecycle id before opening Operations.\n\nAnchor: \"const open = useCallback((id: string) => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:38d14af02dfe93dcee52dd30777946b9750f8fafec29818d124f21cdf1e5aef8",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 512
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The selected-series derivation: `selectedIsRootTask`, `selectedSeries`, `seriesAsMasterDoc`, `seriesSliceDocs`.\n\nAnchor: \"selectedIsRootTask: boolean\"; \"const selectedSeries = resolveSelectedSeries(\"; \"? seriesSliceDocs(allDocs, master.docPath)\"; \": seriesAsMasterDoc(selectedSeries);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:4ddd1c69066a420e33a3570cd44e52ee7a0509f2f12517a654ce28059b17dc79",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/panels/detail-panel/state.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:d775760498a28a941448fa52c6f1ef680978fc8d8951596a79bc1118f91caf04",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "dashboard/src/panels/detail-panel/state.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:7cedf2ebd4eb995fb90a1a3c856465e30ddf38a00bba3b75b16ed8365d1e50a0",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:cccc28b18e23ab9ba5fed770eae17fa7e179c4e139551a9f6facbe22fdd4fd69",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Lifecycle-bound selected masters render `MasterOverview` with sibling docs from the full projected task-document pool, so master rows can open authored leaves that are not sidebar rows.\n\nAnchor: \"import { MasterOverview, TaskReader } from \\\"./taskReader\\\";\"; \"export function taskDocsForLifecycle(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:48f2606baa79f44acefea94d8343ac80a396f206b2b5bc181cf39e8c9d60865f",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 281
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "491e939eed25097b2adee337139d4d79f22a0127",
+            "content": "sha256:4586131653c23a41e67c6e20ba579553ec1b1532e5e1a14c96332451d32cf18e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Direct taskdoc and active lifecycle leaf selections use `parentTaskLinkForDoc` to show a sticky parent/root backlink without changing leaf content selection.\n\nAnchor: \"import { parentTaskLinkForDoc } from \\\"../../data/taskHierarchy\\\";\"; \"export function parentTaskLinkForDoc(\"; \"export function TaskContent({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:a212b05d55907dc6678197b0a4eaa694b5e6b15699971528632cad64764b0df4",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "491e939eed25097b2adee337139d4d79f22a0127",
+            "content": "sha256:65f3b0118c97a9e2fc16520b1675f77da585e978c5ca5aec1b266d5dfc150d97",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:c65326b0d9e2bf8f70191ada0838639ec3b2cb6ce7b964387b72855a02997cf5",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`displayedLeafDoc` resolves the leaf actually on screen (mirroring the render branches; `undefined` for a master/series overview) and reports its `qualifiedLeafKey` up via effect (L5 fix 1).\n\nAnchor: \"import { displayedLeafDoc, displayedReaderDoc, docPathForTaskRef } from './model';\"; \"export function displayedLeafDoc({\"; \"const viewedLeafDoc = displayedLeafDoc({\"; \"export function qualifiedLeafKey(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:ef4fc3db9cfd41535a537375427daf1e765bf7a3d5828e3bdb25bbb81a0bd2b0",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:842c4cfa58e128f25033de3798051f429b3b289a60743fff343932d867a3fca7",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:bea565d3bbef86cf8408234397b9a62ed169f748279db85da94bb649b78d9b43",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:0f2869c867bb131dbaa9d5f537fd1af49261918599319bc953466cdbe95e6724",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/panels/detail-panel/state.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:a8e6358ba256e983588e30df1be84556d0ff41a01553fdbb89d5342c40106ced",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "dashboard/src/panels/detail-panel/state.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The task reader derives the displayed leaf key and places it on the rendered content wrapper.\n\nAnchor: \"export function TaskReader({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
+            "locator": {
+              "end": 674,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The shared qualified key is repo/master/leaf-id and requires all three parts.\n\nAnchor: \"export function qualifiedLeafKey(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:70418e203a9f57b52f54550a3ff365787aed2a0d79ec3c3e9f6dd5f8bac5acbb",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Selection attribution looks for the closest task-leaf wrapper.\n\nAnchor: \"function leafKeyForAnchor(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a95e289ddac9e9f3f464940626ae2cf6746a936",
+            "content": "sha256:4058cfae7c16fa8c55ccb27b86e6573fa38ce9c8ffcfeee75b8af359691f6325",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/data/selection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Mouse selection context carries the leaf key read from that wrapper.\n\nAnchor: \"export function readSelection(selection: Selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a95e289ddac9e9f3f464940626ae2cf6746a936",
+            "content": "sha256:cbc752eddc38ecf2c6bc0b21b73442b99fb2e0497ba70f634734c365ee2ade78",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/data/selection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`findParentTaskMatch`/`parentTaskLinkForDoc` resolve parent task links from projected series sub-task refs and typed selection keys; `orderedByCreation` is now exported from here rather than copied into this panel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:774c8ccbbdc4972c4066f342d3e8059d0ac06ed04203c98e8aab6243dfcea686",
+            "locator": {
+              "kind": "symbol",
+              "name": "findParentTaskMatch"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:e48114d8cfbd8cfa60885fa906b62de2e2bbae941938e1ae332a2d5c6da64983",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentTaskLinkForDoc"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:f86d2d2b3b470b09bca48768dc634712d657abcb4d6b1b22df566e48f5a4ef61",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderedByCreation"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:d8cf98c30e03b573d9f5fca16bca0b0668c85cce98ed925bf64260472bdf0357",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentSelectionKey"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The hook owns fetch, merge, availability, and path-plus-revision caching; the API literal remains in the transport helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bf51b0a984191e58aeaf7c6434f659bb37dac0a",
+            "content": "sha256:0d6ffc85f1a3edeb5da304402725eb14f95437a157cb23bc8c307b97856cf82e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTaskDocumentBody"
+            },
+            "path": "dashboard/src/data/useTaskDocumentBody.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bf51b0a984191e58aeaf7c6434f659bb37dac0a",
+            "content": "sha256:bd61373087d4f4b1ea8847389c83eb08e3f9fdf911ab55ab0f52cea192cb8084",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeTaskDocumentBody"
+            },
+            "path": "dashboard/src/data/useTaskDocumentBody.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bf51b0a984191e58aeaf7c6434f659bb37dac0a",
+            "content": "sha256:ef0566510ca5966f9dbef199f7d6d4b09e9776661f16c5b1d9bb9c723eddd635",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDocumentBodyKey"
+            },
+            "path": "dashboard/src/data/useTaskDocumentBody.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e556f123a00e478e3cda966c38b2f5f480d44563",
+            "content": "sha256:d23293d031664a859281a7265df52025938e3fdac9a61838eb3ea0b58b43dad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchTaskDocument"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "SubTaskRow is the union of the distinct task-master and series row shapes.\n\nAnchor: \"export type SubTaskRow =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:1de5db4b96d7237e56eaa8a3137a8d59d1f15bcffb40093cf54a0435b21a76f9",
+            "locator": {
+              "end": 838,
+              "kind": "line_range",
+              "start": 838
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Task-master rows may carry a linked lifecycle id and masterRef.\n\nAnchor: \"export interface TaskSubTaskRefNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:3fab73214ca880cb59c0e002ac1a72ef5e70806ba155c90548949c959093bc4e",
+            "locator": {
+              "end": 792,
+              "kind": "line_range",
+              "start": 792
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Series rows instead carry optional creation time.\n\nAnchor: \"export interface SeriesSubTaskNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:4c1f95f4e1d533a9a7ccc9f28e2052505f66ca1be4ef5438235f23fcf3b66eae",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 560
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The two `extra=\"forbid\"` server models the union mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:02a2fdce38e3efc33b18558008107e397e770871c05ae2fb9f266367f84578f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskSubTaskRefNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:7230072b4d29082ae057db7e9b648b20072e98f7f3675429001087b45cd554d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesSubTaskNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "`_series_subtask_nodes`; `seriesAsMasterDoc`; `orderedByCreation`; `createdAt`\n\nAnchor: \"export function orderedByCreation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:d80d76c1ff8f725ff8db85c283e21b659fea9675d2e9efb7d52ce8fe701ca78d",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "`MasterDocView`; `SubTaskRow`; `seriesAsMasterDoc`; `orderedByCreation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:f86d2d2b3b470b09bca48768dc634712d657abcb4d6b1b22df566e48f5a4ef61",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderedByCreation"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "`SubTaskIndex` renders in received order and reads the cross-link as `\"linkedLifecycleId\" in ref`, so the `→` branch is unreachable for a series.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:eacc4b146c3a29d72410d4221eba175af9217a97374ff828fd96339719f30f52",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubTaskIndex"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "`parentTaskLinkForDoc` links an enclosure-opened leaf back to its parent task document (`master-parent-link`), pinned by the promotedIdentity suite.\n\nAnchor: \"export function parentTaskLinkForDoc(\"; \"links an enclosure-opened leaf back to its parent task document\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:a212b05d55907dc6678197b0a4eaa694b5e6b15699971528632cad64764b0df4",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e144c087b945d4326fe2ee4684f8471f05522bf4",
+            "content": "sha256:885fc3aa7b92547ed907dee88d560d0b9d17a57e99d542a89586ad392d2b602b",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "dashboard/src/panels/detail-panel/promotedIdentity.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Task progress forwards the projected done and total counts.\n\nAnchor: \"export const taskStepProgress =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:4d79d537a9b34271fb683f713a1792480d2c04674283b0477b82cbcebbd4b6a7",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The master index renders its received sub-task references.\n\nAnchor: \"export function SubTaskIndex({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:eacc4b146c3a29d72410d4221eba175af9217a97374ff828fd96339719f30f52",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 464
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Component regressions pin body-first request ordering, complete field rendering, fallback visibility, one implementation-step copy, and revision caching.\n\nAnchor: \"loads the complete task body before mounting reader ancillary requests\"; \"renders the complete on-demand task-document body while retaining its summary\"; \"shows the available summary when the on-demand task-document body is absent\"; \"reuses an unchanged task body and refetches when its revision changes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3dc75df2f4520123e072fb444bedc02ee4a4a4d7",
+            "content": "sha256:c6026dc8d6d810ac9e05b1dd9a9a867cb6c918b5c0ec70f4b4da149b28b8aa26",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3dc75df2f4520123e072fb444bedc02ee4a4a4d7",
+            "content": "sha256:32a122575d02155bed9ac900cb5ed9a6b35b10348ddf657d60870b6dd1a534f3",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3dc75df2f4520123e072fb444bedc02ee4a4a4d7",
+            "content": "sha256:ae9740398f8da8bb865ad704c86b48622d26a9283561082a0535067b3e12fe7a",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3dc75df2f4520123e072fb444bedc02ee4a4a4d7",
+            "content": "sha256:9c9bd6c2d9a549e6534181e01ed69e290b7900ce3f7c5a766803272269d50a76",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The master-less slice list sorts task documents and displays their progress.\n\nAnchor: \"export function SliceList({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:71281a37eaefa7915e1cab7933523c828002dd9a6ed11836e51de5bd2624d08b",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 505
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The task reader places ProgressFill in the header before body sections.\n\nAnchor: \"export function TaskReader({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
+            "locator": {
+              "end": 674,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "ProgressFill is the shared progress display primitive.\n\nAnchor: \"export function ProgressFill({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
+            "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/grammar/ProgressFill.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The master index preserves received order and passes a separate one-based position for test ids.\n\nAnchor: \"export function SubTaskIndex({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:eacc4b146c3a29d72410d4221eba175af9217a97374ff828fd96339719f30f52",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 464
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Sub-task labels prefer the matched child task id and title, then the received reference values.\n\nAnchor: \"function subTaskDisplay(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:98b6441e2b011e138f34b9ced6266bd724d14be709f951de24dd7e04fbbaad52",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 444
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The row uses position for test ids and the resolved child for navigation.\n\nAnchor: \"function SubTaskIndexRow({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:6399f5c54d298a0cdb99f9b2e86e712a546e2fe6e39829f3715af31c1ad3203f",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The slice list retains createdAt ordering because it operates on task documents.\n\nAnchor: \"export function SliceList({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:71281a37eaefa7915e1cab7933523c828002dd9a6ed11836e51de5bd2624d08b",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 505
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "`TaskReader` renders the top `ProgressFill` before the task body and keeps implementation-step copy later in the document.\n\nAnchor: \"export function TaskReader({\"; \"export function ProgressFill({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
+            "content": "sha256:a05353ade481bf1a8adb4b93ba948a5ed8c509f772b05f5ee51c146b5e0e1730",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/grammar/ProgressFill.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:3b4769008f7e583e3d0be37775018a40f280e098bbf9fef5e402fab0c5ddfa0c",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "`seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `seriesTokenTotal`; `MasterTokenSummary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:6c9ac35b3b9278b50ff9caf681d08df857b12519800f29d30074bff9ad0b8ff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterDocWithSeriesTokens"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:3a5ecbc83af11107b3eb2788121e5c1a841928a0e0c17f16b226e63d362b0dcf",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "SeriesNode provides the series fields and typed sub-task rows consumed by the panel.\n\nAnchor: \"export interface SeriesNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:9ada4d915c897a933b1a1647ad0d53c9a6a541d5fbe9be25f88f5726f2c16cdb",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 534
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`parseTaskSelection` resolves typed taskdoc/series/lifecycle selections before rendering by task-document `kind`.\n\nAnchor: \"const selectedTaskDoc = resolveSelectedTaskDoc(selection, allDocs);\"; \"const TASKDOC_PREFIX = \\\"taskdoc:\\\";\"; \"const SERIES_PREFIX = \\\"series:\\\";\"; \"const LIFECYCLE_PREFIX = \\\"lifecycle:\\\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:b76f7f09f20e3954c0bb6dc716591b8c7f9eaf1eb8cc8b38145d7af02397bba2",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/panels/detail-panel/state.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:293762b0a104dad7a7c14a9e7876a3b22f00cbbe5afd6370f131d8d9f8f3170d",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "TaskDocNode provides authored task identity, creation time and task-master references.\n\nAnchor: \"export interface TaskDocNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:75707db60d5408eb37a4d43361d1fdda0e8e042c5c1ba17f5d733d592e027fd5",
+            "locator": {
+              "end": 647,
+              "kind": "line_range",
+              "start": 647
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Only the series sub-task row has optional createdAt.\n\nAnchor: \"export interface SeriesSubTaskNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:4c1f95f4e1d533a9a7ccc9f28e2052505f66ca1be4ef5438235f23fcf3b66eae",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 560
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "`taskLabel`/`taskDocsForLifecycle`/`taskDocumentLabel` — the lifecycle-visible identity helpers used to label promoted leaf lifecycles without changing task-document filtering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:86383b3c238500b02d8f7732008333316d1708d25977d666e54e156794db34ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskLabel"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:d5f608b1933d2b22d1855ff9e584dd667dcb432dd9e662dd92a38371fc1773cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDocsForLifecycle"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:d06692e6f0f3b9e031dd184f6ceffee2ef3bef4a16b971b443a233499df51516",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDocumentLabel"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:e66ea6f62fbc5c51973b11cb6341f46638064417bb57c17cf820c8a5dcf7f58b",
+            "locator": {
+              "kind": "symbol",
+              "name": "findLifecycleEnclosure"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The durable gate responder, now rendered only for real `activeLifecycle.gate` requests.\n\nAnchor: \"testId=\\\"gate-review\\\"\"; \"function DetailPanelImpl({\"; \"<GateResponder\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:82199571025d3b7ec2b27d1937caa6923e538067fc82258d230bf8668a511651",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "content": "sha256:f6016079e1772d3409ecc8199bfbe9c861f9acd013916b7187bcc79ebad15027",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:6a165811c91a34f2fdedd00299d29cc3502b69c442f829a10cd30ee25e649d31",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:49a3a3c08c19accf3055f2d8e3e6add17e548312f130efec5c5be35af26eff5a",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:65f3b0118c97a9e2fc16520b1675f77da585e978c5ca5aec1b266d5dfc150d97",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:9dd45dee23ddbb5fc71bb791088c48da304b35b0e0c15b56c77a49dddaf112a0",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:0a3f70986cf5030c68c35f239ab106f26124b5d1a531241f1e81c11c2d3a42cc",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:88b7771bb6d675c9d677efc3fbea28c97ea826a2bccb874a3a7b4a3b325c9cd2",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:c0a30dd58abf5ec7886197054d4334f933bb9ab317d49adbfdf4fe36873ffac3",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:9da52f91fdcd4962d0d28a14995a653106a6fe7ba03e72342fb1746c89e0e10a",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:a55212fc5246deed27c08d067769e307fecaf70423b54943079f2baf0b2fee59",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:1f251117bc549daf67a1c264d6fa01e7158a78ec43aa08b83b9f276ae91b2994",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:3a5d0646ca7c03b02202bbd2a68dc3da4c796e786ac84bc295715ad3ee665e3c",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:1ee0121d99d1420d2565dcdcdae2304e686c5577a409ad35c75e20e53f2eae17",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:54969226a31264d7663807281fd4413ce98fc29c1adffee2763a2835e1c44713",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:d27bc59cc7df681eaade7efbfe910cff36607021293f8380a8cd24bd7caed3ab",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:b5a0c49e53598744ee1be0de060e94bc2b1dae07e83829e81201027b188f42d7",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:b02d2c0d6dc5e74d92fa14b91dbea264090beb35fdb9188d9b341181dce9f4ce",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:2076cb2c93fb341cda4b051a682c256a18ffa852673a08b4259c0f67565e6796",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:f82c26f4dc48f818dd22ce6191ab14875f2352e2a7d82e3bdee92d77ea55dfca",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:9857dcd50314a1aa4622181aceedb3be8a718e41ec839a60c4c2834aa33b661a",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:9b55bc1fe0686af6294e3b04b06ee9fbb91a8dae961a442bfa03563954c91104",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:d68016ace77b7c97b51f3a1b22a9e92f720d4eb26b4bd4f73ee8d9ab3fb1a93b",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:97bc7f84be41f7ed94f25100793bd760d2f96c2469db66a4f11316de13f64582",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:cccc28b18e23ab9ba5fed770eae17fa7e179c4e139551a9f6facbe22fdd4fd69",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:f98307b642207456c740b0e520729b762213f920e612a2c5ccb74d8922958580",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:3f66bfabc2b6d2785e54c49fa7f5b03d6d11fd0be155721157ea93716eaa9794",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:ef1ebf69bf9400ac200ffb6cd25df4a7be177260dc4a0b2a399ea57c9ea1b855",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:9f582fcf5d4873cea359ced5a13154fbea80395b3ea1036fc6e0094e48f13281",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:8b99d9bc6c170866c125c7a3f39e0994e63b221c1f6a3176f5972c5b0b42d51e",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:1664b92cda795f3a1bfebe9c25a44768f1b9003931749c1905bb0ac2c1a4c02d",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:943f7ca282d2f2ae6743851d848aa6dd14fb51ed273ae3f836d16049bccf28ab",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:c25df01f3760f9675fd11dd32a295fec7f68d9e878b276916e6a70f73b31fc06",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:4e89077240791dce559eb572026181b60bff86207da923616c209ee6cc6673f9",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:08d91fb9cc6c02ae246b12479144500791cf0f4729e4fb7db0428a7b9a796ada",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:2d4b705d51c9d1f6cdd0de29e0dec4a3d13920e56d5c4ec38e0a428107be8784",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:ac9b26922e8b169d0b6424828a4b71add56d5f8a9017f38d2370294164a68ae4",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:536a5d30754634cd722bfc59d29d71f536be3d84101537e9e3d810b3647186c9",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:42a2cb25a122b44221a6234ec660a7b5fb7f9bde7b3b9e2b3c559a0d96fac739",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:d0bda178080df71cf31b9bfe81bce7d7d3280c106ace5c817caf35319c2b2bc3",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:50abc89631411e6421b5a9ef97e276c32b06025006e3db216fee5ce3f9b026e7",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:d11023d72f0f8cfb2f2e57127940a7c914ff394062a1a3d4b07417b32642b8b8",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:872b1f7c4866904f2a43d872097d91ca5cb870428cd95a39cad5af13c94820fc",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:2cb48aead15f4a7b31d5cdcdf4468f602cef141182098d8aea0b7ab4bf8ce3bf",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:d0bda178080df71cf31b9bfe81bce7d7d3280c106ace5c817caf35319c2b2bc3",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 237
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:50abc89631411e6421b5a9ef97e276c32b06025006e3db216fee5ce3f9b026e7",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:8b99d9bc6c170866c125c7a3f39e0994e63b221c1f6a3176f5972c5b0b42d51e",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:3e199691d50fac852d364f51a9be94d19bd604bb0d45698b67d91ea4cfe8d12d",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:84e4208cd6ffb8c4a3547b2f54ada19978c3f365e78f9502ef5145cdd2aa8543",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:84e4208cd6ffb8c4a3547b2f54ada19978c3f365e78f9502ef5145cdd2aa8543",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:84e4208cd6ffb8c4a3547b2f54ada19978c3f365e78f9502ef5145cdd2aa8543",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:d0bda178080df71cf31b9bfe81bce7d7d3280c106ace5c817caf35319c2b2bc3",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:214940e0cd60e9dcfc37203f780b559d4ef4bb3ffc0ec4c58c8be8a9030a24e7",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 310
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:a075d861ca2b8df831c6e5186364c4020e26a9e8639a879ac4c19ab83cb9d5ea",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:3795ebd5ff7388efa02cf0e232fcb6060128d04617cd54c0ea52a6c00c52203a",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:2076cb2c93fb341cda4b051a682c256a18ffa852673a08b4259c0f67565e6796",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 313
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:4a4bba154f0b11f053350359c54fb2413f2bec9e75cf4196a22e8be8b50013c2",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:5c350549890e52b6d4626228abf3f2b0c01122ec246ddde28069ff231914b3ec",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:047943f0bafbf15ece490a628d207dda2abaf4ae80c331ee8e684d8825e10477",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 358
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:d0bda178080df71cf31b9bfe81bce7d7d3280c106ace5c817caf35319c2b2bc3",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 376
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:06038842bc314245a732185222adc43c89c724d2b110b91bdd73baab3e4f60d2",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 377
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:ed84fc5d1ccbe02f14ef2b934ab1b438aab64a4a1203f4dbe403b8e6dd56c403",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 379
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 414
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "`Markdown`; `Bullets`; `DecisionList`; `MasterSection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:5352b72ae12feb6ce7da3267ae3d668932d1b77cf21dc529c77d3b3bb97d8627",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionList"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "`ProgressFill` + `TokenGauge` grammar it composes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
+            "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProgressFill"
+            },
+            "path": "dashboard/src/grammar/ProgressFill.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "366a2424d44e9fca7a85f4bc568013398c0eb5f5",
+            "content": "sha256:dc26b194f8244e4a9b8588244b8e4c2d2d2d7a66badee028d52d6aa404115af8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TokenGauge"
+            },
+            "path": "dashboard/src/grammar/TokenGauge.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The shared empty-state backdrop the no-selection state renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
+            "content": "sha256:1fdb99f22b57f7bf665c0b14bd93b1c6eda2fe294352e1fce9d7f0dd9705e608",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyStateBackdrop"
+            },
+            "path": "dashboard/src/panels/EmptyStateBackdrop.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared task-document selector prefixes the canonical docPath.\n\nAnchor: \"export const taskDocSelectionKey\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:7d65fda57b3ea27116cf835d80c62f19c05c18d14fdab64f88e039a6e61c3e55",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Task-document rows use the shared task-document key.\n\nAnchor: \"key: taskDocSelectionKey(doc.docPath)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7376d66defd6f56c73b745f460945a3c0a73e785",
+            "content": "sha256:0883e83a63671e28c95ffeff0650781735539790e558155a95dfbc2eb04e4659",
+            "locator": {
+              "end": 755,
+              "kind": "line_range",
+              "start": 755
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Series rows use the shared series key.\n\nAnchor: \"key: seriesSelectionKey(series.seriesId)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7376d66defd6f56c73b745f460945a3c0a73e785",
+            "content": "sha256:6da593eb83c79fe9c6d268d1c1b8787a092810862b21fe8a1d162f4f1d1f311a",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 804
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Lifecycle rows use the shared lifecycle key.\n\nAnchor: \"key: lifecycleSelectionKey(lifecycle.id)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7376d66defd6f56c73b745f460945a3c0a73e785",
+            "content": "sha256:3b4af95a28d5f191e6438a69576791521baf0769d2e496fb163f3c4f2aa92263",
+            "locator": {
+              "end": 882,
+              "kind": "line_range",
+              "start": 882
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Selected typed identities map back to the same three row-key helpers.\n\nAnchor: \"function selectionKey(selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7376d66defd6f56c73b745f460945a3c0a73e785",
+            "content": "sha256:0d9cccf54989fb228356b6992ad152b02b2db69021ffbd60e29c17825c438921",
+            "locator": {
+              "end": 1012,
+              "kind": "line_range",
+              "start": 1007
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_worklist/registry.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_worklist/registry.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -61,7 +51,9 @@ owner packet. MIK-R08 registers the three kinds it raises (`touched_invariant`, 
 
 - The five later registrants are not built yet; each registers when it lands.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R08@v2` of task
@@ -70,34 +62,23 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The four declarations per kind, the later registrants and the item-identity rule. | "Whole-file blobs, tree IDs and run IDs never" | mcp/src/agents_remember/application/knowledge_worklist/registry.py:1-21 |
-| The common satisfying-row lookup. | `subject_row`; `row_kind_for_subject` | mcp/src/agents_remember/application/knowledge_worklist/registry.py:52-63 |
-| The kind declaration. | `ItemKind` | mcp/src/agents_remember/application/knowledge_worklist/registry.py:66-79 |
-| A second registration is refused. | `register_item_kind` | mcp/src/agents_remember/application/knowledge_worklist/registry.py:85-91 |
-| The satisfying row of a kind. | `satisfying_row` | mcp/src/agents_remember/application/knowledge_worklist/registry.py:94-97 |
-| The stable item ID. | `item_id`; `prefixed_sha256_digest` | mcp/src/agents_remember/application/knowledge_worklist/registry.py:100-103 |
-| The three MIK-R08 kinds. | "touched_invariant"; "stale_invariant"; "reached_family" | mcp/src/agents_remember/application/knowledge_worklist/registry.py:106-139 |
-| The registry as data. | `kinds_document` | mcp/src/agents_remember/application/knowledge_worklist/registry.py:149-161 |
-| Four declarations per kind, a refused duplicate, and a later registrant's lookup. | `test_the_registry_declares_four_things_per_kind_and_refuses_a_second_registration` | mcp/tests/test_knowledge_worklist.py:548-586 |
-| An edit elsewhere in the file keeps the ID; different range content changes it. | `test_item_ids_are_stable_deterministic_and_bound_to_range_content` | mcp/tests/test_knowledge_worklist.py:589-603 |
+- The four declarations per kind, the later registrants and the item-identity rule. [1]
+- The common satisfying-row lookup. [2]
+- The kind declaration. [3]
+- A second registration is refused. [4]
+- The satisfying row of a kind. [5]
+- The stable item ID. [6]
+- The three MIK-R08 kinds. [7]
+- The registry as data. [8]
+- Four declarations per kind, a refused duplicate, and a later registrant's lookup. [9]
+- An edit elsewhere in the file keeps the ID; different range content changes it. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the registry is in-process data.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

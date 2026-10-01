@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/lifecycles/memory_census.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/memory_census.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09 |
-| lastVerifiedCommitHash | `8133b6a9de2f787cb6c4527621a70123357aff31` |
-| lastVerifiedCommitDate | 2026-09-08T13:24:49+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Lifecycle models overview](overview.md)
@@ -34,26 +24,20 @@ Defines the strict identities, rows, blockers, and result model for the governed
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The strict census vocabulary is repository-owned. | `MemoryCensusResult` | mcp/src/agents_remember/models/lifecycles/memory_census.py:104-118 |
+- The strict census vocabulary is repository-owned. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Exact relative path spelling is validated without normalization. | `require_git_relative_path` | mcp/src/agents_remember/models/lifecycles/memory_census.py:16-30 |
-| Artifact identity and entity subidentity rules are enforced together. | `GovernedArtifactIdentity` | mcp/src/agents_remember/models/lifecycles/memory_census.py:33-66 |
-| Presence, source reasons, and structural ordering are validated in the census result models. | `MemoryCensusRow`; `MemoryCensusResult` | mcp/src/agents_remember/models/lifecycles/memory_census.py:69-118 |
+- Exact relative path spelling is validated without normalization. [2]
+- Artifact identity and entity subidentity rules are enforced together. [3]
+- Presence, source reasons, and structural ordering are validated in the census result models. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None; the model is local to the governed-memory census.
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited-source reconciliation: created the previously absent governed sidecar from source bytes matching code commit `8133b6a9de2f787cb6c4527621a70123357aff31` (candidate-tree source SHA-256 `66719d12eb277fb3f6394e366491f8a08eceb3da86cc483abdf1f6f837573b14`). No future candidate verification stamp was used.

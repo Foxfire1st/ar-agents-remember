@@ -1,0 +1,103 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/retry_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Delta commands retain canonical collection roots and pass one explicit affected path per module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2b064a36e33d50f392a9db3a5acb82e794c832c",
+            "content": "sha256:df2867d5c69526b61ffa9c7a8abe4fef696ecb45d246a7c602ff7f946bfea651",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pytest_step"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The hook records successful module collection, partitions exact paths, and keeps genuinely uncollected paths fail-loud.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81f720761fefb6324ddcadc1765b211667d6ca3c",
+            "content": "sha256:4ecaaaf8aea87174e975da3755e200a3dffc6d08708c43241e22aba79d52e520",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collectreport"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81f720761fefb6324ddcadc1765b211667d6ca3c",
+            "content": "sha256:716e3b8067e9eb1957cc60dab531e0d731a9e90b2a1fadc0830d99ea9a4f5482",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_modifyitems"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81f720761fefb6324ddcadc1765b211667d6ca3c",
+            "content": "sha256:45cc4cc0f8f8689be466a37690ad8d468da7ea4f2285932909b599ee526e6cf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_uncollected_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Focused tests prove narrow selection, explicit zero-body collection, and all input-refusal families.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "080097757c1a53dbe3e5abec0d503afbc1e99338",
+            "content": "sha256:ede6b42fb71cdce492fb1948593b24ef0cb53ce4bb5f251c855f0a3ae77f1aff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_selection_keeps_only_explicit_affected_modules"
+            },
+            "path": "mcp/tests/test_retry_selection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "080097757c1a53dbe3e5abec0d503afbc1e99338",
+            "content": "sha256:4c075a52ed9154eeb3593c6b3fdb8342e38bf6f19b0209de817cb988b40b42da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_selection_accepts_successfully_collected_zero_body_modules"
+            },
+            "path": "mcp/tests/test_retry_selection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "080097757c1a53dbe3e5abec0d503afbc1e99338",
+            "content": "sha256:a5f7902720f2ed7c5ed999a0bddef9c9acce18f3cda9c649730bb90e3d9fc47e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_selection_rejects_missing_or_escaping_population"
+            },
+            "path": "mcp/tests/test_retry_selection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

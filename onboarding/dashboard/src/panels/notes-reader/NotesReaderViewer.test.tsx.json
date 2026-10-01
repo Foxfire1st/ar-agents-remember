@@ -1,0 +1,142 @@
+{
+  "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test.\n\nAnchor: \"export const NotesReaderViewer = memo(NotesReaderViewerImpl)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe0caf57f7ac45f1e37530a4f8f90edfa30b4eb",
+            "content": "sha256:76965dce1b56e8941a748e0e2aeb18312aec47f90b51622b87ef9489d09273c4",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shell driven by the takeover-wiring test.\n\nAnchor: \"export function CockpitShell(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:1d0bc09667f1531904e8b51c909bf3252556f5752ef2ebaca55a7d13931006d4",
+            "locator": {
+              "end": 887,
+              "kind": "line_range",
+              "start": 887
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e501409efeb6cd92559d312b46f440503133ecde",
+            "content": "sha256:36be73f4e65fee9885d875e2b2b8fa1edb7912c7e3a3e6bec73cfc3966806e9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterDoc"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e501409efeb6cd92559d312b46f440503133ecde",
+            "content": "sha256:6fd5ea81b89ee002d9c75bb18e71fb89937efd0c13d2deee7bd3da958e3ede07",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedMaster"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The seed task document is checked against the generated TaskDocNode.\n\nAnchor: \"export interface TaskDocNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:75707db60d5408eb37a4d43361d1fdda0e8e042c5c1ba17f5d733d592e027fd5",
+            "locator": {
+              "end": 647,
+              "kind": "line_range",
+              "start": 647
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Analytics requires agentPickups and expectationRows arrays, along with the other projected collections.\n\nAnchor: \"export interface Analytics {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:162c26c0cad036357bad30e157f8f2604877fbdae3e2b73ed0f5d7f6e6658d23",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The seeded snapshot satisfies the generated workspace contract.\n\nAnchor: \"export interface WorkspaceProjection {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
+            "locator": {
+              "end": 840,
+              "kind": "line_range",
+              "start": 840
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The seed derives metrics through the shared lifecycle rollup helper.\n\nAnchor: \"export function metricsFor(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:bae146fa4137eb2c539a3d237dcb195d6ec37ca1dfc0c9eea94c4275fe096c33",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

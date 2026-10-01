@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/master_review_gate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Typed blocked-integration payload projection. The former `master_route_review_block` / `master_route_review_refusal` pair is gone from this module; the refusal projection now lives in `worktrees/route_review.py` as `route_review_refusal_projection` / `route_review_refusal_fields`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6864bbe774b036d2edc5d127c595590afe8aca",
+            "content": "sha256:e063df785e3b445a900e4d5a0e430327753b87d41d97c055b2b23d4ede47cccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "blocked_integration_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Preflight and lock-time publication paths consume the gate.\n\nAnchor: \"def _publish_integration_edge(\"; \"def publish_series_integration_under_authority[T](\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b8cdcae84247dc64b5f5dc2cf019d9a6b7874a",
+            "content": "sha256:ceb507d540125da5f00f817836da3982424a4676f0c9ed472ed13effc8d0d240",
+            "locator": {
+              "kind": "symbol",
+              "name": "integrate_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17b8cdcae84247dc64b5f5dc2cf019d9a6b7874a",
+            "content": "sha256:132eb9ddfc25f3b4d0c1574329a014f578fad923df34723c7325319efa5759e2",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17b8cdcae84247dc64b5f5dc2cf019d9a6b7874a",
+            "content": "sha256:3249dbb0ff88d2c80bcd1498f1496059e1e5209bf73c980bcf8c51ee3ae1c211",
+            "locator": {
+              "end": 869,
+              "kind": "line_range",
+              "start": 864
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "content": "sha256:42c01ff8df6539ed7d575b6c7380a841e355694f5bddb1d007aea0ab1d008639",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

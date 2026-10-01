@@ -1,0 +1,248 @@
+{
+  "path": "mcp/src/agents_remember/certification/telemetry/validation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One ordered stream is validated exhaustively without raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:563b31fcc8cff5fefb3348ed6d757886d69dc0749bd6b5b1d5ce4f53fd6689d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_execution_telemetry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Telemetry validation returns deterministically ordered typed findings.\n\nAnchor: \"def _report\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:c0f2dbd0b6d070d6bbe48d87427e5da9437033bc285306ec1e766abb462c6d69",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Telemetry validation constructs typed contract findings.\n\nAnchor: \"def _finding\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:64f1476af233c31e620a7fdc90e36fe6686d770b3927027e33e4c5c9696e7c5f",
+            "locator": {
+              "end": 841,
+              "kind": "line_range",
+              "start": 838
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The validated vocabulary comes from the models layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:e39fb924b60f7c743241f523ee2e8281e6ee5448c825c414c7f1d8edb3c7522b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryEvent"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:c0cd5bc9bf46c72ee483ffb6f864c8f66564de29ae400ea9f379103600080696",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVENT_MATRIX"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:a66a7168bbecc54a23dcc4547a38b43951860cd2ac1ebd4e08a6621594df9dc6",
+            "locator": {
+              "end": 851,
+              "kind": "line_range",
+              "start": 673
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:9af27de7f7e87be9ea2bc6481fea30394c357349b2b09a28379996ab6602df99",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Typed telemetry readiness; a failure is itself typed and never a rail pass.\n\nAnchor: \"class TelemetryReadiness\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:2f2a4ba242f9dad792d77ae9d4e0dde31e2e86b59051462bf07b724ea47fdaa8",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Project the R16 failure surface: readiness red on any telemetry invalidity.\n\nAnchor: \"def compile_telemetry_readiness\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:1b2b3fee3207a67e63e461a0f6cdf21108a092c8fe70e283c28172f2aa00a865",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stream validation checks exact event identity, envelope and sequence consistency.\n\nAnchor: \"def _validate_stream_identity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:23c5e27bd29bc6fc1968c413fbd7efefca15362a2aa2588368fe12ebf995ed1d",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Rail event matching verifies the declared gate and rail identity.\n\nAnchor: \"def _validate_rail_matching\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:f9e4f8bac018ebb927aeca0068a86ef19b55f51818b5502e58459f8860eafa0a",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Rail-pass telemetry requires corresponding passing evidence.\n\nAnchor: \"def _validate_rail_pass_evidence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:8428b3743d48f829f650137242a4af634d356c105df290a37cd501f3253c1ffe",
+            "locator": {
+              "end": 817,
+              "kind": "line_range",
+              "start": 802
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Catalog telemetry validates the selected population and decision events.\n\nAnchor: \"def _validate_catalogs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:1f73b1edc8623bc93a4875c114ea4f395430a7040ec8439ae9b7005f3f23b893",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 331
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Catalog citations must bind their declared decision evidence.\n\nAnchor: \"def _validate_catalog_citations\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:acfe3ee6807f6bdedb2ddcf35cb558671ecb765aeeda953eb5aa81205693e3fa",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 485
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Finalization telemetry validates finalization event authority.\n\nAnchor: \"def _validate_finalization\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0fd7ab7a8abe32cb2bbd96a47440da854a77a3c",
+            "content": "sha256:a09d656cb21eeda0b7ebd66de83fc3526c01aec6032e244097d8fb21992f1b2c",
+            "locator": {
+              "end": 799,
+              "kind": "line_range",
+              "start": 758
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The lock is one question asked at every memory route of the worktree, application and command-line layers; without it an unconverted line would be checked, committed or landed in the old format beside converted memory, where the old format is misread."
+  },
+  "applicability": "Every route of the runtime that writes, checks, syncs, closes out or lands a memory line: knowledge writes, memory-quality runs, managed memory syncs, closeouts, direct landing, record landing, leaf, master and checkpoint landing, and carryover.",
+  "conditions": [
+    "The route has established that its memory holds the layout marker on no side (own, incoming, base or landed commit).",
+    "The memory repository holds converted memory: a local branch tip or a registered worktree's working tree holds knowledge/layout.json."
+  ],
+  "exclusions": [
+    "Reads: read_ar_files marks an unconverted card legacy-format, and taskless reads of an unconverted dataset keep their answers.",
+    "A managed sync already in flight when the lock begins to hold, which can still be continued or cancelled.",
+    "Series closeout and baseline adoption, which commit no unconverted memory into a locked repository.",
+    "The onboarding card writers citation_fix, citation_migrate and route_index_refresh on an unconverted line: they commit nothing, and the closeout that would land their edits is locked."
+  ],
+  "id": "INV-JT28KJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_cutover.py::test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory; mcp/tests/test_knowledge_cutover.py::test_the_converting_candidate_is_gated_never_locked; mcp/tests/test_knowledge_cutover.py::test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses; mcp/tests/test_knowledge_cutover.py::test_only_a_definite_non_repository_reads_as_holding_no_converted_memory; review notes/reports/260928-MIK-L37-review-R1.md (R1 focus item 1 and R2: the lock at every route, 33 mutations)"
+      ],
+      "path": "30-leaf-change.json"
+    },
+    "handoffEntry": "L37-cutover-lock",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Once a memory repository holds converted memory anywhere -- a local branch whose tip holds knowledge/layout.json or a registered worktree whose working tree does -- every route that writes, checks, syncs, closes out or lands memory refuses memory that is unconverted on every side, naming the crossing sync, while a route with a converted side is gated and never locked, a repository that holds no converted memory is not locked, and a probe Git cannot answer refuses by name.",
+  "status": "proposed",
+  "supersedes": []
+}

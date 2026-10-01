@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/curator-review-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The curator template records wave metadata, reviewed files, and a compliance checklist for placement, references, links, history, low-confidence claims, and state updates.\n\nAnchor: `# Curator Review — <wave>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f446c396e22a636d74416015a4cc980f1e1125c",
+            "content": "sha256:eb5d0fb400165434afe61320870f5da00b43f65fbe0d519b6f8059590c141df9",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template captures reference-health issues, bucket corrections, required fixes, developer questions, and next-wave recommendations.\n\nAnchor: `## Reference Health`; `## Bucket Corrections`; `## Required Fixes`; `## Developer Questions`; `## Next-Wave Recommendation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f446c396e22a636d74416015a4cc980f1e1125c",
+            "content": "sha256:c3d9b980651ed0515c0b79357a197ead6defc52b76023aa2fd32caf5dace2368",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-03-repo-bootstrap` skill Phase 4I requires a curator review after each overview or onboarding wave.\n\nAnchor: `### 4I — Curator Review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4014891822eb5110082227e1b68355f17b6e96ef",
+            "content": "sha256:b5b425129ea75774c90e2279d336c987896cda2914d6c653c4c4fedf208f8e61",
+            "locator": {
+              "end": 1048,
+              "kind": "line_range",
+              "start": 1021
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

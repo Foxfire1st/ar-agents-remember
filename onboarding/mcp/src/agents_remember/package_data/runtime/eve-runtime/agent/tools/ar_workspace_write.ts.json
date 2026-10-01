@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/eve-runtime/agent/tools/ar_workspace_write.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The registered install/skill tools in the server's own registration module; closeout and integration are transaction-owned elsewhere, not by an application write helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5541a6ee024664b1451b8470c30bef0aef44e422",
+            "content": "sha256:0a1136e0f2f7c1219d72ecbb160a2284f24b73d2ed045304899a2d8305cfc587",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_installation_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The generator declares the `eve-runtime` target with its per-target ignore set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
+            "content": "sha256:932bb172d3f0bdc333a4d6bf5f8f5cbc97ec6251fdb20a345cedd1bce76ac585",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

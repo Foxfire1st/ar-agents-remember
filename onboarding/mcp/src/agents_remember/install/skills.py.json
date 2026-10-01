@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/install/skills.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`skills_install` is exposed as an MCP payload.\n\nAnchor: `skills_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
+            "content": "sha256:6025c648c34a2fce9d13c09daac94d42aa4b31478fd6c171abd6c502c13633e4",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Runtime package discovery is shared with runtime install.\n\nAnchor: \"class RuntimeTreeSync\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:0caa2f2c7122599bbac9dcb4204717f62f195000b279c71dd486626f53d26b80",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

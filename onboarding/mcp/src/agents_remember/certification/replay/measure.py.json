@@ -1,0 +1,182 @@
+{
+  "path": "mcp/src/agents_remember/certification/replay/measure.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A measured replay consumes closeout-generation exports only, and never a diagnostic envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "286e90610e3a792ce2c1ce26fc1419c6a2039b4d",
+            "content": "sha256:d9ade3d42db65adab25e060613d2ea15cf5d8017f15597cd4e1161a8dfa7a5c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_replay_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reducer consumes the R16 telemetry event vocabulary and catalog payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:e39fb924b60f7c743241f523ee2e8281e6ee5448c825c414c7f1d8edb3c7522b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TelemetryEvent"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:9e4f7bf650db3f32012b089553b70132a3a2fe82a78d527a021b73babc1a8f65",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateCatalogCompletePayload"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:432952d7fce7793cff87a43a3e9fcd85150dfec1ae446ddfe877a410d0095a96",
+            "locator": {
+              "kind": "symbol",
+              "name": "GatePassPayload"
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:fcaae4a8bc1bbcf6b211773fee0e77f47eebb371062dfdc91b79be4cd4192809",
+            "locator": {
+              "end": 850,
+              "kind": "line_range",
+              "start": 673
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reducer produces the measured vocabulary records defined in the replay models module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:e7f18e5cecdcbe91a8e405ef8b3dfd4ccfe126db022c9fba3fd8dc4737f65937",
+            "locator": {
+              "kind": "symbol",
+              "name": "RunMeasurement"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:76ae615a1da0d7f4c0c3c4b8ea4f90336e9820109f5dbb29bfa8d0749ea4f3d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateRunMeasurement"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:90077fc2dd10da2d4687ebbde117527e40e45a0fd699d77f867e619ed94fb714",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayLegIdentity"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The span reduction is delegated to the deterministic span analyzer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "143d4a9cf8e648ff38f3e253065aaa5a325e6721",
+            "content": "sha256:f126146a0dca025e0ef4a7ebb4a5ee3919a2cb7d34a1397f312b23aded02b78b",
+            "locator": {
+              "kind": "symbol",
+              "name": "analyze_span_categories"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/spans.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Refusal raises the shared certification contract error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f52af19e4c6a8e21279ef804f3b29ef5fdf49670",
+            "content": "sha256:40dffc28ab77ec0131cea0d37f8c28fd5b0ba94936a0ed8641b31051a64d67df",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationContractError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f52af19e4c6a8e21279ef804f3b29ef5fdf49670",
+            "content": "sha256:3a379ff84418e4c16c25c2faa91970d67269f3da67190758076822245508e96e",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The public subpackage facade re-exports the reducer.\n\nAnchor: `measure_replay_run`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:e7cd61ea0cc33773de044740feafb237316f17a34777fc462c6a1b18bca9a1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

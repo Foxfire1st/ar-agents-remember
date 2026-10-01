@@ -1,15 +1,5 @@
 # dashboard/src/data/sessionLayout.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/sessionLayout.ts`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -56,44 +46,25 @@ answers "collapse / expand / show the floor chip / what rail percentage".
 - The persisted-layout key format belongs to react-resizable-panels; if the library changes it,
   `hasPersistedPanelLayout` must follow (the unit test pins the current format).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Thresholds, floor math, rail conversion/clamps, persisted-layout probe, and the edge-transition rule. | `RAIL_AUTO_COLLAPSE_PX`, `railDefaultPercent`, `hasPersistedPanelLayout`, `stageBelowPtyFloor`, `autoCollapseTransition` | dashboard/src/data/sessionLayout.ts:6-6; dashboard/src/data/sessionLayout.ts:36-43; dashboard/src/data/sessionLayout.ts:50-61; dashboard/src/data/sessionLayout.ts:64-66; dashboard/src/data/sessionLayout.ts:74-85 |
-| The consumer: root/stage measurement, one-shot `calibrateRail`, and the collapse/expand wiring. | `calibrateRail` | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx:56-56 |
-| The unit suite: crossings, quiet-below-threshold, floor edges, conversion/clamps/fallback, storage probing. | "the ~80-col PTY floor", "the ~280px rail default (review round 2" | dashboard/src/data/sessionLayout.test.ts:34-40; dashboard/src/data/sessionLayout.test.ts:42-58 |
+- Thresholds, floor math, rail conversion/clamps, persisted-layout probe, and the edge-transition rule. [1]
+- The consumer: root/stage measurement, one-shot `calibrateRail`, and the collapse/expand wiring. [2]
+- The unit suite: crossings, quiet-below-threshold, floor edges, conversion/clamps/fallback, storage probing. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-02T20:44:32+02:00 — 260731-EFA-L6 curator W2-B10: repaired 5 citation findings (4 reference rows and 1 prose pointer); scoped recheck clean.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S2 (R3): pure narrow-width edge-transition
-  rules (collapse on downward, expand on upward crossings — manual reopens respected), the ~80-col
-  floor approximation with the 0-width hidden-layer guard, and — review round 2 finding 4 — the
-  ~280px rail-target percentage conversion (`railDefaultPercent`) + the library-keyed
-  `hasPersistedPanelLayout` probe. Verification metadata pinned to the task base until closeout
-  stamps the L1 code commit.
+No applicable cross-repository source was found.

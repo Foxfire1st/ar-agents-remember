@@ -1,0 +1,172 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`MissingMemoryError` subclasses the typed `AgentsRememberError` base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
+            "content": "sha256:56c28bd1521487ce151ff651278f6d2c02241ece891de79c425d0b738c2e9b16",
+            "locator": {
+              "kind": "symbol",
+              "name": "MissingMemoryError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
+            "content": "sha256:d575f9b2ee67ac3dc031035494b5ac05d49dd4ecc36a9b9db4dcf3bc67d28081",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`AgentsRememberError` remains a `ValueError`-compatible base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d584d2d788a3149eb72bbf9420b29b9a028e11f5",
+            "content": "sha256:20c20f4fc731011816f8a9403d598d5363e401ba2e3601ef7639543dfe232398",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Resolver assembly returns `CoordinationContext` instances defined here, reading `contract.memory_mode` straight into the field and falling back to the topology only when there is no contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:bb7b9186ab81a004eb8bcb47dae78f103a00e5c1bd53febee7739f01465ad6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_coordination_context"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:d767a2cde9054e6be196a3909e1435db4e9190a4beb83ba19209fa7c61aecff4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_mode"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:46b0f3d12d4e896b1d391e828e948fd1e53786e845354cd9ed6eb87e9c7cb0f5",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:63fedca648da6f2a515cb261987349a07a859f3a9184f5c98cbad5bc4c92cb9d",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 342
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`MemoryMode` is the two-member memory vocabulary declaration (`external`, `disabled`), declared in the kernel memory-mode module.\n\nAnchor: \"MemoryMode =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489de7b5354c1f0e318b20273a214b7f53714e30",
+            "content": "sha256:2214062a9c907213972ed20d76cd59d4c710d9a819be88a4a08774949f96f0e3",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "489de7b5354c1f0e318b20273a214b7f53714e30",
+            "content": "sha256:d68b2a011a0856142c63254f8e200742ee41d8ad85e4b86df6ca39f54e4243f5",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The wire face of the same value imports and uses the shared alias for `memory.mode`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dee1374065329a5e81164a1712a53b595efb1f7",
+            "content": "sha256:b02c635b151224e6d853737dd7fcd5f5a967e2ab9809266222a06e16d08d556c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemorySummary"
+            },
+            "path": "mcp/src/agents_remember/models/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Serialization converts these models to JSON-safe dictionaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab717e76f2cdfeafb63ae754282c97e7295e186f",
+            "content": "sha256:1e6398917e2cfab045a19f2186a8cfd2b1e20aa312bbd8e2098832fc183ec4af",
+            "locator": {
+              "kind": "symbol",
+              "name": "context_to_dict"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/serialize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,105 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_leaf/currentness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: the subset a page's rows name, and the merge with scope pages.\n\nAnchor: \"block beside leaf pages, cut to what each page returns\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0c077e9a730ff70ada110dd09e15e63e3c1a8db",
+            "content": "sha256:01ab714e58142759a2a5d180e5e4c895768be4471a762231374bad9e892a7fa8",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The gathered currentness of every leaf, and one answer's subset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0c077e9a730ff70ada110dd09e15e63e3c1a8db",
+            "content": "sha256:b6db12495497ab27f17bad7f0dcafd58c78764a68466cacccb7a58931ccf0aba",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafCurrentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0c077e9a730ff70ada110dd09e15e63e3c1a8db",
+            "content": "sha256:5fa59e35149af9f4248cb2c97267e6d5f14091ea5c0cdc642e3d138e3ae78c8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "subset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One answer's block, merged with the scope subset beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0c077e9a730ff70ada110dd09e15e63e3c1a8db",
+            "content": "sha256:d4847d0c01d94dbe890e9025b868895350cde232460a73ce5b2a27dd7dedbdc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "document"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0c077e9a730ff70ada110dd09e15e63e3c1a8db",
+            "content": "sha256:d73e0fcb1c8c77bb603fc891065199d161470efbb3f61ca6e7bd5e8eaf888539",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Which rows name which records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0c077e9a730ff70ada110dd09e15e63e3c1a8db",
+            "content": "sha256:75d2628bbca5c7f2ec1cb05108f3729db6869f54573d95a3a53ac21344b004d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_named"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0c077e9a730ff70ada110dd09e15e63e3c1a8db",
+            "content": "sha256:d5186ed9e2b7a90884f0c14040c540b471e5775d273ac127bb93fa54114b8aca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

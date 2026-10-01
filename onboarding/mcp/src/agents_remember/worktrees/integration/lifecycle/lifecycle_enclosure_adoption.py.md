@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [lifecycle operation integration overview](overview.md)
@@ -48,20 +38,20 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module defines `AdoptedLifecycleArtifact`; `LifecycleEnclosureAdoptionReceipt`; `LifecycleEnclosureAdoptionPreview` as its public seam. | `AdoptedLifecycleArtifact`; `LifecycleEnclosureAdoptionReceipt`; `LifecycleEnclosureAdoptionPreview` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py:32-37; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py:40-53; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py:56-79 |
-| The missing-intent generation archive recognition predicate. | `_LEGACY_MISSING_INTENT_ARTIFACT`; `_is_legacy_artifact` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py:30-33; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py:265-269 |
+- The module defines `AdoptedLifecycleArtifact`; `LifecycleEnclosureAdoptionReceipt`; `LifecycleEnclosureAdoptionPreview` as its public seam. [1]
+- The missing-intent generation archive recognition predicate. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
@@ -78,16 +68,3 @@ The lifecycle store preserves a superseded legacy missing-intent generation as
 (`lifecycle_operation_store._retire_missing_intent_generation`). This module treats those exact
 archives as owned artifacts so enclosure adoption can move them into the canonical lifecycle root
 unmodified. Part of the landed L25 candidate `99dc249b`.
-
-## Update History
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  enclosure adoption now recognizes the `legacy-missing-intent-generation-{n}.json` archive as an
-  owned artifact (`_LEGACY_MISSING_INTENT_ARTIFACT`, `_is_legacy_artifact`). Verified at code
-  commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: removed obsolete successor-intent WAL recognition from the documented adoption surface. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_adoption.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

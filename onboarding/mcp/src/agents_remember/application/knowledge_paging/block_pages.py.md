@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_paging/block_pages.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_paging/block_pages.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T21:41:17+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544`|
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -44,7 +34,9 @@
 - **R2-1 resolved by L01:** a tail of more than 64 queued seeds is now refused by name, `seed_queue_exceeded`, instead of raising a `ValidationError` while minting (ruling 2026-09-29 23:21:57 chose the named refusal over chaining).
 - R2-2 (accepted as documented in c-04): a collapsed entry's `counts` carries `total` and `returned` but no `remaining`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R02@v2` of task
@@ -53,32 +45,20 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: the block, the tail, the collapse, the queue refusal, and the two kinds of seed. | "One bounded knowledge block for several seeds" | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:1-22 |
-| Laying seeds out within one threshold. | `bounded_block` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:52-79 |
-| Deferred entries, or the collapsed tail when those would not fit. | `_tail` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:82-91 |
-| The two prepared kinds, and the refusal code a tail too long for one queue earns. | `SEED_QUEUE_EXCEEDED`; `Prepared`; `BlockEntry` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:42-47 |
-| Each kind's tail collapsed into one entry, or refused `seed_queue_exceeded` beyond `MAX_QUEUED_SEEDS`. | `_collapsed_tail`; `_collapsed`; `MAX_QUEUED_SEEDS` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:94-100; mcp/src/agents_remember/application/knowledge_paging/block_pages.py:103-124 |
-| A leaf's or a scope's next row, and the smallest form of a later entry. | `_first_row`; `_placeholder` | mcp/src/agents_remember/application/knowledge_paging/block_pages.py:127-133; mcp/src/agents_remember/application/knowledge_paging/block_pages.py:136-139 |
-| The envelope the block is measured in. | `_tree_block` | mcp/src/agents_remember/application/published_intent.py:507-529 |
+- The module statement: the block, the tail, the collapse, the queue refusal, and the two kinds of seed. [1]
+- Laying seeds out within one threshold. [2]
+- Deferred entries, or the collapsed tail when those would not fit. [3]
+- The two prepared kinds, and the refusal code a tail too long for one queue earns. [4]
+- Each kind's tail collapsed into one entry, or refused `seed_queue_exceeded` beyond `MAX_QUEUED_SEEDS`. [5]
+- A leaf's or a scope's next row, and the smallest form of a later entry. [6]
+- The envelope the block is measured in. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the block holds one memory tree's pages.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): MIK-R01 gives the block a second kind of prepared seed. The Logic names `Prepared` (leaf or scope), the per-kind collapse `_collapsed_tail` (ruling N1) and the named refusal `seed_queue_exceeded` (`_collapsed`, carried R2-1, ruling 23:21:57); the Invariants bullet and the R2-1 Todo now say the tail is bounded for any seed count. Three rows were added. **Two reopened claims were re-read and reworded:** the `_tail` row (the collapse now goes through `_collapsed_tail`) and the `_first_row`/`_placeholder` row (they now take either kind); this pass's generated-repair bullet for the latter was removed because its claim was reworded. The module-statement row was re-measured (`1-16` → `1-22`).
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): created this card for the new file MIK-R02 adds. It records the architect rulings of 2026-09-29 19:56:40 (Q1 the whole block is bounded and the remaining seeds are deferred), 20:40:40 (F2 the tail collapse, `oversized_row` only alone) and 21:32:34 (R2-1 carried to L01, R2-2 accepted). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,25 @@
+{
+  "path": "dev-skills/dashboard-experience-review/delegation-map.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pipeline (Stage 4) that consumes this delegation map.\n\nAnchor: \"Stage 4\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9675efec08314d237737fc275cadad172934ec",
+            "content": "sha256:3e5052ad84e0a8430c57a8e61336f025c0c97e8095f915e710ef8b7d7966850d",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dev-skills/dashboard-experience-review/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

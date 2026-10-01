@@ -1,0 +1,103 @@
+{
+  "path": "dashboard/src/panels/ChatActivityIndicator.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`CockpitShell` is the sole catalog driver/reconciler owner for the shared store.\n\nAnchor: \"Catalog ownership is shell-lifetime and view-independent.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:b43349d75530db9c11f3d120e7df74afb827bdd70b26785bef5dffdbbef0c32e",
+            "locator": {
+              "end": 888,
+              "kind": "line_range",
+              "start": 888
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`LifecycleList` is this component's sole production consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleList"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`SessionRail` is a peer renderer of the same normalized session-state catalog.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:cd97a64dc1b9b7ee7a84b776bd75c657e02a4f1b896d9745402a21d609738b03",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionRail"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:c35cc5ef9738dc2f56674dc5950e8efa90d2b3dddf4dcb33005f8794a2e64f61",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Focused tests cover mapping, exact-leaf-first identity, lifecycle fallback, precedence, missing classification, and omission.\n\nAnchor: \"maps an observed busy chat to working\"; \"omits activity without a live bound harness seat\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7588eed4ea9f651c629e8840acfbc5fa2d093ac6",
+            "content": "sha256:7a6a76dff44fff8950a2a9f04e141eec63fef5f38cb4d588ac9f8b20123d9846",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "dashboard/src/panels/ChatActivityIndicator.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7588eed4ea9f651c629e8840acfbc5fa2d093ac6",
+            "content": "sha256:fe24e7c9cb3d67d9c080feec417182645ee702e6c0adbdc6d7d9afbb49e999ff",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "dashboard/src/panels/ChatActivityIndicator.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

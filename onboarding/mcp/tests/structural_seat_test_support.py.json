@@ -1,0 +1,66 @@
+{
+  "path": "mcp/tests/structural_seat_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper writes one canonical sprint/master/leaf topology and returns its three document refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70128088dafbb09655d1a99cf4cca17559502a56",
+            "content": "sha256:417140f0d7e1afa280d64f7aeb58faf8735e7498050991bb42d8d3ff19b1cc5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_structural_topology"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Settings and runtime configuration remain isolated under the supplied root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70128088dafbb09655d1a99cf4cca17559502a56",
+            "content": "sha256:2b0d769a9cddd60f9b8b4ce97feccbfc90d9cd31adf81408dd2c09685fd44f03",
+            "locator": {
+              "kind": "symbol",
+              "name": "structural_config"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "70128088dafbb09655d1a99cf4cca17559502a56",
+            "content": "sha256:24d5529bee5b0c0f287ad2cf0500584bf2f3e0eeef9f27476990233bd57ac42b",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_structural_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fake host records concurrent lifecycle effects without starting tmux.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70128088dafbb09655d1a99cf4cca17559502a56",
+            "content": "sha256:6b721cf3e486f183de3c7c3ecd4e2e7ffdd5ac2e086bb7c338046e500908eb95",
+            "locator": {
+              "kind": "symbol",
+              "name": "FakeHost"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

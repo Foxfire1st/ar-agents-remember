@@ -1,0 +1,444 @@
+{
+  "path": "mcp/src/agents_remember/application/role_capsules/launch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "How a taskless seat's absent task plane is spelled once, and why it cannot be mistaken for a task path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:31b789bdc5431d17293202c10fa7fada2d0809783764bf557d32326fc48975e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "FREE_AGENT_TASK_REFERENCE_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The eve carrier path, including the admitted-workspace read-back out of the artifact the consumer re-verifies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:f16a829e3f81bb42b19c7fc4fd329ea0c03841548d5f4476abf13e34d676a3cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_eve_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The free-agent path, and the named refusal of an eve free agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:2a6f60890b1a5db817dc40a890f53793501c4e63583ef73f38113ec37691a260",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_free_agent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The delivered value and its per-run record; the two carriers are set exclusively.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:57ff74d1f2da93a73a71925da757618190efff3bbb43cd6c95748a90f80bd6ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capsule_launch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The enclosure lookup goes through the control plane's one contract reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:52e70bf46706735506b415b2f2e3c3cefdeaa24126fe36f0c3275278c0352270",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enclosure_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The carrier directory is per seat and derived from the task path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:ebb5a2bf899466b229b1c7858ada9529e424d5ce0cb42feb7b075e1d264d2bf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carrier_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The one routing rule for a seat addressed by role and operation, which a taskless launch also uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:4b7ba4689b56507f70c5d55a82df8bbe6965ad4e6f484bd7a0a551cf1d5a8fd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "routed_admission_for"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The same operation the registered MCP tool answers, and the resolved repository root that D13's second half carries onto the projection request.\n\nAnchor: `AdmittedEnclosure.code_repository_root`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:c3d2144310d2a38eeed8be4d4c358291431cf1e2cd8b6b4b0fd84182fd42189c",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_task_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:f3216586d98fa1bc36cb0829601d6140603c2f527602b04d4505578c044809e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmittedEnclosure"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:2bb1b1020f6a676b875c0ed002574c7c443705a92f4b99021d8b6abe85221341",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "L7's produce side, which the eve path calls rather than adding a second carrier format.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d915058a55dad7d2787b0fa1a60deaf2182c01a",
+            "content": "sha256:41bc4cffe90304a076c0f8625742a5b55ffadb078b94ebea36a5f249fab3aa4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "materialize_eve_binding"
+            },
+            "path": "mcp/src/agents_remember/application/eve_capsule/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The taskless seat class the developer's free-agent ruling admits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a07428c28a9916272c8596dd1cdc801b0b246cb8",
+            "content": "sha256:91c72cd31a1fc621e8b4480de94c6603ab1ab3054b1bed54c5e153f767f2bfc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASKLESS_SEAT_ROLES"
+            },
+            "path": "mcp/src/agents_remember/serving/task_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The cases pinning the named absence, the identity-moves-with-the-seat rule, and the registered boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:e4c939bbf5aab6df79375349b3f8c8dd53e7b4ab8926410fc9dc7a925c916cd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_free_agent_admission_names_its_absent_task_plane"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:9de8129c9b08389844caf4d588ecbb84a0e6a691a10fd8bced1a5bc430bb64ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_free_agent_capsule_identity_moves_with_the_seat"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:469c018e5897bf1bb94cb1ecddcf41ebd9eae5d91b8b5fa492beaf8f8daf2841",
+            "locator": {
+              "end": 944,
+              "kind": "line_range",
+              "start": 920
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:e790c7c17d48201470462e3d093c1e9bb33771d4d84bd0b2f8dd94fa6f659d7d",
+            "locator": {
+              "end": 974,
+              "kind": "line_range",
+              "start": 946
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The work branch of a taskless seat whose workspace is not a git work tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:8427bb5a62cc58b95f6ed349017f71fcb38010993826680f2e13a813e884fc94",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNVERSIONED_WORK_BRANCH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The production-chain acceptance for a task-attached seat and for a free agent, read from each session's own first prompt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:95087f358b1ee7c78e6d453fd4f9327cec8d6171b2b443cf1811f4f0829586b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:e63878f1d8d84c3eb1c8dae92b740660a0be1589c72f3fecc5825b6954d92a25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:12f24684eea2dd94f77b54d8cda733688fec59fc291bfe44959ad42e92524ccd",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 530
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Where a launch's eve carrier is written, and why it is outside every workspace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:cdb207449967c2269a38d02bb48e809187fe2903bed6c80108c28784bd50588a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_CARRIER_ROOT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The five facts a task-attached seat resolves together so two carriers cannot bind two enclosures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:454d608788c868d0954a56f2e210d2f7f054d6affd15319e874eb648e7f724eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmittedTaskSeat"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:1e3f0dc9c45024bb61aa80e29b0ca809b62d4f7ba7e5515b2f9b9a3d94c3ccfc",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The frozen DTO's absent task plane, minted once here; the digest is the admission's own content address.\n\nAnchor: `FreeAgentSeatAdmission.digest`; `FreeAgentSeatAdmission.admitted_facts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:3b059a3855ffd0825fab4d4ff4223ac06d5c959ef18a8891443beb5b2622a33e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FreeAgentSeatAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The altitude comes from the composition manifest and the workspace identity from the workspace's own Git facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:6515eaffe3e40642432dbe2c48035818502c2d877a3871353364ce7ee3856e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "free_agent_seat_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The repository identity a taskless seat is admitted under, and the branch fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:8be3cd340cd462f44b5ad7be88d5d48f83a79fcc78e8800da01e41e774a56708",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:9a87529e252dbd60fad23a41ae30cdd4759e98b285b8d448917107a842b31881",
+            "locator": {
+              "kind": "symbol",
+              "name": "_registered_repository_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The entry point the launch points reach through the serving port, and its own role refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_launch_capsule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The task-attached path: document resolution, the registered root, the enclosure lookup, and the named refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:94ef94afb0a6a6128e715b739879a01c9354cd0b387000a138a7c7aed49f9fbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_admitted_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

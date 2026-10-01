@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Lifecycle control execution services.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1542eef0acb573cf027cf68c99ba1f3f466325b",
+            "content": "sha256:4d08bbdf2c07545bb9938540d775e80ac5037d4e17f512ff80b0614f62ef997f",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

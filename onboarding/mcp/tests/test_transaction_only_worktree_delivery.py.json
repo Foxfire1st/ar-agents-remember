@@ -1,0 +1,325 @@
+{
+  "path": "mcp/tests/test_transaction_only_worktree_delivery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Named acceptance-tool prohibition and real failing-hook probes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:c62723d18b1c4fd0296917077f2d9fab713dd26cec34a39f65d3ce3a9b48f40b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_forbid_acceptance_tools"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:66e0c06d73a6299adc8ab6ee6e4bc7d43df255bec2bf84c8a2c9d1ec3e51fb9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_failing_pre_commit_hooks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One code/memory commit, cache absence from the committed tree, and both trailer readers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:7070919722fc3ff277ea397bed40f2c54b5c9476b665757c7b43513caf5fbcc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_memory_attribution"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:bb043388f8a411c5e75a54f79141a1cdeed0b92c912901d306567521edb4e655",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_closeout_commits_code_and_memory_without_acceptance_tools"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Interrupted public closeout resumes only its exact accepted code identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:b7fec77e65904fc08639e972e41562cf2508bd65b12839053f0ae386f852d587",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_recovery_attributes_the_memory_commit_it_still_owed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:bb043388f8a411c5e75a54f79141a1cdeed0b92c912901d306567521edb4e655",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_closeout_commits_code_and_memory_without_acceptance_tools"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:3d29f2660edde9d59ba230e1e302a517fd4dfabf618e5b24b5ff5b6e08309e0a",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Integration publishes accepted refs or refuses source movement before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:4e88fc7509ba3e9c1d9e8f2b5ab4297970cce6f98d8583f87d692eef7ff50117",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_integration_merges_prepared_pair_without_acceptance_tools"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:3c7212346c6d01ef181cdd225659881cd5bac326804f5a935692d2e8fe6d71f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_integration_ref_movement_refuses_before_pair_merge"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:e704c5ee9c15956daff4721e9fa5650f519b1db2cbfa661f8f3b83f1e20f21ad",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 451
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:e5b10641bb009296da34f76b0bc866878b8cdf5597222e75796123fcbe6a91a9",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 507
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A recloseout after sync records the actual memory head.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:8f3b85d477f3dcb3bfb0b1e50ae4f9fd386d5920e9ba49497eff1034ff428c1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recloseout_after_a_sync_records_the_memory_head_as_content_commit"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:7b23223662a441f4052a85623033d7445e5fc08d37512c3e6b1e98a0263930c8",
+            "locator": {
+              "end": 607,
+              "kind": "line_range",
+              "start": 574
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cache materialization preserves both repositories' refs/commit objects and real content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:caf8510b81c95bc213f530f15ddcf8f08543c6fe07b3eebaddf8f171adcf3481",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_content_unchanged"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:b6661202595fdd9e58c59c266e1519d7a71adcb5117870a062bac61372628139",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_state"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:76ea4daee605c50b692f0fcfc449469ed964a366c25aff883f0c0297e44deef3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_refresh_preserves_current_bytes_and_materializes_a_missing_cache"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:1b83ad50655ccf0ea2f1cb04fcda3cf6cc73c007c6db52cbd7cfb62c083b42f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_refresh_repairs_malformed_forged_and_reordered_data_from_git"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:3af5b5e51623ec600c3a75273379fab96408827e4611a85b740a66fcc791ee40",
+            "locator": {
+              "end": 679,
+              "kind": "line_range",
+              "start": 610
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:68b38f54e78bde0646505ba22888ca335e0d2f78c361daad7cba577694c43da0",
+            "locator": {
+              "end": 743,
+              "kind": "line_range",
+              "start": 705
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:b6661202595fdd9e58c59c266e1519d7a71adcb5117870a062bac61372628139",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_state"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:caf8510b81c95bc213f530f15ddcf8f08543c6fe07b3eebaddf8f171adcf3481",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_content_unchanged"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:76ea4daee605c50b692f0fcfc449469ed964a366c25aff883f0c0297e44deef3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_refresh_preserves_current_bytes_and_materializes_a_missing_cache"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:1b83ad50655ccf0ea2f1cb04fcda3cf6cc73c007c6db52cbd7cfb62c083b42f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_refresh_repairs_malformed_forged_and_reordered_data_from_git"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:3258343bf053b0241dd813ec47cdcf5dabd46ca82c42fa22d066cefa47b82724",
+            "locator": {
+              "end": 672,
+              "kind": "line_range",
+              "start": 648
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e286b24896e72d591c6582466bce51fb7c6883bb",
+            "content": "sha256:68b38f54e78bde0646505ba22888ca335e0d2f78c361daad7cba577694c43da0",
+            "locator": {
+              "end": 743,
+              "kind": "line_range",
+              "start": 705
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

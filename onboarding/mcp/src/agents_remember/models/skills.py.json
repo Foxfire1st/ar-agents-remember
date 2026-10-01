@@ -1,0 +1,37 @@
+{
+  "path": "mcp/src/agents_remember/models/skills.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The skills install application entry point delegates to package install services.\n\nAnchor: \"return install_skills(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
+            "content": "sha256:364e64a9ed7adbe0959731447cf332d8eab1df0d3ef2a126b90f79e86a3120a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "skills_install_tool"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
+            "content": "sha256:d045b602cb5add906b1035fcf1ad35dcc7973f7cd026fdda0fecbf4f31301f21",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/application/runtime/skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,287 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The ordered appended-table tuple whose prefix rule makes generation 2's manifest begin with generation 1's ten tables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:ff311b81180b8ac928357f45df628eda2a0f20ce5f3c84e85e5ec90fe3966968",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The registry these envelope tables' payloads are admitted through — re-read by hand; since `KS-R14@v1` it holds three groups (the internal conformance kind, the eight facet kinds and the two mechanical-detection kinds), and these tables' columns are unchanged by that.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:073d446601ea1ffe4587b00c78fd5ce4088c6b7ac8046952ffa8c3b3f47d0057",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The one entry point that validates a payload for a kind and schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:a70c5252d91317d7a1e283ddcb483f6714da87613f16dd6229fe84b06582cb7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_record_payload"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:08f75fed96d49a9787dc60c10f9dbc4e7d79487c6e07713d5a2f7e0f83d9c199",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The schema disagreement the preflight refuses before any session exists, and the same-generation merge that must still pass on this build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:642a852cbc4ba4d487a9d8fdab603b9c56f8321e12be45a674da7c1e1c25ae85",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_generation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The envelope, route and governing-association cases, including the route-cycle rollback and the payload refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:a38f0bd230322e760e7e21e0b0963d0a89771f407f6a96b033f2d579bc95b77c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_version_1_merge_on_the_generation_2_build_selects_generation_1"
+            },
+            "path": "mcp/tests/test_knowledge_merge_generations_and_envelope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:3ae007e80425b53abd9278056816ef201ad500368ef4f42e2719d27907540836",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_confined_path_is_authored_and_its_identity_returned"
+            },
+            "path": "mcp/tests/test_knowledge_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared column order, key tuple and typed-JSON set per appended table — the encoder's ordering and decoding inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:841fd9df455d21b660732943c373550faff14efb903cf7d9a2b6945dba4eb697",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The six `STRICT` `CREATE TABLE` statements, including the route self-reference and its one-node cycle `CHECK`, and the typed-JSON payload column with `json_valid`.\n\nAnchor: `STRICT`; `CREATE TABLE`; `CHECK`; `json_valid`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:1bd63a4fa80b838089208e4fb04039f38f67fc21b4a73c306301f831eac71bab",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The nine reverse-direction indexes, including the governing-route lookup index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:ba27d00f0f324eb8db86b1a1a6908aaaeaaf4258a7514bfc7baebe9ddbc3a3c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_INDEX_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The eight immutability triggers: sealed revisions cannot be rewritten or deleted, identities cannot be rebound, and a governing association cannot be repointed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:35aad81c778134082b66d012f8dece05427e121ed05e6c5b63efa7828592bfe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TRIGGERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one added required feature, which is part of the fingerprint because it is part of the manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:4167d696ecdc4b42aaad312532f885dee839785dec861df9cf902285fc05866e",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_FEATURES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The generation record this module's data is composed into, and the additive composition that keeps generation 1's prefix intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:67cb201db90b7a932910d27626c0d8c6b0227f1e617d5351c757dacd2ede077e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_2"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shipped generation-1 tables this module appends after and never touches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:6feb1da7702db4f19134857c1233bc1fa288925fa0b603a5174a37150637a0c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The write layer that authors a route and attaches a governed row, and the read side that reports an ungoverned row as ungoverned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:3718ecd74520da19b491579a4561d932d487ab78213dd982c79c6eb37acd1392",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_route"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:bbeee9ea2853de2cc2edc00aed631af9b62395dee51bc00174fdc00a8c2f92ea",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:466c7b68bb6cb0938965095a8159132d5f6fc5e289beee95ef65b243e416d167",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 342
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

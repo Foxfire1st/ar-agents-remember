@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/models/terminal_catalog.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The catalog row separates binding, replacement, spawn provenance, and pinned-brief receipt evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:0fac878e1709e9f97f98da114e320e9ff71e56f1dba70b05d0afc77d57e998c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalogEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The catalog row round-trips caller-kind provenance and the dispatch receipt only when set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:c58a31ba240eea24374dd2b274ce66ec7cc966b5a7a856343af3d518ebf40876",
+            "locator": {
+              "kind": "symbol",
+              "name": "from_json"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:d794d1e3511cf1ddec96912598eb95324bcf27c1d6c7401b4008bbf0b1b7aa81",
+            "locator": {
+              "kind": "symbol",
+              "name": "to_json"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Binding promotion clears its staging marker and preserves receipt evidence only for the identical document-and-role address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:a817e158f5b4bc00c65c18d72d6ceab8d01e42a5be464a4f417c2a236050e485",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_task_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:6352b9a8f53f20b08428339f8f1dacbf08c3a4a9d3cc91a68d6b4a98c48214de",
+            "locator": {
+              "end": 401,
+              "kind": "line_range",
+              "start": 384
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current parsing recognizes task-document references explicitly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:b1d7267dac092df7edc70d6c3087d4020dfd211d8c0a69bee765d2a87c45632b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_optional_task_document_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Role fallback is isolated to migrated/internal catalog interpretation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:283ff80e7ebfee662e675abe39db9fc81fc8db0df6891329ae796d9c566b50c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "migrated_seat_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

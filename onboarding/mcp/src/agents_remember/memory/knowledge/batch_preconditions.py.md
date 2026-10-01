@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/batch_preconditions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/batch_preconditions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -144,104 +134,51 @@ expected row digest, unlike the other two removals; nothing unsafe is reachable 
 immutable by trigger and a repeat removal refuses `missing_expected_row`), but it is a decision for whoever
 reworks removals next.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The single entry point and the order it fixes. | "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:170-182 |
-| The four rules the module is built on, stated once in its docstring. | "Four rules shape the checks" | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1-21 |
-| The expectation comparison, including the expected-absence branch. | `require_expected_records` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:185-206 |
-| The one-authored-act duplicate rule and the accepted-origin refusal. | `require_distinct_commands`; `require_no_accepted_origin` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:209-225; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:228-248 |
-| The insertion-is-never-an-upsert rule. | `require_insertions_absent` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:368-384 |
-| The completed-graph rule stated where the whole-batch pending set is built. | `require_command_targets` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:387-399 |
-| The lineage pass that hands the batch's own declarations to the shared rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:402-427; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:503-531; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:534-542 |
-| The per-command dispatch and the identity/label check. | `require_command_target`; `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:567-575; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:690-727 |
-| The two aggregate checks, which admit an owner a command in the same batch declares. | `_require_new_invariant_revision`; `_require_new_family_revision` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:745-780; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:783-818 |
-| The refusal that states the completed-graph remedy rather than prescribing a reorder. | `_uncreated_predecessor` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:821-833 |
-| **The shared endpoint check: it refuses a missing relation endpoint before any row is written, naming the offending identity in the refusal's `record_id` and the endpoint kind in its `table`.** | `_require_endpoint` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1288-1315 |
-| The per-noun remedy wording the shared check reads, so a refusal names the endpoint kind the caller actually supplied. | "_ENDPOINT_NOUN: dict[str, str] = {" | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1278-1285 |
-| The shared lineage rule this pass calls with the batch's declared edges. | `declared_cycle`; `find_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:97-130; mcp/src/agents_remember/memory/knowledge/lineage.py:133-157 |
-| The identity vocabulary this module reads through. | `inserted_identities`; `pending_identities`; `present` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:495-500; mcp/src/agents_remember/memory/knowledge/candidate_records.py:503-509; mcp/src/agents_remember/memory/knowledge/candidate_records.py:512-519 |
-| The one-authored-act duplicate rule and the accepted-origin refusal. | `require_distinct_commands`; `require_no_accepted_origin` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:209-225; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:228-248 |
-| The insertion-is-never-an-upsert rule. | `require_insertions_absent` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:368-384 |
-| The completed-graph rule stated where the whole-batch pending set is built. | `require_command_targets` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:387-399 |
-| The lineage pass that hands the batch's own declarations to the shared rule. | `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:402-427; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:503-531; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:534-542 |
-| The per-command dispatch and the identity/label check. | `require_command_target`; `_require_identity` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:567-575; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:690-727 |
-| The two aggregate checks, which admit an owner a command in the same batch declares. | `_require_new_invariant_revision`; `_require_new_family_revision` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:745-780; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:783-818 |
-| The refusal that states the completed-graph remedy rather than prescribing a reorder. | `_uncreated_predecessor` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:821-833 |
-| The shared endpoint check and its per-noun remedy wording. | "_ENDPOINT_NOUN: dict[str, str] = {"; `_require_endpoint` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1278-1285; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1288-1315 |
-| The shared lineage rule this pass calls with the batch's declared edges. | `declared_cycle`; `find_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:97-130; mcp/src/agents_remember/memory/knowledge/lineage.py:133-157 |
-| The identity vocabulary this module reads through. | `present`; `pending_identities`; `inserted_identities` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:512-519; mcp/src/agents_remember/memory/knowledge/candidate_records.py:503-509; mcp/src/agents_remember/memory/knowledge/candidate_records.py:495-500 |
-| **The census record group's generation guard: free for a batch that declares no census command, and otherwise the record group's own refusal, read from the open store so both numbers travel as facts.** | `require_census_generation`; `census_commands` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:342-356; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:359-362 |
-| **The closed three-command vocabulary the generation guard's filter is built from.** | `_CENSUS_KINDS` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:365-365 |
-| **The census target check: the generation guard restated, then the command's declared kind and frozen schema resolved from the declarations table and validated through the envelope seam, so an unregistered kind or an undeclared field is `invalid_payload` rather than a storage error. Reference resolution is deliberately absent — that belongs to the record group's own write step, in command order.** | `_census_check`; `_CENSUS_DECLARATIONS` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1320-1349; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1354-1358 |
-| **The dispatch table every command kind carries an entry in, where the three census commands name `_census_check`.** | `_TARGET_CHECKS` | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1361-1393 |
-| **The payload seam the census target check validates through — the one place any write path decides whether a payload is admissible for the kind and schema it declares.** | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:245-289 |
-| The node that proves the completed-graph pass refuses a cycle the operation cannot yet see. | "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet" | mcp/tests/test_candidate_batch_transaction.py:561-604 |
-| The node that proves a batch may author its lineage in any order. | "test_a_batch_may_author_its_lineage_in_any_order" | mcp/tests/test_candidate_batch_transaction.py:470-516 |
+- The single entry point and the order it fixes. [1]
+- The four rules the module is built on, stated once in its docstring. [2]
+- The expectation comparison, including the expected-absence branch. [3]
+- The one-authored-act duplicate rule and the accepted-origin refusal. [4]
+- The insertion-is-never-an-upsert rule. [5]
+- The completed-graph rule stated where the whole-batch pending set is built. [6]
+- The lineage pass that hands the batch's own declarations to the shared rule. [7]
+- The per-command dispatch and the identity/label check. [8]
+- The two aggregate checks, which admit an owner a command in the same batch declares. [9]
+- The refusal that states the completed-graph remedy rather than prescribing a reorder. [10]
+- **The shared endpoint check: it refuses a missing relation endpoint before any row is written, naming the offending identity in the refusal's `record_id` and the endpoint kind in its `table`.** [11]
+- The per-noun remedy wording the shared check reads, so a refusal names the endpoint kind the caller actually supplied. [12]
+- The shared lineage rule this pass calls with the batch's declared edges. [13]
+- The identity vocabulary this module reads through. [14]
+- The one-authored-act duplicate rule and the accepted-origin refusal. [15]
+- The insertion-is-never-an-upsert rule. [16]
+- The completed-graph rule stated where the whole-batch pending set is built. [17]
+- The lineage pass that hands the batch's own declarations to the shared rule. [18]
+- The per-command dispatch and the identity/label check. [19]
+- The two aggregate checks, which admit an owner a command in the same batch declares. [20]
+- The refusal that states the completed-graph remedy rather than prescribing a reorder. [21]
+- The shared endpoint check and its per-noun remedy wording. [22]
+- The shared lineage rule this pass calls with the batch's declared edges. [23]
+- The identity vocabulary this module reads through. [24]
+- **The census record group's generation guard: free for a batch that declares no census command, and otherwise the record group's own refusal, read from the open store so both numbers travel as facts.** [25]
+- **The closed three-command vocabulary the generation guard's filter is built from.** [26]
+- **The census target check: the generation guard restated, then the command's declared kind and frozen schema resolved from the declarations table and validated through the envelope seam, so an unregistered kind or an undeclared field is `invalid_payload` rather than a storage error. Reference resolution is deliberately absent — that belongs to the record group's own write step, in command order.** [27]
+- **The dispatch table every command kind carries an entry in, where the three census commands name `_census_check`.** [28]
+- **The payload seam the census target check validates through — the one place any write path decides whether a payload is admissible for the kind and schema it declares.** [29]
+- The node that proves the completed-graph pass refuses a cycle the operation cannot yet see. [30]
+- The node that proves a batch may author its lineage in any order. [31]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): **re-read every citation this card carries against the staged working candidate and recorded the census record group's precondition and target check.** The leaf added `require_census_generation(store, batch.commands)` to `require_preconditions` — the fifth generation guard, in the same position, after the accepted-origin refusal and before `require_insertions_absent` — so the order block in the Logic section was **rewritten from five listed steps to the ten the function now calls**, and a new paragraph records both halves of the addition: `census_commands`/`_CENSUS_KINDS` make the guard free for a batch that declares no census command, and the guard itself delegates to `census_records.require_census_generation`, which reads the dataset's own recorded generation and refuses one that predates the census's tables with both numbers as facts. A second new paragraph records `_census_check`, the target check the three census commands now dispatch to through `_TARGET_CHECKS`: it re-states the generation guard, resolves the command's declared record kind and frozen schema from `_CENSUS_DECLARATIONS` and validates the payload through `record_envelope.validate_record_payload`, so an unregistered kind or an undeclared field is the shipped `invalid_payload` refusal rather than a storage error. The card now states the deliberate omission the leaf's own comment calls out — **reference resolution is not in the precondition**, it belongs to the record group's write step, which runs in command order, so a disposition may link to a claim the same batch creates — as both a Logic paragraph and a Boundary invariant. Twenty rows whose cited ranges this leaf's insertions (two import blocks, the guard and its filter, the declarations table and three dispatch entries) had moved were **re-cited by hand to each construct's declaration extent** — `require_preconditions`, `require_expected_records`, `require_distinct_commands`/`require_no_accepted_origin`, `require_insertions_absent`, `require_command_targets`, the lineage pass and its three helpers, the two aggregate checks, `_uncreated_predecessor`, `_require_endpoint`, `_ENDPOINT_NOUN`, the shared lineage rule, and the three identity readers in `candidate_records.py` — and five new rows record the census guard, its vocabulary, the target check, the dispatch table and the payload seam it reads. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:156-156. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `_uncreated_predecessor` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:780-792. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "_ENDPOINT_NOUN: dict[str, str] = {" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1237-1237. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `_uncreated_predecessor` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:780-792. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:155-155. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `require_insertions_absent` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:326-342. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `require_command_targets` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:345-357. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "_ENDPOINT_NOUN: dict[str, str] = {" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1206-1206. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `require_insertions_absent` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:326-342. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `require_command_targets` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:345-357. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:152-152. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `require_expected_records` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:165-186. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `require_insertions_absent` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:294-310. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `require_command_targets` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:313-325. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `_uncreated_predecessor` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:695-707. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "_ENDPOINT_NOUN: dict[str, str] = {" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:1152-1152. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `require_insertions_absent` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:294-310. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `require_command_targets` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:313-325. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `require_completed_lineage`; `_require_declared_acyclic`; `_wider_edges` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:328-353; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:429-457; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:460-468. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `require_command_target`; `_require_identity` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:493-501; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:564-601. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `_require_new_invariant_revision`; `_require_new_family_revision` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:619-654; mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:657-692. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `_uncreated_predecessor` repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:695-707. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 6 generated projection bullet(s) by hand while resolving the memory sync** — `require_preconditions`, `require_expected_records`, `require_insertions_absent`, `require_command_targets`, `_uncreated_predecessor`, `present`, `pending_identities`, `inserted_identities`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T05:00:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read every claim this leaf's additions moved, re-cited each by hand, and retired the one generated projection bullet that had rewritten a range mechanically.** The leaf added the declared-graph composition cycle pass, four target checks and the generation guard; the shared endpoint check was re-scoped so the offending identity travels as `record_id` and the endpoint kind as `table`. Rows were split wherever one claim named several anchors across several extents, so each row's anchor now resolves inside a range that holds it. The endpoint claim was **sharpened** rather than softened: it now states the naming behaviour the construct has. Verification metadata is **not** advanced; the code commit does not exist yet and closeout owns that stamp.
-
-- 2026-09-18T04:55:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read the `_require_endpoint` claim against the construct as it now stands, sharpened it and re-cited it by hand, and removed the generated projection bullet that had rewritten its range mechanically.** The construct genuinely changed: this leaf made the shared endpoint check name the offending identity in the refusal's `record_id` and the endpoint kind in its `table`, so the claim now states that instead of only "the shared endpoint check". The range is the declaration's own extent (`:1034`), an agent's read rather than a projection. A mechanically projected range is unverified evidence. Verification metadata is **not** advanced over unreviewed content; the code commit does not exist yet and closeout owns that stamp.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 7 generated projection bullet(s) by hand** — `require_preconditions`, `require_expected_records`, `require_insertions_absent`, `require_command_targets`, `_uncreated_predecessor`, `_ENDPOINT_NOUN`, `_require_endpoint`, `present` and 2 further anchor(s). Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **re-read every citation this card carries against the current source and repaired the ranges this leaf's addition moved.** This entry recorded the evidence generation precondition and the per-command target check, both refusing before any row is written. Verification metadata is unchanged and the code commit does not exist yet; closeout owns that stamp.
-
-- 2026-09-16T08:10:00+00:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): created this one-to-one card for the batch precondition module. It records the four shaping rules (expectations are comparisons, an insertion is never an upsert, a command list is one authored act, and validation is over the completed graph), the read-only boundary that makes a refused batch leave the dataset untouched, the whole-sequence pending set that makes a forward reference legal, and the lineage pass that hands the batch's declared edges to the shared rule instead of growing a second cycle rule. Also recorded the carried anchor-removal asymmetry as the open item. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

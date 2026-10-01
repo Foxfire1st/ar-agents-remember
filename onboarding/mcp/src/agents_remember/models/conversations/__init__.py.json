@@ -1,0 +1,70 @@
+{
+  "path": "mcp/src/agents_remember/models/conversations/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The curated export surface lists every public conversation-wire name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77a92737a7287b0fc7bf01ddc8d01e1d7c96da70",
+            "content": "sha256:13076dce377aa8eb725ce4fdc37aa492ba7b520781ffa26cde472bff741cd0c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical conversation read/control ports consume these models without owning behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea473ad3fdb2b4326c50dcc3ffb1f83fea184ecc",
+            "content": "sha256:b578393eee940e6ab1a3e5c67260d124bab82a2f7bd92a46851c48fb455efdcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ControlPlanePort"
+            },
+            "path": "mcp/src/agents_remember/serving/ports.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea473ad3fdb2b4326c50dcc3ffb1f83fea184ecc",
+            "content": "sha256:c51d631b92b967c018129a499581c2cc0559a5bbf0ed3d8b53fdb11127b570d4",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/src/agents_remember/serving/ports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The response-contract declarations that make these models the routes' stated contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c20b9d7fc443b18eb1c69d3d9adcbb62a6f51c33",
+            "content": "sha256:a4bcb679d68c3d1c4dc9fd5649ff784c9ecbef260b7d09d7f8883bfa0ed0d870",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireResponse"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

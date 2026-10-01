@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/primitives/memory_cap.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/kernel/primitives/memory_cap.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00                     |
-| lastVerifiedCommitHash | `a89a6fc88d9330eb2749c87b3dcc3f6c4e46c4bd` |
-| lastVerifiedCommitDate | 2026-08-14T12:44:51+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [kernel primitives overview](overview.md)
@@ -68,43 +58,24 @@ omitted.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo
 (`system/sources.md` has no entries).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is configured for the memory-cap module. | — | — |
+No relevant external documentation is configured for the memory-cap module.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Preview reports the selected resource mode and planned command. | `code_quality_gate_preview` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:145-188 |
-| Execution follows the selected capped or uncapped command plan. | `run_strict_code_quality_gate` | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361 |
-| The settings model for `orchestration.qualityGate`, including the host-managed `None` default. | "class QualityGateSettings:" | mcp/src/agents_remember/kernel/_agentic_settings_core.py:248-257 |
-| The fail-loud parser for `orchestration.qualityGate`, including absent/empty host-managed behavior. | `_parse_quality_gate` | mcp/src/agents_remember/kernel/_agentic_settings_sections.py:382-400 |
+- Preview reports the selected resource mode and planned command. [1]
+- Execution follows the selected capped or uncapped command plan. [2]
+- The settings model for `orchestration.qualityGate`, including the host-managed `None` default. [3]
+- The fail-loud parser for `orchestration.qualityGate`, including absent/empty host-managed behavior. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: made the cap explicitly
-  opt-in, recorded the host-managed default and literal pytest `-n=auto`, and
-  removed the stale `MemorySwapMax=0`/mandatory-2-GiB doctrine. Verification
-  metadata remains pinned until closeout stamps the L24 code commit.
-
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: created this file-level
-  onboarding card for the new memory-cap module; content derived from the
-  current worktree source. Verification metadata pinned until closeout stamps
-  the 260731-EFA-L17 commit.
+No meaningful cross-repo references found.

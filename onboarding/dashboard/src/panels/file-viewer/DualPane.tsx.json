@@ -1,0 +1,115 @@
+{
+  "path": "dashboard/src/panels/file-viewer/DualPane.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The read-only CodeMirror pane it hosts on the code side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilePane"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The markdown renderer the sidecar pane reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
+            "content": "sha256:46e6b914756bebae0699a0997ff3d22903e92a1910c7c2228fe012b30e5116d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "Markdown"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The effects-gated boomerang backdrop the `empty` state fills the pane with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
+            "content": "sha256:1fdb99f22b57f7bf665c0b14bd93b1c6eda2fe294352e1fce9d7f0dd9705e608",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmptyStateBackdrop"
+            },
+            "path": "dashboard/src/panels/EmptyStateBackdrop.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The page that supplies `code` + the derived `SidecarView`.\n\nAnchor: \"export const FileViewer = memo(FileViewerImpl);\"; \"import { DualPane, type SidecarView } from \\\"./DualPane\\\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
+            "content": "sha256:68d49b2072bcefb2802fcc2ca39f4e52a689f68bece4654b9454b8327801ceda",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
+            "content": "sha256:e22c9e39acb019f5f9ed92ce6023895a3132ff6e459daeb909031ef2f280e21d",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `FileContent` type / onboarding pairing it renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:28187cd63e1c4f01e1b28b9932d829ac691d9bb591c50b4f84900278f04ed417",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileContent"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The route overview that governs this component.\n\nAnchor: `# dashboard/src/panels/file-viewer/ — File Viewer Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:1-137"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

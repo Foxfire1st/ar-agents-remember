@@ -1,15 +1,5 @@
 # dashboard/src/data/capabilityCatalog.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/capabilityCatalog.test.ts`   |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `842b487b854503d95c9c2d9dce1841198ba93c7d`       |
-| lastVerifiedCommitDate | 2026-07-24T17:08:25+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -66,43 +56,24 @@ stale envelope or a demanded refresh is satisfied by a plain read.
 The suite now drives an abort-aware hung socket through the capability timeout, asserting the normal
 transport error and a successful fresh retry after the single-flight slot releases.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module under test. | "export function fetchHarnessCapabilities" | dashboard/src/data/capabilityCatalog.ts:192-192 |
-| The envelope builder + verbatim error-body fixtures the suite loops. | "export const CAPABILITY_ERROR_BODIES" | dashboard/src/test/fixtures/capabilityEnvelopes.ts:336-336 |
+- The module under test. [1]
+- The envelope builder + verbatim error-body fixtures the suite loops. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-07-24T13:17:50Z — Added timeout/retry regression coverage to the file card. Verification
-  hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R1/R2/R8: state transitions, verbatim
-  404/409/503 + transport errors with envelope drop, schema/model-row refusal (review finding 4),
-  shapeless-body `transport` default (finding 2), single-flight + chained-refresh interleaving
-  (finding 3), memory-only start, and the no-digits cost-honesty pins. Verification metadata
-  pinned to the leaf base until closeout stamps the L3 code commit.
+No applicable cross-repository source was found.

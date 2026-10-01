@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
@@ -236,17 +230,17 @@ The process map keeps stale landing facts inspectable with explicit stale stylin
   it asserts `data-state="stale"` AND `data-refused-polarity` `toBeNull()` on the conduit. Reintroduce a
   polarity field and that null assertion is what breaks.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The server composer of the process nodes the client renders. | "def build_analytics("; "def _start_process_node(entry: dict[str"; "def _process_edges(" | mcp/src/agents_remember/observer/reducer_impl/_metrics.py:129-129; mcp/src/agents_remember/observer/reducer_impl/_processes.py:124-124; mcp/src/agents_remember/observer/reducer_impl/_processes.py:543-543 |
-| The served `EngineProcessNode` / `Analytics.engineProcesses` contract. | `EngineProcessNode` | mcp/src/agents_remember/observer/projection.py:981-1050 |
-| The honest-motion gate the GSAP/Motion read. | `useShouldAnimate` | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-37 |
-| The cockpit shell that hides the rails for the Engine Room view (§4.1). | "const fullBleed =" | dashboard/src/cockpit/Cockpit.tsx:447-453 |
-| `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:934-953 |
-| "def _seed_edge_state(" and "_DECISIVE_SETUP_EDGE_STATES: dict[str" — the only producers of a seed lane's state, including the "metrics=_metrics(lifecycles" reroute. | "def _seed_edge_state("; "_DECISIVE_SETUP_EDGE_STATES: dict[str" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:631-631; mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638; mcp/src/agents_remember/observer/reducer.py:73-73 |
-| The client mirror of the edge, which no longer declares a polarity field. | `EngineProcessEdge` | dashboard/src/types/projection.ts:223-231 |
+### Repo-Internal References
+
+- The server composer of the process nodes the client renders. [1]
+- The served `EngineProcessNode` / `Analytics.engineProcesses` contract. [2]
+- The honest-motion gate the GSAP/Motion read. [3]
+- The cockpit shell that hides the rails for the Engine Room view (§4.1). [4]
+- `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. [5]
+- "def _seed_edge_state(" and "_DECISIVE_SETUP_EDGE_STATES: dict[str" — the only producers of a seed lane's state, including the "metrics=_metrics(lifecycles" reroute. [6]
+- The client mirror of the edge, which no longer declares a polarity field. [7]
 
 ## Current L5I Route State
 
@@ -304,219 +298,3 @@ Engine Room now receives a strict source-lineage projection on each applicable
 process node. Diagnostics renders the aggregate state/summary, and the route's
 test seeds a blocked projection to prove visibility before an agent consumes
 stale enclosure context.
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the Route Model bullet
-  still named `engineRoomStyles.ts`, which the L8 split deleted. Corrected it to the `styles.ts`
-  re-export barrel and named where the two recipes it described actually live
-  (`conduitSvg`/`conduitLine` in `layout.styles.ts`, the fleeting atoms in `flow.styles.ts`). Noting
-  plainly that this staleness is pre-existing — it came from the L8 split, not from this master —
-  and that the card's own L8 section already described the split correctly. Verification metadata
-  remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
-  the recorded verification commit — `fixtures.ts` now carries `nextAction: "retry_cleanup"` instead
-  of the retired `request_cleanup_decision`. Re-read the card: it names neither literal and its
-  fixture sentences stay accurate. No wording changed; verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
-
-- 2026-08-12T20:20+02:00 — L23 curator: documented lineage projection and blocked-state rendering in Engine Room; verification remains closeout-owned.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (style-domain split, canvas siblings, fixtures trim). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped engine-room citation claims; final exact frozen-snapshot check is clean.
-- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the
-  `observer/projection.py` citations in the 12:50 entry below. The range `L752-L771` → `L762-L781`
-  (`class EngineProcessEdge` L762, `extra="forbid"` L770, last field `detail` L781), and the two
-  inner line references the same restructure moved: the nine-state comment L768 → **L778** and
-  `state: str` L769 → **L779**. Those two were missed by the derived correction list and are
-  recorded here so the next reader does not re-derive them. No body claim changed.
-
-- 2026-08-01T12:50+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added
-  the "Derived Refused-Conduit Polarity" section and the matching invariant, and corrected the Purpose
-  paragraph's two stale mode descriptions — T9B's "refused clone lane" is the `failed` lane and T9C's
-  amber flash rides the `stale` seed lane. Evidence for the whole change: `EngineProcessEdge`
-  cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:934-953) is `extra="forbid"`, declares no `refusedPolarity`, and its state
-  comment (L778, above `state: str` at L779) lists
-  nominal/running/blocked/failed/stale/skipped/complete/planned/unknown with no
-  `refused`; `git log --all -S 'state="refused"'` returns 0 commits in all of history; and
-  cit:(["_DECISIVE_SETUP_EDGE_STATES: dict[str", "def _seed_edge_state("], mcp/src/agents_remember/observer/reducer_impl/_processes.py:631-631; mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638) is what makes `stale` a state the helper really returns. Recorded that the scenario ID
-  `engine-cgc-seed-refused` is unchanged on purpose because "refused" now names the beat, not a state,
-  and that `EnclosureProcessMap.test.tsx`'s `data-refused-polarity` `toBeNull()` is the guard against
-  reintroducing the field. Kept the `integration`/`integration-mem` arms documented with their ACTUAL
-  justification (`integration` is in the model's own `kind` list at L765-L767 and the lane is
-  fixture-authored/test-covered) rather than as forward-compatibility — I checked both reducer edge
-  builders, cit:(["def _process_edges(", "def _start_process_node(entry: dict[str"], mcp/src/agents_remember/observer/reducer_impl/_processes.py:124-124; mcp/src/agents_remember/observer/reducer_impl/_processes.py:543-543), and neither emits
-  either kind. Added three two-cell `Repo-Internal References` rows in the existing two-column shape.
-  Evidence: the engine-room suites run green. Verification metadata remains pinned until closeout.
-
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: repeating surge, reindex,
-  and attention transforms now render in `EngineFxOverlay`, a sparse sibling SVG aligned to the
-  unchanged structural canvas. The shared timeline queries both roots and preserves the original
-  selectors, geometry, paint, and choreography. This is the accepted visual/performance boundary;
-  further steady-state Hangar/Engine Room CPU work is developer-deferred. Verification metadata
-  remains pinned until closeout.
-
-- 2026-07-24T13:17:17Z — Curator: documented the hidden-room CPU contract, narrowed subscriptions,
-  and transform-safe SVG effects. Verification metadata remains pre-commit.
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: Engine Room now types and visibly renders stale landing facts, exposes their age, and suppresses stale/missing landing motion while retaining the node.
-
-- 2026-06-28T03:21+02:00 — Task 31 route impact: `BootTimeline`, `EnclosureCanvas`, and the shared
-  recipes now render `ProviderBootNode.runtimeState` / `factState` values of `missing`, so an expected
-  CGC/GrepAI role can stay visible as missing when no provider row is observed. The route still renders
-  server-composed `analytics.engineProcesses`; it does not infer provider existence in the browser.
-  Verification metadata pinned until closeout stamps the task-31 code commit.
-- 2026-06-24T09:53+02:00 - Slice 16: the Engine Room left stack keeps entries at intrinsic height even
-  when only one enclosure is present; `engineRoomStyles.stackList` starts grid content/items at the top
-  while `EnclosureStackList` remains the React Aria listbox keyed by `worktreeGroup`.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the Engine Room route now treats the official line as the projected integration/source branch, updates coupler wording from task `contract.md` to series contract, and keeps stable enclosure identity on `worktreeGroup` while leaf ids are projected separately. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T13:45+02:00 — Task 11: engine-room model/view now carries projected `GateNode`; the process
-  map/canvas receive it as identity data (`data-gate-kind`), and diagnostics renders the compact shared
-  `GateResponder` for worktree-bound gates while non-gate actions stay display-only. Verification metadata
-  pinned until closeout stamps the task-11 code commit.
-- 2026-06-22T11:00 — slice 05o **completed the failure-mode library**: the engine room now drives **all eight**
-  `podstage.html` failure modes, the remaining six landing on three new shared primitives — the
-  **refused-conduit flash** (`refusedConduit` cva red/amber + the `data-fx='refuse'` one-shot, tracing the
-  refused seed/return lane via the shared `conduitPathD`), **`engineDropout`** (the static alarm dashed halo
-  over an unlit worktree engine), and **`movedBadge`** (the soft ▲ "upstream moved" notification). **T7B
-  provider-plan block** — a node-anchored gate on the worktree CODE node + `engineDropout` halos over the
-  unlit engines; derived ABOVE `fleeting` (`&& !providerPlanBlocked`) so it stays OUT of the big red
-  `FleetingEnclosure` box. **T9B seed-fault** — a red refused-conduit flash + the GrepAI engine
-  down-flicker. **T9C reindex-reroute** — an amber refused flash + reindex (soft). **T12B live-sync** — a soft
-  `MovedBadge` (▲) first, then the memory ledger-map lane gates + ghosts while the code lane keeps running.
-  **T14C integration-conflict** — a red refused flash escalating to the terminal `TerminalStop` (no recovery
-  chips). **T18 abandon** — the enclosure dissolves to a dim record. All indicators stay node-anchored in the
-  topmost overlay with the shared `alertProps` Motion enter/exit transitions; `docs/design`'s §10 Failure
-  modes is now complete. Detail in the per-file sidecars. Verification metadata pinned until closeout stamps
-  the 05o code commit.
-- 2026-06-22T10:45 — slice 05o **Mode 2 (T1B stale-base block)** + a cross-mode indicator anchoring/z-order/
-  transition pass. Mode 2 lands the net-new **`prunedNode`** primitive (the disposed/stale code base reads
-  **dormant** — desaturated dormant stroke + dark muted fill, distinct from `planned`/`missing` dotted and
-  from a live amber box; projection-driven, static; mirrors the spec §3 `.node.pruned`), the **stale-base
-  player scenario** + two `boot-demo` boot fixtures, and the **§10 Mode-2 spec note**. The cross-mode pass
-  (applies to T3B too): the **verify scan** and the **block gate/reason** now anchor ON the checked repository
-  **node rectangle** (not the connector lane) and render in the **topmost overlay layer**; the fleeting
-  born-blocked block moved from an HTML banner into a big red canvas **`fleetingBox`** `FleetingEnclosure`
-  (the prototype's `.fbox` — dark-red dashed box over the worktree footprint, REPLACING the dashed-amber
-  `enclosureBorder`, with the BLOCKED title/reason + recovery chips); and every failure overlay now **fades
-  and pops in/out via Motion + `AnimatePresence`** (gated by `useShouldAnimate`). Detail in the per-file
-  sidecars. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T00:29 — slice 05o T3B (engine-room failure modes, mode 1): added the **scan ring**
-  (`scanRing` + GSAP `data-fx='scan'`) and **ghosted lane** (`ghostedLane`, projection-driven on the held
-  memory conduit) primitives across `engineRoomStyles`/`useEngineTimeline`/`EnclosureCanvas`; two `boot-demo`
-  block fixtures (`engine-boot-memory-verify`/`-blocked`) + the `dev/` **`memory-block`** player arc (verify →
-  block → reconcile → **provider clone (copy-arrows)** → nominal, mirroring `podstage.html` T3B M0→M7); +
-  render/scenario tests. Coupled **engine-gauge polish** (spec §6 first): `engineGaugeOut` flat gold bezel (no
-  glow; `down`/fault keeps the red bezel + glow) and `enginePetal` constant gold. The `docs/design/`
-  living spec gained a §10 Failure modes section. Detail in the per-file sidecars. Verification metadata pinned
-  until closeout stamps the 05o code commit.
-- 2026-06-21T23:35+02:00 — slice 05k tear-down + design-review refinements. **Tear-down sequence** (5k F2/F4):
-  `BootTimeline` switches to a dispose checklist (`teardownSteps`/`disposeFrontier`) during the landing/teardown
-  phases; **power-down diagnostics** (5k F3): `DiagnosticsPanel` reads "powering down" + de-emphasizes stale
-  lines at cleanup/abandon; **active-vs-settled flow language** (`engineRoomStyles`/`useEngineTimeline`: the
-  departing clone-arc/lane retract is stroke-locked cyan before erasing). Design-review refinements on
-  `EnclosureCanvas`: the **second-scenario-loop engine-fill bug** fixed (the charge rect's fill is now owned by
-  the `engineCharge` class, the powerup is a Motion opacity pulse — no stuck CSS `forwards` fill-lock); the
-  **three middle columns re-spaced + aligned** via `COL_MAIN_CX`/`COL_FEAT_CX`/`COL_WT_CX` centre constants (all
-  node/coupler/chip/conduit/wire/flow/enclosure coords derived from them; remote chips centred on their columns →
-  vertical landing flows); the **closeout train** made legible (`ink` 10px) + relocated to a bottom breadcrumb;
-  and a **memory integration arrow** (`integration-mem` edge, memory worktree → feat memory, mirroring code).
-  `index.css` dropped the `@keyframes powerup` (now a Motion pulse). Also: **`docs/design/` brought into
-  onboarding scope** (a `docs/design`-scoped `pathRules` rule adds `.html`+`.md` there; `sources.md` registers it
-  as Domain Documentation) — the engine-room visual-language living spec + the podstage prototype are now
-  onboarded under `onboarding/docs/design/engine-room/`. Detail in the per-file sidecars. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-21T09:57+02:00 — slice 05n: migrated the engine-room draw-on to GSAP **DrawSVGPlugin** and the flow
-  packet to **MotionPathPlugin** (replacing the manual `strokeDashoffset` sweep + CSS `offset-path`), fixing two
-  CSS→GSAP-port regressions a /design-review surfaced: the draw-on re-swept on every beat step (now one-shot per
-  lane via a `data-drawn` guard — **F11**) and the packet dots were dead (the old `attr:{offsetDistance}` tween
-  targeted a non-existent SVG attribute — **F12**). Touched `useEngineTimeline.ts` + `EnclosureCanvas.tsx`
-  (packet `data-path`/`animate`-gate, `pathLength` removed) + `engineRoomStyles.ts` (`flowConduit` running solid,
-  planned dash `9 7`) + a jsdom SVG-geometry stub in `test/setup.ts`. Property-split holds (GSAP: stroke reveal +
-  packet transform; Motion: node opacity/transform). Verification metadata pinned until closeout stamps the 05n commit.
-- 2026-06-21T02:26+02:00 — slice 05k: the canvas motion reached the 05f §8 property-split end-state — removed
-  the interim 5i CSS (the `sceneSvg` transition + the `landingIn` keyframe + the nine canvas `@keyframes`) and
-  moved it onto a NEW `useEngineTimeline.ts` GSAP hook (`strokeDashoffset` draw-ons by `data-draw` + the
-  repeating fx by `data-fx`) + Motion (`motion.*` opacity/transform + `AnimatePresence` enter/exit); CSS is
-  static (the app-wide `pulse`/`flicker` kept, plus the `effects=off` freeze). `engineRoomStyles` added the
-  `worktreeWire` recipe carrying **no** opacity so Motion owns the wire (fixes the dangling worktree-wire).
-  Gated by `useShouldAnimate` → instant end-state under `effects=off`/reduced-motion, no GSAP ticker (the 71
-  vitest tests stay green). **Known follow-up:** at D5 (`cleanup-pending`) the landing-tier — the feat ▸ source
-  tier, the `worktree-add`/`ledger-map` conduits, and the carry/push-mem flows — does not yet retract because
-  `cleanup-pending ∈ LANDING_PHASES` keeps `showLanding` true (confirmed in real Chrome: feat ~0.98, conduits
-  0.6, flows ~0.9 at settled D5); tracked for a `!retiring` gate (feat + flows, frontend) plus a conduit
-  reducer determination (pending live-data validation). Detail in the `EnclosureCanvas.tsx` /
-  `engineRoomStyles.ts` / `index.css` / `EnclosureProcessMap.tsx` / `EnclosureProcessMap.test.tsx` /
-  `useEngineTimeline.ts` / `fixtures.ts` sidecars + the `dev/` sidecars. Verification metadata pinned until
-  closeout stamps the code commit.
-- 2026-06-19T23:58+02:00 — slice 5i: the canvas became a moving build-up/tear-down stage driven by the dev
-  scenario player — GSAP draw-on (conduits + `LandingFlows`) + Motion `AnimatePresence` (closeout train) + the
-  `sceneSvg` CSS transition; three-tier landing (`main ◂ feat ◂ worktree`); build-up materialisation gates +
-  `detaching` cleanup drift; cross-stage clone arcs + `worktree-wire`; the repositioned remote/landing dock
-  (superseding the 5h H3 row + the `lane-landing-source` flag). Fixtures renumbered B0→B5 and the tear-down
-  split into D4/D5/D6 (added `engine-retired`). The CSS-driven parts (`sceneSvg` transition + `landingIn`) are
-  slice 05k's correction target. Detail in the `EnclosureCanvas.tsx` / `engineRoomStyles.ts` / `fixtures.ts` /
-  `EnclosureProcessMap.tsx` / `EnclosureProcessMap.test.tsx` sidecars + the `dev/` sidecars. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-19T15:50+02:00 — slice 5h H4 cleanup teardown + landing-source fix: a `cleanup-pending` enclosure now de-materialises (the `.dissolve` + a success `CleanupRecord` + the historical chip + a `back into main` seam), distinct from abandon. Coupled fix: `landingSource` drops unresolved (`missing`/`unknown`) refs and `LaneFlag` truncates, so a completed enclosure with a deleted source branch no longer leaks a stale overflowing `▸ origin/feat · unknown`. Detail in the `EnclosureProcessMap.tsx` / `EnclosureCanvas.tsx` / `engineRoomStyles.ts` / `fixtures.ts` sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T15:00+02:00 — slice 5h H3 readability + connectors (feedback): the remote/PR chips were unreadably small (≈8px at the 0.76× canvas scale) with overflowing two-line state — reworked to branch-node-peer sizing (readable label + terse status word, full detail on hover) and **wired** the strip (solid amber code chain + dashed carryover handoff), centring the band header. Detail in the `EnclosureCanvas.tsx` / `engineRoomStyles.ts` sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T13:57+02:00 — slice 5h H3: rendered the **remote/PR strip** on `EnclosureCanvas` — `RemoteStrip`/`RemoteChip`/`PrBadge` over H1's `landing[]`, in the governed code-first/memory-after D3→D4 order (`origin-feat → PR → origin-main → origin-mem-main`); each ref a colour-as-state chip (planned=dashed/muted · live=amber · landed=mint) with an open→merged PR badge, shown only while an enclosure is landing and dropping `missing` probe refs. Added the `remoteChip`/`prBadge` recipes (`engineRoomStyles`) + 4 render cases; closes the remote-strip deferral. Detail in the `EnclosureCanvas.tsx` / `engineRoomStyles.ts` / `EnclosureProcessMap.test.tsx` sidecars. Verification metadata pinned until closeout stamps the 5h H3 code commit.
-- 2026-06-19T06:39+02:00 — No route impact: crash fix — the `lane-landing-source` read is now null-safe (`node.landing?.find`) so a projection that omits the slice-5h `landing` field renders the scene with no landing flag instead of crashing; the engine-room route model is unchanged — detail in the `EnclosureCanvas.tsx` + `EnclosureProcessMap.test.tsx` sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:27 — No route impact: a dev-bench tab trim (mirroring task 5's `b3f2491`) removed the unused `engine-empty` scenario from `fixtures.ts` (empty `processes`, no consumer — the dev gallery dropped it, the `EnclosureProcessMap` render tests reference only named live scenarios). The engine-room route model + process-map behavior this overview describes are unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:48+02:00 — slice 5h Tier 2 (frame extend + position, feedback): the popover grows **downward**, extending its frame to the available height when expanded (instead of upward into a short scroll box), and anchors high in the scene so it keeps its upper position. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:25+02:00 — slice 5h Tier 2 (commit messages + date-time): the popover row is now the mirrored 6-column layout (`date · message · code-hash ⇄ memory-hash · message · date`). The per-side commit message + committer date are probed best-effort in the observer I/O layer (one batched `git log` per repo per coupler; absent → hash-only, never faked); `compactDate` string-slices the ISO to `MM-DD HH:mm`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T18:00+02:00 — slice 5h ledger popover (both couplers): each coupler label is a clickable button opening the memory.md lookup table (this enclosure's row highlighted; default-8 → "show N more" → bounded-25 scroll → "+N more in memory.md"). Worktree coupler from `EngineProcessNode.ledgerRows`, official coupler from `LedgerNode.rows` (resolved in `EngineRoom`); the window is read in the observer I/O layer so the reducer stays pure. Full-history viewer deferred to `#88` (post-ship). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T15:50+02:00 — slice 5h cleanup pass (feedback): tightened the `EnclosureCanvas` conduit wiring (chevron `marker-end` only on a running flow + the `er-chev` `refX` tip so the arrowhead lands on the line end, provider conduits box-edge-midpoint → engine corner, the `sync` lane collinear with `worktree-add`, symmetric petals), vignetted the backdrop video (`engineRoomStyles`), trimmed the bench gallery tabs (`engine-boot-*` filtered, `engine-empty` dropped), and added the conduit-wiring-polish render guards. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T13:01+02:00 — slice 5h coupler fix (feedback): the warp couplers now read as the **memory.md ledger** link — `EnclosureCanvas` `WarpCoupler` shows a `code ⇄ memory` hash-pair label (each its own, via `short`) + a drawn `warpLinkGlyph` chain-link + the `warpSurge` warp-core bands (recipes in `engineRoomStyles`, keyframes in `index.css`); dropped the misleading `contract · taskId`. The `ledger ▸ maps merge` flag is left as-is (open question). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T11:55+02:00 — slice 5h H2: rendered the landing arc on `EnclosureCanvas` — a `CloseoutTrain` (T13 derived closeout-order strip on closeout-pending), the `integration` conduit bending for `replay` vs straight `ff-only` (T14/T14b), the `lane-landing-source` official-line tip, the `closeout*` recipes (`engineRoomStyles`) + the `closeoutSweep` keyframe (`index.css`), and the `engine-landing-closeout` fixture. The remote/PR strip + carryover is H3. Verification metadata pinned until closeout stamps the 5h H2 code commit.
-- 2026-06-18T08:51+02:00 — slice 5h H1 (data substrate; the render is H2+): `fixtures.ts` gained the `landingRef` helper + the `engine-landing-ffonly` / `engine-landing-merged` scenarios, and `types/projection.ts` mirrored `LandingRefNode` + `EngineProcessNode.landing`/`integrationStrategy` (the server side landed in `observer/` + the new `worktrees/modules/landing.py` probe). Verification metadata pinned until closeout stamps the 5h code commit.
-- 2026-06-17T22:45 — 5g G6 + engine-room visual-parity + fill-height layout: landed the atmospheric backdrop
-  (`backdrop`/`backdropVideo`/`stageContent` + the cockpit Effects/Calm toggle) and restored the prototype's
-  SVG decal layer in `EnclosureCanvas` — canopy HUD frame, engine spine + petals, the left official-line
-  engines (from `model.workspaceEngines`, threaded `EngineRoom` → `EnclosureProcessMap` → `EnclosureCanvas`)
-  + conduits + official coupler, and the worktree lane annotations; plus the `Panel fill` variant that binds
-  the room to a fixed height (canvas + right panel no longer resize per selection; side columns scroll).
-  `REMOTE · ORIGIN` deferred to the live-data extension. Verification metadata pinned until closeout stamps
-  the code commit.
-- 2026-06-17T16:15 — slice 5g G5 + engine palette + side-panel fix: the bird's-eye gained the live/teardown
-  states (t12b recoverable sync gate, t14c terminal integration STOP with no recovery chips, t18 abandon
-  dissolve-to-record) — all render-only against existing projection fields (`phase` + `sync`/`integration`
-  edges). Engine gauges now read **green** when active (`nominal` → `mint`; empty off, cyan booting, red
-  fault, amber reindex), and the enclosure rail scrolls vertically only with the repo label off the chip
-  row. The successful-landing choreography (T13–T17, needs a `projection.py` addition) is split to `05h`.
-  Verification metadata pinned until closeout stamps the G5 code commit.
-- 2026-06-17T15:00 — slice 5g G4 (Batch B) + UX fixes: the engine **fault flicker** (an isolated `down`
-  engine pulses; the steady gate is now blocked-edges-only) + the **reindex reroute** (`seedFallback` → an
-  amber center-out pulse on CGC, not red) + a `retryArgs` retry chip. Fixes: branch text truncates with a
-  hover `<title>`; the boot/cloning fixtures' provider runtime now matches the running conduit; `phaseChip`
-  no longer wraps. Verification metadata pinned until closeout stamps the G4 commit.
-- 2026-06-17T14:00 — slice 5g G3: the bird's-eye gained its failure overlays (Batch A) — a steady `Gate`
-  over each blocked/failed lane, a local `ReasonBadge` (the node summary), the breathing `Attention` parity,
-  and `RecoveryChips` (`nextAction` + enabled actions); a fleeting pre-contract block keeps its
-  `FleetingBanner`. blocked = STEADY (the fault flicker is G4). Verification metadata pinned until closeout
-  stamps the G3 commit.
-- 2026-06-17T13:30 — slice 5g G2: the bird's-eye gained its boot motion — `engineCharge` center-out
-  `chargeSweep` (indexing engines), `flowConduit` running draw-on + the `flowPacket` travelling dot, and
-  conduit colour fidelity (`complete` → faint amber, not mint); the keyframes live in `index.css`, frozen
-  by effects=off. Verification metadata pinned until closeout stamps the G2 commit.
-- 2026-06-17T12:47 — slice 5g G1: reworked the render into the prototype's bird's-eye — extracted the static
-  two-world canvas (`EnclosureCanvas`: branch nodes, podracer gauges, warp coupler, flow conduits) out of the
-  linear-lane `EnclosureProcessMap` (now the promote-in-place shell); added the `engineRoomStyles` scene
-  recipes; retargeted `EnclosureProcessMap.test.tsx` to the scene. Static frame — G2 adds the choreography.
-  Verification metadata pinned until closeout stamps the G1 commit.
-- 2026-06-16T03:40 — slice 5f S4 (power-up T8/T9): `SvgConduit` renders a gated GSAP `conduit-flow` packet that travels along a running (clone/seed) conduit; `engineRoomStyles` gained the `conduitChevron` atom. Engine seeding/fault stay on the `engineSilhouette` indexing/down variants. Verification metadata pinned until closeout stamps the S4 commit.
-- 2026-06-16T03:35 — slice 5f S3 (T4 promotion morph + alarm parity): `EnclosureProcessMap` gained a gated `layout` morph and moved the `FleetingBanner` into `AnimatePresence`, so a fleeting node solidifies **in place** into the real enclosure (keyed by `worktreeGroup`, S0); the blocked-start alarm parity flows from S6's reducer `_start_attention` and renders in `AttentionQueue` (new `AttentionQueue.test.tsx` pins it). Verification metadata pinned until closeout stamps the S3 commit.
-- 2026-06-16T03:05 — slice 5f S2 (birth motion): `EnclosureProcessMap` became a `motion.div` with a gated
-  enter, the `SvgConduit`s draw on via gated GSAP, and a `FleetingBanner` renders provisional pre-contract
-  blocked-start nodes (§2.1); `engineRoomStyles` gained the fleeting atoms; added `EnclosureProcessMap.test.tsx`.
-  The fleeting→real morph + alarm parity is S3. Verification metadata pinned until closeout stamps the S2 commit.
-- 2026-06-16T02:30 — slice 5f S1: the room moved to a full-width §4.2 3-zone layout (the cockpit rails-hide
-  lives in `cockpit/`).
-- 2026-06-16T01:55 — slice 5f S0: added `useShouldAnimate.ts` (+ test) honest-motion gate; SVG conduits;
-  `worktreeGroup` keying.
-- 2026-06-15T19:35 — Created for slice 5e: the enclosure-centered Engine Room process-map module
-  (pure `buildEngineRoomModel` + Panda/React Aria components + scenario fixtures). Verification metadata pinned until closeout stamps the 5e code commit.

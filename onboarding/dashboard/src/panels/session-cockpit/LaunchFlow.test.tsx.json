@@ -1,0 +1,188 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dialog under test.\n\nAnchor: \"export function LaunchFlow\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e8af2a3c761d9b949bb2d334cbfaf8c4005e30",
+            "content": "sha256:1bdf38f000f0bae8b68dac8638579f4bc8c30a934bf5d84c23a258bd4942e413",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 353
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The envelope fixtures the routers serve.\n\nAnchor: \"function capabilityEnvelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:7ec43f9608c411f40a8adde93fd14179005b4cdb20d19a86ed0fca83e2258713",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The open-response fixtures (200/400/409×2).\n\nAnchor: \"const OPENED_STARTING\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:d8b9400a137016db9cffe7e89097c7b2101e4a9d300fa56264cd1b56ae0b7349",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared row builder used for the F9 appeared-row rerenders.\n\nAnchor: \"function catalogRow\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:a8a7c9546cc6a8635af6fa45f479cbf737e296cf14ffe1a57c04fb86faf87030",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The store the 200-path evidence assertion reads.\n\nAnchor: \"export const sessionCockpitStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:002f72d1389e69c4023d66cf3f65a19fe87e1eb87c98c29480983e137ac07fcb",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 588
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`HarnessInfo` — the three-field type the `HARNESSES` const is annotated with, and its runtime `parseHarness` validator.\n\nAnchor: \"export interface HarnessInfo\"; \"function parseHarness\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c87a333fcbc7605dad19267d7e48d7a354c2ee22",
+            "content": "sha256:226a4661cbb14cdbb1550734d9fbeab16b0642edf21a5e7ce36d11b0aa6ac47d",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/data/harnessCatalog.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c87a333fcbc7605dad19267d7e48d7a354c2ee22",
+            "content": "sha256:dfb2e24f1b412077b8ea0a106c06baf264e5a421849032b2a60f3525cfed5d26",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/data/harnessCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`DetectedHarness` — the server model that fixes the three fields; `WireResponse` is what makes it `extra=\"forbid\"`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff876138fefb3521200868023030d0acb1e73b18",
+            "content": "sha256:29d177b2e2a02eb40a25bc6bcac134c02f344bbadd628a5a6bc430e4260b5124",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectedHarness"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff876138fefb3521200868023030d0acb1e73b18",
+            "content": "sha256:a4bcb679d68c3d1c4dc9fd5649ff784c9ecbef260b7d09d7f8883bfa0ed0d870",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireResponse"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The guard whose vocabulary is discovered from a `// TypeScript mirror of` header, and its own note naming the five unmarked modules `harnessCatalog.ts` is one of.\n\nAnchor: \"const MIRROR_MARKER\"; \"harnessCatalog.ts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:09da52646cbc053b777168a8979f8982b68f631f739e2f02c21104d425351654",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:49bbbd80a469a0bf47f5f425475e27526e64730af5ccb37716d6c2017becbee3",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

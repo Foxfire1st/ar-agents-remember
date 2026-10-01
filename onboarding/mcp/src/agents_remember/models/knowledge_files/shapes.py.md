@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge_files/shapes.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge_files/shapes.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74`|
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -80,7 +70,9 @@ admission and origin blocks. They check shape only — presence, closed vocabula
 
 The template role `incidental` has no spelling in the format (review R1 finding 6); MIK-R12 owns the mapping.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The format's design authority is the coordination-root note
@@ -88,38 +80,26 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R21@v1` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The base, the three locators and the relation vocabulary are what `records.py` and `sidecars.py` compose.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The base: frozen, extra-forbidden, alias-serialized, explicit null refused. | `FileModel` | mcp/src/agents_remember/models/knowledge_files/shapes.py:50-75 |
-| Repository paths are refused, never cleaned. | `require_repository_path` | mcp/src/agents_remember/models/knowledge_files/shapes.py:92-102 |
-| The anchor shape. | `Anchor` | mcp/src/agents_remember/models/knowledge_files/shapes.py:165-177 |
-| The task identity's resolution base. | `TaskIdentity` | mcp/src/agents_remember/models/knowledge_files/shapes.py:185-195 |
-| ID targets must carry their own kind's prefix. | `IdTarget` | mcp/src/agents_remember/models/knowledge_files/shapes.py:238-252 |
-| A reference has at least one target. | `Reference` | mcp/src/agents_remember/models/knowledge_files/shapes.py:282-286 |
-| `alternative` exactly for `reconsider_on`; anchor targets name their path. | `Link` | mcp/src/agents_remember/models/knowledge_files/shapes.py:342-361 |
-| The invariant criteria's meanings, and which two the validator checks. | `InvariantAdmission` | mcp/src/agents_remember/models/knowledge_files/shapes.py:386-396 |
-| The family and decision criteria's meanings. | `FamilyAdmission`; `DecisionAdmission` | mcp/src/agents_remember/models/knowledge_files/shapes.py:399-403; mcp/src/agents_remember/models/knowledge_files/shapes.py:406-410 |
-| Origin names a leaf or a wave, not both. | `Origin` | mcp/src/agents_remember/models/knowledge_files/shapes.py:430-444 |
+- The base: frozen, extra-forbidden, alias-serialized, explicit null refused. [1]
+- Repository paths are refused, never cleaned. [2]
+- The anchor shape. [3]
+- The task identity's resolution base. [4]
+- ID targets must carry their own kind's prefix. [5]
+- A reference has at least one target. [6]
+- `alternative` exactly for `reconsider_on`; anchor targets name their path. [7]
+- The invariant criteria's meanings, and which two the validator checks. [8]
+- The family and decision criteria's meanings. [9]
+- Origin names a leaf or a wave, not both. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module reads and writes only files of the memory
 repository layout it declares, and calls no sibling repository or external service.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the admission docstrings now give each criterion's meaning (MIK-R27), a docstring-only change.** A Logic bullet states the meanings and the checked/judged split; two rows added; the `Origin` row re-pointed by the exact +9 shift (`:430-444`). No verification stamp was advanced.
-- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): created this card for the new file MIK-R21 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

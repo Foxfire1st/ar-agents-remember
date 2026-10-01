@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/kernel/platform_subprocess.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Interop classification covers path syntax, mounted filesystems, executable suffixes, and resolved paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef96df1c2773ad7fd4589810d936559a1f71db4d",
+            "content": "sha256:933b09c930f3498ec3cc3276bcd1bd27df96c60ecf86df194a87d20131c9cada",
+            "locator": {
+              "kind": "symbol",
+              "name": "windows_interop_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Environment and command construction refuse non-native execution inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef96df1c2773ad7fd4589810d936559a1f71db4d",
+            "content": "sha256:7b1df88f05cc3beb2d0b8e81b84e5db5a63062dd6f838dd01f46cc6147661335",
+            "locator": {
+              "kind": "symbol",
+              "name": "native_subprocess_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The boundary prevents a Linux process from crossing into Windows tools or storage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef96df1c2773ad7fd4589810d936559a1f71db4d",
+            "content": "sha256:933b09c930f3498ec3cc3276bcd1bd27df96c60ecf86df194a87d20131c9cada",
+            "locator": {
+              "kind": "symbol",
+              "name": "windows_interop_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef96df1c2773ad7fd4589810d936559a1f71db4d",
+            "content": "sha256:1332e3a36b5494a718ac3837f4b65b02c916a2af0a9240722cfb934fb9fa6383",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_native_executable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

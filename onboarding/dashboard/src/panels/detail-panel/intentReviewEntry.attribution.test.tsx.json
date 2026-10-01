@@ -1,0 +1,116 @@
+{
+  "path": "dashboard/src/panels/detail-panel/intentReviewEntry.attribution.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real summary, and the state table's derivation from it.\n\nAnchor: \"'../review/laneReview.summary.captured.json'\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
+            "content": "sha256:1174c213d5a75f6b6d810796f3ef03b54274fe8ee3664b4105cbd2a592338dab",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Case 1: two elements, one request.\n\nAnchor: \"shows the real leaf's unexplained and unknown files beside +N −N, from the one summary read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
+            "content": "sha256:67cc2d925797f1131e9884e1217c837e877a550d3bb41c36e7506d3ea920d16e",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cases 2-7: each state as its own rendering.\n\nAnchor: \"renders %s as its own state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
+            "content": "sha256:2e8800c9b7301c17faab5abd82a0ced61de6bc506dfd8ec530b444a932f28548",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Case 8: nothing while pending.\n\nAnchor: \"shows nothing while the summary is pending: never a zero\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
+            "content": "sha256:f3678462eb5b85cfcf043dec31d02181375bf9f17ee9cc09df22a9abd24f181d",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The entry's count and its details under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:9e22e2645d3b1d91a5dd37f4578d13472ea9fabbcedb940b2ebab83de9a174be",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributionText"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:a4b2b612e17165e9f6d36b9ac10e6f34715027b57b1b9d56baef8973f49ce833",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionCount"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:b97e9c7ab455a45dababfe31c12adb079fbd1ddbb56b54e2e1fc28cbbfb4da43",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionDetails"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

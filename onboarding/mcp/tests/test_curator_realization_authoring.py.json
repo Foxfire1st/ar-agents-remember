@@ -1,0 +1,314 @@
+{
+  "path": "mcp/tests/test_curator_realization_authoring.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the cases it proves.**\n\nAnchor: \"Per-target realization rationale and role, through the real curator writer.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:57698c09579b92eb09ae8d7ec32d9a0363620d49ee7e8d08ed293cecfd8eb84a",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Governing-route placeholder and non-text route refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:8f13b5e970c08c0ef37a08d3bc9cb534ce94442103c20a31fffa6204e3399a37",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_word_absent_as_a_governing_route_is_refused_and_an_omitted_route_stays_ungoverned"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:1d4a85a184e2b013f460fcc3c3bd80414461724511d84499e0fb42a8522406fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_governing_route_that_is_not_text_is_refused_where_it_is_written"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:71a8e6e2ce56ae4dae9c0a20e83d290f5fc3d2a9e554d70e821bd679cc64a0c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_word_absent_is_refused_as_a_governing_route_in_any_case_once_trimmed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The owner under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:2359fb8b3985149c2d6b7b4a47e5686a3860c7daedf6204c6fcf4347c18ccbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/curator_realization_authoring.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:5149ddf521458300efcfb77695e2d638aeb8491702db8eecd9dba2e396bd4f52",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryRealization"
+            },
+            "path": "mcp/src/agents_remember/application/curator_realization_authoring.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Lane registration.\n\nAnchor: \"mcp/tests/test_curator_realization_authoring.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b64799fabbf257ec95b4d6d3c83e1e83c9d925",
+            "content": "sha256:4d3859f7ee104d964b12f7f846f34d826cdea7065260982fbe9fc9845a291379",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared builders it reuses and the old generated sentence as stored rows hold it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:00309a48fbb1fc117b43c61ce1442bda0fd8a1b72a64cc540c3f033f765d1465",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATED_BEFORE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:4ff8ff8b6db0b20b8248657abc2e0c7c71c727cf2a301730b63032154f742f69",
+            "locator": {
+              "kind": "symbol",
+              "name": "placed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**Per-target values and the entry default.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:18e0b9ecde0d0cec7983a5d3ffb1bab1bbc2ab38544c53282b00660aff8335f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_target_of_one_entry_stores_its_own_authored_rationale_and_role"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:1b1343bcbc1d3c9b124f09c794f40d3010ebe394b3ecb4df9470017c4b696ace",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_target_that_states_nothing_inherits_the_entry_level_default"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**No rationale refuses by name and nothing is generated.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:ce44907ab62bc66c8d8d02037ecf2e1e9a4e69a990bf29108d0d94e5e25fc634",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_target_with_no_rationale_refuses_its_entry_by_name_and_nothing_is_generated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Exact replay versus changed rationale, and old generated claims readable as stored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:4b60199ef2a8d72b06114f3ddddd29adb7c0da6621ccaf4010a5d274e920a611",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_exact_replay_of_per_target_rationale_is_idempotent_and_a_changed_one_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:a37230d1de1589299ad1e999ab0b3119ef9ee488bd80fcb9f2b0b0da2814718f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_claim_holding_the_old_generated_sentence_reads_back_exactly_as_stored"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Not-text, unknown-role and over-long refusals leave the sibling entry committed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:6270b4a53b25d006055bc52d293bded5c8059d38c18d786d4dfc293f2eb4088c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_value_that_is_not_text_an_unknown_role_or_an_over_long_rationale_refuses_its_own_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The real base writer, and the committed-legacy replay with and without history.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:0b4ef1db885eadbc14c8a31a111e900dc10c60df249b666e3aa83069eac0ea88",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_COMMIT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:da4fd085b65cfeb8b1060cee6d618b5c21e57759321bf31e33a0355c9e851087",
+            "locator": {
+              "kind": "symbol",
+              "name": "base_writer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:1019b54fcc9da6703ebcffffe4d840b52f63ddc373a05de65bd0412c00b4517c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_operation_the_base_writer_committed_without_rationale_replays_and_publishes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:758e7a4ef18211f8ce5830edc00b85562a9879a34316f12774c80c0c3a81cfac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_committed_operation_without_rationale_replays_with_no_base_history_needed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**Recorded-but-uncommitted is not exempt.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:213d2cf268f71823e0818bde5e1126c34ff1e3b9f65a87844a349d88577d3900",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_but_uncommitted_allocation_without_rationale_is_still_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The base-shaped commit helper and the shared replay assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:0deefe2deda22830fb0ce890df03815c6aa7a455204fe09a4502ef76bd7175fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_like_the_base_writer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:73c6c48bebef3ac4d97b39f85eb865f22a48132ebf7101f0ad3335a669f2f7e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_the_committed_legacy_operation_replays"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

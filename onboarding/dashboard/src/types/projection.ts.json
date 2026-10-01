@@ -1,0 +1,297 @@
+{
+  "path": "dashboard/src/types/projection.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lifecycle phase union mirrors the code/memory-only vocabulary.\n\nAnchor: `refinements`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The generated `task-intent/v1` identity interface.\n\nAnchor: \"task-intent/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:8a1c02c1ff4253b43889542d464d4e7bd551e4e420c262c7eaa81b731e75b918",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`.\n\nAnchor: `string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:f438b93652328185b63c4a89bf00b0867bf827811ab1fd89500aa85aa11329a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "members"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed.\n\nAnchor: `string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds.\n\nAnchor: `string`; \"sourceProblems: CloseoutProjectionProblemNode[]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:f438b93652328185b63c4a89bf00b0867bf827811ab1fd89500aa85aa11329a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "members"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:c800f6cde277742b70ed38e24e0c12de7f51e38bb8a06eabeaebb24a7b7c24f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "reasons"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Structural analytics fields use the shared task-document reference.\n\nAnchor: `string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:17f2343c5834d28106452ed00b54e77de7a4617f13bcd8d8cd8c8e1f69f9e59b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentRef"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generated task documents carry real hierarchy and optional runtime attachment.\n\nAnchor: `string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:aa4e8f3e5bf025b3db5b24ec1b2fd1660f831556218f74028925c3270e81cefb",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDocuments"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:674f8a5c8ece6da2bbcd3b0a81e3f0a424d1260ceb82458c65828e3f7b459dfd",
+            "locator": {
+              "end": 681,
+              "kind": "line_range",
+              "start": 647
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Execution nodes name their kind, leaf-id segment and task reference.\n\nAnchor: `string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:250ab2e0b46605427ef60ff4ddff7deecceab1d3d3c3c1b59caf429f6c59c661",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskExecutionNodeView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:232ad4592ce043cb992439775c3bdea06b4826f71cd0b6830f3cccea9e37a90b",
+            "locator": {
+              "end": 728,
+              "kind": "line_range",
+              "start": 724
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An execution endpoint carries a task reference and optional leaf id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:2184ea340071b6e0198af33a56d1c71265c26e7435a74eba29d03b8838b5070e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskExecutionEndpointNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Execution edges bind predecessor and successor endpoints with a reason and optional judgment id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:2184ea340071b6e0198af33a56d1c71265c26e7435a74eba29d03b8838b5070e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskExecutionEndpointNode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:e7fefaa2bcd4c0716efa6e2827d59d8ac4df3bed3d199c8df493edce3757ab19",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskExecutionPredecessorNode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:1b7434209d1dad0d7a4112bd14310c8dcae979a8b161308ff914ff99c458003b",
+            "locator": {
+              "end": 708,
+              "kind": "line_range",
+              "start": 703
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The graph contains typed node and edge arrays.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:f4250c96196ae60345f1505ab1ffceb7ed5539b92e056434e2ad73057e882966",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskExecutionGraphNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Workspace projection remains the generated top-level wire contract.\n\nAnchor: `number`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:0f6e963168be5aeccb761d64603f4c4f77cace12721e5e7ca5d9f1e8e26a1ebd",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:6e2a77a5d254d686bdeba413f7f78c9eec7c22b9147ed4b871bb503af6c1c9e9",
+            "locator": {
+              "end": 829,
+              "kind": "line_range",
+              "start": 816
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The optional canonical task-intent identity on lifecycle operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:8a1c02c1ff4253b43889542d464d4e7bd551e4e420c262c7eaa81b731e75b918",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentIdentity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:26a9aa78f2a71020ea82ea802ea2888a62db0cace6d7380a58f4a6828f218009",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 361
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

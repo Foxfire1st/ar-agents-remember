@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_errors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `DirectLandingError` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad943abbe2f32d3aa3979161d3a3c0a5b087a954",
+            "content": "sha256:838245a059aafe4369bd7521316fbc5db0ee33f250916935b6fa4a4a7d2be1a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The typed recovery next-action carried by the error.\n\nAnchor: `next_action`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad943abbe2f32d3aa3979161d3a3c0a5b087a954",
+            "content": "sha256:c4e11a0063a32d2a0f308d082fcca1226f893294777b241ef0c976ab0bb70131",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

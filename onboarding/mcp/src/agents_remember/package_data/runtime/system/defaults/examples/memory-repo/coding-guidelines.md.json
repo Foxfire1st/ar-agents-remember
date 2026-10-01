@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/coding-guidelines.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The example says repository-specific coding guidance belongs in the target memory root.\n\nAnchor: `## Coding Style`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80fa3a21e7999e747ec887da796f0a4c89606d17",
+            "content": "sha256:a51cc0415391868129ea0f1fe2d6b51876f52f06f446fc428cd8330d14d8adf5",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The example documents compatibility and cleanup rules for memory-layer coding guidance.\n\nAnchor: `## Coding Style`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80fa3a21e7999e747ec887da796f0a4c89606d17",
+            "content": "sha256:a51cc0415391868129ea0f1fe2d6b51876f52f06f446fc428cd8330d14d8adf5",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

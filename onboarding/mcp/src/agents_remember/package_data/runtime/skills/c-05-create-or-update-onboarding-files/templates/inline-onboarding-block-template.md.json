@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The inline template reuses the sidecar content model and differs only in storage, syntax, placement, metadata, and digesting.\n\nAnchor: \"It reuses the same semantic content model\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:f697de1c7ce2c3e9ed17e274f94ed1af93d9b4c9de6f895ba1b05005248fac24",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The inline block includes `governingOverview` metadata and a governing overview section before the normal semantic sections.\n\nAnchor: \"governingOverview:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:0e5d8c1d1fa90dbce903fdcc664eb5019bdc053ad189d23abb17bcb516d7c988",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Docs reference placeholder text now records no relevant documentation only after live-source checks or a retrieval blocker.\n\nAnchor: \"No relevant documentation found after checking live sources.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:c3021934653c5f853ae9643d6014ddd3fc795a6d627dd65883fd15c722470a21",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Guidelines require stable markers, host-language comment adaptation, high placement, and digest recomputation with the block removed.\n\nAnchor: \"Place the block as high in the file as possible\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
+            "content": "sha256:d2458ba7c0e3afee10c6df6761aa2475cf1566c44b70d42237c1012a584841da",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,42 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/orchestration-task.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The graph-less walk carries source-pair selection and pause/resume semantics.\n\nAnchor: \"## Derived Waves And Blocker Walk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7943bc91d30c861f4cb98bba3bbb22d51140d8cb",
+            "content": "sha256:3403a9462de0b85308dd505c41026677b5be5ebe3968c804bf6c5b8c919fcf8c",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Plan review independently validates that choice.\n\nAnchor: `### PR-4 — Order-respects-edges`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2baa1144a605aef991583f1aef62c519858d656b",
+            "content": "sha256:e28d7efd76498a26fbe6ea5e441319c357365ec4046733e938dcf17c883fa069",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

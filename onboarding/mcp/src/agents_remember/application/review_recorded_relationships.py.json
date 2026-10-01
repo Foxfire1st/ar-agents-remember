@@ -1,0 +1,470 @@
+{
+  "path": "mcp/src/agents_remember/application/review_recorded_relationships.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the three facts it owns and of the reach: the page is not the store, the whole line is read, and the owner is chosen by the kind of revision.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:84f74eecc2fdfaa33e34d94b3d7f9bb7c34f917ea8256d0aa83659accea9a6ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "successor_line"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:00212b76de94abb329cc94c533aa0fdcc5386464cc052a45d34eb8bf5263a10b",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The union-item read: the three relationship kinds, the identity index built from the snapshot's own revision rows, and the payload read as one recorded side.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:71c191eba1829189e31c94cfa4fec3130df35a9e20560b93be7aae715b47f0f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_snapshot_relationships"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:c3804260078d7bbacd88fbd64aa6ee5acf38a8cfdcb0e0a884137a7059b8e0d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_index"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:0bad1eb4860a8e69bfc553de5bcb5e8186458f995d17b3a44b975360cd6a4ee1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_relationship"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:7b693f373842feb093fce6a7f376f260d54ab05c6700b61c44e7807f79dbd409",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:8e4347aa37ddac9d748cbeb089cb6cebaed658daf4910b229fec9ad4110a13c9",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The comparison's own statement about a claim's source observation, carried verbatim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:510346bde3071a0fc89249d1fa2ebafd0e5a858a2c510eef26e41b45874a6142",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_change_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The traversal that consumes this module and the member-wise pairing rule built on its predicates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
+            "content": "sha256:fff934dfcda5aff44a91daa122a2d3139fd4f05c109babd2142bf85c39003b34",
+            "locator": {
+              "kind": "symbol",
+              "name": "relationship_movements"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
+            "content": "sha256:196d015ac2afd1fcdbc8904aec7a53a4582442cb2bb1f45366e9e30c8f056434",
+            "locator": {
+              "kind": "symbol",
+              "name": "_line_relationships"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
+            "content": "sha256:3db221f79409735ac8d61a306e08bf50a5be2726fe315c526ee241bc707d21c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replaced"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The cases that measure the reach: the member identity's movement at its own head, the multi-ended line unresolved and never denied, the family head read through the family owner with no sibling mis-named, and a membership moved onto an unselected family revision.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:e4dbb54d8a15ee68d463c40cd0bce76d95c017f50d04a4ec650abb459d82514c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_identities_moved_realization_is_displayed_at_its_own_head"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:63587cf3ad5d27d687240c0b146377141a407c975c485896eca1fea42f300397",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_line_with_no_single_head_is_unresolved_and_never_denied"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:bbe68220b103ca407fda987016a98c7c5588db051ed66c54ec2967ca27d568ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_revision_that_keeps_its_members_displays_each_membership_once"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:9e61847646ff702cfc3fa26c6cd8bb34f8eb6e58241ffb38eae301cbd30825d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_membership_moved_onto_an_unselected_family_revision_is_displayed"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_line.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the read values and the readers the traversal and route modules consume.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:d26797b6f1bc23193c35dcee3f880eb2045c31a8f33f49478a55ca43b18dbd54",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One snapshot as this traversal reads it: its side name, its file, its connection and its own authored edges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:b25db65fb122902f24859d664a1080d557d8349ba1d9ed7c5f3c9c71924bcf88",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedSnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:62032ba96a82e68814ac6a23e5f79a769d678fa84fb47c794e40883b2a6bba3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:bb502ccad90f4f8b56377c27acfdd6c84a5c8c438a9d7e01fbbea77d3aff4222",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_snapshot_edges"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**One recorded side, with the origin that says which read produced it and the identity its revision belongs to.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:9a6a17f34d057c1c59f0e094a0e23affefbca6c2d8fd1c61fc249f24520c0e47",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedRelationship"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:7e7fea5809bd385fa3d147e89dc2d08fd7a97cf109b8a15ba7d99d0e61a61548",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedIdentityIndex"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The head rule: no successor, one established head, or an unresolved line with its shape and its candidate ends — never a denial that a relationship is recorded.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:fb6deea32359a64f553a963e22e18c7fe414deae2a7de53f6296035a97d854cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SuccessorLine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:84f74eecc2fdfaa33e34d94b3d7f9bb7c34f917ea8256d0aa83659accea9a6ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "successor_line"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:79bf54e417095b381827f162b7099f502b6d05eb46a0584a47578881ef423860",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_heads"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The authored walk: every descendant, visited once, and the ancestor/successor predicates the pairing uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:fea4d5cc509602482eb7806abba8dc9b05f923a6d26128aaba7a98183674bd54",
+            "locator": {
+              "kind": "symbol",
+              "name": "authored_descendants"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:54a246882485b6d0bea2673b3f688b04f49379b5a189a856510641c034269fab",
+            "locator": {
+              "kind": "symbol",
+              "name": "authored_ancestor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:4c7d45c60a427e115001812a0f977ea1ca8ebbf4da632999330199d1fb914556",
+            "locator": {
+              "kind": "symbol",
+              "name": "authored_successor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The line read: the kind selects the owner, realizations by invariant revision and memberships by family revision, and the whole line is read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:d6c8a4323b4a2ff1e3f0aa156e6b38e50ddff13ce1fe1cca656c093969abb0e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "RelationshipLine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:dbee53c97e2dfb3d420cecb4729fc582b755be6fa5aac19bb77b48a02b9ad020",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_line_relationships"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:d8f1233349ed7bf844a90b9f3c470ce43b01aaa5b46e62f5a9c4e869b9ad544c",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_realizations_for_invariants"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:aec97992be3482f558d2aed2fffff3396442a7d68e7d2fda8590cd485a6678ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_memberships_of_families_full"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The anchor seam one side's exact code tree asks for, so a line-read row carries the same resolution vocabulary as a selected one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:559de613d63909020324161fc64b25d4a1962535265b58bbbf73d5f20778ee75",
+            "locator": {
+              "kind": "symbol",
+              "name": "head_anchor_resolver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One realization and one membership read on a successor line, each resolving its identity from the snapshot's own revision row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:b9352a523608095937e2d841943934592a243bf03bf6b04f034ee30915fe9106",
+            "locator": {
+              "kind": "symbol",
+              "name": "_line_realization"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:618be3aea44a520dc2d80a892c8ab0b2cdfa990127d33ab6fcda328ea1e3714f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_line_membership"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:cabcfd9da7ee3bdbc6e225b2f918ae30e65643e6df7b551496d31c692fb53915",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revision_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

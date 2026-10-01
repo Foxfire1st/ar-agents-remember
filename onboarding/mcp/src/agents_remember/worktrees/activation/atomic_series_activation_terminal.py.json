@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact terminal release preserves absent, unreadable, or foreign selection and vacates only a record that selects this exact contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd1f989acf7cd85d7c3de90f6fad2558e01522",
+            "content": "sha256:ff74f77ea5223a1fe74d6bec0d45e609faa4f42da61e5f03e0d7c9930954572f",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_terminal_atomic_series_selection_if_exact"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Focused tests prove a release addresses only the released contract and that a foreign contract's record can never be adopted.\n\nAnchor: \"def test_release_addresses_only_the_released_contract(self) -> None:\"; \"def test_another_contracts_record_can_never_be_adopted(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec481109dc06d45cc3569e64354d4545f0a85294",
+            "content": "sha256:2b2821cc9654e625c2ee4838b0c714cdb24333411aece77c9fd98e0f2cb0e66e",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ec481109dc06d45cc3569e64354d4545f0a85294",
+            "content": "sha256:c994d6631624e0b42bac96c1dc9152ced9ea882b373716bfb76c079d7a5995ca",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/tests/test_atomic_series_activation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

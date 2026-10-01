@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc",
+  "references": {
+    "1": {
+      "note": "CGC setup orchestration lives in the provider-owned setup module.\n\nAnchor: \"def isolated_cgc_settings\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:791405bf37dccf1be5d045df867bbe5e9603100891425ddb59e461330b055d90",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

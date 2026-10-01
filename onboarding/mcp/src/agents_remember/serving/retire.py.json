@@ -1,0 +1,97 @@
+{
+  "path": "mcp/src/agents_remember/serving/retire.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The closure record carries timestamp, reason, edge, and acting session.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3e674639e889428073a86e671470918788034cb",
+            "content": "sha256:2bd7ea2c686c1b964af41668b0a39249d63a4be865ccfa81b8485b8f0a6956fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeatClosure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3e674639e889428073a86e671470918788034cb",
+            "content": "sha256:569cc3583428ea11145094d8813d773d5307427739543ad4f542cdf033dbe9d1",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retirement handles graceful control-stop failure, terminal termination, and catalog marking.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3e674639e889428073a86e671470918788034cb",
+            "content": "sha256:9c6e69dba8cf1d3a96f3f6ad937acf0c57dd8ffbfc7bd7fa7ad00856813cc370",
+            "locator": {
+              "kind": "symbol",
+              "name": "retire_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3e674639e889428073a86e671470918788034cb",
+            "content": "sha256:d6e0ce1f4c87cf87209e5a2cf3f8eef1978f026e895a4134a39ebdd774a30f43",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The control-session stop failure type is handled explicitly.\n\nAnchor: \"except HarnessControlError as exc\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3e674639e889428073a86e671470918788034cb",
+            "content": "sha256:ae1d07c05135edc801e9ef7e2c9ebe3bf1d716b0f43ad80f217760d61c4c9117",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Retirement invokes the control-session stop path when configured.\n\nAnchor: \"stop_control_session(entry)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3e674639e889428073a86e671470918788034cb",
+            "content": "sha256:964e2fa6dfed21038b2fa2378938d07acb5bafc463e8f0277377149d0aaf6ced",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

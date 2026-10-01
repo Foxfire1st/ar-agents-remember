@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/carryover.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/carryover.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:06 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00 |
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](../../../overview.md)
@@ -68,118 +58,47 @@ than copied, and default read settings cannot substitute for explicit target wri
 - A missing or malformed cache does not change candidate evidence or admission.
 - Nothing-to-carryover cannot invent attribution for a new code state or create a cache-only commit.
 - The real memory commit carries the official tip's attribution; cache rows are derived afterward.
+- **Carryover writes legacy-format memory only, and only while the repository is not locked (L37, review R1
+  F2).** `_apply_carryover_for_request` calls `_require_legacy_format_target` right after its authority checks,
+  before the checkout requirement, the plan and every write. A target whose working tree holds
+  `knowledge/layout.json` is refused with `CONVERTED_TARGET`, naming the file writer: carryover copies
+  legacy-format Markdown and commits it with no format check and no knowledge validator. An unconverted target
+  asks the cutover lock on the configured memory repository and is refused, naming the crossing sync, once that
+  repository holds converted memory (MIK-R09 rule 6). `memory_carryover_plan` is a read and is unchanged.
+  Carryover stays unavailable on converted lines until it is adapted to converted memory.
 
 ### Todos
 
 No new file-local follow-up is established by this documentation pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Candidate comparison and explicit review selection. | `CarryoverRefs`; `selected_candidates` | mcp/src/agents_remember/memory/carryover.py:222-237; mcp/src/agents_remember/memory/carryover.py:226-240; mcp/src/agents_remember/memory/carryover.py:614-627 |
-| Apply owns one content commit and preserves exact leaf/repository authority. | `_apply_carryover_for_request`; `memory_content_commit` | mcp/src/agents_remember/memory/carryover.py:698-791 |
-| Target storage is established from effective explicit settings. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
-| Shared committing explicitly excludes the consumer cache. | `stage_worktree_content`; `commit_if_dirty`; `_excluded_pathspec` | mcp/src/agents_remember/worktrees/modules/git.py:34-35; mcp/src/agents_remember/worktrees/modules/git.py:191-197; mcp/src/agents_remember/worktrees/modules/git.py:200-207 |
-| The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head` | mcp/tests/test_memory_attribution_producers.py:238-300 |
+- Candidate comparison and explicit review selection. [1]
+- Apply owns one content commit and preserves exact leaf/repository authority. [2]
+- Target storage is established from effective explicit settings. [3]
+- Shared committing explicitly excludes the consumer cache. [4]
+- The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit. [5]
 
-## Cross-Repo References
+- A converted target is refused, and an unconverted one takes the cutover lock. [6]
+- Carryover never writes converted memory and takes the cutover lock. [7]
+
+### Cross-Repo References
 
 Configured code and memory repositories or temporary fixture repositories are described through
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional configured cross-repository evidence is claimed. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T01:06 UTC — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
-
-
-- 2026-09-15T00:51 UTC — Retired TargetLedger, ledger_commit_message, ledger-mapped-head, and standalone ledger commits; documented cache-independent content checks and the shared commit helper while preserving evidence tiers, target authority, and caller-body attribution. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
-
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
-  `7317108b`): `require_git` now calls `run_git(repo, args, GitRunnerOptions(input_text=input_text))`
-  and `patch_id` calls `run_git(repo, ["patch-id", "--stable"], GitRunnerOptions(input_text=diff_text))`,
-  the runner's keyword arguments having collapsed into one optional `GitRunnerOptions` object; the
-  timeout class each site names is unchanged. Rebound the ranges the migration shifted
-  (`_apply_carryover_for_request` 760-863 → 768-870, `_require_carryover_authority` 865-901 → 873-909,
-  `official_head` 787 → 795, the commit/render pair 846-852 → 854-860, `_nothing_to_carry_result`
-  720-757 → 728-765, `load_ledger`/`write_ledger` 202-205/216-238 → 208-211/222-244), and recorded
-  that the timeout every carryover call inherits is the `GitRunnerOptions.timeout` default.
-- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
-  base `5bb124d4`): carryover became one of the five memory-content producers. `:846-849` now commits
-  the caller's `CarryoverCommitMessages.memory` body through
-  `kernel.memory_attribution.render_memory_content_message(..., official_head)` — the same
-  `official_head` (`:787`) the mapping is prepended against on the next line, so trailer and ledger row
-  cannot disagree — and the attribution is appended rather than formatted into the body precisely
-  because that body is a public argument that may be several paragraphs long. Recorded the
-  trailerless-by-rule sites with their reasons (the ledger leg at `:852`, the ledger-mapped-head branch
-  at `:748`, and the `nothing-to-carryover` branch that creates no commit) and the end-to-end case that
-  drives the public tool with a hostile multi-paragraph body. Rebound the two stale inline citations
-  (`_require_carryover_authority` 856-892 → 865-901, `_apply_carryover_for_request` 759-853 → 760-863).
-  Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `load_ledger`, `write_ledger` repointed to mcp/src/agents_remember/kernel/memory_ledger.py:202-205, mcp/src/agents_remember/kernel/memory_ledger.py:216-238. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-
-- 2026-08-03T03:59:59+02:00 — Curated 10 citation claims (5 table rows, 5 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-07-31T20:52+02:00 — 260731-EFA-L3 curator: the module's local `run_git` (the only copy that
-  accepted `input_text`) was deleted and every git call re-pointed at
-  `kernel.git_command.run_git`; `require_git` now just wraps it. Rewrote the MX-FIX-4 note that
-  claimed a "local input-bearing Git adapter" scrubs selectors — that adapter no longer exists —
-  and recorded what the shared runner adds on top of the deleted copy (300s local timeout,
-  `encoding="utf-8"`, `errors="surrogateescape"`). Added a `git_command.py` L24-L96 reference row.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  added the frozen `CarryoverRefs`, `MemoryOnlyDoc` and `OfficialLedger` parameter objects and
-  re-signed `candidate_for_path`, `memory_only_doc_candidates`, `_memory_only_evidence` and
-  `_nothing_to_carry_result` onto them. `build_plan_for_request` now builds one `CarryoverRefs` and
-  passes it to both candidate builders, so a plan's comparison frame is constructed once instead of
-  re-listed per call. Evidence tiers, decisions, reasons, the ledger-mapped-head path and the
-  emitted plan/apply payloads are all unchanged. Verification metadata pinned until closeout stamps
-  the L2 commit.
-- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: apply now requires effective official-memory storage
-  authority before mutation, reuses it for route-index refresh, and scrubs ambient Git selectors.
-- 2026-06-11T15:05+02:00 — Documented `memory-only-doc` and `entity-catalog` candidate kinds,
-  evidence helpers, fingerprint validation, and apply reporting.
-- 2026-06-10T09:45+02:00 — Issue #54 sub-task C added ff-only memory-main advancement and result
-  reporting.
-- 2026-06-10T05:50+02:00 — Issue #56 sub-task 3 added route-overview candidates and guarded
-  official-side route-index regeneration.
-- 2026-06-10T05:30+02:00 — Git children stopped inheriting the MCP stdio protocol pipe.
-- 2026-06-02T04:00+02:00 — Apply began mapping an unmapped official code HEAD when nothing is
-  actionable to carry.
-- 2026-05-31T12:30+02:00 — `exact-landed-commit` began requiring every path-touching source commit
-  to be an official-ref ancestor.
-- 2026-05-29T18:35+02:00 — Narrowed plan candidates for Pyright; behavior unchanged.
-- 2026-05-24T00:35+02:00 — Added carryover request/service entry points for MCP controllers.
-- 2026-05-23T13:09+02:00 — Copied into the MCP package and patched to package imports.
+No additional configured cross-repository evidence is claimed.

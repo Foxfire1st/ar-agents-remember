@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/evidence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/evidence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -82,39 +72,31 @@ shape error rather than stored data.
 - **Evidence results are facts, not verdicts.** `passed` and `failed` are equally facts; nothing in this
   module converts either into a finding, a gate or a lifecycle change.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two record kinds' kind and schema names, and the one lifecycle value both store. | `EVIDENCE_CLAIM_KIND`; `EVIDENCE_CLAIM_SCHEMA`; `VERIFICATION_OBSERVATION_KIND`; `VERIFICATION_OBSERVATION_SCHEMA`; `EVIDENCE_RECORD_LIFECYCLE` | mcp/src/agents_remember/models/knowledge/evidence.py:75-75; mcp/src/agents_remember/models/knowledge/evidence.py:76-76; mcp/src/agents_remember/models/knowledge/evidence.py:78-78; mcp/src/agents_remember/models/knowledge/evidence.py:79-79; mcp/src/agents_remember/models/knowledge/evidence.py:83-83 |
-| The two claimed-coverage endpoints, the union that discriminates them, and the row identity that makes a duplicate endpoint unrepresentable. | `RealizationClaimCoverage`; `AnchorCoverage`; `CoverageEndpoint`; `claimed_coverage_row_identity` | mcp/src/agents_remember/models/knowledge/evidence.py:97-101; mcp/src/agents_remember/models/knowledge/evidence.py:104-108; mcp/src/agents_remember/models/knowledge/evidence.py:114-116; mcp/src/agents_remember/models/knowledge/evidence.py:658-666 |
-| The two subject kinds, each naming its own table and revision column, so the declared kind is the table the row reaches. | `InvariantRevisionSubject`; `KnowledgeFacetRevisionSubject`; `subject_table`; `subject_revision_id` | mcp/src/agents_remember/models/knowledge/evidence.py:131-135; mcp/src/agents_remember/models/knowledge/evidence.py:138-149; mcp/src/agents_remember/models/knowledge/evidence.py:173-178; mcp/src/agents_remember/models/knowledge/evidence.py:167-170 |
-| The artifact reference: a confined path, the bytes' sha256 and size — a reference, never a content store. | `ResultArtifactReference` | mcp/src/agents_remember/models/knowledge/evidence.py:185-223 |
-| The publication reference whose presence states which retention route the record relies on. | `PublicationReference` | mcp/src/agents_remember/models/knowledge/evidence.py:236-270 |
-| The closed five-member execution vocabulary, with `not_run` a member and no sufficiency member. | `EXECUTION_RESULTS` | mcp/src/agents_remember/models/knowledge/evidence.py:295-300 |
-| The run's own toolchain, recorded at write time and bounded. | `RunEnvironment` | mcp/src/agents_remember/models/knowledge/evidence.py:314-352 |
-| The claim aggregate: subject, anchor, coverage, explanation, required limitations, assessment references. | `EvidenceClaimPayload` | mcp/src/agents_remember/models/knowledge/evidence.py:359-412 |
-| The observation aggregate: recorded candidate, command identity, artifact, execution result, environment, publication. | `VerificationObservationPayload` | mcp/src/agents_remember/models/knowledge/evidence.py:415-468 |
-| The two appended authored commands and the tables they may write. | `AddEvidenceClaim`; `AddVerificationObservation`; `EVIDENCE_WRITABLE_TABLES` | mcp/src/agents_remember/models/knowledge/evidence.py:481-530; mcp/src/agents_remember/models/knowledge/evidence.py:533-548; mcp/src/agents_remember/models/knowledge/evidence.py:569-576 |
-| The case that asserts the payloads are frozen, extra-forbidden and never default the limitations value. | "def test_the_claim_payload_is_frozen_extra_forbidden_and_never_defaults_limitations(" | mcp/tests/test_knowledge_evidence_claims.py:149-190 |
+- The two record kinds' kind and schema names, and the one lifecycle value both store. [1]
+- The two claimed-coverage endpoints, the union that discriminates them, and the row identity that makes a duplicate endpoint unrepresentable. [2]
+- The two subject kinds, each naming its own table and revision column, so the declared kind is the table the row reaches. [3]
+- The artifact reference: a confined path, the bytes' sha256 and size — a reference, never a content store. [4]
+- The publication reference whose presence states which retention route the record relies on. [5]
+- The closed five-member execution vocabulary, with `not_run` a member and no sufficiency member. [6]
+- The run's own toolchain, recorded at write time and bounded. [7]
+- The claim aggregate: subject, anchor, coverage, explanation, required limitations, assessment references. [8]
+- The observation aggregate: recorded candidate, command identity, artifact, execution result, environment, publication. [9]
+- The two appended authored commands and the tables they may write. [10]
+- The case that asserts the payloads are frozen, extra-forbidden and never default the limitations value. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T06:20+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): created this one-to-one card for the supporting-record vocabulary. It records the two-kind separation and why it exists, the structural subject discrimination, the closed execution vocabulary with no sufficiency member, the artifact reference that is never a content store, and the absence of any field that could carry a verdict. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

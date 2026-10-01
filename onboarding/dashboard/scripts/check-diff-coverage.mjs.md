@@ -1,15 +1,5 @@
 # dashboard/scripts/check-diff-coverage.mjs
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/scripts/check-diff-coverage.mjs`                 |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-09-06T21:51:32+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`                  |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [dashboard/scripts overview](overview.md)
@@ -52,44 +42,27 @@ configuration, fallback executor, or compatibility reader.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The exact source declarations below establish the current behavior; this inventory is not execution evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Executable statement-line accounting | `executableStatementLines` | dashboard/scripts/check-diff-coverage.mjs:14-22 |
-| Covered statement ranges | `coveredStatementLines` | dashboard/scripts/check-diff-coverage.mjs:25-36 |
-| Production filtering and changed-line tally | `measureDiffCoverage` | dashboard/scripts/check-diff-coverage.mjs:43-76 |
-| Dagger admission and comparison-base selection | `main` | dashboard/scripts/check-diff-coverage.mjs:78-132 |
-| Required coverage artifact and diagnostic result without a floor | `coverage` | dashboard/scripts/check-diff-coverage.mjs:172-204 |
+- Executable statement-line accounting [1]
+- Covered statement ranges [2]
+- Production filtering and changed-line tally [3]
+- Dagger admission and comparison-base selection [4]
+- Required coverage artifact and diagnostic result without a floor [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
-
-- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: documented the direct-main-only
-  Dagger guard. Pure scoring imports remain available to diagnostic Vitest; direct changed-lines
-  CLI execution and its evidence remain Dagger-only. Verification and acceptance stay
-  closeout-owned.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator (round 8 delta): created this sidecar
-  for the executable-statement diff-coverage unit (architect ruling OPTION 1) and
-  its base-resolution runner. Verification pinned to `cf5ef50` until closeout
-  stamps the code commit.
+No applicable cross-repository source was found.

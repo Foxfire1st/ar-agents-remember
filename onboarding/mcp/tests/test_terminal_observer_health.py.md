@@ -1,15 +1,5 @@
 # mcp/tests/test_terminal_observer_health.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| path | `mcp/tests/test_terminal_observer_health.py` |
-| doc_type | `file-level-onboarding` |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -84,70 +74,27 @@ or class text.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved memory root; the module tests a
 repository-owned serving contract, so no external domain claim is needed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- The record, writer and accumulator contract: exact v1 bytes, one atomic replacement, saturating counters, the failed-write source of truth, and the status ladder at the exact cutoff. [1]
+- Every unusable source omits the wire key and is never repaired, including a prior-lifetime row and an above-ceiling counter. [2]
+- Classification is bounded, ordered and secret-safe; a custom subclass publishes its base category. [3]
+- Publication rides the observer call: the prime's own outcome is the first transition and both outcomes publish distinctly. [4]
+- A health-write failure emits only the fixed log line and retries the complete record next observation. [5]
+- The served tail is additive and omissive, and the read routes never mutate the row. [6]
+- The cross-read table: a fresh notifier cannot mask a stale or failed observer, and a current success beside a fresh notifier reads healthy from its own row. [7]
+- The served surface the cases drive: the fourth tail key and the payload model it carries. [8]
+- The publication seam and the served payload the cases enter through the real lifespan and the real route handler. [9]
+- The module is registered exactly once, in the explicit unit-regression lane. [10]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The record, writer and accumulator contract: exact v1 bytes, one atomic replacement, saturating counters, the failed-write source of truth, and the status ladder at the exact cutoff. | `TerminalObserverHealthRecordTests` | mcp/tests/test_terminal_observer_health.py:220-616 |
-| Every unusable source omits the wire key and is never repaired, including a prior-lifetime row and an above-ceiling counter. | `test_every_unusable_source_omits_health_and_is_never_repaired` | mcp/tests/test_terminal_observer_health.py:503-567 |
-| Classification is bounded, ordered and secret-safe; a custom subclass publishes its base category. | `test_failure_classification_is_bounded_ordered_and_secret_safe` | mcp/tests/test_terminal_observer_health.py:569-616 |
-| Publication rides the observer call: the prime's own outcome is the first transition and both outcomes publish distinctly. | `TerminalObserverHealthLifespanTests`; `test_the_prime_and_every_steady_pass_publish_success_and_failure_distinctly` | mcp/tests/test_terminal_observer_health.py:619-731; mcp/tests/test_terminal_observer_health.py:629-682 |
-| A health-write failure emits only the fixed log line and retries the complete record next observation. | `test_a_health_write_failure_logs_only_the_fixed_line_and_retries_publication` | mcp/tests/test_terminal_observer_health.py:684-731 |
-| The served tail is additive and omissive, and the read routes never mutate the row. | `TerminalObserverHealthServedTailTests` | mcp/tests/test_terminal_observer_health.py:734-931 |
-| The cross-read table: a fresh notifier cannot mask a stale or failed observer, and a current success beside a fresh notifier reads healthy from its own row. | `test_a_fresh_notifier_cannot_mask_a_stale_or_failed_observer`; `test_a_current_success_beside_a_fresh_notifier_reads_healthy_from_its_own_row` | mcp/tests/test_terminal_observer_health.py:858-896; mcp/tests/test_terminal_observer_health.py:898-931 |
-| The served surface the cases drive: the fourth tail key and the payload model it carries. | `ServedWorkspaceProjection`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:50-65; mcp/src/agents_remember/serving/served_state.py:78-109 |
-| The publication seam and the served payload the cases enter through the real lifespan and the real route handler. | `_observe_terminal_catalog`; `_terminal_observer_health_payload`; `_state_response` | mcp/src/agents_remember/serving/_app_lifespan.py:80-106; mcp/src/agents_remember/serving/_app_lifespan.py:376-394; mcp/src/agents_remember/serving/_app_routes.py:77-106 |
-| The module is registered exactly once, in the explicit unit-regression lane. | "mcp/tests/test_terminal_observer_health.py" |mcp/tests/test-evidence-lanes.toml:264-264|
-
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation boundary is established by this repository-owned
 unit-regression module.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 6 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`_app_lifespan.py`, `_app_routes.py`, `served_state.py`, `test_terminal_observer_health.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:33:04+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:264-264. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:211-211. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:193-193. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:186-186. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:183-183. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:182-182. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:181-181. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:179-179. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:157-157. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 6 generated projection bullet(s) by hand while resolving the memory sync** — `mcp/tests/test_terminal_observer_health.py`, `ServedWorkspaceProjection`, `served_state_tail`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 4 generated projection bullet(s) by hand** — `mcp/tests/test_terminal_observer_health.py`, `ServedWorkspaceProjection`, `served_state_tail`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: `"mcp/tests/test_terminal_observer_health.py"` → `mcp/tests/test-evidence-lanes.toml:152-152`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_terminal_observer_health.py" repointed to mcp/tests/test-evidence-lanes.toml:151-151. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/serving/served_state.py:50-51 in the row 106 of this card; the repetition added no pooled evidence
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `ServedWorkspaceProjection` in the row 106 of this card from mcp/src/agents_remember/serving/served_state.py:78-83 to mcp/src/agents_remember/serving/served_state.py:50-51, the extent of the construct the claim is about (the checker named line(s) [11, 33, 50] as its live location)
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `served_state_tail` in the row 106 of this card from mcp/src/agents_remember/serving/served_state.py:50-51 to mcp/src/agents_remember/serving/served_state.py:78-83, the extent of the construct the claim is about (the checker named line(s) [32, 74, 78] as its live location)
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/src/agents_remember/serving/served_state.py:32 to the row 106 of this card as the citation for `served_state_tail`: no cited file carried the construct, and the checker named line(s) [32, 74, 78] in this file as its live location
-- 2026-09-15T18:42:00+00:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
-  base `99534dc5`, 13 paths, `git diff | sha256sum` = `b75a785d…`): created this file card for the new
-  focused test module (16 cases / 27 subtests, 931 lines) and its `unit-regression` row at
-  `mcp/tests/test-evidence-lanes.toml:122`. Recorded the current contract each class protects — the
-  exact v1 row and its atomic writer, the omission-and-no-repair rule for every unusable source, the
-  bounded ordered secret-safe classification, publication on the observer CALL for both outcomes, the
-  fixed write-failure log line with retry, the additive omissive served tail, and the packet's
-  cross-read rows (including row 4, added by this leaf's fix-verification round). Also recorded why
-  the route half drives the production handler and generator directly instead of an ASGI app: the
-  integration population has three cases of headroom and the brief forbids raising it, so the
-  ETag/304 branch and the snapshot/delta asymmetry proven here are the production ones. Verification
-  metadata remains closeout-owned; no stamp advanced.

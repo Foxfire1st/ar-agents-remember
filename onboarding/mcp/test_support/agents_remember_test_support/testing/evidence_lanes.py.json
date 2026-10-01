@@ -1,0 +1,80 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The eight lanes define authority, fidelity, lifetime, and triggers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
+            "content": "sha256:22c917a6d0e270b678d739d034206e794b42c8cd5f2d4120a333fc6202078f5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_LANES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Registry validation and collection routing are fail-closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
+            "content": "sha256:fe58e3c90aea05016831a124a3d1b5e7ff25964b43757f3bd0970f024820328d",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_lane_registry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
+            "content": "sha256:58b2233fc6a5ffc0de1b435857dcd6ac3de330706850b5cc9e36746ffe3c25c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "category_for_item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The manifest loader proves complete, non-conflicting test-file coverage before collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
+            "content": "sha256:9b6a76d1115a5e75a0942cd311c4835eb9b348576c744e8fe48d63cc541eb117",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_lane_manifest"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
+            "content": "sha256:7166190d8d0f0d5b960aa25e3a61d0068532091d8d1ae0d9a071ea4d9d6af43e",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

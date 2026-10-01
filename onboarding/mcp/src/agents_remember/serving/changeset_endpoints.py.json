@@ -1,0 +1,313 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_endpoints.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of what a committed range is, why `HEAD` may not stand in for it, and why the three absences are separated.**\n\nAnchor: `HEAD`; `working`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:2925830bea9503802178878736eb52b90234b8b7db166972af74e5aac13327a3",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:d16e27445f0be607407521a36c50610a99dccb150aef5a0a45a434152a23b028",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolvable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The contract whose recorded cells this module reads, and the cells themselves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The caller that owns the degradation policy: the code half carries its own `not-recorded` absence into the body as `state`/`stateDetail` while only an unrecorded **memory** half may empty, and both sides resolve independently.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_range"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "content": "sha256:0a37aa1cd75abd1c0e45859d5b2a2fe1ba532b9db0b43cd1c7a97ad17d04b51f",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_file_diff"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The case module that measures the bound range, the immovable endpoint, the state answered instead of a refusal, the route's own `200`, and the one-half degradation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:e4b153a740fbd51671f089dea80c8dda8f42b7736a56f9ae8a62c3a6cc496712",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:b9332aae10fd5065c5bc4ba35205b40390de7a58b9ce8e9b63c01de77f68e38b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:c797f9387e3d9d2b955ce41e52637dc378b31de1f07fa17e47c7801bd65c1741",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_answers_an_unrecorded_committed_view_without_a_status_error"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:d7f70d5eb85ad859d8eadcf0670a3003b32eddd695b99761d4546485a3671db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the range value, the two absence types, the kind constant and the resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:e6873cc199fa18e58d5d55ac21ca2e585af1e001b1f72bd879e5ca5e69b0c2e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two side names, which are the words the change-set payload already uses for its halves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:8e79de13eb7ada024421bd93b58f47234b96da2262afc9d0cee56111f4604f52",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_SIDE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:3f5986bd26df8b160f66402a96861c09c23591c4f9d02fbc301b1862547a3700",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_SIDE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The three absence kinds and the single degradable one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:0b304ba146c2638a99af4e060730974a7cb926e96ec1f0aac370bf04bcb3f86b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedEndpointAbsenceKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:0bd52fb074a9a9cf53d881f2c43ca86bade63063eb80290e44b0322dcf009da9",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_RECORDED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The range value: the two recorded ids plus the repository that holds them, because an id without its repository is not resolvable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:a2419f88ad58e75ef6ef214300fb5f4033e370cbb42c19711947a67ce56427bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedRange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The absence type: a `FileNotFoundError`, with `kind` carrying the reason apart — the code side's `not-recorded` instance is caught by `_leaf_range` and published as the body's state rather than reaching the route as a 404 (260921-ICR-L25).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:5a28d4a0c426597856d7485be42352e3ed838fc9dfe210e30ae6652b0a109d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedEndpointAbsent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The whole resolver: the recorded-base precondition, the two missing-cell refusals, and the resolvability probe — in that order.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:0a532a939f67db2df1a8e12f0dcee8c54f8052d08dbc41036c4f825bb67342d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_committed_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two recorded cells per side, with the closeout cell preferred over the integration cell and the base side having no fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:86184c8855a6fcd9adcd59739457e4a4e4e9da5bff23ad577c30fd3c19e9e5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The leaf name a refusal carries, with the task id as the fallback for a contract that records no leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:4e0be6c5e8861a56cd1ab182c052ae7ae270c08b94b6772b1361bb433c33d8c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

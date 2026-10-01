@@ -1,0 +1,210 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/schema.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The canonical table manifest order, which a later leaf's logical encoder must follow.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:6feb1da7702db4f19134857c1233bc1fa288925fa0b603a5174a37150637a0c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared column order per table, used for positional changeset rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:1a9f3c47907380a1321458628a4d6d660eebb3daac5659bd99fe1fef006e99c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ten `STRICT` tables with explicit NOT NULL keys, composite deferred FKs and the self-edge CHECK.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:1efcb530f1e377466f79224937603ba0b0bc9f31377d471199e8f89853430953",
+            "locator": {
+              "kind": "symbol",
+              "name": "TABLE_DDL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:20738cdbaab96727c0cd8c6d736b794e635e41f9b20798874a4e4c466386c0b4",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The fifteen immutability triggers whose names the merge preflight compares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:1dd11c1b646570c907c8cbc2a63ea875780a3e8d5439ef2775ff18e4ce5b513a",
+            "locator": {
+              "kind": "symbol",
+              "name": "IMMUTABILITY_TRIGGERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:27576b4be2d0f2af22158b24951678766c99c69ca0576c985dee583daf015e52",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 284
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The structural manifest and the fingerprint over manifest plus DDL text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:29a6d9c9d6c89fa263c9a0d451141486b08acb15775b0791fef47d99a21ea8a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_manifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:74d79276760442616a5d96d92b3bf2e0ecf18a351a9f3f74bd38d1f61dbdb74e",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_fingerprint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The ordered DDL the creation path executes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:3f3547936ffc878ea845534f981b8942cae148ef9b59718136095d4cbbe7d02b",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_schema_statements"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The open-time validation that refuses a partial schema or a dropped trigger.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:9924564140105307e9aa63e93c4e9b78ae862c50797d3db5ea470bea605abd10",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_tables"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:8d782e633af21cdc9e6afc11aebe567379bf7dc8cff00d10b8443340788e7056",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_triggers"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:c166deaea11a4282d4ed27cb96a2a2c38d474a22156f9ea5d002df5efc6d29cf",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:f411ec80d676f6fa93312606d2ec547fed39bc99d653aab3afe18902be734359",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The label's deliberate mutability is what the `invariant_no_rebind` trigger's column list encodes.\n\nAnchor: `invariant_no_rebind`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:93d156d0d70649b19a80b220eb338d12ac928fbf1c0a7fb3b47d8e9ba46ebace",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory.test-utils.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory.test-utils.tsx` |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `a8693de1c5cad77767f10e5b9b80298d3ffa8faa`                  |
-| lastVerifiedCommitDate | 2026-08-09T22:37:12+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](../overview.md)
@@ -45,36 +35,21 @@ files. Renders must be unmounted and pending fake timers discarded before real t
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The geometry and hermetic timer hooks, plus the feed and viewport helpers. | `installScrollMemoryGeometry`; `feedOf`; `pinGeometry` | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory.test-utils.tsx:12-44; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory.test-utils.tsx:46-50; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory.test-utils.tsx:52-55 |
+- The geometry and hermetic timer hooks, plus the feed and viewport helpers. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-09T22:22+02:00 — 260713-TES master integration repair: made the shared
-  scroll-memory fixture own fake-timer setup and teardown. It now unmounts renders and clears the
-  Virtualizer's orphanable scroll debounce before restoring real timers, preventing callbacks from
-  escaping jsdom teardown.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  scroll-memory geometry shim extracted from `renderer.test.tsx`. Verification
-  pinned to the leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

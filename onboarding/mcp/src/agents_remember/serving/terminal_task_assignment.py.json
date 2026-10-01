@@ -1,0 +1,62 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal_task_assignment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Conflict checks reselect after marking a dead preferred generation exited.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "660c8701bbad019e8dffacbfb92113230201c37f",
+            "content": "sha256:736db026e4ca5926829ae57ad29342262983d8d620c2cd54da2b9c54a72cf284",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_binding_conflict_owner"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "660c8701bbad019e8dffacbfb92113230201c37f",
+            "content": "sha256:4f13a2e27b2fa4806d7d99f53af5a65182a0f4ab294947a5682e424c05b7bb0c",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Assignment holds one catalog batch across validation, conflict checks, and publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "660c8701bbad019e8dffacbfb92113230201c37f",
+            "content": "sha256:03618233ca061fac204698d2d4892239f81e67e4ae1914731bfbb178a4cfc4d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "assign_terminal_session_to_task"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "660c8701bbad019e8dffacbfb92113230201c37f",
+            "content": "sha256:d606dcff97eedfdd022b1c81781ed7d9622626fb894c6f4559b439abf4b04174",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assign_terminal_session_to_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

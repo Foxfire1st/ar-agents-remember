@@ -1,15 +1,5 @@
 # mcp/tests/test_final_full_memory_coherence_certification.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_final_full_memory_coherence_certification.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -121,27 +111,27 @@ execution.
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The scenario builds the configured disposable code/memory pair. | "def _scenario(" | mcp/tests/test_final_full_memory_coherence_certification.py:444-483 |
-| The affected-plan fixture selects the selected mode for the scenario. | "def _affected_plan(" | mcp/tests/test_final_full_memory_coherence_certification.py:788-794 |
-| The coherence fixture binds the exact candidate pair and memory inputs. | "def _coherence(" | mcp/tests/test_final_full_memory_coherence_certification.py:807-838 |
-| The evidence builder composes the exact pair, plan, prefix and check authorities. | "def _evidence(" | mcp/tests/test_final_full_memory_coherence_certification.py:867-894 |
-| The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:897-913 |
-| A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:916-926 |
-| **The single declaration the moved publication-input cases assert on, and the two members `prepare` does not derive.** Those cases now live in `mcp/tests/test_curator_coherence_publication_discoverability.py`. | `PublicationMember`; `PUBLICATION_MEMBERS` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:333-345; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:351-361 |
-| **The refusal every omission case drives, and the statement the prepare case drives — both now asserted from the new module.** | `publication_refusal`; `publication_input_statement` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:388-412; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:421-446 |
-| The suite's own row in the evidence manifest, inside `unit-regression`. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:73-73 |
-| The scenario builds the configured disposable code/memory pair. | "def _scenario(" | mcp/tests/test_final_full_memory_coherence_certification.py:433-472 |
-| The affected-plan fixture selects the selected mode for the scenario. | "def _affected_plan(" | mcp/tests/test_final_full_memory_coherence_certification.py:788-788 |
-| The coherence fixture binds the exact candidate pair and memory inputs. | "def _coherence(" | mcp/tests/test_final_full_memory_coherence_certification.py:796-827 |
-| The evidence builder composes the exact pair, plan, prefix and check authorities. | "def _evidence(" | mcp/tests/test_final_full_memory_coherence_certification.py:856-883 |
-| The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. | `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` | mcp/tests/test_final_full_memory_coherence_certification.py:897-913 |
-| A red final certification blocks finalization. | "def test_final_certification_red_blocks_finalization(" | mcp/tests/test_final_full_memory_coherence_certification.py:916-916 |
-| The same manifest row, which is the module's lane registration. | "mcp/tests/test_final_full_memory_coherence_certification.py" | mcp/tests/test-evidence-lanes.toml:73-73 |
-| The second half of the L23 split, which now owns the publication-input cases this card used to describe. | "The curator-coherence request states its own publication inputs" | mcp/tests/test_curator_coherence_publication_discoverability.py:1-14 |
+### Repo-Internal References
+
+- The scenario builds the configured disposable code/memory pair. [1]
+- The affected-plan fixture selects the selected mode for the scenario. [2]
+- The coherence fixture binds the exact candidate pair and memory inputs. [3]
+- The evidence builder composes the exact pair, plan, prefix and check authorities. [4]
+- The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. [5]
+- A red final certification blocks finalization. [6]
+- **The single declaration the moved publication-input cases assert on, and the two members `prepare` does not derive.** Those cases now live in `mcp/tests/test_curator_coherence_publication_discoverability.py`. [7]
+- **The refusal every omission case drives, and the statement the prepare case drives — both now asserted from the new module.** [8]
+- The suite's own row in the evidence manifest, inside `unit-regression`. [9]
+- The scenario builds the configured disposable code/memory pair. [10]
+- The affected-plan fixture selects the selected mode for the scenario. [11]
+- The coherence fixture binds the exact candidate pair and memory inputs. [12]
+- The evidence builder composes the exact pair, plan, prefix and check authorities. [13]
+- The green certification binds the exact memory tree, pair authority, and Gate-5 inputs. [14]
+- A red final certification blocks finalization. [15]
+- The same manifest row, which is the module's lane registration. [16]
+- The second half of the L23 split, which now owns the publication-input cases this card used to describe. [17]
 
 ## KS-R15@v1 Content-Member Assertion Re-Scope
 
@@ -162,56 +152,3 @@ called for: the publication-input cases moved to
 model's own field order and is disjoint from the two content members — **moved with the cases** and is
 asserted at `mcp/tests/test_curator_coherence_publication_discoverability.py:201`; it is recorded here
 because the re-scope's history is this card's, and the case's current home is that one's.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 2 row(s) re-pointed by the installed fixer (its generated bullets kept); 1 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_final_full_memory_coherence_certification.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:26:21+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:26:21+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 3 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 2 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:70-70. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:70-70. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "def _affected_plan(" repointed to mcp/tests/test_final_full_memory_coherence_certification.py:788-788. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "def test_final_certification_red_blocks_finalization(" repointed to mcp/tests/test_final_full_memory_coherence_certification.py:916-916. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:12+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **re-read this card against the module `260915-KS-L23` item 9 split, and corrected three statements the split (and the tree) had falsified.** (1) The Purpose paragraph named `test_final_gate_prefix_adapter` and `test_final_catalog_readiness_projection` as sibling importers; **neither module exists in this tree** — `test_final_catalog_plan_attestation` is the only importer, which is also why the scaffold stayed here. (2) The card stated the suite is registered in the **`integration`** lane; measured, its single row is `mcp/tests/test-evidence-lanes.toml:69`, inside **`unit-regression`** (the `integration` list begins at `:201`, and only `integration`/`stress-durability` members are marked `pytest.mark.integration`, `mcp/tests/conftest.py:89-130`). The two reference rows that carried the false lane claim were corrected in place, not removed. (3) The `KS-R24@v1: The Publication Input Cases` section described 18 items that **moved out** to `mcp/tests/test_curator_coherence_publication_discoverability.py`; it is replaced by the split's own record — the two subjects, the line counts (954 + 283 against 1199 before), the fact that the scaffold stayed so the sibling's import still resolves, the empty `diff` of **23** collected node names across the two halves, and the fact that no `[[contract]]`/`[[artifact]]` row was added because no non-`test_` module was created. The KS-R15 section records that the content-member assertion moved with the cases and now asserts at the new module's `:201`. **No `lastVerifiedCommitHash`/`lastVerifiedCommitDate` was advanced**: the split exists only in this leaf's uncommitted candidate, so no commit carries the bytes a stamp would claim — what was actually read is this leaf's uncommitted working tree and closeout owns the stamp. The pre-existing reference rows whose cited ranges the split and the earlier insertions moved were **left to the citation-repair engine** (its class, and its designated owner) rather than hand-rewritten here.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:69-69. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:69-69. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:68-68. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "def _affected_plan(" repointed to mcp/tests/test_final_full_memory_coherence_certification.py:790-790. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "def test_final_certification_red_blocks_finalization(" repointed to mcp/tests/test_final_full_memory_coherence_certification.py:918-918. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:68-68. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read every claim in this card whose cited range the leaf's own source edits had moved. This leaf's insertion of `mcp/tests/test-evidence-lanes.toml` rows and a test module shifted the anchors below them, and the re-cited range of each claim was checked against the construct it is about rather than accepted from the mechanical projection. Ranges re-cited: `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:260-288` -> `mcp/src/agents_remember/models/lifecycles/curator_coherence.py:298-310; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:316-326`. The generated projection bullets that recorded the same moves are retired here, so no mechanically rewritten range remains recorded as unverified evidence. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-18T03:20+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): **re-read this card against the module the leaf grew and recorded the 18 publication-input cases.** The leaf inserted three import lines below the top of the module and a 236-line section at its end, so every scaffold coordinate this card carried was nine to eleven lines low — `_inline_profile` is `169-249`, `_scenario` `444-483`, `_r07_candidate` `635-686`, `_r07_admission` `742-771`, `_affected_plan` `788-794`, `_coherence` `807-838`, `_evidence` `867-894`, and the five module-level tests `897-913` / `916-926` / `929-936` / `939-944` / `947-954`; the Logic section and the reference table now carry the measured extents, and the two mechanical generated bullets for `"def _affected_plan("` and `"def test_final_certification_red_blocks_finalization("` are retired here because this pass re-read and re-cited those rows itself. A new subsection states what the 18 cases protect and why a message is the requirement, and records the module's position against the 1200-line rail (**1190**), so the next leaf that adds curator-coherence cases here knows it must split first. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:66-66. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:57-57. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:54-54. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:52-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-09T02:43:28+02:00 — CCR-L38 bounded inherited citation repair: repointed the evidence-lane membership citation to the current member line 50; source-sha256=0aff0c8665ee76c3ca934460b5d85f55b0e80d85018a9465b40d43c1746284bc; verification metadata remains unchanged.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=d579fd361edd77aa2bf16f4319ed154ee6fcb5cc9ec5d710e8a960e553f384da; verification metadata remains unchanged because commit-owned realization is pending.
-
-- 2026-09-08T18:14:20+02:00 — CCR-L24 bounded memory-quality repair: re-read the evidence-lane registration and corrected its current line; verification metadata remains pinned.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `test_final_certification_green_binds_exact_pair_and_gate_five_inputs` repointed to mcp/tests/test_final_full_memory_coherence_certification.py:886-902. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: "mcp/tests/test_final_full_memory_coherence_certification.py" repointed to mcp/tests/test-evidence-lanes.toml:50-50. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T04:32:25+00:00 — L32 incoming-evidence curation: verified the exact cited lane member or current test-function owner against private C b34f4a59 and corrected only its moved coordinates. Existing own-source verification provenance is retained.
-
-- 2026-09-06T00:42:13+00:00 — Gate-5 citation repair: re-read the cited evidence-lane member and its declared classification and corrected its incoming range. Existing source verification provenance is retained.
-
-- 2026-09-05T07:12:23Z — CCR L31 independent-review correction: reread the passing-check
-  dictionary builder, evidence fixture and actual library calls at ea359649. Qualified the
-  suite's scope as library composition with synthetic authorities, preserved its registered
-  lane and useful behavior checks, and removed the unsupported end-to-end execution claim.
-
-- 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
-
-- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: created this file-level
-  onboarding card for the new CCR-R08 final full memory-coherence certification forcing suite
-  delivered in code commit 16d1a4d6; anchors and ranges derived from the current worktree source
-  and pinned to that commit. The suite entered the `integration` lane of
-  `test-evidence-lanes.toml` in the same change.

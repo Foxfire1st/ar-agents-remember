@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/fixtures/knowledge_files/4.2-family-attribution-and-landing-pairing.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture names its schema.\n\nAnchor: \"ar-family/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c28b20c40313428179739a97a0ea2d8b18e95faa",
+            "content": "sha256:3d2a713cd26b9125a806ef736f8ce3c116f749746203589b9bbb424e8aa4bb73",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Its distinguishing identity.\n\nAnchor: \"FAM-SEQNTS6C\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c28b20c40313428179739a97a0ea2d8b18e95faa",
+            "content": "sha256:e4b6185c2243c6265b08d120ed8ca83b862f4f67decb46a23c3bcf3bbea0af67",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test maps this file to its model.\n\nAnchor: \"4.2-family-attribution-and-landing-pairing.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b77ecb71863271304d8626c32c5a96b3930bf4cc",
+            "content": "sha256:f32fa6c9fc23ea249f18a00e55043e8ea6c9f317c4f832d28a4ee964bd3017bb",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

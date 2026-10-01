@@ -1,15 +1,5 @@
 # mcp/tests/test_direct_landing.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_direct_landing.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
@@ -61,75 +51,30 @@ receipt or certification claim.
 
 No new file-local follow-up is established by this documentation pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixture owns real temporary code/memory refs and an admitted series contract. | `_series_fixture` | mcp/tests/test_direct_landing.py:92-153 |
-| The retained scenario proves one content commit and reads its attribution from Git. | `test_direct_landing_publishes_memory_and_recovers_independently_of_cache` | mcp/tests/test_direct_landing.py:171-272 |
-| Recovery rejects real drift and accepts cache misses without extra commits. | `_recover_after_interrupted_receipt`; `_assert_clean_memory_reused` | mcp/tests/test_direct_landing.py:274-314; mcp/tests/test_direct_landing.py:316-340 |
-| The lifecycle recovery owner performs the required same-generation resumption. | `recover_direct_landing_under_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py:39-70 |
+- The fixture owns real temporary code/memory refs and an admitted series contract. [1]
+- The retained scenario proves one content commit and reads its attribution from Git. [2]
+- Recovery rejects real drift and accepts cache misses without extra commits. [3]
+- The lifecycle recovery owner performs the required same-generation resumption. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Configured code and memory repositories or temporary fixture repositories are described through
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional configured cross-repository evidence is claimed. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T00:51 UTC — Replaced separate ledger-publication assertions with the retained one-content-commit scenario, interrupted receipt recovery, real drift refusals, malformed/absent cache checks, and clean-memory reuse; no collected-case increase. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
-
-- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): assertion-only extension of `test_direct_landing_verifies_code_commit_then_ledger` — it now asserts the memory-content commit's `%B` equals `direct memory\n\nCode-Commit: <code sha>`, that `git interpret-trailers --parse` reads that trailer, and that the ledger commit yields `""` from `%(trailers:key=Code-Commit)`. No new test function and no new parametrized case. Rebound the row to the extended range `161-266`. Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_direct_landing_verifies_code_commit_then_ledger` repointed to mcp/tests/test_direct_landing.py:161-240. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
-
-
-- 2026-08-26T15:20+02:00 — Replaced the obsolete conflicting-mapping refusal claim with the
-  current ledger-history contract: exact-current re-land is idempotent, while a historical
-  same-code row is superseded by a recovered memory-only change without losing audit history.
-
-- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
-  above after source and requirement review. Verification remains closeout-owned.
-
-
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: forced preview/landed results through the closed public outcome model. Verification metadata remains pinned until architect-owned closeout.
-
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T11:29+02:00 — 260821-CLIVE-L1 candidate12 rebind: corrected the
-  overbroad explicit-message claim and recorded internal-memory omission as typed not-applicable,
-  followed by the existing mutation-time `direct-landing-memory-required` refusal. Bound to reviewed
-  candidate tree `8f03b256fe24aa77262da805f1538ee39ccb4dd6`, full diff SHA
-  `ccb36a898b455cd67ca00c378e5ba0f18851be01faf3d26eced3b9af062f429e`, same-reviewer PASS;
-  verification metadata remains pinned until governed closeout.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated relationship changes against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: created for the direct landing operation and
-  branch-addressed route-review binding (L16-R6/R7/R8/R9); covers the policy gate, commit
-  verification, pre-commit candidate-tree gate, idempotent re-land, ledger conflict, and the
-  recovery-naming refusal dialect. Verified at code commit a9d50e08.
+No additional configured cross-repository evidence is claimed.

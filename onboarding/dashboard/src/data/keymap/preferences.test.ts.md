@@ -1,15 +1,5 @@
 # dashboard/src/data/keymap/preferences.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/keymap/preferences.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate |  2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data/keymap overview](overview.md)
@@ -34,36 +24,22 @@ test that only asserts fallback would hide why an operator preference was ignore
 Preference resolution now expects Enter as the default `composer.submit` chord, while retaining
 validation of browser-reserved and duplicate bindings.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The suite tests a repository-local module and browser storage doubles; no cross-repository source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Unit under test. | `resolveKeymap` | dashboard/src/data/keymap/preferences.ts:244-271 |
-
-## Update History
-
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 1 citation row: the unit-under-test row now cites dashboard/src/data/keymap/preferences.ts L1-L374 with anchor `resolveKeymap` (was a range-less markdown link). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-07-24T13:17:50Z — Updated default submit-chord preference coverage. Verification hash/date
-  remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T07:22+02:00 — Created for FEUI-L8 effective-keymap regressions; verification metadata
-  remains blank until the new source is committed.
+- Unit under test. [1]

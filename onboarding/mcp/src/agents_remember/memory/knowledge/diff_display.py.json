@@ -1,0 +1,585 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The expansion reference and the reproducing command, stated in full so neither needs this module to be read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:b4048cb43dacb82e763547f311b4b2fc3e11e29892f2ca48c585c5469d86e317",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIFF_EXPANSION_REFERENCE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:2d398f7505a2fade4d37b4109089113cdf4db07f284784289e51ccce6109ded2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TREE_DIFF_COMMAND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The two attribution omissions from the partition: confirmed-unregistered and undetermined, with their two limitations and two reasons.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:4442cc696e17fc4d9de3df7c445015c378fb0d98885254848a58d7b3c71bbdf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attribution_omissions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The deleted selection-only calculation, deliberately not replaced: what replaces it is the partition value's own bucket.**\n\nAnchor: `attributed_paths(comparison)` (deleted); `SourceAttribution.attributed_paths`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:c75db0789b63e485a74d175f36c9b7c4a2784f969188ed93ac11684ed039b0c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributed_paths"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/diff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:891d0ee775acb68300169d706ce9e351de808fcd8a29158c80a094156840e3ce",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:4cb39084cd894f31f5633ee43315cf77c6cdca6fde0972212a23c280e20666e0",
+            "locator": {
+              "end": 592,
+              "kind": "line_range",
+              "start": 588
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The noun and order tables, and the counted noun phrase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:c653bcfe8cd65bd1c299276b7468a0c1ebac58cfb379d0aa9e922412362fa2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_KIND_NOUNS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:8713d4000c2dfd2f8951e0fc34638de1323655f72fff18ce1e0b7e321fe9571e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_KIND_ORDER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:bd3e332b25988dad8565a13c259f433f3181bf7e810f7bae36c25b6cc8235338",
+            "locator": {
+              "kind": "symbol",
+              "name": "_kind_order"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:90847137a78098d6c19236531905df499e5f54cf2a55fabef92dc1d3bd628af0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_count"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The expansion builder: both trees, both roots, the path lists from the same observation, the carried partition and the detail that states what was observed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:87408f0c4563f5d720a34ff0c46db364aba1326b1a9b308de11a175beacd2385",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expansion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:2c879aabb35c70ccc7d48f79ff320ed667716ee59e0f55e1b2e819bf266bc132",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expansion_detail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:4fabdfa7bec0f4b11d53ddeef11b3da2b2753c9c5a317900986ad6a4a8ba651d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stated_attribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The production probe, and the read-only handle the row counts are taken through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_tree_difference_probe"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:d24433a793584ab2d095c789461fb00c4361cc8df5bb2b6a94105a19defd7dac",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_diff_side"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:d0f850d506a1836e6ad007d0f85cb9c203601cd7d75083f4b26582c2e6dc38a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_row_counts"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:f4e9744587a703d1bf56717ada3fff0d64332cd4c6b22f9b68497d4a7fd591bc",
+            "locator": {
+              "end": 860,
+              "kind": "line_range",
+              "start": 846
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The node that measures the expansion naming both trees and every differing path, and the node that measures the unattributed gap surviving a filter.**\n\nAnchor: \"test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at\"; \"test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:ca55060dabee397d22bf4771569f14120fd68fa50027affc2efe2ac880d32657",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:5975eca098d2bbabff96ce09ae5ea80989ce01b8f93d067600bf4421b085cb1d",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The node that measures the filter narrowing the display and never the comparison.**\n\nAnchor: \"test_a_role_filter_narrows_the_display_and_never_the_comparison\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:50cfb2d3dc2b563edadc7a64d7da4c87938d75d3ace4287debc0222214872c56",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The two nodes that measure an unavailable observation reported as unavailable and a real probe making the gap visible.\n\nAnchor: \"test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set\"; \"test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:5d7f82afa9edce61929ce9e9b14a3d328807191ddc3f7298079fe0625d5227ac",
+            "locator": {
+              "end": 847,
+              "kind": "line_range",
+              "start": 791
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:bf423cadf92bba52e1ebc26de5e9653afb8a42860c6d484059142f762ed13d17",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 850
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixed presentation order of the limitations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:6310e9891d46ee83bdc0d7f00d93070a8f318f53f4a14a2ebe6769c7bdd2892c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIFF_LIMITATION_ORDER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**One side's source binding, the changed path, the observation and the seam — the shared vocabulary, re-exported at this seam.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:f71c231943369fb4014034ee38dc036a3bb5bc3b65ab502bd8ab205ee36b204d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeSide"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:e02da430a0dac6d193f5418aae1595361a1b7c0d2d9a449ebd20ddf909aa01b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeChange"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:52a0ea691f378474fa756aa63f86cdd6869719f994aff96b1a1bfd724779e345",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreePaths"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:d3c32a165ef72627cb087e45766b06930645ccfef0d4262b0bc68090cd6c3cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeDifferenceProbe"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:78199ae465e631607110fb8c2f1ca69f980f46327a123a2cbf27407ad970638f",
+            "locator": {
+              "kind": "symbol",
+              "name": "no_tree_difference_probe"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The partition arithmetic, re-exported at this seam: the reader, the mapping fact, the side inspection, the partition and the licensing predicate.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:99fb2f447a3c40fe101a918d49bed1e9523aab7622f57cbb13d698f453fc233f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionReader"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:269701f65d014547af84790aaba169714e1a6112a7dc630400642270c0640243",
+            "locator": {
+              "kind": "symbol",
+              "name": "MappingFact"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:13f17f1124b00df14b0b372e8f3e0f3e22209b05c56ff14ae5ac926ec7e796fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideInspection"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:8603ed6d34e8fe4107d63930ff1c406caa646f8fdf11093049af969f2f8baf9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "partition_attribution"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:3f071e6b8eb62175c43836c799ef16393b5dbc9292a6c9bb9ba64afb87d7cf80",
+            "locator": {
+              "kind": "symbol",
+              "name": "unavailable_attribution"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:b3e1bf008fc491cc6ad79df0f47f7105c276a5706bfe16ebbfb60ae8b78ff7af",
+            "locator": {
+              "kind": "symbol",
+              "name": "licenses_absence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The source half one display is built from: the two sides and the two seams travelling as one measurement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:618780a5ec8c9c2ea4d11d6780c5d4b42dff46395026c720b55d645bfc8a09cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceObservation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:dbfb6ceb74c80a0c549fe5e6ca236f1bc7007ee2830b642e02b4d76829ce20d6",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The one entry point and the order it builds in — filter, omissions from the partition, limitations, expansion from the same one observation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:346c75d87b09c9a0a8675faa71b003c8a48084a7a47db0efdb57d401191d87cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_display"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The limitation table that establishes each declared limit from the omissions beside it, with the undetermined limit's second producer.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:f35d2680c3857624bceb6365fb519a9691c93500a543bcaa184424de86d22a63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:907347974eef09fe8f6aaccd07359edf3b5def5fbfc39085a6eb56608ac8b413",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LIMITATION_REASONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The display filter, its two halves both measured in fix round 1, and the role read from whichever side holds the claim.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:1d1401467c41b851e289e83b58ba811a6c313149da3e0054fc2975a2d4185b17",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_filter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:6aa0b31a88821ac0f1c5c96df183bf9ebe2c8b736be088cb803eb454d74d9a8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authored_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The per-kind omission for records the other side held but did not select, stated as a selection fact and not a deletion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:240276a3c395f25e53aa31f81821085f67106dbfd804e6863d6f209befb7dea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unselected_omissions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

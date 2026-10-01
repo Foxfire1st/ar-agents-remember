@@ -1,0 +1,421 @@
+{
+  "path": "mcp/src/agents_remember/application/task_projection/projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public assembly entry point for one admitted binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:d17696bf0680691e619a188c6edbc0948e3b7c31399ba82074913285c147a3ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_task_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:4433eb6f981a1311654d98158ee441b77c4e74a0dd81cb8519dbdb8a5169a414",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The case that proves the three fact planes stay distinguishable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:e6f948f47d6eee8147f8acda3e1b1abe40300b988e05232a5a91be055dc2ad27",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projected_planes_keep_their_kinds_and_carry_every_obligation_verbatim"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The case that proves a refused and a successful projection leave the task tree byte-identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:21950a202f0518236df30a3b9217f3dab3c4323e8aae90e53e852e1a389a7a18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_and_a_successful_projection_leave_the_task_tree_byte_identical"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The assembler that reads only the planned documents and never widens the read set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:2bce8e1e68e4330fda14f8d92ad47cbf6f8ccdfad8bf946c994808130bce7c2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Builder"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:e6928448b4d6ce040ec90c12f82be70034ea935e0a0895794e17f92e5dfc9f92",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The owned-requirement resolution: typed declaration first, admitted location otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:f41544d22a8680426147dcd498f69471dd7ba754277ef293d9983ec68bea24b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirements"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:8e87a5803bed40d10c388a1cefdd72a09229eb494ba47665113be1017caa946f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owned"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:f14844e2bd6ed0d04bd582ecb68d5e8c9708b8635d0c9ca1641192ec2fe54b2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_from_declaration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:46f515f0f9b295d616185abfe01835b38f19710e103dfb1f5d6fd234deb67935",
+            "locator": {
+              "kind": "symbol",
+              "name": "_from_location"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:09a3f03b9ae6401e92c566c1e6c800c682a4aa97ef6a152811dbea07d3c2920c",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:ce9b40af46af065718e38a5739ffdb98e744d3452d7fbb68cbc990232fac4671",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:3a08be0fbe9e42372e3d0de9a8a9946bcfa635764f6dcdf7dd06184c75bd6522",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:c4822bcdc883fa824f756a0ef68e1085b6841aeeffa85140e2edff32fdea7ab1",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The preservation plane: the three roles carried verbatim as current facts, and the gap when no packet was admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:3f819800e595c295fdd789cf59fcc411ed2ae563f8d24eee11a8cbf2e43f6c70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preservation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:f20990d3264a6ec1e025be3763c6b9a15850dd531566a0ed4f4defa7f7d912a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PRESERVATION_ROLES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:983138b811727c76169f364658d3ffa2a87ae6bff4e0ea6b43c441ce07cdefcd",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:e21b4695fa0758b704d94997b35813689b67bc61bacaf5905ef59831f146fe79",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The portfolio plane, including execution-graph waves, behind the plan's portfolio admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:7b36fbc82951398231a28501903ec9139ecb13d4da18e9155ab7b5c7c317e3a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_portfolio"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:48f505415f3c4661b3bdefa232ec87981a759527b9fca0411eed5ee8d5443577",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:6b50a8ba37f8b63d2995a23b6017c784ebb0d25d7ecfdcc567eec8f7977a6532",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 386
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:a9a22958201531b81c0de576a8b3cf7d6c76e871effed95864795bf0d4a920bd",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 413
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The historical plane: progress, review round, discarded slices, registrations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:4943bbe70179a9a95f67cd8eb6722083533265ef620b50cf40b1a0b5cdb88c6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:b4fb1b635b16f6c3e472f811bbb9489c98e900d5b0621e5c8395218a4c29b769",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 445
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The knowledge seam that reports its channel unadmitted rather than omitting it, and the gap list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:914f841f42f9488171f80a4d565bc7661befdbe3acf2bdca2c154765ad9943f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:85ca0f9ece492cb6acd27e3f2d038fdb2c86fab9c344a753349dd8a396736e0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gaps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:c0b75a2f96a25a8f9582aafd8410b7e5a6c8c129bb28b75dad5c6faea9315639",
+            "locator": {
+              "end": 505,
+              "kind": "line_range",
+              "start": 492
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:3b286efe9de6868673f92dd51e42caf667bfb88a5addfa7af00c09f3ead1c672",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 507
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two requirements routes the projection admits, and the refusal when neither applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2af644d29fe74ba46ecf539a85c42764bb99d068",
+            "content": "sha256:b84864076a196a63d2f0f9eb56a1074c3ae328204a2c30b0f51f7efa5f319e1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskProjectionRequest"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2af644d29fe74ba46ecf539a85c42764bb99d068",
+            "content": "sha256:b13c0e1cae56ffb226bd0de20516c7f68f3c79498dc27209785fb9020cd0a015",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementPacketLocation"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The case that proves two leaves never leak each other's private task content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:af33803cce9f840651a1b5cc88e02c96bc91c6d5de46e2540b520b4a96a4e96b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_leaves_project_their_own_scope_without_leaking_the_other"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

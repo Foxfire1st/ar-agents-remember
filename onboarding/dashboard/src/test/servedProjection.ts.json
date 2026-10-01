@@ -1,0 +1,297 @@
+{
+  "path": "dashboard/src/test/servedProjection.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`AsJsonModule<T>` — the exact widening, and nothing else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:30723aabe219bb62232e8a0734e2040f71a412509e3b93904379b5647311c0d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AsJsonModule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "`tsconfig.app.json` sets `resolveJsonModule`, which is what makes the widening apply to the fixture import.\n\nAnchor: `resolveJsonModule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f027a65aa121e2a9a127e28e4eb04a66dc8789d8",
+            "content": "sha256:7f9575d9a833b64f35d290ccba511ea4acde9b39bfa1bf52778bdfa52305e435",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "dashboard/tsconfig.app.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The reviewed behavior is wholly repository-local; the payload's producer is `observer/projection.py` in this repo.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0254d9a08969ea7e9d0a3288e5d04e8317256e40",
+            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0254d9a08969ea7e9d0a3288e5d04e8317256e40",
+            "content": "sha256:1b6f53a34daf99345ae2ac3cc05650f59233bf79d1db54a99487f43d3011f2a9",
+            "locator": {
+              "end": 1153,
+              "kind": "line_range",
+              "start": 1131
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`asServedProjection` — the parameter type is the check; the body cast only re-narrows vocabularies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:12df43ff00e9127957d3b1b6424e4bd3dd39c9d43b08489a2906d08c6dee0cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "asServedProjection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mirror whose literal unions the import erases (`State`, `Phase`, `AttentionSeverity`, `AttentionLane`, `ProcessFactState`, `ProcessHealth`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af3105f5b04a102d7d57879242cbab2f30eb9a41",
+            "content": "sha256:9d9b036ca7b758530fc951f101646842785d8c93b5d47ba9ae79b6d724630fc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "State"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "af3105f5b04a102d7d57879242cbab2f30eb9a41",
+            "content": "sha256:c2051cb250b83c794f52953f565be91adc9616e15b85802a9d3b3d414542bb18",
+            "locator": {
+              "kind": "symbol",
+              "name": "Phase"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "af3105f5b04a102d7d57879242cbab2f30eb9a41",
+            "content": "sha256:0706dfc4562c880f95f98d8fdad559874303a430ebcb1741084ad177511e0ebb",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionSeverity"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "af3105f5b04a102d7d57879242cbab2f30eb9a41",
+            "content": "sha256:afe1894e1b77ea9e75f46345823da8ff8fec2569a186055696d01cb45c3e586b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionLane"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "af3105f5b04a102d7d57879242cbab2f30eb9a41",
+            "content": "sha256:8e8886b140a2acdffb0c32730ebec13ecf0845f2cea0ec84dd2e2ae6bd1cb126",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProcessFactState"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "af3105f5b04a102d7d57879242cbab2f30eb9a41",
+            "content": "sha256:01ffaef2d8cf6864badeec9f7cf750fe03824303fac0d987254d6e80bcd41a2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProcessHealth"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Caller 1: the contract test imports `asServedProjection` for the sampled snapshot.\n\nAnchor: \"./servedProjection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af6b7d1579dcab823dc33abee1a9a0af6905c3ad",
+            "content": "sha256:12709c38fd222e3b3a49a442a7b2882587ffe36239616ce0868b3b80c07c6414",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Caller 1: the contract test calls `asServedProjection` for the sampled snapshot.\n\nAnchor: \"asServedProjection(snapshot)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af6b7d1579dcab823dc33abee1a9a0af6905c3ad",
+            "content": "sha256:a214788c7f3ded989faab65e778fbe2a488b8b5f299146a6c67e314447458733",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The contract file documents the three type-level directions `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror`.\n\nAnchor: \"mirror ⊇ served — the server grows a field\"; \"served ⊇ mirror — the mirror declares something\"; \"fixture ⊇ mirror — THE ORACLE ITSELF\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af6b7d1579dcab823dc33abee1a9a0af6905c3ad",
+            "content": "sha256:76e1552838503ed65fc0d36446743b6dbf4326173608a48869635895b979befb",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "af6b7d1579dcab823dc33abee1a9a0af6905c3ad",
+            "content": "sha256:e14d6ca126d5b033fc5bc8fcb86d95b1355f23c6bd2a36ad21a5c434f1cf45e5",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "af6b7d1579dcab823dc33abee1a9a0af6905c3ad",
+            "content": "sha256:3c56d187d271da6631d4a03368cb99d9a368bfd9d738a1a65b5231caee2ac7c3",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Caller 2: the fixture module exports `SERVED` from `asServedProjection(snapshot)`.\n\nAnchor: \"export const SERVED\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:c485c290c1ae15965367b24a7fd5261585725a9788c022a191071e493835d16d",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Caller 2: the fixture module reads the served projection's fields when constructing the `BASE_*` builders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:c13cd1e912daf0a1b709084429ede3f46694a201c77086a57baa5233ea55743e",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_LIFECYCLE"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The registry entry that makes the body cast the only one allowed in this file, with its written reason.\n\nAnchor: \"src/test/servedProjection.ts :: as WorkspaceProjection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:3ecdede34d9b82dbcd4b853990a794e942bfcf64659fe42e8295ae32f80f44c0",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

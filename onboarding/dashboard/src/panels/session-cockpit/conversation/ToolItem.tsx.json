@@ -1,0 +1,113 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The item/block/phase types (`tool-input.summary`, `tool-output`, `diff`) this component narrows over.\n\nAnchor: \"tool-input\", \"tool-output\", \"diff\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:0a7e622b63e3e0884cd52142019434ce4edc262b6df16b2cb909e9fa04699a9b",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The per-file diff renderer that a `diff` block routes to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81b2e034e2d269c2e5d91fe2ea3b2ee6378aed08",
+            "content": "sha256:9ac9f5df455325ab5e3c5ee057a09f683c58f8cd1140662c618fb4671452d444",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffBlock"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81b2e034e2d269c2e5d91fe2ea3b2ee6378aed08",
+            "content": "sha256:6425c00fdb3721f11cfbe9b8149ac3e34253f0bc344d209b4cfb4aa472c60687",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared ClampButton, `sourceLineCount`, and `useClampIds`.\n\nAnchor: `ClampButton`, `sourceLineCount`, `useClampIds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:78ccc05389e44c687ada55c1ec2f312a48da4edc749b684b99fc130088c6fd8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClampButton"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:4c82ae3659bec3adaa3dc67825530f2df4973e47e0fc06691cd1a8dab8038033",
+            "locator": {
+              "kind": "symbol",
+              "name": "sourceLineCount"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:db77ef21a61783dfe333d220dfa764b5288dacc279ef65c7d80f2d934e3995fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "useClampIds"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The kind dispatcher that routes tool items here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b156fbba479b8bc6b33a0c1347cdee530f878b",
+            "content": "sha256:fca763ba027acd44b32b62e0f05001857d82abed6b01ff4ca32c859cd908fd1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItemView"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

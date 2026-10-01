@@ -1,0 +1,1347 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules",
+  "references": {
+    "1": {
+      "note": "The closeout closes the history file and validates its exact tree, restoring on refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:505ff343f40adcbcc74f44642af9e6cc526b257e74938e90144f187574db3c51",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_invalid_memory_commit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:f42805eb6774d150f98de11e3a85ac0aaf847636b3e0fc97b7ac9423f264f663",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The stored item's open state, as the live gate decides it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:f561dda98b3b6d9392ec4ed5dc3486a1359450d1788d018d4cc4ee9eddfb0d19",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_item_open"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two entry points and the shared missing-onboarding refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:06fc863fe4decebb91d1de5aa02faf3a57bd90ba97b65f559fbb9a97289b78ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_onboarded_sources"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:d76657a0214df95b0e4830f0d2948f17a02797fd2054fc3bc92ebc250ed56c5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_onboarding_traces_for_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "One commit, one ref, and the recorded base as the commit's parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:c27fc00460c90c4a2bf15e0ff0c1cc4f62f4692b8a029ca1f8607ef2744de7dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_code_object"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:e76f9ad5dc9f46c8d16618b86de70915f91eb60be55203d6cf276cb616328271",
+            "locator": {
+              "kind": "symbol",
+              "name": "retention_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:3717da8981d0036f920a613473af5b65b0ee294d7480ac558a565c91ccdb43c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETAINED_CODE_REF_NAMESPACE"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The commit whose id is a function of the retained objects, and the identity that makes it so.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:b23f34db5b3a1d584b9072644a6f88ca4295250b350866ad1fc27a7fbfca88ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retention_commit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:7844d23972d841741930e4a0433d7c26a786dc3106d5201427711c4a8479772c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retention_identity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**Custody over named history only, and the empty set as a statement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_custody"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:4456ef183916291ef3c37b7ada50bc861b0104429880e05e092a9e5835cc34c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CustodyNames"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The third observation, which a record never stores.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:874ace4ceb964e42fca51d95238b53398b65e9f281bde01d0ddb915da2497f06",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_observation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:8768acdd73aa2c484fe84053de67feec4a3b281229f396b7ae20887ce80940f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CUSTODY_UNREADABLE"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The explicit release: a moved ref refused, an absent ref converged, and the custody measured before deletion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_retained_code_object"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:8a8afcc589d9634366247b3a7daedb65a5f7b7ef547762d8200bfe01751cfd74",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReleasedCodeObject"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The typed failure every ref outcome raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:2274d2c732dc02f1a1446d8b254aa836da88e671b3b6ad42de1656eb83fead61",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectRetentionError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The create-side consumer, which measures custody against the contract's names and pins only when they do not hold the tree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:b434548ce5950f69923fdeab1d86c7ddf29758e41725532ecd2ed67b1e018415",
+            "locator": {
+              "kind": "symbol",
+              "name": "custody_names"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:b36a7bc722f8ba102a35f8098e3f012a9f231f68bd262db28825a0043cd6f580",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pinned_outcome"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The cases that measure the pin against a real repository, including the control object that proves `git gc --prune=now` really reclaimed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:3ab2c7c416950b356ec46d542b66412e6beae23aa37014881761dd974d6dc48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:5b50a133f74f13c3d98febd5ee526b2fe75346f8a6d11957dba36cbcdd32828d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:1250e3851a53dfd9512df6c9a57649f32b3ca388ce0aeacc4753145611e122d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Record landing probes first, then asks the gate over the landed commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:6edb891f498478825ee6f4dae434bdf0e06bf5f2957162656c61eda1ba855855",
+            "locator": {
+              "kind": "symbol",
+              "name": "_line_converted"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The package is imported through the public worktree manager facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89ee15e0a44fd22952d655dc7d2286a21a87ba45",
+            "content": "sha256:5b820289a3bfca6a5e50133d985f88b342cb86018aa573494919b29b45cffad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Focused worktree tests exercise the facade and operation payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSupportTests"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Finalizer tests cover a named master's row, its rollback and the misplaced-master refusal, and (MIK-R38) the folder master's row, the dry run, the standalone cases and the refusals before any write.\n\nAnchor: \"class LifecycleFinalizeTests(_FinalizeFixtures):\"; \"class FolderMasterFinalizeTests(_FinalizeFixtures):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:6aaaf95f042fb6da60141929d71c50cff7e3d6c7ffdc8c70f29550bbed3dd69a",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/tests/test_lifecycle_finalize.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:08a5851bd43bf65dff467e2f4c322a2baf0f6f7ef855eee5317880d3c0bf815e",
+            "locator": {
+              "end": 409,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "mcp/tests/test_lifecycle_finalize.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:b1082075b3a4eabb47883ac0350de3bba84a6a72f907649bad479667456e773f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_or_verify_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:5639d25df486b875d0fc0f50cfba0741b129eedf7856fbb199ed17283850a0e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_report"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge.\n\nAnchor: \"def _integrated_result(\"; \"def record_landed_integration(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c54d74e15aed78c79b08ce68bacb2a8c3aadcc4",
+            "content": "sha256:c37e22cd9045bf316672d3f14d7db587ddb38016375cc167cbb8505504c2f669",
+            "locator": {
+              "end": 581,
+              "kind": "line_range",
+              "start": 581
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ce07976f06d314990369996912d3c5b84189410",
+            "content": "sha256:6b07e133e66d9ec197e2e3653376660ad025d9a1d1bfeaf57ce417de960562d5",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:146d1e195f9fda3ff811d27e114460685f43291ee4a5aa98893919092af9f6d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_route_indexes_for_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "content": "sha256:8b6b3a7d2b3c16481f3247074408f445f6088cc178e86be22211c87697f569d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_indexes"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The lifecycle state carries the optional worktree phase the panels render.\n\nAnchor: \"phase: WorktreePhase\"; \"WorktreePhase = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
+            "content": "sha256:04d86805fe7f02d3596ffcbcad248910dc1ddcfb56a5a965023c98a8413cc9e2",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 333
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
+            "content": "sha256:6ec06a7803b29cd2a5ce32ccef80a6b0cfefd4478eb4d47b67604f7075e795a4",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93388b43355dd90752a5dfdefad1a7a7e2c5a426",
+            "content": "sha256:7e3277ce2bff3fe8f9e694147b8109bb58e896a39eb4e4ff133f86c5b68d383a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_master_series_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93388b43355dd90752a5dfdefad1a7a7e2c5a426",
+            "content": "sha256:4da47cddc60486d5411f45200a2a3592fc876579eb28f717b3a7c360dd5324ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_series_expected_edges"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93388b43355dd90752a5dfdefad1a7a7e2c5a426",
+            "content": "sha256:c98c795a9a91f581cf2d3c32136d13cf61982b61e6338414718410368659e7f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_series_observed_edges"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "`GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
+            "content": "sha256:68a7c9b3fe2dc4def5adf883b8f4d04ac604b712c5f840585026984d93cc3d2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_approval"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:c43409f84bf7bc84003c36ae0e676299be6a2244c72101edcdb80cfbc057dac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSUMED_APPROVAL_GATE_KINDS"
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "External closeout chooses substantive memory output and refreshes the cache afterwards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:3a29acdbf90d780b670d2760cb304936c8c3517807e4081a6ac68c2278d27665",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Master and checkpoint landing wait for valid, current knowledge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c54d74e15aed78c79b08ce68bacb2a8c3aadcc4",
+            "content": "sha256:0bec9cd2363539a35c94971e5d8a05b9b2bfd510337b47e36d877ba738ce95a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Final memory staging removes and excludes the cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Carryover completion is actual memory ancestry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "carryover_done"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Returned terminals are recorded and selected before recording/process refusal propagation.\n\nAnchor: \"def run_strict_code_quality_gate(\"; \"def record_terminal_generation(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:ae8bad3301bb799b5e21dfce4791e72aab81744957e079921db5887e9d34463f",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77ca963453d2f023457ee4aba37dd515f5c942fc",
+            "content": "sha256:41e779a84665e77f3d02d2613ab17963aac98f7a04f36de6b370ee7a676ba06d",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_run.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Recording requires exact admission and physically verified evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:10e95b74c120ff22b569fb8329487fce8064cf94a2c2aadd29a50b4df046dfe2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_publication_admission"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:00f05d06b1ca138d6697c049709d6b6deec39b3bb2840ffe824b5a02f3be9e7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_gate_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Gate-record publication bindings retain exact semantic authority and physical generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:3594061237f18fc9c9fae6c9f1480ec7600858d81d3efbd74820acde0b0a8ed8",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_selected_publications"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:6fb59f94e05463d7ccd94a0e9e831635ce6c2a29d578835699acf833522111c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_binding"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:f051918714e726ee36693ad606061659e07ba09fb1bc60d47966a497c996f482",
+            "locator": {
+              "kind": "symbol",
+              "name": "protected_certificate_generations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "All runnable sibling rails retain observed terminal facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1748d36eb104418d424c84a97a233c890f77a33",
+            "content": "sha256:66d9281ef991b3801ffcfcbfae2e8c284d2cecd88fc9bb7b40f0f74c97681e1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_gate_rails"
+            },
+            "path": ".dagger/src/agents_remember_quality/profile_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Executed outcomes distinguish unavailable streams and retain exact bytes/files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfb585d3ae1af98961d68cd9c6582e794c2c3b3f",
+            "content": "sha256:b2371531209912d79c06c9c2fc3a20e83a2e3c4ad3077f860b37d5a624f098ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_rail_outcome"
+            },
+            "path": ".dagger/src/agents_remember_quality/rail_emission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfb585d3ae1af98961d68cd9c6582e794c2c3b3f",
+            "content": "sha256:6f95a881607821071a8b5a9866497ec5e9e9688c4afd801ab7cab96cd3016487",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_rail_terminal_bindings"
+            },
+            "path": ".dagger/src/agents_remember_quality/rail_emission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfb585d3ae1af98961d68cd9c6582e794c2c3b3f",
+            "content": "sha256:de7dc0d57af7afd70c01cb53b05ed6095fb48507b9af984459c9baa19350198d",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_rail_output"
+            },
+            "path": ".dagger/src/agents_remember_quality/rail_emission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Bound artifact metadata names actual observed producer bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e03128c4187ccc4a2d07cb31bf163c3b4d6e4d40",
+            "content": "sha256:47533414cfe50c47fc0a96d168e3a8088223fbe06a569c227fd901cd5ef61bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "artifact_source_path"
+            },
+            "path": ".dagger/src/agents_remember_quality/rail_bindings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e03128c4187ccc4a2d07cb31bf163c3b4d6e4d40",
+            "content": "sha256:802909471c6ffdc718a04a7cfc1dd1c5a5dcb314cd5e3806409ef665dee1526d",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_artifact_bindings"
+            },
+            "path": ".dagger/src/agents_remember_quality/rail_bindings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The report branch persists retained bytes and exports the authoritative payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "389bfda927315c05eb31ef319f079364066b1cee",
+            "content": "sha256:42b149ee1e98b9db58e128afa88be1668722967d82894353942272df805f6c55",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_profile_reports"
+            },
+            "path": ".dagger/src/agents_remember_quality/profile_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "389bfda927315c05eb31ef319f079364066b1cee",
+            "content": "sha256:4462749ea18af3d09a14d7ae08228960d16cfcc0606e6c221f36515034d52a7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "export_profile_reports"
+            },
+            "path": ".dagger/src/agents_remember_quality/profile_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Required files are checked on the actual publication branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efe05e56abc9ec4069125dade524e0d8572f7e7d",
+            "content": "sha256:9e4dce23a74356c39475fcb874e78cf9e133c4b010434d6071600e6940232ac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_required_profile_publications"
+            },
+            "path": ".dagger/src/agents_remember_quality/engine_helpers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Parent resolution dispatches on the leaf's `master`: named, folder, or standalone.\n\nAnchor: \"target = _named_parent(contract.task_root, args, leaf.master, leaf.id)\"; \"target = _folder_parent(contract.task_root, args, leaf)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:c8c988d7e04421d3e7aaefade1ae1b426920b034706406b43892eeb448465447",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 397
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Execution progress retains per-step outcomes, the gate catalog, publication bytes/file handles and environment reconstruction observations.\n\nAnchor: \"class QualityProgress\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "700f7e21663a922fa7af6beadf9e14bf22e62328",
+            "content": "sha256:675909a5a6e12be79277969b957c9898acc9dd7228bd836ca330652a71e7c3d6",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": ".dagger/src/agents_remember_quality/profile_results.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Closeout public execution boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:d28c4f12de419f138eb55900c4c2f07f4657123404ed9e8b357d3780ec1d54af",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_preview_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Fail-closed cleanup result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:44d2b008191206b294dd234bf15673d4f0b510373db61fb21039bce38a8dd2f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8edaf5ace457626cda64cf9f90ce9230ca80a2a6",
+            "content": "sha256:fda8430104aeafc6b08fe1a3c144e5ea0c9a928a59824aa46f9dd30afccc6d48",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_convergent_recovery_refs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8edaf5ace457626cda64cf9f90ce9230ca80a2a6",
+            "content": "sha256:439cf54cb689cf6e9a3b69b36441883d5fc65035ab6d8e971dd832d8afdc9418",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_external_memory_recovery"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Start helpers now live below the dedicated startup package marker.\n\nAnchor: \"Worktree-start contract, provider, leaf-ref, and result collaborators.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b22139456b1be5e0ec19c1e5e86e1d44b69dcba9",
+            "content": "sha256:f9c9c125d331c6e875b0c8be486d208e5cb0bc53db0089c49badeddde5c2815b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Selected execution recomputes canonical reuse, validates exact green retained prefix publications, and refuses Dagger starts outside code gates 1–4.\n\nAnchor: \"class CodeCertificationExecution\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e9c4da6a49ad402e6d6562b032ff50f7393f1ff",
+            "content": "sha256:956ec5134dff2383b9f79103107a13b3e3e17a26210686153bf68c9b9a533036",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Retained transport membership and byte limits come from frozen producer declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282fe6ee087803e3a963f412833ab1f321d55df7",
+            "content": "sha256:6ea8fef4e7d26f902c51191dd027dd8a86d079ba5a4d201f7d5b59ec2a13c62c",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained_report_inventory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "282fe6ee087803e3a963f412833ab1f321d55df7",
+            "content": "sha256:7d55996dcc2ece2897f6e83862c8403062fe0420e76b0df15b5a4af81b53b9c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_retained_reports"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The prepared sandbox reobserves actual comparison source selection before manifest publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:3d594ab559ced4191d7a7a82941a00770ac4f0c1d9b4281bf747b47f97f7d20c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_sandbox_manifest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "The frozen strict future-code route identity, and the capture that derives it without touching the real index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FutureCodeCandidateIdentity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_future_code_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "Currentness is exact equality of the whole bound route identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:17f16f59ace55fdd047bff323298ebe96c6d6196baee84abe362aaa5e242d4c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_future_code_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The folder master through the master sync's helper, with the named-master checks.\n\nAnchor: \"folder_master = folder_master_json_path(task_root, leaf)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:97d7d439c49779161d3656f6b2b73ecca61271b27d675c63e4c74d8680162d84",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 459
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
+            "content": "sha256:3abe5e591f9a2a07420ecc288ff6a9aea2d60f4fa7d39af093ba0797e91a7fb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_memory_candidate_pair"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
+            "content": "sha256:a08427c583b4eeba9568bb21e31d646c4bf625376585ba18a2b15f26fb53175d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_branch_plan"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "The closeout's memory side asks the lock before any stamping or commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "content": "sha256:3a29acdbf90d780b670d2760cb304936c8c3517807e4081a6ac68c2278d27665",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_closeout_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "A leaf's integration is refused only by the lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c54d74e15aed78c79b08ce68bacb2a8c3aadcc4",
+            "content": "sha256:2cd0e31252639d3e522bec0e3ef8183121c83a88c208345ddcd734e3ea036d42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_landing_lock"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Record landing on unconverted memory returns the lock's answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "The onboarding gate reads all of a leaf's history files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:0686ba178a4f325dbd09b7d19e76e76b89295b59ddeb42fe8071e31067b860e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history_rows"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The placement guard on the leaf and on every master read.\n\nAnchor: \"require_task_document_in_place(leaf_path, leaf, FinalizeTaskDocumentError)\"; \"require_task_document_in_place(parent_path, parent, FinalizeTaskDocumentError)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:ab5f2be78181f69e6956754f157288aed9564a3d5c755cd00ad80b5956753b7f",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 393
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:7b08e7624c9f3038b0ce0b3f3a269f33d9744b1da922f2ba16c6ffac63b0ef98",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 507
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each unnecessary-row finding names its subject.\n\nAnchor: \"\\\"subject\\\": subject,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:5ecf83f1fb20831569b9427c6731c96c37511d1227c1eedcd326338117158004",
+            "locator": {
+              "kind": "symbol",
+              "name": "report_only_findings"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The archive result gains the hook's report; unbound or failed is reported, never raised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_with_review_artifact_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The route's new gate over two memory sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:799ef332857d7fdc13a4df82773bec0a55a23233078d0ad2031c4d6baf1e2a73",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_trace_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

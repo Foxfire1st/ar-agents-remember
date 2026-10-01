@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/panels/review/ExpressionCards.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real bodies the entries start from.\n\nAnchor: \"const cardsBody = captured<ReviewTreesResult>('gitTrees.cards.captured.json');\"; \"captured<ReviewResult>('gitTrees.family.captured.json')\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b775103369b0ec00dabcb6222339c1c700c0840",
+            "content": "sha256:6e92c1f7b6179bf58567a4e7150d50d3fecae5c28648c340c49cbc3452864f3f",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each card state.\n\nAnchor: \"draws a changed range as its real diff and an unchanged range once, labelled unchanged\"; \"shows an unresolved side with its reason and never a guessed range or a diff\"; \"labels an unavailable side unavailable, distinct from a file absent on that side\"; \"names a missing rationale as a gap and never writes text of its own\"; \"gives a proof entry its facet in place of a role and a rationale\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b775103369b0ec00dabcb6222339c1c700c0840",
+            "content": "sha256:4711f612998265d500fc90d75e44c7059615e95f9c742e226e5a9f8f964a2657",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Grouping by (path, range) and the family order.\n\nAnchor: \"grouping by (path, range)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b775103369b0ec00dabcb6222339c1c700c0840",
+            "content": "sha256:4cc23ee2ee2a26ac84d158e84ed7d5559b01a264f497675c136ab90e45e7f779",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The F1, F2 (with R2-5) and F4 cases.\n\nAnchor: \"opens one full file, in the card that asked, with one read (F1)\"; \"cover only the loaded members and points to the walk (F2)\"; \"marks an entry that is not current on its side with its MIK-R03 state (F4)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b775103369b0ec00dabcb6222339c1c700c0840",
+            "content": "sha256:56f8a88ed28d0ac3998e9f676bc6e43575426bc156fd1aee67d825830735d16d",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 208
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

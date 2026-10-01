@@ -1,0 +1,394 @@
+{
+  "path": "mcp/src/agents_remember/application/review_statement_sides.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of its scope: three projections of a comparison's items, and a selection that reads nothing and stores nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:3961a4b6c72c5b4f477246be4d13d7fb03c0863553354df84c2b61b548e189b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_content"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:63c876c85da7d7d52abf2d333852a02da92549c9693da36cc76a1eb8a21eaa48",
+            "locator": {
+              "kind": "symbol",
+              "name": "field_changes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:3f19cfeb02bbec3766ec744b6426efe09af811dd27f20ef1a1014d89dd5a1006",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_conditions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The declared prose limit the projection is bounded by.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROSE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The item this module projects: its two payloads and the `changed_fields` roster the rows come from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:0ef0a2fd0d62d82cbb3c002edbcedbe4e9d0ee799f74ea3bd29873d9517343c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffItem"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The payload `read_side` returns, with the `statement` and `essential_conditions` fields each projection reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:229d6951f9312db22ea5864e71458b0204ad596ddbe42d4e9aec450b33f8598f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadItem"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The adapter's delegation: the import block and the one call site set inside `_knowledge_pane`, where the four side values and the field roster are assembled.**\n\nAnchor: `side_content`; `side_conditions`; `field_changes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:9337a3581568d42aa4282acac4402465004c414e60fa2afbe608703069755e16",
+            "locator": {
+              "end": 1046,
+              "kind": "line_range",
+              "start": 1023
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:f5d24e10c00f510d8db7ea2e70fd0f46b8125fa4b120cb0f2f27460e7cc14194",
+            "locator": {
+              "end": 1006,
+              "kind": "line_range",
+              "start": 1003
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The production composition case: the structured field's two sides are both present, differ, and round-trip back to the stored authorship envelope.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:ee1098a65dfd5c1400da329ddfc55569773a7a1a1f5a6c28b4119ff196270c00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The case that a one-sided record reports its change through coverage and keeps the roster empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:11e22fd36edb688cef31a499ce8eb266af6546cef1ac286b96abef04d93b709a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_one_sided_record_is_reported_by_its_coverage_and_not_by_a_roster_of_field_rows"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The case that a row keeps the side that recorded a value and names the side that did not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:b87075404e39a14342660043a0e36da8e5e184daf13e2ff48c8f048a00cb3a19",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_field_row_keeps_the_side_that_recorded_a_value_and_names_the_side_that_did_not"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The renderer that consumes these values and owns how they are drawn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c46c265a4b64aadc447f8b84d72673f1342b78",
+            "content": "sha256:a667fc3ff593802fe44012abfe3ffac077cc366db14fe4ddade1cf72080370b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeStatements"
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the seven names the adapter and the case module import.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:a08b3c392a2254489dbed6f42c950a90fa0872210685ebfa35def91653dd2d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The structured-value projection: the lead/tail markers, the truncation marker, and the canonical bounded rendering that keeps a present value out of the absence slot.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:e7d9c01374ec55e37ec25b09e76f30bc5ab3d0246db555e5007035ed7e94ab1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "STRUCTURED_VALUE_LEAD"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:66a8bd6cc2d648216ace0c0e498a81f2cf2338ce60e271adfca99e2f7460e724",
+            "locator": {
+              "kind": "symbol",
+              "name": "STRUCTURED_VALUE_TAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:3ef8e6102a9211ef4a3e1672974cdc6d4d482dcdd9c1554b77d7c1f51414399f",
+            "locator": {
+              "kind": "symbol",
+              "name": "STRUCTURED_VALUE_TRUNCATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:ca5e40a13ef3f5dc67e0e73be19c58df5f8e36bc3948c61d5c51d15e632dcaae",
+            "locator": {
+              "kind": "symbol",
+              "name": "structured_value_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The three outcomes and no fourth: `absent` / `unresolved` / `present`+text, each with the detail that says which fact it is.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:3961a4b6c72c5b4f477246be4d13d7fb03c0863553354df84c2b61b548e189b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_content"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:b9182ee878ed39b1fd4a95c52ba6f67e7e29c93050f62b302c9153abdfc13dd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The conditions a side recorded, empty exactly when that side recorded none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:3f19cfeb02bbec3766ec744b6426efe09af811dd27f20ef1a1014d89dd5a1006",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_conditions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The field roster taken from the comparison's own `changed_fields`, one row per field, with the docstring's own reason a one-sided record reports none.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:63c876c85da7d7d52abf2d333852a02da92549c9693da36cc76a1eb8a21eaa48",
+            "locator": {
+              "kind": "symbol",
+              "name": "field_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**`None` reserved for the two real absences, the `Mapping` branch that projects instead, and the tuple join that makes a recorded empty a present-but-empty value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:6119907c61bad0863b3c1c4e7978f606575f1c85694222883b6857d0b5cff36a",
+            "locator": {
+              "kind": "symbol",
+              "name": "field_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The side-state vocabulary and the point the two states are distinct at: `ReviewSideContent` carries `state`, optional `text`, `language` and `detail`, and `ReviewSideState` is the closed four-member literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:40f2decad7475f7620ea348841a54121b5ce6dcdfcf405df1fbe23f5afbc1168",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSideState"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:428eed53ee5c5de6afe6f6707241af38aa575b8323c254cad2d647d5ebf4ba26",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSideContent"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The contract that makes `None` mean absence, and therefore the reason a structured value is projected rather than nulled.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:00a15a918aabb193f8ca16983f8b9b62fe497700df2763586687f3a29fae4cc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFieldChange"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

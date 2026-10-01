@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/conversion/legacy_db.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/conversion/legacy_db.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T14:21:42+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -65,7 +55,9 @@ revision as a record file, and every realization claim on a head revision become
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -74,34 +66,23 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The reader, the heads, the origins and the export.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The read-only open. | `export_database` | mcp/src/agents_remember/memory/conversion/legacy_db.py:181-188 |
-| Head revisions and their depth in the predecessor chain. | `_heads` | mcp/src/agents_remember/memory/conversion/legacy_db.py:79-114 |
-| Task and leaf from `actor_ref`, learned per task directory. | `_Origins` | mcp/src/agents_remember/memory/conversion/legacy_db.py:117-141 |
-| Hand-off lines leave `conditions`. | `HANDOFF_PREFIXES`; `_split_conditions` | mcp/src/agents_remember/memory/conversion/legacy_db.py:46-46; mcp/src/agents_remember/memory/conversion/legacy_db.py:144-147 |
-| Records: derived IDs, collisions refused, status, revision, admission, family routes. | `_export` | mcp/src/agents_remember/memory/conversion/legacy_db.py:191-276 |
-| Entries in their recorded blobs, derived IDs from (invariant, path, locator), collisions refused. | `_export_realizations`; `_new_locator` | mcp/src/agents_remember/memory/conversion/legacy_db.py:279-333; mcp/src/agents_remember/memory/conversion/legacy_db.py:157-169 |
-| The export matches a legacy database in the real column spelling. | `test_the_database_exports_head_records_and_entries_in_their_recorded_blobs` | mcp/tests/test_knowledge_conversion.py:176-219 |
-| The fixture database. | `legacy_database` | mcp/tests/knowledge_conversion_test_support.py:192-297 |
+- The read-only open. [1]
+- Head revisions and their depth in the predecessor chain. [2]
+- Task and leaf from `actor_ref`, learned per task directory. [3]
+- Hand-off lines leave `conditions`. [4]
+- Records: derived IDs, collisions refused, status, revision, admission, family routes. [5]
+- Entries in their recorded blobs, derived IDs from (invariant, path, locator), collisions refused. [6]
+- The export matches a legacy database in the real column spelling. [7]
+- The fixture database. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

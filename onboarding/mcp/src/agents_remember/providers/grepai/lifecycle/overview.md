@@ -2,13 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/lifecycle/` |
-| doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `../overview.md`                           |
 
 ## Governing Overview
 
@@ -61,14 +55,14 @@ service ports (`5432` and `11434`) used inside the Docker network.
   routing through it is a circular import that breaks any entry point touching
   grepai modules first (2.5.1 fix).
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 Settings-backed native commands use the Docker run-command owner. Current source: `grepai_docker_run_command` (mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:107-147).
 
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The parent lifecycle facade imports the GrepAI package facade. | `_EXPORT_MODULES` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24 |
+- The parent lifecycle facade imports the GrepAI package facade. [1]
 
 
 ## 260731-EFA-L2 — The Vocabulary Of A Stack Start
@@ -101,33 +95,3 @@ no longer matches).
 `core.py` builds its layout through `GrepaiWorkspace(...)` / `GrepaiInstance(...)` (see the
 [context route](../context/overview.md)). No container topology, port preference, DSN, initial-scan
 reading or settings rule changed.
-
-## Update History
-
-- 2026-08-04T18:42+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the two malformed rows — the
-  parent facade row bound to `_EXPORT_MODULES` (providers/lifecycle/__init__.py:8-35, the
-  lazy-import list carrying the GrepAI facade) and the test-coverage row bound to the three
-  Docker-only/watcher/install test methods with their exact extents in test_provider_lifecycle.py.
-  Claim wording unchanged.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: the resolved-invocation tuples became named frozen values
-  — `GrepaiBackendContext`, `GrepaiEmbedderContext`, `GrepaiWatcherStart`, `GrepaiStackResults`,
-  `GrepaiServicePorts` (+ `UNRESOLVED_SERVICE_PORTS`) and `GrepaiWorkspaceConfig` — and both
-  backends now share `BackendStartReconciliation` from the provider-agnostic lifecycle package.
-  Container topology, ports, DSNs, `initialScan` reading and the `--from-settings` rule are
-  unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-06T23:55+02:00 — L13 owner follow-up (body): core.py's explicit --from-settings requirement stated in the route model (the earlier ride-along was history-only). Verification metadata pinned until closeout stamps the L13 commit.
-
-- 2026-07-06T23:10+02:00 — 260703-L13 ride-along: `core.py`'s
-  `grepai_layout_from_args` reads provider settings via the explicit `--from-settings` path
-  only (the implicit coordinator-settings fallback was deleted; manual `--root`/
-  `--runtime-root` layouts now require the flag — an empty JSON object reproduces the old
-  empty-default behavior explicitly). Route model unchanged. Verification metadata pinned
-  until closeout stamps the L13 commit.
-
-- 2026-06-25T09:55+02:00 — GrepAI backend/embedder startup now prefer host `61432`/`61434` for auto host publication while keeping Postgres/Ollama container ports at `5432`/`11434`.
-- 2026-06-10T07:40+02:00 — No route impact: `actions.py`/`backend.py`/`core.py`/`embedder.py` only updated the shared-helper import path to `providers/context_common.py` (GitHub #58).
-- 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: `initialScan` scan-marker reading in `runner.py` and the leaf-import invariant (circular-import fix). Previous closeouts had only stamped the verification header (developer-flagged gap).
-- 2026-06-06T12:15: Re-verified against the current GrepAI lifecycle package; backend, embedder, runner, and action composition still match.
-- 2026-05-28T12:32+02:00: Updated after GrepAI backend/embedder/watcher status began surfacing container-state summaries for provider current-state reporting.
-- 2026-05-25T21:14+02:00: Moved under the provider-owned `providers/grepai/lifecycle/` route.
-- 2026-05-25T19:09+02:00: Created when flat `grepai_*` lifecycle modules moved under `lifecycle_modules/grepai/` with prefix-free filenames.

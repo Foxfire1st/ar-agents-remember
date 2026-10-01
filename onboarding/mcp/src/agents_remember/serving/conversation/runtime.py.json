@@ -1,0 +1,83 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The production composition constructs the one runtime from authorities already in hand and passes it to the root registration.\n\nAnchor: \"class ConversationRuntime:\"; \"def register_conversation_routes(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:3ac95b32300055a9b8ca67fa87b6249feb8388cd7dab0d51b9fcd9efbb42da36",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:614d9e716e9da19e9b5e0a7ec1acdcd2548aab9329a73997dba3a89ca12d9eb7",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a46f79ec8deafbc44909f5afb751cf02f32dc9ec",
+            "content": "sha256:0f69838f350770d527b6b63b64820cd2d189e9957456a7ad8b1fd31427044e07",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/router.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The root registration installs the runtime on `app.state` before mounting the unchanged root router.\n\nAnchor: `install_conversation_runtime`; `include_router`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a46f79ec8deafbc44909f5afb751cf02f32dc9ec",
+            "content": "sha256:e9c1c6f3c17be700e960c32412dc86ca340461e22b247cdac740547cc44293ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_conversation_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/router.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The typed composition error covers missing, duplicate, foreign, and missing-member failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:30d69af6e832f280748a8bbb1e429dacd58e08a4059f7159a448967092428c93",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationCompositionError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

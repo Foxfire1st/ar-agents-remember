@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/review_family_source.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/review_family_source.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -83,42 +73,33 @@ rationale, so an optional field would model an unreachable state and invite a bl
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rows name the declarations, the one producer that fills them and the cases that pin each state.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The published surface of the member-source reference. | `__all__` | mcp/src/agents_remember/models/knowledge/review_family_source.py:25-25 |
-| **The four locator states and what each one carries.** | `ReviewSourceLocatorState` | mcp/src/agents_remember/models/knowledge/review_family_source.py:33-33 |
-| **One recorded realization claim as a side-bound source reference, with required role and rationale and the structured locator, ranges and state.** | `ReviewFamilyMemberSource` | mcp/src/agents_remember/models/knowledge/review_family_source.py:36-105 |
-| **The validator keeping the address, its observation and its locator together.** | `_require_an_address_to_travel_with_its_observation` | mcp/src/agents_remember/models/knowledge/review_family_source.py:67-80 |
-| **The validator refusing ranges off the exact blob and any state the carried facts do not support.** | `_require_the_locator_state_to_match_what_it_carries` | mcp/src/agents_remember/models/knowledge/review_family_source.py:82-105 |
-| **The one locator-state rule shared by the projection and the validator.** | `source_locator_state` | mcp/src/agents_remember/models/knowledge/review_family_source.py:108-123 |
-| The re-export that keeps every existing import from the family-context module working. | `ReviewFamilyMemberSource` | mcp/src/agents_remember/models/knowledge/review_family_context.py:47-51 |
-| The projection that fills a reference from one claim and its side's anchor observation. | `member_source` | mcp/src/agents_remember/application/review_family_sources.py:27-51 |
-| **The value case refusing a reference whose state, ranges or locator disagree, or that lacks role or rationale.** | "test_a_member_source_may_not_state_a_region_its_observation_does_not_support" | mcp/tests/test_review_family_context_values.py:167-216 |
-| **The production-path cases for `resolved`, `whole_file` and `unresolved` on two real sides.** | "test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale"; "test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range" | mcp/tests/test_review_family_member_sources.py:262-290; mcp/tests/test_review_family_member_sources.py:314-336 |
-| The dashboard's mirror of this reference. | `ReviewFamilyMemberSource` | dashboard/src/data/reviewFamily.ts:67-87 |
+- The published surface of the member-source reference. [1]
+- **The four locator states and what each one carries.** [2]
+- **One recorded realization claim as a side-bound source reference, with required role and rationale and the structured locator, ranges and state.** [3]
+- **The validator keeping the address, its observation and its locator together.** [4]
+- **The validator refusing ranges off the exact blob and any state the carried facts do not support.** [5]
+- **The one locator-state rule shared by the projection and the validator.** [6]
+- The re-export that keeps every existing import from the family-context module working. [7]
+- The projection that fills a reference from one claim and its side's anchor observation. [8]
+- **The value case refusing a reference whose state, ranges or locator disagree, or that lacks role or rationale.** [9]
+- **The production-path cases for `resolved`, `whole_file` and `unresolved` on two real sides.** [10]
+- The dashboard's mirror of this reference. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`review_family_context.py`) moved with the leaf's inserted lines: 2 passing row(s) normalised by the fixer; 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). The fixer's normalisation also re-measured ranges into files this leaf did not change (`review_family_source.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-28T16:42:25+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): created this one-to-one card for the family member-source reference, extracted from `models/knowledge/review_family_context.py` (which re-exports every name) and extended per ICR-R31@v1 with the structured recorded locator, per-side resolved ranges, the explicit locator state and its one rule; role and rationale are required as stored (architect ruling on L44-R1-F4). The module is untracked at the base commit, so `lastVerifiedCommitHash` names the leaf base and the verified basis is the working-tree delta on top of it; the closeout records the real commit.
+No meaningful cross-repo references found.

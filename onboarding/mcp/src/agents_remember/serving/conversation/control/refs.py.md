@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/control/refs.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/control/refs.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structured conversation control overview](overview.md)
@@ -62,33 +52,29 @@ typed failure, not a silent mismatch.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the ref grammar is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The ref authority mirrors the L1 cursor authority's posture and binds the L0 authorization DTO; the
 service owns the app-scoped secret this module signs with.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `AuthorizationBinding` (principal/tenant) re-bound in every payload check. | "class AuthorizationBinding(WireModel):" | mcp/src/agents_remember/models/conversations/identity.py:56-56 |
-| The app-scoped control secret this module signs/verifies with. | "def secret" | mcp/src/agents_remember/serving/conversation/control/service.py:235-235 |
-| The L1 cursor authority whose signed-purpose-branded posture this mirrors. | "CURSOR_SCHEMA_VERSION = 1" | mcp/src/agents_remember/serving/conversation/active/cursor.py:36-36 |
-| Consumers: the queue projection mints operation/withdrawal refs; withdrawals/attachments decode and re-bind them. | "async def operation_queue" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:51-51 |
+- The `AuthorizationBinding` (principal/tenant) re-bound in every payload check. [1]
+- The app-scoped control secret this module signs/verifies with. [2]
+- The L1 cursor authority whose signed-purpose-branded posture this mirrors. [3]
+- Consumers: the queue projection mints operation/withdrawal refs; withdrawals/attachments decode and re-bind them. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -105,26 +91,3 @@ take the same pair**:
 The opaque ref format, the signature and the verification failures are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the superseded
-  `(L…)` prose citations and the `n/a` table rows with exact anchors and fixer-generated
-  ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations pushed down by
-  this leaf's own `RefBinding`/`RefTarget` dataclasses cit:(["class RefBinding"], mcp/src/agents_remember/serving/conversation/control/refs.py:116-116): `mint_ref` is L136-L161 (was
-  L112, now inside `RefBinding`), `_check_payload` is L196-L218 (was L179, mid-`decode_ref`), and
-  `OperationIdentity` is L75-L91 (was L74, the blank line above it). Signing, sign-before-parse
-  decode and the binding re-check are unchanged. Still stale and left for the next citation pass
-  (verified, not repaired here): `decode_ref` is L164-L193 (cited L144) and `REF_SCHEMA_VERSION` is
-  L35 (cited L34).
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. `queue_projection.py`
-  is now 152 lines; the two `mint_ref` calls the row names — the `"operation-ref"` mint and the
-  `"withdrawal-ref"` mint inside the authorized `CockpitQueueIdentity` — read at L111-L138 (was L74-L144,
-  which now covers the revision-bookkeeping/eviction block instead).
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `RefBinding` (what a ref is bound to) and `RefTarget` (what it points at) as the shared mint/decode shape.
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the opaque signed
-  control-reference authority — four non-interchangeable purpose brands, sign-before-parse decode,
-  per-wire binding re-check, and the typed `ControlRefError` family. Verification is blank because
-  the new source file is uncommitted; closeout owns its first source stamp.

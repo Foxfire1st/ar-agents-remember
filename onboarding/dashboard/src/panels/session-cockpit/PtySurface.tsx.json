@@ -1,0 +1,168 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Renderer record, keep-alive, archetypes, hooks, toggle, slots, focus handoff.\n\nAnchor: \"export function PtySurface\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:e56d6ad8239fe886d9dda78932734b169c00c5d33a8d336a75c920e687356c3f",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 334
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The wrapped terminal: fit rules, live screenReaderMode, key filter, hooks, cols.\n\nAnchor: \"export function Terminal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3ee93dd1552027a86f954846b0b7a374559094",
+            "content": "sha256:579fd7257b0ed2ef7b691d3732a61532e4e6fc2ba2287f9b0b6ecc3f1175fafe",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "dashboard/src/panels/Terminal.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The archetype predicate + pane copy + accessible name + toggle cost note.\n\nAnchor: \"export function cleanupOutcomeCopy\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:75413572ed59b1e60d0f2f4aa8f57acaaac7039a27aa1161d927977f66096f79",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The harvest store + OSC parsers the legacy-raw hooks feed.\n\nAnchor: \"export interface PtyHarvest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2eb49e25b72503d0f728b57f7f3bf14df13fc7f",
+            "content": "sha256:e6a20776069e1089322c4ea270bcc491d1401a055644d1826cb4fcc6fb65ba7f",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/data/ptyHarvest.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reserved-chord matcher the key filter consults.\n\nAnchor: \"export const PTY_RESERVED\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54343cbe0afefa4637c171ffb732d318dff6a422",
+            "content": "sha256:90a873a91ac28cc588ba4b27b7a69caead577e177684c07e7c1080c3ea9d2526",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/data/keymap/reserved.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The freshness fields the socket/output callbacks write.\n\nAnchor: \"export type EvidenceTier\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:cfd9da7e21731dd0396faa84aa2e44c22dad8de3776b32c261ba5fb470522cea",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The view mounting this surface + the measured-cols floor chip.\n\nAnchor: \"export const SessionsView\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca0ce2b1c506aaedbb68337eaf039d40cc19c9ed",
+            "content": "sha256:17024dec3e22d9be92510984860643994344ee1abde13899bc5764d85ceaf817",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The measurement harness behind the renderer record.\n\nAnchor: \"export function PtyRenderBench\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:c5d81f7d0e299022f1161363d15db59223e6b9a35fa5ae71749e0291f93f5048",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/dev/PtyRenderBench.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The jsdom suite (Terminal mocked out — xterm never enters jsdom).\n\nAnchor: \"controlled panes are labeled as the runner line-log and get NO harvesting hooks\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d09f1f11bc7e56ada9fec62b1c1a36ca055ec25",
+            "content": "sha256:77b09210299853b350bfc9eab784eb6cd6f6f75ee837a7d0e1c0a0cd5f1ca16e",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

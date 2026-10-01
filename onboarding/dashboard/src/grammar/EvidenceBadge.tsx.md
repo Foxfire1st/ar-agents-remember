@@ -1,15 +1,5 @@
 # dashboard/src/grammar/EvidenceBadge.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/grammar/EvidenceBadge.tsx`        |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -49,23 +39,14 @@ by the HeaderStrip provenance chip, SeatInspector, and FailedLaunchBanner.
   (promotion, defaulting) would violate the evidence-honesty split.
 - Styling is Panda `cva` in-file — `index.css` untouched (L3 posture).
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Glyph record, cva variants, and the badge component. | `EvidenceBadge` | dashboard/src/grammar/EvidenceBadge.tsx:46-69 |
-| The tier machine + `TIER_SENSE` wording the aria-label embeds. | `TIER_SENSE` | dashboard/src/data/launchEvidence.ts:44-51 |
-| The `EvidenceTier` union the props/glyph record key on. | `EvidenceTier` | dashboard/src/data/sessionCockpitStore.ts:18-18 |
-| Provenance-chip consumer (derived tier, `size="sm"`). | `HeaderStrip` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-169 |
-| Inspector consumer (same derivation). | `SeatInspector` | dashboard/src/panels/session-cockpit/SeatInspector.tsx:60-161 |
-| Banner consumer (refused tier beside the never-validated pair). | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-143 |
-| The jsdom suite pinning distinctness + the word at every size. | "the tier WORD is present in the accessible name at EVERY size" | dashboard/src/grammar/EvidenceBadge.test.tsx:30-41 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 5 repository-reference citations and normalized 1 prose citation (5/5 anchored and sourced; scoped citation check clean).
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R7 (evidence badge): five distinct glyphs
-  (… / ✓ / ◇ / · / ✕), tier word always in the accessible name at every size, glyph aria-hidden,
-  sizes row/sm on podracer token colors, optional visible word for banners — render-only, tier
-  assignment stays in `data/launchEvidence.ts`. Verification metadata pinned to the leaf base
-  until closeout stamps the L3 code commit.
+- Glyph record, cva variants, and the badge component. [1]
+- The tier machine + `TIER_SENSE` wording the aria-label embeds. [2]
+- The `EvidenceTier` union the props/glyph record key on. [3]
+- Provenance-chip consumer (derived tier, `size="sm"`). [4]
+- Inspector consumer (same derivation). [5]
+- Banner consumer (refused tier beside the never-validated pair). [6]
+- The jsdom suite pinning distinctness + the word at every size. [7]

@@ -1,0 +1,102 @@
+{
+  "path": "mcp/src/agents_remember/cli/memory_citations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Declares the citation modes and the repeatable caller-exclude option.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02a5df1b93288aabad9b65d70fb9b8dde50bd320",
+            "content": "sha256:cb7a095cbbb1de4adabc9783ba41d032c98e644420b0dfd501bb4ccf863476b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Validates the selected mode, builds the scope and dispatches to the citation tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02a5df1b93288aabad9b65d70fb9b8dde50bd320",
+            "content": "sha256:2c3cbe9f8391b24c471c4aa4ec30a0ee01bc0f8a16754b148d211d419bb3a00d",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The scope that carries the caller's excludes and refuses a meaningless pattern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84fbb29df58c44c36db8c9264ba0dc39948e5181",
+            "content": "sha256:10c63f67a9e534a6072cf0948e7f7dd1823bed64f50133f77457e912895ccacf",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationOperationScope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:27d2c0d43899f359ac65dfe92a7f45dff084343aed56c28243a18f7c1ca5d846",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The refusal rule for a pattern that cannot mean anything.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:368608e2d09339a4916de6c9897892fdc337a785450c36f6e29e4f484d7892f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_caller_excludes"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The --document help states the converted form: --document alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02a5df1b93288aabad9b65d70fb9b8dde50bd320",
+            "content": "sha256:cb7a095cbbb1de4adabc9783ba41d032c98e644420b0dfd501bb4ccf863476b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

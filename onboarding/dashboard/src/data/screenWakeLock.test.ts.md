@@ -1,15 +1,5 @@
 # dashboard/src/data/screenWakeLock.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/screenWakeLock.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:50Z |
-| lastVerifiedCommitHash |  `842b487b854503d95c9c2d9dce1841198ba93c7d`|
-| lastVerifiedCommitDate |  2026-07-24T17:08:25+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -38,33 +28,21 @@ No test treats unsupported or denied wake lock as an application failure.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory worktree's source registry.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is configured. | — | — |
+No relevant external documentation is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Deferred sentinel tests cover acquisition coalescing and release. | "acquires while visible and releases on stop" | dashboard/src/data/screenWakeLock.test.ts:108-116 |
-| The production owner holds one sentinel at a time. | "export function startScreenWakeLock" | dashboard/src/data/screenWakeLock.ts:34-34 |
+- Deferred sentinel tests cover acquisition coalescing and release. [1]
+- The production owner holds one sentinel at a time. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This is local browser-API test coverage. | "reacquires after a UA-initiated release while still visible" | dashboard/src/data/screenWakeLock.test.ts:118-126 |
-
-## Update History
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
-  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-24T13:17:50Z — Created for wake-lock lifecycle and overlap regression coverage.
-  Verification hash/date remain pinned to the pre-commit source stamp.
+- This is local browser-API test coverage. [3]

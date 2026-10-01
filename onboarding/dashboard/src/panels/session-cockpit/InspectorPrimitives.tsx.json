@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared pane, fact, note, raw, and action grammar in `InspectorSection`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4963511b537c77c83c3d2357d1c1a761872b28b",
+            "content": "sha256:a6dfc8723993d63bb4373236121e84018157695e6f204404f8d0c61555d78544",
+            "locator": {
+              "kind": "symbol",
+              "name": "InspectorSection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Evidence consumer, `EvidencePane`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36c4cf83b7f43f90d0b5eaebf2a7e2686721d993",
+            "content": "sha256:6e638d7fcfee5d7b9dd6eaac3a8961700a4cacb802f26c5a3175a79af98f8068",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidencePane"
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Capability consumer, `CapabilitiesPane`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d7ea180a24d738a2075d9a83f370c54a3e9940d",
+            "content": "sha256:072e429191f685482bc767a96db8fd06d6e2914764fb2050154228ac5f94adb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitiesPane"
+            },
+            "path": "dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Bus consumer, `BusPane`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56362cc1ad09f36c12587aa17fb6f5753059cc59",
+            "content": "sha256:a01b3dfb57577b9ff14dc8b45264211c2edf0fd061bda8b3562a148e893adb30",
+            "locator": {
+              "kind": "symbol",
+              "name": "BusPane"
+            },
+            "path": "dashboard/src/panels/session-cockpit/BusPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56362cc1ad09f36c12587aa17fb6f5753059cc59",
+            "content": "sha256:7799b6ea0fe5448ef66b31b989ec7c442e64da38db73a59499dee17b2b261a9c",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/panels/session-cockpit/BusPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

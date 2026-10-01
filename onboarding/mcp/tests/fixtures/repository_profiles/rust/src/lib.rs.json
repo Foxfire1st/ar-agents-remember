@@ -1,0 +1,50 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/rust/src/lib.rs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rust fixture source consumed by unit and service tests.\n\nAnchor: `add`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a986d5d9f002e28f384cdce3894fb89e2cfe6ca4",
+            "content": "sha256:94270aa3000bd9c667c5c5f5a35d3563845e1bc210ad20580a5f209bb92bd47c",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "577dbfe63e3f6fd70a193e1ef7dcc1f6c0c45dc8",
+            "content": "sha256:61c83fa7ec2855315b8695488021bb1e3b676f1b2eb6c97ea755391af980d021",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/rust/tests/unit.rs"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9b3dfe69593945dccd2a7d6536169a6d3e6e3ad6",
+            "content": "sha256:782d8509c88008b255052ed571c6512cd366c7f3de5388b96577fbec3a9e53a9",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/rust/tests/service.rs"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/metrics.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/metrics.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-01T19:45+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0` |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
@@ -225,85 +215,16 @@ each docker call.
 - The store lives under the observer root (`logs/observer/providers/`); the
   sampling cadence belongs to the serving daemon, not this module.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The ownership labels every provider container carries (`provider_ownership_labels`). | `provider_ownership_labels` | mcp/src/agents_remember/kernel/primitives/identity.py:123-135 |
-| `run_command` / `docker_command` seams the sampler runs through. | `timeout_command_result` | mcp/src/agents_remember/providers/lifecycle/command_runner.py:58-74 |
-| The serving daemon's lifespan runs the 30s sampling loop into this store. | "async def _metrics_loop(config: McpRuntimeConfig" | mcp/src/agents_remember/serving/_app_lifespan.py:152-152 |
-| `provider_status_packet` attaches `read_current()` to the status packet. | `provider_status_packet` | mcp/src/agents_remember/providers/status.py:53-87 |
+### Repo-Internal References
+
+- The ownership labels every provider container carries (`provider_ownership_labels`). [1]
+- `run_command` / `docker_command` seams the sampler runs through. [2]
+- The serving daemon's lifespan runs the 30s sampling loop into this store. [3]
+- `provider_status_packet` attaches `read_current()` to the status packet. [4]
 
 | The seed catch-up stage records index-state rows through `_record_index_state`. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
 | Index-lifecycle tests pin the `record_index_state` row landing in the log with its schema. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
 | `ar-durable-store/1.0` itself: `exclusive_access`, `append_line`, `rewrite_lines`, `SCHEMA_VERSION`, `schema_version_supported` and the `StoreOwnership` record `PROVIDER_METRICS_OWNERSHIP` instantiates. Cited by symbol: this file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | `DURABLE_STORE_CONTRACT` | mcp/src/agents_remember/controlplane/durable_store.py:43-43 |
 | The MCP-side appender that makes this a two-process store (`_record_index_state`). | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
-
-
-## Update History
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 13 citation findings (5 rows and 2 prose pointers); scoped recheck clean.
-
-- 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). This store was brought onto
-  `ar-durable-store/1.0`, and the card described the pre-contract shape throughout. Recorded: the
-  two-process pairing that makes it a real defect (dashboard `_metrics_loop` `record` + `compact`
-  against the MCP's `_record_index_state`); `PROVIDER_METRICS_OWNERSHIP` with
-  `compaction_owner="dashboard"`, and **why it did not earn the operator-inbox's `None` exception**
-  — nothing in the MCP process removes a provider row, so a single owner was available and the
-  contract requires one where it is; that the owner is enforced structurally, `compact()` having one
-  caller inside the dashboard's loop. Corrected the "replace-atomic tmp + `os.replace`" description
-  of `record()` to the contract's `append_line`/`rewrite_lines` under one lock, and recorded the
-  stated **lock order** (log first, current-state file inside). Recorded that `compact` holds the
-  lock across the stat, the tail read and the rewrite, and why locking only the rewrite is the lost
-  update wearing a lock. Recorded the tolerant `_parse_row` **argued structurally** — nothing is
-  decided on a row's presence, and the reclaim drops rows by age from a raw tail so nothing read is
-  written back — together with its **escalation clause** (strict in the same change if either stops
-  holding), and that reads stay lock-free so a status route is never queued behind a compaction.
-  Recorded `_stamped`/`schemaVersion` with absent-means-1.0 as what keeps it additive, and that both
-  unscoped temp names are gone. **On the numbers: no rate is asserted.** Several disagree
-  (35.88-40.00% in this module's docstring, 1.50-3.50% and 5.25-5.50% re-measured in
-  `test_provider_store_durability.py`) because the pacing was not recorded; the card carries the
-  direction, and carries the zero as what it actually is — an assertion (`lost == 0`,
-  `torn_lines == 0`, `stragglers == []` over `attempted == 200` on the shipped `STRESS_PROFILE`,
-  plus the forced single-record window), with the 800-record zero marked as reported rather than
-  asserted. Replaced one invariant with five and added four reference rows.
-  Verification metadata pinned until closeout stamps the L5 commit.
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/providers/metrics.py` since the L2 base commit is the whole-tree `ruff
-  format` pass in `00e8379`, which re-wrapped 7 line(s), touching only redundant grouping
-  parentheses. Checked by parsing both revisions and comparing the abstract syntax trees
-  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
-  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
-  card makes about its own source still holds.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
-  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
-  structure or responsibility change. The sidecar was re-read against the current source and
-  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R6 — `sample_provider_containers` now passes
-  `allow_timeout=True` for `docker ps` and returns an error-annotated empty `MetricsSnapshot` on the
-  `timedOut` branch, so a slow/hung docker daemon no longer lets a `subprocess.TimeoutExpired` escape
-  and dump a full traceback into the daemon's 30s metrics loop every interval. Recorded the sibling
-  `docker stats` timeout as still-unbounded (reviewer F5, small follow-on). Change uncommitted;
-  closeout re-stamps verification.
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review follow-up: added `read_recent_index_states`
-  (newest index-lifecycle rows oldest-first, schema-filtered from the shared log) — the read
-  seam `provider_status`'s new `indexState` packet field consumes. Verification metadata pinned
-  until closeout stamps the HFX-L2 commit.
-- 2026-07-07T19:30+02:00 — 260707-HFX-L2 (index lifecycle): added `PROVIDER_INDEX_STATE_SCHEMA`
-  (`ar-provider-index-state/v1`) and `ProviderMetricsStore.record_index_state` — index-lifecycle
-  rows (seed catch-up, staleness) ride the same `metrics.jsonl` distinguished by the `schema`
-  field; the rolling current-state file stays container-only. Verification metadata pinned until
-  closeout stamps the HFX-L2 commit.
-- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix: `sample_provider_containers` now feeds
-  `docker stats` ONLY running container names (`State == running`), because a stopped name can
-  fail the whole stats command and blind every pressure number; stopped containers ride the
-  snapshot without stats. Verification metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-07-07T16:30+02:00 — Created for 260707-HFX-L1 (provider containment R4): the central
-  containment metrics module — `ContainerSample`/`MetricsSnapshot`, the
-  `ProviderMetricsStore` (append log + replace-atomic rolling current snapshot under
-  `logs/observer/providers/`), the label-discovering single-pass `docker ps` + `docker stats`
-  sampler (dockerless-safe error snapshot), and the mem/cpu/label parsers. Verification metadata
-  pinned to the branch base until closeout stamps the HFX-L1 commit.

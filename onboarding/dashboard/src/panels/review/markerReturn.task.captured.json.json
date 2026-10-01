@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/markerReturn.task.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The family context without a subject, the comparison token and the four-path inventory.\n\nAnchor: \"no_subject_selected\"; \"review:trees:2\"; \"\\\"listed_total\\\": 4\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6830f58cdebb9939347e3eb952e30fe11513666",
+            "content": "sha256:45943a69f344d00353ae78937a43e0b069c673f8f30762d82a50f125b244fa2a",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerReturn.task.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9476cdf46a177d23b4fdb8d261bbb6c4e64e3bf9",
+            "content": "sha256:97a54e4c59c97f511ab4b7037e39c3252fb9108b4c186bcb6e7b460b99d1b7be",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/review/markerReturn.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/codex_mcp_readiness.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/codex_mcp_readiness.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T22:29:54+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `mcp/src/agents_remember/serving/overview.md` |
-
 ## Governing Overview
 
 [Serving overview](overview.md)
@@ -47,39 +37,25 @@ small JSON projection for handshake evidence.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. The native app-server response consumed by this module
 is the runtime authority for the current client.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Readiness depends on the current app-server's complete MCP status inventory. | `_read_server_statuses` | mcp/src/agents_remember/serving/codex_mcp_readiness.py:132-159 |
+- Readiness depends on the current app-server's complete MCP status inventory. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The Codex adapter is the sole consumer of this gate for role launches; roleless sessions retain their
 existing startup path.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Connected exact-tool evidence is returned as one typed result. | `CodexMcpToolReadiness` | mcp/src/agents_remember/serving/codex_mcp_readiness.py:25-40; mcp/src/agents_remember/serving/codex_mcp_readiness.py:70-102 |
-| Server status and tool maps are parsed centrally and fail on malformed shape. | `_server_status` | mcp/src/agents_remember/serving/codex_mcp_readiness.py:161-191 |
+- Connected exact-tool evidence is returned as one typed result. [2]
+- Server status and tool maps are parsed centrally and fail on malformed shape. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The readiness gate receives the in-process Codex transport abstraction instead of starting a second client. | `wait_for_codex_mcp_tool` | mcp/src/agents_remember/serving/codex_mcp_readiness.py:70-102 |
-
-## Update History
-
-- 2026-08-30T22:29:54+02:00 — 260821-ARSPAWN-L5 replaced an ambiguous type-name
-  citation with the unique readiness-gate symbol.
-
-- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
-  canonical anchored citation format. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created the canonical connected-`dispatch_agent` startup-readiness API. Verification metadata remains closeout-owned.
+- The readiness gate receives the in-process Codex transport abstraction instead of starting a second client. [4]

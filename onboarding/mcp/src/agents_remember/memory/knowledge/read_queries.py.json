@@ -1,0 +1,438 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The declared read order per table, and the refusal of a table this reader does not own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:fcb62b4c4330f8d3cd958b3d6937da01243853c0924f3c4881cfdb08ef872c0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ORDER_COLUMNS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:f503280dc8efdbc330588803663b9b8c99ce175dc4bd7ee7a0814ae16400e39b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_order_column"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:a8e737c5c49a0a623a2f44236643fedacf00b8767405040c6d360a767f81cbe8",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:2b15f9d98bc6367778bbb4a09a35035cf16b9a00a359f20204af58bed123e141",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The declarations these statements are built from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:6feb1da7702db4f19134857c1233bc1fa288925fa0b603a5174a37150637a0c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:1a9f3c47907380a1321458628a4d6d660eebb3daac5659bd99fe1fef006e99c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_COLUMNS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The node that asserts the union identity back against the two per-table edge sets, and the two dangling-edge failure lines.**\n\nAnchor: \"test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:81b010ef2c353f364db385bb89fd4931ca9d5fc9a672dc53c3b7e523d3862a36",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 398
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The declared read order per table, and the refusal of a table this reader does not own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:fcb62b4c4330f8d3cd958b3d6937da01243853c0924f3c4881cfdb08ef872c0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ORDER_COLUMNS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:f503280dc8efdbc330588803663b9b8c99ce175dc4bd7ee7a0814ae16400e39b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_order_column"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The identity-label reader and the identity's retained revisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:f4abf045cf3c3983a757ab7ce19ab5fd68892670bce065dfedc87262f8318a66",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_identity_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:8657312654423a2f18d7fd9065a8e426f43bc47e457f9a697717ab7ef40ae0b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_revision_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two revision readers, and the shared row fetcher their order column is checked by.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:9aa77b62fce1a6b254e8004fbc6cddb8e5ffd1d411c18bc02c387ad831013ea9",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_invariant_revisions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:ffa2f58dcd3d8b3ae28de4161be5fae3555464833873c221b2f9c85f175708dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_family_revisions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:df1420f7500b32ed0f2e5cfd6d9521a58a6d339c98f0e68fc9724eab8c7479a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fetch_rows_by_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The edge readers the frozen family set is derived from, and the family identity of a revision.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:adcc0acb85ef53c27dcb95a6d5295cf3eb6a3a7fb40ce61fca08065ce0b44735",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_memberships_of_families"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:aec97992be3482f558d2aed2fffff3396442a7d68e7d2fda8590cd485a6678ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_memberships_of_families_full"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:1b02d6e267bed762609104fdea5d089a0e57e80606a112edb4d7d619846a6cff",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_family_ids_for_revisions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:0c4053a754aa87570724f898082a27d197b472f2cfcce4ca2f6e60174c044e5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_memberships_of_invariants"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The path seed's entry point and the claims of the selected invariant set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:c610ab0cfeb3507211d26724d98b4a3a6ba0b516b131b7529c1fea5943c9bb82",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_realizations_at_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:d8f1233349ed7bf844a90b9f3c470ce43b01aaa5b46e62f5a9c4e869b9ad544c",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_realizations_for_invariants"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The shared existence shape, and the four probes that answer \"does this snapshot hold this record, by this key\".**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:7aefe42a3bfde7366a953b491e0f76cdb031afd6517cff5f554e31e999cdadcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_exists"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:570172fcc27809b39793fa1b60194494ce489acf9006d272466f0182614cd896",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_revision_is_recorded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:e9c6c87e9404af3a7812c96cf385a5dd258dc627d2496bc69c76cc78c3bcb5a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_revision_is_recorded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:4e457fbf5b7714b3ca61986ffd4d434c78a556bf3357fd337ca7601c4957b8a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "membership_is_recorded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:9a35ba51f5644d3ec4a924fbaa0b1e63f57db834b3e42a28ea92f957205f2f13",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_claim_is_recorded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:87ad078410602094715f59a09742f9361a95fe377a4d433a4e8d94755780cc70",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 478
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:aadba5b3a9c5dc1866004c61cf07eea1e771e1198260bb93047fa9f96f01df47",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:a25bc75cd9074eb204c5d33bbedc34885d0ae6d0f4ea47d0cc3d5cdd73cccd70",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 323
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:f7311a159b192d5422d1c53c3b156b8ec04e4a1b3d72e0d45bf756d3c7b6eada",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The predecessor-edge union both tables feed, and the reason a consumer must ask each table with its own probe.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:928c10d1c3169e0bd282510435796d3a8471aebe1f87804af0693ae1b903d413",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_predecessor_edges"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:d3543c242ece423cb5465e622b83cdc3b7002a15f450d45db39000011916ce77",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 455
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The one cell decoder a read page and the logical digest share, made public for exactly this reuse.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:19b24fa8965b32406c0fa4cb94cb6a51b998f6acca88447458c8eca6b30446ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "cell_value"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:54441e29f2978e0bce1ccc23c7ed801ab654b407424aa9b13165d0a0e3686f03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cell"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

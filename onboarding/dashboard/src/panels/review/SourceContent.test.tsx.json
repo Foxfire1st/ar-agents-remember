@@ -1,0 +1,747 @@
+{
+  "path": "dashboard/src/panels/review/SourceContent.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The header's own statement of what is real and what is stubbed, where the values come from, the defect baseline, and the rule that no assertion reads a prop the test itself passed.**\n\nAnchor: \"R03 (actual source-content inspection) at the real renderer: the Intent Reviewer surface opening a\"; \"the source pane opening a listed entry\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:3f9da5817a773faa084e0b62da733d0050af8eaa80a2b9d5b649ec86e6171d63",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:74702d34b5b6bb83c7adc775e985b1149f5f8fb2774167c282edaf8102f70c9c",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The harness that renders the real surface at the task context and hands back the request log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:ae073891979e03f3a74d4a4fc589a7c4e18b51eba8709c287be9959dafb2471f",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The click helper that finds the row by its published path and throws when the row is not openable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:3318ae3a330cdb2fd2153bffaea8d7997f780200c3b3be940735ebc27376de91",
+            "locator": {
+              "kind": "symbol",
+              "name": "open"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The per-case cleanup: the rendered tree and every stubbed global.\n\nAnchor: `afterEach`; `cleanup`; `vi.unstubAllGlobals`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:9d9a37e62c532687cef01eddb22b605ddc65f2eaaa05c0af1cc48dbfc8321264",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 265
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The addition case: the absent-before and present-after state lines, the file's own bytes read out of the content host, and the explicit no-diff-claimed line.**\n\nAnchor: \"draws an added file's entire candidate text beside the named absent side\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:2efe76cf36d4cd2ea22e2b3f5bf5efb7e87c0ae61c44caa0e5cded2e93aa8fd1",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 271
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The two-sided modification case: both bodies asserted inside the shipped `diff-pane` DOM, and the generation line naming the exact pair.**\n\nAnchor: \"draws a modified file as the two-sided diff of its two bound texts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:c7b383015ab5034c05a1a35c892b507a574bb1f8eefaff738b7e792ca7b170c0",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The non-text cases: a binary side's identity and size with no content, a symlink's target as content with no claimed edit, and a submodule pointer by its recorded commit with nothing drawn.**\n\nAnchor: \"states a binary side's identity and size and draws no content for it\"; \"carries a symlink's target as content and never claims a document edit\"; \"reports a submodule pointer by its recorded commit and draws nothing for it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:89714db8572b434b2d4cd2da2a37c2e6bc99cfe79a061ba52436432ecaf0fb48",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:adab409c6a3e49ea1b88ebfb5cc1d8f7f6c0c259247db6921204bdd12179acc3",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 343
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:33c1c4b40fc31a10d10e5ddca2741d5b771bc6c91f31ea11a58cde2f65cf0d18",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 368
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The superseded generation keeps the listed bytes on screen while naming the newer one, and a bounded expansion is stated as a prefix beside the object's real size.**\n\nAnchor: \"labels a superseded generation while still showing the listed generation's text\"; \"states a bounded expansion as a prefix of the object\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:1dfcf48c13f7e3faff29ca133dc09313536a62ae8297f705958e491c7869cd7e",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 389
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:e0299961d1768d323a41a8d81c63926c13bf1700268148ced7ae8b0e33b30ac7",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 413
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The typed refusal rendered with its code, detail and next action and with no content, and the request carrying the listing's own generation, path and task context.**\n\nAnchor: \"renders a refused entry read as its typed refusal and no content\"; \"sends the generation and path the listing published, not a re-resolved one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:9ff0d7fc6001c785618ca7ee91cb65c3b1998da0641c211e1dd5938f4d4bdb43",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 441
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:fdfb0aac0c3fef74dae022a22caec21d1ca40efe22aafa2ce653085408b18c1d",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 461
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The leaf-change-set bound stated when the requested generation could not be measured, with the readable side still drawn and the unreadable one named.**\n\nAnchor: \"states which measured change set admitted the path when the requested one could not be measured\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:282657a2db8808d1bf73bdabce2f127971ef0a83661cff117fbd7e9f501f8c54",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 492
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The two boundaries: the byte-form row listed without an open control (the open-control count asserted to be exactly the text entry), and an inventory that named no code trees offering no expansion at all.**\n\nAnchor: \"lists a byte-form row without implying it can be opened\"; \"offers no expansion for an inventory that named no code trees\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:c3f16f987c29acd473c5b0c1bfe8066279122f8ca0678b39b5d521e6357aa14c",
+            "locator": {
+              "end": 562,
+              "kind": "line_range",
+              "start": 524
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:8809e53dfb2b721ab85dd749064b5dcd3799092ed97c6f9dfdff3da63aeae290",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 564
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real surface and the wire types under test, imported rather than mocked.\n\nAnchor: `ReviewSurface`; `ReviewSourceContentResult`; `ReviewSourceExpansion`; `ReviewSourceSide`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:7c49460d5cd854e70082ac0093c7002839150b77e1f6d3c3118f1d72a0356cee",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The surface the cases render: the openable row that mounts the renderer, and the inventory that owns the open row and passes the published generation down.\n\nAnchor: `review-inventory-open`; `SourceContent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:7a9918cfbbeca0fe8a60beee6bfca6dae9a51d703b41789f89f7c4a9233ae972",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceExplorer"
+            },
+            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:1a92eb2827db3d3ee46c359773bc9bfff390ba41e2bcfe1664f75f02fd3e76bc",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
+            "content": "sha256:b3b59fcd9e19bc1410570a8b897946cc90cb1b8406e4717e69a55b59c19d3775",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
+            "content": "sha256:82f3cfd11da6150197aceed08406ac64b050340de7bc04124a4cb7efa671340b",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The renderer under test, and the rules its cases are the evidence for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceContent"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:b84fd31944c3c27d5bc513725f1bf10f9e0660fd1009f5d4b8300735f0ad354b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Sides"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:d23d8a2d7c48c308d86f8012ba07731f13f1319ac4fc8a9f17b9eb683a7f9e95",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundedNote"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:434a0d861518953aa331a027354ef83829fc8cd7a658175b94c02ae4cc3a6177",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusalBlock"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:f85c71fac0866c52f23f90ee2b56924a3f8fc7b7976f8a6110a16499362644a3",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:982097bda2d22d901e34d3b9e5cc28baf2a1e3c086812f8d535019974ec2b2f5",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:d6f484c7126a30c0dba0a748d0f124384bab95e70deeeec0e68c4f21d10382ee",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:d90bfacc766d36e055b969e38d8cc21f087d1e0bafc1cc31706404b51a48ba75",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The client the real surface reads through, which parses the typed body whatever the HTTP status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:69b212b772094007f73dd9c44e490c832c9950fa7c29b63da605cc6bcafd0155",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewSourceContent"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The server half of the same contract: the values these cases feed are the shape the production route returns, asserted against real Git objects there.**\n\nAnchor: \"One inventory entry opened into the two bound endpoints' actual content (ICR-R03).\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:62c825ab528c1bac21ec3c039c13d55d37ad2afb437f8d50ef9b6893521fa0a8",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The task context and the two generation ids every case reads at.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:6d9b35ddfdeecb9861344bad9f21612ce4d133aec2d7460e0326c5e8a14f467f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BEFORE_TREE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:b1b9c7a9f1ddc559bf410213f7b8f29b2bd4ea357b4f983da787d6439555306c",
+            "locator": {
+              "kind": "symbol",
+              "name": "AFTER_TREE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The exact texts a real read carries** — an added file's whole body, a modified file's two bodies, a symlink's recorded target, a submodule's commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:4e70bbd2752a1d0f050ef6d232697920763130e226a4946fb9ede4fa379142fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ADDED_TEXT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:ee61cce498ee558809daaf6cbdd87424f6c240ba929b15c034602774a337f035",
+            "locator": {
+              "kind": "symbol",
+              "name": "MODIFIED_BEFORE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:64e7ee1b6bbacf38ea2f472e9acb9374d97485c562fe3f5c32d37f35ef38ad16",
+            "locator": {
+              "kind": "symbol",
+              "name": "MODIFIED_AFTER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:6daa505b0d5a17ba188ca39e1223eeb136782ef0aa1815c3f78af681b73086e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SYMLINK_TARGET"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:32450d0de751315c973120ac6198ba2380a25677a3feca95dfecf25f388d7fbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBMODULE_COMMIT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The whitespace-dense comparison that asserts the text rather than the CodeMirror editor's line layout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:498f23c656fe1fa0e9b0bf17fcb3a6827719139071ed749a6f9e48906babb323",
+            "locator": {
+              "kind": "symbol",
+              "name": "dense"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The five side builders, one per declared state a case exercises, each carrying the detail the server composes for it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:5a93baf023a29f941b1aefe5c519b4cca9085acfc795646d427875853ff7fb1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "present"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:e8047ff6e6469b4711184b94a2b92960871562af4f3c4779988676a277685d07",
+            "locator": {
+              "kind": "symbol",
+              "name": "absent"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:7aaecc0e5ee62e59a8c8c5c7dbc524b7d57d1d0c33ca6d2f30d819741000140e",
+            "locator": {
+              "kind": "symbol",
+              "name": "binary"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:a8db5e9581faa7bcc973162929c528782deb9e27f48e3786fd3c10706b0775e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "symlink"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:7a2da90b5c6a630d91e3577f655523e5592247ce906dbc52a3ab1c59c703a35d",
+            "locator": {
+              "kind": "symbol",
+              "name": "submodule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The changed-file and payload builders, with `listed_total` the entries' own length.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:59cb81e5769e4b1a1ce3b27c8cd19d1ca7dfe050993bea772a1b2f51d48fdb83",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:f67d441064d34f7057f0ba1299166ad5336ecf51615916dae4e94417209679f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The expansion and result builders, and the typed refusal carrying a code, a detail, a next action and an offending input.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:c3228295d6f017631522e9ab13954408bdddac0fb851b1e33a804b2b673ceede",
+            "locator": {
+              "kind": "symbol",
+              "name": "expansion"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:b1bebaad14022b24b5b7892255ca88cbdccdb48b506bfe19cdaf522fe775867e",
+            "locator": {
+              "kind": "symbol",
+              "name": "content"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:e5713c02dad94bb5403ad96edf7f91706a6c83e163da88d07aa26a009578a4ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The transport stub: the expansion answer selected by the asked-about path, an unstubbed path throwing, and the fetch mock returned so a case can assert the request.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e53d394f64fbaf6b065bebfc2b705404424d645",
+            "content": "sha256:5264f679c5619aa87608cf1c9b261930ac51575cac57f2aac9a115db7320b5ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

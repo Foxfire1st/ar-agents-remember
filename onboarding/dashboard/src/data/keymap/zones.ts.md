@@ -1,15 +1,5 @@
 # dashboard/src/data/keymap/zones.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/keymap/zones.ts`             |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-30T22:35:02+02:00                           |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [data/keymap overview](overview.md)
@@ -60,22 +50,12 @@ React binding and the tests resolve zones the same way.
 - The file's header comment still opens with "Three zones:" above its four zone lines (MIK-L33 added `review`
   without changing that word); a one-word comment fix for the code owner.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Zone resolution, editable/printable classification, the routing contract, and the `/` rule. | `zoneForTarget` | dashboard/src/data/keymap/zones.ts:30-34 |
-| The reserved-set gate the pty branch defers to. | `PTY_RESERVED` | dashboard/src/data/keymap/reserved.ts:62-150 |
-| The React binding that calls `zoneForTarget`/`routeKey`/`slashOpensPalette` per event. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
-| The contract suite: PTY passthrough (incl. bare Esc + harness-owned chords), printable suppression, the `/` rule. | "passes bare Esc — and any Esc chord — to the hosted harness (Claude owns Esc Esc)"; "printable keys never fire as bindings in editable targets"; "opens the palette only at the start of a line" | dashboard/src/data/keymap/zones.test.ts:46-49; dashboard/src/data/keymap/zones.test.ts:117-120; dashboard/src/data/keymap/zones.test.ts:154-159 |
-| The reviewer's zone (MIK-L33): in the union and recognized by `zoneForTarget`. | "the intent reviewer (MIK-R33): its own chords (j/k change traversal)"; `Zone`; `zoneForTarget` | dashboard/src/data/keymap/zones.ts:9-10; dashboard/src/data/keymap/zones.ts:16-16; dashboard/src/data/keymap/zones.ts:30-34 |
+### Repo-Internal References
 
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-R33 rule 7:** the fourth zone `review` (the intent reviewer), recognized by `zoneForTarget` and routed by the chrome/composer rule; the reviewer's own DOM binding in `panels/review/changeTraversal.ts`. Purpose, Logic and Invariants updated; a Todo records the header comment's stale "Three zones:". One row added. The prose citations moved by the two inserted comment lines were re-pointed by the installed fixer.
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 4 repository-reference citations (4/4 anchored and sourced; scoped citation check clean).
-
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4 (R5/R7): zone resolution over
-  `data-kbzone` markers, the `routeKey` contract (PTY = reserved-set-only interception with
-  everything else passing through; generic printable suppression in editable targets), and the
-  pure `slashOpensPalette` composer rule. Verification metadata pinned to the task base until
-  closeout stamps the L1 code commit.
+- Zone resolution, editable/printable classification, the routing contract, and the `/` rule. [1]
+- The reserved-set gate the pty branch defers to. [2]
+- The React binding that calls `zoneForTarget`/`routeKey`/`slashOpensPalette` per event. [3]
+- The contract suite: PTY passthrough (incl. bare Esc + harness-owned chords), printable suppression, the `/` rule. [4]
+- The reviewer's zone (MIK-L33): in the union and recognized by `zoneForTarget`. [5]

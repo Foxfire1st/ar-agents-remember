@@ -2,17 +2,23 @@
 
 | Field                  | Value                                          |
 | ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember                             |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
-| doc_type               | `route-local-overview`                         |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
-| governingOverview      | `../../../../../overview.md`                   |
 
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
+
+## 260928-MIK-L37 A Projection Refuses A Seed A Converted Tree Does Not Hold
+
+After the cutover (MIK-R37) every remembered database-era revision ID names nothing in a converted memory tree, and
+an empty, complete answer would read as "no knowledge". So [`knowledge.py`](knowledge.py.md)'s `_project_result`
+now takes its dataset from `_projection_selection`: for a converted tree, the first view seed the tree does not hold
+(`knowledge_paging/tree_seeds.tree_seed_refusal`) refuses the whole `knowledge_project` as `selector_absent`, naming
+where current seeds come from. `knowledge_read` gets the same refusal one layer down, in
+`application/knowledge_paging/tree_read`. A database selection is unchanged, and this route's seam is unchanged.
+
+- The projection's dataset, or the refusal of an unheld seed. [35]
+
 
 ## 260928-MIK-L01 The Family-Complete Leaf Read, And A Root With No Commit Refused By Name
 
@@ -31,11 +37,9 @@ places:
 - **`knowledge_project` reads a converted tree's views whole** (`ProjectionOptions(whole_views=...)`, the L02
   Q7 obligation accepted by the ruling of 2026-09-29 23:21:57); a database projection is unchanged.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The named refusal of a root with no code tree. | `_NoCodeTreeError`; `_selection_refusal` | mcp/src/agents_remember/mcp/tools/knowledge.py:269-281; mcp/src/agents_remember/mcp/tools/knowledge.py:298-303 |
-| A converted tree's projection reads each view whole. | "whole_views=selected.memory_tree is not None" | mcp/src/agents_remember/mcp/tools/knowledge.py:1081-1084 |
-| The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain. | `_leaf_response` | mcp/src/agents_remember/application/knowledge_paging/tree_read.py:577-633 |
+- The named refusal of a root with no code tree. [1]
+- A converted tree's projection reads each view whole. [2]
+- The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain. [3]
 
 ## 260928-MIK-L02 A Read Of A Converted Tree Is A Bounded Page
 
@@ -48,10 +52,8 @@ absent; every converted-tree refusal states `threshold`. The database path is un
 threshold, and its `limit` still bounds the view (architect rulings of 2026-09-29: 19:56:40 Q4, Q5; 20:40:40
 F1, F3, F8).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The seam that pages a converted tree's read, and the per-page extras. | `read_tree_page`; `_tree_extras` | mcp/src/agents_remember/mcp/tools/knowledge.py:448-448; mcp/src/agents_remember/mcp/tools/knowledge.py:485-501 |
-| Converted-tree refusals state the threshold. | `knowledge_read_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:381-393 |
+- The seam that pages a converted tree's read, and the per-page extras. [4]
+- Converted-tree refusals state the threshold. [5]
 
 ## 260928-MIK-L03 A Read Of A Converted Tree Carries Its Currentness
 
@@ -64,9 +66,7 @@ view was not refused (MIK-R03): each returned invariant's state at the code tree
 to `unverifiableReason`, so it never refuses the read (ruling N2, 19:13:41). The payload is unchanged. A
 database read carries no `currentness`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The read's currentness, at the walk's code tree, prepared once per page with the proofs. | `_tree_extras`; `WalkCurrentness` | mcp/src/agents_remember/mcp/tools/knowledge.py:485-501 |
+- The read's currentness, at the walk's code tree, prepared once per page with the proofs. [6]
 
 ## 260928-MIK-L08 The Integrity Check Returns A Leaf's Worklist
 
@@ -79,9 +79,7 @@ latest worklist the leaf's memory-quality run or completed sync persisted beside
 builder computes nothing and writes nothing. The dataset pair is optional for this tool only. No other
 builder on this route changed; MIK-R26 reshapes the tool later.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The request value and the routing, with the worklist fields. | `IntegrityCheckRequest`; `knowledge_integrity_check_payload` | mcp/src/agents_remember/mcp/tools/knowledge.py:638-647; mcp/src/agents_remember/mcp/tools/knowledge.py:653-662; mcp/src/agents_remember/mcp/tools/knowledge.py:672-681; mcp/src/agents_remember/mcp/tools/knowledge.py:694-703; mcp/src/agents_remember/mcp/tools/knowledge.py:706-743 |
+- The request value and the routing, with the worklist fields. [7]
 
 ## 260928-MIK-L28 A Read Of A Converted Tree Carries Its Proofs
 
@@ -94,10 +92,8 @@ other three views carry no `proofs`, so the installed runtime's output is unchan
 that its test passed or that the invariant holds. `IndexMismatchError` joined `_SELECTION_FAILURES`, so an
 index opened for the wrong key is the ordinary dataset refusal. No other builder on this route changed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A converted tree's page carries `proofs`, prepared once per page since MIK-R02. | `_tree_extras`; `tree_view_proofs` | mcp/src/agents_remember/mcp/tools/knowledge.py:485-501 |
-| A key mismatch is a selection failure. | `_SELECTION_FAILURES`; `IndexMismatchError` | mcp/src/agents_remember/mcp/tools/knowledge.py:287-295 |
+- A converted tree's page carries `proofs`, prepared once per page since MIK-R02. [8]
+- A key mismatch is a selection failure. [9]
 
 ## 260928-MIK-L12 The Mounted Refusal Names The File Route
 
@@ -106,9 +102,7 @@ sentence: on a converted memory tree (`knowledge/layout.json`) both shipped CLI 
 files through the curator file writer (MIK-R12) instead of the database. The tool stays registered and refusing
 by architect ruling, until MIK-R26 (leaf L26). No builder, request model or other payload on this route changed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The refusal detail's new sentence. | `_change_result`; "On a converted memory tree" | mcp/src/agents_remember/mcp/tools/knowledge.py:552-571 |
+- The refusal detail's new sentence. [10]
 
 ## 260921-ICR-L32 The Write Plane Is Named By Both Its Shipped Entry Points
 
@@ -121,23 +115,6 @@ comment claiming both names are used wherever a model is told where the write pl
 else on this route moved: the same five builders, the same declared kinds, the same unconditional
 `registration_absent` for every one of them. The second constant is `260921-ICR-L32`'s addition; the first
 sentence was true when `ICR-R20@v1` wrote it and incomplete after `ICR-R29@v1` shipped the second route.
-
-## Update History
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): **reopened claim reworded.** MIK-R05 changed `tree_read._leaf_response` (a path or a family seed; a path's `registration_absent` refusal carries `routeChain`), so L01's row naming it was re-read and reworded; its range still holds (`577-633`). No source on this route changed: `mcp/tools/knowledge.py` is untouched by MIK-R05.
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): **route body updated.** Added the section "260928-MIK-L01 The Family-Complete Leaf Read, And A Root With No Commit Refused By Name" at the top, with three rows: the leaf read reached through the unchanged seam (rules 6, 7 and 9; ruling N3), `_NoCodeTreeError` (carried 2026-09-29 21:17:07; review N7) and `whole_views` (ruling 23:21:57). **Reopened claim re-read and reworded:** the shared-selection row now says a named root with no code tree is refused by name. The other rows were projected by the installed fixer.
-- 2026-09-29T23:57:26+00:00: Generated citation repair: `knowledge_read_payload` repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:381-393. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:57:26+00:00: Generated citation repair: `_change_result`; "On a converted memory tree" repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:552-571; mcp/src/agents_remember/mcp/tools/knowledge.py:567-567. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:57:26+00:00: Generated citation repair: `_index_complete` repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:306-317. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T19:58:22+00:00: Generated citation repair: `_change_result`; "On a converted memory tree" repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:530-549; mcp/src/agents_remember/mcp/tools/knowledge.py:545-545. No content impact: mechanical anchor-range projection bound to citation source snapshot 1e041d3cc3624746d949d3346f148082cba5203cab5cbced9c44716f89831a84; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): **route body updated for MIK-R02.** Added the section "260928-MIK-L02 A Read Of A Converted Tree Is A Bounded Page" at the top, with two rows. L03's section now says the currentness is computed once per page through `WalkCurrentness` at the walk's code tree, and its row cites `_tree_extras`, because this module no longer calls `read_currentness`. **L28's `proofs` row was re-read and reworded** the same way: the proofs are now prepared in `_tree_extras`. No verification stamp was advanced.
-- 2026-09-29T18:09:48+00:00: Generated citation repair: `_change_result`; "On a converted memory tree" repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:511-530; mcp/src/agents_remember/mcp/tools/knowledge.py:526-526. No content impact: mechanical anchor-range projection bound to citation source snapshot 704ba74355bb1716854facdd857416a0cc403be7304c687768829065b4665abc; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T19:59:41+02:00 — 260928-MIK-L03 curator (uncommitted change set on `ar/260928-mik-l03`, code base `e40c314ca55305f7e4334b4e8e16a10297f6f175` plus the working-tree delta and untracked files): **route body updated for MIK-R03.** Added the section "260928-MIK-L03 A Read Of A Converted Tree Carries Its Currentness" at the top, with architect rulings 2 (18:42:37) and N2 (19:13:41). One row.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **route body updated for MIK-R08.** Added the section "260928-MIK-L08 The Integrity Check Returns A Leaf's Worklist": `IntegrityCheckRequest`, the optional `contractPath`, the dataset/leaf/neither routing and the `worklistState`/`worklist` fields.
-- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **route body updated (MIK-R28).** New top section: `knowledge_read` adds the optional `proofs` field for a converted tree's `invariant` and `family` views, with the architect ruling that the additive field is accepted and absent for database reads, and `IndexMismatchError` joins the selection failures. Two rows. Rows citing `knowledge.py` elsewhere in this overview were re-pointed by the installed `memory-citations --fix`, with no wording change.
-- 2026-09-29T13:25:41+00:00: Generated citation repair: `_change_result`; "On a converted memory tree" repointed to mcp/src/agents_remember/mcp/tools/knowledge.py:494-513; mcp/src/agents_remember/mcp/tools/knowledge.py:509-509. No content impact: mechanical anchor-range projection bound to citation source snapshot 669685dd91608eb0296af5d8546b06d1035099d9a0ff44914baa1ead631123fe; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "260928-MIK-L12 The Mounted Refusal Names The File Route".** No verification stamp was advanced.
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): **route body updated.** Added the section "260928-MIK-L23 A `databasePath` May Name A Converted Memory Tree" for the builders' shared dataset selection, the new response fields and the refusal mapping. No verification stamp was advanced.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the write plane is named by both its shipped entry points.** The L20 paragraph is completed to one writer plus both CLI entry points (`WRITE_ENTRY_POINT` beside the new `TASKLESS_WRITE_ENTRY_POINT`), the module comment now agrees with it, and the new section records why the first sentence was true at its own bytes and incomplete after the second route shipped. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
 
 ## 260915-KS-L41 The Knowledge Payload Builders Bind A Run And Complete A Resolution Pair
 
@@ -353,11 +330,9 @@ it in `__all__` at L19, so the same **66**-name object stays importable from thi
 move, 63 from 260831-LOCR-L37, 66 since 260915-CAPS-L4). `base.py` also
 forwards `_tool_payload` to `application/tool_response.py::complete_tool_response`. That application owner attaches bounded task-addressed guidance and notifier banners before `models/tools/tool_response.py::finalize_tool_response` performs its single validation/dump/token pass, then emits the completed call. `application/next_step.py` owns guidance. Gate policy and gate-log reclamation now live in `application/gate_tools.py`; this route's `gates.py` forwards public structural requests and separately retained internal exact-id adapters. `terminal.py`, `operator_inbox.py`, and the nudge helper likewise retain internal adapters; their exports do not advertise tools. `leaf_ref.py` is absent.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The MCP adapter delegates completed-response ownership to the application. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
-| The application attaches bounded guidance and records the completed result after finalization. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:131-145 |
-| Wire validation and token finalization consume the enriched model in one serialization pass. | `finalize_tool_response` | mcp/src/agents_remember/models/tools/tool_response.py:15-26 |
+- The MCP adapter delegates completed-response ownership to the application. [11]
+- The application attaches bounded guidance and records the completed result after finalization. [12]
+- Wire validation and token finalization consume the enriched model in one serialization pass. [13]
 
 ## Historical EFA/HFX Layout
 
@@ -450,26 +425,24 @@ inline `reportPath` through the per-domain `compact_*_payload` helpers.
   suppress above wraps the reclaim only; the append, the delete and the expectation-row update
   ahead of it are not inside it, and the next decision on that lifecycle retries the prune.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Public response model registry maps each tool name to a Pydantic model. | `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:134-155 |
-| The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. | `worktree_checkpoint_landing`; `worktree_record_landing` | mcp/src/agents_remember/models/tools/public_roster.py:64-65 |
-| The stop's name sits in the advertised tuple immediately after its sync sibling, in the working half of the surface. | `worktree_pause` | mcp/src/agents_remember/models/tools/public_roster.py:59-59 |
-| Schema tests assert public tool and response model coverage. | `PublicToolResponseModelTests`; `PUBLIC_TOOL_RESPONSE_MODELS`; "def test_every_public_tool_has_a_schema_generating_response_model(" | mcp/tests/test_models.py:46-117 |
-| The external-chat inbox builders post, poll, and consume operator responses. | "def operator_inbox_post_payload" | mcp/src/agents_remember/mcp/tools/operator_inbox.py:20-20 |
-| The lifecycle finalizer builder exposes the terminal task finalization tool. | "def lifecycle_finalize_task_payload" | mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py:15-15 |
-| The linear-half hint delegates to the worktree guidance state machine. | "def lifecycle_guidance" | mcp/src/agents_remember/worktrees/modules/guidance.py:219-219 |
-| The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). | "class AgentNotifierHeartbeatStore" | mcp/src/agents_remember/serving/agent_notifier_heartbeat.py:63-63 |
-| The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. | "class StrictResponseModel" | mcp/src/agents_remember/models/base.py:13-13 |
-| The trusted terminal assignment response carries document-and-role binding plus private session correlation. | "class AttachTerminalSessionToTaskResponse" | mcp/src/agents_remember/models/terminal.py:34-46 |
+### Repo-Internal References
+
+- Public response model registry maps each tool name to a Pydantic model. [14]
+- The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next. [15]
+- The stop's name sits in the advertised tuple immediately after its sync sibling, in the working half of the surface. [16]
+- Schema tests assert public tool and response model coverage. [17]
+- The external-chat inbox builders post, poll, and consume operator responses. [18]
+- The lifecycle finalizer builder exposes the terminal task finalization tool. [19]
+- The linear-half hint delegates to the worktree guidance state machine. [20]
+- The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5). [21]
+- The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. [22]
+- The trusted terminal assignment response carries document-and-role binding plus private session correlation. [23]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The application request owner has only code and memory messages. | `CloseoutCommitMessages` | mcp/src/agents_remember/application/worktree_tool_requests.py:110-115 |
+- The application request owner has only code and memory messages. [24]
 
 ## 260712-TRH-L4 Route Impact
 
@@ -576,9 +549,7 @@ Tool payload composition preserves the closed application result vocabulary. The
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service. | `worktree_operation_control_payload` | mcp/src/agents_remember/mcp/tools/worktree.py:198-205 |
+- Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service. [25]
 
 ## 260821-DAGQC-L2 Typed Memory-Quality Adapters
 
@@ -599,9 +570,7 @@ builders — for example `worktree_attach_payload` — keep the same shape: they
 request to the application adapter and pass its result through the ordinary tool-response boundary
 without adding polling, retry, cancellation, cursor advancement or journal mutation of their own.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The removed wait payload builder has no replacement; the surviving worktree builders still delegate the exact typed request and use the standard response wrapper. | "def worktree_attach_payload(" | mcp/src/agents_remember/mcp/tools/worktree.py:75-86 |
+- The removed wait payload builder has no replacement; the surviving worktree builders still delegate the exact typed request and use the standard response wrapper. [26]
 
 ## 260831-LOCR-L30 Checkpoint-Landing Tool
 
@@ -707,14 +676,12 @@ registration route (`registration/skills_extension.py`), not a tool — and the 
 resource this server also publishes is its own convenience surface in the Agent Skills discovery shape,
 which is likewise not the extension's enumeration result.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The capsule builder re-shapes the flat declaration arguments into the application request record. | `role_capsule_compile_payload` | mcp/src/agents_remember/mcp/tools/capsule_serving.py:22-41 |
-| The two skill builders build a corpus request only when an override was supplied, so the shipped corpus is the default. | `skill_catalog_list_payload`; `skill_catalog_read_payload` | mcp/src/agents_remember/mcp/tools/capsule_serving.py:44-52; mcp/src/agents_remember/mcp/tools/capsule_serving.py:55-63 |
-| The declarations that call these builders, which pass no corpus override to the wire surface. | `_register_skill_tools` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:133-152 |
-| The capsule envelope carries its refusal in the same shape as a success. | `RoleCapsuleResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:86-115 |
-| The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. | `install_extension_methods` | mcp/src/agents_remember/mcp/registration/skills_extension.py:133-153 |
-| This server's own index resource, kept deliberately distinct from that method. | `index_resource` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:240-263 |
+- The capsule builder re-shapes the flat declaration arguments into the application request record. [27]
+- The two skill builders build a corpus request only when an override was supplied, so the shipped corpus is the default. [28]
+- The declarations that call these builders, which pass no corpus override to the wire surface. [29]
+- The capsule envelope carries its refusal in the same shape as a success. [30]
+- The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. [31]
+- This server's own index resource, kept deliberately distinct from that method. [32]
 
 ## 260915-KS-L20 The Five Knowledge Payload Builders, And Where A Handler Refuses To Decide
 
@@ -777,358 +744,6 @@ run), and a caller whose scope matches no run is told so by `_no_run_for_scope` 
 run's conditions. The scope-selection invariant, the two new helpers and the `DECLARED_CHANGE_KINDS` /
 `WRITE_ENTRY_POINT` correction to the L20 section above are the route-level record of it.
 
-## Update History
-- 2026-09-20T06:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **route body updated.** `worktree_sync_payload` now takes one paired `resolution: SyncResolutionInput | None` — the action plus the authored decision it may carry, paired one layer up in `registration/worktrees.py` — in place of a bare `resolution_action`; the paragraph is in the `IAS Frozen Worktree Payload Boundary` section above. The import block grew by the two vocabulary imports, so every builder on this route moved by three lines. A body change, not a metadata-only refresh.
-
-- 2026-09-20T02:12+02:00 — 260915-KS-L32 memory-side conflict resolution (uncommitted; this worktree, code base `7dcec036`, merged tree = L30's landed `7ca3ac48` plus this leaf's four modified paths): **resolved the one conflicted reference row and the Update History block.** The row cites `mcp/tests/test_models.py`, modified by neither leaf, so upstream's `46-117` — the class's own declaration extent, from its `class` line through its last statement — was kept, and both sides' anchors were kept: the class, `PUBLIC_TOOL_RESPONSE_MODELS` and the quoted merged `def …(` line, each read inside that range in the code worktree. Update History is the union of both sides, newest first. No claim was re-worded, no anchor, row or citation dropped, and no verification stamp advanced.
-- 2026-09-20T01:41+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): No route impact: this leaf changed no source this route governs. Its six paths are `application/knowledge_curator_ingest.py`, `application/knowledge_ingest.py`, `cli/knowledge_ingest.py`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_dependency_ownership_ast_helpers.py` and `mcp/tests/test_knowledge_curator_ingest_list.py` — none of them under `mcp/src/agents_remember/mcp/tools/`. The overview was re-read and no claim of its body is invalidated by this leaf; only its citation rows were repointed to the same constructs. No verification stamp is advanced.
-- 2026-09-20T01:29+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared this card's one reopened claim, answering both questions the checklist put to it.** (1) Does the construct the projected range covers support the claim's own words? Yes: "Schema tests assert public tool and response model coverage" is exactly what `PublicToolResponseModelTests` does — its first case asserts `set(PUBLIC_TOOLS) == set(PUBLIC_TOOL_RESPONSE_MODELS)` and then generates each registered model's JSON schema. (2) Was the range rebound from a mention to a declaration elsewhere? No: `mcp/tests/test_models.py:46-117` is the class's own declaration extent (the class at 46 through its last statement at 117), not a mention's target, so the mechanically projected range is the location the claim is about and it is **retained** — no re-cite and no re-wording was needed. **Stamp accounting:** the stale `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows (and the L20-era recorded working candidate beside them) were replaced by ONE recorded working candidate naming this candidate, because no commit contains the body as it now stands and no stamp was measured on it. The claim's "evidence changed" condition was an artifact of comparing against a commit that predates the consolidation: the class is byte-identical between this candidate's base `7dcec036` and the working tree, so the claim is current against the base this card now names.
-- 2026-09-20T00:46:52+02:00 — 260915-KS-L32 curator (uncommitted change set on `ar/260915-ks-l32-ar`, code base `7dcec036`, memory base `66b2ae8a`): **added the L32 section** — the read surface's new `sourcePath` seed, and the integrity check's lookup now bound to the requested scope instead of reporting the first recorded run's conditions under whatever scope was asked for. The L20 section above was also corrected where this leaf's findings showed it describing code that does not exist: it named `ADMITTED_CHANGE_KINDS` as a two-member admitted tuple, but the module declares `DECLARED_CHANGE_KINDS` (six kinds) with an unconditional refusal naming `WRITE_ENTRY_POINT`, and `_recorded_conditions`'s description now names `_run_for_scope` and `_no_run_for_scope`. The `PublicToolResponseModelTests` row was repointed from `test_models.py:16-26` (import lines, which never held the anchor) to `46-61`, where the class and its single schema-generating case live after the 260915-KS-L29 consolidation. Body changed substantively; this entry is the history record, not a metadata-only refresh, and no verification stamp advanced because the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `PublicToolResponseModelTests` repointed to mcp/tests/test_models.py:46-117. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "def lifecycle_guidance" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:219-219. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:30+02:00 — 260915-KS-L20 curator (uncommitted change set on `ar/260915-ks-l20`, base `9f88a6de`): **added the L20 section** — the five builders for the five mounted `knowledge_*` families and the rule that keeps them short (nothing is decided here; where a handler would have to decide it returns the unresolved state); the two requirement-level quotations and why `knowledge_read` returns the view payload itself; the four request records plus the one operation that takes none; and the two refusal builders plus `ADMITTED_CHANGE_KINDS`, which is why an unadmitted record kind refuses with `registration_absent` instead of acquiring a second write path. The metadata block above now names this leaf's candidate as what was read; the body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_checkpoint_landing`; `worktree_record_landing` repointed to mcp/src/agents_remember/models/tools/public_roster.py:64-64; mcp/src/agents_remember/models/tools/public_roster.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_pause` repointed to mcp/src/agents_remember/models/tools/public_roster.py:59-59. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "def lifecycle_guidance" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:215-215. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `worktree_operation_control_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:195-202. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded that `runtime_install_payload` now takes the run's
-  own `RuntimeInstallRequest` instead of four keyword flags, and why (the run's selection input
-  reaches the entry point by construction, and the payload can report `selectionSource`).
-  Verification metadata is left at its recorded value; the candidate is deliberately
-  uncommitted.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "def lifecycle_guidance" repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:215-215. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `worktree_operation_control_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:195-202. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass** (uncommitted change set on
-  `ar/260915-caps-l4`, base `b00a4ac2`): re-anchored the `_register_skill_tools` range against the
-  current 278-line registration module and added the boundary row this route needs after the repairs:
-  the three tools here are this server's **own** reads, while the extension's enumeration surface is the
-  `skills/list` protocol method implemented on the registration route, and this server's
-  `skill://index.json` resource is its own convenience surface rather than that method's result. The two
-  properties recorded below (the corpus override as a test seam, refusal-as-value) are unchanged.
-
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator (uncommitted change set on `ar/260915-caps-l4`, base
-  `b00a4ac2`): added the three new builders of `capsule_serving.py` to this route and recorded the two
-  properties worth carrying at route level — the corpus `origin`/`root` override is a test seam the
-  registered signatures deliberately exclude from the wire, and a refusal arrives already shaped as a
-  value in the same envelope as a success, so no transport-level translation exists here. Corrected the
-  advertised-name count this card carried in two current-state places (the `base.py` paragraph and the
-  `base.py` layout row) from 62 to the measured **66** (62 at the L32 move, 63 from 260831-LOCR-L37, 66
-  since this change), and recorded that the three names were appended at the tail. Verification
-  metadata remains closeout-owned; no acceptance claim.
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented removal of ledger message forwarding from the public worktree adapter. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-13T17:20:55+00:00: Generated citation repair: `worktree_operation_control_payload` repointed to mcp/src/agents_remember/mcp/tools/worktree.py:199-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new `worktree_pause_payload` builder and the
-  `worktree_pause` name, its position in `PUBLIC_TOOLS` immediately after `worktree_sync`, and its
-  `WorktreePauseResponse` registry row — the three placements a public tool must occupy, all added at
-  once. Stated that the builder owns no publication decision and that the publication in this module
-  (`worktree_checkpoint_landing_payload`) is a different builder for a different tool. Corrected the L30
-  count sentence, which pinned the tuple at 62 names. Verification metadata remains closeout-owned; no
-  acceptance claim.
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: this route's behavior is unchanged — the
-  `task_doc.py` builder stays transport-thin and still accepts `operation` as a plain `str` — but the
-  Layout row's operation vocabulary was stale, so it now carries the step-plane operations
-  (`add_step`/`remove_step`/`read_steps`) and says explicitly that the row mirrors the advertised set
-  rather than anything the builder validates (the authoritative description is in
-  `mcp/registration/tasks.py`). No route impact beyond the corrected vocabulary.
-- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: recorded that `base.py` now **re-exports**
-  `PUBLIC_TOOLS` from its new single definition at `models/tools/public_roster.py:22-85`, and that this
-  route's own behavior — the choke point, the builders, and the registration surface — is unchanged by
-  the move. Corrected the three current-state places that named `base.py` as the roster's home (the
-  Purpose/Hot Path entry point, the Current Response And Adapter Ownership paragraph, the `base.py`
-  Layout row and the surface invariant) and repointed the checkpoint/record-landing citation from the
-  mechanical `registration/closeout.py` projection back to the advertised tuple, where the claim
-  actually lives. Added the section recording why the tuple had to leave this route. Verification
-  metadata remains closeout-owned; no acceptance claim.
-- 2026-09-12T20:53:11+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:22-24. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T20:53:11+00:00: Generated citation repair: `worktree_checkpoint_landing`; `worktree_record_landing` repointed to mcp/src/agents_remember/mcp/registration/closeout.py:180-202; mcp/src/agents_remember/mcp/registration/closeout.py:204-229. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the new `worktree_checkpoint_landing`
-  name in this route's census (62), its payload builder and registered declaration, and the
-  three-part public-tool requirement; corrected the two stale 61-name counts and re-derived the
-  shifted `worktree.py`/`base.py`/registry ranges. Verification metadata remains closeout-owned; no
-  acceptance claim.
-- 2026-09-12T01:41:08+02:00 — 260831-LOCR-L29 public-surface repair: recorded the
-  `worktree_record_landing` census addition for this route's choke point, corrected the two stale
-  public-census counts on this card (64 → 61 and 63 → 61), stated the live-probe invariant with the
-  self-referential-`server_info` warning, and added the reference row. Verification metadata remains
-  closeout-owned; no acceptance claim.
-- 2026-09-11T23:05:00+00:00: Two anchors named constructs that no longer exist anywhere in the tree: `worktree_enclosure_adopt_payload` and `worktree_status_wait_payload` are gone from `mcp/tools/worktree.py`, whose current builders are start, sync, attach, status, closeout-preview, closeout-apply, integrate, record-landing, operation-control, cleanup and abandon. The two rows now name surviving constructs — `worktree_operation_control_payload` (167-174) for lifecycle control and `worktree_attach_payload` (74-83) for the unchanged thin `_tool_payload` forwarding — and the Status-Change Wait Payload section records the removal.
-
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:75-77. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/mcp/tools`, so no route/member/prose/invariant change is required. route-member-count=21; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
-
-- 2026-09-05T07:22+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Separated historical adapter/public-name accounts from current application-owned response, guidance and gate behavior; reviewed the new wait adapter. Verification records source review, not execution or acceptance.
-- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
-
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes the public `worktree_status_wait` tool surface (payload export, package export, `PUBLIC_TOOLS` census); route index regenerated.
-
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: the public inventory is 63 names in
-  exact live order, and `server_info` projects the shared content-addressed runtime identity.
-  Verification remains closeout-owned.
-
-- 2026-08-29T08:52+02:00 — Added the single curator-coherence payload adapter; no compatibility
-  route or overlapping tool was introduced. Verification remains closeout-owned.
-
-- 2026-08-26T08:55+02:00 — Finalized the IAS worktree-payload boundary label against the frozen
-  pass-13 candidate.
-
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced flat quality branching with strict sync/start/poll adapters over the canonical controller. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: tool payload modules import paths updated to the moved packages. Verified at code commit e5cb139f.
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: async memory-quality start/poll payload builders (L15-R7). Verified at code commit de3a0fd9.
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `direct_landing_payload` joins the facade
-  exports (`mcp/tools/direct_landing.py`), and `PUBLIC_TOOLS` advertises `direct_landing` (59
-  names). Verified at code commit a9d50e08.
-
-- 2026-08-15T09:10+02:00 — 260815-DAG-L3 route impact: added the closeout-queue payload adapter
-  and kept ambient identity plus mechanics out of the MCP tool surface. Verification remains
-  closeout-owned.
-
-- 2026-08-13T09:05+02:00 — L23 route review: `core.py` follows runtime install/skills into the
-  `application.runtime` package and `worktree.py` follows integration DTOs into
-  `models.lifecycles.operation`. Payload-builder behavior and the public tool surface are
-  unchanged; final provenance remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: added task-addressed lifecycle payload composition and the sanctioned citation-fix memory payload; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the tool layer with structural
-  document-and-role requests and plane-owned runtime addresses; retired exact-id agent tools do not
-  remain as a parallel public control path.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
-  anchors (deleting three unresolvable overview/missing-module rows); exact non-fixing check
-  returns zero findings.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: `gates.py` is the only file on this route the leaf
-  touched, and it gained a responsibility rather than a payload change — gate-log reclamation moved
-  here off the dashboard projection tick. Added the L5 section and updated the `gates.py` Layout row.
-  Added two invariants, each naming the failure it prevents: a reclaim on this route may sit only on
-  a write path and only behind a **non-raising** ownership question (because `serving/app.py` calls
-  `gate_decide_payload` directly, so these builders execute in the dashboard process), and the
-  reclaim's `suppress` must not widen to cover the durable work ahead of it. No tool name, payload
-  shape, refusal vocabulary or registration changed. Verification metadata pinned until closeout
-  stamps the L5 code commit.
-- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: **body corrected.** The `_tool_payload` order
-  this card described is no longer the order in the code, and the description was load-bearing:
-  the Hot Path Summary said the `nextStep` hint is attached "after the ambient emission hook" and
-  the `base.py` Layout row said the auto-dismiss runs "after the ambient emission hook" too. Both
-  are now inverted — `_attach_lifecycle_tail` (dismiss → `nextStep` → `supervisorBanner`) runs on
-  the validated model BEFORE the single `model_dump`, and `amb.emit_tool` runs LAST off the
-  finished payload. Rewrote both, added the route-impact section explaining what the old order cost
-  (bytes served outside the advertised `tokens`, and the same short count recorded against the
-  lifecycle) and why `TOOL_RESPONSE_MODELS`'s `type[BaseModel]` typing is the reason the fields
-  were written into the dumped dict in the first place. Added four invariants: everything the
-  choke point adds is a declared field set before the dump; there is exactly one `model_dump` and
-  one token pass; `emit_tool` is last, with the resulting `lifecycle.resumed`-before-`tool.completed`
-  log ordering noted; and a status string comes from the `models/` alias annotated at the producer.
-  Updated the `next_step.py` row (`next_step_for` returns the model) and the `terminal.py` row
-  (typed refusal seams, `_retire_payload`/`_rename_payload`, `_RETIRE_OK_STATUSES` replacing the
-  hand-written `ok` at five call sites). **Corrected a stale count unrelated to this leaf but wrong
-  on a file this leaf changed:** the `base.py` row claimed `PUBLIC_TOOLS` is 54; it is 58, and it
-  matches `PUBLIC_TOOL_RESPONSE_MODELS` exactly (checked by importing both). Also recorded
-  `RESERVED_TOOLS` as empty. Added two reference rows to the 2-column table. Verification metadata
-  pinned until closeout stamps the L4 commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: added the **Where Registration Lives Now** section
-  (the `@server.tool()` surface moved to the sibling `mcp/registration/` route, and the per-builder
-  parameter-object table), corrected the `PUBLIC_TOOLS` invariant and the registration reference off
-  `server.py`, and noted the wiring test. No builder's responsibility, response shape or refusal
-  vocabulary changed. Verification metadata pinned until closeout stamps the L2 code commit.
-- 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented the serving-owned optional roleless
-  pair, immutable live launch truth, and `launch-conflict` to `launch-selection-invalid` mapping
-  without retry or alternate spawn. Settings-owned role dispatch, exact shared opener, and durable
-  brief/inbox delivery remain unchanged. Verification metadata remains pinned until closeout stamps
-  the L4 code commit.
-- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented typed native role launch
-  resolution, structural refusal, runner-side dynamic validation, provenance-only env, the
-  no-synthesized-command rule, explicit custom-harness mappings, and the roleless temporal
-  boundary. Verification metadata remains pinned until closeout stamps the L2 code commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T22:18+02:00 — 260707-HFX2-L20 MCP-tools route impact: public consume keeps its
-  terminal snapshot until compaction; the public response contract is unchanged.
-
-- 2026-07-10T18:30+02:00 — No route impact: 260707-HFX2-L18 decomposed the existing
-  `spawn_agent_session_payload` controller and added a plain-terminal regression to satisfy the
-  strict CRAP gate; public tool names, payload/refusal shapes, settings-owned spend authority,
-  pair arbitration, and this route's module responsibilities are unchanged.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 MCP-tools route impact: threaded binding role through
-  attach/spawn/expectation responses and pair-based retirement without changing settings authority.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 MCP-tools route impact: documented bound-log spawn
-  acceptance, isolated command verification, resolved/log provenance, and replacement-leaf
-  expectations. Verification metadata remains pinned until closeout stamps the eventual L15 code
-  commit.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round-2 route impact: `operator_inbox.py` now treats
-  completion/artifact posts as current-owner hierarchy signals and persists leaf/subject provenance;
-  no public MCP tool name or request surface changed. Verification metadata remains pinned until
-  closeout stamps the eventual L13 code commit.
-
-- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 route impact (spawn settings authority):
-  `terminal.py::spawn_agent_session_payload` no longer treats caller `harness`/`model`/`effort`,
-  direct launch/session controls, or spend-affecting env keys as a precedence rung. Those values
-  refuse with `spend-override-unsupported` before any side effect; settings supply the spend chain
-  and free-form launch/session controls. Module layout and public tool name are unchanged.
-  Verification metadata pinned until closeout stamps the 260707-HFX2-L10 commit.
-- 2026-07-09T11:45+02:00 — No route impact: 260707-HFX2-L9 (supervisor redelivery cadence + signal
-  throttling) changes `operator_inbox.py`'s delivery call to thread the configured supervisor
-  redelivery floor through to hosted delivery — an internal parameter addition to an existing call,
-  not a change to this route's public tool surface, response shape, or module responsibilities;
-  detail lives on the file's own sidecar. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L9 commit.
-- 2026-07-08T22:30+02:00 — No route impact: 260707-HFX2-L3 (paste injector hardening) changes only
-  `terminal.py::_deliver_spawn_pastes`'s INTERNAL delivery mechanic (now routes through
-  `serving.injector.deliver`, the one delivery path, instead of calling `TerminalPaster.paste`
-  directly) — `spawn_agent_session_payload`'s public parameters, response shape, and every existing
-  test assertion are unchanged; detail on the file's own sidecar.
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep, R5, issue #15): the
-  shared `base.py::_tool_payload` choke point gains a third attachment, `supervisorBanner`, surfaced
-  on every public tool response when the serving daemon's supervisor sweep heartbeat has gone
-  stale. No new tool, no module-layout change — see `base.py`'s own sidecar for the exact call
-  shape. Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
-- 2026-07-08T14:45+02:00 — No route impact: 260707-HFX2-L1 adds R1/R2/R4 field extensions and new expectation-row/routing calls inside `gates.py`/`operator_inbox.py`/`terminal.py` (each module's own sidecar documents the change); the route's module layout, tool registry, and facade contract are unchanged.
-- 2026-07-08T02:43+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
-  turn-state, issues #12/#4): `terminal.py` gains two public builders, `session_retire_payload` and
-  `session_rename_payload`; `base.py`'s `PUBLIC_TOOLS` grows to 54; the facade `__init__.py` and
-  `server.py` registration/`models/tool_registry.py` all gain the matching entries (`SessionRetireResponse`/
-  `SessionRenameResponse`). Retire authority (`serving.retire_policy.check_retire_authority`) is
-  enforced in the builder, not the transport layer, consistent with this route's "deterministic
-  behavior belongs in controllers/services" invariant. Verification metadata pinned until closeout
-  stamps the HFX-L8 commit.
-- 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: `next_step.py`'s
-  front-half role wording and the terminal/spawn role path now align with the architect-default
-  developer-facing lifecycle, spawned backend orchestrators, and curator closeout seat; public tool
-  registration and payload-builder boundaries are unchanged. Verification metadata pinned until
-  closeout stamps the HFX-L6 commit.
-- 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: terminal attach/spawn payloads now normalize
-  leaf refs through the task tree before catalog writes and spawn provenance, returning
-  `leaf-ref-not-found` / `leaf-ref-ambiguous` refusals with the expected
-  `<repo>/<master-folder>/<doc-id>` form; `leaf_ref.py` carries the shared refusal payload helper.
-  Verification metadata pinned until closeout stamps the 260707-HFX-L4 commit.
-- 2026-07-07T23:20+02:00 — 260707-HFX-L3 route impact: `terminal.py`'s spawn delivery is
-  capture-verified (no more echo-confirm false success — the SF-1 blind seat); a False outcome always
-  carries evidence (`deliveryCapture`, explicit `"(empty pane capture)"` marker when empty) and the
-  capture also attaches on submit-failure.
-- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `terminal.py`'s spawn builder became
-  the knob resolution + application seam (rolesPerLevel via the new `level` parameter,
-  orchestration.harnesses effective registry, per-harness dispatch-time model/effort validation
-  with the claude two-vehicle effort vocabulary, the free-form launchArgs/promptKeywords/
-  sessionCommands escape hatch with provenance, session commands pasted before the brief), and
-  `server.py`'s registration grew the matching parameters. Verification metadata pinned until
-  closeout stamps the L16 commit.
-
-- 2026-07-06T23:59:58+02:00 — L14 route impact (body): task_doc row notes the `orchestrates` field; terminal row notes the persisted `spawnRole`. Verification metadata pinned until closeout stamps the L14 commit.
-
-- 2026-07-06T23:59:36+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: `terminal.py`'s `spawned` payload now reports `spawnRole` (the AR_SPAWN_ROLE the opener persisted on the catalog row; omitted when `None`). Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-06T23:02+02:00 — 260703-L13 (settings unification): `terminal.py`'s
-  `spawn_agent_session_payload` gained the settings-driven harness resolution seam
-  (`_resolve_spawn_harness` + `_spawn_repo_root`; harness optional; refusals name the
-  settings source); no other builder or the public tool set changed. Verification metadata
-  pinned until closeout stamps the L13 commit.
-
-- 2026-07-05T19:55+02:00 — 260703-L8 route impact (cycle 7, small): `lifecycle_gate` `wait=false` additionally requires a non-empty `enclosure` (the integrate guard's address; refused before any mutation, AR4-1a) — the `gates.py` row carries the requirement. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): Layout table de-duplicated (the stale second `gates.py`/`operator_inbox.py` rows removed) and the live `gates.py` row brought to cycle-6 semantics (SEAM-kind-restricted validate-then-raise `wait=false`; `gate_list` ambient default). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): `lifecycle_gate` wait=false is now restricted to delegated SEAM kinds and validates BEFORE mutating (a refused raise persists no orphan gate and expires no sibling); `gate_list` defaults to the ambient lifecycle when no id is given (workspace only without an ambient). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T18:24+02:00 — 260703-L8 route impact (cycle 5, small): `lifecycle_gate` gains `wait=false` (raise-and-continue for policy-delegated kinds, returning the gateId); `gate_decide` resolves bare gate ids across lifecycles (GateStore.find) and refuses cli-attributed decisions on delegated kinds. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T16:32+02:00 — No route impact: next_step FRONT_HALF_RUNDOWN re-worded to the event-loop + ladder vocabulary (AR-13); strings only, no tool behavior change (260703-L8 cycle 4).
-- 2026-07-05T01:32+02:00 — No route impact: next_step FRONT_HALF_RUNDOWN reframe bullet now names the orchestrator lifecycle (`l-01-agent-lifecycles` roles/orchestrator.md); string wording only, no tool behavior change (260703-L9).
-- 2026-07-04T12:32+02:00 — 260703-L4 route impact: `gates.py` now handles
-  policy-checked orchestration gate decisions with deciding role, no owner
-  self-approval, and gate evidence refs. Verification metadata pinned until
-  closeout stamps the L4 commit.
-- 2026-07-04T12:31+02:00 - L3 route impact: added `orchestration.py` and
-  `orchestration_nudge_manager`, while `operator_inbox.py` gained role/message
-  metadata and optional hosted push delivery. Verification metadata pinned until
-  closeout stamps the L3 commit.
-- 2026-07-04T11:10+02:00 — L2 route impact: the `terminal.py` submodule gains the public
-  `spawn_agent_session_payload` dispatch builder beside `attach_terminal_session_to_leaf_payload`;
-  `base.py`'s `PUBLIC_TOOLS`, the facade, `server.py`, and `models/tool_registry.py` now
-  expose/validate the agent-facing session-spawn path. It composes the shared serving opener +
-  echo-confirmed paste (durable behavior stays in `serving/`; this builder stays transport-thin).
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-03T00:35+02:00 — L11 route impact: task_doc.py hosts task_reopen_payload; base.py advertises task_reopen next to task_doc.
-- 2026-07-02T17:04+02:00 — L9 route impact: added the `terminal.py` tools submodule and public
-  `attach_terminal_session_to_leaf` tool. `base.py`, the facade, `server.py`, and `models/tool_registry.py`
-  now expose/validate the agent-facing hosted chat reassignment path. Verification metadata pinned until
-  closeout stamps the L9 commit.
-- 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE active turn end): the route
-  now documents `lifecycle_turn_end_notification` as the active turn-end tool —
-  `lifecycle.py` adds `lifecycle_turn_end_notification_payload(summary)`, `base.py`
-  grew `PUBLIC_TOOLS` to 51 and gained the `_tool_payload` `awaiting-developer`
-  auto-dismiss (name-guarded), and `next_step.py`'s ACTIVE hints
-  (`decide`/`_gate_after`/rundown) repointed off `lifecycle_gate` onto it with a new
-  `awaiting-developer` `nextTool=None` stop branch. The `lifecycle_gate`/inbox stack
-  stays exported but parked (un-hinted). Hot Path Summary + Layout updated.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-27T20:16+02:00 — Task 27 follow-up: the `next_step.py` Layout row now
-  records the gate-await behavior — a `blocked` lifecycle (a raised `lifecycle_gate`
-  → `amb.block()`) returns the `lifecycle_resume` await hint, carrying the chain
-  through the open gate. Verification metadata pinned until closeout stamps the
-  code commit.
-- 2026-06-27T18:43+02:00 — Task 27: added `next_step.py` (the lifecycle next-step
-  engine) to the Layout; `base._tool_payload` now attaches the engine-computed
-  `nextStep` to every active-lifecycle response (after the emission hook), and
-  `lifecycle.py::lifecycle_start_payload` emits a one-time `frontHalfRundown`.
-  Hot Path Summary and references updated. Verification metadata pinned until
-  closeout stamps the task-27 code commit.
-- 2026-06-26T18:43+02:00 — Regression fix: `gates.py` row now records that
-  public `lifecycle_gate_payload` waits until a developer decision or
-  gate-specific inbox response, and does not wake on stale lifecycle-scoped inbox
-  rows.
-- 2026-06-26T17:05+02:00 — Regression fix: `gates.py` row now records
-  `lifecycle_gate_payload` as the public create+block+bounded-wait junction,
-  not a wait-initialization junction.
-- 2026-06-26T14:16+02:00 — Task 25: route overview now identifies `lifecycle_gate_payload` as the public gate junction and classifies split gate/block/wait builders as internal compatibility exports.
-- 2026-06-25T14:02+02:00 — Task 24 reopened: `gates.py` now treats omitted `lifecycle_id` as the active ambient lifecycle for gate creation, rejecting lifecycle-less creation instead of producing workspace-shaped lifecycle gates.
-- 2026-06-25T13:20+02:00 — Task 23/24: gate payloads now treat cancel/response-wait cleanup as deletion of throwaway interaction rows, and `gate_response_wait` owns the default five-minute wait loop.
-- 2026-06-25T07:26+02:00 — Task 19: the gate tool surface gained `gate_response_wait`; `gates.py`
-  now enforces one open lifecycle gate by expiring older open gates, supports targeted decision notes,
-  and waits on both durable gate state and matching operator-inbox entries. Verification metadata pinned
-  until closeout stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: payload builders now expose `parent_task` and `leaf_id` on resolver/worktree entrypoints, while closeout/integration continue to use explicit leaf enclosure `series-contract.md` paths. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T22:50+02:00 — Dashboard task 14: added `lifecycle_finalize.py` to the route. `PUBLIC_TOOLS`, the facade, the server, and the response registry now include `lifecycle_finalize_task`. Verification metadata pinned until closeout stamps the source commit.
-- 2026-06-23T13:44+02:00 — Task 10 backend inbox: added `operator_inbox.py` to the route and grew `base.py`/facade exports with `operator_inbox_post`, `operator_inbox_poll`, and `operator_inbox_consume`. Verification metadata pinned until closeout stamps the task-10 code commit.
-- 2026-06-19T07:23 — No route impact: slice 3c R5 threads a `dry_run` flag through the `task_doc.py` payload builder (forwarding only); the `mcp/tools/` route model this overview describes is unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T12:10+02:00 — Task 6 slice 6b: `gates.py` gained a non-tool helper `gate_decide_for_lifecycle` (the dashboard write-path the serving layer calls); the registered public-tool surface is unchanged (still 47 tools, no `PUBLIC_TOOLS`/registry edit), so the payload-builder route model this overview describes holds. Verification metadata pinned until closeout stamps the 6b code commit.
-- 2026-06-18T01:05+02:00 — Task 6 slice 6a: new `gates.py` domain submodule (the four `gate_*` control-plane builders) added to the Layout; `base.py`'s `PUBLIC_TOOLS` and the facade exports grew to 47. The gate substrate itself lives in `controlplane/`. Verification metadata pinned until closeout stamps the 6a code commit.
-- 2026-06-14T00:16 — Slice 3c commit 3: the `task_doc.py` Layout row now lists the master ops (`set_subtask`/`set_section`); the builder gained `subtask`/`section` forwarding. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-- 2026-06-13T22:34 — Slice 3c commit 1: new `task_doc.py` builder added to the Layout (the JSON-primary task-document authoring tool forwarding to the `task_doc_tools` controller); `base.py`'s `PUBLIC_TOOLS` and the facade exports grew to 43. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
-- 2026-06-13T18:45+02:00 — No route impact: slice 2c only forwards a new `on_unsaved` argument through `lifecycle.py`'s `switch_lifecycle_payload` and `worktree.py`'s `worktree_attach_payload`; the payload-builder route model this overview describes is unchanged (detail in the file sidecars).
-- 2026-06-13T16:41+02:00 — Slice 2b: new `lifecycle.py` domain submodule (the six `lifecycle_*` signal builders) added to the Layout; `base.py`'s `_tool_payload` gained the ambient emission hook and `PUBLIC_TOOLS` grew to 42. Verification metadata pinned until closeout stamps the 2b code commit.
-- 2026-06-11T06:47+02:00 — Issue #62 worktree-only closeout: `worktree.py` dropped the two `direct_closeout_*` payload builders (Layout row updated to the current worktree verb set, including sync/abandon); `base.py`'s `PUBLIC_TOOLS` and the facade exports shrank to 36 names.
-- 2026-06-10T09:56+02:00 — No route impact: sub-task D adds `worktree_sync_payload` (plus the `PUBLIC_TOOLS`/facade registrations) following the existing one-builder-per-tool pattern; the payload-builder route model this overview describes is unchanged (detail in the file sidecars).
-- 2026-06-10T09:30+02:00 — No route impact: `tools/worktree.py` and `tools/core.py` only forward the new `stale_base_choice` / `include_freshness` arguments to their controllers (GitHub #54); the payload-builder surface this overview describes is unchanged.
-- 2026-06-10T07:40+02:00 — No route impact: `tools/worktree.py` only forwards the new `retry_provider_setup` flag to the controller (GitHub #53).
-- 2026-06-10T05:30+02:00 — Route body caught up with the 2.5.1/2.5.2 response-budget layer (compact builders per domain, tool-report filing, report-before-compaction and budget-test invariants); previous closeouts had only stamped the verification header. Developer-flagged gap.
-- 2026-05-30T21:33+02:00: Re-verified the route against `8927f03` after the 0.9.x run; the per-domain Layout, hot path, and invariants still match the current exports. `core.py` gained `no_cache`/`install_provider_deps` forwarding in `runtime_install_payload` (documented on the file card); the registry's public surface is unchanged.
-- 2026-05-29T18:35+02:00: Split `mcp/tools.py` (831 lines) into this `mcp/tools/` package by domain (commit `01f503d`); moved the registry purpose, invariants, and references here from the retired `tools.py.md`. Import surface unchanged.
-- 2026-05-28T19:52+02:00: (from `tools.py`) Updated after all public payload builders were wired through the Pydantic response model registry and controller imports were split by domain.
-- 2026-05-26T23:11+02:00: (from `tools.py`) Refreshed verification metadata after source commit `5ab704a` landed typed GrepAI payload forwarding.
-- 2026-05-24T02:47+02:00: (from `tools.py`) Updated after public tool expectations added `memory_quality_check`.
-- 2026-05-23T13:09+02:00: (from `tools.py`) Established for the complete Phase 04 public MCP tool surface.
-
-## Update History
-
-
-- 2026-09-20T05:55+02:00 — 260915-KS-L41 curator (uncommitted change set on `ar/260915-ks-l41-ar`, code base `756c47b3` at this leaf's cut and `f79f4db745ad00b908d6ce4871d0b4ab2320207c` after the L39 sync, memory base `da33325c` at the cut and `37d0787571bfbf92890049ee0614fa159012be39` after it): **added the L41 section, which is this route's own impact.** The section is new at the top of the route's change narrative and states the two builder-side changes: `knowledge_integrity_check_payload` now takes an exact-input selector (`_ExactInputSelector`, with `_run_for_scope` applying it as a binding rather than a preference, `_runs_in_scope` / `_run_identity` naming every run the scope holds, `_report_facts` composing all three non-success answers, and `_condition_report` naming the selected run beside the digest over its exact inputs and echoing the run's own route as the scope), and `knowledge_read_payload` now resolves the context's `(repository_root, code_tree_id)` pair through `_source_resolution` / `_current_code_tree` so a minimal schema-conformant read returns a view rather than raising the context model's incomplete-resolution refusal. The section also restates that the scope still selects and never borrows another scope's run, and that nothing in this module decides anything. The card carried no recorded working candidate; one was added naming this leaf's candidate. This card's verification metadata — `lastVerifiedCommitHash`/`lastVerifiedCommitDate` — is retained as recorded, because the candidate is uncommitted and the governed closeout owns the real stamp.
-
 ## 260915-KS-L44 The Read Request States What Owns The Knowledge Selection
 
 **This route's impact is one docstring in `mcp/tools/knowledge.py`, and what it records is a finding rather than a new contract.** `ReadToolRequest` (`:106-135`) now states that `databasePath` and `repositoryId` **are** the knowledge selection and that the caller owns both: the runtime config's per-repository scope carries no knowledge-database or namespace field, a repository's coordination declaration (`context_packet`) and the memory layer's `system/settings.json` name roots, paths and policy but no knowledge database, namespace or `repositoryId`, no shipped helper or filename convention resolves a repository or a task to a knowledge SQLite path (`knowledge.db` appears only in test support), and the repository namespace is minted by ingestion (`create_repository`), so it is a fact about a store that already exists. The published schema keeps both **required** rather than optional-with-a-default, because a default here would be this surface inventing a selection; a cold planner that has not been told the pair cannot discover it from this server.
@@ -1146,11 +761,5 @@ forces every completeness statement to `false`. `_SELECTION_FAILURES` makes an i
 refusal (`snapshot_unavailable` naming the tree) on all three handlers. No input schema changed. A tree-backed
 read is bound to the index's constant namespace, so seeds are its projected UUIDs.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name. | `_select`; `_SELECTION_FAILURES`; `_selection_refusal` | mcp/src/agents_remember/mcp/tools/knowledge.py:254-266; mcp/src/agents_remember/mcp/tools/knowledge.py:287-295; mcp/src/agents_remember/mcp/tools/knowledge.py:298-303 |
-| A partial index is never presented as complete. | `_index_complete` | mcp/src/agents_remember/mcp/tools/knowledge.py:306-317 |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T12:40+02:00 — 260915-KS-L44 curator (uncommitted CYCLE-03 change set on `ar/260915-ks-l44-ar`, code base `2a96eb88`): **route body updated.** The section above is appended at the end of this route's change narrative, so no existing heading moved. It records this route's own impact — the read request's docstring now naming the caller as the owner of the `databasePath`/`repositoryId` selection, with the five observations that make that a fact (no config field, no coordination field, no memory-settings key, no resolver or filename convention, and a namespace minted at ingestion), the reason the schema keeps both required, and the explicit boundary that a discovery contract is a product decision this leaf did not take. No verification stamp was advanced; the candidate is uncommitted and the governed closeout owns the real stamp.
+- The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name. [33]
+- A partial index is never presented as complete. [34]

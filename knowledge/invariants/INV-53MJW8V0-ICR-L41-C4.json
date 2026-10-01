@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Recorded assessment availability and currentness for new captures and previously sealed comparison manifests.",
+  "conditions": [
+    "Owner-measured empty, unavailable and uncaptured collections remain distinct facts.",
+    "Absent optional availability or custody metadata contributes no field to older canonical encodings.",
+    "Uncaptured assessments retain not-selected/not-measured treatment; source measurability alone does not measure an absent collection."
+  ],
+  "exclusions": [
+    "Retrofitting missing historical metadata or changing an existing seal.",
+    "Equating a missing capture with no prior authorship, measured absence or currentness."
+  ],
+  "id": "INV-53MJW8V0",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "e354385e-d9bb-42b1-b4c3-6a15b457d61a",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Captured assessment availability distinguishes measured-empty, unavailable and not-captured history. Missing optional availability metadata is canonically omitted so old sealed manifests keep their original identities; uncaptured assessments never become measured absence or a favorable currentness result.",
+  "status": "proposed",
+  "supersedes": []
+}

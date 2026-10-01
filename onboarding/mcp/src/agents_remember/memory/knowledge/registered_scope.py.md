@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/registered_scope.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/registered_scope.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:02+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -151,45 +141,37 @@ sides or two seeds collapse into one member.
 - **No schema is written and no identity is minted.** This module opens no transaction, adds no table and
   produces no digest or content address of its own; the scope is addressed by the declared `scope_id`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one operation name a construction refusal carries, its own member of the shipped operation vocabulary, and the statement that no refusal code is added. | `CONSTRUCT_SCOPE_OPERATION`; `KnowledgeRefusalCode`; "def construct_registered_scope(" | mcp/src/agents_remember/memory/knowledge/registered_scope.py:76-81; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/memory/knowledge/registered_scope.py:130-130 |
-| The declared side's dataset as identity plus handle, and the two-state outcome whose `constructed()` is the one predicate. | `ScopeSnapshotSource`; `RegisteredScopeResult`; `constructed` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:88-99; mcp/src/agents_remember/memory/knowledge/registered_scope.py:102-110; mcp/src/agents_remember/memory/knowledge/registered_scope.py:111-114 |
-| The identity read from the file's own bytes, read-only and namespace-validated, rather than from a claim. | `snapshot_source`; "return ScopeSnapshotSource(side=side, snapshot=dataset_identity(database_path), store=store)" | mcp/src/agents_remember/memory/knowledge/registered_scope.py:117-127; mcp/src/agents_remember/memory/knowledge/logical.py:153-176 |
-| The construction entry point: resolve, check seeds, assemble — returning a refusal instead of raising, and the caller that consumes it. | `construct_registered_scope` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:130-161; mcp/src/agents_remember/application/knowledge_family_integrity.py:177-180 |
-| Step 1: every declared side resolved to the dataset that holds it, with the first supplied handle per side winning and a mismatch refused by name. | `_resolve_sources`; `setdefault`; `_missing_snapshot` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:168-190; mcp/src/agents_remember/memory/knowledge/registered_scope.py:193-214 |
-| The seed check: the first declared seed no declared snapshot records, looked up through the store reader. | `_first_unrecorded_seed`; "family_revision_is_recorded(source.store.connection, source.store.repository_id, seed)" | mcp/src/agents_remember/memory/knowledge/registered_scope.py:217-230; mcp/src/agents_remember/memory/knowledge/read_queries.py:329-338 |
-| The assembly — declared paths sorted, the policy identity carried, the edges ordered — and the accumulator that is the whole of one construction's mutable state. | `_assemble`; `_Collected` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:237-265; mcp/src/agents_remember/memory/knowledge/registered_scope.py:268-277 |
-| The recorded-links walk that visits each side in a declared order, and the order itself. | `_follow_recorded_links`; `_VISIT_ORDER` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:280-299; mcp/src/agents_remember/memory/knowledge/registered_scope.py:83-85 |
-| Steps 2 and 3: the exact-equality path lookup, the `source_to_invariant` edge per claim with its provenance side, and the family memberships of the revisions that side reached. | `_follow_changed_paths`; `_collect_claim`; `_follow_memberships` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:302-316; mcp/src/agents_remember/memory/knowledge/registered_scope.py:319-339; mcp/src/agents_remember/memory/knowledge/registered_scope.py:342-363 |
-| The two shipped readers the recorded lookups are performed through. | `fetch_realizations_at_path`; `fetch_memberships_of_invariants` | mcp/src/agents_remember/memory/knowledge/read_queries.py:226-261; mcp/src/agents_remember/memory/knowledge/read_queries.py:210-223 |
-| Step 4: the declared traversal called once per target under the declared policy, and the `KS-R17@v1` scope and entry point it calls rather than re-implements. | `_follow_composition`; "scope: CompositionScope = follow_composition_scope("; "scope: CompositionScope = follow_composition_scope(" | mcp/src/agents_remember/memory/knowledge/registered_scope.py:366-398; mcp/src/agents_remember/memory/knowledge/composition_traversal.py:63-81; mcp/src/agents_remember/memory/knowledge/composition_traversal.py:84-184 |
-| A declared policy resolved from the registry when nothing was reached to follow, and the shipped policy refusal raised when no version declares it. | `_declared_policy_identity`; "declared = get_policy_version(store, str(request.policy_id), str(request.policy_version_id))"; `composition_policy_refusal` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:401-426; mcp/src/agents_remember/memory/knowledge/composition_policies.py:162-183; mcp/src/agents_remember/memory/knowledge/refusals.py:1252-1286 |
-| The composition edges recorded from the traversal's own reported identities, the endpoints read back from the row, and the candidate-preferred side the traversal runs against. | `_collect_composition_edges`; `_composition_endpoints`; `_traversal_source` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:429-451; mcp/src/agents_remember/memory/knowledge/registered_scope.py:454-467; mcp/src/agents_remember/memory/knowledge/registered_scope.py:470-486 |
-| The deterministic edge order with duplicates collapsed, and the origin references read from a row's own provenance rather than inferred. | `_ordered`; `_origin_refs`; "origin_refs: tuple[str, ...] = ()" | mcp/src/agents_remember/memory/knowledge/registered_scope.py:489-503; mcp/src/agents_remember/memory/knowledge/registered_scope.py:506-522; mcp/src/agents_remember/models/knowledge/authorship.py:48-48 |
-| The three named refusals a construction can return, each naming the exact missing input. | `_seed_refusal`; `_policy_refusal`; `_traversal_refusal` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:529-541; mcp/src/agents_remember/memory/knowledge/registered_scope.py:544-556; mcp/src/agents_remember/memory/knowledge/registered_scope.py:559-574 |
-| The shared refusal builder and the shipped refusal machinery it reuses instead of adding a code. | `_refusal`; `KnowledgeRefused`; `RefusalFacts`; `refusal` | mcp/src/agents_remember/memory/knowledge/registered_scope.py:577-604; mcp/src/agents_remember/memory/knowledge/refusals.py:35-45; mcp/src/agents_remember/memory/knowledge/refusals.py:47-54; mcp/src/agents_remember/memory/knowledge/refusals.py:57-77 |
+- The one operation name a construction refusal carries, its own member of the shipped operation vocabulary, and the statement that no refusal code is added. [1]
+- The declared side's dataset as identity plus handle, and the two-state outcome whose `constructed()` is the one predicate. [2]
+- The identity read from the file's own bytes, read-only and namespace-validated, rather than from a claim. [3]
+- The construction entry point: resolve, check seeds, assemble — returning a refusal instead of raising, and the caller that consumes it. [4]
+- Step 1: every declared side resolved to the dataset that holds it, with the first supplied handle per side winning and a mismatch refused by name. [5]
+- The seed check: the first declared seed no declared snapshot records, looked up through the store reader. [6]
+- The assembly — declared paths sorted, the policy identity carried, the edges ordered — and the accumulator that is the whole of one construction's mutable state. [7]
+- The recorded-links walk that visits each side in a declared order, and the order itself. [8]
+- Steps 2 and 3: the exact-equality path lookup, the `source_to_invariant` edge per claim with its provenance side, and the family memberships of the revisions that side reached. [9]
+- The two shipped readers the recorded lookups are performed through. [10]
+- Step 4: the declared traversal called once per target under the declared policy, and the `KS-R17@v1` scope and entry point it calls rather than re-implements. [11]
+- A declared policy resolved from the registry when nothing was reached to follow, and the shipped policy refusal raised when no version declares it. [12]
+- The composition edges recorded from the traversal's own reported identities, the endpoints read back from the row, and the candidate-preferred side the traversal runs against. [13]
+- The deterministic edge order with duplicates collapsed, and the origin references read from a row's own provenance rather than inferred. [14]
+- The three named refusals a construction can return, each naming the exact missing input. [15]
+- The shared refusal builder and the shipped refusal machinery it reuses instead of adding a code. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A construction reads one namespace's own
 stored rows through its own opened dataset, and every identity it records — snapshots, revisions,
 memberships, policy versions — is store-local.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T14:02+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): created this one-to-one card for the registered review scope's construction act. It records the four-step decision order and that each step resolves or refuses, the declaration-compared-against-bytes rule with the first-handle-per-side behaviour, the sorted-and-deduplicated assembly that makes the scope a function of its declaration, the single call into `KS-R17@v1`'s traversal whose refusals propagate unchanged, and the deliberate absences (no retrieval-frontier import, no partial scope, no inferred member, no new refusal code, no store write). This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

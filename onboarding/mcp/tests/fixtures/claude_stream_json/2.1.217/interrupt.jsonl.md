@@ -1,15 +1,5 @@
 # mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl` |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-07-31T15:32+02:00                                      |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`                  |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
-| governingOverview      | `../../../overview.md`                                      |
-
 ## Governing Overview
 
 [mcp/tests overview](../../../overview.md)
@@ -37,16 +27,9 @@ This file retains a versioned wire example with `terminal_reason: aborted_stream
   A recording, never a hand-maintained policy file.
 - The error-shaped `result` must stay error-shaped: its abort marker and error fields are distinct data. This fixture does not establish that an arbitrary unstamped error result should be classified as cancellation.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The assistant frame records interrupted streaming. | "aborted" | mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl:2-2 |
-| The terminal error result records the abort reason; it is not a successful completion. | "aborted_streaming" | mcp/tests/fixtures/claude_stream_json/2.1.217/interrupt.jsonl:4-4 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 2 citation rows covering 3 source references and preserved verification metadata.
-
-- 2026-07-31T15:32+02:00 — 260731-EFA-L2 curator: created the missing sidecar for this
-  fixture (a pre-existing 1:1 gap, not introduced by this leaf).
+- The assistant frame records interrupted streaming. [1]
+- The terminal error result records the abort reason; it is not a successful completion. [2]

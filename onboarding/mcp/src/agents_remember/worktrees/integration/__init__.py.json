@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package marker docstring.\n\nAnchor: \"Integration-branch authority and ref-transaction modules.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2aafeb598e62bc1eb34dccc249a89ffc34301651",
+            "content": "sha256:2e9655b5b1450f891d59927efcadec5d200912d13e86a94a6386654364e2ba49",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

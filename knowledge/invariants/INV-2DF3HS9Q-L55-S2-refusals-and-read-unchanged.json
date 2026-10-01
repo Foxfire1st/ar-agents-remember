@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The {repo, master} selector validation and the status mapping of both notes routes (_notes_json), and the size-capped binary-tolerant note read (read_note).",
+  "conditions": [
+    "The repository comes from the MCP settings allow-list and master is a single path segment.",
+    "Family examination: no joint obligation is supported. Basis: The selector refusals and the note read are a pre-existing route contract that L55 preserved without changing any of their code; they share no joint obligation with the listing's bound and are carried here only as a preservation clause."
+  ],
+  "exclusions": [
+    "The listing walk's own classification of entries, which the byte-identity clause covers."
+  ],
+  "id": "INV-2DF3HS9Q",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "271bbb43-dafe-4794-a85a-3aeb1a1db448",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Unknown repo answers 404 unknown-repo, a multi-segment master 400 bad-request, traversal and symlink-escape reads 400 bad-path, a missing note 404 not-found, and an undecodable note reads as language binary.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,114 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/policy.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `CapabilityEvidence`/`FeatureCapability` DTOs and wire model base.\n\nAnchor: \"class WireModel(BaseModel):\"; \"class CapabilityEvidence(WireModel):\"; \"class FeatureCapability(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d169fe1db7ab48cd76cc4e49cfb687e0301b9746",
+            "content": "sha256:5e4a033839ad595ce36b9a53532f42a111e49e7e4be702dfc8e466601535f51d",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/models/conversations/primitives.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c849c256e95887423d0c54ae9b3b657666fb0be",
+            "content": "sha256:a95c83211fef43bf07982afac0a33f97368b06ca8f9f017f7e813bcf0238c663",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/models/conversations/capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c849c256e95887423d0c54ae9b3b657666fb0be",
+            "content": "sha256:ec823c9dd9c37c6be33cadda10736a5f0611ed0806476a0a0350866cf6273820",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/models/conversations/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The AR local-operator ruling and canonical scope the `repoPolicy` part reports.\n\nAnchor: \"class LocalOperatorAuthorizationResolver:\"; \"def for_workspace(cls\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929e17bcc3d9f1e8d94ce1eed9ecfba647520c93",
+            "content": "sha256:5127ae4e869b84d9a455e4c312350d8d28006490a7cf790dfb9df23f8600da0d",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/authorization.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `policyRead` capability gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:50ebb14926760686300323dbf7db1f28a3da463346ce3d0a611dc1d8f159d61f",
+            "locator": {
+              "kind": "symbol",
+              "name": "policyRead"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live snapshot `harnessMode` reads Claude `permissionMode` from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0194cffc7625f827a5732a8c50372ef17646af2f",
+            "content": "sha256:c6852877e9defdb5b37f0008e9ef13e527bec7ad89c57187c353edada4b69b84",
+            "locator": {
+              "kind": "symbol",
+              "name": "_harness_mode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0194cffc7625f827a5732a8c50372ef17646af2f",
+            "content": "sha256:856d37d4748539243cafba2493844a24eba41da34e30cec0dc78012d2e794dde",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

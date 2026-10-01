@@ -1,0 +1,250 @@
+{
+  "path": "mcp/src/agents_remember/serving/_app_common.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The optional summary port on the collaborator record.\n\nAnchor: `ReviewIntentSummaryPort`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:cbf1034558b18983a498fffe5a7123fd770b5f7e0809cdc4289fc9938606e09d",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_intent_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The composition root that fills the port with the real compiler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:7d7c7b2717bc82f7a76bfb072223dfdb3713afb902384f32655118cbd247386b",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The refusals the port's presence decides, in the one gate every launch point calls.\n\nAnchor: `capsule-resolver-unavailable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The optional tree-view port on the collaborator record.\n\nAnchor: \"review_trees: ReviewTreesPort\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:9fef8b1c7b600935c5482da7fdf35ed11e7144bf6a28494d86942c4be1414bb6",
+            "locator": {
+              "end": 508,
+              "kind": "line_range",
+              "start": 503
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The optional reader port on the collaborator record, and why it is its own port.\n\nAnchor: \"knowledge_reader: KnowledgeReaderPort\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:2d14c228990d641ea4ff1b198e5e8aee848f5b34057ae51a1fe790f2949c8a10",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 510
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The port type, imported from the route module.\n\nAnchor: \"from agents_remember.serving.knowledge_reader import KnowledgeReaderPort\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:18b5a2c3ba4eafd47ea3c721756a388b2f695f01d37e9dc2bc930b92b6108441",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Terminal assignment parses canonical document and role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:aec0a918c2151a85b61fc623b5e0c1f657f43f58c9911ab08428d882e589af76",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalAttachTaskRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one collaborator bundle the lifespan and the routes share, including the observer-health owner added by `LOCR-R17@v1`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:a9096748bd458f9894464b8d4270e88ad7f2075535da13eb7003778473bb3d45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ServingRuntime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The SSE event sequence: one additive, omissive tail on the `snapshot` and none on a `delta`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:8c67a0d5ac466e779b93acb764c053e3d40c297bdb7f3b09e33f33fa596177c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "stream_events"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The application-rank capsule compiler as an injected port, absent means a named refusal rather than a capsule-less launch.\n\nAnchor: `capsule_launch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:0dd05ce9bf0e3c1a372e6edfe3be719e30d2a8be653af23d219824f78b171783",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchCapsuleResolver"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:cf0ead0cbd3ff9c9fc00cfa3b7b203d54d9b8941ff9ad1753f8b72ed85ae1a66",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 517
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:6f3661d1ca66214f03ae9a8f1d68baeed154b677664fefd705e2e4689f195941",
+            "locator": {
+              "end": 550,
+              "kind": "line_range",
+              "start": 550
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The third review port: one inventory entry's content at the two code trees the listing published, imported beside the other two reviewer ports and refused by name when a process omits it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:e6dd46938e97bb07522b36aa981492ccfc4b6e800692db4d5721c1872240007f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceContentPort"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_source_content"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:4caf25c4747905c825013884a365a21b3cffa33663af3df6601230854109aed2",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:e671733c44bd3d1dd59e8c55b31c8e03bc93ffb30f504c7c187e2b90949f6a57",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

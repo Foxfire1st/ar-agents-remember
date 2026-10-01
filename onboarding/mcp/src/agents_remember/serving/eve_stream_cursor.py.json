@@ -1,0 +1,159 @@
+{
+  "path": "mcp/src/agents_remember/serving/eve_stream_cursor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The decoder delegates every frame to the protocol module's schema-exact parser and inherits its refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:7b503c29ca35e63e432a814746454164be180d6702f776219234141d131a74cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_event_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:9d307f835cce51513136dfcf364b9400ec997c3664f69017f0578856ec69057a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveStreamEvent"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Replay protection is not this module's and now has exactly one owner beside the wire contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:4730c1c3a91a762b0cdcfda1fa8b43db4b21dde43dd60b143eabc5adb74fe990",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEventDeduplicator"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:89c1e6e8ca2b2fe0113dd57ecfb3fc5e4c0e92ffd11b5384861e09308ae9e2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_REPLAY_WINDOW"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One stream connection in the transport client feeds this decoder and reconnects from the index the caller persisted.\n\nAnchor: \"reconnects from the index\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:ddc40b03edf234fc5aed0ce724582261fc34e778e6e813d83e0a7dd7d5842b66",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The adapter persists the advanced index and uses it as the only resume position.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:44f5d5093a71ccb46ff8c9bdac288f64b3b954d39a4aae35ee90d63f65054b94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_translate"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:3eca846be4d20e09849f72d60cd79cc84290594003e819d0b6438b5e3d23eb26",
+            "locator": {
+              "kind": "symbol",
+              "name": "_event_stream"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cursor-arithmetic cases cover a frame split across reads, keep-alive blanks, a trailing frame without a newline, and the oversized-frame refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05c5f945582f4c68946bfbafb789cf0c501cdf4f",
+            "content": "sha256:db235addabdf13341093142bda4368f94e375c1e8c92aa08ee470ff0533bba8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveCursorTests"
+            },
+            "path": "mcp/tests/test_eve_protocol.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The durable NDJSON record and its absolute event-index semantics are eve's published stream contract at the pinned release.\n\nAnchor: stream-version header gate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:da178b0b9fff9dca4fb93b7ae1eedd3ce6ea20df3498cdf1a955418d4ba41d10",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_SUPPORTED_STREAM_VERSIONS"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:85776925c51b57961f99170d80648567c2f2e22517c82d683dd99d298589a45d",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

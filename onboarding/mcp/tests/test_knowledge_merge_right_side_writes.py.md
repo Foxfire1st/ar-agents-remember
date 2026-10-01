@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_merge_right_side_writes.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_merge_right_side_writes.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -112,59 +102,34 @@ case can leave a writer open on a fixture another case will read.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the two replayed-write properties it protects. | "What the merge does with the right side's own writes: replay them, then judge the result." | mcp/tests/test_knowledge_merge_right_side_writes.py:1-22 |
-| The lane marker, which declares this module's retained evidence category. | "pytestmark = pytest.mark.evidence_unit" | mcp/tests/test_knowledge_merge_right_side_writes.py:49-49 |
-| **The key rule: read from the side that carries it, old side first, which is what makes a right-side `UPDATE` mergeable.** | `MaterializedChange`; `primary_key` | mcp/src/agents_remember/memory/knowledge/merge_changeset.py:82-130; mcp/src/agents_remember/memory/knowledge/merge_changeset.py:104-122 |
-| **The acyclicity rule the replayed reparent is judged by, inside the merge's own transaction.** | `require_acyclic_routes` | mcp/src/agents_remember/memory/knowledge/routes.py:106-167 |
-| The public merge entry points the cases actually invoke. | `resolve_knowledge_merge_base`; `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge_merge.py:59-75; mcp/src/agents_remember/application/knowledge_merge.py:78-87 |
-| The shared three-dataset case and the helpers that shape and read it. | `MergeCase`; `build_case`; `labels_of`; `set_label` | mcp/tests/merge_case_test_support.py:81-132; mcp/tests/merge_case_test_support.py:511-571; mcp/tests/merge_case_test_support.py:635-644; mcp/tests/merge_case_test_support.py:309-314 |
-| The route ids and the one-statement shapers that author and reparent the hierarchy. | `author_routes`; `reparent_the_leaf_under_the_root`; `reparent_the_root_under_the_leaf` | mcp/tests/test_knowledge_merge_right_side_writes.py:71-92; mcp/tests/test_knowledge_merge_right_side_writes.py:95-103; mcp/tests/test_knowledge_merge_right_side_writes.py:106-114 |
-| The base resolution and the optional publication every case goes through. | `resolved_base`; `merge` | mcp/tests/test_knowledge_merge_right_side_writes.py:117-135; mcp/tests/test_knowledge_merge_right_side_writes.py:138-151 |
-| **The published-candidate case: the right side's own label is read back out of the merged file.** | `test_a_right_side_update_is_replayed_and_the_published_candidate_carries_it` | mcp/tests/test_knowledge_merge_right_side_writes.py:183-215 |
-| **The reparent case, with the two sibling assertions that separate "the right row moved" from "something moved".** | `test_a_replayed_reparent_moves_the_row_it_names_and_no_other` | mcp/tests/test_knowledge_merge_right_side_writes.py:218-241 |
-| **The cycle case: `lineage_cycle` attributed to the merge, nothing published, the three inputs byte-identical.** | `test_a_replayed_route_reparent_that_closes_a_cycle_refuses_the_whole_merge` | mcp/tests/test_knowledge_merge_right_side_writes.py:244-285 |
-| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" |mcp/tests/test-evidence-lanes.toml:277-277|
-| The lane row this module was appended to. | "mcp/tests/test_knowledge_merge_right_side_writes.py" |mcp/tests/test-evidence-lanes.toml:277-277|
+- The module's own statement of the two replayed-write properties it protects. [1]
+- The lane marker, which declares this module's retained evidence category. [2]
+- **The key rule: read from the side that carries it, old side first, which is what makes a right-side `UPDATE` mergeable.** [3]
+- **The acyclicity rule the replayed reparent is judged by, inside the merge's own transaction.** [4]
+- The public merge entry points the cases actually invoke. [5]
+- The shared three-dataset case and the helpers that shape and read it. [6]
+- The route ids and the one-statement shapers that author and reparent the hierarchy. [7]
+- The base resolution and the optional publication every case goes through. [8]
+- **The published-candidate case: the right side's own label is read back out of the merged file.** [9]
+- **The reparent case, with the two sibling assertions that separate "the right row moved" from "something moved".** [10]
+- **The cycle case: `lineage_cycle` attributed to the merge, nothing published, the three inputs byte-identical.** [11]
+- The lane row this module was appended to. [12]
+- The lane row this module was appended to. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented or measured in this file. Every case builds its three
 datasets under `tmp_path` and asserts one repository's own merge.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 2 row(s) re-pointed by the installed fixer (its generated bullets kept); 3 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`merge_case_test_support.py`, `merge_changeset.py`, `routes.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:28:42+00:00: Generated citation repair: "mcp/tests/test_knowledge_merge_right_side_writes.py" repointed to mcp/tests/test-evidence-lanes.toml:277-277. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:28:42+00:00: Generated citation repair: "mcp/tests/test_knowledge_merge_right_side_writes.py" repointed to mcp/tests/test-evidence-lanes.toml:277-277. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_merge_right_side_writes.py" repointed to mcp/tests/test-evidence-lanes.toml:224-224. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_merge_right_side_writes.py" repointed to mcp/tests/test-evidence-lanes.toml:224-224. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_knowledge_merge_right_side_writes.py" repointed to mcp/tests/test-evidence-lanes.toml:205-205. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_knowledge_merge_right_side_writes.py" repointed to mcp/tests/test-evidence-lanes.toml:205-205. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T07:22+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **citation ranges re-derived by reading the cited construct, not by arithmetic on the old numbers.** This leaf's own source edits grew the file this card cites, so the row(s) naming `resolve_knowledge_merge_base` and `merge_resolved_knowledge_datasets` no longer held their anchor in the cited range. Each was re-read in the code worktree at the construct the claim names and re-pointed to that construct's own current declaration extent (`mcp/src/agents_remember/application/knowledge_merge.py:59-75` and `mcp/src/agents_remember/application/knowledge_merge.py:78-87`). No claim wording, anchor or row was changed, added or deleted; no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "mcp/tests/test_knowledge_merge_right_side_writes.py" repointed to mcp/tests/test-evidence-lanes.toml:198-198. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "mcp/tests/test_knowledge_merge_right_side_writes.py" repointed to mcp/tests/test-evidence-lanes.toml:198-198. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "mcp/tests/test_knowledge_merge_right_side_writes.py" repointed to mcp/tests/evidence-lifecycle.toml:1291-1291. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 1 enforced `citation_anchor_absent_from_range` row in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1269-1287` → `mcp/tests/evidence-lifecycle.toml:1269-1288` (row 141). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
-- 2026-09-18T19:09+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): created this one-to-one card for the right-side-writes lane. It records the two properties the module protects, the mechanism each one turns on (`UPDATE` keys living on the old side; the acyclicity walk running on the replayed rows inside the application that wrote them), the fact that every case drives the **public** merge entry point over the shared three-dataset case rather than a helper beside it, and the reason the sibling assertions exist (separating "the right row moved" from "something moved"). It also records the module's `evidence_unit` mark and its exact-scope consumer registration in `evidence-lifecycle.toml`, which is a precondition rather than metadata. This card carries **no `lastVerifiedCommitHash` and no `lastVerifiedCommitDate`**: every construct it cites exists only in this leaf's uncommitted candidate. What was read is this leaf's uncommitted working tree, and closeout owns the stamp.
+No meaningful cross-repo references found.

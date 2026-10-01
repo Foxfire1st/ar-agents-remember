@@ -1,0 +1,33 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules/constants.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:3d62e46f544b23376c4b332d4e33e3ae50b5c66fbdcef0c9ba675d46f6fe1773",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_repo"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route-local overview summarizes how this module fits into the benchmark runner split.\n\nAnchor: `## Purpose`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:13-19"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

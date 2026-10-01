@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `_result` (lines 21-23) — Return the raw use-case result for the MCP adapter to finalize..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:30d1f3e03b0cf9d65e6b8966cb95b7ebe4948908e2607b62ca70b1b01d34abef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `_state_fields` (lines 26-27).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:250884af4df52e48b05d6f19cd83e3674bf352e8b389459a61648ab82ab1ac16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `lifecycle_start_tool` (lines 30-43).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:d9ff732e11b60189a69dd1f4752060f94e1a2fcf4c8287e54af41255643b4b13",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_start_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `lifecycle_block_tool` (lines 46-62) — Lower-level compatibility builder; public agent gates use ``lifecycle_gate``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:4a25c57cd85a8cdab3844e75114ddd55b59502c670c9db09e3f9e2dadff8d625",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_block_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `lifecycle_resume_tool` (lines 65-70).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:3d7e2ffd955a4b1cd5c4bf167d974d45924d21cfac5a3a74421fe1a53d019de1",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_resume_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `lifecycle_turn_end_notification_tool` (lines 73-91) — NOTIFY-AND-CONTINUE turn end (leaf-28): declare the turn complete and stop..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:24ec78ed26389489535f2e42fb0b86e089f061dd66370f68a85933e547ad64b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_turn_end_notification_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `lifecycle_end_tool` (lines 94-99).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:28dca1366e75b6e3c989839e5515dbf847e0ddd0d949f2a0c2162bb7a95c575e",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_end_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `lifecycle_phase_tool` (lines 102-107).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:63142ed4f43712881fc2071360bd714a06d0f74d586839950ec68f61c5434fa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_phase_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `switch_lifecycle_tool` (lines 110-129) — Leave the current lifecycle and adopt a fresh one (no target)..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:0641c825c22d6c30cc319eeb251ac29f499d5c9cb87bb5afb8bcc643e9f9ec41",
+            "locator": {
+              "kind": "symbol",
+              "name": "switch_lifecycle_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

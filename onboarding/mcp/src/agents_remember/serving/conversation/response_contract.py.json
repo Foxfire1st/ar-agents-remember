@@ -1,0 +1,353 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/response_contract.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strict base and the shared refusal models this module imports and extends.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "content": "sha256:a4bcb679d68c3d1c4dc9fd5649ff784c9ecbef260b7d09d7f8883bfa0ed0d870",
+            "locator": {
+              "kind": "symbol",
+              "name": "WireResponse"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "content": "sha256:2bf590bf08f993b15fb27b55f2eb291791eddf2baa5f442bd2e35d828460b7d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "StatusRefusal"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "content": "sha256:e042aa9d10db5e34f39e90168d5f27ef76ed9e66a1470022a18b2b29b3d8431a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CursorRefusal"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "content": "sha256:b0fd2af6f7e68cb0479c08c2cd944fde970381a355073b4852e759dd3f221e0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityUnavailableRefusal"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "content": "sha256:c9612c8e82307f99061d910b713ead4de811a6b725f67f5cfbee1edf6abfe6ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeEpochMismatchRefusal"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The wire models the 25 routes already dumped, reused here as declarations.\n\nAnchor: \"class AttachmentOperationProjection(WireModel):\"; \"class InterruptOperation(WireModel):\"; \"class OpenConversationOperation(WireModel):\"; \"class WithdrawnQueueResponse(WireModel):\"; \"class FailedWithdrawalResponse(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f4f32d781e107812c736b090d5de27565bdc6e6",
+            "content": "sha256:425b3ba640c3dbb3dfeade498b5beb5a51eac63dff8120aaa2b0d177a67da6a1",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/models/conversations/attachments.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "820b876c0b21a35a04fb393bc78248e1d5ca5324",
+            "content": "sha256:5c369661c0ac25f0040d1a9393c02743e414e22c8eaf54f38155720adbb9916b",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/models/conversations/interrupts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58f4c4c2c4dc2dc110fd8653002345b2eccdff7f",
+            "content": "sha256:28fe6cdf5639ec8fcdb065361cf3b148062fee687a7ae683943f2eb0ce2836f6",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/models/conversations/opening.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "13a94d8cc001c2b04f820e38ff8048aefdb4a66c",
+            "content": "sha256:8f8026506f87565f9337026d17ff7207868683ffbf043f773b60a7961c321acb",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/models/conversations/withdrawals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "13a94d8cc001c2b04f820e38ff8048aefdb4a66c",
+            "content": "sha256:909fa5778010665fd01f70bcc8970ff6c072bc0881b6e642801c32f3d2ebb9bd",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/models/conversations/withdrawals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one mapper `CONTROL_RESPONSES` transcribes, and the submit route whose 422 unions the answer with the shared refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:5b9552b4dc3f6a834be14a7e42604b16bb99a30ea72366034093e6e73aced1f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_map_typed_error"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:515604777846ed95bd53d95d51f85a182f08e25d9fcb8aec54ff51cbeaa73408",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_submit"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:b3f2e0efe7cf6cb07371457a7efde5a40e69e5014d54574ec69dd8a7c43e184b",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:2b458dad0885235d0b70dd55ec8e599f00615531209f52eeb55de54c7579a12e",
+            "locator": {
+              "end": 682,
+              "kind": "line_range",
+              "start": 635
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The cursor refusals `CONVERSATION_RESPONSES` adds for the active routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:cfc73415f89dd13f9cf1cadef6b458ffea259bc5b987c8db0749a1edfb61111c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_map_typed_error"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:c8e9edebd393427a64b08fb9f69e14f798e22a74b0a9648ee34ed7cace1c6018",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume_cursor"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:1d811a4896e32586080bd6a527d2ce2d3edd4f7cb4c2f96fba818f2615e9f0fe",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:cc9f68976698d58a5363deea5c9171b08657e616f3f53199c04725dbccab56da",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The library error table `LIBRARY_RESPONSES` transcribes and the total outcome map `OPEN_OUTCOME_RESPONSES` pairs with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d704862502ea34b8f7f7ba86340a3c82ae4594db",
+            "content": "sha256:28ff67446223e6de6dc400e9144a1734983c656c3ec6a264666f3ef424c3641c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_error_response"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d704862502ea34b8f7f7ba86340a3c82ae4594db",
+            "content": "sha256:ee6e17e334bac6f9dcb1cb421d9cb45c0c8cb7015d4b98d0f5cad3fe1de3947a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_OPEN_STATUS_BY_OUTCOME"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d704862502ea34b8f7f7ba86340a3c82ae4594db",
+            "content": "sha256:213db13ed5badff3893f6f0c7b32c3e9e04f0aa2ced65a35cb8dbe2b3728aa0f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d704862502ea34b8f7f7ba86340a3c82ae4594db",
+            "content": "sha256:da47f28a1f8ca5d68776f7bd1dacd142ec439e3f33cb8c52f3aa103ebfce9268",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The status pickers whose non-200 answers carry the operation body rather than a refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46b60613914598fb1f3d5815a8e76d9f81a86372",
+            "content": "sha256:f505f1e41dab69e5e9461947cede3bb98e0d3ff8a8e61d9afbc29939b7aa62e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "interrupt_http_status"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/operations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46b60613914598fb1f3d5815a8e76d9f81a86372",
+            "content": "sha256:db637ddd1b0ed93e4cf7bf4dc29279319e77e70193ef9dad858266a4042decfb",
+            "locator": {
+              "end": 561,
+              "kind": "line_range",
+              "start": 552
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/operations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current production declaration; the removed broad suite supplies no current execution proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:61e08401c0d139c5b631654da38ed5a4d65ea946001368a46b4b31cebfe1254d",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERRUPT_OUTCOME_RESPONSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,272 @@
+{
+  "path": "dashboard/src/panels/review/ReviewRefresh.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+        "content": "sha256:9d9b2f5be1a91836f53343561c2574a168c6f99ea485c674d96be89fc4267154",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewRefresh"
+        }
+      },
+      "id": "RLZ-SFZV934K",
+      "invariant": "INV-EZ8QKFX6",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Wires the reviewer's own refresh to the entry: the refresh button re-reads the comparison through onRefresh and, in the same click, calls the entry's revalidate() so the task entry's counts are re-read along with it.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The click refreshes, then re-validates the entry.\n\nAnchor: `useRevalidateIntentEntry`; \"revalidateEntry();\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:9d9b2f5be1a91836f53343561c2574a168c6f99ea485c674d96be89fc4267154",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The case that measures the whole refresh path through the real surface and client: the read carries the displayed identity, the notice names both digests, the panes hold the current comparison, and the sentence is asserted to agree with the pane's own `data-comparison`.**\n\nAnchor: \"re-reads the same question carrying the binding identity on screen, and names what moved\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:01f0aeae64983845dffb862e71bb6008217d1bf6c163ab19201961e6638a4d02",
+            "locator": {
+              "end": 623,
+              "kind": "line_range",
+              "start": 579
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The case that pins the phase gate: a failed refresh keeps the labelled old comparison and its error and renders no generation claim at all.**\n\nAnchor: \"keeps the labelled old comparison and its error when the refresh fails\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:5acd976324e27e7fa0b67bb913e4266dbb3212819a44e4f3989d58a4ba143df3",
+            "locator": {
+              "end": 652,
+              "kind": "line_range",
+              "start": 625
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The submission disclosure carries the server staleness and submission boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:a3470f6c9d68054c9ddec40d1221bcbf44faa639fdb985532999415afed9f422",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionBlock"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The module's own statement of what a refresh is — the two possible answers and never a blend — that a failed refresh keeps the old generation, and what it deliberately is not (no polling loop, no dataset choice, the identity belongs to one question).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:9d9b2f5be1a91836f53343561c2574a168c6f99ea485c674d96be89fc4267154",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRefresh"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
+            "locator": {
+              "kind": "symbol",
+              "name": "generationOf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:ac8f80b71eb762968bd1af20273afec1ac7bc915f5c1981cde18ee4f6614f2b7",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module's two imports: the payload type it reads its digests from and the read state whose phase gates the claim.\n\nAnchor: `ReviewPayload`; `ReviewRead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:d933e0737b671228dd5d2f8345a77f8b1b5d91b8215c4899c6301f32bce8d4c4",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The two states a rendered claim may have, with \"no claim\" expressed as `null` rather than as a third state — a surface that has not been re-read has measured nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:3f0f55024440f6a0589d875ebc3dea380813705b28ddc021555d0c14154ff77f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewGenerationState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:2b4f9311188d4363d201539da51a11c66570ec0ca58943db218b11a6d3a9573d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewGeneration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:1dac12a2fe1b8e3b38da9b0e4d2d3882d7a1f6522b7baaa174b11e47d202aaf5",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The control: the reader's own refresh button with its observable busy state, and the conditional notice carrying the state and both digests as data attributes.**\n\nAnchor: `review-refresh`; `review-generation-notice`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:9d9b2f5be1a91836f53343561c2574a168c6f99ea485c674d96be89fc4267154",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRefresh"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The sentence, chosen by the state, with each clause a fact the answer published — and the first fix round's correction, which made it say which generation the panes below hold.**\n\nAnchor: \"the candidate's comparison moved\"; \"the comparison below is still the candidate's current one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:10e8445a7e39e796d738b1857f267c73dc665510c7e1e17cc6736e3cded75fb7",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The one derivation of a claim: the phase gate first, then the carried identity, then the payload the surface renders, and the state decided by comparing the two digests.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
+            "locator": {
+              "kind": "symbol",
+              "name": "generationOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The reason the phase gate exists — a read that never reached the server has answered nothing, so a failure renders no \"still current\" claim beside its own error — and the reason both digests come from the rendered payload.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
+            "locator": {
+              "kind": "symbol",
+              "name": "generationOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The surface supplies refresh, loading state and the displayed generation to the shared control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

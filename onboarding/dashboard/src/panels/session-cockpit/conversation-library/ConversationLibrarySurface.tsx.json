@@ -1,0 +1,135 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The library store the surface reads and drives (list/preview/open loaders).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:7ac881ce84b271d171d180eccd313677c93cc25b9564bdc2d9c8cca821da3475",
+            "locator": {
+              "kind": "symbol",
+              "name": "useConversationLibrary"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:3abde5a5431e710bdc846f80d0245318e2758a3d32cac412f66855d4b1b66f8f",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The native list column.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9585dab520ca2074f38b811a29f5f05dfdce1a08",
+            "content": "sha256:b5f78ec035724b1f7d5ddc7e82a0e55d742cfa825d55c9a7c0462f6b72ffe0df",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryList"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The read-only preview column in the same block grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "457bcea7f58d646bdca723814576f00878ef4280",
+            "content": "sha256:45c0ff32ad16e5402f2d2ab27cfb418b83b3b221397c7169711dd32a025c6577",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationHistoryPreview"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sole resume action mounted for the selected row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14c4e00bc0af8ce6ee2ff1eef4cb50145c113fac",
+            "content": "sha256:6c9027e155f9762cd287e4d1d804ff06a7203df6b67e015c461c502fb5d16025",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenConversationAction"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The harness label used for the heading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3eaecec4dc7f066a3b6666c682a1a181267f4",
+            "content": "sha256:47d0e45cd9133709bb03b27908743f7f1f5171f0263f66f3fc26ba0963ff509c",
+            "locator": {
+              "kind": "symbol",
+              "name": "harnessLabel"
+            },
+            "path": "dashboard/src/data/conversation/format.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stage body that renders this surface, keeps the live surface inert behind it, and suppresses the drawer while it is up.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "content": "sha256:d4ba658fb99a26f2b42f88b317c8d798fa6226494e751b3004754c71fec356dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChatsStageBody"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "content": "sha256:153565c91193af197938d2fea67be95ceef79a2f186b754f82b7849a4e34895f",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

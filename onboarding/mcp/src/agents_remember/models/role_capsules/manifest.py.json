@@ -1,0 +1,310 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/manifest.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen vocabulary this parser is validated against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_OPERATIONS"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:84294edc5e8c2d9d65ce6afe5b9987e4cbc2bc5e894ec577fe2e9b96ce3fb6e1",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:6428d2e6b1a666556429b65eaf20fad062fa987a65d9d8776b6cc75c80f8a294",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical authored metadata this module parses.\n\nAnchor: \"\\\"schema\\\": \\\"ar-role-capsule-composition/v1\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3ab60b6e780b73cf9eea5d9de950566b03b5192",
+            "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tracked generated copy under the governed `mcp/**` surface, produced by the propagation owner.\n\nAnchor: \"ar-role-capsule-composition/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3ab60b6e780b73cf9eea5d9de950566b03b5192",
+            "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Tool identities declared here are narrowed against the admitted policy, never granted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49ac1a5cf1fe0ddc4233b130e93da2604479b31c",
+            "content": "sha256:7430c3face8fa5a6e9f1a8283a23447097755708433698d37d259206ec48aa37",
+            "locator": {
+              "kind": "symbol",
+              "name": "narrow_tool_requests"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Skill references declared here are carried, not narrowed** — no `tool_policy`/`permits` call is made for them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:ff997d6960152a420d7b0d10a870728d9c9ba02fba08c8054c25edb8dda93a71",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_references"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The skill identity helper and the skill entry a reference is built from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:818f46d27fa1b66ce97dd9f70db626a5c63f7bbc33a2e0ebbfe3596add2abb25",
+            "locator": {
+              "kind": "symbol",
+              "name": "skills_declared_identity"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:398fd6249e5416cdcbdd1e89aa545c9f25b79cc6bdf8c97a201369edbff96715",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSkillEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A declared skill must resolve, and its root file must be admitted, or compilation refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:d9ebe0c01225ff5c3367abc7ff71348cad9b820eeca4ee81a7871f376414497f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_role_skills_are_declared"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_skills_present"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shipped-manifest agreement and structural-refusal cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:e9be5bbf3ba8918c590832047be89b533e7a00102ff7719fdcf87f05f21bf81e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_shipped_manifest_parses_and_agrees_with_the_frozen_vocabulary"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:0942d375776c856968acb5b0e7f0dff3d1f63262289017f755c53ea041e35edf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_role_and_operation_the_shipped_manifest_declares_has_a_source"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:fc8ef3afe9d62913555ae353a8fa5eb4a89f14e0cff60d56daa2dced8d5b0cd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_manifest_that_routes_two_identities_at_one_file_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:528ec79929a0f0aa301c9473f74852ceedb1ee7b1c203ebc00a5e8fb8b2238c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_manifest_whose_applicability_contradicts_itself_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:1cbdd4296243f6f983293ec781564ecc3d7d169ab6996eb6bf447085c72d40e5",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:4bebb192870ac06c757a7902dfc23d61dbb1ff2c0dd09c76affefbd408653c39",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:674fbff12a2a16e430a80290d12e709d311f34532d6609d163d0f9429252a406",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Every tool identity the shipped manifest requests exists in the public roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:f34f06d8b39dee094e6d46952b91a62907f1e7d458fb471227d48cb6a9469142",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:a27707ee863517b80993af6b19c719d8766b0385bd1e3df03dcc6ade61d2c8e0",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

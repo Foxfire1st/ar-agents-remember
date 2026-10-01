@@ -1,0 +1,102 @@
+{
+  "path": "mcp/src/agents_remember/application/coordination_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Runtime/coordination response models include `ResolveContextResponse`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1f3d2ec75efb20baece287d4b6eb4d6687c0f23",
+            "content": "sha256:7c5b7bf592c3d7b26559f62fa2d1d34a630622a68974893a08a759ab6bce6694",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResolveContextResponse"
+            },
+            "path": "mcp/src/agents_remember/models/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Coordination context resolver owns the actual context construction.\n\nAnchor: \"_resolver.resolve_coordination_context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:65eded254886823405bb56e4121f233239cfafb11d2b9e524acc0e316772932d",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`require_repo` and `require_within_coordination` (repo resolution and path confinement) now live in the shared `kernel/authority.py` module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b796960fc74a9b30db4aa3ef0b9739906ba9205382c96e9b73141c8260ddeeb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_within_coordination"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:b977602b87edfa146bea5330d4c8a95b1b688fe8cbbe5cc367d2d2b844901c9e",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`AuthorityError` is the authority-violation error type the guards raise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d584d2d788a3149eb72bbf9420b29b9a028e11f5",
+            "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d584d2d788a3149eb72bbf9420b29b9a028e11f5",
+            "content": "sha256:7f26b29a1f0b715def1de7f7d30a324a15e3f00cce6914d124078511b7b7f2c5",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

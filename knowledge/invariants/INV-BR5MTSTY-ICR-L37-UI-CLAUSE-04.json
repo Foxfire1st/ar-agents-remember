@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Central review of an invariant for which the comparison owner confirms no recorded family membership.",
+  "conditions": [
+    "A valid selected-invariant read supplies its statement, source attribution and evidence."
+  ],
+  "exclusions": [
+    "Confirmed no-family does not include uninitialized, unreadable, unselected or partial family knowledge.",
+    "No family is invented to make the central reading path available."
+  ],
+  "id": "INV-BR5MTSTY",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "bd1023dd-0514-4e58-b650-2dfd017b5dc7",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A confirmed no-family invariant retains the same central statement, source-expression and evidence reading path.",
+  "status": "proposed",
+  "supersedes": []
+}

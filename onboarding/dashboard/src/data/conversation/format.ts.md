@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation/format.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/conversation/format.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `c422dc00273d4ae7a5d8c9c8db97365b8c85d640` |
-| lastVerifiedCommitDate | 2026-09-23T05:16:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data/conversation overview](overview.md)
@@ -64,49 +54,29 @@ timeline chips) consumes it.
   affordance (R6) — the same mandatory-full-value contract as `truncateMiddle`.
 - Long-stale is a calm tone, never alarm-red (A4) — the module cannot emit an alarm class.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The A1/A4/A5 convention proofs. | "conversation format conventions (developer findings A1/A4/A5)" | dashboard/src/data/conversation/format.test.ts:5-44 |
-| The R6 `shortId` implementation, including the short-value and suffix branches. | `shortId` | dashboard/src/data/conversation/format.ts:83-86 |
-| The live `ServingBuildStamp` and `AgentNotifierHeartbeatBadge` consumers. | `ServingBuildStamp`; `AgentNotifierHeartbeatBadge` |dashboard/src/cockpit/Cockpit.tsx:954-984; dashboard/src/cockpit/Cockpit.tsx:990-1017|
-| The focus-handoff fallback that uses `shortId` when no seat label exists (R6). | "shortId(" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:863-863 |
-| The ambient-telemetry surface that consumes `joinChips`/`freshnessTone`/`humanizeAge` (F3/F19). | `AmbientTelemetry` | dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:54-106 |
-| The library rows consuming `truncateMiddle`/`humanizeAge`. | `ConversationLibraryList` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibraryList.tsx:104-205 |
-| The developer visual-findings §A rules this module encodes (task-note pointer: `260720-developer-dashboard-visual-findings.md`). | — | — |
+- The A1/A4/A5 convention proofs. [1]
+- The R6 `shortId` implementation, including the short-value and suffix branches. [2]
+- The live `ServingBuildStamp` and `AgentNotifierHeartbeatBadge` consumers. [3]
+- The focus-handoff fallback that uses `shortId` when no seat label exists (R6). [4]
+- The ambient-telemetry surface that consumes `joinChips`/`freshnessTone`/`humanizeAge` (F3/F19). [5]
+- The library rows consuming `truncateMiddle`/`humanizeAge`. [6]
+The developer visual-findings §A rules this module encodes (task-note pointer: `260720-developer-dashboard-visual-findings.md`).
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-
-- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): split the pooled row — the A1/A4/A5 convention proofs are bound to the `format.test.ts` body (which does not import or test `shortId`), and `shortId:83-86` is described as implementation branches only; live-consumer ownership retained; the scoped fixer confirmed the final ranges with no writes.
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 8 direct citations (six function prose citations plus the ambient-telemetry and library references), moved the task-note pointer into Finding prose, and preserved two current-source-mismatched consumer claims unresolved.
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: added the new `shortId(id, tail)` helper (R6/B10 —
-  long ULID/UUID → `…SUFFIX`, full value the caller's `title`) and recorded `humanizeDuration` as the
-  SINGLE duration authority now applied to the supervisor badge, rail-footer heartbeat/cutoff, and uptime
-  (R5). Verification pinned to the leaf base (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the shared presentation
-  conventions — em-dash absent / interpunct separator (A1), humanized fixed-precision durations and
-  quiet long-stale tone (A4), and boundary truncation with a mandatory full-value affordance (A5).
-  Verification is pinned to the leaf base (`0be0099`) because the new source file is uncommitted;
-  closeout owns its first source stamp.
+No applicable cross-repository source was found.

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `provider_enablement_state` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45b63ee2b11932f9042ed5039888627c21aa9c0e",
+            "content": "sha256:017685d2d4daf117523abe9fe19ab8dbf21226a4e963a3bc25cf793580ee0100",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enablement_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

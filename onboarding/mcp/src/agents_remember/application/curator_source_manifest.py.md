@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/curator_source_manifest.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/curator_source_manifest.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T07:54+02:00 |
-| lastVerifiedCommitHash | `0d7910f9d646161c414ed6543453536a3c749d49` |
-| lastVerifiedCommitDate | 2026-09-24T08:10:24+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -129,66 +119,47 @@ planes are composed by `curator_ingest_planes.py`, which is the only place that 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; `BOOTSTRAP-HANDOVER.md` is the process authority
 this plane implements, and it is a task-tree document rather than a configured domain source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external documentation is required for the bounded source manifest. | — | — |
+No external documentation is required for the bounded source manifest.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the three properties and of why an external source is not a source anchor.** | "Three properties are the whole of it"; "repository-relative path and an exact Git blob" | mcp/src/agents_remember/application/curator_source_manifest.py:1-31 |
-| The published surface: the key, the bound, the artifact name, the reading values, the writers and the coverage. | `__all__` | mcp/src/agents_remember/application/curator_source_manifest.py:46-62 |
-| **The hand-off key and the declared bound, with the comment stating why an unbounded list would be a second store.** | `ENTRY_SOURCES_KEY`; `MAX_SOURCES_PER_ENTRY` | mcp/src/agents_remember/application/curator_source_manifest.py:64-68 |
-| The one artifact name this plane owns and the schema line its header carries. | `SOURCE_MANIFEST_NAME`; `SOURCE_MANIFEST_SCHEMA` | mcp/src/agents_remember/application/curator_source_manifest.py:70-73 |
-| **The two origin-reference prefixes, which are references rather than paths.** | `_HANDOFF_REF_PREFIX`; `_MANIFEST_REF_PREFIX` | mcp/src/agents_remember/application/curator_source_manifest.py:75-79 |
-| One entry's source plane refused: the code that names why, and the sentence. | `EntrySourceRefusal` | mcp/src/agents_remember/application/curator_source_manifest.py:82-88 |
-| **One inspected source with the fields that make it findable again, and the exact JSON object the manifest stores for it.** | `ExternalSource`; `as_record`; "contentDigest" | mcp/src/agents_remember/application/curator_source_manifest.py:91-118 |
-| **`examined` present exactly when the entry carried the key, so "declared none" and "not examined" are two facts to the report.** | `EntrySources` | mcp/src/agents_remember/application/curator_source_manifest.py:121-132 |
-| The whole list's declarations with the three accessors a caller reads them through. | `SourcePlaneRead`; `sources_of`; `examined`; `refusal_of` | mcp/src/agents_remember/application/curator_source_manifest.py:135-157 |
-| The reading pass that refuses what is not attributable. | `read_source_plane` | mcp/src/agents_remember/application/curator_source_manifest.py:160-175 |
-| **The entry-level refusals: not a list, over the bound, and two sources sharing one id.** | `_read_entry_sources`; "external_sources_over_bound"; "external_sources_duplicate_id" | mcp/src/agents_remember/application/curator_source_manifest.py:178-210 |
-| **One source refused unless it names where it was read, when, and a digest that is really a sha256.** | `_read_source`; "external_source_unversioned"; "external_source_digest_malformed" | mcp/src/agents_remember/application/curator_source_manifest.py:213-261 |
-| **The manifest's exact bytes, the digest that names them, and the measured counts over them.** | `SourceManifest`; `declared`; `with_content_digest`; `without_content_digest` | mcp/src/agents_remember/application/curator_source_manifest.py:264-290 |
-| **`None` is not an empty manifest: nothing declared means no artifact is written.** | `source_manifest`; "``None`` is not an empty manifest" | mcp/src/agents_remember/application/curator_source_manifest.py:293-322 |
-| **The write that proves its own read-back, raising with the consequence rather than the symptom.** | `write_source_manifest`; "did not read back as it was written" | mcp/src/agents_remember/application/curator_source_manifest.py:325-335 |
-| **The whole binding: two references at most, and no external source turned into a source anchor.** | `origin_refs`; "No external source is ever" | mcp/src/agents_remember/application/curator_source_manifest.py:338-352 |
-| One committed entry's external-source coverage, as the run established it. | `EntrySourceOutcome` | mcp/src/agents_remember/application/curator_source_manifest.py:355-363 |
-| **The four non-merging states, and the declaration counts that are a fact about the list in every state.** | `SourceCoverage`; "``unexamined`` names the" | mcp/src/agents_remember/application/curator_source_manifest.py:366-389 |
-| One run's outcome grouped as one value, because it is one fact about one run. | `SourceCoverageScope` | mcp/src/agents_remember/application/curator_source_manifest.py:392-407 |
-| **The assembly, where a digest is emitted only for a recorded or projected plane and the path only for recorded.** | `source_coverage`; "retained = scope.state ==" | mcp/src/agents_remember/application/curator_source_manifest.py:410-443 |
-| The one definition of a declared field as non-blank text, and the bounded refusal constructor. | `_text`; `_refusal` | mcp/src/agents_remember/application/curator_source_manifest.py:446-452; mcp/src/agents_remember/application/curator_source_manifest.py:455-456 |
-| The artifact owner the manifest is written through, and the canonical bytes it is made of. | `atomic_write_bytes`; `canonical_json_bytes` | mcp/src/agents_remember/kernel/atomic_write.py:53-72; mcp/src/agents_remember/kernel/canonical_json.py:27-31 |
-| **The existing origin-reference field an external source binds through, and the Git-bound anchor it deliberately is not.** | `Authorship`; `SourceAnchor` | mcp/src/agents_remember/models/knowledge/authorship.py:32-88; mcp/src/agents_remember/models/knowledge/source.py:138-141 |
-| The two bounds this module reads rather than restates. | `REFERENCE_MAX_LENGTH`; `SHA256_PATTERN` | mcp/src/agents_remember/models/knowledge/base.py:19-26 |
-| The seam that composes this plane with the family plane and owns both coverages together. | `read_curator_planes`; `plane_coverage` | mcp/src/agents_remember/application/curator_ingest_planes.py:144-178; mcp/src/agents_remember/application/curator_ingest_planes.py:181-227 |
+- **The module's own statement of the three properties and of why an external source is not a source anchor.** [1]
+- The published surface: the key, the bound, the artifact name, the reading values, the writers and the coverage. [2]
+- **The hand-off key and the declared bound, with the comment stating why an unbounded list would be a second store.** [3]
+- The one artifact name this plane owns and the schema line its header carries. [4]
+- **The two origin-reference prefixes, which are references rather than paths.** [5]
+- One entry's source plane refused: the code that names why, and the sentence. [6]
+- **One inspected source with the fields that make it findable again, and the exact JSON object the manifest stores for it.** [7]
+- **`examined` present exactly when the entry carried the key, so "declared none" and "not examined" are two facts to the report.** [8]
+- The whole list's declarations with the three accessors a caller reads them through. [9]
+- The reading pass that refuses what is not attributable. [10]
+- **The entry-level refusals: not a list, over the bound, and two sources sharing one id.** [11]
+- **One source refused unless it names where it was read, when, and a digest that is really a sha256.** [12]
+- **The manifest's exact bytes, the digest that names them, and the measured counts over them.** [13]
+- **`None` is not an empty manifest: nothing declared means no artifact is written.** [14]
+- **The write that proves its own read-back, raising with the consequence rather than the symptom.** [15]
+- **The whole binding: two references at most, and no external source turned into a source anchor.** [16]
+- One committed entry's external-source coverage, as the run established it. [17]
+- **The four non-merging states, and the declaration counts that are a fact about the list in every state.** [18]
+- One run's outcome grouped as one value, because it is one fact about one run. [19]
+- **The assembly, where a digest is emitted only for a recorded or projected plane and the path only for recorded.** [20]
+- The one definition of a declared field as non-blank text, and the bounded refusal constructor. [21]
+- The artifact owner the manifest is written through, and the canonical bytes it is made of. [22]
+- **The existing origin-reference field an external source binds through, and the Git-bound anchor it deliberately is not.** [23]
+- The two bounds this module reads rather than restates. [24]
+- The seam that composes this plane with the family plane and owns both coverages together. [25]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file: it reads no repository at all. An external
 source is retained as a declared reference, and the resolved settings' `crossRepo.allow` is empty, so
 nothing here names, reads or writes another repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
-  `63b476297708f779de8ed5c0bf3555b9d1de70c2`): created this one-to-one card for the module
-  `ICR-R28@v2` introduced as **the external-source plane**. The stamp basis is the leaf's base commit,
-  because the module is untracked there. The one sentence a reader must not lose is the boundary this
-  module exists to hold: **an external source is never a `SourceAnchor`** — a URL recorded as a
-  repository path with a blob would be a fabricated Git identity — so the retention is a bounded
-  canonical-JSON manifest named by its own sha256, and the record binds to it through the existing
-  `Authorship.origin_refs`. The plane also refuses to overstate itself: the manifest is written before
-  the batch that could still refuse, so its own header says it records what the list *declared*, while
-  the run's report is what says which entries committed; and a plane that did not record claims no path
-  and no digest rather than reporting bytes no reader can find. No verification stamp beyond the leaf's
-  base is advanced: the candidate is uncommitted and the governed closeout owns the real commit.
+No meaningful cross-repo references found.

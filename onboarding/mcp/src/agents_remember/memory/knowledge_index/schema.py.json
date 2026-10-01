@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The layout's statement: two table sets, nothing authored, deleting the file loses nothing.\n\nAnchor: \"Nothing here is authored\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25a4d3da22648c0f7b11b574ec74e61b563af4c9",
+            "content": "sha256:83c988c832aefe3224952a09e7f8615a260090d0c8129a80f62d3ef2bc2992cc",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The format name a cached file must carry to be reused, `ar-knowledge-index/v2` since the MIK-R25 seal fix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25a4d3da22648c0f7b11b574ec74e61b563af4c9",
+            "content": "sha256:5392692d6a6a2570b31cdaf3b8d399e101d0744d18a05ce4f0edab23e736301a",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_FORMAT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `ix_*` tables and their reverse-direction indexes.\n\nAnchor: `ix_link`; `ix_history_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25a4d3da22648c0f7b11b574ec74e61b563af4c9",
+            "content": "sha256:df391c9af80d8e8123a7acd4e329cdeccf60efc582cf53ad4e30713a7ef2f415",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The index file declares its format and key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:da6e58a4c562b400651295ce93def0bfc108e0aedc05847ce583edfa529e09d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_file_declares_its_format_and_key"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

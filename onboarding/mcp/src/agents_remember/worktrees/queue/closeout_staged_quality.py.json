@@ -1,0 +1,193 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Invalid profile resolution produces typed admission failure before any Gate-1 command starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:978c67478e11663ed940c6e0265ad11166d276984ba64df13d377a560b36c101",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted_selection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:0d470cbdd9e548292316309bbeabfbf9ec89a63d2ae18221a15c5635aece4905",
+            "locator": {
+              "end": 562,
+              "kind": "line_range",
+              "start": 548
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Linked-worktree and conflict refusals precede any index rewrite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:5de27feea7f0e036fc0c2e518099b663b6072b1daf0f4e514fd671da3e480bbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_outside_a_linked_worktree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:d6917e72e7e8b6559e283adef0d6791db844a2bda587aae5dc688cdb711dabc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_conflicted_worktree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:fd1f0f087fe645287f678ec03b730385230734ef8c2e81ba64a3fbf00dab1883",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:57baaac9bfd2bab50083aca4b8cc1853dcf28884a46ac633909c42bdbae586c4",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The staged gate proves the accepted tree around reset, staging, hook execution, and the targeted profile call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_staged_code"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:1ead9f757370ac6fd99ddb7cfc96e8c7b94f48c27274a733dd8f1aca0e963c82",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Closeout no longer imports this owner: the staged-quality gate lives only in its own module, and the transaction-only closeout imports no code-quality gate.\n\nAnchor: \"def gate_staged_code(\"; \"from agents_remember.worktrees.queue.closeout_preview import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b024816d131484d219f79023cad07d13ab6e3ea",
+            "content": "sha256:e843910b5bfaed01bdf269f09215a71349d149d857ac5a3d1c6bd142cae57b4a",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The strict closeout preflight no longer exists in the closeout transaction; `gate_staged_code` remains the exact-staged-candidate owner and is reached by its own callers.\n\nAnchor: \"def gate_staged_code(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The strict gate admits the same target/profile and certifies the index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:0b8e81dabc38bf52508d0b69e49181896d735d9c135cd227f69eed1d20e394a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_strict_code_quality_gate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:ec47c057b29b773e37b111630980ebbc724ecf79a307ff782e9cda7b2737c82e",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

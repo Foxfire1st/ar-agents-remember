@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/repository.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/repository.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T22:40+02:00 |
-| lastVerifiedCommitHash |  `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b`|
-| lastVerifiedCommitDate |  2026-09-18T13:43:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -50,32 +40,24 @@ revision underneath it.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The namespace model and its nonblank authority-home rule. | `RepositoryIdentity` | mcp/src/agents_remember/models/knowledge/repository.py:19-31 |
-| The `repository` table this identity keys, and its no-update/no-delete triggers. | `repository`; `repository_no_update`; `repository_no_delete` | mcp/src/agents_remember/memory/knowledge/schema.py:118-123; mcp/src/agents_remember/memory/knowledge/schema.py:337-344 |
-| Rebinding a populated store to another namespace or authority home is refused. | `repository_rebind_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:162-181 |
-| A request naming a foreign namespace refuses before any DML. | `scope_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:80-101 |
+- The namespace model and its nonblank authority-home rule. [1]
+- The `repository` table this identity keys, and its no-update/no-delete triggers. [2]
+- Rebinding a populated store to another namespace or authority home is refused. [3]
+- A request naming a foreign namespace refuses before any DML. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-15T22:40+02:00 — 260915-KS-L1 curator (uncommitted change set on `ar/260915-ks-l01`, base `67b21aeb`): created this one-to-one card for the new repository-namespace identity. It records that the namespace is a stored identifier rather than a path, branch or display name. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

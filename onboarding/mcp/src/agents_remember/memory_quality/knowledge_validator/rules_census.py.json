@@ -1,0 +1,100 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One check per validation, cached by context identity with a weak reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45cac0c748878e06d01a7c85d469380570fd96bf",
+            "content": "sha256:0df1a72cb8352eb348781a720584501d3d025cdb06dab6c71e5a7b0615fef152",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FINDINGS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45cac0c748878e06d01a7c85d469380570fd96bf",
+            "content": "sha256:a8c938c94461d7af68bb6650b1caa28827b6a67307c3f2dc2b4e7b62ca20b4b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each rule yields its own findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45cac0c748878e06d01a7c85d469380570fd96bf",
+            "content": "sha256:d445053af59db6cd25a7a593279f723d3c8d30a477b15d0315c18727ce08f3f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rule_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registration, one rule per census rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45cac0c748878e06d01a7c85d469380570fd96bf",
+            "content": "sha256:a23beb3b20c893930918fb7cbe72d62c417911a737eca778df69fba75f24804d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_VALIDATION_RULES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The census rules are registered and refusing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:673551a40c3f29c8d9e18ec289d241016bfb0899696740c0f4ee4a65e8beebb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_census_rules_are_registered_and_refusing"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The cache keeps no tree after validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:f178d0834b744dcd945aab9228dea13c8e8172e45f41047fdd519cab3b0d0c58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_census_rule_cache_keeps_no_tree_after_validation"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

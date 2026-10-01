@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge_files/documents.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge_files/documents.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695`|
-| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -36,12 +26,17 @@ dispatches the four census schemas (`ar-census-*/v1`, from `census.py`).
   every census file dispatches like any other. `parse_document` refuses a missing or unknown
   `schema`. `parse_document_text` parses strictly through `canonical.parse_json` first.
 - `parse_history_document(path, text)` parses a history file and refuses one that is not
-  `ar-history/v1` or whose `path` is not `history_path(<its owner id>)`: the file name is the
-  owner (leaf, wave or crossing), which is what keeps two leaves from ever writing one file.
+  `ar-history/v1` or whose `path` is not `history_path(<its owner id>, <its attempt>)`: the file name is the
+  owner (leaf, wave or crossing) and, for a reopened leaf, its attempt, which is what keeps two leaves from
+  ever writing one file.
 - `record_path(kind, id, slug, extension)` → `knowledge/<dir>/<ID>-<slug>.<json|md>`;
   `split_record_filename` inverts it and refuses anything else (including a sequential `INV-0143`).
 - `history_path(owner)`, `census_directory(id)`, `file_sidecar_path(source)` (→
   `onboarding/<source>.json`) and `route_sidecar_path(route)` (`.` → `onboarding/overview.json`).
+- **Attempt-qualified history paths (L37 reopen ruling).** `history_path(owner_id, attempt=None)` returns the
+  plain `knowledge/history/<owner-id>.json` for no attempt or attempt 1, and `<owner-id>-attempt-<n>.json` for
+  n >= 2. `owner_history_attempt(path, owner_id)` inverts it: 1 for the plain file, n for an attempt file, and
+  `None` for any other path (including `-attempt-1` and another owner's file).
 
 ### Conventions
 
@@ -57,7 +52,9 @@ dispatches the four census schemas (`ar-census-*/v1`, from `census.py`).
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The format's design authority is the coordination-root note
@@ -65,36 +62,27 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R21@v1` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The models dispatched to come from `records.py` and `sidecars.py`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The layout table. | "knowledge/<kind-dir>/<ID>-<slug>.json" | mcp/src/agents_remember/models/knowledge_files/documents.py:6-6 |
-| The schema table, including the history schema and the four census schemas. | `SCHEMA_MODELS`; `HISTORY_SCHEMA`; `CENSUS_MODELS` | mcp/src/agents_remember/models/knowledge_files/documents.py:64-71 |
-| The document union gains the census documents. | `KnowledgeDocument`; `CensusDocument` | mcp/src/agents_remember/models/knowledge_files/documents.py:73-75 |
-| Schema dispatch, refusing unknown schemas. | `parse_document` | mcp/src/agents_remember/models/knowledge_files/documents.py:84-93 |
-| A history file is read only at its owner's path. | `parse_history_document` | mcp/src/agents_remember/models/knowledge_files/documents.py:132-143 |
-| Record paths and the filename split. | `record_path`; `split_record_filename` | mcp/src/agents_remember/models/knowledge_files/documents.py:105-112; mcp/src/agents_remember/models/knowledge_files/documents.py:115-121 |
-| Sidecar paths, with `.` as the root route. | `file_sidecar_path`; `route_sidecar_path` | mcp/src/agents_remember/models/knowledge_files/documents.py:154-157; mcp/src/agents_remember/models/knowledge_files/documents.py:160-165 |
+- The layout table. [1]
+- The schema table, including the history schema and the four census schemas. [2]
+- The document union gains the census documents. [3]
+- Schema dispatch, refusing unknown schemas. [4]
+- A history file is read only at its owner's path, with its attempt for a reopened leaf. [5]
+- Record paths and the filename split. [6]
+- Sidecar paths, with `.` as the root route. [7]
 
-## Cross-Repo References
+- The history path of an owner and attempt. [8]
+- Which attempt of an owner's history a path names. [9]
+- Attempt files are named, ordered and backward compatible. [10]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module reads and writes only files of the memory
 repository layout it declares, and calls no sibling repository or external service.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **body update — MIK-R20 registers the four `ar-census-*/v1` schemas.** `SCHEMA_MODELS` now spreads `census.CENSUS_MODELS` and `KnowledgeDocument` includes `CensusDocument`; the former Logic statement that census schemas are "deliberately not registered" was false after this change and was replaced. Purpose and Logic were updated, the schema row re-derived (`:64-71`, reworded) and a union row added (`:73-75`); the remaining rows moved by the import and union lines and were re-pointed. The validator still does not read census files through `parsed.py`: they are read by `memory_quality/knowledge_census/files.py`. No verification stamp was advanced.
-- 2026-09-29T06:00:00+02:00 — 260928-MIK-L07 curator (uncommitted change set on `ar/260928-mik-l07`, code base `45fe37749b388de348d16ced50c28c03490dce64` plus the working-tree delta): MIK-R07 registers `ar-history/v1` in `SCHEMA_MODELS` and `KnowledgeDocument` and adds `parse_history_document`, which binds a history file's path to its owner. Purpose, Logic and the Repo-Internal table were updated; the sidecar-path row was re-measured to the shifted lines.
-- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): created this card for the new file MIK-R21 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

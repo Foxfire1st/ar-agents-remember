@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_dagger_registry_lock.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Host admission keeps undeclared checkout coordinator writes refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f7bd5c47ccb962d5e0c3011b0d66a3c990e7e0f",
+            "content": "sha256:243aa186ad21e463c83464777d66478f1701201a4aacb1fe7748cba83c63e27e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Registry nested exception retains then releases thread and process exclusion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f7bd5c47ccb962d5e0c3011b0d66a3c990e7e0f",
+            "content": "sha256:16b7903b69d258faf75a47fd260eb5149ebb16066405ec41a93e60b5d0a694e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registry_nested_exception_retains_then_releases_thread_and_process_exclusion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

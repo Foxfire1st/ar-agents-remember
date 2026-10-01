@@ -1,0 +1,107 @@
+{
+  "path": "dashboard/src/panels/review/intentDiffPreference.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement: browser-local, the house idiom, no server store, inline when storage is unavailable.\n\nAnchor: \"It is not review state and no server\"; \"the passage defaults to inline\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c3b371513e65c82cbd1fc726693058682167dbc",
+            "content": "sha256:e30439f270e9187ed58dde2935c13575333b447589375ae1e80091cd5c0d9776",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The key and the guarded read.\n\nAnchor: \"export const PROSE_LAYOUT_KEY = 'review.intent-diff.layout.v1';\"; \"export function readProseLayout(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c3b371513e65c82cbd1fc726693058682167dbc",
+            "content": "sha256:622a2bddca16bbd04cbefc827fc3a75575a1f950cf0697cc6670e346e8f8abdd",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store: a guarded storage accessor, a write that never breaks the toggle, and the hook.\n\nAnchor: \"export const proseLayoutStore = createStore<ProseLayoutState>((set) => ({\"; \"export const useProseLayout = (): ProseLayout =>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c3b371513e65c82cbd1fc726693058682167dbc",
+            "content": "sha256:a7f94b7f6191cf3620be8a435277b7e9de29c019216248ebdabcc49679faa8f6",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The house idiom it follows: a guarded read, and a write whose storage failure never breaks the toggle.\n\nAnchor: \"House persisted-store idiom\"; \"export const thinkingPreferenceStore = createStore<ThinkingPreferenceState>((set, get) => ({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa60969c5320630e9fe1a5b8ecfb3017b47eae42",
+            "content": "sha256:699f5be04c287c3e9be880bd7125186596edf12b5695c61f271e3e18174ccdc2",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/conversation/thinkingPreference.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa60969c5320630e9fe1a5b8ecfb3017b47eae42",
+            "content": "sha256:f4b304470b5c4a6503ac75ba8fe34ef785581f035f9a0817d1bcfee38df079a2",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/data/conversation/thinkingPreference.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The cases: the choice kept locally; inline when storage throws, and the toggle still works.\n\nAnchor: \"switches every passage between inline and side by side and keeps the choice locally\"; \"defaults to inline when browser storage is unavailable, and the toggle still works\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
+            "content": "sha256:c1bd8fd69ad63ba3874f44119f223057fe6f134c5f413a72745f55726e588293",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

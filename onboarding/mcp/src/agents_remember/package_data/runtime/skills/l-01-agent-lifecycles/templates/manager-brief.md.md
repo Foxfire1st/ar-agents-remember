@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/templates/manager-brief.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56`|
-| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
-| governingOverview | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -54,15 +44,15 @@ None recorded.
 
 This template records the exact checks and their failed or not-run status as handoff evidence, together with the curator's complete memory-quality result. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry that completed curation as a prerequisite; full code quality, full tests, certification, and review are explicit requests rather than automatic template gates.
 
-## Cross-Repo Evidence
+## Evidence
+
+### Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-### 260731-EFA-L17 — Quality Altitude Ladder
+#### 260731-EFA-L17 — Quality Altitude Ladder
 
 The manager brief now assigns Agents Remember acceptance to the pinned Dagger graph. Leaf and
 focused gates select targeted mode; `worktree_integrate` selects full mode once at master
@@ -129,133 +119,3 @@ a malformed handed-off attempt requires independent rejection before successor h
 ## CCR-L42 current candidate
 
 The manager brief now carries review mode, the sealed baseline, the preceding result, and exact outstanding IDs. Fix-verification checks only those IDs, uses the begin/record review task-document operations, and does not add routes or rediscover the scope.
-
-## Update History
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the handoff-evidence boilerplate sentence, which still presented full memory quality as an explicit request, with the completed-curation rule; `onboarding-coherency` already carries the full-operation check block this leaf's template now names.
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
-  canonical manager brief gained the single-source marker: **it feeds inputs and does not author
-  rules** — the manager's duties live in `../roles/manager.md`, the loop and closeout procedure in
-  `../operations/coordination.md` and `../operations/closeout.md`, and the truth boundary in
-  `../core/acceptance.md`, and where a value disagrees with those files they win. This card's body now
-  records that marker and the exact sources it names, so an installed runtime cannot read a brief value
-  as doctrine. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model
-  requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the
-  `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification
-  metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash
-  invented.
-
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The manager brief now carries review mode, the sealed baseline, the preceding result, and exact outstanding IDs. Fix-verification checks only those IDs, uses the begin/record review task-document operations, and does not add routes or rediscover the scope.
-
-- 2026-08-28T11:51+02:00 — No content impact: synchronized the final independence and single-
-  authority wording; projection ownership and byte-identity rules remain unchanged.
-
-- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
-  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
-  unchanged.
-
-- 2026-08-28T10:03:40+02:00 — Updated the current quality-altitude explanation to record deletion,
-  rather than refusal, of Candidate A's former direct wrapper.
-
-- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
-  contract from canonical lifecycle/task doctrine.
-
-- 2026-08-27T21:53+02:00 — Synchronized M40@v2/M44@v2 dispatch and summary semantics.
-
-- 2026-08-27T18:06+02:00 — M40-M45: synchronized the Requirement Attempt Journal manager contract.
-
-- 2026-08-27T14:04+02:00 — Added approved version-addressed packet and durable-ruling admission to
-  the installed manager brief projection.
-- 2026-08-27T13:32+02:00 — M39@v1: the dispatch compiler and master-exit packet now carry the same
-  exact ID + version set and matching canonical packets to workers and reviewers. Verification
-  remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: recorded the exact-set manager obligation and same-set review
-  dispatch. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
-
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: aligned the manager brief with door declaration, task-authoring primacy, and journal-owned post-claim recovery. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: the route-review paragraph gains reviewer-seat
-  independence from the builder seat and requirement-evidence-class matching. Verified at code
-  commit de3a0fd9.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized nature-aware dispatch, fact-only readiness,
-  and exact organizational completion candidate. Verification remains closeout-owned.
-
-- 2026-08-14T11:25+02:00 — R39 curator: made the quality section repository-generic without
-  weakening cadence. Verification remains closeout-owned.
-- 2026-08-14T06:34+02:00 — L23 synchronized runtime template: manager briefs make route
-  partitioning, exact candidate review, and pre-curator lineage proof explicit handoff evidence.
-
-- 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized the brief's Dagger-only
-  acceptance, targeted/full altitude, explicit diff-base, and diagnostic-only host boundary.
-  Verification remains closeout-owned.
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
-  manager brief's host-managed master-gate default and optional constrained-CI
-  cap. Verification metadata remains pinned until closeout stamps L24.
-
-- 2026-08-11T19:58+02:00 — Reconciled `manager-brief.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
-- 2026-08-10T05:45+02:00 — 260805-ARG-L1: synced the manager brief's completion cleanup contract
-  to exact report ordering, all three leaf-altitude roles, owner exclusion, and the landed opt-out.
-  Verification metadata remains pinned until closeout stamps ARG-L1.
-
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the manager-brief
-  template's quality altitude ladder bullet (leaf `--targeted`; full wrapper once
-  per master, memory-capped; `memory_quality_check` per leaf). Verification
-  metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
-
-- 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: manager, worker, and
-  curator dispatch defaults now describe the environment-role-plus-qualified-leaf pair claim, and
-  cleanup now names the manager's worker/reviewer/curator retirement boundary. Verification
-  metadata remains pinned until closeout stamps the L17 commit.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale post-boot-echo
-  instruction as doctrine debt; no source behavior changed.
-
-- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 curator correction: the manager brief template sidecar
-  now describes `worktree_integrate` as auto-landing successful worker/reviewer seats into the
-  landed archive (`autoLandOnIntegration`); `session_retire` remains only for exceptional
-  stuck/abandoned seats under the manager's authority. Verification metadata pinned until closeout
-  stamps the HFX2-L11 commit.
-
-- 2026-07-08T02:55+02:00 — 260707-HFX-L8 (seat lifecycle: retirement, issue #12): the "Dispatch
-  defaults" section gains a "Cleanup" line — `worktree_integrate` auto-retires a landed leaf's
-  worker/reviewer seats (config-gated, default ON); `session_retire` is available for a
-  stuck/abandoned seat of the manager's OWN master only, server policy refuses any other target.
-  Sync-propagated bundle copy. Verification metadata pinned until closeout stamps the HFX-L8
-  commit.
-
-- 2026-07-08T02:10+02:00 — 260707-HFX-L11 curator activation (R1/R4): Dispatch defaults section
-  updated to match the new curator-brief template — curator spawns now point at
-  `../templates/curator-brief.md` and name the fed inputs (landed change set over the leaf
-  contract's base-to-head range, task doc, notes/) and the mgmt-L4 routing rule; the leaf closeout
-  chain line adds "never before the curator pass exists." Doctrine-only change set (7 canonical
-  `skills/` files: 6 edits + 1 new template, each synced to 9 mirrors, 0 Python); sync-propagated
-  (`scripts/sync-skills.py`) bundle copy of the canonical
-  `skills/l-01-agent-lifecycles/templates/manager-brief.md`. Verification metadata pinned — no
-  commit yet on `ar/260707-hfx-l11-curator-activation` (working-tree change, synced onto the landed
-  HFX-L7 base).
-
-- 2026-07-08T01:00+02:00 — 260707-HFX-L7 (provider degradation protocol): dispatch defaults gain a
-  one-line "Provider degradation:" bullet (no provider starts/watchers/retry until all-clear; no
-  manager kill authority; stops and fixes route through the orchestrator/system-specialist),
-  mirroring `roles/manager.md`'s fuller "Provider Degradation Alert" subsection in compact
-  brief-compiler form. Sync-propagated bundle copy. Verification metadata pinned until closeout
-  stamps the HFX-L7 commit.
-- 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: dispatch defaults now
-  name the manager -> builder -> reviewer -> curator leaf closeout chain, the exact closeout
-  inputs (builder code + reviewer verdict + curator memory pass), and the fresh per-leaf curator
-  spawn. Sync-propagated bundle copy. Verification metadata pinned until closeout stamps the
-  HFX-L6 commit.
-
-- 2026-07-05T19:55+02:00 - L8 builder cycle 7: exit block pins the enclosure to the EXACT contract task name + states the enclosure-less raise refusal (AR4-1c). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T19:10+02:00 - L8 builder cycle 6: enclosure on the raise, all-human conditional, planner-master slot (AR3-1/AR3-2/AR3-6b). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the exit block states the wait=false raise and the gateId-in-packet hand-off.. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T16:30+02:00 - Created file-level onboarding for the new manager-brief template (L8
-  seam-ruling remediation, cycle 4 — closes AR-12's dispatch-determinism gap). Verification
-  metadata pinned until closeout stamps the L8 commit.

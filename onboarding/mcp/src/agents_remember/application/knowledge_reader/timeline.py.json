@@ -1,0 +1,291 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/timeline.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the three sources and the cache.\n\nAnchor: \"The timeline of a truth view, newest first, from its three sources\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:69d3be37a327994dc938540f79c6b25e4b4002bc83558ce8d45dc2c07e5ab667",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Moved against re-anchored (F5).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:9d9da95471b53659cc2801da86260869df9fb704e788a07d4077a3e0f2ea1c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_change"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The converted part of the history, cached per commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:dc69772c15b1b0f196f9c726b4b2d859ea69261cc1698f48567cff7cd615a1be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_range"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:1b3f15c3fafd5772ac3ee041c3ceb0aea8626521f5179dcef384c26e59d39c41",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The three-source, re-anchor and cache cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:826741795f9b0683381b217a11e2ce8097aa6a95c446f68e1194650e04fec8b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_invariant_truth_view_has_every_field_state_link_and_a_three_source_timeline"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:3f2a14867bd47b8b67be4a8823f18733c06c696dbb8335ba4fe9ec31d1434ead",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_timeline_labels_moves_and_re_anchors_and_reads_only_the_sidecars_naming_them"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:e72130690db972dcfb30dc7fc0f2e6a6ad5a1504a95b1416e82910ce02348fa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_complete_timeline_is_served_again_from_the_bounded_cache"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bounded cache of complete timelines (F7).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:82570013859cfcdbc77e7718f08413649a5ace464f5a2da67ff413b7a3d2972c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TIMELINES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A timeline served from the cache, remembered only when every source was read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:fd02e2728eebf77b7f916a4e166994ee25b970441830dac8a024f62aaa0453ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_timeline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The three sources, each with its own state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:0afb28c33372f46f578b0199a65a661de874ee622aa973b86d753ba2011911c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_timeline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Uncommitted first, then by position in the history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:71da79530faff2ae9b00eb3d302b0bf555ca23f7a06be8787623750fb91c4575",
+            "locator": {
+              "kind": "symbol",
+              "name": "_newest_first"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:2eebbabd83c12812ac263146c0b6e5da1eb6fc22240bf78954f02d3bb5054146",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ranks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The record file's events, found by ID, with renames paired and the uncommitted state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:5b38d68db3574c0ed51d800ebf43cd0387c59eb9bd78d64ca17ab936a1f019a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_events"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:54f772c4d2d013eb1c67aaeaca34608a995fd905dc78e3b3387229d6b30d2a5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paired"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:baee5f279e1f7d255ef25830db0b6f2d3e00f409b0e18651cfc91c26896c68bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_uncommitted_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The meaning diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:3a75b597fb2a3e75d678d8a7bc4d71727e17f9b6591af9a3b02e6e9823bfdbcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaning_diff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "History rows dated by their file's last commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:99165d5969efd13135ecd2ad35272960cf2a53bff9fb272b91e80de9afca7c91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history_events"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:586e96145ea7b082229c1d53474f8e19c215a83fb2a098c91ee1bb48bcaf1de9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_last_change"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Entry events: `-G` without `--pickaxe-all`, plus the current sidecars' log (F1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:43cafac8ca96a46fdfc2fdec5b951432840a013c71ae50ec57e9932ec321d298",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_events"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "169e5ffd9fe788f8208dd5ba209485691b71636c",
+            "content": "sha256:72b40226b56df12f7f5b5d8798ff58be03cd358611b09995d9d66c90d48c7e62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

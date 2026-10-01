@@ -1,15 +1,5 @@
 # dashboard/src/data/sessions.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/sessions.test.ts`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T16:02+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`       |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -126,120 +116,37 @@ No task-independent technical debt was identified during FEUI-L9R review.
 New reconciliation cases assert zero subscriber work for an identical poll, stable references for
 unchanged rows in a mixed payload, and replacement of an optimistic local patch by the next catalog row.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for this file. | — | — |
+No relevant domain documentation was found for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The catalog-change helper accepts and forwards the L9 `"leaf"` reason for reassignment invalidation. | "export function notifySessionCatalogChanged" | dashboard/src/data/sessions.ts:116-116 |
-| The store test proves server-authoritative `applyTaskAssignment` overrides a stale same-role local occupant of the document-owned seat. | "applies a server-authoritative task assignment over a stale local same-role owner" | dashboard/src/data/sessions.test.ts:289-299 |
-| The catalog-sync test now receives a remote `"leaf"` event and ignores the sender tab's own broadcast. | "receives remote catalog-change notifications and ignores this tab's own broadcast" | dashboard/src/data/sessions.test.ts:602-626 |
-| The store and delivery helpers under test, including the separate draft-paste and submit-and-confirm paths. | "export const sessionStore" | dashboard/src/data/sessions.ts:543-543 |
-| The connection-registry suite covers pending sends, submit-and-confirm delivery, draft paste without Enter, and timeout behavior. | "queues sendToSession into pending and flushes in order once the terminal registers" | dashboard/src/data/sessions.test.ts:681-689 |
-| `PtySurface` pins visited-pane identity and hidden keep-alive behavior across focus changes and transient handoff. | "keeps the exact visited terminal node across a transient removed-focus gap" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:111-132 |
-| `SessionsView` pins the full cockpit composition, hidden keyboard boundary, and focus/inspection handoff. | "renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:34-34 |
-| Cockpit S5 pins the one persistent `sessions-view` owner behind the Chats product label. | "keeps one Chats cockpit mounted" | dashboard/src/cockpit/Cockpit.test.tsx:767-794 |
+- The catalog-change helper accepts and forwards the L9 `"leaf"` reason for reassignment invalidation. [1]
+- The store test proves server-authoritative `applyTaskAssignment` overrides a stale same-role local occupant of the document-owned seat. [2]
+- The catalog-sync test now receives a remote `"leaf"` event and ignores the sender tab's own broadcast. [3]
+- The store and delivery helpers under test, including the separate draft-paste and submit-and-confirm paths. [4]
+- The connection-registry suite covers pending sends, submit-and-confirm delivery, draft paste without Enter, and timeout behavior. [5]
+- `PtySurface` pins visited-pane identity and hidden keep-alive behavior across focus changes and transient handoff. [6]
+- `SessionsView` pins the full cockpit composition, hidden keyboard boundary, and focus/inspection handoff. [7]
+- Cockpit S5 pins the one persistent `sessions-view` owner behind the Chats product label. [8]
 
-### 260713-PHA-L5 Reviewed Hosted Cutover Impact
+#### 260713-PHA-L5 Reviewed Hosted Cutover Impact
 
 Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
 contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "export const sessionStore" repointed to dashboard/src/data/sessions.ts:543-543. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
-  source ranges after the reviewed code moved; no semantic onboarding claim changed. Verification
-  remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `sessions.test.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.
-- 2026-07-24T13:17:50Z — Added catalog reconciliation identity regression coverage. Verification
-  hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: replaced the deleted Chats test/view ownership with the
-  current session-cockpit consumers and the `PtySurface`, `SessionsView`, and Cockpit S5 keep-alive
-  coverage chain. Verified against code commit `31f58834f86c0d98e26b0896e099a2403a8729ee`.
-
-- 2026-07-18T15:22+02:00 — FEUI MX-FIX-2: added exact accepted-row creation and the zero-ghost
-  failure table, including the Round 1 contradictory raw harness/control response; no failed open
-  can mutate, activate, or advertise. Verification metadata remains pinned until closeout.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: documented the inert fake connection seam for the new explicit
-  reattach method; verification metadata remains pinned pending candidate closeout.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2: three exact-shape `toEqual` catalog-conversion fixtures
-  gained the one `createdAt` field `fromTerminalSessionInfo` now maps (needed by the cockpit's
-  smart-focus/jump ordering fallbacks) — assertions STRENGTHENED (one more correct field
-  demanded), none weakened; reviewer-verified line-by-line. Verification metadata pinned to the
-  leaf base until closeout stamps the L2 code commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added binding-role helper, hydration, and pair-scoped
-  assignment regressions including different-role coexistence.
-
-- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added coverage confirming `isLiveSession`
-  stays `status==="running"` only (a landed row is deliberately NOT "live") and pins the new
-  `status:"landed"` shape (landing provenance fields) round-tripping through the session data layer
-  consistently with the terminal-catalog model. Verification metadata pinned until closeout stamps
-  the 260707-HFX2-L11 commit.
-- 2026-07-02T17:04+02:00 — L9: updated catalog-sync coverage to assert remote `"leaf"` invalidations for
-  moved hosted chats are delivered with their session id while local broadcasts are still ignored, and
-  added `applyLeafAssignment` coverage for server-authoritative moves over stale local owners. Verification
-  metadata pinned until closeout stamps the L9 commit.
-- 2026-07-02T16:35+02:00 — Reopened L6 paste-loss fix: the `pasteDraftToSession` case now runs under
-  fake timers and pins confirmed-delivery semantics — `"delivered"` only after the fake connection's
-  `lastOutputAt` advances (the draft echo), one paste and no Enter; a new case pins `"unconfirmed"`
-  after the 30s boot deadline with retries and still no `\r`. Verification metadata pinned until
-  closeout stamps the follow-up commit.
-- 2026-07-02T13:07+02:00 — Reopened L6 follow-up: added a regression case for `pasteDraftToSession`.
-  The fake connection receives exactly one sanitized bracketed paste and no submit input, proving leaf
-  context can land as editable draft text. Verification metadata pinned until closeout stamps the follow-up
-  commit.
-- 2026-06-30T00:00:00+02:00 — L5 follow-up: clarified that the store's leaf uniqueness is now **role-scoped** — the
-  advisory-reject case exercises two same-role (chat) sessions, `findSessionForLeaf` gained an optional
-  role filter, and the catalog-row mapping case uses a `kind: "terminal"` row. The cross-role (chat +
-  terminal share a leaf) coexistence is pinned in the Python catalog/route tests. Verification metadata
-  pinned until closeout stamps the L5 commit.
-- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat): added leaf-identity coverage for the session store — `setLeaf` binding,
-  advisory uniqueness reject against a live owner, free-after-exit re-binding once the owner is
-  exited/terminated, `setLeaf(id, null)` clearing, and `fromTerminalSessionInfo` `leafKey` mapping.
-  Verification metadata pinned until closeout stamps the L5 commit.
-- 2026-06-27T03:04+02:00 — Task 22 follow-up: removed hidden-live reservation coverage with the Hide
-  state, and updated catalog-sync assertions to require `sessionId` on create/terminate broadcasts.
-- 2026-06-27T01:25+02:00 — Task 22 follow-up: added `BroadcastChannel` fake coverage for catalog-change
-  subscription/broadcast behavior and for `createSession` broadcasting `"create"` only after the backend
-  opener succeeds. Verification metadata pinned until closeout stamps the task-22 follow-up code commit.
-- 2026-06-27T01:03+02:00 — Task 22 follow-up: changed session-label tests from monotonic/global ordinal
-  coverage to per-prefix lowest-available allocation, including terminated rows releasing labels and
-  hidden live rows reserving labels until hydration.
-- 2026-06-26T23:05+02:00 — Task 22: added catalog hydration, live-only lifecycle lookup, status focus
-  handoff, API-row conversion, and createSession opener-metadata coverage. Verification metadata pinned
-  until closeout stamps the task-22 code commit.
-- 2026-06-23T13:45+02:00 — Task 11: added lifecycle identity tests for route lookup, one owning session
-  per lifecycle, and explicit tag clearing. Verification metadata pinned until closeout stamps the
-  task-11 code commit.
-- 2026-06-19T20:30 — Task 6 slice 6f: added the connection-registry + `deliverToSession` suite (a fake `TerminalConnection`: `sendToSession` pending-queue flush on register, the create-then-send race resolving once registered with one sanitized+wrapped paste injected, and the bounded-wait timeout resolving `"unconfirmed"` instead of hanging). Verification metadata pinned until closeout stamps the 6f code commit.
-- 2026-06-19T14:05 — Created for task 6 slice 6e-4: unit tests for the new session store (add/close/setActive + ordinal stability). Verification metadata pinned until closeout stamps the 6e-4 code commit.
+No applicable cross-repository source was found.

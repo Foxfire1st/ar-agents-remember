@@ -1,0 +1,678 @@
+{
+  "path": "dashboard/src/panels/review/ReviewReadCycle.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "content": "sha256:18b276a27056f4aea66913f01dc6dd1ef13375c67e7d2125f9028d730554159e",
+        "locator": {
+          "kind": "symbol",
+          "name": "useFrame"
+        }
+      },
+      "id": "RLZ-42D7F6F7",
+      "invariant": "INV-KKJYVB40",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Holds the last payload admitted for one task context and record (set only from admitted payloads, kept across a failed or refused read since L48-A2, never shared across leaf or record), which is the shell the surface keeps while another subject is pending, failed or refused.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+        "locator": {
+          "kind": "symbol",
+          "name": "startRead"
+        }
+      },
+      "id": "RLZ-C76HGC03",
+      "invariant": "INV-WQZ2WFCN",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Sets the frame only from admitted payloads and no longer clears it on a refusal, so a refused selection still has the shell to keep.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+        "locator": {
+          "kind": "symbol",
+          "name": "startRead"
+        }
+      },
+      "id": "RLZ-CGJHJ7AQ",
+      "invariant": "INV-MC654E0T",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Serves a kept whole-subject answer without a request, keeps only admitted whole answers that carried no refresh identity, and lets paged and refresh answers invalidate by generation without being kept.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+        "locator": {
+          "kind": "symbol",
+          "name": "startRead"
+        }
+      },
+      "id": "RLZ-CN4X22BX",
+      "invariant": "INV-W5CTZJGD",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "The read's sequence number and cleanup flag drop a superseded answer before it can reach the read state or the cache.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "content": "sha256:bccb0ae9804fbada06083515cde5defddd94fcbf6f5429b21a6e1307cbffc1aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "readOnScreen"
+        }
+      },
+      "id": "RLZ-EP3KN5E7",
+      "invariant": "INV-8VQR13WX",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Derives the read for the current target key from a key-bound answer, a continued walk of the same question or a kept answer for this key, else pending, so an answer for another key is never returned.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewReadCycle"
+        }
+      },
+      "id": "RLZ-HG7CRC9D",
+      "invariant": "INV-115RDW8H",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Starts no review read while hold is set, which the reviewer passes while the navigation is still settling on a subject, and otherwise starts one read per question key, selection or explicit refresh. Opening the reviewer therefore asks the review once, for the subject the catalogue chose, instead of first reading a default and then re-reading.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+        "locator": {
+          "kind": "symbol",
+          "name": "startRead"
+        }
+      },
+      "id": "RLZ-QN7JZAE1",
+      "invariant": "INV-53F058MT",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Starts each review read with its own sequence number and superseded flag, keeps the displayed review mounted only for a cursor continuation of the same question that is not a refresh (continuedReview), drops any answer that is no longer the current read, and passes an admitted answer through familyContinuationRead, which turns a rejected page into a failed read while leaving the retained review displayed.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The optional hold on the question.\n\nAnchor: `hold?: boolean`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:e89ae01a65ec45bf57e4196e03e0bcaa764c320f1b5d9ad39c897284e9814644",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadQuestion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Admission writes the keyed read, the retained generation and the frame together.**\n\nAnchor: `setFrame`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:71d5dd2985bb524df4df02d98618b3409e4823fc712c5bb9d42f5b771d169ca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The read for the question on screen, derived per render.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:bccb0ae9804fbada06083515cde5defddd94fcbf6f5429b21a6e1307cbffc1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "readOnScreen"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:31861b7a4eaa330e2c86cd286cfbe6e1671eb2b7ef9f86872ccadc33c1bcb0e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "KeyedRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The frame: the last admitted payload of one task context.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:18b276a27056f4aea66913f01dc6dd1ef13375c67e7d2125f9028d730554159e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFrame"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The identity paired with the one read it belongs to — the read number, the question key and the digest — and the defect the pairing closes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:5d7ffbdfea5f63649a2a3be5a5c9ca771d6b4d4b5fdaf3e6e2e70959c26c6c1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CarriedBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The hook's contract: the read, the retained generation and its key, the identity described for the question on screen now, and the reader's own refresh.**\n\nAnchor: `frame`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:96fd7dc4c35fbfbaeb1bfe26b7e4ec208e866c50a9631e1ccd40592c566fefce",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCycle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The hook itself: the four pieces of state, the memoised request fields, the sequence counter, the two refs and the single effect that starts a read.**\n\nAnchor: `carriedRef`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewReadCycle"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:f7d77a8738a90a099aa00291fb8580b2fbfacf644ee0f2fb404c3231ce201412",
+            "locator": {
+              "kind": "symbol",
+              "name": "reads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**`refresh` files the identity with the question it was displayed for and the read number that will replace it, and asks the effect to run again — a refresh with nothing displayed carries nothing.**\n\nAnchor: `refresh`; `forgetReview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:24f36ad622d96c2c6ca9cbf907520f4a4c2ece7099445a02edf3061df53069b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshNonce"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:66c6fb4afc210ebef8199ba3c541db6eef69f04b5104818b9eb879a966b7ebb8",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 423
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**All three conjuncts of the described identity, and the same-flush defect that makes the question key non-redundant with the read number.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:1bdb19058238b03d48aa42c095fd24c4ffeb55c5763179eb5f64fb80a62f32f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "carriedHere"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The read state and its mapper: the four phases this module sets, and the client's typed answer projected into them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:e39082ca176553e73744f3790cc07267e555fa0c9c8f780a9881093040e382bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:dfea31cf2ab6562f7f4e605cd7421dfd6caa2bf26a36bbf29e3cda0a2d1d5eae",
+            "locator": {
+              "kind": "symbol",
+              "name": "readFrom"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReview"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:092b8217e46439bdcb40a46cbd8fd8d783f119bfd3e1472d5c5ae6df006be335",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewQuery"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The latest-value ref helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:7c4ce85d32131a492d6870ac3949862a3b096e7db9fe511e050bba929ec3de33",
+            "locator": {
+              "kind": "symbol",
+              "name": "useLatest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:d3f7b60e6b5906da804748942245f93dfd60ff10ebec1515a406525f67c0a870",
+            "locator": {
+              "kind": "symbol",
+              "name": "PREVIOUS_BINDING_QUERY"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:a3b0ce3c907a1810a578b36a713cc9a3dde87c5d9ee8f7d2ee95634a1716ab39",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The generation claim that consumes `carried`: it renders nothing unless the read that carried the identity has answered.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
+            "locator": {
+              "kind": "symbol",
+              "name": "generationOf"
+            },
+            "path": "dashboard/src/panels/review/ReviewRefresh.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The cases that measure the identity's single-read rule through the real surface: a different subject carries nothing, a recorded read carries nothing, and a same-flush subject change plus refresh carries nothing.**\n\nAnchor: \"carries the identity into a read that replaces it, and into no other question (L17-F1)\"; \"never carries a live identity into a recorded read, nor a recorded one into a live read (L17-F1)\"; \"renders no generation claim when the subject change and the refresh land in one flush (L17-R2-F1)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:383c275babe074fa82b4335ebc3c61d6c63d1aa2f5fe71087d4d9d771aa33fc0",
+            "locator": {
+              "end": 898,
+              "kind": "line_range",
+              "start": 707
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The case that measures the sequence guard: a slow earlier subject's answer cannot replace the subject selected now.**\n\nAnchor: \"never renders a slow earlier subject's answer over the subject selected now\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
+            "content": "sha256:347204fdcf53772e8fed98710d63d20a4d7bf5a3b737bc2e26feb6452c687a8a",
+            "locator": {
+              "end": 705,
+              "kind": "line_range",
+              "start": 654
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Rejected continuation becomes a failed read without installing the raw response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:904fba4680b2632a1c07d36675ccd1ac88cd8287fbce8c3c8257cb60508ae176",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyContinuationRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Sparse updates preserve exact content and claim identity within independent walks (moved unchanged to `familyWalkMerge.ts` by L48).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:a399fc4dae37acd91f631ba146760727a8ec176b45c5aeb61c0b5bbdfe837539",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeMember"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:bd8ec16f3628047f94bedee252541a48096ef33d85216fa6b0987c86c838a786",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilySide"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Only the bound comparison and exact family-side-revision walk are composed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:b307042c8e1648edb15063963dbe1e398b3202fd87b88077d72bc68bc67b73e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameFamilyWalk"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:fc108054ab40c4650126fa4d22350f0011a142134b4a6397080dc2873a6087a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "admittedFamilyContinuation"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "content": "sha256:131860f27487fed3d48326b81a7bf59cfb0e6721b7e57501b8e15ea71ea9cf80",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilyContinuation"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No read starts while held.\n\nAnchor: \"if (hold) return undefined\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewReadCycle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The module's own statement of why it exists (the file-size rail and the per-function rail), the rules it enforces (including L48's keyed answer and once-per-comparison rules), the carried-identity rule, and the explicit \"what it does not do\" — no timer, no retry ladder, no polling.**\n\nAnchor: \"THE THREE RULES THIS MODULE ENFORCES\"; \"AN ANSWER IS BOUND TO ITS QUESTION\"; \"A WHOLE SUBJECT IS READ ONCE PER COMPARISON\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:a585a952f6fb6a0e3b0a67691991116d307167f7e0393241fb566eeaa2d28fad",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The module's imports: the review wire types and the client, and the read state with its mapper.\n\nAnchor: `intentReview`; `readFrom`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:a17759f2630e0a4682067b497ca7f560f828f13b9a6a0ec2c89af849bcf6e44e",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The page request, exported from here rather than declared in the surface, with the collection, the cursor and the size axis the target key consumes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:ae45d4342fb28895e56a67f55d56ba63220f49dfd0cdd55329d50860d4d21323",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPageRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The question's identity: task, record, question and page position, with the page's own reason for participating.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:17dc67a5ffdc81d86867e2e2a5b0086011e538d0c5b05c9ca465efbd66076325",
+            "locator": {
+              "kind": "symbol",
+              "name": "targetKeyOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The one read: the nine-argument client call, the previous identity passed as the ninth, and the answer handed to the caller's callback rather than written to state.**\n\nAnchor: `intentReview`; `reviewProblemFromCause`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:669fa8d6691b47b17a678e762209b9860924a6c1c4719a48a2b77f3b913cc0e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "askReview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The one read path: the sequence number, the superseded flag, the drop of a payload read for another key, the two-part condition under which the carried identity may be sent, and (L48) the kept-answer short cut and the keep-or-observe decision.**\n\nAnchor: `keepReview`; `observe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

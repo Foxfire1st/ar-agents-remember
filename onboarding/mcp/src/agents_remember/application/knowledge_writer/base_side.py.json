@@ -1,0 +1,123 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/base_side.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: one base for every reader, and a named problem when it cannot be built.\n\nAnchor: \"so one base is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1012c896e87b8e1474e947f3f4b80bb65316a1f",
+            "content": "sha256:5109d067c9ddba4098ca71937a0e510d78d39e60dfe6358ca8ac299d763e6540",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer's base for a memory worktree, or the named problem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1012c896e87b8e1474e947f3f4b80bb65316a1f",
+            "content": "sha256:9b296d64cb4ade3c6280ffcc1880a66116114faf329ab1f8b8ee6a2f432e14f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "writer_bases"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "HEAD's tree, or its conversion when HEAD is unconverted and the candidate is converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1012c896e87b8e1474e947f3f4b80bb65316a1f",
+            "content": "sha256:6f8b29b1d7aa291009b8270c2bb1c1b0180be75965a8673ff758a6fefbc7712c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "What converting an unconverted base reads, and where it is cached.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1012c896e87b8e1474e947f3f4b80bb65316a1f",
+            "content": "sha256:83d6754f0fe43591c89b710ad6a6b6c474c54b6a9ad86621f3b86c060bf7d51c",
+            "locator": {
+              "kind": "symbol",
+              "name": "BaseCode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The state loads its base through this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:80c03b60b51a0663375ba8aa56bb07abbacc528b11829821ec978f003f427d83",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An unconverted HEAD is compared through its converted base: the next revision, the base's before anchor, one cache file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:2d725e4fb04dce11fb1a3ea1efbdbf994c3716be4bfcb804a064de312f082d5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_compares_an_unconverted_head_through_its_converted_base"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A trailerless HEAD converts at the gate's code base, and an unreadable one refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:00d180445cc0a5711a39f10c4368491be8f1d35a6ce11cc0b640ab1d09885520",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_trailerless_head_converts_at_the_gates_code_base_and_an_unreadable_one_refuses"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

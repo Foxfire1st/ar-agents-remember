@@ -1,0 +1,564 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pre-launch polls stay pending, absent-row retirements report pending, and reconcile completes them for real.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:70c8d21b9c1ff9ed196aa7c7e8dc406bf1213b458c29f2f3b0578cfd858d0d36",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prelaunch_poll_stays_pending_then_real_mismatch_retires_for_real"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:d47b968326170c805e4368bd44a266d26c65e9416a9be830b6770fc1de6545d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_absent_row_at_retire_reports_pending_and_reconcile_completes_it"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:e23d00f888b545e40ad31e880aae7d281ac3f2f7ec1e4362699cb3e00656fa6b",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:3ebf1fcf24d57182e5406c7d2d8c55da3ae826d820ccb988a82cf4eebe92f3b3",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 352
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Codex resume-thread-id channel, kind guards, identical-replay absorb, and evicted changed-conversation ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:5155aa2a255b3354b93f7b51fbe1196151357ba273816eaff342409a5a4305e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_codex_open_passes_resume_thread_id_through_the_channel"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:db4ac03c2fdc1f171783256d4426ed8342d2f97f625790431c80e1fe42de7fb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_codex_open_never_carries_resume_thread_id"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:daaaa44035008b0446b3ea5764110160f2e415e78bf20b51653af7b05c0ed215",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_codex_open_with_invalid_resume_target_fails_typed"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:c8e82a727225ce4f0469ccf56ff75cb7323eb692bf9c11fc5ab0f920e241b07a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_codex_kind_target_on_non_codex_record_is_rejected"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:233d5c531e2fddd15115f492a46de23fb1926b09f48259c1b489d7f9bf029c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_replay_after_eviction_absorbs_and_opens"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:34ab08b48473aaec4458e62c9899221c61599a1b71fd1d88a694f669572ffbc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_evicted_changed_conversation_never_retires_foreign_session"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:d489d080d674c23add93e914245998187fdf67a5c851eef77beeb5b1ef229da5",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 449
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:bbdd8449898117793d27e0a4fddc4156dec997fa70ed91431e9bbd2426bdda98",
+            "locator": {
+              "end": 512,
+              "kind": "line_range",
+              "start": 485
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:6bcb2ba3d71ccc75a509e4f5c67c2cba7cd3440b5f6783a1f723e4dbbe9cacae",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 532
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:d234f16a0abc4b26c23c3045aecbd73d57a31093ceac286f49d7b9a0049638d6",
+            "locator": {
+              "end": 636,
+              "kind": "line_range",
+              "start": 594
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:9a58af66e1551d2c00c6cfdfe74cd54344daa2c1730c9df492cfa7542c506bf8",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Idempotent replay, conflicts, stale digests, retirement, timeout reconcile, ledger bounds, and untouched foreign rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:420322c546d19379054b2403ae0fa7b53b88242457bbf8e055d6d1efd57a1d42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_open_proves_exact_identity_and_replays_idempotently"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:8ce481e3ded466ad1d6e8285102f530d422e4a719de1c1f46b74e00744c8b9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_changed_fingerprint_conflicts_without_launching"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:84c9c2058b879bd3d6b5d09a75732d7d851ff3c90c3699220d1ea6b25ea8e987",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_expected_digest_fails_before_launch"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:856da857f790ee3db5c6bf13ad237bb64f96ff040eff41319e2b1de3af8bea0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identity_mismatch_retires_and_reports"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:009dd1b046c2f599ae50b4902dbebb2e222cc26eecddb860d9842ee07dfd1d72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_timeout_unknown_stays_reconcilable_and_opens_later"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:7529fa387e441bce5ae6b659ac06e582cfaaf8fd5881e77e5be4d88220c97b5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ledger_full_of_live_operations_refuses"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:72c533198ae556a3350b1c446d5cc630181af6dbdaca0b844a378e08d8b3d86d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ready_without_vendor_identity_stays_reconcilable_not_retired"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:89461e4be354b3b10a95be9cb1a6553d91b713701d20c41e24c9d431ec3985d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_catalog_rows_are_never_touched"
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:d16307fe7884d575562fe85dfb8b1c53281a966507e1808a09ec8a55f1006bd5",
+            "locator": {
+              "end": 792,
+              "kind": "line_range",
+              "start": 742
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:21f9567deb28b01c7a2ecfbc6de69e1113fd8982f693430bc5f0c49e0e48ea00",
+            "locator": {
+              "end": 834,
+              "kind": "line_range",
+              "start": 794
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:55e2430b56103759b0e429f19c7b654a36573c858b8e0696db64325d565546b9",
+            "locator": {
+              "end": 866,
+              "kind": "line_range",
+              "start": 854
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:9ab6a0cc29dde26bf78b922228c228a3485894b6344b12e8444e20ac5ac8b18a",
+            "locator": {
+              "end": 934,
+              "kind": "line_range",
+              "start": 900
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:9dbdf351022d0cd7da333ec53cca1e288c727e1f241377b7bf34a16cce138535",
+            "locator": {
+              "end": 982,
+              "kind": "line_range",
+              "start": 936
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:6357349a1f110dc81d00b2c13ce982b8354dc5dbd5cf49be6336817dd24b7ede",
+            "locator": {
+              "end": 1012,
+              "kind": "line_range",
+              "start": 984
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:729e96547666c43b5d3f244df53e268375ccc5a193c1227a829e94b15383ce55",
+            "locator": {
+              "end": 1078,
+              "kind": "line_range",
+              "start": 1051
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:3c5d1b2286ed110a17a9ad98c9bdcda33fe90fb6073529423959aee6dae6bee8",
+            "locator": {
+              "end": 1109,
+              "kind": "line_range",
+              "start": 1080
+            },
+            "path": "mcp/tests/test_conversation_library_open.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tracked opener absorbs identical replays through the live catalog row and carries `resume_thread_id` codex-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:1aaf363a55aa77310878b49683002120e581bbeaa2b0ece5a31f091d7ab9072d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_open_result"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:f72d3143ef35e4bea23e7c248646dbe87f7f4026bd0f62cd1024c678c4bd27bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_session_command"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:06cbd87dc2c5c7e2582190d6192a41a1e16be96e1b47120154f64f7278940b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_terminal_session"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The declared legacy decision this route makes, and the reason it cannot carry a capsule.\n\nAnchor: `legacy_launch_capsule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:228d4da7030d7cfb30f7abd4610932afca8590683a8a4993d082926adb869eea",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIBRARY_REOPEN_LEGACY_REASON"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:2eac963454fcad690de4e584c7ab0d9f6718abf09a4d44063c1c109c3a38c46e",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 475
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The refresh plan that makes a capsule-carrying reopen a fresh thread, which is why the exclusion is a real trade rather than a gap.\n\nAnchor: \"def _capsule_refresh_plan\"; \"class RefreshPlan\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:54380cc146483b56181ae1bb4640bbda8dc4eb60468a3a329c66703d730a5a99",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "777e1f9d5b4ea8359f46aec5f956d11ae0064b8c",
+            "content": "sha256:a40f08a83cdd2fd617b3e434aa81b3f94ce8fbcd54b7b8161072cf5ad09eaeee",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 383
+            },
+            "path": "mcp/src/agents_remember/serving/capsule_delivery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cases pinning the declaration and the launch-point enumeration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:4fb5039022189714018f9a64b35f23a23dd00d88ddda0f23486bbfd8d804237d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:ea60cb40eb13c58721fd67eaab4dcc1537ceeca0a55004f8761512b34f86408f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain"
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:440aaca49b82807bd51fc947932153f7cd6145050a956cf500dd2766de438284",
+            "locator": {
+              "end": 814,
+              "kind": "line_range",
+              "start": 803
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f69ef77b1ac38671bb6b7bfc97bd453affc594be",
+            "content": "sha256:fcfcfacb10b959a660d969a2bb975d5161a79d695e3b577422b37d7a7bb5af4e",
+            "locator": {
+              "end": 801,
+              "kind": "line_range",
+              "start": 761
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

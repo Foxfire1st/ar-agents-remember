@@ -1,0 +1,607 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The provider around the shell, shown only for Operations with no takeover.\n\nAnchor: `IntentEntryRevalidation`; \"state.view === \\\"operations\\\" && !state.takeover\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:c5b9f02930597474797f123f212f6ad444d90e8f20aebfbfea8f8e35d6165076",
+            "locator": {
+              "end": 948,
+              "kind": "line_range",
+              "start": 892
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The honest-motion gate the rail transition + the toggle drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:85938afe92f867b591b3d3982ab2520bece763d0e68fc3809ac8e8b20e57b88f",
+            "locator": {
+              "kind": "symbol",
+              "name": "shouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The SSE stream wiring: `connectState`, then one `connectEvents` connection with two consumers (river + `createGatedSeatEventApplier`), then `startCatalogPollDriver`; the shell opens on the Knowledge view when the URL is a reader address (260928-MIK-L29).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:de1870f69844d1500cf0f7506495e2dec4d8dad69010a24365f62f4e8a0b3251",
+            "locator": {
+              "kind": "symbol",
+              "name": "Cockpit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view (MIK-R29 rule 5).\n\nAnchor: \"parseReaderHash(window.location.hash) ? \\\"knowledge\\\" : undefined\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:c85239fff8d91f8454fdbeaf8b8863fb9f8ad9198a009b0d1fcb32a7814d6513",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 394
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The transient Knowledge view renders the reader.\n\nAnchor: \"return <KnowledgeReader />;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:7d3b4086b9d10c7c5ef35c0405cd01c55dd4bfa37aa1e125a1d3fefd494e8df4",
+            "locator": {
+              "end": 959,
+              "kind": "line_range",
+              "start": 958
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The reader's hash parser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6aabab08f3b92fcedb8c2c88135f244417d44ee",
+            "content": "sha256:eda6257fecd133947c26ef85ac6ee28147c69d3f84870f1fc64117e4b907ba15",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseReaderHash"
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The seat-event application + per-connection backlog gate this shell holds (`applySeatEventLine`, `createGatedSeatEventApplier`).\n\nAnchor: `applySeatEventLine`, `createGatedSeatEventApplier`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b6c3adce54894c03440db973f39692bf8425fe5",
+            "content": "sha256:3d48a1581539aeaf28ffc87000233a5d8b232fe5637363e9a10393000a2a1137",
+            "locator": {
+              "kind": "symbol",
+              "name": "applySeatEventLine"
+            },
+            "path": "dashboard/src/data/seatEvents.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b6c3adce54894c03440db973f39692bf8425fe5",
+            "content": "sha256:820e8b5f07443f3775f3447df60867065ff5842d5f4256202b71b434bf077fc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "createGatedSeatEventApplier"
+            },
+            "path": "dashboard/src/data/seatEvents.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b6c3adce54894c03440db973f39692bf8425fe5",
+            "content": "sha256:9d52eb9ed92d32f8dd0625143cb523bef8d5b7fbc1bc2fe8ef0e762ef341f0a6",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "dashboard/src/data/seatEvents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The refcounted catalog poll driver started unconditionally here (`startCatalogPollDriver`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e1c040d98b8ecea8de0d887a1779ffb33a2f901",
+            "content": "sha256:073315ee95d4cda75a996ff07a9891c6a2f207c3afe6c464991a03ea417d3fee",
+            "locator": {
+              "kind": "symbol",
+              "name": "startCatalogPollDriver"
+            },
+            "path": "dashboard/src/data/catalogPoll.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`).\n\nAnchor: `parseTaskSelection`, `lifecycleIdForSelection`, `qualifiedLeafKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:946d84d3e5db6a791ffa7bd49a9524899d3611ed09672419978503695448037c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseTaskSelection"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:99e0229a94cf3305d469f57526b91327a4c99a310e6f45c456ba3ee136563c07",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleIdForSelection"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:70418e203a9f57b52f54550a3ff365787aed2a0d79ec3c3e9f6dd5f8bac5acbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualifiedLeafKey"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9103556cb5e9e43b57000aabf4de913b20130267",
+            "content": "sha256:7022f5e0060d1bfaa1bd1df61e5137b842001356869c5f649080797e02efc7af",
+            "locator": {
+              "kind": "symbol",
+              "name": "viewedLeafKey"
+            },
+            "path": "dashboard/src/panels/detail-panel/state.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82aa5e83906c6ea1e576904e0834396d2edf447b",
+            "content": "sha256:933f86ac01305d25314f48bfc182b21307f3ee52d8353a4c653b6a15721a02f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailChatImpl"
+            },
+            "path": "dashboard/src/panels/RailChat.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The body grid bleed variant switches between three railed columns and a single full-width column.\n\nAnchor: \"const bodyGrid = cva({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:7cff30400d63ae74634f4e071b232cef268f37a3561bb67921a94bc23df88f15",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The mounted Chats session view receives the selected leaf key from the cockpit.\n\nAnchor: \"selectedLeafKey={viewedLeafKey}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:d19c11eb27e47be864563bc9c5e69c5b59ae34485df276228baa69dfc8d44701",
+            "locator": {
+              "end": 818,
+              "kind": "line_range",
+              "start": 818
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`).\n\nAnchor: `ChatContextBar`, `ChatSessionActions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "707beb3f24632d9964c70ac53fc0a6a88d9dd9eb",
+            "content": "sha256:3ae78784af2d0a68f1476ce4292a37ba5db0cec81212ecdcccf1f7f0cf18d201",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChatContextBar"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatContextBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "707beb3f24632d9964c70ac53fc0a6a88d9dd9eb",
+            "content": "sha256:7a03e8087ee77c4a872a3c36d93ace2e7b86c806f761fed01701e047dcb89f13",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChatSessionActions"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatContextBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa80cd235860d5cf52dd34f48e44fb6882c5c312",
+            "content": "sha256:13953eb0f70df43741ec3d99b69c4709c324de4cf1195e14140c29aad19a7a15",
+            "locator": {
+              "kind": "symbol",
+              "name": "HighlightComposerImpl"
+            },
+            "path": "dashboard/src/panels/HighlightComposer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The frontend `Analytics` projection includes the `engineProcesses` process-map collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:56d879b8f546a2afd9edcc95544586acccf0d5aa279185fb83b6c05b3055d47e",
+            "locator": {
+              "kind": "symbol",
+              "name": "engineProcesses"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The cockpit passes the process-map prop into `RailChat`.\n\nAnchor: \"engineProcesses={engineProcesses}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:ec1c78322c7518fe42a2d7ff82545b2504e3057cfa65a75024c65fa79e260cba",
+            "locator": {
+              "end": 725,
+              "kind": "line_range",
+              "start": 725
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Metrics extends the mapped active-state counts and adds total lifecycle/token and histogram fields.\n\nAnchor: \"export interface Metrics extends LifecycleStateCounts {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:913afb38a7411955b7588dd8130bd8171aa3aebf0d0d7b6ba0ed0af310989ea8",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Every ActiveState maps to a required count field.\n\nAnchor: \"export type LifecycleStateCounts =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:b6804561ec905cf59ad4c54013af8009ff2f4e76ddc7da6dda957bcded54b8a7",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 441
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The count-field name is derived from the camel-cased state vocabulary.\n\nAnchor: \"export type StateCountField<S extends ActiveState>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:48e3e062679eeb8c25c438d63cff60432f503bc4cc2c65b9f430962c1b2aba11",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 439
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "metricsFor builds the client rollup from lifecycles and spreads the derived state counts.\n\nAnchor: \"export function metricsFor(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:bae146fa4137eb2c539a3d237dcb195d6ec37ca1dfc0c9eea94c4275fe096c33",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The server rollup this bar's `awaitingDeveloperCount` comes from: `_metrics` expands `STATE_COUNT_FIELDS` rather than one `sum(...)` line per bucket.\n\nAnchor: \"def _metrics(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c75fc4b7f68ccc70a4e65a13e9e6098c65963e2",
+            "content": "sha256:578eb442665baebd8eaa67a0931775ae517668b62a8b41763fc45b9fd95dc2ce",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Files, Engine Room, Topology, and Chats request the full-bleed layout.\n\nAnchor: \"const fullBleed =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:2252d5852500fabaeb21143dea9593eeceea58d281bb3191cd538c9bc6ce379c",
+            "locator": {
+              "end": 454,
+              "kind": "line_range",
+              "start": 454
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "`AgentNotifierHeartbeatBadge` reads `useDashboard((s) => s.agentNotifierHeartbeat)`, the store field this top-bar heartbeat/backlog indicator renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:5508205699e2921a6ee43f076c77433055462f36900b4236837b797b06254e6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierHeartbeatBadge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The `AgentNotifierHeartbeat` type this badge's props shape mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:beb31ab5870fb86707cbcaf925ed9404919ee72463ac00eb6889d846dcf8915e",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentNotifierHeartbeat"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Rail fade properties are selected by the animation permission.\n\nAnchor: \"const railEnter = animate ? RAIL_ENTER : RAIL_ENTER_STILL;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:fce80391626d6f1be4fb1cf0a4e733e1afd2821b6162bcdd67311636778e188a",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 460
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The visible registry has exactly one Chats destination, no Sessions route and, since 260928-MIK-L29, a Knowledge destination; Engine Room, Topology, and Chats are full-bleed, and Knowledge is not.\n\nAnchor: `CockpitView`, `VIEWS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:f455d122c0fbfe570f8869b243f55c385e9fd43e3e0be41f3a8c0f2e13b14216",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:3043a4d23f8eb3279688291d710879220b1bbec55cf40e99340abd4460953fe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "VIEWS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `chatsLayer` keep-alive class used by the Chats layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:8a8976027b22047c4030a7ac855a24105253185203e0163cfc631decc487d093",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatsLayer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca0ce2b1c506aaedbb68337eaf039d40cc19c9ed",
+            "content": "sha256:f8970f954343af4273bd981c86f115dc58eb4ad836bc893046dadac3e718c7d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionsViewImpl"
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:7ab813a18528ed7b0291017e86822ecbd10c8156f14da45ac0088e4a3f8e8eeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectsToggle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The boot-time effects flag it persists to.\n\nAnchor: \"calm-cockpit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b235ae6d40f2ffc6897ad451c87b3bae5b873e9",
+            "content": "sha256:fa650027ad8844a86e53a9373f311d916fd0e2e978b4626154fe082faecc6c0f",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/main.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

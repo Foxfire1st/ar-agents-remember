@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | overview.md |
-
 ## Governing Overview
 
 [Quality support overview](overview.md)
@@ -80,36 +70,21 @@ policy.
   itself; it is consumed by retry/execution identity.
 - check.py is the stable facade; callers should not create a parallel wrapper.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 None. This behavior is repository-owned.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Immutable inputs and no coverage-floor setting | `CheckConfig` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:100-120 |
-| Ordered fixed checks and pytest plan | `quality_steps` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:136-168 |
-| Admitted exact selection and coverage arguments | `_pytest_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:247-287 |
-| Atomic mutable progress distinct from evidence authority | `QualityProgress` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:57-96 |
+- Immutable inputs and no coverage-floor setting [1]
+- Ordered fixed checks and pytest plan [2]
+- Admitted exact selection and coverage arguments [3]
+- Atomic mutable progress distinct from evidence authority [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None.
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=9d25eb6a978c75e82fbabee17a0501b98b3a71cacaa32106e5630cee22cc42ce; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
-  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 addition of the
-  `selection_digest` field on `CheckConfig` that carries the immutable selector-result
-  identity into retry/execution consumers. Verification is pinned to the owning commit.
-
-- 2026-08-28T04:48+02:00 — Created by extracting the typed plan/progress responsibility from the
-  oversized check.py facade without changing its caller contract.

@@ -1,0 +1,20 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "A single task-document read costs only what it names and still means what the corpus-wide projection meant: the body read opens the requested document plus only the master documents its own sprint execution graph names, the always-on enumeration lists only the three canonical task folder levels, and both yield exactly the documents, order and projected bytes the recursive corpus-wide versions yielded.",
+  "id": "FAM-33YQGFXE",
+  "members": [
+    "INV-1BRT5DX6",
+    "INV-4RERAJCC",
+    "INV-P0YZDCS9"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "30c87d69-3945-4417-b037-18fee5330c79",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "routes": [],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Bounded task-document read with unchanged meaning"
+}

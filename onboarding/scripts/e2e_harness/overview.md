@@ -2,14 +2,9 @@
 
 | Field | Value |
 |---|---|
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `scripts/e2e_harness` |
 | onboardingRoute | `onboarding/scripts/e2e_harness/overview.md` |
 | parentOverview | [Repository overview](../../overview.md) |
-| lastUpdated | 2026-09-05T07:12+00:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
 
 ## What This Area Is
 
@@ -164,40 +159,36 @@ with an owner, a real consumer and an executable replacement node, and
 - Tool-result normalization recognizes only direct structured JSON or the exact current Codex
   execution envelope; unknown wrappers fail C09 instead of being searched for a favorable field.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The Dagger quality graph owns invocation, while this route owns only the real-consumer scenario and
 its candidate-bound evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The controller runs exactly two fresh, retry-free replications and emits a candidate-bound summary. | `main` | scripts/e2e_harness/run.py:21-75; scripts/e2e_harness/run.py:107-203 |
-| The scenario proves the live spawn chain and replacement-routing sequence through named checkpoints. | `run_scenario` | scripts/e2e_harness/scenario.py:141-194; scripts/e2e_harness/scenario.py:368-531 |
-| The deterministic provider discovers tools from the real request and validates the public dispatch schema. | `ScriptedResponses` | scripts/e2e_harness/responses_server.py:47-127; scripts/e2e_harness/responses_server.py:329-381 |
-| Controlled malformed advertisements must fail through the same canonical validator as the live advertisement. | `dispatch_rejection_sentinels` | scripts/e2e_harness/dispatch_sentinels.py:23-95 |
-| The fresh-user acceptance's disposable fixtures, created from nothing under one run root. | `create_fresh_user_fixture` | scripts/e2e_harness/fresh_user_fixture.py:79-177 |
-| The fresh-user flow, one `StepRecord` per product call. | `run_fixture_scenario`; `run_fresh_user_acceptance` | scripts/e2e_harness/fresh_user_scenario.py:579-807; scripts/e2e_harness/fresh_user_scenario.py:1111-1195; scripts/e2e_harness/fresh_user_scenario.py:1099-1183 |
-| The free agent's capsule, read back from the launch token the session was started with. | `free_agent_acceptance` | scripts/e2e_harness/fresh_user_scenario.py:936-1039 |
-| The fresh-user acceptance entry point and its transcript. | `main`; `REPORT_DIRECTORY` | scripts/e2e_harness/run_fresh_user.py:32-32; scripts/e2e_harness/run_fresh_user.py:47-82 |
-| The consumer of record that keeps the three modules' lifecycle rows honest. | `test_every_governed_harness_module_this_suite_answers_for_exists` | mcp/tests/test_fresh_user_harness.py:218-222 |
+- The controller runs exactly two fresh, retry-free replications and emits a candidate-bound summary. [1]
+- The scenario proves the live spawn chain and replacement-routing sequence through named checkpoints. [2]
+- The deterministic provider discovers tools from the real request and validates the public dispatch schema. [3]
+- Controlled malformed advertisements must fail through the same canonical validator as the live advertisement. [4]
+- The fresh-user acceptance's disposable fixtures, created from nothing under one run root. [5]
+- The fresh-user flow, one `StepRecord` per product call. [6]
+- The free agent's capsule, read back from the launch token the session was started with. [7]
+- The fresh-user acceptance entry point and its transcript. [8]
+- The consumer of record that keeps the three modules' lifecycle rows honest. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this route. The disposable coordination and
 code repositories are fixture-owned representations of this repository's public contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external repository supplies implementation logic to this harness. | `create_fixture` | scripts/e2e_harness/fixture.py:43-112 |
+- No external repository supplies implementation logic to this harness. [10]
 
-## Docs References
+### Docs References
 
 No Domain Documentation source is configured for this repository. The Codex version/protocol claim
 is verified at runtime by the real installed client rather than copied from an external prose source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Runtime evidence records the negotiated Codex client/app-server boundary used by the scenario. | `_run_ambient_codex` | scripts/e2e_harness/codex_driver.py:100-194; scripts/e2e_harness/codex_driver.py:221-252 |
+- Runtime evidence records the negotiated Codex client/app-server boundary used by the scenario. [11]
 
 ## File-Level Onboarding Map
 
@@ -234,37 +225,3 @@ execution owned by the lifecycle Dagger gate.
 ## Needs Verification
 
 None.
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `free_agent_acceptance` repointed to scripts/e2e_harness/fresh_user_scenario.py:936-1039. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T11:30+02:00 — 260915-CAPS-L14 curator: recorded the route's **second entry point**. Adds the *Fresh-User End-To-End Acceptance* flow (the host-run `run_fresh_user.py`, its disposable fixtures, the ordered product-entry-point steps, and the free agent whose capsule is read back from the launch token the session was actually started with), states why that entry point runs on the host rather than in the Dagger graph, and records that all three modules are governed evidence artifacts with lifecycle rows and a consumer of record. Extends *Structures Found Here*, the load-bearing-files table and the file-level onboarding map with the three new modules, and adds their reference rows. States plainly that the fixtures are **disposable repositories created from nothing under one run root — not the developer's repositories**. `run.py` and its Dagger admission are unchanged by this leaf. Verification metadata is left at `602143bd`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
-
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `scripts/e2e_harness`, so no route/member/prose/invariant change is required. route-member-count=13; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
-
-- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Documented external temporary candidate-index ownership and preserved twice-fresh no-retry scenario semantics. Verification records source review, not execution or acceptance.
-
-- 2026-08-31T10:33+02:00 — 260821-ARSPAWN-L5 closeout repair: documented the strict Codex
-  execution-envelope normalization required for C09 to read the successful public dispatch results
-  observed in generation 6. Verification remains closeout-owned.
-
-- 2026-08-31T09:45+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded the cross-process tmux
-  namespace contract and the Codex MCP whitelist that preserves it. Verification remains
-  closeout-owned.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded pre-side-effect
-  Dagger admission, exact fixture-owned tmux isolation, and recursive immutable publication of all
-  three E2E evidence files. Verification remains closeout-owned.
-
-- 2026-08-30T22:20:19+02:00 — 260821-ARSPAWN-L5 converted source references to the
-  canonical anchored citation format. Verification metadata remains closeout-owned.
-
-- 2026-08-30T22:11:35+02:00 — 260821-ARSPAWN-L5: separated controlled malformed
-  advertisement proofs from the deterministic provider and reduced acceptance evidence to small,
-  independently readable predicates. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:59:40+02:00 — 260821-ARSPAWN-L5: recorded identity-free same-seat
-  convergence, canonical live-advertisement sentinels, positive tool results, and non-suppressing
-  cleanup evidence. Verification metadata remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 created the route overview for the real Codex 0.151.0 ambient/hosted spawn and replacement-routing acceptance harness. Verification metadata remains closeout-owned.

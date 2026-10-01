@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/gates.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Gate creation uses ambient structural context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db838f418a7c13844a866f0568aa9a0f196b5f3f",
+            "content": "sha256:527b5f07b8fb09f44e2732c3089f7ea2d2721373a5915f5f2b593894c7ba0106",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db838f418a7c13844a866f0568aa9a0f196b5f3f",
+            "content": "sha256:286af2e61eb7e64d4ba8a3b50d097bb540e4f91a212884b03b53a83f7593d717",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Decisions select an authorized document and kind, not a gate id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db838f418a7c13844a866f0568aa9a0f196b5f3f",
+            "content": "sha256:c6539955df20e09c601e27a60af4da97c30170d3274c500a1e78e833b7eedff1",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_decide"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db838f418a7c13844a866f0568aa9a0f196b5f3f",
+            "content": "sha256:32cc80c8e11fc3d2848b5fb229512d9b3973055939a2f91bd468cd80291967ee",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Listing exposes only caller-scoped structural summaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db838f418a7c13844a866f0568aa9a0f196b5f3f",
+            "content": "sha256:4b7215af131511f81ee7a3b0b58a3866e5f2bc5ea43d5a59cb16e61ebe39be09",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_list"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

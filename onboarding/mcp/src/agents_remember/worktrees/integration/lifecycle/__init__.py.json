@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring assigns durable lifecycle journal, control, worker, and location ownership.\n\nAnchor: \"Durable lifecycle journal, control, worker, and location ownership.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5b8d1c5f8967b03e9ddec4110e24d186dddc883",
+            "content": "sha256:0ea2c149c2362ea39841c75b332ed1d475b17f6bce47b8ba61eb05d20f573313",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

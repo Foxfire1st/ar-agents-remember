@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/serving/operator_inbox_posts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Post-time owner rebinding preserves a complete canonical structural address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab6047c2118889efc93f77a02ce3ba85d190067",
+            "content": "sha256:662eb9a6b9dfc3445af7449e7ac8a58ce934b4fa3c333d853c2c2361b63629ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_address"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Append is the durable commit point before compaction and expectation publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab6047c2118889efc93f77a02ce3ba85d190067",
+            "content": "sha256:8e9a1a35410f876df5626ded0f0ff205773cb21090d72c6d782cead8b2e81ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_persist_post"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared post path derives, stamps, persists, and delivers the row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab6047c2118889efc93f77a02ce3ba85d190067",
+            "content": "sha256:8af486b6b78883f138d70aedfc85e7d7abaad4e630f945c07fdcf4c7f8c195c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "post_operator_inbox_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bab6047c2118889efc93f77a02ce3ba85d190067",
+            "content": "sha256:9ea809a7d79232cdf103ec9575a5e9aabd4026ec68a09ca3e668dd761cb2d4d9",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

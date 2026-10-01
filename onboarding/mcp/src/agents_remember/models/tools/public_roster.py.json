@@ -1,0 +1,231 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/public_roster.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The roster's single definition, 72 ordered names, in a module that imports nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The registrar that publishes the three capsule/skill names, whose order the tuple must match.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:2f45c654bbec0d447d009eb6b10b263566657ec1f3f95f63f0afc3195330d00e",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_capsule_and_skill_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The registrar that publishes the five `knowledge_*` names appended to `TOOL_REGISTRARS` in the same change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6202a055cba2db7cc1162eb7ee1ed5c52e6aece5",
+            "content": "sha256:649d45ea922e96e49896bdb8836ba7ae80197501f569bb8182fdfe7183cc8bc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple.\n\nAnchor: `worktree_pause`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The three capsule/skill-serving advertised names, appended at the tail with the registrar and registry rows that publish them.\n\nAnchor: `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:a3e47ab388213b4a1d29e82854bdf9947f0ce1be15289b541d5a0170ab3eb531",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The five `knowledge_*` names 260915-KS-L20 appended at the tail, with the comment naming the family, published in the same change as their registrar and registry rows.\n\nAnchor: `knowledge_read`; `knowledge_change`; `knowledge_diff`; `knowledge_integrity_check`; `knowledge_project`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:6253fb01c32eaa1450fa21fe205d11f89ad4a2fc2d68eb52ad0146069a5b3ba3",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The adapter re-exports this object through `__all__` instead of declaring its own tuple.\n\nAnchor: \"__all__ = [\\\"PUBLIC_TOOLS\\\", \\\"RESERVED_TOOLS\\\", \\\"TRANSPORT\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:b0053d26dc1ddbfeaa7d8e65af358e70b68734e5f38ed18b4c107d6c7d9f9c89",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The response model that reads the roster to enforce the worktree surface's next-move vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_registered_public_next_tool"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The by-name response-model registry the roster is compared against, and the deliberate non-public names it excludes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_COMPAT_TOOL_NAMES"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The live registered-order comparison that treats this tuple as the advertised authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4aee8c6c045ce408dab43279549bd5f57aacbb5f",
+            "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicSurfaceInventoryTests"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4aee8c6c045ce408dab43279549bd5f57aacbb5f",
+            "content": "sha256:575ed3c42ea8c86b68817bff9913ad69f3a102441c4bf5442875186cab815d53",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The executor that pins the worktree surface's enforcement of this roster in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "content": "sha256:65ab14a3955048bc8c2485e1992cd01e4408f7af43094f0213bb0a355d15717b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_next_tool_must_name_a_registered_public_tool"
+            },
+            "path": "mcp/tests/test_worktree_status_terminal_next_tool.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "content": "sha256:09073ec8cc753fff30dfbd3724baa80856f9fbb54e64db4ddc520b9135ad8e51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_worktree_surface_refuses_a_registered_but_non_public_tool"
+            },
+            "path": "mcp/tests/test_worktree_status_terminal_next_tool.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

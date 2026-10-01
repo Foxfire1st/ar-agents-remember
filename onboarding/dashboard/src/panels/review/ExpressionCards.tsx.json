@@ -1,0 +1,413 @@
+{
+  "path": "dashboard/src/panels/review/ExpressionCards.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The props the centre passes: the read, the seed, the planning marks, layout and open path, and the scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:1df4138a0099d91e13ad71a06e616614af275373cfcf5c828b22578c58e84719",
+            "locator": {
+              "kind": "symbol",
+              "name": "CardsProps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Entry details kept out of the reading path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:df54bff62096e9aac21cdf6eabe7224f8d2c4f495265b3da917afb42a0d3d715",
+            "locator": {
+              "kind": "symbol",
+              "name": "CardDetails"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:917819589fda15620e1c9db39a6cc50605eaf3fab41d22bf1a48024db1a364d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideFacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The inventory jump, the full file through the landed content read (with its pane name for the intent markers since MIK-L34), and a file opened from the explorer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:7208a406b85d23c976192f7c221941a0d643c7e23bf2345f2556c171fdccd987",
+            "locator": {
+              "kind": "symbol",
+              "name": "InventoryLink"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:723771698aa4b8c52cad549382ec20d3b37bf3894ca8554510363c0e4ffb2bb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "FullFile"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:2cb33b46195eb8d1429ab6d76f53e93ef860f2ec0ecdf72664392d724c7611c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenedFile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The one caller, which mounts cards only for a tree comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:bdbf7e9caade4cd25b816d3f74dc0aebf37c73cd1a9455cb7c8e924ecb725ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CenterExpressions"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The card-state cases.\n\nAnchor: \"draws a changed range as its real diff and an unchanged range once, labelled unchanged\"; \"names a missing rationale as a gap and never writes text of its own\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b775103369b0ec00dabcb6222339c1c700c0840",
+            "content": "sha256:3f41cda812875f8d35bcb496a89ec9ad7770ab9672220fc090186d4942f5e358",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5b775103369b0ec00dabcb6222339c1c700c0840",
+            "content": "sha256:6296a4749a4dc32a974b3b73d5a78398588449926378c7d18ed8330d3e5c1cff",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The F1 case.\n\nAnchor: \"opens one full file, in the card that asked, with one read (F1)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b775103369b0ec00dabcb6222339c1c700c0840",
+            "content": "sha256:9834833ac3909b58acea070fef1572eadba788a4f0886f65d3fc513ff1c8af90",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The marker cases on real cards: the exact card reopened, and the excerpt marks with an unreadable memory side, other content and an unchanged file.\n\nAnchor: \"reopens the card a marker was followed from, not the first card of its path\"; \"keeps the drawn side's marks when the other memory side cannot be read (review R1 F1)\"; \"never reads, nor speaks for, an unchanged file's card\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:5f6277ede4d62ef1d70540b756d8cd327a197f00d8667c15eae435a04c80cf62",
+            "locator": {
+              "end": 770,
+              "kind": "line_range",
+              "start": 566
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Loading, unavailable and not-a-tree-comparison states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:fa21f246455f59e138d85312669de856e2c29e6e4f2becf4a03a19c876353610",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpressionCards"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The counts, the scope line and one full file keyed by the card (F1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:af3c50e0862a220b112c7a64e4bbf055d60c318a3ec9c8732378c2d91211a8a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadyCards"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:32cabadfc61cc0f183651fd230ebe785d4857ded556394afc431e1452e7fdc0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A return to a marker followed from a card's full file reopens that card (MIK-L34).\n\nAnchor: \"const returningCard = returnedCard(useContext(IntentMarkerScope)?.returning?.pane);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:932b01d473be8eb0ba8728c7ce2d4d20493b5486ccff158548a36a5b62e626d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "returnedCard"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:622715ea4ed9ef3c85e0e1e41d1d6f81e3319f64a612fb1ff1d019522cb98be1",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Side lines, one line for an unchanged same region, and the side-state texts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:b693112743946824c9835e510dcf73e4a5835fac66be517b358180d61ea52804",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideLine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:73dca720d19c272d146f0c686f1bb011ef47131c6e15e95fee5e04d08b9c94ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideLines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:a27f4f90b504fe28479ac3ff5971dbc513d7a0b19c8ce6cff3837ad12f2c7611",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameRegion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:6a5ff5eccdc7e6e0820b935d480c47cf96402c18d831e90ffa9847fcfe0a6f74",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideStateText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One card: header, voices, side lines, excerpt, marks, actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:0ff0d10c18209c58d29d8bb9078f7748efd870f251efa1592c4466cca964dfcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "FocusedCard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A voice: the authored rationale or facet, or the named gap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:9c391e19b40fc23a4d959226b2202402c3e074276b552929342bc321b40f034c",
+            "locator": {
+              "kind": "symbol",
+              "name": "voiceHeading"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:6754d6292870d3feffd4d9a611355a6f85f5a48e9fd65f290df95b824b0e5e4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Voice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Unchanged once, changed as a diff, sides that are not both regions shown apart; each marks the owner hunks whose changed lines it draws, on the sides it draws (MIK-L34).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:6b8b4241ac880beddf505cf19f70400658d7acfd9427f21bbb7588d64e6d1d1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "Excerpt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:94abb5546613cfa48160480e97a2e8826ff072a0151a3a151def522c5f1dfbce",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnchangedExcerpt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:bcfcd413d2155f23a718cd535411c888e89f3efe5399a0c04b6fb8421a82be23",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangedExcerpt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:e49f2fc66cec16c1ae37fd625fab27fcecb8ee20fbafe29e2af157f84155e564",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeparateSides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The excerpt marking: only the drawn sides compared, a mismatch said, an unchanged file's card never active.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:6efb39f0ef04f2bfa09f7385d6e45542d90f98e9249a685ae4018cca6790c19e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useExcerptMarking"
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc44889e1ae01bfa57db6a0f979fdd404e3dabf",
+            "content": "sha256:3564649a4d4a827324e90f65bc3fc6f6662e712301dcdfb0a96345620682d0ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "drawnSidesMatch"
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

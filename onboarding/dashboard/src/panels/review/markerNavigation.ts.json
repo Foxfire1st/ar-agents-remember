@@ -1,0 +1,124 @@
+{
+  "path": "dashboard/src/panels/review/markerNavigation.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement: a tree position of the mounted workspace, selected the way the rail selects it.\n\nAnchor: \"selected the way the rail selects it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+            "content": "sha256:4dd42bea78c55fcc09ea2533e2011287c50e3ee4efd083ca4618cc3668c65bae",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The recorded reading position.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+            "content": "sha256:7fed9955af74dd10fa9da087087d64c60009f87ee1cee5972837362e2bc173be",
+            "locator": {
+              "kind": "symbol",
+              "name": "Position"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Capture and open, as the scope's moves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+            "content": "sha256:f6701f377661e687c1f1db5c6ddf5823df848151e48dfff6bf421e59bd16fff6",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspaceMarkerMoves"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Following: close the file, select the invariant with its member context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+            "content": "sha256:ed08b19995151ab81c016fbc65af12e630b097656ebe654cde43da6ffb3dc654",
+            "locator": {
+              "kind": "symbol",
+              "name": "openTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The return: subject, then lane, opened path, layout and full file; the tree's focus request cleared.\n\nAnchor: \"state.focusSelection.current = null;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+            "content": "sha256:3e38270051c480f867573ff94df63bce2a545217a016e4ee2fb1f4f104336441",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The workspace that passes them to its scope.\n\nAnchor: \"moves: workspaceMarkerMoves(state, navigation),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:12c29394bf9144fcad060c75b0da85c518e704f7309ae20586709d3020563dd0",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The moves' cases.\n\nAnchor: \"selects the invariant's own review at its member row of the named family\"; \"restores the subject, then the lane, the opened file, the layout and the full-file choice\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "288ae13b5dc22ee9a3d0688d132e774d4ae1cbda",
+            "content": "sha256:0ac9f39ccff578f95be9dc0a82375b1654716c0407d22036343d174fb2b2e86b",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

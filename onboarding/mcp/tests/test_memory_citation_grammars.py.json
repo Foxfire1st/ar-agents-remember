@@ -1,0 +1,168 @@
+{
+  "path": "mcp/tests/test_memory_citation_grammars.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Cited declaration is written, committed and stamped, then moved and removed.\n\nAnchor: \"    def moved(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:7143e9f8a7674790c28187c8794828c380c8bc037d3368bcd21577889dd53345",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Three interface members in another file repair as one claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:3d1b34edc270846cd42daa348364e0f732594ea40bb95249ebdb07f2f77f85ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_three_interface_members_in_another_file_repair_as_one_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "With the grammar the move is repaired onto the declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:276926c02a6c370fc3f4919107969448aca45dd6c3b01cd6d09bbfeb6d73f4aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_with_the_grammar_the_move_is_repaired_onto_the_declaration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Without the grammar the same move is declined.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:2cc42df0da1e0f5abe21f728a2e1ab363bf42100504738060cc5ddca84fa281c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_without_the_grammar_the_same_move_is_declined"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A decorated definition is stamped from its first decorator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:0435779fc48cdc8c723e0aae3f3dd34bc000dcde8d4c579d87cd072356010f75",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decorated_definition_is_stamped_from_its_first_decorator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A class and its methods and attributes all bind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:7d15d6d9058dbada4455f7ee96d382d0a7a6c72f3208ce94eb95903b762f1bd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_class_and_its_methods_and_attributes_all_bind"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Each declaration form binds its name over its own lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:ccaa779876ece1b6ef11d0c530e0244ccbfa05f6e099a4aae30ac2a1b6798ac9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_declaration_form_binds_its_name_over_its_own_lines"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A tsx component is read by the tsx dialect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:87fa112b9de5431a9dd25a46c26b035796f453363b358bf0735e160688a2f53f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tsx_component_is_read_by_the_tsx_dialect"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A javascript module is read by the javascript grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:02ef2acc0c260f4e26a226eac70a167919b03ca4dbc82712c3dcb165df825b1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_javascript_module_is_read_by_the_javascript_grammar"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A url does not lose its double slash during quote matching.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1279a2ddd3deacbfc19f78688e1c967828482abf",
+            "content": "sha256:4f1962495a98fd6829bb0280f0c56f37e6a64f915ac75a058e986e267469779f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_url_does_not_lose_its_double_slash_during_quote_matching"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

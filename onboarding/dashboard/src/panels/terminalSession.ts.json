@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/terminalSession.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stream hooks contract and input translation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71037ea4285cba492420dd825397978dab4fcd9a",
+            "content": "sha256:935b93dae2af407e0658e4d5773504a45903b4953c7c7b56375b8bb83218471e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalStreamHooks"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71037ea4285cba492420dd825397978dab4fcd9a",
+            "content": "sha256:e0f8327012b9624dd0ba93d77db23d8e70b896e79443a5e6c7a9484e2c232e1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTerminal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71037ea4285cba492420dd825397978dab4fcd9a",
+            "content": "sha256:c792f14e630759f34d3f281070edf0a7824e197032a6ae2a6e32bf2561e23a29",
+            "locator": {
+              "kind": "symbol",
+              "name": "wheelScrollLines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,67 @@
+{
+  "path": "dashboard/src/data/commands.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The registry + default set under test.\n\nAnchor: `createCommandRegistry`, `registerDefaultCommands`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:87fadab0a7cdd79c22f0cacea4a4a91774adcb1dcc7984251f2afebc0fa9e1ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "createCommandRegistry"
+            },
+            "path": "dashboard/src/data/commands.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:c84e84c34993294e9bd3bed50b9ab64df754c8b865342356c10f1c9e8713b14a",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerDefaultCommands"
+            },
+            "path": "dashboard/src/data/commands.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:058f38361b92b74bc32eecb148afdf2fedb639bb4336619fea6cd0731d9ca123",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/data/commands.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The DOM-level palette counterpart (ctrl+k open, Enter run, Esc close + focus return).\n\nAnchor: \"opens on ctrl+k from the chrome zone and closes on Escape\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ed84cda6b4e113ac6fb303ebe89974e6b88476a",
+            "content": "sha256:d4bcc45371443a0157e1fb100c66e3e3c2f714e69ac93572093e3c3795e128ca",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

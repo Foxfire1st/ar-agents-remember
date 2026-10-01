@@ -1,0 +1,228 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cache contract: where, what, freshness, eviction, and that deleting it loses nothing.\n\nAnchor: \"Deleting the directory, or any file in it, loses nothing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:3d1e02b65e698c7aab63f4e3c48ad4eae206407720fa13729372dd0c8c95da65",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The chosen location and eviction defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:e1edb9c0000b5af1a403e9bf1a822a4bcd8ea7846b5af47dcd8ccf84e67aa97c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CACHE_DIRECTORY_PARTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:c2a8d161f346fb4f777e75b89cf8cc9fb971a3296a960a95bd67a2465031abb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_MAX_AGE_SECONDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:a86e9b04cf2b0c189f9121360acdb900a16e9c3fd5f929c81931e23eb7161584",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_MAX_BYTES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:2ed879b0f9b7814345cc200e0a0f193f95d3a71131cd5fdad1f9ecc9abc70951",
+            "locator": {
+              "kind": "symbol",
+              "name": "default_cache_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A location inside a Git working tree is refused before anything is created.\n\nAnchor: \"inside a Git working tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:9993be682c3ec3bee41ec6e5d539a6e237a1192441f2303b640aa25d4a2558c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeIndexCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Lookups recompute the key and reuse or build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:02e94e270206fcff7c9c8d2b8fbfc3482a7a4773d9ac9f8f5e4aaba68a4629b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "for_directory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:71f7bb6b72c2fd0173b07df64c66c13865cf9bb79681c6b35e0e3b9f344d21c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "for_git_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Eviction by age, then size, keeping the file just built.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:57e8e00be25f70714277fd3d0d3c9d7ab24c3b14e745300e7255929ed5f453dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "evict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Reuse only for the matching key and format; build through a temporary file and a rename.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:3a4f91f2db75a930734ae49dce50260d9bca788b129fe4e25f4f63e344fd8fdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reuse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:c8bd9e3fbede75908b66c9fa8b21a62e5b9a8e2ac1f6f78cab9102f1014b6814",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:81dc260e4d59f7baba1a4af5dd7bdefc3b9012cce7511d36121548387e0fb955",
+            "locator": {
+              "kind": "symbol",
+              "name": "CacheOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cache cases: reuse, rebuild and deletion, eviction, and the working-tree refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:8dea9a1d7bde966c165214e45ca6bc652b3f4d2f59f38d179077404dbb0f9b35",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cache_reuses_rebuilds_and_loses_nothing_when_deleted"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:9cb2383f3ff49b309cc40da855f557ce5d2ba68b1dd825e57dcde49332fe3706",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_old_and_excess_index_files_are_evicted"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:f2001808a18864adeafdddb1615972f8aad215d103b38d9f0b49748d5f6b6859",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cache_is_never_placed_inside_a_git_working_tree"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An edited working tree is never answered from the previous content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:ba9a51bb05419c5c919c4516d9bfb58c2c822519aa7098289778528e6d48114f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_edited_working_tree_is_never_answered_from_the_previous_content"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,295 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/merge_schema.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The manifest derived by creating the DDL and introspecting it, so the comparison runs against the same source of truth as the schema itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:b717983a130b18890261fe2ed770be6c282a1090ed01bb063d3bea3207ef5c3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_structure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The unit node that refuses seven structural differences plus a reorder, a rename, a weakened trigger body and a changed `user_version`.\n\nAnchor: \"def test_every_structural_violation_is_refused_before_a_session_exists(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9296f87ac0c681bdaf29b4ac456ec77d94d6097",
+            "content": "sha256:62b7122663b3ab60b0061599ec901bc1c9de59c6adfdcc00d527372b3d29f412",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One canonical table's compared facts, including declared column order and primary-key positions.\n\nAnchor: \"One canonical table's declared structure, as the catalog reports it.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:718c9a40e3510b807dc84ba976af7c08d53d92573abc35c706133034136a0b19",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:b7a7e1f5ba65369145ed9201a3ae89880d2507439ff2987ec7acd8a409bb309a",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The catalog reader that answers the structure question without writing anything.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:3c9e330f84ab1b2f94933e9835c775e420c1fa5544fd39fa786a73ad9202e55d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_structure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:67efa66885f1d64e63762164badeb41d64be91e2ac80dcdcad7be5027c9e3399",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_database_structure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:12ef3182276bce2466fb75e602bcaf4a0354c6a701c4ae0cacddba9ada0d4247",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 220
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The refusal that names which merge role disagreed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:5a35e6ab2215dcab92ff892722eb9743cc87762e3dc8f2cda49900745ee10f5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_supported_structure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The first-difference comparison and its most-structural-first order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:4483cf74a4c49ffd83b372b18668671ea983426c82949943789f85fda11169c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "compare_structures"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The per-table comparison and the five per-aspect comparators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:5a0e26c4c5982f4ef35fae58d3bdfe0c65a57e8357e0643ef1d21f55b376e744",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare_table"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:58a1793d0a5a45876e64fe0407e7c317f8533ccaf945658ecf951f594622ac14",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare_column_details"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:264b5a4a33f5029da657af25c87ad62fe0b75cc33829d555da9a56ee4203d2f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare_foreign_keys"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:0855a0302814729f6141cb6c082f6e6c40dd8460572145c221ef2403674489ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare_indexes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:64a24d67d846215b0cfe4c8fdc7e31b867d58db375fe51eaa25c3534401e7a9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare_triggers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:23ac642bb8b938d8ca30d3859cbf0aff6263a6039282f8fd2aea287d62ad461f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare_options"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The index-shape rule that treats an auto-index name as local naming while a declared index name is structure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:8d08728c2b7f649836c29031c1d7fa2ba26c909ec67ccf027573cbe883d4bf2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_columns"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The stable renderings and whitespace normalisation that make the comparison structural rather than textual.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:02eb4f9ffa23a7ddaa8f7febbc8db53c8dd9e615e69cdb5ba29090b5e637445d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_normalized_sql"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:b9e400a8b1204eab86df115e8a7dea53e163ee804727c7c7d331729167e7e440",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render_column"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:8a40f896c132547e683e424f14fab5174c9680708f6d71ee0fbee7a7048b8b35",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render_triggers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The schema generation this manifest must match, and the fingerprint the store stamps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:3533cad38d1ace2949ed4dc019b3e11af690a80c4a89543cb6396bbe8a44c977",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_USER_VERSION"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:74d79276760442616a5d96d92b3bf2e0ecf18a351a9f3f74bd38d1f61dbdb74e",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_fingerprint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

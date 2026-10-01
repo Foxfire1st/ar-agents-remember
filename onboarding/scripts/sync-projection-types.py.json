@@ -1,0 +1,91 @@
+{
+  "path": "scripts/sync-projection-types.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `parse_args` (lines 20-40).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c6df5a09d50926bc3a52bf7df7f74a7c5ddd71212fda0de06b316c28618cc8ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_args"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:d19f5572ad0946a74e6bba6a6c4c839776c9040be2d21d71bb4d40fa00c68faa",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `check` (lines 43-51).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:b7406c17cc72921b4db23c556877f4445defbd89af6bd62340ffc15b0d513c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:03b063fa79a28e97e10a9bbeae9e64cdbaf6b644eaa4e5f348b2055e0e819df4",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `main` (lines 54-65).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c18f31c577f41468edd16e036b0729ca9394f2cda2fe7364274e3f716a20df86",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c9c0f2f098b8ec38b8037451981c839051aad21d9d187b5ee38c58c67fd01bd6",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

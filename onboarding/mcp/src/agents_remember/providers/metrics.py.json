@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/providers/metrics.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The ownership labels every provider container carries (`provider_ownership_labels`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4925b4f0c208f138d2aa6fc1a138adadddf32e07",
+            "content": "sha256:55f504c841a42b7a336bc1f8ac85ba30965b85e969efe497ddbfdeb474987e5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_ownership_labels"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`run_command` / `docker_command` seams the sampler runs through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7548ad8fa6ef7ff70da29921cf6de403a2224236",
+            "content": "sha256:eb36348e0fc745b7f4cd4c0faa410869cad2c2dfc8b4f6a8c36c805e17ccde73",
+            "locator": {
+              "kind": "symbol",
+              "name": "timeout_command_result"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The serving daemon's lifespan runs the 30s sampling loop into this store.\n\nAnchor: \"async def _metrics_loop(config: McpRuntimeConfig\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:2e09a4f75ec282ec2e3357dae728a08d2ac14b514ac51b4a02189c39d0f17058",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`provider_status_packet` attaches `read_current()` to the status packet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "514d04f97f4a75aec95d03c476627d2325a95f01",
+            "content": "sha256:307bccc4a446f7721aea7542ee90face4d445321c2de4b5129bae4146f382b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_status_packet"
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

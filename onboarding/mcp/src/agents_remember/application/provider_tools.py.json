@@ -1,0 +1,412 @@
+{
+  "path": "mcp/src/agents_remember/application/provider_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provider summary and diagnostics projection live in the provider status module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "514d04f97f4a75aec95d03c476627d2325a95f01",
+            "content": "sha256:307bccc4a446f7721aea7542ee90face4d445321c2de4b5129bae4146f382b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_status_packet"
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "514d04f97f4a75aec95d03c476627d2325a95f01",
+            "content": "sha256:dd7d8b25c7ae2752147520ecdf7f8c12ceb8ddb61b119f2583c3f5a914c5a449",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_diagnostics_packet"
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The watcher application entry point calls the launch gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:dacaa2467f3c54b789747a5f7f70ecdd5f5669876e3c74593da589d937d7b696",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_watchers_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:84ee6eab60de6306603de53c0410b3ff49e52e8eab3dd800307d349dd8a17a42",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The query application entry point delegates to `_provider_operation_result`, whose required-provider path invokes the launch authority before the provider operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:457e2bd2d0fbe3a67cb2f9662eb29c964a124d71074d6f681c7bd58a2dd881cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_search_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:878cc098e12080a858e6ddae9f6d1d6105c020ecff4eaf42ad702c75c96067b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_provider_operation_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:f5cd74e478226ba599e284b293b452e85f1328a6ab67a1ef2fd2f671665b9419",
+            "locator": {
+              "end": 505,
+              "kind": "line_range",
+              "start": 470
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:bcf50c44c2df8df9a55fad5353bf09f281c6268777fedf0e25e2b64b5ac97251",
+            "locator": {
+              "end": 1008,
+              "kind": "line_range",
+              "start": 961
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider response models distinguish compact summaries from diagnostics/native payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "content": "sha256:aa8802cf3a6f79cf3698078969a314a147c82a800f2ca8d741f1f69cd2116aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderSummary"
+            },
+            "path": "mcp/src/agents_remember/models/providers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "content": "sha256:8b591f6fe4b04a94db25a64447cc6829598764f3e6fcd0e605c76d12b1f3bec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderStatusResponse"
+            },
+            "path": "mcp/src/agents_remember/models/providers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "content": "sha256:df5b5b3d9fc109559b8f0cbc65d8ce6f0e8bfa42fda6487e0ba5158ec4a4c6a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderDiagnosticsResponse"
+            },
+            "path": "mcp/src/agents_remember/models/providers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "content": "sha256:58dad84bd34dbfbb512841d58f080860d9dfa92361a12792e7da81e8cf861ee6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderNativeToolResponse"
+            },
+            "path": "mcp/src/agents_remember/models/providers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "content": "sha256:ca2cd02bdb41ba10f92bbf1feb43975c1ce5bf282b5d638713b877ccb18b2136",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/models/providers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "content": "sha256:ae69b8cabada49269332c1532ca32df8d979f60808bb3f481dd3a288d5fdd1c5",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "mcp/src/agents_remember/models/providers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Provider status and diagnostics payload builders produce the application-facing model inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cc081c2a57c4ca0554bef043856542937b65fc",
+            "content": "sha256:2d08d5ca2ea7a3bb428da33813f1b0dd974b25be823fa1aaa34edf3b7b16912c",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_status_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/providers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56cc081c2a57c4ca0554bef043856542937b65fc",
+            "content": "sha256:551c5cffb42ef30435fe4b11bd9eb88361d2443deee77e790014b92386fc3ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_diagnostics_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/providers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The base tool payload delegates the builder output to completion without normalizing it itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Complete tool responses validate the normalized payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:8c6ce6cb3afcda77d14da74501bc9317aec63207eaa83ff57e536393afd03d6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Finalization converts the completed response into the model-facing result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
+            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_tool_response"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The registry selects the response model for each provider tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:6ebe9309563db5c447b7ee8ec3e67e37fdbb1ed4b9479a2ed753a7a9669b45c9",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Watcher actions reject ambiguous refresh, retain stop/status, and require live launch authority for start/restart/invalidation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:dacaa2467f3c54b789747a5f7f70ecdd5f5669876e3c74593da589d937d7b696",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_watchers_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:183145c8ff7f680a02552a3e6e6371500ca55b700ad5c66706af175a5cc6a5de",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The launch-authority configuration exposes reload and requirement gates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:8a68d04e793048821ea0d878219221b984f7f099d44d098ca49782e676f796e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderAuthority"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:3b540a0d83735a37840bf0b3f94a7a430c21e9d782753b587483243203c358f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "reload_provider_authority"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:ad5e2b4803c2272a7a4da99fb12bc4155e0ebfee1f29cc884d434037d4c926fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_provider_launch_authority"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:83139a4967cc4fda479702db5beff35d153597d192603fefd232fd6c9786c54a",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:70792706cb07db147b2d0dbd03f241c912e85dcb1f953367c6d6f945c2bd21af",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:6afe02892b3eaa1f85d956bd890a58c63c8649a2dcb4d6d7c2a131ff9374981c",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

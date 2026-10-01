@@ -1,15 +1,5 @@
 # dashboard/src/data/sessionLifecycle.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/sessionLifecycle.test.ts`    |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `100b40d6be4a7d03eedbb1164ce54e2e8a314038`       |
-| lastVerifiedCommitDate | 2026-08-14T08:23:37+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -44,24 +34,29 @@ against the real `sessionStore` (hydrated from the L6 fixtures) with fetch stubb
   residual copy contain "informational" + the verbatim detail, and `"fail"` never appears
   (case-insensitive).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module under test. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
-| The centralized copy the honesty cases pin. | `terminateConfirmCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:13-22 |
-| The L6 fixtures driven through the real store. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:245-257 |
-| The view-level companions (unfocused-residual render, rail End/error-row cases). | "renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:34-34 |
+- The module under test. [1]
+- The centralized copy the honesty cases pin. [2]
+- The L6 fixtures driven through the real store. [3]
+- The view-level companions (unfocused-residual render, rail End/error-row cases). [4]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -69,32 +64,3 @@ Adds unavailable landed-cleanup authority coverage: exact intended `{id,label}` 
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `sessionLifecycle.test.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations after the file
-  grew a header comment, a `beforeEach`/`afterEach` block, and the landed-cleanup
-  authority-unavailable case. `terminateSessionDetailed` L34-L72 -> L40-L84 (the range now reaches
-  the verbatim-failed-POST case it describes), `endSessionDetailed` L106-L128 -> L120-L144, and
-  `endLandedDetailed` L130-L164 -> L146-L213 (both suites shifted down and the latter now holds
-  two cases). Claims themselves re-verified and unchanged.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R5/R9 (incl. fix round 1 findings 1 and 4):
-  residual kept from the terminate body, clean-terminate no-residual, verbatim failed-POST words,
-  the focus-independent sweep (capture-once across beats, dismissal persistence, reload path),
-  tombstone+notice flow, bulk-cleanup closed+skipped honesty, and the informational-copy rules
-  (confirm names session · leaf · state; "fail" never appears). Verification metadata pinned to
-  the leaf base until closeout stamps the L6 code commit.

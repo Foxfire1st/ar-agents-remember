@@ -1,0 +1,263 @@
+{
+  "path": "mcp/src/agents_remember/kernel/onboarding_doc.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The kernel module defines metadata-row rewriting plus Update History extraction and delta helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:fd243ab2806e6484c5b6eb888a80376d6e77dc56749b4db36f95124c0d17b64e",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_metadata_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:4f75729ce2f9d909051989ffc4af25e167ef95d9db2418164bb038e04e5dc978",
+            "locator": {
+              "kind": "symbol",
+              "name": "update_history_section"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:e88faebbba65d146f40860310b057b247ca96496dc4f9b9907a22a6069d1ce9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "new_history_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closeout onboarding module imports the body/history classifiers and metadata-row helper from this kernel module.\n\nAnchor: \"from agents_remember.kernel.onboarding_doc import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:f4e20cb13556856b52017d0bdef3cd1e43b774b9f1cf841cc8b9dda05bd37b75",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Route-overview and sidecar classification gates consume the meaningful-body, new-history, and no-impact-marker helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:9f65631fa584de77d0482abbbc9165ef02e48ef3bc325ed639e0f0526f12dbbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_overview_revision"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:04c972e1284e9bf238f65668a06e336ab7504161415d38f8ae178aeb67dca9b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_governing_overview_bucket"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:1db301e7db6636e3c0e2335ab08dfcf58691c5d631f8c4866d7bf8da8f27bf61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_overview_bucket"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:0627279e891da26f95b5422dc67e860fed2f72ef4bc44310a0602faa03ae751a",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_sidecar_updates"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:353e159a09a29d4b9b44557b461c89043104cf0d46031d6cfdc4db2e77a921b5",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:fd3106eb128d04a695f119189ca40757885363afa1ad963728b17b486eb2ea4e",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:743067ad802ef98bbdbe52a5e36596ddd8947544dc9582abbd77698817a4e7db",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 359
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:4376b34b8b9dc579269267b426fa2cb9856b6507ec5a9bfdbb8d7dbe94ded64e",
+            "locator": {
+              "end": 767,
+              "kind": "line_range",
+              "start": 713
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "On an unconverted memory tree the route-overview and sidecar metadata refresh paths consume `onboarding_metadata_row`; on a converted tree both return before it (MIK-R30 rule 5).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:0c1f25a1d1d827c0d1016fe1a94fe79d53fac0f6727fc5e9083af3abbe258d3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_route_overview_metadata_for_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:153e06b90c444ab11b1392d55921a00acc233df75e6a9d16b5a820ffe315a2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_onboarding_metadata_for_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The public worktree-manager facade imports and re-exports `onboarding_metadata_row`.\n\nAnchor: \"from agents_remember.worktrees.modules.onboarding import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89ee15e0a44fd22952d655dc7d2286a21a87ba45",
+            "content": "sha256:09882988e3f13fce980ba4f47bce626b72921e047865fcbf3e448ee377fb391f",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Meaningful-body normalization strips verification fields and history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:8d1d37a28c5b77ff665fa5eea7b58ae6355fef345762b3f47ef840f1cb2a0222",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaningful_body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "History extraction is section-aware.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:4f75729ce2f9d909051989ffc4af25e167ef95d9db2418164bb038e04e5dc978",
+            "locator": {
+              "kind": "symbol",
+              "name": "update_history_section"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A recognized no-impact marker requires its explicit colon form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "content": "sha256:25d3ec8eb4575e8e6824f2393cafe47cb54285c8c964d5157160fcf093c64350",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_no_impact_marker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

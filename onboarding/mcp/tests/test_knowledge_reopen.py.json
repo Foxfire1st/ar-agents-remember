@@ -1,0 +1,138 @@
+{
+  "path": "mcp/tests/test_knowledge_reopen.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: the reopen ruling under test.\n\nAnchor: \"Reopen after a converted closeout\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "content": "sha256:5888ea59991d06b1ee1ec958c0f376e5909029216ab58110d1569bee0e0698f5",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A reopened leaf writes its next attempt, and its history is every file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Attempt files are named, ordered and backward compatible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "content": "sha256:b0ff4581aa200f8e280f0e90cc7973ea4e1151e64d4e8b6f1d627b1a15fe3602",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempt_files_are_named_ordered_and_backward_compatible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closeout closes the latest attempt and never reopens a closed one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "content": "sha256:7336d93c3b92459bec563bcd7cfc58878776a4a3af5dd15c274c7376da0c66b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_closes_the_latest_attempt_and_never_reopens_a_closed_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The gate names the attempt the writer writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "content": "sha256:42d698d6d5a57601141e324cf8d1b1385a279dcabd6fcca186537e83e130e427",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gate_names_the_attempt_the_writer_writes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Record landing refuses when the landed history cannot be listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "content": "sha256:7c5fd9389c28b73495b562404614d80788b130604525bd0dbf8b085698f5dd12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_refuses_when_the_landed_history_cannot_be_listed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The history target under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+            "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_target"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The merged reading under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:274273b127cd7bae61dbedb33794d3d26a4da04425a05a43b2138f987a38aad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "merged_leaf_history"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

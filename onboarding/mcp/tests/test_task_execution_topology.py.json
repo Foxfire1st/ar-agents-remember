@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_task_execution_topology.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared helper _config",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "974672bf44c30d4a5ae61030c58040b92f60acac",
+            "content": "sha256:7ec504ef31efdc6327367fb531f67343a87092bf45861b10dcc981cec483e262",
+            "locator": {
+              "kind": "symbol",
+              "name": "_config"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared helper _master",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "974672bf44c30d4a5ae61030c58040b92f60acac",
+            "content": "sha256:7e7183a94f939420357482346527ee3b07f23f66968d4ab703d8c771c9089a95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

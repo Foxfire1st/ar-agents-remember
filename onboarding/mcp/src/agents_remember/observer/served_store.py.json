@@ -1,0 +1,101 @@
+{
+  "path": "mcp/src/agents_remember/observer/served_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The ambient lifecycle owns this store and the in-memory served-set hot path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:d2eeec1c8c6e6fc8d9c8da84dbeb2175f828aa0fb955a2c168655a003b1c47d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AmbientLifecycle"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:dddaf894b6f57492fd9c15c2de513cceb7ca19e205b3f76a37830341b2a5ca7c",
+            "locator": {
+              "end": 594,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The append-only event store this mirrors (the GateStore pattern).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:2f08443e4f411f7c837987e255aae726e8836daa769647e940a28b25c78f1a4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventStore"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The observer-root resolver that anchors the per-lifecycle path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:e480f569304f8192087d573b7bb07fc208c8a458bbfd6cde0184b341edb758a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "observer_root"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:1c92ddd1107a8c2abf728dacfe91796645a8a4da9ede40a454c9900431fd2480",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The application entry point consumer that records and resets served pieces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79d388ebf35319cda03b04e43fbf46635807f83c",
+            "content": "sha256:905fa0c464437d8c9ce3cefe15d90f38055f8770cc51d24d6eeaa5b90ff0eb27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_maybe_reset_served"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

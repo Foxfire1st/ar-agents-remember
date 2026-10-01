@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T02:22:00+02:00 |
-| lastVerifiedCommitHash | `d8ed8c21644f96fd1138ae9fd4c0e5e5e93c1c03` |
-| lastVerifiedCommitDate | 2026-09-17T10:09:37+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -66,29 +56,21 @@ names: `EXCLUSION_SOURCE_PATH_RULES` / `EXCLUSION_SOURCE_GITIGNORE` / `EXCLUSION
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Selection is either filesystem mode or one canonical 40-digit Git tree identity. | `candidate_tree` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:351-357 |
-| The bounded ready marker validates schema, identity, roots, counters, and candidate selection. | `ReadyGeneration` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:389-407 |
-| File metadata retains device/inode/mode/size and nanosecond modification/change times. | `Identity` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:483-494 |
-| The four bounds, the skip vocabulary, the status vocabulary and the schema version. | `MAX_SOURCE_BYTES`; `MAX_SOURCE_FILE_BYTES`; `MAX_SOURCE_HARD_STOP_BYTES`; `SKIP_REASONS`; `SCHEMA_VERSION` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:18-43 |
-| The register's source and authority vocabularies. | `EXCLUSION_SOURCES`; `GITIGNORE_AUTHORITIES` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:45-61 |
-| The one input-budget owner, which reports skips instead of raising. | `apply_source_bounds` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:272-324 |
-| The cap overrides an operator may supply, with the keys they actually overrode. | `CitationIndexCaps` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:69-81 |
-| One exclusion decision, carrying the source that made it. | `ExclusionRule` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:106-110 |
-| The register record: its rules, its ignore-file patterns, its authority and its caps. | `ExclusionRegister` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:127-172 |
-| One skipped source with its path, size and reason. | `SourceSkip` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:176-181 |
-| The bounds report the citation check surfaces. | `SourceBoundsReport` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:201-218 |
-| A source file carries its observed identity and authoritative content digest. | `SourceFile` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:532-539 |
-| The full manifest retains file/directory observations and explicit candidate selection. | `Manifest` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:577-592 |
-| Validation distinguishes content staleness from metadata-only change. | `Validation` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:637-642 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-17T12:20+02:00 — 260915-CAPS-L14 curator: **corrected this card against a source that changed under it.** It taught `check_source_bounds` and a **64 MiB** aggregate; that function no longer exists in the module and the ruled aggregate is **512 MiB**, so the card was wrong about both the owner and the number. Replaced that paragraph with the current contract: `apply_source_bounds` as the one budget owner, the five bounds in a table with what each means when exceeded, the closed `SKIP_REASONS` and status vocabularies, the bounded skip list with an exact `skippedCount`, and **`SCHEMA_VERSION` 9 → 10** with a v9 manifest refused and rebuilt rather than read as "no register". Added the register's source/authority vocabularies and rows for `CitationIndexCaps`, `ExclusionRule`, `ExclusionRegister`, `SourceSkip`, `SourceBoundsReport` and `apply_source_bounds`, and **re-derived every remaining range** against the 642-line source (this leaf's diff moved readiness from `:61` to `:389`). Verification metadata is left at `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
-
-- 2026-09-06T02:22:00+02:00 — L30 recovery source review: Documented schema-9 candidate selection and the shared metadata-first source budget; refreshed identity, readiness, and manifest anchors. Verified against prepared code commit `97e8ed2e1fae21756c3ad995c30613d4fbfcc503`; source review does not claim Gate-5 execution or recovery acceptance.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- Selection is either filesystem mode or one canonical 40-digit Git tree identity. [1]
+- The bounded ready marker validates schema, identity, roots, counters, and candidate selection. [2]
+- File metadata retains device/inode/mode/size and nanosecond modification/change times. [3]
+- The four bounds, the skip vocabulary, the status vocabulary and the schema version. [4]
+- The register's source and authority vocabularies. [5]
+- The one input-budget owner, which reports skips instead of raising. [6]
+- The cap overrides an operator may supply, with the keys they actually overrode. [7]
+- One exclusion decision, carrying the source that made it. [8]
+- The register record: its rules, its ignore-file patterns, its authority and its caps. [9]
+- One skipped source with its path, size and reason. [10]
+- The bounds report the citation check surfaces. [11]
+- A source file carries its observed identity and authoritative content digest. [12]
+- The full manifest retains file/directory observations and explicit candidate selection. [13]
+- Validation distinguishes content staleness from metadata-only change. [14]

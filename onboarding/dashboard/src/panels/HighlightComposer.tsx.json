@@ -1,0 +1,201 @@
+{
+  "path": "dashboard/src/panels/HighlightComposer.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mouse-up selection snapshot it attaches to, including optional task leaf metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a95e289ddac9e9f3f464940626ae2cf6746a936",
+            "content": "sha256:044d98ed45c5b7d0c2a10a6ee210db1385e7f1c9c0bd951f4133622cd97dfc71",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionContext"
+            },
+            "path": "dashboard/src/data/selection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Session creation supplies only accepted server ids; task-document lookup supplies structurally routed targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:80a3edb4c2f56d1661d24b3c9d622f5c89d0999066df549f050bd809d6bb4021",
+            "locator": {
+              "kind": "symbol",
+              "name": "createSession"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:a31ca3211936e22d353e2de91602346ce0de118718b217c678b345d6ea0dbb14",
+            "locator": {
+              "kind": "symbol",
+              "name": "findSessionForTask"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reliable highlight submission, readiness, same-id retry, and endgame reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:04520662cd470a9cae56de08ebae74a34cf77c30e390bab1621927c10a9af60f",
+            "locator": {
+              "kind": "symbol",
+              "name": "submitSessionText"
+            },
+            "path": "dashboard/src/data/submitClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:07e1de4a34842983bf7e7496c94f19fa49571f446014e296d365e2dc0a57af4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "retryRouteFailure"
+            },
+            "path": "dashboard/src/data/submitClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:14effe145fc16fa8db23bdd544fb67723430c692633b117566ba898efcd4f792",
+            "locator": {
+              "kind": "symbol",
+              "name": "keepWaitingForSubmit"
+            },
+            "path": "dashboard/src/data/submitClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "376c6a27e0042a3806b6038c406011dae5bfe15e",
+            "content": "sha256:d2e3147554de4477df57f45c8daa80dc1308a80ad22adf03e343e4ffd3f77cb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "waitForSubmissionReady"
+            },
+            "path": "dashboard/src/data/submitClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Harness discovery supplies detected create options.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:5103a67af2a818c93c8298186684a472c7ce752a2a3375fbec094792552e25b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchHarnesses"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat.\n\nAnchor: \"leafKey={viewedLeafKey}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:87471d8c0241b2dae61d70218babc70c729dcd9b30e168c8dad510491472c91e",
+            "locator": {
+              "end": 716,
+              "kind": "line_range",
+              "start": 716
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The behavior tests cover direct leaf paste and fallback routing.\n\nAnchor: \"direct leaf pill click submits through /submit; selection alone never acts\"; \"keeps a rejected direct submit visible with the verbatim detail\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4da791e58b50c56e88235301576afa5c87173f16",
+            "content": "sha256:2b8eb71ac71d6df704a1dd4bb4d4cb6b4adbe4cf8fa62f34257856ba41444bc0",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "dashboard/src/panels/HighlightComposer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4da791e58b50c56e88235301576afa5c87173f16",
+            "content": "sha256:1056dace3aa2ba0e97f8bc64b9759c54082b08d825ae57bafbb5b66170cb4f53",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 422
+            },
+            "path": "dashboard/src/panels/HighlightComposer.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The pre-projection task-document selector uses one stable empty snapshot, and its focused regression rejects React's uncached-snapshot warning.\n\nAnchor: \"keeps the pre-projection task-document snapshot stable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa80cd235860d5cf52dd34f48e44fb6882c5c312",
+            "content": "sha256:5ae01dda3c11d79a8d991d0cd51adc5506957d7f3d92e231c2fa11c40fb0437a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_TASK_DOCUMENTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4da791e58b50c56e88235301576afa5c87173f16",
+            "content": "sha256:ead39980dd24a0b15c8e276254a2e5a82c6480e23193fc62ab4a9597e3fee32a",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/panels/HighlightComposer.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

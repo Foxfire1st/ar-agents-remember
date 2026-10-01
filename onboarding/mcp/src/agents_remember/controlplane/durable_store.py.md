@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/controlplane/durable_store.py
 
-| Field                  | Value                                                     |
-| ---------------------- | --------------------------------------------------------- |
-| repository             | agents-remember                                           |
-| path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
-| doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-09-07T00:42+02:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
-| governingOverview      | `overview.md`                                             |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -286,40 +276,36 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
 
 The earlier Todo about `thread_mutex_for` claiming that all six stores split reclaim into named locked halves is obsolete: the helper moved to the shared kernel and its current docstring no longer makes that claim. The invariant is uninterrupted exclusion across read-filter-rewrite, independent of method shape.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. The current contract is repository-owned; historical observations above remain qualified historical provenance.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain documentation source. | N/A | N/A |
+No configured external domain documentation source.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The current owner map is verified against the prepared source. Kernel mechanics, coordinator authorization, and caller-specific host registry policy are separate.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Current writer declaration, advisory ownership and compaction roles. | `declare_process_role`; `declared_process_role`; `StoreOwnership` | mcp/src/agents_remember/controlplane/durable_store.py:79-88; mcp/src/agents_remember/controlplane/durable_store.py:91-95; mcp/src/agents_remember/controlplane/durable_store.py:98-138 |
-| Major equality and validated record base; tolerant rewrite policy is declared in the module front matter. | `schema_version_supported`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:232-253; mcp/src/agents_remember/controlplane/durable_store.py:256-279 |
-| Guarded coordinator entry translates the shared capability failure. | `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360 |
-| The kernel owns lock naming, thread mutexes, nesting, capability and hold observation. | `lock_path_for`; `thread_mutex_for`; `_LockDepth`; `_verify_lock_capability`; `exclusive_file_lock`; `lock_held` | mcp/src/agents_remember/kernel/file_lock.py:36-38; mcp/src/agents_remember/kernel/file_lock.py:41-55; mcp/src/agents_remember/kernel/file_lock.py:19-27; mcp/src/agents_remember/kernel/file_lock.py:58-84; mcp/src/agents_remember/kernel/file_lock.py:87-114; mcp/src/agents_remember/kernel/file_lock.py:117-119 |
-| Rewrite refuses without a hold; append and rewrite targets retain containment. | `require_lock_held`; `_prepare_append_target`; `_require_rewrite_access` | mcp/src/agents_remember/controlplane/durable_store.py:363-381; mcp/src/agents_remember/controlplane/durable_store.py:431-433; mcp/src/agents_remember/controlplane/durable_store.py:436-438 |
-| Current raw read, single/batched durable append and atomic rewrite. | `read_log_text`; `append_line`; `append_lines`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:384-388; mcp/src/agents_remember/controlplane/durable_store.py:391-402; mcp/src/agents_remember/controlplane/durable_store.py:405-418; mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
-| Explicit migration validates every transformed record before replacement. | `migrate_jsonl_records` | mcp/src/agents_remember/controlplane/durable_store.py:282-316 |
-| Per-call temporary names and atomic publication have one kernel owner. | `_temp_path_for`; `atomic_write_bytes`; `atomic_write_text`; `_fsync_directory` | mcp/src/agents_remember/kernel/atomic_write.py:21-29; mcp/src/agents_remember/kernel/atomic_write.py:51-70; mcp/src/agents_remember/kernel/atomic_write.py:73-75; mcp/src/agents_remember/kernel/atomic_write.py:32-48 |
-| The host registry has its own domain policy over the same exclusion primitive. | `AuthorityRegistry` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-846 |
-| Watcher exclusion derives the shared lock suffix and filters every directory. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
-| Undeclared host admission leaves live coordinator lock and append writes refused. | `test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused` | mcp/tests/test_dagger_registry_lock.py:89-114 |
+- Current writer declaration, advisory ownership and compaction roles. [1]
+- Major equality and validated record base; tolerant rewrite policy is declared in the module front matter. [2]
+- Guarded coordinator entry translates the shared capability failure. [3]
+- The kernel owns lock naming, thread mutexes, nesting, capability and hold observation. [4]
+- Rewrite refuses without a hold; append and rewrite targets retain containment. [5]
+- Current raw read, single/batched durable append and atomic rewrite. [6]
+- Explicit migration validates every transformed record before replacement. [7]
+- Per-call temporary names and atomic publication have one kernel owner. [8]
+- The host registry has its own domain policy over the same exclusion primitive. [9]
+- Watcher exclusion derives the shared lock suffix and filters every directory. [10]
+- Undeclared host admission leaves live coordinator lock and append writes refused. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. This contract governs one package inside this
 repository; nothing outside it reads these logs.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None. | N/A | N/A |
+None.
 
 ## 260815-DAG-L3 Detached Writer Census
 
@@ -327,93 +313,3 @@ repository; nothing outside it reads these logs.
 compaction roles. Detached workers declare that execution mode and are admitted only to stores
 whose ownership record includes them; the gate and lifecycle-operation/queue paths therefore no
 longer rely on the earlier undeclared-process bypass.
-
-
-## Update History
-- 2026-09-07T00:42+02:00 — Removed remaining obsolete suite-proof citations; current production invariants and historical records remain preserved.
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused` repointed to mcp/tests/test_dagger_registry_lock.py:89-114. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-06T00:28+02:00 — Reconciled the shared kernel lock extraction, retained guard-before-filesystem ordering and error translation, corrected current writer and atomic-publication ownership, repaired source references, and preserved qualified incident provenance and prior history.
-
-
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `migrate_jsonl_records` and confirmed that durable-record migration semantics remain as documented. Verification remains closeout-owned.
-
-- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
-
-- 2026-08-15T09:10+02:00 — L3 content update: added the lifecycle-operation writer role and
-  separated writer identity from compaction ownership; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `durable_store.py` with plane-owned seat identity, routing, and enforcement boundaries.
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: process declaration moved to the kernel checkout-policy
-  owner; lock, append, and rewrite primitives now fail closed against live/outside targets for
-  undeclared linked-checkout code before creating filesystem state. Verification metadata remains
-  pinned until approved closeout.
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the cross-store lock-order doctrine
-  (`exclusive_access` docstring: ONE ORDER ACROSS STORES, TOO — evidence before entry, side effects
-  after exit, never nested) next to the intra-store ordering, with the 2026-08-05 ABBA incident
-  provenance (two py-spy-verified production deadlocks; the event loop parked on the catalog
-  RLock). Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-03T10:05+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 13 live citation findings (6 missing anchors, 6 malformed sources, and 1 duplicate source; the duplicate was live-only drift beyond the 12-item manifest); final scoped check is clean.
-
-- 2026-08-01T19:10+02:00 — Measured-claim repair, confined to the defect section; the contract,
-  lock/ownership, read-policy and reclaim prose was not touched, because the 18:45 pass had it right.
-  The section opened "Ten runs per store at the base commit… Zero torn lines in every run… After the
-  contract landed: 0 lost, 0 raised, 0 torn, all six stores, all scenarios", and the loss column was
-  headed "Measured loss at the base commit" — all of it asserted as findings a reader could check.
-  **Nothing in the tree lets a reader check any of it:** no base-commit measurement artifact is
-  committed, `_store_durability.py::main` can write a JSON payload but none is stored, no test
-  asserts a rate, and no committed test invocation even passes `runs`. That is now said once, at the
-  top of the section. The rates are split by corroboration: 31.45 percent (four sites) and 11.50
-  percent (three) are quoted plainly on the sources' authority; 10.50 / 10.20 / 9.20 / 0.00 percent,
-  "127 of 2000", "ten runs per store" and the whole-not-torn property exist only in this file's own
-  module docstring, which is the text this card documents, and are attributed to it. **The post-fix
-  claim was wrong in both directions and is corrected against the test source, with the class named
-  so the next reader gets there in one step.** `MultiProcessDurabilityTests` asserts `lost == 0` in
-  all three scenarios but over *five* stores in `forced_unlink` (it iterates `APPEND_CASES`;
-  attention-dismissals has no `append`, so it is excluded by construction) and six in the other two;
-  `torn_lines == 0`, `append_error_count == 0` and `reclaim_error_count == 0` are asserted in the
-  `stress` scenario only. Added the one base-commit fact that *is* checkable —
-  `HarnessSensitivityTests` `git archive`s `e52edaf5` and asserts 1-of-1 loss for each unlocked store
-  and 0 for operator-inbox — which is also the only support for `store.py`'s "100 percent in the
-  forced-window scenario". Section heading renamed accordingly; no citation into `durable_store.py`
-  gained a line number. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` left blank, as closeout owns
-  them.
-- 2026-08-01T18:45+02:00 — Citation and accuracy repair; no prose about the read-policy split, the
-  mutex or the lock ordering was changed, because it was right. Converted every citation into
-  `durable_store.py` to symbol-name and docstring-heading form with no line range: the file grew
-  598 → 699 lines mid-leaf and thirteen of the fourteen rows pointing into it had drifted onto
-  other symbols, one claiming to show the six-store ownership register while covering only
-  `GATE_OWNERSHIP`. Added the previously uncited `DO NOT GENERALISE "EVERY REWRITE READS STRICTLY"
-  TO ALL SIX` block, which this card's body already paraphrased. Corrected three false statements
-  about the code: the `declare_process_role` callers are three, not two (`mcp/server.py` `main`,
-  `cli/dashboard.py` `run` and `_dev_app`), with `_dev_app` recorded as the deliberate exception
-  and the only factory that declares, and the uvicorn spawn-child reload worker recorded at its
-  measured weight — an ownership gap, not a durability defect, since the unconditional lock always
-  covered the write; `schema_version_supported` now compares the major for equality and refuses
-  `"0.9"`, so the Todo claiming it accepts `0.x` is gone and the settled rule is recorded instead;
-  and `serving/change_watcher.py` derives `_DURABLE_LOG_LOCK_SUFFIX` from `lock_path_for` and
-  matches by suffix in every watched directory, so the Todo and the reference row claiming it still
-  names `operator-inbox.lock` are both gone and the derivation is recorded. Restated the
-  reclaim-splitting convention against what the six stores actually do — three use a named locked
-  half, three inline read, filter and rewrite under one `exclusive_access` — and filed the one
-  remaining Todo, that `thread_mutex_for`'s docstring claims all six split. Blanked
-  `lastVerifiedCommitHash` and `lastVerifiedCommitDate`, which closeout owns and which the four
-  sibling test cards correctly leave empty.
-- 2026-08-01T18:30+02:00 — Created for 260731-EFA-L5 (durable store integrity): the new
-  `ar-durable-store/1.0` contract module every control-plane JSONL store now routes its file I/O
-  through. Recorded the unconditional per-log lock as the mechanism and ownership as advisory
-  (`check_declared_writer` raises only inside a declared process, `is_compaction_owner` never
-  raises, `require_lock_held` raises from `rewrite_lines` about the calling thread's own lock); the
-  six-store ownership register including the operator-inbox `compaction_owner=None` exception; the
-  deletion of the `serialized` opt-out and the 31.45 percent an unlocked single-writer draft
-  measured; `rewrite_lines` never unlinking; the strict/tolerant read split with the
-  rewrite-reads-strictly property stated per store rather than as a blanket; and the process-wide
-  `RLock` described as defending a simulated regression rather than fixing an existing thread race.

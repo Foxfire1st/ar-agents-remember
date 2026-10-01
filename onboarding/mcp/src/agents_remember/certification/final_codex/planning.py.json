@@ -1,0 +1,140 @@
+{
+  "path": "mcp/src/agents_remember/certification/final_codex/planning.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The plan record compiles only from the exact canonical registry compilation for a certifying profile planning the Gate-1..4 prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "397da6f6ac539bb3ac13cb07bb94a89aa3d7aa48",
+            "content": "sha256:93b72421e6fb94a55699fb9fb435cdb6537bb062c916a8e6a6759a696abd2cea",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_final_codex_plan_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The R11 canonical registry validation runs before plan admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d916d4880dd2fedf1175bcf95c75a07eb27b70e1",
+            "content": "sha256:30389e161b45df1fefaf5a7a9e2a7181f93081a5229aad6fe1a8d3b49fba6571",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_registry"
+            },
+            "path": "mcp/src/agents_remember/certification/validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Certifying-plan admission refuses altered plan bytes against the canonical registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28a5ac4f07e57b593c890d76028233190938a659",
+            "content": "sha256:9f15389a1fe945e412a282a6e8b734884ef1ebb6a9b96e71cbdd755d83f9b2a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_certification_plan"
+            },
+            "path": "mcp/src/agents_remember/certification/planning.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The immutable plan record is defined in the final-codex models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:ac872726d97388f8489c3b019c4e361fee7c40c888ecbda85186958257a8d9ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexPlanRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Gate-1..3 manifests come from the shared result-manifest contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ee9bd6fd62848e54b9ca45db90d0826d4933cc8",
+            "content": "sha256:02bfb2ef935ea082c5bc4d1796e006f9f90b2e67340b81566859b2a496244cc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateResultManifest"
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ee9bd6fd62848e54b9ca45db90d0826d4933cc8",
+            "content": "sha256:5632dd982f1758da5b27af1f1d9ceaf0d37cec772bc3101501a482f87789020f",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A registry profile declares repository-neutral certification identity and inputs.\n\nAnchor: \"class RegistryProfile\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ee9bd6fd62848e54b9ca45db90d0826d4933cc8",
+            "content": "sha256:d5ccc86ff53ee537086614146a9b6627b88b24e749fb19b9b108a29b7a792820",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The certification plan binds its candidate and ordered gate plans.\n\nAnchor: \"class CertificationPlan\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ee9bd6fd62848e54b9ca45db90d0826d4933cc8",
+            "content": "sha256:649394bdb27584dc0673b48145d4923bdc1448f5f3c2e5df4f19c3f1477145ee",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 303
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

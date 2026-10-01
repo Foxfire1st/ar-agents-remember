@@ -1,0 +1,167 @@
+{
+  "path": "mcp/tests/test_checkout_coordination_isolation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Linked checkout is derived from loaded source not cwd.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:7b9e477794f9711a01e233e8b69512a8f667059c3378bfef8bb4bc9548485d54",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_linked_checkout_is_derived_from_loaded_source_not_cwd"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The reserved lifecycle-operation mode is declarable by any caller, and reports as a writer of every store `mcp` owns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:8a169bdbcf1c97f4712f9841b1cbf866e2885f7a510d35e4cfcde5e9d1051875",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_reserved_lifecycle_operation_mode_is_declarable_by_any_caller"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checkout config ignores live authority and uses only dummy root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:44eb5a95ca2d65dcce46ff05848bad44d1fcbccb21233a271bf8d69ff140afe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_checkout_config_ignores_live_authority_and_uses_only_dummy_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Incident shaped inbox write lands only in leaf dummy root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:55f0df658d42a0ea337fa47c05c8bfa0d2ffc201b5447f2a6842ee3d6de035b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_incident_shaped_inbox_write_lands_only_in_leaf_dummy_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Store guard refuses escape before creating lock or parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:18df38e6032b741c49e0ec95de1f55ec9d6b90398d884c1255201d6d3c19b0a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_store_guard_refuses_escape_before_creating_lock_or_parent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Enclosure report write is allowed without opening coordination escape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:e2e8e2edc34a150d39a8357e94d36217bd0707450f56bfd2ffa9d53e1c520839",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_enclosure_report_write_is_allowed_without_opening_coordination_escape"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Rewrite guard refuses a manually constructed live target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:9ab727a4471a903f66c6c36fbc73239e0a501d3798df4d546447923746e696e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rewrite_guard_refuses_a_manually_constructed_live_target"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Primary checkout undeclared config access fails closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:7620870ce2d414f236eb0c98bf52b22af7dc896de9af500f842346c204ab1a07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_primary_checkout_undeclared_config_access_fails_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Explicit test mode preserves temporary store writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:948f7e8675cce5e0c58602622f77dd3c5d7165bdfbccd911f37f9a20fd1a6f85",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_explicit_test_mode_preserves_temporary_store_writes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Any mode declaration lifts the primary refusal and the write confinement, with the refusal itself as the positive control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
+            "content": "sha256:471d4eb771897f57b3e08ac1820c77f2fbb76d9565c0194bf4e402529f823e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_any_mode_declaration_lifts_the_primary_refusal_and_confinement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

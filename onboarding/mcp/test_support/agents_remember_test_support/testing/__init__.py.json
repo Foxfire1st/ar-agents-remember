@@ -1,0 +1,58 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.\n\nAnchor: \"Test infrastructure package; public contracts live in their owning leaf modules.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "025e3f68be6e6d4a192a8578ebed57960d084ea8",
+            "content": "sha256:b6dd8d434d246099fb362e8b34d46ddf3e3cf853969e3abd92c852e0145bbb80",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.\n\nAnchor: \"Test infrastructure package; public contracts live in their owning leaf modules.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "025e3f68be6e6d4a192a8578ebed57960d084ea8",
+            "content": "sha256:b6dd8d434d246099fb362e8b34d46ddf3e3cf853969e3abd92c852e0145bbb80",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.\n\nAnchor: \"Test infrastructure package; public contracts live in their owning leaf modules.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "025e3f68be6e6d4a192a8578ebed57960d084ea8",
+            "content": "sha256:b6dd8d434d246099fb362e8b34d46ddf3e3cf853969e3abd92c852e0145bbb80",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

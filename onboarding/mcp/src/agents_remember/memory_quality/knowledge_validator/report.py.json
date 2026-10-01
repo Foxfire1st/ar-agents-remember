@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/report.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One violation and its rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e015e7475c441669286e4255e16ee6d07d666ad",
+            "content": "sha256:9c5a57e0afee9943dd47f6917e0471847bcecb442f78501872f937e74cbec9e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "Violation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The report and its refusing/report-only split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e015e7475c441669286e4255e16ee6d07d666ad",
+            "content": "sha256:de65b2e56666ef469c54d24a31a02df090c98023e942a7a48f506e9d9f1f4b55",
+            "locator": {
+              "kind": "symbol",
+              "name": "ValidationReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusal lists every refusing violation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e015e7475c441669286e4255e16ee6d07d666ad",
+            "content": "sha256:99155802740038c36213dde4bc92738f5b150f9b6125464ef9afaedc2922a651",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeValidationError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A shape refusal names file, field and rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "241d6cc3caa87338325c7423fe944e8f52fac5e0",
+            "content": "sha256:36b41f3107d535493c402b1f71629f33e93ce08797fa145b8364fecf85b1626f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_shape_refuses_a_bad_field_and_names_file_field_and_rule"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

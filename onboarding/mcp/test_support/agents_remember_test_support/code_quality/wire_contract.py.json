@@ -1,0 +1,455 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `Taint` (lines 84-92) — Local names known to hold a dumped dict, or a container holding one..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:c3a9a28da3a4d1e5826b78e74a79e2eed890a06773366521a3d34d84b64a99e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "Taint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `_bindings` (lines 185-193) — ``(target, value)`` for every single-target assignment in this scope..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:4c302d435490075973e9d608cb65c9843f56988d28e6e7eca6265a176914bad8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bindings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `scope_taint` (lines 196-218) — Local names holding a dumped dict, to a fixed point over the scope's assignments..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:e7815168ce2ab3066c8afbbd8ef6180ee7322a6dde9606e4851577399aa85350",
+            "locator": {
+              "kind": "symbol",
+              "name": "scope_taint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `returns_dump` (lines 221-228) — Whether this function hands a dumped dict back to its caller..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:bfd0daad44c1d53c3133241ee866d023ac1deb28cf7a004ebff40d2c27dda261",
+            "locator": {
+              "kind": "symbol",
+              "name": "returns_dump"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `returns_a_parameter` (lines 231-248) — Whether this function hands one of its own arguments back..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:d94427f511d8d441f4692c0f71f8ab46bde507fbe72ca1978f549ea0cea7a928",
+            "locator": {
+              "kind": "symbol",
+              "name": "returns_a_parameter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the function `_functions` (lines 251-254).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:398f2d8c12904491e157027d245cc5f9e0e4ce66cba39a99a45f37674dcf8262",
+            "locator": {
+              "kind": "symbol",
+              "name": "_functions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `dump_returning_names` (lines 257-285) — Functions that hand a dumped dict back to their caller, to a fixed point..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:5d9bb3ef451d45a79c5e2ca0692e58ff109a611f0f1901dd34af7a123a0569a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "dump_returning_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Defines the function `validating_names` (lines 288-300) — Names of functions that hand a parameter to ``model_validate``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:162bdadc4c1414a396c307f5af8e24e6812c4b751a88cf5c97c9e9ca2748f472",
+            "locator": {
+              "kind": "symbol",
+              "name": "validating_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Defines the function `_calls` (lines 303-304).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:8256eb4ad81fa99dda0bfeaeddb9c51143c074e8acdfcd3ee041bbc1455b4ed8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_calls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Defines the function `_validates_one_of` (lines 307-310).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:742fd204eb5604be5ef44d513b65ea4893653be61d7314c94da5eb0af7c7c992",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validates_one_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Defines the function `_mutation` (lines 313-331) — ``(name, line, how)`` when this statement changes a tainted dict in place..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:a168e4fb5c5fcd725b53ae46e528d0591204f728a5ae509f1f829808dcaaae76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mutation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `Producers` (lines 96-105) — The two ways a call can hand back a dumped dict, discovered package-wide..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:c5bd62b64053fbd408f46a25b5c3e5d794733bd77eb25d732cfa31962953105c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Producers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Defines the function `_subscript_name` (lines 334-337).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:0204987097e3cc8576265acfcd7bad3b9cf48194a6005a9d1e7a47dd9616dc3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subscript_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Defines the function `_method_mutation` (lines 340-348).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:f11eff27f83aa33938c6979842a6801bcac89843aef3292c7969f1cfb09cad12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_method_mutation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Defines the function `_is_owner_merge` (lines 351-359) — ``x.update(served_state_tail(...))`` -- the one sanctioned serve-time tail merge..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:2eb776abce512093928b42ba5d18ae43c769ad01fdab4d1dd73ec6d12754a3e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_owner_merge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Defines the function `_validated_after` (lines 362-372) — Whether ``name`` is handed back to a model below ``line``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:83e8698f7c53a375a6e2f3695b943b00e4d215705998b20025231287dac75e9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_after"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Defines the function `module_mutation_offenders` (lines 375-389) — Every dumped dict mutated and then let out of its function, in one parsed module..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:a7c9bd0c394670f057f613ecc2ffaa6eb89bc8548c2969a4593685517095643d",
+            "locator": {
+              "kind": "symbol",
+              "name": "module_mutation_offenders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Defines the function `_function_offenders` (lines 392-411).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:42d67f4298768491aa2024b2cdcedebe27e18462dc1272a4f1588817f8d2137b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_function_offenders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Defines the function `_parse_package` (lines 414-419).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:8683c8edc43f0c0f922a510c6467eb407d100cbe2af3dea40c35b2665d545cf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_package"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Defines the function `post_dump_mutation_offenders` (lines 422-432) — Every place the package changes a payload after its model stopped describing it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:a9d48758fcb53a2b089f084f690df0cb41cffaf956a6d539135bc653a3980299",
+            "locator": {
+              "kind": "symbol",
+              "name": "post_dump_mutation_offenders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Defines the function `served_tail_merges` (lines 435-454) — Where the sanctioned serve-time tail owner is actually called..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:e935b7bf1f7daf59b1e963712c4b9fcaa17b72951fa5d367657535f428bf229f",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_tail_merges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `_is_dump_call` (lines 112-117).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:4a61a1044308f675712633db1c37749b28f86852ea55dec800770cb2098dd06f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_dump_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `_callee_name` (lines 120-126) — The terminal name of a call target -- ``f``/``x.f``/``a.b.f`` all give ``f``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:e97a66eeb02beba07c819a7678ddb12b3d605f655b39d52a2fae8dd930d3a1dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_callee_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `_is_copy_of` (lines 129-137) — ``dict(x)``, ``x.copy()``, ``copy.deepcopy(x)`` -- a copy of a dump is still one..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:4ced4e2cf3fec55b536728cbaee912078f68fbb4ba9c8f6d1798421d36b76133",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_copy_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `_passes_through_a_dump` (lines 140-144) — A pass-through called on a dump returns that dump -- see :func:`returns_a_parameter`..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:8fdd3571c1cd2951d5740b1687f4f24916ee29911d34fe3faaedb219e16d4981",
+            "locator": {
+              "kind": "symbol",
+              "name": "_passes_through_a_dump"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `produces_dump` (lines 147-158) — Whether this expression evaluates to a dict that came out of a model..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:6f8ea9e102ef16863bc34b80729077c38a025e99082180eda96ebcf312cb7769",
+            "locator": {
+              "kind": "symbol",
+              "name": "produces_dump"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `_wrapper_produces_dump` (lines 161-175) — The forms that wrap another expression: a container index, a spread, a merge..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:1f8720f426a04adfcaba0becd83f83751d193787248135b866a6612d9536c220",
+            "locator": {
+              "kind": "symbol",
+              "name": "_wrapper_produces_dump"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `_holds_dump` (lines 178-182) — A tuple/list literal with a dump inside it -- how ``_ProjectionBodyCache`` memoizes..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c01802784fc9c216eb7349505aae4182e14719f",
+            "content": "sha256:b725ae6a609122e0c9f4a32c8dfcb60d192fc31c1f4f2e0dc7801083bb317c3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_holds_dump"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

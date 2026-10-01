@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [],
+  "exclusions": [],
+  "id": "INV-WS8GFNAC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: The memory layer's own ignore file documents route indexes as a regenerable cache whose absence the read path tolerates by design, and the cited owner is the probe that answers when the index is not there."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "5acff783-e268-411c-8f92-c4226b1cd6a0",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The ordinary paired read tolerates an absent generated route index by falling back to a direct sidecar probe, so a derived onboarding artifact's absence is a supported state rather than a read failure.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,15 +1,5 @@
 # dashboard/src/index.css
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/index.css`                        |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-21T05:30+02:00                           |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [dashboard/src overview](overview.md)
@@ -98,70 +88,13 @@ The CRT effects overlay no longer uses full-screen `mix-blend-mode:multiply`. It
 scanline and vignette treatment can remain a static compositor layer rather than forcing a whole-screen
 re-raster for scroll, video, or animation invalidations.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `:root` vars referenced by the base layer. | ":root" | dashboard/src/styles/tokens.css:5-5 |
-| The Panda PostCSS plugin that fills the layers. | "@pandacss/dev/postcss" | dashboard/postcss.config.cjs:10-10 |
-| The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot. | "base.css" | dashboard/src/styles/webtui.css:12-12 |
-| Asserts the exact layer-order statement and the unlayered freeze. | "S1 spike (d): layer order + focus-visible survival (React Aria intact)" | dashboard/src/test/webtuiSpike.test.ts:156-172 |
-| The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes. | "word-break: break-all" | dashboard/src/index.css:117-127 |
-| Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). | "export function InspectorFact"; "export const MarkdownBlock"; "export function SessionRail" | dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:98-98; dashboard/src/panels/session-cockpit/SessionRail.tsx:161-161; dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx:88-88 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-05T13:06:07+02:00 — 260731-EFA-L6 residual curator: repointed the WebTUI-base row from the untracked dashboard/node_modules/@webtui/css/dist/base.css:1-1 to the tracked RV-1 comment block dashboard/src/index.css:117-127, which states the @webtui/css `word-break: break-all` base rule and the root override that neutralizes it; anchor corrected to the exact tracked literal "word-break: break-all".
-
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 6 repository-reference citations (6/6 anchored and sourced; scoped citation check clean).
-
-- 2026-07-24T13:17:50Z — Documented the compositor-safe CRT overlay change. Verification hash/date
-  remain pinned to the pre-commit source stamp.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the RV-1 root override (LOAD-BEARING) —
-  an unlayered `html, body, [data-view="sessions"] { word-break: normal; overflow-wrap: break-word }`
-  that neutralizes `@webtui/css`'s inherited `word-break: break-all` app-wide. Captured the durable
-  lesson: a third-party scoped reset in a lower layer silently defeats local overflow-wrap patches; the
-  test is computed-value verification (the `[data-view="sessions"]` inclusion is required because postcss
-  rewrites webtui's `body,html` rule onto the scope root; raw-id spans keep explicit `break-all`).
-  Verification pinned to the leaf base (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (R14): added the `pulseSlow` keyframe — the cockpit
-  seat-state pulse (2.4 s ease-in-out opacity, ruled 2026-07-16, never steps()) consumed by the
-  grammar's single renderer `StateDot`; the header comment names the ruling and the
-  effects-off/motion-reduce freeze paths. Verification metadata pinned to the leaf base until
-  closeout stamps the L2 code commit.
-- 2026-07-17T00:25+02:00 — 260715-FEUI-L1 S1 (WebTUI adoption, OQ-D): the FIRST `@layer` statement
-  gained the `webtui` slot between `effects` and `tokens` (`reset, base, effects, webtui, tokens,
-  recipes, utilities`), hosting the scoped WebTUI skin from `styles/webtui.css` so Panda layers
-  always win a conflict and the unlayered freeze stays sovereign; the header comment documents the
-  slot. The production minifier drops the order statement but emits layer blocks in declaration
-  order — semantics preserved because all layered CSS lives in the one bundle. Verification
-  metadata pinned to the task base until closeout stamps the L1 code commit.
-- 2026-06-21T23:35 — removed the `@keyframes powerup` rule and updated the canvas-motion doctrine header
-  comment: the indexing→nominal engine "powerup" is now a Motion opacity pulse owned by the charge rect, and
-  the cyan→mint step is an instant `engineCharge`-class fill flip — so no `powerup` CSS keyframe remains and
-  the canvas carries no animation carve-out. Only `flicker` + `pulse` survive as global keyframes.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-21T02:27+02:00 — slice 05k: deleted the nine Engine Room canvas `@keyframes` (`chargeSweep`,
-  `conduitDraw`, `pktRun`, `attnBreath`, `stopFlash`, `closeoutSweep`, `warpSurgeUp`/`warpSurgeDown`,
-  `landingIn`) — the canvas motion is now GSAP (`useEngineTimeline`) + Motion (`EnclosureCanvas`), never CSS
-  (`05f` §8). Kept the app-wide `flicker` + `pulse` keyframes (`pulse` is still driven by the rail / cockpit /
-  topology + the engine-room `cva`s) and the `data-effects=off` freeze (incl. the `conduit-packet` /
-  `warp-surge` display-freeze rules). **Corrected the 5i note**: `chargeSweep` was NOT orphaned — through 5i
-  it backed `engineReindexCharge` (the reindex pulse); only `conduitDraw` was truly orphaned. Verification
-  metadata pinned until closeout stamps the 05k code commit.
-- 2026-06-18T13:01+02:00 — slice 5h coupler fix: added the `warpSurgeUp`/`warpSurgeDown` keyframes (the warp-core surge on the ledger coupler — two hot bands born at the link, splitting up/down; hidden under effects=off, no settled state) + the `warp-surge` freeze rule. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T11:55+02:00 — slice 5h H2: added the `closeoutSweep` keyframe (the T13 closeout-train left-to-right derived fill on closeout-pending; per-beat delay set inline, frozen by effects=off to the all-done strip). Verification metadata pinned until closeout stamps the 5h H2 code commit.
-- 2026-06-17T16:15 — slice 5g G5: added the `stopFlash` keyframe (the t14c terminal integration-conflict
-  STOP — a brief flash ×3 then steady, frozen by the `effects=off` rule). Verification metadata pinned
-  until closeout stamps the G5 code commit.
-- 2026-06-17T14:00 — slice 5g G3: added the `attnBreath` keyframe (the gentle alarm-parity breathing for the
-  failure-overlay attention badge — distinct from the sharp `pulse` fault flicker). Verification metadata
-  pinned until closeout stamps the G3 code commit.
-- 2026-06-17T12:47 — slice 5g G2: added the Engine Room pod-stage motion keyframes — `chargeSweep`
-  (center-out engine charge), `conduitDraw` (conduit draw-on), `pktRun` (travelling flow packet) — plus a
-  freeze rule hiding `conduit-packet` under effects=off. Verification metadata pinned until closeout stamps
-  the G2 code commit.
-- 2026-06-15T17:00 — Created for slice 5d: the Panda entry + reset/base/effects layers (reset, base,
-  CRT overlay, keyframes) extracted from the monolith. Verification metadata pinned until closeout
-  stamps the 5d code commit.
+- The `:root` vars referenced by the base layer. [1]
+- The Panda PostCSS plugin that fills the layers. [2]
+- The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot. [3]
+- Asserts the exact layer-order statement and the unlayered freeze. [4]
+- The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes. [5]
+- Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer). [6]

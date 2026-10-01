@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_errors.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_errors.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [worktree integration overview](../overview.md)
@@ -45,20 +35,20 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module defines `DirectLandingError` as its public seam. | `DirectLandingError` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_errors.py:8-25 |
-| The typed recovery next-action carried by the error. | `next_action` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_errors.py:15-24 |
+- The module defines `DirectLandingError` as its public seam. [1]
+- The typed recovery next-action carried by the error. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
@@ -68,14 +58,3 @@ Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, consumers retur
 unavailable/stale reason and route the record through its canonical operation. The optional
 `next_action` on `DirectLandingError` is the typed carrier the application payload forwards
 (`application/lifecycle/direct_landing.py`). Part of the landed L25 candidate `99dc249b`.
-
-## Update History
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  `DirectLandingError` now carries an optional typed `next_action` so task-intent refusals
-  advertise the exact recovery route; documented the new seam. Verified at code commit
-  99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_errors.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

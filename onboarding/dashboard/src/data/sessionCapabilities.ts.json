@@ -1,0 +1,73 @@
+{
+  "path": "dashboard/src/data/sessionCapabilities.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact-session classification, menu rules, cycling, and effective selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:2eceee51c5792979c8fc4d6ad3294277ede42d3379cf1c9a44593661f5909624",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchSessionCapabilities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Boundary and derivation tables, including fresh Claude and provider-qualified Pi keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:1e723d3410698eed1dfd96b91a35fa31d7eece10b98305be3f07ec2f0841c827",
+            "locator": {
+              "kind": "symbol",
+              "name": "classifySessionCapabilitiesResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Wire shapes validated by the client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35acdc46139bab1b67ad1fd5638257954d34e962",
+            "content": "sha256:ecb8a62dcce2473d97da3970bc8b22dcb3f363cddfad309a3d5ca69dfa1a277b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitySnapshotWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact-session serializer and error contract implemented by the daemon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f52198ca4ee230050c39d837795dcd82539f638",
+            "content": "sha256:bf4de469c0940f3b5ab632c1b5850427fd8f00e086eed4e94e240d1954052be1",
+            "locator": {
+              "kind": "symbol",
+              "name": "capability_snapshot_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

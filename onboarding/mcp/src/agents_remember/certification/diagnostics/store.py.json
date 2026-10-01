@@ -1,0 +1,131 @@
+{
+  "path": "mcp/src/agents_remember/certification/diagnostics/store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The store must keep one stable manifest per exact candidate that never overwrites or satisfies the certifying quality-report manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:587a16b97af08864de49e8abc27e1637485da4eb9c0d57f715a19c3085cb36cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_isolated_namespace"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Atomic read-modify-write uses the shared kernel atomic writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53a3558f41f4a2bd4da0bbff2ba2674fe92b5a00",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Digest helpers and typed findings come from the certification contract foundation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/digests.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ee9bd6fd62848e54b9ca45db90d0826d4933cc8",
+            "content": "sha256:4c6b249bef59d93e837829c6843ca2db493718e4a1f4d865cfc60acd6ff577e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationContractFinding"
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The store revalidates the frozen records defined in the diagnostics models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:f8943e21ea5546b498f5ba95e2be5444a59e707e1ec1018dca990b57338f21b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRunManifest"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:5b1d708aefc1569c77cfd35ba439b2eb760e8a3a826a75cd170fc096a96b07f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticAttemptRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The run controller publishes attempt and terminal results exclusively through this store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3588e55cdf21a9902cd2d3eb1a2aaf212e56338b",
+            "content": "sha256:69d363a2385f12cebec6f59576b9fb216007e4577cdd19ca4512c4df245afd6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticExecutionEngine"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The store is filesystem-local and repository-neutral; no Dagger, service, or external store is touched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:b1306db7754608d08bb78f7fffb745b93549b97e8ec4768f2952dc768f35d366",
+            "locator": {
+              "kind": "symbol",
+              "name": "_update"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

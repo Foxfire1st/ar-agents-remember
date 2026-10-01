@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/candidate_workspace.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/candidate_workspace.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -121,45 +111,33 @@ lifecycle without a test noticing.
 None recorded for this slice. The disposal verdict names the enclosure owner as the remover by design; a leaf that
 wants automatic reclamation should add it there rather than here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The four public operations this module owns. | `create_candidate`; `clone_candidate`; `open_candidate`; `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:100-126; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:129-138; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:141-173 |
-| The two-phase creation and the ordering that makes `created` honest. | `_two_phase_create` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:179-221 |
-| The empty-schema builder and the baseline clone that reuses the publication freeze. | `_build_empty_candidate`; `_build_cloned_candidate` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:224-243; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:246-291 |
-| The expose step: verify staged database, seal and read back the receipt, flush, then install. | `_expose_candidate`; `_read_staged_candidate` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:306-357; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:360-392 |
-| The shared verification path a resume and a disposal both take. | `_read_candidate`; `_candidate_inputs`; `_receipt_denial`; `_open_for_verification` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:398-427; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:430-454; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:457-474; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:477-502 |
-| The two narrow disposal grounds, each naming the identity it was measured against. | `_disposal_identity_refusal`; `_published_identity_refusal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:505-521; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:524-575 |
-| The occupied-destination refusal and the private stage directory. | `_occupied_refusal`; `_stage_directory` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:581-597; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:600-613 |
-| The close that deliberately leaves SQLite's own recovery files in place. | `_close_without_discarding_peers` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:622-632 |
-| The receipt write/read/binding comparison this lifecycle depends on. | `build_receipt_for_candidate`; `read_candidate_receipt`; `receipt_binding_refusal` | mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:89-99; mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:61-86; mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:102-160 |
-| The freeze procedure a clone reuses, and its closed-file guarantee. | `freeze_closed_snapshot` | mcp/src/agents_remember/memory/knowledge/closed_snapshot.py:66-109 |
-| The result vocabulary these operations return. | `CandidateResult`; `CandidateDisposalResult`; `CandidateDisposition` | mcp/src/agents_remember/models/knowledge/snapshot.py:188-221; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354 |
-| The new refusal codes the lifecycle introduced, including the honest durability code. | `selected_input_unavailable_refusal`; `snapshot_incomplete_refusal`; `publication_durability_unconfirmed_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:882-902; mcp/src/agents_remember/memory/knowledge/refusals.py:951-974; mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1039 |
-| The nodes that protect the lifecycle's load-bearing behaviours. | "test_a_live_reader_does_not_let_the_write_boundarys_close_lose_the_commit"; "test_a_crash_restart_keeps_the_committed_batch_and_drops_the_abandoned_one"; "test_a_failed_candidate_flush_is_refused_before_the_directory_is_exposed" | mcp/tests/test_knowledge_candidate_workspace.py:206-246; mcp/tests/test_knowledge_candidate_workspace.py:286-316; mcp/tests/test_knowledge_candidate_workspace.py:403-425 |
+- The four public operations this module owns. [1]
+- The two-phase creation and the ordering that makes `created` honest. [2]
+- The empty-schema builder and the baseline clone that reuses the publication freeze. [3]
+- The expose step: verify staged database, seal and read back the receipt, flush, then install. [4]
+- The shared verification path a resume and a disposal both take. [5]
+- The two narrow disposal grounds, each naming the identity it was measured against. [6]
+- The occupied-destination refusal and the private stage directory. [7]
+- The close that deliberately leaves SQLite's own recovery files in place. [8]
+- The receipt write/read/binding comparison this lifecycle depends on. [9]
+- The freeze procedure a clone reuses, and its closed-file guarantee. [10]
+- The result vocabulary these operations return. [11]
+- The new refusal codes the lifecycle introduced, including the honest durability code. [12]
+- The nodes that protect the lifecycle's load-bearing behaviours. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the module's docstring now records that an owning operation may keep its own local record in the candidate directory, and this card carries the same fact.** The change is documentation-only in this file — `application/knowledge_curator_ingest.py` is what writes `curator-allocation-journal.json` beside `candidate-receipt.json` — but it is a fact about *this* module's contract, because this module is where the candidate's layout is defined, and a reader who took "the layout is fixed" to mean "these are the only files" would be wrong. The body paragraph now says which part is fixed (which file is the working database, so the admission that opens the candidate for writes and the publication that reads it cannot disagree) and which part is not (a sibling local record an owning operation writes, of the same kind as the receipt). No claim was weakened, no range moved, and the verification pair is retained exactly as recorded. No commit was made.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1040 to mcp/src/agents_remember/memory/knowledge/refusals.py:1020-1039, the range the cited construct now occupies
-- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new candidate lifecycle. It records the four load-bearing properties (two-phase creation that never exposes a half-built candidate, occupied-destination-as-resume, clone-from-a-closed-snapshot, and disposal as a verdict rather than a deletion), the expose ordering that makes `created` honest (verify → seal → read back → flush → install → read back through the ordinary resume path), why a baseline clone deliberately takes no filesystem lock, and the two narrow disposal grounds. It also records that `_close_without_discarding_peers` exists so a later change to `OpenedKnowledgeStore.close` cannot quietly reintroduce a peer unlink underneath the lifecycle. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

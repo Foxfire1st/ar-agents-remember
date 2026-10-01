@@ -1,0 +1,180 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/lifecycle.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The singleton these builders drive through `application/lifecycle_tools`, plus the ambient requirement and the ask builder.\n\nAnchor: \"def require_ambient(\"; \"def build_ask(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:6f2b87fe99dd83c3b0ffcfeb076e64ff0e9b61309f2bfef46c8c364933d634c9",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:14ca95de9a248b98ca91f6eb09f3d3ee9ba8412e03c422232154b87efa8a357c",
+            "locator": {
+              "end": 674,
+              "kind": "line_range",
+              "start": 674
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:acee2aa71fe96d6cba5c36f2011b796283d8306f92edbbfcbc817751bad848e9",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `coerce_phase` boundary validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:9b7f9bd5c7f9e61117b5d48e6a73572d00bad75dc5e063ed482c8bf30a09c8f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "coerce_phase"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The choke point each builder returns through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source of `FRONT_HALF_RUNDOWN`, emitted as `frontHalfRundown` on `lifecycle_start`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
+            "content": "sha256:3e45fb0729a0ec1fdf4e8893653f53f0511f0f6291ffde48fd912dc5aedb6ed6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FRONT_HALF_RUNDOWN"
+            },
+            "path": "mcp/src/agents_remember/application/next_step.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18b7541268574f9650b9b141d6136471ecd98a06",
+            "content": "sha256:fdb1a663afba3ce7dc1afe9a45f79a2c532e26b6f8758ddb065ab778ba2023fa",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/lifecycle_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The response models these payloads validate against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:782867d4b13e1c95aef1654d92f0bec55bb2067abaff8867e1a70e3710673517",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleResponse"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Where these lifecycle signal tools (now including `lifecycle_turn_end_notification`) are declared — `register_lifecycle_tools`, which takes the config unused because these payloads act on the ambient lifecycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d6d7125121aba67eb10bab5a38db8bb2119408d",
+            "content": "sha256:479d52946e2492869af55fee0dee76ca47ef3a356d21eec9d70a9aea6bc12fd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_lifecycle_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/lifecycle.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d6d7125121aba67eb10bab5a38db8bb2119408d",
+            "content": "sha256:12a968e469442434bf95d36c0df447f06316e0e74b63f1476488921d0a020dbf",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The design's signal surface (§1.3).\n\nAnchor: `### 1.3 Signals (the complete model-facing surface)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:2703fdaa300d365a0dc50e6585c953da1a6f7e2503f01ae7f57b9df25e434b70",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

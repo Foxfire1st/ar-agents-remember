@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/replay/scenarios.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/replay/scenarios.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T22:23+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification contract overview](../overview.md)
@@ -42,43 +32,26 @@ Scenario expectations and outcomes use the models vocabulary; evaluators are pur
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. The governing task artifacts (the CCR-R17 approved replay protocol requirement packet and the 17_measured-replay-and-reduction leaf doc) define the seventeen mandatory acceptance scenarios; task artifact paths are not repo-relative citations, so these facts are recorded as prose here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The replay scenario catalog records each required scenario and its expected views. | "REPLAY_ACCEPTANCE_SCENARIOS: tuple[ReplayScenarioExpectation, ...] = (" | mcp/src/agents_remember/certification/replay/scenarios.py:32-172 |
-| Every mandatory replay scenario is evaluated against measured evidence in declared order. | "def evaluate_all_replay_scenarios(" | mcp/src/agents_remember/certification/replay/scenarios.py:186-190 |
+- The replay scenario catalog records each required scenario and its expected views. [1]
+- Every mandatory replay scenario is evaluated against measured evidence in declared order. [2]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Scenarios consume the measured evidence envelope and rail placement vocabulary. | `ReplayScenarioEvidence`; `RunMeasurement`; `ReplayRailPlacement`; `ReplayProfileSnapshot` | mcp/src/agents_remember/certification/replay/models.py:362-385; mcp/src/agents_remember/certification/replay/models.py:255-286; mcp/src/agents_remember/certification/replay/models.py:313-340; mcp/src/agents_remember/certification/replay/models.py:350-359 |
-| Certification contract findings carry typed refusal details. | "class CertificationContractFinding" | mcp/src/agents_remember/certification/models.py:146-149 |
-| Rail identity binds its declared rail id and version. | "class RailIdentity" | mcp/src/agents_remember/models/certification/base.py:36-42 |
-| Unknown scenario ids raise the shared certification contract error. | `CertificationContractError` | mcp/src/agents_remember/errors.py:22-31 |
-| The comparison builder evaluates all scenarios over measured evidence. | "outcomes = evaluate_all_replay_scenarios(evidence)" | mcp/src/agents_remember/certification/replay/compare.py:82-82 |
-| The facade exports replay scenarios and their evaluators alongside shared replay contracts. | "__all__ = [" | mcp/src/agents_remember/certification/replay/__init__.py:56-88 |
+- Scenarios consume the measured evidence envelope and rail placement vocabulary. [3]
+- Certification contract findings carry typed refusal details. [4]
+- Rail identity binds its declared rail id and version. [5]
+- Unknown scenario ids raise the shared certification contract error. [6]
+- The comparison builder evaluates all scenarios over measured evidence. [7]
+- The facade exports replay scenarios and their evaluators alongside shared replay contracts. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Acceptance projection stays repository-neutral over the measured evidence envelope. | - | - |
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=49921a3a09bd43ba330b05cebd819f498834f23402d754b95a3c144f3d9335d7; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Corrected the shared RailIdentity description to its actual id/version fields; preserved prior history and pins.
-
-
-- 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `CertificationContractFinding`; `RailIdentity` repointed to mcp/src/agents_remember/certification/models.py:169-172; mcp/src/agents_remember/certification/models.py:59-65. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T22:23+02:00 - 260831-CCR-L17 Gate-5 memory pass: created this card for the new CCR-R17 seventeen-scenario projector delivered in code commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185` (tree `f97c4969d7ddb93eed75c80a4936fc05fab8e2eb`).
+Acceptance projection stays repository-neutral over the measured evidence envelope.

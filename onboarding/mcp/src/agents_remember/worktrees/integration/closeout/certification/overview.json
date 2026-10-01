@@ -1,0 +1,197 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification",
+  "references": {
+    "1": {
+      "note": "Admission freezes actual preparation and current owner input; selection binds the exact originals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:c17a03574fbe306a7ad0d15274068b70e5329d7b95e0ca404326d21add4d374a",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_closeout_certification"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:3587895d3f6cdefd0169fc0165515535347244a8bc4f2efc23e1cd2f5b4ad7c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "initial_certification_state"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Currentness rechecks the profile, owner semantics and route review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89043a5e28ba717250523696bba193d211591458",
+            "content": "sha256:21bb54c9d29b6a19df9620fabc27f40f7b4af2a7c6fdf6acbbef54748bf0a847",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_selected_currentness"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recovery derives actual input changes and requires complete prior-red correction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:18ce8e7f93cecc7db5da991ac4472efb36d0b1f0ecb8408df75bbb97cefb40e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_certificate_input_changes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb3a76e9bd747f3b1fd8c8532b8e09af18981f38",
+            "content": "sha256:9c62eae87147694591f7ab429a97f79fbabfd0fa441b08c89a903dfee23d5ea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_prior_red_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Journal selection reopens the complete original graph before its live-owner CAS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:b6bc617ff4a35d179179efc42681e2139ce39bc662fdb411ab7175de13d4d44c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_selected_certification"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f360ce09c8a830fd302df8ba6dcd6ab62fd786ac",
+            "content": "sha256:f110aefaddaa2a5a92ddde02e47bfa7d1214857b88c894795e4c8d497120e9c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_certification_state"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Execution first refuses the prepared path on converted memory (MIK-R09, gap 3) and, since L37, on locked unconverted memory, then admits only the selected suffix and current memory/finalization boundary.\n\nAnchor: \"def execute_selected_closeout(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:f97b2354f135afd68b5e814223b86720f916b53801824cd92e3191a68c7cb769",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 350
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Retained output permits only the selected physically proven code commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eda28256623e66702f7034156debad3f05ac710b",
+            "content": "sha256:4d84783c24c892a55f61a7227a152338588f3d6dddde9dc256e004a43c703f69",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_retained_output_currentness"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The ordinary service construction installs the prepared closeout continuation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The refusal before recovery.\n\nAnchor: \"unclosable = prepared_closeout_refusal(contract)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:96c9dc437d9ef05dab1c909e8d0911d7cbeee1113b0bea58f8ffdbee98599e7e",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 361
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The cutover lock on the prepared closeout, after the unclosable-history refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:f97b2354f135afd68b5e814223b86720f916b53801824cd92e3191a68c7cb769",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_selected_closeout"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

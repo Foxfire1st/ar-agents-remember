@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/markerReturn.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "When, by what command and at which source tree the bodies were captured, and over which scratch leaf.\n\nAnchor: \"captured_at\"; \"source_tree\"; \"scratch\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9476cdf46a177d23b4fdb8d261bbb6c4e64e3bf9",
+            "content": "sha256:ace28b544648b22e5ba544f2ad0de9322f185703ebc90c776684b087902d56b6",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One receipt row per captured body, and the merge-round note (MIK-L33).\n\nAnchor: \"\\\"fixtures\\\": [\"; \"merge_round\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9476cdf46a177d23b4fdb8d261bbb6c4e64e3bf9",
+            "content": "sha256:bde313f56c314e0ca6e286a2d75ef138c97ff54b8a597aa4cab7f223b706c1e8",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

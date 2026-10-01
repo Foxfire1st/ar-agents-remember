@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/interactionParts.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The interaction render parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235e8c4231b909f8ac6c8de9368f4838c402903a",
+            "content": "sha256:536d1706469ab661d1cc9b4c11d6783e084e12d6168932db001c78c67c5cb305",
+            "locator": {
+              "kind": "symbol",
+              "name": "QuestionsBody"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235e8c4231b909f8ac6c8de9368f4838c402903a",
+            "content": "sha256:39c29e9d645d5a9a25b73e57cdc6b2eb0f467e248161aee18a1e9733789727b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionAnnounce"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235e8c4231b909f8ac6c8de9368f4838c402903a",
+            "content": "sha256:dfc4f841e6932eb43f6205d422fc72363a6c9cb81d217a99135af180dcb4118d",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

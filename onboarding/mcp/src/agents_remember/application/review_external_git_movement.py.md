@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_external_git_movement.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_external_git_movement.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -169,7 +159,9 @@ identity.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured domain documentation could be checked for this module. The resolved memory layer's
 `system/sources.md` carries no `Domain Documentation` category, so there is no external or domain
@@ -178,7 +170,7 @@ artifact this leaf does touch — `docs/reference/worktrees-c09.md` — is not a
 repository file whose new `## Raw Git Identity Boundary` section is *generated from* this module's
 matrix, and the assertion that binds the two is filed under Repo-Internal References.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own declarations, in the owners whose reads it
 composes, and in the cases that drive them. The three details a reader should carry: **the matrix is the
@@ -187,60 +179,58 @@ recorded as unsupported rather than implied supported**; **`unchanged` exists so
 names an event that did not happen**; and **every entry point answers with a state, never with an
 exception, because a measurement that could not be taken must not fail the read that needed it.**
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of what is measured, what is not claimed, and that no ancestry check identifies a pick or a revert.** | "It measures; it decides nothing." | mcp/src/agents_remember/application/review_external_git_movement.py:1-37 |
-| The owners this module composes, and the three guarded Git reads it borrows. | `is_ancestor` | mcp/src/agents_remember/application/review_external_git_movement.py:39-66 |
-| The published surface: the matrix, its row type, the three entry points, the renderer and the lookup. | `__all__` | mcp/src/agents_remember/application/review_external_git_movement.py:68-76 |
-| The four states this module may report, declared once as the read surface's own vocabulary. | `_MovementState` | mcp/src/agents_remember/application/review_external_git_movement.py:78-78 |
-| **The recovery a generation that cannot be read names, kept apart from the successor generation a movement names.** | `_GENERATION_UNREADABLE_RECOVERY` | mcp/src/agents_remember/application/review_external_git_movement.py:82-86 |
-| The recovery a boundary names when nothing could be compared at all. | `_UNCOMPARED_RECOVERY` | mcp/src/agents_remember/application/review_external_git_movement.py:92-96 |
-| **The fold that derives every recovery sentence from the matrix rows rather than restating a verdict.** | `_recovery_actions` | mcp/src/agents_remember/application/review_external_git_movement.py:99-112 |
-| The three declared channels, each named by the thing that moved rather than by the command that moved it. | `_CODE_CHANNEL` | mcp/src/agents_remember/application/review_external_git_movement.py:117-117 |
-| One matrix row: the transition, its measured Git signature, the state it renders in, whether it is reconciled, and the step a person takes. | `GitTransitionSupport` | mcp/src/agents_remember/application/review_external_git_movement.py:122-137 |
-| **The support matrix itself — six rows, one per shape, with `rebase` the only named transition an ancestry check can mark `stale`.** | `GIT_TRANSITION_SUPPORT` | mcp/src/agents_remember/application/review_external_git_movement.py:143-233 |
-| The by-name lookup derived from the matrix, so a row added above is reachable below with no second list. | `_SUPPORT_BY_TRANSITION` | mcp/src/agents_remember/application/review_external_git_movement.py:237-239 |
-| **The named lookup that refuses an unknown transition instead of answering with a default.** | `supported_recovery` | mcp/src/agents_remember/application/review_external_git_movement.py:242-258 |
-| **The unsupported list derived from the matrix, which is what a report repeats where the reader is.** | `unsupported_transitions` | mcp/src/agents_remember/application/review_external_git_movement.py:261-272 |
-| The Markdown renderer the documentation is asserted against, so the document is generated rather than transcribed. | `render_git_transition_support` | mcp/src/agents_remember/application/review_external_git_movement.py:275-290 |
-| One channel's measurement, and the shape measured for it. | `_Finding` | mcp/src/agents_remember/application/review_external_git_movement.py:299-317 |
-| A branch tip read from a repository, or the reason there is none to read. | `_BranchTip` | mcp/src/agents_remember/application/review_external_git_movement.py:320-325 |
-| **The review read's entry point, whose `None` answers are all facts rather than failures, and whose unreadable generation is `unavailable` with the selection's own detail.** | `external_git_movement` | mcp/src/agents_remember/application/review_external_git_movement.py:328-348 |
-| **The absence value: the cause in the words of the arm that established it, so the read and the published block share one branch.** | `_BoundaryAbsence` | mcp/src/agents_remember/application/review_external_git_movement.py:351-360 |
-| **The declaration half of the measurement, where a non-leaf contract and a contract with no work branch are two different causes with two different sentences.** | `_measure_contract` | mcp/src/agents_remember/application/review_external_git_movement.py:363-381 |
-| **The store half of the measurement, where an unusable generation is `unavailable` and a leaf that published nothing carries the store's own detail.** | `_measure_generation` | mcp/src/agents_remember/application/review_external_git_movement.py:384-404 |
-| **The contract-only half the closeout and integration owners call, so one implementation serves every caller.** | `external_git_movement_for_contract` | mcp/src/agents_remember/application/review_external_git_movement.py:407-418 |
-| **The closeout/integration statement that never refuses: a failed result is returned untouched and every absence becomes a typed block.** | `external_git_movement_result_block` | mcp/src/agents_remember/application/review_external_git_movement.py:421-454 |
-| **The typed absence that repeats the matrix's unsupported transitions whether or not the boundary measured.** | `_absence_block` | mcp/src/agents_remember/application/review_external_git_movement.py:457-469 |
-| **The state an unusable generation earns, with no generation identity claimed.** | `_unavailable` | mcp/src/agents_remember/application/review_external_git_movement.py:472-493 |
-| **The state composition — `stale` over `current` over `not-measured`, with `current` requiring every channel compared.** | `_report` | mcp/src/agents_remember/application/review_external_git_movement.py:496-525 |
-| The three declared channels turned into findings, in fixed order. | `_findings` | mcp/src/agents_remember/application/review_external_git_movement.py:566-584 |
-| **The one ancestry decision: `current` / `advanced` / `replaced` / `unavailable`, where `advanced` is a measurement of its own.** | `_ancestry` | mcp/src/agents_remember/application/review_external_git_movement.py:642-696 |
-| The failure state an unreadable channel or repository earns. | `_unreadable` | mcp/src/agents_remember/application/review_external_git_movement.py:699-717 |
-| The reads that can fail, each keeping its failure as a state rather than raising. | `_object_readable` | mcp/src/agents_remember/application/review_external_git_movement.py:729-735 |
-| The ancestry read that answers whether a recorded identity is still in a branch's history. | `_related` | mcp/src/agents_remember/application/review_external_git_movement.py:738-744 |
-| The shape measured for one finding, never the command guessed. | `_transition` | mcp/src/agents_remember/application/review_external_git_movement.py:765-780 |
-| The replaced identity spelled `channel:identity` for the value no longer in place. | `_moved_identity` | mcp/src/agents_remember/application/review_external_git_movement.py:783-786 |
-| **The reason an absence carries, naming each unreadable channel with its own detail.** | `_reason` | mcp/src/agents_remember/application/review_external_git_movement.py:789-800 |
-| **One sentence per state, with no state borrowing another's clause.** | `_statement` | mcp/src/agents_remember/application/review_external_git_movement.py:803-826 |
-| **The clause stating what an absence did compare, false only when nothing was compared.** | `_compared_clause` | mcp/src/agents_remember/application/review_external_git_movement.py:829-840 |
-| **The agreement sentence, whose `unchanged` clause never describes an advance.** | `_agreement_statement` | mcp/src/agents_remember/application/review_external_git_movement.py:843-866 |
-| The movement sentence: the replaced channels first, then the channels that still stood. | `_movement_statement` | mcp/src/agents_remember/application/review_external_git_movement.py:869-880 |
-| The replacement spelled from the values the check read rather than from a diagnosis. | `_replacement_clause` | mcp/src/agents_remember/application/review_external_git_movement.py:883-895 |
-| **The value this module publishes, its four-state union and the validator that refuses every false shape.** | `ExternalGitMovement` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:101-205 |
-| **The transition vocabulary, including `unchanged` as the measured absence of a transition.** | `ExternalGitTransition` | mcp/src/agents_remember/models/knowledge/review_external_movement.py:74-81 |
-| **The review read that calls this owner and carries the value on the payload.** | `external_git_movement` | mcp/src/agents_remember/application/knowledge_review.py:372-614 |
-| The task-context review boundary, which takes the same measurement and refuses nothing on it. | `external_git_movement` | mcp/src/agents_remember/application/review_task_context.py:93-191 |
-| **The fold that lets an external `stale` outrank a carried comparison identity and a recorded managed-sync rebinding.** | `review_staleness_with_external_movement` | mcp/src/agents_remember/application/review_sync_movement.py:311-354 |
-| **The closeout preview, closeout apply and integration call sites that attach the statement.** | `external_git_movement_result_block` | mcp/src/agents_remember/application/worktree_tools.py:461-461 |
-| The integration result block that carries the same statement. | `external_git_movement_result_block` | mcp/src/agents_remember/application/worktree_tools.py:1012-1016 |
-| **The documented matrix, asserted to be the rendered production table rather than a transcription.** | "Raw Git Identity Boundary" | docs/reference/worktrees-c09.md:113-148 |
-| **The cases that drive real Git through the shipped entry points and pin the states apart.** | `RawGitIdentityBoundaryTests` | mcp/tests/test_review_external_git_movement_read.py:56-656 |
-| The case that pins the documented matrix and the published matrix as one table, with unknown names refusing. | `test_the_documented_matrix_and_the_published_matrix_are_one_table` | mcp/tests/test_review_external_git_movement_read.py:502-561 |
-| The case that pins the validator's five false shapes against the real published value. | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_external_git_movement_read.py:563-635 |
-| The case that pins the control state as the value every untouched leaf publishes. | `test_the_unchanged_value_is_the_one_the_control_state_publishes` | mcp/tests/test_review_external_git_movement_read.py:637-656 |
+- **The module's own statement of what is measured, what is not claimed, and that no ancestry check identifies a pick or a revert.** [1]
+- The owners this module composes, and the three guarded Git reads it borrows. [2]
+- The published surface: the matrix, its row type, the three entry points, the renderer and the lookup. [3]
+- The four states this module may report, declared once as the read surface's own vocabulary. [4]
+- **The recovery a generation that cannot be read names, kept apart from the successor generation a movement names.** [5]
+- The recovery a boundary names when nothing could be compared at all. [6]
+- **The fold that derives every recovery sentence from the matrix rows rather than restating a verdict.** [7]
+- The three declared channels, each named by the thing that moved rather than by the command that moved it. [8]
+- One matrix row: the transition, its measured Git signature, the state it renders in, whether it is reconciled, and the step a person takes. [9]
+- **The support matrix itself — six rows, one per shape, with `rebase` the only named transition an ancestry check can mark `stale`.** [10]
+- The by-name lookup derived from the matrix, so a row added above is reachable below with no second list. [11]
+- **The named lookup that refuses an unknown transition instead of answering with a default.** [12]
+- **The unsupported list derived from the matrix, which is what a report repeats where the reader is.** [13]
+- The Markdown renderer the documentation is asserted against, so the document is generated rather than transcribed. [14]
+- One channel's measurement, and the shape measured for it. [15]
+- A branch tip read from a repository, or the reason there is none to read. [16]
+- **The review read's entry point, whose `None` answers are all facts rather than failures, and whose unreadable generation is `unavailable` with the selection's own detail.** [17]
+- **The absence value: the cause in the words of the arm that established it, so the read and the published block share one branch.** [18]
+- **The declaration half of the measurement, where a non-leaf contract and a contract with no work branch are two different causes with two different sentences.** [19]
+- **The store half of the measurement, where an unusable generation is `unavailable` and a leaf that published nothing carries the store's own detail.** [20]
+- **The contract-only half the closeout and integration owners call, so one implementation serves every caller.** [21]
+- **The closeout/integration statement that never refuses: a failed result is returned untouched and every absence becomes a typed block.** [22]
+- **The typed absence that repeats the matrix's unsupported transitions whether or not the boundary measured.** [23]
+- **The state an unusable generation earns, with no generation identity claimed.** [24]
+- **The state composition — `stale` over `current` over `not-measured`, with `current` requiring every channel compared.** [25]
+- The three declared channels turned into findings, in fixed order. [26]
+- **The one ancestry decision: `current` / `advanced` / `replaced` / `unavailable`, where `advanced` is a measurement of its own.** [27]
+- The failure state an unreadable channel or repository earns. [28]
+- The reads that can fail, each keeping its failure as a state rather than raising. [29]
+- The ancestry read that answers whether a recorded identity is still in a branch's history. [30]
+- The shape measured for one finding, never the command guessed. [31]
+- The replaced identity spelled `channel:identity` for the value no longer in place. [32]
+- **The reason an absence carries, naming each unreadable channel with its own detail.** [33]
+- **One sentence per state, with no state borrowing another's clause.** [34]
+- **The clause stating what an absence did compare, false only when nothing was compared.** [35]
+- **The agreement sentence, whose `unchanged` clause never describes an advance.** [36]
+- The movement sentence: the replaced channels first, then the channels that still stood. [37]
+- The replacement spelled from the values the check read rather than from a diagnosis. [38]
+- **The value this module publishes, its four-state union and the validator that refuses every false shape.** [39]
+- **The transition vocabulary, including `unchanged` as the measured absence of a transition.** [40]
+- **The review read that calls this owner and carries the value on the payload.** [41]
+- The task-context review boundary, which takes the same measurement and refuses nothing on it. [42]
+- **The fold that lets an external `stale` outrank a carried comparison identity and a recorded managed-sync rebinding.** [43]
+- **The closeout preview, closeout apply and integration call sites that attach the statement.** [44]
+- The integration result block that carries the same statement. [45]
+- **The documented matrix, asserted to be the rendered production table rather than a transcription.** [46]
+- **The cases that drive real Git through the shipped entry points and pin the states apart.** [47]
+- The case that pins the documented matrix and the published matrix as one table, with unknown names refusing. [48]
+- The case that pins the validator's five false shapes against the real published value. [49]
+- The case that pins the control state as the value every untouched leaf publishes. [50]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this module. Every repository it touches is a checkout
 this same repository's own contract resolved — the code worktree, the declared source branch and the
@@ -249,7 +239,3 @@ reads lives under the task root the same contract names. The three reads it perf
 ancestry questions asked through `worktrees/modules/git.py`, and no remote, credential, network or
 external system is involved. No cross-repo reference row is recorded here because no cited range proves
 a repository or external-system boundary.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 36 passing row(s) normalised by the fixer; 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). The fixer's normalisation also re-measured ranges into files this leaf did not change (`review_external_git_movement.py`, `review_sync_movement.py`, `test_review_external_git_movement_read.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-23T20:10:00+02:00 — 260921-ICR-L23 curator (uncommitted change set on `ar/260921-icr-l23`, base `473ad8242bb4c22bdabed5d5253767350381eb3e`): created this one-to-one card for the module this leaf introduced as **the boundary measurement for identity movement caused outside managed sync**, the owner of the support matrix the packet's Required Behavior asks for. It records what a consumer has to act on: `GIT_TRANSITION_SUPPORT` is the authority on which of the four named transitions this system reconciles, and exactly one of them (`rebase`) is `stale` because an ancestry check can prove the branch was rewritten, while `cherry-pick`, `revert` and `branch-switch` are `reconciliation="unsupported"` with the recovery each row names — the state alone never licenses the conclusion that a pick or a revert was handled, and the module's own docstring records that no ancestry check identifies either. `unchanged` exists so the control state publishes the measured absence of a transition instead of naming an event that did not happen. `external_git_movement`'s `None` answers are all facts (no enclosure, a closed leaf's record, no declared work branch, no published generation, a non-leaf contract), while a generation that exists and cannot be used is `unavailable` carrying the selection's own detail; `external_git_movement_result_block` attaches the statement to closeout and integration results and never refuses. The measurement establishes each absence cause once — `_measure_contract` decides what the contract declares, `_measure_generation` what the store holds, and both report through `_BoundaryAbsence.detail` — so the read that reports the absence as `None` and the block that publishes it share one branch instead of each re-deriving the cause. Two boundaries are carried as boundaries and not as defects: the authoring boundary the packet names has no natural owner and is recorded as an absence rather than given a synthetic one, and `branch-switch` is reported as `not-measured` because the comparison genuinely cannot be taken, with `not-measured` and `unavailable` never promoted into `stale`. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name this leaf's recorded base `473ad8242bb4c22bdabed5d5253767350381eb3e` because every construct cited here exists only in this leaf's uncommitted working tree — the file itself is untracked at that commit — so no commit contains the content a stamp would claim to have verified; what was actually read is that working tree (base commit plus the leaf's working-tree delta, re-read after the leaf's fix round 2), and the governing overview is `mcp/src/agents_remember/application/overview.md`.

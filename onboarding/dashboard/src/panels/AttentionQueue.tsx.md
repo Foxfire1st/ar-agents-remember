@@ -1,15 +1,5 @@
 # dashboard/src/panels/AttentionQueue.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/AttentionQueue.tsx`        |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T09:20+02:00                           |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`       |
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/ overview](overview.md)
@@ -71,50 +61,14 @@ The kept-mounted attention rail is memoized and receives its visibility state. I
 while the full-bleed shell hides the rail, then refreshes when visible again; store updates still render
 through the component's own subscription.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The server-side attention queue this reads. | "def build_attention_queue(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:41-41 |
-| The `selectQueue` selector. | `selectQueue` | dashboard/src/data/selectors.ts:37-46 |
-| `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. | `canDismiss` | dashboard/src/panels/AttentionQueue.tsx:122-128 |
-| `dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs. | `dismissItem`, `clearAll` | dashboard/src/panels/AttentionQueue.tsx:287-288 |
-| `severityMark` — the CSS style applied to the severity wrapper. | `severityMark` | dashboard/src/panels/AttentionQueue.tsx:49-49 |
-| The `role="img"` / `aria-label` span rendered around the decorative `Dot`. | "import { AnimatePresence, motion } from \"motion/react\";"; "import { Dot } from " | dashboard/src/panels/AttentionQueue.tsx:9-9; dashboard/src/panels/AttentionQueue.tsx:1-1 |
-| `Dot` is `aria-hidden`, so its consumers own the announced name. | `Dot` | dashboard/src/grammar/Dot.tsx:119-129 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: narrowed the severity-mark row to the `severityMark` CSS style and regenerated its exact source line; the accessibility behavior remains owned by the adjacent rows.
-
-- 2026-08-02T20:49:58+02:00 — 260731-EFA-L6 curator W2-B10: repaired 4 citation findings (2 reference rows); scoped recheck clean.
-
-- 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: documented the `severityMark` wrapper — the `Dot`
-  is `aria-hidden`, so the severity is now announced from a `role="img"` span with
-  `aria-label="Severity: …"`; recorded why the role (not the label) is the fix, and that `flexShrink`
-  moved to the wrapper because it is now the flex item. Repaired three stale citations against the
-  current source: `selectQueue` L23-L32 → L37-L46 (the old range covered `hasLiveWorktree` and the
-  `EMPTY_QUEUE` cache fields, not the selector), `canDismiss` L103-L118 → L122-L128 (the old range
-  covered `titleForAttention`/`detailForAttention`/`dismissPayload`), and the dismiss row
-  L126-L158 → L146-L178, renamed to the actual symbols `dismissItem`/`clearAll`.
-
-- 2026-07-24T13:17:50Z — Documented memoized hidden-rail age behavior. Verification hash/date remain
-  pinned to the pre-commit source stamp.
-
-- 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
-
-- 2026-07-07T05:30+02:00 — 260703-L15 S1: item wait times now advance locally —
-  `fmtWait(servedAgeSeconds(q, q.waitSeconds, nowMs))` with a panel-level `useNowMs()` (10 s
-  tick), because the change gate no longer re-serves the queue every tick just to age the waits.
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `Dismiss`/`Clear all` now hide rows immediately via
-  store-level optimistic suppression, release failed POSTs, and include targetless actionable-drift rows
-  as the repo-level one-shot dismiss case. Verification metadata pinned until closeout stamps the task-29
-  code commit.
-- 2026-06-28T03:05+02:00 — Task 28 S5.2: `Dismiss` and `Clear all` now target only lifecycle-bound attention rows through `postAttentionDismiss`; non-lifecycle alarms no longer render dismissal controls. Verification metadata pinned until closeout stamps the task-28 code commit.
-- 2026-06-25T14:02+02:00 — Task 24 reopened: `Clear` now includes stale gate-open rows with only `gateId`, posting a gate-id-only cancel instead of hiding or ignoring them.
-- 2026-06-25T13:10+02:00 — Task 23/24: added the `Clear` gate-interaction action, backed by targeted cancel writes instead of local hiding.
-- 2026-06-25T07:17+02:00 — Task 19: attention rows now resolve lifecycle-bound queue items through `analytics.taskDocuments` so the visible title is task-centric while the original lifecycle/gate attention text remains in detail. Verification metadata pinned until closeout stamps the task-19 code commit.
-- 2026-06-15T17:00 — Created for slice 5d: migrated onto `Panel` + Panda `cva`. Verification metadata
-  pinned until closeout stamps the 5d code commit.
+- The server-side attention queue this reads. [1]
+- The `selectQueue` selector. [2]
+- `canDismiss` admits lifecycle rows, gate-id gate rows, and actionable drift only. [3]
+- `dismissItem` and `clearAll` optimistically suppress rows and release failed POSTs. [4]
+- `severityMark` — the CSS style applied to the severity wrapper. [5]
+- The `role="img"` / `aria-label` span rendered around the decorative `Dot`. [6]
+- `Dot` is `aria-hidden`, so its consumers own the announced name. [7]

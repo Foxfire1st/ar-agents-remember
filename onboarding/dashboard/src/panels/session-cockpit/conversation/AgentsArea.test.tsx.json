@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a1bfab424e689fe7b7049cf98b79b519c671eda",
+            "content": "sha256:713af409bf334408c0435ba46e7535e3af723b15f5aa23b11483fc5d4435016c",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsArea"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `ConversationAgentView` shape the fixtures build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:5c8a85071d5c82c48e7fe23ba4e69337343d29ddc4ff77d0ddc43bb5b375ff4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationAgentView"
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The surface-level focus behavior this line plugs into, incl. the ArrowDown hijack (separate suite).\n\nAnchor: \"ArrowDown from the timeline moves focus into the agents line; Enter opens the menu; Enter selects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c01668b78549f9c042c847a61302c545d904c62e",
+            "content": "sha256:d3dd914fc3f32526c23c007c476488ffe5dd7736f2cdeee3c393495da989f0b6",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

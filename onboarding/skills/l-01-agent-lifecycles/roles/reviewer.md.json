@@ -1,0 +1,93 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/reviewer.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every exact requirement attempt and candidate receives a separate independent accepted/rejected record.\n\nAnchor: \"Adjudicate every requirement revision separately\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:de88a9e1ed720c73df9acdf2680d2b6b9b32bc76b1f295ef78493200f8281439",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The verdict template structurally repeats one adjudication block per stable ID.\n\nAnchor: \"## Mandatory Requirement Adjudication Block\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reviewer emits its own curator hand-off list in the shared producer shape.\n\nAnchor: \"Your own curator hand-off list\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:31f922fec6d47cab57b1346e20eea944703f5dc7303dd5ac02dfa874d6694562",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A leaf's declared knowledge effects are checked against its packet; a mismatch is a finding (MIK-R11).\n\nAnchor: \"check that declaration against the\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The seat's seam table fixes the five seams and where each verdict goes.\n\nAnchor: \"The seam you are reviewing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "content": "sha256:a7db8b41cf2e1ea5f1b3c7ba248e89b089a9a2f3008d1b38abc1a705612fbeee",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

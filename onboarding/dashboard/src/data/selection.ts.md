@@ -1,15 +1,5 @@
 # dashboard/src/data/selection.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/selection.ts`                |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `65cb81f7de4db13c0627264fec1eb46f444e0ee3`       |
-| lastVerifiedCommitDate | 2026-08-12T04:57:26+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -54,47 +44,25 @@ re-capturing the still-present range (the multi-click-to-dismiss bug). Capture o
 keeps it open while the operator interacts with it. Keyboard-only selection is a follow-up
 (no clean "selection complete" event); mouse selection is covered.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The composer a selection raises. | "export const HighlightComposer" | dashboard/src/panels/HighlightComposer.tsx:1140-1140 |
-| The rules + capture tests. | "carries the task leaf key when the selected text belongs to a task reader" | dashboard/src/data/selection.test.ts:52-57 |
-| The task reader marker that supplies task leaf ownership. | "export const DetailPanel" | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
+- The composer a selection raises. [1]
+- The rules + capture tests. [2]
+- The task reader marker that supplies task leaf ownership. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-12T04:04+02:00 — Rebound the composer export citation after the stable-snapshot repair
-  shifted its source line; the selection-capture contract is unchanged.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
-  exact anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-02T16:18+02:00 — L8: `SelectionContext` now carries an optional `leafKey` from the nearest
-  `data-task-leaf-key` ancestor. This lets `HighlightComposer` distinguish viewed task-leaf selections
-  from global cockpit selections before using the direct leaf-chat draft-paste path.
-- 2026-06-21T02:44+02:00 — Slice 6g (highlight-composer dismiss fix): the `mouseup` handler now **mirrors** the selection (`setSelection(readSelection(...))`, clearing on an empty selection) instead of only-raising, and `clear()` collapses the live DOM selection (`removeAllRanges`). Fixes needing multiple clicks / fast-clicking to dismiss — the old only-raise handler let the trailing mouse-up re-capture the still-present range after the popover had cleared it. Verification metadata pinned until closeout stamps the 6g code commit.
-- 2026-06-19T15:59 — Created for task 6 slice 6f-1: the cockpit selection capture (`useSelectionCapture` — **mouse-up** snapshot + `clear`, so the composer doesn't flicker mid-drag and survives clicking into it) + the pure rules (`isIgnoredAnchor` / `readSelection`). Verification metadata pinned until closeout stamps the 6f-1 code commit.
+No applicable cross-repository source was found.

@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/stopResiduals.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The focused composer proves lifecycle-free exact-session routing and duplicate-send locking.\n\nAnchor: \"routes the focused lifecycle-free composer answer once by exact session\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db4cee0d9f3db934f10936f48a4f154b4d7d323e",
+            "content": "sha256:2127d78a85b86df36ef1824f8474a0336691cbcd00a41b13daa3f60bb297dc93",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stop-residual suite.\n\nAnchor: \"L6: stage surface — InteractionBar and stop residuals\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db4cee0d9f3db934f10936f48a4f154b4d7d323e",
+            "content": "sha256:63fcf34faf11afc4a4db098368271a9095f0d9d3a36b8cf74bffb27546e5f15c",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

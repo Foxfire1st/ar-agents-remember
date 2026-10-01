@@ -1,0 +1,287 @@
+{
+  "path": "mcp/src/agents_remember/application/task_projection/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The admitted context a consumer supplies, and the failure its unresolvable hints raise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:6e2a8819937a2f28766954f64f1b6c828f8cc7fb4cb77da5b791bd5c26acc190",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionScopeRequest"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:b5f0bf5bde1ae1a2fc3d09be0af5f6a41c4a6aaf28aae3f2dd6026c09d0c431e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_task_projection_scope"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:8bf03011ce3cbe350aad3fcf5350fcd6652e9b199603f90aec1efe273e3c28a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResolvedProjectionScope"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:4b734f64b1f229c35545e1ada0b9ec1ab012f967ad0761bd2ff80c231f38ae4d",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:81126b0f7a03d02cc085700c5e38b241c87e43e9e548465253f0f0b14f466533",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:0fa1a963b52d41944086947ea2ef40a0cb8d7e820f1b30d5c86c4f97cfb91aeb",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The computation and its declared extra inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:d17696bf0680691e619a188c6edbc0948e3b7c31399ba82074913285c147a3ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_task_context"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2af644d29fe74ba46ecf539a85c42764bb99d068",
+            "content": "sha256:b84864076a196a63d2f0f9eb56a1074c3ae328204a2c30b0f51f7efa5f319e1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskProjectionRequest"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401e760321b0ca1018ce2d5b698a036a7d664d3c",
+            "content": "sha256:4433eb6f981a1311654d98158ee441b77c4e74a0dd81cb8519dbdb8a5169a414",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compiler-facing conversion and the provider behind the one-method protocol.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1a0a98677c18c055a70984ba23f1ff08b59b8a0",
+            "content": "sha256:87224e1eab61f19626c00585cfa8ead4baa207416a49e4cf2b9bd92db73ab09e",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_context_of"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/provider.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1a0a98677c18c055a70984ba23f1ff08b59b8a0",
+            "content": "sha256:4cafe198f74ec4ad7d1d8289d6550bf569931b142572aa706ecf56f6e76112d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskProjectionSource"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/provider.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1a0a98677c18c055a70984ba23f1ff08b59b8a0",
+            "content": "sha256:2fe1d5b5961eab0f6ae83b65a59eb4739f39473176f364fb0da2b725c439c393",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/provider.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1a0a98677c18c055a70984ba23f1ff08b59b8a0",
+            "content": "sha256:670fd92e0711e456d0ce68df17348132d6a6f477bcec31af74252b81b0e5d55c",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/provider.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every public name this module exports is importable from the package root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "060bc73f6cbc6aacea1155681cf2f467b8a51af8",
+            "content": "sha256:0f4de5a679653267f240377b75d18733a25ecd4316e49c3ff818061fa033dac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "060bc73f6cbc6aacea1155681cf2f467b8a51af8",
+            "content": "sha256:4c4663164923b1975d08abfa861f02732ebc668b019177d24637cb87dbb80ff5",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The task-context seam this package fills: the protocol, the DTO it converts into, and the compiler that re-verifies the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:aa75e23fdd691b12c201fd1266731fe37791b47314333c073f6fe0d250e069a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleTaskProjectionSource"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:699e7a3395cc3dcb2af02db176a2b4e17e5a6015a10407b0ec0231a7171aa1b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleTaskContext"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The import surface of every module under this package is asserted, not assumed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:92f9bfe4953fb8b8fad0b239f44df9d07de1cb0692ae79255c0c2eea41f949c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projection_modules_import_no_writer_transport_or_task_json_reader"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The **other** \"projection\" in this repository — the closeout-queue projection this package is not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:2bc27479413f727fd0388b898a10bf0e85de55b585fc6932d96e336e5e2effe2",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection_sprints_affected_by_master"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

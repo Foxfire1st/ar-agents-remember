@@ -1,0 +1,52 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_render.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rendering is a deterministic one-way projection of the structured record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b47ceac38c2dd8fb7376dd971ccc88a64a0b0a8f",
+            "content": "sha256:8ca14387dab8dc0d6a8f78cf43f14adfa1539feed5642eefbfc92e18906af114",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_curator_coherence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b47ceac38c2dd8fb7376dd971ccc88a64a0b0a8f",
+            "content": "sha256:697228d71fea1b9e9a911de28c9d39612e887f46d07699c2536ace5675b4ee64",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical task-intent identity line emitted after the topology fingerprint.\n\nAnchor: `TaskIntentIdentity` check + line insert",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b47ceac38c2dd8fb7376dd971ccc88a64a0b0a8f",
+            "content": "sha256:3e3c064666bf941416a2f222b0e057109f8b91376de5edd287358f85f4ad1992",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

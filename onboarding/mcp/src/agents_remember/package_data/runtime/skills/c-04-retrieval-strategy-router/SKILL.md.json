@@ -1,0 +1,259 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`c-04-retrieval-strategy-router` skill defines Semantics, Relationship, and Intent as the three retrieval substrates and describes when to chain them.\n\nAnchor: `## Retrieval Substrates`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:374b976b57e95f1101b27ca6d1d6e2b31f6cb09033d0267cb759190efbbda230",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The skill points agents to `grepai-high-leverage-usage.md` and `codegraphcontext-high-level-methods.md` for full provider usage catalogs and synthetic example outputs.\n\nAnchor: \"grepai-high-leverage-usage.md\", \"codegraphcontext-high-level-methods.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:6a636de4f416a0fb0d479f8ecef17fc7cfd07c3f5866bd8e6fb0c9008d0d3621",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:c75d34c935c4ef82b98acbb8579939abf24bb883b84136fb844d9e65eca0741d",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Intent preserves route-index, overview, sidecar, and bounded source confirmation as the proof layer after discovery.\n\nAnchor: `## Intent: Onboarding And Source`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:7ecb656d9476a15d1b3b5deb328a3851be3b89d9e384aed0cfad5616c19f74b8",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The generated route-index semantics close the skill, and are unchanged by this leaf.\n\nAnchor: `## Route Index Semantics`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:25dafd1d62944c5e0729d8a899e4a8bdc50f736a45c48b70250bdfe273a95535",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The sibling GrepAI catalog covers managed invocation, command selection, broad search, project-scoped search, route-scoped snippet search, trace caveats, status, and practical rules using synthetic examples only.\n\nAnchor: `# GrepAI High-Leverage Usage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6a8c2a75da6352d224fc12a687e16f7f4224e7a",
+            "content": "sha256:5fcd1ce333cab8abb0ed4cfb355d9cedf6be2e3e4b5f73fbcad8a3e204d0beca",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The sibling CGC catalog explains the typed `cgc_*` tools and their native `analyze` operations in a Choosing A Method table, then closes with practical selection rules; examples are synthetic only.\n\nAnchor: `analyze`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14b47cf0602a95db8fba7c4f6ad990ea0c136e44",
+            "content": "sha256:4a8d0bf019257b66245156ebb7cce1d9fbbaeb14907040d2d735a2ee150eb919",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The Intent bullet now names the published-intent half: the same `read_ar_files` call carries the invariants a previous task already recorded about the requested paths, at their exact snapshot and without needing a task.**\n\nAnchor: `## Retrieval Substrates` (Intent bullet)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:374b976b57e95f1101b27ca6d1d6e2b31f6cb09033d0267cb759190efbbda230",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The route section, which is this leaf's carrier: the publication location the read side declares, and — restated as current truth by `260921-ICR-L20` — the ordinary write side publishing to that same location with `--publish`, the memory-root rule with no fallback, the exact payload spellings, the named `state`s and their refusal codes, the seed-level absences, and the continuation limitation stated as a limitation.**\n\nAnchor: `## Published Intent Before Planning`; \"Where the route reads, and what publishes there.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:da1e892df5d1bb4c04dd42cedaf741edf3d070a0f7c057e5efb8c0719d612d6b",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**MIK-R02 rule 6, the taught route: a memory tree's bounded page, deferred or collapsed seeds (and, since MIK-R01, `seed_queue_exceeded` and the literal reference row of a leaf page), and every continuation followed through `knowledge_read`.**\n\nAnchor: \"Follow a bounded page through\"; \"The threshold bounds the whole block, not each path.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:8f4adba2e3a2209d38cab5d358d0f4c7562bac304ec217d0d2b1cd829801b6f6",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**MIK-R01 rule 6: the skill names the family-complete leaf read, its row kinds in order, its counts, and `source_context` as the same selection under the same manifest.**\n\nAnchor: \"A path on a converted memory tree is read family-complete.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:9ad29d407964ad4a27918106a2d484fe80ad721b76b67caef03a21c00e7fa10b",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**MIK-R05 (ruling Q5): the skill teaches the route-chain rows, `routeChain`, the family seed through `expand`, and the `served_earlier` rendering only `read_ar_files` uses.**\n\nAnchor: \"Route-chain families come last.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:29d1e5f5d4bd57331ba0ab76c2165ca5519a3b74c7aa4dbae0cc801be1e2a41e",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Semantics requests MCP provider context before using healthy GrepAI provider tools, then shows synthetic broad semantic routing and scoped memory-project search examples.\n\nAnchor: `## Semantics: GrepAI`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:66684f59f56ac0257410e3a57c2ce89b1188b6d8ea3d4a27563ebfbdbdbbc04d",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Relationship requests MCP provider context before using healthy CGC tools and includes synthetic `analyze calls` and `analyze complexity` examples with sample response shapes.\n\nAnchor: `## Relationship: CodeGraphContext`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:661892f3d7a2d62624c31a0343c98ab8ab3e0ee51f1016c49782285c4689dae6",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples.\n\nAnchor: `## Semantics: GrepAI`, `## Relationship: CodeGraphContext`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:8e842b23f75c53b0a74419ebb98a473410739282cd7cf135c2577adbb6517070",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

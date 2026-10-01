@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The central statement comparison for a selected invariant.",
+  "conditions": [
+    "The primary owner revision_selection matches the requested subject kind and identity.",
+    "The before and after statement operands come from that same selected-subject read."
+  ],
+  "exclusions": [
+    "Ambiguous or unresolved heads do not establish a before/after pair.",
+    "A retained roster revision is context and does not select the primary statement comparison.",
+    "This obligation does not promise a manual per-side pairing control."
+  ],
+  "id": "INV-21SDZECS",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "fd2616ce-e06a-4a5c-9eb2-5387d1bc7e3f",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The selected invariant statement uses the primary owner's exact before and after operands and revision selection; ambiguous or unresolved selections create no inferred pair.",
+  "status": "proposed",
+  "supersedes": []
+}

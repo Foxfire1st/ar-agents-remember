@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/dispatch_brief.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | mcp/src/agents_remember/serving/dispatch_brief.py |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-30T21:25+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | mcp/src/agents_remember/serving/overview.md |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -48,34 +38,18 @@ only task document, role, brief, and optional label.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Dispatch target admission requires the exact hosted target. | `require_dispatch_target` | mcp/src/agents_remember/serving/dispatch_brief.py:114-139 |
-| Dispatch brief is explicitly the exact-pinned exception. | `dispatch_stays_on_exact_session` | mcp/src/agents_remember/serving/dispatch_brief.py:229-232 |
-| Brief expectation fulfillment reads durable delivery evidence. | `fulfill_briefed_expectation` | mcp/src/agents_remember/serving/dispatch_brief.py:235-247 |
+- Dispatch target admission requires the exact hosted target. [1]
+- Dispatch brief is explicitly the exact-pinned exception. [2]
+- Brief expectation fulfillment reads durable delivery evidence. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
-
-## Update History
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added one bounded spawn-to-bridge readiness window while preserving durable exact-pinned brief delivery and no caller retry. Verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `dispatch_brief.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: rewrote this card for the current source after
-  `mcp/tools/dispatch_brief.py` moved into serving — the delivery seams and expectation-clock
-  helpers are now owned here, exact-session readiness still refuses before persistence, and the
-  test suite pins the same contract. Verification metadata pinned until closeout stamps the code
-  commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: replaced pane/log readiness with exact adapter handshake evidence.
-
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

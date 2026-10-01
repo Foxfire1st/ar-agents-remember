@@ -1,0 +1,131 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen strict route model prohibits mutation and undeclared identity fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FutureCodeCandidateIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capture observes HEAD around the one canonical isolated-index add-all tree calculation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_future_code_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reuse requires exact equality of the complete bound route identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:17f16f59ace55fdd047bff323298ebe96c6d6196baee84abe362aaa5e242d4c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_future_code_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Each capture gives the canonical helper its own enclosure-local temporary index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:a42a04a3e185a34d878318280fd887fdf01ee711a89cfdebf9107f9f53667ec4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Capture and stale-input outcomes use the package's central typed error family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8cca25897a9f90a4eafc48be9ef814579345d4f",
+            "content": "sha256:7554da3806fc2d0ce11a64cabeefe38b24837d2eeecbb6ca99c1d2d327554eff",
+            "locator": {
+              "kind": "symbol",
+              "name": "FutureCodeCandidateError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e8cca25897a9f90a4eafc48be9ef814579345d4f",
+            "content": "sha256:4b0616c2aa418fb761c6ef249a751e7b4e48e43a2cd50f6f9091db5550888218",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The underlying helper seeds a temporary index from HEAD, applies `git add -A`, writes the tree, and removes the index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "content": "sha256:f8f4b48042939ace0b2a4d95c1c51b0fbf8e9c25fd9dca108d935a5d4a36007e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "content": "sha256:e2dc929d479d6d0683345623c9d060c840952a37e56157674726c1d0577996bd",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

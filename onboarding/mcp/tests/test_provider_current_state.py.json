@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_provider_current_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Current state is current truth not setup history",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a07a58ef1520668aff31c0e701f11a398ec34b",
+            "content": "sha256:b21c3a23e60319507bcf92ee6da45efa3f8dffbd94f69bfebadaa1fe11294d8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_state_is_current_truth_not_setup_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current state reports per repo cgc degradation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a07a58ef1520668aff31c0e701f11a398ec34b",
+            "content": "sha256:b1c713055d7e0e4c3c11fcf414b2a5ea868985e237496c623615c9c2f77cbc83",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_state_reports_per_repo_cgc_degradation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Provider status reports restart recovery for grepai no workspace",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a07a58ef1520668aff31c0e701f11a398ec34b",
+            "content": "sha256:c8f011e6f9f6ab48efe9276e23f74d3d7bd088d3eba5505c9f9c1db81218ea58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_provider_status_reports_restart_recovery_for_grepai_no_workspace"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current state ignores disabled providers for aggregate readiness",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a07a58ef1520668aff31c0e701f11a398ec34b",
+            "content": "sha256:2fe6f3473a16b5b69217d30896ce0ab5038be5b98adb74a6324d6c82545dc992",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_state_ignores_disabled_providers_for_aggregate_readiness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Restarting watcher is not ready",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a07a58ef1520668aff31c0e701f11a398ec34b",
+            "content": "sha256:74d665776b33af80502a467127fe7d139b9f95f5a3041fe070bd1fb94e450c67",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_restarting_watcher_is_not_ready"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

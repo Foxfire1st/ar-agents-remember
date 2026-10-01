@@ -1,0 +1,303 @@
+{
+  "path": "mcp/src/agents_remember/tasks/document.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The optional field and its comment.\n\nAnchor: \"MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:fe527ac72f6dcfb35046946f2aaae515023edbe4faf06f161d5484ffa04b2c0e",
+            "locator": {
+              "end": 720,
+              "kind": "line_range",
+              "start": 720
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintExecutionNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:cd1d33519541245a873eee5269a5fa220a1674e2396ff94e629c6ca601b5430d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintExecutionGraph"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:6ebfab34f5e4da086f68937803178e20cdbbfe4116b44c641f12cff8458160ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_graph_endpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The route-review record validates its typed dependency declaration and self-digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:12f59076c4a930fa1b31117b0ca7b7b0d476d705d0de00a07975e53bbc6cc986",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewRecord"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The R03 route-review dependency vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:83efbdf93120a13fe6a3b7137a5a3297300880ed6579fb9463720a9b358974fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceDependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:c8927de77cb08539e36e313e6eff3cb3667e095cb90dfe85e801a2556a2359b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_evidence_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:ad0862ac2a1361ae755a88c92e51edca629d34721ef01d299f45cf4037086b8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_sha256"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:de083a3ccb2ff5c3c153fe764e71894d9576297fe6f68e11f48dc2457674021e",
+            "locator": {
+              "kind": "symbol",
+              "name": "derived_leaf_placement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:256c7233d8ec35bb9a24f2456fe797b31c9351c37e34d295cb4093e211129eac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_latest_unblocked_segment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The worklist reads it, since MIK-R09 through the strict lookup inside the run's fail-closed read (an unreadable document is `incomplete`, never the default scope).\n\nAnchor: \"def leaf_maintenance_scope(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:18ee4b1d0c09a23dfc1a56cf10714819955eb03c6ce71eda3a90eac8eb2324b8",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One declaration: subject form, effect label and requirement reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpectedKnowledgeEffect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The refusals: master, empty, repeated subject and effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:0ceb4aa7f9a4698685f87ce33780733ed6c745f1403d91057039fda37cdaa401",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_expected_knowledge_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The optional field and its comment.\n\nAnchor: \"MIK-R11: the invariant and family effects the leaf expects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
+            "locator": {
+              "end": 725,
+              "kind": "line_range",
+              "start": 723
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The check runs in the document validator.\n\nAnchor: \"_check_expected_knowledge_effects(self.kind, self.expectedKnowledgeEffects)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:1c1a21ee6d3265d4f8bad42874a04696f0615c020d99b4b1edd501e127ca6543",
+            "locator": {
+              "end": 768,
+              "kind": "line_range",
+              "start": 768
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared patterns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:75b301649e713f35b2c329bd46e5327926038ed9a3dc2610ebf226dc6903b68b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECLARED_SUBJECT_PATTERN"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/planned.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a38d90e954a488bc115b1ba53e00d9e5645e5cd",
+            "content": "sha256:c6c763d63dacaf9645772fb8acb024a87974b05cf28a102979649307b6914f72",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIREMENT_REF_PATTERN"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/planned.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The field's tests: optional, normative, settable, rendered and refused when malformed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "content": "sha256:a4b55beff92a7fb4509fcb741f6d4ac50d42fe32d4532ef9508e12b3c318c8a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_field_is_optional_normative_intent_settable_and_refuses_malformed_declarations"
+            },
+            "path": "mcp/tests/test_planned_knowledge_effects.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:c0b35101ebddd305e1084c4b0c86624ace558643ff7c2d5964e5f30b76b8ffc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "Step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

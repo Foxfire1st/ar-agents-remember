@@ -1,0 +1,428 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The manifest resolves every role and operation source and keeps the registry at ten roles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:71f7ce77160c90cec18929123418d8fcd2589c9295ad63bfa3dc43fd230e4971",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manifest_resolves_every_role_and_operation_source"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:d78a14f8e2e81395c228cc0832cce6a71a04442ab1889a1b700e2d66d69e53a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_ORDER"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:2c2967c88ee9f13f34c15c2a1f36231718875757913489e62894d4d551dd6035",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPERATION_KEYS"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:33aeb2fdfbb46c1925595ce7b471884500dc076a1d2c21de5105388f545fdfeb",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:b1d02f114fabcaf700b593a004e7bb3e2f469bb1db9775d36c3e2d33a0ca6921",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The plan still parses and compiles for every role with `tools`/`skills` absent, and emptying `launcher.operations` refuses instead of compiling — the launcher's own case, the one that replaced the older launcher-refusal case this row used to name.\n\nAnchor: \"operation-not-applicable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:0cdaabf5af8937e226126e25940606486d950a55013e0a75c7609e56fa4ab71a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_shipped_role_compiles_deterministically_under_every_declared_operation"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:c92dbc23436f8e42ec4eb7220ebe91f0d18241bda7f068a256ad00446601369c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_emptying_the_launcher_operations_refuses_instead_of_compiling"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:0d613af79480c8e247891429588c4e26803aa0baebcecb012aa318ec1f6d03fc",
+            "locator": {
+              "end": 582,
+              "kind": "line_range",
+              "start": 570
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The plan still parses and compiles for every role with `tools`/`skills` absent, and the launcher refusal is `operation-not-applicable` when `launcher.operations` is empty.\n\nAnchor: \"operation-not-applicable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:0cdaabf5af8937e226126e25940606486d950a55013e0a75c7609e56fa4ab71a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_shipped_role_compiles_deterministically_under_every_declared_operation"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:7bd4b5a3154aa74960b8eccb44e9e6706933811c2d5fe00c166302864abf9099",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_launcher_seat_composes_its_own_core_and_inherits_no_role_operation"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:c92dbc23436f8e42ec4eb7220ebe91f0d18241bda7f068a256ad00446601369c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_emptying_the_launcher_operations_refuses_instead_of_compiling"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The carried skill channel against the shipped corpus: one reference per declaration, revision follows the admitted bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:123f6eabf803e5fa264f769d93f55acb725895ba91284b6eda2099705b85d5d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_shipped_role_that_declares_a_skill_carries_one_reference_per_declaration"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:f55260d1041ea185b6b2f7dfa6ad0f74921b8ac8d4741e58e7fe89200c9310a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_skill_revision_follows_the_admitted_skill_bytes"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The L13 additions as the compiler reads them: the tenth role's source, altitude and single-carrier operation.\n\nAnchor: \"\\\"altitude\\\": \\\"free-agent\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:4bfb1faa8a0a63c2e4f582f0a9df847b07f5a05768f278f6bf0b4543ad7c88da",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 472
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A manifest entry pointing at a missing source, an unknown operation, an unknown core block, or a missing criteria catalog is reported instead of silently accepted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:62dd05cd9082ef08859f4f2e86978868f5b8098cfcecde26936577a4906f6aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manifest_reports_a_missing_source_instead_of_accepting_it"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:ce0e75f9ed1f3bc7b96b493472a094511af7d444f30e84671dc21c56526b97d7",
+            "locator": {
+              "end": 507,
+              "kind": "line_range",
+              "start": 468
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical source of this metadata plane.\n\nAnchor: \"\\\"schema\\\": \\\"ar-role-capsule-composition/v1\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared tool identities are **requests** narrowed against the admitted policy snapshot, never grants; an id outside it is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49ac1a5cf1fe0ddc4233b130e93da2604479b31c",
+            "content": "sha256:7430c3face8fa5a6e9f1a8283a23447097755708433698d37d259206ec48aa37",
+            "locator": {
+              "kind": "symbol",
+              "name": "narrow_tool_requests"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The declared skill registry and the skill entry shape** — the parser that turns `skills.<name>` into `CapsuleSkillEntry`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:398fd6249e5416cdcbdd1e89aa545c9f25b79cc6bdf8c97a201369edbff96715",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSkillEntry"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:9c4d71102eca2d51b861564150b487d832315ffc8344661018478ab628d2a519",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_skills"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:5a8186bba36c47e0dd2912d58d752d6b99e2810076eecfb83f9ce5c119f7b0d9",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**Skill references are carried, not narrowed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:ff997d6960152a420d7b0d10a870728d9c9ba02fba08c8054c25edb8dda93a71",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_references"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:818f46d27fa1b66ce97dd9f70db626a5c63f7bbc33a2e0ebbfe3596add2abb25",
+            "locator": {
+              "kind": "symbol",
+              "name": "skills_declared_identity"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A declared skill must resolve in the registry, and its root file must be admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:d9ebe0c01225ff5c3367abc7ff71348cad9b820eeca4ee81a7871f376414497f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_role_skills_are_declared"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_skills_present"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The parser treats `tools` and `skills` as optional and refuses a manifest that disagrees with the frozen vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:d3e6eee279eafcfca161291cb247167af728e57159bcf6e30031ef5a16653f19",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_composition_manifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:514a5e66d804b7cea4fcdc546da4303eaebd0e4efcbfe62cb13abb263157bca4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleRoleEntry"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:3503e6065930a4b9a688e1e5e53d34e98605c22f34bce504cc09c7f2f17a8954",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Every tool id this plan declares exists in the published roster — the guard that makes a typo an error rather than an inert request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:f34f06d8b39dee094e6d46952b91a62907f1e7d458fb471227d48cb6a9469142",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

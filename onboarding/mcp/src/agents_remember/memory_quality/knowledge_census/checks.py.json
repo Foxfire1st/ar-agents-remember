@@ -1,0 +1,225 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_census/checks.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The nine census rules and their owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:cf70e7c3d365105b16aa6d68d2be288c6e0786c372a410cb976c5733ada87c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_RULES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Status histories are append-only; merges keep both parents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:501216606fa040152a04da2fa8e33b2b4d4917b5182ef300f548cdde7110e266",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_statuses_are_append_only_and_merges_keep_both_parents"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Routes whose slug ends like a pinned file still append.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:a8457bee1490d9adead733d368930a56ee4e6429ce22e2ce34a011b80cc59cc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_routes_whose_slug_ends_like_a_pinned_file_still_append"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A recorded claim's identity and cohort fields are stable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:f8672b5113e13ae7bfd4824516043496a26a1dda4cc95718d2c75c5739785ca9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_claims_identity_and_cohort_fields_are_stable"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fields of a recorded claim that never change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:7e51b88da28bc0a0b2c955fa2339f2abe306df2d7d4866afb3abdad20a9ccc5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "STABLE_CLAIM_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Prefix at one base, subsequence at a merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:a69c6cffb1a4cc2f2703c57078420c48ce593764818ed44e1c7c5f00b7beaba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preserved"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exactly the two pinned paths, and their change or deletion refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:3adf457fff7f894a145a010da99dd17e4e6e8989c76dc80c27e990c0cf4db216",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_pinned_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:f147637d3c5c4f5ee3bda1f69230acd33b30a1e0dc17334bab2bbf773d82158c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pinned_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Claims name inventoried artifacts of their route; IDs are unique; linked records exist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:d55d0e6d01ff5f4d23dce014076d00995a5bd7d53d3617a9938fd2d06479e09d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_findings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:318334f29be7807fe180557e6e5fde0ff1f44b84e19a373f09901de4e8f44a2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_row_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Stable claim fields and append-only assessments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:8d28710e7478b29fa6847715545776cb1ded6651f72f8acdcaa28aa510d940ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_append_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Append-only route status histories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:3ebd5bcc1858a07f94925de7d3f92074104f26f8f697e7c64c1df3154ab99a7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_append_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "042331269f91b4b372425cced347b346a3255bd7",
+            "content": "sha256:069a5e43919d4b70e198cd8adfa9e4a0ea2b767c9dee3583a1bdcc9a0d65c802",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_censuses"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A recorded assessment is never edited; a correction appends.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:a41bc4a4cd425f2a55491d0e8871e957f0ec5bfabe76a2f6e9383a412aa5a843",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_assessment_is_never_edited_and_a_correction_appends"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,70 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The compatibility facade exposes the package resolver entry point.\n\nAnchor: \"def resolve_coordination_context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:83a98662e490d1f9f0142a5a5bb7cb9b8e2a7c46690fda77db37038db7564bc2",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The facade delegates context resolution through its current canonical package owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:074d23ad3c16087dd09d888a493616eaec483e5581927e53efa05850bfff8449",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:7c259ba81f1c281bdf453fab359a30783ba929a5ef865c46791ba678798e3bb9",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Focused implementation modules live under the coordination-context package.\n\nAnchor: \"def build_coordination_context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:8be558dfd19d944a64de16a830fbebea3660b5af442ba6b2cb68741a1f686353",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

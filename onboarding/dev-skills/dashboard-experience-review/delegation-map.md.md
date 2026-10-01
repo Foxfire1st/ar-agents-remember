@@ -1,15 +1,5 @@
 # dev-skills/dashboard-experience-review/delegation-map.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dev-skills/dashboard-experience-review/delegation-map.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-23T05:31 |
-| lastVerifiedCommitHash | `8e39b62c3550e974486479203d191aac39a0f0f3`|
-| lastVerifiedCommitDate | 2026-06-23T06:11:39+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -45,31 +35,18 @@ fold its findings by reference rather than re-deriving them.
 
 No open file-local todos.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+### Docs References
 
-## Repo-Internal References
+No relevant external documentation found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The pipeline (Stage 4) that consumes this delegation map. | "Stage 4" | dev-skills/dashboard-experience-review/SKILL.md:46-106 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The pipeline (Stage 4) that consumes this delegation map. [1]
+
+### Cross-Repo References
 
 The delegate skills are installed Claude Code skills / MCP servers in the harness, not repo files.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: anchored the governing Stage 4 delegation
-  reference to the local skill source.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-06-23T05:31 — Created with the skill (issue #92).
+No meaningful cross-repo references found.

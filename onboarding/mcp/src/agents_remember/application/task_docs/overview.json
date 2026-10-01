@@ -1,0 +1,257 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs",
+  "references": {
+    "1": {
+      "note": "Task-first transactional publication and independent projection refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:4d206d0dab49978f058b58afa65ebd16a43e03dd1ee6e725c91c5083efa842b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_task_doc_set"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:383cc34c4f8c6c784b4792da6156ab0c51348125af4d6277cd6a2e0c8d32f556",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_prepared_task_documents"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:1499691d3198481842de351bbadbd56e0cdf6962f0873bf242452ffbec7c9d9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_task_doc_transaction_and_refresh"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:4bc67f0bcc1f1ceae7f2c62d0b8739e80465e397f0f076f7778761cceb513265",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_task_doc_projection_effects"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:349152e3128018486243d62f95488305bb95b709485f6463e151842eee199c38",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_task_doc_transaction_projection_effects"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Zero-or-one graph-bearing publication batch and in-memory title context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba61924c0c6d86077e472fcbb1704b53f58dbd8c",
+            "content": "sha256:029e36395687bcb19a3110d10d1a8633c0c6a2756ff73e891f0cc6a72c9f3967",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_single_graph_document"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba61924c0c6d86077e472fcbb1704b53f58dbd8c",
+            "content": "sha256:2265e240bd2e35f506d67c192f943bec0001760f46dd2b074c9f9775f1e7d11a",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_publication_batch_graph_titles"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Atomic raw-section shape validation and missing-register scaffolding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "content": "sha256:201c8c239a60abe73c9c1b17ef3c8aceabc8a804d252fe9f04b04af3f9ba9b0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "scaffold_register_sections"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "content": "sha256:00e2cb0892599c527c41262733eae192a273b03e30399a1e0b4fc21e5cc03dde",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_section_list"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "content": "sha256:906a90d3e2ed12490a949ba90c276b546519e2bdc8e4be364d2be43927ae18b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requires_register_scaffolding"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The extracted step plane owns one exact addressing rule and the four step operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:686a84728208b38930b1e1d555a55e2448fb53971e0808542af2ffff1864108b",
+            "locator": {
+              "kind": "symbol",
+              "name": "exact_step_target"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:07aa3475c79541ba7178f4918565264e2ca301032a77c3e2e185ee6ad44e34e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_step"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:40f10bb1136cc4587f43c14f2e8202d578f2807156e9eae9ffb0b4c3e396e87c",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_step"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:3b23579656b0b6cfe3c8433e55a50aa939a4316c3fc16a4c2e7d3174cef300df",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_step"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:b5efeb0ecc0551cda6ac5bc107af70b9350ff46c90db57b3a5ed72bcec624ad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "step_payloads"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The settable flat fields, now including the declaration.\n\nAnchor: \"expectedKnowledgeEffects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:5822cf2444f11a50162c8854f6cc34b971e6b643472618a4ddfeeb37aad17f23",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MUTABLE_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Execution evidence checks real code and memory output cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:b0409d0df5f5c85fdc04feb0b21787d2e816d36dccfb3383dd8fc9240423583b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_fact"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:b670432360795ec9bfc8c277e0a0fa10afed6dc066aaf91d5f06be431c693c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_task_unstarted"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -1,0 +1,185 @@
+{
+  "path": "mcp/tests/test_citation_cache_reclamation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The bounded resource whose reclamation this module pins, and the limit that names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:07cab33accb49143fffaef6730e39fb331fb12684a1a9a4465fef8df8fc33a32",
+            "locator": {
+              "kind": "symbol",
+              "name": "MANAGED_NAMESPACE_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The admission path that reclaims the dead and the authority it inspects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:0843e9f9445935ae81e30f2dca83c4d19ce22394047dfd65799ebeb893a28050",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_managed_namespace"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:4849d8d698c581dfc5b920397010bf97f8adc2743bfdb7cefbff735c80447c47",
+            "locator": {
+              "kind": "symbol",
+              "name": "ManagedCacheAuthority"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The safety property every verdict is asserted against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:60c65f2afbb4eabc90e09bc9fa820a26e9e5e82f95f579c091da06372e563858",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prove_terminal"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:234401b77caa69032e198754a85fd6bd042bd11edd6d61be4cb4361cff72e881",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 429
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The control record whose phase and outcome are read as terminal evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:560bd48f377e728549aa2e403d37a75c48fc17cb44eb7eca5d3a41f0b6159358",
+            "locator": {
+              "kind": "symbol",
+              "name": "CacheControlState"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The lease whose holder is honoured even when the contract reads terminal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:df97c611f7c8e11546ba582cb8329e001c828b1ed2041c45c57eafbe57de3648",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalNamespaceGuard"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:c7eac9b38cd70aa91be72d0ac4eabff17cc9f9501fec1480807c97b6a1da465a",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_namespace_guard"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:15a4a1c147c1f870ededca3dbeb7d6a7a6c3941950aff8984ca401b97311bfef",
+            "locator": {
+              "end": 759,
+              "kind": "line_range",
+              "start": 554
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:a3faffd8fe44d4eeae6b13f6254cf09a63fea36ebefefd4a25138977e65ef970",
+            "locator": {
+              "end": 795,
+              "kind": "line_range",
+              "start": 763
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The compatibility reclamation entry point that had zero callers at the base commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:3aa87834ad37e46886ec8af7e093a926e17e1367e7219bf00314166e923c88de",
+            "locator": {
+              "kind": "symbol",
+              "name": "reclaim_managed_namespace"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28923ae030bb0b928926a704ae14269e8f284e2a",
+            "content": "sha256:698d6e8c20a867f06788ebda933f3dffb9113dc5a3b1772c6ba35db968228e04",
+            "locator": {
+              "end": 826,
+              "kind": "line_range",
+              "start": 798
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

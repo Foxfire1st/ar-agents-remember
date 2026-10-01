@@ -1,0 +1,222 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one reader for both settings blocks, and the frozen value it returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:2ebdad3b6cc58262447a3368cb98cd2df97bc581968d816f95e7dbd6841ae647",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_citation_index_settings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:898f2277ae902101da555ee61e599df4787d6873ded4a537e721cf688b4dcb37",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationIndexSettings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two relative keys and the settings file both blocks are read from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:beb443bd84cda84cd8f4a0aa7a9f00cb0bdb82f826b14bce4a5ba5172ff82504",
+            "locator": {
+              "kind": "symbol",
+              "name": "SETTINGS_RELATIVE_PATH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:acdfc7484b8f7c5a9d6e6827b78e0dd555a160b539aee93be0717845da5a2391",
+            "locator": {
+              "kind": "symbol",
+              "name": "CITATION_INDEX_KEY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:482b5a6c8b5dfb5d22311da103f6f2b164f10f891359165f839478470c9bb3b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PATH_RULES_KEY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:6a02f3a373f6bded2a412b39b254f9a792c98bd1c549e70e92ba0cf817997b7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ONBOARDING_KEY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Either key is accepted at the `onboarding` level or at the document root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:405eb6060a7a64a46ca7200a25d8cb897574295aca219a7021466c8fd13a7e37",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_path_rule_excludes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The accepted cap-override keys and the unknown-key refusal that lists them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:3037cf44d2010871a2d38a2cf0e0bd8a1b2c4318d48a0c14acd3a6c91da7f342",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_citation_index_caps"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:01fbf352c0d9d5580c0c082bbf1d002fd28e398905e44dcf523ccc689d0f9056",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAP_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A cap that is not a positive integer is refused with the key and the offending value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:bb9e92c0d0ae7a70ce7bbcdd426ba497e8e8fda94bcb7eb22ed7f0592a24a92a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_positive_integer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The non-string-list refusal for `exclude.paths`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:ead02e26edd972c9e04f1c3af1cd2207a97c7a929fb2c1964839b6135da984e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_string_list"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cap defaults this block overrides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:3e99e3c8ef3c9fbc71dc8a6ce92a02576a22759e602198aab85a4cf76e14ed07",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationIndexCaps"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:640f0c0cfdbdbc5e4cf6078ffdec7b0d5c9cfc6e0503b49e6d8d1bb19986762d",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The same `pathRules.exclude` matcher every other reader uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b484c1cb2e306642c86d3ef0d07e54deb17d288c",
+            "content": "sha256:d0a104ea8f8e41b7a16cf7d4d707852e787918d0d379748de50479103f82ae6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "matches_any"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/storage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The register that consumes these excludes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:20020838d373136e42692e21a260a7b1302f2f01be3ae99309895229824a70a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_exclusion_register"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

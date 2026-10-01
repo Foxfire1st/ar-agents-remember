@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_control_client.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The private server dispatches advertise/set/submit/reconcile against one bridge identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75812cc11c25eab1b408bae835414f9d0f3a3f49",
+            "content": "sha256:9596ac20aa246932ef81631c1465197a8534ef5228f0cacecbb2a19c7333fc3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessControlServer"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_ipc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Request id is the idempotency key and retained reconciliation truth comes back from the authority directly, with no facade in the path since 260731-EFA-L6.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:ace0aeb8e2a223c370516931cf9664710e8a4212f01dee2689c6976fad978c48",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessSubmissionAuthority"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

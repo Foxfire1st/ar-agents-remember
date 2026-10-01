@@ -1,0 +1,165 @@
+{
+  "path": "mcp/src/agents_remember/certification/final_codex/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every terminal repetition result is acceptance-eligible and certifying with retryCount zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:1f9b9333af2589751e98243d43f149d38c83f13af24809e3767233a787a09f68",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRepetitionResultDraft"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:81e1ee4db0c767164801224b19cf7ee319341736d2c69726e8b7507c45be567f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRepetitionResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:f1e9c755e230623b42b80e8d1bced5fc9032b83e74f203decdfc51ae41ae5f4a",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 300
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:ddec456b828ba36885fa7284baa87985a71db996213ffed6e850c39261748ec2",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The run manifest aggregate is green only for two fresh passing repetitions under one exact plan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:4ea8d59a0ce2c37986d2b70bb7f60748a4c3fe67175b4f0ee3c8d45b08c12730",
+            "locator": {
+              "kind": "symbol",
+              "name": "aggregate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:a45483bc601fa7a97c6d648bbe0c7d337504613f9935332504f442dc01903640",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Gate-4 result manifests come from the shared certifying result-manifest contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:02bfb2ef935ea082c5bc4d1796e006f9f90b2e67340b81566859b2a496244cc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateResultManifest"
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Content digests use the shared certification digest helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/digests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The outer facade re-exports the full model surface.\n\nAnchor: \"from agents_remember.certification.final_codex import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
+            "content": "sha256:1a0377296fa8c56ac1e4865df2d0b956e41146d9e9f865228d9fa157ec8a1173",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The frozen R12 host snapshot is a binding copied from the trusted launcher, never selected or provisioned in this lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:a5eabd7f3265918eb799a3b9c4f74827fad232e05ea9968f5f466d51c4cbd984",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRuntimeAuthorityBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3900d7fd21a106ab803e718ed34bfc71c69722b",
+            "content": "sha256:61fd66f74a6b71a3c233b43b396c36a7d119cda25ff76d21eb64c8f86823099f",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

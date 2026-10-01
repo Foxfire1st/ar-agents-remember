@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/markerReturn.source.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The expansion: both sides present with the object ids the classification names.\n\nAnchor: \"\\\"object_id\\\": \\\"9019bea5a3b9ace22947a516a78718f1a2d8f123\\\"\"; \"\\\"object_id\\\": \\\"e3e6f8d4c246e066532296e69563c435200ae08b\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fc1f77b69f1af103ec1f898ba7a0f047cf92b42",
+            "content": "sha256:98c65bf17b13a3276c142cff617f0413f7e2d61624ceb9ca7691ef60b98603a5",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerReturn.source.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9476cdf46a177d23b4fdb8d261bbb6c4e64e3bf9",
+            "content": "sha256:75211ae7ac00de38b2cb965fed3366ea97c4fbb59a43989348914dc84db96a76",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/panels/review/markerReturn.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

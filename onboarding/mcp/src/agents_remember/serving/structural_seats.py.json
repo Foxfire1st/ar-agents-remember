@@ -1,0 +1,120 @@
+{
+  "path": "mcp/src/agents_remember/serving/structural_seats.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The resolver and error family centralize structural qualification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f9f51d45c6c05c4b98bfb9c5586d948624c2764",
+            "content": "sha256:1acb9b38b437626002a5693a509fb5de0b95ec0695f2ac060a905e791089fa6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "StructuralSeatResolver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parent/child canonical addresses are derivable through vacancy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f9f51d45c6c05c4b98bfb9c5586d948624c2764",
+            "content": "sha256:cc4c785b61d370d820c8842a7479f01127f800f4fb3714ccc21f23f16b6be343",
+            "locator": {
+              "kind": "symbol",
+              "name": "parent_address"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f51d45c6c05c4b98bfb9c5586d948624c2764",
+            "content": "sha256:fda5784599da366136bc063c9c76df5756350d058c13979a5b520ad3768d6e17",
+            "locator": {
+              "kind": "symbol",
+              "name": "child_address"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f51d45c6c05c4b98bfb9c5586d948624c2764",
+            "content": "sha256:b76ea0b19d52c13ee406aac29eac5778d33370198a4f635c35a3e3728c416348",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reviewer parent resolution validates the plane stamp and permits unstamped migration only for historical leaf rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f9f51d45c6c05c4b98bfb9c5586d948624c2764",
+            "content": "sha256:2d768b1a8f2b6034fc481a4a969220c8e3989dd57b04f4a4f4bd44d54d4b029f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reviewer_parent_address"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f9f51d45c6c05c4b98bfb9c5586d948624c2764",
+            "content": "sha256:9193e95f240a87a05a5f9538a3f2848758d1382e032a71985ecbe23f228f75ae",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Task containment resolves real sprint/master/leaf documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4aa4341d296a8f2ec26e360c47bcc927938c26be",
+            "content": "sha256:b062c14ed46418fb7389750e4b2f2ef71e632429ce07062054ab20b5252ef66b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentTopology"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4aa4341d296a8f2ec26e360c47bcc927938c26be",
+            "content": "sha256:035610e1862eb56812cc6a45a76036120846851cf6c89d5efa601a7b9109eece",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

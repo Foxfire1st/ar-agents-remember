@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/turn_state.py
 
-| Field                  | Value                                              |
-| ---------------------- | ----------------------------------------------------- |
-| repository             | agents-remember                                        |
-| path                   | `mcp/src/agents_remember/serving/turn_state.py`         |
-| doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-08T02:43+02:00                                  |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview      | `overview.md`                                           |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -73,36 +63,30 @@ history-inclusive capture, so marker matches are evidence only and must not auth
 delivery, liveness, or actions. Harness-specific tail-sensitive handling and adapter snapshots
 remain the authority for live decisions; marker calibration is a separate follow-up.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation found after checking the repo Domain Documentation for
 turn-state-classification-specific behavior; this file is same-repository runtime plumbing, and the
 marker regexes are a first-cut internal heuristic (see Todos), not derived from an external spec.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 `classify_turn_state` is called from exactly one place — the L5 liveness sweep's alive-observation
 path — with pane text captured by `terminal_paste.capture_pane`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `_observe_alive` records the pane classification; adapter snapshots remain authoritative for persisted state. | `_observe_alive` | mcp/src/agents_remember/serving/terminal_liveness.py:327-393 |
-| The terminal-paste module defines the shared history-inclusive `capture_pane` wrapper and its bounded history argv supplying classifier input. | "def capture_pane"; `_capture_pane_argv`; `_CAPTURE_HISTORY_LINES` | mcp/src/agents_remember/serving/terminal_paste.py:40-40; mcp/src/agents_remember/serving/terminal_paste.py:181-182; mcp/src/agents_remember/serving/terminal_paste.py:201-201 |
-| The classification result is persisted via `TerminalCatalog.record_turn_state`, with `with_turn_state` producing the catalog copy. | `record_turn_state`; `with_turn_state` | mcp/src/agents_remember/serving/terminal_catalog.py:265-279 |
-| The per-harness marker override tables are keyed by the supplied harness id in `turn_state`, with keyed lookups tried before shared patterns. | `_classify_by_marker_tables`; "key = harness or \"\""; "_HARNESS_WORKING_PATTERNS.get(key"; "_HARNESS_AWAITING_INPUT_PATTERNS.get(key"; "_HARNESS_TURN_ENDED_PATTERNS.get(key" | mcp/src/agents_remember/serving/turn_state.py:140-154; mcp/src/agents_remember/serving/turn_state.py:7-7; mcp/src/agents_remember/serving/turn_state.py:111-111; mcp/src/agents_remember/serving/turn_state.py:125-125 |
+- `_observe_alive` records the pane classification; adapter snapshots remain authoritative for persisted state. [1]
+- The terminal-paste module defines the shared history-inclusive `capture_pane` wrapper and its bounded history argv supplying classifier input. [2]
+- The classification result is persisted via `TerminalCatalog.record_turn_state`, with `with_turn_state` producing the catalog copy. [3]
+- The per-harness marker override tables are keyed by the supplied harness id in `turn_state`, with keyed lookups tried before shared patterns. [4]
 
 | The adapter exposes diagnostic `blocked_reason`; pane classification does not provide a boot-readiness authority method. | `HarnessAdapter`; `blocked_reason` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -129,27 +113,3 @@ The marker tables, their precedence and the resulting `TurnStateClassification` 
 unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D11 complete marker-table lookup construct evidence for the same-reviewer residual delta.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_first_matching_state` / `_classify_codex_pane` / `_classify_by_marker_tables` split; marker tables and precedence unchanged.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-08T22:30+02:00 — 260707-HFX2-L3 (paste injector hardening, R2): added `boot_ready`, a thin
-  composition over `classify_turn_state` (ready = state != "stale") — the per-harness delivery
-  adapter's boot-readiness signature. No change to `classify_turn_state` itself or its precedence;
-  the accuracy-gap Todo above is unchanged/unactioned. Verification metadata pinned until closeout
-  stamps the 260707-HFX2-L3 commit.
-- 2026-07-08T02:43+02:00 — Created for 260707-HFX-L8 (live identity + turn-state, issue #4): the
-  marker-based turn-state classifier — `classify_turn_state`, `TurnStateClassification`, the
-  precedence-ordered pattern tables (working > awaiting-input > turn-ended > stale) plus empty
-  per-harness override dicts. Rides the existing L5 liveness-sweep cadence via
-  `terminal_liveness.py::_observe_alive`, never a new hot loop. Doctrine-review F2 (accepted,
-  deferred): the caller feeds this classifier the full 200-line history-inclusive capture rather
-  than the pane tail, so scrollback text can misclassify — folded into a future calibration
-  follow-up, not actionable in this leaf. Verification metadata pinned until closeout stamps the
-  HFX-L8 commit.

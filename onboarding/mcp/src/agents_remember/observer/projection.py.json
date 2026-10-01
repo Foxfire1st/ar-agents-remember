@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/observer/projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pickup and expectation analytics carry structural references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:81961936558889df0e5a95cc8c854e3cb0becdf4ed42614f09ecaa9abb511578",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentPickupNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task documents remain the real projected hierarchy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:a42c7f9aac2b89ef456781787a5901110b8ffc60ce77dd0190dd685019683d3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The leaf-segmented graph projection (lump/segment nodes and sampling endpoints).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:3c5b0deeea54280d46b94c7551915ee21f2ffc4cb5e550a8b23839285ddae9be",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskExecutionNode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:1b42cd30fcb75529cf09dafdb0ec608b81f19a5e9b6fe962972d6dcdb939e636",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskExecutionEndpointNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Workspace projection is the schema authority consumed by generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:2dfa2f1d1342ac25ff477dbf50ad77de717e45968146868d957a99aa22099c1e",
+            "locator": {
+              "end": 1162,
+              "kind": "line_range",
+              "start": 1140
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The served closeout-queue node's member population is unbounded while its problem and reason lists keep their item ceilings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:de26022adbde2d8feda137766068daf6bd80d13c4907529c1cf0b6427fec3530",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueueNode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:2d4a75d62f16a75d3345f723e697f6d66d16d239c6668f87ccf4eed300c625e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutCandidateNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

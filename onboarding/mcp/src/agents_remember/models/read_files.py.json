@@ -1,0 +1,140 @@
+{
+  "path": "mcp/src/agents_remember/models/read_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strict response base and `ToolResponse`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:ca5199c1cb508e337fc2b88eb8e795ae0ed267b3f32f4e4224ae759f0e28db6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolResponse"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The new field, and the owning module that decides its shape.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "content": "sha256:38ea8d8026bcdb87abd8f43c241b3b071dc3c7a09a95159c29de3edfcc619993",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_intent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c35f328865bb872f1b88b6fb9bed189e4e5fc52d",
+            "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_intent_block"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b179a0024b43c400dad9107f2bc3acaf76743131",
+            "content": "sha256:6157b2420e3e8ea571063520975efc61eb411d5bd407360bc6b6d77d28fd30e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_onboarding"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b179a0024b43c400dad9107f2bc3acaf76743131",
+            "content": "sha256:c4a4bb6f2b0a7e1ffd4904f56fef1964293d4a9e69118fd0f172b3bcb90e300a",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 235
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The three optional format fields a file result gains, and the module that fills them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "content": "sha256:201d42bd8ef81a981c642a3c51c90eb569dddd3c74df553f72e1601252af792d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:8135a1645c156c32cd131dc041fe9b689c02dae9d8bd898ca235b326c67fddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_card_parts"
+            },
+            "path": "mcp/src/agents_remember/application/read_files_format.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:a3a13fce2f411e43fd4609617a39be3ded2a075d67558b1a5712f88434ecca43",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_published_intent"
+            },
+            "path": "mcp/src/agents_remember/application/read_files_format.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The registry mapping `read_ar_files` to this response model (L120).\n\nAnchor: `read_ar_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:2767cb2360c4d99697b1247350242f02d4aa526cd27fc1f062c0b783c284935c",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

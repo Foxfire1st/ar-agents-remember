@@ -1,0 +1,60 @@
+{
+  "path": "mcp/tests/test_conversation_control_queue.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source-aware queue projection under test.\n\nAnchor: \"async def operation_queue\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1818fde0a667d5e743c19f35c8c46c7c2f09b4f6",
+            "content": "sha256:2582f61991ded1b84932a3a419edc14072393ab8ae4f31aa5e76eaacfd8b2ac2",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/queue_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The withdrawal + bounded recovery authority (900 s lease, `sweep_recoveries` expiry sweep at L651) and the `ControlRequest` it is addressed by.\n\nAnchor: \"def sweep_recoveries\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9d7923994261529e7d8d0fb956335c393505ea1",
+            "content": "sha256:86b15d077009ab9c91a2a4a9969782e7a4ac5e449001d59358b43c2f80f6ce25",
+            "locator": {
+              "end": 658,
+              "kind": "line_range",
+              "start": 658
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/withdrawals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared fake-topology harness with the `NOW`-anchored service.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "589d0ad9b2431646acdaba1ec870264655fbadd6",
+            "content": "sha256:37d14a403e623ad6501850ddf93498563a037d746bd8af7d2f896e774fe9b769",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOW"
+            },
+            "path": "mcp/tests/_control_plane.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

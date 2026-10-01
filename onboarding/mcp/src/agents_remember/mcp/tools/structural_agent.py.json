@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/structural_agent.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Six payload adapters expose the structural agent operation family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "456c0ea5679c22be7fe3f24882008f2eec27f544",
+            "content": "sha256:55f5ba971a49d36fcd6b52b94c4ad8c8e4d3279be607cc34303c5a334dffbd52",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_agent_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The application service owns authorization and mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "849d72f016ac51f903e451177239fefa8443bc52",
+            "content": "sha256:8a96603519125f905420977ad2418c92d21ec11afbe70eb933f60ef79df06088",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_agent_tool"
+            },
+            "path": "mcp/src/agents_remember/application/structural/agent_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

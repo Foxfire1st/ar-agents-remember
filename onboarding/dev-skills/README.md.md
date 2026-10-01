@@ -1,15 +1,5 @@
 # dev-skills/README.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dev-skills/README.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-23T05:31 |
-| lastVerifiedCommitHash | `8e39b62c3550e974486479203d191aac39a0f0f3`|
-| lastVerifiedCommitDate | 2026-06-23T06:11:39+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -45,26 +35,18 @@ Prose-only convention doc. Lists current dev-skills at the bottom so the tree is
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The non-distribution guarantee is structural: the sync helper only copies the canonical `skills/` tree.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `sync-skills.py` copies only `REPO_ROOT/"skills"` into its fixed targets; `dev-skills/` is never a target. | `CANONICAL_SKILLS` | scripts/sync-skills.py:15-15 |
+- `sync-skills.py` copies only `REPO_ROOT/"skills"` into its fixed targets; `dev-skills/` is never a target. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No relevant cross-repo evidence found.
-
-## Update History
-
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 1 repository-reference citation (1/1 anchored and sourced; scoped citation check clean).
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-06-23T05:31 — Created with the `dev-skills/` slice (issue #92).

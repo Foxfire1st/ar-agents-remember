@@ -1,0 +1,423 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_facets.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one entry point, its three refusal families and the operation name every refusal carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ebb2381225eb6d4b7161627c3a36691fab3d3c5",
+            "content": "sha256:065f642fc583f305b600fbb7be0892d8541d0cc860841ff3790c8787b09593f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_facet_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The seed digest and the seed union the request carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c478757c9bbf96a6ac91956a8071c4bd944ed37b",
+            "content": "sha256:8de62f8c040819ce905cd50334515f3e1bc03e45299136ce206d2e561ebcb235",
+            "locator": {
+              "kind": "symbol",
+              "name": "facet_seed_digest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/facet_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c478757c9bbf96a6ac91956a8071c4bd944ed37b",
+            "content": "sha256:6773da6d9d48b0d4108c126b147891fc028ab34ac9d88c5b8a82875a5467b904",
+            "locator": {
+              "kind": "symbol",
+              "name": "FacetReadSeed"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/facet_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The refusal helpers this seam reports through, including the absence the read owns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "447d4cc906e77679e15514daa94d05894257dd02",
+            "content": "sha256:31ca80312b64d8661d81f5c7963e68fdeca954b4884298eb93d0b4799872cadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "selector_absent_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "447d4cc906e77679e15514daa94d05894257dd02",
+            "content": "sha256:7ec991601ba2bddb4c403e4fb2139b18997c75b01a749382788ee0d8f3e0397b",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_incomplete_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "447d4cc906e77679e15514daa94d05894257dd02",
+            "content": "sha256:3de7d0510dfa4c6ae50302fe07c370133b6291b0ed9521db0d6aa5e23e588d99",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_unavailable_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The read-only open this seam is built on, and the refusal an absent path earns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:f48790c1b07bc231b16073f34a37a549d1e8f9b869946017bbfe23ebc06afd82",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_input_unavailable_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The cases that hold the seam's own boundaries: its own-policy page, the byte-identical shipped page, and the incompleteness refusal.**\n\nAnchor: \"test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy\"; \"test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:a5b371f9c996801441329caf97c0043ec188ea424a251e691d73efb80187cca9",
+            "locator": {
+              "end": 1068,
+              "kind": "line_range",
+              "start": 1053
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:e1a66284854c38bab55ff796e2f9ed2bccbb39f2998eb1101d3f61e09777e7d0",
+            "locator": {
+              "end": 1119,
+              "kind": "line_range",
+              "start": 1104
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:c240fb94b51ff6bc9b5bbdc371fc469a90726876c83355b55ef980cc3968782e",
+            "locator": {
+              "end": 1068,
+              "kind": "line_range",
+              "start": 1068
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:c78a4c870bd66b060ceabe24ae2893fdc551185c5bf8355b7ead85d2fb208310",
+            "locator": {
+              "end": 1194,
+              "kind": "line_range",
+              "start": 1187
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:2ac59111e5e8a16e78c1bdf87509cd334866f5e0c5444e55e5c5eb19abf1b2c7",
+            "locator": {
+              "end": 1246,
+              "kind": "line_range",
+              "start": 1239
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:be4f366a7efbb6248570000f523058aad82ee6ac52d18fc6c86d533058a6e09f",
+            "locator": {
+              "end": 1214,
+              "kind": "line_range",
+              "start": 1214
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:473e0d815e07f308d9c664c5924dedd09d3c784efe9fdeda78d3ca479a09f078",
+            "locator": {
+              "end": 1266,
+              "kind": "line_range",
+              "start": 1266
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The read-only handle, the delegate call and the served result, closed in a `finally`.\n\nAnchor: \"def select_facet_scope(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ebb2381225eb6d4b7161627c3a36691fab3d3c5",
+            "content": "sha256:31770722de4b0261c7e40df8e9539dc3a0799df0e8e6e61b8cf075bb21a854de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_inside_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d62934ee24a0cddd78dbafa9f8384b76ed6d97c6",
+            "content": "sha256:ff2e156a81af6666d2c68067517d818b04a31afa80dadb41cbc1b4e502ae5e0c",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The absence-versus-emptiness split, and why a recorded record with no attachments is a page.**\n\nAnchor: `seed_recorded`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ebb2381225eb6d4b7161627c3a36691fab3d3c5",
+            "content": "sha256:81d229e0e8b41a864e1970f3b0ef56925e4975be143e6fd65d61dd281031f196",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absence_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The three snapshot comparisons run before any selection, each naming expected and observed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ebb2381225eb6d4b7161627c3a36691fab3d3c5",
+            "content": "sha256:b96bfcf7e99924a7f219443d3fb2fe7169d5c104438ff66803cc35daef878c38",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot_identity_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fallback that refuses a file which is not the selected snapshot, naming both identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ebb2381225eb6d4b7161627c3a36691fab3d3c5",
+            "content": "sha256:b065da5f3a138d0044cfe1231969d8fb9ed06487b0bbc383461c25c1985ad2de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unusable_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The refused result, which carries the snapshot and digests but no page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ebb2381225eb6d4b7161627c3a36691fab3d3c5",
+            "content": "sha256:85261458be8483fa4553a66a596c7aafdf6bd25ed9801f518e9c983d433ad457",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The declared policy name and the one operation name the module publishes.\n\nAnchor: \"FACET_SELECTION_POLICY_VERSION =\"; \"def read_facet_scope(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c478757c9bbf96a6ac91956a8071c4bd944ed37b",
+            "content": "sha256:a99e09f7cb5f1409093a7221728d77ced749b7c6876962994ed6f9dfa530ed24",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/facet_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ebb2381225eb6d4b7161627c3a36691fab3d3c5",
+            "content": "sha256:065f642fc583f305b600fbb7be0892d8541d0cc860841ff3790c8787b09593f7",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The selection this seam delegates to: one query, one complete aggregate, the bound it raises past.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d62934ee24a0cddd78dbafa9f8384b76ed6d97c6",
+            "content": "sha256:9d9d181619878d46415a3e3c50aaea23cac62a298611cd0a44fc673381d77132",
+            "locator": {
+              "kind": "symbol",
+              "name": "FacetSelectionQuery"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d62934ee24a0cddd78dbafa9f8384b76ed6d97c6",
+            "content": "sha256:ff2e156a81af6666d2c68067517d818b04a31afa80dadb41cbc1b4e502ae5e0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_facet_scope"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d62934ee24a0cddd78dbafa9f8384b76ed6d97c6",
+            "content": "sha256:f8faf7d92466bcf25ae24bf2b821fad45761f82fc6bcaa3aacb0656e022cb6b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "FacetSelectionIncomplete"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared read context the facet read reuses, and the shipped helpers that produce the result's snapshot and digests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:1451c4c8bdaf6008308b301603f1897e473a9c954c1678f9207c71aab1944f8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadContext"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:ff1d0757634a679ac3562e14b6bebc4f9374872ace1d66284c10fa9bff5c0e56",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_of_context"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:ba93ba2e259ca87302d01b641a97840c91d4d79651cb6030882de2df1e6645b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_context_digest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

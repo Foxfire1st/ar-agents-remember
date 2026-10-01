@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Onboarding source-drift integrity checker.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "532c15db0a7e45d7fb807563b1b4395f3a57657a",
+            "content": "sha256:f92459147c3ceb7736040a0ddacb6e7f03ee83485a853eadec3a3acbd0188cff",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,348 @@
+{
+  "path": "mcp/src/agents_remember/kernel/eve_runtime_readiness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The probe registers itself against the registry's eve probe name at import time and returns the registry-shaped `(ready, reason, locations)` tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:11f6fd7de2383d88975432797f647e0072a489224fc5554513fef9bbc480c9b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "eve_runtime_probe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The application markers this probe requires are the launcher's own predicate, and the pinned release is what fixes the Node floor.\n\nAnchor: `engines`; `dependencies`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:e628951999d92a54551f6674aa6ad41190990c9e39a5b4c1f99be79c554508ce",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:6c82aaae98e7cc9c92b49f277c6ae5e38690c3f97471b92615c1ab8c39aba990",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:85776925c51b57961f99170d80648567c2f2e22517c82d683dd99d298589a45d",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The verdict itself, in the order that makes the reason name the first real failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:6efb4185237561f902d9379d22d993ee76ce30ac5a0dd15b5edd0c11b870c9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "eve_runtime_readiness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The application root resolves package data first, then the checkout, with the env override ahead of both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:5aea199757b7d555eaa53a2005b30757e3269b8cb5ecb1e9f2e1c4eab72c397b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_application"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:474b6679e2e1d3f345a0481f8892d652ab2b0e84e06b1e92d1461c271ef6b6a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packaged_application"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:542f95ce38487a1ea49719508977ac432b5fbc809b7fdeab906120646f20d625",
+            "locator": {
+              "kind": "symbol",
+              "name": "_checkout_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:35e0094d27cd0eb2b0b2abe0a6972169a1414566ade55f95ed3384ef5b651d34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_application"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The interpreter search order and the per-candidate rejection collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:d60917303da15ae6f5c8241eae1ff1e3a60145432e6ce1300c9f294da07562f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_node"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:041a72aeac2b982177fb70409830265658ded97086eb88bcee4ef85c10e4ab06",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NodeVerdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The central decision: a candidate is a runtime only when it exists, is executable, and reports a major at or above the floor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:b15889dc0fd7479e2d159a59d14ac1efd06053576d4fd7e62335759908d5e48a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_usable_interpreter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:74a18762ceac059866f5928989b2d53f334b2fc896a9d584a50981fb6bd707b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unusable_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:d5b41cd6cc1d5c3d2850da4c6d6bff1db99e9cf56558d920d5d3d551efe4290b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reported_major_version"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:b33e531386fd82ed2784c6b310522e019c27f2a4b93f17938b594b0ed9ca24f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "NODE_VERSION_TIMEOUT_SECONDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one floor with two readers — this declaration and the transport's import of the same object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:33bdd4d264999d84beb4c955d281a376492894dcacc826e2e669b610ad0cf843",
+            "locator": {
+              "kind": "symbol",
+              "name": "MINIMUM_NODE_MAJOR"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The registry seam the probe plugs into: the `eve` row carries `runtime_probe=EVE_RUNTIME_PROBE`, and detection consults the probe instead of PATH.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:157c9a587ba817f64d2f0471ce2bc9363e72e315b28b822f86cf343bbc00c4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_RUNTIME_PROBE"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:5d3210811454503a1c58cd4b09949a46421683b0e4824d273b6155f59dd450db",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_runtime_probe"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:25769831dde6a0e1fdb13129b67e5938e9d0b3ffb114fc35e71b035fd91c8eb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_runtime_probes"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:843489d2d03594493e8c03f6449fb312680754069c3b153525213f91298d19ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_harness_available"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:c2d4f48964201201597c682d4004271476f9edee00a091f32ed7d51bd3acd95a",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_availability_detail"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:c9658f95bd364cffc04f00c32856a8352aef920ddd40c066eeaa83dc538bc942",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_runtime_verdict"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The cases drive both halves deterministically through the injectable `which`, including the below-floor, non-executable and missing-interpreter refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:8bcf56d76c42f1e1f073410cf851481d2d31d6ffa9a6a2df77d924190fd50872",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveReadinessProbeTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The floor is asserted to be one number with two readers, so a second literal on the launch path fails a case rather than passing review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:65128cf749d9d68d6749ac22217bdf3f0f061b6dbe2ce0d23860887ffede773b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_required_major_is_one_number_with_two_readers"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

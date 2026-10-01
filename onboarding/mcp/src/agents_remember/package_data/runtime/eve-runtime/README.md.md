@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/package_data/runtime/eve-runtime/README.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/eve-runtime/README.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
-| governingOverview      | `../../../../../overview.md`               |
-
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
@@ -46,19 +36,9 @@ runtime tree loses a same-named directory.
 - The authored source is `eve_runtime/README.md`; a content change starts there.
 - `node_modules/` is not committed and is never part of the mirror.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The generator declares the `eve-runtime` target with its per-target ignore set. | `TARGETS` | scripts/sync-runtime.py:61-78 |
-| The installed application root is `<coordination_root>/runtime/eve-agent`, reached through the documented override. | `install_eve_application`; `resolve_runtime_root` | mcp/src/agents_remember/install/runtime.py:537-563; mcp/src/agents_remember/serving/eve_runtime_launch.py:168-203 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: **created** for the packaged application
-  mirror this leaf adds as a new `scripts/sync-runtime.py` target. The card records generated
-  content, its authored source and the generator as the edit route. The leaf's second sync
-  regenerated the mirror after L17 changed the authored `eve_runtime/agent/agent.ts`, so the bytes
-  at this tip are L17's authored content through this leaf's generator. The verification metadata
-  names the leaf base commit because the whole candidate (mirror included) is **uncommitted**; the
-  real stamp is closeout-owned.
+- The generator declares the `eve-runtime` target with its per-target ignore set. [1]
+- The installed application root is `<coordination_root>/runtime/eve-agent`, reached through the documented override. [2]

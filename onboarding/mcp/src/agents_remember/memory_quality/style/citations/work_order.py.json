@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/work_order.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `Item` (lines 18-45) — One declined citation and the edit that clears it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c392fd5f92dc1958edf4f0f6246e1f21bf2502a",
+            "content": "sha256:49f937f7008c4de42e42dea4f740152c7cde8cb732a5ffcc8e9d5a3a146dc8dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "Item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `orders` (lines 48-67) — One entry per document, in tree order, each holding its own items in line order..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c392fd5f92dc1958edf4f0f6246e1f21bf2502a",
+            "content": "sha256:985c73cd95d95c07fb49601b3b3c45f4997e9df14373bf40f7fea1167cc3d230",
+            "locator": {
+              "kind": "symbol",
+              "name": "orders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `counted` (lines 70-75) — Every decline reason with its count, worst first -- the complete list (L6-R15)..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c392fd5f92dc1958edf4f0f6246e1f21bf2502a",
+            "content": "sha256:d04f7368486c1efde710ae7d9f20bfd393af887d93ac4b2ef40fbaecbf9d0663",
+            "locator": {
+              "kind": "symbol",
+              "name": "counted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

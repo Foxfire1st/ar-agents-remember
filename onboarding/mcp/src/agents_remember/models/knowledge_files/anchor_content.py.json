@@ -1,0 +1,105 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/anchor_content.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The content prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c76781389f335adb81f79534d98c5a9404f9dd3",
+            "content": "sha256:e2229ddc48d18c2493c977ebf1435739caf15faa33566812b24e440b3648e990",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONTENT_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Lines end at `\\n` only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c76781389f335adb81f79534d98c5a9404f9dd3",
+            "content": "sha256:50b6f19ef4488ef9bb1169c2100c2aab4239ba1a0c78e306f79881c7ea895ae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "blob_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A range's bytes, or a refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c76781389f335adb81f79534d98c5a9404f9dd3",
+            "content": "sha256:7af4560fe8210f3f54801e9e9d159a19e39e936cfa20a4d8fc1d01d0d37e5bb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "range_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The content identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c76781389f335adb81f79534d98c5a9404f9dd3",
+            "content": "sha256:42002f6ab9b9208963081163ebd96fdae9decf7573a0ab3b3580daf1b259f239",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The writer's only use: resolving an anchor at C.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b64f56b85519797cad0d3ede5349a20aef801d",
+            "content": "sha256:e22efd530081de646d8ac5be7f15b57e4f84ba2e6d2b9875051db516a9c77e75",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "LF, CRLF, lone CR and invalid UTF-8 pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d0249c233d5eabbf837f6e775a297e28ff520d1",
+            "content": "sha256:3aacf785be37c33f9c51961d3f77e693e21d0cfb57f9477407d50d0f36b982f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_line_range_names_its_lines_with_their_own_terminators"
+            },
+            "path": "mcp/tests/test_knowledge_anchor_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

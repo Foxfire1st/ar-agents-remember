@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/evidence_records.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/evidence_records.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T23:41:23+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -95,49 +85,34 @@ back from the row's own text.
 - **No blob, no second content store.** The only digest here that describes something outside the database
   is the artifact reference's, and it is carried as text.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The revision payload version and the envelope draft the pair of rows is written from. | `RECORD_REVISION_PAYLOAD_VERSION`; `EnvelopeDraft` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:81-81; mcp/src/agents_remember/memory/knowledge/evidence_records.py:88-101 |
-| The envelope row and its digest — the ledger pair every record kind shares. | `envelope_record_row`; `envelope_record_row_digest` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:104-114; mcp/src/agents_remember/memory/knowledge/evidence_records.py:118-139 |
-| The revision row, its recomputed seal, and the decode that re-derives it rather than trusting the row's text. | `record_revision_row`; `record_revision_digest`; `decode_record_revision_row` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:155-165; mcp/src/agents_remember/memory/knowledge/evidence_records.py:169-182; mcp/src/agents_remember/memory/knowledge/evidence_records.py:187-220 |
-| The claim's ledger row and its observable-row digest. | `claim_row`; `evidence_claim_row_digest` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:226-229; mcp/src/agents_remember/memory/knowledge/evidence_records.py:232-243 |
-| The subject edge's row, its table and revision column, and its observable-row digest. | `subject_row`; `subject_table`; `subject_revision_column`; `subject_row_digest` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:268-276; mcp/src/agents_remember/memory/knowledge/evidence_records.py:279-284; mcp/src/agents_remember/memory/knowledge/evidence_records.py:287-292; mcp/src/agents_remember/memory/knowledge/evidence_records.py:295-304 |
-| The claimed-coverage edge's row and its observable-row digest. | `coverage_row`; `coverage_row_digest` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:334-346; mcp/src/agents_remember/memory/knowledge/evidence_records.py:349-358 |
-| **The observation's row codec is imported from its own module and kept in this module's registered surface, so callers keep naming this module.** | "from agents_remember.memory.knowledge.evidence_observation_rows import ("; `__all__` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:39-45; mcp/src/agents_remember/memory/knowledge/evidence_records.py:944-1006 |
-| The callers that reach the observation codec through this module. | `OBSERVATION_COLUMNS`; `observation_row`; `decode_observation_row` | mcp/src/agents_remember/memory/knowledge/evidence.py:115-120; mcp/src/agents_remember/memory/knowledge/evidence.py:280-280; mcp/src/agents_remember/memory/knowledge/evidence_read.py:216-216 |
-| The read statements whose declared order columns live in the read-queries module. | `CLAIM_BY_ID`; `OBSERVATION_BY_ID` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:455-455; mcp/src/agents_remember/memory/knowledge/evidence_records.py:474-475 |
-| **The claim-identity listing, decoding nothing, and the whole-listing form unchanged beside it: both run the same identity statement, so the two cannot disagree about which identities exist.** | `claim_ids`; `all_claims`; `CLAIM_IDS_OF_REPOSITORY` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:838-850; mcp/src/agents_remember/memory/knowledge/evidence_records.py:853-856; mcp/src/agents_remember/memory/knowledge/evidence_records.py:639-642 |
-| **The single-record reader each listed identity is then read through, which is what makes a per-record guard possible without a second reader.** | `claim_record`; `claimed_coverage_of_claim` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:724-728; mcp/src/agents_remember/memory/knowledge/evidence_records.py:920-942 |
-| **The composing reader this listing exists for: one identity read at a time, a damaged claim named while its siblings are supplied.** | `_claim_records`; `claim_ids` | mcp/src/agents_remember/application/review_evidence_records.py:521-545; mcp/src/agents_remember/memory/knowledge/evidence_records.py:838-850 |
-| **The registered surface gained exactly one name (`claim_ids`), and the case that measures the isolation it makes reachable.** | `__all__`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/src/agents_remember/memory/knowledge/evidence_records.py:944-976; mcp/tests/test_knowledge_review_evidence_channels.py:719-847 |
-| The case that asserts there is no blob column and no second content store. | "def test_there_is_no_blob_column_and_no_second_content_store(" | mcp/tests/test_knowledge_evidence_observations.py:871-905 |
+- The revision payload version and the envelope draft the pair of rows is written from. [1]
+- The envelope row and its digest — the ledger pair every record kind shares. [2]
+- The revision row, its recomputed seal, and the decode that re-derives it rather than trusting the row's text. [3]
+- The claim's ledger row and its observable-row digest. [4]
+- The subject edge's row, its table and revision column, and its observable-row digest. [5]
+- The claimed-coverage edge's row and its observable-row digest. [6]
+- **The observation's row codec is imported from its own module and kept in this module's registered surface, so callers keep naming this module.** [7]
+- The callers that reach the observation codec through this module. [8]
+- The read statements whose declared order columns live in the read-queries module. [9]
+- **The claim-identity listing, decoding nothing, and the whole-listing form unchanged beside it: both run the same identity statement, so the two cannot disagree about which identities exist.** [10]
+- **The single-record reader each listed identity is then read through, which is what makes a per-record guard possible without a second reader.** [11]
+- **The composing reader this listing exists for: one identity read at a time, a damaged claim named while its siblings are supplied.** [12]
+- **The registered surface gained exactly one name (`claim_ids`), and the case that measures the isolation it makes reachable.** [13]
+- The case that asserts there is no blob column and no second content store. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): **the observation's row codec moved out, and this module re-exports it.** The worker moved `observation_cells`, `OBSERVATION_COLUMNS`, `observation_row`, `observation_row_digest`, `decode_observation_row` and the private column-group decoders verbatim into `evidence_observation_rows.py`, to bring this module under the 1200-line rail (1210 → 1006). Behaviour and callers did not change. Purpose and Logic now say where the codec lives, and that this module still answers for its names. The two observation-codec rows moved to the new card, and two rows here cite the re-export and its callers. Every other range was re-pointed through the exact base-to-candidate line map. No stamp was advanced.
-
-- 2026-09-27T05:31:41+00:00 — Selected the actual value/model declarations for 1 ambiguous source-linked citation(s), including container members and delegated type owners where applicable. The bounded claim is retained; generated history and real stamps remain unchanged.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T21:55:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): **this owner gained one read, and it is a split rather than a new reader.** `claim_ids` (`memory/knowledge/evidence_records.py:1042-1054`) runs the existing `CLAIM_IDS_OF_REPOSITORY` statement and decodes nothing, so a composing reader can list the claim identities and then read each one through the owner's own single-record reader — which is what makes "one damaged claim is named while its siblings are still supplied" reachable at all under `ICR-R14@v1`. `all_claims` is **unchanged** and stays the all-or-nothing form over the same statement, so the listing and the whole-record read cannot come to disagree about which identities exist; the Logic section now states that split and the Conventions/Invariants record that neither is derived from the other. `__all__` gained exactly one name. **Citation accounting:** the four rows citing ranges into this file were re-read and are unchanged — this leaf's insertion sits at `:1042`, below every construct they name — and four rows were **added** for the listing, the single-record reader it pairs with, the one composing reader it exists for and the registered surface with the case that measures the isolation. Nothing was re-worded, and no row was dropped. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` now name the **production line this reading was against** — `d80a0513e928ef29a973527d09597c82c96fde87`, the master line's current tip and this leaf's base — replacing the previous pair rather than leaving a stamp no reading in this pass measured; the candidate is uncommitted, so no commit contains the content a stamp would claim to have verified, and the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates.
-- 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 1 claim(s) here (1 x citation_claim_reopened). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
-
-- 2026-09-18T04:20:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): created this one-to-one card for the supporting records' row codecs. It records the single owner per table for order, canonical text and digests, the two seals recomputed on the way out, the observable-row digests, and why the envelope digests are restated here rather than borrowed from the facet codecs. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

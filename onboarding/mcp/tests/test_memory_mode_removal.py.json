@@ -1,0 +1,329 @@
+{
+  "path": "mcp/tests/test_memory_mode_removal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three pinned properties, each named with the failure it prevents.\n\nAnchor: \"memory mode: refused by name, reported, never substituted.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:b0ed62db35984c50b9fd4816af3d10f2f193849ea17bd59a9c726d945502bfd3",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A removed-mode answer never claims the publication was lost.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:66d2f9184112d6914197848f316543689b8e8d9cbbc31f3873ea6cbcd1b1a5d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_removed_mode_answer_never_claims_publication_was_lost"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Both flag narrowers distinguish a typo from a removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:9c77221fe86578ec79ec481dd742b1213ae00841964a76ba39ed1eb32a7e21f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_flag_narrowers_do_not_report_a_typo_as_a_removal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Thirteen corpus and documentation surfaces are guarded against re-teaching the removed default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:24c3ff2000ee4747c47711d59ec6530e555db466c62c67c2b71e4bf3438c6803",
+            "locator": {
+              "kind": "symbol",
+              "name": "CORRECTED_SURFACES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The generated skill copy must equal the canonical tree it is generated from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:13c81445d44b10ee0339f4ae7556dacfaf4385e5e47c21ede72babdff2f53a50",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_generated_skill_copy_carries_the_canonical_correction"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The module's evidence lane is declared under `unit-regression`.\n\nAnchor: \"test_memory_mode_removal.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:8add48108fe714e0ef2bdb7cd10882b3527d5cd72c49bb186a8198750542663a",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The leaf enclosure's memory worktree is a supported onboarding root, and the resolver reports the root it was given rather than the official one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:163516a5ef2993d2f5a0a035354f4825d49c15d08f371c5537fd8bffdfd65c54",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_enclosures_memory_worktree_is_a_supported_onboarding_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The four lookalike shapes refused structurally — a `not-worktrees` path, a code worktree, an empty name after the prefix, and a one-segment-short path.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:41645c782650a44b1171d56c519cc8675418d7562a6fc3cfcfe7192cd4cecdcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directory_that_merely_resembles_a_memory_worktree_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The refusal names both supported shapes and the root it received, so it cannot send the caller in a circle.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:a335349bf86733059d6b6da5f41bde2db6234f1c11c18083c5f2999ea4afe303",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_onboarding_root_refusal_names_both_shapes_and_the_root_received"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The CLI entry point measured end to end: the leaf enclosure's root is measured and named, an unsupported root raises the refusal containing its own path.**\n\nAnchor: `check_missing_onboarding_main`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:3094a2329c46216f84c175dae0ceae670cf9de2cadedc938fd80f5d0390f02ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cli_measures_a_leaf_memory_worktree_and_refuses_an_unsupported_root"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "173c634c2a673a71154a2bb8704a9b0b9929d40b",
+            "content": "sha256:dcaf617ca1ebd29a2e4d363bc4b4480aab035a996fc889cf262752821c7b5fa6",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The module is declared in three evidence-lifecycle consumer lists: the shared curator-coherence support artifact's list and two further artifact lists.\n\nAnchor: \"mcp/tests/curator_coherence_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The expected supported set is written literally, not imported, so a vocabulary change must be made twice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:24af7f6b54b6d4e543d804faae29274533137da812ce12b961f91be93fea1cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPECTED_MODES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declared vocabulary holds no removed member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:c5148cf4769d7b0e9b3b588a3b3932ffc799793b2e71726f235fe5bd64bd1fa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declared_vocabulary_has_no_removed_member"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A removed token is refused by name while an unknown token stays an invalid-argument error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:4e4d56bc20c7a50b77a89ec359638bb842bd98cc021a36a8b6fb1b665fb3157c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_require_supported_topology_keeps_unknown_tokens_distinct_from_the_removal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Existing state recording the removed mode is reported and left byte-identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:12af79645fbb4d4b029325df51c7d18029d924918b88e0ed10d6511360535c59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_contract_recording_the_removed_mode_is_reported_and_left_byte_identical"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The supported paths are unaffected: external still resolves, disabled still round-trips.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:aa22868f3d7d8f6f7735f117a564a03740046f2b464d447d6e8fb35db46b5a6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_external_selection_still_resolves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The CLI never advertises the removed member and hands a removed token to the typed refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:55f62cfb360a125ec3dbe93fab6eecc86a4eb1ba31083dc74caa87e8f4caf229",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cli_never_advertises_the_removed_member"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The tool documentation no longer offers the removed mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:302fa1d5d7ec2f1d8a37135cf08f7995234f3ccd4eb34881189dc5889d3635b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_start_tool_documentation_no_longer_offers_the_removed_mode"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The operator receives the typed refusal with the recorded value, the supported set and the artifact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687f5c067138e6f1e5015432b34d341798ac26fc",
+            "content": "sha256:23c119fa7e322d8b47a6d0c4d09870523a7842a9b81907c7169279f9ecac1b8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worktree_status_packet_reports_the_removed_mode_to_the_operator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,377 @@
+{
+  "path": "mcp/tests/test_serving_notifier_handoff.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two independently scheduled loops neither of which can wake the other: the observer's completion-relative poll and the notifier's completion-relative interval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:5cb4bab997fd02e9eace95b13b78a59c4a29d144dc7bc2e7231c5207d1f62143",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_observation_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "content": "sha256:bf37d7527b4e3d4e69e7f2fa160ae710eae7c33dc4f5586b09917dd3d5ea29e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serving_lifespan"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The previous full sweep's own overrun as the `R_observer` term, with the bound met exactly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:7ed6f6cd4cb4ba41a9433caa086a1d4d292a0b9c27507f3b98b94ba5a40bd7c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_in_flight_full_sweep_overrun_delays_the_consuming_sweep"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The starting-row fast-path overrun and a nonzero commit duration, with the observed latency equal to the oracle's sum.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:3687cd918b86f9de01f0bb3867a40d5b443a4d4a3590cf862a126bf9d93cfceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_starting_row_fast_path_pass_counts_toward_the_same_overrun"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A notifier pass in flight at the commit: its interval starts at its own completion, not at the commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:357682afd663daa6121897e6021d2b97d5b9c131aa5102f0bbf2405de6c3ae7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_in_flight_notifier_pass_finishes_before_its_interval_starts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Committed-truth-only reads: attempted before the commit, returned after it, carrying the committed rows in the notifier's own scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:17e0d7331f1160ced4aee51e9715f6707c78e14cf4c15c8af21d2a2d2dcafded",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_notifier_reads_only_committed_catalog_truth"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Missed ticks coalesce for both loops: no queued catch-up burst and no second in-flight attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:9a81df01f9e413aa9056e2e0ee035c6097ad6e5fe050136bcdf3e54d3aa52b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missed_ticks_coalesce_instead_of_queueing_a_catch_up_burst"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A live pass that did not read the fact cannot be the pass that satisfies the stage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:9a516faccb5696bea3bc78cacc2c52745bea3febed2f56185bec68a83564e3c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_live_pass_that_did_not_observe_the_fact_does_not_satisfy_the_stage"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Notifier disablement pauses signal derivation only, and re-enabling in place consumes already-committed truth on the next pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:85cc5f501fe5da05a3990558268b458630df37a2f907995408aff63f6af1bddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_disabled_notifier_pauses_signal_derivation_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The shared fixture this module extends rather than duplicating.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41e8b9949999c510c9bc4f94cbf8a951fc59d0d5",
+            "content": "sha256:14b8dce2ded758d7f7f27e0f64fc88f84e43ee0667dad8c51b62210131fcdf31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ServingFixture"
+            },
+            "path": "mcp/tests/test_serving_observation_loop.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The candidate classifies this module once, in the explicit unit-regression lane.\n\nAnchor: \"mcp/tests/test_serving_notifier_handoff.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:fa505d15a052e5e92b709a0a817b6dc8f3fe3c68f3dbaf06a43d1b08df524a48",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 231
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The observer's poll delay, read from the production declaration rather than written as a literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:df35871babd673fe66debf42ab5d27f2e60c9c2c859d50b3ab6c88951e483ec6",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sweeper's retained starting-row window and ten-second full-sweep limit measured from the previous full sweep's start.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:ecf9805e5170a4d00f3b6f3490b33284da3f03a5a6d367381d719c50eb6ed2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The full-sweep rate limit the oracle's `F` term is read from, declared with the hysteresis the sweeper applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:13eec84db2dc65193c54017d90dbded806b523018829ed771873c4a6317c1342",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalogLivenessConfig"
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:73090502d3acf8daeae5268c7eca1a24e9cc22b49db7dfa903dc5724be907d9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_LIVENESS_HYSTERESIS"
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The notifier interval the oracle's `N` term is read from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c22434b876834849d0e27f57e5d832666ba1ec8",
+            "content": "sha256:f635b5663e8accd9faa1042552b4c2a5592f50c153c2756d071dd113fcea945f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_AGENT_NOTIFIER_INTERVAL_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The real notifier sweep each recorded pass runs, and the durable store whose commit boundary the harness records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b035bc25fcf8bfb657d6246b3a3bdd2df4e637c8",
+            "content": "sha256:3d4793dd9feb0a10ce5bdcc82bdb1b88f42dd316551020faf2aa6500cd44aa70",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_agent_notifier_sweep"
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:55daa48731d544c451294839190cc76f0b5c3c8b446e90d5b35cf10ba039e3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalog"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The instrument: the deadline-correct virtual clock, the recorded worlds, and the oracle's terms read back out of them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:d390985336f142a427999df8cd954aaa31155b65c8305a3c16352da87810fe86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_HandoffCase"
+            },
+            "path": "mcp/tests/_serving_handoff.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:3a86a1c5e5ca1470462a22907640df90992ff0229433218b7e129326477be31b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Handoff"
+            },
+            "path": "mcp/tests/_serving_handoff.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:fe1967b0a8269b74f91b18547e1b01d388ea0b87fb3abed7c0aa340e3863ecb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_oracle"
+            },
+            "path": "mcp/tests/_serving_handoff.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The oracle's fixed part and the class that carries all eight cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97cee5b72118e7e6280ad41da7bd69ea055afbc0",
+            "content": "sha256:3bfb194da439101f170ad6f833023b386e353dd8946ff03e12e5b86de5be33eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORST_PHASE_BOUND"
+            },
+            "path": "mcp/tests/_serving_handoff.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:12b7c4d1ffd07b558f6255ac6d942d56a443f835085f828cb5318d07e0ed6489",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingNotifierHandoffTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The default-phase handoff with no injected overrun, and the strict observer-phase form asserted where its arming actually happens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "621e0b15d12a8707ea4801632517770b8925d3ca",
+            "content": "sha256:277a53c72fb5dd80d87a65bdf29536d818916c1502e1996dabc90ce4bbb16db3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_default_phase_handoff_stays_inside_the_worst_phase_bound"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

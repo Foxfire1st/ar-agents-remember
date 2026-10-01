@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/serving/pane_signals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier.\n\nAnchor: \"def evaluate_pane_findings(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e595e89dacda7d4cffcb03ae09034a21e501bd3",
+            "content": "sha256:eba67c68fff272573bb797135d2e130ccc28db22596a9fa06316467a54fe2956",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/serving/_agent_notifier_evaluation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pane classifier used by that path is `classify_pane_signal`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e844eaef653739a539c6b9c0e35170c6f80a25",
+            "content": "sha256:1c5e528025c2d7529cf55a65b695e8c30e6f48647ce16762dda56005eab62712",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_pane_signal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`classify_turn_state` remains a separate classifier with its own operative call and precedence over the captured pane text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:715e1749b8f76639fd144e6647220892a6df13d3bf5e01a1cc4abe92c4b84933",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_turn_state"
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:39ad86567891256b584c16d3e80ec472daa9add08aae58b40012922e63b667f6",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

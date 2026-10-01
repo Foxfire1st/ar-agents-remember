@@ -1,0 +1,82 @@
+{
+  "path": "dashboard/src/data/launchEvidence.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tier machine under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:ff76d7c1946f463adeb382f50b8dd834fd2846b7076135f308e8994403472584",
+            "locator": {
+              "kind": "symbol",
+              "name": "launchTier"
+            },
+            "path": "dashboard/src/data/launchEvidence.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Failed-row/open-response fixtures (×3 harnesses + Claude effort refusal + pending interaction).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4eb1b1069d53492240294a43ba291ec408102135",
+            "content": "sha256:a1ea823cb996dc455902e56523e2f1b15662487e77af8125bbf2422b1b70781e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_LAUNCH_ROWS"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4eb1b1069d53492240294a43ba291ec408102135",
+            "content": "sha256:aea7f9a2e7f6745ffed2ded7fd9230a37748d12e9194e0a1f285c43b8473549d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_CLAUDE_EFFORT_ROW"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4eb1b1069d53492240294a43ba291ec408102135",
+            "content": "sha256:f9ca1661a55ad5e8d886e73b5f9f8b2b5d10eb7737d8d73f01a7bddaaad2eaff",
+            "locator": {
+              "kind": "symbol",
+              "name": "PENDING_INTERACTION_ROW"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared L2 FLEET fixture (worker-l4 ready pair; pairless failed scout).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2724998a6ecc1a2b6408b6a40ff3c5a6bb2477db",
+            "content": "sha256:bd4b47be2a19d51a4965467858b136dd0f1870cc891abc41cfeb529bce5505c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "FLEET"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

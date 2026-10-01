@@ -1,0 +1,172 @@
+{
+  "path": "dashboard/src/types/projection.schema.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary.\n\nAnchor: `memory`; \"memory-refresh\"; \"direct-memory-commit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279fec670854a9d5afbdfe267824d84a1c58b305",
+            "content": "sha256:08fd4c678367505913cec7c8f518284e86983114365e0ace8fd824f4a5351510",
+            "locator": {
+              "end": 2008,
+              "kind": "line_range",
+              "start": 1971
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `$defs` block contains all reusable projection schema definitions.\n\nAnchor: \"$defs\"; `$defs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279fec670854a9d5afbdfe267824d84a1c58b305",
+            "content": "sha256:3d163ef9c8b6f0b233ca0b1ea53c0aa93528cd28d158bfd8aaa82d3b800c0364",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ActionAvailability` declares reducer-decided action safety for the cockpit.\n\nAnchor: `type`; `ActionAvailability`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279fec670854a9d5afbdfe267824d84a1c58b305",
+            "content": "sha256:86fcac0c5945509626938cce67b13b16e99be6eae647e0eed2753d8448428d46",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`AgentPickupNode` declares a pending unacked dashboard response.\n\nAnchor: `type`; `AgentPickupNode`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279fec670854a9d5afbdfe267824d84a1c58b305",
+            "content": "sha256:6379cfe6838a961c57e2883c15c3479f8ec65094e92ac0d79c992fd32e1a5ec7",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The generated `task-intent/v1` identity definition with closed schema and digest pattern.\n\nAnchor: `intent`; \"task-intent/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279fec670854a9d5afbdfe267824d84a1c58b305",
+            "content": "sha256:7c9c07e9264aac31ebfeac06d869ce69ab70065b06e305e381d0894b6f14d017",
+            "locator": {
+              "end": 4136,
+              "kind": "line_range",
+              "start": 4115
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "279fec670854a9d5afbdfe267824d84a1c58b305",
+            "content": "sha256:8aa535c287e16e0d225379b56512b2ae58b338741b32ac400b2d37ff4de589e0",
+            "locator": {
+              "end": 4145,
+              "kind": "line_range",
+              "start": 4125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The optional task-intent reference on the lifecycle operation projection.\n\nAnchor: `null`; \"taskIntent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279fec670854a9d5afbdfe267824d84a1c58b305",
+            "content": "sha256:eb4f79755eff93d54725906fe8bf4c1690bbce5de6de74236e9e572c92fdf856",
+            "locator": {
+              "end": 2094,
+              "kind": "line_range",
+              "start": 2084
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`.\n\nAnchor: `type`; `members`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279fec670854a9d5afbdfe267824d84a1c58b305",
+            "content": "sha256:f96067877ac97df77c4da0cf77d05f0e0809220a9ece9807d98580c193fbed3e",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 630
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants.\n\nAnchor: `type`; \"One coherent, task-addressed lifecycle journal observation.\"; \"incoherent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279fec670854a9d5afbdfe267824d84a1c58b305",
+            "content": "sha256:71e5839fb83a7787d8ecf6c3ae6051dd016be94dc896294661d807999b936238",
+            "locator": {
+              "end": 2116,
+              "kind": "line_range",
+              "start": 1830
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The generated TypeScript mirror requires the legalControls array on its operation observation.\n\nAnchor: `string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationProjection"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

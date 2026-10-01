@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/grepai/setup.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/grepai/setup.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -42,20 +32,9 @@ phases (`grepai install`, `grepai clone-db`) through
 - `skip_grepai` suppresses GrepAI setup through the shared provider-selection helper.
 - Watcher orchestration remains in the `provider_setup.py` facade because it spans providers.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The setup facade calls this module during install and prepare. | `install_enabled_provider` | mcp/src/agents_remember/providers/provider_setup.py:210-230 |
-| Docker-owned GrepAI lifecycle behavior lives in the GrepAI lifecycle modules. | "Docker-owned" | onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/core.py.md:17-20 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 2 citation rows: the facade-call row now cites the calling code (providers/provider_setup.py L210-L230, `install_enabled_provider`) and the lifecycle-modules row cites the core.py.md card L17-L20. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `run_lifecycle`'s new
-  `LifecycleCommand` signature. Same argv, same results. Verification metadata pinned until
-  closeout stamps the L2 commit.
-- 2026-06-10T07:30+02:00 — `install_enabled_provider` and `prepare_enabled_provider` announce their phases (`grepai install`, `grepai clone-db`) through `setup_progress_from(args)` so background worktree setup is observable mid-run (GitHub #53). Behavior and return shapes unchanged.
-- 2026-05-31T12:50+02:00 — `prepare_enabled_provider` dropped the leading `args.coordination_root` argument from its `load_settings(...)` call to match `setup_common.load_settings`/`settings_path`, which no longer take a `coordination_root` parameter; behaviour-preserving, no documented prose named the call so no prose corrected (1.0.0 review remediation).
-- 2026-05-25T19:50+02:00: Created when GrepAI setup orchestration was extracted out of `provider_setup.py`.
+- The setup facade calls this module during install and prepare. [1]
+- Docker-owned GrepAI lifecycle behavior lives in the GrepAI lifecycle modules. [2]

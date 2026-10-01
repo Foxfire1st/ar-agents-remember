@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-25T15:44+02:00 |
-| lastVerifiedCommitHash |  `7dcec036094768c5f50e571fb45e59a27ae78efc`|
-| lastVerifiedCommitDate |  2026-09-19T18:19:12+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Lifecycle operation integration overview](overview.md)
@@ -39,32 +29,23 @@ the public function or model instead of re-deriving its lower-level state machin
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `LIFECYCLE_DIRECTORY` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:1-1136 |
+- No external domain source is required to establish this repository-owned implementation. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `LIFECYCLE_DIRECTORY` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:1-1136 |
+- The module's concrete API, control flow, and validation boundary are implemented here. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository reference applies. | `LIFECYCLE_DIRECTORY` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:1-1136 |
-
-## Update History
-
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.
+- No meaningful cross-repository reference applies. [3]

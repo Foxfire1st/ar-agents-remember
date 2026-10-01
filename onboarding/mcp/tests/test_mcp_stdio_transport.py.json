@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_mcp_stdio_transport.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixed subprocess boundary used by carryover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:b1152ceffbd4c31d92575acbc4a3c7b3ac5f4c523c673df3f488d6f1d2ff6f33",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

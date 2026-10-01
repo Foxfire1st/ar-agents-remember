@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/control/api.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/control/api.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T09:28+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structured conversation control overview](overview.md)
@@ -111,37 +101,33 @@ wire.
 None. (The route shell was filled by 260718-CHATS-L3; the seventeen routes are pinned by the
 foundation suite.)
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal route boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each route delegates to an owning control module; the wire products are the SC1 contract; the
 foundation suite pins the exact seventeen routes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The three interrupt routes delegate to the operations ledger's whole public surface: `interrupt`, `interrupt_status`, and the `interrupt_http_status` mapping. | `__all__` | mcp/src/agents_remember/serving/conversation/control/operations.py:571-571 |
-| Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). |"class ConversationTelemetry"|mcp/src/agents_remember/models/conversations/telemetry.py:70-70|
-| The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`. | `conversation_policy` | mcp/src/agents_remember/serving/conversation/control/policy.py:58-101 |
-| The two L0 request dependencies every handler consumes. | `__all__` | mcp/src/agents_remember/serving/conversation/dependencies.py:41-41 |
+- The three interrupt routes delegate to the operations ledger's whole public surface: `interrupt`, `interrupt_status`, and the `interrupt_http_status` mapping. [1]
+- Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`). [2]
+- The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`. [3]
+- The two L0 request dependencies every handler consumes. [4]
 
 | The shared `CONTROL_RESPONSES` table plus the two outcome tables and the three route-assembled models these routes declare. | `CONTROL_RESPONSES`; `INTERRUPT_OUTCOME_RESPONSES`; `WITHDRAW_OUTCOME_RESPONSES`; `StagedAttachments`; `ConversationSubmitted` | mcp/src/agents_remember/serving/conversation/response_contract.py:63-67; mcp/src/agents_remember/serving/conversation/response_contract.py:70-84; mcp/src/agents_remember/serving/conversation/response_contract.py:101-114; mcp/src/agents_remember/serving/conversation/response_contract.py:146-159; mcp/src/agents_remember/serving/conversation/response_contract.py:166-179 |
 | The two 422-carrying control errors that force `/conversation/submit`'s 422 to union the shared refusal with the success model. | `CapabilityRefusedError`; `OperationRejectedError` | mcp/src/agents_remember/serving/conversation/control/service.py:123-127; mcp/src/agents_remember/serving/conversation/control/service.py:130-134 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local route surface.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -172,55 +158,3 @@ exactly that lock while the two sweeps held it across cross-store acquisitions, 
 stopped accepting. The offload itself is documented in [service.py](service.py.md).
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the async offloaded resolution —
-  `service.resolve_entry` is `async def` with the catalog read on `asyncio.to_thread`, awaited from
-  all fifteen control-layer call sites — so no control route queues on the catalog RLock on the
-  event loop (the loop-side seat of the 2026-08-05 deadlock). Verification metadata stays pinned
-  until closeout stamps the L16 commit.
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 18 citation finding(s); scoped recheck clean.
-
-- 2026-08-01T09:28+02:00 — 260731-EFA-L4 curator: recorded the seventeen `response_model`
-  declarations and the shared `CONTROL_RESPONSES` table (complete because `_map_typed_error` is
-  the one mapper), plus the four routes that needed more than the model `_dump` already
-  serialized: `StagedAttachments` for the two route-assembled attachment bodies,
-  `WithdrawQueueAnswer` + `WITHDRAW_OUTCOME_RESPONSES` on withdraw, `INTERRUPT_OUTCOME_RESPONSES`
-  on the interrupt trio (where 200/202/422/503 carry an `InterruptOperation`, not a refusal —
-  the conformance suite caught the wrong declaration on the real 422), and
-  `ConversationSubmitted` on submit, whose 422 must union `CONTROL_RESPONSES[422]` because
-  `{**a, **b}` is a dict merge and `CapabilityRefusedError`/`OperationRejectedError` both reach
-  it. Added the two matching invariants. Re-derived **25** in-file citations that the added
-  decorator blocks shifted — all seventeen route lines (interrupt L131→L151 through telemetry
-  L612→L711), `router` L58-L61→L75-L78, `_TYPED_ERRORS` L61→L80-L88, `_error` L100→L117,
-  `_map_typed_error` L107→L124, `_dump` L127→L144, `_parse_uploads` L634-L645→L737-L748,
-  `_parse_metadata_array` L648→L751, `_upload_for` L662-L683→L765-L786, and the request bodies
-  L76-L95→L93-L114 — plus the `models.py` control wire block L811-L1242→L831-L1262, shifted by
-  the twenty comment lines that leaf added to that file. Verification metadata pinned until
-  closeout stamps the L4 commit.
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations. `router` cited
-  the single line L59; the `APIRouter(...)` construct with its prefix and tag is L58-L61. The two
-  multipart helpers moved to the end of the module behind the route block: `_parse_uploads` L592 →
-  L634-L645 and `_upload_for` L626 → L662-L683 (`_parse_metadata_array` L648 was already correct,
-  as were all seventeen route line numbers).
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations and rewrote
-  both claims. The `operations.py` row cited L87-L570 against a 564-line file and claimed six owning
-  modules while linking only one; `operations.py` is the interrupt ledger alone, so the claim now
-  names its actual public surface — cit:([`__all__`], mcp/src/agents_remember/serving/conversation/control/operations.py:571-571) — with the
-  public names listed in `__all__`. The
-  `models.py` row cited L786-L1250 and listed "policy" among the wire products, but no policy model
-  lives in `models.py`; the control wire block is now L811-L1242 (`OpenConversationOperation`
-  through `ConversationTelemetry`, stopping before `RuntimeFixtureObservation`) and "policy" was
-  dropped from that claim. Added one row pointing the policy products at their real home,
-  `control/policy.py` L36-L101 (`PolicyPart`, `ConversationPolicyProjection`,
-  `conversation_policy`).
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `StageAttachmentsForm` as the one multipart staging body (wire alias `requestId` preserved).
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: replaced the behavior-empty route-shell
-  description with the filled reality — the seventeen registered production routes, per-handler L0
-  dependency + live-epoch verification, O4 typed-error mapping across the `_TYPED_ERRORS` tuple, and
-  multipart attachment staging — and repointed the governing overview to the new `control/overview.md`
-  pillar. Verification stays pinned at the L3E base until L3 closeout stamps the candidate commit.
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the structured-control route-shell
-  sidecar. Verification is blank until closeout commits and stamps the new source.

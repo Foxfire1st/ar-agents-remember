@@ -1,0 +1,54 @@
+{
+  "path": "dashboard/src/panels/engine-room/EngineFxOverlay.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Timeline selectors and choreography.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "useEngineTimeline"
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:9cf0093e3e87ad76663804c28440bca8e102dd9acea312982b0e343bd1660863",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildFx"
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Visual isolation regressions.\n\nAnchor: \"isolates repeating transforms from the text-heavy structural SVG\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa22e0bdde3542e21ced22322ef428f95c60aea3",
+            "content": "sha256:4c25ce97c8d3a896496af811378cebacdf80602342e2a268c2970ea352324571",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

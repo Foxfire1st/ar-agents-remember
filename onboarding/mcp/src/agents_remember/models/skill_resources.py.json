@@ -1,0 +1,477 @@
+{
+  "path": "mcp/src/agents_remember/models/skill_resources.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An entry's `frontmatter` is a **verbatim copy** of the skill's `SKILL.md` frontmatter rendered as JSON — \"every field the author wrote, not a curated subset\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:8b3460de256e9488c1bcf005764605e8fa56496b0c59d589424108ae83898a9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Identity is origin plus name, which keeps two servers' same-named skills distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:684780a5c71ea40f22c3225a9b86abd1800d67a1bb1113ba9ba8bb3041ed6568",
+            "locator": {
+              "kind": "symbol",
+              "name": "identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A declared tool set is normalized as an observation and applied by no code path.\n\nAnchor: `declared_allowed_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:739ea9814e5104ad474541966c82470c4cb545e7f7647280c3ef6f713ff5a955",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Provenance and the constant trust statement every served file carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:6939f4f8d09e89a5ae6b22a6b79a0cf13ad562a7d44efb6314f593bbc452ce8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_meta"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:0e233812d3731d24b8832cd0428382543c3d8c0de11152d8a73d1834bae75085",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_META_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The frontmatter reader that fills the verbatim map, refusing constructs it does not implement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:b3ae921b012b93712d2d6ade83499e5f77db32809ca6da4e1665b836007c3963",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MappingReader"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/frontmatter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The reading half that builds these values and re-checks the revision on delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:76b22bd75690a801cc184c674c5681b1d52d169ff66b02d3c5479a9e5d512647",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_skill_catalog"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:d45210ffe40e81f0978179d1a159633f4f71ea4c67ae9a73fc703e4c53fb415f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_served_file"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The two mandatory methods that return these entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:dff2844fde0f4c222393a15010a2a6985f11267e5d6925e10c031798049c1a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skills_list_handler"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:b08b4801ba0159c6d6ce30e7954cdf483bb8dc02fce88346d37290e94de5d598",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skills_get_handler"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The response contracts that project these values onto this server's own tool surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:bc95fa13ef8cc409e46127730bf166002ad6108931c2c4e91a5f12a0061516b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogEntryPayload"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:101b00e18d3e8cfe9badf6f0a19c0b0bd84063be7b88c8504e56a399b33234c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogReadResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The same no-`mcp`-import constraint recorded for the roster leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The cases that execute the entry completeness, verbatim-frontmatter and no-grant guarantees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:5648d5b6e1c8200caad56717af8affec2584f1fd9a7a9ceee33399aeaa5805c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:e8181a0720290a24893083991566ddd792976aeb263d08e9046d7d6ef75c9097",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:aa43cd855cc14c69938678bed44ba84aaab8286ed0125f961561e8be0424585a",
+            "locator": {
+              "end": 1040,
+              "kind": "line_range",
+              "start": 1040
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:269b299bda53cfa389b7a69991a2ba44d2f421627aa717c000c597e25ba4d0a4",
+            "locator": {
+              "end": 811,
+              "kind": "line_range",
+              "start": 811
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:61c08aaf49ada80c0fa72a39ba8af18ecb253d6e8dc875aea59002e16dca45d0",
+            "locator": {
+              "end": 1075,
+              "kind": "line_range",
+              "start": 1044
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:23240413395f0870408b2e3081f13621edce1e1fd1bfd54b1e279e2fe0c1da41",
+            "locator": {
+              "end": 849,
+              "kind": "line_range",
+              "start": 815
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The case that pins this server's own index as the Agent Skills discovery shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:7f8dabee218e05a3017e2d1037303ccb061d883f63e0039f70394874c98f559d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:6a5284d975ca7896cc8f82935df8c5b0030bde2d51e539550a7dcf3fc349526e",
+            "locator": {
+              "end": 1041,
+              "kind": "line_range",
+              "start": 1012
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The extension introduces **three** protocol methods; enumeration is `skills/list`, not an index resource.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:58c016d5d00419fb702bb4af84c9d0821c623243465c3075a67935987082694a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_INDEX_URI"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The extension identifier, the index schema version and the reserved `_meta` prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:15709ccd2d1b8ead314f0ec02cce6fc8f34d0ff200577540c0bd2982c4f37489",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILLS_EXTENSION_ID"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:42fdbff61eb5f9f7d4496b6b43c956f5e11c069a7d5ce66524d3b473cbb0beb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_INDEX_SCHEMA"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:0e233812d3731d24b8832cd0428382543c3d8c0de11152d8a73d1834bae75085",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_META_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A host MUST NOT honor a skill's declared tools.\n\nAnchor: `declared_allowed_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:e36e546844a9802d8c37528b854e1cab22d45f0aedc20cbdde540eab9a5a5d41",
+            "locator": {
+              "kind": "symbol",
+              "name": "ALLOWED_TOOLS_KEY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:739ea9814e5104ad474541966c82470c4cb545e7f7647280c3ef6f713ff5a955",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The SEP-2640 entry the two mandatory methods return: verbatim frontmatter plus per-file digest and size.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:8b3460de256e9488c1bcf005764605e8fa56496b0c59d589424108ae83898a9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The enumeration surface: one entry per skill in stable order, carrying no body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:7b5878539ddf0aa5f291a1d54bd3df0480488c836c8d9bc909cc014a60358a68",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "What `skills/get` answers from: the skill whose `SKILL.md` URI is given, listed or not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:4b1b799f742f28de0b0e573f3d87f84181b79208176871915c06bf5d8f637177",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_for_root_uri"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "This server's own listing surfaces hand out metadata only and cannot reach a body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:b1d842d6fcc5bbb02dfcb0b00c75b30096cc4d374c3d07cf1c610ccf82f36b3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "discovery_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "This server's own index keeps the Agent Skills discovery shape and is explicitly not the enumeration result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:cfc7ba388f89f03f64826731e7312c1f85f9041b344786e06b43d6c7470e4e30",
+            "locator": {
+              "kind": "symbol",
+              "name": "index_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

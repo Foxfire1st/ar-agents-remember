@@ -1,15 +1,5 @@
 # dashboard/src/panels/FlowTab.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/FlowTab.tsx`               |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-06T15:40+02:00                           |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -97,44 +87,23 @@ test/contract hooks: `data-testid` `flow-tab` / `flow-nav` / `flow-nav-{id}` / `
 - **Colour semantics are fixed:** mint = wired today, amber dashed = proposed by the active series; the
   `Status` union and the cva variants are the single source of that mapping.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 | Source | Relevance |
 | --- | --- |
 
 No relevant documentation found after checking live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The flow-model registry FlowTab renders and switches between — all content + the segment/model types live here. | `FLOW_MODELS` | dashboard/src/panels/flowModels.ts:451-451 |
-| The renderer + nav under test (default model, nav switching, initialModel fallback, per-model render census, invariant text). | "FlowTab canvas (unified l-01-agent-lifecycles)" | dashboard/src/panels/FlowTab.test.tsx:9-176 |
-| The dev harness route that mounts FlowTab at `/dev/flows` with `initialModel` from `?model=`. | `initialModel` | dashboard/src/dev/DevApp.tsx:22-22 |
-| The next-step engine the build-job model is the human-readable spec for (regime model). | `compute_next_step` | mcp/src/agents_remember/application/next_step.py:110-131 |
-| Generated Panda `css`/`cva` this panel styles with. | `FlowTab` | dashboard/src/panels/FlowTab.tsx:111-150 |
+- The flow-model registry FlowTab renders and switches between — all content + the segment/model types live here. [1]
+- The renderer + nav under test (default model, nav switching, initialModel fallback, per-model render census, invariant text). [2]
+- The dev harness route that mounts FlowTab at `/dev/flows` with `initialModel` from `?model=`. [3]
+- The next-step engine the build-job model is the human-readable spec for (regime model). [4]
+- Generated Panda `css`/`cva` this panel styles with. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
-
-## Update History
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 21 citation findings; scoped check passed.
-
-- 2026-07-06T15:40+02:00 — 260703-L12 (three-party loops, staleness de-stale — no source change): the Purpose's pre-convergence census ("8 static models" meaning build-job/frame-era; "the other seven models draw … designer, frame, …") was stale since the L8 convergence and is rewritten to the current 8-model registry (strategist joins in L12); the Logic fallback line now names the router, not build-job. Verification metadata pinned until closeout stamps the L12 commit.
-- 2026-07-04T09:40+02:00 — 260703-L0 (Canvas & playground): rewrote FlowTab from the single hardcoded
-  build-job diagram (`RUNDOWN`/`HEAD`/`LINEAR` module constants) into a **multi-model design canvas** — a
-  pure `Segment` renderer (start / node / gate-rider with optional `ridesNote` override / rundown card /
-  divider) over the externalized `flowModels.ts` `FLOW_MODELS` registry, plus a radiogroup model nav
-  (`RailToggle` idiom). Added the `initialModel` prop + unknown-id fallback; the source is now mounted
-  dev-only at `/dev/flows` (`?model=` deep link) and stays out of the cockpit `View` union. Still zero
-  store reads. New coverage lives in `FlowTab.test.tsx`. Verification metadata pinned until closeout
-  stamps the L0 commit.
-- 2026-06-27T18:43+02:00 — Added for task 26: new `FlowTab.tsx`, the "Lifecycle Flow" cockpit View —
-  a static two-regime diagram (`RUNDOWN` front-half prose + `HEAD`/`LINEAR` node chains) that is the
-  human-readable spec the task-27 `next_step.py` engine matches; mint edges = wired today, amber
-  dashed = this leaf-26/27 series. Verification metadata pinned until closeout stamps the code commit.

@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/lifecycle/compose.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`grepai_compose_render()` fills the package override template and shared port mapping values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a0701d2b4a958c4252049d52e3255157c704cae",
+            "content": "sha256:bd048e66aa7507c9b69eed15427465d04300afa120f289d3667af7ee08aaae4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_compose_render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The watcher user block is supplied by `host_user_block()`.\n\nAnchor: \"host_user_block(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a0701d2b4a958c4252049d52e3255157c704cae",
+            "content": "sha256:74104a2d01c08c3dc55c19595e10687cde4285f53cb8e987bf9fbe5225248cd3",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The summary reports Compose project, package base file, override SHA-256, and stdin override mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a0701d2b4a958c4252049d52e3255157c704cae",
+            "content": "sha256:322e6b74fb47705a3931139d27ca78ea3bc061a526af77dd495457bfed1811ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_compose_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

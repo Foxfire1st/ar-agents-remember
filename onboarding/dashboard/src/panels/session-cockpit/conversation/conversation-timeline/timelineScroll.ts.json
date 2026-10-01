@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineScroll.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scroll hooks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63791e5b2885d575b64d0dc1ae789c053af759dc",
+            "content": "sha256:104d6f82eac5744d49e8f583085daafe5eb663a6f6296f9db9f9e0a4ea3df786",
+            "locator": {
+              "kind": "symbol",
+              "name": "useScrollGeometry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63791e5b2885d575b64d0dc1ae789c053af759dc",
+            "content": "sha256:a444755e530f8fbefc209755b3ec457b5af59087ff21e31ca2c5792f0dd9e0f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "useScrollListener"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63791e5b2885d575b64d0dc1ae789c053af759dc",
+            "content": "sha256:561280239e2563b762aa409f4b6d760234fde47a30a4fde8ee50d406b791e275",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTrustedInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

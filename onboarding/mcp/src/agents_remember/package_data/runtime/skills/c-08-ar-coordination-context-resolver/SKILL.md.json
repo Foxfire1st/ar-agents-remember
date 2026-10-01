@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The skill accepts `code_repository_name`, optional `code_repository_root`, and `task_name`; no-task-name contexts resolve the repo task namespace, while task-name contexts resolve current wrapper task folders and persisted `*-ar` contract folders.\n\nAnchor: \"Root series contracts live at\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4cb53f0b9346f03c91db64a16792a698bd121d4",
+            "content": "sha256:b3b174d7a11f9dc27a793ae196460152067e8717c59b1d86cb0c2b4fd2685b5b",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The skill returns topology, code repository identity/root, settings paths, repo/task-specific task roots, temp/docs/system roots, worktree fields, ledger path, path rules, and cross-repo data.\n\nAnchor: \"cross-repo facts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4cb53f0b9346f03c91db64a16792a698bd121d4",
+            "content": "sha256:a80d9fdb0c191772eeec0100ebf2c0732c15f8fc6543d5aece9173e70f339e46",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use MCP settings or explicit/installed/default package roots for coordination, require supported memory roots, and fail clearly when no memory exists. A removed `internal` request or a repo-local `ar-memory/` root is refused by name with `memory-mode-unsupported`, never falling through to the external root; `external` is the only supported topology.\n\nAnchor: `## Resolution Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4cb53f0b9346f03c91db64a16792a698bd121d4",
+            "content": "sha256:9072f03aa131e45d94501338a21cd148a0f58417a55a596d580b0a4cd60c70c2",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Consumers include `c-02-memory-quality-control` skill, `c-03-repo-bootstrap` skill, c-04-retrieval-strategy-router, `c-05-create-or-update-onboarding-files` skill, task workflows, and `c-09-git-worktree-manager` skill; boundaries keep `c-08-ar-coordination-context-resolver` skill out of mutation work.\n\nAnchor: \"c-02-memory-quality-control\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4cb53f0b9346f03c91db64a16792a698bd121d4",
+            "content": "sha256:a4af5714ce5fab939a1c4dc0d330e2078b71ced85bedc342661b99c7f1add96b",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The package implementation exposes the same `code_repository_name` and `code_repository_root` fields through `CoordinationContext`, context construction, and MCP/JSON output.\n\nAnchor: `coordination_context_resolver`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:3aa3c8905454236c3edf926b77306586f8e35d37652a806e6aa0cf9c153c5191",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

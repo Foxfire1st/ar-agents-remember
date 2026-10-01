@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/eve-runtime/package.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pins this file is compared against, and the one-line install command recorded for the operator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:632d2a4ef2c68147e88e3eb7e72bbfb264e045425a84204e73356452cced0dca",
+            "locator": {
+              "kind": "symbol",
+              "name": "PINNED_DEPENDENCIES"
+            },
+            "path": "mcp/src/agents_remember/install/experiment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The packaged-application probe reads this file together with `agent/agent.ts`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:486eac8fa62a9bb1762dcc129ce463f479dc9fb32c7535d8a3b2b64b466a57f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "probe_capabilities"
+            },
+            "path": "mcp/src/agents_remember/install/experiment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The generator declares the `eve-runtime` target with its per-target ignore set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
+            "content": "sha256:932bb172d3f0bdc333a4d6bf5f8f5cbc97ec6251fdb20a345cedd1bce76ac585",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

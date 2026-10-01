@@ -1,0 +1,107 @@
+{
+  "path": "dashboard/src/panels/review/ReviewExpressions.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
+        "content": "sha256:f6cd13b6cf9e21086eddf2112cdd762c5250f13bbe116117db97b27c301bfdcb",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewExpressions"
+        }
+      },
+      "id": "RLZ-KB19K25K",
+      "invariant": "INV-VPX81HXV",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "When the caller passes linksIncomplete, adds 'Source links are not yet fully loaded; continue the roster walk below' to the display state, and it reports how many linked changed files have loaded rather than implying the linked set is complete. It points to the source rail for the complete inventory.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`ReviewExpressions` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
+            "content": "sha256:f6cd13b6cf9e21086eddf2112cdd762c5250f13bbe116117db97b27c301bfdcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewExpressions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`expressionSelection` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
+            "content": "sha256:211fd4331bbbdf36ab4a153158a31b3139251e5fc0fa9a7612f631e8ccc28f7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "expressionSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The layout and full-file controls, exported for the focused cards.\n\nAnchor: \"export function ExpressionControls({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
+            "content": "sha256:026050f9c99963a4bdc50b2ee24a5bdd0254f3481be00892e73738082e5e68c2",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The centre mounts this view only when no cards read applies (a dataset review).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:bdbf7e9caade4cd25b816d3f74dc0aebf37c73cd1a9455cb7c8e924ecb725ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CenterExpressions"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`ExpressionCard` owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
+            "content": "sha256:fdc389bfbbb89b8165fdbf576417cc03aed096459bae9b6f3ef1dd88fe89e53c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpressionCard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

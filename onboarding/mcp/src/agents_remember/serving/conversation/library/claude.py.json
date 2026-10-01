@@ -1,0 +1,143 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/claude.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Claude library owns helper-backed list/read and exact native resume-target construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:e17c16901463ff2a01ba79a41b65a5e64ccd974d1e5a29cecf1fc7aeb8596445",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaudeConversationLibrary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Out-of-range native timestamps raise LibraryStoreError even when their value has an integer type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:1b56e6bacac18511da6e4e6f9d9c3076e7f648dedc55e7c79a640d21a196bf42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_iso_from_millis"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Claude sub-agent rows derive identity and title from native helper metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:10b28ff0ec0d9c3edb3a61eb0e065b99a4dd6083ca80b0cd5bc93555d024f735",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The locked helper defines the session-listing call.\n\nAnchor: \"listSessions({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:ac5fb77c21ad4a8337ee8bf7db6bc0e9f81e12aa814f4b1f578415f13ee4924a",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The locked helper defines the session-messages call.\n\nAnchor: \"getSessionMessages(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:419989935c7071bc8f25f6eb6c0a1e94bd2669fd32710e496a699ef612a08a56",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 377
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The locked helper defines the session-info call.\n\nAnchor: \"getSessionInfo(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:5dc4f5382a200d00022ca950381e9f22c6c014b645ffd1e0cef4c5575b8952bf",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 426
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The locked helper enumerates sub-agent transcripts and their metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:25b3836378c221975a0495aaaea6eb5ae09d4aa19228ab810c0f615077333348",
+            "locator": {
+              "kind": "symbol",
+              "name": "listSubagents"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The locked helper reads sub-agent transcripts through the on-disk authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:4b8535150e35024f98cc3129b0776b11f03ba9e6fe3ab3110e9183ba60b6fb37",
+            "locator": {
+              "kind": "symbol",
+              "name": "readClaudeAgentTranscript"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

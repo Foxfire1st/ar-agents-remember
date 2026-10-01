@@ -1,15 +1,5 @@
 # dashboard/src/grammar/RankBadge.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/grammar/RankBadge.tsx`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T16:02+02:00                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -48,44 +38,26 @@ chevrons — do not restyle per call-site; consumers pick only `tier` and `size`
 the sole production consumer and renders `size="row"`. Neither `SessionRail` nor any retired
 `SessionList` surface imports this component; `sm` remains a supported/tested option only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The gold/purple tier tokens (+dim/ghost) this badge colours by. | `goldGhost`, `purpleGhost` | dashboard/panda.config.ts:48-48; dashboard/panda.config.ts:51-51 |
-| Task rows render the badge at `row` size beside the state dot, keyed by `OperationRow.tier`. | `commandFacts` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:696-704 |
-| Import census confirms `LifecycleList` is the sole production consumer; the session rail does not import `RankBadge`. | "../grammar/RankBadge" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:38-38 |
-| Glyph-anatomy and both-size tests keep `sm` supported even though production currently uses only `row`. | "keeps the viewBox fixed and shrinks only the rendered box for the sm size" | dashboard/src/grammar/RankBadge.test.tsx:32-43 |
+- The gold/purple tier tokens (+dim/ghost) this badge colours by. [1]
+- Task rows render the badge at `row` size beside the state dot, keyed by `OperationRow.tier`. [2]
+- Import census confirms `LifecycleList` is the sole production consumer; the session rail does not import `RankBadge`. [3]
+- Glyph-anatomy and both-size tests keep `sm` supported even though production currently uses only `row`. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 6 citation findings (3 rows); scoped recheck clean.
-- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3 / missing FEUI-L8 history repair: recorded the landed
-  retirement of the Chats/`SessionList` rank consumer. `LifecycleList` is now the sole production
-  owner at `row`; `sm` remains supported and test-pinned with no production caller. This explicitly
-  repairs the FEUI-L8 body/reference edit that had no matching history entry. Verified against code
-  commit `31f58834f86c0d98e26b0896e099a2403a8729ee`.
-
-- 2026-07-06T23:56:00+02:00 — 260703-L14 (visual hierarchy + chat grouping): created — the V4 chevron
-  rank insignia (gold 3-chevron + pip orchestration tier, purple 2-chevron management tier; `row`
-  16px / `sm` ~13px; Panda cva colour + glow over the new gold/purple tokens), shared by the tasks
-  list and the Chats command tree. Verification metadata pinned until closeout stamps the L14 commit.
+No applicable cross-repository source was found.

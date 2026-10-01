@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/familyReview.oneSided.captured.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/familyReview.oneSided.captured.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -91,58 +81,38 @@ sibling `continued` body's uncarried row is listed by **both** sides.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every row was re-derived against the MIK-L31 re-capture, and every anchor in a row occurs on the line the row
 cites. Because each captured body is one minified line, the cited range is the whole file and the finding names the
 exact key path and value a reader can re-check.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The envelope: the one review read the surface makes, its surface version, and its state.** | "\"operation\":\"read_knowledge_review\""; "\"surface_version\":\"knowledge-review-surface/1\""; "\"state\":\"review\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The enclosure the bytes were recorded over, the one normalization, and the scratch directory the capture ran in.** | "\"leaf_id\":\"260921-icr-l1\""; "review-source-endpoints-fixture"; "<repository_id>"; "l31-one-sided" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The page block: a continued page of the before side's walk, with its returned/remaining/total arithmetic and its scope.** | "\"collection\":\"family_members\""; "\"returned\":5"; "\"remaining\":6"; "\"total\":11"; "\"page_size=4" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The family context and its counts.** | "\"family_context\":{\"detail\":\"this family context is partial"; "\"membership_rows_total\":8"; "\"unique_member_revision_total\":4" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The one uncarried row of the whole body: its revision and member identities, and the state that says the row is recorded while its content is not on the page.** | "dccb2d50-628c-4f00-aa46-e3ba98c46874"; "9b397d0d-93ab-4c8b-949a-546685c06e31"; "\"state\":\"content_not_on_page\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The other one-snapshot fact: two unresolved attribution rows, each a record held by one snapshot displayed as present outside the selection.** | "\"recorded_reference\":\"0133d688-6f67-467a-a24a-68b587b602c3\""; "\"recorded_reference\":\"2c2e8b4a-d6c9-4d69-8a0f-c397336befca\"" | dashboard/src/panels/review/familyReview.oneSided.captured.json:1-1 |
-| **The receipt row for this file in the MIK-L31 re-capture.** | "familyReview.oneSided.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:78-78 |
-| The one constant that binds this body to its case, and the runtime narrowing. | "const ONE_SIDED"; "function firstFamilyId" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:71-71; dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:87-110 |
-| **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** | "These are not browser evidence"; "Dagger-only" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:32-36 |
-| **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** | "states a member whose content the page did not carry as that, not as a one-sided statement" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:581-599 |
-| **The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.** | `memberComparison`; `oneSidedMember`; `not_on_page`; `one_sided` | dashboard/src/data/reviewFamily.ts:361-372; dashboard/src/data/reviewFamily.ts:374-397 |
-| **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** | "review-family-member-state"; "statement not carried on this page"; "review-center-member-not-on-page"; "did not carry the revision content" | dashboard/src/panels/review/FamilyTree.tsx:488-489; dashboard/src/panels/review/FamilyReviewCenter.tsx:244-245 |
-| Roster context does not select a primary statement pair; the subject owner supplies that pair, while an unaddressable member remains context. | "export function SelectedStatement({"; "function UnavailableMember({" | dashboard/src/panels/review/SubjectReview.tsx:255-334; dashboard/src/panels/review/FamilyReviewCenter.tsx:859-882 |
+- **The envelope: the one review read the surface makes, its surface version, and its state.** [1]
+- **The enclosure the bytes were recorded over, the one normalization, and the scratch directory the capture ran in.** [2]
+- **The page block: a continued page of the before side's walk, with its returned/remaining/total arithmetic and its scope.** [3]
+- **The family context and its counts.** [4]
+- **The one uncarried row of the whole body: its revision and member identities, and the state that says the row is recorded while its content is not on the page.** [5]
+- **The other one-snapshot fact: two unresolved attribution rows, each a record held by one snapshot displayed as present outside the selection.** [6]
+- **The receipt row for this file in the MIK-L31 re-capture.** [7]
+- The one constant that binds this body to its case, and the runtime narrowing. [8]
+- **The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.** [9]
+- **The case this body exists for: it addresses the single uncarried row, reads the page-scoped statement, and refuses all three comparison wrappers.** [10]
+- **The derivation that decides this row: a member comparison falls to the one-sided helper, and nothing carried means `not_on_page` while exactly one carried means `one_sided`.** [11]
+- **The row's own page-scoped line in the tree, and the member statement block the centre mounts for it.** [12]
+- Roster context does not select a primary statement pair; the subject owner supplies that pair, while an unaddressable member remains context. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file: it is one recorded response body from this
 repository's own route over this repository's own fixture enclosure.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`FamilyReviewCenter.tsx`, `FamilyTree.tsx`, `reviewFamily.ts`) moved with the leaf's inserted lines: 2 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). Its page-scoped-line row was re-measured by hand (`FamilyTree.tsx:447-448` → `488-489`, where `MemberSubject` now draws the line; `FamilyReviewCenter.tsx:242-243` → `244-245`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted one import line each in `FamilyTree.tsx` and `FamilyReviewCenter.tsx`, so the two consumer rows were re-pointed by the exact Git-hunk shift (`FamilyTree.tsx:446-447` → `447-448`, `FamilyReviewCenter.tsx:241-242` → `242-243`, `848-871` → `849-872`). Claims unchanged. No stamp advanced.
-- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: the two rows into `FamilyTree.tsx`, `FamilyReviewCenter.tsx` and `SubjectReview.tsx`, which this leaf changed, were re-pointed by the exact base-to-staged line shift (the installed fixer declined the first as ambiguous and left the second, whose old ranges still held its anchors only by coincidence) (`FamilyTree.tsx:410-411` → `446-447`, `FamilyReviewCenter.tsx:231-232` → `241-242`, `SubjectReview.tsx:217-280` → `255-334`, `FamilyReviewCenter.tsx:838-861` → `848-871`). Every anchor held at the base and holds after the shift. Claim wording unchanged. No stamp advanced.
-- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** the header of `ReviewWorkspace.family.test.tsx` was refreshed by the worker (comments only) and now names this body's MIK-L31 re-capture (`mik_l31_recapture`); the Todo is removed. The rows into that test were re-pointed by the exact −1 line shift the shorter header causes.
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update for the MIK-L31 re-capture (MIK-R31 rule 6, the L44-R1-F5 remainder). The card now describes the new bytes (45,874 bytes, sha256 `16e24767…`): the before-side continued page at page size 4, the one uncarried row `9b397d0d…`/`dccb2d50…`, `unique_member_revision_total` 4, and the two unresolved attribution rows `0133d688…` and `2c2e8b4a…`. **Claims re-anchored:** every row naming the old identities, counts, capture directory and the old provenance (`63b47629`, `not_recaptured`) is replaced by a row on the new bytes and the receipt's `mik_l31_recapture` row; the cross-file rows into `FamilyReviewCenter.tsx` and `SubjectReview.tsx`, already stale, are re-measured (`231-232`, `838-861`, `217-280`, on line-exact quotes); this pass's generated bullet for the receipt row was removed.
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): provenance correction; the fixture bytes are unchanged and still hold their `63b47629` capture. The case header that cited the retired probe script now names that capture and the receipt's `not_recaptured` section, so the provenance row and the Purpose sentence were corrected to say this body was not re-captured and why, and the ranges into the lengthened header and `reviewFamily.ts` were re-measured.
-
-- 2026-09-27T01:27:31+00:00 — Reconciled the source-linked test references after the cursor case rename and line movement. Current loaded-context and mismatched-walk behavior is stated explicitly; capture bytes, recorded provenance and generated history are preserved. No verification hash/date was changed.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T03:00:00+02:00 — 260921-ICR-L36 curator, **citation repair only, second move:** the F1 fix round shifted the member-statement and guarantee-level blocks in `panels/review/FamilyReviewCenter.tsx` below the A4 section, so the guarantee-level fact line moved `:1177-1187` → `:1207-1217` (the two member-statement ranges `:227-233` and `:289-297` are above the insertion and did not move). No claim wording changed. No verification stamp was advanced.
-- 2026-09-26T02:35:00+02:00 — 260921-ICR-L36 curator (memory worktree only; no code changed by this card's own pass; the code worktree is uncommitted at base `09329a7ee598920c519b06305b73ba8e48d72c88`): **citation repair only — the two rows this card carries into `panels/review/FamilyReviewCenter.tsx` were re-anchored, and no claim wording changed.** The member statement block's not-carried line moved `:226-232` → `:227-233`, the comparison wrapper `:288-296` → `:289-297`, and the guarantee-level fact line `:690-700` → `:1177-1187`; each new range was derived from the construct's own declaration at this tip. The captured body and this card's claims about it are unchanged. No verification stamp was advanced: the candidate is uncommitted, so the governed closeout owns the real stamp.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (candidate `ar/260921-icr-l24`, uncommitted; base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe`): **created this one-to-one card for the leaf's one-sided body, and recorded what "one-sided" actually means on these bytes.** The file's exact identity is 40,941 bytes; sha256 `383bd101a349b2d054dca8ab7fb05cf8d182612dc17cdced57bae5c358af4db1`. The state it pins apart from its six siblings is **the single membership row that only one snapshot records, whose revision content this page did not carry** (revision `63a89639-aac8-4802-ba97-3324c3f6acaf`, member `f117ecca-1d81-4e46-b91c-c2c8d36675a0`), which the case addresses in the singular and which must render as a page fact rather than as the one-sided wrapper. The card records the correction a reader needs: **every one of this body's four family sides is `state: "recorded"` with a guarantee — as are all 26 sides across the seven captured bodies — so the guarantee-level `one_sided`/`unrecorded` shapes are not composed by this body at all**; its one-snapshot facts are the member row above and the two `source.unresolved` attribution rows. **Stamp accounting:** no verification stamp was advanced beyond the leaf base commit — the candidate is uncommitted, and governed closeout owns the real stamp.
+No meaningful cross-repo references found.

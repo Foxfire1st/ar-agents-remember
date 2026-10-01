@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/state_signals.py
 
-| Field                  | Value                                                     |
-| ---------------------- | --------------------------------------------------------- |
-| repository             | agents-remember                                           |
-| path                   | `mcp/src/agents_remember/serving/state_signals.py`        |
-| doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-09-15T13:15+02:00 |
-| lastVerifiedCommitHash | `52bee42965e9437b3692325954ca1dcac92813e6`|
-| lastVerifiedCommitDate | 2026-09-15T13:39:30+02:00|
-| governingOverview      | `overview.md`                                             |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -93,80 +83,23 @@ Task hierarchy determines ownership; runtime ids only correlate observed episode
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Compound-idle membership follows direct task containment and one current manager generation. | `compound_idle_sets` | mcp/src/agents_remember/serving/state_signals.py:160-174 |
-| Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous or malformed subjects. | `evaluate_state_signal_findings`; `_safe_state_signal_finding` | mcp/src/agents_remember/serving/state_signals.py:199-218 |
-| A held state-signal row is suppressed from the generic redelivery path while its resolved target is running. | `state_signal_held_on_boundary` | mcp/src/agents_remember/serving/state_signals.py:188-196 |
-| Non-reaction evaluation uses topology, current-generation identity, and durable landed rows. | `evaluate_non_reaction_findings` | mcp/src/agents_remember/serving/state_signals.py:286-305 |
-| Non-reaction subject expansion adds all reviewer altitudes without widening unrelated role scope. | `_notifier_subject_owner_id` | mcp/src/agents_remember/serving/state_signals.py:397-414 |
-| Boundary drain admits a pending row whose target turn boundary follows its last recorded attempt. | `_boundary_follows_last_attempt` | mcp/src/agents_remember/serving/state_signals.py:440-456 |
-| Boundary-drain eligibility for a no-attempt row is state-signal-scoped; the sweep reuses the same durable pending row. | `evaluate_boundary_drain_findings` | mcp/src/agents_remember/serving/state_signals.py:459-498 |
-| One canonical ask identity (terminal outcome + evidence id) shared by the emitter, the coalescing lookup and the action-time marker guard. | `state_signal_ask` | mcp/src/agents_remember/serving/state_signals.py:506-519 |
+- Compound-idle membership follows direct task containment and one current manager generation. [1]
+- Terminal outcome findings resolve manager ownership structurally and suppress only ambiguous or malformed subjects. [2]
+- A held state-signal row is suppressed from the generic redelivery path while its resolved target is running. [3]
+- Non-reaction evaluation uses topology, current-generation identity, and durable landed rows. [4]
+- Non-reaction subject expansion adds all reviewer altitudes without widening unrelated role scope. [5]
+- Boundary drain admits a pending row whose target turn boundary follows its last recorded attempt. [6]
+- Boundary-drain eligibility for a no-attempt row is state-signal-scoped; the sweep reuses the same durable pending row. [7]
+- One canonical ask identity (terminal outcome + evidence id) shared by the emitter, the coalescing lookup and the action-time marker guard. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
-
-## Update History
-
-- 2026-09-15T13:15+02:00 — 260831-LOCR-L10 curator: recorded `state_signal_ask` as the module's one canonical ask identity (terminal outcome + exact `terminal_evidence_id`) and the three readers that share it — the state-signal emitter, the kind-scoped coalescing lookup, and the action-time marker guard in the shared redelivery action. The evidence id stays in the identity, so a later turn is a different ask and re-arms the seat. No predicate, boundary-drain or owner-derivation behavior changed.
-
-- 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: recorded the boundary-drain predicate `_boundary_follows_last_attempt` and its call from `evaluate_boundary_drain_findings` — a pending row with no attempt clock is drainable only for `messageKind == "state-signal"` (the set whose clock an occupant rebind resets and whose push the boundary gate owns), while every other kind and every unparseable clock keep the previous refusal. Also repaired a duplicated garbled sentence in the Logic section and re-derived the construct ranges. Verification metadata remains closeout-owned.
-
-- 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: recorded the typed task-document refusal fence in state-signal evaluation, preserving local suppression and later retry while leaving canonical seat selection and delivery ownership unchanged.
-
-- 2026-08-31T04:59+02:00 — Tightened notifier ownership to the same bounded migration rule as
-  structural routing: unstamped leaf reviewers retain their historical manager; higher reviewers
-  require explicit parent provenance. Verification remains closeout-owned.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented
-  plane-stamped reviewer routing across leaf/master/sprint altitudes and the deliberately narrow
-  notifier expansion. Verification remains closeout-owned.
-
-- 2026-08-26T17:57+02:00 — Removed the unreachable compound-idle missing-occupant fallback. Manager
-  documents and occupants are selected from one running snapshot, so the only non-current case is
-  ambiguity, which remains locally suppressed. This records the invariant instead of forcing an
-  impossible mocked state solely for branch coverage.
-
-- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
-
-- 2026-08-25T22:27+02:00 — No content impact: final ARSPAWN-L2 review confirmed ambiguous seats
-  are contained locally across state-signal, non-reaction, compound-idle, and boundary-drain
-  evaluation. Verification remains closeout-owned.
-
-- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: state-signal and non-reaction evaluation consume the
-  shared canonical seat selector, exclude stale manager generations, and skip only the ambiguous
-  seat during observer sweeps. Verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `state_signals.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: documented structural all-subordinate membership,
-  shared relay evaluation, action-time revalidation, and timezone-aware non-reaction evidence.
-  Verification metadata remains pinned until closeout stamps the code commit.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the ladder-vocabulary removal in
-  `state_signal_held_on_boundary` (boundary-held rows wait for the next boundary; no ladder
-  climb exists). Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: updated the landing vocabulary to the formal
-  `state="landed"` (non-reaction scan now filters on the terminal state; the by-rule pending
-  predicate is gone), and recorded the dead-seat skip in `evaluate_boundary_drain_findings`
-  (N2/N14 — rebind machinery owns dead-target rows). Verification metadata pinned until
-  closeout stamps the 260713-TES-L4 commit.
-- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: added the compound-idle predicate family
-  (`_compound_worker_index`, `compound_idle_sets`, `compound_idle_signature`,
-  `evaluate_compound_idle_findings`, `compound_idle_response`,
-  `COMPOUND_IDLE_SWEEP_LATENCY_SECONDS=10.0`), master-scoped membership on every arm,
-  zero-worker no-signal, action-time-signature semantics, and widened the non-reaction
-  predicate from worker-only to worker+manager scope. Verification metadata pinned until
-  closeout stamps the 260713-TES-L3 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: created this sidecar for the new
-  state-signal predicate module (NON_REACTION_WINDOW_SECONDS=300, three finding families,
-  held-on-boundary exclusion, self-contained payloads, R1/F7 accepted notes). Verification
-  metadata pinned to the leaf base `1c1629fc` until closeout stamps the 260713-TES-L2 commit.

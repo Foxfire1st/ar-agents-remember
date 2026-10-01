@@ -1,0 +1,206 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal_paste.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Submitted acceptance is callback-driven; recovery is one Enter re-press then one verified-absence clear/replace re-paste.\n\nAnchor: `TerminalPaster`, `_paste_verified`, `_retry_repastes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:72a5c0c0362941d791ad220f69c394f945d98409e4988634b8bb6dcff939b1b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalPaster"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:80e5fb1814c31a43e64631ec84630edee65596c594684cf07cc20e7fe2b6643c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paste_verified"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:ffa3858f866af8081690d6df501469888ec64df21e0cb0e911088936ec73d801",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retry_repastes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tier 3 preserved: the historical row says `spawn_agent_session` pastes a worker/draft context packet, but the current spawn contract returns `spawned-unbriefed` and refuses legacy context/submit inputs before durable brief delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:a15cb05c65a9a27845e0aa98f9bc734b42c472e8fc5bb1a1344560748a486c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn_agent_session_tool"
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:b563c001e54a741f1b53d0b74eb4781fa75e457969718652666c30e7e98ed447",
+            "locator": {
+              "end": 873,
+              "kind": "line_range",
+              "start": 764
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted).\n\nAnchor: `api_terminal_paste`, \"def _paste_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:bbba5985d50f39bb8940240baeca68293ff9c7443cde5e1f59c01882dfe95950",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_paste"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:e019f97c09d28c8579612f7fedcc776bf18b91f9798642e5dace990dc9a279d1",
+            "locator": {
+              "end": 576,
+              "kind": "line_range",
+              "start": 576
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "It mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` bracketed-paste + echo-confirm loop.\n\nAnchor: `pasteAndConfirm`, `bracketedPaste`, `sanitizeForInjection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:2f7a67cc12b4dd14d271f1e57b17226bb0358f9473ef44eb8518801bb0fb4b7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "pasteAndConfirm"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:8817bf1530d90f9a57f44af97165af99c5425f084799a93b1123e2d5baa26a08",
+            "locator": {
+              "kind": "symbol",
+              "name": "bracketedPaste"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:1ebefc7e3720364d9af4486b46c9135cce5272d9b14c8bcd3cc3e7dea9516f65",
+            "locator": {
+              "kind": "symbol",
+              "name": "sanitizeForInjection"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "This helper drives only a local tmux session over the tmux CLI.\n\nAnchor: `TerminalPasterSeams`, `_tmux_load_buffer`, `_tmux_paste_buffer`, `_tmux_send_key`, `_tmux_capture_pane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:58c0dc076b32cb02620503cf75b4132cdf4ff8874ae653444edb5c8f5c83772a",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalPasterSeams"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:518e2228895a1d08b53685c942913bc244a80dfef637d38e572ef8f12453381c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tmux_load_buffer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:c9c256693dbfd1ddf15b33f00354eb94f1c16054ac9ccf472c4c8d4c0a2b7f28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tmux_paste_buffer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:0e81de38f62c0c4dcff99ea3e9682d71f900067b782952617bccb43189ce0dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tmux_send_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:9f8c89e0b570f2bad8288a6bb2ee681fb795567fad0b83defa2c1b62ff65fd5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tmux_capture_pane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

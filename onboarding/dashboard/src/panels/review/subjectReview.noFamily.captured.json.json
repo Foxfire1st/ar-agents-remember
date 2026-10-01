@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/subjectReview.noFamily.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case or response retains its declared selected input.\n\nAnchor: \"revision_selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "785b01c39f5d58d017dcd2b1800f485e204df9a9",
+            "content": "sha256:3d758fdce5b75369b1d0fe6915be54b42f9666f6186c1b1506c80604d5f1e8f7",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

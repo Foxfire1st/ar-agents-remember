@@ -1,0 +1,230 @@
+{
+  "path": "mcp/tests/test_family_route_conditions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The four families and the world.\n\nAnchor: \"FAM-W00001\"; `World`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:14cf06c1075c85c8e52a3a2904c8d2e2d70f609b8a2ff86ab450a71c9c13508f",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:a3355079a30e1451b3fcbb254811ed1ccb3ef38565a5902696ebd2eef138f6a1",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The registered kind and its row lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:070eca61f4efd808096e492624c0591feb22ca5be5d9ba71b0d8900fc3064975",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_kind_is_registered_and_its_row_is_the_familys_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Q1: a route dead at B is not charged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:7b5a352710eb26cdf8c056b2903812cdac694b8056ba6df690a0ec0502ef9acf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreached_familys_route_already_dead_at_b_is_not_charged_to_the_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Q5: the suggestion follows renames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:f969e2f7d7df79e6dbadacd96a6932e52d834ee7bc97207d529828436c758883",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_suggestion_follows_renames_of_files_absent_at_c_and_is_withheld_without_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_family_route_conditions.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dab1e146f2680c105d212e9c2fc58e31133617e0",
+            "content": "sha256:701dfc16e90a57bb20b47a098c9f3f67419c2cde1a56b17ed586636dbbe4c6e5",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stored predicate checked against the live `satisfiedBy`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:cda0aab19aabc30b9ddc3bf54ca89cfdd6ae710ab44956b6f2d7d56ce84b0ccb",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_predicate_agrees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The conforming directory move, with the R2-N1 stage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:081e44a40428fd342a54e7f426b5ca62a52ee394917b913ed9af4ef5720d3c33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directory_move_raises_emptied_and_uncovered_and_a_rerouted_row_satisfies_them"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`no_impact` refused; a kept dead route stays open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:5287704295df5a8d4b5ee02d671de86a18a28c0226b4189b4f9cf90444f348b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_no_impact_row_never_satisfies_and_a_kept_dead_route_keeps_the_item_open"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The carried L04 decision end to end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:4f279716c5ff49dc5944c00779e9b1bb1d14e4f47b416eb9d59fab74426ccd1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_carried_dead_route_the_validator_only_reports_is_a_mandatory_item"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A reached retired family raises nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:564bb9e907b261c977f37066f644dd38ff97df27c1587733667994d30036d160",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reached_retired_family_raises_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`route_unassigned` until an `assigned` row with routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:af3de416d0146fc39df98bb243b74859f7585d49aa03a4b9fe7e3965eb84a7c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reached_family_without_routes_is_route_unassigned_until_an_assigned_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The boundary example.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:049e589cfdc57186b49f1a698ec7a924c16c22790458e2901751fbd6c3989acb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_entry_moving_to_another_file_inside_its_route_raises_no_route_item"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "An ambiguous rename target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
+            "content": "sha256:f5ba934ea4487690c3daeaa704b7fb322b7354cb80b789154322e54c23821a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_ambiguous_rename_target_lists_every_candidate_and_suggests_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,121 @@
+{
+  "path": "mcp/tests/test_atomic_master_review_public.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Registered stdio client and the readable/structured wire-payload agreement assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2ae9d1eb1ad7ea61d6329d0350f3d0ec052f73a",
+            "content": "sha256:cd01e263b0af1689ba6ebe757d4172a00062f4f06750c8db588b068dcc9709d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_call_registered"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a2ae9d1eb1ad7ea61d6329d0350f3d0ec052f73a",
+            "content": "sha256:11cbeee466d6dd7536e01289fa933d4cfbb4a2da2afc0f5419d56d50fc8d41d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_call"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a2ae9d1eb1ad7ea61d6329d0350f3d0ec052f73a",
+            "content": "sha256:d64db3ed915c47b3e911d2dbf51e10b5a799092f4312f75c09b06aa600beda32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_wire_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Review-free fixture setup: the leaf review record is cleared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2ae9d1eb1ad7ea61d6329d0350f3d0ec052f73a",
+            "content": "sha256:2945de71f76c8d4a74e970725a7cf7325b50b334afd578c7807fc86d70a7439d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_leaf_review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real closeout journal for the atomic child is written and finalized for the landing proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2ae9d1eb1ad7ea61d6329d0350f3d0ec052f73a",
+            "content": "sha256:e6658d9f9a198903d639105faaf4a4d537256a3c4bb63c1b0b1b79b2444b1585",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare_atomic_leaf_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Production leaf landing runs under the started integration operation and moves the protected branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2ae9d1eb1ad7ea61d6329d0350f3d0ec052f73a",
+            "content": "sha256:f23a646fc151d6fc2ebaded05e25c80a4cedd6dac388c439e9fe67f2a6aff801",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrate_exact_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The route-review gate is absent at both altitudes while the exact landing still completes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2ae9d1eb1ad7ea61d6329d0350f3d0ec052f73a",
+            "content": "sha256:ba4984a5b145801b7b18efbdc8b28cc4cef03e6dccce646ac531ebf0ca2c1a5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_never_gates_on_a_route_review_record_at_either_altitude"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a2ae9d1eb1ad7ea61d6329d0350f3d0ec052f73a",
+            "content": "sha256:93b3127fac2dd9a95188b82cd74f4017b2ff8370c29053d47b120417b6b43c71",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_evidence_observations.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_evidence_observations.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [tests route overview](../overview.md)
@@ -75,39 +65,31 @@ shared fixture module. `pytestmark = pytest.mark.evidence_unit`, and the module'
 - **The publication reference's presence or absence is served as two states**, which is how the record
   states which retention route it relies on.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The case that asserts the payload is frozen and the execution-result set is closed, including the near miss and the case variant. | "def test_the_observation_payload_is_frozen_and_the_execution_result_set_is_closed(" | mcp/tests/test_knowledge_evidence_observations.py:134-191 |
-| The case that asserts an artifact path that is not confined is refused as a shape error. | "def test_an_artifact_path_that_is_not_confined_is_refused_as_a_shape_error(" | mcp/tests/test_knowledge_evidence_observations.py:264-303 |
-| The case that asserts the write-time digest is measured against real bytes and recorded as checked. | "def test_the_write_time_digest_is_checked_against_the_bytes_and_recorded_as_checked(" | mcp/tests/test_knowledge_evidence_observations.py:329-380 |
-| The case that asserts a digest the bytes contradict is refused with exact facts and no dataset movement. | "def test_a_digest_that_does_not_describe_the_bytes_is_refused_with_exact_facts(" | mcp/tests/test_knowledge_evidence_observations.py:381-415 |
-| The case that asserts the four artifact-resolution states are distinguishable and the stored reference survives unchanged. | "def test_the_four_artifact_resolution_states_are_distinguishable(" | mcp/tests/test_knowledge_evidence_observations.py:461-623 |
-| The case that walks the served fields and the rendered page for verdict words. | "def test_the_observation_read_reports_facts_and_no_verdict(" | mcp/tests/test_knowledge_evidence_observations.py:624-697 |
-| The case that asserts a second run is a second observation and the first is not edited. | "def test_a_second_run_is_a_second_observation_and_the_first_is_not_edited(" | mcp/tests/test_knowledge_evidence_observations.py:725-763 |
-| The case that asserts a candidate seed selects by the recorded candidate and reports absence. | "def test_a_candidate_seed_selects_by_the_recorded_candidate_and_reports_absence(" | mcp/tests/test_knowledge_evidence_observations.py:764-800 |
-| The case that asserts there is no blob column and no second content store. | "def test_there_is_no_blob_column_and_no_second_content_store(" | mcp/tests/test_knowledge_evidence_observations.py:871-905 |
-| The case that asserts the generation appends and inherits by name from the generation this leaf descends from. | "def test_the_observation_generation_appends_and_inherits_by_name(" | mcp/tests/test_knowledge_evidence_observations.py:906-928 |
-| The case that asserts the publication reference is stored on the record and served with it. | "def test_a_publication_reference_is_stored_on_the_record_and_served_with_it(" | mcp/tests/test_knowledge_evidence_observations.py:929-969 |
+- The case that asserts the payload is frozen and the execution-result set is closed, including the near miss and the case variant. [1]
+- The case that asserts an artifact path that is not confined is refused as a shape error. [2]
+- The case that asserts the write-time digest is measured against real bytes and recorded as checked. [3]
+- The case that asserts a digest the bytes contradict is refused with exact facts and no dataset movement. [4]
+- The case that asserts the four artifact-resolution states are distinguishable and the stored reference survives unchanged. [5]
+- The case that walks the served fields and the rendered page for verdict words. [6]
+- The case that asserts a second run is a second observation and the first is not edited. [7]
+- The case that asserts a candidate seed selects by the recorded candidate and reports absence. [8]
+- The case that asserts there is no blob column and no second content store. [9]
+- The case that asserts the generation appends and inherits by name from the generation this leaf descends from. [10]
+- The case that asserts the publication reference is stored on the record and served with it. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T06:20+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): created this one-to-one card for the observation contract's 20 cases. It records the closed execution vocabulary with no sufficiency member, the digest measured against real bytes, the four resolution states read from one record set, the by-name inheritance assertion, and the rule that a second run is a second record. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

@@ -1,14 +1,5 @@
 # mcp/src/agents_remember/application/worktree_tools.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/application/worktree_tools.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-23T09:30:00+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview      | `overview.md`                              |
 ## Governing Overview
 
 [Owning overview](overview.md)
@@ -281,16 +272,16 @@ Application adapters admit configured contract addresses and pass typed requests
 
 No additional file-local TODO is established by this candidate review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured in the resolved memory repository. The current
 contract is supported by the implementation and the authorized cache-retirement requirement.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source applies. | — | — |
+No configured external domain source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 `worktree_start_tool` marks the temp lifecycle settings file with
 `unlink_settings_after_setup=True` and skips its own `finally` unlink when
 `_settings_owned_by_background(result)` sees a providers state of `starting` —
@@ -299,6 +290,20 @@ The new `retry_provider_setup` flag is forwarded to the worktree layer, and the
 provider timeout is `config.timeout_caps["providerSetupSeconds"]` (default
 `DEFAULT_PROVIDER_SETUP_SECONDS`, 1800) instead of the docker-control 120 —
 the documented setup cap now actually governs the worktree flow.
+
+### Cross-Repo References
+
+No separate cross-repository implementation claim is made.
+
+No external implementation source applies.
+
+### Docs References
+
+No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
+
+### Cross-Repo References
+
+This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.
 
 ## CCR-R25 Route-Review Refusal Projection
 
@@ -310,31 +315,29 @@ Certification refusals use the same projector when a `routeReview` finding is pr
 all original findings and gate-start facts. The catches remain narrow (`RouteReviewError` and
 `CertificationContractError`); no broad fallback or task-document mutation occurs in this adapter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. | `worktree_integrate_tool`; `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:413-471; mcp/src/agents_remember/application/worktree_tools.py:474-512 |
-| Public status observes the stable journal through the canonical locator and preserves it in the result. | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:314-337 |
-| Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. | `worktree_sync_tool`; `_configured_control_refusal` | mcp/src/agents_remember/application/worktree_tools.py:356-378; mcp/src/agents_remember/application/worktree_tools.py:637-661 |
-| The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. | `worktree_checkpoint_landing_tool` | mcp/src/agents_remember/application/worktree_tools.py:474-512 |
-| The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. | `worktree_pause_tool`; `_gate_policy_snapshot` | mcp/src/agents_remember/application/worktree_tools.py:819-827; mcp/src/agents_remember/application/worktree_tools.py:515-544 |
-| Stable sync projection is read from the enclosure-root journal. | `observe_sync_operation`; `SyncJournalReadError` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:129-136; mcp/src/agents_remember/worktrees/sync_transaction_state.py:404-420 |
-| Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
-| Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. | `WorktreeSummary`; `WorktreeCheckpointLandingResponse` | mcp/src/agents_remember/models/worktree.py:310-364; mcp/src/agents_remember/models/worktree.py:538-542 |
-| Route-review refusals are projected once with exact contract guidance at start/admission and closeout. | `_worktree_closeout`; `route_review_refusal_projection` | mcp/src/agents_remember/application/worktree_tools.py:963-1017; mcp/src/agents_remember/worktrees/route_review.py:183-250; mcp/src/agents_remember/worktrees/route_review.py:549 |
-| **The closeout preview and closeout apply return paths now carry this leaf's final-output projection (ICR-R21@v1): the preview is decorated with the selected comparison generation and `prepared_is_reviewed_candidate`, the apply with the recorded receipt, and integration with the refs it landed — all attached after the Git transaction, so none of them can gate it.** | `attach_prepared_selection`; `attach_closeout_receipt`; `attach_integration_receipt` | mcp/src/agents_remember/application/worktree_tools.py:1013-1013; mcp/src/agents_remember/application/worktree_tools.py:1016-1016; mcp/src/agents_remember/application/worktree_tools.py:456-456 |
-| Worktree service behavior is owned by the worktree manager and modules. | `agents_remember` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:33-35 |
-| Shared repo/path authority guards (`require_repo`, `require_within_coordination`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:20-28 |
-| Lifecycle finalization behavior is delegated to the worktree finalizer module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:68-141 |
-| The on-disk provider authority reload consumed before provider setup (containment R1). | `worktree_start_tool`; `reload_provider_authority`; `provider_setup_config` | mcp/src/agents_remember/application/worktree_tools.py:130-237; mcp/src/agents_remember/kernel/primitives/runtime_config.py:193-218 |
-| `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. | `land_seats_for_task` | mcp/src/agents_remember/serving/landing.py:13-32 |
-| Manual retire eligibility/role policy remains owned by `retire_policy.py`. | `check_retire_authority`; `RetirePolicyError` | mcp/src/agents_remember/serving/retire_policy.py:21-22; mcp/src/agents_remember/serving/retire_policy.py:36-85 |
-| `log_landed_event`, called once per landed entry after a successful auto-land. | `log_landed_event` | mcp/src/agents_remember/serving/seat_events.py:56-80 |
-| `TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes. | `TerminalCatalog` | mcp/src/agents_remember/serving/terminal_catalog.py:65-431 |
-| `RetirementSettings`/`config.retirement` gating the two auto-land hooks. | `RetirementSettings` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:114-125 |
-| None | `worktree_status_tool` | mcp/src/agents_remember/application/worktree_tools.py:314-337 |
-| None | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:68-141 |
-| Worktree service behavior is owned by the worktree modules, which this manager module re-exports. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
-| **The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync (`ICR-R22@v1`); what it measured is a carrying sync's own resolved pair, published additively on the result.** | `worktree_sync_tool`; `rebinding_result_block`; `resolved_pair_completed` | mcp/src/agents_remember/application/worktree_tools.py:356-378; mcp/src/agents_remember/application/review_sync_rebinding.py:316-373; mcp/src/agents_remember/application/review_sync_rebinding.py:196-220 |
+- Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. [1]
+- Public status observes the stable journal through the canonical locator and preserves it in the result. [2]
+- Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. [3]
+- The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. [4]
+- The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. [5]
+- Stable sync projection is read from the enclosure-root journal. [6]
+- Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports. [7]
+- Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. [8]
+- Route-review refusals are projected once with exact contract guidance at start/admission and closeout. [9]
+- **The closeout preview and closeout apply return paths now carry this leaf's final-output projection (ICR-R21@v1): the preview is decorated with the selected comparison generation and `prepared_is_reviewed_candidate`, the apply with the recorded receipt, and integration with the refs it landed — all attached after the Git transaction, so none of them can gate it.** [10]
+- Worktree service behavior is owned by the worktree manager and modules. [11]
+- Shared repo/path authority guards (`require_repo`, `require_within_coordination`). [12]
+- Lifecycle finalization behavior is delegated to the worktree finalizer module. [13]
+- The on-disk provider authority reload consumed before provider setup (containment R1). [14]
+- `land_seats_for_task`, the document-owned seat-landing domain function the auto-land hook calls. [15]
+- Manual retire eligibility/role policy remains owned by `retire_policy.py`. [16]
+- `log_landed_event`, called once per landed entry after a successful auto-land. [17]
+- `TerminalCatalog`/`terminal_catalog_path`, the seat catalog the auto-land hook reads and writes. [18]
+- `RetirementSettings`/`config.retirement` gating the two auto-land hooks. [19]
+- None [20]
+- None [21]
+- Worktree service behavior is owned by the worktree modules, which this manager module re-exports. [22]
+- **The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync (`ICR-R22@v1`); what it measured is a carrying sync's own resolved pair, published additively on the result.** [23]
 
 ## Series-Contract Notes
 
@@ -374,10 +377,8 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The facade's start entry point consumes the extracted task-start request types at this boundary. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:130-237 |
-| None | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:130-237 |
+- The facade's start entry point consumes the extracted task-start request types at this boundary. [24]
+- None [25]
 
 ## 260821-CLIVE Final Public Worktree Boundary
 
@@ -454,187 +455,6 @@ evidence reference with its read-back — while a sync with nothing to bind stat
 field is additive: a caller that does not read it sees the sync result it always saw.
 
 
-## Cross-Repo References
-
-No separate cross-repository implementation claim is made.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external implementation source applies. | — | — |
-
-## Update History
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`sync_transaction_state.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
-- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee):` **the sync returns through the rebinding block, so what it resolved is measured against the leaf's published generation and the completed result still cannot be refused by it (`ICR-R22@v1`).** `worktree_sync_tool` (`:353-375`) builds the delegated result into `payload` (`:371`) and returns `rebinding_result_block(configured.contract, payload)` (`:375`), imported on one line (`:14`); the module is 1030 → 1035 lines and the adapter adds no measurement logic of its own. The order is recorded as the contract it is: the block runs after the Git transaction and its contract write, so every outcome — a capture that could not be taken, an unreadable generation record, a refused write — is a `state` on the returned payload rather than a refusal that could gate a completed sync, and only a carrying sync's own resolved pair is measured at all. **Citation accounting:** one row was **added** for this leaf's construct (`worktree_tools.py:353-375`, `application/review_sync_rebinding.py:316-323` and `:196-220`); no existing row, anchor or range on this card was moved, re-pointed, re-worded or dropped — deliberately, because the curator's citation pass owns that work row by row. **Stamp accounting:** the header's verification pair is left exactly as recorded — `3103e1142a3ded8a843c3e5bbefca14861ba4a58` with its own date — and it is **not** advanced: the delegating return exists only in this leaf's uncommitted working tree, whose recorded base is `e605822eb3bf83bf63a45963c5f51d5fc28859ee`, so the header's pair keeps naming the last real commit the reading was taken against, and the governed closeout owns the real stamp.
-- 2026-09-23T09:30:00+02:00 — 260921-ICR-L21 curator (uncommitted change set on `ar/260921-icr-l21`, base `972b44cc07b307929535fe7974d6a30d53c9c4f1`): **the closeout and integration results gained this leaf's final-output attachment (ICR-R21@v1), and the rows whose cited ranges hold the changed declarations were repointed.** `_worktree_closeout` (`:950-996`) now returns the closeout *preview* decorated with `attach_prepared_selection` and the *apply* decorated with `attach_closeout_receipt`; `worktree_integrate_tool` (`:405-460`) attaches `attach_integration_receipt` on `ok` and a non-dry run. The module's twelve added lines are an import block plus those three delegating call sites, and every attachment happens **after** the Git transaction and its contract write, so none of them can gate it — a receipt that cannot be produced is reported as a state in the result. Deliberately **not** rewritten: rows whose cited ranges were already behind their declarations at this leaf's base (`worktree_checkpoint_landing_tool` declared at `:461`, `worktree_pause_tool` at `:502`, `_gate_policy_snapshot` at `:806`) keep their existing cells, because re-deriving them here would be a range reformat rather than a response to this change. Only the ranges this change invalidates were touched, and each new range contains its anchor (`worktree_integrate_tool` at `:405` inside `405-460`; `_worktree_closeout` at `:950` inside `950-996`). **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` were advanced to `972b44cc07b307929535fe7974d6a30d53c9c4f1` — this leaf's recorded base, the commit the current production line actually carries — with the date of the worker report's own reading, because the delegation cited here exists only in this leaf's uncommitted working tree; the header records that honest basis and no commit that does not contain the code is named.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-20T07:31+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **reopened claim re-read against the construct its range now covers, and the stale generated-projection record retired after that read.** The claim — *"Public sync forwards typed memory choice and continue/cancel control after configured-contract admission."* — names `worktree_sync_tool` and `_configured_control_refusal`. Each anchor was resolved at its own current declaration in the code worktree and the cited range holds it, so the pointer is current and the wording still holds unchanged: no re-cite and no re-wording was needed. The generated citation-repair bullet that recorded the mechanical projection of this claim's range was **removed** because that projection resolves an exact NAME rather than the claim's subject, so keeping it would leave an unverifiable range asserting currency it cannot support; with it retired the range stands as the curator-read citation it now is. The rest of the card's history is untouched, no other bullet or row was deleted, and no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-20T00:56:40+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): verified the 1 enforced citation row this card carried (citation_anchor_absent_from_range) against the source by hand-reading it — the response-model row's `WorktreeCheckpointLandingResponse` cell already reads `mcp/src/agents_remember/models/worktree.py:488-492`, which holds `class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):` at line 488, and its `WorktreeSummary` cell reads `:240-294`, which holds that class at line 262, so the earlier mechanical projection was correct and needed no further edit; the claim's wording, both anchors and its other range are unchanged, and no verification stamp was advanced.
-- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 1 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `WorktreeCheckpointLandingResponse`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `worktree_tools.py.md:323` (`WorktreeSummary`, `WorktreeCheckpointLandingResponse`).
-- 2026-09-18T18:04:10+00:00: 260915-KS-L23 residue clearance (seat A, follow-up): the three cells that name `worktree_start_tool` -- the containment-R1 provider-authority row, the L23-era "facade's start entry point" row and its duplicated `None` row -- were re-cited from `mcp/src/agents_remember/application/worktree_tools.py:103-200` to `:121-228`, the function's own extent. The retired span began inside the `_START_ELIGIBILITY` constant block (102-118) and stopped 28 lines short of the body's end; this card's own L23 history already named `121-228` as the live extent. This is the explicit disposition the two mechanically-projected reopen items ask for. Question (1): yes -- the construct at 121-228 supports each claim's words (`worktree_start_tool` is declared at 121-127 and consumes the on-disk provider authority at 164, before the provider setup config is built at 170-176). Question (2): the retired ranges arrived by mechanical anchor-range projection, and the two generated repair bullets that record them are deliberately **left in this history** rather than retired by hand, because retiring them would delete provenance this pass was told not to delete; those items therefore remain enforced until the closing commit's stamp makes the change invisible (D-29), and this entry is the curator's reading they asked for. No anchor, row or claim was deleted or reworded. Verification stamp not advanced.
-- 2026-09-18T17:55:32+00:00: 260915-KS-L23 residue clearance (seat A): re-read the three reopened rows whose cited module is this card's own source and repointed the stale range; every claim's wording, anchor set and range shape kept. `worktree_sync_tool` from `mcp/src/agents_remember/application/worktree_tools.py:319-336` to `:347-364` (the entry point's own definition) and `_configured_control_refusal` from `:588-612` to `:616-640` (the refusal helper's own definition); `worktree_pause_tool`'s `_gate_policy_snapshot` from `:770-778` to `:798-806`; and `WorktreeSummary` from `mcp/src/agents_remember/models/worktree.py:233-287` to `:240-294` with `WorktreeCheckpointLandingResponse` from `:459-463` to `:466-470`. The paired halves that already held their anchors are unchanged (`worktree_pause_tool` at `:466-495`; the `worktree_integrate_tool`/`worktree_checkpoint_landing_tool` rows at `:371-422`/`:425-463`, whose ranges the L23 section's added lines did not move). Verification stamp not advanced: the code is uncommitted and closeout owns the stamp.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `worktree_status_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:305-328. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `worktree_status_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:305-328. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded two response-surface corrections in this adapter. (1) **Item 8 (D-17):** `worktree_start`'s `lifecycle-switch-required` refusal no longer says it "refuses to repoint the active persistent lifecycle" — it states the condition it actually tests (a start binds the session's current lifecycle to the new enclosure, and *this session's* lifecycle is already bound to another one) and says plainly that no other leaf, enclosure or session can block a start; the tool also publishes `_START_ELIGIBILITY` (`requiresCheck: "not-performed"`) as `eligibility` on every start result and on the refusal, so a `would-start` preview no longer reads as a dependency verdict. The tool deliberately gains **no** `Requires` check, because that set is plan-document prose and is not machine-readable in the addressed leaf document. (2) **Item 3 (D-13):** documented that the hint attached to an addressed response is derived from that contract (`application/next_step.compute_next_step`) and that `application/tool_response.bound_next_step` omits a hint whose `nextArgs` path fields contradict the response's own `contractPath`/`enclosurePath`; also recorded the boundary — the binder can only check a carrier that declares an address, and `TaskDocResponse` declares neither, which is why that carrier's hint passes through unchecked. **No pre-existing claim in this card was falsified by either change** — the `providersAuthority` containment rule, the auto-land hooks, the checkpoint/pause entry points and the closeout/CILE boundaries are untouched — so the existing body above stands and the two new subjects were added as their own section plus three invariants. Existing citation ranges were left for the citation pass; noted drift from this change: `worktree_start_tool`'s module-level constant now sits at `102-118` and the function spans `121-228`, so every card range that begins at `103` is stale by the size of the inserted block.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `WorktreeCheckpointLandingResponse` repointed to mcp/src/agents_remember/models/worktree.py:482-486. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): clamped mcp/src/agents_remember/worktrees/route_review.py:550 to mcp/src/agents_remember/worktrees/route_review.py:549, the range the cited construct now occupies
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Aligned closeout, control, integration, checkpoint, and PR-recording adapters with code/memory outputs only. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-- 2026-09-13T17:20:55+00:00: Generated citation repair: "def route_review_refusal_fields("; "def _worktree_closeout(" repointed to mcp/src/agents_remember/worktrees/route_review.py:253-253; mcp/src/agents_remember/application/worktree_tools.py:921-921. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded the new `worktree_pause_tool` application entry
-  point — configured-contract admission with `operation="worktree_pause"`, typed `WorktreeArgs` with
-  the configured gate policy, delegation to `git_worktree_manager.pause_result`, no auto-land hook
-  because nothing is retired, and no Git/ref/commit/landing/ledger work of its own — and stated that
-  the stop and the checkpoint publication are two verbs with two entry points, neither reachable from
-  the other. Added the entry point's reference row. Verification metadata remains closeout-owned; no
-  acceptance claim.
-- 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shrank `models/worktree.py`: the public envelope/context-summary row was rebound to `models/worktree.py:232-286`, `289-352` and `458-463`. Claim wording unchanged.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-13T08:50+00:00 — 260831-LOCR-L34: recorded the corrected entry-point docstring. It had
-  claimed the route drops only the two "master is finished" assumptions, which omitted the
-  **completed-closeout** requirement that made the route unreachable in both directions; it now
-  states that `worktree_integrate` proves completion *and* a completed closeout, that a paused master
-  has none of those, that the checkpoint captures the master's own committed refs and proves their
-  ledger mapping, and that the explicit developer approval is unchanged. Also named the new owners
-  (`checkpoint_landing_eligibility`, `capture_series_checkpoint_refs`) and re-derived the reference
-  range (427-465 → 427-469). No behavior change in this file: docstring only. Verification metadata
-  remains closeout-owned; no acceptance claim.
-- 2026-09-13T08:49:05+00:00: Generated citation repair: "def route_review_refusal_fields("; "def _worktree_closeout(" repointed to mcp/src/agents_remember/worktrees/route_review.py:253-253; mcp/src/agents_remember/application/worktree_tools.py:889-889. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `worktree_checkpoint_landing_tool`, the
-  application entry point that admits the configured contract, builds the arguments with the
-  configured gate policy, and delegates to `checkpoint_landing_result`; recorded that it runs no
-  auto-land seat hook because nothing is retired, and re-derived the shifted reference ranges.
-  Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_status_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:277-300. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `observe_sync_operation` repointed to mcp/src/agents_remember/worktrees/sync_transaction_state.py:369-385. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def route_review_refusal_fields("; "def _worktree_closeout(" repointed to mcp/src/agents_remember/worktrees/route_review.py:253-253; mcp/src/agents_remember/application/worktree_tools.py:846-846. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:"; "def worktree_start_tool(" repointed to mcp/src/agents_remember/kernel/primitives/runtime_config.py:189-189; mcp/src/agents_remember/application/worktree_tools.py:103-103. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_start_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:103-200. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation after the closeout auto-carry change shifted lines in `sync_transaction.py` / `sync_transaction_state.py`; the cited symbols and their meanings are unchanged.
-
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `worktree_status_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:285-308. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "def route_review_refusal_fields("; "def _worktree_closeout(" repointed to mcp/src/agents_remember/worktrees/route_review.py:255-255; mcp/src/agents_remember/application/worktree_tools.py:927-927. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:"; "def worktree_start_tool(" repointed to mcp/src/agents_remember/kernel/primitives/runtime_config.py:189-189; mcp/src/agents_remember/application/worktree_tools.py:111-111. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `worktree_start_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:111-208. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "def route_review_refusal_fields("; "def _worktree_closeout(" repointed to mcp/src/agents_remember/worktrees/route_review.py:255-255; mcp/src/agents_remember/application/worktree_tools.py:972-972. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
-- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: narrowed the route-review refusal anchors to their current unique definitions and repointed the shifted start-tool coordinate. This is a mechanical source-range correction; verification metadata remains closeout-owned.
-- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the narrow route-review refusal projection at start/admission and direct closeout, with exact-contract task guidance and no mutation. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: "def reload_provider_authority(config: McpRuntimeConfig) -> ProviderAuthority:"; "def worktree_start_tool(" repointed to mcp/src/agents_remember/kernel/primitives/runtime_config.py:189-189; mcp/src/agents_remember/application/worktree_tools.py:123-123. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the certification_profile plumbing into WorktreeArgs from the repository scope (require_repo) across integrate/closeout/namespace helpers -- profile authority now travels with the typed args instead of a settings executor.
-
-
-- 2026-08-30T05:55+02:00 — MCAR-L03 A005: closeout apply now reuses the canonical admission
-  normalizer before exact-pair resolution, so omitted, empty, and whitespace-only enabled commit
-  messages refuse before pair or competing-lifecycle state can obscure the input defect. The
-  lease-owned admission repeats the same validation against current state.
-
-- 2026-08-29T21:46+02:00 — MCAR-L03: exposed and prevalidated the exact pair at closeout apply
-  admission while preserving worker revalidation. Verification remains closeout-owned.
-
-- 2026-08-26T03:37+02:00 — Added typed contract-addressed sync continuation/cancellation and
-  stable sync-journal status projection across contract read failure. Recorded the separation from
-  queue and task planes. Verification remains post-Dagger/closeout-owned.
-
-- 2026-08-24T21:43+02:00 — File-size repair: moved the seven request/default concepts to the single
-  `application/worktree_tool_requests.py` owner. This facade still consumes the exact types and
-  retains all worktree operation behavior; verified at source commit `23d35f77`.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged terminal archive status/retry and journal-owned closeout authority into the existing worktree-tool contract. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: curated against accepted candidate tree `4241908c`; verification metadata remains pinned until governed closeout stamps the landed code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-
-- 2026-08-15T09:10+02:00 — L3 content update: clarified the task-addressed integration launcher's
-  non-scheduling role and final worker revalidation; verification remains closeout-owned.
-- 2026-08-14T06:30+02:00 — L23 final candidate review: worktree application calls start or observe
-  durable closeout/integration by canonical task identity and preserve candidate-bound route-review,
-  lineage, and landing boundaries. Verification remains closeout-owned.
-
-- 2026-08-13T09:05+02:00 — L23 curator: reviewed and recorded the lifecycle-operation package import
-  move; application behavior is unchanged and final provenance remains closeout-owned.
-- 2026-08-12T20:10+02:00 — L23 curator: documented the state-qualified attach attribution boundary; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-03T03:59:59+02:00 — Curated 16 citation claims (8 table rows, 8 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: introduced `TaskIdentity`, `TaskBases`, `StartExecution`,
-  `CloseoutCommitMessages`, `CloseoutApproval` and `FinalizeTaskDocs` (plus their shared defaults)
-  and moved every controller's keyword list onto them; attach/status now take the shared `TaskRef`
-  and resolve through one `_task_ref_namespace` helper. Behaviour, guards and result shapes are
-  unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
-- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): successful
-  `worktree_integrate_tool`/`lifecycle_finalize_task_tool` edges now auto-land matching seats into
-  `result["autoLandedSeats"]` instead of auto-retiring them. The helper calls
-  `serving/landing.py` + `log_landed_event`, does not create a `TerminalHost`, does not terminate tmux,
-  and keeps the all-exceptions best-effort guard so completion cannot fail after the branch/task edge
-  succeeded. Verification metadata remains pinned until closeout stamps the HFX2-L11 commit.
-
-- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state),
-  INCLUDING the R2/F1 fix round: `worktree_integrate_tool` and `lifecycle_finalize_task_tool` now
-  call the new `_auto_retire_completed_seats` helper on their own success (gated by
-  `config.retirement.auto_retire_on_integration` / `auto_retire_on_finalize`), storing retired
-  session ids into `result["autoRetiredSeats"]`; `worktree_integrate_tool` binds
-  `confined_contract` once for reuse. The F1 fix round widened the helper's guard from just
-  `load_contract` to the ENTIRE body (contract load through the `log_retire_event` loop) under one
-  `try/except Exception: return []`, closing a gap where `retire_seats_for_leaf`'s catalog I/O or
-  the event-log loop could otherwise raise out of an already-succeeded completion edge. Verification
-  metadata pinned until closeout stamps the HFX-L8 commit.
-- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `worktree_start_tool` now
-  re-reads the on-disk authority (`reload_provider_authority`) before provider setup, writes the
-  lifecycle settings from the LIVE providers map only when armed, skips setup fail-closed on an
-  empty/unreadable live map (the worktree is still created), and attaches a `providersAuthority`
-  veto block when the disk vetoed an armed boot snapshot or the read failed. Verification
-  metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-07-05T19:10+02:00 - L8 builder cycle 6: `worktree_integrate_tool` now passes `gate_policy=config.orchestration.gate_policy` into `WorktreeArgs`, mirroring the closeout path (AR3-1(a)). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-04T12:32+02:00 — No route impact: 260703-L4 only forwards the parsed
-  gate delegation policy from MCP config into worktree closeout args; controller
-  domain boundaries and public tool surface are unchanged. Verification metadata
-  pinned until closeout stamps the L4 commit.
-- 2026-07-03T00:30+02:00 — L11: worktree_abandon ends its anchored ambient lifecycle via `_end_ambient_lifecycle_if_anchored`; the short-lived task_reopen controller moved out to task_doc_tools (task domain).
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: worktree start/attach/status controllers now accept `leaf_id` and `parent_task`, and lifecycle attribution prefers `enclosure_path` while keeping `contract_path` as a compatibility payload field. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T22:50+02:00 — Added `lifecycle_finalize_task_tool`: coordination-confined contract/task-doc paths are converted into `FinalizeArgs` and delegated to `git_worktree_manager.finalize_result`. The controller remains a path-authority and typed-argument facade; finalization behavior lives in `worktrees/modules/finalize.py`. Verification metadata pinned until closeout stamps the source commit.
-- 2026-06-13T18:45+02:00 — Slice 2c: wired the observable lifecycle. `worktree_start_tool` resolves + threads a `lifecycle_id` (active id or fresh mint) and `_attribute_start` promotes/adopts it after start; `worktree_attach_tool` gains `on_unsaved` and `_attribute_attach` drives the `ambient().attach` §1.3 resume table (adopt / no-op / pause+adopt / save gate). The git module stays observer-free; both helpers no-op without an ambient. Verification metadata pinned until closeout stamps the 2c code commit.
-- 2026-06-11T06:47+02:00 — Removed `direct_closeout_preview_tool` / `direct_closeout_apply_tool` and the `_direct_closeout` helper (issue #62 worktree-only closeout); the controller surface is now start, attach, status, sync, closeout preview/apply, integrate, cleanup, abandon.
-- 2026-06-10T09:56+02:00 — Added `worktree_sync_tool` (contract-path confinement + `memory_sync_choice`/`dry_run` forwarding to `sync_result`) for the GitHub #54 mid-task base sync.
-- 2026-06-10T09:30+02:00 — `worktree_start_tool` forwards the new `stale_base_choice` recovery selector into `WorktreeArgs` (GitHub #54 stale-base preflight); plumbing only.
-- 2026-06-10T07:30+02:00 — worktree_start async support (GitHub #53): the provider setup config now carries `unlink_settings_after_setup=True` and the controller skips its `finally` unlink when the result's providers state is `starting` (`_settings_owned_by_background`) — the background thread reads the temp settings file and owns the unlink. New `retry_provider_setup` flag forwarded to the worktree layer. The provider timeout switched from the hardcoded `DEFAULT_DOCKER_CONTROL_SECONDS` (120) to `config.timeout_caps['providerSetupSeconds']` (default `DEFAULT_PROVIDER_SETUP_SECONDS`, 1800) — the documented setup cap now actually governs the worktree flow (GitHub #58 evidence showed the 120s bound on seed exports).
-- 2026-06-01T20:45+02:00 — Added `worktree_abandon_tool` to the controller surface and threaded the `teardown_providers` flag through `worktree_cleanup_tool` (behavior detail lives in `provider_tools.py.md`, `abandon.py.md`, `cleanup.py.md`).
-- 2026-05-31T12:30+02:00 — Repo/path guards moved to shared `_guards` (require_repo/require_within_coordination) raising AuthorityError, and namespaces are now typed `git_worktree_manager.WorktreeArgs` instead of `argparse.Namespace` (1.0.0 review remediation).
-- 2026-05-30T21:33+02:00: Re-verified against `825a172` after the 0.9.x provider/worktree run; the controller surface (start, attach, status, closeout preview/apply, direct closeout preview/apply, integrate, cleanup), its coordination-containment rules, and the act-by-default `dry_run` behavior still match the source. References (`git_worktree_manager.py`, `models/worktree.py`) verified present.
-- 2026-05-28T19:52+02:00: Created when worktree MCP controllers moved into their own domain module.
-
 ## Governing Overview
 
 [governing overview](overview.md)
-## Docs References
-
-No external Domain Documentation source is configured for this internal route; task `260821-CLIVE-L1` and the cited repository source/tests govern this curation.
-
-## Cross-Repo References
-
-This file owns no ambient cross-repository authority. Any external-memory repository it reaches remains explicitly contract-addressed.
-
-## Update History
-- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **all three closeout and landing results now carry the boundary statement, and two reference rows were re-anchored.** `external_git_movement_result_block` is attached to the integration result (`:461`), the closeout preview (`:1012-1013`) and the closeout apply (`:1015-1016`), after the Git transaction and after the leaf's own final-output projection — an attached statement and never a gate, returning the payload unchanged when it cannot measure. The repaired rows are the three attach call sites the row names (`:1013`, `:1016`, `:456`). **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-20T06:57+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the application entry point for `worktree_sync` changed argument shape, and this card records why.** `worktree_sync_tool` now takes `resolution: SyncResolutionInput | None` where it took a bare `resolution_action`, and unpacks it into `WorktreeArgs.resolution_action` and `WorktreeArgs.knowledge_resolution` — one value in, two driver arguments out, with the pairing refused as a pair downstream. The shape exists because this entry point is at the `PLR0913` argument ceiling and because `PLR0913` relief that kept a bare action beside a bare decision would let the two disagree at the boundary. Nothing else on this adapter changed: it still admits the configured contract, builds `WorktreeArgs` and delegates to `git_worktree_manager.sync_result`, owning no journal or selector behaviour. Every cited range was re-derived against the delivered tree. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate named beside it; closeout owns the committed stamp.

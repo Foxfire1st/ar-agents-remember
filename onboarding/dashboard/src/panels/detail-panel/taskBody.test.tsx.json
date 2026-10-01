@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskBody.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The on-demand task-body suite.\n\nAnchor: `describe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3dc75df2f4520123e072fb444bedc02ee4a4a4d7",
+            "content": "sha256:e37c3475e39838a25832c81e4b482bc881195b6a766a78234d904b1c556136c5",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

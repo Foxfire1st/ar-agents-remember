@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/terminal_spawn_results.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/terminal_spawn_results.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T21:06+02:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d` |
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application overview](overview.md)
@@ -46,14 +36,9 @@ recognized refusal and the caller must continue its success handling.
 - `seat-taken` preserves replacement/ownership evidence and is not collapsed
   into a generic pre-spawn refusal.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Common pre-spawn refusal envelope includes optional lineage evidence. | `spawn_refusal` | mcp/src/agents_remember/application/terminal_spawn_results.py:13-31 |
-| Internal opener outcomes map to public statuses and keep occupied-seat evidence distinct. | `open_terminal_refusal` | mcp/src/agents_remember/application/terminal_spawn_results.py:34-76 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-12T21:06+02:00 — 260731-EFA-L23 curator follow-up: re-read the closeout-exposed Pyright repair; `mapped` is now explicitly `SpawnAgentSessionStatus | None`, preserving the closed public refusal vocabulary without changing runtime mapping behavior. Verification remains closeout-owned.
-- 2026-08-12T20:10+02:00 — 260731-EFA-L23 curator: created for the centralized public spawn-refusal boundary, including fail-closed source-lineage evidence. Verification remains pinned to the leaf base until closeout assigns the dirty source a real commit identity.
+- Common pre-spawn refusal envelope includes optional lineage evidence. [1]
+- Internal opener outcomes map to public statuses and keep occupied-seat evidence distinct. [2]

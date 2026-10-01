@@ -1,0 +1,528 @@
+{
+  "path": "mcp/src/agents_remember/models/terminal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The response fields are defined by the document-and-role assignment contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:70b2408a13b0a7d5bba67b9c4fa0077a1f7a00731eb316b3c205c91397d8affc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskAssignmentStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:59b7dc579d7745bd7badd418b5940c15d36b49d888b3833245887fa731560f76",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttachTerminalSessionToTaskResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:ddb3ca1475237fc3031061888b0a9947b1f7e525551fec9fb13cc61f468f08b4",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:398c56ff2987ccd2377c21546ac852fb789dd04612f5ef8350529245978f8c2c",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The three `VALID_*` sets this module declares are no longer pinned by a produced == declared case: `d3610903` removed the per-set `ProducedLiteralTests` cases when coverage became diagnostic, and `mcp/tests/test_wire_vocabulary_exhaustiveness.py` now keeps only its module docstring and helpers.\n\nAnchor: \"VALID_SPAWN_AGENT_SESSION_STATUSES: frozenset[SpawnAgentSessionStatus] = frozenset(\"; \"VALID_SESSION_RETIRE_STATUSES: frozenset[SessionRetireStatus] = frozenset(\"; \"VALID_SESSION_RENAME_STATUSES: frozenset[SessionRenameStatus] = frozenset(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:d2708623ece7d0a23167f302c513deeee33491e32d7c15a0cd029af93ea09bf1",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:8dd28ec85fcb743400490ed47dcc05ff75275d37cd02b07ca4174b1b02a9bfff",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:79394ffce7b3e6ca489124999c325bfcc08e9bfd0893f8569cc728db377c6af3",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:c58b8fc4ce9edcffb14bcfe62c1b1819f0ff8884d692b2644e7640d8e65b3a5d",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:903842ca47bfa25f8a51a2b9263810ddac87780173eb40db60062e92813cfb48",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The administrative attach payload builder returns the exact task-document-and-role fields modeled here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:701faaee676d384f691142930a5d5b4ac9712ce23e8efc03b78d96431d6ed9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_terminal_session_to_task_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Application producers import and annotate the terminal aliases across the centralized spawn-refusal builder, knob-refusal check, retire result, and rename result seams.\n\nAnchor: \"def spawn_refusal(\"; \"def _knob_refusal(\"; \"_RETIRE_OK_STATUSES: frozenset[SessionRetireStatus] =\"; \"def _retire_payload(\"; \"def _rename_payload(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cffed0e439c96fd52540647a209038ed2bf8a54",
+            "content": "sha256:a00a44d13d7bd30315765b437fb91a1c0ee70641bdd83a0750755854e7049bdf",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/application/terminal_spawn_results.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:5fcd89ae7706908abfc83b3087c6f0b83a8ee46727d574f7f5c1a6027ba34f9f",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 473
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 944,
+              "kind": "line_range",
+              "start": 944
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 947,
+              "kind": "line_range",
+              "start": 947
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:23a207f233860951045ab43bf436abe060c9a7d188445b704ef21104aae27e3e",
+            "locator": {
+              "end": 1129,
+              "kind": "line_range",
+              "start": 1129
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:98051f7a0cbbf073c186675c41f95a13d73ad0c5248d0e3acc7265a62d9b0bc2",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 482
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:ef53dc07306499563fe0a332929d1dc43196c85cc90445b826bd56b7bc2b0db0",
+            "locator": {
+              "end": 1005,
+              "kind": "line_range",
+              "start": 1005
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:6d2ba78cd9178ac8fda128123aa44f85aec7bb315f379d326dea5f6fecbeeed6",
+            "locator": {
+              "end": 1008,
+              "kind": "line_range",
+              "start": 1008
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:e7f4b21ed573b5b96db2ed2ba548429726673e83fa79097a382192ac16b3553f",
+            "locator": {
+              "end": 1190,
+              "kind": "line_range",
+              "start": 1190
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The MCP tool wrappers import the modeled spawn, retire, and rename payload aliases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:0dd93910f7bbe2ab45902195c7c9493a9c1742f63cf5ed7f9402bd6697a843bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn_agent_session_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:4f73f86cc04aefc86418a701c6461b30118702bbd298c809aa57f3766a5ec6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_retire_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:b10d012adb0f2f73d8c20c0f6121b1e78ef21aa790aad112d137fef8dd61a53f",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_rename_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:3a174871131d3eef92a2af8c931602acb4b34e131e0d6c2c97658c41e2f8a31b",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:d9bd30d9e88dfbbbac7e074f3be8c919bb14ac18f2482a04ed27c6ccd51cbd35",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04b2df1afb7fcbc4bc4156d8af1a2f22d82f221f",
+            "content": "sha256:f5fb17967d37259b44554700f4b9a32b4639284813cd3d9f64e2688c0b81565b",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias.\n\nAnchor: \"LeafRefStatus = Literal[\"; \"class LeafRefResolutionError\"; \"VALID_LEAF_REF_STATUSES\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:92127721ca7213e4c704a7d420dff8df47cb31852746b89e56f7fe1d0597e379",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:5975f7ebbc8c7bbfd12d80dac1459f21c68ec4868f91eb887c61dfee12862a7c",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:9f8fa1a9ed191ad793197c858a17219f7a748276de2e4cca28c33d0651c9ae5f",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The response registry maps `attach_terminal_session_to_task` and `spawn_agent_session` to these strict models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:2eec116842e05cd983cbfe2224329ef2df1a9429accd90e8127643b47c7cc0a8",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The declared attach response owns its wire fields; removed conformance fixtures do not establish a current validation pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:59b7dc579d7745bd7badd418b5940c15d36b49d888b3833245887fa731560f76",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttachTerminalSessionToTaskResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:ef2730e281689dc42e06a58a526a2d8ceb6386ea503d036b73519d620214fe6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_retire_tool"
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:67acf4d02a822f722cfca2d07a27d95582b4b799543b61b5039d65da2a45a64a",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_rename_tool"
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:8f145c59357c60628716d847e71721ede92a70a64b860b0da9b2139cbf4e27fd",
+            "locator": {
+              "end": 1064,
+              "kind": "line_range",
+              "start": 985
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:3c5d8492cc20fb2ce511a5e976dcaa0814e754a7bab99d8b1ad08d346b09acd5",
+            "locator": {
+              "end": 1167,
+              "kind": "line_range",
+              "start": 1153
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The response registry maps `session_retire`/`session_rename` to these strict models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:6ebe9309563db5c447b7ee8ec3e67e37fdbb1ed4b9479a2ed753a7a9669b45c9",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

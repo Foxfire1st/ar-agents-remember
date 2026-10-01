@@ -1,0 +1,510 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/registered_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The construction version, declared in the shipped policy-constant idiom beside the read's and the detector's own versions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:cb805585a0d89a2ae17569ccffc2a91be57f7e621441a5976c69b586668c9485",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCOPE_CONSTRUCTION_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:9b2ce949d089c615aee2c784b6707dee74a54f8fe1fdc73112a59cae790ffb13",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_READ_POLICY_VERSION"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36930b807fd0f24bc978c6c8f0f3c57ee03f3b89",
+            "content": "sha256:83dac348c515dad4f32ee5890fd4808ddc13e67b19547903a8af02d49e451da0",
+            "locator": {
+              "kind": "symbol",
+              "name": "DETECTION_POLICY_VERSION"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/detection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The constructed scope: declared snapshots and paths, resolved policy triple, followed edges and the required membership — and the composition-edge identities it followed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:eb364174d5112c86a4b8114adb7c192b1bac799cce34f77e37cb7854ff02e626",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredScopeManifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:cce8127fc4a70a73147727aeefe9a45bfe5778d1f6b31658cd68a3351a250919",
+            "locator": {
+              "kind": "symbol",
+              "name": "followed_composition_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two states a manifest refuses: an edge attributed to a side the scope did not declare, and a composition edge naming a policy other than the scope's own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:65a29a1b889751d6f6872bc827040b198e02df4aa65d8c370d2ef5876c873690",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_every_edge_to_name_a_declared_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:57c7f76e5e150a31f1aa22e7632b3714f35a4c05e020fd4cd4af929c65adf657",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_policy_for_every_followed_composition_edge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The refusal naming the exact missing input, the validator that keeps its typed half naming the same input, and the advertised next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:1211f29dcbdf144ac87b752cfd090915a4c7d7c8878c981df0f471c124962735",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeConstructionRefusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:d49fd16ca5c4a03f95ad06de26d86d4d1b3163c3a8ec6e6de928ed91da644204",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_refusal_to_name_the_same_input"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:9656d4eda65c45ec917dba88b3250987d684fab6cdebc438420dfcacfd19c0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_action"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The one ordinary function: a declared changed path is refused unless it is a plain repository-relative spelling within the shipped path bound.\n\nAnchor: \"if len(cleaned) > PATH_MAX_LENGTH:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:a51f940ae0672742d74620591c993d231b220831c6c4627ccff7d325f3d9aa24",
+            "locator": {
+              "kind": "symbol",
+              "name": "scope_path_is_recorded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:f45b6f8cbdbb61e9d6cdcf41df6533e5f95b2519735715d4d91ebeebd2518aa4",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The frozen, extra-forbidding base every shape derives from, the snapshot identity a side is declared as, and the shipped typed refusal the construction wrapper carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:c38d38cef2226ee90eabf38006faa6e6ca8cadeb5eb992a86d5d402b472448c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "model_config"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusal"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:940e9f56e5a7ce4cadb086199d4ccf8ab35c9376c94af1735ac589ed86100b69",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The read path's own selection counts — including items remaining and advertised expansions — none of which any record in this module has a slot for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:ad322a74d9200f564ac69b49ebde036ccc7fdbb3f8f96cdd77548304e55771bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadCounts"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:db2d73cb26a651de67688b96b9fad5bf766ffc0636927160c9b41b07b5bc5f83",
+            "locator": {
+              "kind": "symbol",
+              "name": "primary_items_remaining"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The sibling pipeline vocabulary that consumes a scope, and which states in its own docstring that it redefines none of the records it composes.\n\nAnchor: \"redefines none of theirs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:184e64347a30972711b8e7e41c2b612cb8fcf96524f2a5469a3b91c2927cf920",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two declared sides, spelled once as a literal and once as the ordered tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:e87afef9c8d8cba6d5a54cb678ed310c4d47bc695a9659a1b6ebd35e98691d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeSnapshotSide"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:aeb21563eaf2130eb382bd47b52bad358e6536c24f0b8e3e1f5defb79b947ecc",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCOPE_SIDES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two closed vocabularies a caller branches on: the three followed edge kinds, and the four declared inputs a refusal may name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:8c491c31d0913cb7ce28012f2d36e2f662f1dcd12d202d42b3922ea2b517fcb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeEdgeKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:6c3b03cf180a2820532bba5deb99bbb328a0077e0bd23e6077b505a873ce813a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCOPE_EDGE_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:97691b5d6e6203f906f8e3225aeab6a04aa01fda64c092e0b5d1479214cb3d0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeMissingInputKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One side's declaration as an exact snapshot identity plus the selection policy version it was read under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:8ffdfb53419915644279ee6214c2e26c58d2803bfc8dea178d130d1fac3a9b15",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeSnapshotDeclaration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The followed edge with its required snapshot provenance, and the validator that admits its resolved policy half on a composition edge and nowhere else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:0c51fb0fc122b3bace47d796b499b853ed00378fff7e60f588e48969b5d57afa",
+            "locator": {
+              "kind": "symbol",
+              "name": "FollowedScopeEdge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:fe593f0a2a343c63dfa895097a532ce3e220c3082ac9db927f0bbe694313be4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_policy_half_to_match_the_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The membership as recorded identities only, with `size()` reporting the counted members and the reference channel being the origin references the reached records carry.\n\nAnchor: `are later leaves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:b3e0c1a002ce7c4db2678c1fb08b33034d117f8851d14b74ef27386bb890cdcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredScopeMembership"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:36f0f0f344d5c0c21da09179d723e1d2d1b46b74de1b31d287c240409e99272f",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_reference_refs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:d86ab1915283d839ae0c51b65eba7e5e456d03063f186a02f467975185068236",
+            "locator": {
+              "kind": "symbol",
+              "name": "size"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:d46400eabd00d471c591297b1a4aba6217985d638d1c6d8c563847e17a67bdc4",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The stored origin references a reached record declares for itself, which the membership collects and decides nothing about.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5f7db9de3b6cbbd9f0b3b71938b820d857a14ae",
+            "content": "sha256:bcecb2f9700d0652874ccfde412411ba5080e5f64945c63de096a6364646867a",
+            "locator": {
+              "kind": "symbol",
+              "name": "origin_refs"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/authorship.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The declaration itself — paired snapshots, changed paths, seeds, optional policy — and the refusal of a blank or repeated path/seed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:ab11076036da70618e1727838971b6937e49c61c4e0fcf9a53076dcb2113129c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredScopeRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:71a37bd2ebffbc4cf54e3ef4b5c6b0999c160a747b6877e31b6cece79089a337",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_unique_nonblank_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The declaration's three remaining checks: an ambiguous common base refused where the caller can still fix it, a policy that must be both halves or neither, a seed without a policy refused as a widening — plus the one-side lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:765a6b413d8c1bd63d2f5307d74ce68211aec508a7f95cbde1adc6dfda042fb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_declared_pair"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:8845f23c933a75952c4330c83e255d115ff3500477763bd7af65cac599000bce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_a_declared_policy_to_name_both_halves"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0eecb38f8cc6fdea8bca40db016498455b36df1f",
+            "content": "sha256:c598c8a37e1ed6b54aa146a2d58abfb3ed4006f73ce4f765e1411b875c53ea50",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

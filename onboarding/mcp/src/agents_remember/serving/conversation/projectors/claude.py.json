@@ -1,0 +1,190 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/projectors/claude.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter defines replay-user and transcript-entry handlers together with a 128 KiB transcript-text bound and clipping helper.\n\nAnchor: \"def _handle_replayed_user(\"; \"def _transcript_entry(\"; \"def clip_transcript_text(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:659c7f8d70482ec50e8866d2d0927ae6a22764ac9ad25cdbac9b9db1c9f73005",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_TRANSCRIPT_TEXT_CHARS"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:beec0635bb81a172a92f0334a378b0ea20188bc430dc02909a9ab4ae623118c2",
+            "locator": {
+              "end": 429,
+              "kind": "line_range",
+              "start": 429
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94bf5a628d99c3605a8e516c66b273ad545d3f97",
+            "content": "sha256:47531fa58a36137a9ed9a99e432237f672e45aedb2c171ff40542de2df676a15",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 628
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94bf5a628d99c3605a8e516c66b273ad545d3f97",
+            "content": "sha256:50d46af6d5b390be8eacd80438bf17487475908b71a40eebb828789a294de4b7",
+            "locator": {
+              "end": 929,
+              "kind": "line_range",
+              "start": 929
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output, and a late tagging upsert does not regress a terminal phase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:de99b113feb111c2ab6a86de3c0a7d466e2aac59ace371480576fd1fe1f72508",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionStore"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:0295b8279ae8923bb0f4281c69bdb7d5979277ae7e377287467fa178ec16aeba",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_item"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:7d9ac71bac0011cf43221274d07284a14409a7dfc3003f8c4758e67befc32033",
+            "locator": {
+              "kind": "symbol",
+              "name": "_union_blocks"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:7306af5bdabad5c0e9201ad803edd0dade2a99087548c1fcffcb02bc2835d194",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The engine's echo zipper merges echo and frame channels by strict turn order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:9183adfa0f1cdbcd4f8f649b8dd2dffc1b11f0ba9d1b713ee73a1c893cbf6a5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_zip_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:cf0441b9eaad6c5b41de5e4437c8de7e0a34d6233a42c45f3c1a45680bba1993",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drain_one_turn_body"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:8b5f1772bf2913552c9e6a9c5940b9be614da0eed3a926623813bc7dfb9c5acd",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:eece61c46135b394337613c1dcabf8e77eb94cf12f90b12292984927abe95a87",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The conversation grammar declares the `ConversationAgentRef` roster-reference model.\n\nAnchor: \"class ConversationAgentRef\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5a01f590c792eda7ca5706a35ab62b9a7ac61ce",
+            "content": "sha256:d55148b20e47259bb3c62a80091b8e5a051ba7d49deb5be76f390227041add11",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/src/agents_remember/models/conversations/content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

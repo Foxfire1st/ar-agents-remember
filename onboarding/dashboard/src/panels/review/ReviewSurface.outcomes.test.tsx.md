@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -130,64 +120,48 @@ awaits the DOM via `findBy*`/`waitFor` rather than asserting synchronously.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own provenance and defect
 statement, the measured bodies with their digests, the reduced payload builders, the two stubs, and the
 fifteen cases grouped by what they pin. Every anchor in a row occurs inside the range that row cites.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The header's own provenance — the real component and client with only `fetch` stubbed, DOM-only assertions, measured bodies with digests — and its statement of the defect these cases control for.** | `ReviewSurface`; `intentReview` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:1-29 |
-| The real component, the real region and the real types under test. | `ReviewOutcomeRegion`; `ReviewSurface`; `ReviewRead` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:25-29 |
-| **The measured refusal bodies, each carrying the digest of the run that produced it, and the reduced task-context fixture labelled as reduced.** | `DATASET_ABSENT`; `BAD_REQUEST`; `UNWIRED`; `BAD_PATH`; `INVENTORY_DETAIL` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:50-60; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:68-92; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:94-96 |
-| **The two payload builders: the task-context answer, and the measured empty one that is the only route to the known-empty statement.** | `taskContextPayload`; `emptyPayload` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:102-198; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:209-223 |
-| A successful answer wrapped the way the route wraps one. | `reviewed` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:200-205 |
-| **The two stubs: a response-shaped object and the global `fetch` that serves it, so the status, body and decode all travel the real path.** | `response`; `serving` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:225-232; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:234-238 |
-| The two calling conventions the surface really has: the task context and one recorded subject. | `mount`; `mountSubject` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:240-252 |
-| The cleanup and global-fetch restore between cases. | `afterEach` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:25-29; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:246-249 |
-| **The in-flight state rendered as itself before any answer arrives.** | "shows the read as in flight before any answer arrives" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:251-265 |
-| **The conforming example the packet names, mounted: a never-initialized refusal with its reason, offending input and next action.** | "shows a never-initialized refusal with its reason, offending input and next action" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:266-283 |
-| **Source inspection stays reachable when only intent is unavailable, as a second question the reader asks.** | "keeps source inspection reachable when only intent is unavailable, on request" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:284-313 |
-| **Known empty said for a measured empty answer and never for a failure.** | "says known empty for a measured empty answer and never for a failure" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:314-325 |
-| **The three distinct failure states asserted apart in sequence.** | "keeps the unavailable-adapter, validation and authority states apart" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:326-356 |
-| **The retry offered for a network failure, and the retry rendering the answer.** | "offers an explicit retry for a network failure, and the retry renders the answer" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:357-376 |
-| A subject-level refusal distinct under its own code. | "keeps a subject-level refusal distinct, under its own code" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:377-402 |
-| **An answer whose state this client does not admit is named, never rendered as a review.** | "names an answer whose state it does not admit, instead of rendering it as a review" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:411-422 |
-| **The cross-target prohibition, mounted: nothing read for one subject may appear under another's header.** | "never renders a previous target's comparison under a new target's header" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:424-465 |
-| **The region-level rule and its stated reachability reason, with the three constructions the three cases share.** | `failure`; `region`; `statements` | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:474-478; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:480-489; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:491-494 |
-| **The three region cases: retained known-empty stated once and never denied, retained real labelled with no emptiness denied, and a written review printing neither.** | "states a retained known-empty once, as the measured result it is, and never denies it"; "labels a retained real comparison and denies no emptiness for it"; "says nothing of either kind for a written review, and only known-empty for an empty answer" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:496-528 |
-| **The surface the cases mount, and the one region that decides the notes they assert.** | `ReviewOutcomeRegion`; `shownPayload`; `knownEmpty`; `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:61-68; dashboard/src/panels/review/ReviewOutcome.tsx:86-94; dashboard/src/panels/review/ReviewOutcome.tsx:201-213; dashboard/src/panels/review/ReviewOutcome.tsx:247-278 |
-| The real surface composes the target-bound read and retained comparison that these cases exercise. | `useSurface`; `ReviewSurface` | dashboard/src/panels/review/ReviewSurface.tsx:453-532; dashboard/src/panels/review/ReviewSurface.tsx:534-600 |
-## Cross-Repo References
+- **The header's own provenance — the real component and client with only `fetch` stubbed, DOM-only assertions, measured bodies with digests — and its statement of the defect these cases control for.** [1]
+- The real component, the real region and the real types under test. [2]
+- **The measured refusal bodies, each carrying the digest of the run that produced it, and the reduced task-context fixture labelled as reduced.** [3]
+- **The two payload builders: the task-context answer, and the measured empty one that is the only route to the known-empty statement.** [4]
+- A successful answer wrapped the way the route wraps one. [5]
+- **The two stubs: a response-shaped object and the global `fetch` that serves it, so the status, body and decode all travel the real path.** [6]
+- The two calling conventions the surface really has: the task context and one recorded subject. [7]
+- The cleanup and global-fetch restore between cases. [8]
+- **The in-flight state rendered as itself before any answer arrives.** [9]
+- **The conforming example the packet names, mounted: a never-initialized refusal with its reason, offending input and next action.** [10]
+- **Source inspection stays reachable when only intent is unavailable, as a second question the reader asks.** [11]
+- **Known empty said for a measured empty answer and never for a failure.** [12]
+- **The three distinct failure states asserted apart in sequence.** [13]
+- **The retry offered for a network failure, and the retry rendering the answer.** [14]
+- A subject-level refusal distinct under its own code. [15]
+- **An answer whose state this client does not admit is named, never rendered as a review.** [16]
+- **The cross-target prohibition, mounted: nothing read for one subject may appear under another's header.** [17]
+- **The region-level rule and its stated reachability reason, with the three constructions the three cases share.** [18]
+- **The three region cases: retained known-empty stated once and never denied, retained real labelled with no emptiness denied, and a written review printing neither.** [19]
+- **The surface the cases mount, and the one region that decides the notes they assert.** [20]
+- The real surface composes the target-bound read and retained comparison that these cases exercise. [21]
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file. Every response is served by a stubbed
 same-origin `fetch` and names one repository namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`ReviewSurface.tsx`) moved with the leaf's inserted lines: 1 passing row(s) normalised by the fixer. No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx`); no claim changed. No verification stamp was advanced.
-- 2026-09-28T21:41:55+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the cross-target case now asserts what stays, per the L48-R1 ruling (`ICR-R24@v3`, preserving `ICR-R26`).** The assertion that the previous subject's `review-inventory` disappears after the new subject's read fails contradicted the Architect's ruling that a failed or refused selection keeps the workspace mounted; A2 replaced it with: the failure is labelled with the requested subject in `review-reading-problem`, the task inventory stays, and no `review-center` is rendered, while the retained-generation and `data-comparison` negatives are unchanged. The card's F4 paragraph was corrected to say so (the old statement is **superseded**, not carried). The reopened `useSurface`/`ReviewSurface` claim was re-read — the real surface still composes the target-bound read and the retained comparison — and every row this leaf displaced was re-derived from its case or declaration. No stamp advanced.
-- 2026-09-26T21:10:23+00:00: Generated citation repair: `DATASET_ABSENT`; `BAD_REQUEST`; `UNWIRED`; `BAD_PATH`; `INVENTORY_DETAIL` repointed to dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:50-60; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:68-78; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:79-85; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:86-92; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:94-96. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:10:23+00:00: Generated citation repair: `reviewed` repointed to dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:200-205. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:10:23+00:00: Generated citation repair: `response`; `serving` repointed to dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:225-232; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:234-238. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T19:49:05Z — The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **created.** The module is new in this leaf and this is its one-to-one card. It records what the fifteen cases are *for* — the mounted surface for every state that is not a plain success, and the outcome region for the two statements about a measured-empty payload — plus the module's own evidentiary discipline and its two deliberate limits. The discipline: only `fetch` is stubbed, every assertion reads the DOM rather than a prop the test passed, and each refusal body is the real route's measured answer with its `sha256-normalized` digest quoted in the source. The limits: the region cases are region-level **because** the same-target re-read that would reach the retained-known-empty state mounted is not reachable through today's props (the module says so in its own comment), and the module makes **no browser-level claim** — the A01/A13 journeys over a served dashboard belong to R25 with R24/R17. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00) — the line this candidate now sits on after the leaf's pair sync — while what was actually read is this leaf's **uncommitted** working tree at that base: this leaf's **uncommitted** candidate at that base. Nothing in this leaf is committed, so no commit contains the bytes a stamp would claim to have verified; closeout owns the stamp.
+No meaningful cross-repo references found.
 
 ## 260921-ICR-L17 The Refresh Path, The Carried Identity And The Read Race
 
@@ -216,9 +190,6 @@ closed: a read-number-only guard and a sticky carried identity are both invisibl
 React settle between the two updates.
 
 
-## Update History
-- 2026-09-23T06:50:00+02:00 — 260921-ICR-L17 curator (candidate `ar/260921-icr-l17`, uncommitted; production line at this leaf's base `c422dc00273d4ae7a5d8c9c8db97365b8c85d640`, confirmed from the enclosure contract): **the refresh path, the carried identity and the read race are measured (`ICR-R17@v1`).** A third `describe` block adds six cases over the real surface and client — the end-to-end refresh, the failed refresh that renders no claim, the superseded-answer race, the same-flush interleaving (`L17-R2-F1`), and the two single-question cases (`L17-F1`) — and the module grows from sixteen to twenty-two cases. **Stamp accounting:** the verification pair names this leaf's base — the last real commit the reading was taken against — because the new cases exist only in this leaf's uncommitted working tree; closeout owns the stamp once the code commit exists.
-
 ## 260921-ICR-L23 The Boundary'S Own Sentence, And What It Must Not Read As
 
 One case joins the module — `renders the boundary's own sentence when it could not compare the
@@ -227,7 +198,3 @@ whose statement names the uncompared channel, then asserts the three things the 
 the boundary's sentence is rendered through `review-staleness-unmeasured`; no previous input and
 no "current comparison" wording appears; and `review-stale` is absent, so the unmeasured state
 never borrows the stale rendering.
-
-## Update History
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **one enforced out-of-bounds citation rewritten to the construct it names, wording unchanged.** The row citing the surface composition these cases drive ended `946`, past the end of a `ReviewSurface.tsx` this leaf shortened to `910` lines when the complete source change explorer moved into its own module; it now cites the surface component's own extent, `819-910`, which carries `ReviewSurface` at its declaration. The row's other range (`targetKeyOf` `539-539`) is kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **the module gained the case that pins the unmeasured line, and this card's body now states what it asserts.** `renders the boundary's own sentence when it could not compare the declared identities (L23)` (`:885-914`) mounts a `not-measured` payload and asserts the boundary's sentence is rendered, that no previous input or current-comparison wording appears, and that `review-stale` is absent. The new section above is the durable statement. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

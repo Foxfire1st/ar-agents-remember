@@ -1,0 +1,72 @@
+{
+  "path": "dashboard/src/panels/engine-room/remote.styles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strip/connector recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cbbf193de836783a277ed559bcd66c315c170c3",
+            "content": "sha256:94d3fe8e00e7e348bc807eef1e9fe549adf19628fad6195c18bf70a49799939f",
+            "locator": {
+              "kind": "symbol",
+              "name": "remoteStripHeader"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cbbf193de836783a277ed559bcd66c315c170c3",
+            "content": "sha256:c8532cfbe711c93096657de7e6fe50dde09ee9349c6b32da5b42d21e44c9fbaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "remoteConnector"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cbbf193de836783a277ed559bcd66c315c170c3",
+            "content": "sha256:33584d1beb042245f36f30100e168fde4fb81f997c29f4b735ea8effe1289c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "remoteConnectorCarry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The chip and PR badge recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cbbf193de836783a277ed559bcd66c315c170c3",
+            "content": "sha256:e3caeaa1b5167fcf6344e860b9fd1c7e251ae16fdb3a1e743a5bffb979749004",
+            "locator": {
+              "kind": "symbol",
+              "name": "remoteChip"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cbbf193de836783a277ed559bcd66c315c170c3",
+            "content": "sha256:9a05ffc1dfc62f2e0188e68b80903a3718217fef68864783b4ef5f798b584c8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "prBadge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

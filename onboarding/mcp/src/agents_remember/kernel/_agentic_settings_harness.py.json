@@ -1,0 +1,127 @@
+{
+  "path": "mcp/src/agents_remember/kernel/_agentic_settings_harness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The merge that carries a builtin's readiness probe across an override, so customizing a launch mapping cannot downgrade detection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b0f97f41ccb521b0b843c9a3da322228565d363",
+            "content": "sha256:b0016a0900cf47457bf0a0857488d7687bcb7a13d519b4cb7b0a522a1322c33d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merged_harness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The row type the merge produces, including the `runtime_probe` field it must preserve.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:ea56ad8241ce24e5b93c7dffd10bcd24139ab7b406f3cea152cc9d37e33ebebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "Harness"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The curated table the merge reads its builtin half from, and the `eve` row whose probe is the one at stake.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:fe54da6f1eb24c77412375eda6e1bf6e847f9d466b12fa75b2fd09a97833cc55",
+            "locator": {
+              "kind": "symbol",
+              "name": "HARNESSES"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:157c9a587ba817f64d2f0471ce2bc9363e72e315b28b822f86cf343bbc00c4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_RUNTIME_PROBE"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The consumers that would be misled by a dropped probe: detection detail and the capability catalog's install gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:e406ca1b33b350b6d62b1b2638773b92dcd8dc2205b191bfa6b9698ce92bed4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_detection_detail"
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:149282dfd781a80c70d98a059169561792df1ec3cfd4e930aa22e2c4d22f2012",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessCapabilityCatalog"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case asserting the probe survives an override and that a settings-defined id has none to inherit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:75f14323cb00ebfe6d4ac5fcf3e7f14efdf6000df0ddcb61c4efcdaa7c27146e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_builtin_override_keeps_its_runtime_readiness_probe"
+            },
+            "path": "mcp/tests/test_agentic_settings.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:1c6e155dd5c56f208f1d8e8deaf47dac157f8ade06f352405543020f06702609",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_new_id_adds_a_harness_with_defaults_derived"
+            },
+            "path": "mcp/tests/test_agentic_settings.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

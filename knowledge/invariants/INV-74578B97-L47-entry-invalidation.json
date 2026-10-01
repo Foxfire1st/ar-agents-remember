@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "When the task entry's changed-intent summary is re-read in the dashboard.",
+  "conditions": [
+    "The entry is mounted for a leaf; re-show, return from the reviewer and the reviewer's refresh re-validate it additionally (ruling on L47-R1-F2)."
+  ],
+  "exclusions": [
+    "A live push of a first knowledge ingest while the same panel stays open, which is not delivered (recorded as a possible later enhancement)."
+  ],
+  "id": "INV-74578B97",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "32372b52-1a1a-4302-8207-1fc88298f61b",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The entry's summary is re-read when this leaf's own liveness, closeout, integration, cleanup or worktree facts move, and not when an unrelated workspace publication moves the analytics document; a late answer for a previous leaf is dropped.",
+  "status": "proposed",
+  "supersedes": []
+}

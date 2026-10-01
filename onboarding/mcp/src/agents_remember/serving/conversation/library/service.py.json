@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/service.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dormant library port defines scoped list, historical read, and server-private resume-target resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc8c52321e707be4dade3c4e0a584ba8a63c6b10",
+            "content": "sha256:034820523ac7e44c47205512cdc772dbdf0c333f31ff59fd223370ebb278d546",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryPort"
+            },
+            "path": "mcp/src/agents_remember/serving/ports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "List/read routes return wire pages, narrow scope, and map capability/cursor/store refusals to exact statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7159dfb4d9bbd9f1821243e1345f466b7e7e367",
+            "content": "sha256:e575f05fde9ad58802210f353bfed6cce2f2dacadc89af8c435f6d0c94e7a48a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_list_route_returns_wire_page_and_authorizes_scope"
+            },
+            "path": "mcp/tests/test_conversation_library_api.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f7159dfb4d9bbd9f1821243e1345f466b7e7e367",
+            "content": "sha256:d30775f42d6795bfa3d4d69e185d09bc9d9d7e1e65e1ad9488a912c76b53905b",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 345
+            },
+            "path": "mcp/tests/test_conversation_library_api.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The per-app `LibraryShared` bundle and caller-bound builders construct this service.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a756b8d4210aa2dbefba1ce6f35f6bf4ea8337",
+            "content": "sha256:335708901e5100aa10ff7f71af6bb2d6dd248a4147081d31ea979279c15fe4da",
+            "locator": {
+              "kind": "symbol",
+              "name": "LibraryShared"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/factories.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

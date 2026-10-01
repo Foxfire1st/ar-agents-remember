@@ -1,0 +1,188 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The malformed-or-incomplete refusal, and why one code covers both facts.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:f43e92b561938006f789cf6c4e6bb2e72bc11878eb98b1c08f221d5f1e9d8ffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "invalid_export_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The canonical-form refusal: the same code, its own factory and its own record identity, because the fact is the one the guarantee rests on.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:412fc1ae3cebdb6a338e43c2ae32c50ff323cabb44558473d12eb7e8c3e823ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "non_canonical_export_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The unsupported-generation refusal and its no-migration next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:ba31420c713f9d527825a422d2d033540043a0c1382246089604fe158d23636c",
+            "locator": {
+              "kind": "symbol",
+              "name": "unsupported_schema_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two mirrors of \"an import never patches a live destination in place\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:734ab88d00f0fe1c1b40dec90e7567cd5b25f832daaf245416eb63a69c8ad54b",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_occupied_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:b06dd98b7300280383f43366f1dbfcc439bca94132d11e5b310db845e4534390",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_absent_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The staged-database refusal, which is a different fact from a malformed artifact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:6e31bd86e694da725c47c883f85f8dbc4265ff947f11ef8bf06278cdd959c827",
+            "locator": {
+              "kind": "symbol",
+              "name": "import_validation_failed_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared value shape and facts every factory builds on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b83598a7c3d65dacbbc27f3e7e334a28f5be63918e3c741be171f543bc4acafe",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusalFacts"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The declared vocabulary these factories produce, including the one code only a portable artifact can reach.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157a115d84d9933a565167ef2ffe60327da52180",
+            "content": "sha256:f051963a9e1e68afc1b0bcc52921de0235a2dc7d1bb9fdc3445413c26a5fd763",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The nodes that assert each of these refusals by code rather than by message.\n\nAnchor: \"test_an_incomplete_or_inconsistent_artifact_is_refused\"; \"test_a_document_that_is_not_a_well_formed_artifact_is_refused\"; \"test_an_artifact_this_build_or_this_namespace_cannot_accept_is_refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:391de947d5854249bf7fd7a46467b9f6a1e9f1ac682b4d08e14b5c2cb0282a3c",
+            "locator": {
+              "end": 659,
+              "kind": "line_range",
+              "start": 602
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:ae311be827f02bf163d71e38e2e9d8f93fff203de46a7c8dc0319ce3b1bb783c",
+            "locator": {
+              "end": 802,
+              "kind": "line_range",
+              "start": 717
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:fa4309320830e158da7762139721ff34a972ff14416e3ad6d832af4af7d4bc95",
+            "locator": {
+              "end": 876,
+              "kind": "line_range",
+              "start": 804
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

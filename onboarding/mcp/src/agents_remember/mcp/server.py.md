@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/server.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/mcp/server.py`    |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [MCP package overview](../../../overview.md)
@@ -111,83 +101,24 @@ that skips this line loses no records — it just stops being distinguishable fr
   breaks the handshake.
 - Do not add a raw shell or arbitrary-command tool to this server.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
-| The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:38-53; mcp/src/agents_remember/mcp/registration/__init__.py:51-51; mcp/src/agents_remember/mcp/registration/__init__.py:53-53; mcp/src/agents_remember/mcp/registration/__init__.py:25-25; mcp/src/agents_remember/mcp/registration/__init__.py:55-55 |
-| The stable tools package declares the public import surface for payload builders. | "Pure payload builders for Agents Remember MCP tools." | mcp/src/agents_remember/mcp/tools/__init__.py:1-6 |
-| The package imports worktree payload builders from the owning module. | "from .worktree import (" | mcp/src/agents_remember/mcp/tools/__init__.py:96-96 |
-| The package explicitly exports its builder vocabulary. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:116-116 |
+### Repo-Internal References
 
-## Cross-Repo References
+- `create_server` builds the FastMCP instance and invokes the registered tool families. [1]
+- The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. [2]
+- The stable tools package declares the public import surface for payload builders. [3]
+- The package imports worktree payload builders from the owning module. [4]
+- The package explicitly exports its builder vocabulary. [5]
+
+### Cross-Repo References
 
 No sibling repository defines this process wiring.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## L23 Runtime Package Review
 
 The transport server now imports its composition boundary as
 `application.runtime.startup as server_startup`. Startup trust, configuration, registration, and
 durable-store ownership remain application concerns; only their package location changed.
-
-## Update History
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/cli/dashboard.py` (the reader import and the `knowledge_reader_port` binding), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
-- 2026-09-28T17:29:54+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citations into `mcp/src/agents_remember/cli/dashboard.py` (and `serving/_app_common.py`) displaced by L47's fourth-port wiring were re-cited to the declarations that hold their anchors now (whole-identifier match); claim wording unchanged. No stamp advanced.
-- 2026-09-21T23:24+02:00 — 260921-ICR-L14 curator, **sync-merge resolution of the parked candidate against the landed ICR-L3 curation.** The two sides had curated this document independently and both sets of statements are kept: the landed `260921-ICR-L3` section, rows and history entries alongside this leaf's, tables unioned key by key (a row both sides carried keeps the ranges that hold its anchors in the merged code tree, the other side's range folded in where it is also true; rows only one side carried are kept in their own order), prose sections kept whole and Update History entries merged newest-first. The header states both facts: the production line is the master tip `a8d2431926d6b130012ca81ed2e85b14721c0615` (ICR-L3 landed) and this leaf's own code is still its uncommitted candidate. **Stamp accounting:** no verification stamp was invented; the stamp names the landed production line and the candidate rows name each uncommitted reading.
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **the two enforced citation spans were re-read and re-derived because this leaf's line shifts moved the constructs they name.** Both anchors live in `cli/dashboard.py`, which this leaf's +16-line insertion pushed down: `_dev_app` is now declared at 130 (extent 130-160, was 114-144) and `run` at 240 (extent 240-275, was 224-259). The body citation now reads `cli/dashboard.py:130-160; cli/dashboard.py:240-275` instead of `:86-116; :196-231`, and both anchors were verified to occur literally inside those ranges — `_dev_app` at 130 and `run` at 240. The claim wording ("The dashboard declares its role on both real entry paths") is unchanged and remains true of the constructs the new ranges hold. Nothing else in this card was touched: it is a citation-only repair, no verification stamp was advanced, and the governed closeout owns the real stamp.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "from .worktree import (" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:96-96. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:116-116. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:114-114. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "from .worktree import (" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:95-95. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:113-113. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated package purpose, worktree imports, and public exports, repairing the blank-line export anchor. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: recorded `AgentsRememberMCP` as the one strict
-  dispatch transport seam. Production registration remains family-owned; no compatibility handler
-  or private FastMCP registry was added. Verification metadata remains pinned until closeout.
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-13T09:05+02:00 — L23 curator: recorded the startup-module move into the runtime package
-  and confirmed the transport/application boundary is unchanged; final provenance remains
-  closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: MCP now establishes its trusted execution mode before
-  loading authority settings, while the existing preparation operation remains before serving and
-  idempotently reasserts the same role. Verification metadata remains pinned until approved
-  closeout.
-
-- 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound registrar imports/collection and tools builder imports/exports to packet-specified source spans. Verification metadata unchanged.
-
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: moved the live account to the current
-  application-layer startup boundary: `main` calls `prepare_mcp_process`, which declares the MCP
-  role before optional dashboard supervision; dashboard role declaration is present on both
-  `_dev_app` and `run`. New self/cross-file ranges are explicit scoped fixer output.
-
-- 2026-08-03T02:43:00+02:00 — W3-B01 curator: curated 9 Repo-Internal table citations with exact overview headings, current module identifiers, and live test anchor. The earlier call-site commentary was superseded by the current application-layer startup boundary recorded in the S18-T3 entry above. Verification metadata remains unchanged for closeout.
-- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: recorded the process-entry declaration boundary and why it stays outside the in-process "create_server(config).run()" factory cit:(["def declare_process_role(role: ProcessRole) -> None:"], mcp/src/agents_remember/controlplane/durable_store.py:76-84). The dashboard owns its mirrored entry paths cit:(["def _dev_app("], mcp/src/agents_remember/cli/dashboard.py:52-81). Verification metadata pinned until closeout stamps the L5 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: **rewritten**. The whole tool-registration surface
-  left this file for the new `mcp/registration/` package, and `create_server` became wiring plus a
-  loop over `TOOL_REGISTRARS`. The previous body — a per-tool catalogue of signatures, refusal
-  vocabularies and docstring contracts accumulated over ~30 entries — described functions that are
-  no longer in this file at all; that content now belongs to the registration route overview and its
-  thirteen file sidecars, which were written from the current source. Verification metadata pinned
-  to the pre-change commit until closeout stamps the L2 code commit.
-- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: reconciled the public
-  `worktree_closeout_preview` / `worktree_closeout_apply` descriptions with approval-before-apply and
-  mandatory quality-before-mutation ordering. (Those descriptions now live in
-  `registration/closeout.py`.)
-
-> **Earlier history (not a dated entry).** This file's Update History was a long per-tool
-> registration log (2026-05-23 through 2026-07-24) recording which tool gained which argument or
-> docstring clause. Every one of those entries is about text that moved to `mcp/registration/`; the
-> log was not carried forward here because it would document a surface this file no longer has. The
-> landed history remains in git and in the registration sidecars' own records.

@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/dependencies.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fail-closed runtime retrieval and the reserved `app.state` key live in the runtime module.\n\nAnchor: \"CONVERSATION_RUNTIME_STATE_KEY =\"; \"class ConversationRuntime:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:3975c70209d2be0f5bcb80d942109420bf682729fcf91593042605bc0b93ff58",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:614d9e716e9da19e9b5e0a7ec1acdcd2548aab9329a73997dba3a89ca12d9eb7",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bound resolver's loopback-only ruling is what the authorization dependency delegates to.\n\nAnchor: \"Return the local operator binding for a loopback peer; fail closed otherwise.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929e17bcc3d9f1e8d94ce1eed9ecfba647520c93",
+            "content": "sha256:64833e24520fc356114dca3d58bcdc875bd0e0564e150fe8eeb71ad650da93dd",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/authorization.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The package facade re-exports both dependencies beside `ConversationRuntime` and `register_conversation_routes`.\n\nAnchor: \"from agents_remember.serving.conversation.router import register_conversation_routes\"; \"from agents_remember.serving.conversation.runtime import ConversationRuntime\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5ae305154c68401cdf1a243e27fcacc6ab43814",
+            "content": "sha256:e2f523bc9cd563f902b865b500c2a3c8a63cdbaac7123ef02fdcf6b91e02bd61",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

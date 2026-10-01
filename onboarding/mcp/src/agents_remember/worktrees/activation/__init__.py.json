@@ -1,0 +1,33 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/activation/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring names selection and source reconciliation as the route authority.\n\nAnchor: \"Atomic-series selection and source-reconciliation authority.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e543430bb4f0c39b8d6a50f80458a3f02a1eebd9",
+            "content": "sha256:7b14bbcf0c226e9b4c81efe11c77e55bc56bdd707a7986be6269c9fd180c08b2",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route overview maps this route's concrete package owners.\n\nAnchor: `## File-Level Onboarding Map`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/worktrees/activation/overview.md:68-78"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/agentic_settings.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/agentic_settings.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-08T02:00+02:00               |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [MCP package overview](../../../overview.md)
@@ -258,152 +248,20 @@ subclass). The kernel→serving import is a constant-table + frozen-dataclass im
 No known follow-up in this file. (The contextProviders family migration and a
 dashboard settings write path are tracked outside as follow-ups.)
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. | `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds` | docs/reference/settings-json.md:442-442; docs/reference/settings-json.md:443-443; docs/reference/settings-json.md:440-440; docs/reference/settings-json.md:402-403; docs/reference/settings-json.md:400-400 |
+### Docs References
 
-## Repo-Internal References
+- The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The loader operates on coordinator/repo-local files only. | - | - |
+The loader operates on coordinator/repo-local files only.
 
 ## 260712-TRH-L4 Final Candidate
 
 This sidecar was reviewed against the final uncommitted L4 candidate. The source now participates in the explicit spawned-unbriefed → harness-ready → briefed flow; dispatch proof remains exact-session, copy-mode-aware, harness-log-confirmed, and pending without respawn when proof is absent. Catalog writers are fully serialized across one read/body/write transaction while atomic readers remain lock-free.
-
-## Update History
-
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: changed quality-gate
-  settings doctrine from a mandatory 2 GiB default to an optional constrained-
-  environment override and removed the retired default constant from the
-  facade. Verification metadata remains pinned until closeout stamps L24.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body updated — the former `mcp/config.py` references are re-pointed to `kernel/primitives/runtime_config.py` (the runtime-config record's L9 home). Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the
-  `orchestration.qualityGate` family through the facade (known-key set, model,
-  parser wiring, re-exports) and the fail-loud/default contract. Verification
-  metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
-
-- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 curator (trace delta): body verified against the current code and updated (260731-EFA-L7 (trace delta): this module is now a facade over `_agentic_settings_{core,harness,polic...). Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_agentic_settings_{core,harness,policy,sections}.py`; the mechanical surface pin (`test_facade_surface.py`) keeps every base top-level name importable. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: corrected redelivery default `1`, separated escalation default `250`, and removed the unsupported repository-wide absence claim. Verification metadata unchanged.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912` armed with no
-  exemptions): `_parse_escalation` was split into `_parse_escalation_sla_seconds`,
-  `_parse_escalation_rung_seconds` and `_parse_respawn_after_rung`, each owning one sub-block and
-  its defaults. An in-source comment records that field order is the refusal order, so the first
-  bad field in a multi-error settings file is still the one reported. No accepted or rejected
-  settings file changed. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: replaced the stale static-dispatch description
-  with the split authority contract: settings parse model/effort as values, native adapters perform
-  dynamic model-gated launch validation, and explicit non-native mappings keep legacy validation.
-  Added the missing governing-overview backlink; verification metadata remains pinned until
-  closeout stamps the L2 code commit.
-- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: recorded the merged-settings effort
-  validation rule that preserves declared vocabularies while leaving builtin Codex dynamic.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: reduced the default redelivery sweep budget to one and
-  made custom Codex effort-flag overrides drop the builtin `--config` value template. Verification
-  metadata remains pinned until closeout stamps the eventual L15 code commit.
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-09T12:04+02:00 — No source change in `agentic_settings.py` for 260707-HFX2-L10; updated
-  repo-internal references after the terminal spawn consumer changed from explicit caller spend
-  precedence to settings-only spend authority plus `spend-override-unsupported` refusals. Also
-  corrected the docs-reference row now that `docs/reference/settings-json.md` documents
-  `orchestration.supervisor`; the `orchestration.escalation` docs gap remains. Verification metadata
-  pinned until closeout stamps the 260707-HFX2-L10 commit.
-- 2026-07-09T11:19+02:00 — 260707-HFX2-L9: added `signalCooldownSeconds` to
-  `orchestration.supervisor`, defaulting to the shared 900-second floor, and made both
-  `redeliverRateLimitSeconds` and `signalCooldownSeconds` fail loud below that floor. Also removed
-  the stale "supervisor docs missing" note now that `docs/reference/settings-json.md` documents the
-  family. Verification metadata pinned until closeout stamps the 260707-HFX2-L9 commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm, R4): added
-  `DEFAULT_SUPERVISOR_REDELIVER_BUDGET`, `SupervisorSettings.redeliver_budget`, and the
-  `orchestration.supervisor.redeliverBudget` parser field. Empty/default supervisor settings now
-  remain safe under large redeliverable inbox backlogs. Verification metadata pinned until closeout
-  stamps the 260707-HFX2-L8 commit.
-- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R1, escalation ladder): added the `orchestration.escalation`
-  family — `EscalationSettings`/`_parse_escalation`, `KNOWN_ESCALATION_FIELDS`,
-  `KNOWN_ESCALATION_MESSAGE_KINDS`, `KNOWN_ESCALATION_RUNGS`, `DEFAULT_ESCALATION_SLA_SECONDS`,
-  `DEFAULT_ESCALATION_RUNG_SECONDS`, `DEFAULT_RESPAWN_AFTER_RUNG` — the P-15 tier-3 ladder's own
-  knobs (per-kind ack SLA, per-rung dwell timings, the renudge rate limit, the respawn-after-rung
-  threshold), consumed per-use by `serving/app.py`'s `_agent_notifier_context()`. `docs/reference/
-  settings-json.md` was NOT updated for this family (flagged follow-up, same no-doc-sync-test
-  posture as the supervisor family gap). Verification metadata pinned until closeout stamps the
-  260707-HFX2-L4 commit.
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (R1/R5, supervisor sweep): added the
-  `orchestration.supervisor` family — `SupervisorSettings`/`_parse_supervisor`,
-  `KNOWN_SUPERVISOR_FIELDS`, `DEFAULT_SUPERVISOR_INTERVAL_SECONDS`/
-  `DEFAULT_SUPERVISOR_STALE_CUTOFF_SECONDS`, plus the new `_require_bool`/`_require_positive_number`
-  shared validators — the deterministic sweep loop's own knobs (enabled/interval/staleness
-  cutoff/redeliver rate limit), consumed per-use by `serving/app.py`'s `supervisor_loop` and the
-  `_tool_payload` banner check in `mcp/tools/base.py` (which reads the module constant directly,
-  not a loaded settings object). `docs/reference/settings-json.md` was NOT updated for this family
-  (flagged follow-up, no doc-sync test exists). Verification metadata pinned until closeout stamps
-  the 260707-HFX2-L2 commit.
-- 2026-07-08T14:30+02:00 — 260707-HFX2-L1: added the `orchestration.expectations` family (R2) —
-  `ExpectationSettings`/`_parse_expectations`, `KNOWN_EXPECTATION_KINDS`,
-  `DEFAULT_EXPECTATION_SLA_SECONDS` — the per-kind SLA-seconds config every dispatch surface's
-  durable expectation row reads. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L1 commit.
-- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): added `system-specialist` to
-  `KNOWN_ROLES` (now nine roles) for both flat and per-level role-knob vocabularies; the R2 fix
-  round also corrected the stale "eight" role-count comment to "nine" (reviewer F6). Verification
-  metadata pinned until closeout stamps the HFX-L7 commit.
-- 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: added `curator` to the
-  closed `KNOWN_ROLES` vocabulary beside `architect`, preserving fail-loud unknown-role behavior
-  for flat role knobs and per-level overrides. Verification metadata pinned until closeout stamps
-  the HFX-L6 commit.
-
-- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: added
-  `architect` to the closed `KNOWN_ROLES` vocabulary for flat role knobs and per-level role
-  overrides, preserving fail-loud unknown-role behavior. Verification metadata pinned until
-  closeout stamps the HFX-L6 commit.
-- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, findings 4 + 6): added
-  `_refuse_null_families` (`_validated_orchestration_block`) — a JSON `null` at any known
-  `orchestration.*` family key refuses loudly in either layer with "remove the key to inherit the
-  global value" (developer-ruled `null` = refuse, closing the silent-global-wipe collision); and
-  `_refuse_bad_effort_template` (`_merged_harness`) — the `effortSessionCommand` template must render
-  with only `{value}`, so a stray/positional/unmatched-brace template refuses at load naming the
-  harness instead of a raw `KeyError` at spawn. Regression tests for both (null across
-  concurrency/roles/loops/spawn/rolesPerLevel/harnesses; the three bad-template shapes + the
-  builtin-override path). Verification metadata pinned until closeout stamps the L18 commit.
-
-- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application; rulings 2026-07-07T05:30/07:30/08:15):
-  role knobs gained the free-form escape hatch (`launchArgs`/`promptKeywords`/`sessionCommands` —
-  shape-checked string lists, never content-validated); `effort` documented as a deliberate free
-  string at load (per-harness dispatch validation); NEW `orchestration.rolesPerLevel` family
-  (per-level knob overrides, `resolved_role_knobs` deep-merge) and NEW `orchestration.harnesses`
-  family (`_parse_harnesses` — settings-defined harnesses merge over the builtin registry into
-  `AgenticSettings.harnesses`, vehicle-pair rules, `defined_in` tagging); harness references now
-  validate against the EFFECTIVE id set, and per-file validation became shape-only
-  (`strict=False`) so partial cross-layer overrides merge correctly. Verification metadata pinned
-  until closeout stamps the L16 commit.
-
-- 2026-07-07T06:10+02:00 — PR #100 review fix (Codex P2, merge `e358c4a`): `_require_string_list`
-  now REFUSES an empty list with omit-to-inherit guidance — `[]` at a flat or per-level free-form
-  knob would silently inherit the default it meant to clear (empty tuple = not configured, the
-  null-family ruling's shape). Body + invariant updated; post-merge onboarding refresh
-  (developer-approved) verified against main @ e358c4a.
-
-- 2026-07-06T23:45+02:00 — L13 adversarial-review follow-up (L13R-2): repo-local gateDelegation refused loudly (global-layer only); regression test added. Verification metadata pinned until closeout stamps the L13 commit.
-
-- 2026-07-06T22:10+02:00 — 260703-L13 (settings unification): created the two-layer agentic
-  settings loader — per-use global+local read, leaf-key deep merge with array-replace,
-  `orchestration.*`-scoped fail-loud unknown-key refusal naming the offending file, typed
-  models for gateDelegation (moved here from `mcp/config.py`), the L12 loop schema, role
-  knobs, concurrency caps, and the registry-validated spawn harness preference, plus the
-  shared install seed. Verification metadata pinned until closeout stamps the L13 commit.

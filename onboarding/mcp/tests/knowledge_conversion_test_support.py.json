@@ -1,0 +1,149 @@
+{
+  "path": "mcp/tests/knowledge_conversion_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The code repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:f3707fd530d1ab0bf8ad4c278b3cfbe9711c85b403b49bbd2b2e0ab4297ded1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_repository"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:12f5230f00b56fe55f82194cc6613ba4a2384eca3a592581fea3d4ea0590da26",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:830872bd69a73e1ef58ebc8e782a1afbb1fb88c2c84855b1ec1df68d67f52fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "APP_SOURCE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The card with every row case, and the stray row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:e280cdc4d6750afb92ef261058b23d4e0b8cb5df5f69b64a38257bcea6e4c655",
+            "locator": {
+              "kind": "symbol",
+              "name": "app_card"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:d576648ec6e5064177aec5319ae527612dd5523f8c72c68dbbd7cce1a67d1a8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "STRAY_ROW"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The route overview and the evidence-free card.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:7e68b12aea43708c3b9eb5548cc7ce9a230a79f0291d50d39918884b4f9e9096",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_card"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:ffc07aa4980003dd23f068a7fe7403173ba56fb848838232a2b6821fdb85a5aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "other_card"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The legacy database in the real column spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:312d96b27fbdb197fd4d07ed0e73ce3cc41b458bc8e983859b6882d43e89212f",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_database"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The committed memory repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:5ea37ec04a9e89e3e18938e173c1c79cd89c10f8e68e4c9c20cd924fb1aa0935",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_repository"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Its catalog row.\n\nAnchor: \"mcp/tests/knowledge_conversion_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ef62c49e867831653c500928e2283808e07a4fe",
+            "content": "sha256:0d1e51fc24683b296ff765e5adb94ba2a8cc80373f4db529e88e52a5eceeb863",
+            "locator": {
+              "end": 1874,
+              "kind": "line_range",
+              "start": 1855
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

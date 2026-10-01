@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_reader/timeline.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_reader/timeline.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -72,40 +62,31 @@
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the three sources and the cache. | "The timeline of a truth view, newest first, from its three sources" | mcp/src/agents_remember/application/knowledge_reader/timeline.py:1-25 |
-| The bounded cache of complete timelines (F7). | `TIMELINES` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:62-62 |
-| A timeline served from the cache, remembered only when every source was read. | `record_timeline` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:83-106 |
-| The three sources, each with its own state. | `_timeline` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:109-134 |
-| Uncommitted first, then by position in the history. | `_newest_first`; `_ranks` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:140-151; mcp/src/agents_remember/application/knowledge_reader/timeline.py:154-159 |
-| The record file's events, found by ID, with renames paired and the uncommitted state. | `_record_events`; `_paired`; `_uncommitted_record` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:167-199; mcp/src/agents_remember/application/knowledge_reader/timeline.py:202-209; mcp/src/agents_remember/application/knowledge_reader/timeline.py:212-232 |
-| The meaning diff. | `meaning_diff` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:235-245 |
-| History rows dated by their file's last commit. | `_history_events`; `_last_change` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:261-282; mcp/src/agents_remember/application/knowledge_reader/timeline.py:285-296 |
-| Entry events: `-G` without `--pickaxe-all`, plus the current sidecars' log (F1). | `_entry_events`; `_entry_commits` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:310-326; mcp/src/agents_remember/application/knowledge_reader/timeline.py:361-377 |
-| Moved against re-anchored (F5). | `_entry_change` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:411-422 |
-| The converted part of the history, cached per commit. | `_range`; `_converted_range` | mcp/src/agents_remember/application/knowledge_reader/timeline.py:445-448; mcp/src/agents_remember/application/knowledge_reader/timeline.py:452-464 |
-| The three-source, re-anchor and cache cases. | `test_an_invariant_truth_view_has_every_field_state_link_and_a_three_source_timeline`; `test_the_timeline_labels_moves_and_re_anchors_and_reads_only_the_sidecars_naming_them`; `test_a_complete_timeline_is_served_again_from_the_bounded_cache` | mcp/tests/test_knowledge_reader.py:801-838; mcp/tests/test_knowledge_reader.py:849-880 |
+- The module's own statement of the three sources and the cache. [1]
+- The bounded cache of complete timelines (F7). [2]
+- A timeline served from the cache, remembered only when every source was read. [3]
+- The three sources, each with its own state. [4]
+- Uncommitted first, then by position in the history. [5]
+- The record file's events, found by ID, with renames paired and the uncommitted state. [6]
+- The meaning diff. [7]
+- History rows dated by their file's last commit. [8]
+- Entry events: `-G` without `--pickaxe-all`, plus the current sidecars' log (F1). [9]
+- Moved against re-anchored (F5). [10]
+- The converted part of the history, cached per commit. [11]
+- The three-source, re-anchor and cache cases. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new module MIK-R29 adds, recording rulings 09:42:58 F1 (`--pickaxe-all` dropped), F5 (re-anchored, not moved), F7 (the bounded per-tree cache) and F11 (a failed source named), and 10:44:14 F17 (a failed timeline is not cached and the tree key is in the cache key, tested). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

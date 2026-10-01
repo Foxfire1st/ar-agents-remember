@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/templates/worker-brief.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678`|
-| lastVerifiedCommitDate | 2026-09-19T12:15:35+02:00|
-| governingOverview | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -65,15 +55,15 @@ None recorded.
 
 This template records the exact checks and their failed or not-run status as handoff evidence, together with the curator's complete memory-quality result. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry that completed curation as a prerequisite; full code quality, full tests, certification, and review are explicit requests rather than automatic template gates.
 
-## Cross-Repo Evidence
+## Evidence
+
+### Cross-Repo Evidence
 
 No sibling repository evidence is needed for this doctrine file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-### 260731-EFA-L17 — Change-Set-Scoped Leaf Checks
+#### 260731-EFA-L17 — Change-Set-Scoped Leaf Checks
 
 The worker brief's Checks section makes the pinned Dagger graph the Agents Remember acceptance
 boundary. Leaf work selects targeted mode and supplies its explicit leaf diff base; full mode is
@@ -123,81 +113,3 @@ a malformed handed-off attempt requires independent rejection before successor h
 ## CCR-L42 current candidate
 
 The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
-
-## Update History
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the handoff-evidence boilerplate sentence, which still presented full memory quality as an explicit request, with the completed-curation rule; `onboarding-coherency` already carries the full-operation check block this leaf's template now names.
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
-  canonical worker brief gained the single-source marker naming the four files that own the rules the
-  packet only carries values for; the packaged copy now records that marker and the exact sources it
-  names. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
-
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The worker brief now distinguishes baseline from fix-verification, carries the immutable issue packet, rejects unknown or outside-list scope, and records targeted check reruns separately from certification and review-round accounting.
-
-- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
-  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
-  unchanged.
-
-- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
-  contract from canonical lifecycle/task doctrine.
-
-- 2026-08-27T21:53+02:00 — Synchronized M40@v2 brief fields and event separation.
-
-- 2026-08-27T18:06+02:00 — M40/M43: synchronized attempt identity and immutable worker-record
-  fields from the canonical brief.
-
-- 2026-08-27T14:04+02:00 — Added explicit approved-state and durable corpus-ruling fields for each
-  version-addressed worker requirement packet.
-- 2026-08-27T13:32+02:00 — M39@v1: applicable requirements are explicit ID + version rows with
-  complete canonical packet links; version mismatch makes the brief undispatchable. Verification
-  remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: recorded exact requirement-set intake and the complete worker
-  evidence contract. Verification metadata stays pinned until governed closeout stamps the PDLS
-  commit.
-
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized execution-nature input and the
-  leaf-targeted/master-full acceptance boundary. Verification remains closeout-owned.
-
-- 2026-08-14T11:25+02:00 — R39 curator: made worker acceptance instructions repository-resolved
-  and exact-once. Verification remains closeout-owned.
-- 2026-08-14T06:34+02:00 — L23 synchronized runtime template: worker briefs retain route ownership
-  and candidate evidence needed for independent review without delegating acceptance authority.
-
-- 2026-08-13T14:32+02:00 — L23 final curator pass: synchronized Dagger-only targeted leaf
-  acceptance, the required explicit diff base, master-owned full mode, and diagnostic-only host
-  commands. Verification remains closeout-owned.
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: synchronized the
-  worker brief's host-managed master-gate default while preserving literal
-  pytest `-n=auto` and targeted leaf checks.
-
-- 2026-08-11T19:58+02:00 — Reconciled `worker-brief.md` as the exact synchronized runtime artifact of its current canonical document/role contract; removed obsolete leaf-key and runtime-id ownership implications.
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the worker-brief
-  template's targeted leaf-check command and the full-wrapper master-gate home.
-  Verification metadata stays pinned until closeout stamps the 260731-EFA-L17
-  commit.
-
-- 2026-08-05T21:55+02:00 — 260731-EFA-L16 curator: recorded the brief's new "Coding guidelines" section (developer ruling) — the brief is the worker's entire session start, so a rule absent from this template does not exist for a spawned worker; that is how `system/coding-guidelines.md` sat unread through three violating leaves. Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-07-10T15:48+02:00 — 260707-HFX2-L17 generated-runtime doctrine delta: the worker dispatch
-  contract now states that `AR_SPAWN_ROLE=worker` and the qualified leaf together claim the
-  worker's `(leaf, role)` seat. Verification metadata remains pinned until closeout stamps the L17
-  commit.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 reviewer N7: recorded the stale echo/paste-chip
-  instruction as current source debt awaiting a doctrine follow-up. No source behavior changed.
-
-- 2026-07-07T21:40+02:00 — 260707-HFX-L6R3 curator seat: worker briefs now state
-  the manager -> builder -> reviewer -> curator closeout chain, mark the memory worktree as
-  context for changed-path notes, and require curator handoff input instead of same-pass onboarding
-  writes by the worker. Sync-propagated bundle copy. Verification metadata pinned until closeout
-  stamps the HFX-L6 commit.
-
-- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): the fenced brief opens with the canonical ROLE BRIEF — worker line (uniform with manager-brief).. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T01:30+02:00 - Created file-level onboarding for the new worker-brief template (L9
-  lifecycle convergence): the proven L3–L8 dispatch shape institutionalized, absorbing frictions
-  F-E/F-F/F-H/F-I. Verification metadata pinned until closeout stamps the L9 commit.

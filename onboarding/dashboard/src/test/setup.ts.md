@@ -1,15 +1,5 @@
 # dashboard/src/test/setup.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/test/setup.ts`                    |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-31T22:05+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -81,46 +71,10 @@ override locally).
 The jsdom setup now supplies inert media `play`/`pause` methods. Visibility-gating tests can assert their
 calls without relying on browser playback that jsdom does not implement.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `matchMedia` stub consumed by the honest-motion gate. | "export function useShouldAnimate" | dashboard/src/panels/engine-room/useShouldAnimate.ts:19-19 |
-| Wired as the vitest setup file. | `setupFiles` | dashboard/vitest.config.ts:33-33 |
-| The render test that depends on these stubs. | "renders complete bodies for direct" | dashboard/src/cockpit/Cockpit.test.tsx:336-396 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the unhandled-error trap (R10) and the canvas/CodeMirror stubs. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
-  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-31T22:05+02:00 — 260731-EFA-L4 curator: the claim that "jsdom's `getBBox` throws rather than
-  being absent" — recorded here as the reason the SVG geometry stubs are assigned unconditionally while
-  `matchMedia`/`ResizeObserver` are guarded — was **false**. jsdom omits those methods; it does not stub
-  them to throw. Verified against **jsdom 25.0.1** by running a `new JSDOM(...)` window: `getBBox`,
-  `getTotalLength` and `getPointAtLength` are `undefined` on `<svg>`/`<path>` instances and on
-  `SVGElement.prototype`/`SVGGraphicsElement.prototype` (the `in` operator is `false`, no own property),
-  `window.SVGGeometryElement` and `window.SVGPathElement` are `undefined` entirely, and `path.getBBox()`
-  raises the ordinary `TypeError: path.getBBox is not a function`. Confirmed in jsdom's source: the three
-  names occur **zero** times under `lib/`, `lib/jsdom/living/nodes/SVGGraphicsElement-impl.js:7` is an empty
-  class body, and `lib/jsdom/living/interfaces.js:114-120` registers no `SVGGeometryElement`. The earlier
-  hedge in this file ("omits **or** stubs-them-to-throw") was folded into the verified fact rather than left
-  to contradict it, and the consequence is now recorded as a risk: since the methods are absent rather than
-  throwing, the unconditional assignment fills a gap today but would silently overwrite a real
-  implementation if a jsdom minor ever ships one. `setup.ts` itself was deliberately **not** changed —
-  moving it to the guarded pattern is out of this leaf's scope. Verification metadata unchanged.
-- 2026-07-24T13:17:50Z — Added media playback stubs for visibility-gate tests. Verification hash/date
-  remain pinned to the pre-commit source stamp.
-
-- 2026-07-17T00:25+02:00 — 260715-FEUI-L1: added a guarded inert `Element.prototype.scrollIntoView`
-  stub — jsdom omits it and cmdk (the sessions command palette) calls it on the selected item.
-  Verification metadata pinned to the task base until closeout stamps the L1 code commit.
-- 2026-06-21T09:57+02:00 — slice 05n: added inert SVG geometry stubs
-  (`getBBox`/`getTotalLength`/`getPointAtLength`) across `SVGElement`/`SVGGraphicsElement`/`SVGGeometryElement`
-  so GSAP DrawSVG/MotionPath (the engine-room draw-on + packet) construct without throwing under the effects-on
-  `EnclosureProcessMap` GSAP-gate test — jsdom omits/throws on these. Verification metadata pinned until
-  closeout stamps the 05n commit.
-- 2026-06-16T02:30 — Created for slice 5f S1: added the jsdom `matchMedia` + `ResizeObserver` stubs so
-  component-render tests (the new `Cockpit.test.tsx`) run. Verification metadata pinned until closeout
-  stamps the S1 code commit.
+- `matchMedia` stub consumed by the honest-motion gate. [1]
+- Wired as the vitest setup file. [2]
+- The render test that depends on these stubs. [3]

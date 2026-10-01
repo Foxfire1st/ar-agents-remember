@@ -1,0 +1,36 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture suite rail publishing suite and coverage artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd03f264352c8162205220f146185a14d6ee1892",
+            "content": "sha256:76c663bfd954a087d09eb5b5a2ae0868c2e1450a620d49e50e71eae6e5249fb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectedTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1fa349c07777aafc0ed2e8bc6cbbc3108168bf85",
+            "content": "sha256:59bae75d3f4b01e6861715f5980b34acf3a1e1b0dec8f3ef499cc4378c3016e0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/node/scripts/coverage-check.mjs"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

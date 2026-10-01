@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge_index/build.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge_index/build.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T08:01:17+02:00 |
-| lastVerifiedCommitHash | `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d`|
-| lastVerifiedCommitDate | 2026-09-29T09:20:54+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -28,6 +18,11 @@
 - `build_index(snapshot, destination)` opens a new SQLite file with journaling off, runs `create_or_validate_schema` (the store's logical tables), then in one transaction creates the `ix_*` tables, writes the rows, calls `projection.project`, and writes `ix_meta`. It returns a `BuildReport` (key, state, converted, problems, record/entry/history-row counts).
 - `_write_rows` writes problems, records (with `ix_member`/`ix_route` for a family and `member`/`supersedes` links), entries (with the anchor's `path` filled from the sidecar), sidecar references as `cites` links (record, anchor or requirement endpoints), and history rows with their `because` links.
 - `_write_link` classifies a link target: an `Anchor`, a `RequirementReference` (keyed `repository/path#id@version`), a `route:` target, or a record ID.
+- **History files by path, and each owner's merged history (L37 reopen ruling).** `ParsedTree.history_files` holds
+  every history file by its path. `ParsedTree.histories` is each owner's history read as one: when a second file
+  of the same owner is parsed, `merged_leaf_history` merges the owner's files in attempt order. `_write_rows`
+  writes every file's rows under its own path (`_write_history(connection, path, history)`), and the
+  `BuildReport`'s row count sums the files, so a reopened leaf's closed file and later attempt are both indexed.
 
 ### Conventions
 
@@ -44,7 +39,9 @@
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The index's design authority is the coordination-root note Doc14
@@ -52,36 +49,27 @@ No domain documentation source is configured for this repository (`system/source
 packet `MIK-R23@v1` of task `260928_maintained-invariant-knowledge`; both live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The parser, the builder and the row writers.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The builder's contract: one snapshot in, problems named, nothing derived. | "A file that fails its schema is reported, never guessed at." | mcp/src/agents_remember/memory/knowledge_index/build.py:1-16 |
-| The parsed tree and its completeness. | `ParsedTree`; `state` | mcp/src/agents_remember/memory/knowledge_index/build.py:90-104 |
-| What one build reports. | `BuildReport` | mcp/src/agents_remember/memory/knowledge_index/build.py:107-117 |
-| Parsing: every failure becomes a named problem. | `parse_tree`; `_parse_file` | mcp/src/agents_remember/memory/knowledge_index/build.py:120-129; mcp/src/agents_remember/memory/knowledge_index/build.py:167-178 |
-| Location, kind, file-name and duplicate-ID rules for record and sidecar files. | `_parse_knowledge_file`; `_parse_onboarding_file` | mcp/src/agents_remember/memory/knowledge_index/build.py:181-201; mcp/src/agents_remember/memory/knowledge_index/build.py:204-226 |
-| One transaction: the store schema, the `ix_*` tables, the rows, the projection and the metadata. | `build_index` | mcp/src/agents_remember/memory/knowledge_index/build.py:132-159 |
-| The row writers: records, entries, members, routes, links, references and history rows. | `_write_rows`; `_write_record`; `_write_link`; `_write_references`; `_reference_endpoint`; `_link`; `_write_history` | mcp/src/agents_remember/memory/knowledge_index/build.py:243-271; mcp/src/agents_remember/memory/knowledge_index/build.py:274-302; mcp/src/agents_remember/memory/knowledge_index/build.py:326-338; mcp/src/agents_remember/memory/knowledge_index/build.py:383-407; mcp/src/agents_remember/memory/knowledge_index/build.py:305-323; mcp/src/agents_remember/memory/knowledge_index/build.py:369-380; mcp/src/agents_remember/memory/knowledge_index/build.py:341-354 |
-| The metadata row set a cached file is checked against. | `_write_meta` | mcp/src/agents_remember/memory/knowledge_index/build.py:410-422 |
-| A file failing its schema marks the index partial and is named; an unconverted tree indexes empty. | `test_a_file_failing_its_schema_marks_the_index_partial_and_is_named`; `test_an_unconverted_tree_is_indexed_empty_and_says_so` | mcp/tests/test_knowledge_index.py:285-313; mcp/tests/test_knowledge_index.py:316-327 |
+- The builder's contract: one snapshot in, problems named, nothing derived. [1]
+- The parsed tree and its completeness. [2]
+- What one build reports. [3]
+- Parsing: every failure becomes a named problem. [4]
+- Location, kind, file-name and duplicate-ID rules for record and sidecar files. [5]
+- One transaction: the store schema, the `ix_*` tables, the rows, the projection and the metadata. [6]
+- The row writers: records, entries, members, routes, links, references and history rows. [7]
+- The metadata row set a cached file is checked against. [8]
+- A file failing its schema marks the index partial and is named; an unconverted tree indexes empty. [9]
 
-## Cross-Repo References
+- The parsed tree keeps each history file by path and each owner's merged history. [10]
+- History rows are written per file, under the file's own path. [11]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the index reads one memory tree, addressed explicitly by the caller, and nothing else.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`test_knowledge_index.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): created this card for the new file MIK-R23 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

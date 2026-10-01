@@ -1,15 +1,5 @@
 # harness_control_client.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/harness_control_client.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -139,24 +129,22 @@ protocol bound, not an invented acceptance result.
 
 None known for the exact-session client.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The IPC server and queue retain exact-session truth; durable inbox redelivery consumes the same
 unknown/reconcile contract without a second submission.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The private server dispatches advertise/set/submit/reconcile against one bridge identity. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:103-416 |
-| Request id is the idempotency key and retained reconciliation truth comes back from the authority directly, with no facade in the path since 260731-EFA-L6. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:118-1025 |
+- The private server dispatches advertise/set/submit/reconcile against one bridge identity. [1]
+- Request id is the idempotency key and retained reconciliation truth comes back from the authority directly, with no facade in the path since 260731-EFA-L6. [2]
 
 | Connect refusal reports honest unavailability and best-effort removes the stale socket; it does not establish process death. | `_connect_unavailable_detail` | mcp/src/agents_remember/serving/harness_control_client.py:520-537 |
 
@@ -164,13 +152,11 @@ unknown/reconcile contract without a second submission.
 | The IPC server answers the two additive actions and verifies staged assets before dispatch, so this client's references and reads stay reference-only and strictly shaped. | `HarnessControlServer` | mcp/src/agents_remember/serving/harness_control_ipc.py:99-412 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by the local Unix-socket client.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## Submission Authority Delta
 
@@ -228,80 +214,3 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 `ControlSubmission` moved to `models/conversations/control_wire.py` (move ledger M13/2b) and is
 now imported from there; the client's control-operation surface is otherwise unchanged. The
 conversation tree reaches this client only through `ControlPlanePort` in `serving/ports.py`.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
-  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 6 further
-  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
-  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
-  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
-  current position. Verification metadata remains closeout-owned.
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 corrected control-connect diagnostics so absent/refused sockets no longer falsely prove that a newly spawned runner exited. Verification remains closeout-owned.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the `ControlSubmission` move and the
-  port-mediated consumer boundary; the L9 change section above documents the split. Verification
-  metadata pinned until closeout stamps the L9 code commit.
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_harness_control_parsing.py` for the raw-response parsers; patch targets (`request_control`/`socket.socket`) keep working and the surface is pinned. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 8 repository-internal reference rows for the IPC server, submission authority, client retry tests, socket/reconciliation regressions, evidence validators, and control-plane validation tests; scoped citation verification follows.
-
-- 2026-08-02T01:42+02:00 — 260731-EFA-L6 deleted-source cleanup. `serving/harness_control_queue.py` was deleted outright by the L6 class-split work (a pure forwarding facade), and its mirrored sidecar was removed with it. **Curator's judgement, stated rather than assumed: the card had no subject left.** Every invariant it carried was either the facade's own NON-behavior ("cannot enqueue work behind the authority", "holds no facade state, mutates nothing") or was explicitly attributed to `harness_submission_authority.py`, so nothing moved with the deletion and no knowledge needed rehoming — which is also why no replacement card was manufactured. Present-tense claims that `HarnessControlQueue` "is a facade" were corrected here to say it no longer exists; dated history entries naming it are preserved verbatim. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations. `_exchange_control`
-  cited the single line L530 (now inside `_connect_unavailable_detail`); the function with its
-  pre-write / post-write split and the conditional remainder write is L534-L568. The evidence
-  `nativeMethod` parse cited L871-L875 → L891-L895 (the `raw_frame.get("nativeMethod")` read plus
-  its non-empty-text refusal). `read_control_native_page`'s additive selector cited L391-L392, which
-  is the `cursor` branch; the `threadId` payload key is set at L393-L394.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The two
-  lost-response regressions now read at cit:([`test_outer_socket_lost_receipt_reconciles_retained_known_truth`, `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend`], mcp/tests/test_harness_control_ipc.py:183-222; mcp/tests/test_harness_control_ipc.py:224-294), both in
-  `HarnessControlIpcTests` and both asserting `adapter.reconciliation_requests == []`. The prior
-  range landed in the fake-adapter bridge tests.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ControlSubmission`, the `_submission_lookup` extraction, and the overloaded `_submission_state` that now refuses non-members itself (the removed timeline re-check was a duplicate, not a relaxation).
-- 2026-07-30T15:55+02:00 — 260727-CHATS-IM-L4: recorded the conditional remainder write in
-  `_exchange_control`. An empty remainder still issued a zero-length send, which raised `EPIPE` after
-  the server answered and closed, reporting a completed exchange as a `may_have_sent` disconnect; it
-  surfaced as an intermittent broken pipe that blocked the commit gate under full-suite load.
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded typed native-history error
-  reconstruction and the opaque continuation contract, including removal of the obsolete
-  `nextCursor == last nativeId` assumption. Verification metadata stays pinned while uncommitted.
-
-- 2026-07-27T00:02+02:00 — 260718-CHATS-L7R curator: recorded the evidence `threadId` parse — the
-  `_evidence_page` frame loop reads the optional wire key into `EvidenceFrame.thread_id`
-  (present-must-be-non-empty-text, L868-L870; assigned onto the frame at L878), so the multiplexed
-  demux key now survives the IPC round trip to the projector; absent yields `None` = the parent
-  thread, keeping the pre-multiplex read shape. Verification metadata stays pinned — the change is
-  uncommitted.
-- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the additive `thread_id` selector on
-  `read_control_native_page` (present-only `threadId` payload key) and the plural
-  `pendingInteractions` snapshot parse (extracted `_pending_interaction` helper, absent-tolerant,
-  non-list typed failure); refreshed the R6/R1 citation line ranges (L507-L528, L530, L863-L874)
-  for the L7-shifted source. Verification metadata stays pinned to the pre-commit source history
-  until closeout (the L7 change is uncommitted).
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the evidence `nativeMethod`
-  deserialization on the frame round trip (present-must-be-non-empty-text, cit:(["def _evidence_page(result: object"], mcp/src/agents_remember/serving/_harness_control_parsing.py:352-352)). R6 —
-  documented `_connect_unavailable_detail` (cit:([`_connect_unavailable_detail`], mcp/src/agents_remember/serving/harness_control_client.py:520-537)): `ECONNREFUSED`/`ENOENT` map to the honest
-  "already exited" note, the stale socket is unlinked on `ECONNREFUSED`, and no raw errno leaks
-  (pre-write `may_have_sent=False`); added both invariants and the R6 regression citation.
-  Verification metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented `interrupt_control`, the paged
-  `read_operation_timeline` (monotonicity, floor-vs-high-water, truncated/latest coherence,
-  cross-page epoch continuity, cross-domain cursor rejection), additive `assets` on
-  `submit_control_prompt` with byte-stable asset-free payloads, and the strict
-  recovery/asset-reference validators. Verification metadata stays pinned until closeout stamps
-  the candidate commit.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the three validated evidence reads,
-  the 35-second native-page timeout precedent, cross-domain typed coordinate rejection,
-  continuation/native-id coherence checks, exact provenance count/order validation, and
-  epoch-continuity `HarnessBridgeEpochMismatchError`. Verification metadata stays pinned until
-  closeout stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented generation-bound lifecycle calls, first-byte
-  classification, typed-error decoding, privacy parsing, and no-resend ambiguity.
-
-- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented live advertise/set, strict
-  normalized parsing, whole-message submit, first-byte retry safety, and same-id ambiguity closure.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented identity-bound protocol requests,
-  correlated acceptance/reconciliation, interaction responses, and no raw-terminal fallback.

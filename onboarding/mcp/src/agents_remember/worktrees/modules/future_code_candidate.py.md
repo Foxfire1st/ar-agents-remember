@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/future_code_candidate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/future_code_candidate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T18:40+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [worktrees modules overview](overview.md)
@@ -53,62 +43,29 @@ directory and index are removed when that observation exits.
 The issued acceptance schema and its persistence owner consume this model in the later
 memory-candidate acceptance boundary.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. The behavior is entirely
 defined by repository-owned Git and worktree contracts.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external documentation is needed for this repository-local identity owner. | — | — |
+No external documentation is needed for this repository-local identity owner.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The strict model, capture sequence, and currentness check are intentionally colocated; the
 low-level Git algorithm remains separately owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The frozen strict route model prohibits mutation and undeclared identity fields. | `FutureCodeCandidateIdentity` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22 |
-| Capture observes HEAD around the one canonical isolated-index add-all tree calculation. | `capture_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52 |
-| Reuse requires exact equality of the complete bound route identity. | `require_current_future_code_candidate` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:55-68 |
-| Each capture gives the canonical helper its own enclosure-local temporary index. | `_candidate_tree` | mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:71-78 |
-| Capture and stale-input outcomes use the package's central typed error family. | `FutureCodeCandidateError` | mcp/src/agents_remember/errors.py:168-173 |
-| The underlying helper seeds a temporary index from HEAD, applies `git add -A`, writes the tree, and removes the index. | `worktree_candidate_tree` | mcp/src/agents_remember/worktrees/modules/git.py:32-56 |
+- The frozen strict route model prohibits mutation and undeclared identity fields. [1]
+- Capture observes HEAD around the one canonical isolated-index add-all tree calculation. [2]
+- Reuse requires exact equality of the complete bound route identity. [3]
+- Each capture gives the canonical helper its own enclosure-local temporary index. [4]
+- Capture and stale-input outcomes use the package's central typed error family. [5]
+- The underlying helper seeds a temporary index from HEAD, applies `git add -A`, writes the tree, and removes the index. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This owner acts only inside the contract-resolved code worktree. | — | — |
-
-## Update History
-- 2026-09-18T18:40+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **moved this sidecar to the path its source actually has, and advanced the verification stamp to the revision read.** Code commit `806649b9` relocated the module out of `memory_quality/` into `worktrees/modules/` as a **pure rename** — the blob is byte-identical before, at, and after the move (`5c80e7ae55cc5d07b72431cf1df92bd062a126c6` at `806649b9^`, at `806649b9`, and at `c5a74a85`) — and the card stayed at the retired path, where `integrity.onboarding_drift_check.summary` reported it `orphaned` while no card existed at the new path at all. Nothing in the body was rewritten: every claim was already correct, and the `Repo-Internal References` rows already cite `worktrees/modules/future_code_candidate.py` (a generated citation repair repointed them at `2026-09-17T20:42:17+00:00`); each cited anchor was re-read against the current source in this pass and none moved. What changed is the title, the `path` metadata row, the governing-overview link (now the modules route overview) and this record. The stamp advances to `c5a74a85` because the old stamp predates the new path, so the check would otherwise read the move itself as a source change; closeout re-stamps. No claim bytes were deleted, substituted or weakened.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `FutureCodeCandidateIdentity` repointed to mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `capture_future_code_candidate` repointed to mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `require_current_future_code_candidate` repointed to mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:55-68. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `FutureCodeCandidateIdentity` at mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22, `capture_future_code_candidate` at mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52, `require_current_future_code_candidate` at mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:55-68.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `FutureCodeCandidateIdentity` repointed to mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:15-22. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `capture_future_code_candidate` repointed to mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:25-52. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `require_current_future_code_candidate` repointed to mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:55-68. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-read the reopened claim in the row 72 of this card against the current code: its anchor still resolves inside the cited range, so the wording holds and the stamp advances; re-read the reopened claim in the row 73 of this card against the current code: its anchor still resolves inside the cited range, so the wording holds and the stamp advances; re-read the reopened claim in the row 74 of this card against the current code: its anchor still resolves inside the cited range, so the wording holds and the stamp advances
-- 2026-09-11T10:26:37+02:00 — Moved the mirrored sidecar from `mcp/src/agents_remember/worktrees/integration/closeout/future_code_candidate.py` to `mcp/src/agents_remember/memory_quality/future_code_candidate.py`. Relocated with the de-entanglement cut (commit `0b63d6fc`, "relocate the two memory-candidate roots out of closeout") so the pre-closeout `memory_quality` service owns its memory-candidate identity roots. The source blob is byte-identical to the pre-move file; every cited anchor range was re-verified against the new path and is unchanged. Governing overview link repointed to the memory quality overview. Verification metadata refreshed to code commit `2fa5e81f4da44a0a87f1a700c5363a9d563e7f9d`.
-
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `FutureCodeCandidateError` repointed to mcp/src/agents_remember/errors.py:168-173. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-29T10:40+02:00 — Moved the owner into the closeout integration package after the
-  structural gate showed that another root-level worktrees module exceeded the package cap; no
-  identity semantics changed.
-
-- 2026-08-29T05:17+02:00 — A003 self-review repair: made the bound identity immutable and gave
-  concurrent observations distinct automatically cleaned temporary indexes.
-
-- 2026-08-29T04:55+02:00 — Citation maintenance: normalized all evidence tables to the
-  canonical finding/anchor/source contract after the first full memory-quality pass.
-
-- 2026-08-29T04:55+02:00 — Created for the strict future-code candidate identity and canonical
-  isolated-index reuse boundary. Verification metadata remains empty until closeout creates the
-  real code commit.
+This owner acts only inside the contract-resolved code worktree.

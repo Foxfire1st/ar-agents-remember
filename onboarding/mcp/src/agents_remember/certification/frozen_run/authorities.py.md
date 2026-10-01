@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/frozen_run/authorities.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/frozen_run/authorities.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T14:47:06+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Frozen certification run overview](overview.md)
@@ -41,36 +31,27 @@ Use the existing observation owner to populate these records from actual task, c
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+No configured domain documentation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Snapshots verify exact bytes and mutation authority requires a complete memory pair. | `AuthorityInputSnapshot`; `MutationAuthorityRecord` | mcp/src/agents_remember/certification/frozen_run/authorities.py:19-50 |
-| Source and worktree contracts retain explicit tips, physical identities and preparation observations. | `SourceAuthorityEdge`; `WorktreeRuleRecord` | mcp/src/agents_remember/certification/frozen_run/authorities.py:53-86 |
-| Generated-input declarations do not claim freshness; the aggregate validates its semantic digest and snapshot order. | `GeneratedInputRecord`; `CandidateAuthorityRecords` | mcp/src/agents_remember/certification/frozen_run/authorities.py:89-128 |
-| The production observer derives records from current task, door, worktree, lineage and contract owners. | `observe_certification_candidate` | mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py:97-189 |
+- Snapshots verify exact bytes and mutation authority requires a complete memory pair. [1]
+- Source and worktree contracts retain explicit tips, physical identities and preparation observations. [2]
+- Generated-input declarations do not claim freshness; the aggregate validates its semantic digest and snapshot order. [3]
+- The production observer derives records from current task, door, worktree, lineage and contract owners. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository reference is required. | N/A | N/A |
+No cross-repository reference is required.
 
 ## CCR-L42 current candidate
 
 CandidateAuthorityEnvelope now optionally carries `admittedMemoryTree`. The field is omitted when absent so retained legacy authority bytes and digests stay stable; fresh certification observations bind the closeout door's admitted memory candidate tree.
-
-## Update History
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: CandidateAuthorityEnvelope now optionally carries `admittedMemoryTree`. The field is omitted when absent so retained legacy authority bytes and digests stay stable; fresh certification observations bind the closeout door's admitted memory candidate tree.
-
-- 2026-09-06T14:47:06+00:00 — Created from the actual source at c69d5171187fa1957025e393270db9f5a864ab14; documented retained authority and its validation boundaries. This source verification does not assert gate execution or CCR acceptance.

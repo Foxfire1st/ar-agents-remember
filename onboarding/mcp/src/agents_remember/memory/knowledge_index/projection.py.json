@@ -1,0 +1,311 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement of the mapping: identities, namespace, provenance, retired records, the store's own seals (MIK-R25) and what is not projected.\n\nAnchor: \"Retired records are not live, so they are not projected.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:b1c482923766c7e9af3526999af75b3448f509ff8f70fdd46067b50422a74a2a",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The chosen constants: namespace, dataset namespace, authority home, epoch, display prefix, retired status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:d18e0b141702ba3a1842aafc59d3e7cbc156cb672af94800afb9818e67a3aeda",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_NAMESPACE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:885d37c414c133edb8384db5542b526d6ce31fb0a3d536ff50599e2898f5faec",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_REPOSITORY_ID"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:727f6068519142c611a22dd5ddbde390ca5010f81ab2d1a51ccd64fb9b96cf5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_AUTHORITY_HOME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:5588840fd067eab796c08a2c3ee7feec0497141790064cf4504061a6d5dede49",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTED_RECORDED_AT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:4abc6099008e32fab840285d3f5df3a933087ba9845fddee91647c2b28d81a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DISPLAY_VERSION_PREFIX"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:2eca14ed57d462786d45aa6d740ed2dc55f4eefba93328fdd2b573d599de92ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_STATUS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reverse identity map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:4fe24e2fbbb25a4c41b64dec6978e08a42914f96eb4c1ea39701b52fbec4076e",
+            "locator": {
+              "kind": "symbol",
+              "name": "UUID_DDL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:8c9fa4c2e9b2062876e7621918c5bb09590cf0215c451653976cf39c1eeadecd",
+            "locator": {
+              "kind": "symbol",
+              "name": "text_uuid"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:9d7a0eb4692d723aaea96119d0c0058c9415c969e08a4cedd0afe006e75e766a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_map"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The projection entry point, which leaves retired records out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:60b596c1047d7ff68521b6b57311873e051773ca2446c64b0c6a55dcf53087d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "project"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Provenance and state mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:6807504dec9518257795c0bcc029c5bf22009c65cb4d47a16d74e86d65e4e0b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_provenance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:4e0e7d4a30440d0d3d0431d900721da622cda567d15cd9ac501ceed6fd12c6da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The invariant, family and realization writers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:9207ee35ed686000859c17fd72cae6d63f57ed8131936e501f3d8128f714a684",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invariant"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:b7a2ba30137ccc2973d28044f53d04a1bcd1ea904ea1b5efa9d10924aa1e3ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:9d6217f56b25d941819d4ec2fb2c4ac683c06fe23f93107fd7b0989bb5bdf273",
+            "locator": {
+              "kind": "symbol",
+              "name": "_realization"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:8ec721c31b282e8a0adf51879aa3184ebdb6d7372b17efd807124a48bb21152b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_legacy_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The seal of each projected revision row is the store's own digest over the projected cells.\n\nAnchor: `revision_payload_digest`; `family_revision_payload_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:e99207d752e5c3a4c9269c985a71cd968af0a2fb6b0cd46680f7c462f21d6dc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNSEALED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:9207ee35ed686000859c17fd72cae6d63f57ed8131936e501f3d8128f714a684",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:b7a2ba30137ccc2973d28044f53d04a1bcd1ea904ea1b5efa9d10924aa1e3ee0",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Parity: the reused selection selects the same set over the index as over the database.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6073de92442794ee1e231dbcf012de67c56b9dc0",
+            "content": "sha256:13a81b385a5a31070e432f880f31bd8e3d2e6b9d3fb557d76d535cf2d484f89a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_reused_selection_selects_the_same_set_over_the_index_as_over_the_database"
+            },
+            "path": "mcp/tests/test_knowledge_index_reuse.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Retired invariants and families are never selected as live and are answered as retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64a4109200a539c487d0c3c6007725349f630986",
+            "content": "sha256:4be154412171cb8e4ec07dad7a2f9dd37772f0a5c2e41abc3e3ddd91d7a29cc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64a4109200a539c487d0c3c6007725349f630986",
+            "content": "sha256:ac87d0a2e38b1b64b1b02a28e18a0c52d2d7f710196ba4675a84fc3ed1ad6fd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_family_is_never_selected_as_live"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

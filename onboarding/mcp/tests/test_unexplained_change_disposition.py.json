@@ -1,0 +1,236 @@
+{
+  "path": "mcp/tests/test_unexplained_change_disposition.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: the reused worklist world and the predicate check.\n\nAnchor: \"every unexplained change needs an authored disposition\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:560a8f02ac11ed4a2217325a2c8a637473762cb4f58427de148d5db6d7fc2d6c",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "An uncovered new file and its onboarding trace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:c8eaca5b6d41d9b5d9647daa9dd9067331cc3d34a6b02bee18e654be630df6d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The writer's refusals, including a retired invariant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:e1f0bc73ca0cf2a24b29abe88e25baa3226cd7235b151762c7c5994ca1683a29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_refuses_what_the_packet_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "An answering onboarding row is not unnecessary (Q3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:4c5eafea8bf2553e0ae900b990d3fbbf9ed3ecc3601b15a7077c1766087e525f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The unit-lane row.\n\nAnchor: \"mcp/tests/test_unexplained_change_disposition.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The catalog consumer row.\n\nAnchor: \"mcp/tests/test_unexplained_change_disposition.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 837
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The items, checked against the gate's predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:e95dee0f0297629fa18b3cdc979c6196bfd8dd9412228126c7a2ff5633037b51",
+            "locator": {
+              "kind": "symbol",
+              "name": "unexplained"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registration and the row model's refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:f94bd6bd95f95fbf1935cdcd7d981f6ab9a6c46cf771395f290d6f47a9c3f5ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_kinds_are_registered_and_no_invariant_is_the_only_row_disposition"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Coverage by entries or the latest census status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:b86a505c300ccce22c20621776e32dd840a565c73f0eb2e71ff01e327ee97920",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_coverage_is_entries_in_k_b_or_the_latest_census_status_of_the_governing_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three answers of a covered hunk; never onboarding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:f825d81bd20d8cf7850de9ef4ce58be1edd7e52c35259ddf0b59e1dd617218e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_covered_hunk_is_answered_by_no_invariant_attach_or_author_and_never_by_onboarding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Delete-only: only no_invariant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:d60461cab31a7c45c0e524c82d34be464ca2c9d9459174deddd897f0e1e51c71",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delete_only_hunk_admits_only_no_invariant"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Non-text changes bound to the C blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:189300ad08f2aaa8290ab7820080080b09cd0da6ed2da97be84c7acf8765d752",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_non_text_change_opens_a_file_item_bound_to_its_c_blob"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An edit elsewhere never reopens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:274975af8324e4af4d89ef79cdc496edca92682330565409d162ba8f07ee04e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_edit_elsewhere_in_the_file_never_reopens_an_answered_item"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Symlink, deleted binary and uncovered deletion (review N6).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:315e35c35d5089ef158ffd6de7f4c34867d0222bffa19c038ced9256465d6e08",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_symlinks_deleted_non_text_and_uncovered_deletions_take_their_own_records"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

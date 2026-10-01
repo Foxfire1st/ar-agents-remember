@@ -1,0 +1,398 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/schema_v3.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The ordered appended-table tuple whose prefix rule makes generation 3's manifest begin with generation 2's sixteen tables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb16ea9c2da7ff2cdae832a8f35351f9840fea00",
+            "content": "sha256:54062eaa09807f0eca6c01a3075e82b8d0e1ef04927982c69628b1b0e14f21d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The registry, ordered oldest first and now holding eight generations — re-read by hand after `KS-R13@v1` appended generation 8, so \"the newest supported generation\" is generation 8 rather than generation 4.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATIONS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:54fc7eaa8a9e372f481d0e38b9a5dc2817fd48e827cec3ce4d562e6458563f91",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 456
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The generation-2 tables this module appends after and never touches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:ff311b81180b8ac928357f45df628eda2a0f20ce5f3c84e85e5ec90fe3966968",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The write path that inserts these rows, and the row codecs that populate the checked groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:f25fcd611725e929bb1c7814877c2bf478594ac78d9e2672123e54e4aa996145",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_add_facet"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facets.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:e15a78f9a8fd1ea725d63c2cde5ad995a0d3cc637959774c61981ca8cfbc9162",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachment_endpoint_columns"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:1268b454aa037564864bb0a2867a484ce86bcca461e2ad7d32181a653f261e30",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 277
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The case that measures the additive rule, the append order, the `STRICT` shape and the two deliberate trigger absences.**\n\nAnchor: \"test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:00903cca94e5684c65dd9c1de20182d4a5c0b0d4baa5bbddde233fd40bbb318c",
+            "locator": {
+              "end": 1065,
+              "kind": "line_range",
+              "start": 1065
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared column order, key tuple and typed-JSON set per appended table — the encoder's ordering and decoding inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb16ea9c2da7ff2cdae832a8f35351f9840fea00",
+            "content": "sha256:4f54ff7c1924a00d482eb3d40f2788fac95a37997f9e87c915cc9ba40dff56d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_COLUMNS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb16ea9c2da7ff2cdae832a8f35351f9840fea00",
+            "content": "sha256:6db8696fc774466d1311b3b2cfe7fec18ebfcee183937955f68a6051da0cf5b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_PRIMARY_KEYS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb16ea9c2da7ff2cdae832a8f35351f9840fea00",
+            "content": "sha256:9f0d42ebf5deae5f575e8b21b265905384dbe3b1192e78fc3be32be1b3d58738",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_JSON_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The four `STRICT` `CREATE TABLE` statements: the per-kind endpoint groups and their `CHECK`, the supersession edge and its `CHECK`, and the explanation pair's checked subject group and recorded designation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb16ea9c2da7ff2cdae832a8f35351f9840fea00",
+            "content": "sha256:6938306c3ac9580263101839a6bdef2fa7636973a5236551d7c933da07974e5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLE_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The eleven reverse-direction indexes, one per declared lookup direction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb16ea9c2da7ff2cdae832a8f35351f9840fea00",
+            "content": "sha256:4054a7da10959a2968879676b6be297f7e1e27f61cadff375fbcf78951186643",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_INDEX_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The seven immutability triggers, with the two deliberate absences stated in the comment above them.**\n\nAnchor: \"immutable_revision: an attachment cannot be repointed in place\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb16ea9c2da7ff2cdae832a8f35351f9840fea00",
+            "content": "sha256:e7ddf79dd52bf457dc51fab5a2904e1f90c38f9589c4ad8384861aff9c2120bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TRIGGERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The declared-but-empty feature tuple, so \"no new SQLite feature\" is stated rather than inferred.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb16ea9c2da7ff2cdae832a8f35351f9840fea00",
+            "content": "sha256:846958ed5776f88992812fe9a6aa343215317e23ae19d052f3cc72413f779aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_FEATURES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The generation record this module's data is composed into, and the append that keeps generation 2's prefix intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:798831a9c64b15a483e39a4a31e19aeba05f0888138c6772e47da7e7a0cca00a",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_3"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:a3c32121b16a09ae52ca2a5de7da46212b76b0a046cfc9564d8b7805267d3199",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_3"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:46a056810366eaa1d720c1c7f1cbc0df6097a5d309923ce38eb63063de964f2b",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:459e52f4982dcdbe3e5ce3335f15a090dd2fae6840f727eb0e8517319a9df6f3",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:67cb201db90b7a932910d27626c0d8c6b0227f1e617d5351c757dacd2ede077e",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 313
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The registry, ordered oldest first and now holding eight generations — re-read by hand after `KS-R13@v1` appended generation 8, so \"the newest supported generation\" is generation 8 rather than generation 7.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATIONS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:54fc7eaa8a9e372f481d0e38b9a5dc2817fd48e827cec3ce4d562e6458563f91",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 456
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The generation record this module's data is composed into, and the append that keeps generation 2's prefix intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:798831a9c64b15a483e39a4a31e19aeba05f0888138c6772e47da7e7a0cca00a",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_3"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:a3c32121b16a09ae52ca2a5de7da46212b76b0a046cfc9564d8b7805267d3199",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_3"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:d360aa32840af2a2400be5fffa55c25ada2882edc977c8d21bc10983d0ca8529",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 295
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:5597f681cda17f14d12fb02b78d026913830baf2a47ef0ac17bd2cd2a34f783c",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:67cb201db90b7a932910d27626c0d8c6b0227f1e617d5351c757dacd2ede077e",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 313
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

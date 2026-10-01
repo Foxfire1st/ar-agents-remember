@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Sparse family-member updates within one successfully admitted family-side-revision continuation walk.",
+  "conditions": [
+    "A recorded member retains its exact invariant revision and payload identity.",
+    "Sources unite by exact claim identity without replacing conflicting content.",
+    "Repeated first pages from another walk do not reset that walk; an identical accepted replay is idempotent."
+  ],
+  "exclusions": [
+    "A second canonical dataset, traversal policy or cache authority.",
+    "Alteration of the latest response primary statement, complete source inventory, evidence or authored assessment."
+  ],
+  "id": "INV-ZS9ZS878",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "45dd6ab9-2b31-45bc-9269-77ec6dfd6344",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Within one admitted family-side-revision walk, sparse member updates retain delivered immutable content and unite sources by exact claim identity; replay is idempotent and another walk's repeated first page cannot erase progress.",
+  "status": "proposed",
+  "supersedes": []
+}

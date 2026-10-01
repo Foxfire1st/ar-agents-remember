@@ -1,0 +1,834 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of its three load-bearing properties: no field that could hold an inference, provenance as a required stored value, and no identity of its own beyond a record's key.\n\nAnchor: `SnapshotIdentity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:29ee3259b57aa8952f653d9208df97a91126df3444c3b6c5e0b7490cf1d5b4ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusProvenance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:42f2b4d12dec88b6f04c631809832800bcc4989e61ff4b5fa61f78e4d480478f",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The refusal that keeps a failed parse from becoming an outcome with no evidence, in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:9cd643d8f938727d1ec79f2bf4c84525fcfd980d984d741fa389c1f9faad8442",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_unparsed_content_with_a_failed_parse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The claim: original text stored verbatim, a kind that starts unclassified, and the applicability field the cohort rule reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:3ce0f8f3c7d2022f814773f49a0d0f7062e8faf92ecac284099836aa6521e207",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaimPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:80723a87c9d0ebbb1294c9e59c5345bb50f1a540571d02585f39794e1228864e",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_kind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:f05e1bf7cd01974ff6a4696551af9cf35af3a067608f24d91debbfb78a432d43",
+            "locator": {
+              "kind": "symbol",
+              "name": "applicability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The disposition and the recorded-versus-applied distinction that exists because this leaf prepares a migration and executes no cutover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:d14937e198a1c9118fa11b0220db8dd749649736a702eb3daf1854f15cfc2c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusDispositionPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:35a9f6a18bfb4896bad6f3040c5ff58e6ffc6f597ff1315210c17585de47a769",
+            "locator": {
+              "kind": "symbol",
+              "name": "disposition_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The two claim relations: the evidence reference whose unassessed state is derivable from the absence of an assessment row and whose verdict is stored verbatim from the curator's own record, and the realization attribution the coverage measure counts, with `missing_realization` recorded so \"nobody looked\" stays distinguishable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:dd0964911a5d527a4984778072a52d91d41a5434906e72d67033d9cabdf211fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaimEvidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:97e98d9186f3c00d1e1fea30649b032e6a9caeb752f059dbe56fad541e11f1cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:064c8b48fa2225b1850de5195c33304db548232e8ea47c23c331690234f2b50c",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_disposition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:86a54b504d70d6904b27eb8b5adbeedea94e3538862d5a44b05480d3564769c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaimRealization"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:6e66934c5f0e92edca590780f42fccc70e06cd5e551d0a4cc851755ba6c399ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "attribution_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The disposition link whose four kinds are the design's split, combine, retire and correction, with the target's resolution state carried verbatim and never repaired by resemblance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:10388fb77aab9af2a5c4ae4862d886284b0b23bad1ba8dcbe0beb9caf004a2cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusDispositionLink"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:9d18e7c8f28e29ff0b907120eda6175c4605fd06aef64c56254029fd36a34222",
+            "locator": {
+              "kind": "symbol",
+              "name": "link_kind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:7dcd302e1751b5181dcb948c1bf2de30a0d6d570e2f3de5d11b2b50ee5511af8",
+            "locator": {
+              "kind": "symbol",
+              "name": "target_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The three commands, each carrying no author and no instant, with the optional governing route that lets an inventory row exist for a surface the substrate has no route record for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:33d655addaf42d45aed8c06c298f3c0c347c13ba76d195d287da3cad9903a859",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusInventoryRowCommand"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:6069a074f87405740bb419378511fe5f568f425a8e8f18b10ae5229d646ba448",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaimCommand"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:f3f17fbbba086421e8d00fa09883a71567f10888bbf39aff573d5ba3a13af631",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusDispositionCommand"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The three read-back shapes: the record's own identity and payload beside the envelope's lifecycle and governing route, with the relations attached where the record owns them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:a2d73a69d037680639f5cc4f81a8112b1a44735491541722d02ea1ca9da2b8d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusInventoryRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:fd176788854c5fb6d5ee12a1f1cccd76dc2caff8c715ae93dfe7d5b543efc517",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaim"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:2e5c35988c406726ed72a20e04cfd92725f3c6ec275b32b1cb0eb918aa35ec94",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusDisposition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Where the group's payloads become admissible: the registry unpacking this module's mapping beside every other record family's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:073d446601ea1ffe4587b00c78fd5ce4088c6b7ac8046952ffa8c3b3f47d0057",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Where the group's table set joins the batch's writable-table union, as its own named constant rather than an edit inside another leaf's list.\n\nAnchor: `CENSUS_WRITABLE_TABLES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8caeb178ee73c75dee7d444580e3fbcdf04bc83f",
+            "content": "sha256:dab4d4c7f2e17d16f917fd6ec080c713cdf5182f4463b4a79258fd6a953ebf2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_ONLY_WRITABLE_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8caeb178ee73c75dee7d444580e3fbcdf04bc83f",
+            "content": "sha256:4fde69e3e3c7b78a49760085cdcd116c24b317c0c085cbd40d7addbec99bf0c8",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:eaf5e6741213d0ed25aa0ced5703307128095b1aa8d0a0737ef4c41a3c7644e4",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The two consumers of the vocabulary's own members: the cohort predicate that reads the named applicability value, and the claim-kind census that counts `unclassified` beside the four classified kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:1bf0b27b9bc33a1ca3795b2b1603e6be90abb20b5f1a4b6acba8f8037156fe21",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_enters_cohort"
+            },
+            "path": "mcp/src/agents_remember/memory/migration/census_measures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:1223440b29461c05fba4b53c6e6e80ba94f42f696e5dbd38c234b73c83a6d187",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_kind_counts"
+            },
+            "path": "mcp/src/agents_remember/memory/migration/census_measures.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The mapping this group contributes to the envelope's payload registry, built from the six kind-and-schema constants and declared beside the vocabulary rather than beside the write path, so admissibility and storage read one declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:1aa632338d8e78e635b4408f0517b7941c67949ecc4d2aacf0a2096a7aa41c1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_PAYLOAD_MODELS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:6a280c49706f95e0622672b3e1eeacef857eff9e8693d0c450f5944d20a68758",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_INVENTORY_ROW_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:d7a17dc8b14e21f10d058e07a21b4620b5b68f38f781c16e678dfc88867f02a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_CLAIM_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:286354c8af33620bb9931276e6219f7d3c4db709750b86856b8c2ecb63638ab6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_DISPOSITION_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Where the read side asserts the schema tuples and this vocabulary agree, and the schema's own declared vocabularies that the stored-value decoder checks against, so the model and the DDL cannot drift into two different sets of admitted values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:e5e6c0309c605de1c9b86454f54cb9979859008c83ce5e7b3b29f800f6f26ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_ARTIFACT_KINDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:b30bbbd4203a8e26756f9f887236be2e549f1cb6ae661b3433b3c1fea53c5463",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_PARSE_OUTCOMES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:8868a90f696fe445fd6cf4a252290965ed67f29aeecbe1aef96136eb6f6ebfbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_CLAIM_KINDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:c60dea22d6082766c8db8d005f01e01378e0a59e32ea7df9021e61c40ef78d00",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_DISPOSITION_KINDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f6d6f7bdb328d70081079144c6d747176f72ee5",
+            "content": "sha256:554aae1a512e41dafeff3f90cc4017d1906d1f588e05d539cafac083291afbcf",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/memory/migration/parse.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f6d6f7bdb328d70081079144c6d747176f72ee5",
+            "content": "sha256:77c21f79933a92f3e151ff78bf3cdad1efc00d3ece90f48ed716b8161079d5b7",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/memory/migration/parse.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:fef929fa59d4dc1da15e3055906d305b5f8f0a1e595521a792d6c6ff622fb05e",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/memory/migration/inventory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:5150657686411fae6da1363ce4104e1f22b4768441cf028f9280a00619a63b64",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/census_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The command-kind and record-kind sets, each derived once so a registry case names the group rather than restating its three literals, and the eight tables a census command writes, declared beside the commands rather than beside the write path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:03cc77cb9ad48a7231f47a5eaa6244637b3c97e8012d0eec2c147560fe632468",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_COMMAND_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:bebc3fa2656d5216d82fd3839763b9ba44b8f273d27960e352cea07516769856",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_RECORD_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:34db5fb82c7a3e03dc76bf45e997d3821f93c80c72045ff782475ebd2052e8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_WRITABLE_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closed vocabularies, declared in one block so a value added here is a value the schema's own CHECK already admits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:4e3f08afc1cf650499ebcc8b1f6239667bdc86e2eaeda76ec74538de941980bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusArtifactKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:73e1482d004a53bfa32a40062a6dd9a35eaac61700f45d647e9d8ebd8d2c8d41",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusParseOutcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:9600349288da41ceddb3d437935180ed947934fee148dabd9ac9894ebba44cfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusInventoryState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:97edd6db9917c4bc4d2b4e70a23e941b52720ff3cd8b223f21f36eb2c5de9379",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaimKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:241f51195914639de7efce0e662502894c4a0f9888eab0487ce3d0208bc75e09",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusApplicability"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:9fce3cb4183efc6125cdd7bb870f0d68102ff04be2f82d2fe5bb245c2458f477",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusDispositionKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:c370295f916cca5cb517a3abb1176a5869000941183ed7270a657258233de9e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusDispositionState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:f217d49ec9d23908a91f39b1d4dc27a3ea86264717b039cd597fb938be53c25d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusEvidenceState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:8b8452f1c91a7b13545841bd978372ea13d67d498913b491236c8ecdd9eef08c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusAssessmentDisposition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:716924973aafa246465ee8d556c9972c5d9bf0ef8741d9251f1d3a9be0e66bff",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusRealizationState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:0e937afcabe64d45789b171ea32fea43e89d3cdc1f393f2114557a061ffca314",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusLinkKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:ba9077f29f0846df7fd97cea24fbc5e8407f94da13e062b35d3a1dfa67efb2ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusTargetState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The four classified kinds in the design's own order, with `unclassified` deliberately excluded because it is the absence of a kind rather than a fifth one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:c579fd329888bd7958b673d8c683565653e53deacb7e1dd6c34e4b0a10908cd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLASSIFIED_CLAIM_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one applicability value that enters the cohort, named once so the eligibility rule and the payload default cannot disagree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:10fe467b9e51e452c21367f7bb84e76269d8ca871dfb261bc9d374ef17068c0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "COHORT_APPLICABILITY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The provenance every census record requires, with its repository-relative artifact path, its location within the artifact and its frozen baseline carried by identity rather than as two loose strings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:29ee3259b57aa8952f653d9208df97a91126df3444c3b6c5e0b7490cf1d5b4ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusProvenance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:5f8e6e2c94eec94482932dc4582f84540e519176fe24581a7d7275d806e35d69",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The refusal of an absolute, backslash or traversal artifact spelling, so a machine location cannot enter a durable record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:6f2e0539ff34b837e29a7191d41a7a4b94779f9a6031e60e3e9b938075b6f5e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_relative_artifact_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The inventory row: what the artifact claims to describe beside whether that source is present, and the parse outcome carried as the row's own evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:90305c7699abef4fd15bdfac4bc21b51996f542c2e14357eff3b66dc1c0958a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusInventoryRowPayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:be1b254ab228be8e5ef4682bcf4aaf3b3ac5e12d4799ee06c4bd8f1c920a2a36",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_source_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:ac388bce4858e6cf6caf7ba5cb512417f43d6578348e3d78094bdc6034d56c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

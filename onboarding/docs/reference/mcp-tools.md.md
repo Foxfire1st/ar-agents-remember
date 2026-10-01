@@ -1,15 +1,5 @@
 # docs/reference/mcp-tools.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | docs/reference/mcp-tools.md |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-09-30T15:25:16+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`|
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
-| governingOverview | docs/reference/overview.md |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -42,15 +32,17 @@ every retry/evaluation path.
 
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization outputs. Dispatch proof remains exact-session and fail-closed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Worker source inventory, reviewer verdict, and governing route overview.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
 
@@ -70,16 +62,3 @@ review R1 note 5 at 13:11:32, and "sub-task" rather than "leaf" by ruling 14:12:
 `task.json` is not covered by the refusal). The rest of the row, including standalone support and that the parent
 task itself is not completed, is unchanged. The same clauses are in the registered tool description
 (`mcp/registration/tasks.py`) and the c-09 skill.
-
-## Update History
-- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38**, although `docs/**` is outside `pathRules`. New section "260928-MIK-L38 The `lifecycle_finalize_task` Row Names The Folder Master" (rulings 12:33:07 Q3, 13:11:32 note 5, 14:12:52). No verification stamp was advanced.
-
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced the legacy quality call grammar with strict sync/start/poll requests and documented capacity/nondisclosure outcomes. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-11T16:54+02:00 — Documented the one enclosure-local, atomically replaced curator
-  checklist, its scoped-only response fields, and cleanup/abandon garbage collection.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded the N16 post/poll/consume/
-  supersede reference rows — terminal `landed` at boundary acceptance, `include_terminal`
-  inspectability (N11), attribution-only consume, explicit supersession (R11). Verification
-  metadata pinned until closeout stamps the 260713-TES-L4 commit.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

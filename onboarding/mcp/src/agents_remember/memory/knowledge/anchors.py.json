@@ -1,0 +1,502 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/anchors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The storage-versus-resolution separation this module is built around.\n\nAnchor: \"Storage and resolution are different concerns.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:5c6f0ada131fa923f9881ccca91b32c1264f0a05e5d5d97ebd93a91c6c65c9aa",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The anchor-codec row and digest, which derive the canonical identity text at the storage boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:5febc8cc994f200d39cbf98135f80f69d9e89bc38781fbd5919cd5bf0dbb3b1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:3f1942fb3b4c56caef11577956abb7a962cf60544b7a1a8db161bb7879497ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_row_digest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:abefcc84253875ed98182787cf202efafd73b7f925d29e23f70e019c9a723348",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_anchor_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The locator union and the confined relative-path rule this module stores without resolving.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:12b3301d68fc80d98a6414b732ea425dcc979f5d77ce818f246cad5a965010c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAnchorDraft"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:245b19ca6934e10660cc62530cbf01091637a557f2db9c43de0c3a9474ad910b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAnchor"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:c662fc6a00aff8273f3c58deea591eb8f0e1ece21f074fb9476d22cddaf8786c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLocator"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:ca1321c5ff484c10719944838851a3c7056ba4b199450386de024885ac4f9e82",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The refusal factories this module's refusals come from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8fe53914c72fe695e4a8b4263dc14db5d4538709d09f1ce40bd1e653aca488fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "duplicate_anchor_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:16e6c31c249f646fbeb23d6708b1557488340e40f8accb67ba3ba9c42c9bdab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "referenced_anchor_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:02d19a372134a80d14fade47f3f6f458571a070a37faea9a3797700521bb1812",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_expected_row_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The declared `source_anchor` table, its index and its payload trigger.\n\nAnchor: `source_anchor`; `source_anchor_path`; `source_anchor_no_rewrite`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:d4b4b47a78017827d8c1760069d497d80cff41cca291c7c0b9df9ecb029155eb",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:bcf867fc8e5cb0152fdd46e346a691b208a6a43753a5b68c80c33431ce31ce9e",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 326
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:e4405452457f76b28c129d93570bdf5e3117502efbd84025ed092779e3e2c6df",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Anchor creation and the provenance-attaching construction point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:b2d3e095f7d704f14b3dbc4b8b0467348659e2156a028539f2abf454e15e865f",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_source_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:76ad1229045d5cbb6c4d05a43f88ed1f34f9e807089ea2d65fe28533687e7515",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_anchor_from_draft"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:487b7e7250ad1bff040fe5130181718bb5972d472d38b9bb77bb41aeaca08cee",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The in-transaction write hook the realization operation and the batch command reuse, with the duplicate rule it now carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:bbf2d5b6fe8682e9e7356a07a1f8b3c6eff0b4894e050146c2c48a0ddd2b3437",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_anchor_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:212358a27a898f47d285444f8f490af7703a78c2912f987b516a3aec6acb9a87",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The anchor-lifetime read: whether a stored claim still cites this anchor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:c28d4ce0a1551aeac1d09bf887b3742809eb31b748b07d1d2cf105e35b06fce0",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_claim_citing_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:485988711263aa9c3784d43ad0f25703abd9c959f2fa35dfdaafa2c93ec240f9",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:260e60450d22638454f777230df364bbd4f367825deedfefc6e4fcc2c41f11f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_anchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The same read against a bare connection, for a caller that holds one without a store — the curation intake resolving a reused anchor (leaf `260915-KS-L47`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:fcc86d46551833a679b2e2de3a42565e75d955137d82f50f149990b998be4124",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_anchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Explicit removal, with its two refusals both evaluated before the delete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:05ab40cf8ec89d7ddebc608b9d3bc917fd752d7263ba0f96b8ec4fbb8ba529d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_source_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:12a188bb3b48591b7776fa82faf9835b1dd3f6acb027ae517deb2b31e0a3fcd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_delete_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:8f24ddf7caa2fa55e211d4d2c0669a65e6624ddd0460b816f4709bd4d1f2b92a",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The in-transaction removal helper the batch command composes, and the absence of an expected row digest on the anchor removal request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:cf64c50f51984d7f2fb0c79dc6a64573dbb033356227c1ff1b667d28a6ee4653",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:a0141d04bcf931bfc9cf63e231666a5d842ceff5d7afc52a4dcb2722282e26b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveSourceAnchor"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:4e0516aa78d3751504407e3eb039f3a4de1087f0eb1ded9197f1e20d03e0bd60",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:fe5368c338307e51e13798865e004f2abca94eeb255d41e8919b1c7ae982ed97",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 347
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:64eb5fe26120049e2d91c997b515a643a50b01accae7087904f8fd99142c2de4",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:3c1650c4c9adf057b3fc4519fafaa92dd97b981644df2bc9f24e39f57632bbab",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:66c466e64b4eff7e59b61b80b5f53131d4785af57d406c59bf92aa1f87d410be",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 386
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The in-transaction removal helper the batch command composes, and the absence of an expected row digest on the anchor removal request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:cf64c50f51984d7f2fb0c79dc6a64573dbb033356227c1ff1b667d28a6ee4653",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:a0141d04bcf931bfc9cf63e231666a5d842ceff5d7afc52a4dcb2722282e26b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveSourceAnchor"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:879177881ff53ba13fa618a2cab27f078c03d72a3592d2aacadaad5b4c354c76",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

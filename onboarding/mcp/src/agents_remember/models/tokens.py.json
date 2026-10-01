@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/models/tokens.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared response envelopes define the token metadata fields on the `ResponseModel` base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:45b7cfd1ea33c7e121c05e03d6d9040b9c5f4e017f07efaaef19d7a73d4d1607",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResponseModel"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_tool_payload` finalizes token metadata on every public tool response via this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`TokenizerVocabularyError` — the typed refusal raised instead of downloading a vocabulary this package does not ship.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:04d03b51a0e2def2231844a1f5415c5289fedb25fe94f50ca32bcfbdb7fd163e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TokenizerVocabularyError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shipped vocabulary, why its name is `sha1(url)`, the SHA-256 this module checks before every load, and how to refresh it (including replacing `VENDORED_VOCABULARY_SHA256`).\n\nAnchor: `VENDORED_VOCABULARY_SHA256`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2aac78785258416fcbb86b21ac6a285943449211",
+            "content": "sha256:6960b05547aa5d0e5b9f0cb16726db4b13d766606f020c01c8af6e2f1559545e",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/package_data/tiktoken/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

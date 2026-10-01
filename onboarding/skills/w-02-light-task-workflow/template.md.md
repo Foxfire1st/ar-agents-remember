@@ -1,15 +1,5 @@
 # skills/w-02-light-task-workflow/template.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/w-02-light-task-workflow/template.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `onboarding/overview.md` |
-
 ## Governing Overview
 
 [repository onboarding overview](../../overview.md)
@@ -57,19 +47,19 @@ invalidation trigger.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source governs this render specification.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The rendered task links exact approved requirement revisions. | `## Requirement Projection` | skills/w-02-light-task-workflow/template.md:25-39 |
-| Usage rules preserve one-primary ownership and per-revision evidence. | `## Usage Rules` | skills/w-02-light-task-workflow/template.md:91-149 |
-| Usage rules separate semantic versions from immutable attempts and name both legal invalidation paths. | `## Usage Rules` | skills/w-02-light-task-workflow/template.md:110-175 |
+- The rendered task links exact approved requirement revisions. [1]
+- Usage rules preserve one-primary ownership and per-revision evidence. [2]
+- Usage rules separate semantic versions from immutable attempts and name both legal invalidation paths. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Concrete repository fields and commands arrive through the resolved target-repository context.
 
@@ -79,23 +69,3 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
-
-## Update History
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
-
-- 2026-08-27T21:53+02:00 — M40@v2: separated internal protocol events from review-handoff attempts
-  and replaced per-record evidence duplication with content-addressed expanded-evidence links.
-- 2026-08-27T20:45+02:00 — Made the detailed leaf journal a single physical append-only record
-  stream rather than a pair of potentially divergent report copies.
-- 2026-08-27T19:59+02:00 — M42 clarification: scoped successor attempts to unadjudicated changes,
-  rejected repairs, and corrections while preserving unrelated accepted work.
-- 2026-08-27T18:06+02:00 — M40-M43: added leaf-journal references, immutable candidate-bound
-  attempts, independent classified adjudication, successor lineage, and bounded invalidation.
-- 2026-08-27T14:52+02:00 — Created onboarding for filtered requirement projections, one-primary
-  leaves, and exact-version acceptance evidence.

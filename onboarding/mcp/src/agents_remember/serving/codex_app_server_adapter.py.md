@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/codex_app_server_adapter.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/codex_app_server_adapter.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -254,16 +244,16 @@ the only live pending. Sheddable queue pressure is identified by `codexMethod` m
 
 None known for the same-thread mutation seam.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Session ownership and strict model-page parsing remain dedicated modules rather than adapter-local
 policy. The multiplexing grammar lives in the control models, and a dedicated
@@ -271,17 +261,15 @@ thread-demux regression suite pins the anti-death behavior (before the demux, th
 foreign-thread notification failed the whole bridge — the 2026-07-24 production seat death) plus
 the follow-on concurrency and queue-shed remediation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Session keeps desired and effective settings separate, validates dynamic model-local choices, and promotes only accepted selection evidence. | `CodexAppServerSession` | mcp/src/agents_remember/serving/codex_app_server_session.py:105-462 |
-| Submission evidence captures the exact model/effort pair accepted at reservation time. | `SubmissionEvidence` | mcp/src/agents_remember/serving/codex_app_server_state.py:86-92 |
-| The stable server-request grammar (`STABLE_SERVER_REQUESTS`) the method-first degrade split keys on: methods outside it parse as experimental/unsupported traffic, never protocol violations. | `STABLE_SERVER_REQUESTS` | mcp/src/agents_remember/serving/codex_app_server_state.py:31-38 |
-| The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones. | `CodexStdioTransport` | mcp/src/agents_remember/serving/codex_app_server_protocol.py:65-310 |
-| The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. | `apply_launch_knobs` | mcp/src/agents_remember/serving/harness_launch.py:175-208 |
-| Model pages preserve display/description metadata and model-local reasoning effort options. | `parse_model_page` | mcp/src/agents_remember/serving/codex_app_server_state.py:165-236 |
-| The thread flatten helper enforces unique typed item identity for native paging. | `native_evidence_frames_from_thread` | mcp/src/agents_remember/serving/codex_app_server_state.py:387-422 |
-| The multiplexing grammar this adapter fills: `AdapterSnapshot.pending_interactions` (parent slot back-compat, agent entries carry `raw.threadId`/`agentLabel`) and `EvidenceFrame.thread_id` as the demux key. | `AdapterSnapshot`, `EvidenceFrame` | mcp/src/agents_remember/models/conversations/control_wire.py:126-151; mcp/src/agents_remember/models/conversations/evidence.py:79-102 |
-| The bridge extracts `threadId` from diverted evidence into `EvidenceFrame.thread_id` and forwards the additive `thread_id` native-page selector. | `native_page`, `_evidence_thread_id` | mcp/src/agents_remember/serving/harness_control_bridge.py:230-275; mcp/src/agents_remember/serving/harness_control_bridge.py:495-507 |
+- Session keeps desired and effective settings separate, validates dynamic model-local choices, and promotes only accepted selection evidence. [1]
+- Submission evidence captures the exact model/effort pair accepted at reservation time. [2]
+- The stable server-request grammar (`STABLE_SERVER_REQUESTS`) the method-first degrade split keys on: methods outside it parse as experimental/unsupported traffic, never protocol violations. [3]
+- The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones. [4]
+- The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery. [5]
+- Model pages preserve display/description metadata and model-local reasoning effort options. [6]
+- The thread flatten helper enforces unique typed item identity for native paging. [7]
+- The multiplexing grammar this adapter fills: `AdapterSnapshot.pending_interactions` (parent slot back-compat, agent entries carry `raw.threadId`/`agentLabel`) and `EvidenceFrame.thread_id` as the demux key. [8]
+- The bridge extracts `threadId` from diverted evidence into `EvidenceFrame.thread_id` and forwards the additive `thread_id` native-page selector. [9]
 
 
 | The structural sub-protocols this adapter implements; the caller's identity guards ride the write. | `InterruptCapableAdapter`, `AssetSubmitCapable` | mcp/src/agents_remember/serving/harness_control_adapter.py:91-106; mcp/src/agents_remember/serving/harness_control_adapter.py:109-113 |
@@ -289,14 +277,12 @@ the follow-on concurrency and queue-shed remediation.
 | Historical evidence (retired with the d3610903 suite reduction): The installed-runtime suite captures the live 0.144.5 interrupt, timeline, asset, and withdrawal-recovery evidence behind the fixture rows. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 | Historical evidence (retired with the d3610903 suite reduction): The fixture recorded the redacted `control-plane/*` observed rows this adapter produced through the production seam. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this adapter; prior task-review artifacts are not
 runtime boundary contracts.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## Submission Authority Delta
 
@@ -332,102 +318,3 @@ item-learning branches into `_learn_sub_agent_activity` and `_learn_collab_tool_
 outcomes are unchanged; what changed is that each notification class is now named.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `SubmissionEvidence` repointed to mcp/src/agents_remember/serving/codex_app_server_state.py:86-92. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
-  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 27 further
-  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
-  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
-  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
-  current position. Verification metadata remains closeout-owned.
-- 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: parent Codex completion now projects
-  its exact operation/request id alongside the native turn id, allowing queued durable inbox
-  receipts to become completed without heuristic correlation. Verification remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added the bounded connected-`dispatch_agent` startup gate for role sessions and preserved the primary readiness error across cleanup failure. Verification remains closeout-owned.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T20:49:28+02:00 — 260731-EFA-L6 curator W2-B11: repaired 54 citation findings in this card (13 citation_anchor_missing, 28 citation_prose_not_in_cit_form, 13 citation_source_malformed) with exact current anchors and source paths; scoped memory-citations recheck PASS with 0 findings.
-
-- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations left behind by
-  the same leaf's `StartedTurn` submit split and per-method handler split, which grew the file to
-  1503 lines. `_learn_collab_identity` is L1385-L1450 (the dispatcher plus the two extracted
-  learners the sentence describes), `_publish_agent_registry` is L1452-L1468, and
-  `_degrade_agent_frame` cit:([`_degrade_agent_frame`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:638-673) — the catch itself lives in `_run_messages` cit:([`_run_messages`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:620-636), so
-  that sentence now names the caller instead of implying the helper holds the `except`.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `StartedTurn` and the per-method notification handler / item-learning split.
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: replaced the direct whole-thread history
-  description with the connection-local, runtime-probed history reader; recorded reconnect probe
-  reset, exact thread selection, opaque continuation ownership, explicit legacy fallback, and the
-  separate dormant library exposure. Verification metadata stays pinned because the change is
-  uncommitted.
-
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: documented the two closed kill seams and the
-  degrade rework. (1) Concurrent server requests: `_ThreadState.pending_interactions` is now a
-  bounded per-thread MAP keyed by rpc id (≤16; the `pending_interaction` property is the
-  oldest/back-compat view) and the "multiple unresolved server requests" raise is deleted —
-  concurrency is normal vendor traffic; `_handle_server_request` decides by METHOD first
-  (unknown/experimental methods declined -32601 + degraded on ANY thread via
-  `_degrade_agent_frame(force=True)`; KNOWN stable methods' malformed shapes keep the
-  agent-degrade/parent-fail split; a full map declines + degrades the newest request);
-  `serverRequest/resolved` pops by rpc id; `respond`/`_interaction_thread` route by (thread, rpc
-  id); `_sync_pending_snapshot` projects ALL pendings with the singular slot on the parent's
-  oldest. (2) The event queue no longer raises queue-full: `_enqueue`/`_evict_for_space` shed the
-  oldest delta-method events first (structural events survive until nothing else remains), count
-  every shed, and mint one `ar/load-shed` notice with the count on catch-up (producer-side, off the
-  consumer drain in `_event_stream`, and before the close sentinel); the limit rose 256 → 1024.
-  Re-anchored every stale line citation against the post-remediation source (the file grew to 1376
-  lines) and extended the demux-suite row cit:([`test_spawned_subagent_traffic_never_fails_the_bridge`], mcp/tests/test_codex_adapter_thread_demux.py:117-180). Verification metadata stays pinned — the
-  change is uncommitted, so no commit hash can attest it.
-- 2026-07-26T15:35 — 260718-CHATS-L7 curator: documented the per-thread demux — `_ThreadState` +
-  bounded thread registry replacing the deleted `_validate_thread` gate (foreign ids auto-register,
-  missing/non-text ids still fail closed), collab identity learning into `snapshot.raw.agentRegistry`,
-  multiplexed `pending_interactions` with the parent-only operation guard on `respond`, per-thread
-  `read_native_page(thread_id=...)`, agent-transcript `threadId` stamping with byte-identical parent
-  entries, item→thread delta routing, bounded eviction, and degrade-not-fatal malformed agent frames.
-  Fixed stale emit-site citations (`_emit_notification` cit:([`_emit_notification`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:762-778) +
-  `_handle_item_completed` cit:([`_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:838-867), refreshed the protocol-cancellation (`CodexStdioTransport` cit:([`CodexStdioTransport`], mcp/src/agents_remember/serving/codex_app_server_protocol.py:65-310)) and
-  launch-refusal (`apply_launch_knobs` cit:([`apply_launch_knobs`], mcp/src/agents_remember/serving/harness_launch.py:175-208)) citations, and added rows for the models grammar and the
-  `test_codex_adapter_thread_demux.py` regression suite. Verification metadata stays pinned: the L7
-  change is uncommitted, so no commit hash can attest it.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — documented the native-method carry: the
-  `codex-notification`/`item/completed` emits cit:([`_emit_notification`, `_handle_item_completed`], mcp/src/agents_remember/serving/codex_app_server_adapter.py:762-778; mcp/src/agents_remember/serving/codex_app_server_adapter.py:838-867) now set
-  `AR_EVIDENCE_METHOD_KEY: method` so the codex projector recognizes the 0.144.5 startup burst by
-  method instead of re-guessing from params shape; added the emit-only invariant. Verification
-  metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the `InterruptCapableAdapter`
-  implementation (native `turn/interrupt` on the exact active turn, no-active/mismatch typed,
-  replay-once per pair, RPC failure → `rejected` acknowledgement) and the `AssetSubmitCapable`
-  implementation (pre-verified `localImage{path}` blocks on `turn/start`, construction-time
-  sha256 re-verification, additive receipt `assetIds`, zero native writes on verification
-  failure). Verification metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented stop-dropping `arEvidence`
-  forwarding at the six emit sites and the `thread/read`-backed `read_native_page` with thread-id
-  echo check, duplicate-id fail-closed, and typed ephemeral `includeTurns` refusal. Verification
-  metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5: replaced adapter-queue/steer semantics with guarded fresh-turn
-  dispatch, exact turn-operation binding, once-only completion, and bounded correlation maps.
-
-- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented desired/pending/effective settings,
-  next-fresh-turn application, captured prompt selection epochs, failed-turn non-promotion,
-  model-local effort rebasing, reversal collapse, and same-thread/no-reconnect switching.
-- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented native thread config launch knobs,
-  adapter-owned selector refusal, roleless model-local defaults, and reuse of the resolved effort
-  for subsequent turns and settings-update evidence.
-- 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented harness-id validation,
-  initialize/list-only discovery, and cached same-session advertise while preserving correlated
-  delivery, boundedness, and inbox-consumption boundaries.
-- 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented null-requestId/vendor-correlation completion,
-  loud correlation validation, terminal idle/immediate projection, and replacement-only queued state.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented structured Codex identity and negotiated adapter
-  reporting; exact versions remain fixture/smoke baselines only.
-- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for normalized Codex
-  lifecycle, correlated acceptance, busy policy, approvals, reconnect, and no-cutover boundary.
-  Verification remains unset until closeout stamps the code commit.

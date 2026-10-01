@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/review_tree_entries.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/review_tree_entries.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:22:59+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -58,35 +48,25 @@ its locator resolves to on each code side by the MIK-R08 definition 3 rule. This
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R31@v1` lives outside the code and memory
 repositories, so it is named here and not cited as a row.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the per-side states, the locator fallback and the excerpt rule. | "are different facts and are never merged"; "is shown once" | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:1-33 |
-| The published names. | `__all__` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:49-56 |
-| The four range states, the three change states and the excerpt bounds. | `ReviewEntryRangeState`; `ReviewEntryChange`; `EXCERPT_MAX_LINES`; `EXCERPT_MAX_CHARACTERS` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:58-61 |
-| One entry on one side. | `ReviewTreeEntrySide` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:64-81 |
-| One entry on both sides, joined to a member by `invariant_key`. | `ReviewTreeEntry` | mcp/src/agents_remember/models/knowledge/review_tree_entries.py:84-98 |
-| The tree view's field that carries the entries. | `ReviewTreesResult` | mcp/src/agents_remember/models/knowledge/review_trees.py:242-264 |
-| The client mirror of this shape. | `ReviewTreeEntrySide`; `ReviewTreeEntry` | dashboard/src/data/reviewTrees.ts:193-211; dashboard/src/data/reviewTrees.ts:213-222 |
+- The module's own statement of the per-side states, the locator fallback and the excerpt rule. [1]
+- The published names. [2]
+- The four range states, the three change states and the excerpt bounds. [3]
+- One entry on one side. [4]
+- One entry on both sides, joined to a member by `invariant_key`. [5]
+- The tree view's field that carries the entries. [6]
+- The client mirror of this shape. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `mcp/src/agents_remember/models/knowledge/review_trees.py`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. No verification stamp was advanced.
-- 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new model MIK-R31 adds. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

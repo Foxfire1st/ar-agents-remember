@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_source_realization_link.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_source_realization_link.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T10:05:09+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -99,46 +89,34 @@ same two-step pattern as `application/review_attribution.py`.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of which comparison, which fact, what is not a criterion, and why unreadable knowledge is undetermined.** | "Which comparison."; "What is not a criterion." | mcp/src/agents_remember/application/review_source_realization_link.py:1-38 |
-| The published surface and the half order. | `__all__`; `_SIDES` | mcp/src/agents_remember/application/review_source_realization_link.py:72-72; mcp/src/agents_remember/application/review_source_realization_link.py:69-69 |
-| **The answer value: linking halves, the stated sentence, whether the negative was established, and whether the unread knowledge was never created.** | `RealizationLink` | mcp/src/agents_remember/application/review_source_realization_link.py:77-97 |
-| **The entry point: bind the comparison, check the spelling, read the namespace, ask each half; the halves' answer composed apart.** | `recorded_realization_link`; `_link_of` | mcp/src/agents_remember/application/review_source_realization_link.py:116-151; mcp/src/agents_remember/application/review_source_realization_link.py:154-166 |
-| **Exact-spelling check: the validated seed must equal the request string.** | `_anchor_spelling` | mcp/src/agents_remember/application/review_source_realization_link.py:169-180 |
-| **Comparison binding: current pair, recorded superseded pair, or nothing — never the leaf's current knowledge.** | `_bound_knowledge` | mcp/src/agents_remember/application/review_source_realization_link.py:186-246 |
-| Halves a closed leaf's generation did not retain are not read. | `_halves` | mcp/src/agents_remember/application/review_source_realization_link.py:249-260 |
-| **One half asked by the exact claim-at-path query, with unreadable kept apart from not linked, and an absent snapshot marked.** | `_side_reading`; `_sentence` | mcp/src/agents_remember/application/review_source_realization_link.py:266-295; mcp/src/agents_remember/application/review_source_realization_link.py:317-323 |
-| A tree index's proof entry at the path links it; a dataset (no `ix_entry`) answers nothing. | `_proof_at_path` | mcp/src/agents_remember/application/review_source_realization_link.py:298-314 |
-| The read owner's identity resolution and exact claim-at-path query this module re-uses. | `open_read_context`; `fetch_realizations_at_path` | mcp/src/agents_remember/application/knowledge_read.py:108-141; mcp/src/agents_remember/memory/knowledge/read_queries.py:226-260 |
-| The generation owners that bind a superseded pair to its retained knowledge. | `read_generation_refs`; `read_manifest`; `task_root_for_review`; `resolve_committed_leaf_review` | mcp/src/agents_remember/application/review_comparison_generation.py:615-649; mcp/src/agents_remember/application/review_comparison_generation.py:725-753; mcp/src/agents_remember/application/review_comparison_generation.py:564-572; mcp/src/agents_remember/application/review_committed_leaf.py:174-216 |
-| The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule. | `review_namespace`; `PathSeed` | mcp/src/agents_remember/application/review_candidate_resolution.py:391-430; mcp/src/agents_remember/models/knowledge/read.py:128-155 |
-| **Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.** | `test_a_path_linked_only_in_another_comparison_is_refused_for_this_one`; `test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes`; `test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation`; `test_a_padded_spelling_is_never_admitted_as_attributed_context`; `test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path` | mcp/tests/test_knowledge_review_attributed_source_content.py:169-199; mcp/tests/test_knowledge_review_attributed_source_content.py:202-249; mcp/tests/test_knowledge_review_attributed_source_content.py:252-271; mcp/tests/test_knowledge_review_attributed_source_content.py:274-298; mcp/tests/test_knowledge_review_attributed_source_content.py:301-325 |
+- **The module's own statement of which comparison, which fact, what is not a criterion, and why unreadable knowledge is undetermined.** [1]
+- The published surface and the half order. [2]
+- **The answer value: linking halves, the stated sentence, whether the negative was established, and whether the unread knowledge was never created.** [3]
+- **The entry point: bind the comparison, check the spelling, read the namespace, ask each half; the halves' answer composed apart.** [4]
+- **Exact-spelling check: the validated seed must equal the request string.** [5]
+- **Comparison binding: current pair, recorded superseded pair, or nothing — never the leaf's current knowledge.** [6]
+- Halves a closed leaf's generation did not retain are not read. [7]
+- **One half asked by the exact claim-at-path query, with unreadable kept apart from not linked, and an absent snapshot marked.** [8]
+- A tree index's proof entry at the path links it; a dataset (no `ix_entry`) answers nothing. [9]
+- The read owner's identity resolution and exact claim-at-path query this module re-uses. [10]
+- The generation owners that bind a superseded pair to its retained knowledge. [11]
+- The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule. [12]
+- **Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.** [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It reads only the knowledge snapshots bound
 to one leaf's comparison in one repository namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. Purpose and Logic record ruling 2026-09-30T05:36:19 Q1 (`_proof_at_path`: a tree comparison's proof entry links its path; datasets unaffected), `never_initialized` for MIK-R31 rule 6 O1, and the radon split into `_link_of`; one invariant added. Three rows reworded (the answer value, the entry point with `_link_of`, the half reading); one row added (`_proof_at_path`).
-- 2026-09-30T07:53:18+00:00: Generated citation repair: `_anchor_spelling` repointed to mcp/src/agents_remember/application/review_source_realization_link.py:169-180. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T07:53:18+00:00: Generated citation repair: `_halves` repointed to mcp/src/agents_remember/application/review_source_realization_link.py:249-260. No content impact: mechanical anchor-range projection bound to citation source snapshot ec86d6994b129f2dd70f55d74cafd3553485138e204193855095f327a179d4d0; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact on this card's own source, which is unchanged. **Reopened claim re-read and reworded:** `review_namespace` in `review_candidate_resolution.py` gained the derived-index fallback (`_index_namespace`), so the namespace row now names it; its range (`391-430`) was projected by the installed fixer, and the bullet that fixer wrote for this row was removed because the claim was reworded. No verification stamp was advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/application/review_candidate_resolution.py`, `mcp/src/agents_remember/models/knowledge/read.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): created this card for the new owner of the comparison-bound realization-link question behind attributed unchanged source reads. It records the comparison binding (current pair, exactly recorded superseded pair, or nothing), the exact-spelling rule (L43-R1-F1), the exact claim-at-path query that scope size cannot fail and the undetermined answer for unreadable knowledge (L43-R1-F2), and the Architect ruling that a stale anchor still links. Verification stamp names the code base; the module exists only in the uncommitted candidate and closeout owns the real stamp.
+No meaningful cross-repo references found.

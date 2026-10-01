@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_pi_rpc_process.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Correlates response streams event and stops cleanly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cdacba36d5f0fa04798826e7fb5ec8d148ba59",
+            "content": "sha256:45f125e1c5f7508bb1b18149b4cc0d16b3f03fca4db97653366bd266e85bc679",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_correlates_response_streams_event_and_stops_cleanly"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Eof during correlated request is ambiguous.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cdacba36d5f0fa04798826e7fb5ec8d148ba59",
+            "content": "sha256:3a37645e419db5d6a34d2569b71b6bc086783aeee664094a52458c3318325e41",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_eof_during_correlated_request_is_ambiguous"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cancelled request ignores late response and next reader survives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cdacba36d5f0fa04798826e7fb5ec8d148ba59",
+            "content": "sha256:4f17f4e95411be946b4162ffc53d57f40e6a26192c82eaed9d549986ecc60b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancelled_request_ignores_late_response_and_next_reader_survives"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

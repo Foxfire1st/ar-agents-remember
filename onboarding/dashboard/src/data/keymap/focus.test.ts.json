@@ -1,0 +1,80 @@
+{
+  "path": "dashboard/src/data/keymap/focus.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cycle logic under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "773a54dd0e6201011e17b6dbca73b3d2e25ca148",
+            "content": "sha256:235fbdd0d25cba132c8390b97862abe6faad641a982c039dba76dda01fb780ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "FOCUS_REGIONS"
+            },
+            "path": "dashboard/src/data/keymap/focus.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "773a54dd0e6201011e17b6dbca73b3d2e25ca148",
+            "content": "sha256:b73da07fae0513fc580423eef2984f608229072f66fefa33c3d74a55b0b58c8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "nextRegion"
+            },
+            "path": "dashboard/src/data/keymap/focus.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The DOM-level F6/Shift+F6 counterpart over the rendered view.\n\nAnchor: \"F6 from the pty zone exits to chrome (the stage header)\"; \"F6 skips the default-closed inspector\"; \"Shift+F6 cycles backward\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146fd883ca07ba977ec4c76b484b166e4a6e2f7b",
+            "content": "sha256:abf6ba797ab1e6cb2d38299f77dbf85a1d2ffaeb34d1667f77f5e25b22c6b918",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "63eea4bd1f9d5462193341b7a1b75a2dc42e855b",
+            "content": "sha256:979c32ba63d496d3dda9b3dd4ef9bdd2a76c51314c0a40713fe69b7a3df47d1a",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "146fd883ca07ba977ec4c76b484b166e4a6e2f7b",
+            "content": "sha256:79969272d70ea27ea3c75d12979f76165f7b8c85790957e64547a781a5307ee6",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 254
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [worktrees/modules overview](../overview.md)
@@ -53,36 +43,26 @@ All execution crosses the R12 trusted launcher; no engine selection, private pro
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. CCR-R14@v3 requires every Dagger-backed certifying repetition to consume and bind the exact R12 host runner/store authority; the R12 authority contract is implemented by dagger_authority.py (CCR-R12). Task artifact paths are not repo-relative citations, so clauses are recorded as prose.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Certifying repetitions bind the frozen R12 host authority and never select, copy, replace, or privately provision infrastructure. | `_admit_authority`; `admit_dagger_authority` | mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py:295-354; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:933-989 |
+- Certifying repetitions bind the frozen R12 host authority and never select, copy, replace, or privately provision infrastructure. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner. | `admit_dagger_authority`; `AuthorityRegistry`; `release_dagger_authority` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:933-987; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-600; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:1115-1130 |
-| Validate a complete terminal catalog and publish one immutable gate disposition. | "def compile_gate_result_manifest" | mcp/src/agents_remember/certification/results.py:63-111 |
-| The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. | "class GateResultManifest" | mcp/src/agents_remember/certification/models.py:434-456 |
-| The durable final-codex store owns reservation, running, publish, and the CAS chain. | `FinalCodexManifestStore` | mcp/src/agents_remember/certification/final_codex/store.py:62-274 |
-| The lane projection gates certificate readiness for the run. | `project_final_codex_lane` | mcp/src/agents_remember/certification/final_codex/projection.py:88-113 |
-| The certification facade imports final-lane contracts and projections; the concrete run-control entry point belongs to the higher worktree quality module. | "from agents_remember.certification.final_codex import ("; "class FinalCodexExecutionEngine:" | mcp/src/agents_remember/certification/__init__.py:38-67; mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py:179-195 |
-| The controller passes each generated identity to an injected runner; identity generation uses the controller PID and is not itself process launch evidence. | `_run_repetition`; `_identity_for` | mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py:373-390; mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py:496-514 |
+- The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner. [2]
+- Validate a complete terminal catalog and publish one immutable gate disposition. [3]
+- The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. [4]
+- The durable final-codex store owns reservation, running, publish, and the CAS chain. [5]
+- The lane projection gates certificate readiness for the run. [6]
+- The certification facade imports final-lane contracts and projections; the concrete run-control entry point belongs to the higher worktree quality module. [7]
+- The controller passes each generated identity to an injected runner; identity generation uses the controller PID and is not itself process launch evidence. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here; the R12 authority is host-level and repository-external but consumed only through the R12 module boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The R12 host declaration/registry lives outside every repository and worktree and is never re-selected here. | `admit_dagger_authority`; `release_dagger_authority` | mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py:346-354; mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py:237-258 |
-
-## Update History
-
-- 2026-09-05T08:27+02:00 — L31 native curator: Corrected the nonexistent facade re-export claim and authority anchors; documented the distinction between generated identity records and fresh harness state supplied by the injected runner. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
-
-- 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass: created this card for the new CCR-R14 final real-codex run controller delivered in code commit 54ff803a; anchors and ranges derived from the current worktree source and pinned to that commit (tree aff2e268968397ab8db042a782652957a3600dda).
+- The R12 host declaration/registry lives outside every repository and worktree and is never re-selected here. [9]

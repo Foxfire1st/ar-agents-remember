@@ -1,0 +1,271 @@
+{
+  "path": "dashboard/src/data/sessionLifecycle.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The notice store and residual sweep.\n\nAnchor: \"for (const session of sessions)\"; \"if (!changed)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:3993f534015d8e08d9083f094fdaafbdd1cd898c581f36ac3f728c03efb45dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleNoticeStore"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:849a79d67428b55a896c95145d25d9b062d5fc148a8ba81a234915b9c103dc62",
+            "locator": {
+              "kind": "symbol",
+              "name": "sweepRetireResiduals"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:1c31486622f48dfee78e156a15ba53c8120e75cda8612541bbd3d03f9763f35d",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRetireResidualSweep"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The focused `endLandedDetailed (bulk cleanup honesty)` test covers the landed cleanup path.\n\nAnchor: \"endLandedDetailed (bulk cleanup honesty)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77902ee6a969c6672217fe296dc82f67437ad38",
+            "content": "sha256:81f56ebfe9c4a19521379f208939d820796532a72214ece8e09c5ccd94dda4fe",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "dashboard/src/data/sessionLifecycle.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The detailed terminate and bulk-end flows preserve server outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:126771f8b691fbad434b4fadaa6e0122d7f98f659b9a188132b1a12bd35d6891",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminateSessionDetailed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:546a766992e9e34e97dad2dd2d0c6dd56b769fd5ce3220e1801c02d3c0227dc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "endSessionDetailed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:42fa66350e22fa9fa79f4d4128927dd115c41cad0a409991b56e6e96fc5b3bd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "endLandedDetailed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The centralized terminate confirmation copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:8fea82b84d60f215fa13578b65b169088b15b21af66e5b855b5dce56a599bb72",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminateConfirmCopy"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The stage renderer of residual notices (dismissable `role=\"status\"` lines).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "625749adb97f54824224d953ebaea79b433714af",
+            "content": "sha256:2aaf2e4f6c1c432fb0c0f3031e46cdb0237e877dcd0cb400ede2625b14b71d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StopResidualNotes"
+            },
+            "path": "dashboard/src/panels/session-cockpit/StopResidualNotes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The rail consumers keep immediate single End and confirmed bulk End.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a48436d5903024f2eff3dd642ce4d9915a7b3762",
+            "content": "sha256:df0c19d1fd5ddd253894d22a981f54b5c543c3233ae34f57f12465e76cf21cae",
+            "locator": {
+              "kind": "symbol",
+              "name": "endSession"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a48436d5903024f2eff3dd642ce4d9915a7b3762",
+            "content": "sha256:76d21913572e4db2aa4bbf253b1ef465f8e13914d9e121cefca0fa19a2660fe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "endLanded"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a48436d5903024f2eff3dd642ce4d9915a7b3762",
+            "content": "sha256:cd97a64dc1b9b7ee7a84b776bd75c657e02a4f1b896d9745402a21d609738b03",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionRail"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a48436d5903024f2eff3dd642ce4d9915a7b3762",
+            "content": "sha256:7029f4983f1110e75d91ce9191292579034b1700855403c4b1e442f6b27bc00e",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The cleanup outcome notice is rendered by the dedicated landed-cleanup component.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2862c7253fabd8b4da6633a17aee9135985e4149",
+            "content": "sha256:f11906f047c6f97125dcedb634c7ca7685976a2461e16df10f2e8aeff9c9397a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandedCleanupNotice"
+            },
+            "path": "dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The view mounts the focus-independent sweep.\n\nAnchor: \"useEffect(() => startRetireResidualSweep()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:d2d52b8427612405f0c54000a7b50dbea7f39ca96092b7c4da5b4bdc1849b217",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 812
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`terminateTerminalSession` is the boolean-only predecessor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:dfd5ddac674912aeb2e9f7450e901fa96a47e765cf394fdbf82a02960dc222c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminateTerminalSession"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`subscribeSessionCatalogChanges` registers catalog-change listeners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "content": "sha256:1dc03bd74bcb6e3062849f9dd580335243842ca1bcf23dc69adce14cbc8429f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "subscribeSessionCatalogChanges"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "content": "sha256:030f5526e16656181571b028a76b888097a8079e500d6bf2c83a86c83c050666",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

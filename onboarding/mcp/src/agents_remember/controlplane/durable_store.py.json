@@ -1,0 +1,385 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/durable_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Current writer declaration, advisory ownership and compaction roles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:9b3d07bdf17d9bd2985743dbc9bb23b4f57bac652620508b9a4eeea9207a3474",
+            "locator": {
+              "kind": "symbol",
+              "name": "declare_process_role"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:4b2101040ea61780c5642640b2c071823f76000fadea025465e6717cd2d428f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_process_role"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:a7932cb1c5dcd2ae38fe2b12299731934e069b3fb5dfdc61e7c2cf485feb4463",
+            "locator": {
+              "kind": "symbol",
+              "name": "StoreOwnership"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Watcher exclusion derives the shared lock suffix and filters every directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:093ec519bb2c7448dd78d9f760e5b1413ef37f1d3a321d305c7467274f479446",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_projection_input_event"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Undeclared host admission leaves live coordinator lock and append writes refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3a9d500c8f3670ad27adfa63944ab6489c6ef15",
+            "content": "sha256:243aa186ad21e463c83464777d66478f1701201a4aacb1fe7748cba83c63e27e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused"
+            },
+            "path": "mcp/tests/test_dagger_registry_lock.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3a9d500c8f3670ad27adfa63944ab6489c6ef15",
+            "content": "sha256:d95adf3d4942c07eaa1f4bfbecf8648d1bd7b5796d2d66e0439279a1125b9672",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/tests/test_dagger_registry_lock.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Major equality and validated record base; tolerant rewrite policy is declared in the module front matter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_version_supported"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:592e3db0cf23a5975acd675c9f0ea4cd776f9197a5228977f32c151529dd34b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "DurableRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Guarded coordinator entry translates the shared capability failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_access"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The kernel owns lock naming, thread mutexes, nesting, capability and hold observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_path_for"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:67ef59667662f3d53dbc35e78d74c5edbd24fcccc140176be697ebc9c9c9586b",
+            "locator": {
+              "kind": "symbol",
+              "name": "thread_mutex_for"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:9a604f8ee478c8286e362f5e67c367511038768ed2af48b155599f47e91e93fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LockDepth"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:453d3b09cee82b3412379fb449e22269ec97d11c8dd64c39efe1e612b49d5aeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_lock_capability"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:915104295d8fa4d8973a118ed3314645db9b7e134d512c63302bf14e7f51085c",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_file_lock"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:938a7ee0fafc28cb146d0acc1fb7fb46383b87b1f68ba3708f3341c547450d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_held"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Rewrite refuses without a hold; append and rewrite targets retain containment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:18e19347826e5c2e9e70f9ba584a22c80264b29fda28921c215e951f9fd2e5ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_lock_held"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:e1d718a6ded42e98065391834cadac19262c3129198696927e3e3d48deecd580",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare_append_target"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:91f641457703ec5caa68ca3d04518070c53c3a51614b2498ef646661328de14a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_rewrite_access"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current raw read, single/batched durable append and atomic rewrite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:17f59a1bb0b5ecc96439d18353d2e83dbcede6f21f9c1ff6524a5f4dff55f738",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_log_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:41e194bf39925fd7ac0b4f8e8f1fe63a5298c6d0632a52760bd8eba22ff8b283",
+            "locator": {
+              "kind": "symbol",
+              "name": "append_line"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:c67f6aa78c07209098a7a490810a3a042f711c8a7b9a084e4a9cc52b37896907",
+            "locator": {
+              "kind": "symbol",
+              "name": "append_lines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:c9c7808b5010f0a0a197d1a8167b62768116043eb6483dec5b0c49a5b9a46e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rewrite_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Explicit migration validates every transformed record before replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:3bb5b7ab70ad8348952df536895cf62b2790aa98ad21a26c911a591c65f3c8a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "migrate_jsonl_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Per-call temporary names and atomic publication have one kernel owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53a3558f41f4a2bd4da0bbff2ba2674fe92b5a00",
+            "content": "sha256:0c52da8b0e53e84a3bb0cc20695eaf4cb4ab919c3ba6fe29f4073a4e91604221",
+            "locator": {
+              "kind": "symbol",
+              "name": "_temp_path_for"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "53a3558f41f4a2bd4da0bbff2ba2674fe92b5a00",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "53a3558f41f4a2bd4da0bbff2ba2674fe92b5a00",
+            "content": "sha256:d0c700917c9e903b462e26278ea741f52889300e8e516f44ce63136696510ddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_text"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "53a3558f41f4a2bd4da0bbff2ba2674fe92b5a00",
+            "content": "sha256:4cf5930ec964d7b4ef1fa82c802f354fed1c49f4af2b4eea25ac461abe1c8a9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fsync_directory"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The host registry has its own domain policy over the same exclusion primitive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:e1559ace39aa897386513e4fa11b0b38b52e80867efaafdd6111e9c718955ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityRegistry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

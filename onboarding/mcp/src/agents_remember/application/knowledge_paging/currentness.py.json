@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/currentness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: once per walk page, cut to each candidate.\n\nAnchor: \"Currentness for the pages of one walk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5cc7308bb3160db0349c4296921fe78ca367279",
+            "content": "sha256:eade0de7652a2e457ad8288fde6793d0a5489220ab680dea9623107a5ebb9a33",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one evaluation, and its failure document.\n\nAnchor: `evaluate_answer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5cc7308bb3160db0349c4296921fe78ca367279",
+            "content": "sha256:61016c2b2b16a61ae9f1172630ff5802b597f4f029d33a9357af25ea51075d04",
+            "locator": {
+              "kind": "symbol",
+              "name": "WalkCurrentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A candidate's subset block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5cc7308bb3160db0349c4296921fe78ca367279",
+            "content": "sha256:a9e16171565f1b899a142312d67a75697cd3b649b94745f9fdcdfb468074a98d",
+            "locator": {
+              "kind": "symbol",
+              "name": "document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The subset as an object, for the merge with a leaf subset (MIK-R01).\n\nAnchor: `subset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5cc7308bb3160db0349c4296921fe78ca367279",
+            "content": "sha256:d80204ea93537c77789112e4883b9c71eafc75b6bb2eb0081aa9553ccaff679d",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

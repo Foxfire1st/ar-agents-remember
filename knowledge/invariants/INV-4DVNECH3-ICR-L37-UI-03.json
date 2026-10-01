@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Source exploration for a comparison with a measured source inventory.",
+  "conditions": [
+    "Attribution labels come from the backend: the mapped and unmapped partitions of a dataset review, or the lane's file buckets of a tree comparison, shown as pending while the lane is being read.",
+    "Semantic navigation may select expressions but does not filter the source inventory."
+  ],
+  "exclusions": [
+    "Unlisted continuation pages are not counted as already rendered.",
+    "A path absent from both attribution partitions is unknown, not inferred unmapped."
+  ],
+  "id": "INV-4DVNECH3",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "90cf7d8f-372b-40ae-b622-c4aa75286c5f",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "The complete changed-file inventory remains reachable independently of semantic selection, with mapped, unmapped and unknown attribution stated from the backend's classification: the mapped and unmapped partitions of a dataset review, and the unexplained-changes lane's per-file bucket of a tree comparison.",
+  "status": "proposed",
+  "supersedes": []
+}

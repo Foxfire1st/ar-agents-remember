@@ -1,0 +1,169 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_intent_summary.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+        "content": "sha256:b3b3d0304191ed5d8827108783c73c2b12de3dfd88ba02b272f7c884d1f27996",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewIntentSummaryResult"
+        }
+      },
+      "id": "RLZ-47N0FGAH",
+      "invariant": "INV-R93S8Y30",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Its validator makes an unavailable summary carry a refusal and no counts, a counted or partial summary carry counts and no refusal, and 'partial' hold exactly when counts.unresolved is above zero, so an unread comparison cannot be serialized as +0 −0.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The three answer states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "content": "sha256:4f617e8dd4e73ec34cb5e671b7a110855824bdb8960d69d752d5cf162c8ae936",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One kind's after-only/before-only head counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "content": "sha256:d242582924b4b6eb1aefe7aad76bb5740e3680a7853f5db2842f6c8a1b79a728",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentHeadChanges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The counts, the typed counts outside plus/minus, and the sum check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "content": "sha256:02d21894567b1c4caf78a3e0b8df8185ce981a3b817fd86c3a6a6432307d4381",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentCounts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "content": "sha256:04a5b2118e674b4df9faa483b0a18e889aafedd701fd4d393e6d088aca066097",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_totals_to_be_their_parts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exactly one outcome per state; unavailable carries no counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "content": "sha256:b3b3d0304191ed5d8827108783c73c2b12de3dfd88ba02b272f7c884d1f27996",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "content": "sha256:6bfe55c6504fe2f9e1c759b7b88ce93fbe6a2584ee19fe44ab29800bd25eb5ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The lane's entry count, for a tree comparison only (MIK-R32 rule 9).\n\nAnchor: \"A tree comparison (MIK-R25) also carries\"; \"attribution: ReviewLaneSummary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "content": "sha256:73ebdd7bf312fcd5875993c4d7b85ce4fe2985f3aa1ab15a9c0a54f423cf997e",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e131e4295c677d11b892549406df6c26ea52c2dd",
+            "content": "sha256:f39d9d13319067e12a97d986d441116c44418403eb48126753172392663eb53b",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The dashboard's mirror of this shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:34c1b82d034aad49467300081f0fbb5b04b15c43117c58adbb451073e437a310",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryResult"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:b40ecffaa5128d54b1dfa64768b2c48fd623dca66e034c5d4b447be9e40e3302",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentCounts"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

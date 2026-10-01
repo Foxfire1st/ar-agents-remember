@@ -1,0 +1,150 @@
+{
+  "path": "dashboard/src/panels/review/changeTraversal.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement: stops, ends, the partial-family stop and the keymap binding.\n\nAnchor: \"The stops are the tree's own nodes in displayed order\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:b7649b0f8bc764eb20600c990293f122a0ff2a7c06f0bc9afc55196ebe42ec76",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Items, their occurrence and whether each stops.\n\nAnchor: \"stop: continuation ? unreturned : primary !== undefined && primary !== 'unchanged',\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:3139e238afa80bfa91f918f2af005bccbd3424da6d1c344d40d2ac9f7ca16ea9",
+            "locator": {
+              "kind": "symbol",
+              "name": "itemsOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Where the reader is, and the forward and backward walks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:4bbcfc2c5fe239de6ecdd4f67d8b4da125ac7bc0084e08c2990bf8e69f6fc0e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "positionOf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:3c09dbed5bb062ab09e48dc731d537329b4b682e9963ce31cf9c1e71c257d436",
+            "locator": {
+              "kind": "symbol",
+              "name": "stopsForward"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:0eb9bbd2a2cc6669a3c686ffd10d710542006ef5452cb3c9121f678d25711e3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "forward"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:99b76cbd7ee3664ceee1afdbdb8271c54896e2c31183a2ffb77e8d5b75b50c63",
+            "locator": {
+              "kind": "symbol",
+              "name": "backward"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The next stop and the polite messages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:6fe520444a058ae2686dbbe9b10e1720a255b57b3b7f1a2267174a886f81adc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "nextChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:f0a31d9c76a7f2eaf908be6d2a1d260859f88d35e2e14b60a2624d5384d63bc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "outcomeMessage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A move (focus, then select; an end scrolls the selection into view) and the zone binding through the keymap owner.\n\nAnchor: \"tinykeys(zone, map, { ignore: () => false })\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:b09b899d12bede8ef634dd7e5e11e2690529b253e7843d7c07a96352e714a96f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeTraversal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The reviewer's zone on the surface root.\n\nAnchor: \"data-kbzone=\\\"review\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:58dbde1ded845fd81a69214ca4d3c3ec14e89657568feb0a917dc96f9a18ee12",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 547
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

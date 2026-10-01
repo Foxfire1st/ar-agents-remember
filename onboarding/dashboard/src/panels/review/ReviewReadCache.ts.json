@@ -1,0 +1,305 @@
+{
+  "path": "dashboard/src/panels/review/ReviewReadCache.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+        "content": "sha256:80fa789e9ed0f0485d84ae13c3c95f7ebb77d4f53aed847098394632276a28b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewReadCache"
+        }
+      },
+      "id": "RLZ-QAKHFKHZ",
+      "invariant": "INV-MC654E0T",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Owns the two bounded stores, the generation rule that empties them, and the rule that only answers (never refusals) are kept.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of what is kept, under which key, when it is dropped, and its bounds.**\n\nAnchor: \"WHAT IS KEPT, AND UNDER WHICH KEY\"; \"WHEN IT IS DROPPED\"; \"BOUNDS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:96bd0a7a17bf5fbb8a3152261527288e88d45170316551fed5e4b44db4fa5781",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The surface owns one cache and provides it.\n\nAnchor: \"new ReviewReadCache()\"; \"ReviewReadCacheContext.Provider\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:3b851b48f28251be0fccb422a491486d50dceed2348a047b151e513d79ffdac9",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 475
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:cb4084938560d0dbf70f470f707d28a0fcd6cfad905f2c25ebf8ee9bd3b29872",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 555
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The content renderer reads through it under the request key.\n\nAnchor: `sourceContentKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSourceContentRead"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The bounds, refusal, generation and key cases.\n\nAnchor: \"keeps at most the bound of reviews and evicts the least recently used (%i inserted)\"; \"empties both stores when an answer belongs to another comparison generation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fadc7bfd99c25a68b54cf9a21b7b62bc2e8e894b",
+            "content": "sha256:b01198b909739699d667662ff6ac11a10d9398804dbcd409d2e3ef5113fb116b",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two bounds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:e23c9fffb91786b70f478e9fa62606c2e97fe76f143d98031b2c8ca00575fb09",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_CACHE_LIMIT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:9548dc5972046f4df005ba1f846ab4b1be6a1786414de629f130307b51d85022",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_CACHE_LIMIT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The least-recently-used store: recency refreshed on read, oldest evicted on write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:a53eec38fc524a718bad750a78a7a8d714567413349021b550b695ab51d4ceae",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The generation of a payload: code trees, and snapshots only when knowledge was compared.\n\nAnchor: `knowledge_compared`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:f1e77d298b4b7382b5d23f1b8591951d3160b203a709f835656a58e7a50ad1f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparisonGenerationOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Two generations differ on code trees, or on snapshots when both compared knowledge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameGeneration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The content key is exactly the request's fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:258cc647bf202adc5dc0da0e4a7e69cf2a8e39f965230237d5a5f9e4feacec2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sourceContentKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cache: observe empties both stores on another generation; only content answers with an expansion are kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:80fa789e9ed0f0485d84ae13c3c95f7ebb77d4f53aed847098394632276a28b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCache"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:8055b29464cf72eac01d189162c65f6f85686e52738526e32679a60998486137",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:70467ba98a237cca0fb0aa9f0586d67b3df1d88659e71a6b3e4a43281a5ac346",
+            "locator": {
+              "kind": "symbol",
+              "name": "keepReview"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:cfaf5af8fafe7e8c97d6b2397509bc1c68543d6fcd5b48bec9a9b532314b14d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "forgetReview"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:a740d3052df748d7f531ad89c2097e4bf54ad7b3bfcc26a384449d1f69c59f4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "keepSource"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The context the content renderer reads it through; `null` outside a surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:874ec9bcb067a10e432e2cd1ff53305de4c70fefebbe03e4f3a9f5244d2d2f29",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCacheContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The read cycle serves, keeps or only observes answers, and a refresh forgets its question.\n\nAnchor: `keepReview`; `observe`; `forgetReview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:66c6fb4afc210ebef8199ba3c541db6eef69f04b5104818b9eb879a966b7ebb8",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation/store.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/conversation/store.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T09:56+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data/conversation overview](overview.md)
@@ -68,33 +58,29 @@ The orchestration suite now covers the exact six-warm-chat LRU bound, slow boot 
 resume escalation, and the preservation of warm conversations across refocus without an eager
 disconnect.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The store orchestration under test (`connectConversation`, `disconnectConversation`, `enforceLru`, and `failStream`) records typed stream errors in `errorBySession`. | "failStream: (sessionId"; "return { bySession"; `connectConversation`; `disconnectConversation`; `enforceLru` | dashboard/src/data/conversation/store.ts:164-164; dashboard/src/data/conversation/store.ts:171-171; dashboard/src/data/conversation/store.ts:637-682; dashboard/src/data/conversation/store.ts:684-700; dashboard/src/data/conversation/store.ts:889-906 |
-| The `FakeEventSource` is a no-op `EventSourceCtor` transport double; the F15 case passes it as `eventSourceCtor`. | `FakeEventSource`; "A no-op EventSource"; "eventSourceCtor: FakeEventSource" | dashboard/src/data/conversation/store.test.ts:38-42; dashboard/src/data/conversation/store.test.ts:39-42; dashboard/src/data/conversation/store.test.ts:385-385 |
-| The F15 first-connect case records the server's typed error and leaves no fabricated projection. | "threads the server's typed error to the store on a first-connect page failure (F15)" | dashboard/src/data/conversation/store.test.ts:382-394 |
-| The shared page/status/identity builders the fake `fetch` answers with. | `conversationPage`; `conversationStatus`; `conversationIdentity` | dashboard/src/test/fixtures/conversationWire.ts:172-185; dashboard/src/test/fixtures/conversationWire.ts:187-207; dashboard/src/test/fixtures/conversationWire.ts:228-243 |
+- The store orchestration under test (`connectConversation`, `disconnectConversation`, `enforceLru`, and `failStream`) records typed stream errors in `errorBySession`. [1]
+- The `FakeEventSource` is a no-op `EventSourceCtor` transport double; the F15 case passes it as `eventSourceCtor`. [2]
+- The F15 first-connect case records the server's typed error and leaves no fabricated projection. [3]
+- The shared page/status/identity builders the fake `fetch` answers with. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 ## 260727-CHATS-IM-L2 Child-Hydration Regression Delta
 
@@ -104,43 +90,3 @@ exported `AGENT_HISTORY_CHILD_LIMIT`, not as a repeated literal — with visible
 (cit:(["bounds concurrent and retained selected-child bookkeeping per session"], dashboard/src/data/conversation/store.test.ts:127-174)). Its three-row `it.each` (cit:(["keeps a $label failure child-scoped and retryable while the parent stream stays live"], dashboard/src/data/conversation/store.test.ts:176-243)) preserves non-2xx, network, and timeout reasons as
 child-local state while the parent stream stays `live` and `errorBySession` stays clear, and each row
 then proves a retry recovers without changing the parent stream.
-
-## Update History
-
-- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): narrowed the `FakeEventSource` claim to its two-method `EventSourceCtor` transport double plus the use-bearing F15 `eventSourceCtor` handoff line; the `connectConversation` call context stays documented in the F15 row (382-394); the scoped fixer regenerated the final extents.
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 6 citation claims; scoped citation check now passes.
-
-- 2026-08-01T09:56+02:00 — 260731-EFA-L4 curator: corrected two body claims and re-anchored the
-  IM-L2 delta's citations. (1) "Four vitest cases" was stale by four rounds of growth — the source is
-  seventeen `it` cases plus a three-row `it.each` across five describes. (2) The delta section listed
-  four table-driven error reasons ("non-2xx, invalid payload, network, and timeout"); the `it.each`
-  table (cit:(["keeps a $label failure child-scoped and retryable while the parent stream stays live"], dashboard/src/data/conversation/store.test.ts:176-243)) carries three, and there is no invalid-payload case anywhere in the file. The
-  64-request/64-state bound in the same sentence checks out and is kept — `AGENT_HISTORY_CHILD_LIMIT`
-  is 64 (cit:([`AGENT_HISTORY_CHILD_LIMIT`], dashboard/src/data/conversation/store.ts:46-46)) and the case asserts through the constant.
-  The diff against `abc7cbc` removed seven lines from the fixture block, so L66-L99 / L101-L131 /
-  L133-L180 had all slid off their cases — re-anchored to L59-L92 / L94-L124 / L126-L173. Recorded
-  in Invariants what the fixture swap actually replaced: `capabilities: {} as unknown as
-  ConversationCapabilities` (an empty tree against a model declaring twenty-three filled leaves) and
-  a `status` cast past five of its six fields. Left every behavioral bullet untouched after checking
-  the consumers — `data/conversation/store.ts` never mentions `capabilities`, `reducer.ts` never
-  mentions `capabilities` or `totalItems`, and the only `.status` this suite asserts on is
-  `errorBySession.s1.status` at L309 (the F15 `cursor-reset-required` case), which comes from the
-  error body and not from the page fixture at all.
-
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded selected-child routing,
-  singleflight, capacity, visible failure, and recovery coverage. Verification metadata remains
-  pinned while uncommitted.
-
-- 2026-07-24T13:17:50Z — Added current recovery and warm-LRU regression coverage. Verification
-  hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the fourth vitest case — the R10
-  transient boot-race retry. The suite now pins the cried-wolf honesty boundary: a hard 4xx (409
-  epoch-rolled) fails loud immediately, a transient 503 retries quietly on the `connecting` phase and
-  never flashes the fail-loud alarm. Verification stays pinned; the L5F change is uncommitted and
-  closeout re-stamps.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the store-orchestration
-  proof (F4/F15) — keep-alive across disconnect, bounded LRU with rehydrate (runtime-less only), and
-  typed first-connect error threading with no fabricated projection. Verification is pinned to the
-  leaf base (`0be0099`) because the new source file is uncommitted; closeout owns its first source
-  stamp.

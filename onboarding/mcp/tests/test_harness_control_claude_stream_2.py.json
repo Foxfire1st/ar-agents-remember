@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_harness_control_claude_stream_2.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Model and effort set require terminal echo and update model gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b21bf0839c5fb00ca5d353b74b9a86ae9a8d872",
+            "content": "sha256:454f1a6842da32e2e8a68bb1edd38e10971a8ba18f450af563f1ec1f241da881",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_model_and_effort_set_require_terminal_echo_and_update_model_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Set timeout neutralizes late replay before a clean retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b21bf0839c5fb00ca5d353b74b9a86ae9a8d872",
+            "content": "sha256:f153a7d24f1330670fde138c49de900f4ede0b7ac2c365858438e5aa45582dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_set_timeout_neutralizes_late_replay_before_a_clean_retry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Disconnect reconciliation stays unknown and never resends.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b21bf0839c5fb00ca5d353b74b9a86ae9a8d872",
+            "content": "sha256:b80fc51b97c2ac5dce99521725572f6fa49079c44ff0bb19c6a889abf8e582ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_disconnect_reconciliation_stays_unknown_and_never_resends"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Late replay reconciles unknown from structured history without resend.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b21bf0839c5fb00ca5d353b74b9a86ae9a8d872",
+            "content": "sha256:9b8b301daa132f953dfef807f4f03cc897179a2890316da6d4b4818cbb49d627",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_late_replay_reconciles_unknown_from_structured_history_without_resend"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Nonzero process exit maps to failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b21bf0839c5fb00ca5d353b74b9a86ae9a8d872",
+            "content": "sha256:9784b062a2063325b741cf6b9c05eef1085b7a6e18fdc4a687e3efd3fdf7a02f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nonzero_process_exit_maps_to_failed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Forced stop reclaims a reader blocked by full event queue.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b21bf0839c5fb00ca5d353b74b9a86ae9a8d872",
+            "content": "sha256:d44f9dabb705e47c4b3509f1dd4e5edb0fbb6791c6384a7a3e087b43fcf9b878",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_forced_stop_reclaims_a_reader_blocked_by_full_event_queue"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/child_processes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retention is idempotent for the same object, refuses PID aliasing, and starts one waiter.\n\nAnchor: \"def retain(self, process: subprocess.Popen[Any]) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b7f273bd57096469e3fa9d0ee0ebc5bb20c16a3",
+            "content": "sha256:963d9753991ff67291af20bd02f84f4ac91e3686ad67131747169d81d7915490",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The waiter reaps through `Popen.wait()` and releases only the exact retained owner.\n\nAnchor: \"def _wait_and_release(self, process: subprocess.Popen[Any]) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b7f273bd57096469e3fa9d0ee0ebc5bb20c16a3",
+            "content": "sha256:25da85525f264fd9414c3ffcd8de3f51a3bb38982cebfd15e2680398fd649a3f",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Lifecycle launch transfers the real child object to this owner.\n\nAnchor: \"def retain_detached_worker_child(process: subprocess.Popen[Any]) -> None:\"; \"retain_detached_worker_child(process)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02e042c8020bde458d9d465e4951a4689d3656e5",
+            "content": "sha256:566f8736842038892be1729f49d668e067e95b773ab3a0d3df76311bd4f26ca5",
+            "locator": {
+              "end": 987,
+              "kind": "line_range",
+              "start": 987
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b7f273bd57096469e3fa9d0ee0ebc5bb20c16a3",
+            "content": "sha256:bb394bf4236ffefb5df8f52b86a12bf0d96520eb0f003915d7cfc2c7a49bd084",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

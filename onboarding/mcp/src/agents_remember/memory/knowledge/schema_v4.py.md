@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/schema_v4.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/schema_v4.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -114,58 +104,36 @@ constants, and each is a member of the generation record `schema_generations.GEN
 None recorded. Generation 4's own fingerprint is computed by composition in `schema_generations.py`
 rather than recorded here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The ordered appended-table tuple whose prefix rule makes generation 4's manifest begin with generation 3's twenty tables. | `APPENDED_TABLES` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:45-47 |
-| The declared column order the encoder serializes rows through. | `APPENDED_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:49-56 |
-| The declared composite primary key, which is also the encoder's row-ordering tuple. | `APPENDED_PRIMARY_KEYS` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:58-62 |
-| **The declared-but-empty typed-JSON mapping, so "no JSON column" is stated rather than inferred.** | `APPENDED_JSON_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:64-71 |
-| **The one `STRICT` `CREATE TABLE`: ordinal in the key, the unique signal key, the checked position and the two composite foreign keys to the envelope.** | `APPENDED_TABLE_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:73-93 |
-| The one reverse-direction index, covering "which runs recorded this signal". | `APPENDED_INDEX_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:95-99 |
-| **The two immutability triggers, with the shared `immutable_revision:` prefix and the two distinct refusals they raise.** | `APPENDED_TRIGGERS`; "immutable_revision: a recorded detection sequence cannot be reordered" | mcp/src/agents_remember/memory/knowledge/schema_v4.py:101-116 |
-| The declared-but-empty feature tuple, so "no new SQLite feature" is stated rather than inferred. | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v4.py:118-123 |
-| **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** | `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:330-338; mcp/src/agents_remember/memory/knowledge/schema_generations.py:341-341 |
-| **The registry whose last entry is the newest supported generation — generation 8 since `KS-R13@v1` renumbered its append, so the created store declares 8 while a generation-7 dataset keeps declaring 7 — and the created generation it names.** | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447; mcp/src/agents_remember/memory/knowledge/schema_generations.py:459-469; mcp/src/agents_remember/memory/knowledge/schema_generations.py:482-482 |
-| **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178 |
-| **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** | `_compose_generation_4`; `GENERATION_4` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:330-338; mcp/src/agents_remember/memory/knowledge/schema_generations.py:341-341 |
-| The registry whose last entry is the newest supported generation, and the created generation it names. | `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447; mcp/src/agents_remember/memory/knowledge/schema_generations.py:459-469; mcp/src/agents_remember/memory/knowledge/schema_generations.py:482-482 |
-| **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178 |
-| The write path that inserts the sequence rows under this table's composite keys. | `_write_run` | mcp/src/agents_remember/memory/knowledge/detection.py:316-348 |
-| **The case that measures the additive rule, the append order, the `STRICT` shape, the key tuple and the two triggers.** | "test_generation_4_appends_only_and_the_first_twenty_names_are_generation_3_s" | mcp/tests/test_knowledge_detection_signals.py:724-751 |
+- The ordered appended-table tuple whose prefix rule makes generation 4's manifest begin with generation 3's twenty tables. [1]
+- The declared column order the encoder serializes rows through. [2]
+- The declared composite primary key, which is also the encoder's row-ordering tuple. [3]
+- **The declared-but-empty typed-JSON mapping, so "no JSON column" is stated rather than inferred.** [4]
+- **The one `STRICT` `CREATE TABLE`: ordinal in the key, the unique signal key, the checked position and the two composite foreign keys to the envelope.** [5]
+- The one reverse-direction index, covering "which runs recorded this signal". [6]
+- **The two immutability triggers, with the shared `immutable_revision:` prefix and the two distinct refusals they raise.** [7]
+- The declared-but-empty feature tuple, so "no new SQLite feature" is stated rather than inferred. [8]
+- **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** [9]
+- **The registry whose last entry is the newest supported generation — generation 8 since `KS-R13@v1` renumbered its append, so the created store declares 8 while a generation-7 dataset keeps declaring 7 — and the created generation it names.** [10]
+- **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** [11]
+- **The generation record this module's data is composed into, and the append that keeps generation 3's prefix intact.** [12]
+- The registry whose last entry is the newest supported generation, and the created generation it names. [13]
+- **The envelope registry the two detection payload shapes are registered in, which is why this generation appends one table and not a record group.** [14]
+- The write path that inserts the sequence rows under this table's composite keys. [15]
+- **The case that measures the additive rule, the append order, the `STRICT` shape, the key tuple and the two triggers.** [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T18:04:10+00:00: 260915-KS-L23 residue clearance (seat A, follow-up): removed a byte-identical repeated Source from the two rows that name `_compose_generation_4` and `GENERATION_4` (`mcp/src/agents_remember/memory/knowledge/schema_generations.py:330-338` and `mcp/src/agents_remember/memory/knowledge/schema_generations.py:341-341` each appeared twice in one Source cell). The checker's `citation_source_duplicate` asks for exactly this -- "Keep one copy: repetition adds no pooled evidence" -- so each row now cites `:330-338` (the composition's own extent) once and `:341-341` (the generation declaration) once, which is also the anchor-for-anchor pairing the row names. The removed text was a byte-identical repetition of the kept citation: no anchor, range, row or claim was deleted and no wording changed. Verification stamp not advanced: the code is uncommitted and closeout owns the stamp.
-- 2026-09-18T17:54:35+00:00: 260915-KS-L23 residue clearance (seat A): four rows repointed to the extents their own anchors now occupy. `_compose_generation_4`; `GENERATION_4` @ `schema_generations.py:301-309; :312-324; :320-327; :338-338` -> `:330-338; :341-341; :330-338; :341-341` — the cited lines now hold the composition function (its declaration `def _compose_generation_4(...)` and the `_append_generation(base=GENERATION_3, ...)` call it makes) and the `GENERATION_4 = _compose_generation_4()` registry assignment; `GENERATIONS`; `CURRENT_GENERATION` @ `:456-456; :479-479` -> `:459-469; :482-482` (both copies of the registry row) — the new ranges hold the registry tuple `GENERATIONS: tuple[SchemaGeneration, ...] = (GENERATION_1 … GENERATION_9)` and `CURRENT_GENERATION = GENERATIONS[-1]`. Each claim was re-read against the construct its row names; wording unchanged, no anchor, citation, range or claim deleted, and the verification stamp is not advanced: the code is uncommitted and closeout owns the stamp.
-- 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 1 claim(s) here (1 x citation_claim_reopened). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `_compose_generation_4`; `GENERATION_4` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:309-317; mcp/src/agents_remember/memory/knowledge/schema_generations.py:320-320. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `PAYLOAD_MODELS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:118-157. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T06:30:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 1 generated projection bullet(s) by hand** — `GENERATIONS`, `_compose_generation_4`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
-
-- 2026-09-18T05:45:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `PAYLOAD_MODELS`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
-
-- 2026-09-18T04:05:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): **re-read the registry claim against the construct as it now stands.** `KS-R18@v1` appends generation 5, so `GENERATIONS[-1]` — the entry a created store declares — is generation 5 rather than generation 4, and the claim now states that consequence explicitly instead of leaving the reader to infer it. The one range the mechanical pass had left naming a single line twice is corrected to name the registry's own lines and the assignment's, so each row's anchor resolves to one extent. No other row of this card was changed. Verification metadata advances to the leaf's base commit `e963a01c` because the claim was re-read against the current source; the code commit does not exist yet and closeout owns that stamp.
-
-- 2026-09-18T03:15:00+00:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): created this one-to-one card for generation 4's appended table. It records the one-table append and why: the detection payload shapes are registered in the record envelope, so what the envelope cannot express — the *sequence* — is the only thing this generation stores. It records `ordinal` in the primary key together with `UNIQUE (repository_id, run_id, signal_id)` as the two constraints that make the declared total order over signal identity a table property rather than a write-path habit, the two composite foreign keys to `knowledge_record` that keep attribution structural, the two immutability triggers with their shared `immutable_revision:` prefix and their two distinct messages, the declared-but-empty typed-JSON mapping and feature tuple (absences stated rather than inferred), and the prefix equality `GENERATION_4.tables[: len(GENERATION_3.tables)] == GENERATION_3.tables` that is the whole additive rule. Verification metadata is the leaf's base commit `4264dcc9`: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

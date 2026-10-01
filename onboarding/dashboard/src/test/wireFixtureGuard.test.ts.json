@@ -1,0 +1,458 @@
+{
+  "path": "dashboard/src/test/wireFixtureGuard.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The framing and three responsibilities the mechanism cannot supply itself.\n\nAnchor: \"a test whose fixture is authored by the consumer cannot detect producer drift\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:16053c92f8380b4ed0cb75c194d15173264a16112e1284269646e1f9a3fd12ab",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The five-rule mechanism and discovered vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:7af3dc70814d534f52c9a90d99ad84b3480187fb178b7432c1dad589e1bb8f2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "wireTypeNames"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The guard's documented uncovered-evasions section names `ElementAccessExpression`.\n\nAnchor: \"WHAT THIS DOES NOT COVER\"; \"ElementAccessExpression\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:af994e03936b14b21ced4609ea8f1d7b5177460e2a2b5c2d7632bd27104efcae",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:07e91ef16eef0599513f71f3de2a9e14340d6650bcec40fb235f84b748980133",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "`SubTaskRow` is the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:1de5db4b96d7237e56eaa8a3137a8d59d1f15bcffb40093cf54a0435b21a76f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubTaskRow"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The `StateCountField` mirror-internal cast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:48e3e062679eeb8c25c438d63cff60432f503bc4cc2c65b9f430962c1b2aba11",
+            "locator": {
+              "kind": "symbol",
+              "name": "StateCountField"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The `LifecycleStateCounts` mirror-internal cast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:b6804561ec905cf59ad4c54013af8009ff2f4e76ddc7da6dda957bcded54b8a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleStateCounts"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The sanctioned narrowing the registry names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:12df43ff00e9127957d3b1b6424e4bd3dd39c9d43b08489a2906d08c6dee0cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "asServedProjection"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The `ActivePageCursor` brand mint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:1b06cd3fefac8edba1018607abc9616c7e28c86fd24d7888f8796b4b9b849b2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "pageCursor"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The `ActiveEventCursor` brand mint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:528d616eb6c23f7e258d7492a41d0d53dfeaee3eb279af578aef7842b463078c",
+            "locator": {
+              "kind": "symbol",
+              "name": "eventCursor"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The `LibraryConversationKey` brand mint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:8fe0c47d69a195c5da0c545119075421c966f12c5f1b2e2f4c8c22e663efdaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "libraryConversationKey"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The contract uses @ts-expect-error to assert that master references cannot have createdAt.\n\nAnchor: \"void masterRow.createdAt;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:90c79415bdc50e13725b2efc9b9b76d6d541e7e91290a0ca2433238e18845d8d",
+            "locator": {
+              "end": 651,
+              "kind": "line_range",
+              "start": 651
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sanctioned-site registry and its four groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:6fb3069befefdbf0b993642000d2799d21ed30e2d0319e6c669b5c44fc852211",
+            "locator": {
+              "kind": "symbol",
+              "name": "SANCTIONED_WIRE_SITES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The contract uses @ts-expect-error to assert that series rows cannot have linkedLifecycleId.\n\nAnchor: \"void seriesRow.linkedLifecycleId;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:b976d58c83e4a8bf33dba7e49088e688e2dde8c0f531b58ed01d072f103c6133",
+            "locator": {
+              "end": 653,
+              "kind": "line_range",
+              "start": 653
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The contract test suppresses the carried `refusedPolarity` property.\n\nAnchor: \"edge.refusedPolarity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
+            "locator": {
+              "end": 672,
+              "kind": "line_range",
+              "start": 672
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The deliberate widening in the topology suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc6fb6b3965455daef6cf4a161aca8221a6c4f1",
+            "content": "sha256:a97a29b082ace29d54ea262a3968235c08e6964e830ab1deaa991bbd929e135f",
+            "locator": {
+              "kind": "symbol",
+              "name": "fromANewerServer"
+            },
+            "path": "dashboard/src/topology/model.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "KNOWN GAP, live: the inline `HarnessInfo` response shape is outside the marker vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c87a333fcbc7605dad19267d7e48d7a354c2ee22",
+            "content": "sha256:382700cf19eb12ff3bc2d9c824123434a38f606118f4c2991885d37aa479e85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessInfo"
+            },
+            "path": "dashboard/src/data/harnessCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "KNOWN GAP, live: `WithdrawalResultWire` is outside the marker vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e62d3c995f9eae68a7efc0cb2afa1a2a075cc492",
+            "content": "sha256:a8acdda61ebb4663e054423f40ff03141bacead29070dffedb349474e4092c9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "WithdrawalResultWire"
+            },
+            "path": "dashboard/src/data/submissionLifecycleClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The sweep is built from the in-repo dashboard root and scanned source files; nothing outside this repository is read.\n\nAnchor: `dashboardRoot`, `dashboardSourceFiles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:d93f1e46d9474e2664d0ff74b0cd8982658c23e4b6c794c373db50f8e00d44ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardRoot"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:fae2416913e7169a85f6166b5a097c5c51fb2b77965bd4adc3a6e7f794ca1943",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardSourceFiles"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real-tree sweep derives its discovered vocabulary with `wireTypeNames(program, ROOT)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:f361358cf34b5ea79891cef1a9371928a9d955207dce0d01815b4830b1cfbc81",
+            "locator": {
+              "kind": "symbol",
+              "name": "vocabulary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The vacuity suite's fixture-surface checks.\n\nAnchor: \"classifies the fixture surface the rules are strict on\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:691be2a559191a27b4805bdc9d94dcd3ff033cab980fdbd1ce29a1685e05eb7a",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reconciliation over the real tree.\n\nAnchor: \"no dashboard test asserts against a payload the server cannot produce\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:c4d24e9efefe12c6a030a86b9595c3bc0ab0a2d1766051b7d4dbe792c635a158",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 266
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The virtual planted modules and honest forms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:c43a2663afb3512509c59bbc8031a89e37280f455590fe5480bb4a8f2081d44c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PLANTED_FILES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each rule shown biting, including cross-module and unresolved-name cases.\n\nAnchor: \"the guard is shown able to fail\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:baffacbc984d819e9871d3c3631ade8945f0dbe3278a4f86461ed47dabfbd549",
+            "locator": {
+              "end": 584,
+              "kind": "line_range",
+              "start": 468
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Zero findings on the honest forms.\n\nAnchor: \"the guard leaves the honest forms alone\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:7463c38cb94ebaf84425b625e7534c6e0ae29ba651e1fa6ebec21f994526e94b",
+            "locator": {
+              "end": 593,
+              "kind": "line_range",
+              "start": 586
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The registry reconciliation unit cases.\n\nAnchor: \"the registry cannot be quietly outgrown\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:c84e3294eb70cf03cd2e5186d7c75cce8c41e64b6f4bebb25b7de8cb892e1c7f",
+            "locator": {
+              "end": 626,
+              "kind": "line_range",
+              "start": 595
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

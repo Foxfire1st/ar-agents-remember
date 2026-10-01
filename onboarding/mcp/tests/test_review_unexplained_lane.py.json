@@ -1,0 +1,349 @@
+{
+  "path": "mcp/tests/test_review_unexplained_lane.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The ten changed paths the fixture comparison holds.\n\nAnchor: \"the same throughout:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:8391083dfd04d40a022a8c4dfe36ad2ad96a6c68d11e9ee964f8f4ca255c1806",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Bounded reasons (review F4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:931e0b9237960a1240cbb2108aa64677f8512b886405414ff5e938bd8ac87198",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reason_names_a_bounded_number_of_entries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Unmeasured change sets carry no count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:5d1b38ca56c7c5042d77a1192a756a4abcad3d7d7d5403bcc9b9bf28c018c580",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unmeasured_change_set_has_no_count"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "One focused question per request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:db66bf51b92bc44c8d2a9cbd1af37e8cd334952e209d3ab2fe380227f286ecb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_asks_one_focused_question_at_a_time"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The live tree leaf, and long paths answered typed (review F2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:a41f10fa157c5828acde96f7c3d00513c32be7fc6b37a5dc9f1edfee7bf35001",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_live_tree_leaf_serves_the_lane_and_its_entry_count"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:b7ba64ec2358030e3d527b9f74eabc43a20c839bcd467eb8bfb602a29ec545bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_long_paths_are_typed_refusals"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A dataset review's entry has no attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:d84cb286fa364b7acd14e99c5625f3d5fd7ddb6a86feb9b6a5ee613425ca736f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dataset_review_entry_carries_no_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The module's lane row.\n\nAnchor: \"mcp/tests/test_review_unexplained_lane.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:b0c27202ed59ec54a257432a16b62a693c98392521825624d61a89c55996e17c",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The memory tree over the code, and the curated re-record of `pkg/a.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:c4166e91abef3493a7af89d5ed88a4e151bc0b9857776e08471b17b811c55ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The family records before and after.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:59dd6aed87ad227fa6b34be8b30cb8e132fae39559d2564c61cdf253a9dd58ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "BEFORE_FAMILIES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:e06013465849fc64429f7668202590cf2cd4f9da540ffabb9e75e2aef95e2ec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AFTER_FAMILIES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A comparison reopened as the reviewer reopens it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:65430a66c697dc4c4d7a2a5ffc82ed35a4bf21b8e06b57e98e736f9f266113f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "Lane"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:da697de1b481a4fb63d6b9b33acfd7c644f8426534dd56888788140ca4f5f8ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "precuration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Buckets, destinations, paths and the summary agree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:620d4c189edbd120db7f2bb91c474d027aabc04c57aae5fa80ac6618fc764ebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_changed_file_takes_one_bucket_and_the_destinations_reconcile"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:adfa31c4b57c4ac972ff7e44f42947d01a188d5c184548244de7039eaeca1c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "_every_path_bucket"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:cb6710d1c7e8856d5baa32bde6471916e3f9d90b1ad8029d8981633c4e583e0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unexplained_destination"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:d507c036b16f2429fda9759736dc6ae6b9c4aae13abc9b36ffb753df10bd0f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_destination"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The entry count reads no hunk.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:1564ffe2d8bf21c03f6a219cd87ea8c8a2524f04599b0fc38b9a3dcbe56ef8f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_entry_count_reads_file_buckets_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Hunks on their changed lines at each side's recorded blob, before and after curation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:dd64e90fd7071044f48ec01d688a0e6b58510d49b2c4b047d839977e26220c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hunks_are_classified_on_their_changed_lines_at_each_sides_recorded_blob"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:a733df89b6d55c387a2f73190820b101fee71772b5790980da60089653e1da2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_precuration_edit_and_insertion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Links, revisions, proofs and membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:067dd949df55f2f551d5b53505b5c3b6a7d3e44a10bd73935a79522935c16249",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_linked_hunk_names_its_entries_revisions_and_family_occurrences"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "An unread side and a partial index (review F3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:aa503b171d9d4befae3099468be654723d1f61b5440c2052d420d2b9aecfb594",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_side_is_never_unexplained_and_the_readable_side_still_links"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:6aac683aae1ffc076fd275fd883c8bfb3ea60340194fad762d9f730e0b2ee620",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_index_makes_only_its_unparsed_files_unknown"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:317bbe0a0c73611f842f5989ee9b0e776c25cc2efa4befe558487c8b5f4edce1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_unknown_on_a_partial_side"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

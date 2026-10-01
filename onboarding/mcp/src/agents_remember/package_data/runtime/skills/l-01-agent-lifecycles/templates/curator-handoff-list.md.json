@@ -1,0 +1,305 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.**\n\nAnchor: `### Family routes (MIK-R04)`; \"never writes a route.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:5a2facadf1c69d4133cb376211c1fcea32e74596cf59632985f86de1f2826f43",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 460
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:4b0c4cebb53d006b474ea29f2ef8f0b80abc83f18013c7bada2674298c473dab",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The MIK-R10 no_invariant-row bullet: its subject, its one disposition, the answers that need no row, delete-only hunks and uncovered files.\n\nAnchor: \"A no_invariant row (MIK-R10, converted memory only)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:8cc8b1015eb2d44c99787efc1cfcee332c3fb2c7cfdc3507b4c9e62a1ac14127",
+            "locator": {
+              "end": 582,
+              "kind": "line_range",
+              "start": 575
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The MIK-R14 reconsideration-row bullet: its subject, `still_rejected` with the refresh and the new-item answer, `raise` with the task-document question, route targets, superseded decisions, never reversing, and linked alternatives kept at their index.\n\nAnchor: \"A reconsideration row (MIK-R14, converted memory only)\"; \"rerunning the same row is refused: answer the new item by\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:0fa9d0c6055c786caf0d543096aaaa4812db11acc9a366150fbc0b5b67b90b78",
+            "locator": {
+              "end": 607,
+              "kind": "line_range",
+              "start": 583
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The decision section's refusal list names the reorder of a linked alternative (MIK-R14).\n\nAnchor: \"with a linked alternative moved to another index against the memory base\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:a33ad250e5a93cd08005a63314140fbd0850b7d84bd6544215836d0382df3079",
+            "locator": {
+              "end": 729,
+              "kind": "line_range",
+              "start": 726
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The MIK-R27 admission section: the criteria and their meanings, what is new, refused and reported, local stays local, demotion, and two admitted, two refused and one local example.\n\nAnchor: `## The admission rule (MIK-R27)`; \"most knowledge is local and stays prose\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:6df301bb935036b353d082e45430bfdf528c4c3fc62f57e7786972401e4d6427",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 638
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The MIK-R13 decision-record section: the fields, the links and alternative indexes, requirement endpoints, the refusals, lifting at closeout and the D18 example.\n\nAnchor: `## Decision records (MIK-R13)`; \"keeps governing code\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:5fa48ffebc8ff56f025ae86c950a2599a6995ad46cfefd8a723199fb70c986d4",
+            "locator": {
+              "end": 752,
+              "kind": "line_range",
+              "start": 691
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.**\n\nAnchor: `## The file writer's sections (MIK-R12)`; \"every other commit route still refuse them.\"; \"writes it as\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:4881c4c4c957fd817c8aaf6c204d400559c506631c70bc4804f8ef09fe4926f8",
+            "locator": {
+              "end": 637,
+              "kind": "line_range",
+              "start": 485
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:0f8db222eb374c03431644ef968dc45b8ef890daa19b9bac304c29e634c25807",
+            "locator": {
+              "end": 634,
+              "kind": "line_range",
+              "start": 634
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:02f7251c974bad76a0f288317d3bcd4229599f959585b07ec4107d46b2f3c775",
+            "locator": {
+              "end": 451,
+              "kind": "line_range",
+              "start": 451
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.**\n\nAnchor: `## Where an entry lands once knowledge is text (MIK-R21)`; \"Nothing here changes what a producer emits today.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:e5ff15e96d46f5d125a3ae30b8816c16e5f72db7114a97cf506faa9324395e93",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 425
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Curator-owned semantic scope remains required.\n\nAnchor: `### Curator-authored semantic scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:2d5c29a4ec6b7c0f7362fbbc9ab15f25d5fa3388b5881e04e9ea0d67f2995224",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The public retention input and exact readback requirements.\n\nAnchor: `### Retain exact siblings when adding new obligations to a family successor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:63f24a04138e768b53fe1ce38854c8f0a360e1cae5dec16e47d68222952d30a2",
+            "locator": {
+              "end": 424,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**Per-target realization rationale and role, and the stated supersession of revision 1's target element shape (generated copy).**\n\nAnchor: \"Realization rationale and role: one authored explanation per target\"; \"this file's element shape supersedes rule 1's\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:00402e86fcbbd766c960c3b8325bdb627598baf51759a5b1781e72a630b30989",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:81ec31ab39294ef76c2a29d36ad1b64784b8e1d91f993de8326b7598644a80ca",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational \"without proof\" list and the migration pass.**\n\nAnchor: \"as a path plus symbol\"; \"Proofs are shown and counted (MIK-R28).\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:a937f60f51e72cd80ff44cb7b39363727e6d0f4503ebef9cf3da1679f5b29639",
+            "locator": {
+              "end": 529,
+              "kind": "line_range",
+              "start": 524
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:93a7d20c309ec3e66a8f8df1fbc11cacbd6461a865950cf49b10a5c39c262722",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 530
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The MIK-R30 onboarding-row bullet: its subject forms, its one disposition and when no row is needed.\n\nAnchor: \"An onboarding row (MIK-R30, converted memory only)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:45648f762efd1f014b318ec5f46ac682697da0211fabf6faff2d7d25250b415d",
+            "locator": {
+              "end": 563,
+              "kind": "line_range",
+              "start": 558
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The MIK-R11 planned-row bullet: its subject, its three dispositions and the ref each takes, and what does and does not answer the item.\n\nAnchor: \"A planned row (MIK-R11, converted memory only)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:6c149f9e6175f0e6d63518b77bbfd86c24c1f92468ee2d7f257e20648424b556",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 564
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

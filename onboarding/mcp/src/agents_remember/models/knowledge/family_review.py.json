@@ -1,0 +1,560 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/family_review.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one declared grouping rule: its version value, the renderer that spells the rule as one sentence, and the identity key built from the two facts the rule merges on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:3da53e50b80b8333ba4b4b9af2ddc297149f957533b74353d2c0c2aac121e7b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FACT_GROUPING_POLICY_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:54af924efe60aa81b1b5faad6eb0532c40576397f279c1bb2c80df6d2196e6a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "fact_grouping_rule"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:84df0c55058cc3048fc9727be6bea6a0fc0dfd5abbefcdfe002fd169b903140d",
+            "locator": {
+              "kind": "symbol",
+              "name": "fact_group_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The five-owner report: exactly one entry per owner in the declared order, no field for a combined verdict, and the keyed lookup that rule makes safe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:79de84dd25329a44cb96c84d3e18801b32745bad9594ef8fc1d537e3d815a2ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeparatedStatusReport"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:c09e8016bb598b209c3747df1d735c84f4057f2110d81e12e71f4ed612b25685",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_entry_per_owner_in_order"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:6314333f9e11dfc2e8e2c07fff97cace70318dedaf979497ff28e2269faa180c",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The currentness answer's two-member state, moved identities and typed statements, plus the two-direction rule and the reuse refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:34f627f8e0fec744ffa699814c1510277d09ceb2d6afd93c6231af9e0e7df698",
+            "locator": {
+              "kind": "symbol",
+              "name": "FindingCurrentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:27e642edb527e9d0a5c63dfdb5921ddfbd5df46f7a681c717f115bdc11783c1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "binding_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:2d954164e0da27e65fc25785917a57590b7003094c43207e0189424f59b22350",
+            "locator": {
+              "kind": "symbol",
+              "name": "reinterpreted_for_new_inputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:906105a1785e70d6c95be2fec97bbe37d84e9bca8791d818d408bb813be3c81c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_state_to_follow_from_the_moved_identities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "One routing row limited to the declared surfaces, and the report whose counts are tied to its rows and to the shipped three terms, with the report-only property beside them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:b73d60de5a4eb64b255f0dd5692bf9ff31c9e498a402501939c4e1861e82e9b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyReviewRoutingRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:3c51174138a8125914aee8220ba4008fcc7c6cd8f04bff48648f8c907e7da24c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyReviewRouting"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:d5f997b4b3981f00cb735fa77ae65a967c79698412589717d613f33aa51d00f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_two_counts_and_no_fourth_term"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:6030f21309a534a12e7303e10ffa0cb01e05cf363cb798c27c07e5996aadfb71",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_rows_are_report_only"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The decision's named owner and the bounded decision shape, with the typed `False` that records it creates no gate and the refusal of an unnamed authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:e722a0ba2604055d60dcd086b8af50b62f26e96e20ee1799ddefac9c2346b1ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionOwner"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:96cf120f3cc698078e6ff47effc63bc335ea697db93c9e284a0fde2b6b16c3ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyReviewGateDecision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:8a6e3ddfae4119ef71c6591fe4010de09ef24515cc34db9567e2b6ab3d5a9b23",
+            "locator": {
+              "kind": "symbol",
+              "name": "creates_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:ab3d2d70cde7634b181da8849b070e3be916da31defa8186b958d654670275f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_authority_basis_to_name_its_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The one recorded decision this module exports, naming the developer as requirement authority and carrying its authority basis and revisit condition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:b52aa673eaf87ee0ca7b838dcb44bb0018f3d7b8874457df415f9eb4ab15cc9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORDED_GATE_CONSEQUENCE_DECISION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The frozen, `extra=\"forbid\"` base every shape derives from, with the four bounded-length constants the fields reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:c38d38cef2226ee90eabf38006faa6e6ca8cadeb5eb992a86d5d402b472448c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "model_config"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:3eb2f7176a3550df9b7a7a2ca0105cfb6a5c57f24a99169106b4587720a1715a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LABEL_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFERENCE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROSE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:f45b6f8cbdbb61e9d6cdcf41df6533e5f95b2519735715d4d91ebeebd2518aa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PATH_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The detector's conclusion-name list and the declared-field-set review the module names as the measurement that a fact group carries no conclusion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7ccfe349a7e3ecdac25d421ee0804672aedafbd",
+            "content": "sha256:a889cbd0cde10173c5b0ccf0fd4c91eadadc42b32bd2163ce267050040e539c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONCLUSION_BEARING_FIELD_NAMES"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/detection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7ccfe349a7e3ecdac25d421ee0804672aedafbd",
+            "content": "sha256:e0a60cd087a69ece717a9e6d65dde23bb379a5562a958afec76375802e4851f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "conclusion_bearing_fields"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/detection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two surfaces a finding may route into, declared as a value so a third surface fails construction instead of being added.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:5978ca41120cfe564b41311fdb3209f5f2db82fb585b93264a27c29b2a3646c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_REVIEW_ROUTING_SURFACES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one authority that decides closeout readiness, named as a value so the routing report can state what it does not decide.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:2ddd2f1bca5d7c53b10dabf23074402ab5bb0250b7acaa988de59f7cae244349",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLOSEOUT_READINESS_DECIDER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The five status owners in the design's own order, the per-owner declaration with both its columns, and the vocabulary mapping derived from that table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:cb6505988320bb133ae41f5730953ab002b923c2ea41cd4845d0dcf9923c1c0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PIPELINE_STATUS_OWNERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:0b904eebac3b574379fc6b35fead68b5f88d8bcbac32bb629cb799f4979c60f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_OWNER_DECLARATIONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:a58afa755953a6a6744e74b25f55b8d25c35ab96ade1704850762272e87dfdc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_VOCABULARIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One recorded relationship a match was reached through, and one matched condition with its sides and its three supporting fact tuples.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:cbac8dab0cd5bb0d56029d48e8c4069ba842b2a93db1225c23a9b8a114ebbec2",
+            "locator": {
+              "kind": "symbol",
+              "name": "FactSupportingEdge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:f16fbf31bc26338fa8fa35a2ccf6f8b27a1f5f4a36dc54e83a657d88fc8279bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "FactMatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The closed detection-condition vocabulary the match repeats rather than renames, and its declared membership order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7ccfe349a7e3ecdac25d421ee0804672aedafbd",
+            "content": "sha256:d1e8ed80965f7b55e7197c91dc510fda8335319df302356d9abe3efec362849c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectionCondition"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/detection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7ccfe349a7e3ecdac25d421ee0804672aedafbd",
+            "content": "sha256:bc58f3c64ec0214ec909713a879b57017cab08349941bd81a972aea676696845",
+            "locator": {
+              "kind": "symbol",
+              "name": "DETECTION_CONDITIONS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/detection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The group's declared field set — recorded family revisions, the input signature, the rule's identity, the matches and the review-record citation — with its accessors and the merge review.\n\nAnchor: `supporting_edges`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:4c6356d09ccc78b1c5509848df6858b74fcd46d8b3defd68b4760ba00a864c79",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyIntegrityFactGroup"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:9343ac4f9f1b1377156406b6a34ab47d82dc4bb40e2cbc8a4e69596c839f775f",
+            "locator": {
+              "kind": "symbol",
+              "name": "matched_conditions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:d9cc50e37bec45aa69af2bd915a0c9f498a583296ad753584002d1e60015677f",
+            "locator": {
+              "kind": "symbol",
+              "name": "retains"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The record citation that is a citation and not a conclusion, whose empty tuple reports a subject nobody has reviewed.\n\nAnchor: `review_record_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:9ce0c6c1454f8cce4b1c44633cc49504b08d43b8ed63148b2b2c84bb59a091a9",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One owner's report with both required sentences, and the validator that refuses a status outside that owner's own members.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:4f0146df7bb91b392adc15f25f08198671415ecbde3d8e5e2ee46c1c3cae9a1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PipelineStatusEntry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:1013eb9de318e3e6165a5b5d352d4710760d96a25ffaa6e680b8360d5113c6f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_owners_own_status_member"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

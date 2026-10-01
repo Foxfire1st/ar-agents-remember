@@ -1,0 +1,667 @@
+{
+  "path": "mcp/src/agents_remember/errors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Policy-free lock capability failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:dc992d040683b2873cecb086737b750032f8eb26dd30a337b7bb2c4351aa9a56",
+            "locator": {
+              "kind": "symbol",
+              "name": "LockCapabilityError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The consumer that turns this family into a value with an explanation instead of an escaping exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:047666cc0858cce5a47f7e64a553bf01cdff370afb731d8575acec7fbc9fc1fc",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The registered refusal-code vocabulary these errors carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:fcfcd052a7e3b10ed2c740f5f529182d7b3148edf830db0c4174057719602d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_STATUSES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The failure cases that assert a refusal advertises its own reason and remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:f68be40622b6abfe0d2362438100ef630301619d57ed967748239daeade96d73",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refusal_still_produces_an_explanation_manifest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:079569ddf8eff689aabcd9b7a2a97cdaed597ce68ea79db471edf0186f471fcf",
+            "locator": {
+              "end": 907,
+              "kind": "line_range",
+              "start": 893
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The task-context projection refusal: complete-or-refused, with the wrapped owner's status preserved. It subclasses `AgentsRememberError` directly, so it is **not** in the `Capsule*` family and is not covered by `except CapsuleCompilationError`.\n\nAnchor: `render`; `response_fields`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:7fc67760be9cfb9f3453772e1556d7797ac94bfc409a5d79b76024421a75b6a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskProjectionSourceError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The producer that raises this family for every unresolved or contradictory binding input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:b5f0bf5bde1ae1a2fc3d09be0af5f6a41c4a6aaf28aae3f2dd6026c09d0c431e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_task_projection_scope"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:f83b150b9e3dbe85154f7363be2277afd891e470edf7eea8b1f7c4d6adbf7567",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_packet"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/packets.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:81126b0f7a03d02cc085700c5e38b241c87e43e9e548465253f0f0b14f466533",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:99bf3583e114ca9877f78992cd9f263b6e1e29bb25ab6b3f2e64398486ab15cf",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/packets.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The refusal that proves `None` is never a substitute for an unprojectable admitted task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1a0a98677c18c055a70984ba23f1ff08b59b8a0",
+            "content": "sha256:4cafe198f74ec4ad7d1d8289d6550bf569931b142572aa706ecf56f6e76112d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskProjectionSource"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/provider.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1a0a98677c18c055a70984ba23f1ff08b59b8a0",
+            "content": "sha256:670fd92e0711e456d0ce68df17348132d6a6f477bcec31af74252b81b0e5d55c",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/provider.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The case that pins the failure taxonomy: each unresolvable input returns its own status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:7a9e4dcce48dbe2a6b8e0bb6beb09ed88d822e81987a3e654937f981bcba1708",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_unresolvable_input_returns_its_own_source_resolution_status"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The typed failure of a two-leg atomic publish, subclassing both the domain family and `OSError` so existing `except OSError` call sites keep observing it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:b7615ab567c713d32568ce712ed02006e9e5bf8c13d4170ce888a635d33f60bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicReplaceError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The retention owner's typed failure, whose five statuses distinguish an invalid ref, a missing object, an occupied ref, an unwritable ref and a moved ref.**\n\nAnchor: `__init__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:2274d2c732dc02f1a1446d8b254aa836da88e671b3b6ad42de1656eb83fead61",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectRetentionError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The deletion owner's typed failure, raised before anything is recorded or removed.**\n\nAnchor: `__init__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:6f59dd1ce2de981f4831d18db96083f8b33665595c83a8a5042db183f0a47d72",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonReclamationError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Immutable certification findings and pre-execution statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:40dffc28ab77ec0131cea0d37f8c28fd5b0ba94936a0ed8641b31051a64d67df",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationContractError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:20138553bfc237359e9e717145f5ecc510725b338b47059fe0f328195717a6da",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationProfileError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:a4f4dc343910c520e407231e186984bb19f38636d4c6ed4393cbd229b399c8e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationExecutorPrerequisiteError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:624cf37eadec463d1bd72482537e11e9aa4798e2465b42ec15783ade0e6773e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutReadinessContractError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:dd5ad70ba4ed060a38eeff6462e479b0bc9b884ddba49babc06cc35dbdcbdb31",
+            "locator": {
+              "kind": "symbol",
+              "name": "DaggerRuntimeAuthorityError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The retention owner that raises the first of the two, with one status per refusal direction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:c27fc00460c90c4a2bf15e0ff0c1cc4f62f4692b8a029ca1f8607ef2744de7dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_code_object"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_retained_code_object"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:e76f9ad5dc9f46c8d16618b86de70915f91eb60be55203d6cf276cb616328271",
+            "locator": {
+              "kind": "symbol",
+              "name": "retention_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The deletion owner that raises the second, and the two raise sites that keep the mismatch from recording a deletion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:2d02bfda2b3bbcfa8f3de7fae05a367ca4045f9c08ff00232765e5f6be676e2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_comparison_snapshots"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:48a64ad8931d00cef7f72463a2411794916a24826b9f87d5c72b4f28e187357e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measure_and_remove"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The consumer that converts a retention failure into a typed refusal instead of letting it escape the freeze.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67638b9acf6d4c912e8ffb2f373e20ea55e2b2c2",
+            "content": "sha256:b36a7bc722f8ba102a35f8098e3f012a9f231f68bd262db28825a0043cd6f580",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pinned_outcome"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67638b9acf6d4c912e8ffb2f373e20ea55e2b2c2",
+            "content": "sha256:4d551f8b1930ea29f26edef2a107160f39e1a1f75f6ce11db91c28f7eb23dc34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved_capture"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The publisher whose two legs raise it, one label per leg, with the destination's state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:c9512bef140c79174a59e947c84b245427033dc3e9a15b70406cef8e7ab22ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_replace"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Bounded configured-contract authority and reread errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:6f1220f8f9166eee1fc869acfe697fce278ba83f4f9456319ffc45c6c1f27058",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConfiguredContractAuthorityError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:5e155909f967090104b6ca4b7a6e1e2ac5b312123e545b1ff457c74980192291",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConfiguredContractRereadError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Separate coherence, exact-pair and final-certification response shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:19c0771a1ddc7d8ffad7afb3def409368cd2ea9d14be6fc91dc7ff516d20f28e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:33ca044e158e16f295e4d5fb3fed2af01912bf82f753bd272e8b67fb11371add",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCandidatePairError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:49d0a452e7a7405a128aebb6e670ed3d36f87b8a29f72cd8176ff3b9807b8fb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherencePairError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:9cee9ba7902d3e4d03157f45240e574229edbbe6457d3f59ec792a3d611739b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCertificationError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Composition, integrity, harness retry safety and history failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:30d69af6e832f280748a8bbb1e429dacd58e08a4059f7159a448967092428c93",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationCompositionError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:04d03b51a0e2def2231844a1f5415c5289fedb25fe94f50ca32bcfbdb7fd163e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TokenizerVocabularyError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:d2aa0598cafb8738ed8819d135bb68cba56c994a61f7c61dfbf1f41446b753ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "GrammarUnavailableError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:367e55cc5bd76348fedeefa7164e30bdb6bbadb02c5c7b6d3c5940183fa0e6fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessAdapterDisconnectedError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:378bf02d299203184feb933d1e4e1669d99a25210c2ec1882fb259350703d949",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeHistoryLimitExceeded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Control-plane translation preserves the durable-store error family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_access"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Host registry translation preserves typed pre-launch authority refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+            "content": "sha256:e1559ace39aa897386513e4fa11b0b38b52e80867efaafdd6111e9c718955ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityRegistry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Role-capsule compilation refusal with its stable status, remedy and frozen conflict rows.\n\nAnchor: `render`; `response_fields`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:b455239473b006be03beff93864429921efbe0b4fd2402ee452a6276939eff44",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two capsule subclasses that mark which boundary refused. `CapsuleBindingError` was removed on the A3 candidate and must not be cited.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:75bfdb3bdf4b9a82ea89850c55be6be6e3713700c9ab9dbe22dc9b58940efe79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleManifestError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:352ee2208b6afea6cb4c3b75274c4d656eeb3f44e99e08e8fbf0e8859a3275ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

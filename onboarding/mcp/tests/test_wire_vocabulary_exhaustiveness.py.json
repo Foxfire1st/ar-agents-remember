@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_wire_vocabulary_exhaustiveness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared helper worktree_summary_accepts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ffff42527943df72fda3d4c1440c1b872ae008",
+            "content": "sha256:630dfca5b4b86cc88ed5cf83ff93643651863e15053a14f58290702bd5e4aceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_summary_accepts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared helper _contract",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ffff42527943df72fda3d4c1440c1b872ae008",
+            "content": "sha256:dc59ccf7f2f19d41712a23e5939220d4978cc107a57457d43ae85c1d8200aac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

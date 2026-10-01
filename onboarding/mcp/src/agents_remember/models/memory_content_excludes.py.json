@@ -1,0 +1,244 @@
+{
+  "path": "mcp/src/agents_remember/models/memory_content_excludes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The declared policy: the ledger cache, the bootstrap scaffolding, and their one tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90848f80f5692b8abaeb3b2d3f7abe6b7344bed1",
+            "content": "sha256:8ff6e9eb479ef62ddcde698b4ad482be15a729f59264852043a28ccb51554930",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEDGER_CACHE_RELATIVE_PATH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90848f80f5692b8abaeb3b2d3f7abe6b7344bed1",
+            "content": "sha256:18c491b1bea1160e38174763f6bd0fcb355f56544f80a207c725e0f136266f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "BOOTSTRAP_SCAFFOLDING_RELATIVE_PATH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90848f80f5692b8abaeb3b2d3f7abe6b7344bed1",
+            "content": "sha256:713e1afb20cfa4c1cb6f5b2b3a9cac350984d950d549f2b1298434fcff637aa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_CONTENT_EXCLUDES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The staging helper that turns each name into `:(top,exclude)<name>` plus an `update-index --force-remove`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_excluded_pathspec"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_if_dirty"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Producer 1 — baseline adoption consumes the constant on the call that stages.\n\nAnchor: `MEMORY_CONTENT_EXCLUDES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:ebbea35c40e2351388761dde3f0d1ce7b6d215023740de36066b88556e0d0816",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 239
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Producer 2 — memory carryover consumes the same constant in its apply path.\n\nAnchor: `MEMORY_CONTENT_EXCLUDES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "content": "sha256:ebbea35c40e2351388761dde3f0d1ce7b6d215023740de36066b88556e0d0816",
+            "locator": {
+              "end": 783,
+              "kind": "line_range",
+              "start": 783
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Producer 3 — external closeout consumes it on the dirty check, the stage and the commit.\n\nAnchor: `MEMORY_CONTENT_EXCLUDES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
+            "content": "sha256:e5efca28baf5a630dbb95574db53ba1d4418ff026755d26ba5a0642efc19263a",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
+            "content": "sha256:a458251d5c39cc628c4d2693579eaf95fa54618b0f769e534486f0cb74422562",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
+            "content": "sha256:ebbea35c40e2351388761dde3f0d1ce7b6d215023740de36066b88556e0d0816",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Since MIK-R09 the mandatory gate's exact-tree captures use it too (the closeout's `_refuse_invalid_memory_commit`, direct landing's `_memory_content_tree`), so the tree the gate validates is the tree the commit records.\n\nAnchor: `MEMORY_CONTENT_EXCLUDES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
+            "content": "sha256:6547705b9cfb9f64c3b34e8d4ad2acc950c804b7de503cfa6643b68010208163",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1f748812a0854f62ff6364e3dbefa70294b4c0d",
+            "content": "sha256:9d7061c8812ae49d2a54d3495b62cbcb38a4bcf987f93f839f1c29a4417e610a",
+            "locator": {
+              "end": 610,
+              "kind": "line_range",
+              "start": 610
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Producer 4 — direct landing consumes it on its memory commit.\n\nAnchor: `MEMORY_CONTENT_EXCLUDES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:ebbea35c40e2351388761dde3f0d1ce7b6d215023740de36066b88556e0d0816",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two cases that fail if the exclusion becomes inert again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:a177857033c2160f6da833552bf85e43325f6befc2f6e2e419070bb9f3af96ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_first_baseline_never_commits_bootstrap_scaffolding"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "64c39dcd72c274822ad3c2f57ac160f39b0f438c",
+            "content": "sha256:b3808b5b3e1331d4df5d2315a414c566be9e768b6f486ef2b8f28763ca74ca31",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_memory_content_commit_stages_bootstrap_scaffolding"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

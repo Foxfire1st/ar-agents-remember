@@ -1,0 +1,555 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/lineage.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three applications this one rule serves, stated in the module docstring.\n\nAnchor: \"One acyclic-lineage rule, shared by the invariant, family and decision-supersession graphs.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:1fcac60021dd02ef678ecda27bd44f2005ab5a7c18b79b9aea1ea2dfe133afbf",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The batch pass that gathers the declared edge sets and hands them to this module's rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:8e7663baab8f1f7a4713896d577544cc49dcd31e92172143b0fa39500ad345cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_completed_lineage"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:63d7ca75ab87107c87466e3c81fa3352a6a4ee5fdde172e69561a8c5e653ffb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_acyclic"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:d055aaa08a670421020a43613cee4513fa2e78fbc19e2393812fefa7aa8ed37a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_wider_edges"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:baf8f8a2ac77cec8adab4d8a6839d208500bd452c33edaaf968872f07f198610",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:69b98d6a4c3e22b84beff5b5f2d754bc7de48fac263b644b2ae78c17e99d9e91",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:b70355d89d6f90d9dcc18c8dff493cee39f5732e277e2e37e28c359d4d0965dc",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 325
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:66081501dc88b27bf0946d85731534e13ca7ef6c8a7235fd36bd35c08ee36859",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 361
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:bc80a85e781acc8e799e1680da45e9e182e20b171f302dbef2b644d9f7cc09e5",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 462
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The batch pass that gathers the declared edge sets and hands them to this module's rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:8e7663baab8f1f7a4713896d577544cc49dcd31e92172143b0fa39500ad345cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_completed_lineage"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:63d7ca75ab87107c87466e3c81fa3352a6a4ee5fdde172e69561a8c5e653ffb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_acyclic"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:d055aaa08a670421020a43613cee4513fa2e78fbc19e2393812fefa7aa8ed37a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_wider_edges"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:61638f4560f17d22beb23e8535397ad0ae8a6190fe14eb3ed8cdc81db6ebdd8e",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:c6727a7cdcbe567155caabaa379d51c6ad8895c049201543d75dd87d8da380a2",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 429
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:8229396a4aca2b1e333b15b322a9204e52373d815fc09d3918524b9c7354ee77",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:66081501dc88b27bf0946d85731534e13ca7ef6c8a7235fd36bd35c08ee36859",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 361
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "451b5184abedb09ae1c612fdf656d515cfc42d9b",
+            "content": "sha256:229e2945f2b0484c1ee7efc779d5f2a7820fe9c6bfd7fafe285c9fb8799f8d26",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 493
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The spy node that asserts the shared rule is reached carrying the batch's declared edges, and the nodes that fail when the rule is neutered or the wider edges are emptied.\n\nAnchor: \"test_the_batch_cycle_rule_is_handed_the_batchs_own_declared_edges\"; \"test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:3216e98b7be7f74608e630dfc0d0f04403b30334321178652b127ae045712de0",
+            "locator": {
+              "end": 674,
+              "kind": "line_range",
+              "start": 605
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:df5ea5370257f039ecddf55be4b8ba0a791238b67667e3c9fe06b4435bb5183b",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 561
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The two-branch refusal wording, shared so the relations cannot describe different rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:0819f21ada715805e741b9d5c824b4d1b2f07bb7e1d600cf3d1a7c32f93e0701",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lineage_cycle_wording"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:76ad3fa09c62442818e34421b20adc33e29c8d521542a18f4293f20ddb07c102",
+            "locator": {
+              "kind": "symbol",
+              "name": "lineage_cycle_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:3113ba52bb65d593ea649a9f1aa81a4d67154bc1a400e803be50c90a29a67767",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_lineage_cycle_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The membership query the store still exposes, delegating to this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:d0ed3fabaff818e66b4b4042d55bc41d9030791f1595514c1e7a918e3e71d364",
+            "locator": {
+              "kind": "symbol",
+              "name": "lineage_cycle_members"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The declared predecessor tables this module reads.\n\nAnchor: `invariant_predecessor`; `family_predecessor`; `family_predecessor_parent_endpoint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:0a24a8c63ac6474b9d0edb9ba102d4b0d414b599408e3cff095e127fda0dc51d",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:d16b7d32aa40c0ad34431cbb4c6e37dff84df4bbaa10558ee8c549d006878cf7",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:ca47f7a639d08a756403d03f17ca2186b551b609d963c0206feadf16cdf34ce9",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The write-path rule, its two branches and its `extra_predecessors` parameter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:03ffb7994e450f5d0f5321092035d4a276824955e911a7aa51f02c28f976bce9",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_cycle"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:380e7731ceaf888b3c0c200674c26e77c2a81843e61988a3a6ed33a0e348156a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CycleFinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The batch-aware caller that supplies the declared edges, and the only caller that does.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:6f9e7e0d842d124be81b6a9e58c3194d454c07d758bcd2b7fb8fb529dfb0c163",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_cycle"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:9d4efd7b79e023a4dc72877573c0c96cf461ebd34f35c7dbb2462c1bead8dfec",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The membership query, which is not the write rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:df976fa427e070d189f261914fe3a24de5199e951f62fec85937774ff52b8d7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "edges_on_cycle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The post-insert graph construction the guard reasons over, which folds the wider edges in as stored ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:bbe8501e8bf30b0411a07cda27a2f9983d4a2fd0037a5e39ee67650cde401d2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "post_insert_graph"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:73b1d2dcc262ff6af54379a9ad71b3d8d34b4d101a16adba706e498f2c011565",
+            "locator": {
+              "kind": "symbol",
+              "name": "descendants"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The Tarjan classification and its reason for not being a recursive CTE.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:d1db378bd4e8db580e661a4979fc83bf080ab5c08a30769dc02950c21203bb8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "cycle_vertices"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:e4bfa1dea2c603db8816baf85484d4ad704c723cabae0a6c54f30554c26db583",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CycleScan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two edges queries, one per lineage graph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:491e0056749c636428cf47befdd16eac4d3d0d28de370ff7898e6b87ab5795ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_edges"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:cc30df73c3a64d4c9075131f6708ec50883e918f1e9861d0b6a423a635538f68",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_edges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The invariant-side application, which states the rule once above the guard and uses the default wider-edge set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:3e86aa0c87c1d891a01afce397159052e75f6ad0b6554e4781cc8974047c327e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_lineage"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The family-side application, which reuses this rule rather than restating it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:72b96c4f71f50d2b159f6e6ae8f664f881655c30b4f663f6d9816ac2cc338839",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_acyclic_family"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_global_rules.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Markdown parser delegates global path-rule branches to this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eaf38310c8229e0a584b6fea24142164926606a1",
+            "content": "sha256:21c154f6b3358ef937e89f67dcf2cd1e40aeda40e969265a6e78c024d2f9f686",
+            "locator": {
+              "kind": "symbol",
+              "name": "handle_global_rule_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Storage evaluation consumes parsed include/exclude paths and file types.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88232d1893ecb4613ddd01e950946509379efdfc",
+            "content": "sha256:e3c374c37685c6130e19bbfc02a485a82c677d0e3173846042589330f34414eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_storage_for_source"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/storage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/review_change_kinds.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/review_change_kinds.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:21:58+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -58,33 +48,24 @@ docstring states the three facts and the marks once; `application/review_change_
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R33@v1` (adopting `ICR-R32@v1`) and the architect's rulings in `33_review-triage-order-and-change-kind-badges.json` live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's statement of the three facts, the primary kind and the marks. | "The **primary** kind is the highest established fact in the precedence" | mcp/src/agents_remember/models/knowledge/review_change_kinds.py:1-34 |
-| The literals, the precedence and the bounds. | `ChangeKind`; `CHANGE_PRECEDENCE`; `EVIDENCE_LIMIT`; `MEMBERSHIP_REASON_LIMIT` | mcp/src/agents_remember/models/knowledge/review_change_kinds.py:67-84 |
-| The facts and evidence carriers. | `ChangeFacts`; `ChangeEvidence` | mcp/src/agents_remember/models/knowledge/review_change_kinds.py:87-105 |
-| The primary kind and the marks, including the unconditional unknown (review R1 F4). | `primary_change`; `change_marks` | mcp/src/agents_remember/models/knowledge/review_change_kinds.py:111-147 |
-| One member occurrence, built from its facts, with both validators. | `ReviewMemberChange`; `_derived_from_the_facts`; `_unknowns_say_why` | mcp/src/agents_remember/models/knowledge/review_change_kinds.py:150-259 |
-| One family occurrence: guarantee, total and one occurrence per returned member. | `ReviewFamilyChanges` | mcp/src/agents_remember/models/knowledge/review_change_kinds.py:262-283 |
-| Where it rides: the family context entry, validated against exactly the returned members. | "# The change facts of a tree comparison (MIK-R33); a dataset review carries none."; `_require_change_facts_for_exactly_the_returned_members` | mcp/src/agents_remember/models/knowledge/review_family_context.py:353-370 |
+- The module's statement of the three facts, the primary kind and the marks. [1]
+- The literals, the precedence and the bounds. [2]
+- The facts and evidence carriers. [3]
+- The primary kind and the marks, including the unconditional unknown (review R1 F4). [4]
+- One member occurrence, built from its facts, with both validators. [5]
+- One family occurrence: guarantee, total and one occurrence per returned member. [6]
+- Where it rides: the family context entry, validated against exactly the returned members. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T22:21:58+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): created this card for the new wire model of MIK-R33, recording the review R1 F4 mark rule and the merge round's split of `membership_reasons`. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

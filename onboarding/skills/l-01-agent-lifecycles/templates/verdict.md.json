@@ -1,0 +1,58 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/verdict.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Independent exact-attempt/candidate adjudication is mandatory in every variant.\n\nAnchor: `## Mandatory Requirement Adjudication Block (repeat once per stable ID + version in every variant)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d00f2010aad1ce8e65bdd608537875ac14d6dc",
+            "content": "sha256:b6f3ffca7e5494d2174d4113b29c4e44a8f91c38b8a564532229efefc1788aee",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Leaf review accounts for every material route and returns a recordable packet.\n\nAnchor: `## Standalone/Organizational Leaf Route-Review Variant`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d00f2010aad1ce8e65bdd608537875ac14d6dc",
+            "content": "sha256:53598c81e1d9c2bfd8732e0bcc591ff5766ec20099772c77ea5f4ee2f1331761",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Delta review retains accepted rows and rechecks rejected rows plus direct regressions.\n\nAnchor: `## Loop-Review Adaptation (leaf full-loop · plan review)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d00f2010aad1ce8e65bdd608537875ac14d6dc",
+            "content": "sha256:98f543618c23c41430b153ec3ce7c6fb87d536a42e7a028002e87396c1891ba8",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

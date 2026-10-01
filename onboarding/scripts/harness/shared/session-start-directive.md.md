@@ -1,15 +1,5 @@
 # scripts/harness/shared/session-start-directive.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `scripts/harness/shared/session-start-directive.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-31T04:59+02:00                     |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -69,36 +59,11 @@ The body states the three-condition session routing that `l-01-agent-lifecycles`
   directly is caught by `sync-harness.py --check` in both hook tiers and by
   `mcp/tests/test_sync_harness.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The generator that composes this body into six files with per-harness framing. | `generated_files`, `compose` | scripts/sync-harness.py:576-621; scripts/sync-harness.py:631-633 |
-| The workspace-root variant of the same directive. | "as workspace instructions" | scripts/harness/shared/workspace-directive.md:11-12 |
-| The hook fragments that read this file at run time. | `DIRECTIVE_PATH`, `emit` | scripts/harness/session_start_hook.py:23-23; scripts/harness/session_start_hook.py:57-59 |
-| The lifecycle this directive routes a session into. | `# l-01-agent-lifecycles — The Agent Lifecycles` | skills/l-01-agent-lifecycles/SKILL.md:6-180 |
+### Repo-Internal References
 
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-20T01:35+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared the enforced `citation_claim_reopened` row this card carried by reading the claim and disposing of the mechanical projection that held it open.** The claim — *"The lifecycle this directive routes a session into"* — is CURRENT and its wording is RETAINED: the anchor `# l-01-agent-lifecycles — The Agent Lifecycles` resolves at `skills/l-01-agent-lifecycles/SKILL.md:6` inside the cited `:6-180`, the range is in bounds of a 185-line file, and the construct it names is exactly what this directive routes into — that file's "Which Lifecycle Am I? (the router — exactly three conditions, in order)" section at `:24-40` is the three-condition routing this card's own `### Logic` describes at `:42-50`, including the `AR_SPAWN_ROLE` / fresh-role-brief / free-chat order and the fail-closed admission the body states. **The 2026-09-17T20:42:17 mechanical anchor-range projection bullet (the history line recording this range being rewritten to `skills/l-01-agent-lifecycles/SKILL.md:6-180`, bound to citation source snapshot `a7178848…`) was retired**: it recorded a tool projection rather than a reading, and the extent it wrote is exactly the extent verified here. **The two commit rows were replaced by one recorded working candidate** because the body has been rewritten since `ea9cf0abeab4fe88961bda10b4f54d30266a9634` — the projection moved this range — so that stamp no longer evidences the bytes it sits beside; no hash was invented and no stamp advanced. `skills/l-01-agent-lifecycles/SKILL.md` is byte-identical to this leaf's base `7dcec036`, so the construct read here is the construct at the substituted base. No Finding text, anchor, range or other row was changed.
-- 2026-09-19T23:20+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b22c34a912f939e27868786818463c3b9c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers, and advanced this card's verification stamp to the code commit whose bytes were actually read.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each was read. The construct is `6-180` of `skills/l-01-agent-lifecycles/SKILL.md` — re-measured on the file, not shifted: the heading's section runs to the line before the next heading of equal or higher level. No claim wording changed; nothing in the body was deleted to clear a finding. Note for a successor: a future landing that moves this file's headings makes the stamp historical again, and the closeout re-stamps.
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: reconciled the starter
-  source's fail-closed role/hosted-identity admission and removed the obsolete claim that any set
-  role value could fall through to a pasted brief. Verification remains closeout-owned.
-
-- 2026-08-30T13:59+02:00 — 260821-ARSPAWN-L3 made the process-derived caller-kind boundary and
-  no-fallback rule explicit in the shared launcher directive after the targeted Dagger forcing
-  check exposed the omission. Verification remains closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the one-call canonical architect launcher,
-  separated ordinary bootstrap from explicit named-role takeover, and retained the durable-brief
-  handoff plus direct-session prohibition. Verification remains closeout-owned.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the free-chat-to-sprint-architect launcher
-  boundary shared by generated harness starters. Verification metadata remains pinned until
-  closeout stamps the code commit.
-
-- 2026-08-03T03:06:00+02:00 — Curator W3-B02 repaired 4 Repo-Internal citation rows, resolving 8 manifest findings with exact generator, directive, hook, and lifecycle anchors; verification metadata was preserved.
-- 2026-07-31T06:30+02:00 — 260731-EFA-L2 promoted this to the single source for six
-  copies of the session-start directive (requirement L2-R12). Verification metadata is
-  pinned to the leaf's reformat commit until closeout stamps the code commit.
+- The generator that composes this body into six files with per-harness framing. [1]
+- The workspace-root variant of the same directive. [2]
+- The hook fragments that read this file at run time. [3]
+- The lifecycle this directive routes a session into. [4]

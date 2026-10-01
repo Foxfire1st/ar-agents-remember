@@ -1,0 +1,108 @@
+{
+  "path": "dashboard/src/panels/review/FamilyTree.triage.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite's statement: the real tree inside a reviewer zone over the store-authored bodies.\n\nAnchor: \"The tree is the real component inside a reviewer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
+            "content": "sha256:6caa861e4c2e86ef111a039cd6ad9072f038ffbd3de589fc3b51d6deead82df3",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The harness: the zone with a textarea, a contenteditable region and a terminal-zone control.\n\nAnchor: \"data-kbzone=\\\"pty\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
+            "content": "sha256:560bd28c90508b38ed8cfb4dc1d12306c66df4c10bb2d938883c965100b03a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "Harness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Badges: kinds, marks, the shared member, the reworded revision, why unknown, one statement, undescribed members, the dataset review.\n\nAnchor: \"never calls a reworded revision unchanged: intent, noted, beside a genuinely unchanged member\"; \"states each fact once per node: the text note and the guarantee badge are not repeated\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
+            "content": "sha256:5ef501398e7f5874ad162e14a2b633a31c85a336b48d71051835a65cea1ba2c1",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Triage order and its control; triage when storage is unavailable.\n\nAnchor: \"falls back to triage order when storage is unavailable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
+            "content": "sha256:d41b4776424335e909dbd9627d6e49acda735d04bdab795e012395e600d856e0",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Traversal: displayed order, ends, filter, the partial-family stop, inertness, the keymap owner.\n\nAnchor: \"visits every non-unchanged occurrence in displayed order and stays at either end\"; \"stops at the continuation control past the returned members of a partial family\"; \"is inert in text fields, contenteditable regions, the terminal zone and outside the reviewer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
+            "content": "sha256:62d27cd6be9fa654386dce238919fa5cf97973e907e24225347fce4fc4ef8096",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 331
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "One statement per fact on a member, with and without a followed marker, and L34's note on a dataset row.\n\nAnchor: \"puts a followed marker's Attribution unknown on the membership line, drawn first, described after the kind\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
+            "content": "sha256:d535a6ada016f93d5646d21a39de924a7eeb1425c2bc532114974b01a6dadcd5",
+            "locator": {
+              "end": 640,
+              "kind": "line_range",
+              "start": 476
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

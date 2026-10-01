@@ -1,0 +1,138 @@
+{
+  "path": "mcp/src/agents_remember/serving/events.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The observer event envelope tailed here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "locator": {
+              "kind": "symbol",
+              "name": "Event"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The log layout (`lifecycles/<id>/events.jsonl`, `workspace/events.jsonl`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:2f08443e4f411f7c837987e255aae726e8836daa769647e940a28b25c78f1a4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventStore"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one read/path abstraction (NS #5).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:e480f569304f8192087d573b7bb07fc208c8a458bbfd6cde0184b341edb758a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "observer_root"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The app that mounts this as `GET /api/events`.\n\nAnchor: \"async def stream_events(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:0a22dd31f715efdd8b01df2a643778b50217da2a5774e0ec0603ef7348cba52f",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:ab5afe9326787a6e38519a2857d379c30e17271a4c7758a4202f82b22d411054",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The inactivity retention helper that computes windowed fresh offsets and prunes dormant lifecycle logs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_expired_lifecycle_event_logs"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "557621687e7e8238a5f892f1663045a6fe629754",
+            "content": "sha256:8022f04e76acc62722f3026e909ec41ff68231be9b38bf2c6969fad03626492a",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_new_events"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`stream_raw_events` computes offsets once, prunes on a slow cadence, drains the backlog in bounded chunks, and emits `ready` once after it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "557621687e7e8238a5f892f1663045a6fe629754",
+            "content": "sha256:c0c36c77d1f7e514a6acbbd327d5eb3730773285ac3eb27cd0e0ccfbb9584d9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "stream_raw_events"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

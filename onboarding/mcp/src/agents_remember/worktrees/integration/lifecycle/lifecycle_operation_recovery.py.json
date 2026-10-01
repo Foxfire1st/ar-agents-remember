@@ -1,0 +1,50 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `recover_direct_landing`; `direct_recovery_refusal`; `reconcile_control_mutations` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66e88e65219d24196744b4328febf2a7a40dcc",
+            "content": "sha256:3d903382f2d942483703b354899fdadf37cdc45b4e74b348cf98cb2cf4e6b17a",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One translator reclassifies typed direct failures against current evidence while invariant runtime errors remain loud.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66e88e65219d24196744b4328febf2a7a40dcc",
+            "content": "sha256:fa473ff1d01cf1e051be8e9ea0ce39678811fc09d1f1e870e12ea4a39aa37b78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_recovery_failure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd66e88e65219d24196744b4328febf2a7a40dcc",
+            "content": "sha256:5e389ae104f6c16f78a47a5254f966d8e4244b6d1a34a331c9c9c64a07de6d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_current_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

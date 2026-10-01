@@ -1,0 +1,71 @@
+{
+  "path": "dashboard/src/data/operatorInbox.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tests pin the POST body, posted/error return contract, and dismiss helper endpoint mapping.\n\nAnchor: `postOperatorInbox`; `dismissOperatorInboxEntry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5f29f056010d4441fa276c9094e48226803c047",
+            "content": "sha256:359422146c24938662ac37e70261564ab797df4ca8948f82e7e38b37100173fa",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The helper under test owns the fetch call and response mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ee3d856b19db6058dd8bba5fcb70ea9b00a1245",
+            "content": "sha256:e16da90edc096af451166ae06d363eb198c7d023ee58646324be566cc5fabd66",
+            "locator": {
+              "kind": "symbol",
+              "name": "postOperatorInbox"
+            },
+            "path": "dashboard/src/data/operatorInbox.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ee3d856b19db6058dd8bba5fcb70ea9b00a1245",
+            "content": "sha256:d104425f85385838d7f7a0f16b62ee61583abfb381aa8b05011d2d548bd5125e",
+            "locator": {
+              "kind": "symbol",
+              "name": "dismissOperatorInboxEntry"
+            },
+            "path": "dashboard/src/data/operatorInbox.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Component-level tests pin how the helper is used from Gate Respond.\n\nAnchor: `postOperatorInbox`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a826654bc0f429d2e18f7f0732bb3f2999ad37ed",
+            "content": "sha256:7ffbe17f8616022621d25d2546788776d62dbfc4ab82f7ce2d5a0da5eac7b4c5",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/panels/GateResponder.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,300 @@
+{
+  "path": "mcp/src/agents_remember/models/memory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Memory-quality requests are executed by the focused controller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "431b03b47f1f437c22ac89e60dc537b10c8866b4",
+            "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "431b03b47f1f437c22ac89e60dc537b10c8866b4",
+            "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "431b03b47f1f437c22ac89e60dc537b10c8866b4",
+            "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll_memory_quality_request"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "431b03b47f1f437c22ac89e60dc537b10c8866b4",
+            "content": "sha256:859092a84cc90e617f1aa354f948de9c8b7574016de937fbaedf26de3f050c22",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "431b03b47f1f437c22ac89e60dc537b10c8866b4",
+            "content": "sha256:29dcfa5d07b87f17f15e90303d889e700849a94090bab97105f06c5acab94f70",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "431b03b47f1f437c22ac89e60dc537b10c8866b4",
+            "content": "sha256:2381491880d675d8dd4d82dae3f0a85c07b093cbcb0c8d7fbcba954c6720e59a",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:a225f23d03c7c87b5b1a133d28e74f729b246bcbe4e3d8d2c95f46265cf9450b",
+            "locator": {
+              "kind": "symbol",
+              "name": "drift_check_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:13dc71477229967db0a69fe9ade74c337df968b1359aff9095dd9f642c7e093e",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:1138e99f975a47026d39bb5f4035af8e5380595ca5c8847db9e8076809209f2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_init_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:9d39286d25d95bb4eca95a6fd735c48fdfa3221074035750f2f510891fa39fd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_baseline_status_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:876d9f90ef4444730e458173ce3750fb3752c11887cc927f080fd812f989ae38",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_baseline_adopt_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:c3e86513281b49c6094f3934af6bbd66535999f7c0ae63c10cdb3a4485249c4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_plan_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:a738650c51f142460dc464c4cf913e575a87bdee5b03fbf173184be588845401",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_carryover_apply_tool"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The strict sync/start/poll request models and discriminated union.\n\nAnchor: `MemoryQualityCheckRequest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
+            "content": "sha256:775235fb1f42f9630eb54a53efe600111eeefbd90e72692d1202abd3725bb2ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualitySyncRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
+            "content": "sha256:c530441aca764d26912f99f7d4144edce303ef641e01dc21ceab0c40f8fcea42",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualityStartRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
+            "content": "sha256:38dd3e642d96d2d197c1c9d8d5ddb9b0404157d1a5ebbf65fa4ce3b6d7bc9d55",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualityPollRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
+            "content": "sha256:20510de9fed7583f74b4605066ac827c276aba64e69757e2cf2655aa6586375d",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`DriftCheckResponse.status` uses the shared `DriftStatus` alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
+            "content": "sha256:dd8acbe5d3f8b1196081bb4d5941b664743da0ecb58d66008d23fdfa5d6a6f9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftCheckResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`DriftSummary.status` uses the same shared `DriftStatus` alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:a2f120037b4a3244a65f708669bdaf5da721a923c27f8840f5e61f28108cbf20",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The context-packet wire face includes its matching `error` field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:a2f120037b4a3244a65f708669bdaf5da721a923c27f8840f5e61f28108cbf20",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:dc76221b436baaf2e8b6308210a1e130e0a99b4028302686a4a35107bd0e91d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "error"
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

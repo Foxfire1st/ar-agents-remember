@@ -1,0 +1,369 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The refusal text for an unconverted memory tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCONVERTED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Planned or written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:26e3052b7f15c44dac0dd984197b2fd5b9298aba975c76ee248a8a41b4c808d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Model validation then canonical rendering of every touched document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:aa738a8805c97aa26db36289d1689304acef23641d3a5ab9eb555d7ba2ac1e01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The registry side of the writer-reported rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:912287966d4ad2fe95234b62f0cfb089d5c40649015a914445b40054ba8d0797",
+            "locator": {
+              "kind": "symbol",
+              "name": "writer_reported_rule_ids"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A validator refusal writes nothing and names every violation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:947bfd1c43d6b646e85ab303d23d565fcef79b401e87b9d7e4f82fb34be55299",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_validator_refusal_writes_nothing_and_names_every_violation"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Route rules are reports in the writer and refusals at a commit route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:654b94ba75c1212248cbaf2ffa17769545593edae0d2756d9d1ac199fdaf8df8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The coordination root requirement endpoints resolve against; never a reason to refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:a6e265e444834737cdd8a5cf31ae14d6c5a125d733c689102c0782e16cefde9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "coordination_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The report's requirement endpoints, resolved for every record the run touched.\n\nAnchor: `requirement_endpoints`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:d099d9466ef2f09e4fe287bfac74368bc3b8e1188ce211df74063b04a32eb305",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The memory tree and its base, or why the writer cannot write it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:8f7556548b74107eb9d5e2ff72f583a0542f95e2c983e87fe02a0f91ba3dd441",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A crossing owner authors no entry, ruling or new record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:3dd771e602d47815062e4946dceb4f68e3ace03fc22cf93f41c8d467bc695efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_crossing_problems"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The writer compares an unconverted HEAD through its converted base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:2d725e4fb04dce11fb1a3ea1efbdbf994c3716be4bfcb804a064de312f082d5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_compares_an_unconverted_head_through_its_converted_base"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One operation's inputs, including the authorization reference the report records and the task owner's decision resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:18d4d99ec94ac434b7d992a5467db85201d9ef5767c479714fbe6b8d43602741",
+            "locator": {
+              "kind": "symbol",
+              "name": "WriteRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:d50e77207a0cdeab22c56b029ac732cf46ed57f4e1fa7a9cc30a8063abef356f",
+            "locator": {
+              "kind": "symbol",
+              "name": "decisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "A master line's crossing records its rows through the writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:09e5da1f57c2822063e408a1639fa81a660d26a982d1ed628fa8a27aca1ae25c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_crossing_records_its_rows_through_the_writer"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Read, author, check history, render, validate, then finish or refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:81c75113902df98252001540765efe1b537029cbe60cd2733a35942455457664",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The worklist and the task document's questions, both optional (MIK-R14).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:ed5dee9ba3dbac016c0c14ecd5552b6ef1e9d3400688e2513340b52ce011635e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:c26e3780f40b7d1c48bf762e87a29cf7869068f921e04454b26ef5e861801d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "questions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The questions reach the task document after validation and before any file.\n\nAnchor: \"refused = _append_raised(request, authoring.raised)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:d61b7767947d57429554ecb976322af08e7d1eda5f216ede903ce3a1fa18aeca",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The worklist's reconsideration items by subject; the append in a committing run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:5bbbf40b90825b25eabe42452a741017154c176841529067516e25f62091e44f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconsideration_items"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:bc1f66cbbc78a9c605a0c6d245b3d621a7c48cc7c21a377137fd25801d77e5ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_raised"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The carry-forward call and its report field.\n\nAnchor: `carry_entries`; \"carried=carried\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:3bdf8d55cb79cb63aa1f9fa69a72256bd14308be228550cda5690530f7d89afd",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The carry itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57755dbe9aff5204421da8c3384af01e2d9f142d",
+            "content": "sha256:2b685fa9dea29491d7787bb4f65cbc9bfd94a13ea7e20a62e94d0aaad9637e44",
+            "locator": {
+              "kind": "symbol",
+              "name": "carry_entries"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/carry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The `writer_reports` rules become reports inside the writer; commit routes still refuse them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650eaacc18e77794c74c509457d3a4d370ecfb48",
+            "content": "sha256:85bc601ea29b56baf6c49c8d5cfcd4fcf6db81cd09ba498390f5669d09a70a58",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writer_split"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,347 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The automatic pass over the conflicted paths and the settlement it returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:a0235a2922b79213f88c1e5be423f11cf0de80d13d6a32f2c10bb98983ec4cf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_knowledge_conflicts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:c69a6ef30e247687c0885edbc82eaf19c1d965502a91f2d96ec325f00d89c05d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeConflictSettlement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The transaction seam that calls this module, journals the refusal it returns, and narrows the agent's conflict list (its outcome also carries, since MIK-R24, a crossing sync's report path).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
+            "content": "sha256:df7bca7aceaa9ac4de87839def636a2e905f8b9a8a12e1e14bc204c389fe86e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_continue_memory_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
+            "content": "sha256:0a53fe45579b8493120d4cc8287e34fdb50c2835cc85a80787ed5052cc972af1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideMergeOutcome"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
+            "content": "sha256:92c44e342bc9f788bc58282ff89286ceee66b02584d663e2efcaebbd7382594e",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The layer rule that forces the two-module split, and the test that enforces it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee5faf030559778d48f1a94c277a420010369537",
+            "content": "sha256:1c162353d3f25d8f5abeb326b08d895a8b08a5afe8bf5f6990aabc56a12e2d2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lower_ranked_owners_do_not_import_the_memory_domain"
+            },
+            "path": "mcp/tests/test_knowledge_store.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The declared ranks and the sentence stating that lower owners receive `models/knowledge` values and never import the storage package.\n\nAnchor: \"[package.worktrees]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:3690c49bf95cd8278fec906a849ff8887850ef837df900d3fd6825bb8b9778d9",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 188
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:a84aa8e70904396c583215665e5384c9f38a3b44804f99e4d0eb07cc0edd6f33",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The integration case that drives a real divergent knowledge dataset through the transaction and asserts both sides survive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:21acbdc267adebaf0d858e87021d6b8b1a14462795d6f74e83faa28999c54701",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_knowledge_database_conflict_settles"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The integration cases that assert the diagnosis reaches the public response, that one authored decision settles it, that the row-less shape is retracted, that the orientation with nothing to retract advertises only a route that works, and that a schema disagreement is reported rather than reconciled.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:35cdf35cb9d332ababf21f508eadc3cbec1e5489997036531d131e143442ff43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_knowledge_conflict_is_diagnosed_and_reconciled"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:90ffb809ef139a3aaae5cd15901c789719d74a935bcfa5531b72a92341d249eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_delete_reference_conflict_is_retracted"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:5a279d335ee691000f851cf4607ed048b6e81784fede2960b20c3f5cd60132e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_unretractable_delete_reference_advertises_its_real_route"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:783214fdc6941666eda5045fe82a81ee414df897c46b32fd77568e2937c1a1ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_schema_disagreement_is_reported_not_reconciled"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The single-path pipeline, which is also the authored retry: the decision travels in, the engine's fresh explanation travels out.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:af5b746a5e33bfc07ffa2c95a00664852cfc7126076351c4c32bf9739827edf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_knowledge_conflict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The refusal that carries the engine's own conflict and refusal with the path, and the decisions that conflict admits.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:a7b4bdf9c26c532957bd938f63528ded441f568fc820ab6832833e7f6f1d39a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusedKnowledgeStage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Which refusal's explanation belongs in the public response, and why the structured one is preferred.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:a3b916014567db883a1f5f761c4b49f90c3259fb92def49de11d2ddfaf62d4a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "guidance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The per-path stage builder and the three reasons it declines to settle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:6748e7fac257503d66c382a68eb316b3ba7b1270a542950a6060ccaa1fc939dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Binary-safe stage materialisation through `git checkout-index` rather than a text-decoding read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:db5f68b46cd86162d369f122bef2938251f9cea9bff93e44319b315e82bfef52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialise_stages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The unique-common-base proof that refuses rather than choosing between candidates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:d3c098446be2c00b076faa12a00394c728cacb4690fba0199df6e0367ffbdf76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_common_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The stage positions, named once and matching the adapter's own roles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:14e62e096723ea9c90668eb74325e5c53cc4490753ce4056e5b6b8d6ebeb869f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_STAGE_ROLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The application half this module hands three paths to, the settlement it returns, and the one authored decision it passes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:52429675b19ceaf3643a506e1ba9bbf74ccdc023361e04c03b7be7ffc5b4e9b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_conflicted_stages"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:a26347d3be5c123053890f77a9ad7a1a4bd675864e56ea86957557055e89ce8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeStageSettlement"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:a5c7bdac7dcd0b4c4cc5fab082b5ca5e7c0ddd9cdbd366baa19adfc95b72958d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoredReconciliation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

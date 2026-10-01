@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source discovery rules require the resolved `Domain Documentation` category, authoritative live documentation retrieval when the registry names it, local mirrors as orientation only, and actual evidence citations instead of source registries.\n\nAnchor: `## Source Discovery Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:effd87ed36ee810f96a7cf79d275d005a8b9d7ef690cc05caa5a0d9524485db6",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Placement and metadata rules define `entities.md` directly under the resolved onboarding root and keep it complementary to `overview.md`.\n\nAnchor: `## Placement Rules`; `## Metadata Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:ece0546c9e0b7fde353d5e62a2413ec3f519ca26adc150507bd31d66e8bcbcbb",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Entity fingerprint rules define `git-blob-set-v1`, small curated evidence paths, required inventory coverage, acceptable false-positive review prompts, and removed/renamed/moved review before deleting stale rows or evidence paths.\n\nAnchor: `## Entity Fingerprint Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:f20cd79224bcf3fe4751ad223cc36836abcbdee4d2667214447caf9a42e5bdff",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Entity criteria define what belongs in a repo entity catalog.\n\nAnchor: `## Recommended Entry Criteria`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:bc028c5af5fe11297e475fae4b04b51d955b8e2750e7f2f9c02da709dc43755d",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Creation, maintenance, and review steps require source evidence, fingerprint curation, missing/orphaned fingerprint row handling, drift inspection, and update-history preservation.\n\nAnchor: `## Create Workflow`; `## Maintain Workflow`; `## Review Heuristics`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "content": "sha256:8280d585537679e8e59531ab3734142755c94fc155a0a98410f35a6590635baf",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_docs/task_doc_steps.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/task_docs/task_doc_steps.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application/task_docs route overview](overview.md)
@@ -98,55 +88,32 @@ recognize a reasoned removal before the Completion guard.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured external Domain Documentation source applies; this is a repository-internal
 application module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation was found after checking the configured source registry. | n/a | n/a |
+No relevant external documentation was found after checking the configured source registry.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fields a caller may restate on an existing step; `note` is here for both levels because the top-level key set used to omit it. | `_STEP_UPDATE_KEYS` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:25-25 |
-| The shared nonblank-reason reader, also consumed by the tools module's terminal-status exemption. | `step_reason` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:30-37 |
-| The single addressing rule every step operation shares, including the parent-naming miss hint. | `exact_step_target`; `_one_exact_match`; `_step_miss_hint` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:73-94; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:97-124; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:127-137 |
-| The create-only operation requires a title and refuses an existing id in its scope. | `add_step`; `_step_container` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:52-70; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:168-190 |
-| The delete-only operation requires a reason and appends the removal decision. | `remove_step` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:193-223 |
-| The update-only operation and the fields it may copy. | `set_step` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:153-165 |
-| `skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade. | `skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:226-261 |
-| The focused checklist read behind the `read_steps` special operation. | `step_payloads`; `_substep_payload` | mcp/src/agents_remember/application/task_docs/task_doc_steps.py:264-275; mcp/src/agents_remember/application/task_docs/task_doc_steps.py:278-279 |
-| The dispatcher that registers the operations and delegates through thin `_apply_*` adapters. | `_apply_set_step`; `_apply_add_step`; `_apply_remove_step`; `_apply_skip_step` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:691-692; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:695-696; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:699-700; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:703-709 |
-| The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document. | `_enforce_terminal_status` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:877-894 |
-| The schema field that made a top-level `note` storable at all. | `Step` | mcp/src/agents_remember/tasks/document.py:117-135 |
-| The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours. | `test_set_step_updates_only_and_names_the_parent_of_a_bare_substep_id`; `test_remove_step_deletes_a_done_step_and_repairs_a_completed_document`; `test_read_steps_returns_the_checklist_and_changes_nothing` | mcp/tests/test_task_document_application_1.py:314-348; mcp/tests/test_task_document_application_1.py:429-473; mcp/tests/test_task_document_application_1.py:508-545 |
+- The fields a caller may restate on an existing step; `note` is here for both levels because the top-level key set used to omit it. [1]
+- The shared nonblank-reason reader, also consumed by the tools module's terminal-status exemption. [2]
+- The single addressing rule every step operation shares, including the parent-naming miss hint. [3]
+- The create-only operation requires a title and refuses an existing id in its scope. [4]
+- The delete-only operation requires a reason and appends the removal decision. [5]
+- The update-only operation and the fields it may copy. [6]
+- `skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade. [7]
+- The focused checklist read behind the `read_steps` special operation. [8]
+- The dispatcher that registers the operations and delegates through thin `_apply_*` adapters. [9]
+- The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document. [10]
+- The schema field that made a top-level `note` storable at all. [11]
+- The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository protocol or external system is involved. | n/a | n/a |
-
-## Update History
-
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/task_docs/task_doc_tools.py`, `mcp/src/agents_remember/tasks/document.py`, moved by MIK-R11's changes, were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
-  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: created this card for the new step-plane
-  module. Recorded the one exact addressing rule (`parent` selects the namespace; zero or multiple
-  matches refuse), the four operations split by intent (`set_step` update-only, `add_step`
-  create-only, `remove_step` delete-only with a mandatory reason and appended decision, `skip_step`
-  keep-and-resolve moved here verbatim), the parent-naming miss hint that protects the observed
-  L30-L32 defect, and the two developer rulings that a reasoned `remove_step` may target a `done`
-  unit and a `Completed` document. Recorded why the module was extracted (the tools module reached
-  1,243 lines against the armed 1,200-line hard limit) and that `remove_step` and `skip_step` are
-  distinct, not interchangeable. Verification metadata is pinned to this leaf's base commit and
-  remains closeout-owned; no acceptance claim.
+No cross-repository protocol or external system is involved.

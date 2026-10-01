@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_change_sets.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_change_sets.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash |  `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate |  2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [tests route overview](../overview.md)
@@ -129,77 +119,55 @@ every assertion naming the part, member or reference it is about.
 - **Nothing in this module writes outside a temporary root**, and the change set's own read is derived: two
   reads over unchanged rows are equal and dump to the same JSON.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring stating what these cases protect: the six declared parts, the two exact snapshot identities, the membership, the succession edge, and preservation as a record that is not an effect. | `SemanticChangeSet` | mcp/tests/test_knowledge_change_sets.py:1-19 |
-| The probe names that would make a change set a task authority rather than a record of authored work. | `TASK_AUTHORITY_FIELD_NAMES` | mcp/tests/test_knowledge_change_sets.py:75-82 |
-| The probe names that would make a change set a decision, or a generated narrative. | `VERDICT_AND_SUMMARY_FIELD_NAMES` | mcp/tests/test_knowledge_change_sets.py:85-94 |
-| The case that asserts both snapshot identities are stored verbatim, are not re-derived at read time, and must be two sides of one namespace. | `test_a_change_set_records_both_snapshot_identities_verbatim` | mcp/tests/test_knowledge_change_sets.py:255-290 |
-| The case that asserts all six declared parts are readable from one change set, the three member-declared ones as computed membership. | `test_the_six_declared_parts_are_all_readable_from_one_change_set` | mcp/tests/test_knowledge_change_sets.py:293-322 |
-| The case that asserts membership is computed from the members' own declarations, so a member is listed under one change set only. | `test_membership_is_computed_from_the_members_own_declarations` | mcp/tests/test_knowledge_change_sets.py:325-342 |
-| The case that asserts preservation-without-effect and the memberless change set are both complete states. | `test_a_change_set_may_hold_preservation_claims_and_no_effect_claims` | mcp/tests/test_knowledge_change_sets.py:345-369 |
-| The case that asserts no preservation spelling is in the closed effect set and no preservation flag fits the effect payload. | `test_no_preservation_claim_is_representable_in_the_effect_vocabulary` | mcp/tests/test_knowledge_change_sets.py:376-406 |
-| The case that asserts the three member kinds resolve to three distinct models sharing no table and no inheritance. | `test_an_effect_claim_and_a_preservation_claim_are_two_kinds_and_never_one_table` | mcp/tests/test_knowledge_change_sets.py:433-448 |
-| The case that asserts the preservation subject kind set is exactly the four declared kinds, with an effect label refused. | `test_a_preservation_subject_is_a_named_reference_of_one_declared_kind` | mcp/tests/test_knowledge_change_sets.py:451-465 |
-| The case that asserts a preservation subject that resolves to nothing is kept verbatim and reported unresolved. | `test_a_preservation_subject_that_resolves_to_nothing_is_reported_unresolved` | mcp/tests/test_knowledge_change_sets.py:468-491 |
-| The case that asserts the unresolved state is reported for the subject that resolves to nothing and not for one that resolves. | `test_a_preservation_subject_that_resolves_is_not_reported_unresolved` | mcp/tests/test_knowledge_change_sets.py:494-523 |
-| The case that asserts supersession is a new record naming its exact predecessor while the predecessor survives. | `test_a_successor_change_set_is_a_new_record_with_a_predecessor_edge` | mcp/tests/test_knowledge_change_sets.py:530-546 |
-| The case that asserts the edge is written inside the successor's own creation batch and that no union member appends an edge. | `test_the_predecessor_edge_is_written_inside_the_successors_own_creation_batch` | mcp/tests/test_knowledge_change_sets.py:549-577 |
-| The case that asserts a self-named predecessor is refused as the shipped lineage cycle with nothing written. | `test_a_change_set_naming_itself_as_predecessor_is_refused_as_lineage_cycle` | mcp/tests/test_knowledge_change_sets.py:580-595 |
-| The case that asserts the appended generation's triggers seal the edge against an update and a delete. | `test_the_succession_edge_table_is_sealed_against_update_and_delete` | mcp/tests/test_knowledge_change_sets.py:598-626 |
-| The case that asserts two successors of one predecessor are two records and neither edits the other. | `test_a_second_successor_of_one_predecessor_is_a_separate_record` | mcp/tests/test_knowledge_change_sets.py:629-646 |
-| The generation-8 append: generation 7's thirty-three names keep their columns and primary keys and exactly one table is appended. **Re-scoped by `260915-KS-L21`:** the registry-tip identity assertion became an ordering assertion, so the case now records where generation 8 sits in the registry instead of asserting it is the tip. | `def test_generation_eight_appends_one_table_to_the_generation_it_descends_from()`; "generation 7's thirty-three"; `"change_set_predecessor"`; `CURRENT_GENERATION.user_version > GENERATION_8.user_version` | mcp/tests/test_knowledge_change_sets.py:649-682; mcp/tests/test_knowledge_change_sets.py:654-654; mcp/tests/test_knowledge_change_sets.py:670-670; mcp/tests/test_knowledge_change_sets.py:676-687 |
-| **Generation 9, appended by `260915-KS-L21`, is why that assertion was re-scoped: generation 9's tables are generation 8's with only the census tables appended, and every generation-8 table keeps its columns and primary keys.** | `test_the_census_record_kinds_join_a_registered_generation_that_appends_to_its_predecessor` | mcp/tests/test_migration_census.py:359-368 |
-| The case that asserts a new store declares the current generation and is served by this record group's read. | `test_a_new_store_declares_the_generation_that_carries_this_leafs_table` | mcp/tests/test_knowledge_change_sets.py:694-707 |
-| The case that asserts a requirement-revision reference is stored verbatim, reported unresolved with its holder, and fabricates no requirement record. | `test_a_requirement_revision_reference_is_stored_verbatim_and_reported_unresolved` | mcp/tests/test_knowledge_change_sets.py:714-747 |
-| The case that asserts near-miss spellings round-trip byte-identically and stay distinct, so nothing canonicalises them. | `test_a_requirement_revision_reference_is_never_parsed_or_canonicalised` | mcp/tests/test_knowledge_change_sets.py:750-762 |
-| The case that asserts the shipped reference-length bound is a property of the record. | `test_a_requirement_revision_reference_beyond_the_shipped_bound_is_refused` | mcp/tests/test_knowledge_change_sets.py:765-780 |
-| The case that asserts a reference or a realization-claim identity declared twice is refused. | `test_a_reference_declared_twice_is_refused` | mcp/tests/test_knowledge_change_sets.py:783-798 |
-| The case that asserts an identity no stored claim carries is refused as an invalid reference naming it, with nothing written. | `test_a_candidate_realization_claim_that_resolves_to_nothing_is_refused_as_invalid_reference` | mcp/tests/test_knowledge_change_sets.py:801-817 |
-| The case that asserts a reference whose row is gone is reported unresolved rather than dropped or re-pointed. | `test_a_realization_claim_removed_after_the_change_set_is_reported_unresolved` | mcp/tests/test_knowledge_change_sets.py:820-852 |
-| The case that asserts an open question declares exactly its fields and nothing records it answered. | `test_an_open_question_is_reported_open_and_nothing_records_it_answered` | mcp/tests/test_knowledge_change_sets.py:859-888 |
-| The case that asserts no task status, seat ownership or approval is representable at either plane. | `test_nothing_here_stores_task_status_seat_ownership_or_approval` | mcp/tests/test_knowledge_change_sets.py:891-905 |
-| The case that asserts no verdict or generated summary field is representable and the payload's field set is exactly its declared composition. | `test_a_change_set_carries_no_verdict_and_no_generated_summary` | mcp/tests/test_knowledge_change_sets.py:908-925 |
-| The case that asserts the payload registers under exactly one kind and one schema. | `test_the_change_set_payload_registers_under_one_kind_and_one_schema` | mcp/tests/test_knowledge_change_sets.py:928-941 |
-| The case that asserts the read projection reports every unresolved reference verbatim with its holder and that the scope list is exactly the union of the per-record lists. | `test_the_read_projection_reports_every_unresolved_reference_verbatim_with_its_holder` | mcp/tests/test_knowledge_change_sets.py:944-975 |
-| The case that asserts the read is derived: two reads over unchanged rows are equal and dump to the same JSON. | `test_the_read_is_derived_and_a_rebuild_reproduces_it_byte_for_byte` | mcp/tests/test_knowledge_change_sets.py:978-992 |
-| The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands. | "mcp/tests/test_knowledge_change_sets.py" |mcp/tests/test-evidence-lanes.toml:273-273|
-| The registration listing this module among the exact consumers of the shared candidate-batch case harness. | "candidate-batch-case-harness"; `"mcp/tests/test_knowledge_change_sets.py"` | mcp/tests/evidence-lifecycle.toml:1238-1256; mcp/tests/evidence-lifecycle.toml:1255-1255; mcp/tests/evidence-lifecycle.toml:34-37; mcp/tests/evidence-lifecycle.toml:1261-1269 |
+- The module docstring stating what these cases protect: the six declared parts, the two exact snapshot identities, the membership, the succession edge, and preservation as a record that is not an effect. [1]
+- The probe names that would make a change set a task authority rather than a record of authored work. [2]
+- The probe names that would make a change set a decision, or a generated narrative. [3]
+- The case that asserts both snapshot identities are stored verbatim, are not re-derived at read time, and must be two sides of one namespace. [4]
+- The case that asserts all six declared parts are readable from one change set, the three member-declared ones as computed membership. [5]
+- The case that asserts membership is computed from the members' own declarations, so a member is listed under one change set only. [6]
+- The case that asserts preservation-without-effect and the memberless change set are both complete states. [7]
+- The case that asserts no preservation spelling is in the closed effect set and no preservation flag fits the effect payload. [8]
+- The case that asserts the three member kinds resolve to three distinct models sharing no table and no inheritance. [9]
+- The case that asserts the preservation subject kind set is exactly the four declared kinds, with an effect label refused. [10]
+- The case that asserts a preservation subject that resolves to nothing is kept verbatim and reported unresolved. [11]
+- The case that asserts the unresolved state is reported for the subject that resolves to nothing and not for one that resolves. [12]
+- The case that asserts supersession is a new record naming its exact predecessor while the predecessor survives. [13]
+- The case that asserts the edge is written inside the successor's own creation batch and that no union member appends an edge. [14]
+- The case that asserts a self-named predecessor is refused as the shipped lineage cycle with nothing written. [15]
+- The case that asserts the appended generation's triggers seal the edge against an update and a delete. [16]
+- The case that asserts two successors of one predecessor are two records and neither edits the other. [17]
+- The generation-8 append: generation 7's thirty-three names keep their columns and primary keys and exactly one table is appended. **Re-scoped by `260915-KS-L21`:** the registry-tip identity assertion became an ordering assertion, so the case now records where generation 8 sits in the registry instead of asserting it is the tip. [18]
+- **Generation 9, appended by `260915-KS-L21`, is why that assertion was re-scoped: generation 9's tables are generation 8's with only the census tables appended, and every generation-8 table keeps its columns and primary keys.** [19]
+- The case that asserts a new store declares the current generation and is served by this record group's read. [20]
+- The case that asserts a requirement-revision reference is stored verbatim, reported unresolved with its holder, and fabricates no requirement record. [21]
+- The case that asserts near-miss spellings round-trip byte-identically and stay distinct, so nothing canonicalises them. [22]
+- The case that asserts the shipped reference-length bound is a property of the record. [23]
+- The case that asserts a reference or a realization-claim identity declared twice is refused. [24]
+- The case that asserts an identity no stored claim carries is refused as an invalid reference naming it, with nothing written. [25]
+- The case that asserts a reference whose row is gone is reported unresolved rather than dropped or re-pointed. [26]
+- The case that asserts an open question declares exactly its fields and nothing records it answered. [27]
+- The case that asserts no task status, seat ownership or approval is representable at either plane. [28]
+- The case that asserts no verdict or generated summary field is representable and the payload's field set is exactly its declared composition. [29]
+- The case that asserts the payload registers under exactly one kind and one schema. [30]
+- The case that asserts the read projection reports every unresolved reference verbatim with its holder and that the scope list is exactly the union of the per-record lists. [31]
+- The case that asserts the read is derived: two reads over unchanged rows are equal and dump to the same JSON. [32]
+- The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands. [33]
+- The registration listing this module among the exact consumers of the shared candidate-batch case harness. [34]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The cases exercise one in-process knowledge store
 under a temporary root and construct no process, publication or Git object.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 21 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_knowledge_change_sets.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:26:42+00:00: Generated citation repair: "mcp/tests/test_knowledge_change_sets.py" repointed to mcp/tests/test-evidence-lanes.toml:273-273. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 4 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/evidence-lifecycle.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_change_sets.py" repointed to mcp/tests/test-evidence-lanes.toml:220-220. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_knowledge_change_sets.py" repointed to mcp/tests/test-evidence-lanes.toml:201-201. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "mcp/tests/test_knowledge_change_sets.py" repointed to mcp/tests/test-evidence-lanes.toml:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `test_the_census_record_kinds_join_a_registered_generation_that_appends_to_its_predecessor` repointed to mcp/tests/test_migration_census.py:359-368. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:43+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **No content impact: re-read the one changed hunk against every claim this card carries, and it leaves them all true.** `test_a_preservation_subject_is_a_named_reference_of_one_declared_kind` (`test_knowledge_change_sets.py:451-465`) no longer constructs the deliberately-invalid subject directly; it hands the same value to `PreservationSubject.model_validate({"kind": "effect", …})` with a comment recording why (the value is outside the declared type **by construction**, which is the whole case, so it goes in as untyped input rather than through a construct the type system would have to have admitted). The case still asserts exactly what the card says it asserts — the four declared subject kinds accepted and an effect label refused — through the same validator, so "the preservation subject kinds are exactly the four declared ones with an effect label refused as a subject" needs no correction; the same applies to the "every refusal in this module is a shipped code" invariant, since this hunk changes how the refused value is handed in, not which refusal is expected. The case count is unchanged at 29 (measured by AST: 29 test functions, none parametrized). No row, citation or range was rewritten by hand — this hunk's four-line insertion shifts the case's own cited range (`:451-461` → `:451-465`) and every row after it, which the citation-range repair pass owns — and no verification stamp advanced (the source is uncommitted and closeout owns the stamp).
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): re-read this card's generation claim and the one assertion the census leaf re-scoped, and corrected both rather than annotating them. `CURRENT_GENERATION is GENERATION_8` became `CURRENT_GENERATION.user_version > GENERATION_8.user_version` (`mcp/tests/test_knowledge_change_sets.py:683`), so the card's Logic now states that the registry's tip lies beyond generation 8 while the generation-8 prefix, columns, primary keys, trigger and index sets and the `ALTER TABLE` sweep are asserted exactly as before, and the source comment at `:678-682` is cited for why. Generation 9 is recorded substantively as the generation this record group descends through, with the census module's own `test_the_census_record_kinds_join_a_registered_generation_that_appends_to_its_predecessor` (`mcp/tests/test_migration_census.py:360-369`) named as the case that asserts the full descent. Three citations were re-derived against the current files: the lane row now cites `mcp/tests/test-evidence-lanes.toml:188-188` (the leaf's one-line insertion at `:128` had moved it off the four ranges the row carried) and the candidate-batch harness registration now cites `mcp/tests/evidence-lifecycle.toml:1224-1242` with the consumer path at `:1241`. No claim was deleted and no case was weakened. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-18T06:20+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): created this one-to-one card for the change-set record group's 29 cases. It records the succession rule at the case level (a new record with a predecessor edge, written inside the successor's own creation batch, sealed against update and delete, and forkable), the two-plane absence assertions for task authority and verdict probes, the by-name generation argument that generation 8 appends exactly one table to generation 7's thirty-three, the exact-set vocabularies that pin rather than union, and the derived read that reports unresolved references verbatim. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

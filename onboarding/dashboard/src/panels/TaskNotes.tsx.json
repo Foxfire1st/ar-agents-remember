@@ -1,0 +1,191 @@
+{
+  "path": "dashboard/src/panels/TaskNotes.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The data client + the pure reference resolver.\n\nAnchor: `listNotes`, `resolveNoteReference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
+            "content": "sha256:ea96e2f129e7d29d6f2e847dca92d725fb659db2a4a0b2931b7985b15052079b",
+            "locator": {
+              "kind": "symbol",
+              "name": "listNotes"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
+            "content": "sha256:8c62e549e9afe5477f682e83eda4e4870e1fa470f6ebb4c7c0d196705144b939",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveNoteReference"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The surface passes a shared discriminated artifact target: notes carry a path, while requirements also carry the selected document.\n\nAnchor: \"export type TaskArtifactReaderTarget =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e409de6f0777f70c752a04cf186a7f910b158b",
+            "content": "sha256:5bd7f8dca22cf06dd249a8f12cfcabc24ae2ad0617e42c379c23366fa5dcdeb5",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/taskArtifacts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "TaskNotes imports the shared target under its existing local NotesReaderTarget name.\n\nAnchor: \"import type { TaskArtifactReaderTarget as NotesReaderTarget }\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f78e66c6cad87f02598d241bfa4204ca21f3b0b",
+            "content": "sha256:c9b54ab3ac2e7bbd6c12add13be75e7eb51d5c58a87e780ff70e442323b462e6",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared markdown renderer (inline reference rendering).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
+            "content": "sha256:46e6b914756bebae0699a0997ff3d22903e92a1910c7c2228fe012b30e5116d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "Markdown"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
+            "content": "sha256:0a8d33a73c8ecdf1987fb17731553a984396d985ddb7fc6c3e5f222b81eadf22",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The task reader + master overview that mount this component and thread `onOpenNotes`.\n\nAnchor: `MasterOverview`, `TaskReader`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:870f45dc6d4b00dc1d5a9a77d0b6aec42efb4c4df16fd13c52b6e9fe1580d60f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterOverview"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReader"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:ae375ba403f6e49c4bdbbc8cbf517581d63c2636000aad3de5bea04a162b9402",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:c30b4698a8a428219b6572fb334b2c06fb5838779f40b6d2b67e105abe46e9e8",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 614
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The serving endpoints behind the client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:a751e8b4d04a6eae9f3a33fa848a630a8cf66a31a29b970931ee96eaedd898d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_notes_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The component test suite.\n\nAnchor: \"TaskNotes entry surface\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c8dcbcb233f63d4847aa5b0712a3abe9583f375",
+            "content": "sha256:c0b35a6df9ec24343d7855bf58725f57e6716f0cb890090d83e0663c24a027d6",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "dashboard/src/panels/TaskNotes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

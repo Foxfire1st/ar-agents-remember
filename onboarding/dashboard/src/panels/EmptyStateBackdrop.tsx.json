@@ -1,0 +1,148 @@
+{
+  "path": "dashboard/src/panels/EmptyStateBackdrop.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The engine-room G6 backdrop styles (`backdrop`/`backdropVideo`) this component mirrors.\n\nAnchor: \"export const backdrop =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2705414b33e8e26414012f581eb336013b6fd384",
+            "content": "sha256:60776b23a7722db08d7d4341a9871fd91262808e3e0356447c1c1be7226d7482",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "dashboard/src/panels/engine-room/backdrop.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video).\n\nAnchor: \"export function EnclosureProcessMap\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
+            "content": "sha256:a5e17e7e06809939cbac00f4393e72a742d469beea2875cf821988533825c6dc",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The honest-motion gate that decides whether the backdrop mounts at all.\n\nAnchor: \"export function useShouldAnimate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:73f92e9ae789a221d43db6613042a96de87ec471bb2258bbd3974b498713179b",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`.\n\nAnchor: \"export const DetailPanel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
+            "content": "sha256:b7d09e1dfa9ff6cfed47c439a853ed250342a83c8124fff97f051031b7146d28",
+            "locator": {
+              "kind": "symbol",
+              "name": "DualPane"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:1f10a3128c89a000c85fb61ae59c98da7ad64e75ad46dcb85d1202e1bf163cdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetViewer"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child.\n\nAnchor: \"export function EmptyStateBackdrop\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c3afff4327a285950ac79ef737319425475e8a7",
+            "content": "sha256:09ad23ee80f773970b168ac1b441adce9ebf5ffc9430d4396f215b1ca81d209a",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The render test pinning children-always-show, effects gating, the direct video child, and absence of `empty-backdrop-zoom`.\n\nAnchor: \"always renders the message children\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c15d07da463cd2dd32f41b2bbb13f2466c5b13e",
+            "content": "sha256:d0eb877967706f86326e57fe3d16874d307d9646f2efaa24084289744e37f028",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/panels/EmptyStateBackdrop.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

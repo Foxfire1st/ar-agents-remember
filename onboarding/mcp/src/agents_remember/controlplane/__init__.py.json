@@ -1,0 +1,144 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The records this package exports.\n\nAnchor: \"class GateRecord\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af2a37e3cdff5f67bda1c0fd35069fcde2489e7",
+            "content": "sha256:f3c93f7d3af46248d0746d80d22ea61bbd0d2d1eff2392b2202d56fb99ef7941",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/controlplane/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The gate delegation policy this package exports (moved to kernel primitives by L9).\n\nAnchor: \"class GatePolicy:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:8d9487b3076ca1d8cfda80f3bb6275600830c76684c06abda4eb102af1a7946f",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store this package exports.\n\nAnchor: \"class GateStore:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
+            "content": "sha256:246909f64d57c8a2909061ad67923548c61b14e880230f4d420a2bdeab969be7",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The enforcement policy this package exports (slice 6b).\n\nAnchor: \"class GateGuard\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098584045028586661c04fda59d447990277db8a",
+            "content": "sha256:198a6546e4de20cf19d73a1e00d7bb79ce5656454fdf46de3c73182d196a0cc2",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The operator inbox records and store this package now exports.\n\nAnchor: \"class InboxAddress\", \"class OperatorInboxStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bf6786f6e546a7f79d0be5ccb3200c4da94e75a",
+            "content": "sha256:d17f8669c6f3a3d3914aac6964139af8c7837a64018244653e9400f177a59276",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:6f3682528b25fdb8a2d8add33b519f023d66cba0e6966b3cee97447eaf0e1052",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L73-L108.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b593b3aa9aa815db062537f953c38806dbf2373",
+            "content": "sha256:1adda3270a1b5edbcbe8de33bdcd811ae5d4677b5774cb353c41e211e5e00e2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported.\n\nAnchor: \"SCHEMA_VERSION = \"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5134f1c72ed37fa9faf800983625c94e1bb221bc",
+            "content": "sha256:f9ff027fc10e363ca8bd88ab12e81b09bf2023b046372290f003fd48b199d8d3",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

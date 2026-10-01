@@ -1,0 +1,233 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/coverage-plan-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The coverage plan template captures strategy, area goals, route classification, file classification, and evidence pack queues.\n\nAnchor: \"Strategy\"; \"Area Coverage Summary\"; \"root + route overview + top files\"; \"Route Classification Queue\"; \"core-logic / cross-repo-boundary\"; \"File Classification Queue\"; \"landmine / boundary / core-logic / routine-support\"; \"Evidence Pack Queue\"; \"Boundary Pack Needed?\"; \"<route>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:76f298b19fd1e4b631c419c2100ca2168fda57d09707e778002f0955453176f7",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:35f8051320cb4b47f96b58596e73779914fa48825214970c5b60e7c2a099ddd9",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:0668682d9122313fa0bc71ccbfc608ae5b878b93a81afeb96b436fede11cac8f",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:c9691b991148c48e41b6f36bf9024aae585ad0099f3c0b532df05e5b3dbf7676",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:752b639623ec2887216421ff09014d9b2361b1436e2839d0b443e8ec2162e8fb",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:145f80e81d8be436446dcdf2c42238aa196eb470eb5f2d71ddbc26c1ad5c661f",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:1704eb78f8dcc1d649e85c71ec389c6dee4e62732fc951696f473c332e4f11fc",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:6075259448c1af55e8f7a3ec9c01f17ee6d229b72093885fb9582a5de6282ca0",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:7a14f012e2a6280a9a418237a1fef2f14603b32c27e103bac3295ea92aa6b7f5",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:ab8a4c58cd73048abdfb5807c7f956138ef5e47a5fdcb98f97ec563f0ae11a66",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template records deferred routes/files, slice cleanup decisions, developer review questions, and decisions for later waves.\n\nAnchor: \"Deferred Routes And Files\"; \"simple DTO / generated / routine helper\"; \"Slice Cleanup Queue\"; \"route overview / child file onboarding\"; \"Developer Review Questions\"; \"Are these the right routes to document first?\"; \"Decision Log\"; \"<decision>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:d3e142bd28751ed79a4a6fa928c78fa1881a9397478d7315fe1f3b5e0e317b42",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:14953ff2805af8ea6df85a4e869349f15a41484e8cc8003c7d865697b80857a1",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:bba4a0d4e63c28460a92cf96b41193bc29ccbe324755b5c2188ac013928167e2",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:33a69741cc79cd6d41e1542b3b233a0d045734594eb29eb4a79e7447048bf7a6",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:9272f9dc541f666c478e4698f11a4bb72a9e74f10cb474bf1dd4a26c29c43862",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:6c1a2fc2eb46f4492ae48e5db10c04a9af5a76f83af4c71bb3dab034a5f0c84e",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:6f73d82de2ecc3ad87ee7949fd844435de45528f55cb7a940a411fa37a162f50",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5d6a8913af356157f6c681e63d87e4719d6ff83",
+            "content": "sha256:a2b9acab9dd4b69e136e3fa1b7b8654896f0ace30375cbddc7efa5d2f3fdc8c8",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

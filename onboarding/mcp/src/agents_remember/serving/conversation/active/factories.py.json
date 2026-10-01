@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/factories.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The validated exact-session IPC reads used here.\n\nAnchor: \"def read_submission_authority(self\"; \"def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:794fda955f0b86a543b9c4db708edc9475ea33a63fee4a3a2dffaaa813ea0d93",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:3922376248fd05839eef867ec619c56c5bf2777dcb7a32401c1c062ff18f6b0e",
+            "locator": {
+              "end": 639,
+              "kind": "line_range",
+              "start": 639
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`AdapterSnapshot.vendor_session_id` is the proven native identity the factory requires.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:3bfbd414e81a3803aff06cad32f7a63a0d004b159439df86b409628d6cdb7539",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdapterSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The catalog row supplies status, kind, control endpoint, tmux name, and cwd.\n\nAnchor: \"def from_json(cls\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:3f3abbe9fc222f8319d7ce1076e322867976214dade952a11d91554cac37567c",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`projector_for` returns `None` for harnesses without a projector, failing resolution typed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9d9c4e78b62dcd9e1f69a01963dc0b6507b668",
+            "content": "sha256:814cb9a40fa232fc007a16d1410662e0fd3ff0a215a8e92045a2e9ecac116418",
+            "locator": {
+              "kind": "symbol",
+              "name": "projector_for"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

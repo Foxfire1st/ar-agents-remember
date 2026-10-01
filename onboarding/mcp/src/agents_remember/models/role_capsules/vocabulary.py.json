@@ -1,0 +1,289 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The literal/tuple agreement guard, the launcher-is-not-a-role guard, and the ten-role/nine-operation census the leaf extended.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:72aeaaba12a344662d7d84168795d915b1a04887df428d2857cbe8abbec06a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_frozen_vocabulary_is_exactly_the_ten_roles_and_nine_operations"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:2621e56d55e0fb0455d1af05b2d3a65bafd1c0f7b69d33b0656132c56ad1e1ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_role_and_operation_literals_agree_with_their_runtime_tuples"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:5fd6ab94aea5614649efeb8e41ec50f350635e96e8bd58f436f9a45b43addd3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_launcher_is_a_seat_kind_and_not_a_role"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:2af0167c866e8e0555789b60c73ad9eb396e43766a4c5c26923b9652421a89da",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:24ee2a429d6cf61a9dc6c086ab30c650b1f056fb8bb8d74a894272b1955a97a0",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:9aaf0965851acb3ba7851b2961d1a437800437e5e01813983a73b9e724a65436",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The independent role census this module's runtime tuple is compared against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:63410f259f4d312c7d8028e3f30c9a6663efc101b8e504e91663accb3489bf35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHIPPED_ROLES"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:dd76f42e46accac0c85e2afbb7053c96a8f73fffd7d3b19758efc24ff0a7d341",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHIPPED_OPERATIONS"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:c73bd88a71370dbb98d5c279e98e22557884e1fbe824c11a48cf3f3993d8acd6",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:c07f8f9de8b2f8a7a6578664ccc33a4ff25b4b4ad0565966b5a89e7992bfa498",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The parser that is handed this vocabulary and refuses a manifest that disagrees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:d3e6eee279eafcfca161291cb247167af728e57159bcf6e30031ef5a16653f19",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_composition_manifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:1813b02c7b7f6f72d28f1af170d139cb3166a6a625775965c73443f7593673f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MANIFEST_VOCABULARY_MISMATCH"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The narrowing helpers that turn an untrusted string into a role or refuse it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bd746889c565d4328ceabf4a616abd724148bed",
+            "content": "sha256:11d946e15b3b6e22d1932e52dc9dca7609abf48157c5af305e9c3f4abec66eee",
+            "locator": {
+              "kind": "symbol",
+              "name": "narrow_operation"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bd746889c565d4328ceabf4a616abd724148bed",
+            "content": "sha256:4f5cbb93958244780448723a4b41daa1dcfeba370e0e6b3c465e081bf37fadb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "narrow_role"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bd746889c565d4328ceabf4a616abd724148bed",
+            "content": "sha256:48618f22880eceadbbae45d7f2650dd59c3358ec2cb4e6dd91635b6215f7187e",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The canonical authored metadata that must agree with these tuples.\n\nAnchor: \"\\\"role_order\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:f0dad0a8df6fd0a2092f0cfbc762f0978e1200280daa6856c932da956fc8f041",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The settings registry kept in step with this vocabulary, so a published role is configurable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c22434b876834849d0e27f57e5d832666ba1ec8",
+            "content": "sha256:b50b2c40b618cc6614d6928bff38bc85c43f019a5690caf174f7d940ccbb8aeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWN_ROLES"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c22434b876834849d0e27f57e5d832666ba1ec8",
+            "content": "sha256:2300076a199f3e81a0920a5259f39ce51ae89d3b738db3dd3e0b975c0f189ce6",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The free-agent shape the tenth role carries, and the exclusion list it must not be added to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c81d877a2a874fed1c967383153f0dcfcd2143a",
+            "content": "sha256:41ebaad1a45d219fd40decb0ea0f455eb2f7d55afb6b49d3fe05ade539c21739",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASKLESS_SEAT_ROLES"
+            },
+            "path": "mcp/src/agents_remember/serving/task_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

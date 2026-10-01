@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/projector/child_history.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/projector/child_history.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active projector package overview](overview.md)
@@ -47,19 +37,19 @@ Selection is the demand signal. No background loop walks every child.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Public `AgentHistoryHydration` records status/detail/code, and `agent_history_state_item` renders unavailable/recovered child-local rows. | `AgentHistoryHydration`; `agent_history_state_item` | mcp/src/agents_remember/serving/conversation/active/agent_history.py:19-26; mcp/src/agents_remember/serving/conversation/active/agent_history.py:29-70 |
+- Public `AgentHistoryHydration` records status/detail/code, and `agent_history_state_item` renders unavailable/recovered child-local rows. [1]
 
 | Concurrent reconnect requests share one active projector and return the same page/events/`child_history` object. | `test_concurrent_reconnect_replaces_a_retired_projector_once` | mcp/tests/test_active_projector_singleflight.py:24-94 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
@@ -79,13 +69,3 @@ The constructor is now `ChildHistoryProjection(spine, readers, native)`:
 Behaviour, hydration ordering and the walked/failures/inflight bookkeeping are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: split hydration-result and regression-test ownership, restoring the public row renderer and concurrent reconnect return-value spans.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: constructor now takes `SessionProjectionSpine` + `BridgeReaders` (plus the native ingestion peer); parent thread id and epoch come from the spine.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the selected-child
-  history sidecar and recorded its demand, singleflight, capacity, and failure-containment
-  boundaries. Verification metadata remains blank until commit.

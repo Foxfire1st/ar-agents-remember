@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_reader/truth.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_reader/truth.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -80,37 +70,28 @@ opened at a locator.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the truth views per kind and the census view. | "A **truth view** shows one record of the selected tree" | mcp/src/agents_remember/application/knowledge_reader/truth.py:1-21 |
-| One record's truth view with its links, kind part and timeline. | `record_view` | mcp/src/agents_remember/application/knowledge_reader/truth.py:65-87 |
-| The kind's own part, and the entries that feed its timeline. | `_kind_part`; `_member_entries` | mcp/src/agents_remember/application/knowledge_reader/truth.py:90-105; mcp/src/agents_remember/application/knowledge_reader/truth.py:108-116 |
-| Outgoing links, or the reason they could not be read (F11). | `_outgoing`; `_links_of` | mcp/src/agents_remember/application/knowledge_reader/truth.py:123-143; mcp/src/agents_remember/application/knowledge_reader/truth.py:146-160 |
-| The invariant and family parts with their states. | `_invariant`; `_family` | mcp/src/agents_remember/application/knowledge_reader/truth.py:172-188; mcp/src/agents_remember/application/knowledge_reader/truth.py:191-218 |
-| Every record by kind. | `record_list` | mcp/src/agents_remember/application/knowledge_reader/truth.py:226-235 |
-| MIK-R20's census report; an unknown census by membership. | `census_view` | mcp/src/agents_remember/application/knowledge_reader/truth.py:238-263 |
-| A code file at a locator; a malformed locator is a bad request (F3). | `code_view`; `_parse_locator` | mcp/src/agents_remember/application/knowledge_reader/truth.py:266-303; mcp/src/agents_remember/application/knowledge_reader/truth.py:306-315 |
-| The family, decision, incident and facet, and census cases. | `test_a_family_truth_view_shows_guarantee_members_routes_and_every_location`; `test_a_decision_truth_view_shows_alternatives_and_derived_supersession`; `test_incident_and_facet_views_show_every_field_and_typed_links_both_ways`; `test_the_census_view_shows_measures_and_each_routes_status_history` | mcp/tests/test_knowledge_reader.py:883-949 |
+- The module's own statement of the truth views per kind and the census view. [1]
+- One record's truth view with its links, kind part and timeline. [2]
+- The kind's own part, and the entries that feed its timeline. [3]
+- Outgoing links, or the reason they could not be read (F11). [4]
+- The invariant and family parts with their states. [5]
+- Every record by kind. [6]
+- MIK-R20's census report; an unknown census by membership. [7]
+- A code file at a locator; a malformed locator is a bad request (F3). [8]
+- The family, decision, incident and facet, and census cases. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new module MIK-R29 adds, recording the carried L13 rule and rulings 09:42:58 F3 (a malformed locator answers 400), F11 (unreadable links and an unknown census named) and F12 (the duplicated currentness helper removed). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

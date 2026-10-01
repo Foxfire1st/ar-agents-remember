@@ -1,0 +1,79 @@
+{
+  "path": "mcp/tests/test_worktree_support_tests_1.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture queue and early refusal helpers retain typed inputs and exact bindings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95fc5a6746fc807150e9562fec936dfed0887286",
+            "content": "sha256:854d679b3eb915623568246fff61d0627d50eca67c497e35b62eccfb9afe9b4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_and_read_leaf_queue"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "95fc5a6746fc807150e9562fec936dfed0887286",
+            "content": "sha256:c4acaf7a725b7ae5f63374f46991a1688b2c6f8311829ae5e4839650344e4a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_early_closeout_binding_refusals"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retained lifecycle scenario preserves the parent through start/attach/abandon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95fc5a6746fc807150e9562fec936dfed0887286",
+            "content": "sha256:00198e8745f9d7d71bebdf011cbbaea0714e73fb544f17567553f60272bcd5ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_master_start_and_abandon_preserve_parent_series"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared closeout arguments normalize the two real content messages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:7205b78a3c664f64bf493142c9045ce62c0e053938706061921befc9362f8989",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_worktree_args"
+            },
+            "path": "mcp/tests/closeout_input_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67060bab8e42a073cbacc81807f52e9d720abd6b",
+            "content": "sha256:ee8013dcde65b92a192ab77a34d5bfe7eb6d69c1ac739075385d925921caa8f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_operation_input"
+            },
+            "path": "mcp/tests/closeout_input_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

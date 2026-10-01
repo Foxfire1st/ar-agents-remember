@@ -1,0 +1,243 @@
+{
+  "path": "mcp/src/agents_remember/models/direct_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real code/memory SHAs are separate from optional ledgerCache diagnostics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44c50a24680aec823ce72bfe1ca3a95e10a0c264",
+            "content": "sha256:94eadab47de0136441142f178e8eed63737d774a5004b8590d6e7c97adfb23e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The response model shape for the direct landing operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44c50a24680aec823ce72bfe1ca3a95e10a0c264",
+            "content": "sha256:94eadab47de0136441142f178e8eed63737d774a5004b8590d6e7c97adfb23e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registered as the `direct_landing` tool response model.\n\nAnchor: `DirectLandingResponse`; `direct_landing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:0db325a8ce4ad401b18bedd0cf6ab450be2014fd8159b67ba98db9dfe0f1ec54",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 214
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:1641816b6a4575ba85a44de0381a900e5b7226c8992474c4fd447ceaf9d4d56c",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:b073771cdf30495fb5f193ff5a8e947aa61b532aea79c2fd105fbfd77246b442",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:7a898b51a6ce8d0eadace4bed8976d3ac0b282d9385d94ff9e4d4fd3ad5583cc",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Produced by the admitted direct-landing coordinator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8baa15ca43be010159ae15f6b0e744949e6d33a",
+            "content": "sha256:529d85e7a74529c0b44905603b846d31dfb24b4369be52d6bd0d11adb71efcb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Memory-content execution and same-generation recovery are journaled below the coordinator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:82f07877e1f8720099fb74a1d5d1acd9ff514510dd660e8033ef4876211a130d",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:2ed178292059a03b2e80e88e5d8e1130489d02eafe95ee8b3fe93e7fb31c1073",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44c50a24680aec823ce72bfe1ca3a95e10a0c264",
+            "content": "sha256:09884457665159ef96de86f506692a9dd735ef8d65b8d6ae50c0be2e01fa52bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "codeCommit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c50a24680aec823ce72bfe1ca3a95e10a0c264",
+            "content": "sha256:b756d3cf5678d19529f2d692da67f67a010a7429f32b7b8357663f050e2404d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "memoryContentCommit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c50a24680aec823ce72bfe1ca3a95e10a0c264",
+            "content": "sha256:48dc1ffbf0f21f0c57b0f0f76977f67799863226dd22877d54fcbb2eb68fe6a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledgerCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8baa15ca43be010159ae15f6b0e744949e6d33a",
+            "content": "sha256:529d85e7a74529c0b44905603b846d31dfb24b4369be52d6bd0d11adb71efcb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:77192bb537bcbf33572394092bc04fce51fdfd6403c67f7238beb3f1142566d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_or_require_direct_landing_recovery"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:71dc6b111f8da282d014b6892504a7795300587220e818cb6e952e175f640f4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_memory_commit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current module exposes `DirectLandingResponse` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44c50a24680aec823ce72bfe1ca3a95e10a0c264",
+            "content": "sha256:94eadab47de0136441142f178e8eed63737d774a5004b8590d6e7c97adfb23e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

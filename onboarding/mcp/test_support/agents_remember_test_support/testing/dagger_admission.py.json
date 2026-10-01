@@ -1,0 +1,55 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/dagger_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Nonce/file facts are validated as a total refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c4d97eb3603a562e58fe97863b2395eaf0aca98",
+            "content": "sha256:0d1e07f7993f4e081fe2d866288e403ca641b184847842776af20fca45111e50",
+            "locator": {
+              "kind": "symbol",
+              "name": "dagger_admission_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only the validator mints admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c4d97eb3603a562e58fe97863b2395eaf0aca98",
+            "content": "sha256:ed22d4b4df5178a37ed3a1601f8d1f2bea8ea22b2f9a1d7b6ca47a1225e03978",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_dagger_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Downstream caller-shaped capabilities refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c4d97eb3603a562e58fe97863b2395eaf0aca98",
+            "content": "sha256:4d1366c5ce8f7e47323fc52b8f90753cfce7558d5e6a188dac87fa01989c63cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_dagger_admission_capability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Explicit code-tree progression of an existing admitted draft leaf candidate.",
+  "conditions": [
+    "The exact predecessor receipt and logical dataset identity still match under the existing candidate resource lock.",
+    "Namespace and authority home, schema, lane, task, memory inputs and code-base/reference scope remain unchanged.",
+    "The shared source-currentness check confirms the new captured code before the receipt write."
+  ],
+  "exclusions": [
+    "Ordinary candidate open remains strict; an arbitrary open refusal does not grant progression.",
+    "Progression changes no knowledge rows or allocated IDs, does not replace the original before half, and does not retarget frozen history.",
+    "A corrupt, foreign or moved predecessor refuses instead of resetting the candidate."
+  ],
+  "id": "INV-HKS46WB3",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "efd5ff4a-a22b-44cf-83a7-d816bebef9cb",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "An admitted leaf candidate may advance only its code-tree binding against an exact predecessor receipt and logical dataset under its existing candidate lock, preserving all non-code scope and existing knowledge.",
+  "status": "proposed",
+  "supersedes": []
+}

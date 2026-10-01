@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/serving/terminal_catalog_migration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Catalog migration is one-way and row-local.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3eb12d5ac0e9b60a6c982115a7217edb2607a19",
+            "content": "sha256:8d9ea9b298d7588e115b3a16f48914bd3acf8de2bc68bdb77ae759e632082d5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "migrate_terminal_catalog_v1"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Role altitude selects the canonical migrated document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3eb12d5ac0e9b60a6c982115a7217edb2607a19",
+            "content": "sha256:528fb2c366efd6d909c5581a03767cb7f30d2dd1d14e19fc2fb05e4368c69bfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_ref_for_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

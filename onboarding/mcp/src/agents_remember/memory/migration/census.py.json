@@ -1,0 +1,475 @@
+{
+  "path": "mcp/src/agents_remember/memory/migration/census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of its division: the read side of the census, with no code path that derives the coverage denominator from the corpus.\n\nAnchor: `CensusReport`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:571b9276ceac6999511cbfe599d500501945399c3560f390a687e1baad3da86d",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_report"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:50ebf33a6cec9e2acc3d734ae6e2dcf489b5890def4eb86a67241168ff171b18",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The coverage numerator: a literal zero while an independently reviewed inventory is supplied, and no branch that could count over the corpus.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:d1f1418656c3b286f20c235754ad59bd50fe52703be886ec777cd9a914ca526f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_represented_truths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The realization attribution count, read out of the claims' stored relations rather than derived from any code reading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:3a4ae9a6dfd3b28887239e65fc77d9e212a6746cdaa475488c5956df2f8214e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_known_realizations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "One occurrence per extracted claim, built in stored order with the blank-text case skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:b914652789e9a710ffa0d84aa8b0599acf1426c030663ac94751f50a3dee6bf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_occurrences_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The recorded-only slice keys: the authored claim kind, the envelope's explicit governing-route association, and the `unrecorded` state for the two axes this record group has no carrier for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:7d3329801f4b5d897b566813140d8d036d8d35228299448f9e04aab1097bcfeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_slice_keys"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The four axes iterated, each slice re-filtered to the cohort inside the slice builder rather than by the caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:aa3dd28ffc577d7fd8241edd2043128bbb2bcddbe2b86330e69047a5c7c2c63d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_slices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The assembly itself, with the published inventory narrowed once and the denominator taken as an argument, and the `unmapped`-visible disposition path on the same module's public surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:571b9276ceac6999511cbfe599d500501945399c3560f390a687e1baad3da86d",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_report"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:b0ba2da7515f03c54291ffba7ef8de7d77dc65e295c1186bd0d7070444708fb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "disposition_report"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:b7e20ad7b186cb7de0a6bffbffdba8f3048c390c4dafafdc8777f5e3818a2b71",
+            "locator": {
+              "kind": "symbol",
+              "name": "disposition_counts"
+            },
+            "path": "mcp/src/agents_remember/memory/migration/census_measures.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The read helpers this module is handed the store for, and the stored-schema check that refuses a row whose envelope disagrees with its declared schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:63159fa527906b4b20a45bc61d63309097ad730fe699d1d5949e2fa30e08557c",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_inventory_rows"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/census_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:72d8b2ab17f216eab4b6f3a23a970a83c184f4a009ed7530a29e04067c5b119e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_claims"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/census_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:24219fd5be35486adebed8deffdb4fd6fd736ab16eb9844f32d69e2d272ba984",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_dispositions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/census_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:447dc0d55a3b93953c1d7473a5ad051c1ccf210cca8a1e3eb5a68bd955561a5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_schema"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/census_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The eligibility rule and the cell reader the assembly applies, and the report vocabulary it fills from the imported model rather than restating.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:1bf0b27b9bc33a1ca3795b2b1603e6be90abb20b5f1a4b6acba8f8037156fe21",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_enters_cohort"
+            },
+            "path": "mcp/src/agents_remember/memory/migration/census_measures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:daf18da0d9687cc65060d47a6286fcc063f8314378dd3a5c40f39c120c84bfc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "cell_of"
+            },
+            "path": "mcp/src/agents_remember/memory/migration/census_measures.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:10fe467b9e51e452c21367f7bb84e76269d8ca871dfb261bc9d374ef17068c0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "COHORT_APPLICABILITY"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:fd176788854c5fb6d5ee12a1f1cccd76dc2caff8c715ae93dfe7d5b543efc517",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaim"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:a2d73a69d037680639f5cc4f81a8112b1a44735491541722d02ea1ca9da2b8d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusInventoryRow"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:a35e98a8ef15afe6074b24edc2789bf10a4564bbaf3d0f064f94ea355d201896",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The evidence relation that carries a curator's authored verdict and its absence-as-`unassessed` state, which is what makes `P` derivable without being invented.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:dd0964911a5d527a4984778072a52d91d41a5434906e72d67033d9cabdf211fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaimEvidence"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:86a54b504d70d6904b27eb8b5adbeedea94e3538862d5a44b05480d3564769c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaimRealization"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reference inventory's closed source vocabulary, which deliberately excludes the corpus the denominator is measured against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:7951fcb16463c62243f2bfcf2937e4eee85e704a6568c512f16de9f1b7d16585",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReferenceSource"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:db430f9d476276ab9ea67c656da3cef2a2e3a5e57b26de42d19a297d752759fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFERENCE_SOURCES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two states a reference inventory's review seat can be in, and the reason `reviewed` is the only publishable one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:274ba830e40243c42314923986ec9ba53bcd4d163170bc6a528ab2ebec50aee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The corpus-derived assertion the record declares but no shipped path reads: the field exists as a `Literal[False]` default and is absent from the draft, so nothing carries or checks a caller's value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:d8852976dcb065207a1a8c8da4b4afd82e0af4973672ad8b33ab915f429a4db2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReferenceInventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two denominators the inventory owns, read as its truth count and its realization count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:e806e588c4d73a0e754568f9078ff604aad273d72c8fb90187cdd52e0f889be1",
+            "locator": {
+              "kind": "symbol",
+              "name": "size"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:f223c4e780dee71f71e921d2c9ee1b20ae0547342e12151a3329c4f83087e6ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_count"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The reviewer gate: an unsettled review seat and a reviewer who is the author are refused by the same check, because `Doc12:110` requires review by someone other than the author.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:3d3480219abaeb3b815a984e78bfbe276393100dd0d2c48fc071c6f1f124662f",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_independent_reviewer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The boolean form of the gate: false for a missing inventory, a missing reviewer and a self-reviewed one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:6bc9933b5ae7ba804d1a6e0c9aeb823e8b2d5f23f5f90e3f797bd025dedb31d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "coverage_is_publishable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The narrowing form: the only way to obtain an inventory to measure against is through the gate, so a forgotten boolean test cannot reach an unreviewed one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:52c909b44fa627d104350b609f6fb6c024bf5fa332616be35eafc8fdeb2a7577",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The derivation, rather than acceptance, of the review state: `reviewed` is computed from a named reviewer, so the two facts cannot disagree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:819826c746354da964f157d6620152f90a2d06906faebcaef24bad11c9f82140",
+            "locator": {
+              "kind": "symbol",
+              "name": "reference_inventory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c99c0dd284bfd4a7de36d40b8b0d779875180baf",
+            "content": "sha256:d078acd8964866b10fdff46efe16a38d66d7398cdfa36857e2208d5801e9d053",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReferenceInventoryDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

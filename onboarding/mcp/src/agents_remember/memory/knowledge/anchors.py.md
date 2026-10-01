@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/anchors.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/anchors.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T18:45:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -92,52 +82,34 @@ None recorded for this slice. Anchor *resolution* is unimplemented by design and
 module: the storage design and `retrieval-review-design.md` assign resolution (exact blob,
 recorded-blob mismatch, path absent, unsupported locator, non-text) to `KS-R07`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The storage-versus-resolution separation this module is built around. | "Storage and resolution are different concerns." | mcp/src/agents_remember/memory/knowledge/anchors.py:3-4 |
-| Anchor creation and the provenance-attaching construction point. | `create_source_anchor`; `source_anchor_from_draft` | mcp/src/agents_remember/memory/knowledge/anchors.py:49-70; mcp/src/agents_remember/memory/knowledge/anchors.py:82-97 |
-| The in-transaction write hook the realization operation and the batch command reuse, with the duplicate rule it now carries. | `insert_anchor_row` | mcp/src/agents_remember/memory/knowledge/anchors.py:99-119 |
-| The anchor-lifetime read: whether a stored claim still cites this anchor. | `find_claim_citing_anchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:121-136 |
-| The read surface. | `get_anchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:140-147 |
-| The same read against a bare connection, for a caller that holds one without a store — the curation intake resolving a reused anchor (leaf `260915-KS-L47`). | `read_anchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:150-167 |
-| Explicit removal, with its two refusals both evaluated before the delete. | `remove_source_anchor`; `_delete_anchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:153-173; mcp/src/agents_remember/memory/knowledge/anchors.py:175-182 |
-| The in-transaction removal helper the batch command composes, and the absence of an expected row digest on the anchor removal request. | `delete_anchor`; `RemoveSourceAnchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:179-206; mcp/src/agents_remember/models/knowledge/candidate.py:347-370; mcp/src/agents_remember/models/knowledge/candidate.py:328-332; mcp/src/agents_remember/models/knowledge/candidate.py:99-99; mcp/src/agents_remember/models/knowledge/candidate.py:386-390; mcp/src/agents_remember/models/knowledge/candidate.py:401-405 |
-| The in-transaction removal helper the batch command composes, and the absence of an expected row digest on the anchor removal request. | `delete_anchor`; `RemoveSourceAnchor` | mcp/src/agents_remember/memory/knowledge/anchors.py:184-206; mcp/src/agents_remember/models/knowledge/candidate.py:401-405 |
-| The anchor-codec row and digest, which derive the canonical identity text at the storage boundary. | `anchor_row`; `anchor_row_digest`; `decode_anchor_row` | mcp/src/agents_remember/memory/knowledge/records.py:226-236; mcp/src/agents_remember/memory/knowledge/records.py:366-381; mcp/src/agents_remember/memory/knowledge/records.py:237-246 |
-| The locator union and the confined relative-path rule this module stores without resolving. | `SourceAnchorDraft`; `SourceAnchor`; `SourceLocator` | mcp/src/agents_remember/models/knowledge/source.py:81-124; mcp/src/agents_remember/models/knowledge/source.py:130-133; mcp/src/agents_remember/models/knowledge/source.py:76-79 |
-| The refusal factories this module's refusals come from. | `duplicate_anchor_refusal`; `referenced_anchor_refusal`; `missing_expected_row_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:420-441; mcp/src/agents_remember/memory/knowledge/refusals.py:553-567; mcp/src/agents_remember/memory/knowledge/refusals.py:514-530 |
-| The declared `source_anchor` table, its index and its payload trigger. | `source_anchor`; `source_anchor_path`; `source_anchor_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:267-279; mcp/src/agents_remember/memory/knowledge/schema.py:326-326; mcp/src/agents_remember/memory/knowledge/schema.py:385-389 |
-| The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
+- The storage-versus-resolution separation this module is built around. [1]
+- Anchor creation and the provenance-attaching construction point. [2]
+- The in-transaction write hook the realization operation and the batch command reuse, with the duplicate rule it now carries. [3]
+- The anchor-lifetime read: whether a stored claim still cites this anchor. [4]
+- The read surface. [5]
+- The same read against a bare connection, for a caller that holds one without a store — the curation intake resolving a reused anchor (leaf `260915-KS-L47`). [6]
+- Explicit removal, with its two refusals both evaluated before the delete. [7]
+- The in-transaction removal helper the batch command composes, and the absence of an expected row digest on the anchor removal request. [8]
+- The in-transaction removal helper the batch command composes, and the absence of an expected row digest on the anchor removal request. [9]
+- The anchor-codec row and digest, which derive the canonical identity text at the storage boundary. [10]
+- The locator union and the confined relative-path rule this module stores without resolving. [11]
+- The refusal factories this module's refusals come from. [12]
+- The declared `source_anchor` table, its index and its payload trigger. [13]
+The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-20T18:45:00+02:00 — 260915-KS-L47 worker (uncommitted change set on `ar/260915-ks-l47-ar`, code base `be325216416326a66950c9e320ff8d08f41e5d66`): **the anchor read was split so a caller without a store can resolve a stored anchor.** `read_anchor(connection, repository_id, anchor_id)` is the same query, the same `_ANCHOR_COLUMNS` and the same `records.decode_anchor_row` as `get_anchor`, and `get_anchor` now delegates to it — one decoder rather than a second one that could drift. It exists because the curation intake (leaf `260915-KS-L47`) has to bind an explicitly reused `anchor_id` to the row it names **before writing**, from a candidate it has merely opened read-only; that path holds a connection and no `OpenedKnowledgeStore`, and the two facts it needs are the stored `path`/`source_identity`/`locator` it must compare the supplied target against. No behaviour of `get_anchor` changed and no duplicate rule moved. The reference table gained the `read_anchor` row and `get_anchor`'s range was re-measured. **Stamp accounting:** the recorded working candidate is this leaf's candidate on base `be325216` and `lastUpdated` moved with it; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded, because no commit contains this body and no stamp was measured on it. No commit was made.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `delete_anchor`; `RemoveSourceAnchor` repointed to mcp/src/agents_remember/memory/knowledge/anchors.py:184-206; mcp/src/agents_remember/models/knowledge/candidate.py:401-405. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `delete_anchor`; `RemoveSourceAnchor` repointed to mcp/src/agents_remember/memory/knowledge/anchors.py:184-206; mcp/src/agents_remember/models/knowledge/candidate.py:386-390. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `delete_anchor`; `RemoveSourceAnchor` repointed to mcp/src/agents_remember/memory/knowledge/anchors.py:184-206; mcp/src/agents_remember/models/knowledge/candidate.py:370-374. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `delete_anchor`, `RemoveSourceAnchor`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-16T08:10:00+00:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **extended this card for the batch composition it enabled and recorded the removal asymmetry.** `insert_anchor_row` now owns the anchor's duplicate rule (an identical re-declaration writes nothing; the same identity with a different payload refuses `duplicate_identity`), which is what lets the batch command compose it without re-deciding the identity question; the removal's two refusals moved into the in-transaction `delete_anchor` so the batch shares them. The card now records explicitly that `remove_source_anchor` carries **no** expected row digest, unlike the membership and claim removals, and why nothing unsafe is reachable today (the payload is immutable by trigger and a repeat removal refuses) — it is a decision for whoever reworks removals, not a defect. Citation ranges were re-derived; the `governingOverview` link was repaired from `../../overview.md` to the three-level path. Verification metadata remains closeout-owned.
-
-- 2026-09-16T06:24:00+00:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): created this one-to-one card for the new anchor module. It records the storage-versus-resolution separation as the module's governing boundary (no filesystem, Git object or parser is consulted on any path; an absent source never retires an attribution), the explicit identity-plus-expected-digest removal guarded by a citing-claim check, the `find_claim_citing_anchor` placement rationale, and the reserved `source_anchor_path` index that exists for the `KS-R07` resolution read rather than for anything this leaf runs. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

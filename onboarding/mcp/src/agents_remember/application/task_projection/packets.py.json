@@ -1,0 +1,291 @@
+{
+  "path": "mcp/src/agents_remember/application/task_projection/packets.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The confined packet read — the only place a packet is opened.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:f83b150b9e3dbe85154f7363be2277afd891e470edf7eea8b1f7c4d6adbf7567",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_packet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:99bf3583e114ca9877f78992cd9f263b6e1e29bb25ab6b3f2e64398486ab15cf",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The splitter for already-admitted bytes, and the verbatim section split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:93d83ae47cca50ec303b2a8d519ba581f80cc220780cde880db682a23bf1dfce",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_packet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:f29f9a7f078dbabeec0f4531dad9f5c0852d75b63666595e95aea9bd4ce51d8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "split_sections"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:b845f60a5b9b56de1835d496e51108de15148e96d9dd811ba58d22ff260599c0",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:0bdaa9d329161dc90195436eadd92d761dc9b820f3443b120a28c1a2665d8b33",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The six obligation-carrying roles and their accepted exact spellings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:992d095240c825ce963d23b101e9605dcd135c0b2f4188c927e54987fd84e1e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "INJECTED_PACKET_ROLES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:5a2b17d4232030cb2a5da6c3ee38789169658b14a77a39a35455deaf8ebed459",
+            "locator": {
+              "kind": "symbol",
+              "name": "PACKET_SECTION_HEADINGS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:d3de3b82f1a0c2570b2ef3a210d6a0b6b25d2fd790d23036944bd86d5c7845d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PacketSectionRole"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:e13f7fcdfe6dec406003257de3c1fb4d6db019f6ff7b2b1b877aef1e98b44651",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:84003c916cc0d7d188dcb5ff5982e4d0218161f73744b82c2e3f1c0cd131dcda",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:c03f2abc43a9ffd9a2328e9786795fa345a7b541eb80d5e86b02789efc754c63",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact heading lookup, and the headings that travel as references instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:f9ce635986eb9b7180ad1a74a54efcce737c6faf728553ae86a7826103053c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_section"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:3deb45a6f48570aa981f337a7a013439e6755ef2b38c0bec9256a5e0db3c7a4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "referenced_headings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:073d45eb8e183182bcbaf0fc56bf45cee32f89a21cd5f4deae25111b9da5eca7",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:994d46382d6b3c012b631467e775a4af7ad9b1c7d1e02d8164f8b6914d0b11c0",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The refusal an absent or unreadable packet raises, naming both admissible remedies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:6ddc5afe2f0c895d83584f7c28f11bdc5a75eae23099e41c0f9a18cdbabca479",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_unavailable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff99bc1ccc7cc445b17019daf1dbf1717360e92a",
+            "content": "sha256:b7aece87bb70acff61c6b758c46243502112f2aee4626613156bd1a943cc6e3d",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The kernel's non-symlink artifact guard this module reuses for a consumer-supplied path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "content": "sha256:012c2b16d2d96ae71785c8482741ff733c7cb8760396fc591ce689dee3a98318",
+            "locator": {
+              "kind": "symbol",
+              "name": "confine_non_symlink_rel"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The canonical packet shape the heading table follows, including its template section headings.\n\nAnchor: \"## Normative Requirement\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e86695e34aa230771a1d0420cf17acafeff0902",
+            "content": "sha256:dca277893a52cfaf46fb9f162526132d3d03a1ae7f6b9558a0b1c4574e20a480",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/w-02-light-task-workflow/requirement-packet-template.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that proves an owned obligation is carried verbatim and a missing section is a gap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:e6f948f47d6eee8147f8acda3e1b1abe40300b988e05232a5a91be055dc2ad27",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projected_planes_keep_their_kinds_and_carry_every_obligation_verbatim"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

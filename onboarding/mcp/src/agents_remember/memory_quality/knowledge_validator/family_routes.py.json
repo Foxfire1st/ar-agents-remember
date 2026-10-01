@@ -1,0 +1,170 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Realization entries only, located by the source path of their sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:e501ef8eca946884b967aeef4ad468a4d485daaf82fad418b09e6c9d1a772b60",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_locations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A route covers a path by prefix; the root route covers every path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:de5df6ee0885c4e5e60773aab7e655ff887e07de688719cfc20b76c51c5b0bea",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_covers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One family's route state: retired, unrealized, unassigned, uncovered, emptied, routeless.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:1011fd5e9265e0839ca3f28fd96e21787a7b7a1c106cf22a58050fa54448235c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRouteState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:261d47704476fd97f63d9a30c59d5ae33591bd3a11346ae580a2a6588d2b552c",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_route_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The suggestion is labelled mechanical and lists root-level realization files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:7d84ba2d035e97ccd7dc02adf9cb72f6358fdccbd98f0e89c8483f4d007b9365",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteSuggestion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Siblings collapse into a parent only when it holds nothing but family code.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:3156208347c5e5a75ead7909f547899bf22d0d0cb5c39c9e747866c8f548572c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_only_family_code"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:bcb7b880dec6cc9e7309971a5499152bc9d5132a8287a5ed61761e529e836eb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_collapse_once"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The mechanical suggestion, and its family-record form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:0927c7bfe5b8aaa761be4589a50be648765e5319743f86bb094eb4e21f983c55",
+            "locator": {
+              "kind": "symbol",
+              "name": "suggest_routes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50e78a7fdbd2cf3b9596abf9efa1542716c07c65",
+            "content": "sha256:7a1816820ef0e0783b6cb56a68dd69ea4fbe11912ea631ac1a78170be7fb83ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "suggest_family_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The suggestion's five parametrised cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3bce1135e246b91bf929dcbcf6ba4b2e23aaa7",
+            "content": "sha256:179ceb8134cabf43d84be6d3783383764d753d9dcf47ef3a3c0b6b35264fd53a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_mechanical_suggestion"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The root route is suggested only for a realization at the root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3bce1135e246b91bf929dcbcf6ba4b2e23aaa7",
+            "content": "sha256:b3f706eca8b98d81b06e4937e1724c566a432301cfa0b4f4077212df485d2d90",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_root_route_is_suggested_only_for_a_realization_at_the_repository_root"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

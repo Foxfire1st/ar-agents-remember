@@ -1,0 +1,254 @@
+{
+  "path": "mcp/src/agents_remember/application/role_capsules/sources.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The loaded-source value this module produces and the digest it records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:f5f3ac449878a4e5e5a4fedea401c505803868766c9be6b437e5f68ac6755006",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSource"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:2fbddfa75252c78f0e4bdf08df8b6c44ade8117dc1c4d41f33d4e2cacc655b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_content_digest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The refused source set is validated against the locked plan in both directions after admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "content": "sha256:cbc02076178ee4d24950f063c800c5076a7082d8fdc80267179e9536bc0a6af5",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_source_set"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "content": "sha256:3ac5bc350fab83b4a1b5194d9c68687751b0e7f11a0ebc4dd634f0600966099b",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The application entry point that admits and then compiles, returning a refusal as a value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The typed source-refusal base and the codes raised here. `source-root-invalid`, `source-root-missing`, `source-path-invalid`, `source-path-escapes-root`, `source-missing`, and `duplicate-identity` are raised by this module and are deliberately **not** members of `CAPSULE_STATUSES`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:352ee2208b6afea6cb4c3b75274c4d656eeb3f44e99e08e8fbf0e8859a3275ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Traversal, missing-source, non-directory-root, double-request and unreadable-source cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:b6e0056ed4ff20eb071cfb8ff62e18992618333f2c7634c3f983cc4030dd6892",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_refuses_a_path_that_escapes_its_root"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:bdf8069c89edb0b161c83fea4d7b1ff0daa7478a54d0355ebd01c24b26dafd4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_refuses_a_missing_source_instead_of_skipping_it"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:12535f9afbcafafd4b1d5ea91c2737fc710a635cbfed5ac528745e84fc523407",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_refuses_a_root_that_is_not_a_directory"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:0962122aa54e95714663d0b343af57ab9e0d93574bcda547cf3544a2e2467c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_refuses_the_same_path_requested_twice"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:4edab9fd7d54f0f47704b16ac249e8a39adf17531e6bbcbca6c18cba3add9392",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_source_returns_a_refusal_rather_than_raising"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:93597eb5b21c47af72529e1d956db7978c310c9efe5bd3495265350c1cdcfccb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_is_reproducible_over_one_unchanged_tree"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:b016086576a40698f29f63ec593d55bdd90a838a16b8ce89eb890c3f49272edb",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:7ca37ebda7845ca9a85cf94fcb7391b66e1dc1c6f3a7ad6df868ceee2d66c977",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:47302168ceadcd70e13c7ecdf205ff418d2b92faf0f1134be93fdce5c51e9e02",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:8c02804899823855f93317e56ebc97262ba44b56c52168a5559fc4bd0ddd25b6",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

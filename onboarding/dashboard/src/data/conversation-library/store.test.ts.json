@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/data/conversation-library/store.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The store and orchestration verbs under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fa135a1e8f7a4f7a64082d15c86365c1fe4975d",
+            "content": "sha256:b3e1ad2f9d0bd21123bc02f95b9d824ad6d55a8a72931714f5410fe959c0ef8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationLibraryStore"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fa135a1e8f7a4f7a64082d15c86365c1fe4975d",
+            "content": "sha256:76f5029a7106f2f7c829ced077bf3ae58ee92234e994da437ad82bb89d24ec27",
+            "locator": {
+              "kind": "symbol",
+              "name": "beginOpen"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fa135a1e8f7a4f7a64082d15c86365c1fe4975d",
+            "content": "sha256:b96bf8f988072c34a2c5717d5024d54f53958677a77837e5c36d906c1fbe10ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcileOpen"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The open-operation type the `op` fixture builds, and the branded key the suite passes to every verb.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:318ffc0691eddf7613b741c65eee0769823502aabefd1b69b1dbb57f7c6531e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenConversationOperation"
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:8dc721039709c3534ad0efd083814140ac3b5a5f97af5971932a74f6dd52f81f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LibraryConversationKey"
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `libraryConversationKey` mint that replaced the inline brand cast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:8fe0c47d69a195c5da0c545119075421c966f12c5f1b2e2f4c8c22e663efdaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "libraryConversationKey"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

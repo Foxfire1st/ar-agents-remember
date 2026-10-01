@@ -1,0 +1,289 @@
+{
+  "path": "mcp/tests/test_candidate_batch_commands.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's scope statement: the union and the receipt, with constructor validation deliberately not re-tested.\n\nAnchor: \"the union cannot express something\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:3ee177e73b7a3ef7c39a8cc13a7d82af4c22206457da3255bf69a6c65dffa707",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared harness this module drives and its registered contract.\n\nAnchor: \"contract:candidate-batch-case-harness\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:ffe6cf45e7e7ba6a266e38256264ae06c8e1ca24171b2259b40cfb4775d66efa",
+            "locator": {
+              "end": 1266,
+              "kind": "line_range",
+              "start": 1266
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The operation under test and the union it accepts.\n\nAnchor: \"ProposedCommand = Annotated[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:d4768ee039a4087e171b10d6adc37a9a9422984f199d282e1d75b5df3ceb2825",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:db9b396d870aaded979faae782d9a19aba754df674ab8197f5e85b85bd81d288",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 614
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shared harness this module drives and its registered contract.\n\nAnchor: \"contract:candidate-batch-case-harness\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:ffe6cf45e7e7ba6a266e38256264ae06c8e1ca24171b2259b40cfb4775d66efa",
+            "locator": {
+              "end": 1266,
+              "kind": "line_range",
+              "start": 1266
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The union's coverage case over all twelve kinds.\n\nAnchor: \"test_every_declared_command_is_applied_and_read_back\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:6c56df8290f83d89e09a82c2cbd148bc1ee7f1068f9d9cbf7e05d75f2d538690",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The receipt-fidelity case and the changed-receipt guard in both its shapes.\n\nAnchor: \"test_a_receipt_reports_the_rows_the_store_now_holds\"; \"test_a_changed_receipt_must_name_at_least_one_touched_record\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:fea846a9706ab91001b1a46e827c364fc9419f4f7072532d8b86f6d9f4eb9e99",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 242
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:f7205364aef849a426640398be82e645d6368c5d44be2d8dd08e9303561bc389",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 324
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The no-op and the insertion-is-not-an-upsert cases.\n\nAnchor: \"test_an_empty_batch_commits_no_record_and_reports_no_change\"; \"test_a_command_whose_effect_is_already_stored_is_refused_not_absorbed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:a89f37691bf860e6617ae8498f8251319d5df68f69030f25d96f5b65270f4bfb",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 351
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:877185df99f0b26c3bcc586d25e5286687764fcdb105e6699765f0894725928d",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 373
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The held expectation and the two closed-union boundary cases.\n\nAnchor: \"test_an_expected_record_that_matches_permits_the_batch\"; \"test_the_closed_union_refuses_an_unknown_field_and_an_unknown_command\"; \"test_two_expectations_for_one_record_are_refused_at_the_boundary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:9c9375d7c7df328ab5343b768be069fb0928cd68b357a197aa2824a908e90ec1",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 406
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:9604f3a1004417347b6b4edbfe8f44cb4132995862e0c3a66f774afcd281f680",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 441
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:a9d54f0a693a6efde5e489d9701c1ae2f037caa26a1d8c06f0faccd194a87805",
+            "locator": {
+              "end": 475,
+              "kind": "line_range",
+              "start": 475
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The model-level seal case, whose operation-level twin lives in the transaction module.\n\nAnchor: \"test_the_context_digest_seals_the_whole_resolved_context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80889747910a9bcfad0e8479080c6f5e82ac32c2",
+            "content": "sha256:c532ebba71d155cf9e019026347aae606ef8b4f80da254f9e7e64e50078a582e",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 492
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The unit-lane rows that make the module's classification explicit.\n\nAnchor: \"mcp/tests/test_candidate_batch_commands.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b0fcc60b8acee7974778bfcc562d3487e2d4322",
+            "content": "sha256:1840209946c129b69c5a9014dd59152f3ce256f1858c85b37bd1bfd37845638a",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared harness this module drives and its registered contract.\n\nAnchor: \"contract:candidate-batch-case-harness\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:ffe6cf45e7e7ba6a266e38256264ae06c8e1ca24171b2259b40cfb4775d66efa",
+            "locator": {
+              "end": 1266,
+              "kind": "line_range",
+              "start": 1266
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The operation under test and the union it accepts.\n\nAnchor: \"ProposedCommand = Annotated[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:d4768ee039a4087e171b10d6adc37a9a9422984f199d282e1d75b5df3ceb2825",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:db9b396d870aaded979faae782d9a19aba754df674ab8197f5e85b85bd81d288",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 614
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

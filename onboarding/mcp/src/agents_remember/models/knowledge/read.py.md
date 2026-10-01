@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/read.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/read.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -127,46 +117,34 @@ snapshot's `context_digest` is **derived** and is not canonical database content
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The closed seed union: five members, one per row of the requirement's table, carrying no filter, sort or display version.** | `KnowledgeReadSeed`; `PathSeed`; `InvariantIdentitySeed`; `InvariantRevisionSeed`; `FamilyIdentitySeed`; `FamilyRevisionSeed` | mcp/src/agents_remember/models/knowledge/read.py:188-197; mcp/src/agents_remember/models/knowledge/read.py:128-185 |
-| **The read context and its two construction rules** (one namespace, and an all-or-nothing source resolution), with `task_ref=None` a supported state. | `KnowledgeReadContext` | mcp/src/agents_remember/models/knowledge/read.py:200-247 |
-| The declared policy version, budgets and execution bound. | `KNOWLEDGE_READ_POLICY_VERSION`; `MAX_PAGE_ITEMS`; `MAX_PAGE_UTF8_BYTES`; `SELECTION_ITEM_LIMIT`; `KnowledgeReadBudget` | mcp/src/agents_remember/models/knowledge/read.py:88-100; mcp/src/agents_remember/models/knowledge/read.py:250-259 |
-| **The correction this leaf's review sealed: the counts describe one walk, and the model refuses its own arithmetic contradiction.** | `KnowledgeReadCounts` | mcp/src/agents_remember/models/knowledge/read.py:370-414 |
-| **The page that cannot present a truncation as complete, and the result that is a page or a refusal and never both.** | `KnowledgeReadPage`; `KnowledgeReadResult` | mcp/src/agents_remember/models/knowledge/read.py:417-448; mcp/src/agents_remember/models/knowledge/read.py:451-477 |
-| **The cursor's binding fields, and the only encoder/decoder pair.** | `KnowledgeReadCursor`; `cursor_for`; `continue_from_cursor` | mcp/src/agents_remember/models/knowledge/read.py:480-497; mcp/src/agents_remember/models/knowledge/read.py:527-545; mcp/src/agents_remember/models/knowledge/read.py:548-554 |
-| The one homogeneous item model and the advertised frontier entry. | `ReadItem`; `AdvertisedExpansion`; `SelectionReason`; `ReadRevisionGroup`; `DirectlyContainingFamily` | mcp/src/agents_remember/models/knowledge/read.py:329-367; mcp/src/agents_remember/models/knowledge/read.py:315-326; mcp/src/agents_remember/models/knowledge/read.py:296-300; mcp/src/agents_remember/models/knowledge/read.py:303-312; mcp/src/agents_remember/models/knowledge/read.py:284-293 |
-| **The anchor observation, now declared in its own module with the structured `resolved_ranges` field, and the import that re-exports it here.** | `AnchorResolution`; `resolved_ranges` | mcp/src/agents_remember/models/knowledge/read_anchor.py:48-78; mcp/src/agents_remember/models/knowledge/read.py:47-51 |
-| The seven-member anchor vocabulary, declared in `read_anchor.py` and still published through this module's `__all__`. | `AnchorResolutionState`; `ANCHOR_RESOLUTIONS` | mcp/src/agents_remember/models/knowledge/read_anchor.py:27-45; mcp/src/agents_remember/models/knowledge/read.py:54-86 |
-| The digest binding one seed into a selection identity. | `seed_digest` | mcp/src/agents_remember/models/knowledge/read.py:500-503 |
-| The digest sealing one read context's whole resolved identity. | `read_context_digest` | mcp/src/agents_remember/models/knowledge/read.py:521-524 |
-| The one snapshot a page declares, sealed with that digest. | `snapshot_of_context` | mcp/src/agents_remember/models/knowledge/read.py:506-518 |
-| **The nodes that measure the model invariants themselves: the corrected page arithmetic and the truncated page's honesty.** | "test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness"; "test_a_page_budget_of_one_item_still_advertises_the_second_location" | mcp/tests/test_knowledge_read_scope.py:838-871; mcp/tests/test_knowledge_read_scope.py:547-657 |
-| The shared path-shape rule this module's seed applies. | `require_plain_git_path` | mcp/src/agents_remember/models/knowledge/base.py:59-92 |
+- **The closed seed union: five members, one per row of the requirement's table, carrying no filter, sort or display version.** [1]
+- **The read context and its two construction rules** (one namespace, and an all-or-nothing source resolution), with `task_ref=None` a supported state. [2]
+- The declared policy version, budgets and execution bound. [3]
+- **The correction this leaf's review sealed: the counts describe one walk, and the model refuses its own arithmetic contradiction.** [4]
+- **The page that cannot present a truncation as complete, and the result that is a page or a refusal and never both.** [5]
+- **The cursor's binding fields, and the only encoder/decoder pair.** [6]
+- The one homogeneous item model and the advertised frontier entry. [7]
+- **The anchor observation, now declared in its own module with the structured `resolved_ranges` field, and the import that re-exports it here.** [8]
+- The seven-member anchor vocabulary, declared in `read_anchor.py` and still published through this module's `__all__`. [9]
+- The digest binding one seed into a selection identity. [10]
+- The digest sealing one read context's whole resolved identity. [11]
+- The one snapshot a page declares, sealed with that digest. [12]
+- **The nodes that measure the model invariants themselves: the corrected page arithmetic and the truncated page's honesty.** [13]
+- The shared path-shape rule this module's seed applies. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the anchor-observation vocabulary (`AnchorResolutionState`, `ANCHOR_RESOLUTIONS`, `AnchorResolution`) moved verbatim to `models/knowledge/read_anchor.py` and is re-exported here unchanged; the card now says so, adds the additive `resolved_ranges` field that every realization-claim item's anchor now carries (with its byte-budget consequence), re-points the moved rows to the new module, and re-measures every range this pure extraction and its imports shifted. No claim about seeds, counts, pages or cursors changed. No verification stamp was advanced; closeout owns it.
-
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): created this one-to-one card for the read's typed vocabulary. It records the **four load-bearing splits** (seed versus selection — a seed carries no filter, sort, revision preference or display version; selection versus page — the three `primary_items_*` fields describe one walk so a one-item page cannot be read as a one-item scope at any position; provenance versus verdict — **the response has no field that could hold a current-truth marker, a severity or a ranking**, which is how the requirement's *Forbidden Overreach* is enforced structurally; and continuing versus re-binding), the **three model-level invariants a consumer may rely on** (a page cannot present a truncation as complete, the counts cannot contradict their own arithmetic, and a result is a page or a refusal and never both), the declared policy version, budgets, execution bound and the seven-member anchor vocabulary this leaf did **not** extend, and the cursor's binding fields with the one encoder/decoder pair. It also records that `task_ref=None` is a supported baseline state rather than a degraded one, and that the seed path applies the one shared path-shape rule. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

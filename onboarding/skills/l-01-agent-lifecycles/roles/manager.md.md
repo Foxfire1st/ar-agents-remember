@@ -1,15 +1,5 @@
 # skills/l-01-agent-lifecycles/roles/manager.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/roles/manager.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| governingOverview | `skills/l-01-agent-lifecycles/roles/overview.md` |
-
 ## Governing Overview
 
 [roles overview](overview.md)
@@ -97,16 +87,16 @@ are curator blockers, not authority to write current onboarding intent.
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One manager owns one canonical master and the complete leaf closeout chain. | `# Manager`; "**You drive exactly one master's leaf sequence from dispatch to handover.**" | skills/l-01-agent-lifecycles/roles/manager.md:6-30 |
-| Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. | "Dispatch is one structural transaction."; "never request or retain an occupant id" | skills/l-01-agent-lifecycles/roles/manager.md:41-53 |
-| The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. | "The per-leaf loop" | skills/l-01-agent-lifecycles/roles/manager.md:55-142 |
-| Master exit and handover use durable verdict/packet evidence and structural ownership. | "Dispatch the optional master-exit review when the developer or the approved brief requests it"; "Routine closeout and integration require no master-exit reviewer and no verdict."; "The master-handover packet" | skills/l-01-agent-lifecycles/roles/manager.md:137-152 |
-| Structural parent/child messages are the role's communication path. | "**Messages:**"; "durable and dashboard-visible" | skills/l-01-agent-lifecycles/roles/manager.md:169-173 |
-| Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. | "Per leaf before dispatch:"; "Hand the curator its brief" | skills/l-01-agent-lifecycles/roles/manager.md:24-29; skills/l-01-agent-lifecycles/roles/manager.md:109-113 |
+### Repo-Internal References
+
+- One manager owns one canonical master and the complete leaf closeout chain. [1]
+- Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. [2]
+- The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. [3]
+- Master exit and handover use durable verdict/packet evidence and structural ownership. [4]
+- Structural parent/child messages are the role's communication path. [5]
+- Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. [6]
 
 ## L23 Manager And Leaf Admission
 
@@ -144,76 +134,3 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
-
-## Update History
-- 2026-09-18T13:27+02:00 — 260915-KS-L13 curator (range-closure pass): **the last seven dead-anchor rows in this card were re-cited to the lines that now carry their facts.** The dead anchors were all headings of the *pre-rewrite* role file — `## What This Seat Is`, `## Hosted Role Dispatch`, `### 2 — Leaf dispatch loop (per leaf)`, `### 3 — Optional Master-exit Review`, `### 4 — Handover to the orchestrator`, `## Comms Protocol`. The live equivalents are the rewritten file's own title and sentences, so each dead heading was replaced by text that exists inside a cited range: `# Manager` and `**You drive exactly one master's leaf sequence from dispatch to handover.**` (`:6-30`) for the seat's ownership; `Dispatch is one structural transaction.` plus `never request or retain an occupant id` (`:41-53`) for hosted dispatch; `The per-leaf loop` (`:55-142`) for the loop; `Dispatch the optional master-exit review when the developer or the approved brief requests it` and `Routine closeout and integration require no master-exit reviewer and no verdict.` beside `The master-handover packet` (`:137-152`) for exit and handover; `**Messages:**` and `durable and dashboard-visible` (`:169-173`) for the communication path; and `Per leaf before dispatch:` (`:24-29`) with the per-site `Hand the curator its brief` (`:109-113`) for the exact per-ID acceptance set, which the stale `:108-108` extent did not carry. No claim was deleted or softened and no anchor set was dropped. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **the role file this card cites was rewritten into the function shape, and the card was re-derived against it.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling) replaced the numbered sections and the `## Knobs, Tool Surface, And Dispatch Authority` block with `## Inputs`, `## Process`, `## Outputs`, `## What you may do`, `## What you must not do` and a closing `## Stop and …` section, so every Repo-Internal References row here that named an old heading or an out-of-range extent was re-pointed by reading the rewritten file: each anchor below is text that exists in the cited range, and each range is in bounds of the file as it stands. Where a claim described a construct the rewrite removed, the claim itself was re-worded to what the file now says. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits. **Correction (`D51`, made in the same pass):** this entry first attributed the rewrite to `CAPS-R24@v1`. No such requirement revision exists — the master declares `CAPS-R01@v1` … `CAPS-R19@v1` — and the rewrite is leaf `260915-CAPS-L22`'s, under the developer's 2026-09-17 ruling. This curator fabricated the id; it is corrected here and in the body above.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "## Comms Protocol" repointed to skills/l-01-agent-lifecycles/roles/manager.md:367-367. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "## Comms Protocol" repointed to skills/l-01-agent-lifecycles/roles/manager.md:359-359. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "## Hosted Role Dispatch" repointed to skills/l-01-agent-lifecycles/roles/manager.md:48-48. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "## Comms Protocol" repointed to skills/l-01-agent-lifecycles/roles/manager.md:406-406. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "### 2 — Leaf dispatch loop (per leaf)" repointed to skills/l-01-agent-lifecycles/roles/manager.md:108-108. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-31T12:00+02:00 — A005 normalized hosted-dispatch wording to the exact canonical leaf or
-  master task document vocabulary consumed by the structural tool and synchronized projections.
-  Verification remains closeout-owned.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded manager
-  ownership of both leaf and master-exit reviewer generations, including exact task altitude and
-  parent stamping. Verification remains closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded manager as a plane-hosted caller and
-  explicit ambient-takeover target, with only manager-owned leaf-seat dispatch and no
-  settings-owned structural authority. Verification remains closeout-owned.
-
-- 2026-08-28T14:18+02:00 — Reconciled manager-role source ranges against the committed PDLS
-  candidate after final requirement-ownership edits; behavior is unchanged.
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
-
-- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: managers no longer count dispatch or internal reruns as
-  attempts; they validate lightweight content-addressed handoff records and summaries that exclude
-  protocol events.
-- 2026-08-27T19:59+02:00 — M42 clarification: prevented unrelated later candidate movement from
-  becoming a third implicit accepted-attempt invalidation trigger.
-- 2026-08-27T18:06+02:00 — M40-M45: documented manager-owned attempt dispatch/validation,
-  independent regression proof plus bounded invalidation, and the rebuildable non-gating master
-  summary over authoritative leaf journals.
-- 2026-08-27T16:27+02:00 — Closed the curator projection gap: the manager now feeds exact approved
-  packets and per-revision adjudication through the curator brief and prohibits rejected/blocked
-  deltas from becoming current intent. Verification remains closeout-owned.
-
-- 2026-08-27T14:04+02:00 — Tightened M39 dispatch admission around approved version-addressed
-  packets and packet-local durable corpus rulings; unapproved or mismatched revisions refuse.
-- 2026-08-27T13:32+02:00 — M39@v1: manager dispatch and review comparison now bind exact stable
-  ID + version rows to matching canonical packets. Verification remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: documented manager-owned exact requirement-set compilation,
-  worker envelope validation, same-set reviewer dispatch, and separate evidence promotion.
-  Verification metadata stays pinned until governed closeout stamps the PDLS commit.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented manager-local readiness reporting,
-  nature-aware leaf lineage, and exact pre-landing organizational completion scope. Verification
-  remains closeout-owned.
-
-- 2026-08-14T11:29+02:00 — R39 curator: reconciled canonical manager guidance with generic
-  repository-resolved policy. Verification remains closeout-owned.
-- 2026-08-14T09:37+02:00 — Reopened L23 cadence: clarified leaf-closeout-only targeted acceptance,
-  leaf-integration proof reuse, and the single full master-integration owner.
-- 2026-08-13T08:47+02:00 — L23 integration-gate repair: made current `worktree_status.sourceLineage` an explicit input to curator dispatch and recorded the plane's second proof before host creation. Verification metadata remains closeout-owned.
-
-- 2026-08-12T20:10+02:00 — L23 curator: documented canonical manager/leaf lineage admission; verification remains closeout-owned.
-
-- 2026-08-11T14:20+02:00 — Rewrote the default body around real-master ownership, structural child
-  dispatch, and the builder/reviewer/curator closeout chain; removed duplicate history and task deltas.
-- 2026-08-10T07:30+02:00 — Durable reports became the precondition for subordinate cleanup.
-- 2026-08-08T02:00+02:00 — Leaf and master quality checks were assigned to their proper altitudes.
-- 2026-07-12T14:20+02:00 — Established the self-contained one-master manager lifecycle.

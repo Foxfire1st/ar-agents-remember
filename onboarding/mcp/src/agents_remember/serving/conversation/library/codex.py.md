@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/library/codex.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/library/codex.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T04:15+02:00 |
-| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Native conversation library overview](overview.md)
@@ -93,15 +83,15 @@ every thread/list row carries.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal port.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The ports suite proves rows/keys/cursors, generation resets, windows, shape-skew and
 range-absurd failures, and exact resume targets on fake transports; the dedicated agents suite
@@ -110,21 +100,17 @@ fail-closed ungroupable rows on fake native boundaries; the installed suite re-p
 list/read/resolve round-trip against the real app-server; the substrate supplies the validated
 initialize/state helpers.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The library owner maps native lists and reads, verifies cursors, and mints resume targets after exact identity checks. | `CodexConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/codex.py:307-712 |
-| Native Codex payload shape failures become typed library-store errors rather than fabricated history. | `_shape_error` | mcp/src/agents_remember/serving/conversation/library/codex.py:715-718 |
-| Native agent rows require their actual parent and grouping evidence; no unproven agent identity is fabricated. | `_agent_row` | mcp/src/agents_remember/serving/conversation/library/codex.py:558-608 |
-| Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
-| The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. | `validate_initialize_response`, `iso_from_epoch`, `required_object`, `required_text`, `required_list` | mcp/src/agents_remember/serving/codex_app_server_state.py:132-162; mcp/src/agents_remember/serving/codex_app_server_state.py:561-566; mcp/src/agents_remember/serving/codex_app_server_state.py:585-588; mcp/src/agents_remember/serving/codex_app_server_state.py:595-599; mcp/src/agents_remember/serving/codex_app_server_state.py:602-606; mcp/src/agents_remember/serving/codex_app_server_state.py:592-597; mcp/src/agents_remember/serving/codex_app_server_state.py:633-637 |
+- The library owner maps native lists and reads, verifies cursors, and mints resume targets after exact identity checks. [1]
+- Native Codex payload shape failures become typed library-store errors rather than fabricated history. [2]
+- Native agent rows require their actual parent and grouping evidence; no unproven agent identity is fabricated. [3]
+Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the live gate and list/read/resolve round-trip on the real installed app-server (0.145.0 at the probe; earlier passes observed 0.144.5). These removed artifacts provide no current execution or capability-enablement proof.
+- The substrate state validators this port reuses for initialize, epoch timestamps, and required object/text/list shape checks. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local port.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -136,37 +122,3 @@ the real environment (or the reverse) talks to a process nobody meant to start, 
 replaced as one seam**.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: passed the library connector's
-  already-owned client version into strict initialize validation and documented the clean-cut
-  Desktop host-first identity contract.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 10 initial citation findings (5 anchor, 0 prose, 5 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file citation. The sub-agent
-  row had slid off the codex class and across the module-level `CLAUDE_AGENT_LIST` fixture into
-  the claude suite; it was retargeted to `CodexLibraryAgentTests`, which still holds the six named
-  cases: `test_agents_group_under_parent_with_probed_source_kinds`,
-  `test_agent_conversation_reads_native_agent_thread`,
-  `test_unproven_agent_kinds_degrade_to_exact_note`, `test_truncated_agent_listing_is_visible`,
-  `test_nested_depth2_agents_are_named_not_silently_absent`, and
-  `test_ungroupable_agent_row_fails_closed`.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `AppServerSeams` / `DEFAULT_APP_SERVER_SEAMS` as the single env+transport substitution.
-- 2026-07-26T15:34 — 260718-CHATS-L7: sub-agent grouping — the port now fetches one probed
-  sub-agent thread page (`_AGENT_SOURCE_KINDS`, capped at 100), groups agent rows under their
-  parent's top-level row via `parentThreadId`, folds agent ids plus `agents_note` into the
-  catalog generation, and carries `agents_note` on the page; RPC refusals degrade to an exact
-  note, truncation and nested depth-2 agents are named, ungroupable rows fail closed. Sidecar:
-  corrected the now-false "top-level source kinds only; sub-agent threads belong to their
-  parent's history" claim, rewrote Purpose/Logic/Conventions/Invariants, refreshed ports-suite
-  citation ranges (+7 shift from the L7 fake-transport addition), fixed the stale
-  codex_app_server_state.py validator range, added the new test_conversation_library_agents.py
-  suite, and reworded the installed-suite version claim. Change uncommitted; verification
-  hash/date intentionally unchanged.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the direct Codex app-server port
-  sidecar. Verification is blank until closeout commits and stamps the new source.

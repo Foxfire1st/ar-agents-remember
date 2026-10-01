@@ -1,0 +1,169 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Thin composition, epoch resolve, bounded auto-retry, library/diagnostics exclusion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
+            "content": "sha256:d4ba658fb99a26f2b42f88b317c8d798fa6226494e751b3004754c71fec356dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChatsStageBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reconstructable active-conversation store connect/disconnect orchestration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:86a5d6735630043728b45635763697b2f0d151d410fab04e2028ec810363f06b",
+            "locator": {
+              "kind": "symbol",
+              "name": "connectConversation"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:abc602068ae5d1d67506426543778917d305339a446abe37c5d4ce2064942bf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "disconnectConversation"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reused L5 submission authority the epoch comes from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e62d3c995f9eae68a7efc0cb2afa1a2a075cc492",
+            "content": "sha256:1bd30a0330dd5ed9df36cddf5f2bb30099faca9b0b859c09bbda990a983450b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "readSubmissionAuthority"
+            },
+            "path": "dashboard/src/data/submissionLifecycleClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The default structured surface, the library surface, the reconnect banner, and the default-off drawer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "179fe52c67ccf3d450dc0a657ba772b077be613b",
+            "content": "sha256:0d0a53bd2e2f3c45f10bca5cf3e27c08dba871f559bc0bad91ea5752314c1016",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibrarySurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a59318c1ef3f9e6e2927eb8bd0cee1382f65028",
+            "content": "sha256:f73460c781b75c8b6da3208a42031cb6bc1e1abf1b740d89be8d7b26fb877997",
+            "locator": {
+              "kind": "symbol",
+              "name": "copyFor"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f1800351917ad55d654c89f5de3239ab0852cd2",
+            "content": "sha256:a806479f038600855dcb1aee8fda036cc036fee0b85f57d1b2c8901006f6d854",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalDiagnosticsDrawer"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The controlled-session predicate and the legacy-raw PTY body.\n\nAnchor: \"legacy raw — the vendor TUI runs in this pane\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:f3ae2d8247ee862b9326abc5b63fd396c7f5d78a785cf2a62da157f38eb747e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PtySurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:0ec0d78b60ec94db7228d30703eac989ce9cca671a267eb05919615874ec3253",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The view that mounts this body and owns the surrounding authorities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca0ce2b1c506aaedbb68337eaf039d40cc19c9ed",
+            "content": "sha256:f8970f954343af4273bd981c86f115dc58eb4ad836bc893046dadac3e718c7d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionsViewImpl"
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

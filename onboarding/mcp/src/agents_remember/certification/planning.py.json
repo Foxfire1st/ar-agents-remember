@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/certification/planning.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Compilation rejects invalid registries and binds every selected gate to the exact candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68eaba832a9f4dc8c2c8f44dab07864807affaa5",
+            "content": "sha256:c0f97d8fd73c6fd4501345224becd472720897cd67a1624baf5fa1ace2a70477",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_certification_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "External plans are authorized only by byte-equivalent canonical reconstruction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68eaba832a9f4dc8c2c8f44dab07864807affaa5",
+            "content": "sha256:9f15389a1fe945e412a282a6e8b734884ef1ebb6a9b96e71cbdd755d83f9b2a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_certification_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each gate plan includes all earlier profile gates as barriers plus deterministic rails and waves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68eaba832a9f4dc8c2c8f44dab07864807affaa5",
+            "content": "sha256:a7a8118f4afb1d935050ebcab9790b59a978981677dcad0ea66e6f054e68826c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_gate_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Compiled rails preserve ownership, authority, applicability, evidence, dependency, and artifact contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68eaba832a9f4dc8c2c8f44dab07864807affaa5",
+            "content": "sha256:04a3706ce0dcacf81966e195452cfadd69614757d41aa941c9d1bff2ae7ca0c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_rail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Planning selects generic profile-applicable declarations from the canonical registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68eaba832a9f4dc8c2c8f44dab07864807affaa5",
+            "content": "sha256:c321b27ea6a699e52b1c7aa2e27bc5fe91065497e6153e35bcadfcd1b48bc171",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected_gate_definitions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

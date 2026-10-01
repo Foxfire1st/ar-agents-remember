@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/reference_state.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/reference_state.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T14:21:42+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](overview.md)
@@ -44,6 +34,13 @@ run's converted check reports the same states.
   - a `line_range` whose exact bytes now occur exactly once elsewhere gets the new lines and blob.
 
   It never touches a stale anchor, a note or a target list, and it returns the remaining stale findings.
+- **One sidecar, and unreadable sidecars (L37 fix round P1b, review R3-3).** `fix_references(memory_root,
+  code_root, *, dry_run=False, only=None)`: with `only` (a memory-root-relative sidecar path) no other sidecar is
+  read or rewritten, which is how `citation_fix` with one `document` stays on that card. `_sidecars` names a
+  sidecar that is not valid JSON in `unreadableSidecars` and skips it; a sidecar that is not shaped as one
+  (`_MALFORMED`) is named the same way by `check_references` and `fix_references`. Neither raises on it: the
+  knowledge validator refuses it by its own rule. An unreadable sidecar makes the fix not `ok`; the others are
+  still fixed. Even with `only`, the result's `stale` list is the tree-wide reference check.
 
 ### Conventions
 
@@ -60,7 +57,9 @@ run's converted check reports the same states.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -69,32 +68,24 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The format test, the anchor states, the check and the fixer.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A tree is converted exactly when it has the layout marker. | `is_converted_memory` | mcp/src/agents_remember/memory_quality/reference_state.py:40-43 |
-| The located bytes of a file, symbol or range locator. | `located` | mcp/src/agents_remember/memory_quality/reference_state.py:72-88 |
-| An anchor's state in the working tree. | `anchor_state`; `git_blob_id` | mcp/src/agents_remember/memory_quality/reference_state.py:91-100; mcp/src/agents_remember/memory_quality/reference_state.py:46-49 |
-| Stale references are report-only findings naming the onboarding gate. | `check_references`; `STALE_REFERENCE_CHECK` | mcp/src/agents_remember/memory_quality/reference_state.py:125-157; mcp/src/agents_remember/memory_quality/reference_state.py:36-36 |
-| Only mechanical moves are re-recorded; a range is re-found only when its bytes occur exactly once. | `_refreshed`; `fix_references` | mcp/src/agents_remember/memory_quality/reference_state.py:160-184; mcp/src/agents_remember/memory_quality/reference_state.py:207-227 |
-| References are checked, and only mechanical moves are fixed. | `test_references_are_checked_and_only_mechanical_moves_are_fixed` | mcp/tests/test_knowledge_conversion_toolchain.py:87-115 |
+- A tree is converted exactly when it has the layout marker. [1]
+- The located bytes of a file, symbol or range locator. [2]
+- An anchor's state in the working tree. [3]
+- Stale references are report-only findings naming the onboarding gate. [4]
+- Only mechanical moves are re-recorded; a range is re-found only when its bytes occur exactly once. [5]
+- References are checked, and only mechanical moves are fixed. [6]
 
-## Cross-Repo References
+- The fixer can be scoped to one sidecar, and names unreadable sidecars. [7]
+- A sidecar that is not valid JSON is named and skipped. [8]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

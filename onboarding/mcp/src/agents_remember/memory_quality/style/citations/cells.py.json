@@ -1,0 +1,111 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/cells.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `CitationTable` (lines 24-36) — One table this check claims, whether or not it is in the current format..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2683de42d42a2b17a352d1eb0d67e39352e99944",
+            "content": "sha256:c1e1ff197a6ae9de2f2703189442cca31f642fb141d7278d2c32ffa3ad7b4335",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationTable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2683de42d42a2b17a352d1eb0d67e39352e99944",
+            "content": "sha256:22532b72f2d2a9c89a9c62b687f78447f610c2af105d8ad93c1053cd6469680c",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `parse_row` (lines 39-48).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2683de42d42a2b17a352d1eb0d67e39352e99944",
+            "content": "sha256:d8ec422536c14895afb176814e4f6a18d8fd6f9d960bc845f6ae3ecccdda6342",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `scan_tables` (lines 51-53) — Parse every GFM table once for reuse by citation checks..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2683de42d42a2b17a352d1eb0d67e39352e99944",
+            "content": "sha256:4099de07e25183b7b066d23c6ba9950dfb5f065742341e4e17ad2b99557dbb70",
+            "locator": {
+              "kind": "symbol",
+              "name": "scan_tables"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `table_lines` (lines 56-64) — Every zero-based line index a table occupies -- what :mod:`prose` must not read..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2683de42d42a2b17a352d1eb0d67e39352e99944",
+            "content": "sha256:d877bbafac41d7ec6c9221e5342459f6a6bbff245c400e498152daafef074944",
+            "locator": {
+              "kind": "symbol",
+              "name": "table_lines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `citation_tables` (lines 67-101) — Every evidence table in one document, current format or not..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2683de42d42a2b17a352d1eb0d67e39352e99944",
+            "content": "sha256:02bfa2e8f4f19ad6e6c7da2cf966f95cde9715f62301c4248a144a229433f6e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_tables"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2683de42d42a2b17a352d1eb0d67e39352e99944",
+            "content": "sha256:2d43f0edae922a18d5e014f233cdff1df004c38f90416c471b9800299a682a0d",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

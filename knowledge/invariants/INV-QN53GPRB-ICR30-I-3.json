@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [],
+  "exclusions": [],
+  "id": "INV-QN53GPRB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: This run's own admission report names the authority reference <settings>#repositories.agents-remember and the provenance kind of the bootstrap admission; L29's cases drive the six refusal paths (undeclared repository, no memory root, missing coordination root, non-checkout, unresolvable revision, moved memory line)."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "f9dd5e19-6903-493a-ad84-99d284782ded",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A taskless knowledge bootstrap is admitted only from real setup authority, namely the MCP settings document's repository entry, the memory layer the ordinary read route resolves and the exact code and memory revisions the two real checkouts answer for HEAD, so no client-supplied boolean, fabricated enclosure contract or caller-typed revision can grant a knowledge write.",
+  "status": "proposed",
+  "supersedes": []
+}

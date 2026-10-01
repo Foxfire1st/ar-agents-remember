@@ -1,0 +1,222 @@
+{
+  "path": "mcp/src/agents_remember/kernel/atomic_write.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The private temp this module writes before it replaces `path`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:0c52da8b0e53e84a3bb0cc20695eaf4cb4ab919c3ba6fe29f4073a4e91604221",
+            "locator": {
+              "kind": "symbol",
+              "name": "_temp_path_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:364eb5c7043f729fd15796a1cb9356bf25c1410650504dd55c7660250d50f942",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The directory flush that makes a completed rename survive a host loss.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:4cf5930ec964d7b4ef1fa82c802f354fed1c49f4af2b4eea25ac461abe1c8a9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fsync_directory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:f7a2363250eabbba70cc86d8b1183f7e53a709a17a5395881e2ace0617dc2279",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one atomic publish: readers see the old file or the new one, never both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_bytes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:d0c700917c9e903b462e26278ea741f52889300e8e516f44ce63136696510ddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:5de496a7b0110b70739121369d8380cffb7490388819c624ee2bd59a0fd2b29f",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:6c73f0b675f1b5a8c81c9a6c9db4854b5dd70db0173b75e8b794e106bf0ca1a1",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The atomic move of an already-written file onto a destination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:c9512bef140c79174a59e947c84b245427033dc3e9a15b70406cef8e7ab22ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_replace"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:f648dc97f2cfe59f333dec70596c2e3143d3352c5ddce45330f424d3eab5fc6d",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The file-data flush this leaf exposed, for a producer that wrote the file through another owner.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:b00a0390c779c7f1ca68625682145aab3906d25bb36151c362969278e7674ded",
+            "locator": {
+              "kind": "symbol",
+              "name": "fsync_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The producer that needs it: a closed snapshot stage whose bytes must reach stable storage before the rename publishes the name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:476bef8bf10732464341e0a814e0974b157895e5f4b389720787363b94e2fb87",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_closed_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/closed_snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:821a78ab5a69a1e80ff3a30e4c108e71535d7577dd9509ac5faa84789e200afd",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/closed_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The receipt write that goes through this module's atomic byte publish.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bc9276b29963a6f495e9a10f175733d860a6f30",
+            "content": "sha256:a93c95fec0d8ffa9d75ed4d878cbb4146a15b02a9a8a555104eb7bdb6d102457",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_candidate_receipt"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_receipt.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The install whose failure is reported as a replace failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bd49503b7daa1db164d0f12d39b2d8a92ad0d1",
+            "content": "sha256:d0aaa7a22c203f9d08e099c6ae7d0c54c894b9194a80ac8435e4b191bf8a5e25",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

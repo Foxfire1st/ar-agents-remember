@@ -1,15 +1,5 @@
 # dashboard/src/data/keymap/reserved.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/keymap/reserved.ts`          |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-30T22:35:02+02:00                           |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [data/keymap overview](overview.md)
@@ -79,23 +69,28 @@ observed, not a verdict alone.
   on a bound chord means replacing the chord (the R6 rule), never shipping it.
 - `KeyEventLike` stays a structural type so tests need no real DOM events.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reserved set, browser-forbidden records, and the single PTY matching gate. | `PTY_RESERVED`; `BROWSER_FORBIDDEN`; `matchReservedChord`; `matches` | dashboard/src/data/keymap/reserved.ts:62-150; dashboard/src/data/keymap/reserved.ts:218-224; dashboard/src/data/keymap/reserved.ts:204-212; dashboard/src/data/keymap/reserved.ts:153-202 |
-| `routeKey("pty", …)` defers entirely to `matchReservedChord`. | `matchReservedChord` | dashboard/src/data/keymap/zones.ts:56-60 |
-| The tinykeys binding installs only bound entries. | "if (!reserved.bound"; "!reserved.tinykeys) continue;"; "add(reserved.tinykeys" | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:62-63 |
+- The reserved set, browser-forbidden records, and the single PTY matching gate. [1]
+- `routeKey("pty", …)` defers entirely to `matchReservedChord`. [2]
+- The tinykeys binding installs only bound entries. [3]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -103,29 +98,3 @@ Extends browser-forbidden safety to the macOS Meta equivalents of reserved brows
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`zones.ts`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
-- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: deleted the unsupported reference-page and
-  hygiene-suite rows, rebound the surviving PTY gate/reserved-set/modifier/bound-entry claims to exact
-  source owners, and completed the bound-entry whole-claim audit.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4 (R5/R6): the PTY reserved set with
-  per-chord five-source verification records, `matchReservedChord`, `BROWSER_FORBIDDEN`, the two
-  unbound clipboard slots (Firefox ctrl+shift+c collision recorded, flagged to L6), and the R6
-  chord replacement Ctrl+Alt+[ / ] → Ctrl+Alt+PageUp / PageDown (Pi collision + the ESC ESC
-  encoding hazard). Verification metadata pinned to the task base until closeout stamps the L1
-  code commit.

@@ -1,0 +1,443 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.history.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of what it exercises and the defect it catches, including that only `fetch` is stubbed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReview"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:76742721dec55362b2d772ab0226d9249bb9defee9c434a23d1a7b554425399d",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The entry that produces the historical target: the closed leaf keeps its Intent review, labelled as the recorded one, and the working change-set stays live-gated. Since `260921-ICR-L47` the target and label are built by `IntentReviewEntry`, which `LeafEntries` mounts.**\n\nAnchor: `historical: true`; \"Intent review (recorded)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The takeover that hands the record to the surface: a closed leaf's entry carries `historical`, and the surface then asks for that leaf's recorded comparison.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetTakeover"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The target field the record travels in, beside the subject the entry already carried.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86545416eae45e7557f551de907178a8e9174476",
+            "content": "sha256:783de6c89bb80598c0e1943b0ee2df78df68bd18e6ad233d217e4e8e08be8c63",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetTarget"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The server's admission of the one historical form, and the transport ref that carries it beside the subject.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:e470017d0e269e90c004b4b3bf60895ff92067295d7eaec20bade172764965bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORDED_HISTORY"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:69efbbd93381f9b44c6ce39538f987c97a39d69d5a0f2de22f88455c477c81a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted_history"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:9377219551ea3b11923476e8382aa0b9b41a28be83c2bbdbc6ead72cca87f30c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewQuestionRef"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:dc3504240b08dee7838d65ad0b9b3ae19deeea64360bc148a022fc1b70b112e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSelectorRef"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one real task context the cases name, and the subject the historical target carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:e2719c50ff744f564b09dca1bbcd75610a850ea419c3ab070d8ac80d7dd5c416",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPO"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:12aca035c21a8b22449ded77dedb77c8bcc657b43dbe150b2e1a8472a42b2dbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "MASTER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:fa63ac2fa5a11aea6b52abe6d8e8ccc0734602fb298b3bb890073cf6539d0245",
+            "locator": {
+              "kind": "symbol",
+              "name": "LEAF"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:1f3e22adf8636d5ebff1a8b8ff3a5d2e36ad8ae2e6ed3307a2d8daae328721b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBJECT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The refusal a closed leaf with nothing recorded earns, carried verbatim from the server so the case fails if the surface stops showing the action.**\n\nAnchor: `candidate_not_live`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:30731de57eaf3e3a2a4d78ad6712d4e5d45c9f347c37e2ebdcf0a5848ca0953f",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOTHING_RECORDED"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The test server stub supplies the response body; requestUrl reads the actual request emitted by the client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:3608c2a5d942a094260eecb101db9522fbf19960acb7be6e17143af47a207a89",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:2d485bcf01b951cec2cf27bd4f94e156091be2c15026ed7e5e4963373f260239",
+            "locator": {
+              "kind": "symbol",
+              "name": "requestUrl"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Recorded task review sends the historical selector and states the recorded comparison in the mounted surface.\n\nAnchor: \"asks for the leaf's recorded comparison and says so when the entry carries the record\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:471a029dce11b154a0f12e2b6441d2ab9236ab844732a659c219319251ebb2f8",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A live entry sends no historical selector and makes no recorded-comparison claim.\n\nAnchor: \"asks for the live candidate and claims no record when the entry names none\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ca80016b54a4c39bf61537e1d2416adbbb190a",
+            "content": "sha256:7c10eb74753090dd70380ac51df7b9bd59a2214017f00dca55fe88278aec334e",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The surface's half: the record is part of the target key, the header states it, and the root publishes which record was read.**\n\nAnchor: `history?: ReviewHistory`; \"review-history\"; `data-review-history={history ?? 'live'}`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "content": "sha256:17dc67a5ffdc81d86867e2e2a5b0086011e538d0c5b05c9ca465efbd66076325",
+            "locator": {
+              "kind": "symbol",
+              "name": "targetKeyOf"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:50a21e780fe614ab03503265a8b6b7a15862708244fbcd5b4ba83419f86af6f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewHeader"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:adca9206f69580ac76715414d13bcff3f68a4002df6cdd9dcc7abbc99826d1aa",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:e0597fde3cbd7226ded9bc5e68cca5c9af2ec6e5b602115ef7c72801ba2b3adb",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 497
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:2f8c0943c3b2993756ad046e5b4cd83e16cdb76452df9818b7cb62870588d4f5",
+            "locator": {
+              "end": 550,
+              "kind": "line_range",
+              "start": 550
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The panes mounted as one block for one payload, which is what the extraction that cleared the lint rail produced: `ReviewPanes` mounts the workspace and the technical-details disclosure, whose knowledge, source and evidence panes live in `ReviewRecordPanes.tsx` since L48 and render only for the payload that answers the subject on screen.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPanes"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
+            "content": "sha256:5e7273270ed2d813c473958ee49a2c97510aa9f21aa0e317af39f74f56f99d72",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTechnicalDetails"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The client's half: the record is appended to the query string only when it is defined, and it carries the one value the server admits.**\n\nAnchor: `history?: ReviewHistory`; `params.history = history`; `export type ReviewHistory = \"recorded\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReview"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:fad4f51a8c6ff540f5328ea7996610aaf93437ee9a0c72cc52727f9ec31714a7",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 473
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:c95afe924915b87709c688acd7330bc222124ce005b14e3536ccb70616013693",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 490
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:6fc09748618c4a3d071d86e8154403b431e4b843f386551ec6f2c5b2aa322b74",
+            "locator": {
+              "end": 498,
+              "kind": "line_range",
+              "start": 498
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

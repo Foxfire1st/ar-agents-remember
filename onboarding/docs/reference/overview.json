@@ -1,0 +1,35 @@
+{
+  "path": "docs/reference",
+  "references": {
+    "1": {
+      "note": "The normalized public input has only two commit legs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:27080a1f03fa1174fbaf751a244ae5e116cb782523bded9c4b4c60e60c3f17f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_message"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:b5e66c5b68b109768d7f9b3fa3b46cef7c18c9b10729650e94dee8263695b769",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectiveCloseoutInput"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

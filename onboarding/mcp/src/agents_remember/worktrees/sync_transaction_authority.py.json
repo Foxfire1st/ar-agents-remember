@@ -1,0 +1,115 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Side planning and exact source-pair reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:610da19fbdf8f06d13d74b3047ba0e21b3938a0ebca6c1185c87dfe38b4d0e66",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:f04f4f5f1ed7dffe628fdddb0303806d65ca769204519c3d1ea953676b963613",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pinned ref authority and reconstruction require exact identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:4c03ad5007a5a3a33517bac5162f58e38550ca395df2e4569a4c71f96a2fe194",
+            "locator": {
+              "kind": "symbol",
+              "name": "pin_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:b3c567649571e693bef6410ed9f5205920a7b410e190bd6fcbc2b334f38962a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_pinned_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Contract identity and base-transition constraints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:54752aca1563316956fdeda67007fbe3df351ef1252ac5c4650045859ded929d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_record_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:938284b4dab9d820f24656f4527d44eda425dfc1db7b4f96f5bff0f87743a684",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_contract_bases_unchanged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Parked-content restoration and settlement retain the exact stash until safe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:f26e89ac19219ea6afc7f2d6fb65c9ba7a34b240dc370f9738d6d1de724ef665",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_parked_wip"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:c62aa4ed91434babb525806a103cdea5c34e0c07cd67384c312c0e2f8059ac4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_resolved_parked_wip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

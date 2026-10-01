@@ -1,0 +1,463 @@
+{
+  "path": "mcp/tests/test_knowledge_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's scope: one rule per case, and constructor validation deliberately not re-tested.\n\nAnchor: \"Constructor validation is not re-tested here\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:a2dc0b3e443038278c29a56a4e22033219b4a9b00313de071e5cac6a2c53ce6d",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "An ungoverned row reports ungoverned rather than a repository root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:3975b0422f825d9e9989c735275b6630bfede86c3dcb1425759b77a12b0c3a29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_ungoverned_row_reports_ungoverned_rather_than_a_repository_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two remaining refusals: a non-governed table and an unauthored route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:7d83a03086fae9ffb31fb21820bd876a3f7cba3025c43bdec59585f1a5a22556",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_governing_refuses_an_unknown_governed_table_and_an_unauthored_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The write layer under test: authoring, the read side, the association, and the governed-table mapping that makes the constraint a table key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:3718ecd74520da19b491579a4561d932d487ab78213dd982c79c6eb37acd1392",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_route"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:c80c92aa3047ec810f8e2ef131b7a5a7d138ba826dbc58d55840f5398c979cbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_governing_route"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:1e240c478317f6cabb54773457a5e2a275719bdb03eddebf02a653994fe0ae39",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_governing_route"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:1c57e3604ba40effd0306e5ec07234dd3f318b7b0e31158517daad6449239a0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GOVERNED_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:b5797358afeb8b2eff26fe58d975e0861d02e2f8b53a8cb1160581cf3732c159",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:b5332b2b43fa3a1416237eeb035c072de7217819e94fd0be1fb67e72d57cff6c",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 398
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:ddd082a1b5bf3ef3201afbd6ec0394a76e0bec31ea16b6b05986f477338aa391",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 199
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The confinement rule and the cycle walk the refused cases exercise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:9fa472344f72aea98219a3f28e0a1f35fef05c66a059bf2f8d5fdf67df180ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_route_path"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:743536918d07f037ce0bcdf3e273ac92a309241f25590a95d5c29c8ddd26169d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_routes"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:f1bff91928de2540eff05b965b2fd0675924ce652b110f71965d2fab38af9db1",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:8ac6dfa03a523f18888d808d8eafbf19d32d32327a67596cbcb6b8e8acdab4f0",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The drafts the cases construct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:6037d413c574ade4ee7444dbd1f3858416df4b02be9bb6f79e86fceca6ca4829",
+            "locator": {
+              "kind": "symbol",
+              "name": "GoverningRouteDraft"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The application entry points the fixture uses to build an initialized candidate and its provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:f318c276ea14e280630e148444a67ac04c4e842c2d2d50ff065460c48ccbe1ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_knowledge_destination"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:747546adc9e6c1f72c0722efd9ef8c5eb7788d657d18ac33221259ada096ef8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialize_knowledge_namespace"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:cc0b3146f3436d6780f23c08ff7d324f408cdc1dd9cb87ee1d7fc58f3d969755",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_admitted_knowledge_store"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:cc0c1ded77cd743de6c33b0f1a4c1e76796770eef09dbb355133c1f5af24a461",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_authorship"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:2605753023e8d0706b1cae657d9a3e46b51aefe9cab0126bccf6229a673f3bad",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The initialized generation-2 candidate, its store and its authored provenance used by every case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:b358f17563157acc93844bcb8ccdc44d17ebacf16a251bd93873ebc43bfaa2e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one authoring helper and the draft it wraps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:4af56eeefeb4e75cb54bf12b3557af36ffc954b469f79990ab99cc624d30fd8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:5aba53f301cbdf8c910ab5656847ad62e23a5bf34fdf401d9a24af5c36a81b9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteDraft"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4439f7d1c5ec40e13fb6139780592901c5a11ee",
+            "content": "sha256:d97bef33a155abc73ecab2eca25022ca17854d1baaad73fb0791b2497d22a7c5",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A confined path is authored and its identity returned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:3ae007e80425b53abd9278056816ef201ad500368ef4f42e2719d27907540836",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_confined_path_is_authored_and_its_identity_returned"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "One scope keeps one route when the same spelling is restated, measured by a row count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:c4c89ff515ba66ee40a40953831d58e092a5212cbbd1c8d62d68d147e84a5e25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_scope_keeps_one_route_when_the_same_spelling_is_restated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Ten refused spellings, each `invalid_reference` with nothing written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:7c07382638db2effe72e5af7bc318eb4a77a3883db1b6257046718ec864cf51b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_outside_the_one_admitted_form_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:b464964bc501cf0930b36f32dfde2ff865b8a8b63481e0fad5b530446251a9d7",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "An authored parent yields an acyclic hierarchy; an unauthored parent is `missing_expected_row`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:803b8ba62694198a50ce68716a9920f82700cc0bba9a60f7d4bd6a6ccd049dcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_childs_parent_must_be_an_authored_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A cycle introduced by a direct UPDATE is still refused as `lineage_cycle`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:a4159cb72767d0ee6ff54736b62cccdb44744e09c5cf0ab4d6e381bdada50e04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hierarchy_that_reaches_itself_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "At most one governing route per governed row: association, idempotent restatement, and the conflict refusal that keeps the first route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:804f5131725ab779d129133e6c8cf94511e4a2ced50e78fb118577e70013ccbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_governed_row_names_at_most_one_governing_route"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67c39eadb39a2d7d2a0cd3ea3bce44fb2d4cfdab",
+            "content": "sha256:9de7fab1b035a420a4e11f8ad0d35ca986faad8204519e2ba85478686d30da40",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

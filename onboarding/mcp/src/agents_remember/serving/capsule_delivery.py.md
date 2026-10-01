@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/capsule_delivery.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/capsule_delivery.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -109,46 +99,30 @@ hyphenated strings because they are published verbatim in `capsuleRefresh.mode`.
 None known for this module. A stated compiled-capsule size bound with a pre-encoding refusal is
 routed to the final-verification leaf (`D12`), not to this seam.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved source registry.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The instruction parameter and the refresh-report key are named constants, chosen against the vendor's own base prompt. | `INSTRUCTION_PARAM`; `REFRESH_REPORT_KEY` | mcp/src/agents_remember/serving/capsule_delivery.py:44-52 |
-| The delivery value refuses an empty instruction stream and a non-`sha256:` digest at construction. | "sha256:" | mcp/src/agents_remember/serving/capsule_delivery.py:182-190 |
-| None | "an error so the caller decides: the runner refuses it at its own boundary, which keeps this value type free of transport policy." | mcp/src/agents_remember/serving/capsule_delivery.py:199-236 |
-| The binding identity refuses blank or untrimmed fields and can be read back from a published report. | `CapsuleBindingIdentity`; `from_report` | mcp/src/agents_remember/serving/capsule_delivery.py:91-165; mcp/src/agents_remember/serving/capsule_delivery.py:117-136 |
-| The compilation converter reads L2's frozen shapes structurally and copies the rendered stream verbatim. | `capsule_delivery_from`; `_seat_role` | mcp/src/agents_remember/serving/capsule_delivery.py:304-368; mcp/src/agents_remember/serving/capsule_delivery.py:287-301 |
-| The refresh decision returns a supported boundary or an explicit refusal; a refusal yields no parameters. | `plan_refresh`; `thread_instruction_params` | mcp/src/agents_remember/serving/capsule_delivery.py:399-440; mcp/src/agents_remember/serving/capsule_delivery.py:443-457 |
-| The legacy-chain switch is scoped to a capsule launch and names what the host actually loaded. | `legacy_instruction_switch`; `LegacyInstructionSwitch`; `LEGACY_PROJECT_DOC_KEY` | mcp/src/agents_remember/serving/capsule_delivery.py:500-531; mcp/src/agents_remember/serving/capsule_delivery.py:472-497; mcp/src/agents_remember/serving/capsule_delivery.py:460-470 |
-| The seam consumes this value from the session settings, which the production factory fills. | `CodexAppServerSettings`; `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/codex_app_server_session.py:73-119; mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
-| The wire form travels the encoded launch configuration, emitted only when a capsule is present. | `control_runner_command`; `_optional_capsule_delivery` | mcp/src/agents_remember/serving/harness_control_runner.py:64-87; mcp/src/agents_remember/serving/harness_control_runner.py:120-133; mcp/src/agents_remember/serving/harness_control_runner.py:115-141; mcp/src/agents_remember/serving/harness_control_runner.py:174-187 |
-| The frozen shapes this conversion depends on are asserted against the real landed types by this leaf's tests. | `test_the_frozen_shapes_this_conversion_depends_on`; `test_delivery_consumes_a_genuine_compilation_result` | mcp/tests/test_codex_capsule_delivery.py:448-482 |
+- The instruction parameter and the refresh-report key are named constants, chosen against the vendor's own base prompt. [1]
+- The delivery value refuses an empty instruction stream and a non-`sha256:` digest at construction. [2]
+- None [3]
+- The binding identity refuses blank or untrimmed fields and can be read back from a published report. [4]
+- The compilation converter reads L2's frozen shapes structurally and copies the rendered stream verbatim. [5]
+- The refresh decision returns a supported boundary or an explicit refusal; a refusal yields no parameters. [6]
+- The legacy-chain switch is scoped to a capsule launch and names what the host actually loaded. [7]
+- The seam consumes this value from the session settings, which the production factory fills. [8]
+- The wire form travels the encoded launch configuration, emitted only when a capsule is present. [9]
+- The frozen shapes this conversion depends on are asserted against the real landed types by this leaf's tests. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The instruction-channel choice is pinned against the installed vendor app-server schema, captured as a
 fixture rather than trusted from a recorded snapshot.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The instruction fields per thread-open request and the absence of a turn-level field are fixture evidence generated from the installed app-server. | "\"instructionFields\"" | mcp/tests/fixtures/codex_app_server_instruction_channels.json:5-5 |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: created onboarding for the capsule-delivery value
-  type, the refresh decision and the legacy-chain switch, recording the three-channel authority
-  boundary, the one-capsule-per-binding lifetime, the verbatim compiler bytes, absent-not-null on the
-  wire, and the declared limits (unmeasured vendor resume effect, production-unexercised
-  `FORK_THREAD`, unbounded payload). Verification metadata stays pinned to the last committed source
-  (`c1dbebf8`) because this leaf's candidate is deliberately uncommitted; closeout stamps the real
-  commit.
+- The instruction fields per thread-open request and the absence of a turn-level field are fixture evidence generated from the installed app-server. [11]

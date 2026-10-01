@@ -1,0 +1,202 @@
+{
+  "path": "mcp/tests/test_evidence_catalog_gate_boundaries.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the two gates and how to tell them apart.\n\nAnchor: \"The two evidence-catalog gates, and how to tell them apart when one of them is red.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b0a97f1b83930839fdfa83e289e9ce5b90708f",
+            "content": "sha256:83b52c80738cf13759cf6acfe5729ecb3fc8548159af8e4dbeab18eda2706f19",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The two exact-scope consumer registrations this module obliged.\n\nAnchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:04f080086fde938c7448fd392bccc677f34d937388e6ca7a052c449cef718dc3",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:2f5230fce8b7fb6ae4a09d2b7ba19f9e84086088160b7cfe5c81142970cbebcd",
+            "locator": {
+              "end": 814,
+              "kind": "line_range",
+              "start": 814
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The consumer-completeness oracle: the one gate the source tree can redden, and the finding it raises.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:f3f1a650988db3d019afd08c8bc245d3d6f8eb4b002979c2c0147c2abfe63bf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceLifecycleError"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc27681b3d4efec48ab592bb34ba64e329d764b8",
+            "content": "sha256:833ade30cfb4dbbc8ef13abf4e7816a932f9edb0b852e1c7f55c7735a27eb944",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_evidence_inventory"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The byte pin's own three constants, asserted in the pin's own test and deliberately not duplicated here.\n\nAnchor: \"LIFECYCLE_CATALOG_SHA256\"; \"LIFECYCLE_CONTRACT_COUNT\"; \"LIFECYCLE_ARTIFACT_COUNT\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:3c28a4f241419817ad19e6647b19d37edf96c0a408f334d776c33102c71e956f",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pinned catalog whose bytes the case compares with themselves.\n\nAnchor: \"PINNED_CATALOG\"; \"REPOSITORY_ROOT\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b0a97f1b83930839fdfa83e289e9ce5b90708f",
+            "content": "sha256:8fa3f4109d4abb47b1d8c495edfbe92cdbf56e7e3ae187d8726dcb3301b43319",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared fixture that writes a valid synthetic catalog.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38204d3fc74ab0886df9d064dbcd6ae228238fcb",
+            "content": "sha256:4d90fb00844186220653bec0e3c441f4010a3a35b12d989aad15c33229be4780",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_synthetic_evidence_catalog"
+            },
+            "path": "mcp/tests/_evidence_catalog_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The synthetic repository: two real consumers, one governed artifact, and a real Git repository because the oracle derives its graph from tracked files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b0a97f1b83930839fdfa83e289e9ce5b90708f",
+            "content": "sha256:5de854e874dcf026ff6c477281601062c1ed458f0f8fe8ee8fcde4c8fbefdcb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "synthetic_repo"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The catalog's own digest and declared populations, read rather than pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b0a97f1b83930839fdfa83e289e9ce5b90708f",
+            "content": "sha256:2f91dc712835f0360558ece3e2a56511a32894255c2033b1819aad004dee2914",
+            "locator": {
+              "kind": "symbol",
+              "name": "populations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The case: the oracle refuses the doctored tree while the pinned catalog's bytes and populations are identical.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b0a97f1b83930839fdfa83e289e9ce5b90708f",
+            "content": "sha256:1bf165ecc512dee4d24b70e0d5830f4891cbcc8a738a7fbf220eaa67eb87d916",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_oracle_reddens_while_the_byte_pin_stays_green"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.\n\nAnchor: \"mcp/tests/test_evidence_catalog_gate_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

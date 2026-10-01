@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_dataset_contents.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_dataset_contents.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T09:20+02:00 |
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c` |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -93,55 +83,35 @@ kernel or the worktree planes. It is a read: it writes nothing and holds no stat
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external documentation is required for the dataset contents walk. | — | — |
+No external documentation is required for the dataset contents walk.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of why one implementation serves both callers and what the drift would cost.** | "one of them decides whether authored work may be"; "would show up as destroyed work rather than as a test" | mcp/src/agents_remember/application/knowledge_dataset_contents.py:1-21 |
-| The published surface: the page cap, the value and the one entry point. | `__all__` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:39-43 |
-| **The page cap, generous for a real catalogue and finite for an implausible one.** | `DATASET_CONTENTS_MAX_PAGES` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:45-50 |
-| **The four non-merging states as a declared vocabulary.** | `ContentsState` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:50-52 |
-| **The four states defined, including no-file-at-all as a measurement distinct from an unreadable file.** | `DatasetContents`; "which is not the same fact as" | mcp/src/agents_remember/application/knowledge_dataset_contents.py:53-76 |
-| **Absence established only by the two states that finished their work.** | `absence_established`; "manufactured work" | mcp/src/agents_remember/application/knowledge_dataset_contents.py:78-87 |
-| **The one case where "no revisions" is a measurement, which is what cleanup may act on.** | `measured_empty` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:89-98 |
-| **The bounded walk: absent file, missing namespace, page loop, refusal as partial, and the cap as a limitation.** | `dataset_revisions`; "absence was not established" | mcp/src/agents_remember/application/knowledge_dataset_contents.py:101-180 |
-| The unreadable-dataset constructor, which never reports emptiness. | `_unreadable` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:183-189 |
-| The refusal code carried into the partial sentence when a page refuses. | `_code_of` | mcp/src/agents_remember/application/knowledge_dataset_contents.py:192-195 |
-| **Where a page's revisions come from: the rows' own subjects, with an empty revision contributing nothing.** | `_page_revisions`; "revision_id" | mcp/src/agents_remember/application/knowledge_dataset_contents.py:198-209 |
-| The view surface the rows come from, which is the same one the reviewer and a planning read use. | `read_knowledge_view`; `open_view_context`; `KnowledgeRefusal` | mcp/src/agents_remember/application/knowledge_views.py:86-86; mcp/src/agents_remember/application/knowledge_views.py:292-292; mcp/src/agents_remember/models/knowledge/result.py:235-235 |
-| The view request, its payload and the page bound one page carries. | `ViewRequest`; `ViewPayload`; `InvariantView`; `MAX_VIEW_ROWS`; `ViewRefusal` | mcp/src/agents_remember/models/knowledge/view.py:1117-1117; mcp/src/agents_remember/models/knowledge/view.py:934-934; mcp/src/agents_remember/models/knowledge/view.py:988-988; mcp/src/agents_remember/models/knowledge/view.py:1025-1025; mcp/src/agents_remember/models/knowledge/view.py:185-185 |
-| **The two callers this one walk serves: the run's remaining-work readback and the cleanup guard.** | `dataset_revisions`; `measured_empty` | mcp/src/agents_remember/application/knowledge_bootstrap.py:197-199; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:466-470 |
+- **The module's own statement of why one implementation serves both callers and what the drift would cost.** [1]
+- The published surface: the page cap, the value and the one entry point. [2]
+- **The page cap, generous for a real catalogue and finite for an implausible one.** [3]
+- **The four non-merging states as a declared vocabulary.** [4]
+- **The four states defined, including no-file-at-all as a measurement distinct from an unreadable file.** [5]
+- **Absence established only by the two states that finished their work.** [6]
+- **The one case where "no revisions" is a measurement, which is what cleanup may act on.** [7]
+- **The bounded walk: absent file, missing namespace, page loop, refusal as partial, and the cap as a limitation.** [8]
+- The unreadable-dataset constructor, which never reports emptiness. [9]
+- The refusal code carried into the partial sentence when a page refuses. [10]
+- **Where a page's revisions come from: the rows' own subjects, with an empty revision contributing nothing.** [11]
+- The view surface the rows come from, which is the same one the reviewer and a planning read use. [12]
+- The view request, its payload and the page bound one page carries. [13]
+- **The two callers this one walk serves: the run's remaining-work readback and the cleanup guard.** [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file: it reads one dataset file on the local
 filesystem. The resolved settings' `crossRepo.allow` is empty, so nothing here names, reads or writes
 another repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-24T10:50+02:00 — 260921-ICR-L29 curator, **micro-round-2 bytes (documentation only)** (uncommitted change set on
-  `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`): **re-read against the
-  corrected docstrings; the card and the source agree** — the module docstring now opens "The answer is deliberately four-valued" and its state description reads "The four states are four different facts and are never merged", which is what this card says. All ranges were re-derived for the docstring-only line shift. **No verification stamp was advanced.**
-
-- 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
-  base `0d7910f9d646161c414ed6543453536a3c749d49`): created this one-to-one card for the module
-  `ICR-R29@v1` introduced as **the dataset contents read**. The stamp basis is the leaf's base commit,
-  because the module is untracked there. The sentence a reader must not lose is `absence_established`:
-  a bounded or refused walk does **not** establish that a revision is absent, and a location with no
-  dataset file at all **does** — so `remaining` and `unmeasured` in the run's report stay two different
-  facts. This card also records that `measured_empty` is a measurement of zero rather than an assumption
-  of emptiness, which is what makes the cleanup owner's second branch safe. No verification stamp
-  beyond the leaf's base is advanced: the candidate is uncommitted and the governed closeout owns the
-  real commit.
+No meaningful cross-repo references found.

@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/version.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package metadata and source-checkout fallback are selected through the explicit resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
+            "content": "sha256:8ba8940d7686bf3dd467ec8790e7670c5edfd14b6f842150163d0a6bc041b93c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Installed metadata is authoritative; only missing package metadata selects the explicit source-checkout release identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
+            "content": "sha256:8ba8940d7686bf3dd467ec8790e7670c5edfd14b6f842150163d0a6bc041b93c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/evidence_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The selection entry point and the seed it takes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:ca05fbecdca0d2bd4360b8f4bd385b74ae140fe65d65c91bb2db44ff3638bbae",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_evidence_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:96d947e1ccaab55c7853feabc4890e8eadfc006810f38231fe0a6cdd7f6c6f86",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceSelectionQuery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The claim aggregate's items, including the subject edge and every coverage edge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:014c5777e2cef06a1072e1cd9fabe6bc93a08ececebd4a0120bd3c59084f0cc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_items"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The observation items a candidate seed selects, keyed by the recorded candidate rather than a re-derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:155a8ccf2da4d2f9b53f8444e75a80fe845069925ad473582127e1a48f5bc367",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observation_items"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:88eef0f91ea4e4a817b75eef406f5130bf10688550520070966a7f5a4e5b7438",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observation_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four artifact-resolution states computed at read time and never written back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:72762506da6cff10565d4a8d8f4932aebb11a62e2d6e12b7bd77597979c18378",
+            "locator": {
+              "kind": "symbol",
+              "name": "_artifact_resolution"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:4e1e12e0d5d55a50f2a8237b24856a49510df38152aace167b563eafea372ba2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The unassessed state reported as the absence of an assessment rather than a defaulted value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:30fff465f70ac3b869861bdd809ebbb2b91aeba0aa03e5d2c3baa017da2e9613",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assessment_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The bound whose breach raises rather than serving a partial page, and the exception the caller converts into a shipped refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:f94b8aedfc0de8cb6b724f1899599b187dc904a9389a8d73f836cb7d1ab34b62",
+            "locator": {
+              "kind": "symbol",
+              "name": "ITEM_LIMIT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:bdb24a6112b191e29a8f3be50caa07744fde49480538773428d73ae7276cec6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceSelectionIncomplete"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The counts, which are the selected set's own arithmetic and nothing more.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc8a3e077fd62e3282affce6dac069d8ba3ee848",
+            "content": "sha256:ad4b3d9fd6fba0ffc65dc75b4b854da8948058bb432676dfaf3262ec6605853d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that asserts an artifact absent at write time is recorded rather than refused.\n\nAnchor: \"def test_an_artifact_that_is_absent_at_write_time_is_recorded_rather_than_refused(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21a59dfc5ed2eba2d7b36f782cdb4244a3594cd",
+            "content": "sha256:c7a1d5eb48402a8e511443cb6b7a4d583057af3e1182c35e20332e457c1f8c15",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 416
+            },
+            "path": "mcp/tests/test_knowledge_evidence_observations.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

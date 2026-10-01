@@ -1,0 +1,321 @@
+{
+  "path": "mcp/tests/test_knowledge_relation_rules.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scope statement: operation and failure behaviour, not constructor validation.\n\nAnchor: \"Constructor validation is not re-tested here.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:3319c4fa785ebe33cc4f48f53377e8e8c2bfe6ac17bf2ad725596bd535d1d587",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The application seam this module is the only test importer of.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:ff824ff0c2dfa9173576b17333071cede2d9912bae30c0fb6592cd210d324bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_knowledge_family"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:b578a3563a860bad71261ef941d9e1d8548741c68f1af943e2ff5e7d491be463",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_knowledge_family_member"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:13bc5b206562ed5db9b371493d86cdf809fe883d65cad486898ccf27b0b601c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_knowledge_realization_claim"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The unit-regression lane row this module is registered by.\n\nAnchor: \"mcp/tests/test_knowledge_relation_rules.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:82c8c5cb58d216e470187da95ea547654220bb5cc0b134000f566055296101b6",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The fixture contract that names this module as an exact consumer.\n\nAnchor: \"contract:knowledge-identity-branching-fixture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:674cc0e45bcaa39e972d5253c4e0a4e204d360ea774269c0c705222b6bb574fe",
+            "locator": {
+              "end": 1237,
+              "kind": "line_range",
+              "start": 1237
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The anchored-claim atomicity node.\n\nAnchor: \"test_a_new_anchor_and_its_claim_are_one_transaction\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:ebaab28da9a253de8845bca7c03d03be68dd2d01c0f15961952575a434a331b2",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two endpoint-refusal nodes that prove nothing was written.\n\nAnchor: \"test_a_membership_endpoint_that_does_not_exist_refuses_and_writes_nothing\"; \"test_a_realization_of_a_missing_anchor_refuses_and_writes_nothing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:0fdad9ea927f7d73be1bdacd2bb65998de373a01915460d5c77ba7e0247c439d",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:e706bedcf6cb9667fce6150da46812bfc9f232adcaaa8d1cfcec228086da461e",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pair-uniqueness and the identity-reuse nodes.\n\nAnchor: \"test_the_same_endpoint_pair_is_related_only_once\"; \"test_a_reused_relation_identity_with_other_endpoints_refuses\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:719b5c5f6e8fb21c8146a6851fce882083398c4719a41a57c8b594e231a76985",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:af4e6558d29f0363558b1681f3d419bdbc3b7c79df0dafa03910c280a4a1872a",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The authored-role node.\n\nAnchor: \"test_a_realization_role_is_authored_vocabulary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:c64fc2af4d3c024797258a6966f866e9af1b58cd30c5a9a96521dcb618329535",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stale-caller removal and anchor-lifetime nodes.\n\nAnchor: \"test_an_explicit_removal_requires_the_row_the_caller_expects\"; \"test_a_cited_anchor_cannot_be_removed_and_an_uncited_one_can\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:dd581032c471931c9d2ec224cd70c078e8d3b51ba820a027762ef402f4f7e16c",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:5b5d3d173f6f8dad61c06e0478c8955f53105f62d730e578a34f57518e66fc9f",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The database-enforcement nodes: payload rewrite refusal and foreign keys.\n\nAnchor: \"test_relation_payloads_refuse_an_in_place_rewrite\"; \"test_foreign_keys_are_enforced_on_the_relation_tables\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:386b1f530d839df83efdd8e9aaa20a21e78cb0f922bc12580826084240f2f7ee",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 414
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:b5111fd09433cadb5ab9cc213f8c806a21590d7bef64b703652891420873b195",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 442
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The namespace sweep and the composed application-seam node.\n\nAnchor: \"test_graph_operations_refuse_another_repository_namespace\"; \"test_the_application_seam_authors_a_graph_through_an_admitted_destination\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:28796e7332067e64ed98efffe0f72afa937f12acf396accb32c8fce065d0cece",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 473
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ea471997b3b136957903127b448cdce04ba98aeb",
+            "content": "sha256:f6cf2a8ade86fbe8fcdc7bb535b06940099b58baa9a4ad20d8c64a4fae809d3e",
+            "locator": {
+              "end": 680,
+              "kind": "line_range",
+              "start": 566
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The production modules under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:b2d3e095f7d704f14b3dbc4b8b0467348659e2156a028539f2abf454e15e865f",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_source_anchor"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "content": "sha256:f06149691c314c03160f8cacacbb1cade99811e96ca3986c19b56dce20b0f00c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_family_member"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
+            "content": "sha256:10a013393578987f89739b4813d908ae7a48bfa830b2bf3500f7c21e993bf19a",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_realization_claim"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

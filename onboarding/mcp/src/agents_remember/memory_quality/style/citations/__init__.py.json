@@ -1,0 +1,20 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The governing route overview documents the package route scope.\n\nAnchor: \"Hot Path Summary\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/memory_quality/overview.md:24-24"
+        },
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/memory_quality/overview.md:59-65"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

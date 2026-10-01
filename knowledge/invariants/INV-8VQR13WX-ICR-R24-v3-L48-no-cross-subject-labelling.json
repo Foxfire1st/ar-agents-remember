@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Everything the review surface renders under a selected subject's heading while that subject has not answered: the reading area, scope header subject lines, technical record panes and the tree's selection mark.",
+  "conditions": [
+    "The surface is handed only the read keyed to the question on screen.",
+    "Task-level facts (source inventory, code trees, record label) and the frame's comparison-level explorer attribution may remain; they belong to no subject."
+  ],
+  "exclusions": [
+    "The rail's frame-derived mapped/unmapped attribution labels, which are comparison-level (A2-O3).",
+    "A retained coherent payload of the same question after a failed refresh (R17)."
+  ],
+  "id": "INV-8VQR13WX",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "718298bb-fd4f-4ef9-baeb-62669c938aab",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The surface is handed a read only for the question on screen, so between a selection and its answer nothing of the previous subject's reading, records, comparison identity, currentness or family context is shown under the new subject's heading, and the tree marks only the reader's explicit choice.",
+  "status": "proposed",
+  "supersedes": []
+}

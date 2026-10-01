@@ -1,0 +1,37 @@
+{
+  "path": "mcp/src/agents_remember/application/structural/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package behavior lives in the two concrete application modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "849d72f016ac51f903e451177239fefa8443bc52",
+            "content": "sha256:8a96603519125f905420977ad2418c92d21ec11afbe70eb933f60ef79df06088",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_agent_tool"
+            },
+            "path": "mcp/src/agents_remember/application/structural/agent_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b98309ba61a1ab15b96216e284a34d18836ccf1f",
+            "content": "sha256:a524e28c2d6fec8f31c3b1ac8bf7096e2787b2ad7ba00a7de9c89246ab92853a",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/structural/gate_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

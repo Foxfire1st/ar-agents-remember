@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -42,7 +32,9 @@
 
 None recorded. (The Todo that L24 must escape marker-like prose is met by `escape_markers`; see Logic.)
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The validator's design authority is the coordination-root note
@@ -50,33 +42,21 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R22@v1` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The grammar and its tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fence and marker patterns. | `_FENCE`; `_MARKER` | mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:21-21; mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:22-22 |
-| A marker is valid only as a reference number. | `Marker` | mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:28-34 |
-| Fenced blocks, inline spans and escapes are excluded. | `_paragraphs`; `_prose_spans`; `_escaped` | mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:48-67; mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:70-90; mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:93-99 |
-| The entry point. | `find_markers` | mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:102-119 |
-| One escaping rule, the validator's own grammar: exactly the markers `find_markers` reports are escaped. | `escape_markers`; `_paragraph_marker_offsets` | mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:142-162; mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py:122-139 |
-| The grammar cases. | `test_markers_are_unescaped_bracketed_numbers_outside_code` | mcp/tests/test_knowledge_validator.py:555-558 |
+- The fence and marker patterns. [1]
+- A marker is valid only as a reference number. [2]
+- Fenced blocks, inline spans and escapes are excluded. [3]
+- The entry point. [4]
+- One escaping rule, the validator's own grammar: exactly the markers `find_markers` reports are escaped. [5]
+- The grammar cases. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Documented `escape_markers` and `_paragraph_marker_offsets`, the escaping rule MIK-R24 added on the validator's own grammar: a Logic bullet and a row. The invariant and the Todo that said L24 must escape marker-like prose now record that it does, and that the real conversion escaped none.
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

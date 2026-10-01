@@ -1,0 +1,287 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selection is either filesystem mode or one canonical 40-digit Git tree identity.\n\nAnchor: `candidate_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:ea666e9862405e6f4a36b210a3a7029e62d0e6572d95331f647122b4e53010f6",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 351
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "One skipped source with its path, size and reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:362f3431a4235ffa8820335f85f8263b4ac19b7a8a07d85cddb727d3def66b12",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceSkip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The bounds report the citation check surfaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:05495ff90241b5b96f819fe2ffa45d5690be93f81696249d1237addab266710b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceBoundsReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A source file carries its observed identity and authoritative content digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:f09335dd95f3ece8ac1051a96a663bfcca9bdfd5ee47a9fedda31ce4483a3e9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceFile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The full manifest retains file/directory observations and explicit candidate selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:e76738e6dd546ff65890b04973ee1ae81a26e5d29284ab5f412f8ef0aaabffa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "Manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Validation distinguishes content staleness from metadata-only change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:f1e7d82d576690ffa0009b015b1c187bafc603148a699c12c69ad10cb9af6cb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "Validation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bounded ready marker validates schema, identity, roots, counters, and candidate selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:b82ee194c21cbba926b87c097433c21c07e0915f66e0638040eb225a16355e6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadyGeneration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "File metadata retains device/inode/mode/size and nanosecond modification/change times.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:55e3b2cd3ef0148ebf8c3fe2a1b6f349afc1b32a112f0a4039bc95edc37e7ef4",
+            "locator": {
+              "kind": "symbol",
+              "name": "Identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four bounds, the skip vocabulary, the status vocabulary and the schema version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:6d221d8f2e6efeb197ebf30d35b106ccaed906b9647049cc0b0753b5fe8c41b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_BYTES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:8db6e294f7527bb8fee91cd9d660c341c87a9d342ffb93439f385561f810d627",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_FILE_BYTES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:f184694585ecf810989c0bec7cdfc2569e6e69f93e632edbf3a237f5c4ee4192",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_HARD_STOP_BYTES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:4da2d3370bad042167f95d61c7e85d4489e2adbef914a64a54b03e7fee0d6c71",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKIP_REASONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:15b5ebf0d587fa57fd76419fdb2ecffa9dab3cc9e9cc6f93d96e9e2d73c2f2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The register's source and authority vocabularies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:d55a1035c4d051767bf9c81e0f3304f12f51f01ca6b721bd1526016d555dc477",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXCLUSION_SOURCES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:a42cc2e4f889ec1fc32a20f232f8fdc75446ac0655780e78099451bceef1d6de",
+            "locator": {
+              "kind": "symbol",
+              "name": "GITIGNORE_AUTHORITIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one input-budget owner, which reports skips instead of raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:a0f14453b20a5d6caa4a6e7d7f345fd2888e74bda307af8b16f2af547add1de7",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_source_bounds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cap overrides an operator may supply, with the keys they actually overrode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:3e99e3c8ef3c9fbc71dc8a6ce92a02576a22759e602198aab85a4cf76e14ed07",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationIndexCaps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One exclusion decision, carrying the source that made it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:2d59a4813cbaaf3bbb29d9917e68488ab10590c617b90d8e79cf25477fda7ee1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExclusionRule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The register record: its rules, its ignore-file patterns, its authority and its caps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:faaee0c2e5305b0aae424099606778ab4560dcc3e764f3a725745ad6536dec03",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExclusionRegister"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

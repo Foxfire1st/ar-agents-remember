@@ -1,0 +1,650 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Step 7 in the docstring: the linkage marking, the delete-only rule and MIK-R10's items.\n\nAnchor: \"7. marks every changed hunk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:b06bd74220b5c36140172f4d4df52d893dd0c1730628dc1162f9d6adae3cab74",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Step 3: families reached by a touched member or a changed record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:d4bbd1419788ef08ef2774b7ade91310827e6f4448d6a3da971a05d25500c094",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reached"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The `touched_invariant` facts and identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:6ce623ae8dbe4f4bc2ad42950f84898124233a55185a1f1352069ac3bd849737",
+            "locator": {
+              "kind": "symbol",
+              "name": "_touched_item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The `stale_invariant` item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:c2bd43a5328db2f1938c9af5237f95f18aeb320c881ac494587c08689c134785",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stale_item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The `reached_family` items and their member identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:9ee8ecec3d3c834239b01d9487fa671bfc28b7282282b5a58904fee0a797ae24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_items"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:97e8e908e928005cca9f3b3c8db0b3cf68c8750588271dcb4fbd07cd34bb3d8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The leaf's declarations, one input of the run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:f4498ee32ad3ebb88cac070e374db2bb215477a269ed19f1c6effa8392ef75ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "expected_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Step 5: marks, `planned_untouched` items, one sort over both, and the summary.\n\nAnchor: `reconcile_planned_effects`; `plannedEffects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:c980fe23b2ebd29a6ccd59a6d87b48418d3cae8a0ad9c75c163f0188d45f9891",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:c712cb2a637c363c70718d77d6a753b1c303d0fb264ccdc7dd29f673a5b920fa",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 291
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Step 6 in the docstring: the route conditions of reached families and of killed routes.\n\nAnchor: \"evaluates the family route conditions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:510f8f12420843fc4598d2a2c04888698ad6e6eb63263a4b75395eccdba4fb50",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Step 6: the route items, with `satisfiedBy` carried in `extra`.\n\nAnchor: `family_route_conditions`; `satisfiedBy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:819d4ad74e6b71226fe3f393197fc02580e6a65b1b529af46a6679bf8904538b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_items"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Step 7: one linkage, the unexplained items in the one sort, `changes` and `unexplained`.\n\nAnchor: `unexplained_items`; \"\\\"unexplained\\\": unexplained.summary()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:9020671b0ccc70ed0e3daa0df5e1f0420d327738fbb7a2fdf066681a984c87a8",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:a312a9334e990e4406f9e3c088a0bf682c48097f4b38746f00e06f8ebdd88562",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 292
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Step 8 in the docstring: MIK-R14's reconsideration candidates.\n\nAnchor: \"8. evaluates every K_B decision's\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:c8f03b834a6dbabe85a8d892f7e391d610369be8e76c50ebc14f2e4c35b1fa8d",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The schema name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:c1913a5457832d4aef9133a51b298009e33f77e3772178fc36cad0e38513fe40",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKLIST_SCHEMA"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Step 8: the run's classifier bound once and reused; the candidates join the one sort; the `reconsideration` key.\n\nAnchor: \"reconsideration = reconsideration_candidates(\"; \"classifier = Classifier(inputs.code, inputs.base, renamed)\"; \"\\\"reconsideration\\\": reconsideration.summary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:678655c2dfbe1312e035e95004556182479e400431d979c470d2977cfa21ecff",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 242
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:a09b591c851da2160c980e29c36a941f4e448b865212d46344a68670601c5fd5",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 264
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:3d16cc1692e049225c73b73607519422a73729e15c819ce0b665ae789ea19fda",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 293
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A hunk links only through a side where it changes lines: a delete-only hunk only by a K_B range (L10 ruling Q2), an insertion-only hunk only by a K_C range (MIK-R09, the L10 N3 carry).\n\nAnchor: \"def _linked(\"; \"hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:033e36db176b1d3e36a27335c39eddedf3572b96f51e878f34855cdadfc20170",
+            "locator": {
+              "end": 613,
+              "kind": "line_range",
+              "start": 601
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "A Git call that failed or timed out is `incomplete` naming `git` (MIK-R09).\n\nAnchor: \"except subprocess.SubprocessError as error:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:f9014821953456cb7e3a19b9d2be337211a17a99a71d1784ac9a012f5e3d1099",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_failure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:fb3b20aa8774fb1145395bfad3294a0c90c036c27d964036c37807365e3e9bae",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The insertion-only symmetry at the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "content": "sha256:7fa5b29eda280e79edd29520a8d31ea4dd75359eb169b3a1c7ffcdf8451d38d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_insertion_only_hunk_is_linked_only_by_a_candidate_range"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Gate linkage, text and file level.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:1f27b502aae886e6ff96295f9c432b360b9e62482dc655f908b2989c36c7795e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_change"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:29fe4fc8db404b0da4161899e0efa35f9da9a2a3562e63f85ebba359707a5732",
+            "locator": {
+              "kind": "symbol",
+              "name": "_path_hunks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The non-text predicate the gate and the lane share (MIK-L32).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:1f7e567e9aedc338166c50eb7481097abeedd869092b2a2a96869f9ca5352d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_covered"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:37a6335fc10fcc09a120845217ca9d018c84ee4a1988d1d6cb675849b3b226c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "non_text_linked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "A body edit raises one invariant and its family and carries the rest of the file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:7411ae61f2078abe6ed909f1453e93310d39c31ce5f2dc05d46cf14b7e2b2ccf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_body_edit_raises_its_invariant_and_family_and_carries_the_rest_of_the_file"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "A comment between functions raises nothing; one inside raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:8893e27eae12ba08b533f38ba66496df98bea98d836b40dc78a49b9daa9bf14c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_comment_between_functions_raises_nothing_and_one_inside_raises"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "A binary change touches a file anchor and links at file level.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:7564960664f1e810e4a82dee8bd44f14528520d029a5d86e432967adaf5f4c82",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_binary_change_touches_a_file_anchor_and_links_at_file_level"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "A partial inventory is incomplete and names the path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:382ddd3ddc50e8b68c5f42796f9638e1e399019edc997e2c60c1d3818b8ef1b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_change_inventory_makes_the_run_incomplete_naming_the_paths"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "One item, its ID from the registry, and `extra` for a registrant's top-level fields (MIK-R06 `satisfiedBy`).\n\nAnchor: `item_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:e6a15fafebf0905493849913e640bfa1847461e5c3e004c34dc553b963c8bbff",
+            "locator": {
+              "kind": "symbol",
+              "name": "Item"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:aa098729e3b6571ee8d9d46a00354fa2e337c86df2d78aa2230d5e5a7d10fc99",
+            "locator": {
+              "kind": "symbol",
+              "name": "extra"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "A mode change keeps its hunks' linkage and adds the mode fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:fa91658b075d5560652854381e0971fc34f7cb37fff0031fbe7aefe0c31191b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_text_change_with_a_mode_change_links_its_hunks_and_the_mode_fact"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The run's inputs, with MIK-R10's route coverage and MIK-R14's coordination root last.\n\nAnchor: \"class WorklistInputs:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:b5c8e30cc547baba72b00a35f5fe1dfbe6eac7ebaa82759243abf753ab2223f9",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one representation of unreadable input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:df82adc1ff17ea06b3d6970e266c19f870e1175762111fda8bab7fff63e31fff",
+            "locator": {
+              "kind": "symbol",
+              "name": "incomplete_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Inventory and renames; a partial inventory is incomplete, naming the paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:319522d4c961778f88c67710aa9b55264afbc43564dcfa5361157be1c762b4c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_changes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:adbfa538d6276865214db54ad622ef6fbe84763e4008c4f4e885d59951efed3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_partial_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The document: the items of every step, one sort and the digest.\n\nAnchor: `document`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:652154a80d769437ef86b58a11e5e354b481b3600e7b36bb5f1a3e7af24e47ee",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 238
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Steps 1 to 4, split out of `document` at the L06/L11 merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:b4164f2bfbc0706cbfc7c2e1dd135fd9278fc4f6a61bad329f650569abab7e4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:7afde84601fc0ba74b5e59cdc472b9208a02a1eb0ca0052a770453f4aa0439ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_first_entries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:7eec836afd45b86fa3580b0b48934424afb743428e8e17cdb081347eccc3004c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stale"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The persisted `scope` and `entries`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:172cc0e06701fb74e79e4f758e74c65dcfd7373b1b09758e55e2bacecf2e1b34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope_document"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1f4ed92e6f8fc6bf38cee37ce752ff4d4575836",
+            "content": "sha256:7dae4037b65a380e1b493fb5b1a13ed6cbdcd70975471774d04bb9503c9d3a54",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entries_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

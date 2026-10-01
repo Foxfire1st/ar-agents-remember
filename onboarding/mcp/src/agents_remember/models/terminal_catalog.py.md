@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/terminal_catalog.py
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `mcp/src/agents_remember/models/terminal_catalog.py`         |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [models overview](overview.md)
@@ -65,48 +55,20 @@ absent; server response models mirror the emitted key set.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The catalog row separates binding, replacement, spawn provenance, and pinned-brief receipt evidence. | `TerminalCatalogEntry` | mcp/src/agents_remember/models/terminal_catalog.py:67-550 |
-| The catalog row round-trips caller-kind provenance and the dispatch receipt only when set. | `from_json`; `to_json` | mcp/src/agents_remember/models/terminal_catalog.py:186-357 |
-| Binding promotion clears its staging marker and preserves receipt evidence only for the identical document-and-role address. | `with_task_binding` | mcp/src/agents_remember/models/terminal_catalog.py:384-401 |
-| Current parsing recognizes task-document references explicitly. | `_optional_task_document_ref` | mcp/src/agents_remember/models/terminal_catalog.py:586-588 |
-| Role fallback is isolated to migrated/internal catalog interpretation. | `migrated_seat_role` | mcp/src/agents_remember/models/terminal_catalog.py:709-714 |
+- The catalog row separates binding, replacement, spawn provenance, and pinned-brief receipt evidence. [1]
+- The catalog row round-trips caller-kind provenance and the dispatch receipt only when set. [2]
+- Binding promotion clears its staging marker and preserves receipt evidence only for the identical document-and-role address. [3]
+- Current parsing recognizes task-document references explicitly. [4]
+- Role fallback is isolated to migrated/internal catalog interpretation. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
-
-## Update History
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented the persisted
-  reviewer parent pair, its generation-bound authority meaning, JSON projection, and clearing on
-  cross-seat rebinding. Verification remains closeout-owned.
-
-- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
-
-- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: documented the address-bound
-  receipt rule: same-seat promotion retains proof, while any document or role move clears it.
-  Verification remains closeout-owned.
-
-- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: added the durable private pinned-brief receipt and
-  cleared staged replacement identity on canonical promotion. Verification remains closeout-owned.
-
-- 2026-08-21T03:30+02:00 — 260821-ARSPAWN-L1 fix round 2: the serving `/api/terminal/sessions` wire model (`TerminalCatalogEntryWire`) mirrors `spawnedByKind` when set, alongside this row's `to_json` emission. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `TerminalCatalogEntry.spawned_by_kind` (`spawnedByKind` on the wire) round-trips caller-kind provenance written-only-when-set, migration-safe; the strict vocabulary lives on the producers. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-11T14:29+02:00 — Re-read `TerminalCatalogEntry` and widened its citation to include
-  the dataclass declaration and current structural fields; verification metadata remains unchanged
-  for governed closeout.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the row-vocabulary move from
-  `serving/terminal_catalog.py`; preserved the entry/liveness/parsing knowledge from the old
-  serving card and left store behavior to the serving card. Verification metadata pinned until
-  closeout stamps the L9 code commit.

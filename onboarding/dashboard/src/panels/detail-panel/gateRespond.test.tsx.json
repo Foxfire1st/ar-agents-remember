@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/detail-panel/gateRespond.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The gate-respond suite.\n\nAnchor: `describe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6d94639ce269254167f467f4f452529bb1df0b7",
+            "content": "sha256:7ff0e3b89684462de96673cdd8cb4f31b3e827c211af349ceff7f2de39c07f61",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

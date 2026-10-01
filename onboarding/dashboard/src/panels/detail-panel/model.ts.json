@@ -1,0 +1,108 @@
+{
+  "path": "dashboard/src/panels/detail-panel/model.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reader-doc resolution entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:4964fe68aa3c975f552f2e17aaa78397f5fbb9de4af93e005e065f753f10e667",
+            "locator": {
+              "kind": "symbol",
+              "name": "displayedReaderDoc"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:3d99a36ecfb8da35eefdb5797b0f9c4c4dd1ca73e5a07d08dea5cb152ca30721",
+            "locator": {
+              "kind": "symbol",
+              "name": "displayedLeafDoc"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The master/series view assembly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:6a4d3a5c8cb0f91a064d56a84b0632103dc503ddf2139cfff5b3306026fb3020",
+            "locator": {
+              "kind": "symbol",
+              "name": "seriesAsMasterDoc"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:6c9ac35b3b9278b50ff9caf681d08df857b12519800f29d30074bff9ad0b8ff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterDocWithSeriesTokens"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:4a952e8bdfc017b8c5e375ccc61f37040f3969fe7ebb282809d191d11d804f2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "subTaskKey"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:daa0bea065ee763341f96760c5f116a593fd11aa1c16bbc44b2a1d53ce05d298",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:3a5ecbc83af11107b3eb2788121e5c1a841928a0e0c17f16b226e63d362b0dcf",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44c4584aaf45631c8212a192245a46bdf8615124",
+            "content": "sha256:1de9a76fa24abf5a299ad0cb52f3601d92936913163c3cf4368fd4ff1e76b991",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 226
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

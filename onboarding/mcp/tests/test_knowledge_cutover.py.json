@@ -1,0 +1,257 @@
+{
+  "path": "mcp/tests/test_knowledge_cutover.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+        "content": "sha256:96f64e290e130dcfb0d021c4bbb99822996be1e560c74d03807cfdda93e99b58",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+        }
+      },
+      "facet": "Fourteen route entries refuse unconverted memory, naming the converted branch and the crossing sync, while a sibling branch is converted, and each returns nothing once that branch is deleted.",
+      "id": "PRF-0VDDSE",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+        "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_converting_candidate_is_gated_never_locked"
+        }
+      },
+      "facet": "A candidate that holds the marker is judged by the gate and never asked the lock: the closeout validator, a crossing sync, a code-only sync, the leaf's own integration and record landing, and a repository-level run on a converted checkout.",
+      "id": "PRF-595PRD",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+        "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+        }
+      },
+      "facet": "A plain directory is unlocked, while a pruned linked worktree, an ownership refusal and a permission error each refuse by name.",
+      "id": "PRF-FJHVPR",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+        "content": "sha256:eab6325c343f30543209edd0ceea70a71c300d8ba2b2e2969d3464cd90a236ad",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_read_selects_the_database_of_a_converted_tree"
+        }
+      },
+      "facet": "For a leaf resolved to a tree comparison the unchanged-knowledge freeze returns the tree-comparison refusal and never reads the memory base's dataset.",
+      "id": "PRF-JR10RF",
+      "invariant": "INV-T9M21FB4",
+      "origin": {
+        "handoffEntry": "L37-unchanged-knowledge-converted-refusal",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+        "content": "sha256:3b6fe5185a2b640c3284f85aba451b53060a107a21f021326c4141f072351e10",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_database_writer_is_frozen_on_a_converted_tree_and_names_the_file_writer"
+        }
+      },
+      "facet": "On a converted tree the database writer's admission raises naming knowledge-ingest and a publication is refused database_frozen with nothing written; an unconverted tree in a repository with no converted memory is still admitted.",
+      "id": "PRF-TMK4N3",
+      "invariant": "INV-1XKX9ERN",
+      "origin": {
+        "handoffEntry": "L37-frozen-database",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+        "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+        }
+      },
+      "facet": "An uncommitted marker in a registered worktree locks the repository, and a timed-out or failing Git probe refuses as 'never read as unlocked' with Git's own reason.",
+      "id": "PRF-VEG64W",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: what the suite covers and where the CLI and MCP routes are tested.\n\nAnchor: \"The cutover's carried completions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:3828e1999d448304e2838f428eda640979075d4b1bc6370a6b76346173bb4988",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fourteen routes refuse while a branch is converted and return nothing once it is deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:96f64e290e130dcfb0d021c4bbb99822996be1e560c74d03807cfdda93e99b58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_route_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A converted worktree locks, and an unanswered probe refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only a definite non-repository is unlocked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A bare repository Git cannot open refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:2bc2b425f0f364554aef6962bd40ccd62d750fab9c4f61ca5b294ab8a4369bea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bare_repository_git_cannot_open_refuses_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The converting candidate is gated, never locked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_converting_candidate_is_gated_never_locked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The database writer is frozen on a converted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:3b6fe5185a2b640c3284f85aba451b53060a107a21f021326c4141f072351e10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_database_writer_is_frozen_on_a_converted_tree_and_names_the_file_writer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "No read selects the database of a converted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:eab6325c343f30543209edd0ceea70a71c300d8ba2b2e2969d3464cd90a236ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_read_selects_the_database_of_a_converted_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lock under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_lock_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

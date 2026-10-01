@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_final_catalog_plan_attestation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Attestation must exhaust the planned population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca01bcfe027cfa6987b80247dda22eae5908ed8c",
+            "content": "sha256:1e6f0e87924e613abb7c069c9e16ad02908b2840cfbdf21509081a67627b23be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attestation_must_exhaust_the_planned_population"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca01bcfe027cfa6987b80247dda22eae5908ed8c",
+            "content": "sha256:92738e21b899d9566563344ab5b6149120ee3a7dc678ba52be68f843e2d57693",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Attestation green and red and blocked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca01bcfe027cfa6987b80247dda22eae5908ed8c",
+            "content": "sha256:8b658db86ff8ea11b44dc6b1577d5294e65ea6180e302a2490f9e0c975a038f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attestation_green_and_red_and_blocked"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca01bcfe027cfa6987b80247dda22eae5908ed8c",
+            "content": "sha256:d111e1fcd3bd822c2ca9db5c744d74446119c2f6a59a4acfa7b9b72956f56f05",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Plan refuses affected closure bound to another memory tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca01bcfe027cfa6987b80247dda22eae5908ed8c",
+            "content": "sha256:7fac728b97b0e91d2d1522ce814e57c9d65a8907d0b2befc58fc198c8948c493",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_plan_refuses_affected_closure_bound_to_another_memory_tree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca01bcfe027cfa6987b80247dda22eae5908ed8c",
+            "content": "sha256:c37fcde59aa4009b7512be1134886a5cf8239a0b1e8d581ff4e7a8e37f09e177",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Coherence subrecords require affected coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca01bcfe027cfa6987b80247dda22eae5908ed8c",
+            "content": "sha256:21165b037c6b3e3de33022ea7faa4a2e07bb9399b3e912f57105cedd32a13302",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_coherence_subrecords_require_affected_coverage"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ca01bcfe027cfa6987b80247dda22eae5908ed8c",
+            "content": "sha256:8de75f0436fea3a9b15536acc2deb253edc05f66bce49fc3eda218e39613e836",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

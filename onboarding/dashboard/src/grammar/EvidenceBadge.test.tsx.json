@@ -1,0 +1,66 @@
+{
+  "path": "dashboard/src/grammar/EvidenceBadge.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component + glyph record under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fc6f58685cf5cd4c8322afba303663ece819053",
+            "content": "sha256:cc20f8248b0265959cd8ac941596ea26db23bcc9ca4c1f39d7710530e75ab023",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceBadge"
+            },
+            "path": "dashboard/src/grammar/EvidenceBadge.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0fc6f58685cf5cd4c8322afba303663ece819053",
+            "content": "sha256:3a9acd1538fe9eac5ec5870e5139c4d8ad10cc1acc573212588335bf1a4a63cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_GLYPHS"
+            },
+            "path": "dashboard/src/grammar/EvidenceBadge.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `EvidenceTier` union the tier list types against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da5227fafc129b5fe7a4e97e30e06b251b429d59",
+            "content": "sha256:cfd9da7e21731dd0396faa84aa2e44c22dad8de3776b32c261ba5fb470522cea",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceTier"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da5227fafc129b5fe7a4e97e30e06b251b429d59",
+            "content": "sha256:8f2cb7b5e9cd424a79dd2bea309acb70b92995a386406c468023c370ff582e19",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

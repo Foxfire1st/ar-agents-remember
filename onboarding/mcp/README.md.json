@@ -1,0 +1,180 @@
+{
+  "path": "mcp/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:66ae0bf6c579630f2aa12e314647b9610a2f52bddc550fe9b6c7f3338e099a36",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:e1f4547fb3e834f9d3010e6f52f94e144546d376cfec52ea05cec75699cee18c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_config_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:75f6acc8c6cacd9951ef2da4ccb34e46823a789ad63891fe5980b08c3c7e8f15",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata.\n\nAnchor: \"agents-remember-mcp =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab72de78e8bc9f72c5d7c631e761c9101d2ee84",
+            "content": "sha256:cc1d200f395187cf7e3587863f80feba2596aec076cbc6a0783cb08447f5cd42",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup.\n\nAnchor: `# c-13-install-and-onboard Install And Onboard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4561679eaf748ce2f7afe8ba5f2c4bd9c2e8bac0",
+            "content": "sha256:f3559ae9b179135dd3e06684a0a98cedb7d570b347001edb593f249f49964af2",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference.\n\nAnchor: \"def create_server(config: McpRuntimeConfig) -> Any:\"; `# MCP Tool Reference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "252b78ac6957e9364de9a88548b8fe4d5efa7672",
+            "content": "sha256:45d556b186b42d4b30476bb3851251525271a884d4eb92fe454f83c32336a422",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:1e977d0c261a0d54e5a3cc8b5ff3940757ceda487f7bc238eae2d62075138adb",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:ee1844899d24faed094c3a064dca97204f56ebea822848911950282a961a9e4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_timeout_caps"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:8bc4be81ebdeb31598fcc3fbaa15aa58e8d600027aec6f79f595f9828fe65e66",
+            "locator": {
+              "end": 695,
+              "kind": "line_range",
+              "start": 676
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeInstallRequest"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Requirements and the development-runtime section state the bounded package line and canonical exact source build.\n\nAnchor: `## Requirements`; `### Canonical Linux/WSL development runtime`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fa4acedc86c1261ac0f3059f24d979a9ce28040",
+            "content": "sha256:9cef9060746d78d7a7c5f8510dcf2b2fb472c1b3adcedf37512c601c527b06f0",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

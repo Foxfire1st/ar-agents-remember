@@ -1,0 +1,137 @@
+{
+  "path": "mcp/tests/test_review_intent_summary.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared ancestor the count cases extend.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:d6f22bba941196d7dc494eb2b2d4a2d474c4f38b7cb7e88184f6f36fbb8bc107",
+            "locator": {
+              "kind": "symbol",
+              "name": "_shared_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Added/revised/removed as +/−, relationship-only as typed counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:4ce9381aebcf2e062ad6fa08786c1b427c19f6d09d907f0facb6d3c41f15a817",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A shared revised member counts once per side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:17d9d5a6dbb29c998fcbf1ae0d434281d1d4edc9fef3af902b299bd1384c683d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_revised_statement_two_families_share_counts_once_on_each_side"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Record-only successors count; a same-guarantee member change stays typed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:e08c68412231e30cc5bcb24aff2c8b57841cc9dd0b9b57f78ca1582ab9098aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_only_successor_counts_once_on_each_side"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Divergent heads are `partial`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:41faebf17042ef1336824db794c290d8b15ca5fe1e6d84800e4628b97d29456c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_identity_without_one_head_makes_the_summary_partial"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Absent knowledge is `unavailable`, never zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:ba11f7b16ebbb463e1f1ad1ae0f1ef727fef468c48d32dde5e9a14e935092cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_knowledge_is_unavailable_with_its_refusal_never_zero"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "200 for every typed state, 503 unwired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:5ec4426310ed577e98649c1676d02f04618802385e4e55646974e99cf95bd8eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_answers_every_typed_state_in_the_body"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_review_intent_summary.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:33e248a5dc8236adc94be461a7384eb753c94ce29a613946b5331c9f219fb00d",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

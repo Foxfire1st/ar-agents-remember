@@ -1,0 +1,114 @@
+{
+  "path": "mcp/tests/knowledge_writer_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The base records' legacy IDs and the IDs derived from them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc1d4c8274b03e14c7500e8ed0d0c17d0fa8cef3",
+            "content": "sha256:7f9d0c1c4c3e52ceb41cdb6d4a683067a1872d9328c2137a576c046dee4d2aea",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_INVARIANT_LEGACY_ID"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc1d4c8274b03e14c7500e8ed0d0c17d0fa8cef3",
+            "content": "sha256:e8c76c86b895def67f869a45a10db6f84fa6bdcb44aee1b270676856affb0248",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_FAMILY"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared admission claims a criterion the validator does not check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc1d4c8274b03e14c7500e8ed0d0c17d0fa8cef3",
+            "content": "sha256:b9598a0c0a3f7899cdec2a0861054807a5d33ff68e3edabe6221da0737ca78cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "ADMISSION"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The base memory: one exported invariant, one realization, one exported family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc1d4c8274b03e14c7500e8ed0d0c17d0fa8cef3",
+            "content": "sha256:372a7f52cdebb63537b2e4675fe478251ab772ba57555d961754823178fdadf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "base_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The leaf contract naming both worktrees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc1d4c8274b03e14c7500e8ed0d0c17d0fa8cef3",
+            "content": "sha256:ac49805023d0500563f03fb85a5f9c407941fb6846ca74e0fe3263cb318ece6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_text"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Both repositories and the task root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc1d4c8274b03e14c7500e8ed0d0c17d0fa8cef3",
+            "content": "sha256:0fc5a478fcf80d90b46e0fb1e3c3d70e1fef0ebe5338b838274b68cec2421b53",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A producer entry with curator keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc1d4c8274b03e14c7500e8ed0d0c17d0fa8cef3",
+            "content": "sha256:6cbd7fd3d9a20f92fea426f38228a3e2c5c3bb5ce37aa777c35c4728637b6c52",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

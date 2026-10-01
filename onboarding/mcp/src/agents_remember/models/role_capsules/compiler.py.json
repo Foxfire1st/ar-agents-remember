@@ -1,0 +1,378 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/compiler.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The diagnostic shapes this module fills and the ordering rule that keeps them out of the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:dd4e8ea1df9e867df4e992ad0fb9fba1faa21b5f2623c2c61565b020c700c71b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleManifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:4323757e57b607bcb67c2028cb43e4aec1936d39514eb151199ca10934ccdf15",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceRecord"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:35f5b5944b710921f526de2cc82b9b592ef6a79f7dec65f799803c99261981d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleRejection"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:6bc8fa78d6eeeb2d59a48f7df43fbd7dfea5ac2d8bf3526bfe14fc429097caa6",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:d8540ab7600d0a22835f61c0d39e58a680f21d7cf9901e0d12e9b8f15f4cfead",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:50f33138bf2e687e09a2ea89eabff050908519b37ee6c2a353a1befbab7d6cc9",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The carried skill channel** — one content-addressed reference per declared skill, built with no policy call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:ff997d6960152a420d7b0d10a870728d9c9ba02fba08c8054c25edb8dda93a71",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The determinism cases: identical input to identical content and digest, order as identity, and a real binding change moving the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_input_compiles_to_identical_ordered_content_and_digest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:396f24d73d20453da02daf14bb34f184ac316c06e029e9b9649b3a7cd5b40e07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reordering_the_composed_blocks_changes_the_semantic_digest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:7f6088caf1914a50ea7f6016a0b5573bd63a4d7ee29439c66c82c42723f83e56",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_binding_change_does_move_the_semantic_digest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ephemeral diagnostics do not move identity, while an applicable block change does; an unrelated role never reaches another role's capsule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:2628f23bafe64d1e27e4be35c56e9fd1b539d7746fd4f195febbd461ac3a373f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_declared_but_unselected_specialization_changes_diagnostics_not_identity"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:96e522b9106d44be40439301a8aeccaa8143e27b7d1e5a88574acdcbf786ef0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_changing_an_applicable_operation_block_changes_that_capsule"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:cde89307f7a031255b9f02801ae6b2b58853979b2027c2dc8f7835476757fe5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_changing_an_unrelated_role_leaves_the_worker_capsule_untouched"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Composition requires neither model nor network, and no network client is imported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:1c7be34037305e689c446275eab98b47307989cabcdb57e58a5f15f6d160b527",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_composition_succeeds_with_network_and_model_access_denied"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:c776f8c06880ce3914eae0dc24aa503d828a05340ff31eee6d0e8790dabfdd6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_compiler_modules_import_no_network_client"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:fd3c5ee5684f439f0f58bfbad3a0f7808e2eccd996a54c854f9b67fc296fe1c9",
+            "locator": {
+              "end": 929,
+              "kind": "line_range",
+              "start": 910
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:f4d7fcc172924568359bfaf8ae34878e8c1d677f62df9bf02e854122db72edf7",
+            "locator": {
+              "end": 961,
+              "kind": "line_range",
+              "start": 932
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A refusal still produces an explanation manifest carrying its remedy, and an unverifiable projection is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:f68be40622b6abfe0d2362438100ef630301619d57ed967748239daeade96d73",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refusal_still_produces_an_explanation_manifest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:d5c34ac6d955df25f6b7d2ca9bf555dbd4a57bfbb3dd318b25550cc4d08032d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_projection_whose_bytes_do_not_match_its_digest_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:079569ddf8eff689aabcd9b7a2a97cdaed597ce68ea79db471edf0186f471fcf",
+            "locator": {
+              "end": 907,
+              "kind": "line_range",
+              "start": 893
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:68096c57e97e205f5f3163e6d230b5063533eba3a4ef80003c9c06ff9601f981",
+            "locator": {
+              "end": 876,
+              "kind": "line_range",
+              "start": 864
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The typed refusal this module raises for every defect class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:b455239473b006be03beff93864429921efbe0b4fd2402ee452a6276939eff44",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:75bfdb3bdf4b9a82ea89850c55be6be6e3713700c9ab9dbe22dc9b58940efe79",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleManifestError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f21e3816d3742f47da541f605386c1d1c9faade8",
+            "content": "sha256:352ee2208b6afea6cb4c3b75274c4d656eeb3f44e99e08e8fbf0e8859a3275ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

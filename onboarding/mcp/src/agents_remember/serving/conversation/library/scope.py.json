@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical library scope confines the requested path and refuses invalid or escaping input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87a44696e185474bb81a9719a76adffb817f4d8b",
+            "content": "sha256:140d72aebba2bf33269c0c0a64abb85a28479889c6d20a35675b6ddff9ec932d",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_library_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical library scope confines the requested path and refuses invalid or escaping input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87a44696e185474bb81a9719a76adffb817f4d8b",
+            "content": "sha256:140d72aebba2bf33269c0c0a64abb85a28479889c6d20a35675b6ddff9ec932d",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_library_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The query digest binds harness, canonical scope and sort.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87a44696e185474bb81a9719a76adffb817f4d8b",
+            "content": "sha256:ff3b1efa838a680f732334d0a32638f1631202603b1a1f5a1fc55a8703560200",
+            "locator": {
+              "kind": "symbol",
+              "name": "query_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

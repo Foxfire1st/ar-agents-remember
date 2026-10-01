@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/direct_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
+            "content": "sha256:16182a70a535e68c325ce3c6b0650ea2d3f987887d6e428d6cefb15b0742cfee",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
+            "content": "sha256:16182a70a535e68c325ce3c6b0650ea2d3f987887d6e428d6cefb15b0742cfee",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Refusal payloads forward the typed task-intent next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
+            "content": "sha256:f2ca60bec427d7837229c3891918ed53e9e59ee40575cfd1561be2161b7e5f2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_error_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
+            "content": "sha256:b503876d205c0545ae477ec9a819903d779de5c6f8b4fb7bd003e4dd13934bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
+            "content": "sha256:16182a70a535e68c325ce3c6b0650ea2d3f987887d6e428d6cefb15b0742cfee",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

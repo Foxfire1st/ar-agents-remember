@@ -1,0 +1,359 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fields a caller may restate on an existing step; `note` is here for both levels because the top-level key set used to omit it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:23cf3f3e68e4432676d20660b73f91dca23905614844960a0c031ba4f438fc4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_STEP_UPDATE_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:a7806c4defb9bc1dffb716132cb05a53234061061376e21ee257bad7db43ddee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enforce_terminal_status"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The schema field that made a top-level `note` storable at all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:c0b35101ebddd305e1084c4b0c86624ace558643ff7c2d5964e5f30b76b8ffc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "Step"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:5642383be71a4ebcc2ca9f54b8a2b79260bde5ce0b1b55abfc0ca37c67d14406",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_set_step_updates_only_and_names_the_parent_of_a_bare_substep_id"
+            },
+            "path": "mcp/tests/test_task_document_application_1.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:84be54d9d7b5f41c029da7569215a1108e1963d7aedc745ac180b98fefdc9447",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remove_step_deletes_a_done_step_and_repairs_a_completed_document"
+            },
+            "path": "mcp/tests/test_task_document_application_1.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:87a8b27badecfc12f99fb225a3d72b16163eaaf8aea11b8aa6057a166bd4f085",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_steps_returns_the_checklist_and_changes_nothing"
+            },
+            "path": "mcp/tests/test_task_document_application_1.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared nonblank-reason reader, also consumed by the tools module's terminal-status exemption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:601e9b8d7a8530a23ec39e78dab05425c07eec9eff7ad71c42cad69b150accbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "step_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The single addressing rule every step operation shares, including the parent-naming miss hint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:686a84728208b38930b1e1d555a55e2448fb53971e0808542af2ffff1864108b",
+            "locator": {
+              "kind": "symbol",
+              "name": "exact_step_target"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:2b37ad0de93d3a205e83f5c00ca558fb4447a92eb3fa5ebe0b71d8c360857f2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_one_exact_match"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:9a17ecf67b29bf8c8874b2fb9c5bb4107bc1192ba734e1143b8eb2e74ca65a0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_step_miss_hint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The create-only operation requires a title and refuses an existing id in its scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:40f10bb1136cc4587f43c14f2e8202d578f2807156e9eae9ffb0b4c3e396e87c",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:8190745e339c8733230347f37491f8adb5f22445e7fa188c944cb1768921092d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_step_container"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The delete-only operation requires a reason and appends the removal decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:3b23579656b0b6cfe3c8433e55a50aa939a4316c3fc16a4c2e7d3174cef300df",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The update-only operation and the fields it may copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:07aa3475c79541ba7178f4918565264e2ca301032a77c3e2e185ee6ad44e34e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:ff668d270bc8de964b16aaf36625497c3b470dad58ac4061b574ad00df787feb",
+            "locator": {
+              "kind": "symbol",
+              "name": "skip_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The focused checklist read behind the `read_steps` special operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:b5efeb0ecc0551cda6ac5bc107af70b9350ff46c90db57b3a5ed72bcec624ad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "step_payloads"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
+            "content": "sha256:cf202fc45b0b5a9930d78c8be6112ef64dffc09a0e6fbffeeaea215701b256ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_substep_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The dispatcher that registers the operations and delegates through thin `_apply_*` adapters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:84d0a844f8e853d0f2c8ff1126c1f956061fce1ec8817adef7dccdd4d191ce2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_set_step"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:fbf93c56c28fb15f41334af95366c9c85b3170002e1d7d10f36632f01544e9cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_add_step"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:78122ec5784d1bed6c9255fcb9f83b0ec3c65736bcf13b6bd0b6320021b2a710",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_remove_step"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:b39f965c5730ab506cd404bbacead51661fe35e98c49a8f4f6ac3dde0e8c667a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_skip_step"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:29a8547ba8a633f35d7d4079de11ad2bf2981cc9ea080da75c2bf88ed475a26a",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 691
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:8c1e140923f6631c683799b5f4884b28f7ba4bcdd06ade29919ec13d76099ba4",
+            "locator": {
+              "end": 696,
+              "kind": "line_range",
+              "start": 695
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:170ad97289505d6ac2f1122c252463adad8f25dd0c9b71b22d612c795ba63f86",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 699
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:712842a49ae9f0e776fdea2e252852f5a819293e61c16271c9a68e9941b18ac8",
+            "locator": {
+              "end": 709,
+              "kind": "line_range",
+              "start": 703
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

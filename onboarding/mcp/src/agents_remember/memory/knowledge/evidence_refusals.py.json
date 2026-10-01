@@ -1,0 +1,119 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/evidence_refusals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The digest-versus-bytes refusal, the one comparison of a recorded value against the world outside the database.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2690987c0786a2c29ba83eddb20692310e590c3c",
+            "content": "sha256:d5c810e7a3c3fe1ea3b2f07d3ee0db5d4a7977e359130c7efe7a55685fecef85",
+            "locator": {
+              "kind": "symbol",
+              "name": "artifact_digest_mismatch_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The root-escape refusal: the path is confined by construction, so an escaping resolution indicts the root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2690987c0786a2c29ba83eddb20692310e590c3c",
+            "content": "sha256:af9b149081cacd1e7f27be1026da15e144b79c25bd041bd53daba16141e4177e",
+            "locator": {
+              "kind": "symbol",
+              "name": "artifact_root_escape_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The accepted-origin refusal for a supporting record, naming its own table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2690987c0786a2c29ba83eddb20692310e590c3c",
+            "content": "sha256:88fcc74b6b16f5641a93f77a25c053624bea064eb21add265203b00d97b413cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_promotion_not_supported_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared spelling helper these factories build through, which is the only thing they import from it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b83598a7c3d65dacbbc27f3e7e334a28f5be63918e3c741be171f543bc4acafe",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusalFacts"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shipped code vocabulary these three stay inside.\n\nAnchor: \"KnowledgeRefusalCode = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:c04556bdbea20bc875526c5bb9763dfd29d4e246da734e26610e9e650e4b43ff",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared module had already grown its own batch-scoped factory — spelled through the same `refusal` helper — which is why this file's three failures are spelled beside their own record group instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:1b07e8b30cc2794ad344d0e1da8ab19d9dc370bd539dff624cebb633eb6862a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_command_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

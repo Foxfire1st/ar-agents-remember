@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Review reads started by successive selections, refreshes or page requests on one mounted surface.",
+  "conditions": [
+    "Every read takes the next sequence number; only the newest may write the read state or the cache."
+  ],
+  "exclusions": [
+    "Cancelling the superseded network request; it is ignored, not aborted (O-R1-3)."
+  ],
+  "id": "INV-W5CTZJGD",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "569da4b0-c03f-4ac9-85e4-7db3b0c155fa",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rapid selections A→B→C settle on C: an answer superseded by a later selection is neither displayed nor kept, so choosing B again asks for it again.",
+  "status": "proposed",
+  "supersedes": []
+}

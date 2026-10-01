@@ -2,14 +2,9 @@
 
 | Field | Value |
 |---|---|
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `dev-skills` |
 | onboardingRoute | `dev-skills/overview.md` |
 | parentOverview | [`overview.md`](../overview.md) |
-| lastUpdated | 2026-06-23T05:31 |
-| lastVerifiedCommitHash | `8e39b62c3550e974486479203d191aac39a0f0f3`|
-| lastVerifiedCommitDate | 2026-06-23T06:11:39+02:00|
 
 ## What This Area Is
 
@@ -75,20 +70,20 @@ A `README.md` defining the tree's contract, and one skill package
 - The distribution boundary (no sync / no package_data / no starter packages) and the onboarding-scope
   boundary are **separate**: this route is onboarded but not distributed.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The non-distribution guarantee is enforced structurally by the sync helper, which only copies the
 canonical `skills/` tree — never `dev-skills/`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `sync-skills.py` copies only `REPO_ROOT/"skills"` into its fixed targets, so `dev-skills/` is never distributed. | `CANONICAL_SKILLS`; `TARGETS`; `diff_target`; `sync_target` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56; scripts/sync-skills.py:117-129; scripts/sync-skills.py:136-139 |
+- `sync-skills.py` copies only `REPO_ROOT/"skills"` into its fixed targets, so `dev-skills/` is never distributed. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No relevant cross-repo evidence found.
 
-## Docs References
+### Docs References
 
 No relevant documentation found.
 
@@ -120,11 +115,3 @@ When changing files under this route:
 
 - [LOW] If a second dev-skill is added, consider whether `dashboard-experience-review/` should get its
   own child overview.
-
-## Update History
-
-- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
-- 2026-07-06T12:10+02:00 — No route impact: reviewed during the 260703-L10 one-vocabulary sweep — `dev-skills/` carries no retired lifecycle vocabulary (no `l-01-session-job-lifecycle`/`l-02` names, no dead phase axis), so nothing changed on this route.
-<!-- newest first; append-only -->
-
-- 2026-06-23T05:31 — Created the `dev-skills/` route overview when the slice was added to the onboarding include scope (issue #92).

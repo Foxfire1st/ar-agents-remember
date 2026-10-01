@@ -1,0 +1,210 @@
+{
+  "path": "mcp/tests/test_serving_terminal_catalog_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The catalog GET is a projection of stored state and names no sweeper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147984fcd86caebfd21485559f943c5a6a3a2c13",
+            "content": "sha256:9a69dee4a64603e3e7034f0e7654f988fb479d81ce2deb838fda5f91c55c14d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_terminal_sessions"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_terminal_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route serializes each row through the shared payload helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:a9eb2c133a6c0519f4ba4c69a7e276e1c5f2f9039c6ac680b6c4e955e48d0369",
+            "locator": {
+              "kind": "symbol",
+              "name": "_catalog_payload"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:fc8060f99af1027d3ee0b05aded1ce2c9f5805c71e924bacf8f79b23569dd8f8",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 365
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`list()` takes the catalog `RLock` before testing `self._batch`, so a foreign thread waits for an in-flight batch and then reads the committed atomic file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:93d51a927a7d4e64f96a395917e9491eaa2fed8a0c4400bf05ef64242181afcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "list"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:fabdff4a7ba91505ddaf63e9a9fa10c3974edd6d94d267796cae80e4baf21db6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_snapshot"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The batch holds both the exclusive file lock and the `RLock` across the whole unit of work, so the in-memory buffer is reachable only reentrantly by the batch-owning thread.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:be4a8fe2890d5da1a70bbe54a2a1d2dc05d440209e65129c8a62708e271bead7",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_write_disk` is the one seam every durable write passes through, which is why the write ledger is complete regardless of the port method used.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:0f05bf0ae3019d6adcd477db2fe84d5323d50f42396b63ad854bd28393dd9a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_disk"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`list_committed()` is the sweeper's own non-blocking contention read, called only from the two contention paths — not a projection read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:d5a8cd0ca49e44e9f4e6cd32d0d949d88c2db83d3b1e67d148a258e7c4e564e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_committed"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The production readers the identity sweep resolves against by object identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:b4cea5b0d7516a58ac93d6d98e80493eab545621e8f87c10e603a4d411e821c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_control_snapshot"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43e9c45fa7b4e0b0792ae68233c039949b7304fa",
+            "content": "sha256:2e04ebcfa38b770e92adb87048a4e2c215fde9dcf974f5b3f56151a90f35f85b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_entry_terminal_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The sweeper whose re-introduction on the request path the module's cases detect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:37e37426b8d14c3346b022e6a53013f650054d6b1bce458feeb2a0dfc8a16fa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalogLivenessSweeper"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:ecf9805e5170a4d00f3b6f3490b33284da3f03a5a6d367381d719c50eb6ed2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The candidate classifies this module once, in the explicit integration lane.\n\nAnchor: \"mcp/tests/test_serving_terminal_catalog_read.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:8446a57cc58cfc7242c270ae34ff2782dadb2f907bb96c8f4ca4bb5892742512",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/api.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/api.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T09:10+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active conversation serving overview](overview.md)
@@ -98,33 +88,29 @@ error ladder maps subclass-before-base so cursor/session errors keep their exact
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this route module; the strict wire contract
 and the production-route suite are the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The active service these routes invoke for page assembly and subscription validation. | `active_conversation_service` | mcp/src/agents_remember/serving/conversation/active/service.py:301-308 |
-| The cursor error family mapped to exact statuses here. | `ConversationCursorError` | mcp/src/agents_remember/serving/conversation/active/cursor.py:39-47 |
-| The L0 request dependencies invoked directly in-handler for typed mapping. | `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
+- The active service these routes invoke for page assembly and subscription validation. [1]
+- The cursor error family mapped to exact statuses here. [2]
+- The L0 request dependencies invoked directly in-handler for typed mapping. [3]
 
 | The `CONVERSATION_RESPONSES` table these routes declare and the `AgentHistoryHydrated` model the child-history body finally has. | `CONVERSATION_RESPONSES`; `AgentHistoryHydrated` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this route module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -141,45 +127,3 @@ child-local unavailable/not-eligible outcomes are successful response bodies wit
 agent id, and optional detail/code; authority, epoch, composition, cursor, control, and session
 failures retain the existing typed HTTP mapping. The route never replaces the parent page or SSE
 stream.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 14 citation findings. Converted the
-  four route-declaration/hydration line-cites to cit form at their verified decorator/handler spans
-  (`ConversationPage` 126, `AgentHistoryHydrated` 160-164, `ConversationEventEnvelope` 204-214,
-  `hydrate_agent_history` 160-198), and re-anchored the five reference rows (active service, cursor
-  family, L0 dependencies, production-route suite, conformance suite). Scoped recheck clean.
-
-- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the three `response_model`
-  declarations (`ConversationPage`, the newly-modelled `AgentHistoryHydrated`, and
-  `ConversationEventEnvelope` as one SSE frame's `data`) and the shared `CONVERSATION_RESPONSES`
-  table — `CONTROL_RESPONSES` plus the cursor refusals that alone carry a machine-readable
-  `reason`, i.e. `_map_typed_error`'s ladder transcribed. Re-derived **6** in-file citations
-  that the new route decorators shifted: `_map_typed_error` L72-L94 → L77-L99, `_resume_cursor`
-  L106-L118 → L111-L123, `conversation_page` L121-L150 → L126-L155, `_event_stream` L226-L247 →
-  L250-L271, `_sse_frame` L250-L258 → L274-L282, and the selected-child route L153-L187 →
-  L160-L198. One of those was wrong before this leaf as well: the Logic section cited
-  `conversation_events` at L153-L186, which at the leaf base was `hydrate_agent_history`'s
-  decorator and body, not the events route — it is now L204-L247. Verification metadata pinned
-  until closeout stamps the L4 commit.
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the
-  selected-child POST route was inserted ahead of them — `_event_stream` L189-L204→L226-L247 and
-  `_sse_frame` L207-L216→L250-L258 (both old ranges landed inside the `conversation_events` handler).
-  Also recorded `_event_stream`'s `: connected` priming comment and its `finally` detach, which the
-  old sentence predated.
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the route count from two to three
-  and documented the exact selected-child POST, successful local-outcome vocabulary, and unchanged
-  parent/typed-error boundaries. Verification metadata stays pinned while uncommitted.
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: rewrote the sidecar from the L9 route-shell
-  card to the implemented two production routes — typed pre-stream error ladder, dual-cursor
-  agreement, explicit SSE frames, close/gap termination; governing overview re-pointed to the
-  new active route overview. Verification hash stays pinned at the last commit that touched the
-  source until closeout stamps the candidate commit.
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the active route-shell sidecar.
-  Verification is blank until closeout commits and stamps the new source.

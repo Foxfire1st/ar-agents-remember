@@ -1,15 +1,5 @@
 # harness_logs.py
 
-| Field                  | Value                                                   |
-| ---------------------- | ------------------------------------------------------- |
-| repository             | agents-remember                                         |
-| path                   | `mcp/src/agents_remember/serving/harness_logs.py`       |
-| doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-09-06T22:06:54+00:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`|
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `overview.md`                                           |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -58,30 +48,26 @@ serialized substring heuristics. Candidate discovery is bounded before the 100 m
   Codex effort and configure no Codex session commands; a future surface must add real-record
   evidence or refuse that shape.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The resolved source registry has no Domain Documentation entries, and this repository-local parser
 is defined by the real harness records and regression fixtures inspected for L15.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external/domain source defines this local record parser. | N/A | N/A |
+No configured external/domain source defines this local record parser.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The parser binds recent cwd-matching logs and distinguishes user messages from Claude command evidence. | `HarnessSessionLog` | mcp/src/agents_remember/serving/harness_logs.py:39-120 |
-| The injector supplies the unique message id or command text and chooses calibrated acceptance windows. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
+- The parser binds recent cwd-matching logs and distinguishes user messages from Claude command evidence. [1]
+- The injector supplies the unique message id or command text and chooses calibrated acceptance windows. [2]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Session JSONL is local harness-owned state read by this repository's serving process. | — | — |
+Session JSONL is local harness-owned state read by this repository's serving process.
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -102,15 +88,3 @@ The acceptance-evidence semantics are unchanged; what changed is that each harne
 is stated once, where it is decided.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-09-06T22:06:54+00:00 — Preserved source-verified runtime semantics from retired test onboarding; no removed coverage is claimed and verification pins are unchanged.
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 4 citation findings (3/3 anchored and sourced; the no-source documentation row was normalized; scoped citation check clean).
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_claude_user_text` / `_codex_user_text` readers and the exclusion rules they carry.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T13:03+02:00 — Created for 260707-HFX2-L15 FIX-H-prime: bounded recent-log discovery,
-  cwd verification, unique-id message binding, Claude command+stdout evidence, real Codex/Claude
-  record shapes, and fail-closed malformed-record handling. Verification metadata is blank until
-  closeout stamps the eventual L15 code commit.

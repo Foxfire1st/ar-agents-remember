@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Anchor observations of a recorded line_range locator on the exact recorded blob.",
+  "conditions": [
+    "The blob's lines are read from the requested tree's exact recorded blob."
+  ],
+  "exclusions": [
+    "Symbol and file locators.",
+    "Attribution accounting, which acts on the resolution and not on the range."
+  ],
+  "id": "INV-1RWT3JRR",
+  "origin": {
+    "leaf": "260921-ICR-L44",
+    "legacyId": "ea114982-8a13-411c-80aa-428ae1add33e",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A recorded line_range is published as a resolved range only when the exact recorded blob holds those lines; a range past the blob's end keeps the exact_recorded_blob resolution, carries no resolved range, and states the blob's line count in its detail.",
+  "status": "proposed",
+  "supersedes": []
+}

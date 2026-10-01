@@ -1,0 +1,35 @@
+{
+  "path": "mcp/src/agents_remember/models/queue",
+  "references": {
+    "1": {
+      "note": "Queue projection vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b83d0c29c6a7bdaeb0ec909283439c284a251dad",
+            "content": "sha256:7cbf06ced009e8e071e5fb883a9886ad8cb517f80e4b2cc589cf4b2670017dc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueueRequest"
+            },
+            "path": "mcp/src/agents_remember/models/queue/closeout_queue.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b83d0c29c6a7bdaeb0ec909283439c284a251dad",
+            "content": "sha256:82ed16e1152c711ee2c7dac985ac4eddae58f3d4ca831352d63ae4dd45618667",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueueResponse"
+            },
+            "path": "mcp/src/agents_remember/models/queue/closeout_queue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

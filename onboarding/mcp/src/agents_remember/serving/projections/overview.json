@@ -1,0 +1,86 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections",
+  "references": {
+    "1": {
+      "note": "The observer store-root conventions are kernel-owned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55b370f0c63cc924e024f719d082ae36c33558a4",
+            "content": "sha256:ae1a2ceefafb1d5985391b9d96db4a5c69760c13cea6f4d50a5553b6b5ac1d2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "observer_logs_root"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/observer_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The projection tick consumes these readers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:dd6c8dc88e614f2f3a1a6f62b428713e9bdafd8b33e320b3d8fc446b344a7893",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The body read and its graph-only join table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:8c8a9080ec2470467a7e0a4ff4b51136f348aee65991f4e5fa1486cdd592a650",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_document_body"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph_master_docs"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The bounded canonical enumeration every always-on reader uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
+            "locator": {
+              "kind": "symbol",
+              "name": "_iter_task_json"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

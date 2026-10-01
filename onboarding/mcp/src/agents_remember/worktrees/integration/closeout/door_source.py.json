@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_source.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_declare_generation` constructs a door from content, task, and policy evidence without cached ledger inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "content": "sha256:a3c55e31538cc171cdaeb4341a838fd8327bcfa456e8c84f46e8362e4f646fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declare_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_door_policy_provenance` resolves admission and scheduling provenance for the declared door.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "content": "sha256:8431caf1263b6a4271a1d76ed24393cf9563b58a153836c41ac7bcccd664708c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_door_policy_provenance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The door context binds an authored graph once and returns the sprint carrying that immutable graph generation. (`door_task_context`; `DoorSourceContext`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "content": "sha256:e17bd8466aec55d482a03797951f23407f4ad59cae2b5ae5d5d050ba23077869",
+            "locator": {
+              "kind": "symbol",
+              "name": "door_task_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Generation declaration includes the R03 dependency set and policy provenance resolution. (`_declare_generation`; `_door_policy_provenance`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "content": "sha256:a3c55e31538cc171cdaeb4341a838fd8327bcfa456e8c84f46e8362e4f646fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declare_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Transitions re-require the declared dependencies. (`_transitioned_generation`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "content": "sha256:9d35a80598001b42e3546a0e5d235430817acd8978f03d5011e2ca3d5309f8fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_transitioned_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

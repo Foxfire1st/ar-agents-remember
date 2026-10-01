@@ -1,0 +1,284 @@
+{
+  "path": "mcp/src/agents_remember/application/review_governing_route.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the three states, of the existence question asked before the route question, and of the path seed that asks about no identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:f5b33ad9b2104c55d7a89e44ee5001d0cc08eee15f507f868c663090de6bdfd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "governing_route_movement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:42b02a49a0831b01ec91b4343187d20fca4e53a4da85e981d3e3aea210a0cf53",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The cases that measure the route movement: a reassignment displaying both recorded routes, and an identity with no route displayed as ungoverned and never as the root.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:8172fc576a742cab9408696a6cb1410c047ca8e21dc02cc1e9442d69f60aea15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_governing_route_reassignment_displays_both_recorded_routes"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:ce1227404b5ccb2961b454dd17326d62bb0f07edd3f612c66359bbd349e499c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_identity_with_no_route_is_displayed_as_ungoverned_and_never_as_the_root"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the fourth relationship kind and the one entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:3d04a238cd5cb48814bb14af11cd2119b3c4d6a7c35b0befe494d1c9a6aa9408",
+            "locator": {
+              "kind": "symbol",
+              "name": "GOVERNING_ROUTE_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:e2637b2ac45dd35b0baac0fccc326ca9f9db469293a8c95c643c366ef380d9d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The governed-table names the route owner's own writes answer, so the read asks the question the write answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:3676ae078ec6fa6320ac7e2b995a4ee4c04fb27244fcf65faf6f01e48d5f8724",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GOVERNED_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**One side read: the identity kind named by the selector, the existence question first, then the route and its recorded path.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:907c3eaa1ba59e15daaaf92c2f37774eef641581dc92cf947f4bb34a6182bf6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:2e30dcb2c793fadce6185397b477e4077cbb9c501d9ff9a9fbc51d6348697735",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RouteFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:718e139d4a1e8623a7517758a3f29617ae9c406d024013366451f1848b5aafb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_side_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:cb9d32f5414dea80d4a3767eb635e6a83d6eea3c65a869f19bf22dec960d839b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_recorded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The selector question: an identity or an exact revision of one names it, a path selector names none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:25337b4b4121dabb6f0ff6e8f54a7bc4c05c73f5b708e8b5b3ae7f7f6c50f9ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The transition and the gap: reassigned when the recorded routes differ, and one gap per side whose snapshot does not record the identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:4913ee6366557d4e9f6583f0f64e873f6eabcf5f2dcf36b366493de8f6486f1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_transition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:800a612e13f8bdfb8867ced07af24fff22aa2c756f30fd098cf60e4277530115",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_gaps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The statement of both sides and the word each side is rendered as — never the repository root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:da8e4285515aeb5b76853624140812882c2e5a9363a2cf827eca2672edef92ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_statement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
+            "content": "sha256:42b88e782122d46445c364ff41da6955601c68e8999ee8f0f615b73dfb56cd49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_word"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The route owner the association is read through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:c80c92aa3047ec810f8e2ef131b7a5a7d138ba826dbc58d55840f5398c979cbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_governing_route"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:7e1eb8a70e96092fbf5404faa2ef35996aaea7a482e2b9f59d57c3c690dbc67a",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_path_for_id"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The traversal that calls this module once per review, and the wire vocabulary the movement fills.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
+            "content": "sha256:fff934dfcda5aff44a91daa122a2d3139fd4f05c109babd2142bf85c39003b34",
+            "locator": {
+              "kind": "symbol",
+              "name": "relationship_movements"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
+            "content": "sha256:88313a99b690437de0e806fac0ad2c236476cf98fa1869d1e61d7147b0b7ea73",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRelationshipMovement"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/hosted_session_runtime.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/hosted_session_runtime.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-31 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -49,11 +39,13 @@ It mirrors the composition-time bundles the serving layer already uses (`Convers
 - This module holds no behaviour. If session logic starts accumulating here, it belongs in the
   catalog, the host, or the opener.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository.
 
-## Repo-Internal References
+### Repo-Internal References
 
 - [terminal_opener.py](terminal_opener.py.md) — `open_terminal_session(runtime=..., ...)` is the
   primary consumer; it replaced the previous separate `catalog=` / `host=` keywords.
@@ -61,13 +53,6 @@ No domain documentation source is configured for this repository.
 - [terminal.py](terminal.py.md) — `TerminalHost`, the tmux side.
 - [app.py](app.py.md) — builds one from its `_ServingRuntime` when calling the opener.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: created for the new module. Verification metadata stays
-  pinned to the pre-commit source history until closeout.

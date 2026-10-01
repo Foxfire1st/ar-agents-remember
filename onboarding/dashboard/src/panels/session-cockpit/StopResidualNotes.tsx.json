@@ -1,0 +1,1290 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/StopResidualNotes.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The store read, note anatomy, dismiss wiring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "625749adb97f54824224d953ebaea79b433714af",
+            "content": "sha256:2aaf2e4f6c1c432fb0c0f3031e46cdb0237e877dcd0cb400ede2625b14b71d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StopResidualNotes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The view explicitly leaves `StopResidualNotes` unmounted and keeps details in the store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "625749adb97f54824224d953ebaea79b433714af",
+            "content": "sha256:2aaf2e4f6c1c432fb0c0f3031e46cdb0237e877dcd0cb400ede2625b14b71d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StopResidualNotes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "View-level coverage of store retention and the absence of stacked residual DOM.\n\nAnchor: \"NO stacked DOM notice\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db4cee0d9f3db934f10936f48a4f154b4d7d323e",
+            "content": "sha256:407f46335055b49ce94c9cbad0c3f8d88db8d1087c98be60e01cc694bd8637fb",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/stopResiduals.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The notice store prepends each retained residual.\n\nAnchor: \"residuals: [residual\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:e4272fce1d261b2b3089775e2e72efbd3bd9a218e6f1a2e42c3d9b6fdacb0543",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Dismissal removes the matching session/timestamp entry.\n\nAnchor: \"state.residuals.filter\"; \"entry.sessionId === sessionId && entry.at === at\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:22b3060ef1e5b650f8c21a5b0dbec4a33734f842aa0589392454e02a83b73faf",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The retire sweep visits every session.\n\nAnchor: \"for (const session of sessions)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:5113250cdc5a5488ddcd44d9cc68e9a38104953ace5f275740792b06dbb9d20c",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The retire sweep rejects non-string, empty, and already-swept details.\n\nAnchor: \"typeof detail !== \\\"string\\\"\"; \"!detail\"; \"state.sweptRetire[session.id]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:0471ceac95ef8c6067838bfa961ecc962e0f1a2ab0fcbbd7b08160b4b5840625",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:f396691c3d12182e06f7a9b6626eb737cf38172f0f149a2a0c627939d29ed980",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:3cdd252df802359df5133d491ad3d40242b8556cfcd13866dfa068ec07cba3c8",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:6dba8ce88f821371e02cd7a9f9ec387b92406a79fa1019b72cc5486932c2f443",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:7eb1166b53a0e440ec7585121b7b3bafb1555c3e871bc667d4a995a986cad5d2",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:6c2b97edca32deadd4c761e31aad4493dad68d9338feb14001db2ba085507720",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:97d22b3233c5ce3bfd1a0a15ba8cc557e069b0ddd124d1c1dd988cb1b4eb3f5a",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:8cbe4b02f38db7ce4ef8ab9e8594a343dfd43e0fab14fed00efdea8f6df9f308",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:6b81059e655abbf42171d699cef3f9a25c1178a28df55b0fa97c4f75da714cf7",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:bd3343b38f9edec5d6e20cbb4f1dc234d186a8b67c68f8b8a413991a774ab672",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:01f71aeead26df749ca2ff0fe58259eb6dc1d1818dbb926ec13d388c3423ce11",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:2feaa7f547d32f7af3879980f6a37b84993fa39646f7217439d5a56679fa45e6",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:1d02a3f9e5032dd942017b1518dcb120bd26fa7907897a286977ba8f76c4ee38",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:a99d9a437a5142c2cee077d079c50709e7f4946fa6dca4161f65003ec0ad8e12",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:bd3343b38f9edec5d6e20cbb4f1dc234d186a8b67c68f8b8a413991a774ab672",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:950d73eef1acc56381becf58f6e170af996abb827712930d7cf4bddb2295d6c8",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:24f483b1b515d5d30f4126ab32249812582024ee0d72f03be69940f607a82f64",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:b5a89b407bedc2bd79922c1aebd211a49a8ad2b6dfc39b49f319340855c57c02",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:d39b17e0397afffec8051208d95d30ccb02b1cd641264c9dae73b4cc745f74b0",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:b225bd8b6b8bf4d5c7224a25ea764d9b2214ad762a431b53410fb2813d68045c",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:4fd0f906f0d0c38ea129f59f899b939dfd804226ad7828762da6e91b5d12ad9b",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:c18c734b1290a61e5b28ecb0d7f9f1076c01f68118e915c7ae612a145c9f314e",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:171962593ca91b2e409596107c9982b2cccc4620f970ae7d9f083fd091c54256",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:849a79d67428b55a896c95145d25d9b062d5fc148a8ba81a234915b9c103dc62",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:0e57c8beff42479e39acc340e730111e376a7532c49ef5dcfac5c832f07964a4",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:cc33571cf0a13bc42a1d23768580e531f7e2e81e7116427d1ae9581d697cc38e",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:32de1c52756fec3b07d3de32f7a36baac3de025ce71d9f23d8c52a1a6e5eb3d1",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:aa9d9b072718a8568d7583bb74e8c7516b7e63be623073992c591ff6bb10cc7e",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:d53b20e94e9ec8a3f874edea707f04288f3fd1eff5c6839821f0d072f5df1bc3",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:84e4079abdeb0874fc5fce5b03220e776b3162412c50bcbc04d9487e0d450839",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:3e3a720008f497d6ec601871b5bab90d887a9e561f9a2d1be776bdf6a0609b0e",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:2275390011a893d4bd7d478864ff3d63ae4e3f973174e1283f63bbfb8b5eaede",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:95d6d337ae82fcbc9685311f6bd7ba0ce69e6a4d2b1982a6d00b3a78cd4ba6e2",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:8ef6203acdbb5a4d8d5ad626376e61cb518dc31905740f4764a89019b94b2eb2",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:2b6dfe33d9fc5a187df3e2c2588036154f321da454bf0670cf9e847a29af8060",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:a06e8c33a5bb4f3de6890935ef2395da43d823a3c82dd43bddf515c225c1ca43",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:a793448a414c6108c78c395fe9ff04b38aa64e3e8bafd2e5edabde2c240a1eb3",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:3ea0906a034e02494fae506460088c8950de642e9f960fc563554ee3fdd282b4",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:50523edbf6a0eee6eeb7e4151c3752915e83af7c6a5071c1279accb028e7300b",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:49967ec1ed3836f8eb17aff172b5bfef7de60485a439c6ca11c591e1755739ae",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:24c620d8d39c30ad0bb95048eb38305945b5d18f48114e2d72d34fa9fd2f43d5",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:bce25289bc780f82322ae8ae23f54169f4f317db89e3746dcb9a52a3dd5e4875",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:7768c7ee19ca6e363d67aaf4c6db60fb97e8c07186c1e888dd762f4559319726",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:14515527310230d5766cf7799e19ef26934c46c9cc65258ff451640c45439081",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:b669686a49837f163d5c444623f690f89990521323af40572525f8d8831ac0d5",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:ced01b480657365abffcac6712aae9c137b4654c4034177986f06644e7f421ab",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:efa74186f7342bd147e38f2ed8f6fbd9e42c1166ea6d90ccb3278a459f674ba4",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:2597cba19534caa4e7b0aeccf3e5195a91a6c3dd8c157263ddb1a859e26d3281",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:4461ed41ed333ccbd034eb776564e5e89b8a2885f6ec28140163121e1d4bb5d9",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:0a699164aa314f97aa3a833f1b943786c2519723212b3875f77b40c66da048ec",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:e35c2d8c6201b94109a2dcdc9c404d0329231c42e975dca8c270117c48290949",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:63dbc1940180a0a3e919f7dab8e9155d7a39040a3d787a2c32e571aec751ae93",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:3e61c73c875aee4ae7c045d689eda55f0f8d1475de1b55b1c80b98c8549694e0",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:72b42dcced8987490d6e162f7db2cd2b078c6641ce114dbe3c59af3f507e3d99",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:42a2cb25a122b44221a6234ec660a7b5fb7f9bde7b3b9e2b3c559a0d96fac739",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:ade5f21aa0d667ba69d2bd9e17000414aacfbb560201f0ce81c8a8d78665fbfc",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:c154f9cc8c9012a846e336e681a47fe77969b6707833632a03f50018dd2d3f58",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:ff6547a02d2ecd2bc48e957267946ade191a6ca122e41ec985767dee69f4967d",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:84e4208cd6ffb8c4a3547b2f54ada19978c3f365e78f9502ef5145cdd2aa8543",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:b25c62e7b1359463345676d5244d7fd6cd3def004fbb582b24a2bfac00501b59",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:c78076b53119f68b100c16fe8fa570c271dbd1d6cb7bb9ea89a820ccb1b900c7",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:b9e2e7b6e4eb1b3ec3d91f2b06f7097feeda398eccc3d1a542155b4391aabd84",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:67988faf5d8d95553cc93c4e4cb972a15bad0da6677db54ce332ef04a14b07e3",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:0d7988acc08ca8841bae0017a5d18ea22b1b103586e7be081730538b184d4538",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:5122e63b71e268aad964b70e07986582bdd9797651a3e69ab272c15735f96977",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:ad9e12546425576d3deae8c9b9dbf128d5d6ddaf5d7fe857934927deffa3b9dd",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:ce7cf20c731ff9cf05f4b715136924e0e0bafef97829dc0031fa9bd8383a8645",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:81ad89a992c0e1fb958e74c5bc3db1a9fd02ce9ad10791f69131f51b5d4966d3",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:5f321ff249ac16cf6b25619a4e21d275ecc6aa7c2eee3d5ab2fed15355305bed",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:1645d9af5755c1e4b1e5064d9db36eb60d953f5e5951155e60c592017aca753b",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:07b88ab051da3e2ea0f03057b93a8b3920cac21772f57783c705eb99c7732d24",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:1ae3de70248e32eb529514e972feb636cf8f1b901bd49f209ca3663d90a26eb6",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:22d11caf43e97ef369e6beed1a268bd05838f29b9dd254bf69ba64884147234a",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:a6da86bb6162adf58f3c048f8f807e98cf1a46d30e71f9bd9f1ec2682e567817",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 235
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:22d11caf43e97ef369e6beed1a268bd05838f29b9dd254bf69ba64884147234a",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 239
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:1538d3b15fb29ce932368ab542c60c5b5ae5558c3f1369afdecfb1c8510a5425",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:2a82b9d4349c2d0bf59ea12941157cb05a9229a9232413326039892b4dadf2f1",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:d994fa4fc8636d13deedc4a0aa95ff27aa95709884659176face625acd104061",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:8c02cf75b7cc090b6997a098fa6964b9e67be8f9a285e2259500a0c6110cb56d",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:cb7e93d19de45a7b091338f07a89932278956cbf245c316bb25912afda1224d7",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 247
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:6a061bbe3019d27814e9a6d2d1ab9a9f669df95a89e3f835a6c8793bce35d590",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:08fae557a6079960dd0002d339b3062d5a58c698bfb48e0251c4df6eb8d71dff",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:3a8c6033b952b90b4faf0970d30981a80966c572eafa4a5542bcbb130f44cc95",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The retire sweep continues after a rejected detail.\n\nAnchor: \"continue;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:95d6d337ae82fcbc9685311f6bd7ba0ce69e6a4d2b1982a6d00b3a78cd4ba6e2",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The retire sweep marks a processed session as swept.\n\nAnchor: \"sweptRetire[session.id] = true\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:3ea0906a034e02494fae506460088c8950de642e9f960fc563554ee3fdd282b4",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The terminate path that records `controlStopDetail`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:546a766992e9e34e97dad2dd2d0c6dd56b769fd5ce3220e1801c02d3c0227dc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "endSessionDetailed"
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The centralized informational copy.\n\nAnchor: `terminateResidualCopy`, `retireResidualCopy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:8f8f93ece565a45e8f90b11ed87e30ac9e500671eb49965ee201dd48f77fdf9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminateResidualCopy"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:42213ac6f7d151a79feed93fdedbea64bdbc0f120d41891ebea50325777b644f",
+            "locator": {
+              "kind": "symbol",
+              "name": "retireResidualCopy"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

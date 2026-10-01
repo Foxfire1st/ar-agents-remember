@@ -1,14 +1,5 @@
 # `w-02-light-task-workflow` master-template.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/master-template.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | `304de8e272fd9128d035b805f317da5f3090865c`|
-| lastVerifiedCommitDate | 2026-09-17T12:34:11+02:00|
-
 ## Purpose
 
 This is the canonical scaffold for a `w-02-light-task-workflow` skill **master + light sub-task series** — the composition that
@@ -58,26 +49,22 @@ A light-task handoff records relevant targeted checks and honest failed or not-r
 
 No external domain documentation applies to this repository-local template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `w-02-light-task-workflow` skill lists `master-template.md` as a companion and adds the master-task composition section + invariant 13. | `# w-02-light-task-workflow Light Task Workflow` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/SKILL.md:6-117 |
-| The `w-02-light-task-workflow` skill workflow's "Master Task Series" section describes the one-worktree / commit-per-slice / one-integrate lifecycle. | `# Light Task Workflow` | mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflow.md:1-268 |
+### Repo-Internal References
+
+- The `w-02-light-task-workflow` skill lists `master-template.md` as a companion and adds the master-task composition section + invariant 13. [1]
+- The `w-02-light-task-workflow` skill workflow's "Master Task Series" section describes the one-worktree / commit-per-slice / one-integrate lifecycle. [2]
 
 As of HFX-L6 the escalation line names the architect lifecycle's `decide` step plainly.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## Series-Contract Notes
 
@@ -104,43 +91,3 @@ lifecycle, closeout, integration, or queue authority.
 This packaged projection preserves the canonical phase boundary: validate before append; a
 malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
 a malformed handed-off attempt requires independent rejection before successor handoff.
-
-## Update History
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Updated the closeout-boundary paragraph: curation is always complete and its result travels with the handoff, while full code quality, full tests and review stay explicitly requested.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
-  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
-  unchanged.
-
-- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
-  contract from canonical lifecycle/task doctrine.
-
-- 2026-08-27T21:53+02:00 — Synchronized M44@v2 summary semantics.
-
-- 2026-08-27T18:06+02:00 — M40-M45: synchronized the non-gating Requirement Attempt Summary.
-
-- 2026-08-27T14:04+02:00 — Added immutable version-addressed packet and durable-ruling semantics to
-  the installed master/leaf projection description.
-- 2026-08-27T13:32+02:00 — M39@v1: masters now summarize and filter approved requirement revisions
-  without rewriting them; leaves link one primary packet, and semantic changes version/invalidate/
-  rebrief only the affected surface. Verification remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: recorded stable series requirement IDs and exact per-leaf
-  acceptance coverage. Verification metadata stays pinned until governed closeout stamps the PDLS
-  commit.
-
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` rows with exact
-  heading anchors; exact non-fixing check returns zero findings.
-
-- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: changed the
-  master-template escalation pointer from the orchestrator lifecycle's decide step to the
-  architect lifecycle's decide step. Sync-propagated bundle copy. Verification metadata pinned
-  until closeout stamps the HFX-L6 commit.
-
-- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): retired build-mode vocabulary removed. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the escalation reference now names the l-01-agent-lifecycles orchestrator lifecycle's decide step. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged master template now teaches "one master integration branch" instead of a single shared series worktree. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T22:50+02:00: Dashboard task 14 — updated the master-series convention from integrate+cleanup to integrate+finalize, with `lifecycle_finalize_task` owning terminal cleanup/task-document reconciliation. Verification metadata pinned until closeout stamps the source commit.
-- 2026-06-02T04:10+02:00: Created onboarding for the new `w-02-light-task-workflow` skill `master-template.md` (master + light sub-task series scaffold) that formalizes the convention this series prototyped. `l-01-agent-lifecycles` skill series, Sub-task B/S5, mcp 1.1.0.

@@ -1,15 +1,5 @@
 # dashboard/src/data/launchEvidence.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/launchEvidence.test.ts`      |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `96e1d6db63454438b57a7485382c27784a60776f`       |
-| lastVerifiedCommitDate | 2026-07-17T06:28:52+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -56,43 +46,25 @@ The claude-never-readback case and the uniform ×3 refused sweep are the honesty
 they must keep failing if an echo is ever invented for Claude or a harness gets special-cased
 refusal treatment.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The tier machine under test. | `launchTier` | dashboard/src/data/launchEvidence.ts:29-41 |
-| Failed-row/open-response fixtures (×3 harnesses + Claude effort refusal + pending interaction). | `FAILED_LAUNCH_ROWS`; `FAILED_CLAUDE_EFFORT_ROW`; `PENDING_INTERACTION_ROW` | dashboard/src/test/fixtures/openResponses.ts:140-144; dashboard/src/test/fixtures/openResponses.ts:147-160; dashboard/src/test/fixtures/openResponses.ts:164-178 |
-| The shared L2 FLEET fixture (worker-l4 ready pair; pairless failed scout). | `FLEET` | dashboard/src/test/fixtures/catalogRows.ts:32-172 |
+- The tier machine under test. [1]
+- Failed-row/open-response fixtures (×3 harnesses + Claude effort refusal + pending interaction). [2]
+- The shared L2 FLEET fixture (worker-l4 ready pair; pairless failed scout). [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 10 citation items; scoped citation check now passes.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R7/R8: the exhaustive
-  harness × controlState × pair table, the both-null sweep, the claude-never-readback invariant,
-  the ×3-harness uniform-refusal sweep over the R3 fixtures (incl. FLEET), and the
-  `verbatimBridgeError`/`TIER_SENSE` pins. Verification metadata pinned to the leaf base until
-  closeout stamps the L3 code commit.
+No applicable cross-repository source was found.

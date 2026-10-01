@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/node/scripts/lint.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture static-quality rail over the fixture source and tests.\n\nAnchor: `readFileSync`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "700a903c4c76420ed1600c45f1257107956060ef",
+            "content": "sha256:97bad96f6ad15621f5ba23a9702cd6ced2a1357577306521fc58f9956f703889",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

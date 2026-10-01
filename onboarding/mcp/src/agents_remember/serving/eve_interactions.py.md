@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/eve_interactions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/eve_interactions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -63,44 +53,23 @@ locally instead of being forwarded.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; eve's input-request schema is the external authority and is mirrored from the wire contract. | — | — |
+No configured `Domain Documentation` source; eve's input-request schema is the external authority and is mirrored from the wire contract.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The projected pending shape and the structured question page are AR's existing control-wire types, not eve-shaped types. | `PendingInteraction`; `InteractionQuestion`; `InteractionQuestionOption` | mcp/src/agents_remember/models/conversations/control_wire.py:1-200 |
-| The mapper is the only writer: `input.requested` enqueues, `input.resolved` resolves, `authorization.*` retains and clears a challenge. | "EveEventMapper._interaction_requested" | mcp/src/agents_remember/serving/eve_events.py:695-695 |
-| The mapper builds the strict `inputResponses` entry — an `optionId` when the response names one of the request's own choices, otherwise free text. | `inputResponses` | mcp/src/agents_remember/serving/eve_events.py:223-223 |
-| A pending request also refuses further ordinary delivery until it is answered. | `preflight_operation` | mcp/src/agents_remember/serving/eve_adapter.py:353-374 |
-| Cases cover the request becoming a pending interaction, the response targeting it, and free text versus option ids with unknown ids refused. | `EveAdapterSubmissionTests` | mcp/tests/test_eve_adapter.py:371-603 |
+- The projected pending shape and the structured question page are AR's existing control-wire types, not eve-shaped types. [1]
+- The mapper is the only writer: `input.requested` enqueues, `input.resolved` resolves, `authorization.*` retains and clears a challenge. [2]
+- The mapper builds the strict `inputResponses` entry — an `optionId` when the response names one of the request's own choices, otherwise free text. [3]
+- A pending request also refuses further ordinary delivery until it is answered. [4]
+- Cases cover the request becoming a pending interaction, the response targeting it, and free text versus option ids with unknown ids refused. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| eve's pause/resume contract — one `input.requested` answered by one exact `inputResponses` entry — is the published protocol this queue serves. | `INTERACTION_REQUEST_EVENT_TYPE`; `INTERACTION_RESOLVED_EVENT_TYPE` | mcp/src/agents_remember/serving/eve_protocol.py:59-63 |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **no content impact from the A2
-  revision.** This file is byte-identical between the A1 and A2 candidates of the same change set, so
-  the body is retained unchanged; the pass refreshed the verification metadata to the leaf's current
-  base `e9300687` and rewrote all three citation tables into the `Finding | Anchor | Source` shape
-  (identifier alone in Anchor, `path:start-end` plain in Source). No claim was re-worded and no hash or
-  fingerprint was invented; the governed closeout stamps the real code commit.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: created this card for a file added by the native
-  eve session-adapter change set. Records the duplicate-id refusal, the bounded-limit refusal over
-  eviction, and the deliberate placement of staleness in eve rather than in this queue. Verification
-  metadata is pinned to the leaf's base commit `67b21aeb` because the candidate is deliberately
-  uncommitted — the governed closeout stamps the real code commit, and no hash or fingerprint was
-  invented here.
+- eve's pause/resume contract — one `input.requested` answered by one exact `inputResponses` entry — is the published protocol this queue serves. [6]

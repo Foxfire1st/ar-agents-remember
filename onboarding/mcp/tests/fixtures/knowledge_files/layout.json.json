@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/fixtures/knowledge_files/layout.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture names its schema.\n\nAnchor: \"ar-memory-layout/v2\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b8f1c568e66d18465a0d817ff2bc3ac268c06bc",
+            "content": "sha256:e01858b0a8e3ef3b3896e70887fa6869f473fd7ecf702a466aac548c9bbfee49",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Its distinguishing identity.\n\nAnchor: \"ar-memory-layout/v2\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b8f1c568e66d18465a0d817ff2bc3ac268c06bc",
+            "content": "sha256:e01858b0a8e3ef3b3896e70887fa6869f473fd7ecf702a466aac548c9bbfee49",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test maps this file to its model.\n\nAnchor: \"layout.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b77ecb71863271304d8626c32c5a96b3930bf4cc",
+            "content": "sha256:95d3c07f77e639ac7da6cca8e525152aa60cf2a4dd7355b71e91421224e3bc7c",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

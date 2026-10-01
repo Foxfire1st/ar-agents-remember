@@ -1,0 +1,169 @@
+{
+  "path": "mcp/tests/test_knowledge_history_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The conforming example and the owner path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:f5519846d66872753a0207719bd947dc068feccb064a8338b98ed6a9aafd75ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conforming_example_parses_at_its_owner_path_and_formats_canonically"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Lane registration.\n\nAnchor: \"mcp/tests/test_knowledge_history_files.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c02261f5476c684e5ed67b0f1688537e74c30d8",
+            "content": "sha256:2625134fcfb83406e5b418d78ad93206a4edd00e8b5bd448da21ece7e92e0138",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "File shape, owner and uniqueness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:86548a37579d7f5f68203c6416188e2614906e615b77da5a50fe7d8a9a4982af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_file_shape_owner_and_row_uniqueness_are_enforced"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The row-kind registry, with the six kinds as a set (MIK-R10 adds `unexplained`, MIK-R14 `reconsideration`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:e22f532b1e78b5f7ca07006275cbd106aeacd7d80d7e515343bc1bb7a6aee0f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_row_kind_registry_owns_disjoint_subject_forms"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Invariant dispositions, covers and effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:a5253795907644a91a27781cdadecd95ef26ea6bdf7e82b3f4030d9af2563674",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invariant_row_dispositions_and_shape"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Family rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:f0bb710c4af7ff2a0e92f96a74df6c2b2c7ba20a51a50e631f66684529edde35",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_family_row_dispositions_and_examined_members"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Re-anchoring against the candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:9af3bb5491effb15fefc11368cb5123763b72fdd07df71e2e392b42506d2d7ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_after_anchor_must_equal_the_entry_anchor_in_the_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The revision binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:8a53295e0ea47a67fd8288750d4b124b8387f4e5d7e66416f78a18733ffb5860",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_revision_binding_for_invariant_and_family_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The freeze predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:cc07275c03ffc4de7ac31092738e9c078adbe1e07f614d48baafd7615173367e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closed_in_base_implies_byte_identical_in_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The parallel merge in a real repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "content": "sha256:ccadf67bf45823113abfc3b08498d7233dc827a2239af4a335fb18b7d962ba7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_parallel_leaves_merge_their_history_files_without_conflict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

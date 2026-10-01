@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_leaf/chain.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_leaf/chain.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`|
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -50,7 +40,9 @@
 
 - **Real routes are unassigned today.** Every real family has `routes: []`, so every real read states `no_governing_family` until routes are assigned (MIK-R06 and curation). The L05 worker assigned routes in scratch only to show the chain on real data.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R05@v2` of task
@@ -59,35 +51,24 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: the chain, compact entries, the order, `no_governing_family`, and the rendering only `read_ar_files` applies. | "Route-chain families of a seed path" | mcp/src/agents_remember/application/knowledge_leaf/chain.py:1-26 |
-| The derivation label, the row kinds and the chain states. | `CHAIN_DERIVATION`; `CHAIN_ROW`; `NO_GOVERNING_FAMILY`; `SERVED_EARLIER` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:53-59 |
-| The seed-dependent fields left out of the served hash. | `_SEED_FIELDS` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:61-64 |
-| One live family on the chain, with its live members, routes, the routes on the chain and whether a member is at the seed. | `ChainFamily` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:67-79 |
-| The chain's first link: the path's directory. | `chain_directory` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:82-85 |
-| The lookup through the index's governing families, skipping retired and non-family records, ordered by nearest route then ID. | `select_chain`; `families_governing` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:88-118 |
-| The chain: the directory, then every ancestor, ending at the root. | `_links`; `ROOT_ROUTE_PATH` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:121-126 |
-| Only live invariants count as members. | `_live_invariant` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:129-131 |
-| The compact entry, with the family seed in `expand`. | `chain_row`; "expand" | mcp/src/agents_remember/application/knowledge_leaf/chain.py:134-154 |
-| The page's statement of the chain: the directory, the link count and the state. | `route_chain_block` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:157-171 |
-| The rendering only `read_ar_files` applies: a served entry keeps its place as a reference row. | `shorten_served`; `served_hash`; `_rendered` | mcp/src/agents_remember/application/knowledge_leaf/chain.py:182-194; mcp/src/agents_remember/application/knowledge_leaf/chain.py:197-200; mcp/src/agents_remember/application/knowledge_leaf/chain.py:203-216 |
+- The module statement: the chain, compact entries, the order, `no_governing_family`, and the rendering only `read_ar_files` applies. [1]
+- The derivation label, the row kinds and the chain states. [2]
+- The seed-dependent fields left out of the served hash. [3]
+- One live family on the chain, with its live members, routes, the routes on the chain and whether a member is at the seed. [4]
+- The chain's first link: the path's directory. [5]
+- The lookup through the index's governing families, skipping retired and non-family records, ordered by nearest route then ID. [6]
+- The chain: the directory, then every ancestor, ending at the root. [7]
+- Only live invariants count as members. [8]
+- The compact entry, with the family seed in `expand`. [9]
+- The page's statement of the chain: the directory, the link count and the state. [10]
+- The rendering only `read_ar_files` applies: a served entry keeps its place as a reference row. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the chain reads one memory tree's derived index.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): created this card for the new file MIK-R05 adds. It records the rulings of 2026-09-30 03:32:18 (Q2 `memberAtSeed` rows kept, Q3 chain order and the `routeChain` shape) and review R1 F6 (the bare-ID `expand`, accepted as designed at 04:12:49). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

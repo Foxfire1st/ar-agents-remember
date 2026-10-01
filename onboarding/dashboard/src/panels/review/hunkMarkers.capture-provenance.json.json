@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/hunkMarkers.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "When, by what command, at which source tree and over which world the bodies were captured.\n\nAnchor: \"captured_at\"; \"source_tree\"; \"world\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ffb3115011021ee0e6344873e64e9d3874d6cdd",
+            "content": "sha256:6f47b89051fec302526f1718146400e7a37938ad4f8a356a5f54cee4c9f87b45",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The six scenarios and their files, and the body file's digest.\n\nAnchor: \"scenarios\"; \"sha256\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ffb3115011021ee0e6344873e64e9d3874d6cdd",
+            "content": "sha256:8793e54313d67e8e5bb3f5987cb9520a834fa3b840762cd1d398fd85aa3c5863",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

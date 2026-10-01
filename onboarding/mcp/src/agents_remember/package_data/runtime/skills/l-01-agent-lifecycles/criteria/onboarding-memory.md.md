@@ -1,14 +1,5 @@
 # l-01-agent-lifecycles/criteria/onboarding-memory.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74` |
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
-
 ## Purpose
 
 The onboarding/memory review criteria catalog — one of the five seed catalogs in the new
@@ -72,41 +63,23 @@ This criteria catalog supplies evidence only when the corresponding review is ex
 
 No external domain documentation applies to this repository-local catalog.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical source this bundle copy is sync-propagated from. | `# Criteria Catalog — Onboarding/Memory Review` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:1-83 |
-| OM-4, the requirement-bound standing criterion for plausible admission justifications. | "Admission justifications are plausible" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:36-47 |
-| The reviewer role that binds this catalog per review type. | `# Reviewer`; `onboarding-memory` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:6-171; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:35-42 |
-| The Update History order checker whose naive/UTC comparison semantics OM-3 pins. | `CHECK_NAME` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:25-25 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Canonical source this bundle copy is sync-propagated from. [1]
+- OM-4, the requirement-bound standing criterion for plausible admission justifications. [2]
+- The reviewer role that binds this catalog per review type. [3]
+- The Update History order checker whose naive/UTC comparison semantics OM-3 pins. [4]
+
+### Cross-Repo References
 
 No sibling repository evidence is needed for this catalog.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## CCR-L42 current candidate
 
 The onboarding-memory criteria now apply exploratory and new-catalog duties only to a baseline review. Fix-verification uses the sealed outstanding IDs and cannot recensus the catalog or add findings.
-
-## Update History
-- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the catalog gains OM-4, "Admission justifications are plausible", a standing criterion entered by requirement (MIK-R27 rule 5, ruling Q3).** A Logic paragraph states it and its converted-memory binding; one row added; the canonical-source row re-measured to the whole file (`1-83`). No verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Updated the catalog-evidence sentence so routine handoff reads the worker's targeted-check record together with the curator's complete memory-quality result.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The onboarding-memory criteria now apply exploratory and new-catalog duties only to a baseline review. Fix-verification uses the sealed outstanding IDs and cannot recensus the catalog or add findings.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the `n/a` table rows with
-  exact heading/identifier anchors and fixer-generated ranges; exact non-fixing check returns
-  zero findings.
-
-- 2026-07-06T17:35+02:00 — 260703-L12 round 2: OM-1's catching evidence re-cited to the verifiable record (L12R-1: the L8 cycle-6 owner-pass overview de-stales in the 2026-07-05T19:25 history entries + L10's sidecar de-stale — two engagements, standing holds); OM-3 re-tiered STANDING → CANDIDATE (L12R-2: one catch, promotes at ≥2). Verification metadata pinned until closeout stamps the L12 commit.
-- 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `criteria/onboarding-memory.md` seed catalog (leaf 260703-L12): OM-1 staleness diff (cycle-6 deleted-models catch), OM-2 history-only detection (closeout-body-gate catch), OM-3 newest-first under the checker's naive/UTC semantics (L11 collision re-sort), with the exploratory mandate and the promotion ratchet. Verification metadata pinned until closeout stamps the L12 commit.

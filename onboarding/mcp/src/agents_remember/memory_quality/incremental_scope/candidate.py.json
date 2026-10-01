@@ -1,0 +1,86 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pair identity and roots come from the canonical memory candidate pair owner.\n\nAnchor: `resolve_memory_candidate_pair`, \"return MemoryCandidatePairIdentity(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95544419b0b670b95be5e07d8fae1cdffc3d4c88",
+            "content": "sha256:3abe5e591f9a2a07420ecc288ff6a9aea2d60f4fa7d39af093ba0797e91a7fb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_memory_candidate_pair"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/memory_candidate_pair.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Code candidate tree comes from the memory-quality future-code capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_future_code_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Intent identity and topology fingerprint come from R02/R01 owners.\n\nAnchor: `task_intent_identity`, `candidate_task_topology_fingerprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa8a422af6c17568acd7a89dbd33e0cce7f13bbe",
+            "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_identity"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+            "content": "sha256:220d7b351db5d74399574ecd578e8d627b44d2df9ebfc58e2feed21a029a15e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_task_topology_fingerprint"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b92e92bb828e663e1aff04cb73e75d669bd922",
+            "content": "sha256:52016d8063aabaa7c9273900ef2b1e959cb217cec094eabccbe73a0fbc8fbd3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_scope_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

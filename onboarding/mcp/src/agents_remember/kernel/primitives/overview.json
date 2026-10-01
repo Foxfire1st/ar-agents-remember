@@ -1,0 +1,70 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives",
+  "references": {
+    "1": {
+      "note": "Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+            "content": "sha256:49d1835236d20dbfff1bf879130a5eb247a6eff0566baa122659fbbf18c2e616",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_checkout_location"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+            "content": "sha256:2a616aad2446a66b3c7baf6b0d359cfb2019c67260b82e52ac7242dd109092cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_durable_write_target"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The layering rail enforces the total order this route anchors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:c2135577af56fef6259bdd88624b15a56d7ebd55ca82f9dcd856f6753d7ff747",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Structural gate models import the producer-owned gate vocabulary from kernel.\n\nAnchor: \"from agents_remember.kernel.primitives.gate_vocab import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
+            "content": "sha256:36d7702b2074245d813ac292fdddb6016cf6ecd7e92ebb721838ddcd7a8c4dfc",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/models/structural/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

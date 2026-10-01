@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/kernel/agentic_settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor.\n\nAnchor: `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5acadb42437e991d1a7edb7e7a874cb22ab12b21",
+            "content": "sha256:ca3557a606e70c84a7687fbe09583e83d51c413d49c746db063042719f39d301",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 442
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5acadb42437e991d1a7edb7e7a874cb22ab12b21",
+            "content": "sha256:0081f06e054264c050242318b0caed1fabfbd2fe75ffd1f11c7f3d4dcfb2cb3b",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 443
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5acadb42437e991d1a7edb7e7a874cb22ab12b21",
+            "content": "sha256:53a36e24edb0ff49f02cf060ac301ef1ca0ecd269141943b764daf85070b2b89",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 440
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5acadb42437e991d1a7edb7e7a874cb22ab12b21",
+            "content": "sha256:4fd1284e73f4971fa5d5fac063a5406894c0024ae7a0ba336b8ef95d3dffc560",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 402
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5acadb42437e991d1a7edb7e7a874cb22ab12b21",
+            "content": "sha256:c0e4b7e1e2e7b83edf77c6914072fdbc3d7af119ac8995683cb5e0fdc7e902ae",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 400
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

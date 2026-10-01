@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/testing` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-08-28T10:16:27+02:00 |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25`|
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -66,13 +60,13 @@ removed test matrices or older source/test censuses.
 The generated route index inventories the surviving source owners and their paired cards.
 It must be rebuilt from current source, never copied from a retired route census.
 
-## Source References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Ordinary bootstrap owns local ordering/cache/state isolation without certification. | "Reusable pytest bootstrap with no certifying or external-service capability." | mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:1-1 |
-| Certifying setup admits Dagger before candidate preparation. | `prepare_certifying_pytest_bootstrap` | mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py:27-39 |
-| Retry execution retains exact explicit affected modules. | `pytest_collection_modifyitems` | mcp/test_support/agents_remember_test_support/testing/retry_selection.py:63-79 |
+### Source References
+
+- Ordinary bootstrap owns local ordering/cache/state isolation without certification. [1]
+- Certifying setup admits Dagger before candidate preparation. [2]
+- Retry execution retains exact explicit affected modules. [3]
 
 ## 260915-CAPS-L18 Complete Curation Reaches This Route
 
@@ -167,32 +161,3 @@ row (after which the closing stamp moves the pin). This leaf obliged **four** su
 its two governed-support consumers and one that the item-16 case itself created by reading the lane
 manifest — while the catalogue's populations stayed at **15 contracts / 65 artifacts** and the
 digest moved to `25b00f88...`, because a consumer-only change moves the bytes and not the counts.
-
-## Update History
-
-- 2026-09-18T19:16+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **added the L23 section for the consumer-completeness oracle (item 13 / D-19)** — the two gates side by side with the question each answers and its documented repair, the module docstring rewrite that names them, the case that shows the distinction in one run, and the four consumer rows this leaf obliged with the populations unchanged at 15 / 65. The body changed substantively; the route's own claims and the earlier entries are untouched. No verification stamp moves: `evidence_lifecycle.py` is modified in the delivered working tree and closeout owns the stamp.
-
-
-- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits. Also corrected the card's guard-obstacle paragraph, which L10 recorded as "not repaired": `CAPS-R19` **did** repair it — the retired pairing is no longer a required fragment, it is the guard's `RETIRED_LOOP_GATE_FIELD_PAIRING` (`curation_doctrine.py:222`) beside the positive `LOOP_GATE_CORRECTED_FIELDS` (`:229`) and the `LOOP_GATE_DOCUMENTS` mapping (`:237-240`), asserted by `missing_loop_gate_statements` (`:382`) inside the existing census case (`test_role_instruction_corpus.py:685`).
-- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`) and recorded the obstacle its repair will hit on this route.** The `CAPS-L18` section now names the **raw** `qualityChecklistStatus` as the repair loop's gate and the combined `checklistStatus=coherence-required` as the coherence gate (`application/memory_quality/controller.py:664,671,678,687`). Added the source-backed statement that this route's `curation_doctrine.py::CURATION_COMPLETENESS_STATEMENTS` **requires** the fragment `"checklistStatus=ready-for-closeout"` for `roles/curator.md`, and that `normalize_statement` is case-preserving, so rewriting the sentence to `qualityChecklistStatus=…` would turn `test_every_canonical_source_states_the_complete_curation_rule` red unless the declared fragment moves with it. Recorded, not repaired — the table is code and this seat writes onboarding only.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/test_support/agents_remember_test_support/testing`, so no route/member/prose/invariant change is required. route-member-count=20; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
-
-- 2026-08-28T10:03:40+02:00 — Added the complete observed failure-family ownership split and the
-  measured three-symptom causal repair protocol to the route hot path.
-- 2026-08-28T04:37+02:00 — Retired Candidate-A host diagnostics, added threshold-aware evidence
-  governance and shared provenance, and replaced pure-only route comparison with repeated
-  pure/integration/durability serial/default-xdist measurement.
-- 2026-08-27T22:09+02:00 — Recorded explicit `pytest SKIPPED` as the plan-only retry proof after
-  the live matrix exposed a validator that incorrectly expected no result line.
-- 2026-08-27T21:10+02:00 — Split observed zero-body module collection from genuinely
-  missing/uncollected retry paths without adding a fallback.
-- 2026-08-27T20:45+02:00 — Bound the product retry scenario to the low-fan-out seed owner after a
-  central atomic-write mutation selected 486 test modules.
-- 2026-08-27T20:12+02:00 — Recorded formatter-valid controlled retry mutations after the real
-  product matrix exposed a pre-pytest harness defect.
-- 2026-08-27T17:19+02:00 — Added the dependency-owned retry execution boundary: canonical
-  collection restores current import evidence while only explicit affected modules execute.
-- 2026-08-27T11:08+02:00 — Moved test infrastructure under verification ownership and reconciled
-  explicit lanes, source-derived consumers, complete candidate binding, persistent retry, and
-  exact-node causal evidence. Verification remains closeout-owned.

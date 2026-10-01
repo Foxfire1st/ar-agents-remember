@@ -1,0 +1,160 @@
+{
+  "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `buildEngineRoomModel` projection function is exported here.\n\nAnchor: \"function buildEngineRoomModel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "content": "sha256:e7f9ce6712d90215ad1ca5cfbca8fbf5cc3871ba9d2d35168dc3b0b5074d1406",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each view assigns `enclosureKey` from `node.worktreeGroup`.\n\nAnchor: `enclosureKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "content": "sha256:81e01e1435083a2c1a1c5a6ed80c9025a7fbda19131c779b302def0d11420bea",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`EngineRoomModel` render shape",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e6bbe43f55f80235591a68efa88089992e0933f",
+            "content": "sha256:65b97418d2074cb986575610de4484e388fa2f63a89ab8b34d06dad6656a0585",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineRoomModel"
+            },
+            "path": "dashboard/src/panels/engine-room/engineRoomTypes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`EngineProcessView` render shape",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e6bbe43f55f80235591a68efa88089992e0933f",
+            "content": "sha256:781de27d3b75f15264927e15d255afd82b244214d46a860e3643990507c267dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessView"
+            },
+            "path": "dashboard/src/panels/engine-room/engineRoomTypes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The model assigns the joined lifecycle gate into the process view.\n\nAnchor: \"lifecycle?.gate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "content": "sha256:34d515708beb1a5b626922d2ccf7fc43eb03e1bafd0ee33512cfabc8f228f8b9",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`EngineProcessView` exposes the gate field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e6bbe43f55f80235591a68efa88089992e0933f",
+            "content": "sha256:781de27d3b75f15264927e15d255afd82b244214d46a860e3643990507c267dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessView"
+            },
+            "path": "dashboard/src/panels/engine-room/engineRoomTypes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`groupEngines` + `EngineStack.scope` workspace/worktree split",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
+            "locator": {
+              "kind": "symbol",
+              "name": "groupEngines"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`EngineProcessNode.worktreeGroup` and `lifecycleId`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`ProviderNode.scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:c4eb47dea37bcb6e098e1dbd63f83c331a23500caca95398f712629d7fc34174",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

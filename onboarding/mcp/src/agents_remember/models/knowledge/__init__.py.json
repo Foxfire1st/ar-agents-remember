@@ -1,0 +1,587 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The facade's re-export list is the served knowledge vocabulary: authors, states, context, both payload versions and their sealing helpers, family shapes, relation shapes and read models, invariant shapes, repository identity, results, source locators, the whole snapshot vocabulary and — since this leaf — the composition vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "603a221a3e7614463096fc047e8735879743308b",
+            "content": "sha256:6bb3d4461d65797af17ffb4ab1fc20c540cd368a3d7404d6e3648ddef0842fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The snapshot harness that consumes the newly re-exported names end to end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e789c05a1ffe8da8b7bdae9e0fb7d62d2f6ef666",
+            "content": "sha256:da3d4c91d97c6059e207dbd4e5d3f1ad28e4b5cc88ab103b7659db21454643ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_case"
+            },
+            "path": "mcp/tests/snapshot_lifecycle_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e789c05a1ffe8da8b7bdae9e0fb7d62d2f6ef666",
+            "content": "sha256:0f955d09b644ef5e14c595c2f525c5877c2d6897842a9f7590e78ed63490fd02",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish"
+            },
+            "path": "mcp/tests/snapshot_lifecycle_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The eighth source module this leaf added to the facade, re-exported name by name.\n\nAnchor: `receipt_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:cb181d2e9415a1ae4e35495481377b60164967baa6097d7f2b8f12d5457f5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_candidate_receipt"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:aa4f2dacfb2d536a664a6c5ec2ea8cd434e978cf9e11530822e0c49fb7425d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_database_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:c3ba3b3d58162370d3d8a55fd3614ec20ba8602383fd66881ac176c256d5e0c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_receipt_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "603a221a3e7614463096fc047e8735879743308b",
+            "content": "sha256:32c1b87d75f812320122af7742b2fe90bd46adc17a770fd767e19f9ae4bcc791",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:6e49f7f9c10a71db9906fb5d5ffffd9e2abd1b2128a8738fc830da430090e490",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The internal rules deliberately kept off the served surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:8e5bc57a6b2e3fcb18f645f9671a90e078607cffb9a64bf8a5b5148b70642278",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_stored_outcome"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:717e3e6608cbd2a4a0c3e3094da26ffad2f70455940f74adacc9df7b23cfa95c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_removal_outcome"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_consistent_acceptance"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:f8921f4af660c39b5818e26430901cacd8430b745e94a1cbce68d4f6dfcd0f58",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 230
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:e93ec20a3edee2f1d9f4944286d66ec54f8a433045d3d642794e258dc7aa8559",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:cc1e87b1e0b90bba33370005fb3f022c6e615ea583d38d84070c634b1fff84fa",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 220
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:fed4fb467578732472f50a4d7b216c7e221760d30e93c8017f536d9f16a76ce7",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:438ddc4832a13160c7ebcae09e365513bf7bf010210a1335097fbf6ee1a4ab0e",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The facade's re-export list is the served knowledge vocabulary: authors, states, context, both payload versions and their sealing helpers, family shapes, relation shapes and read models, invariant shapes, repository identity, results, source locators and — since this leaf — the whole snapshot vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "603a221a3e7614463096fc047e8735879743308b",
+            "content": "sha256:6bb3d4461d65797af17ffb4ab1fc20c540cd368a3d7404d6e3648ddef0842fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "603a221a3e7614463096fc047e8735879743308b",
+            "content": "sha256:9647ffa15c2bbbfd4e6e561bfffa69d6cd3892cc9f14fdb99e98504c738e9765",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The eighth source module this leaf added to the facade, re-exported name by name.\n\nAnchor: `receipt_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:cb181d2e9415a1ae4e35495481377b60164967baa6097d7f2b8f12d5457f5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_candidate_receipt"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:aa4f2dacfb2d536a664a6c5ec2ea8cd434e978cf9e11530822e0c49fb7425d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_database_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:c3ba3b3d58162370d3d8a55fd3614ec20ba8602383fd66881ac176c256d5e0c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_receipt_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "603a221a3e7614463096fc047e8735879743308b",
+            "content": "sha256:366afc529c3797c5fec56018458cb47968e40796c3cf0034eb14bd364f328cec",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:cd80e4502e6e189a29828d24e2a7a1a3d58433f1ab643fdbc46338fd4e2f5ce3",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The internal rules deliberately kept off the served surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:8e5bc57a6b2e3fcb18f645f9671a90e078607cffb9a64bf8a5b5148b70642278",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_stored_outcome"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:717e3e6608cbd2a4a0c3e3094da26ffad2f70455940f74adacc9df7b23cfa95c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_removal_outcome"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:13cc663044dee904e0ef554d6776f2c58837847c4cc915a9688f715dd1172a37",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_consistent_acceptance"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:2c621628b36bb1cc0bee16277f4029f40849ff63e2b6a0e6bf8643b1ccb3d56e",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 188
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:ddc5ebeb9d173028ddcc8fbd2bd8b93a567454938eaae86101e66f307b4192ee",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:438ddc4832a13160c7ebcae09e365513bf7bf010210a1335097fbf6ee1a4ab0e",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The storage owner writes these values rather than defining its own copies — re-cited against the working tree, where the class docstring now names the sibling graph owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9d886ac257a1a929b89b49f431da8b0ec02f78e",
+            "content": "sha256:1ed427971021b7ef5e233a7c6a337f861d5ac94587f06cdc809006be245066d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenedKnowledgeStore"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9d886ac257a1a929b89b49f431da8b0ec02f78e",
+            "content": "sha256:058804fd2253d24904f7c8287e70b09044932a474514cb240ecc28fad22ec076",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The composition seams that admit a destination and build every request from this vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:f318c276ea14e280630e148444a67ac04c4e842c2d2d50ff065460c48ccbe1ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_knowledge_destination"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:44dd410902f060191e4fafcf32ec2dfc26e7702771a6fcfbfb30bfe79a7f3dcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_revision_request"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:fcd195d28702717aede9e6964d313f30f7605da00cd954239deeae23ea944126",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_family_request"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:67302074c5c46f6e7fc0e55305f69526b6282d31e36600e5d4bd8a4443a08445",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_claim_request"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9313e577aaa37edceb72d248c0f8647a4db0107c",
+            "content": "sha256:4a1c407ce62378356d0928639be1638364d6b97152ad4ac0b966c5457ed0ed6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_candidate_destination"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:bacfcb38f0032f56bb836b8b2689f92ebcb35763cbebecda54e8b566562c0b5d",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:6b20678018221e8e8274673282b16263d71b15d7d5e2f72575c048ba73847a9c",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:de379acb2ad6217445db6dc8171da2c816d190d3ddb993b7c70d7216ea9de7f7",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:56932d5b57f3dad702b5ad01470a61a944de3b3fd472301bee6a726d5f0f3e16",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared branching fixture authors its identity and graph halves from these same models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:436356d85a5375cb2207b22f622dc232bca56ceeaa44d4663d8a070d19627e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_branching_knowledge_fixture"
+            },
+            "path": "mcp/tests/knowledge_fixture_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:054298d9523f318d16eec2f4ff4ebd514b91237afb3d6f60a04b9468dfa8e8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "BranchingKnowledgeFixture"
+            },
+            "path": "mcp/tests/knowledge_fixture_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4f2e6466a295e37710791b539f4ecbade6afdd5",
+            "content": "sha256:294a942c982ac87357b058841d72fb49991d657d952428f63f65e12853688084",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/tests/knowledge_fixture_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

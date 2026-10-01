@@ -1,0 +1,136 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Accepted cells carry optional exact-move projection bindings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:14efbeffac5faf7075e6fdba161b56c52d39d1f837ad46ea8fce97359a4de6ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "Edit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cell replacements and generated history compose one final byte sequence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:ad651264b08214cc71ab81bbf556862ec670e1492a08ebc9fc16e452a06f6d04",
+            "locator": {
+              "kind": "symbol",
+              "name": "render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Complete original bytes and held source-index identity must still match.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:8a3cc5fd24fc06b9c412228191872689f10156a120c733360ed5d36bf2765a96",
+            "locator": {
+              "kind": "symbol",
+              "name": "unchanged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every source cell and optional projection binding is checked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:31500d6d53d643e19ccd6df71bc70302ea44129ebbdf312534182d7406c5ff4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cell_unchanged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Validation precedes atomic byte publication and final digest accounting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:288f0c6cdf0b2c6329880881a7a75c217a383ec8a061baeedc6c316a0f5d078b",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Preview validates the same preconditions without invoking the writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:847d6625f1c5646e60b7264c2c7c93c0da50061792cfdfc5f58e0de487e0c5bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each accepted projection receives the complete document digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:62b460b2408b18e4a0af94888330cdef904927ffdd3def868b18be763ccb8888",
+            "locator": {
+              "kind": "symbol",
+              "name": "projections"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The existing writer uses a unique temporary file, fsync and atomic replacement; it does not lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53a3558f41f4a2bd4da0bbff2ba2674fe92b5a00",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

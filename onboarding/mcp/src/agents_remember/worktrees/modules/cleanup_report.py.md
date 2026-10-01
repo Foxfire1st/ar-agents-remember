@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/cleanup_report.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/worktrees/modules/cleanup_report.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-30T15:34:31+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [worktrees/modules/overview.md](overview.md)
@@ -92,49 +82,28 @@ returns a new dict. There is no `try`, no mutation of `payload`, no filesystem p
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo, and the claims here are
 repository-internal report semantics, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public entry point and the `already-clean` short-circuit that reports a proven prior reclamation. | `cleanup_report`; "ALREADY_CLEAN = \"already-clean\"" | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:23-23; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53 |
-| The four target kinds are inventoried into `removed` / `notRemoved`; kept targets fall back to the contract's own worktrees and branches. | `_inventory`; `_contract_worktrees`; `_contract_branches`; `_reason` | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:60-78; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:150-153; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:156-160; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:163-167 |
-| The counted operator sentence naming what was removed and what was left in place. | `_summary`; `_inventory_phrase`; `_counted` | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:170-175; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:178-185; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:188-191 |
-| Removed entries come from the cleanup payload's own observation of each target. | `_removed_worktrees`; `_removed_branches`; `_presented` | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:81-86; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:102-107; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:132-135 |
-| **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. | `_run_or_verify_cleanup`; "cleanup_report(contract, result.payload)" | mcp/src/agents_remember/worktrees/modules/finalize.py:328-362; mcp/src/agents_remember/worktrees/modules/finalize.py:361-361 |
-| The destructive procedure and its refusal authority, which this module deliberately does not duplicate. | `cleanup_result` | mcp/src/agents_remember/worktrees/modules/cleanup.py:645-720 |
-| The kept-inventory fallback reads the contract it is handed, so its report is derived from the contract's own worktree and branch facts. | `_kept_worktrees`; `_kept_branches` | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:89-99; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:110-120 |
+- The public entry point and the `already-clean` short-circuit that reports a proven prior reclamation. [1]
+- The four target kinds are inventoried into `removed` / `notRemoved`; kept targets fall back to the contract's own worktrees and branches. [2]
+- The counted operator sentence naming what was removed and what was left in place. [3]
+- Removed entries come from the cleanup payload's own observation of each target. [4]
+- **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. [5]
+- The destructive procedure and its refusal authority, which this module deliberately does not duplicate. [6]
+- The kept-inventory fallback reads the contract it is handed, so its report is derived from the contract's own worktree and branch facts. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This is an in-process report shape with no separate repository or external-system boundary, so there
 is no cross-repository protocol to cite.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
-
-## Update History
-- 2026-09-30T15:34:31+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`): No content impact: this leaf's imports added 4 lines near the top of `worktrees/modules/finalize.py`, so the caller row was re-pointed by that exact shift (`324-358; 357-357` → `328-362; 361-361`); `_run_or_verify_cleanup` and its `cleanup_report(contract, result.payload)` call are unchanged, and the wording holds. No verification stamp was advanced.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `finalize.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-12T17:57:35+00:00: Generated citation repair: `_summary`; `_inventory_phrase`; `_counted` repointed to mcp/src/agents_remember/worktrees/modules/cleanup_report.py:170-175; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:178-185; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:188-191. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T17:57:35+00:00: Generated citation repair: `_summary`; `_inventory_phrase`; `_counted` repointed to mcp/src/agents_remember/worktrees/modules/cleanup_report.py:170-175; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:178-185; mcp/src/agents_remember/worktrees/modules/cleanup_report.py:188-191. No content impact: mechanical anchor-range projection bound to citation source snapshot dce71f6378174bd8feac846f76d402a9e99ea632224e7425ead23ceab817985f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T19:50+02:00 — Created by the 260831-LOCR-L31 curator pass for the new module at the leaf
-  base commit `5410fb07`. Records it plainly as a **reporter, not a runner**: the extraction preserved
-  only the pure report-shaping half of the deleted `automatic_cleanup.py` (`cleanup_report` plus its
-  `_inventory`/`_summary`/`_presented`/`_absent`/`_reason` helpers), while the run-and-catch half
-  (`run_automatic_cleanup`, `_refused`, `_TERMINAL_CLEANUP_STATES`, `_refusal_reason`) was dropped as
-  unreachable — a non-zero-returncode cleanup is now passed through raw so its `blockers` and partial
-  inventory survive. Names `finalize::_run_or_verify_cleanup` as the caller, including its
-  `dry_run`/nonzero-returncode gate, and records the removed/notRemoved completeness and
-  `already-clean` invariants. Verification metadata is pinned to the leaf base commit and remains
-  closeout-owned; this is source documentation only and makes no acceptance claim.
+No meaningful cross-repo references found.

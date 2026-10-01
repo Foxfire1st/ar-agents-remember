@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/route_review.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/tasks/route_review.py` |
-| doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-09-08T22:13:55+02:00                                     |
-| lastVerifiedCommitHash |                                            `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate |                                            2026-09-10T07:24:09+02:00|
-| governingOverview      | `overview.md`                            |
-
 ## Governing Overview
 
 [tasks/overview.md](overview.md)
@@ -54,21 +44,19 @@ evidence digests, the dependency declaration, and record digest as an all-or-not
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source governs these repository-owned models.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | n/a | n/a |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Route and child-intent model shapes. | `RouteReviewUnit`; `RouteReviewChildIntent`; `RouteReviewScope` | mcp/src/agents_remember/tasks/route_review.py:36-73 |
-| Fixed-list finding, round-cap permission fields, and review-state validation. | `ReviewFinding`; `ReviewState` | mcp/src/agents_remember/tasks/route_review.py:76-137 |
-| Candidate-bound route record coherence and content-addressing checks. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-197 |
+- Route and child-intent model shapes. [1]
+- Fixed-list finding, round-cap permission fields, and review-state validation. [2]
+- Candidate-bound route record coherence and content-addressing checks. [3]
 
 ## Source File Binding
 
@@ -76,18 +64,3 @@ The current L41 source bytes are SHA-256
 `b117340a17d8b38e60373e7878a609a48b615b1d5a7e75f330b4241a147afeb2`
 (`8050` bytes, `209` lines). The source is an uncommitted preparation candidate, so
 verification metadata remains blank until a genuine commit-owned refresh.
-
-## Update History
-
-- 2026-09-09T14:10+02:00 — CCR-L42 curator intake created/reconfirmed this one-to-one card against the current uncommitted source bytes (SHA-256 `b117340a17d8b38e60373e7878a609a48b615b1d5a7e75f330b4241a147afeb2`, `8050` bytes, `209` lines). Verification remains closeout-owned; no test, review, acceptance, or future commit is asserted.
-
-
-- 2026-09-08T22:13:55+02:00 — CCR-R28 L41 memory curation: refreshed this card to the exact L41
-  source and recorded the ordinary three-round boundary plus the paired developer-approval and
-  cumulative-additional-round fields. The transition service owns the direct recorded-permission
-  behavior; no authentication or second authority is implied.
-
-- 2026-09-08T22:01:43+02:00 — CCR-R27 domain-foundation preparation: created the persisted route-review model card,
-  including the small fixed-list ReviewState semantics, from the exact L40 source. Composition
-  manifest SHA-256: `05d471d6ba42bbcfd76aed54ed592a3478eaa051a21459f45370bf15878b7bb0`; worker evidence only, with no independent review or
-  acceptance claim.

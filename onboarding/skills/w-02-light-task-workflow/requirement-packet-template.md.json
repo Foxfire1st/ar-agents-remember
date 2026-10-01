@@ -1,0 +1,41 @@
+{
+  "path": "skills/w-02-light-task-workflow/requirement-packet-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The template contains the full self-contained requirement contract.\n\nAnchor: `# Canonical Requirement Packet Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e86695e34aa230771a1d0420cf17acafeff0902",
+            "content": "sha256:6fa9c68f9ca5fced1a8290c426cdb24369c81b1554784455fac344a533d85769",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Approval immutability, versioning, diagrams, and predeclared evidence are normative rules.\n\nAnchor: `## Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e86695e34aa230771a1d0420cf17acafeff0902",
+            "content": "sha256:6346df26e34d7e17fe50097a2e5c61ddd1df293cc92e1e0e49cf24f5d2d24416",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

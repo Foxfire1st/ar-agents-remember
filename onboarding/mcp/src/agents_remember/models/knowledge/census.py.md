@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/census.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/census.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -164,55 +154,47 @@ three read-back records and the three group declarations, and its only private m
   extracted claim because assigning one of the four classified kinds is authored work with an author and
   an instant.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rows below ground the card's claims in the declarations themselves: the six kind-and-schema names,
 the closed vocabularies with the cohort value and the classified-kind tuple, the provenance every record
 requires, the two construction refusals, the relation shapes, the three commands, the read-back records
 and the three group declarations the registry and the batch consume.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of its three load-bearing properties: no field that could hold an inference, provenance as a required stored value, and no identity of its own beyond a record's key. | `CensusProvenance`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/census.py:1-31 |
-| The mapping this group contributes to the envelope's payload registry, built from the six kind-and-schema constants and declared beside the vocabulary rather than beside the write path, so admissibility and storage read one declaration. | `CENSUS_PAYLOAD_MODELS`; `CENSUS_INVENTORY_ROW_KIND`; `CENSUS_CLAIM_KIND`; `CENSUS_DISPOSITION_KIND` | mcp/src/agents_remember/models/knowledge/census.py:339-350; mcp/src/agents_remember/models/knowledge/census.py:49-58 |
-| The command-kind and record-kind sets, each derived once so a registry case names the group rather than restating its three literals, and the eight tables a census command writes, declared beside the commands rather than beside the write path. | `CENSUS_COMMAND_KINDS`; `CENSUS_RECORD_KINDS`; `CENSUS_WRITABLE_TABLES` | mcp/src/agents_remember/models/knowledge/census.py:352-354; mcp/src/agents_remember/models/knowledge/census.py:356-360; mcp/src/agents_remember/models/knowledge/census.py:362-373 |
-| The closed vocabularies, declared in one block so a value added here is a value the schema's own CHECK already admits. | `CensusArtifactKind`; `CensusParseOutcome`; `CensusInventoryState`; `CensusClaimKind`; `CensusApplicability`; `CensusDispositionKind`; `CensusDispositionState`; `CensusEvidenceState`; `CensusAssessmentDisposition`; `CensusRealizationState`; `CensusLinkKind`; `CensusTargetState` | mcp/src/agents_remember/models/knowledge/census.py:60-88 |
-| The four classified kinds in the design's own order, with `unclassified` deliberately excluded because it is the absence of a kind rather than a fifth one. | `CLASSIFIED_CLAIM_KINDS` | mcp/src/agents_remember/models/knowledge/census.py:90-98 |
-| The one applicability value that enters the cohort, named once so the eligibility rule and the payload default cannot disagree. | `COHORT_APPLICABILITY` | mcp/src/agents_remember/models/knowledge/census.py:100-103 |
-| The provenance every census record requires, with its repository-relative artifact path, its location within the artifact and its frozen baseline carried by identity rather than as two loose strings. | `CensusProvenance`; `baseline` | mcp/src/agents_remember/models/knowledge/census.py:106-122 |
-| The refusal of an absolute, backslash or traversal artifact spelling, so a machine location cannot enter a durable record. | `_require_relative_artifact_path` | mcp/src/agents_remember/models/knowledge/census.py:124-144 |
-| The inventory row: what the artifact claims to describe beside whether that source is present, and the parse outcome carried as the row's own evidence. | `CensusInventoryRowPayload`; `declared_source_path`; `inventory_state` | mcp/src/agents_remember/models/knowledge/census.py:147-171 |
-| The refusal that keeps a failed parse from becoming an outcome with no evidence, in both directions. | `_require_unparsed_content_with_a_failed_parse` | mcp/src/agents_remember/models/knowledge/census.py:173-192 |
-| The claim: original text stored verbatim, a kind that starts unclassified, and the applicability field the cohort rule reads. | `CensusClaimPayload`; `claim_kind`; `applicability` | mcp/src/agents_remember/models/knowledge/census.py:195-219 |
-| The disposition and the recorded-versus-applied distinction that exists because this leaf prepares a migration and executes no cutover. | `CensusDispositionPayload`; `disposition_state` | mcp/src/agents_remember/models/knowledge/census.py:222-236 |
-| The two claim relations: the evidence reference whose unassessed state is derivable from the absence of an assessment row and whose verdict is stored verbatim from the curator's own record, and the realization attribution the coverage measure counts, with `missing_realization` recorded so "nobody looked" stays distinguishable. | `CensusClaimEvidence`; `evidence_state`; `assessment_disposition`; `CensusClaimRealization`; `attribution_state` | mcp/src/agents_remember/models/knowledge/census.py:239-257; mcp/src/agents_remember/models/knowledge/census.py:260-271 |
-| The disposition link whose four kinds are the design's split, combine, retire and correction, with the target's resolution state carried verbatim and never repaired by resemblance. | `CensusDispositionLink`; `link_kind`; `target_state` | mcp/src/agents_remember/models/knowledge/census.py:274-287 |
-| The three commands, each carrying no author and no instant, with the optional governing route that lets an inventory row exist for a surface the substrate has no route record for. | `CensusInventoryRowCommand`; `CensusClaimCommand`; `CensusDispositionCommand` | mcp/src/agents_remember/models/knowledge/census.py:290-303; mcp/src/agents_remember/models/knowledge/census.py:306-320; mcp/src/agents_remember/models/knowledge/census.py:323-336 |
-| The three read-back shapes: the record's own identity and payload beside the envelope's lifecycle and governing route, with the relations attached where the record owns them. | `CensusInventoryRow`; `CensusClaim`; `CensusDisposition` | mcp/src/agents_remember/models/knowledge/census.py:376-382; mcp/src/agents_remember/models/knowledge/census.py:385-393; mcp/src/agents_remember/models/knowledge/census.py:396-403 |
-| Where the group's payloads become admissible: the registry unpacking this module's mapping beside every other record family's. | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187 |
-| Where the group's table set joins the batch's writable-table union, as its own named constant rather than an edit inside another leaf's list. | `CENSUS_ONLY_WRITABLE_TABLES`; `CENSUS_WRITABLE_TABLES` | mcp/src/agents_remember/memory/knowledge/candidate_records.py:106-112; mcp/src/agents_remember/memory/knowledge/candidate_records.py:114-122; mcp/src/agents_remember/models/knowledge/candidate.py:182-192 |
-| The two consumers of the vocabulary's own members: the cohort predicate that reads the named applicability value, and the claim-kind census that counts `unclassified` beside the four classified kinds. | `claim_enters_cohort`; `claim_kind_counts` | mcp/src/agents_remember/memory/migration/census_measures.py:265-277; mcp/src/agents_remember/memory/migration/census_measures.py:521-529 |
-| Where the read side asserts the schema tuples and this vocabulary agree, and the schema's own declared vocabularies that the stored-value decoder checks against, so the model and the DDL cannot drift into two different sets of admitted values. | `CENSUS_ARTIFACT_KINDS`; `CENSUS_PARSE_OUTCOMES`; `CENSUS_CLAIM_KINDS`; `CENSUS_DISPOSITION_KINDS` | mcp/src/agents_remember/memory/migration/parse.py:45-52; mcp/src/agents_remember/memory/migration/parse.py:112-113; mcp/src/agents_remember/memory/migration/inventory.py:115-119; mcp/src/agents_remember/memory/knowledge/schema_v9.py:70-115; mcp/src/agents_remember/memory/knowledge/census_records.py:186-200 |
+- The module's own statement of its three load-bearing properties: no field that could hold an inference, provenance as a required stored value, and no identity of its own beyond a record's key. [1]
+- The mapping this group contributes to the envelope's payload registry, built from the six kind-and-schema constants and declared beside the vocabulary rather than beside the write path, so admissibility and storage read one declaration. [2]
+- The command-kind and record-kind sets, each derived once so a registry case names the group rather than restating its three literals, and the eight tables a census command writes, declared beside the commands rather than beside the write path. [3]
+- The closed vocabularies, declared in one block so a value added here is a value the schema's own CHECK already admits. [4]
+- The four classified kinds in the design's own order, with `unclassified` deliberately excluded because it is the absence of a kind rather than a fifth one. [5]
+- The one applicability value that enters the cohort, named once so the eligibility rule and the payload default cannot disagree. [6]
+- The provenance every census record requires, with its repository-relative artifact path, its location within the artifact and its frozen baseline carried by identity rather than as two loose strings. [7]
+- The refusal of an absolute, backslash or traversal artifact spelling, so a machine location cannot enter a durable record. [8]
+- The inventory row: what the artifact claims to describe beside whether that source is present, and the parse outcome carried as the row's own evidence. [9]
+- The refusal that keeps a failed parse from becoming an outcome with no evidence, in both directions. [10]
+- The claim: original text stored verbatim, a kind that starts unclassified, and the applicability field the cohort rule reads. [11]
+- The disposition and the recorded-versus-applied distinction that exists because this leaf prepares a migration and executes no cutover. [12]
+- The two claim relations: the evidence reference whose unassessed state is derivable from the absence of an assessment row and whose verdict is stored verbatim from the curator's own record, and the realization attribution the coverage measure counts, with `missing_realization` recorded so "nobody looked" stays distinguishable. [13]
+- The disposition link whose four kinds are the design's split, combine, retire and correction, with the target's resolution state carried verbatim and never repaired by resemblance. [14]
+- The three commands, each carrying no author and no instant, with the optional governing route that lets an inventory row exist for a surface the substrate has no route record for. [15]
+- The three read-back shapes: the record's own identity and payload beside the envelope's lifecycle and governing route, with the relations attached where the record owns them. [16]
+- Where the group's payloads become admissible: the registry unpacking this module's mapping beside every other record family's. [17]
+- Where the group's table set joins the batch's writable-table union, as its own named constant rather than an edit inside another leaf's list. [18]
+- The two consumers of the vocabulary's own members: the cohort predicate that reads the named applicability value, and the claim-kind census that counts `unclassified` beside the four classified kinds. [19]
+- Where the read side asserts the schema tuples and this vocabulary agree, and the schema's own declared vocabularies that the stored-value decoder checks against, so the model and the DDL cannot drift into two different sets of admitted values. [20]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. These are frozen in-process payload shapes: a
 census row names one repository-relative artifact path and one location inside it, its baseline is a
 `SnapshotIdentity` of one code revision and one memory revision recorded by identity, and nothing here
 opens a connection, reaches a filesystem path, or addresses another repository, dataset or remote.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the census's frozen record vocabulary. It records the six kind/schema names and the one `(kind, record_schema) -> model` mapping this group contributes to the envelope's payload registry, the twelve closed vocabularies with `CLASSIFIED_CLAIM_KINDS` deliberately excluding `unclassified` and `COHORT_APPLICABILITY` naming the single value that enters the cohort `N`, and the required `CensusProvenance` whose baseline is a `SnapshotIdentity` rather than two loose strings. It states the two construction refusals that keep a row from looking like coverage without being it — the relative-artifact-path rule and the outcome-versus-unparsed-content rule that closes both directions — together with the relation shapes that record rather than compute their states: an absent `assessment_disposition` is the unassessed state and never a fourth disposition, `missing_realization` is recorded so "nobody looked" stays distinguishable from "the realization is absent", and an unresolved link target is reported rather than repaired. It also records the deliberate absences: no field that could hold an inference, no content address, logical digest or fingerprint, no author or instant on any command, and no `__all__`. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

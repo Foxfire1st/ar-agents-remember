@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_evidence_claims.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_evidence_claims.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:20+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [tests route overview](../overview.md)
@@ -74,38 +64,30 @@ pytest.mark.evidence_unit` puts every case in the evidence lane, and the module'
 - **The sealed-revision rule is asserted here too**: a claim and its revision refuse `UPDATE` and `DELETE`.
 - **Nothing in this module writes outside a temporary root.** The artifact cases build their own bytes.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The case that asserts the payloads are frozen, extra-forbidden and never default the limitations value. | "def test_the_claim_payload_is_frozen_extra_forbidden_and_never_defaults_limitations(" | mcp/tests/test_knowledge_evidence_claims.py:149-190 |
-| The case that asserts the two subject kinds are two tables and neither can address the other, including the absence of a polymorphic column. | "def test_the_two_subject_kinds_are_two_tables_and_neither_can_address_the_other(" | mcp/tests/test_knowledge_evidence_claims.py:232-296 |
-| The case that drives all five endpoint kinds and asserts each refusal names its kind. | "def test_an_unresolved_subject_anchor_or_coverage_endpoint_is_refused_with_its_kind(" | mcp/tests/test_knowledge_evidence_claims.py:335-385 |
-| The case that asserts the author is the admission and the lifecycle is stored data. | "def test_the_author_is_the_admission_and_the_lifecycle_is_stored_data(" | mcp/tests/test_knowledge_evidence_claims.py:464-505 |
-| The case that asserts the claim command joins the closed union, its dispatch and its tables. | "def test_the_claim_command_joins_the_closed_union_its_dispatch_and_its_tables(" | mcp/tests/test_knowledge_evidence_claims.py:554-603 |
-| The case that asserts a refused batch moved neither the dataset nor a row. | "def test_a_claim_written_in_a_batch_is_refused_when_a_link_is_absent(" | mcp/tests/test_knowledge_evidence_claims.py:604-643 |
-| The case that asserts the generation gate in both directions and that `PRAGMA user_version` does not move. | "def test_a_claim_write_against_an_older_generation_is_refused_and_names_the_missing_one(" | mcp/tests/test_knowledge_evidence_claims.py:676-719 |
-| The case that asserts the coverage key makes one endpoint covered once unrepresentable. | "def test_the_coverage_table_makes_one_endpoint_covered_once_unrepresentable(" | mcp/tests/test_knowledge_evidence_claims.py:868-900 |
-| The case that asserts no served field of a claim could carry a verdict. | "def test_no_served_field_of_a_claim_could_carry_a_verdict(" | mcp/tests/test_knowledge_evidence_claims.py:798-837 |
-| The case that is this artifact's registered executable evidence node for the shared fixture. | "def test_a_claim_reads_back_with_every_field_including_an_empty_limitations(" | mcp/tests/test_knowledge_evidence_claims.py:744-797 |
+- The case that asserts the payloads are frozen, extra-forbidden and never default the limitations value. [1]
+- The case that asserts the two subject kinds are two tables and neither can address the other, including the absence of a polymorphic column. [2]
+- The case that drives all five endpoint kinds and asserts each refusal names its kind. [3]
+- The case that asserts the author is the admission and the lifecycle is stored data. [4]
+- The case that asserts the claim command joins the closed union, its dispatch and its tables. [5]
+- The case that asserts a refused batch moved neither the dataset nor a row. [6]
+- The case that asserts the generation gate in both directions and that `PRAGMA user_version` does not move. [7]
+- The case that asserts the coverage key makes one endpoint covered once unrepresentable. [8]
+- The case that asserts no served field of a claim could carry a verdict. [9]
+- The case that is this artifact's registered executable evidence node for the shared fixture. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T06:20+02:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): created this one-to-one card for the claim contract's 20 cases. It records the three named properties, the structural half of the kind check, the batch path's two sides, the generation gate asserted in both directions, and the shared-fixture registration that makes this module the evidence node's owner. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

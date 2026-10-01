@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/command_capture.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provider setup still uses this helper while bridging to the provider lifecycle CLI facade.\n\nAnchor: [\"provider_setup.\"]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba58b03a56e398af531689e5afc2eabaad21e600",
+            "content": "sha256:9c3e6877b750191ba3b2c1c3624864616223f3645684092c160661e23f001ead",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Skill application entry points now call service-backed functions instead of returning command-capture payloads.\n\nAnchor: [\"install_skills(\"]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
+            "content": "sha256:9a102dc3302f769e6d5eb44813f7870a189490ba9f4600d4b100328ed64eedae",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/application/runtime/skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,531 @@
+{
+  "path": "mcp/src/agents_remember/application/skill_resources/catalog.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Identity is the declared frontmatter name, and skills are addressed as resources under a publishing origin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:781189ca027fe911c72829f4b2f1c70ff0e16d8e61d4c5d13979c640bfb3c09f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_ROOT_FILE"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:0e233812d3731d24b8832cd0428382543c3d8c0de11152d8a73d1834bae75085",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_META_PREFIX"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A nested skill's files belong to the enclosing skill's entry too, which completeness requires.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:1b10f439fd93b7f08a848cc6ca889e623532a4e45eaf80697c9466cfbfaabc91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_relative_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The value types, the entry and index renderers, and the per-read `_meta` provenance block this module produces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:4d86b5bddcbd3e958823c1d05d3e0b133976fbc758e3600513e33d8dd4d32098",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillResourceFile"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:30fb711836f0fe5ec84338808526ae6c7468093de58d4d86ade5115719f42384",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillResourceEntry"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:0bc4d29277aff27ede14a8b27fcafa5d1f3eac5c5184af004d284bc6b0f93370",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillResourceCatalog"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:6939f4f8d09e89a5ae6b22a6b79a0cf13ad562a7d44efb6314f593bbc452ce8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_meta"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The frontmatter reader this module refuses a non-conforming skill through, and the verbatim map it returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:d5f1bd374fccc72a69be7c9f9de4b903730e978efd6b27b402476e303e0573f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_skill_frontmatter"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/frontmatter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:74e650b601df49cd2a9d455fec2d33262f98ae7fb356b4fc6458bfa7ab19fd10",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillFrontmatter"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/frontmatter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The served corpus and its publishing origin, bound together.\n\nAnchor: `SkillSourceTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:5c093fea021c330d2c618bb11ee7902c52a15b4e661c6dbcceb21dffa645efd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "shipped_skill_tree"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:db3dccdc6c048d2341ef5384a110e648e38064714b7e95c7b24e324fcd566d46",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The registration layer that turns these values into MCP resources and the two protocol methods.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:0ae7ff6f9d128658c46105667b24b23c52288a5ee319a8d177dd2da6d6124e13",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_file_resource"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:ee869d666225ce11ebd22367359f189c9de8d29c941e8140a26f5ffc3ee9c0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "index_resource"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:cc4845b47643583a8b98ac754e62902b8c3afa0d20223d7a77ef2c6167511c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_extension_methods"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The cases that execute the containment, revision, unreadable-refusal and nesting rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:8c299ac6f68f2b81ecbd0b9a131c0e8608296939f5b0afb935e41bdec2a8afc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_catalog_record_that_escapes_its_skill_directory_is_refused"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:151cf1b44b57d4d43437aecaf75e7c3230b8c28deab6f47b4336fa20e0263673",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_read_refuses_a_body_whose_bytes_changed_since_the_catalog"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:a93325d13b2b79be21da00cdf92251a99a5306c5430cfb4898da9b6681a8fe86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_reader_refuses_while_a_skill_cannot_be_served"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:a44f494a228af6482216dcdec687a84d4102fb7523d1fe43b4d9fa1d94200b89",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_nested_skill_is_published_flat_like_any_other"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 1321,
+              "kind": "line_range",
+              "start": 1321
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:6e407a4b5245358f59a2db879684ce1016970f157dbd55e6974a565f4fb5f09b",
+            "locator": {
+              "end": 796,
+              "kind": "line_range",
+              "start": 796
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:fc2652a8be8116ab280c5971eeb1c405daf416d653176ae6f6f45ffed27651f1",
+            "locator": {
+              "end": 1489,
+              "kind": "line_range",
+              "start": 1489
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:becf51c3bef5b058b4cb0339e76bec529111010ffdfecbc93e26f7ae957c89b0",
+            "locator": {
+              "end": 1349,
+              "kind": "line_range",
+              "start": 1325
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:7d10bda865879e1f2d451ede7b79f3594c5fb78dba139d0e47b217332d062ff3",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 800
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:c44d7746fe38276eae7f14af9331ab42e5ced91b43e1b307f3210505528521db",
+            "locator": {
+              "end": 1367,
+              "kind": "line_range",
+              "start": 1352
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:438566dcb866e954ea963e41284ac4363533c5c59cd38f377ac7b3f4b1f03c49",
+            "locator": {
+              "end": 1542,
+              "kind": "line_range",
+              "start": 1496
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The traversal case that reads a path outside a skill directory from a live process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:29abe39404e8e3d0e624d5a5a0dcc63bee02fac8f9c793602eb5f1582bf7d4a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_server_process_never_serves_a_file_outside_a_skill_directory"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:9e51e617d8b80854aade610ddf36be3629d5aef53c203a8e9d1722855ee2d878",
+            "locator": {
+              "end": 1302,
+              "kind": "line_range",
+              "start": 1271
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The entry `skills/list` returns, and the `resources` completeness this module's walk must satisfy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:8b3460de256e9488c1bcf005764605e8fa56496b0c59d589424108ae83898a9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_document"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A `SKILL.md` MAY appear in a descendant directory, so skills nest and are published flat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:50b79b0eda7b46c176cffd10e56a7b858df037cbc7086421730c6a763919bdcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skill_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Agent Skills index schema version **this server's own** index emits — a convenience resource, not the enumeration surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:42fdbff61eb5f9f7d4496b6b43c956f5e11c069a7d5ce66524d3b473cbb0beb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILL_INDEX_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Discovery and delivery are kept apart: one build records a revision per file, one read re-checks it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:76b22bd75690a801cc184c674c5681b1d52d169ff66b02d3c5479a9e5d512647",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_skill_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Containment is proven before any byte is read, and the recorded revision must still match the bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:d45210ffe40e81f0978179d1a159633f4f71ea4c67ae9a73fc703e4c53fb415f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_served_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A tree edit cannot quietly delete a published skill: delivery refuses while one is unreadable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:9f89ad4312b4a20e24167f49024286ffc951eb819c027f75a1feb332e2667fba",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_servable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:6c143d173171309fda5cac4b60054c76d6f6eb0f825e8fffe840f85ee52cf797",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_skills"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The declared name must equal the final skill-path segment — the declared name, not the path, is the identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:e8f6794d60c047556b9d74e56c2a4c78635e4238a8403491ad8bd4ad6c5e6a58",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_skill"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The walk descends through a skill directory, so a nested skill is discovered and published flat; the 32-level bound is a resource guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:50b79b0eda7b46c176cffd10e56a7b858df037cbc7086421730c6a763919bdcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_skill_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:41071d44967db549ed53b4b0896e328db8d90660f21b674748bdad99bc770e86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MAX_SKILL_DEPTH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

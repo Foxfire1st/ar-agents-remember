@@ -1,0 +1,143 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`c-03-repo-bootstrap` skill defines root overview as the minimum bootstrap, under the resolved onboarding root, and introduces targeted work for existing-memory source slices.\n\nAnchor: `# Repo Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca58eea707efec396a8678c1acafd02074de3437",
+            "content": "sha256:5694b64fcf31b66c0fab80bba561110c84cd3903de5b61a7f8d585a0f949afb5",
+            "locator": {
+              "end": 1265,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The design requires durable route-local overview placement directly in the mirrored onboarding hierarchy, generated route indexes with hot-path hints, and self-sufficient file-level onboarding.\n\nAnchor: `### Locality-first memory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca58eea707efec396a8678c1acafd02074de3437",
+            "content": "sha256:0d28f7b38a2ef89a23b2ab4dc0fe86709f849057921352d3dfc715655b624d18",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-03-repo-bootstrap` skill preserves thin orchestrator behavior, confidence tags, `c-08-ar-coordination-context-resolver` skill topology resolution, cross-repo read-only semantics, and `c-05-create-or-update-onboarding-files` skill ownership of file-level onboarding.\n\nAnchor: `## Behavior To Preserve`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca58eea707efec396a8678c1acafd02074de3437",
+            "content": "sha256:6ca61bf333182384fb47290936371abdfc9548162228445d295774f35ce6f52f",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Automated mode starts only after source inventory is accepted or corrected, writes artifacts relative to the resolved `onboarding_root`, and treats common excludes as `settings.json` path-rule defaults.\n\nAnchor: `## Control Modes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca58eea707efec396a8678c1acafd02074de3437",
+            "content": "sha256:b1824914d9036c3433eef09c0a954ead5be8cfef505dc84d0ed3bf595c9ab7b2",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The skill lists all bootstrap templates used for ledgers, state, plans, route maps, evidence packs, cards, waves, reviews, and handoff.\n\nAnchor: `## Templates`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca58eea707efec396a8678c1acafd02074de3437",
+            "content": "sha256:92c3bb3fabe1dc7b0d79e4c8d3666a50e3f50ae464f9be5cf93c61b192c5e7f8",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Phase 3 and Phase 4D require route-based overview verification metadata and `Hot Path Summary` sections so `c-02-memory-quality-control` skill can compare recorded `sourceRoute` scopes and `c-04-retrieval-strategy-router` skill can use compact route hints inside the Intent substrate.\n\nAnchor: `sourceRoute`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca58eea707efec396a8678c1acafd02074de3437",
+            "content": "sha256:2213071398439c28862d7aedc90c252e7951c5e7683d7709f69327abce19d1e9",
+            "locator": {
+              "end": 721,
+              "kind": "line_range",
+              "start": 686
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Existing-memory slice maintenance reuses current memory, covers expansion, refresh, move handling, deleted-slice cleanup, asks whether moved/deleted route behavior relocated before removal, and supports cleanup, move, preservation, or removal plans.\n\nAnchor: `### Existing-memory slice maintenance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca58eea707efec396a8678c1acafd02074de3437",
+            "content": "sha256:5e6397efae7e6d9bfdbe5af8a869ad8ea4f19a2b053ccb497cf2016e8bcf8b23",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 491
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Phase 4 classifies deleted, moved, and stale onboarding routes; Phase 5 handoff records removed/moved/retired memory and keeps closeout outside automated bootstrap.\n\nAnchor: `## Phase 4 — Bottom-Up Memory Build`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca58eea707efec396a8678c1acafd02074de3437",
+            "content": "sha256:27bcc80a1d8943b55306e7ddaea417af0ac8eed5afbbfdf6572517fd178814fd",
+            "locator": {
+              "end": 1064,
+              "kind": "line_range",
+              "start": 745
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,238 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/projectors/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The engine's native ingest reads all three channel flags: `uses_native_pages` seeds `native_complete` and gates the dirty-tip refresh, `uses_transcript_echo` arms the echo-zipper eviction guard and diverts frames to the echo buffer, and `eager_native_continuation` picks lazy tip-refresh vs the eager continuation poll.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:57836e29c0d78940707ab70be78fa36228fed062b71cad22bf476e809b51578b",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeEvidenceIngestion"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The cases: every registered harness id has a projector, and the eve projector declares stream-only evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:2d8ef177e215d353041f34fa6a1fe8098d081959007a60db2019374503c6b621",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_registered_harness_id_has_a_projector"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:ddd39be6460266dec643cc13b93248d605cf00c9e7b1ba566ba98e9c32a4bda5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_eve_projector_declares_stream_only_evidence"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:3632bcf6ca83a8c63b37b45d004da68cfd6d7861de6b93c58551e687d623db94",
+            "locator": {
+              "end": 1112,
+              "kind": "line_range",
+              "start": 1109
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:c3ccbb9562d38d2219193c00f184b85882098666d955cf1e7539b2ada043bfe7",
+            "locator": {
+              "end": 1120,
+              "kind": "line_range",
+              "start": 1114
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The echo projector applies the transcript-echo channel flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f5444e3a9e105e42cc9b5dfc67566e2ec803032",
+            "content": "sha256:a2fb25f95ee21ace02c0807a98e610596dd2b1e2d0c106da6f5734742492c4a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "EchoIngestion"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The child-history projector applies the native-pages channel flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f16489552a20bdfe30bb787b4ad1e177fd539437",
+            "content": "sha256:f60328dcd16faf6bd4b54c1f2953486c4d87c147065b179dbc3569d04ca8cdcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChildHistoryProjection"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/child_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rebuild coordinator applies the native-pages channel flag for parent-history re-derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa0b2b836fceffeb7a79b177e77a3e328bdd838e",
+            "content": "sha256:9c5ca6aa0ac6718b86da017f1f1004c6cf022b7fc40bb09e6279bb50681c20a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RebuildCoordinator"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The session factory resolves the per-harness projector and fails closed when none exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b44d0620dfdb1025e3e8a3c24b6e74f608a2f0b",
+            "content": "sha256:28c94e9e7b91fc3d3c951b2b17b8b0851456572bfcd8c677a2c90b028ee22622",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_identity"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/factories.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Mapper output types the protocol's entry points return are defined in the shared module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "578ab0f95770f2b331ded7cb8981f4ac9f4bef10",
+            "content": "sha256:a71123f0266564fdc534374e814ed7fdf51c7e8d1dfcdc962001c90a9047beda",
+            "locator": {
+              "kind": "symbol",
+              "name": "MappedItem"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The eve projector bound here, and the three flags that make the durable stream its only evidence surface.\n\nAnchor: `uses_native_pages`; `uses_transcript_echo`; `eager_native_continuation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9d9c4e78b62dcd9e1f69a01963dc0b6507b668",
+            "content": "sha256:6c421071acd4d3a28a334731efa028651dee401f85e602d8fd655b58ace5e179",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EveProjector"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The per-harness mapper module the registration binds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:59aa1d7c9b7a801460da9f7a23d708d9f5fba1edd473a8d65bc14e148fb0dca2",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_evidence_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/eve.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:3f25c6f25d07f2c1ddbfff78898af86f557edea055c24c2f79d9985b0d81d6f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_native_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/eve.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:fe521fadf215e4e3518321a9857dc1acfbbe174548d72fee6f863e32166227bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_transcript_echo"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/eve.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The harness union a registered projector's `harness_id` is typed with, widened so eve could register.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7c0957e9ed10ec573ba9174f6f5ecf16aeeb408",
+            "content": "sha256:85789c1ad9e411bb6a34db719542af23014cc3de1c7e9e6cd75d634f7221d606",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessId"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-00-initialize-memory-repo/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`c-00-initialize-memory-repo` skill initializes memory roots, not coordinator runtime assets, harness skills, task worktrees, or onboarding content; package-based first-run setup gets harness skills from copied starter packages and uses `skills_install` only for maintenance/manual paths.\n\nAnchor: `skills_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78f1e5c80c43a8023e278b5540e089732e431ab2",
+            "content": "sha256:85af2976018e20cb1f716bdb625931cb8284c2201a64c927e49f309b85dfeba5",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Repo-local `ar-memory/` **was removed from the product** and is now reported by its exact path with the route out rather than created, read or migrated; explicit external memory resolves to `ar-coordination/memory-repos/ar-<repo>/` after runtime install is verified, and `external` is the only supported topology.\n\nAnchor: \"Also check the code repository for a repo-local\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78f1e5c80c43a8023e278b5540e089732e431ab2",
+            "content": "sha256:9f116d56af040c26f2be698a27179bb8974f9032aa74dfd357e04982acd68e18",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Starter settings examples keep storage and path rules under memory-layer `system/settings.json` and seed common generated/vendor/build/local excludes.\n\nAnchor: \"path settings\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78f1e5c80c43a8023e278b5540e089732e431ab2",
+            "content": "sha256:e2d085e0459b8b7a29e7a92e05ab9361d7758d7b5f4a22adfb8cccd00cab7d81",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Common outcomes preserve existing docs, system files, and onboarding content when a partial memory scaffold is repaired.\n\nAnchor: \"Preserve existing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78f1e5c80c43a8023e278b5540e089732e431ab2",
+            "content": "sha256:883c9f7eb54db3664f8cd8e61a39553b1c429f65bf1b45cfa8cb521f2e40f1e4",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 313
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

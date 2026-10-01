@@ -1,0 +1,138 @@
+{
+  "path": "mcp/src/agents_remember/models/drift.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strict `DriftSummary` model exposes status and the optional diagnostic error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:a2f120037b4a3244a65f708669bdaf5da721a923c27f8840f5e61f28108cbf20",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:0673052126dfb9f14e4482f0ad5dc18d83e74317290c4bb65d77742f15f8038d",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`.\n\nAnchor: \"drift=DriftSummary.model_validate\"; \"def _drift_packet\"; \"-> DriftSummaryPacket\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:179ff2277dbc9f31b6dcc07320f7d791f765304c67a1149cfb37cc5dbad06d37",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:b600923b643228d39c596fce21ff38f86699563149c22fbbed582024d0a31874",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:42dc01e6a5b3c6e6acd56fd8b693dc265774948e58ae547146c624a40b1ee2e3",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes.\n\nAnchor: \"DriftStatus = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
+            "content": "sha256:b1213e60508c3a33c3ef17d5a6328b3c7b35a75d0a9db124c1e8ade517e853dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummaryPacket"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:a4fd9adef884dbb6ec257dea9499d51b7d671e333bf190b352afb44cb58b8b8f",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Both wire models expose the shared `DriftStatus` and optional error diagnostic.\n\nAnchor: \"class DriftSummary\"; \"class DriftCheckResponse(ToolResponse):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:3c2e03e160a2b1b355b128517aabec642e133b1930f6797c20a7a311b715aa24",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
+            "content": "sha256:9006b7b69dc5a39ca0854598cd817087bc4cd69dadbaeac832c91843fde0f9e7",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

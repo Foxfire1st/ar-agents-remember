@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/migration/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/migration/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -80,15 +70,15 @@ package's own location under `memory/`.
   reports on memory content, which is the ranking `layers.toml` already records for
   `memory_quality`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This file is the package's contract statement rather than an implementation: it fixes the read-only
 direction toward the corpus, names the one shipped write path, states the interpretation boundary, and
@@ -96,24 +86,16 @@ argues the package's place in the layer ranking. The rows below cite that statem
 things it points at — the census record group, the layer ranking, the corpus the package reads, and
 the interpretation boundary that the shipped write path enforces.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package's scope and its strongest boundary in one statement: it reads the Markdown-era onboarding corpus, describes it, and writes nothing to it. | "writes nothing to the corpus"; "reported against a frozen baseline"; `memory.knowledge.census_records` | mcp/src/agents_remember/memory/migration/__init__.py:1-16 |
-| The one write path the package uses, named by module: the shipped candidate batch operation reached through the census record group. | `apply_census_command`; `CENSUS_OPERATION` | mcp/src/agents_remember/memory/knowledge/census_records.py:100-102; mcp/src/agents_remember/memory/knowledge/census_records.py:401-401 |
-| The ranking the package's placement is argued from: `memory_quality` below `memory`, which is why reading and reporting on memory content belongs under `memory`. | `memory_quality` | layers.toml:197-205; layers.toml:206-219 |
-| The interpretation boundary: semantic categories, verdicts and mismatch classes are curator-authored in other leaves' record kinds, and this package only reads them. | `Mismatch` | mcp/src/agents_remember/memory/migration/resolution.py:101-110 |
-| The census record kind the package's own write path carries, declared in the wire vocabulary rather than here. | `CensusInventoryRowPayload`; `CENSUS_PAYLOAD_MODELS` | mcp/src/agents_remember/models/knowledge/census.py:147-147; mcp/src/agents_remember/models/knowledge/census.py:346-350 |
+- The package's scope and its strongest boundary in one statement: it reads the Markdown-era onboarding corpus, describes it, and writes nothing to it. [1]
+- The one write path the package uses, named by module: the shipped candidate batch operation reached through the census record group. [2]
+- The ranking the package's placement is argued from: `memory_quality` below `memory`, which is why reading and reporting on memory content belongs under `memory`. [3]
+- The interpretation boundary: semantic categories, verdicts and mismatch classes are curator-authored in other leaves' record kinds, and this package only reads them. [4]
+- The census record kind the package's own write path carries, declared in the wire vocabulary rather than here. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The docstring describes one local
 onboarding corpus read at a frozen baseline and one local candidate store's write path; nothing here
 reaches another repository, another dataset or a remote.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the `memory.migration` package surface. The file is a single module docstring with no imports, no `__all__` and no callables, so the card records the statement rather than a mechanism: the package reads the Markdown-era onboarding corpus and describes it while writing nothing to it, and the one write path it uses is the shipped candidate batch operation reached through the census record group in `memory/knowledge/census_records.py`. It records the interpretation boundary that makes the census's measurement separable from curation — the parser reports what it read, a mapping names where a read artifact goes, a reference resolves to one of three recorded states, and a mismatch is reported as the mechanical fact it is, while categories, verdicts and mismatch classes stay curator-authored in record kinds other leaves own. It records the placement argument the docstring makes from the layer ranking, where `memory_quality` sits below `memory` because reading and judging memory content is what both do, so the package joins `memory` rather than becoming a new top-level package. It records that the surface exports nothing, so every consumer imports its module by full path, which is how the package's own modules and the census cases reach one another. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

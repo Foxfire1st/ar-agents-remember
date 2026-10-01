@@ -1,0 +1,123 @@
+{
+  "path": "scripts/e2e_harness/run_fresh_user.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The entry point that drives the acceptance and writes the transcript.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "766d156231453da6663ed15bea2b9bac79eb30cd",
+            "content": "sha256:440f3fd8fe4d19a66afa3ecddf13c0f91c9fb2f4726ac8c020ede725dd828257",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`--reports` is required and `--work-root` is optional.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "766d156231453da6663ed15bea2b9bac79eb30cd",
+            "content": "sha256:84758b2796f097305a3c3633c20586f6227bf3dbfcfd16f8e731b9c816136cb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The transcript lands under this directory name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "766d156231453da6663ed15bea2b9bac79eb30cd",
+            "content": "sha256:0ebd69c7f2f756c10cc61570742ea9630c3128a285fb0ed31d57ce800d4796e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPORT_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The acceptance the entry point drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c00897ded7b5148622ddae72ad941d94ee12282",
+            "content": "sha256:ac4a6d944717aeb5831a27fc4d49773700aa06e107d2f94405e6cc3bc7db14e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_fresh_user_acceptance"
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared writer for the transcript file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f93da2ff31b160176f182d89ba64b12ddc032f",
+            "content": "sha256:a03907458cb7dfa1c229150e0d24fe1526d63754c6d57a55d874fae2d481beba",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_json"
+            },
+            "path": "scripts/e2e_harness/reporting.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The existing Dagger-admitted entry point this module deliberately does not modify.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4515f0a7f770563c4877753b3a515e402acd984",
+            "content": "sha256:e6297af676e399a560bf3ad111b4291ad1554e5c6cec8ddf272542f6349e9075",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/e2e_harness/run.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The case pinning the argument contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
+            "content": "sha256:fe0eba03697351152f8bd778b6f74cfb28519f87192e72c6146156535b3de661",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_entry_point_requires_reports_and_defaults_the_run_root"
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

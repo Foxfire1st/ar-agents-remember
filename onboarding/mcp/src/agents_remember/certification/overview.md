@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/certification` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
@@ -75,17 +69,29 @@ candidate, and later validates executor observations against that exact plan. Ge
 data, orchestration, process execution, and lifecycle projection remain with their respective
 owners and must consume these contracts rather than duplicate them.
 
-## Repository Architecture Evidence
+## Evidence
+
+### Repository Architecture Evidence
 
 The root architecture contract is onboarding-excluded as a one-to-one source under current path
 rules, so this route overview and the governing repository overview carry its durable ownership
 meaning without inventing a parallel `layers.toml` sidecar.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates. | "order = ["; "[package.certification]" | layers.toml:32-59; layers.toml:105-114 |
-| The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership. | "[package.controlplane]" | layers.toml:116-126 |
-| The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback. | `load_contract`; `undeclared_dirs`; `_record_edge`; `build_report` | mcp/test_support/agents_remember_test_support/code_quality/layering.py:63-68; mcp/test_support/agents_remember_test_support/code_quality/layering.py:122-141; mcp/test_support/agents_remember_test_support/code_quality/layering.py:151-154; mcp/test_support/agents_remember_test_support/code_quality/layering.py:280-340 |
+- `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates. [1]
+- The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership. [2]
+- The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback. [3]
+
+### Docs And Boundary References
+
+No Domain Documentation source or cross-repository implementation is configured for this memory
+root. The accepted behavior is repository-owned and the package remains independent of any one
+repository's commands.
+
+### Repo-Internal References
+
+The following current source owns the changed behavior; no external domain source is configured for this slice.
+
+- Preparation selection is limited to code and memory-content outputs. [4]
 
 ## File-Level Onboarding Map
 
@@ -111,12 +117,6 @@ meaning without inventing a parallel `layers.toml` sidecar.
 | `readiness.py` | [readiness.py.md](readiness.py.md) | covered |
 | `readiness_models.py` | [readiness_models.py.md](readiness_models.py.md) | covered |
 | `readiness_transitions.py` | [readiness_transitions.py.md](readiness_transitions.py.md) | covered |
-
-## Docs And Boundary References
-
-No Domain Documentation source or cross-repository implementation is configured for this memory
-root. The accepted behavior is repository-owned and the package remains independent of any one
-repository's commands.
 
 ## 260831-CCR-L16 - Durable Gate And Rail Telemetry
 
@@ -208,14 +208,12 @@ are now production-composed; the application installs the prepared memory/finali
 Library availability or default binding alone is not execution or acceptance evidence.
 The focused closeout and preparation routes describe selected certificate readback and physical publication.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts. | "def compile_certification_lane("; "def _project_repository_rail(rail: CompiledRail) -> RailDefinition:" | mcp/src/agents_remember/certification/certification_lane.py:87-128; mcp/src/agents_remember/certification/certification_lane.py:197-223 |
-| The production seam resolves the exact profile, binds memory rails and persists admission. | "def prepare_certification_records(" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:165-200 |
-| The ordinary quality gate runs the admitted candidate through its certification executor. | "def run_strict_code_quality_gate" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361 |
-| The quality gate freezes certification records before execution. | "def _freeze_certification_records" | mcp/src/agents_remember/worktrees/modules/quality/gate.py:462-476 |
-| Persist complete actual terminal catalogs, including red and interrupted gates. | "def record_published_generation" | mcp/src/agents_remember/worktrees/modules/quality/certification_records.py:232-276 |
-| Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. | "def compile_certification_recovery_record("; "def compile_lifecycle_finalization("; "def validate_lifecycle_finalization_currentness("; "def authorize_finalization_leg(" | mcp/src/agents_remember/certification/lifecycle_recovery.py:53-160 |
+- The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts. [5]
+- The production seam resolves the exact profile, binds memory rails and persists admission. [6]
+- The ordinary quality gate runs the admitted candidate through its certification executor. [7]
+- The quality gate freezes certification records before execution. [8]
+- Persist complete actual terminal catalogs, including red and interrupted gates. [9]
+- Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof. [10]
 
 
 ## Integrated IAS Recovery Contract
@@ -225,62 +223,3 @@ Repository-profile validation now factors environment producer/reconstruction ar
 ## CCR-L42 Refresh Validation Parity
 
 The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
-
-
-## Repo-Internal References
-
-The following current source owns the changed behavior; no external domain source is configured for this slice.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Preparation selection is limited to code and memory-content outputs. | `OperationPreparationState` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-128 |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned certification route summary with the two-output lifecycle leg vocabulary. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
-- 2026-09-08T14:45:44+00:00: CCR-L24 preparation re-read the bridge claim against `compile_certification_lane` and `_project_repository_rail`; removed the deleted `_require_applicable_repository_gates` anchor while retaining the supported behavior statement. Verification metadata remains pinned pending final pair composition.
-
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
-
-
-- 2026-09-06T14:50:35+00:00 — Added the frozen-run and source-applicability route boundaries and links after reading their actual C69 source. Broader route verification remains pending; preserved prior verification metadata and all history.
-
-- 2026-09-05T22:23+00:00 — L30 route-impact review against `6e4ab81f6ae52bce35003377bb3aec7877554ed7`: Updated incoming publication-owner claims and source references. Certification-route source itself is unchanged; its genuine older verification stamp is preserved.
-
-- 2026-09-05T07:10+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected evidence retention overclaim, named R07/R08 production gap, and repaired bridge citation to the exact compiling function. Verification records current source claims, not execution or acceptance.
-
-
-- 2026-09-05T06:12+00:00 — Reconciled profile, telemetry, diagnostic, final-Codex and replay knowledge; documented the live R11/R22 bridge and explicitly distinguished absent R05/closeout-telemetry callers from library capability.
-
-- 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass (route impact): added the CCR-L14 section for the final real-Codex Gate-4 certification lane - the `final_codex/` subpackage (closed two-fresh models, plan-record compilation with exact-predecessor barriers, lane readiness projection, isolated CAS run store, and the bound Gate-4 certificate compiler) and the widened facade re-exports, with the higher worktree run controller consuming the trusted R12 authority. Verification stamp is the full leaf code commit `54ff803a05209e06f732f2de1f90e2a71a069e08` (tree `aff2e268968397ab8db042a782652957a3600dda`).
-
-
-- 2026-09-04T22:23+02:00 - 260831-CCR-L17 Gate-5 memory pass (route impact): added the CCR-L17 section for the measured-replay and reduction subpackage - replay freeze identity and comparability, the append-only three-view incident population, the deterministic span analyzer, the measured-run reducer, the seventeen acceptance scenarios, and the digest-bound comparison report, with numeric reduction thresholds deliberately out of scope. Verification stamp is the full leaf code commit `e84c004c37a4bad082e1a7f1bdc4bd062282a185` (tree `f97c4969d7ddb93eed75c80a4936fc05fab8e2eb`).
-
-
-- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass (route impact): added the CCR-L13 section for the optional non-certifying diagnostic E2E lane - the `diagnostics/` subpackage (closed models, altitude plan projection, optional-lane readiness projection, isolated durable store) and the widened facade re-exports, with the higher worktree run controller consuming the trusted R12 authority. Verification stamp is the full leaf code commit `4ba18bb23ba90e201bb37341d61c0efc64161fcf` (tree `631145bf3e0d5899b1dcbccf8c0d4a8257821f0d`).
-
-
-- 2026-09-04T12:30+02:00 - 260831-CCR-L16 Gate-5 memory pass (route impact): added the CCR-L16
-  section for the durable gate and rail telemetry subpackage - closed event vocabulary with an
-  exhaustive matrix, compile adapters, digest-chained journal store, lossless projection, and
-  never-raising validator. Verification metadata stays pinned until closeout stamps the leaf
-  code commit.
-
-
-- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 reconciled the bounded-reachability owner after
-  removing a dominated second refusal: the prospective pre-allocation refusal and measured
-  traversal reservations remain the complete route contract. Verification remains closeout-owned.
-
-- 2026-09-01T05:28+02:00 — CCR-L11 Attempt 9 recorded the enforced rank-3 package declaration
-  and its `models < certification < controlplane` ownership boundary. The accepted registry,
-  planning, admission, and typed-result implementation account is unchanged; only its explicit
-  repository architecture declaration is new. Verification remains closeout-owned.
-
-- 2026-09-01T03:11+02:00 — Created the route-owned overview for the generic five-gate registry,
-  plan-authority, bounded-validation, and typed-result foundation. Verification remains
-  closeout-owned until the source candidate is committed.

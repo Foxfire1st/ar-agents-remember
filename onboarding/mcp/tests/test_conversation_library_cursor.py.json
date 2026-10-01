@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_conversation_library_cursor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "List cursor round trip and tamper rejection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddfae7362d1dc555b0b3bfd34c64be94a4c12194",
+            "content": "sha256:7dd9c4272673df836e104c41c04d036178886f0ceb864ec53fdcf3385f16e6c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_list_cursor_round_trip_and_tamper_rejection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Read cursor round trip and wrong purpose rejection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddfae7362d1dc555b0b3bfd34c64be94a4c12194",
+            "content": "sha256:5b92c653cbca65517c2aecd2901dfc153579a06e8fcb01b433b02c61df78552e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_cursor_round_trip_and_wrong_purpose_rejection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Canonical scope rejects traversal symlink and cross scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddfae7362d1dc555b0b3bfd34c64be94a4c12194",
+            "content": "sha256:6a2870ca7a4a4e0692c811c14070a9b3d64d63cf47c14671bd438a668c79285c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_canonical_scope_rejects_traversal_symlink_and_cross_scope"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

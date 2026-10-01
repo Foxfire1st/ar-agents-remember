@@ -1,15 +1,5 @@
 # scripts/sync-runtime.py
 
-| Field                  | Value                         |
-| ---------------------- | ----------------------------- |
-| repository             | agents-remember             |
-| path                   | `scripts/sync-runtime.py`      |
-| doc_type               | `file-level-onboarding`        |
-| lastUpdated            | 2026-09-17T10:20:31+00:00|
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253`             |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
-| governingOverview      | `../overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -83,42 +73,23 @@ are intentionally not included.
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation is needed for this repository-local helper.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The five explicit canonical-to-package-data runtime targets, with the per-target ignore set declared beside the tree it applies to. | `TARGETS`; `RuntimeTarget` | scripts/sync-runtime.py:61-78; scripts/sync-runtime.py:27-41 |
-| Digest comparison reports missing, extra, and changed files for `--check`, and refuses to call an absent canonical source in sync. | `diff_target`; `RuntimeDiff`; `print_diff` | scripts/sync-runtime.py:137-153; scripts/sync-runtime.py:44-58; scripts/sync-runtime.py:204-219 |
-| Normal sync refuses self-sync, performs copy-then-swap replacement, and rechecks targets. | `sync_target`; `replace_tree`; `sync_targets` | scripts/sync-runtime.py:162-167; scripts/sync-runtime.py:168-203; scripts/sync-runtime.py:236-257 |
-| The per-target ignore set threads into both the digest walk and the copy, so comparison and copy cannot disagree. | `ignored`; `file_digests`; `copy_ignore` | scripts/sync-runtime.py:100-106; scripts/sync-runtime.py:123-136; scripts/sync-runtime.py:154-161 |
+- The five explicit canonical-to-package-data runtime targets, with the per-target ignore set declared beside the tree it applies to. [1]
+- Digest comparison reports missing, extra, and changed files for `--check`, and refuses to call an absent canonical source in sync. [2]
+- Normal sync refuses self-sync, performs copy-then-swap replacement, and rechecks targets. [3]
+- The per-target ignore set threads into both the digest walk and the copy, so comparison and copy cannot disagree. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this helper.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: documented the fifth target (`eve_runtime/` →
-  `package_data/runtime/eve-runtime/`) with its **per-target** ignore set, the `source_missing`
-  correction that stops an absent canonical source from reading `ok`, and the agreement between
-  the digest walk and the copy that the same set now guarantees. Repointed the three reference
-  rows at their current lines and added a row for the ignore plumbing. This candidate is
-  **uncommitted**, so verification metadata remains closeout-owned; the real stamp is the
-  closeout's.
-- 2026-09-06T22:07:53+00:00 — Reconciled copy-before-rename preservation against current replace_tree and retired sync test knowledge. Historical entries and verification pins remain unchanged.
-- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
-
-- 2026-06-10T00:40+02:00 — `sync_target` now uses crash-safe `replace_tree` (copy to `<target>.ar-sync-new`, rename live target aside, swap in, then remove the old tree; stale staging/retired leftovers are cleaned on re-run), and `extended_length()` applies the Windows `\\?\` prefix so syncs and `--check` walks work past 260-char paths even with `LongPathsEnabled=0`. Replaces the delete-then-copy that gutted `package_data` when a long-path crash hit mid-delete (2026-06-09 incident).
-- 2026-06-08T11:53+02:00: Created onboarding for the new runtime asset synchronization helper. Verification metadata is pending until the code commit exists.
+No meaningful cross-repo references found.

@@ -1,0 +1,160 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Capability shaping and authority separation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d7ea180a24d738a2075d9a83f370c54a3e9940d",
+            "content": "sha256:638f1419a242cb8bacd596d287e77861f3878ef026923b0e33233dbd5185147f",
+            "locator": {
+              "kind": "symbol",
+              "name": "modelFlags"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d7ea180a24d738a2075d9a83f370c54a3e9940d",
+            "content": "sha256:2c4264efbfd0f56841c317976d25fd7713285fc75c49cf6d892aed796ae7bf77",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityModelRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d7ea180a24d738a2075d9a83f370c54a3e9940d",
+            "content": "sha256:072e429191f685482bc767a96db8fd06d6e2914764fb2050154228ac5f94adb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitiesPane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d7ea180a24d738a2075d9a83f370c54a3e9940d",
+            "content": "sha256:1391e1341bf9837978ca88c75e8851af71067b082c1a4565ad93de763146b21a",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d7ea180a24d738a2075d9a83f370c54a3e9940d",
+            "content": "sha256:5859a830ef462edd506648db2b830c304e834e5700af1ff7215d000749320de3",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact-session and pre-session rendering plus existing refresh actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d7ea180a24d738a2075d9a83f370c54a3e9940d",
+            "content": "sha256:072e429191f685482bc767a96db8fd06d6e2914764fb2050154228ac5f94adb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitiesPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Capability derivation consumed by the pane is owned by `modelRowByKey`, `deriveEffortMenu`, and `effectiveSelection`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:2f5dd85ba049be3f67b19a79385f80c39754e097635010a1dfbd678c86d0b6f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "modelRowByKey"
+            },
+            "path": "dashboard/src/data/sessionCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:2997c2e588d7918905ffc0c0b7269bceb3fe0bcf5e89575938208a1067c16850",
+            "locator": {
+              "kind": "symbol",
+              "name": "deriveEffortMenu"
+            },
+            "path": "dashboard/src/data/sessionCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:c547a760c4124e01868a3d2d24e0df34fea4b8ff6e5fc8062c5a51090c814af3",
+            "locator": {
+              "kind": "symbol",
+              "name": "effectiveSelection"
+            },
+            "path": "dashboard/src/data/sessionCapabilities.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pane calls the derived-selection and effort-menu helpers and resolves the selected model row from that derived state.\n\nAnchor: \"const selection = effectiveSelection(cockpit);\"; \"const effortMenu = snapshot ? deriveEffortMenu(snapshot) : undefined;\"; \"const selectedModel = snapshot\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d7ea180a24d738a2075d9a83f370c54a3e9940d",
+            "content": "sha256:f074080727b0e1d2e6de44a69d54c2f4bda4b3e697fd38e85b9746f4bdaf89a4",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Existing capability read clients.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3e8f01973965be62ac2d4ba76d32966299ad0f9",
+            "content": "sha256:bcc6894c671cdfb243fe0c675f569bc0c993f957ec0e77527a11b17a7a24a2ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchHarnessCapabilities"
+            },
+            "path": "dashboard/src/data/capabilityCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,160 @@
+{
+  "path": "mcp/src/agents_remember/kernel/git_preparation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Existing observations bind raw HEAD/tree and the additional memory-content subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "135b2dc526a0b413bf64df663eb83d2a7cbff955",
+            "content": "sha256:bbcd4e1d1f99efd4533caa111346953dde2eddef61b100d5ffa15df67eadeb6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExistingGitPreparationBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "135b2dc526a0b413bf64df663eb83d2a7cbff955",
+            "content": "sha256:5fd2cb8e0e69a059d51b889373c6f964f0a5fd556553d243e43d6e1cdea591b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Private paths, object identities, hook policy, and operation identity are validated before capability use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "135b2dc526a0b413bf64df663eb83d2a7cbff955",
+            "content": "sha256:82f480954dae42d15e726f7cee0e6f26f2790941f2c8e86013a5e02cd526803b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PrivateGitPreparationBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "135b2dc526a0b413bf64df663eb83d2a7cbff955",
+            "content": "sha256:22a5318de8fbe93cabc11d1e4b2f20909e8d0bb5150a7863896f23b2e2971acd",
+            "locator": {
+              "kind": "symbol",
+              "name": "PrivateGitPreparationCapability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sealed private capability revalidates the binding and invokes its live owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "135b2dc526a0b413bf64df663eb83d2a7cbff955",
+            "content": "sha256:22a5318de8fbe93cabc11d1e4b2f20909e8d0bb5150a7863896f23b2e2971acd",
+            "locator": {
+              "kind": "symbol",
+              "name": "PrivateGitPreparationCapability"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "135b2dc526a0b413bf64df663eb83d2a7cbff955",
+            "content": "sha256:3dd5594322db19a2568533f634d28da1b3096abe0e15e0c3f8bde6160003e8eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "File modes and exact no-follow blob bytes are checked, including replacement during observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "135b2dc526a0b413bf64df663eb83d2a7cbff955",
+            "content": "sha256:940c2ae24c99a7457361a7eb00a57d46ec80ec4effdb7609205f50bb8c4b86c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_physical_blob"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "135b2dc526a0b413bf64df663eb83d2a7cbff955",
+            "content": "sha256:2364b2a0f22e2c6ac49815ab7f3a5e00df17040444d7024ad0c8f619469753a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_physical_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only explicit memory observations omit root memory.md from physical membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "135b2dc526a0b413bf64df663eb83d2a7cbff955",
+            "content": "sha256:2364b2a0f22e2c6ac49815ab7f3a5e00df17040444d7024ad0c8f619469753a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_physical_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The runner requires a memory content subject and proves its entries against the actual raw tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:3aee3a9b79c53ead69240c12c5cb5011a1e0236cd1d306b82add9c70a38614e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_preparation_entries"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:d6e601a17bc185d0885495f12b41adf50b514f3c3885efde325a7937ddc83573",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_existing_git_preparation"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

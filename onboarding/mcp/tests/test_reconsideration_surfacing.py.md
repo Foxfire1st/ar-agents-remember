@@ -1,15 +1,5 @@
 # mcp/tests/test_reconsideration_surfacing.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_reconsideration_surfacing.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -88,56 +78,43 @@ uses.
 
 - Split the module before the next case is added (R6-2).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R14@v2` of task
 `260928_maintained-invariant-knowledge` and its leaf document `14_reconsideration-surfacing.json`; they live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: the fixture's two decisions and the case shape. | "MIK-R14@v2: reconsideration surfacing over real Git code" | mcp/tests/test_reconsideration_surfacing.py:1-7 |
-| D18's three links: an assumption, a symbol anchor and a requirement endpoint. | `d18` | mcp/tests/test_reconsideration_surfacing.py:115-127 |
-| D12, reconsidered on a family and on D18. | `d12` | mcp/tests/test_reconsideration_surfacing.py:130-141 |
-| The fixture world with both decisions and the assumption in K_B. | `world` | mcp/tests/test_reconsideration_surfacing.py:144-159 |
-| The manifest and the owning task. | `_manifest`; `_task` | mcp/tests/test_reconsideration_surfacing.py:162-170; mcp/tests/test_reconsideration_surfacing.py:173-183 |
-| Rule 2: the highest approved version by integer. | `test_the_manifest_lookup_returns_the_highest_approved_version` | mcp/tests/test_reconsideration_surfacing.py:212-231 |
-| Rule 1 and the conforming example. | `test_a_revised_assumption_surfaces_the_rejected_alternative` | mcp/tests/test_reconsideration_surfacing.py:239-266 |
-| Rule 1: rows, anchors and requirement endpoints. | `test_a_triggering_history_row_surfaces_and_other_dispositions_do_not`; `test_a_linked_anchor_triggers_when_touched_or_absent_and_not_otherwise`; `test_a_requirement_endpoint_triggers_only_on_a_newer_approved_version` | mcp/tests/test_reconsideration_surfacing.py:273-293; mcp/tests/test_reconsideration_surfacing.py:296-311; mcp/tests/test_reconsideration_surfacing.py:314-346 |
-| Rule 3: one hop. | `test_one_hop_a_decision_change_never_chains_on` | mcp/tests/test_reconsideration_surfacing.py:349-358 |
-| The task-owner stand-in and the writer call. | `FakeQuestions`; `_write` | mcp/tests/test_reconsideration_surfacing.py:366-381; mcp/tests/test_reconsideration_surfacing.py:384-402 |
-| Rules 4 and 5: `still_rejected`, `raise`, and the real `task_doc` append. | `test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees`; `test_raise_sets_the_status_and_appends_the_question_or_is_refused`; `test_the_task_document_append_preserves_questions_through_task_doc` | mcp/tests/test_reconsideration_surfacing.py:417-443; mcp/tests/test_reconsideration_surfacing.py:461-479; mcp/tests/test_reconsideration_surfacing.py:503-542 |
-| The reorder guard and the registrations. | `test_a_reorder_of_linked_alternatives_is_refused`; `test_the_row_kind_and_the_item_kind_are_registered` | mcp/tests/test_reconsideration_surfacing.py:561-601; mcp/tests/test_reconsideration_surfacing.py:604-611 |
-| Ruling 04:37:56: route targets, superseded decisions and the refresh. | `test_a_route_target_fires_only_through_a_rerouting_or_retiring_row`; `test_a_superseded_decision_raises_nothing_and_its_links_are_listed_skipped`; `test_still_rejected_repoints_a_persistent_requirement_link_so_it_raises_once`; `test_still_rejected_reanchors_a_linked_anchor_so_it_stays_live` | mcp/tests/test_reconsideration_surfacing.py:636-665; mcp/tests/test_reconsideration_surfacing.py:668-681; mcp/tests/test_reconsideration_surfacing.py:709-742; mcp/tests/test_reconsideration_surfacing.py:745-765 |
-| Ruling 05:31:11: F1, the unmappable range, F3 and F4. | `test_the_refresh_maps_a_line_range_and_refreshes_only_the_fired_links`; `test_a_range_that_cannot_be_mapped_refuses_the_row_naming_the_link`; `test_a_stale_link_anchor_raises_and_still_rejected_reanchors_it`; `test_the_repoint_takes_the_items_approved_version_not_a_fresh_read` | mcp/tests/test_reconsideration_surfacing.py:781-810; mcp/tests/test_reconsideration_surfacing.py:813-826; mcp/tests/test_reconsideration_surfacing.py:829-845; mcp/tests/test_reconsideration_surfacing.py:852-868 |
-| Ruling 06:17:11: N1 and N2. | `test_a_refresh_refuses_a_fired_link_re_authored_or_moved_in_the_leaf` | mcp/tests/test_reconsideration_surfacing.py:885-916 |
-| R3-1: idempotent reruns. | `test_a_rerun_after_a_requirement_refresh_is_written_and_bumps_nothing`; `test_a_rerun_after_an_anchor_refresh_is_written_and_bumps_nothing` | mcp/tests/test_reconsideration_surfacing.py:962-979; mcp/tests/test_reconsideration_surfacing.py:982-991 |
-| R4: carried anchor, committed lookalikes, a reverted link, a newer approved version. | `test_a_rerun_after_more_code_changes_carries_the_refreshed_anchor`; `test_a_committed_lookalike_or_re_author_stays_refused`; `test_a_link_reverted_after_a_committed_refresh_is_refreshed_again`; `test_a_version_approved_after_the_refresh_is_named_and_needs_the_new_item` | mcp/tests/test_reconsideration_surfacing.py:1000-1017; mcp/tests/test_reconsideration_surfacing.py:1020-1039; mcp/tests/test_reconsideration_surfacing.py:1042-1055; mcp/tests/test_reconsideration_surfacing.py:1077-1093 |
-| R5: a second change in the range, an unapproved version, an anchor re-pointed to other code. | `test_a_second_change_inside_the_anchored_range_needs_the_new_item`; `test_a_curator_set_unapproved_version_is_re_authored`; `test_an_anchor_link_re_authored_to_other_code_is_refused` | mcp/tests/test_reconsideration_surfacing.py:1111-1143; mcp/tests/test_reconsideration_surfacing.py:1146-1158; mcp/tests/test_reconsideration_surfacing.py:1161-1172 |
-| The unit-lane row. | "mcp/tests/test_reconsideration_surfacing.py" | mcp/tests/test-evidence-lanes.toml:131-131 |
-| The catalog consumer row. | "mcp/tests/test_reconsideration_surfacing.py" | mcp/tests/evidence-lifecycle.toml:839-839 |
+- The module docstring: the fixture's two decisions and the case shape. [1]
+- D18's three links: an assumption, a symbol anchor and a requirement endpoint. [2]
+- D12, reconsidered on a family and on D18. [3]
+- The fixture world with both decisions and the assumption in K_B. [4]
+- The manifest and the owning task. [5]
+- Rule 2: the highest approved version by integer. [6]
+- Rule 1 and the conforming example. [7]
+- Rule 1: rows, anchors and requirement endpoints. [8]
+- Rule 3: one hop. [9]
+- The task-owner stand-in and the writer call. [10]
+- Rules 4 and 5: `still_rejected`, `raise`, and the real `task_doc` append. [11]
+- The reorder guard and the registrations. [12]
+- Ruling 04:37:56: route targets, superseded decisions and the refresh. [13]
+- Ruling 05:31:11: F1, the unmappable range, F3 and F4. [14]
+- Ruling 06:17:11: N1 and N2. [15]
+- R3-1: idempotent reruns. [16]
+- R4: carried anchor, committed lookalikes, a reverted link, a newer approved version. [17]
+- R5: a second change in the range, an unapproved version, an anchor re-pointed to other code. [18]
+- The unit-lane row. [19]
+- The catalog consumer row. [20]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: every repository, task root and coordination root the cases use is built
 under `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:31:06+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:131-131. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `mcp/tests/test-evidence-lanes.toml`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The Conventions bullet's lane-row mention moved with it (`test-evidence-lanes.toml:127` → `:128`: MIK-L32 inserted its own `unit-regression` row above this module's). No verification stamp was advanced.
-- 2026-09-30T12:22:18+00:00: Generated citation repair: "mcp/tests/test_reconsideration_surfacing.py" repointed to mcp/tests/test-evidence-lanes.toml:128-128. No content impact: mechanical anchor-range projection bound to citation source snapshot d90e1a2e975376af7fa389d4799d24cecbe5d50c1e8d92b1e5b438c088e400a4; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:56:40+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` plus the staged delta; first curated over `b54d1b03`, then merged with L29's landed curation after the sync onto code `ce459423` / memory `a6075c76`, L29's committed lines kept byte-identical): created this card for the new test module MIK-R14 adds (29 collected cases, measured with `ast`), recording every ruling round the cases pin (04:37:56 to 11:24:12), the lane row and the catalog consumer, and the accepted note R6-2 (11:53:13).  After the sync the lane row is `:127` (L29's row at `:108` moved it). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

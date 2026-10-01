@@ -1,15 +1,5 @@
 # dashboard/src/dev/lineLogFixture.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/dev/lineLogFixture.ts`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -53,22 +43,12 @@ dev surfaces.
 - DEV-only: nothing here ships — `/dev/*` is dropped from the production bundle, and no product
   path imports the fixture.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Boot/stream line sets, the mock socket incl. the queued-submission stdin echo, both factories. | `RUNNER_LINE_LOG_BOOT`; `RUNNER_LINE_LOG_STREAM`; `MockLineLogSocket`; `mockControlledLineLogSocketFactory`; `benchLineLogSocketFactory` | dashboard/src/dev/lineLogFixture.ts:9-19; dashboard/src/dev/lineLogFixture.ts:22-30; dashboard/src/dev/lineLogFixture.ts:34-82; dashboard/src/dev/lineLogFixture.ts:85-86; dashboard/src/dev/lineLogFixture.ts:89-90 |
-| The socket-factory context type this plugs into. | `TerminalSocketFactory` | dashboard/src/data/terminal.ts:46-46 |
-| The bench consuming the firehose factory + stream lines (serialize probe fill). | `PtyRenderBench` | dashboard/src/dev/PtyRenderBench.tsx:83-164 |
-| The pre-existing generic dev echo socket this complements (Chats bench). | `MockTerminalSocket`; `createMockTerminalSocketFactory` | dashboard/src/dev/mockTerminalSocket.ts:11-56; dashboard/src/dev/mockTerminalSocket.ts:58-63 |
-| The honesty hint whose trap the `send` echo models. | `INTERACTION_HONESTY_HINT` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:71-72 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 15 citation finding(s); scoped recheck clean.
-
-- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R1/R9 (design §8.1): the controlled-pane
-  line-log content (verbatim runner shapes incl. the queued-submission echo) + the mock socket
-  with the controlled-stdin queue trap, in slow-drip and bench-firehose factory variants.
-  Verification metadata pinned to the leaf base until closeout stamps the L6 code commit.
+- Boot/stream line sets, the mock socket incl. the queued-submission stdin echo, both factories. [1]
+- The socket-factory context type this plugs into. [2]
+- The bench consuming the firehose factory + stream lines (serialize probe fill). [3]
+- The pre-existing generic dev echo socket this complements (Chats bench). [4]
+- The honesty hint whose trap the `send` echo models. [5]

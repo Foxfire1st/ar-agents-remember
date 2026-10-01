@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/cgc/context/cleanup.py
 
-| Field                  | Value                                                        |
-| ---------------------- | ------------------------------------------------------------ |
-| repository             | agents-remember                                           |
-| path                   | `mcp/src/agents_remember/providers/cgc/context/cleanup.py`   |
-| doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-06-10T07:30+02:00     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`                                                    |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                                |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -40,16 +30,9 @@ under the expected root before calling `remove_runtime_path`.
 - Was extracted from `core.py` (commit `01f503d`); matches the module's
   "layouts and runtime cleanup" split.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `CgcRuntimeLayout` definition. | `CgcRuntimeLayout` | mcp/src/agents_remember/providers/cgc/context/core.py:36-126 |
-| `remove_runtime_path` and `ContextProviderError`. | `ContextProviderError`, `remove_runtime_path` | mcp/src/agents_remember/providers/context_common.py:18-19; mcp/src/agents_remember/providers/context_common.py:122-128 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-03T03:59:59+02:00 — Curated 2 citation findings (1 table row, 1 source-form repair): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-06-10T07:30+02:00 — No content impact: import path updated to `providers/context_common.py` (shared helpers moved out of the facade package, GitHub #58); documented behavior unchanged.
-- 2026-05-29T18:35+02:00: Created when the runtime-artifact cleanup functions were extracted from `core.py` (commit `01f503d`).
+- `CgcRuntimeLayout` definition. [1]
+- `remove_runtime_path` and `ContextProviderError`. [2]

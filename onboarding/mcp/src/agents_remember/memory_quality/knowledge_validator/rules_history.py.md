@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -87,40 +77,31 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
 - The byte-for-byte check of a new history file against its leaf's recorded closeout commit was offered by review R2
   and not required (ruling 17:59:48).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is `MIK-R09@v2`, `MIK-R07@v2`, `MIK-R22@v1` and
 `09_mandatory-invariant-closeout-gate.json`, outside the repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: the two checks, which files, rows the merge moved. | "a closed file committed outside the AR routes cannot carry a ghost subject" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:1-44 |
-| The files the re-anchor check reads. | `checked_history_files` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:80-91 |
-| A merge parent's rows, read only when a row disagrees. | `_BaseRows`; "def agreed(self, path: str, row: InvariantRow)" | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:111-140 |
-| Every disagreeing row, and whether the merge moved it. | `_mismatches` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:143-158 |
-| The refusing check over every file's subjects and the unmoved mismatches. | `check_history_rows` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:161-179 |
-| The report-only check of rows the merge moved. | `check_merged_history_rows` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:182-190 |
-| The two rules registered on import. | `HISTORY_ROWS_RULE`; `HISTORY_ROWS_MERGED_RULE` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py:193-210 |
-| The context flag a leaf publication sets. | "leaf_publication: bool = False" | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:149-149 |
-| A ghost subject in a closed file is refused at master landing. | `test_a_hand_committed_closed_history_file_with_a_ghost_subject_is_refused_at_master_landing` | mcp/tests/test_knowledge_gate_routes.py:599-612 |
-| The sync merge cases. | `test_a_sync_merge_refuses_a_history_row_only_when_the_leaf_s_own_side_had_it_wrong` | mcp/tests/test_knowledge_validator_routes.py:226-272 |
+- The module docstring: the two checks, which files, rows the merge moved. [1]
+- The files the re-anchor check reads. [2]
+- A merge parent's rows, read only when a row disagrees. [3]
+- Every disagreeing row, and whether the merge moved it. [4]
+- The refusing check over every file's subjects and the unmoved mismatches. [5]
+- The report-only check of rows the merge moved. [6]
+- The two rules registered on import. [7]
+- The context flag a leaf publication sets. [8]
+- A ghost subject in a closed file is refused at master landing. [9]
+- The sync merge cases. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the rule reads the validation context's trees only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new file MIK-R09 adds, recording the carried L12 row rule (decision 2026-09-29T06:39:28), the accepted open-files choice of 14:38:47 as refined by review R1 F1 and the sync-merge ruling (16:07:55), R2-1 and the L22 fixture change (17:59:48), and note R2-4. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

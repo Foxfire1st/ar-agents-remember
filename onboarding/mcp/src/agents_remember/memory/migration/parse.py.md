@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/migration/parse.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/migration/parse.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -183,15 +173,15 @@ shipped candidate that is `CITATION_MARK`, `declared_formats` and `parse_artifac
   module or test in the shipped candidate calls, so the declared-format read it performs is available but
   unused.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The parser reads the same corpus the inventory and the mapping registry read, and it answers to vocabularies
 that live in the knowledge schema and the census payload models rather than here. The rows below cite the
@@ -199,37 +189,29 @@ observation it returns, the four declared formats and their measured reasons, th
 citation reader that implement its contract, the two guards that keep its projections inside the closed
 vocabularies, and the two declared names the shipped candidate never reaches.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The parser's own statement of its contract: what it observes, why it classifies nothing, and why a bad artifact is an outcome rather than an exception. | `ParsedArtifact` | mcp/src/agents_remember/memory/migration/parse.py:1-31; mcp/src/agents_remember/memory/migration/parse.py:235-253 |
-| The four outcomes bound by name from the census's own vocabulary, with the unpacking itself as the guard against a moved vocabulary. | `CENSUS_PARSE_OUTCOMES`; `OUTCOME_PARSED` | mcp/src/agents_remember/memory/migration/parse.py:49-54; mcp/src/agents_remember/memory/knowledge/schema_v9.py:78-83 |
-| The four declared formats, each carrying the observed structure that decides it and the measured corpus population behind it. | `SUPPORTED_FORMATS`; `SupportedFormat` | mcp/src/agents_remember/memory/migration/parse.py:144-187; mcp/src/agents_remember/memory/migration/parse.py:132-141 |
-| The one form this parser refuses, declared as an entry with a reason instead of omitted, so the refusal is a recorded decision. | `UNSUPPORTED_FORMAT` | mcp/src/agents_remember/memory/migration/parse.py:61-64; mcp/src/agents_remember/memory/migration/parse.py:176-186 |
-| The declared front-matter vocabulary read as the table's own bound as well as its meaning. | `RECOGNIZED_FRONT_MATTER_KEYS`; `_RECOGNIZED_KEYS` | mcp/src/agents_remember/memory/migration/parse.py:66-81; mcp/src/agents_remember/memory/migration/parse.py:328-336 |
-| The table read that continues only while a key is recognized and breaks at the first row that is not, which is what keeps a card's evidence inventory out of its front matter. | `_read_metadata_table` | mcp/src/agents_remember/memory/migration/parse.py:316-336 |
-| The `doc_type` to format projection with its metadata-table default, so an unnamed declaration stays in the form the parser reads. | `FORMAT_BY_DOC_TYPE`; `classify_declared_format` | mcp/src/agents_remember/memory/migration/parse.py:88-96; mcp/src/agents_remember/memory/migration/parse.py:267-280 |
-| The `doc_type` to artifact-kind projection with its `other` default, and the import-time guard that keeps every named kind inside the census's closed vocabulary. | `ARTIFACT_KIND_BY_DOC_TYPE`; `ARTIFACT_KIND_OTHER` | mcp/src/agents_remember/memory/migration/parse.py:98-115; mcp/src/agents_remember/memory/migration/parse.py:487-497 |
-| The heading read that refuses to match inside a fenced block, so quoted source text cannot name a section. | `_heading_positions`; `_FENCE` | mcp/src/agents_remember/memory/migration/parse.py:366-383; mcp/src/agents_remember/memory/migration/parse.py:117-123 |
-| The citation mark and the closing-quote walk that delimits a body by the artifact's own quoting rather than by parenthesis depth, bounded to the storable width. | `CITATION_MARK`; `_citation_occurrences`; `_body_end` | mcp/src/agents_remember/memory/migration/parse.py:42-44; mcp/src/agents_remember/memory/migration/parse.py:386-408; mcp/src/agents_remember/memory/migration/parse.py:411-438 |
-| The declared fields whose values are references the artifact makes, and the reference assembly that reports them beside every written citation, with the empty location used for content written above the first heading. | `REFERENCE_FIELD_NAMES`; `_references`; `_enclosing_heading` | mcp/src/agents_remember/memory/migration/parse.py:83-86; mcp/src/agents_remember/memory/migration/parse.py:441-468; mcp/src/agents_remember/memory/migration/parse.py:471-484 |
-| The non-parsed row that carries the observed content, its empty read products and the note used when there was no content to carry. | `_unread`; `NOTHING_OBSERVED` | mcp/src/agents_remember/memory/migration/parse.py:500-519; mcp/src/agents_remember/memory/migration/parse.py:125-128 |
-| The UTF-8 observation and the escaped rewrite that keeps a lone surrogate out of a stored field. | `_is_utf8_text`; `_utf8_safe` | mcp/src/agents_remember/memory/migration/parse.py:522-541 |
-| Bounded storage at each write point, with the two widths the shared base declares and a prefix that carries no truncation marker. | `_bounded`; `_read_sections`; `PROSE_MAX_LENGTH`; `LABEL_MAX_LENGTH` | mcp/src/agents_remember/memory/migration/parse.py:592-600; mcp/src/agents_remember/memory/migration/parse.py:339-354; mcp/src/agents_remember/models/knowledge/base.py:20-25 |
-| The outcome vocabulary the parser's states must be members of, and the payload guard that refuses a non-parsed outcome with no evidence. | `CensusParseOutcome`; `_require_unparsed_content_with_a_failed_parse` | mcp/src/agents_remember/models/knowledge/census.py:63-65; mcp/src/agents_remember/models/knowledge/census.py:174-190 |
-| The declared-format classifier and the fourth outcome binding: both are declared in the shipped candidate and reached by no caller. | `classify_declared_format`; `OUTCOME_UNPARSED` | mcp/src/agents_remember/memory/migration/parse.py:267-280; mcp/src/agents_remember/memory/migration/parse.py:49-54 |
-| The one consumer of this module in the candidate: the migration test module imports the citation mark, the declared-format reader and the parser, and asserts the outcomes and the citation keys they produce. | `declared_formats`; `parse_artifact` | mcp/tests/test_migration_census.py:26-30; mcp/tests/test_migration_census.py:178-183 |
-| The inventory module declares the same `doc_type` to artifact-kind projection independently, so the projection exists twice in this package with identical content. | `ARTIFACT_KIND_BY_DOC_TYPE` | mcp/src/agents_remember/memory/migration/inventory.py:322-352; mcp/src/agents_remember/memory/migration/inventory.py:325-329 |
+- The parser's own statement of its contract: what it observes, why it classifies nothing, and why a bad artifact is an outcome rather than an exception. [1]
+- The four outcomes bound by name from the census's own vocabulary, with the unpacking itself as the guard against a moved vocabulary. [2]
+- The four declared formats, each carrying the observed structure that decides it and the measured corpus population behind it. [3]
+- The one form this parser refuses, declared as an entry with a reason instead of omitted, so the refusal is a recorded decision. [4]
+- The declared front-matter vocabulary read as the table's own bound as well as its meaning. [5]
+- The table read that continues only while a key is recognized and breaks at the first row that is not, which is what keeps a card's evidence inventory out of its front matter. [6]
+- The `doc_type` to format projection with its metadata-table default, so an unnamed declaration stays in the form the parser reads. [7]
+- The `doc_type` to artifact-kind projection with its `other` default, and the import-time guard that keeps every named kind inside the census's closed vocabulary. [8]
+- The heading read that refuses to match inside a fenced block, so quoted source text cannot name a section. [9]
+- The citation mark and the closing-quote walk that delimits a body by the artifact's own quoting rather than by parenthesis depth, bounded to the storable width. [10]
+- The declared fields whose values are references the artifact makes, and the reference assembly that reports them beside every written citation, with the empty location used for content written above the first heading. [11]
+- The non-parsed row that carries the observed content, its empty read products and the note used when there was no content to carry. [12]
+- The UTF-8 observation and the escaped rewrite that keeps a lone surrogate out of a stored field. [13]
+- Bounded storage at each write point, with the two widths the shared base declares and a prefix that carries no truncation marker. [14]
+- The outcome vocabulary the parser's states must be members of, and the payload guard that refuses a non-parsed outcome with no evidence. [15]
+- The declared-format classifier and the fourth outcome binding: both are declared in the shipped candidate and reached by no caller. [16]
+- The one consumer of this module in the candidate: the migration test module imports the citation mark, the declared-format reader and the parser, and asserts the outcomes and the citation keys they produce. [17]
+- The inventory module declares the same `doc_type` to artifact-kind projection independently, so the projection exists twice in this package with identical content. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The parser reads one text value it is handed
 and returns a value built from that text, every vocabulary it consults is an imported repository-local
 constant, and nothing here opens a path, reads a remote or reaches another repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the migration's parser. It records the module's whole contract as the file states it: structure reported and nothing classified, every artifact getting one of the census's four outcomes, and no bad artifact raising. Those mechanisms are all cited here too — the four declared formats with the measured corpus population each reason names, the front-matter vocabulary that is also the metadata table's own stopping rule, the fenced-region heading read, the quote-aware citation delimiters bounded to the storable width, the two `doc_type` projections with the two import-time guards that keep them inside the closed vocabularies, and the unelided bounded prefixes every stored value is cut to. It also records two declared-but-unreached names, `OUTCOME_UNPARSED` and `classify_declared_format`, and the identical artifact-kind projection the inventory module declares independently. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

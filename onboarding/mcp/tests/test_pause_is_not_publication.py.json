@@ -1,0 +1,209 @@
+{
+  "path": "mcp/tests/test_pause_is_not_publication.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The twelve modules the pause must not reach: ref transactions, landings, integrate, record-landing, landing-record, the closeout family and direct landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:3cee22c074a1321d04fd58e1890fc02bdd44f6700364e32bb2d89460fd0f26b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLICATION_MODULES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The measurement: module index, dotted-name resolution, `TYPE_CHECKING`-skipping AST dependency walk, and the one-step direct-import reading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:4f58d0a6f6fd60636907f11e02352b1780b00baeea27e85812601679fc37ce88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_module_files"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:eeb4bdf27e42596805bbca51ea415fb98ce28f7d7050a9213d5d9518f728bc74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:d6d16404a9f706899ef34872fe710faf33848e13a8e9ba487e96cf57d4fff04b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_type_checking"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:fac02f418f0bc4a6824db77f3758d563aa0478e2c1208b0303d5b239fc02c8f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dependencies"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:f0c2c2a54c9c0f22ec024ddcbbb750173bfcfb21c641b05c267c96db5ab43555",
+            "locator": {
+              "kind": "symbol",
+              "name": "_runtime_imports_of"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The walk itself, whose docstring records that expanding a module is what counts and that discovery must not stop it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:4a7eef8ccf8a624f54b1b0ed6f83a2a4dd849f9b8dcc059be2c04bfbb95d5de5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_runtime_import_closure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case: disjointness from every publication module, then the three non-vacuity checks and the two named witnesses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:f952656104dd9726ab83c6b0d6ff3d9de4727e7bc3d1a6483f42b3ce4547198d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pause_cannot_reach_any_publication_module"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:08952689a40c3a14ade2a59a0263044c4cfaa9e688951073951b35ac68e8c971",
+            "locator": {
+              "kind": "symbol",
+              "name": "_import_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The method limits recorded in the module docstring: static AST graph, `TYPE_CHECKING` excluded, no dynamic imports, per-module rather than process-wide.\n\nAnchor: \"What it measures is a STATIC, source-level graph\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:e935646181f77aa4258c2b3872052c23777ea3e17440701ab095447dd28c1264",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The route this guard exists to keep the stop away from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a816e4076dcc166e5d7e42c0346f56b8f240b224",
+            "content": "sha256:e08910fde0433cf4e5dd401ba3aeee7fd2d672dced015beb97314466a885e0c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_checkpoint_landing"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The stop module whose closure is measured, and the release authority the closure is required to reach.\n\nAnchor: \"def pause_result(\"; \"def release_atomic_series_selection(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:f21801a8e7d452cfd44fc7ed8dc5b9733905f934f9b0c5294ff4f21b7a58488a",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
+            "content": "sha256:0c7f69d64a9f8f1248742b4e49d3f8555cf399a006d20e811945f7ebad9d17f0",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The lane this module is registered in.\n\nAnchor: \"mcp/tests/test_pause_is_not_publication.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:13097fa856c7a30ea33fb6e87fb9236a60d1e67383850f3c5ec4599801591a78",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 376
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

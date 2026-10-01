@@ -1,0 +1,88 @@
+{
+  "path": "dashboard/src/data/railChatSelection.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Role sets and creation boundaries are explicit by altitude.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02fa36bfa87badf1b9910d1a284f4426b0695914",
+            "content": "sha256:bcaf694ef0b30ea2803c21ab049e0336cd6c5173e0f7dd42cf77c5baafe2022c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SPRINT_ROLE_ORDER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02fa36bfa87badf1b9910d1a284f4426b0695914",
+            "content": "sha256:3abb5984dc4541dd40a9862a4e4167fba7b8caa88d84fc8eb1942a57a1dff961",
+            "locator": {
+              "kind": "symbol",
+              "name": "CREATABLE_SPRINT_ROLES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02fa36bfa87badf1b9910d1a284f4426b0695914",
+            "content": "sha256:e8c58b88f611ca41d71a7f03fd45c47b1198faf1bbd9ecbc692cc7f2c26401e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "MASTER_ROLE_ORDER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reviewer generations are parent-validated before seat selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02fa36bfa87badf1b9910d1a284f4426b0695914",
+            "content": "sha256:2cc1c30888b4dfb5fb5679a7376ea06d5ad793e436f56f4188beef5c365303ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewerIsValid"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02fa36bfa87badf1b9910d1a284f4426b0695914",
+            "content": "sha256:809e19aece91e6334ece6582a852b6d4ea11273a53a4e3314d23d4e09c61f68d",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleSeats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The hook returns topology-specific seats and free-chat state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02fa36bfa87badf1b9910d1a284f4426b0695914",
+            "content": "sha256:406f65ff9457c2e71985ddbcf2366ebd8397842bd778569107ed5f53f54e6268",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRailChatSessions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

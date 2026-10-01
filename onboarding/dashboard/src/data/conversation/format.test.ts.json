@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/data/conversation/format.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The presentation conventions under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88a6029323e7287957c520dd4628636ac80a1a4",
+            "content": "sha256:98c0cbef1b0cdaf405004d83eac2d64d2e7bc1b532c32f4dec65e4fb4fb691ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "humanizeDuration"
+            },
+            "path": "dashboard/src/data/conversation/format.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

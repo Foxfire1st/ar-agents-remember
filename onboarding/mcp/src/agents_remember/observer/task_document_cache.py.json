@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/observer/task_document_cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Task-document enumeration and parsing consumer.\n\nAnchor: \"def _iter_task_document_payloads(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:c48ed41dcd929679cead93e94866b08dc8fc340aacc24edd4170d8a00683bd7c",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

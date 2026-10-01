@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_merge.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_merge.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -62,51 +52,34 @@ A third entry point is the driving half CYCLE-02 added, and it is the reason the
 
 None recorded for this slice. The wiring that `merge_conflicted_stages` completes was a carried limitation of the earlier increment rather than a defect: the requirement had said this module supplies evidence and a callable boundary, not production configuration, and the separately reviewed change that turned it into a driver is the one recorded above.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The base-resolution entry point and its refusal-or-resolution contract. | `resolve_knowledge_merge_base` | mcp/src/agents_remember/application/knowledge_merge.py:59-75 |
-| The merge entry point, including the carried statement that the result holds no compatibility verdict. | `merge_resolved_knowledge_datasets` | mcp/src/agents_remember/application/knowledge_merge.py:78-87 |
-| **The driving entry point: three materialised stages in, one typed settlement out, with the caller's one authored decision passed through untouched.** | `merge_conflicted_stages` | mcp/src/agents_remember/application/knowledge_merge.py:113-181 |
-| **The settlement that replaced the boolean: the only success, the engine's conflict, the typed refusal, and this seam's own reason for a stage the adapter never saw.** | `KnowledgeStageSettlement` | mcp/src/agents_remember/application/knowledge_merge.py:94-111 |
-| **The four reasons a path never reached the adapter, each named instead of collapsed into one `False`.** | `_stage_inputs` | mcp/src/agents_remember/application/knowledge_merge.py:184-220 |
-| **The three commits one conflicted merge spans, grouped because the adapter's base claim needs them together.** | `ConflictCommits` | mcp/src/agents_remember/application/knowledge_merge.py:223-234 |
-| The defect the layer below makes unreachable. | `KnowledgeMergeSeamDefect` | mcp/src/agents_remember/application/knowledge_merge.py:90-91 |
-| The two storage operations this seam delegates to. | `resolve_merge_base`; `merge_knowledge_datasets` | mcp/src/agents_remember/memory/knowledge/merge_base.py:75-105; mcp/src/agents_remember/memory/knowledge/merge.py:133-167 |
-| The request and outcome vocabulary this seam takes and returns unchanged. | `MergeBaseRequest`; `MergeInput`; `MergeOutcome` | mcp/src/agents_remember/models/knowledge/merge.py:212-243; mcp/src/agents_remember/models/knowledge/merge.py:113-124; mcp/src/agents_remember/models/knowledge/merge.py:444-486 |
-| **The authored decision this seam carries without deciding anything about it.** | `AuthoredReconciliation` | mcp/src/agents_remember/models/knowledge/merge.py:175-211 |
-| The two sibling seams this module sits beside. | `write_authorship`; `publish_prepared_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge.py:102-124; mcp/src/agents_remember/application/knowledge_snapshot.py:142-147 |
-|  The layer ranks that make a lower owner consume models rather than this module. | "[package.memory]"; "[package.application]" | layers.toml:206-207; layers.toml:314-315  |
-| **The one non-test importer this module has, and the Git half of the settlement that cannot live here — including the single-path reconcile entry point that carries the authored decision back in.** | `merge_conflicted_stages`; `settle_knowledge_conflicts`; `settle_knowledge_conflict` | mcp/src/agents_remember/worktrees/knowledge_conflict.py:113-181; mcp/src/agents_remember/worktrees/knowledge_conflict.py:240-256; mcp/src/agents_remember/worktrees/knowledge_conflict.py:200-237 |
-| The unit node that drives the conforming merge end to end through the public operations. | "def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(" | mcp/tests/test_knowledge_guarded_merge.py:307-381 |
-| **The integration node that drives the structured diagnosis and the authored reconcile through the real transaction.** | `_assert_knowledge_conflict_is_diagnosed_and_reconciled` | mcp/tests/test_worktree_sync.py:250-338 |
+- The base-resolution entry point and its refusal-or-resolution contract. [1]
+- The merge entry point, including the carried statement that the result holds no compatibility verdict. [2]
+- **The driving entry point: three materialised stages in, one typed settlement out, with the caller's one authored decision passed through untouched.** [3]
+- **The settlement that replaced the boolean: the only success, the engine's conflict, the typed refusal, and this seam's own reason for a stage the adapter never saw.** [4]
+- **The four reasons a path never reached the adapter, each named instead of collapsed into one `False`.** [5]
+- **The three commits one conflicted merge spans, grouped because the adapter's base claim needs them together.** [6]
+- The defect the layer below makes unreachable. [7]
+- The two storage operations this seam delegates to. [8]
+- The request and outcome vocabulary this seam takes and returns unchanged. [9]
+- **The authored decision this seam carries without deciding anything about it.** [10]
+- The two sibling seams this module sits beside. [11]
+- The layer ranks that make a lower owner consume models rather than this module. [12]
+- **The one non-test importer this module has, and the Git half of the settlement that cannot live here — including the single-path reconcile entry point that carries the authored decision back in.** [13]
+- The unit node that drives the conforming merge end to end through the public operations. [14]
+- **The integration node that drives the structured diagnosis and the authored reconcile through the real transaction.** [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the authored decision this layer passes through became a sequence, and the card says why rather than only what.** `merge_conflicted_stages` now takes `reconciliations: Sequence[AuthoredReconciliation] = ()` in place of the single `reconciliation`, forwarding `reconciliations=tuple(reconciliations)`. The parameter is a sequence because a retained merge is answered one conflict at a time: a decision that settles the first conflict reveals the second, and the attempt that answers the second must still carry the first, or the two conflicts alternate forever and the caller is offered a decision it has already made and that has already had its effect. The pass-through boundary the card already recorded is unchanged and was re-stated with it: this layer still decides nothing about a decision, and every conflict no decision names is still refused exactly as it was. **Stamp accounting:** the recorded working candidate is this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`, which is the candidate this reading was performed against; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded, because no commit contains the body as it now stands and no stamp was measured on it. No commit was made.
-
-- 2026-09-20T05:52+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the boolean that threw the diagnosis away is gone, and this card's central claim is rewritten rather than annotated.** `merge_conflicted_stages` now returns `KnowledgeStageSettlement(settled, conflict, refusal, detail)`, so the card records that the driver *reports* instead of collapsing: the engine's typed refusal and its row-level conflict travel out verbatim, and the four ways a path never reached the adapter are named in `detail` (extracted into `_stage_inputs`) instead of being one indistinguishable `False`. The reconciliation parameter is recorded with the exact boundary that matters for a reader of this card — this layer decides nothing about it, the adapter still refuses every row the caller did not name, and the diagnosis is carried rather than re-rendered, because a re-rendered diagnosis is a second implementation of it. A new invariant separates "the adapter refused this" from "this never became a dataset". Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate recorded beside it; the completed closeout still owns the final stamp.
-
-- 2026-09-19T23:20+00:00 — 260915-KS-L31 curator (uncommitted CYCLE-02 change set on `ar/260915-ks-l31-ar`, code base `7dcec036`): **the adapter gained its driver and this card's carried limitation is retracted where the source retracts it.** The module gained `merge_conflicted_stages` and `ConflictCommits` — the dataset half of a conflicted knowledge database's settlement — so the *callable rather than wired* claim is now recorded as **wired, with its Git non-claims intact**: no merge driver, no attribute and no commit were added, and what changed is that `worktrees/knowledge_conflict.py` calls this module instead of an agent composing the two delegating entry points by hand. The invariant that said this module had no non-test importer is replaced by the exact one importer, and the Two-delegations convention now names the structural exception and why it exists (a `worktrees/` module may not import the memory domain, so the identity read can live nowhere lower). The Todos line that carried the unwired status as an increment limitation is retired because the separately reviewed change it named is this one. Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
-
-- 2026-09-19T22:49:08+00:00: Generated citation repair: `merge_resolved_knowledge_datasets` repointed to mcp/src/agents_remember/application/knowledge_merge.py:74-83. No content impact: mechanical anchor-range projection bound to citation source snapshot e67b35357c3610162648ff9c1506b2bd840c93c142fe18de408cd68cfbaf5daa; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new third composition seam. It records the two delegating entry points and the unchanged typed return, the non-claim the ruled design made explicit (**callable rather than wired**: no merge driver, no attribute, no commit anywhere on this path), the absent compatibility verdict, and the carried limitation that — like the two sibling seams — it has no non-test importer in `mcp/src`, because driver activation is a later separately reviewed change. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

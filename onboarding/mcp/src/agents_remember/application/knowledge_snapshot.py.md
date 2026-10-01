@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_snapshot.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_snapshot.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `3332a4ce7029777d49feca22b499350435a9f83c`|
-| lastVerifiedCommitDate | 2026-09-16T11:50:16+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -83,40 +73,32 @@ Nine thin entry points, each a rename of one storage operation onto admitted inp
 None recorded for this slice. The unwired status is a carried limitation of the increment, not a defect this leaf
 left open: wiring a public tool name is a later extension by the packet's own statement.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The admitted-destination constructor that confers no authority by itself. | `admitted_candidate_destination` | mcp/src/agents_remember/application/knowledge_snapshot.py:67-82 |
-| The write destination derived from the candidate layout rather than passed twice. | `candidate_write_destination` | mcp/src/agents_remember/application/knowledge_snapshot.py:85-99 |
-| The three lifecycle delegations. | `create_knowledge_candidate`; `clone_knowledge_candidate`; `open_knowledge_candidate` | mcp/src/agents_remember/application/knowledge_snapshot.py:102-107; mcp/src/agents_remember/application/knowledge_snapshot.py:110-115; mcp/src/agents_remember/application/knowledge_snapshot.py:118-123 |
-| The disposal-authorization delegation. | `authorize_knowledge_candidate_disposal` | mcp/src/agents_remember/application/knowledge_snapshot.py:126-131 |
-| The two publication entry points that share one contract. | `publish_knowledge_snapshot`; `publish_prepared_knowledge_snapshot` | mcp/src/agents_remember/application/knowledge_snapshot.py:134-139; mcp/src/agents_remember/application/knowledge_snapshot.py:142-147 |
-| The read-side publication gate. | `knowledge_publication_state` | mcp/src/agents_remember/application/knowledge_snapshot.py:150-155 |
-| The candidate lifecycle this seam delegates to. | `create_candidate`; `clone_candidate`; `open_candidate`; `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:100-126; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:129-138; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:141-173 |
-| The publication half this seam delegates to. | `publish_candidate_snapshot`; `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |
-| The read-side comparison this seam exposes. | `publication_state` | mcp/src/agents_remember/memory/knowledge/materialization.py:34-99 |
-| The sibling seam this module sits beside, and the provenance envelope it reuses. | `write_authorship`; `Authorship`; `AdmittedKnowledgeDestination` | mcp/src/agents_remember/application/knowledge.py:102-124; mcp/src/agents_remember/models/knowledge/authorship.py:32-60; mcp/src/agents_remember/models/knowledge/context.py:32-37 |
-| The vocabulary these entry points take and return. | `AdmittedCandidateDestination`; `CandidateBaseline`; `CandidateDisposition`; `PublishSnapshotRequest`; `SnapshotPublicationResult`; `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:70-93; mcp/src/agents_remember/models/knowledge/snapshot.py:96-106; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354; mcp/src/agents_remember/models/knowledge/snapshot.py:252-256; mcp/src/agents_remember/models/knowledge/snapshot.py:259-293; mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
-| The composed-path support module that drives this seam end to end. | `build_case`; `create`; `clone`; `publish` | mcp/tests/snapshot_lifecycle_test_support.py:177-205; mcp/tests/snapshot_lifecycle_test_support.py:207-211; mcp/tests/snapshot_lifecycle_test_support.py:213-221; mcp/tests/snapshot_lifecycle_test_support.py:357-379 |
+- The admitted-destination constructor that confers no authority by itself. [1]
+- The write destination derived from the candidate layout rather than passed twice. [2]
+- The three lifecycle delegations. [3]
+- The disposal-authorization delegation. [4]
+- The two publication entry points that share one contract. [5]
+- The read-side publication gate. [6]
+- The candidate lifecycle this seam delegates to. [7]
+- The publication half this seam delegates to. [8]
+- The read-side comparison this seam exposes. [9]
+- The sibling seam this module sits beside, and the provenance envelope it reuses. [10]
+- The vocabulary these entry points take and return. [11]
+- The composed-path support module that drives this seam end to end. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new candidate-lifecycle/publication composition seam. It records the derived write destination that keeps write and publish on one file, the two publication entry points sharing one contract, the two non-claims the ruled design made explicit (this seam creates no Git commit, and no IAS landing is reachable from it), and the carried limitation that — like `application/knowledge.py` — it still has no non-test importer in `mcp/src`, because public tool wiring is a later extension. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

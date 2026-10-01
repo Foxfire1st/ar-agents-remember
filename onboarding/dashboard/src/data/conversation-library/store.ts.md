@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation-library/store.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/conversation-library/store.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:40+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data/conversation-library overview](overview.md)
@@ -72,53 +62,27 @@ focus signal ONLY on exact opened-catalog proof.
 - Preview reads never regress the selection: a preview that resolves after the user picks another row
   is dropped.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The client verbs (list/read/open/status/reconcile) this store orchestrates. | `openConversation` | dashboard/src/data/conversation-library/client.ts:127-135 |
-| The wire types the tracker and views hold. | `OpenConversationOperation` | dashboard/src/data/conversation-library/types.ts:91-110 |
-| The in-stage browser view that reads this store and renders list/preview/open. | `ConversationLibrarySurface` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171 |
-| The sole resume action consuming `beginOpen`/`reconcileOpen` and the `openedForFocus` gate. | `OpenConversationAction` | dashboard/src/panels/session-cockpit/conversation-library/OpenConversationAction.tsx:72-174 |
-| The open-flow (R4/F6) regression suite over this store. | "conversation library open flow (R4 — focus only on exact opened proof)" | dashboard/src/data/conversation-library/store.test.ts:34-136 |
+- The client verbs (list/read/open/status/reconcile) this store orchestrates. [1]
+- The wire types the tracker and views hold. [2]
+- The in-stage browser view that reads this store and renders list/preview/open. [3]
+- The sole resume action consuming `beginOpen`/`reconcileOpen` and the `openedForFocus` gate. [4]
+- The open-flow (R4/F6) regression suite over this store. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Recorded the store's typed task-document launch context while
-  preserving caller-stable request identity and exact-open focus discipline.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T17:52+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 18 citation findings. Converted the
-  eight Logic line-cite parentheticals to cit form with exact anchors/ranges (`ConversationLibraryState`
-  through `runOpenPolls`), and re-anchored + re-ranged the five Repo-Internal References rows (client
-  verbs, wire types, library surface, resume action, open-flow suite). Scoped recheck clean.
-- 2026-07-26T15:40+02:00 — 260718-CHATS-L7 curator: refreshed for the page-level `agentsNote` on
-  `LibraryListView` — `loadLibraryList` carries the previous note through loading/error states and
-  takes the freshest page's note on success; all downstream line citations re-stamped against the
-  post-L7 source. The L7 source is uncommitted, so lastVerifiedCommit* stays on the prior stamp and
-  closeout re-stamps verification.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the reconstructable
-  library store — paged list/preview state, the caller-stable open tracker (`dispatching`/
-  `pollsExhausted`/`openedForFocus`), the bounded escalating poll loop, and the R4 discipline that
-  never marks a row active and focuses only on exact opened proof (F6a/F6b/F6c). Verification is pinned
-  to the leaf base (`0be0099`) because the new source file is uncommitted; closeout owns its first
-  source stamp.
+No applicable cross-repository source was found.

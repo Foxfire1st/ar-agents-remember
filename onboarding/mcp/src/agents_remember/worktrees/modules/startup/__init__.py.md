@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/startup/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/startup/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T00:27+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [worktree modules overview](../overview.md)
@@ -36,20 +26,16 @@ Contract derivation and start result shaping stay separate from the coordinating
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this package marker.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package docstring names start contract, provider, leaf-ref, and result collaborators. | "Worktree-start contract, provider, leaf-ref, and result collaborators." | mcp/src/agents_remember/worktrees/modules/startup/__init__.py:1-1 |
+- The package docstring names start contract, provider, leaf-ref, and result collaborators. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository boundary is owned here.
-
-## Update History
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: created the exact package-marker sidecar and verified it at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.

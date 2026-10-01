@@ -1,0 +1,160 @@
+{
+  "path": "mcp/src/agents_remember/serving/turn_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_observe_alive` records the pane classification; adapter snapshots remain authoritative for persisted state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:bcbd5187cfb150a95fc031e6a6fe1dee0e765ca9948371a20194e8dba961e3a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_alive"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:799cd2e5cceaeae030716cb8cd76e3ee7b4f2a7f19030a4acba2f8d64ac0a35f",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The terminal-paste module defines the shared history-inclusive `capture_pane` wrapper and its bounded history argv supplying classifier input.\n\nAnchor: \"def capture_pane\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:c73371f26b4a8df51693adf8ab0d402a3f6bf49bfc7493b37a65534d6cfca384",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture_pane_argv"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_paste.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:56e1d545eb55ed1cc75a7435db692b70fa51368b62b32f47ce542fed0b940b0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CAPTURE_HISTORY_LINES"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_paste.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cda16388b7cbf89d4163fb5b1cb2fb62b80e6b30",
+            "content": "sha256:7f21033175d8fc710e7d12696694c8295f9c9581ce5314fd06f15f4ed8f9b74d",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_paste.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The classification result is persisted via `TerminalCatalog.record_turn_state`, with `with_turn_state` producing the catalog copy.\n\nAnchor: `with_turn_state`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:4abc01cc854ec9281324ac7cf49d44639a1cb40dda286f700ccbb4e15b36f776",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_turn_state"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The per-harness marker override tables are keyed by the supplied harness id in `turn_state`, with keyed lookups tried before shared patterns.\n\nAnchor: \"key = harness or \\\"\\\"\"; \"_HARNESS_WORKING_PATTERNS.get(key\"; \"_HARNESS_AWAITING_INPUT_PATTERNS.get(key\"; \"_HARNESS_TURN_ENDED_PATTERNS.get(key\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:75636a161d9f2b128b46c50acfe40a9c9f5188ca4861eda4bf3677745c76e081",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify_by_marker_tables"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:2274fcb026e6caf904fb1b1fb4094324667fd066dc5a5e45103bf8cb238476c0",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:990560d6aef6f9737e233e79c1542bc143ef489073b5d444de09428525fc4810",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:d570ddb29d9e11c2a30153195d2da4972522fe7ae2eee1c8de0fd0807dcd7a82",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:7d974f927cb19ab5044d3a5741343b9c9c2a0ac126e7146e7b6a63865821bd57",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

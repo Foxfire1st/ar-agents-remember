@@ -1,0 +1,334 @@
+{
+  "path": "dashboard/src/grammar/Dot.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite declares `ALL_VARIANTS` with the explicit `FALLBACK` member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "content": "sha256:05564ae2982b10ba2b48f196392042f06683b33b1b072ebf9f9d16319de85207",
+            "locator": {
+              "kind": "symbol",
+              "name": "ALL_VARIANTS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The `dot` recipe defines the state/severity color pairs that the glyph tests distinguish.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "content": "sha256:9b465835ee581f451d8970828438dfc43651bb94ec12e65c4941bbba82f024e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "dot"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`LIFECYCLE_STATES` is the composed lifecycle vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:03593dcea707b4ee6a05583a3cc4507d5b13f6e6675c9b59445350e98b773870",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_STATES"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`LIVE_STATES` declares the live lifecycle vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:ac609c9000a57be0454d5aae606cc68bbfe372b0f20faab99ec8a7db9dac562e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIVE_STATES"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`TERMINAL_STATES` declares the terminal lifecycle vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:7b5d61f0f6a98202a5ae07bcfff41c5c6e4dd2931ef587c7be65679752ef3186",
+            "locator": {
+              "kind": "symbol",
+              "name": "TERMINAL_STATES"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The effects-off source comment explicitly keeps the rule unlayered so it wins over the effects layer.\n\nAnchor: \"Unlayered + !important so it always wins over the effects layer.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:bcb3ffa73641c1a7701ce0be35e21850cf69891ec1a8d6e78ed5366ad3cbac67",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The `html[data-effects=\"off\"]` selector is declared here.\n\nAnchor: \"html[data-effects=\\\"off\\\"] *,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:284d9d8f29e4edf764a64141ba53cd62fc163c3aff75290ddb0eaf9a8ba0e571",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The effects-off rule disables animation with `!important`.\n\nAnchor: \"animation: none\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:afc0a74be48ac8051e01d5aa56079b0f06b3229de1ccc0ab1504839150c4403f",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The effects-off rule disables transition with `!important`.\n\nAnchor: \"transition: none\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:6935588978e4999bc8730141ea3282d45a5034b4d27c9b8b74398c942c1beadb",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "`Cockpit.tsx` renders `AttentionQueue`.\n\nAnchor: \"<AttentionQueue\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:0f7040a302449a895f4f48acb0910d4a3b9f17c2f1358d6d1f634e3918c558a7",
+            "locator": {
+              "end": 667,
+              "kind": "line_range",
+              "start": 667
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`Cockpit.tsx` renders `LifecycleList`.\n\nAnchor: \"<LifecycleList\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:1b4c62b2d5ddd73a0c8b767effdb34e6b7b2c2e903ee29e6601a407745cb329b",
+            "locator": {
+              "end": 668,
+              "kind": "line_range",
+              "start": 668
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`markOf` renders one mark and returns the rendered element for assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "content": "sha256:9b4cb9846db623d4e5c023b75d7ae94562bc580cff98795fba8146db1bc1ebea",
+            "locator": {
+              "kind": "symbol",
+              "name": "markOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`appearanceOf` derives the observable appearance key from the rendered mark.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "content": "sha256:6760ef11b3243681ce0bfaa303924149c7ae8cd02e48287b175ffd76ec957843",
+            "locator": {
+              "kind": "symbol",
+              "name": "appearanceOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The suite asserts the wire/recipe vocabulary equality.\n\nAnchor: \"treats exactly the states\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "content": "sha256:bf00d8ae37d16b6d7ef7a5191fc1386beb662cc4d2fad38752e315171286c8f7",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The suite asserts distinct appearances for every variant and the fallback.\n\nAnchor: \"renders every state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "content": "sha256:5395e3b01c75c47d3e8ec5a4437bdf20e8eab0c0d34977b4b5c56f4ca8cb9cbe",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The suite asserts that every variant carries its own ink.\n\nAnchor: \"gives every variant an ink\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "content": "sha256:c02096b249b4d191c6618d8e0d7089d49196afa52f4ea76e308af32a1f6d4db4",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`DOT_VARIANTS = dot.variantMap.variant` is the derived vocabulary this suite imports rather than copying.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "content": "sha256:ab0482c579d3c4f2bc618bd18acc0d0aa39a46ef3e0321030d5e58d36a636d04",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOT_VARIANTS"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`DOT_GLYPHS` is the glyph table used by the dot recipe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "content": "sha256:f21c21409320c8d8d9bb08014f00711f758a7bbf2eb2396daee3d8cfc7ecc901",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOT_GLYPHS"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The `cva` base uses `color: \"muted\"`.\n\nAnchor: \"color: \\\"muted\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "content": "sha256:f983685a9e31955bf2551815f836d4fe7e279662443b10c492b0c090976cf617",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

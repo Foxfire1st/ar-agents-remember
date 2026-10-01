@@ -1,15 +1,5 @@
 # mcp/tests/test_closeout_queue.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_closeout_queue.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:01+00:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -64,136 +54,39 @@ a test that deliberately omits it is testing the refusal, not the happy path.
 
 No file-local implementation change is requested by this reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | — | — |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior. | `enable_direct_execution`; `QueueFixture` | mcp/tests/test_closeout_queue.py:184-443; mcp/tests/test_closeout_queue.py:184-185 |
-| The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from. | `enable_direct_execution`; `QueueFixture` | mcp/tests/test_closeout_queue.py:184-443; mcp/tests/test_closeout_queue.py:184-185 |
-| Master. | `_master` | mcp/tests/test_closeout_queue.py:76-102 |
-| The master builder writes a canonical atomic master document with the given execution nature and one commanded subtask row. | `_master` | mcp/tests/test_closeout_queue.py:76-102 |
-| Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract. | `_leaf`; `task_doc` | mcp/tests/test_closeout_queue.py:105-154 |
-| Judgment row. | `_judgment_row` | mcp/tests/test_closeout_queue.py:157-162 |
-| The judgment-row builder renders one canonical judgment register row for a candidate and priority. | `_judgment_row` | mcp/tests/test_closeout_queue.py:157-162 |
-| Priority row. | `_priority_row` | mcp/tests/test_closeout_queue.py:165-166 |
-| The priority-row builder renders one canonical priority register row for a candidate and priority. | `_priority_row` | mcp/tests/test_closeout_queue.py:165-166 |
-| Judgment table. | `_judgment_table` | mcp/tests/test_closeout_queue.py:169-170 |
-| Priority table. | `_priority_table` | mcp/tests/test_closeout_queue.py:173-174 |
-| Grade. | `_grade` | mcp/tests/test_closeout_queue.py:177-181 |
-| The grade builder returns the priority and judgment id pair the register rows reference. | `_grade` | mcp/tests/test_closeout_queue.py:177-181 |
-| Queuefixture. | `enable_direct_execution`; "Current task/door/projection fixture retained for non-queue lifecycle suites." | mcp/tests/test_closeout_queue.py:184-694 |
-| The retained task/door/projection fixture class that non-queue lifecycle suites construct. | `enable_direct_execution`; "Current task/door/projection fixture retained for non-queue lifecycle suites." | mcp/tests/test_closeout_queue.py:184-694 |
-| Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. | `author_unstarted_leaf`; `start_leaf` | mcp/tests/test_closeout_queue.py:319-441; mcp/tests/test_closeout_queue.py:371-441 |
-| Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. | `start_leaf` | mcp/tests/test_closeout_queue.py:371-441 |
-| Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. | `declare_leaf` | mcp/tests/test_closeout_queue.py:626-655 |
+- Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior. [1]
+- The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from. [2]
+- Master. [3]
+- The master builder writes a canonical atomic master document with the given execution nature and one commanded subtask row. [4]
+- Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract. [5]
+- Judgment row. [6]
+- The judgment-row builder renders one canonical judgment register row for a candidate and priority. [7]
+- Priority row. [8]
+- The priority-row builder renders one canonical priority register row for a candidate and priority. [9]
+- Judgment table. [10]
+- Priority table. [11]
+- Grade. [12]
+- The grade builder returns the priority and judgment id pair the register rows reference. [13]
+- Queuefixture. [14]
+- The retained task/door/projection fixture class that non-queue lifecycle suites construct. [15]
+- Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. [16]
+- Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. [17]
+- Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `author_unstarted_leaf` repointed to mcp/tests/test_closeout_queue.py:319-369. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `start_leaf` repointed to mcp/tests/test_closeout_queue.py:371-441. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `declare_leaf` repointed to mcp/tests/test_closeout_queue.py:626-655. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-15T01:01+00:00 — LCA-L9 R7 current candidate: Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior. Reviewed the uncommitted source; existing verification commit/date and all prior history are retained. This documentation pass adds no test-execution claim.
-
-
-- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
-  `52875e7a`): recorded that `_leaf` now binds `seriesContractPath` alongside `enclosures[]`, and that this
-  is a correction rather than a convenience — the fixture had been modelling the damage state, and four
-  unrelated closeout cases began refusing once a leaf with an exact enclosure address but no master link
-  stopped passing silently (`task-enclosure-binding-master-link-missing`). Stated the rule for future
-  fixtures that author a started leaf. Re-derived every reference range against the current 727-line
-  source, measured with AST (`_master` 77-105 → 78-104, `_leaf` 106-153 → 107-156, `_judgment_row`
-  154-161 → 159-164, `_priority_row` 162-165 → 167-168, `_judgment_table` 166-169 → 171-172,
-  `_priority_table` 170-173 → 175-176, `_grade` 174-180 → 179-183, `QueueFixture` 181-722 → 186-727,
-  `author_unstarted_leaf` 318-369 → 323-373, `start_leaf` 370-441 → 375-445, `declare_leaf`
-  625-655 → 630-659). Verification metadata remains closeout-owned; no execution or acceptance claim.
-
-- 2026-09-13T18:06+02:00 — 260831-LOCR-L36: recorded the fixture's three new workflow-shaped leaf
-  helpers. `author_unstarted_leaf` commands one more canonical leaf without starting its work
-  (subtask row, leaf document, judgment and priority rows, and the `unstarted_leaf_a` id), `start_leaf`
-  starts an authored leaf from its master's **current** tips and creates the real enclosure,
-  worktrees, branches, operation location and curator evidence, and `declare_leaf` declares the
-  closeout door for a leaf that is not yet the master's current one. Re-derived every reference range
-  in this card against the current 722-line source. Verification metadata remains closeout-owned; no
-  execution or acceptance claim.
-
-- 2026-09-06T21:38+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
-
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the fixture profile installation and certificationProfile settings in queue fixtures.
-
-
-- 2026-08-29T11:41+02:00 — Moved structured coherence setup into the shared test-support owner and
-  made door fixtures explicitly republish around their two task-topology mutations. This preserves
-  the production fail-closed validator while repairing fixture ordering. Verification remains
-  closeout-owned.
-
-- 2026-08-29T08:52+02:00 — Upgraded queue fixtures to publish the structured curator-coherence
-  authority through production code. Verification remains closeout-owned.
-
-- 2026-08-26T08:30+02:00 — Replaced the remaining obsolete transitional-queue regression section
-  with the frozen projection-only and door-membership contract.
-
-- 2026-08-26T08:25+02:00 — Removed stale citations to deleted pre-PDLS queue cases and rebound the
-  card to its frozen two-case projection-only surface. No retired selector/lifecycle claim remains.
-
-- 2026-08-26T03:37+02:00 — Generalized the shared queue fixture to independent atomic masters so
-  multiple live series and activation projection are exercised without an exclusive-lane fixture
-  assumption. Verification remains post-Dagger/closeout-owned.
-
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this test card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13: the removed `require_queue_candidate_current` import and
-  its direct drift-test call are gone; the atomic-release mock re-points to
-  `closeout_queue_blocker.require_atomic_master_landed` after the blocker extraction. No scenario
-  changed. Verification remains closeout-owned.
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the segment-graph queue scenarios moved to
-  `test_closeout_queue_segments.py` under the file-size rail (fixtures imported from here);
-  `QueueFixture` gains segment helpers. Verification remains closeout-owned.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-16T04:06+02:00 — Dagger fixture repair: `QueueFixture` now publishes the real runtime configuration at the workspace-owned path consumed by lifecycle operation inputs.
-- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
-
-- 2026-08-15T14:05+02:00 — L3 final targeted-gate repair: shared queue fixtures now render the
-  exact canonical Judgment and Priority Register headings, headers, separators, and rows consumed
-  by production rather than relying on width-shaped Markdown fragments.
-- 2026-08-15T12:53+02:00 — L3 targeted-gate repair: the atomic-series success fixture now proves
-  explicit approved human review, preserving its intended all-prerequisites landing path.
-- 2026-08-15T11:07+02:00 — L3 Dagger repair: made task rows canonical Markdown refs, stopped the
-  negative grade fixture from healing its own corruption, restored exact tree-drift assertions,
-  kept persistence-size forcing stable, and moved commit binding to the integration suite.
-- 2026-08-15T10:24+02:00 — L3 file-size repair: moved the two small model/ownership checks into
-  `test_closeout_queue_models.py`; the fixture and all queue behavior scenarios remain here.
-- 2026-08-15T10:10+02:00 — L3 targeted-gate repair: imported the two split evidence modules
-  directly and asserted their public owners are callable, allowing deterministic gate-scope
-  derivation to select this existing behavior suite.
-- 2026-08-15T09:53+02:00 — No content impact: L3's Pyright repair makes fixture model-validation
-  boundaries and external-memory narrowing explicit; the queue scenarios, failure injection, and
-  assertions are unchanged.
-- 2026-08-15T09:10+02:00 — Created for L3's primary queue behavior and durability suite; verification remains closeout-owned.
+Fixture repositories and protocol doubles do not establish a live external integration.

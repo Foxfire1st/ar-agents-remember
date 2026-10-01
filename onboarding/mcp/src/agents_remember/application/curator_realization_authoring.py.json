@@ -1,0 +1,440 @@
+{
+  "path": "mcp/src/agents_remember/application/curator_realization_authoring.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:b2bd098c5dafb7a1d998c1ba8881064cf9811703559d976539eee51927decb9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_authority_route_problem"
+        }
+      },
+      "id": "RLZ-6HBW7626",
+      "invariant": "INV-E8655Z54",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Recognises the same word, and a non-string value, in the entry's authority block and reports it as an entry-level problem.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:2359fb8b3985149c2d6b7b4a47e5686a3860c7daedf6204c6fcf4347c18ccbc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "realization_refusal"
+        }
+      },
+      "id": "RLZ-C4KJBVRZ",
+      "invariant": "INV-J7179RG5",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Asks the entry-level values first and then each target check in order, returning the first failing check with every target that fails it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:2359fb8b3985149c2d6b7b4a47e5686a3860c7daedf6204c6fcf4347c18ccbc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "realization_refusal"
+        }
+      },
+      "id": "RLZ-GX6ZQZ1F",
+      "invariant": "INV-H6A6JS63",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Asks the absent-rationale check over every target and composes the realization_rationale_absent refusal naming the entry and each unexplained target.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:368ee13d8adad9b2085d23765ba04b72f401014d224b07d6f00976e37f4734af",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryRealization.for_target"
+        }
+      },
+      "id": "RLZ-K7PC4SVX",
+      "invariant": "INV-CKHJ0M7J",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Resolves one target's role and rationale from its own keys first, then the entry default.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:dfab6891c14d8fbf67c94746a3159982a5224827901af30fe66960fc79af37d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_absent_route"
+        }
+      },
+      "id": "RLZ-PM09BFJR",
+      "invariant": "INV-E8655Z54",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Recognises the placeholder word on a target so the entry is refused before the writer would read it as a route path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+        "content": "sha256:fa9bc1eec6c185a62524511625b1fd471604fd103c84a939f27203ea13aea331",
+        "locator": {
+          "kind": "symbol",
+          "name": "TargetRealization"
+        }
+      },
+      "id": "RLZ-YSH1QP6T",
+      "invariant": "INV-VVMNM9B6",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Carries the target's own stated keys separately from the resolved values, which is what the digest reads.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement: per target first, checked at admission, no route spelled by a placeholder, and what it does not cover.**\n\nAnchor: \"Per target first, then the entry's explicit default.\"; \"What this does not cover.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:774a6bda528e8142a67a8562fd0000838a383fe4d1f412bb71b175607a8fd9d2",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The five refusal codes and the producer-facing keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:42f6a771f63f969afe694170365dcf17655ca450d6a9bdd7ef2c1bd856b66712",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_RATIONALE_ABSENT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:1b7bd42e279b55df8a828c472aa723d3d26fe2aab9f0e360034835a6d56ad397",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_ROUTE_ABSENT_LITERAL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:3d9a752e2857c2518cd9edddd8eaf66a2c8e79bd544b4849bee1dc8c71a82995",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTRY_RATIONALE_KEY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:d2f6d9678af420b8793094de2a4a82d86c8f4937976b94dc0a21cf9252a157df",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGET_RATIONALE_KEY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Values are trimmed text or nothing; a non-string is never rendered, and an unknown role is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:d7d5169db983a350d2a7a640bae0764455d6ae432c9761392d441e74ccb41a89",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stated"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:bfc774b1103f77f24f762f4ced9cfe9638fac09bd348333f5f16143ea0700c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_vocabulary_role"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:bdc24aaf00f7a1dde75c6ddd8fed60ca9ef396c966aa25bf05db93dd4fdea235",
+            "locator": {
+              "kind": "symbol",
+              "name": "_field_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The placeholder word `absent` is matched in any case once trimmed, at a target and at `authority.governing_route`, where a non-string route is also refused.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:709b18e5347be325ab75e2082c4bb477cb16f7e19da30fc3c144eaf8e18b1cd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_names_absent_route"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:b2bd098c5dafb7a1d998c1ba8881064cf9811703559d976539eee51927decb9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_route_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Resolution: target first, then the entry default, halves independent; only target-stated keys enter the digest.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:fa9bc1eec6c185a62524511625b1fd471604fd103c84a939f27203ea13aea331",
+            "locator": {
+              "kind": "symbol",
+              "name": "TargetRealization"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:5149ddf521458300efcfb77695e2d638aeb8491702db8eecd9dba2e396bd4f52",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryRealization"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:368ee13d8adad9b2085d23765ba04b72f401014d224b07d6f00976e37f4734af",
+            "locator": {
+              "kind": "symbol",
+              "name": "for_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The ordered target checks and the refusal that names every failing target.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:6ccd08808a534fd94a4faf53b92430404d60dacda57090ec2802f6826e52c57b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TARGET_CHECKS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:2359fb8b3985149c2d6b7b4a47e5686a3860c7daedf6204c6fcf4347c18ccbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:6c5ef23ec1a55d807028755b1437ea752d6a535a41c5ae7cc875bbf8d0ad44de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_describe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shipped role vocabulary and the unassessed-edge member, and the stored prose limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:04ce117f509879f455d40f1f713e5577467d3d7b176c100922cc2680c0911db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationRole"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:d3b62bdeb910a01fc5c180dd90c8fb5154489a9e4b8e100708ef060621d373e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCLASSIFIED_ROLE"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROSE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The callers: the entry fields read the default, admission asks the refusal before `_creation` (committed allocations exempt), and each planned target binds its resolved realization.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:0d4b25cedf6e75983d86ec3cfaeb0a67f9e0fd8e6cdb4200e0a052d2c6583d93",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EntryFields"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:50de660e84e15141163f6c6b0677d2003d8c0c22d0553f029505098e6a769937",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_creation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:96a7dcb2ce8e6076bd10664bfd033a301597b018732b441c89410f5a05e96cc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_target_inner"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The cases proving each rule through the real writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:18e0b9ecde0d0cec7983a5d3ffb1bab1bbc2ab38544c53282b00660aff8335f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_target_of_one_entry_stores_its_own_authored_rationale_and_role"
+            },
+            "path": "mcp/tests/test_curator_realization_authoring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:6270b4a53b25d006055bc52d293bded5c8059d38c18d786d4dfc293f2eb4088c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_value_that_is_not_text_an_unknown_role_or_an_over_long_rationale_refuses_its_own_entry"
+            },
+            "path": "mcp/tests/test_curator_realization_authoring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3f5daacaaa9d44f63e15ff1a2bea06385d14f0ef",
+            "content": "sha256:71a8e6e2ce56ae4dae9c0a20e83d290f5fc3d2a9e554d70e821bd679cc64a0c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_word_absent_is_refused_as_a_governing_route_in_any_case_once_trimmed"
+            },
+            "path": "mcp/tests/test_curator_realization_authoring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

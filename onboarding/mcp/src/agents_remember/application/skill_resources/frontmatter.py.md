@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/skill_resources/frontmatter.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/skill_resources/frontmatter.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -80,55 +70,32 @@ because the catalog wraps it into an `UnreadableSkill` reason that an operator r
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 Two specifications meet here: the Agent Skills specification requires a skill's root file to open with
 YAML frontmatter carrying at least `name` and `description`, and SEP-2640 requires that block to be
 republished verbatim as an entry's `frontmatter`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| An entry's `frontmatter` is a **verbatim copy** of the skill's `SKILL.md` frontmatter rendered as JSON — "every field the author wrote, not a curated subset". | `SkillFrontmatter`; `_MappingReader` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:40-46; mcp/src/agents_remember/application/skill_resources/frontmatter.py:97-100 |
-| A host MUST NOT honor a skill's declared `allowed-tools`; the value is an observation. | `ALLOWED_TOOLS_KEY` | mcp/src/agents_remember/models/skill_resources.py:45-46 |
-| The entry shape the verbatim map feeds. | `entry_document` | mcp/src/agents_remember/models/skill_resources.py:115-130 |
+- An entry's `frontmatter` is a **verbatim copy** of the skill's `SKILL.md` frontmatter rendered as JSON — "every field the author wrote, not a curated subset". [1]
+- A host MUST NOT honor a skill's declared `allowed-tools`; the value is an observation. [2]
+- The entry shape the verbatim map feeds. [3]
 
 Canonical live reference: <https://github.com/modelcontextprotocol/modelcontextprotocol> (the skills
 extension specification, SEP-2640).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The parse refuses a missing or unclosed block and then requires usable `name` and `description`. | `parse_skill_frontmatter`; `_frontmatter_block` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:52-81 |
-| An empty description is refused because it is the field discovery surfaces before a body is loaded. | `parse_skill_frontmatter` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:52-71 |
-| The nested mapping reader that makes the returned map verbatim rather than a scalar subset. | `_MappingReader`; `_indent_of`; `_content` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:84-100 |
-| Unimplemented YAML constructs are refused by value prefix rather than guessed. | `_reject_unsupported`; `_UNSUPPORTED_PREFIXES` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:32-33; mcp/src/agents_remember/application/skill_resources/frontmatter.py:174-185 |
-| The scalar and flow forms the reader does implement. | `_scalar`; `_flow_mapping`; `_split_flow`; `_unquote` | mcp/src/agents_remember/application/skill_resources/frontmatter.py:187-249 |
-| The consumer that turns a frontmatter refusal into a recorded unreadable skill and carries the verbatim map onto the entry. | `_read_skill` | mcp/src/agents_remember/application/skill_resources/catalog.py:181-213 |
-| The frontmatter-derived tool names that reach the registry as declared, never granted. | `declared_allowed_tools` | mcp/src/agents_remember/models/skill_resources.py:270-285 |
-| The case that executes the verbatim-frontmatter requirement end to end. | `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter` | mcp/tests/test_capsule_serving.py:1044-1075 |
+- The parse refuses a missing or unclosed block and then requires usable `name` and `description`. [4]
+- An empty description is refused because it is the field discovery surfaces before a body is loaded. [5]
+- The nested mapping reader that makes the returned map verbatim rather than a scalar subset. [6]
+- Unimplemented YAML constructs are refused by value prefix rather than guessed. [7]
+- The scalar and flow forms the reader does implement. [8]
+- The consumer that turns a frontmatter refusal into a recorded unreadable skill and carries the verbatim map onto the entry. [9]
+- The frontmatter-derived tool names that reach the registry as declared, never granted. [10]
+- The case that executes the verbatim-frontmatter requirement end to end. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter` repointed to mcp/tests/test_capsule_serving.py:1044-1075. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: refreshed this card against the
-  settled candidate. **The subject changed shape**: this module is no longer a bounded two-field scalar
-  reader but a YAML-**subset** reader whose product must be the *verbatim* frontmatter SEP-2640 requires
-  an entry to publish ("every field the author wrote, not a curated subset"). Recorded the implemented
-  forms (block mappings, block sequences, nested indentation, flow sequences/mappings, quoted and plain
-  scalars, comments, block scalars), the deliberate refusal of anchors, aliases, tags, explicit keys and
-  merge keys by value prefix, why the refusal is a feature rather than a limitation (a guessed expansion
-  would be published as the skill's frontmatter), and that the returned map is now `fields` carrying
-  every key. Re-anchored every range against the current 251-line source and recorded that the module
-  is substantially larger than the card's first version described. Verification metadata remains
-  closeout-owned; no acceptance claim is made.
-
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator: created the card for the skill root-file frontmatter
-  reader. Recorded the bounded scalar subset (no YAML dependency), the total-read contract that reports
-  rather than guesses, and why an empty description is a refusal rather than a cosmetic check. Its
-  "scalar subset" description is superseded above.

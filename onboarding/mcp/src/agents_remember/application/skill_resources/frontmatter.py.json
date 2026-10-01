@@ -1,0 +1,290 @@
+{
+  "path": "mcp/src/agents_remember/application/skill_resources/frontmatter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An entry's `frontmatter` is a **verbatim copy** of the skill's `SKILL.md` frontmatter rendered as JSON — \"every field the author wrote, not a curated subset\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:74e650b601df49cd2a9d455fec2d33262f98ae7fb356b4fc6458bfa7ab19fd10",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillFrontmatter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:b3ae921b012b93712d2d6ade83499e5f77db32809ca6da4e1665b836007c3963",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MappingReader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The frontmatter-derived tool names that reach the registry as declared, never granted.\n\nAnchor: `declared_allowed_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:739ea9814e5104ad474541966c82470c4cb545e7f7647280c3ef6f713ff5a955",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The case that executes the verbatim-frontmatter requirement end to end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:5648d5b6e1c8200caad56717af8affec2584f1fd9a7a9ceee33399aeaa5805c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:61c08aaf49ada80c0fa72a39ba8af18ecb253d6e8dc875aea59002e16dca45d0",
+            "locator": {
+              "end": 1075,
+              "kind": "line_range",
+              "start": 1044
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A host MUST NOT honor a skill's declared `allowed-tools`; the value is an observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:e36e546844a9802d8c37528b854e1cab22d45f0aedc20cbdde540eab9a5a5d41",
+            "locator": {
+              "kind": "symbol",
+              "name": "ALLOWED_TOOLS_KEY"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The entry shape the verbatim map feeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:8b3460de256e9488c1bcf005764605e8fa56496b0c59d589424108ae83898a9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_document"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The parse refuses a missing or unclosed block and then requires usable `name` and `description`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:d5f1bd374fccc72a69be7c9f9de4b903730e978efd6b27b402476e303e0573f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_skill_frontmatter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:cb78f986e11f368832c2ffa0e648608c5eedd67c555f537bfd9315f87e3413b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_frontmatter_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An empty description is refused because it is the field discovery surfaces before a body is loaded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:d5f1bd374fccc72a69be7c9f9de4b903730e978efd6b27b402476e303e0573f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_skill_frontmatter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The nested mapping reader that makes the returned map verbatim rather than a scalar subset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:b3ae921b012b93712d2d6ade83499e5f77db32809ca6da4e1665b836007c3963",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MappingReader"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:be857a969aae5cae583c2819044466d270c4886061383000112a4a88adb11981",
+            "locator": {
+              "kind": "symbol",
+              "name": "_indent_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:d87747ccf4fbf96702d5f35d92359bb30b0f83c4e3b7df8dde578464c5d7a213",
+            "locator": {
+              "kind": "symbol",
+              "name": "_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Unimplemented YAML constructs are refused by value prefix rather than guessed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:6483435579e4529a351cca852a467f8b4534b70b4aa55aefca2636e84513d201",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reject_unsupported"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:16e57f8f097fd631a0e4f8f3cc3a773bac8d362936fa96473735ddda3c3a0a16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNSUPPORTED_PREFIXES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The scalar and flow forms the reader does implement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:ba559d7f28c3e2c65d09261165d6e97568359c6903c70bd8e4ec76b608dfdfd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scalar"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:1c7d02a832923c5ee5f45b3e6a20ff2ef3c200014e23e04a6ed12a2df4c436d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_flow_mapping"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:8a33347334b2ea28f66d56c301b4043d34cca9bf673033ca418a26e877139e4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_split_flow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e6705cb58a4f8f3e0d16f0cfd2d7f4934ad289",
+            "content": "sha256:74b60088430622ff4ad571df397b8ffae996636e4dde9bdbc4ebf4f3834e6475",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unquote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The consumer that turns a frontmatter refusal into a recorded unreadable skill and carries the verbatim map onto the entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:e8f6794d60c047556b9d74e56c2a4c78635e4238a8403491ad8bd4ad6c5e6a58",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_skill"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

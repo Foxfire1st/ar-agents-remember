@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Application entry point validates coordination-contained paths, delegates to the worktree finalizer, and then performs configured completion cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:04d588697a60102cb96b6cf63363498e99e180b6e2eb93a23e493ae0ff667bbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:bd615bf9cee99101d5cf2868864ff94f4300bf4f1365528dac1f7a8e0c6c1feb",
+            "locator": {
+              "end": 904,
+              "kind": "line_range",
+              "start": 855
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared payload helper is `_tool_payload`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The response boundary is `complete_tool_response`.\n\nAnchor: \"def complete_tool_response\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:0adcc22acd173d20fcefd6623029adb43b369f2cccbff8eb2a5a3b69a05c721b",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The response model is registered in the public tool registry.\n\nAnchor: `lifecycle_finalize_task`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

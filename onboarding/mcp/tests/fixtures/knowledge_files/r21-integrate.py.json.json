@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/fixtures/knowledge_files/r21-integrate.py.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture names its schema.\n\nAnchor: \"ar-onboarding-file/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c9a9a46d095f822da311850af0f254aea89d937",
+            "content": "sha256:30ab7f8679dc27777066d17178e55bcc5b043e1dd4c681f06a041ce9796ae30b",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Its distinguishing identity.\n\nAnchor: \"RLZ-4E1C9A\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c9a9a46d095f822da311850af0f254aea89d937",
+            "content": "sha256:8fac89bfebea32a5d2b6b4b7c752232b070dfbc4fd7840651936892f4cf8f0ba",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test maps this file to its model.\n\nAnchor: \"r21-integrate.py.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b77ecb71863271304d8626c32c5a96b3930bf4cc",
+            "content": "sha256:9035f5fd1bb64bc7690abcbaa2d9e6f7eeb61ab5f81873c9eff8117bd327bcb0",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,474 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The closed seed union: five members, one per row of the requirement's table, carrying no filter, sort or display version.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:4f394cc4a8879809200df9d78628c4140ed36785ccd451b9ff5fa56aeea4646e",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadSeed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PathSeed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:adc5509034837f993148330d817045f02660fa9a4eecf9dc0abe0a37b97c618b",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantIdentitySeed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:0d0be978810b91fae0eedc12d0ff10ed8713531826220ec0564a59c9f3d5f8d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantRevisionSeed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:4951817fc8e27e0e3ac66f940cd9b1a57106958bed0ce1724563d371027bbd4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyIdentitySeed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:25a9e3906a4c0d79f5309c86fc00da40124dd8435001ed83e1251a3c7a92a6f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRevisionSeed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The digest binding one seed into a selection identity.\n\nAnchor: `seed_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:3a857e2bed368a7a2367a8a3963ae25dcac17408b92b0712bc21ed1b38b83294",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 500
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The digest sealing one read context's whole resolved identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:ba93ba2e259ca87302d01b641a97840c91d4d79651cb6030882de2df1e6645b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_context_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The one snapshot a page declares, sealed with that digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:ff1d0757634a679ac3562e14b6bebc4f9374872ace1d66284c10fa9bff5c0e56",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_of_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The nodes that measure the model invariants themselves: the corrected page arithmetic and the truncated page's honesty.**\n\nAnchor: \"test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness\"; \"test_a_page_budget_of_one_item_still_advertises_the_second_location\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:5c200ca49c45669de000675c5a401a09add06308a336302714740e7a633f8b1c",
+            "locator": {
+              "end": 871,
+              "kind": "line_range",
+              "start": 838
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:a2c619472ca9b368f23fa40b61a0136e2820f31179365be08f68ed63506924fb",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 547
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The shared path-shape rule this module's seed applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_plain_git_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The read context and its two construction rules** (one namespace, and an all-or-nothing source resolution), with `task_ref=None` a supported state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:1451c4c8bdaf6008308b301603f1897e473a9c954c1678f9207c71aab1944f8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declared policy version, budgets and execution bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:9b2ce949d089c615aee2c784b6707dee74a54f8fe1fdc73112a59cae790ffb13",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_READ_POLICY_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:4db7afbdd640a98a7ef74d0c798a5e853656773f96fe337e9aec80cc3d87c1ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_PAGE_ITEMS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:fe54ecfd1ec26b8d28d2ba0af9fe2def37a71f5d037f359277019f5e0444f987",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_PAGE_UTF8_BYTES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:8adde364bdcb8bf1323cbf6e5775b8d93c5c33ee91734fbda8086d11e1c5d0c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SELECTION_ITEM_LIMIT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:f3cb1bd7f572fa66e1810151147f0becc5e5e03ef25b799505dc9b2170d5352a",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadBudget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The correction this leaf's review sealed: the counts describe one walk, and the model refuses its own arithmetic contradiction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:ad322a74d9200f564ac69b49ebde036ccc7fdbb3f8f96cdd77548304e55771bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadCounts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The page that cannot present a truncation as complete, and the result that is a page or a refusal and never both.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:4055af7795c0dcea5c21ae46bae75dca9bba1763dba9518d0ae7bdb1673b003c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadPage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:a7b0c10886da65e1e962610c2c78e37f0e6c331a7c34481b8e4922c505104958",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The cursor's binding fields, and the only encoder/decoder pair.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:ad9d9cdb1ea6f992a55274420cb50e6bb9536973c12bfd022bad8ad79023c9c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadCursor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:9d7200d6e9c209972d989d0811c84f10229d2773cbdc85e4c9414c72facbc113",
+            "locator": {
+              "kind": "symbol",
+              "name": "cursor_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:85e2f7d63bbc21aa28563d4eb522e803ae055e4663c7e4b169604e27a3cdecf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "continue_from_cursor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one homogeneous item model and the advertised frontier entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:229d6951f9312db22ea5864e71458b0204ad596ddbe42d4e9aec450b33f8598f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadItem"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:cda3fa3e8222c366d7595999a8f284daa8df65ebeaac2148223df3cc50b03b25",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdvertisedExpansion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:1c005734bc94b9005c974f22d767cff7055e3fd92512c7267a10da4bb7ea9479",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionReason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:3f065d2f769fa09d183db40c880c4a860a093f93f1523db320cc4bbf8e2203f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadRevisionGroup"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:286218276a95dcf92c40ffa37cfa8f7ea95f215d36bf56d5a22a6b0e1e6032d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectlyContainingFamily"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The anchor observation, now declared in its own module with the structured `resolved_ranges` field, and the import that re-exports it here.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:94101c434ec37600081cbe91b9d6a933676f9cd18397ca40c0d433c775a829d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorResolution"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:00df60683c6562a39fed1cefd04740a3bdd3694504bcac425212fb50f8a370f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_ranges"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:66cc3f65f03b02a10401d323c95df03ea60e255b5799c9aac7cb625631df15c7",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The seven-member anchor vocabulary, declared in `read_anchor.py` and still published through this module's `__all__`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:bac0ca502dab452e2e32d5cdc45f6bf068b406df36d0d6215d795e3ce17c7f58",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorResolutionState"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:e7d5704be8345468c87cea31bd2c77dc562def2e745391ca4d71fe5bf74b0583",
+            "locator": {
+              "kind": "symbol",
+              "name": "ANCHOR_RESOLUTIONS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:20c97a49a5d4d740aa9b5052f8218084cc3cdd93754ccaf1708c0dfef88b021a",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

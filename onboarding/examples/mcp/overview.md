@@ -2,12 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| doc_type               | `route-local-overview`                     |
 | sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-09-05T07:05+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
 
 ## Purpose
 
@@ -63,51 +58,3 @@ The historical L9 edit renamed its layer heading from `### Controller` to
 documentation-shaped example content, not a runtime input.
 That historical heading-only scope does not describe later changes: CCR subsequently added
 the repository certification-profile reference described above.
-
-## Update History
-
-- 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added current certification-profile reference and made old L9 unchanged-settings statement explicitly historical. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
-
-- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: route impact: re-read the examples/mcp body
-  against the staged example change; the route body records the rename and confirms the settings
-  template is unchanged. Verification metadata remains pinned until closeout.
-
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1: the authority example now ships
-  `autoCloseCompletedSeats:true` with both existing edge gates.
-
-- 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: the coding-guidelines example renamed its
-  `Controller` layer heading (and anti-pattern 7) to `Application entry point` to mirror the
-  `controllers/` → `application/` move; `settings.example.json` is unchanged. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact: the settings template's `retirement`
-  example now shows `autoLandOnIntegration`/`autoLandOnFinalize`, matching landed archive behavior;
-  old `autoRetire*` names remain parser aliases only. Verification metadata pinned until closeout
-  stamps the HFX2-L11 commit.
-
-- 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (docs-parity fold-in, master-exit Finding
-  2): the settings template gains the `retirement` block
-  (`autoRetireOnIntegration`/`autoRetireOnFinalize`, both `true`), closing the parity gap between
-  HFX-L8 (which parsed the setting) and its docs (which never shipped it, unlike L7's
-  `providerDegradation`). Verification metadata pinned until closeout stamps the HFX-L12 commit.
-
-- 2026-07-08T01:35+02:00 — 260707-HFX-L7 route impact: the settings template gains the
-  `providerDegradation` block (enabled/failSafeEnabled/memoryDegradedRatio/memoryCriticalRatio)
-  illustrating the new provider degradation detector's settings surface, shipped enabled-by-default
-  matching the conservative-default critical failsafe requirement. Verification metadata pinned
-  until closeout stamps the HFX-L7 commit.
-
-- 2026-07-06T23:06+02:00 — 260703-L13 route impact: the settings template drops the L4
-  `orchestration.gateDelegation` block (moved to the global agentic settings file; the
-  authority-file value is only a warned one-cycle legacy fallback) and the removed
-  `memorySettingsIncludes` key. Verification metadata pinned until closeout stamps the L13
-  commit.
-
-- 2026-07-06T12:10+02:00 — No route impact: reviewed during the 260703-L10 one-vocabulary sweep — the settings/guideline examples carry no lifecycle vocabulary at all, so nothing changed on this route.
-- 2026-07-04T12:32+02:00 — 260703-L4 route impact: the settings template gains
-  the opt-in `orchestration.gateDelegation` shape, shipped as all-human by
-  default. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-03T11:50+02:00 — 260703 L2 route impact: the settings template gains the `dashboard`
-  object (autoStart/port, shipped at defaults-off). Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-11T14:12+02:00: No route impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in files on this route; route structure and overview content are unchanged.
-- 2026-05-31T12:30+02:00 — Noted new top-level `benchmarksEnabled` flag (default `false`) in `settings.example.json` (1.0.0 review remediation, F2).

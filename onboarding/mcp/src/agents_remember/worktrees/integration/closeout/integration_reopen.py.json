@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/integration_reopen.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`completed_integration_reopen` evaluates the two actual output commits against their source branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ddfcf4d2710d11362f8d847d2588846923ab80",
+            "content": "sha256:62f704cac6900dbfd1b4e43abecc352e11a895eb1038917191e81657f399f7e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "completed_integration_reopen"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_completed_memory_is_unlanded` tests changed memory content and ancestry of that same content commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ddfcf4d2710d11362f8d847d2588846923ab80",
+            "content": "sha256:b2dadab64589901aea0924d3b60418f336ddc0bb2bbdcdee9cc7116b2d1a0da5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed_memory_is_unlanded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Preview distinguishes prospective code and memory reopen effects. (`preview_integration_reopen`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ddfcf4d2710d11362f8d847d2588846923ab80",
+            "content": "sha256:3e9d441c541d853d81afa71cb4d64be8b65044c26d0d5c5ec9a4b266de81be89",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_integration_reopen"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Completed output is evaluated per code and memory leg. (`completed_integration_reopen`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ddfcf4d2710d11362f8d847d2588846923ab80",
+            "content": "sha256:62f704cac6900dbfd1b4e43abecc352e11a895eb1038917191e81657f399f7e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "completed_integration_reopen"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Memory reopening requires changed content and an unlanded memory-content commit. (`_completed_memory_is_unlanded`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ddfcf4d2710d11362f8d847d2588846923ab80",
+            "content": "sha256:b2dadab64589901aea0924d3b60418f336ddc0bb2bbdcdee9cc7116b2d1a0da5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed_memory_is_unlanded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

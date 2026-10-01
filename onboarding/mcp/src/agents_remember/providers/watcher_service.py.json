@@ -1,0 +1,35 @@
+{
+  "path": "mcp/src/agents_remember/providers/watcher_service.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `run_configured_watchers` (lines 16-43) — Run one watcher action against temporary settings derived from live config..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25f5e93613f68f82f04faf97634be24ddde454a3",
+            "content": "sha256:884247cd813565c533d3d9d98a1deec69b752a7afb8a32372f7fc4dcb9c70d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_configured_watchers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25f5e93613f68f82f04faf97634be24ddde454a3",
+            "content": "sha256:c0581c61f810a18f090603803749bf6b1a0e7bb631ec5b8463ca4fbc2720449e",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [],
+  "exclusions": [],
+  "id": "INV-GRVXS8R9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: The L27 landing ran the sync route and recorded 6 sources x 9 copies rewritten plus the 9 packaged c-14 copies created, all ten byte-identical; the script's own check mode is the divergence report."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "18d6035a-b0c3-4f7e-81bc-d77aa6b37ca0",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The repository's skill tree is the canonical instruction source and every generated copy of it, in the packaged package-data tree and in each harness starter package, is produced by the repository's own sync script, so a copy edited in place is reported as divergence rather than accepted as a second source.",
+  "status": "proposed",
+  "supersedes": []
+}

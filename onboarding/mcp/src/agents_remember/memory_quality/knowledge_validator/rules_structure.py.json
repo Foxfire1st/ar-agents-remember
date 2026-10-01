@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shape keeps the layout marker; canonical formatting is its own rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68aecac834f2ca5fdc4107ed1cd253a0771a0f0",
+            "content": "sha256:48d006ecf85d757e05e752706d88c2e109ab84a67268da183ca9c8e982454d19",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_shape"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c68aecac834f2ca5fdc4107ed1cd253a0771a0f0",
+            "content": "sha256:bec594c622f8f4be4bd55dd65542cc001a78d716f13151ff021f8d3fe8fddb86",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_canonical"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unique IDs across records and entries; a merge duplicate is a conflict naming both files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68aecac834f2ca5fdc4107ed1cd253a0771a0f0",
+            "content": "sha256:9deb3eb98438c9d7278f38b6aad1d32d4a1f56aa74f1bda6d22cd549dbbd228e",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A relationship on the wrong side is a rule-4 refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68aecac834f2ca5fdc4107ed1cd253a0771a0f0",
+            "content": "sha256:c4c7be9cd597c1072bfcecaa280e7f0348f976327cd73211ef4907d48c0a280e",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_single_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An unconverted base is refused unless this is a standalone conversion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68aecac834f2ca5fdc4107ed1cd253a0771a0f0",
+            "content": "sha256:55432f9928538cfb9e5f3703a3df61dbc47072e2b3c264a852419dfa4c720960",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_bases_converted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A closed history file is frozen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68aecac834f2ca5fdc4107ed1cd253a0771a0f0",
+            "content": "sha256:0e3a0a20ff9d0236cba68696814717b4e55f383b445058858cf9557d2bbcb4b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_history_frozen"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The eight registered structure rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68aecac834f2ca5fdc4107ed1cd253a0771a0f0",
+            "content": "sha256:37a949b8d928e8a4a6aa537a4a70eeedf40f087d6886c7277aa4fbee20d49bba",
+            "locator": {
+              "kind": "symbol",
+              "name": "STRUCTURE_RULES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Duplicate IDs after a merge are a conflict naming both files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:ec3057f0f50f72b2665253fd96380574eec7c26422d70eabd928dee46f107182",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_ids_after_a_merge_are_a_conflict_naming_both_files"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A closed history file is frozen, including deletion and closure in one merge parent; since MIK-R09 its trees keep the retired subject `INV-RET1R3` (records are never deleted, rule 3), assertions unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:1d507a0b00204f774835f0a32174e0897627d28c7a84aa3c4077b1045aa65f29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closed_history_file_is_frozen"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

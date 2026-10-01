@@ -1,15 +1,5 @@
 # dashboard/src/dev/ScenarioPlayer.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/dev/ScenarioPlayer.tsx`           |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-19T23:58+02:00                           |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -52,25 +42,11 @@ copy — that is the whole point (the integrated motion is what's being verified
 Timers are cleaned up on every effect re-run (no leak across seeks). It owns transport only; the frame
 content (projections/captions/durations) lives in `scenarios.ts`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `applyFrame` snapshots + replays a frame into the real store. | `applyFrame` | dashboard/src/dev/ScenarioPlayer.tsx:12-17 |
-| The `Scenario`/`ScenarioFrame` model it walks. | `ScenarioFrame`, `Scenario` | dashboard/src/dev/scenarios.ts:17-22; dashboard/src/dev/scenarios.ts:24-29 |
-| The real store it drives (`applySnapshot` / `pushEvent`). | `applySnapshot`, `pushEvent` | dashboard/src/data/store.ts:49-49; dashboard/src/data/store.ts:51-51 |
-| Mounted (keyed by scenario) beneath the cockpit by the bench. | `ScenarioPlayer` | dashboard/src/dev/Bench.tsx:39-43 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-03T03:59:59+02:00 — Curated 6 citation claims (3 table rows, 3 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-06-22T16:00 — 05o: the new-`scenario` effect now calls `dashboardStore.getState().reset()` FIRST
-  (before applying frame 0) on each scenario mount — since the Bench keys the player by scenario name, the
-  reset clears the SHARED store and bumps `gen` per switch, remounting the engine-room canvas clean and
-  fixing the dropdown overlay bleed (a prior mode's failure overlay could otherwise linger as an orphaned
-  opacity-0 Motion exit node). Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-19T23:58+02:00 — Created for slice 5i: the player transport — `applyFrame` (snapshot + event
-  replay into the real store), the cursor/play/loop state machine (seek applies the full frame; play walks
-  on a `durMs`/1600ms timer; loop wraps), and the transport UI (reset/prev/play/next/loop/scrub + count).
-  Verification metadata pinned until closeout stamps the code commit.
+- `applyFrame` snapshots + replays a frame into the real store. [1]
+- The `Scenario`/`ScenarioFrame` model it walks. [2]
+- The real store it drives (`applySnapshot` / `pushEvent`). [3]
+- Mounted (keyed by scenario) beneath the cockpit by the bench. [4]

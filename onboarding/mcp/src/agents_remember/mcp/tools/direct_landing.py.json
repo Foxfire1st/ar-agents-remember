@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/direct_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The payload builder `direct_landing_payload` wraps the application result with the standard envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "594a747a3c402d819ef80fbd2afc2b08cf9f545e",
+            "content": "sha256:0b4326475da1624f5074fac9c6a99472157bd58241cf8aa118a9269a7e1ad6d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The standard `_tool_payload` envelope converts one application result into its protocol-ready response.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registered as a public tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dabe90e16f0a45d0be60b2bb971e31095666ffe0",
+            "content": "sha256:e671f01732e8c5ddf3a22739ba457df0a4a188717ead205628d81a80922563b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The registration declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b7073d3bd0f66dc84da18135761461ad26cb91e",
+            "content": "sha256:91ea1fab6e3389dc099bf8e75a3fa98df27a0766e0947cbef880cb64d7c9a061",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_direct_landing_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b7073d3bd0f66dc84da18135761461ad26cb91e",
+            "content": "sha256:75616147df0e12bfb814fb2b3a02b8c6fa3dc9cb387a73b5cde169b36192c712",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

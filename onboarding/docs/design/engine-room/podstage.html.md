@@ -1,15 +1,5 @@
 # podstage.html
 
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `docs/design/engine-room/podstage.html`     |
-| doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-06-21T23:35                            |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                               |
-
 ## Governing Overview
 
 [engine-room/ design overview](overview.md)
@@ -84,46 +74,27 @@ conduit paths in `<defs>`, remote dock chips, and the failure-mode overlays) plu
 
 None tracked outside active task work.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 This is a self-contained design prototype; the only external context is the animation stack the production
 renderer uses to realise it. No external documentation was required. No relevant documentation found after
 checking live sources.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The scenario library + transport (`SCENARIOS`, `seekTo`/`play`/`loadSeq`) defining the build-up, tear-down, and failure-mode scenes the renderer reproduces. | `SCENARIOS`; `seekTo`; `play`; `loadSeq` | docs/design/engine-room/podstage.html:710-734 |
+- The scenario library + transport (`SCENARIOS`, `seekTo`/`play`/`loadSeq`) defining the build-up, tear-down, and failure-mode scenes the renderer reproduces. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The prototype sits between the living spec (which distils it) and the React renderer (which reproduces it).
 The two cross-links below are that proving pair.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The living spec that distils this prototype's primitives into the canonical, parameterised visual language; its CSS classes mirror this file 1:1. | `wire`; `flowpath`; `node`; `prov`; `coupler-g`; `dissolve`; `scan` | docs/design/engine-room/engine-room-visual-language.html:97-173 |
-| The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion. | "export function EnclosureProcessMap({"; "export function EnclosureCanvas({"; "export const ENGINE_ROOM_SCENARIOS"; "export function useEngineTimeline(" | dashboard/src/panels/engine-room/EnclosureProcessMap.tsx:67-67; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-42; dashboard/src/panels/engine-room/fixtures.ts:721-721; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-168 |
+- The living spec that distils this prototype's primitives into the canonical, parameterised visual language; its CSS classes mirror this file 1:1. [2]
+- The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This is an in-repo design prototype with no cross-repository or external-system boundary. No meaningful
 cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| _None._ | — | — |
-
-## Update History
-
-- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 3 table citations and replaced 1 stale overview path with 4 exact renderer sources; no unresolved Tier-3 claims.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-06-21T23:35 — Created. File-level onboarding for the engine-room `podstage.html` prototype / scenario
-  player: documented the two-world podracer canvas, the build-up (B0→B5) and tear-down (D0→D6) happy paths,
-  the full failure-mode scene library (T1b stale-base, T3b memory/ledger, T7b provider/pre-contract, T9b
-  seed fault, T9c reindex reroute, T12b live sync, T14c terminal integration conflict, T18 abandon), the
-  failure-primitive CSS vocabulary (gate, attention badge, fleeting ghost, refused conduit, scan ring,
-  dissolve), the controller/transport, and the cross-links to the living spec and the
-  `dashboard/src/panels/engine-room/` renderer built from it. The source file is newly added and not yet
-  committed; verification metadata pinned to repo HEAD until a commit stamps it.
+_None._

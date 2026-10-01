@@ -1,15 +1,5 @@
 # mcp/tests/test_memory_attribution_producers.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_memory_attribution_producers.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:16 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
@@ -54,6 +44,11 @@ with `ok=false`, and the adoption refusal leaves every ref unchanged. This exten
 baseline test; the file still contains five test definitions. Retired ledger constructor options
 and ledger-commit return fields are not part of either operation.
 
+- **L37 (review R1 F2).** `test_carryover_never_writes_converted_memory_and_takes_the_cutover_lock` runs the real
+  carryover world twice: with a converted sibling branch the unconverted target is locked, naming `branch
+  converted-line` and the crossing sync; once the target itself is converted it is refused, naming the file
+  writer. In both cases the target's `HEAD` and `git status` are unchanged.
+
 ### Conventions
 
 Assertions intentionally mix source inspection with real Git object reads. The census is not a
@@ -76,70 +71,34 @@ they are not instructions to restore removed tests or runtime publication paths.
 
 No new file-local follow-up is established by this documentation pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one-definition guard and explicit five-producer census. | `_PRODUCERS`; `test_every_census_producer_reaches_the_shared_renderer` | mcp/tests/test_memory_attribution_producers.py:120-138 |
-| The hostile-body case preserves the message and parses the final attribution. | `test_the_one_renderer_keeps_the_callers_body_verbatim_and_its_trailer_final` | mcp/tests/test_memory_attribution_producers.py:141-163 |
-| The public carryover case verifies one commit and no extra repeat commit with absent cache. | `test_carryover_attributes_its_memory_content_commit_to_the_official_head` | mcp/tests/test_memory_attribution_producers.py:238-300 |
-| The existing baseline case verifies unborn readiness, cache-independent reuse, and unavailable-history refusal. | `test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch` | mcp/tests/test_memory_attribution_producers.py:303-387 |
-| The kernel owns the key and the single writer. | `CODE_COMMIT_TRAILER_KEY`; `render_memory_content_message`; "CODE_COMMIT_TRAILER_KEY = \"Code-Commit\"" | mcp/src/agents_remember/kernel/memory_attribution.py:67-92; mcp/src/agents_remember/kernel/memory_attribution.py:51 |
-| Closeout-shaped producers reach that writer through the effective input model. | `memory_content_message`; `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:128-166 |
+- The one-definition guard and explicit five-producer census. [1]
+- The hostile-body case preserves the message and parses the final attribution. [2]
+- The public carryover case verifies one commit and no extra repeat commit with absent cache. [3]
+- The existing baseline case verifies unborn readiness, cache-independent reuse, and unavailable-history refusal. [4]
+- The kernel owns the key and the single writer. [5]
+- Closeout-shaped producers reach that writer through the effective input model. [6]
 
-## Cross-Repo References
+- Carryover never writes converted memory and takes the cutover lock. [7]
+
+### Cross-Repo References
 
 Configured code and memory repositories or temporary fixture repositories are described through
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional configured cross-repository evidence is claimed. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-15T01:16 UTC — Documented the added assertions inside the existing public baseline case: unborn ready status, unavailable ancestry from a missing-parent commit, failed status/adoption results, and unchanged refs. No new test definition or case budget is claimed. Working candidate verified against the formatted source; real commit metadata and earlier history remain unchanged.
-
-
-- 2026-09-15T00:51 UTC — Reconciled the retained five tests and producer census with the two-leg runtime: baseline/carryover now assert one attributed content commit, malformed-cache tolerance, untracked computed output, and no extra repeat commit; obsolete ledger-only site/lane claims are no longer current prose. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
-
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
-  this claim with its verification provenance because one or more of its anchors resolved more than
-  once at the verification commit, so no historical location was unique. Repaired the citation, not
-  the claim: each anchor that named a construct by bare name now names its exact declaration text,
-  which resolves once in the code tree, and any range that had drifted off its construct was re-read
-  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
-  the claim is about. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
-  claim(s) whose anchor no longer sat in its cited range and normalised 8 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
-  base `5bb124d4`): created this one-to-one sidecar for the leaf's new test module, which is the census
-  the leaf is really about. Recorded the corrected census (5 producers, 0 untrailered, with the
-  producer→commit-site→renderer→code-commit table), both corrections to the master's 2026-09-13T22:05
-  decision (`closeout_recovery.py` is the recovery route's CODE leg, not a producer; the missed producer
-  is `preparation/memory_output.py:92`), and the trailerless-by-rule table with a reason per site. Stated
-  the durable rule the module enforces — the key is declared once and never spelled as a quoted literal
-  in a second production module, and the trailer is appended as its own final block rather than woven
-  into the caller's body, because carryover and baseline take that body as a public argument that may be
-  multi-paragraph — together with the residual gap the census cannot close (a third-way producer, and the
-  prepared leg having no behavioural case). Verification metadata is intentionally blank: the candidate
-  is uncommitted and no commit contains this file yet, so closeout owns the stamp.
+No additional configured cross-repository evidence is claimed.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](overview.md)
@@ -99,7 +89,9 @@ response, the managed-sync response and `knowledge_integrity_check` carry.
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R08@v2` of task
@@ -108,49 +100,30 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Rendering only: the section itself counts nothing, and since MIK-R09 the gate turns each open item into one `knowledge-gate` repair finding. | "The section itself counts nothing" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:1-8 |
-| The section heading. | `WORKLIST_SECTION_HEADING` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:18-18 |
-| The compact wire summary. | `worklist_summary` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:27-38 |
-| Per-kind facts, dispatched by kind; since MIK-R09 the public one-line form the gate quotes. | `_entry_facts`; `item_facts`; `_item_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:41-52; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:64-74 |
-| The stale and reached-family renderers, split out of the ladder. | `_stale_facts`; `_family_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:55-56; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:59-61 |
-| A `family_route_condition` item's facts, its affected set and its suggestion text. | `_route_facts`; `_route_affected`; `_route_suggestion` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:150-166; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:169-174; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:177-180 |
-| The kind-to-renderer table, since MIK-R10 with both unexplained kinds. | "_FACT_RENDERERS: Final["; "\"unexplained_hunk\": _unexplained_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:215-215; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:223-223 |
-| A reconsideration item's facts: the alternative, each changed target and trigger, and what answers it; its renderer entry. | `_reconsideration_facts`; "\"reconsideration_candidate\": _reconsideration_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:183-197; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:225-225 |
-| An onboarding-trace item's facts and its renderer entry (MIK-R09). | `_trace_facts`; "\"onboarding_trace\": _trace_facts," | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:200-212; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:226-226 |
-| An unexplained item's facts: where, coverage, delete-only, and what answers it. | `_unexplained_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:90-118 |
-| A `planned_untouched` item's facts. | `_planned_facts` | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:77-87 |
-| The planned-effects block, one line per declaration. | `_planned_lines`; "Planned effects (MIK-R11)" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:121-147 |
-| The section lines, the incomplete branch, the planned block and the item table with its **Plan** column. | `knowledge_worklist_lines`; "Plan" | mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:234-283 |
-| The ambiguous-rename checklist line: no suggestion, every candidate named. | `test_an_ambiguous_rename_target_lists_every_candidate_and_suggests_nothing` | mcp/tests/test_family_route_conditions.py:426-450 |
-| The checklist and the tool show the marks. | `test_a_leaf_reads_its_declaration_and_the_checklist_and_tool_show_the_marks` | mcp/tests/test_planned_knowledge_effects.py:530-587 |
-| The checklist renders it only when a worklist exists. | `knowledge_worklist`; `knowledge_worklist_lines` | mcp/src/agents_remember/memory_quality/curator_checklist.py:70-70; mcp/src/agents_remember/memory_quality/curator_checklist.py:290-290 |
-| The controller renders the section; since MIK-R09 its four open items count (`curatorActionableCount` 4). | `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist` | mcp/tests/test_knowledge_worklist_leaf.py:577-670 |
+- Rendering only: the section itself counts nothing, and since MIK-R09 the gate turns each open item into one `knowledge-gate` repair finding. [1]
+- The section heading. [2]
+- The compact wire summary. [3]
+- Per-kind facts, dispatched by kind; since MIK-R09 the public one-line form the gate quotes. [4]
+- The stale and reached-family renderers, split out of the ladder. [5]
+- A `family_route_condition` item's facts, its affected set and its suggestion text. [6]
+- The kind-to-renderer table, since MIK-R10 with both unexplained kinds. [7]
+- A reconsideration item's facts: the alternative, each changed target and trigger, and what answers it; its renderer entry. [8]
+- An onboarding-trace item's facts and its renderer entry (MIK-R09). [9]
+- An unexplained item's facts: where, coverage, delete-only, and what answers it. [10]
+- A `planned_untouched` item's facts. [11]
+- The planned-effects block, one line per declaration. [12]
+- The section lines, the incomplete branch, the planned block and the item table with its **Plan** column. [13]
+- The ambiguous-rename checklist line: no suggestion, every candidate named. [14]
+- The checklist and the tool show the marks. [15]
+- The checklist renders it only when a worklist exists. [16]
+- The controller renders the section; since MIK-R09 its four open items count (`curatorActionableCount` 4). [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module renders an in-memory document.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** The Logic records the section's new lead sentence (the gate counts each open item as one `knowledge-gate` repair finding), the public `item_facts` the gate quotes, and `_trace_facts` for `onboarding_trace` items; the Invariants bullet "information, never a count" now says the section counts nothing itself while the gate's findings do. **Reopened claim reworded:** the docstring row, whose anchor "It does not count toward" no longer resolves, is re-anchored on "The section itself counts nothing" (the committed history that names the old text is untouched). The controller test row said "keeps the count at 0", which the test no longer asserts; it now records the count of 4. One row added (`_trace_facts`). **Rows re-measured:** the `_item_facts` row (with `item_facts`), the route-facts row (it carried five ranges, two of them stale, and is now its three extents), the renderer-table and reconsideration rows (exact +21/+6 shifts, both escaped-quote anchors checked by hand), and the `_planned_lines` row, which passed by coincidence at `115-141` and now cites its extent `121-147`.
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** The dispatch-table bullet names `reconsideration_candidate` → `_reconsideration_facts`, and a Logic bullet records what that renderer shows (the alternative, each changed target with its trigger, and what answers it). One row added. The `_FACT_RENDERERS` row's claim was not reworded, so the fixer's generated bullet is kept; the `knowledge_worklist_lines` row the fixer declined was re-pointed by the exact line shift (+18: the new renderer sits above it). No verification stamp was advanced.
-- 2026-09-30T10:06:48+00:00: Generated citation repair: "_FACT_RENDERERS: Final["; "\"unexplained_hunk\": _unexplained_facts," repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:194-194; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:202-202. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** The dispatch-table bullet names the two unexplained kinds; a Logic bullet for `_unexplained_facts`; one row added. **Reopened claim reworded:** the `_FACT_RENDERERS` row (the table gained two entries) is re-anchored on the line-exact quote "_FACT_RENDERERS: Final[" and names the new entry; this pass's fixer bullet for it was removed. Other rows were projected or re-pointed by exact line shift. No verification stamp was advanced.
-- 2026-09-30T02:33:21+00:00: Generated citation repair: `_route_facts`; `_route_affected`; `_route_suggestion` repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:144-160; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:163-168; mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:171-174. No content impact: mechanical anchor-range projection bound to citation source snapshot 2501d8517027eb87355c9ee9e103bd2540df3597da078061ee6e1a15b93cb8de; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): **body updated for MIK-R06.** Logic records the `_FACT_RENDERERS` dispatch table (review R3-N1; the rendered text is unchanged) and the `family_route_condition` facts (`_route_facts`, `_route_affected`, `_route_suggestion`); the byte-identity boundary names the new row. Four rows added; the planned-block and section rows re-measured by hand (the code moved unevenly). The fixer's one bullet above covers `_planned_facts`, whose claim was not reworded, so it is kept. No verification stamp was advanced.
-- 2026-09-29T23:15:54+00:00: Generated citation repair: `_planned_facts` repointed to mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py:71-81. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c718f054d6f4666aac0289d7878fea56fae3168ee18c9058b74578d7e9f7b0a; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Logic now records the planned-effects block (`_planned_lines`), the **Plan** column and the `planned_untouched` facts (`_planned_facts`); the byte-identity boundary notes that only converted checklists change (review R1 F4, carried to L09 by ruling 22:35:34). Three rows added, two reworded and re-measured. No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,506 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/citation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The owner revision as a referenced and not minted identity: repository, confined document path, and the recorded Git blob identity the memory side already supplies.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:e0e22ddba2688a3a37dad6fd6d6519b8ef3eb482254d4fc33ea6bd769e6fc9ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProseOwnerRevision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one locator union the binding must use, and the shipped anchor vocabulary the four shared literals come from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:c662fc6a00aff8273f3c58deea591eb8f0e1ece21f074fb9476d22cddaf8786c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLocator"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:e7d5704be8345468c87cea31bd2c77dc562def2e745391ca4d71fe5bf74b0583",
+            "locator": {
+              "kind": "symbol",
+              "name": "ANCHOR_RESOLUTIONS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:bac0ca502dab452e2e32d5cdc45f6bf068b406df36d0d6215d795e3ce17c7f58",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorResolutionState"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:a86c07faade69cfbb13adb1d7ec01201ff5ffa36160fd3a0dcb6ef6761337342",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The declared selection bound the closure's refusal names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:8adde364bdcb8bf1323cbf6e5775b8d93c5c33ee91734fbda8086d11e1c5d0c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SELECTION_ITEM_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The cases that measure the closed vocabulary in both directions, the shipped-literal identity, the counts partition and the uncovered-form state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:4a2de8099bfbc7e58a258e83f3878a72a649cdfddbb1015d0af60bc951be8b1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closed_vocabulary_agrees_with_its_facts_and_with_every_producing_surface"
+            },
+            "path": "mcp/tests/test_knowledge_citation_bindings.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:8664115aed0115823f81938783face38af65030c7e98029b104be71ef20dd64d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_shared_fact_reports_the_identical_shipped_literal"
+            },
+            "path": "mcp/tests/test_knowledge_citation_bindings.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:026b74448cd38397774ba14a94a28b63e47599a183051e6e97e4f16ea9e90ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_count_report_refuses_an_aggregate_that_dropped_a_key_from_the_denominator"
+            },
+            "path": "mcp/tests/test_knowledge_citation_bindings.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:061f0bbba3b3c66aa0bc4758ab1f163fb9edd45a73eb3178896537f5978da9d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_uncovered_key_form_is_a_counted_state_distinct_from_an_absent_key"
+            },
+            "path": "mcp/tests/test_knowledge_citation_bindings.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The written source the prose itself carries, and the ordered-range refusal that keeps it readable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:630dc16a82383ae93bcc298c8d6ee82b25417342ac51a3ab8514f3455783079b",
+            "locator": {
+              "kind": "symbol",
+              "name": "WrittenSource"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**Both key forms, the declaration of which form this increment reads, and the one rendering of either.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:05409dc2a169105aefff59f40140055a62c94cc2668c534bbe22dc09af2cf28d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProseCitationKey"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:ff12124c47a0d7da8ad21be623b162b236b65e8bfff5e5b1166085653bc2bb9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "TableRowKeyForm"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:3287fd894129f45df84dca47001dd0809e39250b76b3a328373b4b7399d0f583",
+            "locator": {
+              "kind": "symbol",
+              "name": "KEY_FORMS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:153956410ff8b7674905ef51f155017ad214b8459a74cfdfad35830a4d4c9fa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "COVERED_KEY_FORMS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:ba758abdbdf2678751e9e065936d855f22b254b3cbc7e8893a7bd31b8dcdd956",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_local_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The typed target reference and the authored payload that composes the binding's four facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:fae86484462f63189dd0854f2ead53bcc8e8173de2ca7451ecd9dd772cb911ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationTargetReference"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:301dc418071ba1cf0d2791121755f380bd085a71351269af0d27881615fab5ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationBindingPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The schema the binding's payload describes: generation 5 appends exactly one table, and the governing route is a nullable column on that same row rather than a second association table.**\n\nAnchor: `governing_route_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c44511d38c028ed012c35ea728a82157a9071097",
+            "content": "sha256:6f85970407bf49766b235361d1a5632c7400105553f96545573df9332730d5db",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v5.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c44511d38c028ed012c35ea728a82157a9071097",
+            "content": "sha256:31e1680ea531f85c708751fb8bf2defd1c94c4dd2185fb24effeecb7aa745fbc",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v5.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The closed nine-member state vocabulary, the four members that ARE shipped literals, and the one mapping that states which fact each reuses.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:bc24f63b8eb8534384d05f2c2dda65b044490849d503e0d31797c1cfe134d6d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "BINDING_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:5b26f144ca0141720e15ac66cd757e86d9ea424772b978ffdb5bf0ad0b6e4fce",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHIPPED_BINDING_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:94b87f9bc443c1011303aedd49f99760d3606fb1b89c411dd0de11c8bb7edf07",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHIPPED_STATE_FACTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:29bdd8a5324f0f65f0c10f7e512276f6a41084cc0d361f31a684a1cad326da75",
+            "locator": {
+              "kind": "symbol",
+              "name": "shipped_literal_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:bb5aba9d8af735c4b750b05ee3af309ebf4eca89bf5f793817562416e8b45751",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 451
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The counts validator that refuses a report whose per-state counts do not partition the declared selected set, and the coverage record that refuses to leave an uncovered form uncounted.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:24d1b01eb42b1729125bb504b329735fce3b50614acd1ae5ba7179d98e790df7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationBindingCounts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:194915715ddcb3638e83b5a7a467a1ba0acc4084f198c41675faecc5fab838d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "KeyFormCoverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:d8c39ab522d63315562bc15b4b297f270e40e5381ab78208e1c71f1e669b2c9e",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 554
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:714403703ae5cd7c8ec857068c4df20a0183c0506dacf47c82539a7919e577b9",
+            "locator": {
+              "end": 518,
+              "kind": "line_range",
+              "start": 491
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The observation, the indivisible closure item, the closure request and the result that carries limitations and no semantic-completeness field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:09be667b1204099b8fe1c2cfeca26a5201bf41b412d7c5185f3d979ac3d51f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationBindingObservation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:78bc3c0a5f2dd1b69c4d456335a866ab2b15d9bed38543b70212fa3f72c7cc41",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationBindingItem"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:f2271266d79985aa523e4e1465d2db9b3da9026db7b319165afddd9a14f63246",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationBindingClosureRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:7c0c88bae569bdc4083e44d07c0d847f262604949b184ec7578022c1d583cd36",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationBindingClosureResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:eda941031fac1b4bdfeca2b393cc1cd156c2c8e65ffffb70ff42b253edeab20f",
+            "locator": {
+              "end": 536,
+              "kind": "line_range",
+              "start": 520
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:694978e18b6db32547d6aded758c2797405de5b4f25b042a491fb6ebe6156679",
+            "locator": {
+              "end": 552,
+              "kind": "line_range",
+              "start": 538
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:a4914b7547fb95da0ff4243234b7c74bf0f67868bd5a4255b897779f10d53e63",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 592
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shipped source identity this vocabulary references instead of minting a second one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:1e298dac283758ed66928be2d0810155c551774df245b80edc3380e4b4e55a50",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitBlobIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d29178fa3d9db0a179257bcf598df2ec146a14",
+            "content": "sha256:0393c91a146e99f6d5348d47d95abce85f696bd06accfd7cd987cfd56d63f2aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

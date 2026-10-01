@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `eda947325ccbe0791973953265278597e968a34a`|
-| lastVerifiedCommitDate | 2026-09-28T18:11:05+02:00|
-| governingOverview | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -61,7 +51,9 @@ remain closeout-owned.
 - Enforced citation/content/shape/history/entity/index findings cannot be reclassified as closeout debt.
 - Only real-commit-derived metadata and expected dirty-source drift remain for governed closeout.
 
-## L23 Dispatch Lineage Evidence
+## Evidence
+
+### L23 Dispatch Lineage Evidence
 
 The brief now carries the manager's immediately preceding `worktree_status.sourceLineage`
 projection and requires `state=current` for every applicable super-to-master and master-to-leaf
@@ -70,19 +62,17 @@ code/external-memory edge. That projection is evidence, not caller-supplied comm
 moves between preflight and dispatch.
 
 
+### Repo-Internal References
+
+- The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address. [1]
+- The curator's three-way reconciliation procedure has one home outside the brief. [2]
+- The truth boundary the brief obeys, and the curator's handoff artifact, have one home. [3]
+- The canonical template is the doctrine owner. [4]
+- Synchronization replaces package targets and checks equality. [5]
+
 ## CCR-R12@v5 Handoff Boundary
 
 This template records the exact checks and their failed or not-run status as handoff evidence, together with the curator's complete memory-quality result. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry that completed curation as a prerequisite; full code quality, full tests, certification, and review are explicit requests rather than automatic template gates.
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address. | `# Template — Curator Brief`; `**This template feeds inputs; it does not author rules.**` | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-13; skills/l-01-agent-lifecycles/templates/curator-brief.md:16-21 |
-| The curator's three-way reconciliation procedure has one home outside the brief. | `# Operation — Curation`; `## Normal workflow` | skills/l-01-agent-lifecycles/operations/curation.md:1-1; skills/l-01-agent-lifecycles/operations/curation.md:41-80 |
-| The truth boundary the brief obeys, and the curator's handoff artifact, have one home. | `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)`; `## Which artifact each seat hands over, and who validates` | skills/l-01-agent-lifecycles/core/acceptance.md:1-1; skills/l-01-agent-lifecycles/core/acceptance.md:27-42 |
-| The canonical template is the doctrine owner. | `# Template — Curator Brief` | skills/l-01-agent-lifecycles/templates/curator-brief.md:1-1 |
-| Synchronization replaces package targets and checks equality. | `sync_target`; `check_targets` | scripts/sync-skills.py:136-157; scripts/sync-skills.py:179-203 |
 
 ## L23 Final Candidate Disposition
 
@@ -106,49 +96,3 @@ the stable authority, generation, projection, snapshot, candidate, and validatio
 ## CCR-L42 current candidate
 
 The curator brief now records route-review evidence for standalone and organizational leaves only. Atomic child leaves rely on the canonical-master integration review scope while preserving worker evidence and rejected or blocked revisions as unresolved blockers.
-
-## Update History
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`skills/l-01-agent-lifecycles/operations/curation.md`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the handoff-evidence boilerplate sentence, which still presented full memory quality as an explicit request, with the completed-curation rule; `onboarding-coherency` already carries the full-operation check block this leaf's template now names.
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
-  canonical curator brief gained the single-source marker naming `../roles/curator.md`,
-  `../operations/curation.md`, and `../core/acceptance.md`; this card's Purpose now records it and the
-  deliberate restatement of the routing rule and tool surface. Repo-Internal References: three rows
-  whose anchors no longer resolve in the rewritten brief were replaced by current anchors (the
-  canonical header plus the marker itself), and rows for the curation operation and the acceptance
-  truth boundary were added. **Metadata repair:** `governingOverview` pointed at `../../../../../../../overview.md` (the repository root overview) while its link text said "MCP package overview"; corrected to `../../../../../overview.md`, and the missing blank line between the metadata table and `## Governing Overview` was restored. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
-
-- 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the self-check row: the section is now `## Scoped checks (before you report)` and states the repair-then-check handoff obligation. Verification metadata remains closeout-owned.
-
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "# Template — Curator Brief" repointed to skills/l-01-agent-lifecycles/templates/curator-brief.md:1-1. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The curator brief now records route-review evidence for standalone and organizational leaves only. Atomic child leaves rely on the canonical-master integration review scope while preserving worker evidence and rejected or blocked revisions as unresolved blockers.
-
-- 2026-08-29T08:52+02:00 — Added the exact structured coherence publication contract to curator
-  dispatch. Verification remains closeout-owned.
-
-- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
-  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
-  unchanged.
-- 2026-08-27T16:27+02:00 — Synchronized exact approved requirement packets and per-revision
-  reviewer adjudication into curator intake/output. Verification remains closeout-owned.
-
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: synchronized the curator brief to the canonical quality request grammar. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-14T06:34+02:00 — L23 synchronized runtime template: curator briefs carry exact candidate,
-  passing route-review, and current-lineage evidence while leaving verification stamps to closeout.
-
-- 2026-08-13T09:05+02:00 — L23 curator: recorded the current-lineage brief field and the independent
-  fail-before-host dispatch proof; final provenance remains closeout-owned.
-
-- 2026-08-11T16:54+02:00 — Synchronized the exact single-report intake and repeat-until-clean
-  curator worklist contract.
-- 2026-08-11T14:40+02:00 — Replaced stale spawn/task-diary prose with the exact synchronized brief
-  contract, including the complete curator-owned pre-closeout quality worklist.
-- 2026-08-03T02:32:19+02:00 — Repaired packaged brief references against canonical source.
-- 2026-07-10T15:48+02:00 — Established curator task-seat identity without role-suffixed leaf keys.
-- 2026-07-08T00:00+02:00 — Created packaged curator brief coverage.

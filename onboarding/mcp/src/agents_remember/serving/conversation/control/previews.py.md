@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/control/previews.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/control/previews.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structured conversation control overview](overview.md)
@@ -53,44 +43,25 @@ tiktoken), so the cluster bound is a documented stdlib approximation.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the transform is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The redaction policy is the repository tool-report helper; the asset reference type and the
 authority's digest construction are the parity targets.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The repository `redact_secrets` policy applied to every preview. | `redact_secrets` | mcp/src/agents_remember/kernel/primitives/tool_reports.py:72-79 |
-| The `AssetReference` type covered by the asset-form digest. | `AssetReference` | mcp/src/agents_remember/models/conversations/control_wire.py:154-162 |
-| The submission authority's payload-digest construction this mirrors byte-for-byte. | `_payload_digest` | mcp/src/agents_remember/serving/harness_submission_authority.py:987-1008 |
+- The repository `redact_secrets` policy applied to every preview. [1]
+- The `AssetReference` type covered by the asset-form digest. [2]
+- The submission authority's payload-digest construction this mirrors byte-for-byte. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: repaired 1 prose citation and 1 table citation; no unresolved Tier-3 claims.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran past
-  the end of `mcp/src/agents_remember/kernel/primitives/tool_reports.py` (cited L1-L80; the file is 79 lines).
-  Replaced the whole-file range with the two spans the claim actually rests on: `_SECRET_PATTERN`
-  at L25-L27 and the recursive `redact_secrets` at L72-L79.
-
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the deterministic
-  preview/digest transforms — control-char strip, whitespace collapse, secret redaction, the 96
-  grapheme-ish cluster bound that never splits a cluster, and the authority-parity payload digest.
-  Verification is blank because the new source file is uncommitted; closeout owns its first source
-  stamp.
+No meaningful cross-repo references found.

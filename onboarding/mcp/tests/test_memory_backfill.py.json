@@ -1,0 +1,165 @@
+{
+  "path": "mcp/tests/test_memory_backfill.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:34ed259cb36d1e9f1cdd77ec8a57eda49abad8ed2e6107e45b3fe90ddc6842ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_plan_that_lost_a_mapping_does_not_share_a_digest_with_one_that_did_not"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:112cd1caab713c6f7b870992e676de0bd0fdadb74faf2861f77fc1c0ada668ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_contested_memory_commit_names_the_oldest_claim_and_reports_the_loss"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:cc1108cff1aa1dac55a5175561ca064927eef8d4da5f1dbcc32159030f734f6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cell_naming_no_object_is_not_confused_with_an_unreachable_commit"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:72b77eac40343e82df783548119d4e913c2da23f18466eee7a061c32b6ef705f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_same_history_plans_the_same_digest_twice"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The actual two-ref apply regression retains the original rescue tip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:60f6548bf0a7cf67d4dd27428d133af5e9394a869d69330ca082a05abf5b9bf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rescue_ref_holds_the_original_tip_before_the_rewrite"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Runtime proof uses the ordinary Git-only reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:8d36dcad3debb71110573f7ded1ed5c5b7e0a38cb51ed1ea31fc10a23c00f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Historical table read/carry and real CLI boundaries stay covered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:c73b4f4a1773f664764a3d49c6711fdbc6441bf3bc2b2e1a566bcd0bd81685b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tip_with_no_ledger_refuses_rather_than_planning_nothing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:068c4839775d758dd7b398f00be643e48cb9f119c554b87e254d6dfb9594fde3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_carried_table_validates_and_reads_with_no_exclusion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The production target-update stream emits exactly one newline between commands.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "content": "sha256:107bc4973ae24bb2885939981b33c556eb453d8f2ccb882a6cda59865876519a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_targets"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_backfill.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The existing CLI case applies two named refs and retries the same target set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b64410c301acbc247f941bbb50591a306473a9e",
+            "content": "sha256:177b8e65f038c71703902e0fcc089fcddecca73ef5a022a001531cec7270b42e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The committed implementation uses native reversed topological traversal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
+            "content": "sha256:dd149ef6207695e0bdaac1a891f3302f349dfbb8308b185d45af08010b08d637",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_backfill.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

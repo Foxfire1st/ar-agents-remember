@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_conversation_library_api.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "List route returns wire page and authorizes scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bdc6c6685ee70aa997f344125ff0d96fd4ed756",
+            "content": "sha256:e575f05fde9ad58802210f353bfed6cce2f2dacadc89af8c435f6d0c94e7a48a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_list_route_returns_wire_page_and_authorizes_scope"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "List route rejects scope escapes and unknown harness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bdc6c6685ee70aa997f344125ff0d96fd4ed756",
+            "content": "sha256:a2beb9230f50966430b6e84a5500b85f74b09b53bbd5849a769e487b420644f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_list_route_rejects_scope_escapes_and_unknown_harness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Open created replays and focuses only proven identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bdc6c6685ee70aa997f344125ff0d96fd4ed756",
+            "content": "sha256:ce547857405aa956d202188682d29d36134eda6ad1d82eb0b1e1eb3025a76e60",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_open_created_replays_and_focuses_only_proven_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,137 @@
+{
+  "path": "dashboard/src/panels/review/ReviewReadCache.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's one-line statement of what it pins, and the names it imports.\n\nAnchor: `REVIEW_CACHE_LIMIT`; `SOURCE_CACHE_LIMIT`; `sameGeneration`; `sourceContentKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fadc7bfd99c25a68b54cf9a21b7b62bc2e8e894b",
+            "content": "sha256:3f28089b30e0dfb539d4b4321112b7ec60b51d8ea0bc443b621b9246a93c99b0",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Payloads derived from a captured review, varying only the generation fields.\n\nAnchor: \"familyReview.complete.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fadc7bfd99c25a68b54cf9a21b7b62bc2e8e894b",
+            "content": "sha256:eb059ab66d39cc39004d481f2f85c9044f486ea04955ca010a9ed7a1d120da78",
+            "locator": {
+              "kind": "symbol",
+              "name": "payloadAt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Review bound at two sizes, with recency refreshed by reads.\n\nAnchor: \"keeps at most the bound of reviews and evicts the least recently used (%i inserted)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fadc7bfd99c25a68b54cf9a21b7b62bc2e8e894b",
+            "content": "sha256:ce03535c3a3736ddcf7fdb4ed6c6f761da5b561237d99c55cc620a1d77b49f1b",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source bound at two sizes, and no refusal kept.\n\nAnchor: \"keeps at most the bound of source answers (%i inserted) and never keeps a refusal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fadc7bfd99c25a68b54cf9a21b7b62bc2e8e894b",
+            "content": "sha256:10e63f94f933d926a9af90c3bf74c7471cab7d3fe10e42706f016b1c75f79fd2",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Another generation empties both stores; a task-context answer cannot move the snapshot pair.\n\nAnchor: \"empties both stores when an answer belongs to another comparison generation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fadc7bfd99c25a68b54cf9a21b7b62bc2e8e894b",
+            "content": "sha256:d016187c363ca1e95d79eeae0d5befd076dbce29ddc86f671700ac907a668c3a",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The generation comparison and the content key.\n\nAnchor: \"treats code trees and compared snapshots as the generation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fadc7bfd99c25a68b54cf9a21b7b62bc2e8e894b",
+            "content": "sha256:b6d19a43be90d045914eb8cdf8c1b423b388ec6f20b7c424a36a1d62205fba4e",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The class under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:80fa789e9ed0f0485d84ae13c3c95f7ebb77d4f53aed847098394632276a28b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCache"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "content": "sha256:a53eec38fc524a718bad750a78a7a8d714567413349021b550b695ab51d4ceae",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedStore"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

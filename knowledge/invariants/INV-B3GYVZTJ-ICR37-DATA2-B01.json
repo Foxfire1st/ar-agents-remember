@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Preflight of explicitly unchanged-knowledge comparison recording for a live leaf.",
+  "conditions": [
+    "Existing baseline provenance is readable, consistent with the recorded baseline and admitted generation.",
+    "Historical-absence options do not contradict the claimed unchanged published operands."
+  ],
+  "exclusions": [
+    "Known-invalid inputs place no canonical candidate or before half.",
+    "This preflight is not a global source lock; later movement remains subject to the existing boundary rechecks."
+  ],
+  "id": "INV-B3GYVZTJ",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "6245763d-0f10-40bd-809e-f66c7a3d615c",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Known malformed or inconsistent baseline provenance and conflicting historical-absence selection refuse unchanged-knowledge recording before canonical pair placement.",
+  "status": "proposed",
+  "supersedes": []
+}

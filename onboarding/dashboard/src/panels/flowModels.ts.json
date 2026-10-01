@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/panels/flowModels.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The renderer + nav that consume this registry (segment switch, gate rider default, model fallback).\n\nAnchor: \"Flow model\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2448f87bab9a04dd5ea11428abbbfdc77d2c8524",
+            "content": "sha256:1302ac5c8bc41c07628c2237d0f9408b56f22824a907e7ff97856585ae5e171c",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "dashboard/src/panels/FlowTab.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The coverage that asserts the render census + several invariant strings on these models.\n\nAnchor: \"renders every registered model without crashing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cde1aabf104480bcfae7b98064d508be79426f",
+            "content": "sha256:9621622588f9e632a52171073e4eff8dce4071f155de2c2de7cc0071762cbe71",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/FlowTab.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`lifecycle_start`, which emits the orchestrator lifecycle's front-half prose rundown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "380deed8b87f71a8f66e40a44979f7cc1a9f7d8e",
+            "content": "sha256:67f466c37edad7d7b4a296b595ec5be349cae3278452e056f3cf52b369a17692",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_start_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

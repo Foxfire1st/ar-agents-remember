@@ -1,0 +1,250 @@
+{
+  "path": "mcp/tests/test_role_capsule_compiler.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module under test and its pipeline.\n\nAnchor: \"The capsule identity: admitted facts plus the bytes that were composed.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_role_capsule"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:24e597bc39f27710d9a95b8b39c255ff485a17e23e1bce53e77e51cc39ba55cc",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The carried skill channel these cases pin.\n\nAnchor: \"One reference per skill the selected seat declares, in declaration order.\"; \"One optional skill reference with its origin.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:ff997d6960152a420d7b0d10a870728d9c9ba02fba08c8054c25edb8dda93a71",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:99345eadac6c75c3a4347255ea1a62f481d3d3897c7260b3dc146d718db7da09",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 414
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `source-not-utf8` and revision/blank-content refusals the source-value cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:f5f3ac449878a4e5e5a4fedea401c505803868766c9be6b437e5f68ac6755006",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSource"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The refusal codes the refusal cases assert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:fcfcd052a7e3b10ed2c740f5f529182d7b3148edf830db0c4174057719602d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_STATUSES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The identity-resolution outcomes the duplicate and override cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:ad42934248a78e225b5e20ffd8ed809e430fd15fdb658d5aa18bcce029cc314e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_instructions"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:afd6c9ee7c05aaeecfba8d1612ee15bdb19b4316c546573e90ac44a3f5b0bf7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_identity"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:b81df0516dc50f275c5dc3fef2c5f730771c3b00cac7f0f89d348edceaad8634",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:6873cf2d08c56dd180dd8506e96846d5a4e583bb8fe16e67777dbf8e9d2a07a1",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The tool-policy narrowing the tool cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49ac1a5cf1fe0ddc4233b130e93da2604479b31c",
+            "content": "sha256:7430c3face8fa5a6e9f1a8283a23447097755708433698d37d259206ec48aa37",
+            "locator": {
+              "kind": "symbol",
+              "name": "narrow_tool_requests"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The outcome shape whose exactly-one-of rule the two outcome cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The admission cases live in the sibling module, not here, where the capsule composes only the operations its own role declares and the independently compared routing side is retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:ca9e17369d26c82f56020182e6b3d2aab135ccfd389587897d4c4effca97501f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_role_capsule_composes_only_operations_the_role_declares"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The corpus test this leaf was required to preserve; it was not edited and still passes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:d78a14f8e2e81395c228cc0832cce6a71a04442ab1889a1b700e2d66d69e53a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_ORDER"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:2c2967c88ee9f13f34c15c2a1f36231718875757913489e62894d4d551dd6035",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPERATION_KEYS"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,142 @@
+{
+  "path": "mcp/src/agents_remember/observer/lifecycle_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The singleton that drives these states and raises these errors; its `end` signal now reads `TERMINAL_STATES` and converts through `coerce_end_outcome` instead of keeping its own accept-tuple and outcome→state conditional.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:efd1b6ced46ad363813e09e8ec03a2d3db2837abc9138a4ee0f5c7c80494ac07",
+            "locator": {
+              "kind": "symbol",
+              "name": "end"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:c0a912a34163b0d72e72f2a9069a32d379ac6146c53f3af91633bee37149107c",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The typed-error family base (`AgentsRememberError`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8cca25897a9f90a4eafc48be9ef814579345d4f",
+            "content": "sha256:20c20f4fc731011816f8a9403d598d5363e401ba2e3601ef7639543dfe232398",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The response model reuses `State`/`Phase` so the wire contract matches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:782867d4b13e1c95aef1654d92f0bec55bb2067abaff8867e1a70e3710673517",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleResponse"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`ACTIVE_STATES` is `LIVE_STATES` verbatim, and `STATE_COUNT_FIELDS` derives one `Metrics` bucket per live state — this is what makes the live/terminal filing load-bearing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:6523ea566d71cd209247c84b81949e0f7303a6de9185809b6997c6ef2c74d3ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "ACTIVE_STATES"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:bd14e17972b2ee6bd78c172e9592ae34bf14e9c57a09224aa12a0e58d417035a",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATE_COUNT_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reducer's `_STATES` is built from `STATES`, and `_ended_updates` routes through `coerce_end_outcome`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:f071b11872287ccaf64ecc82d75442196814edf4301d9ef14b4e6b128c32f3a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_STATES"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:f1f7be07f8f16f42bb38814e51840a9db0e5d96b55e8cacded673bc77ffb5649",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ended_updates"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:c25b38089929749e59e80944b9186d3fc8f3a626249cc2ea783be07b290adec2",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 382
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

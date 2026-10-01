@@ -1,0 +1,233 @@
+{
+  "path": "mcp/tests/test_terminal_preview_expectation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of D-15 and of the three shapes it drives.\n\nAnchor: \"A cleanup *preview* and the cleanup it previews must agree about the same collection.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "content": "sha256:c85d1f329ce6e4505d1379e8c03a3374318a80e53b66c3a681163155fc205bc4",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The measured L14 shape: a preview over a live drift snapshot reports no blocker.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "content": "sha256:d39dc35de3152d63c73d7374da5cc53cac8fbafd4ea86ffaf648e1b135920363",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_preview_over_a_live_drift_snapshot_reports_no_blocker"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**Preview and apply are the same judgement, asserted from four directions in one case.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "content": "sha256:ac20c34fd1e05b6151fa45c9f52f9661703a3fb8f80e9d1cc8d29950dec41b98",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_preview_and_the_real_call_agree_over_the_same_collection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The other half of the contract: the fix may not swallow a real failure.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "content": "sha256:c4209129e8ada05048a0af6e695f36e703c92c414bb51fbecdb94b2a967adc12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_drift_snapshot_failure_still_blocks_with_its_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane row this module was appended to.\n\nAnchor: \"mcp/tests/test_terminal_preview_expectation.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:11dc123b5aea780e250e25816f2595c33acabe2cfa9800b858604e73a3abe0c0",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The one entry point, with the fixed `driftSnapshot` branch and its comment.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:6fecff16f222bd802f30b28b67b5cbf6cd44c932e3b29945d84bfd9496aafb78",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_result_blockers"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The expectation type whose `preview` flag selects the reclamation key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:631492b04817fc1006697cfad8933ba4bf42350f0974f37f8f0ee8b18b76831c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalExpectation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The result type that bundles the outputs with whether they are a preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:7e524ab2da1ff9f98bcf389858f79a16569bb012367c7f625500eec228c237cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalResult"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The producer of the shape this module drives: the real drift-snapshot remover.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:0e6fc7397b841eab02d7db100a9a9a4494998106233dc77d29712a6b87df1b7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_snapshot_file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One terminal result whose only non-empty collection is the drift snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "content": "sha256:ccb3357d6fcf7931eaea97dcbc53c444a49f8283a0531165eb86e2bbfe523477",
+            "locator": {
+              "kind": "symbol",
+              "name": "_result"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The preview's own entry shape: `would_remove`, not `removed`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "content": "sha256:50768a9de513c87259ba8629b24f5446c1ac4cbf3f51c30e60e5514af26cfdb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preview_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The real removal and the already-absent entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "content": "sha256:a048511a27fed0bd707dcfdc2a2d285a8e1959af4f95417e69de37408642d37d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_removed_snapshot"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "content": "sha256:345604c434a637ac6948ff1915de9a0fafdc0ac28361b96cef7c2c1a6c663dc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absent_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The genuine failure, which must still block with its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6829cbfb7b2567a1a9e98001ae09ab186936f104",
+            "content": "sha256:9d553baba62f3dcd636b802dad368f8b1e281ff37fe286269c05095fa9a7432d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_failed_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

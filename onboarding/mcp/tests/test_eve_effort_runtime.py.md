@@ -1,15 +1,5 @@
 # mcp/tests/test_eve_effort_runtime.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| path | `mcp/tests/test_eve_effort_runtime.py` |
-| doc_type | `file-level-onboarding` |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -97,79 +87,29 @@ the transport's peer is a recording server.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation pass
 was available for this module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; the external authority the consumer is written against is eve's own published `defineAgent`/reasoning typing, reached through the pinned package rather than a specification in this repository. | — | — |
+No configured `Domain Documentation` source; the external authority the consumer is written against is eve's own published `defineAgent`/reasoning typing, reached through the pinned package rather than a specification in this repository.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The vocabulary the cases iterate and the sentinel they single out — the adapter's one declaration, which the launch gate validates against and the catalogue publishes. | `REASONING_EFFORTS`; `PROVIDER_DEFAULT_EFFORT` | mcp/src/agents_remember/serving/eve_adapter.py:91-91; mcp/src/agents_remember/serving/eve_adapter.py:100-108 |
-| The real runtime process the cases start, and the launch environment the selected level is carried into. | `EveRuntimeProcess`; `resolve_runtime_spec`; `EveLaunchSelection`; `EveWorkspaceBinding` | mcp/src/agents_remember/serving/eve_runtime_client.py:133-413; mcp/src/agents_remember/serving/eve_runtime_launch.py:108-126; mcp/src/agents_remember/serving/eve_runtime_launch.py:129-143; mcp/src/agents_remember/serving/eve_runtime_launch.py:312-348 |
-| The recording provider boundary and the staged application root, which are what make the body the evidence. | `RecordedModelRequest`; `serve_recording_provider`; `staged_runtime_root`; `EVE_APPLICATION_ROOT`; `require_installed_eve_application` | mcp/tests/eve_adapter_test_support.py:439-464; mcp/tests/eve_adapter_test_support.py:467-573; mcp/tests/eve_adapter_test_support.py:37-37; mcp/tests/eve_adapter_test_support.py:580-599; mcp/tests/eve_adapter_test_support.py:44-62 |
-| The complete verified capsule binding the runtime refuses to start without, built through the capsule seam's own fixture support. | `FixtureCarrierRequest`; `fixture_carrier_for`; `binding_env`; `repository_with_commit` | mcp/tests/eve_capsule_test_support.py:558-570; mcp/tests/eve_capsule_test_support.py:573-627; mcp/tests/eve_capsule_test_support.py:630-640; mcp/tests/eve_capsule_test_support.py:155-170 |
-| The consumer under measurement: the authored application reads the effort input and applies it through eve's own definition, omitting the property for the sentinel. | `PROVIDER_DEFAULT_EFFORT`; `reasoning` | eve_runtime/agent/agent.ts:25-25; eve_runtime/agent/agent.ts:35-35 |
-| The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope. | `_capability_snapshot`; `test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it` | mcp/src/agents_remember/serving/eve_adapter.py:699-748; mcp/tests/test_eve_product_integration.py:1151-1190 |
-| The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape. | `EveEffortConsumerShapeTests` | mcp/tests/test_eve_product_integration.py:1315-1359 |
-| The module's own lane row, which the fail-closed loader requires. | `integration`; `mcp/tests/test_eve_effort_runtime.py` | mcp/tests/test-evidence-lanes.toml:286-286 |
+- The vocabulary the cases iterate and the sentinel they single out — the adapter's one declaration, which the launch gate validates against and the catalogue publishes. [1]
+- The real runtime process the cases start, and the launch environment the selected level is carried into. [2]
+- The recording provider boundary and the staged application root, which are what make the body the evidence. [3]
+- The complete verified capsule binding the runtime refuses to start without, built through the capsule seam's own fixture support. [4]
+- The consumer under measurement: the authored application reads the effort input and applies it through eve's own definition, omitting the property for the sentinel. [5]
+- The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope. [6]
+- The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape. [7]
+- The module's own lane row, which the fail-closed loader requires. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The controlled application is the pinned published `eve` package started as a real Node process; it is
 a dependency rather than a sibling Agents Remember repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The pinned runtime the cases start, the exact dependency pins, and the machine-local install command that the README documents and the guard enforces. | `EveEffortConsumerTests`; `_one_level` | eve_runtime/package.json:15-20; eve_runtime/README.md:25-25; mcp/tests/test_eve_effort_runtime.py:108-163; mcp/tests/test_eve_effort_runtime.py:175-215 |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 7 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`eve_adapter.py`, `eve_adapter_test_support.py`, `eve_capsule_test_support.py`, `eve_runtime_client.py`, `eve_runtime_launch.py`, `test_eve_product_integration.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:26:12+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:286-286. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:233-233. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:214-214. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `integration` repointed to mcp/tests/test-evidence-lanes.toml:207-207. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:54:18+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The lane row's `integration` cell walked the module's neighbours and the previous lane's closing `]` at `196` but stopped short of the lane key itself at `201`; that range was widened to `196-201`. Claim, anchors and the other nine ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T10:32+02:00 — 260915-CAPS-L17 curator: created this card for the module this leaf adds. It
-  is the leaf's **executed** half of `CAPS-R17@v1` behaviour 1: no Python case can observe a TypeScript
-  consumer inside the pinned application, so the three cases start the real runtime per level and read
-  the request body a recording provider received. Records the two properties that keep the measurement
-  from being self-confirming — the staged copy is compared byte for byte against the checkout's own
-  authored tree, and each case gets **one application root and one process** because the definition is
-  read at boot — and the module's stated reason for a recording server rather than the product's
-  fixture model, whose traced projection is exactly what must not be trusted when the body is the value
-  under test. States the boundary plainly: this proves the launch preparation and the runtime's own
-  request, **not** the whole dispatch chain (the runner process hop is the settings-chain evidence's),
-  and the cases skip by name without the machine-local install or a Node at the floor, so a green run
-  on a bare checkout is not coverage. Lane row `integration`. **Checker result (post-sync,
-  verbatim).** The refusal this entry first recorded was resolved by the leaf's `worktree_sync`:
-  the pair is now `leaf-candidate` / `acceptanceEligible:true` on code base `d8ed8c21`, and the
-  contract-scoped `memory_quality_check` ran against this worktree. Headline: `ok:false`,
-  `checklistStatus:"action-required"`,
-  `coherenceStatus:"not-evaluated-quality-action-required"`, `closeoutReady:false`,
-  `curatorActionableCount:1690`; census `ready-for-adjudication` (13 rows, 0 blockers, 0
-  unonboarded). This card's own contribution: one `claim_reopen` error at `:116`:
-  `RecordedModelRequest` "did not exist at code commit `0346da9c…` and resolves in the working
-  tree". This is the **D11 uncommitted-candidate signature** the brief predicted for cards this
-  leaf writes — the checker resolves citations against the code base commit and the anchor is a
-  construct this leaf adds. Per the master's rule it is **recorded, not "fixed"**: no stamp is
-  advanced onto an uncommitted tree and the claim is not deleted; the closing evidence is the
-  post-closeout state of the same range. The card is also the census's only `preExisting: false`
-  row, which is the expected shape for a module this leaf adds. Verification metadata moves to
-  the synced base `d8ed8c21`; the candidate is deliberately uncommitted, so the governed
-  closeout stamps the real code commit and no hash or fingerprint was invented here.
+- The pinned runtime the cases start, the exact dependency pins, and the machine-local install command that the README documents and the guard enforces. [9]

@@ -1,0 +1,223 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/adapters.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`RepositoryExecutionRequest` carries the current contract described above.\n\nAnchor: \"class RepositoryExecutionRequest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f7c90ddbd1e3735d3119c9a7765c34636b762d",
+            "content": "sha256:60233f5be95c73aa120656470c1bdd29dbbfadc8e572ef374d706f34a590cd06",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`DaggerModuleExecutorAdapter` carries the current contract described above.\n\nAnchor: \"class DaggerModuleExecutorAdapter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f7c90ddbd1e3735d3119c9a7765c34636b762d",
+            "content": "sha256:408fbdb3def25eb09d19d66f3bc5dedc6d1b6f98c1025bd85a0adaf74548379a",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The generic executor/decoder protocol and the concrete Dagger + JSON implementations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10f7c90ddbd1e3735d3119c9a7765c34636b762d",
+            "content": "sha256:c0cbbe1505001b3415250bbd65045e90e6d4f7979a431e5866571a6bc6e0f6c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryExecutorAdapter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10f7c90ddbd1e3735d3119c9a7765c34636b762d",
+            "content": "sha256:6db3500b808c554ea9077f2b255c1bb597417b064ef21399bc8c7d797fe85f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryResultDecoder"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10f7c90ddbd1e3735d3119c9a7765c34636b762d",
+            "content": "sha256:408fbdb3def25eb09d19d66f3bc5dedc6d1b6f98c1025bd85a0adaf74548379a",
+            "locator": {
+              "kind": "symbol",
+              "name": "DaggerModuleExecutorAdapter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10f7c90ddbd1e3735d3119c9a7765c34636b762d",
+            "content": "sha256:d94e0957d810be063a1d53fb2ac5414e9ae697fa82c30f9bd13da6f39b5672f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "JsonExitStatusDecoder"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10f7c90ddbd1e3735d3119c9a7765c34636b762d",
+            "content": "sha256:4ac7b4e94069639c2518c46c3745133ffe9de109145bf18a7e088a6a97e7d255",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The profile report command selects the admitted executor and renders it through DaggerModuleExecutorAdapter.\n\nAnchor: \"def _profile_report_command(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:aa1ed0f787481cd4da73944855ad2d03f67a71ba73bd8e69f8656c69b497a38b",
+            "locator": {
+              "end": 577,
+              "kind": "line_range",
+              "start": 577
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The success payload uses the shared gate-command renderer and reports the admitted profile identity.\n\nAnchor: \"def _strict_quality_success_payload(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:c2754c011300a1a90ede34aac0f525d3c6abd7585c0df9492a9bb0c2b038c090",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 402
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The clean executor runs the admitted adapter against the exact candidate.\n\nAnchor: \"def run_clean_quality(\"; \"def _executor_command(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1b6a9c04d61213a3ae710b4c7979eca305e661f",
+            "content": "sha256:6f6b0420335f5a0d445ca28a99ae9f322494c89009835cc0c46619569fa0df00",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1b6a9c04d61213a3ae710b4c7979eca305e661f",
+            "content": "sha256:a8f1f67611df6565ab9d5f42717f45e3eb1bdc4620d37f0dc0b46bef2bc41c1e",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The clean executor publishes the exported execution outcome.\n\nAnchor: \"def _publish_executor_outcome\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1b6a9c04d61213a3ae710b4c7979eca305e661f",
+            "content": "sha256:d15f164c80cb2a71d0b4ad0616606951eeb738573e05efc417f56bfa13c01f66",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 289
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The configured result decoder determines the exported pipeline exit status.\n\nAnchor: \"def _exported_pipeline_exit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1b6a9c04d61213a3ae710b4c7979eca305e661f",
+            "content": "sha256:742c99c668ea3a708e1599e98313109b2ab7fb9763980923daad884cd0174ed1",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Render an exact journal selection after full original-object and artifact readback.\n\nAnchor: \"def render_selected_code_certification\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:fc7019a6ffe44757b66782b7380868dd2e8a2a3f3159084b672650392c0d1365",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 364
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

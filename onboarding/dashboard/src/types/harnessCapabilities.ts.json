@@ -1,0 +1,237 @@
+{
+  "path": "dashboard/src/types/harnessCapabilities.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The capability schema constant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:4003e9336a3b8cdde4f88c72521dc5b520ec7954906a7edb80cb26ba0052eb38",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPABILITY_SCHEMA"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capability catalog envelope and route-error shapes.\n\nAnchor: `CapabilityEnvelope`, `CapabilityRouteErrorBody`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:2e121ed0f4c2aa4e56f950f85a9f1314a17a8d77eef71ba6d20fefa9c4193d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityEnvelope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:4afe28915357bf70cd22b640cdd28167739db9304ef3cb2d4e252aaa1dcb5fba",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityRouteErrorBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Dynamic model, effort, config, and snapshot shapes.\n\nAnchor: `EffortOptionWire`, `ModelCapabilityWire`, `SessionConfigOptionWire`, `CapabilitySnapshotWire`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:2c3241d3253e4aa9f919465a1166333c2a7cc8100463a5b68762f96e588556b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffortOptionWire"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:1253d044d016c7a0bf20a88403736c0d9a3a6d4a469c9bb78bd6eef6626405a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModelCapabilityWire"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:654a51b78151fa22cc171ba530724ac7518e147b698a551b5e709f0d22f91ace",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionConfigOptionWire"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:ecb8a62dcce2473d97da3970bc8b22dcb3f363cddfad309a3d5ca69dfa1a277b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitySnapshotWire"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Setter, submission, and reconciliation evidence shapes.\n\nAnchor: `SetResultWire`, `SubmissionReceiptWire`, `ReconciliationResultWire`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:b1befa54b27b561cf82b3b486d0448c3962c7596c6f49ff14ee3709e59de53b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetResultWire"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:f69bf854b2bca46930d107f903bb16c69f948f7a2b4b7a5044763bfe8eb0c01b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionReceiptWire"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:66bbb20bd791f33e4586e2cdc51f634c41aad6b90b2fa767b26a1bd2591856aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReconciliationResultWire"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The daemon envelope serializer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a37cd75a2441474a1f0af28765de4cd209333994",
+            "content": "sha256:59660a14c3f8b0d578d7de7e82f35c4ed27c937f0a7d901bcb7099cd786bb127",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityCatalogResult"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a37cd75a2441474a1f0af28765de4cd209333994",
+            "content": "sha256:4d37b0e7f7c0cd4582845b39ef232d721666ccacb1bf5d71300e0c0243a91765",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Snapshot and setter serializers plus acceptance vocabulary.\n\nAnchor: `SET_ACCEPTANCE_VALUES`, `capability_snapshot_json`, `set_result_json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:fd64dba8025f979eddbfb2c87acacde2d8f87338531244bfe7f05ea8d6cf2545",
+            "locator": {
+              "kind": "symbol",
+              "name": "SET_ACCEPTANCE_VALUES"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:bf4de469c0940f3b5ab632c1b5850427fd8f00e086eed4e94e240d1954052be1",
+            "locator": {
+              "kind": "symbol",
+              "name": "capability_snapshot_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:8d71eaba874d28c9cf9a2b70af4525503799796677a5f23c460c9a25f9be056e",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_result_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Public receipt and reconciliation serializers.\n\nAnchor: `public_receipt_json`, `public_reconciliation_json`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:ea57df2eb40f427428ed41bd07ddc1162732cd83ab5da95cf65ffa133740b987",
+            "locator": {
+              "kind": "symbol",
+              "name": "public_receipt_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:c2bfca7fc0be94b4b93f409d1c46a202f161d4d526f1510c400952ee118e8c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "public_reconciliation_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

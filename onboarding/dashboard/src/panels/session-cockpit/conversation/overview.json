@@ -1,0 +1,121 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation",
+  "references": {
+    "1": {
+      "note": "The reconstructable projection this renderer reads.\n\nAnchor: `# dashboard/src/data/conversation/ — Reconstructable Active-Conversation Projection Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/data/conversation/overview.md:1-300"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sibling in-stage history browser.\n\nAnchor: `# dashboard/src/panels/session-cockpit/conversation-library/ — In-Stage History Browser Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/panels/session-cockpit/conversation-library/overview.md:1-173"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one-roof composition that mounts this renderer.\n\nAnchor: `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506"
+        }
+      ]
+    },
+    "4": {
+      "note": "The interrupt chord/aria-derivation the hook consumes.\n\nAnchor: `# dashboard/src/data/keymap/ — Keyboard Zone Contract Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/data/keymap/overview.md:1-154"
+        }
+      ]
+    },
+    "5": {
+      "note": "The control routes whose evidence gates interrupt + the renderer-facing rulings.\n\nAnchor: `# Structured Conversation Control Route Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/serving/conversation/control/overview.md:1-433"
+        }
+      ]
+    },
+    "6": {
+      "note": "The conversation-grammar fixture builders these suites seed from, and the three sanctioned brand mints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:1b06cd3fefac8edba1018607abc9616c7e28c86fd24d7888f8796b4b9b849b2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "pageCursor"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:528d616eb6c23f7e258d7492a41d0d53dfeaee3eb279af578aef7842b463078c",
+            "locator": {
+              "kind": "symbol",
+              "name": "eventCursor"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:8fe0c47d69a195c5da0c545119075421c966f12c5f1b2e2f4c8c22e663efdaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "libraryConversationKey"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:7d6fe87a94c03f5cb7457201327a23d9c5c3901deef84f41f110b257154578d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationCapabilities"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The registry that records those three mints as the only permitted casts, each with its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:6fb3069befefdbf0b993642000d2799d21ed30e2d0319e6c669b5c44fc852211",
+            "locator": {
+              "kind": "symbol",
+              "name": "SANCTIONED_WIRE_SITES"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

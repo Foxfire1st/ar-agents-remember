@@ -1,15 +1,5 @@
 # SubjectReview.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/SubjectReview.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -36,33 +26,23 @@ These fixtures are not current project knowledge, new authored judgments or moun
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; source and captured responses provide this local test evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+No configured domain source could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The case or captured property below records the input this card describes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The header distinguishing real review-route bodies from exact owner-produced responses, and pointing at the receipt. | "Real review-route bodies"; "adjacent receipt" | dashboard/src/panels/review/SubjectReview.test.tsx:1-2 |
-| The case or response retains its declared selected input. | "reads the clicked member owner before displaying its concern, keeps family context, and preserves ambiguous revisions" | dashboard/src/panels/review/SubjectReview.test.tsx:100-149 |
+- The header distinguishing real review-route bodies from exact owner-produced responses, and pointing at the receipt. [1]
+- The case or response retains its declared selected input. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Capture provenance names disposable repository evidence; it grants no production knowledge authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional production cross-repository contract is asserted. | — | — |
-
-## Update History
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): the header now distinguishes the re-captured real route bodies (family, invariant) from the exact owner-produced responses (single-head cases); recorded that and cited the header. No case changed. No verification stamp was advanced.
-
-- 2026-09-26T20:40:46Z — Created the captured subject-selection regression/provenance card.
+No additional production cross-repository contract is asserted.

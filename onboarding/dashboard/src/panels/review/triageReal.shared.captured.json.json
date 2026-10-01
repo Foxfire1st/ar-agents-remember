@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/triageReal.shared.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Both families' facts, and the revised guarantee on the second.\n\nAnchor: \"family_context\"; \"\\\"guarantee\\\": \\\"intent\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae8000050dad76f4bc2f91dde76a8f64402a56aa",
+            "content": "sha256:b1c83a4f1b49011243c41acf8e15227f84f0411a08303d67855659bdf554571d",
+            "locator": {
+              "end": 3020,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/triageReal.shared.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6edbb9020be5a600fe45e26160113132735a1e2d",
+            "content": "sha256:d09dedc162b2fdc97bf27fad1a1d7acd816e75e4f47074c51d30797cac9d5cae",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/panels/review/triageReal.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

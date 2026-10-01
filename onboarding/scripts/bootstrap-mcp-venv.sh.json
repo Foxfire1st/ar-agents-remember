@@ -1,0 +1,58 @@
+{
+  "path": "scripts/bootstrap-mcp-venv.sh",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source-built interpreter is installed and capability-probed before venv mutation.\n\nAnchor: \"install-python-runtime.sh\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc452527d2c4e344ec5030f5ffc6fc4b44c5c7da",
+            "content": "sha256:6f7eddef91b73325da9b9ac9d44cf12961ee303ee9644feb312d49a6fcd37374",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Existing environments require explicit replacement and are restored after a failed recreation.\n\nAnchor: \"restore_previous() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc452527d2c4e344ec5030f5ffc6fc4b44c5c7da",
+            "content": "sha256:6ed3d84283105ec9922f12817c909f433c3464e9f16a8c96767fbf44fdc1fa7e",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "uv is pinned to the exact interpreter and lock, followed by runtime and dependency proof.\n\nAnchor: \"--no-managed-python\"; \"uv pip check\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc452527d2c4e344ec5030f5ffc6fc4b44c5c7da",
+            "content": "sha256:23236a76125bf83fb9c3196ee2d0fe3e90a8092bbee5741fb9458f9fdf997b7a",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

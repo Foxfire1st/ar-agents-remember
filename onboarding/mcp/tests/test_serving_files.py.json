@@ -1,0 +1,51 @@
+{
+  "path": "mcp/tests/test_serving_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Read serves code content",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf50d6f24f3c329785054bc125bcb2e7f727910f",
+            "content": "sha256:1f8059744de4acffe6ddd848a357df4d4b58424f2dd0a1d95cf7ba40c4757e22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_serves_code_content"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Traversal is 400 bad path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf50d6f24f3c329785054bc125bcb2e7f727910f",
+            "content": "sha256:e757307225fa69bdacacc16ad27c48b3cb7098f1344afa0a3c1dc88e06fb2d87",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_traversal_is_400_bad_path"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bf50d6f24f3c329785054bc125bcb2e7f727910f",
+            "content": "sha256:b310efecd152371f37bfc60f9caf3778a3617feca7e7fb7a779caff2a6402684",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

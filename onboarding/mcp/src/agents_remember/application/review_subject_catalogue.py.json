@@ -1,0 +1,409 @@
+{
+  "path": "mcp/src/agents_remember/application/review_subject_catalogue.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the contract: both snapshots, no comparison, no silent drops, zero subjects an empty catalogue.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_subject_catalogue"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:2d37328c7fdc87bb835b61972b226fb5794486c117c6d5f1800376eb323692c9",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: one name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:697f67c4abb2d9e2f54864b072bdc4fe9803e859fbbf8da560f9fe4e150fb1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one entry point: both stores opened under the record-beside-the-bytes namespace, each read and closed, then merged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_subject_catalogue"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:7f5ce855ce3dfb30ab5c65f92bf2e989104ce00f061705ee89d95bcaf3c06054",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_namespace"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:c1d74e076f57f3fd1dcd30cb6b9efa0339e872799436ef20794ebb392e4caf23",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_existing_knowledge_store"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:8001c1486cd00d53ef61324024c2e3c14accbd456fbd8127aea02b283def0ea9",
+            "locator": {
+              "end": 399,
+              "kind": "line_range",
+              "start": 351
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The per-side read through the store's own two list operations, with each label travelling beside its side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:3a3813e56013dbb70558be90128c7d1b8763130f1d06265f47a8730b27645bb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_identities"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_invariants"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The globally kind-grouped union: the outer loop is the subject kind, the after label wins on overlap, and retired rows keep the before snapshot's own wording.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:e8ba7d877a3a7ce700c9f186c045d49e2100950fbeb203819348efd8abb427af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_union"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The candidate's rows of one kind with the presence both snapshots give them, and the baseline's retired rows of one kind in the before snapshot's own order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:5d688d50b7d99a34e6c0f0f010c74f060757dcb1d9d77a14ecb07d55da15f2c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_after_kind_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:527a883c30d5148aa8c3d9e3038b71af2cbb7287fe1371f48a7e6abff0d207bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_before_only_kind_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The vocabulary the rows fill: presence per entry and the entry list's labelled totals with their agreement validators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:e91af29a9528470efca1f803fa9e4626bd205866b022aa34315ef527791b51c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntry"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:df07b1a715e12f7d9672ff5ec334e7b07ed49ffa70a47a69d908e40593f6ce1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSubjectPresence"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:5a1381dc54d4c371825141ff77e765db4904c35001df3db4561f1ea549facc8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntryListResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:462e335e1cf8490dc2bddf667a9cb9d966e0081e6d76a24e122c94eb2ff4e9e0",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:6e53c0e15ed2d249f2273c0feb0434e3f78779214d155cafaeb6106bf64aff72",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The adapter that delegates: the entry half resolves, calls this module, fills the totals and assembles — no enumeration logic of its own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_knowledge_review_entries"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The ten cases that measure the catalogue: the union, the kind grouping with retired subjects, the retired and added rows, the statement-free family, the whole-row traversal, the unselectable subject's reason, the totals, the zero-subject boundary, and the no-comparison tripwire.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:721204869dfe8e932e7ed24149b7e6f9ceec74fcd15d94d42efcb6b28d2b7fad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_catalogue_unions_both_snapshots_with_labels_and_presence"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:1bf32c72b1f425122e017897d53033cc496a853c73ef67fa65806e1d5405be45",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:723e9bc8ebc7b5ae629d7b2914de98ec899d14938be687fea93fcc8962abe5d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_before_only_subject_stays_listed_and_reviewable"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:5b55f1d576ff0544bb4c065fb9c91e41a1d81415e67164066d97b566af6a4e9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_newly_added_after_only_subject_is_listed_beside_the_retired_half"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:08509b21b630b55839619af31678a787c7c35577f78d9d523cd0e727a0056317",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_subject_is_listed_without_an_establishable_statement_side"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:73e0f2878b32adf14a991ae0d13e76b2194628d682af0ddf9acc3733d71d6b9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_catalogue_row_opens_through_the_normal_review"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:70c4487c085e859426fff8b923c478a5ec3f2ddd0c413245598fd23d36b68a40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:6274bbec61248e7f58458fbbfd76aa9b11037f6db9b5851c837b5cc31a300d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_entry_route_carries_labelled_totals_for_the_whole_catalogue"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:6db8db8ad609a77fea2aff0804da0d5da59e96629465ac946f13e1836dd523e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:bf4086501773acf9b3cebc3bcab978acc4f94d2ab9d488b89fe1a41d3c58f2f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_catalogue_loading_runs_no_comparison"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

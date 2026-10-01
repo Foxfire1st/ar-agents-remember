@@ -1,0 +1,249 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/cli.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`command_closeout` normalizes code/memory messages before the journal-bound closeout adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
+            "content": "sha256:9930eda2d08569d3cd033d64b28e05822d39de63b0b90937e139186652fdf327",
+            "locator": {
+              "kind": "symbol",
+              "name": "command_closeout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The current module exposes `parse_json_stdout`, `command_status`, `command_attach` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
+            "content": "sha256:e9753e112f7dd107b0668c06b839356b1be2f56aa997f652adf9c7547e1f42b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_stdout"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
+            "content": "sha256:ab09238df46863ba5f29adf43f2eef8a5a5645c17e5b75dc6e8bd3abaa7b714e",
+            "locator": {
+              "kind": "symbol",
+              "name": "command_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`build_parser` exposes closeout/integration options without ledger-message flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
+            "content": "sha256:bace8fc53c4baac230b9616bc623eb9ae72c01b7f9b77b6febfb48abc005bbea",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The CLI module exposes the public main entry point for `python -m` execution. (`main`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
+            "content": "sha256:5ad00978007b4f2360e6ef717bcc75eed8d30a8fc4c64459e484e4bd5d88424a",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "MCP startup enters the result-returning application owner without CLI parsing. (`worktree_start_tool`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:a8f4da9fa7ab81c9252d77e8ffcf2d03a644b71eebb4f1ffa1a0eb6cfe4b9444",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:2ec23257800b92ba7b2b63d310c8fbec5aa82beb032e7e38afc50782c1ea2505",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "MCP attachment enters the result-returning application owner without CLI parsing. (`worktree_attach_tool`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:9045d7762dda44815f54b0ba65315dd11009f8f1f7cc823307ad9885aa439e3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_attach_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:608de633382abdb4c27ffe5baf10245da66c5612798687f8bd5726cedfdd7dfc",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "MCP status enters the result-returning application owner without CLI parsing. (`worktree_status_tool`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:9ceb196164927e961fde023ed2b43dec9163317533a167abe4a3cc9353fac9ee",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 305
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Start or observe the exact contract-addressed integration operation. (`worktree_integrate_tool`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:f3f1614497e4b0a687b3e3a04385c131a52d1615359d86fc5a320ee559b62d82",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_integrate_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:59a293980eb1a626784cd88be8746cc5b281897cb7621b06a35de1554a76045c",
+            "locator": {
+              "end": 422,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "MCP cleanup enters the result-returning application owner without CLI parsing. (`worktree_cleanup_tool`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:2b69804a7abea374abcace6bf019b7ff685d1c85e74e985d2bf78978bd9aa85d",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_cleanup_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:4db0d61e7a6ea16a5d29b67fd071023a9c9895f22dcbdb7bb4cc5314c2ae3478",
+            "locator": {
+              "end": 847,
+              "kind": "line_range",
+              "start": 826
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. (`heal_contract_leaf_ids`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:47e1d3767355bc54493cb7dd35c20385d84ffe7a953bb2cfabea7959bafd7d71",
+            "locator": {
+              "kind": "symbol",
+              "name": "heal_contract_leaf_ids"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active projector package overview](overview.md)
@@ -45,35 +35,17 @@ answer.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Snapshot pending-interaction model. | `PendingInteraction` | mcp/src/agents_remember/models/conversations/control_wire.py:115-123 |
+- Snapshot pending-interaction model. [1]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository references found.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 2 citation items; scoped citation check now passes.
-
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py` since
-  the L2 base commit is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 5 line(s)
-  with no token change whatsoever. Checked by parsing both revisions and comparing the abstract
-  syntax trees (identical) and the comment tokens (identical), so no symbol, signature, default,
-  decorator, control-flow branch, docstring, or assertion this card describes has moved, and every
-  claim this card makes about its own source still holds.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the interaction
-  projection sidecar. Verification metadata remains blank until commit.

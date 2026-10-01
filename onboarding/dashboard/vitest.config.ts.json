@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/vitest.config.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Separate diagnostic Vitest configuration\n\nAnchor: `defineConfig`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "content": "sha256:67ac86f657d2df26400715a2aa9a9b75e020b985958dbba8fead99a47417552d",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Browser-build alias preserves layout effects\n\nAnchor: `alias`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "content": "sha256:f151b01154fee94b1f5dcded3f611954ccbeaa5a9c7af6c6ff3c87de440061e2",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Worker cap, setup, coverage scope and diagnostic reporters\n\nAnchor: `test`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "content": "sha256:0b1839f8f2fd81c78fcc204b4fdceabc38a36e6cdfe347a6230cf02400e25437",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source/script unit tests, excluding Playwright collection\n\nAnchor: `include`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "content": "sha256:1589566b403687c6a77d09981a6116dbbddbedc6c9a496dab156fbb63dd2fe4c",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

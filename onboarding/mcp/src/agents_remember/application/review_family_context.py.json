@@ -1,0 +1,219 @@
+{
+  "path": "mcp/src/agents_remember/application/review_family_context.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+        "content": "sha256:e6142c6ea77e6017929c7c6057fe99d2b883c1b6b83117d8f7151715790bbba2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_applicable_family"
+        }
+      },
+      "id": "RLZ-B4X9W39B",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Gives one side's population for a family selection from the family owner (list_family_revision_ids and get_family): all recorded revisions for an identity seed, or only the named revision for a revision seed. A snapshot recording neither the family nor any revision answers absent as a measured fact.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+        "content": "sha256:d799ee05d689bad242115620e1d7c0a1695e217d1cc1e84e804328f6652aff12",
+        "locator": {
+          "kind": "symbol",
+          "name": "_heads"
+        }
+      },
+      "id": "RLZ-S3T5A3E8",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Selects each side's family heads through the shared revision_heads rule over only the predecessor edges touching that side's selected revisions, so the head is the authored successor and not whichever historical revision still lists the member.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+        "content": "sha256:0d57404ce56e5c2fdc5d4d176325362a873f6085e7f13de9b01e502bfe032184",
+        "locator": {
+          "kind": "symbol",
+          "name": "_entry"
+        }
+      },
+      "id": "RLZ-SKYRM0CA",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "When the review was seeded from an invariant, re-selects each discovered family by its family identity rather than by the invariant's memberships. It then computes each side's population and heads separately and reads both rosters through read_family_roster for the selected revisions. A family the selected invariant no longer belongs to keeps its counterpart, and its head is not pinned to the predecessor that still cites the member.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Open and close the existing bound roster sides; retain named entry states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:c3a1c68003c00535b8f19dc02b4f5d41b5949bd9c0ff5d05a3a5ed710299d8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_family_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Count exact member revisions separately from repeated membership rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:75289f6047406dd94b3371a8fc45309f32287d9542608b0845d6bcab7d3f8500",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unique_members"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Discover only the union supplied by the existing direct invariant policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:c8234964ac91da50fbb3f70efa6b1c13325c1a37484866c7e21ca8c6d55c062e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invariant discovery returns family identity keys, not a head-selection subset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:194981a2a7e1d110b4a8eb0b79985a63c12c4e6d4427e584979ac1bf87f467ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_applicable_invariant"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Family and exact-family-revision populations come from the existing family owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:e6142c6ea77e6017929c7c6057fe99d2b883c1b6b83117d8f7151715790bbba2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_applicable_family"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Resolve each discovered family independently on both snapshots, then read its own selected rosters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:0d57404ce56e5c2fdc5d4d176325362a873f6085e7f13de9b01e502bfe032184",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Use the existing authored-head rule and only edges inside the population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:d799ee05d689bad242115620e1d7c0a1695e217d1cc1e84e804328f6652aff12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_heads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "State genuine family or exact-revision absence, not primary membership absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:53c688ea20a29692d02513ddff87bb99f09ee9f651f7a08058ff82167001ec0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_not_recorded_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Preserve compared, one-sided, ambiguous and unresolved selection outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:f2cefb08011b42b79a51d3f5190ff123fd1e99028db7abfffa64b1b49008f09c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Expose candidate heads’ own guarantees without inventing a selected roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:ac7d7062b2023eb5ca318fa7f3edfa6a99735c2de330110bed82b920aef8b629",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

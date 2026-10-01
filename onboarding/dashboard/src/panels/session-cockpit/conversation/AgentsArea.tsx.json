@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The line + listbox menu: state, effects, both keymaps, the overlay JSX.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a1bfab424e689fe7b7049cf98b79b519c671eda",
+            "content": "sha256:713af409bf334408c0435ba46e7535e3af723b15f5aa23b11483fc5d4435016c",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsArea"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `ConversationAgentView` rows are shaped by (`deriveAgents`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:78167f586ca4902fddc4ae1094fbf1b96890660e786a6765714b30a8af3c5be2",
+            "locator": {
+              "kind": "symbol",
+              "name": "deriveAgents"
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `ConversationAgentStatus` union the tones enumerate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:74181bd96a0e29114a40d310e0b8e56db44c6a4d96a6459b65dfb72f576c437f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationAgentStatus"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The surface that derives the roster, owns the effective focus and the ArrowDown-into-the-line hijack, and mounts this strip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The component suite pinning the line/menu states and the keyboard contract.\n\nAnchor: \"shows the viewing note + back-to-parent affordance on the line while an agent view is active\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "456fc060c0e07b6ae717f034ab3555042578fa20",
+            "content": "sha256:66057b3dbdad4589ebd9a49f9217a578c3560e635d4ce748055d809387cfb2fe",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

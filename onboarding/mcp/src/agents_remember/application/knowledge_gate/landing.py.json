@@ -1,0 +1,193 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: master routes and record landing.\n\nAnchor: \"A master-to-parent landing and a checkpoint landing\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:5c931d463e64a24888d0698dd7be256ef26ff48a60f91afd3f93d29186fa3cfe",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The finding codes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:4a8ccfc327da3f26532a17d25e0b54cdb67c9cd9e1d53b3ceee7349947ee71bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_AT_LANDING"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:b57dd55d5452a4434a459b99df1901148bddd984158351062bb8382575365fae",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNVERIFIABLE_AT_LANDING"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:5eea53802cfe69e4e3dbbbe16a6e4c038514502ac2c327e3cc0a7f7c7263d101",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_NOT_CLOSED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusal and the named remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:25128bd78709617d17498b002d2d25af5fe45da51d94ecb9c420debc6aa07fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "landing_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:2b44bf7dabfb04654e9328f76395e3d1d1c66aee53e5e7edc57abc3d5cf734fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closed history file in the landed commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:29cd148c67eeaf2dd8cf9b53bc1663bd9e9847a1b04c9c9ea748fa77988b5e36",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history_closed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The master's net staleness, refusing anything not current.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:266b5b89343ea99300ca6114f5c161b97e406ede5eb7a8dc1a6a2e02ba227fab",
+            "locator": {
+              "kind": "symbol",
+              "name": "net_stale_entries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:bed3b4f080806b56f0c64f5fa51696bd20dbbc8b868d60b0d7b54b2e0d1006bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_net_diff"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:1b59f767fe6e13e663f4bfe35aeeb047189949a0d3a1a53d9e2b636d91c93c9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_not_current"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The master route test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "content": "sha256:e44ec880899fdfc9c26fc8badf1daa5332c03510efe2cb288076b166c5e58cb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The leaf's latest history file in the landed commit; an unlistable directory is an unreadable input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f73d045dd3251e99356aa49c440604b1975f5c4",
+            "content": "sha256:830a33d744bd55ed792b7c2c6bb2902b136fa6e39161776bc4ac1bcd44bbb546",
+            "locator": {
+              "kind": "symbol",
+              "name": "_latest_history_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Record landing refuses when the landed history cannot be listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "content": "sha256:7c5fd9389c28b73495b562404614d80788b130604525bd0dbf8b085698f5dd12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_refuses_when_the_landed_history_cannot_be_listed"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

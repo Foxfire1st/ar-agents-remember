@@ -1,0 +1,54 @@
+{
+  "path": "dashboard/e2e/cockpit.spec.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The primary cockpit e2e suite (202 expectations at fix-round verify).\n\nAnchor: \"import { expect, test } from \\\"@playwright/test\\\";\"; `import { expect, test } from `",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa50fd6184d1e48fc19b32e706a121c3a1acd31f",
+            "content": "sha256:f3b905a8d028e6dea809684c1493b9ec74d2d00ab9c8555562c4e42ca1ab256f",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The dev fixture gallery and scenarios the suite drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:b6eb8228a9d5873b043ed84fa8ba3f3588a0e03ab3cf630ca6eaff9955390452",
+            "locator": {
+              "kind": "symbol",
+              "name": "cockpitScenarios"
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:73861988b8cb841aeb93db3a5230f2a30a74d8332a27fdd5eacc34db4f71d813",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 214
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

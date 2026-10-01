@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/structures.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `StructuralView` (lines 24-98) — One parsed source revision, reused for every anchor resolved inside it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ab75ed27adfff3e72e7a841a55c9745fd352fb",
+            "content": "sha256:c476f682ffe700cd7b2dc9f60b70eff41a4f7eea0f73aaf3b63471000c765ee4",
+            "locator": {
+              "kind": "symbol",
+              "name": "StructuralView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `fingerprint` (lines 101-108) — Uncached convenience entry point for callers resolving one construct..\n\nAnchor: `fingerprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ab75ed27adfff3e72e7a841a55c9745fd352fb",
+            "content": "sha256:6ed97f014a13a0e18a51b96bb2f786e93e44d6db8f86398a2cde74ffe6f71b28",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `_span` (lines 111-114).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ab75ed27adfff3e72e7a841a55c9745fd352fb",
+            "content": "sha256:640e787a7ffb32ffd8665f1e31f410ac977569a197bb0d70f185b2afa278ca56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_span"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `_tokens` (lines 117-126) — A syntax token stream with comments and layout absent but operators retained..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ab75ed27adfff3e72e7a841a55c9745fd352fb",
+            "content": "sha256:1ba18b8f9c962889ddbfd4d742f91613c37052b2f4021099a14f5e5cb047ed02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tokens"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `_digest` (lines 129-131).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ab75ed27adfff3e72e7a841a55c9745fd352fb",
+            "content": "sha256:fadf87c81a7bf4255c9ae6dd43eb79a6e4597fa210de9d18b6c7402fe72d4024",
+            "locator": {
+              "kind": "symbol",
+              "name": "_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

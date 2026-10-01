@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/documents/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package marker contains only its publication docstring.\n\nAnchor: \"Validated document publication for citation repairs.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87674f3f330144d175be0c245dba43bc949eb82a",
+            "content": "sha256:e2300c274bfd139277e09441b21e2ccd739041616822cce94f891d232169c7ec",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The concrete transaction owner lives in its own module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f4d2fd535e837eb9efc0da8622f100aa372f85",
+            "content": "sha256:cc49329bd1aeaf9ff0c541e0fe159358ff0927d7dbbae84ed4cbe97cf07ac420",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentTransaction"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

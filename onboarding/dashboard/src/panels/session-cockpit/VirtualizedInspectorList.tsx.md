@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -40,35 +30,22 @@ switches to TanStack virtualization above that threshold without truncating the 
 The leaf report records a nonblocking jsdom shutdown-timer flake seen only during one concurrent
 full-suite/typecheck run; standalone full-suite reruns passed.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Threshold, ordinary list, and virtualized list implementations. | `INSPECTOR_VIRTUALIZE_THRESHOLD` | dashboard/src/panels/session-cockpit/VirtualizedInspectorList.tsx:11-11 |
-| Bus caller that lifts interaction state above virtual rows. | `pickupMatchesFocusedSeat` | dashboard/src/panels/session-cockpit/BusPane.tsx:46-60 |
-| Evidence caller for large set/receipt ledgers. | `setLedgerEntryLine`; `submitEvidenceLines` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:36-43; dashboard/src/panels/session-cockpit/EvidencePane.tsx:102-112 |
+- Threshold, ordinary list, and virtualized list implementations. [1]
+- Bus caller that lifts interaction state above virtual rows. [2]
+- Evidence caller for large set/receipt ledgers. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 3 citation claims; scoped recheck clean (0 findings).
-
-- 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Documents the
-  100/101 threshold, accessible logical total, and caller-owned interaction-state boundary.
-  Verification metadata remains pinned to the leaf base until closeout.
+No cross-repo evidence applies.

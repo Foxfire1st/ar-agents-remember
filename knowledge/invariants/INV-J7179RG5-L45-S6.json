@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Curator hand-off entries admitted through the ordinary curator writer that would write new realization claims.",
+  "conditions": [
+    "The entry's allocation is not already committed in the candidate."
+  ],
+  "exclusions": [
+    "Exact retries of committed operations (L45-S5).",
+    "Target shapes that are not JSON objects, which the target-shape check refuses instead."
+  ],
+  "id": "INV-J7179RG5",
+  "origin": {
+    "leaf": "260921-ICR-L45",
+    "legacyId": "f5768b70-4e16-49a2-b60a-58daf0bfa47e",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "For an entry that would write new realizations, a non-string rationale or role at either level refuses the entry as realization_value_not_text, a role outside the shipped vocabulary (the word absent included) as realization_role_unknown, and a rationale longer than PROSE_MAX_LENGTH as realization_rationale_too_long, each naming the entry and offending targets before any identity is minted while sibling entries commit.",
+  "status": "proposed",
+  "supersedes": []
+}

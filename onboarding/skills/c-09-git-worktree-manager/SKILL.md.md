@@ -1,15 +1,5 @@
 # skills/c-09-git-worktree-manager/SKILL.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/c-09-git-worktree-manager/SKILL.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T15:25:16+02:00 |
-| lastVerifiedCommitHash |  `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`|
-| lastVerifiedCommitDate |  2026-09-30T15:46:42+02:00|
-| governingOverview | `skills/c-09-git-worktree-manager/overview.md` |
-
 ## Governing Overview
 
 [c-09 worktree lifecycle overview](overview.md)
@@ -100,29 +90,23 @@ None. Exact source claims and vocabulary are reconciled to the canonical skill.
 
 Current contract: closeout and integration are Git transactions over the authorized code, memory-content, and ledger legs, with preview, conflict, and ref safeguards. Their transaction-owned commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside closeout/integration remains unchanged. Targeted checks, certification, full quality, full tests, full memory quality, and independent review are contextual evidence or explicit operations; they are not automatic c-09 prerequisites.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- Canonical contract-scoped admission and task/queue separation. [1]
+- Resumable retained-conflict transaction and explicit cancellation doctrine. [2]
+- Exact cleanup/finalization boundary. [3]
+- The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38). [4]
+- Public implementation facade preserves the same contract-addressed API. [5]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical contract-scoped admission and task/queue separation. | "Atomic-series implementation admission is a separate, contract-scoped authority." | skills/c-09-git-worktree-manager/SKILL.md:237-249 |
-| Resumable retained-conflict transaction and explicit cancellation doctrine. | `## Mid-Task Sync` | skills/c-09-git-worktree-manager/SKILL.md:258-304 |
-| Exact cleanup/finalization boundary. | `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:436-516 |
-| The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38). | "master lists it, the finalizer always derives that"; "assertions are omitted. A sub-task naming none whose folder" | skills/c-09-git-worktree-manager/SKILL.md:496-503 |
-| Public implementation facade preserves the same contract-addressed API. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned lifecycle doctrine.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
 ## Ungoverned Mirror Status (known defect)
 
@@ -136,40 +120,3 @@ rather than by a governed maintenance pass. The remaining sibling sidecars under
 deliberately left untouched pending a follow-up decision on whether this mirror should be governed or
 removed. That mismatch between the declared path rules and the enforced checking scope is itself the
 recorded defect.
-
-## Update History
-- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38**, although this card's source is outside `pathRules` (kept current as the L27, L13, L10 and L14 curators kept the `skills/` cards). The Logic records the finalizer paragraph's two new clauses (ruling 12:33:07 Q3; review R1 note 5, ruling 13:11:32; "a sub-task naming none", ruling 14:12:52) and the nine-copy sync; one row added. The installed fixer normalised the two section rows, one of them already imprecise at base (`## Lifecycle Finalization And Cleanup` `430-508` → `436-516`, `## Mid-Task Sync` `256-300` → `258-304`). No verification stamp was advanced.
-- 2026-09-14T13:20+02:00 — Corrected the sync doctrine this card states: the transaction no longer
-  re-judges a memory resolution against either parent's row list, because the ledger is derived state
-  and its rebuild is its authority, so a row the rebuild cannot resolve is reported as an exclusion
-  rather than refused. The shared source text at `SKILL.md:293-299` was corrected in the same change,
-  together with its eight generated copies, so the skill no longer carries the removed parent-row
-  validation; the matching invariant was reworded.
-  Verification remains closeout-owned.
-- 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: removed the dead
-  `source-pair-scoped` admission claim and reworded the logic to the shipped contract-scoped
-  authority; rebound the citation to `"Atomic-series implementation admission is a separate,
-  contract-scoped authority."` at SKILL.md:237-249, and rebound `## Mid-Task Sync` to :256-300 and
-  `## Lifecycle Finalization And Cleanup` to :430-508 after grepping the frozen source. Body now
-  records per-contract activation (selection publishes `reconciling` for that contract and suspends
-  nothing; one master's selection never pauses or excludes another; multiple nonterminal contracts
-  remain valid) and the queue's active/reconciling/vacant projection. Added the Ungoverned Mirror
-  Status defect statement. Verification metadata remains closeout-owned.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `sync_result` repointed to mcp/src/agents_remember/worktrees/modules/sync.py:28-67. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Atomic-series implementation admission is a separate, source-pair-scoped authority." repointed to skills/c-09-git-worktree-manager/SKILL.md:237-237. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-08-26T14:32+02:00 — Corrected sync doctrine to preserve every exact parent ledger row while
-  accepting repeated code commits as newest-first memory history. Verification remains
-  closeout-owned.
-
-- 2026-08-26T10:44:52+02:00 — Completed governed provenance review for the canonical c-09 selector, resumable sync, cancellation, and terminal-release doctrine.
-
-- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for the changed
-  c-09 doctrine card.
-
-- 2026-08-26T08:20+02:00 — Reconciled canonical c-09 selection, resumable-sync, cancellation,
-  terminal-release, and no-fallback doctrine to the frozen source.
-
-- 2026-08-26T05:20+02:00 — Created strict canonical onboarding for the source-pair selector,
-  reconciliation-before-exposure, retained conflicts, continue/cancel, stable journal, exact
-  terminal release, and no-fallback boundary. Final citations remain post-Dagger-owned.

@@ -1,0 +1,38 @@
+{
+  "path": "mcp/src/agents_remember/serving/claude_stream_limits.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Consumed by the adapter facade.\n\nAnchor: \"from agents_remember.serving.claude_stream_limits import ClaudeAdapterLimits\"; \"limits: ClaudeAdapterLimits\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:f176daada42c88c087e458092e6744ef77eb8030424e4d543c10ed429badca35",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:12fe85e4ea7148caa4660b2fadfaee3debee6719aefd3bda92dc2d155b1c9623",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

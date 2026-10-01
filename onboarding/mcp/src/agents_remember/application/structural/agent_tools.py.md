@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/structural/agent_tools.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/structural/agent_tools.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T17:47:39+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structural application services](overview.md)
@@ -95,23 +85,23 @@ stay local to the application transaction.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; repository tests and the approved L19 task are the evidence.
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Dispatch performs contained-seat authorization and exact initial brief handling, now by caller kind (plane vs ambient). | `dispatch_agent_tool`; `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:446-537; mcp/src/agents_remember/application/structural/agent_tools.py:404-445 |
-| Manager and worker dispatch resolve the canonical master and surface activation/sync refusal before spawn. | `_implementation_series_admission_refusal`; `_dispatch_owning_master` | mcp/src/agents_remember/application/structural/agent_tools.py:628-680; mcp/src/agents_remember/application/structural/agent_tools.py:681-699 |
-| The shared series bootstrap owner binds durable contract identity to that contract's own activation: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and returns implementation authority only once it is active. | `ensure_master_series_contract` | mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:215-307 |
-| Relationship messaging and lifecycle operations expose structural intent. | `message_parent_tool` | mcp/src/agents_remember/application/structural/agent_tools.py:829-836 |
-| Dispatch caller resolution belongs to this current application entry point; removed fixtures do not establish live routing coverage. | `_resolve_dispatch_caller` | mcp/src/agents_remember/application/structural/agent_tools.py:404-445 |
-| Rollback retires an unbriefed child as the authority-gated actor (plane) or a system closure (ambient). | `_retire_unbriefed_child` | mcp/src/agents_remember/application/structural/agent_tools.py:241-290 |
+- Dispatch performs contained-seat authorization and exact initial brief handling, now by caller kind (plane vs ambient). [1]
+- Manager and worker dispatch resolve the canonical master and surface activation/sync refusal before spawn. [2]
+- The shared series bootstrap owner binds durable contract identity to that contract's own activation: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and returns implementation authority only once it is active. [3]
+- Relationship messaging and lifecycle operations expose structural intent. [4]
+- Dispatch caller resolution belongs to this current application entry point; removed fixtures do not establish live routing coverage. [5]
+- Rollback retires an unbriefed child as the authority-gated actor (plane) or a system closure (ambient). [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 
 ## 260815-DAG-L4 Authority Boundary
@@ -135,55 +125,3 @@ messages persist document-and-role addresses and resolve the current occupant on
 so vacancy and replacement do not turn runtime session ids into public authority. Receipt mutation is
 composed through `DispatchBriefReceiptStore`, keeping dispatch commit evidence separate from the
 general terminal lifecycle surface while reusing the same atomic catalog storage boundary.
-
-## Update History
-- 2026-09-13T15:03:18+02:00 — Reflected the corrected source-side wording of the shared bootstrap in the body: `ensure_master_series_contract` now publishes the requested contract's own activation as `reconciling` with no other master's record touched, then syncs the pinned source pair and returns implementation authority only once it is active (code lines 227-232); the dispatch paragraph and its admission account were re-worded to match. Curator-verified the mechanically repointed `ensure_master_series_contract` claim (see the verification entry below) and cleared its reopened-citation finding; the claim text and its exact range 215-307 were re-read against the construct. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T15:03:18+02:00 — Curator verification of the mechanically repointed `ensure_master_series_contract` claim, clearing its reopened-citation finding; this entry takes the place of the auto-generated mechanical repair line for that claim, whose provenance is preserved in prose here. The ccr-r10@v1 anchor-range projection had bound the claim to mcp/src/agents_remember/worktrees/modules/startup/start_contract.py:215-307 against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830 with claim bytes unchanged at that time. I re-read the construct at that exact range — `def ensure_master_series_contract(` at 215 through its `reconcile_selected_series_under_authority(...)` return at 304-307 — and it supports the claim's own words: durable contract creation is separate from that contract's own disposable activation selection, which is published as reconciling for that contract alone, so a foreign master's record is never read or named as a precondition. The claim is curator-verified as current, not merely mechanically repointed.
-- 2026-09-13T14:21:11+02:00 — 260831-LOCR-L36: corrected dispatch's series admission account to the contract-keyed activation record. The Purpose and Code Commentary paragraphs no longer say dispatch "establishes the selected atomic-series source pair" or that `ensure_master_series_contract` "selects the master for its exact protected source pair" / "pauses the former selection"; they now say the owner selects the master in that contract's own record (keyed per series contract, not per protected source pair), that two sprint-commanded atomic masters may share one source pair and both stay selected, and that the only surviving activation waiting reason is `atomic-series-reconciling`. Corrected the matching admission invariant. Rebound five stale reference rows against the frozen code worktree: `dispatch_agent_tool` and `_resolve_dispatch_caller` are now cited as their own declaration ranges (`446-537`; `404-445`) instead of one truncated `338-487` span; `_implementation_series_admission_refusal`/`_dispatch_owning_master` moved to `628-680`/`681-699`; `message_parent_tool` to `829-836`; `_resolve_dispatch_caller` to `404-445`; and `_retire_unbriefed_child` to `241-290`. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No content impact: this source behavior and source-to-card meaning remain unchanged while the shared sidecar and route body validators run independently. No acceptance claim is made.
-
-- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ04 preparation rebound the shared bootstrap citation to the full typed reread/refusal seam; dispatch ownership is unchanged and no acceptance claim is made.
-- 2026-09-08T17:47:39+02:00 — CCR-L38 source-grounded preparation rebound the shared bootstrap citation to the current `ensure_master_series_contract` definition. Verification metadata remains closeout-owned; no acceptance claim.
-
-- 2026-08-31T12:00+02:00 — ARSPAWN-L5 A005 review repair delegates seat serialization and
-  transaction execution to `dispatch_transaction.execute_serialized_dispatch`, returning
-  `dispatch_agent_tool` to a 90-line composition function. Verification remains closeout-owned.
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented
-  document-derived spawn altitude, fail-closed invalid hosted identity, and the exact reviewer
-  parent passed by plane dispatch into spawn and reconciliation. Verification remains closeout-owned.
-
-- 2026-08-26T16:03+02:00 — Post-failure repair: recorded the dispatch-specific receipt collaborator,
-  exact persistence seam used by ambient rollback forcing, and unchanged canonical-address boundary.
-  Verification remains closeout-owned.
-
-
-- 2026-08-26T12:30+02:00 — Reconciled 260821-ARSPAWN-L2 onto IAS: preserved the complete idempotent
-  dispatch, evidence-aware retry, private rollback, and vacancy-safe addressing contract while
-  retaining IAS-owned metadata and citation repairs. Verification remains closeout-owned.
-
-- 2026-08-26T03:37+02:00 — Replaced the manager-only global-lane account with current manager and
-  worker atomic-series admission: canonical master resolution, disposable source-pair selection,
-  reconciliation-before-spawn, and structured retained-conflict/refusal results. Verification
-  remains post-Dagger/closeout-owned.
-
-- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the source only repoints the startup import and extracts the existing post-spawn briefing statements into `_brief_spawned_child`; dispatch ordering and documented child-briefing behavior are unchanged. Verified at code commit `1d446724`.
-
-- 2026-08-21T03:45+02:00 — 260821-ARSPAWN-L1 fix round 3: `_resolve_dispatch_caller` restructured ambient-first — `resolve_ambient_caller` decides the branch directly (no plane identity → ambient with role-altitude validation; plane identity → `resolve_ambient_seat` + `authorize_child`, any refusal never downgrades); the both-fail defensive guard was removed as dead code (same environ). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `dispatch_agent_tool` resolves the caller by kind through `_resolve_dispatch_caller` — plane seats keep `resolve_ambient_seat` + `authorize_child` unchanged; only `ambient-seat-unavailable` downgrades to the ambient branch (role altitude still validated); stale/invalid/mismatched/unbound plane identity refuses instead of downgrading. Plane spawns pass `caller_kind="plane"`; ambient rollback retires the unbriefed child as a system closure (`retire_entry`, `by_session=None`, edge `ambient-dispatch-rollback`, actor `system`) bounded to the spawn result; `StructuralMessageContext.sender` is optional so the ambient brief post carries no sender. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13: manager series bootstrap resolves the effective
-  execution nature (nature-less masters default to atomic; organizational only under an authored
-  graph), and an atomic-sequential lane-blocked bootstrap surfaces as a `StructuralOutcome`
-  carrying the ordering payload instead of raising. Verification remains closeout-owned.
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-- 2026-08-14T06:30+02:00 — L23 final candidate review: structural dispatch now fails closed on
-  stale task-derived lineage and requires a current candidate-bound route-review record before
-  curator host creation. Verification remains closeout-owned.
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for structural agent operations; replaces public exact-id orchestration operations rather than wrapping them as compatibility APIs.

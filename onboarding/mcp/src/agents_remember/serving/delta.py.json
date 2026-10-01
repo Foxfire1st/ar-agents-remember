@@ -1,0 +1,160 @@
+{
+  "path": "mcp/src/agents_remember/serving/delta.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The projection schema diffed here (flat, id-keyed collections).\n\nAnchor: \"class WorkspaceProjection(BaseModel):\"; \"lifecycles: list[LifecycleProjection]\"; \"enclosures: list[EnclosureNode]\"; \"providers: list[ProviderNode]\"; \"metrics: Metrics\"; \"analytics: Analytics\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "locator": {
+              "end": 1164,
+              "kind": "line_range",
+              "start": 1142
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The projector calls the stable-state and diff functions, publishes the projection, and broadcasts resulting items.\n\nAnchor: \"class Projector:\"; \"def stable_projection_state(\"; \"def diff_projection(\"; \"def _publish_projection(\"; \"def _broadcast(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9d8ebbb21affe07f6d689a89624db06bcb2e3e",
+            "content": "sha256:d04deafb28393c660121cc33f9535f587bd3a6a0cb24c2baa162d0e6667f5ff2",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a9d8ebbb21affe07f6d689a89624db06bcb2e3e",
+            "content": "sha256:4d96a68c4b529fac792a7e6701452e2f3cb7aa49ccc03be4278d93cb75205710",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:ba47a7c5399b7012e1a2bbf959243c7014d63882dbf53875c5a99d1e11c9d87a",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:14602b382ca2a8bc280fa2fe5ee0736b592ae516090dc68fdf1c2449cef0e4f3",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The client mirror of the volatile set + local age advancement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:f9d6cc0aa50eda1132b256e9e41f6f6c80dbf8196eba107133ffb5269d15585e",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOLATILE_AGE_FIELDS"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:3dfb3ff03be854f5bc6ec2b47091a747f1e77acfcffab8aa0a2add32bc003026",
+            "locator": {
+              "kind": "symbol",
+              "name": "stampServed"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:6d89d54b8313784d65db2577fb4579e3dc39c353e49ad702f009f5428c7d7217",
+            "locator": {
+              "kind": "symbol",
+              "name": "servedAgeSeconds"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:bc77e64b8b9302bf9d0e5fbd954bd097d7363593da5144699c235c76585ea93c",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:9efd05309cb6fd43b4b041add2c5d410d9143e5d807e17529bb51a4af33d8b8b",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

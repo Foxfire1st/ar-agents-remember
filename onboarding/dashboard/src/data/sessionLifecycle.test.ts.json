@@ -1,0 +1,76 @@
+{
+  "path": "dashboard/src/data/sessionLifecycle.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe4a7ea89ca3445a98e0b64b6f0c0f7dea4c24cb",
+            "content": "sha256:1c31486622f48dfee78e156a15ba53c8120e75cda8612541bbd3d03f9763f35d",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRetireResidualSweep"
+            },
+            "path": "dashboard/src/data/sessionLifecycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The centralized copy the honesty cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:8fea82b84d60f215fa13578b65b169088b15b21af66e5b855b5dce56a599bb72",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminateConfirmCopy"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The L6 fixtures driven through the real store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8d89416905ae2ed22dcc34a005872f1e6414113",
+            "content": "sha256:ea54c8b7d5392b4545194acdc6ea6f3c2d60d7b7c3d55c73a8e9fa31ca83eca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "L6_CONTROLLED_WORKING"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The view-level companions (unfocused-residual render, rail End/error-row cases).\n\nAnchor: \"renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ed84cda6b4e113ac6fb303ebe89974e6b88476a",
+            "content": "sha256:63775756cfe6937ba0165745fd91f6cf09d3e2ed9b7e4bf59e1acb49b64329a6",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

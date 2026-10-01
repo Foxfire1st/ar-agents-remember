@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/view_pages.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: the whole row list, cut by tokens.\n\nAnchor: \"Pages of a named view of a memory tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "515bb4ccad5fce1778aeb34ae79460a9ca25c856",
+            "content": "sha256:96032f4419dc9a104bb76c90dcc7e2cf46ea3d58a207731f3dfb71760bfdc486",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The manifest digest over each row's identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "515bb4ccad5fce1778aeb34ae79460a9ca25c856",
+            "content": "sha256:7cb8920955f72ccf018b320f8ec99a8aee3deacd563b562ec1ee1b4734ef64b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "WholeView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "515bb4ccad5fce1778aeb34ae79460a9ca25c856",
+            "content": "sha256:de16a083c6f614bf216d92824cb0a3ed0b157f234cb7a2b2b7b237d043dc3ba3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Walking the renderer's slices to the end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "515bb4ccad5fce1778aeb34ae79460a9ca25c856",
+            "content": "sha256:e1137f6964efb9a7b596ff7263e598d4323b03228314abcc85edb0a7e04b140f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_whole_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A family view's rows and its reference row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "515bb4ccad5fce1778aeb34ae79460a9ca25c856",
+            "content": "sha256:99eea499809bcc0c3f40f831cf1719418507d50b73a27bef916feddc5da44c42",
+            "locator": {
+              "kind": "symbol",
+              "name": "view_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "515bb4ccad5fce1778aeb34ae79460a9ca25c856",
+            "content": "sha256:a33cc2c3074d597a965da1cd1be9bdabb6c8b6a4136fbbda5f422fe2a368c7c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_reference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The page as the view's own payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "515bb4ccad5fce1778aeb34ae79460a9ca25c856",
+            "content": "sha256:a486b42f6a1b70468e92774a8dc88a1f11fd59731afa6eba43d018ae80470f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "view_page_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

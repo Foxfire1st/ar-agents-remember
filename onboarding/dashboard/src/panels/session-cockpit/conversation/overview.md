@@ -2,13 +2,7 @@
 
 | Field                  | Value                                                       |
 | ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
 | sourceRoute            | `dashboard/src/panels/session-cockpit/conversation/`        |
-| doc_type               | `route-local-overview`                                       |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
-| governingOverview      | `../overview.md`                                             |
 
 ## Governing Overview
 
@@ -222,36 +216,32 @@ overview is their governing pillar.
 | Interrupt hook | [useConversationControls.ts](useConversationControls.ts.md) · [useConversationControls.test.tsx](useConversationControls.test.tsx.md) |
 | Renderer + a11y suite | [renderer.test.tsx](renderer.test.tsx.md) |
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This route relies on its direct agents-remember source/tests and the reviewed
 task/worker/verdict evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for the structured renderer. | — | — |
+No configured Domain Documentation source exists for the structured renderer.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The renderer composes repository-local components over this package's own conversation contracts; no
 cross-repository implementation source governs it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reconstructable projection this renderer reads. | `# dashboard/src/data/conversation/ — Reconstructable Active-Conversation Projection Overview` | onboarding/dashboard/src/data/conversation/overview.md:1-300 |
-| The sibling in-stage history browser. | `# dashboard/src/panels/session-cockpit/conversation-library/ — In-Stage History Browser Overview` | onboarding/dashboard/src/panels/session-cockpit/conversation-library/overview.md:1-173 |
-| The one-roof composition that mounts this renderer. | `# dashboard/src/panels/session-cockpit/ — Canonical Chats Cockpit Overview` | onboarding/dashboard/src/panels/session-cockpit/overview.md:1-506 |
-| The interrupt chord/aria-derivation the hook consumes. | `# dashboard/src/data/keymap/ — Keyboard Zone Contract Overview` | onboarding/dashboard/src/data/keymap/overview.md:1-154 |
-| The control routes whose evidence gates interrupt + the renderer-facing rulings. | `# Structured Conversation Control Route Overview` | onboarding/mcp/src/agents_remember/serving/conversation/control/overview.md:1-433 |
-| The conversation-grammar fixture builders these suites seed from, and the three sanctioned brand mints. | `pageCursor`; `eventCursor`; `libraryConversationKey`; `conversationCapabilities` | dashboard/src/test/fixtures/conversationWire.ts:53-55; dashboard/src/test/fixtures/conversationWire.ts:58-60; dashboard/src/test/fixtures/conversationWire.ts:63-65; dashboard/src/test/fixtures/conversationWire.ts:103-146 |
-| The registry that records those three mints as the only permitted casts, each with its reason. | `SANCTIONED_WIRE_SITES` | dashboard/src/test/wireFixtureGuard.test.ts:51-188 |
+- The reconstructable projection this renderer reads. [1]
+- The sibling in-stage history browser. [2]
+- The one-roof composition that mounts this renderer. [3]
+- The interrupt chord/aria-derivation the hook consumes. [4]
+- The control routes whose evidence gates interrupt + the renderer-facing rulings. [5]
+- The conversation-grammar fixture builders these suites seed from, and the three sanctioned brand mints. [6]
+- The registry that records those three mints as the only permitted casts, each with its reason. [7]
 
 ## Empty-Well Honesty And Scroll-Restoration Route State
 
@@ -324,91 +314,3 @@ because streamed-row content is still suite-specific.
 ## 260815-DAG Master Full-Gate Repair Route Impact
 
 `ConversationSurface.test.tsx` gained an async `afterEach` that flushes the timeline virtualizer's scroll debounce before jsdom teardown.
-
-## Update History
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: ConversationSurface.test.tsx flushes the timeline virtualizer debounce in an async `afterEach`. Verified at code commit e5cb139f.
-
-- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
-
-- 2026-08-12T17:04+02:00 — 260731-EFA-L23 dashboard-gate route review: moved the intent-lock suite
-  onto the existing hermetic scroll-memory geometry/timer helper, eliminating the post-jsdom
-  Virtualizer debounce race without changing timeline production behavior. Focused Vitest is 10/10
-  with no unhandled error; verification provenance remains closeout-owned.
-
-- 2026-08-09T22:22+02:00 — 260713-TES master integration route impact: the shared
-  conversation-timeline scroll-memory fixture now owns fake timers and tears down renders plus
-  pending Virtualizer debounces before restoring real time. Both split suites preserve that order,
-  eliminating the nondeterministic post-jsdom React callback while leaving production behavior
-  unchanged.
-
-- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the live-thinking coalescing change set and its acceptance pins. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (conversation-timeline split). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T02:40:00+02:00 — W3-B01 curator: curated 7 Repo-Internal table citations (5 memory-overview and 2 code-source references) with exact headings, builder identifiers, and registry anchor. Verification metadata remains unchanged for closeout.
-- 2026-08-01T13:05+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added
-  the "Fixture Contract For This Renderer" section. No renderer component changed; both changed sources
-  are suites whose capability seeds were shapes the server cannot send — an empty
-  `{} as ConversationCapabilities` in `ConversationAgentFocus.test.tsx` and a one-leaf
-  `as unknown as ConversationCapabilities` in `useConversationControls.test.tsx` — now built by
-  `conversationPage()` / `capabilitiesWithInterrupt()`. Checked the thing that would have made that
-  consequential for the Renderer Rulings Register: `useConversationControls.ts` L107 reads exactly
-  `projection?.capabilities?.controls.interrupt` and no other leaf, so the fuller tree moves no gate;
-  both suites run green. Recorded three builder defaults a follow-on renderer test must know rather than
-  rediscover — `conversationPage()` supplies `page.totalItems` (the field R5's honest-`aria-setsize`
-  rule turns on), `conversationItem()` defaults `turnId: "t1"` (which is why the focus suite passes an
-  explicit `turnId: undefined`, admitted because `ConversationItem.turnId` is optional and
-  `exactOptionalPropertyTypes` is off), and the four-group / twenty-three-leaf tree the mirror declares.
-  Verified the three brand mints (`ActivePageCursor`/`ActiveEventCursor`/`LibraryConversationKey`,
-  `data/conversation/types.ts` L26-L27 for the first two) are registered as sanctioned cast sites in
-  `test/wireFixtureGuard.test.ts` L165-L176 rather than merely tolerated. Added two two-cell
-  `Repo-Internal References` rows in the existing two-column shape. Verification metadata remains pinned
-  until closeout.
-
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented effective-focus-driven
-  hydration, valid persisted versus stale focus, child-local visible failure/retry, and unchanged
-  parent feed/reconnect authority. Verification metadata remains pinned while uncommitted.
-
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the sub-agent navigation rework in
-  the Route Model — `AgentsArea` is ONE compact line always (per-agent rows and the narrow-collapse
-  ResizeObserver deleted) with the roster in a new listbox menu (arrow navigation with wrap +
-  scroll-into-view, Enter/click select, Esc/backdrop dismiss), the surface owns the uniform
-  ArrowDown hijack INTO the line as the primary path (ArrowLeft/ArrowRight kept as an additional
-  path; the surface focus bar deleted — the line carries the viewing note + back-to-parent), and
-  the timeline's exported `OPERATOR_SCROLL_KEYS` drops ArrowDown from the scroll-key contract.
-  Verification stays pinned (remediation uncommitted); closeout re-stamps.
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the R7 sub-agent focus UX — the
-  `AgentsArea` strip (roster-evidenced rows, word-carrying status chips, narrow/empty summary
-  collapse, aria-current focus toggle), the surface-owned focus model (ArrowLeft/ArrowRight/Escape
-  keys with interactive-target exclusion, effective-focus honesty against the live roster, timeline
-  filtering with `totalItems` withheld while focused, the back-to-parent focus bar and the
-  focused-lane empty note), and the `InteractionItem` asking-agent badge. Added `AgentsArea.tsx`,
-  `AgentsArea.test.tsx`, `ConversationAgentFocus.test.tsx`, and `InteractionItem.test.tsx` to the
-  file onboarding map. The L7 source is uncommitted; lastVerified* stays at the leaf base and
-  closeout re-stamps verification.
-- 2026-07-24T13:17:17Z — Curator: documented current empty-well honesty, scroll restoration, latest
-  navigation, SSE working cue, and composer-owned stop behavior. Verification metadata remains
-  pre-commit.
-
-- 2026-07-21T12:00+02:00 — 260718-CHATS-L5P curator: added the FB7 terminal-surface identity section —
-  the well (FB7.1), line-grid rhythm (FB7.3), gutter grammar across the item components (FB7.4/R12),
-  V10 whole-word wrapping (dependent on the RV-1 root override), and the R11 capability CUE. Styling
-  only; the harness-neutral grammar, feed ARIA, and virtualization are unchanged. Spec home is the leaf
-  visual-audit `## FB7`. Verification re-pinned to this leaf's base (`352d5cd`) while the polish candidate
-  is uncommitted; closeout owns candidate stamping.
-- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: updated the L5-Facing Register's
-  virtualization/E1/E2 bullet to DELIVERED — the 10k DOM/interaction baseline + axe tripwire landed in
-  `renderer.test.tsx` (its file card refreshed), E1 is quarantined and E2 authority-pinned in the
-  backend, and the NEW F1 disjoint-id-namespace twin (which rendered as a duplicate `unknown-input`
-  native-history row in this feed) is now suppressed in the projector, proven once-only on the real
-  codex wire. No renderer component source changed this leaf beyond the added `renderer.test.tsx`
-  baseline. Verification stays pinned at the leaf base (`9e6c15d`) until closeout stamps the candidate
-  commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the governing pillar for the harness-neutral
-  structured conversation renderer — the single honest `role="feed"` (server-ordinal posinset, honest
-  setsize), the one block grammar (no vendor skins), the replay-silent announcers, the inert default-off
-  diagnostics drawer, and the L5-Facing Register (attempt-and-reflect interrupt gating on L3 evidence,
-  hosted-codex turn-id correlation, the never-surface-stale-L1-reason and keymap-derived aria rules, the
-  wrapping-flex containment lesson, and the virtualization/E1/E2 L5 hardening). Verification is pinned to
-  the leaf base (`0be0099`) because the new source route is uncommitted; closeout owns its first source
-  stamp.

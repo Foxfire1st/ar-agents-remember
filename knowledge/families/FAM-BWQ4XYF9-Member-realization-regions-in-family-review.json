@@ -1,0 +1,27 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "In a family review, every member's realization claim is shown on each side with the exact region that side's anchor resolver established in the exact recorded blob -- or an explicit statement that no region was established -- together with the claim's stored role and rationale; no region is ever guessed, read from prose, or placed on bytes the side did not find at the recorded path.",
+  "id": "FAM-BWQ4XYF9",
+  "members": [
+    "INV-1RWT3JRR",
+    "INV-6W74GGC8",
+    "INV-716Q6QMV",
+    "INV-ENTFR23T",
+    "INV-RANN4DC0"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L44",
+    "legacyId": "03ba6cb1-f569-4a06-a148-1de6821c412e",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "routes": [
+    "dashboard/src/data",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/memory/knowledge",
+    "mcp/src/agents_remember/models/knowledge"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Member realization regions in family review"
+}

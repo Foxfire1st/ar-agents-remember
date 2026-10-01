@@ -1,0 +1,153 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/parsed.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The problem categories and the rule each maps to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5d6b3b9d5470c70186e01f9d8361a8d07250f2e",
+            "content": "sha256:4a7a7d11e7cab00f4d9f6b564d7f13cf2772b5030946a9419f8925ca85e8be08",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProblemCategory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5d6b3b9d5470c70186e01f9d8361a8d07250f2e",
+            "content": "sha256:1746543131c9eb8b60e7ee6d7eee70dd3f2b7f1f3eb11d2167041628095f83a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_category"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parsed result, including unparsed record IDs that still resolve.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5d6b3b9d5470c70186e01f9d8361a8d07250f2e",
+            "content": "sha256:89a48b97f907592bc7d95b77871e69c5db8838cd23a8235ebb89ade529fe0c45",
+            "locator": {
+              "kind": "symbol",
+              "name": "ParsedTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Location dispatch, canonical check, relation attribution and sidecar placement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5d6b3b9d5470c70186e01f9d8361a8d07250f2e",
+            "content": "sha256:dd7d8e811cf7569abdff91a97b102ad2b083b162085c33f78c25ad84efa64839",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Parser"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tree entry point and the lenient base reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5d6b3b9d5470c70186e01f9d8361a8d07250f2e",
+            "content": "sha256:43445d7663aeb68b6f759f977b073f9a05076f22a34cd6235625d1075e44dcf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5d6b3b9d5470c70186e01f9d8361a8d07250f2e",
+            "content": "sha256:8de6ce3cb99ee664368c9d94dfeca7aa01b510ebff7ffe53519dbc5c906d1463",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_sidecars_leniently"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A disallowed relation is refused under the relations rule with its field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9a1a58a900c3326508bea785ce962d72b6293b",
+            "content": "sha256:fc756622645df67829b00a773f078c8aceec9b715d9a837eba8042fe28cbd1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_disallowed_relation_is_refused_under_the_relations_rule_by_field"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7d9a1a58a900c3326508bea785ce962d72b6293b",
+            "content": "sha256:6cb4c354d91e24f19c6c6e3922156f78f9e913532d164308201566b4651a07e7",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 281
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A non-canonical file names the formatter command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9a1a58a900c3326508bea785ce962d72b6293b",
+            "content": "sha256:0dc4a70253c0912883c06213897f17b2bd99fd3b949317c9dc30f9343b652ba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_non_canonical_file_names_the_formatter_command"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7d9a1a58a900c3326508bea785ce962d72b6293b",
+            "content": "sha256:d326e4523d6a2be43e2fb437325bf05139a9b1cfe0fbcd1907ebadb1c205ceec",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

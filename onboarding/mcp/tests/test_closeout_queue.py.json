@@ -1,0 +1,328 @@
+{
+  "path": "mcp/tests/test_closeout_queue.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:988cd43ca42e50b20c431c983e6b7fb95a3bde5c6cd2bba7472e3801281bfb26",
+            "locator": {
+              "kind": "symbol",
+              "name": "enable_direct_execution"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:ba28344f8ca924f9bb7915f32cd4344b59aa9c262be90e77e48240e81f038662",
+            "locator": {
+              "kind": "symbol",
+              "name": "QueueFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Judgment table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:3a2ce78772f24eb3111762b6e8df1676b7f650a97d71c14d37796f31c9e87c0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judgment_table"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Priority table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:6306ed8086b5c34a58098304ef58d7bcf818e5c9f55d748ebb4abdffbc541ad9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_priority_table"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Grade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:4c03e74c85001b40bdbe4f657bb76e41b1773561af993928ed4a12d9540196ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grade"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The grade builder returns the priority and judgment id pair the register rows reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:4c03e74c85001b40bdbe4f657bb76e41b1773561af993928ed4a12d9540196ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grade"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Queuefixture.\n\nAnchor: \"Current task/door/projection fixture retained for non-queue lifecycle suites.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:988cd43ca42e50b20c431c983e6b7fb95a3bde5c6cd2bba7472e3801281bfb26",
+            "locator": {
+              "kind": "symbol",
+              "name": "enable_direct_execution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The retained task/door/projection fixture class that non-queue lifecycle suites construct.\n\nAnchor: \"Current task/door/projection fixture retained for non-queue lifecycle suites.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:988cd43ca42e50b20c431c983e6b7fb95a3bde5c6cd2bba7472e3801281bfb26",
+            "locator": {
+              "kind": "symbol",
+              "name": "enable_direct_execution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:07c2ece7529bb0f68d85ba0c8aaed029671b1b453901326309388624e3f937df",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_unstarted_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:df646c2a7ec05b69f61dbe3821c331ad9167797a97a0b41b4ab16e64f4ecf264",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:df646c2a7ec05b69f61dbe3821c331ad9167797a97a0b41b4ab16e64f4ecf264",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:802c77a9b87ed5ea7cce8dd73de54756f9ef560c5375174d109e6689e83abb55",
+            "locator": {
+              "kind": "symbol",
+              "name": "declare_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:988cd43ca42e50b20c431c983e6b7fb95a3bde5c6cd2bba7472e3801281bfb26",
+            "locator": {
+              "kind": "symbol",
+              "name": "enable_direct_execution"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:ba28344f8ca924f9bb7915f32cd4344b59aa9c262be90e77e48240e81f038662",
+            "locator": {
+              "kind": "symbol",
+              "name": "QueueFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:ab74a4ed92d2983083f1eac442d52bcac70bb4360cd65f402f3df9bccd59e084",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The master builder writes a canonical atomic master document with the given execution nature and one commanded subtask row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:ab74a4ed92d2983083f1eac442d52bcac70bb4360cd65f402f3df9bccd59e084",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract.\n\nAnchor: `task_doc`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:d053e6131889082104d9b1784cb21740718548924a9008c15f25aa6e4c98ff50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Judgment row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:4dfe681eb473f67b39acc0b79e4bcce1ba8d60961bd7e2388339115d5ac5f0a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judgment_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The judgment-row builder renders one canonical judgment register row for a candidate and priority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:4dfe681eb473f67b39acc0b79e4bcce1ba8d60961bd7e2388339115d5ac5f0a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judgment_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Priority row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:6f51cf73f8ab6620940e4ea52650329a9654430939f34e7d14d732e2419a01c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_priority_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The priority-row builder renders one canonical priority register row for a candidate and priority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "content": "sha256:6f51cf73f8ab6620940e4ea52650329a9654430939f34e7d14d732e2419a01c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_priority_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

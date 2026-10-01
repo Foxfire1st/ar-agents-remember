@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/projectors/codex.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/projectors/codex.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-08-07T22:45:00+02:00               |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active conversation projectors overview](overview.md)
@@ -149,17 +139,17 @@ lookup tables whose miss value is the honest `unknown`, not a nearest-match gues
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. The schema authority named by the
 module is the codex app-server v2 generated protocol plus the landed installed-runtime fixture
 rows, both repository-owned and cited below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this mapper. | — | — |
+No configured domain documentation was available for this mapper.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The generated v2 protocol types and the codex adapter's evidence emission are the frame
 authorities; the installed-runtime fixture records which shapes are gate-observed; the engine
@@ -168,26 +158,22 @@ resolves bare-delta targets and provenance. The sub-agent mapping adds the roste
 seam (the engine passes the projection's vendor conversation id as `parent_thread_id`), the
 store's roster-aware upsert rules, and a dedicated collab/engine test module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:776-776 |
-| The router itself moved out of the adapter in 260731-EFA-L6 and was renamed with it, so the adapter-private name is gone from the tree. | `route_delta_params` | mcp/src/agents_remember/serving/codex_app_server_threads.py:215-229 |
-| `EvidenceFrame.native_method` is the typed field the bridge preserves and this projector switches on; `evidence_frame_json` serializes it as `nativeMethod` (wire contracts in models since L9). | "payload[\"nativeMethod\"]" | mcp/src/agents_remember/models/conversations/evidence.py:158-158 |
-| `ConversationAgentRef`/`ConversationAgentStatus` are the roster identity/status grammar this projector emits; `ConversationItem.agent` is the optional field that carries it (absent = parent conversation). | `parent_agent_id` | mcp/src/agents_remember/models/conversations/content.py:156-156 |
-| The engine passes the multiplexed demux context: the one mapper call site sets `parent_thread_id=self._identity.vendor_conversation_id` on `map_evidence_frame`. | `map_evidence_frame` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:159-200 |
-| Historical evidence (retired with the d3610903 suite reduction): The codex fixture rows recorded the observed live item/notification shapes and native thread pages through the production seam. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
-| The store's tool-call block union keeps full-item re-maps byte-identical while converging partial-block tools; roster-aware rules preserve a roster notice's `final-message` block across later block-less lifecycle upserts, and a late `streaming` tagging upsert never regresses a terminal phase. | `apply_item` | mcp/src/agents_remember/serving/conversation/active/store.py:161-249 |
-| The engine resolves bare-delta target blocks through the mapped item's kind. | `apply_delta` | mcp/src/agents_remember/serving/conversation/active/store.py:251-273 |
+- The codex adapter sets `AR_EVIDENCE_METHOD_KEY: method` on the `codex-notification` emit so the method reaches this projector (the method-carry seam), and the same emit routes its params through the thread registry's router. [1]
+- The router itself moved out of the adapter in 260731-EFA-L6 and was renamed with it, so the adapter-private name is gone from the tree. [2]
+- `EvidenceFrame.native_method` is the typed field the bridge preserves and this projector switches on; `evidence_frame_json` serializes it as `nativeMethod` (wire contracts in models since L9). [3]
+- `ConversationAgentRef`/`ConversationAgentStatus` are the roster identity/status grammar this projector emits; `ConversationItem.agent` is the optional field that carries it (absent = parent conversation). [4]
+- The engine passes the multiplexed demux context: the one mapper call site sets `parent_thread_id=self._identity.vendor_conversation_id` on `map_evidence_frame`. [5]
+Historical evidence (retired with the d3610903 suite reduction): The codex fixture rows recorded the observed live item/notification shapes and native thread pages through the production seam. These removed artifacts provide no current execution or capability-enablement proof.
+- The store's tool-call block union keeps full-item re-maps byte-identical while converging partial-block tools; roster-aware rules preserve a roster notice's `final-message` block across later block-less lifecycle upserts, and a late `streaming` tagging upsert never regresses a terminal phase. [6]
+- The engine resolves bare-delta target blocks through the mapped item's kind. [7]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this mapper; the Codex app-server is a local
 subprocess reached through this repository's own adapter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260727-CHATS-IM-L2 Current Delta
 
@@ -228,69 +214,3 @@ item is evidence about) and `_collab_roster_upserts`. `_map_collab_tool_call` re
 non-documented collab shape.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: now a facade over `_codex_collab.py`; the silent-notification set gained `turn/diff/updated` exactly (R16) while genuinely unknown vendor methods still mint addressable unknown-vendor evidence. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-
-- 2026-08-02T21:21:38+02:00 — 260731-EFA-L6 curator W2-B10: repaired 24 citation findings (7 reference rows and 10 prose pointers); scoped recheck clean.
-
-- 2026-08-02T01:42+02:00 — 260731-EFA-L6 debt this leaf created, now cleared: three L6 workers split six oversized `serving/` classes while this memory tree was being edited, and every line range in this document that pointed into them went out of bounds the instant the sources shrank (`citation_range_out_of_bounds`). Ranges were re-derived by READING the cited construct at its current location, never by scaling or subtracting a delta — the splits moved code between files rather than shifting it uniformly. Where a construct left the file the row names, the Source Path moved with the range into its own row rather than being silently re-pointed. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 6 stale self-citations in the sub-agent
-  roster paragraph and rewrote the routing claim that was no longer true. The four agent-thread
-  lifecycle methods are NOT four branches in `map_evidence_frame` any more: notification routing was
-  extracted into `_map_codex_notification`, which looks the method up in the
-  `_AGENT_THREAD_NOTIFICATIONS` dispatch table — so the "four new method
-  branches" sentence was replaced with the table + router it actually is. The roster helpers all
-  moved down: `_roster_item` L663-L699 → L722-L753, `_map_collab_tool_call` L731-L834 → L926-L968,
-  `_map_sub_agent_activity` L837-L860 → L971-L999, `_agent_notification_thread_id` L894-L907 →
-  L1035-L1048, `_map_agent_turn_started` L938-L955 → L1079-L1096, `_map_agent_turn_completed`
-  L958-L1007 → L1099-L1150; the paragraph's opening span is L722-L1164, and the two co-cited
-  neighbours in the same sentence were re-read as well (`_map_thread_started` L1002-L1032,
-  `_map_agent_thread_status` L1051-L1076). The `MappedUnknownVendor` fall-through citation
-  was verified as still exact and left alone; the top-of-file tables
-  (`_SILENT_NOTIFICATION_METHODS` L83-L93, `_COLLAB_AGENT_STATUS` L101-L113, `_ROSTER_ITEM_PHASE`
-  L115-L121, `_THREAD_STATUS_ROSTER` L126-L129) did not move. Behaviour claims re-verified against
-  the source, including `_collab_call_agent`'s single-receiver / never-`spawnAgent` tagging rule.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations, one of them
-  a repointed path. The adapter method-carry row cited L630-L638; L713-L721, neither of which
-  contained the seam even at the pinned commit (they were exception handling and an
-  `_emit_notification` call site); it now cites L845-L861 (`_emit_notification`, which sets
-  `AR_EVIDENCE_METHOD_KEY: method`) and L1369-L1383 (`_route_delta_params`), and the claim's "a
-  second emit" was corrected — the same emit routes its params, there is no second one. The demux
-  row pointed at `serving/conversation/active/projector.py`, which no longer exists: that module is
-  now the package `active/projector/`, and the single mapper call site carrying
-  `parent_thread_id=self._identity.vendor_conversation_id` is `native_ingestion.py` L182-L186, so
-  both link path and range were repointed.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ItemPlacement`, `_LiveItemContext`, `_CollabCall` and the named notification/item/collab routers; preserve-not-guess behaviour unchanged.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: persisted
-  `subAgentActivity` spawn/start rows now hydrate with `unknown` liveness unless current adapter
-  registry authority overlays a live status. Historical existence can no longer reopen a
-  completed child. Verification metadata remains pinned until closeout.
-
-- 2026-07-26T15:34 — 260718-CHATS-L7 curator: R2 sub-agent roster mapping — the projector gained
-  the multiplexed demux context (`parent_thread_id` on `map_evidence_frame`), four agent-thread
-  lifecycle method branches (`thread/started`, `thread/status/changed`, `turn/started`,
-  `turn/completed`), collab item types (`collabAgentToolCall`, `subAgentActivity`) mapping to a
-  shared `codex-agent-<threadId>` roster row, and `thread/settings/updated` joined the silent
-  set while `thread/started` left it (now mapped, parent-silent). Corrected the now-false L5F
-  claim that `thread/started` is blanket-dropped by `_SILENT_NOTIFICATION_METHODS`; refreshed
-  every shifted def/citation line range; added L7 invariants (roster never optimistic,
-  parent-only turn outcomes, fail-closed parent-vs-agent guard, degrade-not-fatal collab
-  fall-through, `idle` mints nothing) and new repo-internal citations (models
-  `ConversationAgentRef`, engine demux seam, store roster-aware upsert rules, the L7 collab test
-  module). Verification metadata stays pinned: the L7 change is uncommitted, so no commit hash
-  can attest it yet.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R1 — corrected the now-false "method never
-  crosses" claim: `map_evidence_frame` discriminates `codex-notification` frames on the carried
-  `frame.native_method` first, `_SILENT_NOTIFICATION_METHODS` drops the codex 0.144.5 startup/
-  status/telemetry burst (incl. the live-observed `configWarning`) by method so a stock open mints
-  zero unknown-vendor rows, and a truly-unknown method is now NAMED in the unknown-vendor fallback;
-  refreshed the shifted def line ranges and added the adapter method-carry + `native_method`
-  citations. Verification metadata stays pinned until closeout stamps the candidate commit.
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the codex active
-  projector — thread-item/notification mapping, schema-disjoint live discrimination, native
-  identity, unknown-vendor preservation, honest historical tool loss. Verification is blank
-  because the new source file is uncommitted; closeout owns its first source stamp.

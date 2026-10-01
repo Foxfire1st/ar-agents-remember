@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86c9188d9f902c177976a42020da53c3117a9b48",
+            "content": "sha256:b8b1cabd1daf8f43ff077eb20bc7e746886ed4809703a7802daaa308e520e991",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_completed_disposition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86c9188d9f902c177976a42020da53c3117a9b48",
+            "content": "sha256:b8b1cabd1daf8f43ff077eb20bc7e746886ed4809703a7802daaa308e520e991",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_completed_disposition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86c9188d9f902c177976a42020da53c3117a9b48",
+            "content": "sha256:b8b1cabd1daf8f43ff077eb20bc7e746886ed4809703a7802daaa308e520e991",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_completed_disposition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

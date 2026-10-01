@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_citation_bindings.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_citation_bindings.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](../overview.md)
@@ -64,52 +54,31 @@ exactly one state.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The append measured by the generation it descends from, by name, and the generation-1 pin recomputed after the append.** | `test_generation_5_appends_to_generation_4_without_touching_its_twenty_one_tables`; `test_the_generation_1_pin_still_recomputes_after_this_leaf_appends_a_generation` | mcp/tests/test_knowledge_citation_bindings.py:120-146; mcp/tests/test_knowledge_citation_bindings.py:149-152 |
-| **The case that scans the declared column set for an identity-valued name, which is how "no second identity authority" is enforced rather than promised.** | `test_the_binding_table_has_no_content_address_digest_or_fingerprint_column` | mcp/tests/test_knowledge_citation_bindings.py:155-171 |
-| The two cases that read the declared `CHECK` constraints as text, so a binding-local locator or key-form spelling cannot appear. | `test_the_locator_check_names_exactly_the_shipped_source_locator_union`; `test_the_key_form_check_names_exactly_the_declared_key_forms` | mcp/tests/test_knowledge_citation_bindings.py:174-188; mcp/tests/test_knowledge_citation_bindings.py:191-196 |
-| **The shipped-literal identity, asserted per shared fact in both directions.** | `test_every_shared_fact_reports_the_identical_shipped_literal`; `test_the_binding_vocabulary_extends_the_shipped_one_only_in_one_direction` | mcp/tests/test_knowledge_citation_bindings.py:219-238; mcp/tests/test_knowledge_citation_bindings.py:241-255 |
-| The closed vocabulary agreeing with its facts in both directions. | `test_the_closed_vocabulary_agrees_with_its_facts_and_with_every_producing_surface` | mcp/tests/test_knowledge_citation_bindings.py:258-272 |
-| **The counts partition refused in both directions, and the coverage that refuses to leave an uncovered form uncounted.** | `test_a_count_report_refuses_an_aggregate_that_dropped_a_key_from_the_denominator`; `test_a_key_form_coverage_refuses_to_leave_an_uncovered_form_uncounted` | mcp/tests/test_knowledge_citation_bindings.py:309-342; mcp/tests/test_knowledge_citation_bindings.py:345-355 |
-| The uncovered-form state distinct from an absent key, and the write-boundary refusal of a key without the declared mark. | `test_an_uncovered_key_form_is_a_counted_state_distinct_from_an_absent_key`; `test_the_prose_mark_is_the_shipped_one_and_a_key_without_it_is_refused` | mcp/tests/test_knowledge_citation_bindings.py:279-306; mcp/tests/test_knowledge_citation_bindings.py:336-347; mcp/tests/test_knowledge_citation_bindings.py:203-216 |
-| **The three projection consequences measured directly.** | `test_a_projection_display_refuses_a_conclusion_without_its_basis`; `test_a_projection_row_renders_a_missing_assessment_as_missing`; `test_a_stale_assessment_is_measured_from_its_examined_inputs_and_never_upgraded` | mcp/tests/test_knowledge_citation_bindings.py:391-401; mcp/tests/test_knowledge_citation_bindings.py:404-415; mcp/tests/test_knowledge_citation_bindings.py:418-440 |
-| **The bound refusal with no items and no counts, and the absent completeness field beside the declared coverage.** | `test_a_bound_closure_refuses_with_selection_incomplete_and_the_bound_reached`; `test_the_closure_states_no_semantic_completeness_and_reports_its_declared_coverage` | mcp/tests/test_knowledge_citation_bindings.py:447-495; mcp/tests/test_knowledge_citation_bindings.py:509-535 |
-| The enumeration returning every recorded binding with exactly one state, and an unresolvable key keeping its recorded key and attribution. | `test_the_enumeration_returns_every_recorded_binding_with_exactly_one_state`; `test_an_unresolvable_key_keeps_its_recorded_key_and_its_attribution` | mcp/tests/test_knowledge_citation_bindings.py:538-565; mcp/tests/test_knowledge_citation_bindings.py:568-599 |
-| **The lane row this module occupies, and the lane it sits in — the unit lane, because every case here is hermetic.** | "mcp/tests/test_knowledge_citation_bindings.py" | mcp/tests/test-evidence-lanes.toml:96-96 |
+- **The append measured by the generation it descends from, by name, and the generation-1 pin recomputed after the append.** [1]
+- **The case that scans the declared column set for an identity-valued name, which is how "no second identity authority" is enforced rather than promised.** [2]
+- The two cases that read the declared `CHECK` constraints as text, so a binding-local locator or key-form spelling cannot appear. [3]
+- **The shipped-literal identity, asserted per shared fact in both directions.** [4]
+- The closed vocabulary agreeing with its facts in both directions. [5]
+- **The counts partition refused in both directions, and the coverage that refuses to leave an uncovered form uncounted.** [6]
+- The uncovered-form state distinct from an absent key, and the write-boundary refusal of a key without the declared mark. [7]
+- **The three projection consequences measured directly.** [8]
+- **The bound refusal with no items and no counts, and the absent completeness field beside the declared coverage.** [9]
+- The enumeration returning every recorded binding with exactly one state, and an unresolvable key keeping its recorded key and attribution. [10]
+- **The lane row this module occupies, and the lane it sits in — the unit lane, because every case here is hermetic.** [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 8 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_knowledge_citation_bindings.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:26:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_citation_bindings.py" repointed to mcp/tests/test-evidence-lanes.toml:96-96. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_citation_bindings.py" repointed to mcp/tests/test-evidence-lanes.toml:87-87. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-20T01:02+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 2 enforced citation rows this card carried (citation_anchor_absent_from_range). Both named cases that commit 7e6936c0 consolidated: `test_the_closed_vocabulary_and_its_facts_agree_in_both_directions` was renamed to `test_the_closed_vocabulary_agrees_with_its_facts_and_with_every_producing_surface`, so its row's range was repointed `mcp/tests/test_knowledge_citation_bindings.py:250-255` → `:258-272` (where the case now lives), and `test_a_prose_key_that_does_not_carry_the_declared_mark_is_refused` was folded into `test_the_prose_mark_is_the_shipped_one_and_a_key_without_it_is_refused` (203-216), so that row's vestigial `:348-356` range was repointed there. No claim wording or other anchor was changed, every other range is untouched, and no verification stamp was advanced.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `test_every_shared_fact_reports_the_identical_shipped_literal`; `test_the_binding_vocabulary_extends_the_shipped_one_only_in_one_direction` repointed to mcp/tests/test_knowledge_citation_bindings.py:219-238; mcp/tests/test_knowledge_citation_bindings.py:241-255. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 2 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_knowledge_citation_bindings.py.md:85` (test_the_closed_vocabulary_agrees_with_its_facts_and_with_every_producing_surface) — re-read the claim against the current module: the named case was renamed or consolidated, and the successor's own docstring names the consolidation; `test_knowledge_citation_bindings.py.md:87` (test_the_prose_mark_is_the_shipped_one_and_a_key_without_it_is_refused) — re-read the claim against the current module: the named case was renamed or consolidated, and the successor's own docstring names the consolidation.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_knowledge_citation_bindings.py" repointed to mcp/tests/test-evidence-lanes.toml:85-85. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "mcp/tests/test_knowledge_citation_bindings.py" repointed to mcp/tests/test-evidence-lanes.toml:84-84. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T09:30+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read the generation-append claim and retired the generated projection bullet that had rewritten its range mechanically.** The generated repair of 2026-09-18T06:06:32+00:00 repointed the two case names to `mcp/tests/test_knowledge_citation_bindings.py:119-145` and `mcp/tests/test_knowledge_citation_bindings.py:148-151` by anchor-range projection rather than by reading; both ranges were checked against the declarations and both hold — `test_generation_5_appends_to_generation_4_without_touching_its_twenty_one_tables` opens at `:119` and `test_the_generation_1_pin_still_recomputes_after_this_leaf_appends_a_generation` at `:148` — so the range is kept and the claim's wording is unchanged. The projection bullet is retired because a mechanically projected range is unverified evidence even when it happens to land correctly; the row is now backed by a reading. Verification metadata advances to the merged base commit `15fe8678`.
-- 2026-09-18T06:06:32+00:00: Generated citation repair: `test_the_locator_check_names_exactly_the_shipped_source_locator_union`; `test_the_key_form_check_names_exactly_the_declared_key_forms` repointed to mcp/tests/test_knowledge_citation_bindings.py:173-187; mcp/tests/test_knowledge_citation_bindings.py:190-195. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:06:32+00:00: Generated citation repair: `test_the_closed_vocabulary_and_its_facts_agree_in_both_directions` repointed to mcp/tests/test_knowledge_citation_bindings.py:250-255. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:06:32+00:00: Generated citation repair: `test_a_count_report_refuses_an_aggregate_that_dropped_a_key_from_the_denominator`; `test_a_key_form_coverage_refuses_to_leave_an_uncovered_form_uncounted` repointed to mcp/tests/test_knowledge_citation_bindings.py:299-332; mcp/tests/test_knowledge_citation_bindings.py:335-345. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): created this one-to-one card for the leaf's unit case module (25 collected cases). It records what each group of cases protects, because the protection is not obvious from the names: the generation append is measured **by the generation it descends from, by name**, so a renumber changes two names and not a column list; the identity-column case scans the **declared column set** for an identity-valued name, which is how "no second identity authority on the binding" is enforced rather than promised; the two `CHECK` cases read the constraint text, so a fourth binding-local spelling cannot be introduced silently; and the shipped-literal identity is asserted in **both** directions, so the shipped vocabulary cannot acquire a citation member. The card also records that the cases assert structure rather than literals where a literal would go stale — the registry sequence is checked as contiguous `1..N` with `ar-knowledge-sqlite/vN` names — and that the module-local helpers are deliberately unregistered test source. Verification metadata advances to the leaf's base commit `e963a01c` because every cited construct was re-read against the working tree; the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

@@ -1,0 +1,101 @@
+{
+  "path": "dashboard/src/data/setChips.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pure presentation model under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:5caeace12da70209e81af7e333c61a300a2be4b9f94b5fdee4e8c1d48266b745",
+            "locator": {
+              "kind": "symbol",
+              "name": "deriveSetChips"
+            },
+            "path": "dashboard/src/data/setChips.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:70ba7d9f849c2ed2e7375f9980baa9ec249301ca86b270be86ee85883e28dd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "queuedComposerHint"
+            },
+            "path": "dashboard/src/data/setChips.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2541d69e717f32e82f11ecf3e07a3e2f3f5e6dc5",
+            "content": "sha256:df1156424a28f2c46dcddd8d5a831d3ea1b9bb36eab8d042bac8a0ecf684f126",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasUnackedSetAttention"
+            },
+            "path": "dashboard/src/data/setChips.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pair copy/provenance source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:b3608b3e37700576eccb3fe77f892c60c304fc4462d6f245542611d87f09f319",
+            "locator": {
+              "kind": "symbol",
+              "name": "startPairChange"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:3a05288cf06ce1bea8bd87fc746f9b597db942146f3057213eda6099a1a5b84b",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyPairStepResult"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:d9af30df53c4a53df5cfd70c310e8b44e575657a3caac7f869d92d7360b5a1f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "pairProgressCopy"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:5f617cba2ecf0f6448f03bf1b8b960ade2362ea261cb1aaf0733e4275d7acfe8",
+            "locator": {
+              "kind": "symbol",
+              "name": "pairPartialFailureCopy"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

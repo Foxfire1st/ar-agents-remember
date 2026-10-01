@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/export_refusals.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/export_refusals.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T17:45+02:00 |
-| lastVerifiedCommitHash | `66f8b9f092eb6f63ec0c5c20d1b7b3e93d9a99be`|
-| lastVerifiedCommitDate | 2026-09-18T08:36:40+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -89,37 +79,28 @@ Five factories, and the code each one produces is the caller's branch:
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The malformed-or-incomplete refusal, and why one code covers both facts.** | `invalid_export_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:26-50 |
-| **The canonical-form refusal: the same code, its own factory and its own record identity, because the fact is the one the guarantee rests on.** | `non_canonical_export_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:53-75 |
-| The unsupported-generation refusal and its no-migration next action. | `unsupported_schema_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:78-102 |
-| The two mirrors of "an import never patches a live destination in place". | `destination_occupied_refusal`; `destination_absent_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:105-126; mcp/src/agents_remember/memory/knowledge/export_refusals.py:129-148 |
-| The staged-database refusal, which is a different fact from a malformed artifact. | `import_validation_failed_refusal` | mcp/src/agents_remember/memory/knowledge/export_refusals.py:151-172 |
-| The shared value shape and facts every factory builds on. | `refusal`; `RefusalFacts` | mcp/src/agents_remember/memory/knowledge/refusals.py:57-77; mcp/src/agents_remember/memory/knowledge/refusals.py:36-54 |
-| The declared vocabulary these factories produce, including the one code only a portable artifact can reach. | `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:133-204 |
-| The nodes that assert each of these refusals by code rather than by message. | "test_an_incomplete_or_inconsistent_artifact_is_refused"; "test_a_document_that_is_not_a_well_formed_artifact_is_refused"; "test_an_artifact_this_build_or_this_namespace_cannot_accept_is_refused" | mcp/tests/test_knowledge_portable_roundtrip.py:602-659; mcp/tests/test_knowledge_portable_roundtrip.py:717-802; mcp/tests/test_knowledge_portable_roundtrip.py:804-876 |
+- **The malformed-or-incomplete refusal, and why one code covers both facts.** [1]
+- **The canonical-form refusal: the same code, its own factory and its own record identity, because the fact is the one the guarantee rests on.** [2]
+- The unsupported-generation refusal and its no-migration next action. [3]
+- The two mirrors of "an import never patches a live destination in place". [4]
+- The staged-database refusal, which is a different fact from a malformed artifact. [5]
+- The shared value shape and facts every factory builds on. [6]
+- The declared vocabulary these factories produce, including the one code only a portable artifact can reach. [7]
+- The nodes that assert each of these refusals by code rather than by message. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-18T08:30+02:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 1 generated projection bullet(s) by hand** — `KnowledgeRefusalCode`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
-- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): created this one-to-one card for the portable boundary's refusal vocabulary. It records the five factories and the fact each one names, the deliberate single `invalid_export` code for both the malformed document and the incomplete dataset (with the reason: splitting it would invite a caller to read "parsed" as "trustworthy"), the canonical-form refusal's own factory and `"<canonical document>"` record identity, the closed two-mode destination rule behind `destination_occupied`/`destination_stale`, and the staged-database refusal that keeps "your document is wrong" distinct from "your records are not this schema's knowledge". It states the boundary rule once — **every one of these refusals leaves the destination exactly as it was** — and that a refusal here is a value rather than an exception. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

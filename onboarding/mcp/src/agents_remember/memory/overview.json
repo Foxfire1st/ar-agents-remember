@@ -1,0 +1,3413 @@
+{
+  "path": "mcp/src/agents_remember/memory",
+  "references": {
+    "1": {
+      "note": "The manifest read records exactly the bytes it read.\n\nAnchor: \"record_read(path, bytes_identity(data))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
+            "content": "sha256:76765fdee6795ffabfa43f6766b90e2a483ed83f4a9de4a057e0b98b54ae6c50",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Every record ID of one kind, sorted; since MIK-R29 the reader's `records_of_kind` is built on it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:2b2a8e6ba33037590165eb786328c443ad7445808de1c575c162fdf710339c68",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_ids"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "100": {
+      "note": "The cases that measure the observation on real repositories, including the name a line-oriented interface loses and the non-UTF-8 boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:f0f43de32e8cd755b024eab0e9acfca616f939f266f363845e1c2021a0ae3c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tab_and_a_newline_in_a_filename_survive_as_the_address_of_the_change"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:ae13ef3cff3cb4e125647c5dffc8ac4861902df54e37ea54ea17086281a1079b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pathname_that_is_not_valid_text_is_carried_by_its_bytes_and_never_dropped"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "101": {
+      "note": "The package map.\n\nAnchor: \"No knowledge writer writes the index\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06d446de04c0b58ae1a17c8e951a920fdfb5153d",
+            "content": "sha256:b1e2432911d6550cb930405787f44718e8d3ebe8e6f231895c3aba86cac50a2b",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "The captured-state key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:483f6b1f99fa60d3400b933bdfd57049d8905257d12bb4e678280c4c36d4da75",
+            "locator": {
+              "kind": "symbol",
+              "name": "directory_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:fa5b48a1c4783c98a2f4c360f6096af7e0dea3daaced7168d303d748062df1a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "The build, which names every failing file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:ba4b3cb06011e3c1a22e9748aed9c8d66e2d0be2019d1f5c948dd566e78cc50e",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_index"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:12fe26df413e5fd56556d8b53cbe05ba029412474e55c166d67d3619ff61a78c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_tree"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "104": {
+      "note": "Retired records are left out of the projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:60b596c1047d7ff68521b6b57311873e051773ca2446c64b0c6a55dcf53087d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "project"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:2eca14ed57d462786d45aa6d740ed2dc55f4eefba93328fdd2b573d599de92ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_STATUS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "The cache refuses a Git working tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
+            "content": "sha256:9993be682c3ec3bee41ec6e5d539a6e237a1192441f2303b640aa25d4a2558c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeIndexCache"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "106": {
+      "note": "The package map.\n\nAnchor: \"the deterministic conversion\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3bf9c34d44307749acdef693b5e3f76ce2937d2",
+            "content": "sha256:0dce07544686d3ad77c56ca5d1c10ad83a768a1673029e4beeee0a19fb56a608",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "107": {
+      "note": "The pure conversion, its version pin and its validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed2ab738479059526e1b54164853b9f02681dc7a",
+            "content": "sha256:2ce00211f0e556d927091ddb1985ea255f143356e7d6fe10e0dec936a1dbc7fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "convert_memory"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/convert.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ed2ab738479059526e1b54164853b9f02681dc7a",
+            "content": "sha256:99a15c7917b4c9f702d22c5448dcbf99c67a7fd8975c16ec72405239cc934f70",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONVERSION_FORMAT_VERSION"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/convert.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "108": {
+      "note": "No anchor text lost: it is kept in the note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:bc17b517227631b5ae60f4d2dbd2f079cdb0f8ed3116ff35ab1aa48f992f3d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "unbound_anchor_text"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/citations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "109": {
+      "note": "The read-only reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:4013bf1eccbceb8f37d6d3e15f92063b84f2fff908789f7174743aa8fcd3137f",
+            "locator": {
+              "kind": "symbol",
+              "name": "export_database"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/legacy_db.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The resolver: no root, a root outside tasks, or the owner's answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
+            "content": "sha256:437d44f2f034901cb81e2b68216f57e37ba30a4eac45f2652fbc11c0646438d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_requirement_endpoint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "110": {
+      "note": "Rule 7 for any comparison consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "content": "sha256:3faedd1b6cc0a694f6ddad75f8a8de7e8a16d3a83166e8f66c11fa6a632c721a",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_sides"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "111": {
+      "note": "Rule 8's item rules and conflict markers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:8d10b0c40446794761e6e4e3ed7d94c324c33f23904fb9840f15544d77489b5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_item"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:990addb67919366a3695355cb2d841bf1cf5cbcda95f94bba0b32778bcff24a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONFLICT_MARKER"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "112": {
+      "note": "Rule 8's steps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db16d3afd85efab04c769799b244da8bbd0bd33c",
+            "content": "sha256:0be363e9910148dc217019ae7a6fa772bbb7adc8f19f4999c61629f7cccce3f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cross"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "113": {
+      "note": "The two proof lookups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:851e491f99f981c033839274a2e88756ba2d7c4987f775789fa66aa9cd97a0a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "proofs_of"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:3221a86238001c33500bbad81bf286b5bab780327c041996360bcfce6afdbc36",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariants_without_proof"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "114": {
+      "note": "The card authoring's entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_card_references"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/card_authoring.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "115": {
+      "note": "The publication sink refuses a converted destination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32e12e6260e6ac8d919a555b2802d33ea4a26afd",
+            "content": "sha256:ec3c06ac2e930c4375dc7574d34a4dd945a1dff5cd26c632d47b45f4312ba879",
+            "locator": {
+              "kind": "symbol",
+              "name": "frozen_database_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "116": {
+      "note": "Carryover writes legacy-format memory only, and only while the repository is not locked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3098aadd9b50a1d925939290c164e59afb43611a",
+            "content": "sha256:fba247cc78e709d217d40c200126d0529c6538e287d4a7e5137f76eaef7c7ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_legacy_format_target"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "117": {
+      "note": "The index keeps each history file by path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:f8a19eaf294390813cc3d6e4fe5126d9223d2343e400541ea37dd367763884d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ParsedTree"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The owner the packet question is handed to.\n\nAnchor: `consume_owner_resolution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
+            "content": "sha256:2751385b3c044e364a93cdf48964a29dd99153616a44433a9e34d5b4ce7fe263",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The absence refusal, naming proof claims when the leaf read asks.\n\nAnchor: `with_proofs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:4f12f69750985663773b243af30d6cbf7f815f7c727600990bbda4e28e980710",
+            "locator": {
+              "kind": "symbol",
+              "name": "registration_absent_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The re-export and the registered surface that keep callers on `evidence_records`.\n\nAnchor: \"from agents_remember.memory.knowledge.evidence_observation_rows import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:c9cf3dbdb85b9d0febdbc27b31e95e921acb37b560c98b49e5e8ee5934492b20",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:790b565843a9ff325589ce8b3eb81ce657d2f58fe5a40bb36938c8eeabb8d170",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The codec's own module statement.\n\nAnchor: \"This is the observation half of\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "169dce48b72a930859573f59afed0a862bdfe199",
+            "content": "sha256:c7c2e1b927a9ec6b1b06fbb8a2d60a9c653c7c6d5ff427b213a7b034bc7dbde1",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence_observation_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals.\n\nAnchor: \"What is never remembered is whether the repository still *holds* the tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:d1193c1689e185dc7f9189687b0c2304394d8eb9984e1fc87d0945d23496257c",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The memo module's tables and admission test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:c4ba63173ceac4c2cbe54e5f9fc9b50dbd88e7258425f570017b9bc44d16bf4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_complete_object_id"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:da9c2b35a5d015c5b865515497b144a2ebff59b01ef5b295070caa6360a28ad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedMemo"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:a1e619b09a94dc7184ec1cddedce393267506cd55c6b29341d82885c08d8b05c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TREE_ENTRIES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:891f54bfde7ea955ccfd00677b92922fda14e8be7672f51bdcf33a802eb58c8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "BLOB_LINES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:ed6a6768e30a5ae6ce728d95ce8d94089466ddf369ed22d678550f1a1b9b1f4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BLOB_DEFINITIONS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The bound-checked line-range observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_line_range"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The symbol observation carrying every defining extent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A missing object against a Git failure.\n\nAnchor: \"def has_blob(self, blob_id: str) -> bool:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:a955743b9fa00eb0e6ea52f2d310950bf517c2471adc80030d5478c815e6a1e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GIT_NOT_FOUND"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2f5a13feb9d376e1fe17ae88185006334186473",
+            "content": "sha256:57c63d42827354cbfafd543d94611297372fa8a782554d7a775f5f21371749d3",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:8603ed6d34e8fe4107d63930ff1c406caa646f8fdf11093049af969f2f8baf9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "partition_attribution"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:b3e1bf008fc491cc6ad79df0f47f7105c276a5706bfe16ebbfb60ae8b78ff7af",
+            "locator": {
+              "kind": "symbol",
+              "name": "licenses_absence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:2c863af1c3f6bb697a1748f772229b781308040fdff0c8eb6375c08daabed756",
+            "locator": {
+              "kind": "symbol",
+              "name": "_denominator_scope"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The shared observation vocabulary and its two construction rules.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:f71c231943369fb4014034ee38dc036a3bb5bc3b65ab502bd8ab205ee36b204d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeSide"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:e02da430a0dac6d193f5418aae1595361a1b7c0d2d9a449ebd20ddf909aa01b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeChange"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:52a0ea691f378474fa756aa63f86cdd6869719f994aff96b1a1bfd724779e345",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreePaths"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The display seam: one observation, the carried partition, the two established omissions, and the deliberate non-replacement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:618780a5ec8c9c2ea4d11d6780c5d4b42dff46395026c720b55d645bfc8a09cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceObservation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:346c75d87b09c9a0a8675faa71b003c8a48084a7a47db0efdb57d401191d87cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_display"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:4442cc696e17fc4d9de3df7c445015c378fb0d98885254848a58d7b3c71bbdf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attribution_omissions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The exported root, and the shipped value it returns.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "durable_reports_root"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:acadb101ded90b00670338208e59692eb69c58ef5813b8ebc20cd1ab1490d244",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TASK_RELATIVE_REPORTS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The single-file publication the export deliberately does not replace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:97189e515d2b74227fd659bbd308186abc5b49de8171ba308d9b45a013742c38",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_durable_evidence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:aab3e8795d797c8af8b3e32bdd59548962d53dee066740f10f9983e3f1f182ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_file_name"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**Its first consumer, which derives the whole generation layout from it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:5ff43495dbfb832e1b82138cfae66fe0a4c0be2615e6963ecbdc1d1c2b976529",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_generations_root"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:8c4b20d59c40447ca2c2c625c1442a1a4cb42467ed83a24d719a4e10fbcae4dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_generation_root"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:ff4efef8e16256fd5037587d623d01989e9b9be01b9b3320746128707ab4155a",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_directory"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The per-file detail for the module that gained the export: the durable root and the shipped value it returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "durable_reports_root"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:acadb101ded90b00670338208e59692eb69c58ef5813b8ebc20cd1ab1490d244",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TASK_RELATIVE_REPORTS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The per-file detail for the module that gained the export.\n\nAnchor: \"# mcp/src/agents_remember/memory/knowledge/durable_evidence.py\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/memory/knowledge/durable_evidence.py.md:1-119"
+        }
+      ]
+    },
+    "28": {
+      "note": "**The detection owner's identity listing, decoding nothing, and the composing reader it exists for.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:5c4ee06b060112390f24fd9a4f289a7c02acaa3f8c2759591e282cf8657b5cc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_run_ids"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:0140f54fd7e04498f498e1a2156dba2abb47c1a05e731c3823ca6b0dac3e0a0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECORDED_RUN_IDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:640468c8157be6f78c10114d44a0cff4825da2440a89d18f801c6652d4548f4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_signal_runs"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The evidence owner's identity listing beside the unchanged whole-collection read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:73a905d65c96b1abbad77859235cafa9d44a0eef9facf64ee011f8650c946cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_ids"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:cb12bd0c51f70cbd9c572ff8024a14af9f55269045fc90b91a1173b77d6c3070",
+            "locator": {
+              "kind": "symbol",
+              "name": "all_claims"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:edbbc3cbe3b49a3c5d9fefceb643b9ea14cea4fb001f5180bd8c24f847c2427e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLAIM_IDS_OF_REPOSITORY"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The approval states and what the manifest says about one ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
+            "content": "sha256:4c280fa2ae56c3f3c52ee0c05b23a1c132d3abd9af6e0f71eb14e2667cf385c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ApprovalState"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
+            "content": "sha256:5fb08aad422a944a4e84cf80f7cb468b0b9e10196bdb886ba627267a3ff12fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementApproval"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
+            "content": "sha256:8a99f9cc18165d619b09d810f586cadf5e5d031066165dcf3c806148424b1328",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "**The single-record readers each listed identity is read through.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadffe6131a71cc1a1322ca50abbdeedc17747f6",
+            "content": "sha256:b35cd191357c1904f03f59ec2a5669432cd62815d11ffc4286ffa27e898cc348",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_record"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:98b12c90f2206ac0ec74a042c9dcff8df0aba7fa76b6ec4e9ed0af23e6a74615",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_detection_run"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The cases that measure the per-record isolation on both collections through the production port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
+            "content": "sha256:5c4cd466787687552aa32609179a7677dffc2ba8733811ad9372e54702199e4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
+            "content": "sha256:9d94d1f1181c23e2f3af3405dd683e998a88f791ae7a6767f8db3da6d4008e15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied"
+            },
+            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The merge orchestration: the ordered sequence, the one-lock policy, the conflict taxonomy with the single key predicate its two lookups share, and the engine-supplied conflict key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:6333ae37e6be072615de2df14bdd0b6d119525c8409ae2799f63aa526f447f5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_knowledge_datasets"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:c5afa9e4bd8b823754489c8e7811ac8af43fa7f9db0b1048ecd36f70aefd16d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TAXONOMY"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:c425b5e219965937dd4928eebf7b5847d69d7616ff82cf2490733e8f6a2646f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_conflict_key"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:271124262a38f53e41c216cfeba0bd6404a6a5f5093c7a420492b9fe2037d610",
+            "locator": {
+              "kind": "symbol",
+              "name": "_conflict_record"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:16f2cfedad9f01a74ebd002c8d780f310577adee6bedac5f869f691d3e7266d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_freeze_merged"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The measured retraction precondition: the probe's own copy of the retained side, the measurement that runs the caller's own retraction to answer it, the call site that hands it to the conflict record, and the field the offer reads.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:edb40d1e277ca36ff7c9cfd3f855ee17670a81288665da1faff510147724e418",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROBE_LEFT_NAME"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:c8fe30eef3ecad907060aa7b4c9c986d22551738f13b066d66a4b3c46ba60697",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retraction_precondition"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:d8be86e1728c2e1e20d56db6acd81d09110709939c5661e4c16d3e3fe9fadd16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retracts_arriving_rows"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:5d2c389b757630f51e0d66b899e2ad59ccd7b0eda454182df0c6c6b3187a7fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetractionPrecondition"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:6b44daba0ed55a442c286bbf0a30d42fea7f6814e9cc6f683e708752c0e53696",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeConflict"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:ebc8f1045c29feec1fba18910cb4efbb4344270a42f4400d8f4aa6d744fed04c",
+            "locator": {
+              "kind": "symbol",
+              "name": "precondition"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:d1087a04a233194c642c52bb72d9ea656233161c559ccba3be4ed940de076af7",
+            "locator": {
+              "kind": "symbol",
+              "name": "expressible_decisions"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:20a80189288136d88c71f8548352f565fffb993e6d41078e4dd875197af52388",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The base resolution: the closed two-member claim and the two refusals a base claim can earn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "485ef9f026a089580a4d73daef6584fb399601ec",
+            "content": "sha256:dd2afa44a1d94f593b29801c583456f1c6218db33b9320fec93e5e4aae26355d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_merge_base"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485ef9f026a089580a4d73daef6584fb399601ec",
+            "content": "sha256:9f0687f97c819611489447f8aaa1c0694d040b88b2b8376312ebe8b845a196a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ancestry_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485ef9f026a089580a4d73daef6584fb399601ec",
+            "content": "sha256:43c588c022b4b8edc6fe12eca38223c531fe9639f583a3aec2eceb98bd3d8bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_uniqueness_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The structural preflight that runs before any session exists, and the declared manifest it compares against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:5a35e6ab2215dcab92ff892722eb9743cc87762e3dc8f2cda49900745ee10f5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_supported_structure"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:b717983a130b18890261fe2ed770be6c282a1090ed01bb063d3bea3207ef5c3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_structure"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:4483cf74a4c49ffd83b372b18668671ea983426c82949943789f85fda11169c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "compare_structures"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The changeset half: the directional delta build, the application whose conflict policy aborts on everything the caller did not decide, the old-side conflict key and the coverage replay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2d9cf92005ae84b6447176beb27269078e6de3c",
+            "content": "sha256:0cb73cd111327bc3089ee48590491798b0e9dcd7a3eba567be74b0e8fcf662a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_delta"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2d9cf92005ae84b6447176beb27269078e6de3c",
+            "content": "sha256:05477bc4243901bd7a9a103bb0d1f146bebedbb1a82bdf8a5f220457acaccfa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_changeset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2d9cf92005ae84b6447176beb27269078e6de3c",
+            "content": "sha256:6be328019168945c73fc76835db1703c27d51b7b114ffd1a70820585b61cb7b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_conflicting_key"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2d9cf92005ae84b6447176beb27269078e6de3c",
+            "content": "sha256:e8b8200373cde0c6c7cc72035ceb7fa91dc49bb487d05422088b43d32b126112",
+            "locator": {
+              "kind": "symbol",
+              "name": "replay_delta"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The postcondition half, including the two call sites this leaf recorded as unreachable by a black-box case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebee3db5cfdf865b2a825cf85c151bac849dfb80",
+            "content": "sha256:d796a608ac9ab66769bb2f43b5be9c5b4d53525489fa0cb7e0c709f1100371dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_structural_validity"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_validation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebee3db5cfdf865b2a825cf85c151bac849dfb80",
+            "content": "sha256:c5ac85fa239c721b482578d0f03446600579b75f5b35ca86b7fe8b7d3a506086",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_immutable_revisions_preserved"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_validation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebee3db5cfdf865b2a825cf85c151bac849dfb80",
+            "content": "sha256:d22a9684587207758e3f05ac9ac50a5c052968dbd318c75737c76fec444f0f61",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_applied_changes"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The merge's refusal vocabulary, one factory per observable failure point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:920976ea3f0fbd90a87a8d1ec1165fdc7fa58712ff65e1755fa7f45df8936092",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_mismatch_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:e0b4096f2cb0247f4b84145f7e98308a6662f510bd0d44e5710b8b20160fa25c",
+            "locator": {
+              "kind": "symbol",
+              "name": "conflicting_values_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:c7367d1f5cd16282ad820bc76bdda20ca2660f1abd1a1fb0ff174ce5334be660",
+            "locator": {
+              "kind": "symbol",
+              "name": "duplicate_identity_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:95f31d12c1d3d5bdc8b00fcc3fea2146b925d5ca29f057a64589f23ac44be5f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_reference_conflict_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The two operations and twelve codes the merge added to the shared vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lookup with its reasons (since MIK-R09 recording the manifest bytes it read), and the packet's named function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
+            "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_approval"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
+            "content": "sha256:76bccd97ea476a30b2b304a433be400825a89876b7fccc9c4633f3bb30ddb046",
+            "locator": {
+              "kind": "symbol",
+              "name": "latest_approved_requirement_version"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The measurement the merge reports, and the merge's own third composition seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:8606261a9720fad5f7d4f3bc36ffc2369959a7047b29aa83cb1ddbb4ab7b083b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeCoverage"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:38fb095e0f7d35beaabf27eb1ec1c82910351577296cfe8843b916cb678a12ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_resolved_knowledge_datasets"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "**The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:c4b61ef2a26bb608e577de2c376640ac2dbff9bf2f808672da15ebc38e138cd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_recorded_scope"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:d3edaa6d56a3bd7f62f9c97523d29327a164626c0a772c0cd65060a3e3f69aeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_member_revision_ids"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:62f81c31b301acb35f676e85e50dda78fad20c7d38a59930e06f9eff195ed13b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_frontier_expansions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:49320c96f34fcf4fd784760e71b332a19c1e71966e0836e73910a3be33b5a406",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sort_key"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Whole-item paging over an already-selected scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:f31ccdbfb14be21f46c2a811839a03123f17670644d767a6031e845451b81a69",
+            "locator": {
+              "kind": "symbol",
+              "name": "page_of_scope"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "**The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:6660bfeaa8127fea648109a3d2171d91c5408ff5912044ff0b1164285cb4c14d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_page_counts"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The count model that refuses its own arithmetic contradiction at construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:ad322a74d9200f564ac69b49ebde036ccc7fdbb3f8f96cdd77548304e55771bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadCounts"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "**The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_anchor"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confined_posix_relative"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_plain_git_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The read's refusal vocabulary, one factory per observable failure point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:31ca80312b64d8661d81f5c7963e68fdeca954b4884298eb93d0b4799872cadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "selector_absent_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:4f12f69750985663773b243af30d6cbf7f815f7c727600990bbda4e28e980710",
+            "locator": {
+              "kind": "symbol",
+              "name": "registration_absent_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:a8eb20316f741b99e95ec0b5cf45f84393020328212fbd5bd309141c93711ec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "page_budget_too_small_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:81d6f2516dae0d99c7f171dfdacff64b518a201ad4453e8ead1f61bb1e612588",
+            "locator": {
+              "kind": "symbol",
+              "name": "continuation_binding_mismatch_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:3de7d0510dfa4c6ae50302fe07c370133b6291b0ed9521db0d6aa5e23e588d99",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_unavailable_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:7ec991601ba2bddb4c403e4fb2139b18997c75b01a749382788ee0d8f3e0397b",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_incomplete_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "**The one decoder a read page and the logical digest share.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:19b24fa8965b32406c0fa4cb94cb6a51b998f6acca88447458c8eca6b30446ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "cell_value"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "The read's path lookup, which is how a path seed selects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:c610ab0cfeb3507211d26724d98b4a3a6ba0b516b131b7529c1fea5943c9bb82",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_realizations_at_path"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The edge lookup the directly containing family set is derived from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:0c4053a754aa87570724f898082a27d197b472f2cfcce4ca2f6e60174c044e5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_memberships_of_invariants"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Entries at or under a directory, and of the files directly in it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:5dc8ec52cf7693ff4fa4fbd834fc135364d2e31d6e7ed3fd73e0dd275cb41cc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "entries_under"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:c85ac1187524b4a8769d9db0d1f394ddd679d7e5ed98887a8a27b416b8769aec",
+            "locator": {
+              "kind": "symbol",
+              "name": "entries_in_directory"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:b63a68e41ef6db74862e53d25e91c96ee6b4250062950b7ff58d84dca362f25e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_knowledge_scope"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:6b25c5ae9bc387cc07259a2f7f75a5be091b9d352b392c4a435b056f1a50eed5",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_context"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:a303eb2bf1cfe36803355ebfb1bdbf8f81fadd5f47dc65fd18557ec81606e557",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_row_counts"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "**The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.**\n\nAnchor: \"test_a_path_seed_returns_the_sibling_realizations_and_advertises_the_unreached_family\"; \"test_a_page_budget_of_one_item_still_advertises_the_second_location\"; \"test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:475ccf188b7e5abf74f9696c4db8b4cdde268c9db9625744257726442daf76d0",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:a2c619472ca9b368f23fa40b61a0136e2820f31179365be08f68ed63506924fb",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 547
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "696967d803d343179746b6660e6098a8ee1446d2",
+            "content": "sha256:9339d7116db3790f81930a608eddd1671996cb66bbc285553ea6bbbecd15f558",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 370
+            },
+            "path": "mcp/tests/test_knowledge_read_paths.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "52": {
+      "note": "The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node.\n\nAnchor: \"def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:65e07eb7d3866db96e7c14fd333a6347031bd307b5635245d323e3fdb87a8e13",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:8cd2744d0953b544bf02cd28b29f95322fb9130c9f893303e034ca23a50c89f9",
+            "locator": {
+              "end": 1149,
+              "kind": "line_range",
+              "start": 1149
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "53": {
+      "note": "The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules.\n\nAnchor: \"id = \\\"common-base-merge-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "54": {
+      "note": "**The `ar-knowledge-export/v1` format: the one encoder, the canonical-form guarantee, the two acceptance checks and the digest-coverage statement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:8709ca8ccf524a5fac633edcbda0f46d7318acc6565b941762968ca18dc231e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPORT_FORMAT"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:e66c61865f32a372faf44fbfc44dfa08332aa214e2a153109735509c954d4fdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "encode_export"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:14ca2a41abae855c46f43f8ebd2cf0c72adfc7edcb8f563e9f8aa39816ed7cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_export"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:5d0878e92198d475dafabcfe72320db3edea0129c216943d82f5eb7ee60f3ae4",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_document"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:d6c38fd8aa1bff7068708af986cf4b5cf30b7c78d7d5bb5879ee99cd8d573fa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_header"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "The whole-document gate, its `<canonical document>` refusal identity and the bounded statement of how the text differs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:641f6985d804edc6d5ee615db003f67c586c7deb0a446c7da473acac022e0c60",
+            "locator": {
+              "kind": "symbol",
+              "name": "_non_canonical_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:48474f41c6e88e45a9ebfec0e912487086f3b192ee94fe568ead010343b58845",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_difference"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "The envelope builder and the declared orders it re-imposes: columns, nested keys and the manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:c0479c58edc98124f894b4f89ccbb3dd25573d734c0e3b54931edb8e1eeea85c",
+            "locator": {
+              "kind": "symbol",
+              "name": "export_envelope"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:0b806923353a9dc0420d7161af7864177ffa335408084a971e1de4d87d5ea8da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ordered_rows"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:c3126e90aadff70f25a1f25f2ef7674ad3f6c6e13ac0cc82bcb8224f93e6d1df",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plain_tables"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "The dataset-level checks: declared column order, declared types, primary-key uniqueness, namespace binding and the recomputed seal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:b9a58f11c59bb2f9c5b8cfc87a9d843423975122932349d6d02ca8b4b56bf6a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_export"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:ef290354a6c44d0610143fb5c0cd53aa3ed2f7c9334a042c81e3fa2d1436d492",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_table_rows"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:bb786e683377ca74523ba7d7ed5bf91e84c59b96b735dea84d81fd72687acf36",
+            "locator": {
+              "kind": "symbol",
+              "name": "_typed_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:01212fbdecd7893806ada573b809bcba991de44dac8eee1c536c79a147066359",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_dataset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "The reachable, verdict-changing namespace guard with no killing node (an observation for L9).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c533e8f404040f710ed485da607b225bcd2d644",
+            "content": "sha256:9cf1156989cfd277df37ab00a03d557ea077437b29b1e400b59133787fe9bdd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_portable.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "**The export and import operation: validation before any database work, a private stage, the closed two-mode destination admission and publication on exact digest equality.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:0be62da72f001d97ce253d56bb44b295257195ca930880f806f632a796522a0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "export_knowledge_dataset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:06151174013e44e331af82172cc318a927324dde033155f10d01c4c22ddebe5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "import_knowledge_dataset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Live entry paths, links to a path, and every record of a kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:ff22ce74d89455c338683a9ecf27c766db0138afb981d78e1c606023bb4142d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "live_entry_paths_under"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:9a02dd06cf30365264fcb0945d256140ec0dd3f493802e14137551f87a5376fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "links_to_path"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:b83fdf3507fb1e00e319968ae8d043309d5e1f97dfa77ecff7ef9266225f9917",
+            "locator": {
+              "kind": "symbol",
+              "name": "records_of_kind"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "**The staged sealed-aggregate read: every retained revision's payload re-derived through the shared decoders before publish.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:5e3a8de879c0662d1cbe1c1a9ddb1512ad1d58985c7f0f115c0ad219c8533fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sealed_aggregate_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:c1237b9e79e5f20dcad11026c89cb8a02f204de83da8e4d8d45d0927532c2478",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SEALED_AGGREGATES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "The staged verification, including the documented non-experiment (the digest equality no black-box case can falsify).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:502a274aabb0db1e2641e51d61995997172b3d4b6dd82795a673432c9b6511b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_staged_dataset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "The two-mode destination admission read before any staging, and the private stage that is never the destination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:d8dea223a40faac6688a6de20521f81f9cbfc457e8349866012324c4fbaad319",
+            "locator": {
+              "kind": "symbol",
+              "name": "_destination_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:8172726532b88e102713116d8bb002d7028c3c03057f7266252275d7bc99ba65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stage_imported_dataset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:8b1d049faa89fc8bd9b8d3a7abd05769536473ebf1a36b03ae5e4bc7937b56bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_private_stage_directory"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "The value-or-refusal file reader whose two failures carry different codes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39e95b4aa00c946cfe8a3c02f4a16e34cd512def",
+            "content": "sha256:4d1110e83a1e7703d068305fac2b27a176bcffa80b62aee8d7457f5ade6a231b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_artifact"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_import.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "The portable boundary's refusal vocabulary, one factory per observable failure point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:f43e92b561938006f789cf6c4e6bb2e72bc11878eb98b1c08f221d5f1e9d8ffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "invalid_export_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:412fc1ae3cebdb6a338e43c2ae32c50ff323cabb44558473d12eb7e8c3e823ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "non_canonical_export_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:ba31420c713f9d527825a422d2d033540043a0c1382246089604fe158d23636c",
+            "locator": {
+              "kind": "symbol",
+              "name": "unsupported_schema_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:734ab88d00f0fe1c1b40dec90e7567cd5b25f832daaf245416eb63a69c8ad54b",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_occupied_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:b06dd98b7300280383f43366f1dbfcc439bca94132d11e5b310db845e4534390",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_absent_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:6e31bd86e694da725c47c883f85f8dbc4265ff947f11ef8bf06278cdd959c827",
+            "locator": {
+              "kind": "symbol",
+              "name": "import_validation_failed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "**The one body constructor the export seals through, so the scan and the artifact cannot define the digest twice.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:be0962955b303788b7ad2f1f232027d69f1ce2535e7b7346b7733eee87f74aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "logical_body_from_tables"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:e572612b668cb26a557ded82fea93009981537b92e2568b1e7f648914dee21f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "logical_digest_of_tables"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "**The shared \"prove this finished file is a closed database\" step the import's stage is closed through.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:e734585edfb071d553862211b643967da5496bde641a815bb807cead82b0b8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_closed_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/closed_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "The admission reading the import's destination check uses, exported from publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32e12e6260e6ac8d919a555b2802d33ea4a26afd",
+            "content": "sha256:e648509a6c5f89289800ca550fb7f821162e82876dc1001bf0017276728de8e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_observation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "The two portable operations and the one code they added to the shared vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "The portable wire vocabulary: the request identities, the validation report and the two results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:3d6af5f7326fab3443c985de2af70cc9b5e30a3bad91ca8ba45a43ebe0fe9a31",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExportRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:03b03760bbf8ecba1aad482e67a88ebb3eb87268144695dc57c8d6feffe783c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ImportRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:e61deadd6bbfbafe2a8c61f627bac0980da8b5d5909b6ad7f62a2e582f224680",
+            "locator": {
+              "kind": "symbol",
+              "name": "PortableValidation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:7361ab811fd5214067255dd275a20da1acbce8975a0e9e8db9001988df8d5800",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExportResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/portable.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25551324375781e1ad90ac5ade73c9580c988fa1",
+            "content": "sha256:87808853ed2a673aa649e6466da6b5b4761b50a9054f3528b8d6357e99a3e908",
+            "locator": {
+              "kind": "symbol",
+              "name": "ImportResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/portable.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared link query `_incoming` delegates to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:d1baf68323ea7e84c98308667a6543746d29ee2008cc29f63f681307017fb8f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_links"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "The fourth composition seam, its five entry points and its two non-claims.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6faf2ac9b04f051606946ae027fcae26d41eeb2",
+            "content": "sha256:e4775f815b580d1be63a47e99c29fcc858a3a4dadb91e0127e5ba6789c6bfc96",
+            "locator": {
+              "kind": "symbol",
+              "name": "export_knowledge_artifact"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_export.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6faf2ac9b04f051606946ae027fcae26d41eeb2",
+            "content": "sha256:d7427d4fecd36303c83f4faac9bb57937da5071a1c540e15b56c3aa3c7340456",
+            "locator": {
+              "kind": "symbol",
+              "name": "import_knowledge_artifact"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_export.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6faf2ac9b04f051606946ae027fcae26d41eeb2",
+            "content": "sha256:42f8784e5d3f8b177750413a220dcbb4ae66c51b42f963ef29f4dbda9adde419",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_knowledge_artifact"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_export.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6faf2ac9b04f051606946ae027fcae26d41eeb2",
+            "content": "sha256:df9a3c9a45ab3e7c9d6addba69d7dee02a655dedc0e29ed6279872f374fe0c6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_body_of_artifact"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_export.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "**The node the guarantee rests on: the canonical form is the only form the reader accepts, including all seven header types.**\n\nAnchor: \"test_the_canonical_form_of_the_whole_document_is_the_only_form_the_reader_accepts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d941aec76565c7db851cd975de6e5add6535e54",
+            "content": "sha256:bc027097330f0778e9fa1ae5da7bec34cd2e06581f817803e45b763a7f8204e2",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/tests/test_knowledge_portable_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "72": {
+      "note": "**The node that proves an artifact whose sealed payload contradicts its digest is refused before publish.**\n\nAnchor: \"test_an_artifact_whose_sealed_payload_contradicts_its_digest_is_refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d941aec76565c7db851cd975de6e5add6535e54",
+            "content": "sha256:b89cd8421f1fdac797993a5c51d786d632d89e403b92c7ee84849be8d25c4195",
+            "locator": {
+              "end": 611,
+              "kind": "line_range",
+              "start": 611
+            },
+            "path": "mcp/tests/test_knowledge_portable_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "73": {
+      "note": "The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination.\n\nAnchor: \"test_a_stage_opened_in_wal_mode_is_published_as_a_closed_database\"; \"test_a_frozen_snapshot_of_a_wal_resident_candidate_is_published_closed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d941aec76565c7db851cd975de6e5add6535e54",
+            "content": "sha256:f6fb525f0d1debecda8d34f9fc469f8ff42941b1f81bc5533a04274197e77ac1",
+            "locator": {
+              "end": 699,
+              "kind": "line_range",
+              "start": 662
+            },
+            "path": "mcp/tests/test_knowledge_portable_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2d941aec76565c7db851cd975de6e5add6535e54",
+            "content": "sha256:ab0edd4e5afe574c5b5ab5b3e4c925016fbc76a58259a53535c601dbd793a06c",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/tests/test_knowledge_portable_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "74": {
+      "note": "The node that proves destination admission refuses before any staging work.\n\nAnchor: \"test_destination_admission_refuses_before_any_staging_work\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d941aec76565c7db851cd975de6e5add6535e54",
+            "content": "sha256:a1d7a040be0069270a6492fb3697772c7adb7a07a482f0e8fbb6956cc51a2d56",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 700
+            },
+            "path": "mcp/tests/test_knowledge_portable_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "75": {
+      "note": "The node that holds the round trip of a populated dataset to an equal logical dataset.\n\nAnchor: \"test_a_populated_dataset_round_trips_to_an_equal_logical_dataset\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:46fe80746808eb5c47ba87860021fd40972957ad803dfc8b7b08b45f6c694636",
+            "locator": {
+              "end": 427,
+              "kind": "line_range",
+              "start": 356
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "76": {
+      "note": "The registry rows this leaf added: two integration lane rows.\n\nAnchor: \"integration = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "119efc5d27e3b25fea633405ec5995d2fdebda87",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 288
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "77": {
+      "note": "The registered support artifact the two integration lane rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"knowledge-identity-branching-fixture\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "78": {
+      "note": "The second registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "79": {
+      "note": "The third registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"common-base-merge-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The store's own seal on each projected revision row.\n\nAnchor: `revision_payload_digest`; `family_revision_payload_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:9207ee35ed686000859c17fd72cae6d63f57ed8131936e501f3d8128f714a684",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0d5a95d9a299265f6272d50e4ea52707ae1ff47d",
+            "content": "sha256:b7a2ba30137ccc2973d28044f53d04a1bcd1ea904ea1b5efa9d10924aa1e3ee0",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "The second registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "81": {
+      "note": "The third registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"common-base-merge-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "82": {
+      "note": "The second registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "83": {
+      "note": "The third registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"common-base-merge-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "84": {
+      "note": "The candidate list is the path and every ancestor, nearest first, ending with the root route `.`; `families_governing` matches routes against exactly this list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:0b5929a879acb62ec3f73f0a0a5b84bc212860a29742cbb28d4d639d26ab2237",
+            "locator": {
+              "kind": "symbol",
+              "name": "_self_and_ancestors"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "A family routed at the root governs a root-level file and a deep file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:5a39fd607817730e30faae344dce300b1a30944d19b87bb94c19998ed23d4f67",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_routed_at_the_root_governs_every_path"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "86": {
+      "note": "An unreadable baseline is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59c73ccfe22c4f748e6c60c4da38c6790b5c9820",
+            "content": "sha256:a4c3c9f0f94783105515e95f61ae79408c6049398db25b161e8dde860da92b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_commit"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_census/inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "87": {
+      "note": "Every write is checked, then written atomically.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31b8f4bf7d33de65114d9eb5e5a9fec83e524e25",
+            "content": "sha256:0562c049362cdd6a2c13e90b055f341690e96e03ac59f46c3119e2a645e677cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_census/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "**Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_invariants"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "**The same enumeration for the surface's other admitted subject kind.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The format bump that rebuilds v1 caches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25a4d3da22648c0f7b11b574ec74e61b563af4c9",
+            "content": "sha256:5392692d6a6a2570b31cdaf3b8d399e101d0744d18a05ce4f0edab23e736301a",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_FORMAT"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:abfa49ab7602769fdc690718bd35282aca96ad9e06622b051b32b36c113cf773",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_invariant_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:7f81e36b9eb8f8f974ef744be0957979c973181bb1e8222d93c1a698f823a763",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_family_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "The consumer's entry half: the catalogue enumerates every recorded identity of both snapshots under the recorded namespace — no per-subject comparison runs and no subject is dropped to imply a smaller population (`ICR-R09@v1`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_knowledge_review_entries"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_subject_catalogue"
+            },
+            "path": "mcp/src/agents_remember/application/review_subject_catalogue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "The authored-decision channel as a sequence, and the one matching rule that still bounds it to a single row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:a29df6f1a7ed478612a3f0835c65277acadfffbc4f224029f7b882f52d9c3830",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2d9cf92005ae84b6447176beb27269078e6de3c",
+            "content": "sha256:05477bc4243901bd7a9a103bb0d1f146bebedbb1a82bdf8a5f220457acaccfa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_changeset"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2d9cf92005ae84b6447176beb27269078e6de3c",
+            "content": "sha256:4b5897bdeb2ac6ccaffdc0dc45459d2b447a598e10edb6c10a10cbe708f08e10",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authored_decision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "The taxonomy's one key predicate and the namer built on it, so the builder and the operator-facing name cannot disagree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:c5afa9e4bd8b823754489c8e7811ac8af43fa7f9db0b1048ecd36f70aefd16d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TAXONOMY"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:6db3cb9f249fd7afafe138b2a6356c6cf4369664ebad5000c694a1025795ecdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CONFLICT_NAMES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:c425b5e219965937dd4928eebf7b5847d69d7616ff82cf2490733e8f6a2646f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_conflict_key"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:8a91c11a1731abd123535f73ace8ceeaa9eef8fd05841cb9dafc6b5df5a2e164",
+            "locator": {
+              "kind": "symbol",
+              "name": "_conflict_name"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "The candidate layout's fixed part and its owner-writable part.\n\nAnchor: \"curator-allocation-journal.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:aa4f2dacfb2d536a664a6c5ec2ea8cd434e978cf9e11530822e0c49fb7425d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_database_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:10b35b4ac0640a0b15dc461373f41a6d772be18f2c470ee1ef9259827e2f4cbd",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f64e9907eb5681de29b543f7a7d0cc02f4c6b8f5",
+            "content": "sha256:7eba7d11590246cbbeec5582f05cd0be14fba165e221c6293f1cde8e51a46907",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "**The status-bearing change: the raw path as the address, Git's status, the renderability and the reason an unknown is unknown.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:e02da430a0dac6d193f5418aae1595361a1b7c0d2d9a449ebd20ddf909aa01b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeChange"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "**The observation's two renderings and its two honesty rules: paths and entries cannot disagree, and an unrepresentable path implies a partial observation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:52a0ea691f378474fa756aa63f86cdd6869719f994aff96b1a1bfd724779e345",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreePaths"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "**The advertised command, now the delimiter-safe interface the measurement itself reads.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:2d398f7505a2fade4d37b4109089113cdf4db07f284784289e51ccce6109ded2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TREE_DIFF_COMMAND"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "**The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:2c879aabb35c70ccc7d48f79ff320ed667716ee59e0f55e1b2e819bf266bc132",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expansion_detail"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "99": {
+      "note": "**The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_tree_difference_probe"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:06246381dbd1f0bd6916b9d584e7dfa58ecaec6fd2a6bb9bd99f81cf497cb047",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_difference_observation"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

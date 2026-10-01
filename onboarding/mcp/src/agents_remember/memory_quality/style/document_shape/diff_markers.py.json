@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/document_shape/diff_markers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `check_onboarding_root` (lines 30-38).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05b06dda408e8dfd4b87fbabbd3379a668d2e315",
+            "content": "sha256:a16acf59c2426aa4611c19e59b320b7cbcb77d4d598e051cba85dfdd9e65a667",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_onboarding_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `check_file` (lines 41-48).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05b06dda408e8dfd4b87fbabbd3379a668d2e315",
+            "content": "sha256:24325e6edf6c21c44dd1606f715928cae0730b633ae3d9e8d2fda8be8cab72b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `line_finding` (lines 51-80).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05b06dda408e8dfd4b87fbabbd3379a668d2e315",
+            "content": "sha256:a7df270a98aae7c0e9a7139c793a032be9c20c0627a3d9390f18335c51c045d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "line_finding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `marker_finding` (lines 83-98).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05b06dda408e8dfd4b87fbabbd3379a668d2e315",
+            "content": "sha256:a591fb3cf22192a5d731db5ce62443970df747e41f793500905389e59280181b",
+            "locator": {
+              "kind": "symbol",
+              "name": "marker_finding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

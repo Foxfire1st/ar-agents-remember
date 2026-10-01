@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/certification/final_codex/store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reservation and publication enforce the exact fixed two-slot order with retry disabled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "content": "sha256:f86806747e9ca759df717771a772b8314e49307495e15d96332576bb88cdd99d",
+            "locator": {
+              "kind": "symbol",
+              "name": "reserve"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "content": "sha256:2d55e9de945b21980be44ca724a78bde304afa75a482109715cae89dfd2eff6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_repetition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Atomic manifest writes reuse the kernel atomic-write helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53a3558f41f4a2bd4da0bbff2ba2674fe92b5a00",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The manifest and record contracts are defined in the final-codex models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:334bd4eea79e574c0b7518be5dca7a66c4d30015eb1ec58db437c06c6c918b1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRunManifest"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:ffd638938d3e5f712d2ab0645ebb875c1971e89114f5e254d63d4bee6a582219",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexAttemptRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:81e1ee4db0c767164801224b19cf7ee319341736d2c69726e8b7507c45be567f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRepetitionResult"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The namespace isolation guard keeps final-codex manifests disjoint from certifying and diagnostic roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "content": "sha256:bf6beb297440a714bdf84d69e60c2062f0243ecb2d0941e42fe524e728e6fe73",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexStorePolicy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The store stays repository-neutral and is consumed by the trusted R12 launcher through the run controller.\n\nAnchor: `FinalCodexManifestStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "content": "sha256:65805b88f164c2accca73efb41dc1b032cbf8428a0385a5c99adf3b6ef352da6",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

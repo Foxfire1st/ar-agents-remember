@@ -1,0 +1,98 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_preview.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`proposed_closeout_commits` separates code/memory Git intent from informational ledger_cache output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3e04e6f97eed9e8fb84f61f2e587708c814b4",
+            "content": "sha256:614485dd9c49fc6a25104e348d2e9cf966ff042ac403f8ea4327da3e3fa0960a",
+            "locator": {
+              "kind": "symbol",
+              "name": "proposed_closeout_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`closeout_summary` describes named-ref series recording or leaf content and cache refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3e04e6f97eed9e8fb84f61f2e587708c814b4",
+            "content": "sha256:f180644cedd9d0b96a47ba001ede0b03806a67680898b2333921620cc6c99380",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`closeout_order` orders real Git outputs, cache refresh, and contract publication without a ledger commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3e04e6f97eed9e8fb84f61f2e587708c814b4",
+            "content": "sha256:455a3a1fd0d9844cca417704bb43de3b9465cd975d2854f794ecd8e970863da2",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_order"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Proposed commit payloads separate leaf mutation from exact series recording. (`proposed_closeout_commits`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3e04e6f97eed9e8fb84f61f2e587708c814b4",
+            "content": "sha256:614485dd9c49fc6a25104e348d2e9cf966ff042ac403f8ea4327da3e3fa0960a",
+            "locator": {
+              "kind": "symbol",
+              "name": "proposed_closeout_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Summary and ordering publish the same lifecycle altitude. (`closeout_summary`; `closeout_order`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afd3e04e6f97eed9e8fb84f61f2e587708c814b4",
+            "content": "sha256:f180644cedd9d0b96a47ba001ede0b03806a67680898b2333921620cc6c99380",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_summary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afd3e04e6f97eed9e8fb84f61f2e587708c814b4",
+            "content": "sha256:455a3a1fd0d9844cca417704bb43de3b9465cd975d2854f794ecd8e970863da2",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_order"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

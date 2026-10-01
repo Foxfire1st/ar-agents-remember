@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_terminal_paste.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Success uses log probe and never captures pane",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
+            "content": "sha256:99896e9721b1502a6ce261b96a71bdd6cb640b69d003a4a02ca2ea122acce70b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_success_uses_log_probe_and_never_captures_pane"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unwritable buffer reports undelivered and never presses enter",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
+            "content": "sha256:8f95b93b09c05d055c3c9e9aa03a1b52f2c0372553b1c86d8c4597719466d949",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unwritable_buffer_reports_undelivered_and_never_presses_enter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unobservable pane blocks repaste",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
+            "content": "sha256:3bdec1a08b26fb622ff1c14c7604437bc9d80a3f22ec5754423f17a19cc63bfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unobservable_pane_blocks_repaste"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dispatch retry submits visible same draft without repaste",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
+            "content": "sha256:31e9bca7e4dec7190ad660419806a7633b802c63803fee0417bff6804996e638",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dispatch_retry_submits_visible_same_draft_without_repaste"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Dispatch retry leaves unrelated codex draft pending",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
+            "content": "sha256:c8178d2e529fc2979344eeacfc66d50319fd661b7ae425542bb6a2d20f47d853",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dispatch_retry_leaves_unrelated_codex_draft_pending"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Dispatch retry does not submit historical matching marker",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2d734f54cecf7b60134483f0c989f998538836",
+            "content": "sha256:27f693c0f790c22b6e8062084bdd8246492ff2fd77747a39e41ec0c49a887556",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dispatch_retry_does_not_submit_historical_matching_marker"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

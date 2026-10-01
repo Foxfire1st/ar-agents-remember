@@ -1,15 +1,5 @@
 # mcp/tests/test_quality_subprocess_environment.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_quality_subprocess_environment.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -40,22 +30,17 @@ preserved exactly.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation governs this repository-owned process boundary.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Only outer retry/report controls are removed while admission and semantic values survive. | `test_outer_retry_controls_do_not_leak_into_candidate_tests` | mcp/tests/test_quality_subprocess_environment.py:6-29 |
-| The production owner defines the exact closed set. | `OUTER_INVOCATION_ONLY`; `child_environment` | mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py:9-25 |
+- Only outer retry/report controls are removed while admission and semantic values survive. [1]
+- The production owner defines the exact closed set. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None.
-
-## Update History
-
-- 2026-08-27T18:33+02:00 — Created with the nested quality-environment isolation repair.
-  Verification metadata remains empty until governed closeout.

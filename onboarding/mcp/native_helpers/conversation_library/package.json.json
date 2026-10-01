@@ -1,0 +1,43 @@
+{
+  "path": "mcp/native_helpers/conversation_library/package.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lock root repeats the same exact direct dependency and development-tool pins.\n\nAnchor: `lockfileVersion`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f2c9a17ecf7fcbc59b0593da8ad8b7ba7902d82",
+            "content": "sha256:04a95ed28d9bf7b30a7bed46f17198fb286082d69d876621f11e6e98ffa5b30d",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "mcp/native_helpers/conversation_library/package-lock.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Protocol constants must match the manifest's two runtime dependencies.\n\nAnchor: \"export const PROTOCOL_VERSION\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:19299769ec918cbf22e87632ef5acbf56c9e92f42c296cb36800e1ad7a362fb5",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

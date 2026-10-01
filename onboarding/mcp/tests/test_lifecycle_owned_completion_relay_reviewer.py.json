@@ -1,0 +1,309 @@
+{
+  "path": "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The eligibility decision the module pins: a harness row, still running, with a resolvable owner, an ended turn, a canonical outcome, an evidence identity, and no marker already stamped for that identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:ca2d36774a8729ff734e88d19ba504e304df856a3ea555bbf41c1631b027449a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_signal_finding"
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The wake scenario class and its single-seat scripted adapter endpoint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a611a1924aa261d4f392fc4d319e4a85b795461f",
+            "content": "sha256:1888ddd2cca5f97be4820ed96d2d52602e415c7dcebe728de4840276d76a1d9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewerTurnOwnerWakeTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a611a1924aa261d4f392fc4d319e4a85b795461f",
+            "content": "sha256:c2dae9e5206e2aee1ae0e4e93f55ff8c26d731d8f3f1f33230a5bf21be901467",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Bridge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The tmux double that answers \"session alive\", with the `gone` set that keeps a departed generation departed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a611a1924aa261d4f392fc4d319e4a85b795461f",
+            "content": "sha256:2ca886dfeb08497fd86b38ade5b6fb15e270bc85d802d79b4fd2c5510d2de629",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AliveHost"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The negative control: `failed` is real terminal truth with an evidence identity, is not wakeable, and consumes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a611a1924aa261d4f392fc4d319e4a85b795461f",
+            "content": "sha256:c60ab558bf767b86f4e4ff4bbdf971741cc94e8435ba3d4062cb9b86be8bae32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_reviewer_turn_never_wakes_the_manager_and_stays_eligible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The fixtures this module imports rather than rebuilds, owned by the sibling relay card.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:795c5f3eb9a93eba801e005f5abb50ec415a5257ca10fcb59a8287b398c8516e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_accepted_paster"
+            },
+            "path": "mcp/tests/test_state_signal_relay.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:807c0d44f88423297a8ee9cc0eb8252b62cc27b430724a13ebf430a14479c380",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_task_topology"
+            },
+            "path": "mcp/tests/test_state_signal_relay.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The sibling module that owns the relay's own structural contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf78eae6584e019afbea6226b8f72e3e34efc44f",
+            "content": "sha256:4812b5bc260666148c0bb066d3ce429d236a62d8e0c27a99f9a2cf2a1c0a449a",
+            "locator": {
+              "kind": "symbol",
+              "name": "StateSignalRelayTests"
+            },
+            "path": "mcp/tests/test_state_signal_relay.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The candidate classifies this module once, in the explicit unit-regression lane.\n\nAnchor: \"mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:25c434c0639aa3fed83db595a643d3129b97ceaa7063a16c45d6504777936ece",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exact eligible outcome set — `completed` and `interrupted` — which is why `failed` is refused rather than merely unproven.\n\nAnchor: \"completed\"; \"interrupted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:63fee0a5b27403540d94a6cbaebe1831dc136977667bd44e4608a789a91d73ab",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The idempotence marker: the same seat does not re-emit for an evidence identity it already emitted for, which is what makes one review produce one wake.\n\nAnchor: \"entry.state_signal_emitted_for != entry.terminal_evidence_id\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:b5fd8c777dcad059aecb023628f20c8ddf37d69d25566f76f8d310528748cbe4",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current-occupancy addressing for a subordinate, including the reviewer branch that resolves a reviewer's manager from the structural parent role and document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:4d4e14e4ddf32471df98dad3a45dd5f6470dddda913a349b187d8df01b33af70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manager_for_subordinate"
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The finding evaluation the module drives directly in its silence cases, returning no finding while the eligible set is unsatisfied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:dcdf93f6d3bd05f0d7350c6e38a9ab2e4fea5a1ea36a2b0ca5b4e24b18869009",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_state_signal_findings"
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The derived durable row's own text, asserted to carry the outcome and evidence identity and to speak no verdict vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:5b0a324a08acc7c2b53ac6edeac23ff051cdaa451a84cdeba574197d26de81f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_signal_ask"
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:1504a52e5fc9a45d5a768099b9ce4186df2889dea883702157c4ecca839389d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_signal_response"
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The real notifier sweep the module drives to persist the wake and to land it at the owner's next boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b035bc25fcf8bfb657d6246b3a3bdd2df4e637c8",
+            "content": "sha256:3d4793dd9feb0a10ce5bdcc82bdb1b88f42dd316551020faf2aa6500cd44aa70",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_agent_notifier_sweep"
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The real terminal-evidence lift the module uses instead of typing an outcome: the projector registry decides the outcome and the evidence identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43e9c45fa7b4e0b0792ae68233c039949b7304fa",
+            "content": "sha256:5f5015a5075bc7eac32e54f76129c3f789b385fb664a5272d940503487111a67",
+            "locator": {
+              "kind": "symbol",
+              "name": "latest_native_terminal_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The real observer whose passes produce the terminal truth the wake rides on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:37e37426b8d14c3346b022e6a53013f650054d6b1bce458feeb2a0dfc8a16fa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCatalogLivenessSweeper"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:7efc9ad402b62565854dc73d7a670244a868763845525b601216c06149d93f5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LivenessProbe"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,16 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| lastUpdated | 2026-09-19T19:54+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-20T13:43:00+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f` |
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -120,15 +111,13 @@ The route decomposition mirrors those boundaries without adding new authority: n
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Exact integration selection and original-publication readback precede suffix execution. | `prepare_integration_certification`; `_load` | mcp/src/agents_remember/worktrees/integration/certification.py:192-216; mcp/src/agents_remember/worktrees/integration/certification.py:235-296 |
-| Completed organizational proof binds original selected references through the operation owner. | `select_completed_integration` | mcp/src/agents_remember/worktrees/integration/certification.py:367-441 |
-| Locator-manifest-journal authority and all publication I/O/state transitions. | `LifecycleOperationLocation`; `prepare_enclosure_publication` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:80-114; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py:181-267 |
-| Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. | `EnclosureBindingIdentity`; `enclosure_binding_payload`; `sha256_payload`; `location_conflict`; `byte_conflict` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:25-48; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:95-115; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:130-132; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:142-152; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py:155-165 |
-| Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. | "LifecycleControlAction = Literal["; "class LifecycleControlCommand:"; "def control_operation(" | mcp/src/agents_remember/models/lifecycles/operation_kinds.py:39-39; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-117; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-164 |
-| Direct landing recovery. | `execute_direct_landing`; `execute_or_require_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:73-115; mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:118-175 |
-| Public operation projection derives legal controls and recovery surfaces from retained journal evidence. | `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` | mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-589; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-683 |
+- Exact integration selection and original-publication readback precede suffix execution. [1]
+- Completed organizational proof binds original selected references through the operation owner. [2]
+- Locator-manifest-journal authority and all publication I/O/state transitions. [3]
+- Pure immutable binding, canonical serialization, digests, and bounded conflict evidence. [4]
+- Task-addressed controls consume the central action vocabulary, exact admitted command, current generation and legal-action evidence under the lifecycle lease. [5]
+- Direct landing recovery. [6]
+- Public operation projection derives legal controls and recovery surfaces from retained journal evidence. [7]
 
 ## 260821-CLIVE Final Door-To-Journal Architecture
 
@@ -355,16 +344,16 @@ own first row). The preview/apply parity invariant this repair came from is inve
 [`memory_quality/overview.md`](../../memory_quality/overview.md); the removal and its cost are
 recorded on the worktrees route and on the `integration_ref_transaction.py` card.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The following current source owns the changed behavior; no external domain source is configured for this slice.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The landing output carrier has only code and memory-content commits. | `IntegratedCommits`; "The accepted code and memory commits landed as one authority set." | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:62-67 |
-| Only actual memory ancestry determines this integration proof. | `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
-| Direct memory writes exclude the consumer cache. | `_direct_memory_commit` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:175-236 |
-| Direct memory writes exclude the consumer cache. | `_direct_memory_commit` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py:175-236 |
+- The landing output carrier has only code and memory-content commits. [8]
+- Only actual memory ancestry determines this integration proof. [9]
+- Direct memory writes exclude the consumer cache. [10]
+- Direct memory writes exclude the consumer cache. [11]
 
 ## 260918-TSIP-L6 `BranchAuthorityUnavailable` Is Typed On This Route
 
@@ -389,148 +378,3 @@ the remedy. `integration_branch_repository.py` now says so in the type system �
 `BranchAuthorityUnavailable` (`:11-28`), a member of the product's error family — raised by
 `repository_default_branch` (`:58-69`, no `origin/HEAD`) and `memory_repository_default_branch`
 (`:70-107`, the memory repository does not record its default branch).
-## Update History
-- 2026-09-19T19:54+02:00 — 260918-TSIP-L6 (uncommitted change set on `ar/260918-tsip-l6-ar`, base `a1351504`): recorded the new typed `BranchAuthorityUnavailable` and the boundary it deliberately does not cross. Citation ranges re-derived against the repaired file. Verification metadata stays closeout-owned.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-sibling tool already reports — those keep raising, and the authority tests hold that line.
-which does not resolve, is a state a caller must understand and change rather than an absence a
-deliberate and stays where it is: a recorded authority that is **malformed**, or that names a ref
-memory_baseline_adopt_tool` catches exactly this type and answers in the envelope. The boundary is
-This is what makes `T34`'s repair possible one route over: `application/memory_tools.py::
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-20T13:43:00+02:00 — 260915-KS-L45 curator (uncommitted change set on `ar/260915-ks-l45-ar`, base `fb719f89`): **No route impact: no file under this source route is in this leaf's change set.** The leaf's eleven changed sources are the reviewer's transport, application adapter, models, knowledge store, serving composition, the ingest CLI and two dashboard files; none of them is under `worktrees/integration/`, and the drift row that routed this overview here is the route-level check reacting to the code worktree's own uncommitted line rather than to a construct this overview states. The body was re-read rather than rewritten and nothing in it is contradicted. The recorded working candidate now names this leaf's candidate; no verification stamp was advanced.
-- 2026-09-18T18:54+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **No route impact:** this route was re-read at code `c5a74a85` because its child moved, and the model this overview describes is unchanged. The delta is inside `closeout/`: that child gained `curator_assessment_evidence.py` (the cited evidence bytes' one destination and the read-back that proves they survived) and the assessment-evidence publication in `curator_coherence_publication.py`, both recorded on [`closeout/overview.md`](closeout/overview.md). This overview's own subjects — the enclosure/locator/journal authority, the integrated ref transaction, the direct-landing path, the closeout-door cut's removals and the de-entanglement relocations — are untouched, and its `closeout/` pointers still name the right child. Stamp advanced to `c5a74a85` because the review happened there; closeout re-stamps. No body byte changed.
-- 2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T07:33:51+00:00: Generated citation repair: `operation_projection`; `_projected_operation_result`; `_operation_specific_projected_result` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-169; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-589; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-683. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-584 in the row 129 of this card; the repetition added no pooled evidence
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `LifecycleControlCommand` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:120-120 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-128, the extent of the construct the claim is about (the checker named line(s) [117] as its live location); re-pointed `control_operation` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-128 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-164, the extent of the construct the claim is about (the checker named line(s) [162] as its live location); re-pointed `_operation_specific_projected_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-584 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661, the extent of the construct the claim is about (the checker named line(s) [588, 658] as its live location); re-pointed `operation_projection` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-147, the extent of the construct the claim is about (the checker named line(s) [16, 142] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `LifecycleControlCommand` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-164 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-128, the extent of the construct the claim is about (the checker named line(s) [117] as its live location); re-pointed `_operation_specific_projected_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-147 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661, the extent of the construct the claim is about (the checker named line(s) [588, 658] as its live location); re-pointed `_projected_operation_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-584, the extent of the construct the claim is about (the checker named line(s) [255, 579] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `control_operation` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-128 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-164, the extent of the construct the claim is about (the checker named line(s) [162] as its live location); re-pointed `_operation_specific_projected_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-584 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661, the extent of the construct the claim is about (the checker named line(s) [588, 658] as its live location); re-pointed `operation_projection` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-147, the extent of the construct the claim is about (the checker named line(s) [16, 142] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `LifecycleControlAction = Literal[` in the row 127 of this card from mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-41 to mcp/src/agents_remember/models/lifecycles/operation_kinds.py:39, the extent of the construct the claim is about (the checker named line(s) [39] as its live location); re-pointed `control_operation` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:165-165 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162, the extent of the construct the claim is about (the checker named line(s) [162] as its live location); re-pointed `_operation_specific_projected_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-147 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:588, the extent of the construct the claim is about (the checker named line(s) [588, 658] as its live location); re-pointed `operation_projection` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:588 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:16, the extent of the construct the claim is about (the checker named line(s) [16, 142] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-584 in the row 129 of this card; the repetition added no pooled evidence
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `LifecycleControlCommand` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:120-120 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-128, the extent of the construct the claim is about (the checker named line(s) [117] as its live location); re-pointed `control_operation` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-128 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-164, the extent of the construct the claim is about (the checker named line(s) [162] as its live location); re-pointed `_operation_specific_projected_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-584 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661, the extent of the construct the claim is about (the checker named line(s) [588, 658] as its live location); re-pointed `operation_projection` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-147, the extent of the construct the claim is about (the checker named line(s) [16, 142] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `LifecycleControlCommand` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-164 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-128, the extent of the construct the claim is about (the checker named line(s) [117] as its live location); re-pointed `_operation_specific_projected_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-147 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661, the extent of the construct the claim is about (the checker named line(s) [588, 658] as its live location); re-pointed `_projected_operation_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-584, the extent of the construct the claim is about (the checker named line(s) [255, 579] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `control_operation` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:117-128 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162-164, the extent of the construct the claim is about (the checker named line(s) [162] as its live location); re-pointed `_operation_specific_projected_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:579-584 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661, the extent of the construct the claim is about (the checker named line(s) [588, 658] as its live location); re-pointed `operation_projection` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:658-661 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-147, the extent of the construct the claim is about (the checker named line(s) [16, 142] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `LifecycleControlAction = Literal[` in the row 127 of this card from mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-41 to mcp/src/agents_remember/models/lifecycles/operation_kinds.py:39, the extent of the construct the claim is about (the checker named line(s) [39] as its live location); re-pointed `control_operation` in the row 127 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:165-165 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:162, the extent of the construct the claim is about (the checker named line(s) [162] as its live location); re-pointed `_operation_specific_projected_result` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:142-147 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:588, the extent of the construct the claim is about (the checker named line(s) [588, 658] as its live location); re-pointed `operation_projection` in the row 129 of this card from mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:588 to mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:16, the extent of the construct the claim is about (the checker named line(s) [16, 142] as its live location)
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Replaced direct recovery ledger proofs and landing row validation with two-output Git authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
-  `mcp/src/agents_remember/worktrees/integration/` route changed since the recorded verification
-  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
-  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
-  metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the route's only change
-  is inside `closeout/preparation/memory_output.py` (its git call now passes
-  `GitRunnerOptions(input_text=…)`). Re-read the overview: it names neither that module nor the
-  runner, and its live-door and shared-renderer statements still hold. No wording changed.
-  Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
-  the recorded verification commit (`closeout/preparation/memory_output.py`). Re-read the route
-  card: it makes no claim about that module, and its existing statements about the shared renderer
-  and the live door read still hold. No wording changed; verification metadata remains
-  closeout-owned.
-- 2026-09-14T11:58+02:00 — 260913-LCA-L11 route impact (curator, uncommitted change set on
-  `ar/260913-lca-l11-ar`, base `4214d7a1`): corrected this route's checkpoint/landing paragraph, which
-  described the L34 shape as current. The ledger-preservation check is **removed** by the developer's
-  2026-09-14T08:15+02:00 ruling — it protected the tracked `memory.md`, which is derived state — so
-  `LandingAdmission` now carries only the checkpoint's captured candidate,
-  `_require_preserved_ledger_history` and `_integrated_ledger_pair` are gone,
-  `expected_series_ledger_prefix`/`atomic_series_ledger_prefix` are gone, and the surviving promises
-  are the mapping, per-row truth, the conditional source descent and the header. Added the matching
-  invariant and recorded the known gap (a same-code-commit row reversal can land unreported) as
-  pending a decision on the worktrees route. Verification metadata remains closeout-owned; no
-  acceptance claim and no verification stamp advanced.
-- 2026-09-13T23:52+02:00 — 260913-LCA-L4 (uncommitted change set on `ar/260913-lca-l4-ar`, base
-  `5bb124d4`): corrected the one sentence above that placed the rendering definition in
-  `models/closeout/input.py`. Since L4 that method is a delegation to
-  `kernel.memory_attribution.render_memory_content_message`, the one writer for all five memory-content
-  producers, so this route's direct-landing leg (`_direct_memory_commit`, commit site `:270`, naming
-  `operation_input.codeCommit` at `:272`) reaches the shared renderer through the closeout model rather
-  than through a route-local or model-local format. Nothing else on this route changed: the trailer is
-  still written at creation, before `prove_git_commit` journals the object, and the `memory.md`-only
-  ledger commit still carries none. Verification metadata remains closeout-owned; no acceptance claim
-  and no verification stamp advanced.
-- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): the
-  branch-addressed route's memory-content commit is now attributed in the object —
-  `_direct_memory_commit` takes the verified `code_commit` and commits
-  `effectiveInput.memory_content_message(code_commit)`, one `Code-Commit: <sha>` trailer from the same
-  single `models/closeout/input.py` rendering the worktree closeout route uses, while the
-  `memory.md`-only ledger commit carries none. Recorded it beside the ordered-authority paragraph
-  whose ledger row recovery reads, and rebound the stale direct-landing evidence row (`73-115`;
-  `118-175`). Verification metadata remains closeout-owned; no acceptance claim and no verification
-  stamp advanced.
-- 2026-09-13T17:56+02:00 — 260831-LOCR-L36: corrected the checkpoint-route paragraph. The route is a
-  partial **publication** rather than a pause, its capture proves its ledger mapping through
-  `exact_series_memory_closeout` (the exact-mapping reader), and the *final* series route may
-  additionally accept the reconciled pair a `worktree_sync` produced through `series_memory_closeout`.
-  The conserved integration plane is unchanged; what changed is which reader each route may claim.
-  Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T14:44+02:00 — Retitled and corrected the serialization-boundary section to the per-contract activation record now that activation is keyed per series contract; the frozen integration plane itself (protected-ref compare-and-swap, ancestry proof, source-state gate, clean-checkout proof, ledger-mapping proof) is unchanged by that re-keying and no change to it is claimed. Content change; `lastVerifiedCommitHash` remains closeout-owned.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-13T09:00+00:00 — 260831-LOCR-L34: recorded the checkpoint reachability repair on this route
-  — the route had required a completed closeout it also made unreachable, so it could not be entered
-  from either side; it now captures its own live candidate refs and revalidates them at publication,
-  the route difference travels as `LandingAdmission` data through one transaction, and a paused
-  master's ledger is proved as the leaf projection form rather than against the completion census.
-  Corrected the section's "two completion assumptions" to include the completed-closeout gate, and
-  pointed to the preview/apply parity invariant inventory on the worktrees route overview and in
-  `memory_quality/overview.md`. Content change, not a range repoint; verification metadata remains
-  closeout-owned and no acceptance claim is made.
-- 2026-09-12T19:50+02:00 — 260831-LOCR-L31 route impact: integration no longer reclaims. Replaced the
-  "cleanup is automatic on a successful integration" boundary with the landed-and-stop account, and
-  recorded **why** the ownership moved: reclaiming inline completed the enclosure's cleanup cell before
-  integration returned, so the `next_step.py::_gate_after` guard keyed on `contract.cleanup !=
-  "completed"` could never fire — a genuine landing reported `nextOperation: "done"` while the leaf
-  document stayed `planning` and its master row stayed `inProgress`, silently on L29 and L30. Recorded
-  that the result carries no cleanup report (the `cleanup` key is the untouched contract cell), that
-  `lifecycle_finalize_task` owns the terminal procedure and its shape, and that a cleanup refusal now
-  blocks finalization instead of being reported beside a completed landing. The retired
-  `retry_cleanup` next operation is no longer this route's post-landing projection. Verification
-  metadata remains closeout-owned; no route acceptance claim.
-- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: recorded the non-final series exit and the
-  checkpoint integration route on this route, and widened the abandon-refusal account from
-  `integration_status == "completed"` to `{"completed", "checkpointed"}` with the value behind it.
-  Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "LifecycleControlAction = Literal[", "class LifecycleControlCommand:", "def control_operation(", `_operation_specific_projected_result`, `_projected_operation_result`, `operation_projection` repointed to mcp/src/agents_remember/models/lifecycles/operation_kinds.py:41-41, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:120-120, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py:165-165, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:145-172, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:582-592, mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:661-693. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T23:05:00+00:00: Integration-branch retirement curation: recorded that retiring a series' integration branch now requires the master's own terminal task state through `_require_series_task_terminal`, why the enclosure census cannot see unstarted work, and the deliberate `Completed`-only versus `Completed`-or-`abandoned` asymmetry plus the two named refusals. Content change, not a range repoint.
-- 2026-09-11T15:02+02:00 — Automatic post-integration cleanup at code commit `76ce662a`: recorded in the current integration boundary that a successful integration reclaims its own enclosure through the existing terminal cleanup procedure, that a refused or partial integration cleans up nothing, and that a cleanup failure does not fail the integration — the refusal is reported and the contract's `cleanup` cell holds `cleanup-pending` for a `retry_cleanup`. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
-- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: retired the deleted `integration_quality.py` composition paragraph and its evidence row, corrected the door from contract-owned to journal-owned (`<worktree_group>/reports/closeout-door.json`), narrowed the cancellation-recovery wording to the contract-owned copy that actually went, recorded the four deleted route members and what moved versus what did not, and added the master-completion-is-undecided gap with its two owed checks. Verification metadata remains pinned because only the cut-affected claims were reconciled; this records source documentation only and makes no acceptance or certification claim.
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: removed the dead `legacy/` route member and its stale evidence row, repaired the `closeout/memory_candidate_pair.py` reference to `memory_quality/memory_candidate_pair.py`, recorded the deleted lock/door/operation/legacy planes and the four relocated members, and dropped the deleted worker/door wording from the recovery and integration-boundary sections. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-10T15:06+02:00 — Source-moved recovery guidance: the integration-resolution handoff now routes through `worktree_sync` plus a new targeted closeout, while the refusal sentence, door/protected-ref classification, and `replay` support are unchanged. Verification metadata remains closeout-owned.
-- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of pre-existing stale anchors in this route overview against the current working tree; the cited symbols and route meaning are unchanged.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/worktrees/integration`, so no route/member/prose/invariant change is required. route-member-count=116; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
-- 2026-09-06T13:51:59+00:00 — L33 candidate curation: Added journal-selected original certification and suffix-execution ownership; refreshed cited existing lifecycle owner extents while retaining source-pair, publication and recovery boundaries. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
-- 2026-09-05T06:21+00:00 — Re-read the reopened affected citation claims against the frozen source, corrected their current wording/ranges, and replaced ambiguous symbols with exact declaration anchors. Verification records this source-backed claim review; it is not a code acceptance or final Gate-5 verdict.
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the terminal-archive observed-exit guard change in `terminal_enclosure_archive.py`.
-- 2026-08-31T20:30+02:00 — No route topology impact: 260831-DER restores fresh ordinary series
-  integration as explicit no-door `not-applicable` authority while retaining exact leaf-door and
-  journal recovery boundaries.
-- 2026-08-30T06:26+02:00 — MCAR-L03 A005: documented the canonical exact-pair owner, the narrow
-  configured-authority delegation, and completed-integration memory-only reopen boundary.
-- 2026-08-28T14:15+02:00 — PDLS closeout: verified the direct-landing recovery, lifecycle
-  translation, and exact clean-snapshot refactor against the landed candidate. The existing final
-  reconciliation remains accurate; no new authority or compatibility path was introduced.
-- 2026-08-26T19:27+02:00 — Reconciled the IAS closeout recovery repair: direct landing now proves
-  newest-first ledger output while retaining accepted history as an immutable suffix, and cancelled
-  closeout replacement uses the current waiting door plus cancellation and worker-exit proof rather
-  than requiring a unique historical predecessor row.
-- 2026-08-26T14:32+02:00 — Reconciled direct landing, integration proof, and organizational
-  completion to valid newest-first same-code memory history.
-- 2026-08-26T08:55+02:00 — Finalized the IAS source-pair serialization boundary label against
-  the frozen pass-13 candidate.
-- 2026-08-25T17:21+02:00 — PDLS final reconciliation recorded the accepted ownership splits and
-  preserved the journal/door/queue authority boundary. Verification remains closeout-owned.
-- 2026-08-25T08:27+02:00 — 260824-PDLS wave 004: reconciled the final closeout, control, observation, and worker package splits; moved preserved sidecars and added the cancellation/projection owners. Verified against emergency-landed code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is not Dagger certification.
-- 2026-08-24T21:43+02:00 — File-size route refresh: separated pure enclosure binding and digest
-  construction from the locator/manifest I/O state machine. No location authority, fallback, or
-  compatibility reader moved into the new helper. Verified at source commit `23d35f77`.
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled immutable doors, atomic journal claim transfer, strict terminal archive/successor authority, and removal of successor-intent WAL ownership. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: recorded the `lifecycle/`, `direct_landing/`, and `legacy/` package boundaries, repointed current evidence, and verified the governed route at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11: route ownership now records typed integrate versus lease-bound closeout callers, required shared-core values, and separated generation/recovery stages against accepted tree `4241908c`; verification metadata remains closeout-owned.
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: created the `worktrees/integration`
-  route — fourteen modules moved from `worktrees/` (flat). Verified at code commit e5cb139f.

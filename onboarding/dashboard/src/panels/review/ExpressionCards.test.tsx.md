@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ExpressionCards.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ExpressionCards.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T09:59:20+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -58,30 +48,21 @@ the workspace does.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R31@v1` lives outside the repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The real bodies the entries start from. | "const cardsBody = captured<ReviewTreesResult>('gitTrees.cards.captured.json');"; "captured<ReviewResult>('gitTrees.family.captured.json')" | dashboard/src/panels/review/ExpressionCards.test.tsx:20-21 |
-| Each card state. | "draws a changed range as its real diff and an unchanged range once, labelled unchanged"; "shows an unresolved side with its reason and never a guessed range or a diff"; "labels an unavailable side unavailable, distinct from a file absent on that side"; "names a missing rationale as a gap and never writes text of its own"; "gives a proof entry its facet in place of a role and a rationale" | dashboard/src/panels/review/ExpressionCards.test.tsx:65-160 |
-| Grouping by (path, range) and the family order. | "grouping by (path, range)" | dashboard/src/panels/review/ExpressionCards.test.tsx:162-206 |
-| The F1, F2 (with R2-5) and F4 cases. | "opens one full file, in the card that asked, with one read (F1)"; "cover only the loaded members and points to the walk (F2)"; "marks an entry that is not current on its side with its MIK-R03 state (F4)" | dashboard/src/panels/review/ExpressionCards.test.tsx:208-281 |
+- The real bodies the entries start from. [1]
+- Each card state. [2]
+- Grouping by (path, range) and the family order. [3]
+- The F1, F2 (with R2-5) and F4 cases. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new test module, recording review fixes F1, F2, F4 (06:10:21) and R2-5 (06:47:03). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

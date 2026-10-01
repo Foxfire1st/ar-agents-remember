@@ -1,0 +1,543 @@
+{
+  "path": "mcp/src/agents_remember/memory/migration/census_measures.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the accounting as one separation, with the eligibility rule, the authored-only truth cells and the never-read `K` stated in one place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:020ecef6f0001472719c39a95cb14e91222a9a705c1b23a5f1f39941696e7782",
+            "locator": {
+              "kind": "symbol",
+              "name": "Separation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:d4740e914adf60515da9d1e08b9e4a5a55b6fdc8e71d5f3d583492704425431e",
+            "locator": {
+              "kind": "symbol",
+              "name": "Measure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:0fc50c193052ccb72e4033f13de4be80878cbfbc0330bc4c2e0d611d2998d094",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The two accessors that refuse to guess: a measure name the report does not carry raises naming the reported set, and one axis's slices are selected from the recorded slice list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:34cf349c35d08ba3f21c7e0cb3567279c26abdbf392a2c1391858c5f118ffe3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:d83d4d52c5d19b607ab2b234ccfe3243ee8f38347f1c2bf81bdf932ec2d8f808",
+            "locator": {
+              "kind": "symbol",
+              "name": "slice_axis"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:19f8f703a9e8c08428de675079b987c1d723cd48b6cc4a1a2a5e728957e57f5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEASURE_NAMES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The report rendering: facts as lines, measures together, six measures and never one composite score.\n\nAnchor: `render`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:55307c6139d5048b83d19a769a440aa298f58ac785ac9b9173e94c2bb7463da6",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The eligibility rule `CR21-4` requires be stated, as one predicate with `claim_kind` deliberately outside the test, and the closed applicability value it compares against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:1bf0b27b9bc33a1ca3795b2b1603e6be90abb20b5f1a4b6acba8f8037156fe21",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_enters_cohort"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:10fe467b9e51e452c21367f7bb84e76269d8ca871dfb261bc9d374ef17068c0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "COHORT_APPLICABILITY"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The assessment-to-cell mapping in both of its forms: the four cases, whose `None` case makes a claim with no assessment `P`, and the read of a claim's stored evidence relations, where an unread verdict is `U` rather than assumed support.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:0ab7a2c66f97960b2d43371104868de9673b334658371a630fd88cad918fc3cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_cell"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:daf18da0d9687cc65060d47a6286fcc063f8314378dd3a5c40f39c120c84bfc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "cell_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The two arithmetic builders: the separation built from an iterable of cells with the out-of-cohort counts passed separately, and the occurrence count whose repeats mapping keeps only genuine repeats.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:acb4fc04fc11179892492d46f4594a75d1d77d408f1d9ac7ed988a2fa4b51f07",
+            "locator": {
+              "kind": "symbol",
+              "name": "separation_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:29788104eeaf791d890fe2e5c8186286eee266e203dfbaa7d1a875d98e060261",
+            "locator": {
+              "kind": "symbol",
+              "name": "unique_occurrence_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The zero-denominator refusal — `not_applicable` with the reason recorded rather than a zero or a one — and the six measures in the doc's order, with the correctness figure's note carrying the unresolved and unassessed counts that must accompany it, and the coverage pair that stays `not_measurable` rather than inventing the denominator it was not given.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:fede1acb537c6f73ecac62ed8a9dc7994f946e9c98c7ccf69e58b722b78e403f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ratio"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:eff1d595a58c2cc08a395c6a8e6840ffab8030275e0f4f24fb2c79b11cefbb29",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_measures"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:562dde89954e4cd31bafa37f61eef51fbc65cfb28e72c54da668f2edb5fb1146",
+            "locator": {
+              "kind": "symbol",
+              "name": "_coverage_measure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Slicing the cohort by recorded keys, with an unkeyed claim landing under its axis's unrecorded key instead of being dropped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:743c0da0d176b0a34bd50efb30edf41c52e27a5bc26b894100908d2022248e5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "slice_claims"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:72cd2dae59726ff404c3c5109bca7953f7e08bea26401d12ae8efc2ed14ec28e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unrecorded_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The three count helpers that keep a bucket visible: inventory rows by parse outcome and state, the claim kinds pre-seeded with `unclassified` and the four classified kinds, and the migration dispositions including `unmapped`.\n\nAnchor: `inventory_counts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:1223440b29461c05fba4b53c6e6e80ba94f42f696e5dbd38c234b73c83a6d187",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_kind_counts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:b7e20ad7b186cb7de0a6bffbffdba8f3048c390c4dafafdc8777f5e3818a2b71",
+            "locator": {
+              "kind": "symbol",
+              "name": "disposition_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The closed vocabularies this module reads rather than restates, and the evidence relation whose optional authored disposition is the only source of a truth cell.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:8868a90f696fe445fd6cf4a252290965ed67f29aeecbe1aef96136eb6f6ebfbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_CLAIM_KINDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:c60dea22d6082766c8db8d005f01e01378e0a59e32ea7df9021e61c40ef78d00",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_DISPOSITION_KINDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:dd0964911a5d527a4984778072a52d91d41a5434906e72d67033d9cabdf211fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaimEvidence"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The four cells of the accounting as one closed vocabulary, named rather than lettered at each use site.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:c99dbc7199701aa9c254b9a9f7012d73c12b587f008a3c61df1501208712b5da",
+            "locator": {
+              "kind": "symbol",
+              "name": "CellName"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:9ff423b8676928e00c6e644173fb49c398a485c8372881f035e3f025dacd3ada",
+            "locator": {
+              "kind": "symbol",
+              "name": "CELL_NAMES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The six measure names, declared in `Doc12:99-104`'s own order so that a measure the report cannot compute is still a visible entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:c42c8ffc8240ef0a66a21771d966255b985536be55f44c7df07bd914ffb88557",
+            "locator": {
+              "kind": "symbol",
+              "name": "MeasureName"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:19f8f703a9e8c08428de675079b987c1d723cd48b6cc4a1a2a5e728957e57f5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEASURE_NAMES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four slice axes `Doc12:118` names, each documented as a recorded association rather than a derived one, and the consequence axis's own value for \"not recorded\" so an unattributed mass is a breakdown line instead of a silent omission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:35c48b34b6f710aed821ce46acdf9da0b4e19a6823ab2bdb2d4face3f16ddb26",
+            "locator": {
+              "kind": "symbol",
+              "name": "SliceAxis"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:75741742f286b60b64de56d93b2f0df44850590fe5b064adf1d83dfb184f3a62",
+            "locator": {
+              "kind": "symbol",
+              "name": "SLICE_AXES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:ef0be4891b39ff2371375044581232d0a6095fb3df89955fd0815bcda10ecfc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSEQUENCE_UNRECORDED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The separation value with the two out-of-cohort counts `Doc12:95` requires carry an explicit disposition, the four cells available by name, and the `__post_init__` check that refuses a total its cells do not sum to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:020ecef6f0001472719c39a95cb14e91222a9a705c1b23a5f1f39941696e7782",
+            "locator": {
+              "kind": "symbol",
+              "name": "Separation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:41130937eabc4f948b47143a005f4d9ed9b75f563790ada8e6aa84f953147c0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "non_claim"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:3b6d0a408ae010afc08e32566b9d121f7290770bc0529205c0a0eeae8e80d27c",
+            "locator": {
+              "kind": "symbol",
+              "name": "historical_non_applicable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:57c2af3dae0f6474fd505ad2521d31271dc00ba1a22128493bb77fd3891aad9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cell_counts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The measure's three states, its counts and note, and its rendering with the counts beside the ratio and never as a bare percentage.\n\nAnchor: `render`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:d4740e914adf60515da9d1e08b9e4a5a55b6fdc8e71d5f3d583492704425431e",
+            "locator": {
+              "kind": "symbol",
+              "name": "Measure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One occurrence per extracted claim, with the normalised comparison key that decides a repeat while the original text stays what is reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:e76a0d01cae6147cf15405666b2c06612a56a0ab7870cbe5744d5922c55b0c65",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaimOccurrence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:8cc9412f44e720e5ad16fc6cbe900ed6391f7c1f881ac9d6aeed3f899749b26c",
+            "locator": {
+              "kind": "symbol",
+              "name": "key_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Both counts `Doc12:112` requires, always together, with the refusal of an occurrence count below the unique count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:8d5081a1f2cd0890ee72f70851589f2db1819096e49e3097bdc5710240f8d5fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "UniqueOccurrenceCounts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The whole census output and its slice record: the baseline pair, the separation, the six measures, both counts, the inventory counts, and `Doc12:118`'s reason slices are mandatory output rather than an optional breakdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:d042adbbfa2a239371b33d159f2b133acee9cbcca90cf52f9970db94b9816490",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusReport"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f03090d3f88663d4565ce3b39aa406244eddbfb1",
+            "content": "sha256:3871f153db9d437a90e17b4bf2080e4e08bfc80a136ea0dffa534c496216b2c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SliceReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

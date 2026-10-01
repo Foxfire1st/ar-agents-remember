@@ -1,0 +1,116 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/sidecars.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Entry anchors omit `path`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ce7a3ebc8ff2d8a8340299367e28d811464c30",
+            "content": "sha256:618ad8c9503119bfdf2afdf43f3bfec2761677c52e578e6c1363b5a32cdd8c3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ce7a3ebc8ff2d8a8340299367e28d811464c30",
+            "content": "sha256:058cda475e4a2cdf19f7532f6518fe7395a1778d26b42dd1266536f80a978650",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationRole"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Own-file anchors omit `path`; entry IDs are unique.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ce7a3ebc8ff2d8a8340299367e28d811464c30",
+            "content": "sha256:22c07209d325c54a34afd58528cfbd981749d5a5c2e26693494c96b712f67d56",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileSidecar"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A route directory type shared with family routes: a repository path or `.`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ce7a3ebc8ff2d8a8340299367e28d811464c30",
+            "content": "sha256:4a547802ea4fd3c68a570cc96f0959c61c05b10151188769092eb770b759fc15",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_route_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03ce7a3ebc8ff2d8a8340299367e28d811464c30",
+            "content": "sha256:76dc767740562c0678e8f6299b80be90355d28e06cbdeff10b83c81c36c6d830",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoutePath"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Route sidecar: `.` for the root, every anchor names its path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ce7a3ebc8ff2d8a8340299367e28d811464c30",
+            "content": "sha256:619701f66ae4a6bc8b0e9f920abeafcfba4d0216f1172245d3cbe63c9bc3ee91",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteSidecar"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Route-index fields are refused on a route sidecar.\n\nAnchor: \"coveredFiles\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
+            "content": "sha256:becf9317faea62c4dffe701c0602fdf2cfea5bc7a34398006352a4f600ea3a48",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 441
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

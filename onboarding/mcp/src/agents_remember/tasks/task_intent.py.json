@@ -1,0 +1,254 @@
+{
+  "path": "mcp/src/agents_remember/tasks/task_intent.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Strict allowlisted v1 projection model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:0b76c5e934d54f4353235bb43f6a18d76cf6609e16036edbfe84770b874e2e5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentV1"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared exhaustive field-effect taxonomy consumed here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:27b6925fffcbb1c070d384ed78c6ad0e20a383277b7537c948bf94f5709ba6ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentFieldEffect"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:1422c75990a99f4fc641e49e5429bef61620f96fb69d57614fbba3586a70d3e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "fields_with_effect"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The typed slot/identity models imported from the sibling model module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:bc56b3a6d16cf9b6df35621d6006d2dbd53b41003e7a249705032ab237385c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:3de9da4fba259cdd7ede9f6ff9f23f7b778afcf6671a6ad3c93b3ffe8abe81da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ApprovedRequirementPacketRef"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Normative slot allowlists for the document and nested models, since MIK-R11 including `expectedKnowledgeEffects` and its three nested fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:edb2390489c7ca9fe82f8424ba029c590592f2b3f5394b7d8ebf4b1f8891f7e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ROOT_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:046df6e3bf247757338d0b4e77c7fd1ba997539099d2aa482222ccbced2d1897",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NESTED_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The optional declared-effects slot; absent is absent, so digests are unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:bc0008dcfb0552d79d1272539868bf5412443e2c659cb097e1734fe3c3736bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentExpectedKnowledgeEffect"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:d598aff2361d7e1ad20de5798e5efc4950e914037e19af29c96ea9052c1aeef0",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_value"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declaration projected into the leaf intent, and dropped from a master's.\n\nAnchor: \"leaf-only; masters project as before\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:392b195a2581ac6a911bd44423db11abb690c299e165832aaf1982269e505357",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expected_effects"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:8ffefc13ce5f722ba7fe13c1d7bf58d30cf482d397cc146b4a8e20819cb96c38",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 235
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Projection entry point refusing masters and translating taxonomy failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:b6c57b3c112cf07eea9f0be46ca5f0fb7d94e36200a72abaf34a5ba2adeabb2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Canonical digest production from the projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Currentness/staleness assertion for owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:ea3980c42105e1d218003016208a3a85fd50428adb3f555b921a9b2d7d25fed0",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_task_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Allowlist/taxonomy symmetry enforcement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:6eae6a754590ffe8be0ff968d8637d0aa25df24272c66dbd915697bc158f668e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_allowlisted_classifications"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Requirement text/packet handling and the v2-cutover refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirements"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "content": "sha256:69b131672777bed89a4245c7b0466c40715b813f8f614edeb6bdd88080efd2e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_approved_packet_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

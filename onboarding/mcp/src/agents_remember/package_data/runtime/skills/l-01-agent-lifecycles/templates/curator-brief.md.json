@@ -1,0 +1,147 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The packaged brief feeds exact approved requirement/adjudication inputs, complete three-way intent, and the structural leaf address.\n\nAnchor: `# Template — Curator Brief`; `**This template feeds inputs; it does not author rules.**`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
+            "content": "sha256:a1e98fc21371240ad49fb0e6f36355026cd8a59cfe2c5fb6d74c9a4182276b42",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
+            "content": "sha256:3ca792ef74636bd22f240896b59f3667c5580d0cb2543da61264e0becc4c0cbd",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The curator's three-way reconciliation procedure has one home outside the brief.\n\nAnchor: `# Operation — Curation`; `## Normal workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12326c25116a5354c1b5f3afeb4552bfeff55758",
+            "content": "sha256:c8d477c28ddba2f0c2bbcea66e65c1766bf20d7f2d6561a55e35889c1356b408",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12326c25116a5354c1b5f3afeb4552bfeff55758",
+            "content": "sha256:7256cc9a6b85467ad2e85a7b49d0ed6071b5436ce5d6bd7bf89ca53d1e0a354f",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The truth boundary the brief obeys, and the curator's handoff artifact, have one home.\n\nAnchor: `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)`; `## Which artifact each seat hands over, and who validates`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "content": "sha256:d6fdc752cf3d36bc074666312242c03c496b4b985f9aaf3a6614a36dbf1eac26",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "content": "sha256:516df12454f84b82450d778bcbc54c282cc5d62252801befb3be55e2c1e5b965",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The canonical template is the doctrine owner.\n\nAnchor: `# Template — Curator Brief`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
+            "content": "sha256:f2bf6365652ab4bd956193f0f6688638f4f988f94c796220bd405708300a45b0",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Synchronization replaces package targets and checks equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_target"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:cc0fc76d82fcb1ce49eccf65d18cc94932f99661e0467ab778bd59fca87baeac",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

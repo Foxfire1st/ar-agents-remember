@@ -1,0 +1,273 @@
+{
+  "path": "mcp/tests/test_review_subject_catalogue.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it measures and how its populations are built.\n\nAnchor: `create_invariant`; `create_revision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:556bc5bf22aae7f40b3050f4dd5360fb809dea19007d43aa0790b73fa4988e2a",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared fixture and the population helpers that extend it through shipped store operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:23942e787f40b7822d2f0856a09a1e67e11f2a96d8e8fe1f91a3dde6ba139226",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:b7d745d307af54142ab0395f9890f5d2c812776089cb489481e492657b394286",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolution_for"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:defd9af140fe680bfe9fad194c0259949565e73867dc3d7007d3222eabb920bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_copy_database"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:28cce0ab30931d4295814cbec455c3c938233c37854ce077c51587c92f0a94de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_extra_invariant"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:f17eac06eb5d766dd8f82481ba9a7b153d2650a7665e12484d34ed0dd3411254",
+            "locator": {
+              "kind": "symbol",
+              "name": "_insert_bare_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The route-level helpers that drive the entries route as it is served.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:092a6a9e4f8c5e72c27f8e94cde7440436023a7986a73453154f0567415b64f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_route_config"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:a4647dbb6691e20acaf9f666a3bac5bca3b030df07b4bb972209bab13dea689d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_pair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:4da143d8e460721e452b4035827dfae01d352d9c7dfb36815c65f624c8b9661f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTRY_MASTER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:be1d2817b9c6823e23055441e0903d949343d89dacbf66cb3c7d19e2d2bf0255",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTRY_LEAF"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The union with labels and presence, and the fix-round F1 pin that the rows stay globally kind-grouped when retired subjects exist.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:721204869dfe8e932e7ed24149b7e6f9ceec74fcd15d94d42efcb6b28d2b7fad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_catalogue_unions_both_snapshots_with_labels_and_presence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:1bf32c72b1f425122e017897d53033cc496a853c73ef67fa65806e1d5405be45",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The retired and added rows: a before-only subject stays listed and opens one-sided; an after-only subject is listed beside the retired half.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:723e9bc8ebc7b5ae629d7b2914de98ec899d14938be687fea93fcc8962abe5d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_before_only_subject_stays_listed_and_reviewable"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:5b55f1d576ff0544bb4c065fb9c91e41a1d81415e67164066d97b566af6a4e9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_newly_added_after_only_subject_is_listed_beside_the_retired_half"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The statement-free family listing and the packet's conforming example: every row opens through the normal review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:08509b21b630b55839619af31678a787c7c35577f78d9d523cd0e727a0056317",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_subject_is_listed_without_an_establishable_statement_side"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:73e0f2878b32adf14a991ae0d13e76b2194628d682af0ddf9acc3733d71d6b9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_catalogue_row_opens_through_the_normal_review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The failure/recovery boundary: a recorded but unselectable subject is listed and its open carries the comparison's own reason.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:70c4487c085e859426fff8b923c478a5ec3f2ddd0c413245598fd23d36b68a40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The labelled totals on the served entry result, and the zero-subject boundary beside the measured source inventory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:6274bbec61248e7f58458fbbfd76aa9b11037f6db9b5851c837b5cc31a300d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_entry_route_carries_labelled_totals_for_the_whole_catalogue"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:6db8db8ad609a77fea2aff0804da0d5da59e96629465ac946f13e1836dd523e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The bounded-loading tripwire: both diff bindings rigged, the route answers with the whole catalogue, so loading never compared.**\n\nAnchor: `monkeypatch.setattr`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce45291bfa2894997ed364c52638e79e57f6e19",
+            "content": "sha256:bf4086501773acf9b3cebc3bcab978acc4f94d2ab9d488b89fe1a41d3c58f2f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_catalogue_loading_runs_no_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

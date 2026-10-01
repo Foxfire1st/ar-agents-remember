@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/fixtures/pi_rpc/activity.jsonl",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Event mapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8112784fc286f9b308ae8a407ff5dc782ffcc7d0",
+            "content": "sha256:2e2ade4fed0b785b699c24cc39bb7a78ad2789b7c8e0c6162765fe7b777ea238",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiRpcEventMapper"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fixture-driven tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "165545e41ece67b270d039117cc127c360f669a3",
+            "content": "sha256:a333354b34e4c60fca9fce699d5a7b2c87e0609803d6106a6e679e9d01bf0a2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_compaction_and_agent_settled_are_not_early_idle"
+            },
+            "path": "mcp/tests/test_pi_rpc_adapter_ops_2.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every served review source-content expansion and its dashboard client type.",
+  "conditions": [
+    "admission is changed or attributed_unchanged, with admission_detail.",
+    "attributed_unchanged holds exactly when status is unchanged, and only with path_bound requested_generation."
+  ],
+  "exclusions": [
+    "The change inventory's own status vocabulary, which gains no unchanged value.",
+    "UI labelling of attributed context (owned by a later leaf)."
+  ],
+  "id": "INV-T23G8ZJM",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "c87e259b-c2d4-4713-b8d1-77e6b3725224",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Every source-content expansion carries admission (changed | attributed_unchanged) and admission_detail, and the model refuses an attributed_unchanged expansion whose status is not unchanged or whose path_bound is not requested_generation.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,160 @@
+{
+  "path": "mcp/src/agents_remember/serving/eve_interactions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The projected pending shape and the structured question page are AR's existing control-wire types, not eve-shaped types.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:20859473ddec59a6928023e0f7e24782ef1035bcf829b1e8c3d6331e36a6d784",
+            "locator": {
+              "kind": "symbol",
+              "name": "PendingInteraction"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:543ccf523a50cf1d743ed6db215f291f85f6473cc3d9ed86e42d8b2d56a63df0",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionQuestion"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:2117ceda59312805fccf0e396516be8a0a95abb8b8b28523dd538b9cd684e94e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionQuestionOption"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The mapper is the only writer: `input.requested` enqueues, `input.resolved` resolves, `authorization.*` retains and clears a challenge.\n\nAnchor: \"EveEventMapper._interaction_requested\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51dbbd7f3f3570858ec80eb37e9284f2a67932d3",
+            "content": "sha256:62c74131c51c760c30ef16aefa6b898f3b4f952745d022e00b7aa473a72b7f2a",
+            "locator": {
+              "end": 695,
+              "kind": "line_range",
+              "start": 695
+            },
+            "path": "mcp/src/agents_remember/serving/eve_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mapper builds the strict `inputResponses` entry — an `optionId` when the response names one of the request's own choices, otherwise free text.\n\nAnchor: `inputResponses`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51dbbd7f3f3570858ec80eb37e9284f2a67932d3",
+            "content": "sha256:daa90ffee5ad586196e6d05695bcf75a830a971d433ea3c8ec5c1f4b90b6664c",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "mcp/src/agents_remember/serving/eve_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A pending request also refuses further ordinary delivery until it is answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:6d9ea4209274c193f500b2973ac6e3ddd8a9e4d28f8940f521a239cd9334394e",
+            "locator": {
+              "kind": "symbol",
+              "name": "preflight_operation"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cases cover the request becoming a pending interaction, the response targeting it, and free text versus option ids with unknown ids refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:8f5e6f1c3a4379259f7f88c1196403e482e50fde929dbc538ca9b288e7b37e1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterSubmissionTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:5b4db81c4adb3c7992d678c87dd292cb7ff44f7761dbbe846cead9c2c6ae999e",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "eve's pause/resume contract — one `input.requested` answered by one exact `inputResponses` entry — is the published protocol this queue serves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:883dbbe0a3e5f559c097a8f264d07685d6128b855816a72ac6761e22235eb254",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_REQUEST_EVENT_TYPE"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:83bfbd1b5fe79f4fb02f008682686701bebce11a87d4654d1b8d3c2772e17da8",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_RESOLVED_EVENT_TYPE"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,507 @@
+{
+  "path": "mcp/src/agents_remember/cli/dashboard.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The deferred import of the reader.\n\nAnchor: \"from agents_remember.application.knowledge_reader import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:d8f3843c819aeb3508a864f41bc9ab12121577bc13e52b2a7c5775f9a298e42a",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "This CLI defines `--interval`/`--heartbeat` and threads their cadence through reload parent/worker, live-app, and daemon paths; sim deliberately carries interval only. (The `add_arguments` named here is this module's, not the identically named function in the CLI module `cli/knowledge_ingest.py`.)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:ec8ebb319a6713fe13f79587a01c9dd27c0033151ad9d4937e40d29f69e71ed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dev_app"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:bf5e9378e91c92e7e4d85f4d54b360dca3c9d3fb19b7f4cf655f5d8fb9b84424",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_reload_server"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:f048302f292a0f174f3c83fec9285c5949b1faf99cdd9a793039c9577c7cce42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_app"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:0516bdc5a7c1844d736a1d0980167649c0375b30d6b597ec5728fd9c2e8b0908",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_daemon_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Discovery unit tests (hits, precedence, template skip, miss error).\n\nAnchor: \"class DiscoverConfigTests(unittest.TestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a6789d1b6f4c93c3177dacfcfca6cb2dbcc9920",
+            "content": "sha256:be9509ea9efe159a6574f89d0ae42adf7655d03b67816c927030f5ca4b459f37",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/tests/test_cli_discovery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The app factory it serves (and the `now`/`before_tick` seams it passes).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:f283eec28d13eae9e01fc8bfe9030ecf5a98690d3b375da40f966808071a6569",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_app"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The sim builder / clock / feeder / speed parser it wires.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc2c670ac6b085e8e2265035234622b27304c887",
+            "content": "sha256:edbcd91403e6862f63abe2fc188008af20a93bbbfbd100ebe5b65ff9ff764cdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_sim"
+            },
+            "path": "mcp/src/agents_remember/serving/sim.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc2c670ac6b085e8e2265035234622b27304c887",
+            "content": "sha256:38f14febabbc119d5c9a9a0525188b03eacba51923b32e0b72dee44ed3be0715",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_sim_speed"
+            },
+            "path": "mcp/src/agents_remember/serving/sim.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The `--config` → `McpRuntimeConfig` contract it mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:0d3b1a86df3de4b2b7f81828fd3dc25bd588d932ed545f8863363d4d68b777e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:9b3d07bdf17d9bd2985743dbc9bb23b4f57bac652620508b9a4eeea9207a3474",
+            "locator": {
+              "kind": "symbol",
+              "name": "declare_process_role"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The MCP server's mirror of the same declaration, in `main` rather than `create_server`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:66ae0bf6c579630f2aa12e314647b9610a2f52bddc550fe9b6c7f3338e099a36",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The composition root and the config-bound compiler it binds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:7d7c7b2717bc82f7a76bfb072223dfdb3713afb902384f32655118cbd247386b",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_launch_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Every `create_app` call in this module resolves its collaborators through that root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dev_app"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:f048302f292a0f174f3c83fec9285c5949b1faf99cdd9a793039c9577c7cce42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_app"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:5f65bfdb143c332f98ce4b91d9101e3ba0899314be55ae5c285ae48972ee25d5",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The port the bound callable satisfies, and the record it is placed on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "content": "sha256:0dd05ce9bf0e3c1a372e6edfe3be719e30d2a8be653af23d219824f78b171783",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchCapsuleResolver"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:db721ad42665f8175c10009c61018cb314778bad5193f05930d0b8bdf50ffb3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingCollaborators"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reader port, bound on the collaborator record beside the reviewer ports.\n\nAnchor: \"def knowledge_reader_port(query):\"; \"knowledge_reader=knowledge_reader_port\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:6d89d0c517160f61df62ca6d3d9146f253072817f10588897b686987d0079cea",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 149
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The third reviewer port this root binds: the deferred import and the closure that closes over the config, so every app resolves one listed entry's content through this composition root.**\n\nAnchor: `read_review_source_content`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_source_content_port"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_source_content"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:464968eee02a23928fd532073b511d68841b8b2278b68d8318bee85cf6ce4840",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 483
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The entry point the port calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
+            "content": "sha256:5994963e88a2b6ee153ed4662f3c4d9ea6ff3a85775501bf515ba7689ab5c74d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_knowledge_reader"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The deferred import and the fifth port bound on the collaborator record.\n\nAnchor: `read_review_trees`; \"review_trees=review_trees_port\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:96c991dfaa1c32f98ba79ac8ce1f42d7c498716a5a153cca34fcf245d9ab4f6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_trees_port"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The deferred import and the fourth port bound on the collaborator record.\n\nAnchor: `read_review_intent_summary`; \"review_intent_summary=review_intent_summary_port\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:ebd17f93289f879070cf11a21c444e2aec77868ac3b97fd7764fcf9935af73a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_intent_summary_port"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The umbrella dispatcher that registers this subcommand.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:dca755dcad766a5a6aa379474ed32f96157f9de3c2c3d21c2bbdaff572e4c033",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The trusted-settings discovery the optional `--config` falls back to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bf414f8809c90c8bea4445498abf2f163f24b8c",
+            "content": "sha256:c0dbcc2f32c57dc0154601a11588e990bc81a2856a98a9dd494c9d038015f3f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "discover_config"
+            },
+            "path": "mcp/src/agents_remember/cli/discovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The daemon supervisor behind `--daemon`/`--status`/`--stop` (heartbeat plumbed on spawn/restart only).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86c3b2be96c126893168d463c2382ef107b5bc07",
+            "content": "sha256:38480b90ecd20ca8f70c128442315d1bb865fe2ed1dbc81b93796478e8ac7dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure"
+            },
+            "path": "mcp/src/agents_remember/serving/daemon.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The serving layer defines the idle heartbeat default and implements change-or-heartbeat scheduling in `ChangePacer`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:bc2f6f83c051f8766ffb2d0437e5768175a145895fe0044755f0faf249d6beb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_HEARTBEAT_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:d0b97ace3cdc8d307eb4c750ab2d608f76fb2630e06195178df996dd014ccd5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangePacer"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:b17423f94f28eadbeda4b9fa05c85bbb5ef7b40a21adf9077ac7b3b97bde6fe4",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

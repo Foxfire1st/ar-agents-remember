@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/resolution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Root, candidate selection and the exclusion register belong to the same immutable lookup value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c3496e8da973dca8e557df42b0b4ee5af97d13",
+            "content": "sha256:e0fba46369b89cb9a724caa360b62d407074246e1dddf32cda0b61583d30b1c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "Trees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Candidate code lookup proves membership and bytes; memory lookup remains contained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c3496e8da973dca8e557df42b0b4ee5af97d13",
+            "content": "sha256:2a7a637d2596236f01f6b1017e1ce28750cf26322796555f312ed62b55b88b96",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39c3496e8da973dca8e557df42b0b4ee5af97d13",
+            "content": "sha256:ef1b609a1df661b1eb0371a54c6715b8781a32935ce0879f0cc32a51b5a22215",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing top-level names classify unresolved repository paths without proving Git membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c3496e8da973dca8e557df42b0b4ee5af97d13",
+            "content": "sha256:31fc133acaf65601a5f1a5c02ae414365dbfd23213fc4e2318b775c2f1c37ec1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ours"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Onboarding and managed-cache roots must match the operation's Trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c3496e8da973dca8e557df42b0b4ee5af97d13",
+            "content": "sha256:fa5612b1fe73f54ac8d353bf3bf9f8e047b29d24996b6fc2de6cb1bd801393a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "operation_trees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three sources the register records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:d55a1035c4d051767bf9c81e0f3304f12f51f01ca6b721bd1526016d555dc477",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXCLUSION_SOURCES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The register value this lookup carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:faaee0c2e5305b0aae424099606778ab4560dcc3e764f3a725745ad6536dec03",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExclusionRegister"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two settings blocks a caller's register is resolved from when none is supplied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:2ebdad3b6cc58262447a3368cb98cd2df97bc581968d816f95e7dbd6841ae647",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_citation_index_settings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The route that replaces the default `absent` authority with the one it actually exercised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ffaa08afc5750f097144b71c2611c3e1e7438fb1",
+            "content": "sha256:ee020cdc673529ec2a2df1657837ca6f7c78222de6b1d56fbab7c1d938640b1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gitignore_authority"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

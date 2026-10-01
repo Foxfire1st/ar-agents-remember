@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/collapse.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The declared `DisplayRow` output type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51155620872f48959d83b080cd169f25ac56d27e",
+            "content": "sha256:52bca103e37849d2b0f4b0bf0813c9393a723501d764c52359bbfae269a2cb99",
+            "locator": {
+              "kind": "symbol",
+              "name": "DisplayRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared pure grouping entry point.\n\nAnchor: \"describe(\\\"groupUnknownVendorRuns (F10)\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a78c3d313e5a6a2611810a8e05f9c046c2eb125",
+            "content": "sha256:058ec78720461b32d264a961a49b5cbbb257f4419d8aba51238a613dc45e0038",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/collapse.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The unknown-vendor content block type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:9b969cc15d4af13d23d484c687742aa7785896cabe8376b0aa0788cded921323",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationContentBlock"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `ConversationItem` wire type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:dc580072cfe96fda01c3de42598e5bc2f81d32569780f998186cba1df463599e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItem"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `ConversationTimeline` feed component.\n\nAnchor: \"function ConversationTimeline\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "678a26102901492941425c3a49304020b187637c",
+            "content": "sha256:ea61c6d92a1a63aecc26e5e3f229cc824d9795fa0137e9a4014f4162f3ae9d61",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The grouping test suite.\n\nAnchor: \"describe(\\\"groupUnknownVendorRuns\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a78c3d313e5a6a2611810a8e05f9c046c2eb125",
+            "content": "sha256:058ec78720461b32d264a961a49b5cbbb257f4419d8aba51238a613dc45e0038",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/collapse.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

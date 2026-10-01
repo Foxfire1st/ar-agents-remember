@@ -1,0 +1,260 @@
+{
+  "path": "dashboard/src/data/setClient.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Set, snapshot, promotion, pair, cycling, and watcher cases.\n\nAnchor: \"sendSet — wire + honesty table application\"; \"refreshSessionSnapshot (R1/F16)\"; \"queued promotion by readback (R4)\"; \"serialized pair change (R5)\"; \"cycleEffortRequested (R7)\"; \"startSetPromotionWatcher (R4 + v3 drift delta)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fbabd235ed6e7c1111d1561d16bdfa3a26a03a7",
+            "content": "sha256:dd210860ef98995876d90af22ef4c59b072ff9d0b690d0e45dbc72689ab562e5",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7fbabd235ed6e7c1111d1561d16bdfa3a26a03a7",
+            "content": "sha256:067f961e3b2108f083c807e463828b8c4c99b1fcc770f15b8ab24c4cad114a68",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7fbabd235ed6e7c1111d1561d16bdfa3a26a03a7",
+            "content": "sha256:8f51f92c8819dc4c3a37df5c5d14de5473d9d944902c3d520b9a931c23f28c79",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 267
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7fbabd235ed6e7c1111d1561d16bdfa3a26a03a7",
+            "content": "sha256:1c6c8c2075eab17bc6afac07a8f7065f6665a867fe72e9c4703e9af1ee01e6ab",
+            "locator": {
+              "end": 536,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7fbabd235ed6e7c1111d1561d16bdfa3a26a03a7",
+            "content": "sha256:29cdb6f7818c1a49cc106889a7eccbb22a2a1d106673625ad5f8bfcab9694d89",
+            "locator": {
+              "end": 607,
+              "kind": "line_range",
+              "start": 538
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7fbabd235ed6e7c1111d1561d16bdfa3a26a03a7",
+            "content": "sha256:f871417bf745345279b54ef75f1ba4a54d36658064028d07908e3f6aaf21f113",
+            "locator": {
+              "end": 697,
+              "kind": "line_range",
+              "start": 609
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Driver under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:1727a2b194dce457d5c2e618159e35ca6eecbfdb6bfdec873343ef6e0e247420",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshSessionSnapshot"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:916e0df4f513a827951afcfadfa505b2e0e6309f8345f6ea8f150374896d36da",
+            "locator": {
+              "kind": "symbol",
+              "name": "applySnapshotReadback"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:5c9b106eb6d13eae4e1869dc85d471ac90db81c4e8cef24daa37879d4141f5df",
+            "locator": {
+              "kind": "symbol",
+              "name": "sendSet"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:7e5fdc438d7af4c30f3c6f69eb22758d5b9227a324304e6b554de4921af015d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "applySetResult"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:6cb35640a257e0c2518aee8bff3d15602e4386bdb0d93e89b95bed0e136a4faa",
+            "locator": {
+              "kind": "symbol",
+              "name": "commitPairDirective"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:c0ba27ddf06208226ac847d155c326da394282fe5c111c03e7cd4f9621988c05",
+            "locator": {
+              "kind": "symbol",
+              "name": "startPairChangeFlow"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:224ffc3eeb190d29fc8109c3ae2230abf90b786469061e5155b3eb6c05e43ca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "acknowledgeSetAttention"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:a9f32847179baf7c52fde8ff95901616d1c6bb127442da7d44fd361cc9790331",
+            "locator": {
+              "kind": "symbol",
+              "name": "cycleEffortRequested"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:20093927c0e6bc632c67ed3e9400814f384c02c94fdb5b18e96007eb695a73a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "startSetPromotionWatcher"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared deterministic fixtures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:335ebc95811aa44bdb77df145c5859cc459b8df4785b92c32b69f1d478e646a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPES_BY_CACHE_STATUS"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared `observerEvent` builder supplies `schema`/`id`/`trust`/`actor` defaults to every event it creates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8450cd27e47c3d6b5e8ebe81785cd7c30f287b5c",
+            "content": "sha256:a82a0882fb602faf321939bffff95b3bddceffcc52d86e117304a71983226595",
+            "locator": {
+              "kind": "symbol",
+              "name": "observerEvent"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The R4 promotion-watcher test routes the turn-ended L2 SEAT-EVENT through `applySeatEvent` using the shared observer-event fixture.\n\nAnchor: \"fires on a turn-ended delivered by L2's SEAT-EVENT channel\"; \"applySeatEvent(\"; \"observerEvent(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fbabd235ed6e7c1111d1561d16bdfa3a26a03a7",
+            "content": "sha256:2446d734f42a4c263613df9f36dd3888e03e108ef46ded1ab679f31ca03130fc",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 655
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7fbabd235ed6e7c1111d1561d16bdfa3a26a03a7",
+            "content": "sha256:36f7b3b9dfb9a4a4816d25d844ccb8073771b65ea1e8a70fdceed2950f1c789d",
+            "locator": {
+              "end": 671,
+              "kind": "line_range",
+              "start": 670
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

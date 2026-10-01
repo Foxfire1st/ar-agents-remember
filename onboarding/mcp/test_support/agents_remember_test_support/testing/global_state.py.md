@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/testing/global_state.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/testing/global_state.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python testing boundary](overview.md)
@@ -34,16 +24,9 @@ process role.
 - Restoration happens before a leak becomes a failure so later tests cannot inherit it.
 - Begin/end are safe across every pytest exit path and repeated end calls.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one owned state register is explicit. | `OWNED_MUTABLE_STATES` | mcp/test_support/agents_remember_test_support/testing/global_state.py:34-42 |
-| Process snapshot/restore uses one typed owner. | `_PytestProcessState`; `begin_pytest_process`; `end_pytest_process` | mcp/test_support/agents_remember_test_support/testing/global_state.py:20-22; mcp/test_support/agents_remember_test_support/testing/global_state.py:61-75 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-24T21:23+02:00 — Moved from `mcp/tests/_global_state.py`; preserved the explicit
-  checkout-mode ownership and added shared-route lifecycle plus typed session state.
-- 2026-08-10T18:31+02:00 — The predecessor card recorded kernel checkout execution as the owned
-  state and explicit pytest mode as the normal baseline.
+- The one owned state register is explicit. [1]
+- Process snapshot/restore uses one typed owner. [2]

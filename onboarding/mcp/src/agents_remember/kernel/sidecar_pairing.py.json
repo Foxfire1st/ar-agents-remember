@@ -1,0 +1,245 @@
+{
+  "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+        "content": "sha256:2e71355d5cb062db0fffb72aff9583aa01e984c62e6d24a6976dc1ec4f22db1b",
+        "locator": {
+          "kind": "symbol",
+          "name": "route_sidecar_status"
+        }
+      },
+      "id": "RLZ-P5GN64FZ",
+      "invariant": "INV-WS8GFNAC",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The fallback probe is the construct that makes a missing derived index a supported state; the index itself is the disposable artifact.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The `read_ar_files` application entry point that these helpers were extracted from; it imports them under their former private names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d5f5ff18990512223e1f4b8688594197e310cb",
+            "content": "sha256:72a13e66e6301e5866b57fd320680e70a97a1898bb0d4c4c4e89dbe456916dac",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_tool"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3d5f5ff18990512223e1f4b8688594197e310cb",
+            "content": "sha256:4382c85b06a94cdc6899656aff9e5ee1f450210eaca76052557a386e569db5d3",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The dashboard files API that reuses this module (forward + reverse pairing, the path guard).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
+            "content": "sha256:45b180406d74a21ed8338099c32df1716c08558b1562ea9317cc0e6a30c87491",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_onboarding"
+            },
+            "path": "mcp/src/agents_remember/serving/files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
+            "content": "sha256:82b82cdf8f94852f47ee97f2302921433d97a1b0c100a16a2118352a652fe3a0",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "mcp/src/agents_remember/serving/files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`sidecar_status` + `INDEX_FILE_NAME` / `ROUTE_OVERVIEW_NAME` / `ENTITY_CATALOG_NAME` consumed read-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b796049080e27c790265266719406d3469c3a07",
+            "content": "sha256:bb8647138184081f0e1c66fc85176064e7780295e754f1666cf951c21e27cf4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "sidecar_status"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b796049080e27c790265266719406d3469c3a07",
+            "content": "sha256:fc18b95fdad64a368326de9721c6c4794425208cdbfcb4d12a30183f236002da",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_FILE_NAME"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b796049080e27c790265266719406d3469c3a07",
+            "content": "sha256:05e50f3c047ea2a3b7b0ba706d4f94aed2f05e78fd16c91f2216c13a1777c097",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROUTE_OVERVIEW_NAME"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b796049080e27c790265266719406d3469c3a07",
+            "content": "sha256:f217a477b7b234913baac6ed913afb5dd795a7d8d245c360fd5292be574035e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTITY_CATALOG_NAME"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b796049080e27c790265266719406d3469c3a07",
+            "content": "sha256:dad8daca595523da99099064e1b5eebe31b174673b5673217cdbcfa5d4574ef5",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `meaningful_body` extractor applied to a sidecar body here.\n\nAnchor: \"return meaningful_body(filesystem.read_text(sidecar_path))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "content": "sha256:26920a5b2ac4d00049b771c2b9814e3fca5b7225f8eca8392644fc612e52b7b8",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The mirror sidecar-path helper (`onboarding_root/<rel>.md`) used for the body read and the no-index probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4386fbbbc4761658185ef15c5fc3f5f7e9c7931a",
+            "content": "sha256:8f09e6eb513ec1e3b96652de09519b0d96ef811cbc36202bf17ca56fc631bb35",
+            "locator": {
+              "kind": "symbol",
+              "name": "mirror_onboarding_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4386fbbbc4761658185ef15c5fc3f5f7e9c7931a",
+            "content": "sha256:d29922ee58fb7322040679a9cefe25226867202ca615df89397420548dc95040",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `path_is_relative_to` confinement predicate used by `confine_rel`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:034c7e359c605efda03d85d4b7bd1aded24ca7f3d65e4e37234ebb131288dffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "path_is_relative_to"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `AuthorityError` raised on an out-of-root / absolute path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d584d2d788a3149eb72bbf9420b29b9a028e11f5",
+            "content": "sha256:6b60d43c9ef5c7c9675d1b65bbc5b3b96af08cd1f6b69c9126f03b1a2022d010",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthorityError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d584d2d788a3149eb72bbf9420b29b9a028e11f5",
+            "content": "sha256:7f26b29a1f0b715def1de7f7d30a324a15e3f00cce6914d124078511b7b7f2c5",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

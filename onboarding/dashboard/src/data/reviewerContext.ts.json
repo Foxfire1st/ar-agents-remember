@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/data/reviewerContext.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reviewer ownership is checked at all three topology altitudes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90341e81a32a2a29688189645fa93d2b784539d1",
+            "content": "sha256:963c84fecb0aa1f363b6e00bcb2448fe3bc06506d2105fe8f27d70defb18c015",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewerParentMatches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "UI labels retain the sprint ownership plane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90341e81a32a2a29688189645fa93d2b784539d1",
+            "content": "sha256:e73233b7c4aa0663098fac8f96d423d937d1b24fc0b093d7df2dca7f6a86b775",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewerContextLabel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

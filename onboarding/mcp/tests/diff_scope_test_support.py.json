@@ -1,0 +1,1605 @@
+{
+  "path": "mcp/tests/diff_scope_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree as one table.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:4a0655790dff977be97d84615ec165500b44a99840460dd423000ba91ddd54b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUCCESSOR_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:248c49e2a6e772a0b5232c7710c5627265150f5f0adbdd9960a321a68a325fcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNMAPPED_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:1dc6abd56e6140ef2058d66b5494de453f4f6b60426ee30bddda102f72e799be",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETRY_REVISED_STATEMENT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:349a07f9e90873831fa3400445e9557efce23f839402a4e7dc9e5bf44dc852c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CANDIDATE_TREE_TEXT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:a8c852017cf6186413eb3d3c3a92bf3361ea68aff03528a0762109b5cf59d288",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The baseline fixture this module builds on.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_read_scope_fixture"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The fixture value the baseline side is read from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:29bc6e8fcc10f541cda28af80fd2f0db69f0f72d4f23f659a0b9d47923937997",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadScopeFixture"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The contract this module's artifact row is registered under.**\n\nAnchor: \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ef7c4521e349fcc4ed0f2a833d5de737f85410df0b9a20292e331262aa2fbe59",
+            "locator": {
+              "end": 1443,
+              "kind": "line_range",
+              "start": 1443
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f2af0d9f7d2aceed7c7c3ffcbbfb06e3781488417d495bc00f90a9202cefb41",
+            "locator": {
+              "end": 1458,
+              "kind": "line_range",
+              "start": 1433
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The contract this module's artifact row is registered under.**\n\nAnchor: \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The contract this module's artifact row is registered under.**\n\nAnchor: \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The contract this module's artifact row is registered under.**\n\nAnchor: \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The artifact row that registers this module, and the replacement contract it declares.**\n\nAnchor: \"introduced_by = \\\"260915-KS-L8\\\"\"; \"replacement_contract = \\\"contract:knowledge-diff-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:adf1885cb89c8d2fcde09cb6c32b923e0f620527cafc3cded311a031ebaccaf8",
+            "locator": {
+              "end": 1458,
+              "kind": "line_range",
+              "start": 1440
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d0926c8c1f57bbea6d80de42810de32c783ecc4c52491effef81f4f93b3fa5da",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f13ad3eb09d3db67497f8b914b1e89d1eaa9f763594e555d3b1b115d38525875",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f907449b223e7f70b3250918d60ab2aef1b896e9d7c632c0686a0319a211819c",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 468
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ffee3a8e8b849eb122f6ac5ad01689b0e8afb394959fae67cf39622c5f4191bc",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1201,
+              "kind": "line_range",
+              "start": 1201
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1225,
+              "kind": "line_range",
+              "start": 1225
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1254,
+              "kind": "line_range",
+              "start": 1254
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1274,
+              "kind": "line_range",
+              "start": 1274
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:880007e41d5dfbf20a7f1934769d322cff9249e28958935577fcc45b1c15aba0",
+            "locator": {
+              "end": 1522,
+              "kind": "line_range",
+              "start": 1522
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:507f92911387341650f48b0af1ed07985b85c23e51b2bbd6480fdf10d4bbfbbf",
+            "locator": {
+              "end": 1667,
+              "kind": "line_range",
+              "start": 1667
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b5e01e3d399c03e0d9c43458f3a11262d7222ad4c5a00e45bc4b0a9bda8b6f68",
+            "locator": {
+              "end": 1706,
+              "kind": "line_range",
+              "start": 1706
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
+            "locator": {
+              "end": 1742,
+              "kind": "line_range",
+              "start": 1742
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The artifact row that registers this module, and the replacement contract it declares.**\n\nAnchor: \"260915-KS-L8\"; \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5e93f8a16ac612beb0512603dbed0c783162a7b250ad296816249dddd9097353",
+            "locator": {
+              "end": 1457,
+              "kind": "line_range",
+              "start": 1457
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The artifact row that registers this module, and the replacement contract it declares.**\n\nAnchor: \"introduced_by = \\\"260915-KS-L8\\\"\"; \"replacement_contract = \\\"contract:knowledge-diff-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7f2af0d9f7d2aceed7c7c3ffcbbfb06e3781488417d495bc00f90a9202cefb41",
+            "locator": {
+              "end": 1458,
+              "kind": "line_range",
+              "start": 1433
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
+            "locator": {
+              "end": 1440,
+              "kind": "line_range",
+              "start": 1440
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d0926c8c1f57bbea6d80de42810de32c783ecc4c52491effef81f4f93b3fa5da",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f13ad3eb09d3db67497f8b914b1e89d1eaa9f763594e555d3b1b115d38525875",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f907449b223e7f70b3250918d60ab2aef1b896e9d7c632c0686a0319a211819c",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 468
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ffee3a8e8b849eb122f6ac5ad01689b0e8afb394959fae67cf39622c5f4191bc",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1201,
+              "kind": "line_range",
+              "start": 1201
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1225,
+              "kind": "line_range",
+              "start": 1225
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1254,
+              "kind": "line_range",
+              "start": 1254
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1274,
+              "kind": "line_range",
+              "start": 1274
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:880007e41d5dfbf20a7f1934769d322cff9249e28958935577fcc45b1c15aba0",
+            "locator": {
+              "end": 1522,
+              "kind": "line_range",
+              "start": 1522
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:507f92911387341650f48b0af1ed07985b85c23e51b2bbd6480fdf10d4bbfbbf",
+            "locator": {
+              "end": 1667,
+              "kind": "line_range",
+              "start": 1667
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b5e01e3d399c03e0d9c43458f3a11262d7222ad4c5a00e45bc4b0a9bda8b6f68",
+            "locator": {
+              "end": 1706,
+              "kind": "line_range",
+              "start": 1706
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
+            "locator": {
+              "end": 1742,
+              "kind": "line_range",
+              "start": 1742
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The three small value types: one candidate-only realization's identities, one side of the comparison, and the fixture with every identity a case asserts against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:afb7197eebc31ce6df3f6f2bc2a07c6860a39df5e220a8025a902f064f8a2790",
+            "locator": {
+              "kind": "symbol",
+              "name": "AddedRealization"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:5100642a5b57f4354c22a1eb7b056a764548b57ab79d032832948f61cb0181d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffSide"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:001584ab745e28afcd6f1111f23193c034a107b180674d07b25de79659af14a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The artifact row that registers this module, and the replacement contract it declares.**\n\nAnchor: \"260915-KS-L8\"; \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5e93f8a16ac612beb0512603dbed0c783162a7b250ad296816249dddd9097353",
+            "locator": {
+              "end": 1457,
+              "kind": "line_range",
+              "start": 1457
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The unit-lane row that keeps the scope module in the certifying collection path.\n\nAnchor: \"mcp/tests/test_knowledge_diff_scope.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:c855e7d5734aee727fc185e5ae0d6e0feef339e7b35ad5d149e83c61d603fc54",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The unit-lane row that keeps the scope module in the certifying collection path.\n\nAnchor: \"mcp/tests/test_knowledge_diff_scope.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:c855e7d5734aee727fc185e5ae0d6e0feef339e7b35ad5d149e83c61d603fc54",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The integration-lane row that keeps the boundary module in the certifying collection path.\n\nAnchor: \"mcp/tests/test_knowledge_diff_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The integration-lane row that keeps the boundary module in the certifying collection path.\n\nAnchor: \"mcp/tests/test_knowledge_diff_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:43230098effe611fcd8d17c1eeaffe2f58ffc492f05ad1875158c95c069efe77",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`).\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:632c0e2b63fb377afb1b7bafa767f7ac1996cfcf55972d1eec334535e89c2b07",
+            "locator": {
+              "end": 1513,
+              "kind": "line_range",
+              "start": 1459
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`).\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`).\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`).\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`).\n\nAnchor: \"id = \\\"knowledge-diff-cases\\\"\"; \"id = \\\"knowledge-read-scope-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d0926c8c1f57bbea6d80de42810de32c783ecc4c52491effef81f4f93b3fa5da",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f13ad3eb09d3db67497f8b914b1e89d1eaa9f763594e555d3b1b115d38525875",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0f27b7254e53cf0acf5925430255f60ae39b05a2c852ec35b5ef718237eb4468",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 469
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:494f461d1071e9f1e0cde18d130f7ae474bdc62791d19e30e651f44cf4e54734",
+            "locator": {
+              "end": 1182,
+              "kind": "line_range",
+              "start": 1182
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:2e156d69bd8743f631d04cf0cc864e81162959227248a282270742be7cf28786",
+            "locator": {
+              "end": 1206,
+              "kind": "line_range",
+              "start": 1206
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
+            "locator": {
+              "end": 1235,
+              "kind": "line_range",
+              "start": 1235
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c0b7338c6aea3db85b66242cfb383f13aeb9f7746d482ec5f81d12771b8292d8",
+            "locator": {
+              "end": 1255,
+              "kind": "line_range",
+              "start": 1255
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:bc56a1bbd67af8e04d484bf3ca5d0b69f4da1e8bdc044bcee4b70675fade35e5",
+            "locator": {
+              "end": 1499,
+              "kind": "line_range",
+              "start": 1499
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d9411080693c294e5a024a5ac37964c4a65867d51f1d7d9950baf78e140c6d36",
+            "locator": {
+              "end": 1642,
+              "kind": "line_range",
+              "start": 1642
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f759a8dd91b63047cc24efe4c2bd0db02ccb1955234245ecb58becee02fd4558",
+            "locator": {
+              "end": 1681,
+              "kind": "line_range",
+              "start": 1681
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:899ea2c6dc8a2755dbe76a6f155c629db362615458cbd4f051b1c00dd3d15039",
+            "locator": {
+              "end": 1717,
+              "kind": "line_range",
+              "start": 1717
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
+            "locator": {
+              "end": 1437,
+              "kind": "line_range",
+              "start": 1437
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The fixture builder: the shared baseline, the copied database, the curating candidate and the two live trees.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:0303c172b829c18b607c6c583791ebe8dab072b4ad0f4f5e160cdff4b3cc3b95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`).\n\nAnchor: \"contract:knowledge-diff-cases\"; \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:faaa4aeaba3300ad6eadd487551022579074fde8222c7d84e93d530cef90c4be",
+            "locator": {
+              "end": 1458,
+              "kind": "line_range",
+              "start": 1418
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:632c0e2b63fb377afb1b7bafa767f7ac1996cfcf55972d1eec334535e89c2b07",
+            "locator": {
+              "end": 1513,
+              "kind": "line_range",
+              "start": 1459
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`).\n\nAnchor: \"id = \\\"knowledge-diff-cases\\\"\"; \"id = \\\"knowledge-read-scope-cases\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d0926c8c1f57bbea6d80de42810de32c783ecc4c52491effef81f4f93b3fa5da",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f13ad3eb09d3db67497f8b914b1e89d1eaa9f763594e555d3b1b115d38525875",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:0f27b7254e53cf0acf5925430255f60ae39b05a2c852ec35b5ef718237eb4468",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 469
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:494f461d1071e9f1e0cde18d130f7ae474bdc62791d19e30e651f44cf4e54734",
+            "locator": {
+              "end": 1182,
+              "kind": "line_range",
+              "start": 1182
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:2e156d69bd8743f631d04cf0cc864e81162959227248a282270742be7cf28786",
+            "locator": {
+              "end": 1206,
+              "kind": "line_range",
+              "start": 1206
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
+            "locator": {
+              "end": 1235,
+              "kind": "line_range",
+              "start": 1235
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c0b7338c6aea3db85b66242cfb383f13aeb9f7746d482ec5f81d12771b8292d8",
+            "locator": {
+              "end": 1255,
+              "kind": "line_range",
+              "start": 1255
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:bc56a1bbd67af8e04d484bf3ca5d0b69f4da1e8bdc044bcee4b70675fade35e5",
+            "locator": {
+              "end": 1499,
+              "kind": "line_range",
+              "start": 1499
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d9411080693c294e5a024a5ac37964c4a65867d51f1d7d9950baf78e140c6d36",
+            "locator": {
+              "end": 1642,
+              "kind": "line_range",
+              "start": 1642
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f759a8dd91b63047cc24efe4c2bd0db02ccb1955234245ecb58becee02fd4558",
+            "locator": {
+              "end": 1681,
+              "kind": "line_range",
+              "start": 1681
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:899ea2c6dc8a2755dbe76a6f155c629db362615458cbd4f051b1c00dd3d15039",
+            "locator": {
+              "end": 1717,
+              "kind": "line_range",
+              "start": 1717
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
+            "locator": {
+              "end": 1437,
+              "kind": "line_range",
+              "start": 1437
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`).\n\nAnchor: \"contract:knowledge-diff-cases\"; \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:faaa4aeaba3300ad6eadd487551022579074fde8222c7d84e93d530cef90c4be",
+            "locator": {
+              "end": 1458,
+              "kind": "line_range",
+              "start": 1418
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:632c0e2b63fb377afb1b7bafa767f7ac1996cfcf55972d1eec334535e89c2b07",
+            "locator": {
+              "end": 1513,
+              "kind": "line_range",
+              "start": 1459
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The evidence node the contract names: the removed realization keeps its baseline source in the union.**\n\nAnchor: \"test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:701eeeb9e956666efd3487adfd3bb7f6121d905792d4ef98de5d97b1f723a2a2",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The contract this module's artifact row is registered under.**\n\nAnchor: \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The contract this module's artifact row is registered under.**\n\nAnchor: \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The artifact row that registers this module, and the replacement contract it declares.**\n\nAnchor: \"260915-KS-L8\"; \"contract:knowledge-diff-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5e93f8a16ac612beb0512603dbed0c783162a7b250ad296816249dddd9097353",
+            "locator": {
+              "end": 1457,
+              "kind": "line_range",
+              "start": 1457
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b897ce71419a6da55073562e7b2fa58a08e042047c3d7a1b04db6b63497a95ac",
+            "locator": {
+              "end": 1460,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`).\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`).\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1508,
+              "kind": "line_range",
+              "start": 1508
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`).\n\nAnchor: \"contract:knowledge-diff-cases\"; \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:faaa4aeaba3300ad6eadd487551022579074fde8222c7d84e93d530cef90c4be",
+            "locator": {
+              "end": 1458,
+              "kind": "line_range",
+              "start": 1418
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:632c0e2b63fb377afb1b7bafa767f7ac1996cfcf55972d1eec334535e89c2b07",
+            "locator": {
+              "end": 1513,
+              "kind": "line_range",
+              "start": 1459
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The revised statement as a successor, with the substrate's own `duplicate_identity` rule as its reason.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:6d0ae23f62c4c62b6eccd0cc0211fac7b89a6ef5c06ed4a3e727efee09d87d5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_revised_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The relationship revision as removal-plus-authoring, because the claim trigger refuses an in-place rewrite.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:aec68d91492ebcf7b91feda10226be7661a757b8180949a8bdc5bbcaecf095e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_move_retry_claim"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:4ed36e8025d13671e661f9b8a44ee74e47c72b08d2612ac3a7a74462c2fa2cf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_retired_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The fourth revision neither side selects, which is what makes `present_outside_selection` measurable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:da75796a4f779aba5b741b8a66b3043f19bc26adacd27411592389bfaa728b79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_unselected_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The added claim, whose recorded identity is the blob the candidate tree really holds.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:985e14dd7f2b324c13077f0246d851eb9a7831349f19acee1777be6fbe137d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_successor_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The claim row digest recomputed through the production sealer rather than restated here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:9c3be9b8165848b24dce562768cf5bc9fd2c5df84734d5235453807789b36b15",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_row_digest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The candidate tree, the object-store borrow that lets one repository name both trees, and the hermetic Git environment.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:acedf2080a2b22d0271bb674a1aa375def2cd888685dd1f0432725de2652d111",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_candidate_tree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:03651363a5a071e8fffeda2df047e03f295a8c16b150f8018e5c9bab384042a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_borrow_objects"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:3424050ba33cd009a66d4f16129e7d176e42a8643683295111e58624b02ffa3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

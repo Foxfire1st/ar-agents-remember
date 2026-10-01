@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/validation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/validation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:11+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Certification overview](overview.md)
@@ -50,37 +40,25 @@ individually addressable so one conflict cannot hide inner semantic defects.
 
 None within registry semantic validation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Validation checks the work census before building indexes and returns all bounded findings. | `validate_registry` | mcp/src/agents_remember/certification/validation.py:58-101 |
-| Profile validation enforces declared gate order and population. | `_validate_profiles`; `_validate_profile_gates`; `_validate_profile_population` | mcp/src/agents_remember/certification/validation.py:145-220 |
-| Each rail is checked against gate classification, authority, runtime, uniqueness, applicability, dependencies, and artifacts. | `_validate_rail` | mcp/src/agents_remember/certification/validation.py:231-286 |
-| Dependency checks reject missing, backward, cross-gate, and profile-inapplicable prerequisites. | `_validate_dependencies`; `_validate_dependency_applicability` | mcp/src/agents_remember/certification/validation.py:342-429 |
-| Artifact validation binds consumers to exact legal producers and gate direction. | `_validate_artifacts`; `_validate_rail_artifacts` | mcp/src/agents_remember/certification/validation.py:415-537 |
-| Dependency cycles are reported without unbounded traversal. | `_validate_cycles`; `_resolve_acyclic_nodes` | mcp/src/agents_remember/certification/validation.py:539-585 |
+- Validation checks the work census before building indexes and returns all bounded findings. [1]
+- Profile validation enforces declared gate order and population. [2]
+- Each rail is checked against gate classification, authority, runtime, uniqueness, applicability, dependencies, and artifacts. [3]
+- Dependency checks reject missing, backward, cross-gate, and profile-inapplicable prerequisites. [4]
+- Artifact validation binds consumers to exact legal producers and gate direction. [5]
+- Dependency cycles are reported without unbounded traversal. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Repository portability is achieved through contributed generic profiles and rails.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The validator receives only a canonical registry contract. | `validate_registry` | mcp/src/agents_remember/certification/validation.py:58-64 |
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=f73674b3f88adf7f4a2883e21ce1196fc494a248c174c1979754b97cc424a0fe; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-01T03:11+02:00 — Created for bounded exhaustive certification-registry validation.
-  Verification remains closeout-owned until the source candidate is committed.
+- The validator receives only a canonical registry contract. [7]

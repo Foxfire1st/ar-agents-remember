@@ -1,15 +1,5 @@
 # dashboard/src/data/keymap/focus.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/keymap/focus.test.ts`        |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-30T22:35:02+02:00                           |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [data/keymap overview](overview.md)
@@ -39,21 +29,9 @@ pinned separately in `SessionsView.test.tsx`. Test-only.
 The focus-cycle tests now assert the three-region rail/stage/inspector loop after StatusLine removal,
 including forward/backward wrapping and collapsed-region handling.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The cycle logic under test. | `FOCUS_REGIONS`; `nextRegion` | dashboard/src/data/keymap/focus.ts:9-9; dashboard/src/data/keymap/focus.ts:14-24 |
-| The DOM-level F6/Shift+F6 counterpart over the rendered view. | "F6 from the pty zone exits to chrome (the stage header)"; "F6 skips the default-closed inspector"; "Shift+F6 cycles backward" | dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx:31-31; dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:271-271; dashboard/src/panels/session-cockpit/sessions-view/focus.test.tsx:254-254 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`shell.test.tsx`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
-- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: converted the focus references to exact source anchors and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
-
-- 2026-07-24T13:17:50Z — Updated F6-cycle regression coverage for the removed StatusLine region.
-  Verification hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4: the pure F6 cycle suite (both
-  directions, edge starts, collapsed dropout, unavailable-current recovery, empty-set null).
-  Verification metadata pinned to the task base until closeout stamps the L1 code commit.
+- The cycle logic under test. [1]
+- The DOM-level F6/Shift+F6 counterpart over the rendered view. [2]

@@ -1,15 +1,5 @@
 # mcp/native_helpers/conversation_library/src/protocol.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/native_helpers/conversation_library/src/protocol.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-07T00:31+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Locked native conversation-library helper overview](../overview.md)
@@ -73,54 +63,27 @@ one correlated response so the Python host's request/response pairing can never 
 None — list/read/resolve execution is landed; resume replay is proven by the live contract
 probe (no locked-version gate remains anywhere in this contract).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. Local manifest, lock, and tests are the direct
 contract evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The helper entries implement the operations this module frames; the Python host correlates
 against this exact contract; the helper suite covers the admission and privacy matrix.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The private manifest and lock select the exact dependency versions represented by the protocol constants. | "@anthropic-ai/claude-agent-sdk", "@earendil-works/pi-coding-agent" | mcp/native_helpers/conversation_library/package.json:14-15 |
-| Helper tests cover exact versions, malformed framing, wrong protocol, exact key sets, inapplicable fields, and hostile error details. | "the exact locked helper versions are protocol constants", "request parser rejects malformed framing and wrong protocol", "request parser rejects unknown fields for every operation", "request parser rejects known fields when they belong to another operation", "helper crash detail is fixed allow-listed copy for secrets" | mcp/native_helpers/conversation_library/src/protocol.test.ts:14-17; mcp/native_helpers/conversation_library/src/protocol.test.ts:41-66; mcp/native_helpers/conversation_library/src/protocol.test.ts:68-123; mcp/native_helpers/conversation_library/src/protocol.test.ts:125-179; mcp/native_helpers/conversation_library/src/protocol.test.ts:181-218 |
-| The Python host spawns this contract's entries and correlates handshake plus one operation per process. | `ConversationLibraryHelperHost` | mcp/src/agents_remember/serving/conversation/library/helper_host.py:91-221 |
-| The locked Claude and Pi entries consume the serve loop, probing, signing, and paging primitives. | `handleClaude`, `handlePi` | mcp/native_helpers/conversation_library/src/claude.ts:65-78; mcp/native_helpers/conversation_library/src/pi.ts:54-67 |
+- The private manifest and lock select the exact dependency versions represented by the protocol constants. [1]
+- Helper tests cover exact versions, malformed framing, wrong protocol, exact key sets, inapplicable fields, and hostile error details. [2]
+- The Python host spawns this contract's entries and correlates handshake plus one operation per process. [3]
+- The locked Claude and Pi entries consume the serve loop, probing, signing, and paging primitives. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No neighboring workspace repository participates in the helper process boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
-
-- 2026-08-03T02:44:44+02:00 — W3-B05 curator: anchored 5 Tier-2 table citations with exact source paths; fixer generated all ranges.
-- 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the additive optional `agentId` on
-  the `read` operation (sub-agent transcript reads only): admitted into the exact-key set,
-  type-checked when present, copied only as a string, invisible to pre-L7 callers. Verification
-  metadata stays pinned (uncommitted); closeout re-stamps the candidate commit.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
-  2026-07-21, R4). Corrected the now-false `buildHandshake` doctrine: it is always `ready` once the
-  wire protocol version matches and reports observed runtime/helper versions as informational
-  evidence; it never refuses on a version comparison. Reworded the "never promote a version
-  mismatch to ready" invariant and the resume-replay Todo accordingly. Uncommitted; closeout
-  re-stamps verification.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the added execution seam — the
-  correlated JSONL serve loop, typed failure mapping, runtime/dependency version probing,
-  store signature, and offset/ordinal paging primitives the two new helper entries consume.
-  Verification stays pinned at the L9 commit until closeout stamps the candidate commit.
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the JSONL protocol/privacy sidecar
-  after same-reviewer PASS closed raw-error and exact-shape findings. Verification is blank until
-  closeout commits and stamps the new source.
+No meaningful cross-repo references found.

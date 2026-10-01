@@ -1,0 +1,762 @@
+{
+  "path": "mcp/tests/test_knowledge_review_source_content.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the requirement it is the production-composition evidence for, and of the load-bearing property behind each case.\n\nAnchor: \"ICR-R03@v1\"; \"no silent fallback to a working tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:ab2a2343c22566b3d05dbeb8dfe78c6558a2d21b3c221d798abe0976d88a1f62",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The packet's conforming example, and deletion as its mirror image.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:5dbfccf1824171ea2aa0c5ead1b0d15a42e072c32843faeb0ef93ffafa175c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_added_unmapped_file_opens_its_entire_candidate_text"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:a5375368d66060263673522b21d366a586ac59d75d26bf23facdd6401ce082c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_deleted_file_opens_its_entire_base_text_beside_a_measured_absence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The listed path is the address, however unusual the name.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:1295c1a1c87df1340722886a4d4ce60f9fa6968ad7e86db8ce81b3b49201508a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ODD_NAME_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:509d135f645fc3e2f54f26315d309d047eea17b20cc059ed36623d53cd986fb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tab_and_a_newline_in_a_name_is_the_address_its_content_opens_at"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The non-textual kinds, each opened as what it is rather than as an empty document.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:79cad4d23aa0cc9440f0b4dc3028bd6d527cd4188d68cfd99175e6e8c931c76f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_binary_entry_states_its_kind_identity_and_size_with_no_text"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:e4de78c9706a51eb0f12cd8f6edbfea51a10a326e0a0293cede66cb74da0089b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_symlink_entry_carries_the_link_target_and_never_a_document"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:cf9c9ae56fd23835c9e647eef6b77a91529a48fb7e996aa4ae192936465d0b57",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_submodule_entry_reports_the_recorded_pointer_and_no_file_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The two changes a content read must not present as an edit: a mode-only change and a type change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:51f29eee5a6727eb2cbbf436fe38fe83d253d211fa1e992494d120b9f00285b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_mode_only_change_shows_identical_bytes_and_names_the_mode"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:992e9221e25f5a6a983a5fe6ef51edd28612f196f82cfb75b6ec3c4b882e3d2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_type_change_opens_each_side_by_its_own_kind"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The bound itself, and the case that measures it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:beb8c2c44a804daa1ca95428dd98d744663d53504c17ba100124dacf8f01846d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPANSION_TEXT_BYTES"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:5e3431f1ebe5d95b0ef2b4a320f99c60757ae04090a887579566458e0277738c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_oversized_content_is_a_stated_bounded_expansion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The generation binding: the listed bytes survive the branch moving, the move is stated, and the control re-lists.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:b00603c408e29956e98ec23f7cd58fe4e3b049fe1832fe9cb3506f0937e3cf49",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The two availability cases: an unheld tree, and a real prune of one loose blob.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:235c3b5ae91daa7748fe4bac5a3e6faaee672c23106c298ee406b28df80c22b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_object_is_unavailable_on_its_side_while_the_other_stays_inspectable"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:e4fb4a6aabab1bbe499f6be23e6ff5bb5b3c8e36181c4994de087c8cd1f8e192",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pruned_base_blob_is_unavailable_on_its_side_while_the_candidate_side_is_served"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The verifier's finding, and the object-type refusal with its control.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:50c1fac1f10c62d093fca91bed2ba4f1329841ed5910c658bb8df0265958f031",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:0e581199eea5c895d4d7b0a5b02504cdbac0f5d97d67fe45ea95ad989d09cf5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_generation_that_names_a_commit_is_refused_rather_than_served"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The refusal family: an unconfined path, a substituted baseline, an incomplete query and an unwired process.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:7351a953f551eb4bdd1dc1f1df61ca9727892ba75b399c5f811a16ba8c141ca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_outside_the_measured_change_set_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:b23e9331262465fbe49605692d73b09c70344773712b2c246131074cde6a22a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_baseline_that_is_not_the_recorded_base_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:6de61e708b7c086a3c358c547178d7de5ed001b3da123d6d1de394b23bc51684",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_query_that_does_not_name_the_generation_is_refused_by_the_transport"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:601d97ed28f97e42ea4b6b5909e9837bb19c2d8ff6f09e626f87dddc761b0ee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unwired_process_refuses_the_route_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The closing identity case: what was opened is what was listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:1cba8ea6712f6b0657c98175ad42aae67021f1f0bece726c06d866e58dcc88ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_CONTENT_REFERENCE"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:e3b0075872a52764ef141601c374497d443b936ff102015ff8a5fee67c9c4c80",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_listed_entry_and_its_expansion_describe_the_same_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lane marker and the content-class constants, one path per class the packet names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:93bd8e013076d823bca8ed5097b5432422d25297e305bf6e33d076a2b23477f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "BINARY_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:23d7dee9afd152ec1fab6b762c1db5d09b28be384d65d0cd5bc66e93e1d7e026",
+            "locator": {
+              "kind": "symbol",
+              "name": "SYMLINK_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:2cd061aca98265f5b283db67b478e496c55f7096e24dda35164e020363379608",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBMODULE_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:7863e96ba30bce563b46df2a2138725e5d30643591b96c1283b35b53265b5844",
+            "locator": {
+              "kind": "symbol",
+              "name": "MODE_ONLY_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:638bb939ed677946bc292fc46a18196129788efb74b68d7b95b85d4195907f0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TYPE_CHANGE_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:c3a8980127d4b0798d9ac5f9b8ab699373d64e33dc74b7eba87f19df7154aac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "OVERSIZED_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:1295c1a1c87df1340722886a4d4ce60f9fa6968ad7e86db8ce81b3b49201508a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ODD_NAME_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:6bafb16b9c6ece8627e6221abe21017f803a4a02d5fb45929e7be5c499258b4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "OVERSIZED_LINES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:8604670d9976c4ec7e3f0bfa5eec624e3dda197e611a93fde7ad74f2f4a106cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:3d8e168ee22f6c9b451bd06933d55854d834167bcdea2bdbd6bf330c58e50111",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceContentRef"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:77a7088874866476b25a8429f1a0317bbd80d260a770575eaa17227ad73fdeb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_content_request_from_query"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:e6dd46938e97bb07522b36aa981492ccfc4b6e800692db4d5721c1872240007f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceContentPort"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:a7e5ba6f8331c12effad7c41e71338de141f4769efb00994a3181bf88c33f1b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_review_intent_source_content"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The refusal code the route answers with, added to the review vocabulary in the same change.\n\nAnchor: \"source_content_unresolved\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:bd6c5bf6eca62d44c807319571d642d9c42dffef1af37cc88ba79a795855c8f6",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The lane row and the two consumer rows this module's registration produced, with the counts they do not move.**\n\nAnchor: \"mcp/tests/test_knowledge_review_source_content.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The independent Git observation: undecoded bytes, `None` on an error, and an isolated environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:2fc7f70e914e3551c8f96105d1a9d08926c3846a7e66be5be1b33fa46e1dc6fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_text"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:3bfad47d576beec95e60cfbc9fe10965caa5cd6573a742ea258f4a5c64fcda96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_object_id"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:8bc9598524db1ba96595657e02f1587d0b34c6f03bbe4c98a040d4b9bdb34eed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subprocess_git"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The content classes materialized for real: a blob, a symlink, a gitlink, a mode change, a type change, an oversized document and a name that is not a line.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:491c1022f5d6ab155d8695adb32ad4fb4fe31bc47cb8e4061469f82e021c936a",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnusualContent"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:d0a1a806c28c58ba325863b3169b2c8320b576bd721f5301865da160b28a7358",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialize_unusual"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The shared R01 production fixture these cases extend rather than duplicate.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:71c084d5c2e0d8ac7a2af262f02f85b4b47492a9c2eb83054886b4fdec56301f",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:0c798a95c1ada8c9446d651225169cbdde97b5be1b2d1607112c87ae41550075",
+            "locator": {
+              "kind": "symbol",
+              "name": "EndpointFixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The routes wired as the composition root wires them, over the real application owners.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:e6c57deb2e4c9371c91c6e79dfbc08eef9e5769504432102510ea2779aa2026d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_served"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:99fc4ec2d3677253837aad7a34cb07b174c1c9f64b90e97a401c506ba1a03ad0",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_review_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:dd9c9685ddbd2a1538eee6c37c80ce168bbd04f1084ce9b67bf3c48c6eef0e79",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_source_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:39a358fcb63ca773c9bb1073e416fe4651275bb426c2c8e3266af7b7bb0afe9a",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The listing read and the expansion read, with the status carried beside the body so a refusal is asserted as one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:d1498b40d9d3741b20b87d32d0e5024bf93f8ef9592f39b9b02185c8d67e73f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_listed_inventory"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:f81b4d68d4cde7d69042ce8fc8e0adfbad3fcbe2c8439b50a9d539d88cecde57",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expand"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:7721fe0cddae68229abfc17e8e79dfbf402e778ea8d707bbff5ea7bd6fca1250",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expansion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The falsifiers for path confinement: the recorded base's paths that no change set contains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:ef0ef847de25c478191255cd9e8eb110c6d561294e7a1926b4a4941a001a60c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:d65f005db80b0ddaf72312bbeb536acf5575a98c517286c0ed1aa701fc1029bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unchanged_paths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The modified path opens both bound objects' own bytes, each against an independent observation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:b7b74dfeab97a8844c6757cbe0567dacf80054cf52aec6e4d0bf44ab1729f738",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_modified_file_opens_both_endpoints_own_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

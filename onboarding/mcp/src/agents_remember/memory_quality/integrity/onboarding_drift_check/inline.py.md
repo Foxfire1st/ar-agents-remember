@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../../../../../overview.md`               |
-
 ## Governing Overview
 
 [overview.md](../../../../../overview.md)
@@ -38,15 +28,9 @@ finds inline-eligible sources via storage resolution.
 - Non-UTF-8 sources are reported as unsupported rather than parsed.
 - Reports drift only.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Inline source enumeration reads repo files through `git_ops.list_repo_sources`. | `list_repo_sources` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:41-45 |
-| Inline block parsing is owned here; CLI behavior is separate and no deleted-suite pass is asserted. | `extract_inline_onboarding_block` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:61-82 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 4 citation findings for inline source enumeration and drift-test coverage.
-
-- 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
+- Inline source enumeration reads repo files through `git_ops.list_repo_sources`. [1]
+- Inline block parsing is owned here; CLI behavior is separate and no deleted-suite pass is asserted. [2]

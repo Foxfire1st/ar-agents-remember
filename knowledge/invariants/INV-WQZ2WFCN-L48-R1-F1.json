@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "A newly selected subject whose review read fails in transport or is refused by the owner while the task context has an admitted frame.",
+  "conditions": [
+    "The problem is stated once, in the reading area, through the owner's ReviewProblemBlock labelled with the requested subject; retry is offered for a transport failure and the source-changes offer for an intent-only refusal."
+  ],
+  "exclusions": [
+    "The first read's failure or refusal, which has no frame and keeps the surface-level R16 rendering.",
+    "A failed refresh of the displayed subject, which keeps its retained coherent payload and surface-level failure (R17)."
+  ],
+  "id": "INV-WQZ2WFCN",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "6195e16b-78d5-46e8-83c0-20c6ed6a6979",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When the review read of a newly selected subject fails or is refused and the task context has an admitted frame, the workspace, navigation, family tree and complete source explorer stay mounted and usable, and the reading area alone states the owner's failure or refusal (brief line, reason and recovery disclosure, retry on transport failure) labelled with the requested subject, showing nothing of the previous subject.",
+  "status": "proposed",
+  "supersedes": []
+}

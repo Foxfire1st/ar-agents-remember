@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/observer/save_gate.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/save_gate.py`  |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-13T18:45+02:00                           |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -44,18 +34,10 @@ per-repo folders in the dashboard hangar (slice 4).
   docks interactive resolution, a durable gate record, and enforcement onto this
   seam. There is deliberately no auto-save default.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The ambient methods that raise/consume this vocabulary (`switch`/`attach`/`promote`). | `switch`; `attach`; `promote` | mcp/src/agents_remember/observer/ambient.py:284-315; mcp/src/agents_remember/observer/ambient.py:333-370; mcp/src/agents_remember/observer/ambient.py:317-331 |
-| The typed-error family base (`LifecycleError` → `AgentsRememberError`). | `LifecycleError` | mcp/src/agents_remember/observer/lifecycle_state.py:130-131 |
-| The design separates fleeting and persistent sessions with a save gate and TTL. | "### 1.5 Fleeting vs persistent; save gate; TTL" | docs/design/observable-lifecycle.md:98-118 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
-- 2026-06-13T18:45+02:00: Created for slice 2c — the pure save-gate vocabulary
-  (`SaveDecision`, `coerce_save_decision`, `SaveGateRequired`, `compute_scope`,
-  and the landing-zone scope constants `UNSCOPED_SCOPE`/`CROSS_REPO_SCOPE`).
-  Verification metadata is pinned until closeout stamps the 2c code commit.
+- The ambient methods that raise/consume this vocabulary (`switch`/`attach`/`promote`). [1]
+- The typed-error family base (`LifecycleError` → `AgentsRememberError`). [2]
+- The design separates fleeting and persistent sessions with a save gate and TTL. [3]

@@ -2,13 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/grepai/` |
-| doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
 
@@ -61,13 +55,13 @@ ports stay `5432` and `11434`.
   shared lifecycle helpers.
 - Shared helpers must stay provider-agnostic.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| GrepAI setup delegates to provider lifecycle commands. | `install_enabled_provider`, `prepare_enabled_provider`, `refresh_enabled_provider` | mcp/src/agents_remember/providers/grepai/setup.py:37-53; mcp/src/agents_remember/providers/grepai/setup.py:56-71; mcp/src/agents_remember/providers/grepai/setup.py:74-88 |
-| GrepAI context behavior is grouped under the provider-owned context package. | `grepai_runtime_layout`, `ensure_grepai_runtime_layout` | mcp/src/agents_remember/providers/grepai/context/layout.py:111-156; mcp/src/agents_remember/providers/grepai/context/layout.py:329-349 |
-| GrepAI lifecycle behavior is grouped under the provider-owned lifecycle package. | `grepai_docker_start`, `grepai_docker_refresh`, `grepai_install` | mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:177-227; mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:259-282; mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:471-488 |
+### Repo-Internal References
+
+- GrepAI setup delegates to provider lifecycle commands. [1]
+- GrepAI context behavior is grouped under the provider-owned context package. [2]
+- GrepAI lifecycle behavior is grouped under the provider-owned lifecycle package. [3]
 
 ## 260731-EFA-L2 — The Clone Reads As Source → Target
 
@@ -101,24 +95,3 @@ entry of.
 ## 260731-EFA-L9 Route Impact — Caller Re-Points
 
 GrepAI provider modules now import the shared kernel primitives directly (`kernel/primitives/runtime_config.py`, `kernel/primitives/identity.py`, `kernel/primitives/provider_degradation_settings.py`) after the L9 layering cleanup. Seed/setup behavior is unchanged.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-
-- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 3 citation rows; scoped citation fixing regenerated the source ranges.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `seed.py` gained `_GrepaiCloneEnd` (naming source and
-  target instead of six prefixed keywords) and `_CloneInputs`/`_clone_inputs` (first missing
-  coordinate wins, before any source settings read); `setup.py` dispatches via `LifecycleCommand`.
-  Clone semantics, the stall watchdog, the hermetic guard and the multi-root isolation invariant
-  are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): restored the `_clone_skip` benchmark-scoped hermetic guard (task 260619 / MCP 2.9.2) that the series carryover had dropped, while keeping the series' Task 12 multi-root / preferred-host-port content. The merged tree at 84e95ad has both.
-- 2026-06-25T09:55+02:00 — No route model change: child context/lifecycle routes now record GrepAI's preferred auto host ports (`61432`/`61434`) separately from container service ports (`5432`/`11434`).
-- 2026-06-23T22:31+02:00 — Clarified the worktree-isolation invariant behind Task 12 provider
-  projection: GrepAI remains a multi-root provider instance while only the active project root is
-  redirected to the task memory worktree. Verification metadata will be stamped at closeout.
-- 2026-06-10T07:50+02:00 — GitHub #53: `setup.py` announces install/clone-db phases through the setup progress sink for background worktree provider setup.
-- 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: the `seed.py` clone stall watchdog and no-total-cap contract. Previous closeouts had only stamped the verification header (developer-flagged gap).
-- 2026-06-06T12:15: Re-verified against the current GrepAI provider package; added the worktree database-clone (`seed.py`) and isolated-settings (`isolated.py`) surfaces.
-- 2026-06-02T01:15+02:00: Updated for watch-live — `context/` now indexes the live memory roots in place and git-ignores grepai's `.grepai/` working dir; removed the `.grepai/` artifact-cleanup reference (`artifacts.py` deleted).
-- 2026-05-25T21:14+02:00: Created when provider modules were reorganized provider-first under `providers/grepai/`.

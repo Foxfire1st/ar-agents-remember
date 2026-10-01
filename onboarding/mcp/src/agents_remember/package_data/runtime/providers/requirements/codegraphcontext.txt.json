@@ -1,0 +1,96 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/providers/requirements/codegraphcontext.txt",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The provider requirements file pins CodeGraphContext to version 0.4.10 plus Tree-Sitter parser dependencies needed for symbol extraction.\n\nAnchor: \"codegraphcontext==0.4.10\"; \"tree-sitter==0.25.2\"; \"tree-sitter-language-pack==0.13.0\"; \"tree-sitter-c-sharp==0.23.5\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5449d6e67b6d378e6faecfe9f807d1eabd0e469b",
+            "content": "sha256:a3a1726e94c977a4038283fc6924794b9f5a2c4d1df5c21870d3e8da5945a8db",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:10561f1d1ab96d8b366013b6453df973fc3587f9095687469ad5c33fcd17ba04",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_runtime_tree"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_runtime"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:f62de7e5fede1731981cdb8f6fe65b2e458eebff5c092b51ec8571061e7204a2",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 317
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:33d0396ab8accec0bb3dd6a756809e50e15576932ecb1e7f69fa9308ab2f3fc7",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 462
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The CGC runner build uses the installed requirements pin when building the Docker runner image.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:7f4261766edddd732b442d4a9f61ee8147d962c830365ca195f6d069e1ab3c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_runner_image_build"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

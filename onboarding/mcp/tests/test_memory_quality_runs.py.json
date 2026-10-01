@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_memory_quality_runs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Start poll completed failed and unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b64aac46cdda5f1e2932c0d856ad82602e69b16",
+            "content": "sha256:35b1fa1dfec9f5d531b886123c8425a8bbe70d9bf443c0e012dc1908ed54fdb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_poll_completed_failed_and_unknown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Launch failure rolls back the admitted slot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b64aac46cdda5f1e2932c0d856ad82602e69b16",
+            "content": "sha256:f2c4c89d62f02e7110eacef6de3b4ed8cfb983d45acf2c816c1eb13fcae69531",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launch_failure_rolls_back_the_admitted_slot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Wrong repository poll never discloses any run state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b64aac46cdda5f1e2932c0d856ad82602e69b16",
+            "content": "sha256:f6de0b9aafb1f8aab0b03295dc74581594c0d5cad044dbe1882fa5830cc192be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_wrong_repository_poll_never_discloses_any_run_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pair change during derived evidence refuses before curator publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b64aac46cdda5f1e2932c0d856ad82602e69b16",
+            "content": "sha256:614e54c2b2233a8facef48b9997776dbe59146dcb2cf65384252df23f21d6f58",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pair_change_during_derived_evidence_refuses_before_curator_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The dead-governing-overview case hands the census to `_attach_curator_checklist` through the prepared-inputs bundle.\n\nAnchor: \"prepared=controller._PreparedInputs(census=cast(Any, census))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b64aac46cdda5f1e2932c0d856ad82602e69b16",
+            "content": "sha256:37e02f87961a5e1e151282226c0750534fb796e47a360eeb0775d9b9b89744ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dead_governing_overview_reaches_the_gated_repair_set"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

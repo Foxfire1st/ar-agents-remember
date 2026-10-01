@@ -1,0 +1,99 @@
+{
+  "path": "docs/design/engine-room/podstage.html",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scenario library + transport (`SCENARIOS`, `seekTo`/`play`/`loadSeq`) defining the build-up, tear-down, and failure-mode scenes the renderer reproduces.\n\nAnchor: `SCENARIOS`; `seekTo`; `play`; `loadSeq`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dde1ca6202b9884a63b7153deaf781cdc5722cb0",
+            "content": "sha256:4c89a9f59c3f7cf96e0e802dbafdd75d0afc5fb740706fff7d600668d434bfe3",
+            "locator": {
+              "end": 734,
+              "kind": "line_range",
+              "start": 710
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The living spec that distils this prototype's primitives into the canonical, parameterised visual language; its CSS classes mirror this file 1:1.\n\nAnchor: `wire`; `flowpath`; `node`; `prov`; `coupler-g`; `dissolve`; `scan`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9b9066a8809973d910f841f05c918c1889f1882",
+            "content": "sha256:b27d8ecf01bae037e96179216b95325c5c2e127ae94c7263e5f381b82b734f43",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "docs/design/engine-room/engine-room-visual-language.html"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion.\n\nAnchor: \"export function EnclosureProcessMap({\"; \"export function EnclosureCanvas({\"; \"export const ENGINE_ROOM_SCENARIOS\"; \"export function useEngineTimeline(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
+            "content": "sha256:a5e17e7e06809939cbac00f4393e72a742d469beea2875cf821988533825c6dc",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:ac62ca54f0f1d04e921bbc2241972b186f60f8104ff4b1afe03fbe9467fe7079",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1a2974e33769b18671cef544f3ff9297e9cb56",
+            "content": "sha256:cfcf286dbea22ad8d8f3d75bee28e87a27f70af65204f235380322072d6ea62e",
+            "locator": {
+              "end": 721,
+              "kind": "line_range",
+              "start": 721
+            },
+            "path": "dashboard/src/panels/engine-room/fixtures.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

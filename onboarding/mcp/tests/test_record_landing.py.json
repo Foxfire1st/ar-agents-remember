@@ -1,0 +1,125 @@
+{
+  "path": "mcp/tests/test_record_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The route under test: approval gate, landing targets, ancestry refusal, dry run; since MIK-R09 also the mandatory gate on converted memory, which these unconverted fixtures never reach.\n\nAnchor: \"def record_landing_result(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5ac56a84ad573d2bc1d3aa84a6a0494ef7b2b9",
+            "content": "sha256:ba4270ec0157e79338912f11f9d78b4b12a8aeaeda4a5976751f046174799819",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The widened `already-recorded` guard the new case pins: a checkpointed series is not upgraded into a reclaimable integration.\n\nAnchor: \"contract.integration_status in {\\\"completed\\\", \\\"checkpointed\\\"}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5ac56a84ad573d2bc1d3aa84a6a0494ef7b2b9",
+            "content": "sha256:9c3f5d2c194083193c864ed94c6628a421221898b376460ff11e8c801032e303",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared writer whose cell the happy path asserts, now taking the bundled `LandedIntegration` record (260831-LOCR-L30).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ce07976f06d314990369996912d3c5b84189410",
+            "content": "sha256:918866a94e6e1728f25cf722b59f70e381c35f294f453e3de8df76b06011cdf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landed_integration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The contract fields the recorded commits land in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:2477340ef80d93bba7c3ff4c836c2d2c130a55ecf141029695515e2102a5c0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_strategy"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:c1d48619f79883d97d024f50fce703f4d9141e662359baa9b1686f2d8423b3b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "integrated_code_commit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The consumer-side guard that reads the cell this route sets.\n\nAnchor: \"integration_status != \\\"completed\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:2d5849f73154971574d26c12a7104ae79292669db7434e318fbf051acb2c1903",
+            "locator": {
+              "end": 677,
+              "kind": "line_range",
+              "start": 677
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The artifact catalog entry (one of the four whose consumer list already names the shared lineage fixture) that would have to gain this file as a consumer if the fixture were shared.\n\nAnchor: \"mcp/tests/fixtures/repository_profiles/node/package.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:68adec8193458c7810573b7789e03cb52eca6899d6e8d52b459c4a32d6634c2d",
+            "locator": {
+              "end": 636,
+              "kind": "line_range",
+              "start": 636
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

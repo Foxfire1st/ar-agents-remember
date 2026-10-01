@@ -1,0 +1,643 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/migration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `Pass` (lines 63-86) — The document pass, now carrying `provenance.Histories` and a per-document continuity cache..\n\nAnchor: `Pass.continuity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:c8966c3ed638766025997b008bcca0a2d5f8882fc64c5b909cb1ec3a7848df13",
+            "locator": {
+              "kind": "symbol",
+              "name": "Pass"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `plan_table` (lines 202-225) — One superseded table, every row read. A placeholder row carries ``None`` for its draft..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:21a469a3c3776b3847cd2a7a40b9c9bfd76f44fee7b88f461917b6a7f8b1f513",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_table"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:e0e0ac36674f2e88e429f4829c1c9c27d50f6da9dba60b135ab564987c726a9c",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `_plan_cells` (lines 228-247) — A row is the table's empty state, a claim citing no file, or something to convert..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:3d4487c80f2b40b766fdc0c42fa4912e50269a70841591b4785f19991accba33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_cells"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:f4133043074650cc7eedbaf151ddd4befe7602f1e181dcb9de80c56e2402ce94",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 228
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `_cell` (lines 250-251).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:d50a3e2a4244b2d3b2ebe4075b9745d35c6983aa9444380d4e69b9e3639a299c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cell"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `_superseded` (lines 254-255).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:9fc8153c7328b5d9deee4a297ad5db1faebb1d6a61bc20aaafcb6048f1481071",
+            "locator": {
+              "kind": "symbol",
+              "name": "_superseded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the function `read_document` (lines 258-273) — Every superseded construct in one document, read once. No file is opened twice..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:188e59c3a943f0660f49b35537862cc09d7017985e22de935d15ad90ea67ad08",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_document"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:32685000df5b5b43635ab253ff92e390ebd2c9950a37524b7b8831ec06838cd2",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `prose_sites` (lines 284-301) — ``(start, end, anchor text)`` for each superseded citation written on this one line..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:ede364bc45b60c58b4a3b52f94075329cbcb9dc510782b9881a8015a44cafb70",
+            "locator": {
+              "kind": "symbol",
+              "name": "prose_sites"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:f70ae54da929a5a95b64bf01e5e05ebf46ce788a96c428a84e7d17a9893bf216",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 284
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Defines the function `_bare_sites` (lines 304-312) — ``(L126-L173)`` with nothing beside it. A single number is this repository's leaf shorthand as often as a line and is not claimed, exactly as the check does not claim it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:f02906ce0bc2912a96992ae1f3cc9a48af817b675e2866048ecf67c791f7bc85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bare_sites"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Defines the function `plan_prose` (lines 315-336) — Every superseded prose citation in one document that sits on a single line..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:d3fb8ab30f98d98337ac0d056719544e3616e14b69ba6b1145014837b5325a81",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_prose"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:93c5dd6a4b3247e44980fdae6ce9bacbdaec4288c6703c6b66d2de4d35d2a014",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Defines the function `_is_wrapped_tail` (lines 339-352) — Whether this bare range is the second line of an anchored construct that wrapped..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:2d52776cd2282f078b731cbc8ea9f45c5df3733a240e2e98320ee8be92280c6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_wrapped_tail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:19a059582a44cbfbc0526b87a4d95b32ed7fe341539b77e38112bdc5ed3b7ea3",
+            "locator": {
+              "end": 352,
+              "kind": "line_range",
+              "start": 339
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Defines the function `_unreachable` (lines 355-358) — Count joined-paragraph citation sites the per-line rewrite cannot reach..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:07ac333b954acf521a1077b2ab02ff2835cbd59ab131b90fdf10bc7e63fd3377",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreachable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `subject_of` (lines 76-87) — The card's declared path and repository -- what its own links are written against..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:53a4bca367fe52aa5b1db252f2e6c2df3a290d9e931d5bd7b54fef6c2e0cd4dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Defines the function `_plan_prose_site` (lines 361-393) — Plan one prose citation against the card's declared path..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:e6f19beb4be4f4d878f8d0af27bb73f9a4bfed6c40a0e2be837fcae50a2700e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_prose_site"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:e27556707b17d69f07f1a336c5f538e06f71415508fd7cf4553260a49bade275",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 361
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Defines the function `place` (lines 415-447) — The generated Source list for one draft, or ``None`` when it was declined; it consults the pass's continuity before a cross-file relocation..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:6bc77bb5c29f8b7249574dea22f5d957013e44ad462a9b60cf2d4471bc7cab0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "place"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Defines the class `_Sightings` (lines 434-443) — The located anchors, answering NOWHERE for one that was never looked for..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:306acb80e5e842fe055defc081adfe107d561d0c33d91f717b6b453ee02d6c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Sightings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Defines the function `_written` (lines 446-452) — How a synthetic citation names itself in a refusal message..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:3a311dec61860e6afc6d5b896166d8a4f84af55a84922bc8f3b563136507b79f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_written"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Defines the function `_generated` (lines 455-471) — The repair's sources, rejected whole if any cited file yielded no range of its own..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:e03d59aa0575fa2c93a0934b084838e4f446fb9c117e883b53d2c7ae3ff1f8dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_generated"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:b25a60306b74573848aeab273ac27ec688b0ea853430dd1d0a0500602ea1246d",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 455
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Defines the function `_scoped` (lines 474-496) — Select the range when generation narrows a verified span..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:2d21f80c36acb2391cbe25017c6a15b1d7c017a1ae6f91f0f68af149bb7b02c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scoped"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Defines the function `_narrowed` (lines 499-506) — Whether every generated range is shorter than the multi-line span it came from..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:c2609e8327bb767b7cfdd81a97062547b00225841029170c26bea8ab3284bf28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_narrowed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Defines the function `_mention_only` (lines 509-523) — Whether every extent behind this range is a MENTION rather than a declaration..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:185b2bf4a81b125beb495a0c75c29e52439176ec7838c22bb5eb607e324ff644",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mention_only"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:f8b09d1c3a9f4d3f561cc98a8eab19066745128fdbb7ffdd6b28cb77f8405421",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 525
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Defines the function `anchor_cell` (lines 526-527).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:7d590c5cbf8aa3e67afa82adc7798e41688742092410316a4415f7331b357a46",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_cell"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Defines the function `parser_dependent` (lines 530-539) — Whether this draft's RANGE came from a parse rather than from literal matching..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:de227615500390eb8a3040114b86fca6468d52b6ae1eaac22495e108f62c8e77",
+            "locator": {
+              "kind": "symbol",
+              "name": "parser_dependent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `row_anchors` (lines 90-102) — The anchors a row STATES, or the code to decline under when it states none..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:bfe0de4c47054ad87d50cab9856f32ae2898d4a3b3467235b963cf909b1846a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "row_anchors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Defines the function `unparsed_target` (lines 542-544) — Whether any cited file is one the extent layer cannot parse today..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:bfdf90879c06ceb1e5ce0968fe0ef30b106334720127d2e00533e6cef00e6a0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "unparsed_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `row_paths` (lines 105-120) — Every path this Source cell resolves to, or the code to decline under..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:ef5b92c314979cce2de27e4a3978712ebd4d338e58ea723ebefb27d7a46a721f",
+            "locator": {
+              "kind": "symbol",
+              "name": "row_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:92d6c87cc232610b458e08ce1597915edc693957347802a0bfb7bfdb1151a8b8",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `verified` (lines 123-128) — The old range, but only where one file is cited and every anchor is proven inside it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:f9bccbb702a807784cbfcb09d81933dbac34dc740f0b8dcc4ad392ebc751f6f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "verified"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `_not_in_range_detail` (lines 131-152) — Report the anchor's actual lines in the cited file without guessing another file..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:e8b1524a967f5eef0a67d2eb40c38e0ebab664dc0d9e685c7cbe71435e0253f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_not_in_range_detail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:273335a289d396efafd10d8e41374147d412201781ca8745fbbd57f7f25db974",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `plan_row` (lines 155-177) — One old row (finding, citations, source) read into a draft..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:393fe0f9d4fc5e89daa4bc0128d734e5304b39e08c0702dec097c1e6e6a95fe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:3d170a667767f408db299efe4e2bb3b26b0480eb6c4b295629bdb5070613ab1a",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `_is_note` (lines 180-192) — Whether the Citations cell holds prose that converting the row would DISCARD..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:4b13b6188319a75f6785f9ebe4349cce53aeccb0b0d7a39991ae465544639607",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_note"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:d1801e53f1663370bdc56a0be95351daa67549e78c8179501086f527aa935bb9",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `_anchor_detail` (lines 195-199).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd8e54f2825d6d189b3f7e5cc115ad873569d657",
+            "content": "sha256:849d84e59aa49ab4d11f7767878f96bef6d712db0cbb220d4545015ba3146171",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

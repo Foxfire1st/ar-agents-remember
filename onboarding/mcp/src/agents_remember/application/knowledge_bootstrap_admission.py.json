@@ -1,0 +1,585 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+        "content": "sha256:60cb10c962c281de167b8c9f199e2c4b7a7eccaa8279ae40fe7b64a5560b1eb5",
+        "locator": {
+          "kind": "symbol",
+          "name": "admit_bootstrap_context"
+        }
+      },
+      "id": "RLZ-X1V7P5N4",
+      "invariant": "INV-QN53GPRB",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The admission resolver is where 'authority is derived, never asserted' is made a property of the control flow rather than a promise.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of why the enclosure shape is wrong here and what the third option is.**\n\nAnchor: \"a second admission\"; \"derived from an authority that really exists\"; \"line 11\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:d8dfd1e9079b98c3ba28ab40f433d6960c9dc3553f841f36112963fa71da9ec4",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The staging root derived from the resolved context's own temp root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:1761de09bbde043fc6aa82501bc6425b52e7405cba37e8a97fce6b70bc57e429",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrap_staging_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The ordered chain, where no step is skipped because a later one might have answered.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:60cb10c962c281de167b8c9f199e2c4b7a7eccaa8279ae40fe7b64a5560b1eb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_bootstrap_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Why an absent coordination root is refused rather than created by Git.\n\nAnchor: \"coordination_root_unavailable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:b35663a54b698d0788abf3c05e80728d9dbf755023ad40f4f28f36cf327ddfe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_coordination_root_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Why a declared code root that is not a Git checkout cannot supply exact source inputs.\n\nAnchor: \"code_checkout_is_not_a_git_checkout\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:f77f69f52641a1b1e0c06b20ceeb948ac8d49bd8d7716ec76748952b97871f3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_code_checkout_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The resolver called with no enclosure selector, and the refusal that keeps a guessed path out.**\n\nAnchor: `EnclosureSelector`; \"memory_layer_not_resolved\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:924788ad9799b64e5bdffcd0cf38c1f90438c1a0c366190b0b7c61a79915ef9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The equality check between the declared and the resolved memory root, and the enclosure refusal.**\n\nAnchor: \"memory_line_moved\"; \"enclosure_in_scope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:8ac0656c43afac028e3d4d76ec196e45c1c829d5ee79608e20dc51f3967af428",
+            "locator": {
+              "kind": "symbol",
+              "name": "_context_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The write admission this context confers, with provenance naming the settings entry.**\n\nAnchor: `AdmissionProvenance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:a22d8ed23218faf0edb99e9c2a7d8918ce46619cdce9254d50290fb7be3bcc55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The branch as a hint about which line to read, never an identity input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:ac7addbb75183e5af2e02a7ca2c6b376cbf214b55c3618e8f72b9db32d101d28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_current_branch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The two exact revisions read from the real checkouts, and the refusals when a checkout cannot answer.**\n\nAnchor: \"code_revision_unavailable\"; \"memory_revision_unavailable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:05ea2245a90bb326a9fc96bd79a3788957fc6a3b8ea4ddb63bf69da283744a24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_revisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The one commit id a checkout answers, or nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:48433cf04ddd808f79b2773febe24154afc25b429a3ff14f92cb11f52a8d70bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the staging constant, the four values, the resolver and the two derivers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:35f2cd623c7cb74a5985ba3e462a62c9ec4ec2581837e8012f7fd8add72a53b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The value this module produces, and the two kinds it declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53ae53ad8a7ab3096a95062f6d99f16dea097393",
+            "content": "sha256:68a443c4804207cbdd4b15f878f0af2bce2afa44d6410f44b3791d0aebc6be18",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWriteAdmission"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "53ae53ad8a7ab3096a95062f6d99f16dea097393",
+            "content": "sha256:9f250ba77849505356e55b9f12e8df94b3b8a27c6463244428a95b0f2bc5f671",
+            "locator": {
+              "kind": "symbol",
+              "name": "BOOTSTRAP_ADMISSION_KIND"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The destination owner resolved through the ordinary read route, so writer and reader cannot disagree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c35f328865bb872f1b88b6fb9bed189e4e5fc52d",
+            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_dataset_path"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The resolver and the selector type the empty selector is an instance of.\n\nAnchor: `CoordinationHints`; `EnclosureSelector`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:074d23ad3c16087dd09d888a493616eaec483e5581927e53efa05850bfff8449",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:2e76fb07ea96b6bfe1dc95fdd87f27b5d38b5ed2717297ee87014930108cc830",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:88a913ee4c58430a4e1ee3743366b81f47b01024d50d92808c1e5551b1aa063b",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The context whose `temp_root` the staging root is derived from, and the request the resolver takes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
+            "content": "sha256:85be33bf05968b63499fb68d7e353653a20217e27e7bcbed18653cbc7008a799",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoordinationContext"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
+            "content": "sha256:afd2ad98e139038ee8dcf7b41252db2232502677981181db6531ed71abe4ca93",
+            "locator": {
+              "kind": "symbol",
+              "name": "temp_root"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
+            "content": "sha256:a4ec6a4020fc4eab6d9abd75d379c4e14e55871d7fdb74e90defcd799ecb1733",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoordinationRequest"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The settings document and repository entry that are the authority here.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:0d3b1a86df3de4b2b7f81828fd3dc25bd588d932ed545f8863363d4d68b777e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:c5738ba3812c2824dc7dd385bd062f74ab6d608d21aed6d5e8909de37f938cca",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryScope"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:2f7fc71b853fa9cb9f443605702fc3088c095ad4756f35649dc1aecd6a53b90c",
+            "locator": {
+              "kind": "symbol",
+              "name": "allowed_repo_ids"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The shipped Git runner every revision read goes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "066ebefd01517e9a76e5f18eb207e29696fa95cb",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The contract reader the resolver is given, which answers an empty selector with no contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2839bd8153b4ebbc2bb89e86da08e84840c848e5",
+            "content": "sha256:4c5254d69f10d674d7ed9d6dec6c8dd44eeb2703fed21c69221d9829899bb252",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContractReader"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/contract_reader.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7324ba46dc77d6e4048f1923a4fceea77a12ccd3",
+            "content": "sha256:2bf80902969affc03ab1eb898e93bbd096e4b4491a51c5dbd77bb301a5742299",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialize_memory"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_init.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one staging directory name, a constant so the cleanup owner and the writer name one place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:c105b42f9e611edf1568039fc51a48971c830eea76d11f954ebcdecb4c5995e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "BOOTSTRAP_STAGING_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The retry-scope prefix that keeps a repository's bootstrap and a task's knowledge two operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:3861cfa79698847c412376bda0ca9dffe9d1c63d37d43f08f0e32e0e17caf03e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SCOPE_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The authority a taskless bootstrap was admitted under, with the declared/resolved memory-root pair carried rather than collapsed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:027ec43dce5f50ec164e42d49a6b3940597e755340f1c0ce7895e1e16cf76517",
+            "locator": {
+              "kind": "symbol",
+              "name": "BootstrapAuthority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:6430f9883f422c18fab1256386493471e75592fc72e2968c0a4801f0b36a36ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "authority_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The authority reference in one stable spelling, for a report or a progress record.\n\nAnchor: \"repositories\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:8cdab409cdcc814ac777eb724c49c2a4030a06a40a8a930416f3161d06699e8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**Why a repository could not be admitted, and the route that re-observes the condition.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:dac4c3b59ebe0e1d2b495423aae98a64684c5cf87f48c82bee98242b4b375c6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BootstrapRefusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:e664f029fa0ad722da4e1104e69edb850319f08ec6dcb5e3ca8f3c0e32bd9f1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_action"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One admitted bootstrap: the authority, the admission, the destination and the staging root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:2c5c98381a6c4dff56f61de11e8d54dbcc799982d6ad3ef5932cf36fc9a6f159",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmittedKnowledgeBootstrap"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:6553af1058d46618c74944303a38ac97f2277c73925ef6067222c2b17b73b4df",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The retry scope as a function of the repository alone, so a resume asks the same question.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d4425dcd8a920e7f8a5ffad2a735244f0b4d54",
+            "content": "sha256:82ee0c2060de57cad42765c6ac8fc412650a7c48a877d0434e812b57a888abc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrap_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

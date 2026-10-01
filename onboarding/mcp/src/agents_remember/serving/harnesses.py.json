@@ -1,0 +1,360 @@
+{
+  "path": "mcp/src/agents_remember/serving/harnesses.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The launch module validates native model and model-local effort against dynamic advertise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:8b89671dd7b82f5cc19d5e258392e1dcf675c11fcf63bd678c2160026f733612",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_launch_selection"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:0f8b168f5a30fff77a09df73d0ed12673499922e90c9bdfba8d345c96509498d",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adapter factory constructs builtin protocol adapters and leaves unknown/custom ids unsupported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2e695cecec67fb7d9031b3df220bac94b9acc26636a355b75f07d314383d1ee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "BUILTIN_PROTOCOL_HARNESSES"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2b5088b617b61478353dc2280de551ce38e85be3d6491a95f22fe51e3caf806c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_harness_protocol_adapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:74548952fd8000f9e7ffa65683b32b094d005081f1247d3daa6e3d6f7a5d5ea4",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2d2926f0f01916d1e25a66b000d86f4a16ba267b709792be5a90474890d009cc",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The settings loader builds the effective registry for explicit custom mappings.\n\nAnchor: \"def _parse_harnesses(\"; \"def _parse_harness_entry(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b0f97f41ccb521b0b843c9a3da322228565d363",
+            "content": "sha256:a1614ac7eab328fac7417c1e58d26d18d0af935251601834a7cedc8bf3ab9e74",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_harness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b0f97f41ccb521b0b843c9a3da322228565d363",
+            "content": "sha256:4dde9cc043bd642c876b479c5b89fe0e706ecae92d7a37c30a1da54c6c375e58",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Detection delegates here: the registry resolves the probe-declaring row through its probe rather than `PATH`, and returns the probe's own sentence as the detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:c2d4f48964201201597c682d4004271476f9edee00a091f32ed7d51bd3acd95a",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_availability_detail"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:c9658f95bd364cffc04f00c32856a8352aef920ddd40c066eeaa83dc538bc942",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_runtime_verdict"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:843489d2d03594493e8c03f6449fb312680754069c3b153525213f91298d19ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_harness_available"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:5d3210811454503a1c58cd4b09949a46421683b0e4824d273b6155f59dd450db",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_runtime_probe"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one probe-declaring row and the probe name it carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:157c9a587ba817f64d2f0471ce2bc9363e72e315b28b822f86cf343bbc00c4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_RUNTIME_PROBE"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:fe54da6f1eb24c77412375eda6e1bf6e847f9d466b12fa75b2fd09a97833cc55",
+            "locator": {
+              "kind": "symbol",
+              "name": "HARNESSES"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The probe implementation detection now asks, including the bounded interpreter execution and the floor it owns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:6efb4185237561f902d9379d22d993ee76ce30ac5a0dd15b5edd0c11b870c9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "eve_runtime_readiness"
+            },
+            "path": "mcp/src/agents_remember/kernel/eve_runtime_readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:33bdd4d264999d84beb4c955d281a376492894dcacc826e2e669b610ad0cf843",
+            "locator": {
+              "kind": "symbol",
+              "name": "MINIMUM_NODE_MAJOR"
+            },
+            "path": "mcp/src/agents_remember/kernel/eve_runtime_readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The settings override path carries the builtin row's probe across an override instead of dropping it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b0f97f41ccb521b0b843c9a3da322228565d363",
+            "content": "sha256:b0016a0900cf47457bf0a0857488d7687bcb7a13d519b4cb7b0a522a1322c33d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merged_harness"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The terminal opener is the consumer that must ask the narrower launchability question.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:019c86a3bd91f407e8b27461e96ff8bb737fb00f4c4c8a5ce30b257235c281ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_launchable_harness"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:44fda159850c9143687d1348e7849e7f6fbd0d5cf8283e015c8b05163f203b9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_terminal_launch"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:f4614c02be7b878f0bd4eba24c70772aac02de535a27cdaf8576206d1e78da39",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:81378d96232676d5437ee59691bc7987792d87eb39f6e3c363750173bab398f4",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The cases pin that the eve row consults its probe and never `PATH`, and that the path harnesses keep the ordinary lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d7a14d6ef2ea9e00d35d53b3eef3801566ce381f2ba9f187241bbcf738e34f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRegistryTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:7c57a769ccc5fa1307d38b8647c2cd5d662e1aee0ec6a8e075996426e4d0b86e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveTerminalLaunchTests"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:852725c31816233ae87d30fa6bd7c229241839e3ffb96d4f2242b8ed2b8b74e8",
+            "locator": {
+              "end": 629,
+              "kind": "line_range",
+              "start": 575
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:ff86748cc9a3457d7b74a3f6098f3b633f02358c394736e83054b8ef08c309a0",
+            "locator": {
+              "end": 707,
+              "kind": "line_range",
+              "start": 632
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

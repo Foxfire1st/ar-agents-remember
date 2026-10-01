@@ -1,0 +1,127 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`TaskObservationPair` carries the current contract described above.\n\nAnchor: \"class TaskObservationPair\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2812fa87215aa9c8da059c6d6ea5a30b871e30a3",
+            "content": "sha256:7ac2e017b3f8a775fb65ffe106a8df608028d9667dfd88eca3b269fe32d99066",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task intent and document ref types come from the R02 task-intent owner.\n\nAnchor: `TaskIntentState`, `TaskDocumentRef`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:4c0add1f4867b8581f781aba5f74eec5cebfcd0a9bd09061a5a456a5a405bccb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentState"
+            },
+            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5f280c226367b5ccab8b9e6a759ee1143c6e160c",
+            "content": "sha256:a18296a1e39924b94137ce6ae35eae386ee8b188d71d0b58c04f473092ee0add",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentRef"
+            },
+            "path": "mcp/src/agents_remember/models/task_document_ref.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pair identity roots are the canonical code/memory pair authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "611fa8d9412bc674922b738b617ec5a3d70573fd",
+            "content": "sha256:066434432031e92c39b614d9ed4cd86139e75a69603b91c1a4d90a6858a7ecb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCandidatePairIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/memory_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The candidate builder emits `ScopeCandidateIdentity`; owner adapters emit `DependencySnapshot`; the compiler closes the closure into `ScopeManifest`.\n\nAnchor: `observe_scope_candidate`, `observe_dependency_snapshot`, `compile_scope_manifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eef68cd572e87619a5a4cf225d32ba06a28d0688",
+            "content": "sha256:2df692f4e04e3e9015ae5edb3416fb935642d0b2569b97b336c9b63f28645bc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_scope_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e512b75aa595bfd6e568a1af4e3d1fa63bd58dd",
+            "content": "sha256:2ae0095dcdb653592e8b9c2febf7e8da45ab4eec74210076f73bc3ac3a05d974",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_dependency_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/owners.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4405603d25c56998735a2f9516bbc4c44ca95a7",
+            "content": "sha256:015f04479b1a63c1ef6848bcddacf036c500362426e3a1a5d33535a8e8559cb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_scope_manifest"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Git change status and path shape are validated by the current typed model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2812fa87215aa9c8da059c6d6ea5a30b871e30a3",
+            "content": "sha256:2c4917962dace6d2bdc4a595be34d3bdd6548f9fee79fb5b81f987fe1ea6d825",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitPathChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

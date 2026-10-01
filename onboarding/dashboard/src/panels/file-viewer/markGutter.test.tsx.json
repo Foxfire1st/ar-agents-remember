@@ -1,0 +1,125 @@
+{
+  "path": "dashboard/src/panels/file-viewer/markGutter.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sixty lines, one edit, and the real `DiffPane` with marks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5fa66da3c21ec35cda8e23f65e99d4181266b68",
+            "content": "sha256:c081914db8e9cfeb7fdfa1bae2ae8e31734e8a75813a507720fb85b2230a7d04",
+            "locator": {
+              "kind": "symbol",
+              "name": "pane"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5fa66da3c21ec35cda8e23f65e99d4181266b68",
+            "content": "sha256:e20ba0039042483228412a2d1c46e052bde363046e7c5dd7844df9361dd9b511",
+            "locator": {
+              "kind": "symbol",
+              "name": "collapsedRuns"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Collapsed runs holding a mark are expanded; others stay collapsed.\n\nAnchor: \"expands the run in both editors of a side-by-side diff\"; \"leaves a run that holds no mark collapsed, as before\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5fa66da3c21ec35cda8e23f65e99d4181266b68",
+            "content": "sha256:82ffd1466618f78d955c0a678bded47ce9c2828a9ed8148a4e55f69478f406d7",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A focused mark redrawn keeps focus, never against the reader.\n\nAnchor: \"keeps its focus when the new element is drawn first\"; \"never takes focus back from where the reader moved it, nor redraws later\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5fa66da3c21ec35cda8e23f65e99d4181266b68",
+            "content": "sha256:b1b9ef117e5a68544e4acb9e11bcef0b210ef9d49359edab8ef2cd2660cee1e7",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hold's pull-back, releases, teardown and frame cap.\n\nAnchor: \"ends at its frame cap on a return nobody touches\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5fa66da3c21ec35cda8e23f65e99d4181266b68",
+            "content": "sha256:69163dcfc70300363f7ecb5e05be551fe289957cdbf394053fb0c01b78755b76",
+            "locator": {
+              "kind": "symbol",
+              "name": "RELEASES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The module under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:7e7f77c38199538de803011290efbe67e2a3af4d10a30bc36b7bad1e647023a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostMarker"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:64213601425704d8e499826d02012d9afae18e0c1dab113a7b49670984b4efd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "holdRevealed"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:29969799cd0e15a896993191e961070b630a3e5a8991e8255fe6fdc6d202cdbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "expandMarkedRuns"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

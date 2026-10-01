@@ -1,0 +1,324 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/sources.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The value types these shapes are composed from and the shared digest guards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:aea63a7849108cbcd9f67a5248a274ef9ab1a1af6e783bd7fb669f53e5262500",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleBlockIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:abc8a9024b9a63d3b7c40e49117ea71836419f950b50b0a32ca939ef2c02b517",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleDigest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:2fbddfa75252c78f0e4bdf08df8b6c44ade8117dc1c4d41f33d4e2cacc655b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_content_digest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The admission boundary that reads the bytes these values carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:915fd89222d1328505df921b788cb9559a7190b597c8b7549b071d961fa0e4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_capsule_sources"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:5ace26cae48ab5833cfda401dceae4d4a4c0ddd4b37b6946b5c6a0be821bac36",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleAdmissionRequest"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:917f897eddff348cf7a75a420cdf74ab20d185daf659f681e16a00e17e16e4a3",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module that proves the admitted set agrees with this declared plan in both directions, including every declared skill root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "content": "sha256:cbc02076178ee4d24950f063c800c5076a7082d8fdc80267179e9536bc0a6af5",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_source_set"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "content": "sha256:35e9daf727a5a1f49aaa3bff7f2360ae30ff3edf9634002490d497024524a19b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_present"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_skills_present"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The resolution step that reduces each declared identity to one block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:bee24f9d20fcdba4e3b69a97e5f832d71551af8caf0ef733a51c0aca962d43f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "gather_candidates"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:ad42934248a78e225b5e20ffd8ed809e430fd15fdb658d5aa18bcce029cc314e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_instructions"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:9d8ca9ea7e7e62fdf9b0e84878831faeb9451aa6c4eb84e8db161883d1abedfd",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59b328d2a084ce30c349b58a7cceb653f912fede",
+            "content": "sha256:b81df0516dc50f275c5dc3fef2c5f730771c3b00cac7f0f89d348edceaad8634",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The identity helper the carried skill reference is built from: `skills_declared_identity` renders the skill identity, and the compiler's `skill_references` calls it once per skill the seat declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:818f46d27fa1b66ce97dd9f70db626a5c63f7bbc33a2e0ebbfe3596add2abb25",
+            "locator": {
+              "kind": "symbol",
+              "name": "skills_declared_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Admission preserves content-addressed revisions and refuses a missing source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:a1234b14d8c64856e44fcfaef0491bebb8d7c4205f41b83264a1949effcfdd15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_reads_every_requested_source_with_its_content_digest"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:bdf8069c89edb0b161c83fea4d7b1ff0daa7478a54d0355ebd01c24b26dafd4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_refuses_a_missing_source_instead_of_skipping_it"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:e6d7043fb80c8d5369b459029a1055a12bf6eeba54f7e78cca3547dae33964c2",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 275
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "392fa69b39891b707c00373514afe893e454be9c",
+            "content": "sha256:b016086576a40698f29f63ec593d55bdd90a838a16b8ce89eb890c3f49272edb",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The value guards for this module's declared `CapsuleSource.text`, including the non-UTF-8 refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:c90805997a22de5b959e1a26212616b67a8ba88e95f69ac3d7888ff5ca75a3f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_source_whose_revision_is_not_its_own_digest_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:ecb19057c66517b02b937892e2e03fa42859b1bd689d28d2638f79242621d89e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_source_with_no_readable_instruction_text_is_refused_by_name"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:3cd709d0d92a6a4c78055eda95bc69da01c86252ba6f5b73993ad7f418d0feb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_source_with_a_blank_identity_or_path_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:3eed1d6df4d087f9b9a6e7b67647cf9e319f675d29e4855c1960f7ffcafa6189",
+            "locator": {
+              "end": 985,
+              "kind": "line_range",
+              "start": 973
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+            "content": "sha256:23c3cda68412737f5cc97b08c31b1e8f631873b3d546772e7a67979749e78045",
+            "locator": {
+              "end": 996,
+              "kind": "line_range",
+              "start": 988
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,194 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A rule, with its `report_only` and `writer_reports` flags, and what a check returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:7a4a4bb2a52c447055d842771a35358afb726602c8f5c3b80ede0d32f0644bd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ValidationRule"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:f8426a2db586cd5d96e4131a2e87c0e68d598810ab6347a67caf51ab500ca82e",
+            "locator": {
+              "kind": "symbol",
+              "name": "Finding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each ID registers once; rules run in registration order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:93d5f335443f6b1c4144a68c70a68d5bd998f8c00c5f50d5e245801a736ca7d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_rule"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:b686db237a84460cf8dc4004905167d727daf56b73c375de4008a12d9f1bb32d",
+            "locator": {
+              "kind": "symbol",
+              "name": "registered_rules"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusing rules a writer reports instead; the docstring states the contract.\n\nAnchor: \"only reported inside the\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:912287966d4ad2fe95234b62f0cfb089d5c40649015a914445b40054ba8d0797",
+            "locator": {
+              "kind": "symbol",
+              "name": "writer_reported_rule_ids"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:d40be055dfb49563dbe86aa3a3bba96288476fb8e003fec4df344331b5483e79",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The refusing route rules are reported inside the writer, and still refuse in `validate_tree`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:a61fb0eea037ca6e3b853d00b4bbad7b701814b3a08c5f5458636b1ed0d54bfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_refusing_route_rules_are_reported_inside_the_writer"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The anchor comparison key and the base anchors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:2673554761807852785e6a37922cd2f9546e69de3bb1177d33fb7ef575bedf8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:3eac4ef752328b41a6c7337bfe15b2de955e85ff380b18eef629a35428d13e74",
+            "locator": {
+              "kind": "symbol",
+              "name": "BaseAnchors"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:498d9ff6fca7ce10c8f2a052de74325866bbc2a7dfdd90c0e3b571164f9c7fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_anchors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The context every rule reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:5179e891772633830d7e8fb4f479600339c977994d8c6f2672bea4b6f15c3f71",
+            "locator": {
+              "kind": "symbol",
+              "name": "ValidationContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The flag a leaf-publication commit sets (MIK-R09).\n\nAnchor: \"leaf_publication: bool = False\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "content": "sha256:c6d79341a499f45319cb71f3db62c6627a95eba44d48a5829cf8f4c8d7573217",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 149
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A later packet's rule runs everywhere, and report-only never refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:ddbdd1414ffa1f78899897fc2f2de39aed2c1912dcdecb739816b44707a85f8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_later_packets_rule_runs_everywhere_and_report_only_never_refuses"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

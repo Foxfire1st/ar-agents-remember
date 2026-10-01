@@ -1,15 +1,5 @@
 # dashboard/src/panels/Hangar.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/Hangar.test.tsx`           |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-04T10:05+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -60,48 +50,16 @@ operation field and proves visibility, not execution or operation-state mutation
 `legalControls` and `projectionEffects` lists are fixture-contract conformance, not claims that live
 operations never expose controls or projection refresh effects.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component under test (filters rows through `hasLiveWorktree`). | `Hangar` | dashboard/src/panels/Hangar.tsx:76-152 |
-| The shared existence-truth visibility selector. | `hasLiveWorktree` | dashboard/src/data/selectors.ts:24-28 |
-| The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. | `dashboardStore` | dashboard/src/data/store.ts:329-401 |
-| The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. | `EnclosureNode` | dashboard/src/types/projection.ts:203-221 |
-| The running-operation fixture supplies required `legalControls: []` and `projectionEffects: []` while the assertion remains scoped to durable `currentCommand` rendering. | `legalControls`; `projectionEffects`; "shows the durable live command" | dashboard/src/panels/Hangar.test.tsx:140-169 |
+### Repo-Internal References
+
+- The component under test (filters rows through `hasLiveWorktree`). [1]
+- The shared existence-truth visibility selector. [2]
+- The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases. [3]
+- The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. [4]
+- The running-operation fixture supplies required `legalControls: []` and `projectionEffects: []` while the assertion remains scoped to durable `currentCommand` rendering. [5]
 
 ## CCR-R18@v1 Fixture Envelope Fields
 
 260831-CCR-L18 added `schemaVersion: "lifecycle-operation-projection/v1"` and `stateMatrixVersion: "lifecycle-operation-state-matrix/v1"` to the hand-built `lifecycleOperation` fixture inside the Hangar worktree-truth test, matching the generated mirror's now-required version literals. The worktree-existence visibility contract under test is unchanged.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the Hangar fixture lifecycle operation gaining the schema/state-matrix version literals. Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
-
-- 2026-08-24T15:28+02:00 — No content impact: added the generated contract's required empty
-  `projectionEffects` witness to the inline operation fixture; command-rendering assertions and
-  behavior are unchanged. Verification metadata remains closeout-owned.
-
-- 2026-08-24T00:21+02:00 — 260821-CLIVE-L2: added the required empty `legalControls` list to the
-  inline running-operation projection fixture; command-rendering behavior is unchanged and
-  verification metadata remains closeout-owned.
-- 2026-08-13T12:26+02:00 — L23 live-progress clarification: added the focused running-operation
-  regression that proves `currentCommand` appears in badge text and remains available as the full
-  title value. Verification provenance remains closeout-owned.
-
-- 2026-08-03T02:31:31+02:00 — W3-B05 curator: anchored 4 Tier-2 table citations with exact source paths; fixer generated all ranges.
-
-- 2026-07-06T02:30+02:00 — 260703-L11: rewritten from the archived-cleanup proxy contract to the
-  worktree-existence contract — the factory defaults the new existence flags true, and the four cases
-  pin existence-only filtering (either worktree admits), reopened-no-worktree hidden,
-  reopened-after-restart visible again, and the all-gone empty state. Verification metadata pinned until
-  closeout stamps the L11 commit.
-- 2026-06-30T00:00:00+02:00 — Operations Integration L5: created — render tests pinning that the hangar hides archived
-  (cleanup completed/abandoned) enclosures so the row count reflects live worktrees, and fully reduces to
-  the "no live persistent worktrees" empty state when every enclosure is archived. Verification metadata
-  pinned until closeout stamps the L5 commit.

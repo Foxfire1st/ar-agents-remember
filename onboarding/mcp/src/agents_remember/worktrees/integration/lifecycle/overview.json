@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle",
+  "references": {
+    "1": {
+      "note": "The receipt check before anything moves, and the restore after publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:d4b115a4363dc6c1eb7ee57c506a6f40ed0d3f8abbddc9e57271451090fd4d91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_readable_direct_closings"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:c34b5ce53e415f359075c88545deefa2d5a872d873a81867c1c8d37640857249",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_direct_closing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recovery state contains the actual two commit outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationRecoveryCommits"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes.\n\nAnchor: \"def _validate_identity_and_evidence_transition\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
+            "content": "sha256:f36e7d8e17e14122118f46a0333b4f41a4e7d55fa759365b203f5b0db16aa601",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The exact-generation observer returns bounded change/timeout outcomes.\n\nAnchor: \"def wait_for_lifecycle_change(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fdef150ff0c4296ea02094499df128b00e397e",
+            "content": "sha256:745b21800186b5a4a6b8aa1b858ad4004b44f3961ec43699ebbf71c20b692a48",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

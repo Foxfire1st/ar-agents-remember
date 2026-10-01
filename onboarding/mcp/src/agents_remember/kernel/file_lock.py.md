@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/file_lock.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/file_lock.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](../../../overview.md)
@@ -42,36 +32,26 @@ Callers authorize the resource before entering. The kernel primitive neither dec
 
 None identified in this bounded source review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. The claims below describe the repository's own implementation; no external platform verification is claimed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation source. | N/A | N/A |
+No configured domain documentation source.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These source owners establish the mechanics, caller policy, and regression boundaries described above.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One physical suffix, one mutex per resource, and thread-local nesting. | `lock_path_for`; `thread_mutex_for`; `_LockDepth` | mcp/src/agents_remember/kernel/file_lock.py:36-38; mcp/src/agents_remember/kernel/file_lock.py:41-55; mcp/src/agents_remember/kernel/file_lock.py:19-27 |
-| Capability probing, complete transaction exclusion, and current-thread hold inspection. | `_verify_lock_capability`; `exclusive_file_lock`; `lock_held` | mcp/src/agents_remember/kernel/file_lock.py:58-84; mcp/src/agents_remember/kernel/file_lock.py:87-114; mcp/src/agents_remember/kernel/file_lock.py:117-119 |
-| Control-plane target authorization precedes primitive entry; capability errors are translated. | `exclusive_access`; `require_lock_held` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:363-381 |
-| The host registry supplies its own policy and domain refusal. | `AuthorityRegistry` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-846 |
+- One physical suffix, one mutex per resource, and thread-local nesting. [1]
+- Capability probing, complete transaction exclusion, and current-thread hold inspection. [2]
+- Control-plane target authorization precedes primitive entry; capability errors are translated. [3]
+- The host registry supplies its own policy and domain refusal. [4]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository implementation dependency is used by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required for these claims. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-06T00:28+02:00 — Created the shared lock-owner card against prepared code commit 6e4ab81f6ae52bce35003377bb3aec7877554ed7; preserved the physical lock protocol and separate caller authorization boundaries.
+No cross-repository evidence is required for these claims.

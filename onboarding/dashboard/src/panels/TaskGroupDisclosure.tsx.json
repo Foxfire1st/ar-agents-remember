@@ -1,0 +1,73 @@
+{
+  "path": "dashboard/src/panels/TaskGroupDisclosure.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The parent list computes the descendant-bearing BY REPO condition before rendering the control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:fe109b43ff515c573f356ba39443b5b2fc544f63e075d11b26f912f695ecbe73",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasDescendants"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row.\n\nAnchor: \"<TaskGroupDisclosure\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:67e4ec41b85fa697fb15823c90e1df702e16c47c10bb63431e2a59eefdb945e9",
+            "locator": {
+              "end": 664,
+              "kind": "line_range",
+              "start": 664
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation.\n\nAnchor: \"defaults hierarchy disclosures to expanded and renders controls only for parents\"; \"keeps sprint and master collapse independent without changing selection or BY PHASE\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "content": "sha256:61eec89871b3f24232b10b1e7e0ece1e81d7725f5d2ad8414bb8bee6077f6318",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "content": "sha256:1f760c6a9aa04a2013141fd201396fd40499f2c52747a48c193c3f43749ade06",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

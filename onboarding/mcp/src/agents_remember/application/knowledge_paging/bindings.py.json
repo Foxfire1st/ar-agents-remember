@@ -1,0 +1,142 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/bindings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: two halves of checks, and no rows on a refusal.\n\nAnchor: \"Minting a continuation, and refusing one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
+            "content": "sha256:bad2da34fcdb721b5b0bdccaaeb647d20b5e53e3536b8342f4d8741be15e9ba5",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The refusal and its three codes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
+            "content": "sha256:e07d7436c6e55007a3a759cca7e8801331e756c1124c12b127808351511d4273",
+            "locator": {
+              "kind": "symbol",
+              "name": "PagingRefusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
+            "content": "sha256:7c7d2511fb2d449ead244b44f25a4bf4d2238c332f13388798c74bc78a31edba",
+            "locator": {
+              "kind": "symbol",
+              "name": "PagingRefusalCode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Minting binds the build's threshold and queues the rest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
+            "content": "sha256:9c49bf3dadcf9dc7c4eb9f0595834ca43f8ec6a82f3c4e252c6b49e87a5e0e91",
+            "locator": {
+              "kind": "symbol",
+              "name": "mint_continuation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Not this format, or another view's walk, is unreadable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
+            "content": "sha256:aebb21b28b5503364730997ad5fd39291d14da909149ba1efac4e006ab89d015",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_continuation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A changed tree names both trees; threshold and policy are bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
+            "content": "sha256:b11198516102d9ae47c72d55cd02ba65263c4e7e79835b70c3634ef320646f69",
+            "locator": {
+              "kind": "symbol",
+              "name": "request_binding_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A named code tree or ordering other than the walk's is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
+            "content": "sha256:09faa1ed7379ea6bb9314a4dd600ddb38ef48c7c077de0cab679c6267e769b73",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolution_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
+            "content": "sha256:44febfe95de0ae72c76d56e9db04c2f5a25eafda68bfe7dd230a58a702190449",
+            "locator": {
+              "kind": "symbol",
+              "name": "ordering_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Manifest and position, once the selection exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
+            "content": "sha256:6a9c92bb30688992094917a60a6f1bd22acca1d973a1d7ee61bcf557d4cff7e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "position_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,65 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component renders the structural rail model and focus behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:cd97a64dc1b9b7ee7a84b776bd75c657e02a4f1b896d9745402a21d609738b03",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionRail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:0c1e48f494f985e5cfa72b2e95cb970ff50fa328dff2dcde48a41e68e60f7fb1",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Row and tree composition is delegated to the shared rail body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e95159ef1d06b3e056523044a807c998b8eca5d6",
+            "content": "sha256:d5b814739f2829c12a6c0be787b84e6767c1eaa58ca0b3060a874b8b1d3529a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailBody"
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessionRailParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e95159ef1d06b3e056523044a807c998b8eca5d6",
+            "content": "sha256:47d2ff2771f5e6f8e15734f33aeb2bb2e1495396d2ad3a8435640d54ce1948ea",
+            "locator": {
+              "end": 961,
+              "kind": "line_range",
+              "start": 751
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessionRailParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

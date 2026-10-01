@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/closeout_lineage.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/closeout_lineage.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T15:06+02:00 |
-| lastVerifiedCommitHash | `74c6c693b8c5a5863ce15f016793192931f4adc1` |
-| lastVerifiedCommitDate | 2026-09-20T06:22:08+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [worktree modules overview](overview.md)
@@ -90,37 +80,23 @@ calls `require_current_source_lineage` unchanged: the door evidence also runs on
 closeout-projection rebuild, so mutation rights there would let a projection sync Git. Wiring the
 door declaration also needs the reloaded contract threaded into `_declare_generation`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- The heal entry point projects lineage, refuses the unsettleable, runs the existing sync for each stale edge's owning contract, and returns the reloaded contract identity. [1]
+- Preview and unprovable projections are the only two pre-sync refusals. [2]
+- A retained sync conflict, a refused sync, and a still-stale result each get their own typed status and duty set. [3]
+- Every refusal shares one lead-sentence-plus-guidance shape and carries typed status/payload. [4]
+- The projection, refusal vocabulary, and ordered sync recoveries this module consumes are owned by the lineage policy. [5]
+- The projected state and its ordered `recoveries` are the shared wire model. [6]
+- The heal runs the ordinary public sync result for the owning contract. [7]
+- Closeout imports this module in place of the bare `require_current_source_lineage` guard at both entry points. [8]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The heal entry point projects lineage, refuses the unsettleable, runs the existing sync for each stale edge's owning contract, and returns the reloaded contract identity. | `heal_current_source_lineage`; `HealedSourceLineage` | mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:60-65; mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:81-109 |
-| Preview and unprovable projections are the only two pre-sync refusals. | `_require_settleable` | mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:112-125 |
-| A retained sync conflict, a refused sync, and a still-stale result each get their own typed status and duty set. | `_retained_conflict`; `_sync_refused`; `_still_stale` | mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:146-167; mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:170-191; mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:194-204 |
-| Every refusal shares one lead-sentence-plus-guidance shape and carries typed status/payload. | `_refusal`; `SourceLineageRefusal` | mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:68-78; mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:207-226 |
-| The projection, refusal vocabulary, and ordered sync recoveries this module consumes are owned by the lineage policy. | `source_lineage_for_contract`; `lineage_refusal` | mcp/src/agents_remember/worktrees/source_lineage.py:94-107; mcp/src/agents_remember/worktrees/source_lineage.py:110-122 |
-| The projected state and its ordered `recoveries` are the shared wire model. | `SourceLineageProjection`; `SourceLineageRecovery` | mcp/src/agents_remember/models/worktree.py:143-151; mcp/src/agents_remember/models/worktree.py:135-142 |
-| The heal runs the ordinary public sync result for the owning contract. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
-| Closeout imports this module in place of the bare `require_current_source_lineage` guard at both entry points. | `_validate_closeout_source_state`; `_revalidate_candidate` | mcp/src/agents_remember/worktrees/modules/closeout.py:338-350; mcp/src/agents_remember/worktrees/modules/closeout.py:641-653 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is configured for this memory root.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-20T07:22+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `b7bfebb550f036a7e51de1f390be1123cd2d2172`): **citation ranges re-derived by reading the cited construct, not by arithmetic on the old numbers.** This leaf's own source edits grew the file this card cites, so the row(s) naming `SourceLineageProjection` and `SourceLineageRecovery` no longer held their anchor in the cited range. Each was re-read in the code worktree at the construct the claim names and re-pointed to that construct's own current declaration extent (`mcp/src/agents_remember/models/worktree.py:143-151` and `mcp/src/agents_remember/models/worktree.py:135-142`). No claim wording, anchor or row was changed, added or deleted; no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T19:51:00+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The shared-wire-model row's `SourceLineageProjection` cell cited `models/worktree.py:120-128`, the recovery model's declared fields; `class SourceLineageProjection` now sits at `134-140`, which is what the cell cites. The `SourceLineageRecovery` cell at `112-119` and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_revalidate_candidate`, `_validate_closeout_source_state` repointed to mcp/src/agents_remember/worktrees/modules/closeout.py:306-316, mcp/src/agents_remember/worktrees/modules/closeout.py:600-609. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `sync_result` repointed to mcp/src/agents_remember/worktrees/modules/sync.py:28-67. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-10T15:06+02:00 — Created for the closeout auto-carry change: the guard-clause heal helper that carries a settleable stale source break through the existing `worktree_sync` transaction instead of refusing, and escalates only an unprovable break. Source reviewed in the uncommitted working tree at base `4bbe2c37`; the new file has no committed identity yet, so verification remains closeout-owned.

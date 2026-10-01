@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules",
+  "references": {
+    "1": {
+      "note": "The public facade re-exports this package for existing callers.\n\nAnchor: \"def prepare_repo\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:e6a0a4a13f9cd61476b684ccf622d3fe6f8cd086a9fd2ac786877e4666bd660d",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "MCP application entry points call the benchmark service entry points through the facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
+            "content": "sha256:364e64a9ed7adbe0959731447cf332d8eab1df0d3ef2a126b90f79e86a3120a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "skills_install_tool"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
+            "content": "sha256:d045b602cb5add906b1035fcf1ad35dcc7973f7cd026fdda0fecbf4f31301f21",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/application/runtime/skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared seed resolvers refuse a benchmark-scoped target as defense-in-depth for the hermetic boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:6e83aecc3be7e3696d7956b643007efb5a01a74b19fa3916886440a8dfc32188",
+            "locator": {
+              "kind": "symbol",
+              "name": "GrepaiSeedOptions"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

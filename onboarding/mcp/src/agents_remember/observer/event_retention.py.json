@@ -1,0 +1,144 @@
+{
+  "path": "mcp/src/agents_remember/observer/event_retention.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fresh-connect offsets are bounded: dormant logs to EOF, active logs to the recent replay window, workspace to its TTL boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:68071c0726caf7a3e3be2cd438354796a804a7749f8f5bd8798b0281c5656b62",
+            "locator": {
+              "kind": "symbol",
+              "name": "initial_event_offsets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:2c8077691841e0e49e9ca04a447d27f3c93b121e67acd44cdabf623c3b5a67b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_is_dormant"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:682a2a3b69286c2c2056d61708310d77be4864db7342614637646ac1ef3dcfa5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retention_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:24b73539de8a71cedb5394cef159bb87e05ae0279e1023e64d0b4758e3f4b582",
+            "locator": {
+              "kind": "symbol",
+              "name": "last_activity_at"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_expired_lifecycle_event_logs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history.\n\nAnchor: `protected_lifecycle_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:1fa5a3f578159b9ad3fb28b9ed574d55645e31e5f6d37562e32da8faab01f48d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_expired_lifecycle_event_logs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The protection set is derived from durable enclosure state (a live master series) by the admission module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27b63af8ca769d6da55674e76fa7d13b4e32200a",
+            "content": "sha256:f08e1c0714c6fb7a2ed60409168206516283e202cb56b5b10c6ab14557cfb0cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_retained_lifecycle_ids"
+            },
+            "path": "mcp/src/agents_remember/observer/worktree_provider_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b96a76283d373ac60a4e9cc1fa2e7630bc748565",
+            "content": "sha256:1198241f4948f356f4e86b0ae21d5057e0000b93fd0d55a3b32f01ef94e2c94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_first_retained_offset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied.\n\nAnchor: \"async def stream_raw_events(\"; \"offsets = await asyncio.to_thread(initial_event_offsets, root, now=now)\"; \"await asyncio.to_thread(prune_expired_lifecycle_event_logs, root, now=now)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "557621687e7e8238a5f892f1663045a6fe629754",
+            "content": "sha256:121b3d3c8abb19ae1c688db3b51789720feb9c024ce6ccc4c4d4ebd94f9f36b3",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "mcp/src/agents_remember/serving/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

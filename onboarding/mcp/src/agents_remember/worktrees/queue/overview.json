@@ -1,0 +1,35 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue",
+  "references": {
+    "1": {
+      "note": "Recovery proves the accepted code and memory outputs without a cache lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:9a29e5ed527c5587233cfc90ef255470ccc36cafca5122584a3ffd0709152adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resume_external_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:4ec7e5239cb2836f0be017bc1d72d991a80014f4b1494dee12da1c692c9a904b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prove_memory_output"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

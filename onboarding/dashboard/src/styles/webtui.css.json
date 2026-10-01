@@ -1,0 +1,179 @@
+{
+  "path": "dashboard/src/styles/webtui.css",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The layer-order statement that slots `webtui` between effects and tokens.\n\nAnchor: \"@layer reset\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:d60672d97d7348ea7c088e8a2f419f15b7e9315a72449a636c2fab1bf82c599b",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The token vars the mapping references (incl. the L1-added `--muted`).\n\nAnchor: \"--muted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6ed9b5f830cc758ade244a573ce03c2ca8eb29",
+            "content": "sha256:dd8c4dfdd03a127d31410ccde967d8017b14ea4c750dbe02e4b6e6acb6d90cea",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/src/styles/tokens.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared scoping options (prefix, includeFiles, the :root/html/body collapse transform).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d659413a5e76f923e329a70bd0caeab2a8d0885a",
+            "content": "sha256:818da3af4061ba5fe86eae32495ad66c1418de18c9874a004219fb1d9adc0948",
+            "locator": {
+              "kind": "symbol",
+              "name": "webtuiPrefixOptions"
+            },
+            "path": "dashboard/webtui-scope.config.cjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The build wiring: Panda first, then the prefixer over the inlined imports.\n\nAnchor: \"Panda first\", \"postcss-import\", \"postcss-prefix-selector': webtuiPrefixOptions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c57708428ffc5d46e4fb9fb5ee569e7d96aa153a",
+            "content": "sha256:f43d59f830b93e294ba67475f6591709ff835c9d3c7ffb865729f6bc1942e092",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/postcss.config.cjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c57708428ffc5d46e4fb9fb5ee569e7d96aa153a",
+            "content": "sha256:668324169be7d4cfbef29f6cbaa5c1b24124b26fd0934d0a80258e06e6a4e49c",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/postcss.config.cjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The four automated spike assertions + exact-pin checks that keep this contract honest.\n\nAnchor: \"S1 spike (a): every WebTUI rule is confined to the cockpit root\", \"S1 spike (b): one color system — WebTUI vars map onto podracer tokens\", \"S1 spike (c): the html[data-effects=off] determinism freeze still wins\", \"S1 spike (d): layer order + focus-visible survival (React Aria intact)\", \"S1 spike: exact version pins (0.x churn ruling)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb44ef6a06b0f3fe66d75235ff425a536988d52",
+            "content": "sha256:fc9b03a5f876b8dbccbd683c52f4f72be9b1a9071d3bc24aa7f58a164e1502de",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/test/webtuiSpike.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbb44ef6a06b0f3fe66d75235ff425a536988d52",
+            "content": "sha256:768601ba3b91c5dfb0a97a48079555563d415adfbdb4cb6c67fed141421e885c",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/src/test/webtuiSpike.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbb44ef6a06b0f3fe66d75235ff425a536988d52",
+            "content": "sha256:68e9dcfd714fbc453df122ea33418f9946b65a1c454c0fb3e6184d9cdf47c576",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "dashboard/src/test/webtuiSpike.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbb44ef6a06b0f3fe66d75235ff425a536988d52",
+            "content": "sha256:5abd01ce6b7ab0d288af66fd9bf9298d3bb2d3e31bc5055356a3fcc02afd953d",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "dashboard/src/test/webtuiSpike.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cbb44ef6a06b0f3fe66d75235ff425a536988d52",
+            "content": "sha256:b1da2228bc12d05322216fe57ec6c99886f6ef294dc24beaee48acb576be512c",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "dashboard/src/test/webtuiSpike.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The scope-root carrier.\n\nAnchor: \"data-testid=\\\"sessions-stage\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:d46b9042f2ddd082323ff73e99ec65e52c007b7ad8655c2b5c6b4c0689712cab",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

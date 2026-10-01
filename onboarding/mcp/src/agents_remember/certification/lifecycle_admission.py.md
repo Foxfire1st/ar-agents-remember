@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/lifecycle_admission.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/lifecycle_admission.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Certification overview](overview.md)
@@ -63,7 +53,9 @@ repository, or invents a fallback candidate.
 
 Execution and repository-profile wiring are owned by later consumers, not this module.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. The governing task artifacts
 below close the informational gap for the exact-candidate admission CAS semantics.
@@ -78,37 +70,20 @@ exact-candidate admission, prior-red recovery, certificate currentness, and fina
 boundary contracts without fallback behavior.
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Admission composes the exact supplied authorities and freezes one lifecycle manifest. | `compile_lifecycle_admission` | mcp/src/agents_remember/certification/lifecycle_admission.py:84-121 |
-| Currentness re-compiles current inputs and refuses any movement before a gate or write. | `validate_lifecycle_admission_currentness` | mcp/src/agents_remember/certification/lifecycle_admission.py:124-147 |
-| Candidate authority and worktree shape are mandatory, with typed refusals. | `_require_candidate_authority` | mcp/src/agents_remember/certification/lifecycle_admission.py:150-181 |
-| The lifecycle candidate and the R11/R22 plan must name identical repository and code-tree authority. | `_require_candidate_alignment` | mcp/src/agents_remember/certification/lifecycle_admission.py:184-208 |
-| Prior-red disposition binds the exact failed/blocked catalog and exact changed inputs. | `_compile_prior_red_disposition`; `_require_prior_catalog_authority`; `_require_relevant_change` | mcp/src/agents_remember/certification/lifecycle_admission.py:211-272; mcp/src/agents_remember/certification/lifecycle_admission.py:275-308; mcp/src/agents_remember/certification/lifecycle_admission.py:369-405 |
+- Admission composes the exact supplied authorities and freezes one lifecycle manifest. [1]
+- Currentness re-compiles current inputs and refuses any movement before a gate or write. [2]
+- Candidate authority and worktree shape are mandatory, with typed refusals. [3]
+- The lifecycle candidate and the R11/R22 plan must name identical repository and code-tree authority. [4]
+- Prior-red disposition binds the exact failed/blocked catalog and exact changed inputs. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Repository-specific rail declarations enter through repository profiles outside this contract. | — | — |
+Repository-specific rail declarations enter through repository profiles outside this contract.
 
 ## CCR-L42 current candidate
 
 Prior-red admission now retains exact prepared prior memory ownership and successor memory-tree identity. A prior-red changed input of kind `memory-tree` is compared against those exact digests and refuses when the retained owner is missing; code and other input-rail relevance remains exact.
-
-## Update History
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Prior-red admission now retains exact prepared prior memory ownership and successor memory-tree identity. A prior-red changed input of kind `memory-tree` is compared against those exact digests and refuses when the retained owner is missing; code and other input-rail relevance remains exact.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4374a06385fba89f1b6f2c187d0659b612f9944da826599ab78f79a0beb55787; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose (absolute ar-coordination task-artifact paths are not repo-relative citations). Verification remains pinned to the pre-commit source history until closeout.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 4e0ea4b3c493a2c89ca18367e89e4cb42ee8c5f3 (CCR-R05@v3/L05): created the card for the new exact-candidate admission and prior-red corrective authority module; no prior sidecar existed.

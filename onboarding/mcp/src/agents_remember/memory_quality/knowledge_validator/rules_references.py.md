@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `ee5f14e5405505d126125830e5323f8915c8d047`|
-| lastVerifiedCommitDate | 2026-09-29T07:25:39+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory_quality route overview](../overview.md)
@@ -45,7 +35,9 @@
 
 `R22.6-carried-stale` surfaces the packet's "reported as stale references"; MIK-R24 rule 5 and MIK-R03 may take it over or reuse it later (worker gap 10).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The validator's design authority is the coordination-root note
@@ -53,32 +45,21 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R22@v1` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The reference rules and their registration.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Markers and references are paired both ways. | `check_markers`; `_markdown_findings` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:73-96; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:58-70 |
-| Record links, entry invariants, supersedes and family members must exist. | `check_record_links`; `check_family_members` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:136-140; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:163-166 |
-| Added anchors must name existing paths; carried anchors at absent paths are reported. | `check_anchor_paths`; `check_carried_stale` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:202-212; mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:215-226 |
-| The eight registered reference rules, three report-only. | `REFERENCE_RULES` | mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py:229-269 |
-| A hand-added marker without a reference is refused. | `test_a_hand_added_marker_without_a_reference_is_refused` | mcp/tests/test_knowledge_validator.py:192-200 |
-| The boundary example: one parent deleted a file the other's card cites. | `test_merge_where_one_parent_deleted_a_file_the_other_parents_card_cites` | mcp/tests/test_knowledge_validator.py:364-380 |
+- Markers and references are paired both ways. [1]
+- Record links, entry invariants, supersedes and family members must exist. [2]
+- Added anchors must name existing paths; carried anchors at absent paths are reported. [3]
+- The eight registered reference rules, three report-only. [4]
+- A hand-added marker without a reference is refused. [5]
+- The boundary example: one parent deleted a file the other's card cites. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

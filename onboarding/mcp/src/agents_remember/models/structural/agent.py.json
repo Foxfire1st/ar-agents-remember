@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/models/structural/agent.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The request family uses structural fields only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bb98b8f4c9b505cf9f36dd541b2ea56345860a4",
+            "content": "sha256:772a8073516131dd78eadb4621548fd53b4a34443ccc4201b6a8ac5d5d68b5c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "DispatchAgentRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The response family returns structural targets without runtime ids.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bb98b8f4c9b505cf9f36dd541b2ea56345860a4",
+            "content": "sha256:bfe3f3fe9c50d622bbbc65cb6357d6cb2b023db6fcb9c8112e9af32a1b32b31e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StructuralTargetResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

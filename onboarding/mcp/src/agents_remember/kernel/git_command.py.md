@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/git_command.py
 
-| Field                  | Value                                                    |
-| ---------------------- | -------------------------------------------------------- |
-| repository             | agents-remember                                          |
-| path                   | `mcp/src/agents_remember/kernel/git_command.py`           |
-| doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-09-29T07:08:34+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview      | `../../../overview.md`                                   |
-
 ## Governing Overview
 
 [MCP overview](../../../overview.md)
@@ -126,49 +116,45 @@ the repository and the argv, and a new way to aim a command is a field rather th
 
 None known for the MX-FIX-4 Git command boundary.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is configured. | — | — |
+No external domain source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The generic runner has distinct Git-fact callers and private/publication observers. These direct source references preserve that ownership split and the explicit history-rewrite identity use; cache regeneration itself never invokes a history rewrite.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One immutable options object carries cwd, stdin, timeout and authorized identity facts. | `GitRunnerOptions` | mcp/src/agents_remember/kernel/git_command.py:116-129 |
-| Ambient repository selectors are removed before the actual Git invocation. | `git_environment`; `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:56-65; mcp/src/agents_remember/kernel/git_command.py:141-147 |
-| The one Git runner preserves stdin, timeout and surrogate-safe command results. | `run_git`; `GitRunnerOptions` | mcp/src/agents_remember/kernel/git_command.py:116-129; mcp/src/agents_remember/kernel/git_command.py:150-214 |
-| The census wrapper selects the metadata timeout and preserves typed failures. | `_run_git` | mcp/src/agents_remember/kernel/route_index_census.py:193-213 |
-| The census separately interprets NUL-delimited output. | `_nul_records` | mcp/src/agents_remember/kernel/route_index_census.py:225-231 |
-| Carryover delegates input-bearing calls to this runner through GitRunnerOptions. | `require_git` | mcp/src/agents_remember/memory/carryover.py:115-123 |
-| Patch-id calculation supplies diff bytes through the shared input option. | `patch_id` | mcp/src/agents_remember/memory/carryover.py:171-182 |
-| Explicit memory-history rewriting preserves original author/committer identities and timestamps. | `_identity` | mcp/src/agents_remember/kernel/memory_backfill.py:821-834 |
-| The code-profile sandbox supplies a separate clone working directory and staged input bytes. | `_prepare_sandbox` | mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py:344-392 |
-| Memory index/flag checks omit only root memory.md; code keeps the complete checks. | `_require_preparation_index`; `_existing_preparation_entries` | mcp/src/agents_remember/kernel/git_command.py:462-499; mcp/src/agents_remember/kernel/git_command.py:540-558 |
-| Raw HEAD/tree checks precede projected content proof. | `_require_existing_preparation`; `content_tree` | mcp/src/agents_remember/kernel/git_command.py:523-537; mcp/src/agents_remember/kernel/git_command.py:544-544 |
-| The required memory certificate subject is compared against raw HEAD with only cache removed. | `_existing_preparation_entries`; `_observe_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:540-558; mcp/src/agents_remember/kernel/git_command.py:760-792 |
-| Existing output is revalidated around reading exact raw commit bytes. | `inspect_existing_git_preparation`; `read_git_commit_bytes` | mcp/src/agents_remember/kernel/git_command.py:326-329; mcp/src/agents_remember/kernel/git_command.py:561-570 |
-| Context branch reads use the shared runner and its metadata timeout. | `git_branch` | mcp/src/agents_remember/kernel/coordination_context/cross_repo.py:25-37 |
-| Coverage support is a typed wrapper around the same production Git runner. | `_git`; `run_git` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:80-90; mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:93-100 |
-| Remote cleanup selects the bounded remote timeout rather than creating a second runner. | `_remote_git` | mcp/src/agents_remember/worktrees/modules/cleanup.py:320-335 |
-| Raw-output runs encode their stdin text, so a bytes-mode batch command can take input. | `_run_git` | mcp/src/agents_remember/kernel/git_command.py:286-306 |
-| A three-way line merge of three files' exact bytes that writes nothing and returns the conflict count; a Git failure raises. | `merge_file_bytes` | mcp/src/agents_remember/kernel/git_command.py:378-406 |
-| Many blobs are read as exact bytes through one batch call; a missing or non-blob object raises. | `read_git_blobs_bytes` | mcp/src/agents_remember/kernel/git_command.py:338-375 |
-| The knowledge validator reads a memory tree's knowledge files through the batch reader. | `knowledge_tree_from_git` | mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:182-195 |
-| The module declares a separate 1800-second bulk-network timeout. | `GIT_BULK_REMOTE_TIMEOUT_SECONDS` | mcp/src/agents_remember/kernel/git_command.py:96-96 |
+- One immutable options object carries cwd, stdin, timeout and authorized identity facts. [1]
+- Ambient repository selectors are removed before the actual Git invocation. [2]
+- The one Git runner preserves stdin, timeout and surrogate-safe command results. [3]
+- The census wrapper selects the metadata timeout and preserves typed failures. [4]
+- The census separately interprets NUL-delimited output. [5]
+- Carryover delegates input-bearing calls to this runner through GitRunnerOptions. [6]
+- Patch-id calculation supplies diff bytes through the shared input option. [7]
+- Explicit memory-history rewriting preserves original author/committer identities and timestamps. [8]
+- The code-profile sandbox supplies a separate clone working directory and staged input bytes. [9]
+- Memory index/flag checks omit only root memory.md; code keeps the complete checks. [10]
+- Raw HEAD/tree checks precede projected content proof. [11]
+- The required memory certificate subject is compared against raw HEAD with only cache removed. [12]
+- Existing output is revalidated around reading exact raw commit bytes. [13]
+- Context branch reads use the shared runner and its metadata timeout. [14]
+- Coverage support is a typed wrapper around the same production Git runner. [15]
+- Remote cleanup selects the bounded remote timeout rather than creating a second runner. [16]
+- Raw-output runs encode their stdin text, so a bytes-mode batch command can take input. [17]
+- A three-way line merge of three files' exact bytes that writes nothing and returns the conflict count; a Git failure raises. [18]
+- Many blobs are read as exact bytes through one batch call; a missing or non-blob object raises. [19]
+- The knowledge validator reads a memory tree's knowledge files through the batch reader. [20]
+- The module declares a separate 1800-second bulk-network timeout. [21]
 
-## Cross-Repo References
+### Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | — | — |
+No distinct cross-repository evidence source is configured for this file.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -176,109 +162,14 @@ The current source seams include `IsolatedGitState`, `git_environment`, `run_git
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Isolated execution state keeps index/object/environment redirection explicit. | `IsolatedGitState`; `run_git_with_isolated_index_and_objects` | mcp/src/agents_remember/kernel/git_command.py:132-138; mcp/src/agents_remember/kernel/git_command.py:235-258 |
-| The environment scrub remains the shared command boundary. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:141-147 |
-| All commands continue through the same runner. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:150-214 |
+- Isolated execution state keeps index/object/environment redirection explicit. [22]
+- The environment scrub remains the shared command boundary. [23]
+- All commands continue through the same runner. [24]
 
 ## L34 Current Implementation
 
 Binary configuration, commit, blob and tree readers preserve exact bytes. Private preparation uses the named sealed capability and journal-bound create/materialize/commit plan. Closeout publication performs an exact expected-old update-ref once, retains command evidence, and reopens physical/ref state; already-new and existing observations do not repeat the write. The memory-only cache projection does not relax raw object/parent proof or the sole Git-spawn/environment boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The publication observation rejects cache-bearing new memory output and rechecks exact refs. | `_observe_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:760-792 |
-| Admission creates only the caller-authorized publication capability. | `admit_git_closeout_publication` | mcp/src/agents_remember/kernel/git_command.py:795-805 |
-| The actual CAS is issued once and both observations/command evidence are retained. | `publish_git_closeout_ref` | mcp/src/agents_remember/kernel/git_command.py:832-855 |
-
-## Update History
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Documented `merge_file_bytes`, the new raw `git merge-file -p` helper that the MIK-R24 crossing sync uses for Markdown: a Logic paragraph and a row. The existing rows below the insertion were re-pointed by the installed fixer and the exact line map, with no wording change.
-- 2026-09-29T12:04:37+00:00: Generated citation repair: `knowledge_tree_from_git` repointed to mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py:182-195. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T12:04:37+00:00: Generated citation repair: `admit_git_closeout_publication` repointed to mcp/src/agents_remember/kernel/git_command.py:795-805. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T12:04:37+00:00: Generated citation repair: `publish_git_closeout_ref` repointed to mcp/src/agents_remember/kernel/git_command.py:832-855. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): documented the new `read_git_blobs_bytes` batch reader (exact bytes, one `cat-file --batch`, refusal of a missing or non-blob object) and the UTF-8 encoding of stdin for raw-output runs of `_run_git`, both added for the MIK-R22 knowledge validator. Added three reference rows. Rows below the insertion were re-measured mechanically for the +41-line shift; their claims did not change. The verification stamp is unchanged; closeout owns it.
-- 2026-09-29T05:01:01+00:00: Generated citation repair: `_observe_closeout_publication` repointed to mcp/src/agents_remember/kernel/git_command.py:729-761. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T05:01:01+00:00: Generated citation repair: `admit_git_closeout_publication` repointed to mcp/src/agents_remember/kernel/git_command.py:764-774. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T05:01:01+00:00: Generated citation repair: `publish_git_closeout_ref` repointed to mcp/src/agents_remember/kernel/git_command.py:801-824. No content impact: mechanical anchor-range projection bound to citation source snapshot 4f49c430ac3ddcb93815034b5cf7de82be47b24afeddd7bfc8ef2ba769b871ac; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Reconciled the typed existing-output binding, independent raw/certified tree proof, memory-only index/flag/physical projection, strict code domain, and cache-free new publication; re-derived current runner/caller citations. Source SHA-256 `079e6786b56a5fdfc877d1be6878339117d22ce1c87b1e3377d00cd29d5a3a3d`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
-  range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 3 further
-  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`). No claim wording was changed to fit an anchor; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-14T18:20+02:00 — 260913-LCA-L3 follow-up (same uncommitted change set on
-  `ar/260913-lca-l3-ar`, base `7317108b`): No content impact on this module — the reviewed fix to the
-  memory-history backfill changed only `kernel/memory_backfill.py`, `cli/memory_backfill.py`, its test
-  module and the cards that describe them. Two citation anchors in this card point into that module
-  and both moved when it grew from 686 to 1024 lines, so they were re-derived: `_identity` 510-523 →
-  821-834 and `_IDENTITY_FIELDS` 82 → 106. Verification metadata remains closeout-owned; no acceptance
-  claim and no verification stamp advanced.
-
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base
-  `7317108b`): `run_git` no longer takes `work_dir`/`input_text`/`timeout` as keyword arguments. It
-  takes one optional `GitRunnerOptions` object (`work_dir`, `input_text`, `timeout`, `identity`), so
-  the runner's signature is back to the two facts every call shares and a new way to aim a command is
-  a field rather than a parameter. The new capability is `identity`: `git commit-tree` reads the
-  author, the committer and both timestamps from `GIT_AUTHOR_*`/`GIT_COMMITTER_*` and from nowhere
-  else, so the memory-history rewrite that must reproduce an existing commit byte for byte had no
-  argv spelling for it. It is additive and cannot reintroduce a selector — a name in
-  `GIT_REPOSITORY_SELECTOR_ENV` raises `ValueError` — and two invariants were added for that.
-  `Logic` was rewritten around the object, `Conventions` gained the one-object rule, and every
-  citation in this card was re-derived against the grown file: `run_git` 85-151 → 149-213,
-  `GitCommandPlan` 99-104 → 98-104, `_GitRun` 108-112 → 107-112, the CLIVE-L2 seam row 85-91 /
-  94-100 / 103-154 → 131-137 / 140-146 / 149-213, the L34 rows 646-656 → 675-685, 659-669 → 688-698,
-  672-680 → 701-709 and 683-706 → 712-735, the census row 91-91 / 222-222 → `_run_git` 193-213 and
-  `_nul_records` 225-231, and the carryover row 113-117 / 181-188 → 114-122 / 186-197. The
-  `%ai`/`%ci`-rather-than-`%aI` date rule the identity replay depends on is recorded on the
-  backfill module's card. Verification metadata remains closeout-owned; no acceptance claim and no
-  verification stamp advanced.
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `GIT_REPOSITORY_SELECTOR_ENV` repointed to mcp/src/agents_remember/kernel/git_command.py:55-64. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `GIT_LOCAL_TIMEOUT_SECONDS`; `GIT_REMOTE_TIMEOUT_SECONDS`; `GIT_METADATA_TIMEOUT_SECONDS` repointed to mcp/src/agents_remember/kernel/git_command.py:92-92; mcp/src/agents_remember/kernel/git_command.py:93-93; mcp/src/agents_remember/kernel/git_command.py:94-94. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-### 2026-09-06T17:13:06+00:00 — L34 implementation memory
-
-Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
-
-- 2026-08-31T20:30+02:00 — No content impact: corrected the source-file verification citation
-  from the retired `mcp/tests/code_quality/` location to the current
-  `mcp/test_support/agents_remember_test_support/code_quality/single_owner.py` owner. Git runner
-  behavior and boundaries are unchanged.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 4 repository-internal reference rows and normalized 5 prose citation references for the single Git runner boundary; final scoped result 0 (checker-clean).
-
-- 2026-07-31T20:50+02:00 — 260731-EFA-L3 curator: this file became the single owner, so the body
-  was rewritten. Corrected the false "enforces a five-second timeout" claim: `run_git` now takes
-  `timeout` and defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`, with `GIT_REMOTE_TIMEOUT_SECONDS =
-  120` and `GIT_METADATA_TIMEOUT_SECONDS = 30` as the other two classes cit:(["GIT_REMOTE_TIMEOUT_SECONDS = 120"], mcp/src/agents_remember/kernel/git_command.py:93-93), and callers pick
-  one. Corrected the unconditional `stdin=DEVNULL` claim: stdin is `DEVNULL` only when the new
-  `input_text` keyword is `None` cit:([`run_git`], mcp/src/agents_remember/kernel/git_command.py:149-213). Recorded the consolidation (six drifted `_run_git`
-  copies removed, this the only module that may spawn git) in Purpose and as a new invariant.
-  Repaired 2 citations into files this leaf changed: the census row's whole-file `L1-L226` became
-  `L189-L205; L217-L223` (`_run_git` + `_nul_records`), and the carryover row's unanchored "Git
-  runner" became `L92-L96; L200-L208` — that row's claim of a "separate input-bearing Git adapter"
-  was false, since carryover's local `run_git` was deleted and `require_git`/`patch_id` now call
-  this one. Added a row for the new `mcp/tests/test_git_command.py`. The `conftest.py` /
-  `test_route_index.py` ranges were left alone: this leaf did not touch either file. The L2 entry
-  below cites `git_command.py L9-L18` for the selector tuple; that was true at its commit and is
-  left as the historical record — the tuple now sits at L24-L33.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation. The row
-  carries two source paths, and only its second range moved: `conftest.py` L34-L39 still holds the
-  `GIT_REPOSITORY_SELECTOR_ENV` import and the `os.environ.pop` scrub loop, while the coverage test
-  `test_ambient_git_repository_selectors_cannot_redirect_the_census` shifted to `test_route_index.py`
-  L592-L640. Re-verified that its `selectors` dict still names all eight tuple entries from
-  `git_command.py` L9-L18.
-
-- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: added the authoritative selector scrub and
-  surrogate-preserving output boundary used by deterministic route-index census and carryover.
-- 2026-05-31T12:30+02:00 — Created during the 1.0.0 review remediation.
+- The publication observation rejects cache-bearing new memory output and rechecks exact refs. [25]
+- Admission creates only the caller-authorized publication capability. [26]
+- The actual CAS is issued once and both observations/command evidence are retained. [27]

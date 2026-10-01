@@ -1,0 +1,255 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/candidate_receipt.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The admission-derived field set compared when a candidate is reopened.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6afe9a77ee0a7eea7186504dad2c51fe4af0f74",
+            "content": "sha256:434c071aea27db6596953bb57c65f2262b46daff0139ef4eea96da2110775c9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BINDING_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The lifecycle caller that reads both candidate inputs before anything else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f64e9907eb5681de29b543f7a7d0cc02f4c6b8f5",
+            "content": "sha256:2c0e19b8925c47bc96000bd47ff945c6b59b8b0fd703e5b9d5dfcbb9e34c0ae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_inputs"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The schema identity the fingerprint comparison is made against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_schema"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43bd9c039e841a1baabc3550381fe9198ff20800",
+            "content": "sha256:efe856e538ed74beaca490bc8bc858b7c863000d43a41b2ecfc7a81605c925b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeSchemaIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The node that proves a candidate the admission cannot verify is refused with its bytes intact.\n\nAnchor: \"test_a_candidate_the_admission_cannot_verify_is_refused_with_its_bytes_intact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a29c4d4a1e514199bdd5b57741665be165c6dfea",
+            "content": "sha256:0b1898c3e8e3364f2593b3771766ff7c3a1bdde06a72aedee48d52b9c6d6df51",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/tests/test_knowledge_candidate_workspace.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical, atomic receipt write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6afe9a77ee0a7eea7186504dad2c51fe4af0f74",
+            "content": "sha256:a93c95fec0d8ffa9d75ed4d878cbb4146a15b02a9a8a555104eb7bdb6d102457",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_candidate_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The validating read that turns every failure into a defect naming the path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6afe9a77ee0a7eea7186504dad2c51fe4af0f74",
+            "content": "sha256:6b5189598499ba537c38070fc64c971ccdf28085ae54e01da71c9f5e04e98181",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_candidate_receipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one adapter that derives a receipt from an admitted destination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6afe9a77ee0a7eea7186504dad2c51fe4af0f74",
+            "content": "sha256:c7f0707110bc12e00bfe3e8838f75dc83149261c0f5cc32b3ce23f9500495eeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_receipt_for_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The three-comparison binding check and its refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6afe9a77ee0a7eea7186504dad2c51fe4af0f74",
+            "content": "sha256:daae82bf81077da85452378e487430b488f4769ddb71e2e8e9d7a5567feee533",
+            "locator": {
+              "kind": "symbol",
+              "name": "receipt_binding_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The differing-field rendering used in a refusal's facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6afe9a77ee0a7eea7186504dad2c51fe4af0f74",
+            "content": "sha256:cd5368d69611706baf33bead56e0c6ba5b06b8c2725b1a65c66302e532221dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The sealed receipt model and its read-time seal validator.\n\nAnchor: `receipt_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:1b325bf19a812c589bbba0f6254d0253ea389717794a2b2e762efaef82cc4ba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateReceipt"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:cb181d2e9415a1ae4e35495481377b60164967baa6097d7f2b8f12d5457f5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_candidate_receipt"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:6e49f7f9c10a71db9906fb5d5ffffd9e2abd1b2128a8738fc830da430090e490",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The canonical encoder and the atomic publisher this module writes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a939ca21bb16d7edca85c2bc76c955a42e67ad06",
+            "content": "sha256:2070a5a21194d1e0f587c26210c2ec9a7d094bb31f1d3279b93d2120492630ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_json_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/canonical_json.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The refusal this module returns for a receipt that is not this admission's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:05fc1becd457e50d63d06cc557fe119d01ecc56590c3b7d1d1a8765b6a60f220",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_binding_changed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

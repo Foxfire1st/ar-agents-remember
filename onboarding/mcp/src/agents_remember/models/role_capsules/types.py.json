@@ -1,0 +1,273 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/types.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen role and operation vocabulary these types are declared against.\n\nAnchor: \"type CapsuleRole = Literal[\"; \"type CapsuleOperation = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_OPERATIONS"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:2dfaabccc543327897f95f4001037ddee1dbdfe64330cf46d55b37f5e704dfa2",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:0bf274271690841733f58b8bc693f116df6e639a82269d456b9aa3544cf012cd",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stable refusal codes a binding or selection defect resolves to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:fcfcd052a7e3b10ed2c740f5f529182d7b3148edf830db0c4174057719602d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_STATUSES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The pure compiler that consumes these shapes and produces the sealed result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_role_capsule"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:f09b35c6cbd7392f04838088faa7a7af769fe3fb9323c7689a54b6cd58a8fff7",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The diagnostic half of the contract, kept structurally out of the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:dd4e8ea1df9e867df4e992ad0fb9fba1faa21b5f2623c2c61565b020c700c71b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleManifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:4323757e57b607bcb67c2028cb43e4aec1936d39514eb151199ca10934ccdf15",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceRecord"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:35f5b5944b710921f526de2cc82b9b592ef6a79f7dec65f799803c99261981d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleRejection"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:ff42ad444ce99850ff2626417bb41b6b3a6c2403b589205acb8fdf2ab2063337",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7b7e1a41f02570aa217c4f3a2a0d5348bd0edbe",
+            "content": "sha256:9b7778c0fe8a70d92279b5209006726d663350b480dcd9d7ea687c463c59487f",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The application boundary that does the I/O this module refuses to do.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:915fd89222d1328505df921b788cb9559a7190b597c8b7549b071d961fa0e4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_capsule_sources"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:5edb4b05597b3d302d72e2fdad2467928c20c0a2df9fedc8e6c263d337c84c15",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Compound identity, digest and order properties are pinned by executable cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_input_compiles_to_identical_ordered_content_and_digest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:396f24d73d20453da02daf14bb34f184ac316c06e029e9b9649b3a7cd5b40e07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reordering_the_composed_blocks_changes_the_semantic_digest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:af0689e280645346bf39bdb24a61d66c358135d1dc894f09389c80c72d18f1fe",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 377
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:2f4dfead8ec9ce69279fc95f0315fe1d3a38aa543f12346e2aae63e65ab0015e",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 422
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

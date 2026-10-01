@@ -1,0 +1,138 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/pager.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: indivisible rows, the header reference, the exact walk.\n\nAnchor: \"Cutting one ordered selection into pages\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
+            "content": "sha256:31f3169ddb62ad69e4066a25a0b9cdf20964ec4a1c91f04c6a25864d1b0aa64f",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The flag an oversized single-row page carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
+            "content": "sha256:19c161b0258f5bd5919f9cd4ded8f119d0a5c160c7dc147388585723a31afed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "OVERSIZED_ROW"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The row, the cut and the binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
+            "content": "sha256:ece26bbe3dc2d39dc0a5073d0f38cb7375a951e31aada67b962de4ee231052d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
+            "content": "sha256:b35dd60dbc8bd881b2817a16ebe3bbfec7c7f4785ec16b5bad826c3cc01e6467",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageCut"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
+            "content": "sha256:b06ea5f67589ba9ffa1623ba76ea6357c8281906741bbbb87b0e0e55e43aa55c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only a page starting inside a group continues a family.\n\nAnchor: `header_reference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
+            "content": "sha256:009f165a7f6fd763c4a397f9a4ca8427d06a17ab34d9a9d8c15aff3c82c740c5",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The cut: estimate, verify, shorten; blocked versus oversized.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
+            "content": "sha256:daa56fe88a6360df3fd1cd2cb89b8928546f2266430c875b5d7f9d6778fb638e",
+            "locator": {
+              "kind": "symbol",
+              "name": "cut_page"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
+            "content": "sha256:07271a984a98152491ee8476bef5c837dc930fb93151b0a1946cbbe33a709ea6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_estimated_end"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The page facts every bounded response states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
+            "content": "sha256:b6ce691ff26737713add28021079800055ef5f1134ca3d2004779c996d26b0c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "page_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

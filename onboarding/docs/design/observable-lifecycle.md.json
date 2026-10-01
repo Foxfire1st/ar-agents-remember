@@ -1,0 +1,85 @@
+{
+  "path": "docs/design/observable-lifecycle.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retention policy implementation follows this design split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:8db5fd84f410da3e0887ba4a35f5e81880675deacf962f8d57d29593d31e3f38",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_keep_ids"
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:c6579af0e3c55d77ac612845e3d0b3f1360b53d99e11d2ca04057ed8e36fbd5a",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Projection readers apply interaction TTL and pickup feedback.\n\nAnchor: \"def read_agent_pickups(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:a74bcce477f5d5d2f9694ff30ac64ad5f009fdea7807a30bc56d13027ccb790c",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "MCP `lifecycle_gate` exposes the unified public gate junction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:a592df7925994e3bfe372413749036bac02d53c3594a300e18fe163cfd133596",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_gate_tool"
+            },
+            "path": "mcp/src/agents_remember/application/gate_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa2aea8748eed3ca82c4d504b773da9b12cad891",
+            "content": "sha256:a13c141c258e2a6e943a3fe5851b4e3903a4deb917ce801b44bd3bd924019edd",
+            "locator": {
+              "end": 454,
+              "kind": "line_range",
+              "start": 384
+            },
+            "path": "mcp/src/agents_remember/application/gate_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

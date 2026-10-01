@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Review source-content reads (/api/review/intent/source-content) of one leaf's review comparison, for a path its requested measured tree pair does not list as changed.",
+  "conditions": [
+    "Every bound snapshot was read and none records a realization at the exact path.",
+    "The refusal is source_content_unresolved and names what each snapshot answered."
+  ],
+  "exclusions": [
+    "A link that could not be determined because bound knowledge was unreadable (refused as undetermined instead).",
+    "Unmeasured pairs, which refuse through the leaf change-set bound."
+  ],
+  "id": "INV-2TQGXFAX",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "363de0c7-4c54-4bda-b8e9-3672b336b769",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "An unchanged path that no realization recorded in the comparison's knowledge links is refused with source_content_unresolved naming what each snapshot answered, and no content is read for it.",
+  "status": "proposed",
+  "supersedes": []
+}

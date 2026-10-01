@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/library/helper_host.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/library/helper_host.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `b252c42cca200933d5c9c36e26de47a526a569ce`|
-| lastVerifiedCommitDate |  2026-08-07T23:58:52+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Native conversation library overview](overview.md)
@@ -62,43 +52,25 @@ anything else to `LibraryStoreError`; raw helper stderr is diagnostic-only and n
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal helper host.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The helper package owns the JSONL protocol this host pairs with; the installed suite drives the
 real helper end-to-end including its malformed-request refusals.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The helper package defines a versioned JSONL serve loop, typed failure vocabulary, and paging primitives. | `PROTOCOL_VERSION`; `HelperFailure`; `serveJsonLines`; `pageByOffset`; `windowByOrdinal` | mcp/native_helpers/conversation_library/src/protocol.ts:13-13; mcp/native_helpers/conversation_library/src/protocol.ts:86-92; mcp/native_helpers/conversation_library/src/protocol.ts:114-147; mcp/native_helpers/conversation_library/src/protocol.ts:244-253; mcp/native_helpers/conversation_library/src/protocol.ts:269-286 |
-| Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the helper handshake plus malformed-request rejection on the real process seam. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
+- The helper package defines a versioned JSONL serve loop, typed failure vocabulary, and paging primitives. [1]
+Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the helper handshake plus malformed-request rejection on the real process seam. These removed artifacts provide no current execution or capability-enablement proof.
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local helper host.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: anchored the native helper protocol, installed
-  handshake tests, and foundation module-resolution guard to exact symbols; narrowed the protocol row
-  to the cited helper-package definitions.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
-  2026-07-21, R4). Corrected the now-false "handshake must report ready against the locked version
-  constants or the call raises" doctrine: the handshake reports observed versions as informational
-  evidence, `_expect_handshake` validates only the status shape, there is no version-comparison
-  raise, and the list/read operation result is the only gate. Uncommitted; closeout re-stamps.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the locked helper host sidecar.
-  Verification is blank until closeout commits and stamps the new source.
+No meaningful cross-repo references found.

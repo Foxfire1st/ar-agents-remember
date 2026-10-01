@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_index.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The command line and the exit statuses.\n\nAnchor: \"Exit status: 0 for a complete index\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f57a18d7b9c660aa16e15076b98e96ebacf9a79",
+            "content": "sha256:0907370cdd8b80009b632fae50228a3a69a51898b09564a5f886b8d8a0f78ff1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f57a18d7b9c660aa16e15076b98e96ebacf9a79",
+            "content": "sha256:6c326abfb8ca490077e1c2c925d28385e2740164b5eb1d4adc81b32ff6795088",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The build or reuse, the JSON report and the exit status by state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f57a18d7b9c660aa16e15076b98e96ebacf9a79",
+            "content": "sha256:d1011d9fef67ab244f9a31d25895681b7aa4e54d42b5a76b2ac54468c52ee265",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Registration in the umbrella.\n\nAnchor: \"knowledge-index\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:118a6e36b786cc331a9e2e711f2ed5f0733731d86a871ac285ba808923c2ab0a",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The command reports the index and exits by state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:10fe873bfec2191113b61650c7095fb6c6ce515a7953b4c5f10346ee4db013e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_command_reports_the_index_and_exits_by_state"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/query.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CGC status checks are provided by the installation module.\n\nAnchor: \"def cgc_status\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
+            "content": "sha256:13e365fada220ea29de8f0d5e4c4b8034e7f7a774fd6a406d51e6ee801b1f043",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 317
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`cgc_backend_status` (backend-only readiness) is provided by the backend module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
+            "content": "sha256:c79a6440ba09fd80c6a945a25a5f568868751f3bc4a672ae82c3996affbc0f33",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_backend_status"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Docker command construction is provided by the runner module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:7f4261766edddd732b442d4a9f61ee8147d962c830365ca195f6d069e1ab3c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_runner_image_build"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

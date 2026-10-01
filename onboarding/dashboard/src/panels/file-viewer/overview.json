@@ -1,0 +1,212 @@
+{
+  "path": "dashboard/src/panels/file-viewer",
+  "references": {
+    "1": {
+      "note": "The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:05f0296b0096a62c5af8ff3e1496d6b28788a40a01ae4f4b422a83ae22b58d9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMarkedPane"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bounded, passive hold released by the reader's pointer, key or wheel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:0ed560a08aa99f75b54c3d963d7d128d2e20170d7ad695fe3d41f60782ea7b53",
+            "locator": {
+              "kind": "symbol",
+              "name": "HOLD_RELEASES"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "content": "sha256:64213601425704d8e499826d02012d9afae18e0c1dab113a7b49670984b4efd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "holdRevealed"
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The code pane's optional marks.\n\nAnchor: \"marks?: PaneMarks;\"; \"drawn({ after: { view, first: firstLine } });\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:79ea6287fa0d1dd9d87cd13184665b4cd20baf6b8564441d31a1668f91714db7",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The excerpt gutter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b961de3b6888c054c469b9d0c25747c41a0b8cc4",
+            "content": "sha256:0b4f1e982725f2acda23ff71ef826be806b6751c2f48b3f384ae29907a989a2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "numberedFrom"
+            },
+            "path": "dashboard/src/panels/file-viewer/lineNumbering.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The code pane's optional first line and content-sized host.\n\nAnchor: \"numberedFrom(firstLine),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:c9e32361cf60eb0b551c53b41d01e7c593dded2d497861e48c62f9cfc5c6a5a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "fitHost"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:f5ecba83b753dfb9318732d0817adf55b044dc333a1e8bd0919ee19f03ed21a6",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The L1 read-only files API this view consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
+            "content": "sha256:da51ca697097554c9248eec35802c35d09b7b454412d3388dd88ff002b3cbef2",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_files_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The same-origin client wrapping that API.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchRepos"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shell that registers + keeps this view mounted.\n\nAnchor: \"const filesLayer = chatsLayer;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:0548ab7c1c04671f6ac0b811aae35096da47e9cf3a373c98cd5675b53dc20299",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:7405d2adab5e180e97cabb86568e6a048f8cbb50d1ba9f97dc9d73bffe91b603",
+            "locator": {
+              "end": 782,
+              "kind": "line_range",
+              "start": 780
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:0b026a57754a1df551ff3f0ad05a198c53ec076fa6772025d7ff6bbe09ab3e36",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The markdown renderer the sidecar pane reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
+            "content": "sha256:46e6b914756bebae0699a0997ff3d22903e92a1910c7c2228fe012b30e5116d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "Markdown"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

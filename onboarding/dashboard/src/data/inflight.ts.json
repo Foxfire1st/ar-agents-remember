@@ -1,0 +1,70 @@
+{
+  "path": "dashboard/src/data/inflight.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The map shares a pending promise and releases it by identity on settle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94ca179c937d5841948b4d9c4f937592f60e38c7",
+            "content": "sha256:a474625df3d164e3b0fb0413f4d63eab79fe8ac96d18da4808748f21e63be9b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "shareInflight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Repository and terminal catalogs use the helper for boot contention.\n\nAnchor: \"export const fetchRepos = (base\"; \"export async function fetchTerminalSessionsOrNull(base\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:d1f7df8d8928f7d0c3a1ed56416d33b9d84c80bf3aad49fc980f4dfb806a7eea",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:6a934ac042f7c5a09112bb9b00249b7bd683732ceac20c4308662e640e5ca6ad",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 413
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "This is repository-local browser state coordination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94ca179c937d5841948b4d9c4f937592f60e38c7",
+            "content": "sha256:a474625df3d164e3b0fb0413f4d63eab79fe8ac96d18da4808748f21e63be9b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "shareInflight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,161 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_control_adapter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Normalized model/effort catalogs, ACP-style options, owned launch knobs, exact acceptance values, and set evidence are declared separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:b5d1b5a35649e216cc18dd6b62cc052bd7087882084eb5b48d342a8d6db04239",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitySnapshot"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:519bce3f63db0423d06f6356e66d6beafb2c2a58a1a8364a8dad3d7c7fda6b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchKnobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:db5c41eed97b2920a8aec1f6f50957d00db0fb306c315e268c3a4f24058a8fec",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetResult"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:a0f56547979bb8af72ab42ca6cdb487ed94511cf4202e058883cd697697b320b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare_controlled_launch"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bridge validates handshake identity/version/capabilities and routes both setters through its ordered queue.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:caa1472d16063f2c59d7ada99fc6cebb016cf7b5dbfb0b0112e908ff78e19596",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessControlBridge"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:baaa9b7fecb1662c1f8135dc4364c9452e8d4459ec0e2966599128e97b87ffa5",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The bridge's interrupt dispatch detects `InterruptCapableAdapter` structurally, refuses unsupported harnesses typed naming the adapter, and rejects an adapter-minted epoch.\n\nAnchor: \"InterruptCapableAdapter):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:6ba2c81a72b994fcc7553c05024bd8d703aef2819a129acadc198b3380ea6d8b",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The authority routes asset-carrying submissions to `submit_with_assets` and fails non-capable adapters closed with an unsupported receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:12243378b59c029db5ec8319b9d45c191f17c5be22f3a37f1e0a153d6c9d5738",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invoke_adapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:3d6564438d9d21615cf6c5fbd41e7d5bf7da37e2ebc338810248fd63c24946b3",
+            "locator": {
+              "end": 757,
+              "kind": "line_range",
+              "start": 729
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Codex and Pi implement both sub-protocols: exact-active-turn/expected-operation interrupt writes with replay-once, and verified asset construction.\n\nAnchor: \"self._last_interrupt: tuple[tuple[str\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "107323ca12efbef4744dffaaab55d0939866fa22",
+            "content": "sha256:0b127b03f070372c83d418ec11298f80597dd101146547f6bb9f2f6da388f989",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

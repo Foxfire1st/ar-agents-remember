@@ -1,0 +1,23 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/random_order.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Collection order uses a local seeded RNG.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e69cd7c5bdb5263e61e045e61fd8374abd2cc8cf",
+            "content": "sha256:5cb81759cd80d26f8e077fe007a734b989b9d5bce470f824ce45a8bcbe723821",
+            "locator": {
+              "kind": "symbol",
+              "name": "shuffle_items"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

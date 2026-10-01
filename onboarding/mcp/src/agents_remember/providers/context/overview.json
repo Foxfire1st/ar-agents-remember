@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/providers/context",
+  "references": {
+    "1": {
+      "note": "Public context exports are collected by the package facade.\n\nAnchor: \"starred submodules\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591ec2e0d4994c995c673515adb4e0b9e14be500",
+            "content": "sha256:3b4ef51a63ffd15e96854fc3914020803149e12a113cb9879991fd7447ab1997",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/providers/context/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC context behavior is grouped under the CGC provider package.\n\nAnchor: `## Layout Construction Is Now Four Named Things`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/cgc/context/overview.md:28-50"
+        }
+      ]
+    },
+    "3": {
+      "note": "GrepAI context behavior is grouped under the GrepAI provider package.\n\nAnchor: `## Layout Construction Is Now Three Named Things`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/grepai/context/overview.md:21-44"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

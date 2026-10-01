@@ -1,0 +1,170 @@
+{
+  "path": "mcp/tests/test_lifecycle_finalize.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Finalized updates leaf and immediate parent row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:f5f51ae08fc4f7c1f300ce22849942624bb31b68ba61d50f9f7bfef7fddcece9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalized_updates_leaf_and_immediate_parent_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Second document publish failure rolls back leaf and parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:baa3f6c49f2197d2139eb647af1d19328efe0325fbd703329706fc8445b49d2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_second_document_publish_failure_rolls_back_leaf_and_parent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared fixtures: the landed contract, the folder master and leaf pair, and the byte capture.\n\nAnchor: \"class _FinalizeFixtures(unittest.TestCase):\"; \"def _sources(*paths: Path) -> dict[Path, bytes]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:bf8e7035ebbc6238c1bed845719e9e335d6745722bfe75df19b18e09dfeb8d07",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:f302d3a2cc3e327aa483a2f6464816ef5f03af0bc36c6e227e2571661851bf71",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A named master the store would write elsewhere is refused before any write.\n\nAnchor: \"def test_a_named_master_the_store_would_write_elsewhere_is_refused(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:469383673449302f340019d90581d48c397dbfc10603b89df6f94909f6d9d7bb",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The folder master's row completes under the demotion rule.\n\nAnchor: \"def test_the_listing_folder_master_row_completes_under_the_demotion_rule(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:1bcb8829cbc1476ff8e62b713eee62a21fb5fc887333fb4d626f5f1b96689a60",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A dry run reports the folder master's row and accepts its assertion.\n\nAnchor: \"def test_a_dry_run_reports_the_folder_master_row_and_accepts_its_assertion(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:8713ba0ee2d987a2be1428552cfc0cf44214cf3a4f3e84e6246884a9a3214fa5",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Without a listing folder master the leaf finalizes standalone.\n\nAnchor: \"def test_without_a_listing_folder_master_the_leaf_finalizes_standalone(self) -> None:\"; \"for case in (\\\"no-task-json\\\", \\\"no-row\\\", \\\"leaf-is-the-light-task-json\\\"):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:06dcd1564f87968496dfa27e879e80103d21f2d5e52b95842af363c324aeae26",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 306
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A folder master is refused exactly as a named master, before any write.\n\nAnchor: \"def test_a_folder_master_is_refused_exactly_as_a_named_master(self) -> None:\"; \"\\\"asserted-master-without-row\\\": \\\"lists no row '14'; the leaf finalizes standalone\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:5314e77d86d4fc66111a4950a81d6b13b4517bac6b45a7c959ec9f418cfa06df",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A leaf the store would write elsewhere is refused before any write.\n\nAnchor: \"def test_a_leaf_the_store_would_write_elsewhere_is_refused_before_any_write(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
+            "content": "sha256:e2dacfd427e1c7850912255dd9c1ae867b2cfd60d529798b39d08116c9476e3d",
+            "locator": {
+              "end": 409,
+              "kind": "line_range",
+              "start": 379
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,85 @@
+{
+  "path": "dashboard/src/data/servedAges.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The server half: stable-form diff + the canonical volatile set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9d8ebbb21affe07f6d689a89624db06bcb2e3e",
+            "content": "sha256:567ab9b81cb0e6e60e55666a5387dcf304ec220fdf89a2cc25868f28af814f7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOLATILE_AGE_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/serving/delta.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The consuming merge (identity reuse + stamping on apply).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
+            "content": "sha256:926d6a6de6cec9af70b4ca36310f6f429f5a6c996284d53811f49b3bb4e27ef7",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeKeyed"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
+            "content": "sha256:fe507dd2804556189aba7c6e440a5fe9ac030f45525072c51c5f364db60ae175",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
+            "content": "sha256:e9c633ebc73de48d066399d876c832266cc82beb1eb5f3b7762cd9de31961566",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The display sites' shared import pattern (`servedAgeSeconds` + `useNowMs`): Hangar, AttentionQueue, MemoryMirror, LifecycleList.\n\nAnchor: \"import { servedAgeSeconds, useNowMs } from \\\"../data/servedAges\\\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75d0bc5bef063ceb365686deb77a70300f5bc67b",
+            "content": "sha256:30522fa138fa03363c399e87865abe2f7ef96d9ac36d92a5a4ead1fd836f7e28",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/panels/Hangar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

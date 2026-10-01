@@ -1,0 +1,171 @@
+{
+  "path": "mcp/src/agents_remember/application/curator_family_planning.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "82b5b858edd3cf29c4cbc0ed0cab52eaf9e41f2f",
+        "content": "sha256:7f209e281ef94494532deedf6d44dcb3086e7b8403839bd0abeaf3c6a32a9c83",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_commands"
+        }
+      },
+      "id": "RLZ-963SJH6Q",
+      "invariant": "INV-HXAH9APB",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Emits only family identity, family revision and membership-add commands, plus removals for explicit retirements. A retained sibling can therefore only be written as a new membership row from the successor family revision to its existing invariant revision; nothing here writes an invariant, revision, anchor or claim, and no predecessor membership is touched unless it is explicitly retired.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "82b5b858edd3cf29c4cbc0ed0cab52eaf9e41f2f",
+        "content": "sha256:c801c54c2b8dfcdd4c76a63426ddcc732420231e9447e631fa54ebcd5ea82b1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_declaration_digest"
+        }
+      },
+      "id": "RLZ-YNTYZW6E",
+      "invariant": "INV-2A00CD6G",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Digests a family declaration's authored content (family id, label, version, guarantee, predecessors) and, only when retention is nonempty, the retained member ids with their bases sorted by member id. Reordering the same set therefore keeps the digest, changing a member or basis changes it, and absent or empty retention adds nothing.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Read exact stored family and membership facts from the selected dataset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82b5b858edd3cf29c4cbc0ed0cab52eaf9e41f2f",
+            "content": "sha256:87c13f24b5fa74a7f70ed29778efd48d4ed0ed4fbaebaf74266a9b72cc669f48",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_stored_family_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Allocate or recover a declaration and validate its stored references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82b5b858edd3cf29c4cbc0ed0cab52eaf9e41f2f",
+            "content": "sha256:98672801dc92ddea064daaff9385290807d1b19c10ab581dbc16d76480d89ddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_declaration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retry digest includes nonempty retention IDs and bases in stable order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82b5b858edd3cf29c4cbc0ed0cab52eaf9e41f2f",
+            "content": "sha256:c801c54c2b8dfcdd4c76a63426ddcc732420231e9447e631fa54ebcd5ea82b1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declaration_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Retained memberships resolve exact predecessor and invariant endpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82b5b858edd3cf29c4cbc0ed0cab52eaf9e41f2f",
+            "content": "sha256:44376cf42e0632d08a0817af9ad7001416e3dee0c12d88c2c6c49422de021a77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_memberships"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Combine this entry’s own membership and retained sibling plans.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82b5b858edd3cf29c4cbc0ed0cab52eaf9e41f2f",
+            "content": "sha256:03707f60914800f7456b8ffd9e2f74b5b5b730610a2e7feac78ecaea684e60ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_entry_family"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Existing commands add only unstored family and membership rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82b5b858edd3cf29c4cbc0ed0cab52eaf9e41f2f",
+            "content": "sha256:7f209e281ef94494532deedf6d44dcb3086e7b8403839bd0abeaf3c6a32a9c83",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_commands"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A retirement uses the exact stored membership row and digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82b5b858edd3cf29c4cbc0ed0cab52eaf9e41f2f",
+            "content": "sha256:8e42a599471596018d065d0aa4c8048b3bbe7a9c925b020cc01542bcf22b17ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retirement_plans"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Public successor behavior is exercised across separate leaf scopes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3115dfb99b0db0106ee898a1a256b1945a7912",
+            "content": "sha256:5307cf3ee35af4661d0ba20446ce5a7975d812c7da0a089ac9000a4ed439ec5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_successor_retains_exact_siblings_and_publishes_across_leaf_scopes"
+            },
+            "path": "mcp/tests/test_curator_family_retention.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

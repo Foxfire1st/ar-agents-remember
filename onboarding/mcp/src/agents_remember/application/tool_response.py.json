@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/application/tool_response.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `_agent_notifier_banner` (lines 22-31) — Return the stale-supervisor banner without blocking a tool response..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:c53b403544d1af5605724d601825fc96eaf6ec314bd27da5a480f8a235019097",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_notifier_banner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `_attach_lifecycle_tail` (lines 34-44).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:b9a1f903280fdf70c544924c96f7717d7189f719708eac93720b3b059a8681be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_lifecycle_tail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `complete_tool_response` (lines 47-61) — Validate, enrich, count, and observe one application result..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:8c6ce6cb3afcda77d14da74501bc9317aec63207eaa83ff57e536393afd03d6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

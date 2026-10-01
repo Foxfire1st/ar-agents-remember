@@ -1,0 +1,147 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The plan binds one unit per incremental document/checker and the exact Gate 1-4 prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "741582f7cc277805102e93b9dfc504cf6ed8654b",
+            "content": "sha256:a26f18a42ef69e1699aa6487db0514e3469bbf8ea1f714bd0822e7b61182ad82",
+            "locator": {
+              "kind": "symbol",
+              "name": "AffectedClosurePlan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "741582f7cc277805102e93b9dfc504cf6ed8654b",
+            "content": "sha256:59e0da859705b92dc183647e56e4900f0652557e5d712d713ba9b48802e5b38d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AffectedUnitPlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Results and reuse are terminal, partitioned, and aggregate blocked > fail > pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "741582f7cc277805102e93b9dfc504cf6ed8654b",
+            "content": "sha256:de0407f14bb9855e1ad293577cbbc7f122be3f53404e87e537eecef1a163f1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "AffectedClosureResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "741582f7cc277805102e93b9dfc504cf6ed8654b",
+            "content": "sha256:743d0fa5183204de0eb10b0cb4daa3036ca6b8834e3fea6d9ee93cd8bda856f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubresultReusePlan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "741582f7cc277805102e93b9dfc504cf6ed8654b",
+            "content": "sha256:e30a95c1af553b325c63b00cee3d5524223032ab5a01d98b560e0c1617744ef0",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 332
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "741582f7cc277805102e93b9dfc504cf6ed8654b",
+            "content": "sha256:e13914cd2e06353ee85974788042d179509127eb65ddf7d7706e7fef71c12902",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 303
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The planner compiles these models; the executor consumes them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+            "content": "sha256:70cfef7568c8fc4324b0c438b08f5c903b58aeef9bbacacf968b4f30011836d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_affected_closure_plan"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a5f9015552a3668817e94acdba4384a07dbe03",
+            "content": "sha256:f71698b2266fc43ba50bed008c1976463e13a864cc93dbef77c99238cc87d7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_affected_closure"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declared affected-closure plan is the production shape authority; deleted tests do not establish a current validation run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "741582f7cc277805102e93b9dfc504cf6ed8654b",
+            "content": "sha256:a26f18a42ef69e1699aa6487db0514e3469bbf8ea1f714bd0822e7b61182ad82",
+            "locator": {
+              "kind": "symbol",
+              "name": "AffectedClosurePlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Gate certificate identities come from the R21 certificate owners inside the same repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:13e15cb90796adde3d5b9c39cf6271a588cadef7cc00a88475e6b4d793a8bacd",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateCertificateIdentity"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

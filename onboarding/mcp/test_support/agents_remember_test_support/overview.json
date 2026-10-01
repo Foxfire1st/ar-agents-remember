@@ -1,0 +1,53 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support",
+  "references": {
+    "1": {
+      "note": "The adapter rederives the selector and compares each executable path population exactly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:33603f5d74bd4c4b49f002e836ad7bdb61ed11e2825ee9f42ef2ca83e4fc111c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_exact_scope"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:e41dfe5fffb83217b949234fbc1670769971bf42db24934a01cabec64b0c0795",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical POSIX-string sorting retains duplicate path entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
+            "content": "sha256:b795483dcf9bb49865ff686f69efa2318d85e3234557d8d92113cc557c35d91f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paths"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

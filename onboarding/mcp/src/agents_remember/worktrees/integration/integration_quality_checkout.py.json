@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_quality_checkout.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The context manager creates and tears down the exact candidate checkout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40b833a141e2b80aac35633b3400adfafacb3892",
+            "content": "sha256:9cc32648b74e90a25cc023845930f47a3d04d2b1c4401247011c6a3ea19d2b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_quality_checkout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

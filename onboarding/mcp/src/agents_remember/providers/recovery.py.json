@@ -1,0 +1,70 @@
+{
+  "path": "mcp/src/agents_remember/providers/recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared recovery constant names `provider_watchers(action='restart')`, current runner roots, preserved indexes, and follow-up status/diagnostics checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fb4b49968c5fcb543544a98b504277bab5bd54",
+            "content": "sha256:088eabf2316e399777558055f4a7a9dbb7ea1ee06e914e6801e8ca64699f5b91",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROVIDER_WATCHER_RESTART_RECOVERY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Runtime-install watcher recovery actions use the shared restart/rebind text when provider watchers remain degraded.\n\nAnchor: `add_provider_watcher_recovery_actions`, `complete_provider_watcher_rebind`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "909cdf94dd906ed0ba63b830f69c0f882f746ddb",
+            "content": "sha256:68ed0fa7799bfd3c6345d10d5d048e405cda37dde8889b960fab12660851b847",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_provider_watcher_recovery_actions"
+            },
+            "path": "mcp/src/agents_remember/install/provider_watchers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "909cdf94dd906ed0ba63b830f69c0f882f746ddb",
+            "content": "sha256:eca44e11ad8b6a90f0b547953d798b691fd504ba17efadef1387246e922e3476",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_provider_watcher_rebind"
+            },
+            "path": "mcp/src/agents_remember/install/provider_watchers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Provider status adds the same shared recovery text for GrepAI `noWorkspace`.\n\nAnchor: `noWorkspace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a038a6207ec7c3379de19c62184a7f90983248c",
+            "content": "sha256:93c7a2556566a6c5597ea735b868d562e54f2024a287545a6c37e77ba8c01efe",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

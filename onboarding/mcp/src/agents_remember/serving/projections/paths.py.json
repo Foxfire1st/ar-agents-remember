@@ -1,0 +1,120 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/paths.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The writer that resolves the root here to install the ambient \"install_ambient(AmbientLifecycle(EventStore(observer_root(config))))\" (\"def create_server(config: McpRuntimeConfig) -> Any:\" → \"def initialize_mcp_application(config: McpRuntimeConfig) -> None:\").\n\nAnchor: \"install_ambient(AmbientLifecycle(\"; \"install_ambient(AmbientLifecycle(EventStore(observer_root(config))))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3e8788e57a83b95978d0a131d0b76973cbb0078",
+            "content": "sha256:901a1be0405722e729702402d5097c8844461e7acc4fa3adfb1b6f6264e2df01",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:ec178ad7578fd9c35feaff1bb1ef9a2ff4e66d6a5d16cddf6dd1c887d66a0e15",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reader I/O edge that resolves the same root.\n\nAnchor: \"root = observer_root(config)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:1ad959dde11c5e3305eb2ef70d1e8cfcb08ce5075941996f689528f06cb0129b",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The drift snapshot reader using `drift_snapshot_dir` + the schema (3b).\n\nAnchor: \"def read_drift_snapshots(coordination_root: Path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b50634a5bbb0c8632b1fb1b39504d9d38fedec89",
+            "content": "sha256:9c1266de9b259213b383f4567ce484dd6b3387dc84c17b25cc2330477bb95adf",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The drift-run producer that writes the snapshot to `drift_snapshot_dir` (3b).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:c24eec167e05dd5320876f151b8a90bef29d79798675f6ba7e99303572d6e2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "drift_snapshot_dir"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:150b3242311ff8813b1da5f6008a91ca3484b8fdaab714bc5a2613a53f00464a",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The store-layout + one-read-abstraction design.\n\nAnchor: `### 2.3 Store layout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f660246545afa0c74a7cf5fd27f0af7af4350034",
+            "content": "sha256:7e36ee1c3550c28c52b2b70c6efc634fc591a11d6d742d00595ceac075b300c9",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/provider_settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CGC lifecycle core consumes CGC settings from this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bef1510d5667467b29295b3a4debc89849723ff9",
+            "content": "sha256:a5bd1e46f696ce55335de5a41bfd1725a3326cb1cb9f934529ab9d794ea4acc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_apply_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI lifecycle core consumes GrepAI settings from this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:2f50da1269da51933bed64ee493f245faf390f68c13e360f4159a9f1aa0fcdce",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_runtime_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Watcher orchestration uses provider-enabled checks from this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
+            "content": "sha256:7724d192874095f5314200cb593040886a3b5d6fe0d3a731a80005a8945b98d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watcher_enabled_providers"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

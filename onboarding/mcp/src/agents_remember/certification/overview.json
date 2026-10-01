@@ -1,0 +1,247 @@
+{
+  "path": "mcp/src/agents_remember/certification",
+  "references": {
+    "1": {
+      "note": "`certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates.\n\nAnchor: \"order = [\"; \"[package.certification]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:7fbfe65d4b92b95c168281da361e235a8930ebaecf12fdba62b16ec555b83037",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:1d7d7942545bec7048e03ae455cfc1ed1c60f100ba241e475e70d6929ac4840b",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof.\n\nAnchor: \"def compile_certification_recovery_record(\"; \"def compile_lifecycle_finalization(\"; \"def validate_lifecycle_finalization_currentness(\"; \"def authorize_finalization_leg(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e402f2390fa8b9ba415a86552cab7a8c54ba9e86",
+            "content": "sha256:f770e5ca8ad089002511df4a9f0b4226d2608d923984522a3ea2f87d663521a0",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership.\n\nAnchor: \"[package.controlplane]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:51cc53d95bac0ecce46723a4f7acec7b77ccf91bc968f9027716c316af2dfd2b",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback.\n\nAnchor: `undeclared_dirs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:c2135577af56fef6259bdd88624b15a56d7ebd55ca82f9dcd856f6753d7ff747",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:ea8d0f1565d524f10c464d3d70e7de9d4ddf38430528956ceb125b376a64a0ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_edge"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:1b576d7fbc2a1006492580fa975dff2209c7a2cbcc12f93fbda48a9d1df3835f",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_report"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:72c0dbbaa5093da287f81d2be594b275f869c56063f7683f16fe71671d3f9ac8",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Preparation selection is limited to code and memory-content outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:bf395b2ffb81e1aa503770acb4d38997b5aa971cc2cc4028af99bd0392fd685d",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationPreparationState"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts.\n\nAnchor: \"def compile_certification_lane(\"; \"def _project_repository_rail(rail: CompiledRail) -> RailDefinition:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:e4db6759dcdeb458471be87fda9fa24b99c520e1cff31aaa0683314572caeffe",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/certification/certification_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:5772297b0aafc6ff262fb8b038dcbf8056dfe2d2d977a9b1090bac55bb337f8d",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/certification/certification_lane.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The production seam resolves the exact profile, binds memory rails and persists admission.\n\nAnchor: \"def prepare_certification_records(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:cb859fd48864280c74223e23ac394d39c57da76c89bcc26ea0a77b7d41508c95",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The ordinary quality gate runs the admitted candidate through its certification executor.\n\nAnchor: \"def run_strict_code_quality_gate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:ae8bad3301bb799b5e21dfce4791e72aab81744957e079921db5887e9d34463f",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The quality gate freezes certification records before execution.\n\nAnchor: \"def _freeze_certification_records\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:69cc801ae9ae8c43f553a1bdce7b7cb9735d411145de126503e25825deb46166",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 462
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Persist complete actual terminal catalogs, including red and interrupted gates.\n\nAnchor: \"def record_published_generation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:f0485507e7ffac0b9d7e71d65bcd924b5e276c5ded10b2f0e6eca04267785e52",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

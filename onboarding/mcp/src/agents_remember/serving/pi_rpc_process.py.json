@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/serving/pi_rpc_process.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Configuration wraps mutation plus state/catalog readback in one finite timeout; cancellation propagates into this transport.\n\nAnchor: `PiRpcConfiguration`, `_transaction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6431f0e359e00aafe8a14e0502c4c0c731a44ba",
+            "content": "sha256:1e3858949df965935ffc0a13842914c4199aee439bb3ed71fa6ff806dbe60fe4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiRpcConfiguration"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_configuration.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6431f0e359e00aafe8a14e0502c4c0c731a44ba",
+            "content": "sha256:b4cd1092c2857f8c036ae60dfdcdd8611c07745db9a670b693b33cd904b96640",
+            "locator": {
+              "kind": "symbol",
+              "name": "_transaction"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_configuration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adapter owns this transport and delegates live setters to the configuration transaction.\n\nAnchor: `PiRpcAdapter`, `set_model`, `set_effort`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:f04b6c8c2f9c3c5127447d9d793956f72bfa8669e200ee7ea07f26bde0ab1007",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiRpcAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:c5f4e7a1572f15d1698b54d122ca45d2c982f2d662e3ffda468d457ef7b72fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_model"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:ff11d8604aff27db4a360a99078fe07cdd93ec5fdb73e084aba4d8673b454fe4",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_effort"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

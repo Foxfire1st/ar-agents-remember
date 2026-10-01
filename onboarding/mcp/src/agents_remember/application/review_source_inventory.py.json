@@ -1,0 +1,979 @@
+{
+  "path": "mcp/src/agents_remember/application/review_source_inventory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the three properties it exists for — measured from the pair, delimiter-safe, three separate facts with a failed measurement as a state — and of why the pane lives beside it.\n\nAnchor: `partial`; `available`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:e542fb9465dc876f10bebe6136cd642360812db4dc304bf60ea6cc9e6e288c60",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The non-UTF-8 boundary: the predicate that observes a surrogate-escaped byte and the exact byte form that carries the name instead of re-encoding it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:c49874f93f278f02503f968365c68a63812a4843f529cf8d504ee46360c7ee3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_text_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:a95444f2d47722f1fa92d64b4196cb129e380792691f5ea6f9f1a723442d3d11",
+            "locator": {
+              "kind": "symbol",
+              "name": "byte_form"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The kind of one entry, decided by mode first and measurement second, and the reason an `unknown` is unknown.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:4b8685c4af0af27545e08ac3475aeb7d695740490c4835c4c2eedf6ac62ba156",
+            "locator": {
+              "kind": "symbol",
+              "name": "_content"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:e0cb159547ea5306b49bdedb50db2654d5104084613e9921c4d53ded8d76fb18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_content_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The command that reproduces the inventory, naming the two requested objects and never a branch, a working tree or `HEAD`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:6a9494f8c9472eadac703d43bd6308db806178caa52718744135863d5ab9b8ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_command"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:2d398f7505a2fade4d37b4109089113cdf4db07f284784289e51ccce6109ded2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TREE_DIFF_COMMAND"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The review's own inventory value: the injectable probe seam, the already-made observation a caller hands in, the paths-without-statuses rendering, the measured/unavailable state, the count that is the list's own length, and the unrepresentable remainder.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_inventory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:02cc21140efdee38b162458a9a5c6bb2a10f3d6f3a7d9aad77d9db422268b5a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:809208365354cc43ce43af9fcd91f3bded5fcd9fc264831a41306838a0416c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unrepresentable_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The sentence a measured inventory publishes about itself, including the one that separates a measured empty set from an unmeasured one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:af024e3941986029ddc42e40f071a0b8ea156dc0c74ae5365953b77d410bdb24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measured_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**Pane 2: the inventory first and unconditionally, then the measured partition it is read from, the address view the recorded-relationship traversal renders, the relationships themselves, the six remaining counts, expansion and the three bucket lists.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_pane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:f157ee987bbbe7836efa6fde0dd2fa125986a01937f06c955afb544605f6c971",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remaining"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The scope of each count and the two partition facts in the comparison route's spelling.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:b0320decc48a5fe7ef04f6461a16637e5c629f83ae63be5df64054834cc8e4a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stated_or_absent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:ef77fa9f75d4d211907b2ec5dee1a9b3001473ac3be242b049d4f5e60408b485",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outside_selection_total"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:0741915fc25625414a556247df36d25c522e99d6d8eb7de4ab2de0c6306bb762",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unregistered_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:f73352c9973002dd89b10296eb98f521e9e38fe2d68758fc57eff33e3d50cbb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_undetermined_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:817d62c4cf3f97716fb6aca882db0bdcef144a1c1bfd6f04717985327cac8a3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "attribution_limitations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The selected source location, now rendered by the recorded relationship's own display owner from the movement side (this module no longer builds it): the recorded role kept `None` rather than guessed, the comparison's own change state carried, and the counterpart address named only when the other side records exactly one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:230d2c3bea6e49ded6cf05c3d8e4009255fd428b9ddfb7b24347ccea5f7410f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_location"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:b5fa01f96fcb561d397ad1c2fb4e0d892ff78f5938ac3807dd6cc4e9e5d6038e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_baseline_only"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:56ddaefb73f0811e980231edc862d5af15247e046d0064aaf70bc9711c53045c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_counterpart_path"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The comparison's own statement about one claim's source observation, carried verbatim by the recorded-relationship owner (the moved `_change_state`), and the union-item payload the recorded side is read from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:510346bde3071a0fc89249d1fa2ebafd0e5a858a2c510eef26e41b45874a6142",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_change_state"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:7b693f373842feb093fce6a7f376f260d54ab05c6700b61c44e7807f79dbd409",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_payload"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:71c191eba1829189e31c94cfa4fec3130df35a9e20560b93be7aae715b47f0f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_snapshot_relationships"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:a6ded60f6de0902dd814d1c229af2628aaa97baf14d42932e23e87cb7d90bb48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceInventory"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:1d997f0a5ada73e13ee6c2655cadd950d5a2b718c76ac3c702d216bff91e8407",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangedFile"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:3d9cbcb82a26c29ac0345a74103a6e7e6e1f886791dad08ccc3073acb5a94f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewUnrepresentablePath"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:65dafa202f40ba2a5d96f2c3b652c751c562b0dcd38af89bd10f5ff56bc434b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourcePane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:41806a8edc38ff328e6de61c7f52b47dd35ab5a61176ed4ab2f8dc4dfffe269c",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:39eddcb579a4a641bc84b1ae2d493bf6ca6b21f6aed187ae42e51734c62dd307",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the one reference constant, the probe, the inventory, the pane projection and the three limit helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:05695ef2e9c92fda215a5e38c05540425ee4ef2761b2ae0c27803621d87fe916",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:125c49ec7a11fc988b58700324a76fb9d66960b442f1bc96b07738c6941a88e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_INVENTORY_REFERENCE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The comparison's own expansion, which had been the second implementation of this question and is now a delegation to this module's observation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_tree_difference_probe"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:2c879aabb35c70ccc7d48f79ff320ed667716ee59e0f55e1b2e819bf266bc132",
+            "locator": {
+              "kind": "symbol",
+              "name": "_expansion_detail"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:fab69dcec914d9426595b300b85a732e6c0b0b89fcd40b3871722673fb900ff6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_limitations"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:bb1793b7509d7c7883a849fdfff403e643336c53a1f417f71d96227b82b99c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "InventoryFixture"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:2d431b79b14acc6ffd178c0b212aaf6620a4e490d9b39df27c7ce7e6196cfd4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_inventory_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:514dd64d10ad6fc767450f442e3abbd8a134f1d10ba394a001b66273f6f6bbe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_inventory_lists_every_changed_path_of_the_bound_pair_with_gits_own_status"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:f0f43de32e8cd755b024eab0e9acfca616f939f266f363845e1c2021a0ae3c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tab_and_a_newline_in_a_filename_survive_as_the_address_of_the_change"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:b7ca0c226a10c99f6bf69d3dd8da9c70a887401c99cdf6f79983836b68940e21",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_whose_content_cannot_be_rendered_is_still_listed_with_its_own_kind"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:a316f135ce08d45e286ebcb7cd67c0c097f1d633414f3df9673fc3045a6388a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_measurement_that_could_not_be_made_is_unavailable_and_never_a_measured_empty_set"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:ae13ef3cff3cb4e125647c5dffc8ac4861902df54e37ea54ea17086281a1079b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pathname_that_is_not_valid_text_is_carried_by_its_bytes_and_never_dropped"
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The independent, byte-safe Git observation both review suites compare against, deliberately a different Git question and deliberately read through the production runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:061866315310050b29472dd283530f910051ba1434bc9de325377aa09af49bff",
+            "locator": {
+              "kind": "symbol",
+              "name": "independent_changed_records"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:618694acaac3b3addb44a457fedda5723b373051acf3391df76ded38c069e017",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:827c418883c9705869809f432857ec7b702f3953563689c3eea8bb9114cf5399",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_production_inventory_keeps_an_unusual_filename_as_the_address_it_expands_by"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f2dcaa92099d7bf897ddbabfbad632f54840f0787f420f713af8b86f4bd399c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_production_inventory_lists_non_text_and_mode_changed_paths_it_cannot_render"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:610d78e821e91e30e31bec264b710624cf7ed1297d1594259f6240d0e0853a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_non_utf8_pathname_leaves_the_review_openable_and_states_why_it_is_partial"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The surface that renders the inventory in all three of its states, with the byte-form rows beside the named ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:7a9918cfbbeca0fe8a60beee6bfca6dae9a51d703b41789f89f7c4a9233ae972",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceExplorer"
+            },
+            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:d6237d6db50ea62c295b613500bcfabea3b9f225c2be8e95100800ea196bc3a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventoryEntry"
+            },
+            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:dd634c8abc3c5cbaba7972e433155b23438defcbdab07a46166e5698b6bb2e3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "byteNamedEntry"
+            },
+            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The complete inventory remains navigable at its listed generation; source expansion is centralized and byte-form names stay explicitly unaddressable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:d6237d6db50ea62c295b613500bcfabea3b9f225c2be8e95100800ea196bc3a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventoryEntry"
+            },
+            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15f7110353dadebfae32b945340bc81624d0fd9b",
+            "content": "sha256:dd634c8abc3c5cbaba7972e433155b23438defcbdab07a46166e5698b6bb2e3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "byteNamedEntry"
+            },
+            "path": "dashboard/src/panels/review/SourceExplorer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77d3784bf09b731e42d063c488853eec6d499d97",
+            "content": "sha256:fdc389bfbbb89b8165fdbf576417cc03aed096459bae9b6f3ef1dd88fe89e53c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpressionCard"
+            },
+            "path": "dashboard/src/panels/review/ReviewExpressions.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The two Git questions, once each, with `--no-renames` and `-z` and the reason for both.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:5e01cac61d6128f1d6744e465899075707496f8fb54e454bd8ce1a6d27662ddc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RAW_ARGS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:299f1a06fcdd4511869e47459dfa066a489988dd323fbb7b22345dba9660d662",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NUMSTAT_ARGS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The status vocabulary that names Git's letters and states `unknown` for a letter outside it, and the two modes that decide a path's kind before any byte is read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:6ddc7ba9f0d6bf59d5938cedc2c0f6415bee514149c2ddbcc48d946a7bb2dcf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_STATUS_NAMES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:640dbca901635881c6673203d7da11920a6243545ee18b7c225174091743775e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SUBMODULE_MODE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:679e360c072f008cac6ac1c6878f8081ff72ad9a97a038a37b7aa0b0046a3f24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SYMLINK_MODE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The stated reasons an inventory carries: an uncomparable pair, an output that is not the declared format, a tree without its root, an unclassified content, an unstated status and an unrepresentable name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:76d0205faeed0f5cc74599ef69d61d9df572c20a628005a94e00b249972576a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNCOMPARABLE_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:e1344a0131df19927213913efd492ff2a12907b51c0ee7d4016340b6645dadc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNPARSED_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:341be4ea9d783acbc22c4cc44ca0c0be692b81cc586f2b2a65a250cf6740c365",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NO_ROOT_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:7093d0b6c68e4769582e05b729b71cac5ab74331f90688193d8e549e3e443e57",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNCLASSIFIED_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:10d997ff2537d517e1002a6e7aa26ec472c57101742e17a4c2fa7d96ccc314c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNSTATED_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:2e197c955ab0563fd28cbad710c064a6b3c6f65b2884cb78fb9a37b7c103c437",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNREPRESENTABLE_DETAIL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The observation's own record: Git's two modes, the change letter, the raw path, and the two properties the mode answers (submodule, symlink) plus the one that separates \"the bytes moved\" from \"only the permission word moved\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:a2c0c1024d18ce12808f8fc7e0fc324348095e0d4a66248293b14b937a1482cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RawRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**One bound endpoint as the observation's own side: an object id and the root it resolves in, travelling together or not at all.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:660943b0c519a43f2230401da098b234638bae93577d58cc25567582a8370745",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_tree_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:f71c231943369fb4014034ee38dc036a3bb5bc3b65ab502bd8ab205ee36b204d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeSide"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The declared limits: unavailable, partial, or neither — stated at the top level of the response because a limit a reader has to open a pane to find was not stated.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:da18442f8d770c5e82df635ee0f8f979610102b297bb04e265bde3b14979e62e",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_limitations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The measurement itself: the two object ids, the delimiter-safe read, the content classification, the partition into carried and uncarried changes, and the unavailable answers that are never empty change sets.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:06246381dbd1f0bd6916b9d584e7dfa58ecaec6fd2a6bb9bd99f81cf497cb047",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_difference_observation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:da530032ef90e3787b6495e52ee3b14f5676e764d20b03d82fae575a7e16066c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_raw_records"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:9d39ea57345aff8e68aa652d759cf2b0a7ce31cc9555e8bcd6df1059b31bdc9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_content_classification"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:e960689fd21f83a6be92082644705b66aee20bcd80ffb8fbee14e5f770602ec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

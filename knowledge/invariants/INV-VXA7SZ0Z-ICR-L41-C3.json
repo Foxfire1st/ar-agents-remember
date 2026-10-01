@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Historical assessment consumption and pre-canonical validation of newly published curator generations.",
+  "conditions": [
+    "A recorded comparison selects only its exact immutable curator pin, with original subjects, judgments and provenance.",
+    "Assessment evidence is read from the publisher-recorded confined destination, including admitted aliases.",
+    "The shared generation integrity read succeeds before canonical authority replacement.",
+    "A missing or corrupt expected artifact makes the affected channel unavailable while other independently readable channels remain supplied."
+  ],
+  "exclusions": [
+    "Selecting the current canonical pointer as historical replacement.",
+    "Reconstructing evidence destinations from authored citation spelling or rewriting old judgments."
+  ],
+  "id": "INV-VXA7SZ0Z",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "92a7243f-2b12-4696-991c-dfbd88e0ad88",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Historical assessments come only from their comparison-bound curator generation, preserving exact judgments, subjects and provenance despite later pointer or source movement. Corrupt expected artifacts make the assessment channel unavailable while independently readable channels remain supplied. Evidence validation uses the publisher-recorded confined destination, including admitted aliases, rather than reconstructing a destination from citation spelling. The same immutable-generation integrity read must succeed before replacing canonical authority; rejection preserves the prior authority.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_sync_runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sync target replaces target with source tree",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f52951a09d88b5ae4d22c9503f0da3ecfd45ac24",
+            "content": "sha256:56825013d765ced8088331d51c04e05a914acba8400344a04fa62fd21644e727",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sync_target_replaces_target_with_source_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Default targets only write to mcp package data",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f52951a09d88b5ae4d22c9503f0da3ecfd45ac24",
+            "content": "sha256:24f0494f6f97beefb7ff2f38730482e46c52c209285ab0b21e558318e0ec3da4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_default_targets_only_write_to_mcp_package_data"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A missing canonical source is never reported in sync",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f52951a09d88b5ae4d22c9503f0da3ecfd45ac24",
+            "content": "sha256:efa1f746c8d0712427120d4fff8f66ec2f0ec775cdc4bb5b380a1b66a713b93c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_canonical_source_is_never_reported_in_sync"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only the eve application target ignores machine-local trees",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f52951a09d88b5ae4d22c9503f0da3ecfd45ac24",
+            "content": "sha256:9e23ab3b636f7d80dab708c88c10a6a7c702a81431b9163f5e965341dbde82fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_the_eve_application_target_ignores_machine_local_trees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

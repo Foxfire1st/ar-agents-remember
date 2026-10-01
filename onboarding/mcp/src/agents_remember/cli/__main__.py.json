@@ -1,0 +1,287 @@
+{
+  "path": "mcp/src/agents_remember/cli/__main__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `dashboard` subcommand adapter this dispatches to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80dd57c34d44fcd1bdd1920cb2b74809135bed5a",
+            "content": "sha256:19f9b7165341d3052d1b1125a87d54dbda0cec85951ef043f790dd6075630b36",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The `knowledge-validate` subparser `260928-MIK-L22` adds: the curator's standalone run of the knowledge validator.**\n\nAnchor: `knowledge_validate`; \"knowledge-validate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:16984fc6691ba432707c6646a0470cca82bc2c04c5992b38b65342ffef99ce07",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The `knowledge-index` subparser `260928-MIK-L23` adds: the derived knowledge index of one memory tree, built or reused and reported.**\n\nAnchor: `knowledge_index`; \"knowledge-index\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:089d9a356d65210680825e8cacc93ca21948351ebcb197953ec848b3746427c1",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The `knowledge-worklist` subparser `260928-MIK-L08` adds: the change-to-knowledge worklist of a leaf or of four named sides.**\n\nAnchor: `knowledge_worklist`; \"knowledge-worklist\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:2808210ac1923f37f17837a1fd0172c7f133f9b08b8d710540b8bd0375f6c1a8",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The `knowledge-routes` subparser `260928-MIK-L04` adds: the read-only family route report with the mechanical suggestion.**\n\nAnchor: `knowledge_routes`; \"knowledge-routes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:3cd02b3a87c4067c5071de1c2f26065d96e6d02d4593f5fd040732f5e6fa5fc1",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The `knowledge-census` subparser `260928-MIK-L20` adds: the migration census's inventory and report.**\n\nAnchor: `knowledge_census`; \"knowledge-census\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:15831c158ad1e92f6f34cd93ecbe3810ff52be2bc4199aac54bcb568f24b877c",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller.**\n\nAnchor: `review_comparison_record`; \"review-record-comparison\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:93b85c35410cc5524f6d7c15ae01699b9405dc7f0f1e86a65f81d3d98aa6a9ac",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The peer CLI adapter pattern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f947ad7465ca039456a25e1f1d1a33273877ec5c",
+            "content": "sha256:7ee50b9f3a11345425f238468deef7fce578ac0b95c4f990dc3225a4d7d84e53",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/cli/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The memory-citations adapter, registered the same declarative way.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56a26304d13684aecb3c0fa2a06fcc57c5642b59",
+            "content": "sha256:8aeced3406aa19f6fd28dfbee6d4da96b780c3930df3f85c9c27b8a3f0ee47f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            },
+            "path": "mcp/src/agents_remember/cli/memory_citations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56a26304d13684aecb3c0fa2a06fcc57c5642b59",
+            "content": "sha256:2c3cbe9f8391b24c471c4aa4ec30a0ee01bc0f8a16754b148d211d419bb3a00d",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/memory_citations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33237ccaa4eaa5e7222f8492b14e63265ec8de0",
+            "content": "sha256:bd1d927600faa3f1447d852ed9f6448a9ef629d7f5f6210bb5b7cd866a956b2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            },
+            "path": "mcp/src/agents_remember/cli/memory_backfill.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e33237ccaa4eaa5e7222f8492b14e63265ec8de0",
+            "content": "sha256:d1becb311907e2ee6d252e84ae61b512c712e525406b510b0dd7887d5bb577bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/memory_backfill.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The separate MCP server console entry that stays standalone.\n\nAnchor: `main`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab78be40f9d47ecdb224d994180945115476b92b",
+            "content": "sha256:9e374459014e54e9bd5a8accf08b39021648ff3f259f681ac359ac2d0e0f11db",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/mcp/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list.\n\nAnchor: `knowledge_ingest`; \"knowledge-ingest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:28a839bd9f938a300e122024036edae41eb530cb0cd5a997ac90bee5c941d46f",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.**\n\nAnchor: `knowledge_bootstrap`; \"knowledge-bootstrap\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:883e0ffa722d324260cb727da053c04eeb72db7fc9c061c5c8f08fcc4d4ba35e",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The `knowledge-format` subparser `260928-MIK-L21` adds: the text knowledge files' canonical formatter, the umbrella's sixth registered subcommand.**\n\nAnchor: `knowledge_format`; \"knowledge-format\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:d1f92d08e59b833c3f3dccbc58696f295cc8f61975e7f4b4350e81283ad5a1e1",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The `knowledge-convert` subparser `260928-MIK-L24` adds: the conversion of a memory tree and its database into the text format.**\n\nAnchor: `knowledge_convert`; \"knowledge-convert\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:78bf7ea52798639925cff6048b1f51e086ddb12d000042dd4f29bea084924d52",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

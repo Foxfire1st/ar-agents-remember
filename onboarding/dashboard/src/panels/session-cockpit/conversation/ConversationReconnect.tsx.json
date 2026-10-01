@@ -1,0 +1,98 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The phase-to-copy/tone/action map and typed-reason append live in the component.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a59318c1ef3f9e6e2927eb8bd0cee1382f65028",
+            "content": "sha256:f73460c781b75c8b6da3208a42031cb6bc1e1abf1b740d89be8d7b26fb877997",
+            "locator": {
+              "kind": "symbol",
+              "name": "copyFor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a59318c1ef3f9e6e2927eb8bd0cee1382f65028",
+            "content": "sha256:2db6a7c6c4aaeaafe28387efc9583280d2a40e9352fa25b1fb8494d1803d93b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationReconnect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `StreamPhase` union this banner switches on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:c9ac5eae63bdbdc07a9ef1d9362b556bca829a581db06562f0122429e74fb962",
+            "locator": {
+              "kind": "symbol",
+              "name": "StreamPhase"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The surface mounts this banner and supplies the typed route-error reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The stage body mounts this banner directly without a typed route-error reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "content": "sha256:d4ba658fb99a26f2b42f88b317c8d798fa6226494e751b3004754c71fec356dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChatsStageBody"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "content": "sha256:153565c91193af197938d2fea67be95ceef79a2f186b754f82b7849a4e34895f",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

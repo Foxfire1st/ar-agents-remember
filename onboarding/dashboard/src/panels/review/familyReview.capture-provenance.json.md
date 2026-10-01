@@ -1,15 +1,5 @@
 # familyReview.capture-provenance.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/familyReview.capture-provenance.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T10:52:00+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c` |
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -81,40 +71,30 @@ A `tree_note` records that the later L05 sync touches no review-route module (re
 - The consumer headers (`ReviewWorkspace.family.test.tsx`, `ReviewReadCycle.family.test.tsx`) were refreshed to
   name `mik_l31_recapture` (a comment-only follow-up).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the receipt and the fixtures it binds are local test
 evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+No configured domain source could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rows name the receipt's own keys and the case headers that point at it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The earlier run's provenance: source tree, time, command, route and capture record.** | "a8039b8e036e2c0d83100e9b4683901d6d54bd0d"; "aeae0851e110a5244ccebfa34555479662e2e8e6a5a611695e3a167be5fb0172" | dashboard/src/panels/review/familyReview.capture-provenance.json:2-7 |
-| **How the earlier run accepted a build: the structural signature and the attempts per group.** | "until every route body it produced carried the committed capture's structural signature" | dashboard/src/panels/review/familyReview.capture-provenance.json:8-15 |
-| **The two re-captured fixtures with their digests, scenarios, requests and normalization.** | "familyReview.complete.captured.json"; "familyReview.identical.captured.json" | dashboard/src/panels/review/familyReview.capture-provenance.json:16-35 |
-| **The MIK-L31 worker-stated re-capture: source tree, time, command, route, producer, first-build selection, one attempt per group, the capture record and why.** | "mik_l31_recapture"; "the first build of each scenario is accepted (MIK-L31); no signature is matched" | dashboard/src/panels/review/familyReview.capture-provenance.json:36-53 |
-| **One row per re-captured fixture, and the tree note.** | "familyReview.truncated.captured.json"; "familyPaging.captured.json"; "familyReview.emptyRoster.captured.json"; "tree_note" | dashboard/src/panels/review/familyReview.capture-provenance.json:54-123 |
-| The workspace case header that points at this receipt and names both captures, the MIK-L31 one as `mik_l31_recapture`. | "familyReview.capture-provenance.json"; "mik_l31_recapture" | dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:9-21 |
-| The read-cycle case header that points at this receipt for the re-captured paging fixture. | "familyReview.capture-provenance.json"; "re-captured by MIK-L31 with ICR-L44's" | dashboard/src/panels/review/ReviewReadCycle.family.test.tsx:22-28 |
+- **The earlier run's provenance: source tree, time, command, route and capture record.** [1]
+- **How the earlier run accepted a build: the structural signature and the attempts per group.** [2]
+- **The two re-captured fixtures with their digests, scenarios, requests and normalization.** [3]
+- **The MIK-L31 worker-stated re-capture: source tree, time, command, route, producer, first-build selection, one attempt per group, the capture record and why.** [4]
+- **One row per re-captured fixture, and the tree note.** [5]
+- The workspace case header that points at this receipt and names both captures, the MIK-L31 one as `mik_l31_recapture`. [6]
+- The read-cycle case header that points at this receipt for the re-captured paging fixture. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The producer command and evidence paths name task-local files in the coordination workspace; they are
 provenance pointers, not a repository or system boundary this fixture depends on at test time.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional production cross-repository contract is asserted. | — | — |
-
-## Update History
-- 2026-09-30T10:52:00+02:00 — 260928-MIK-L31 curator (follow-up after the L31 worker's comment-only edits, staged; the change set is now 46 files over `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`): **resolved Todo:** the two consumer headers now name `mik_l31_recapture` (the worker's comment-only follow-up). The Todo bullet says so, and the two consumer-header rows are reworded and re-measured (`ReviewWorkspace.family.test.tsx:8-19` → `9-21`, `ReviewReadCycle.family.test.tsx:26-26` → `22-28`).
-- 2026-09-30T10:05:09+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): body update. The `not_recaptured` section is gone: MIK-L31 re-captured the six fixtures (MIK-R31 rule 6, the L44-R1-F5 remainder) and recorded the run as `mik_l31_recapture` (first build accepted, one attempt per group, source tree `18b77329`, review F7 and R2-4). Purpose, Logic, an invariant and the Todos (now resolved, plus the stale consumer headers) are rewritten. **Claims re-anchored:** the `not_recaptured` row is replaced by two rows on the new section; the two consumer-header rows are reworded (this pass's generated bullet for the read-cycle row removed); the earlier run's two rows are re-anchored on values that occur once, since the new section repeats their key names.
-
-- 2026-09-28T16:42:25+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): created this one-to-one card for the family-review capture receipt added when `complete` and `identical` were re-captured from the real route so their member sources carry the structured locator fields; it records the run-level provenance, the acceptance rule, the two re-captured rows and the worker-stated `not_recaptured` section, following the sibling `subjectReview.capture-provenance.json` card. The file is untracked at the base commit, so `lastVerifiedCommitHash` names the leaf base and the verified basis is the working-tree delta on top of it; the closeout records the real commit.
+No additional production cross-repository contract is asserted.

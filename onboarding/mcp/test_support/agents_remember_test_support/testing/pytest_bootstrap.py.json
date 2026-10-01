@@ -1,0 +1,45 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared hooks own ordering and process cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "content": "sha256:d6a03e501e3158ecad679d3399a15e478f6445ccb3bb7c7b7d51285cc4ad7516",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_modifyitems"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
+            "locator": {
+              "kind": "symbol",
+              "name": "reject_owned_global_state_leaks"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "content": "sha256:1433d3e95c559105b6a2550e9ed61e1b43df56b37160ac36a78db80cab716333",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_unconfigure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

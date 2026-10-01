@@ -1,0 +1,188 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/activation",
+  "references": {
+    "1": {
+      "note": "The package marker names selection and source reconciliation as this route's authority.\n\nAnchor: \"Atomic-series selection and source-reconciliation authority.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e543430bb4f0c39b8d6a50f80458a3f02a1eebd9",
+            "content": "sha256:7b14bbcf0c226e9b4c81efe11c77e55bc56bdd707a7986be6269c9fd180c08b2",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selector keys one record per canonical contract, strictly observes it, publishes, quarantines, and projects only this contract's reconciling wait.\n\nAnchor: \"def contract_fingerprint(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:8873f85453764b66074b38456dd555d2d7a1a5e400b0f7c6795998742010474c",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_atomic_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:02c769bd10c6ced2c205db3d5ddfe21f3b32ba4ed8644546ef38d628ea56dded",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_atomic_series_selection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:8f185c22a95c3ed7c51df07d2b9764247886e8cd8ca1a91553979c42a36a58d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "activation_waiting_reason"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:10d1737c51836553255dfb464c23079367c2aa306fb3eaebb19d1f4e795c4b01",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A record that is not this exact contract is refused rather than adopted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:43fa914c6970f7935d94f2a425140ab5639b240575efb963f845ae9005ac30c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_record_identity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Admission moves this contract from reconciling to active only through exact sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:82a0467e81acda8134452cb44246bd38e3d67121d07bc23793e8ba7e05db8703",
+            "locator": {
+              "kind": "symbol",
+              "name": "activate_atomic_series_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:ea05cd69d2800a2c3aa4fabb826af781496ab06d3aa7a199b00d121bda4f49f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconciling_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:d859ade20e14875fb6e8933036d66394899f9ba1d0037a0d02155fcbd2bf2516",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mid_flight_summary"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Release publishes durable vacancy for this contract alone and refuses a missing exact selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:b72a92de1e17269d0df6e9df39b32068f257c2283c7577c93ef639e5144d3821",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_atomic_series_selection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "content": "sha256:d2ae930ea8a4e4bc400ccc761ed819afe64f340893272d2fa531c8af290530de",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Public admission explains this contract's activation and retry evidence without selector mutation or any other master's state, bounding its public diagnostic detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4582d616975e814d836e783e7740241623795fa",
+            "content": "sha256:85bd47f3bdd06d8a0318d43353a8c94570de8fa1188f078f837fbad4308c3480",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_series_admission_projection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

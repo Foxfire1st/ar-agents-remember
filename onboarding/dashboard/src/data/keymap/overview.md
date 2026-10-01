@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/data/keymap/`                     |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `../overview.md`                                 |
 
 ## Governing Overview
 
@@ -29,10 +23,8 @@ target's zone and `routeKey` per event. **Observations for the owner** (Todos on
 have no `data/commands.ts` registry entry, which the chord card's invariant otherwise requires, and `zones.ts`'s header
 comment still says "Three zones:".
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reviewer's zone and chords. | `REVIEW_CHORDS`; `zoneForTarget` | dashboard/src/data/keymap/chords.ts:106-122; dashboard/src/data/keymap/zones.ts:30-34 |
-| The reviewer's own binding on its zone. | "const owner = zoneForTarget(target);"; "if (routeKey(owner, event, target) !== 'handle') return;" | dashboard/src/panels/review/changeTraversal.ts:154-156 |
+- The reviewer's zone and chords. [1]
+- The reviewer's own binding on its zone. [2]
 
 ## Purpose
 
@@ -113,64 +105,27 @@ Ctrl+Alt+PageUp/PageDown replacement pair), `CHROME_CHORDS`/`COMPOSER_CHORDS` ar
 tables (including the composer/chrome Alt+Up split), and `nextRegion` drives the F6 cycle with
 collapsed panels dropping out.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation entries are configured. Keyboard
 claims were therefore verified against the repository's collision records, source, and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for the effective keymap. | — | — |
+No configured Domain Documentation source exists for the effective keymap.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The keymap is repository-local. Vendor/browser collision evidence is recorded in `reserved.ts`, but
 no cross-repository implementation source is imported or treated as governing code.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source governs this route. | — | — |
+No applicable cross-repository source governs this route.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The effective-keymap preference and validation boundary. | `resolveKeymap` | dashboard/src/data/keymap/preferences.ts:244-271 |
-| The thin React binding that installs the effective tables via tinykeys. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
-| The `?` reference/profile page that renders the same effective map. | `CommandPalette` | dashboard/src/panels/session-cockpit/CommandPalette.tsx:387-457 |
-| The command ids the chord tables dispatch into. | `registerDefaultCommands` | dashboard/src/data/commands.ts:189-192 |
-| The DOM that carries the `data-kbzone`/`data-region` markers. | `SessionsView` | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
-| The live CodeMirror surface that consumes profile and chord reconfiguration. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **route body updated for MIK-R33 rule 7:** Purpose now names four zones; new section "260928-MIK-L33 A Fourth Zone: The Intent Reviewer's Change Traversal" (the `review` zone, `REVIEW_CHORDS`, `DEFAULT_BINDINGS`, the `?` group, the reviewer's own binding, and two observations for the owner); two rows.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this route against the frontend-rail change set. No route impact: preferences.ts changed only by behavior-preserving lint remediation.
-
-- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 6 citation entries (12 findings); no Tier-3 findings.
-
-- 2026-07-24T13:17:50Z — Route impact: corrected the focus model after StatusLine removal and recorded
-  the harness-chat Enter submit default (with Shift+Enter retaining newline insertion). Verification
-  metadata remains pinned until the code commit.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 route impact (structured Chats renderer, reviewer FINAL
-  PASS): recorded the two fix-round-2 additions to this route's governed sources — the
-  `conversation.stop` registry chord in `chords.ts` (default `Control+Shift+Period`, chrome+composer,
-  PTY-excluded, collision-audited; stale `turn.stop` removed) and the pure `ariaKeyshortcuts(chord)`
-  helper in `preferences.ts` (renders a validated chord as the WAI-ARIA token so the interrupt
-  control's derived `aria-keyshortcuts` follows a rebind — F25). Verification metadata remains pinned
-  to the leaf base pending closeout.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8: added the versioned effective-keymap preference layer,
-  browser/Meta safety, immutable F6, same-/cross-tab updates, and Emacs/Vim CodeMirror profiles;
-  moved governance under the new data overview. Verification remains pinned to the leaf base.
-
-- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced the future-composer note with the live
-  CodeMirror consumer and documented zone-sensitive Alt+Up ownership: authoritative pop-back in the
-  composer, session cycling in chrome, untouched native input in PTY.
-
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S4 (tinykeys zones + focus model + collision
-  audit): the new `data/keymap/` slice — reserved set with per-chord five-source verification
-  records (incl. the R6 chord replacement Ctrl+Alt+[ / ] → Ctrl+Alt+PageUp / PageDown), zone
-  resolution + routing contract, chrome/composer chord tables, and the F6 region cycle. Review
-  round 2 removed the dead `ZoneChord.printable` field (suppression is generic via `routeKey`).
-  Verification metadata pinned to the task base until closeout stamps the L1 code commit.
+- The effective-keymap preference and validation boundary. [3]
+- The thin React binding that installs the effective tables via tinykeys. [4]
+- The `?` reference/profile page that renders the same effective map. [5]
+- The command ids the chord tables dispatch into. [6]
+- The DOM that carries the `data-kbzone`/`data-region` markers. [7]
+- The live CodeMirror surface that consumes profile and chord reconfiguration. [8]

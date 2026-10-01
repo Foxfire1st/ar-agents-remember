@@ -1,0 +1,121 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/SeatInspector.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Tab identities, keyboard behavior, and stable mounted panels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:cf6921ed2102d45126e0de529c02858f0882a8e6f24889c24ffc1708fa7fe532",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeatInspector"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:51c042425e3578a7aa9dbf9a476e4f563a0bb21fd249496a27facb3099ff5ddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "tab"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:2e3d9256fc95728df24ace3d892a45e6ba14f6e9a56f28b2677033563005cf84",
+            "locator": {
+              "kind": "symbol",
+              "name": "panel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:ae987932e111c8637bd0624f3d98e0a8ce6b2c8efc89812d5edf84c9d65db128",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Full audit surface and explicit set mark-seen action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36c4cf83b7f43f90d0b5eaebf2a7e2686721d993",
+            "content": "sha256:6e638d7fcfee5d7b9dd6eaac3a8961700a4cacb802f26c5a3175a79af98f8068",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidencePane"
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact-session capability surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d7ea180a24d738a2075d9a83f370c54a3e9940d",
+            "content": "sha256:072e429191f685482bc767a96db8fd06d6e2914764fb2050154228ac5f94adb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilitiesPane"
+            },
+            "path": "dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Fleet-first pickup and heartbeat surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4afa575b62e7122562d8463d34c0037b0e67ea3",
+            "content": "sha256:b27d0ec529ad7cd77daa6dd7b49533a58b96fd41ae22ec1b8d960ea6445a02a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "BusPane"
+            },
+            "path": "dashboard/src/panels/session-cockpit/BusPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c4afa575b62e7122562d8463d34c0037b0e67ea3",
+            "content": "sha256:fbe3895470e2dcdbe6e6d76203221ba8c98a6121164fd1d915ccbd10f1cf1e0d",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/panels/session-cockpit/BusPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

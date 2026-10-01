@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/lifecycles/termination.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/termination.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-23T16:08+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [governing route overview](overview.md)
@@ -38,22 +28,18 @@ The file exposes typed values or one narrow operation boundary. Callers consume 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module defines `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` as its public seam. | `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` | mcp/src/agents_remember/models/lifecycles/termination.py:12-33; mcp/src/agents_remember/models/lifecycles/termination.py:36-53 |
+- The module defines `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` as its public seam. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
-
-## Update History
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

@@ -1,0 +1,57 @@
+{
+  "path": "mcp/tests/test_worktree_closeout_route_review_transport.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Registered preview transport case was deleted with the closeout route-review gate; the removal is pinned at both altitudes by the atomic-master public closeout test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2755068eba62b98899d103786f9d26695cd9519",
+            "content": "sha256:5322d3f73f08434e37c5910c595288389cba431dc191c55190431c4a9410bc0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_never_gates_on_a_route_review_record_at_either_altitude"
+            },
+            "path": "mcp/tests/test_atomic_master_review_public.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Certification projection preserves the route finding while promoting status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af092b2548db099c93c3a49d0329e4fc1346e7bc",
+            "content": "sha256:c59f242586212df6d698e5a415d84baae528c5aa2f6f0d152aebd5a0cb6bf3ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_certification_admission_refusal_keeps_route_review_status"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registered apply transport case was deleted: the module docstring records that the gate was removed, so only the certification-admission refusal payload shaping remains as this module's route-review evidence.\n\nAnchor: \"the gate was removed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af092b2548db099c93c3a49d0329e4fc1346e7bc",
+            "content": "sha256:9c145a512cfd9c64d563416fd9f583abff7dd2ec275a47616f2c89d758d1d114",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

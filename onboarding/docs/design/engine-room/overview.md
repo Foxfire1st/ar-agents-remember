@@ -2,13 +2,7 @@
 
 | Field                  | Value                                       |
 | ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
 | sourceRoute            | `docs/design/engine-room/`                  |
-| doc_type               | `route-local-overview`                      |
-| lastUpdated            | 2026-06-21T23:35                            |
-| lastVerifiedCommitHash | `cf5ef507f2542d6cd2f9d37a6b72148d3b91b340`  |
-| lastVerifiedCommitDate | 2026-08-06T13:55:47+02:00|
-| governingOverview      | `../overview.md`                            |
 
 ## Governing Overview
 
@@ -57,35 +51,9 @@ failure-primitive vocabulary) that the React canvas `dashboard/src/panels/engine
   green, never amber), red = fault (flickers) / blocked (steady).
 - The realising renderer lives at `dashboard/src/panels/engine-room/`; keep this reference and that code in sync.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The React engine-room renderer these design docs govern — the two-world canvas, boot/teardown choreography, and failure overlays built from this prototype. | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
-| The parent in-repo design-documentation route this folder is a child of. | "Engine-Room Visual Language" | docs/design/engine-room/engine-room-visual-language.html:6-6 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 2 memory-repository citations for the governed renderer overview and parent design route.
-- 2026-06-22T17:00 — slice 05o doc-debt close: the living spec `engine-room-visual-language.html` **§10 Failure
-  modes** was completed — it now documents **all eight** modes (was only the T3b/T1b primitive notes). Added the
-  four net-new primitive cards (engine-dropout halo, refused-conduit flash red/amber, moved badge, terminal STOP)
-  and restructured the section **primitives-first** (one card grid) then **the eight modes** as a 2-column note
-  grid. `podstage.html` unchanged. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T10:45 — slice 05o: the living spec `engine-room-visual-language.html` §10 gained a **Mode 2 — stale-base
-  block (T1b)** note pinning the pruned-base node (§3 dormant register), the code/base-lane preflight scan ring,
-  and the fleeting born-blocked enclosure (§2.1 provisional) with **fast-forward** / **proceed-stale** choices —
-  net-new over Mode 1 is only the pruned base node, the scan ring / fleeting block / steady gate / recovery chips
-  already exist. `podstage.html` is unchanged (it already held the T1b scene this slice lifts). Verification
-  metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T00:29 — slice 05o: the living spec `engine-room-visual-language.html` gained a **§10 Failure
-  modes** section (the T3B scan-ring + ghosted-lane primitives; Timing/Implementation renumbered §11/§12) and a
-  **§6 engine** change to a flat gold bezel (no glow) + constant-gold petals — mirrored into the React engine
-  room the same slice ("change it here first"). `podstage.html` is unchanged (it already held the failure-mode
-  scenes this slice lifts). Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-21T23:35 — Created. Route overview for the engine-room design reference folder: documented the
-  living spec ↔ prototype pairing, the "change it here first" source-of-truth rule, the colour state
-  language, the CSS-for-portability vs GSAP/Motion-in-production split, and the link to the
-  `dashboard/src/panels/engine-room/` renderer these docs govern. Governs `engine-room-visual-language.html`
-  and `podstage.html`. The source files are newly added and not yet committed; verification metadata pinned
-  to repo HEAD until a commit stamps them.
+- The React engine-room renderer these design docs govern — the two-world canvas, boot/teardown choreography, and failure overlays built from this prototype. [1]
+- The parent in-repo design-documentation route this folder is a child of. [2]

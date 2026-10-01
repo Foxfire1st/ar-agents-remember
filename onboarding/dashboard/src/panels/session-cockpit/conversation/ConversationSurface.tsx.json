@@ -1,0 +1,227 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Surface shell, focus model + keys incl. the ArrowDown hijack, announcer discipline, capability cues, agents strip, timeline mount.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The roster/focus primitives this surface composes (`deriveAgents`, `effectiveAgentFocus`, `cycleAgentFocus`, `filterItemsForFocus`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:78167f586ca4902fddc4ae1094fbf1b96890660e786a6765714b30a8af3c5be2",
+            "locator": {
+              "kind": "symbol",
+              "name": "deriveAgents"
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:df673582a2df7a1a489797175d65e6bbf59822ce31b31ec7ab5235b554219531",
+            "locator": {
+              "kind": "symbol",
+              "name": "effectiveAgentFocus"
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:c2a47626e635378bc1084b0a4130ea280d9744944ad15c08a49d0e96dc372275",
+            "locator": {
+              "kind": "symbol",
+              "name": "cycleAgentFocus"
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:f6782be34660e91711b43c3b572a8e2b1e52c04491533531a42f1c9a786010f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "filterItemsForFocus"
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reconstructable store's `agentFocusBySession` focus state and the `setAgentFocus` writer this surface reads/writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:9f65f40c5b80f7a3d7d0f13f7e187570f4d64ef3ca7ecb8ac55718294b0d6dc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "setAgentFocus"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `live`-delivery flag the announcers gate on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:01cfa2a452337f43cf9fdb52fdd93c8e77d589326cec0d7d5bdffe34b9339a1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "lastAppliedDelivery"
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared polite/assertive announcer store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10c66e5d84f945029c828f5c0205edaa23e7a910",
+            "content": "sha256:2ab409d2ac6969e4c9d698c946c985c7a799f866d6840cc142e1b17c6faf3e50",
+            "locator": {
+              "kind": "symbol",
+              "name": "announcePolite"
+            },
+            "path": "dashboard/src/data/announcer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The sub-agents strip (one compact line + listbox menu), the one feed timeline, the reconnect banner, the ambient telemetry, and the capability-reason primitive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a1bfab424e689fe7b7049cf98b79b519c671eda",
+            "content": "sha256:713af409bf334408c0435ba46e7535e3af723b15f5aa23b11483fc5d4435016c",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsArea"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/AgentsArea.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "678a26102901492941425c3a49304020b187637c",
+            "content": "sha256:4ee20dd681f44799eb5c2c688ef051c04d94602e6f5e7ee274cb0abafe90ef06",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationTimeline"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a59318c1ef3f9e6e2927eb8bd0cee1382f65028",
+            "content": "sha256:2db6a7c6c4aaeaafe28387efc9583280d2a40e9352fa25b1fb8494d1803d93b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationReconnect"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationReconnect.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c83dce30df8a11fb208befb8b76c12d66747c98c",
+            "content": "sha256:b468dc7219939e9fe2e2aef1b40dc314e7dc17c87a74b3ad8c766258d751ceb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AmbientTelemetry"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:e3698496c58f36900eb0fac3fdc8235f3c260622f57e5b56266867b22d82999e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityReason"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The surface-level focus-cycling/filtering/Esc/hijack suite.\n\nAnchor: \"ConversationSurface agent focus\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c01668b78549f9c042c847a61302c545d904c62e",
+            "content": "sha256:0dfd4275e30c6d79160bfcf90b2f470f0d52218cd938fc41011aa012bd3eaed5",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The persisted hide-thinking preference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa60969c5320630e9fe1a5b8ecfb3017b47eae42",
+            "content": "sha256:f4b304470b5c4a6503ac75ba8fe34ef785581f035f9a0817d1bcfee38df079a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "thinkingPreferenceStore"
+            },
+            "path": "dashboard/src/data/conversation/thinkingPreference.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

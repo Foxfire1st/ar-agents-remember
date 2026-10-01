@@ -1,0 +1,288 @@
+{
+  "path": "dashboard/src/dev/fixtures.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The header stating the split (scenarios here, nodes in `wire.ts`) and the import block pulling `EMPTY_ANALYTICS` plus the five `served*` builders.\n\nAnchor: `EMPTY_ANALYTICS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:7d3de72c758f373d033d0103c5fb5a5c9b70a34f348861d5d8ec64af80f35e9c",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`project()` calls `servedProjection`.\n\nAnchor: \"function project(over: Partial<WorkspaceProjection> = {}): WorkspaceProjection {\"; \"return servedProjection({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:ce5491467ffb20168fdefbc88aa47b228e426764b6d0832caffc78ea4ede3934",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:6c8bd33ff6d197e792464b49280ca6efe844b8b26c697ac90f6a35209e4ff180",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`lifecycle()`, provider states, `enclosure()`, and `evt()` retain gallery defaults ahead of `...over`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:9b9068dd7d5253b1c7aed99d80a92bd5bf394e8b705a800a5aaf52f5e289e878",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:868fe5c94e6c8701dc5f6c3dd7a1e5cf4d22dd00d928b64148fa644b486ef2ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "providerRole"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:6fd8db4de53c1341d762067561f03526ed52bcc01ffbeb5e2ba9372aad2d0a05",
+            "locator": {
+              "kind": "symbol",
+              "name": "ok"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:ee2d4c530da6162426616f4b012ddf03861a01d64dc5cb143e5392b3ff14bd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "down"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:1d54ffbb95464784e3b070dfbacbeab4008b7925352703a8c052513265cd41b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "indexing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:f94799b1a0216caec2cb2cf799d95a945659a30e73a0b73a9e294a4a023fec59",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:3694d166f6ae5760f067aa8f3d7107b0fef22f4f22665be68f0781c26f3339dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "evt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The gallery maps Engine Room scenarios through `engineRoomProjection`.\n\nAnchor: \"export const GALLERY: GalleryEntry[] = [\"; \"ENGINE_ROOM_SCENARIOS.filter\"; \"projection: engineRoomProjection(scenario)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:8ab5d6b517ef2f9cd0b1c984a9fda3c9909f3ce8ae8d284e2c6d0306e061c9e7",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:8fa34cd7d66b0c05003e6e563fc01cd4fae15978bc4bcc3ac86bfb4c65bfba75",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 484
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:2f08b5c1600c87c14cb6cc08f8fdcc34eae958b1aa60b047beaedd2ecd3ea592",
+            "locator": {
+              "end": 487,
+              "kind": "line_range",
+              "start": 487
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`EMPTY_ANALYTICS` now lives in the shared wire fixtures and still carries `series: []` and `engineProcesses: []`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:cd12deed036264ddb61f2bcb0acd86f6d4505cfe896969e64520a2458294214a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_ANALYTICS"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`projection()` assigns `metrics` from `metricsFor(lifecycles)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
+            "content": "sha256:22388897163007064baa789772937d0a9da6ea4693b6390b3c3c936628354f69",
+            "locator": {
+              "kind": "symbol",
+              "name": "metrics"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data.\n\nAnchor: \"processes: EngineProcessNode[];\"; \"workspace: ProviderNode[];\"; \"ENGINE_ROOM_SCENARIOS.filter\"; \"projection: engineRoomProjection(scenario)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:8fa34cd7d66b0c05003e6e563fc01cd4fae15978bc4bcc3ac86bfb4c65bfba75",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 484
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
+            "content": "sha256:2f08b5c1600c87c14cb6cc08f8fdcc34eae958b1aa60b047beaedd2ecd3ea592",
+            "locator": {
+              "end": 487,
+              "kind": "line_range",
+              "start": 487
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26976beab443429be148efbc9ed27a1dc8507fa0",
+            "content": "sha256:4cde88fd72edea588b870956d8c10e0b076491746eda8bdb18eec8d499bc3c0e",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/panels/engine-room/fixtures.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Analytics requires series and engineProcesses arrays.\n\nAnchor: \"export interface Analytics {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:162c26c0cad036357bad30e157f8f2604877fbdae3e2b73ed0f5d7f6e6658d23",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "WorkspaceProjection owns analytics as a required field.\n\nAnchor: \"export interface WorkspaceProjection {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
+            "locator": {
+              "end": 840,
+              "kind": "line_range",
+              "start": 840
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

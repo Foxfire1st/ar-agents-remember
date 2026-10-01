@@ -1,0 +1,198 @@
+{
+  "path": "dashboard/src/panels/EngineRoom.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`buildEngineRoomModel` (pure model: joins, lifts workspace stack, sets `enclosureKey`/`usesFallback`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "content": "sha256:92ef339ef5925e22df44f86aa1f0fd701fba320ac6ab43653559e51e09ecbb80",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildEngineRoomModel"
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "§4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \\| `roomStage` \\| `roomZone`]).\n\nAnchor: `roomShell`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "content": "sha256:087b98f6e2c1c275edb63a6956df7a120b2f4b535222c1731c199d7790a163b2",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 252
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "content": "sha256:9d3df2db1ce7057ac0599e0c56f6d5a2bb16dee5ef1be5995f217640871a22c0",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 284
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`EngineRoomHeader` (health/phase/nextAction + master-caution from `selectQueue`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "content": "sha256:58d15a56ecc549ad38344568d9dcf75211615fbbe42a58e947aca64d28a6163e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineRoomHeader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`OfficialStrip` groups official workspace providers by label + runtime state, renders duplicate peers as counted chips, and exposes grouped repo labels via `title`/`aria-label`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
+            "content": "sha256:014599f78795057568d2d9ae61ac1df42a915f0f7d6fbe8714edf70689df66ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "OfficialStrip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Official-strip regression tests pin seven same-state CGCs into one `7 CGC · nominal` chip, keep mixed CGC states separate, and assert hover-title repo lists.\n\nAnchor: \"7 CGC · nominal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fc5c2d2b667f8a72797b3417aaa48e00f403417",
+            "content": "sha256:9198ccc468496d58ef92edb61942fa337827567ea9c08e7db2b98675845c3f3f",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/panels/EngineRoom.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The bounded-height panel variant the room uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98d36745c158cda0ea21c018a601df46566c3df4",
+            "content": "sha256:e582c473d3407624b730acb7eeaf7947ba822fba5eebbcd8ceb9f41aa2dcd8d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "fill"
+            },
+            "path": "dashboard/src/grammar/Panel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`groupEngines` (fallback) + `engineState` + `selectQueue`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:39686253ab57b49c197444f777ca38607c1940957b35e49682d31bdd1f4e3594",
+            "locator": {
+              "kind": "symbol",
+              "name": "groupEngines"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:7c8d459bab45b55e012757985b0777a92df02785f6c09e2ae35eb93eb4a80bbc",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`).\n\nAnchor: \"def read_engine_process_facts(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:da26bad4ff847151b2478263ffe4450823fa384e4e8b48012cc1209e3cd1bea2",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared chat-routed gate responder rendered by diagnostics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
+            "content": "sha256:847bc6a130fc562990a803182e005dd6b8e5262a8290bd519278b9077d4f6936",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateResponder"
+            },
+            "path": "dashboard/src/panels/GateResponder.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

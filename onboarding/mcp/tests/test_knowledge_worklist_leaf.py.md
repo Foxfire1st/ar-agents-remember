@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_worklist_leaf.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_worklist_leaf.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -74,12 +64,12 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 `base_cache.converted_base` instead of `leaf.converted_base`, because the conversion moved into
 `base_cache.converted_base_files` (ruling 18:49:50 (4)). The fixture and the other cases are unchanged.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The tool case counts two onboarding items. | `test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it` | mcp/tests/test_knowledge_worklist_leaf.py:389-420 |
-| The cache case patches the conversion where it now lives. | `test_converted_bases_are_cached_by_commit_version_and_code_commit`; `worklist_base_cache` | mcp/tests/test_knowledge_worklist_leaf.py:729-763 |
+- The tool case counts two onboarding items. [1]
+- The cache case patches the conversion where it now lives. [2]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R08@v2` of task
@@ -88,41 +78,27 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The leaf fixture: real repositories plus the task root and enclosure. | "exactly the inputs the curator's memory-quality run hands the worklist" | mcp/tests/test_knowledge_worklist_leaf.py:1-6 |
-| The leaf's contract and task document. | `Leaf` | mcp/tests/test_knowledge_worklist_leaf.py:179-219 |
-| Pairing by trailer and persistence. | `test_a_leaf_pairs_k_b_by_trailer_follows_its_sync_and_persists_beside_its_contract` | mcp/tests/test_knowledge_worklist_leaf.py:240-282 |
-| The task document's maintenance scope. | `test_the_task_documents_maintenance_scope_classifies_every_entry` | mcp/tests/test_knowledge_worklist_leaf.py:294-303 |
-| The writer's carry. | `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them` | mcp/tests/test_knowledge_worklist_leaf.py:330-386 |
-| The tool and the checklist section. | `test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it` | mcp/tests/test_knowledge_worklist_leaf.py:389-420 |
-| Other owners' rows and closed files are untouched. | `test_carrying_never_edits_another_owners_row_or_a_closed_history_file` | mcp/tests/test_knowledge_worklist_leaf.py:478-500 |
-| A writer-authored proof raises its invariant. | `test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes` | mcp/tests/test_knowledge_worklist_leaf.py:503-547 |
-| The bound sync port. | `test_a_completed_sync_recomputes_through_the_bound_port` | mcp/tests/test_knowledge_worklist_leaf.py:550-569 |
-| The controller-level run; since MIK-R09 its four open items count (4). | `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist` | mcp/tests/test_knowledge_worklist_leaf.py:577-670 |
-| Never raises; never fails a completed sync. | `test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync` | mcp/tests/test_knowledge_worklist_leaf.py:673-710 |
-| The `continue` replay. | `test_the_continue_replay_of_a_completed_sync_recomputes_too` | mcp/tests/test_knowledge_worklist_leaf.py:713-727 |
-| The converted-base cache. | `test_converted_bases_are_cached_by_commit_version_and_code_commit` | mcp/tests/test_knowledge_worklist_leaf.py:730-764 |
-| The census-derived consumer row. | "mcp/tests/test_knowledge_worklist_leaf.py" | mcp/tests/evidence-lifecycle.toml:832-832 |
+- The leaf fixture: real repositories plus the task root and enclosure. [3]
+- The leaf's contract and task document. [4]
+- Pairing by trailer and persistence. [5]
+- The task document's maintenance scope. [6]
+- The writer's carry. [7]
+- The tool and the checklist section. [8]
+- Other owners' rows and closed files are untouched. [9]
+- A writer-authored proof raises its invariant. [10]
+- The bound sync port. [11]
+- The controller-level run; since MIK-R09 its four open items count (4). [12]
+- Never raises; never fails a completed sync. [13]
+- The `continue` replay. [14]
+- The converted-base cache. [15]
+- The census-derived consumer row. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: every repository and the task root are built under `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** The controller case now captures real candidate trees and asserts `curatorActionableCount` 4 and `knowledgeGate.openItemCount` 4, because MIK-R09 counts each open item (it was 0); the Logic, the Conventions and the controller row say so. The rows the installed fixer normalised are kept.
-- 2026-09-30T18:03:27+00:00: Generated citation repair: "mcp/tests/test_knowledge_worklist_leaf.py" repointed to mcp/tests/evidence-lifecycle.toml:832-832. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 The Onboarding Items Join The Worklist Assertions": the two `itemsByKind` assertions now include `onboarding_trace: 2`, and the cache case patches `base_cache.converted_base` (rulings 2026-09-29T18:49:50 (2, 4)). Rows below the edits were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

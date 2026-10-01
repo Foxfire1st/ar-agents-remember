@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_reader/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_reader/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -78,36 +68,27 @@ composition root's `knowledge_reader` port (`cli/dashboard.py`) and the GET rout
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the views, read-only reads and named failures. | "**Read-only** (rule 6): the reader never writes a repository." | mcp/src/agents_remember/application/knowledge_reader/__init__.py:1-24 |
-| The nine views. | `READER_VIEWS` | mcp/src/agents_remember/application/knowledge_reader/__init__.py:56-66 |
-| One question: selections first, the selection opened, the typed failures and the envelope. | `read_knowledge_reader` | mcp/src/agents_remember/application/knowledge_reader/__init__.py:72-89 |
-| Dispatch by view; a record the tree does not hold is `not-found`. | `_answer`; `_record` | mcp/src/agents_remember/application/knowledge_reader/__init__.py:92-108; mcp/src/agents_remember/application/knowledge_reader/__init__.py:111-117 |
-| The `invalid-request` answer. | `_invalid` | mcp/src/agents_remember/application/knowledge_reader/__init__.py:120-126 |
-| The measured selection block a subtree page returns in place of the default (R3-1). | "return {\"state\": \"view\", \"selection\": selection.to_document(), **body}" | mcp/src/agents_remember/application/knowledge_reader/subtree.py:109-109 |
-| The composition root's port that calls this function. | `knowledge_reader_port` | mcp/src/agents_remember/cli/dashboard.py:149-152 |
-| The route case: every view served, nothing written. | `test_the_route_serves_every_view_and_the_reader_writes_nothing` | mcp/tests/test_knowledge_reader.py:1092-1126 |
+- The module's own statement of the views, read-only reads and named failures. [1]
+- The nine views. [2]
+- One question: selections first, the selection opened, the typed failures and the envelope. [3]
+- Dispatch by view; a record the tree does not hold is `not-found`. [4]
+- The `invalid-request` answer. [5]
+- The measured selection block a subtree page returns in place of the default (R3-1). [6]
+- The composition root's port that calls this function. [7]
+- The route case: every view served, nothing written. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new package entry MIK-R29 adds, recording rulings 09:42:58 (Q1/N1 every answer names its code tree; Q2 the index cache is L23's design; F3 and F11), 11:24:12 R3-1 (the envelope comes from the measured selection) and two candidate invariants. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

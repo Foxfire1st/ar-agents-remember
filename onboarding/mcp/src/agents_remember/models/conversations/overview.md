@@ -2,14 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/models/conversations/` |
 | onboardingRoute | `mcp/src/agents_remember/models/conversations/overview.md` |
 | parentOverview | [`models/overview.md`](../overview.md) |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `c1dbebf883f22710b71d40a66ec92c1ac134918f` |
-| lastVerifiedCommitDate | 2026-09-16T13:48:06+02:00|
 
 ## What This Area Is
 
@@ -97,30 +92,26 @@ the type and serialization authorities. Do not recreate a task/date snapshot of 
   `serving.harness_control_models`/`harness_control_client`/`terminal_catalog` from this route.
 - Do not import from the package `__init__` in production code (R7).
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage. | `WithdrawalOperationProjection` | mcp/src/agents_remember/models/conversations/withdrawals.py:74-120 |
-| Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage. | `WithdrawalOperationProjection` | mcp/src/agents_remember/models/conversations/withdrawals.py:74-120 |
-| The canonical ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:189-269 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage. [1]
+- Current withdrawal models own phase/outcome/recovery consistency; removed architecture and hostile suites no longer establish coverage. [2]
+- The canonical ports consume these models without owning behavior. [3]
+
+### Cross-Repo References
 
 No cross-repository implementation participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
-## Docs References
+### Docs References
 
 No Domain Documentation source is configured; repository-owned behavior and architecture tests are
 the evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
 ## File-Level Onboarding Map
 
@@ -156,12 +147,3 @@ When changing a wire contract under this route:
 2. Keep the acyclic import order; never import upward or from the package `__init__`.
 3. Prove the intended behavior in the owning contract suite and keep stable architecture assertions
    in `test_conversation_model_architecture.py`; do not regenerate an implementation snapshot.
-
-## Update History
-
-- 2026-08-25T01:56+02:00 — 260824-PDLS retired the task/date zero-drift snapshot and routed stable
-  architecture assertions plus schema/serialization behavior to their actual owners.
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created the route overview for the new
-  `models/conversations/` package; supersedes the `serving/conversation` contract-model
-  governance for the moved grammar. Verification metadata pinned until closeout stamps the L9
-  code commit.

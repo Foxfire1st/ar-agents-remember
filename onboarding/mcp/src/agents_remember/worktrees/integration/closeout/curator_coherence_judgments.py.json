@@ -1,0 +1,123 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_judgments.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3610cbbd55df22c0b90038b1d6776c34c3b6a50f",
+        "content": "sha256:bae75dd8e59a4be9c28f8e6cd67c1bced972f2d587f960bb3e129545740840d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_judgment_evidence"
+        }
+      },
+      "id": "RLZ-NHEAPZJ0",
+      "invariant": "INV-453ZPCZ5",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Reads a judgment's evidence from owner custody when an artifact is stamped, and requires that artifact to name this owner's exact path and hash. A legacy judgment without custody is readable only for a task: citation whose bytes still match; a code or memory citation without custody is refused as not retained, never re-read from current bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3610cbbd55df22c0b90038b1d6776c34c3b6a50f",
+        "content": "sha256:5a56318376206402ebf02444441f0af082b5c985eed3d84191a23134ef921083",
+        "locator": {
+          "kind": "symbol",
+          "name": "retain_judgment_evidence"
+        }
+      },
+      "id": "RLZ-Z887Q4G3",
+      "invariant": "INV-453ZPCZ5",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Is the publication owner's retention step for judgment evidence. It re-reads each cited evidenceRef, refuses if the bytes no longer hash to the recorded evidenceSha256, stores them at the content-addressed judgment path (refusing a collision), and stamps an evidenceArtifact with path, SHA and size while leaving the authored citation and hash unchanged.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Exact set coverage and lifecycle-computed digests are established together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3610cbbd55df22c0b90038b1d6776c34c3b6a50f",
+            "content": "sha256:f741a2e747a7aeb8133027927d5a09b6be172d2b4c457009a203ad51c15d90e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "exact_curator_judgments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CAS revalidation catches task evidence that changes independently of candidate trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3610cbbd55df22c0b90038b1d6776c34c3b6a50f",
+            "content": "sha256:b34dcf34068a8d95c3fbd76b44ce1b2ab0e1a7d518e4926f98c22f718bca19c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_recorded_judgments_current"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Publication retains exact admitted bytes without rewriting their authored citation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3610cbbd55df22c0b90038b1d6776c34c3b6a50f",
+            "content": "sha256:5a56318376206402ebf02444441f0af082b5c985eed3d84191a23134ef921083",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_judgment_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Historical reading uses recorded custody or the explicit legacy task address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3610cbbd55df22c0b90038b1d6776c34c3b6a50f",
+            "content": "sha256:bae75dd8e59a4be9c28f8e6cd67c1bced972f2d587f960bb3e129545740840d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_judgment_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Evidence remains confined to contract-owned roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:94a463dec1d3656f96c82e8488484c140b7605c0496bdcdc3613af08dfcdd303",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_curator_evidence_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

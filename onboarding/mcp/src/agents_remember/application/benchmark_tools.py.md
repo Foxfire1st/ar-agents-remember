@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/benchmark_tools.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/application/benchmark_tools.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -68,40 +58,12 @@ registration or provider launch.
   use outside the MCP is fail-closed too since review B4 unless the explicit
   `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` env escape is set.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Benchmark response models define prepare/run envelopes and Codex execution policy fields. | `CodexBenchmarkPrepareResponse` | mcp/src/agents_remember/models/benchmarks.py:16-28 |
-| Benchmark service behavior lives under the benchmarks package. | "Compatibility facade for Agents Remember benchmark prepare/run/analyze tools." | mcp/src/agents_remember/benchmarks/runner.py:1-25 |
-| Shared coordination-confinement guard used for benchmark root overrides. | `require_within_coordination` | mcp/src/agents_remember/kernel/authority.py:27-35 |
-| The live-authority reload behind `_live_provider_ids` (containment R1). | `_live_provider_ids` | mcp/src/agents_remember/application/benchmark_tools.py:137-144 |
-| The workspace-side filter that consumes `allowed_provider_ids`. | `filter_benchmark_provider_ids` | mcp/src/agents_remember/benchmarks/runner_modules/workspace.py:205-238 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 5 citation rows and
-  retargeted the removed `_guards.py` link to the guard's current home
-  (`kernel/authority.py:27-35`). Zero findings remain.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: added `BenchmarkSelection`, `BenchmarkPreparation` and
-  `CodexBenchmarkRun` (with `ALL_CASES` / `DEFAULT_PREPARATION` / `DEFAULT_RUN`) and moved both
-  controllers' keyword lists onto them; the `codex_sandbox` default now sits on
-  `CodexBenchmarkRun`. The `benchmarksEnabled` gate, coordination containment and live-provider
-  filtering are unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
-- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B4 (downstream): the workspace filter's
-  `None` semantics flipped to fail-closed with the `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1`
-  env escape; this controller's behavior is unchanged (it always passes the live set) — the
-  direct-script invariant wording updated to match. Verification metadata pinned until closeout
-  stamps the HFX-L1 commit.
-- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): added `_live_provider_ids`
-  (the live on-disk authority's sorted provider ids; fail-closed empty set on a read error) and
-  both benchmark requests now carry `allowed_provider_ids`, so a case manifest can never arm
-  providers disabled on disk. Verification metadata pinned until closeout stamps the HFX-L1
-  commit.
-- 2026-05-31T12:30+02:00 — Documented benchmarks_enabled disabled-tools gate and switch to shared require_within_coordination guard (1.0.0 review remediation).
-- 2026-05-28T19:52+02:00: Created when benchmark MCP controllers moved into their own domain module.
+- Benchmark response models define prepare/run envelopes and Codex execution policy fields. [1]
+- Benchmark service behavior lives under the benchmarks package. [2]
+- Shared coordination-confinement guard used for benchmark root overrides. [3]
+- The live-authority reload behind `_live_provider_ids` (containment R1). [4]
+- The workspace-side filter that consumes `allowed_provider_ids`. [5]

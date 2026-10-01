@@ -51,7 +51,9 @@ as green, were not used to widen PDLS, and were left untouched for their owning 
 
 None in the wave-owned onboarding delta.
 
-## Remaining Master Evidence
+## Evidence
+
+### Remaining Master Evidence
 
 Run the focused source checks and the single final full Dagger master gate, then append the exact
 certifying candidate and result to the handoff before developer review. Do not commit, push, or

@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Exact retries through the ordinary curator writer of creation operations already committed in the same candidate.",
+  "conditions": [
+    "The retry key holds a recorded allocation and the candidate's invariant_revision rows hold that allocation's revision."
+  ],
+  "exclusions": [
+    "Recorded-but-uncommitted allocations (journal written, batch not committed), which are still checked at admission.",
+    "Changed content under an allocated key, which is refused allocation_content_conflict."
+  ],
+  "id": "INV-4N43MNN2",
+  "origin": {
+    "leaf": "260921-ICR-L45",
+    "legacyId": "a76fb020-46fd-424b-94ff-8054c749308a",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A curator hand-off entry whose retry key already holds a recorded allocation whose revision the candidate stores is not admitted again: its exact retry replays and can publish without any realization check, including operations committed before targets carried a rationale, while changed content under that key is refused allocation_content_conflict.",
+  "status": "proposed",
+  "supersedes": []
+}

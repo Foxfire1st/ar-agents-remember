@@ -1,15 +1,5 @@
 # dashboard/src/panels/knowledge-reader/TruthView.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/knowledge-reader/TruthView.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:41:49+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -63,39 +53,29 @@ other facet record from the backend's `record` answer.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component's own statement of the truth view and its timeline. | "The reader's truth view (MIK-R29 rules 3 and 4)" | dashboard/src/panels/knowledge-reader/TruthView.tsx:1-3 |
-| Every field except those the kind's sections show. | `SHOWN_ELSEWHERE`; `RecordFields` | dashboard/src/panels/knowledge-reader/TruthView.tsx:39-46; dashboard/src/panels/knowledge-reader/TruthView.tsx:57-70 |
-| The header with the derived decision status (F9). | `TruthHeader` | dashboard/src/panels/knowledge-reader/TruthView.tsx:81-98 |
-| Outgoing links, or why they could not be read; incoming links. | `OutgoingSection`; `IncomingSection` | dashboard/src/panels/knowledge-reader/TruthView.tsx:100-126; dashboard/src/panels/knowledge-reader/TruthView.tsx:136-155 |
-| The truth view. | `TruthView` | dashboard/src/panels/knowledge-reader/TruthView.tsx:157-181 |
-| The invariant and family parts. | `InvariantPart`; `FamilyPart` | dashboard/src/panels/knowledge-reader/TruthView.tsx:183-242; dashboard/src/panels/knowledge-reader/TruthView.tsx:244-293 |
-| History rows, entry events and record events with meaning diffs. | `HistoryLine`; `EntryLine`; `RecordLine` | dashboard/src/panels/knowledge-reader/TruthView.tsx:295-304; dashboard/src/panels/knowledge-reader/TruthView.tsx:316-324; dashboard/src/panels/knowledge-reader/TruthView.tsx:326-344 |
-| The timeline, each source's state named. | `TimelineSection` | dashboard/src/panels/knowledge-reader/TruthView.tsx:352-389 |
-| The invariant, and family, decision and incident cases. | "opens an invariant truth view with its states, links and a three-source timeline"; "opens a family, a decision and an incident with every field and their links" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:235-290 |
-| The superseded header, and unreadable links named. | "heads a superseded decision with its derived status"; "names record links that could not be read instead of claiming there are none" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:449-453; dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:491-503 |
+- The component's own statement of the truth view and its timeline. [1]
+- Every field except those the kind's sections show. [2]
+- The header with the derived decision status (F9). [3]
+- Outgoing links, or why they could not be read; incoming links. [4]
+- The truth view. [5]
+- The invariant and family parts. [6]
+- History rows, entry events and record events with meaning diffs. [7]
+- The timeline, each source's state named. [8]
+- The invariant, and family, decision and incident cases. [9]
+- The superseded header, and unreadable links named. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T12:41:49+02:00 — 260928-MIK-L29 curator (follow-up after the coordinator's test-only edit, staged): No content impact: this card's source is unchanged. The five-line debugging block removed from `KnowledgeReader.test.tsx` sat above the unreadable-links case, so that row was re-measured by the exact −5 shift (`496-508` → `491-503`). No claim was reworded. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new view MIK-R29 adds, recording the carried L13 rule, rulings 09:42:58 F9 (the derived status in the header), F11 (unreadable links named) and F6 (the failed timeline source tested), and 10:44:14 F17 (the unreadable-links display tested). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

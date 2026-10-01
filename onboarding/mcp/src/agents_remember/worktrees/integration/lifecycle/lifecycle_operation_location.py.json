@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
+            "content": "sha256:f19eb4bf75811935b3c02dd696a33ce58350e4c5e52e9a5433f41d54c210a5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
+            "content": "sha256:f19eb4bf75811935b3c02dd696a33ce58350e4c5e52e9a5433f41d54c210a5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
+            "content": "sha256:f19eb4bf75811935b3c02dd696a33ce58350e4c5e52e9a5433f41d54c210a5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

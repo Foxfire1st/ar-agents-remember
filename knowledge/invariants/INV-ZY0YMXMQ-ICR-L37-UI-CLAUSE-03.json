@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Central evidence and authored assessment display for a selected subject.",
+  "conditions": [
+    "The payload is the requested subject owner read and preserves record currentness, applicability and provenance.",
+    "Candidate-level execution is labelled as candidate input, separately from authored subject judgment."
+  ],
+  "exclusions": [
+    "A family-selected payload cannot establish a member assessment absence.",
+    "Missing or unreadable record channels are not a favorable or unassessed default.",
+    "No passing execution creates a semantic assessment."
+  ],
+  "id": "INV-ZY0YMXMQ",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "a67ae83a-d177-47ab-9855-eeedb1ac07f2",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The central evidence view displays the selected subject owner's authored assessment with its recorded currentness and applicability, separately from candidate execution observations.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/agent_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Codex roster items consumed here.\n\nAnchor: \"def _collab_roster_upserts(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc5d56e85490aab91eef76324debab67aeefa93",
+            "content": "sha256:9380a914b1a64a0dc01f92bf7a57d5536e464b08c8d6a3229b41546f5babbe02",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adapter registry authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "107323ca12efbef4744dffaaab55d0939866fa22",
+            "content": "sha256:a49b8b7082b65ccda4a857672f56b0a7e4b22756cf3b647632d93431ddb7d5bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_agent_registry"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "107323ca12efbef4744dffaaab55d0939866fa22",
+            "content": "sha256:89a07758bb99b40a4a6297a3444ae1706c9533c318b73cc45871d259f31ce22f",
+            "locator": {
+              "end": 1133,
+              "kind": "line_range",
+              "start": 1125
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

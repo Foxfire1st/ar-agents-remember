@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/candidate_receipt.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/candidate_receipt.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T20:13:29Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`|
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -74,43 +64,32 @@ resolution_from_receipt reconstructs CandidateResolution from the receipt fields
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The admission-derived field set compared when a candidate is reopened. | `_BINDING_FIELDS` | mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:39-47 |
-| The canonical, atomic receipt write. | `write_candidate_receipt` | mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:50-59 |
-| The validating read that turns every failure into a defect naming the path. | `read_candidate_receipt` | mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:62-87 |
-| The one adapter that derives a receipt from an admitted destination. | `build_receipt_for_candidate` | mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:90-100 |
-| The three-comparison binding check and its refusal. | `receipt_binding_refusal` | mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:118-176 |
-| The differing-field rendering used in a refusal's facts. | `_render` | mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:179-182 |
-| The sealed receipt model and its read-time seal validator. | `CandidateReceipt`; `receipt_digest`; `build_candidate_receipt` | mcp/src/agents_remember/models/knowledge/snapshot.py:109-141; mcp/src/agents_remember/models/knowledge/snapshot.py:144-148; mcp/src/agents_remember/models/knowledge/snapshot.py:151-185 |
-| The canonical encoder and the atomic publisher this module writes through. | `canonical_json_bytes`; `atomic_write_bytes` | mcp/src/agents_remember/kernel/canonical_json.py:27-31; mcp/src/agents_remember/kernel/atomic_write.py:53-72 |
-| The refusal this module returns for a receipt that is not this admission's. | `candidate_binding_changed_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:904-927 |
-| The lifecycle caller that reads both candidate inputs before anything else. | `_candidate_inputs` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:433-457 |
-| The schema identity the fingerprint comparison is made against. | `inspect_schema`; `KnowledgeSchemaIdentity` | mcp/src/agents_remember/memory/knowledge/connection.py:111-128; mcp/src/agents_remember/models/knowledge/context.py:24-29 |
-| The node that proves a candidate the admission cannot verify is refused with its bytes intact. | "test_a_candidate_the_admission_cannot_verify_is_refused_with_its_bytes_intact" | mcp/tests/test_knowledge_candidate_workspace.py:175-198 |
+- The admission-derived field set compared when a candidate is reopened. [1]
+- The canonical, atomic receipt write. [2]
+- The validating read that turns every failure into a defect naming the path. [3]
+- The one adapter that derives a receipt from an admitted destination. [4]
+- The three-comparison binding check and its refusal. [5]
+- The differing-field rendering used in a refusal's facts. [6]
+- The sealed receipt model and its read-time seal validator. [7]
+- The canonical encoder and the atomic publisher this module writes through. [8]
+- The refusal this module returns for a receipt that is not this admission's. [9]
+- The lifecycle caller that reads both candidate inputs before anything else. [10]
+- The schema identity the fingerprint comparison is made against. [11]
+- The node that proves a candidate the admission cannot verify is refused with its bytes intact. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-26T21:16:08+00:00: Generated citation repair: `_render` repointed to mcp/src/agents_remember/memory/knowledge/candidate_receipt.py:179-182. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:13:29Z — Reconciled exact-source capture and explicit predecessor-bound progression while retaining strict ordinary candidate open.
-- 2026-09-19T17:15+02:00 — 260915-KS-L28 curator (uncommitted change set on `ar/260915-ks-l28`, base `497d9e9f`): M1-4 anchor repair, re-read against the code worktree at `e7998504`. The row that grounds the canonical encoder and the atomic publisher had the two crossed — `canonical_json_bytes` was answered with `kernel/atomic_write.py:51-70` and `atomic_write_bytes` with `kernel/canonical_json.py:27-31` — and each now cites its own definition site (`kernel/canonical_json.py:27-31`, `kernel/atomic_write.py:53-72`). Every other row of this card was re-checked against the same revision and stands; no claim was deleted or softened. The stamp is unchanged because `4904e08f`'s content for this file is byte-identical to `e7998504` (`git diff 4904e08f HEAD` is empty).- 2026-09-17T06:49:47+00:00: Generated citation repair: `canonical_json_bytes`; `atomic_write_bytes` repointed to mcp/src/agents_remember/kernel/canonical_json.py:27-31; mcp/src/agents_remember/kernel/atomic_write.py:51-70. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new receipt module. It records the three comparisons a reopen actually makes (database namespace, schema *fingerprint* generation, admission binding) and why they are not one comparison, the deliberate reuse of the one receipt constructor so the expected value cannot drift, the canonical-atomic write, and the defect-versus-refusal split (an unreadable receipt is a storage error the caller maps, not a refusal invented here). Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

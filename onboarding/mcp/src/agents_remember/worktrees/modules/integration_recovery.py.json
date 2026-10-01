@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/integration_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`prove_external_memory_recovery` requires exact accepted memory HEAD/ref and ignores only root cache dirtiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8edaf5ace457626cda64cf9f90ce9230ca80a2a6",
+            "content": "sha256:439cf54cb689cf6e9a3b69b36441883d5fc65035ab6d8e971dd832d8afdc9418",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_external_memory_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`classify_convergent_recovery_refs` delegates exact ref classification and preserves typed conflicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8edaf5ace457626cda64cf9f90ce9230ca80a2a6",
+            "content": "sha256:fda8430104aeafc6b08fe1a3c144e5ea0c9a928a59824aa46f9dd30afccc6d48",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_convergent_recovery_refs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Convergent refs are classified by the canonical authority classifier and conflicts stay typed. (`classify_convergent_recovery_refs`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8edaf5ace457626cda64cf9f90ce9230ca80a2a6",
+            "content": "sha256:fda8430104aeafc6b08fe1a3c144e5ea0c9a928a59824aa46f9dd30afccc6d48",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_convergent_recovery_refs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "External-memory proof requires the exact task-memory head to equal the journaled memory-content commit. (`prove_external_memory_recovery`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8edaf5ace457626cda64cf9f90ce9230ca80a2a6",
+            "content": "sha256:439cf54cb689cf6e9a3b69b36441883d5fc65035ab6d8e971dd832d8afdc9418",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_external_memory_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/structural/agent.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/structural/agent.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structural wire models](overview.md)
@@ -42,17 +32,17 @@ structural target shape stays common.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The request family uses structural fields only. | `DispatchAgentRequest` | mcp/src/agents_remember/models/structural/agent.py:39-69 |
-| The response family returns structural targets without runtime ids. | `StructuralTargetResponse` | mcp/src/agents_remember/models/structural/agent.py:71-117 |
+- The request family uses structural fields only. [1]
+- The response family returns structural targets without runtime ids. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 
 ## 260918-TSIP-L4 — The Delivery Projection Declared On The Shared Base (`T4`)
@@ -73,11 +63,3 @@ is exactly the `D53` shape, and there is no fourth consumer to fall through.
 Pinned by `mcp/tests/test_tool_response_conformance.py::test_the_structural_delivery_projection_is_declared_on_every_consumer`,
 which fails against the base model with `Items in the second set but not the first: {'deliveryState',
 'adapterDeliveryState'}`.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the delivery projection declared on the shared base (`:86-87`, `T4`) — the class repaired, not the three instances. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
-
-- 2026-08-11T14:29+02:00 — Re-read `DispatchAgentRequest` and widened its citation to include
-  the dataclass declaration; verification metadata remains pending for governed closeout.
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the public structural agent DTO family.

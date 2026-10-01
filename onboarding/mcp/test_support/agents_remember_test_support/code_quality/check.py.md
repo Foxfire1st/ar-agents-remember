@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/check.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/check.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -47,51 +37,26 @@ Derived repository scope and the recorded diff base are inputs; callers cannot s
 
 No source change or quality run was performed during this documentation recovery.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| External domain documentation is not configured. | N/A | N/A |
+External domain documentation is not configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Admission and execution transaction | `run_quality_check` | mcp/test_support/agents_remember_test_support/code_quality/check.py:168-218 |
-| Finalize current evidence before diagnostic reporting | `complete_coverage_rails` | mcp/test_support/agents_remember_test_support/code_quality/check.py:273-315 |
-| Ordered enforcing checks and causal continuation | `run_fixed_checks` | mcp/test_support/agents_remember_test_support/code_quality/check.py:415-512 |
-| Exact retry inputs without a coverage-floor field | `prepare_retry_plan` | mcp/test_support/agents_remember_test_support/code_quality/check.py:661-706 |
-| Dagger admission and short temporary-root initialization | `main` | mcp/test_support/agents_remember_test_support/code_quality/check.py:822-867 |
+- Admission and execution transaction [1]
+- Finalize current evidence before diagnostic reporting [2]
+- Ordered enforcing checks and causal continuation [3]
+- Exact retry inputs without a coverage-floor field [4]
+- Dagger admission and short temporary-root initialization [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
-
-- 2026-09-05T06:14:14+00:00 — Reconciled execution/retry invariants and recorded the actual short-temporary-root creation fix, preserving the selection and stale-evidence lessons.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
-  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): recorded the L19 exact-ownership
-  changes — targeted config now refuses incomplete test impact with
-  `test-selection-ownership-incomplete` instead of safe-full expansion, and the retry plan
-  binds `selection_digest`. Verification is pinned to the owning commit.
-
-- 2026-08-28T04:48+02:00 — Split typed plan construction and progress state into quality_plan.py,
-  retained check.py as the stable execution facade, and corrected retry/causal ownership.
-
-- 2026-08-27T18:33+02:00 — Documented product-only scoring, dependency-owned retry, causal
-  continuation, evidence lanes, and Dagger-only acceptance.
-
-- 2026-08-25T08:27+02:00 — Moved the quality implementation from shipped product source into the
-  repository test-support package.
+No cross-repository evidence is required for these file-local claims.

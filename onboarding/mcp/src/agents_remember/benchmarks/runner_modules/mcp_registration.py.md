@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-07T00:25+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [runner_modules overview](overview.md)
@@ -83,53 +73,19 @@ direct script use) leaves every file untouched.
   idempotent, reports loudly per rewritten file, and `None` (no authority
   context) leaves files untouched.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.mcp_registration import *" | mcp/src/agents_remember/benchmarks/runner.py:21-21 |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
-| The shared seed resolvers also refuse a benchmark-scoped target as defense-in-depth. | `_clone_inputs` | mcp/src/agents_remember/providers/grepai/seed.py:145-167 |
-| The service entry points open every prepare/run pass with the registration sweep. | `disarm_stale_benchmark_registrations` | mcp/src/agents_remember/benchmarks/runner_modules/services.py:39-92 |
+- The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
+- The route-local overview summarizes how this module fits into the benchmark runner split. [2]
+- The shared seed resolvers also refuse a benchmark-scoped target as defense-in-depth. [3]
+- The service entry points open every prepare/run pass with the registration sweep. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No configured sibling repository is required for this module.
-
-## Update History
-
-- 2026-09-07T00:25+02:00 — Removed the obsolete deleted-test coverage claim; production behavior and original verification history remain unchanged.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T18:27+02:00 — 260731-EFA-L6 S18-B17 curator: repaired the six malformed rows with
-  ledger-verified anchors and plain sources — the facade re-export literal (runner.py:21), the
-  route overview memory card with its `#` heading anchor, `_clone_inputs` (seed.py:145-153, the
-  benchmark-hermetic skip), `disarm_stale_benchmark_registrations` (services.py:39-92, first act of
-  both entry points), the containment sweep test (235-275), and the corrected worktree test-slice
-  ranges. Spurious `agents-remember/` prefixes dropped; claim wording unchanged.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `benchmark_mcp_config`, `benchmark_lifecycle_settings`, `write_benchmark_mcp_registration` and
-  `prepare_configured_providers` were re-signed onto `BenchmarkWorkspace`; `benchmark_repo_id(case)`
-  was extracted. Generated files are unchanged. Verification metadata pinned until closeout stamps
-  the L2 commit.
-- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review fix: `prepare_configured_providers` opts INTO
-  `cgc_refresh_fallback=True` — hermetic-cold benchmarks need the synchronous timeout-bounded
-  graph build; with the new fleet default off, `cgc watch` would self-index asynchronously and
-  agents would query a half-built graph errorlessly. Verification metadata pinned until closeout
-  stamps the HFX-L2 commit.
-- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fix B3: added
-  `disarm_stale_benchmark_registrations` — sweeps all persisted workspace registrations
-  (`workspaces/*/{,*/}<CODEX_HARNESS_DIR>/mcp/<BENCHMARK_MCP_SETTINGS_NAME>`), narrows each
-  providers map to the live authority set (the persisted registration is the authority file for
-  sessions booted in the workspace — the one place the fleet kill-switch cannot reach),
-  idempotent, loud per-file report, None = untouched. Verification metadata pinned until
-  closeout stamps the HFX-L1 commit.
-- 2026-06-19T13:42: Removed `default_cgc_seed_source_coordination_root` and dropped all seed wiring from `prepare_configured_providers` (no `cgc_seed_*` / `provider_seed_source_settings_path` params). Benchmark provider setup is hermetic-cold: it calls `run_provider_setup` with no seed options, so it never seeds from / starts the live workspace stack (task 260619).
-- 2026-05-30T21:51+02:00: Documented that benchmark-generated `timeoutCaps` now use the renamed `providerSetupSeconds` key (was `providerSeconds`). Verified against `825a172`.
-- 2026-05-28T12:32+02:00: Updated after benchmark-generated MCP/provider settings moved logs under `logs/mcp` and `logs/providers/`.
-- 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

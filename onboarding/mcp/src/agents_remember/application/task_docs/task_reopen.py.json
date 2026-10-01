@@ -1,0 +1,85 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_reopen.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reopen application entry point and its ambient-lifecycle handoff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cb442fb250bb6b6710d5f2fd336dd5f036cf9b4",
+            "content": "sha256:5b2c3264aed7bba000d01a99e0dd05f9522757943e36e262fd6bed32a0d452e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_reopen_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The enclosure-contract reset this delegates to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c37e9b93e5f0f0d202a686f86eea0d2907dbb28e",
+            "content": "sha256:e5b3c3219952a6e9f5f8875a72a3fa5394f4d24ba8780e0c409d956fde10299d",
+            "locator": {
+              "kind": "symbol",
+              "name": "reopen_task"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c37e9b93e5f0f0d202a686f86eea0d2907dbb28e",
+            "content": "sha256:bad744533d0565031c3d6f40043f255bca909d15d7aa2c9f5bcd49fe6c40516f",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The facade re-export keeping the old import path working.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cb442fb250bb6b6710d5f2fd336dd5f036cf9b4",
+            "content": "sha256:5b2c3264aed7bba000d01a99e0dd05f9522757943e36e262fd6bed32a0d452e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_reopen_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The application entry point delegates reopen through its current worktree owner; deleted suites provide no current execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cb442fb250bb6b6710d5f2fd336dd5f036cf9b4",
+            "content": "sha256:5b2c3264aed7bba000d01a99e0dd05f9522757943e36e262fd6bed32a0d452e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_reopen_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

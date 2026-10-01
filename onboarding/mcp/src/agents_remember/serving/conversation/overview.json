@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation",
+  "references": {
+    "1": {
+      "note": "Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module.\n\nAnchor: \"class ConversationEventEnvelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a39cfa82e04e111ebfd08355da0a038eb888ab",
+            "content": "sha256:2a00663514e360fa87a2e922c9cc6bc42aa705519cd719b21527324c2ef947c9",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/models/conversations/stream_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products.\n\nAnchor: \"class ConversationEventEnvelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a39cfa82e04e111ebfd08355da0a038eb888ab",
+            "content": "sha256:2a00663514e360fa87a2e922c9cc6bc42aa705519cd719b21527324c2ef947c9",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/models/conversations/stream_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exactly two read ports separate active exact-session reads from dormant native library reads.\n\nAnchor: \"class ActiveConversationPort\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "056576c6bd94d53f956f5ae179b87d0abc833114",
+            "content": "sha256:1a754cead971db33fb12e934b24914b13ec987126df260ce4c383b61ea3d16e4",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/src/agents_remember/serving/ports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Three owned child routers — all implemented, none behavior-empty — compose through one stable root that also installs the one runtime.\n\nAnchor: \"def register_conversation_routes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a46f79ec8deafbc44909f5afb751cf02f32dc9ec",
+            "content": "sha256:0f69838f350770d527b6b63b64820cd2d189e9957456a7ad8b1fd31427044e07",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/router.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority.\n\nAnchor: \"class ConversationRuntime\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:614d9e716e9da19e9b5e0a7ec1acdcd2548aab9329a73997dba3a89ca12d9eb7",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling.\n\nAnchor: \"class ConversationAuthorizationResolver\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "929e17bcc3d9f1e8d94ce1eed9ecfba647520c93",
+            "content": "sha256:091790eac766bdcb3913e6e937404f318a01c3c255150c4985fbe0085cfd885c",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/authorization.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two request dependencies are the only child-facing consumption seam and consult only the TCP peer.\n\nAnchor: \"def resolve_conversation_authorization\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:8833e7eef2307a42c01c7a34c63666612dc1ed92dd1aa3910b28b3f0c3d336e8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call.\n\nAnchor: \"def create_app\", \"def register_harness_control_routes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f337a1f8b33c7cbfcf86dec38b37a714943bae54",
+            "content": "sha256:62c4cfb2e7cf3752821b7c31bd4267eba4686a332e32ed4ef67142c089008b45",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9f915d3a069d88688b2391f94b0e0be6caefe6",
+            "content": "sha256:1fca3ed894c2fd5e7057e1e613a1a5ff7ab7ba96cf1f4560d45bba873dde9b05",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread.\n\nAnchor: \"class WireResponse\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
+            "content": "sha256:a8284802bf9cab66cd53eb2dc4b8bfe56b37d6a56e0ad0b5188a0d403d8eb0d6",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

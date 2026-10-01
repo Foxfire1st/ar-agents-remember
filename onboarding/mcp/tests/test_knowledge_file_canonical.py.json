@@ -1,0 +1,89 @@
+{
+  "path": "mcp/tests/test_knowledge_file_canonical.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Idempotence and content preservation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
+            "content": "sha256:a1338079a9ad7b07014e6231cb17a13f3b612bf23432e87eaa3012c263f1499e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_formatter_is_idempotent_and_preserves_content"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only declared positions are sorted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
+            "content": "sha256:8541b33337e09e7893cfebe2f435692d357238c8c9ac4eec5066bfc39961bdff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_identified_entry_positions_are_sorted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Content-changing input is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
+            "content": "sha256:87dff9cb4f1399046daf23fe290b58492d6997cca1844c6c353f5ef2c15e2379",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_formatter_refuses_input_it_cannot_reformat_without_changing_content"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The command's exit codes and skip rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
+            "content": "sha256:218d5b1303ee29ab8c8f199c4965e801ccad2985a0d147ce67a32543ee9c4701",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_format_command_checks_rewrites_and_skips_caches"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Lane registration.\n\nAnchor: \"mcp/tests/test_knowledge_file_canonical.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:f5b00d251564d154c7eb7dd3bc8abd69a02828ecb60413351ebebf2ab0b4587a",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

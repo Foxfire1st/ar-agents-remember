@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/render.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/tasks/render.py`  |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [tasks/overview.md](overview.md)
@@ -114,9 +104,7 @@ None.
 
 ## 260928-MIK-L08 The Maintenance-Scope Header Line
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The header line is drawn only when the field is true. | `_header_lines`; "**Knowledge maintenance scope:**" | mcp/src/agents_remember/tasks/render.py:180-211 |
+- The header line is drawn only when the field is true. [1]
 
 ## 260928-MIK-L11 The Expected-Knowledge-Effects Header Block
 
@@ -126,28 +114,24 @@ declaration, in declared order, naming its subject, effect and `requirementRef`.
 field renders exactly as before (the worker's and reviewer's render hashes over every real task document are
 byte-identical).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The block is drawn only when the field is set. | `_header_lines`; "**Expected knowledge effects:**" | mcp/src/agents_remember/tasks/render.py:180-211 |
+- The block is drawn only when the field is set. [2]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation sources are configured for this repository-internal renderer.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
+No relevant external documentation was available after checking the configured source registry.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The step renderer suffixes a top-level note onto the checkbox line and draws that line when a note is the only reason to. | `_step_lines` | mcp/src/agents_remember/tasks/render.py:446-470 |
-| The renderer allocates private leaf ids once and supplies the same map to declarations and edges. | `_execution_graph_lines` | mcp/src/agents_remember/tasks/render.py:224-265 |
-| Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. | `_mermaid_node_lines`; `_mermaid_segment_lines`; `_mermaid_edge_lines`; `_mermaid_endpoint_id` | mcp/src/agents_remember/tasks/render.py:330-348; mcp/src/agents_remember/tasks/render.py:351-365; mcp/src/agents_remember/tasks/render.py:368-383; mcp/src/agents_remember/tasks/render.py:386-402 |
-| The graph node model provides structural keys for the allocation. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:204-259 |
-| The typed requirement/question renderers and the review task-intent line. | `_requirement_lines`; `_question_lines`; `_route_review_lines` | mcp/src/agents_remember/tasks/render.py:413-420; mcp/src/agents_remember/tasks/render.py:423-430; mcp/src/agents_remember/tasks/render.py:509-531 |
-| The status marker table is a direct lookup covering every `DocStatus`, including `abandoned`. | `_MARKER` | mcp/src/agents_remember/tasks/render.py:84-89 |
+- The step renderer suffixes a top-level note onto the checkbox line and draws that line when a note is the only reason to. [3]
+- The renderer allocates private leaf ids once and supplies the same map to declarations and edges. [4]
+- Declarations use qualified title identity and edge endpoints reuse the ordinal allocation. [5]
+- The graph node model provides structural keys for the allocation. [6]
+- The typed requirement/question renderers and the review task-intent line. [7]
+- The status marker table is a direct lookup covering every `DocStatus`, including `abandoned`. [8]
 
 
 ## 260815-DAG-L12 Mermaid Document Diagram
@@ -167,64 +151,3 @@ The renderer now surfaces the canonical `task-intent/v1` identity in the Route R
 and renders typed approved-packet refs / acceptance obligations in their sections
 (`requirements/CCR-R02-v2-normative-task-intent-identity.md`). Rendering remains deterministic
 and one-way; markdown never becomes authority.
-
-## Update History
-
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** Logic's header-block paragraph and the section "260928-MIK-L11 The Expected-Knowledge-Effects Header Block" record the new header block, drawn only when a leaf declares `expectedKnowledgeEffects`. One row added; other rows re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Logic's header-block description now includes the `**Knowledge maintenance scope:** `true`` line drawn when `doc.knowledgeMaintenanceScope` is true, with a short L08 section citing `_header_lines`.
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: `_step_lines` now suffixes a top-level step's
-  `note` onto its checkbox line exactly as a substep's note is rendered, and `step.note` joined the
-  condition that draws that line so a step carrying only a note no longer renders as a bare heading
-  (which would have lost the note a second time). Recorded that persisting a field the renderer
-  cannot show still leaves it invisible, so both halves of the fix belong together. Verification
-  metadata remains closeout-owned; no acceptance claim.
-
-- 2026-09-11T23:05:00+00:00: Master abandonment curation: `_MARKER` now carries `abandoned` (`⛔`) and is documented as a direct lookup, so every `DocStatus` must have a marker or rendering raises. Added the invariant and its source row. Content change, not a range repoint.
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  the task-document renderer now renders `ApprovedRequirementPacketRef` and
-  `AcceptanceObligationQuestion` lines and emits the `**Task intent:**` identity line in the
-  Route Review section when present. Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-24T13:43+02:00 — DAGQC L1: replaced lossy user-id sanitization with one canonical
-  node/leaf-ordinal Mermaid-id allocation shared by declarations and endpoints; leaf labels now
-  consume master-qualified titles. Verification metadata remains pinned until closeout.
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `render_markdown(doc, *, graph_titles=...)` and `_render_master` now accept the joined `SprintGraphTitles`; `_execution_graph_lines` emits the mermaid flowchart-TD block before the machine lists (L12-R1). Verified at code commit b7f2c8e2.
-
-- 2026-08-20T04:12+02:00 — 260815-DAG-L14: the master renderer now emits typed `masterRef` rows as
-  real relative links to commanded master documents, renders the generated `## Master Index`
-  section for sprints with `orchestrates` + rows but no `subTasks` section, and renders the
-  `**Seats:**` header block for first-class sprint seats. Verified at code commit 2f494982.
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the execution-graph section renders `SprintExecutionNode`
-  labels via `_graph_node_label` (segments carry their leaf list; edge endpoints resolve through the
-  graph first); render stays free of scheduler interpretation. Verification remains closeout-owned.
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: deterministic master Markdown now renders execution
-  nature in the header and sprint graph nodes, justified dependencies, and derived waves as a section.
-- 2026-08-14T06:34+02:00 — L23 final candidate review: rendered task documents project the
-  canonical relationships and operation/review evidence without leaking private runtime identity.
-  Verification remains closeout-owned.
-
-- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 4 initial citation findings (2 anchor, 0 prose, 2 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
-
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/tasks/render.py` since the L2 base commit is the whole-tree `ruff
-  format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever. Checked
-  by parsing both revisions and comparing the abstract syntax trees (identical) and the comment
-  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
-  or assertion this card describes has moved, and every claim this card makes about its own source
-  still holds.
-
-- 2026-07-06T23:57:48+02:00 — 260703-L14 (visual hierarchy + chat grouping): `_header_lines` renders
-  `**Orchestrates:** `name`, …` after the `**Master:**` line when `doc.orchestrates` is non-empty
-  — the orchestration-command relation surfaces in the rendered markdown; absent field = no line,
-  existing renders byte-identical. Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-06-19T06:03 — Slice 3c reopened (R4, leaf-doc fidelity): `_header_lines` now appends a `statusNote` suffix on `**Status:**` + the `headerNotes` lines, and leaf `render_markdown` appends freeform `sections` after References. Verification metadata pinned until closeout stamps the R4 code commit.
-- 2026-06-19T05:15 — Slice 3c reopened (R3, deferred-examples honesty): `_code_example_lines` gained a `note` parameter — for an empty `codeExamples` it renders `doc.codeExamplesNote` when set (e.g. "Drafted at the plan gate.") instead of the "no code examples are needed" default; `render_markdown` passes `doc.codeExamplesNote` through. Verification metadata pinned until closeout stamps the R3 code commit.
-- 2026-06-19T04:18 — Slice 3c reopened (R2, heading-vs-outcome): `_step_lines` now puts the distinct `Step.outcome` on the checkbox line (`- [x] {outcome or title}`) and drops the line for a bare step (no outcome, no substeps) — the heading is the step, no redundant title echo. Verification metadata pinned until closeout stamps the R2 code commit.
-- 2026-06-14T00:16 — Slice 3c commit 3: added the `_render_master` path (ordered `sections` walk — `freeform` verbatim, `subTasks`/`sharedDecisions` generated; `_MARKER` status to emoji), dispatched from `render_markdown` on `kind == "master"`. The light/subTask renderer is unchanged. Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-- 2026-06-13T22:34 — Created for slice 3c commit 1: the deterministic `TaskDocument` to markdown renderer. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

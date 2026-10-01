@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/doctrine.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical source this bundle copy is sync-propagated from.\n\nAnchor: `# Criteria Catalog — Doctrine Review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
+            "content": "sha256:ac8d9060ca21215482347767d23c40281007b5c4a45bff315883b4514422e3c0",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/doctrine.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reviewer role that binds this catalog per review type.\n\nAnchor: `# Reviewer`; \"The catalogs your review type binds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c75dae506a280d84fa66fbca69242753b3a4563",
+            "content": "sha256:24cc837d3d3839346fd454a75f924f9e13328ed64dad27f63c88d8b41b335e93",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c75dae506a280d84fa66fbca69242753b3a4563",
+            "content": "sha256:313d6ae5d5d3eea6d4393cfae149e951e5d6fd2f165516d17d276b153d78b921",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

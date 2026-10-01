@@ -1,0 +1,442 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_staleness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the three questions it owns, why it is its own module, and the one-implementation rule.**\n\nAnchor: \"There is one implementation of each rule and it lives here.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:59ee00f0098e01a7089aa33768117660bf741f8c87cd37f52416e24db3512272",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared bounds, patterns and base model every field is constrained from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROSE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The re-export that made the extraction invisible to importers, and the payload vocabulary's own `__all__` entries for the three names.**\n\nAnchor: `review_staleness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:32e759ddeff1713b2c257983248ed0d623b1d3c56babd35a02ada80c9df93252",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncMovement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:8980e37eb52f85329d39409e1121708f681cfa2a94fe60232b5518f5bdb87c9e",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:98d609340f47245f52af514a299b39a137d28ef6c149edc71e4831f904503dce",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The payload that still declares the staleness, submission and movement fields, and the comment distinguishing \"no sync has reported\" from \"a sync reported agreement\".**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:60f8245e26872ab7d3cc717591296fbc7b92122d500d501f0056eed402c42b2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:9de3ecb13f26f40a6609ccbb99916e3f0d4f2ce3ecdf4e96249c62d1129e9d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_movement"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The R17 producer that builds a current or carried-mismatch staleness, and the fold that replaces it when a sync measured movement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:aaf46a13f4003029706f3d1c5ebf8af593de7f1953d75d945b3b77555fb3917b",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_staleness"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_staleness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
+            "content": "sha256:0ccfd42136229222421be834f0bcd59a7cec380180f6ace5e845db1926a75a18",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_staleness_with_sync_movement"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The task-context producer that uses the `not_compared` state because no knowledge operand was compared.\n\nAnchor: `ReviewStaleness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:a1e9951a80e3c0599f4087957acc15fdd6975af780628bdc7b4f330a9c65845d",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The display-only submission producer, whose two states are the model's own members.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c819d87b70446036ae7dd00e6b52427938644d40",
+            "content": "sha256:b5d9ba51fb12b3d8f75f56225b0ad35b2e9b276a7a749d2bb8359a3e32ef608d",
+            "locator": {
+              "kind": "symbol",
+              "name": "submission"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The projection whose output this model's validator accepts, and the record vocabulary the movement's three states are read from.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
+            "content": "sha256:8f9ca922b68691ee041e2b5f39d96ababee0a521df37edd10be6a59796780642",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:efa1fb7875aa490893ce95abf51dcc13ce0aa7b3fffbcca55e299881f9cec8e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncRebindingVerdict"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
+            "content": "sha256:e9fbf91a1b44fa128fe6456add93a18cf14fde5b094c83c1098e3c1342af7ef1",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The case that pins the four validator clauses one forgery each, with the real published movement as the accepted control.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
+            "content": "sha256:407cb44f0690abe7b6049f7c2b76e1421651d1580bdeafb4c9228665773bdfb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_movement_validator_refuses_each_false_shape"
+            },
+            "path": "mcp/tests/test_review_sync_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The case that pins the two `unavailable` sub-cases and records the `record_readable` hold in place.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
+            "content": "sha256:0562d796fe6412d011be686f4d321121bdc60e4497c8eb0bed0824630851b323",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_that_cannot_be_used_is_reported_unavailable"
+            },
+            "path": "mcp/tests/test_review_sync_movement_read.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
+            "content": "sha256:3637be2605b45806a7637eb0c2944c5edfe328dbb15bd9628deb961625830922",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "mcp/tests/test_review_sync_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The imports the three models need, and the `after` validator machinery they are built on.\n\nAnchor: `model_validator`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:a8b3f434a782dee478f4d3d23dbb94d1b6218d990d8cc0490816b5283d27625b",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The published surface: three models and the state alias, in one alphabetical list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:0395123e45c2a8402f70e335b3361c3636922d8a80ae1aa477a9b3353c134034",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The four measured states declared once, with `current` as the only one that claims agreement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:648875f435ba138f9762884dfbf9592574b05c52d8ff1c1caa0658c1c331df04",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncMovementState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The stale comparison, its three-member state union, and the three causes of a stale state the statement names.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:34a5d8e83a0088df46de2f68d8e6d8bd7d500c25c4923ae17a06f012ca617d95",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewStaleness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The bilateral previous-input rule: a stale comparison must label one, and no other state may carry one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:13284bfe39f1769ed7524e14a03b3fff35435c7de98f6fd8df6d708af266e825",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_previous_input_to_be_labelled"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The measured movement: its field set, the resolved identities present exactly on the channel that moved, and the record_readable/reuse_permitted/reinterpreted_for_new_inputs flags.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:32e759ddeff1713b2c257983248ed0d623b1d3c56babd35a02ada80c9df93252",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncMovement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:35d05db8ee86407a6a7367a0667a41185f85d0abefaf007818f58d8f27e54fcf",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The `after` validator that refuses every false movement shape — state against moved identities, absence against reason, and `record_readable` against `unavailable`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:d70780b9ab23f1ae57de6b7e2812a00b62d0eb719b2117bd46813bf9a729b172",
+            "locator": {
+              "kind": "symbol",
+              "name": "_the_state_follows_from_what_was_measured"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:78ef2a3194e321717417fc35cfde1dd61fc61b478c6be0993f1940d11cc67b6f",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The submission boundary carried as data: two unfavourable states, and `none_is_approval`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:d904949668541caf0010fa94cebce276e8833c105662025001251df021211bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSubmission"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:e8e4cc7090024a2d9f42192af541da9c50bf9ce134c1ea2ba9c10a6f0fc9d571",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

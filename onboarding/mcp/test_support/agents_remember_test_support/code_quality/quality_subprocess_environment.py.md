@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python quality verification overview](overview.md)
@@ -45,24 +35,19 @@ one owner and nested wrapper tests cannot mutate the outer run's evidence locati
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation governs this repository-owned process boundary.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The closed outer-only set and child filtering are explicit. | `OUTER_INVOCATION_ONLY`; `child_environment` | mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py:9-25 |
-| Child construction preserves semantics while setting checkout import roots and coverage output. | `build` | mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py:28-44 |
-| Import roots are derived from product file/directory targets once. | `source_import_roots` | mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py:47-65 |
-| Focused forcing proves only outer controls disappear. | `test_outer_retry_controls_do_not_leak_into_candidate_tests` | mcp/tests/test_quality_subprocess_environment.py:6-29 |
+- The closed outer-only set and child filtering are explicit. [1]
+- Child construction preserves semantics while setting checkout import roots and coverage output. [2]
+- Import roots are derived from product file/directory targets once. [3]
+- Focused forcing proves only outer controls disappear. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None.
-
-## Update History
-
-- 2026-08-27T18:33+02:00 — Created after the Dagger retry matrix exposed nested quality tests
-  overwriting outer cache/progress evidence. Verification metadata remains empty until closeout.

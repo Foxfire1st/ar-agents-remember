@@ -1,15 +1,5 @@
 # dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:41:49+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -64,35 +54,25 @@ routes, history rows, proof and census on top of it are SCRATCH-AUTHORED, becaus
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement: real served answers, SCRATCH-AUTHORED curation, only `fetch` stubbed. | "MIK-R29 on real data" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:1-6 |
-| The captured bodies and the request-to-body map. | `captured`; `bodyFor` | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:16-21; dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:33-65 |
-| The file, directory, root-summary and test-file cases. | "opens a file with its prose, resolved references, entries, families and linked records"; "opens a directory with its overview, routed families elsewhere and the route decisions"; "lands on the bounded root summary and follows a subtree page to the next"; "shows a test file its proofs by invariant with their facets" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:118-233 |
-| The invariant, family, decision and incident, and census cases. | "opens an invariant truth view with its states, links and a three-source timeline"; "opens a family, a decision and an incident with every field and their links"; "shows the census, the without-proof list and code opened at its symbol" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:235-338 |
-| Navigation, and failures named. | "navigates by URL: explorer and links change the shareable hash, and the hash round-trips"; "names a partial index, unavailable prose, unverifiable states and an unconverted tree" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:340-398 |
-| The review-fix cases: code spans, located lines and a failed source, the derived header, side failures and stale answers, unreadable links. | "links [n] markers in prose text only, never inside code spans or fences"; "marks the located code lines, and names a timeline source that could not be read"; "heads a superseded decision with its derived status"; "names side reads that failed, pins a clean published view, and drops stale explorer answers"; "names record links that could not be read instead of claiming there are none" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:400-503 |
+- The module's own statement: real served answers, SCRATCH-AUTHORED curation, only `fetch` stubbed. [1]
+- The captured bodies and the request-to-body map. [2]
+- The file, directory, root-summary and test-file cases. [3]
+- The invariant, family, decision and incident, and census cases. [4]
+- Navigation, and failures named. [5]
+- The review-fix cases: code spans, located lines and a failed source, the derived header, side failures and stale answers, unreadable links. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T12:41:49+02:00 — 260928-MIK-L29 curator (follow-up after the coordinator's test-only edit, staged; the change set is still 24 files over `b54d1b0331f67454bcf245a7a338b04900181c3c`): **Todo resolved.** The debugging `console.log('HELD', …)` block of case 13 (old lines 488-492) was removed and nothing else changed; the file's 14 cases pass and eslint and prettier are clean (coordinator). The Todo is replaced by "No additional work", the row that cited the removed block is dropped, and the review-fix cases row was re-measured by the exact −5 shift (`400-508` → `400-503`). No verification stamp was advanced: the file is new and uncommitted; closeout owns the real stamp.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new component tests MIK-R29 adds (14 cases over real served bodies, the dashboard half written by worker B), recording the fix-round cases (F2, F4, F6, F9, F11, F13, N2, the R2 in-flight note, F17) and a Todo for the leftover `console.log` in case 13. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

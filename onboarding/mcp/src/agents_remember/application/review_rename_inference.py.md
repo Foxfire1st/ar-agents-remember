@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_rename_inference.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_rename_inference.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T19:40:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -97,47 +87,39 @@ or attribution from what it measures.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the uncommitted candidate: the module's own docstring and
 twenty definitions, the Git runner it calls, the wire value it fills, the traversal that calls it last,
 and the cases that measure the three states.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the two-tree measurement, the labelled value, and the rule that a rename is never proof that an invariant moved.** | `git_rename_inference` | mcp/src/agents_remember/application/review_rename_inference.py:1-19; mcp/src/agents_remember/application/review_rename_inference.py:96-125 |
-| The published surface: the command, the observation and sources values, the seam and the four functions. | `__all__` | mcp/src/agents_remember/application/review_rename_inference.py:30-41 |
-| **The declared command with both bound tree objects substituted and never a branch, a working tree or `HEAD`.** | `RENAME_INFERENCE_COMMAND`; `rename_command`; `_tree_word` | mcp/src/agents_remember/application/review_rename_inference.py:47-47; mcp/src/agents_remember/application/review_rename_inference.py:180-191; mcp/src/agents_remember/application/review_rename_inference.py:194-199 |
-| The three stated reasons an inference was not measured, and the two Git status letters that carry two paths in the `-z` raw form. | `_MISSING_TREE_RENAME_DETAIL`; `_UNROOTED_RENAME_DETAIL`; `_UNPARSED_RENAME_DETAIL`; `_TWO_PATH_STATUSES` | mcp/src/agents_remember/application/review_rename_inference.py:61-64; mcp/src/agents_remember/application/review_rename_inference.py:57-60; mcp/src/agents_remember/application/review_rename_inference.py:53-56; mcp/src/agents_remember/application/review_rename_inference.py:51-51 |
-| **One Git rename record, and the honesty boundary between a measured non-pairing and an unmeasured inference.** | `RenamePair`; `RenameObservations` | mcp/src/agents_remember/application/review_rename_inference.py:68-73; mcp/src/agents_remember/application/review_rename_inference.py:77-88 |
-| The seam the inference is measured through, so a case measures one review with a substituted observation. | `RenameInferenceProbe`; `no_rename_inference` | mcp/src/agents_remember/application/review_rename_inference.py:93-93; mcp/src/agents_remember/application/review_rename_inference.py:128-132 |
-| **The two bound trees and the seam as one measurement, with the answer or the reason it was not measured.** | `RenameInferenceSources` | mcp/src/agents_remember/application/review_rename_inference.py:136-152 |
-| **The inference asked at most once and attached only to movements whose recorded addresses differ, with the stream's order untouched.** | `with_rename_inferences`; `moved_pairs`; `_with_inference` | mcp/src/agents_remember/application/review_rename_inference.py:155-177; mcp/src/agents_remember/application/review_rename_inference.py:202-220; mcp/src/agents_remember/application/review_rename_inference.py:223-235 |
-| **The three states as sentences: the pairing that states it is not proof, the measured non-pairing that names every pair asked about, and the unmeasured one that claims no inference either way.** | `_inference_for`; `_addressed` | mcp/src/agents_remember/application/review_rename_inference.py:238-288; mcp/src/agents_remember/application/review_rename_inference.py:291-294 |
-| The declared record format reader that refuses an output which is not this interface's. | `_rename_pairs` | mcp/src/agents_remember/application/review_rename_inference.py:297-331 |
-| The wire value, whose validator keeps a pairing and its state one fact and refuses a similarity word on an unmeasured inference. | `ReviewRenameInference`; `RenameInferenceState` | mcp/src/agents_remember/models/knowledge/review_relationships.py:221-255; mcp/src/agents_remember/models/knowledge/review_relationships.py:105-105 |
-| The traversal that calls this module last, after the movements exist. | `relationship_movements` | mcp/src/agents_remember/application/review_relationship_movement.py:142-177 |
-| The Git runner the measurement goes through. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:150-214 |
-| **The cases that measure the inference: a source rename displayed as a labelled Git inference, the same rename with no authored edge producing a retraction and an addition rather than a movement, and the separation of a measured absence from a measurement never made.** | `test_a_source_rename_is_displayed_as_a_labelled_git_inference`; `test_the_same_rename_with_no_authored_edge_is_a_retraction_and_an_addition`; `test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made` | mcp/tests/test_knowledge_review_relationship_movement.py:607-637; mcp/tests/test_knowledge_review_relationship_movement.py:675-717; mcp/tests/test_knowledge_review_relationship_reach.py:544-591 |
+- **The module's own statement of the two-tree measurement, the labelled value, and the rule that a rename is never proof that an invariant moved.** [1]
+- The published surface: the command, the observation and sources values, the seam and the four functions. [2]
+- **The declared command with both bound tree objects substituted and never a branch, a working tree or `HEAD`.** [3]
+- The three stated reasons an inference was not measured, and the two Git status letters that carry two paths in the `-z` raw form. [4]
+- **One Git rename record, and the honesty boundary between a measured non-pairing and an unmeasured inference.** [5]
+- The seam the inference is measured through, so a case measures one review with a substituted observation. [6]
+- **The two bound trees and the seam as one measurement, with the answer or the reason it was not measured.** [7]
+- **The inference asked at most once and attached only to movements whose recorded addresses differ, with the stream's order untouched.** [8]
+- **The three states as sentences: the pairing that states it is not proof, the measured non-pairing that names every pair asked about, and the unmeasured one that claims no inference either way.** [9]
+- The declared record format reader that refuses an output which is not this interface's. [10]
+- The wire value, whose validator keeps a pairing and its state one fact and refuses a similarity word on an unmeasured inference. [11]
+- The traversal that calls this module last, after the movements exist. [12]
+- The Git runner the measurement goes through. [13]
+- **The cases that measure the inference: a source rename displayed as a labelled Git inference, the same rename with no authored edge producing a retraction and an addition rather than a movement, and the separation of a measured absence from a measurement never made.** [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It asks one repository's Git object store one
 question about two tree ids that belong to it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **created.** The module is new in this leaf (`ICR-R08@v1`) and this is its one-to-one card. It records the packet's rename clause as a value rather than a comment: Git's own detection over two bound tree objects, a basis that can only be `git_rename_detection`, three states that keep a measured pairing, a measured non-pairing and an unmeasured inference apart, the exact command that reproduces the measurement, and the sentence that states the inference is not proof that the invariant moved. It also records that the inference is attached after the movements exist and is never read back, and the measured boundary that a real Git detection failure is exercised through the substituted seam. **Basis accounting:** the verification pair above names this leaf's base, the last real commit the reading was taken against; the candidate is named here in the body rather than in a metadata row, and closeout owns the stamp once the code commit exists.
+No applicable cross-repository source was found.

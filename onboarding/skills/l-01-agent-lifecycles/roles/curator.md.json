@@ -1,0 +1,143 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/curator.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+        "content": "sha256:df9b2dbcbe0c579d8ffba828a78137321ccb8c5e887f0cd435e51d4fdfd5c432",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-K569QYAK",
+      "invariant": "INV-0FBA8M52",
+      "origin": {
+        "leaf": "260921-ICR-L45"
+      },
+      "rationale": "Process step 3 tells the curator to ensure every target carries its authored rationale before ingest.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Required task, source, handoff and publication inputs.\n\nAnchor: `## Inputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "content": "sha256:aeaf9ad0ca1ac350656b7d577f4f3db76cc4e12d6014225eeee383dc3201bca0",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Three-way reconciliation, explicit retention, writer/readback and full quality duties.\n\nAnchor: `## Process`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a756f65b233df245d1ae081625d17ba1283e89a",
+            "content": "sha256:629aa6b61c855ffdb823b6cfa3f29152dc6283ba7596cbe2219a82383e8e5720",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The curator’s prohibited writes and source-stamp boundary.\n\nAnchor: `## What you must not do`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "content": "sha256:08c5288905fc3c24da58cf4a44d71a61f932e769e95cd620053715fa27b42d1b",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Process step 3 requires an authored rationale on every hand-off target before ingest.\n\nAnchor: \"every target carries its own authored\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "content": "sha256:84b78f1189216855976a2aabc4f74c2959948c5f6db7d0925ff2bb75cdfe3743",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13).\n\nAnchor: \"Lift the decisions that keep governing code.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "On converted memory the curator follows the converted-card workflow.\n\nAnchor: \"**On converted memory** (the tree holds the knowledge layout marker), follow the c-05 skill's converted-card\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "content": "sha256:fdb248efe75baf14cb687c476122a2d642336e098f23b135dfceeb49739dda62",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "On converted memory knowledge-ingest is the file writer and publishes no dataset.\n\nAnchor: \"**On converted memory the same command is the file writer.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "content": "sha256:c757caacc807f3e5dc9815f66e611e8c058ad564e2e5fde4c48efa67ae1f741f",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

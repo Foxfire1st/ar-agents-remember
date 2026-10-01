@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/ModelEffortControl.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/ModelEffortControl.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -41,40 +31,27 @@ requests, and color-only acceptance status.
 
 The production sev-4 trigger-visual caveat remains documented in `ModelEffortControl.tsx.md`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Sourcing, failure, menu, apply, and chip cases. | "ModelEffortControl" | dashboard/src/panels/session-cockpit/ModelEffortControl.test.tsx:1-391 |
-| Component under test. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:635-704 |
-| Capability fixtures. | `effortOption`; `modelRow`; `SET_RESULTS` | dashboard/src/test/fixtures/capabilityEnvelopes.ts:20-32; dashboard/src/test/fixtures/capabilityEnvelopes.ts:34-52; dashboard/src/test/fixtures/capabilityEnvelopes.ts:211-247 |
+- Sourcing, failure, menu, apply, and chip cases. [1]
+- Component under test. [2]
+- Capability fixtures. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
+No cross-repo evidence applies.
 
 ## Current L5I Maintenance
 
 The control tests now pin model-only trigger output when no current effort is evidenced and retain
 the live-menu selection cases that distinguish actual state from launch fallback.
-
-## Update History
-
-- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
-- 2026-07-24T13:17:17Z — Curator: recorded evidence-only model/effort trigger coverage;
-  verification fields remain pre-commit.
-
-- 2026-07-17T08:33+02:00 — Created for the 260715-FEUI-L4 R1–R3/R5/R6 rendered matrix after
-  final reviewer PASS. Base verification metadata is temporary until code commit.

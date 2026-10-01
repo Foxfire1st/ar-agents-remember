@@ -1,0 +1,45 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `reconcile_worker_exit`; `project_worker_exit`; `release_worker_after_exit` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c56956a5e72a29f4cb339395a16ec072eb3386fb",
+            "content": "sha256:546e74042021521ecd5c9d18b606f9cae8a91b826a8fe1e65b53c2959448e536",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_worker_exit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c56956a5e72a29f4cb339395a16ec072eb3386fb",
+            "content": "sha256:e58ef1c4e6c7e6a038b7597b56ced2edf9f06f5df88c4a22bd86417a14773121",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_worker_exit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c56956a5e72a29f4cb339395a16ec072eb3386fb",
+            "content": "sha256:181fda110fcbbfe4adbe4eea83e74217bd084cd2c7dc9115657b411089908802",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_worker_after_exit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

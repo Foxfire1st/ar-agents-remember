@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Inline source enumeration reads repo files through `git_ops.list_repo_sources`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c60efeec0ef3127bc1dd8922d20481a59200a57",
+            "content": "sha256:6eb16367829134821318d28add81d2ed072f961dc826225e2a17c812c1384fc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_repo_sources"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Inline block parsing is owned here; CLI behavior is separate and no deleted-suite pass is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ec5e6da699e2143162ef74916ffeda38e4c8f85",
+            "content": "sha256:e540107f06ceee0f7b8620a1275d1358bb30f47ed42af7ec3332571df383bee5",
+            "locator": {
+              "kind": "symbol",
+              "name": "extract_inline_onboarding_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

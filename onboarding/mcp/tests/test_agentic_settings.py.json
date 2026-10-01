@@ -1,0 +1,239 @@
+{
+  "path": "mcp/tests/test_agentic_settings.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The curated table the order assertion derives its expected prefix from, and the probe-carry merge the override case pins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "364e98348bb4e7c4fcdc65e16ed409bd5af76c73",
+            "content": "sha256:fe54da6f1eb24c77412375eda6e1bf6e847f9d466b12fa75b2fd09a97833cc55",
+            "locator": {
+              "kind": "symbol",
+              "name": "HARNESSES"
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b0f97f41ccb521b0b843c9a3da322228565d363",
+            "content": "sha256:b0016a0900cf47457bf0a0857488d7687bcb7a13d519b4cb7b0a522a1322c33d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merged_harness"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "New id adds a harness with defaults derived.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:1c6e155dd5c56f208f1d8e8deaf47dac157f8ade06f352405543020f06702609",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_new_id_adds_a_harness_with_defaults_derived"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Cross layer reference and partial override merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:1d39c06835183b2b1e12fccbf8c7c82e2413c0ac349ed59c0cf704988f5893a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cross_layer_reference_and_partial_override_merge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Reference to an id known nowhere fails naming the manual.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:d1224bfa84f8c3bf6a7ea2a3727e48fdb4b68c32130f0f0231ab92ff0baca653",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reference_to_an_id_known_nowhere_fails_naming_the_manual"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Executor authority is not accepted in agentic settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:cee1cd7598e85607c010fb7a2edb2fb05a779b432e43e5e5101d7659c053da09",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_executor_authority_is_not_accepted_in_agentic_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two harness-vocabulary cases this change set touched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:1c6e155dd5c56f208f1d8e8deaf47dac157f8ade06f352405543020f06702609",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_new_id_adds_a_harness_with_defaults_derived"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:75f14323cb00ebfe6d4ac5fcf3e7f14efdf6000df0ddcb61c4efcdaa7c27146e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_builtin_override_keeps_its_runtime_readiness_probe"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Local leaf overrides global leaf and siblings survive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:f4ff80e5f0877a7b0f8d26fa89588683eaa63ed9b5086a799c8974ae4957baa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_local_leaf_overrides_global_leaf_and_siblings_survive"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Arrays replace never concatenate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:024f21c3058af680dae2e6b93d44f0ef306d6a7a7c75dcaa26927f38c85046e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_arrays_replace_never_concatenate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Absent files mean documented defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:84c7a2eb7b7c6e1ba24a3a291efdb642fd9beed2fb990fba489d429d9a622748",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_absent_files_mean_documented_defaults"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Local gate delegation is refused global layer only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:77b05d963acc5b2edfa246f5e8c8a342915bc946c6eefa9cdc8d9817daaeec93",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_local_gate_delegation_is_refused_global_layer_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Malformed json fails loud with path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:ff27a5da0dc29a3bba6b10744816a434b55eb2df1690e643343f5676ebba6dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_malformed_json_fails_loud_with_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Human pinned gate kind cannot be delegated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:13a25c42267cce5feceb8403717f608809634a7d879ac82d2f1546bbfe9e35be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_human_pinned_gate_kind_cannot_be_delegated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Level override deep merges over the flat default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a379364e97f4dd66256b8de22ddf1520726b0654",
+            "content": "sha256:7c8394fea600480afddd9ca7203c793b1988a71cf9cd0dc19e8c25e8379a201b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_level_override_deep_merges_over_the_flat_default"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

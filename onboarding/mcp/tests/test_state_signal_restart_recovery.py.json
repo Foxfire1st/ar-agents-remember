@@ -1,0 +1,183 @@
+{
+  "path": "mcp/tests/test_state_signal_restart_recovery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A failed marker write leaves one unmarked pending row, zero submissions, and a restart that renews the same row id before delivering once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:ff8312493d01bb84b2eb6305eae882b16bbc714a6f173da741ebce43eaca170e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_marker_failure_keeps_one_unmarked_row_and_restart_retries_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The accepted-receipt patch keeps delivery assertions on the shared protocol seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:ef7bcf7928c2197074ca813ab8fa1762815f6a5ba8b208d22620a8746371c0eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_submit_patch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The temporary world writes a real task topology before the sweep resolves structural owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:da485447d9317badfe799dba14348c52df287c0e33bf7e80b5ff2bc3db74280d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_task_topology"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both competing finders' findings are fenced at the shared action, and recovery in the same sweep stamps before delivering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:2ebb08aebf527067442c845758d64296cbd0515032a9c3163f637edc95b7819a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_immediate_boundary_marker_failure_is_fenced_until_the_marker_retries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A stop after the marker leaves one marked pending row that the ordinary pending-row path lands once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:1ce6790ac6497a3670cef8a23c5723a7e139b51e40b10b6d41af5fd8d7650cb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stop_after_marker_before_delivery_resumes_on_the_pending_row_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A same-seat structural rebind renews and re-addresses the original row id rather than minting a sibling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:305aae321049f92b9820845f1d54cbdd0c8f0f04e1e2c24057cee453b2e42ee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rebind_before_marker_retry_renews_and_readdresses_the_same_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Two distinct seats reporting one evidence identity keep two rows that never renew each other.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:908aac31e891d9ba47ba9699b25a9246803f232715482903a6603059d3ef7b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_seats_reporting_the_same_evidence_keep_distinct_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A later evidence identity re-arms the seat as a successor row while the older row still delivers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:d31664494a779db7714ec1ae6f408d85f83e8473eaf2a7c9956a9b2a5e69ba70",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_new_evidence_identity_rearms_and_the_older_row_still_delivers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The non-state preservation control: structural coalescing across occupants, a second row on a different role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:311fd60f94a1c6fa89164f739ec297862c4e627b59bd93423e356bfa98773cce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_other_kinds_keep_their_structural_coalescing_key"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Fresh store objects over the same durable files model a restarted notifier process.\n\nAnchor: `_World.restarted`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:b0ab574a7eec342e54bcd7d652ceec4fad575300291dc50e27d944f587ed01cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_World"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The injected durable-store fault fails only the marker leg, leaving the row write healthy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cf278e3a368dc362f83c9e3690c9de587d7ff96",
+            "content": "sha256:b22ea9fc3bd8bd97894d4d7b87b9e407287f758739174ef6256900ab3a9eb35d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_failed_marker_write"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

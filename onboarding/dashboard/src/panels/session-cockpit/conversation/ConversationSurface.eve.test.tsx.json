@@ -1,0 +1,265 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shipped surface this case mounts, and the store it seeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:7b0e8a90c1bed09c86800be640a7d95a4ffeb42b8ddcef69e2e57b457dad1955",
+            "locator": {
+              "kind": "symbol",
+              "name": "activeConversationStore"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:1e072037cbefaf5582fc3c69b898e8ffd03f852bde7e70de545499ad32d332cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "emptyProjection"
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The decoder that supplies the items and status with no cast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:cbc3745a1aedaae9ee0ebbb6e69d825529f3d2fbdbc462583651a984f41c5bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "eveConversationItems"
+            },
+            "path": "dashboard/src/test/fixtures/eveConversationCapture.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:526861ee93798a62581f1be88cbbe8bef41a159ecb53080660d5418601c72e08",
+            "locator": {
+              "kind": "symbol",
+              "name": "eveConversationStatus"
+            },
+            "path": "dashboard/src/test/fixtures/eveConversationCapture.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The guard the no-cast discipline satisfies.\n\nAnchor: `wireFixtureGuard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:bab6faeb5a57b9f79f793756218ba2ba0258f2c1618263cd8d31ac2d2612331b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:ab9506b21f483dc95df2f2b35f70c0a443b053a7b9649f77467e688a33200404",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Python cases that pin the same capture against the live projector and assert the states it must show.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:ef7f426c7ba8233cef93a959643020ead8b9d71cb03b6e3529e8f9027830527e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projection_matches_the_capture_the_mounted_ui_renders"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:7596c18a53df84bd8fc674f24513a082eac0d46a7354198d823f372d929561ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_capture_shows_the_states_the_packet_names"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:15b6cd602b660a0c6f5972e1353da72147a87dbd638979a7f280df6b3d4ab0c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_frames_and_replayed_frames_project_identically"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:9a1484dd4c3faf2edb0150a6f8361dd49f024c39a177176aa8bdefde7d9489d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reconnect_replays_evidence_without_duplicating_items"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:6b04151e6ab00c43cde2077ea5c72d03dab4854b3811d47287456769c0879063",
+            "locator": {
+              "end": 1452,
+              "kind": "line_range",
+              "start": 1445
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:722b3c9a2f70692a28ad8c006a5ce79f58caba89c1c2d6c8f61907048c0c4611",
+            "locator": {
+              "end": 1485,
+              "kind": "line_range",
+              "start": 1454
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:2bb564a5259e0e5509365d15bbd4bb0043168f037b8382299d7907edc98c2c7a",
+            "locator": {
+              "end": 1514,
+              "kind": "line_range",
+              "start": 1496
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:04cc3ec05fca43574240c5df592522db36d0fabdf93612617d485dd2503794c3",
+            "locator": {
+              "end": 1532,
+              "kind": "line_range",
+              "start": 1516
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The turn-boundary rendering the cancelled case reads (the amber interrupted line and the notice row).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06901ae0677dd9ddb65cfeb322d7456fc510081a",
+            "content": "sha256:421884cee5bbcdfec73b349c3b295a3349abb7fca0f164f8a5b6a7b2fa67c5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnResultItem"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The interaction row the question and authorization cases read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccb97957c00edbe63e2a342a102589edeb21dc8e",
+            "content": "sha256:6aedc7858cb17419944047f7138b40731865f2769d8352f66b9900f81beaceb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionItem"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The harness-agnostic sibling mount this file sits beside.\n\nAnchor: \"ConversationSurface hidden keep-alive gating (F-j)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30f6b1d480fe4978bac026bd45b096cafcbe4fc7",
+            "content": "sha256:9f4d27ab036ec5ca2a91020d96621acb9b0398909063d42a718e32312a94a155",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

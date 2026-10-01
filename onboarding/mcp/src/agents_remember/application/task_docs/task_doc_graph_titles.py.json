@@ -1,0 +1,68 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The central owner refuses more than one graph document and builds the one in-memory title context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba61924c0c6d86077e472fcbb1704b53f58dbd8c",
+            "content": "sha256:029e36395687bcb19a3110d10d1a8633c0c6a2756ff73e891f0cc6a72c9f3967",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_single_graph_document"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba61924c0c6d86077e472fcbb1704b53f58dbd8c",
+            "content": "sha256:2265e240bd2e35f506d67c192f943bec0001760f46dd2b074c9f9775f1e7d11a",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_publication_batch_graph_titles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ordinary publication checks the same cardinality before it constructs the task transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:382ac1c56b0075ab841e4b01ce53a94985b33f5cb6b60e4726e6bf3f0c0240b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_publication_transaction"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Focused proof covers zero/one support, two-graph no-write refusal, and order-independent errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56afdabb8daf6d4f55f78484a975fdd60e99601b",
+            "content": "sha256:bc41f407e5e432caa4afc030e851385ffe5f0e3276e64ff6a3768eefbc05629e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocGraphPublicationTests"
+            },
+            "path": "mcp/tests/test_task_doc_graph_publication.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

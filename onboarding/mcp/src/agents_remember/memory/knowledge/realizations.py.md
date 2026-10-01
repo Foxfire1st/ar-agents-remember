@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/realizations.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/realizations.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -92,48 +82,34 @@ None recorded for this slice. The five `remove_*`/`create_*` operations are reac
 application seam but have no non-test importer above it yet, which is the correct `KS-R03` position
 rather than a debt of this module.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The claim operation, including the anchor endpoint decision and the anchored transaction grouping. | `create_realization_claim`; `_insert_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:61-83; mcp/src/agents_remember/memory/knowledge/realizations.py:84-91 |
-| The in-transaction claim insert both the operation and the batch command compose, with its `None`-means-no-op answer. | `insert_realization_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:93-141 |
-| The in-transaction anchor recording (existing lookup, absent refusal, new-anchor write). | `_record_anchor` | mcp/src/agents_remember/memory/knowledge/realizations.py:144-179 |
-| The endpoint-union resolution that separates naming an anchor from recording one. | `_requested_anchor_id` | mcp/src/agents_remember/memory/knowledge/realizations.py:321-326 |
-| The forward read (invariant revision to claims). | `list_claims_for_invariant_revision` | mcp/src/agents_remember/memory/knowledge/realizations.py:271-286 |
-| The reverse read (anchor to claims) over the same rows. | `list_claims_for_anchor` | mcp/src/agents_remember/memory/knowledge/realizations.py:288-301 |
-| The explicit removal with its expected-row-digest contract, and the in-transaction helper the batch composes. | `remove_realization_claim`; `_delete_claim`; `delete_realization_claim` | mcp/src/agents_remember/memory/knowledge/realizations.py:181-201; mcp/src/agents_remember/memory/knowledge/realizations.py:203-210; mcp/src/agents_remember/memory/knowledge/realizations.py:212-244 |
-| The batch command that composes the claim insert and reports its two written rows. | `_add_claim` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:818-840 |
-| The stored anchor construction and narrow write hook the claim transaction reuses. | `source_anchor_from_draft`; `insert_anchor_row` | mcp/src/agents_remember/memory/knowledge/anchors.py:82-97; mcp/src/agents_remember/memory/knowledge/anchors.py:99-119 |
-| The row codec and expected-row digest for the claim relation. | `claim_row`; `claim_row_digest`; `decode_claim_row` | mcp/src/agents_remember/memory/knowledge/records.py:429-440; mcp/src/agents_remember/memory/knowledge/records.py:441-462; mcp/src/agents_remember/memory/knowledge/records.py:463-483 |
-| The closed authored role vocabulary and the explicit unclassified member. | `RealizationRole`; `UNCLASSIFIED_ROLE` | mcp/src/agents_remember/models/knowledge/graph.py:36-44; mcp/src/agents_remember/models/knowledge/graph.py:46-46 |
-| The claim vocabulary and its two read shapes. | `RealizationClaimDraft`; `RealizationClaim`; `RealizationClaims`; `AnchorRealizations` | mcp/src/agents_remember/models/knowledge/graph.py:65-85; mcp/src/agents_remember/models/knowledge/graph.py:87-94; mcp/src/agents_remember/models/knowledge/graph.py:112-118; mcp/src/agents_remember/models/knowledge/graph.py:120-129 |
-| The declared `realization_claim` table, its two indexes and its no-rewrite trigger. | `realization_claim`; `realization_claim_invariant_revision`; `realization_claim_anchor`; `realization_claim_no_rewrite` | mcp/src/agents_remember/memory/knowledge/schema.py:297-315; mcp/src/agents_remember/memory/knowledge/schema.py:329-331; mcp/src/agents_remember/memory/knowledge/schema.py:330-331; mcp/src/agents_remember/memory/knowledge/schema.py:395-399 |
-| The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it. | — | — |
+- The claim operation, including the anchor endpoint decision and the anchored transaction grouping. [1]
+- The in-transaction claim insert both the operation and the batch command compose, with its `None`-means-no-op answer. [2]
+- The in-transaction anchor recording (existing lookup, absent refusal, new-anchor write). [3]
+- The endpoint-union resolution that separates naming an anchor from recording one. [4]
+- The forward read (invariant revision to claims). [5]
+- The reverse read (anchor to claims) over the same rows. [6]
+- The explicit removal with its expected-row-digest contract, and the in-transaction helper the batch composes. [7]
+- The batch command that composes the claim insert and reports its two written rows. [8]
+- The stored anchor construction and narrow write hook the claim transaction reuses. [9]
+- The row codec and expected-row digest for the claim relation. [10]
+- The closed authored role vocabulary and the explicit unclassified member. [11]
+- The claim vocabulary and its two read shapes. [12]
+- The declared `realization_claim` table, its two indexes and its no-rewrite trigger. [13]
+The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `_add_claim` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:818-840. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `_add_claim` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:794-816. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `_add_claim` repointed to mcp/src/agents_remember/memory/knowledge/batch_commands.py:740-762. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `_add_claim`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-16T08:10:00+00:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): **extended this card for the batch composition it enabled.** The claim's write is now the in-transaction helper `insert_realization_claim`, returning `None` for the identical-claim no-op and refusing every other conflict, and the removal's two checks moved into `delete_realization_claim`; the card records the `None`-means-no-op contract because the two callers translate it differently (a `no_change` result versus no receipt entry), and that a claim recording its own anchor produces **two** written rows in the batch receipt. Also recorded that both helpers assume the caller's lock and transaction, with nothing enforcing it. Citation ranges were re-derived; the `governingOverview` link was repaired from `../../overview.md` to the three-level path. Verification metadata remains closeout-owned.
-
-- 2026-09-16T06:24:00+00:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): created this one-to-one card for the new realization module. It records the authored-not-inferred rule as the module's central boundary (a graph-valid claim stays a claim), the anchored transaction grouping that makes an orphan anchor impossible on a refusal path, the one-claim-per-pair guarantee, and the structural reason the forward and reverse reads cannot disagree — they select the same claim columns from the same table. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

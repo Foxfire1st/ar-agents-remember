@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/panels/Hangar.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test (filters rows through `hasLiveWorktree`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a2d5b192fc4938c0730d528dfbc497ae3763c2d",
+            "content": "sha256:4030a419c9c9b939130582ee958c68f1db25099b11da18e09c7c73efb5d8f537",
+            "locator": {
+              "kind": "symbol",
+              "name": "Hangar"
+            },
+            "path": "dashboard/src/panels/Hangar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared existence-truth visibility selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:11343a45a01ef202166e96ededd7d402cf42e7ea3465e4f17e95fb9e94f4812b",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasLiveWorktree"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dashboard store the test seeds `enclosures` / `lifecycles` into and resets between cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "content": "sha256:a481771a6a1f49857fdf4bab41702258222f16824150f29d9da3b3906411dccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardStore"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:5e7617b273ad3b1f42e12a7e7ad04fdc602557ac4de78278b73514a2327c4656",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The running-operation fixture supplies required `legalControls: []` and `projectionEffects: []` while the assertion remains scoped to durable `currentCommand` rendering.\n\nAnchor: `legalControls`; `projectionEffects`; \"shows the durable live command\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a41b3deb51e3a2595b4ba57959e578a2566c4e5",
+            "content": "sha256:5374ae48e2c5a5df95f9d047e81134f672ca05faf2131df392f50b610e9959f7",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

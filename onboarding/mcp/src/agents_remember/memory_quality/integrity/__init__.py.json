@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Integrity checks for memory-layer correctness.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47a9b59318f9d2bfb35f27467ef217c80f86b734",
+            "content": "sha256:869094b4ba1d7ba28de1aff110b8831b9183fb8c744ad9787ab0fd8dd98a9903",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

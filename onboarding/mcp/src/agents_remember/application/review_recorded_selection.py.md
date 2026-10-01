@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_recorded_selection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_recorded_selection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T02:30+02:00 |
-| lastVerifiedCommitHash | `870701b43039cd205a8c98e418382729510c3de3` |
-| lastVerifiedCommitDate | 2026-09-23T03:12:21+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -132,41 +122,34 @@ own, and it declares no model: every value it returns is built from
 None recorded. The three-tier `related` ordering is a fixed rule rather than a preference: a later
 reader who reorders it changes which spelling two page sizes render for the same identity.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the two questions it answers, the two places it reads and the reason: a page must not decide a record's meaning.** | "A review's applicability classification turns on two questions"; `RecordedSnapshots` | mcp/src/agents_remember/application/review_recorded_selection.py:1-27; mcp/src/agents_remember/application/review_recorded_selection.py:145-157 |
-| **The population as the classifier reads it, with the recorded revisions and ICR-R07's page-bound retained list kept deliberately apart.** | `RecordedSelection`; `published_retained` | mcp/src/agents_remember/application/review_recorded_selection.py:78-125; mcp/src/agents_remember/application/review_recorded_selection.py:105-105 |
-| **The one public entry, which reads the snapshots' half and merges it under the comparison's page facts so the union only grows.** | `selected_subject_population` | mcp/src/agents_remember/application/review_recorded_selection.py:176-222 |
-| **The three fixed tiers of relationship spelling, ordered so two page sizes render the same related identity the same way.** | `selected_subject_population` | mcp/src/agents_remember/application/review_recorded_selection.py:176-222 |
-| **The one identity a review seed names, in the union's own kind vocabulary, with a revision seed resolved through the item that carries it.** | `_subject_identity` | mcp/src/agents_remember/application/review_recorded_selection.py:225-236; mcp/src/agents_remember/application/review_attribution.py:160-178 |
-| **The mutable accumulator whose one rule is that an association identity is never a revision.** | `_Population`; `reach`; `_reach_revision` | mcp/src/agents_remember/application/review_recorded_selection.py:267-305; mcp/src/agents_remember/application/review_recorded_selection.py:292-305; mcp/src/agents_remember/application/review_recorded_selection.py:357-369 |
-| **The page-independent half read from both snapshots' own owners, contributing nothing from a side that could not be read.** | `_snapshot_population`; `_read_recorded_reach` | mcp/src/agents_remember/application/review_recorded_selection.py:483-508; mcp/src/agents_remember/application/review_recorded_selection.py:511-532 |
-| **What "related family/closure context" means here: a directly containing family, its recorded members, and each member indexed under its own identity.** | `_read_containing_families`; `_read_family_members`; `_read_realizations` | mcp/src/agents_remember/application/review_recorded_selection.py:550-580; mcp/src/agents_remember/application/review_recorded_selection.py:583-617; mcp/src/agents_remember/application/review_recorded_selection.py:535-547 |
-| **The comparison facts the classification must not mix across comparisons, carried as one measurement.** | `ComparisonFacts` | mcp/src/agents_remember/application/review_recorded_selection.py:129-141 |
-| **The sources one classification is assembled from, with the known-subject catalogue a reader rather than a value.** | `ApplicabilitySources` | mcp/src/agents_remember/application/review_recorded_selection.py:161-173 |
-| **The read owners this module composes instead of writing SQL of its own.** | `fetch_revision_ids`; `fetch_memberships_of_invariants`; `fetch_family_ids_for_revisions`; `fetch_memberships_of_families_full`; `fetch_invariant_revisions`; `fetch_realizations_for_invariants`; `open_read_only_database` | mcp/src/agents_remember/memory/knowledge/read_queries.py:64-75; mcp/src/agents_remember/memory/knowledge/read_queries.py:96-107; mcp/src/agents_remember/memory/knowledge/read_queries.py:153-175; mcp/src/agents_remember/memory/knowledge/read_queries.py:178-191; mcp/src/agents_remember/memory/knowledge/read_queries.py:210-223; mcp/src/agents_remember/memory/knowledge/read_queries.py:263-297; mcp/src/agents_remember/memory/knowledge/connection.py:52-63 |
-| **The one consumer, and the port its panes read.** | `review_applicability`; `AppliedRecords` | mcp/src/agents_remember/application/review_record_applicability.py:183-214; mcp/src/agents_remember/application/review_record_applicability.py:134-180 |
-| **The case that measures the page-independence this module exists for: identical treatments, context and summaries at every page size.** | `test_every_page_size_classifies_the_same_records_the_same_way` | mcp/tests/test_knowledge_review_subject_isolation.py:361-397 |
+- **The module's own statement of the two questions it answers, the two places it reads and the reason: a page must not decide a record's meaning.** [1]
+- **The population as the classifier reads it, with the recorded revisions and ICR-R07's page-bound retained list kept deliberately apart.** [2]
+- **The one public entry, which reads the snapshots' half and merges it under the comparison's page facts so the union only grows.** [3]
+- **The three fixed tiers of relationship spelling, ordered so two page sizes render the same related identity the same way.** [4]
+- **The one identity a review seed names, in the union's own kind vocabulary, with a revision seed resolved through the item that carries it.** [5]
+- **The mutable accumulator whose one rule is that an association identity is never a revision.** [6]
+- **The page-independent half read from both snapshots' own owners, contributing nothing from a side that could not be read.** [7]
+- **What "related family/closure context" means here: a directly containing family, its recorded members, and each member indexed under its own identity.** [8]
+- **The comparison facts the classification must not mix across comparisons, carried as one measurement.** [9]
+- **The sources one classification is assembled from, with the known-subject catalogue a reader rather than a value.** [10]
+- **The read owners this module composes instead of writing SQL of its own.** [11]
+- **The one consumer, and the port its panes read.** [12]
+- **The case that measures the page-independence this module exists for: identical treatments, context and summaries at every page size.** [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It reads one repository's own two snapshot
 files and names no boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T02:30:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): created this one-to-one card for the module this leaf introduced to hold **one selection's recorded population** (`ICR-R26@v1`). The card records what the module reads and from which two places, why the snapshots' half exists (a bounded page must not decide a record's meaning), the deliberate separation of the recorded revisions from ICR-R07's page-bound retained list, the fixed three-tier relationship-spelling order, the rule that an association identity is never a revision (this leaf's F-V1 fix, stated as current behaviour), the defensive snapshot read that contributes nothing from a side it could not open, and the read-only boundary. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

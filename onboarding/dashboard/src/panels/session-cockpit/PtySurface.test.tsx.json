@@ -1,0 +1,100 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/PtySurface.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:f3ae2d8247ee862b9326abc5b63fd396c7f5d78a785cf2a62da157f38eb747e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PtySurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:80cb61820129d00bdcb3538095ea1ae52b0ebcc3d5415a18c79048b2f5500c83",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The L6 archetype fixtures every case hydrates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8d89416905ae2ed22dcc34a005872f1e6414113",
+            "content": "sha256:ea54c8b7d5392b4545194acdc6ea6f3c2d60d7b7c3d55c73a8e9fa31ca83eca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "L6_CONTROLLED_WORKING"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f8d89416905ae2ed22dcc34a005872f1e6414113",
+            "content": "sha256:74dc901ecc64bb6e0d5d5c22626c0de5efd2bc06cfcde54d062ba54104194384",
+            "locator": {
+              "kind": "symbol",
+              "name": "L6_LEGACY_RAW"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The harvest store the bell case drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2eb49e25b72503d0f728b57f7f3bf14df13fc7f",
+            "content": "sha256:9e2671a5c5f635ac1f5d106dea71a160a8e8fc7a85b9f9177e51aafc98020a51",
+            "locator": {
+              "kind": "symbol",
+              "name": "ptyHarvestStore"
+            },
+            "path": "dashboard/src/data/ptyHarvest.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The mocked-away real terminal (its own suite covers xterm wiring).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3ee93dd1552027a86f954846b0b7a374559094",
+            "content": "sha256:c8d9a25ffaa776bddf1e754414fc2441636f61cfa6784d82c1d0dc713cb67570",
+            "locator": {
+              "kind": "symbol",
+              "name": "Terminal"
+            },
+            "path": "dashboard/src/panels/Terminal.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

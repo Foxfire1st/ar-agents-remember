@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/LaunchFlow.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/LaunchFlow.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-30T22:35:02+02:00                           |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`       |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -123,30 +113,35 @@ element (`launch-*`); the dialog stops click propagation and handles its own Esc
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for this file. | — | — |
+No relevant domain documentation was found for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The dialog: reset/load, pickers, pair gating, outcomes, F9 watcher + dismiss. | "launch-flow-overlay" | dashboard/src/panels/session-cockpit/launchFlowParts.tsx:587-587 |
-| The pure pair reducers + open classifier this renders (`chooseModel`/`chooseEffort`/`selectionComplete`/`openHostedSession`). | `chooseModel`, `chooseEffort`, `selectionComplete`, `openHostedSession` | dashboard/src/data/launchFlow.ts:51-63; dashboard/src/data/launchFlow.ts:66-75; dashboard/src/data/launchFlow.ts:81-83; dashboard/src/data/launchFlow.ts:248-266 |
-| The envelope store + R2 cost/cache copy (`fetchHarnessCapabilities`, `capabilityCostNote`, `capabilityLoadingCopy`, `cacheStatusNote`). | `CapabilityCatalogState` | dashboard/src/data/capabilityCatalog.ts:41-43 |
-| The tier machine stamping the retained pair at 'pending' on a 200. | `launchTier` | dashboard/src/data/launchEvidence.ts:29-41 |
-| The typed narrow harness catalog read and explicit result states. | `HarnessCatalogRead` | dashboard/src/data/harnessCatalog.ts:13-16 |
-| The hook owning timeout, abort, Retry, and one replacement per serving boot. | `useHarnessCatalogRead` | dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts:22-86 |
-| The owner registering `session.launch` and mounting the dialog after the palette. | "session.launch" | dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:235-235 |
-| The banner handing in the refused-pair prefill. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-143 |
-| The jsdom matrix: dynamic-only, cost parity, pair rules, all response paths, F9 dismiss/reopen. | `renderFlow` | dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx:88-102 |
-| The open-response fixtures the classifier paths render. | `INVALID_PARTIAL_PAIR`, `FAILED_LAUNCH_ROWS` | dashboard/src/test/fixtures/openResponses.ts:46-49; dashboard/src/test/fixtures/openResponses.ts:143-147 |
+- The dialog: reset/load, pickers, pair gating, outcomes, F9 watcher + dismiss. [1]
+- The pure pair reducers + open classifier this renders (`chooseModel`/`chooseEffort`/`selectionComplete`/`openHostedSession`). [2]
+- The envelope store + R2 cost/cache copy (`fetchHarnessCapabilities`, `capabilityCostNote`, `capabilityLoadingCopy`, `cacheStatusNote`). [3]
+- The tier machine stamping the retained pair at 'pending' on a 200. [4]
+- The typed narrow harness catalog read and explicit result states. [5]
+- The hook owning timeout, abort, Retry, and one replacement per serving boot. [6]
+- The owner registering `session.launch` and mounting the dialog after the palette. [7]
+- The banner handing in the refused-pair prefill. [8]
+- The jsdom matrix: dynamic-only, cost parity, pair rules, all response paths, F9 dismiss/reopen. [9]
+- The open-response fixtures the classifier paths render. [10]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -154,49 +149,3 @@ New hosted chats inherit the selected lifecycle on the server and broadcast cata
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`shell.test.tsx`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 5 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`openResponses.ts`, `useHarnessCatalogRead.ts`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:22:41+00:00: Generated citation repair: "session.launch" repointed to dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx:235-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `LaunchFlow.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the launchFlowParts/launchFlowStyles extraction. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T02:35:50+02:00 — W3-B05 curator: anchored 10 Tier-2 table citations and 25 Tier-2 prose citations with exact source paths; fixer generated all ranges.
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. The
-  `capabilityLoadingCopy` loading branch moved L359-L365 -> L448-L454 (L359-L365 is now the
-  dialog's `role="dialog"`/Escape wiring); the range now covers the whole loading ternary arm that
-  proves ZERO options exist while `loading`/`refreshing`. Claim re-verified and unchanged.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V7 + RV-3 visual-honesty pass — the
-  disabled primary is demoted to a muted/inert chip (no longer amber-ready), the summary always names the
-  blocking next step (no `codex · — · —` chain), the leaf-key placeholder is shortened (`leaf key
-  (optional)`) with the arbitration note moved to `title`, and `launchButton`/`quietButton` gained
-  `flexShrink:0` + `nowrap` (no self-wrapping labels). Daemon-only pickers, pair gating, and outcome
-  paths unchanged. Verification pinned to the leaf base (`352d5cd`) until closeout stamps the candidate
-  commit.
-- 2026-07-18T12:43+02:00 — FEUI-L9R: corrected overlay geometry and catalog authority: fixed
-  bounded viewport, typed read states, abortable timeout/operator retry, one reread per serving
-  boot, detected-row submit gate, and no pre-session adapter projection. Verification metadata
-  remains pinned pending candidate closeout.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 S2/S3 (R1/R2/R4/R5, incl. fix rounds 1-2):
-  the palette-opened launch dialog with daemon-only pickers (detected-gated harnesses with the
-  VISIBLE adapter word — review finding 6), verbatim capability errors + retry, R2 cost-named
-  loading/refresh parity, complete-pair gating with advertised-order efforts and vendor-defaults/
-  effortless honesty, all four open-response paths, and the F9 unknown-outcome watcher gated on
-  `open` with dismiss clearing the watch state (review finding 1 + the delta-verify residual).
-  Verification metadata pinned to the leaf base until closeout stamps the L3 code commit.

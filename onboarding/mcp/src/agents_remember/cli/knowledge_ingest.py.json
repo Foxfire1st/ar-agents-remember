@@ -1,0 +1,958 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+        "content": "sha256:199fd749c8d68e4c9fe056cecbe19f15e263505227e16733da828a1bc153b05f",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-6HAWT71R",
+      "invariant": "INV-1XKX9ERN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Declares the contract guard, the hand-off list, the optional candidate directory, the authorization ref, the baseline this task forks from, dry-run, the two destination selectors and their exclusivity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:79d153a26adbfdc10a1440a5f2cd12b058d35cb9b6449b7412b70dcd91dd2f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**A converted memory worktree is written by the curator file writer: `run` loads the contract once and dispatches on the layout marker before any database-route refusal (MIK-R12 rule 7).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "115f1305ebcde5ed26ed1c12a1ee846998fdebc4",
+            "content": "sha256:37085a4abd8da3bfb3a83ea4742794ace9fe577d7273a5e9e9259123a38fe62e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8b6d48f847e1ff2db6d7cbde01a7486d0b527b7e",
+            "content": "sha256:eeee2bad743bb2e1ffc13d008b07839edeca026e7b50abc134c8b15cafd1e632",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_leaf_write"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_converted"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:17b3cabc388c60faa2ddd2c2e7995f25d2740aaa07018b1c0c0ff14da08a0efe",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:0a22cc877f0d40d764a29073495af63144baf240f8fcd507674738ee9c9e8adf",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The unconverted refusal comes first on unconverted memory: MIK-R24 rule 9 when the official line is converted and, since L37, the cutover lock once the repository holds converted memory.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:199fd749c8d68e4c9fe056cecbe19f15e263505227e16733da828a1bc153b05f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:7f8b8f69f67d04451c6c83e1669692a65d015c65e3109eae177a9e3772c66530",
+            "locator": {
+              "kind": "symbol",
+              "name": "unconverted_write_refusal"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**Every fact about the argument list answered before a contract, a list or a byte is touched.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:e7df0424c4ab87bc9620a44b8394cc58330e78726c7293e6391754c5778012da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invocation_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Drives one ingest and prints the report, which is the result; after the converted-memory dispatch it refuses by name first, resolves one `_Invocation`, builds the one `IngestSelection` the operation takes, hands the loaded contract to the review handoff, reads the publication back and prints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:199fd749c8d68e4c9fe056cecbe19f15e263505227e16733da828a1bc153b05f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The two renderings this module delegates rather than owns, including the two fields this leaf added to the run's answer.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:219d900bccd79532711207a2b03f5b7090ffd2ee31bdcf9e5b47dbe3c317bcbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_print_report"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5668cbc091a7d1456867e565f98276f75e6de11",
+            "content": "sha256:6f9602bdb3e3bb6cb469152173a267e3be3153db91070c245a3a4e3bf0f42394",
+            "locator": {
+              "kind": "symbol",
+              "name": "summary"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest_report.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5668cbc091a7d1456867e565f98276f75e6de11",
+            "content": "sha256:92e86a51b7111a72725361cedd550ce9c6eabfdff0cec84078d300207c7a0d20",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest_report.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The canonical review root, derived from the contract's own recorded worktree group rather than from the caller, so the directory the review resolves and the directory this run writes are the same path by construction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:c8ddc6b38efff11b9f72fa1e76b3e52a5ef317cebfaed5a37d3c34c4c0e7aa50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The candidate directory: the caller's when it named one, otherwise the canonical review candidate root.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:03fdcdbebe02cd5a5b8ca1c9e46bb089a52da16149bba6d7110b21e242d19ff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The review handoff as a pure seam: ask the one gate whether this run may fill anything, then hand the half, the candidate directory, the captured bytes, the run's facts and the rebase flag to the placement owner.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:72582eb0d17429a92ca9237178ef8c48135b0e8bd2d37e0c2549e45f7b1abf4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_review_baseline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The before-snapshot capture, taken at the top of `run` before the ingest can publish over the file `--baseline` names (leaf `260915-KS-L47`). It returns the application owner's own value rather than a CLI-local dataclass.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:467931bdfea0d337d357d53e3f2795684fb8812d073df0707de7e92c714c7834",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture_baseline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The two batch states that mean the candidate is on disk, and the entry list that keeps an all-refused run from reading as one of them: `no_change` is a batch whose rows were already stored, but the batch-level state also falls back to it when the batch never ran, so a run whose every entry refused reports it too. The placement therefore also requires `report.committed` to be non-empty, because a run that committed no entry has no candidate of its own and must not touch the review's before half.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:c9a8172986b43d3bbb8194afe240f9374ff7d29fa225f620741f8d84bba539c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMMITTED_BATCH_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:ba25683411433cfaa3d733cf1908caea019f858fed090b648978abc3f10b87da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_placement_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:a6c664e273c0913b18fb5758ddda1df82d7821c50d5a2c7c3209dcb430ffa34a",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "MIK-R14's optional MCP settings for a `raise` row's task-document question (converted memory only).\n\nAnchor: \"--config\"; \"row's question is appended to the leaf's task document\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:00466bd81b55ed4783db3fee8c928cbd389aa2df91700ddb46a50ea9d57dae29",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The one gate both filling paths share, split so each branch states only what its own condition established.** The state half reports `the batch did not commit (<state>)`; the entry half reports `the batch committed no entry (<state>, refused N)`. They are two returns rather than one sentence because the single sentence served both halves and contradicted itself on the state-half branch -- a replayed run read `committed no entry (replayed, committed 1)` This is the only placement question left in this file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:ba25683411433cfaa3d733cf1908caea019f858fed090b648978abc3f10b87da",
+            "locator": {
+              "kind": "symbol",
+              "name": "_placement_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The rules that used to be this file's, cited where they now live: the ordered answers that keep a standing baseline, and the first generation's preservation rule the rebase flag cannot override.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:5d90aa08e32f11384488db8a3eb2ebe5948404bcd064a0beed2534491c048e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_or_keep"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:5f1cb2ea79ea457a4cd11021c9ad367f0cf52383925a477232f9cda2185bf8dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_admitted_baseline"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:799400c91794bd088910565a2041affa61e0637c1486feae96fd69752dab419e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identified_first_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The application owner the handoff delegates to, and the values it hands over: the run's admitted facts and the bytes read before publication could move them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:57943a15347c4fa5c167d10eda2a86e983cefb4bc00d59eba9f2449aee3233da",
+            "locator": {
+              "kind": "symbol",
+              "name": "fill_admitted_before_half"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:1a8abc5a074d48b28911ff25bdd820f58b6d3db1c904d78aa360261cf968cd49",
+            "locator": {
+              "kind": "symbol",
+              "name": "BaselineRun"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:46d1b1e1615c20847dfeba62e360a4de4a2b898b8201cf1f14e6e78bcc0f9433",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapturedBaseline"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The two readers the moved guards were built on: the half's four-state read, and the bytes-read-as-a-dataset read taken before anything is written — the second of which the ordinary route's admission also derives its identity from.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:20593e75be84f9692bca97772b0636bbe09a4d3b7c1c80c6572bf3a64d07ce6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_before_half"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:537340418e29664e57bbfc1adde8dcdb6d29d88b497397aee0626f14b1152c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_captured_dataset_identity"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The cold-start branch, now reached through the owner: a run that named no baseline establishes the review's before half as an explicitly identified empty first generation, carrying the leaf, the contract, the authorization and the code base the report already observed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:d0c9043169984bfa7632ba86e9a148aee7ca68595c11730e19e48c5f0932a1a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_establish_first_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The application owner that act delegates to, the run it is handed, and the value it answers with.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22d6c360b4690d5812f503e3280448152d87b4cb",
+            "content": "sha256:f0512951239bbfe64e9c2d018eff1587b769401df12ee718bd90e06d67657e08",
+            "locator": {
+              "kind": "symbol",
+              "name": "establish_first_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_first_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22d6c360b4690d5812f503e3280448152d87b4cb",
+            "content": "sha256:790ff581e9116698bac73a0180d4f9c942a30acd4e0afe82620fa6d19a4de9c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstGenerationRun"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_first_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22d6c360b4690d5812f503e3280448152d87b4cb",
+            "content": "sha256:f04208dce5d03149f798542bba39c60ed442f3eb76d29df669b65c8eb39d542d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BeforeGeneration"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_first_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The production entry point this adapter calls — the closed write path — and the selection value it is handed, including the baseline a run forks from and the destination it selected.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:1e68e38b1d88e42cbf232455a533b8ff42545fd09694ebe83890024f9cd1ccb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ingest_curator_list"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:b31a270e4a9968a72fc8350f65816fb39df52c04d733cda52667411907622c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "IngestSelection"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:516116977aed0676d5b987ed3d90a55a91061456c9d591f7564388dfd0e2c2cf",
+            "locator": {
+              "end": 1036,
+              "kind": "line_range",
+              "start": 1019
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The refusal a selected baseline that is missing or corrupt earns, naming its path and reason and establishing nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:f48790c1b07bc231b16073f34a37a549d1e8f9b869946017bbfe23ebc06afd82",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_input_unavailable_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:65a030fe4c3e7c76fe2731318d39fee04a985ee3c570e49439bd0ad67bdab4d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected_baseline"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:781d23934ad89d20abc883d52aaffd7797c00136cf60442401e2eb3f5dfb456c",
+            "locator": {
+              "end": 1575,
+              "kind": "line_range",
+              "start": 1438
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "**The three published directory constants this adapter derives its default from — one spelling shared with the reader, which is what connects the write side to the review. They are defined in `application/review_candidate_resolution.py` and re-exported by `knowledge_review.py`, which is the import path this module uses (`:146-146`). Every range in this row was re-derived against this leaf's candidate, whose import block moved the constants by four lines.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:7e0c86879b5cffa240e52505d5a0303e41b53950c644b04ec73509cc29b3d8a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_CANDIDATE_RELATIVE_ROOT"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:3821ae4ec642f2f3641f42db7b462c2db0f06717a423e2c3aa289b29c3d57d44",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_CANDIDATE_DIRECTORY"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:2b4eafe4c02c6e6a8db132cf914e0015ae6259fb71e9bd8e4056e4b645e5b343",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_BASELINE_DIRECTORY"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:546fb2b259d7449f7844ea8cac4ee97feaeebd8a048448a3290e39d09aa152bd",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:c1dd1653134153fdf13848579782b8040b59418d8eae9c4d4ff2bcff1b09710a",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The dataset name both halves take, so a placed baseline and an established first generation are the file the review opens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:41f589742d293ea113b9383d3fdd5dd040a7fef94f875ea4a4115ac3da6cc2cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANDIDATE_DATABASE_NAME"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:7e39c61fc2641aaa81ca23159d72971c64a691ddd394f38215008ce5b89906bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASELINE_ORIGIN_NAME"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The ordinary route's destination: the read route's own declared location, and what this run admits is already there.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:0cb5964780ea6f2c4d3245ff51be3314482a43c1e42c7422b48d2cb0fd4e64b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Destination"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:bc1be6d5b552ab70e4eb9b79280fd51874f8b468ed6ae85822bfe54a305268b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_destination"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:a26b10bf2b87b50893180b1b3246bbb2cb72f0062f8d956290b22857a1ca074e",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_publication_location"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:54711c8526ab83c479a899aac9c26fe5daf917b9bec4b3100cf4ec6f7b750cfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_destination"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:b11542a6145b785571daf2c3719e4311914dbef18d1a59d13f02b9aa803befc2",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The contract the one load yields, and the loader that reads it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The subparser registration that makes this the ninth CLI subcommand.\n\nAnchor: \"knowledge-ingest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:78458fde33a11a578539417b89ca696a3c1f1095d05a10e45fc7a5bf09cf4509",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The run's order: the crossing route, the file writer for a converted tree, the unconverted refusal, then the database ingest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:199fd749c8d68e4c9fe056cecbe19f15e263505227e16733da828a1bc153b05f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The invocation's destination argument set, refused as a set: two destinations, an expectation beside the declared route, and an expectation with nothing to expect at.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:5a8b40d6cfdbb85f2462f15650a63084c3ca9fc55dc43c4057a6cf4568d40503",
+            "locator": {
+              "kind": "symbol",
+              "name": "_destination_conflict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The caller-named path, admitted exactly as it was before the ordinary route existed, and the one selection the run ends up making.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:bfe672a3c7200946240f112b783b66e631aec3e64cd7ff6bc9e70f8c3b4cc8c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_caller_named_destination"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:14f0f78f80edb47d0f1e69b71197976a549690acb164d74b03f240a6885e9814",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected_destination"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**What a run that named no destination reports, in the mode it actually ran in — a planning run is not a committed run.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:cafc3b60c13b9796a92399f0bc2fb8fb5db6e470acec2958678fcdfb9ee27b35",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nothing_selected"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The read-back, gated on the run's own report: a refused publication and a run that published nothing are both read back not at all.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:aeb50e2e50169935c868d394391b74f9446682c594acff4edc6e4ad1f8c18831",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_back"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:c31f33b68a4b6f664642c7b4faeabd06521cbcf5c7dd474315183345555ba8e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_identity_read_back"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The run's own line about its publication, completed from the report because the selection happens before the list is read; and why a run that selected a destination published nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:315fd4b106cd55709863b2aceca54e8de4b741de8cd79b4d60e9f135dd3e63ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publication_route"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:a7dbf810e3b53843f02f06258495da50ad1109f27f09f98b8536a4128c2ee5ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nothing_published"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The four values one run resolves, in the order it needs them — the baseline is read before the destination is selected, because the ordinary route's admission IS those bytes. `_invocation` reuses the contract `run` already loaded, and loads it itself only when that load failed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:3d4a0cd9d32e705bfb5f0e39a3790acc49fe873d93bf071116cc22138d9a8b0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Invocation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:8bda11021235b1d3ffa4cb5eabc48687094a501aa0088ee614f3c5ca11876afe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invocation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

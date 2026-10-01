@@ -2,14 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/native_helpers/conversation_library/` |
 | onboardingRoute | `mcp/native_helpers/conversation_library/overview.md` |
 | parentOverview | [`mcp/overview.md`](../../overview.md) |
-| lastUpdated | 2026-09-07T00:31+02:00 |
-| lastVerifiedCommitHash |  `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f`|
-| lastVerifiedCommitDate |  2026-07-26T18:40:37+02:00|
 
 ## What This Area Is
 
@@ -157,31 +152,27 @@ resolution source.
 - `agentId` is the one sanctioned additive optional request key (read only): invisible to pre-existing
   callers, never a required-key change.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The helper protocol fixes exact versions, a 1 MiB bound, exact operation keys, fixed safe error detail, and the serve/probe/sign/page primitives. | "export const PROTOCOL_VERSION" | mcp/native_helpers/conversation_library/src/protocol.ts:13-13 |
-| The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus. | "the exact locked helper versions are protocol constants" | mcp/native_helpers/conversation_library/src/protocol.test.ts:14-17 |
-| The Python host and Claude/Pi ports drive these entries on the production seam. | "class ConversationLibraryHelperHost" | mcp/src/agents_remember/serving/conversation/library/helper_host.py:91-91 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The helper protocol fixes exact versions, a 1 MiB bound, exact operation keys, fixed safe error detail, and the serve/probe/sign/page primitives. [1]
+- The helper suite probes exact version tuples, malformed/wrong-version frames, cross-operation fields, and a hostile secret/path corpus. [2]
+- The Python host and Claude/Pi ports drive these entries on the production seam. [3]
+
+### Cross-Repo References
 
 The installed npm dependencies are third-party libraries, but no neighboring workspace repository
 is read or updated by this route.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant cross-repo implementation evidence found. | — | — |
+No relevant cross-repo implementation evidence found.
 
-## Docs References
+### Docs References
 
 The resolved Domain Documentation registry has no entries. Exact package/lock contents and local
 tests are used as direct evidence; no external behavior is claimed from package names alone.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this helper gate. | — | — |
+No configured domain documentation was available for this helper gate.
 
 ## File-Level Onboarding Map
 
@@ -218,43 +209,3 @@ installed-runtime suite on machines with the harnesses to prove the production s
   `list` enables the surface.
 - Installed Pi 0.80.7 list/read/resolve passed through the production helper seam (the
   installed-runtime gate).
-
-## Update History
-
-- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
-  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the installed-runtime suite citation and
-  rewrote the claim that carried it. `test_conversation_library_installed.py` is now 590 lines: the Pi
-  gate + list/read/resolve round-trip are L217-L263, `PiOpenEndToEndTests` is L284-L413, and
-  `ClaudeGateHonestyTests` is L554-L586 (was `L215-L262; L360-L568`). The old claim asserted a "Claude
-  version-mismatch fail-closed posture", which the suite now explicitly disproves —
-  `test_installed_claude_library_gates_on_contract_not_version` asserts the reason contains neither
-  "differs from the locked" nor a version mismatch — so the claim was rewritten to state the
-  contract-only gate the test actually pins, matching this file's Needs Verification note.
-- 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the Claude sub-agent surface — the
-  `subagents/` on-disk authority with the SDK-replicated project-slug rule, per-row `agents`
-  enumeration folded into the list signature, the `agentsEnumerated` response marker, and the
-  additive optional `agentId` routing reads to agent transcripts with fail-closed
-  malformed-content posture. Also corrected the PRE-EXISTING stale version-tuple handshake
-  claims in Operating Model step 3 and Main Flows > Exact handshake (they still described the
-  pre-L5F R4 gate; ready-by-contract is the doctrine since 2026-07-21 — surfaced as a
-  contradiction the L5F pass left behind). Verification stays pinned until L7 closeout stamps
-  the candidate commit.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
-  2026-07-21, R4) in `protocol.ts::buildHandshake`. Corrected the now-false Needs-Verification claim
-  that the installed 2.1.214 runtime handshakes `incompatible` against a locked 2.1.211 gate: the
-  handshake is ready-by-contract, reports observed runtime/helper versions as informational evidence,
-  and never compares to a locked constant; the live `list`/`read` operation is the only gate. Helper
-  framing, typed error vocabulary, and paging primitives unchanged. Verification stays pinned until
-  L5F closeout stamps the candidate commit.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: extended the helper overview for the two
-  locked operation entries (`claude.ts`, `pi.ts`) and the protocol's added serve-loop, version
-  probing, signing, and paging primitives; the package is no longer behavior-empty, while the
-  resolution, privacy, and scope-exactness invariants are unchanged. Verification metadata
-  remains pinned until closeout stamps the candidate commit.
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the governing helper overview for
-  exact repository resolution, strict JSONL admission/handshake, and fixed raw-error privacy.
-  Verification is blank because the new source route is uncommitted; closeout owns its first stamp.

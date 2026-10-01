@@ -1,0 +1,325 @@
+{
+  "path": "mcp/src/agents_remember/certification/diagnostics/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package re-exports the full diagnostic contract surface for the one optional non-certifying lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1938e7dc63fbf75c9296e824126f737b6638bc02",
+            "content": "sha256:45a0cc962b4edac5279915835327f781220c7c31b99ba1aa8d0d1100717be351",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Closed diagnostic models (result, attempt, manifest, plan, failure, teardown, authority and environment bindings).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:c28b22b2f1a592e8884289d8701d68936bd36a0ee5214bd5e1552dddee253839",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticDisposition"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:7117aaeb09e85617d6e18ceb9976969fe7bb829b375c2b86f43fbd1a85890800",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticAttemptState"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:85977af5db7f923f64a356e44fa4d09aaa105210c2e41c1cac9e95f7a47d4814",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticArtifact"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:66fcd2b0a321fa60d820818851172c7197a207920e2c40c4d8d5768fe5b98125",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticFailureRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:091d5b94830c06fc38fda69556931265ce9ee3fe5e1b479fb0111026a6017155",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticTeardownRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:8f4bf9d4d61778f347fd2ae1ebdf467b4b394ed628ff63f16a374640bdc3d31f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRuntimeAuthorityBinding"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:be2d4bba8066e9fb1e8011c06a4f5b2990fff0db8c59f411fa6a722bfe61a124",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticEnvironmentBinding"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:5b1d708aefc1569c77cfd35ba439b2eb760e8a3a826a75cd170fc096a96b07f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticAttemptRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:5795cc0f740dbd59f9527e1d2037e6ed2f6f992b70ba9f5753731a7de6ac4c1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticPlanRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:c4bbec1a4988008cbdee21438a8a64111e3c2b52a1feda596067fbb24fa8e2cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRunResultDraft"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:3cc17503910eec4ae3024acb29721bc6c93360a19a9b943bfa291bb981b84f92",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRunResult"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:f8943e21ea5546b498f5ba95e2be5444a59e707e1ec1018dca990b57338f21b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRunManifest"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Diagnostic-altitude plan projection from the canonical R11 scenario rails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6c2c87b0940b29d44885f8c6ac393521840d37b",
+            "content": "sha256:a1d13ae4c2813fa00ee9185be5dc88c217527c9fd0f5906d52bce76cb9685a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_diagnostic_plan"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/planning.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6c2c87b0940b29d44885f8c6ac393521840d37b",
+            "content": "sha256:cc8aaf8e80502357b971acf1eecec9909b51b0acbca88e9dc42fc068db795189",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagnostic_scenario_gate"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/planning.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Optional-lane readiness projection (not-requested-optional, running, newest-terminal blocking).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3dc7d1ed4502d8445d858d697ebab92e0820872",
+            "content": "sha256:7b32523353e6bc89bc16770eb871d550f0d47d66895d9de6af80f327d36be53a",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_diagnostic_lane"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3dc7d1ed4502d8445d858d697ebab92e0820872",
+            "content": "sha256:2bf69b657e3e6acc68bf8a4d87ca243265cfe00682ce485532bd86bb0b126118",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Durable isolated candidate manifest store with CAS publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:c24f0d0e1cc55976bf6d664fec116c62bcb4119011fe7162f35a8fbc809e29b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticManifestStore"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The R12-run-controlled executor consumes these contracts through the trusted authority launcher.\n\nAnchor: `admit_dagger_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3588e55cdf21a9902cd2d3eb1a2aaf212e56338b",
+            "content": "sha256:69d363a2385f12cebec6f59576b9fb216007e4577cdd19ca4512c4df245afd6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticExecutionEngine"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3588e55cdf21a9902cd2d3eb1a2aaf212e56338b",
+            "content": "sha256:a6807eed494ec4c754298acd0795538953aaf5fcf3282502386b9f63c2ca1ab1",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The outer certification facade re-exports the same diagnostic surface.\n\nAnchor: `diagnostics`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "154ea7ba15c71063a6b67d408af549c1dab8cb34",
+            "content": "sha256:299fa1b67a1b6ef31886367078e3bc4e4eabaf9b8dbc4b4ebd662be0b4014084",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "154ea7ba15c71063a6b67d408af549c1dab8cb34",
+            "content": "sha256:612dba36c693e2029d4a6afdd4f78decbdfdf3416766105fbdbc409e8e06545d",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Diagnostics are repository-neutral and bind the frozen R12 runtime authority snapshot, never a repository-selected engine.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c95f95a223b7cba7a93b78ddb18b71cfcb5e846",
+            "content": "sha256:8f4bf9d4d61778f347fd2ae1ebdf467b4b394ed628ff63f16a374640bdc3d31f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRuntimeAuthorityBinding"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

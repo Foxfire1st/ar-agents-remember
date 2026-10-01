@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout",
+  "references": {
+    "1": {
+      "note": "The closeout validator's gate over the authority's exact candidate.\n\nAnchor: \"curator-coherence-knowledge-gate-refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86698aded5e98ce77dbb793c65e90a7deebfd4e",
+            "content": "sha256:6772ad476d6034ab968dd523ccb86bc0f93ee4372cdfa9b4e5cc52e06e2f85b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_knowledge_gate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Door source facts use current Git and task authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "556ec70453a1aced093f1aea62eae20e9f734bd3",
+            "content": "sha256:a3c55e31538cc171cdaeb4341a838fd8327bcfa456e8c84f46e8362e4f646fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declare_generation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

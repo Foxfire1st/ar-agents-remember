@@ -1,0 +1,236 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/source_lineage.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical task altitude selects the correct contract and missing-edge relation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:a5551ed7cb0c18004ad11a0fb849757baa72221b0f5e1f3590cd957f009e028e",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_lineage_for_task"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:006d9a9fb6389e791ac778d4c17d09cc3645646200cbadad351b9df27afcb431",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Leaf pre-mutation admission proves the parent series edge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:94e08600c7701d5b5d55804a9bc4db0493ff8176781be940c5cd89b96a098d4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "parent_source_lineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:771a60676c6ab708a0933dc063464a3440b25e9dc72e39ff0365593696aebe1a",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Contract admission composes the complete series or transitive leaf projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:79cbbca2da3a3cb736feb775398705b7d93feb4639bb384398371b0806ccec4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_lineage_for_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:6f9e9d766b3040438037edf8134d4a077172716b9151259c0bc0321a3917a313",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The generic lifecycle guard refuses a stale or unavailable transitive chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:223c4f80d4754541b4f231cd02737da7a78c202488266f108640b559137276b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_source_lineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:56e3ff2b8e0a491bceeba29456ba8ea3a1e7a91d9ab171a95132959fd5109d84",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Refusal and blocked-payload helpers publish one recovery shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:174ad86371b89839c067cf21deadb2ddf10b3e448944c1eaa69fac8e43108ced",
+            "locator": {
+              "kind": "symbol",
+              "name": "lineage_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:c6df1fdccf3f46fb0d180814802a3229f0c8b47b17a6e412cfad16eda063af90",
+            "locator": {
+              "kind": "symbol",
+              "name": "lineage_block_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Linked-edge validation prevents a leaf from naming an unrelated parent source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:68ed7f7d2d38dbd8b134db5b7e09c49fc1c44b88caf07a6bc39b2ac180bad082",
+            "locator": {
+              "kind": "symbol",
+              "name": "_linked_edge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:1f0e3c8cc0acd2a4b34e20750ae6dcb79be9ec402cbb0c2b2e17270fa2022daa",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 379
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Repository equality routes both paths through the shared Git-identity helper so sibling worktrees compare as one repository.\n\nAnchor: \"def _same_repo(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:f5fa229ea6ab28dc6e2221e1270218092bbffca2955306a4938b45542fdbd112",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 444
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared helper resolves Git's common directory as repository identity.\n\nAnchor: \"def repository_identity(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "content": "sha256:d9e1505e59923a6db21fa1b9a73e860704510f6df2bca5a06292a8042eebe001",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Git facts become strict edge states and ordered sync recoveries.\n\nAnchor: `_edge`, `_projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:4d9b1f2fe2d1d4490b6650344f841909f0fd4da5b220fa05b6a94de0492d8aff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_edge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0698b4d3060c69466daeccba41780544dbc5a11d",
+            "content": "sha256:0580961cef23b8146812ef76fd1c72bb73046dbff1340640e6b13ca3f7e8041e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

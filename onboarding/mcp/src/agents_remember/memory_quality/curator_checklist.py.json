@@ -1,0 +1,241 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The defaulted input and its rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:5d341d40ac56e2a1f9868f4df55ac06a980ff74bc62cfd004a8ca7f3cc8c83a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "without_proof"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:0a28de839a68793db013b6144092b73f9b481b53ce7e64aef0649aca96b56909",
+            "locator": {
+              "kind": "symbol",
+              "name": "WithoutProof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "R03 attestation dependency declaration source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:4676069cc230f2d693f3d2151b6f44515a5fb8acf09f1c4c70fd9aa076319157",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_attestation_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The section renders only for a list, as information that moves no count.\n\nAnchor: \"Information, not a gate (MIK-R28 rule 5)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:4b8539cd759156b4b275249cb1d061d3b7f534626781e779deef285c568ec406",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:9d64cf4ef6fbf61872da9ecbad420c5066f97ee0b024b83a5f3c78d5b6d106ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_without_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The wire summary is identical with and without the list; an unconverted checklist has no section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:34525bc8d9a84d228dd0827a93d992f393828d1cea11be4ea34a57b1aa483e74",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_checklist_shows_the_list_as_information_that_moves_no_count"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two defaulted worklist inputs and their comment, which since MIK-R09 names the gate's `knowledge-gate` findings.\n\nAnchor: \"hands each open item to\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:73647c6be89bab95f610a9645de985a46cc0e1a37f13bd995f97f3104ffafc12",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:89f3f0eca8b92c18875ce78fd071bb13a539700e8fcb95183a327462c7c7d83f",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The section renders only for a worklist, after the \"without proof\" section.\n\nAnchor: `knowledge_worklist_lines`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:4b8539cd759156b4b275249cb1d061d3b7f534626781e779deef285c568ec406",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The section's lines, whose item table since MIK-R06 also renders `family_route_condition` items, and since MIK-R09 `onboarding_trace` items, through the kind-to-renderer table; its lead sentence now says the gate counts open items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bdf36064ad4a1788a42474f12cbd272b3de219",
+            "content": "sha256:f6e7b04d886b2b70d6021b8a9446c1cb40f7058bb5c26bf923b9c3fb5d5b70e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist_lines"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_worklist_section.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the \"without proof\" list (`None` for an unconverted tree).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
+            "content": "sha256:a6fcc7a15019b01f3e3984df1fa653a8ff8650070ac1d0b537f19b24797e8249",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_leaf_memory_scope"
+            },
+            "path": "mcp/src/agents_remember/application/memory_scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_execution"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:33a5cefae860c2d3581e7d004bc05c2861e17dc5f7884f0a308b31a48a92dd33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_memory_quality"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_curator_checklist"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Cleanup removes the reserved reports directory before it attempts to remove the enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:9f0a09a50da6b6d36933cb0a4e5280da5cf0c72afea5bb729a0fadd4d74f88e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_removed_directories"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
+            "content": "sha256:f9fb57f1aa32f4a75466c8dd3449b67f263f6df7a6656f2c79e17cedf593a5d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_curator_checklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

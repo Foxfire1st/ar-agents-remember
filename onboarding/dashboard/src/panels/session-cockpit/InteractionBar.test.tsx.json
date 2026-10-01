@@ -1,0 +1,192 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/InteractionBar.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test (multiplexing fan-out + per-payload bar).\n\nAnchor: \"export const InteractionBar = forwardRef<\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f05f3361e2c16bb8fdaee1e19704e09dd6db74",
+            "content": "sha256:2c7896cfc29def0214bb87aa6a32d17360b2b69312f5c7e29408360e09efd3f0",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The answer path + cross-slot exact-session routing the suite exercises end-to-end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc8e7404d80356e02a202d0e9b35f9baa9d498c",
+            "content": "sha256:8f099f3887eb6021d33c7dd6399fb499840e57555d9f99712e8a860f74b49ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "submitInteractionAnswer"
+            },
+            "path": "dashboard/src/data/interactionAnswer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `L6_INTERACTION_*` fixtures (choices / freetext / unrepresentable).\n\nAnchor: `L6_INTERACTION_CHOICES`, `L6_INTERACTION_FREETEXT`, `L6_INTERACTION_UNREPRESENTABLE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:329fe4c6cf31ff26b593cf339e6051eee3d9c4a9bf7abef6fe465dc43a263369",
+            "locator": {
+              "kind": "symbol",
+              "name": "L6_INTERACTION_CHOICES"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:95c94be6cd32e60180a6667676d6f086c25df0bd21d5162595904924c3c7549d",
+            "locator": {
+              "kind": "symbol",
+              "name": "L6_INTERACTION_FREETEXT"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:b2e427625a15d28c6c19e8194befd033504c6eedeecb9ddad8779e8154eef00e",
+            "locator": {
+              "kind": "symbol",
+              "name": "L6_INTERACTION_UNREPRESENTABLE"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:d8c9fe5a435ea78e3d41500f43a8ea2b693f629c57f447cbf689bfa1f39cc1a0",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:bc769035dd8278eb09013234b06ea3871303f1689f0ab2ddc89bd3425563b37a",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 290
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:051f11c78f3fe724b036f7a53d1cdb6c2c4c9160a54381d95b3a5189082968b8",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `L7_MULTIPLEXED_INTERACTIONS` fixture (parent in both slots + the `agent agent-t` approval).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adfc8a289a3640c0bcd2a0a7c593594a6b6078d8",
+            "content": "sha256:20e90144bc9c3a9f3f3f26478b10be1e23321395a72f676cb782e857bfb24bc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "L7_MULTIPLEXED_INTERACTIONS"
+            },
+            "path": "dashboard/src/test/fixtures/catalogRows.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The copy constants asserted verbatim (honesty hint).\n\nAnchor: `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED`, `INTERACTION_COMPOSER_MODE`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:38aac4e195126df3ca0e41785174282e9dbd5a2ac5ef8ca13db14a6b17bcfa5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_HONESTY_HINT"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:c1dc3ea8ca47b34a17d3fb651818e52b9dbdaaedbe876232f95cab3fb6bdf18d",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_ANSWERING"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:2235d08caaccade760b78fc1d5043ba39f1ced1fae61cd69fdc16fd4cde41701",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_ANSWERED"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8b2ae2f2a61dcf781a711e1799beef64f1aa9ca",
+            "content": "sha256:ca8b48b9a3793a50ef9da26acdeb7f7fb9529ea0f8bab89c8fc9ba66e9ccce21",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_COMPOSER_MODE"
+            },
+            "path": "dashboard/src/panels/session-cockpit/lifecycleCopy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

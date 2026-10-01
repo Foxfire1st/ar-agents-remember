@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_quality_retry_proof.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Full proof becomes exact then test delta and source change invalidates",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75f8fd17aceab793573a2ff4557819331339cdb8",
+            "content": "sha256:6794968db01067bcfbd2750b360a0fe1b0d6ecb46df41cb704455707c7e0ec9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_full_proof_becomes_exact_then_test_delta_and_source_change_invalidates"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retry reruns declared support and fixture consumers but not unaffected tests",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75f8fd17aceab793573a2ff4557819331339cdb8",
+            "content": "sha256:650c75cc5cef8bd42e873cd1854348855720471068fdead42a27d25dac0ebe0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_reruns_declared_support_and_fixture_consumers_but_not_unaffected_tests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,165 @@
+{
+  "path": "dashboard/src/data/conversation/stream.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stream lifecycle and watchdog behavior are covered with controlled sources.\n\nAnchor: \"boot-window reconnect backoff (260718-CHATS-L5I A3)\"; \"liveness watchdog (260723 sleep/wake + half-open wedge)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09d7168d0350bae9ed2367c740dcf783334d15b5",
+            "content": "sha256:43f680ba691641eec376f3edf7668fe28ffff62ad0428374ff83e123f46d833f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ControlledSource"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "09d7168d0350bae9ed2367c740dcf783334d15b5",
+            "content": "sha256:a4ea7c476e8e10d1b5e159e60fb1e16b18683ace6d32d9df1229c3e1fcfcff99",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "09d7168d0350bae9ed2367c740dcf783334d15b5",
+            "content": "sha256:afd3d8e3ef2a9904641a94a355602788c302596e07a72459cf97bf1cb8fe353c",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The production EventSource controller consumes these callbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46f5ff12b6a0690e57f18ee9167e18372a0359de",
+            "content": "sha256:60f8bee8a8be62c808cc8af61416236c27783fde3b01a5bf6a0898f016adf427",
+            "locator": {
+              "kind": "symbol",
+              "name": "openConversationStream"
+            },
+            "path": "dashboard/src/data/conversation/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `openWatched` harness supplies the watchdog replay cursor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09d7168d0350bae9ed2367c740dcf783334d15b5",
+            "content": "sha256:e8695b1f6174c8f53478cac790787eb7b688d85e794296a484be166eeb5bbfa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "openWatched"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The replay cursor is minted by the `eventCursor` brand constructor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:528d616eb6c23f7e258d7492a41d0d53dfeaee3eb279af578aef7842b463078c",
+            "locator": {
+              "kind": "symbol",
+              "name": "eventCursor"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The first watchdog replay assertion requires the resumed URL to contain `after=evt-7`.\n\nAnchor: \"expect(ControlledSource.instances).toHaveLength(2); // fresh subscribe, SAME cursor — no re-page expect(ControlledSource.instances[1].url).toContain(\\\"after=evt-7\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09d7168d0350bae9ed2367c740dcf783334d15b5",
+            "content": "sha256:3696e556b6f3c585e509fba2c309eb01176eadb9c984dba3ddfcd1f06f9bb906",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The established reconnect assertion requires the resumed URL to contain `after=evt-7`.\n\nAnchor: \"vi.advanceTimersByTime(2_000); // established backoff, not the boot cadence expect(ControlledSource.instances).toHaveLength(3); expect(ControlledSource.instances[2].url).toContain(\\\"after=evt-7\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09d7168d0350bae9ed2367c740dcf783334d15b5",
+            "content": "sha256:1f451eef8401ad31f2300684d55bef3b35ead6b0aa1ed64ee66f1bc54d58bd6b",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The watchdog backstop assertion requires the resumed URL to contain `after=evt-7`.\n\nAnchor: \"vi.advanceTimersByTime(5_000); expect(ControlledSource.instances[0].closed).toBe(true); expect(ControlledSource.instances).toHaveLength(2); expect(ControlledSource.instances[1].url).toContain(\\\"after=evt-7\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09d7168d0350bae9ed2367c740dcf783334d15b5",
+            "content": "sha256:8fa970c0792a6a7650a043e898ab902fd45a8216ceefb1cb64dc986092c05efc",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The visibility-recovery assertion requires the resumed URL to contain `after=evt-7`.\n\nAnchor: \"document.dispatchEvent(new Event(\\\"visibilitychange\\\")); expect(ControlledSource.instances).toHaveLength(2); expect(ControlledSource.instances[1].url).toContain(\\\"after=evt-7\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09d7168d0350bae9ed2367c740dcf783334d15b5",
+            "content": "sha256:e19fb6fd704d3262dc58ba7a2f9026b74a372d79cc9c47dcd658b0f9fba2a45e",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 235
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

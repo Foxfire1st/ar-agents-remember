@@ -1,0 +1,98 @@
+{
+  "path": "mcp/src/agents_remember/models/declared_caller.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strict bounded shape of a request-carried ambient identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4499edddcf83900d7abb9aab8491368bbab61a5",
+            "content": "sha256:df9115c51bc12940e623696e4be44ca56e837b1e05d749f85903c5fa25ced201",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeclaredCaller"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4499edddcf83900d7abb9aab8491368bbab61a5",
+            "content": "sha256:c3817024f064d41aa2a0620edbdcfb5c726f98ee98704854435c458c673ae5e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nonblank_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Consumed by the closeout-queue ambient fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9aac119d67a3ecb1fa36686d0a40c54128f52f99",
+            "content": "sha256:805425d263cb7891eda9a9426a666be6b68561c3d3c1a54a5c37ba18b483ffd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_queue_actor"
+            },
+            "path": "mcp/src/agents_remember/application/closeout_queue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Consumed by the structural gate-tools ambient fallback (duck-typed `DeclaredGateCaller`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fdd3d3e3bb2ee2629b8db7746e05ce30165cb66",
+            "content": "sha256:a19b85655923cc16ae5d517e632642efce6e0ff99b10f7d3d4237cf0d3f3642c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_context"
+            },
+            "path": "mcp/src/agents_remember/application/structural/gate_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0fdd3d3e3bb2ee2629b8db7746e05ce30165cb66",
+            "content": "sha256:8c870c16195acf423a14486439a4b63e189b2244257aa1759f44ffc28037f43c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeclaredGateCaller"
+            },
+            "path": "mcp/src/agents_remember/application/structural/gate_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The request field that carries the declaration on the queue wire model.\n\nAnchor: \"caller: DeclaredCaller\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b83d0c29c6a7bdaeb0ec909283439c284a251dad",
+            "content": "sha256:a435e8bcc54a68a9ef81f5455194bfe62623640f9627b880d32e3992f6824adf",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/models/queue/closeout_queue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

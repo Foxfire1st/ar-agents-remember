@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/result_rendering.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lifecycle CLI delegates result display to this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd331e5eaa941cc632b3a6f1a2a673f8b7055d1",
+            "content": "sha256:f4fba6f91e0fe57c20a9262f93aa85eafe4bcfaf65a1ce8eba0816a0fabcdda6",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_cli_result"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/cli.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

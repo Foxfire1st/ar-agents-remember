@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_reader/paths.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_reader/paths.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -81,40 +71,31 @@
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the explorer, the path view and the without-proof list. | "**The explorer** lists one directory level" | mcp/src/agents_remember/application/knowledge_reader/paths.py:1-31 |
-| One explorer level: code and onboarding children, with live entry counts. | `tree_listing`; `_entry_counts` | mcp/src/agents_remember/application/knowledge_reader/paths.py:85-111; mcp/src/agents_remember/application/knowledge_reader/paths.py:125-134 |
-| The path view, bounded for a directory (F2). | `path_view` | mcp/src/agents_remember/application/knowledge_reader/paths.py:142-175 |
-| Live entries only; the links naming the path or its invariants. | `_live_entries`; `_links_to` | mcp/src/agents_remember/application/knowledge_reader/paths.py:178-181; mcp/src/agents_remember/application/knowledge_reader/paths.py:184-190 |
-| A directory's children with their counts, and its subtree's size. | `_directory_summary` | mcp/src/agents_remember/application/knowledge_reader/paths.py:193-208 |
-| Prose and sidecar paths; the kind of a path; the resolved references. | `_onboarding_paths`; `_path_kind`; `_references` | mcp/src/agents_remember/application/knowledge_reader/paths.py:211-218; mcp/src/agents_remember/application/knowledge_reader/paths.py:221-232; mcp/src/agents_remember/application/knowledge_reader/paths.py:235-249 |
-| The one currentness call, and its failure named. | `states_at`; `_currentness_block` | mcp/src/agents_remember/application/knowledge_reader/paths.py:252-263; mcp/src/agents_remember/application/knowledge_reader/paths.py:266-275 |
-| One entry with its state; entries grouped by invariant. | `entry_document`; `_invariant_groups` | mcp/src/agents_remember/application/knowledge_reader/paths.py:278-300; mcp/src/agents_remember/application/knowledge_reader/paths.py:303-322 |
-| Member and routed families, each with its other locations. | `_families`; `_with_locations`; `_elsewhere` | mcp/src/agents_remember/application/knowledge_reader/paths.py:325-344; mcp/src/agents_remember/application/knowledge_reader/paths.py:347-371; mcp/src/agents_remember/application/knowledge_reader/paths.py:374-385 |
-| Linking records, a decision shown whole. | `_linked_records` | mcp/src/agents_remember/application/knowledge_reader/paths.py:394-401 |
-| Invariants without proof, by path. | `without_proof` | mcp/src/agents_remember/application/knowledge_reader/paths.py:414-433 |
-| The file, directory, test-file, explorer and without-proof cases. | `test_a_file_path_view_shows_prose_references_entries_families_and_linked_records`; `test_a_directory_view_is_bounded_to_its_own_level_children_and_route`; `test_a_test_file_shows_its_proofs_by_invariant_with_their_facets`; `test_the_explorer_lists_code_and_onboarding_children_with_entry_counts`; `test_the_without_proof_list_is_filterable_by_path` | mcp/tests/test_knowledge_reader.py:584-614; mcp/tests/test_knowledge_reader.py:716-760 |
+- The module's own statement of the explorer, the path view and the without-proof list. [1]
+- One explorer level: code and onboarding children, with live entry counts. [2]
+- The path view, bounded for a directory (F2). [3]
+- Live entries only; the links naming the path or its invariants. [4]
+- A directory's children with their counts, and its subtree's size. [5]
+- Prose and sidecar paths; the kind of a path; the resolved references. [6]
+- The one currentness call, and its failure named. [7]
+- One entry with its state; entries grouped by invariant. [8]
+- Member and routed families, each with its other locations. [9]
+- Linking records, a decision shown whole. [10]
+- Invariants without proof, by path. [11]
+- The file, directory, test-file, explorer and without-proof cases. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new module MIK-R29 adds, recording the carried L13 rule (a decision shown whole in every linking view), rulings 09:42:58 F2 (the bounded directory view and the root summary as the landing), F6 (the sibling-prefix and retired guards tested), F11 and F12 (one currentness helper, `states_at`), and one candidate invariant. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

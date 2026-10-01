@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`operation_state_fingerprint` hashes advancing code/memory contract cells without ledger commit identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03412c72b099a0884f00f90689a538f8928226d4",
+            "content": "sha256:2a4b37e666048f51aab3ed6e7b4a21d418aa9c85e62db4a2e26ebecca8555dfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "operation_state_fingerprint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`closeout_contract_sha256` hashes the exact canonical contract-publication text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03412c72b099a0884f00f90689a538f8928226d4",
+            "content": "sha256:2a3758076235d80361ccf166a1d12b6e24c85768f37051a2a9635529d6637352",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_contract_sha256"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`operation_key` derives operation identity from canonical contract path, kind, and fingerprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03412c72b099a0884f00f90689a538f8928226d4",
+            "content": "sha256:45b2f64f76b247176066dffd25cf68885af73b6a420706c4c30dc0465f69d4cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "operation_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stable fingerprint over advancing lifecycle cells. (`operation_state_fingerprint`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03412c72b099a0884f00f90689a538f8928226d4",
+            "content": "sha256:2a4b37e666048f51aab3ed6e7b4a21d418aa9c85e62db4a2e26ebecca8555dfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "operation_state_fingerprint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

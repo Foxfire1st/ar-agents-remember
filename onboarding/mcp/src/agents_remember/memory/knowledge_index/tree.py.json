@@ -1,0 +1,242 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two sources, the captured-state key and what the capture never writes.\n\nAnchor: \"computing a key changes nothing in the repository\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:77eb17999ae9b7df6a7144ab727e236ec42b6ca6c3bbdf6d21346d51ce6e6eca",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The snapshot value and the read error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:8831b5ebf0b198554d591226affe2fc269569c598d70b2772803282d07604f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryTreeSnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:d4e33c81f422699f0b992028e2335ef954d00d97daabc504bea3f9cc1733bfe2",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryTreeError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The indexed-file filter, sharing the validator's exclusion predicate.\n\nAnchor: `is_excluded_from_knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:c8f3617e60a552ac6ed46dc46a9d31804229f2ed6d7a6f4084a91aed24fd024d",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_indexed_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Git-object reader: one batch read, nothing checked out.\n\nAnchor: `read_git_blobs_bytes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:53227d0fa5feabe78712b02e25b821728a6d0a0f070b74b155f7b0f9e44630ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_tree_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The directory reader and its key, with the blob-id check and retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:483f6b1f99fa60d3400b933bdfd57049d8905257d12bb4e678280c4c36d4da75",
+            "locator": {
+              "kind": "symbol",
+              "name": "directory_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:7533862bf260a31d0b8e01d10c0bfab20c7bf053da5d5893177e372620c8da05",
+            "locator": {
+              "kind": "symbol",
+              "name": "directory_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:cb1e87d9dade93080b3a8f57130b378089e9f2bccf89e33d1b48433964294797",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The isolated capture and the index-flag clearing on the scratch copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:fa5b48a1c4783c98a2f4c360f6096af7e0dea3daaced7168d303d748062df1a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab0833b40f9c950fadca30cc634117b1824bd579",
+            "content": "sha256:35272ef9d2ee90e84e9a0fa5f98e952b210ede98596cbfc48e2c6397111812b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_index_flags"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Source and key cases: directory and Git tree agree, a historical tree needs no checkout, the key is the captured tree id and content-only, capture writes nothing, a plain directory has no key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:4f5e7839a69f10608877cc1e90b137beb7881916f32d53fcb8fd89d73784cf0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_working_tree_and_its_git_tree_index_to_the_same_key_and_answers"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:776552925e0329a0aea2d430a2c5ff23230b95817d9ac17828d91e7b61df93ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_historical_git_tree_is_read_through_objects_without_a_checkout"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:0192a81c7926b0136d85730b4afd3e3c01ffbaf42fff78921cb5e0a354c184a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_key_is_the_tree_id_of_the_captured_state_and_depends_on_content_only"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:4f22ceac571421f9d57e3ea62ed673bd5a691939d2d751aa34a7fc51b8103a01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_capturing_a_key_writes_nothing_into_the_repository"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:ee3d6ba56bbcc79bd02686428c920ff24e9353edbb4aab6fc2a2f2c87836f1d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directory_outside_git_has_no_key"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An index flag never hides an edit; the index reads the files the validator reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:93866b5f5e3c1acbc66fc058c05a4d6d69319c43571f8b292bdbf91a9fa09d13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_index_flag_never_hides_an_edit_from_the_key"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "content": "sha256:c8999ab04c577798d25a8c6bd580dfcbb840665bd0ef9d95e844a0aabdf20f76",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_reads_the_files_the_validator_reads"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

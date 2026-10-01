@@ -1,0 +1,105 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sync-propagated bundle copy of the canonical templates source.\n\nAnchor: `# Conversation-Handover-Packet Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5844b35d59c0f8879d18fd47a35661e204452b40",
+            "content": "sha256:cbb41de0bbd2b194fedf0855e64eaebdcd8c59c2eec8191a5426801d1ad27f77",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/conversation-handover-packet.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The frame's job-selection contact point hands this packet to a takeover-spawned successor so it onboards from state, not the transcript.\n\nAnchor: \"## Companion Files\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9afc951c4cf2e13caa8651c2aadf74b38fd8eed",
+            "content": "sha256:fd0f5d5c4407cdbde27a159f9202ca65a05ad234700b7252ef52a3fdf11a36f9",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The worker respawn use continues a leaf handed over by the worker job.\n\nAnchor: `# Worker`; \"Respawn State\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9210bbacd978073332af13197d3e95904f247ea0",
+            "content": "sha256:1cb90f1f30c7fd4ec6057a1bda9e839c9c9b4d6c0e4b955db518baac0f2b3156",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9210bbacd978073332af13197d3e95904f247ea0",
+            "content": "sha256:04fb5df1a6710956d9bbbdc83ac01fc2b6459334940fb2cdd960b4c9769f7535",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The master-handover use is the manager's completed-master seat hand-off.\n\nAnchor: `# Manager`; \"../templates/master-handover-packet.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:767f90a220cf3937f52a492d1e9a388836428f8df86ac37ae7ad43153be8c3c7",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:d001ba287f4893bf0a1cda06fd13beb83fcc7ec2e3417314879bdedfd07b2fc8",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,401 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_applicability.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the six treatments, what `context` is, and that no similarity or score can be recorded here.**\n\nAnchor: \"Five display treatments, each a different recorded fact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:7327889b16a1e7faca7aa1b54b9a8f458200427ab2f7b5aa99e0cbef2dc0759b",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The owner that produces these values, and the one place the policy lives.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:afd17b58628b96dd72b374726620ed74f75980e41f68fa9013d3981b4a9195ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_applicability"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_applicability.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8838a7bbc06f0b74447d7764a2fc5db7f09982fa",
+            "content": "sha256:bb321e42eb6244d4a05805435f272610c130b581f1f81bdcf7fbba561f51df7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AppliedRecords"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_applicability.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The re-export that keeps the vocabulary reachable through the payload module, and the five display models that carry a label plus the two panes that carry the context rows and the counts.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:1b78d3a1d599b8da18fb7d057c60b308593429bb2c2441351d5a1b049053a27c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewAuthoredEffect"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:2736440ef48ef1a08cb9ab24d8b1fa8e668a260d4a7f6d59fb02ea3ba32c1b7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgePane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:ded0ececa681b97be07a9edc7127ef6fe71498bd84fa89e7cfe01e575d892624",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidencePane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:0928e0eedb0c74f643fa3a1d0fbd93cb4d8839b3b7b0fc34b92b9823a8839c37",
+            "locator": {
+              "end": 505,
+              "kind": "line_range",
+              "start": 483
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:e70aa9c4e35b99a94f909760eb7c974d8159ba4648db809b9b19c1cf22f6bf3b",
+            "locator": {
+              "end": 756,
+              "kind": "line_range",
+              "start": 680
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:fa2ed29eb75a750b9dabdb26a2cee4f86c4d015befb0fea4b96bdb5d673e1db1",
+            "locator": {
+              "end": 958,
+              "kind": "line_range",
+              "start": 918
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The cases that measure the vocabulary's own refusals and its class-set equality with the record vocabulary.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:863072742d71946ca9d506f728aac141f52b6da6a917692a81f1014fb2b00a9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_label_and_a_summary_refuse_a_claim_their_recorded_facts_do_not_support"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f0818b01579d82740f009835a60517f5ad46e36e",
+            "content": "sha256:8b82a2928c97dc0b7d467c6079e66e778bbe3f63997f5d0b42918e31fecae4c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_class_vocabulary_is_the_record_vocabulary_minus_its_measurement_channel"
+            },
+            "path": "mcp/tests/test_knowledge_review_subject_isolation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The client mirror of this vocabulary, and the one client case that proves a pre-label payload still renders.**\n\nAnchor: \"still renders a payload published before the labels existed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d8894e228aa7934d4a7508e2536e63a3bfa6410",
+            "content": "sha256:0af78791c0abe5abf137311818bcd9caf04b8cf676d120ccba0b932faa47a620",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewDisplayedApplicability"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d8894e228aa7934d4a7508e2536e63a3bfa6410",
+            "content": "sha256:62e4954f608e3f992eadb1e3198e61d9aeff14c660ae214ab91f387054e78f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewContextRecord"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d8894e228aa7934d4a7508e2536e63a3bfa6410",
+            "content": "sha256:efc790db74a159d7752bc685f7c78acbab44dc4045824226b91fd70b36e7d250",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewApplicabilitySummary"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b558e0311fcb0e675bc282e8cf416a40826dfa2a",
+            "content": "sha256:db172f9f73ba66f10b6695ccb13f2c73fb5337d0180bb2358aded54a687e7328",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.applicability.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The published vocabulary.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:54a3cdea8b4a7b20e900198477126045095d974e77b1c686d001b55ed8ccb67e",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The five supplied collections, spelled as the record-class vocabulary minus its measurement channel, with the import-time assertion that keeps the two from drifting.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:97a6bbc7ab09eb21546ce9a9d5723281f5911e060c64ecf49265c577776c75cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewApplicabilityClass"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:b88034ccef52f059126cc56f3ed17997342c9e32da0ca09848aad538a9793545",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_APPLICABILITY_CLASSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The six treatments, and the four a displayed record can carry.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:8ab811172916a826a411761d24ea6fa795c721ea209aa254952d1ced43bbfac9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewApplicabilityState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:8137f306f67c331eb4f739c51ac6ed6ade27c9035d6e8880be9bbfbd162a5716",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewDisplayedApplicabilityState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Why one displayed record may appear beside the selected subject, with its own recorded subject and the exact references the treatment was decided from.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:c3ad673155582cb9ddb27d598dc9f29646ddade47be02b99ab10e7b7ecff6d6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewDisplayedApplicability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The validator that makes the F09 shape unrepresentable: a `direct` or `historical` claim without a subject identity is refused at construction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:edd2a5d70be0b3ba92767ee50ad30f98d612f67a3ff2a3982782ac39fd4cdaf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_subject_bearing_states_to_name_their_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The labelled context value: true subject, the recorded relationship that reached it, author/role and references, and no judgment content.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:cd50e39d396a4098107a244d565c6b6b29164c5b6d64181c7010745f309e27c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewContextRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**One collection counted by treatment, with `supplied` stated per class and the two validators that refuse a losing partition and an unactionable exclusion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:2d11058bebc56c33867ae720126aaef9c698ff37bc890a9960e7f3675371a930",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewApplicabilitySummary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:6253f99f9e92994eddd3e47093c80e2e4b0384814b1a13ac85cc7dc5de3c3eb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_counts_to_partition_the_supplied_population"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7f2666da83810addddc19ad7c8d5df71e91ad04",
+            "content": "sha256:7da6e86c6576de476f86fbcd8bebe84b8203f875228f2d8e879f1a8c6b699461",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_an_exclusion_to_state_itself"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The wire limit constants this vocabulary reads, shared with every other knowledge model.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFERENCE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

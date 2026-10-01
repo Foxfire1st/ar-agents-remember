@@ -1,0 +1,257 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_staleness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of its two responsibilities: the identity is carried and never recomputed, staleness compares two identities one of which is the caller's, and the previous identity is evidence of what was displayed rather than an authority.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:4a0aed11b9373e3c3765a85562f560ecd85de250022fd2f15bd1f1d77f575aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:aaf46a13f4003029706f3d1c5ebf8af593de7f1953d75d945b3b77555fb3917b",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_staleness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The cases that measure the rule through the real composition: the stale rule in both directions at the composition, and the new R17 case that drives the whole transport path — admission, forwarding on the request, `stale` with `previous_comparison_ref` and `disabled_stale`, `current` when nothing was carried, and a 400 naming a malformed spelling.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:e75eed75b1ca85e95163733a3d07486168d1859a54acd81823f40f9c1c616fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_stale_rule_holds_in_both_directions"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "content": "sha256:8fe120d7bb051aba2c92f4910cbb0b9d7d9c0c348620cb4b3dc916fa5b941bc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read"
+            },
+            "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: exactly the two functions, one responsibility each.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:12e3bb88267030443e256a7d5b37ed929207419be93140a6e6d10f234b055f9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The moved sentence and its moved axis, worded where the state is built rather than at a render site.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:42f76e2d2335969094648730b404f130112d7e1d17b9d8cca8787d4bef363eff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MOVED_STATEMENT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:08582d3adc25cfb703a9e733f5819d22ff50cc3e87a3298dea103572716ee9f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MOVED_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The comparison's own declared identity: the operation's published binding, digest and selector digest copied verbatim with the policy version and both snapshots' own facts, and the assertion that a page declaring no identity is refused rather than given a fallback.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:4a0aed11b9373e3c3765a85562f560ecd85de250022fd2f15bd1f1d77f575aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:f85866fb872c92ee60595940e4e9ca33e81e178dc4ae608c2c14185f7e223d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:26e70e6c99e67a6cd53faba6d137da429a9134c4310c0fc049752880e2c654ed",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 348
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The staleness rule: agreement or an absent previous digest is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named.**\n\nAnchor: `ReviewStaleness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:aaf46a13f4003029706f3d1c5ebf8af593de7f1953d75d945b3b77555fb3917b",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_staleness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:793cc34ecee90d2c8cdfbe62e461e7c8814b09001592d79fffeb4655be410dae",
+            "locator": {
+              "end": 1010,
+              "kind": "line_range",
+              "start": 985
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The model validator that makes \"a stale claim names its previous input\" structural: a `stale` state with no reference and a `current` state carrying one are both unconstructible.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
+            "content": "sha256:13284bfe39f1769ed7524e14a03b3fff35435c7de98f6fd8df6d708af266e825",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_previous_input_to_be_labelled"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_staleness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The request field the previous identity travels on, sha256-shaped and optional — the *previous* identity, never a substitute for the current one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:7534f6d7561ed9bef13ee60831fed901abe08ac3102a36b9b2d9f4d66dff2ccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "previous_binding_digest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The adapter's delegation: the composition computes the identity once and reads one staleness value for both the published state and the submission state, and imports these names instead of defining them.**\n\nAnchor: `comparison_identity`; `review_staleness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:821f4720a95daabc0de925407b70118a600332e89ea3a834fc1bd56711e19e73",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The transport's admission of the previous identity in the route's own vocabulary, shape-checked against the models' own digest pattern rather than raised out of the request model.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:7f38f6ce392b566fda2a9b823084a41a2fb0db8c14eb2fc9dbbb8822a657636a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted_binding_digest"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

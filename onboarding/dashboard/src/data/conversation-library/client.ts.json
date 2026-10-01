@@ -1,0 +1,101 @@
+{
+  "path": "dashboard/src/data/conversation-library/client.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `FetchLike` injection type reused from the active-side client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:5fafcbe6f35f065926ce3a54d3b9bafa1d2d00dae3ceb0cf5b198a53bf747bf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FetchLike"
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The wire types this client returns (page/read/open/error).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bf21d9f7cd4b87dcc3fbafbe75ed987b40a9718",
+            "content": "sha256:fdc7060dcd17079f677eb019a597c7acd1055326d18fc273769ed803ba83f55b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryPage"
+            },
+            "path": "dashboard/src/data/conversation-library/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store orchestrating list/preview/open over this client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:b3e1ad2f9d0bd21123bc02f95b9d824ad6d55a8a72931714f5410fe959c0ef8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationLibraryStore"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:157496507c2c22724a11ba85f32bfd3f8da8a261d61528a05737acd3edec2958",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The landed native-library routes this client talks to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:73c910414d1bd81da8f01f0bfa228218d2c2881f67e243c9ad733b4966b759d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_library_list"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:1fec6701e6a040fbc58f65c6b0c2435db979b5a32ca444176979af7a078a7f01",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

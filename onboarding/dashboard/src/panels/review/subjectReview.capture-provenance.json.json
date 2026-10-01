@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/panels/review/subjectReview.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case or response retains its declared selected input.\n\nAnchor: \"captured_source_tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d698a1feb30972c1ad39b0ab6859cb9f1832ec4d",
+            "content": "sha256:ec7ba374c41836acc19cefc2449e685d1a537c38b87df42d3c675bf2321a5e82",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The re-captured family entry: its own source tree, command, route, capture record, selection rule, signature and requests.**\n\nAnchor: \"subjectReview.family.captured.json\"; \"l44_recapture_review_fixtures.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d698a1feb30972c1ad39b0ab6859cb9f1832ec4d",
+            "content": "sha256:7bb48d53edfe77768585bdbd5881f66b9b21b6cc5c285488c17d8c1d07ce64be",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The re-captured invariant entry, with the same producer facts.**\n\nAnchor: \"subjectReview.invariant.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d698a1feb30972c1ad39b0ab6859cb9f1832ec4d",
+            "content": "sha256:6f65d6086bbb29a790c80bac72eb31d17a7b242d0097bfac9f46f53595bebd50",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The manifest scope distinguishing re-captured route bodies from unchanged owner-produced responses.\n\nAnchor: \"real review-route bodies re-captured\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d698a1feb30972c1ad39b0ab6859cb9f1832ec4d",
+            "content": "sha256:4db305db66c9a87b9d5db4962ce16ff023283280cd474feda478f9a83ad59169",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_review_family_context_population.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Competing memberless heads remain ambiguous.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157258eb83dbf2b7452758c7684d5e20dd8c96d1",
+            "content": "sha256:0e457f893388e558ecaf11d5afe9154f07a58461be178a7f7d09c31ae8e17787",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_canonical_memberless_successor_shape_is_an_ambiguity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A recorded memberless family retains its guarantee and measured empty roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157258eb83dbf2b7452758c7684d5e20dd8c96d1",
+            "content": "sha256:95ae8da7606b820e8bd7bbba4d1ae8fba613a3ff39f16b763d7537712f5bb6ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_family_with_no_members_is_recorded_not_absent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Independent ambiguity and explicit-revision history are both checked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157258eb83dbf2b7452758c7684d5e20dd8c96d1",
+            "content": "sha256:8c5a74167ce8a4b96a4f10f8c9de8e73dbae81ff859ab21120c1760732c6f7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_history_sentence_is_measured_against_the_family_owner"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A new member retains the family’s existing before counterpart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157258eb83dbf2b7452758c7684d5e20dd8c96d1",
+            "content": "sha256:936b54cf2ee3144291f0212472b79e7da972896a0c09564e87c5bad492d1561c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_member_keeps_the_existing_familys_before_context"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A retained predecessor membership cannot pin the family after selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157258eb83dbf2b7452758c7684d5e20dd8c96d1",
+            "content": "sha256:67fb2bf37fd6423daecd8856484379292d5f0200165e8237908a211264440dc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_removed_member_does_not_pin_family_context_to_its_retained_predecessor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Primary knowledge, evidence and complete source inventory stay independent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157258eb83dbf2b7452758c7684d5e20dd8c96d1",
+            "content": "sha256:e2e735333b325b12bef57fc0c8f59cdffa07cb3f601dad1f19c4d9f737e6e24d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_primary_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Sparse pages preserve the recorded population and primary panes through real HTTP walks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157258eb83dbf2b7452758c7684d5e20dd8c96d1",
+            "content": "sha256:0e404388860b9d659e14f151ef9c52a5a043b0ccc3483357f9b89e6a7d196964",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_content_and_claim_only_pages_preserve_the_authored_population"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

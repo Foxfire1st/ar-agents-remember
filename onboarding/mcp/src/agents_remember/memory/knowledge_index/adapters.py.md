@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge_index/adapters.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge_index/adapters.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T08:01:17+02:00 |
-| lastVerifiedCommitHash | `ffd043f1354e94a7dcf435e10b4b7224495cbcba`|
-| lastVerifiedCommitDate | 2026-09-29T08:30:03+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -39,7 +29,9 @@
 
 MIK-R08 owns the worklist semantics over the index.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The index's design authority is the coordination-root note Doc14
@@ -47,29 +39,18 @@ No domain documentation source is configured for this repository (`system/source
 packet `MIK-R23@v1` of task `260928_maintained-invariant-knowledge`; both live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The three adapters and the case that proves the scope matches.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The read-only store over an index. | `index_store` | mcp/src/agents_remember/memory/knowledge_index/adapters.py:26-36 |
-| One declared side and its declaration, bound to the index's exact snapshot. | `scope_snapshot_source`; `scope_snapshot_declaration`; `SCOPE_SELECTOR_POLICY_VERSION` | mcp/src/agents_remember/memory/knowledge_index/adapters.py:39-44; mcp/src/agents_remember/memory/knowledge_index/adapters.py:47-56; mcp/src/agents_remember/memory/knowledge_index/adapters.py:23-23 |
-| The registered scope over the index equals the scope over the equivalent database, for same sides and for a changed candidate. | `test_the_registered_scope_constructs_the_same_scope_over_the_index` | mcp/tests/test_knowledge_index_surfaces.py:147-230 |
+- The read-only store over an index. [1]
+- One declared side and its declaration, bound to the index's exact snapshot. [2]
+- The registered scope over the index equals the scope over the equivalent database, for same sides and for a changed candidate. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the index reads one memory tree, addressed explicitly by the caller, and nothing else.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): created this card for the new file MIK-R23 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

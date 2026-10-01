@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-card-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The overview card template records route metadata, governed paths, required explanation topics, inputs, links, and open questions.\n\nAnchor: `# Overview Card — <source route>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7302007374de2cd256f3bf91664b50baf389a8d",
+            "content": "sha256:67355de2f6a702de6b79c15f301ad8f314d10e9d25e390f27885c99d58946eef",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`c-03-repo-bootstrap` skill Phase 4C writes overview cards for each selected governing route before route-local overview waves.\n\nAnchor: `### 4C — Route-Local Overview Cards`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4014891822eb5110082227e1b68355f17b6e96ef",
+            "content": "sha256:e2d8003ff723a0031c0e65e9e8ab6e630c3b67580ffc64378e52f5179cdb7bc7",
+            "locator": {
+              "end": 857,
+              "kind": "line_range",
+              "start": 832
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/inbox_reclamation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/inbox_reclamation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T22:11:05+00:00 |
-| lastVerifiedCommitHash | `1580f92715ff93c988f9a15439ad9bec60ef4c5d`|
-| lastVerifiedCommitDate | 2026-08-13T00:18:59+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -55,44 +45,20 @@ F3-F6 are non-blocking reviewer residuals: canonical tmux-name derivation reuse;
 append-mutators under the lock; documenting lock-held read characteristics; and factoring the
 duplicated terminal-resolution update shape.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation is configured; the task contract and repository source are the direct
 evidence for this policy.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. [1]
+- Terminal catalog entries provide the status and ownership evidence. [2]
+- Reconstructed tmux snapshots provide the remaining ownership evidence. [3]
+- The agent-notifier imports the inbox-reclamation policy module. [4]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence. | `InboxReclamationPlan` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| Terminal catalog entries provide the status and ownership evidence. | "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:68-72 |
-| Reconstructed tmux snapshots provide the remaining ownership evidence. | `TmuxSessionNameSnapshotter` | mcp/src/agents_remember/serving/inbox_reclamation.py:84-131 |
-| The agent-notifier imports the inbox-reclamation policy module. | `inbox_reclamation` | mcp/src/agents_remember/serving/agent_notifier.py:68-68 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-
-- 2026-09-06T22:11:05+00:00 — Confirmed exact-subject positive-gone retention and corrected pre-L4 landed-row wording; verification pins unchanged.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the `state_signal_landed` exclusion
-  in `_eligible` (landed relay rows are terminal on this path). Verification metadata pinned
-  until closeout stamps the 260713-TES-L2 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: removed placeholder findings and narrowed
-  reclamation evidence to the snapshot, catalog, policy, and supervisor owners.
-
-- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: created the sidecar for the new policy module,
-  recording narrow eligibility, positive-gone/fail-closed evidence, one-snapshot boundedness,
-  body-free output, and non-blocking F3-F6 residuals. Verification metadata remains blank until
-  the candidate receives a commit.

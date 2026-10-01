@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_harness_control.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fake supplies cached state, recording and deterministic events.\n\nAnchor: \"class _FakeAdapter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b399ef69bb06f3cd0273a95f3cd5da6b83d82140",
+            "content": "sha256:ffd29929df96339acd223cbd5c4f8c773b22d27c924f80ccdfbc8bba2367e5f9",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Explicit submission hold/release and injected error.\n\nAnchor: \"class _BlockingSubmitAdapter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b399ef69bb06f3cd0273a95f3cd5da6b83d82140",
+            "content": "sha256:7b54ba198e9beb9046efc3af5e10e25165f4a1017a369aa25b8304f5afdb10e1",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Explicit setter hold/release returns queued acceptance.\n\nAnchor: \"class _BlockingSetAdapter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b399ef69bb06f3cd0273a95f3cd5da6b83d82140",
+            "content": "sha256:840bc1c174128762fcd905f0f7e088bdcb87131f1b8e5b05a0ead634a19ba64d",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Connection completion is observable even when dispatch fails.\n\nAnchor: \"class _ObservedHarnessControlServer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b399ef69bb06f3cd0273a95f3cd5da6b83d82140",
+            "content": "sha256:c7283cbdc6fdb5f1b89a504e2bc936043e71c759cf1b614bf97fbf9bf015baaf",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A real first dispatch loses only its outer response.\n\nAnchor: \"class _DropFirstSubmitResponseServer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b399ef69bb06f3cd0273a95f3cd5da6b83d82140",
+            "content": "sha256:1808b23ba06b23f874be5dbfda65e029240b31d27e8721daef0c42c3e4adc4cf",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The catalog builder derives identity fields from the supplied control identity.\n\nAnchor: \"def _catalog_entry(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b399ef69bb06f3cd0273a95f3cd5da6b83d82140",
+            "content": "sha256:554af5a59e49b19babafe487d5d120516e6fed9a5c1372e63199103653c39629",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

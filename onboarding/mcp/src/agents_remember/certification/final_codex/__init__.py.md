@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/final_codex/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/final_codex/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T22:45+02:00 |
-| lastVerifiedCommitHash | `54ff803a05209e06f732f2de1f90e2a71a069e08` |
-| lastVerifiedCommitDate | 2026-09-04T22:31:30+02:00 |
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification contract overview](../overview.md)
@@ -38,37 +28,26 @@ Exports follow the certification-domain frozen-model style: models are repositor
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The approved CCR-R14@v3 requirement packet and the leaf doc 14_final-real-codex-certification govern this lane; task-artifact paths are not repo-relative citations, so the packet clauses are recorded as prose here and in the leaf Update History.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package re-exports the full final-codex contract surface for the two-fresh no-retry certifying lane. | `__all__` | mcp/src/agents_remember/certification/final_codex/__init__.py:52-81 |
+- The package re-exports the full final-codex contract surface for the two-fresh no-retry certifying lane. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Closed two-fresh repetition models (attempt, run manifest, repetition results/drafts, failure, teardown, plan record, authority and environment bindings, fresh repetition identity). | `REPETITION_COUNT`; `FinalCodexAttemptRecord`; `FinalCodexRunManifest`; `FinalCodexRepetitionResult`; `FinalCodexRepetitionResultDraft`; `FinalCodexFailureRecord`; `FinalCodexTeardownRecord`; `FinalCodexPlanRecord`; `FinalCodexRuntimeAuthorityBinding`; `FinalCodexEnvironmentBinding`; `FinalCodexRepetitionIdentity` | mcp/src/agents_remember/certification/final_codex/models.py:66-471 |
-| Plan-record compilation and the exact Gate-1..3 must-not-run barriers. | `compile_final_codex_plan_record`; `final_codex_gate_plan`; `require_gates_one_to_three_green` | mcp/src/agents_remember/certification/final_codex/planning.py:45-131; mcp/src/agents_remember/certification/final_codex/planning.py:134-191; mcp/src/agents_remember/certification/final_codex/planning.py:194-256 |
-| Lane-readiness projection (not-started, running, two-fresh-pass, red, stale). | `project_final_codex_lane`; `final_codex_certificate_ready` | mcp/src/agents_remember/certification/final_codex/projection.py:88-113; mcp/src/agents_remember/certification/final_codex/projection.py:116-125 |
-| Durable isolated candidate run store with atomic CAS publication and retry-disabled reservation. | `FinalCodexManifestStore` | mcp/src/agents_remember/certification/final_codex/store.py:62-274 |
-| Bound Gate-4 certificate compilation binding the exact ordered Gate-1..3 predecessor identities and both fresh results. | `compile_gate_four_certificate` | mcp/src/agents_remember/certification/final_codex/certificate.py:114-201 |
-| The R14-run-controlled executor consumes these contracts through the trusted authority launcher. | `FinalCodexExecutionEngine`; `admit_dagger_authority` | mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py:179-600 |
-| The outer certification facade re-exports the same final-codex surface. | `final_codex` | mcp/src/agents_remember/certification/__init__.py:38-67; mcp/src/agents_remember/certification/__init__.py:154-277 |
+- Closed two-fresh repetition models (attempt, run manifest, repetition results/drafts, failure, teardown, plan record, authority and environment bindings, fresh repetition identity). [2]
+- Plan-record compilation and the exact Gate-1..3 must-not-run barriers. [3]
+- Lane-readiness projection (not-started, running, two-fresh-pass, red, stale). [4]
+- Durable isolated candidate run store with atomic CAS publication and retry-disabled reservation. [5]
+- Bound Gate-4 certificate compilation binding the exact ordered Gate-1..3 predecessor identities and both fresh results. [6]
+- The R14-run-controlled executor consumes these contracts through the trusted authority launcher. [7]
+- The outer certification facade re-exports the same final-codex surface. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The lane is repository-neutral and binds the frozen R12 host runner/store snapshot through the trusted launcher, never a repository-selected engine. | `FinalCodexRuntimeAuthorityBinding` | mcp/src/agents_remember/certification/final_codex/models.py:116-139 |
-
-## Update History
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `compile_gate_four_certificate` repointed to mcp/src/agents_remember/certification/final_codex/certificate.py:114-201. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
-
-- 2026-09-04T22:45+02:00 - 260831-CCR-L14 Gate-5 memory pass: created this card for the new CCR-R14 final real-Codex Gate-4 certification package facade delivered in code commit 54ff803a; anchors and ranges derived from the current worktree source and pinned to that commit (tree aff2e268968397ab8db042a782652957a3600dda).
+- The lane is repository-neutral and binds the frozen R12 host runner/store snapshot through the trusted launcher, never a repository-selected engine. [9]

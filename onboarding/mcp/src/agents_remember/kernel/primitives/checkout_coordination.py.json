@@ -1,0 +1,185 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+        "content": "sha256:2a616aad2446a66b3c7baf6b0d359cfb2019c67260b82e52ac7242dd109092cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_durable_write_target"
+        }
+      },
+      "id": "RLZ-6MYWHPT6",
+      "invariant": "INV-WSD92WBN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The boundary is enforced at the config-loading and durable-write entry points, which is where an unpublished checkout's write is stopped.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+        "content": "sha256:b5b8684cc53062377655e44bed5142bf84b630ddb852378fa116129e07a1829f",
+        "locator": {
+          "kind": "symbol",
+          "name": "checkout_cli_location"
+        }
+      },
+      "id": "RLZ-86TVNJBC",
+      "invariant": "INV-1XKX9ERN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+        "content": "sha256:b5b8684cc53062377655e44bed5142bf84b630ddb852378fa116129e07a1829f",
+        "locator": {
+          "kind": "symbol",
+          "name": "checkout_cli_location"
+        }
+      },
+      "id": "RLZ-P8A63K5E",
+      "invariant": "INV-WSD92WBN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The boundary is enforced at the config-loading and durable-write entry points, which is where an unpublished checkout's write is stopped.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Runtime config asks this checkout policy before selecting the synthetic leaf configuration.\n\nAnchor: \"checkout_coordination.checkout_cli_location()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:54a79636e129aa494b4e3bb62293781a0d666d88ba0ba575abc8ca09c55ae4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_checkout_runtime_config"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 748,
+              "kind": "line_range",
+              "start": 748
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:b6e52c7036534b668cfa45a73e7eae23e712068a1e70031f51f6091b6fe28c0f",
+            "locator": {
+              "end": 800,
+              "kind": "line_range",
+              "start": 771
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "content": "sha256:1106a905cad686bc3debd52204b677bf61deca30e9c7183e9f2059a025179ef7",
+            "locator": {
+              "end": 759,
+              "kind": "line_range",
+              "start": 759
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_access"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:e1d718a6ded42e98065391834cadac19262c3129198696927e3e3d48deecd580",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare_append_target"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:91f641457703ec5caa68ca3d04518070c53c3a51614b2498ef646661328de14a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_rewrite_access"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:66ae0bf6c579630f2aa12e314647b9610a2f52bddc550fe9b6c7f3338e099a36",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "381d2b5b4226195243682903153edb9ee3c2fb16",
+            "content": "sha256:0d412c968f7f0d8b4f299f22bb677b0f77b1d0e3df51044c71614832a4e57924",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_pytest_process"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

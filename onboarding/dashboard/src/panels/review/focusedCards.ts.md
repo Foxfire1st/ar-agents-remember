@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/focusedCards.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/focusedCards.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T09:59:20+02:00 |
-| lastVerifiedCommitHash | `b54d1b0331f67454bcf245a7a338b04900181c3c`|
-| lastVerifiedCommitDate | 2026-09-30T11:03:56+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -74,38 +64,29 @@ searches and guesses nothing: every range comes from the server's MIK-R08 defini
 - **R3-N1 (optional, not ruled as work):** take the side that is actually incomplete, or reword the line for rows
   loaded but content not on the page.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R31@v1` and its rulings
 (`31_focused-expression-cards.json`) live outside the code and memory repositories, so they are named here and not
 cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of grouping and order. | "never one path"; "A card takes the position of its first entry." | dashboard/src/panels/review/focusedCards.ts:1-13 |
-| A card: kind, path, change, both sides and its entries. | `ExpressionCard`; `CardCounts` | dashboard/src/panels/review/focusedCards.ts:19-27; dashboard/src/panels/review/focusedCards.ts:29-34 |
-| The region key; an unresolved or unavailable side keeps its own card. | `region`; `cardKey` | dashboard/src/panels/review/focusedCards.ts:43-46; dashboard/src/panels/review/focusedCards.ts:50-55 |
-| MIK-R01 order with the seed first, and one card per key. | `orderedEntries`; `expressionCards` | dashboard/src/panels/review/focusedCards.ts:57-66; dashboard/src/panels/review/focusedCards.ts:68-88 |
-| Unchanged excluded from the changed count. | `cardCounts` | dashboard/src/panels/review/focusedCards.ts:91-98 |
-| Each member's voice, with `missing` for an absent rationale. | `CardVoice`; `cardVoice` | dashboard/src/panels/review/focusedCards.ts:103-111; dashboard/src/panels/review/focusedCards.ts:113-134 |
-| Gutter starts, range labels and not-current marks. | `firstLines`; `rangeLabel`; `notCurrent` | dashboard/src/panels/review/focusedCards.ts:137-139; dashboard/src/panels/review/focusedCards.ts:141-149; dashboard/src/panels/review/focusedCards.ts:152-163 |
-| The loaded n of m, counted on the widest side and capped. | `CardScope`; `cardScope` | dashboard/src/panels/review/focusedCards.ts:190-193; dashboard/src/panels/review/focusedCards.ts:195-210 |
-| The grouping cases. | "keeps two regions of one file as two cards with their own rationale"; "shares one card between members at the same path and range, each with its own rationale"; "never merges entries whose side did not resolve, and counts unchanged apart from changed"; "orders by the family order, with the selected member first" | dashboard/src/panels/review/ExpressionCards.test.tsx:163-205 |
-| The F2 scope case. | "cover only the loaded members and points to the walk (F2)" | dashboard/src/panels/review/ExpressionCards.test.tsx:237-263 |
+- The module's own statement of grouping and order. [1]
+- A card: kind, path, change, both sides and its entries. [2]
+- The region key; an unresolved or unavailable side keeps its own card. [3]
+- MIK-R01 order with the seed first, and one card per key. [4]
+- Unchanged excluded from the changed count. [5]
+- Each member's voice, with `missing` for an absent rationale. [6]
+- Gutter starts, range labels and not-current marks. [7]
+- The loaded n of m, counted on the widest side and capped. [8]
+- The grouping cases. [9]
+- The F2 scope case. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new module MIK-R31 adds, recording rulings 06:10:21 F2 (the loaded n of m), 06:47:03 R2-5 (counted on one side, capped) and 09:38:03 R3-N1 (accepted note), and two candidate invariants. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

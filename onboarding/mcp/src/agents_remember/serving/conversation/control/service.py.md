@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/control/service.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/control/service.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-04T03:03+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structured conversation control overview](overview.md)
@@ -97,33 +87,29 @@ constructor seam — the only substitution tests make (the reviewer ruled the fa
   endpoints — the `_locks` leak is closed by bounding + active-side idle-release; wiring the explicit
   end-hook is the recorded follow-on (locus in Invariants).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the composition is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this service. | — | — |
+No configured domain documentation was available for this service.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The immutable app-scoped runtime is the authority this service keys on; the L1 factory proves native
 identity; the L2E validated client reads are the substrate this service consumes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The immutable app-scoped `ConversationRuntime` one service instance binds. | `ConversationRuntime` | mcp/src/agents_remember/serving/conversation/runtime.py:55-78 |
-| The L1 running-session factory and native-identity proof `build_identity` reuses. | `build_identity` | mcp/src/agents_remember/serving/conversation/active/factories.py:79-105 |
-| The L2E validated interrupt/timeline/submit/recovery reads this service consumes. | "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover"; "def interrupt_control("; "opaque cursor coordinates are invalid in the operation timeline domain"; "def submit_control_prompt(" | mcp/src/agents_remember/serving/harness_control_client.py:133-133; mcp/src/agents_remember/serving/harness_control_client.py:431-431; mcp/src/agents_remember/serving/harness_control_client.py:454-478; mcp/src/agents_remember/serving/harness_control_client.py:216-216 |
-| The catalog row `resolve_entry` returns (async; offloaded via `asyncio.to_thread` since 260731-EFA-L16). | `resolve_entry` | mcp/src/agents_remember/serving/conversation/control/service.py:291-299 |
+- The immutable app-scoped `ConversationRuntime` one service instance binds. [1]
+- The L1 running-session factory and native-identity proof `build_identity` reuses. [2]
+- The L2E validated interrupt/timeline/submit/recovery reads this service consumes. [3]
+- The catalog row `resolve_entry` returns (async; offloaded via `asyncio.to_thread` since 260731-EFA-L16). [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -146,43 +132,3 @@ Do not collapse the two types. `ControlRequest` before the check, `ControlScope`
 invariant they encode.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-05T19:57+02:00 — 260731-EFA-L16 curator: `resolve_entry` became `async` and now offloads
-  the lock-taking `resolve_running_entry` catalog read via `asyncio.to_thread` (the same idiom as
-  `verify_epoch`/`live_snapshot`/`read_full_timeline`), because every caller runs on the uvicorn
-  event loop where a catalog RLock wait parked the whole server in the 2026-08-05 ABBA incident;
-  every control route's call site gained the matching `await`. Re-derived the shifted citations
-  (`resolve_entry` 291-299, `verify_epoch` 301-305, `live_snapshot` 307-313, `build_identity`
-  315-325, `read_full_timeline` 327-348, `spool_assets_root` 350-356, `ConversationControlService`
-  222-356, `_SERVICES` 359-361, `conversation_control_service` 364-371) against the worktree source.
-  Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: source-read the ambiguous `channel` candidates, applied one provisional declaration-line disambiguator, and generated the whole channel-body range (0 repairs, 1 final normalisation, 1 first-pass decline); the locked rerun recheck was clean with frozen zero source/tokenize/parse/build telemetry.
-- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced the
-  underbound channel-state/loop/move fragments with the complete `channel` owner, binding lookup,
-  lazy creation, cap eviction, reuse refresh, and return together. The changed binding is a
-  provisional `:1-1` input for the fresh Luna curator; no citation mechanics ran.
-- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
-
-- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: preserved the generated
-  named-bound and `channel` definition ranges, then source-first bound the two TTL constants and
-  the channel body's lazy creation/cap eviction/reuse behavior with honest `:1-1` citations. No
-  citation mechanics ran.
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped control-service citations; final exact frozen-snapshot check is clean.
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the self-citations the `ControlRequest`/
-  `ControlScope` insertion invalidated. cit:(["class ControlChannel"], mcp/src/agents_remember/serving/conversation/control/service.py:202-202); cit:(["async def live_snapshot"], mcp/src/agents_remember/serving/conversation/control/service.py:313-313); cit:(["queue_rows: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:211-211); cit:(["clock: Clock"], mcp/src/agents_remember/serving/conversation/control/service.py:227-227); cit:(["def build_identity"], mcp/src/agents_remember/serving/conversation/control/service.py:321-321); cit:(["self._secret = os.urandom"], mcp/src/agents_remember/serving/conversation/control/service.py:230-230); cit:(["self._channels: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:231-231); cit:(["self._locks: OrderedDict"], mcp/src/agents_remember/serving/conversation/control/service.py:232-232); cit:(["_SERVICES: weakref.WeakKeyDictionary"], mcp/src/agents_remember/serving/conversation/control/service.py:365-365) were checked against the current definitions and left behaviorally unchanged.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ControlRequest` (claimed epoch) vs `ControlScope` (verified epoch, via `.resolved()`) as the pre/post-check scope types.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R5 per-session release/bounds. `_locks` is now
-  a bounded `OrderedDict` (`MAX_SESSION_LOCKS_PER_APP=128`, oldest-UNLOCKED evicted via
-  `_evict_idle_locks`, a held lock never dropped) with an explicit `release_session` that pops the
-  lock and every epoch channel on session end; `queue_rows` gained the named
-  `MAX_QUEUE_ROWS_PER_CHANNEL=256` bound, closing the prior unbounded-queue_rows precision-note Todo.
-  Honesty recorded: `release_session` is unit-tested but unwired from terminate/retire (reviewer F1,
-  master accepted-bounding disposition — leak closed by bounding + active-side idle-release; wiring
-  locus recorded in Invariants). Change uncommitted; closeout re-stamps verification.
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the per-app control
-  service — control secret, bounded per-(session, epoch) ledgers with named eviction, per-session
-  serialization locks, the injectable clock seam, and the `_SERVICES` weak-key memo, plus the shared
-  session/epoch/identity/timeline/spool seams. Verification is blank because the new source file is
-  uncommitted; closeout owns its first source stamp.

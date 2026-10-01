@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/control/queue_projection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/control/queue_projection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T11:30+02:00 |
-| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structured conversation control overview](overview.md)
@@ -71,35 +61,31 @@ cockpit block.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the queue contract is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The privacy grammar and setter-mint reality live in the contract and the authority; the timeline and
 preview/digest transforms are the substrate and sibling module this projection composes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `OperationQueueItem`/`CockpitQueueIdentity` privacy validator (source ∈ {cockpit,terminal,durable}; withdrawable cockpit block rule). | "class CockpitQueueIdentity(WireModel):"; "class OperationQueueItem(WireModel):" | mcp/src/agents_remember/models/conversations/submissions.py:16-16; mcp/src/agents_remember/models/conversations/submissions.py:23-23 |
-| The authority-internal setter mint with no submission source (`source=None`). | `_admit_setter` | mcp/src/agents_remember/serving/harness_submission_authority.py:561-594 |
-| The full-timeline paging seam and the submit journal this projection reads. | `read_full_timeline`; `ControlChannel` | mcp/src/agents_remember/serving/conversation/control/service.py:199-219; mcp/src/agents_remember/serving/conversation/control/service.py:320-341 |
-| The payload digest and redacted preview are deterministic transforms. | "def payload_digest("; "return f\"sha256:{sha256(text.encode('utf-8')).hexdigest()}\""; "return f\"sha256:{sha256(canonical.encode('utf-8')).hexdigest()}\""; "def redacted_preview("; "redacted = str(redact_secrets(collapsed))"; "return redacted"; "return \"\".join(clusters[:MAX_PREVIEW_CLUSTERS])" | mcp/src/agents_remember/serving/conversation/control/previews.py:30-30; mcp/src/agents_remember/serving/conversation/control/previews.py:34-34; mcp/src/agents_remember/serving/conversation/control/previews.py:50-50; mcp/src/agents_remember/serving/conversation/control/previews.py:53-53; mcp/src/agents_remember/serving/conversation/control/previews.py:60-60; mcp/src/agents_remember/serving/conversation/control/previews.py:63-64; mcp/src/agents_remember/serving/conversation/control/previews.py:8-8; mcp/src/agents_remember/serving/conversation/control/previews.py:54-54; mcp/src/agents_remember/serving/conversation/control/previews.py:74-74; mcp/src/agents_remember/serving/conversation/control/previews.py:57-57 |
-| The queue projection precomputes the empty-content digest. | "_EMPTY_DIGEST = payload_digest(\"\")" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:48-48 |
-| Authorized cockpit rows use stored content or the empty fallback, then mint operation and withdrawal refs. | "operation_ref = mint_ref("; "withdrawal_ref=mint_ref(" | mcp/src/agents_remember/serving/conversation/control/queue_projection.py:115-119; mcp/src/agents_remember/serving/conversation/control/queue_projection.py:133-137 |
+- The `OperationQueueItem`/`CockpitQueueIdentity` privacy validator (source ∈ {cockpit,terminal,durable}; withdrawable cockpit block rule). [1]
+- The authority-internal setter mint with no submission source (`source=None`). [2]
+- The full-timeline paging seam and the submit journal this projection reads. [3]
+- The payload digest and redacted preview are deterministic transforms. [4]
+- The queue projection precomputes the empty-content digest. [5]
+- Authorized cockpit rows use stored content or the empty fallback, then mint operation and withdrawal refs. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -109,34 +95,3 @@ epoch — see [service.py](service.py.md)) instead of four parallel arguments, a
 arguments to `mint_ref`. The projected queue rows are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T19:58+02:00 — No content impact: 260731-EFA-L16 made `ConversationControlService.resolve_entry` async (event-loop offload of the lock-taking catalog read), so this module's one call site (`operation_queue`) gained only the matching `await` — a one-for-one line replacement; no projection logic, wire shape, or error mapping changed, and this card names neither the seam's signature nor the call shape.
-- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: deduplicated the shared queue-model source
-  reference while retaining both exact privacy-validator anchors; split preview/digest definitions,
-  empty fallback, and authorized queue-row use into their operative owners.
-
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 4 citation items; scoped citation check now passes.
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived the L3-vintage self-citations, which
-  were written seven lines short of the current import block. `_LIVE_ROW_STATES` L36 -> L43,
-  `operation_queue` L40 -> L47-L78, `_queue_row` L74 -> L81-L149 (the last two now span the whole
-  function instead of naming its `def` line); `_EMPTY_DIGEST` L43 -> L44, which otherwise collided
-  with the corrected `_LIVE_ROW_STATES` line. The L5F-vintage bound citations (`channel.queue_rows`
-  write L104, `move_to_end` L108, the eviction loop L109-L110) were re-read and are still exact.
-  No prose claim changed; the timeline paging the first sentence names now happens inside
-  `ConversationControlService.read_full_timeline`, which still unions pages through `latestSequence`.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ControlScope` and `RefBinding`/`RefTarget` call shapes.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R5 bound — documented the new
-  `MAX_QUEUE_ROWS_PER_CHANNEL=256` cap on `channel.queue_rows` with oldest-first `popitem` eviction
-  in `_queue_row`; an evicted key restarts at revision 1 only if a settled operation reappears (it
-  never does), so the bound is invisible to live rows and closes the prior unbounded-`queue_rows`
-  precision-note Todo. Change uncommitted; closeout re-stamps verification.
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the source-aware queue
-  projection — complete never-bodies prompt-queue truth, cockpit-only withdrawal refs/previews/
-  digests, journal-backed empty-held honesty, and the accepted setter-row exclusion. Verification is
-  blank because the new source file is uncommitted; closeout owns its first source stamp.

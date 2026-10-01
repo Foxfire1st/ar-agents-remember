@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/hosted_readiness.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | mcp/src/agents_remember/serving/hosted_readiness.py |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-07-12T14:20:00+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | mcp/src/agents_remember/serving/overview.md |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -36,19 +26,21 @@ outputs. Dispatch proof remains exact-session and fail-closed. This sidecar's cu
 protocol-backed; earlier pane/copy-mode/log readiness descriptions are historical and superseded by
 the L5 adapter handshake.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Worker source inventory, reviewer verdict, and governing route overview.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
 
-### 260713-PHA-L5 Exact-Session Readiness
+#### 260713-PHA-L5 Exact-Session Readiness
 
 Readiness is derived only from the identity-matching adapter snapshot: control ready and acceptance
 immediate or queued. Legacy/custom sessions are unsupported; pane glyphs, copy mode, footer text,
@@ -70,13 +62,3 @@ accepting state of `immediate` or `queued`; pane text, copy mode, footer glyphs 
 still not readiness inputs.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ReadinessWait` / `NO_READINESS_WAIT` and the `_bridge_unreachable` / `_readiness_from_snapshot` steps; readiness contract unchanged.
-- 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled normative readiness to the exact adapter handshake and
-  historicized pane, copy-mode, footer, and log timing observations as diagnostics-only.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed exact adapter handshake and unsupported behavior.
-
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

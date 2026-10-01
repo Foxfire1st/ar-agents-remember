@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/registration/core.py
 
-| Field                  | Value                                                   |
-| ---------------------- | ------------------------------------------------------- |
-| repository             | agents-remember                                          |
-| path                   | `mcp/src/agents_remember/mcp/registration/core.py`       |
-| doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-09-17T10:20:31+00:00 |
-| lastVerifiedCommitHash | `58bf4cde0f5271bbe420ad8e045d18b433f11253` |
-| lastVerifiedCommitDate | 2026-09-17T12:31:16+02:00|
-| governingOverview      | `overview.md`                                            |
-
 ## Governing Overview
 
 [registration route overview](overview.md)
@@ -70,14 +60,14 @@ The docstrings are the model-visible contract and carry the semantics that are n
 - Serving-domain ownership stays behind `application.runtime.startup`; this MCP adapter consumes
   only the strict model payload.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Six of the seven payload builders (all but `read_ar_files_payload`). | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| `read_ar_files_payload`, imported through the `mcp.tools` facade. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| `TaskRef` — the locator bundle `resolve_context` packs. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
-| The registration gained the keyword-only `experiment` parameter and builds the run's request itself. | `RuntimeInstallRequest` | mcp/src/agents_remember/mcp/registration/core.py:123-165 |
+### Repo-Internal References
+
+- Six of the seven payload builders (all but `read_ar_files_payload`). [1]
+- `read_ar_files_payload`, imported through the `mcp.tools` facade. [2]
+- `TaskRef` — the locator bundle `resolve_context` packs. [3]
+- The registration gained the keyword-only `experiment` parameter and builds the run's request itself. [4]
 
 ## 260915-CAPS-L9 Experiment Parameter On `runtime_install`
 
@@ -91,43 +81,3 @@ the pinned eve application is installed beside the canonical assets); it is a pe
 the unmodified runtime; and the returned record's `selectionSource` names which input supplied
 the mode. The registered tool count is unchanged: a parameter was added to an existing
 declaration, not a tool.
-
-## Update History
-
-- 2026-09-17T10:20:31+00:00 — 260915-CAPS-L9 curator: recorded the tool's new `experiment` parameter and its
-  per-call-not-setting semantics. This candidate is **uncommitted**; verification metadata
-  remains closeout-owned.
-
-- 2026-09-06T22:15:27+00:00 — Reconciled retained registration behavior and removed deleted wiring-test claims; current policy and verification provenance preserved.
-
-
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: routed serving identity through the
-  application gateway and typed the registrar against `ServingBuildPayload`. Verification remains
-  closeout-owned.
-
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: the core registrar now captures the shared
-  process build once and projects it through every `server_info` response. Verification metadata
-  remains pinned until closeout.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T02:42:00+02:00 — W3-B01 curator: curated 2 Repo-Internal table citations with exact `TaskRef` and registration-wiring test anchors. Verification metadata remains unchanged for closeout.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. These seven declarations
-  moved verbatim out of `server.py`; `resolve_context` additionally packs its locators into the new
-  `TaskRef`. Verification metadata pinned to the pre-change commit until closeout stamps the L2 code
-  commit.

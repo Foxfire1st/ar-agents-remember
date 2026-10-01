@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/route-local-overview-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The route-local overview template defines route metadata, route verification fields, hot-path summary, scope, structures, flows, load-bearing files, local invariants, and traps.\n\nAnchor: `# <Area Or Route Name> Overview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94cea8e61d3767a7105a39e7210b2f7bc6c2158f",
+            "content": "sha256:387744d3734d968266f138e0c1df1878bb28e6a8e03d9033591414f36331e622",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template uses canonical repo-internal, cross-repo, and docs reference sections, with depth-aware evidence-pack link placeholders.\n\nAnchor: `## Repo-Internal References`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94cea8e61d3767a7105a39e7210b2f7bc6c2158f",
+            "content": "sha256:7efe57f4bfc5e89da15bbf68c5cce16511fde7fe706b41efc1a30daccea60ee6",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The template maps file-level onboarding, child overviews, usage order, needs verification, and update history.\n\nAnchor: `## File-Level Onboarding Map`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94cea8e61d3767a7105a39e7210b2f7bc6c2158f",
+            "content": "sha256:18c8b23e6f4c670f72dec0542235a9899ee2a4a6132d64ba0021c669621d1925",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`c-03-repo-bootstrap` skill Phase 4D writes route-local overviews in mirrored source folders using this template.\n\nAnchor: \"Overview workers write durable route-local overviews:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8351d63d37d1574a7faf21fa2bc613718b2f169d",
+            "content": "sha256:aeefbf0cc992fece9816f25ca40cdb691676e52c2159cb3135a7a581ebbf98a1",
+            "locator": {
+              "end": 877,
+              "kind": "line_range",
+              "start": 877
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

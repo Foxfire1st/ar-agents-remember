@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:46:26+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489` |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Selected closeout certification overview](overview.md)
@@ -42,30 +32,21 @@ This is a comparison against proven output, not a rewritten selected record. It 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry has no entries. The source below establishes this repository-owned boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The resolved registry supplies no applicable external Domain Documentation source for this card. | — | — |
+The resolved registry supplies no applicable external Domain Documentation source for this card.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The complete proof and closed authority comparison recognize only the selected code output. | `require_retained_output_currentness` | mcp/src/agents_remember/worktrees/integration/closeout/certification/retained_output.py:28-77 |
+- The complete proof and closed authority comparison recognize only the selected code output. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation or external protocol is owned here.
 
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No separately configured cross-repository source is used for this card. | — | — |
-## Update History
-
-- 2026-09-06T21:46:26+00:00 — Reconciled landed IAS helper ownership and current production composition; refreshed source anchors while preserving verification pins and historical evidence. No certification or delivery is asserted.
-
-- 2026-09-06T14:58:25+00:00 — Created after full source review at `c69d5171187fa1957025e393270db9f5a864ab14`. Records current implementation and remaining composition boundaries; source verification is not gate execution, delivery or acceptance.
+No separately configured cross-repository source is used for this card.

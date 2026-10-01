@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_paging/bindings.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_paging/bindings.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T21:41:17+02:00 |
-| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4`|
-| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -43,7 +33,9 @@
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R02@v2` of task
@@ -52,31 +44,20 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: two halves of checks, and no rows on a refusal. | "Minting a continuation, and refusing one" | mcp/src/agents_remember/application/knowledge_paging/bindings.py:1-16 |
-| The refusal and its three codes. | `PagingRefusal`; `PagingRefusalCode` | mcp/src/agents_remember/application/knowledge_paging/bindings.py:45-57 |
-| Minting binds the build's threshold and queues the rest. | `mint_continuation` | mcp/src/agents_remember/application/knowledge_paging/bindings.py:60-84 |
-| Not this format, or another view's walk, is unreadable. | `read_continuation` | mcp/src/agents_remember/application/knowledge_paging/bindings.py:87-104 |
-| A changed tree names both trees; threshold and policy are bound. | `request_binding_refusal` | mcp/src/agents_remember/application/knowledge_paging/bindings.py:107-132 |
-| A named code tree or ordering other than the walk's is refused. | `resolution_refusal`; `ordering_refusal` | mcp/src/agents_remember/application/knowledge_paging/bindings.py:135-171 |
-| Manifest and position, once the selection exists. | `position_refusal` | mcp/src/agents_remember/application/knowledge_paging/bindings.py:174-189 |
+- The module statement: two halves of checks, and no rows on a refusal. [1]
+- The refusal and its three codes. [2]
+- Minting binds the build's threshold and queues the rest. [3]
+- Not this format, or another view's walk, is unreadable. [4]
+- A changed tree names both trees; threshold and policy are bound. [5]
+- A named code tree or ordering other than the walk's is refused. [6]
+- Manifest and position, once the selection exists. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the checks compare a token with the call's own selection.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): created this card for the new file MIK-R02 adds. It records the architect rulings of 2026-09-29 19:56:40 (Q5 the effective ordering is bound; Q6 page 1's code tree is bound) and 20:40:40 (F2 the token carries no local path). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

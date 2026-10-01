@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/cli/knowledge_index.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/cli/knowledge_index.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
@@ -40,7 +30,9 @@
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The index's design authority is the coordination-root note Doc14
@@ -48,33 +40,20 @@ No domain documentation source is configured for this repository (`system/source
 packet `MIK-R23@v1` of task `260928_maintained-invariant-knowledge`; both live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The adapter reuses the index package; it adds only argument handling and printing.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The command line and the exit statuses. | "Exit status: 0 for a complete index" | mcp/src/agents_remember/cli/knowledge_index.py:1-14 |
-| Arguments. | `add_arguments` | mcp/src/agents_remember/cli/knowledge_index.py:30-41 |
-| The build or reuse, the JSON report and the exit status by state. | `run` | mcp/src/agents_remember/cli/knowledge_index.py:44-82 |
-| Registration in the umbrella. | "knowledge-index" | mcp/src/agents_remember/cli/__main__.py:86-91 |
-| The command reports the index and exits by state. | `test_the_command_reports_the_index_and_exits_by_state` | mcp/tests/test_knowledge_index.py:417-452 |
+- The command line and the exit statuses. [1]
+- Arguments. [2]
+- The build or reuse, the JSON report and the exit status by state. [3]
+- Registration in the umbrella. [4]
+- The command reports the index and exits by state. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the command reads the memory tree it is given.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `__main__.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`__main__.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): created this card for the new file MIK-R23 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

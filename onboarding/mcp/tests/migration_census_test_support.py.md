@@ -1,15 +1,5 @@
 # mcp/tests/migration_census_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/migration_census_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
-| lastVerifiedCommitDate |  2026-09-24T10:53:01+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -134,49 +124,40 @@ repeating a literal.
 - **A refused setup is an assertion failure, never a silent pass.** The namespace, the route and the
   seed each carry a guard that raises with the refusal's own code.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The docstring states why the fixture writes through the shipped path and why the corpus is small and real rather than rich: what the cases must distinguish is state, not scale. | `change_knowledge_candidate` | mcp/tests/migration_census_test_support.py:1-13 |
-| The four artifact paths and the addressed route are the fixture's shared vocabulary, so a case names the artifact it is asserting against rather than repeating a literal. | `PARSED_CARD`; `UNPARSED_ARTIFACT`; `ABSENT_SOURCE_CARD`; `ROUTE_OVERVIEW`; `ADDRESSED_ROUTE` | mcp/tests/migration_census_test_support.py:57-71 |
-| The three claim texts and the one repeated text are the states the accounting has to separate: supported, contradicted, historical, and one text recorded twice. | `SUPPORTED_CLAIM_TEXT`; `CONTRADICTED_CLAIM_TEXT`; `HISTORICAL_CLAIM_TEXT`; `REPEATED_CLAIM_TEXT` | mcp/tests/migration_census_test_support.py:63-69 |
-| The two tree ids are exact object ids rather than refs, because a baseline whose side is a ref name is not frozen. | `CODE_TREE`; `MEMORY_TREE`; `require_frozen_baseline` | mcp/tests/migration_census_test_support.py:73-76; mcp/src/agents_remember/memory/migration/baseline.py:90-125 |
-| The harness type binds the six facts a case needs — the database path, the repository identity, the admitted destination, the authorship, the authored route and the validated baseline. | `CensusHarness`; `RepositoryIdentity` | mcp/tests/migration_census_test_support.py:79-88 |
-| The context is re-resolved on every call, because a successful batch makes the previous context stale. | `context`; `CandidateResolution`; `resolve_candidate_context` | mcp/tests/migration_census_test_support.py:90-102; mcp/src/agents_remember/application/knowledge.py:267-289 |
-| The harness's remaining three methods are its whole surface: it opens the dataset for reading through `open_admitted_knowledge_store`, resolves a fresh context and hands one `ChangeBatch` to the shipped entry point, and builds one artifact's provenance at its own frozen baseline so every command carries that baseline without a case threading it through. | `open_admitted_knowledge_store`; `ChangeBatch`; `change_knowledge_candidate`; `provenance`; `CensusProvenance` | mcp/tests/migration_census_test_support.py:104-124; mcp/src/agents_remember/application/knowledge.py:208-221; mcp/src/agents_remember/application/knowledge.py:318-341; mcp/src/agents_remember/models/knowledge/census.py:106-146 |
-| `census_harness` is the single entry point: a temporary directory, a fresh repository id, an authorship under `requirement:KS-R21@v1`, an initialized namespace, an authored route and a validated baseline, yielded as one harness. | `census_harness`; `write_authorship`; `initialize_knowledge_namespace`; `admitted_knowledge_destination` | mcp/tests/migration_census_test_support.py:127-154; mcp/src/agents_remember/application/knowledge.py:117-139; mcp/src/agents_remember/application/knowledge.py:140-158; mcp/src/agents_remember/application/knowledge.py:175-207 |
-| A namespace that was not created, a route the writer refused and a seed the batch refused each raise with the refusal's own code, so a change to the shipped write path surfaces as a named assertion failure. | `_validated_baseline`; `_author_route` | mcp/tests/migration_census_test_support.py:157-163; mcp/tests/migration_census_test_support.py:166-184 |
-| The fixture's one route is authored through the shipped writer over a `RouteDraft`, and the store that writer was given is closed in a `finally` block. | `author_route`; `RouteDraft`; `finally` | mcp/tests/migration_census_test_support.py:166-184; mcp/src/agents_remember/memory/knowledge/routes.py:176-184; mcp/src/agents_remember/memory/knowledge/routes.py:250-306 |
-| The inventory-row spec and its builder keep one row's declared facts in a value, so the builder takes a spec rather than eight arguments and returns a real command with fresh record and revision ids, the fixture's route as its governing route, and a provenance at the spec's location. | `InventoryRowSpec`; `inventory_row_for`; `CensusInventoryRowCommand`; `CensusInventoryRowPayload` | mcp/tests/migration_census_test_support.py:187-199; mcp/tests/migration_census_test_support.py:215-241; mcp/src/agents_remember/models/knowledge/census.py:147-194; mcp/src/agents_remember/models/knowledge/census.py:290-305 |
-| `ClaimSpec` carries one claim's declared facts and its optional curator verdict, including the realization state that decides whether a realization row exists at all. | `ClaimSpec` | mcp/tests/migration_census_test_support.py:201-212 |
-| `inventory_row_for` turns one spec into a real command with fresh record and revision ids, the fixture's route as its governing route, and a provenance at the spec's location. | `inventory_row_for`; `CensusInventoryRowCommand`; `CensusInventoryRowPayload` | mcp/tests/migration_census_test_support.py:215-241; mcp/src/agents_remember/models/knowledge/census.py:147-194; mcp/src/agents_remember/models/knowledge/census.py:290-305 |
-| `claim_command_for` records exactly one evidence row per claim — `assessed` when a verdict was supplied and `unassessed` when it was not — and a realization only when one was declared. | `claim_command_for`; `CensusClaimEvidence`; `CensusClaimRealization` | mcp/tests/migration_census_test_support.py:244-289; mcp/src/agents_remember/models/knowledge/census.py:239-259; mcp/src/agents_remember/models/knowledge/census.py:260-273 |
-| `disposition_command_for` builds one `recorded` migration disposition, and `link_command_for` derives one whose `CensusDispositionLink` points at a record the caller names. | `disposition_command_for`; `link_command_for`; `CensusDispositionLink` | mcp/tests/migration_census_test_support.py:292-310; mcp/tests/migration_census_test_support.py:402-419; mcp/src/agents_remember/models/knowledge/census.py:274-289 |
-| `seed_census` is the fixture's contract in executable form, written as one batch: four inventory rows, five claims, four dispositions, and a refusal guard that raises with the batch's own refusal. | `seed_census` | mcp/tests/migration_census_test_support.py:313-399 |
-| **The registered rows that make this file governed evidence:** the `migration-census-cases` contract names this file as its owner and the seed case as its evidence node, and the artifact row names its kind, its authority, its category, its fidelity, its introducer, its lifetime, its exact consumer scope and its one consumer. | `migration-census-cases`; `evidence_node`; `shared-support`; `260915-KS-L21`; `contract:migration-census-cases`; `mcp/tests/test_migration_census.py` | mcp/tests/evidence-lifecycle.toml:74-85 |
-| The catalog's pinned populations stand at fifteen contracts and sixty-five artifacts against a pinned digest, and the case module this fixture serves is the `unit-regression` lane member carrying the leaf's 48 cases. | `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT`; `LIFECYCLE_CATALOG_SHA256`; `unit-regression` | mcp/tests/test_dependency_ownership_ast_helpers.py:43-46; mcp/tests/test-evidence-lanes.toml:5-5 |
+- The docstring states why the fixture writes through the shipped path and why the corpus is small and real rather than rich: what the cases must distinguish is state, not scale. [1]
+- The four artifact paths and the addressed route are the fixture's shared vocabulary, so a case names the artifact it is asserting against rather than repeating a literal. [2]
+- The three claim texts and the one repeated text are the states the accounting has to separate: supported, contradicted, historical, and one text recorded twice. [3]
+- The two tree ids are exact object ids rather than refs, because a baseline whose side is a ref name is not frozen. [4]
+- The harness type binds the six facts a case needs — the database path, the repository identity, the admitted destination, the authorship, the authored route and the validated baseline. [5]
+- The context is re-resolved on every call, because a successful batch makes the previous context stale. [6]
+- The harness's remaining three methods are its whole surface: it opens the dataset for reading through `open_admitted_knowledge_store`, resolves a fresh context and hands one `ChangeBatch` to the shipped entry point, and builds one artifact's provenance at its own frozen baseline so every command carries that baseline without a case threading it through. [7]
+- `census_harness` is the single entry point: a temporary directory, a fresh repository id, an authorship under `requirement:KS-R21@v1`, an initialized namespace, an authored route and a validated baseline, yielded as one harness. [8]
+- A namespace that was not created, a route the writer refused and a seed the batch refused each raise with the refusal's own code, so a change to the shipped write path surfaces as a named assertion failure. [9]
+- The fixture's one route is authored through the shipped writer over a `RouteDraft`, and the store that writer was given is closed in a `finally` block. [10]
+- The inventory-row spec and its builder keep one row's declared facts in a value, so the builder takes a spec rather than eight arguments and returns a real command with fresh record and revision ids, the fixture's route as its governing route, and a provenance at the spec's location. [11]
+- `ClaimSpec` carries one claim's declared facts and its optional curator verdict, including the realization state that decides whether a realization row exists at all. [12]
+- `inventory_row_for` turns one spec into a real command with fresh record and revision ids, the fixture's route as its governing route, and a provenance at the spec's location. [13]
+- `claim_command_for` records exactly one evidence row per claim — `assessed` when a verdict was supplied and `unassessed` when it was not — and a realization only when one was declared. [14]
+- `disposition_command_for` builds one `recorded` migration disposition, and `link_command_for` derives one whose `CensusDispositionLink` points at a record the caller names. [15]
+- `seed_census` is the fixture's contract in executable form, written as one batch: four inventory rows, five claims, four dispositions, and a refusal guard that raises with the batch's own refusal. [16]
+- **The registered rows that make this file governed evidence:** the `migration-census-cases` contract names this file as its owner and the seed case as its evidence node, and the artifact row names its kind, its authority, its category, its fidelity, its introducer, its lifetime, its exact consumer scope and its one consumer. [17]
+- The catalog's pinned populations stand at fifteen contracts and sixty-five artifacts against a pinned digest, and the case module this fixture serves is the `unit-regression` lane member carrying the leaf's 48 cases. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Its inputs are this repository's own
 application seam, route writer and census models, plus a temporary directory the fixture creates and
 owns; the frozen baseline it binds is a pair of object-id **strings**, and no case it supports reads a
 second repository, a network or a Git object.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `migration_census_test_support.py.md:166` (`evidence_node`).
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the shared support module the census's 48 cases build on. It records that the fixture produces every identity through `change_knowledge_candidate` rather than by inserting rows, because the census is a read over records the one candidate write path produced and the states its accounting must separate — a claim with no assessment, a curator's recorded verdict, a piece outside the cohort, one claim text recorded twice, an artifact that did not parse and a card whose declared source is absent — are not states a row-inserting fixture can reach. It records the harness's five bound facts and its four methods, including the deliberate re-resolution of the context on every call because a successful batch makes the previous one stale; the two setup steps that go through `require_frozen_baseline` and the shipped route writer; the two specs and the three command builders that keep one evidence row per claim and create a realization only when one was declared; and `seed_census` as the fixture's corpus written as a single batch behind a refusal guard. It also records the registry work this leaf carries: the `migration-census-cases` contract owning this file with the seed case as its executable evidence node, the `shared-support` artifact row with `consumer_scope = "exact"` and one named consumer, and the `unit-regression` lane member — with the catalogue's pinned populations standing at fifteen contracts and sixty-five artifacts. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

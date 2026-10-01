@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/cli/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring names the CLI adapter role.\n\nAnchor: \"Command-line adapters for the application layer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caeaac19b8116d8298943561ddc2e3663abeb74b",
+            "content": "sha256:fff5d9f6b43a0a986befe2d5bcc3c6d665580ce335c8e60b0c16eabe54458de4",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The umbrella entrypoint dispatches subcommands for this package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3e26f0f89e771bd2475715a4c480c1b9c1bc405",
+            "content": "sha256:90568bdc8bd602e0e941eb5c9baa73d267646ad22be69c80b38184c8280d660a",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dashboard subcommand adapter registered by the umbrella parser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80dd57c34d44fcd1bdd1920cb2b74809135bed5a",
+            "content": "sha256:19f9b7165341d3052d1b1125a87d54dbda0cec85951ef043f790dd6075630b36",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80dd57c34d44fcd1bdd1920cb2b74809135bed5a",
+            "content": "sha256:de2d22455c9b0a532e7879f2bc22dcb6bb375b8b975b2f49a0967da209b3575f",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The context-packet CLI adapter peer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f947ad7465ca039456a25e1f1d1a33273877ec5c",
+            "content": "sha256:7ee50b9f3a11345425f238468deef7fce578ac0b95c4f990dc3225a4d7d84e53",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/src/agents_remember/cli/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

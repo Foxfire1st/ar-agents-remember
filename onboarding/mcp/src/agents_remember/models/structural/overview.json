@@ -1,0 +1,83 @@
+{
+  "path": "mcp/src/agents_remember/models/structural",
+  "references": {
+    "1": {
+      "note": "Current dispatch caller resolution owns the structural boundary; removed doctrine/relationship tests provide no current execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db22bd82a92f3e503a3f4f116f714f94c9871a48",
+            "content": "sha256:008f44c65414e7f4aae38d408695a61bcad2d0d82d8de6dfa574bd6f1d54867d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_dispatch_caller"
+            },
+            "path": "mcp/src/agents_remember/application/structural/agent_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db22bd82a92f3e503a3f4f116f714f94c9871a48",
+            "content": "sha256:74c1cb1b204d16a82af351bfe8227819c1e53f6e2bae3caa764b7d733cefaeba",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 403
+            },
+            "path": "mcp/src/agents_remember/application/structural/agent_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route's activation vocabulary is contract-scoped: the record carries the contract fingerprint, the canonical contract path, the selected master, the writable selection state, a monotonic revision, and selection time.\n\nAnchor: \"class AtomicSeriesActivationRecord(BaseModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8d2b8672e40bb74d872381d4750f94605ca226",
+            "content": "sha256:39bfe87ee76b966b89c56559a309084c50575c93658ea6df389137d13b9c3556",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicSeriesActivationRecord"
+            },
+            "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store derives the fingerprint from the canonical resolved contract path and refuses any record that is not this exact contract.\n\nAnchor: \"def contract_fingerprint(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:43fa914c6970f7935d94f2a425140ab5639b240575efb963f845ae9005ac30c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_record_identity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:10d1737c51836553255dfb464c23079367c2aa306fb3eaebb19d1f4e795c4b01",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

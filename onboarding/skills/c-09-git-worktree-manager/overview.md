@@ -2,12 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `skills/c-09-git-worktree-manager` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T15:32:24+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 
 ## Purpose
 
@@ -91,21 +86,19 @@ metadata awaits the real code commit.
 
 Closeout and integration are authorized Git transactions over code and memory-content legs, followed by best-effort consumer-cache refresh. Their transaction-owned commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside closeout/integration remains unchanged. Preview, conflict, and ref safeguards remain in this route; quality, tests, memory-quality, certification, and review operations are contextual or explicit rather than automatic.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. | `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup` | skills/c-09-git-worktree-manager/SKILL.md:256-303; skills/c-09-git-worktree-manager/SKILL.md:436-516 |
-| Ordinary series integration and leaf direct landing remain distinct policy routes. | "An ordinary master/series integration has no leaf closeout door of its own"; `directExecutionEnabled` | skills/c-09-git-worktree-manager/SKILL.md:380-380; skills/c-09-git-worktree-manager/SKILL.md:381-384; skills/c-09-git-worktree-manager/SKILL.md:387-387 |
-| The graph-less atomic-sequential default describes sprint shape and serializes nothing between the masters. | "nothing serializes the masters" | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:162-162 |
-| Public sync composes the selection and transaction owners without exposing private ids. | `sync_result` | mcp/src/agents_remember/worktrees/modules/sync.py:28-67 |
-| Stable operation recovery is stored below the enclosure root. | `SyncOperationStore` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:207-401 |
+### Repo-Internal References
+
+- The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine. [1]
+- Ordinary series integration and leaf direct landing remain distinct policy routes. [2]
+- The graph-less atomic-sequential default describes sprint shape and serializes nothing between the masters. [3]
+- Public sync composes the selection and transaction owners without exposing private ids. [4]
+- Stable operation recovery is stored below the enclosure root. [5]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Real memory ancestry is the landing proof. | `require_integrated_memory_ancestry` | mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py:235-250 |
+- Real memory ancestry is the landing proof. [6]
 
 ## 260915-CAPS-L18 Complete Curation Reaches This Route
 
@@ -153,9 +146,7 @@ is its own `task.json`, which finalizes standalone, is not covered). Standalone 
 the rule that the parent task itself is not completed are unchanged. `scripts/sync-skills.py` rewrote the package
 copy and the eight harness starter copies byte-identically.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The finalizer paragraph's two new clauses. | "master lists it, the finalizer always derives that"; "assertions are omitted. A sub-task naming none whose folder" | skills/c-09-git-worktree-manager/SKILL.md:496-503 |
+- The finalizer paragraph's two new clauses. [7]
 
 ## Ungoverned Mirror Status (known defect)
 
@@ -169,63 +160,3 @@ by hand rather than by a governed maintenance pass. The remaining sibling sideca
 deliberately left untouched pending a follow-up decision on whether this mirror should be governed or
 removed. That mismatch between the declared path rules and the enforced checking scope is itself the
 recorded defect.
-
-## Update History
-- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 Finalization Reaches The Master That Lists A Leaf Naming None" (rulings 12:33:07 Q3, 13:11:32 note 5, 14:12:52; the nine-copy sync), with one row. The installed fixer normalised the section row (`## Lifecycle Finalization And Cleanup` `433-512` → `436-516`) and the `SyncOperationStore` row (`172-366` → `207-401`, a file this leaf did not change). No verification stamp was advanced.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
-- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **corrected a landed defect (`D35`)** in the `CAPS-L18` section. It named `checklistStatus=ready-for-closeout` as the curator repair loop's termination condition; `ready-for-closeout` is never a value of the combined field. The section now names the **raw** `qualityChecklistStatus` as the loop's gate and the combined `checklistStatus=coherence-required` as the coherence gate, matching `application/memory_quality/controller.py:664,671,678,687`. No workflow, gate or authority changed; only the field names, which were the defect. No verification stamp advanced.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `An ordinary master/series integration has no leaf closeout door of its own` in the row 100 of this card from skills/c-09-git-worktree-manager/SKILL.md:380-380 to skills/c-09-git-worktree-manager/SKILL.md:381, the extent of the construct the claim is about (the checker named line(s) [381] as its live location); re-pointed `directExecutionEnabled` in the row 100 of this card from skills/c-09-git-worktree-manager/SKILL.md:381 to skills/c-09-git-worktree-manager/SKILL.md:384, the extent of the construct the claim is about (the checker named line(s) [384] as its live location)
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Reconciled canonical worktree doctrine to cache-independent Git authority. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
-  `skills/c-09-git-worktree-manager/` route changed since the recorded verification commit. Re-read
-  the card against the frozen on-disk source and re-checked its claims and cited ranges: nothing
-  this card asserts is falsified by the change, so no wording changed. Verification metadata remains
-  closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
-  claim(s) whose anchor no longer sat in its cited range and normalised 2 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-14T13:20+02:00 — Corrected the route's external-memory doctrine: the sync transaction proves
-  the admitted Git history and requires no row list of the `memory.md` it commits, because the ledger
-  is derived state and its rebuild reports the exclusions it cannot resolve. The source skill text at
-  `SKILL.md:293-299` was corrected with the code, so the skill no longer carries the removed
-parent-row validation; the matching route invariant now
-  states the current behaviour. Verification metadata remains closeout-owned.
-- 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: rebound the route's citation
-  rows against the frozen source after `grep -n` verification — `## Mid-Task Sync` to
-  SKILL.md:256-300, `## Lifecycle Finalization And Cleanup` to SKILL.md:430-508, and the ordinary
-  master/series integration anchors `"An ordinary master/series integration has no leaf closeout door
-  of its own"` and `directExecutionEnabled` from :376-376/:379-379 to :377-377/:380-380 (their only
-  real change is the line shift); tightened `SyncOperationStore` to sync_transaction_state.py:172-305.
-  Rewrote the hot-path admission summary to per-contract activation (each contract owns its own
-  activation record, `reconciling` suspends nothing, one selection excludes no other, multiple
-  nonterminal contracts remain valid) and added the explicit developer ruling that nothing serializes
-  a graph-less sprint — `atomic-sequential` describes sprint shape, not a serialization mechanism.
-  Added the Ungoverned Mirror Status defect statement. Verification metadata remains closeout-owned.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "An ordinary master/series integration has no leaf closeout door of its own", `directExecutionEnabled` repointed to skills/c-09-git-worktree-manager/SKILL.md:376-376, skills/c-09-git-worktree-manager/SKILL.md:379-379. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `sync_result` repointed to mcp/src/agents_remember/worktrees/modules/sync.py:28-67. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation after the closeout auto-carry change shifted lines in `sync_transaction.py` / `sync_transaction_state.py`; the cited symbols and their meanings are unchanged.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `directExecutionEnabled`; "An ordinary master/series integration has no leaf closeout door of its own" repointed to skills/c-09-git-worktree-manager/SKILL.md:357-357; skills/c-09-git-worktree-manager/SKILL.md:354-354. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-31T20:30+02:00 — 260831-DER: documented ordinary series `not-applicable` door authority,
-  the narrow leaf-without-enclosure direct-landing policy, and retained exact leaf/journal recovery.
-  Also repaired a pre-existing sentence-order defect in the sync summary.
-
-- 2026-08-26T14:32+02:00 — Corrected the route contract from per-code uniqueness to exact
-  parent-row preservation with valid newest-first same-code history. Verification remains
-  closeout-owned.
-
-- 2026-08-26T08:50+02:00 — Corrected the frozen journal-store owner name to
-  `SyncOperationStore`.
-- 2026-08-26T08:20+02:00 — Final frozen reconciliation of the canonical worktree-manager route;
-  verification metadata awaits the real code commit.
-
-- 2026-08-26T05:20+02:00 — Established canonical route onboarding for source-pair activation,
-  retained-conflict synchronization, exact cleanup release, and no-fallback ownership.

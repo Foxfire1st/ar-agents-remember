@@ -1,0 +1,284 @@
+{
+  "path": "mcp/src/agents_remember/serving/eve_events.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The normalized snapshot, transcript entry, terminal result and event types are AR's existing adapter model, not eve-shaped types.\n\nAnchor: `AdapterSnapshot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:ae4f7b4b99c767e69f2d0b01bd4b16daba3f0191bdc049c3b7192dd674bbcc1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "TranscriptEntry"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:3b7f5f50f8cde3fc235cb8d3c74c201f7f04d597dfb167770d551c0d8e0b8c3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalResult"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:0349970d085690832e2790e2b13c2e9688b19dd20a06eca64c3d2e65a214da25",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdapterEvent"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:7c44052095c46ad2c86133026044236e07006fba65168c04179a7d15ff5395c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AR_EVIDENCE_KEY"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The event vocabulary and identity fields the mapping consumes are declared once in the wire module.\n\nAnchor: `EveStreamEvent.turn_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:883dbbe0a3e5f559c097a8f264d07685d6128b855816a72ac6761e22235eb254",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERACTION_REQUEST_EVENT_TYPE"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:73bd6107ce66733e7b03440eb82e5879074de5771321f2a57b71f3e6b9544bb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AUTHORIZATION_REQUIRED_EVENT_TYPE"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:4de479b443d6bf2428d87aa5b9e78676bdaf3633d91bcdb7a16be38b0ce3867f",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pending interactions are projected into the bounded queue this mapper owns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44cf5d122b354a0dd14e20c032fe86e896d1d480",
+            "content": "sha256:d8f98bc4eb1aae5a486f4f2e2e776b3eda694300014951b3d2d7330954881fbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveInteractionQueue"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_interactions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44cf5d122b354a0dd14e20c032fe86e896d1d480",
+            "content": "sha256:442de0272a3940becf673fe5d3f28ccac615036f3fbfd3ece10e70003863ea4d",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/serving/eve_interactions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The adapter advances the persisted cursor before handing the event to this mapper, and owns the single replay window the mapper relies on.\n\nAnchor: `EveSessionAdapter._translate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:4730c1c3a91a762b0cdcfda1fa8b43db4b21dde43dd60b143eabc5adb74fe990",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEventDeduplicator"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:b7d5b9594417243cf554e59b89c31a77796c688480170e6964271c6cc9cb0d3e",
+            "locator": {
+              "end": 644,
+              "kind": "line_range",
+              "start": 615
+            },
+            "path": "mcp/src/agents_remember/serving/eve_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Conformance cases assert both directions for each named scenario: the behavior that must happen and the double-render / cross-contamination failure it would otherwise hide.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:2a0b97a90f69d7b266f4e84ecc62da5f995677d4a1193c0b3c8297b8befc0723",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterIsolationTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:6c5893270176909a96d2bca97fa6c96057f65166c56ccfc7964ab00599d75605",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterSessionCompletionTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:e82997034e4ea2d124f74636eaabe4b053e874d8998d999d989a83c7b0b87f41",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterQueuePolicyTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:8f5e6f1c3a4379259f7f88c1196403e482e50fde929dbc538ca9b288e7b37e1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterSubmissionTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:ab02edbbaf832a128e198b5b95d2ba9bb6d37375f70b66e25531a07eb45fcb93",
+            "locator": {
+              "end": 1128,
+              "kind": "line_range",
+              "start": 1024
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:c95963c4dbdeb6ad43080d6e67e94a3fc7d3ccc02a953e8cac5b0cdcb966b987",
+            "locator": {
+              "end": 1023,
+              "kind": "line_range",
+              "start": 959
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:ac256d09156e7548e72be4466974878bdc56220482f107372347e5e807d92b6a",
+            "locator": {
+              "end": 660,
+              "kind": "line_range",
+              "start": 604
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:5b4db81c4adb3c7992d678c87dd292cb7ff44f7761dbbe846cead9c2c6ae999e",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The translated event set is eve's published durable stream contract at the pinned release.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:9d307f835cce51513136dfcf364b9400ec997c3664f69017f0578856ec69057a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveStreamEvent"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

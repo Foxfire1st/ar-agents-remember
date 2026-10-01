@@ -1,0 +1,327 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes; `SprintSeat` itself is structurally unchanged in the candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:36ff7d8d0203a087d6d872e3c4dc4dc886b952ea46569e9c342ff06ad680df1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubTaskRef"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:8d72cf69efb4831d2428cd7fd6e60e4dc496aceaa7728a62febf385aecfba0fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintSeat"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:09f7f0c647b915d160623001f39e3bdf3ec9214d68bbb15f49f4685ac7d57ae9",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocument"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:9005c37011554918ea8d6474d919c2300cf8760cc376b4359c6ad502ec9a8916",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 546
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:9b34722fef8ccbacb08285b6360df96f10bd91e1ba66f8102d19ec83dbb1371d",
+            "locator": {
+              "end": 662,
+              "kind": "line_range",
+              "start": 630
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:21a4d96b0b0d9f00ec7be98babe58328835bee6f3c067dcfb92dd638eeb53834",
+            "locator": {
+              "end": 865,
+              "kind": "line_range",
+              "start": 677
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The typed-linkage cross-check and altitude role sets this module relies on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:9d866f0ad49a926f7c1c9957c2966646dfee83d55de533fe308fb7d55871b925",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_sprint_linkage"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:43b910319c2219cb519e509f776e2b72e3496ddf23e1aa21fb982b9afde1e65f",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The public tool-layer operation routing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56205b6a3211f18b246679906885148550f5fa91",
+            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_tool"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared judgment verifier and completion gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:6458be6f7ea0fa60376d257779399bdaa16e6a351f96fc168f08de9c50fd386d",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_sprint_judgment_ids"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:2b210e22397bcbb2de02727b1307d66e3d68968cae6faa1de711857b129e60ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_commanded_masters_completed"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:5ca03bab23f46a6cc0ca640edff89fb184a8e7f70ecebfc29b5d0c8f612ad463",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The rollback-safe batch writer and exact task publication transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:4f2b736aaa735f1bf37ecbd2b0a9c4a5c870fcd538adf3138433e5771f4f4f5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_task_doc_batch"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:4d206d0dab49978f058b58afa65ebd16a43e03dd1ee6e725c91c5083efa842b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_task_doc_set"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The single-owner authority gate admitting this module as a task-document writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:92d37e2b193db41a7182745fcea6a0f41943d7264ec07cb516453c69824be448",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_DOCUMENT_WRITER_AUTHORITIES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/single_owner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The linkage preflight wraps the served-build check in the linkage error family (L15-R4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "content": "sha256:0ef2f37134fef4448284a56592d961fa3b0a41359bce4c67f64d14ed1f0aafc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_serving_topology_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "content": "sha256:11ba144fd52836525f06cc41616636ce632aa5690511aecafe732427fe543aa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_linkage_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "content": "sha256:002d3f631d81931bc438e4f86262d3caaf1ae47ed3b908839726a3c9e997ea09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "content": "sha256:23301c947b085d47d44cc446e36f1535eb8ae8ad15c6f354c4e19c5c0af58189",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintLinkageError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "content": "sha256:a2ca810cdbf23ad6439ed98afefa26114efdb4174ef59a00bdeef29c00baaf03",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintLinkageRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "content": "sha256:861e2cb48e41c0ef7371da5ec6ca7aed471730da035d21578deb6ca40ed1d44d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintLinkageCall"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "content": "sha256:03c22c474c06d59d97322a0d7b1f66dcfa8a2dc13bd9867ca295886ecc771050",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "content": "sha256:eb427eb065827e6000072b12f705e679295add4ae47069f05227b1a6b041ac1a",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 177
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

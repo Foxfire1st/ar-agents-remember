@@ -1,0 +1,207 @@
+{
+  "path": "dashboard/src/data/taskIdentity.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module under test (the `buildTaskTree` / `findMasterPath` / `masterFolderForSelection` helpers).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:70d0d8fbe1e746fae171a5ac7b7ff6d5f28320f50478c32fc2ba299684889d3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildTaskTree"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:6f2a95cc618d682fc225ae0b8a45032affc70d4c65fb284a2dc5f579a4ab327d",
+            "locator": {
+              "kind": "symbol",
+              "name": "findMasterPath"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:27e64282b99e4530e2971d8cd79cbceabd1373a85ca56092f4ccf9d06960e22c",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterFolderForSelection"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The leaf-key composer the assertions read through: `repository` + docPath folder + `id`, nothing else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:70418e203a9f57b52f54550a3ff365787aed2a0d79ec3c3e9f6dd5f8bac5acbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "qualifiedLeafKey"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:c1d4e7354c69385265d78e2651b683ce9e6b0fd14190dd904ef21459477ea00f",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test file's `doc` fixture helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c5ed53f3b0e2ae86b06eb00cd8fb36c78a40d44",
+            "content": "sha256:823195d889f453bf52504ec468662ba2058d0c2ed49313d10de105deb6321798",
+            "locator": {
+              "kind": "symbol",
+              "name": "doc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `taskDoc` / `analytics` builders and the thirteen-key `EMPTY_ANALYTICS` base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "content": "sha256:cd12deed036264ddb61f2bcb0acd86f6d4505cfe896969e64520a2458294214a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_ANALYTICS"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "content": "sha256:b6f4449a610c853dc02c93cbd467d7e51859462c455d37452856c2db473369b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDoc"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "content": "sha256:a15733962996e3acbbb0d77f4238558c1da70ffdb2332d31938c0074ebb00880",
+            "locator": {
+              "kind": "symbol",
+              "name": "analytics"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "ChatSessionActions derives its task tree from taskDocuments.\n\nAnchor: \"const leafTree = useMemo(() => buildTaskTree(taskDocuments)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "707beb3f24632d9964c70ac53fc0a6a88d9dd9eb",
+            "content": "sha256:34e7b61610c12aac2ed622a61f6439f838760bd29877a9d6a8d67cc13510c90b",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatContextBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "ChatSessionActions renders LeafAttachPicker.\n\nAnchor: \"<LeafAttachPicker\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "707beb3f24632d9964c70ac53fc0a6a88d9dd9eb",
+            "content": "sha256:985ce190210525ca0e396da83f883d596e8c5d005885de802d971a12d7a41032",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatContextBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "LeafAttachPicker pre-drills to the context master with findMasterPath.\n\nAnchor: \"setPath(contextMaster ? findMasterPath(tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5999b27ca6e1315982d5690ac92a88149080afe6",
+            "content": "sha256:c3c879e4189b9730071c7a16fff481325e81992490b61f123be3c71b4b0591fa",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "dashboard/src/panels/LeafAttachPicker.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Master rows drill further through drillInto.\n\nAnchor: \"const drillInto = (node: TaskTreeNode) => setPath((current) => [...current\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5999b27ca6e1315982d5690ac92a88149080afe6",
+            "content": "sha256:91c992b5b7d951a33de9077ca7c3019a51577221333169887d8acb36028e766f",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "dashboard/src/panels/LeafAttachPicker.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

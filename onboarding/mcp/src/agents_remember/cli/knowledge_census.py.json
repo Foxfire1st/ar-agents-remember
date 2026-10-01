@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two actions and their flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c0f6d5efe3fe3984d7a7dceec5c5593e0d5513a",
+            "content": "sha256:0dac492026736e382a8465170f1abd0ae3f5ef860d8ec3d369fd1b387c09b696",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Inventory: exit 2 on an unreadable baseline, 1 on a refused write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c0f6d5efe3fe3984d7a7dceec5c5593e0d5513a",
+            "content": "sha256:30b97be2830443f316fa7c586ae8f4d0093f88bb587d584217aa3f84afeb0e6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Report: exit 2 on an unreadable input, 1 on an invalid census file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c0f6d5efe3fe3984d7a7dceec5c5593e0d5513a",
+            "content": "sha256:980a20a12225a92abc6de275c64c5216ca6a75bcd62eae16902ed04e99c01d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The report and inventory commands end to end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f86d20bf0fec7d5d1d7a06e51767968b6725696",
+            "content": "sha256:db79a2d6d3147a00a827141fa2e614ee2cd9f48aa4a63491f5c4eb0613000641",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_report_and_inventory_commands"
+            },
+            "path": "mcp/tests/test_knowledge_census_report.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

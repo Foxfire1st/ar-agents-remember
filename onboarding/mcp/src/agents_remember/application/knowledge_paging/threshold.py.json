@@ -1,0 +1,94 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/threshold.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: one measurement for the cut and the stamped tokens.\n\nAnchor: \"The one token threshold every bounded knowledge read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "351b796fb4c1d3a5da7835b9dc2c204da6075b40",
+            "content": "sha256:4340f7bcd4a815eb5f027931f328e902bee96c81a87b259e7e1a29b79a4bab12",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared threshold and its tokenizer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "351b796fb4c1d3a5da7835b9dc2c204da6075b40",
+            "content": "sha256:cbc837fa4fb1bc5445b8c9d9803511a2c2f1b7443542a6478a6a515c3ec544d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_PAGE_THRESHOLD_TOKENS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "351b796fb4c1d3a5da7835b9dc2c204da6075b40",
+            "content": "sha256:feb2448332ea2139ff65b935aab136044a46f31ad478f6b3fc86b5f9e2d19388",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_PAGE_TOKENIZER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The envelope reserve the choke point adds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "351b796fb4c1d3a5da7835b9dc2c204da6075b40",
+            "content": "sha256:c389089db08dbfd442f3c61b408364558eefa363d39ca17806f2f16e72324bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_RESERVE_TOKENS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The measurement and the stated threshold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "351b796fb4c1d3a5da7835b9dc2c204da6075b40",
+            "content": "sha256:ad56aac5093e9cd05b3fe82a523d7fba59bafe2628bc2de021366c5bda14b2b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "response_tokens"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "351b796fb4c1d3a5da7835b9dc2c204da6075b40",
+            "content": "sha256:ce736041f052d420506d6846a01a240d0cbc7929e781b2f0e2b8fd362265b918",
+            "locator": {
+              "kind": "symbol",
+              "name": "threshold_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,154 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Projection tick that prunes rows after folding live lifecycle state.\n\nAnchor: `prune_lifecycles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:7a07b8c0296677d21a34d2a022cc47ec152daf1d41cb5bf8b784fd5138eabe53",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reducer suppression check that requires the acknowledgement lifecycle to match the item lifecycle.\n\nAnchor: \"def _is_dismissed(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
+            "content": "sha256:5aba9451b1e6d3aa523c2e27c2a597c94e4fa4a0ebcf3889452f07b0e6dfde40",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Serving route that records lifecycle acknowledgements or cancels gate-open items.\n\nAnchor: \"def _dismissal_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:27c7e22cacb31aedc77b85cfef5816ef4b2b2f5c0974bbb6e529b9426e38e326",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 275
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Targetless actionable-drift rows are the only non-lifecycle acknowledgements retained by prune: `prune_lifecycles` through `_prune_locked` and the module-level `_keep_current_record`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "702e1a4a709d0898a95c78b3dc236065c165f9a1",
+            "content": "sha256:609ffe4283b75ee3f0fb29759003824e9d80b6e7d717d656bb289249e4068d7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_keep_current_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`dismiss` holds `exclusive_access` across the read and the rewrite; `_replace` delegates to `rewrite_lines` and never unlinks.\n\nAnchor: `exclusive_access`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "702e1a4a709d0898a95c78b3dc236065c165f9a1",
+            "content": "sha256:60e95c95e5646d85ef8f0c9a41f649dbd72a170534264bb5ebf54afb48a199eb",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "702e1a4a709d0898a95c78b3dc236065c165f9a1",
+            "content": "sha256:78bf87ea80c168c02e5970dff958b1f2789f8442d8233fef59292ddd6cd0189c",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`ATTENTION_DISMISSAL_OWNERSHIP` records why a single-writer store is still locked and names the 31.45 percent an unlocked draft measured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:8b9748afe47010b4698f23d863167efa5a70a053911627ef22686b1e1f43e065",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTENTION_DISMISSAL_OWNERSHIP"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:b5b5c24592d0610fde84dece7f570cab3e5ed1532a3bf36042a1edb988e38684",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The HTTP dismiss route at L1164 that makes this whole-file read-modify-write a user-facing click.\n\nAnchor: \"def _dismissal_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:27c7e22cacb31aedc77b85cfef5816ef4b2b2f5c0974bbb6e529b9426e38e326",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 275
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

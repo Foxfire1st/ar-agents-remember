@@ -1,0 +1,69 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "content": "sha256:474e31f0982deb639ffdd0ffea835a5968a97c342dbd271178dea9a8e46833ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConfiguredContractAccepted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "content": "sha256:b8cbe01abd232a66d9fb1a2ddc5f6ffb9f8e5519428c76021a0137ad5967b67a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConfiguredContractRefused"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "content": "sha256:47c7281ec0415ef87b601a396b28a6754ba1dd72e5d02d18d71f503c2049fedb",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_configured_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "content": "sha256:655399d5ba2dd52cec49dea4aeecd11083dacb4612524bbbd960b25fbf9f1705",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
+            "content": "sha256:b8d6c2d0e517a6986a8c1c2ee4f334197c004b82faa039d45aa5870ae7d6d412",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Review source-content reads (/api/review/intent/source-content) of one leaf's review comparison, for a path its requested measured tree pair does not list as changed.",
+  "conditions": [
+    "The requested string validates as a path seed and the validated value equals the requested string exactly."
+  ],
+  "exclusions": [
+    "Spellings the seed rule would normalize (surrounding whitespace, tab, newline), which are never matched to the path they normalize to."
+  ],
+  "id": "INV-M9AMAYWY",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "7e847772-d2f0-4c00-9d80-dd4f8409903d",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "An unchanged path is admitted only for the exact requested spelling a recorded anchor carries; a spelling the path-seed rule would normalize (surrounding whitespace, tab, newline) is refused and never matched to the path it normalizes to.",
+  "status": "proposed",
+  "supersedes": []
+}

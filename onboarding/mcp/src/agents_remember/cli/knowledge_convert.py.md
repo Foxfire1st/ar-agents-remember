@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/cli/knowledge_convert.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/cli/knowledge_convert.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
@@ -53,7 +43,9 @@ report's currentness counts.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -62,31 +54,19 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The arguments, the run and its registration.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The arguments. | `add_arguments` | mcp/src/agents_remember/cli/knowledge_convert.py:40-54 |
-| The run: convert, report, write unless checking, exit status. | `run` | mcp/src/agents_remember/cli/knowledge_convert.py:57-89 |
-| The umbrella registration. | `knowledge_convert`; "knowledge-convert" | mcp/src/agents_remember/cli/__main__.py:78-83 |
-| The conversion it drives. | `convert_memory` | mcp/src/agents_remember/memory/conversion/convert.py:387-431 |
+- The arguments. [1]
+- The run: convert, report, write unless checking, exit status. [2]
+- The umbrella registration. [3]
+- The conversion it drives. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `__main__.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

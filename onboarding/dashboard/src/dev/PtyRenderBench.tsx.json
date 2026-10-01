@@ -1,0 +1,170 @@
+{
+  "path": "dashboard/src/dev/PtyRenderBench.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Query params, rAF measurement, serialize probe, `__ptyBench`/`__ptyBenchCols` installation, the minmax grid.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:41590e141e4f88fd2f610a60601a204226c054305ab7cb2cfa57dc53a5ee5977",
+            "locator": {
+              "kind": "symbol",
+              "name": "measureFrames"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:be488f99a14544609413e4ed8c47f8f2635fc1bf1f184b9089a382c795089271",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:81ff624e169718922cbec41522e7105731370952064e212859e598c16332b719",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:7339388a6920fb9bf861146998e6fd18efcf22afc524b1630fe4d2f105f9b1ef",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:9e41202271d3dc89b9977b8dcfcaef0faba0deb7825a796cf93f1a7d9648427d",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared declaration of `PtyFrameStats`, `PtySerializeProbe` and the `Window` augmentation this file installs into.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e7f12a004a9c74928b2e045b77929bc74a1f1e6",
+            "content": "sha256:374fe2a5b5129a9eb2e967185710c895d93ed86858f3722b49bcd70ec7b9ba4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PtyFrameStats"
+            },
+            "path": "dashboard/src/dev/benchProbes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The line-log content + configurable-rate mock socket factory the panes consume.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bef2f47273ab3cacac75840e2074d5a4a500b0e",
+            "content": "sha256:eb81ab01b10db84f92d3273af81b0e4bf048f494643306859c809d330001b40e",
+            "locator": {
+              "kind": "symbol",
+              "name": "benchLineLogSocketFactory"
+            },
+            "path": "dashboard/src/dev/lineLogFixture.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bef2f47273ab3cacac75840e2074d5a4a500b0e",
+            "content": "sha256:9a7864a0537dfb6af7cc128eb541a326c6b3fa2f8234643a650394a9e4821719",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/dev/lineLogFixture.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The real pane component under measurement (renderer prop, `onResizeCols`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f3ee93dd1552027a86f954846b0b7a374559094",
+            "content": "sha256:8ed08cd2a99629da03e5e4eb3cb6e6214487e0bb34637ae64f796300925020eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "onResizeCols"
+            },
+            "path": "dashboard/src/panels/Terminal.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The decision record the numbers feed (`PTY_RENDERER = \"dom\"` + measured summary).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d08eceae1cd4bebf0c40d38ae5b0c25e3d8431b0",
+            "content": "sha256:b1173e726dcf90d296f85f3419b3670e757a6c38ad709c7ff7d443910fb28c23",
+            "locator": {
+              "kind": "symbol",
+              "name": "PTY_RENDERER"
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `/dev/pty-bench` route mount.\n\nAnchor: \"/dev/pty-bench\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b397a99f95bcfe6333670161837e13c86b3f28",
+            "content": "sha256:79faef3593f68dd17aff1dc874d50da1238f54cdbd3ffbc1627d201900610ab7",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/dev/DevApp.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

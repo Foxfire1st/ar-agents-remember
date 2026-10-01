@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every directory the notes listing walk enters below the resolved notes root, including the target of an in-root directory symlink.",
+  "conditions": [
+    "The platform provides O_DIRECTORY, O_NOFOLLOW, dir_fd opens and os.scandir on a descriptor."
+  ],
+  "exclusions": [
+    "A directory renamed out of the root after its descriptor was opened: its own entries are still listed (whoever can move it could place the same content inside the root).",
+    "The per-symlink stat-before-check window, which the symlink-only confinement clause states.",
+    "Open errors other than ELOOP/ENOTDIR, which propagate as the path-based walk's did."
+  ],
+  "id": "INV-QR24S1VH",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "8a489d2a-e5a1-403a-8849-eb16a49ebcf1",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The notes listing enters every directory through a descriptor opened with O_DIRECTORY|O_NOFOLLOW relative to its already-confined parent (in-root directory symlinks component-wise from the root descriptor), so a directory replaced by a symlink or file after it was observed is refused (ELOOP/ENOTDIR) rather than followed out of the notes root.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/migration/inventory.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/migration/inventory.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -162,15 +152,15 @@ observed to live. Module-private helpers carry a leading underscore and there is
 - **One declared policy name is never read.** `INVENTORY_POLICY_VERSION` is declared so a count can name
   the rule that produced it, and no module or test in the shipped candidate reads it.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The inventory answers a scope question the census asks and produces the row shape the census payload
 models declare; the baseline it groups by and the route convention it records come from elsewhere in this
@@ -179,37 +169,29 @@ it, the declared-`doc_type` authority with the structural read that supplies it,
 turns a bad artifact into a row, the vocabulary closes, and the payload shape these values have to answer
 to.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The inventory's own statement of its direction: one row per in-scope source, absent rows for the sources a corpus-derived list cannot see, and rows for cards whose source is gone. | `ScopeInventory`; `rows_without_onboarding` | mcp/src/agents_remember/memory/migration/inventory.py:1-29; mcp/src/agents_remember/memory/migration/inventory.py:149-176 |
-| The row a source with no card produces: its own absent kind, absent state and absent outcome, with the source named and the artifact path left empty. | `_absent_row`; `ABSENT_INVENTORY_STATE`; `ABSENT_PARSE_OUTCOME` | mcp/src/agents_remember/memory/migration/inventory.py:522-536; mcp/src/agents_remember/memory/migration/inventory.py:73-84 |
-| The declared route directories — eight top-level routes — and the stated consequence that an unnamed top-level directory belongs to no route. | `DEFAULT_ROUTE_DIRECTORIES` | mcp/src/agents_remember/memory/migration/inventory.py:53-66 |
-| The confinement rule the route match runs over: an absolute, backslash, empty-segment or traversal spelling is not a repository-relative path, and the match itself is on whole path segments, longest declared prefix first, with the empty string for a source that matches no declared route. | `_normalized_segments`; `_route_segments`; `_route_for_segments` | mcp/src/agents_remember/memory/migration/inventory.py:215-227; mcp/src/agents_remember/memory/migration/inventory.py:230-255 |
-| The route read that accepts the corpus spelling, a bare route name, a card path or an absolute directory, and rejects any name outside the declared directories — and the routes this scope is then asked about, which are the observed ones or the declared convention when no tree was listed. | `_route_candidate`; `CORPUS_DIRECTORY`; `_route_directories` | mcp/src/agents_remember/memory/migration/inventory.py:287-319; mcp/src/agents_remember/memory/migration/inventory.py:68-71 |
-| The declared `doc_type` as the authority for an artifact's kind, with the path consulted only for an artifact that declares none. | `artifact_kind_of`; `ARTIFACT_KIND_BY_DOC_TYPE` | mcp/src/agents_remember/memory/migration/inventory.py:322-352 |
-| The structural `doc_type` read: the recognized header row, then the `doc_type` row, stopping at the first line that leaves the table, with separator rows read as no cells. | `_declared_doc_type`; `_METADATA_HEADER`; `_DOC_TYPE_ROW`; `_cells` | mcp/src/agents_remember/memory/migration/inventory.py:408-438; mcp/src/agents_remember/memory/migration/inventory.py:441-450 |
-| The default reader that decodes and reports, and the examination that turns a raised read failure into a recorded state with its evidence. | `_read_artifact`; `_examine_artifact` | mcp/src/agents_remember/memory/migration/inventory.py:361-369; mcp/src/agents_remember/memory/migration/inventory.py:453-473 |
-| The reader seam: the state a reader reports is checked against the declared parse-outcome vocabulary and refused rather than guessed when it is outside it, and a read failure's own text becomes the evidence a row carries, with a stated fallback when the failure reported none. | `_require_known_read_state`; `ReadState`; `_failure_evidence`; `UNREADABLE_CONTENT_FALLBACK` | mcp/src/agents_remember/memory/migration/inventory.py:91-98; mcp/src/agents_remember/memory/migration/inventory.py:392-405; mcp/src/agents_remember/memory/migration/inventory.py:384-389; mcp/src/agents_remember/memory/migration/inventory.py:105-109 |
-| What a row reports for a read that was not a parse: the remainder it must carry, capped at the prose width rather than trusted to be small, and the present-or-unreadable state derived from that one reader state, so a successful read stays a present artifact whatever its parse yielded. | `_unparsed_content`; `_bounded_observed_content`; `MAX_UNPARSED_LENGTH`; `EMPTY_ARTIFACT_CONTENT`; `_inventory_state`; `UNREADABLE_INVENTORY_STATE` | mcp/src/agents_remember/memory/migration/inventory.py:476-485; mcp/src/agents_remember/memory/migration/inventory.py:372-381; mcp/src/agents_remember/memory/migration/inventory.py:86-89; mcp/src/agents_remember/memory/migration/inventory.py:105-109; mcp/src/agents_remember/memory/migration/inventory.py:488-500 |
-| The unclaimed direction: the claimed set that keeps one artifact to one row, the cards observed under the derived routes, and the row a card with no source left produces, whose source is recovered by the `.md` suffix rule and whose route falls back to the current-directory spelling. | `_unclaimed_rows`; `_card_path_of`; `_observed_cards`; `_unclaimed_row`; `_declared_source_of`; `POSIX_CURRENT_DIRECTORY` | mcp/src/agents_remember/memory/migration/inventory.py:606-619; mcp/src/agents_remember/memory/migration/inventory.py:567-576; mcp/src/agents_remember/memory/migration/inventory.py:579-590; mcp/src/agents_remember/memory/migration/inventory.py:539-564; mcp/src/agents_remember/memory/migration/inventory.py:111-113 |
-| The card row builder that pairs one in-scope source with the card found at its declared card path, and states its own route and kind observations. | `_card_row` | mcp/src/agents_remember/memory/migration/inventory.py:503-519 |
-| The scope entry point: the two spellings it drops, the caller-supplied card-path rule and the source-path ordering it returns. | `resolve_scope`; `ScopeEntry`; `_card_path_for` | mcp/src/agents_remember/memory/migration/inventory.py:622-647; mcp/src/agents_remember/memory/migration/inventory.py:125-130; mcp/src/agents_remember/memory/migration/inventory.py:267-271 |
-| The inventory entry point and the reading context it bundles, with the baseline pair travelling beside the rows so two baselines are two cohorts. | `build_inventory`; `_ReadingContext`; `FrozenBaseline`; `key` | mcp/src/agents_remember/memory/migration/inventory.py:650-673; mcp/src/agents_remember/memory/migration/inventory.py:200-212; mcp/src/agents_remember/memory/migration/baseline.py:84-87 |
-| The six import-time closes that keep every value this module records a member of the schema's closed vocabularies. | `CENSUS_ARTIFACT_KINDS`; `CENSUS_INVENTORY_STATES`; `CENSUS_PARSE_OUTCOMES` | mcp/src/agents_remember/memory/migration/inventory.py:115-122; mcp/src/agents_remember/memory/knowledge/schema_v9.py:73-84 |
-| The census payload shape these rows answer — a non-empty artifact path, which the absent row leaves empty, and the guard that requires a non-parsed outcome to carry evidence — and the fact that no module in the shipped candidate converts an inventory row into that payload. | `CensusInventoryRowPayload`; `_require_unparsed_content_with_a_failed_parse` | mcp/src/agents_remember/models/knowledge/census.py:147-190 |
-| The only consumer of the inventory in the shipped candidate: the migration test module drives `resolve_scope` and `build_inventory` over a temporary corpus and asserts the absent row and the unreadable row. | `resolve_scope`; `build_inventory` | mcp/tests/test_migration_census.py:205-216; mcp/tests/test_migration_census.py:224-250 |
-| The same `doc_type` to artifact-kind projection is declared independently in the parser module, so the projection exists twice in this package with identical content. | `ARTIFACT_KIND_BY_DOC_TYPE` | mcp/src/agents_remember/memory/migration/inventory.py:322-352; mcp/src/agents_remember/memory/migration/parse.py:98-107 |
+- The inventory's own statement of its direction: one row per in-scope source, absent rows for the sources a corpus-derived list cannot see, and rows for cards whose source is gone. [1]
+- The row a source with no card produces: its own absent kind, absent state and absent outcome, with the source named and the artifact path left empty. [2]
+- The declared route directories — eight top-level routes — and the stated consequence that an unnamed top-level directory belongs to no route. [3]
+- The confinement rule the route match runs over: an absolute, backslash, empty-segment or traversal spelling is not a repository-relative path, and the match itself is on whole path segments, longest declared prefix first, with the empty string for a source that matches no declared route. [4]
+- The route read that accepts the corpus spelling, a bare route name, a card path or an absolute directory, and rejects any name outside the declared directories — and the routes this scope is then asked about, which are the observed ones or the declared convention when no tree was listed. [5]
+- The declared `doc_type` as the authority for an artifact's kind, with the path consulted only for an artifact that declares none. [6]
+- The structural `doc_type` read: the recognized header row, then the `doc_type` row, stopping at the first line that leaves the table, with separator rows read as no cells. [7]
+- The default reader that decodes and reports, and the examination that turns a raised read failure into a recorded state with its evidence. [8]
+- The reader seam: the state a reader reports is checked against the declared parse-outcome vocabulary and refused rather than guessed when it is outside it, and a read failure's own text becomes the evidence a row carries, with a stated fallback when the failure reported none. [9]
+- What a row reports for a read that was not a parse: the remainder it must carry, capped at the prose width rather than trusted to be small, and the present-or-unreadable state derived from that one reader state, so a successful read stays a present artifact whatever its parse yielded. [10]
+- The unclaimed direction: the claimed set that keeps one artifact to one row, the cards observed under the derived routes, and the row a card with no source left produces, whose source is recovered by the `.md` suffix rule and whose route falls back to the current-directory spelling. [11]
+- The card row builder that pairs one in-scope source with the card found at its declared card path, and states its own route and kind observations. [12]
+- The scope entry point: the two spellings it drops, the caller-supplied card-path rule and the source-path ordering it returns. [13]
+- The inventory entry point and the reading context it bundles, with the baseline pair travelling beside the rows so two baselines are two cohorts. [14]
+- The six import-time closes that keep every value this module records a member of the schema's closed vocabularies. [15]
+- The census payload shape these rows answer — a non-empty artifact path, which the absent row leaves empty, and the guard that requires a non-parsed outcome to carry evidence — and the fact that no module in the shipped candidate converts an inventory row into that payload. [16]
+- The only consumer of the inventory in the shipped candidate: the migration test module drives `resolve_scope` and `build_inventory` over a temporary corpus and asserts the absent row and the unreadable row. [17]
+- The same `doc_type` to artifact-kind projection is declared independently in the parser module, so the projection exists twice in this package with identical content. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every path it handles is repository-relative
 text, the only filesystem it touches is the onboarding root it is handed, and its one external input is a
 Git tree id that arrives inside a `FrozenBaseline` value rather than through a Git invocation of its own.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the scope inventory. It records the direction that is the module's whole reason to exist: rows from the scope, so the sources with no card and the cards whose source is gone both stay visible. The mechanisms it cites are the eight declared route directories, the whole-segment match that keeps `mcpfoo` out of route `mcp`, the four spellings `_route_candidate` accepts, the three row builders, the declared-`doc_type` authority with its structural read, the failure path that turns a raised `OSError` or `UnicodeDecodeError` into an `unreadable` row with bounded evidence, the six import-time closes over the schema's closed vocabularies, and the two entry points with the baseline pair travelling beside the rows. It also records the deliberate absences and the recorded facts: no write path, a policy version constant no caller reads, an absent row whose empty artifact path a non-empty census payload field would refuse, and the identical `doc_type` projection the parser module declares independently. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_family_review.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_family_review.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:31+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -137,44 +127,36 @@ the shipped refusal-code vocabulary contains `family_review`.
   green run says nothing about either neighbouring leaf's behavior — only about what this pipeline does
   with the records those leaves declare.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring states the clause groups, the lane, and the seven failures every case names — beginning with the merge that silently dropped a contributing match. | "a merge that silently dropped a contributing match" | mcp/tests/test_knowledge_family_review.py:1-13 |
-| The module constants pin the shared identifiers and the one condition the shared-family signals carry. | "CONCERNING = "source_changed_on_both_sides_joined_to_same_family"" | mcp/tests/test_knowledge_family_review.py:83-89 |
-| The signal builder emits a facts-only payload whose limitations carry the neighbouring leaf's no-semantic-assessment marker. | "limitations = (NO_SEMANTIC_ASSESSMENT_LIMITATION,)" | mcp/tests/test_knowledge_family_review.py:129-171 |
-| The assessment builder declares its examined inputs through six recorded dependencies, one of which names this leaf's own task intent. | "dependency("task-intent", "task/260915-KS-L16", digests[0])," | mcp/tests/test_knowledge_family_review.py:174-216 |
-| **The measurement builder moves exactly one named input, to a digest no recorded edge carries, so the currentness cases measure a genuine move.** | "measured[first] = (recorded[first][0], digest)" | mcp/tests/test_knowledge_family_review.py:219-233 |
-| Two signals over one subject and one declared input set merge into one group carrying the declared grouping version. | `test_signals_about_one_subject_and_one_input_set_merge_into_one_group` | mcp/tests/test_knowledge_family_review.py:240-254 |
-| **The merge retains both contributing conditions and their supporting paths and edges — all six edge steps survive grouping.** | "assert len(group.supporting_edges()) == 6" | mcp/tests/test_knowledge_family_review.py:257-283 |
-| **The mechanical review is run over twelve declared models, each required to declare no conclusion-bearing field.** | "assert conclusion_bearing_fields(model) == (), model.__name__" | mcp/tests/test_knowledge_family_review.py:300-323 |
-| A subject with no stored record answers `no-record-recorded` and `none-recorded`, and its serialization carries no favourable disposition word. | "assert "no_concern_found" not in group.model_dump_json()" | mcp/tests/test_knowledge_family_review.py:326-339 |
-| **The five owners are reported separately, in order, each with a non-blank statement of what it does not establish.** | "assert tuple(entry.owner for entry in report.entries) == PIPELINE_STATUS_OWNERS" | mcp/tests/test_knowledge_family_review.py:369-389 |
-| **A stale binding stays readable, is not reused and is not reinterpreted for the inputs it never examined.** | "assert stale.reuse_permitted is False" | mcp/tests/test_knowledge_family_review.py:455-471 |
-| A currentness whose state contradicts its own moved-identity list is refused, in either direction. | "with pytest.raises(ValidationError, match="follows from the comparison"):" | mcp/tests/test_knowledge_family_review.py:474-494 |
-| A stored record renders as one row in the existing report-only section, and an empty projection renders the explicit none-recorded line with zero subjects. | "assert "_None recorded._" in "\n".join(knowledge_review_section(()).lines)" | mcp/tests/test_knowledge_family_review.py:497-515 |
-| **The actionable count is the shipped function's own value, asserted beside the separate family-review row count.** | "assert routing.actionable_count == curator_actionable_count(2, 1, 3) == 6" | mcp/tests/test_knowledge_family_review.py:522-541 |
-| **The recorded decision adds no gate: no refusal code, and no status vocabulary, mentions this record group.** | "assert not any("family_review" in code for code in get_args(KnowledgeRefusalCode))" | mcp/tests/test_knowledge_family_review.py:598-611 |
+- The module docstring states the clause groups, the lane, and the seven failures every case names — beginning with the merge that silently dropped a contributing match. [1]
+- The module constants pin the shared identifiers and the one condition the shared-family signals carry. [2]
+- The signal builder emits a facts-only payload whose limitations carry the neighbouring leaf's no-semantic-assessment marker. [3]
+- The assessment builder declares its examined inputs through six recorded dependencies, one of which names this leaf's own task intent. [4]
+- **The measurement builder moves exactly one named input, to a digest no recorded edge carries, so the currentness cases measure a genuine move.** [5]
+- Two signals over one subject and one declared input set merge into one group carrying the declared grouping version. [6]
+- **The merge retains both contributing conditions and their supporting paths and edges — all six edge steps survive grouping.** [7]
+- **The mechanical review is run over twelve declared models, each required to declare no conclusion-bearing field.** [8]
+- A subject with no stored record answers `no-record-recorded` and `none-recorded`, and its serialization carries no favourable disposition word. [9]
+- **The five owners are reported separately, in order, each with a non-blank statement of what it does not establish.** [10]
+- **A stale binding stays readable, is not reused and is not reinterpreted for the inputs it never examined.** [11]
+- A currentness whose state contradicts its own moved-identity list is refused, in either direction. [12]
+- A stored record renders as one row in the existing report-only section, and an empty projection renders the explicit none-recorded line with zero subjects. [13]
+- **The actionable count is the shipped function's own value, asserted beside the separate family-review row count.** [14]
+- **The recorded decision adds no gate: no refusal code, and no status vocabulary, mentions this record group.** [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Its inputs are in-process pydantic records built
 from this repository's own declared shapes, and nothing it asserts reaches a second repository, a network,
 a store or a Git object.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T14:31+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): created this one-to-one card for the family-review pipeline suite. It records the three in-process builders (a facts-only signal, a stored assessment with six recorded dependencies, and a measurement that moves one input to a digest no recorded edge carries), §2's separation of the merge from the assurance that measures it, the twelve-model sweep for conclusion-bearing fields, the missing-never-favourable facts, the five owners reported separately with their own vocabularies and limits, per-input currentness with both of its refusals, the report-only section and the two counts that must never become one, and the recorded gate-consequence decision whose inability to create a gate is measured over the shipped vocabularies. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

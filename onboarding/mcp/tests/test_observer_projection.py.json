@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_observer_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a31e2c132014bd992d767e8123309d481190c323",
+            "content": "sha256:75588d3ca2380b96aac40dfcce6cff991d05f5616896100a2cf1777896a07107",
+            "locator": {
+              "kind": "symbol",
+              "name": "Attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Enclosureref.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a31e2c132014bd992d767e8123309d481190c323",
+            "content": "sha256:f0ad9b6a14030669fd7f0e8a18730f90b12788e3407b4e1fa1921b8f0af1c8ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureRef"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Event.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a31e2c132014bd992d767e8123309d481190c323",
+            "content": "sha256:90467b7b6d36bc81e8143cdfcf3d4c19436ffe18ac18f5611bcbfd2c6c4f4d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_event"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Started.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a31e2c132014bd992d767e8123309d481190c323",
+            "content": "sha256:5b06e701b49bac0eae1218273db20152850140517aad83d42b7b0a7e6d02ded4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_started"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

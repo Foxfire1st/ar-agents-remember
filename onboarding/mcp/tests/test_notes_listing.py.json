@@ -1,0 +1,266 @@
+{
+  "path": "mcp/tests/test_notes_listing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it protects.\n\nAnchor: \"The listing is fetched whenever a task opens\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:3f08048d58ad96b3de6cbb2b91b39a027e286796f9597b417d3332edf87453ec",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The refusal and read table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:9f687b4225d635b166019b332c2b9c96b0498ab80895ff45c4b4616f9cdd8f63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REFUSALS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:1cbff17bda4c72082aa99b70b10ba0473c005a8e91b7fc789e46a77ee6ffdefc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_scoped_refusals_and_note_reads_keep_their_wire_answers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The production walk under test: symlink-only confinement, descriptor descent, and the sort key's errno parity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:d40680e3e52e1674571b0c9fe034680547f3e699eedd2038f71927be107959c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confined_stat"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:982283ac1245e4fc86e2fb53b687d371a42077dfb11192a3842764a6e629d62c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_subdir"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:416b34dcc8d590457c1d5d955a2d30666170c76362f84c3fd718868b89a11977",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_dir"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The routes under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3e6f8d4c246e066532296e69563c435200ae08b",
+            "content": "sha256:a751e8b4d04a6eae9f3a33fa848a630a8cf66a31a29b970931ee96eaedd898d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_notes_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_notes_listing.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:73c08b1051c3cc3d539f6b988478ec7c6272302291eae7c6c0217fa6c62b3681",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The isolated route harness: one repository, only the notes routes, a bare app.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:344910f84dd2fd83e3680cebeed974642e95fa136bc7667ec385467aaaefa611",
+            "locator": {
+              "kind": "symbol",
+              "name": "_client"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The exact bytes `JSONResponse` renders, which the byte case compares against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:eed22e5aa13701c3a52ea1fd7c8aeef92eec90e99b14488d53e4ed130ebac2d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_wire"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The classification fixture, including the `ELOOP`/`ENOTDIR` symlinks and the in-root directory alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:39c8d6d9d4992ac9edc5852ede08105c73883ea6b7c5f627616c389e37470f79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_classification_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Byte identity over every entry kind, with the depth cap and `truncated`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:cdae544b1f5b435ddfb5c1de4e1372ba092681d986123a7784fc20a8dcf72144",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_listing_bytes_classify_every_entry_kind_and_prune_at_the_depth_cap"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A directory swapped for an escaping symlink at its open is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:e30659ae3bcfdcf99ddd9f0422e3cf1e07515092c1355d63dea9b362553ff549",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directory_swapped_for_an_escaping_symlink_before_it_is_opened_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `realpath` counter and the content-open refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:53b0131fdbc4290e34a4ef33651ae66f60b6b50a25cbdff997325537ef4cda54",
+            "locator": {
+              "kind": "symbol",
+              "name": "_count_realpath"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:796dc93d1ba9cceb1f9e793bd6f9f274bd7fdfd438168f53a6460665dba8d4b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_file_opens"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Four resolutions at 6 × 1 B and at 240 × 64 MiB, with no note opened.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:48512107134372d23a26301c0d128dd22d931b7134984f9d0d03700c922d240d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_listing_work_does_not_grow_with_note_count_or_content_size"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A new or grown note appears on the next request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148e2856eeddb30ee7db73e1ea7c0505e5cc74be",
+            "content": "sha256:2aea5d9e9c8253c2c8fc688b27ae6af800ba3838d1b72194146b73983bf8b2e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_listing_reflects_a_new_or_grown_note_on_the_next_request"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

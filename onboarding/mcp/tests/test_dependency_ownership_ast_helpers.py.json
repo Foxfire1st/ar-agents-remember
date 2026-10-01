@@ -1,0 +1,3420 @@
+{
+  "path": "mcp/tests/test_dependency_ownership_ast_helpers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Repository inputs reach their supported consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:8863221f133ef7225c0c0f3364c929ef694538c609745d5b95d6aded430eb76b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_inputs_reach_their_supported_consumers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The three consumer entries the `260915-CAPS-L17` re-pin added to three governed-artifact rows, the entire reason the digest moved at that re-pin.\n\nAnchor: \"mcp/tests/fixtures/repository_profiles/node/package-lock.json\"; \"mcp/tests/eve_capsule_test_support.py\"; \"mcp/tests/eve_adapter_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f2f74eb472bb7ebb5dce2443859b0f6eabf7a70bee8592866fd507aa3cf0ec0e",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 674
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b8446d4689f0458cf2c9c3107773baf63d260c585d9a680491ae75854864b6fe",
+            "locator": {
+              "end": 1579,
+              "kind": "line_range",
+              "start": 1558
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:634d67b9338f988f7c2d1689499ca2b967840e5406dedbb22e1f15b59745d5a3",
+            "locator": {
+              "end": 1599,
+              "kind": "line_range",
+              "start": 1580
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The three artifacts those rows belong to, each an already-governed row rather than a new registration.\n\nAnchor: \"mcp/tests/diff_scope_test_support.py\"; \"mcp/tests/read_scope_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
+            "locator": {
+              "end": 606,
+              "kind": "line_range",
+              "start": 606
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:66583e2395f029c41ed546bcfba81d8db83a928e36f0c3372e3eadc643a0ace8",
+            "locator": {
+              "end": 727,
+              "kind": "line_range",
+              "start": 727
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ddc670b5096e5cf939cc03569392208e83bc1f1cd56ca1e5ef8773ac2f897b98",
+            "locator": {
+              "end": 1187,
+              "kind": "line_range",
+              "start": 1187
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:e8711292797da1866d03b4df878e8941d78324f8b48e79ac7880a0194c5b9bc8",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:51c60570a03b2fc785b12923cba3c1caad82a49cfc686f15027ce65aa6ee90a2",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:21906ea20d2e04dbb8d91d2659b3bdb6ce90d791d05422eb0fd9232c251727f3",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The population the pin names, re-derived at this candidate's own tip — **16 contracts and 66 artifacts**, the values the constants below carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The three consumer entries the `260915-CAPS-L15` re-pin added to three governed-artifact rows, whose shape the `260915-CAPS-L17` entries repeat.\n\nAnchor: \"mcp/tests/curator_coherence_test_support.py\"; \"mcp/tests/fixtures/repository_profiles/node/package-lock.json\"; \"mcp/tests/fixtures/codex_app_server_model_page.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f2f74eb472bb7ebb5dce2443859b0f6eabf7a70bee8592866fd507aa3cf0ec0e",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 674
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:063ca364589c9acc794d45eaabbef515eb6eaee08624df1b10ba149017e48687",
+            "locator": {
+              "end": 1674,
+              "kind": "line_range",
+              "start": 1656
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The three consumer entries the `260915-CAPS-L15` re-pin added to three governed-artifact rows, whose shape the `260915-CAPS-L17` entries repeat.\n\nAnchor: \"mcp/tests/curator_coherence_test_support.py\"; \"mcp/tests/fixtures/repository_profiles/node/package-lock.json\"; \"mcp/tests/fixtures/codex_app_server_model_page.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f2f74eb472bb7ebb5dce2443859b0f6eabf7a70bee8592866fd507aa3cf0ec0e",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 674
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:063ca364589c9acc794d45eaabbef515eb6eaee08624df1b10ba149017e48687",
+            "locator": {
+              "end": 1674,
+              "kind": "line_range",
+              "start": 1656
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The catalog pin constants, and the re-pin narrative the docstring carries beside them — **whose last paragraph is this leaf's `Thirteenth deliberate re-pin`, and whose extent is now the whole docstring.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:e674aa1447b18bf0655f9399ebe41f22ab0219ea61a13723f4c743b8afa447e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_SCHEMA"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:ec69cc41ca24b08c241067a4fb793f244aac3fa536948457879f417ceb2cc8f1",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The evidence catalog's pinned shape and bytes, the deliberate re-pin this leaf made in the same change as its consumer rows, and the provenance paragraph that records the consumer-only shape of that change.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6573b1611fa28d86d3b0c6aabc00f3baf9dc94f3232126ec0dbb4b0d3957a333",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The re-pinned constants, with the counts this leaf did not move and the digest the merged catalog carries.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The source's own paragraph for this leaf: consumer-only, counts unchanged, and the digest it replaced (re-read at `260928-MIK-L10`: the paragraph is unchanged and sits eleven lines lower again, under the Fortieth, Thirty-ninth, Thirty-eighth and Thirty-seventh re-pin notes; the constant it describes now holds L10's Fortieth value, cited in the L10 section).**\n\nAnchor: \"260921-ICR-L20\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:527febc295e3430a1db95f21fc34d45638034cf75e780aa12960b65b20f4be97",
+            "locator": {
+              "end": 642,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The source's own paragraph for this leaf, below the later re-pin notes (the Thirty-ninth, `260928-MIK-L01`, now first): consumer-only, counts unchanged, and the digest it replaced.**\n\nAnchor: \"260921-ICR-L20\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:527febc295e3430a1db95f21fc34d45638034cf75e780aa12960b65b20f4be97",
+            "locator": {
+              "end": 642,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The evidence catalog's pinned shape and bytes, and the deliberate re-pin this leaf made in the same change as its consumer rows — whose value at this candidate is **16 contracts / 66 artifacts** and `8d60a34cf56a9740e234823658312c8b6f5ae4e958344fe8ba2ea152b8ff6891`, the `260921-ICR-L9` measurement (the card's previous wording named `53ba6331…`, the `260921-ICR-L6` measurement, which was already stale at the landed base and is corrected rather than carried).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The two consumer rows this leaf's module joined, and the lane row the same module occupies.\n\nAnchor: \"mcp/tests/test_knowledge_ingest_publication_route.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:96cbae4619822d7100fe0511dc4ca1e93e1e0ea674a09d40cc4685900aea4d2b",
+            "locator": {
+              "end": 748,
+              "kind": "line_range",
+              "start": 746
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:78950416409f89460491d02a2fec3184c53be0d7aa7cf16f9fed5f1ea287760e",
+            "locator": {
+              "end": 1302,
+              "kind": "line_range",
+              "start": 1302
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:9ef8d900592c22401ff32b6ac5406b5df74a0e567c411c273268a97b24d3a89d",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:806303bcbdf2d42c8214f64b24f9948d32047de4767d87df82d0e73291268e6d",
+            "locator": {
+              "end": 1314,
+              "kind": "line_range",
+              "start": 1314
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:91124aa3e531a59d5c9efd7dff6d0c727c5a1749d663e8c002cf69c0efd28f4f",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:98911cc1ffca3ff61b7b6e40e64a8570df52bc4d317e837dd200f5c76025d1df",
+            "locator": {
+              "end": 749,
+              "kind": "line_range",
+              "start": 749
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The catalog check that recomputes the file's sha256 and counts both block kinds beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The catalog check that recomputes the file's sha256 and counts both block kinds beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The leaf's own case module, which is why no third fixture was registered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b4db72c97fc17121fab7865c453a7201493261a",
+            "content": "sha256:5850ecbdfaf167f957cd373fcd93e1d69f995314fbd1707daea25b03c864102f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_location"
+            },
+            "path": "mcp/tests/test_knowledge_ingest_publication_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0b4db72c97fc17121fab7865c453a7201493261a",
+            "content": "sha256:362fd8c2db931f8b1efbe224843e4f623fc7f48fc0a88f5a21d599c7b8b22123",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ordinary_enclosure"
+            },
+            "path": "mcp/tests/test_knowledge_ingest_publication_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The re-pinned constants, with the counts this leaf did not move and the digest it did.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The source's own paragraph for that leaf: consumer-only, two support modules, counts unchanged, and the digest it replaced.**\n\nAnchor: \"260921-ICR-L1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:f7134d051d73fd9ce8d030a8480f9d0ea513f751bba10569dfcaa161e3cf21e1",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 569
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:99fc9b914e47f48f94c246aded2260ba66f2ad5ce3d04f19fdf76363199a664d",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 341
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6be3d5ae78a3cb3d6e775477cb5bd95fa43c4a770509636d1c21fa508c5a69b7",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 292
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:058f77055f2865465c33f0fc294ee4bb5a2b83bf5e4d01d59068986fe37ee39e",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 293
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:aa4ccc931708459782b59114cd71b0b8f8ab9d0c94f4f5e4879d22d0b716a008",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:5abd2e728e2c57a2b07da6bd2c0d51def35dc281f7cc974db1ae667512b63999",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 348
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:9143ea8fe67658bda2db2609cb0cae98a8367b6f5867f45a05307123c7e4dd14",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 369
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:d7fcb4fc4ecf2ed7df9dd268fafd114eb7ad8abb5084cf13e0e807ebf0a1c3ad",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:bb103fdaaba2eade756a6ad74092c9c7b0bf5bcc3f638a356e8bc17231f64e00",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 385
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:fc0d787df77490a98ec1550dd308eb7dd91e62282784e49431e1206775736057",
+            "locator": {
+              "end": 401,
+              "kind": "line_range",
+              "start": 401
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:4c972adf2464d9ef46b47a67a8bda7c3a9e8e852bcfefb5264eff63b7482f646",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 334
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:058f77055f2865465c33f0fc294ee4bb5a2b83bf5e4d01d59068986fe37ee39e",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 396
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:b2ef1643ed3b15e0f9911312e9a25447fd29489a7456e9d1bdb7398dfbfe4729",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 375
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The two appended consumer rows, on the two artifacts whose exact lists gained this module.\n\nAnchor: \"mcp/tests/test_knowledge_review_source_endpoints.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d4b3643ad39b71016bcc5cccc248cac6561a914e29263be8724167c32083aa84",
+            "locator": {
+              "end": 1459,
+              "kind": "line_range",
+              "start": 1419
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5d93fbcedfdd9710af0483f902638d99eb45aaa9eb1f854bb433acfd20f0a949",
+            "locator": {
+              "end": 1514,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The catalog check that recomputes the file's sha256 and counts both block kinds beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The catalog check that recomputes the file's sha256 and counts both block kinds beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The leaf's own case module, which is why no third fixture was registered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The check that makes the pin real: the file's bytes recomputed and both block kinds counted before either is compared.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "**The re-pinned digest and the two counts this leaf did not move.**\n\nAnchor: \"260921-ICR-L18\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c703418014812a30dbaad50bf6f302f3b6952240d52a191039ce650c8c06a7c5",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 457
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:bb03dac6d6f0af9e07e45155ec7606f3dbbae934a420abcd67a683d98d9f4e67",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 554
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:d3df2c97ba22a734f6634bc59c4cfa2c33f448321f3726be68e7f58e7420ee7b",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 575
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:50c3ed7b6a955044925ee6394ef5081684bac41e647877c96baf800bfb0bc0b9",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 591
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:e16ff56a4dec61fde73c7cc1aa87d0584ce78a106206324793cb39e640c308e8",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 603
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:527febc295e3430a1db95f21fc34d45638034cf75e780aa12960b65b20f4be97",
+            "locator": {
+              "end": 642,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:d63d7246e543ab73446c32f6fc3935a00bb57e276f04c41fc74411796a2554d9",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 548
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:b6f078b948f1140d837e14d83e55fe4efbad571d77f97499d873e31657c93754",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 586
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d111436f816900c8ee32efc6a3864a3f484cae7befe34a1cffa55a4a39c318b2",
+            "locator": {
+              "end": 1531,
+              "kind": "line_range",
+              "start": 1531
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "**The source's own paragraph for this leaf: consumer-only, two existing support builders reused, counts unchanged, and the digest it replaced.**\n\nAnchor: \"260921-ICR-L18\"; `LIFECYCLE_CATALOG_SHA256` docstring",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:5abd2e728e2c57a2b07da6bd2c0d51def35dc281f7cc974db1ae667512b63999",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 348
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:968152c34d678b1066def52093880cdafd1b69cd1e3da184a65c13021add5d35",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 553
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:50c3ed7b6a955044925ee6394ef5081684bac41e647877c96baf800bfb0bc0b9",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 591
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:e16ff56a4dec61fde73c7cc1aa87d0584ce78a106206324793cb39e640c308e8",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 603
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:527febc295e3430a1db95f21fc34d45638034cf75e780aa12960b65b20f4be97",
+            "locator": {
+              "end": 642,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:d63d7246e543ab73446c32f6fc3935a00bb57e276f04c41fc74411796a2554d9",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 548
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:b6f078b948f1140d837e14d83e55fe4efbad571d77f97499d873e31657c93754",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 586
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d111436f816900c8ee32efc6a3864a3f484cae7befe34a1cffa55a4a39c318b2",
+            "locator": {
+              "end": 1531,
+              "kind": "line_range",
+              "start": 1531
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The catalog whose bytes the pin names, and the artifact row whose consumer list gained both modules.\n\nAnchor: \"mcp/tests/test_knowledge_ingest_comparison_generation.py\"; \"mcp/tests/test_knowledge_ingest_failure_windows.py\"; \"[[artifact]]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:de7fede2731aa34536c56564e6f73753d9a1edc82b27ef5d3f005bc9bdacb330",
+            "locator": {
+              "end": 738,
+              "kind": "line_range",
+              "start": 737
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6a8f39679bfc024e9db84f91b4af0da0de339fc128d8bb3f6a9dc64cf7abc03d",
+            "locator": {
+              "end": 1717,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The proof that this leaf's artifact delta is empty, which is why only a consumer change could move the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6517506c0ea90213bd6eec8ee20c4aa98bcc9f0ed5e979ad9209eee9f26caa1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_production_proof_adds_no_governed_evidence_artifact"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The proof that this leaf's artifact delta is empty, which is why only a consumer change could move the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6517506c0ea90213bd6eec8ee20c4aa98bcc9f0ed5e979ad9209eee9f26caa1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_production_proof_adds_no_governed_evidence_artifact"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "The catalog whose bytes the pin names, and the two `[[artifact]]` blocks whose consumer lists gained both modules.\n\nAnchor: \"mcp/tests/test_knowledge_review_comparison_generation.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:941c6ad4eb600b5956f404acdee8317ffa8416b53f7f2177cd0e5c1dea49bec5",
+            "locator": {
+              "end": 1435,
+              "kind": "line_range",
+              "start": 1412
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c62017a65437c8df1a8fe1b34436e9b559b23c83541c28cca30a4982f9c7e47f",
+            "locator": {
+              "end": 1475,
+              "kind": "line_range",
+              "start": 1434
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The two new modules whose lane rows this leaf added, which is the change the pin follows.\n\nAnchor: \"mcp/tests/test_knowledge_ingest_comparison_generation.py\"; \"mcp/tests/test_knowledge_ingest_failure_windows.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:1299b454748c61b82cf12aa6b4b8cabaef662f7f354073fcd43e95fef7b48dbe",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:1855e0f91038612de1804d29d1a01c49a0789d372e3314b652ecfb99b72e0020",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "**The re-pinned digest, with the two counts this change leaves alone.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "**The source's own paragraph for this leaf: the union of two consumer repairs, no registration, counts unchanged, and the digest it replaced. It is no longer first in the docstring: the later records sit above it, most recently `260928-MIK-L10`'s Fortieth, and the constant now holds that leaf's value, cited in the L10 section.**\n\nAnchor: \"Thirteenth deliberate re-pin (260921-ICR-L6\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:b6f078b948f1140d837e14d83e55fe4efbad571d77f97499d873e31657c93754",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 586
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "The catalog check that recomputes the file's sha256 and counts both block kinds beside it — re-derived here because this leaf's row and paragraph moved it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The check that makes the pin real: the file's bytes recomputed and both block kinds counted before either is compared.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "The catalog check that recomputes the file's sha256 and counts both block kinds beside it — re-derived here because this leaf's row and paragraph moved it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "**The row this leaf registered, and L18's landed row immediately beside it, each named exactly once.**\n\nAnchor: \"mcp/tests/test_knowledge_review_one_sided_statements.py\"; \"mcp/tests/test_read_ar_files.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:621e51387cd02c67eb08631fde3a1487ba31d85f5677bb2e2d2b733c8465139e",
+            "locator": {
+              "end": 1525,
+              "kind": "line_range",
+              "start": 1525
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:11afe25d106c1ee16d0c76cdbb359219120ca74082d9eb82ff33dfd70b579822",
+            "locator": {
+              "end": 1528,
+              "kind": "line_range",
+              "start": 1526
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5792b0ef15880ac85b80ae7eca1306d80c1947ec17fe88f479b8131cc353b272",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:8623abf45df8640f969e4f08b580707dfb43d82192cf32599fa155cae9b4112b",
+            "locator": {
+              "end": 766,
+              "kind": "line_range",
+              "start": 766
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "locator": {
+              "end": 1532,
+              "kind": "line_range",
+              "start": 1532
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "**The row this leaf registered, and L18's landed row immediately beside it, each named exactly once.**\n\nAnchor: \"mcp/tests/test_knowledge_review_one_sided_statements.py\"; \"mcp/tests/test_read_ar_files.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:621e51387cd02c67eb08631fde3a1487ba31d85f5677bb2e2d2b733c8465139e",
+            "locator": {
+              "end": 1525,
+              "kind": "line_range",
+              "start": 1525
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:11afe25d106c1ee16d0c76cdbb359219120ca74082d9eb82ff33dfd70b579822",
+            "locator": {
+              "end": 1528,
+              "kind": "line_range",
+              "start": 1526
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5792b0ef15880ac85b80ae7eca1306d80c1947ec17fe88f479b8131cc353b272",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:8623abf45df8640f969e4f08b580707dfb43d82192cf32599fa155cae9b4112b",
+            "locator": {
+              "end": 766,
+              "kind": "line_range",
+              "start": 766
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
+            "locator": {
+              "end": 1532,
+              "kind": "line_range",
+              "start": 1532
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "The artifact those two rows belong to, which is already governed and is why no third fixture was registered.\n\nAnchor: `\"mcp/tests/read_scope_test_support.py\"`; `consumer_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:a92c4730b6706741a1f4e74582c3370559fc9e971ecd29a514354ae6afcf6be7",
+            "locator": {
+              "end": 1473,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f3b364b0b410236d563492dcb388ff3799c28d95f9d08de2bdb991bd396d5c03",
+            "locator": {
+              "end": 1474,
+              "kind": "line_range",
+              "start": 1433
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "The population the pin names, re-derived at the merged tip — **16 contracts and 66 artifacts**, the values the constants below carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "**The source's own paragraph for this leaf, once first in the docstring and now below the later records (the Thirty-ninth, `260928-MIK-L01`, on top): the union of two consumer repairs, no registration, counts unchanged, and the digest it replaced.**\n\nAnchor: \"Thirteenth deliberate re-pin (260921-ICR-L6\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:b6f078b948f1140d837e14d83e55fe4efbad571d77f97499d873e31657c93754",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 586
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "46": {
+      "note": "**The pinned counts and the re-pinned digest, as this leaf's own candidate and as the merged line carry them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "47": {
+      "note": "**The constant's own fourteenth re-pin record, which names this leaf, its base and the two consumer rows.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:af2a5b95bb47f03c9f04e51aa18e1ea61820e38e905058ae85f04f985b4fd208",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2342594d624545f0d06a359d1d8829867c9b61135b89f0131ea576fee0e27fa0",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:68c757d31ef1f627b988880054c884070ee643e39429cb8593689088be49a88d",
+            "locator": {
+              "end": 538,
+              "kind": "line_range",
+              "start": 538
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:058f77055f2865465c33f0fc294ee4bb5a2b83bf5e4d01d59068986fe37ee39e",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 444
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:058f77055f2865465c33f0fc294ee4bb5a2b83bf5e4d01d59068986fe37ee39e",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "The two rows this leaf appended, and the artifacts whose exact consumer sets they extend.\n\nAnchor: `consumers`; `consumer_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c895a96d37d61ae99e4604959669cb98f7c31085f996ffdfa49f2fd7ed02c5f7",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ef7c4521e349fcc4ed0f2a833d5de737f85410df0b9a20292e331262aa2fbe59",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ab600c454631077446b75ce6e14a9b51c76370d4c2129ffcb88cdab503f366d4",
+            "locator": {
+              "end": 1421,
+              "kind": "line_range",
+              "start": 1421
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:7e027222c96ad14c1c4341d24a8b3af6f32f8c3230040db2e2f1ff07eddd9be8",
+            "locator": {
+              "end": 1450,
+              "kind": "line_range",
+              "start": 1450
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:de1d425ded3b65fb85d86c8d022f716a8f3f380d448a5243217e74b119d28d0f",
+            "locator": {
+              "end": 1422,
+              "kind": "line_range",
+              "start": 1422
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:1092cb34fc7c8c865e581242cefb5c0dccbd9c472bb63fd87c6dff4316d5f0cb",
+            "locator": {
+              "end": 1452,
+              "kind": "line_range",
+              "start": 1452
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "49": {
+      "note": "The module whose two consumer entries are the entire catalog delta.\n\nAnchor: \"mcp/tests/test_knowledge_review_comparison_generation.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d4b3643ad39b71016bcc5cccc248cac6561a914e29263be8724167c32083aa84",
+            "locator": {
+              "end": 1459,
+              "kind": "line_range",
+              "start": 1419
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5d93fbcedfdd9710af0483f902638d99eb45aaa9eb1f854bb433acfd20f0a949",
+            "locator": {
+              "end": 1514,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The closure check over the governed inventory, and the lane-membership check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:01695637eb3eac9871b46cba1560b95d01f01b725d97b42f48d2df78dc637970",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_governed_inventory_is_closed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:d33bb98235f1f263c9bb9d8396cdfd5fd12c522f9e29f32c8857cd65e269de04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_proof_is_selected_by_the_lane_manifest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:e7aeb7e8d871368b9d05e746323c89086e27fad14c737dccada53223dda1f7a3",
+            "locator": {
+              "end": 832,
+              "kind": "line_range",
+              "start": 815
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:a8262be64e40d08d5ef4a18a485acb448187394f271a6b302ec1c2250ae5e7d2",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 802
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6e6e099626d0e8bca04945df321d1d8e8c4e8f372cf9efd9f9ba91b6bb910386",
+            "locator": {
+              "end": 841,
+              "kind": "line_range",
+              "start": 841
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6dbf05c5691e0805ac3930c204c36994bbb679c3c463c5775b720fb8dba15d0e",
+            "locator": {
+              "end": 873,
+              "kind": "line_range",
+              "start": 873
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:8535b77af2501b539868758ce1e97c3f9dc16626f5dc9ba527913cfbc25899eb",
+            "locator": {
+              "end": 840,
+              "kind": "line_range",
+              "start": 840
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 860,
+              "kind": "line_range",
+              "start": 860
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:32d2e0dcbcf2486486e5440a8fead85da3d1ee66a91e26b80a779a7d091ca12d",
+            "locator": {
+              "end": 1015,
+              "kind": "line_range",
+              "start": 1005
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "50": {
+      "note": "The lane row added to the manifest in the same change, which pins no digest and refuses an unregistered module at collection.\n\nAnchor: \"mcp/tests/test_knowledge_review_comparison_generation.py\"; \"unit-regression = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "51": {
+      "note": "**The re-pinned constants, with the counts this leaf did not move and the digest it did.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "52": {
+      "note": "**The source's own paragraph for `260921-ICR-L3`, third in the docstring after the Seventeenth and the synced union: no registration, two consumer rows, counts unchanged, and the digest it replaced.**\n\nAnchor: \"Fifteenth deliberate re-pin (260921-ICR-L3\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c7a0671758b0154646d29dbcb6d24eeaa5f75158932595b1d5bc593748427f0d",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 402
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2342594d624545f0d06a359d1d8829867c9b61135b89f0131ea576fee0e27fa0",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6fd767d09364c8038c37320f467b0688631d06885b9ae6140fda8f18790955ed",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 520
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:e16ff56a4dec61fde73c7cc1aa87d0584ce78a106206324793cb39e640c308e8",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 603
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:527febc295e3430a1db95f21fc34d45638034cf75e780aa12960b65b20f4be97",
+            "locator": {
+              "end": 642,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:d63d7246e543ab73446c32f6fc3935a00bb57e276f04c41fc74411796a2554d9",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 548
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:b6f078b948f1140d837e14d83e55fe4efbad571d77f97499d873e31657c93754",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 586
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "53": {
+      "note": "**The synced union paragraph, second in the docstring after this leaf's Seventeenth: both leaves' consumer rows in one catalog, and the digest the merged file measures.**\n\nAnchor: \"Sixteenth deliberate re-pin (260921-ICR-L14\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:e40f2f4f42e3c16ac33d65a6c15c07ed5582c74cc9de5a10d1b17ab21d36b451",
+            "locator": {
+              "end": 526,
+              "kind": "line_range",
+              "start": 526
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "54": {
+      "note": "The two consumer rows the leaf's module joined, and the artifact identities they belong to.\n\nAnchor: \"mcp/tests/test_knowledge_review_source_content.py\"; `consumer_scope`; `consumers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d4b3643ad39b71016bcc5cccc248cac6561a914e29263be8724167c32083aa84",
+            "locator": {
+              "end": 1459,
+              "kind": "line_range",
+              "start": 1419
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5d93fbcedfdd9710af0483f902638d99eb45aaa9eb1f854bb433acfd20f0a949",
+            "locator": {
+              "end": 1514,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "55": {
+      "note": "The check that recomputes the file's sha256 and counts both block kinds beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "56": {
+      "note": "The proof that this leaf's artifact delta is empty, which is why only a consumer change could move the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6517506c0ea90213bd6eec8ee20c4aa98bcc9f0ed5e979ad9209eee9f26caa1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_production_proof_adds_no_governed_evidence_artifact"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "57": {
+      "note": "The lane row the same change added, which pins no digest and refuses an unregistered module at collection.\n\nAnchor: \"mcp/tests/test_knowledge_review_source_content.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "58": {
+      "note": "**The re-pinned constants, with the counts this leaf did not move and the digest it did (`3e9105c2…` → `8d60a34c…`, the Seventeenth re-pin).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "59": {
+      "note": "**The source's own paragraph for this leaf: consumer-only, two exact-scope support rows, counts unchanged, and the digest it replaced.**\n\nAnchor: \"Seventeenth deliberate re-pin (260921-ICR-L9\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:dc06b4303d98be7a8a4b32ecb00c821c332477c17646784470c040aceb0656d2",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 506
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The contract and artifact blocks the pin counts, added by this leaf, and the consumer list its sibling artifact gained.**\n\nAnchor: \"mcp/tests/diff_scope_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c10485e11e1b286d2b7807f3f757b2ceac4e6d00d02181dd968a1acbac340c0a",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:72bbaec1492e6e678526d090867fea4cd2d19f2f507bc3e0a247b8b9756138d0",
+            "locator": {
+              "end": 1449,
+              "kind": "line_range",
+              "start": 1426
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "60": {
+      "note": "**The two consumer rows this leaf's module joined, and the artifact identities they belong to.**\n\nAnchor: \"mcp/tests/test_review_subject_catalogue.py\"; `consumer_scope`; `consumers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d4b3643ad39b71016bcc5cccc248cac6561a914e29263be8724167c32083aa84",
+            "locator": {
+              "end": 1459,
+              "kind": "line_range",
+              "start": 1419
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5d93fbcedfdd9710af0483f902638d99eb45aaa9eb1f854bb433acfd20f0a949",
+            "locator": {
+              "end": 1514,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "61": {
+      "note": "The check that recomputes the file's sha256 and counts both block kinds beside it, re-derived because the docstring's new paragraph moved it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "62": {
+      "note": "The proof that this leaf's artifact delta is empty, which is why only a consumer change could move the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6517506c0ea90213bd6eec8ee20c4aa98bcc9f0ed5e979ad9209eee9f26caa1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_production_proof_adds_no_governed_evidence_artifact"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "63": {
+      "note": "The lane row the same change added, which pins no digest and refuses an unregistered module at collection.\n\nAnchor: \"mcp/tests/test_review_subject_catalogue.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:9149cff2c97dbfbcef676a36dc3bc7191a86190bb903785865a07c6ce8134da2",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "64": {
+      "note": "**The re-pinned constants, with the counts this leaf did not move and the digest it did (`8d60a34c…` → `c676b0a0…` → `b1ed7838…` → `d2d6dc6a…`).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "65": {
+      "note": "**The source's own paragraph for the third case module: no registration, two consumer rows, counts unchanged, and the digest it replaced.**\n\nAnchor: \"Twentieth deliberate re-pin (260921-ICR-L8\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:01ec8170982cbfea9326d9471d7c0086bc2a47af6003009953e1a85fcf9b84ae",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 446
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "66": {
+      "note": "**The source's own paragraph for the reach case module.**\n\nAnchor: \"Nineteenth deliberate re-pin (260921-ICR-L8\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:a62584e220fd193d5e290cdac99c515e996aa104c51b7b3921cc0f0ca86f0f65",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 465
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "67": {
+      "note": "**The source's own paragraph for the movement case module, and the census finding (`missing=[…]`, `unsupported=[]`) each row was derived from.**\n\nAnchor: \"Eighteenth deliberate re-pin (260921-ICR-L8\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:7ec9ab96f887bfafe8ba30ffee3be78ca1258ebc29ef1e2e840750fe87ad4392",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 484
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "68": {
+      "note": "**The six consumer entries this leaf's three modules joined: three on each of the two exact-scope consumer rows.**\n\nAnchor: \"mcp/tests/test_knowledge_review_relationship_movement.py\"; \"mcp/tests/test_knowledge_review_relationship_reach.py\"; \"mcp/tests/test_knowledge_review_relationship_line.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:d4b3643ad39b71016bcc5cccc248cac6561a914e29263be8724167c32083aa84",
+            "locator": {
+              "end": 1459,
+              "kind": "line_range",
+              "start": 1419
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:5d93fbcedfdd9710af0483f902638d99eb45aaa9eb1f854bb433acfd20f0a949",
+            "locator": {
+              "end": 1514,
+              "kind": "line_range",
+              "start": 1460
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "69": {
+      "note": "The existing unit-regression registry contains the three relationship modules.\n\nAnchor: \"unit-regression = [\"; \"mcp/tests/test_knowledge_review_relationship_movement.py\"; \"mcp/tests/test_knowledge_review_relationship_reach.py\"; \"mcp/tests/test_knowledge_review_relationship_line.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:4f7a2f55f297273ad151de72fde25fcecce16126de9e1978583f7a752b095777",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:80113ca7e17900675d5038a5646b87f18bc3ec4022df3105c4bdc8c7490e1d71",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:7e1193e84246af7cae00483770f839a8d865a3616ad5c95913bbbd4ca8c281bb",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The contract and artifact blocks the pin counts, added by this leaf, and the consumer list its sibling artifact gained.**\n\nAnchor: \"mcp/tests/diff_scope_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c10485e11e1b286d2b7807f3f757b2ceac4e6d00d02181dd968a1acbac340c0a",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:72bbaec1492e6e678526d090867fea4cd2d19f2f507bc3e0a247b8b9756138d0",
+            "locator": {
+              "end": 1449,
+              "kind": "line_range",
+              "start": 1426
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "70": {
+      "note": "The check that recomputes the catalog's sha256 and counts both block kinds beside it, re-derived because the docstring's three new paragraphs moved it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "71": {
+      "note": "The proof that this leaf's artifact delta is empty, which is why only a consumer change could move the digest three times.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:6517506c0ea90213bd6eec8ee20c4aa98bcc9f0ed5e979ad9209eee9f26caa1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_production_proof_adds_no_governed_evidence_artifact"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "72": {
+      "note": "The re-pinned constant beside the unchanged counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "73": {
+      "note": "**The Thirty-second re-pin note: the census-derived paths, the three splits, the earlier unpinned additions and the unchanged populations.**\n\nAnchor: \"Thirty-second deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:fed228cf88486b254bcbced372539233a7c1e791a2fd78ddecf56e6fcdd1343e",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 177
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "74": {
+      "note": "The order that masked the stale pin: the inventory-closure assertion runs before the byte assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:01695637eb3eac9871b46cba1560b95d01f01b725d97b42f48d2df78dc637970",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_governed_inventory_is_closed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2f945b6ddd7ff57f617b85f5ddf715f2fd216230a31eeaac5dcb5f6a805c1d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_the_catalog_kept_its_bytes_and_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "75": {
+      "note": "The re-pinned count and digest, beside the unchanged contract count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "76": {
+      "note": "**The Thirty-third re-pin note: the base was already red, fourteen new rows, five consumer additions, nothing removed, 16 / 80.**\n\nAnchor: \"Thirty-third deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:a7637d8b6c490be068da82bf68d595af2b2c4acc00dfcd8b52394a0d35912a9b",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "77": {
+      "note": "The re-pinned digest beside the two unchanged counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "78": {
+      "note": "**The Thirty-fourth re-pin note: the new case module on three exact rows, nothing else changed, 16 / 80.**\n\nAnchor: \"Thirty-fourth deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:ed6726966551fa22957a7213a531408e664cb17dcc90371f229b16b1773e719a",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "79": {
+      "note": "The re-pinned digest beside the two unchanged counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The catalog pin constants, and the re-pin narrative the docstring carries beside them — **whose newest paragraph is now `260921-ICR-L14`'s `Sixteenth deliberate re-pin` (the synced union onto `260921-ICR-L3`'s fifteenth), and whose extent is the whole docstring.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:e674aa1447b18bf0655f9399ebe41f22ab0219ea61a13723f4c743b8afa447e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_SCHEMA"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:f3265f0b3b94e4aafe4ca06f7531d0bf7fd6d1af3beef55e8be6ea9797ea8379",
+            "locator": {
+              "end": 554,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:2342594d624545f0d06a359d1d8829867c9b61135b89f0131ea576fee0e27fa0",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:68c757d31ef1f627b988880054c884070ee643e39429cb8593689088be49a88d",
+            "locator": {
+              "end": 538,
+              "kind": "line_range",
+              "start": 538
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:058f77055f2865465c33f0fc294ee4bb5a2b83bf5e4d01d59068986fe37ee39e",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 444
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:058f77055f2865465c33f0fc294ee4bb5a2b83bf5e4d01d59068986fe37ee39e",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "80": {
+      "note": "**The Thirty-fifth re-pin note: the worklist leaf case module on one exact row, nothing else changed, 16 / 80.**\n\nAnchor: \"Thirty-fifth deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:cf5ce943c04463255e997550ca7ab63a6fff1e9e3f0fe1df2b8c4202698f7809",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "81": {
+      "note": "The re-pinned digest beside the two unchanged counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CONTRACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "82": {
+      "note": "**The Thirty-sixth re-pin note: the currentness case module on one exact row, nothing else changed, 16 / 80.**\n\nAnchor: \"Thirty-sixth deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:7b98c204b8200bd6ede9087dd0e0b729b758db30ac77cb4d9a4efb695461561a",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "83": {
+      "note": "The Thirty-seventh digest beside the two unchanged counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "84": {
+      "note": "**The Thirty-seventh re-pin note: the paging case module on two exact rows, nothing else changed, 16 / 80.**\n\nAnchor: \"Thirty-seventh deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:19807925d8ce890972892a44c594a529416cdfb6963c4685049990fca14c82ec",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "85": {
+      "note": "The Thirty-eighth digest beside the two unchanged counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "86": {
+      "note": "**The Thirty-eighth re-pin note: the planned-effects case module on one exact row, nothing else changed, 16 / 80.**\n\nAnchor: \"Thirty-eighth deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:3d4da6a163590cd48daf4775c09c526fca073cf50ef3589d1b5028337b5dc3e1",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "87": {
+      "note": "The Thirty-ninth digest beside the two unchanged counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "88": {
+      "note": "**The Thirty-ninth re-pin note: the leaf-read case module on two exact rows, nothing else changed, 16 / 80.**\n\nAnchor: \"Thirty-ninth deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:b39130932e4a72f4868af967cae46467765ab5815d91bedfbee0404d839558f6",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "89": {
+      "note": "The Fortieth digest beside the two unchanged counts.\n\nAnchor: \"LIFECYCLE_CATALOG_SHA256 =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The three consumer entries the `260915-CAPS-L17` re-pin added to three governed-artifact rows, the entire reason the digest moved at that re-pin.\n\nAnchor: \"mcp/tests/fixtures/repository_profiles/node/package-lock.json\"; \"mcp/tests/eve_capsule_test_support.py\"; \"mcp/tests/eve_adapter_test_support.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f2f74eb472bb7ebb5dce2443859b0f6eabf7a70bee8592866fd507aa3cf0ec0e",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 674
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b8446d4689f0458cf2c9c3107773baf63d260c585d9a680491ae75854864b6fe",
+            "locator": {
+              "end": 1579,
+              "kind": "line_range",
+              "start": 1558
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:634d67b9338f988f7c2d1689499ca2b967840e5406dedbb22e1f15b59745d5a3",
+            "locator": {
+              "end": 1599,
+              "kind": "line_range",
+              "start": 1580
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "90": {
+      "note": "**The Fortieth re-pin note: the unexplained-change case module on one exact row, nothing else changed, 16 / 80.**\n\nAnchor: \"Fortieth deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:5960f7b33ff0e7acddab5e189b024b349f8dffca2bd439bcaf6a1e0b6c68fa31",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "91": {
+      "note": "The consumer line the census derived.\n\nAnchor: \"mcp/tests/test_unexplained_change_disposition.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 837
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "92": {
+      "note": "The two unchanged counts beside the pin line, which since `260928-MIK-L14` holds the Forty-second digest (see that section's row).\n\nAnchor: \"LIFECYCLE_CATALOG_SHA256 =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "93": {
+      "note": "**The Forty-first re-pin note: the route-chain case module on four exact rows, nothing else changed, 16 / 80.**\n\nAnchor: \"Forty-first deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:8467975b30fc13d2fd79016e352dcac50a39a6c08714a5651f9c9939ed1877d9",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "94": {
+      "note": "The consumer lines the census derived.\n\nAnchor: \"mcp/tests/test_knowledge_route_chain.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 459
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
+            "locator": {
+              "end": 838,
+              "kind": "line_range",
+              "start": 838
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
+            "locator": {
+              "end": 1554,
+              "kind": "line_range",
+              "start": 1554
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
+            "locator": {
+              "end": 1830,
+              "kind": "line_range",
+              "start": 1830
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "95": {
+      "note": "The Forty-second digest beside the two unchanged counts.\n\nAnchor: \"LIFECYCLE_CATALOG_SHA256 =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "96": {
+      "note": "**The Forty-second re-pin note: the reconsideration case module on one exact row, nothing else changed, 16 / 80.**\n\nAnchor: \"Forty-second deliberate re-pin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:54066b9364d512cffedfb707e72e39340a7f9206dc0f9c50ed1800226d2278c9",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "97": {
+      "note": "The consumer line the census derived.\n\nAnchor: \"mcp/tests/test_reconsideration_surfacing.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
+            "locator": {
+              "end": 839,
+              "kind": "line_range",
+              "start": 839
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

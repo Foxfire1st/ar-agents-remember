@@ -1,0 +1,1445 @@
+{
+  "path": "mcp/tests/test_knowledge_curator_ingest_list.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The session fixture: a real code repository committed twice (the recorded base and the leaf's own line), a real memory repository, and the contract that names both.\n\nAnchor: `pair`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:6eb5d098d17a631eae8fd3712d5f9d3b4cc265eb0ba988e4511256480105bb7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourcePair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:a8d78b4d24ac43450b003ba87055ade4a4b6bf67897020861465e7ebe7c59c0a",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The resume path's regression**: with a half already established, a second run naming a lost or corrupt `--baseline` refuses the selected input, commits nothing, adds no row, and leaves the half and its record byte-for-byte unchanged — where before the run committed and reported `placed: … (captured from …/corrupt.sqlite before this run)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:f8330c0f9439e9b211bd31ffce7e79b4d69f51734c95503da7e4590b1192ca9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_resume_run_that_names_an_unreadable_baseline_replaces_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**Damage named in both of its forms**: bytes that are not a dataset, and a *readable* dataset that is not the one the record names, each answer `not-established` with the path and their own phrase, leave the half and the record exactly as they are, and do not stop the candidate write the run was asked for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:fe18f9669a4bc3b5393e4fbb26a884a7949d5816b1b6db19dfcd9294b742d010",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_damaged_before_half_is_named_and_left_exactly_as_it_is"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**An identified first generation is never replaced by a later selected baseline**, even when the caller names a real published dataset: the entry commits, the half reports `not-placed:` with \"already records its first generation\", and both files stay byte-identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:b71d0be225ad9b5401e22ef6f068d0ee45a52c3dce4d3bca98aa2363cb1daafa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_established_first_generation_is_not_replaced_by_a_later_selected_baseline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The write site's own precondition, which this leaf MOVED OUT to `test_knowledge_ingest_failure_windows.py` with the placement owner it measures** (ICR-R18) — the right order, and also why a CLI-level case cannot reach this rule: corrupt bytes are refused by name with nothing created, a real dataset is published with the record that names its generation, and the run that follows reports `present:` and restates nothing. What stands here in its place is the note that names the move and the reason (`:2404-2409`).\n\nAnchor: \"the write site's own precondition\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66dddf436b94dbb979e2dadf1f77e766be33e7ff",
+            "content": "sha256:0087d0483fe2caed0d78551137f19cb3665bde1ab5a058eeda958f1b2a4e1210",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_write_site_publishes_only_bytes_that_read_as_a_dataset"
+            },
+            "path": "mcp/tests/test_knowledge_ingest_failure_windows.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:6747a177307a901753b17be4877a3458df7e960829a144b3690f0361561f2a65",
+            "locator": {
+              "end": 2411,
+              "kind": "line_range",
+              "start": 2406
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The three outcomes in one report, with the ruling skipped while carrying its own verdict and the three path reasons asserted to be three distinct words.\n\nAnchor: \"test_one_run_reports_committed_skipped_and_each_refusal_reason\"; \"test_a_ruling_is_never_committed_as_an_obligation_with_no_realization\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:f986cddd67150ca3b25732bbe632ac5ea63796046ecf62232f40bd9ec08702df",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 439
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:ffe19b4865a91f817718f8f08c600ba6472dfc8b7a466300eeaeb1f6987be96e",
+            "locator": {
+              "end": 524,
+              "kind": "line_range",
+              "start": 480
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The leaf's own line as the resolution tree: a file the leaf added commits and reads back, and a file the leaf modified produces a report rather than an exception.\n\nAnchor: \"test_a_producer_citing_a_file_its_own_leaf_created_commits_and_reads_back\"; \"test_a_producer_citing_a_file_its_own_leaf_modified_gets_a_report_not_an_exception\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:b33824e89f175fb83332f64ef0a0a17f2a22847f00f104bd58682e1f9e64f851",
+            "locator": {
+              "end": 597,
+              "kind": "line_range",
+              "start": 544
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:2857c84ec6bd433c44edf042a99411bbfcbc19be8dacdf61892c4e6347f356d3",
+            "locator": {
+              "end": 627,
+              "kind": "line_range",
+              "start": 600
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The refusal vocabulary: five distinct locator failures and their distinct reasons, and every path reason read from the recorded trees rather than from the live directories.\n\nAnchor: \"test_each_locator_failure_carries_the_reason_that_is_true_of_it\"; \"test_a_path_reason_is_read_from_the_trees_and_not_from_the_live_directories\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:68741db3662c4087cae943f2d00bc182296a056f2a74997bec34a6a2c44fdf85",
+            "locator": {
+              "end": 730,
+              "kind": "line_range",
+              "start": 635
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:085dea79144d5d66d1191f269a481d4c53ec86f6a4556c79b2708f1f88f1e367",
+            "locator": {
+              "end": 809,
+              "kind": "line_range",
+              "start": 712
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The producer's bare symbol name end to end: a qualified name resolved by both halves with an invented prefix refused, a bare name stored and read back typed, and a definition check that refuses a mention or any other non-definition.\n\nAnchor: \"test_a_symbol_locator_resolves_a_qualified_name_and_refuses_an_invented_prefix\"; \"test_a_producer_symbol_name_is_resolved_stored_and_read_back_typed\"; \"test_the_definition_check_refuses_a_mention_and_every_kind_of_non_definition\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:b2cbd4262f2a59b5e780f8432138f753472f51486bd005d161ab963c1b7e5134",
+            "locator": {
+              "end": 880,
+              "kind": "line_range",
+              "start": 833
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:a32f6d71c320d94d8ec58e3c8e14f8a49731e4376e6bf82f0849a4bc39e6927a",
+            "locator": {
+              "end": 1019,
+              "kind": "line_range",
+              "start": 960
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:7adf36e04a1ff6cf57421f86bce54ba990d1bc8f3000e71d8e4ae8768142aa76",
+            "locator": {
+              "end": 1097,
+              "kind": "line_range",
+              "start": 1022
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Working code citations bind the captured blob, while memory-path citations retain the admitted memory tree identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:20ab1889763944b8a28cd8cb236ed00b7d6bc3997fac37044c45e09247231e5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_recorded_blob_identity_follows_the_captured_working_edit"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:ca83d8b167b7554b6a2bca4e55759796b3e82f3e7aba6391457feb50aaed118b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_in_the_memory_root_carries_the_memory_tree_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Allocation and the modes around it: a repeat of one creation operation resolves to the identities it already holds and writes nothing, a dry run's counts are the counts the real run writes, and a blank authorization is refused by name before anything is read.\n\nAnchor: \"test_a_second_run_resolves_to_the_identities_the_operation_was_allocated\"; \"test_dry_and_real_runs_report_the_same_written_rows_and_a_repeat_writes_none\"; \"test_an_empty_authorization_is_refused_by_name_before_anything_is_read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:bf70ffb86c2507925f120e0f519bcf67c85c442b8ed43864667e43cddec79fa4",
+            "locator": {
+              "end": 1208,
+              "kind": "line_range",
+              "start": 1134
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:1742749ec5e89ee7b72507d20a24ca324de43edad138172eb3eafc87c33841ee",
+            "locator": {
+              "end": 1298,
+              "kind": "line_range",
+              "start": 1211
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:79717f81002ed06c2b9a890a85260e1ec7bfbb2ff56d1f3900c2a66ebab49093",
+            "locator": {
+              "end": 1311,
+              "kind": "line_range",
+              "start": 1291
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture's own machinery: write files, commit under a pinned identity, call Git with a hermetic environment, and write a contract carrying exactly the cells the ingest reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:2f3f7bf11d6077c3baa3f637497131bfd4ebf06e42f2e393bcd3226c34cc9bd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_files"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:5dc42a90de1889c5b54228e08554cb0a3c9c297fbf1a49279c89d1b633deb1be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:d0c2098810471f5aa70c5c82b521eef60ad26a1c25ee7a7afd3dc72e39b0b928",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:ccbe8262e589058a0c7221bd3367e1d2e6293d0a1a1568039323149218e461ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_text"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The route leg and the report's own names: one row per scope with one association per governed anchor and an ungoverned anchor left ungoverned, a re-authored route reused rather than written twice, and the candidate, receipt, lane and trees the report names.\n\nAnchor: \"test_the_governing_route_is_recorded_once_per_scope_and_attached_to_each_anchor\"; \"test_re_authoring_an_existing_route_reuses_its_row_rather_than_writing_a_second\"; \"test_the_report_names_the_candidate_its_receipt_the_lane_and_the_exact_inputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:4567ffc3073de788b0bcab447d32915b2676a1df8d616776014817e6911cc4c5",
+            "locator": {
+              "end": 1385,
+              "kind": "line_range",
+              "start": 1329
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:2ea6d01c9e22bb3223d6992c443ade778e7f93a143758cdf4cfa128db01227f2",
+            "locator": {
+              "end": 1439,
+              "kind": "line_range",
+              "start": 1388
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:bf8af89427aee52cab8f117a634972c906f6891ae698bd604800207818778506",
+            "locator": {
+              "end": 1496,
+              "kind": "line_range",
+              "start": 1447
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:27c79b4ff5f79c99d8fe0b9b8dda2571e9074354fcbd5cce25a30d101065fa1c",
+            "locator": {
+              "end": 1486,
+              "kind": "line_range",
+              "start": 1437
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The operation under test and the report it returns: one admitted batch or a typed refusal per entry, with the three outcomes and the counts that make a run auditable kept apart — and the selection value the operation is handed, including the `baseline` it forks from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:1e68e38b1d88e42cbf232455a533b8ff42545fd09694ebe83890024f9cd1ccb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ingest_curator_list"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:b31a270e4a9968a72fc8350f65816fb39df52c04d733cda52667411907622c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "IngestSelection"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:6f664ccefcc5fff63aae3298315b1271fb31f047e408789cbf47fd291791ab6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "IngestReport"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:43f224dc96e41c1a6bf082a07b9db991cba172bb3f3326e102fdbb6f821c6ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "IngestCounts"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:ecda2796205a7b577b31919ab70e795b6610255ea490f6cae094645132d30642",
+            "locator": {
+              "kind": "symbol",
+              "name": "TargetOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:3171bb68d04db2257488a092aac486f27a6cb53788eb6173d4ee5c499bb3c8e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:8706c9c69ffa07090fe69f8c58181902377076cf05c5c47a299dc41fa33eb6ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryOutcome"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The vocabulary this module asserts by name: the six path reasons and the nine locator-or-symbol codes its cases name, each standing for one distinct fact rather than one shared word for \"did not resolve\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:da148f5d2b83875d7d66f2bc167f8f4e12d3d6f37e1bb8d9c5ed128a1ff88d68",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REASON_THIRD_ROOT"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:46691ddcb8c237f93bd1150bd413ac977c5ce7bc74d5049a952784596d087b31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REASON_GONE"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:f35571a5ee5591a6a651b2ffcdeaae0f6f4f14fa4272b4fdf4f62987462ea7e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REASON_DEPENDENCY"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:9599f2ea4f0e79e378f3889897f3b72e0a74fca93b9ec2faf8dd15fea7ea4ce8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REASON_OUTSIDE_BY_SPELLING"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:3ee387a48bcc383f8b37ea1ab70c7f8e77a5b69f048770b8373634bc1e524d97",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REASON_NOT_CONFINED"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:d93bec69b1c27690eba11f5e73b58b3bd7f3a019af0d0b32255072caba005747",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REASON_INSIDE_BY_SPELLING"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:503b737d7d8ffb64ed416a4e5ee399811a2f4f003f4c466058c38e9af063a8f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_LINE_RANGE_MALFORMED"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:860ab335e11a75d237f46d74b3febfb8aa1ef3a484de5771139aa91974dc16fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_LINE_RANGE_ORDER"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:6f246681fe3f4b994f0f7975f21618c8ac9171aa918aa6f3e2d11a5a7a002f02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_LINE_RANGE_ZERO_BASED"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:70fd4c065664f6a4fb3147d8bd0d58273556ad34fc7aa647ff5c2918a98a923e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_LINE_RANGE_PAST_END"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:b58e5ec55e33b5116407c092ee9f99e6e6429367a32e11e65a186f34ffab8401",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_LOCATOR_MISSING"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:de8b173f977c59f07a8b53acd84b4a854880036d2f3fa0203f49e03b86a6d450",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_LOCATOR_KIND"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:fb9483ecee27c6ce2453521a67b2696016a2a8c13d5bb43c2ef4f623f089941c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_CONSTRUCT_ABSENT"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:35feee7423928a3daed7be451910015519c837abdbfb93d0b8eec8a74916e47b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_NOT_A_DEFINITION"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:63fe67182ba93489cd78108241e199b46a7d5487f01a3210581fafed741b9392",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_NO_DEFINITIONS_IN_PROSE"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The internals that produce the pinned behaviour: the reason classifier read from the recorded trees, the symbol resolution, its language gate and its definition check, the occurrence test that separates a definition from a mention, the observation gate that accepts a symbol only on the rail's own answer, and the route leg that runs before the batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:b40babf4f1f1897648779841c6ff95083fe91878611a585b7734e33bd598a15d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved_reason"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:77b9014ec80c7cc81274ba937661ffbda185685d9e9396f6664e1932b05ad7b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_locator"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:1f708077ca0e5e57a82d8ac36abde0e8bf5bf498558214ff2ee4e3c4844915e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_language"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:ec66f4b64f63f57a0e1be46f3ecfa98f5c2e17798229c2373385e44a072fa366",
+            "locator": {
+              "kind": "symbol",
+              "name": "_occurs"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:e0dbc600d8341393eb7e0dd24ea48639cf31dee315186e33bfafe622ee32729e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:cd7f1a320508238feafca049852a1c53fc9354c126a2e4303ffdc9a01576f3d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_routes"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:6f82e8c5632835192b545e484e8f3c9731997b7e39f60f973506ac651bab01da",
+            "locator": {
+              "end": 2714,
+              "kind": "line_range",
+              "start": 2671
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The internals that produce the pinned behaviour: the reason classifier read from the recorded trees, the symbol resolution and its definition check — which is the shipped `bound_definitions`, because this module no longer carries its own blanking pass or `_defines`/`_code_only`, with `_occurs` the mention test that separates a non-definition from an absent construct — the observation gate that accepts a symbol only on the rail's own answer, and the route leg that runs before the batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:b40babf4f1f1897648779841c6ff95083fe91878611a585b7734e33bd598a15d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved_reason"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:77b9014ec80c7cc81274ba937661ffbda185685d9e9396f6664e1932b05ad7b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_locator"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2abd64b495ba2f150a8586f954c01ee51cca5da",
+            "content": "sha256:40a8257f049e62b3b8648b9bb3f3b20f0e80899d20228534f989bc3787496f65",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_definitions"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:ec66f4b64f63f57a0e1be46f3ecfa98f5c2e17798229c2373385e44a072fa366",
+            "locator": {
+              "kind": "symbol",
+              "name": "_occurs"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:e0dbc600d8341393eb7e0dd24ea48639cf31dee315186e33bfafe622ee32729e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:cd7f1a320508238feafca049852a1c53fc9354c126a2e4303ffdc9a01576f3d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_routes"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:6f82e8c5632835192b545e484e8f3c9731997b7e39f60f973506ac651bab01da",
+            "locator": {
+              "end": 2714,
+              "kind": "line_range",
+              "start": 2671
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:b7a41c76ab9b31e672f10429d3e2fe2117c0a19754f4a23c62c0e24cff67a868",
+            "locator": {
+              "end": 3014,
+              "kind": "line_range",
+              "start": 3004
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The CYCLE-01 continuity cases, merged into one class because the unit ceiling is a hard 2300**: one namespace per repository read at two code baselines, a namespace READ from the dataset before one is derived (with an unreadable baseline falling back rather than raising), an absent candidate FORKED from the selected baseline so the prior invariant survives, an entry that declares its invariant versus one that names the predecessors it revises, two symbols in one file as two anchors with the duplicate guard still refusing a genuine duplicate, and — this leaf — the identities the write path stores, the public journey its own call now runs, and the sibling-identity check that proves a reused label is not an identity input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:2c4ef1f36190badd6e83b41defd5052a09a9a3f7007829ad8cd8b97eab78cd84",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryIdentityStabilityTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:b1ee55e1b83668e9c62caa8bb9953552c769a19588e959da9a076638d57515c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_knowledge_continues_across_baselines_and_tasks"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:d2ff0daa9dfc911e4d682c7bc756204218d21dfcd466b5e235b58610fa85c3eb",
+            "locator": {
+              "end": 2816,
+              "kind": "line_range",
+              "start": 2685
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:cd2a3dc365634cc607ea3db3f694635c1cb4759bedb45cfad1e8fdfc46bb0449",
+            "locator": {
+              "end": 2816,
+              "kind": "line_range",
+              "start": 2695
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The CYCLE-01 fixture helpers: one contract that differs from its siblings only in the recorded baseline, the command names one curator entry contributes declared or revised, the fork of a selected baseline into an absent candidate, and the invariant and revision identities a candidate database actually holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:c9ce04a569fb54100515448c64cc6e57468bbf439eee5fb87e8e301595e522fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_contract"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:72b31d7c9c1ad4b403599a946612640116fc16861459c5c251eec01df00e4a55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_command_kinds"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:4a79c2334a286d764e0651d35f070ca95bc441809d5ba5a2f83aa9eeccdfb4f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_forked_candidate"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:d70bbd5153f0e41d50549c3f1bdaf54bde31919506ca0898eabba48c517778d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_candidate_rows"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:da4af93db6d80d9c56cd2caecb48d186b46ccc0e74a9534a604c33c75994da11",
+            "locator": {
+              "end": 2558,
+              "kind": "line_range",
+              "start": 2529
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:36a13da0f48d19b5058881c48e8353206621a86b59a0c3b95278938f9046efe7",
+            "locator": {
+              "end": 2780,
+              "kind": "line_range",
+              "start": 2760
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:0dda42bca55fd4f82b6495e2eedc26de43e0b77306ca883f811eacfef16962aa",
+            "locator": {
+              "end": 2757,
+              "kind": "line_range",
+              "start": 2663
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:1feff79309a0bd438aec006bbc08c9e8569ab71c1827dbfd7dc45c3f43498310",
+            "locator": {
+              "end": 2708,
+              "kind": "line_range",
+              "start": 2685
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The public-operation journey this leaf added, and the ruled semantics this leaf re-pointed it at (no collected case was created for either — both lanes sit at exactly their budget).** `_cycle01_public_identities` is the entry point the existing case calls: it asserts the three write-path identities of two constructs in one file, then runs the CLI journey and the reused-label check. `_cycle01_cli_baseline_journey` builds a private pair, publishes task A, forks task B from that dataset and measures the consequences from the databases themselves. `_cycle01_reused_label_identity` is the re-pointed one: with the three helpers this leaf wrote for it — `_cycle01_sibling_contract` (a second enclosure differing from the fixture's only in its recorded `leaf_id`, which is the retry key's scope), `_cycle01_publish_baseline` (one baseline truth published through the public operation) and `_cycle01_revisions_of` (every revision one invariant holds, read from the database) — it measures two sibling enclosures, one reused label, two different statements, distinct stored identity pairs, and continuity proved by a third enclosure **naming** the first side's stored invariant. Those three helpers are **this leaf's own work, and they do exist at the commit this card is verified against** — `4ef4dddc`, which contains this leaf's whole change set — so a reader can resolve them there; they are named in this sentence rather than in the Anchor cell because they are part of what the claim describes measuring rather than further evidence for it, and because a reader working from an earlier revision will not find them at all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:042215fedea7b2ab5989a948ec686f7570e822d034c4e2572eb523fe929567fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_public_identities"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:29eff3bb1131876959f42990930fd930834517223dffbe5f206f705ade65785e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_cli_baseline_journey"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:ed13822d92abf6c8e2b21310497ed32363e43f4cc8126f0e881b6840c3bbb085",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_reused_label_identity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:65b90efe9fd6d1aeb640e2b6072e707af3758ee92c56c74e3332de5ed15fa902",
+            "locator": {
+              "end": 2911,
+              "kind": "line_range",
+              "start": 2817
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:23504b954cf116dec0bda582bcdc1adeb669edffa9919f90a46e901c3fa03496",
+            "locator": {
+              "end": 2307,
+              "kind": "line_range",
+              "start": 2280
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:65811e95374e1dd8ba31034a2d59abd567ec562b2015665fd42d0bd315e36e8d",
+            "locator": {
+              "end": 2581,
+              "kind": "line_range",
+              "start": 2464
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "**The journey's two tasks, and what each one is allowed to prove.** Task A commits two constructs of one file and publishes; task B names the baseline it forks from, keeps the prior invariant and revisions by exact id, stores an explicit successor under that invariant, adds an unrelated record, and republishes over the dataset it forked from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:211660de225b644f9af7cbd25cab1d83bd3753a478fea6fae24d43b8c5d63a6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_task_a"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:0e8705d92acba6565142c32096a7eb96a8eec6b528d7c580499ab1a3bed2ce35",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_task_b"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:91de7d9dffc063ebfb88756e9c2aa7f95fa50e5ef1732a927720a52009185085",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_hand_off"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:bbaacfc5f4da0c1a341262cf4aacb71a539835d6ada893ea71419a31cfd9cfe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_JourneyFactory"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:f0f05e8d41d23d364ef6fa6eb5071c0530779d2e6724a310b6917c5193cabeda",
+            "locator": {
+              "end": 2985,
+              "kind": "line_range",
+              "start": 2980
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The journey's measurements, read from the candidate and the published dataset rather than from the report.** `_cycle01_baseline_consequences` asserts the baseline containment, the successor revision, the four distinct anchors and the predecessor edge; the three readers below it read revisions-by-label, anchors and predecessor edges out of SQLite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:3bc178aee94737153bf91ba9822f1c69571a253e30ff331017e1db7fd7afb8ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_baseline_consequences"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:8909cedd3fbf092cc78c7f7b37ba44907ea10f47d213740ff09e6845d42fa598",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_candidate_revisions"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:9a703509627604f2a15099e7a12ab8134d9681f87d1d7aa15993356803ed1933",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_candidate_anchors"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:ea0c293d01d6aef19be8f1e143550aebfc113d9a0654979cb2b0a78d540f3a7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cycle01_predecessor_edges"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:03e0a6e3d77c6aec288f4713ad4a0987a6beb8a15e4a90569f5f0a81e4e38949",
+            "locator": {
+              "end": 3138,
+              "kind": "line_range",
+              "start": 3124
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:2c2d53a42cc909d910d36ebd6e71990186d2b9d09b85a87ce10912d8e2e8b138",
+            "locator": {
+              "end": 3164,
+              "kind": "line_range",
+              "start": 3141
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared handoff builders create the entry, target, symbol and line-range test inputs; the entry builder states an explicit entry-level `realization_rationale` default.\n\nAnchor: `target`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:0f5e8a5e7b5b854c644fb5d17b52fa5022719fa441ae170f09c22b61794a6fb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:172664cf29f2c7e005af07eb18757665c866a2a9f95a6efade6245c50f6fb067",
+            "locator": {
+              "kind": "symbol",
+              "name": "symbol"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:3165abac94ef669e69c0b714e35e96991855f5e44127639edaeee12633db3ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_range"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:7ebedebd1b9212922956ef41143c4888160865dae172b1246618ce4356785dd2",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 379
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The drive and measurement helpers: ingest one list into a candidate directory the case owns — building the one `IngestSelection` the operation now takes — key one report's outcomes, and count the six written tables from the database.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:e7bfc8391c3f25e36aa1008f7609a920de3bf308eda28d5dee74db1ca1c25bf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:6c0cdae89b2d2b935c2354b99711a5c4c4a9b21ae99ec8eedc3597c8590ec812",
+            "locator": {
+              "kind": "symbol",
+              "name": "by_id"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:b36ff9ffdb2f6b3731428015cd7a3df74ddaa4336047cadd24589269e30dfe32",
+            "locator": {
+              "kind": "symbol",
+              "name": "counts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**This leaf's five first-generation helpers, each existing because the review's before half is derived from an enclosure's own recorded worktree group**: the half derived as the review derives it; the shipped cold-start invocation; a one-entry list whose **id** the case chooses (a repeated id replays, and a replayed batch places nothing, so a case about the half would pass without reaching it); a private pair; and a relocated enclosure that moves only the four coordination cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:38357656af4d637d945ced0cf4509207926cbb855c7a0ff580551424ce3b9ec2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_before_half"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:41716427b93a86338c18ae10b5a04ff09f29fbe65726ea2e9a21d1af1f429690",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cold_start_argv"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:ba3e26025d9660866f20808ee570ac38c21587264d7c065bc9a02620da296ffc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_one_entry_list"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:b6c1333574475ce2715e160c8f18fdef29f20f379116449fd67097b61ada05d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_private_pair"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:249672ba7683732b78d91ab041072e0039187f0e9753fe4c0067115bc3299f64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_relocated_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The cold-start user operation, five facts in one case, and the second run that must not restate what the first established.** The half is empty (the candidate's rows are not copied backward), bound to the candidate's own namespace, and identified by a record naming the identity actually on disk, `none` for the baseline this run was handed, and `not-recorded` for pre-feature history; a later committing run reports `present:` and leaves both files byte-identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:41f495926a79a2d4473a439fd59982a2ad542eb115c432d6ed0604e7e26edfea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cold_start_cli_run_establishes_an_identified_first_generation_before_half"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The half of the same operation that makes it worth anything: the shipped comparison opens the pair the ingest wrote, and the first invariant is `present` after and `absent` before.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:f3a8b2d975ecabc4e88ee318ad377648fcdf426c85b200f43c9f2258c2c6375d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_first_generation_pair_reviews_the_first_invariant_as_an_addition"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The non-conforming case the requirement names, both ways an input can be unavailable**: a *selected* fork point that is gone and one that holds bytes which are not a dataset are each refused `selected_input_unavailable` naming the path, with no candidate, no before half and no origin record — the regression for a run that used to end in a traceback where a report belongs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:3a6374939017ba81738105cf927e55e9aa69d6dbe1a2a7229ce58bea32228f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_lost_or_corrupt_selected_baseline_is_refused_by_name_and_establishes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**Initialization failure claims nothing**: with the half's own directory occupied by foreign content the promote cannot replace, the run still commits the entry it was asked for, reports `not-established:` with the path and reason, leaves no dataset and no record, leaves the foreign content exactly as it was, and leaves nothing else behind — the private stage did not survive the attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:491a95b2413db90e3e5da3f5f1567b7d2015fa5e9f3e95ae5865bc28a59f3f92",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_first_generation_that_cannot_be_exposed_leaves_no_claimed_baseline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

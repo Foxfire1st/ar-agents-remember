@@ -1,0 +1,461 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/services.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Citation and provider lifecycle protocols remain explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:1fd1c744db07007f303051c50689de9d02455b2c944ba9cd5f0b47afd4482ad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationGuardPort"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:3d6f92d4fd05bcf8bd9fa3cf903fb62b86a74954e4a3189df33cecea220b7d9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderLifecyclePort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Bind the composition-provided services for this process.\n\nAnchor: \"def bind_worktree_services\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:ee4ed8f7561007696aa3c3795bb4de5df11ebc88aa1da79bd62d70685c8369e5",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 347
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Clear the bound services (tests and process teardown).\n\nAnchor: \"def reset_worktree_services\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:27933e30e1b2bdd1f55a036ce57926b6c86fc29e2885143143f0e826a7bfbae9",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 353
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Reading unbound worktree services refuses instead of constructing ambient owners.\n\nAnchor: \"def worktree_services\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:5cc5ada9823e05b85d2b7ca05e3da9aea2c275c07f3dc9ac1a5d00de71a70d7d",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 359
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The default application bundle binds rails, the prepared continuation and certification, the knowledge validator with its base converter, and the knowledge crossing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08156caa47bcb0e5495d481eac020f2d7efb6cba",
+            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The route helper refuses a converted commit when the port is unbound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11dbc05f12472a274a273ce447ada48b1fb4637d",
+            "content": "sha256:f0884e07e6a76b3fb8ccc7ba4ab7e65b7c88b1185d5d679589cbba7a5b106a14",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_commit_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Selected execution, which since MIK-R09 first refuses the prepared path on converted memory, observes memory before reuse and refuses an absent continuation.\n\nAnchor: \"def execute_selected_closeout(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5901977eed6b08634132f55b705e0a1ac3e69d3f",
+            "content": "sha256:0ba93c0016e183e37a89b7c1ce4284f6390aec3ddaf7f3c83a75a7c1d453da55",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 348
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "`TerminalGuard` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:1aed6a1e87df5f7bddf8eec989339481d54e83b78dcd61eac26269dccfc2a45c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalGuard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "`CitationGuardPort` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:1fd1c744db07007f303051c50689de9d02455b2c944ba9cd5f0b47afd4482ad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationGuardPort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "`WorktreeServicesUnboundError` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:05447aa55479275f4cd335c71bd9b8c8c2dd01144fd2c30a8fe404dab23e38df",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeServicesUnboundError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Bind the composition-provided services for this process.\n\nAnchor: \"def bind_worktree_services\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:ee4ed8f7561007696aa3c3795bb4de5df11ebc88aa1da79bd62d70685c8369e5",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 347
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The knowledge validator's commit-route port: candidate tree, bases and paired code commit in, refusal text or `None` out; since MIK-R09 a `leaf_refusal` twin for a leaf publication.\n\nAnchor: \"The same, for a commit that publishes a leaf\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:27eea00a32e7c89a71f9fcafadeb9ba87df61f84e2de04175ec9bb745ea7a19c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeValidationPort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "`reset_worktree_services` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:acbf13b8b425b2355344994e59db2aea50017b8f97260572ff910bf0fa72106e",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset_worktree_services"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "`worktree_services` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:b7a1ea036b791642e8a770c435a22aae154f6eb3c1992eb5636260a18a57fec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_services"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mandatory gate's port, its landing request and the direct-landing verdict (MIK-R09).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:4aef36e6deccd803cd7bf74c90d9bde6bcc99c39aa336f6e44279eb4c5b1acdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingGateRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:e3c107c94ff0890ad2069f8a3d57d92b899158059dd87f7845bbf7685be4256c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectGateVerdict"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:740b75054ecc53dd6bcfc88b2cd1244add7451bb767150875d8dd8b7571a9bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeGatePort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The crossing sync's port, its request and plan view, and the step failure it raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeCrossingPort"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:e34f9c8dba1e627374789d808cc8164b9fe72317a29b0ea8244f32c2a2a3bcd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingPlanView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:3c0a49966defd93bf2f76f0c9bbcf4957f62541bcf017a4eae790453fb02e023",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingStepFailed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The worklist recompute port and the bundle field that carries it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:dd9a78a4fbf03c811f8f8e5d96b0bafd292bce2f185852f5341647eb488726fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeWorklistPort"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:eebf6be79926cafc14e80f1697222416ac5bb4feab957d496c66825fb29a4ed5",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The archive hook's request and port (MIK-R25 rule 5): one archived task, its directory name and its two repositories in; the cleanup report out, never raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:fd53af8b68a80c1646b90147bf2fe634886be0a8ddcadad224cf33b809455558",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewArtifactCleanupRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:c589198488aae3fba7f0728df8cb78c599fbc4fa68ae434456c7908c9274782d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewArtifactCleanupPort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Registry population and task/memory observations have distinct service ports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:a212c7111dbf9117ae0a0e11f6bc291daaae081db2bee63090634e0260d9e1e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationMemoryRailsPort"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:7c22d91e6252549ff5ff5b8f63dbc7bd68f9eb0498b32b119f296e52cc962e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualityPort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Current memory authority, Gate 5, and finalization are separate continuation methods.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:eb8884ec07deeed5702f8231bcf2164c4e7762ce7a1f1bb7c71024d205fdbce6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationContinuationPort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The bundle exposes optional capabilities, including `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, (since MIK-R25) `review_artifact_cleanup` and (since MIK-R09) `knowledge_gate`; provider setup inputs stay opaque.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:a7b5b5b6c007e7a66a228ff7fef345ec45fdb43cfd0c98eb5836e71f0cf57b2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeServices"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:ad20b5593871bfbac80778efc8f1b9bc7301ae9c2a35f2474a8dd69375ef7f53",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderSetupRequestSpec"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

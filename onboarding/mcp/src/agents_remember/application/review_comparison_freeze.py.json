@@ -1,0 +1,1065 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_freeze.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+        "content": "sha256:e0cefea4d0ea2e9c9963d2c68129a373723f5a5fb0ffe5b354b120c5dfa3c775",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_input_refusal"
+        }
+      },
+      "id": "RLZ-C09ZZTNE",
+      "invariant": "INV-7W11WKKN",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Validates the owner inputs before any retention write: it refuses generic evidence whose owner is a reserved curator owner, runs require_curator_record_inputs over the supplied assessments, artifacts and channels, and refuses retained parent inputs that name no exact parent generation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+        "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "freeze_review_comparison"
+        }
+      },
+      "id": "RLZ-CZRDGVGT",
+      "invariant": "INV-09FC73JC",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Is the production entry for recording a comparison: it resolves the candidate exactly as the review surface does and passes it to freeze_resolved_review, returning a resolution refusal unchanged, so the one per-leaf generation is frozen from the comparison the surface itself composes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+        "content": "sha256:8af63ac3907371a970009d53f7a3c2ce4f21cf1d39a38e92c6a862e3ea12aa64",
+        "locator": {
+          "kind": "symbol",
+          "name": "freeze_resolved_review"
+        }
+      },
+      "id": "RLZ-RH2JSX6Y",
+      "invariant": "INV-7W11WKKN",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Uses explicitly supplied records when options carry them and otherwise collects owner records for the exact resolved pair through review_records_for_resolution. It refuses when the assessment channel is unavailable because its artifacts are unreadable, and it freezes only what compose_review actually composed, passing the same records to the single generation owner.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the composition rule and of the one-rename publication.\n\nAnchor: `freeze_closed_snapshot`; `review_comparison_retention`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:a067c45505ab5d6dc780d6a659cad9f476ff8341d0bb4a72001d52e86d214ce3",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Stage, seal, and publish by one rename.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:1d1b574cb499a30c7dd0e1b7b91a2bd628901005331e7d80cf65c53e31fa3276",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**Convergence on an already-published record, and the refusal to overwrite one with a different binding.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:5aa1958a680fc2449304442807c291e05123730f890e7e6676ccd17ec801160f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reuse_or_refuse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The knowledge halves, retained through the retention owner, with its refusal stopping the freeze.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:e252ab8f256a7d495ce8cc940b34314199cab6100c0459ece9086b195e0921b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_knowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The refusal for a failure the freeze could not classify, whose next action states that nothing was published.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:d2f5383b80c1759d7ade731648903c189d21d46a8cb2992e72561c2d497fef0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_storage_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:c59b89dad9af1a79e69c7eef21269f0832904e44dc27e14b816f862a8cf733dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reclaim"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The field set assembled from the owners' own values, each nested value dumped through its owner's model.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:fd82bd5b3d1a887312d07c8d50e0cd5ac647e0f0825eb7aa97de8e014c54e973",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:534c1658141e98842726dc5d22dccb9efcb7314a32c059a2194555492cc93ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_json"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The scope: R02's inventory payload digested verbatim, and a selector identity read from the seed's own declared field.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:59fa430374843dc96d4d7d5e32fadfb949a0556945716faedffa30a5b435bf0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:02b40e18fac8230635b9f263a1b67fbf96c1a3e7a4572976cc2a8f51614f2271",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selector_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The record binding, which asserts what the composition supplied and explicitly not what an owner published (R14's fact).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:d09e2cdf44ca61b7107bd849481e5426137c7eb826baca4352c7bb5d01c9a96a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**A citation read and digested while freezing, and the task-root confinement that refuses one that escapes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:780d823fcbaddd0fca061346b1fb0847d18f6224a980aa1907e8cd9a82f67c4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_references"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:fbd87e7ad59add2a85755196817ced2f3f832b8dcf8d5d8cb919d3c43423117e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_reference"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:012f4a727ee4bdbc01a174ef32e8b869cfb9292cfc5c59a26a2f7a8fd96f44a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confined"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**Every policy stamp as a constant its owner publishes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:e4177b91940ac0d6dc54b679b28fdd4c5ffe8b5a84dce11e10bbc134bda29a12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_policy_stamps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The lineage, and the candidate receipt digest that is `None` rather than fatal when unreadable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:f613419c5781bf8facf731132c8e25267208d3ba879e12cd611ff04f2a8176e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:3dedaacc762bb97dc9713c71a4656edbf8fc2f1de8293d54692ce7ab786ba564",
+            "locator": {
+              "kind": "symbol",
+              "name": "_receipt_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface and the three shipped refusal codes it reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:66854ca56c843ddb66dc93aefe63b19b746be78cd6f8995eb4d054e936e92e26",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:6eed6819b3e5e2cf893877f4f1efc21ae1bffad2b8e3d026f79fb7ec37c7cb88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ABSENT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:25f60b9325b8287296661ca79ca967e65b690f62ee11c712605a9b35bea29421",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNRESOLVED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:0be2a69ea97cf9220d4bdfb6ce43d5336745ef599853e48927c2d8d0a4eeaa82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REFUSED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The one hidden stage, the sweep that runs before it, and the pid-based liveness question that makes \"reclaim only from the dead\" possible.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:228ac80374d693e5558d77f89eb8b0697baf68a69a83d3c5c539768d1e126286",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:5ff38710dc76cc6faa419a0ba7bbea909c55f27efdce98af78707753c2835ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sweep_stale_stages"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:4f21c01ac04ec66b7e610c238e8f1573fcde0f5e82b890f6e8acf3c76f355666",
+            "locator": {
+              "kind": "symbol",
+              "name": "_issuer_alive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The two quiet cleanups: one stage removal and one pin release, neither of which may replace the refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:e626e5baa0aeef486732be5e7e995a8e6c39ce36f43dca502d42f1a3ee7e54e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_discard_stage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:bd6797aa4859884cd1a2b81ec5495afbb71c29fb78f5afba8f6cb00f9f37a622",
+            "locator": {
+              "kind": "symbol",
+              "name": "_release_quietly"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:b5948a0915eddc245046ff38a2429a334c20911577cfc9e12cf4b22804438c0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:72dac086fd84d662a20e160464155479f0bf29c05a42f0b76386edf9278a2ef1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_now"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The owners it composes rather than re-implements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:dee356c1578dcd48c6b6ed62de9b417fd51e3dd5b8999ae3b023a021770c4695",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCandidateResolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The retention owner this module hands the code pin and the two snapshots to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:8afd9b901a6077132710d87e23be721a90eaf2e0493874ad7d3c003bf8c43605",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_comparison_source"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:990f7b13756217443e3bba3c3594ed882849d9c131f39ba79a87a25417419e6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_knowledge_sides"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The record the freeze seals, and the `assemble_manifest` that seals and derives the id in one call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:bd44b8de870712d461019f7032a67cf3764866f653e96af426e1a4c084ced1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationManifest"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:9d6bba40fca9ab74eea1d7cfdead432fb7044ebc5b8e0e9ab0746f494aa4dcce",
+            "locator": {
+              "kind": "symbol",
+              "name": "assemble_manifest"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The storage snapshot owner the two knowledge halves are copied through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:476bef8bf10732464341e0a814e0974b157895e5f4b389720787363b94e2fb87",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_closed_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/closed_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The record-collection inputs the caller supplies and the empty value the freeze defaults to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:2cb096ef366b92d0c4900ff4e0052c720803707eb438e5d96d834dbd55d75a34",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordInputs"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:6f91dd5339df6df91b5cdede991b96f3711ea0c9ecb6855d56f64c894750396e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_REVIEW_RECORDS"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The production-composition case: a refused freeze publishes nothing, leaves no hidden stage, releases the pin it created, and the same leaf freezes afterwards.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:b096496c36cdadd363a1036880149ea674655f12b6f187e270f9b1621e832909",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refused_freeze_publishes_nothing_and_reclaims_its_stage_and_pin"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "**The case that separates a stage a dead freeze left from a live one, driven through a real child process.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:c9db910c7a56d6b4b208415d177f9861baee1bda271f803c3fd0002e37f0070b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stage_a_dead_freeze_left_behind_is_reclaimed_and_a_live_one_is_not"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:96eae4e771e9719011719e57b60ca95c67cb6ca047c405d403ec6b5b692d5904",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stage_left_by_a_dead_process"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The end-to-end journey the packet names: freeze, `git gc --prune=now` measured against a control object, remove the worktree, reopen in a child process.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:1250e3851a53dfd9512df6c9a57649f32b3ca388ce0aeacc4753145611e122d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:9a708a51ab899f06c67ac0e2c37d461c9f922ec25379f98a769c25bb04cd0aa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reopen_in_a_new_process"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:be357be1481664a0204c410e102d689769483e2f0f7e770a50d297035acb7430",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_control_object"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The caller-known contributions and the shared default that collects actual owner inputs.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:c07bc1159b08ab695033ff1fd2c4485aeb6aa8b2f341e4fb50e5a0d3dd5a1221",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonEvidenceInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:d23b88bfe5806982c241f16ab82833e81ee4eba54fe4c519aa5684e7530d096c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonFreezeOptions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:e5f8884191c6c2fd8d5296fa8299848fab0b92688b3e62f3ae9d5a4f9245b4ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_FREEZE_OPTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Ordinary and explicit recovery paths share exact resolved-pair composition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:8af63ac3907371a970009d53f7a3c2ce4f21cf1d39a38e92c6a862e3ea12aa64",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_resolved_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Complete authentic owner records and channel provenance are checked before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:e0cefea4d0ea2e9c9963d2c68129a373723f5a5fb0ffe5b354b120c5dfa3c775",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_input_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The production entry this leaf gave a caller, and the caller itself.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_review_comparison"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "253c80156cd307b84c2cc6d28aae2648fa519672",
+            "content": "sha256:ac93c117e054be66dddce69f25bf514d90e22cd0ffea0210bd6455ce4e019288",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/review_comparison_record.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The caller options, including explicit predecessor identity and retained-parent recovery control.**\n\nAnchor: `parent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:d23b88bfe5806982c241f16ab82833e81ee4eba54fe4c519aa5684e7530d096c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonFreezeOptions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:e5f8884191c6c2fd8d5296fa8299848fab0b92688b3e62f3ae9d5a4f9245b4ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_FREEZE_OPTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The reuse branch that is never taken in the ordinary sequence, and the seal omissions that make it so.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:1d1b574cb499a30c7dd0e1b7b91a2bd628901005331e7d80cf65c53e31fa3276",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:55264320a7f56bb3b5bd6ed460e6a5f397fee7ef24bd87ae6794dda269ab0a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNSEALED_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The lineage a named predecessor records: the id *and* that generation's manifest digest, so a successor is readable by identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:f613419c5781bf8facf731132c8e25267208d3ba879e12cd611ff04f2a8176e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:cd86731de23da33a01dfa8bde4c3ced074c1065c1952493400e697143feaa5a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonPublicationLineage"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Ordinary publication requires a live capture; explicit recovery revalidates the named retained parent capture without inventing a live identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:3d8a6b20a9c26c5a66efe99329018e59739e5ba33351353f628c4bfc58589682",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved_capture"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:bfebbf86142444834662aa0477abc0ba4e42a907f9e843f2df380e167e1dffd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_capture"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The discovery the caller reads to name the predecessor, in a total order by index then id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:87757e4339e7c19f1a026e13d00e4aa193e7a0755fb81b60e184edf04ae29031",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_generation_refs"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:99ec4ea3783af488b05781f374e7347d32a146a6f9979325f95ddbc9b04ffa92",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationRef"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "A tree or legacy comparison is unfreezable; a pair with no task root keeps its own refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:6a62e5d64c599da755111dedc5e95e9e1bc74b864bc4748322bcd1b45352b384",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unfreezable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The refusal: recorded by trees, never copied (public since L37).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:722d56cc77374d349304bfa2d9e6ff4dfb8349c08e52326eb859ff9cf686dbc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_comparison_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Everything one freeze binds, as values other owners produced**, including the declared historical absences and the predecessor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:5ea5e35ef66f72205b294fb6669d509db9b3ae095954504a00a02877671731dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "A tree comparison is never frozen into a dataset generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57fef0675dd3dd1aabd83c357b5d7642d52195a7",
+            "content": "sha256:0b9eea56a3e4b6bb7441f324d477760641a1d953d9a41e745f217ea748e71ef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tree_comparison_is_never_frozen_into_a_dataset_generation"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The outcome: a published record, or the refusal that stopped it, with `reused` separating the two ways a freeze succeeds.**\n\nAnchor: `published`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:0c6f8ad06fcbfb1c69a12864fc7c27efd30bdc894f73f4415c582ecef4a8384a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationFreeze"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The staging directory and the pin *this call* created, kept apart because an existing pin belongs to an already-published generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:db71f3189664b62eda00f4c2625a7240380d452bbb84edd10bb2d1abeb8d6095",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Staged"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:16f524ab5857e97ee097ba66e6fdfb8928db0a5913692ff3d2f4c7702cf6a81e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FreezeRefused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The production entry: resolve exactly as the surface does, compose exactly as the surface does, freeze only what was bound.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_review_comparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The operation itself, and its two reclaim paths — its own refusal and a hard failure raised outside its control flow.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:47cd802b066ab3e357344c1b1db8f2d93cdb85c79dae5af672fc803140bba43e",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_comparison_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The refusal for a comparison with no task artifact plane to survive in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
+            "content": "sha256:8f763c5cd57d0b9b7b59b4299d34ee9f8a14d603b35ab16783d582a0b260871e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_no_task_root_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation-library/store.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/conversation-library/store.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T10:08+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data/conversation-library overview](overview.md)
@@ -51,55 +41,25 @@ route-keyed `Response`s. `beforeEach` resets the store. The seven cases prove:
 - It uses an injected `setTimeoutImpl` to flush the scheduled poll deterministically (no wall-clock
   waits), matching the store's injectable `pollScheduler`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The store and orchestration verbs under test. | `conversationLibraryStore`; `beginOpen`; `reconcileOpen` | dashboard/src/data/conversation-library/store.ts:77-84; dashboard/src/data/conversation-library/store.ts:229-263; dashboard/src/data/conversation-library/store.ts:269-291 |
-| The open-operation type the `op` fixture builds, and the branded key the suite passes to every verb. | `OpenConversationOperation`; `LibraryConversationKey` | dashboard/src/data/conversation-library/types.ts:16-16; dashboard/src/data/conversation-library/types.ts:91-110 |
-| The `libraryConversationKey` mint that replaced the inline brand cast. | `libraryConversationKey` | dashboard/src/test/fixtures/conversationWire.ts:63-65 |
+- The store and orchestration verbs under test. [1]
+- The open-operation type the `op` fixture builds, and the branded key the suite passes to every verb. [2]
+- The `libraryConversationKey` mint that replaced the inline brand cast. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-04T17:50+02:00 — 260731-EFA-L6 S18-B14 curator: removed the duplicated store.ts:77-84 source spans from the store/verbs citation row; scoped citation recheck is green. Verification metadata remains pinned until closeout.
-
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 7 citation claims; scoped citation check now passes.
-
-- 2026-08-01T10:08+02:00 — 260731-EFA-L4 curator: No content impact: the whole diff against
-  `abc7cbc` is the `KEY` constant, which moved from `"ar-lck1.k1" as LibraryConversationKey` to
-  cit:([`libraryConversationKey`], dashboard/src/data/conversation-library/store.test.ts:7-7), plus the import swap that goes with it. The check that
-  could have made this consequential: `LibraryConversationKey` is `string & { __brand }`, so a mint
-  that transformed or defaulted the value would change what every one of the seven cases passes to
-  `beginOpen`/`reconcileOpen` and therefore the routes the fake `fetch` matches on — I read the mint
-  (`conversationWire.ts` L62-L65: `return raw as LibraryConversationKey`, one statement, no default)
-  and confirmed the key is the same string, and that no case asserts on the key itself. All seven
-  case names, the `op`/`jsonResponse`/`makeFetch` helpers and the injected `setTimeoutImpl` are
-  unchanged. The added import shifted every case down one line, so I re-anchored all seven Logic
-  citations (L36-L45 → L37-L46 through L129-L134 → L130-L135) against the current 136-line source,
-  and replaced the two bare `L3`/`L4` reference citations — which pointed at import lines that this
-  diff moved — with the symbols each row actually names.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the R4 open-flow suite —
-  focus only on opened/opened, no active-marking field, and the F6a/F6b/F6c robustness proofs
-  (stable id across polls, retained id after transport failure, double-dispatch block). Verification is
-  pinned to the leaf base (`0be0099`) because the new source file is uncommitted; closeout owns its
-  first source stamp.
+No applicable cross-repository source was found.

@@ -1,0 +1,959 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/census_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of its division of labour: the revision codec is reused from the facet group and admissibility belongs to the envelope seam, with no transaction opened here.\n\nAnchor: `RecordRevisionDraft`; `record_revision_row`; `validate_record_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:068a755df5ab9aaa2c21f8b0071067802cc49adda714e8bddf36ca4727cdec3d",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:f010f6f5fc17d6d6d558803aeef51ae036b5b773447b2c033b1689cf6517efa3",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Admissibility asked of the envelope seam and the seam's refusal returned as this group's raised refusal, plus the inherited authority home that raises when the store has no repository row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:77355791910d98622f78478146210f5986e5bad743d172a671fbaa21da83efab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admissible"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:474d9541c41c75f283dfa680fa3e878a4d20eaa79e22013afb400bc24175dc32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_home"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The envelope write and its two statements, carried as one frozen value so a caller cannot transpose the record insert and the revision insert, and the receipt entry built without re-validation because the store computed every field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:569ce0f887e8a7fe92d02dc9fbea392b3a1a4c2775211e5320b65b088e995199",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_envelope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:990fa883bfc04da11e9d929c400791fb7f635eea8c56bb7cb96e56d04e67349d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Foundation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:22e7bb3c4f3972a0745acd40c9cfb3d350d4ece1e84c5fd6a962ecd879201413",
+            "locator": {
+              "kind": "symbol",
+              "name": "_foundation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:abd2ff772a97bfc49e751bd4e691b823cf984d90ae3b168b754f17b452bc8f86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_written_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:5ddcdecbc43ab09efca09b4378549369b5f9c8867c22482f71098036566cfa9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The relation row builders, each inheriting its parent record's own stored provenance rather than accepting a second baseline from a caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:2f487f5df56ef70674277901705685f8bfed192a30c978e4f5e2e8e2f45aa303",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_evidence_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:f35e40293e40e6538ed25c885c4fb397fe8b91b1f1e20d76b3e64c625cb73d31",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_realization_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:f9a9a3440407399ee978abdef2333ea1b8143b318fd80a4b9ee7b412fbb5af1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "disposition_link_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The row digest that is computed rather than stored, with the reason spelled out: a stored digest column would be a second identity authority beside the envelope's sealed revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:bdd4fcdfdd3b1daab6fba9e14403c4b34b28faaae41513f1cac2904413d13ffc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The one declared statement per census table, each ordering by its own key, and the envelope read that reconstructs a row's lifecycle, governing route and record schema from `knowledge_record`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:de43bc4af176d159d26314300d22e8701ce636d86bb5d70d3607eb2bb352a9ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INVENTORY_ROW_SELECT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:9a114fb2ebfe2888eeb871dec6152b23ca9d27ce4247415c26bccefe1f3543c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ENVELOPE_ROUTES_SELECT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:55e8f805e77caf9b4e60b98de93d76d7f606fdfb34adcc124b70e20ae6695304",
+            "locator": {
+              "kind": "symbol",
+              "name": "_envelope_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The sentinel envelope whose empty schema makes the declared-schema check refuse by name, and the check itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:f12ba6ae31a6accf61f18b8ba030e3dee076cb3ce6e9bb9ffa9cbc63a6459d34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNKNOWN_ENVELOPE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:447dc0d55a3b93953c1d7473a5ad051c1ccf210cca8a1e3eb5a68bd955561a5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The three read paths that rebuild the frozen payloads from named row indices and attach the relations they own, together with the one declared statement per census table that each reads through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:63159fa527906b4b20a45bc61d63309097ad730fe699d1d5949e2fa30e08557c",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_inventory_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:72d8b2ab17f216eab4b6f3a23a970a83c184f4a009ed7530a29e04067c5b119e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_claims"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:24219fd5be35486adebed8deffdb4fd6fd736ab16eb9844f32d69e2d272ba984",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_dispositions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:de43bc4af176d159d26314300d22e8701ce636d86bb5d70d3607eb2bb352a9ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INVENTORY_ROW_SELECT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:935739def3857884c213d45ca334712d36cc68e6fa178b4241ec55ba06554c07",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CLAIM_SELECT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:d244e0ab00742dbdab25c02df12a5724744ab1cc5b107374a2ede9f4d2a8b078",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DISPOSITION_SELECT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The three expectation readers, each digests the same value slice the write path put in its receipt and returns nothing when the identity is not stored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:bba252feae00728c53a66ff2b6eef9dbed466a15072d4a21283a9319c7b02357",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_row_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:e8dbb002003e90c23a5671cf6194607c09f9cf8dfcf4bfa8a64afa8c21a304a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:e84c08db96afb4ee7fb712b411154bde6fb349cbf5e832e07c427c7548683993",
+            "locator": {
+              "kind": "symbol",
+              "name": "disposition_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:4e97a71b063458e50e7048851db7d3d64258087f3590f01e6bee9277c9fd3a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INVENTORY_ROW_BY_ID"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Where the group joins the one candidate operation: the census apply step selected by the group's own command-kind set, and the same set checked before any row exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:32caab53464c9a337802494da792abe7b7caa173cbd6fd7936c8321f707d3c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_family_census"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0eb860f8c2e337b8ff793ccfde1aa84850a0906",
+            "content": "sha256:2f79698800f84f24c64c034e770d0b16af24dab151641aeeaf03913ad3cd22e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_census_check"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0eb860f8c2e337b8ff793ccfde1aa84850a0906",
+            "content": "sha256:a75e0720ddf50cbc1792c2e5dec6553fe7b134ef96f81c217e99bfb84a42b813",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CENSUS_DECLARATIONS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0eb860f8c2e337b8ff793ccfde1aa84850a0906",
+            "content": "sha256:91c2aace7fbfb4862b90f8c8ab46ded546000ced8bd6ccc1359ff7b98bae6226",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CENSUS_KINDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:a08af467db1fe3beb7e6b98dda7b9ffd18f29ea4d4121d51aea1730f02217b70",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0eb860f8c2e337b8ff793ccfde1aa84850a0906",
+            "content": "sha256:6cfeaa069b9770655c511c86e08212fe455a47a9c09121b9aa6bd02092c0f937",
+            "locator": {
+              "end": 1358,
+              "kind": "line_range",
+              "start": 1354
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_preconditions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:e9b1972a0df3fec9dd3b5602f7a5e38d696d8668cf89f59cb01010a11f1b5d13",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 603
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The registry that makes the three record tables addressable by an expectation while the three relation tables are deliberately absent, and the union that admits exactly the eight tables a census command writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8caeb178ee73c75dee7d444580e3fbcdf04bc83f",
+            "content": "sha256:e21d4e185e97c87ee3effe75e6295899803b4c177721817f8d3529fb9c883f07",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECORD_READERS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8caeb178ee73c75dee7d444580e3fbcdf04bc83f",
+            "content": "sha256:dab4d4c7f2e17d16f917fd6ec080c713cdf5182f4463b4a79258fd6a953ebf2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_ONLY_WRITABLE_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:34db5fb82c7a3e03dc76bf45e997d3821f93c80c72045ff782475ebd2052e8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_WRITABLE_TABLES"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one operation this group serves, named once so a result and a refusal cannot disagree, and the proposed lifecycle every census record is written under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:06f6f7d68e74e4e8846a9f382d53d952d52686391177be00b0a3d17b42cbb8cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_OPERATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:1ee5be3ab8989ffff25fadeafed2ba1e0d1a3a2a3f4e0b26d26e379075d14de3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_RECORD_LIFECYCLE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The schema tuples the decoders check against, declared beside the DDL they render into so the model and the schema cannot become two different sets of admitted values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:b30bbbd4203a8e26756f9f887236be2e549f1cb6ae661b3433b3c1fea53c5463",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_PARSE_OUTCOMES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:c60dea22d6082766c8db8d005f01e01378e0a59e32ea7df9021e61c40ef78d00",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_DISPOSITION_KINDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:e5e6c0309c605de1c9b86454f54cb9979859008c83ce5e7b3b29f800f6f26ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_ARTIFACT_KINDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:7901655997e3383651465f40b8da989a7ea5bc99fd60f4869c49d1de8a0acabf",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_INVENTORY_STATES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The same tuples imported by the migration parser and inventory, whose import-time guards make each closed set a subset of the vocabulary the schema declares.\n\nAnchor: `CENSUS_PARSE_OUTCOMES`; `CENSUS_ARTIFACT_KINDS`; `CENSUS_INVENTORY_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f6d6f7bdb328d70081079144c6d747176f72ee5",
+            "content": "sha256:0f76b1e6ac7482fe57dc38d749ad77caaf8c098d960654f5aef1158bd9ed5628",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/memory/migration/parse.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f6d6f7bdb328d70081079144c6d747176f72ee5",
+            "content": "sha256:77c21f79933a92f3e151ff78bf3cdad1efc00d3ece90f48ed716b8161079d5b7",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/memory/migration/parse.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:9e0a7b87197bd086c89d143af530b2e4bffc9d2226ed85d87cc8ce1e973303ae",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/memory/migration/inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The generation that registers these tables, bound to the registry's newest entry rather than to a literal number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:b731c2981bbef354699008267b74455fd717ac5a328fdae99846ac3219065cc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIRED_CENSUS_GENERATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:c954da44fc1cb1e734e9bfa69681a7a466150cb94dcadac44e0688afef4fdaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENT_GENERATION"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two envelope statements and the six record-and-relation statements, each declared once with the destination table's own column order so a column added to the generation cannot be written mis-ordered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:53066d08b1451163e3ff6c14e27d1debd900e280b4839e36d078edf20f6cbe02",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_RECORD_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:ebb32250e426b901f74ff6cd455f752bd9bfc9843ad87ff4a0ae0b9783c94583",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_REVISION_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:3fd67905e29ce747b9676f6d03fd61a02ee552003e7c0ff5e16b2fd3233195b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INVENTORY_ROW_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:110d4a2582bc9c90f6cec58e46f4aa068710ae9caf645fe2e61fdcb708e3f499",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLAIM_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:bd1286cccd7ec8f74a2935121fb46a90d1241c8112d798432b71357f2030bdf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "DISPOSITION_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:8423d74bd40611f0023b8bccda2f1d32f5c769a13253820571bd3856273aa6ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLAIM_EVIDENCE_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:b76ae49a57e230328f29083a3e6259aaa8a017b48b9d672836968b0312912c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLAIM_REALIZATION_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:098cda1082538bf9cafe337b46e58472ae06bc16c99a0ee147e623620cf0eca8",
+            "locator": {
+              "kind": "symbol",
+              "name": "DISPOSITION_LINK_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:8d21d3cef749961b2258e66e91e00fdfca2da2f90296ab61cbeed0b0df7b736a",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The column builder for the inventory row, whose provenance is the table's own typed-JSON column and which deliberately omits the authored envelope that `knowledge_record` already holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:5a0d80e7043eb62dce33275d1e1836c831b55d1d267e510b10c87b851f987d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inventory_columns"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:7e4f0fbf6bcaf397f94ba4ebc8ce265f05583267115f5a4946ba130cf1d30e9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_row_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The closed-vocabulary decoder that refuses a stored value outside its admitted set instead of coercing it, and the eleven typed wrappers that each name one column and one vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:5150657686411fae6da1363ce4104e1f22b4768441cf028f9280a00619a63b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_closed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:b8335cdd96ec772a616b9ca3a695eef40025df31a4fd4e1b1f8e03f82b2afd1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:679d611272cfb3afd90679f615c8012171f2d7c78eb597288ba04878a62fa47a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_assessment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The provenance decoder that rebuilds a nested authorship and turns a pydantic failure into a storage error, and the text decoder whose null is a recorded absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:5913f161fc5ad297ea7a57e8608c6872d2df4d616a7faff5113091450b825fbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_provenance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:2b985de7955e00a8b6bd4fffcf1e9225630b5dafe1bb2d3ecaa224e65e36c81c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The generation gate — the dataset's own recorded version compared with the one that registers these tables, refused as `unsupported_schema` with a next action that forbids migration in place — and the entry step it opens: generation, then governing route, then one envelope write plus one record-table write inside the caller's transaction, with every refusal raised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:04657a5ef3ef0b51c0e06bf686bcefea5cf54bff9c672ad15c16c10f6f800095",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_census_generation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:121a390d196fe5bd5a4bd3437a90e58d922deb948a9dc0197be3683fb3e9ce3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_census_command"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:5dede5863f0cea501c85180cbc78b84fd941e023182971b61b99884a113f96ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_inventory_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:e34f8377bf6e8506928339fead0d396fe1365b0ea0177f0bb90bccab7f48827a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_claim"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:d45caa3689e2bbaf30d965b493b78777609028df63f8d24352c4ed2527b4d871",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_disposition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The governing-route rule: an absent route is the explicit ungoverned state, a named route that does not exist is refused through the shipped missing-row refusal the removal paths use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:8178c80124b6e51ed977569db48cabbfff136a81f9877d796bb43e666ce957f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_governing_route"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:9a778abbe6a00ba6534fe5645a990e08680a2cf46f62c217ba7e38363c279384",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_exists"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:02d19a372134a80d14fade47f3f6f458571a070a37faea9a3797700521bb1812",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_expected_row_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "56534d529cad3e4756940b5abed5a81155fa92e1",
+            "content": "sha256:c0e6d06798998e356d5f1d648d4fb35aaea9eb73555718a2e3c50bed83ad64ae",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

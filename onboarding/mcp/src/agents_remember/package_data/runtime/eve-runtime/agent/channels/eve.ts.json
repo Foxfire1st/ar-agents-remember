@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/eve-runtime/agent/channels/eve.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The application's own README states the HTTP-session-protocol boundary and the exact dependency pins.\n\nAnchor: `# Agents Remember eve runtime`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:9fcc8e9804a505727046f4a6af1253bc499494a06219cf157502ee08e62f7a58",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The generator declares the `eve-runtime` target with its per-target ignore set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
+            "content": "sha256:932bb172d3f0bdc333a4d6bf5f8f5cbc97ec6251fdb20a345cedd1bce76ac585",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

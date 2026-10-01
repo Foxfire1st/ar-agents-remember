@@ -1,0 +1,67 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/pytest_phase_reporter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "State includes expected and collected xdist worker identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58d69146b34dae3353bae2df579cf9a874f3c555",
+            "content": "sha256:e1aaade269e5e1dec8c91367001607e833ceb9b56e9ff62c0c011000c8ce372a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PhaseState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Serial and xdist collection close through one helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58d69146b34dae3353bae2df579cf9a874f3c555",
+            "content": "sha256:dd8a35603f31b9ea1d5d581fd86dbe580fea69dcc029a3cbed69dbe5f76f98bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_xdist_setupnodes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Final payload keeps nullable phases and exact outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58d69146b34dae3353bae2df579cf9a874f3c555",
+            "content": "sha256:8bdb5439de0283a6399580f0de722a7085a613e26e08ce0eaa9a12fa8e0442b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58d69146b34dae3353bae2df579cf9a874f3c555",
+            "content": "sha256:c291fda5c059ddc7306bb268f73e96fc8abd152117b63bced69edc29e3592759",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

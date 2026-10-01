@@ -1,15 +1,5 @@
 # mcp/native_helpers/conversation_library/src/claude.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/native_helpers/conversation_library/src/claude.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-07T00:31+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Locked native conversation-library helper overview](../overview.md)
@@ -78,16 +68,16 @@ defined, so unknown or inapplicable fields never cross the helper seam.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the pinned SDK manifest/lock and the local tests
 are the direct contract evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The protocol module owns the serve loop, handshake, paging, and error vocabulary this entry
 consumes; the Python port and host drive it on the production seam; the installed suite proves the
@@ -95,38 +85,12 @@ library gates on the live CONTRACT probe, not a version comparison: `buildHandsh
 ready-by-contract, so this entry's handshake no longer fails closed on a version
 drift — the observed versions are informational and the `list`/`read` operation is the gate).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | "export const PROTOCOL_VERSION" | mcp/native_helpers/conversation_library/src/protocol.ts:13-13 |
-| The Python Claude port calls list/read/resolve-resume-target through the locked helper host; it also adds the per-row agent grouping, the `agentsEnumerated` marker degrade, and the composite `<sessionId>/<agentId>` read split. | "class ClaudeConversationLibrary" | mcp/src/agents_remember/serving/conversation/library/claude.py:88-88 |
+- The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. [1]
+- The Python Claude port calls list/read/resolve-resume-target through the locked helper host; it also adds the per-row agent grouping, the `agentsEnumerated` marker degrade, and the composite `<sessionId>/<agentId>` read split. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The installed `@anthropic-ai/claude-agent-sdk` npm dependency is a third-party library resolved
 only from this repository's package/lock; no neighboring workspace repository participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B19 curator: replaced the superseded `(L…)`
-  prose citations and the `n/a` table rows with exact anchors and fixer-generated ranges; exact
-  non-fixing check returns zero findings.
-
-- 2026-07-26T15:45+02:00 — 260718-CHATS-L7 curator: recorded the sub-agent surface — the
-  `subagents/` on-disk authority with the SDK-replicated project-slug rule (200-char
-  truncation + base36 Java-hash suffix) and realpath candidates, per-row `agents` enumeration
-  folded into the catalog signature, the `agentsEnumerated` response marker (finding 11), and
-  the `agentId`-routed agent transcript read with fail-closed malformed-content posture.
-  Verification metadata stays pinned (uncommitted); closeout re-stamps the candidate commit.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: reference-health correction only (claude.ts
-  source unchanged this leaf). The R4 change to `protocol.ts::buildHandshake` (ready-by-contract, no
-  version comparison — developer ruling 2026-07-21) made this entry's cited "installed 2.1.214 vs
-  locked 2.1.211 fails closed through the handshake" claim FALSE; corrected the Repo-Internal summary
-  and row to the contract-only gate. Verification stamp unchanged (source not modified).
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the locked Claude helper entry
-  sidecar. Verification is blank until closeout commits and stamps the new source.
+No meaningful cross-repo references found.

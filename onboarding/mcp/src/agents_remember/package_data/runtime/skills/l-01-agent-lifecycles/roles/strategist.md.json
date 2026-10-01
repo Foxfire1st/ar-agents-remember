@@ -1,0 +1,211 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical source this bundle copy is sync-propagated from.\n\nAnchor: `# Strategist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf0a2e76f7851a18f089e32ee0fb9c21b45d1d4b",
+            "content": "sha256:6918994a7e8100181e52ac89273ca2a8e3946f85bf3454b28960b44e26f58777",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block.\n\nAnchor: `## Inputs`; `## Process`; `## Outputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf0a2e76f7851a18f089e32ee0fb9c21b45d1d4b",
+            "content": "sha256:6c9a86e79ff06d538293b232913dfea1eecfa0eb0e7eb4c0373c7e3bac548f7a",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf0a2e76f7851a18f089e32ee0fb9c21b45d1d4b",
+            "content": "sha256:07329d1d01437e670051b0ec1cc09be8b66f68278a6ae04d751130cbf1eee3b6",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf0a2e76f7851a18f089e32ee0fb9c21b45d1d4b",
+            "content": "sha256:af557134ea67f4c7ce28e7f9f4342d78e10d8a304afa39897da7f3aee7e4acd8",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reader-not-mutator boundary the role must preserve.\n\nAnchor: \"Reader, not mutator.\"; `dispatch_agent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf0a2e76f7851a18f089e32ee0fb9c21b45d1d4b",
+            "content": "sha256:d627a98fae3589b2ba3293c7b9da8e1cd67ea0890303af70da99c5e4a58a3c70",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The strategist names `roles/manager.md` only to name the seat it hands to, which is its one sanctioned sibling reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbcbef71601c1e5df3015c2de8419ccbbd084f98",
+            "content": "sha256:7884929095c6b0359249c65b25ec6fc2a4dbab3d60e7e873fdd576e97a238e35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SANCTIONED_SIBLING_REFERENCES"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dbcbef71601c1e5df3015c2de8419ccbbd084f98",
+            "content": "sha256:569040dfe8418f94347d814a3e3f8ba6ebbbb22505a18de1c225b29bdbac276a",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The router's role registry still names the strategist row, and the loop doctrine now has its single home in `core/`.\n\nAnchor: `## The Role Registry`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9afc951c4cf2e13caa8651c2aadf74b38fd8eed",
+            "content": "sha256:dca3c7ce311c81e8425294cd59ea80ea42c829dd84e186e1832ba437fd01dc9d",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "322cc875aa139a4897183647270bc4da211a148a",
+            "content": "sha256:a3fc9bc4382a972c4a89eaf2c2d1786f4d1548edd09e39c48044b8576510bae0",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/core/loop.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip.\n\nAnchor: `# Orchestrator`; \"or the record of a developer-sanctioned skip\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d93c9763eead227675e287e00cedaddabf4399c",
+            "content": "sha256:15de24aaf80d466edb3a1477aa1ef1e4e301f6191064e02b34f9db865ea1604c",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d93c9763eead227675e287e00cedaddabf4399c",
+            "content": "sha256:2ddad4cb7ef9355e15ffe8873c25caf5aa26070437094cbace5f8f546ef7c4a4",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The deliverable's template separates mandatory planning from optional persisted graph structure and defines complete graph bootstrap.\n\nAnchor: `# Orchestration-Task Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07998616f4c61d68672ee7cc4f7981d644c382e8",
+            "content": "sha256:4d71ea107c87f6f682877d58286871752547a89a90bf47dff6ae97e49cbcbb4a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/orchestration-task.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The plan-review criteria re-derive effective priority and validate either topology choice.\n\nAnchor: `# Criteria Catalog — Plan Review (the strategist loop)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e55dad68ba351cb50941db3bf47c3f4c03e9e77",
+            "content": "sha256:f6b494a93e0008aaca50571f23a5de30410f19275fa5bf5a6b512c31199e9746",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/plan-review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

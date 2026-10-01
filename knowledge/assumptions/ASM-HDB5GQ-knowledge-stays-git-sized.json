@@ -1,0 +1,17 @@
+{
+  "basis": "At the cutover the converted memory holds 94 invariants and 14 families, all written by curators through Git worktrees.",
+  "id": "ASM-HDB5GQ",
+  "links": [],
+  "origin": {
+    "handoff": {
+      "path": "10-decisions.json"
+    },
+    "handoffEntry": "ASM-SCALE",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "proposition": "Knowledge stays under about 100,000 records, and every writer commits through Git.",
+  "revision": 1,
+  "schema": "ar-assumption/v1",
+  "status": "accepted"
+}

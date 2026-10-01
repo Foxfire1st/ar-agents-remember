@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules/services.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.\n\nAnchor: `services`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:df87546c3df9cd19b2ff8a2d7ced4ea564ea41b4428f6a80be874a3bdf2e42d8",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route-local overview summarizes how this module fits into the benchmark runner split.\n\nAnchor: `services`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:df87546c3df9cd19b2ff8a2d7ced4ea564ea41b4428f6a80be874a3bdf2e42d8",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The stale-registration sweep both entry points open with lives in the registration module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00cfab5e0539ff551e6c8c99cc7bd8e1086e7a4d",
+            "content": "sha256:f8fb2ff598e31d865a2819b93f3d4669429cdec8bc402e323d1021d3847db051",
+            "locator": {
+              "kind": "symbol",
+              "name": "disarm_stale_benchmark_registrations"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00cfab5e0539ff551e6c8c99cc7bd8e1086e7a4d",
+            "content": "sha256:6b65e21b831ee500ca33e2da37bec851d437319cf0404c8d621f035df529d4df",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Benchmark behavior is covered through the existing worktree/tool test slices.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSupportTests"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

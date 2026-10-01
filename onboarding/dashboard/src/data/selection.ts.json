@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/src/data/selection.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The composer a selection raises.\n\nAnchor: \"export const HighlightComposer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa80cd235860d5cf52dd34f48e44fb6882c5c312",
+            "content": "sha256:a1de84cf690853f183c6565764021c1e112b10be13ae54053aff8d04fcee308c",
+            "locator": {
+              "end": 1140,
+              "kind": "line_range",
+              "start": 1140
+            },
+            "path": "dashboard/src/panels/HighlightComposer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The rules + capture tests.\n\nAnchor: \"carries the task leaf key when the selected text belongs to a task reader\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e835c6593c6df203e9a1c68a42e88db70483e17f",
+            "content": "sha256:99ba44c9a15b256f97cf3efc4c6edf2e16e15df883d36dff166621fd63b51726",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "dashboard/src/data/selection.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The task reader marker that supplies task leaf ownership.\n\nAnchor: \"export const DetailPanel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed76f18284cd6e8f8a2ce8b2ad1c28a6eb4b7d46",
+            "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

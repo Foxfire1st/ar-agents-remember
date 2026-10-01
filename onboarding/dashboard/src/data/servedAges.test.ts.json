@@ -1,0 +1,116 @@
+{
+  "path": "dashboard/src/data/servedAges.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Subject under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:f9d6cc0aa50eda1132b256e9e41f6f6c80dbf8196eba107133ffb5269d15585e",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOLATILE_AGE_FIELDS"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:24468b349119fefecaa8b47b3a5e58508bb14141dc1f8f1f3d61710ce7307eca",
+            "locator": {
+              "kind": "symbol",
+              "name": "stableEquals"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:6d89d54b8313784d65db2577fb4579e3dc39c353e49ad702f009f5428c7d7217",
+            "locator": {
+              "kind": "symbol",
+              "name": "servedAgeSeconds"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:9afa2d7d1c51f86460b3d95c66ac2f0f88607122486fa44d9efc3469282ec501",
+            "locator": {
+              "kind": "symbol",
+              "name": "useNowMs"
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:457ebc0376842a6f95a6a28816ef8be74e2021c104bc3a88539cda49edd7beae",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:c5b29fbc14b01bf64ddc47245f71aaf71df9f719bbfb80ac477702beef000af7",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:b78aacbbce700e276c3e2728410372452623c4f9c4f231ee7389b7dcfb9e76a5",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The server set this must mirror.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9d8ebbb21affe07f6d689a89624db06bcb2e3e",
+            "content": "sha256:567ab9b81cb0e6e60e55666a5387dcf304ec220fdf89a2cc25868f28af814f7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOLATILE_AGE_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/serving/delta.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,732 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "External-memory preflight excludes the root cache while preserving other dirtiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:3bcf9ab9a516a9f215d10d4869860cd3b21572636a20dd17b28f62edc5c5f9fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_preflight"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:30f3f224a5b10d2f303bd91515c167590d4cec4f0162f7d533e18507e1b0561b",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 291
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Builds the exact code and optional external-memory terminal branch targets owned by the validated contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:520ae41f8cafc053e3ab5f2cde68a01ed241fd0a37f7869cddc250561cb6a1c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_branch_targets"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:b39030cf7905236572024ef50c0f33786668f21c37dbdd5d318b3e3e24523a95",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `_branch_preflight`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:01030d20b3b8b4ed4322ed9f201149295df39aafe92d6042e11c98c8e5a57da0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_branch_preflight"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:dc528dd5208dd44ca30757cef4aefbbbb9ecc9c1a9875dd94c8d611e3d600667",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 359
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `_local_absent_remote_preflight`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:43474c529216d1fd986c5f7a46e6a3361a53cb780c93ef198fde7df2f4f2292a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_local_absent_remote_preflight"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:4b176a6f2f45243722c33085e02068a7642becf77b7e02e12a01cc9f27e75825",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 377
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `_branch_identity_refusal`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:1bf9b7f7e05de44d4fcbe083bf36e879433985769a54966d7586caf6e1330d5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_branch_identity_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:2a858f568f47ef9e411f2e14b217c80dbc79b1921e467cf03d64e523d00a1f21",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 390
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the function `_branch_refs_refusal`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:1392a126900f2c617b58c40637c970861f944676f1583bfd77991b03e89b7d22",
+            "locator": {
+              "kind": "symbol",
+              "name": "_branch_refs_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:9bca34b71d996a704c3de36a58744d0116e22689f71743bc1846fd5c79f1c2b7",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 401
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `_branch_checkout_refusal`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:e9f0a645a759b052651ea8edb9481ccf77198b35a115b93fea1574d5f9aa2abe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_branch_checkout_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:8dc74de3a0089bf73e6d756d0a143002ce2faaff34b3dcebda1ffcc9ba3a97d5",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 424
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Defines the function `_cleanup_branch_preflight`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:d196cb728abf1ee6bfbab27bd5a4ed96b1314db47e71bd2b86b551bc0766e4c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleanup_branch_preflight"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:b6713ab821d7114cd783b143173da9599cec85228c66f4ebd8fa27d03609b277",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 438
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Defines the function `_abandon_branch_preflight`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:ab51398f72e29707bf601a0c6c80d81b9773715d58b4f041b0d234033872b479",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_branch_preflight"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:744d1f92c06cdfe2c80d2a6ca8c9829eab978dcc84f8795793d137665468659c",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 469
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Defines the function `_branch_presence`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:6b8e934569e348efce204359ca9cab283a689588112afc905a2eab3ab7bce8b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_branch_presence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:857c75ff20ddbbde55bec2351905756870fd9ae21f78cc920b0e5090e9e80942",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 509
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Defines the function `_checked_out_paths`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:4652238c843e0d266dce17288aabc4c87961ce601b4583cf85ab5a26f3c1924a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_checked_out_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:25fd6be8a1bbaee755e695f4d8308561874f74f32a88c49fe65c395b7f55eff0",
+            "locator": {
+              "end": 523,
+              "kind": "line_range",
+              "start": 511
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `BranchTarget`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:c1f416543f3269d28c3e1d654b8caad530f3039bf75f90a3e334d8e5ee44f3c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "BranchTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Defines the function `_remote_branch_preflight`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:a23bce8785809fe04bd6e8e24c93e93c00e56d7424681d603844dd1f4ab16635",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remote_branch_preflight"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:062552286ccef91e8596bb3a43b3eb6679c81d12448251c488cfc2b60f14311a",
+            "locator": {
+              "end": 550,
+              "kind": "line_range",
+              "start": 526
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Defines the function `_provider_blockers`; every provider, container and network blockage it emits goes through `_blocker`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:a99d0f5ca20e08ae439f77495b36b4d1a0e560099c7db226a9c4313479835ee9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_provider_blockers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:9e5beba5bc74eef344a7ef74d621202ca60466ac46d234086990ed2d64c563d9",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 553
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Defines the function `_result_blockers`, which reads each collection through a `TerminalExpectation`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:3f92830ac1752d33a3ae8ca80d42bff2514aed1627a6c49410d7a567d816d13a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_result_blockers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:ae4478bf09a10b9bbc0585e802947e585583326160cdd4be2bf2b962b3db3a22",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 575
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Every entry the expectation says must have been reclaimed and was not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:acf98397d55298efdb27b76b7e3f26b054f6e5c193da5698d55efddd151ded17",
+            "locator": {
+              "kind": "symbol",
+              "name": "_done_blockers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:6976c6705adfbc7b1eb8e4bec5643e8349d1752b5ff5f24571b88a1b4f5ca875",
+            "locator": {
+              "end": 606,
+              "kind": "line_range",
+              "start": 590
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The remote half of a branch entry, reported separately from the local half.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:7558dcdcbeea264cfe08733c818b41885397bd2aa436eb68a8fb3bd491a18ebc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nested_blockers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:38365f4cffd077645cd62b39d3ed39eb1152f1b5e79555425f4eb09764f7fea4",
+            "locator": {
+              "end": 622,
+              "kind": "line_range",
+              "start": 609
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Answers a result item's reason, or why it carries none: `invalid-result` for a malformed item, operator language for a reasonless one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:2c1889fa043a9231ac5191ee55fe3d1dff0bd0623a7913206e5c119138283c88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked_reason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:26120e0688a07a2b9f9be8b8eded52099fdd3094c3125eb412b88fde95e0b71d",
+            "locator": {
+              "end": 637,
+              "kind": "line_range",
+              "start": 625
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason instead of emitting an anonymous blocker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:2bf5ef9510cee9d12cb70d348c38e61d94c553e31d1a993be4560d6a311be771",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocker"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:096dac5c8fd4897381960f35d9a944276c41930944aefd62205277dfaacdf4ea",
+            "locator": {
+              "end": 656,
+              "kind": "line_range",
+              "start": 640
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Defines the function `_blocked`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:ffee64f83575ba6127d379137654d854e432386c494d9926c2dad7144f0dadae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:ede624fa31c49bbb1d7f644919d35b40cafe9584d4b04e2c5bd6f59c17faf102",
+            "locator": {
+              "end": 669,
+              "kind": "line_range",
+              "start": 659
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The focused cases that pin the reasonless result and the refusal of an unnameable reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "content": "sha256:a07b6d6b107867555601d4c5b9d9daa97bdc2e9ab048273ccea0878e7aff1989",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "content": "sha256:15e31756ce997512a9f95951f44bc3b36d17e3c916896483f3e0b88d07ad2ea3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unnameable_blocker_reason_is_refused_at_its_own_source"
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
+            "content": "sha256:c139eee17799cf355d5c1f98b24f4440fa6fabc46944faf8f8c1e4c965b24e69",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "mcp/tests/test_terminal_blocker_reasons.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the class `TerminalPreflight`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:b7da2e194910d346fc9f5801b79c9eeef153499f696af642853af99d3cb04a50",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalPreflight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The series child census fails closed on a non-canonical worktree group; the legacy guard preserves a colliding child `reports` enclosure only for legacy-shape contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:bc0a2d6308933576dcd44b44f8958830b039258b0733211230ff44404aa13c37",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_series_children_retired"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_series_reports_is_child_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `terminal_preflight`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:210c4eb3e032f330318cf73d0a623b26b11d71a736041bcaa820ad190f6d4dbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_preflight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`TerminalExpectation` states what one collection must show: the field that proves reclamation, whether it is a preview, and the benign reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:631492b04817fc1006697cfad8933ba4bf42350f0974f37f8f0ee8b18b76831c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalExpectation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`TerminalResult` bundles one terminal operation's output collections with whether they are a preview or what happened.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:7e524ab2da1ff9f98bcf389858f79a16569bb012367c7f625500eec228c237cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `terminal_result_blockers`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:6fecff16f222bd802f30b28b67b5cbf6cd44c932e3b29945d84bfd9496aafb78",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_result_blockers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `_worktree_preflight`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:3bcf9ab9a516a9f215d10d4869860cd3b21572636a20dd17b28f62edc5c5f9fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_preflight"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d9a1c4385529f8527e97144f8560370a09b48d8",
+            "content": "sha256:30f3f224a5b10d2f303bd91515c167590d4cec4f0162f7d533e18507e1b0561b",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 291
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

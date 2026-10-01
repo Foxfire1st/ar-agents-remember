@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/review/laneReview.task.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tree comparison this review names.\n\nAnchor: \"review:trees:2\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc1226b8aed7ee2e7d65dae819691ade69fe64da",
+            "content": "sha256:4162a288019d6d08d9ae692affa90e798f4e1c73e2c3519baedcab14a6fb26bc",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The landed accounting's lists and counts.\n\nAnchor: \"\\\"attributed_changed_paths\\\": [\"; \"\\\"unattributed_changed_paths\\\": [\"; \"\\\"unknown_attribution_changed_paths\\\": []\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc1226b8aed7ee2e7d65dae819691ade69fe64da",
+            "content": "sha256:b5750271c06ec47e3bd2a31059837031db4ba2197bec9c25074c4c0a292ddee8",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/laneReview.task.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7310b805a789910931fd5a77e9562cb7cb6a6c8a",
+            "content": "sha256:b16bc279d7bba34946644e0b37d33bdc50322b8d69b3dd82f9b9d7a30f8479ec",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/panels/review/laneReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

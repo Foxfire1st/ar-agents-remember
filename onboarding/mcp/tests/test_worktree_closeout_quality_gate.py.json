@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_worktree_closeout_quality_gate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Async candidate refuses later worktree edits",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23839924c936951a2c193f84e470afd0294c006e",
+            "content": "sha256:8a0b0e0b4b874524be7cffd584e6ade0cf4926881f76e279c711d74723bf1f22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_async_candidate_refuses_later_worktree_edits"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Materialized index must equal the accepted candidate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23839924c936951a2c193f84e470afd0294c006e",
+            "content": "sha256:8766a116a1e56e7e970f5b872d67d14ff888a2b3ee1167d911eaf864fbb3d63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_materialized_index_must_equal_the_accepted_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Hook mutation invalidates the independently reviewed candidate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23839924c936951a2c193f84e470afd0294c006e",
+            "content": "sha256:af20399ec057e61919d70b8cbb7202765583134b93cea91e19ddb4f02cd9e62c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_hook_mutation_invalidates_the_independently_reviewed_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

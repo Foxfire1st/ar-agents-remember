@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | db57101a9001ede8c681ff9de4eb0147d8b636bc |
-| lastVerifiedCommitDate | 2026-09-02T16:49:50+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python quality verification overview](overview.md)
@@ -57,34 +47,22 @@ either a complete population with digest or the typed
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; CCR-R19@v2 is the governing packet. The
 R19 packet requires complete repository-owned selection with typed ownership failure; the packet
 path is a task artifact and is recorded as prose here (not a repo-relative citation).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The selector derives and publishes one content-addressed result for full or targeted mode. | `selection_result`; `selection_payload` | mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:63-128; mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:150-164 |
-| Candidate identity is derived from the Git index and verified against the admitted invocation. | `_candidate_identity`; `_verify_admitted_identity` | mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:167-177; mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:396-409 |
-| Input decisions map to typed select/global-invalidate/irrelevant/unresolved reason rows. | `_scope_reasons`; `_unresolved_reason`; `_dashboard_invalidators` | mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:218-254; mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:305-311; mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:328-340 |
-| Output confinement keeps published results inside the candidate or admitted scratch root. | `_confined_output` | mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py:351-377 |
-| The provider serializes the canonical v2 selector result through the shared constructor. | "def build_repository_selection_result(" | mcp/src/agents_remember/certification/repository_profiles/selection_results.py:199-237 |
+- The selector derives and publishes one content-addressed result for full or targeted mode. [1]
+- Candidate identity is derived from the Git index and verified against the admitted invocation. [2]
+- Input decisions map to typed select/global-invalidate/irrelevant/unresolved reason rows. [3]
+- Output confinement keeps published results inside the candidate or admitted scratch root. [4]
+- The provider serializes the canonical v2 selector result through the shared constructor. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None; this is the Agents Remember selector provider instance.
-
-## Update History
-
-- 2026-09-03T13:30+02:00 - 260831-CCR-L27 Gate-5 memory pass: rewrote the
-  Docs References task-artifact row as prose (absolute ar-coordination paths are not
-  repo-relative citations and carry no verifiable provenance).
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
-  db57101a9001ede8c681ff9de4eb0147d8b636bc (CCR-R19@v2/L19): created the card and recorded the
-  L19 rebuild — content-addressed v2 selector result, declared full/empty modes, typed unresolved
-  inputs, dashboard suite invalidators, and admitted identity/candidate verification with no
-  safe-full fallback. Verification is pinned to the owning commit.

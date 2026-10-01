@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/context/core.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Lifecycle CGC modules use these layout and cleanup helpers before running or installing CGC.\n\nAnchor: \"return cgc_runtime_layout(\"; \"cleanup_cgc_runtime_artifacts(\"; \"cleanup_cgc_runtime_artifacts(\"; \"def cgc_runner_image_build(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
+            "content": "sha256:65605b731ac68537c2b0c3b47735127327bd12bcc85c2e2bbd1f574ddd99c81a",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_install_preflight"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
+            "content": "sha256:9e0ae577e1c58525fa11a89a215d88a11239bad58aeffa375c2ce61a28be0ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_start_preflight"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bef1510d5667467b29295b3a4debc89849723ff9",
+            "content": "sha256:84862f0becaa9d206e86cc6e98fb08ba9768f81246a6d954dda9d8396cb113e0",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bef1510d5667467b29295b3a4debc89849723ff9",
+            "content": "sha256:439df43e64b9f3ecd60d883c4b8fb4edf9802eb11c7a2ee16a0739f34a5b4c35",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
+            "content": "sha256:439df43e64b9f3ecd60d883c4b8fb4edf9802eb11c7a2ee16a0739f34a5b4c35",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:0fdb750d3c3463b5c1e25c189dd440c18c8c5d9c01f2b9b23a779cce50f9230b",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

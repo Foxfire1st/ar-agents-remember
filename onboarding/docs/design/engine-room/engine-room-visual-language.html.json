@@ -1,0 +1,112 @@
+{
+  "path": "docs/design/engine-room/engine-room-visual-language.html",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The §11 implementation mapping names the GSAP/Motion stack (DrawSVG, MotionPath, AnimatePresence, layoutId, matchMedia) the dashboard uses to realise these CSS-authored primitives.\n\nAnchor: \"GSAP DrawSVGPlugin\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9b9066a8809973d910f841f05c918c1889f1882",
+            "content": "sha256:1db6678f5e015ce8adea317b6121d810cffa1228a0604ce52c7e18bff59c23f0",
+            "locator": {
+              "end": 913,
+              "kind": "line_range",
+              "start": 913
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The companion prototype / scenario player this spec distils into a primitives library; the spec's CSS classes mirror it 1:1.\n\nAnchor: \"h1>Engine Room · Pod Stage</h1>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dde1ca6202b9884a63b7153deaf781cdc5722cb0",
+            "content": "sha256:92335dd81fb850606233146ab45dfeec621b927e270094a8a676568d3bea5528",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "docs/design/engine-room/podstage.html"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The React engine-room renderer implements these primitives in `EnclosureCanvas.tsx`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureCanvas"
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The React engine-room renderer drives the GSAP timeline from `useEngineTimeline.ts`.\n\nAnchor: \"export function useEngineTimeline\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The React engine-room renderer's static styles live in `engineRoomStyles.ts`.\n\nAnchor: \"Static layout only\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "content": "sha256:2f9d1ceeef6c4b05f29c6c936f984810604c546cfd3d0857aff0a6bef857ab64",
+            "locator": {
+              "end": 592,
+              "kind": "line_range",
+              "start": 592
+            },
+            "path": "dashboard/src/panels/engine-room/layout.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The React engine-room renderer's boot timeline lives in `BootTimeline.tsx`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
+            "content": "sha256:8d6ea6fba04630798b8afd56ea1ff899118d1fdbc873dc96686300c0ad8723a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "BootTimeline"
+            },
+            "path": "dashboard/src/panels/engine-room/BootTimeline.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

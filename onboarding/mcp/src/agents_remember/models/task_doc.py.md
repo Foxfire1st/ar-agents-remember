@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/task_doc.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/models/task_doc.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [models/overview.md](overview.md)
@@ -79,15 +69,15 @@ inside their own functions and return raw operation payloads; without the declar
   the response model must declare every key the handler emits, but it must not be relaxed to
   `extra="allow"` to make a mismatch disappear.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The registry row that maps `task_doc` to this model. | `task_reopen` | mcp/src/agents_remember/models/tools/tool_registry.py:210-210 |
-| The strict `ToolResponse` envelope base. | `ToolResponse` | mcp/src/agents_remember/models/base.py:91-94 |
-| The persisted task-document model this response describes (not returns), whose class body now ends at its integration-branch normaliser. | "class TaskDocument(_Doc):" | mcp/src/agents_remember/tasks/document.py:649-826 |
-| The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:219-277 |
-| The special-op identity merge that pairs with the declared wire fields. | `_sprint_doc_identity` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:425-447 |
+### Repo-Internal References
+
+- The registry row that maps `task_doc` to this model. [1]
+- The strict `ToolResponse` envelope base. [2]
+- The persisted task-document model this response describes (not returns), whose class body now ends at its integration-branch normaliser. [3]
+- The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. [4]
+- The special-op identity merge that pairs with the declared wire fields. [5]
 
 ## 260815-DAG Master Full-Gate Repair
 
@@ -121,56 +111,3 @@ declaration is present only on `read_steps`; every other operation leaves it `No
 `exclude_none` keeps it off the wire. Same class as `removedSubtask` above and `documents`
 below it in this class. Pinned by
 `mcp/tests/test_tool_response_conformance.py::test_task_doc_read_steps_validates_and_returns_the_checklist`.
-
-## Update History
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **reopened `TaskDocument` claim re-read and re-cited.** The response still describes, and never returns, the persisted `TaskDocument`; the model gained MIK-R08's optional `knowledgeMaintenanceScope` field, which changes nothing this card says. The row is re-measured to the class's current extent `649-826` and anchored on its class line, so the committed 2026-09-09 generated-repair bullet for `TaskDocument` no longer describes it. This file's own source is unchanged.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **corrected the Logic section, which said the `task_doc` response model was complete for every operation it serves.** The change set declares the `read_steps` payload the handler always emitted and the model never declared — `steps: list[TaskDocStepRead] | None` plus the `TaskDocStepRead` / `TaskDocSubStepRead` shapes — because under `extra="forbid"` the real payload was rejected *after* a successful read (`steps: Extra inputs are not permitted`), making the operation unusable on every document. This is the third instance of the class the card already records twice (`remove_subtask`, then the sprint-linkage and execution-graph fields), so the new paragraph names it as such rather than as a new topic. Added the op-scoped invariant, including the point that the declaration **narrows** (`extra="allow"` would have "fixed" the symptom by removing the strictness). The append is additive — `TaskDocResponse` moved from `115` to `138` and `TaskReopenResponse` now ends the file at `223-226` — so no other claim in this card was affected. Repairing the two ranges the new declaration did **not** cause: the `_sprint_doc_identity` merge is cited in the body prose below as `396-418` while the function spans `424-446` (the table row already carried `424-446`), and the `task_doc_tool` row cited `191-284` while the entry point spans `218-278`; both were re-read at their current position and re-pointed. Every other existing table row was left untouched for the citation pass.
-- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): `steps` declared (`:134`, `T7`) and every citation into this file re-derived across the `+8` shift. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:210-210. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:203-203. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:196-196. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T22:45:49+00:00: Generated citation repair: `_sprint_doc_identity` repointed to mcp/src/agents_remember/application/task_docs/task_doc_tools.py:424-446. No content impact: mechanical anchor-range projection bound to citation source snapshot 7464238939d75c2065358d53c0f2e066dda635c5705830dfbe24fff068177c35; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:194-194. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T23:44:56+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot fc36bf81fd36002f552f72a34a44e9713fa47fc86ced6632de3215e5011793d3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:190-190. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `TaskDocument` repointed to mcp/src/agents_remember/tasks/document.py:642-816. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `task_reopen` repointed to mcp/src/agents_remember/models/tools/tool_registry.py:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged persisted
-  `TaskDocument` model dependency. Verification remains closeout-owned.
-
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-projection model package relocation; task-doc response and discard evidence shapes are unchanged.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged typed discard-unstarted evidence/audit and projection effects into the response model card. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: `TaskDocResponse` declared the
-  optional special-op wire fields (sprint-linkage + execution-graph authoring results) so they
-  validate against `extra="forbid"` after their writes, pairing with the `_sprint_doc_identity`
-  merge in `application/task_docs/task_doc_tools.py`. Verified at code commit e5cb139f.
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-20T04:52+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the
-  persisted model gained sprint `seats` and typed `masterRef` rows; wording retained, citation
-  regenerated to the current class lines, stamp advanced to code commit 2f494982.
-
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-03T02:58:43+02:00 — W3-B05 curator: resolved 3 Tier-2 table findings with exact source paths; fixer generated all final ranges.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 1 / friction F-N): declared the
-  `remove_subtask` outcome fields `removedSubtask` / `deletedFiles` / `wouldDeleteFiles` on
-  `TaskDocResponse` so the destructive success validates against `extra="forbid"` — no more false
-  tool error after a real removal. Regression test validates the response on both the delete-with-files
-  and `keep_file` paths (and the dry-run preview). Verification metadata pinned until closeout stamps
-  the L18 commit.
-- 2026-07-03T00:30+02:00 — L11 adds `TaskReopenResponse` (task_reopen envelope; WorktreeCommandResponse shape, task-domain home).
-- 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: added `TaskDocMasterSync` and optional
-  `TaskDocResponse.masterSync` so leaf writes can report same-root master-row changes and dry-run master
-  previews. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T07:23+02:00 — Slice 3c reopened (R5, dry-run/preview): added the additive optional `dryRun`/`rendered`/`diff`/`wouldLose` fields (set only on a `dry_run=true` preview; real-op responses unchanged). Verification metadata pinned until closeout stamps the R5 code commit.
-- 2026-06-13T22:34+02:00 — Created for slice 3c commit 1: the `task_doc` STRICT response model. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.

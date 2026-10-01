@@ -1,0 +1,699 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/diff.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The declared field projection: which `ReadItem` field carries each compared record field.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:b8c83667fbf99d839d586adf86b1e9f16400429abc56d98508f0f026f9560527",
+            "locator": {
+              "kind": "symbol",
+              "name": "FIELD_PROJECTION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The six record transitions, recognised from the authored predecessor edge and from nothing else.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:49fb5db2ecc856b2ca8025c24d26974c53e2c21838568743d184dc4ada522b2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_transition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:15fa55c0bdff88a741efa1f8ffeb4c9dd8dd36a212d6ec05897670bb44471947",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SUPERSEDABLE_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:d20aca77de37184a87cc538b2a02fc1542bb8ab3bdc1c69661a411ed91367525",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replaced_revision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:cb6d7717d3962c7d60438952b166527e2c8ff2e12f2b84cdf6d7c7eaaf031c82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_supersedes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:143579bcd0f39d7e924eb3e5910e17ccce21f29598d53e772ca235bbfbcf590f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The coverage decision: the three rules, the direction each was measured in, and the family-half caveat.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:ed43de9ddd7a861acabb46882e0c9cdda4b49945a2948d518942d5bf256a60bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_coverage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The existence question each kind asks of the other snapshot, by its own key.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:eaff7897a2cb3255d79320b2ebcedf5917023aec5ed6d1c58ecf08af356da159",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The projection, the field comparison that runs only when both sides hold the record, and the claim's own two authored fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:9b5a5c49d4b32c9ee2c7dd41750b0a464992e9b6c622bc9601cc23cb995703a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:abc0e452fd60257dcfa6e27c0d39e4af1c619c61ee86d8bb461c875f83f0bbc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_changed_fields"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:46277e387ab445f72ca64fe22bd6f24f2a6c399491dbbd7a027ec99528f01468",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_changed_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The content comparison and the anchor signature the source half is built on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:ad99fbcc0d49ddcbc0487a45e960c3ef5894574c1aa1c2b84d42b417d47f9b41",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:01ba19d9e5ae0529ab19ac0a08b0c431c87b96365debfa8b40b2402b6f5a350f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_signature"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The source comparison, the four booleans, and `missing_side` as the reason they are all false.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:0513400831df767e411e1a719792d8191991c913d489d06d7972bf01f6aee192",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_change"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The reachability labels and the declared stream order's implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:bc46cd19c8562a8854e99363cf351b74bc7210dacac71afe8c08a74c9d8f71d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reached_via"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:f23c5de7475dc2ee6b6722140f5045d1fb0f958312b202689772c812dfca9766",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ordered"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:858d8bc6217403fe7e380694c40fde35a7a8e7113a032c378a6a7218299793aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_first_present"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The existence probes and the predecessor-edge union this module consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:570172fcc27809b39793fa1b60194494ce489acf9006d272466f0182614cd896",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_revision_is_recorded"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:e9c6c87e9404af3a7812c96cf385a5dd258dc627d2496bc69c76cc78c3bcb5a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_revision_is_recorded"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:4e457fbf5b7714b3ca61986ffd4d434c78a556bf3357fd337ca7601c4957b8a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "membership_is_recorded"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:9a35ba51f5644d3ec4a924fbaa0b1e63f57db834b3e42a28ea92f957205f2f13",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_claim_is_recorded"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:928c10d1c3169e0bd282510435796d3a8471aebe1f87804af0693ae1b903d413",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_predecessor_edges"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:b7b76e0d794b5961ee3fb00ba9b0696cb33f71d7759e227273e58aec36c0b083",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:c7fe4aee1f95c678cdb608330bd674c63442a38827ff1edd486c2dcf30bc89db",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:c940f7d85074ce06ac5ae84abb499b3d31d3f425b2337aa20e13b395d29c4df9",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:9262c9a76b60255a7fc62deeffb427a25faaa087d08356c557e5c6102e86ec65",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 478
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:e1cb805ffe5994a9bf6cc674524de57e6f193a75082cbbca23d15d142f086ef5",
+            "locator": {
+              "end": 475,
+              "kind": "line_range",
+              "start": 455
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The node that owns the union-side property the two rules serve, and the removed-realization node whose failing assertion is the load-bearing `assert 'unchanged' == 'removed'`.**\n\nAnchor: \"test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence\"; \"test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:81b010ef2c353f364db385bb89fd4931ca9d5fc9a672dc53c3b7e523d3862a36",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 398
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:701eeeb9e956666efd3487adfd3bb7f6121d905792d4ef98de5d97b1f723a2a2",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The nodes that hold the two change statements apart and measure the record comparison field by field.**\n\nAnchor: \"test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other\"; \"test_the_record_comparison_reports_exactly_the_payload_field_that_changed\"; \"test_a_source_only_change_is_reported_as_a_source_observation_and_no_record_field_changed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:91c18b6ad791054cd4ccf163dcf2706f62451c3c85fea6bd6da183ba515a2385",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:42e9a906fb6a605b2f9c1711801e560ee4c4c3548ada3b1a9e5ef699fe41442a",
+            "locator": {
+              "end": 597,
+              "kind": "line_range",
+              "start": 543
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:a90102345b58e27b755615a2ab215d27b92c1fb90623fefe744224ec36ba55a1",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The five anchor fields an observation is compared on, with `detail` deliberately absent.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:5af58c3a13b25957a3ebc1412d0b2363833f0bf1ea0fdbc64aaa4905fff82e10",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ANCHOR_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The fixture's two snapshots and the transitions between them that this module's states are measured against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:001584ab745e28afcd6f1111f23193c034a107b180674d07b25de79659af14a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffFixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:09483ea98a393005a338e66ad2b22f9316da1a8238a005d5cbfe7facd1667d00",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:4f35fe3fefcfe7467dbe42f57d671de1779be58a683811fbddd4c6dc8a74536e",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declared union stream order and the read-kind mapping, and the advertised-pair identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:421095633c4f611a9c2c2eff2846f0c9c2305517ab92f033e652f3c8c46961a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_KIND_ORDER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:59438aaa1e710ccbf636e8b0c315e5dabd7b6b674973b63f147ebad6ec9119ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_KIND_BY_READ_ITEM"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:883107c641de3457795087ec03c609f89a799458720580ccd28e85f6efeb7e1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ADVERTISED_ID_SEPARATOR"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:394fd5f920ce8df194eecc8c12cbbe0cc82b06acf284d33f645cae7f27d49260",
+            "locator": {
+              "kind": "symbol",
+              "name": "advertised_item_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The per-side view, the per-side lineage and the pair of them as one value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:c13de18b8926b5aae359d7159ab485cc4dc392f92f312ab0d60dcd6b75c3ebd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:9c6c773e2d71f522c2eed476ebe189974d29e322a4b4da1da025b7c8e99a8edc",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideLineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:9d5a2df497aadc1d7b2faa572edbc691fcf4db084d185cb26df204a5493c471f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**One union item: both payloads, its coverage, its transition, its changed fields, its reachability and its source comparison.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:da6df795a3f604de3c39920411fba62711a6809f5e59ede27e05e019e6ce5625",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffItemComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The whole comparison value, including the four per-side selected sets a caller compares the union against.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:50337923073a3a0828aff2c9aa73fea68d5f1b07439bd5ddccebe8df0d8c9252",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The one entry point: the two sides, the two lines, the union, the order and the aggregate counts.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:b31c1bc20fc116b9c05dc30a9c8b0c8abaa7295f2091e7b730c7291a233ac6b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "compare_selected_scopes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The union construction, its stable key, and the claims map the source half reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:cb0f5cb37f062d0ebbb861cb5adf9467e16d54754dd416ad7e78e941532242c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_union_items"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:408e8cef3fcf05595a964443734f174805bef3230b3af4038670d901db3d9b2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_union_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:a5e06c81e2dd23a455b31696814abca679300cda42f2afe0a9a83e69a060f1f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claims_by_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The per-item comparison: coverage, projection, the record half and the source half.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:157760c3936f28ada41f2b980994cf05d3ad774f4f72a25d6a78b9ad10cd600d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare_one"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

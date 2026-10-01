@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/code-quality-report-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The template says it is a memory-repo example to copy or adapt, then asks agents to report actual tool findings rather than only execution.\n\nAnchor: `# Code Quality Report Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4179e6bd0f6006943b140fc0a57b3355fb59f",
+            "content": "sha256:9688d001826adccf1e6191db3b789316f4b66736b36d3905aaef37a8303155c2",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tool-results table is explicit but adaptable; the prose gives a TypeScript stack as a replacement example.\n\nAnchor: `## Tool Results`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4179e6bd0f6006943b140fc0a57b3355fb59f",
+            "content": "sha256:c6e434e045225620b1adebbbc44211c0456aa4f7f2422970fe2852679fdc0dbd",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The findings sections separate touched-file findings from existing or out-of-scope pressure.\n\nAnchor: `## Findings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4179e6bd0f6006943b140fc0a57b3355fb59f",
+            "content": "sha256:d3610bee511bdbd1e547396aea0f88827a1ac07086d78d9f5b5d05f09e83f896",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The local memory-layer template is the project-specific copy used by `agents-remember` agents.\n\nAnchor: `# Code Quality Report Template`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "system/code-quality-report-template.md:1-55"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

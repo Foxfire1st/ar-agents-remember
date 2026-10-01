@@ -1,0 +1,203 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A tree holding the layout marker is converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:1763e7e061c56e369c104bd182cf861a2335a113caa641248d911903f343fe0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_onboarding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`_changed_memory_paths` combines dirty and committed-since-verified paths from that baseline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:8011c3748a618fb96168b0fa1eb61645da86cbc3345d0097d591b0ff2e52b1b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_changed_memory_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Drift checking verifies the same sidecar and entity fingerprint metadata maintained here. (`classify_entity_fingerprint`; `classify_sidecar_onboarding_units`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9adc256a128d606ec110e5ff8c622ec9420d3899",
+            "content": "sha256:5c4f820d19f18aae50a089b0bf9477496df130a1c55231d57689d3d9fadb43c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_entity_fingerprint"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
+            "content": "sha256:8b6b3a7d2b3c16481f3247074408f445f6088cc178e86be22211c87697f569d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_indexes"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "No route-overview stamps on a converted tree.\n\nAnchor: \"a converted overview carries no verification metadata\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:0c1f25a1d1d827c0d1016fe1a94fe79d53fac0f6727fc5e9083af3abbe258d3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_route_overview_metadata_for_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Today's missing-onboarding refusal, shared by both gates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:06fc863fe4decebb91d1de5aa02faf3a57bd90ba97b65f559fbb9a97289b78ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_onboarded_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The memory-quality entry point, which never raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:9e3b7e95c6f5fd60bad9d7fc3c95f7df0d107863837cbc90fee565eea6cda89c",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_trace_gate_for_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The closeout entry point, which refuses naming every missing trace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:d76657a0214df95b0e4830f0d2948f17a02797fd2054fc3bc92ebc250ed56c5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_onboarding_traces_for_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "No card stamps on a converted tree.\n\nAnchor: \"a converted card carries no verification metadata\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:153e06b90c444ab11b1392d55921a00acc233df75e6a9d16b5a820ffe315a2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_onboarding_metadata_for_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The rule both entry points evaluate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92a2054f75215060d68eaf6a281d4dc2c3acd481",
+            "content": "sha256:799ef332857d7fdc13a4df82773bec0a55a23233078d0ad2031c4d6baf1e2a73",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_trace_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An unconverted leaf keeps today's gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1536b7cb7be42d16497b3947d060b74d1dc64018",
+            "content": "sha256:0cce71675d7758c166a2cfc4005af77605035a636843f0c285c4178a8e8b2f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_leaf_keeps_todays_gate_unchanged"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "`contract_memory_verified_commit` chooses accepted memory content or the task base as the review baseline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:f22efa767680140067a9174dd34dbaf1250dd95e48365e4317c849316a18b06e",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_memory_verified_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

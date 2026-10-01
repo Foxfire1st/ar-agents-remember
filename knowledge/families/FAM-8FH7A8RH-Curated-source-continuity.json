@@ -1,0 +1,19 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "Curation can follow an admitted leaf code change while preserving its knowledge identity and first comparison baseline; a moved source or predecessor refuses the affected write rather than replacing those records.",
+  "id": "FAM-8FH7A8RH",
+  "members": [
+    "INV-CDB4MZW4",
+    "INV-HKS46WB3"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "4bff65fd-b407-41e5-a87d-1f6d55fb0192",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "routes": [],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Curated source continuity"
+}

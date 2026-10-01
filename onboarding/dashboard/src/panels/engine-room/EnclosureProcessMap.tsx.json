@@ -1,0 +1,203 @@
+{
+  "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`EnclosureProcessMap` — `motion.div` shell (gated enter + `layout` morph) that delegates the scene.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
+            "content": "sha256:cec9c550d3f4c699993b06f0054dba89098b68ba3c11d3e5658e1c72d4dc5305",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureProcessMap"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "GateNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface GateNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:1659a39f586e65fdece7d624073c4e4dcd732ecc12ed908c63e0bd1a1eb5a0e7",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 289
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The G6 backdrop (`backdrop`/`backdropVideo`/`stageContent`) mounted only when effects are on.\n\nAnchor: \"className={backdrop}\"; \"className={backdropVideo}\"; \"className={stageContent}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
+            "content": "sha256:bd9df09efb805f20cbdb402c14cf6a6386e0e1f04c8addafe58aba901559c11f",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
+            "content": "sha256:2051943b7a7ba14e57b14be125431280f19ceff4e3ae12d45332f8c12900191b",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
+            "content": "sha256:06125fe43759331f006333e9c010f9caa3acc1a6beb029f056f193fa54d12efb",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shell renders no HTML fleeting banner and delegates every live scene branch to `EnclosureCanvas`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
+            "content": "sha256:cec9c550d3f4c699993b06f0054dba89098b68ba3c11d3e5658e1c72d4dc5305",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureProcessMap"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The canvas derives its `fleeting` predicate and renders `FleetingEnclosure` for the born-blocked case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureCanvas"
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The focused regression asserts the canvas-owned `fleeting-enclosure` exposes both stale-base recovery choices.\n\nAnchor: \"prunes the stale base node and raises a fleeting block with BOTH recovery choices\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa22e0bdde3542e21ced22322ef428f95c60aea3",
+            "content": "sha256:08d8e3e098f8e770d4dc28221e0bc00012794c953b8fdda3d9498dc2aa484f18",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 352
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The bird's-eye scene (the render body, given `workspaceEngines`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:527ca3f4e48fb88589b82dd337b16814a56955cb380809fb46de2f1e589724c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspaceEngines"
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The honest-motion gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "EngineProcessNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface EngineProcessNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:adc5e70699b6beb4f6da806e367cc006d742e94259f35a0eafbb048349540fd4",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "ProviderNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface ProviderNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:166d2ecbb0660b6f73e4497602a536512544817207b812a075559071aa49a387",
+            "locator": {
+              "end": 513,
+              "kind": "line_range",
+              "start": 513
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

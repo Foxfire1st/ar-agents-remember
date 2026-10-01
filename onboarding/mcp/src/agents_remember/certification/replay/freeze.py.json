@@ -1,0 +1,187 @@
+{
+  "path": "mcp/src/agents_remember/certification/replay/freeze.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact frozen inputs one replay leg ran under.\n\nAnchor: \"class ReplayFreezeInput\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9b2a684167e7146188ab141517bd754337d5c1",
+            "content": "sha256:094b9e7afd3d0bb5a9bd811097b2e44436dbcbf5eac5457cd6f4f775e7d740ba",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Refuse the pair when any frozen dimension changed between the legs.\n\nAnchor: \"def compare_replay_freezes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9b2a684167e7146188ab141517bd754337d5c1",
+            "content": "sha256:ca1c01ca4bff6de7b4817a26a40ee95e8a8abdbf231742c3000c986f9a72880c",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Certification contracts share the closed immutable model base.\n\nAnchor: \"class FrozenContractModel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:f7a5ea8901e77c6b05bef81b105d77eeb31dc6624c20f98ca48378d817c7305f",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Semantic text is nonblank and unpadded.\n\nAnchor: \"SemanticText = Annotated[str, AfterValidator(_require_semantic_text)]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:7c626e0f94d76e38c400a359bd3d609ebc0b7abe975e56f12c3695c41a0ed310",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Content digests follow the shared certification digest helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/digests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Incomparability findings use the shared typed finding contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:4c6b249bef59d93e837829c6843ca2db493718e4a1f4d865cfc60acd6ff577e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationContractFinding"
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Pair refusal raises the shared certification contract error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f52af19e4c6a8e21279ef804f3b29ef5fdf49670",
+            "content": "sha256:40dffc28ab77ec0131cea0d37f8c28fd5b0ba94936a0ed8641b31051a64d67df",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationContractError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f52af19e4c6a8e21279ef804f3b29ef5fdf49670",
+            "content": "sha256:3a379ff84418e4c16c25c2faa91970d67269f3da67190758076822245508e96e",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The population row vocabulary lives in the replay models module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:81942623545337c4ee1bb664e346f83cc62e1561d5b6186e2dcd09c0112ed66c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PopulationGeneration"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:812ac003baaea3811b5eeb6fcc81349562c3d160e85a2fd6c5e6f8f008e70423",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayStratum"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The public subpackage facade re-exports every freeze owner.\n\nAnchor: `compile_replay_freeze`; `compile_replay_population`; `freeze_digest`; `compare_replay_freezes`; `require_comparable_replay_pair`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:e7cd61ea0cc33773de044740feafb237316f17a34777fc462c6a1b18bca9a1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

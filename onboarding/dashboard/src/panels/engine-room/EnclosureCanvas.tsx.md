@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/EnclosureCanvas.tsx
 
-| Field                  | Value                                                  |
-| ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember                                        |
-| path                   | `dashboard/src/panels/engine-room/EnclosureCanvas.tsx` |
-| doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`             |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                          |
-
 ## Governing Overview
 
 [engine-room overview](overview.md)
@@ -374,41 +364,41 @@ Branch text truncates to the box with the full string in a `<title>` (hover).
 
 Landing refs with `factState: stale` remain visible, carry an explicit state word and age, and use alarm-toned styling. `landingFlowState` permits motion only for observed facts, so stale and missing facts do not animate as current while the enclosure remains inspectable.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `EnclosureCanvas` — the two-world SVG scene (the only export; `node` + `workspaceEngines`). | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
-| `BranchNode` / `EngineGauge` (spine + petals) / `WarpCoupler` (`x`/`testid`) / `Conduit` sub-components. | `BranchNode`; `EngineGauge`; `WarpCoupler`; `Conduit` | dashboard/src/panels/engine-room/conduits.tsx:70-136; dashboard/src/panels/engine-room/engines.tsx:72-128; dashboard/src/panels/engine-room/engines.tsx:136-195; dashboard/src/panels/engine-room/ledger.tsx:210-282 |
-| `CanopyFrame` (HUD housing) + `LaneFlag` (lane annotations) decals. | `CanopyFrame`; `LaneFlag` | dashboard/src/panels/engine-room/badges.tsx:41-58; dashboard/src/panels/engine-room/badges.tsx:284-308 |
-| `RemoteStrip` / `RemoteChip` / `PrBadge` + `remoteTone` — the remote/landing dock (`landing[]` refs; 5i positions them by `REMOTE_POS`, PR as a merge-arrow). | "export function RemoteChip({ refNode }: { refNode: LandingRefNode }) {"; "export function PrBadge({ refNode }: { refNode: LandingRefNode }) {"; "export function RemoteStrip({ refs }: { refs: LandingRefNode[] }) {"; "export function remoteTone(ref: LandingRefNode): RemoteTone {" | dashboard/src/panels/engine-room/geometry.ts:210-214; dashboard/src/panels/engine-room/geometry.ts:221-226; dashboard/src/panels/engine-room/remote.tsx:26-51; dashboard/src/panels/engine-room/remote.tsx:56-78; dashboard/src/panels/engine-room/remote.tsx:84-102 |
-| `LandingFlows` / `LandingFlow` + `landingFlowState` (`FlowState` active/settled/hidden) — the directional push/pull/carry flows wiring the dock to the branch nodes (cyan-active / amber-settled, GSAP draw-on); paths derived from the column centres. | "export function LandingFlows({ refs }: { refs: LandingRefNode[] }) {"; "function LandingFlow({ d"; "function landingFlowState(refs: LandingRefNode[]" | dashboard/src/panels/engine-room/conduits.tsx:192-192; dashboard/src/panels/engine-room/conduits.tsx:139-139; dashboard/src/panels/engine-room/conduits.tsx:184-184 |
-| `COL_MAIN_CX`/`COL_FEAT_CX`/`COL_WT_CX` define the main, feat, and worktree column centres; `ENGINE` declares the fixed engine-pod positions in the geometry constants. | `COL_MAIN_CX`; `COL_FEAT_CX`; `COL_WT_CX`; `ENGINE` | dashboard/src/panels/engine-room/geometry.ts:47-49; dashboard/src/panels/engine-room/geometry.ts:61-65 |
-| The consumer sites apply those centres to remote chips and PR placement, landing-flow paths, official/worktree wires and couplers, and the enclosure border. | "export function RemoteStrip({ refs }: { refs: LandingRefNode[] }) {"; "export function LandingFlows({ refs }: { refs: LandingRefNode[] }) {"; "export function EnclosureCanvas({" | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93; dashboard/src/panels/engine-room/conduits.tsx:192-205; dashboard/src/panels/engine-room/remote.tsx:84-102 |
-| `EDGE_GEOM["integration-mem"]` (memory-lane y=403 worktree→feat mirror of `integration`) + `Conduit`'s widened `isReplay` check + the `retiring` fade. | "export const EDGE_GEOM: Record<string"; "export type ConduitState ="; "function isReplayLane("; "export function Conduit(" | dashboard/src/panels/engine-room/geometry.ts:70-70; dashboard/src/panels/engine-room/geometry.ts:12-12; dashboard/src/panels/engine-room/conduits.tsx:22-22; dashboard/src/panels/engine-room/conduits.tsx:70-70 |
-| `chargeMotion` + the `booting` one-shot opacity pulse (`onAnimationComplete` + timer backstop) — Motion owns scaleY/opacity, the `engineCharge` class owns fill (second-cycle fill fix). | "export const engineCharge = cva({"; "export function chargeMotion(runtime: RuntimeState): { scaleY: number; opacity: number } {"; "const [booting"; "export function EngineGauge({ at" | dashboard/src/panels/engine-room/stage.styles.ts:125-125; dashboard/src/panels/engine-room/geometry.ts:268-268; dashboard/src/panels/engine-room/engines.tsx:151-151; dashboard/src/panels/engine-room/engines.tsx:136-136 |
-| `branchEnter` maps fact state to branch-node opacity/x materialisation. | `branchEnter` | dashboard/src/panels/engine-room/geometry.ts:141-155 |
-| `useEngineTimeline(rootRef, node, fxRootRef)` wires the structural SVG root and sparse sibling `EngineFxOverlay` into one GSAP selector scope: `useEngineTimeline` owns draw-on/retract selection, `buildFx` selects `data-fx` markers, the overlay renders repeating surge/reindex/breath primitives, and Motion owns structural opacity/transform. | "import { EngineFxOverlay } from \"./EngineFxOverlay\";"; "function buildFx(q: gsap.utils.SelectorFunc): void {"; "export function useEngineTimeline(" | dashboard/src/panels/engine-room/sceneLayers.tsx:30-30; dashboard/src/panels/engine-room/useEngineTimeline.ts:83-83; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-168 |
-| `refusedPolarityOf` derives the flash polarity from `edge.state` alone (`failed`→red, `stale`→amber); the full rationale comment records the two current edge builders, their documented-kind distinction, fixture/test coverage, and why the integration arms remain despite no served payload driving them. | "export function refusedPolarityOf("; "Any other kind/state → no flash." | dashboard/src/panels/engine-room/geometry.ts:124-124; dashboard/src/panels/engine-room/geometry.ts:110-110 |
-| `refusedEdges` — the `(edge, polarity)` list that drives the topmost flash; `RefusedConduit` renders it and stamps `data-polarity`/`data-refused-polarity` from the DERIVED polarity (the conduit itself carries neither). | "<RefusedOverlay fleeting={scene.fleeting} refusedEdges={scene.refusedEdges} />"; "export function RefusedConduit(" | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:85-85; dashboard/src/panels/engine-room/badges.tsx:265-281 |
-| `Conduit` carries `data-kind`/`data-state`/`data-strategy`/`data-ghosted` and no polarity attribute. | `Conduit` | dashboard/src/panels/engine-room/conduits.tsx:70-136 |
-| `EngineProcessEdge`'s documented `kind` and `state` vocabularies — `integration` is in one, `refused` in neither, and there is no `refusedPolarity` field. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:934-953 |
-| `_process_edges` emits only worktree-add, cgc-seed, ledger-map, grepai-clone and sync, so no served payload reaches the integration arms. | "def _process_edges(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:543-543 |
-| `_start_process_node` — the other edge builder, checked for the same reason and emitting the same four kinds. | "def _start_process_node(entry: dict[str" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:124-124 |
-| Current `data-fx` marker ownership is split by renderer: `EngineGauge` renders `fault` and the structural reindex charge; `EngineFxOverlay` renders repeating `surge`/`reindex`/`breath`; `Conduit` and `LandingFlow` render `packet` dots; `TerminalStop` renders `stop`. | `EngineFxOverlay`; `EngineGauge`; `Conduit`; `LandingFlow`; `TerminalStop` | dashboard/src/panels/engine-room/EngineFxOverlay.tsx:127-149; dashboard/src/panels/engine-room/badges.tsx:237-258; dashboard/src/panels/engine-room/conduits.tsx:70-136; dashboard/src/panels/engine-room/conduits.tsx:139-164; dashboard/src/panels/engine-room/engines.tsx:136-195 |
-| `AnimatePresence` enter/exit (05k) on the feat-tier source nodes + the landing dock + the closeout train. | "export function EnclosureCanvas({"; "export function CloseoutTrain({ x" | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93; dashboard/src/panels/engine-room/badges.tsx:315-342; dashboard/src/panels/engine-room/EnclosureCanvas.tsx:22-22 |
-| `shouldAnimate` returns false for the effects-off or reduced-motion conditions, and `useShouldAnimate` resynchronizes that gate; `useEngineTimeline` is the GSAP consumer while `EngineGauge`/`Conduit`/`LandingFlow` are Motion consumers that use the boolean to render the end state. | "export function shouldAnimate(): boolean {"; "export function useShouldAnimate(): boolean {"; "export function useEngineTimeline("; "export function EngineGauge({ at"; "export function Conduit({ edge"; "function LandingFlow({ d" | dashboard/src/panels/engine-room/useShouldAnimate.ts:12-12; dashboard/src/panels/engine-room/useShouldAnimate.ts:19-19; dashboard/src/panels/engine-room/useEngineTimeline.ts:168-168; dashboard/src/panels/engine-room/engines.tsx:136-136; dashboard/src/panels/engine-room/conduits.tsx:70-70; dashboard/src/panels/engine-room/conduits.tsx:139-139 |
-| Left official-line engines + `officialWire` conduits + official coupler (from `workspaceEngines`). | `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93 |
-| The `engineState` selector that derives each workspace engine's runtime. | `engineState` | dashboard/src/data/selectors.ts:123-127 |
-| The bird's-eye recipes it renders with (incl. `engineSpine`/`enginePetal`/`officialWire`/`canopyStroke`/`laneFlag`). | `engineSpine`; `enginePetal`; `officialWire`; `canopyStroke`; `laneFlag` | dashboard/src/panels/engine-room/stage.styles.ts:151-167; dashboard/src/panels/engine-room/stage.styles.ts:171-177; dashboard/src/panels/engine-room/stage.styles.ts:194-194; dashboard/src/panels/engine-room/stage.styles.ts:199-207 |
-| Projection types `EngineProcessEdge`/`EngineProcessNode`. | `EngineProcessEdge`; `EngineProcessNode` | dashboard/src/types/projection.ts:223-231; dashboard/src/types/projection.ts:233-274 |
-| CommitRefNode carries source/worktree commit observations and fact state. | "export interface CommitRefNode {" | dashboard/src/types/projection.ts:154-154 |
-| ProviderBootNode carries the booted provider identity, role and runtime state. | "export interface ProviderBootNode {" | dashboard/src/types/projection.ts:506-506 |
-| LandingRefNode carries observed landing state and freshness details. | "export interface LandingRefNode {" | dashboard/src/types/projection.ts:301-301 |
-| ProviderNode carries workspace/worktree provider health and indexing observations. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:513-513 |
-| 05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx="scan">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost). | "flowConduit"; `EnclosureCanvas` | dashboard/src/panels/engine-room/EnclosureCanvas.tsx:42-93; dashboard/src/panels/engine-room/conduits.tsx:70-136; dashboard/src/panels/engine-room/conduits.tsx:8-8 |
-| The `scanRing` recipe is the full cyan stroked, transparent, glow style; `ghostedLane` is the full dim/desaturate style; `Conduit` applies `ghostedLane` to the inner path through `cx(flowConduit(...), ghosted && ghostedLane)`. | "export const scanRing = css({"; "export const ghostedLane = css({ opacity: \"0.32\", filter: \"grayscale(0.45)\" });" | dashboard/src/panels/engine-room/conduits.tsx:70-136; dashboard/src/panels/engine-room/flow.styles.ts:40-46; dashboard/src/panels/engine-room/flow.styles.ts:54-54; dashboard/src/panels/engine-room/conduits.tsx:8-8; dashboard/src/panels/engine-room/conduits.tsx:10-10 |
-| The design prototype supplies the ported canopy bracket geometry, provider wire/flow links, and engine spine/petal decals: its canopy path, `wire`/`flow-g` links, provider geometry, and `.e-spine`/`.e-petal` recipes are present in the prototype. | "class=\"canopy\""; "M58 22 L22 22 L22 58"; "class=\"wire\" id=\"w-m-cgc\""; "class=\"flow-g\" id=\"flow-int-code\""; "id=\"m-cgc\" transform=\"translate(81,102)\""; ".prov .e-spine{stroke:var(--amber);stroke-width:.8;opacity:.28}"; ".prov .e-petal{stroke:var(--amber);stroke-width:1.4;opacity:0;stroke-linecap:round}" | dashboard/public/_proto/podstage.html:76-77; dashboard/public/_proto/podstage.html:186-186; dashboard/public/_proto/podstage.html:189-189; dashboard/public/_proto/podstage.html:208-208; dashboard/public/_proto/podstage.html:240-240; dashboard/public/_proto/podstage.html:270-270 |
+### Repo-Internal References
+
+- `EnclosureCanvas` — the two-world SVG scene (the only export; `node` + `workspaceEngines`). [1]
+- `BranchNode` / `EngineGauge` (spine + petals) / `WarpCoupler` (`x`/`testid`) / `Conduit` sub-components. [2]
+- `CanopyFrame` (HUD housing) + `LaneFlag` (lane annotations) decals. [3]
+- `RemoteStrip` / `RemoteChip` / `PrBadge` + `remoteTone` — the remote/landing dock (`landing[]` refs; 5i positions them by `REMOTE_POS`, PR as a merge-arrow). [4]
+- `LandingFlows` / `LandingFlow` + `landingFlowState` (`FlowState` active/settled/hidden) — the directional push/pull/carry flows wiring the dock to the branch nodes (cyan-active / amber-settled, GSAP draw-on); paths derived from the column centres. [5]
+- `COL_MAIN_CX`/`COL_FEAT_CX`/`COL_WT_CX` define the main, feat, and worktree column centres; `ENGINE` declares the fixed engine-pod positions in the geometry constants. [6]
+- The consumer sites apply those centres to remote chips and PR placement, landing-flow paths, official/worktree wires and couplers, and the enclosure border. [7]
+- `EDGE_GEOM["integration-mem"]` (memory-lane y=403 worktree→feat mirror of `integration`) + `Conduit`'s widened `isReplay` check + the `retiring` fade. [8]
+- `chargeMotion` + the `booting` one-shot opacity pulse (`onAnimationComplete` + timer backstop) — Motion owns scaleY/opacity, the `engineCharge` class owns fill (second-cycle fill fix). [9]
+- `branchEnter` maps fact state to branch-node opacity/x materialisation. [10]
+- `useEngineTimeline(rootRef, node, fxRootRef)` wires the structural SVG root and sparse sibling `EngineFxOverlay` into one GSAP selector scope: `useEngineTimeline` owns draw-on/retract selection, `buildFx` selects `data-fx` markers, the overlay renders repeating surge/reindex/breath primitives, and Motion owns structural opacity/transform. [11]
+- `refusedPolarityOf` derives the flash polarity from `edge.state` alone (`failed`→red, `stale`→amber); the full rationale comment records the two current edge builders, their documented-kind distinction, fixture/test coverage, and why the integration arms remain despite no served payload driving them. [12]
+- `refusedEdges` — the `(edge, polarity)` list that drives the topmost flash; `RefusedConduit` renders it and stamps `data-polarity`/`data-refused-polarity` from the DERIVED polarity (the conduit itself carries neither). [13]
+- `Conduit` carries `data-kind`/`data-state`/`data-strategy`/`data-ghosted` and no polarity attribute. [14]
+- `EngineProcessEdge`'s documented `kind` and `state` vocabularies — `integration` is in one, `refused` in neither, and there is no `refusedPolarity` field. [15]
+- `_process_edges` emits only worktree-add, cgc-seed, ledger-map, grepai-clone and sync, so no served payload reaches the integration arms. [16]
+- `_start_process_node` — the other edge builder, checked for the same reason and emitting the same four kinds. [17]
+- Current `data-fx` marker ownership is split by renderer: `EngineGauge` renders `fault` and the structural reindex charge; `EngineFxOverlay` renders repeating `surge`/`reindex`/`breath`; `Conduit` and `LandingFlow` render `packet` dots; `TerminalStop` renders `stop`. [18]
+- `AnimatePresence` enter/exit (05k) on the feat-tier source nodes + the landing dock + the closeout train. [19]
+- `shouldAnimate` returns false for the effects-off or reduced-motion conditions, and `useShouldAnimate` resynchronizes that gate; `useEngineTimeline` is the GSAP consumer while `EngineGauge`/`Conduit`/`LandingFlow` are Motion consumers that use the boolean to render the end state. [20]
+- Left official-line engines + `officialWire` conduits + official coupler (from `workspaceEngines`). [21]
+- The `engineState` selector that derives each workspace engine's runtime. [22]
+- The bird's-eye recipes it renders with (incl. `engineSpine`/`enginePetal`/`officialWire`/`canopyStroke`/`laneFlag`). [23]
+- Projection types `EngineProcessEdge`/`EngineProcessNode`. [24]
+- CommitRefNode carries source/worktree commit observations and fact state. [25]
+- ProviderBootNode carries the booted provider identity, role and runtime state. [26]
+- LandingRefNode carries observed landing state and freshness details. [27]
+- ProviderNode carries workspace/worktree provider health and indexing observations. [28]
+- 05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx="scan">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost). [29]
+- The `scanRing` recipe is the full cyan stroked, transparent, glow style; `ghostedLane` is the full dim/desaturate style; `Conduit` applies `ghostedLane` to the inner path through `cx(flowConduit(...), ghosted && ghostedLane)`. [30]
+- The design prototype supplies the ported canopy bracket geometry, provider wire/flow links, and engine spine/petal decals: its canopy path, `wire`/`flow-g` links, provider geometry, and `.e-spine`/`.e-petal` recipes are present in the prototype. [31]
 
 ## Series-Contract Notes
 
@@ -426,189 +416,3 @@ When effects are enabled, the repeating surge, reindex, and attention primitives
 sparse sibling `EngineFxOverlay`; their structural counterparts are hidden or lose `data-fx`
 ownership. With effects off, the original structural SVG renders the static end state. Shared
 view-box geometry and style classes preserve the visual composition.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 5
-  claim(s) whose anchor no longer sat in its cited range and normalised 2 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). 2 claim(s) were declined as ambiguous or not the subject
-  and were left for a reading curator. No claim wording changed; every rewritten range was read back
-  at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the responsibility split into engine-room sibling modules. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T13:15:12+02:00 — 260731-EFA-L6 S18-B02 curator: narrowed the column-geometry claim to its definitions, kept consumer sites in their own finding, and regenerated the final range with the scoped fixer.
-
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: resolved both developer-owned semantic
-  findings: column centres govern a scoped set of x geometry rather than every coordinate, and the
-  current source-node label is `Integration line` with no `mainRef` helper. New ranges are explicit
-  normalized by the scoped fixer.
-
-- 2026-08-03T07:46:25+02:00 — 260731-EFA-L6 W3-B12 curator (same-reviewer row-384 ownership correction, developer residuals): resolved 46 of 50 manifest findings (40 table findings across 20 rows and 6 prose findings), preserved the two original substantive Tier-3 rows in the accepted pending-developer form, and retained the four honest residual diagnostics (two `citation_anchor_missing` and two `citation_source_malformed`). Corrected row 384 to the current three-argument `useEngineTimeline` ownership: the hook owns draw-on/retract selection, `buildFx` selects `data-fx` markers, `EngineFxOverlay` renders repeating surge/reindex/breath primitives, and Motion owns structural opacity/transform; rows 385, 391, 393, 400, and 401 remain corrected against current source truth. All 25 surviving numeric table rows retain fixer-generated final source ranges, and developer decisions remain required for rows 380 and 383.
-
-- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two observer/projection.py citations — the reference row and the restatement in the 10:32 entry below. The current model definition, forbidden-extra configuration, kind vocabulary, state vocabulary, and detail field are cited in cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:934-953); every named symbol is inside the generated range. No body claim changed.
-
-- 2026-08-01T10:32+02:00 — 260731-EFA-L4 curator: corrected the `refusedPolarityOf` description, which claimed a third arm — "a `refused` lane → its explicit `edge.refusedPolarity` (default amber)" — that no longer exists and never could have fired. Verified: `EngineProcessEdge` declares no refusedPolarity field and its state vocabulary has no refused in cit:(["class EngineProcessEdge(BaseModel):"], mcp/src/agents_remember/observer/projection.py:934-934); `git log --all -S 'state="refused"'` returns zero commits ever. Also corrected the claim that Conduit carries data-refused-polarity; `RefusedConduit` stamps data-polarity/data-refused-polarity from the derived polarity in cit:(["export function refusedPolarityOf(edge: EngineProcessEdge)", "export function RefusedConduit("], dashboard/src/panels/engine-room/geometry.ts:124-134; dashboard/src/panels/engine-room/badges.tsx:265-281). The kept integration/integration-mem arms have their actual justification: integration is in the model's documented kind vocabulary and the lane is fixture-authored and test-covered, not forward-compatibility. Both reducer edge builders are checked in cit:(["def _process_edges(", "def _start_process_node(entry: dict[str"], mcp/src/agents_remember/observer/reducer_impl/_processes.py:124-124; mcp/src/agents_remember/observer/reducer_impl/_processes.py:543-543; mcp/src/agents_remember/observer/projection.py:794-794); neither emits either kind. The in-code comment now names both real builders; related useEngineTimeline and projection-type citation rows were repaired in their current cards.
-
-- 2026-08-01T10:32+02:00 — 260731-EFA-L4 curator: corrected the `refusedPolarityOf` description, which claimed a third arm — "a `refused` lane → its explicit `edge.refusedPolarity` (default amber)" — that no longer exists and never could have fired. Verified: `EngineProcessEdge` declares no refusedPolarity field and its state vocabulary has no refused in cit:(["class EngineProcessEdge(BaseModel):"], mcp/src/agents_remember/observer/projection.py:934-934); `git log --all -S 'state="refused"'` returns zero commits ever. Also corrected the claim that Conduit carries data-refused-polarity; `RefusedConduit` stamps data-polarity/data-refused-polarity from the derived polarity in cit:(["export function refusedPolarityOf(edge: EngineProcessEdge)", "export function RefusedConduit("], dashboard/src/panels/engine-room/geometry.ts:124-134; dashboard/src/panels/engine-room/badges.tsx:265-281). The kept integration/integration-mem arms have their actual justification: integration is in the model's documented kind vocabulary and the lane is fixture-authored and test-covered, not forward-compatibility. Both reducer edge builders are checked in cit:(["def _process_edges(", "def _start_process_node(entry: dict[str"], mcp/src/agents_remember/observer/reducer_impl/_processes.py:124-124; mcp/src/agents_remember/observer/reducer_impl/_processes.py:543-543; mcp/src/agents_remember/observer/projection.py:794-794); neither emits either kind. The in-code comment now names both real builders; related useEngineTimeline and projection-type citation rows were repaired in their current cards.
-
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: documented the sparse sibling
-  `EngineFxOverlay`: animated surge/reindex/attention primitives move out of the text-heavy
-  structural SVG only while effects are enabled; the effects-off/static canvas remains intact.
-  Shared classes, view box, geometry, and timeline selectors preserve the existing visual
-  choreography. Verification metadata remains pinned until closeout.
-
-- 2026-07-24T13:17:17Z — Curator: documented full-geometry surge bands for transform-owned motion;
-  verification fields remain pre-commit.
-
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: stale landing facts now render with an explicit stale tone/state and age, and stale or missing facts are excluded from landing-flow motion so the UI remains visible but motion-inert while projection stays fresh.
-
-- 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: `runtimeState` now accepts `missing`, allowing expected provider slots to render as explicit missing gauges instead of disappearing or becoming generic unknown. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T08:09+02:00 — Engine Room leaf identity: the SVG root `aria-label` now names the selected leaf when `leafId` is present, keeping the canvas accessibility label aligned with the rail and header. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the official-line branch nodes no longer hardcode `main`; they render the projected integration/source branch, and the coupler prose now names the series contract rather than `contract.md`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T13:45+02:00 — Task 11: added optional `gateNode` prop and `data-gate-kind` on the SVG root,
-  preserving the canvas as a visual scene while exposing projected gate identity for diagnostics/tests.
-  Verification metadata pinned until closeout stamps the task-11 code commit.
-- 2026-06-22T16:00 — slice 05o T14C review fix to `TerminalStop`: the terminal integration-conflict STOP no
-  longer renders its conflict words ON the `integration` lane midpoint (the bright red conduit line bisected the
-  on-lane glyphs → illegible). The reason now renders as a **legible banner** lifted clear into the band ABOVE
-  the lane (`by = cy − 58`) using the SAME combo as the recoverable reason badges — the `reasonBadge` dark pill +
-  red border + light `reasonText` — with the ⛔ no-entry glyph carrying the STOP identity. A compact red on-lane
-  STOP **bar** (`stopBar`, `data-fx='stop'`) sized to the ~66px feat↔worktree gap (`x = cx − 33`, width 66) marks
-  the conflict point WITHOUT colliding with the worktree node (the old 128px pill overran it). That bar carries
-  `data-testid="terminal-stop-bar"` and NOT `data-testid="gate"` (terminal, not a recoverable `Gate`).
-  Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T13:00 — slice 05o wired the six remaining failure modes (T7B provider-plan block · T9B/T9C/T14C
-  refused-conduit flashes · T12B memory moved/sync), keeping the node-anchored + topmost-pointer +
-  `alertProps`-transition doctrine. Added the shared helpers `conduitPathD(edge)` (one source of the lane
-  path string — straight / clone-arc BOW) and `refusedPolarityOf(edge)` (`failed`→red, `stale`→amber,
-  `refused`→`edge.refusedPolarity`, default amber, else null). New components: `RefusedConduit` (the one-shot
-  `data-fx='refuse'` flash over each `refusedEdges` lane — `cgc-seed`/`grepai-clone`/`integration`/
-  `integration-mem` — resting at opacity 0 so it is present-but-absent under effects-off) and `MovedBadge`
-  (the soft cyan ▲ "moved" pill on the memory worktree node). New derivations off the projection:
-  `providerPlanBlocked` / `providerChecking` / `providerScanAt` (T7B — per the dev directive the `ProviderBlock`
-  component draws a VERTICAL alarm bar attached to the LEFT side of the worktree CGC provider engine slot + the
-  reason badge on the enclosure's TOP edge + the `engineDropout` halos over the two UNLIT worktree engines; NOT
-  a node gate on the code worktree), with `fleeting`
-  **tightened to `&& !providerPlanBlocked`** so T7B never renders the big red `FleetingEnclosure`; `scanCenter`
-  (`scanAt ?? providerScanAt`); `memMoved`/`movedAt` (the T12B soft notification) + `memSyncMoved` (the gate,
-  **restricted to a blocked `ledger-map` edge** so the existing `engine-sync-needed` gallery fixture's blocked
-  `sync` edge is untouched); `refusedEdges`; and an extended `blockNode` (T1B / T12B / T3B). The `Conduit`
-  `ghosted` condition was broadened to `(memGated || memSyncMoved) && edge.kind === "ledger-map"`, and
-  `Conduit` now carries `data-refused-polarity`. All the new overlays render in the TOPMOST layer.
-  Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T12:00 — slice 05o T1B (stale-base block) + an indicator anchoring/z-order/transition pass: (1)
-  `BranchNode` gained a `pruned` prop applying `prunedNode` to the stale code-base node, driven by
-  `baseStale = codeSource.behindSource > 0 && isBlocked && fleeting` (the local `cx` node-centre **shadows**
-  Panda's `cx`, so the pruned class is combined by hand). (2) The verify `scanRing` and the block gate +
-  reason badge now anchor **ON the checked REPOSITORY NODE rectangle**, never the connector-lane midpoint —
-  `scanAt` centres the scan on the node (code base `y=281` for T1B, memory base `y=403` for T3B) and a new
-  `NodeBlock` component draws the steady gate bar at the node's top edge with the reason badge above it,
-  driven by `baseChecking`/`memChecking` (verify) and `blockNode` (block). (3) Those node-anchored POINTERS
-  (scan + `NodeBlock`) now render in the **TOPMOST overlay layer** (dead last in the SVG), because SVG paint
-  order equals document order and painting a node-centred pointer before the node let the opaque rect cover
-  it. (4) A fleeting born-blocked enclosure now renders the big red `FleetingEnclosure` box (podstage
-  `.fbox`) over the worktree footprint (BLOCKED title + reason + recovery chips) and **suppresses the
-  dashed-amber enclosure border** — replacing the HTML banner that used to live in `EnclosureProcessMap`. (5)
-  A new `alertProps` helper + `AnimatePresence` give every failure overlay (gate, reason, attention, chips,
-  terminal STOP, scan ring, the block pointer) a Motion fade + subtle scale-pop on ENTER/EXIT, gated by
-  `useShouldAnimate` (instant end-state under effects-off). Verification metadata pinned until closeout stamps
-  the 05o code commit.
-- 2026-06-22T00:29 — slice 05o T3B (memory/ledger block): wired the two new failure primitives off the
-  projection. Added `checking` (a `ledger-map` edge `running` + memory worktree not materialised → the cyan
-  `scanRing` `<circle data-fx="scan">` at the ledger-map lane midpoint `COL_FEAT_CX,403`, gated on `animate`)
-  and `memGated` (memory worktree `factState==="missing"` OR a `ledger-map` edge `blocked`), passing
-  `ghosted={memGated && edge.kind==="ledger-map"}` into `Conduit` — which applies `ghostedLane` to its **inner
-  `<path>`** (via `cx`, imported from `styled-system/css`) + sets `data-ghosted`, so the held memory lane
-  dims+desaturates while the code lane stays solid. The steady `Gate`/`Attention`/`RecoveryChips` already
-  cover the block. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-21T23:29 — layout + fill rework (four-part pass): (1) **second-cycle engine-fill fix** — removed the
-  `booting`/CSS-`powerup` machinery; the charge rect's FILL is now owned 100% by the `engineCharge` CVA class
-  (cyan `indexing` → mint `nominal`), never by Motion or a CSS animation, and the powerup is a one-shot Motion
-  OPACITY pulse `[0.85,1,0.55]` reset via `onAnimationComplete` + a `booting`-keyed timer backstop — fixing the
-  "engines stay green / never go cyan on the second loop" bug (stale CSS `forwards` fill-lock + an
-  `onAnimationEnd` that never fired on a `motion.rect`). (2) **Column re-space** — three centre constants
-  `COL_MAIN_CX=365 / COL_FEAT_CX=595 / COL_WT_CX=835`, with **every** dependent coordinate (POS x, both
-  couplers, `REMOTE_POS`, `PR_CX`, `EDGE_GEOM`, the engine→node wires, the four `LandingFlow` paths, the
-  enclosure border) derived from them — even ~72px middle-column gaps, chips on their column centrelines, clean
-  vertical flow paths. (3) **Closeout train** relocated to a bottom-left breadcrumb (`x=260, y=600`, on the
-  bottom gate-row baseline) with a legible caption. (4) **Memory integration arrow** — new
-  `EDGE_GEOM["integration-mem"]` (y=403, worktree→feat mirror of `integration`) + the `Conduit` `isReplay`
-  check widened to cover it. Same pass also added the `Conduit` `retiring` fade (worktree conduits → 0 at
-  cleanup), the `LandingFlow` `FlowState` active/settled/hidden rework (`landingFlowState`, cyan-active /
-  amber-settled), and the 5o predictive-boot read. Verification metadata pinned until closeout stamps the code
-  commit.
-- 2026-06-21T09:57+02:00 — slice 05n: `Conduit`'s flow packet now carries its conduit path on `data-path`
-  (no inline `style.offsetPath`) and renders only when `animate`, so `useEngineTimeline` rides it via GSAP
-  MotionPath (F12 — restores the dead travelling dots). Dropped `pathLength={100}` from both draw paths
-  (`Conduit` + `LandingFlow`) — DrawSVG owns the dasharray/offset and measures the real stroke length, so the
-  hand-rolled normalization fought it. No render-structure change otherwise; the draw-replay fix + the DrawSVG
-  migration itself live in `useEngineTimeline.ts`. Verification metadata pinned until closeout stamps the 05n commit.
-- 2026-06-21T02:27+02:00 — slice 05k: split the canvas motion onto GSAP timelines + Motion (CSS static, `05f`
-  §8). Wired `useEngineTimeline(rootRef, node)` to the `<svg>` root (one `gsap.context` owning the
-  `[data-draw='on']` draw-ons + the `[data-fx=…]` repeating fx) and **removed the per-component `gsap.fromTo`/
-  `gsap.context`** from `Conduit`/`LandingFlow` + the inline `pktRun` packet animation — components now just
-  mark `data-draw`/`data-fx`. Converted every animated element to `motion.*` (Motion owns opacity/transform/
-  `chargeMotion` scaleY/fill); wrapped the feat-tier source nodes + the landing dock in `AnimatePresence`
-  (replacing the deleted `landingEnter` CSS atom; the closeout train keeps its). All gated by
-  `useShouldAnimate` (no GSAP context/ticker + `initial={false}` under effects-off). Reads the new
-  `engine-landing-pushed` D3 fixture like any landing arc. Verification metadata pinned until closeout stamps
-  the 05k code commit.
-- 2026-06-19T23:58+02:00 — slice 5i: the canvas became a moving build-up/tear-down stage. Added the motion
-  substrate (GSAP `gsap.context` draw-on in `Conduit` + the new `LandingFlow`, keyed on `edge.state`/`show`,
-  gated by `useShouldAnimate`; `AnimatePresence` enter/exit on the closeout train; the `sceneSvg` CSS
-  transition easing frame-to-frame), the three-tier landing (`mainRef` always-`main` official line + the
-  `featCode`/`featMemory` source tier shown during landing via `landingIn`), the build-up materialisation
-  gates (`branchEnter`, `EngineGauge present`, `WarpCoupler visible`, `LaneFlag visible`, enclosure-border
-  opacity, `detaching` drift), the cross-stage provider **clone arcs** (`cgc-seed`/`grepai-clone` official→worktree,
-  transient) + the persistent `worktree-wire`, and reworked the remote/landing dock (`REMOTE_POS` positioned
-  chips, `PrBadge` merge-arrow, `LandingFlows` push/pull/carry/push-mem) — removing `REMOTE_ORDER`/
-  `remoteConnector(Carry)`/`prBadgeSub` and the `lane-landing-source` flag. The CSS-driven parts (`sceneSvg`
-  transition, `landingIn`) are slice **05k**'s correction target. Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-19T15:50+02:00 — slice 5h H4 cleanup teardown + landing-source fix: the `contract · historical` chip now fires on cleanup-pending too (`retiring`), plus a `lane-back-into-main` seam reading the resolved `origin-main` tip (`cleanupTip`). Fixed a related bug — `landingSource` now drops unresolved refs (`resolvedRef`: `factState:"missing"` / `state:"unknown"`) so a completed enclosure with a deleted source branch stops leaking a stale `▸ origin/feat · unknown` flag, and `LaneFlag` truncates its label (full text on hover) so it can't overflow. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T15:00+02:00 — slice 5h H3 readability + connectors (feedback): the chips were unreadably small (≈8px at the 0.76× canvas scale) with an overflowing two-line state — reworked to **branch-node-peer sizing** (a readable single label + one terse `remoteStateWord`, full detail on hover `<title>`) and **wired** the strip with `remoteConnector` (solid amber, code chain) + `remoteConnectorCarry` (dashed, carryover handoff), centring `remoteStripHeader` between the corner labels. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T08:49+02:00 — slice 5h H3: added the **remote/PR strip** beyond the official line — `RemoteStrip` + `RemoteChip` + `PrBadge` (+ the pure `remoteTone`), rendered when `node.landing?.length` in the governed D3→D4 order (origin-feat → PR → origin-main → origin-mem-main). Each ref is a state chip (planned=dashed/muted · live=amber · landed=mint); the PR badge flips open→merged; `origin-mem-main` stays dashed "after carryover" until the PR merges, then settles "carryover done" — the code-first/memory-after order legible in a single frozen frame. Only motion is the gated fill/stroke transition (frozen under data-effects=off). Consumes H1's `landing[]`; no projection change. Verification metadata pinned until closeout stamps the 5h H3 code commit.
-- 2026-06-19T06:39+02:00 — engine-room crash fix: the `landingSource` read is now null-safe (`node.landing?.find`) — a projection produced before the slice-5h `landing` field omits it, which was crashing the scene on entry; it now degrades to no `lane-landing-source` flag. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:48+02:00 — slice 5h Tier 2 (frame extend + position, feedback): the expanded card grows **downward** and extends its frame to the available height (`ledgerScroll({ expanded })`) instead of upward into a short scroll box; the popover anchors **high in the scene** (a fixed invisible SVG `anchorRef`, `placement="bottom"`, `shouldFlip={false}`) so it keeps its old upper position rather than dropping down to the coupler. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:25+02:00 — slice 5h Tier 2: `LedgerTable` rows are now the mirrored 6-column layout (`codeDate │ codeSubject │ codeHash ⇄ memHash │ memSubject │ memDate`); added `compactDate` (committer-ISO string-slice → `MM-DD HH:mm`, no Date/TZ conversion). Messages truncate (full in `title`); a row with no probed metadata keeps its hash with empty message/date cells (honest fallback). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T18:00+02:00 — slice 5h ledger popover (both couplers): each `WarpCoupler` label is now a clickable `ledgerButton` opening a React-Aria popover (`LedgerTable`) over the memory.md lookup table — this enclosure's row highlighted, default-8 → "▾ show N more" → ≤25 scroll → "+N more in memory.md"; worktree coupler from `node.ledgerRows`, official coupler from the new `officialLedger` prop. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T15:50+02:00 — slice 5h cleanup pass (feedback): conduit wiring tightened — `markerEnd` chevron only on a `running` flow (action), the `er-chev` `refX` moved to the chevron's visual tip so the arrowhead lands on the line end (no overshoot into the engine), provider conduits wired box-edge-midpoint → engine inner corner (+ mirrored `officialWire`s), symmetric `enginePetal` flanks, and the `sync` lane made collinear with `worktree-add` (one centred line, not an off-centre double). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T13:01+02:00 — slice 5h coupler fix: `WarpCoupler` re-framed as the memory.md ledger link (not the task contract) — a drawn `warpLinkGlyph` chain-link + a `short(code) ⇄ short(memory)` label per coupler (via the new `short` helper) + bound-only `warp-surge` bands. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T11:55+02:00 — slice 5h H2: added the landing-arc render — a `CloseoutTrain` (T13 derived closeout-order strip on closeout-pending), `Conduit` gained an `integrationStrategy` prop bending the `integration` lane for `replay` (T14b) vs straight `ff-only` (T14), and a `lane-landing-source` flag advancing the official line to its `landing[]` source tip. Verification metadata pinned until closeout stamps the 5h H2 code commit.
-- 2026-06-17T22:45 — engine-room visual-parity pass: restored the prototype's SVG decal layer above the G6
-  backdrop. `EnclosureCanvas` gains a `workspaceEngines` prop and renders the **left official-line engines**
-  (`ENGINE.mcgc`/`mgrep`, runtime via `engineState`) with `officialWire` conduits + an `OFFICIAL_COUPLER_X`
-  coupler; `WarpCoupler` is parameterized by `x`/`label`/`testid`; `EngineGauge` gains the `engineSpine` +
-  six `enginePetal` flank lines; `CanopyFrame` (bevel rim + corner brackets + edge ticks) and `LaneFlag`
-  (`ledger ▸ maps merge` / `contract · historical`) are added. Corrected the prior "official-line engines are
-  out of scope" boundary — they now render here. Verification metadata pinned until closeout stamps the code
-  commit.
-- 2026-06-17T16:15 — slice 5g G5 + engine palette: added the `integration` return-lane geometry + a
-  `TerminalStop` (the t14c terminal conflict STOP — replaces the `Gate` and suppresses recovery chips when
-  `phase === "integration-blocked"`); the reindex gauge now uses the amber `engineReindexOut` outer (was the
-  nominal stroke) so a rerouting engine reads amber, not the new green. Engine `nominal` is now green
-  (active); the t18 abandon dissolve lives in `EnclosureProcessMap`. Verification metadata pinned until
-  closeout stamps the G5 code commit.
-- 2026-06-17T15:00 — slice 5g G4: a `down` provider's `EngineGauge` flickers (the isolated fault — the
-  steady `Gate` is now blocked-edges-only); `reindex` prop renders the amber reindex pulse (`seedFallback`);
-  the reason badge anchors beside a faulting engine when there's no blocked lane; `retryArgs` adds a retry
-  chip; `BranchNode` truncates the branch to the box + a `<title>` with the full string. Verification
-  metadata pinned until closeout stamps the G4 code commit.
-- 2026-06-17T14:00 — slice 5g G3: added the failure overlays — `Gate` (steady red bar at a blocked/failed
-  edge's midpoint), `Attention` (breathing alarm parity), `ReasonBadge` (local cyan-dot reason pill), and
-  `RecoveryChips`; a fleeting pre-contract block defers the scene gate to the `FleetingBanner`. Verification
-  metadata pinned until closeout stamps the G3 code commit.
-- 2026-06-17T13:30 — slice 5g G2: `Conduit` now wraps its `<path>` (`pathLength=100` for the draw-on) in a
-  `<g>` and renders a `flowPacket` `<circle>` (offset-path = the conduit path) on running edges; the
-  center-out charge + conduit colour fidelity ride on the recipes. Verification metadata pinned until
-  closeout stamps the G2 code commit.
-- 2026-06-17T12:47 — Created for slice 5g G1: the Engine Room bird's-eye — the live `EngineProcessNode`
-  rendered as the prototype's two-world canvas (branch nodes, podracer engine gauges, warp coupler, flow
-  conduits), extracted from `EnclosureProcessMap`. Static frame; choreography is G2+. Verification metadata
-  pinned until closeout stamps the G1 code commit.

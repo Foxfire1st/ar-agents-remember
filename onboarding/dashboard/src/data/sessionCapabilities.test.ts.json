@@ -1,0 +1,89 @@
+{
+  "path": "dashboard/src/data/sessionCapabilities.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Client and pure derivations under test.\n\nAnchor: `classifySessionCapabilitiesResponse`, `deriveEffortMenu`, `visibleModelRows`, `cycleEffortTarget`, `effectiveSelection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:1e723d3410698eed1dfd96b91a35fa31d7eece10b98305be3f07ec2f0841c827",
+            "locator": {
+              "kind": "symbol",
+              "name": "classifySessionCapabilitiesResponse"
+            },
+            "path": "dashboard/src/data/sessionCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:2997c2e588d7918905ffc0c0b7269bceb3fe0bcf5e89575938208a1067c16850",
+            "locator": {
+              "kind": "symbol",
+              "name": "deriveEffortMenu"
+            },
+            "path": "dashboard/src/data/sessionCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:9815a81781e4c1e5463ab3d1e5a6c133c0e7b5bf6ad791002bcf257e3088ca0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "visibleModelRows"
+            },
+            "path": "dashboard/src/data/sessionCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:92b5496189ceb3e96e45f6f52ab17702179126c79a01729078702573f5c06421",
+            "locator": {
+              "kind": "symbol",
+              "name": "cycleEffortTarget"
+            },
+            "path": "dashboard/src/data/sessionCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b7e589dedba5f9c575f0da6a7435e6a1b8d6575",
+            "content": "sha256:c547a760c4124e01868a3d2d24e0df34fea4b8ff6e5fc8062c5a51090c814af3",
+            "locator": {
+              "kind": "symbol",
+              "name": "effectiveSelection"
+            },
+            "path": "dashboard/src/data/sessionCapabilities.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared recorded-shape fixture pack.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:335ebc95811aa44bdb77df145c5859cc459b8df4785b92c32b69f1d478e646a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPES_BY_CACHE_STATUS"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

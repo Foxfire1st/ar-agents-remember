@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/provider_setup.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/provider_setup.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -179,85 +169,15 @@ provider stack is POSIX-hosted anyway.
   or per-workspace while the guarded resource is the host — and a waiter that
   exhausts the setup timeout must fail loudly, never queue silently past it.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Worktree start calls provider setup with MCP-derived provider settings. | `run_or_launch_provider_setup`, `_provider_setup_request` | mcp/src/agents_remember/worktrees/modules/start.py:983-1020; mcp/src/agents_remember/worktrees/modules/start.py:1133-1165; mcp/src/agents_remember/worktrees/modules/start.py:1186-1218 |
-| Benchmark preparation calls package-local provider setup instead of a source script. | `run_provider_setup` | mcp/src/agents_remember/providers/provider_setup.py:547-555 |
-| Provider lifecycle calls are captured through package-local command capture. | `run_package_main` | mcp/src/agents_remember/kernel/primitives/command_capture.py:12-39 |
-| CGC seed orchestration and bundle rewriting now live outside the facade. | "def cgc_seed_bundle("; "def rewrite_cgc_bundle_paths(" | mcp/src/agents_remember/providers/cgc/seed.py:211-230; mcp/src/agents_remember/providers/cgc/bundle.py:79-99 |
-| Shared settings and command helpers live in the setup common module. | `run_command`, `LifecycleCommand`, `run_lifecycle` | mcp/src/agents_remember/providers/setup_common.py:109-146; mcp/src/agents_remember/providers/setup_common.py:159-172; mcp/src/agents_remember/providers/setup_common.py:175-218 |
-| Setup payload summaries and failed-phase compaction live in the setup reporting module. | `finalize_setup_payload` | mcp/src/agents_remember/providers/setup_reporting.py:45-66 |
+### Repo-Internal References
+
+- Worktree start calls provider setup with MCP-derived provider settings. [1]
+- Benchmark preparation calls package-local provider setup instead of a source script. [2]
+- Provider lifecycle calls are captured through package-local command capture. [3]
+- CGC seed orchestration and bundle rewriting now live outside the facade. [4]
+- Shared settings and command helpers live in the setup common module. [5]
+- Setup payload summaries and failed-phase compaction live in the setup reporting module. [6]
 
 | The index-state metrics rows the catch-up stage records best-effort. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
-  this claim with its verification provenance because one or more of its anchors resolved more than
-  once at the verification commit, so no historical location was unique. Repaired the citation, not
-  the claim: each anchor that named a construct by bare name now names its exact declaration text,
-  which resolves once in the code tree, and any range that had drifted off its construct was re-read
-  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
-  the claim is about. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
-  range of 1 claim(s) whose anchor no longer sat in its cited range and normalised 0 further
-  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`). No claim wording was changed to fit an anchor; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_provider_setup_request`, `run_or_launch_provider_setup` repointed to mcp/src/agents_remember/worktrees/modules/start.py:1037-1074, mcp/src/agents_remember/worktrees/modules/start.py:1187-1219. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 22 citations (citation_anchor_missing=10, citation_prose_not_in_cit_form=0, citation_source_malformed=12); final scoped citation check clean.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0912`/`PLR0915` armed with no
-  exemptions): extracted `_seed_touch_plan`, `_stale_index_skip` and `_deliver_seed_touches` from
-  `_seed_catchup_results`, and updated the watcher `run_lifecycle` call for the new
-  `LifecycleCommand` signature (also re-exported here). Every emitted payload — `skipped`,
-  `staleIndex`, `touched`, `residuals`, `caughtUp` — is unchanged. Verification metadata pinned
-  until closeout stamps the L2 commit.
-- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review fixes (L2/B1+B2 + round-2 verdict): the catch-up
-  stage now WAITS for the cgc watcher's post-subscribe log marker before touching
-  (`_wait_for_cgc_watcher_ready` + `_cgc_watcher_container_name`,
-  `CGC_WATCHER_READY_TIMEOUT_SECONDS` = 90; the marker set was NARROWED to the single
-  wheel-verified `"monitoring"` line — speculative markers risked false-positives re-opening the
-  race — and the poll is bounded `docker logs --since 15m` so a previous boot's marker cannot
-  satisfy a fresh one; no marker ⇒ no touch + an honest "watcher not ready" `staleIndex`),
-  classifies touchable vs residual (deleted-phantom / rename-source-phantom / missing-on-disk)
-  and claims `caughtUp` only for a clean delta to a ready watcher; the `_record_index_state`
-  rows carry repoId + instance identity; `result_ok_for_prepare`'s benign-skip rule is unchanged
-  and now test-pinned. Verification metadata pinned until closeout stamps the HFX-L2 commit.
-- 2026-07-07T19:30+02:00 — 260707-HFX-L2 (index lifecycle): `cgc_refresh_fallback` default flipped
-  FALSE (a refused seed must never cost a from-zero reindex on its own) with the positive
-  `--cgc-refresh-fallback` opt-in flag; new `--cgc-seed-delta-max-files` plumbed through
-  `normalized`/`request_from_args`/`args_from_request`; new `_seed_catchup_results` stage after
-  `_watcher_results` (touch exactly the diff files ≤ bound — watcher-event catch-up; above it
-  `staleIndex` served + explicit `cgc refresh` only) with best-effort `_record_index_state`
-  metrics rows; `result_ok_for_prepare` forgives benign skips (no `sourceHead`) and forgives
-  refusals only under the explicit fallback. Verification metadata pinned until closeout stamps
-  the HFX-L2 commit.
-- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes B1/B2: the setup lock moved HOST-scoped —
-  new `fleet_setup_lock_path()` at `<tempdir>/agents-remember-provider-setup-<uid>.lock` and
-  `_fleet_setup_lock` now takes the explicit `lock_path` (B1: `runtime_install` prunes
-  `providers/`, so the coordination-root lock died mid-hold; B2: benchmark prepares run against
-  workspace-local coordination roots and must serialize on the same host lock — the guarded
-  resource is the host). Verification metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R2): added the `_fleet_setup_lock`
-  context manager (fcntl flock at `<coordinationRoot>/providers/.setup.lock`, holder pid+timestamp
-  written, waiter deadline = the setup timeout then a loud `RuntimeError`, POSIX-guarded no-op
-  elsewhere) and wrapped `_action_results` in it for non-dry-run `prepare` actions, so provider
-  setup is serialized fleet-wide. Verification metadata pinned until closeout stamps the HFX-L1
-  commit.
-- 2026-06-10T07:30+02:00 — `run_provider_setup(request, progress=None)` accepts a `SetupProgress` sink and rides it on the args namespace (the established state-carrier pattern); `_watcher_results` announces `watchers start`/`watchers status` phases. With no sink everything is a no-op, so CLI behavior is unchanged (GitHub #53).
-- 2026-06-01T20:45+02:00 — Provider setup no longer starts the grepai watcher early; it starts once at `_watcher_results` after the DB clone, cgc seed, and index-root copy, so the watcher never sees files mid-copy (OQ7 copy-first / watch-last ordering).
-- 2026-05-31T12:50+02:00 — Pruned unused compatibility re-exports (`command_display`, `expand_template`, `load_json`, `parse_json_stdout`, `stable_provider_id`, `subprocess_env`, `cgc_seed_source_extra_args`, `cgc_seed_source_settings_path`, `configured_cgc_repo_root`, `git_head`, `write_isolated_cgc_settings`, `path_replacements`, `rewrite_json_value`, `rewrite_string`) and dropped the `coordination_root` argument from `load_settings`/`settings_path` calls; corrected the Logic prose's "preserves the public symbols ... subprocess helper exports" claim to the narrowed export set (1.0.0 review remediation).
-- 2026-05-28T14:21:08+02:00: Updated after duplicate per-provider isolated
-  settings payload keys were removed in favor of canonical
-  `isolatedProviderSettings`.
-- 2026-05-28T12:32+02:00: Updated after provider setup delegated payload finalization and summary persistence to `setup_reporting.py`.
-- 2026-05-25T21:14+02:00: Updated imports after CGC and GrepAI setup modules moved into provider-owned packages.
-- 2026-05-25T19:50+02:00: Refactored into a setup facade backed by `setup_common.py`, `cgc_setup.py`, `cgc_seed.py`, `cgc_bundle.py`, and `grepai_setup.py`; targeted Radon CC/MI no longer reports B-or-worse output for the setup slice.
-- 2026-05-24T05:48+02:00: Updated after CGC seed failure stopped failing provider prepare payloads when the existing refresh fallback is enabled.
-- 2026-05-23T23:46+02:00: Updated after Phase 05 F-05 made provider setup require explicit settings and added the typed `ProviderSetupRequest` service front door.
-- 2026-05-23T13:46+02:00: Added when provider setup moved from the deleted source `scripts/` route into the MCP package.

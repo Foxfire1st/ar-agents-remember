@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -38,42 +28,25 @@ the disclosure LOGIC is fully covered here.
   is title-only. If a future change re-renders the reason inline, these pins fail — that is the guard.
 - Pure render assertions over `@testing-library/react`; no store, network, or timers.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component under test (the R11 cue). | `CapabilityReason` | dashboard/src/panels/session-cockpit/conversation/primitives.tsx:140-158 |
-| The capability type the fixture builds. | `FeatureCapability` | dashboard/src/data/conversation/types.ts:234-244 |
-| The surface that renders the labeled `history`/`live` cues in production. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
+- The component under test (the R11 cue). [1]
+- The capability type the fixture builds. [2]
+- The surface that renders the labeled `history`/`live` cues in production. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: rebound all three case claims to their complete test bodies under the adversarial verdict, then the exact scoped fixer/check passed.
-
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 3 citation items; scoped citation check now passes.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: created the sidecar for the new R11
-  progressive-disclosure test — three cases pinning that `CapabilityReason` shows the one-word state
-  (optionally `<label> <state>`), keeps the full server reason in the `title` only, and renders nothing
-  when supported. Verification pinned to the leaf base (`352d5cd`) because the new test file is
-  uncommitted; closeout owns its first source stamp.
-</content>
-</invoke>
+No applicable cross-repository source was found.

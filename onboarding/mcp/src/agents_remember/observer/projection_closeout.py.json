@@ -1,0 +1,50 @@
+{
+  "path": "mcp/src/agents_remember/observer/projection_closeout.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Projection problem nodes expose bounded repair evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e897ea4216467163d69584fdcb7485da205e72cd",
+            "content": "sha256:2ca9ddcabef97ce9d5d2730ebc991d6c28bb547c94345dabe75b7af6cf9c06d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutProjectionProblemNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Discard proof and audit nodes retain the historical task truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e897ea4216467163d69584fdcb7485da205e72cd",
+            "content": "sha256:d2c25601e8b8d8dea860aa88bb2e1789d7e5a2c4b59973f2ee39f3f662519f37",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiscardUnstartedProofNode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e897ea4216467163d69584fdcb7485da205e72cd",
+            "content": "sha256:e2a4c9aa69b812f0f6c690f32ebdca2862cf2cf0ff529500d62c362ae6feb82d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiscardedSubTaskNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

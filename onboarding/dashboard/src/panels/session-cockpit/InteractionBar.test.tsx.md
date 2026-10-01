@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/InteractionBar.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/InteractionBar.test.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-01T10:40+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -60,31 +50,27 @@ Fetch is stubbed per case (`vi.unstubAllGlobals` in afterEach); stores reset in 
 URL/body assertions are the regression net against any drift toward a terminal/queue write.
 Test-only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component under test (multiplexing fan-out + per-payload bar). | "export const InteractionBar = forwardRef<" | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-54 |
-| The answer path + cross-slot exact-session routing the suite exercises end-to-end. | `submitInteractionAnswer` | dashboard/src/data/interactionAnswer.ts:570-615 |
-| The `L6_INTERACTION_*` fixtures (choices / freetext / unrepresentable). | `L6_INTERACTION_CHOICES`, `L6_INTERACTION_FREETEXT`, `L6_INTERACTION_UNREPRESENTABLE` | dashboard/src/test/fixtures/catalogRows.ts:271-287; dashboard/src/test/fixtures/catalogRows.ts:290-306; dashboard/src/test/fixtures/catalogRows.ts:309-321 |
-| The `L7_MULTIPLEXED_INTERACTIONS` fixture (parent in both slots + the `agent agent-t` approval). | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:477-509 |
-| The copy constants asserted verbatim (honesty hint). | `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERING`, `INTERACTION_ANSWERED`, `INTERACTION_COMPOSER_MODE` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:71-72; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:74-74; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:77-78; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:81-82 |
+- The component under test (multiplexing fan-out + per-payload bar). [1]
+- The answer path + cross-slot exact-session routing the suite exercises end-to-end. [2]
+- The `L6_INTERACTION_*` fixtures (choices / freetext / unrepresentable). [3]
+- The `L7_MULTIPLEXED_INTERACTIONS` fixture (parent in both slots + the `agent agent-t` approval). [4]
+- The copy constants asserted verbatim (honesty hint). [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## Reliable Submit Delta
 
@@ -97,46 +83,3 @@ newer-draft preservation, focus changes, and stale-interaction rejection. It ass
 
 The interaction tests cover separate question option groups, multi-select confirmation, progress and
 recorded-answer copy, all-or-nothing direct submission, and the retained honest fallback forms.
-
-## Update History
-- 2026-08-10T09:45+02:00 — 260731-EFA-L9 curator repair: updated interaction-bar test citations after the answer-path rename.
-
-
-- 2026-08-09T19:36+02:00 — 260713-TES-L5F2: replaced gate fixtures and gate-body assertions with
-  exact-session response stubs; added lifecycle-less choice and composer delivery coverage.
-
-- 2026-08-03T02:45:49+02:00 — W3-B04 curator: curated 5 table citations and 6 prose citations (11 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
-
-- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator: the only source change is `projectGate` swapping an
-  `{ id, gate } as unknown as LifecycleProjection` cast for `lifecycleWithGate(…)`, so the helper
-  bullet now says where the seed comes from and the `L20-L45` range was repaired to `L27-L44`, which is
-  where the function actually opens and closes. I verified the swap is behaviour-neutral before saying
-  so: the seeded lifecycle now inherits `BASE_LIFECYCLE` (`state: "blocked"`, `phase`, `tokens: 1200`,
-  timestamps), but every case in this suite routes through the GATE — `packet.adapterInteraction` and
-  `gate.state === "open"` — and no assertion reads a lifecycle field other than the gate; the gate
-  itself still sets `decisions: []` explicitly, so `BASE_GATE`'s served `["approve","revise"]` never
-  applies, which is the one residual that could have changed an answer body. `git diff -U2` shows no
-  field value inside the literal changed. Suite re-run: all cases pass. Also repaired
-  `Focus + announce` `L270-L296` → `L270-L292` (the describe closes at 292; 293+ is other content) and
-  added one reference row for the builder.
-
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the "multiplexed sub-agent approvals"
-  suite (review R6) over the new `L7_MULTIPLEXED_INTERACTIONS` fixture — two bars (parent
-  unbadged, agent badged `agent agent-t`), the AGENT bar's answer POSTing
-  `{interactionId: "ix_l7_agent", expectedBridgeEpoch: "ep-1", response: "allow"}` through the
-  existing session-direct channel, and the parent bar never inheriting the agent's round-trip
-  state. Refreshed stale suite-citation ranges shifted by earlier leaves. Source uncommitted;
-  closeout re-stamps verification.
-
-- 2026-07-24T13:17:17Z — Curator: recorded structured-interaction rendering and answer-routing
-  regression coverage; verification fields remain pre-commit.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5: added shared answer-mode, exact retry, revision, and sole-
-  channel regression coverage.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R4/R9 (13 cases): kind-awareness incl. the
-  honest unrepresentable fallback, the exact-URL/body gate-channel assertions, the deferred
-  in-flight disable, verbatim-error + same-answer retry, the no-blind-POST missing-gate case,
-  the finding-5 stale-answered clear before a following unrepresentable payload, and the
-  no-steal/return focus + assertive announce cases. Verification metadata pinned to the leaf
-  base until closeout stamps the L6 code commit.

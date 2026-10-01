@@ -1,0 +1,178 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The per-kind relation vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:312e549242e6e49a9af1129ab618ed4a46f1426f3443d134fc883f79cbd4d32d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RELATIONS_BY_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Prefix and relation checks shared by every record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:0cef87532e5cc6541fbb7d1652dc2a36b9f29f4378a98d30a728b27ed80abf2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Revision and status on incident and facet records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:f23f5071242b88c127aeec95593f1b682530e404cf118fb4f4a90e221986c5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FacetRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The family record: members and routes, a route being a repository directory or `.`.\n\nAnchor: `RoutePath`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:f530aab27ac6b86d596a74cab614bfa984216b53b0cefdb336c79589837c6341",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:314d27c3b180d5b12b266a4638c420f9d948c3aaef7ab6dccf9e787e7f06c0b2",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A family route is a repository path or the root route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:eb5df9ab7ae8e5abfc55ac2de0582778f39aeb2501ff8d4ba0cf8aa4d255fe86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_route_is_a_repository_path_or_the_root_route"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
+            "content": "sha256:fc856e8bb98681b86e48c955807b0a040f5f1bdcf626ec61ced69f938bd1eddf",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The invariant record: no second-owner fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:3fe24bc68fbb9b21dd3e18fdae27517045eaa3918df9bd748d8abf627a3125b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Incident recovery is required once not unresolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:11ebdb9d1da9ffc8e779a0461ed16786920c2c1c83a83905b7d42c3a97838ecf",
+            "locator": {
+              "kind": "symbol",
+              "name": "IncidentRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The kind → model table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:640fa49e83eaa5e5443098cd700572883ce9c1733dcdd4e1b430d5230aa0019e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORD_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Facet fields equal today's payload fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5299f8beb3f677859b2cdd393816c5309ff264d",
+            "content": "sha256:cc9d35abf7ab3724a31baab588e60084eabea02be08f386ce4af79a95b7a4555",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_facet_records_carry_todays_payload_fields_plus_links"
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

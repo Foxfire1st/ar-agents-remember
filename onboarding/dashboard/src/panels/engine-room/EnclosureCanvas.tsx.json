@@ -1,0 +1,1205 @@
+{
+  "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`EnclosureCanvas` — the two-world SVG scene (the only export; `node` + `workspaceEngines`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureCanvas"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`branchEnter` maps fact state to branch-node opacity/x materialisation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:96ae224a660d306e828d63dac5c820748e724ec62b58b9affa6c2b6db358a4e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "branchEnter"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`useEngineTimeline(rootRef, node, fxRootRef)` wires the structural SVG root and sparse sibling `EngineFxOverlay` into one GSAP selector scope: `useEngineTimeline` owns draw-on/retract selection, `buildFx` selects `data-fx` markers, the overlay renders repeating surge/reindex/breath primitives, and Motion owns structural opacity/transform.\n\nAnchor: \"import { EngineFxOverlay } from \\\"./EngineFxOverlay\\\";\"; \"function buildFx(q: gsap.utils.SelectorFunc): void {\"; \"export function useEngineTimeline(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "content": "sha256:2491f0e8fe78d3ad5c0685f0f524570eb80490167132d6ea70461cdaacafee3e",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:6779453514cca1cceb7a5413a587e4de5c1d477eeb60ce79ded43b485bbcfe7a",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`refusedPolarityOf` derives the flash polarity from `edge.state` alone (`failed`→red, `stale`→amber); the full rationale comment records the two current edge builders, their documented-kind distinction, fixture/test coverage, and why the integration arms remain despite no served payload driving them.\n\nAnchor: \"export function refusedPolarityOf(\"; \"Any other kind/state → no flash.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:01ba4509f31fe8778b87627f2ca5e73f17a9de32f15699d24d87f9997bcbdc15",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:9de7b5259c1101ca01ed494e61c6e5222637b655b061c4c38878ed904145a16b",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`refusedEdges` — the `(edge, polarity)` list that drives the topmost flash; `RefusedConduit` renders it and stamps `data-polarity`/`data-refused-polarity` from the DERIVED polarity (the conduit itself carries neither).\n\nAnchor: \"<RefusedOverlay fleeting={scene.fleeting} refusedEdges={scene.refusedEdges} />\"; \"export function RefusedConduit(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:c02df1bbf869b332eef2a6b354c56982ebf7ea1447ba1777b798d1afbed742d4",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:ca5ddd6c1557eb0f78551f357738316c1aaefa0b13697d913ac593b6036ebe85",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "dashboard/src/panels/engine-room/badges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`Conduit` carries `data-kind`/`data-state`/`data-strategy`/`data-ghosted` and no polarity attribute.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "locator": {
+              "kind": "symbol",
+              "name": "Conduit"
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "`EngineProcessEdge`'s documented `kind` and `state` vocabularies — `integration` is in one, `refused` in neither, and there is no `refusedPolarity` field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d04955cbb250322e2ad17081008246b0664ce85",
+            "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "`_process_edges` emits only worktree-add, cgc-seed, ledger-map, grepai-clone and sync, so no served payload reaches the integration arms.\n\nAnchor: \"def _process_edges(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f5202770805a4016e906e848217bb239e3c013",
+            "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 543
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "`_start_process_node` — the other edge builder, checked for the same reason and emitting the same four kinds.\n\nAnchor: \"def _start_process_node(entry: dict[str\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f5202770805a4016e906e848217bb239e3c013",
+            "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Current `data-fx` marker ownership is split by renderer: `EngineGauge` renders `fault` and the structural reindex charge; `EngineFxOverlay` renders repeating `surge`/`reindex`/`breath`; `Conduit` and `LandingFlow` render `packet` dots; `TerminalStop` renders `stop`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e83bb517f26e2a722b4e82f19d3f979305039bc",
+            "content": "sha256:e2058382d28335ebb45fc03e08d8897f32a4e49d2d0148ecd1912aead2a843c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineFxOverlay"
+            },
+            "path": "dashboard/src/panels/engine-room/EngineFxOverlay.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "content": "sha256:a71608de6369d15bed0fe0b61ee92d3a631a0892e7f24cc5da99294a0cd36efd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineGauge"
+            },
+            "path": "dashboard/src/panels/engine-room/engines.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "locator": {
+              "kind": "symbol",
+              "name": "Conduit"
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:bc7761246e433e81634fb60150c551f85df6ad4cfec1841068f69e4ff21eb71f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingFlow"
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:6d5c4b4f5e5abea5b273bf4c033289512dcf8825e2849a0db32c18ca2c4a65f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalStop"
+            },
+            "path": "dashboard/src/panels/engine-room/badges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`AnimatePresence` enter/exit (05k) on the feat-tier source nodes + the landing dock + the closeout train.\n\nAnchor: \"export function EnclosureCanvas({\"; \"export function CloseoutTrain({ x\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:3fb1d931931185d1a3d50004bcfe00cadeac3a2b8e7f47636c52f84c75459f1b",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "dashboard/src/panels/engine-room/badges.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:cff6b6de4ab221332cb1d50852c6e5d0a188b992c1acc75ac119155c88344862",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`BranchNode` / `EngineGauge` (spine + petals) / `WarpCoupler` (`x`/`testid`) / `Conduit` sub-components.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "content": "sha256:e194f41623f1cc3a215c0f2f16e86ea0647034b09cf9fa2df064108f892beb8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "BranchNode"
+            },
+            "path": "dashboard/src/panels/engine-room/engines.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "content": "sha256:a71608de6369d15bed0fe0b61ee92d3a631a0892e7f24cc5da99294a0cd36efd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineGauge"
+            },
+            "path": "dashboard/src/panels/engine-room/engines.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8c77203e752ccbf10a6c27855eed358fd6b1448",
+            "content": "sha256:b00fadf504908f1fa37a2bdf3a4d1cf3b2629ad41601c1b32062ed193df228c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "WarpCoupler"
+            },
+            "path": "dashboard/src/panels/engine-room/ledger.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "locator": {
+              "kind": "symbol",
+              "name": "Conduit"
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "`shouldAnimate` returns false for the effects-off or reduced-motion conditions, and `useShouldAnimate` resynchronizes that gate; `useEngineTimeline` is the GSAP consumer while `EngineGauge`/`Conduit`/`LandingFlow` are Motion consumers that use the boolean to render the end state.\n\nAnchor: \"export function shouldAnimate(): boolean {\"; \"export function useShouldAnimate(): boolean {\"; \"export function useEngineTimeline(\"; \"export function EngineGauge({ at\"; \"export function Conduit({ edge\"; \"function LandingFlow({ d\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:38ecfacbbf4480c2464af86a927ffa02ba664a1c1a74cfdfce5e839bd10ff49d",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:73f92e9ae789a221d43db6613042a96de87ec471bb2258bbd3974b498713179b",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "content": "sha256:bbe26c43c28b2267e4f4ff3baf8be86cc7ff48dc720da5cd2f1c893a7591b4e2",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/panels/engine-room/engines.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:9ea55aa4d0e2f00594c7716f5205a8f4a5e7c52b56f90340af61c21c32a6e163",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:40532a889f3c50d7bbec6bdd8852898e432f697ee458d73b3a154b343aaecb88",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Left official-line engines + `officialWire` conduits + official coupler (from `workspaceEngines`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureCanvas"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The `engineState` selector that derives each workspace engine's runtime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:7c8d459bab45b55e012757985b0777a92df02785f6c09e2ae35eb93eb4a80bbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "engineState"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The bird's-eye recipes it renders with (incl. `engineSpine`/`enginePetal`/`officialWire`/`canopyStroke`/`laneFlag`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "content": "sha256:273f84a0b06634aacccc3558a19f7083c0cb2abaf0775661f21bbbe5cb242861",
+            "locator": {
+              "kind": "symbol",
+              "name": "engineSpine"
+            },
+            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "content": "sha256:80488ae02a206c5982dbcf46cd3e1423af64d0407b76371f89f3402c275d2692",
+            "locator": {
+              "kind": "symbol",
+              "name": "enginePetal"
+            },
+            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "content": "sha256:41d3723c7adff40f3942041f556aeb140e9fb2b01375cedb4cccdcf99d323515",
+            "locator": {
+              "kind": "symbol",
+              "name": "officialWire"
+            },
+            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "content": "sha256:f7e2ae04a80b2f3f5489cae89d7cb9f7804463b1f2c5ede9c005c48cb584141e",
+            "locator": {
+              "kind": "symbol",
+              "name": "canopyStroke"
+            },
+            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "content": "sha256:bfa051c06960387994b20a585a56f610a8cc03318edd5f1ea6eac285a7051132",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneFlag"
+            },
+            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Projection types `EngineProcessEdge`/`EngineProcessNode`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "CommitRefNode carries source/worktree commit observations and fact state.\n\nAnchor: \"export interface CommitRefNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:e70cf099277a6914738e9d67848df6e2d2809e37bccc432d720290da6b6c288d",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "ProviderBootNode carries the booted provider identity, role and runtime state.\n\nAnchor: \"export interface ProviderBootNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:93989e8e181b5574d50acf8854db460c4667a801ee95bd797056c7225d268385",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 506
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "LandingRefNode carries observed landing state and freshness details.\n\nAnchor: \"export interface LandingRefNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:685b1a601f96c39ebd49592dbede3fd6603545dd639984459aa2e4be3d05a873",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 301
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "ProviderNode carries workspace/worktree provider health and indexing observations.\n\nAnchor: \"export interface ProviderNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:166d2ecbb0660b6f73e4497602a536512544817207b812a075559071aa49a387",
+            "locator": {
+              "end": 513,
+              "kind": "line_range",
+              "start": 513
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx=\"scan\">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost).\n\nAnchor: \"flowConduit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureCanvas"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:af04d8265cc40bfccbed32971b55fe866421fc464998921a604bab56ab592465",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`CanopyFrame` (HUD housing) + `LaneFlag` (lane annotations) decals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:8d22ebe4a1b59525e0d161afdf756a21523b88f314f1a2f20ea3b86479674407",
+            "locator": {
+              "kind": "symbol",
+              "name": "CanopyFrame"
+            },
+            "path": "dashboard/src/panels/engine-room/badges.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "795cc832381626b813bfd71d42ce2a60ee147cbb",
+            "content": "sha256:740853105fb827af1f337b0ab353ea399aefceb0c40af5fbec07b9c0942d53bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneFlag"
+            },
+            "path": "dashboard/src/panels/engine-room/badges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The `scanRing` recipe is the full cyan stroked, transparent, glow style; `ghostedLane` is the full dim/desaturate style; `Conduit` applies `ghostedLane` to the inner path through `cx(flowConduit(...), ghosted && ghostedLane)`.\n\nAnchor: \"export const scanRing = css({\"; \"export const ghostedLane = css({ opacity: \\\"0.32\\\", filter: \\\"grayscale(0.45)\\\" });\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:349e7444ebd586b64f76d82a2594d11322ddc6d0206d525eae4a33341db534e5",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/panels/engine-room/flow.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "content": "sha256:8129a3102604ce3b905cc6b6ae9186971e9ed54a05358aeba9363daae315be8b",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/panels/engine-room/flow.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:af04d8265cc40bfccbed32971b55fe866421fc464998921a604bab56ab592465",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:ab43b7b72654bdd8efb907c3bc47fb1ec01519862f48570a0bd8d6754d4f4ada",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The design prototype supplies the ported canopy bracket geometry, provider wire/flow links, and engine spine/petal decals: its canopy path, `wire`/`flow-g` links, provider geometry, and `.e-spine`/`.e-petal` recipes are present in the prototype.\n\nAnchor: \"class=\\\"canopy\\\"\"; \"M58 22 L22 22 L22 58\"; \"class=\\\"wire\\\" id=\\\"w-m-cgc\\\"\"; \"class=\\\"flow-g\\\" id=\\\"flow-int-code\\\"\"; \"id=\\\"m-cgc\\\" transform=\\\"translate(81,102)\\\"\"; \".prov .e-spine{stroke:var(--amber);stroke-width:.8;opacity:.28}\"; \".prov .e-petal{stroke:var(--amber);stroke-width:1.4;opacity:0;stroke-linecap:round}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dde1ca6202b9884a63b7153deaf781cdc5722cb0",
+            "content": "sha256:61b0f9257a6ebff6be4bd0ac922646b5bf52812dc87bc02b45fe95ba010c906f",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "dashboard/public/_proto/podstage.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dde1ca6202b9884a63b7153deaf781cdc5722cb0",
+            "content": "sha256:71d80dd3d73217e67ba6d4c97114349e63125907250ef1d42b1c32eea529492b",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "dashboard/public/_proto/podstage.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dde1ca6202b9884a63b7153deaf781cdc5722cb0",
+            "content": "sha256:144889e02b529a7a0a7c0b28010bca70ae511f3c536dfa6c0c4b54f7ed386e1b",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "dashboard/public/_proto/podstage.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dde1ca6202b9884a63b7153deaf781cdc5722cb0",
+            "content": "sha256:f4a178ea5f9e87938409df24a228568e0c0a0334d642f582c02cfa357667d559",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "dashboard/public/_proto/podstage.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dde1ca6202b9884a63b7153deaf781cdc5722cb0",
+            "content": "sha256:823615765c8095285db6d6538406dd61fd57fe0ac5bcb1c286f42a0cab1d6293",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "dashboard/public/_proto/podstage.html"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dde1ca6202b9884a63b7153deaf781cdc5722cb0",
+            "content": "sha256:cbda295e2764c6a9391e48a8af0ebadc365a28eb0b70b0946da06025283790f1",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "dashboard/public/_proto/podstage.html"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`RemoteStrip` / `RemoteChip` / `PrBadge` + `remoteTone` — the remote/landing dock (`landing[]` refs; 5i positions them by `REMOTE_POS`, PR as a merge-arrow).\n\nAnchor: \"export function RemoteChip({ refNode }: { refNode: LandingRefNode }) {\"; \"export function PrBadge({ refNode }: { refNode: LandingRefNode }) {\"; \"export function RemoteStrip({ refs }: { refs: LandingRefNode[] }) {\"; \"export function remoteTone(ref: LandingRefNode): RemoteTone {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:48e4471c46c5e77b156cddce3896f776b78fceec4a14beb69aa7811ee0e0787b",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:05f0730014fa8f578250c620537d569878dd9613341a9e9aa949945aca5ab9a1",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7d39ffa13cb5db235e87e34e037fc9543fa2b3e",
+            "content": "sha256:0a88d8064ea46e2eb7e0ec26ca2d46fa6d388db320a7b58282ed22bb0875cd93",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/panels/engine-room/remote.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7d39ffa13cb5db235e87e34e037fc9543fa2b3e",
+            "content": "sha256:20ae21f0baa1b954f1d666c40435839e16795f84495e7849169806a46dbbe1ec",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/engine-room/remote.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7d39ffa13cb5db235e87e34e037fc9543fa2b3e",
+            "content": "sha256:cb26f5fff351fc70aad240dd54f153366f3cddfba464600587463d2524be2055",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "dashboard/src/panels/engine-room/remote.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`LandingFlows` / `LandingFlow` + `landingFlowState` (`FlowState` active/settled/hidden) — the directional push/pull/carry flows wiring the dock to the branch nodes (cyan-active / amber-settled, GSAP draw-on); paths derived from the column centres.\n\nAnchor: \"export function LandingFlows({ refs }: { refs: LandingRefNode[] }) {\"; \"function LandingFlow({ d\"; \"function landingFlowState(refs: LandingRefNode[]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:8ee46de492ec378055253e4331466f27100a77515545657b09238ab1b625cffd",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:40532a889f3c50d7bbec6bdd8852898e432f697ee458d73b3a154b343aaecb88",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:0cef58c270896c6b43dc77d6982cb066cfb846e839c786198597d9144e621735",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`COL_MAIN_CX`/`COL_FEAT_CX`/`COL_WT_CX` define the main, feat, and worktree column centres; `ENGINE` declares the fixed engine-pod positions in the geometry constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:90c16dfc396d21ee0a085a71634a4c56c6d84875cd5a754a95bece8cc000f5c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "COL_MAIN_CX"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:5166e294340ce58f455f399c2243cee796943b0f1d66393864174f2c847ce040",
+            "locator": {
+              "kind": "symbol",
+              "name": "COL_FEAT_CX"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:ff6911f85df31bad4de0da609cc4d401fe65ca495ea6edfda6dcacc3d2ee1897",
+            "locator": {
+              "kind": "symbol",
+              "name": "COL_WT_CX"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:b6201fb66289d49b434c607a068fd53118e02fe675b2101425ddf12082a474f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENGINE"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The consumer sites apply those centres to remote chips and PR placement, landing-flow paths, official/worktree wires and couplers, and the enclosure border.\n\nAnchor: \"export function RemoteStrip({ refs }: { refs: LandingRefNode[] }) {\"; \"export function LandingFlows({ refs }: { refs: LandingRefNode[] }) {\"; \"export function EnclosureCanvas({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:98598c934f80c1305d7d7d1680010aaca0134918246c4aed9fe3d2c98ac8ffde",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7d39ffa13cb5db235e87e34e037fc9543fa2b3e",
+            "content": "sha256:cb26f5fff351fc70aad240dd54f153366f3cddfba464600587463d2524be2055",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "dashboard/src/panels/engine-room/remote.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`EDGE_GEOM[\"integration-mem\"]` (memory-lane y=403 worktree→feat mirror of `integration`) + `Conduit`'s widened `isReplay` check + the `retiring` fade.\n\nAnchor: \"export const EDGE_GEOM: Record<string\"; \"export type ConduitState =\"; \"function isReplayLane(\"; \"export function Conduit(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:f820aa981797fc47b54c59e4e731d9a78554a5af157170480df6886681bb6fab",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:b51ae28f444ac35f5bf668478a310540b3da583b088f3d67ef117135bd9deda0",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:6e86c00555fd2056b7a08acfefc7f36a7bddb4ec69652e6a43b58fd11aa6418c",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
+            "content": "sha256:9ea55aa4d0e2f00594c7716f5205a8f4a5e7c52b56f90340af61c21c32a6e163",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`chargeMotion` + the `booting` one-shot opacity pulse (`onAnimationComplete` + timer backstop) — Motion owns scaleY/opacity, the `engineCharge` class owns fill (second-cycle fill fix).\n\nAnchor: \"export const engineCharge = cva({\"; \"export function chargeMotion(runtime: RuntimeState): { scaleY: number; opacity: number } {\"; \"const [booting\"; \"export function EngineGauge({ at\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "content": "sha256:1198d5d8bdc2891a9fec4db3ba0737fa670766d3b950812619981156edcc6378",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "content": "sha256:bc3ef64fcc0bd157d1be0a685b53a99a4bfe0ccec456b8086cdc40d2a00947cf",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "content": "sha256:4239ca8ae60888b8480a7af29b9a85be4e3dd7b4612d94b61187245e42dae98e",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "dashboard/src/panels/engine-room/engines.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
+            "content": "sha256:bbe26c43c28b2267e4f4ff3baf8be86cc7ff48dc720da5cd2f1c893a7591b4e2",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/panels/engine-room/engines.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

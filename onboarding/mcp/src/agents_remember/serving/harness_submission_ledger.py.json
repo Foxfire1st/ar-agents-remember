@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_submission_ledger.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `OperationRecord` (lines 58-252) — One ordinary operation's whole life: its state, its evidence, and what it answers with..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:aaf9b85badf14bed2ebbdca5e0a591ae3ed8907ec4e79e3da8295fadbe649f24",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:963a3bc767b27cfd55c322c8cd423e280cbfaaade328d20fbecd058b136729fd",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `SubmissionLedger` (lines 255-437) — The bounded, epoch-stamped record store one submission authority admits into and reads from..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:a3b78ef18a86c23300e6e5fb5631f0a87f62e0a877c3801478424679e0aadba5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionLedger"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:369330a4d3e58664c30c9fd7154f90a71ebf302744367487c5870fd38fd3fefe",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `ref_key` (lines 440-441).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e993908182aa745800e5205730dd6480edc16d",
+            "content": "sha256:d0ee6217e9e3b7137c3214c2cfbc8ccb9f65ec04c049d6158e9c84a68897b15b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ref_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

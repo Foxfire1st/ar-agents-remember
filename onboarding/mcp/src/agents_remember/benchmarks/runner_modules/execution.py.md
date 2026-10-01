@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/benchmarks/runner_modules/execution.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/benchmarks/runner_modules/execution.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-07T00:25+02:00 |
-| lastVerifiedCommitHash | `b252c42cca200933d5c9c36e26de47a526a569ce`
-| lastVerifiedCommitDate | 2026-08-07T23:58:52+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [runner_modules overview](overview.md)
@@ -48,38 +38,17 @@ live-authority set still flows from the service request to the workspace provide
 - `run_case()` is an orchestration wrapper; batching, dry-run replay, and failure collection live in focused helpers.
 - The benchmarked Codex must be pointed at the benchmark's own MCP server via the generated `.codex/config.toml` overrides, so a benchmark run never drives the live workspace MCP/providers.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.execution import *" | mcp/src/agents_remember/benchmarks/runner.py:17-17 |
-| The benchmark MCP registration writes the `.codex/config.toml` whose `mcp_servers` table these overrides read. | `benchmark_agents_config_text` | mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py:131-151 |
+- The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
+- The benchmark MCP registration writes the `.codex/config.toml` whose `mcp_servers` table these overrides read. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No configured sibling repository is required for this module.
-
-## Update History
-
-- 2026-09-07T00:25+02:00 — Removed the obsolete deleted-test coverage claim; production behavior and original verification history remain unchanged.
-
-- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 6 citation findings and cut one false
-  paragraph. `allowed_provider_ids` rides `BenchmarkPreparation` into `prepare_case`; the stale
-  threaded-parameter paragraph was removed (the correct L2 form directly above it stands). Re-anchored
-  the facade (runner.py:17), config-text (mcp_registration.py:131-151), and benchmark-test
-  (3498-3553) rows. Scoped recheck clean.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0913` armed with no
-  exemptions): `run_case`, `maybe_prepare_case`, `run_one` and `run_dry_batches` were re-signed
-  onto `BenchmarkRunRequest` / `BenchmarkPreparation` / `BenchmarkRun` / `BenchmarkTask`, and
-  `task_batches_for_prompt` now emits `BenchmarkTask` values. `allowed_provider_ids` now reaches
-  `prepare_case` via `BenchmarkPreparation`. Run outputs are unchanged. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-07-07T16:30+02:00 — 260707-HFX-L1 (provider containment R1): `maybe_prepare_case` and
-  `run_case` gained the pass-through `allowed_provider_ids` parameter feeding the workspace
-  provider filter. Verification metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-06-19T13:42: Added `benchmark_mcp_config_overrides()` and wired it into `codex_command`: it reads the benchmark workspace `.codex/config.toml` `mcp_servers` table and emits `-c mcp_servers.<name>.<key>=<literal>` overrides so the benchmarked Codex uses the benchmark's own isolated MCP server, not the host workspace's.
-- 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

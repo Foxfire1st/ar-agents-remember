@@ -1,0 +1,23 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Certifying composition orders admission before candidate process creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ddfbc85fc5f45313589051580d96912e39b3a7e",
+            "content": "sha256:a500dbafd07c3152de1eb1ca29dc220699d6b225160005b1113116953b6ba2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_certifying_pytest_bootstrap"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

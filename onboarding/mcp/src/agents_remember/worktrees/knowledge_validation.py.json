@@ -1,0 +1,117 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/knowledge_validation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The paired code commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11dbc05f12472a274a273ce447ada48b1fb4637d",
+            "content": "sha256:2b3c4c0a02fde670701420cd1f4c63de250051448dbb78286cd59168b8f5af02",
+            "locator": {
+              "kind": "symbol",
+              "name": "PairedCode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The marker probe fails closed, since MIK-R09 on a timed-out probe too.\n\nAnchor: \"the Git probe failed or timed out\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11dbc05f12472a274a273ce447ada48b1fb4637d",
+            "content": "sha256:aa332bb18e41592517bc51018ebd391b7c27da4223ac1a258d8dc761d4c215a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_layout_marker"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11dbc05f12472a274a273ce447ada48b1fb4637d",
+            "content": "sha256:350ad19ad0f51dbbe6b0837af712bb7624a80c000e31587b59ce39f6b9e1889d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LayoutProbeError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusal: unconverted passes, converted needs a paired code commit and a bound validator; since MIK-R09 a leaf publication takes the port's `leaf_refusal`.\n\nAnchor: \"route = validator.leaf_refusal if leaf_publication else validator.refusal\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11dbc05f12472a274a273ce447ada48b1fb4637d",
+            "content": "sha256:f0884e07e6a76b3fb8ccc7ba4ab7e65b7c88b1185d5d679589cbba7a5b106a14",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_commit_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The port it calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:27eea00a32e7c89a71f9fcafadeb9ba87df61f84e2de04175ec9bb745ea7a19c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeValidationPort"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sync's memory merge calls it before committing, after closing any master-line crossing history file the merge adds (MIK-R24).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
+            "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_staged_memory_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The route never commits converted memory unvalidated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:62151ea2bf987bce7d8838359f0c442a79464ef9234f04006c48193750924082",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_worktree_route_never_commits_converted_memory_unvalidated"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

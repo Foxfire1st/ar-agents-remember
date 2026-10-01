@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/migration/census_measures.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/migration/census_measures.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -151,15 +141,15 @@ string formatting in the file, and both are deterministic.
 - **This module reads no store and holds no state.** It is pure arithmetic over values passed in: no
   connection, no path, no cache and no mutation of its arguments.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This module owns the census's arithmetic and the vocabularies the report is expressed in: the four
 cells, the six measure names and the four slice axes. The rows below cite each declared vocabulary,
@@ -167,36 +157,28 @@ the eligibility predicate, the separation that refuses to disagree with itself, 
 mapping in both of its forms, the occurrence counting, the six measures with their refusal states, and
 the slice and count helpers that keep unkeyed and unplaced facts visible.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the accounting as one separation, with the eligibility rule, the authored-only truth cells and the never-read `K` stated in one place. | `Separation`; `Measure` | mcp/src/agents_remember/memory/migration/census_measures.py:1-26; mcp/src/agents_remember/memory/migration/census_measures.py:80-95; mcp/src/agents_remember/memory/migration/census_measures.py:116-144 |
-| The four cells of the accounting as one closed vocabulary, named rather than lettered at each use site. | `CellName`; `CELL_NAMES` | mcp/src/agents_remember/memory/migration/census_measures.py:42-46 |
-| The six measure names, declared in `Doc12:99-104`'s own order so that a measure the report cannot compute is still a visible entry. | `MeasureName`; `MEASURE_NAMES` | mcp/src/agents_remember/memory/migration/census_measures.py:48-66 |
-| The four slice axes `Doc12:118` names, each documented as a recorded association rather than a derived one, and the consequence axis's own value for "not recorded" so an unattributed mass is a breakdown line instead of a silent omission. | `SliceAxis`; `SLICE_AXES`; `CONSEQUENCE_UNRECORDED` | mcp/src/agents_remember/memory/migration/census_measures.py:68-72; mcp/src/agents_remember/memory/migration/census_measures.py:74-77 |
-| The separation value with the two out-of-cohort counts `Doc12:95` requires carry an explicit disposition, the four cells available by name, and the `__post_init__` check that refuses a total its cells do not sum to. | `Separation`; `non_claim`; `historical_non_applicable`; `cell_counts` | mcp/src/agents_remember/memory/migration/census_measures.py:80-95; mcp/src/agents_remember/memory/migration/census_measures.py:97-102; mcp/src/agents_remember/memory/migration/census_measures.py:104-113 |
-| The measure's three states, its counts and note, and its rendering with the counts beside the ratio and never as a bare percentage. | `Measure`; `render` | mcp/src/agents_remember/memory/migration/census_measures.py:116-144 |
-| One occurrence per extracted claim, with the normalised comparison key that decides a repeat while the original text stays what is reported. | `ClaimOccurrence`; `key_for` | mcp/src/agents_remember/memory/migration/census_measures.py:147-167 |
-| Both counts `Doc12:112` requires, always together, with the refusal of an occurrence count below the unique count. | `UniqueOccurrenceCounts` | mcp/src/agents_remember/memory/migration/census_measures.py:170-188 |
-| The whole census output and its slice record: the baseline pair, the separation, the six measures, both counts, the inventory counts, and `Doc12:118`'s reason slices are mandatory output rather than an optional breakdown. | `CensusReport`; `SliceReport` | mcp/src/agents_remember/memory/migration/census_measures.py:191-204; mcp/src/agents_remember/memory/migration/census_measures.py:207-219 |
-| The two accessors that refuse to guess: a measure name the report does not carry raises naming the reported set, and one axis's slices are selected from the recorded slice list. | `measure`; `slice_axis`; `MEASURE_NAMES` | mcp/src/agents_remember/memory/migration/census_measures.py:220-231 |
-| The report rendering: facts as lines, measures together, six measures and never one composite score. | `render` | mcp/src/agents_remember/memory/migration/census_measures.py:233-262 |
-| The eligibility rule `CR21-4` requires be stated, as one predicate with `claim_kind` deliberately outside the test, and the closed applicability value it compares against. | `claim_enters_cohort`; `COHORT_APPLICABILITY` | mcp/src/agents_remember/memory/migration/census_measures.py:265-277; mcp/src/agents_remember/models/knowledge/census.py:100-103 |
-| The assessment-to-cell mapping in both of its forms: the four cases, whose `None` case makes a claim with no assessment `P`, and the read of a claim's stored evidence relations, where an unread verdict is `U` rather than assumed support. | `assessment_cell`; `cell_of` | mcp/src/agents_remember/memory/migration/census_measures.py:280-299; mcp/src/agents_remember/memory/migration/census_measures.py:487-507 |
-| The two arithmetic builders: the separation built from an iterable of cells with the out-of-cohort counts passed separately, and the occurrence count whose repeats mapping keeps only genuine repeats. | `separation_of`; `unique_occurrence_counts` | mcp/src/agents_remember/memory/migration/census_measures.py:302-318; mcp/src/agents_remember/memory/migration/census_measures.py:321-331 |
-| The zero-denominator refusal — `not_applicable` with the reason recorded rather than a zero or a one — and the six measures in the doc's order, with the correctness figure's note carrying the unresolved and unassessed counts that must accompany it, and the coverage pair that stays `not_measurable` rather than inventing the denominator it was not given. | `_ratio`; `compute_measures`; `_coverage_measure` | mcp/src/agents_remember/memory/migration/census_measures.py:334-347; mcp/src/agents_remember/memory/migration/census_measures.py:350-419; mcp/src/agents_remember/memory/migration/census_measures.py:422-439 |
-| Slicing the cohort by recorded keys, with an unkeyed claim landing under its axis's unrecorded key instead of being dropped. | `slice_claims`; `_unrecorded_key` | mcp/src/agents_remember/memory/migration/census_measures.py:442-478; mcp/src/agents_remember/memory/migration/census_measures.py:481-484 |
-| The three count helpers that keep a bucket visible: inventory rows by parse outcome and state, the claim kinds pre-seeded with `unclassified` and the four classified kinds, and the migration dispositions including `unmapped`. | `inventory_counts`; `claim_kind_counts`; `disposition_counts` | mcp/src/agents_remember/memory/migration/census_measures.py:510-543 |
-| The closed vocabularies this module reads rather than restates, and the evidence relation whose optional authored disposition is the only source of a truth cell. | `CENSUS_CLAIM_KINDS`; `CENSUS_DISPOSITION_KINDS`; `CensusClaimEvidence` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:85-99; mcp/src/agents_remember/models/knowledge/census.py:239-257 |
-## Cross-Repo References
+- The module's own statement of the accounting as one separation, with the eligibility rule, the authored-only truth cells and the never-read `K` stated in one place. [1]
+- The four cells of the accounting as one closed vocabulary, named rather than lettered at each use site. [2]
+- The six measure names, declared in `Doc12:99-104`'s own order so that a measure the report cannot compute is still a visible entry. [3]
+- The four slice axes `Doc12:118` names, each documented as a recorded association rather than a derived one, and the consequence axis's own value for "not recorded" so an unattributed mass is a breakdown line instead of a silent omission. [4]
+- The separation value with the two out-of-cohort counts `Doc12:95` requires carry an explicit disposition, the four cells available by name, and the `__post_init__` check that refuses a total its cells do not sum to. [5]
+- The measure's three states, its counts and note, and its rendering with the counts beside the ratio and never as a bare percentage. [6]
+- One occurrence per extracted claim, with the normalised comparison key that decides a repeat while the original text stays what is reported. [7]
+- Both counts `Doc12:112` requires, always together, with the refusal of an occurrence count below the unique count. [8]
+- The whole census output and its slice record: the baseline pair, the separation, the six measures, both counts, the inventory counts, and `Doc12:118`'s reason slices are mandatory output rather than an optional breakdown. [9]
+- The two accessors that refuse to guess: a measure name the report does not carry raises naming the reported set, and one axis's slices are selected from the recorded slice list. [10]
+- The report rendering: facts as lines, measures together, six measures and never one composite score. [11]
+- The eligibility rule `CR21-4` requires be stated, as one predicate with `claim_kind` deliberately outside the test, and the closed applicability value it compares against. [12]
+- The assessment-to-cell mapping in both of its forms: the four cases, whose `None` case makes a claim with no assessment `P`, and the read of a claim's stored evidence relations, where an unread verdict is `U` rather than assumed support. [13]
+- The two arithmetic builders: the separation built from an iterable of cells with the out-of-cohort counts passed separately, and the occurrence count whose repeats mapping keeps only genuine repeats. [14]
+- The zero-denominator refusal — `not_applicable` with the reason recorded rather than a zero or a one — and the six measures in the doc's order, with the correctness figure's note carrying the unresolved and unassessed counts that must accompany it, and the coverage pair that stays `not_measurable` rather than inventing the denominator it was not given. [15]
+- Slicing the cohort by recorded keys, with an unkeyed claim landing under its axis's unrecorded key instead of being dropped. [16]
+- The three count helpers that keep a bucket visible: inventory rows by parse outcome and state, the claim kinds pre-seeded with `unclassified` and the four classified kinds, and the migration dispositions including `unmapped`. [17]
+- The closed vocabularies this module reads rather than restates, and the evidence relation whose optional authored disposition is the only source of a truth cell. [18]
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It is arithmetic over values its caller
 passes in — cells, counts, a denominator and a set of occurrences — and reads no store, no path and no
 remote, so nothing here reaches another repository, another dataset or a remote.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the census's arithmetic module. It records the separation `N = T + F + U + P` as a value that refuses to disagree with itself in `__post_init__`, with the two out-of-cohort counts `non_claim` and `historical_non_applicable` reported beside `N` rather than inside it. It records the single eligibility predicate `claim_enters_cohort`, its deliberate exclusion of `claim_kind`, and the fact that `slice_claims` re-applies it so global and sliced accounting cannot diverge. It records the assessment-to-cell mapping in its two forms — `assessment_cell`'s four cases and `cell_of`'s read of the stored evidence relations — where a claim with no assessment is `P` and an unread verdict is `U` rather than assumed support. It records the six measure names in the doc's order, `_ratio`'s zero-denominator refusal as `not_applicable`, `_coverage_measure`'s `not_measurable` when no independently reviewed denominator was supplied, and `Measure.value`'s refusal to return a number for either state. It records the comparison key `key_for` and the both-counts-together rule, the four slice axes with the recorded-only association rule and the unrecorded-key fallback, and the three count helpers that keep `unmapped`, `absent` and a zero-member kind visible. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

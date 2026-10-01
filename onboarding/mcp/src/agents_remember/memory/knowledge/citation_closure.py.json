@@ -1,0 +1,329 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/citation_closure.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The declared selected set and its one addressing, which is what the counts are over.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:fc60be9290383d8b678d3724cfceba28d6a74477258d4a2641784ce63a8db026",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_set_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:a9494e8c6f1bb47eef02f946890541ddc53b18c41f6d5beb5100308dbd2bf593",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_set_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one observation the closure delegates to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32c7d97390221d616609aef812de6ca001ccbfc5",
+            "content": "sha256:24f90812b2d0e667c9ded4eb4442e6da32faab7d58ceed9e2daeca7d779737ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_binding"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_bindings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The unit cases that measure the refusal, the absent completeness field, and the one-state-per-binding enumeration.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:9da617c0ad3299b8596c48da40302a1390bd9cb3c578998f113d93b459e171a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bound_closure_refuses_with_selection_incomplete_and_the_bound_reached"
+            },
+            "path": "mcp/tests/test_knowledge_citation_bindings.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:f046fbaf057c90cb0bb632361fac9d966ff16f4f9240645bc3885afb862b548e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closure_states_no_semantic_completeness_and_reports_its_declared_coverage"
+            },
+            "path": "mcp/tests/test_knowledge_citation_bindings.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:d823a454304c09afdf8c56aa6d7ebdff34d3627c29dcbc55dafea15b89c60155",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_enumeration_returns_every_recorded_binding_with_exactly_one_state"
+            },
+            "path": "mcp/tests/test_knowledge_citation_bindings.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The boundary case that proves a rewritten document leaves the binding stale and never re-bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "400c1752a5394493caa7f53b86909258b9b3c250",
+            "content": "sha256:255f709a33ae624a5e8d7703bc30590243b9770f69cdd0985768738f44f1bd0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rewritten_document_leaves_the_binding_stale_and_never_re_bound"
+            },
+            "path": "mcp/tests/test_knowledge_citation_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The read of the recorded bindings plus their sealed revisions, and the store-damage refusal that keeps an attribution out of no denominator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:4d31e35cda9ad4a6e47defa18509bfd06bdd81e0deab79cdc6beef8458116744",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_recorded_bindings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:ba5fea7ed4cb523af15bd45f1340b80a4ea4ec344a4aa33b85c0822e52d95334",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BindingStoreDamage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The closure itself: the bound checked before any item is emitted, the shipped refusal returned with the bound reached.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:a1b56394d3977cae15bf82793eb702ee17948905756443d001dfe8a1c8095d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "assemble_citation_closure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The per-binding enumeration L21's census counts — a read path, not a second store.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:281e1460ac45b3bf247d71b814fb78eb8b2de45a5a31eec5893cbd4102a61704",
+            "locator": {
+              "kind": "symbol",
+              "name": "enumerate_recorded_bindings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one observation per item, and the target's recorded facts read out of the store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:3cb184ca4eeca10e8d48793727d99b2c0ee7e8ea2b91483f53d9588433e58b91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_one"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:d01575a612c43f3bf805c5e8967017dd9fce3edb9961c347f48517e259226b2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reported_target"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:3534b7dbf0a15f3253fb7b88f0a6a81adfdeb4ab43c0d10e5bbc6426ae527053",
+            "locator": {
+              "kind": "symbol",
+              "name": "_target_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:14377eaf71cefa3d1f29a1b08a6f184c6589b1ea114c35b3aa57feb6370aad03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revision_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The counts partition, the declared coverage, and the limitations a partial coverage must name.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:9f28d85c33cd482b74ba1c6b0069bb0df93c304c8ca3b6979cb81ea22472033a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_counts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:0f3b8fbffe5873b3dbb5a5b239baa9beaa203d808666297c79c95eba1545e9e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_coverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:53e0f9d6a6263fcfbc6ca31fc17f309d2a0d6d989d460fba024b1290ce4e422a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_limitations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The deterministic order and the ambiguity decision over recorded key text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:1f5e6e052bba1403970eada00fdaee319d6a3721b9e3462907578ca321fc4315",
+            "locator": {
+              "kind": "symbol",
+              "name": "_binding_order_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7fd3b7962ebd06655fcad3a3e0b8f03bb849e3e",
+            "content": "sha256:e79df7a9761003b6d453669e4484410e88dd8db3638cf4c8b259f0a341daf0f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ambiguous_binding_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shipped bound refusal this module returns rather than inventing totals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "447d4cc906e77679e15514daa94d05894257dd02",
+            "content": "sha256:7ec991601ba2bddb4c403e4fb2139b18997c75b01a749382788ee0d8f3e0397b",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_incomplete_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "447d4cc906e77679e15514daa94d05894257dd02",
+            "content": "sha256:825416e23d719b450bae4f8808bbba46b08f02286c249239f173e4e3991a4dc7",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The declared selection bound the refusal names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:8adde364bdcb8bf1323cbf6e5775b8d93c5c33ee91734fbda8086d11e1c5d0c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SELECTION_ITEM_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

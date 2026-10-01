@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/schema_v8.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/schema_v8.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T10:22+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -90,40 +80,31 @@ declared rather than derived from the DDL text: the encoder orders a table's row
   write path in `effects.py` with the observed and required versions as facts; no table is created
   implicitly and `PRAGMA user_version` does not move.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one appended table — the only name this generation adds. | `APPENDED_TABLES` | mcp/src/agents_remember/memory/knowledge/schema_v8.py:59-59 |
-| The appended columns, primary key and typed-JSON column, declared as the generation's pinned structure rather than derived from the DDL text. | `APPENDED_COLUMNS`; `APPENDED_PRIMARY_KEYS`; `APPENDED_JSON_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v8.py:61-68; mcp/src/agents_remember/memory/knowledge/schema_v8.py:72-78; mcp/src/agents_remember/memory/knowledge/schema_v8.py:82-84 |
-| The DDL: the composite primary key, the one-node-cycle `CHECK`, and the two foreign-key groups that make an edge able to name only records this store holds. | `APPENDED_TABLE_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v8.py:86-105 |
-| The reverse-direction index — "which change sets supersede this one" — and the no-update / no-delete triggers that seal a recorded succession. | `APPENDED_INDEX_DDL`; `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v8.py:109-112; mcp/src/agents_remember/memory/knowledge/schema_v8.py:117-127 |
-| The declared-empty feature tuple: generation 8 requires nothing generation 7 did not already require. | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v8.py:134-134 |
-| The generation this one is composed onto, by name, and the composition that names this module as generation 8's append. | `GENERATION_7`; `_compose_generation_8`; `GENERATION_8` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:396-396; mcp/src/agents_remember/memory/knowledge/schema_generations.py:408-417; mcp/src/agents_remember/memory/knowledge/schema_generations.py:419-422 |
-| The schema name generation 8 declares, and the registry whose last entry is now the created generation. | `GENERATION_8_SCHEMA_NAME`; `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:215-215; mcp/src/agents_remember/memory/knowledge/schema_generations.py:425-434; mcp/src/agents_remember/memory/knowledge/schema_generations.py:447-447; mcp/src/agents_remember/memory/knowledge/schema_generations.py:225-225; mcp/src/agents_remember/memory/knowledge/schema_generations.py:456-469; mcp/src/agents_remember/memory/knowledge/schema_generations.py:479-482 |
-| The generation the write path and the read both require before any authored-effect row may exist or be served. | `REQUIRED_EFFECT_GENERATION`; `require_effect_generation` | mcp/src/agents_remember/memory/knowledge/effects.py:116-116; mcp/src/agents_remember/memory/knowledge/effects.py:339-360 |
-| The shared acyclic walk the longer cycle is found by, over this table, inside the successor's own transaction. | `require_acyclic_successions`; `cycle_vertices` | mcp/src/agents_remember/memory/knowledge/effects.py:484-507; mcp/src/agents_remember/memory/knowledge/lineage.py:207-227 |
-| The record group's declared writable tables — exactly the two envelope tables, so this generation adds nothing to the mutable union. | `EFFECT_WRITABLE_TABLES` | mcp/src/agents_remember/models/knowledge/effect.py:312-315 |
+- The one appended table — the only name this generation adds. [1]
+- The appended columns, primary key and typed-JSON column, declared as the generation's pinned structure rather than derived from the DDL text. [2]
+- The DDL: the composite primary key, the one-node-cycle `CHECK`, and the two foreign-key groups that make an edge able to name only records this store holds. [3]
+- The reverse-direction index — "which change sets supersede this one" — and the no-update / no-delete triggers that seal a recorded succession. [4]
+- The declared-empty feature tuple: generation 8 requires nothing generation 7 did not already require. [5]
+- The generation this one is composed onto, by name, and the composition that names this module as generation 8's append. [6]
+- The schema name generation 8 declares, and the registry whose last entry is now the created generation. [7]
+- The generation the write path and the read both require before any authored-effect row may exist or be served. [8]
+- The shared acyclic walk the longer cycle is found by, over this table, inside the successor's own transaction. [9]
+- The record group's declared writable tables — exactly the two envelope tables, so this generation adds nothing to the mutable union. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A table declaration is a property of the
 dataset, and a dataset's identity excludes Git commits, ledger rows and checkout locations.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T19:56:45+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) The registry row cited `schema_generations.py:456-456` and `479-479` for `GENERATIONS` and `CURRENT_GENERATION`; both ranges were widened to the declarations they name (`456-469`, `479-482`). (b) The composition row cited `419-419` (the renumbering comment) for `_compose_generation_8`, whose definition is the next statement at `422`; the range was widened to `419-422`. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T10:22+02:00 — 260915-KS-L13 curator (uncommitted change set on `ar/260915-ks-l13`, base `b5a74aee`): created this one-to-one card for **generation 8's** one appended table. It records the edge the envelope cannot express, the schema-level guards (composite key, one-node-cycle `CHECK`, two foreign-key groups, two sealing triggers), the declared-empty feature tuple, and the landing's renumber from `schema_v5.py`/generation 5 to generation 8 — a composition edit plus a file rename, with the append's content unchanged. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. Naming the base commit there would be a verification claim about a tree the code never had; what was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

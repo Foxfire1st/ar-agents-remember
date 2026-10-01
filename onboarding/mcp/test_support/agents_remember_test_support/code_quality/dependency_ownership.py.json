@@ -1,0 +1,118 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Observed and declared ownership, exact-empty distinction and refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:88d5e3ac8289a6db3944a0d9fa719f0a39b101483aa168b6f54a6bb231157bc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DependencyOwnershipGraph"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:043fd303ab307af76892034e83f2db7d33d065afa8ad2864c72a272e0e3cdb48",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Transitive importer closure",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:09c4ee4362647b98e1faa647e0adb1f25f18f7cc5edde728b02cc856a3607716",
+            "locator": {
+              "kind": "symbol",
+              "name": "transitive_importers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:835ddb514dd318c90463438db0e335f2ecb64b63e8ea016f1638993a3e54163c",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 522
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Digest binds declarations and classification authority",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:4980187d983779be294e87db53a9dd3d4f2ce6459a32b2d9b541b7b52912740e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ownership_configuration_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:65205ebf1c182e0116bf2dd3990560f7a0d725f24162e7d000348b069dfe450a",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 593
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The repository-owned declaration table, which now ends later than the L12 count because two citation-binding modules joined the ambient-role runner's exact consumers.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:876a387f9a0d6904fef7bd7fadd03506ddedbafbb89433f4a19cc847e45a27a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPOSITORY_TEST_INPUT_CONSUMERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AMBIENT_ROLE_RUNNER_PATH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

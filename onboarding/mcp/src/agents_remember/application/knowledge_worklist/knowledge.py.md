@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_worklist/knowledge.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_worklist/knowledge.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175`|
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -56,7 +46,9 @@ over the exact bytes of each record file.
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R08@v2` of task
@@ -65,34 +57,23 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Sides are parsed by the index builder; a side that does not parse whole is unreadable input. | "That side is **unreadable input** (MIK-R08 rule 4)" | mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:1-13 |
-| The unreadable-side error naming each failing file. | `KnowledgeSideUnreadable` | mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:35-43 |
-| An entry's anchor with its source path. | `anchor_document` | mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:46-49 |
-| Parsing a snapshot, refusing any problem. | `from_snapshot`; `parse_tree` | mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:62-73 |
-| A side from the validator's tree (the converted base). | `from_tree` | mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:75-81 |
-| Entries grouped by invariant and by path. | `entries_by_invariant`; `entries_by_path` | mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:103-115 |
-| Each invariant's families by membership. | `families_of` | mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:117-125 |
-| A record's file: location and exact bytes. | `record_file` | mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:127-133 |
-| The `links` context. | `linked_from` | mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:142-151 |
-| An unparseable K_C makes the run incomplete. | `test_unreadable_inputs_make_the_run_incomplete_and_name_them` | mcp/tests/test_knowledge_worklist.py:606-615 |
+- Sides are parsed by the index builder; a side that does not parse whole is unreadable input. [1]
+- The unreadable-side error naming each failing file. [2]
+- An entry's anchor with its source path. [3]
+- Parsing a snapshot, refusing any problem. [4]
+- A side from the validator's tree (the converted base). [5]
+- Entries grouped by invariant and by path. [6]
+- Each invariant's families by membership. [7]
+- A record's file: location and exact bytes. [8]
+- The `links` context. [9]
+- An unparseable K_C makes the run incomplete. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module parses memory trees handed to it as snapshots.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

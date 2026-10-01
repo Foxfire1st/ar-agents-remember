@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CGC layout and backend settings come from the CGC core module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bef1510d5667467b29295b3a4debc89849723ff9",
+            "content": "sha256:e73a59347f824293858bf5a8f4a849db0eea4ad33f029c1294363443bbae0c1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_layout_from_args"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC backend install/start behavior is delegated to the backend module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
+            "content": "sha256:22f218c1d83409dc3d5ea53fb158ea303b2cd7190add8f85ce2904be7552c092",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_backend_start"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Docker runner image build and command helpers live in the runner module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:7f4261766edddd732b442d4a9f61ee8147d962c830365ca195f6d069e1ab3c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_runner_image_build"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

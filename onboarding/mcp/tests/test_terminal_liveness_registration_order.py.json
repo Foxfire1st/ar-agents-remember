@@ -1,0 +1,267 @@
+{
+  "path": "mcp/tests/test_terminal_liveness_registration_order.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No domain document defines the sweep's registration/compaction order; the implementation is the source of truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:ecf9805e5170a4d00f3b6f3490b33284da3f03a5a6d367381d719c50eb6ed2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The sibling module that pins the same full/starting sweep order for the deferred post-commit work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf78922a0a7f0dc4427faaf5244b93310d32e96",
+            "content": "sha256:de3cd890139d012f0a0edf84abbf089942bf18e7672194b2e7f3905a127c65eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalLivenessDeferredWorkTests"
+            },
+            "path": "mcp/tests/test_terminal_liveness_deferred_work.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The ordering case, the partial-proof case, the failure case, the restart case and the fast-path exclusion case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d9db0a0f8b6df9c28adecac31a6b347298969fd8",
+            "content": "sha256:de55f12d1192f6cc1ba7f56f7cca349ff6e46eb0ab929659403fbef3c0be6999",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_due_sweep_registers_committed_terminated_rows_before_compaction"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d9db0a0f8b6df9c28adecac31a6b347298969fd8",
+            "content": "sha256:58f8c279d945da01f10b156236fb9d9a3b1d38ce33c07c3900c2a463ae0a7957",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_partial_registration_compacts_only_the_proven_rows"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d9db0a0f8b6df9c28adecac31a6b347298969fd8",
+            "content": "sha256:38afb31fd8e1f43ef67e804baff119310398224c521f6de765bd6872597cb27f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registration_failure_prevents_compaction_and_leaves_rows_retryable"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d9db0a0f8b6df9c28adecac31a6b347298969fd8",
+            "content": "sha256:e5bdd20c06b3d119b50998874cda05584958a609d0c2b38d72c3442de6c78e73",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_restart_after_registration_before_compaction_reregisters_and_loses_nothing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d9db0a0f8b6df9c28adecac31a6b347298969fd8",
+            "content": "sha256:5760f1cc8a115922b91762bef98a1bc45a671501bc423fcdc7cdd32753ac74b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_starting_fast_path_neither_registers_nor_compacts_while_the_due_sweep_does"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The module's own `unit-regression` lane row, added by the same change set that created it.\n\nAnchor: \"mcp/tests/test_terminal_liveness_registration_order.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:c2876dcdb15cc2675fc65fc974a7a3f84b60b55a4482a8d3cf928053617c672e",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The action bundle that carries the `register_execution_evidence` callback, and the `None` an absent registrar leaves behind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:02224bbdd2cd7edf649cd171bbd85e843b2c9dbf13bb4ab1e876c4523fc4c6ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalLivenessActions"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ordered pass: observation batch, post-commit terminated enumeration, registration, compaction, then deferred syncs and turn-state callbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:ecf9805e5170a4d00f3b6f3490b33284da3f03a5a6d367381d719c50eb6ed2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The terminated-row read the ordering case instruments, and the `include_terminated` switch it exercises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:93d51a927a7d4e64f96a395917e9491eaa2fed8a0c4400bf05ef64242181afcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "list"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The observation batch whose commit boundary the order chain proves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:be4a8fe2890d5da1a70bbe54a2a1d2dc05d440209e65129c8a62708e271bead7",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The reclamation predicate that retains a task-bound leaf row until its id is proved registered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:1f88880305e5ef1c84a587044c29b2f1b11e1b3df8d1707aed5f0d3251e7a475",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:269d08595044adafa0bdd3d5410c8ae2671a1146aa59150efb3b06f4ac5c52fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_execution_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The starting-row fast path that must perform neither registration nor compaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:a49169e89e3d7dc80c0eaa02e6fcaa842e6872ce33a14038f4866f4f6867beec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_starting_rows"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The production registrar whose result really is partial — an id is proved only when every registration result is `durable_or_irrelevant`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb44107fc85e7af9e6ab6f7f360f247533ab210e",
+            "content": "sha256:478e14457b0208f1430232d88288efe6d0230118bf843f4edb0423a479bab330",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_terminal_catalog_execution_evidence"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_registration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The app wiring that injects the real registrar into the sweeper's actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:f283eec28d13eae9e01fc8bfe9030ecf5a98690d3b375da40f966808071a6569",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_app"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

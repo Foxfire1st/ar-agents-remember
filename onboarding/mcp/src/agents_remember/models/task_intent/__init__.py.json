@@ -1,0 +1,143 @@
+{
+  "path": "mcp/src/agents_remember/models/task_intent/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The canonical schema literal used by every child of this package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:5968220d1e1c2c7ebda3fc6cc0bcc91b4c8f7ce58a9d066e9644509fd6d03cca",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_INTENT_SCHEMA"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Version-addressed approved packet reference typed model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:3de9da4fba259cdd7ede9f6ff9f23f7b778afcf6671a6ad3c93b3ffe8abe81da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ApprovedRequirementPacketRef"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Typed acceptance-obligation question.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:5f4c09c7f4aedfca6434b8e9410ae1660e4ebac454d6c48b32cdc0d22390fd2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AcceptanceObligationQuestion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Canonical schema-plus-digest identity and the legacy absence sentinel union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:bc56b3a6d16cf9b6df35621d6006d2dbd53b41003e7a249705032ab237385c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentIdentity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:7082d856d16dd8bf70c139693df9e78e0a955bdcd91fcdfdedb4464ef800bfc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "MissingTaskIntent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:4c0add1f4867b8581f781aba5f74eec5cebfcd0a9bd09061a5a456a5a405bccb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskIntentState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The single currentness/reuse/publication rejection seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
+            "content": "sha256:99150d0e1e62768d1909878cfcf66645767504ba298ae39270aee30938c7dd5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_task_intent_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The projection owner built on this vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa8a422af6c17568acd7a89dbd33e0cce7f13bbe",
+            "content": "sha256:6e58a02fbd0380d57e8620d30ad3a21bf22358c0dc26135bbbaae90eef02f8f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_projection"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The field taxonomy that classifies which slots are normative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a86108972b18702721ab58db93ad0d13abd4a0af",
+            "content": "sha256:2d032d616d73880e6c51666c9e45d49306019b892b26460fcba0cf5bf3d44bce",
+            "locator": {
+              "kind": "symbol",
+              "name": "NORMATIVE_INTENT"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

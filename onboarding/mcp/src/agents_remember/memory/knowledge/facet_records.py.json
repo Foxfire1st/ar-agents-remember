@@ -1,0 +1,665 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The recomputed-on-the-way-out seals and the damaged-store rule they enforce.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:89ec744c7209cbce1de11c400b6e0e7298b00bc5896176165e8bf2190906672c",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_facet_revision_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:91e70e2cc2e449d39198cf6e5a8ad2338d99bfda332d2238d4f2c6c609b76065",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_explanation_revision_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:7dfc6c1c50c44bc40032d63e5cced12bf4063c6705ca5a5a1dfcc99dbdee1060",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:aee01a4d1d594604dae9130e9257a9b2459a94aeb720e9ec884acf24691f7ede",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 630
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The explanation revision's seal and the encoder that stores it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:1568c6eeb3745717413f237b05bc765c08afae78df56626b308abb65a68699fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "explanation_revision_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:3fa6cdb798af246c6354df548dba93d70f3820c79c34b050c696f86cb1b4fb31",
+            "locator": {
+              "kind": "symbol",
+              "name": "explanation_revision_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:e166b869ae28123b4ba4fc2fcc52c569fc95029b65d8a5154bdf60855fb51b4c",
+            "locator": {
+              "end": 627,
+              "kind": "line_range",
+              "start": 611
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:fc5c9d47c919a6bb9e559c29c5b6f6bcbe753f67d4459871ac3ed40ca2f6ecb9",
+            "locator": {
+              "end": 608,
+              "kind": "line_range",
+              "start": 588
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The six stored-value readers a caller's expectation comes straight from a read through.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:c0b2764e8d2c8bc33c50cfc14cc57c9107a6458a542679e304a71ddd25c77335",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachment_endpoint_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:05a4b44f868ae56286e8bcfc0bd54d5217d5855d1ba53848f607f31f947c3857",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_content_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:bf6c8d6c11b099da8819bd3d48f1dfa36287881be91561427be8f590d958f3ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "explanation_record_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:482cb38cc2a313a1877eb9125fefff4845a2e13985adf2fd1a21e62ad882b3cf",
+            "locator": {
+              "end": 688,
+              "kind": "line_range",
+              "start": 680
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:d784dbb58f9e197280730d9678d0b4c12adf254a06d2015c6fc211f173c26628",
+            "locator": {
+              "end": 702,
+              "kind": "line_range",
+              "start": 698
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:344af18aa81d600ee07e1fa222d79257cdad1a3c647135f4e1f5b44dfeadcbf1",
+            "locator": {
+              "end": 720,
+              "kind": "line_range",
+              "start": 716
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The write path that owns every statement this module converts rows for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:0a6bec07db6c0aa506879c9ce27cae36b2eda3664917ed6ef72921294152d894",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_remove_facet_attachment"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facets.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69ca7238bf80de8b91e96e33b9e3b2c07f87441a",
+            "content": "sha256:52b36739e93e2109c4acec1fe1dc7a87be1285acfe5a1765573af67337575ff4",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_designate_explanation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facets.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The cases that hold the removal guard, the recomputed seal and the damaged-store refusal.**\n\nAnchor: \"test_removing_an_attachment_names_its_row_and_deletes_that_row_only\"; \"test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:e106396968280cffbf7fb0ea99066d3cf09ceec2b5dda67b8af6f3dc87bc1131",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 455
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:d33fa4935b89568752b7babe299a5d0c89a0a2351c3b238d0858f9b69a42cb37",
+            "locator": {
+              "end": 1141,
+              "kind": "line_range",
+              "start": 1037
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:a7145bf6a407b44ef7c6ce9225a93208ba94e4d3b5caae85d7219b38421788da",
+            "locator": {
+              "end": 564,
+              "kind": "line_range",
+              "start": 557
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:2ac59111e5e8a16e78c1bdf87509cd334866f5e0c5444e55e5c5eb19abf1b2c7",
+            "locator": {
+              "end": 1246,
+              "kind": "line_range",
+              "start": 1239
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:8065e0a85ed19248dfa4c3a53ccbdb646c4358109b7e581f44bdb16e4bd2690f",
+            "locator": {
+              "end": 576,
+              "kind": "line_range",
+              "start": 576
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:473e0d815e07f308d9c664c5924dedd09d3c784efe9fdeda78d3ca479a09f078",
+            "locator": {
+              "end": 1266,
+              "kind": "line_range",
+              "start": 1266
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The two mutable-field digests the guards compare against.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:e818d088dce67192e6cd9987753e9cca79f6dbc6f0415e9f5ae6a54120d59aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachment_row_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:afa453b0056e58a7bf69063aa98ba597f2fab3e3d4d75066397c72a7f8ce1691",
+            "locator": {
+              "kind": "symbol",
+              "name": "explanation_row_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:244348be3f153f540902e963e3e5f0d6f65d737b505e12330bb9292999e1113d",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:027eaca9fd801c8bf4b1a5ced56b858f985fa8d353781e4c01a3b99033a46707",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 534
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The versioned payload constants that make a change to the sealed field set a recorded decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:28df55955efbd3065fbca30619ebdc1c2e7da6fa107804ab95bdd540b467e0c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECORD_REVISION_PAYLOAD_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:3a6b06a1479509ece8cdac7e11918f0bc78e69853a87b71baf2fd739fc08d198",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPLANATION_REVISION_PAYLOAD_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The three drafts that make one authored row a value rather than six positional arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:ed9051746c3380e433ff1a2f42a213b188e081082bbaff44282b0939817c46c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FacetEnvelopeDraft"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:b38b6fbb29fb867703f862d220d7aa57326cf6d5323016da20093cb2e427a251",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordRevisionDraft"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:007b22c4cf43694956851a078cf72872fc5833e7b92afb169f1bab372f6f1321",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttachmentDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The record-envelope encoder and the schema resolution that refuses an undeclared kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:376f3b14292e6f263c61bdbbf1bb936641fe7bb986dceb9c61c502b42a86da31",
+            "locator": {
+              "kind": "symbol",
+              "name": "facet_record_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:05e3d8e74aa7bd558ac1975d0734ab4f55260362b6b5eed1cc03ea8038722eb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "facet_record_schema_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The revision seal that excludes only itself, and the digest a served record row carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:6cbf65be7503a14ba23c76e66daa20ebd58741813b9d4e9fc3c3f092e4517698",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:1568b7dfd40fb3526b668ed0c908a9ae57ea16ed23888a185bf0c30f652a1238",
+            "locator": {
+              "kind": "symbol",
+              "name": "facet_record_row_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:228a54b00a1ac1d0550e231b22d636da44c9497b187a0a9d02b58c5bb258770e",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:0fc04c210127e2ac66e2b6937b3ab19125a05e855064fdc593101d59a69486ce",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The four endpoint columns filled explicitly, and the decoder's two refusals for an unknown kind and a bypassed constraint.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:e15a78f9a8fd1ea725d63c2cde5ad995a0d3cc637959774c61981ca8cfbc9162",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachment_endpoint_columns"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:bc958c591a317faedfceb49b2db733c8ce66941cad18664ec6f0e75acf9f8ec6",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_attachment_endpoint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:1268b454aa037564864bb0a2867a484ce86bcca461e2ad7d32181a653f261e30",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:83d7fbd0934c87879a95972c82f52122f4838706aa39d2b856d175b582d9f48d",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 304
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The supersession edge's encoder, digest and decoder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:d1f4c47b99c439bcc44a99c56dc1307989464e26f2b403dfbd9a51bc6e9660ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "supersession_row_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:f5d4dcb3d245e457c73ba593070167fffd3ad016809aa523963470edd6fb7ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_supersession_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:8ba4fc40451ae2dbffc1840ed49af50d0620c65b55492924855afff06e10e422",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 410
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:e1449dd3a37c5e935e9c254915a59d7a13b212fe1eaf07d957bba850c94bfb6e",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 429
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The explanation's checked subject group, its decoder's refusals, and the designation inside the row digest.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:35ceb997337b61abb11b18b811660cdfdae74b5303e025eb96705cdcf786fd7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_columns"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:5de168c498978d79ab0628ca7782fc0c46ef10736dea1e13e097fa0db95a34e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_explanation_subject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:afa453b0056e58a7bf69063aa98ba597f2fab3e3d4d75066397c72a7f8ce1691",
+            "locator": {
+              "kind": "symbol",
+              "name": "explanation_row_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:9f231d21abef1bfb34fae098bb64b3b5c2cdfc88dce05c2682ef74ffef42b0cc",
+            "locator": {
+              "end": 462,
+              "kind": "line_range",
+              "start": 447
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:f940a2931f5846d8d50761fb67c9eb7d00c41c06897ae59cf1ec934ce5c66295",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 465
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:027eaca9fd801c8bf4b1a5ced56b858f985fa8d353781e4c01a3b99033a46707",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 534
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,487 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/structural_limits.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `DeclarationError` (lines 56-57) — ``layers.toml`` says something a structural cap cannot act on..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:72f75ddc683e9ce2d118f73e79fbdaa8eb8fd003015850d5038d1a97f113e0f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeclarationError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `measure_functions` (lines 165-177) — Every function in ``source``, measured. Callers filter; this reports all of them..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:f8624272a54f49d3d96f98627a4a6709c0741274cad0fa3cfad1872307ea310d",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_functions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `long_functions` (lines 180-191) — Functions under ``root`` longer than ``limit`` lines, longest first..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:b068524a7ceab1ab2658c7a123e43291c549c8d2a36028982c96a5b04c353bba",
+            "locator": {
+              "kind": "symbol",
+              "name": "long_functions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `_nested_statements` (lines 194-202) — Statements one level inside ``statement``, exception handlers included..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:3e086c575fbee0ddcfbfd2ac0a79b7276e9f56df5650394b6b57a2749486205f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nested_statements"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `_class_body` (lines 205-218) — Every statement the class declares, including ones behind a class-body ``if``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:aeb0f2913f8819bd6231f99a6296eb7ad097ee8746710a5a32d424721d397215",
+            "locator": {
+              "kind": "symbol",
+              "name": "_class_body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the function `method_definitions` (lines 221-225) — Every method the class declares, nested classes and closures excluded..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:81bdac92a4420e07b646d9ef6981bd9f3421c80a192bd12adfa5dc0e304102f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "method_definitions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `_is_overload` (lines 228-230) — Whether the def is a ``typing.overload`` stub rather than a distinct method..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:0bd1b62bdd4c3b25958b5922344e42478461be30d511f7421671e5572c8e9b89",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_overload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Defines the function `_decorator_name` (lines 233-238).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:5f3e8cf14251623486016f27246d2201a485336acbc65880fb169b8f1b69d104",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decorator_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Defines the function `_name_of` (lines 241-246).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:583a106018ea4aee51e9fb6eae516e7c85d7aa1c6d1b18c96e345778b4c185e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_name_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Defines the function `is_protocol` (lines 249-251) — Whether the class declares a structural TYPE rather than an implementation..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:1c59e6d575e5c87cf4c9bb243cc9d1a0be5d9775ff707299cbfdd5fa9d443de3",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_protocol"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Defines the function `_is_stub` (lines 254-270) — Whether the def has no body: only ``...``, optionally under a docstring..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:05ff4f9f952cf6618baf31cdf4344df61de1fbfbd250858b3886c0f85bfbc563",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_stub"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `Offender` (lines 61-79) — One construct over one limit, with everything the remedy needs to find it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:1bfd2cd95321a77196870a7201504969d181900565dea3a63e7b4b2ef07e5fd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "Offender"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Defines the function `declares_field` (lines 273-298) — Whether the member declares a read-only FIELD rather than an operation..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:0191657ff61e07b6caf07c2e8fad49d633362d3c3013c953e49f00ce351efa59",
+            "locator": {
+              "kind": "symbol",
+              "name": "declares_field"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Defines the function `public_method_names` (lines 301-315) — The class's public surface: distinct non-underscore method names, overloads folded..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:b3181dc3de753bd405ea104ebde420698adee43d9e43223f8ab5435f069f2d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "public_method_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Defines the function `_first_parameter` (lines 318-320).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:773513acbdc580f4dedc6a7ea5ad1948d0dc901662c36272f71caee24ac91481",
+            "locator": {
+              "kind": "symbol",
+              "name": "_first_parameter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Defines the function `_attributes_on` (lines 323-335) — Attributes touched on the name ``subject``, and the subset assigned to..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:0c34e192ce0e729f72ae2ffbc8cf91cb4fc9b50d801a70a15e86aa4987260b24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attributes_on"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Defines the function `declared_attribute_names` (lines 338-355) — Everything the class declares a member of itself: fields, methods, ``self.x`` stores..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:ba70dba3f1894c1d717c717cede3cd32acb25f05ddfc3244ffecbc552eb99c9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_attribute_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Defines the class `BoundFunction` (lines 359-370) — A public module-level function that assigns to its first parameter's attributes..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:fbf8bf37d6a1d36198eec964e2ba0649101ee1a875804fe349d9ab2f2ee3e593",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundFunction"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Defines the function `_annotation_name` (lines 373-381) — The bare class name an annotation refers to, or ``\"\"`` if it is not a plain name..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:2f5c0fed4bf178ac64ef8c3bdccd16e18ef82d688c56e58144ac4879e4b4f68c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_annotation_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Defines the function `bound_functions` (lines 384-402) — The module's top-level functions that mutate whatever is passed as their first argument..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:86a1a048426541f8a8b8100f9e26c2b876b7f56642469d7a1f26fbee9d592aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_functions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Defines the function `_classes_bound_by` (lines 405-410).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:a8650a8b102e52f8d4ccbe385545d350701dafebe521016ebd064756886518ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classes_bound_by"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Defines the function `relocated_surface` (lines 413-435) — Module-level functions charged to the class they are a method of, by ``(path, name)``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:7d346569f6a53d3d4bd5453b965509071045eacb0479823fee36ad77b39acab1",
+            "locator": {
+              "kind": "symbol",
+              "name": "relocated_surface"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the class `DirectoryDeviation` (lines 83-112) — A directory-scoped structural departure and the leaf required to clear it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:ec33a618cc57026b9e9e8ee9017a98942eba38abe084830593989fcf26ab1c23",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectoryDeviation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Defines the function `measure_classes` (lines 438-463) — Every class in ``source``, measured by public surface..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:df894fff0a4ecf5d090bff5a26083b23a1b89ea9e93d7ae34830079f207488cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_classes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the class `StaleDeviation` (lines 116-123) — A deviation and each declared cap the current tree now meets..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:19240c2cbbcb13b330989847c2c2cf5c5b8631cc374f42c82790b5dd28587341",
+            "locator": {
+              "kind": "symbol",
+              "name": "StaleDeviation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `python_sources` (lines 126-128) — Every ``.py`` file under ``root``, in a stable order..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:04af2cd28a7178a5454e4d26979134ccb2f1a37099abcac7e7b58bbced025616",
+            "locator": {
+              "kind": "symbol",
+              "name": "python_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `package_sources` (lines 131-139) — ``(display path, source text)`` for every module under ``root``, read once..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:58a21f3443586cd6191eb2a5419d0caa161540d565effedfdb35c4b822f838b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "package_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `_display` (lines 142-143).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:2259a63a09e8bd59c146a8d6690e05006f2982599c9a81daefc2a13031fb6b1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_display"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `source_span` (lines 146-155) — Lines the statement spans, counting its own first line..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:c1557b945d5e3aa1cce984eb94e815480247a03c48f9974b7baeeda75f570f60",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_span"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `function_definitions` (lines 158-162) — Every ``def`` and ``async def`` in the module, nested ones included..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
+            "content": "sha256:de2ef9b276399df3ddf74b72ed7525427fb07bd1f135f44e5fa64e074ea025cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "function_definitions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

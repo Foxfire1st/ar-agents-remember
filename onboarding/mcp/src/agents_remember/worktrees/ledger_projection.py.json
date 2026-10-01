@@ -1,0 +1,142 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/ledger_projection.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+        "content": "sha256:075c604f68bbcdc38ab786bf1d991f36cd4b86e8ab3f3e72b6daa87321d35cd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_ledger_source"
+        }
+      },
+      "id": "RLZ-NJ00437J",
+      "invariant": "INV-N213W04A",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The integration validator and the ledger projection are the two owners that make a landing a pair rather than two independent ref moves.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Source reads derive only Git attribution and recompute retained revision metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:075c604f68bbcdc38ab786bf1d991f36cd4b86e8ab3f3e72b6daa87321d35cd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ledger_source"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:c603a1d32cd2738d44665fe8b04b873be2fbd894bb567307111196284d7a6b8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ledger_with_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Contract projection resolves actual memory history independently of cache availability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:f41a370cfcf1bb3c206f1fae340f99ea9827de73022bb02863f941c1ecf14786",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_ledger_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Expected mappings and informational differences are built from the selected Git history.\n\nAnchor: \"the selected Git history\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:fc4fc3f9eb5607768adc78a3d1d2c752717c11c4d94bfc44a5040fa1e608b0d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_ledger"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:75842b07b55348ad6cf35ec47631080890c0ae8a87133120284fa847f4dc7146",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The kernel walks committed attribution without reading a ledger file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cache forgery/misses and invalid attributed targets have focused regression coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7c7a08f0826c6f143907af618e5c57b6685955e",
+            "content": "sha256:b87e9839b6a9711b350b3cb31a5ef01da2caad92c5a10773358be8f43eaeec17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_projection_recomputes_metadata_and_rejects_an_unattributed_pair"
+            },
+            "path": "mcp/tests/test_memory_ledger.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b7c7a08f0826c6f143907af618e5c57b6685955e",
+            "content": "sha256:b058f96c73f94fefb1220563a85cdbc7630c4b4375238fc0de5d917c5caa54dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_misses_preserve_contract_and_named_ref_history"
+            },
+            "path": "mcp/tests/test_memory_ledger.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

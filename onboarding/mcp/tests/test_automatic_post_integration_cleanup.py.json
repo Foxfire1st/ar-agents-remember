@@ -1,0 +1,265 @@
+{
+  "path": "mcp/tests/test_automatic_post_integration_cleanup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring that records the ownership story and the historical name.\n\nAnchor: \"Reclamation is automatic and unprompted, and finalization is what runs it.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f51b1ef1d1be34f5280b87e12d69b571058037b",
+            "content": "sha256:dd8c6de904bc709f1c4d75be216102cc95ad5b63ffbe0b646b86237b99c0bef8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`.\n\nAnchor: \"cleanup_report(contract, result.payload)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:b1082075b3a4eabb47883ac0350de3bba84a6a72f907649bad479667456e773f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_or_verify_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The report shaper whose exact sentence and inventory the first case asserts.\n\nAnchor: \"ALREADY_CLEAN = \\\"already-clean\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:5639d25df486b875d0fc0f50cfba0741b129eedf7856fbb199ed17283850a0e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_report"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:e74ee28e7f64b88a243d97af5586c007ca35f3d15151bb12efbd2f7fd64c1d3d",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17b8cdcae84247dc64b5f5dc2cf019d9a6b7874a",
+            "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrated_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The projection that names the finalization move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The terminal operation the first case calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:04d588697a60102cb96b6cf63363498e99e180b6e2eb93a23e493ae0ff667bbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.\n\nAnchor: \"integration = [\"; \"AMBIENT_ROLE_RUNNER_PATH: frozenset(\"; \"mcp/tests/test_automatic_post_integration_cleanup.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AMBIENT_ROLE_RUNNER_PATH"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:3452f46a4bef6d4dbce6f3bcd0826cde1ab1d00eccea0135709d66a2b523a1c4",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:7563e9fddebd3b6233c4bff75d8bbaf9be3e65bf0f01dd625cbb0983ed38b2a3",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.\n\nAnchor: \"integration = [\"; \"AMBIENT_ROLE_RUNNER_PATH: frozenset(\"; \"mcp/tests/test_automatic_post_integration_cleanup.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AMBIENT_ROLE_RUNNER_PATH"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:3452f46a4bef6d4dbce6f3bcd0826cde1ab1d00eccea0135709d66a2b523a1c4",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:7563e9fddebd3b6233c4bff75d8bbaf9be3e65bf0f01dd625cbb0983ed38b2a3",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.\n\nAnchor: \"integration = [\"; \"AMBIENT_ROLE_RUNNER_PATH: frozenset(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

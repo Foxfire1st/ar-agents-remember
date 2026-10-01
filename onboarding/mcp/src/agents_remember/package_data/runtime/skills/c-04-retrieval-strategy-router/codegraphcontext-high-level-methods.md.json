@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/codegraphcontext-high-level-methods.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The CGC catalog states the typed MCP tool contract and says generic `cgc_query` is removed.\n\nAnchor: `cgc_query`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14b47cf0602a95db8fba7c4f6ad990ea0c136e44",
+            "content": "sha256:dd8877dba56f7379a7b9f07e24d42a21b073a47db33349ca0853472294825143",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Symbol search, callees, callers, dependencies, and complexity sections show placeholder tool calls and synthetic output shapes.\n\nAnchor: `# CodeGraphContext High-Level Methods`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14b47cf0602a95db8fba7c4f6ad990ea0c136e44",
+            "content": "sha256:a4e10332da3faa711ad6e9f85cf4ef9f4d5fafc3ab6d62bc86dc7144e85fd189",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Practical rules explain when to use each typed CGC tool and require source confirmation before edits.\n\nAnchor: `## Practical Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14b47cf0602a95db8fba7c4f6ad990ea0c136e44",
+            "content": "sha256:d07138159fcedd37c5682747f94bb1f1a1e5ae7a3fa843de2cf9b88f1b5a54e0",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Relationship section.\n\nAnchor: `## Relationship: CodeGraphContext`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e226f8c0bc4c2f337f4c7db1aa935646590f2277",
+            "content": "sha256:661892f3d7a2d62624c31a0343c98ab8ab3e0ee51f1016c49782285c4689dae6",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

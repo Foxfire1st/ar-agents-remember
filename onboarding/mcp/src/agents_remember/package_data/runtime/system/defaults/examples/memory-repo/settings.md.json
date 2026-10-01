@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/settings.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The memory settings example identifies internal and external memory-layer locations.\n\nAnchor: \"ar-coordination/memory-repos/ar-<repo>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13951cc5e5e9f4f9272281830adcb0e0a9388415",
+            "content": "sha256:3972addb9aee55fdad0b5be79c9a77a516ee0b36db2dae8d5222f79019cc4754",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The scope section lists memory-owned policy and distinguishes it from global coordinator settings.\n\nAnchor: \"onboarding storage policy\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13951cc5e5e9f4f9272281830adcb0e0a9388415",
+            "content": "sha256:4da0760adb250342796798caef9cf7110ab5f35104a889d949ea4be4fcd3ab7b",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The storage, path eligibility, and cross-repo sections describe memory-layer ownership for settings JSON policy.\n\nAnchor: \"crossRepo.allow\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13951cc5e5e9f4f9272281830adcb0e0a9388415",
+            "content": "sha256:240a7278be4942b64372ec7482bb0dad3365b1acec3219d3fe78b9effd589f69",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

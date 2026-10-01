@@ -1,0 +1,137 @@
+{
+  "path": "mcp/tests/test_cross_master_concurrency.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Independent activation, private content, and sibling leaf landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "content": "sha256:49a2e68dc85ea93b2aa44316fc1fce77276366330bbc42c71c4c52672fa492b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "content": "sha256:2f85bdf23ab5fc59c8487b52d8f32d85cb6ca0ec724ee32b17cdb52a605a42d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Release and conflicting publication preserve sibling state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "content": "sha256:2f85bdf23ab5fc59c8487b52d8f32d85cb6ca0ec724ee32b17cdb52a605a42d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "content": "sha256:d05bcfd3ca583fe8b100152dbe0c85a9575c57098e7b1cb0910e1cd126309f5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_conflicting_publication_cannot_overwrite_master_b"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ordinary resume/reconciliation/completion preserves actual histories.\n\nAnchor: \"def test_master_a_resumes_reconciles_and_completes_after_master_b_landed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "content": "sha256:d956027cdda8f4592160a9e6de61f52bcdf0a0a38b5bf34a2e717065918ace6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_master_a_resumes_reconciles_and_completes_after_master_b_landed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The stopped interval is represented by snapshots, not a pause-tool call.\n\nAnchor: \"def _private_master_a_facts\"; \"def _require_pause_left_a_private\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "content": "sha256:f11509107bbe31d4866e79fffbbb53af379978212e1d00d736f403578477a774",
+            "locator": {
+              "kind": "symbol",
+              "name": "_private_master_a_facts"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "content": "sha256:362c837e492fbd758f186b8a551f117e807d52866c635f58a04a837159766b9c",
+            "locator": {
+              "end": 586,
+              "kind": "line_range",
+              "start": 570
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checkpoint and authored/absent dependency behavior remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "content": "sha256:f6c5cbd9fe345fd3f7c542976d319686209976d2630a6d6b958c1b8b8bda0731",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_explicit_checkpoint_landing_remains_available_when_requested"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Fixture commits are two actual outputs with Git-owned attribution.\n\nAnchor: \"def _land_leaf_contract\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
+            "content": "sha256:0e5d3fcc7ef97fe23b821f36dbfae0a684a63ccd4ffac53fae3e126ac4458202",
+            "locator": {
+              "kind": "symbol",
+              "name": "_land_leaf_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

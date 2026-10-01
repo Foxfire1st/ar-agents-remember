@@ -1,0 +1,200 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/finalization.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Prepared output references and exact raw commit bytes are revalidated.\n\nAnchor: \"finalization-output-bytes-moved\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:274939a1619ee75cd82d2a55dc84d19c1da3f8d8b4dba8f281bab41052ee8a86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_output"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Resume requires the same generation and exactly two selected output legs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:1dd7c58740c773b49b38d977485eb43842a3c9710a5ded5a7c76a82786b7e755",
+            "locator": {
+              "kind": "symbol",
+              "name": "resume_prepared_closeout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Live ownership, contract identity, and selected preparation remain bound.\n\nAnchor: \"finalization-contract-moved\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:518c960b4d893f63100d822987118380994d0488811e9e55b0cd01bb555f4f96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing historical memory retains its raw tree while proving the separate certified content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:869bf3fb699dd03aa80df90edec45a23730e8397dbcf09824745042132a12437",
+            "locator": {
+              "kind": "symbol",
+              "name": "_physical_memory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:0c696699d39a715bd83fb190c89f681100327212977bdbfdd0efd80d47b39a5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "certified_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The fifth certificate is checked against the correct content subject and current authorities.\n\nAnchor: `gateFiveInputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:6efc058b3f944172b0c07abf8367494c8502f19ef1311ca8fab599e9d5a87272",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Post-publication proof uses a memory-only normalized snapshot and preserves actual HEAD/tree equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:11ac9663f628df7127165f749dd756f08d6ae888b5df161dd60a099954348139",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_proof"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:753fb858f6d2cb6846bb7c929ca0fea654f37212808de45ffd366647b53136b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publication_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The original per-leg prestate is journaled with the same memory-domain snapshot semantics.\n\nAnchor: \"finalization-prestate-moved\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:753fb858f6d2cb6846bb7c929ca0fea654f37212808de45ffd366647b53136b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publication_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Publication checks original state, uses the exact CAS, and records its proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:b57615a49b2d7cc98d6364ee6fe7d7357e42b1d2b41dfd59025d01222b932ed4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_leg"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:11ac9663f628df7127165f749dd756f08d6ae888b5df161dd60a099954348139",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The accepted pair is proven before the best-effort cache refresh.\n\nAnchor: \"Closeout completed; integrate the task branches into their source branches.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:e5b2f8c13b8bbf71e46b07a0b22d55e32b4875c6c4da3d88a414de5f06d0d882",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Only code and memory outputs are published before canonical contract completion.\n\nAnchor: \"code and memory outputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "017ac88512604b67be63bf37bcd0e35666cb7541",
+            "content": "sha256:7111b512bf40b6b16264b9052ba14893a22752ddd0ca6f963fcd15b6cb317319",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_prepared_closeout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

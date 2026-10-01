@@ -1,0 +1,285 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The gate envelope serialized and validated here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5af2a37e3cdff5f67bda1c0fd35069fcde2489e7",
+            "content": "sha256:e5c0b9f39701e93fc902434314625b8e41e4f8627df07b304467256fe1dac109",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateRecord"
+            },
+            "path": "mcp/src/agents_remember/controlplane/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Mirrors the observer event store (same append / read / JSONL shape).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:2f08443e4f411f7c837987e255aae726e8836daa769647e940a28b25c78f1a4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventStore"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `ar-durable-store/1.0` contract this store routes every append and rewrite through: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, and `GATE_OWNERSHIP`, which names the MCP process the compaction owner and the MCP, dashboard and lifecycle-operation roles as declared writers.\n\nAnchor: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `GATE_OWNERSHIP`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_access"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:41e194bf39925fd7ac0b4f8e8f1fe63a5298c6d0632a52760bd8eba22ff8b283",
+            "locator": {
+              "kind": "symbol",
+              "name": "append_line"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:c9c7808b5010f0a0a197d1a8167b62768116043eb6483dec5b0c49a5b9a46e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rewrite_lines"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:17f59a1bb0b5ecc96439d18353d2e83dbcede6f21f9c1ff6524a5f4dff55f738",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_log_text"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:831226bd8c7be6da3e315dd64063c8ad360114e5042276b0aab2a7f9c65d30fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "GATE_OWNERSHIP"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_reclaim_gate_log` at gate_decisions.py:74-80: the reclaim pass moved here from the projection tick, guarded by `is_compaction_owner` because the dashboard calls `gate_decide_payload` directly, and its suppression narrowed from `ValueError` to `ValidationError` — the widened-except shape this leaf closed. Called from `record_gate_decision` at gate_decisions.py:116.\n\nAnchor: `_reclaim_gate_log`, `record_gate_decision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:9c1f77e54b06fb86d995723c5b890b5cfeab63bec654cd15d090793ea5061811",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reclaim_gate_log"
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:e8c335c3bd3e48fb27ef8fb2f3ca48f840505c727bc7d99d15d034c4a33ce0ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_gate_decision"
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:1fd7e3773c8bb6b493202b036586e421669b93b7420f15fbfb932cbf8b6318eb",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:b70c5470d101fac93aa71ecce4dead60e2d9fd490ec57173006d610f05512040",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`CONSUMED_APPROVAL_GATE_KINDS` and `_keep_gate`'s authority branch: what stops `compact` from reclaiming the `applied` snapshot this store's atomicity exists to protect.\n\nAnchor: `CONSUMED_APPROVAL_GATE_KINDS`, `_keep_gate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:c43409f84bf7bc84003c36ae0e676299be6a2244c72101edcdb80cfbc057dac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSUMED_APPROVAL_GATE_KINDS"
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:8d6f0070efbb54d7e2eb3582332406b20b8356387839b427ac2d18585a884fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_keep_gate"
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`evaluate_gate` — the pure verdict `claim_approval` takes under the lock, including the already-applied refusal that makes a second consume fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098584045028586661c04fda59d447990277db8a",
+            "content": "sha256:e414445ab0bacda5f51e7a532caeb3f5209888a68ae89ecd5fea945db1c8035e",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_gate"
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "098584045028586661c04fda59d447990277db8a",
+            "content": "sha256:ac9056bf29fdc7f43fd4493d0fdfed2ec0d27f5b82a1bc605761b2006f434af4",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`_claim_closeout_gate` consumes approval under the gate-store lock; its closeout call site precedes journaled mutation intent and Git. Approval consumption does not itself prove mutation or retain a generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "content": "sha256:5ac3b4a3af2ac8ef1bbe8401254d12192a9e98d431009101de0d48591a1d9a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_closeout_gate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "content": "sha256:16f4f5a341af61fbe46985ec477056a2017e65c0078aa3f0192d12ee8c92d182",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`read_gates` at snapshots.py:513-546 now folds through the tolerant `projected_current` and rewrites nothing; its docstring records that the 30-second prune cadence this tick used to run was removed.\n\nAnchor: \"def read_gates(coordination_root: Path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:6c13db54e0814f706ad528a2f32ee3aea154a9f18dad38cc1e43bc8eff833bd8",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Durable exclusion guards the checkout target before invoking shared kernel locking and preserves typed unsafe-filesystem refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
+            "content": "sha256:d99b53ff95bbbc0395003498264051f916b0da5e4c67e2ebc07259709fa1e071",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_access"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

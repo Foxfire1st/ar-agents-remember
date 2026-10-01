@@ -1,0 +1,175 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter, with its optional base converter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:7dce94a987c6103da6908cfe0a1167b479263995df126d1907da7fb0f28ba36e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeValidation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:937bf70e534a8c66af7c6fa04cf54b2f09da4aceee64c93b061aa63747948e5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "BaseConverter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unconverted base of a converted candidate is replaced by its conversion before the rules run, since MIK-R09 inside `_refusal`, which both entry points call.\n\nAnchor: \"if candidate.converted and self.base_converter is not None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:7afa26789e833122d7c0faec07cfdc3b13ff70537162a2c5759086c2c504a72e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two entry points; a leaf publication checks the leaf's own history file whatever its flag; a Git failure is named (MIK-R09).\n\nAnchor: \"def leaf_refusal(\"; \"except subprocess.SubprocessError as error:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:1c835b6b749348107f6966a08500c1a445efa32a96c377da49f7642e3fc0ad79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Commit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:11f69f9c7f232759e5796843f35fca9a613e6c7eea0f8a17a5fd67bdc6ae4f79",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:218fe27bf3c776bcf485b05dbadea8c2143f5be9cf424e42ef277ee9f7abca9b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The converter the composition binds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "content": "sha256:75c14335a1bed58790d86d4fc94943b7fcef5ab82f17aee9b11ad79804fd55f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitBaseConverter"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The commit route validates against the conversion of an unconverted base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3554bf0bcc08fedc5f9b1a4f2ab5160dec976bc2",
+            "content": "sha256:710ffa62bab4ded60e4038a8f12ebab029d34c2cbb3989aa471584da8261a0af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_commit_route_validates_against_the_conversion_of_an_unconverted_base"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The port it implements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:27eea00a32e7c89a71f9fcafadeb9ba87df61f84e2de04175ec9bb745ea7a19c",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeValidationPort"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The default composition binds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08156caa47bcb0e5495d481eac020f2d7efb6cba",
+            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The adapter refuses naming every violation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:6de00b263b85b95c6e0447009eb7667b131f8281a78600baf0a6a1a7e26ef1e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_commit_route_adapter_refuses_naming_every_violation"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

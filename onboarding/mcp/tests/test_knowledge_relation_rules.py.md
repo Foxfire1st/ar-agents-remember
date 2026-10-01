@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_relation_rules.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_relation_rules.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -74,81 +64,32 @@ Constructor validation is **not** re-tested here.
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The scope statement: operation and failure behaviour, not constructor validation. | "Constructor validation is not re-tested here." | mcp/tests/test_knowledge_relation_rules.py:7-7 |
-| The anchored-claim atomicity node. | "test_a_new_anchor_and_its_claim_are_one_transaction" | mcp/tests/test_knowledge_relation_rules.py:77-117 |
-| The two endpoint-refusal nodes that prove nothing was written. | "test_a_membership_endpoint_that_does_not_exist_refuses_and_writes_nothing"; "test_a_realization_of_a_missing_anchor_refuses_and_writes_nothing" | mcp/tests/test_knowledge_relation_rules.py:118-159; mcp/tests/test_knowledge_relation_rules.py:160-187 |
-| The pair-uniqueness and the identity-reuse nodes. | "test_the_same_endpoint_pair_is_related_only_once"; "test_a_reused_relation_identity_with_other_endpoints_refuses" | mcp/tests/test_knowledge_relation_rules.py:188-232; mcp/tests/test_knowledge_relation_rules.py:233-262 |
-| The authored-role node. | "test_a_realization_role_is_authored_vocabulary" | mcp/tests/test_knowledge_relation_rules.py:263-304 |
-| The stale-caller removal and anchor-lifetime nodes. | "test_an_explicit_removal_requires_the_row_the_caller_expects"; "test_a_cited_anchor_cannot_be_removed_and_an_uncited_one_can" | mcp/tests/test_knowledge_relation_rules.py:305-363; mcp/tests/test_knowledge_relation_rules.py:364-413 |
-| The database-enforcement nodes: payload rewrite refusal and foreign keys. | "test_relation_payloads_refuse_an_in_place_rewrite"; "test_foreign_keys_are_enforced_on_the_relation_tables" | mcp/tests/test_knowledge_relation_rules.py:414-441; mcp/tests/test_knowledge_relation_rules.py:442-472 |
-| The namespace sweep and the composed application-seam node. | "test_graph_operations_refuse_another_repository_namespace"; "test_the_application_seam_authors_a_graph_through_an_admitted_destination" | mcp/tests/test_knowledge_relation_rules.py:473-565; mcp/tests/test_knowledge_relation_rules.py:566-680 |
-| The production modules under test. | `create_source_anchor`; `create_family_member`; `create_realization_claim` | mcp/src/agents_remember/memory/knowledge/anchors.py:51-70; mcp/src/agents_remember/memory/knowledge/memberships.py:88-107; mcp/src/agents_remember/memory/knowledge/realizations.py:61-81 |
-| The application seam this module is the only test importer of. | `create_knowledge_family`; `create_knowledge_family_member`; `create_knowledge_realization_claim` | mcp/src/agents_remember/application/knowledge.py:438-447; mcp/src/agents_remember/application/knowledge.py:486-495; mcp/src/agents_remember/application/knowledge.py:510-519 |
-| The unit-regression lane row this module is registered by. | "mcp/tests/test_knowledge_relation_rules.py" |mcp/tests/test-evidence-lanes.toml:176-176|
-|  The fixture contract that names this module as an exact consumer. | "contract:knowledge-identity-branching-fixture" |mcp/tests/evidence-lifecycle.toml:1237-1237|
+- The scope statement: operation and failure behaviour, not constructor validation. [1]
+- The anchored-claim atomicity node. [2]
+- The two endpoint-refusal nodes that prove nothing was written. [3]
+- The pair-uniqueness and the identity-reuse nodes. [4]
+- The authored-role node. [5]
+- The stale-caller removal and anchor-lifetime nodes. [6]
+- The database-enforcement nodes: payload rewrite refusal and foreign keys. [7]
+- The namespace sweep and the composed application-seam node. [8]
+- The production modules under test. [9]
+- The application seam this module is the only test importer of. [10]
+- The unit-regression lane row this module is registered by. [11]
+- The fixture contract that names this module as an exact consumer. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 2 row(s) re-pointed by the installed fixer (its generated bullets kept); 2 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`anchors.py`, `evidence-lifecycle.toml`, `knowledge.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:29:12+00:00: Generated citation repair: "mcp/tests/test_knowledge_relation_rules.py" repointed to mcp/tests/test-evidence-lanes.toml:176-176. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:29:12+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1237-1237. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_knowledge_relation_rules.py" repointed to mcp/tests/test-evidence-lanes.toml:128-128. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1207-1207. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_knowledge_relation_rules.py" repointed to mcp/tests/test-evidence-lanes.toml:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1195-1195. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "mcp/tests/test_knowledge_relation_rules.py" repointed to mcp/tests/test-evidence-lanes.toml:108-108. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T02:05:20+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1190-1190. No content impact: mechanical anchor-range projection bound to citation source snapshot fe7fdbf3f561fa23007ac47565833928a7c74df1b4b028969d78a5b139bb65b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1192-1192. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T20:45:09+02:00 — 260915-KS-L23 post-closeout clearance (change set on `ar/260915-ks-l23`, memory base `ce3028e9`, code `5e4eb651`): **cleared the 1 enforced `citation_anchor_absent_from_range` row in this document.** The closeout's own code commit appended one `consumers` registration above every construct these cards cite, so each cited range ended exactly one line above the line that now carries the anchor row. Widened to the carrying line: `mcp/tests/evidence-lifecycle.toml:1190-1190` → `mcp/tests/evidence-lifecycle.toml:1190-1191` (row 101). Every line the author cited stays inside its range; no claim, Anchor cell or other range was dropped or re-worded, and each named anchor now resolves inside the widened range.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1190-1190. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "mcp/tests/test_knowledge_relation_rules.py" repointed to mcp/tests/test-evidence-lanes.toml:107-107. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1187-1187. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_knowledge_relation_rules.py" repointed to mcp/tests/test-evidence-lanes.toml:106-106. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "mcp/tests/test_knowledge_relation_rules.py" repointed to mcp/tests/test-evidence-lanes.toml:104-104. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "mcp/tests/test_knowledge_relation_rules.py" repointed to mcp/tests/test-evidence-lanes.toml:102-102. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "contract:knowledge-identity-branching-fixture" repointed to mcp/tests/evidence-lifecycle.toml:1183-1183. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "mcp/tests/test_knowledge_relation_rules.py" repointed to mcp/tests/test-evidence-lanes.toml:89-89. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 7 generated projection bullet(s) by hand while resolving the memory sync** — `mcp/tests/test_knowledge_relation_rules.py`, `create_knowledge_family`, `create_knowledge_family_member`, `create_knowledge_realization_claim`, `create_source_anchor`, `create_family_member`, `create_realization_claim`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand** — `mcp/tests/test_knowledge_relation_rules.py`, `create_knowledge_family`, `create_knowledge_family_member`, `create_knowledge_realization_claim`, `create_source_anchor`, `create_family_member`, `create_realization_claim`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: `"mcp/tests/test_knowledge_relation_rules.py"` → `mcp/tests/test-evidence-lanes.toml:84-84`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-
-- 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `create_source_anchor`; `create_family_member`; `create_realization_claim` at mcp/src/agents_remember/memory/knowledge/anchors.py:49-68; mcp/src/agents_remember/memory/knowledge/memberships.py:88-107; mcp/src/agents_remember/memory/knowledge/realizations.py:61-81.
-
-- 2026-09-17T08:11:27+00:00 — 260915-KS-L9 curator (memory-quality closure): re-read every reopened claim in this card against code commit `c22beb0121946c0637e113ec4cf29da29fd4aec7` and advanced the verification stamp to that commit, which closeout re-stamps. A generated citation repair had already rewritten these ranges mechanically, so each was re-read rather than trusted: the range was checked against the current definition of the construct the claim is about, and the wording still holds. Extents chosen: `create_source_anchor`; `create_family_member`; `create_realization_claim` at mcp/src/agents_remember/memory/knowledge/anchors.py:49-68; mcp/src/agents_remember/memory/knowledge/memberships.py:88-107; mcp/src/agents_remember/memory/knowledge/realizations.py:61-81.
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `create_knowledge_family_member` in the row 99 of this card from mcp/src/agents_remember/application/knowledge.py:495-497 to mcp/src/agents_remember/application/knowledge.py:86, the extent of the construct the claim is about (the checker named line(s) [86, 471] as its live location); re-pointed `create_knowledge_realization_claim` in the row 99 of this card from mcp/src/agents_remember/application/knowledge.py:86 to mcp/src/agents_remember/application/knowledge.py:88, the extent of the construct the claim is about (the checker named line(s) [88, 495] as its live location)
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `create_knowledge_family_member` in the row 99 of this card from mcp/src/agents_remember/application/knowledge.py:423-425 to mcp/src/agents_remember/application/knowledge.py:471-473, the extent of the construct the claim is about (the checker named line(s) [86, 471] as its live location); re-pointed `create_knowledge_realization_claim` in the row 99 of this card from mcp/src/agents_remember/application/knowledge.py:471-473 to mcp/src/agents_remember/application/knowledge.py:495-497, the extent of the construct the claim is about (the checker named line(s) [88, 495] as its live location)
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `create_knowledge_family_member` in the row 99 of this card from mcp/src/agents_remember/application/knowledge.py:495-497 to mcp/src/agents_remember/application/knowledge.py:471-473, the extent of the construct the claim is about (the checker named line(s) [86, 471] as its live location); re-pointed `create_knowledge_family` in the row 99 of this card from mcp/src/agents_remember/application/knowledge.py:471-473 to mcp/src/agents_remember/application/knowledge.py:423-425, the extent of the construct the claim is about (the checker named line(s) [85, 423] as its live location)
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-read the reopened claim in the row 98 of this card against the current code: its anchor still resolves inside the cited range, so the wording holds and the stamp advances
-
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/application/knowledge.py:423-425 in the row 99 of this card; the repetition added no pooled evidence
-
-- 2026-09-16T06:24:00+00:00 — 260915-KS-L2 curator (uncommitted change set on `ar/260915-ks-l02`, base `60e0820e`): created this one-to-one card for the new relation-rules test module. It records the atomicity claim its endpoint and anchored-claim cases carry (a refusal leaves the whole-database counts unchanged), the separation between the pair-uniqueness and identity-reuse failures, the database-level enforcement nodes that are distinct from the operation's own pre-checks, and the fact that this is the only graph module driving the composed application seam. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

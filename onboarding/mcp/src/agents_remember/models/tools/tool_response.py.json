@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/tool_response.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `finalize_tool_response` (lines 15-26) — Validate one declared response, apply optional caller enrichment, and count tokens..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
+            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_tool_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

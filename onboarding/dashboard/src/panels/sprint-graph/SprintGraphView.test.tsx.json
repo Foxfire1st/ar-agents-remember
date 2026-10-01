@@ -1,0 +1,70 @@
+{
+  "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component forcing suite.\n\nAnchor: `SprintGraphView` (describe)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75b9603dea6ab8c4ee6ef96b0d6fc5091ee2ddc7",
+            "content": "sha256:72ee89fcdd379f6750464bc36bcc827745ac7bbf5b8aacf7dde2f94548aaea2b",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8829a127167d50f8d61ecb19931a9ea01f2a4cd4",
+            "content": "sha256:97a09c391790911e5e80370caa44a6c2d9109dc5b05ae4e03c253ecd36acb591",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphView"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The style contracts asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e03399be4abdceadca86bc8143fc384b864c9213",
+            "content": "sha256:c2a38597e09b2f1568795b2529db88b97948ec861b7950908616a9b62a923519",
+            "locator": {
+              "kind": "symbol",
+              "name": "waveGridStyles"
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e03399be4abdceadca86bc8143fc384b864c9213",
+            "content": "sha256:4607313f16f9a165f471221d4a4ff8727d45751431c806dbefbaafe1b809bda1",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafLineStyles"
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

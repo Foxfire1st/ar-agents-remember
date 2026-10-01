@@ -1,0 +1,153 @@
+{
+  "path": "mcp/src/agents_remember/kernel/recorded_reads.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: why plain-file reads are recorded, and the three identities.\n\nAnchor: \"A path recorded twice with different identities in one computation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
+            "content": "sha256:4a5b95140bac6546636ab9a6091d64294d50a260e31d657ab57c232329592276",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
+            "content": "sha256:9077d447474f450be0aa4c8e2b0067fcb9ce6d0c1654d6b221922c3b14949d1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ABSENT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
+            "content": "sha256:d2ddfa45b4a5120fde15a4f4ef24154da1fa3b53f80e4b3d23ed89d5b3f16925",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONFLICTING"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
+            "content": "sha256:6b5c932af29a6943959a3e9c5fb4dcae43f79f9e39af40a0c9ee184095ad72ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "bytes_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
+            "content": "sha256:fe1e9891355ad52b088934e5bd85db7d6ec77b5813f5e09be14a85d7b0d8ad51",
+            "locator": {
+              "kind": "symbol",
+              "name": "file_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The recording block and one read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
+            "content": "sha256:808519e75b00af64073d3a9736f796e1d5051a0e6f917b58f3f2a361c27d125e",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_reads"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
+            "content": "sha256:af3542badebf1b0540fbd678540833be14dbc8ae849ac5011bb0a5fe11a8bec5",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The manifest read records exactly the bytes it read.\n\nAnchor: \"record_read(path, bytes_identity(data))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
+            "content": "sha256:76765fdee6795ffabfa43f6766b90e2a483ed83f4a9de4a057e0b98b54ae6c50",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The gate records every evaluation's reads.\n\nAnchor: \"with recorded_reads() as reads:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bc883864e480a07e62be62412c5cf49909f016a",
+            "content": "sha256:19a889d0a121a2039636d5424ea92ec4fc88c4cab22a556b66784453f6669614",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 257
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The read set and the conflicting read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0232362ee0ee427401f2d21d0cbc238ab3db594c",
+            "content": "sha256:e8a1d0c81e3c4179f86a89d58730783a9e3efa0dad07e390b82ce57f8e558032",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The template requires status metadata, objective, requirements, a `## Design` section (sized per `tasks/AGENTS.md`), implementation steps, examples, decision log, open questions, and references.\n\nAnchor: `# Light Task Template`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
+            "content": "sha256:581120b382df9679e7c8e18e35f20cb51155966aed932ff45c257fd7ac5d7ae2",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Usage rules require `c-08-ar-coordination-context-resolver` skill resolved paths, wrapper-folder task placement, checklist progress, status changes, append-only decisions, and sizing the `## Design` section to the request.\n\nAnchor: \"# Task: <Title>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
+            "content": "sha256:9e6c902679b1021ef33324403701c21ce193ce96068d074bc274af41f7fc14d5",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

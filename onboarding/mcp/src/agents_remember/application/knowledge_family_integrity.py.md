@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_family_integrity.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_family_integrity.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:05+02:00 |
-| lastVerifiedCommitHash |  `06ed70cfcde7e3860ee5b53435727e7512e4335c`|
-| lastVerifiedCommitDate |  2026-09-24T10:53:01+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -163,44 +153,36 @@ code-free refusal), and every function carries a docstring that states what it d
   sixth owner registered in `models/knowledge/family_review.py` would not widen what this seam refuses
   before the store is opened.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module docstring states the whole contract: the one operation, the two owners this leaf does not report, the retention read-back, and that nothing here is a gate.** | "It decides nothing itself"; "the collapse §4.1 forbids"; "a destination nobody read back is an assumption rather than evidence"; "Nothing here is a gate." | mcp/src/agents_remember/application/knowledge_family_integrity.py:1-27 |
-| **The module's declared surface and its two decision-carrying constants: the owners this pipeline does not derive, and the operation name its own refusal carries.** | `__all__`; `CALLER_REPORTED_STATUS_OWNERS`; `COMPOSE_REPORT_OPERATION` | mcp/src/agents_remember/application/knowledge_family_integrity.py:79-94 |
-| The request's shape, the property that reports which owner statuses it did not carry, and the two accessors that let a caller assert what the report-only section holds. | `FamilyIntegrityRequest`; "def missing_owner_statuses"; "def report_only_rows"; "def section_lines" | mcp/src/agents_remember/application/knowledge_family_integrity.py:97-128; mcp/src/agents_remember/application/knowledge_family_integrity.py:98-98; mcp/src/agents_remember/application/knowledge_family_integrity.py:121-121; mcp/src/agents_remember/application/knowledge_family_integrity.py:151-151; mcp/src/agents_remember/application/knowledge_family_integrity.py:156-156 |
-| **The report shape: one field per act, a two-member `state`, and no field that could hold a merged verdict.** | `FamilyIntegrityReport`; "state: Literal[\"composed\", \"refused\"]" | mcp/src/agents_remember/application/knowledge_family_integrity.py:131-149 |
-| **The operation's order and its three short-circuits, and the `_refused` builder that keeps whatever was resolved and the refusal that stopped it.** | `family_integrity_report`; "if missing:"; "store = open_read_only_store(database_path, request.repository_id)"; "def _refused(" | mcp/src/agents_remember/application/knowledge_family_integrity.py:162-198 |
-| **The five-act composition, and where three of the five statuses are derived while the two caller-reported ones pass through untouched.** | `_compose`; "statuses=compose_status_report(_owner_statuses(run, request, currentness))"; `_owner_statuses`; "reported[\"detector\"] = detector_status(" | mcp/src/agents_remember/application/knowledge_family_integrity.py:201-250 |
-| The refusal a request that omits an owner's status receives, by name, in the shipped vocabulary; and the record identities indexed by the subject spelling the routing rows use. | `_owner_status_refusal`; `COMPOSE_REPORT_OPERATION`; "\"invalid_payload\""; `_review_ids_by_subject`; `assessment_subject_id(record)` | mcp/src/agents_remember/application/knowledge_family_integrity.py:253-281 |
-| **The retention record: the only claim it can make is about two read-backs, readability together is strictly stronger than a match, and a failure answers with the destination and both observed states rather than with "published".** | `ReviewEvidenceRetention`; "def readable_together"; "def blocked_reason"; "did not read both artifacts back" | mcp/src/agents_remember/application/knowledge_family_integrity.py:284-325 |
-| **Publication plus immediate read-back, with the destination resolved by the shipped publication function rather than by this one.** | `publish_review_evidence`; "publish_durable_evidence(task_root, finding_name, finding_content)"; "read_back_evidence(manifest)" | mcp/src/agents_remember/application/knowledge_family_integrity.py:328-351 |
-| **The disposal predicate is one expression over the durable reference count a caller supplies, and its docstring, its expression and the shipped case agree: a count of zero — the row is the only pointer to the evidence — answers `False` and the row is kept.** | `worklist_row_disposable`; "counted no durable reference gets"; "return durable_reference_count > 0" | mcp/src/agents_remember/application/knowledge_family_integrity.py:354-363 |
-| The read-only open the operation reads the recorded run through, and the two lower-route owners it delegates to in order. | `open_read_only_store`; `read_detection_run`; `construct_registered_scope` | mcp/src/agents_remember/application/knowledge_composition.py:136-150; mcp/src/agents_remember/memory/knowledge/detection.py:562-600; mcp/src/agents_remember/memory/knowledge/registered_scope.py:130-167 |
-| The five owners, their declared order, and the validator that requires exactly one entry per owner in that order. | `PIPELINE_STATUS_OWNERS`; "if owners != PIPELINE_STATUS_OWNERS:"; "which is not one of its declared " | mcp/src/agents_remember/models/knowledge/family_review.py:95-106; mcp/src/agents_remember/models/knowledge/family_review.py:332-332; mcp/src/agents_remember/models/knowledge/family_review.py:309-315 |
-| **The routing record's arithmetic tie, which is why the report cannot grow a fourth actionability term; the shipped formula it consumes; and the detector-status derivation the seam calls by name.** | `FamilyReviewRouting`; "and gains no fourth"; `curator_actionable_count(repair_count, missing_count, stale_count)`; "def detector_status(" | mcp/src/agents_remember/models/knowledge/family_review.py:423-474; mcp/src/agents_remember/models/knowledge/family_review.py:464-464; mcp/src/agents_remember/memory_quality/family_review.py:387-387; mcp/src/agents_remember/memory_quality/family_review.py:265-265 |
-| **The publication and read-back owners this module delegates to, whose `matched()` composes into the retention record.** | "def publish_durable_evidence"; "def matched(self) -> bool:" | mcp/src/agents_remember/memory/knowledge/durable_evidence.py:122-151; mcp/src/agents_remember/memory/knowledge/durable_evidence.py:84-119 |
-| The subject spelling the routing rows address and the section renderer `section_lines()` delegates to, both defined by their own owners. | "def assessment_subject_id("; "def knowledge_review_section(" | mcp/src/agents_remember/models/lifecycles/review_assessment.py:367-398; mcp/src/agents_remember/memory_quality/knowledge_review.py:70-100 |
+- **The module docstring states the whole contract: the one operation, the two owners this leaf does not report, the retention read-back, and that nothing here is a gate.** [1]
+- **The module's declared surface and its two decision-carrying constants: the owners this pipeline does not derive, and the operation name its own refusal carries.** [2]
+- The request's shape, the property that reports which owner statuses it did not carry, and the two accessors that let a caller assert what the report-only section holds. [3]
+- **The report shape: one field per act, a two-member `state`, and no field that could hold a merged verdict.** [4]
+- **The operation's order and its three short-circuits, and the `_refused` builder that keeps whatever was resolved and the refusal that stopped it.** [5]
+- **The five-act composition, and where three of the five statuses are derived while the two caller-reported ones pass through untouched.** [6]
+- The refusal a request that omits an owner's status receives, by name, in the shipped vocabulary; and the record identities indexed by the subject spelling the routing rows use. [7]
+- **The retention record: the only claim it can make is about two read-backs, readability together is strictly stronger than a match, and a failure answers with the destination and both observed states rather than with "published".** [8]
+- **Publication plus immediate read-back, with the destination resolved by the shipped publication function rather than by this one.** [9]
+- **The disposal predicate is one expression over the durable reference count a caller supplies, and its docstring, its expression and the shipped case agree: a count of zero — the row is the only pointer to the evidence — answers `False` and the row is kept.** [10]
+- The read-only open the operation reads the recorded run through, and the two lower-route owners it delegates to in order. [11]
+- The five owners, their declared order, and the validator that requires exactly one entry per owner in that order. [12]
+- **The routing record's arithmetic tie, which is why the report cannot grow a fourth actionability term; the shipped formula it consumes; and the detector-status derivation the seam calls by name.** [13]
+- **The publication and read-back owners this module delegates to, whose `matched()` composes into the retention record.** [14]
+- The subject spelling the routing rows address and the section renderer `section_lines()` delegates to, both defined by their own owners. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A status owner's reported status, an authored
 review record and a durable evidence destination are all properties of one coordination root's own task
 tree, and nothing here names, reads or writes another repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T14:05+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): created this one-to-one card for the family-integrity pipeline seam. It records that the module owns exactly three of the five owner statuses and refuses a request that omits either of the other two (before the store is opened, with the scope still constructed), that a short-circuit keeps the resolved scope and drops every downstream field, that `readable_together()` is strictly stronger than `matched()` and a failed read-back answers with facts rather than with "published", and that `worklist_row_disposable`'s docstring states the read-back guard while its one returned comparison implements the count test — recorded as the code states both. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

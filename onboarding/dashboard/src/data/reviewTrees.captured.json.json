@@ -1,0 +1,135 @@
+{
+  "path": "dashboard/src/data/reviewTrees.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Comparison 1, both candidates pinned under `refs/ar/review/260928_maintained-invariant-knowledge/260928-MIK-L31/1`.\n\nAnchor: \"code_candidate\"; \"memory_candidate\"; \"\\\"number\\\": 1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2906b52bb3f8908ff51edbe520f8bc5e7da90448",
+            "content": "sha256:7c812bbc23948feadbdac42b8ef46c663613ea66089a9e472e3ff366b84b72f0",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "No camelCase key anywhere in this body, including the owners' own documents (the test asserts it).\n\nAnchor: \"carries no camelCase key anywhere in the real body, including the owners own documents\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dc09adce51f1234914f591afc712dc9db6a92ae",
+            "content": "sha256:a35ba85e062c62ddd6d186bf3ea64d5e33e70720369b544e0efde3693b197709",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "dashboard/src/data/reviewTrees.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two planned effects no row delivered, and the unplanned and planned marks.\n\nAnchor: \"planned:family:FAM-BWQ4XYF9#strengthen\"; \"planned:invariant:INV-2TQGXFAX#clarify\"; \"\\\"planning\\\": \\\"unplanned\\\"\"; \"\\\"planning\\\": \\\"planned\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2906b52bb3f8908ff51edbe520f8bc5e7da90448",
+            "content": "sha256:4279230ba6db5f8b4d774605509aa86a03dbc07b7416f53a90d425ef3ba55469",
+            "locator": {
+              "end": 1961,
+              "kind": "line_range",
+              "start": 1813
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The per-side currentness.\n\nAnchor: \"currentness\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2906b52bb3f8908ff51edbe520f8bc5e7da90448",
+            "content": "sha256:6856bfbcba3bf911bebe62656c1edf76f85ea99c3e10c096c045e34ca6a8d4b4",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The memory diff, the knowledge sides, the state and the bound worklist.\n\nAnchor: \"knowledge_diff\"; \"knowledge_sides\"; \"worklist\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2906b52bb3f8908ff51edbe520f8bc5e7da90448",
+            "content": "sha256:de569428ec37da4690bd33b074c894d3a01689f339892f8f513f4cb424ef64d7",
+            "locator": {
+              "end": 1533,
+              "kind": "line_range",
+              "start": 1533
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2906b52bb3f8908ff51edbe520f8bc5e7da90448",
+            "content": "sha256:79443a52c4e72f56d22cd7f7b9b75c7ac2d574c74ce083f01f3c53617a210804",
+            "locator": {
+              "end": 1596,
+              "kind": "line_range",
+              "start": 1596
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2906b52bb3f8908ff51edbe520f8bc5e7da90448",
+            "content": "sha256:35479d6589877f2101c3de5a7f99510d898be0cfd76b42d346d305ac4b78588b",
+            "locator": {
+              "end": 1616,
+              "kind": "line_range",
+              "start": 1616
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The receipt row for this body, now a path relative to the dashboard.\n\nAnchor: \"src/data/reviewTrees.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209e45f182a9af6d8819dc68e9669752abef54bf",
+            "content": "sha256:8fd93f67eb66cd64df801fe2d9e14495932958e63f0ee2bedd28151350a87dfd",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/panels/review/gitTrees.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,589 @@
+{
+  "path": "mcp/src/agents_remember/application/review_candidate_resolution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of what it binds, why the two sides are immutable object identities, why the working tree is never an endpoint, and that every failure is a named state.**\n\nAnchor: `code_base_commit`; `capture_future_code_candidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:42e0df7ca27f44850654f14960c48998c456f1322a8ffd1bb6389e912e2ecfe8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The record-beside-the-bytes namespace: the candidate's own sealed receipt when there is one, otherwise the before half's own `baseline-generation.json`, otherwise a derived knowledge index's own namespace (MIK-R25, `_index_namespace`), the requested repository used only when none of these answers, and an unreadable record refused rather than guessed past.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:7f5ce855ce3dfb30ab5c65f92bf2e989104ce00f061705ee89d95bcaf3c06054",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_namespace"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6afe9a77ee0a7eea7186504dad2c51fe4af0f74",
+            "content": "sha256:6b5189598499ba537c38070fc64c971ccdf28085ae54e01da71c9f5e04e98181",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_candidate_receipt"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_receipt.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:35c38006e1c25acb36c6f04b941842e9b3f1b3be3ec1934d562349482dbb4107",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANDIDATE_RECEIPT_NAME"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:f5e3dc842b344811cd8ad59ebc8201cf4d0e408b83126d7addc6e400eb12ec22",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_baseline_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The one owner for the unreadable-candidate refusal: the code, the detail naming the candidate's own failure, the once-stated repair action, and the preflight form that turns the same question into a value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:476bd071676f5749c0d4deb41cc16c57dfe74dbfe1d668933a6a9dc0eeb729a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REPAIR_CANDIDATE_ACTION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:8626962ebf26eb0057ef5a7ad1d64e2b8b48246a485b6e370d2a8083301be2c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_candidate_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:56d8449441ba28672f50dff3a1acde386e7571a9713592c15c268f340e8da2eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_receipt_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The one construction of the reviewed candidate's reference, shared by the subject review and the task-context review so the two cannot name different leaves for the same resolution.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:9e9e4b89469641daa8c6c1fdbeaf8c6aebc395bf80b7c6526e355739a1bd416b",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_ref"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:c196c3a1861cc0be5aef37a1d6ecf071597c21ca31038aaf8e54279b5e680017",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCandidateRef"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:5e820a839fc9def4eac4f5d432ad24f1db3eea04b335fb3f71c303bb77c0264e",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 286
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:3798784f4ee5bf25e5d8af0a2ae7c2f3f119ab04b68731bbe7f2deb20ef29978",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 304
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The single refusal builder this surface uses, public because the adapter builds the entry route's refusal with it too.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:5253ef9d1e9288b27fa89cd339905e8e77f1f9c5f6a02ac6d1dad6aac02e5488",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The capture is the existing owner's and stays the owner's: this module only turns its typed failure into the surface's named state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:de50cfc9953fa37050355e720edbd8db5b1da17e46885bc80b09ce707a4ee694",
+            "locator": {
+              "kind": "symbol",
+              "name": "_captured_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_future_code_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FutureCodeCandidateIdentity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The capture owner's own mid-capture head check, which is what makes a head that moves *during* the capture a named state rather than a stale tree.\n\nAnchor: `capture_future_code_candidate` (head re-read)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_future_code_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The surface's rendering of one capture-owner failure, naming the candidate side and the owner's own status word.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:473ff555fb446e5b3e192558047711c2c2360d6b23c2e3707d65965f5a843f25",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:ef711f35395c97488cf443de349ab62cb4e4c2c14cbe7a09255552197d20b21f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The one contract locator: the recorded task root, the globbed enclosures, the `repo_name`/`cleanup` skips and the leaf-id slug match.\n\nAnchor: `slugify`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:9c381ea6e004519d7c6ba165045aa12a4d8916eb2f36d7beda07e89a149490ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_leaf_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:3505eff900ef40ec541972cf9ee4826a2b43cc18aeaa6191d00ce97b770e85e3",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The adapter that re-exports this surface, so the ingest CLI's existing import of the three constants keeps resolving and there is no second resolution path.**\n\nAnchor: `resolve_review_candidate`; `candidate_ref`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cad473d9553028ef6f4d80aafcf02c0cb51d04ce26812204b6d80788ed0fe751",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_knowledge_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:6c24641b1692e12ff80143f11e49bca05cd9f66257d2018bd65808abc356c6ad",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The CLI that reads the two directory names through that re-export.\n\nAnchor: `REVIEW_BASELINE_DIRECTORY`; `REVIEW_CANDIDATE_DIRECTORY`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "115f1305ebcde5ed26ed1c12a1ee846998fdebc4",
+            "content": "sha256:94364b273c65065fe580017c606b0d32dee8f2bf1d20eaaee940ab39315a06b1",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the three path constants plus the nine callables the adapter re-exports — the seven it already had, `candidate_ref`, and the two unreadable-receipt names this leaf added.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:e47b50974d23c913d372c47299048b8467d092c7d857ed93eb8a4b87354fcc52",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:9e9e4b89469641daa8c6c1fdbeaf8c6aebc395bf80b7c6526e355739a1bd416b",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The case module that measures the bound endpoints through the real resolution, the real capture and the real comparison.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:ffeb0ddca88fd725a397a82e86012a3dc38e11da3ffcb6d2d0cc4a0ce05a9ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_live_candidate_binds_the_recorded_base_and_the_captured_tree"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:4ca4798e48d7f90c006c409d47aabc2b9906ef89ba63449a33ad3c9cb6a2203e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_capture_input_that_moves_before_publication_is_refused_by_name"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The live pair: four trees for a converted leaf, else the dataset pair byte for byte.\n\nAnchor: `live_review_trees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:23120a4008584d9acc23e29ab195f570ea02b967048fd0ceba39e954debcf790",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_resolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "A derived index answers its own namespace; any other file answers none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:f79828a334af86204bbd62fd359d94c5d52d82d174e855fa76741348b3335f4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_namespace"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The disposable candidate root and the two directory names, inside the leaf's disposable local root so a review reads no candidate out of the live coordination tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:7e0c86879b5cffa240e52505d5a0303e41b53950c644b04ec73509cc29b3d8a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_CANDIDATE_RELATIVE_ROOT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:2b4eafe4c02c6e6a8db132cf914e0015ae6259fb71e9bd8e4056e4b645e5b343",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_BASELINE_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:3821ae4ec642f2f3641f42db7b462c2db0f06717a423e2c3aa289b29c3d57d44",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_CANDIDATE_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The three capture fields with the words a refusal names them by, in the owner's own observation order, and the one recapture action three refusals share.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:3d666b1f8a9f03bb8c9e6b44bae0931f22fe1efb8d4296bb988ab868265f4190",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CAPTURE_INPUTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:c52fe10e728870a2cca5fa22042806f7aac400f98919542204cd6379e0a5d2c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECAPTURE_ACTION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The resolution value: the two datasets (for a tree comparison, the two memory trees' derived indexes), the two code roots, the two tree ids, the carried contract, the captured identity the recheck re-derives, and MIK-R25's `trees` and `knowledge_unavailable`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:dee356c1578dcd48c6b6ed62de9b417fd51e3dd5b8999ae3b023a021770c4695",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCandidateResolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The whole resolution: selector screening, the contract locator, the recorded-base precondition, the capture, and the live pair handed to `_live_resolution` (four trees for a converted leaf, else the dataset pair) with both sides bound.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The re-publication recheck: for a tree comparison the memory candidate is recaptured first (MIK-R25), then the shipped capture owner re-run, every moved field named, and a resolution with no capture left exactly as assembled.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:36e43058366a4dd9540b7b3c7fb454dee1c44b0ef514b2316f148351312be728",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_candidate_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A moved capture rendered as one refusal carrying **both** complete identities, generated by the model that owns them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:54760985fe298df2564471a2a5d88d3ae26c50cd98714347b95ecfe75a987d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_moved_candidate_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The pair preflight: the absent half named as `baseline` or `candidate`, so the refusal says which dataset to author and which to place.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:0d05ffdfb2da4aa38cd6554d47584c2b728fdcf102760c843abac8261f89f853",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_dataset_half"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_paging/currentness.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_paging/currentness.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T21:41:17+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544`|
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -39,7 +29,9 @@
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R02@v2` of task
@@ -48,29 +40,17 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: once per walk page, cut to each candidate. | "Currentness for the pages of one walk" | mcp/src/agents_remember/application/knowledge_paging/currentness.py:1-11 |
-| The one evaluation, and its failure document. | `WalkCurrentness`; `evaluate_answer` | mcp/src/agents_remember/application/knowledge_paging/currentness.py:30-70 |
-| A candidate's subset block. | `document` | mcp/src/agents_remember/application/knowledge_paging/currentness.py:45-51 |
-| The subset as an object, for the merge with a leaf subset (MIK-R01). | `subset` | mcp/src/agents_remember/application/knowledge_paging/currentness.py:53-70 |
+- The module statement: once per walk page, cut to each candidate. [1]
+- The one evaluation, and its failure document. [2]
+- A candidate's subset block. [3]
+- The subset as an object, for the merge with a leaf subset (MIK-R01). [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the evaluation reads one memory tree's index and one code tree.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): MIK-R01 splits `subset` out of `document`, so the leaf currentness can merge the scope subset of a mixed block. A Logic bullet and one row were added; the evaluation and `document` rows were normalised by the installed fixer. `document`'s output is unchanged.
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): created this card for the new file MIK-R02 adds. It records the architect ruling of 2026-09-29 20:40:40 (F3 currentness at the walk's code tree, once per page, counted in the threshold). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

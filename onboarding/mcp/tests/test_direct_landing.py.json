@@ -1,0 +1,83 @@
+{
+  "path": "mcp/tests/test_direct_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture owns real temporary code/memory refs and an admitted series contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
+            "content": "sha256:6ba2bd109c2e4421c8527e21352d9167090cc79a602f77dfae5e7cb227858101",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retained scenario proves one content commit and reads its attribution from Git.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
+            "content": "sha256:04010af4035543f16e10e1a085e08495cb9f7a998f349c69adf9950414a4cf4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_landing_publishes_memory_and_recovers_independently_of_cache"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recovery rejects real drift and accepts cache misses without extra commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
+            "content": "sha256:a096b135eb3b68c3bc32a895b09cee585bd9ba58dc7052409b1a8045464334ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recover_after_interrupted_receipt"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6aa80fe43345f17ee2533b3d1f54b1c4b4e7a940",
+            "content": "sha256:bf8bff0b7d0ce816b2d6bd1857b53a75438b2c7735a99ca15bca5ecfbffe0c99",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_clean_memory_reused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lifecycle recovery owner performs the required same-generation resumption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd66e88e65219d24196744b4328febf2a7a40dcc",
+            "content": "sha256:3d903382f2d942483703b354899fdadf37cdc45b4e74b348cf98cb2cf4e6b17a",
+            "locator": {
+              "kind": "symbol",
+              "name": "recover_direct_landing_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

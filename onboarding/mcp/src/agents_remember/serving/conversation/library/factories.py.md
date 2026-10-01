@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/library/factories.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/library/factories.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Native conversation library overview](overview.md)
@@ -54,32 +44,28 @@ per-app isolation L0 proves.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal factory module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The L0 composition defines the immutable runtime this factory derives from; the service module
 consumes the injected port builder through the documented no-cycle seam.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The immutable runtime/scope types and install-once binding used by this factory. | `ConversationScope`; `ConversationRuntime`; `install_conversation_runtime` | mcp/src/agents_remember/serving/conversation/runtime.py:50-55; mcp/src/agents_remember/serving/conversation/runtime.py:58-82; mcp/src/agents_remember/serving/conversation/runtime.py:85-91 |
-| The service module's injected `port_builder` seam. | "port_builder: PortBuilder" | mcp/src/agents_remember/serving/conversation/library/service.py:84-84 |
+- The immutable runtime/scope types and install-once binding used by this factory. [1]
+- The service module's injected `port_builder` seam. [2]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local factory module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -89,23 +75,3 @@ caller. Every operation fingerprint, ledger key and minted session id is derived
 so binding them once is what stops one caller's request from being keyed under another's identity.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
-  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 1 further
-  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
-  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
-  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
-  current position. Verification metadata remains closeout-owned.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that ran past
-  the end of `mcp/tests/test_conversation_runtime_composition.py` (the file is 252 lines). Narrowed
-  it to the exact two tests the claim names — `test_no_import_time_mutable_singleton` and
-  `test_child_composition_is_isolated_per_app` — cit:([`test_no_import_time_mutable_singleton`; `test_child_composition_is_isolated_per_app`], mcp/tests/test_conversation_runtime_composition.py:197-208; mcp/tests/test_conversation_runtime_composition.py:211-224) instead of sweeping the whole suite.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `LibraryBinding` call shape.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the dormant resolver factory
-  sidecar. Verification is blank until closeout commits and stamps the new source.

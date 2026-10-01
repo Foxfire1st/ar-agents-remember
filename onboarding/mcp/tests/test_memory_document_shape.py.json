@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_memory_document_shape.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The same windows cell in a three column table keeps its columns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d87a001acb9dc6c0180631c163f9df3ab3793cd",
+            "content": "sha256:86dda42fc8b2b3956f15db1645d68a3914ddef6770d2c6954a4252920d39fa32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_same_windows_cell_in_a_three_column_table_keeps_its_columns"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A diff quoted in a fenced block is the document working.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d87a001acb9dc6c0180631c163f9df3ab3793cd",
+            "content": "sha256:8d50583ed58d54f0374e2314f448665714cad26fbac52f75ec3762abe49efaff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_diff_quoted_in_a_fenced_block_is_the_document_working"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A missing cell is reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d87a001acb9dc6c0180631c163f9df3ab3793cd",
+            "content": "sha256:24a046dd01852c1a77ccce597f8e4392cbbe1b1c426cff79d49485e2fa8bb569",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_cell_is_reported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The live mixed frame pair is caught instead of passing silently.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d87a001acb9dc6c0180631c163f9df3ab3793cd",
+            "content": "sha256:d2aedaa811b041a0cea4aa2c16087b802a704fe43047ad34819298771ab7e6c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_live_mixed_frame_pair_is_caught_instead_of_passing_silently"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fixer refuses to sort a section that mixes frames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d87a001acb9dc6c0180631c163f9df3ab3793cd",
+            "content": "sha256:bc6973b44d6bd623f9d0750373f6b75a2d9b8c7b6b75981cc4103e7beebc6e3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_fixer_refuses_to_sort_a_section_that_mixes_frames"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A naive bullet this closeout adds fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d87a001acb9dc6c0180631c163f9df3ab3793cd",
+            "content": "sha256:37a57b7a9931aebe8e6785d770e49d79c9ed6ef3edcfb81113c172e3174ce43a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_naive_bullet_this_closeout_adds_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A renamed document is not treated as newly written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d87a001acb9dc6c0180631c163f9df3ab3793cd",
+            "content": "sha256:b019491659b0ab3b52312b2fc64ebfb586984e79c900e43c3afc945c5fe9e362",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_renamed_document_is_not_treated_as_newly_written"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

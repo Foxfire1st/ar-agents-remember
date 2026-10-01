@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active projector package overview](overview.md)
@@ -45,19 +35,19 @@ or child-history task state.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Native polling establishes the timeline and native continuation is then followed by echo polling for transcript gaps; the coordinator composes them in order. | "async def poll_evidence(self", "async def poll_native_continuation(self) -> None:" | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:114-114; mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:283-283; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:171-171; mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:176-176 |
-| Echo polling fills transcript gaps in the ordered rebuild. | `poll` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:64-80 |
-| Conversation status is derived by the status service. | `ConversationStatusService` | mcp/src/agents_remember/serving/conversation/active/status.py:306-508 |
+- Native polling establishes the timeline and native continuation is then followed by echo polling for transcript gaps; the coordinator composes them in order. [1]
+- Echo polling fills transcript gaps in the ordered rebuild. [2]
+- Conversation status is derived by the status service. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
@@ -71,14 +61,3 @@ appeared, and the interaction projection reads what all three produced. Passing 
 what keeps a coordinator from being wired to three components of this session and one of another.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04: split native, echo, ordered-composition, and
-  status-derivation claims by their source owner.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `IngestionComponents` as the ordered four-component rebuild set.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created the rebuild/poll
-  coordinator sidecar. Verification metadata remains blank until commit.

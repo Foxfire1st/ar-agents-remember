@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The decision-role vocabulary is declared here in kernel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:35980199c4a081b1173488e4863ee60b31312570e889be47a851a969aab3385b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionRole"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Decision-role coercion is owned by the current policy primitive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:f2e713bf5c8e603ee9b8f6dca57619e759f7dd9d5e2e74b12f31c51be8ed8382",
+            "locator": {
+              "kind": "symbol",
+              "name": "coerce_decision_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

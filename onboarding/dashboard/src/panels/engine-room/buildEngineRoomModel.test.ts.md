@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [engine-room overview](overview.md)
@@ -40,42 +30,18 @@ No exports; one `describe("buildEngineRoomModel")` block with five `it` cases pl
 - The fallback rule is mutually exclusive: `usesFallback` is true only when `engineProcesses.length === 0` and worktree stacks exist; the "does not fall back" case guards against regressing that AND.
 - The `enclosureKey` case pins that identity tracks `worktreeGroup`, not the node `id`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `buildEngineRoomModel` under test | `buildEngineRoomModel` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66 |
-| `node`/`lifecycle`/`worktreeEngine` fixture factories | `node`; `lifecycle`; `worktreeEngine` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:10-42; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:44-58; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:60-69 |
-| Lifecycle join + workspace lift + fallback cases | `buildEngineRoomModel`; `workspaceEngines`; `fallbackStacks`; `usesFallback` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:39-39; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:59-59; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:63-63 |
-| `enclosureKey` = worktreeGroup stable-across-id-swap case | `enclosureKey` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:132-134 |
-| EngineProcessNode is the generated projection contract consumed by this surface. | "export interface EngineProcessNode {" | dashboard/src/types/projection.ts:233-233 |
-| LifecycleProjection is the generated projection contract consumed by this surface. | "export interface LifecycleProjection {" | dashboard/src/types/projection.ts:365-365 |
-| ProviderNode is the generated projection contract consumed by this surface. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:513-513 |
+### Repo-Internal References
+
+- `buildEngineRoomModel` under test [1]
+- `node`/`lifecycle`/`worktreeEngine` fixture factories [2]
+- Lifecycle join + workspace lift + fallback cases [3]
+- `enclosureKey` = worktreeGroup stable-across-id-swap case [4]
+- EngineProcessNode is the generated projection contract consumed by this surface. [5]
+- LifecycleProjection is the generated projection contract consumed by this surface. [6]
+- ProviderNode is the generated projection contract consumed by this surface. [7]
 
 ## Series-Contract Notes
 
 The stable-key regression uses a real-node id ending in `series-contract.md`, preserving the invariant that process identity comes from `worktreeGroup` rather than the contract file path.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-03T09:35+02:00 — 260731-EFA-L6 W3-B07 curator: repaired 6 citation findings (3 missing anchors and 3 malformed sources) in the three assigned repository-reference rows; all anchors and ranges were resolved against the frozen source index.
-
-## Update History
-
-- 2026-06-24T08:09+02:00 — Engine Room leaf identity: added a model-level regression for active leaf ordering ahead of cleanup-pending siblings and seeded the helper with `leafId`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the stable-enclosure-key regression now uses a `/series-contract.md` real-node id, matching the new leaf enclosure contract path. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T13:45+02:00 — Task 11: added a case pinning `EngineProcessView.gate` from the joined
-  lifecycle. Verification metadata pinned until closeout stamps the task-11 code commit.
-- 2026-06-18T18:00+02:00 — slice 5h ledger popover: the `node` fixture factory adds the `ledgerRows: []` / `ledgerRowCount: 0` defaults to satisfy the new required `EngineProcessNode` ledger fields. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T08:51+02:00 — slice 5h H1: the `node` fixture factory adds the `landing: []` default to satisfy the new required `EngineProcessNode.landing` field. Verification metadata pinned until closeout stamps the 5h code commit.
-- 2026-06-16T01:55 — slice 5f S0: added a fifth case pinning `enclosureKey === worktreeGroup` stable
-  across a fleeting→real id swap. Verification metadata pinned until closeout stamps the S0 code commit.
-- 2026-06-15T19:35 — Created for slice 5e: vitest for the pure model builder (lifecycle join, workspace lift, fallback). Verification metadata pinned until closeout stamps the 5e code commit.

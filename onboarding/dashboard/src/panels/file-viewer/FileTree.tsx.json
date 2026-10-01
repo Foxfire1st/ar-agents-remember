@@ -1,0 +1,79 @@
+{
+  "path": "dashboard/src/panels/file-viewer/FileTree.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Headless Tree adapter it renders (async loading, selection, hotkeys).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78ed5b387ae1a6126a534c85b611bd6bc9b49102",
+            "content": "sha256:751ead725ab51e362885ec2f0bdc0c35d1d660942f2b87acfd25477223c55acf",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFilesTree"
+            },
+            "path": "dashboard/src/panels/file-viewer/useFilesTree.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The page that mounts it twice (code + onboarding sides) and supplies `onOpen`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad00e5a8bb467987b5ae12156184a4b6597bb301",
+            "content": "sha256:7824b7ab8f5172332b7c8faa01e4cdfad14c5aaefbbc63a4c25b9efb3681327c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileViewerImpl"
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `DirEntry`/`Scope` types it renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f2483fc1ff117c7493520a2612b011566d4fd35",
+            "content": "sha256:72deaec26ec058b3ced2313164c651d942d0732c98fd7613c50df7ce4c2e6e43",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirEntry"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f2483fc1ff117c7493520a2612b011566d4fd35",
+            "content": "sha256:7b65e5648133fd6a38c3a3275ee3bd79e5e73caf59032f130151a2f70adf97a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "Scope"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The route overview that governs this component.\n\nAnchor: `# dashboard/src/panels/file-viewer/ — File Viewer Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:1-107"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

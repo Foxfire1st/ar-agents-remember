@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:20+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -70,29 +60,22 @@ and `read_citation_index_caps` refuses an unknown key by listing the accepted on
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one reader for both settings blocks, and the frozen value it returns. | `read_citation_index_settings`; `CitationIndexSettings` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:43-85 |
-| The two relative keys and the settings file both blocks are read from. | `SETTINGS_RELATIVE_PATH`; `CITATION_INDEX_KEY`; `PATH_RULES_KEY`; `ONBOARDING_KEY` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:34-39 |
-| Either key is accepted at the `onboarding` level or at the document root. | `read_path_rule_excludes` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:88-114 |
-| The accepted cap-override keys and the unknown-key refusal that lists them. | `read_citation_index_caps`; `CAP_KEYS` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:117-163 |
-| A cap that is not a positive integer is refused with the key and the offending value. | `_positive_integer` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:176-182 |
-| The non-string-list refusal for `exclude.paths`. | `_string_list` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:166-173 |
-| The cap defaults this block overrides. | `CitationIndexCaps` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:69-104 |
-| The same `pathRules.exclude` matcher every other reader uses. | `matches_any` | mcp/src/agents_remember/kernel/coordination_context/storage.py:50-56 |
-| The register that consumes these excludes. | `resolve_exclusion_register` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:196-226 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The one reader for both settings blocks, and the frozen value it returns. [1]
+- The two relative keys and the settings file both blocks are read from. [2]
+- Either key is accepted at the `onboarding` level or at the document root. [3]
+- The accepted cap-override keys and the unknown-key refusal that lists them. [4]
+- A cap that is not a positive integer is refused with the key and the offending value. [5]
+- The non-string-list refusal for `exclude.paths`. [6]
+- The cap defaults this block overrides. [7]
+- The same `pathRules.exclude` matcher every other reader uses. [8]
+- The register that consumes these excludes. [9]
+
+### Cross-Repo References
 
 No sibling-repository contract defines these values.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-17T10:20+02:00 — 260915-CAPS-L14 curator: created this card for the module the leaf adds. Records the two settings blocks (`onboarding.pathRules.exclude.paths` and the optional `onboarding.citationIndex` cap overrides), that both keys are accepted at the `onboarding` level or the document root, the exact accepted override keys, and the refusal discipline — a missing file is "no register yet", while an unreadable, malformed or unknown-keyed value is refused by name rather than falling back to a default. States that the keys are mode-independent. Verification metadata is left at this leaf's synced base `0346da9c` with a recorded working candidate, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.
+No meaningful cross-repo references found.

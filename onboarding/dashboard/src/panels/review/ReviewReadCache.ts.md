@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewReadCache.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewReadCache.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash |  `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate |  2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -82,47 +72,36 @@ Review observation O-R1-5: `review()` and `source()` are called from render path
 `useSourceContentRead`) and refresh LRU recency there — an idempotent reorder, harmless, but a side effect
 during render. Recorded as an observation, not a defect.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cache's rules are stated in its own header and enforced by the class; the read cycle and the content
 renderer are its only callers.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of what is kept, under which key, when it is dropped, and its bounds.** | "WHAT IS KEPT, AND UNDER WHICH KEY"; "WHEN IT IS DROPPED"; "BOUNDS" | dashboard/src/panels/review/ReviewReadCache.ts:1-23 |
-| The two bounds. | `REVIEW_CACHE_LIMIT`; `SOURCE_CACHE_LIMIT` | dashboard/src/panels/review/ReviewReadCache.ts:29-30 |
-| The least-recently-used store: recency refreshed on read, oldest evicted on write. | `BoundedStore` | dashboard/src/panels/review/ReviewReadCache.ts:32-67 |
-| The generation of a payload: code trees, and snapshots only when knowledge was compared. | `comparisonGenerationOf`; `knowledge_compared` | dashboard/src/panels/review/ReviewReadCache.ts:74-83 |
-| Two generations differ on code trees, or on snapshots when both compared knowledge. | `sameGeneration` | dashboard/src/panels/review/ReviewReadCache.ts:88-93 |
-| The content key is exactly the request's fields. | `sourceContentKey` | dashboard/src/panels/review/ReviewReadCache.ts:95-104 |
-| The cache: observe empties both stores on another generation; only content answers with an expansion are kept. | `ReviewReadCache`; `observe`; `keepReview`; `forgetReview`; `keepSource` | dashboard/src/panels/review/ReviewReadCache.ts:106-150 |
-| The context the content renderer reads it through; `null` outside a surface. | `ReviewReadCacheContext` | dashboard/src/panels/review/ReviewReadCache.ts:154-154 |
-| The read cycle serves, keeps or only observes answers, and a refresh forgets its question. | `startRead`; `keepReview`; `observe`; `forgetReview` | dashboard/src/panels/review/ReviewReadCycle.ts:163-217; dashboard/src/panels/review/ReviewReadCycle.ts:423-439 |
-| The surface owns one cache and provides it. | "new ReviewReadCache()"; "ReviewReadCacheContext.Provider" | dashboard/src/panels/review/ReviewSurface.tsx:475-476; dashboard/src/panels/review/ReviewSurface.tsx:555-555 |
-| The content renderer reads through it under the request key. | `useSourceContentRead`; `sourceContentKey` | dashboard/src/panels/review/SourceContent.tsx:210-250 |
-| The bounds, refusal, generation and key cases. | "keeps at most the bound of reviews and evicts the least recently used (%i inserted)"; "empties both stores when an answer belongs to another comparison generation" | dashboard/src/panels/review/ReviewReadCache.test.ts:47-110 |
+- **The module's own statement of what is kept, under which key, when it is dropped, and its bounds.** [1]
+- The two bounds. [2]
+- The least-recently-used store: recency refreshed on read, oldest evicted on write. [3]
+- The generation of a payload: code trees, and snapshots only when knowledge was compared. [4]
+- Two generations differ on code trees, or on snapshots when both compared knowledge. [5]
+- The content key is exactly the request's fields. [6]
+- The cache: observe empties both stores on another generation; only content answers with an expansion are kept. [7]
+- The context the content renderer reads it through; `null` outside a surface. [8]
+- The read cycle serves, keeps or only observes answers, and a refresh forgets its question. [9]
+- The surface owns one cache and provides it. [10]
+- The content renderer reads through it under the request key. [11]
+- The bounds, refusal, generation and key cases. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It keeps answers for one repository namespace's
 task context and holds no identity that ranges beyond it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`ReviewSurface.tsx`) moved with the leaf's inserted lines: 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 inserted lines above `useSourceContentRead` in `SourceContent.tsx`, so the fixer normalised the row (`180-220` → `210-250`). The claim is unchanged. No stamp advanced.
-- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/review/ReviewReadCache.ts`); no claim changed. No verification stamp was advanced.
-- 2026-09-28T21:46:34+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **created this one-to-one card for the new per-comparison read cache (`ICR-R24@v3`).** It records the two keyed stores, the rule that only content answers are kept, the generation rule that empties both stores on any admitted answer from another comparison, the LRU bounds (24 reviews, 32 sources) and the one-surface lifetime, plus review observations O-R1-1 (cached returns are not a live check, by design) and O-R1-5 (recency touched during render). The verification hash and date are blank because no commit contains this file yet; closeout owns the stamp.
+No meaningful cross-repo references found.

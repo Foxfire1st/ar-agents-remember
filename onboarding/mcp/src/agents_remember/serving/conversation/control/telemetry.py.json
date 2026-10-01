@@ -1,0 +1,178 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/telemetry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`MetricEvidence` carries the evidence-bound metric provenance used by telemetry.\n\nAnchor: \"class MetricEvidence[T](WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6de2f473e3782a9770f89872bc2910c334f97ab",
+            "content": "sha256:fec6325d78d8f27508702d23c137727a8ae9035c6c5d73ab1efa6fbb45c8b3ff",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/models/conversations/telemetry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`ConversationTelemetry` is the wire envelope for the projected telemetry metrics.\n\nAnchor: \"class ConversationTelemetry(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6de2f473e3782a9770f89872bc2910c334f97ab",
+            "content": "sha256:88f0c0aab36303844fc9b1e9050c3a1b25c5e3bba9cd6573711f8c1022440243",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/models/conversations/telemetry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`telemetry_capabilities_for` is the telemetry capability-gate entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de2ff55974ed9dcc6c09de0b105d1d35ca45e650",
+            "content": "sha256:0e0a80f357ec8225221ca79d36ed98dff36ba08cbe1e0a478479173fa6cb5fd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "telemetry_capabilities_for"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The harness control bridge appends diverted evidence frames into the bounded evidence buffer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:a4f02e35627735997c14bf1508e1ee9dbb6248c0a976837efcdc3bf25e48a6f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:dc0f333323f9a465f63217fcc567a8f2a8feead1127fdce9b485257f97f1d565",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 505
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The harness control bridge's event-consumption path diverts evidence into the bounded buffer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:4ad359276784eff657ecb362b536c606066f715763815a0ab85cdb261a92e8f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_events"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:a2baf75491604bbe5d8ceb4ed4d3281f2b3659014fefd58758915d83a2d0eae4",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 415
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The control client validates and reads evidence-window pages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:1341df71b925cf79579981bff120c11c78efc600339f7f5d174fef22b24bef1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_control_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:b45d83c64614488aa19be61ea166b1d8ed5bb3c6cdec17c86a9c30d0976875bc",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 346
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Telemetry scans the resulting token-usage frames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2995bf6f6c74f6f7a61f7d164957370face03555",
+            "content": "sha256:3f687390c2946f990d5542984a0c38ebe3f9c176f443ec14f2c0fa8781c3b032",
+            "locator": {
+              "kind": "symbol",
+              "name": "_codex_usage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2995bf6f6c74f6f7a61f7d164957370face03555",
+            "content": "sha256:a4dd8597261e9938a155f42246de8d14bf3ef168deeb2f40798195fc30c7c129",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

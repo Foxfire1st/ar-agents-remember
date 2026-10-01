@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/cursor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The purpose-branded token prefixes and root validators define the four non-interchangeable cursor brands.\n\nAnchor: \"class ActivePageCursor(_OpaqueToken):\", \"class ActiveEventCursor(_OpaqueToken):\", \"class LibraryListCursor(_OpaqueToken):\", \"class LibraryReadCursor(_OpaqueToken):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f206c743332649dd2a9a34eb38b52e400d0abf3",
+            "content": "sha256:68ca2cded5a05acd4cc08bf7c07302cbe7b20cf1c589e23368d5cb7b7ee92169",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/models/conversations/cursors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f206c743332649dd2a9a34eb38b52e400d0abf3",
+            "content": "sha256:04d6316a76995172be8ef6733f7b4e181191f701a10a07a4d9bcd9749cd9833f",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/models/conversations/cursors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f206c743332649dd2a9a34eb38b52e400d0abf3",
+            "content": "sha256:ccab9d5a63e09efc74c21c8676d17718ec64247d12c6f35513a99ea36d2f0d97",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/models/conversations/cursors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f206c743332649dd2a9a34eb38b52e400d0abf3",
+            "content": "sha256:e588e7192579d87775d9886a337bc34a8476d5fba795de7a8763c953e9824e30",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/models/conversations/cursors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`ActiveConversationRef` and `AuthorizationBinding` carry the identity/caller fields every cursor binds.\n\nAnchor: \"class ActiveConversationRef(NativeConversationRef):\", \"class AuthorizationBinding(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eefcb6c4789991423d20c864c1583ff7386a0090",
+            "content": "sha256:2ac2a08cb84865a41dc31102c35d5a919df35c64a2be281772f0b7ec003f545f",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/models/conversations/identity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eefcb6c4789991423d20c864c1583ff7386a0090",
+            "content": "sha256:fa90f339a1670d6d594edc79c09561e2dd44ef50c136c181d92c397e723a1aa7",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/models/conversations/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The service decodes and generation-checks every cursor before any stream exists.\n\nAnchor: \"before_ordinal = decode_page_cursor(\", \"decoded = decode_event_cursor(\", \"require_same_generation(decoded\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d9460000d36ec6fc93ecbeda40bf9ef38945bb2",
+            "content": "sha256:8abe24b094ef43d19a40442ed8bb5f78547da66d06c3f4237929194ccad2ee10",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d9460000d36ec6fc93ecbeda40bf9ef38945bb2",
+            "content": "sha256:2f3d9e15f4542186042be0063501920509b5ec07a03fbe29cca92deca52bc9a8",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The routes map dual resume inputs and every cursor error to typed pre-stream statuses.\n\nAnchor: `_map_typed_error`, `_resume_cursor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:cfc73415f89dd13f9cf1cadef6b458ffea259bc5b987c8db0749a1edfb61111c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_map_typed_error"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:c8e9edebd393427a64b08fb9f69e14f798e22a74b0a9648ee34ed7cace1c6018",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume_cursor"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:1d811a4896e32586080bd6a527d2ce2d3edd4f7cb4c2f96fba818f2615e9f0fe",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:cc9f68976698d58a5363deea5c9171b08657e616f3f53199c04725dbccab56da",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,165 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/block_pages.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: the block, the tail, the collapse, the queue refusal, and the two kinds of seed.\n\nAnchor: \"One bounded knowledge block for several seeds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:8b12ea9805265dd510ebb9ebc764809a7b039c6fe8eb2ad595aedc2b79f6560a",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Laying seeds out within one threshold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:26b495a4b771e6ac17ccba2e352355bce05be6cebe8f860e5a82c472b7cdfd82",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Deferred entries, or the collapsed tail when those would not fit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:6d3cfc849ff11f5a523d6f2ae885c90414565775ab7273ca6f3a40ef711584a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two prepared kinds, and the refusal code a tail too long for one queue earns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:e7a165c6aaf918d01d83c4e0c2b470c036ab43e3fd5b0c618b6ec46de5028196",
+            "locator": {
+              "kind": "symbol",
+              "name": "SEED_QUEUE_EXCEEDED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:901d0abb846c8a180c946bbe6bafecf05b574f787180b8642784703804d74ac2",
+            "locator": {
+              "kind": "symbol",
+              "name": "Prepared"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:eb3003bfe2cf021a1f0cf3c13f9ac311842e3cb7076467d3f6568e53084ac338",
+            "locator": {
+              "kind": "symbol",
+              "name": "BlockEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Each kind's tail collapsed into one entry, or refused `seed_queue_exceeded` beyond `MAX_QUEUED_SEEDS`.\n\nAnchor: `MAX_QUEUED_SEEDS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:c05e1c2005afff5b8e95b2274ad1f53fab5ba215fdb7b641aba5661f94ffffd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_collapsed_tail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:953c4ef0cfa7c26bb92ce798e254a226202baab3ff3067027753d8049dfd9502",
+            "locator": {
+              "kind": "symbol",
+              "name": "_collapsed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A leaf's or a scope's next row, and the smallest form of a later entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:5165c80396267fc27861722769174b3b1af33a9804445223325a98a942b6ce4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_first_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d10c30230af8a19eb691102524e70a13b507781",
+            "content": "sha256:6eae19fcd29f156dda5705fbf005bc3618e1431a92212b882b1c765cd9ee9b1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_placeholder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The envelope the block is measured in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19e9c1c7706f2472c14be565e56c09af2ca92581",
+            "content": "sha256:50736cbebf2454d75107453626b6d9e77ad49561e698b9b649e95a01f8a9f98e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_block"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

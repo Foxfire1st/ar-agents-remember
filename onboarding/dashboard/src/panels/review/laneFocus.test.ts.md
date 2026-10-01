@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/laneFocus.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/laneFocus.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:06:33+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -48,32 +38,23 @@ totals.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R32@v1` and its rulings live outside the code
 and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The real bodies read. | "laneReview.file.captured.json"; "laneReview.lane.captured.json" | dashboard/src/panels/review/laneFocus.test.ts:19-26 |
-| Case 1: the destination's hunks of an attributed file. | "opens an attributed file on its hunks of the destination class, a bucket file on all of them" | dashboard/src/panels/review/laneFocus.test.ts:28-39 |
-| Case 2: windows on the server's line numbers. | "cuts each window on the server side line numbers, with context, clamped to the text" | dashboard/src/panels/review/laneFocus.test.ts:41-57 |
-| Case 3: file and hunk totals, in the server's order. | "reports a destination file total and hunk total separately, in the server order" | dashboard/src/panels/review/laneFocus.test.ts:59-68 |
-| The rules under test. | `focusedHunks`; `hunkWindow`; `destinationTotals` | dashboard/src/panels/review/laneFocus.ts:83-89; dashboard/src/panels/review/laneFocus.ts:120-131; dashboard/src/panels/review/laneFocus.ts:71-79 |
+- The real bodies read. [1]
+- Case 1: the destination's hunks of an attributed file. [2]
+- Case 2: windows on the server's line numbers. [3]
+- Case 3: file and hunk totals, in the server's order. [4]
+- The rules under test. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T14:06:33+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): created this card for the new unit test module (3 cases). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

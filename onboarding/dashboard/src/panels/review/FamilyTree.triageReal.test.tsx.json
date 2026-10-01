@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/FamilyTree.triageReal.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite's statement: real served answers of a scratch copy with scratch-authored knowledge edits.\n\nAnchor: \"SCRATCH-AUTHORED\"; \"blob as a curator does\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01ab4b88b0f9a39442a8160509ba09af01f0eb9b",
+            "content": "sha256:f60308d7c55032afe05e515c4cc11e8259677643bda044223b5b7daff98de92c",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real family badged, changes first, all 24 members kept.\n\nAnchor: \"badges the real family, lists its changes first and keeps all 24 members\"; \"realization RLZ-4BD3B78H re-anchored (stale at base)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01ab4b88b0f9a39442a8160509ba09af01f0eb9b",
+            "content": "sha256:5134fc42405062441f68829e4ddd981119156b973b4fd6bc0460100e3665ccbf",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An incomplete page is not unreturned members; the shared member and the revised guarantee.\n\nAnchor: \"does not treat an incomplete roster page as unreturned members, so j never stops there\"; \"shows the shared member where it joined and the revised guarantee on its own row\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01ab4b88b0f9a39442a8160509ba09af01f0eb9b",
+            "content": "sha256:22c9a666b255995b92e0d7d02d0230bb351867cd75521555d56ea77105dba54c",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

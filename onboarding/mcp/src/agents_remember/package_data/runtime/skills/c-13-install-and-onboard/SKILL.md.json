@@ -1,0 +1,199 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts.\n\nAnchor: `# c-13-install-and-onboard Install And Onboard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:2d55c4a06392a6717c884e622aff7610ffc9971c36c2ab8e6d80aaddd7de30ea",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks.\n\nAnchor: `## Stage 0 - Preflight`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:a19ff75c5707777bff678a91e3f768c8b9b790276b624bdeacca8633161e938c",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup.\n\nAnchor: `## Stage 1 - Runtime Scaffold`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:eeb898b2049eaf96fc7d04985513eea1dde217ca27f6b92d33ef542852b80a0d",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction.\n\nAnchor: `## Stage 2 - Agentic Settings: Interview The Developer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:031256e74562b6f80ae743b5d96304776443093ed70cd5c4c45f3c5cffbc5a5d",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers.\n\nAnchor: \"## Stage 3 - Repository Certification Profile (explicit operation only)\"; \"## Stage 4 - Memory Repo: Ask Scaffold Vs Existing\"; \"## Stage 5 - Bootstrap\"; \"## Stage 6 - Configure Providers To Index\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:d3193544b972392be6ef4ff518b45dd61d4d894f99896b285b293f6e8b196d8b",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:e0de6277dfb0665d61964d21c74dcd5c9795894e6b81026b8cab7862c0a468d3",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:6f7e7448490dca4c7224498afe0987c29f76330c23fa3253ac20b39fb5ff6b9d",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:098afcbcbcf974dcf105dd48c09f276a9d2155c41731f989a3cef49afa204094",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 273
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:5aa2036ce856d4d141abb09eeffd6fe65d1e677f37edc0fac224d3d72ba5ace0",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:80eeb0c2b0bae92cbd87bd26e58606b84e1e7f256f91abfcaf10150b091012d9",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
+            "content": "sha256:3a72bd9da7a58673638a31fa992a3efc5a956013d361fb470e7dd1533379fc45",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action=\"refresh\"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed).\n\nAnchor: \"def provider_watchers_tool(\"; \"if action == \\\"refresh\\\":\"; \"if action not in {\\\"status\\\", \\\"start\\\", \\\"stop\\\", \\\"restart\\\", \\\"invalidate-indexes\\\", \\\"shutdown-all\\\"}:\"; \"if action in {\\\"start\\\", \\\"restart\\\", \\\"invalidate-indexes\\\"}:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:92116e884859858276c22cf793abb4e35ff04492ffccc62e251f3052fd8b2910",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The install-side seeding the interview builds on (copy-if-missing global file).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:678011dd5b38e225e6ececa9b7105bbf5fc0899c416852e49100dc4ed4a15f68",
+            "locator": {
+              "kind": "symbol",
+              "name": "seed_agentic_settings"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

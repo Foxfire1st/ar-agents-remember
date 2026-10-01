@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/sessions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Dispatch accepts only structural identity and the brief.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3aae1758cd2ff1b2b8a0fcc6e91c7200b83e3b65",
+            "content": "sha256:23ea81197aac68aedc17b34d1695a96196360c484b8549646f78e0c73797b994",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch_agent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Child retire and rename use document plus role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3aae1758cd2ff1b2b8a0fcc6e91c7200b83e3b65",
+            "content": "sha256:117aef50c912cc84b47841b6bda7b597f7571041cffef4a93bbe384e724a5bb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "retire_child"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3aae1758cd2ff1b2b8a0fcc6e91c7200b83e3b65",
+            "content": "sha256:89d5c4f92a59bb78a49ca8f36825f0a9cc2416ff0502d4164e3bb31801a3524c",
+            "locator": {
+              "kind": "symbol",
+              "name": "rename_child"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Self rename derives the caller ambiently.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3aae1758cd2ff1b2b8a0fcc6e91c7200b83e3b65",
+            "content": "sha256:298e3166cec4903e7d0553c9553f05ca13791c23b9b4ccec991b05b52989eb93",
+            "locator": {
+              "kind": "symbol",
+              "name": "rename_self"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3aae1758cd2ff1b2b8a0fcc6e91c7200b83e3b65",
+            "content": "sha256:7d38da1598e61ec07e590c09824220d877da47deff5f1aba2923d83283074691",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

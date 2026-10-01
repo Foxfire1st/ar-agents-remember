@@ -1,0 +1,104 @@
+{
+  "path": "dashboard/src/panels/GateResponder.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Component under test and its response branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
+            "content": "sha256:847bc6a130fc562990a803182e005dd6b8e5262a8290bd519278b9077d4f6936",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateResponder"
+            },
+            "path": "dashboard/src/panels/GateResponder.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Gate decision client mocked for Yes/No/Dismiss.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd06534f6f271a26d17e7d8fed6edf3b6e6e63d1",
+            "content": "sha256:8ab91b01202c9639e32a51b7d1698213c4c3d1d4ce51d9a3983271b3664bb81d",
+            "locator": {
+              "kind": "symbol",
+              "name": "postGateDecision"
+            },
+            "path": "dashboard/src/data/actions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Session store and attach lookup.\n\nAnchor: `sessionStore`, `findSessionForLifecycle`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:e77b38dc6ea87d1e2be78f1426afa9bf2e9e717dd163c8e78c918b4de14a9ec5",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionStore"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:00add67e78a9b6fe993135654093cdeb7a36efdf5bf33c1800aeac190294457c",
+            "locator": {
+              "kind": "symbol",
+              "name": "findSessionForLifecycle"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Direct delivery seam asserted unused on the durable inbox route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:b0d456adcfc331d79b741bb9ceca2fda8795819e44f003cbbebe8d842917a665",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverToSession"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Operator inbox helper used for ordinary approval/rejection routing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ee3d856b19db6058dd8bba5fcb70ea9b00a1245",
+            "content": "sha256:e16da90edc096af451166ae06d363eb198c7d023ee58646324be566cc5fabd66",
+            "locator": {
+              "kind": "symbol",
+              "name": "postOperatorInbox"
+            },
+            "path": "dashboard/src/data/operatorInbox.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

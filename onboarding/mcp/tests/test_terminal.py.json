@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_terminal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Write then read roundtrip",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7881927c48e36605e13d698e40d5fbd25606c76c",
+            "content": "sha256:9b6029e5f7c38c2004933060245277ec8158a9cb867bcbc3787aa5f30d2ca682",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_write_then_read_roundtrip"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A spawn that never started leaves no pty fd behind",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7881927c48e36605e13d698e40d5fbd25606c76c",
+            "content": "sha256:2daa1cbec8e6bd63830f53480aa7f99bac8fbf5963e51333b7621e79b6f0ebef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_spawn_that_never_started_leaves_no_pty_fd_behind"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Real tmux ensure and attach ignore launcher identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7881927c48e36605e13d698e40d5fbd25606c76c",
+            "content": "sha256:d43a5d19caa8a1b0785ae0247baf5220aeff60cda4863f272708545521e59194",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_tmux_ensure_and_attach_ignore_launcher_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

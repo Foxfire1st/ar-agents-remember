@@ -1,15 +1,5 @@
 # mcp/tests/test_provider_degradation.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/tests/test_provider_degradation.py`   |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-08T01:00+02:00                     |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -83,54 +73,25 @@ for the store/config layers.
 - A test driving the failsafe through the real `_stop_provider_stacks` → `provider_watchers_tool`
   line (rather than the injected stub) remains open per reviewer F3 (accepted, optional).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation governs this suite; it is a repository-internal failing-first test
 file for a repository-internal protocol.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking; the protocol is repo-internal doctrine. | n/a | n/a |
+No relevant documentation found after checking; the protocol is repo-internal doctrine.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The detector and evaluator under test. | `classify_degradation`; `evaluate_provider_degradation` | mcp/src/agents_remember/providers/degradation.py:268-323; mcp/src/agents_remember/providers/degradation.py:326-345 |
-| The settings dataclass this suite constructs directly to tune thresholds per test. | `ProviderDegradationSettings` | mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py:36-55 |
-| The metrics store/schema rows the classifier tests construct as fixtures. | `PROVIDER_INDEX_STATE_SCHEMA`; `ContainerSample`; `MetricsSnapshot` | mcp/src/agents_remember/providers/metrics.py:63-63; mcp/src/agents_remember/providers/metrics.py:146-157; mcp/src/agents_remember/providers/metrics.py:160-176 |
-| The terminal catalog entries seeded as alert recipients. | "def from_json(cls" | mcp/src/agents_remember/models/terminal_catalog.py:80-510 |
-| The operator inbox store read back to assert alert rows/roles/responses. | `OperatorInboxStore` | mcp/src/agents_remember/controlplane/operator_inbox_store.py:53-251 |
+- The detector and evaluator under test. [1]
+- The settings dataclass this suite constructs directly to tune thresholds per test. [2]
+- The metrics store/schema rows the classifier tests construct as fixtures. [3]
+- The terminal catalog entries seeded as alert recipients. [4]
+- The operator inbox store read back to assert alert rows/roles/responses. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Test-only, repository-local fixtures and imports. | n/a | n/a |
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 101; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
-- 2026-08-02T22:20+02:00 — 260731-EFA-L6 W2-B05 curator: curated 3 repo-internal citation rows; deleted 1 unsupported external task-requirement row under the 2026-08-02 14:10 ruling; scoped citation check now passes.
-- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 touched this suite only through the
-  `deliver_inbox_entry` parameter-object change plus `ruff format` reflow. That function now takes
-  an `InboxDeliveryLog` (store, entry, timestamp, redelivery floor) as its first positional
-  argument, so the local `deliver_entry` capture double became `def deliver_entry(log, **kwargs)`
-  recording `{"log": log, **kwargs}` and returning `log.entry`, and the recipient assertion reads
-  `attempt["log"].entry.agentId` instead of `attempt["entry"].agentId`. Three assertions were
-  re-wrapped for line length with no change of operand. Checked every claim this card makes about
-  that test: the patch target is still `agents_remember.providers.degradation.deliver_inbox_entry`,
-  the double is still the only mocked seam, the attempt count is still exactly 2, and the asserted
-  recipient set is still `{"orchestrator-1", "manager-1"}` — so the delivery-parity invariant this
-  card calls out still fails loudly here first. The card names neither the double's signature nor
-  the former `entry=` keyword, and it carries no line citations, so nothing needed re-anchoring.
-
-- 2026-07-08T01:00+02:00 — 260707-HFX-L7 curator memory pass: created after the builder R1 pass
-  (hysteresis/streak/index-lag classifier tests, the critical-transition evaluator test) plus the
-  R2 manager-recovery additions (delivery-attempt assertions closing reviewer F1, the stop-failure
-  durability test closing F2). Verification metadata pinned until closeout stamps the HFX-L7
-  commit.
+Test-only, repository-local fixtures and imports.

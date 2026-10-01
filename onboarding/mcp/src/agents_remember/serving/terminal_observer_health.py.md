@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/terminal_observer_health.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/terminal_observer_health.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T20:42+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -110,56 +100,29 @@ the dashboard companion update (generated mirror, `contract.test.ts` `VOCABULARI
 sample in `fixtures/snapshot.json`) and verified with the dashboard typecheck plus the contract
 vitest, not only with pytest.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured in the resolved memory root; the module implements a
 repository-owned serving contract, so no external domain claim is needed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- The exact v1 record: eleven required fields, `extra="forbid"`, both counters bounded at the 32-bit ceiling, aware-RFC3339 stamps only. [1]
+- The declared wire form: the record plus the four serve-time computed fields, dumped without `exclude_none`. [2]
+- The one durable current row: validate-or-`None` read, one atomic replacement write. [3]
+- The current-lifetime gate and the exact `6 × sweep_interval_seconds` cutoff rule. [4]
+- The serving-lifetime accumulator: lifetime start, success and failure transitions, persisted-row reads, and the one fixed write-failure log line. [5]
+- The bounded, ordered, secret-safe failure classification table. [6]
+- Publication rides the observer CALL for both outcomes, and only the phase separates a startup-prime failure from a steady-pass one. [7]
+- The lifespan starts this serving lifetime's accumulator immediately before the prime, and derives the served cutoff from the configured sweep cadence. [8]
+- One shared publisher on one observer root and one serving clock, read by the routes and written by the lifespan. [9]
+- The additive, omissive fourth tail key on the served workspace projection. [10]
+- The generated mirror declares this payload and keeps its nulls, and the schema's supported refinement set states the counter ceiling. [11]
+- The module's executable contract: sixteen cases over the record, the writer, publication, and the served tail. [12]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The exact v1 record: eleven required fields, `extra="forbid"`, both counters bounded at the 32-bit ceiling, aware-RFC3339 stamps only. | `TerminalObserverHealthRecord` | mcp/src/agents_remember/serving/terminal_observer_health.py:131-174 |
-| The declared wire form: the record plus the four serve-time computed fields, dumped without `exclude_none`. | `TerminalObserverHealthPayload` | mcp/src/agents_remember/serving/terminal_observer_health.py:177-191 |
-| The one durable current row: validate-or-`None` read, one atomic replacement write. | `TerminalObserverHealthStore` | mcp/src/agents_remember/serving/terminal_observer_health.py:239-279 |
-| The current-lifetime gate and the exact `6 × sweep_interval_seconds` cutoff rule. | `served_terminal_observer_health` | mcp/src/agents_remember/serving/terminal_observer_health.py:282-312 |
-| The serving-lifetime accumulator: lifetime start, success and failure transitions, persisted-row reads, and the one fixed write-failure log line. | `TerminalObserverHealthPublisher` | mcp/src/agents_remember/serving/terminal_observer_health.py:315-469 |
-| The bounded, ordered, secret-safe failure classification table. | `TERMINAL_OBSERVER_FAILURE_TYPES`; `classify_terminal_observer_failure` | mcp/src/agents_remember/serving/terminal_observer_health.py:82-90; mcp/src/agents_remember/serving/terminal_observer_health.py:122-128 |
-| Publication rides the observer CALL for both outcomes, and only the phase separates a startup-prime failure from a steady-pass one. | `_observe_terminal_catalog` | mcp/src/agents_remember/serving/_app_lifespan.py:80-107 |
-| The lifespan starts this serving lifetime's accumulator immediately before the prime, and derives the served cutoff from the configured sweep cadence. | `_terminal_observer_health_payload` | mcp/src/agents_remember/serving/_app_lifespan.py:288-352; mcp/src/agents_remember/serving/_app_lifespan.py:376-394 |
-| One shared publisher on one observer root and one serving clock, read by the routes and written by the lifespan. | `_ServingRuntime`; `_build_serving_runtime` | mcp/src/agents_remember/serving/app.py:165-251 |
-| The additive, omissive fourth tail key on the served workspace projection. | `ServedWorkspaceProjection`; `SERVED_TAIL_FIELDS`; `served_state_tail` | mcp/src/agents_remember/serving/served_state.py:50-66; mcp/src/agents_remember/serving/served_state.py:68-75; mcp/src/agents_remember/serving/served_state.py:81-109 |
-| The generated mirror declares this payload and keeps its nulls, and the schema's supported refinement set states the counter ceiling. | `TerminalObserverHealth`; "a bounded counter is a contract the schema must state"; `SCHEMA_REFINEMENT_KEYWORDS`; "export interface TerminalObserverHealth {"; `NULL_PRESERVING_MODELS` | mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:35-59; dashboard/src/types/projection.ts:802-824 |
-| The module's executable contract: sixteen cases over the record, the writer, publication, and the served tail. | `TerminalObserverHealthRecordTests`; `TerminalObserverHealthLifespanTests`; `TerminalObserverHealthServedTailTests` | mcp/tests/test_terminal_observer_health.py:220-617; mcp/tests/test_terminal_observer_health.py:619-732; mcp/tests/test_terminal_observer_health.py:734-931 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation boundary is established by this module; the served
 payload crosses a process boundary (browser), not a repository one.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/serving/app.py:165-171 in the row 133 of this card; the repetition added no pooled evidence
-- 2026-09-15T20:42+02:00 — 260831-LOCR-L17 curator (uncommitted change set on `ar/260831-locr-l17`,
-  base `99534dc5`, 13 paths, `git diff | sha256sum` = `b75a785d…`): created this file card for the
-  new module. Recorded the current contract rather than a change narrative: the exact
-  `ar-terminal-observer-health/v1` record with its eleven required fields and 32-bit counter
-  ceiling, the additive `TerminalObserverHealthPayload` wire form dumped without `exclude_none`, the
-  validate-or-`None` store over one atomic replacement, the current-lifetime serve gate with the
-  exact `6 × sweep_interval_seconds` cutoff, the in-memory transition accumulator that is never
-  served, the bounded ordered failure vocabulary, and the fixed write-failure log line. The
-  boundaries that make the reading trustworthy are recorded as boundaries: the persisted file is the
-  sole serve-time source, omission is the answer for every unusable source including a
-  prior-lifetime row, a failed later write leaves the last valid row serving and aging into `stale`,
-  GET/SSE never mutate the file, and health is diagnostic only — it owns no cursor, marker, gate or
-  queue. Two negative facts are recorded because they are non-obvious: cancellation is deliberately
-  not recorded, and a notifier tick is never observer evidence (so a live notifier beside a dead
-  observer loop reads `stale`, a conservative direction recorded for the owner rather than as a
-  defect). Verification metadata remains closeout-owned; no stamp advanced.

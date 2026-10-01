@@ -1,0 +1,877 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one-list step after a complete run, over the same K_B; since MIK-R11 the run reads the leaf's declaration before the pairing, and since MIK-R10 the unexplained items are settled after the onboarding items; since MIK-R09 both steps live in `worklist_over`, which `leaf_worklist` and direct landing share.\n\nAnchor: \"def leaf_worklist(\"; \"document = worklist_onboarding(document, contract, request)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:17a6ed6fa1bc9bd8f3d546faad0104e7be1249577bb796710819e134fca8796f",
+            "locator": {
+              "end": 451,
+              "kind": "line_range",
+              "start": 451
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:a6f6f8eb9556d2d604778087aa8f016c9e8e1be86cae9eb23c795fad2dbe6fea",
+            "locator": {
+              "end": 551,
+              "kind": "line_range",
+              "start": 551
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Coverage over K_B's Git tree and its census blobs; over a converted base's files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:db672eaaa93ebd14afdb51b81bb91c6ae195009503224c354d7f98214cfd416b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_coverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:08482f88486316dab06fc113b940a51f2d642dedc94755a6bb0e5f0669a27320",
+            "locator": {
+              "kind": "symbol",
+              "name": "_files_coverage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Coverage chosen per base kind; an unreadable census names K_B.\n\nAnchor: `CoverageUnreadable`; \"coverage = _git_coverage(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:ea630ee1cabc9aa19283d174ff887f8ee9d87b1e21cba2f3af702d6177b18c5f",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 331
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The coverage passed into the run.\n\nAnchor: \"coverage=resolved.coverage\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:25141958024c8da2a7a3549dbc8700d5c18270e68c31a52d1a3d1600704b3236",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 423
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The settling step after the onboarding items, since MIK-R09 the last step of `worklist_over`.\n\nAnchor: \"return _settled_unexplained(document)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:76e23b08bb59e70d3c9bf5f059e2e45fe3feefbcf3d02365b60d1a5a7fb9b5e8",
+            "locator": {
+              "end": 552,
+              "kind": "line_range",
+              "start": 552
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Settled items, a recomputed digest and open count, and needed rows kept out of the unnecessary list.\n\nAnchor: `answering_trace_subjects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:41d6beee0030108837165c928f5c4f7652f325700e0f354a1f47e5bc5c7fe92c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settled_unexplained"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Coverage by entries, a migrated route, a later status, and an unreadable census.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:b86a505c300ccce22c20621776e32dd840a565c73f0eb2e71ff01e327ee97920",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_coverage_is_entries_in_k_b_or_the_latest_census_status_of_the_governing_route"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The leaf route: an uncovered new file answered by writing its card.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:c8eaca5b6d41d9b5d9647daa9dd9067331cc3d34a6b02bee18e654be630df6d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The named sides carry the coordination root.\n\nAnchor: \"Where requirement endpoints' owning tasks live (MIK-R14)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:9a719c141fe292880bf56d89ea2065cfcd94f20231f39dbda06077263d252965",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The run over named sides passes it on.\n\nAnchor: \"coordination_root=sides.coordination_root\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:c5b6fc6981769640e88ebaf66c45e91a5423a5553da8237d7e0ef18ff5a57718",
+            "locator": {
+              "end": 424,
+              "kind": "line_range",
+              "start": 424
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "A leaf's run takes it from the contract.\n\nAnchor: \"coordination_root=contract.coordination_root,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:56edb5b1b595fd6321dbe6fb0c175854ea251b7d0289b3670acc9094b9246d16",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 519
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The gate's side request from the contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:ec1a4428a9096dadc4eacfbb4d1cc5971342edfb98a67afa08ac9a837ca48f62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_trace_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The applicability docstring: a probe Git cannot answer is never unconverted memory.\n\nAnchor: \"A marker probe Git cannot answer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:f28b1319edd5a481766db2d724d6656c63772703d9b2b9a81a3c290d828eefe6",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The exact candidate as Git trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:f5d8300b814e840f6944c81e645fddf760438e8723b58f8c7f26ce69c56b572f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateTrees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The cheap probe and the gate's applicability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:fe2010f6a8afbe449d529d398ce8cd075d061049dadc3458f452c0abe9289720",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_converted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:7ee2da3127a980defd0eff7f9137d74b8b4bbbd1949ecfcebf4c4c1000696a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_gate_applies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "A probe Git cannot answer is an `incomplete` worklist naming `layout marker`.\n\nAnchor: \"Incomplete(\\\"layout marker\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:f34bdc18a9aefaf3a7a875cf0071a03316c5890a31d5154716dbd9f0e561a02b",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 471
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The fail-closed reads, with the strict maintenance scope.\n\nAnchor: \"maintenance_scope = leaf_maintenance_scope(contract)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:e623438b0efd38a4e9bc35bcae1848499a5b65f5182a48e240513d6dc42ba537",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_document"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:b9f9cfdd09f515e71de5dd34762d74fa0fa8fb43d3bfa430d471deca74044eb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_missing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The full worklist over explicit sides, shared with direct landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:18c02cb724e1fcc61b271b22034fb01ac2bc7f550c187734304b29c7b6463199",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_over"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The marker probe through `has_layout_marker`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:1309ba87a7dbf221431d933d21c7fab3ac56ffe279dc357ac411f705f1c7c4f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_holds_marker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "A marker probe Git cannot answer is never unconverted memory, at the worklist and the trace sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0232362ee0ee427401f2d21d0cbc238ab3db594c",
+            "content": "sha256:a6d492cbdf333c3436560e75f8ba097883b53930ec2316a32794aed9dfdfbe23",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The four sides, applicability and persistence rules.\n\nAnchor: \"whose two memory sides are both unconverted gets no worklist\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:82761c55fb97df9f3097b35e9b4be5663a91738dd0d9031eb3c47888714e306d",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Where a leaf's worklist lives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:d7f4c2b6fc7dbe400b66dd6a3aee3f5f3b2d8d34330293000cbe29e425a1b9b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:42eb83cd7b7fca615f715039f73446c533f20c237330e24627d23f2412c70b4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKLIST_FILE_NAME"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The gate chooser: `None` keeps today's gate; a failure is an incomplete side, and since MIK-R09 so is a marker probe Git cannot answer (`layout marker: …`).\n\nAnchor: \"def leaf_onboarding_trace_sides(\"; \"def _trace_gate_converted(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:1433ce7929537260ea2235a3564ddcf7b1a031df335d031eca6a7deedc0c879e",
+            "locator": {
+              "end": 640,
+              "kind": "line_range",
+              "start": 596
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Reading the latest persisted worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:4e16c0acee6dddc83ac5d0f4ebc518fd70469a1ccabf1f5774cb92e9e6f20641",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_leaf_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The task-document flag.\n\nAnchor: `knowledgeMaintenanceScope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:18ee4b1d0c09a23dfc1a56cf10714819955eb03c6ce71eda3a90eac8eb2324b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_maintenance_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The explicitly named sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:13361186ae36459e6d237db8d7329ad8e678f9524bce9c286deb1fc6cfd9555f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplicitSides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "K_B by trailer, or `incomplete` naming the pairing.\n\nAnchor: `attributed_commits`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:c5d7107684a2a74178ddb405e368e20d5bdb7aee15389ee5cfd975fb0ed44a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "paired_memory_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The sides, the both-unconverted `None`, and the pairing document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:5c47931fbb9f7244c50f9922756de55feee2ba91d2011049c2fff86a99aef7ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "K_B as its conversion, through the read-or-convert path shared with the onboarding gate; since MIK-R10 the same cached files also give the route coverage.\n\nAnchor: `converted_base_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:47d34ec02ba7efc6da6518bb94a9e1f563b607a6d9f65bc77b7f75f35d8ad15d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_base_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:9288d7cfad8d974a86997e11ad38a36711719704df57881dabb0d879d89f7d43",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The run over named sides, which since MIK-R11 also passes the leaf's declared effects; unreadable input is `incomplete`.\n\nAnchor: \"def worklist_for_sides(sides: ExplicitSides)\"; \"expected_effects=sides.expected_effects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:392bbb830674c647f1111df0f5cbb63a7ed0ea738d0b359bab86ac7a5510f4e4",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:f3211721322455b406621805cbd70ac1a076096632fb8d87cff47feecacdb358",
+            "locator": {
+              "end": 422,
+              "kind": "line_range",
+              "start": 422
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "A leaf's run from its contract, with the cheap applicability probe (since MIK-R09 through `has_layout_marker`, and a probe Git cannot answer is `incomplete` naming `layout marker`); then (MIK-R11) the declaration and (MIK-R09) the strict maintenance scope, whose unresolved document makes the run `incomplete`; a complete run then gains the onboarding items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:92e8931e29da69fc47d260255e3464fbb273c002a8906c1c3a53402194c3ccc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_worklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:fe2010f6a8afbe449d529d398ce8cd075d061049dadc3458f452c0abe9289720",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_converted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:e623438b0efd38a4e9bc35bcae1848499a5b65f5182a48e240513d6dc42ba537",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_document"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:86083ff67e62ec2038e5b0808a02cb630258ee2ac5d24dcf85143cf87057ab22",
+            "locator": {
+              "kind": "symbol",
+              "name": "_official_converted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:1309ba87a7dbf221431d933d21c7fab3ac56ffe279dc357ac411f705f1c7c4f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_holds_marker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The one recompute entry point, which never raises; since MIK-R09 a Git failure is named `git`.\n\nAnchor: \"def recompute_leaf_worklist(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:c7b91ceaca73355262ca0e9d27c432120569dabfaef884dce3609f26741dc31b",
+            "locator": {
+              "end": 694,
+              "kind": "line_range",
+              "start": 659
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The port adapter the composition binds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:1ff58e949ac75e1df0d582965ccbc0e88b80755391158cdf67fbacf2f6e31ff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafWorklistRecompute"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An unconverted leaf gets no sides and no worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1536b7cb7be42d16497b3947d060b74d1dc64018",
+            "content": "sha256:0cce71675d7758c166a2cfc4005af77605035a636843f0c285c4178a8e8b2f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_leaf_keeps_todays_gate_unchanged"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "Pairing by trailer, following the sync, and persistence beside the contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f599e6cb7ae08370dc907627108697cd4c118803",
+            "content": "sha256:26d048924a5f466e265c649ec7e10c4cdecb4aedf219eddc3e47dc4bb510b081",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_pairs_k_b_by_trailer_follows_its_sync_and_persists_beside_its_contract"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "No pairing commit is `incomplete` naming the pairing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f599e6cb7ae08370dc907627108697cd4c118803",
+            "content": "sha256:e443416bd568ce0600bd81d13d4c26056a9cfa83ed8bea722eff3af6f5592cc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_base_no_memory_commit_pairs_with_is_incomplete_naming_the_pairing"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "An unconverted base is compared as its conversion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f599e6cb7ae08370dc907627108697cd4c118803",
+            "content": "sha256:cbd1939ce9438a98ec3d33abda34e01b8a9eaaf4ae7db54346077b9112aac33b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_base_is_compared_as_its_conversion"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "The recompute never raises and never fails a completed sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f599e6cb7ae08370dc907627108697cd4c118803",
+            "content": "sha256:a0ed35805dbb7d23462f50b23ed19b8548656e86ab6bc977c4c81e898a3b032b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_recompute_never_raises_and_a_failure_never_fails_a_completed_sync"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "Both memory sides unconverted: no worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b88287461b307446f70db6c1c509b1f8032c2621",
+            "content": "sha256:f10a3a64b65279782b4ef80112f43e1b82f552200415d2988eedd9aa932a80e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_unconverted_memory_sides_get_no_worklist"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "The run reads the paired code and memory repositories named by the leaf's contract.\n\nAnchor: \"def leaf_worklist(\"; `memory_repo_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:92e8931e29da69fc47d260255e3464fbb273c002a8906c1c3a53402194c3ccc1",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 451
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The declaration, read through the strict lookup.\n\nAnchor: `strict_leaf_doc`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:99b15b43198323ca8643ac652f1978df4a7ca581ba73ef74534e8d413af007d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_expected_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The named sides carry the declaration.\n\nAnchor: `expected_effects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:13361186ae36459e6d237db8d7329ad8e678f9524bce9c286deb1fc6cfd9555f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplicitSides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "An unresolved leaf document is an `incomplete` run naming it (since MIK-R09 inside `_leaf_document`, together with the maintenance scope).\n\nAnchor: `LeafDocumentUnresolved`; \"leaf task document\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:e623438b0efd38a4e9bc35bcae1848499a5b65f5182a48e240513d6dc42ba537",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fail-closed run, tested.\n\nAnchor: \"leaf task document\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "content": "sha256:bdcd67f659e58240eb3280a4dba0ccc80df80f16d518c73be301aef33efc7157",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 579
+            },
+            "path": "mcp/tests/test_planned_knowledge_effects.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The resolved sides carry K_B's route coverage.\n\nAnchor: \"coverage: RouteCoverage\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:8a8e1607e2f8c4b2df0b0fbd14361be5c90e6dc09d01d33b82363e19daf7c412",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Resolved"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_citation_cache_reclamation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_citation_cache_reclamation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T23:30+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -87,40 +77,27 @@ The arms are the operator-visible outcomes plus the inputs that must **not** lic
 - **Reclamation is capacity, not authority.** Evicting a dead occupant frees a slot; it never confers
   or transfers a lease, and it never mutates another leaf's contract or enclosure.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; the subject is the repository's own
 cache module and its control records.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source applies; the resource, its records and its readers are all repository-owned. | — | — |
+No configured `Domain Documentation` source applies; the resource, its records and its readers are all repository-owned.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The bounded resource whose reclamation this module pins, and the limit that names it. | `MANAGED_NAMESPACE_LIMIT` | mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py:48-48 |
-| The admission path that reclaims the dead and the authority it inspects. | `admit_managed_namespace`; `ManagedCacheAuthority` | mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py:304-346; mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py:71-106 |
-| The safety property every verdict is asserted against. | `_prove_terminal` | mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py:429-464 |
-| The control record whose phase and outcome are read as terminal evidence. | `CacheControlState` | mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py:110-132 |
-| The lease whose holder is honoured even when the contract reads terminal. | `TerminalNamespaceGuard`; `terminal_namespace_guard` | mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py:554-759; mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py:763-795 |
-| The compatibility reclamation entry point that had zero callers at the base commit. | `reclaim_managed_namespace` | mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py:798-826 |
+- The bounded resource whose reclamation this module pins, and the limit that names it. [1]
+- The admission path that reclaims the dead and the authority it inspects. [2]
+- The safety property every verdict is asserted against. [3]
+- The control record whose phase and outcome are read as terminal evidence. [4]
+- The lease whose holder is honoured even when the contract reads terminal. [5]
+- The compatibility reclamation entry point that had zero callers at the base commit. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is exercised; the fixture contracts are written into a throwaway
 coordination root owned by the test.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-17T23:30+02:00 — 260915-CAPS-L21 curator: created this card for a source file **new in this
-  leaf** (S5's repair, with fix round F2's `test_a_corrupted_contract_is_never_evidence_of_a_dead_leaf`
-  already in the tree). Anchors and ranges were read from the current worktree source; the file is
-  untracked at this tip, so verification metadata is pinned to this leaf's code base commit
-  `997305a9` and the governed closeout stamps the real code commit. No hash or fingerprint was invented
-  here, and the fail-closed boundary above is the module's own stated guarantee, not a stronger claim
-  read into it.
+No meaningful cross-repo references found.

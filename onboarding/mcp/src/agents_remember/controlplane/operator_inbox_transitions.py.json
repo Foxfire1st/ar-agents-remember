@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/operator_inbox_transitions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Delivery records terminal landing only on accepted boundary delivery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35a27ccc55fad7cadcaf0f601df65cfd9801074e",
+            "content": "sha256:a9682f7853f4d911db3ef0bc2c7432a68d9efb75100e4d8df54ffd78545039fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_delivery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Explicit landing remains idempotent and terminal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35a27ccc55fad7cadcaf0f601df65cfd9801074e",
+            "content": "sha256:2006d15194725344ea307b0e827786ebdd47656e80708ff428f4310c48491aa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "mark_landed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Sweep-time rebinding rewrites address and owner together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35a27ccc55fad7cadcaf0f601df65cfd9801074e",
+            "content": "sha256:808442827f20405cbf73e86cf24937eeca2844a900e733b6bd786846e44da2eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebind_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35a27ccc55fad7cadcaf0f601df65cfd9801074e",
+            "content": "sha256:84ff4331821a8d38a6d2f9f27a273f8a5ef6836c6544787b8c151a0f42c0e6a2",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 359
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structured conversation control overview](overview.md)
@@ -53,34 +43,30 @@ fabricated.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the recovery contract is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The substrate recovery payload is the first content source; the journal is the fallback; the ref mint
 and digest transform are the sibling authorities.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The assembly's source priority reads the substrate `WithdrawalRecovery` payload first. | `recovery_text` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47 |
-| The submit journal entry used as recovery source of last resort. | "class JournalEntry:"; "def recovery_text(" | mcp/src/agents_remember/serving/conversation/control/service.py:144-153; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47 |
-| The attachment recovery-ref assembly mints one ref per recoverable asset through its ref-mint call. | `attachment_recovery_ref` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:96-123 |
-| `recovery_digest` reuses the authority-parity payload digest so recovery matches the submit's idempotence digest. | `recovery_digest` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:50-61 |
-| The lifecycle policy that consumes this assembly: `_build_withdrawn_record` calls `recovery_text`, `recovery_digest`, `recover_attachment_refs`, and `recovery_payload`. | `_build_withdrawn_record` | mcp/src/agents_remember/serving/conversation/control/withdrawals.py:442-511 |
+- The assembly's source priority reads the substrate `WithdrawalRecovery` payload first. [1]
+- The submit journal entry used as recovery source of last resort. [2]
+- The attachment recovery-ref assembly mints one ref per recoverable asset through its ref-mint call. [3]
+- `recovery_digest` reuses the authority-parity payload digest so recovery matches the submit's idempotence digest. [4]
+- The lifecycle policy that consumes this assembly: `_build_withdrawn_record` calls `recovery_text`, `recovery_digest`, `recover_attachment_refs`, and `recovery_payload`. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -90,17 +76,3 @@ arguments, and mint through `RefBinding` / `RefTarget`. The recovery payload, ex
 digest behaviour are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: rebound recovery source priority, attachment-ref assembly, and authority-parity digest reuse to their complete assembly functions.
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations, all pointing four lines above their function after the signatures were wrapped multi-line: `recovery_text` L36 → L40-L47, `recovery_digest` L46 → L50-L61, `recovery_payload` L60 → L64-L77. cit:([`EMPTY_DIGEST`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:37-37), cit:([`recover_attachment_refs`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:80-93) and cit:([`attachment_recovery_ref`], mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:96-123) were already correct and are untouched.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the cross-file citations by binding the `ar-war1.` brand and ref mint to cit:([`_PREFIX_BY_PURPOSE`, `mint_ref`], mcp/src/agents_remember/serving/conversation/control/refs.py:39-44; mcp/src/agents_remember/serving/conversation/control/refs.py:136-161), the authority-parity digest to cit:([`payload_digest`], mcp/src/agents_remember/serving/conversation/control/previews.py:28-48), and the consuming lifecycle policy to cit:([`_build_withdrawn_record`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:442-511).
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `ControlScope` / `RefBinding` / `RefTarget` call shapes; recovery payload unchanged.
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the recovery assembly —
-  substrate-payload-first content resolution with journal fallback, authority-parity digests, and
-  one-use attachment recovery-exchange refs, extracted from `withdrawals.py`. Verification is blank
-  because the new source file is uncommitted; closeout owns its first source stamp.

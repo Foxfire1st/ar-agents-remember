@@ -1,15 +1,5 @@
 # dashboard/src/data/capabilityCatalog.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/capabilityCatalog.ts`        |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -86,26 +76,31 @@ Capability reads are now transport-bounded at 10 seconds. A hung per-harness sin
 becomes the ordinary transport error and releases its slot, so a later read can retry instead of
 leaving that harness permanently loading.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The store, cost-honesty copy, envelope validation, and single-flight/refresh machinery. | "export const capabilityCatalogStore"; "export function capabilityCostNote("; "function isEnvelope(body: unknown): body is CapabilityEnvelope {"; "export function fetchHarnessCapabilities(" | dashboard/src/data/capabilityCatalog.ts:45-45; dashboard/src/data/capabilityCatalog.ts:70-70; dashboard/src/data/capabilityCatalog.ts:122-122; dashboard/src/data/capabilityCatalog.ts:192-192 |
-| The wire mirror the envelope validates against (`CAPABILITY_SCHEMA`, envelope/snapshot/row types). | `CAPABILITY_SCHEMA` | dashboard/src/types/harnessCapabilities.ts:11-11 |
-| The daemon route + quarantine posture this mirrors (failed refresh pops the cache entry). | "class HarnessCapabilityCatalog:" | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-84 |
-| The primary consumer (picker options exclusively from the envelope; verbatim error + retry). | "const snapshot = entry?.envelope?.capabilities;" | dashboard/src/panels/session-cockpit/LaunchFlow.tsx:112-112 |
-| Envelope/error fixtures (all three cacheStatus values; verbatim 404/409/503 bodies). | "export function capabilityEnvelope(" | dashboard/src/test/fixtures/capabilityEnvelopes.ts:160-160 |
-| The unit suite (state transitions, verbatim errors, drop-on-error, refresh chaining, malformed rows, cost honesty). | "single-flight: concurrent reads of one harness share ONE request" | dashboard/src/data/capabilityCatalog.test.ts:154-159 |
+- The store, cost-honesty copy, envelope validation, and single-flight/refresh machinery. [1]
+- The wire mirror the envelope validates against (`CAPABILITY_SCHEMA`, envelope/snapshot/row types). [2]
+- The daemon route + quarantine posture this mirrors (failed refresh pops the cache entry). [3]
+- The primary consumer (picker options exclusively from the envelope; verbatim error + retry). [4]
+- Envelope/error fixtures (all three cacheStatus values; verbatim 404/409/503 bodies). [5]
+- The unit suite (state transitions, verbatim errors, drop-on-error, refresh chaining, malformed rows, cost honesty). [6]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -113,36 +108,3 @@ the reviewed task evidence for any current behavioral claim.
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 6 citation rows and 2 prose citations with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations after the
-  leaf's reformat. `CapabilityFetchState` moved L22 -> L23 (the honesty-invariant header comment
-  grew a line); `patchHarness` moved L57 -> L58-L62 and the range now covers the whole
-  `setState` body instead of a single line.
-
-- 2026-07-24T13:17:50Z — Added the bounded capability-read and single-flight-release invariant.
-  Verification hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 R1/R2 (capability catalog client): the
-  memory-only per-harness envelope store (fetch states `idle|loading|refreshing|error`, loaded =
-  idle + envelope), verbatim `{httpStatus, status, detail}` errors with envelope DROPPED on any
-  error (daemon-quarantine mirror — no fallback catalog), schema-mismatch 200s refused with
-  per-model-row validation (review finding 4), `transport` as the default status word for
-  shapeless error bodies (finding 2), per-harness single-flight with chained explicit-refresh
-  semantics (finding 3), and the generic no-digits R2 cost-honesty copy. Verification metadata
-  pinned to the leaf base until closeout stamps the L3 code commit.

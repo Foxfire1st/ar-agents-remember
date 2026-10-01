@@ -1,0 +1,251 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one construction point folding settings, ignore file and call into one register.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:20020838d373136e42692e21a260a7b1302f2f01be3ae99309895229824a70a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_exclusion_register"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A path rule excludes a file by name, and a directory by name or by its contents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:51ec181883959639d271062df72c0b865501ca6d0e3e9928fde56ebaf681567b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pattern_excludes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The one glob matcher shared with the storage resolver and the drift check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b484c1cb2e306642c86d3ef0d07e54deb17d288c",
+            "content": "sha256:d0a104ea8f8e41b7a16cf7d4d707852e787918d0d379748de50479103f82ae6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "matches_any"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/storage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The register is built from the memory layer's own settings keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d1a224918ffa12f83fc1447d8771ae97e48a59e",
+            "content": "sha256:2ebdad3b6cc58262447a3368cb98cd2df97bc581968d816f95e7dbd6841ae647",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_citation_index_settings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The three source constants the register records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:4aab73c7108ef610fe0a0fc91d315cee0def1c1bdf0a32d1b3e014244ed9b8d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXCLUSION_SOURCE_PATH_RULES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:eace8fab7461b6ee009a80f506989a25204e280d4a20a317d320c1b87ca43d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXCLUSION_SOURCE_GITIGNORE"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:5c675994e56aabe066e0c2c639ce1806bcbf8f1038a8393d1cf5cb2d8b1dfcd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXCLUSION_SOURCE_CALLER"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The three `gitignoreAuthority` values the register may carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:a258a0451f0059c7ad90f9df895992c1d389da227528781b9f97e0b94055e33c",
+            "locator": {
+              "kind": "symbol",
+              "name": "GITIGNORE_AUTHORITY_GIT"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:6888b08c1ca9d3907f139724074154c12c480fc66ce27e835b296d1a68e7769b",
+            "locator": {
+              "kind": "symbol",
+              "name": "GITIGNORE_AUTHORITY_REGISTER"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:540d6c9a7b71a37e134dfc88dfbe5d4b7561668abc68d9bcd9012174f2ca056d",
+            "locator": {
+              "kind": "symbol",
+              "name": "GITIGNORE_AUTHORITY_ABSENT"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only the path-rule and caller components are matched here; the ignore file is a separate branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:980d7b4e24c950796f641db3d639af8208f3ef09d7834ae385284d545f832c94",
+            "locator": {
+              "kind": "symbol",
+              "name": "excluding_rule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A caller pattern that cannot mean anything is refused by name instead of matching nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:368608e2d09339a4916de6c9897892fdc337a785450c36f6e29e4f484d7892f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_caller_excludes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The code root's ignore lines are recorded as written, minus comments and blanks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:cb17b53ca15292bbe884f28cbad542e8c897643a21306c9fca027f390880f791",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_gitignore_patterns"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The bounded fallback matcher, its ancestor walk and its pinned divergence from Git.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:e1178873ba78e845bb1889327ce7a0b3c34e5d81b2de0ad991b3dc2dc00302da",
+            "locator": {
+              "kind": "symbol",
+              "name": "FallbackIgnoreMatcher"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Last match wins over the path's whole ancestor chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:d475ac7ae7eec732bb582a96bf207202a5e5dd0a1818598a9532c556357013ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ancestry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A negation prevents directory pruning, so the walk descends and decides per file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618796cf108683657661e36f015a1120b05c6e9d",
+            "content": "sha256:f45ee2a1120bba96d7c0177ad8164ccfd0f4bd5646dfdfab9acfca2bb6f0789c",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_negation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_static.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Built bundle is served with revalidated html",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9428ae1c582722b1426d13925d79cd5d40bcfa55",
+            "content": "sha256:feaea0b160a6ed2beca57a2e730d891c078795d157ef054212e25032f3291dd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_built_bundle_is_served_with_revalidated_html"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Missing bundle answers 503 with the build command",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9428ae1c582722b1426d13925d79cd5d40bcfa55",
+            "content": "sha256:262c413a86edbcdfba8a9a798d2febcbaf34a4283460f321850447d70f1c67fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_bundle_answers_503_with_the_build_command"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Missing bundle leaves the api alone",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9428ae1c582722b1426d13925d79cd5d40bcfa55",
+            "content": "sha256:efbe9a3382168880473017a7ffcea4e15c281430cad653062fe2d3ccab2e9df8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_bundle_leaves_the_api_alone"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

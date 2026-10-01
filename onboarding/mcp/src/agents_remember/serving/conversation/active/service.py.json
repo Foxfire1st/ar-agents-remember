@@ -1,0 +1,133 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/service.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The immutable app-scoped `ConversationRuntime` is the authority one service instance binds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:dc154a8035e89260fa70791731fb9f68cf6f785fbfce9a136518d3c92e25cd0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationRuntime"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ab474dfff0eb03bc82957698ed6848aa5c94ec5",
+            "content": "sha256:00d2faabf4a77eb21f63667c38068a40d59017f8e37c92df7aa73fd5205274f7",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The cursor authority's `decode_event_cursor` validates event-cursor generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d6cf3a4f2147199259cad445c3ba082b9ee00a2",
+            "content": "sha256:b863bed1a65282f2523c19c22af53d303db3a0de66b234de0343b5e3b975e039",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_event_cursor"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/cursor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d6cf3a4f2147199259cad445c3ba082b9ee00a2",
+            "content": "sha256:f0e3fc0d72ce6c6dd249d01059bbdda23fb099dbe5ad72f46c5ac7b709098277",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/cursor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The rebuild coordinator captures the atomic page + event cursor under its apply lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa0b2b836fceffeb7a79b177e77a3e328bdd838e",
+            "content": "sha256:b34696e2610a04461f6982413f36550426c853faa1eb6dd39506e4b3717e304d",
+            "locator": {
+              "kind": "symbol",
+              "name": "page"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa0b2b836fceffeb7a79b177e77a3e328bdd838e",
+            "content": "sha256:16df4d670492c8b4a5ced08d1f2ddbbb9452e0234ec72a20e1df85aa1ae1313e",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The page route invokes this service and maps typed refusals to the serving status idiom.\n\nAnchor: \"response_model=ConversationPage\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:71598dbac56a27f1f84aeb9deae44a2f0b07abdf8ea827fd2c65b23cf61a5882",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The SSE route invokes this service and maps typed refusals to the serving status idiom.\n\nAnchor: \"return StreamingResponse(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:53865b2274c41dd65825ff70fe5f1b835129c505037a28bb2820d18501592ba9",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

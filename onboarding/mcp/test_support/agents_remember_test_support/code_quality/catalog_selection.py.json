@@ -1,0 +1,23 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pure old/new consumer comparison preserves removed consumers and refuses broader narrowing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec740feba7d9f0faaaf9242b15b1882db6e70049",
+            "content": "sha256:fb1dabc0bebbcb633e768a367a20b9a5a45cd65ca5c047f0f5bd1db7d08f9412",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_catalog_consumers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

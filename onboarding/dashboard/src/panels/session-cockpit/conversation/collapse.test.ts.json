@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/collapse.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pure grouping function under test.\n\nAnchor: \"describe(\\\"groupUnknownVendorRuns (F10)\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a78c3d313e5a6a2611810a8e05f9c046c2eb125",
+            "content": "sha256:058ec78720461b32d264a961a49b5cbbb257f4419d8aba51238a613dc45e0038",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The item wire type the fixtures build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:dc580072cfe96fda01c3de42598e5bc2f81d32569780f998186cba1df463599e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItem"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The timeline consumer that virtualizes the grouped display rows.\n\nAnchor: \"describe(\\\"groupUnknownVendorRuns (F10)\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a78c3d313e5a6a2611810a8e05f9c046c2eb125",
+            "content": "sha256:058ec78720461b32d264a961a49b5cbbb257f4419d8aba51238a613dc45e0038",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

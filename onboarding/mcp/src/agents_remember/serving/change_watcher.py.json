@@ -1,0 +1,250 @@
+{
+  "path": "mcp/src/agents_remember/serving/change_watcher.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:2cb87ad490ae8ef12ce5a6ea23b11e30b555646de177a59c71101e866b9bb4b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection_input_roots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:093ec519bb2c7448dd78d9f760e5b1413ef37f1d3a321d305c7467274f479446",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_projection_input_event"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Accepted paths map to reader domains; unknown accepted paths request every domain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:681a5dc2e0980891fca43c783fada3fa889ea4f6867b89d78e015f58aafd95b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection_domains_for_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Typed wake reason/domains, structural watcher seams and complete pacer scheduling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:85fe05c92dd07be9cd8d58f69cf2ea8783ece0628de00a86aff22066d9f25da3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionWake"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:0024aee435fd76231af9bd058b166566423b29f5561304c8e5ec7d2fda526a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "WakeTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:ec2f4be59f9072063b40142e7c35683d9f83379a399a5d8f86ff75d257d8aab6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeWatch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:d0b97ace3cdc8d307eb4c750ab2d608f76fb2630e06195178df996dd014ccd5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangePacer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Watcher root discovery, degraded empty-root behavior, explicit awatch arguments and retry lifecycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "content": "sha256:4db8f10d8e86d66d426386a9db8fa9358930d52dc44de405e12d852651ac7b23",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionInputWatcher"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Shared lock naming and transaction mechanics keep filtering aligned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:8625fb836b979634f02013f27444bae4be2d8f919640db82fd48f72a5588b0f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_path_for"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
+            "content": "sha256:915104295d8fa4d8973a118ed3314645db9b7e134d512c63302bf14e7f51085c",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_file_lock"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Projection source readers determine the input surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:dd6c8dc88e614f2f3a1a6f62b428713e9bdafd8b33e320b3d8fc446b344a7893",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Projector wiring and fail-open watcher completion retain actual ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:4babe2064ad1955d4490d0dc029b8234dcd61c132957c66c0d0504cdba2b6b2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionRefreshers"
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:47fd2e31532d8e26955ae9e1e70bd53226a380db66dad08551e402c86ec3f44e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_on_watch_task_done"
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The live-input model selects actual watcher participation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:3a08851ee543ee9789179be4031f95e49748c0c359eaea0788a8b22a426a4209",
+            "locator": {
+              "kind": "symbol",
+              "name": "LiveProjectionInputs"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Dashboard reload entry carries the pacing configuration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dev_app"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:ee314be53ddf84df4e7af0f795b062e7f4bd3658c18021ca3541ce7e2f5e468c",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:c6235aa994819787a4ebcf4ff4d2adbdd884eda20a29fd41a4577ecc4d315ba5",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 338
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

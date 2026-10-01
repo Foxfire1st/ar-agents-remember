@@ -1,0 +1,318 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/task_resolver.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The re-export surface: this module publishes the task-layout vocabulary without defining it.\n\nAnchor: \"from agents_remember.tasks.task_paths import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:6c1455ed80efdc58adedd62a93333653587b02e905f52689b874aae4a43bf67b",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:3505eff900ef40ec541972cf9ee4826a2b43cc18aeaa6191d00ce97b770e85e3",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSupportTests"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The package order that makes `tasks` the correct home for the vocabulary this module re-exports.\n\nAnchor: \"a module in package P may import package Q only when rank(Q) < rank(P)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31edf52e16b5b8961ab3df30071035ee1487df5f",
+            "content": "sha256:ded9434595ee95aa22bb7a4663f23ce66d79f845bb753c206d9512e29970ee22",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The single definition of every path rule, which this module imports and redefines none of.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:a56d6a17d3f53e4ab8cd35b02e630b86c15f5fd41b4afe5eb80489f13cd09b45",
+            "locator": {
+              "kind": "symbol",
+              "name": "slugify"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:07aa32c0e77d63c049371f15d5886529004d1e17196a290f9ee4b2fd00c8539b",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_contract_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:5a6fa392e1f7610062dd278030098648d72aabda7cf4cacb138194006dfed9b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_enclosure_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:e07e641d796aeeb13604649d1ecb9e06d86bd62be213e0871a97dcb5537226b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_archived_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:b1fc657481ff3d993c7c2dde2401eb14736d0560ba8f6baf96e92931ec2a0b2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_enclosure_contract"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:47e5201e5b1d133febcbb89eefa6f0ca7e1473347442477513ad46e266e91d2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "iter_leaf_enclosure_contracts"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Task-name resolution, which this module still owns: current and legacy folder names plus the candidate list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:aee46e3391eadeb1943aecb891b97a45411f462deb76dbca9506549a953ac12c",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_folder_name"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:db8d461ad46f6284c849273c50b4586eca3eeb1a216c78cdc006263e057ea4f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_task_folder_name"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:1f10f57616d2e0a72e0373ff16c9a6f4511ff0a6a5ca04c6a6fb4efff038f1d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_root_candidates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The error a resolution failure raises, and the current/legacy root builders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:0be59d641f66d081c7052f35a52eaa9922f2249a3106a4acfc05266e627c7e65",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskResolutionError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:fadfe7f7318dcf479ea81af7f781333adf13623eece4e5d695f336b36ce5441e",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_root_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:82f760e1af045e20b575bc6a5425f6c9c3c86de42b7f3809739cba08a6040b42",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_task_root_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:903dc79a8da1037a774bfb5cfba02c333c12fc3081873d11e0206db7ac756a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "iter_active_series_contracts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:37c9388a0213c452748f6c1e4f9ebb5bd146d3ac3b2c0723f2b597580ac8d728",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_active_task_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Leaf enclosure resolution selects an explicit leaf, auto-selects a single leaf, or errors when several leaves exist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:b03a9a18782f3ff2eae13a68f501ab8044a2918e348e068f520ed639ed87d831",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_leaf_enclosure_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup.\n\nAnchor: \"def resolve_leaf_ref\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
+            "content": "sha256:43366334bdfc056d4e67e0f781f1515d874b21f176c844b5cd0295266ff04e73",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.\n\nAnchor: \"def load_contract_from_args\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa6deecf2d3543ce1c5756c527660e90e6b9f0fa",
+            "content": "sha256:c83906b1f553b7f7a1f792344ed620bf82001a89caa56a3f68ce007474628ab6",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:88ac21fd8f8166344193e5590ff04e2d723bb0342bc64d9043783b89fb0af03c",
+            "locator": {
+              "kind": "symbol",
+              "name": "archive_completed_root_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

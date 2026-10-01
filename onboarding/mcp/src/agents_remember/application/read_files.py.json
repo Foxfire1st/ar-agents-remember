@@ -1,0 +1,179 @@
+{
+  "path": "mcp/src/agents_remember/application/read_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The thin payload wrapper that returns this application entry point's dict through the token choke point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7e1c91942f0b2cea533bee9af29d5869b17f9bc",
+            "content": "sha256:c6602883c1f6cc5db28df7c688257563ce2ed6b901465af9d63cbd66825a2372",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.**\n\nAnchor: \"published_intent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_intent_block"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "content": "sha256:cab2ff8fd613e943210ccc87819562eec5f87eb2edbfac4a50b42bab964afcbd",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 427
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "content": "sha256:a1668f40a36918e7d16511503f4cf7f4f1ab15b5a0e31f86dfe953bd40362f99",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "content": "sha256:b843fc5d205e51414827e73a11fb76b3396c10d08b4458bee1fcbe7348819416",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The format switch (MIK-R24 rules 5 and 9): a converted tree's file results carry the sidecar and resolved references, and an unconverted tree's are marked `legacy-format`.**\n\nAnchor: \"legacy-format\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "content": "sha256:074fc5111cf95faca8cad270b11cfafbfb7ce428f884ea288abb35e0290a20ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_one"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
+            "content": "sha256:8135a1645c156c32cd131dc041fe9b689c02dae9d8bd898ca235b326c67fddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_card_parts"
+            },
+            "path": "mcp/src/agents_remember/application/read_files_format.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The import of the format helpers.\n\nAnchor: `TEXT_FORMAT`; `memory_format`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "content": "sha256:2a3aaad2b9e669c90696d2ba2250dc2a3d75fe2d374f2d45f06204955d2a000e",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**MIK-R05: a chain entry already served to this lifecycle is shortened to `served_earlier` through the served ledger, under its own kind; the rendering is imported from the chain module.**\n\nAnchor: `shorten_served`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "content": "sha256:1b9074eed8dc40a09a932f74fc30a81a93f2abf322f480e1548b3ac6b03cc8e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_chain_rendered"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "content": "sha256:feb5f6de23da5454d47cd564a4141169a21ca4afc32a34a8c9b38352ac17d1f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_KIND_CHAIN_FAMILY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "content": "sha256:05611a572bb11a6b6ca98f47b4d6d68595d82dc3355a4ff2b14ed2f5621af19f",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "content": "sha256:ac1125f4a56d881f04ef17d073c178bfb568f4282248ca0de6e8f81a4a40417a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileReadStatus"
+            },
+            "path": "mcp/src/agents_remember/models/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

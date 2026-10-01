@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The projection-side pruning policy consumes these primitives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
+            "content": "sha256:2f8d306e049220a2aa893df0c9dd64963eaf9559cdca1e78d2069128a07eb1f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_orphaned_drift_snapshots"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Snapshot removal is owned by this primitive; no deleted-suite removal-edge coverage is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:1b0c3421cd46f50e7fa1265d4f027d6ddb96ab078b53a1c3546fa6bd5efc804b",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_drift_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_agent_notifier.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e02b551656f08f5a199e4303ef89042d3fa2b31c",
+            "content": "sha256:c8584cae9c983c6c6ecf8a925d744867bf60f9198015b2bc47a00a3bed4c7675",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fakehost.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e02b551656f08f5a199e4303ef89042d3fa2b31c",
+            "content": "sha256:4905c3d753b6d7c78c0cbd78dc2b3c020a7483162a887bce8bfe613cca567b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FakeHost"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Fake paster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e02b551656f08f5a199e4303ef89042d3fa2b31c",
+            "content": "sha256:1aaaaa74a6fbd11d32188aa0b9b521d6dd86629e73b4f7f83a8eccb1a207a049",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fake_paster"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

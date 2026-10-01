@@ -1,0 +1,97 @@
+{
+  "path": "dashboard/src/test/webtuiSpike.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mapping file whose imports/mapping/focus-restore the assertions parse.\n\nAnchor: \"--background0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4226c7769b30f0ae479e448cb3a0259f36223b45",
+            "content": "sha256:8697696861f11f72406927b566d8ae74cad540a1ab22835720549a740749bea1",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "dashboard/src/styles/webtui.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared scoping options loaded via createRequire.\n\nAnchor: `module`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d659413a5e76f923e329a70bd0caeab2a8d0885a",
+            "content": "sha256:f294843a9a07b8d496ea76822a093c597e6480002d070e97c4ed9e970a3d363b",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/webtui-scope.config.cjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The build config that passes the same options object to the real build.\n\nAnchor: \"./webtui-scope.config.cjs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c57708428ffc5d46e4fb9fb5ee569e7d96aa153a",
+            "content": "sha256:6305f33dd91caf9839b055da79ed7a46db7fca7eb42b092f2e4ac9fa4053dd87",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "dashboard/postcss.config.cjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The layer-order statement and unlayered freeze rule asserted.\n\nAnchor: \"animation: none !important\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:afc0a74be48ac8051e01d5aa56079b0f06b3229de1ccc0ab1504839150c4403f",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The declared token vars assertion (b) resolves against.\n\nAnchor: \"--muted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6ed9b5f830cc758ade244a573ce03c2ca8eb29",
+            "content": "sha256:dd8c4dfdd03a127d31410ccde967d8017b14ea4c750dbe02e4b6e6acb6d90cea",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/src/styles/tokens.css"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

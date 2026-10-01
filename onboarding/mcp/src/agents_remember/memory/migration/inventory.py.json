@@ -1,0 +1,717 @@
+{
+  "path": "mcp/src/agents_remember/memory/migration/inventory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The inventory's own statement of its direction: one row per in-scope source, absent rows for the sources a corpus-derived list cannot see, and rows for cards whose source is gone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:3587f6b03a7b2ec2bfe942dcac56962a90a220fa34f0f16502252c8babe78bc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeInventory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:667c841bd444bfbe7881aee77ae4fdf97cea8d65c4fa8569b06f75bf4cfab3ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "rows_without_onboarding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:c328832d12ffaaeac693f82d70da7cb86471361ec92658b57fd8a73f39a042bc",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "What a row reports for a read that was not a parse: the remainder it must carry, capped at the prose width rather than trusted to be small, and the present-or-unreadable state derived from that one reader state, so a successful read stays a present artifact whatever its parse yielded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:80bd6abbe2b4ed2b5f23cc148516c43cebb4857cfee811a47ac43ad3cf5df5d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unparsed_content"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:5ea065f5990e18d73c15a24808806e4a2d1cc27b86bb685ac99d1e4eee651eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bounded_observed_content"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:125ad09c18ce11b0de50987fd132ade6a9ee5b018f2013128052325a24f4599a",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_UNPARSED_LENGTH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:5f4d1df8a3b633721cfaae48e1d6983eb2454a04c76755e2bcde8978f96caf90",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_ARTIFACT_CONTENT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:beac362b7814eba0f98cc28fcebaacfb8232b47faa005f35257e2d0f09ef6de7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inventory_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:a9e0be9539c1d476b18b926f22aa1b7850dc830f93f377d2db6e4030638b8a3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNREADABLE_INVENTORY_STATE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The unclaimed direction: the claimed set that keeps one artifact to one row, the cards observed under the derived routes, and the row a card with no source left produces, whose source is recovered by the `.md` suffix rule and whose route falls back to the current-directory spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:ea41b5a6fb5a1a860d79a32092a606ef620577484e767c25a0046b81fd2b6f11",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unclaimed_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:8fd73582d13924d9423223b589dc6b6e7802bda1cf123396c02a3822ab2aa362",
+            "locator": {
+              "kind": "symbol",
+              "name": "_card_path_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:d306e371c1f71f4bb44e2ce05f1975b405fee34b2645a18ae81f5f115fa5623b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_cards"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:bfeec158a90f4e2736d757910de1e21d90682c11df3c2e82e752b11bfb538752",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unclaimed_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:3eb8092cdc52c421360760d688c8abde6881eb2035d5fea75b96364383e18e7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_source_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:b27211db3713808b52841226f43bec6ab3ce8cab91d7fcaa4963cefa763944f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "POSIX_CURRENT_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The card row builder that pairs one in-scope source with the card found at its declared card path, and states its own route and kind observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:7da6a1ea66e3033773999451aadb444efbaf82fb36c2f5c86efd412117f522ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_card_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The scope entry point: the two spellings it drops, the caller-supplied card-path rule and the source-path ordering it returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:cb383a26e57cbcb392253f229afa41e8e4406cc265364a61bb3257adc982a390",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:1969822c7e7eaae34a3a8b1d2e62f834e8b4dbf1c570f8eaa3753bb07258da55",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeEntry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:21822715108f57e52cae3155e0a7139b134779bf8841b9cb41b0cef628f62287",
+            "locator": {
+              "kind": "symbol",
+              "name": "_card_path_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The inventory entry point and the reading context it bundles, with the baseline pair travelling beside the rows so two baselines are two cohorts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:26d936345d2aa018eeea3cdc77cca51021256c8796d4d89bb3e6c86188646db2",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_inventory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:7a34ac6e0a96d60b8ac9c17a8d3a34b448c9e6b456b949b06f187350a22a7482",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReadingContext"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffd4c61b19a7c14bb802329d79f7180ae13b2ef8",
+            "content": "sha256:ddedac269ae3244408d2a6d0860a609f341f1ef8bb70f67db972b6a006842bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrozenBaseline"
+            },
+            "path": "mcp/src/agents_remember/memory/migration/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffd4c61b19a7c14bb802329d79f7180ae13b2ef8",
+            "content": "sha256:0257c37fab2a960a2a891a285c03050cd525b1ac5740074591b3f38852fd5889",
+            "locator": {
+              "kind": "symbol",
+              "name": "key"
+            },
+            "path": "mcp/src/agents_remember/memory/migration/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The six import-time closes that keep every value this module records a member of the schema's closed vocabularies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:e5e6c0309c605de1c9b86454f54cb9979859008c83ce5e7b3b29f800f6f26ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_ARTIFACT_KINDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:7901655997e3383651465f40b8da989a7ea5bc99fd60f4869c49d1de8a0acabf",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_INVENTORY_STATES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:b30bbbd4203a8e26756f9f887236be2e549f1cb6ae661b3433b3c1fea53c5463",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_PARSE_OUTCOMES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:cb829c9839f9f461bca4f7c9c12ef668af7a2fa70da08cbd75c5d3dea67b5a94",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The census payload shape these rows answer — a non-empty artifact path, which the absent row leaves empty, and the guard that requires a non-parsed outcome to carry evidence — and the fact that no module in the shipped candidate converts an inventory row into that payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:90305c7699abef4fd15bdfac4bc21b51996f542c2e14357eff3b66dc1c0958a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusInventoryRowPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:9cd643d8f938727d1ec79f2bf4c84525fcfd980d984d741fa389c1f9faad8442",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_unparsed_content_with_a_failed_parse"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The only consumer of the inventory in the shipped candidate: the migration test module drives `resolve_scope` and `build_inventory` over a temporary corpus and asserts the absent row and the unreadable row.\n\nAnchor: `resolve_scope`; `build_inventory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68fb7ffeb0eee19d99c2ef4ee0c6dcdac124925",
+            "content": "sha256:cf99d471f6aca45acebe9d9e1b77b57b5088e4387dfa6ef5097a5c222d83a15e",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/tests/test_migration_census.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c68fb7ffeb0eee19d99c2ef4ee0c6dcdac124925",
+            "content": "sha256:f84d8ab41429fa973d3e8fdc3accad768e290b48760c1c2e4ef43e729fe3bf41",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/tests/test_migration_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The same `doc_type` to artifact-kind projection is declared independently in the parser module, so the projection exists twice in this package with identical content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:dbda2485a8e39436182468a8daf6cbf8b6aa356547dd867d3724774b2366f79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ARTIFACT_KIND_BY_DOC_TYPE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f6d6f7bdb328d70081079144c6d747176f72ee5",
+            "content": "sha256:848af171a6c8fd17dc2723a299998de0f3cd87b21cd9eea907c53c18ac70500c",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/memory/migration/parse.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The row a source with no card produces: its own absent kind, absent state and absent outcome, with the source named and the artifact path left empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:7a28c575df23c451a1ee1a94977af57a11641e2a77ccf5975108360bdae07ad6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absent_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:655fa72637789ed1d412c313be37ba023a1bdd20972118cb935a143e3e815413",
+            "locator": {
+              "kind": "symbol",
+              "name": "ABSENT_INVENTORY_STATE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:aa83ace1746899fd954a297bd1b610753c5743d7fba2bb1e4012f9e71df467f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ABSENT_PARSE_OUTCOME"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declared route directories — eight top-level routes — and the stated consequence that an unnamed top-level directory belongs to no route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:8ad168baa6f05eddc9a6d01c808f4dd6bd342b74ae58ccb19a711885b5da306c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_ROUTE_DIRECTORIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The confinement rule the route match runs over: an absolute, backslash, empty-segment or traversal spelling is not a repository-relative path, and the match itself is on whole path segments, longest declared prefix first, with the empty string for a source that matches no declared route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:1eff16427e30ebbd425c84fb1fe8f08170d598992ceb1c951a103bdf0fe76f11",
+            "locator": {
+              "kind": "symbol",
+              "name": "_normalized_segments"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:0b6573f7394ccca3321e0947f9b8e0d1c107a30f8e589d016960c82823b07ce6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_segments"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:5fcf2eebd4bd6cd920ad24217af78481350f40a50937f58580309fe0c9e2d313",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_for_segments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The route read that accepts the corpus spelling, a bare route name, a card path or an absolute directory, and rejects any name outside the declared directories — and the routes this scope is then asked about, which are the observed ones or the declared convention when no tree was listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:8b733456be5cf8db4159a2e3c36a1c4b5bcc7de6e9fb17f71ed2c28475dcfcba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:94443a2659ed9d3d398aeaa63a2d29501b23600d184a72efa440476df452d86b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CORPUS_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:943b41906443121f6f315da45ad8c71330009130e61a68592db58a4795bbc5d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_directories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The declared `doc_type` as the authority for an artifact's kind, with the path consulted only for an artifact that declares none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:10474bfc9aee85398fbfaa438fda84408753f7e06d6c0900f66e74baf1a66ce5",
+            "locator": {
+              "kind": "symbol",
+              "name": "artifact_kind_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:dbda2485a8e39436182468a8daf6cbf8b6aa356547dd867d3724774b2366f79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ARTIFACT_KIND_BY_DOC_TYPE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The structural `doc_type` read: the recognized header row, then the `doc_type` row, stopping at the first line that leaves the table, with separator rows read as no cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:3275e9521f55b138d486ff81950897ddf2cf6e57fca3b5d23f31e5b7062da09d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_doc_type"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:6267869f11c87cee03f45cb5425fcd1f8e5ba6fb5e6df5842160802ad2bebe45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_METADATA_HEADER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:f425eab5901ca447e0191d766b886d111c6b636f78ea704cc5ec1e292536d7c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DOC_TYPE_ROW"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:042d162c703e463eec54d0854d41cb8e83d09ad9638e591eab8edfa6b0910d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cells"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The default reader that decodes and reports, and the examination that turns a raised read failure into a recorded state with its evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:5a1e40c2115201d27c4c52394203f015d1cb27a3474fa2fe19a282ae2eea62af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_artifact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:9c748ff37780f6cd62270db9a143362b1a59f235fd7b9a50104157d22fffb7b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_examine_artifact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The reader seam: the state a reader reports is checked against the declared parse-outcome vocabulary and refused rather than guessed when it is outside it, and a read failure's own text becomes the evidence a row carries, with a stated fallback when the failure reported none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:b34f3d84715bb13047257ca2ccbb602783481ec12c69b95864b58703a3d2ce2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_known_read_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:54385b585d857af17ef8260f6fd285addb0a4a73a189304e795f8c797aa0a4aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:70a4efd88159b77d96590ae182baf5ca8c83cbef66f91dea02d426aa67ae6979",
+            "locator": {
+              "kind": "symbol",
+              "name": "_failure_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c38621f217e7b1b90d2eff744168db8a1cde988a",
+            "content": "sha256:e8bb49106886ccdc33eec260d4b0af1e8ef514c07fcdad9bf905adcd083d4732",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNREADABLE_CONTENT_FALLBACK"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

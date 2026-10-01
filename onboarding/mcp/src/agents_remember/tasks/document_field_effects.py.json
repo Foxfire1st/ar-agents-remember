@@ -1,0 +1,279 @@
+{
+  "path": "mcp/src/agents_remember/tasks/document_field_effects.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "R04's exhaustive mutation taxonomy and task-first projection boundary are implemented by the closed effect map and canonical scope resolver.\n\nAnchor: \"def classify_task_document_mutation(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:64c1afadd15357ea56e836ff6931f21f63a1755c368c3d902f16c95150f35f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_DOCUMENT_FIELD_EFFECTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce1fbcef1dbacb27ddfea658ee8161bf3af7679b",
+            "content": "sha256:57afec841d48a7ee53e4f47bea0f13d657ff995fa35b8ba545ba94627c07c9af",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_projection_scope_union"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:35a7ca05c1a77bacc250b945e6d6c8233e87d1f36dfee576e0d7d61e89c0eae1",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 347
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:4c866568e82abf3529c751ddc0375accdbbf35bff62d2e5cacf86ca44ea1d841",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "MIK-R08's task-document field is classified with the lifecycle plane.\n\nAnchor: \"knowledgeMaintenanceScope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "MIK-R11's declaration and its nested fields are classified normative.\n\nAnchor: \"expectedKnowledgeEffects\"; `ExpectedKnowledgeEffect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:54cd3c8190fb0392574c7a66f56c6795e7355449c00a2bd44457c3596a827db9",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:36ea23db1c3db012fc05f73163d4fa4440dbd8c79775eecb66063ec36bb1662b",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closed effect vocabulary and projector are declared together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:27b6925fffcbb1c070d384ed78c6ad0e20a383277b7537c948bf94f5709ba6ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentFieldEffect"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:c5e95cbc9e7a71241b23657f58ebddbe0485d990be962f3bfe7695932763c0fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentFieldEffectProjector"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The taxonomy explicitly covers the root and every nested persisted model, including evidence-dependency and task-intent contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:64c1afadd15357ea56e836ff6931f21f63a1755c368c3d902f16c95150f35f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_DOCUMENT_FIELD_EFFECTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:7d7e3410a49ed2608a1c138cbc23afdd461262b177133dc92f5bea3fb3f1f49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FIELD_EFFECT_MUTATION_CLASSES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_task_document_mutation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentMutationClassification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Missing or stale mutation mappings and unclassified models refuse before write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:bc0a86d4d46e8932f3d423475058fd5e9776a691a86167e65463082bf190b839",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_task_document_mutation_classes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:a8fe01172b2f0078657b3affdc6a1402b4c43e19522c086f00f0127dfcb4eee9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_changed_model_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Runtime schema discovery refuses missing, stale, or empty classifications.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:bbcd1da922d7745302aed16232f99e1dd0c23ee4c8a347ed1ca0623fe4548a8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_document_schema_models"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:9a673a8b83e40ff7a31e95fdb50ccac447a112134aea5e53d7f7f49639fd4cea",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_task_document_field_effects"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:280e7041e23b1e9fbf2bcb6e1a94bdd38f34893281995e7740b02864ee7574be",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 442
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Effect projection retains only fields classified for the requested plane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:1422c75990a99f4fc641e49e5429bef61620f96fb69d57614fbba3586a70d3e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "fields_with_effect"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:ec3cbc3518534e7cfdd9bcd173023f09b2357ac347321196d5b8804198253219",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_model_field_effect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

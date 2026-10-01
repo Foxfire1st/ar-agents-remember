@@ -1,0 +1,241 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A crossing sync: one tree unconverted and one converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:93604ceabb53d60591003ebf4ba3de58ecbfff7d457e642113da52fe6c9ada31",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_applies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:84e3c8d23fce055873a756b2368093b58548420ac5b939fccfd2dac394a02873",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Rule 9, then the cutover lock for every other unconverted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unconverted_line_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Whether the official line's tip holds the marker; no line or an unreadable one reads as no.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:1b59f6b06f19b2177d0fe13c7e1743256970ab21280487644fcc35731d962885",
+            "locator": {
+              "kind": "symbol",
+              "name": "_official_line_converted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The plan through the bound port, refused without a paired code commit or a bound crossing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:b16b8d49e386b1c5d9367506dc344d2c122ff64b3f0e084e51feeb972c42e31c",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:9cee7d39379888cd18794013dfc40a3cf9db0a4917edfdcb14e84e2cc389c7d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_crossing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:e27d9b5ab90521c45b7cc8fceb39f59ae5257d83de7dfadfa0f070ae9ee52765",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_plan_files"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:5c8b188223dbaf1830391a8767d494e6a5fa33adcb712ce2e2d927bc5e604b7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unmerge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rule 9 refusal when the official line is converted; every other unconverted tree is left to the cutover lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unconverted_line_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A master-line crossing history file is closed in the merge commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:3302222db837b98bf5fef2034d41306d014a5ba2a0f0829d178b3ca479d7dab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "close_crossing_history"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The durable report and its bounded summary, with the how-to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:f3f0c7ee1f793ec67ce30436950163e72dd40e0a71753c28fe1c62ede4ff2921",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_crossing_report"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:4b4c768ca70a68e24dac397d77b1fa255dfd17dd4d78c9a07e29a06e344ee1b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "crossing_summary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:843fb51eb6b2945a1a9ce0b8ff0a8c3a3836a0acbd2cbf10adaec3a155b3c028",
+            "locator": {
+              "kind": "symbol",
+              "name": "HOW_TO_RESOLVE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The managed sync crosses an unconverted leaf into a converted line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "332a4fe6740f125bc2af30e9559bf2dd068bed92",
+            "content": "sha256:4155b6613b84a2bf73d9a5f22ebfb03be0b4e8c884b1b77be2c5d39dcef09b0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_managed_sync_crosses_an_unconverted_leaf_into_a_converted_line"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Overlapping edits go to the curator with markers; a failed step changes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:4e4830a84005983da07a3c5589b501f73475627a3565c79bb4c4e1725268f4fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_crossing_leaves_overlapping_edits_to_the_curator_and_a_failed_step_changes_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The refusal fires only once the official line is converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:ce973bceccdc86d02c658e0d9d5a9cc626c1112b5d2d58b469d2e5879098d739",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_leaf_is_refused_only_once_its_official_line_is_converted"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,432 @@
+{
+  "path": "mcp/src/agents_remember/application/review_revision_comparison.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+        "content": "sha256:79bf54e417095b381827f162b7099f502b6d05eb46a0584a47578881ef423860",
+        "locator": {
+          "kind": "symbol",
+          "name": "revision_heads"
+        }
+      },
+      "id": "RLZ-8B83YB7F",
+      "invariant": "INV-WCEGX72X",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Supplies the head rule the summary shares with the reviewer: a head is a revision of the selected population that no other member names as predecessor, where only edges with both endpoints inside the population count.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the one rule, what it reads, what it returns, and why it is its own module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:e869785b3bfadaf409edcfe34e1a6db893cca324a55a6b94e04c953f1196bddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_subject_revisions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:79bf54e417095b381827f162b7099f502b6d05eb46a0584a47578881ef423860",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_heads"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:4b07873b764d43dcf0f60cabbd7eff71eba55bf64cea092a80b69504ca0c3850",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Operands keyed by stored revision identity, never by stream position or both-sides presence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:c6c8ff96a735f723fcf3f389188a6aa07e156c58d9f12c6e98350800d3dcd05b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_item_with"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The adapter's one call site: the selection computed once in `compose_review` from the comparison's union items and the two snapshots' own authored edges, rendered by the pane.\n\nAnchor: `select_subject_revisions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:dce97d78bd0b2a2f0f4f6a0a732c49e193da5234093b36c96ea066651e4ef99c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_pane"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:4d1b7b70a80121d98b6db5c9eb1c04c54a91c50bf88679ebebc5c255dbabaf5e",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:7c1ba4e18e06438bbb6ed060756fbdeb45915d78eb2c0c068b9a5d1bc212a809",
+            "locator": {
+              "end": 1057,
+              "kind": "line_range",
+              "start": 1005
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The recorded value the policy returns into, with the state/pair/heads validators that make a fabrication unrepresentable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ef72398371f5f2860e6facde63443ade5055a34",
+            "content": "sha256:20d0caaa29ddeed4149843915c3866b9867af707b27905938a430d226d3c9b4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionSelection"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/revision_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The ten cases that measure the policy through the real comparison: two chain defaults, selectable history, two forks, one-sided removal, cycle, dangling edge, order-independence, and the pane's own statements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:a485a4566081992cffff071e12917c3dcc0dd65ad82e3b634a583ef5d63ad26d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_unique_chain_defaults_to_the_first_before_head_versus_the_last_after_head"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:c9ed8b97c386d72bde00821b35ce2bf801f54bd89b914249d7c3f3f8711948b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fork_on_the_after_side_is_an_explicit_ambiguity"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:3ddd0afb074437b7f09cdf9d25b2863fd9088d241480e4d1f3c08b876e4b2396",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_successor_cycle_is_unresolved_and_names_no_pair"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:6f17e1bb369bdf32d2e544d24c926fab90f69e9859a805f3ff97b169a515ac1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_heads_come_from_successors_not_from_sorted_order"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "196861596d0e6bb6ba4094b3930c16c612d97437",
+            "content": "sha256:08dcdf36572af45fba09a070f6f216091fb71b547f8b6bb146f8952e871c9761",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_review_pane_renders_the_selected_head_pairs_own_statements"
+            },
+            "path": "mcp/tests/test_knowledge_review_revision_selection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: one value, two readers, one entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:ad73fe08ff11ea8e69b8148170bf6558c7cbf0b03b2575473ac12ddd02d25845",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reviewed identity's head selection with the union items its statements render from — and the one-sided item the R06 rendering already reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:bc97735803710b56eeaf9d4adf3fff7de8d9bfe361866eb3a4505bc8721d0eba",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectRevisionSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The whole rule in one pure function: heads are members no other member names as predecessor; both-endpoints-in-population filter; sorted order as rendering determinism only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:79bf54e417095b381827f162b7099f502b6d05eb46a0584a47578881ef423860",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_heads"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:924f3b29ab2993b1cf5b1b718abbb35cce891627164cc20d972a98a981860baa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_touching"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read-only edge read: one snapshot opened read-only, both predecessor tables, closed before returning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:bb502ccad90f4f8b56377c27acfdd6c84a5c8c438a9d7e01fbbea77d3aff4222",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_snapshot_edges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one entry point: populations from the comparison's own union, edges from each snapshot's own authored relations; no-identity selector and empty populations as explicit non-pairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:e869785b3bfadaf409edcfe34e1a6db893cca324a55a6b94e04c953f1196bddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_subject_revisions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:305b0c27faa1611b92817a983f25b2364d9efc89ae7a88258415c5baf171b38a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_populations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:8cf7bbe832ed3665732737edcd4e3d12ffeb57478617f02873a00105c9f7b1b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_population"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:706dc5e60313c850ab1c86a86df7865c4b9e8faed0dde7b9c62fad2616d2ca17",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selector_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The three-way routing: invalid graph first, one-sided for a known-empty side, combine for two nonempty sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:915e4a9f1fd865ec38d5d1bcce5054a9d5f10231ecc8b262c94a4aa97db71275",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decide"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:13c131ba29cf2492e4e8df8a3780d642035dc89aed0ee20500de24dd6ebac6d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invalid_graph_detail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:bc52f11df126197eabe37c3a42f881e6ee8b9af4286d29aa497b37ab973c4df4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unretained_endpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Two nonempty sides: cycle with no head fabricated, multi-head ambiguity with no pair, unique heads compared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:786194bb7387633c6ac4ea3484d56029440725ff56ecde78c0b3d6a118483dde",
+            "locator": {
+              "kind": "symbol",
+              "name": "_combine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:c29010611cc7b5329d1f8983856b5c997f576d84ad82db5b2d664033002e0d63",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compared"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:f897965200b35a363c70ff63c527ead603b57c2495862ddf23b8bb0b486a99f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ambiguous"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:a5ce7ef0b25be87e209e5ec4cdf80c87d35145e593e55f5e358e82384215949c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A known-empty side stays an R06 addition/removal with the nonempty side's unique head — and a crowded nonempty side is ambiguity, not a one-sided side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:5cfd78c38c71fbcf9e4ac5af2f7217a0315db9d4cce06fc1afd39f4fdba03ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "_one_sided"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

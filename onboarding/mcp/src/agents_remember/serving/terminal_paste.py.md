@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/terminal_paste.py
 
-| Field                  | Value                                                   |
-| ---------------------- | ------------------------------------------------------- |
-| repository             | agents-remember                                         |
-| path                   | `mcp/src/agents_remember/serving/terminal_paste.py`     |
-| doc_type               | `file-level-onboarding`                                 |
-| lastUpdated            | 2026-07-10T13:03+02:00                                  |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                           |
-
 ## Purpose
 
 `terminal_paste.py` is the bounded tmux input transport for log-verified dispatch. It controls
@@ -155,41 +145,35 @@ still encounter an unlogged payload idling in a composer before its initial past
 within-invocation retry ladder is guarded; the cross-invocation case is bounded by supervisor
 redelivery pacing and awaits an owner disposition/follow-up.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external/domain documentation defines this local paste policy; the frontend
 `data/terminal.ts` mirror, the serving route, the tool, and the tests are the source of truth.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external/domain document defines this server-side tmux paste/submit loop. | — | — |
+No external/domain document defines this server-side tmux paste/submit loop.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The current acceptance/retry contract is implemented and tested locally; the older capture-echo
 rows below are retained only as historical provenance for the superseded L3 mechanism.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Submitted acceptance is callback-driven; recovery is one Enter re-press then one verified-absence clear/replace re-paste. | `TerminalPaster`, `_paste_verified`, `_retry_repastes` | mcp/src/agents_remember/serving/terminal_paste.py:206-511 |
+- Submitted acceptance is callback-driven; recovery is one Enter re-press then one verified-absence clear/replace re-paste. [1]
 
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Tier 3 preserved: the historical row says `spawn_agent_session` pastes a worker/draft context packet, but the current spawn contract returns `spawned-unbriefed` and refuses legacy context/submit inputs before durable brief delivery. | `spawn_agent_session_tool` | mcp/src/agents_remember/application/terminal_tools.py:764-873 |
-| `POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted). | `api_terminal_paste`, "def _paste_response(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:791-803; mcp/src/agents_remember/serving/_app_terminal_routes.py:576-576 |
-| It mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` bracketed-paste + echo-confirm loop. | `pasteAndConfirm`, `bracketedPaste`, `sanitizeForInjection` | dashboard/src/data/terminal.ts:87-89; dashboard/src/data/terminal.ts:99-107; dashboard/src/data/terminal.ts:174-188 |
+- Tier 3 preserved: the historical row says `spawn_agent_session` pastes a worker/draft context packet, but the current spawn contract returns `spawned-unbriefed` and refuses legacy context/submit inputs before durable brief delivery. [2]
+- `POST /api/terminal/{session}/paste` is the serving endpoint mirror (404 on unknown/gone session, else delivered/submitted). [3]
+- It mirrors the frontend `pasteAndConfirm` / `submitAndConfirm` bracketed-paste + echo-confirm loop. [4]
 
 | Tier 3 preserved: the historical row says inbox hosted push records a pane-capture tail, while the current protocol delivery records adapter correlation/detail and never invokes the pane paster. | `deliver_inbox_entry`, `_record_reconciliation` | mcp/src/agents_remember/serving/inbox_delivery.py:170-228; mcp/src/agents_remember/serving/inbox_delivery.py:293-325 |
 | `capture_pane` is called from the liveness sweeper's alive-harness-row turn-state classification path. | `_observe_alive`; `pane_capturer` | mcp/src/agents_remember/serving/terminal_liveness.py:82-82; mcp/src/agents_remember/serving/terminal_liveness.py:327-393 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This helper drives only a local tmux session over the tmux CLI. | `TerminalPasterSeams`, `_tmux_load_buffer`, `_tmux_paste_buffer`, `_tmux_send_key`, `_tmux_capture_pane` | mcp/src/agents_remember/serving/terminal_paste.py:117-131; mcp/src/agents_remember/serving/terminal_paste.py:134-148; mcp/src/agents_remember/serving/terminal_paste.py:151-163; mcp/src/agents_remember/serving/terminal_paste.py:166-178; mcp/src/agents_remember/serving/terminal_paste.py:185-198 |
+- This helper drives only a local tmux session over the tmux CLI. [5]
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -233,53 +217,3 @@ The verified path is also decomposed into named rungs: `_paste_verified`, `_retr
 `_await_acceptance`.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-09-17T07:33:51+00:00: Generated citation repair: `api_terminal_paste`; "def _paste_response(" repointed to mcp/src/agents_remember/serving/_app_terminal_routes.py:755-767; mcp/src/agents_remember/serving/_app_terminal_routes.py:540-540. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/src/agents_remember/serving/_app_terminal_routes.py:540 to the row 180 of this card as the citation for `_paste_response`: no cited file carried the construct, and the checker named line(s) [540] in this file as its live location
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_paste_response` in the row 180 of this card from mcp/src/agents_remember/serving/_app_terminal_routes.py:766-767 to mcp/src/agents_remember/serving/_app_terminal_routes.py:540-542, the extent of the construct the claim is about (the checker named line(s) [540] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `api_terminal_paste` in the row 180 of this card from mcp/src/agents_remember/serving/_app_terminal_routes.py:540-542 to mcp/src/agents_remember/serving/_app_terminal_routes.py:766-767, the extent of the construct the claim is about (the checker named line(s) [766] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/serving/_app_terminal_routes.py:766-767 in the row 180 of this card; the repetition added no pooled evidence
-- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: curated 9 reference rows (5 Tier 2 and 4 Tier 3 preservation rows), normalized 1 no-domain placeholder, and resolved the substantive local-tmux Cross-Repo row; scoped citation fixing regenerated the Tier-2 source ranges.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `AcceptanceWindow`, `PasteRecoveryLadder`, `TerminalPasterSeams` and the public `paste_dispatch` split — the mandatory acceptance probe is now signature-enforced, replacing the removed `ValueError` guard.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round + case (f): replaced pane-echo/output
-  acceptance with a caller-supplied harness-log probe; bounded recovery to one Enter re-press and
-  one verified-absence re-paste; added clear-and-recheck duplicate prevention, unobservable
-  fail-closed behavior, 100 ms settle/poll floors, and failure-only capture. Verification metadata
-  remains pinned until closeout stamps the eventual L15 code commit.
-
-- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: live turn-state): added a public
-  `capture_pane(tmux_name)` wrapper around the existing private `_tmux_capture_pane`, so
-  `terminal_liveness.py`'s turn-state classification reads the identical history-inclusive capture
-  paste verification already uses — one capture-command shape, not two. No change to any existing
-  behavior. Verification metadata pinned until closeout stamps the HFX-L8 commit.
-- 2026-07-07T23:20+02:00 — 260707-HFX-L3 round 2 (review N1/N3): verification captures are
-  history-inclusive (`capture-pane -p -S -200`, shared by origin and every re-capture — viewport-only
-  capture let origin chips scroll out and blinded both growth math and the idempotence guard);
-  `_paste_landed` gained the strongest-first ladder headed by the payload-specific codex chip
-  instance-growth probe (`_expected_codex_chip`); the module's delivery claim is stated honestly
-  (bounded window + probe ladder). Truncating-pane test honesty: `_ScrollingCodexPane` pins the
-  scroll-out case to ONE paste with no duplicate.
-- 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): `_paste_until_verified`
-  replaces the echo loop — ONE origin baseline held for the whole delivery, re-capture before any
-  re-paste (a landed paste is never re-sent; the F-V run stacked 7 duplicates via per-attempt
-  re-baselining); `count_paste_chips` knows BOTH chip vocabularies (`[Pasted text #N]` claude,
-  `[Pasted Content N chars]` codex — the unrecognized codex form was the SF-1 blind seat);
-  `_tmux_load_buffer` feeds the payload via stdin to `tmux load-buffer` then `paste-buffer -p -d`
-  (no argv/ARG_MAX seam; injectable kwarg renamed `set_buffer` → `load_buffer`);
-  `PasteResult.capture` attaches the final pane snapshot (loud failure); `_await_echo` returns its
-  last capture from bounded settle re-captures; `_press` refuses `Escape` — only Enter is ever
-  sent. Verification metadata pinned until closeout stamps the HFX-L3 commit.
-- 2026-07-04T12:31+02:00 - L3: tightened delivery confirmation to require a
-  pasted draft fragment or new paste chip, preserving the L2 over-boot retry loop
-  while fixing false-positive delivery during harness boot. Verification metadata
-  pinned until closeout stamps the L3 commit.
-- 2026-07-04T11:10+02:00 — L2: created as the server-side echo-confirmed paste helper mirroring the
-  frontend `pasteAndConfirm`/`submitAndConfirm` over tmux `set-buffer`/`paste-buffer -p`/`send-keys` +
-  `capture-pane` confirmation, with re-paste across the harness boot window and every tmux op injectable
-  for fake-driven tests. Backs the `spawn_agent_session` context delivery and the new
-  `POST /api/terminal/{session}/paste` endpoint. Verification metadata pinned until closeout stamps the
-  L2 commit.

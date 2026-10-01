@@ -1,0 +1,262 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The four schema names, the file names and the root slug.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:aabf0d23b016d6046abdf6fbe298cf81f5584ea44c6987524ed8493140ffcad9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_BASELINE_SCHEMA"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:7036b2f43e143e691ed4659f962b85f00d7c36e04b1253df1e5d44b51712cf7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROOT_ROUTE_SLUG"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The latest status entry across every census governs; none is `pending`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:06a2fb2743148005e4ea47d350c0f6bb8ea3e3264437c376ee6777d66daaf096",
+            "locator": {
+              "kind": "symbol",
+              "name": "governing_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The models refuse inconsistent claims and statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:8d2c02988a1bf610954bbd9efa53bf6a8de2c5fe19d9aebfdaccaf414dca17c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_claim_and_status_models_refuse_inconsistent_records"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Slugs are readable and injective.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
+            "content": "sha256:a7e571fe4b55fae42b75b97c8ed86496d3091c8fdca578456711d5de3beaea44",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_route_slugs_are_readable_and_injective"
+            },
+            "path": "mcp/tests/test_knowledge_census_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The governing status spans censuses, with the tie-break.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f86d20bf0fec7d5d1d7a06e51767968b6725696",
+            "content": "sha256:b1e0d44175b5b6ddb60c61652e8c2adb81ce87009bfea3eca5da1f69b58fc81b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_governing_status_is_the_latest_entry_across_every_census"
+            },
+            "path": "mcp/tests/test_knowledge_census_report.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The eight dispositions and the five route statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:fa3291362c5a500bfa6d1eb22c2b9def342dd8ecbee80bad3c0aca87876f69ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "Disposition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:2fc7ca1d5a4b0068a56801bbbaaa47c7d864981e1f68f99bb95d63f07b917708",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROUTE_STATUSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The readable, injective route slug; `.` is `@root`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:b8e488ec4c2794edac94698f0a8c39afed8df59ff966b24745b7c4fc112ac8ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_slug"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pinned baseline and the mechanical, sorted inventory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:4cc67ed5bc08274af91c5b57ac703e0f866b60b8aec47af8341938af9e179f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusBaseline"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:1c2a21f911f00a1c87039e9ec5dcc88745d12454cd77ea6057f85f7ed61296e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusInventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Provenance names exactly one of leaf or wave.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:a964f2562ed978784e476371b0bc87e95de5903e53f988d7c293832af48b19b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "Provenance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Admitting dispositions link to records of their kind; only `demoted` may also link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:75f54ec0fffa23e27e2af44a9d02c33401d18fdf75de8a127e30468ca4d1d1b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_disposition_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A claim: the latest assessment governs its cell; `discarded_false` needs `concern_found`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:fa4da74b4aaa6100fe65c518c306ba63749d7792f4faea165eee73cc0f8312a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaim"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A route's status history is non-empty and in time order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:ef20b5f53c636cd47f469c9be97f11877e8df5e157013bc63e1a883f8d342a1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusRoute"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The schema-to-model map registered in `SCHEMA_MODELS`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:7bdce37bf1c3e60c01dce2cfbfe6282d152083bd3474b39446dfa555fe13b0cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_MODELS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c66d9f030eecf5d97c2265c2ef860b5e3639b18f",
+            "content": "sha256:3b7d2a368a2234756184c8f23eef9a013c86fb761014aa4cb7f9d676b8718235",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusDocument"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

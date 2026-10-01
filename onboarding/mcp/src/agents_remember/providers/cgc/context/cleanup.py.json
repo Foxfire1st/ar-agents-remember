@@ -1,0 +1,53 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/context/cleanup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`CgcRuntimeLayout` definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:a677e10aca772dd8a0146ab82085b2f95ed49f7d0683117eabcf02daa5301b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "CgcRuntimeLayout"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`remove_runtime_path` and `ContextProviderError`.\n\nAnchor: `ContextProviderError`, `remove_runtime_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26572d51bd5dcfb53f39dba99287153997b29f2c",
+            "content": "sha256:99adc06577ec2278c4ad9a40114fd50d7de08910e608c61a2f614224ac8a7298",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContextProviderError"
+            },
+            "path": "mcp/src/agents_remember/providers/context_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26572d51bd5dcfb53f39dba99287153997b29f2c",
+            "content": "sha256:a2017a193a6dd6723a8a4fe58b3ca1066602c5983b6cc76a3f2939310bb8c40f",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_runtime_path"
+            },
+            "path": "mcp/src/agents_remember/providers/context_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

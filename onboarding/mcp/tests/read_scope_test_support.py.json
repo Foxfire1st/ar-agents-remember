@@ -1,0 +1,505 @@
+{
+  "path": "mcp/tests/read_scope_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The fixture's declared topology and why this graph and not the shared branching one.**\n\nAnchor: \"The read-scope fixture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:303c586861f9dff111f640c85721c48bcabbc2c2dba6df401991a0aeb26cf8a3",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The three declared consumers, checked against the source (the row's consumer list names `mcp/tests/test_knowledge_read_paths.py`).\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1484,
+              "kind": "line_range",
+              "start": 1484
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The graph constants: the labels, statements, conditions and the four direct family guarantees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:ad679459dab5c2a84e88aa007ca1ff7991d2f7b4e12468d39d6e6dd8d70cf7da",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETRY_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:e0aaeab559961677d040e05cfb3e9c9618f232238087944f80a0f7bb869cf72d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BATCH_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:7633f099fdba63fb16e8f14ec87229e741b1f8582cd227650747290af3931796",
+            "locator": {
+              "kind": "symbol",
+              "name": "RESOLUTION_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:b081be6e423b89978cd024b7efb50d8ac2d782b89577a5dca9b71350fb18dd43",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHARED_SUCCESSOR_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:aa31a30134ac48b4e2fa021ba12348952bc175109748677b0055eda78b00c6b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:234438e92bcdfd40b01a8e0668ddc7fb72f2107a495439a2b632080f58dfb96e",
+            "locator": {
+              "kind": "symbol",
+              "name": "OVERLAPPING_FAMILY_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:4199685d04e067a3f2cdb58ae0fdc6ed3fe8b96153affd7023008949c814ef55",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIRECT_FAMILY_LABEL"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The recorded paths, including the two the read is measured against (absent and mismatched).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:33c93a5f2d5c04b33720a374772dbcb76749a98b08faa21fb593d3e9a52633ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTEGRATION_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:bb31bddcdb417f5b7f273c9d787f3c7cb07c6bd620eb71056f23936bd86be795",
+            "locator": {
+              "kind": "symbol",
+              "name": "SYNCHRONIZATION_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:c0542bfa5669f90a05e0b39daf9b58df15d129ceec4518252f17e00c214e0276",
+            "locator": {
+              "kind": "symbol",
+              "name": "ABSENT_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:37933c004aabd5d44817aeea27c512aa73d337c6d11ac21bf6529765175cdafc",
+            "locator": {
+              "kind": "symbol",
+              "name": "BATCH_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:7cc90345a1a65f79aa7a0772d4517ca23f9725f62f2cd6dfbb20fa6b2e3b464b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MISMATCH_PATH"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The partly-authored retry ordering identity the fix round introduced, and the predecessor label that makes the ordering case deterministic.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:44b8780ed1ed1044e875e0f509d7ae85b9235437382705b3767d76934a852622",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ordered_revision_id"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:3d5bffafbaabca3e66c22456fffbe08d38d92c8909e5e20ad12600fe60718241",
+            "locator": {
+              "kind": "symbol",
+              "name": "PREDECESSOR_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:934aa9cd35d5397a196eec03ee71ba594af25dd00fe1a1be7b7176461fbed054",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_identities"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:5d3b46c4bda6c369a1e5e9e2454b31c934a3030e783dac9af9101f113439c4bb",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:aba8000a23e29b069d16feff3cfb09e3e56b1bda02d22e1b2dcff793ec72bbd4",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 286
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The public builder and the value types a case reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_read_scope_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:29bc6e8fcc10f541cda28af80fd2f0db69f0f72d4f23f659a0b9d47923937997",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadScopeFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:6365ed7296be8bb684a5763ae983e9d286368cf3c3ef41f0dd4bafdc9f07791e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RevisionSeed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:0853eca8563384fb38ccc92fb69b93a7a24beabb749a324b427d9f0a65d7c5a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationSeed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:35614aaf90ab2004e52a0520c3156a231dfc4d218358797c7be3659d7b14f825",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadFixtureFamily"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:7bb106e1f2d6ed2f0bfe315fff53054ecfe4a7316244057e229fce63821848d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadFixtureRealization"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:7d5e0fe650a7a4411c0241a420213b48247f84b7535e954bc8fc07420b158a3f",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 266
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:7472cd9b84644e1969a91f5a900b154274d768766dfb684459cffd443a98a575",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:cf4cc8338a627548218363f6577f34fefa76473d7fb083e4171f13721a63c3b9",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:c42322298c89e1a0865beb2594f9a0d99308ca0adac987d03dbff022df35d13b",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:c48bc86d580b80a4a46f5edb85ebbf4f0fbb542c2c38a039cc37b377a1491625",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:922490ba3bc0f7aaf9770f07df178ecb7d3943f76b43828d5d565f9f1edca345",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The graph builders, all through the public store operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:04a1b39c723ad3a947fae35a253b5a156b00155a5a34505a5805127fec490ec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_invariants"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:6c0b186cbd1e0062504e8edf8422f9d316d411d97bfb933ea38fc50c4135eafc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_families"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:43d867e4fd57bb5d4b7e423fa2d686fab8ad17d5e74f83df6e3534870e90b192",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_realizations"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:dff8950e475c8296f96845080cb5bc5e1b423374fb5faeda290a10e28ee8bb2d",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 359
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:b338828c17fcd3a4db57193316bde137b08d5dc5fccba7526f4d4925549446af",
+            "locator": {
+              "end": 569,
+              "kind": "line_range",
+              "start": 519
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The governed-artifact and contract rows that make this module part of the catalog.**\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1484,
+              "kind": "line_range",
+              "start": 1484
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The three declared consumers, checked against the source (the row's consumer list names `mcp/tests/test_knowledge_read_paths.py`).\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1484,
+              "kind": "line_range",
+              "start": 1484
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The governed-artifact and contract rows that make this module part of the catalog.**\n\nAnchor: \"contract:knowledge-read-scope-cases\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
+            "locator": {
+              "end": 1484,
+              "kind": "line_range",
+              "start": 1484
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,460 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_merge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The base-resolution entry point and its refusal-or-resolution contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:b7fa1b611fb6baf6bc030b2c887575c1505d51fac1a76f1309222e4efe53b36a",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_knowledge_merge_base"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The authored decision this seam carries without deciding anything about it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:a5c7bdac7dcd0b4c4cc5fab082b5ca5e7c0ddd9cdbd366baa19adfc95b72958d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoredReconciliation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:3d43a2536afdd248137c82402f9d46fb0793e13a6be16c5305051ff482bae805",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two sibling seams this module sits beside.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:cc0c1ded77cd743de6c33b0f1a4c1e76796770eef09dbb355133c1f5af24a461",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_authorship"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9313e577aaa37edceb72d248c0f8647a4db0107c",
+            "content": "sha256:a7201d7fac3a0c01178bda1a3b8ae4d886c176e52da9c020c1c7dff872dc663d",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_prepared_knowledge_snapshot"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:ee122b501bae62c18f51664c181e14cb6c5ceee265da30e6e9abf49d50610dc7",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The layer ranks that make a lower owner consume models rather than this module.\n\nAnchor: \"[package.memory]\"; \"[package.application]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:ffef8b06b2c27b3fe8463c5856236eb02145e79b55456bfdc05a74528e413893",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:90f6ae0247e6a749997e817cd00729c31b3f74a3beabc867b63e7ad758f8eda6",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 314
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The one non-test importer this module has, and the Git half of the settlement that cannot live here — including the single-path reconcile entry point that carries the authored decision back in.**\n\nAnchor: `merge_conflicted_stages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:a0235a2922b79213f88c1e5be423f11cf0de80d13d6a32f2c10bb98983ec4cf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_knowledge_conflicts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:af5b746a5e33bfc07ffa2c95a00664852cfc7126076351c4c32bf9739827edf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_knowledge_conflict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:c72fffab4017b955da511260baafe50d7d3b9d4ab3aa0d16fdec53e1fca28315",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:d8f229d9b48dbc487876101bf509cd182b06738a753355321d11fa019558abe1",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "content": "sha256:12f6dcea962fa77b47e5fb1182b2a7d680185a79d72e02199e61f79943472c1c",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The unit node that drives the conforming merge end to end through the public operations.\n\nAnchor: \"def test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:0095d020e20d5be18d493ce882ef027915ac410b5ec99815dbccff8a31daafda",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The integration node that drives the structured diagnosis and the authored reconcile through the real transaction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:35cdf35cb9d332ababf21f508eadc3cbec1e5489997036531d131e143442ff43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_knowledge_conflict_is_diagnosed_and_reconciled"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:bea7b774d78b7e41d4e806a5fa37e48c7c6d0a5d3911637a34f8fbbb6e0c5565",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The merge entry point, including the carried statement that the result holds no compatibility verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:38fb095e0f7d35beaabf27eb1ec1c82910351577296cfe8843b916cb678a12ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_resolved_knowledge_datasets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The driving entry point: three materialised stages in, one typed settlement out, with the caller's one authored decision passed through untouched.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:52429675b19ceaf3643a506e1ba9bbf74ccdc023361e04c03b7be7ffc5b4e9b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_conflicted_stages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The settlement that replaced the boolean: the only success, the engine's conflict, the typed refusal, and this seam's own reason for a stage the adapter never saw.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:a26347d3be5c123053890f77a9ad7a1a4bd675864e56ea86957557055e89ce8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeStageSettlement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The four reasons a path never reached the adapter, each named instead of collapsed into one `False`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:234271e21550f8ad925e9ff3dbe3a5719c26f3de4d164440df0a9099a8a677f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stage_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The three commits one conflicted merge spans, grouped because the adapter's base claim needs them together.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:b842645141b9501e64ce4ce6d225cbfe6ba9d6560167536967ac4502a69a71b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConflictCommits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The defect the layer below makes unreachable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98aec610624c132745372b672210694450dd6cfd",
+            "content": "sha256:40cf10f51b289dabdd464c6cdd37b60149522779e0c26d624ae8fc5d4ef7e72a",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeMergeSeamDefect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two storage operations this seam delegates to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "485ef9f026a089580a4d73daef6584fb399601ec",
+            "content": "sha256:dd2afa44a1d94f593b29801c583456f1c6218db33b9320fec93e5e4aae26355d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_merge_base"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:6333ae37e6be072615de2df14bdd0b6d119525c8409ae2799f63aa526f447f5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_knowledge_datasets"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:d3a654bad7b9ca1fb30aa031bc511181e85a95b30f8c6acbca0eba34a60d1272",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The request and outcome vocabulary this seam takes and returns unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:3d0bd4b767c893a762e388ab34a3a39e6cfb9698bf4a337158c5f4022412774f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeBaseRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:73cb0eb58104dce7b5f632734d4f95dad25f853ebd12ba0e8f26f77be9714a2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeInput"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:9f3cbf55fd429c0ed8d9e741c18b152ce05e8916bd3d1cbb51d89a554cc52377",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeOutcome"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:863aa63b9fef7d1cc7575e45b1fac8563ac5ee2389712226db40a21a7810ac5f",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:b63ed4a4fa13ae70472ddc827308bf8c290f4016e4d8d5ef6dea4c39ddcf52f0",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:0e16d1c9b5674295c0c20d464d1ae4e243c5d38c2b3456e9222ce3d9fb99a1c7",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 444
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

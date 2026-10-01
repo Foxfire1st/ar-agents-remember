@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/upscrollAnchor.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The upscroll-anchor suite.\n\nAnchor: `describe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da170f129b02229cbd664ee810731b9bc334af84",
+            "content": "sha256:48a4d4b83fbf8493ef548960cddf8f7dbe355b90379e5965ffc797aeecc7f89e",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

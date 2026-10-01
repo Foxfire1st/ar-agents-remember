@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/migration/cutover.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/migration/cutover.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -158,15 +148,15 @@ so the three artifacts depend on no peer artifact and on no store.
 - **No reader is changed by anything in this file.** The artifacts describe a future transition; the
   legacy corpus stays live until an owner records a decision and executes the plan elsewhere.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This module is the preparation half of the leaf's cutover story: the artifacts describe a transition
 that some other seat, with a recorded owner decision, would perform. The rows below cite the module's
@@ -175,37 +165,29 @@ with its reversibility markers and point of no return, the pure re-ordering and 
 with the two refusals that keep an evaluation honest, the escalation constants the proposal quotes,
 and the shipped proposal whose decision state is `absent`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of its boundary: three artifacts, none executed, no trigger, no flag, no scheduled activation, and no function that writes anything. | `CUTOVER_CRITERIA`; `CUTOVER_PLAN`; `CUTOVER_PROPOSAL` | mcp/src/agents_remember/memory/migration/cutover.py:1-19; mcp/src/agents_remember/memory/migration/cutover.py:111-111; mcp/src/agents_remember/memory/migration/cutover.py:175-175; mcp/src/agents_remember/memory/migration/cutover.py:240-240 |
-| One criterion's outcome as a value, carrying the exact observed measure beside what the criterion requires, so an unmet criterion reports what fell short. | `CriterionObservation` | mcp/src/agents_remember/memory/migration/cutover.py:38-52 |
-| The criterion shape, with the evidence field that names what would show the condition holds. | `CutoverCriterion` | mcp/src/agents_remember/memory/migration/cutover.py:55-65 |
-| The step shape, each step stating its own reversibility rather than leaving it to the plan's prose. | `CutoverStep` | mcp/src/agents_remember/memory/migration/cutover.py:68-75 |
-| The plan value: the ordered steps, the rollback story, the archival step stated as a property to satisfy, and the point of no return as a step index. | `CutoverPlan` | mcp/src/agents_remember/memory/migration/cutover.py:78-92; mcp/src/agents_remember/memory/migration/cutover.py:220-237 |
-| The six criteria, each a predicate over a census result with its own evidence, covering inventory completeness, parse-outcome disposition, reference resolution and assessment completion with `P` as the exact shortfall. | `CRIT-1-inventory-complete`; `CRIT-2-parse-outcomes-dispositioned`; `CRIT-3-references-resolved`; `CRIT-4-assessment-completion`; "CRIT-1-inventory-complete"; "CRIT-2-parse-outcomes-dispositioned"; "CRIT-3-references-resolved"; "CRIT-4-assessment-completion" | mcp/src/agents_remember/memory/migration/cutover.py:111-151 |
-| The two criteria that gate on another seat's work rather than on a count: the independently reviewed denominator that was not derived from the corpus, and the negative proof that no path revives legacy prose as authority. | `CRIT-5-denominator-reviewed`; `CRIT-6-no-authority-fallback`; "CRIT-5-denominator-reviewed"; "CRIT-6-no-authority-fallback" | mcp/src/agents_remember/memory/migration/cutover.py:152-171 |
-| The seven-step plan: steps 1 to 4 reversible preparation, steps 5 to 7 irreversible, with the archive preserved and referencable and never read as authority again. | `CutoverStep`; `point_of_no_return` | mcp/src/agents_remember/memory/migration/cutover.py:175-238 |
-| The escalation boundary and its item, stored as data so the proposal quotes the same sentence the decision is reserved by. | `ESCALATION_BOUNDARY`; `ESCALATION_ITEM` | mcp/src/agents_remember/memory/migration/cutover.py:27-30; mcp/src/agents_remember/memory/migration/cutover.py:240-251 |
-| The decision vocabulary with no value that means approved, because an approval is a recorded decision owned elsewhere. | `ProposalDecision` | mcp/src/agents_remember/memory/migration/cutover.py:32-35 |
-| The proposal shape: the exact boundary, the decision state and the field declaring that this artifact does not execute the cutover. | `CutoverProposal` | mcp/src/agents_remember/memory/migration/cutover.py:95-105; mcp/src/agents_remember/memory/migration/cutover.py:249-250 |
-| The pure re-ordering and completeness check, which refuses an evaluation that omits a declared criterion because an omitted criterion reads as a satisfied one. | `evaluate_criteria` | mcp/src/agents_remember/memory/migration/cutover.py:254-275 |
-| The verdict derived from the observations rather than passed in, rendering "cutover is not yet justified" with each unmet criterion's exact measure. | `criteria_verdict` | mcp/src/agents_remember/memory/migration/cutover.py:278-291 |
-| The one measurement function: it refuses a criterion this module does not declare, and calls the predicate once so a met criterion cannot contradict its own measure. | `measure_criterion` | mcp/src/agents_remember/memory/migration/cutover.py:294-322 |
-| The single accessor that returns the three artifacts together, executing none of them. | `cutover_artifacts` | mcp/src/agents_remember/memory/migration/cutover.py:325-336 |
-| The case that exercises the artifact set and its execution claim, so the "three artifacts, none executed" boundary is checked rather than asserted. | `cutover` | mcp/tests/test_migration_census.py:795-804 |
-| The case that pins the escalation to the governing boundary and its exact item, and the case that refuses to soften an unmet criterion. | `cutover` | mcp/tests/test_migration_census.py:806-812; mcp/tests/test_migration_census.py:814-838 |
+- The module's own statement of its boundary: three artifacts, none executed, no trigger, no flag, no scheduled activation, and no function that writes anything. [1]
+- One criterion's outcome as a value, carrying the exact observed measure beside what the criterion requires, so an unmet criterion reports what fell short. [2]
+- The criterion shape, with the evidence field that names what would show the condition holds. [3]
+- The step shape, each step stating its own reversibility rather than leaving it to the plan's prose. [4]
+- The plan value: the ordered steps, the rollback story, the archival step stated as a property to satisfy, and the point of no return as a step index. [5]
+- The six criteria, each a predicate over a census result with its own evidence, covering inventory completeness, parse-outcome disposition, reference resolution and assessment completion with `P` as the exact shortfall. [6]
+- The two criteria that gate on another seat's work rather than on a count: the independently reviewed denominator that was not derived from the corpus, and the negative proof that no path revives legacy prose as authority. [7]
+- The seven-step plan: steps 1 to 4 reversible preparation, steps 5 to 7 irreversible, with the archive preserved and referencable and never read as authority again. [8]
+- The escalation boundary and its item, stored as data so the proposal quotes the same sentence the decision is reserved by. [9]
+- The decision vocabulary with no value that means approved, because an approval is a recorded decision owned elsewhere. [10]
+- The proposal shape: the exact boundary, the decision state and the field declaring that this artifact does not execute the cutover. [11]
+- The pure re-ordering and completeness check, which refuses an evaluation that omits a declared criterion because an omitted criterion reads as a satisfied one. [12]
+- The verdict derived from the observations rather than passed in, rendering "cutover is not yet justified" with each unmet criterion's exact measure. [13]
+- The one measurement function: it refuses a criterion this module does not declare, and calls the predicate once so a met criterion cannot contradict its own measure. [14]
+- The single accessor that returns the three artifacts together, executing none of them. [15]
+- The case that exercises the artifact set and its execution claim, so the "three artifacts, none executed" boundary is checked rather than asserted. [16]
+- The case that pins the escalation to the governing boundary and its exact item, and the case that refuses to soften an unmet criterion. [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The criteria, the plan and the proposal are
 module-level values describing a transition of this repository's own onboarding corpus, and every
 identity they carry is a criterion identifier, a step index or a quoted boundary string; nothing here
 reaches another repository, another dataset or a remote.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the cutover preparation module, whose centre is what it does **not** do — it produces the three artifacts §8.1 names and executes none of them, with no trigger, no flag, no scheduled activation and no write path of any kind. It records the six `CUTOVER_CRITERIA` with their requirement that each name the evidence that would show it, the seven-step `CUTOVER_PLAN` with its per-step reversibility markers, the `point_of_no_return=5` index and the archival step stated as a property (preserved, referencable, off every reader's resolution path, never an implicit fallback) rather than as a location. It records the two refusals that keep an evaluation honest: `evaluate_criteria` raises `ValueError` for an observation set that omits a declared criterion, and `measure_criterion` raises `ValueError` for a criterion identifier this module does not declare, calling its predicate exactly once so a met criterion cannot contradict its own measure. It records the derived verdict of `criteria_verdict`, which renders "cutover is not yet justified" with each unmet criterion's observed value as a conforming output rather than a failure. It records the escalation as data — `ESCALATION_BOUNDARY` and `ESCALATION_ITEM` copied onto a proposal whose `decision_state` is `absent` on a two-value vocabulary that admits no approval, and whose `executes_cutover` is typed `Literal[False]`. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

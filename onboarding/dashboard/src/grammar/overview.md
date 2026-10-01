@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `dashboard/src/grammar/`                         |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-05T07:12+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `../overview.md`                                 |
 
 ## Hot Path Summary
 
@@ -119,19 +113,19 @@ Material).
   totality and a default that does not borrow a live state's answer. A new lifecycle state has to be
   answered in both, and `Dot.test.tsx` is the one that catches it here.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The Panda runtime these primitives import (`css`/`cva`/`cx`). | "export default defineConfig" | dashboard/panda.config.ts:3-3 |
-| The React Aria condition reconciliation (data-hovered/-focused). | "[data-hovered]" | dashboard/panda.config.ts:21-21 |
-| The route's sole React Aria import wraps the viewport toggle group. | "export function ModeBar" | dashboard/src/grammar/ModeBar.tsx:48-48 |
-| The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`). | "export function EvidencePane", "export function FailedLaunchBanner" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:411-411; dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-69 |
-| The action-availability shape `Affordance` renders. | `Affordance` | dashboard/src/grammar/Affordance.tsx:27-42 |
-| The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions. | "export type State = ", "const ALL_VARIANTS" | dashboard/src/types/projection.ts:15-15; dashboard/src/grammar/Dot.test.tsx:17-17 |
-| The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction. | `UNCLASSIFIED_STATUS` | dashboard/src/topology/model.ts:68-68 |
-| The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects="off"]` freeze the dot's motion rules depend on. | "@keyframes pulse {" | dashboard/src/index.css:88-88 |
-| The attention and lifecycle panels rendered as siblings in the retained side rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. | "<AttentionQueue onSelect={onSelect}"; "<LifecycleList selectedId={selectedId}" | dashboard/src/cockpit/Cockpit.tsx:667-668 |
+### Repo-Internal References
+
+- The Panda runtime these primitives import (`css`/`cva`/`cx`). [1]
+- The React Aria condition reconciliation (data-hovered/-focused). [2]
+- The route's sole React Aria import wraps the viewport toggle group. [3]
+- The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`). [4]
+- The action-availability shape `Affordance` renders. [5]
+- The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions. [6]
+- The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction. [7]
+- The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects="off"]` freeze the dot's motion rules depend on. [8]
+- The attention and lifecycle panels rendered as siblings in the retained side rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them. [9]
 
 ## 260831-CCR-L23 Requirement-Address Anchors
 
@@ -140,86 +134,3 @@ holds the registered task-local requirement listing per viewed task document and
 `open(path)` callback; `Markdown.tsx` (block and inline) intercepts `requirements/...`
 anchors so registered packets open in the internal artifact reader and unregistered addresses
 render as refused spans while external/anchor links stay untouched.
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "<AttentionQueue onSelect={onSelect}"; "<LifecycleList selectedId={selectedId}" repointed to dashboard/src/cockpit/Cockpit.tsx:666-666; dashboard/src/cockpit/Cockpit.tsx:667-667. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "<AttentionQueue onSelect={onSelect}"; "<LifecycleList selectedId={selectedId}" repointed to dashboard/src/cockpit/Cockpit.tsx:657-657; dashboard/src/cockpit/Cockpit.tsx:658-658. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "<AttentionQueue onSelect={onSelect}"; "<LifecycleList selectedId={selectedId}" repointed to dashboard/src/cockpit/Cockpit.tsx:655-655; dashboard/src/cockpit/Cockpit.tsx:656-656. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Qualified the new stateful requirement provider and corrected retained side-rail evidence. Verification records source review, not execution or acceptance.
-
-
-
-- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
-
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: added the `TaskRequirementLinks.tsx` bullet to the Route Model and recorded `Markdown.tsx` requirement-address anchors (registered links open, unregistered refuse, external/anchor untouched).
-
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
-  exact anchors and source-backed ranges; exact non-fixing check returns zero findings.
-
-- 2026-08-01T10:05+02:00 — 260731-EFA-L4 curator: **corrected a factually wrong route claim.** The
-  card said `Dot.tsx` was "a Panda `cva` mapping lifecycle state / attention severity to a colour
-  (unknown → nominal amber)". Every load-bearing part of that was false against the tree: the base
-  is `muted` + `?`, not amber (the amber base was literally `warn`'s colour, and it is how
-  `awaiting-developer` shipped looking like nothing special); the recipe sets `color` on a `1ch`
-  monospace cell, not `background` on a `border-radius: full` box; `awaiting-developer` is now a
-  declared variant, making nine; each variant also carries a distinguishing glyph, because seven
-  tones cannot separate nine variants and a base; the known-set is DERIVED from the recipe
-  (`DOT_VARIANTS = dot.variantMap.variant`) rather than a hand-copied `KNOWN` array; and `paused`
-  moved off `dormant` to a muted amber that must be mixed `in oklab` (an `in oklch` mix of amber and
-  muted takes the shorter 175° hue arc through h 145 and renders green). Recorded the new
-  `Dot.test.tsx` and the three properties it pins. Replaced the single-clause "Determinism-safe"
-  invariant with the motion rule as it now stands (`pulse` on the two fault variants, `pulseSlow` on
-  `awaiting-developer`, `_motionReduce` on all three, and the appearance key that excludes animation
-  atoms), and added three route invariants the correction depends on: derived-and-total per-variant
-  tables, an unclassified treatment that never borrows a live variant's, and the boundary with
-  `topology/model.ts` — the other state-to-visual table, which is deliberately separate (neither
-  module imports the other) and held to the same two rules.
-  Recorded explicitly because an earlier design direction here was cut and must not creep back: this
-  leaf contains **no dot suppression machinery**. Re-verified independently of the file-level
-  curator — `ls dashboard/src/grammar/` lists no `dotSuppression.ts`, a repo-wide `find` for
-  `*suppression*` returns nothing, `grep -rniE 'forced-colors|forcedColors|@media +print'` over
-  `dashboard/src/` returns nothing, and `dashboard/src/index.css` is byte-identical to the leaf base
-  (`git diff HEAD` empty; `sha256sum` matches `git show HEAD:` at
-  `a967c0c42978c8b0e56640b5a3be47ca4c55d518cfed434498c3960b09c832ea`). Nothing in this card describes
-  such a mechanism and nothing should. Four `Repo-Internal References` rows added.
-  Two PRE-EXISTING errors were found while confirming that every reference path in this card
-  resolves, and corrected here — neither is L4's doing (both are already false at the leaf base
-  `abc7cbc`, and `HeaderStrip.tsx` is untouched by this leaf): the `EvidenceBadge` consumer set was
-  claimed as four files, but `HeaderStrip.tsx` contains no `EvidenceBadge` reference at the leaf base
-  or in the working tree, and `panels/session-cockpit/StatusLine.tsx` exists in neither. The direct
-  production renderer set — re-derived by grepping `dashboard/src` — is exactly `EvidencePane` and
-  `FailedLaunchBanner`.
-  Verification metadata pinned until closeout stamps the commit.
-
-- 2026-07-18T16:02+02:00 — FEUI MX-FIX-3: refreshed the directly affected RankBadge route claim:
-  `LifecycleList` is the sole production consumer at `row`, while `sm` remains a supported/tested
-  dimension without a current production caller. The bounded route census also records `ModeBar` as
-  the sole React Aria importer and the exact four direct EvidenceBadge consumers (`HeaderStrip`,
-  `EvidencePane`, `StatusLine`, and `FailedLaunchBanner`). These direct import/caller claims, rather
-  than every grammar behavior, were verified against code commit
-  `31f58834f86c0d98e26b0896e099a2403a8729ee`.
-
-- 2026-07-17T06:20+02:00 — 260715-FEUI-L3 route impact (capability catalog client and launch
-  flow): the library gained `EvidenceBadge.tsx` (+ `EvidenceBadge.test.tsx`) — the five-glyph
-  launch-evidence tier badge (tier word always in the accessible name, glyph aria-hidden,
-  `row`/`sm` sizes) shared by the session-cockpit HeaderStrip, SeatInspector, and
-  FailedLaunchBanner; tiers come exclusively from `data/launchEvidence.launchTier`. Verification
-  metadata pinned to the leaf base until closeout stamps the L3 code commit.
-- 2026-07-06T23:57:30+02:00 — 260703-L14 route impact (visual hierarchy + chat grouping): the library
-  gained `RankBadge.tsx` (+ `RankBadge.test.tsx`) — the V4 chevron rank insignia (gold orchestration
-  / purple management tiers, `row`/`sm` sizes) shared by `panels/LifecycleList` rows and
-  `panels/SessionList` group headers, coloured by the new gold/purple Panda tokens. Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-06T03:20+02:00 — No route impact: 260703-L9 reuses `Markdown.tsx` unchanged as the renderer for the task reader's opened notes (the sidecar-view treatment); no grammar primitive was added or modified.
-- 2026-06-21T02:44+02:00 — slice 6g: added the `Markdown.tsx` primitive (memoized react-markdown + remark-gfm renderer for task-doc prose; GFM tables, `inline` variant). Verification metadata pinned until closeout stamps the 6g code commit.
-- 2026-06-17T22:45 — engine-room visual-parity: `Panel` gained an opt-in `fill` variant (a bounded flex
-  column vs the default self-scroll block) so a panel that hosts its own internal layout — the Engine Room's
-  3-zone grid — can hold a fixed height while its columns scroll. Backward-compatible; other primitives
-  unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-15T17:00 — Created for slice 5d: the grammar primitives migrated to Panda; new `Panel`
-  chrome primitive + `ModeBar` (React Aria). Verification metadata pinned until closeout stamps the
-  5d code commit.

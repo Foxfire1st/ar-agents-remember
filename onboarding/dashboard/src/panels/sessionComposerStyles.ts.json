@@ -1,0 +1,56 @@
+{
+  "path": "dashboard/src/panels/sessionComposerStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The composer recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5d2502354efe49f44a73686b730e9b16dec9432",
+            "content": "sha256:e50b430cdfe6dd00d90c5edb9b01cca354ce2bd68cd020b6b570d55d186f4f8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "dock"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d2502354efe49f44a73686b730e9b16dec9432",
+            "content": "sha256:3e34352cd71128ce4fb7237103f8eebbb12958127b621250669a7adfbe074a8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "sendButton"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d2502354efe49f44a73686b730e9b16dec9432",
+            "content": "sha256:0a66645b048ce31d4e2f1d71442951029b8512f2eb3ff82af882066682076b9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "stopButtonEnabled"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5d2502354efe49f44a73686b730e9b16dec9432",
+            "content": "sha256:9e9257a87d0032a6d541d874f863d587257b6abce4404b7201c8a9049359e349",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerTheme"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

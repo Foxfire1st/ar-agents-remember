@@ -1,0 +1,406 @@
+{
+  "path": "mcp/tests/test_record_integrity.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The historical case for the leaf/contract comparison and for D42's class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:577e25b5dc23b00cde6af63c3df5a25f111f4c87ba320268f1905196a4226890",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORICAL_MASTER"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The frozen leaf world every live-state case now reads: declared documents, pruned leaves, reduced rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:a9110bfaa2eb9756ab9fb5c17b328cf52342b6e87957215d9bea9133e8c2b921",
+            "locator": {
+              "kind": "symbol",
+              "name": "_frozen_leaf_snapshot"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:56a6afe457185989367550c2d4bf81ef35e28fe27ec7b35025e7e92a348baa21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_declared_document"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:f5fff46b4b33a5f8f0e82b78e174594be639b96db0a92dea2c5cfad09fd07548",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prune_to_declared_leaves"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:55abf1ef0552ae7008bbb9e530ddd2952d740d9349deaad2695b5f5c152e9c21",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reduce_to_declared_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The historical master fails as required and this master passes, with both populations stated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:641cfc92557b492045d846241eed2825436d45c4c6e6c17b629aa035a575ce73",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafDocumentAgainstContractTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The rule D42 crossed, pinned from both sides of the step-completeness conjunct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:34c4882b31c0b4e3fac1b04b2d794781c1dd43c247a300c865b7e600fc6050ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterRowAgainstLeafDocumentTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Only the State cell is graded, and a master with no leaf set refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:d2bc5fd0868bbec90f0906f0227e317e71aadd946faddf3552dcc8a5822aa49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisterOwnerArrowTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A prose figure is compared with its source at the revision the prose describes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:f8f28a79597b89d0df59a5c4c7ed45a5ca44e96bd50cd7d4e7ead04fd30c1b9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeclaredFigureCurrencyTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Every comparison states its two populations, and the CLI writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:412c655412ac028af85c9c757852b34234de2178838a33ba007bf12b8b078a3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordIntegrityReportTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The module whose four comparisons these cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:1463b8360e77379f811e8bb3f039fedb2033d7a23503372f85e393d0abe6d63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_leaf_document_against_contract"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:ef79bb2eceb96012c14ee615cd6ac67b794716b6ee86c3dee52f13478b74aa86",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_master_rows_against_leaf_documents"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:a52a38623b894d9650526cd19233443389e0caaa79748de0a30588b75c024ead",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_register_row_ownership"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:2e25431d4a0cd8791d8b182f61b09d70ca16bd0486aba94567125429479a560e",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_declared_figure_currency"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The lane this module is registered in, so the fail-closed manifest admits it.\n\nAnchor: \"mcp/tests/test_record_integrity.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:dd1150cac0a6e9fe146a70162940a8dfa3f1318cb72094a8f1f5af2e3294b878",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "This master, whose contracts and documents agree, read through a frozen register snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:59ae893833c261f331342c76fc8dff01567509efcdf7c039e459d8a2274b9c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENT_MASTER"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two leaves the frozen snapshot declares, and their count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:344bae6142005a7bc7c13e5081ee59ce202aff714fe2e014c450d2d184bc33ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECLARED_LEAVES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:b3b50cd69d4a897782bb1d5c6239234f1f8ac82a39a94d35d3fae792bcba4597",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECLARED_LEAF_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The revision that committed T45's stale figures, and the two route documents it carried.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:b0021337b7a562917f6bdac618ce9b21e414c765b70e917bc6c313de5c1cff0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "T45_FREEZE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:a520059c15c3f0d4b6b19016eead35cdfc5e7aaf1381c128e3c51529e0077efb",
+            "locator": {
+              "kind": "symbol",
+              "name": "T45_ROUTE_DOCUMENT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:cd54310e7077c5fa9bfc84eb38c7486180f181cc540b841ed8a85cb1e96ab208",
+            "locator": {
+              "kind": "symbol",
+              "name": "T45_SUITE_DOCUMENT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two labels spelled so neither can match the tail of the other's name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:4375623d8ea0ceda92d3e77df64c71c32db23e6ab9909b14d97b325605acbbf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "INSTRUMENT_LABEL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:e5fc41076d638dd4477ea6842d620c2b8e0d2c432fb11e9d3b4a4a76447a2fbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUITE_LABEL"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The coordination root the session was told about, or a named skip rather than a silent pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:e791ca4872ab777c57415a330c147b52e96d352bb9ae6d22d610cbb26b75136f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_coordination_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Task roots are copied into a disposable coordination tree, so the real tree is only read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:9ce26ecb0294c9ec5028387f31859e007e3c2f494a8a8094f53e641bacfd38c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_control_world"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:105e887036b7c70b1a78270521f657a0d74a0c742d6a45ffe9f08232f98a268b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The bytes a named revision committed, written out so the case reads history rather than the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:2086e60cc4b54b6aafe61b3f14827fb26424fc486bb041d81839fb528d8b02bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_frozen_document"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The register snapshot that carries R11's arrows by construction, so the case cannot assert the world's defect count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:8891383741d4f699c2204f350cc9c78bade29bfe8e08ea680aa48c21566f1303",
+            "locator": {
+              "kind": "symbol",
+              "name": "_frozen_register_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

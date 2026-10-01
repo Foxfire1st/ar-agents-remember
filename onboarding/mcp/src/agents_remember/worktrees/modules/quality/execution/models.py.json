@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retained transport serializes the complete original objects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e9c4da6a49ad402e6d6562b032ff50f7393f1ff",
+            "content": "sha256:72e1eb22a3b2041cb40f3f08280b542aba1689d61dd5f89861a85fd660c6b610",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedGateExecution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The execution contract recomputes canonical reuse and validates its exact prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e9c4da6a49ad402e6d6562b032ff50f7393f1ff",
+            "content": "sha256:99645b8aa91df47d6fa72db8eccf853f636f25899322d1d7cab3e9f37a87b143",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeCertificationExecution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only code gates may launch through this transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e9c4da6a49ad402e6d6562b032ff50f7393f1ff",
+            "content": "sha256:b26f55692e2de87f7a3d9c7b3741c3a128683aeabf4a7881a5a60c22293aefa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "first_gate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Validation reparses canonical objects and checks original green publication authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e9c4da6a49ad402e6d6562b032ff50f7393f1ff",
+            "content": "sha256:e81f6a271e1175142a994fb54ef2a028946abb3166626e8af3b706ed06c8ee6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

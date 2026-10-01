@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The focus move applied after a selected subject's answer lands in the mounted workspace.",
+  "conditions": [
+    "Focus moves to the rail's target-state notice when one is shown, else to the selected tree node, else to the reading-area column, and only when the active element is still the one recorded at selection time or has fallen to body."
+  ],
+  "exclusions": [
+    "Scroll position after an answer, which follows the focused node in a real browser (O-R1-2)."
+  ],
+  "id": "INV-MCVSM81V",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "fbcb9c2d-a9f1-4d75-a41f-2ad07f7f5bc1",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "When a selected subject's answer lands, focus moves to the selected tree node -- or to the rail's target-state notice when the workspace shows one (a marker target whose family membership is unknown) -- only if the reader has not moved focus elsewhere since the selection (focus still on the selecting control or fallen to body); focus the reader moved while the subject was pending is kept.",
+  "status": "proposed",
+  "supersedes": []
+}

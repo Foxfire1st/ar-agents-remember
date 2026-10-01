@@ -1,15 +1,5 @@
 # mcp/tests/knowledge_validator_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/knowledge_validator_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74`|
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -43,7 +33,9 @@
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The validator's design authority is the coordination-root note
@@ -51,36 +43,22 @@ Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layou
 requirement packet `MIK-R22@v1` of task `260928_maintained-invariant-knowledge`; both live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The fixture assembly and its helpers.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The Doc14 family's other realizations, by file, entry, symbol and blob. | `FAMILY`; `FAMILY_REALIZATIONS` | mcp/tests/knowledge_validator_test_support.py:30-30; mcp/tests/knowledge_validator_test_support.py:32-57 |
-| The real code paths the anchors name, the family's realization files included. | `CODE_PATHS` | mcp/tests/knowledge_validator_test_support.py:58-66 |
-| MIK-R27's legacy count, and the unchecked admission the two added invariants claim. | `LEGACY_COUNT`; `UNCHECKED_ADMISSION` | mcp/tests/knowledge_validator_test_support.py:106-106; mcp/tests/knowledge_validator_test_support.py:110-113 |
-| A file sidecar with one realization entry. | `realization_sidecar` | mcp/tests/knowledge_validator_test_support.py:127-149 |
-| The card with markers, an escape, a code span and a fenced block. | `DIRECT_LANDING_MARKDOWN` | mcp/tests/knowledge_validator_test_support.py:76-93 |
-| The converted fixture tree, with a sidecar and card for each family realization. | `fixture_tree_files` | mcp/tests/knowledge_validator_test_support.py:152-185 |
-| Editing one JSON file and writing a tree to disk. | `edit_json`; `write_tree` | mcp/tests/knowledge_validator_test_support.py:196-203; mcp/tests/knowledge_validator_test_support.py:206-210 |
+- The Doc14 family's other realizations, by file, entry, symbol and blob. [1]
+- The real code paths the anchors name, the family's realization files included. [2]
+- MIK-R27's legacy count, and the unchecked admission the two added invariants claim. [3]
+- A file sidecar with one realization entry. [4]
+- The card with markers, an escape, a code span and a fenced block. [5]
+- The converted fixture tree, with a sidecar and card for each family realization. [6]
+- Editing one JSON file and writing a tree to disk. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the helper reads the repository's own fixtures.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — `LEGACY_COUNT`, and `UNCHECKED_ADMISSION` on the two added invariants (MIK-R27).** Logic states both; the Invariants bullet was reworded, because the tree now passes with one report-only finding rather than none; one row added; the other rows re-pointed by the exact line shifts (+12, and +16 after `fixture_tree_files`). No verification stamp was advanced.
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **body update — the fixture tree now carries the Doc14 §4.2 family's other four realizations.** Purpose, Logic and Invariants name `FAMILY`, `FAMILY_REALIZATIONS`, `realization_sidecar` and the extended `CODE_PATHS`; two rows added. The reopened `CODE_PATHS` and `fixture_tree_files` claims were re-read and reworded against the current constructs; the fixer's two same-pass "claim bytes unchanged" bullets for them were removed and folded into this entry. No verification stamp was advanced.
-- 2026-09-29T06:45:50+00:00: Generated citation repair: `DIRECT_LANDING_MARKDOWN` repointed to mcp/tests/knowledge_validator_test_support.py:76-93. No content impact: mechanical anchor-range projection bound to citation source snapshot 1a5c7dd5cb87835c8b4e585975574124e545ed7ed5b56804bf2cecaf1ab8ce6b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T07:08:34+02:00 — 260928-MIK-L22 curator (uncommitted change set on `ar/260928-mik-l22`, code base `4aa9a98cebb65d7bfb492d80a420e794a3fb9f8c` plus the working-tree delta): created this card for the new file MIK-R22 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

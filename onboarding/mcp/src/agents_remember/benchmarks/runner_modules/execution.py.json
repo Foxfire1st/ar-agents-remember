@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules/execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.\n\nAnchor: \"from agents_remember.benchmarks.runner_modules.execution import *\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:4018c74c96986c699af45440056eb3679bdedfbec896339140339ac0a127c029",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The benchmark MCP registration writes the `.codex/config.toml` whose `mcp_servers` table these overrides read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ae922f397ce0f2886189528d8221bb1c55caa5c",
+            "content": "sha256:ef0adb43b9bde2b7d0452c7c2bbb4e42395efa96586c423ac48fab89060c1d3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "benchmark_agents_config_text"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

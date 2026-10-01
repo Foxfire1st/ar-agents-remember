@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package map and the rule that no writer writes the index and it is never merged.\n\nAnchor: \"No knowledge writer writes the index\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06d446de04c0b58ae1a17c8e951a920fdfb5153d",
+            "content": "sha256:b1e2432911d6550cb930405787f44718e8d3ebe8e6f231895c3aba86cac50a2b",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The re-exported public surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06d446de04c0b58ae1a17c8e951a920fdfb5153d",
+            "content": "sha256:fb4326a172bc87b8da2d3de6c32b73d322c6938b9ef80b9f0e2acd81d8774af9",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

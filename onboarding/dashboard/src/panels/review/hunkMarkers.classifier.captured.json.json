@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/panels/review/hunkMarkers.classifier.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The first scenario's body: a linked hunk whose occurrences are all `membership_unknown` because the after side is unread.\n\nAnchor: \"after_unread\"; \"\\\"state\\\": \\\"membership_unknown\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae4250c9880049a3f1174e1ea74c9b21412fdadd",
+            "content": "sha256:5881390ab973994f094004a4c45302eeaf90f6d7eb0d2d12ea9be2515b76f8c3",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unread-before scenario (the review R1 F1 excerpt case) and the file with no readable side.\n\nAnchor: \"before_unread\"; \"both_unread\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae4250c9880049a3f1174e1ea74c9b21412fdadd",
+            "content": "sha256:4326a345c50908711bdb1a651a8c3fdca53a68443dccb12ac8021c52447f7605",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The curated and partial scenarios.\n\nAnchor: \"curated\"; \"partial\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae4250c9880049a3f1174e1ea74c9b21412fdadd",
+            "content": "sha256:511e440ceb3bc904a3a3b1cc3ae43192c9cf25e268087c63fc8e7e5a765013cb",
+            "locator": {
+              "end": 1322,
+              "kind": "line_range",
+              "start": 693
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pre-curation scenario, with the proof and the unregistered file.\n\nAnchor: \"precuration\"; \"tests/test_a.py\"; \"pkg/new.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae4250c9880049a3f1174e1ea74c9b21412fdadd",
+            "content": "sha256:69fcc547470e712a29f4f625d9b3145b250c362d4551c4266f80c6dec932a28e",
+            "locator": {
+              "end": 2093,
+              "kind": "line_range",
+              "start": 1323
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/hunkMarkers.classifier.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ffb3115011021ee0e6344873e64e9d3874d6cdd",
+            "content": "sha256:3495143c9252be21a96ac8d98197cdcc3b28394be2061cb4c95b80f0bf4282d3",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "dashboard/src/panels/review/hunkMarkers.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

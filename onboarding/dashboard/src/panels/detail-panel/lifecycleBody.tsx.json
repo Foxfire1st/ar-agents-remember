@@ -1,0 +1,57 @@
+{
+  "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lifecycle body entry and its derivation helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:f700d2093b52b4452fb91dd2f1c13c0431d9e7e42977020d9d6f54749a1c41cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleDetailBody"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:0692b5703e23d74908ec277ea8fae8a694baaf5f246264650311c34d28c7eceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveMasterAndSlices"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:25b925507dd3b426393da537e680badf589e6928e3c068355f6a027761d8d452",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveParentLink"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ed9d2434cff9eae80a1e9569d7135d371e5fe7c",
+            "content": "sha256:13a6aeaffac08ce9aaacb03c7ec508cc8d36465f32cdd65439957c8b3e163202",
+            "locator": {
+              "end": 412,
+              "kind": "line_range",
+              "start": 367
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

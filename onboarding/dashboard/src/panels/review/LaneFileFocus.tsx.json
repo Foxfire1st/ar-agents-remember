@@ -1,0 +1,295 @@
+{
+  "path": "dashboard/src/panels/review/LaneFileFocus.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The focused diff, the exact blobs, every drawn owner hunk's own intent mark (MIK-L34) and the gate's items beside, in the module's own words.\n\nAnchor: \"so a displayed change region can never merge two of the server's hunks under one\"; \"carries its own intent marker in the window's gutter (MIK-R34)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:c1b646cedcc29d1887e5de9d4968af3028310a464f6c39c19b1fb3ac8d35f469",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The gate's items: reading, none, or the file's groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:24fd07556f3f583e77b877e4acd8710153efab2c46fce5f37ff52b1027cf2df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateItems"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The gate read, only from the same comparison's leaf-wide read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:e4a50d8df4a5c1bff851024d743216c9e31c03cccac143e432b39ff9bcee7a21",
+            "locator": {
+              "kind": "symbol",
+              "name": "gateRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The content read, exported for this file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:67561911e791ad675588a1b92724f44d6823a545a126458297a30dae3d909e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSourceContentRead"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The file's groups, rendered as the leaf panel renders them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
+            "content": "sha256:79e8beee27f97cad64893bea43b2cea7fbe1db6a667007f77facffbf5f6ff88b",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnexplainedGroups"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "A focused hunk, the full file control and the gate's item; \"reading\", never \"none\".\n\nAnchor: \"lists unexplained files first, then attributed files, and opens one on its unexplained hunk\"; \"says the gate's items are still being read, never that the gate raised none\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:afcfc360bf83e2a9a93f26096c415676ed68b14513e29682230d5355c0522d2d",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.lane.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The gate read's three states and the task a file is opened in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:cd9dead6e9e31160d2ba1a3738edb1f6654c34685543a429b083be9e17d46ea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:97fbb13c3255a51c10ae4b5ef9f67414d5f41c6c0ad1a7f572f0d6813a11f1de",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneTask"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One opened file: its classification, facts, focused diffs, full file and gate items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:38d56a8e02e980600179f6c8cbfd68d9d23c9938673a11fc16e0ec8927b82d26",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneFileFocus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:c35698d1c9349bdf3978fac3cc52570c305104f018f63f4ede93692bb66f4ade",
+            "locator": {
+              "kind": "symbol",
+              "name": "fallbackEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The bucket, counts, reason, non-text fact and unread sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:6c9907b4a64b8398314de4a4f78712c56ec3fde9d188a01636457ea7180a22ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileFacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One content read; the file-level mark once above at most twenty hunk windows; what the full file draws of the hunks not drawn here (MIK-L34, F5).\n\nAnchor: \"<FileMark file={file} />\"; \"more hunk(s) of this class are not drawn here\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:91a52c74f57db12d8e8f7d148005d89834355da376006bc41a9f22803198e530",
+            "locator": {
+              "kind": "symbol",
+              "name": "FocusedDiffs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One hunk's badge, spans, reasons and window on the server's line numbers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:b12346829b298ef9a414a7c818b1e38561f3d7634dc5244396828b89b49b87e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FocusedHunk"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:83e9d94f32b32ca1a111276f6674dbaba3b610c44a6e240882564472e13696b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideWindow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:0cbc3919aac176094c7d570bcc2840c2a1402abd9790daf4785172a020265e5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HunkExcerpt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The full file one control away, marked from the lane's own classification and reopened by a return to a marker followed from it (MIK-L34).\n\nAnchor: \"function FullFile({\"; \"markers={{ pane: 'lane-full', classification: file }}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:e3378ae7c3ad7d6cee03cfcdf69ff725769a29d0f2849d11a62cd942efce5ded",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 417
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A window's marks: every owner hunk whose changed lines it draws, on its own pane, only for the drawn blobs (MIK-L34).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:7e31453bc0c5a0320ddf3b50526bcabc7fb6d575e0f59e6772774a939afce97a",
+            "locator": {
+              "kind": "symbol",
+              "name": "drawnLines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
+            "content": "sha256:fc9a442c8911448259bfa1bdf25681805db6c795d8ea365b2b1f2b0b11073b5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWindowMarking"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The window cases: three marks in the one window whose context draws two neighbours, a neighbour's list from that window, the more-hunks wording, and the full file's return.\n\nAnchor: \"marks every hunk a window draws: the focused one and each neighbour its context shows\"; \"says what the full file shows of the hunks a focused view does not draw\"; \"reopens the full file a marker was followed from, with its list and focus\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "content": "sha256:3936375db05cf3935f645cc98fd2b5d8d805c1a4c9fce224e9c70e4fd9bd6be0",
+            "locator": {
+              "end": 564,
+              "kind": "line_range",
+              "start": 440
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

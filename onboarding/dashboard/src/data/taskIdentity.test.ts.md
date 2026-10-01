@@ -1,15 +1,5 @@
 # dashboard/src/data/taskIdentity.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/taskIdentity.test.ts`        |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-01T09:44+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -64,62 +54,30 @@ Pure logic tests; no React, no backend, no store. They exercise the tree-shape c
 (`masterFolderForSelection`) — the leaf-key string helpers (`qualifiedLeafKey` etc.) are exercised
 indirectly through the resulting `leafKey` values rather than asserted in isolation here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module under test (the `buildTaskTree` / `findMasterPath` / `masterFolderForSelection` helpers). | `buildTaskTree`; `findMasterPath`; `masterFolderForSelection` | dashboard/src/data/taskIdentity.ts:208-214; dashboard/src/data/taskIdentity.ts:218-225; dashboard/src/data/taskIdentity.ts:229-243 |
-| The leaf-key composer the assertions read through: `repository` + docPath folder + `id`, nothing else. | `qualifiedLeafKey` | dashboard/src/data/taskIdentity.ts:64-70 |
-| The test file's `doc` fixture helper. | `doc` | dashboard/src/data/taskIdentity.test.ts:10-12 |
-| The `taskDoc` / `analytics` builders and the thirteen-key `EMPTY_ANALYTICS` base. | `EMPTY_ANALYTICS`; `taskDoc`; `analytics` | dashboard/src/test/fixtures/wire.ts:223-237; dashboard/src/test/fixtures/wire.ts:282-287; dashboard/src/test/fixtures/wire.ts:317-322 |
-| ChatSessionActions derives its task tree from taskDocuments. | "const leafTree = useMemo(() => buildTaskTree(taskDocuments)" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:181-181 |
-| ChatSessionActions renders LeafAttachPicker. | "<LeafAttachPicker" | dashboard/src/panels/session-cockpit/ChatContextBar.tsx:223-223 |
-| LeafAttachPicker pre-drills to the context master with findMasterPath. | "setPath(contextMaster ? findMasterPath(tree" | dashboard/src/panels/LeafAttachPicker.tsx:276-276 |
-| Master rows drill further through drillInto. | "const drillInto = (node: TaskTreeNode) => setPath((current) => [...current" | dashboard/src/panels/LeafAttachPicker.tsx:284-284 |
+- The module under test (the `buildTaskTree` / `findMasterPath` / `masterFolderForSelection` helpers). [1]
+- The leaf-key composer the assertions read through: `repository` + docPath folder + `id`, nothing else. [2]
+- The test file's `doc` fixture helper. [3]
+- The `taskDoc` / `analytics` builders and the thirteen-key `EMPTY_ANALYTICS` base. [4]
+- ChatSessionActions derives its task tree from taskDocuments. [5]
+- ChatSessionActions renders LeafAttachPicker. [6]
+- LeafAttachPicker pre-drills to the context master with findMasterPath. [7]
+- Master rows drill further through drillInto. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-04T11:39:21+02:00 — 260731-EFA-L6 S18-B09 curator: reconciled the frozen-source ledger and repaired scoped citations; unsupported source claims were narrowed or removed, and the landing provenance mismatch remains an explicit Tier-3 item.
-- 2026-08-01T09:44+02:00 — 260731-EFA-L4 curator: the card stated twice that the fixtures are casts —
-  "casting via `as unknown as TaskDocNode`" in Logic and "minimal `doc(...)` partials cast to
-  `TaskDocNode`" in Conventions — and the diff against `abc7cbc` removed both casts. `doc()` now
-  delegates to `test/fixtures/wire.ts::taskDoc` and the `masterFolderForSelection` case builds its
-  bundle with `analytics({ taskDocuments: docs })` instead of
-  `{ taskDocuments: docs, series: [] } as never`. Corrected both, and named the size of the second
-  change: the old literal declared 2 of the reducer's 13 analytics lists, so it stood in for a
-  payload the server never sends. Checked that neither change moves an assertion — the `doc`
-  overrides still name exactly the seven fields the tree builder reads, everything the builder adds
-  (`status`, `stepsDone`/`stepsTotal`, the eight empty lists) is invisible to `buildTaskTree`,
-  `findMasterPath` and `qualifiedLeafKey` (which composes `repository`/docPath folder/`id` and
-  nothing else), and the eleven analytics lists the bundle gained are all empty, so the
-  `folder === "ops"` result is reached the same way. All three case names and both `leafKey`
-  expectations are unchanged. Added citations for the factory, the bundle and the builders.
-
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-06-30T00:00:00+02:00 — Operations Integration L5 (Sidebar chat): created — unit tests for the task-tree helpers:
-  `buildTaskTree` nesting a master under another master with leaves under each (and an orphan leaf at the
-  top level), `findMasterPath` returning the master chain to a nested master, and
-  `masterFolderForSelection` resolving a selected task doc's master folder. Verification metadata pinned
-  until closeout stamps the L5 commit.
+No applicable cross-repository source was found.

@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/core.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Six of the seven payload builders (all but `read_ar_files_payload`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7e1c91942f0b2cea533bee9af29d5869b17f9bc",
+            "content": "sha256:c6602883c1f6cc5db28df7c688257563ce2ed6b901465af9d63cbd66825a2372",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`read_ar_files_payload`, imported through the `mcp.tools` facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7e1c91942f0b2cea533bee9af29d5869b17f9bc",
+            "content": "sha256:c6602883c1f6cc5db28df7c688257563ce2ed6b901465af9d63cbd66825a2372",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`TaskRef` — the locator bundle `resolve_context` packs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7d94fc2a811ecaa875d929ec1242369625dadc",
+            "content": "sha256:099fc8a76c1c3855e16525e55b4246e43e679d8c7af08b945c90347ee2c062d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRef"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_ref.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The registration gained the keyword-only `experiment` parameter and builds the run's request itself.\n\nAnchor: `RuntimeInstallRequest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5541a6ee024664b1451b8470c30bef0aef44e422",
+            "content": "sha256:eddbb1e2487831ecfa88e69e4b23dabb0f61a94721d3e7c893286e83aa403205",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

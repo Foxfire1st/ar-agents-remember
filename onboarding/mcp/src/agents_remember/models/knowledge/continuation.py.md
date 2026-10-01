@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/continuation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/continuation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T21:41:17+02:00 |
-| lastVerifiedCommitHash | `3772cdcd008fcacdc5a86e264a3ef63e879ea544`|
-| lastVerifiedCommitDate | 2026-09-30T02:36:18+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -41,7 +31,9 @@
 
 - **R2-1 resolved by L01:** a tail of more than `MAX_QUEUED_SEEDS` queued seeds is refused by name, `seed_queue_exceeded`, before any token is minted (ruling 2026-09-29 23:21:57), so `rest`'s `max_length` is never reached from a block. The architect fixed R2-3's over-long docstring line.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R02@v2` of task
@@ -50,30 +42,18 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: every binding the token carries. | "The one continuation every bounded read of a memory tree mints" | mcp/src/agents_remember/models/knowledge/continuation.py:1-29 |
-| The format, prefix and bounds; the queue cap public since MIK-R01. | `CONTINUATION_PREFIX`; `MAX_QUEUED_SEEDS` | mcp/src/agents_remember/models/knowledge/continuation.py:62-70 |
-| The paged responses, `leaf` added by MIK-R01. | `PagedResponse` | mcp/src/agents_remember/models/knowledge/continuation.py:72-72 |
-| The bound fields and their short aliases. | `KnowledgeContinuation` | mcp/src/agents_remember/models/knowledge/continuation.py:75-116 |
-| Encoding and bounded decoding. | `encode_continuation`; `decode_continuation` | mcp/src/agents_remember/models/knowledge/continuation.py:119-126; mcp/src/agents_remember/models/knowledge/continuation.py:135-150 |
+- The module statement: every binding the token carries. [1]
+- The format, prefix and bounds; the queue cap public since MIK-R01. [2]
+- The paged responses, `leaf` added by MIK-R01. [3]
+- The bound fields and their short aliases. [4]
+- Encoding and bounded decoding. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the token names one memory tree and one code tree by content-addressed ID.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): MIK-R01 adds the `leaf` response kind and makes the queue cap public. The Logic now names `leaf` and `MAX_QUEUED_SEEDS`; an Invariants bullet records the carried "no local path" obligation; the R2-1 Todo is marked resolved (`seed_queue_exceeded`). One row was added and the module-statement row re-measured (`1-28` → `1-29`). **Reopened claim re-read and reworded:** the bounds row cited `_MAX_QUEUED_SEEDS`, which no longer exists; it now names `MAX_QUEUED_SEEDS` and was re-measured (`57-67` → `62-70`).
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): created this card for the new file MIK-R02 adds. It records the architect rulings of 2026-09-29 19:56:40 (Q5 ordering, Q6 code tree), 20:40:40 (F2 no local path) and 21:32:34 (the tree ID binding accepted; R2-1 carried to L01; R2-3 fixed). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

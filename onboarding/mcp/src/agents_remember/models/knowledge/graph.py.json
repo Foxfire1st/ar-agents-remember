@@ -1,0 +1,301 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/graph.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two relations this module's vocabulary carries, and the no-second-list rule.\n\nAnchor: \"There is no second, separately maintained list of semantic facts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:b575b0d7c42200eaf6658cf51429fbfb3a6d7f0651792524a145b156b16657fa",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The declared relation tables these values map onto.\n\nAnchor: `family_member`; `realization_claim`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:fad6adcd99602604604e80faf6b08c961cbaff9c7e91bd6763b2a99749656139",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:2a1721ed2c093b453c93d0bdf44c3bd691f5da2b9785fc5f8575a6414826efd7",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closed authored role vocabulary and the explicit not-classified member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:04ce117f509879f455d40f1f713e5577467d3d7b176c100922cc2680c0911db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationRole"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:d3b62bdeb910a01fc5c180dd90c8fb5154489a9e4b8e100708ef060621d373e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCLASSIFIED_ROLE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The membership draft and its stored, digest-carrying form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:b383cf6b448b245ef4cc4c4961c60024dd3f18c8232095b1efd81b908a1e7f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberDraft"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:76d9a22f63970aa95f306b6987c20391dcc1518416853e039d91d064b2afe326",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The claim draft, with its anchor endpoint deliberately held by the request instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:77ba314c2b122df9b6d8729695b3dd95295dc5c792a61ac8bfb72b7dd31b5d6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationClaimDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The stored claim, including its anchor and expected row digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:765d551d3dbe22d0f1a354f32c2e352d431b15b03a04838bd7263e9357d1853c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationClaim"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The four read models, one pair per relation direction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:cd43a40d88a250040405c83f09f661c7554d4a2ef34bb6d8252365954045b16a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMembers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:7319b50b8bb02089db8f26ecc757b97810ea5d71b7f1fdef8437b49231c60be4",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantFamilies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:e5787309f3f4dd8beeb85457933f076eeb6ad0e03c17c580568f9a03c3a4b4ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationClaims"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d1f0ed9070d0e7e8877341a2a95fe1b5c6b786",
+            "content": "sha256:df3fc181999e3a249f2ee0e4a3170ddbe475111e5021c5aacca46a6c603cf7c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorRealizations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The membership operations that store and read these values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "content": "sha256:f06149691c314c03160f8cacacbb1cade99811e96ca3986c19b56dce20b0f00c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_family_member"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "content": "sha256:0bf7248309d1073b1b3b0824a04faf588c6be10341b98ec49e92d498ef12c5b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_members"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "content": "sha256:079cd24f66f0df288bf260e0a82471627b2a7967029960ada956a41fac02dbf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families_for_invariant_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The realization operations that store and read these values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
+            "content": "sha256:10a013393578987f89739b4813d908ae7a48bfa830b2bf3500f7c21e993bf19a",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_realization_claim"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
+            "content": "sha256:36c93d7f52d4a7592149598047919ab478e97de4beed2335d6c5f32aff433e54",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_claims_for_invariant_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
+            "content": "sha256:78dda0bad711f03aae3a65f80b08bfc8ff4dee60c9818fc361b4ba2e397d7bb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_claims_for_anchor"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The row codecs and expected-row digests the drafts deliberately omit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:b33ec55a76c3d3307e1192a3abc021318bd3792bdb5ad0ad85a8a2b11b15240f",
+            "locator": {
+              "kind": "symbol",
+              "name": "member_row_digest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
+            "content": "sha256:53cdc8c7fdfe21450d4ca01c7598a7314b807964f2a20de41aebb87392bad6cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_row_digest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

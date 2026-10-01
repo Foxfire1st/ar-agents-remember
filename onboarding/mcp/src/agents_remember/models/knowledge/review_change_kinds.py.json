@@ -1,0 +1,198 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_change_kinds.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement of the three facts, the primary kind and the marks.\n\nAnchor: \"The **primary** kind is the highest established fact in the precedence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:7f056608ded35814ccc0b26ebf1ecf490270ba1b4a36cc8c1bcb800cde1755ee",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The literals, the precedence and the bounds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:45d5706876aeaa30de42901c40bc3ba133f298d1bcde99d5bc6e1c8d9126346a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:14cb718ec7886d225883de2af9098e9cbd8ec96458fa8d0786265ac53fd29a06",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGE_PRECEDENCE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:697f1962696fb5606c261860550845f94c143197193c95d2de5463c92af19588",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_LIMIT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:a66b1049827ac5e079c2555fd7346c44656b37387cdc8352618b86bfda4c0a29",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMBERSHIP_REASON_LIMIT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The facts and evidence carriers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:fda5f2b8c5e33f70ea7ce4515b192167fd879bdf81926eb2d0ad0b9b9d78ffb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:166c9903c0ff97d0d6249994874b9d2adcd470c808f363d2e3314911099f8061",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeEvidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The primary kind and the marks, including the unconditional unknown (review R1 F4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:f515bdc36aa4611a6f46e0db746a4600893faa962ec2c98cb9591adfa2524abb",
+            "locator": {
+              "kind": "symbol",
+              "name": "primary_change"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:fc977b26b0b35da172c406398e8c00af8d303fb984eacec550112a51e2f622de",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_marks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One member occurrence, built from its facts, with both validators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:cc2977b3b2283863b90b609e5676271d9a2673cb9f5f9acea77f30185dc0942a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewMemberChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:4b7a1a0568f9e7921fdfc16951e3c27b07862113064ab7f8fcb51ec22514bc39",
+            "locator": {
+              "kind": "symbol",
+              "name": "_derived_from_the_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:f7a0a207918eac63c908e29e0bc517b4cf7a23ba101625c6d639295b9a05a94d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknowns_say_why"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One family occurrence: guarantee, total and one occurrence per returned member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:a372f932a9810199665eedd0c73fcdfa68f63ef6314a28ab197519e5b9e54f08",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyChanges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Where it rides: the family context entry, validated against exactly the returned members.\n\nAnchor: \"# The change facts of a tree comparison (MIK-R33); a dataset review carries none.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:2519d61b9ffe6583bf3aba125d698405fcfa2ab8799845d3cc59c4757f603ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_change_facts_for_exactly_the_returned_members"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

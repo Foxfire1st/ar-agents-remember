@@ -1,0 +1,57 @@
+{
+  "path": "dashboard/src/panels/engine-room/useEngineTimeline.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The harness uses a real engine scenario and a minimal tagged SVG circle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65ff2d5611476001b7c0427e04bd7b9f3df9feeb",
+            "content": "sha256:63406e49e8d9e5e44886b0c37706c1c2af8d50cc04b5f28ba18b497b3562ef7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScanHarness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tests pin transform animation, non-scaling stroke, and the effects-off no-op.\n\nAnchor: \"touches nothing under data-effects=off (no tween\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65ff2d5611476001b7c0427e04bd7b9f3df9feeb",
+            "content": "sha256:1888fbe9c43b86e2ec364981b7096e11c932d75fce6c9b14ab00403f5f2de26c",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Timeline implementation installs the non-scaling stroke and transform tween.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "useEngineTimeline"
+            },
+            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

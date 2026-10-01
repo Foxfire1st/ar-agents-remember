@@ -1,0 +1,180 @@
+{
+  "path": "dashboard/src/data/intentEntryRevalidation.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+        "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentEntryRevalidation"
+        }
+      },
+      "id": "RLZ-2T0WMXME",
+      "invariant": "INV-EZ8QKFX6",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Raises the entry's re-validation generation each time the task detail becomes shown, and exposes revalidate() for the reviewer's return and refresh through a context. It is plain React state, with no event channel or projection field; the change-set bar appends this generation to the entry's facts key, so each step costs exactly one summary re-read.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Why no existing signal can carry a knowledge write, and the three re-validation points.\n\nAnchor: \"change watcher deliberately excludes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "content": "sha256:e32dd9e06bc0d6eeb04a3450a6294a918e15e1b42280a0dac4f457d981a04b5e",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The provider: the show transition derived during render, and `revalidate`.\n\nAnchor: `state.shown !== shown`; `revalidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentEntryRevalidation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The no-provider default and the two hooks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "content": "sha256:f10cd384c0fd4305058d2f6332a8a18b61d98136734b95688eef19937ee45282",
+            "locator": {
+              "kind": "symbol",
+              "name": "NO_REVALIDATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "content": "sha256:b318e73b1d3563a4015e6ce73a092543e11bce1758c54e8ecbf8c30e4cf82717",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentEntryGeneration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "content": "sha256:87fdd50ce88da9c68e68daded3e1f3269081956b3b2f5816c471b717aa97c729",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRevalidateIntentEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The cockpit wraps its shell with `shown` = Operations view and no takeover.\n\nAnchor: `IntentEntryRevalidation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "content": "sha256:3b1060d0170a08b61f3de9e57ac024c13dca376d36b7ff59e983dd7df1aea522",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 912
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reviewer's refresh calls `revalidate`.\n\nAnchor: `useRevalidateIntentEntry`; `revalidateEntry()`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
+            "content": "sha256:269a8ec925c566d278e694ce60974e33bbfee7384b0af3f79b95a50e8da78c74",
+            "locator": {
+              "kind": "symbol",
+              "name": "revalidateEntry"
+            },
+            "path": "dashboard/src/panels/review/ReviewRefresh.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The summary's facts carry the generation.\n\nAnchor: `useIntentEntryGeneration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cases: re-show, open once, leave the reviewer, reviewer refresh.\n\nAnchor: \"(a) re-validates when the task detail is shown again, once per showing, with no catalogue read\"; \"(c) re-validates when the reviewer's own refresh runs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ad8b7dbba12669bb29ea86225adead13c8cf30b",
+            "content": "sha256:18e52c8ea7080517e5924aa9a365bbc219e209827ee0bf564b4ff7b20120c341",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "dashboard/src/cockpit/Cockpit.intentEntry.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1ad8b7dbba12669bb29ea86225adead13c8cf30b",
+            "content": "sha256:e0483e17bb4ff9560c444e661fcea7f3b109416d33f6d6eb9f980f3b0720742c",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "dashboard/src/cockpit/Cockpit.intentEntry.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

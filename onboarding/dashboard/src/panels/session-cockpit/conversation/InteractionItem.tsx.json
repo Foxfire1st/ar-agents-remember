@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The item/`choices`-block types this component narrows over (incl. the `item.agent` ref).\n\nAnchor: `choices`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:d3a1b772a91f2e976e70b825aabef10b6845bf237f222ff4758e9a9a5a8fdab1",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `agentLabel` precedence (nickname → role → agentPath tail → `agent <first8>`) the badge prints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:78ca39c9bb1e15659f7d04aff73bc6a3245d9bce38e00ec9f41e1f0b36e85c7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentLabel"
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Streaming-safe Markdown renderer used for the prompt body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e017e9192e01c59b745e9e89cf94fb1712fb1d04",
+            "content": "sha256:f9977686d9ab8494f4f9d55ab2b2f744a7be9761e837f77c6c7f1ed99eba0ac5",
+            "locator": {
+              "kind": "symbol",
+              "name": "MarkdownBlock"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The LIVE gate-channel interaction authority this timeline copy defers to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f05f3361e2c16bb8fdaee1e19704e09dd6db74",
+            "content": "sha256:efa3105c63c02605798b3ac5899308558b97403458791853c89985411a5f4ea1",
+            "locator": {
+              "kind": "symbol",
+              "name": "InteractionBar"
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The kind dispatcher that routes interaction items here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b156fbba479b8bc6b33a0c1347cdee530f878b",
+            "content": "sha256:fca763ba027acd44b32b62e0f05001857d82abed6b01ff4ca32c859cd908fd1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItemView"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The badge present/absent pinning suite.\n\nAnchor: \"badges the asking agent's label when the item carries an agent ref\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c156993d1aa7843e803f195bff089fd412995635",
+            "content": "sha256:7750b658d9490f531a7795b44816adb30b2aec2b41a14e20c5685d395f1a8de0",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/InteractionItem.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

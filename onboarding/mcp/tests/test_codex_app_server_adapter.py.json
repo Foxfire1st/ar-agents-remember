@@ -1,0 +1,280 @@
+{
+  "path": "mcp/tests/test_codex_app_server_adapter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fakecodextransport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:fa57762a8ebc3660e31eb94b1a2d3c2d9a160025c1af62bfbc4df28e4266194b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FakeCodexTransport"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Prime start.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:10c1eee0e59d32f6c5b51ec78e4585965e5e2c82b60fbc140e29e1aa0c6495b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "prime_start"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Make adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:8633a86fda6640a35107ab10f853693692eaa598430d74f4f509afe616d28937",
+            "locator": {
+              "kind": "symbol",
+              "name": "make_adapter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Settle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:8fa4b81d0b6265055d80268d1aa3598233dba61eb7c99ab067054640ae654c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Drain events.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:d3c42333a88fb39b58e0433327f4bc08087618e764e642051a5c73ca21170e04",
+            "locator": {
+              "kind": "symbol",
+              "name": "drain_events"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Assert notification is inert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:1933b3adebd789ac3f410789b4dd92d953591b553d7ba9201ac5ba7062d70a3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_notification_is_inert"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Next event of kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:cc1da370bbd275e34c896b40ad4514751ce4341d65bf03a27b1ff89c4fbb88b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_event_of_kind"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Turn start result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:f9504bbae99e08ee50894b0c4e1564b6e69200029ea16fd8f06e620238dcd1fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_start_result"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Turn completed notification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:8d65a30a9a9dba56846827a148c09589561feb008e82797bba2aad7091ba9b18",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn_completed_notification"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Blockingturnstarttransport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:e5569690aa595b5c34e74bec67331adde90e40dab6b9d9903020730fd3c5e967",
+            "locator": {
+              "kind": "symbol",
+              "name": "BlockingTurnStartTransport"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:f52cfc88ace51eb19644b097852bee65ba6460200e2dcad001dcf841ba30629c",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Fixture object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:4c9c959c0eb61b76941a90f7addea55d35edbae761487b07ea7d8e14baaa3240",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_object"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Fixture list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:a84a51006cf447ef8a92c017eed45070b11b9d57c710889dfe9f486f160011a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture_list"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Add model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:8dba41915b13af8f59e2913777ebe11d613be758ec853e0bc8f2c1ac3f0542ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_model"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:6184ed36e861f27f8f598f7fb7aa84332a17896bd69acdd5db00ab0959554f73",
+            "locator": {
+              "kind": "symbol",
+              "name": "identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Launch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:289027fddff5e2ab75f95104784daf55a1c95442463fe4f75dc63374ddbaee9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Request.\n\nAnchor: `request`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60f1a3a668aa67047e7fce0f5272886fc322a946",
+            "content": "sha256:502d1aa070395566c873d37384db26a1932e949f9d18649ba3186e5d515b74e6",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/memory_quality/style/citations/documents` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-06T04:32:25+00:00 |
-| lastVerifiedCommitHash | `b34f4a59562b76a3e2413027468e0f699117b36f` |
-| lastVerifiedCommitDate | 2026-09-06T06:31:12+02:00 |
-| governingOverview | `../../../overview.md` |
 
 ## Governing Overview
 
@@ -35,17 +29,13 @@ The application owns write-scope authorization; the index lease supplies frozen 
 - [Package marker](__init__.py.md) has no runtime side effects.
 - [Transaction owner](transaction.py.md) binds complete accepted document publication.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Projection admission precedes staging; declined claims retain their original bytes. | `_decide` | mcp/src/agents_remember/memory_quality/style/citations/fixer.py:336-381 |
-| Accepted batches check complete document bytes and held source/cell bindings before atomic publication. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
+### Repo-Internal References
 
-## Docs And Boundary References
+- Projection admission precedes staging; declined claims retain their original bytes. [1]
+- Accepted batches check complete document bytes and held source/cell bindings before atomic publication. [2]
+
+### Docs And Boundary References
 
 No external Domain Documentation source is configured. This route composes repository-owned citation and atomic-publication owners, without a new cross-repository protocol.
-
-## Update History
-
-- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Created the focused route for the new transaction package at actual private C b34f4a59; no delivery or aggregate acceptance is asserted.

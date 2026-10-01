@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/SourceContent.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/SourceContent.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:14:26+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82` |
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -140,64 +130,48 @@ about the request the surface made and not about a state update that outlives th
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own header, its fixtures
 and its twelve cases, the real surface and client it drives, the wire types it builds from, and the
 server half of the same contract that supplies the values.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The header's own statement of what is real and what is stubbed, where the values come from, the defect baseline, and the rule that no assertion reads a prop the test itself passed.** | "R03 (actual source-content inspection) at the real renderer: the Intent Reviewer surface opening a"; "the source pane opening a listed entry" | dashboard/src/panels/review/SourceContent.test.tsx:1-19; dashboard/src/panels/review/SourceContent.test.tsx:270-591 |
-| The real surface and the wire types under test, imported rather than mocked. | `ReviewSurface`; `ReviewSourceContentResult`; `ReviewSourceExpansion`; `ReviewSourceSide` | dashboard/src/panels/review/SourceContent.test.tsx:21-33 |
-| The task context and the two generation ids every case reads at. | `BEFORE_TREE`; `AFTER_TREE` | dashboard/src/panels/review/SourceContent.test.tsx:39-40 |
-| **The exact texts a real read carries** — an added file's whole body, a modified file's two bodies, a symlink's recorded target, a submodule's commit. | `ADDED_TEXT`; `MODIFIED_BEFORE`; `MODIFIED_AFTER`; `SYMLINK_TARGET`; `SUBMODULE_COMMIT` | dashboard/src/panels/review/SourceContent.test.tsx:44-48 |
-| The whitespace-dense comparison that asserts the text rather than the CodeMirror editor's line layout. | `dense` | dashboard/src/panels/review/SourceContent.test.tsx:53-53 |
-| **The five side builders, one per declared state a case exercises, each carrying the detail the server composes for it.** | `present`; `absent`; `binary`; `symlink`; `submodule` | dashboard/src/panels/review/SourceContent.test.tsx:55-64; dashboard/src/panels/review/SourceContent.test.tsx:66-70; dashboard/src/panels/review/SourceContent.test.tsx:72-78; dashboard/src/panels/review/SourceContent.test.tsx:80-87; dashboard/src/panels/review/SourceContent.test.tsx:89-94 |
-| The changed-file and payload builders, with `listed_total` the entries' own length. | `entry`; `payload` | dashboard/src/panels/review/SourceContent.test.tsx:96-98; dashboard/src/panels/review/SourceContent.test.tsx:100-173 |
-| **The expansion and result builders, and the typed refusal carrying a code, a detail, a next action and an offending input.** | `expansion`; `content`; `refused` | dashboard/src/panels/review/SourceContent.test.tsx:175-196; dashboard/src/panels/review/SourceContent.test.tsx:198-203; dashboard/src/panels/review/SourceContent.test.tsx:205-215 |
-| **The transport stub: the expansion answer selected by the asked-about path, an unstubbed path throwing, and the fetch mock returned so a case can assert the request.** | `serve` | dashboard/src/panels/review/SourceContent.test.tsx:220-237 |
-| The harness that renders the real surface at the task context and hands back the request log. | `reviewed` | dashboard/src/panels/review/SourceContent.test.tsx:239-255 |
-| The click helper that finds the row by its published path and throws when the row is not openable. | `open` | dashboard/src/panels/review/SourceContent.test.tsx:257-263 |
-| The per-case cleanup: the rendered tree and every stubbed global. | `afterEach`; `cleanup`; `vi.unstubAllGlobals` | dashboard/src/panels/review/SourceContent.test.tsx:265-268 |
-| **The addition case: the absent-before and present-after state lines, the file's own bytes read out of the content host, and the explicit no-diff-claimed line.** | "draws an added file's entire candidate text beside the named absent side" | dashboard/src/panels/review/SourceContent.test.tsx:271-293 |
-| **The two-sided modification case: both bodies asserted inside the shipped `diff-pane` DOM, and the generation line naming the exact pair.** | "draws a modified file as the two-sided diff of its two bound texts" | dashboard/src/panels/review/SourceContent.test.tsx:295-318 |
-| **The non-text cases: a binary side's identity and size with no content, a symlink's target as content with no claimed edit, and a submodule pointer by its recorded commit with nothing drawn.** | "states a binary side's identity and size and draws no content for it"; "carries a symlink's target as content and never claims a document edit"; "reports a submodule pointer by its recorded commit and draws nothing for it" | dashboard/src/panels/review/SourceContent.test.tsx:320-341; dashboard/src/panels/review/SourceContent.test.tsx:343-366; dashboard/src/panels/review/SourceContent.test.tsx:368-387 |
-| **The superseded generation keeps the listed bytes on screen while naming the newer one, and a bounded expansion is stated as a prefix beside the object's real size.** | "labels a superseded generation while still showing the listed generation's text"; "states a bounded expansion as a prefix of the object" | dashboard/src/panels/review/SourceContent.test.tsx:389-411; dashboard/src/panels/review/SourceContent.test.tsx:413-439 |
-| **The typed refusal rendered with its code, detail and next action and with no content, and the request carrying the listing's own generation, path and task context.** | "renders a refused entry read as its typed refusal and no content"; "sends the generation and path the listing published, not a re-resolved one" | dashboard/src/panels/review/SourceContent.test.tsx:441-459; dashboard/src/panels/review/SourceContent.test.tsx:461-490 |
-| **The leaf-change-set bound stated when the requested generation could not be measured, with the readable side still drawn and the unreadable one named.** | "states which measured change set admitted the path when the requested one could not be measured" | dashboard/src/panels/review/SourceContent.test.tsx:492-522 |
-| **The two boundaries: the byte-form row listed without an open control (the open-control count asserted to be exactly the text entry), and an inventory that named no code trees offering no expansion at all.** | "lists a byte-form row without implying it can be opened"; "offers no expansion for an inventory that named no code trees" | dashboard/src/panels/review/SourceContent.test.tsx:524-562; dashboard/src/panels/review/SourceContent.test.tsx:564-590 |
-| The surface the cases render: the openable row that mounts the renderer, and the inventory that owns the open row and passes the published generation down. | `review-inventory-open`; `SourceExplorer`; `SourceContent` | dashboard/src/panels/review/SourceExplorer.tsx:103-103; dashboard/src/panels/review/SourceExplorer.tsx:224-302; dashboard/src/panels/review/ReviewSurface.tsx:293-337; dashboard/src/panels/review/ReviewSurface.tsx:10-10; dashboard/src/panels/review/ReviewSurface.tsx:51-51; dashboard/src/panels/review/ReviewSurface.tsx:279-279 |
-| The renderer under test, and the rules its cases are the evidence for. | `SourceContent`; `Sides`; `boundedNote`; `refusalBlock` | dashboard/src/panels/review/SourceContent.tsx:140-152; dashboard/src/panels/review/SourceContent.tsx:197-257; dashboard/src/panels/review/SourceContent.tsx:62-126; dashboard/src/panels/review/SourceContent.tsx:128-138 |
-| The client the real surface reads through, which parses the typed body whatever the HTTP status. | `reviewSourceContent` | dashboard/src/data/review.ts:742-760 |
-| **The server half of the same contract: the values these cases feed are the shape the production route returns, asserted against real Git objects there.** | "One inventory entry opened into the two bound endpoints' actual content (ICR-R03)." | mcp/tests/test_knowledge_review_source_content.py:1-3 |
+- **The header's own statement of what is real and what is stubbed, where the values come from, the defect baseline, and the rule that no assertion reads a prop the test itself passed.** [1]
+- The real surface and the wire types under test, imported rather than mocked. [2]
+- The task context and the two generation ids every case reads at. [3]
+- **The exact texts a real read carries** — an added file's whole body, a modified file's two bodies, a symlink's recorded target, a submodule's commit. [4]
+- The whitespace-dense comparison that asserts the text rather than the CodeMirror editor's line layout. [5]
+- **The five side builders, one per declared state a case exercises, each carrying the detail the server composes for it.** [6]
+- The changed-file and payload builders, with `listed_total` the entries' own length. [7]
+- **The expansion and result builders, and the typed refusal carrying a code, a detail, a next action and an offending input.** [8]
+- **The transport stub: the expansion answer selected by the asked-about path, an unstubbed path throwing, and the fetch mock returned so a case can assert the request.** [9]
+- The harness that renders the real surface at the task context and hands back the request log. [10]
+- The click helper that finds the row by its published path and throws when the row is not openable. [11]
+- The per-case cleanup: the rendered tree and every stubbed global. [12]
+- **The addition case: the absent-before and present-after state lines, the file's own bytes read out of the content host, and the explicit no-diff-claimed line.** [13]
+- **The two-sided modification case: both bodies asserted inside the shipped `diff-pane` DOM, and the generation line naming the exact pair.** [14]
+- **The non-text cases: a binary side's identity and size with no content, a symlink's target as content with no claimed edit, and a submodule pointer by its recorded commit with nothing drawn.** [15]
+- **The superseded generation keeps the listed bytes on screen while naming the newer one, and a bounded expansion is stated as a prefix beside the object's real size.** [16]
+- **The typed refusal rendered with its code, detail and next action and with no content, and the request carrying the listing's own generation, path and task context.** [17]
+- **The leaf-change-set bound stated when the requested generation could not be measured, with the readable side still drawn and the unreadable one named.** [18]
+- **The two boundaries: the byte-form row listed without an open control (the open-control count asserted to be exactly the text entry), and an inventory that named no code trees offering no expansion at all.** [19]
+- The surface the cases render: the openable row that mounts the renderer, and the inventory that owns the open row and passes the published generation down. [20]
+- The renderer under test, and the rules its cases are the evidence for. [21]
+- The client the real surface reads through, which parses the typed body whatever the HTTP status. [22]
+- **The server half of the same contract: the values these cases feed are the shape the production route returns, asserted against real Git objects there.** [23]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The cases measure one repository namespace's
 renderer against one repository's two bound code trees and carry no identity that ranges beyond it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 gave `SourceContent`, `Expansion` and `Sides` an optional `markers` prop and inserted lines above them, so the component row was re-pointed by the exact Git-hunk shift (`112-124` → `140-152`, `167-227` → `197-257`, `54-98` → `62-126`, `100-110` → `128-138`); its reopened `SourceContent` claim was re-read and holds (these cases mount no marker scope, so the view is the landed one). The fixer also normalised the `reviewSourceContent` row in `data/review.ts`, a file this leaf did not change, whose range was already stale (`727-745` → `742-760`). No stamp advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/panels/review/ReviewSurface.tsx`, `dashboard/src/panels/review/SourceExplorer.tsx`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/panels/review/ReviewSurface.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): **fixture-only type follow-through.** The `expansion` builder gained the two now-required fields `admission: "changed"` and `admission_detail`; no case, assertion or rendered behavior changed, and no case exercises attributed unchanged context (the pane's labelling of it is L49's). The Logic sentence names the fields; thirteen rows below the builder were re-pointed +2 lines, each verified against the candidate. No stamp advanced; closeout owns it.
-- 2026-09-26T21:11:13+00:00: Generated citation repair: `reviewSourceContent` repointed to dashboard/src/data/review.ts:727-745. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **two enforced citation rows re-cited to the constructs they name, wording unchanged.** This leaf moved the complete source change explorer out of `ReviewSurface.tsx` into its own module, so the inventory the cases drive is now `SourceExplorer` (`SourceExplorer.tsx:234-315`) and the anchor naming it was corrected to the construct the range actually holds; the renderer row's `boundedNote` and `refusalBlock` ranges follow the renderer's own growth (`SourceContent.tsx:131-142`, `:143-155`), because `Sides` gained the `mode`/`collapse` props. Every contributing range the rows already carried (`SourceContent` `76-112`/`164-222`, the `ReviewSurface.tsx` `291-335`/`8-8`/`49-49`/`277-277` set) is kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-21T22:40+02:00 — 260921-ICR-L3 curator (uncommitted change set on `ar/260921-icr-l3`, base `d80a0513e928ef29a973527d09597c82c96fde87`): **created.** The module is new in this leaf and this is its one-to-one card. It records the testing *contract* rather than the case list: the real `ReviewSurface` and the real client with only `fetch` stubbed; assertions read the rendered DOM (and, for the generation, the actual request the surface made) rather than a prop the test passed; the stub throws for an unstubbed path and the click helper throws for a row with no control, so a drifted case cannot pass vacuously; and the negative assertions — no `diff-pane` for a refused or non-two-document read, and an open-control count of exactly one for the byte-form case — are where the boundary actually lives. It also records the two measurement problems the module solves (`dense` for CodeMirror's reshaped whitespace and the settle-before-reading-the-request-log ordering) and the server module that supplies and independently asserts the same values. Every row was re-verified against this candidate with `sed -n 'START,ENDp'` before it was written, and every anchor in a row occurs inside the range that row cites. **Stamp accounting:** the verification pair names the master line `d80a0513e928ef29a973527d09597c82c96fde87` (2026-09-21T19:51:20+02:00) — the last real commit the reading was taken against — because the module exists only in this leaf's **uncommitted** candidate and no commit contains the bytes a stamp would claim to have verified. The recorded working candidate states what was actually read; closeout owns the stamp.
+No meaningful cross-repo references found.

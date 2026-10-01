@@ -1,0 +1,278 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active",
+  "references": {
+    "1": {
+      "note": "The request dependencies are the only consumption seam the handlers use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:be269e721d7ad8df1d80760e865b4a339ae56d6f16c391904602272cb85ce46e",
+            "locator": {
+              "kind": "symbol",
+              "name": "get_conversation_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:57d50753cfe99f0a8c0b0ff4ac9461d7b4d3b9b7185d3509a949813ff62fccbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_conversation_authorization"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:b8333ca02abf8e45b12d0b0436dfa0755b38f7dcff5b4c2a848f2283a1645626",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:f755ee8ac1086b9e97408980809c36c18374c9d074709c3c6938ef57bdc81f6d",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The validated IPC reads are the only substrate channels polled.\n\nAnchor: \"def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover\"; \"def read_control_capabilities(entry: ControlledSession) -> CapabilitySnapshot:  # pragma: no cover\"; \"def read_submission_authority(self\"; \"def read_submission_status(\"; \"def read_control_transcript(  # pragma: no cover\"; \"def read_control_evidence(\"; \"def read_control_native_page(  # pragma: no cover\"; \"        return read_submission_provenance(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:794fda955f0b86a543b9c4db708edc9475ea33a63fee4a3a2dffaaa813ea0d93",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:7abfff2d525ae9d2172b3ab47df9750e6c8362d841e60595a447b60b37f7b483",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:dc337184c5d3effc0582e2e5a27548b9b0510b29b02d3f2290700475a23b392d",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:f6e3a95ad4c0947d4bde7450a2bac8dfbeb4047072340ce8e638e31fbd32531f",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:71199ad160d366c3143b95af7d64a0973c9a85b70077ae866950fb66dbeb51f5",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 351
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:86bb36034e8832eab299ff9760e9ec87f252dd92f2b1b72659a1fc764b997d60",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 375
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:3922376248fd05839eef867ec619c56c5bf2777dcb7a32401c1c062ff18f6b0e",
+            "locator": {
+              "end": 639,
+              "kind": "line_range",
+              "start": 639
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:562eaca1da2931249033bb294321456f22a8d13b24fdbebe5d920b1e691b14c0",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 690
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The evidence/native-page/provenance products define the polled shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:0c8e1fe06c22330610aad9172e790eeec03a37e5f742d87c786c40f45338e9b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceFrame"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:c12839b55e1a162fd9ee4bdee061544319130f7cd5f479ac063ac70cd0a242a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidencePage"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:3fa7919a42c87455b3f4221291878956ad7599e8bc866b56bd2e7bb580226a04",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeEvidenceFrame"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:9a6f714d035347da59ad6a1a099c0bb2ea83b36d245b5d1a427212d193119374",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeEvidencePage"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:b3e7b0a6d897cd31756859ecc9292589a506a58e24bf026129e58fa863c0fa5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionProvenance"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:ffed8d0b5c6d06f8bb6e092e4ff0abdeebeb7dbcafbfac35a475f4b220ff3502",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionProvenanceBatch"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Orchestration's delegated seat projection consumes the canonical classification.\n\nAnchor: \"def snapshot_turn_state(\"; \"return snapshot_seat_turn_state(snapshot\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2236e5ba76316e971b5c98c014e6232513f0dcf5",
+            "content": "sha256:1b46508b5e7596a9758ff55871429c6bc2130c67dd0cbdb28fe8287a41a461d7",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_control_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2236e5ba76316e971b5c98c014e6232513f0dcf5",
+            "content": "sha256:7bde59aba8808dfa1110ee6cc493582efa9be8c1ff05ccc9d823eabc14bcab29",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_control_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

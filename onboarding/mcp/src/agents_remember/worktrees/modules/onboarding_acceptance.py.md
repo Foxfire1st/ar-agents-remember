@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash |  `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`|
-| lastVerifiedCommitDate |  2026-08-29T20:33:10+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [worktree modules overview](overview.md)
@@ -33,14 +23,9 @@ decision, reinterpret evidence, or turn an extra judgment into a passing classif
   refusal until its body and Update History agree.
 - The transformation is pure and deterministic, so preview, preflight, and refresh can share it.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Body-gate evidence groups the memory baseline with accepted identities. | `OnboardingBodyGateEvidence` | mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py:15-21 |
-| Sidecar and route decisions can remove only matching stale identities. | `apply_sidecar_no_impact`; `apply_route_no_impact`; `_accept_unchanged` | mcp/src/agents_remember/worktrees/modules/onboarding_acceptance.py:24-69 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-29T18:29+02:00 — Created for the single no-impact application boundary shared by
-  closeout preview, admission, and external-memory refresh. Verification remains closeout-owned.
+- Body-gate evidence groups the memory baseline with accepted identities. [1]
+- Sidecar and route decisions can remove only matching stale identities. [2]

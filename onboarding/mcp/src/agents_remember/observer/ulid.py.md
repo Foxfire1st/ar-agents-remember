@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/observer/ulid.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/ulid.py`       |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-13T11:15+02:00                           |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                     |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -39,13 +29,8 @@ uppercase minus I, L, O, U).
   once the Python floor reaches 3.14; keeping minting in one module makes that a
   one-function swap).
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Events carry a ULID `id`. | `id` | mcp/src/agents_remember/observer/events.py:54-54 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
-  until closeout stamps the 2a code commit.
+- Events carry a ULID `id`. [1]

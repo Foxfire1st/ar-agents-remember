@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge_files/unexplained.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge_files/unexplained.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T04:41:36+02:00 |
-| lastVerifiedCommitHash | `31d761a241055d67b85ef3908033856b78a86a57`|
-| lastVerifiedCommitDate | 2026-09-30T05:10:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -67,42 +57,33 @@ reads no tree and no Git.
 - **L09:** the gate applies `unexplained_item_open(item, rows_by_subject)`, a subject-to-row-ID map (the same
   shape as MIK-R30's predicate takes).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R10@v2` of task
 `260928_maintained-invariant-knowledge` and its leaf document `10_unexplained-change-disposition.json`; they
 live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: both subjects and what satisfies an item by coverage. | "Unexplained changes: the item subjects" | mcp/src/agents_remember/models/knowledge_files/unexplained.py:1-29 |
-| The kinds, the disposition and the coverage states. | `HUNK_ITEM_KIND`; `FILE_ITEM_KIND`; `COUNTED_CHANGE` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:57-64 |
-| The subject patterns and the row-subject pattern. | `ROW_SUBJECT_PATTERN` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:66-74 |
-| The hunk subject spelled and parsed. | `hunk_subject`; `parse_hunk_subject` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:77-87 |
-| The item ID is a function of the subject alone. | `hunk_item_id` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:90-100 |
-| The file subject, `@absent` when C lacks the path. | `file_subject` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:103-106 |
-| The row subject that answers an item. | `row_subject` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:109-117 |
-| Covered: the row; uncovered: the onboarding trace. | `unexplained_satisfied_by` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:120-148 |
-| The gate's predicate. | `unexplained_item_open` | mcp/src/agents_remember/models/knowledge_files/unexplained.py:151-154 |
-| The history row kind built on these patterns. | `UnexplainedChangeRow` | mcp/src/agents_remember/models/knowledge_files/history.py:338-350 |
-| Every case checks that the stored predicate agrees with `satisfiedBy`. | `unexplained_item_open` | mcp/tests/test_unexplained_change_disposition.py:82-91 |
+- The module docstring: both subjects and what satisfies an item by coverage. [1]
+- The kinds, the disposition and the coverage states. [2]
+- The subject patterns and the row-subject pattern. [3]
+- The hunk subject spelled and parsed. [4]
+- The item ID is a function of the subject alone. [5]
+- The file subject, `@absent` when C lacks the path. [6]
+- The row subject that answers an item. [7]
+- Covered: the row; uncovered: the onboarding trace. [8]
+- The gate's predicate. [9]
+- The history row kind built on these patterns. [10]
+- Every case checks that the stored predicate agrees with `satisfiedBy`. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module is pure spelling and a predicate over stored items.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T04:41:36+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): created this card for the new file MIK-R10 adds, recording rulings 01:56:39 Q1 (attach/author answer by linkage, not by a row) and 03:24:28 N2 (a `no_invariant` row never answers an uncovered item). The verification stamp is left empty: the file is new and uncommitted, so closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

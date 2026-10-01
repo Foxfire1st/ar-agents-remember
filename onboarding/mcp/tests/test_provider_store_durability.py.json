@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_provider_store_durability.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No record is lost when an append races a compaction",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdea740125d9d6cd5c3ee480b2578a7fdad599ca",
+            "content": "sha256:beeacfa6a3269d84af1532bff9fcd15e1f15635de0d4662013fd0d680b891742",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_record_is_lost_when_an_append_races_a_compaction"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

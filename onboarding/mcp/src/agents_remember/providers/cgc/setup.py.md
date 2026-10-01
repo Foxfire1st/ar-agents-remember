@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/cgc/setup.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/cgc/setup.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -57,25 +47,10 @@ else `stage`).
 - Seed orchestration and bundle rewriting live in `seed.py` and `bundle.py`; this file keeps provider-level setup flow only.
 - A successful seed skips refresh with an explicit skipped result; a failed seed falls back to refresh only when `cgc_refresh_fallback` is enabled.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The provider setup facade dispatches CGC install and preparation through this module. | "def install_enabled_providers" | mcp/src/agents_remember/providers/provider_setup.py:210-210 |
-| CGC seed orchestration lives in the seed module. | "def cgc_seed_bundle" | mcp/src/agents_remember/providers/cgc/seed.py:211-211 |
-| CGC lifecycle install and refresh commands are dispatched through the lifecycle facade. | `__getattr__` | mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py:20-27 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `run_lifecycle`'s new
-  `LifecycleCommand` signature. Same argv, same results. Verification metadata pinned until
-  closeout stamps the L2 commit.
-- 2026-06-10T07:30+02:00 — Install/seed/refresh phases announce through `setup_progress_from(args)` (GitHub #53). `_refresh_after_seed(args, seed, progress)` announces the fallback BEFORE the reindex runs, carrying `seed_fallback={active, reason}` — the single most important transition to surface, since a refused seed changes expected duration from ~1 minute to N minutes and the reindex emits nothing the orchestrator can see. `_seed_failure_reason` derives the reason from the seed result (`reason`, else `stage`).
-- 2026-05-31T12:50+02:00 — Removed local `_cgc_provider` helper; provider sub-settings now read via shared `provider_settings(settings, CGC_PROVIDER_ID)` from `setup_common` (import swapped from `context_providers`), behaviour-preserving; noted the helper source in Logic (1.0.0 review remediation).
-- 2026-05-28T13:40+02:00: Updated after isolated CGC settings stopped emitting `venvRoot`.
-- 2026-05-28T12:32+02:00: Updated after isolated CGC settings moved watcher logs under `logs/providers/`.
-- 2026-05-25T19:50+02:00: Created when CGC provider-level setup behavior was extracted out of `provider_setup.py`.
+- The provider setup facade dispatches CGC install and preparation through this module. [1]
+- CGC seed orchestration lives in the seed module. [2]
+- CGC lifecycle install and refresh commands are dispatched through the lifecycle facade. [3]

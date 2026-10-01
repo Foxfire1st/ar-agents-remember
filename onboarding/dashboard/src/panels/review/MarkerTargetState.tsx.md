@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/MarkerTargetState.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/MarkerTargetState.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -100,43 +90,30 @@ marker's classification could not confirm, both are named.
   `MemberFamilyLabel` stay for the invariant view and the rail. The row check is shared as `useMemberTarget`, and the
   note gained an optional `id` so the row is described by it.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R34@v1` (adopting `ICR-R34@v1`), the adopted `ICR-R24@v3` item 2 and the architect's rulings live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement: the state at the target, never `No recorded family`, and the review's context kept beside it. | "The review's own family context is kept beside it, never replaced silently" | dashboard/src/panels/review/MarkerTargetState.tsx:1-7 |
-| Only a `membership_unknown` target shows anything. | `ATTRIBUTION_UNKNOWN`; `unknownTarget` | dashboard/src/panels/review/MarkerTargetState.tsx:19-19; dashboard/src/panels/review/MarkerTargetState.tsx:52-54 |
-| The member row's note, only on the exact family and revision. | `MemberTargetNote` | dashboard/src/panels/review/MarkerTargetState.tsx:71-93 |
-| The row check shared with the change badge (MIK-L33 merge round). | `useMemberTarget` | dashboard/src/panels/review/MarkerTargetState.tsx:56-66 |
-| The invariant view's target: no row in this tree for the membership. | `useInvariantTargetState` | dashboard/src/panels/review/MarkerTargetState.tsx:101-108 |
-| The rail's focusable state, named by its heading and described by its reason (review R1 F3). | `InvariantTargetState`; "data-target-state-focus" | dashboard/src/panels/review/MarkerTargetState.tsx:118-157 |
-| The centre's family line, with the review's label moved here. | `memberContextLabel`; `MemberFamilyLabel` | dashboard/src/panels/review/MarkerTargetState.tsx:160-168; dashboard/src/panels/review/MarkerTargetState.tsx:172-194 |
-| Its three mounts: the member button, the rail and the centre. | "<MemberTargetNote"; "const unknown = useInvariantTargetState(subject, context);"; "<MemberFamilyLabel subject={subject} payload={payload} entry={entry} />" | dashboard/src/panels/review/FamilyReviewCenter.tsx:806-806; dashboard/src/panels/review/FamilyTree.tsx:554-554; dashboard/src/panels/review/ReviewWorkspace.tsx:602-602 |
-| Focus goes to the state before the tree's current node. | `selectionNode` | dashboard/src/panels/review/ReviewWorkspace.tsx:668-675 |
-| The real-data case: unknown membership in its own state, apart from no family. | "opens an unknown membership in its own Attribution unknown state, apart from no family" | dashboard/src/panels/review/ReviewSurface.markers.test.tsx:280-382 |
-| The unit cases. | "marks the member's row when the named family is in the tree, and only that row"; "shows the state on the invariant view when the named family is not in the review" | dashboard/src/panels/review/MarkerTargetState.test.tsx:55-93 |
-| The note's `id`, by which a dataset row is described (review R3-1), and the space between tag and reason. | "id?: string;"; "<span className={tag}>{ATTRIBUTION_UNKNOWN}</span> {target.reason}" | dashboard/src/panels/review/MarkerTargetState.tsx:76-90 |
-| On a tree comparison the target is a tag on the change facts' membership line (MIK-L33). | `MembershipReason`; "opened from an intent marker" | dashboard/src/panels/review/ChangeBadges.tsx:209-232 |
+- The module's own statement: the state at the target, never `No recorded family`, and the review's context kept beside it. [1]
+- Only a `membership_unknown` target shows anything. [2]
+- The member row's note, only on the exact family and revision. [3]
+- The row check shared with the change badge (MIK-L33 merge round). [4]
+- The invariant view's target: no row in this tree for the membership. [5]
+- The rail's focusable state, named by its heading and described by its reason (review R1 F3). [6]
+- The centre's family line, with the review's label moved here. [7]
+- Its three mounts: the member button, the rail and the centre. [8]
+- Focus goes to the state before the tree's current node. [9]
+- The real-data case: unknown membership in its own state, apart from no family. [10]
+- The unit cases. [11]
+- The note's `id`, by which a dataset row is described (review R3-1), and the space between tag and reason. [12]
+- On a tree comparison the target is a tag on the change facts' membership line (MIK-L33). [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-L33's merge round, and L34's merge Todo resolved.** `useMemberTarget` (L34's row check, lifted out of `MemberTargetNote` and shared with `ChangeBadges.useMemberChange`); `MemberTargetNote`'s optional `id` and the space between tag and reason; the note drawn only on rows without change facts and, as the row's accessible description, no longer part of its name (review R3-1, ruling 2026-09-30T21:55:02); on a tree comparison the state is the `Attribution unknown` tag on the change facts' membership line (ruling 17:47:43). Logic, Conventions, candidate invariant 3's proof (the L33 tests and mutations) and the Todo (resolved as built) updated. Three rows added. The generated bullets of this pass are kept (no row was reworded).
-- 2026-09-30T20:20:21+00:00: Generated citation repair: `useInvariantTargetState` repointed to dashboard/src/panels/review/MarkerTargetState.tsx:101-108. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:20:21+00:00: Generated citation repair: "<MemberTargetNote"; "const unknown = useInvariantTargetState(subject, context);"; "<MemberFamilyLabel subject={subject} payload={payload} entry={entry} />" repointed to dashboard/src/panels/review/FamilyTree.tsx:554-554; dashboard/src/panels/review/ReviewWorkspace.tsx:602-602; dashboard/src/panels/review/FamilyReviewCenter.tsx:806-806. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:20:21+00:00: Generated citation repair: `selectionNode` repointed to dashboard/src/panels/review/ReviewWorkspace.tsx:668-675. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new target-state module MIK-R34 adds, recording rulings 2026-09-30T16:19:34 Q3 and 2026-09-30T17:39:21 (review R1 F3; N3 accepted; the L33 merge order), and two candidate invariants. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

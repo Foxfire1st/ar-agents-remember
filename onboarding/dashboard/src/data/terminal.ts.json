@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/data/terminal.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The client exposes a structural task-assignment result family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:23caffeb541e9a96ed563b29f21faa818f069dda107ff5e13236fc28811c31bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttachTaskResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Assignment posts a task-document reference and role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:2b565fec4f1922a795859cb8fad679a1d28bb6b2bd5824d556c87e9719d70bf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "attachSessionToTask"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Terminal transport remains a separate connection concern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:0637fde8273fcdcd9daa54f63fc3c93d88ffbeb0fd3050a6e5cd2426ca5323a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "connectTerminal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

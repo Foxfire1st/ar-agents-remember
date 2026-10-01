@@ -1,15 +1,5 @@
 # mcp/tests/test_signal_routing.py
 
-| Field                  | Value                                       |
-| ---------------------- | ---------------------------------------------|
-| repository             | agents-remember                               |
-| path                   | `mcp/tests/test_signal_routing.py`            |
-| doc_type               | `file-level-onboarding`                       |
-| lastUpdated            | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `../overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -108,77 +98,26 @@ test modules (`test_terminal_catalog.py`, `test_signal_routing.py`'s own module)
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No meaningful external design-doc references found yet (created this leaf).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- Worker-to-manager and manager-to-orchestrator one-hop routing resolves the current occupant from document-and-role identity without spawn ids. [1]
+- One-hop-only regression: a missing manager never causes a worker signal to fall through to the orchestrator. [2]
+- `decision-item` routing resolves the current architect on the sender's sprint document. [3]
+- Sprint-level roles follow the approved direct-parent ladder rather than skipping levels. [4]
+- The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads. [5]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Worker-to-manager and manager-to-orchestrator one-hop routing resolves the current occupant from document-and-role identity without spawn ids. | `test_worker_signal_routes_to_current_manager_without_spawn_ids`; `test_manager_routes_to_current_orchestrator` | mcp/tests/test_signal_routing.py:69-87; mcp/tests/test_signal_routing.py:161-173 |
-| One-hop-only regression: a missing manager never causes a worker signal to fall through to the orchestrator. | `test_missing_manager_never_falls_through_to_orchestrator` | mcp/tests/test_signal_routing.py:148-159 |
-| `decision-item` routing resolves the current architect on the sender's sprint document. | `test_decision_item_routes_to_sprint_architect` | mcp/tests/test_signal_routing.py:194-206 |
-| Sprint-level roles follow the approved direct-parent ladder rather than skipping levels. | `test_sprint_roles_follow_the_approved_direct_parent_ladder` | mcp/tests/test_signal_routing.py:161-178 |
-| The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads. | `IsSeatDeadTests` | mcp/tests/test_signal_routing.py:258-279 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
 ## 260713-TES-L5 Current Delta — Skip-Level Walk Tests Removed
 
 The `derive_skip_level_owner`/`_derive_spawn_owner` coverage is deleted with the function:
 no two-hop owner's-owner walk remains. One-hop `derive_signal_owner`, `is_seat_dead`, and the
 scoped owner-derivation family stay covered as before.
-
-## Update History
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the polymorphic
-  reviewer owner matrix and the explicit no-inference assertion for an unstamped master reviewer.
-  Verification remains closeout-owned.
-
-- 2026-08-12T08:41+02:00 — No content impact: 260731-EFA-L20 expressed the fixture's exact parent topology as a mapping instead of branches; the one-hop routing and refusal assertions remain unchanged.
-- 2026-08-11T19:58+02:00 — Aligned the regression card for `test_signal_routing.py` with the source's current task-document, seat-routing, inbox, or lifecycle assertions.
-- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: the L9 citation re-anchoring was reviewed against the current staged routing tests; the existing route assertions remain accurate. Verification metadata remains pinned until closeout.
-- 2026-08-10T10:30+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.\n
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded exact-sprint architect routing and no-global-
-  fallback coverage. Verification metadata remains pinned until closeout stamps the code commit.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the removal of the skip-level
-  walk tests (function deleted with the escalation ladder). Verification metadata pinned
-  until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound one-hop routing and decision-item behavior to exact tests and removed empty reference placeholders.
-
-- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
-  `mcp/tests/test_signal_routing.py` and moved the lines this card cites, so the Citations column
-  no longer pointed at the code its rows name. Corrected the ranges (L42-L61 → L42-L65; L64-L82 →
-  L68-L86; L84-L104 → L88-L108). The behaviour described is unchanged — the file's AST is
-  identical to the base revision — this is a citation repair only. Verification metadata pinned
-  until closeout stamps the L2 commit.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: added pair-bound chain-credit/manager-addressing proof
-  at two fleet sizes and current-role discovery coverage.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added positive and parallel-leaf-negative regressions
-  for explicit replacement-leaf chain credit. Verification metadata remains pinned until closeout
-  stamps the eventual L15 code commit.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 round 2: added current-manager, no-direct-skip, and
-  unbound-reviewer chain-progress regressions; preserved the explicit unbound-worker S1 follow-up.
-  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
-
-- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 (R2/R4, escalation ladder + dead-upstream detection):
-  added `SkipLevelOwnerTests` (live two-hop chain, dead-intermediate skip, dead-hierarchy-ceiling,
-  unknown sender, role-only-address-with-no-session cases) and `IsSeatDeadTests` (unknown/`None`/
-  running-agent liveness cases) for the module's new `derive_skip_level_owner`/`is_seat_dead`.
-  Verification metadata pinned until closeout stamps the 260707-HFX2-L4 commit.
-- 2026-07-08T16:15+02:00 — Created for 260707-HFX2-L1 (curator delta round 2, closeout-preview
-  gap): one-hop hierarchical routing derivation coverage for the R4 signal-routing module.
-  Verification metadata pinned until closeout stamps the 260707-HFX2-L1 commit.

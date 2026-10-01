@@ -1,0 +1,117 @@
+{
+  "path": "mcp/src/agents_remember/tasks/serving_preflight.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The operator contract for served-build preflight (section 4): run authoring through the deployed serving server; refresh the rc7 venv.\n\nAnchor: \"## 4. Served-build preflight (blocks the rc7 failure class)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61f49b29db66cdab371abede2b1fe39ecd09325c",
+            "content": "sha256:e089db2dfd12f416070a5182ec8c086597073d6f1d8a8e7d22bf2b2aee34b02b",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "docs/reference/execution-topology-migration.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The preflight gate is now the model self-probe alone: `require_serving_topology_schema` refuses when the running build's `TaskDocument.model_fields` lack the topology fields. The installed-distribution leg and its helpers `_installed_distribution`, `_is_editable_install`, `_below_floor`, and `TOPOLOGY_SERVING_VERSION_FLOOR` no longer exist in the tree — a task-plane edit never consults the installed distribution version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ed29e76db451fc4d8dc28be4c1476b0cb615e4c",
+            "content": "sha256:031f34472164fadd42917d1321e0d3fc494d066df14503c1293ab2a5691e49ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_serving_topology_schema"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Wired before any write in graph authoring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:2f95bbaffd921ff5d9f5c9f41de1fdef57c39f78ec1fa2e554c61e3e339ac20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_execution_graph"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Wired into ordinary topology-emitting edits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:5b71b192fac3365d3cf704a9cfc18bbdb3dafe82b9e19a55f557a183820bb392",
+            "locator": {
+              "kind": "symbol",
+              "name": "enforce_execution_topology_edit"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:eaa96c502a1d79807c3490f0a45edd68e3a14de904f31a6ba9e0b9d3079d1d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_edit_emits_topology_schema"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "content": "sha256:3941a00f811027fb01656db439898607aee6767908af26729075dcf90e890cbc",
+            "locator": {
+              "end": 842,
+              "kind": "line_range",
+              "start": 828
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Wired into sprint attach/detach through the linkage wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "content": "sha256:0ef2f37134fef4448284a56592d961fa3b0a41359bce4c67f64d14ed1f0aafc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_serving_topology_schema"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,43 @@
+{
+  "path": "dev-skills/dashboard-experience-review/owned-methods.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pipeline that invokes these passes at Stage 3, and the OWNED-vs-DELEGATE split.\n\nAnchor: `# dashboard-experience-review Dashboard Experience Review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9675efec08314d237737fc275cadad172934ec",
+            "content": "sha256:866b993ee02a239e143fc9e743bbaba4f6b8117f330a1c3151f8bf078b4cab0b",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "dev-skills/dashboard-experience-review/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The doctrine whose violations raise severity by a tier.\n\nAnchor: `# Cockpit Dashboard — Review Doctrine`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b03f380ad4729710613edb19be006631824405d",
+            "content": "sha256:a3e155bd1d6e77c9ee05d322c42597623ffbc4a9641f9ea5b76519a9839bd222",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/dashboard/review-doctrine.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_output.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The bundle has code and memory outputs only.\n\nAnchor: \"code and memory outputs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:326eaf8a79569e344a853bcd4721046c38c716de24511f52c1b85bb9430d383e",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedMemoryOutputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:b47ad5150368a3f80d02650980b6756abd929e7fd0ce0057b156784e451ad50c",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Created memory uses the one renderer; no-write intent has no message or private root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:7ef83cc4eeec256ca5cb9438676f9c8b5c76d79841504121529521d9af2cb319",
+            "locator": {
+              "kind": "symbol",
+              "name": "_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Memory attribution is appended to the caller's body by one shared renderer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:7dfaeda4b482976051b933ca036ea3320e85eee5a37e226b97f384cf38d89ed8",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_memory_content_message"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:c97f4063a3fbc87efc19e4b79c4008c46853ed152f151e0cdcf55ca30e7eeba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryAttributionError"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Selected output is reobserved, with actual existing HEAD bytes reused for no-write memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:67682559bf8d1a83408ec653b20e4826ca2fc916547fab2a2eeff452306a8369",
+            "locator": {
+              "kind": "symbol",
+              "name": "reobserve"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:11297374961b76038d7aa32662b04823dde03cfd97311ad27b48c8311c4ba91c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Output selection binds raw legacy trees separately and stages only certified non-cache content for actual writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:8b7d02094a03fcf486be16f9fa460ebfd9f51ac3c045df0cd7eee3b4345eb28a",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_outputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60dfba4348720d4ded58fa04f6b2ca7f9f747a92",
+            "content": "sha256:363990b8a3bb87b97c86185984ceb1f672624d0f7f416ffa5ca8bb07c4704c37",
+            "locator": {
+              "kind": "symbol",
+              "name": "actual_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stored normalized message becomes the private commit message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a59d02db1c5ca6d3db2a8c3faa5394fa6e06251a",
+            "content": "sha256:0c12e9f239a3660dfb7329044e66e1f1c03a068a8927fbfba164a2b4be2237e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "private_git_binding"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/private_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The committed census checks that every listed producer reaches the shared renderer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_census_producer_reaches_the_shared_renderer"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "content": "sha256:5bef02b88f40480994b3be2db5654f2bf179222e9d44360e934648a629d4163e",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

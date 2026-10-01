@@ -1,0 +1,131 @@
+{
+  "path": "mcp/src/agents_remember/providers/status.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provider response models define summary, diagnostics, watcher, and native provider payload shapes.\n\nAnchor: \"class ProviderSummary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
+            "content": "sha256:0a3a15bd9a04af0bb823dedc1b048f0f71756da713ec87ac72704a7ee9e9e659",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/models/providers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Context packet construction consumes the compact provider summary.\n\nAnchor: \"def build_context_packet\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:4a988cc5e423487009c71e7f22d521292aa99da322ef8ab1768db4ad9b41ac92",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Provider MCP application entry points expose status, diagnostics, watcher, GrepAI, and CGC tools.\n\nAnchor: \"def provider_status_tool\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:24c9859b1e94e8fb4710788ca5afae347bd030cc2bd6e2ddc660af4ebe035831",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current-state projection and persistence live in the current-state module.\n\nAnchor: \"def build_current_provider_state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:afb03f20a64033236a924acb5c079bb87c6606885a346f4f48a7c925a03e0418",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/providers/current_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Restart/rebind recovery wording is shared with runtime-install recovery reporting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fb4b49968c5fcb543544a98b504277bab5bd54",
+            "content": "sha256:088eabf2316e399777558055f4a7a9dbb7ea1ee06e914e6801e8ca64699f5b91",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROVIDER_WATCHER_RESTART_RECOVERY"
+            },
+            "path": "mcp/src/agents_remember/providers/recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The containment metrics store whose rolling current snapshot rides the status packet (containment R4).\n\nAnchor: \"class MetricsSnapshot\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c86583a29b0796ba6496bce761a659f55b347e4",
+            "content": "sha256:d7bec5044f16079ae921b671c2680cb9abaf9d79823f4c802fb39b0148190081",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/providers/metrics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`.\n\nAnchor: \"def refresh_current_provider_state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "514d04f97f4a75aec95d03c476627d2325a95f01",
+            "content": "sha256:0e796fc86c9a82c8b37f93e8024f664505bc2ff6487133b900aef327c13c3eb7",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

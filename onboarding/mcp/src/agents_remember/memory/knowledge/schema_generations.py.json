@@ -1,0 +1,952 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen generation record and the eleven fields a generation must answer for itself; the key and typed-JSON registries are part of the pinned structure, not derivable from DDL.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:10682b4439c202d03e9ab2d16cbe237fb19530b215df9c8673ba66bc77521bc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SchemaGeneration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:35bdd889f6fe8d3f6a71572b7f6a08696725d5494f451af7608b3cc2c17b9025",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Open-path dispatch by version alone, and the hard refusal of an unregistered version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:71024a5a00cce247149fa3741b69082dccc9873c018d758b21bdf2779bf66931",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_database"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:517de5a84511ce6fc8fe3de4c2a32f36ec92158c4b8ee3c852d09287889ed640",
+            "locator": {
+              "end": 524,
+              "kind": "line_range",
+              "start": 507
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Artifact-path dispatch by pair, type-strict on the version before the lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b32318e90c329c96342420565ed6165bc9688f8bcc9e7be7487ed5fda3929190",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_artifact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:db7116388ddae0f87ddaf577b501b7a3eed882802a47ca33b91eff2788aa8a89",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The registry-wide column frame the portable canonical-form gate needs for an unregistered document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b2f84f4100ed5c427cf86883e03b306002933712592711117bd02cbbde729745",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_columns_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:e5a1ce0d1b833df4d155af5382315548d7f0ea6aa21f2eafc6def21ba718224f",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 533
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The frozen generation record and the eleven fields a generation must answer for itself; the key and typed-JSON registries are part of the pinned structure, not derivable from DDL.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:10682b4439c202d03e9ab2d16cbe237fb19530b215df9c8673ba66bc77521bc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SchemaGeneration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:cc599fb544a63f4398419bd3cf51cd365d05f2b3222200371fb265e75c5a1282",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_1_FINGERPRINT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:67cb201db90b7a932910d27626c0d8c6b0227f1e617d5351c757dacd2ede077e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_2"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**Generation 3 composed as an explicit append over generation 2, and generation 4 as the same append over generation 3 — the prefix equality that is the additive rule.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:798831a9c64b15a483e39a4a31e19aeba05f0888138c6772e47da7e7a0cca00a",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_3"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:735da1dbaf87a32f5bc059969d4c1df25e59632a8c17d6865fd93e4935802a7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_4"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:d2ef65915e1389cf4d2a2437e8f52b17c4511d20d4c6541bcc2bc7d1bd3954cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_4"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:8b5e434a55f7ea91588e2c87c9c4ce6107162abf1439e4d36f81dc436c8260c7",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 313
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The registry, ordered oldest first, and the created generation defined as its last entry rather than as a second literal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATIONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:c954da44fc1cb1e734e9bfa69681a7a466150cb94dcadac44e0688afef4fdaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENT_GENERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The schema name generation 4 declares, and the three names before it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:5a6886929609449f59307b124f1bd9d6dc7b77e6a24b0eb12239e48be7da74ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_4_SCHEMA_NAME"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The only place a build's own generation decides anything, and it decides only what a created store declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:68e6dc6c4d567698d27b37fab626121bc786d409d865cbbef2e1775a93b56ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_new_store"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:9423e187ccb3d46fdae44cb271be56c5ce1078265999fe29addc574a03fed9f8",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 501
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Generation 1's pinned fingerprint constant, recorded with the revision and command it was read at — measured data with provenance, not an assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:cc599fb544a63f4398419bd3cf51cd365d05f2b3222200371fb265e75c5a1282",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_1_FINGERPRINT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The drift gate that fails rather than warns, and the generation-1 wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:e612a420a872832a27ab071a3d430f8df068a16e15cb664737b5fc735ce301e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_pinned_generation_unchanged"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:d2c5b5a159868a55a3cb19ea8c54be424e0cb0d671b12dc89d85826619a9cd7d",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The one fingerprint definition, now a function of a record rather than of the running build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:1619ed47bd5aad039c6d87fe34ff846502986a6fae9c3b90874ab76695e0a100",
+            "locator": {
+              "kind": "symbol",
+              "name": "structure_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Open-path dispatch by version alone, and the hard refusal of an unregistered version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:71024a5a00cce247149fa3741b69082dccc9873c018d758b21bdf2779bf66931",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_database"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:517de5a84511ce6fc8fe3de4c2a32f36ec92158c4b8ee3c852d09287889ed640",
+            "locator": {
+              "end": 524,
+              "kind": "line_range",
+              "start": 507
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Artifact-path dispatch by pair, type-strict on the version before the lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b32318e90c329c96342420565ed6165bc9688f8bcc9e7be7487ed5fda3929190",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_artifact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:db7116388ddae0f87ddaf577b501b7a3eed882802a47ca33b91eff2788aa8a89",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The registry-wide column frame the portable canonical-form gate needs for an unregistered document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b2f84f4100ed5c427cf86883e03b306002933712592711117bd02cbbde729745",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_columns_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:e5a1ce0d1b833df4d155af5382315548d7f0ea6aa21f2eafc6def21ba718224f",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 533
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**Generation 9 composed by the same generic append generations 2, 3, 4, 6, 7 and 8 use, over generation 8 and `schema_v9`'s six census tables.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:f462563fc0b81c11ccd689c4c679c76f35083aed03a38d6f0dea9d82cfec4a9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_9"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:2b5d8cde47ae286fa3f6f5721147ac75105ce43737a9ed2465283df3ecfceab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_9"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "**The schema name generation 9 declares — `ar-knowledge-sqlite/v9`, the name a created store now carries.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:8e3ff3008e705c16a74dc43e272b07823667e42d6bcc31eb6e62baa110c026b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_9_SCHEMA_NAME"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The six tables generation 9 appends: the census's three record kinds and the three relations they resolve through, appended after generation 8's thirty-four.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585ae9ebe8c4fdc6bc215740ebba14e7e1ea3a24",
+            "content": "sha256:125f59f1f03901c693eb90ae9ff868ffdd7244b69fad0203ce728a77c9dcee83",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v9.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "**The shared append itself, and the published predicate that states the additive rule: the appended-tables prefix plus every inherited name keeping its exact column tuple, primary key and typed-JSON set.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:2e3431b78357da6223cfaf09e7c4bd387194097559deac8be074af5509bf3630",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_generation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:1192b4e543d37b99f6ffdc87d010b507af405780120b39f094c3f7cd2de3b6c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "descends_from"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:67da1637d24b76796e63e66d9460e2059b7f12eb94c43e8f4054fa6a4ee05573",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:bc678960c7565bd7b56be1319c9bae8f3f4aa3cea688199410372097510fb254",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 273
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Generation 1's declared tables, columns, keys, JSON columns, DDL, triggers and features — the declarations this module delegates to and never restates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:6feb1da7702db4f19134857c1233bc1fa288925fa0b603a5174a37150637a0c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generation 2 composed as an explicit append over generation 1, its fingerprint derived from the composition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:67cb201db90b7a932910d27626c0d8c6b0227f1e617d5351c757dacd2ede077e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_2"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Generation 2's appended tables, which `GENERATION_2` is composed from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:ff311b81180b8ac928357f45df628eda2a0f20ce5f3c84e85e5ec90fe3966968",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:841fd9df455d21b660732943c373550faff14efb903cf7d9a2b6945dba4eb697",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_COLUMNS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The open path that calls this module's dispatch and the creation path that declares a generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_schema"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:bd1702116b30d9cfa83126203b3aa0ee7c066836e67ba30498fc0d8f3ddf717a",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The encoder that takes the selected generation instead of reading build globals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:be0962955b303788b7ad2f1f232027d69f1ce2535e7b7346b7733eee87f74aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "logical_body_from_tables"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The merge preflight that refuses inputs whose generations disagree before any session exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee49308c8fc05fd0aad19dd0a868435b3827f883",
+            "content": "sha256:642a852cbc4ba4d487a9d8fdab603b9c56f8321e12be45a674da7c1e1c25ae85",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_generation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The shipped code the artifact dispatch returns, and the type-strict rendering it preserves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:ba31420c713f9d527825a422d2d033540043a0c1382246089604fe158d23636c",
+            "locator": {
+              "kind": "symbol",
+              "name": "unsupported_schema_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The pin, its dispatch and the generation-2 digest behaviour, exercised in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:3c4428573230265f7d91a436aafcb11e1cedda5801d93bcd4b41126b66587780",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pinned_generation_1_fingerprint_recomputes_to_its_recorded_constant"
+            },
+            "path": "mcp/tests/test_knowledge_schema_generations.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:a38f0bd230322e760e7e21e0b0963d0a89771f407f6a96b033f2d579bc95b77c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_version_1_merge_on_the_generation_2_build_selects_generation_1"
+            },
+            "path": "mcp/tests/test_knowledge_merge_generations_and_envelope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The test support that builds a real generation-1 dataset from generation 1's own recorded DDL, for cases that must observe a generation-1 fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112f7a18a62526d17d968ad7c89f6c0c7c761e77",
+            "content": "sha256:3aa3c9d328298728ea7ff54d238395598dc79aa586179611ae4cc2b4441bdae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_generation_1_store"
+            },
+            "path": "mcp/tests/generation_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "**The generation-5 append measured by the generation it descends from, and the registry sequence checked as a structural fact — contiguous `1..N` with `ar-knowledge-sqlite/vN` names in register order — rather than as a hand-written list.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:2c10f72cbc294f7009a5e9e744331ff2b1abdcc150c0aef930dbb3fd1a2c3bfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_generation_5_appends_to_generation_4_without_touching_its_twenty_one_tables"
+            },
+            "path": "mcp/tests/test_knowledge_citation_bindings.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:f716426f49a500ace4465e038ae605c60664700470e04bb0538784fca47d33b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_generation_appends_only_and_the_preceding_ones_are_unchanged"
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36bb20fc518f3591fcb44efa0216f9229abff15d",
+            "content": "sha256:708916cced33afcea2ad8aa4a4e13a70976f6db59f116a1221045ab7d2ebaa8d",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/tests/test_knowledge_citation_bindings.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:5b196e50c081ed2b546d4ccaa90126549174a5264ce8b852f8742dc8bab7475a",
+            "locator": {
+              "end": 1103,
+              "kind": "line_range",
+              "start": 1009
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**Generation 3 composed as an explicit append over generation 2, and generation 4 as the same append over generation 3 — the prefix equality that is the additive rule.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:798831a9c64b15a483e39a4a31e19aeba05f0888138c6772e47da7e7a0cca00a",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_3"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:735da1dbaf87a32f5bc059969d4c1df25e59632a8c17d6865fd93e4935802a7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_4"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:d2ef65915e1389cf4d2a2437e8f52b17c4511d20d4c6541bcc2bc7d1bd3954cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_4"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:8b5e434a55f7ea91588e2c87c9c4ce6107162abf1439e4d36f81dc436c8260c7",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 313
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The registry, ordered oldest first, and the created generation defined as its last entry rather than as a second literal — nine generations since the census's append registered generation 9, so `CURRENT_GENERATION` is generation 9 while a generation-8 dataset keeps declaring 8.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATIONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:c954da44fc1cb1e734e9bfa69681a7a466150cb94dcadac44e0688afef4fdaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENT_GENERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The schema name generation 4 declares, and the three names before it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:5a6886929609449f59307b124f1bd9d6dc7b77e6a24b0eb12239e48be7da74ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_4_SCHEMA_NAME"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The only place a build's own generation decides anything, and it decides only what a created store declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:68e6dc6c4d567698d27b37fab626121bc786d409d865cbbef2e1775a93b56ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_new_store"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:9423e187ccb3d46fdae44cb271be56c5ce1078265999fe29addc574a03fed9f8",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 501
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The drift gate that fails rather than warns, and the generation-1 wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:e612a420a872832a27ab071a3d430f8df068a16e15cb664737b5fc735ce301e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_pinned_generation_unchanged"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:d2c5b5a159868a55a3cb19ea8c54be424e0cb0d671b12dc89d85826619a9cd7d",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The one fingerprint definition, now a function of a record rather than of the running build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:1619ed47bd5aad039c6d87fe34ff846502986a6fae9c3b90874ab76695e0a100",
+            "locator": {
+              "kind": "symbol",
+              "name": "structure_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

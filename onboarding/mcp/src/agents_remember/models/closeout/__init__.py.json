@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/models/closeout/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Closeout admission and scheduling models.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5db81f8a66c06d5485cbc0d5c137c57b1f8980a4",
+            "content": "sha256:40c8c7581cceecf9af8d61f1f78bb7ce080a28a4eab27bcb095259e52d79ef64",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

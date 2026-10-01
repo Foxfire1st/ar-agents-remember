@@ -1,0 +1,133 @@
+{
+  "path": "mcp/src/agents_remember/application/structural/dispatch_transaction.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dispatch transaction has one bounded reconciliation-and-retry loop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d26b3d56f9862b6c7c00c4e5265a1f36f6dafa44",
+            "content": "sha256:d403d24181bd81d1e63cdd22c2c3412330b987d47dd57a868cc8cd87ae52983d",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_dispatch_transaction"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d26b3d56f9862b6c7c00c4e5265a1f36f6dafa44",
+            "content": "sha256:d61f241fc6269d42d64545b16638da7173cb94dbae7bad4cbed8699d722f6ecc",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Existing generation evidence is loaded, repaired, and classified before retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d26b3d56f9862b6c7c00c4e5265a1f36f6dafa44",
+            "content": "sha256:53f39b197a7641179ad5dd96e4c442655a7dd731c3ffa97f6aa7138b41e0b020",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_dispatch_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d26b3d56f9862b6c7c00c4e5265a1f36f6dafa44",
+            "content": "sha256:51e068b3063ddfd62e16f4aec093a352b57bcab5045aee8ed1cd050ddb0c2bb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_dispatch_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d26b3d56f9862b6c7c00c4e5265a1f36f6dafa44",
+            "content": "sha256:a66d84cee4a870fcd6bc1f412366aa90c080eb94ac7d11225baaf1925c8bf5d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dispatch_evidence_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Contradictory evidence produces the stable typed reconciliation refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d26b3d56f9862b6c7c00c4e5265a1f36f6dafa44",
+            "content": "sha256:a1f8ef18518d90fb11142cf0a47fb9cc975d4bdaeed79f323ab5488c9fb3e66d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconciliation_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Reviewer reconciliation refuses a current generation owned by a different structural parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d26b3d56f9862b6c7c00c4e5265a1f36f6dafa44",
+            "content": "sha256:b03a37ac371049ce651daf7efa5d7a16a1ccadd3cc93ff213ce46b531e88b634",
+            "locator": {
+              "kind": "symbol",
+              "name": "_structural_parent_conflict"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d26b3d56f9862b6c7c00c4e5265a1f36f6dafa44",
+            "content": "sha256:335fd2f98b94337883400912b3f3f5880f13635947384a677755b04bf224c46f",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Serialized dispatch has one transaction entry point; no end-to-end concurrency pass is inferred from source inspection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d26b3d56f9862b6c7c00c4e5265a1f36f6dafa44",
+            "content": "sha256:7a9c5550183867f7d2d20cd60cdaba6d4831c3c3583ab3dfec030ac4c4b018ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_serialized_dispatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/fixtures/codex_app_server_instruction_channels.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The per-request instruction fields are recorded, with `turn/start` deliberately empty.\n\nAnchor: \"\\\"instructionFields\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d21283af3c9e795af3df99a7fda9121b8defa52",
+            "content": "sha256:834463976dd610af12498a284f536654d02653c3d2080e3cb227958d180aa13e",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The thread-open response's own observation field is recorded.\n\nAnchor: \"\\\"threadOpenResponseInstructionFields\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d21283af3c9e795af3df99a7fda9121b8defa52",
+            "content": "sha256:07184bffae259005a073724463a914886d95166548419f091d1b06c66769ea78",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixture supplies the case that pins the delivered instruction parameter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d05bace7c535b72fa332817763a527c6976bcf5",
+            "content": "sha256:361f15a9abd6594e1333d1f818c0e5374e837cd567a97ddda1515304c4cc8c03",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_instruction_channel_is_the_schema_supported_thread_open_field"
+            },
+            "path": "mcp/tests/test_codex_capsule_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Generation provenance and the pinned version are recorded in the fixture itself.\n\nAnchor: `cliVersion`; `schemaBundleDigest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d21283af3c9e795af3df99a7fda9121b8defa52",
+            "content": "sha256:85aa22484cacf4a0093b4703bf0212998691aa9af1d9359a33c176052f6a25f6",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

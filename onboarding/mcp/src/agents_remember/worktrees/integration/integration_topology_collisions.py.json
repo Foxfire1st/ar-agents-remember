@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_topology_collisions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b3f004f95d51b25c800dd0ce861049ef36c2599",
+            "content": "sha256:e4b807afb65d221132828b3f13460704dada4e9a5da39dbf35869df59cb04777",
+            "locator": {
+              "kind": "symbol",
+              "name": "TopologyCollisionServices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b3f004f95d51b25c800dd0ce861049ef36c2599",
+            "content": "sha256:e4b807afb65d221132828b3f13460704dada4e9a5da39dbf35869df59cb04777",
+            "locator": {
+              "kind": "symbol",
+              "name": "TopologyCollisionServices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b3f004f95d51b25c800dd0ce861049ef36c2599",
+            "content": "sha256:e4b807afb65d221132828b3f13460704dada4e9a5da39dbf35869df59cb04777",
+            "locator": {
+              "kind": "symbol",
+              "name": "TopologyCollisionServices"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

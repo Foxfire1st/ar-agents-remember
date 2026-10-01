@@ -1,0 +1,322 @@
+{
+  "path": "mcp/tests/test_knowledge_read_boundaries.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The premise node: the fixture tree really holds the blobs its anchors record.\n\nAnchor: \"test_the_fixture_tree_really_holds_the_blobs_its_anchors_record\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:bb29dfa60e39215b1a6749dd779562f377aac83ef25c8f4ea79ea4a091fc0a96",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The lane row this module occupies.\n\nAnchor: \"mcp/tests/test_knowledge_read_boundaries.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:880007e41d5dfbf20a7f1934769d322cff9249e28958935577fcc45b1c15aba0",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The four blob-observation nodes (`exact`, `mismatch`, `path_absent`, `not_requested`).**\n\nAnchor: \"test_an_anchor_whose_recorded_blob_is_the_requested_trees_blob_is_observed_as_exact\"; \"test_a_changed_path_reports_a_blob_mismatch_and_never_promotes_the_old_claim\"; \"test_a_path_absent_from_the_requested_tree_keeps_the_claim_and_reports_the_absence\"; \"test_no_requested_tree_reports_not_requested_and_still_returns_the_recorded_identities\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:8ee490304d1e38153c73dd022ca70e8e0f843887cae2d3da7fdc798909788d1a",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:7053ed4cf155446744ac98faf560feebb9206d012757e86176f924f085884b0a",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 243
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:536dbaa797559c15af2efd35c829ef5133616ea42d6281f5f458b5f1e95c42f4",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 266
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:8a772050dda8bd56a1039bd99c524b67bd05240dc14683eee52f9bf325917aa8",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The unavailable-tree and unsupported-locator nodes, and the non-blob entry node.**\n\nAnchor: \"test_an_unavailable_tree_reports_the_unavailable_object_and_substitutes_nothing\"; \"test_an_unsupported_locator_stays_visible_while_its_blob_is_still_observed\"; \"test_a_non_blob_tree_entry_is_reported_as_an_entry_and_never_read_as_source_bytes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:de5ea7f3c3ff01a0d274c20fe90233d2f60b0cd51d1f75c1c53b1f86ba51390f",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:c71c3866896de787d90fd67b2d1a6e719bad92028a515580d406c3cf3830eee5",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:4801f656e0af8f515cdf17268378304f2a795cdf7fafebf6ba2a5a98f641366a",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 375
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The task-free baseline read node.**\n\nAnchor: \"test_a_baseline_read_serves_a_task_free_context_and_reaches_the_whole_selected_scope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:2f97ed958c716c5a8adb9326f8ddd0f1fbae436fa9de16e3028f2f2368cbe205",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 502
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The namespace, digest and absent-database refusal nodes.**\n\nAnchor: \"test_a_context_naming_another_namespace_refuses_and_names_both_identities\"; \"test_a_context_whose_logical_digest_is_not_the_files_is_refused\"; \"test_an_absent_database_refuses_as_an_unavailable_input_rather_than_as_empty_knowledge\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:2712c85e119dd1bfa3a06603ff9c446b2a167e8b6526031f406e3082e51b60d4",
+            "locator": {
+              "end": 562,
+              "kind": "line_range",
+              "start": 535
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:a8d83689ab08f390a2f3060144556c40d2fc4f2a095a85b6d56ac02600f14a77",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 565
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:c86e74cc7c354613513097ff9c176fce0f499cbb42737e8f5d05f4066b2ba0de",
+            "locator": {
+              "end": 610,
+              "kind": "line_range",
+              "start": 591
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The schema-generation node, which also asserts the digest-only variant.**\n\nAnchor: \"test_a_context_declaring_another_schema_generation_is_refused_before_a_page_is_built\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:227d9701801f6fb20b4d4fd9a03f4d740e4e9c48d61193cc8338baa677778684",
+            "locator": {
+              "end": 826,
+              "kind": "line_range",
+              "start": 763
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The continuation-binding nodes, each with its own control, and the manifest node that verifies every page's own cursor.**\n\nAnchor: \"test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page\"; \"test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified\"; \"test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping\"; \"test_a_continuation_whose_declared_snapshot_was_altered_refuses_rather_than_mixing_revisions\"; \"test_a_continuation_against_its_own_snapshot_continues_the_same_manifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:8af31806c882131412d7fceea905d0b215dc404a39f2bf99905913e76864eaaf",
+            "locator": {
+              "end": 708,
+              "kind": "line_range",
+              "start": 613
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:47bc72e56b1ec449a1f563f8f5d7cdad217216e3eea912ae4c7236ce0f3c1cdb",
+            "locator": {
+              "end": 769,
+              "kind": "line_range",
+              "start": 711
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:23460d0dbb9e6af4e5d61fa50a185c0866e49cc2ce9ade72280a7872b25d112b",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 772
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:1d93eb286db1b815fef3711ed14ad3c7e33eb43612cbf91914434b738506e859",
+            "locator": {
+              "end": 920,
+              "kind": "line_range",
+              "start": 891
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:28b880151a868e38ab1cfc9b4f8bc6ac7308d1bb3cbc79238e270b1fab9c288c",
+            "locator": {
+              "end": 954,
+              "kind": "line_range",
+              "start": 923
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The read-only property, measured on a real database file.**\n\nAnchor: \"test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:2cf29c66f9746ec9f926ef01c062f6f9e68510d2acea309eb3df038a2fd3d3fb",
+            "locator": {
+              "end": 957,
+              "kind": "line_range",
+              "start": 957
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The disclosed unasserted defensive branch this module does not count as coverage.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:98ad77f96dbefbe914ffd43fd0d599365cc160d6938b470fef4d3183f09f0708",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_entry"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:20abb41e24de5aa9b91673cccec7a7452e4c9c3c496acfb8227ae17dbcb9931e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TreeLookupFailed"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

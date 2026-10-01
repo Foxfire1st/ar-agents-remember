@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge_files/decisions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge_files/decisions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -80,7 +70,9 @@ reconsideration surfacing (MIK-R14, L14) take `governs_links`, `reconsider_links
   and `reconsider_when`, and a derived `superseded`) is the reader's, using `governs_links`, `superseded_by` and
   `derived_status`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R13@v2` of task
@@ -89,37 +81,25 @@ No domain documentation source is configured for this repository (`system/source
 shapes, and the coordination-root note Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`,
 section 4.5); they live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The content rules and the derived reads.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The governs relations, the reconsiderable statuses and the minimum count. | `GOVERNS_RELATIONS`; `RECONSIDERABLE`; `MINIMUM_ALTERNATIVES` | mcp/src/agents_remember/models/knowledge_files/decisions.py:36-36; mcp/src/agents_remember/models/knowledge_files/decisions.py:38-38; mcp/src/agents_remember/models/knowledge_files/decisions.py:40-40 |
-| A `reconsider_on` link with the alternative it reopens and MIK-R14's subject. | `ReconsiderLink` | mcp/src/agents_remember/models/knowledge_files/decisions.py:53-68 |
-| At least two alternatives, exactly one chosen. | `alternative_problems` | mcp/src/agents_remember/models/knowledge_files/decisions.py:71-93 |
-| Every rejected or deferred alternative carries `reconsider_when`. | `reconsider_when_problems` | mcp/src/agents_remember/models/knowledge_files/decisions.py:96-107 |
-| A `reconsider_on` index must exist and name a rejected or deferred alternative. | `reconsider_link_problems` | mcp/src/agents_remember/models/knowledge_files/decisions.py:110-137 |
-| The three refusing checks together. | `content_problems` | mcp/src/agents_remember/models/knowledge_files/decisions.py:140-147 |
-| The links the decision is read from, and the reconsider links with their subjects. | `governs_links`; `reconsider_links` | mcp/src/agents_remember/models/knowledge_files/decisions.py:150-153; mcp/src/agents_remember/models/knowledge_files/decisions.py:156-167 |
-| Superseded is derived from later decisions' `supersedes`. | `superseded_by`; `derived_status` | mcp/src/agents_remember/models/knowledge_files/decisions.py:170-177; mcp/src/agents_remember/models/knowledge_files/decisions.py:180-185 |
-| Where a raw document stores `superseded`. | `stored_superseded_fields` | mcp/src/agents_remember/models/knowledge_files/decisions.py:188-196 |
-| The shape: the stored status literal and the decision record. | `DecisionStatus`; `DecisionRecord` | mcp/src/agents_remember/models/knowledge_files/records.py:53-53; mcp/src/agents_remember/models/knowledge_files/records.py:172-193 |
+- The governs relations, the reconsiderable statuses and the minimum count. [1]
+- A `reconsider_on` link with the alternative it reopens and MIK-R14's subject. [2]
+- At least two alternatives, exactly one chosen. [3]
+- Every rejected or deferred alternative carries `reconsider_when`. [4]
+- A `reconsider_on` index must exist and name a rejected or deferred alternative. [5]
+- The three refusing checks together. [6]
+- The links the decision is read from, and the reconsider links with their subjects. [7]
+- Superseded is derived from later decisions' `supersedes`. [8]
+- Where a raw document stores `superseded`. [9]
+- The shape: the stored status literal and the decision record. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the functions read one record or one raw document.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): this card's source is unchanged. **A forward reference to L14 is resolved in the Todos:** MIK-R14 adds the validator rule `R14.1-linked-alternative-order` (index stability, L13's carried Q6/F1) and reports `reconsider_on` requirement endpoints in the worklist's `reconsideration.links` summary (Q5/F2, partly: commit routes still resolve none, and the reads stay with L29). The installed fixer only normalised ranges here. No verification stamp was advanced.
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): created this card for the new file MIK-R13 adds, recording rulings 01:45:56 Q2, Q4 and Q6. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

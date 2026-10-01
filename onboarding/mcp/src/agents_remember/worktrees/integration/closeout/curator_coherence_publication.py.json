@@ -1,0 +1,154 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+        "content": "sha256:3fa032a7f9c07b4130573f96b03d1915cd83b075c415f2ffe5987445afafc1dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish"
+        }
+      },
+      "id": "RLZ-FGW904R4",
+      "invariant": "INV-VXA7SZ0Z",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Writes the new content-addressed generation files first, rechecks the source observation and recorded judgments, and runs load_curator_coherence_generation on the new record digest before atomically replacing the canonical authority pointer. A generation that fails that integrity read raises before the pointer is written, so the prior authority stays in place.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The public action dispatcher keeps one tool surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:a55a599b1c92a8e4c1ec967be5a2291299e44c18285855b7c3cc6bf5b984a9b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_action"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The prepare response composes its summary from the request model's publication declaration, so it states every publication input.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:813407828185fd943b0eb1b8b8fc2a0d1afe5fb4118024bb3a59b8b8284ef599",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The statement `prepare` carries, defined on the request-model route rather than here.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:429e832cb0e41a92a217f7a0009dc3ef4f874f13fbe872d7e2478b1669b545c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_input_statement"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Publication rechecks contract, predecessor, candidates, attestation, topology, and evidence before selecting authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:3fa032a7f9c07b4130573f96b03d1915cd83b075c415f2ffe5987445afafc1dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Immutable generation installation is directory-atomic and collision-safe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:8cced7d9a25816cd211a9a19fc4dc6cc0d006be0276453187b76fd0c67b761e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Attempt snapshots point at immutable generation artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:6414afc5363deb35495a27d83c83936c9edecca9178214807f13ba0e904bc69c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "R03 record construction binds the declared dependency set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:0766441c3e12b7a252bb998c70fa9331a757930b64f1865fb119090a09bb523b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Full generation integrity is proved before canonical authority replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
+            "content": "sha256:3fa032a7f9c07b4130573f96b03d1915cd83b075c415f2ffe5987445afafc1dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

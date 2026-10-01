@@ -2,13 +2,7 @@
 
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
 | sourceRoute            | `mcp/src/agents_remember/observer/`              |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated            | 2026-08-29T18:29+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../../../../overview.md`                         |
 
 ## Governing Overview
 
@@ -595,32 +589,32 @@ delta layer strips VOLATILE_AGE_FIELDS from the stable forms it diffs, and a ref
 the serving tests forces every new `*Seconds` projection field to declare itself volatile or
 content — an unclassified addition fails loudly instead of silently re-degrading the SSE stream.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The foundational approved design for this substrate: entities, store layout, retention, and TTL project-and-prune; current retention has evolved beyond that design. | `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design` | docs/design/observable-lifecycle.md:1-402 |
-| `Event` is the observer event model. | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
-| `StrictResponseModel` is the shared response-model base. | `StrictResponseModel` | mcp/src/agents_remember/models/base.py:10-13 |
-| The raw event stream entry is `stream_raw_events`. | "def stream_raw_events" | mcp/src/agents_remember/serving/events.py:230-277 |
-| The lifecycle-log pruning entry is `prune_expired_lifecycle_event_logs`. | "def prune_expired_lifecycle_event_logs" | mcp/src/agents_remember/observer/event_retention.py:73-107 |
-| `workspace_provider_nodes` is one of the route-local provider-node helper symbols. | `workspace_provider_nodes` | mcp/src/agents_remember/observer/provider_nodes.py:16-39 |
-| Active-enclosure admission is implemented by `admitted_worktree_groups`. | `admitted_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45 |
-| Engine activity is admitted by projection input state. | `ProjectionInputState` | mcp/src/agents_remember/serving/projections/projection_inputs.py:189-407 |
-| Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. | `attach_series_token_totals` | mcp/src/agents_remember/observer/series_tokens.py:14-31 |
-| `drift_snapshot_path` is the shared drift-snapshot path helper. | `drift_snapshot_path` | mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-24 |
-| Projection input invokes the orphan-pruning helper. | "prune_orphaned_drift_snapshots(config" | mcp/src/agents_remember/serving/projections/projection_inputs.py:371-371 |
-| The shared helper implements orphan pruning for worktree drift snapshots. | `prune_orphaned_drift_snapshots` | mcp/src/agents_remember/serving/projections/drift_snapshots.py:23-56 |
-| `ContractSnapshot` is declared here. | "class ContractSnapshot:" | mcp/src/agents_remember/serving/projections/contract_snapshot.py:38-38 |
-| `ContractSnapshotCache` is the associated snapshot-cache type. | `ContractSnapshotCache` | mcp/src/agents_remember/serving/projections/contract_snapshot.py:60-126 |
-| `progress_status` is the setup-progress status record. | `progress_status` | mcp/src/agents_remember/providers/setup_progress.py:200-225 |
-| The ambient `end()` entry owns terminal-state publication. | `end` | mcp/src/agents_remember/observer/ambient.py:274-274 |
-| `projected_current` is the gate store's tolerant projected fold. | `projected_current` | mcp/src/agents_remember/controlplane/store.py:279-300 |
-| The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. | `pending_for_projection` | mcp/src/agents_remember/controlplane/expectation_rows.py:226-228 |
-| `gate_keep_ids` is the retention keep-set helper. | `gate_keep_ids` | mcp/src/agents_remember/controlplane/interaction_retention.py:126-138 |
-| The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. | `DURABLE_STORE_CONTRACT`; "Read policy is part of each store's authority contract:" | mcp/src/agents_remember/controlplane/durable_store.py:43-43; mcp/src/agents_remember/controlplane/durable_store.py:13-24 |
-| `StatesAreFiledOnce` is the TypeScript overlap-check type. | `StatesAreFiledOnce` | dashboard/src/types/projection.ts:25-25 |
-| The `STATE OF THE MIRROR` comment documents the Python mirror. | "STATE OF THE MIRROR" | mcp/src/agents_remember/observer/projection.py:227-227 |
+### Repo-Internal References
+
+- The foundational approved design for this substrate: entities, store layout, retention, and TTL project-and-prune; current retention has evolved beyond that design. [1]
+- `Event` is the observer event model. [2]
+- `StrictResponseModel` is the shared response-model base. [3]
+- The raw event stream entry is `stream_raw_events`. [4]
+- The lifecycle-log pruning entry is `prune_expired_lifecycle_event_logs`. [5]
+- `workspace_provider_nodes` is one of the route-local provider-node helper symbols. [6]
+- Active-enclosure admission is implemented by `admitted_worktree_groups`. [7]
+- Engine activity is admitted by projection input state. [8]
+- Series token totals are composed by a reducer-side helper from projected task docs and lifecycles. [9]
+- `drift_snapshot_path` is the shared drift-snapshot path helper. [10]
+- Projection input invokes the orphan-pruning helper. [11]
+- The shared helper implements orphan pruning for worktree drift snapshots. [12]
+- `ContractSnapshot` is declared here. [13]
+- `ContractSnapshotCache` is the associated snapshot-cache type. [14]
+- `progress_status` is the setup-progress status record. [15]
+- The ambient `end()` entry owns terminal-state publication. [16]
+- `projected_current` is the gate store's tolerant projected fold. [17]
+- The expectation-row store's `pending_for_projection`, whose docstring names this route's suppress-plus-strict-read defect as the reason it exists. [18]
+- `gate_keep_ids` is the retention keep-set helper. [19]
+- The `ar-durable-store/1.0` contract declares the strict/tolerant read-policy split. [20]
+- `StatesAreFiledOnce` is the TypeScript overlap-check type. [21]
+- The `STATE OF THE MIRROR` comment documents the Python mirror. [22]
 
 ## 260718-CHATS-L5I Current Route Impact
 
@@ -797,10 +791,8 @@ title-key compatibility reader.
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The primitives-only title protocol and projection lookup preserve owning-master identity. | `GraphNodeLike`; `GraphTitlesLike` | mcp/src/agents_remember/observer/projection_graph.py:35-44; mcp/src/agents_remember/observer/projection_graph.py:47-54 |
-| Public-reader regression proves duplicate local leaf numbers retain their owner's title. | `test_duplicate_local_leaf_numbers_keep_master_qualified_titles` | mcp/tests/test_task_documents_graph_projection.py:146-197 |
+- The primitives-only title protocol and projection lookup preserve owning-master identity. [23]
+- Public-reader regression proves duplicate local leaf numbers retain their owner's title. [24]
 
 
 ## Abandoned Is A Frontier State
@@ -817,372 +809,3 @@ waiting on nothing, and falling through to `ready` would present scope that was 
 to do — and `build_execution_graph_view` now precomputes a `resolved` map where it previously
 precomputed `landed`. The served graph view is display data; this changes what it says, not any
 execution authority.
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `pending_for_projection` repointed to mcp/src/agents_remember/controlplane/expectation_rows.py:226-228. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `pending_for_projection` repointed to mcp/src/agents_remember/controlplane/expectation_rows.py:226-228. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T22:22+02:00 — No route impact: 260913-LCA-L6 dropped the `max_length=256` item ceiling from `CloseoutQueueNode.members` in `observer/projection.py`, the served node for the disposable closeout queue. The route's purpose, module inventory and invariants are unchanged, and the two remaining 256 bounds on that node (`sourceProblems` and each candidate's `reasons`) stay; the change is recorded on the `projection.py` sidecar. Verification metadata remains closeout-owned; no stamp advanced.
-- 2026-09-11T23:05:00+00:00: Master abandonment curation: recorded the fifth frontier state `abandoned`, the deliberate split between `_node_is_resolved` and `_node_is_landed`, and why abandonment is tested ahead of the predecessor check. Content change, not a range repoint.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `test_duplicate_local_leaf_numbers_keep_master_qualified_titles` repointed to mcp/tests/test_task_documents_graph_projection.py:146-197. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-29T18:29+02:00 — Reconciled the orphan-pruning call citation after the coherence/runtime
-  changes shifted its source coordinate; observer behavior is unchanged.
-
-- 2026-08-26T10:44:52+02:00 — No route impact: refreshed projection-input, mirror-state, and graph-title citation anchors after source movement; observer read/write ownership is unchanged.
-
-- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled the graph-view projection with
-  `(TaskDocumentRef, leaf id)` title identity and the no-flat-reader boundary. Verification
-  metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 adds the primitives-only graph-view projection builder and the `TaskDocNode.executionGraphView` field. Verified at code commit b7f2c8e2.
-
-- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: the task projection gains typed
-  `masterRef` rows and first-class `seats`. Verified at code commit 8071a644.
-
-
-- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
-
-- 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: TaskDocNode projects declared execution
-  nature, persisted graph edges/reasons, and deterministic waves as facts. It performs no scheduling
-  judgment or priority assignment.
-
-- 2026-08-13T09:05+02:00 — L23 route review: observer lifecycle projection follows the operation
-  DTO into `models.lifecycles.operation`; its engine-process projection continues to expose the
-  task-derived source-lineage state. Read-side semantics are unchanged by the import move; final
-  provenance remains closeout-owned.
-- 2026-08-12T20:20+02:00 — L23 curator: documented observer projection, not derivation, of source lineage; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: added the private-identity-free task lifecycle-operation projection boundary; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled observer state with structural
-  task-document seats and the projection boundary; private runtime correlations remain internal
-  evidence rather than agent addresses.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the projection-reader move to
-  `serving/projections/` and the kernel-owned path primitives. Verification metadata pinned until
-  closeout stamps the L9 code commit.
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 route impact: recorded the `snapshots_impl/` and `reducer_impl/` facade splits and their surface pin. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-
-- 2026-08-07T20:09+02:00 — 260731-EFA-L8 curator (bounded delta 2): recorded the round-13
-  ambient heartbeat mechanism — `_default_ticker_wait`'s monotonic-deadline chunked wait with
-  stop recheck replaces `Event.wait` (no wedged-wait path), the `start(ticker_wait=...)`
-  keyword-only seam, `_heartbeat_tick` extraction, and the deterministic seam-driven test
-  rewrite. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: applied reviewer verdict D1-D25 repairs and the pre-PASS whole-claim audit; narrowed the ContractSnapshot row to its generated declaration extent and rechecked this card through the locked exact-document fixer/check.
-
-- 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction): **two overstatements of the read
-  policy, in the route whose readers are the tolerant ones.** Both came from the 13:20 entry below.
-  (1) The L5 section said "Every store on the `ar-durable-store/1.0` contract now offers both" and
-  "**Every rewrite reads strictly**, so a compaction can never be the thing that erases a record it
-  could not parse". (2) The Invariants entry said each contract store "offers a strict read (raises
-  on a torn or unknown-major line; backs authority and every rewrite) and a tolerant one". Both
-  claims are false for half the contract, and `durable_store.py` refuses them under a heading
-  beginning "DO NOT GENERALISE 'EVERY REWRITE READS STRICTLY' TO ALL SIX -- it is false".
-  Corrected to what the code and `controlplane/overview.md` already state, without inventing a third
-  phrasing: **every rewrite of an *authority-bearing* log reads strictly** — gate (`delete`,
-  `compact`), expectation rows (`_compact_locked`) and operator inbox (`delete`, `delete_by_gate`,
-  `compact`, `reconcile_and_compact`) each filter a list their own strict read produced — while
-  attention dismissals, orchestration nudges and supervisor signals rewrite from their tolerant
-  `read` and therefore drop an unparseable row **permanently**, which is acceptable only because
-  none of the three carries authority. And **only two of the six offer both readers**: `GateStore`
-  and `ExpectationRowStore` have a strict `read` plus a projection-only `read_for_projection` — the
-  pair this route consumes; `OperatorInboxStore` is strict only; the other three are tolerant only,
-  their single `read` being the tolerant one. Nothing else on this route changed: the tolerant
-  choice here was always correct, and it is now correct for the stated reason rather than an
-  overstated one. No citation defects were found — this document's Repo-Internal References table
-  carries no line ranges. Verification metadata pinned until closeout stamps the L5 code commit.
-- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: **this route stopped writing to a control-plane
-  log, and one of its readers stopped losing whole files.** Added the L5 section; corrected the two
-  places that still described `read_gates` as compacting (the Task 23/24 interaction-surface
-  paragraph and the `snapshots.py` Route Model row) and re-signed both onto
-  `GateStore.projected_current`. Stated the projected-output-is-unchanged claim precisely — the same
-  `gate_keep_ids` filter is applied in memory, so only the rewrite moved — because "compaction moved
-  to the MCP" is easy to mis-read as a projection change. Recorded the strict/tolerant read split as
-  a route-level rule with its concrete trap: `ValidationError` subclasses `ValueError`, so
-  `suppress(OSError, ValueError)` around a strict read discards the file rather than the row, which
-  is exactly what `read_expectation_rows` was doing. Added four reference rows (`controlplane/store.py`,
-  `controlplane/expectation_rows.py`, `controlplane/gate_decisions.py`, `controlplane/durable_store.py`). The
-  file card for `snapshots.py` carries the reader-level detail and the full citation repair pass.
-  Verification metadata pinned until closeout stamps the L5 code commit.
-- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator (post-wave source change), **one corrected claim
-  only**: `dashboard/src/types/projection.ts` adopted this route's partition after the 09:26 entry
-  below was written, so the Repo-Internal References row calling it "the TypeScript mirror that
-  still carries the two-list shape this route dropped" became false. Verified against the current
-file: `LIVE_STATES` and `TERMINAL_STATES` are the halves, and
-  `LIFECYCLE_STATES = [...LIVE_STATES, ...TERMINAL_STATES]` and `ACTIVE_STATES = LIVE_STATES` — not
-  a difference.
-  The remaining asymmetry is a duplicate within one half: `Literal["a","a"]` collapses here, a
-  TypeScript tuple does not, so the mirror falls back to a runtime check. `projection.py`'s
-  "STATE OF THE MIRROR" comment was rewritten in the same change.
-- 2026-08-01T09:26+02:00 — 260731-EFA-L4 curator: the state vocabulary became a **checked
-  partition** and the metrics buckets became a function of it, so this route's model was corrected
-  rather than attested. Recorded that `State = Literal[LiveState, TerminalState]` (PEP 586 flattens
-  nested aliases — verified at runtime: `get_args(State)` returns the same six plain strings), that
-  `TERMINAL_STATES` is now the terminal half read back rather than a set standing beside `State`,
-  and that `check_state_partition`/`vocabulary_names`/`LifecycleVocabularyError` refuse a
-  mis-filed or unfiled state at import. Recorded `TerminalState = EndOutcome` as the load-bearing
-  identity that lets `coerce_end_outcome` be a membership test, and the deliberate write/read
-  asymmetry (`AmbientLifecycle.end` refuses an unknown outcome; the reducer coerces it, because it
-  parses logs it did not write). On the projection side, recorded `ACTIVE_STATES`,
-  `state_count_field`, the collision-refusing `state_count_fields`, `STATE_COUNT_FIELDS` and the
-  new `Metrics.awaitingDeveloperCount`, plus the reducer's `Counter` + splat replacing the three
-  hand-written `sum(...)` lines and `_ended_updates`/`_STATES` moving onto the shared vocabulary.
-  **Answered the derivation question explicitly in the body rather than leaving it implied:** the
-  maps are genuinely derived at runtime; the `Metrics.*Count` field *declarations* remain
-  hand-written by design and are held to the derivation by `extra="forbid"` plus a bidirectional
-  test — so this is not a relocated hand-written list, but it is not a fully generated model
-  either, and the card now says which is which. Added the partition invariant (what a seventh state
-  must do, and which three second-lists must never come back), corrected the Task-28 parenthetical
-  that still described `awaiting-developer`'s non-terminality as an absence from `TERMINAL_STATES`,
-  noted `worktree_provider_admission.py`'s last inline `{"completed","abandoned"}` moving onto
-  `ARCHIVED_CLEANUP_STATES` **and** why that constant is deliberately not `TERMINAL_STATES` (it is
-  the contract-cleanup vocabulary, equal by value only), and recorded the two `snapshots.py`
-  TypedDict boundary widenings. Added three reference rows, including the TypeScript mirror
-  (`dashboard/src/types/projection.ts`, owned elsewhere and untouched here), which still carries
-  the two-list shape this route dropped — verified against that file: `LIFECYCLE_STATES` and
-  `TERMINAL_STATES` are two independent hand-written lists and `ACTIVE_STATES` is their difference.
-  Verification metadata pinned until closeout stamps the L4 commit.
-
-- 2026-07-31T22:45+02:00 — 260731-EFA-L3 curator (re-verification pass): **the "No route impact"
-  attestation below no longer covers `snapshots.py`, which changed again after it was written.**
-  `_git_commit_meta` widened `except OSError` to `except (OSError, subprocess.SubprocessError)`, and
-  that is a route fact rather than a local tidy-up: the entry below attested "same `{}`-on-failure
-  contract", and the failure *set* is what moved. Consolidating this probe onto
-  `kernel/git_command.py::run_git` gave it a timeout it never had, and
-  `subprocess.TimeoutExpired` is a `SubprocessError`, which is not an `OSError` — so a wedged
-  `git log` would have escaped `_enrich_ledger_rows` and failed the projection tick, breaking the
-  promise `_ledger_window` and `read_ledger` both document (an unreadable ledger degrades to
-  hash-only rows, never to an exception). Recorded that as an invariant under Invariants And
-  Boundaries, stated as an obligation on any future reader here that moves onto the shared runner,
-  because the reasoning generalizes and the next such consolidation will not come with a comment.
-  Re-checked the rest of the earlier attestation against the current source and it still holds:
-  same argv, same one-`git log`-per-repo batching, same never-faked metadata, same
-  `--ignore-missing` fallback to the bare hash. The reader/reducer/projection split, the pure fold
-  and the surface inventory are untouched. Verification metadata pinned until closeout stamps the
-  L3 commit.
-
-- 2026-07-31T21:03+02:00 — 260731-EFA-L3 curator: No route impact: the leaf's only change under this
-  route is one import line in `snapshots.py` — `run_git` now comes from
-  `agents_remember.kernel.git_command` instead of `agents_remember.worktrees.modules.git`, because
-  the six near-identical private copies of that function were consolidated onto the kernel owner
-  (`worktrees/modules/git.py` no longer defines one; it imports the same kernel function). Checked
-  the one caller,
-  `_git_commit_meta`'s batched `git log --no-walk --ignore-missing --format=%H%x1f%cI%x1f%s` for
-  `_enrich_ledger_rows`, against the current source: same argv, same one-subprocess-per-repo shape,
-  same `{}`-on-failure contract, same never-faked metadata. Checked this overview's three git claims
-  against the code — "git-free sidecar staleness" (Purpose), "provider-state refreshes are not
-  delayed by repeated git probes" (Purpose) and "git-per-sidecar stays in the on-demand drift tools"
-  (Invariants) — all still hold. The observer's surface inventory, reader/reducer/projection split
-  and pure-fold boundary are untouched; which module the runner is imported from was never a fact
-  this overview stated.
-- 2026-07-31T00:00+02:00 — No route impact on behaviour: 260731-EFA-L2 re-signed the reducer and
-  the projection input/write edge onto parameter objects (`WorkspaceStructure`/`AnalyticalInputs`,
-  `ProjectionTickState`, `ProjectionReaders`/`RefreshPass`/`ActiveGroups`, `AmbientTiming`) and
-  turned `_apply_kind` into the `_KIND_UPDATES` dispatch table. Projected output is byte-identical;
-  the read/write split and the pure-fold boundary are unchanged. Detail in the per-file sidecars.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: added
-  `projection_inputs.py` and `task_document_cache.py`. The serialized worker now retains
-  domain-owned snapshots, refreshes only watcher-invalidated domains, advances heartbeat ages
-  without heavy rereads, reparses only changed/new task documents, and reclaims deleted rows on
-  the owning-domain refresh. Verification metadata remains pinned until closeout.
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
-- 2026-07-12T20:02+02:00 — 260712-PTS-L2 route impact: added `contract_snapshot.py` to the route
-  model — ONE shared leaf-contract enumeration+parse pass per projection tick (built in
-  `projection_store`, consumed by `read_enclosures`, `read_engine_process_facts`, and drift-snapshot
-  pruning; previously three independent walks per 1s tick, py-spy 2026-07-12: 2.78s/3.68s/3.40s in a
-  15s sample), with a cross-tick parse cache keyed by `(mtime_ns, size, ctime_ns)` stat identity and
-  the consumers-never-mutate-contracts concurrency rule. Landing refresher and supervisor sweep
-  deliberately keep their own passes. Verification metadata pinned until closeout stamps the PTS-L2
-  commit.
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: observer projection now consumes a network-free immutable landing snapshot; `LandingStateRefresher` owns bounded background observation, exact-contract isolation, stale carry-forward, and safe cancellation.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 route impact: documented live virtual-cursor river
-  compaction, coalesced heartbeat storage plus complete lifecycle reclamation, body-free bounded task
-  summaries, and the confined on-demand body reader; retained accepted N2/N4/N6 limits. Verification
-  metadata remains pinned until closeout stamps the eventual L13 code commit.
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (small): `ambient.py`'s `AmbientLifecycle`
-  gained a read-only `root` property (`self._store.root`) so the MCP tool choke point
-  (`mcp/tools/base.py`) can resolve the observer root and check the sibling `serving/` package's
-  supervisor-sweep heartbeat on every tool call, without constructing its own `McpRuntimeConfig`.
-  One-line accessor, no new state, no change to the write/read-side contract this overview
-  describes. Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
-- 2026-07-08T14:50+02:00 — 260707-HFX2-L1 route impact: R5 projection surfacing —
-  `AgentPickupNode` gained the R1 ack/backoff fields + R4 owner fields (already-derived, read
-  straight off `OperatorInboxEntry`); a new `ExpectationRowNode` + `Analytics.expectationRows`
-  (from `snapshots.read_expectation_rows`) surfaces R2's durable deadline rows for dashboard/
-  architect observability. Surfacing only — L2 (a sibling leaf) reads the underlying stores
-  directly for correctness, never this projection. Verification metadata pinned until closeout
-  stamps the 260707-HFX2-L1 commit.
-
-- 2026-07-07T10:55+02:00 — L15 route impact (body): the volatile-vs-content classification of projection *Seconds fields documented. Verification metadata pinned until closeout stamps the L15 commit.
-
-- 2026-07-07T05:42+02:00 — 260703-L15 attestation + one bound: reviewed this overview against the
-  L15 reducer change — `reducer.py`'s `token_series` now decimates the served fuel gauge past
-  `TOKEN_SERIES_MAX` (512; newest 256 exact, older history uniform-thinned, log untouched). The
-  route model's reducer description otherwise still holds; details live in the `reducer.py`
-  sidecar. Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-07-06T23:59:18+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact:
-  `TaskDocNode.orchestrates` (additive `list[str]`, projection.py) + the `snapshots._task_doc_node`
-  pass-through — the orchestration-command relation rides the served projection so the dashboard
-  can nest commanded masters under their orchestration task; no reader/admission logic changed, no
-  version bump. Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-06T02:15+02:00 — 260703-L11 route impact: `EnclosureNode` gains additive
-  `codeWorktreeExists`/`memoryWorktreeExists`, stat'ed by
-  `snapshots._enclosure_from_contract` at snapshot time (the `status_payload`
-  probes), so tasks-surface visibility is physical worktree existence — never a
-  cleanup-state proxy; `cleanup: reopened` documented as
-  contract-reset-awaiting-restart. Verification metadata pinned until closeout
-  stamps the L11 commit.
-- 2026-07-05T01:32+02:00 — No route impact: reducer phase-inference comment re-worded (lifecycle phase, not l-01 phase); no behavior change (260703-L9).
-- 2026-07-04T12:32+02:00 — 260703-L4 route impact: gate projection now surfaces
-  `evidenceRefs` on `GateNode`, preserving reviewer-verdict references for
-  delegated approval rows. Verification metadata pinned until closeout stamps
-  the L4 commit.
-- 2026-07-04T12:31+02:00 - L3 route impact: pending inbox pickups now surface
-  role/message/artifact and hosted-delivery metadata for dashboard-visible
-  agent-to-agent comms. Verification metadata pinned until closeout stamps the
-  L3 commit.
-- 2026-07-03T00:35+02:00 — L11 route impact: the reducer terminalizes lifecycles anchored to cleanup=abandoned enclosures and skips persistent synthesis for abandoned/reopened enclosures (reader-projected terminality per the store's single-writer invariant).
-- 2026-07-02T21:45+02:00 — L10 route impact: `snapshots.read_task_documents` binds a leaf task doc to
-  its active enclosure lifecycle by a **case-insensitive** `(taskRoot, enclosure.leafId)` join against
-  the doc's authored `id` (filename stem kept as a lowercased legacy alternative). Enclosure leaf ids
-  are slugified lowercase directory names while doc ids are authored uppercase, and series leaf docs
-  carry no `enclosures[]` refs, so the previous fallbacks were dead — active-enclosure leaf docs
-  projected with `lifecycleId: null`, breaking the sidebar content binding and the viewed-leaf chat
-  chain. Verification metadata pinned until closeout stamps the L10 commit.
-- 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration) route impact: the **durable enclosure is the source of
-  truth for liveness/retention**. Documented the L5 narrative + invariants + Route Model bullets:
-  admission no longer dies on a missing (pruned) log (`admitted_worktree_groups` /
-  `active_enclosure_worktree_groups` only demote on a *present* terminal/post-phase log — fixes the
-  disappearing-worktree regression), and a not-yet-retired master series protects every leaf's event log
-  from the inactivity TTL via `series_retained_lifecycle_ids` → `event_retention`'s
-  `protected_lifecycle_ids` (retire = all leaves archived + one-week grace from the last finalized
-  contract). Verification metadata pinned until closeout stamps the L5 code commit.
-- 2026-06-28T13:54+02:00 — Task 34 route impact: raw Event River retention is now **inactivity-keyed**
-  rather than termination-keyed — `event_retention.py` prunes a fleeting or enclosure lifecycle log after
-  >1h with no real (non-heartbeat) activity (not on `lifecycle.ended`), `ambient.py`'s heartbeat ticker
-  decays after ~10 min idle so a dormant lifecycle stops refreshing its own activity and ages out, and a
-  fresh `/api/events` connect replays only a bounded recent window. Updated the `ambient.py` /
-  `event_retention.py` Route Model bullets, the retention invariant, and the Task-29 retention narrative.
-  Verification metadata pinned until closeout stamps the task-34 code commit.
-- 2026-06-28T07:45+02:00 — Task 33 route impact: `projection.py`/`reducer.py`/`projection_store.py` now expose
-  `WorkspaceProjection.activeWorktreeGroups`, sourced from `active_enclosure_worktree_groups` (shared with
-  the Engine Room) and consumed by the dashboard Topology for active-enclosure scoping. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-28T07:43+02:00 — Task 29 S7 route impact: actionable-drift attention now carries
-  repository/branch/source/memory/report/checked-at provenance, uses checked-at as the signal time,
-  and is the only targetless dismissible attention type. The raw Event River lifetime remains owned by
-  backend retention, with no shorter frontend row cap. Verification metadata pinned until closeout
-  stamps the task-29 code commit.
-- 2026-06-28T05:38+02:00 — Task 29 route impact: added lifecycle-aware raw
-  Event River retention, active-enclosure worktree provider admission, broader active Engine Room
-  admission, projection-time expired-event pruning, and a short repo-surface cache so stale worktree
-  runtime files no longer page or dominate refresh cost. Verification metadata pinned until closeout
-  stamps the task-29 code commit.
-- 2026-06-28T03:52+02:00 — Task 28 S5.2 after source sync: route now documents
-  lifecycle-scoped attention acknowledgements, reducer signal anchors, and projection-time pruning of
-  acknowledgement rows for non-live lifecycles. Verification metadata pinned until closeout stamps the
-  task-28 code commit.
-- 2026-06-28T03:33+02:00 — Task 32 memory-mirror pruning: added `drift_snapshots.py` to the
-  route model and documented the physical retention boundary for configured repositories, active
-  worktrees, projection pruning, and cleanup removal. Verification metadata pinned until closeout stamps
-  the task-32 code commit.
-- 2026-06-28T03:21+02:00 — Task 31 route impact: provider snapshots now refresh live provider current-state
-  through the projection-store seam, worktree provider facts inspect isolated Docker containers from the
-  provider settings, and the reducer emits `missing` provider boot nodes for expected CGC/GrepAI roles with
-  no evidence. Added focused tests for provider state refresh, worktree provider inspection, missing-role
-  projection, Operations nesting, and the `_inspect_result_map` CRAP regression. Verification metadata
-  pinned until closeout stamps the task-31 code commit.
-- 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE turn end): documented the new ACTIVE turn-end
-  path across this route — the non-terminal `awaiting-developer` state in `lifecycle_state.py`, the
-  `ambient.await_developer`/`resume_from_await` signal pair (no gate, no wait; `resume` keeps its
-  blocked-only guard), and the reducer's `lifecycle.awaiting-developer` fold arm + `_lifecycle_attention`
-  `awaiting-developer` item (`_await_summary`) + the one-line `lifecycle.gate is None` blocked-gate/gate-open
-  dedup. The old `lifecycle_gate`/inbox stack is parked (kept, un-hinted). Verification metadata pinned
-  until closeout stamps the code commit.
-- 2026-06-26T20:18+02:00 — Task 21 series token rollup: documented `SeriesNode.seriesTokenTotal` and
-  the `series_tokens.py` helper that composes the aggregate from projected sibling task documents and
-  lifecycle token totals. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-26T15:13+02:00 — Task 25 lifecycle live-row cleanup: the observer route now documents
-  current enclosure ownership as the live boundary for non-fleeting lifecycle rows, with explicit
-  exceptions for fleeting lifecycles and fresh non-terminal promotion/gate windows. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-26T14:16+02:00 — No route impact: task 25 only clarifies `ambient.build_ask`/`block` as the shared ask path used by `lifecycle_gate`; the observer route model is unchanged.
-- 2026-06-25T13:20+02:00 — Task 23/24: observer route now covers TTL-compacted gates and `AgentPickupNode` waiting-for-agent/check-chat projection.
-- 2026-06-24T18:11+02:00 — Task 17 observer route correction: `TaskDocNode.id` now exposes the
-  JSON-primary task id for authored leaf labels, separate from parent `subTasks[].number` fallback data.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T16:39+02:00 — Task 17 Operations route correction: active JSON task docs now project
-  independently of lifecycle/enclosure binding, `TaskDocNode.lifecycleId` is optional runtime context,
-  master docs project on both task-document and series surfaces, and archive/delete is the Operations
-  disappearance boundary. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T12:21+02:00 — Task 17 route impact: the observer projection now carries task/series
-  `createdAt` metadata, master `objective`, and a series-reader ordering rule that uses resolved leaf
-  creation times only when complete. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T08:59+02:00 — Task-document correction: clarified that `read_task_documents` may use
-  enclosure metadata to bind a real JSON task document to a lifecycle, but never projects
-  `series-contract.md` itself as readable task content. Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: observer snapshots now read only active leaf `enclosures/<leaf-id>/series-contract.md` contracts for live enclosures/engine processes, project `enclosureId`/`leafId`/`taskRoot`, bind leaf task docs through `enclosures[].enclosurePath`, and skip `0_archive` plus enclosure folders in task JSON scans. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T22:31+02:00 — Task 12 S2 clarification: provider projection now documents GrepAI as one
-  aggregate provider instance with individually addressable `targetRepos`, and worktree GrepAI as the
-  same multi-root shape with only the active project root redirected. Verification metadata pinned until
-  closeout stamps the S2 code commit.
-- 2026-06-23T22:09+02:00 — Task 12 S2 correction: GrepAI workspace current state now persists
-  configured repository memory-root targets as `targetRepos`, so the observer route projects those
-  memory roots as repo-scoped workspace provider nodes instead of treating GrepAI as unmapped.
-  Verification metadata pinned until closeout stamps the S2 code commit.
-- 2026-06-23T21:46+02:00 — Task 12 S2 route impact: added `provider_nodes.py` to the read-side route
-  model; `snapshots.read_providers` now delegates provider-node policy there so CGC workspace
-  `resources.watchers` rows project as repo-scoped provider nodes. Later 22:09/22:31 entries document the
-  GrepAI `targetRepos` correction. Verification metadata pinned until closeout stamps the S2 code commit.
-- 2026-06-23T01:40+02:00 — No route impact: slice 07b v1, `ambient.emit_read_packet` now takes the read's `repo_id` (signature `emit_read_packet(repo_id, files)`) and carries it as `data.repoId` on the `read.packet` (a fact, distinct from the envelope `repoId`); the facts-only per-file projection and this route's reader/reducer/projection split are unchanged (detail in the `ambient.py` sidecar). Verification metadata pinned until closeout stamps the slice-07b code commit.
-- 2026-06-23T00:53+02:00 — No route impact: slice 07 S5 retargets the `served_store.py` module docstring only — the `compact-reset.json` producer is deferred to the post-3.0 agentic-control-plane (no session-hook producer), with the controller-side consumer + `refresh=true` kept as defensive scaffolding; the `ServedRecord`/`ServedStore` surface and this route's reader/reducer/projection split are unchanged (detail in the file sidecar). Verification metadata pinned until closeout stamps the slice-07 code commit.
-- 2026-06-21T06:40+02:00 — Slice 05m (carryover-before-cleanup): extended the **Engine Room** surface in this route's reducer — `_GUIDANCE_PHASE` gained `"carryover-pending": "carryover-pending"` (surfaces guidance.py's new carryover phase, between integration and cleanup, to the process-map vocabulary), and `_engine_process` maps the additive `EngineProcessNode.carryoverDoneAt` (the carryover milestone ISO time, read off the official ledger by `guidance.carryover_done` and surfaced through `status_payload`; `None` until carried, display-only — 5k renders the seam). Added a Purpose paragraph; both reducer changes are additive so prior fixtures + the live feed are unchanged. The carryover/cleanup lifecycle correctness itself lives in the `worktrees/modules/` overview. Verification metadata pinned until closeout stamps the 05m code commit.
-- 2026-06-21T05:30+02:00 — Slice 05l Part 2 (landing-arc probe hardening): refreshed this route's successful-landing-arc paragraph for the display-only `LandingRefNode.at` (gh's PR milestone timestamp — mergedAt once merged, else createdAt), which the reducer's `LandingRefNode(**ref)` splat picks up from the `worktrees/modules/landing.py` probe with no reducer change, and added `origin/<base>` to the participant list. The probe-side hardening (direct `origin/<base>` `ls-remote`, `_default_branch`) lives in the `worktrees/modules/` overview; this route's reducer/schema split is otherwise unchanged. Verification metadata pinned until closeout stamps the 05l-P2 code commit.
-- 2026-06-21T04:10+02:00 — Slice 05l Part 1 (backend teardown visibility): extended the **Engine Room** surface in this route's reducer — `_GUIDANCE_PHASE` gained `"abandoned": "abandoned"` (surfaces guidance.py's new abandoned phase to the process-map vocabulary), and a new `_is_disposed(fact)` (True when the contract's `cleanup` is `completed`/`abandoned`) now filters `build_engine_processes` so a disposed enclosure drops from the active `Analytics.engineProcesses` (the frontend 05k animates the removal); `cleanup-pending` is intentionally kept. No new schema or surface — additive reducer logic. Verification metadata pinned until closeout stamps the 05l-P1 code commit.
-- 2026-06-21T02:44+02:00: Slice 6g — extended the task-document surface for series navigation: `read_task_documents` started taking `enclosures` for runtime attachment and resolves **cross-master links** via the new `_ref_lifecycle`/`_task_doc_node` helpers (subTask `file`→`linkedLifecycleId`; doc `master` ref→`masterLifecycleId`); `projection.TaskDocNode` gains `subTasks`/`sections`/`masterLifecycleId` + the `TaskSubTaskRefNode`/`TaskSectionNode` nodes. Later Task 17 narrowed master runtime attachment to structurally root lifecycles. Additive, no `version` bump. Verification metadata pinned until closeout stamps the 6g code commit.
-- 2026-06-19T03:17+02:00 — Slice 3c reopened (R1, masters observable): added the **series/master surface** to this route — `snapshots.read_series_documents` (`kind == "master"`, keyed by task folder), the `SeriesNode`/`SeriesSubTaskNode`/`SeriesSectionNode` schema nodes + additive `Analytics.series` in `projection.py`, and the `series` threading through `build_analytics`/`project_workspace`/`project_and_write`. Later Task 17 made master docs a dual-surface case: concrete task document plus folder-keyed series aggregation. Verification metadata pinned until closeout stamps the R1 code commit.
-- 2026-06-18T21:25+02:00 — No route impact: slice 5h Tier 2 enriches the ledger-window rows with the per-side commit message + committer date — one batched, best-effort `git log --no-walk --ignore-missing` per repo in the `snapshots` I/O layer (`_git_commit_meta` / `_enrich_ledger_rows`; `_ledger_window` / `read_ledger` gained `code_root`/`memory_root` params), still passed through the pure reducer. The observer's surface inventory + reader/reducer/projection split this overview describes is unchanged (best-effort git at the I/O edge is already an invariant here) — detail in the `snapshots.py` / `projection.py` / `projection_store.py` sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T18:00+02:00 — No route impact: slice 5h ledger popover adds additive `LedgerNode.rows` (surface 8) + `EngineProcessNode.ledgerRows`/`ledgerRowCount`, read best-effort in `snapshots` (`_ledger_window` + `read_ledger`) and passed through the pure reducer; the observer's surface inventory + reader/reducer/projection split this overview describes is unchanged — detail in the file sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T14:05: Task 6 slice 6c Part A — added **gate projection** to this route: `snapshots.read_gates` folds the `GateStore` logs, `reducer._attach_gates` materializes each lifecycle's latest open gate onto `LifecycleProjection.gate` (`GateNode`), and `_gate_attention` raises a `gate-open` attention item, threaded through `project_workspace` / `project_and_write`. Verification metadata pinned until closeout stamps the 6c Part A code commit.
-- 2026-06-18T08:51+02:00: Slice 5h H1 — extended the Engine Room surface with the successful-landing arc: additive `LandingRefNode` + `EngineProcessNode.landing`/`integrationStrategy` in `projection.py`, the composer mapping in `reducer.py` (reads `status["landing"]`), fed by the new best-effort `worktrees/modules/landing.py` probe. Verification metadata pinned until closeout stamps the 5h code commit.
-- 2026-06-16T03:25: Slice 5f S6 (§9) — closed the blocked-start observability gaps in this route's reducer: `build_attention_queue` gained a `start_progress` param + the `_start_attention` builder (a pre-contract blocked start raises the same master-caution the agent raises in chat), threaded via `project_workspace`'s `engine_start_progress`. (The happy-path start-progress emit lives in `worktrees/modules/start.py`.) Verification metadata pinned until closeout stamps the S6 code commit.
-- 2026-06-15T19:35: Slice 5e — added the **Engine Room process-map** surface: `EngineProcessNode` (+ `CommitRefNode`/`ProviderBootNode`/`EngineProcessEdge`) and the derived `Analytics.engineProcesses` in `projection.py` (version 1→2), the pure `build_engine_processes` + pre-contract `_start_process_node` in `reducer.py`, and `read_engine_process_facts` + `read_start_progress_entries` (§5.4) in `snapshots.py`, threaded through `project_workspace`/`build_analytics`/`project_and_write`. Verification metadata pinned until closeout stamps the 5e code commit.
-- 2026-06-14T23:30+02:00: Slice 05 (5c) — completed the read side for the cockpit: `reducer.project_workspace` synthesizes paused persistent lifecycles from worktree enclosures (note 01); `snapshots.read_providers` reads per-worktree provider stacks (surface 4) bound to worktree/repo/role; `projection`/`snapshots` carry the full task content (`TaskDocNode` + step/decision/code-example nodes) and `ProviderNode` binding fields. Verification metadata pinned until closeout stamps the 5c code commit.
-- 2026-06-14T17:28+02:00: Slice 05 (5b) — added the attention-queue surface to this route: `AttentionItem` + the derived `Analytics.attentionQueue` in `projection.py`, and the pure `build_attention_queue` (+ per-source helpers) in `reducer.py`, wired through `project_workspace` with no call-edge change. Verification metadata pinned until closeout stamps the 5b code commit.
-- 2026-06-13T22:34: Slice 3c commit 2 — added the task-document read side: `read_task_documents` (surface 7) in `snapshots.py`, the `TaskDocNode` schema node + `Analytics.taskDocuments`, and the reducer/store wiring (`build_analytics`/`project_workspace`/`project_and_write` gained an optional `task_documents` input). Later Task 17 made the reader active-doc-first with optional lifecycle attachment. Verification metadata pinned until closeout stamps the 3c commit-2 code commit.
-- 2026-06-13T20:48+02:00: Slice 3b — added the analytical surface readers to
-  `snapshots.py` (drift snapshot, sidecar staleness, setup summaries/progress,
-  route coverage, tool reports, ledger), the derived-aggregate rollups
-  (`token_series`, `staleness_histogram`, `build_analytics`) + the `Analytics`
-  schema block, and the drift-snapshot producer write in `memory_quality`
-  (`summary._write_drift_snapshot`) sharing the `paths` drift contract. The route
-  now owns the full read side. Verification metadata is pinned until closeout
-  stamps the 3b code commit.
-- 2026-06-13T19:30+02:00: Slice 3a — added the projection **read side** to this
-  route (`reducer.py`, `projection.py`, `snapshots.py`, `projection_store.py`,
-  `paths.py`) plus the shared `timeutil.py` leaf (timing thresholds +
-  `age_seconds` moved out of `ambient`). The route now owns interpretation, not
-  just the write side; structural surfaces (providers/contracts) land in 3a,
-  analytical surfaces + rollups in 3b. Verification metadata is pinned until
-  closeout stamps the 3a code commit.
-- 2026-06-13T18:45+02:00: Slice 2c — added `save_gate.py` (the pure save-gate
-  vocabulary) to the Route Model and extended `ambient.py` with `promote`/`attach`
-  and the save gate; `lifecycle_state.py` gained the persistence-binding fields.
-  Resume + save gate close the write-side seams (the reducer read side still lands
-  later). Verification metadata is pinned until closeout stamps the 2c code commit.
-- 2026-06-13T16:41+02:00: Slice 2b — added the ambient lifecycle to this route
-  (`ambient.py`, `lifecycle_state.py`): the signal state machine, choke-point
-  emission, heartbeat ticker, and TTL project-and-prune sweep. Verification
-  metadata is pinned until closeout stamps the 2b code commit.
-- 2026-06-13T11:15+02:00: Created for slice 2a — the observable-lifecycle event
-  substrate write side (`events.py`, `ulid.py`, `store.py`). Verification
-  metadata is pinned until closeout stamps the 2a code commit.

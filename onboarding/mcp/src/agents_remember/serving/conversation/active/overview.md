@@ -2,14 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/active/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/active/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-09-06T00:38:37+00:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 
 ## What This Area Is
 
@@ -216,7 +211,9 @@ in the sibling `projectors/` route.
 - Sync IPC reads never run on the event loop (`asyncio.to_thread`), a production responsiveness
   rule, not a test workaround.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The parent contract route supplies the wire grammar and composition seams; the IPC substrate
 supplies the validated evidence/native-page/provenance reads; the sibling `projectors/` route
@@ -224,36 +221,30 @@ owns the per-harness frame grammars; orchestration consumes the canonical status
 delegated seat projection. Four new test suites prove the contract, three of them through the
 engine/store and one over a real socket.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The validated IPC reads are the only substrate channels polled. | "def read_control_snapshot(entry: ControlledSession) -> AdapterSnapshot:  # pragma: no cover"; "def read_control_capabilities(entry: ControlledSession) -> CapabilitySnapshot:  # pragma: no cover"; "def read_submission_authority(self"; "def read_submission_status("; "def read_control_transcript(  # pragma: no cover"; "def read_control_evidence("; "def read_control_native_page(  # pragma: no cover"; "        return read_submission_provenance(" | mcp/src/agents_remember/serving/harness_control_client.py:133-133; mcp/src/agents_remember/serving/harness_control_client.py:149-149; mcp/src/agents_remember/serving/harness_control_client.py:169-169; mcp/src/agents_remember/serving/harness_control_client.py:335-335; mcp/src/agents_remember/serving/harness_control_client.py:351-351; mcp/src/agents_remember/serving/harness_control_client.py:375-375; mcp/src/agents_remember/serving/harness_control_client.py:639-639; mcp/src/agents_remember/serving/harness_control_client.py:690-690 |
-| The evidence/native-page/provenance products define the polled shapes. | `EvidenceFrame`; `EvidencePage`; `NativeEvidenceFrame`; `NativeEvidencePage`; `SubmissionProvenance`; `SubmissionProvenanceBatch` | mcp/src/agents_remember/models/conversations/control_wire.py:267-278; mcp/src/agents_remember/models/conversations/control_wire.py:281-284; mcp/src/agents_remember/models/conversations/evidence.py:79-102; mcp/src/agents_remember/models/conversations/evidence.py:105-113; mcp/src/agents_remember/models/conversations/evidence.py:116-124; mcp/src/agents_remember/models/conversations/evidence.py:127-134 |
-| Orchestration's delegated seat projection consumes the canonical classification. | "def snapshot_turn_state("; "return snapshot_seat_turn_state(snapshot" | mcp/src/agents_remember/serving/hosted_control_projection.py:86-86; mcp/src/agents_remember/serving/hosted_control_projection.py:112-112 |
+- The request dependencies are the only consumption seam the handlers use. [1]
+- The validated IPC reads are the only substrate channels polled. [2]
+- The evidence/native-page/provenance products define the polled shapes. [3]
+- Orchestration's delegated seat projection consumes the canonical classification. [4]
 
 | The declared response shapes and the cursor-aware refusal table the three routes spread. | "async def conversation_page("; "async def hydrate_agent_history("; "async def conversation_events("; "response_model=ConversationPage" | mcp/src/agents_remember/serving/conversation/active/api.py:126-235; mcp/src/agents_remember/serving/conversation/response_contract.py:113-122 |
 | `CONVERSATION_RESPONSES` (the control table plus the two cursor refusals) and `AgentHistoryHydrated`, the model the history route's assembled 200 body had never had. | `AgentHistoryHydrated`; `CONVERSATION_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:81-87; mcp/src/agents_remember/serving/conversation/response_contract.py:113-120 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this route. All three harnesses are local
 subprocesses reached through this repository's own adapters, and the resolved memory policy
 allows no neighboring repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant cross-repo evidence found. | — | — |
+No relevant cross-repo evidence found.
 
-## Docs References
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. This route therefore uses the
 repository-owned contract, IPC substrate, fixtures, and tests as its direct evidence and does
 not fabricate an external citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this serving gate. | — | — |
+No configured domain documentation was available for this serving gate.
 
 ## File-Level Onboarding Map
 
@@ -406,141 +397,3 @@ offload are untouched.
 ## 260731-EFA-L9 Route Impact — Contract Imports Moved
 
 The active conversation routes now import the wire contracts from `models/conversations/` (moved from the serving monolith by L9) and consume the canonical ports from `serving/ports.py`. Route behavior is unchanged.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1`, and nothing in its body claims otherwise. The only edit to this document is citation-coordinate regeneration: its rows cite the `mcp/tests` route overview by line, and that overview grew when the leaf's three relationship case modules and their governed registrations were recorded, so the cited ranges were re-derived from the anchors' real positions. No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
-
-- 2026-09-06T00:38:37+00:00 — L30 actual Gate-5 repair: Re-read the unchanged active-serving test summary and updated the incoming memory citation after the tests overview grew; retained source verification provenance.
-
-- 2026-09-05T07:53:57+00:00 — No content impact: reread the four focused-suite statements in the final recovered tests overview and moved the current citation from lines 1053–1057 to 1070–1074. All four named anchors and their meaning are preserved. Source verification metadata remains pinned; this records document movement only.
-
-- 2026-09-01T08:17+02:00 — No content impact: rebound the focused-suite citation after the final
-  CCR-R01 test-route account shifted the tests overview. Active-conversation behavior is unchanged;
-  verification metadata remains pinned.
-
-- 2026-09-01T05:25+02:00 — 260831-CCR-L01 Attempt 9 citation maintenance: rebound the
-  focused-suite citation after the tests overview recorded explicit unit-regression ownership.
-  Active-conversation behavior is unchanged; verification metadata remains pinned.
-
-- 2026-09-01T04:37+02:00 — No route impact: rebound the focused-suite citation after the tests
-  overview recorded explicit certification-suite lane ownership. Active-conversation behavior is
-  unchanged, and verification metadata remains pinned.
-
-- 2026-09-01T03:50+02:00 — 260831-CCR-L11 curator citation maintenance: rebound the focused-suite
-  citation from `onboarding/mcp/tests/overview.md:1044-1048` to `onboarding/mcp/tests/overview.md:1059-1063`
-  after L11 inserted certification test-onboarding content. This is citation-range maintenance only;
-  no active-conversation route or source behavior changed, and verification metadata remains pinned.
-
-- 2026-08-31T11:06+02:00 — 260821-ARSPAWN-L5 closeout file-size repair: rebound the
-  focused-suite citation after the tests overview recorded the structural-test relocation.
-  Active-conversation behavior is unchanged; verification metadata remains pinned.
-
-- 2026-08-31T10:36+02:00 — 260821-ARSPAWN-L5 closeout memory repair: rebound the
-  focused-suite citation after the tests overview gained the C09 envelope-decoding evidence.
-  Active-conversation behavior is unchanged; verification metadata remains pinned.
-
-- 2026-08-31T09:55+02:00 — 260821-ARSPAWN-L5 closeout memory repair: widened the focused-suite
-  citation to the exact lines that carry all four named anchors. No active-conversation behavior
-  changed; verification metadata remains pinned.
-
-- 2026-08-29T07:35+02:00 — Rebound the focused-suite citation after the tests overview recorded
-  explicit integration-lane ownership for the future-code candidate matrix; active-serving
-  behavior is unchanged.
-
-- 2026-08-29T05:17+02:00 — A003 citation maintenance: rebound the active-suite range after the
-  future-code test summary gained its concurrency and immutability evidence.
-
-- 2026-08-29T04:55+02:00 — MCAR-L02 citation maintenance: rebound the active-suite overview
-  citation after the tests overview gained the future-code candidate section; the active-serving
-  claim and implementation are unchanged.
-- 2026-08-26T15:20+02:00 — No route impact: re-derived the tests-overview citation after the
-  ledger-focused test documentation moved; the active-serving contract is unchanged.
-
-- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 curator: widened the tests-overview citation (834-840 → 838-842) after the mcp/tests overview body gained the ambient-dispatch coverage paragraph; no active-serving contract changed. Verification metadata remains closeout-owned.
-
-- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
-
-- 2026-08-12T04:15+02:00 — 260731-EFA-L22 citation maintenance: widened the active-serving test
-  overview citation after the new Codex fixture paragraph shifted its final three anchors; no
-  active-serving contract changed.
-
-- 2026-08-12T01:38+02:00 — 260731-EFA-L22 citation maintenance: widened the tests-overview range
-  after its responsibility-split paragraph moved the existing route sentence by one line.
-
-- 2026-08-11T14:52+02:00 — Re-derived the focused-suite cross-memory citation after the governing
-  tests overview gained a pre-closeout quality section; the active-serving claim is unchanged.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-
-- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the offloaded projector resolution; singleflight/epoch/identity semantics unchanged. Verification metadata pinned until closeout stamps the code commit.
-- 2026-08-03T05:21:55+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 8 table citations and normalized 8 source paths; retried the focused-suite claim with four unique behavioral literals from `onboarding/mcp/tests/overview.md`, and the frozen stale `:1-1` bridge generated `onboarding/mcp/tests/overview.md:695-695; onboarding/mcp/tests/overview.md:697-699`. The immediate exact check returned zero findings; the two unchanged ambiguous rows are recorded in the batch report.
-
-- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the three routes' declared response
-  shapes and the one shared refusal table, with the two things the table would otherwise mislead
-  about — a typed child failure is a 200 body value here, not a refusal; and the `/events`
-  declaration names one SSE frame's `data`, on a route that returns an explicit `StreamingResponse`
-  and is therefore validated by no FastAPI machinery. Named the conformance suite as the actual
-  enforcement and copied its honest gap for this route (the SSE 200 needs a live bridge and a live
-  uvicorn simultaneously, so it is declared-and-undriven by design). Corrected two false statements
-  that predate this leaf: the Structures bullet said "Two FastAPI routes" where the route has had
-  three since 260727-CHATS-IM-L2, and the foundation-pin reference row said "while library/control
-  stay empty" when the cited test asserts all three children's exact route sets. Added three
-  reference rows (`api.py` declarations, `conversation/response_contract.py`), all ranges read back.
-  Hydration, cursor, gap, status and capability behaviour are unchanged. Verification metadata
-  pinned until closeout stamps the L4 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `TurnTransition` binds a proposed turn-state change to
-  the evidence strength that justifies it (so a weak observation cannot be applied without its
-  warrant), and `ProjectedSession` binds the five facts a projector must not mix. Hydration
-  authority, cursor binding, re-authorization and recovery behaviour are unchanged. Verification
-  metadata pinned until closeout stamps the L2 commit.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: replaced the deleted
-  `projector.py` monolith mapping with the `projector/` component graph and linked its route-local
-  overview and file-level sidecars. The public projector contract and behavioral invariants are
-  unchanged; verification metadata remains pinned until closeout.
-
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: updated the active route from two to three
-  wires, replaced latent/page-driven child backfill with selected-focus hydration, added
-  `agent_history.py` to the route map, and documented unlocked I/O, singleflight, necessary
-  capacity, typed local recovery, and opaque cursors. Verification metadata remains pinned while
-  uncommitted.
-
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the concurrent-parent-pending
-  projection rework — every tuple entry projects (concurrent parent-thread entries beyond the
-  singular slot's oldest plainly, never skipped for matching the projection's thread id), the
-  singular slot carries the parent's OLDEST pending, and a slot ROTATION resolves the evicted id
-  while the rotated id stays live under the singular path. The two routes, cursor authority,
-  service, and status contract are unchanged. Aggregate route-index generation remains
-  manager-owned; verification metadata stays pinned (remediation uncommitted).
-- 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the multiplexed engine (per-thread
-  demux/F1/pendings, degrade-not-fatal agent frames, fill-only agent identity, latent
-  `refresh_agent_native`) and the store's roster-aware upsert guards; refreshed the Hot Path
-  Summary and added the multiplexing invariant. The two routes, cursor authority, service, and
-  status contract are unchanged. Aggregate route-index generation remains manager-owned;
-  verification metadata stays pinned (L7 uncommitted).
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional truths landed
-  in this slice. R4 version-gate REMOVAL (developer ruling 2026-07-21) — corrected the now-false
-  read-time observed-version demotion doctrine to the contract-only gate (`capabilities.py` discards
-  the snapshot; claude reasons are never-probed contract language, not the installed-vs-locked
-  mismatch). R3 — the echo poller consumes only `role=="user"` transcript entries so a 2.1.216
-  mixed-role transcript no longer mints `claude:echo` unknown-vendor rows. R5 —
-  `projector._release_dormant_state` frees the full heavy projection on the idle-break and
-  `service.release_session` de-registers a projector (unwired from terminate/retire this leaf; F1
-  accepted-bounding). The two routes, cursor authority, per-app service, and status contract are
-  unchanged. Verification stays pinned until L5F closeout stamps the candidate commit.
-- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: recorded the two production-E2E hardening truths
-  landed in this slice — the projector's F1 live-settled-natives filter (disjoint live vs
-  `thread/read` id namespaces, twin suppression by turn-id / submitted `clientId` / walk-scoped
-  sibling, full prior-session hydration because both live sets are empty at the hydration walk, and
-  the L5.R6 mid-session-overlap recorded boundary) and the store's H2/F4 input-authority pin (the
-  `lane`+`source`+`provenance` triple stays coupled for user items across a native re-map; the silent
-  `model_copy` split that 500-ed the active page only at re-validation). Both proven before/after (F1
-  on the real codex 0.144.5 wire). The two routes, cursor authority, per-app service, and status
-  contract are unchanged. Verification metadata stays pinned until L5 closeout stamps the candidate
-  commit.
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the governing overview for the
-  implemented active conversation serving slice — the two authorized routes, cursor authority,
-  per-app service, projector engine, idempotent store, canonical status, capability evidence,
-  and session factory — after same-reviewer PASS-WITH-NOTES closed findings F1–F3 across one
-  fix round. Verification is blank because the new source route is uncommitted; closeout owns
-  its first source stamp.

@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/providers/context/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared provider context helpers live in the common context module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13c700f7a684fb707cfa9650df9753413d9be5af",
+            "content": "sha256:99adc06577ec2278c4ad9a40114fd50d7de08910e608c61a2f614224ac8a7298",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContextProviderError"
+            },
+            "path": "mcp/src/agents_remember/providers/context_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC provider context constants, layout, cleanup, and patches live under the CGC provider package.\n\nAnchor: `# mcp/src/agents_remember/providers/cgc/context/ - CGC Context Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/cgc/context/overview.md:1-63"
+        }
+      ]
+    },
+    "3": {
+      "note": "GrepAI provider context layout, live-root workspace config, and artifact cleanup live under the GrepAI provider package.\n\nAnchor: `# mcp/src/agents_remember/providers/grepai/context/ - GrepAI Context Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/grepai/context/overview.md:1-58"
+        }
+      ]
+    },
+    "4": {
+      "note": "Provider setup and lifecycle modules import this facade for runtime layout and install work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:b64aa089108121e0b97ec8199f606cb2089f7ee7e3fe6e977ce521f1390a394d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderSetupRequest"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

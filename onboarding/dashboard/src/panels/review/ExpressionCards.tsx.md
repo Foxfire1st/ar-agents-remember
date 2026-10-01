@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ExpressionCards.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ExpressionCards.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -99,46 +89,34 @@ per-hunk intent markers of the hunks it draws.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R31@v1`, the accepted design
 (ICR-R24@v3 "Accepted layout") and the rulings live outside the code and memory repositories, so they are named here
 and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The props the centre passes: the read, the seed, the planning marks, layout and open path, and the scope. | `CardsProps` | dashboard/src/panels/review/ExpressionCards.tsx:123-136 |
-| Loading, unavailable and not-a-tree-comparison states. | `ExpressionCards` | dashboard/src/panels/review/ExpressionCards.tsx:138-178 |
-| The counts, the scope line and one full file keyed by the card (F1). | `ReadyCards`; `ScopeLine` | dashboard/src/panels/review/ExpressionCards.tsx:182-237; dashboard/src/panels/review/ExpressionCards.tsx:246-254 |
-| A return to a marker followed from a card's full file reopens that card (MIK-L34). | "const returningCard = returnedCard(useContext(IntentMarkerScope)?.returning?.pane);"; `returnedCard` | dashboard/src/panels/review/ExpressionCards.tsx:185-185; dashboard/src/panels/review/ExpressionCards.tsx:241-243 |
-| Side lines, one line for an unchanged same region, and the side-state texts. | `sideLine`; `SideLines`; `sameRegion`; `sideStateText` | dashboard/src/panels/review/ExpressionCards.tsx:290-299; dashboard/src/panels/review/ExpressionCards.tsx:262-270; dashboard/src/panels/review/ExpressionCards.tsx:301-305; dashboard/src/panels/review/ExpressionCards.tsx:272-287 |
-| One card: header, voices, side lines, excerpt, marks, actions. | `FocusedCard` | dashboard/src/panels/review/ExpressionCards.tsx:307-385 |
-| A voice: the authored rationale or facet, or the named gap. | `voiceHeading`; `Voice` | dashboard/src/panels/review/ExpressionCards.tsx:395-401; dashboard/src/panels/review/ExpressionCards.tsx:403-428 |
-| Unchanged once, changed as a diff, sides that are not both regions shown apart; each marks the owner hunks whose changed lines it draws, on the sides it draws (MIK-L34). | `Excerpt`; `UnchangedExcerpt`; `ChangedExcerpt`; `SeparateSides` | dashboard/src/panels/review/ExpressionCards.tsx:430-436; dashboard/src/panels/review/ExpressionCards.tsx:439-459; dashboard/src/panels/review/ExpressionCards.tsx:463-496; dashboard/src/panels/review/ExpressionCards.tsx:500-525 |
-| The excerpt marking: only the drawn sides compared, a mismatch said, an unchanged file's card never active. | `useExcerptMarking`; `drawnSidesMatch` | dashboard/src/panels/review/IntentMarkers.tsx:475-486; dashboard/src/panels/review/IntentMarkers.tsx:491-523 |
-| Entry details kept out of the reading path. | `CardDetails`; `sideFacts` | dashboard/src/panels/review/ExpressionCards.tsx:535-547; dashboard/src/panels/review/ExpressionCards.tsx:549-566 |
-| The inventory jump, the full file through the landed content read (with its pane name for the intent markers since MIK-L34), and a file opened from the explorer. | `InventoryLink`; `FullFile`; `OpenedFile` | dashboard/src/panels/review/ExpressionCards.tsx:568-587; dashboard/src/panels/review/ExpressionCards.tsx:590-629; dashboard/src/panels/review/ExpressionCards.tsx:633-658 |
-| The one caller, which mounts cards only for a tree comparison. | `CenterExpressions` | dashboard/src/panels/review/FamilyReviewCenter.tsx:1003-1059 |
-| The card-state cases. | "draws a changed range as its real diff and an unchanged range once, labelled unchanged"; "names a missing rationale as a gap and never writes text of its own" | dashboard/src/panels/review/ExpressionCards.test.tsx:66-81; dashboard/src/panels/review/ExpressionCards.test.tsx:137-147 |
-| The F1 case. | "opens one full file, in the card that asked, with one read (F1)" | dashboard/src/panels/review/ExpressionCards.test.tsx:209-235 |
-| The marker cases on real cards: the exact card reopened, and the excerpt marks with an unreadable memory side, other content and an unchanged file. | "reopens the card a marker was followed from, not the first card of its path"; "keeps the drawn side's marks when the other memory side cannot be read (review R1 F1)"; "never reads, nor speaks for, an unchanged file's card" | dashboard/src/panels/review/IntentMarkers.test.tsx:566-770 |
+- The props the centre passes: the read, the seed, the planning marks, layout and open path, and the scope. [1]
+- Loading, unavailable and not-a-tree-comparison states. [2]
+- The counts, the scope line and one full file keyed by the card (F1). [3]
+- A return to a marker followed from a card's full file reopens that card (MIK-L34). [4]
+- Side lines, one line for an unchanged same region, and the side-state texts. [5]
+- One card: header, voices, side lines, excerpt, marks, actions. [6]
+- A voice: the authored rationale or facet, or the named gap. [7]
+- Unchanged once, changed as a diff, sides that are not both regions shown apart; each marks the owner hunks whose changed lines it draws, on the sides it draws (MIK-L34). [8]
+- The excerpt marking: only the drawn sides compared, a mismatch said, an unchanged file's card never active. [9]
+- Entry details kept out of the reading path. [10]
+- The inventory jump, the full file through the landed content read (with its pane name for the intent markers since MIK-L34), and a file opened from the explorer. [11]
+- The one caller, which mounts cards only for a tree comparison. [12]
+- The card-state cases. [13]
+- The F1 case. [14]
+- The marker cases on real cards: the exact card reopened, and the excerpt marks with an unreadable memory side, other content and an unchanged file. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`FamilyReviewCenter.tsx`) moved with the leaf's inserted lines: 4 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`ExpressionCards.tsx`, `IntentMarkers.tsx`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **body updated for MIK-R34** (Purpose, Logic, Invariants): the card excerpts mark every owner hunk whose changed lines they draw, on the sides they draw (ruling 2026-09-30T16:19:34 Q4), comparing only the drawn sides' blobs (review R1 F1) and saying `other-content` rather than falling silent; a return reopens the exact card through the `card:<key>` pane; the full files carry their pane names. The excerpt row and the full-file row are reworded; the excerpt row's two ranges that the fixer's normalisation kept at old positions (`411-417`, `467-483`, each duplicating a range it had added) were dropped. The reopened `SeparateSides`, `UnchangedExcerpt` and `OpenedFile` claims were re-read against the changed constructs: the wording holds, with the marker role added. Three rows added. The remaining rows moved with the inserted lines (fixer normalisation, and the exact shift for the `CardDetails` and `FullFile` rows); the dead ranges the normalisation kept in the `ReadyCards`, side-line and voice rows were dropped.
-- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): No content impact: the caller row into `FamilyReviewCenter.tsx`, which this leaf changed, was normalised by the installed fixer to where `CenterExpressions` now sits (`973-1029` → `992-1048`), and the fixer reordered one row's ranges into this card's own unchanged source. Claim wording unchanged. No stamp advanced.
-- 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new component MIK-R31 adds, recording rulings 05:36:19 Q1 (a proof's path opens in full), 06:10:21 F1 (one full file keyed by card) and F2 (the loaded n of m), and two candidate invariants. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The response bytes of GET /api/notes/list for one series master, compared with the path-based walk that realpath-checked every entry.",
+  "conditions": [
+    "The notes tree is not mutated between the two listings being compared.",
+    "Depth is counted on the lexical path, so an in-root directory symlink is listed and pruned at its own position."
+  ],
+  "exclusions": [
+    "A directory that is readable but not searchable, reached directly or through an in-root symlink: its children are skipped and the listing answers 200 where the path-based walk answered 500 (Architect rulings 2026-09-28T16:30:31 and 16:55:00).",
+    "A directory renamed out of the notes root while it is being listed: its own entries are still listed through the open descriptor, where the path-based walk lost it.",
+    "Error answers other than the ELOOP/ENOTDIR swap signature and the is_dir errno set, which propagate exactly as before (for example a mode-000 directory still answers 500)."
+  ],
+  "id": "INV-EJW15DXA",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "25de0855-0817-4622-b8f2-e7cddff335da",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "GET /api/notes/list returns the same bytes as before the bounding change: files before folders by case-folded name with readdir-order ties, in-root symlinks listed under their own lexical path, escaping or broken symlinks and non-regular files skipped, folders at depth cap 4 pruned with truncated true, missing notes folder an empty list.",
+  "status": "proposed",
+  "supersedes": []
+}

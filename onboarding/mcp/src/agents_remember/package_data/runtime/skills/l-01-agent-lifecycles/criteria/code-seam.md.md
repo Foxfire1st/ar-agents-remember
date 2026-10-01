@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/criteria/code-seam.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/code-seam.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-09T13:59+02:00 |
-| lastVerifiedCommitHash | `7b1db4e0d73a321ee49df8725f5fe75846cf6c2b` |
-| lastVerifiedCommitDate | 2026-09-18T13:43:14+02:00|
-| governingOverview      | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -75,25 +65,21 @@ This criteria catalog supplies evidence only when the corresponding review is ex
 
 No external domain documentation applies to this repository-local catalog.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This package-data catalog copy carries promoted CS-6 scaling and reclamation with D1-D4, the health-first queue invariant, two catching engagements, and the future gate mechanization seam. | `### CS-6 — Scaling & reclamation *(promoted — 2 catches)*` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/code-seam.md:70-83 |
-| Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. | `CANONICAL_SKILLS`; `TARGETS`; `sync_targets` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56; scripts/sync-skills.py:195-203; scripts/sync-skills.py:204-212 |
-| The reviewer role binds `code-seam` at master-exit, super-exit, and applicable leaf full-loop reviews, and keeps the promotion ratchet as the catalog amendment path. | "The catalogs your review type binds"; `code-seam`; `## Promotion Ratchet` | skills/l-01-agent-lifecycles/criteria/code-seam.md:93-103; skills/l-01-agent-lifecycles/roles/reviewer.md:33-42; skills/l-01-agent-lifecycles/roles/reviewer.md:113-113 |
+### Repo-Internal References
 
-## Cross-Repo References
+- This package-data catalog copy carries promoted CS-6 scaling and reclamation with D1-D4, the health-first queue invariant, two catching engagements, and the future gate mechanization seam. [1]
+- Root `skills/` is the canonical source tree and `scripts/sync-skills.py` propagates it into the MCP package-data copy and all eight harness package copies. [2]
+- The reviewer role binds `code-seam` at master-exit, super-exit, and applicable leaf full-loop reviews, and keeps the promotion ratchet as the catalog amendment path. [3]
+
+### Cross-Repo References
 
 No sibling repository evidence is needed for this catalog.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260713-TES-L5 Current Delta — Coalescing Invariant Wording (synced copy)
 
@@ -101,33 +87,3 @@ This synced runtime copy of the `code-seam` criterion now says a re-firing condi
 its ONE existing row "(date, tries, attempt)" — the "rung" wording is gone with the retired
 escalation ladder. The escalation-storm catching evidence remains as historical D4 seed, not
 a live mechanism.
-
-## Update History
-- 2026-09-18T13:27+02:00 — 260915-KS-L13 curator (range-closure pass): **the one row that still quoted `Which catalogs bind:` was re-cited to the reviewer's live binding text.** The rewritten reviewer role states the rule as `The catalogs your review type binds` (`roles/reviewer.md:33`), which heads the binding table the claim is about, so the dead quote was replaced by that sentence and the reviewer extent widened from `:35-42` to `:33-42` so the anchor is inside it. The catalog's own `## Promotion Ratchet` heading and its `:93-103` extent are unchanged and still carry the ratchet half of the claim. No claim was deleted or softened. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. SOURCE UNCHANGED BY THIS LEAF; card prose falsified by CAPS-R18@v1. Updated the catalog-evidence sentence so routine handoff reads the worker's targeted-check record together with the curator's complete memory-quality result.
-- 2026-09-17T07:33:51+00:00: Generated citation repair: `CANONICAL_SKILLS`; `TARGETS`; `sync_targets` repointed to scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56; scripts/sync-skills.py:204-212. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation scripts/sync-skills.py:204-205 in the row 87 of this card; the repetition added no pooled evidence
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `TARGETS` in the row 87 of this card from scripts/sync-skills.py:204-205 to scripts/sync-skills.py:43, the extent of the construct the claim is about (the checker named line(s) [43, 190, 209] as its live location)
-- 2026-09-10T07:41:10+00:00: Generated citation repair: "Which catalogs bind:" repointed to skills/l-01-agent-lifecycles/roles/reviewer.md:113-113. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Which catalogs bind:" repointed to skills/l-01-agent-lifecycles/roles/reviewer.md:112-112. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-09T13:59+02:00 — 260713-TES-L5 curator completion round 2: refreshed this synced
-  runtime copy for the code-seam coalescing-invariant wording (rung → attempt; ladder
-  retired); verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-03T03:59:59+02:00 — Curated 6 citation claims (3 table rows, 3 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-07-10T02:39+02:00 — HFX3 retro curation: refreshed CS-6 from candidate/D1-D3 wording to
-  its promoted standing form, including D4 zero-input quiescence and the developer-ruled
-  health-first notification contract. Added the governing-overview backlink. Verification metadata
-  remains pinned until closeout stamps the eventual two-parent code commit.
-
-- 2026-07-09T10:40+02:00 — 260707-HFX2-L8: refreshed after synced CS-6 scaling &
-  reclamation entered the code-seam candidate catalog with HFX2-L7 catching evidence and a
-  mechanization seam for future gate promotion. Verification metadata pinned until closeout stamps
-  the HFX2-L8 commit.
-
-- 2026-07-07T20:55+02:00 — agent-orchestration L18: body de-staled to the current catalog — the Candidate tier now carries CS-4 (reused-primitive affordance parity, seeded at L17's review, one catch) and CS-5 (cross-repo side-effect safety, seeded at L18 from finding 7's clean exemplar). Covers both the 984a303 direct commit (CS-4, previously unreflected in this sidecar) and this leaf's sync. Verification metadata pinned until closeout stamps the L18 commit.
-- 2026-07-06T15:35+02:00 — Created file-level onboarding for the new `criteria/code-seam.md` seed catalog (leaf 260703-L12): CS-1 production-wiring walk (AR3-1), CS-2 fail-open hunt (AR4-1), CS-3 validate-then-mutate, with the exploratory mandate and the promotion ratchet. Verification metadata pinned until closeout stamps the L12 commit.

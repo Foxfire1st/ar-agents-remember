@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/quality.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/quality.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T10:05+02:00 |
-| lastVerifiedCommitHash | `cfd0938103b1392e471144b6997c51a41591ad2b` |
-| lastVerifiedCommitDate | 2026-09-04T08:34:11+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [models/overview.md](overview.md)
@@ -48,18 +38,18 @@ and `QualityMemoryCap` replace open mappings with exact literals and a positive 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; this is a repository-owned public wire model.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Memory policy and explicit cap have closed, typed vocabulary. | `QualityMemoryPolicy`; `QualityMemoryCap` | mcp/src/agents_remember/models/quality.py:13-26 |
-| The quality response retains both stable wrapper and optional immutable publication paths. | `QualityGateResult` | mcp/src/agents_remember/models/quality.py:29-49 |
+- Memory policy and explicit cap have closed, typed vocabulary. [1]
+- The quality response retains both stable wrapper and optional immutable publication paths. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation reference applies.
 
@@ -69,16 +59,3 @@ No meaningful cross-repository implementation reference applies.
 plus an optional route-neutral pytest phase-report destination. `QualityGateResult` carries the
 certifying evidence minted from the verified Dagger publication path. These are typed fields, not
 `dict[str, unknown]` flags that a direct caller can elevate.
-
-## Update History
-
-- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the optional `runtimeAuthorityDigest` (64-hex) field on `QualityGateResult` binding the frozen shared-Dagger-authority snapshot digest into gate reports and published manifests.
-
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the profile-aware response model -- new executorAdapterId/profileDigest/profilePlanDigest/profileSelectionId/resultArtifact fields and the processPolicy literal replacing pytestProcesses-auto.
-- 2026-09-03T12:30+02:00 -- The model is shared by closeout and integration response owners.
-
-
-- 2026-08-24T21:23+02:00 — 260824-PDLS added typed admission, phase reporting, and certifying
-  evidence fields.
-
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: created for the strict shared quality-result wire model. Verification remains blank until architect-owned closeout stamps the code commit.

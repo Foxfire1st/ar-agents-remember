@@ -1,0 +1,155 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/TerminalDiagnosticsDrawer.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The keep-alive PTY surface hosted read-only inside the frame (its additive `readOnly` prop).\n\nAnchor: \"terminal-diagnostics-frame\"; \"<PtySurface focused={focused} readOnly />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f1800351917ad55d654c89f5de3239ab0852cd2",
+            "content": "sha256:eac9dd83281d0a4d76239e6a0ccbfb5fd6f7fc7dca697e9133e4bb9415b3052f",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The session type the drawer targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:63bc468e08fb9286c6dd5749f7582a0a2f3930aa3e3a22b79f74dbd3a90c7ecb",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenSession"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:506f81c2852cf973286517e13e88fd9bccee2b788641f7e75acf1375b37043d3",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The stage body that owns default-off toggling and hides the drawer while the library overlay is up (F8).\n\nAnchor: \"import { TerminalDiagnosticsDrawer } from \\\"./conversation/TerminalDiagnosticsDrawer\\\";\"; \"const [chatsDiagnosticsOpen\"; \"data-testid=\\\"chats-stage-layers\\\"\"; \"const toggleChatsDiagnostics = useCallback(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
+            "content": "sha256:1008eac7502599890d3daef2278588a3e20a5eabba07a6d556244b3db8d9fed3",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 525
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:2b359410a5b3bbe299e21e1a9c622397eddda632a9efba9d2445a97efcc64236",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:de7eecd6057ba31e70a882709b435a2c3859e877ccd46b8fd65de52f3a1226f8",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7b9632adcc6905dab717483247cc426b6e383707",
+            "content": "sha256:dac315e351994ea2964a410afaf4144897f670c1ab0e1dbeee6c7cbcddd720cb",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/panels/session-cockpit/stageLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
+            "content": "sha256:3f814c6400250d13fa26ed4f9aaf89a8b46ce1460d89a823fa3200415887119d",
+            "locator": {
+              "end": 526,
+              "kind": "line_range",
+              "start": 526
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The view that captures/consumes the diagnostics focus-return token (F9).\n\nAnchor: `toggleChatsDiagnostics`; `isConnected`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f05f3361e2c16bb8fdaee1e19704e09dd6db74",
+            "content": "sha256:55493f142b48899b9280996745efd4b8700041f0321ac9fea0224b88efe39c22",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "dashboard/src/panels/session-cockpit/InteractionBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
+            "content": "sha256:75865871b0bafff967987009f8c7f3dc2dafc4d6b0a520598cd106e9d0396c7b",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 260
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

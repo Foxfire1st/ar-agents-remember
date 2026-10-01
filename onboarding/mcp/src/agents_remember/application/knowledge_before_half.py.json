@@ -1,0 +1,585 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_before_half.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it owns, the three facts a writer must tell apart, and why every read answers with a reason instead of raising.\n\nAnchor: \"Absent is not empty.\"; \"Identified is not unidentified.\"; \"Damaged is neither.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:ebb8a7d9ed79d47e9c047ed8e02ef613d04efc93105530aa888815436cb8ffcb",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The value-or-reason reader: a file is a dataset only once it is read as one, and every way that read fails is an input fact rather than a defect of the run.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:e3deadc626a9f4101a45821bfc3418bf4d7f1eb9af522de537812eb36cecde0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_dataset_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:793a7cb2f90b6d7e9ffd268240928c1f4241714c1d1581cc59150741b7fdd51d",
+            "locator": {
+              "kind": "symbol",
+              "name": "dataset_identity"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The same question asked of already-captured bytes, staged privately and reported against the path the caller handed over.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:537340418e29664e57bbfc1adde8dcdb6d29d88b497397aee0626f14b1152c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_captured_dataset_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The one conversion of the storage owner's three failure types into a reason string, with the reporting path kept separate from the read path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:d3c6fe3270a79ed55de2e5ee48c598bc5815752246e3d3ea92250bfdb810d94f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dataset_identity_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The four-state read: the dataset is read, the record beside it is read, and the three identity fields are compared before a half may be called identified.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:20593e75be84f9692bca97772b0636bbe09a4d3b7c1c80c6572bf3a64d07ce6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_before_half"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:24af6ce4d33830fccfebdc05fa226e13412e0147f409c85cd103bd5ba92de7c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_half"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:32f2ba80f58d30b61ad17c4c408d826be0e443e859900b4280ad1dd6212f8d68",
+            "locator": {
+              "kind": "symbol",
+              "name": "_origin_mismatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The path-shaped sibling for a caller that names a file rather than a directory, where absence is deliberately not this reader's answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:6e9c6dbcaf503ce0d83366ded2f8998e47410d318ac1936c1007bdb4724b7d28",
+            "locator": {
+              "kind": "symbol",
+              "name": "damaged_before_half_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The one refusal the review answers an unreadable side with: both sides preflighted, the shipped `candidate_dataset_absent` code reused rather than a shared vocabulary widened, and the state carried in the detail and the offending input.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:7c0acaa2e493375e33bd50bc097d04c98d0ba772fb635fdb53c4131fbcf6d930",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_half_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:6efa4460d6f17f84a5ed18ee7576378a23dc95272d137a47d7f474411a76b587",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreadable_half_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5683da86fac298ce2749ce49ffd1f76c7528e964",
+            "content": "sha256:d7bb856b30683703482162fa47440e480ed5957164a1923ea79f1d9fd4623268",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRefusal"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5683da86fac298ce2749ce49ffd1f76c7528e964",
+            "content": "sha256:38de40ad37b224c19e974e2527893d02dd5d9687bc0f46003dc274dbcc50c254",
+            "locator": {
+              "end": 890,
+              "kind": "line_range",
+              "start": 878
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The dataset name both halves take, imported rather than re-spelled, so a half's dataset is the file the review opens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:41f589742d293ea113b9383d3fdd5dd040a7fef94f875ea4a4115ac3da6cc2cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANDIDATE_DATABASE_NAME"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The model vocabulary the record is built from — the frozen base and the four pattern/length bounds its fields are validated against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:c58a0be02b9a17f9c110f202c72cb9015eacba9292e924fb7afa7fb7f6fdaff5",
+            "locator": {
+              "kind": "symbol",
+              "name": "UUID_PATTERN"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:8d07fc9b5543d8774e7702f3755879f79229e50b72531f6d6e87e17dbe7e0094",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHA256_PATTERN"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:998423b964ec7ac8b318e61b43c890a26b92e139e66818093d97e9343433d1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_OBJECT_PATTERN"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:3eb2f7176a3550df9b7a7a2ca0105cfb6a5c57f24a99169106b4587720a1715a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LABEL_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:f45b6f8cbdbb61e9d6cdcf41df6533e5f95b2519735715d4d91ebeebd2518aa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PATH_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFERENCE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The identity value every reader answers with, the module that produces it, and the receipt the sibling module reads to bind a half to the candidate's own admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1bc9276b29963a6f495e9a10f175733d860a6f30",
+            "content": "sha256:6b5189598499ba537c38070fc64c971ccdf28085ae54e01da71c9f5e04e98181",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_candidate_receipt"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_receipt.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The candidate files the establishing sibling reads to bind a half to the candidate's own admission — recorded here because that is the contract this module's readers are handed, not because this module reads them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:aa4f2dacfb2d536a664a6c5ec2ea8cd434e978cf9e11530822e0c49fb7425d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_database_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:c3ba3b3d58162370d3d8a55fd3614ec20ba8602383fd66881ac176c256d5e0c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_receipt_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:1b325bf19a812c589bbba0f6254d0253ea389717794a2b2e762efaef82cc4ba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateReceipt"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the layout constants, the origin record and the half's state, the four readers and the one refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:27138569c0f3830bf3c02654b3ac8201c34955f71788266a68616045fa8a3224",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The origin record's file name and the three closed vocabulary values it carries — the version, the one generation state, and the one value pre-feature history has.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:7e39c61fc2641aaa81ca23159d72971c64a691ddd394f38215008ce5b89906bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASELINE_ORIGIN_NAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:5006d25096a9c1378b523325c700257c40debea4fce7895b012bea42c0058d80",
+            "locator": {
+              "kind": "symbol",
+              "name": "ORIGIN_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:a30a6b4c7f418520b8d65bfcf7a3b5aefe9e731fa1b4fdf80b3cb3c30ea0e50e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FIRST_GENERATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:d4df5cb13df1b5433b35b395e0582f21a8ab5ac77b3c765684c24b74b1274fef",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_RECORDED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:1575ad049a7e8a8eba355e0390b5f833c2a87980589ee1963d72e448aef86b67",
+            "locator": {
+              "kind": "symbol",
+              "name": "BeforeHalfState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The recorded origin: every field a fact about this act, `selected_baseline` recorded as what the run observed rather than as a claim about the repository, and the code base recorded as an observation rather than as a source endpoint.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:713d05b1c3053c0ca5a02a29203e1a6cdc67813c91d8c44d83ccdd543886d667",
+            "locator": {
+              "kind": "symbol",
+              "name": "BaselineOrigin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The four states the half can be in, read from the half rather than assumed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:03af7b59b249e37e320f79338e06d2408c93ece1eaa348736cc86f7b8e57ea76",
+            "locator": {
+              "kind": "symbol",
+              "name": "BeforeHalf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One before side read, carried as the identity it holds, the origin record beside it, or the damage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:7277e596d2af324cc6777ef105927c9031796417ed0acb9012d75bc8ad94cfd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_HalfReading"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The half's two files: the dataset under the name the review resolves, and the origin record beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:e55ed149780dfff90915b94c39ad4321a980549069489b8b7844b9419574168d",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline_database_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:2c10a0e07e0f1263dd20aaa0ec929ccb9cadb0fbd8c824db3ca96a3034d3b56d",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline_origin_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The origin record written as canonical bytes, atomically and durably.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:1e59de69920f31f28412daa158ba49cafdfc82a66f352c60f579d44dace7776c",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_baseline_origin"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a939ca21bb16d7edca85c2bc76c955a42e67ad06",
+            "content": "sha256:2070a5a21194d1e0f587c26210c2ec9a7d094bb31f1d3279b93d2120492630ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_json_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/canonical_json.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The one place this module raises: an origin record that is present but will not read is a storage error, because answering `None` would let a damaged record read as an older, unrecorded half.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:b4e54d5de12a559e1745ca24a8c1545bfc849f56ec986911d16bfb56f7f71bf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_baseline_origin"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b5b99d723dd9e5dbdb29b03039cd159a5c704387f61a01abc7b9953e52d828e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeStorageError"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

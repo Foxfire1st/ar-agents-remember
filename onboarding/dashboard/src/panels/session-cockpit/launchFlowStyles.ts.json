@@ -1,0 +1,56 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/launchFlowStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dialog recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c303d774edf0baf4b857c8347a8e189c4977e8f2",
+            "content": "sha256:a3764d6b3e0221dc013622dd4b4ba0c6cfbdc0e6734ee1e451cfb5b241b73002",
+            "locator": {
+              "kind": "symbol",
+              "name": "overlay"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c303d774edf0baf4b857c8347a8e189c4977e8f2",
+            "content": "sha256:737739fa1cb274ce707459beb7c073176e2baa67809f08512d72f458d795cae4",
+            "locator": {
+              "kind": "symbol",
+              "name": "optionButton"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c303d774edf0baf4b857c8347a8e189c4977e8f2",
+            "content": "sha256:1631ee5ffbe33dd8d77780a04aaf01436c2357db11a7f266465bfad1344f8d70",
+            "locator": {
+              "kind": "symbol",
+              "name": "errorLine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c303d774edf0baf4b857c8347a8e189c4977e8f2",
+            "content": "sha256:834b5ff9baeeb1103c0ece70a5eb1d9bc0377ff6a1b5239912d369f7aa01a5c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "launchButton"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

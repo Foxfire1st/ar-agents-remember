@@ -1,15 +1,5 @@
 # mcp/tests/test_serving_notifier_handoff.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| path | `mcp/tests/test_serving_notifier_handoff.py` |
-| doc_type | `file-level-onboarding` |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -124,82 +114,38 @@ the verification stamps remain closeout-owned.
 None. The eight cases cover the oracle's terms and its two negative controls; a clause added to the
 requirement needs its own case here rather than a widened assertion in an existing one.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved memory root. The module tests
 repository-owned serving behaviour, so no external domain claim is needed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 The declarations below establish the behaviour under test and the oracle's own terms; this inventory is
 not execution evidence and is not a certification result.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two independently scheduled loops neither of which can wake the other: the observer's completion-relative poll and the notifier's completion-relative interval. | `_terminal_observation_loop`; `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:109-126; mcp/src/agents_remember/serving/_app_lifespan.py:288-348 |
-| The observer's poll delay, read from the production declaration rather than written as a literal. | `DEFAULT_STARTING_SWEEP_INTERVAL_SECONDS` | mcp/src/agents_remember/serving/terminal_liveness.py:57-57 |
-| The sweeper's retained starting-row window and ten-second full-sweep limit measured from the previous full sweep's start. | `refresh` | mcp/src/agents_remember/serving/terminal_liveness.py:174-221 |
-| The full-sweep rate limit the oracle's `F` term is read from, declared with the hysteresis the sweeper applies. | `TerminalCatalogLivenessConfig`; `DEFAULT_LIVENESS_HYSTERESIS` | mcp/src/agents_remember/models/terminal_catalog.py:728-741; mcp/src/agents_remember/models/terminal_catalog.py:744-744 |
-| The notifier interval the oracle's `N` term is read from. | `DEFAULT_AGENT_NOTIFIER_INTERVAL_SECONDS` | mcp/src/agents_remember/kernel/_agentic_settings_core.py:115-115 |
-| The real notifier sweep each recorded pass runs, and the durable store whose commit boundary the harness records. | `run_agent_notifier_sweep`; `TerminalCatalog` | mcp/src/agents_remember/serving/agent_notifier.py:96-190; mcp/src/agents_remember/serving/terminal_catalog.py:65-431 |
-| The instrument: the deadline-correct virtual clock, the recorded worlds, and the oracle's terms read back out of them. | `_HandoffCase`; `_Handoff`; `assert_oracle` | mcp/tests/_serving_handoff.py:603-666; mcp/tests/_serving_handoff.py:669-902; mcp/tests/_serving_handoff.py:827-902 |
-| The oracle's fixed part and the class that carries all eight cases. | `WORST_PHASE_BOUND`; `ServingNotifierHandoffTests` | mcp/tests/_serving_handoff.py:95-96; mcp/tests/test_serving_notifier_handoff.py:52-376 |
-| The default-phase handoff with no injected overrun, and the strict observer-phase form asserted where its arming actually happens. | `test_the_default_phase_handoff_stays_inside_the_worst_phase_bound` | mcp/tests/test_serving_notifier_handoff.py:53-99 |
-| The previous full sweep's own overrun as the `R_observer` term, with the bound met exactly. | `test_an_in_flight_full_sweep_overrun_delays_the_consuming_sweep` | mcp/tests/test_serving_notifier_handoff.py:101-146 |
-| The starting-row fast-path overrun and a nonzero commit duration, with the observed latency equal to the oracle's sum. | `test_a_starting_row_fast_path_pass_counts_toward_the_same_overrun` | mcp/tests/test_serving_notifier_handoff.py:148-204 |
-| A notifier pass in flight at the commit: its interval starts at its own completion, not at the commit. | `test_an_in_flight_notifier_pass_finishes_before_its_interval_starts` | mcp/tests/test_serving_notifier_handoff.py:206-237 |
-| Committed-truth-only reads: attempted before the commit, returned after it, carrying the committed rows in the notifier's own scope. | `test_the_notifier_reads_only_committed_catalog_truth` | mcp/tests/test_serving_notifier_handoff.py:239-280 |
-| Missed ticks coalesce for both loops: no queued catch-up burst and no second in-flight attempt. | `test_missed_ticks_coalesce_instead_of_queueing_a_catch_up_burst` | mcp/tests/test_serving_notifier_handoff.py:282-323 |
-| A live pass that did not read the fact cannot be the pass that satisfies the stage. | `test_a_live_pass_that_did_not_observe_the_fact_does_not_satisfy_the_stage` | mcp/tests/test_serving_notifier_handoff.py:325-354 |
-| Notifier disablement pauses signal derivation only, and re-enabling in place consumes already-committed truth on the next pass. | `test_a_disabled_notifier_pauses_signal_derivation_only` | mcp/tests/test_serving_notifier_handoff.py:356-376 |
-| The shared fixture this module extends rather than duplicating. | `_ServingFixture` | mcp/tests/test_serving_observation_loop.py:259-370 |
-| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_serving_notifier_handoff.py" |mcp/tests/test-evidence-lanes.toml:231-231|
+- The two independently scheduled loops neither of which can wake the other: the observer's completion-relative poll and the notifier's completion-relative interval. [1]
+- The observer's poll delay, read from the production declaration rather than written as a literal. [2]
+- The sweeper's retained starting-row window and ten-second full-sweep limit measured from the previous full sweep's start. [3]
+- The full-sweep rate limit the oracle's `F` term is read from, declared with the hysteresis the sweeper applies. [4]
+- The notifier interval the oracle's `N` term is read from. [5]
+- The real notifier sweep each recorded pass runs, and the durable store whose commit boundary the harness records. [6]
+- The instrument: the deadline-correct virtual clock, the recorded worlds, and the oracle's terms read back out of them. [7]
+- The oracle's fixed part and the class that carries all eight cases. [8]
+- The default-phase handoff with no injected overrun, and the strict observer-phase form asserted where its arming actually happens. [9]
+- The previous full sweep's own overrun as the `R_observer` term, with the bound met exactly. [10]
+- The starting-row fast-path overrun and a nonzero commit duration, with the observed latency equal to the oracle's sum. [11]
+- A notifier pass in flight at the commit: its interval starts at its own completion, not at the commit. [12]
+- Committed-truth-only reads: attempted before the commit, returned after it, carrying the committed rows in the notifier's own scope. [13]
+- Missed ticks coalesce for both loops: no queued catch-up burst and no second in-flight attempt. [14]
+- A live pass that did not read the fact cannot be the pass that satisfies the stage. [15]
+- Notifier disablement pauses signal derivation only, and re-enabling in place consumes already-committed truth on the next pass. [16]
+- The shared fixture this module extends rather than duplicating. [17]
+- The candidate classifies this module once, in the explicit unit-regression lane. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation boundary is established by this repository-owned
 unit-regression module.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 4 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`_app_lifespan.py`, `_serving_handoff.py`, `agent_notifier.py`, `terminal_catalog.py`, `terminal_catalog.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:32:22+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:231-231. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:179-179. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:161-161. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:154-154. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:151-151. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:150-150. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:149-149. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:147-147. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:127-127. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand while resolving the memory sync** — `mcp/tests/test_serving_notifier_handoff.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand** — `mcp/tests/test_serving_notifier_handoff.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: `"mcp/tests/test_serving_notifier_handoff.py"` → `mcp/tests/test-evidence-lanes.toml:122-122`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_serving_notifier_handoff.py" repointed to mcp/tests/test-evidence-lanes.toml:119-119. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `DEFAULT_AGENT_NOTIFIER_INTERVAL_SECONDS` repointed to mcp/src/agents_remember/kernel/_agentic_settings_core.py:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-15T19:25:00+00:00 — 260831-LOCR-L04 curator (uncommitted change set on `ar/260831-locr-l04`,
-  base `e9678c56`, `mcp/tests/test_serving_notifier_handoff.py` new, 376 lines, one class, eight cases,
-  sha256 `01070bca…`): created this card for the leaf's new handoff proof module. `LOCR-R04@v1` is a
-  **preservation** requirement — the change set touches no file under `mcp/src` — so the proof envelope
-  is the deliverable and the card records the oracle it makes falsifiable rather than a case list: the
-  delivered latency relation, the fixed 21.0 s of logical scheduling (`P` + `F` + `N`) with every
-  further term measured (`R_observer`, `D_commit`, `R_notifier`), and the clause each of the eight cases
-  protects. Two design properties are recorded as boundaries rather than claims, because a passing run
-  cannot distinguish them: case 1's strict observer-phase assertion is a constraint on that case's own
-  arming scenario and not a statement about production behaviour, and `assert_oracle`'s three
-  unfalsifiable relations are documented rather than asserted — an assertion that holds in every
-  reachable state is not evidence. The committed-truth case compares against the notifier's own
-  `include_terminated=True` collection for the reason recorded in the body. The module is registered in
-  the `unit-regression` lane at `mcp/tests/test-evidence-lanes.toml:97`, which is also the row whose
-  insertion re-derived the lane citations across this card's siblings. No requirement verdict is
-  recorded here: acceptance is the independent review's, and verification metadata stays closeout-owned
-  because the source is an uncommitted candidate.

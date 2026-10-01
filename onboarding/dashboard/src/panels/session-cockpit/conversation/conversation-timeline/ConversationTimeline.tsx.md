@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-07T08:19Z |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](../overview.md)
@@ -114,36 +104,32 @@ Claude Code / Codex TUIs, NOT first principles):
   on a non-empty roster, so the trusted-input restore cancel must not fire on it; downward scrolling
   keeps working through PageDown, `]`, and the wheel.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Feed ARIA, focus pinning, bottom-follow, older paging, widget keyboard nav, the scroll-key set, run collapse. | "export { OPERATOR_SCROLL_KEYS } from \"./measurements\";"; "export interface ConversationTimelineProps {"; "honestly known (else omitted; paging copy says \"total unknown\"). A roving tabindex + a focus-pinning" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:32-32; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:34-34; dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx:4-4 |
-| The pure unknown-vendor run grouping this feed renders. | "describe(\"groupUnknownVendorRuns (F10)\", () => {" | dashboard/src/panels/session-cockpit/conversation/collapse.test.ts:24-24 |
-| The kind dispatcher + stable accessible-name helper per article. | `ConversationItemView`, `itemAccessibleName` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:41-44; dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-69 |
-| The item wire type (`globalOrdinal`/`kind`/`phase`) the feed reads. | `ConversationItem` | dashboard/src/data/conversation/types.ts:158-176 |
-| The surface that mounts this feed, owns announcements + paging callbacks, and hijacks ArrowDown into the agents line. | `ConversationSurface` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:269-341 |
-| The feed ARIA + default-closed diagnostics render suite. | "ConversationTimeline — one navigable role=feed (R5" | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx:7-7 |
-| The surface keyboard-contract suite pinning the ArrowDown absence from the scroll-key set. | "ConversationSurface agent focus" | dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:144-410 |
+- Feed ARIA, focus pinning, bottom-follow, older paging, widget keyboard nav, the scroll-key set, run collapse. [1]
+- The pure unknown-vendor run grouping this feed renders. [2]
+- The kind dispatcher + stable accessible-name helper per article. [3]
+- The item wire type (`globalOrdinal`/`kind`/`phase`) the feed reads. [4]
+- The surface that mounts this feed, owns announcements + paging callbacks, and hijacks ArrowDown into the agents line. [5]
+- The feed ARIA + default-closed diagnostics render suite. [6]
+- The surface keyboard-contract suite pinning the ArrowDown absence from the scroll-key set. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 ## Current L5I Maintenance
 
@@ -152,49 +138,3 @@ per-session `{scrollTop, atBottom}`, ignores box-less/clamp-echo events, arms re
 geometry can contain them, drives bottom restoration through stable frames, and lets trusted user
 input cancel any pending restore. A latest chip is outside the scroller so it remains reachable;
 measurement anchoring protects a reader's visible row during virtual-row size changes.
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: re-mapped this sidecar from dashboard/src/panels/session-cockpit/conversation/ConversationTimeline.tsx to the conversation-timeline/ canonical entry after the responsibility split; added the L8 Split Layout section. Verification pinned to the leaf base until closeout stamps the code commit.
-
-- 2026-08-04T03:26:26+02:00 — 260731-EFA-L6 S18-SR3-B06 curator: generated and source-inspected the four whole-claim ranges (4 repairs, 0 normalisations, 0 declines); the locked immediate recheck was clean with frozen zero source/tokenize/parse/build telemetry.
-- 2026-08-04T03:03:23+02:00 — 260731-EFA-L6 S18-SR3-B06 worker: replaced the
-  three underbound append, latest-chip, and prepend fragment records with whole timeline ownership;
-  the static update-state styling is split onto its own exact symbol. All changed bindings are
-  provisional `:1-1` inputs for the fresh Luna curator; no citation mechanics ran.
-- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
-
-- 2026-08-04T01:24:49+02:00 — 260731-EFA-L6 S18-SR2-B06 worker: retained the valid
-  `knownTotal`/scroll-handler ranges and source-first bound the omitted ARIA render ownership,
-  append-follow effect, prepend-anchor restore, and latest-chip rendering with provisional `:1-1`
-  citations. No final ranges were hand-authored and no citation mechanics ran.
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired and normalized the scoped conversation-timeline citations; final exact frozen-snapshot check is clean.
-- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 1 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 49; retained the first occurrence/order, all unique anchors and source coverage; scoped non-fixing result 0.
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 7 repository-internal references and normalized 4 prose citation references for the timeline, collapse helper, item dispatcher, wire type, mounting surface, and focused test suites; final scoped result 0 (checker-clean).
-
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the updated scroll-key contract —
-  `OPERATOR_SCROLL_KEYS` is now EXPORTED (for the surface keyboard-contract tests) and ArrowDown is
-  deliberately absent from it because the conversation surface hijacks ArrowDown into the agents
-  line on a non-empty roster; PageUp/PageDown, `[`/`]`, ArrowUp, Home/End, Space, and the
-  wheel/touch/pointer remain the scroll/trusted-input paths. Also re-anchored the card's line
-  citations, which had drifted from the current file layout (the file is 1223 lines): ARIA honesty
-  L1128/L1147/L1179-L1181, focus pinning L439-L464, tabbable L1168-L1177, bottom-follow
-  L638-L680 + latest chip L1198-L1215, widget nav L1033-L1060 with `isEditableTarget` L263-L271 and
-  `inOverflowRegion` L273-L276, run-collapse consumption L356, and the reference row L356-L1223.
-  Verification metadata stays pinned at the file's last committed touch (`842b487`); the scroll-key
-  change is uncommitted.
-- 2026-07-24T13:17:17Z — Curator: documented restored scroll intent, trusted-input precedence,
-  late-clamp protection, latest navigation, and measurement anchoring; verification fields remain
-  pre-commit.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the FB7 terminal-surface identity pass —
-  the `viewport` well (`background: well` + grid border + `100ch` centered `feedInner` column, FB7.1),
-  the FB7.3 line-grid rhythm (per-article hairline removed), and the R12 collapsed-run gutter line with
-  the honest `same summary` copy + de-boxed nowrap toggle. Spec home is the leaf visual-audit `## FB7`.
-  No feed/ARIA/virtualization behavior changed. Verification pinned to the leaf base (`352d5cd`) until
-  closeout stamps the candidate commit.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the one `role="feed"`
-  timeline — item-virtualized with server-ordinal `aria-posinset`, honest `aria-setsize`/`total
-  unknown`, focus pinning of both the focused and default-last rows (F18), non-animated bottom-follow,
-  anchor-preserving older paging, the widget-scoped keyboard nav with the completed exclusion list
-  (F14), and unknown-vendor run collapse (F10). Verification is pinned to the leaf base (`0be0099`)
-  because the new source file is uncommitted; closeout owns its first source stamp.

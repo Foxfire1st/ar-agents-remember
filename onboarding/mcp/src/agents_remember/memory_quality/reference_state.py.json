@@ -1,0 +1,169 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/reference_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A tree is converted exactly when it has the layout marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_converted_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The located bytes of a file, symbol or range locator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:d5a78ce00a59a66e7d0d29b949c031082d0301ae2901b304f5781a3e56080dc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "located"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An anchor's state in the working tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:3a48d929bee49d77e968dce8842e753c75ec437f33c6d3730a2a811c6c4ca49a",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:6d63bbaf8d5a866d9817c9baf298afafcd70c7f6920a11b44db26bd6e70d3554",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_blob_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stale references are report-only findings naming the onboarding gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:d2802ad365047d4ef2e74f95d6031439bb1e4cdcea8286e0ebd28b1b11768944",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_references"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:c97f5111fd6f84686578516ba41dd1602d38eb325ff395cba22ac24580bfdeb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_REFERENCE_CHECK"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only mechanical moves are re-recorded; a range is re-found only when its bytes occur exactly once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:f0274d6ddcde7d15035f21e86d63b74b10e7e3ad3d5bfc51a50ed7bd43f33f73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refreshed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:e35d54d4d08535fcbc2e88e5556c31be6819e30175054d4b0641c2c1f80d4bba",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "References are checked, and only mechanical moves are fixed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:2d63c14aee7e1b3369e902a5c73e9c20b76158a403a72893ee402b8e38909ed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_references_are_checked_and_only_mechanical_moves_are_fixed"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The fixer can be scoped to one sidecar, and names unreadable sidecars.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:e35d54d4d08535fcbc2e88e5556c31be6819e30175054d4b0641c2c1f80d4bba",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A sidecar that is not valid JSON is named and skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "content": "sha256:268bc8cd158bbd6a69fb8daf965aa7a426ce5ec36720a4716dacb0caa673f4ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sidecars"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,54 @@
+{
+  "path": "dashboard/src/data/requirements.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The client under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6804a766caa5f3a903d673cff23f59847af2df0b",
+            "content": "sha256:0ed99f9537aa1fff2a7ae2d08a565d1ea7feea88b13442cb9ee76489c71c0f12",
+            "locator": {
+              "kind": "symbol",
+              "name": "listRequirements"
+            },
+            "path": "dashboard/src/data/requirements.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6804a766caa5f3a903d673cff23f59847af2df0b",
+            "content": "sha256:57db0bedecedf2e0712050df85999f99885ed1a1f74eedb6aa8dbe87356ce343",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveRequirementReference"
+            },
+            "path": "dashboard/src/data/requirements.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The component-level suite that exercises the same resolution through the detail reader.\n\nAnchor: \"task requirement navigation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcf6d92236ab0263f148c9a307ef92a239f49fbd",
+            "content": "sha256:ea3c7e4e87382ffd3021a31a3c5532dbe98915a2b25765eabc8fd161ede9e99e",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/panels/detail-panel/taskRequirements.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

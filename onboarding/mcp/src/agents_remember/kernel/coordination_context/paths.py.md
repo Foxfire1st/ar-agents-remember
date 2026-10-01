@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/coordination_context/paths.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/coordination_context/paths.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-31T12:50+02:00                     |
-| lastVerifiedCommitHash | `5e4eb651be0691e2d2a90ea59bc662f92050db25` |
-| lastVerifiedCommitDate | 2026-09-18T20:35:53+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [coordination_context overview](overview.md)
@@ -68,39 +58,20 @@ module constants so the accepted shape and the refusal text cannot drift apart.
   memory worktree carries no `system/` of its own.
 - Path helpers do not parse settings content or inspect Git.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation is needed for this package-local path policy.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is needed. | n/a | n/a |
+No relevant external documentation is needed.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Resolver selection uses these path primitives for topology and settings discovery. | `resolve_coordination_context`, `_selection_roots`, `_selection_from_settings` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:74-83; mcp/src/agents_remember/kernel/coordination_context/resolver.py:86-101; mcp/src/agents_remember/kernel/coordination_context/resolver.py:148-164; mcp/src/agents_remember/kernel/coordination_context/resolver.py:129-145; mcp/src/agents_remember/kernel/coordination_context/resolver.py:85-94 |
+- Resolver selection uses these path primitives for topology and settings discovery. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository evidence is needed for local path policy.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-09-18T19:20+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the second onboarding-root shape this module now accepts (D-34). It refused a leaf enclosure's memory worktree (`…/worktrees/<repo>/<group>/memory-<name>/onboarding`) even though the contract-scoped memory-quality route measures that exact root, so the CLI and the tool that wraps it disagreed about the same tree. Added the new `memory_worktree_enclosure` structural decoder, the `"external"` topology it implies, the settings resolution that follows from it (a memory worktree has no `system/` of its own, so its settings are the official repo's), the three module constants, and the two-shape refusal that now names the received root. Two invariants were added; nothing previously stated in this card was falsified — the existing external/internal resolution rules and the "no scanning, no ambiguity error" statement still hold. Existing citation ranges were left for the citation pass.
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: re-anchored the worktree-support test
-  row after the source file shifted: `test_resolver_uses_installed_runtime_root_as_coordination_root`
-  at 2326-2346 and `test_resolver_ignores_dot_env_example_at_runtime` at 2348-2369. Zero findings
-  remain.
-
-- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 2 citation rows; scoped citation fixing regenerated the source ranges.
-- 2026-05-31T12:50+02:00 — `find_code_repository_root` dropped its `workspace_root.iterdir()` name-match scan and the "multiple code repositories" `ValueError`, leaving only absolute-path and direct-join resolution; corrected the Logic section to describe direct-join-only resolution and the removed ambiguity error (1.0.0 review remediation).
-- 2026-05-25T20:57+02:00: Created by extracting `c-08-ar-coordination-context-resolver` skill path and topology helpers from the monolithic resolver.
+No meaningful cross-repo references found.

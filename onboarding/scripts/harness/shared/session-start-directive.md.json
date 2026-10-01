@@ -1,0 +1,101 @@
+{
+  "path": "scripts/harness/shared/session-start-directive.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generator that composes this body into six files with per-harness framing.\n\nAnchor: `generated_files`, `compose`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:1558c093be0e087e187b21ff6e42f2a7cdbda8555d6072199861142e5160295b",
+            "locator": {
+              "kind": "symbol",
+              "name": "generated_files"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:eee1dde7aea37b3044e8fe17738f20fa3a9374fee8148eb296e7962c5f152736",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The workspace-root variant of the same directive.\n\nAnchor: \"as workspace instructions\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57e802988d70cfeed1fa2a15f69bca2060c0d5a9",
+            "content": "sha256:bee699563eb9840a516b83607b60bdd40684e03e4b727032032802d2f70b073c",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "scripts/harness/shared/workspace-directive.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The hook fragments that read this file at run time.\n\nAnchor: `DIRECTIVE_PATH`, `emit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b21f57d74bcbc0e7e88136f6c9af11efffaa4ee",
+            "content": "sha256:5db5136cd1d282051f5c73e41cd0ac83fe7864f8d54579ffb5f54df2167efa03",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIRECTIVE_PATH"
+            },
+            "path": "scripts/harness/session_start_hook.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b21f57d74bcbc0e7e88136f6c9af11efffaa4ee",
+            "content": "sha256:1267a7b5ff2f0bde99f71f901d7338006f8bbf48ee2a307686c2b2ce51d0cadc",
+            "locator": {
+              "kind": "symbol",
+              "name": "emit"
+            },
+            "path": "scripts/harness/session_start_hook.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lifecycle this directive routes a session into.\n\nAnchor: `# l-01-agent-lifecycles — The Agent Lifecycles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
+            "content": "sha256:1ca46a8318fb7c0df4394df84b9aa3debfb3c195fb5893f3357aa260b6547d29",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

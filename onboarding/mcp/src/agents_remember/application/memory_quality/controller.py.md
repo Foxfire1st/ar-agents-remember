@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/memory_quality/controller.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/memory_quality/controller.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application/overview.md](../overview.md)
@@ -139,11 +129,17 @@ the crossing sync (`worktree_sync`) as the only way such a leaf converts.
 - **Conversion and crossing are separate routes.** The crossing sync is only for lines that descend
   from a converted official line. An unconverted official line, or a repository without one, converts by
   running `agents-remember knowledge-convert` on that line and committing it through its normal route.
-- Repository-only runs (no contract) are not affected.
+- **Since L37 the refusal is `_unconverted_refusal(scope)` and covers both scopes (MIK-R09 rule 6).** A leaf's
+  tree is refused when its official line is converted, or otherwise by the cutover lock (through
+  `unconverted_line_refusal`) once its memory repository holds converted memory. A repository-level run (no
+  contract) reads the official memory checkout: when that checkout is unconverted it is refused by the cutover
+  lock, naming "the official memory checkout"; a converted checkout is never locked. During the cutover window
+  this refuses the repository-level run for every master, the converting one included, until it lands.
+- **The `knowledge.converted` check uses the converted base (L37 review R3-1).** The drift context carries
+  `knowledge_base=converted_check_base(scope, coordination_root)`, so on an unconverted `HEAD` the check validates
+  against `HEAD`'s conversion, as the gate, the worklist and the writer do.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The refusal runs before any scan and returns a refused result naming the crossing sync. | `_execute_memory_quality`; `unconverted_line_refusal` | mcp/src/agents_remember/application/memory_quality/controller.py:395-468; mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
+- The refusal runs before any scan and returns a refused result naming the crossing sync. [1]
 
 ## 260928-MIK-L28 The "Invariants Without Proof" Input (MIK-R28 Rule 5)
 
@@ -159,9 +155,7 @@ MIK-R37, it returns `None`, and the checklist renders nothing new.
   index or cache that cannot be read becomes a `problem` line in the section, never an exception, so the
   run that shows the list cannot fail because of it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree. | `_attach_curator_checklist`; `_without_proof` | mcp/src/agents_remember/application/memory_quality/controller.py:568-722; mcp/src/agents_remember/application/memory_quality/controller.py:857-868 |
+- The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree. [2]
 
 ## 260928-MIK-L08 The Leaf's Change-To-Knowledge Worklist (MIK-R08 Rules 7 And 8)
 
@@ -186,13 +180,11 @@ worklist applies (both memory sides unconverted, which is every production leaf 
   recompute for a scope the gate does not apply to.
 - **Unconverted runs are unchanged:** with no worklist, neither the response field nor the section appears.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response. | `_knowledge_gate_and_worklist`; `_knowledge_briefs`; `worklist_summary` | mcp/src/agents_remember/application/memory_quality/controller.py:481-502 |
-| The prepared inputs handed to the checklist. | `_PreparedInputs` | mcp/src/agents_remember/application/memory_quality/controller.py:471-478 |
-| Only a contract-scoped run gets a worklist, through the one recompute entry point. | `_knowledge_worklist`; `recompute_leaf_worklist` | mcp/src/agents_remember/application/memory_quality/controller.py:529-538 |
-| The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path. | `_attach_curator_checklist`; `knowledge_worklist_path` | mcp/src/agents_remember/application/memory_quality/controller.py:568-722 |
-| The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4). | `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist` | mcp/tests/test_knowledge_worklist_leaf.py:577-670 |
+- The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response. [3]
+- The prepared inputs handed to the checklist. [4]
+- Only a contract-scoped run gets a worklist, through the one recompute entry point. [5]
+- The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path. [6]
+- The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4). [7]
 
 ## 260928-MIK-L30 The Onboarding Gate Dispatch (MIK-R30 Rule 6)
 
@@ -210,11 +202,9 @@ report-only findings of the leaf's onboarding gate:
   arguments, and a refusal is the same single `memory-refresh-attestation-failed` finding with the same
   text. This is every production leaf before MIK-R37, including this master's own leaves.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The checklist's leaf block hands the gate the changed paths and the accepted identities. | "gate_findings, gate_report_only = _onboarding_refresh_gate(" | mcp/src/agents_remember/application/memory_quality/controller.py:680-680 |
-| The dispatch: the history-file gate on a converted tree, today's gate otherwise. | `_onboarding_refresh_gate`; `leaf_onboarding_trace_sides` | mcp/src/agents_remember/application/memory_quality/controller.py:804-854 |
-| Each open item counts once: since MIK-R09 the card's and the route's traces and the uncovered file's `unexplained_hunk` (3); rows make the count 0; today's function is not called. | `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` | mcp/tests/test_onboarding_trace_gate.py:702-722 |
+- The checklist's leaf block hands the gate the changed paths and the accepted identities. [8]
+- The dispatch: the history-file gate on a converted tree, today's gate otherwise. [9]
+- Each open item counts once: since MIK-R09 the card's and the route's traces and the uncovered file's `unexplained_hunk` (3); rows make the count 0; today's function is not called. [10]
 
 ## 260928-MIK-L10 A Needed Onboarding Row Is Not Reported Unnecessary (MIK-R10 Rule 5)
 
@@ -234,11 +224,9 @@ they join the checklist (ruling 2026-09-30T01:56:39 Q3):
   today's gate runs as before; this leaf's own memory-quality runs returned no worklist and no
   `onboardingTrace`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The report-only findings pass through the filter. | "report_only.extend(_needed_rows_dropped(" | mcp/src/agents_remember/application/memory_quality/controller.py:688-688 |
-| The filter and the adjusted count. | `_needed_rows_dropped`; `answering_trace_subjects` | mcp/src/agents_remember/application/memory_quality/controller.py:779-801 |
-| The raw count is 2 and the response count 1; only the stray row remains. | `test_an_onboarding_row_that_answers_an_uncovered_item_is_not_reported_unnecessary` | mcp/tests/test_unexplained_change_disposition.py:540-579 |
+- The report-only findings pass through the filter. [11]
+- The filter and the adjusted count. [12]
+- The raw count is 2 and the response count 1; only the stray row remains. [13]
 
 ## 260928-MIK-L09 The Mandatory Gate Counts Every Open Item (MIK-R09 Rules 1, 3 And 7)
 
@@ -267,28 +255,28 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
 - **Unconverted runs are unchanged:** with no gate and no worklist, neither `knowledgeGate` nor `knowledgeWorklist`
   appears and the count is what it was; this curation's own `memory_quality_check` runs returned neither.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The run evaluates the gate and briefs it. | "gate, worklist = _knowledge_gate_and_worklist(scope, candidate_inputs)"; "response.update(_knowledge_briefs(worklist, gate))" | mcp/src/agents_remember/application/memory_quality/controller.py:422-422; mcp/src/agents_remember/application/memory_quality/controller.py:458-458 |
-| The gate carried to the checklist. | `_PreparedInputs` | mcp/src/agents_remember/application/memory_quality/controller.py:471-478 |
-| The gate over the exact curator candidate; `None` where it does not apply. | `_knowledge_gate` | mcp/src/agents_remember/application/memory_quality/controller.py:505-526 |
-| Each gate finding is one repair finding, each open item counted once. | "repair_findings.extend(_with_gate(gate_findings, prepared.gate))"; `_with_gate`; `_onboarding_findings_beside` | mcp/src/agents_remember/application/memory_quality/controller.py:687-687; mcp/src/agents_remember/application/memory_quality/controller.py:743-776 |
-| The census blockers, split out. | `_prepared_findings` | mcp/src/agents_remember/application/memory_quality/controller.py:725-740 |
+- The run evaluates the gate and briefs it. [14]
+- The gate carried to the checklist. [15]
+- The gate over the exact curator candidate; `None` where it does not apply. [16]
+- Each gate finding is one repair finding, each open item counted once. [17]
+- The census blockers, split out. [18]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; the controller contract is repository-internal.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. | `MemoryQualityExecution` | mcp/src/agents_remember/application/memory_quality/controller.py:109-127 |
-| Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:261-267; mcp/src/agents_remember/application/memory_quality/controller.py:270-276; mcp/src/agents_remember/application/memory_quality/controller.py:279-285 |
-| Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. | "if not execution.publish_curator_report"; "_attach_curator_checklist("; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:459-459; mcp/src/agents_remember/application/memory_quality/controller.py:461-461; mcp/src/agents_remember/application/memory_quality/controller.py:568-722 |
-| R03 candidate-tree freezing and change refusal around curator publication. | `_curator_candidate_inputs`; `_require_same_curator_candidate` | mcp/src/agents_remember/application/memory_quality/controller.py:947-966; mcp/src/agents_remember/application/memory_quality/controller.py:975-1005 |
+- The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. [19]
+- Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. [20]
+- Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. [21]
+- R03 candidate-tree freezing and change refusal around curator publication. [22]
 
-## Cross-Repo References
+- Why a run refuses its unconverted memory: the leaf's line, or the official checkout of a repository-level run. [23]
+
+### Cross-Repo References
 
 No meaningful cross-repository implementation reference applies.
 
@@ -370,64 +358,6 @@ which no range a curator may write can discharge — therefore land in the check
 findings` row) instead of sitting in the repairable set whose count has to reach zero, or being dropped
 from both.
 
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** New section "260928-MIK-L09 The Mandatory Gate Counts Every Open Item (MIK-R09 Rules 1, 3 And 7)": `_knowledge_gate` over the exact curator candidate, `_knowledge_briefs` (`knowledgeGate`), `_with_gate` counting each open item once beside MIK-R30's findings, `_prepared_findings`, the memo; five rows. The L08 section's "information, not a gate" and trigger-split bullets now say the gate counts open items; its test row now records the count of 4, which the test asserts since MIK-R09 (the row's "the count stays 0" had become false). **Reopened claims reworded:** the L28 `_attach_curator_checklist`/`_without_proof` row (also re-measured: two stale ranges it carried at HEAD were dropped), the L08 checklist row and the L30 test row (count 3). This pass's generated bullets for the two reworded rows the fixer re-pointed were removed. The L08 recompute row, whose call moved, was re-measured over `_knowledge_gate_and_worklist` and `_knowledge_briefs`; the other rows were re-pointed by the fixer or by the exact base-to-staged line shift.
-- 2026-09-30T17:59:11+00:00: Generated citation repair: "gate_findings, gate_report_only = _onboarding_refresh_gate(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:680-680. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:59:11+00:00: Generated citation repair: "report_only.extend(_needed_rows_dropped(" repointed to mcp/src/agents_remember/application/memory_quality/controller.py:688-688. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:59:11+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:1051-1078. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:59:11+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:1051-1078. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T17:59:11+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:901-937. No content impact: mechanical anchor-range projection bound to citation source snapshot 803b19843e659566c7bfb6d3591c23e601f4ac3121f25212eee667285e1dec03; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **body updated for MIK-R10.** Added the section "260928-MIK-L10 A Needed Onboarding Row Is Not Reported Unnecessary (MIK-R10 Rule 5)" (`_needed_rows_dropped`, the adjusted `unnecessaryRowCount`, ruling 01:56:39 Q3), three rows. Other rows were normalised by the installed fixer or re-pointed by exact line shift. No verification stamp was advanced.
-- 2026-09-29T18:58:47+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:930-957. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T18:58:47+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:930-957. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T18:58:47+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:780-816. No content impact: mechanical anchor-range projection bound to citation source snapshot f243d6cd7f6b1214330608a0b5e372fb521b8035680e9d41a0f33ceb9d8057ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **body updated for MIK-R30.** Added the section "260928-MIK-L30 The Onboarding Gate Dispatch (MIK-R30 Rule 6)": `_onboarding_refresh_gate` and its converted/unconverted dispatch, the `onboardingTrace` response field, and architect ruling 2026-09-29T18:49:50 (1). Rows below the inserted function were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T15:42:37+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:889-916. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T15:42:37+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:889-916. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): Added the section "260928-MIK-L08 The Leaf's Change-To-Knowledge Worklist (MIK-R08 Rules 7 And 8)": `_knowledge_worklist` and `recompute_leaf_worklist` after the census, the `knowledgeWorklist` response summary, the checklist's worklist inputs, and `_PreparedInputs` replacing the `census=` keyword. It records architect ruling 1 (L08 wires the memory-quality run and managed-sync completion; closeout and landing are L09's) and that the section is information, never counted. Unconverted runs are unchanged.
-- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): Added the section "260928-MIK-L28 The "Invariants Without Proof" Input": `_without_proof` and the new `without_proof=` argument of `_attach_curator_checklist`, with the architect ruling that the list is checklist-only information and adds no count to the wire summary. One cited row. The other ranges moved by the two added lines and the new function were re-pointed by the installed `memory-citations --fix`; no claim wording changed there. No verification stamp was advanced.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Added the section "260928-MIK-L24 The Unconverted-Line Refusal": the MIK-R24 rule 9 refusal that `_execute_memory_quality` now makes first. The section records the architect rulings: the refusal is inert until the official line is converted, and conversion and crossing are separate routes. It has one cited row. The three claims citing `_execute_memory_quality` were reopened: the function changed, and a committed 2026-09-18 projection bullet names it. I re-read each one against the working tree, and each still holds: the scope is revalidated, the candidate inputs are passed to the checklist writer, and a run that publishes no checklist returns early. Following the L23 precedent, the two prose claims now also quote the line they are about (`revalidate_memory_candidate_scope`, `candidate_inputs=candidate_inputs`) within the function's real extent (`384-455`). The Repo-Internal row is re-cited to the call site it is about (`446-454`: the early return and the `_attach_curator_checklist(` call), and names `_execute_memory_quality` in its finding text rather than as an anchor. No committed history bullet was altered.
-- 2026-09-29T12:03:35+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:691-727. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T18:04:10+00:00: 260915-KS-L23 residue clearance (seat A, follow-up): the two claims that name `_execute_memory_quality` and `_attach_curator_checklist` (the prose `cit:` claim and the Repo-Internal row) were re-cited from `controller.py:318-360; controller.py:363-441` to `controller.py:383-435; controller.py:465-638`, the two functions' current extents -- the full leaf checks compose in `_execute_memory_quality` and `_attach_curator_checklist` is the checklist publication. The reopen item's currency test reads the changed construct's **declaration** line, and neither retired range contained `_attach_curator_checklist`'s at 465, which is why the item was enforced; with the declaration inside a cited range the pointer lands on the construct the claim is about. Claim wording retained (it still holds), and no anchor, row, citation or range was deleted. Verification stamp not advanced: the code is uncommitted and closeout owns the stamp.
-- 2026-09-18T17:53:23+00:00: 260915-KS-L23 residue clearance (seat A): `run_memory_quality_request`, `start_memory_quality_request` and `poll_memory_quality_request` repointed from `mcp/src/agents_remember/application/memory_quality/controller.py:110-120`, `:111-143` and `:146-208` to `mcp/src/agents_remember/application/memory_quality/controller.py:249-255`, `:258-264` and `:267-273` — the new ranges hold the three public entry-point definitions (the KS-R23@v1 `_stamped(...)` wrappers), while the retired ranges held `MemoryQualityExecution.identity` and the three private `_run`/`_start`/`_poll` bodies; claim re-read against the construct, wording unchanged. Also repointed in the same card: `_curator_candidate_inputs` and `_require_same_curator_candidate` from `:545-564`, `:596-648` and `:657-687` to `mcp/src/agents_remember/application/memory_quality/controller.py:717-736` and `:745-775` (the two definitions the R03 candidate-tree freeze/refusal claim is about) in the reference table and in the CCR-R03 prose citation, which shared those same three retired ranges. Verification stamp not advanced: the code is uncommitted and closeout owns the stamp.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_resolve_execution` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:360-380. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_execute_memory_quality` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:383-435. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:820-847. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:820-847. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:23+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the two changes this leaf made to the controller, neither of which this card stated.** Item 26 (D-33) split each public entry point into an unstamped body plus a `_stamped(...)` wrapper — `_run`/`_start`/`_poll_memory_quality_request` now hold the bodies, and `run`/`start`/`poll_memory_quality_request` return `_stamped(...)` over them — so `servingBuild` rides every mode *and* the refusal envelopes around them; the section above states that placement is the point. Item 17 half (b) added `_checklist_finding_sets`, which keeps `split_commit_owned_findings`' division and additionally collects each check's own `closeoutOwnedFindings` bucket into the checklist's closeout-owned section, so the anchor-multiplicity rows are reported where the stamp decision is made rather than counted as curator work. Both were read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real stamp. The reference-table rows (whose ranges this leaf's line moves shifted) were left to the citation-range repair pass that owns them.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:749-776. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:749-776. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:600-636. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read every claim in this card whose cited range the leaf's own source edits had moved. This leaf's insertion of `mcp/tests/test-evidence-lanes.toml` rows and a test module shifted the anchors below them, and the re-cited range of each claim was checked against the construct it is about rather than accepted from the mechanical projection. Ranges re-cited: `mcp/src/agents_remember/application/memory_quality/controller.py:72-89` -> `mcp/src/agents_remember/application/memory_quality/controller.py:93-111`; `mcp/src/agents_remember/application/memory_quality/controller.py:295-315` -> `mcp/src/agents_remember/application/memory_quality/controller.py:317-337`; `mcp/src/agents_remember/application/memory_quality/controller.py:651-678` -> `mcp/src/agents_remember/application/memory_quality/controller.py:714-741`. The generated projection bullets that recorded the same moves are retired here, so no mechanically rewritten range remains recorded as unverified evidence. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:690-717. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: recorded this leaf's controller change — the governing-overview resolution summary is published on the response (not `payload`, not `checks`) and its findings are extended into the gated curator repair set, so a dead declaration now reaches the loop the curator completes against instead of reporting clean. The consumer boundary is stated with it: the curator loop binds today, while the closeout-admission consumer sits behind `D32` because the raw status has never reached `ready-for-closeout` on this master. Verification metadata advanced to this leaf's frozen code base.
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Prepared candidate quality execution now uses the scope's quality code root and quality context, and withholds the unstamped fallback when a prepared code view is present; checklist missing-onboarding and route-index projections use the same quality input. This keeps quality evidence tied to the frozen candidate while preserving the controller's typed sync/start/poll and final-catalog boundaries.
-- 2026-09-08T14:45:44+00:00: CCR-L24 preparation reviewed `_attach_final_full_catalog`, `_curator_candidate_inputs`, and `_require_same_curator_candidate` against the current L38-composed code candidate; wording retained and ranges regenerated. Verification metadata remains pinned pending final pair composition.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `_attach_coherence_readiness` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:600-627. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:499-535. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: recorded the CCR-R08
-  final full catalog projection seam (`_attach_final_full_catalog`/`_catalog_checks`, package-owned
-  `final_catalog_readiness` on the full run result, pair-identity requirement) and re-anchored
-  every controller citation the +57-line change shifted (identity 72-89, request surface 98-208,
-  execute/attach 318-360/363-441, candidate guards 490-509/512-542). Verification metadata
-  pinned to the owning commit 16d1a4d6.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the exact candidate-tree freeze/change guard for curator publication and the tree inputs passed to the checklist writer; prior mode, identity, and pair-scope prose preserved.
-
-- 2026-08-29T21:46+02:00 — MCAR-L03: bound sync/start/poll and curator publication to one exact
-  contract pair with pre-scan, post-scan, and final pre-publication refusal. Verification remains
-  closeout-owned.
-
-- 2026-08-29T08:52+02:00 — MCAR-L02 A005: joined raw memory quality with the sole structured
-  coherence validator. Verification remains closeout-owned.
-
-- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
-
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: created for the canonical typed memory-quality controller and complete run identity. Verification remains blank until architect-owned closeout stamps the code commit.
-
 ## 260921-ICR-L15 The Unmeasured Count Reaches The Checklist
 
 `260921-ICR-L15` (`ICR-R15@v1`) adds one field to this controller's knowledge-review read: the
@@ -444,6 +374,3 @@ this leaf re-pointed at the shipped per-record measurement. The read remains str
 more counted limitation downstream: the section that consumes these summaries can now say
 `not-measured` rather than letting `| stale | 0 |` be read as "nothing moved" when nothing was
 measured at all.
-
-## Update History
-- 2026-09-23T13:10:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58`, so the honest basis for every claim here is that commit plus the working-tree delta): **the unmeasured count enters the summary input.** This leaf changed this source by one line — `curator_knowledge_review_summaries` passes `state.notMeasuredCount` through — which the memory-refresh check correctly refused to accept as a history-only update, so the read is recorded in the body as a body change and not as a metadata refresh. No claim, anchor or citation range was changed here, and **no verification stamp was advanced**: the candidate is uncommitted, the header's stamp values are untouched, and the governed closeout owns the real stamp.

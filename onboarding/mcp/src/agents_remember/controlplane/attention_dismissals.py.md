@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/controlplane/attention_dismissals.py
 
-| Field                  | Value                                                              |
-| ---------------------- | ------------------------------------------------------------------ |
-| repository             | agents-remember                                                    |
-| path                   | `mcp/src/agents_remember/controlplane/attention_dismissals.py`      |
-| doc_type               | `file-level-onboarding`                                            |
-| lastUpdated            | 2026-08-01T20:15+02:00 |
-| lastVerifiedCommitHash | `e9678c56e7f441371584ad8a18e2b9380cb38cf0`                         |
-| lastVerifiedCommitDate | 2026-09-15T20:50:53+02:00|
-| governingOverview      | `overview.md`                                                      |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -112,70 +102,14 @@ not need a row in this store.
   one process writes this file and the 31.45 percent returns, because the race is between two
   read-modify-writes inside that one process.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Projection tick that prunes rows after folding live lifecycle state. | `prune_lifecycles` | mcp/src/agents_remember/serving/projections/projection_store.py:236-272 |
-| Reducer suppression check that requires the acknowledgement lifecycle to match the item lifecycle. | "def _is_dismissed(" | mcp/src/agents_remember/observer/reducer_impl/_attention.py:79-79 |
-| Serving route that records lifecycle acknowledgements or cancels gate-open items. | "def _dismissal_response(" | mcp/src/agents_remember/serving/_app_routes.py:275-275 |
-| Targetless actionable-drift rows are the only non-lifecycle acknowledgements retained by prune: `prune_lifecycles` through `_prune_locked` and the module-level `_keep_current_record`. | `_keep_current_record` | mcp/src/agents_remember/controlplane/attention_dismissals.py:138-141 |
-| `dismiss` holds `exclusive_access` across the read and the rewrite; `_replace` delegates to `rewrite_lines` and never unlinks. | `exclusive_access` | mcp/src/agents_remember/controlplane/attention_dismissals.py:58-77; mcp/src/agents_remember/controlplane/attention_dismissals.py:125-135 |
-| `ATTENTION_DISMISSAL_OWNERSHIP` records why a single-writer store is still locked and names the 31.45 percent an unlocked draft measured. | `ATTENTION_DISMISSAL_OWNERSHIP` | mcp/src/agents_remember/controlplane/durable_store.py:164-180 |
-| The HTTP dismiss route at L1164 that makes this whole-file read-modify-write a user-facing click. | "def _dismissal_response(" | mcp/src/agents_remember/serving/_app_routes.py:275-275 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-
-- 2026-08-04T18:20+02:00 — 260731-EFA-L6 S18-B15 curator: resolved 12 citation findings and two
-  unsupported claims. Re-anchored the six reference rows (projection prune, reducer check, dismiss
-  route ×2, self prune/write paths). Cut the "127 of 2000" `FileNotFoundError` attribution — no file
-  in the frozen source states it — and the superseded "deletes the file when empty" clause, which
-  contradicts `_replace`/`rewrite_lines` and this card's own no-unlink invariant. Scoped recheck clean.
-- 2026-08-01T20:15+02:00 — 260731-EFA-L5 curator (correction pass). **Three stale citations, all of
-  the shape the L4 audit found — a range that starts correctly and stops short of a symbol the claim
-  names.** (1) The prune row cited `prune_lifecycles` through `_prune_locked` and
-  `_keep_current_record` at **L92-L122**; `_keep_current_record` is a module-level function at
-  **L138**, outside the range entirely. (2) The write row cited `dismiss` at **L58-L67** for a claim
-  about holding `exclusive_access` across the read and the rewrite — the `def` is at L58 but the
-  `exclusive_access` line is at **L74**, past the end of the range — and `_replace` at **L109-L116**,
-  which is now at **L125**. (3) `ATTENTION_DISMISSAL_OWNERSHIP` was cited at **L282-L295**; it is at
-  **L350**, because `durable_store.py` grew 598 → 699 lines mid-pass. All three rows are now
-  symbol-name citations with no range: a number that was wrong within the hour is worse than no
-  number. The row structure is unchanged — this is a two-column `Finding | Source Path` table and it
-  still is. The **127 of 2000** raising count is now attributed to `durable_store.py`, the only file
-  that states it; the **31.45 percent** beside it is left asserted, because four independent files
-  carry it (`durable_store.py`, `supervisor_signals.py`, `test_durable_store_contract.py`,
-  `test_observer_projection.py`). This card's read-policy note was already correct — it says the
-  rewrites here are driven by the tolerant read and that a compaction therefore drops an unparseable
-  row — and was left unchanged.
-- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded why the store with a
-  single writer measured the worst loss of the six — 31.45 percent, plus 127 of 2000 `dismiss`
-  calls raising: `dismiss` is a whole-file read-modify-write reached from the dashboard HTTP route
-  at `serving/app.py:1164`, so two concurrent dismisses lose each other with no compactor and no
-  second writer, and the shared `<log>.tmp` name made concurrent rewriters raise. Recorded that
-  `dismiss` and `prune_lifecycles` now hold `exclusive_access` across read and rewrite (the new
-  `_prune_locked` half), that `_replace` delegates to `rewrite_lines` and no longer unlinks an
-  emptied file, and that `AttentionDismissalRecord` now inherits `DurableRecord` for
-  `extra="forbid"` plus a validated `schemaVersion`. Corrected the superseded unlink invariant.
-  Repaired the citation the L2 format pass had left pointing at moved code and repaired the row
-  itself, which carried three cells in a two-column table. Verification metadata pinned until
-  closeout stamps the L5 commit.
-- 2026-07-31T16:40+02:00 — 260731-EFA-L2: the whole-tree `ruff format` pass (`00e8379`) reflowed
-  `mcp/src/agents_remember/controlplane/attention_dismissals.py` and moved the lines this card
-  cites, so the Citations column no longer pointed at the code its rows name. Corrected the ranges
-  (L77-L111 → L77-L110). The behaviour described is unchanged — the file's AST is identical to the
-  base revision — this is a citation repair only. Verification metadata pinned until closeout
-  stamps the L2 commit.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
-  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
-  structure or responsibility change. The sidecar was re-read against the current source and
-  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: `prune_lifecycles` now retains targetless
-  actionable-drift current acknowledgements while still pruning lifecycle rows whose lifecycle left the
-  live projection. Verification metadata pinned until closeout stamps the task-29 code commit.
-- 2026-06-28T03:05+02:00 — Created for task 28 S5.2: compact lifecycle-scoped attention acknowledgements replace append-only suppression history; prune folds legacy duplicate rows and physically removes terminal/non-live lifecycle rows. Verification metadata pinned until closeout stamps the task-28 code commit.
+- Projection tick that prunes rows after folding live lifecycle state. [1]
+- Reducer suppression check that requires the acknowledgement lifecycle to match the item lifecycle. [2]
+- Serving route that records lifecycle acknowledgements or cancels gate-open items. [3]
+- Targetless actionable-drift rows are the only non-lifecycle acknowledgements retained by prune: `prune_lifecycles` through `_prune_locked` and the module-level `_keep_current_record`. [4]
+- `dismiss` holds `exclusive_access` across the read and the rewrite; `_replace` delegates to `rewrite_lines` and never unlinks. [5]
+- `ATTENTION_DISMISSAL_OWNERSHIP` records why a single-writer store is still locked and names the 31.45 percent an unlocked draft measured. [6]
+- The HTTP dismiss route at L1164 that makes this whole-file read-modify-write a user-facing click. [7]

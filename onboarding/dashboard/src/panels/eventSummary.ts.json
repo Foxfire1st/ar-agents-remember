@@ -1,0 +1,222 @@
+{
+  "path": "dashboard/src/panels/eventSummary.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The raw observer event envelope rendered by this formatter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
+            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObserverEvent"
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Existing task identity helpers reused for lifecycle-attached event labels, including task-document title fallback.\n\nAnchor: `findLifecycleEnclosure`, `taskLabel`, `taskDocsForLifecycle`, `taskDocumentLabel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:e66ea6f62fbc5c51973b11cb6341f46638064417bb57c17cf820c8a5dcf7f58b",
+            "locator": {
+              "kind": "symbol",
+              "name": "findLifecycleEnclosure"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:86383b3c238500b02d8f7732008333316d1708d25977d666e54e156794db34ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskLabel"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:d5f608b1933d2b22d1855ff9e584dd667dcb432dd9e662dd92a38371fc1773cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDocsForLifecycle"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:d06692e6f0f3b9e031dd184f6ceffee2ef3bef4a16b971b443a233499df51516",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDocumentLabel"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ambient lifecycle emits `tool.completed`, `read.packet`, lifecycle phase, and block events with explicit fields.\n\nAnchor: \"\\\"tool.completed\\\",\"; \"\\\"read.packet\\\", \\\"observed\\\", \\\"model\\\", repoId=repo_id, files=projected\"; \"self._emit_locked(\\\"lifecycle.phase-changed\\\", \\\"declared\\\", \\\"model\\\", phase=phase)\"; \"\\\"lifecycle.blocked\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a113d724cff70505a70e8e2e3da438493632d652",
+            "content": "sha256:1c94cf95655949b91d71d652c1ab17b9357ab60f000db84bed8fabaf6be17103",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 418
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a113d724cff70505a70e8e2e3da438493632d652",
+            "content": "sha256:dbcbaa2468ece17ff2403bbfb72f11f7e1c714be7e81a8f13df058147f73d948",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 452
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a113d724cff70505a70e8e2e3da438493632d652",
+            "content": "sha256:862871a9116fbab67aee45d2ba85bd1e35fb5750effb9048fc9ce6fc7355677b",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a113d724cff70505a70e8e2e3da438493632d652",
+            "content": "sha256:729c273b64711e2e0ac65dcc92f6a4b72006c2d0c528fd4dd4566ee42b2739aa",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Event River component consumes these summaries for rendering.\n\nAnchor: `eventSummaryContextReady`, `summarizeEvent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d15a0455d7d09fc7f066615ef67e1560f9d37a9",
+            "content": "sha256:2c5ce97c9242d264c581d8e1abbf693fad8c82d495fa6a787817afcb6b3fcb04",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/panels/EventRiver.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Focused render coverage proves lifecycle-only history rows use task document labels instead of raw lifecycle ids.\n\nAnchor: \"uses task document labels when event history no longer has a live lifecycle row\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69722b2dd7742a5578ee9d8da199df0c653c5b70",
+            "content": "sha256:3e86001d53aad83fb55843329118a148d0c3bd908c5646d2596e6b54ba5ecbd6",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "dashboard/src/panels/EventRiver.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`eventSummaryContextReady` gates lifecycle/enclosure-bound rows on available lifecycle, enclosure, or task-document context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3197c79bd1aec076f39a5e65e6d0a3b3d99052ce",
+            "content": "sha256:ff4226bd5ed17704780445b06a57d0a29161f1e105b288bc293d963d7dcce2d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "eventSummaryContextReady"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`EventRiver` drops not-ready rows before calling `summarizeEvent`.\n\nAnchor: `eventSummaryContextReady`, `summarizeEvent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d15a0455d7d09fc7f066615ef67e1560f9d37a9",
+            "content": "sha256:2c5ce97c9242d264c581d8e1abbf693fad8c82d495fa6a787817afcb6b3fcb04",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/panels/EventRiver.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The reload-order regression covers a lifecycle-bound row hidden until task-document context arrives.\n\nAnchor: \"uses task document labels when event history no longer has a live lifecycle row\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69722b2dd7742a5578ee9d8da199df0c653c5b70",
+            "content": "sha256:3e86001d53aad83fb55843329118a148d0c3bd908c5646d2596e6b54ba5ecbd6",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "dashboard/src/panels/EventRiver.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

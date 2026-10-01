@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/orchestration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Parent messaging has no caller-supplied target identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f721d34dbb7edc6927160dcf09a15f29c8908ab",
+            "content": "sha256:0d6f14ea9e78b2b93fd3e089a6a9e5d0c1fc47fdb560e06d93f4b61cc421bebf",
+            "locator": {
+              "kind": "symbol",
+              "name": "message_parent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Child messaging accepts only structural target and content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f721d34dbb7edc6927160dcf09a15f29c8908ab",
+            "content": "sha256:fd5e815199da278f60ecf5abe6039ab66c8f39c637428797c0e439b8b8fab92e",
+            "locator": {
+              "kind": "symbol",
+              "name": "message_child"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

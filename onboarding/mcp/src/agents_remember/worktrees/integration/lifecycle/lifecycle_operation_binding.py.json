@@ -1,0 +1,143 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Binding identity and payload fields are closed and predecessor-aware.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:ff16a32629103479bc49695d797b25ab603d5646e59faf5eaa856c9f06d3ec60",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureBindingIdentity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:4aadb11f7efc4ff00d1b29f7aa6800dc7e8dc36c33f2a5dae70506881fa916ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosure_binding_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical digests, serialization, and bounded conflicts are pure helpers.\n\nAnchor: `locator_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:1af3875eaabf5515397000923f0ebaa5dc7569bb850b7032e18e0072729b4403",
+            "locator": {
+              "kind": "symbol",
+              "name": "sha256_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:57b39cf56c9bd27889292c30a52946da748602aa898e3d2007077145937e2546",
+            "locator": {
+              "kind": "symbol",
+              "name": "model_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:30ded36bf353e0607f7329252356d33e66852229e20ac76eb112adb62483b762",
+            "locator": {
+              "kind": "symbol",
+              "name": "location_conflict"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:0aa9a41c09eaf6b6cb2960d9a5c8f1578d67b87be26382161a4e9d3f320e5572",
+            "locator": {
+              "kind": "symbol",
+              "name": "byte_conflict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Enclosure publication consumes the binding and digest API before any publication.\n\nAnchor: \"def prepare_enclosure_publication(\"; \"binding = enclosure_binding_payload(\"; \"binding_fingerprint = sha256_payload(binding)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cd9863c77590ab26ca71daab7ddb057e54e130b",
+            "content": "sha256:11ff62b99ddf7f2dac49299d76f2d88db75c85912491a16a7c1264d48740e738",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Readback verification re-derives the same binding and request identity.\n\nAnchor: \"def _validate_manifest(\"; \"class EnclosureBindingIdentity:\"; \"def enclosure_binding_payload(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cd9863c77590ab26ca71daab7ddb057e54e130b",
+            "content": "sha256:4733caa588e319da0b4226708af6d450a123a45b2f4725585bb811a13594d41b",
+            "locator": {
+              "end": 1107,
+              "kind": "line_range",
+              "start": 1031
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:729b9dacb5d8e95152d7e7885bbca1f0eb3818cf5ebc3de3717891340cb0fb8f",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "content": "sha256:4aadb11f7efc4ff00d1b29f7aa6800dc7e8dc36c33f2a5dae70506881fa916ec",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

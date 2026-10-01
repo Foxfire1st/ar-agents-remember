@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_conversion_toolchain.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_conversion_toolchain.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -45,6 +35,24 @@ as legacy-format and refused elsewhere once its official line is converted.** Fi
 - `test_memory_init_creates_new_memory_in_the_text_format_only`: a new root gets the marker with exactly
   `LAYOUT_MARKER_TEXT` (`created`); a root holding a legacy card is `unconverted-existing-memory` and gets
   no marker.
+- **L37: the census, the card authoring and the converted check on a converted candidate (fix round P1b and
+  review R3).** Nine cases:
+  - `test_the_census_compares_a_converting_leaf_with_its_converted_base`: a converted card's source comes from
+    the converted format, the conversion itself is no task edit, and a sidecar counts only beyond its anchors'
+    mechanical fields (MIK-R30 rule 3);
+  - `test_the_census_is_captured_and_rechecked_against_the_comparison_base`: both captures of the census scope
+    compare against the contract's comparison base;
+  - `test_a_converted_cards_kind_and_source_come_from_its_place_and_its_sidecar`;
+  - `test_citation_rows_author_a_converted_cards_sidecar_with_resolved_anchors`: a new card's sidecar, and a
+    reference re-authored by its number;
+  - `test_one_converted_card_is_fixed_by_its_document_alone_and_legacy_keeps_the_snapshot`;
+  - `test_the_converted_check_compares_an_unconverted_head_through_its_converted_base` (R3-1): a carried
+    reference to a file the candidate deleted or moved is reported, never refused as newly written;
+  - `test_authoring_numbers_after_existing_references_dry_runs_and_validates` (R3-2);
+  - `test_the_fixer_checks_every_card_first_and_refuses_by_name` (R3-3);
+  - `test_a_leftover_evidence_line_is_refused_and_only_the_named_card_loses_references` (R3-3).
+
+  The existing `memory_init` case also asserts the L24 nit: the failed-Git early return carries `layoutMarker`.
 
 ### Conventions
 
@@ -59,7 +67,9 @@ as legacy-format and refused elsewhere once its official line is converted.** Fi
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -68,36 +78,28 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The read tool on both formats, with the converted knowledge section through the tool. | `test_read_ar_files_returns_legacy_format_or_resolved_references` | mcp/tests/test_knowledge_conversion_toolchain.py:42-84 |
-| The reference check and fixer. | `test_references_are_checked_and_only_mechanical_moves_are_fixed` | mcp/tests/test_knowledge_conversion_toolchain.py:87-115 |
-| Memory quality on a converted tree. | `test_memory_quality_reads_the_converted_format` | mcp/tests/test_knowledge_conversion_toolchain.py:118-135 |
-| The rule 9 refusal. | `test_an_unconverted_leaf_is_refused_only_once_its_official_line_is_converted` | mcp/tests/test_knowledge_conversion_toolchain.py:138-167 |
-| `memory_init` in the text format. | `test_memory_init_creates_new_memory_in_the_text_format_only` | mcp/tests/test_knowledge_conversion_toolchain.py:170-202 |
-| Its lane row. | "mcp/tests/test_knowledge_conversion_toolchain.py" | mcp/tests/test-evidence-lanes.toml:115-115 |
+- The read tool on both formats, with the converted knowledge section through the tool. [1]
+- The reference check and fixer. [2]
+- Memory quality on a converted tree. [3]
+- The rule 9 refusal. [4]
+- `memory_init` in the text format. [5]
+- Its lane row. [6]
 
-## Cross-Repo References
+- The census compares a converting leaf with its converted base. [7]
+- Citation rows author a converted card's sidecar with resolved anchors. [8]
+- One converted card is fixed by its document alone; legacy keeps the snapshot. [9]
+- The converted check compares an unconverted HEAD through its converted base. [10]
+- The fixer checks every card first and refuses by name. [11]
+- A leftover evidence line is refused, and only the named card loses references. [12]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found: the fixtures are `tmp_path` Git repositories built by the tests themselves.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:26:59+00:00: Generated citation repair: "mcp/tests/test_knowledge_conversion_toolchain.py" repointed to mcp/tests/test-evidence-lanes.toml:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): MIK-R01 makes a converted tree's path seed the family-complete leaf read, so `test_read_ar_files_returns_legacy_format_or_resolved_references` reads the statement from `rows` instead of `items` (a one-line adaptation; the case's intent is unchanged). The Logic bullet says so; the rows were projected by the installed fixer.
-- 2026-09-30T00:00:18+00:00: Generated citation repair: "mcp/tests/test_knowledge_conversion_toolchain.py" repointed to mcp/tests/test-evidence-lanes.toml:113-113. No content impact: mechanical anchor-range projection bound to citation source snapshot af78c18a536ac2f00d794dbac67f4d678cae173b43b31e0e7de2b8d520b727b6; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

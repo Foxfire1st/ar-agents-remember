@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_paging/pager.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_paging/pager.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T21:41:17+02:00 |
-| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4`|
-| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -42,7 +32,9 @@
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R02@v2` of task
@@ -51,30 +43,19 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: indivisible rows, the header reference, the exact walk. | "Cutting one ordered selection into pages" | mcp/src/agents_remember/application/knowledge_paging/pager.py:1-21 |
-| The flag an oversized single-row page carries. | `OVERSIZED_ROW` | mcp/src/agents_remember/application/knowledge_paging/pager.py:48-48 |
-| The row, the cut and the binding. | `PageRow`; `PageCut`; `PageBinding` | mcp/src/agents_remember/application/knowledge_paging/pager.py:51-98 |
-| Only a page starting inside a group continues a family. | `header_reference` | mcp/src/agents_remember/application/knowledge_paging/pager.py:104-119 |
-| The cut: estimate, verify, shorten; blocked versus oversized. | `cut_page`; `_estimated_end` | mcp/src/agents_remember/application/knowledge_paging/pager.py:122-173 |
-| The page facts every bounded response states. | `page_block` | mcp/src/agents_remember/application/knowledge_paging/pager.py:176-200 |
+- The module statement: indivisible rows, the header reference, the exact walk. [1]
+- The flag an oversized single-row page carries. [2]
+- The row, the cut and the binding. [3]
+- Only a page starting inside a group continues a family. [4]
+- The cut: estimate, verify, shorten; blocked versus oversized. [5]
+- The page facts every bounded response states. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the pager is pure over rows its callers hand it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): created this card for the new file MIK-R02 adds. It records the architect rulings of 2026-09-29 19:56:40 (Q3 the interim header reference) and 20:40:40 (F2 `oversized_row` only for a row too large on its own). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

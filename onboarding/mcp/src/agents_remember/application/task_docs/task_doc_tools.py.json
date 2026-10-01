@@ -1,0 +1,527 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The application entry point operation list includes `replace`, and the dispatcher routes it through `_replace` before the normal write/preview path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:c5e5d3c19c9aca5e0937b969a951cb243f2bcc7c8254727bd435e5474dca9d5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "VALID_OPERATIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The task-document schema model this application entry point validates and writes; its class body now ends at its integration-branch normaliser.\n\nAnchor: \"class TaskDocument(_Doc):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:391a969cef80f65d44bcbe9b54926bd96a4c2c7fc4b806858361219ddc940c78",
+            "locator": {
+              "end": 826,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The markdown renderer this application entry point drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "content": "sha256:51aef0a1e2ff4d9bb5f9682a42026aa1b606642e4e9554068960c1424c63cbec",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_markdown"
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The JSON/markdown store this application entry point drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:26f14716ec7356df142cc72f837f7380517426151aa6a6dededcc04065042010",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_task_docs"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The payload builder that wraps this application entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f831067a0a889a37f8501c831dbcefa3aa86540d",
+            "content": "sha256:454d46b1fd16712c3fb739fd0e5bd143ba39e230dbe3dd8a4eb0f6692b609d8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The contract helpers used to resolve the task root + lifecycle key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The public dispatcher prepares and validates a complete candidate before delegating preview/apply to the publication boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:cb8263e287fd5f2e566a4fea125b7761b0726b6f337cdc05e5e6ee09bcd69d07",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_task_doc_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_doc"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "content": "sha256:201c8c239a60abe73c9c1b17ef3c8aceabc8a804d252fe9f04b04af3f9ba9b0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "scaffold_register_sections"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "content": "sha256:00e2cb0892599c527c41262733eae192a273b03e30399a1e0b4fc21e5cc03dde",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_section_list"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The fail-closed leaf-authoring guard: refuses a leaf whose derived master link nothing would ever bind, and states the planning allowance as a guarantee.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:a7fd12f2f360521356de2f8fd2a7d81a56f4c8145891e9b90a6e9cd20c7672c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_bindable_leaf_authoring"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The `elif` arm that reaches the guard from the shared create/replace builder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_doc"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The operation table now registers the step plane split by intent (`set_step` update-only, `add_step` create-only, `remove_step` delete-only) alongside the moved `skip_step`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:48d14f39461c7ca9cfd7782f34f5c2cc37dd362690a7d01fc8f875e4d366d354",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MUTATIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The two end-to-end cases that pin the refusal's message and the still-working planning flow.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:13897a1ebfcea415f70f0abf3c6df92052cc00fe50c0a4e234c3150b08114950",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy"
+            },
+            "path": "mcp/tests/test_leaf_doc_master_link_binding.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb3e32bef9740bbb767962b06863fefef5dac838",
+            "content": "sha256:3b63c0044428e340e875126d98ac86cbdd1b6800ba45726b3c3ba25522a35f48",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds"
+            },
+            "path": "mcp/tests/test_leaf_doc_master_link_binding.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Task document edits are prepared before publication; removed scaffolding tests are not current proof of execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:602b3736d4dcedb69d96ac3152989d8c28cbcf5c2a0d472e20922bf63975d379",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepare_task_doc_edit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The settable flat fields, now including the maintenance-scope flag.\n\nAnchor: \"knowledgeMaintenanceScope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:5822cf2444f11a50162c8854f6cc34b971e6b643472618a4ddfeeb37aad17f23",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MUTABLE_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The field's `LIFECYCLE` classification.\n\nAnchor: \"knowledgeMaintenanceScope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The settable flat fields, now including the declaration.\n\nAnchor: \"expectedKnowledgeEffects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:5822cf2444f11a50162c8854f6cc34b971e6b643472618a4ddfeeb37aad17f23",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MUTABLE_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "`set_field` sets it, the digest changes, and clearing restores it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "content": "sha256:a4b55beff92a7fb4509fcb741f6d4ac50d42fe32d4532ef9508e12b3c318c8a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_field_is_optional_normative_intent_settable_and_refuses_malformed_declarations"
+            },
+            "path": "mcp/tests/test_planned_knowledge_effects.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The current module exposes `TaskDocTarget`, `TaskDocEdit`, `task_doc_tool` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:70023d0f7d81395410f449bb13a29b0e18702552db38a6e5b86e2f25f4c25599",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:6258f112e9bcb48462e5e72744d6a092f9fcd51003f09c0a7560a083102d895f",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocEdit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The four step adapters are one-line delegations to the extracted step-plane module; this module registers and validates, it no longer owns the addressing rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:84d0a844f8e853d0f2c8ff1126c1f956061fce1ec8817adef7dccdd4d191ce2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_set_step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:fbf93c56c28fb15f41334af95366c9c85b3170002e1d7d10f36632f01544e9cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_add_step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:78122ec5784d1bed6c9255fcb9f83b0ec3c65736bcf13b6bd0b6320021b2a710",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_remove_step"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:b39f965c5730ab506cd404bbacead51661fe35e98c49a8f4f6ac3dde0e8c667a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_skip_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`read_steps` is a read-only special operation that publishes nothing and returns only the checklist, never the whole authored document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:8a497c2c649140f6c9f5c38bfc176ef1e8d9421c704f2a97ebfa52d782bd681d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_steps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The terminal-status guard admits exactly one exception: a `remove_step` carrying a nonblank reason, recognized through the step plane's shared reason reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:a7806c4defb9bc1dffb716132cb05a53234061061376e21ee257bad7db43ddee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enforce_terminal_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:57a94856797aaa2f4d3299470732dfe199c46838e0d113bca960ba43f5677cb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replace"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
+            "content": "sha256:9b183eb2a268c4dea11f7e281db45a46fc7ef5f55f6aa512ff1237dec94910f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replace_rewrites_structural_fields_and_decisions"
+            },
+            "path": "mcp/tests/test_task_document_application_1.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together.\n\nAnchor: \"master_sync = plan_master_sync(task_root\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:0234011a9670a0dc815223b9c940729ef6d16426010a2b97f169b68ef5d0ec14",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 322
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f62a9a6cb410fe6d5e132c80ae747e98e903a552",
+            "content": "sha256:9aea4bae9d1437a621af305990d96b9b02ffe8c5c38a5c1a3d77ff24e4de70ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_master_sync"
+            },
+            "path": "mcp/src/agents_remember/tasks/master_sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,669 @@
+{
+  "path": "mcp/tests/test_knowledge_review_source_endpoints.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of what it measures and why injection is excluded: a real enclosure, a real worktree, the real resolution and the real comparison.**\n\nAnchor: `read_knowledge_review`; `resolve_review_candidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:0f147d64cb52d88ed904822a560942d82b87e5fd276be96d9476247ec3ca8c4b",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:89dca7be13c8b6e8e69e7f91baac7f297c1e5da502ca61a152c9c6647bb551a5",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**A moved capture input refused by name, with both identities read out of the refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:4ca4798e48d7f90c006c409d47aabc2b9906ef89ba63449a33ad3c9cb6a2203e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_capture_input_that_moves_before_publication_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The capture owner's own mid-capture head check arriving as the surface's named refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:7cf504b9a05b48abb467e769bd7c1d206adc7909dbb60cf4e13c245421f259b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_capture_that_detects_a_moved_head_refuses_instead_of_publishing_a_stale_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The moved code head naming exactly the side that moved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:5ed1bd26585452c2d8f8990d7058016de66bd9bfb7da9f64b071ec93930b733c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_code_head_names_the_head_as_the_side_that_moved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The committed range bound to the recorded commits, unmoved by a later commit, with the working view keeping its own labelled population.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:e4b153a740fbd51671f089dea80c8dda8f42b7736a56f9ae8a62c3a6cc496712",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**An unrecorded committed endpoint answered with its own `state=\"unrecorded\"` and the route's sentence, the head absent from that detail, the counters a measured zero, and the same view reading `recorded` after `recorded_range` — so the state is a discriminator and not a constant.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:b9332aae10fd5065c5bc4ba35205b40390de7a58b9ce8e9b63c01de77f68e38b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The route level, which is the whole of B6: `GET /api/changeset/task?…&mode=committed` answers `200` for a live leaf whose landed commit is not recorded, the state survives serialization, and an unknown leaf is still a named `404` — the fix was not bought by turning every absent thing into a `200`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:c797f9387e3d9d2b955ce41e52637dc378b31de1f07fa17e47c7801bd65c1741",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_answers_an_unrecorded_committed_view_without_a_status_error"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**One side's unrecorded endpoint never discarding the other side's resolved range; the code side reads `recorded` here, which is what keeps it apart from the case above.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:d7f70d5eb85ad859d8eadcf0670a3003b32eddd695b99761d4546485a3671db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The production owners these cases drive: the resolution, the composition and the route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:36e43058366a4dd9540b7b3c7fb454dee1c44b0ef514b2316f148351312be728",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_candidate_identity"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:99fc4ec2d3677253837aad7a34cb07b174c1c9f64b90e97a401c506ba1a03ad0",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_review_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:887e034da85c7cbf98ec774c5ce3a625fee10617fb33f1ff2a94f67f1458437e",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:ca06a18f7bf6c52f46db22100f858cda737a686b21cc53d29067f9c1d757d52f",
+            "locator": {
+              "end": 627,
+              "kind": "line_range",
+              "start": 542
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The leaf change-set view whose two modes the last three cases measure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67dee1b6373245dfe7985d415a8a2f92ddbbf61a",
+            "content": "sha256:0a37aa1cd75abd1c0e45859d5b2a2fe1ba532b9db0b43cd1c7a97ad17d04b51f",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_file_diff"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:0a532a939f67db2df1a8e12f0dcee8c54f8052d08dbc41036c4f825bb67342d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_committed_range"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The capture owner the fixture and the recheck both call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_future_code_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FutureCodeCandidateIdentity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lane registration: one `unit-regression` row, which is the whole delivery-category footprint.\n\nAnchor: \"mcp/tests/test_knowledge_review_source_endpoints.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:396c0cc1fca4b32eba1dcb7ca5f37411a4c6bef2e8984dc06479ae136f87b8b2",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The fixtures this module consumes instead of introducing a third: the diff-scope fixture that builds the two datasets and the real committed tree, and the read-scope fixture whose paths the cases reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:001584ab745e28afcd6f1111f23193c034a107b180674d07b25de79659af14a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffFixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:4a0655790dff977be97d84615ec165500b44a99840460dd423000ba91ddd54b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUCCESSOR_PATH"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:c7a7057bbee6283d3ef6db33a5e51a22aecbc9b3cfb78bb55671fb7a6563495f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BATCH_PATH_CANDIDATE_TEXT"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
+            "content": "sha256:f042fedee9c1ab027cfd457b080a84a19601f58a349038aab6e404c58377817a",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The merged candidate's own case for the third state: a task-context review whose before half is damaged *states* the damage and still lists the complete source inventory — the refusal teaches the pane and the limitation list, and it does not remove the review.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:2e5dec515fbc7945c492daff2f1f0eb3b9af7b7bbd3bcf6f1916088860402e7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_context_review_states_a_damaged_half_and_still_lists_the_source_inventory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The catalog footprint: a consumer row on each existing shared-support fixture, so no artifact and no contract is added and the populations do not move.**\n\nAnchor: \"mcp/tests/test_knowledge_review_source_endpoints.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:6620e3bddaf2c224f235d01d6f3e0cbc2d885d6d004bdabed70107e9d5443875",
+            "locator": {
+              "end": 1457,
+              "kind": "line_range",
+              "start": 1417
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:4ef9195f4620ca5c0033340c467463fd91bed5b4914dcb8d611fa12ab28ac7ce",
+            "locator": {
+              "end": 1512,
+              "kind": "line_range",
+              "start": 1458
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The catalog byte pin the new consumer rows oblige, re-pinned deliberately beside the unchanged counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_ARTIFACT_COUNT"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fixture's own vocabulary: the tracked paths that reproduce the diff fixture's bytes, the two ways a file is in the candidate and in no commit, the ignored boundary path, and the two committed/working contrast paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f4e7312c9a2202cb473b6fb9abbd229fa05fa837b779b96e78d8741d9b87a4f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "MODIFIED_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:68e8b9e8b4252a00bfe9752b72eb758aba04779022800c97b3f09f289ed169b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ELIGIBLE_UNTRACKED_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:aa0ebc5d9c23bb99b196fcfc9f6dda6c28e1e6c56b2f86d55cfd25504fbbe257",
+            "locator": {
+              "kind": "symbol",
+              "name": "STAGED_ADDITION_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:d17373282fda472e668847a7da61d12b5384e893b2b96eb0ce558470428c7692",
+            "locator": {
+              "kind": "symbol",
+              "name": "IGNORED_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:58b6f1ca7cbc57fc896f08e829a8d0ad76db9e451c7d1accfe877393e2db607e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LOCAL_COMMIT_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:57052aa4a43755cc03ac9a21199d6f376ed85d3957e0e9bdcfe1261bee229717",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCOMMITTED_PATH"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The live enclosure: the real contract, the real worktree, the real datasets and the real resolution, with `resolve()` asserted to return a resolution rather than a refusal — and the `memory_mode` shape that composes a real memory half for later leaves without changing the default.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:0c798a95c1ada8c9446d651225169cbdde97b5be1b2d1607112c87ae41550075",
+            "locator": {
+              "kind": "symbol",
+              "name": "EndpointFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:d7310ec4c564f3afaadbea3a6bd23a1383e55d8ee46336d5afcda496bde692d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enclosure"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:b512f3704b6aa51f557e01ee4c322883e6021a66aabf7d8a9e64c927157b8882",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_plan"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:3991134c2ae0fd1b0d8b07579f6f4a2c9611cfbefb76a6630dc2f6da18d05d37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link_memory_worktree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:168e28e7c1ebba92a64e58f5c9e6fb0e42467ae6904ea7c2fba089a74272e939",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialize_candidate"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:e9411b7e31e4e01e1415c6973cb5beba83ebc51f96bd617890af48fbd48bd182",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_datasets"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two contract states a case can produce: a recorded landed commit, and the code-recorded/memory-unrecorded leg.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:43c9dbab06b134c7799c974c89fdebc60fc0f0a5ef429add3e0c9c3cd6ee81c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_range"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:d6dc7a59e313cbb71d7b68965d52fb05d909c91e8b2683c1bc87e5202e877d29",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_code_with_unrecorded_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The bound endpoints and the untouched real index: the two tree ids, the two roots travelling with them, and the captured tree's own paths.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:ffeb0ddca88fd725a397a82e86012a3dc38e11da3ffcb6d2d0cc4a0ce05a9ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_live_candidate_binds_the_recorded_base_and_the_captured_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The falsifier for the packet's non-conforming example: the published ids, the untracked addition the `HEAD`-to-unstaged range cannot reach, the `exact_recorded_blob` locations, and the same ids in the served JSON body.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f03a976d2b5d0824e8b2a9a67a906b472e577858e747039e9fe7aac685577999",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rendered_review_publishes_the_endpoints_and_reaches_the_whole_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

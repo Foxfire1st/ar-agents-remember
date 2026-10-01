@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_pytest_bootstrap_boundaries.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Environment is candidate bound scrubbed disposable and reversible",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7b49423249bc6f1c3fd758fa0eea9f12c5ff6c2",
+            "content": "sha256:c52b1ece1036f58344e8374cc601f9f74e073599f0ff358295ed0d9234122355",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_environment_is_candidate_bound_scrubbed_disposable_and_reversible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Test process declaration and global state are restored",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7b49423249bc6f1c3fd758fa0eea9f12c5ff6c2",
+            "content": "sha256:622e4b73563170a38d0c8ba89ece8a01772123f875349e7b8a16965496df53ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_test_process_declaration_and_global_state_are_restored"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

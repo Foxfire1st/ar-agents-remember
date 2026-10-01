@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_pagination.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_pagination.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [mcp/src/agents_remember/application route overview](overview.md)
@@ -107,63 +97,44 @@ scope, cursor and bound disagreed with each other.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 `ICR-R10@v1`'s scope clause says the new internal module belongs beside its reuse/extension owners and
 must not duplicate their implementation; this card records which half of the responsibility landed
 where.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of what it owns, of the one cursor authority it reuses, and of the reset rule.** | `MOVED_SNAPSHOT_CODES`; `RecordsPagePosition` | mcp/src/agents_remember/application/review_pagination.py:1-29; mcp/src/agents_remember/application/review_pagination.py:68-68; mcp/src/agents_remember/application/review_pagination.py:76-88 |
-| **The one moved-snapshot code: the owners' own binding mismatch, and the two directions told apart by the owner's decoder.** | `MOVED_SNAPSHOT_CODES`; `comparison_reset` | mcp/src/agents_remember/application/review_pagination.py:68-68; mcp/src/agents_remember/application/review_pagination.py:91-124 |
-| The refusal for a cursor that is not this collection's cursor at all, keeping the owner's own words and remedy. | `unreadable_page_refusal` | mcp/src/agents_remember/application/review_pagination.py:127-149 |
-| **The matrix refusal: the binding mismatch takes the surface's action, every other view refusal keeps the owner's, and the presented token is named rather than the view.** | `records_page_refusal` | mcp/src/agents_remember/application/review_pagination.py:152-199 |
-| The four fields of one page's position in its walk, as one value. | `RecordsPagePosition` | mcp/src/agents_remember/application/review_pagination.py:76-88 |
-| **The comparison window stated as the surface's page: `total_basis="selection"`, cumulative `returned`.** | `comparison_page` | mcp/src/agents_remember/application/review_pagination.py:202-230 |
-| **The view window stated as the surface's page: `total_basis="walk"`, and the returned rows checked against the bound the caller asked for.** | `records_page`; `RecordsPagePosition` | mcp/src/agents_remember/application/review_pagination.py:76-88; mcp/src/agents_remember/application/review_pagination.py:233-269 |
-| **The reset page: the current comparison's first page served beside the refusal, with the refused cursor named on the refusal.** | `reset_comparison_page` | mcp/src/agents_remember/application/review_pagination.py:272-305 |
-| The one reader of a view quantity, so a page can never publish an unmeasured count. | `_counted` | mcp/src/agents_remember/application/review_pagination.py:308-314 |
-| **The published page value this module builds, with the constructor check that refuses a remainder without a cursor.** | `ReviewCollectionPage`; `_require_one_walk` | mcp/src/agents_remember/models/knowledge/review.py:418-492 |
-| The surface's own new-generation action and the maximum page size the request model admits. | `REVIEW_PAGE_RESET_NEXT_ACTION`; `MAXIMUM_REVIEW_PAGE_SIZE` | mcp/src/agents_remember/models/knowledge/review.py:187-191; mcp/src/agents_remember/models/knowledge/review.py:198-198 |
-| **The three bounded collections named once, because their cursors are different documents — the family roster joining the two this module pages (`ICR-R31@v1`).** | `ReviewPagedCollection` | mcp/src/agents_remember/models/knowledge/review.py:171-171 |
-| The two page refusal codes on the closed refusal-code union. | `comparison_page_reset`; `comparison_page_unreadable` | mcp/src/agents_remember/models/knowledge/review.py:157-158; mcp/src/agents_remember/models/knowledge/review.py:152-162 |
-| The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns. | `compose_review` | mcp/src/agents_remember/application/knowledge_review.py:335-577 |
-| **The route that admits the page size in its own vocabulary before the request model sees it.** | `_admitted_paging`; `paged_review_request` | mcp/src/agents_remember/serving/review.py:517-562; mcp/src/agents_remember/serving/review.py:330-416 |
-| The client that renders these pages without ever constructing a cursor. | `carriedPage`; `pageBounds` | dashboard/src/data/review.ts:636-657; dashboard/src/data/review.ts:666-668; dashboard/src/data/review.ts:653-655 |
+- **The module's own statement of what it owns, of the one cursor authority it reuses, and of the reset rule.** [1]
+- **The one moved-snapshot code: the owners' own binding mismatch, and the two directions told apart by the owner's decoder.** [2]
+- The refusal for a cursor that is not this collection's cursor at all, keeping the owner's own words and remedy. [3]
+- **The matrix refusal: the binding mismatch takes the surface's action, every other view refusal keeps the owner's, and the presented token is named rather than the view.** [4]
+- The four fields of one page's position in its walk, as one value. [5]
+- **The comparison window stated as the surface's page: `total_basis="selection"`, cumulative `returned`.** [6]
+- **The view window stated as the surface's page: `total_basis="walk"`, and the returned rows checked against the bound the caller asked for.** [7]
+- **The reset page: the current comparison's first page served beside the refusal, with the refused cursor named on the refusal.** [8]
+- The one reader of a view quantity, so a page can never publish an unmeasured count. [9]
+- **The published page value this module builds, with the constructor check that refuses a remainder without a cursor.** [10]
+- The surface's own new-generation action and the maximum page size the request model admits. [11]
+- **The three bounded collections named once, because their cursors are different documents — the family roster joining the two this module pages (`ICR-R31@v1`).** [12]
+- The two page refusal codes on the closed refusal-code union. [13]
+- The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns. [14]
+- **The route that admits the page size in its own vocabulary before the request model sees it.** [15]
+- The client that renders these pages without ever constructing a cursor. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file. Both owners are this repository's own store
 readers, and every count on a page is measured inside the same process.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`knowledge_review.py`) moved with the leaf's inserted lines: 8 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`review.py`, `review.py`, `review.ts`, `review_pagination.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-28T12:38:10+02:00 — 260921-ICR-L43 curator (uncommitted candidate tree `990a5c1a3afab15d04881475b2501ed98cddf908` over code base `a0b2c18d2b8d08ac1242a13f65bde900a190df7a`): No content impact: citation ranges into files this leaf changed (`dashboard/src/data/review.ts`, `dashboard/src/panels/review/SourceContent.test.tsx`, `mcp/tests/test-evidence-lanes.toml`, `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_content.py`) were re-pointed to where the same anchors now sit, each row checked valid at the base, invalid at the candidate, and valid after the base-to-candidate line mapping; claim wording unchanged. No stamp advanced.
-- 2026-09-23T00:15:00+02:00 — 260921-ICR-L10 curator: **created.** The module is new in this leaf
-  (`ICR-R10@v1`, complete bounded pagination) and this is its one-to-one card. It records the two
-  ownership boundaries a later reader would otherwise have to rediscover from the diff — the cursor is
-  always the owner's own opaque token and is never minted or re-bound here, and the three counts are
-  read off the owners rather than derived — plus the one distinction the fix rounds turned into code:
-  the moved-generation reset is the owners' single binding-mismatch code, told apart from a foreign
-  cursor by asking the owner's own decoder rather than by reading refusal text. **Stamp accounting:**
-  the verification pair names the **production line at this leaf's base**
-  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` (2026-09-22T20:08:58+02:00); everything this card
-  describes is **uncommitted** working-tree bytes in the `ar/260921-icr-l10` worktree, so no commit
-  contains them and closeout owns the real stamp.
+No meaningful cross-repo references found.
 
 ## 260921-ICR-L31 The Claim About The Named Collections Re-Read Against The Third One
 
@@ -183,7 +154,3 @@ family-context projection — so nothing in this module's own behaviour moved wi
 wording corrected and its range regenerated to the construct's own extent (`:171-176`), and only then
 was the verification stamp advanced. The hash basis stays the leaf's base commit because the construct
 lives in the working tree; no commit contains what a hash would otherwise claim to have verified.
-
-## Update History
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **two enforced citation rows re-cited to the constructs they name, wording unchanged.** The row citing the client that renders these pages without constructing a cursor pointed at `data/review.ts:548-569`/`578-580`, ranges the module's growth had left holding neither `pageBounds` nor `carriedPage`; each is now the construct's own extent — `pageBounds` `611-632` and `carriedPage` `641-643`, both verified with `sed -n 'START,ENDp'`. No claim was reworded or dropped and no contributing citation was removed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T22:45:00+02:00 — 260921-ICR-L31 curator (uncommitted change set on `ar/260921-icr-l31`, base `4c000b11c5243e4a8e77c08e87984fff00c1d94b`): the row naming the paged-collection union was **re-read and corrected** from "the two collections" to the three it now names, with its range regenerated to `mcp/src/agents_remember/models/knowledge/review.py:171-176` (`ICR-R31@v1` added `family_members`); the card's stamp advanced only after that re-read, and this module's own paging behaviour is unchanged.

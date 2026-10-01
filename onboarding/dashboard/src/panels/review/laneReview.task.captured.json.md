@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/laneReview.task.captured.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/laneReview.task.captured.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:06:33+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4`|
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -43,30 +33,21 @@ memory `58d016cb` converted), not current project knowledge; its line numbers an
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R32@v1` and its rulings live outside the code
 and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The tree comparison this review names. | "review:trees:2" | dashboard/src/panels/review/laneReview.task.captured.json:188-188 |
-| The landed accounting's lists and counts. | "\"attributed_changed_paths\": ["; "\"unattributed_changed_paths\": ["; "\"unknown_attribution_changed_paths\": []" | dashboard/src/panels/review/laneReview.task.captured.json:195-373 |
-| The receipt row for this body. | "src/panels/review/laneReview.task.captured.json" | dashboard/src/panels/review/laneReview.capture-provenance.json:25-25 |
+- The tree comparison this review names. [1]
+- The landed accounting's lists and counts. [2]
+- The receipt row for this body. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T14:06:33+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): created this card for the new captured task review body. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

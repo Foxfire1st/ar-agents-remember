@@ -1,15 +1,5 @@
 # dashboard/src/topology/constel.ts
 
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `dashboard/src/topology/constel.ts`         |
-| doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-08-01T09:24+02:00                      |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`|
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `../overview.md`                            |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -91,68 +81,31 @@ no rAF loop. `EDGE` and `MUTED` are chrome, not status, so they stay outside the
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card is verified from its direct source and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The renderer sits at the end of one grammar that starts in `model.ts`: a lifecycle state becomes a
 `ConstelStatus` there and a hex string here. Both halves are cited so the seam is traceable in either
 direction.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `CssVarReader` and the total `constelColors(cssVar): Record<ConstelStatus, string>`, extracted from `mountConstel` so the palette is reachable without a canvas. | `CssVarReader`; `constelColors`; `mountConstel` | dashboard/src/topology/constel.ts:16-16; dashboard/src/topology/constel.ts:31-39; dashboard/src/topology/constel.ts:408-468 |
-| `mountConstel` builds its reader over `getComputedStyle`, calls `constelColors(v)` once, and `col` indexes the result with no `??` fallback. | `mountConstel` | dashboard/src/topology/constel.ts:408-468 |
-| `CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model. | `CONSTEL_STATUSES`; `ConstelStatus` | dashboard/src/topology/model.ts:16-16; dashboard/src/topology/model.ts:18-18 |
-| `lifecycleStatus` is the only producer of the statuses this file paints; its `UNCLASSIFIED_STATUS` is why an unrecognised state no longer arrives here as `undefined`. | `lifecycleStatus`; `UNCLASSIFIED_STATUS` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/model.ts:85-93 |
-| `constel.test.ts` executes the palette's totality, hue-uniqueness, and token/fallback shape without a canvas. | "gives every status in the vocabulary a colour of its own"; "declares no colour for a status the vocabulary does not contain"; "asks for a themed token per status and offers a concrete fallback for each" | dashboard/src/topology/constel.test.ts:21-30; dashboard/src/topology/constel.test.ts:32-39; dashboard/src/topology/constel.test.ts:41-57 |
-| The React wrapper that mounts this renderer once and pushes new models through `update()`. | `Topology` | dashboard/src/panels/Topology.tsx:82-155 |
+- `CssVarReader` and the total `constelColors(cssVar): Record<ConstelStatus, string>`, extracted from `mountConstel` so the palette is reachable without a canvas. [1]
+- `mountConstel` builds its reader over `getComputedStyle`, calls `constelColors(v)` once, and `col` indexes the result with no `??` fallback. [2]
+- `CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model. [3]
+- `lifecycleStatus` is the only producer of the statuses this file paints; its `UNCLASSIFIED_STATUS` is why an unrecognised state no longer arrives here as `undefined`. [4]
+- `constel.test.ts` executes the palette's totality, hue-uniqueness, and token/fallback shape without a canvas. [5]
+- The React wrapper that mounts this renderer once and pushes new models through `update()`. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. The behavior is within the `agents-remember` dashboard
 projection/model/render boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: removed duplicated Source ranges
-  from the constel/model rows; exact non-fixing check returns zero findings.
-
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 12 citation finding(s); scoped recheck clean.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-01T09:24+02:00 — 260731-EFA-L4 curator: documented the palette migration. This file was the
-  un-migrated twin of `model.ts`'s headline defect — `COLORS: Record<string, string>` read through
-  `col = (status) => COLORS[status] ?? COLORS.ok`, the same "unknown reads healthy" shape one surface
-  further down, and the place an unclassified state's `undefined` became a cyan healthy fill. It is
-  now the exported `constelColors(cssVar: CssVarReader): Record<ConstelStatus, string>`, total by
-  type and lifted out of `mountConstel` so jsdom can execute the totality it claims; `col` indexes it
-  with no `??` (deliberate — the key here is a `ConstelStatus` `buildTopology` produced, not wire
-  data). Added the matching invariants and the missing `Docs References`/`Cross-Repo References`
-  prose. Repaired the Repo-Internal citations:
-  both rows linked `agents-remember/dashboard/src/...`, which resolves under the sidecar's own folder
-  and pointed at nothing — now `../panels/Topology.tsx` and `model.ts`, with ranges containing
-  `constelColors`, `mountConstel`/`col`, `CONSTEL_STATUSES` and `lifecycleStatus`. Verification
-  metadata left pinned; closeout stamps the code commit.
-- 2026-06-28T07:30+02:00 — Task 33: the renderer no longer draws a TASKS ring; ring guides are now
-  CHECKOUTS + ENCLOSURES (`RF.repo`/`RF.wt`). The `task`-kind edge branch was removed; the `wt`
-  (enclosure) edge is now status-coloured when its folded lifecycle status is not `ok`, preserving the
-  signal the old task-rim edge gave. No `task` nodes exist in the model anymore. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-23T13:35 — Created (slice 12, render-robustness): documents the imperative renderer and that
-  `render()` now runs synchronously from `resize()`/`update()` (not only under rAF), so the canvas paints
-  in a backgrounded tab where `requestAnimationFrame` is throttled. Verification metadata pinned until
-  closeout stamps the slice-12 code commit.
+No meaningful cross-repo references found.

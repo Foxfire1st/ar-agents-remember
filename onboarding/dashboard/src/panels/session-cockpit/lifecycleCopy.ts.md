@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/lifecycleCopy.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/lifecycleCopy.ts` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-09T19:36+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -59,28 +49,33 @@ the InteractionBar's copy states the real answer channel and the real PTY truth.
 - `isControlledSession` is the ONE archetype predicate — PtySurface, SeatInspector, and any
   future surface must share it.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Every exported string/predicate. | `terminateConfirmCopy`; `cleanupOutcomeCopy`; `STOP_TURN_DISABLED_REASON`; `isControlledSession` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:13-22; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:39-51; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:65-66; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:108-114 |
-| The grammar state word the confirm/name builders consume. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
-| The rail consumes confirm copy, and the landed-cleanup notice consumes cleanup-outcome copy. | "          title={terminateConfirmCopy(session)}"; "  const outcomeCopy = cleanupOutcomeCopy(outcome);" | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:96-96; dashboard/src/panels/session-cockpit/sessionRailParts.tsx:284-284 |
-| The stage notes consuming residual copy. | `terminateResidualCopy`; `retireResidualCopy` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:3-3; dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:56-57 |
-| The bar consuming the interaction constants. | "  INTERACTION_HONESTY_HINT"; "  INTERACTION_COMPOSER_MODE"; "  INTERACTION_ANSWERING"; "  INTERACTION_ANSWERED"; "  INTERACTION_NO_PROMPT_TEXT" | dashboard/src/panels/session-cockpit/interactionParts.tsx:13-13; dashboard/src/panels/session-cockpit/interactionParts.tsx:12-12; dashboard/src/panels/session-cockpit/interactionParts.tsx:11-11; dashboard/src/panels/session-cockpit/interactionParts.tsx:10-10; dashboard/src/panels/session-cockpit/interactionParts.tsx:16-16 |
-| The surface consuming archetype/name/toggle copy. | "isControlledSession"; "paneAccessibleName"; "paneArchetypeCopy"; "SCREEN_READER_MODE_NOTE" | dashboard/src/panels/session-cockpit/PtySurface.tsx:14-17; dashboard/src/panels/session-cockpit/PtySurface.tsx:211-211; dashboard/src/panels/session-cockpit/PtySurface.tsx:230-230; dashboard/src/panels/session-cockpit/PtySurface.tsx:305-305 |
-| The inspector's evidence pane consumes archetype and retire-residual copy at its rendering sites. | "value={paneArchetypeCopy(session)}"; "? retireResidualCopy(session.label, retireStopError)" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:139-139; dashboard/src/panels/session-cockpit/EvidencePane.tsx:342-342 |
-| The server literal the archetype predicate mirrors. | `HarnessControlState` | dashboard/src/types/terminalCatalog.ts:9-9 |
+- Every exported string/predicate. [1]
+- The grammar state word the confirm/name builders consume. [2]
+- The rail consumes confirm copy, and the landed-cleanup notice consumes cleanup-outcome copy. [3]
+- The stage notes consuming residual copy. [4]
+- The bar consuming the interaction constants. [5]
+- The surface consuming archetype/name/toggle copy. [6]
+- The inspector's evidence pane consumes archetype and retire-residual copy at its rendering sites. [7]
+- The server literal the archetype predicate mirrors. [8]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -89,46 +84,8 @@ Adds exact unavailable-cleanup copy listing intended labels and ids. This wordin
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
 
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
 ## Current L5I Maintenance
 
 Centralized interaction copy now includes multi-question progress, multi-select guidance/confirm
 labels, and recorded-answer feedback. These strings describe the direct route's all-or-nothing
 contract and keep structured interaction wording consistent across the composer-stage UI.
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `lifecycleCopy.ts` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-09T19:36+02:00 — 260713-TES-L5F2: composer answer-mode copy now names the direct
-  agent-session route; it no longer implies lifecycle-gate ownership.
-
-- 2026-08-04T18:03+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 8 citation rows with exact anchors and ledger-verified ranges (whole export surface, seatVisualState, SessionRail confirm + LandedCleanupNotice outcome consumers, StopResidualNotes, InteractionBar import/usages, PtySurface, EvidencePane — replacing the consumer-less SeatInspector citation — and the HarnessControlState literal); converted the 8 Logic-bullet line references to cit form with re-derived ranges after the module grew. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
-
-- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived the stale `STOP_TURN_DISABLED_REASON`
-  self-citation — the constant now sits at L66-L67 (was L51-L52) after the cleanup-failure copy was
-  added above it. The string itself is unchanged.
-
-- 2026-07-24T13:17:17Z — Curator: documented structured-question copy ownership and all-or-nothing
-  wording; verification fields remain pre-commit.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the R1 dash-collision fix in
-  `terminateConfirmCopy` — the `· state <word>` clause is dropped when the state word is the em-dash
-  sentinel, so an unclassified seat no longer renders `state — —`. All other copy/predicates unchanged.
-  Verification pinned to the leaf base (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R5 (+R1/R2/R4/R6 copy): the ONE
-  centralized copy module — naming terminate confirms, informational terminate/retire residuals,
-  the honest cleanup outcome with skips, the UA-7 stop reason, the InteractionBar's
-  honesty/round-trip strings, the `isControlledSession` archetype predicate + pane copy, the
-  accessible pane name, and the screen-reader cost note. Verification metadata pinned to the
-  leaf base until closeout stamps the L6 code commit.

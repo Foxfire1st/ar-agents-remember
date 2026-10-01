@@ -1,0 +1,342 @@
+{
+  "path": "mcp/src/agents_remember/certification/final_codex/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package re-exports the full final-codex contract surface for the two-fresh no-retry certifying lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e4b3b5cad58aa038a1528e59b9be54a7242ea92",
+            "content": "sha256:b760d0248a7b411f8fe3fd4b3f66152e436e05899699bbaa068c029f611fbca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Closed two-fresh repetition models (attempt, run manifest, repetition results/drafts, failure, teardown, plan record, authority and environment bindings, fresh repetition identity).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:e2e8b47de156455471d5c7c0571cc876c41437cb79ff919a1702c49d5a6ed455",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPETITION_COUNT"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:ffd638938d3e5f712d2ab0645ebb875c1971e89114f5e254d63d4bee6a582219",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexAttemptRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:334bd4eea79e574c0b7518be5dca7a66c4d30015eb1ec58db437c06c6c918b1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRunManifest"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:81e1ee4db0c767164801224b19cf7ee319341736d2c69726e8b7507c45be567f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRepetitionResult"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:1f9b9333af2589751e98243d43f149d38c83f13af24809e3767233a787a09f68",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRepetitionResultDraft"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:649a98bc1601552e3cd4e2e43f27e3ce559f7d1e1e7e3627152ea9d95fbf0c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexFailureRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:a1bd707f0bf7152624710d3986c83ff3f892fdb99aa6920bffb2c6075d84aa0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexTeardownRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:ac872726d97388f8489c3b019c4e361fee7c40c888ecbda85186958257a8d9ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexPlanRecord"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:a5eabd7f3265918eb799a3b9c4f74827fad232e05ea9968f5f466d51c4cbd984",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRuntimeAuthorityBinding"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:76c6f0b2b7fb6cf966c9a45618b1b09f3cfb652bff7ce1ae03f57cfddf97f076",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexEnvironmentBinding"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:e565913748624b73e183bbc34e873260469bf7d1c0a2595287d11bcadb93c3cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRepetitionIdentity"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Plan-record compilation and the exact Gate-1..3 must-not-run barriers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "397da6f6ac539bb3ac13cb07bb94a89aa3d7aa48",
+            "content": "sha256:93b72421e6fb94a55699fb9fb435cdb6537bb062c916a8e6a6759a696abd2cea",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_final_codex_plan_record"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/planning.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "397da6f6ac539bb3ac13cb07bb94a89aa3d7aa48",
+            "content": "sha256:1f703d6505f9c579357bc9163716b6f4d7327b1c233c5e1ef40e0f84fa939027",
+            "locator": {
+              "kind": "symbol",
+              "name": "final_codex_gate_plan"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/planning.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "397da6f6ac539bb3ac13cb07bb94a89aa3d7aa48",
+            "content": "sha256:dd6d8086d190646d4306df681a10c05933a89f0218f5a8a3dd64443e4a547c33",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_gates_one_to_three_green"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/planning.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Lane-readiness projection (not-started, running, two-fresh-pass, red, stale).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d82206df65a4d165e76fd1edb7adec29c8a328cb",
+            "content": "sha256:fe5cc6780811476e8324e74090cf0be095f86929c3a5c69d675cfbb54d8f17e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_final_codex_lane"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d82206df65a4d165e76fd1edb7adec29c8a328cb",
+            "content": "sha256:7502b46a014a145c2573c557a30f3e3238455eafc5a6ba2d5ad065f941cb550e",
+            "locator": {
+              "kind": "symbol",
+              "name": "final_codex_certificate_ready"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Durable isolated candidate run store with atomic CAS publication and retry-disabled reservation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "content": "sha256:069c43ba7fc094b43e3a20bd58bc3b1ef58d2c46ea07c16528e13641b8b37cfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexManifestStore"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Bound Gate-4 certificate compilation binding the exact ordered Gate-1..3 predecessor identities and both fresh results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec6a5e5d6397dd6ff8f419cb46281e45a02b7764",
+            "content": "sha256:66a46e9ced9e899c8c0628e1e7e34ac3337687f71679a1b9f8fc115d946f1505",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_gate_four_certificate"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/certificate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec6a5e5d6397dd6ff8f419cb46281e45a02b7764",
+            "content": "sha256:7c1452f215b5c1320ccd11ac071f92e06db9743f14e7b662b5cd63beb8f10a18",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/certificate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The R14-run-controlled executor consumes these contracts through the trusted authority launcher.\n\nAnchor: `admit_dagger_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ab21bbe4eb94185277fd51d2b6e610140c0f7ed",
+            "content": "sha256:65805b88f164c2accca73efb41dc1b032cbf8428a0385a5c99adf3b6ef352da6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexExecutionEngine"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/final_codex_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The outer certification facade re-exports the same final-codex surface.\n\nAnchor: `final_codex`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb3d1d5c1a4bbc17ea60d6d609efb68cbedd3018",
+            "content": "sha256:1a0377296fa8c56ac1e4865df2d0b956e41146d9e9f865228d9fa157ec8a1173",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb3d1d5c1a4bbc17ea60d6d609efb68cbedd3018",
+            "content": "sha256:58797594fb55c7fab17a0d276e65e86b9cbf3680afc66a4d1e2fd78d73c22fa6",
+            "locator": {
+              "end": 277,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lane is repository-neutral and binds the frozen R12 host runner/store snapshot through the trusted launcher, never a repository-selected engine.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60367c6aa35f275ba8fb1dbe2fc03fcdd024f560",
+            "content": "sha256:a5eabd7f3265918eb799a3b9c4f74827fad232e05ea9968f5f466d51c4cbd984",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCodexRuntimeAuthorityBinding"
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

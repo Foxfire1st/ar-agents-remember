@@ -1,0 +1,172 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/registry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The four declarations per kind, the later registrants and the item-identity rule.\n\nAnchor: \"Whole-file blobs, tree IDs and run IDs never\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317ece610125de53095ea127fb9e6837af5b4dc2",
+            "content": "sha256:7e4b29ebb6004f22aa32dc8d303b957be8b2e9818c37fd0da9b7230f67f37220",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "An edit elsewhere in the file keeps the ID; different range content changes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2d98d9fbd27e71988b3d7479afa45c9ab3b97ae",
+            "content": "sha256:fd82695c94aa53dc007275d24817c758a9b5482b88399c53c451c4abd44de494",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_item_ids_are_stable_deterministic_and_bound_to_range_content"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The common satisfying-row lookup.\n\nAnchor: `row_kind_for_subject`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317ece610125de53095ea127fb9e6837af5b4dc2",
+            "content": "sha256:d35aa93f9e8ff7ca684f455b8efaeccc22050cb28bd98608934e084fdc8b33f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The kind declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317ece610125de53095ea127fb9e6837af5b4dc2",
+            "content": "sha256:057b23a4be21a6ff45fddb0618dfb44b177f2bf7123593abdc794aae4cc4689e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ItemKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A second registration is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317ece610125de53095ea127fb9e6837af5b4dc2",
+            "content": "sha256:fdeae53c985ec1ba8d7888bd7e0a0c1c303c9274973f1e98c9d2fe76f477ecc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_item_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The satisfying row of a kind.\n\nAnchor: `satisfying_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317ece610125de53095ea127fb9e6837af5b4dc2",
+            "content": "sha256:7b892f24130efee80261ca103e7046058e57186ebcea38ecd5148398953d4e2e",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stable item ID.\n\nAnchor: `prefixed_sha256_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317ece610125de53095ea127fb9e6837af5b4dc2",
+            "content": "sha256:4de7838623663e2aa70e4791af0c8f7b91812a607f616f66b04ce3c7fa4078aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "item_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The three MIK-R08 kinds.\n\nAnchor: \"touched_invariant\"; \"stale_invariant\"; \"reached_family\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317ece610125de53095ea127fb9e6837af5b4dc2",
+            "content": "sha256:70b72546a1986e2a42388c58d9060c907245633218529e2f06dde5a777c008fc",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The registry as data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317ece610125de53095ea127fb9e6837af5b4dc2",
+            "content": "sha256:33bcc07a4b0f68c527ff295a09bb196c73b0ae8d0df8714f877e4cdaf1b7ec13",
+            "locator": {
+              "kind": "symbol",
+              "name": "kinds_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Four declarations per kind, a refused duplicate, and a later registrant's lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2d98d9fbd27e71988b3d7479afa45c9ab3b97ae",
+            "content": "sha256:77a364452422acad2882e3a48614a2fc5e6ebf894018da90227a020ce42bb822",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registry_declares_four_things_per_kind_and_refuses_a_second_registration"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

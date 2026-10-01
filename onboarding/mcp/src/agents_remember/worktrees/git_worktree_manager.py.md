@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/git_worktree_manager.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/worktrees/git_worktree_manager.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-13T19:02+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -98,59 +88,19 @@ documented by the `modules/overview.md` route overview.
   from `worktrees/modules/record_landing.py`, so the pull-request landing tool and the direct
   landing path both publish through the one shared landed-integration writer.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP worktree start writes temporary lifecycle settings and passes them to this module. | `worktree_start_tool` | mcp/src/agents_remember/application/worktree_tools.py:77-156 |
-| Provider setup performs isolated provider seed and runtime preparation. | `ProviderSetupRequest`; `prepare_enabled_providers`; `write_isolated_provider_settings` | mcp/src/agents_remember/providers/provider_setup.py:57-120; mcp/src/agents_remember/providers/provider_setup.py:219-233; mcp/src/agents_remember/providers/provider_setup.py:591-629 |
-| Worktree status packets project lifecycle payloads into context packets. | `worktree_status_packet` | mcp/src/agents_remember/application/worktree_status.py:61-143 |
-| Worktree contract serialization lives in the package worktree contract module. | `contract_to_text` | mcp/src/agents_remember/worktrees/worktree_contract.py:689-740 |
-| The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder, the checkpoint landing route and the stop-only pause. | `__all__` | mcp/src/agents_remember/worktrees/git_worktree_manager.py:99-173 |
-| The pause's result function is imported from its own module and listed in the facade's public export surface, so the stop route is reachable through the stable facade path. | "from agents_remember.worktrees.modules.pause import pause_result"; "\"pause_result\"," | mcp/src/agents_remember/worktrees/git_worktree_manager.py:86-86; mcp/src/agents_remember/worktrees/git_worktree_manager.py:154-154 |
-| Terminal lifecycle finalization is implemented in the extracted module. | `finalize_result` | mcp/src/agents_remember/worktrees/modules/finalize.py:55-141 |
-| Long-path-safe filesystem wrappers live in the kernel filesystem helper. | `extended_path`; `exists`; `is_file` | mcp/src/agents_remember/kernel/filesystem.py:16-25; mcp/src/agents_remember/kernel/filesystem.py:28-29; mcp/src/agents_remember/kernel/filesystem.py:32-33 |
+### Repo-Internal References
+
+- MCP worktree start writes temporary lifecycle settings and passes them to this module. [1]
+- Provider setup performs isolated provider seed and runtime preparation. [2]
+- Worktree status packets project lifecycle payloads into context packets. [3]
+- Worktree contract serialization lives in the package worktree contract module. [4]
+- The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder, the checkpoint landing route and the stop-only pause. [5]
+- The pause's result function is imported from its own module and listed in the facade's public export surface, so the stop route is reachable through the stable facade path. [6]
+- Terminal lifecycle finalization is implemented in the extracted module. [7]
+- Long-path-safe filesystem wrappers live in the kernel filesystem helper. [8]
 
 ## 260815-DAG-L4 Integration-Authority Impact
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
-
-## Update History
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: re-exported `pause_result` from
-  `worktrees/modules/pause.py` and added it to `__all__`, so the public `worktree_pause` tool reaches
-  the stop-only route through the stable facade path; updated the facade-surface invariant and
-  re-derived the `__all__` extent (99-173). Verification metadata remains closeout-owned; no
-  acceptance claim.
-- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: re-exported `checkpoint_landing_result` from
-  `worktrees/modules/integrate.py` and added it to `__all__`, so the public
-  `worktree_checkpoint_landing` tool reaches the partial-master landing route through the stable
-  facade path; updated the facade-surface invariant and the `__all__` range. Verification metadata
-  remains closeout-owned; no acceptance claim.
-- 2026-09-11T23:05:00+00:00: Pull-request landing curation: the facade now re-exports `record_landing_result` from `worktrees/modules/record_landing.py`, so both landing routes reach the shared landed-integration writer. Added the facade-surface invariant and corrected the `__all__` row to its current extent. Content change, not a range repoint.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `worktree_status_packet` repointed to mcp/src/agents_remember/application/worktree_status.py:61-143. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-15T23:38+02:00 — Reconciled this worktree owner's role in task-derived protected-ref authority, exact named-ref movement, and crash-safe recovery. Verification metadata remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound lifecycle, provider, status, contract, facade, filesystem, and test claims to exact anchors.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-12T19:55+02:00 — 260712-PTS-L1: re-exported `heal_contract_leaf_ids` (from
-  `worktree_contract.py`) and `command_heal_leaf_ids` (from `modules/cli.py`) and added both to
-  `__all__`, putting the explicit one-shot legacy leaf-id heal on the stable facade surface.
-  Verification metadata pinned until closeout stamps the 260712-PTS-L1 commit.
-- 2026-06-23T22:50+02:00 — Re-exported `FinalizeArgs` and `finalize_result` for the new `lifecycle_finalize_task` terminal operation. Verification metadata pinned until closeout stamps the source commit.
-
-- 2026-06-12T19:06+02:00 — Issue #83: re-exported the committed-range closeout surface (`closeout_changed_paths`, `committed_changed_paths`, `commit_text_or_none`, `contract_memory_verified_commit`) and added them to `__all__`.
-- 2026-06-11T06:47+02:00 — Dropped the direct-closeout re-exports (`direct_closeout_result`, `direct_closeout_preview_payload`, `validate_direct_external_context`, `command_direct_closeout`) from the facade imports and `__all__` (issue #62 worktree-only closeout).
-- 2026-06-10T09:56+02:00 — Re-exported `sync_result` from the new `worktrees/modules/sync.py` (GitHub #54 sub-task D).
-- 2026-06-01T20:45+02:00 — Re-exported `abandon_result`, `teardown_worktree_providers`, and `delete_branch_force` for the new worktree abandon/teardown path.
-- 2026-05-31T12:50+02:00 — Source now imports and re-exports the typed `WorktreeArgs` dataclass DTO from `worktrees/modules/args.py` (replacing the loosely typed `argparse.Namespace` into domain functions); added it to `__all__` and noted it in the Logic section (1.0.0 review remediation).
-- 2026-05-25T20:41+02:00: Updated after the worktree manager became a facade over focused lifecycle implementation modules.
-- 2026-05-24T18:51+02:00: Updated after closeout planning began using memory-worktree settings and long-path-safe filesystem probes.
-- 2026-05-24T05:03+02:00: Updated after worktree lifecycle payloads replaced CLI `next_command` guidance with typed MCP next hints and provider setup moved behind an internal MCP-derived config object.
-- 2026-05-24T00:35+02:00: Updated after MCP worktree controllers switched from `main(argv)` capture to result-returning service functions.
-- 2026-05-23T23:46+02:00: Updated after worktree provider setup stopped rebuilding provider setup CLI `argv` and switched to `ProviderSetupRequest`.
-- 2026-05-23T13:46+02:00: Documented the MCP-owned provider setup path and removal of coordinator-local script execution.

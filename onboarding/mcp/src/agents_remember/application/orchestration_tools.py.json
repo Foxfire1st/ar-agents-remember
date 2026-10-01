@@ -1,0 +1,175 @@
+{
+  "path": "mcp/src/agents_remember/application/orchestration_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `_result` (lines 30-32) — Return the raw use-case result for the MCP adapter to finalize..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:30d1f3e03b0cf9d65e6b8966cb95b7ebe4948908e2607b62ca70b1b01d34abef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:620a4f14ddadf767f80a439cbdf7fc4054210902d4a8b4642e1bb0829bce7537",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `NudgeTarget` (lines 36-42) — The manager seat a nudge is delivered to, addressed by its hosted-session agent id, its.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:8c2a2af18630ea8b80251ae6020f21f42f99599712c7174dde992dcaf3a6c472",
+            "locator": {
+              "kind": "symbol",
+              "name": "NudgeTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:4b83d89ea6315ad2f637ceebc5f847da8a5deb42d1dcdf3f7b35fd2862946496",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the class `NudgeSubject` (lines 46-53) — What the nudge is about: the human-readable subject line that names the stalled work, the.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:b09298b7ef807127578159cafee708836b0b7764019da0a26916484878acfcbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "NudgeSubject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:ee6fe950820302638bb4387cd265d2e4f30f85b37e124ddea37e956ba884dfa0",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `orchestration_nudge_manager_tool` (lines 56-127) — Record and push a manager nudge for inactivity or a missing turn report..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:79dac89f49c81ed4a273466bd257e675245865e1a9949ca4d36625f643addf1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "orchestration_nudge_manager_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:0c2b69d7041e46b724c30ebdf7906cf9f631268bdf798d87b02c15432b2e01f2",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `nudge_manager` (lines 130-149) — Compose the flat nudge request into target and subject decisions..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:8a24c0a318f10c3b918ac5b9294bd31d888612b2ce0252d84c60021ee365db92",
+            "locator": {
+              "kind": "symbol",
+              "name": "nudge_manager"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:9712d245890f80060f5fb1e554c465353ed09fb65c52e752281c5671488cf432",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `_log_nudge_event` (lines 152-170).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:38cb866f6d8aa07bbbd209ea823319cab588d23493a1e91717863669efbf0035",
+            "locator": {
+              "kind": "symbol",
+              "name": "_log_nudge_event"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7e21f2f0c38565a9712050ba2f0c5bbfff65216",
+            "content": "sha256:1a95a94d870e256176e6d9ce9eeac1e8cab35dc9ac1a022b5f9aaad57666ee86",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

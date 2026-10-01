@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/route_index_census.py
 
-| Field                  | Value                                                           |
-| ---------------------- | --------------------------------------------------------------- |
-| repository             | agents-remember                                                 |
-| path                   | `mcp/src/agents_remember/kernel/route_index_census.py`           |
-| doc_type               | `file-level-onboarding`                                         |
-| lastUpdated            | 2026-09-14T17:20+02:00                                          |
-| lastVerifiedCommitHash |                                                                 `270704b86116728a64ada83ee258a0e7726206b4`|
-| lastVerifiedCommitDate |                                                                 2026-09-14T18:18:08+02:00|
-| governingOverview      | `../../../overview.md`                                          |
-
 ## Governing Overview
 
 [MCP overview](../../../overview.md)
@@ -68,61 +58,23 @@ them takes 30s is that git is blocked on an index lock another process holds.
 
 None known for the MX-FIX-4 census boundary.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. The source and production-path
 matrix are the authoritative evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The renderer consumes exactly one snapshot and separates repository membership from eligibility. | `build_route_indexes` | mcp/src/agents_remember/kernel/route_index.py:182-230 |
-| The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors="surrogateescape"`, `_run_git` here passes its 30s bound through `GitRunnerOptions(timeout=...)`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names. | `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git` | mcp/src/agents_remember/kernel/git_command.py:55-64; mcp/src/agents_remember/kernel/git_command.py:140-146; mcp/src/agents_remember/kernel/git_command.py:149-213 |
+- The renderer consumes exactly one snapshot and separates repository membership from eligibility. [1]
+- The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors="surrogateescape"`, `_run_git` here passes its 30s bound through `GitRunnerOptions(timeout=...)`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The census operates on the configured code repository, including a sibling worktree, but has no
 external implementation dependency.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base `7317108b`): `_run_git` now passes its 30s bound as `run_git(code_root, args, GitRunnerOptions(timeout=GIT_METADATA_TIMEOUT_SECONDS))`, the timeout keyword having become a field of the runner's one options object. The timeout class this census names is unchanged. Re-derived the citation ranges the migration shifted (`RouteIndexSourceSnapshot` 29-38 → 33-42, `RouteIndexCandidate` 20-26 → 24-30, `_run_git` 189-205 → 193-213, the runner row `33-42; 76-82; 85-151` → `55-64; 140-146; 149-213`).
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-08-02T21:05:20+02:00 — 260731-EFA-L6 curator W2-B10: repaired 10 citation findings (3 reference rows and 3 prose pointers); scoped recheck clean.
-
-- 2026-07-31T20:54+02:00 — 260731-EFA-L3 curator: body updated. Conventions said only "Git
-  execution uses the shared selector-scrubbed runner", which no longer describes the decision this
-  file makes: cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205) now passes `timeout=GIT_METADATA_TIMEOUT_SECONDS` so a census
-  fails typed at 30s instead of inheriting the runner's new 300s local default. Recorded that, and
-  extended the typed-cause invariant to name `_run_git` as the single translation point
-  (`TimeoutExpired`/`OSError` → `AuthorityError` when `authority=True`, else
-  `RouteIndexCensusError`, always `from error` via cit:([`_run_git`], mcp/src/agents_remember/kernel/route_index_census.py:189-205). Repaired 1 citation into a file this
-  leaf changed: the git-runner row now uses cit:([`GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`], mcp/src/agents_remember/kernel/git_command.py:33-42; mcp/src/agents_remember/kernel/git_command.py:76-82; mcp/src/agents_remember/kernel/git_command.py:85-151), which is where those selectors,
-  environment scrubbing, and the surrogateescape runner now live; the row's claim was also widened
-  to name the metadata timeout class. The route-index renderer and focused-test references were left
-  alone — this leaf touched neither file. Also corrected two symbol names the card had
-  wrong independently of this leaf: the dataclasses are cit:([`RouteIndexSourceSnapshot`], mcp/src/agents_remember/kernel/route_index_census.py:29-38) and
-  cit:([`RouteIndexCandidate`], mcp/src/agents_remember/kernel/route_index_census.py:20-26), not `SourceSnapshot`/`SourceCandidate`, and `SourceCandidate`
-  was not greppable at all.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that the
-  ruff-format pass plus the extraction of the `_write_scoped_fixture` /
-  `_assert_contamination_is_invisible_to_git` helpers pushed down `mcp/tests/test_route_index.py`.
-  The focused-test block now runs L258-L907, from
-  `test_ignored_generated_and_path_rule_excluded_artifacts_do_not_change_bytes` through the end of
-  `test_non_git_source_root_fails_instead_of_walking_the_filesystem`; the old range also swept in
-  the `if __name__` boilerplate, which is now excluded.
-
-- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: created the one-to-one sidecar for the deterministic
-  Git/path-rule source census, exact identity rules, typed failures, and convergence boundary.
+No meaningful cross-repo references found.

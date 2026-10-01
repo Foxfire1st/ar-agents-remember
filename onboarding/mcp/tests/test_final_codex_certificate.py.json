@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_final_codex_certificate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Green two fresh pass publishes bound certificate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1bc09be51db1774a75c90dc827a5fbc6a0eacaf",
+            "content": "sha256:73d9f37e832c1a4212e7502afde4c08f8da5cc1c1b4777f51678ba7c811249e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_green_two_fresh_pass_publishes_bound_certificate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Red manifest cannot publish.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1bc09be51db1774a75c90dc827a5fbc6a0eacaf",
+            "content": "sha256:70129106085dce19dae2f1670e3ee8d6eebae006ef2ab99ba9179275a1a241fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_red_manifest_cannot_publish"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Candidate mismatch refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1bc09be51db1774a75c90dc827a5fbc6a0eacaf",
+            "content": "sha256:6ce9692c289d1437794cc1c5f357eca365c80c47116164a856d0e09352d42fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_candidate_mismatch_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,188 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_review.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The report-only boundary as recorded in the module's own contract: the rendered section states it in one sentence inside the artifact.\n\nAnchor: \"Report-only. This section records what the curator-coherence authority holds; it adds no \"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:c02a2b625c765dc572aeedc5036d75c1f349b392e6063921a57168b8b6183e09",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The section renderer, its empty-collection spelling, and the counts it reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:5bc4727760a8fdcae578b641cfd1345f9807744a5bff05a3ab8d86856d9813ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_review_section"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:1b8314f586257f0f58fb42b482c2dea28fcbdc7fb6d2b9425f00d03af32823d5",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The summary shape, which carries counts and identities and deliberately no verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:e83307627042090142d3acf9d92a600c4932532a0ad8052d5f1404de7c251c1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentSummary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:d1a010b155393ef5fb3be94db206d02d103fed4fe8669f825ff8f62347047130",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The four counted limitation codes, and the rule that makes a measured movement and an unmeasured binding separate facts rather than one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:d9fa04519c03d1b9ac9d63b5089c871f079f5e08d86d685b6035afd29a259f06",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNRESOLVED_DISPOSITION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:1ce36b40a6f1fcfa23da45612feea2a20d6844e5385113749a867a7b28ad79aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_BINDING"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:07535b387167442ca2b48874fc188510a06ea21854d2cd619f207a19a51ed760",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_MEASURED_BINDING"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:4e9351b24cb3daca4b9a37f456ce8132392603d1bbd417f742abc5f22b94ba48",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARTIAL_SCOPE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one checklist field that carries the section, and the arithmetic the section cannot reach.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19f494496b10bbc4067fd8056bb5ccd7e6d139fe",
+            "content": "sha256:8ee3757d3541a24076ae20506ed6559e685500d057acfe63c58d798c3141b020",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorChecklist"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "19f494496b10bbc4067fd8056bb5ccd7e6d139fe",
+            "content": "sha256:f9fb57f1aa32f4a75466c8dd3449b67f263f6df7a6656f2c79e17cedf593a5d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_curator_checklist"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "19f494496b10bbc4067fd8056bb5ccd7e6d139fe",
+            "content": "sha256:1c236712c2b5944da27bb61e8e0ff024e63fca6bba84f667a8a334f1298a6f8a",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The controller read that supplies the summaries from the already-published authority, and passes the projection's own unmeasured count through without measuring anything itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19d42468aa35059c044e19bb7a5a7201520a3ed4",
+            "content": "sha256:6bc78e56308ef2fb4e40fbb4671a88f484f11f2bf63754dcc73242a7e8211666",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_knowledge_review_summaries"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

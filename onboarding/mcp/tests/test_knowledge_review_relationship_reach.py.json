@@ -1,0 +1,279 @@
+{
+  "path": "mcp/tests/test_knowledge_review_relationship_reach.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the five states the ruling turns on, and the candidate-only paths the cases author.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:8e32b4052ff350c86d9b44df9fb6cb244ef1076b50c154651082557815a7bdc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMBER_MOVED_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:8c3330eb0d30b16f4cdfec0087544ebda996f6c9e9b8497b641b54be37566d0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SAME_CITATION_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:7d19db5b6c5e33f69707e6aca31e9574787a58b4d924fc9b0597d1f82b7f4c21",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixtures that author each measured shape through the public store operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:003510327cb24af1c8665b37b829bf730b8eb2702248ec4a2932af48cf713bc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_member_move_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:6269835c32a6dc55a58d7a09fee5540ee87f057b446f7a829af868705368d34a",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_split_head_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:eb8ebf128109b043590e65d60772bd6fdeedac35074b6f4cc988bdd0d0641ca4",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_same_citation_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:5af03011d47dbb3984e0bc09f3935ed3a2fb7482d5615f7db4366fe821016476",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_family_same_members_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:934d6188e5ea6f0f014aa308226e8243eb176745cbeb98c2b588220c9d784f02",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_pairing_qualification_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The ruling measured: a member identity's movement displayed at its own established head, with the new address displayed and the old one still listed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:e4dbb54d8a15ee68d463c40cd0bce76d95c017f50d04a4ec650abb459d82514c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_identities_moved_realization_is_displayed_at_its_own_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The multi-ended line unresolved with its reason and never a denial.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:63587cf3ad5d27d687240c0b146377141a407c975c485896eca1fea42f300397",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_line_with_no_single_head_is_unresolved_and_never_denied"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**One payload may not contradict itself: the withdrawn rows name the candidate row citing the same revision.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:30dc48de3117cc2d439286edbbf4bb9c0de4168fce8d13faa2a5b6ec3878610c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_withdrawal_never_denies_a_relationship_the_same_payload_displays"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The member-wise family pairing, each membership displayed once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:bbe68220b103ca407fda987016a98c7c5588db051ed66c54ec2967ca27d568ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_revision_that_keeps_its_members_displays_each_membership_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**Every pairing states the recorded relation it was made on, and an address resemblance never pairs.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:6904c4cc51acc8c613eb17707a1bb4a6339e124821fff90961fa709fcaa2b19b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pairing_states_the_recorded_relation_it_was_made_on"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:a233254a6f74fa66fce0f8af2fba90246d5e64ec4e4a5c39159a127bb39c6393",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The two rename non-pairing states kept apart, and the similarity word present only where Git paired.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:0010043d06f95f115b79c57b11a2f871aee3ba05636fcbc1095ac379bb20019c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "058f640455f76ab08878603180afb9daaf3234ea",
+            "content": "sha256:b8ff625360852394cfb2683045a386d054f709a63bb01bfa0c1841f134d0bb75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inference_for"
+            },
+            "path": "mcp/src/agents_remember/application/review_rename_inference.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "058f640455f76ab08878603180afb9daaf3234ea",
+            "content": "sha256:c44617a2f730a32a1814e9fef18dc9c4ce92169e54484a2dc8b42322a9e20ca2",
+            "locator": {
+              "kind": "symbol",
+              "name": "RenameObservations"
+            },
+            "path": "mcp/src/agents_remember/application/review_rename_inference.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The sibling case module whose builders this module imports, and the two exact-scope support rows it is registered on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:d6b4786c861f860432626748737a02fce1b8d4c0f7a1c290f09e4150f2e099fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_movement_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:9701984c737fef80648c5f95a80af1340ba6b8094fdd1031c50ad72b6c3e953a",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

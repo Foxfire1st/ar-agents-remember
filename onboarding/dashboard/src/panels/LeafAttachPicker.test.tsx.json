@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/LeafAttachPicker.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5999b27ca6e1315982d5690ac92a88149080afe6",
+            "content": "sha256:7b109a8754cf9719a9ae72459e854bc511e9a18ec35f753e127eb43f544c848a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafAttachPicker"
+            },
+            "path": "dashboard/src/panels/LeafAttachPicker.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `TaskTreeNode` type the `TREE` fixture is built against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:61c0edeaaa37061ae4eb42f7602559c8913608c33f87f672e9ca7b2cf0b2f1c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskTreeNode"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

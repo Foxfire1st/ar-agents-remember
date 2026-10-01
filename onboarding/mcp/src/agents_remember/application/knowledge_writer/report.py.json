@@ -1,0 +1,171 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/report.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The outcome of one evidence-bearing entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:f3656ac308cfc96030bd276a57fd00776ce7d7fe67d0843d73984e50c37860ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The report and its refused flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:9bba29baf730d5ee7a6f5e49e97aa863c37837ae1b1cf4b42b25ca233be36242",
+            "locator": {
+              "kind": "symbol",
+              "name": "WriteReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The JSON form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:877a7d13e70cb96ad55f68aba275a8ad198ee7b71af6123ca9c22b117a55bfb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "to_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The text form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:cab42a6d9efb1e915fce60f012d595ebf3008b00577b046e3d3ecf0a35ea4344",
+            "locator": {
+              "kind": "symbol",
+              "name": "render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The carried entries in the report, JSON and text.\n\nAnchor: \"blob re-recorded at C (content unchanged)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:2912e1dc0bdfc04a8b29aa01da6eb4182efbbc84ec44fe20630121f089aada58",
+            "locator": {
+              "kind": "symbol",
+              "name": "carried"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:778402a0af0e706f418e6a298b3fdd066d97089fad835546322cd92070bdbc41",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One requirement endpoint and the owner's answer; unresolved is reported, never refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:e9cc657c2493f2f254e99bea83bc15cf352b22cf53e88b3a846e559b2a33d1a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EndpointOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The report's requirement endpoints, and their JSON key.\n\nAnchor: `requirementEndpoints`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:5dab2b1fac1f5af26a97623b71c5165dbf6db654d7f0aef89d92e333815b2fd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirements"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:ba0e5fd6edcb1f3211b23c3737e01e12d7bf5d49e97efadadf7154194b1123a5",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The text line per endpoint comes from a helper, so `render` does not grow (review F3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:c98a9b0c73edbfe9c4c507d8a3ff90303dcc2a623261b50d59fe6fa5417a85d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_endpoint_line"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
+            "content": "sha256:18b27918cd54a3366d0ef704afdc4778244e2c046609f1712f5cf802f1a12032",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,129 @@
+{
+  "path": "mcp/tests/checkpoint_landing_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Leaf and accumulated-master pairs are built from real code/memory commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8148a0c764a9a24545a5565b90265aa11fe35095",
+            "content": "sha256:ca8727f85f591880dfb6e5fac6fb4e56e9f3a55732da42483dd3243d70d32d36",
+            "locator": {
+              "kind": "symbol",
+              "name": "close_out_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8148a0c764a9a24545a5565b90265aa11fe35095",
+            "content": "sha256:1214243e9f2928469accfa808168690ac195bfadcb9f4428c1dd3d6fd905d7f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_memory_content"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Temporary branch ownership and real source-content reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8148a0c764a9a24545a5565b90265aa11fe35095",
+            "content": "sha256:a887fb301003ab88f8aa4433358d03afead90dd15e35c4a0c2319f40123f10ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "branch_checkout"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8148a0c764a9a24545a5565b90265aa11fe35095",
+            "content": "sha256:8882082cc5cb9480661b23faa51bd4b958e317255c86890af0be7dae67e5afb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "absorb_source_into_master_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public checkpoint and canonical master status helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8148a0c764a9a24545a5565b90265aa11fe35095",
+            "content": "sha256:26bd48aa905a5a0fe586f3f4ba8fcb9486f80869f6ad465083183bec8805fb07",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkpoint"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8148a0c764a9a24545a5565b90265aa11fe35095",
+            "content": "sha256:406633916844d225af57da39ff82de6f627f38d278d4d63affcc958ed49e8f70",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_status"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8148a0c764a9a24545a5565b90265aa11fe35095",
+            "content": "sha256:a7966c6fab502214be6b21767ea48c5f963d59c1012abbc99483660c9ba2bada",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_master_status"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The public boundary scenarios consume the shared builders.\n\nAnchor: `checkpoint_landing_test_support`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:dc7b615860987c8324de1ad54311b1b5675e4c8fe023617e0bf4d5103b544aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate"
+            },
+            "path": "mcp/tests/test_checkpoint_landing_end_to_end.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:560f2eb5990e5f48db1e5c0dbe394f1f69706765ed1567442ee9daa2d5c42614",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/tests/test_checkpoint_landing_end_to_end.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/hunkMarkers.capture-provenance.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/hunkMarkers.capture-provenance.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:26:08+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -51,28 +41,19 @@ the body file (checked by this curation).
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R34@v1` (adopting `ICR-R34@v1`), the adopted `ICR-R24@v3` item 2 and the architect's rulings live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| When, by what command, at which source tree and over which world the bodies were captured. | "captured_at"; "source_tree"; "world" | dashboard/src/panels/review/hunkMarkers.capture-provenance.json:2-9 |
-| The six scenarios and their files, and the body file's digest. | "scenarios"; "sha256" | dashboard/src/panels/review/hunkMarkers.capture-provenance.json:10-40 |
+- When, by what command, at which source tree and over which world the bodies were captured. [1]
+- The six scenarios and their files, and the body file's digest. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new capture receipt of the classifier bodies. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

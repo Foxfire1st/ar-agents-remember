@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_inbox_arrival_guarantee.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a78cd9418bf0f87851f59424c7269ef72f674bff",
+            "content": "sha256:111c8af49bcd9c15c7ae942caa26036f55a8096e00262cbc071c1bef4a3f151d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seat"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

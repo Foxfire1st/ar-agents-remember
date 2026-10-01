@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/primitives/checkout_coordination.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/primitives/checkout_coordination.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:28+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [kernel primitives overview](overview.md)
@@ -83,45 +73,23 @@ Resolve the imported package location and actual execution declaration; caller c
 
 None identified in this bounded containment review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation source. | N/A | N/A |
+No configured domain documentation source.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Runtime config asks this checkout policy before selecting the synthetic leaf configuration. | "checkout_coordination.checkout_cli_location()"; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:748-748; mcp/src/agents_remember/kernel/primitives/runtime_config.py:771-800; mcp/src/agents_remember/kernel/primitives/runtime_config.py:759-759 |
-| Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard. | `exclusive_access`; `_prepare_append_target`; `_require_rewrite_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:431-433; mcp/src/agents_remember/controlplane/durable_store.py:436-438 |
-| MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | `main`; `begin_pytest_process` | mcp/src/agents_remember/mcp/server.py:77-99; mcp/test_support/agents_remember_test_support/testing/global_state.py:61-66 |
+- Runtime config asks this checkout policy before selecting the synthetic leaf configuration. [1]
+- Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard. [2]
+- MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. [3]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository implementation dependency governs this policy.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required. | N/A | N/A |
-
-
-## Update History
-
-- 2026-09-06T00:28+02:00 — Reopened the actual guarded durable-store entry points and recorded host registry ownership as a separate policy composition. No guard change or role declaration was made; preserved the unchanged source stamp.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-- 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the explicit `lifecycle-operation` execution mode for the plane-owned detached task worker. It may use live coordination to claim/finalize its durable operation but receives no MCP/dashboard daemon writer role; ordinary checkout CLI isolation is unchanged. The owner reports 46 focused tests across the two affected suites, Ruff clean, and diff-check clean. Verification remains closeout-owned.
-- 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: added the exact enclosure `reports/` target for operational artifacts while keeping coordination rows confined to leaf-local `provider-runtime/dev-ar-coordination`; sibling/live escapes remain refused. Verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the pytest process-declaration evidence after `conftest.py` line movement; the checkout-coordination claim is unchanged.
-- 2026-08-10T19:57:55+02:00 — Closeout citation review: retained the three policy claims after
-  re-reading the committed candidate and replaced ambiguous identifier anchors with exact,
-  uniquely resolved call/signature anchors. Verification metadata remains pinned until closeout.
-
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: created for checkout-local coordination isolation and central durable-write containment. Verification metadata remains blank until approved closeout commits the code.
+No cross-repository evidence is required.

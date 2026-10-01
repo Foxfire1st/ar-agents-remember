@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversationSurfaceParts.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The surface parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7301ed8c6e1e3140c0dc6f6c223defd628646a43",
+            "content": "sha256:b096c0e274315eb3c3c55464a12256950196631db2bbd0f73951aad615ccd4df",
+            "locator": {
+              "kind": "symbol",
+              "name": "SurfaceToolbar"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7301ed8c6e1e3140c0dc6f6c223defd628646a43",
+            "content": "sha256:04bc4d47a5ad3a6b2c109ec3569d621d9ed4dffc079633ee7288da5a58f0d8b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TimelineSection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7301ed8c6e1e3140c0dc6f6c223defd628646a43",
+            "content": "sha256:41f207615e8e9151e9986172fb54883b7d59b3cfee7d2b4edef4a29558ab63bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveHistoryCapability"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

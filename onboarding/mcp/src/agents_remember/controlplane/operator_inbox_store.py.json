@@ -1,0 +1,214 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/operator_inbox_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pull-based return channels sit above durable gate truth and resume on the next poll/poke when push is unavailable.\n\nAnchor: `# Observable Lifecycle, Events, and Gates — the Agents Remember 3.0 Design`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f660246545afa0c74a7cf5fd27f0af7af4350034",
+            "content": "sha256:9f2a997571dd5cf6f7382a43ebf8197000f5a3f78a78402dd82110b13370d333",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The inbox log is `workspace/operator-inbox.jsonl`, and append/read/current preserve JSONL history.\n\nAnchor: \"def log_path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:c7056d720ee820a9477ce64e0ee48714fc366a0515fa28e78543007acee1d2d3",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pending filters match supplied lifecycle and/or agent keys.\n\nAnchor: \"def list_pending\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:e9bad1880dad36d57667c0ce884a9f6a09f4518282580575c513a21141eba9d6",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Consume is idempotent and appends a consumed snapshot only once.\n\nAnchor: \"def consume\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:d4bbe76a5119ba052361fc0e4f2d6c8489dc737672ea1b4f6454be0793cab00e",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Redeliverable selection is a pure filter over pending rows: it defaults the per-target rate limit to \"rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS\" and delegates the due/limit decision.\n\nAnchor: \"rate_limit_seconds if rate_limit_seconds is not None else DEFAULT_RATE_LIMIT_SECONDS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:03f9e4c0baa1c7f2e0cc66342cfa11a42243c2dfee8468f30d0fb529fb06fd16",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`redelivery_floor_seconds` and `next_attempt_at` are NOT in this module — the delivery-snapshot half of the old claim moved to the shared backoff module, which is also where `redeliverable` itself lives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
+            "content": "sha256:42741c71be66144d66e6bfdfdc13af6280e1ef6a9cd178587246520a3f79fe26",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_redelivery_floor_seconds"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/inbox_backoff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
+            "content": "sha256:db3b6442e73f52f165122313d7904d5b7adac42b3bb5e606687ddb5ecce4f723",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_attempt_at"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/inbox_backoff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
+            "content": "sha256:63a48cf46d0e93f923fbff1ef65702f6513361fdb22a28627cffbaf1cd7be1f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "redeliverable"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/inbox_backoff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The strict `_read_unlocked`, the never-unlinking `_replace_unlocked`, and `_exclusive_access` now delegating to the shared contract instead of opening the module's own lockfile.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:319ceae4590410df2328e53e7171de6eb6115b69c6435d4fce4bf78ca17ce2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_unlocked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:719a8d81649c189671d73d313bd61c66b34d54c17606ab7c5208f65c53a36229",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replace_unlocked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076c6a2617cf6b90de46596905387ef989d2a131",
+            "content": "sha256:007ce4323c342581344eeb0852d982c94191e0a5c91a1c237290f4662f386ad8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exclusive_access"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:d42444b4bb235b557f73f2730ffeeb17403d6b007396b2cf214849196363ff3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "fcntl"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`OPERATOR_INBOX_OWNERSHIP` carries `compaction_owner=None` and states why no single owner is possible for this log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78c23328fdcbcd05fb84b2620eb8ddc17760a2a6",
+            "content": "sha256:f5aba2edd48a31c2f025437beec282be0667012857102e30145626714abfbb62",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPERATOR_INBOX_OWNERSHIP"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78c23328fdcbcd05fb84b2620eb8ddc17760a2a6",
+            "content": "sha256:1f201d503df03519052ceb23775c9c21dc729a2dccb2cd489b03cde92ed5338b",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

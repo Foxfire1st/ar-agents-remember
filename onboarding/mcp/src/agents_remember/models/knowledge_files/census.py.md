@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge_files/census.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge_files/census.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T09:30:11+02:00 |
-| lastVerifiedCommitHash | `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695`|
-| lastVerifiedCommitDate | 2026-09-29T09:57:49+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -71,7 +61,9 @@ apply it. `documents.py` registers `CENSUS_MODELS` in `SCHEMA_MODELS`.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The census design authority is the coordination-root notes Doc12 (the
@@ -79,39 +71,28 @@ migration census and its measures) and Doc14 (`notes/ar-intent-reviewer-and-beyo
 and the requirement packet `MIK-R20@v2` of task `260928_maintained-invariant-knowledge`; they live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The schemas, the claim and status rules, and the governing-status rule.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The four schema names, the file names and the root slug. | `CENSUS_BASELINE_SCHEMA`; `ROOT_ROUTE_SLUG` | mcp/src/agents_remember/models/knowledge_files/census.py:69-79 |
-| The eight dispositions and the five route statuses. | `Disposition`; `ROUTE_STATUSES` | mcp/src/agents_remember/models/knowledge_files/census.py:101-129 |
-| The readable, injective route slug; `.` is `@root`. | `route_slug` | mcp/src/agents_remember/models/knowledge_files/census.py:182-196 |
-| The pinned baseline and the mechanical, sorted inventory. | `CensusBaseline`; `CensusInventory` | mcp/src/agents_remember/models/knowledge_files/census.py:216-233; mcp/src/agents_remember/models/knowledge_files/census.py:249-280 |
-| Provenance names exactly one of leaf or wave. | `Provenance` | mcp/src/agents_remember/models/knowledge_files/census.py:288-300 |
-| Admitting dispositions link to records of their kind; only `demoted` may also link. | `_require_disposition_records` | mcp/src/agents_remember/models/knowledge_files/census.py:330-344 |
-| A claim: the latest assessment governs its cell; `discarded_false` needs `concern_found`. | `CensusClaim` | mcp/src/agents_remember/models/knowledge_files/census.py:347-381 |
-| A route's status history is non-empty and in time order. | `CensusRoute` | mcp/src/agents_remember/models/knowledge_files/census.py:412-425 |
-| The schema-to-model map registered in `SCHEMA_MODELS`. | `CENSUS_MODELS`; `CensusDocument` | mcp/src/agents_remember/models/knowledge_files/census.py:428-434 |
-| The latest status entry across every census governs; none is `pending`. | `governing_status` | mcp/src/agents_remember/models/knowledge_files/census.py:447-464 |
-| The models refuse inconsistent claims and statuses. | `test_claim_and_status_models_refuse_inconsistent_records` | mcp/tests/test_knowledge_census_files.py:118-156 |
-| Slugs are readable and injective. | `test_route_slugs_are_readable_and_injective` | mcp/tests/test_knowledge_census_files.py:109-115 |
-| The governing status spans censuses, with the tie-break. | `test_the_governing_status_is_the_latest_entry_across_every_census` | mcp/tests/test_knowledge_census_report.py:127-167 |
+- The four schema names, the file names and the root slug. [1]
+- The eight dispositions and the five route statuses. [2]
+- The readable, injective route slug; `.` is `@root`. [3]
+- The pinned baseline and the mechanical, sorted inventory. [4]
+- Provenance names exactly one of leaf or wave. [5]
+- Admitting dispositions link to records of their kind; only `demoted` may also link. [6]
+- A claim: the latest assessment governs its cell; `discarded_false` needs `concern_found`. [7]
+- A route's status history is non-empty and in time order. [8]
+- The schema-to-model map registered in `SCHEMA_MODELS`. [9]
+- The latest status entry across every census governs; none is `pending`. [10]
+- The models refuse inconsistent claims and statuses. [11]
+- Slugs are readable and injective. [12]
+- The governing status spans censuses, with the tie-break. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the models describe files of the memory repository and name code commits only by ID.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): created this card for the new file MIK-R20 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

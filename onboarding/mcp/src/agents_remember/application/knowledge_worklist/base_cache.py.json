@@ -1,0 +1,283 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/base_cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The docstring's contents rule: JSON for the worklist, Markdown for the gate, v1 never read.\n\nAnchor: \"held no Markdown, so its files are never read as a gate's base\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:c11c639ce07d28d7c71b7e407161210df079a447659a73d2e0b533efc6b7cdcf",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A location inside a working tree is refused before anything is created.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:0ed0212ab4630cdc89ecb8e888db12e90cb805ee1b2319a40db9d94f79c63dab",
+            "locator": {
+              "kind": "symbol",
+              "name": "open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A hit only for this format and key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:44cd9edc6fe6544cc76fc68efd92b4ffa59daba3fcb0c3f4b9e838522bb43816",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Atomic writes and eviction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:d2406b1caa514d069518dad8fb59ecb4705a890147d9734b1aced4e3850b030e",
+            "locator": {
+              "kind": "symbol",
+              "name": "store"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:84461939e5ac38c95ca22cff6f82b87d02815d5d6768d01273b83255467c983f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The worklist's converted K_B, now read through the shared read-or-convert path.\n\nAnchor: `converted_base_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:47d34ec02ba7efc6da6518bb94a9e1f563b607a6d9f65bc77b7f75f35d8ad15d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_base_side"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:9288d7cfad8d974a86997e11ad38a36711719704df57881dabb0d879d89f7d43",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 365
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Cached by commit, version and code commit; a refused location converts and creates nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f599e6cb7ae08370dc907627108697cd4c118803",
+            "content": "sha256:d18fd70894e0d97b5c2558ce098100f31b3fd328ae799b05ee7658604cbfad7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_bases_are_cached_by_commit_version_and_code_commit"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The v2 format constant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:6d0f6de603c4ebaf3635d4220c421d7b829f8a5b3ea8688e8454521901b6a01e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FORMAT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "What the cache holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:2c7518b11602a73fe4eaffd5ec25866f93758a630691a8340e6b8c331f194b3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_cached_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one read-or-convert path both consumers use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:7d7033eb55d61ea493a14827a03b2aef1a3d98b6ac7c0fccada25e8e405f98cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_base_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The gate reads its converted K_B through it.\n\nAnchor: `converted_base_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "content": "sha256:f2cafb6c0039ad2f87571f81a79a4dde7059d784c680947c99a17740ab0cae69",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_trace_sides"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The cache holds the Markdown, and a v1 file is ignored and rewritten.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1536b7cb7be42d16497b3947d060b74d1dc64018",
+            "content": "sha256:14f47d6fa0fb748e5c188d64817f0ad33a30eba23455e719b04b98f5d73a6ad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The key, location, contents and eviction rules.\n\nAnchor: \"A directory inside any Git working tree is refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:eb51825a6cc49d828625f16f4ad3d27e711dad510f0fab2c2aa92d0f18724ade",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The cache location and format constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:f19113ff0ee06f3692cbdfdb9bfc05d96da8f7466364ef09373f2eed851f6fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "CACHE_DIRECTORY_PARTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:9ef25586477eb167e22914d4c79c645a15cf97d23ac9129c7de5c10c16700f31",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_FILES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The default directory and the key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:2973a36ff90344b511145871a3fd12b8dc8b49c9ee884a34e7eb9a434d2aed69",
+            "locator": {
+              "kind": "symbol",
+              "name": "default_base_cache_directory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
+            "content": "sha256:bfa6b6d9616a3bd86ef935b243f3bcbdfedf510958c44c5110abb73fd98e0ff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "base_cache_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

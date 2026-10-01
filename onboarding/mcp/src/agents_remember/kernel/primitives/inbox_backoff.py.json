@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/inbox_backoff.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The redelivery floor helper defaults to 900 seconds and refuses explicit sub-floor values; `next_attempt_at` applies the floor over the early ladder rungs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
+            "content": "sha256:db3b6442e73f52f165122313d7904d5b7adac42b3bb5e606687ddb5ecce4f723",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_attempt_at"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The rate-limit predicate reuses the same floor helper before comparing elapsed time since `lastAttemptAt`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d75e6edca977f1361ba695539e56bc1de84559a",
+            "content": "sha256:18f32be75087ff5a6b70a3453fe8d1f940e032477b1e553152214b4bccfe6844",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_rate_limited"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The backoff ladder + rate-limit gate mirror `OrchestrationNudgeStore.record`'s elapsed-time check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be4175dba3da7dc3d3c67bc8ed85a100657439d0",
+            "content": "sha256:c64615c5ae0a5b633d8e9b292127755aff3579ebdb4836b199efdb82babf556a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_elapsed_seconds"
+            },
+            "path": "mcp/src/agents_remember/controlplane/orchestration_nudges.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,210 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/capsule_serving.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The capsule builder re-shapes the flat declaration arguments into the application request record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
+            "content": "sha256:74d130d7392edbd2060c8dd5624fe46c0c2c1a6bff0e1a518f12a47651025ab5",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_capsule_compile_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two skill builders build a corpus request only when an override was supplied, so the shipped corpus is the default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
+            "content": "sha256:78b74ad03e8fc930e8491136a0a4ce725cbe522ec1cde895ee3eb3a9eca75f37",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_list_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
+            "content": "sha256:0b5436cfc3823b3d5b72272844fdcabe592dffee0ff29eff96b306358d48368a",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_read_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The route's single choke point every builder funnels through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The registrations that call these builders, which pass no corpus override.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:377ac80ba8a0470d8eda5c6052fa12f6cf74f6b6a6b3eac8faae8311655853e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_skill_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:939b17c7bcb25164b372f2e472e7288ac2bed490521fc16b68df74953b2dbd51",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The application entry points these builders forward to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:2a778309bf92a9929919ae0209c369036fd2adf9dca6c28339059322f38c4320",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_capsule_compile_tool"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:5fbdf557958300c14da8a4f0432c62e3bc804136fe2221d2e9cbf3c8779f6346",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_list_tool"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
+            "content": "sha256:82eefdaf02b663fb22ca10337f2dab01ae502c37c1bfbf162f533f48288ead12",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_read_tool"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The response-model registry rows that make these names returnable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:2684d8b4aecf885069bbf4e175dd8bf0eb0a2497cc1be9edf5425f2c098bcaaf",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The test module that drives the corpus override these builders expose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:c8a571b003b0285ba3e50ee7dce8812c3324051b17fb186e8a8203d57710184f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_synthetic_corpus"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:937522b87e25da9a43cc1ed8072f32f7c6a3b4db64f8b34c8d444d8c4b6a7190",
+            "locator": {
+              "kind": "symbol",
+              "name": "World"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:91242849a373f0fa031436ecac8b69e9d51ee0fe8a9d76f63080f25024dee977",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

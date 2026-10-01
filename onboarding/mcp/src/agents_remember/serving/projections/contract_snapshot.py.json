@@ -1,0 +1,164 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Module docstring: one pass per tick, three prior walks, stat-identity cache, and the serialized-tick concurrency discipline.\n\nAnchor: \"One immutable leaf-enclosure-contract snapshot per projection tick\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "content": "sha256:2ce48d9c51070d983eb0732f571cff3737c40cf3123e183e07ce2c3f26f5307e",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`ContractSnapshot`: frozen read-only contracts mapping in enumeration order plus the `skipped` parse-failure set.\n\nAnchor: \"class ContractSnapshot:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "content": "sha256:8d1efc19c36180f62c59d70753c8e50dc619df01d31668cbc9bef341503534f8",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ContractSnapshotCache`: `(mtime_ns, size, ctime_ns)` identity with the chmod/utime rationale, failure-never-cached retry, and live-set pruning; `build` implements the single pass.\n\nAnchor: \"class ContractSnapshotCache\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "content": "sha256:4af54dd7631f74c83b674b709ed706d4d15df2f3d3272d4aa685133b616c1a5e",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot.\n\nAnchor: \"def build_contract_snapshot\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "content": "sha256:d522b541eb43142ec423fcfe15db51017db1afd723e4203e43c97aead7cac722",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The enumeration and contract parser this module reuses (one parser per surface, owned by its producer).\n\nAnchor: \"import iter_leaf_enclosure_contracts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "content": "sha256:432cad66d55d4dd162fa566b9c89e2b5132025ad9b4d7aa7c7fff3ed01330428",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`projection_store` owns the module-level `_contract_snapshot_cache` (with the three-walks rationale) and injects it into the per-tick `ProjectionInputState`.\n\nAnchor: \"class ProjectionTickState\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:02f065190e0e3a4119c8fcabefa4f1ed7a7ebd5f4531530064bb659b1ed931b4",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`ProjectionInputState` holds the injected cache, builds the snapshot once per tasks refresh, and hands that one `ContractSnapshot` to `read_enclosures`, `read_engine_process_facts`/`refresh_engine_process_landing`, and drift-snapshot pruning.\n\nAnchor: \"class ProjectionInputState\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
+            "content": "sha256:9d7fae0b7f6986ebf177635e8ec7e4307c02bdc92c838c751d20672582296085",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior.\n\nAnchor: \"def read_enclosures\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:f77d5d81904a212f9ddd7bb4eb29eb8d14592bbb565b77322d6b591a69373a6e",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk.\n\nAnchor: \"def prune_orphaned_drift_snapshots\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
+            "content": "sha256:29ca7c6a0bfb978435b5f26e0b833fb21fe1a0081f0da8cd67da240678ad71f7",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

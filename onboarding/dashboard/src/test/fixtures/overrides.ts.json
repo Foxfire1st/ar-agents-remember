@@ -1,0 +1,224 @@
+{
+  "path": "dashboard/src/test/fixtures/overrides.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The defect statement: `Partial<T>` admits an explicit `undefined`, the four reachable impossible fixtures, and why no `wireFixtureGuard` rule sees them.\n\nAnchor: `conversationPage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:8fb1383dc504ab8f16bcda8fbd3b5c971ad81d9cda08dabc3581ac81b0cde6ba",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Import and boundary review found the same-repository `wire.ts` consumer.\n\nAnchor: \"import type { NoOverrides, Overrides } from \\\"./overrides\\\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "content": "sha256:925a3664c4031608dd0ee5f13515498697685e319ea523dc680512f4f95fff32",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Import and boundary review found the same-repository `conversationWire.ts` consumer.\n\nAnchor: \"import type { NoOverrides, Overrides } from \\\"./overrides\\\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:925a3664c4031608dd0ee5f13515498697685e319ea523dc680512f4f95fff32",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The measured rejection of `exactOptionalPropertyTypes` (222 errors / 71 files) and the call-site property the narrow fix has instead.\n\nAnchor: `exactOptionalPropertyTypes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:70ac436c9f4723fb92b8917fc9c25cb770103903f58f4b828bb80331886a47e8",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The three documented limits: fresh-literal-only, one level deep, and only these two modules.\n\nAnchor: `conversationCapabilities`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:4f00d4bd915c5ae51503c550b20005b74abbb07904b61a322eee95c339f7eac7",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`RequiredKeys<T>`, `Overrides<O, T>` and `NoOverrides`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
+            "content": "sha256:6924ba64bfcc8eb04dd9c7903f8506f57f0c8d524d4732954337e8f92940bbc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "NoOverrides"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The proof that all four rejections fire, that excess-property checking survives, and that the widened-variable case is a known pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:6b6d8ca4cd7524d55a67081c6c6d3bdb0a1dba1ebde0c15aa834b64f8a34b620",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagnosticsFor"
+            },
+            "path": "dashboard/src/test/fixtureOverrides.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
+            "content": "sha256:2ad8cd1d8da993eb5bb244f6479871bfc6cd35e9e7585b1e773d7a7aaaa00e35",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/test/fixtureOverrides.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Consumer: every projection builder takes `Overrides<O, Node>`.\n\nAnchor: \"export function lifecycle<O extends Partial<LifecycleProjection> = NoOverrides>(\"; \"export function projection<O extends Partial<WorkspaceProjection> = NoOverrides>(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "content": "sha256:db252c0fae8ad5bc90e596829d614d60d3f0d9606d977f2a7afa960f7dd6a9d8",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "content": "sha256:6eee35b108fa6595aa8e2d09a8729ae69e8e45f84511998c39e6462db6bea1e1",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 329
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Consumer: the conversation builders, including the one that is deliberately NOT an `Overrides` (`conversationCapabilities`, per-group and one level deeper).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:7d6fe87a94c03f5cb7457201327a23d9c5c3901deef84f41f110b257154578d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationCapabilities"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer.\n\nAnchor: `resolveJsonModule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f027a65aa121e2a9a127e28e4eb04a66dc8789d8",
+            "content": "sha256:d89bf5e0b4263f9b850993985c00d2b5b364890384b4ab4f08a14eb5fc37b5a3",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "dashboard/tsconfig.app.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`tsconfig.driver.json` covers the Playwright suites (`e2e`, `e2e-chats`, `e2e-production`, `perf`) and also omits the flag, which is why a call-site constraint reaches further than the flag would have.\n\nAnchor: \"e2e-chats\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bdc0b3732020bde09dc1498306cabdf10d0262d",
+            "content": "sha256:57ca7f6629714240791396d1d7ddf8ce447e3a5868892f4d8226456b65d6dd9c",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "dashboard/tsconfig.driver.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

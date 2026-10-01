@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/review_staleness.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/review_staleness.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-23T17:15:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -143,7 +133,9 @@ unions (`models/knowledge/review_sync_rebinding.py:88-96`).
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured domain documentation could be checked for this module. The resolved memory layer's
 `system/sources.md` carries no `Domain Documentation` category — its whole content is the statement that no
@@ -151,7 +143,7 @@ entries are configured — so there is no external or domain documentation sourc
 documentation row is recorded here. Every statement on this card is grounded in the repository's own
 source, docstrings and cases, and the paragraphs above are backed by the table below.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own declarations and validators, in the payload
 module that re-exports them, in the owners that produce each value, and in the cases that drive them. The
@@ -160,28 +152,26 @@ two-way reading of the channel matches**; **an absence state must name the reaso
 measurement may not carry one**; and **`review.py` still publishes all three names**, so the extraction
 changed a home and not an import site.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the three questions it owns, why it is its own module, and the one-implementation rule.** | "There is one implementation of each rule and it lives here." | mcp/src/agents_remember/models/knowledge/review_staleness.py:1-20 |
-| The imports the three models need, and the `after` validator machinery they are built on. | `model_validator` | mcp/src/agents_remember/models/knowledge/review_staleness.py:22-35 |
-| The published surface: three models and the state alias, in one alphabetical list. | `__all__` | mcp/src/agents_remember/models/knowledge/review_staleness.py:37-42 |
-| **The four measured states declared once, with `current` as the only one that claims agreement.** | `ReviewSyncMovementState` | mcp/src/agents_remember/models/knowledge/review_staleness.py:45-48 |
-| **The stale comparison, its three-member state union, and the three causes of a stale state the statement names.** | `ReviewStaleness` | mcp/src/agents_remember/models/knowledge/review_staleness.py:51-82 |
-| **The bilateral previous-input rule: a stale comparison must label one, and no other state may carry one.** | `_require_the_previous_input_to_be_labelled` | mcp/src/agents_remember/models/knowledge/review_staleness.py:85-85 |
-| **The measured movement: its field set, the resolved identities present exactly on the channel that moved, and the record_readable/reuse_permitted/reinterpreted_for_new_inputs flags.** | `ReviewSyncMovement` | mcp/src/agents_remember/models/knowledge/review_staleness.py:85-187 |
-| **The `after` validator that refuses every false movement shape — state against moved identities, absence against reason, and `record_readable` against `unavailable`.** | `_the_state_follows_from_what_was_measured` | mcp/src/agents_remember/models/knowledge/review_staleness.py:131-187 |
-| **The submission boundary carried as data: two unfavourable states, and `none_is_approval`.** | `ReviewSubmission` | mcp/src/agents_remember/models/knowledge/review_staleness.py:190-204 |
-| The shared bounds, patterns and base model every field is constrained from. | `PROSE_MAX_LENGTH`; `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:18-27; mcp/src/agents_remember/models/knowledge/base.py:34-39 |
-| **The re-export that made the extraction invisible to importers, and the payload vocabulary's own `__all__` entries for the three names.** | `review_staleness`; `ReviewSyncMovement` | mcp/src/agents_remember/models/knowledge/review.py:61-64; mcp/src/agents_remember/models/knowledge/review.py:62-65; mcp/src/agents_remember/models/knowledge/review_staleness.py:95-197 |
-| **The payload that still declares the staleness, submission and movement fields, and the comment distinguishing "no sync has reported" from "a sync reported agreement".** | `KnowledgeReviewPayload`; `sync_movement` | mcp/src/agents_remember/models/knowledge/review.py:991-1084; mcp/src/agents_remember/models/knowledge/review.py:1019-1026 |
-| **The R17 producer that builds a current or carried-mismatch staleness, and the fold that replaces it when a sync measured movement.** | `review_staleness`; `review_staleness_with_sync_movement` | mcp/src/agents_remember/application/review_comparison_staleness.py:76-97; mcp/src/agents_remember/application/review_sync_movement.py:357-382 |
-| The task-context producer that uses the `not_compared` state because no knowledge operand was compared. | `ReviewStaleness` | mcp/src/agents_remember/application/review_task_context.py:93-191 |
-| The display-only submission producer, whose two states are the model's own members. | `submission` | mcp/src/agents_remember/application/review_record_rendering.py:194-223 |
-| **The projection whose output this model's validator accepts, and the record vocabulary the movement's three states are read from.** | `_project`; `ReviewSyncRebindingVerdict` | mcp/src/agents_remember/application/review_sync_movement.py:165-213; mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py:97-103 |
-| **The case that pins the four validator clauses one forgery each, with the real published movement as the accepted control.** | `test_the_movement_validator_refuses_each_false_shape` | mcp/tests/test_review_sync_movement_read.py:258-327 |
-| **The case that pins the two `unavailable` sub-cases and records the `record_readable` hold in place.** | `test_a_record_that_cannot_be_used_is_reported_unavailable` | mcp/tests/test_review_sync_movement_read.py:169-226 |
+- **The module's own statement of the three questions it owns, why it is its own module, and the one-implementation rule.** [1]
+- The imports the three models need, and the `after` validator machinery they are built on. [2]
+- The published surface: three models and the state alias, in one alphabetical list. [3]
+- **The four measured states declared once, with `current` as the only one that claims agreement.** [4]
+- **The stale comparison, its three-member state union, and the three causes of a stale state the statement names.** [5]
+- **The bilateral previous-input rule: a stale comparison must label one, and no other state may carry one.** [6]
+- **The measured movement: its field set, the resolved identities present exactly on the channel that moved, and the record_readable/reuse_permitted/reinterpreted_for_new_inputs flags.** [7]
+- **The `after` validator that refuses every false movement shape — state against moved identities, absence against reason, and `record_readable` against `unavailable`.** [8]
+- **The submission boundary carried as data: two unfavourable states, and `none_is_approval`.** [9]
+- The shared bounds, patterns and base model every field is constrained from. [10]
+- **The re-export that made the extraction invisible to importers, and the payload vocabulary's own `__all__` entries for the three names.** [11]
+- **The payload that still declares the staleness, submission and movement fields, and the comment distinguishing "no sync has reported" from "a sync reported agreement".** [12]
+- **The R17 producer that builds a current or carried-mismatch staleness, and the fold that replaces it when a sync measured movement.** [13]
+- The task-context producer that uses the `not_compared` state because no knowledge operand was compared. [14]
+- The display-only submission producer, whose two states are the model's own members. [15]
+- **The projection whose output this model's validator accepts, and the record vocabulary the movement's three states are read from.** [16]
+- **The case that pins the four validator clauses one forgery each, with the real published movement as the accepted control.** [17]
+- **The case that pins the two `unavailable` sub-cases and records the `record_readable` hold in place.** [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this module. It declares value shapes only: it reads no
 store, resolves no path and touches no repository, and every identity its fields carry — a comparison
@@ -190,7 +180,3 @@ repository resolved. The relocation and dataset-ownership boundaries that follow
 belong to the owners that produce them (the generation store and the knowledge store), not to this
 vocabulary. No cross-repo reference row is recorded here because no cited range proves a repository or
 external-system boundary.
-
-## Update History
-- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **`ReviewStaleness` gained its fourth state, and this card's one enforced row was re-anchored.** `state` is now `Literal["current", "stale", "not_compared", "not-measured"]` (`:79`) and the docstring states what the new member is for and what it is not: the boundary could not take its comparison at all, so the surface may not claim currency — and it is not `stale`, because no movement was observed and submission is not disabled by it. The repaired row is the `ReviewSyncMovement` re-export and its two `__all__` entries (`:62-65`, `:118-123`). **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-23T17:15:00+02:00 — 260921-ICR-L22 curator (uncommitted change set on `ar/260921-icr-l22`, base `e605822eb3bf83bf63a45963c5f51d5fc28859ee`): created this one-to-one card for the module this leaf introduced as **the home of three display models extracted out of `models/knowledge/review.py`** so that module (1198 lines at this leaf's base, 1164 now) stayed under the repository's 1200-line hard rail. It records what a consumer has to act on: `ReviewStaleness` is ICR-R17@v1's and keeps the last displayed comparison as a *labelled previous input* under a bilateral validator; `ReviewSyncMovement` is ICR-R22@v1's, with the deliberately four-member `binding_state` (`current` / `stale` / `not-measured` / `unavailable`) whose `after` validator keeps the state, the moved identities, `record_readable` and the resolved identities consistent in every direction; and `ReviewSubmission` carries the increment's display-only boundary with no favourable member. `review.py` re-exports all three names, so one implementation of each rule lives here while importers and tests keep their import site, and the `ReviewStaleness` and `ReviewSubmission` field sets and validators are byte-identical to the declarations that module carried. One boundary is carried as a boundary and not as a defect: `record_readable` is `False` for both `unavailable` sub-cases, so one field cannot separate an unreadable artifact from a valid record naming another generation — the sub-fact lives in `reason`, and the field-level fix is **held for the master's ruling** exactly as the pinning case states it. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name this leaf's recorded base `e605822eb3bf83bf63a45963c5f51d5fc28859ee` because every construct cited here exists only in this leaf's uncommitted working tree — the file itself is untracked at that commit — so no commit contains the content a stamp would claim to have verified; what was actually read is that working tree, and the governed closeout owns the real stamp once its transaction creates the code commit.

@@ -1,0 +1,150 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/tree_observation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**One side's source binding: the exact tree and the root the command runs in, with `tree_id=None` a supported state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:f71c231943369fb4014034ee38dc036a3bb5bc3b65ab502bd8ab205ee36b204d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**One changed path: the raw filename as the address, Git's status, the renderability, the mode flag and the reason an unknown is unknown.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:e02da430a0dac6d193f5418aae1595361a1b7c0d2d9a449ebd20ddf909aa01b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The observation: availability apart from paths, entries held in agreement with paths, and the unrepresentable-implies-partial rule.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:52a0ea691f378474fa756aa63f86cdd6869719f994aff96b1a1bfd724779e345",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreePaths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The Git seam as one question, and the probe that observes nothing for a comparison whose sides named no code tree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:d3c32a165ef72627cb087e45766b06930645ccfef0d4262b0bc68090cd6c3cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeDifferenceProbe"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:78199ae465e631607110fb8c2f1ca69f980f46327a123a2cbf27407ad970638f",
+            "locator": {
+              "kind": "symbol",
+              "name": "no_tree_difference_probe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The shared vocabulary defined once and re-exported at the display seam, so existing importers keep working.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:52a0ea691f378474fa756aa63f86cdd6869719f994aff96b1a1bfd724779e345",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreePaths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1165846f6c916efeadec4d9a16a6a5954eae700",
+            "content": "sha256:e02da430a0dac6d193f5418aae1595361a1b7c0d2d9a449ebd20ddf909aa01b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:8603ed6d34e8fe4107d63930ff1c406caa646f8fdf11093049af969f2f8baf9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "partition_attribution"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The two readers that consume this vocabulary beside the display.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d502f69215acff6416f26ae23ccdd57dfd22adf7",
+            "content": "sha256:8603ed6d34e8fe4107d63930ff1c406caa646f8fdf11093049af969f2f8baf9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "partition_attribution"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_inventory"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

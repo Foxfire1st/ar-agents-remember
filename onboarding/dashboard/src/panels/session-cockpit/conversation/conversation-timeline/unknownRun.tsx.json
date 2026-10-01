@@ -1,0 +1,34 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/unknownRun.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The collapsed-run row and keyboard helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8157839d56813413554886caa1f4013b20eddb7",
+            "content": "sha256:a918af9d13ab5411dad3cdc7fcee0e5e6ef7c610e49147b82d2f3c8cfa23236e",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnknownVendorRun"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8157839d56813413554886caa1f4013b20eddb7",
+            "content": "sha256:7e2900a335818f46d4000dd52a627c60c357224296747babcbe9d00c5a25c344",
+            "locator": {
+              "kind": "symbol",
+              "name": "isEditableTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

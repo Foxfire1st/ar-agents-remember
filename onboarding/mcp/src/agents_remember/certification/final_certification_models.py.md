@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/final_certification_models.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/final_certification_models.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T22:39:30+02:00 |
-| lastVerifiedCommitHash | `997305a9ced4caea67edb826224bf0351264fd56` |
-| lastVerifiedCommitDate | 2026-09-17T19:54:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [memory_quality overview](overview.md)
@@ -69,24 +59,14 @@ into typed refusals at their boundary.
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The status and state vocabularies. | `FinalItemStatus`; `FinalCertificationState` | mcp/src/agents_remember/certification/final_certification_models.py:26-27 |
-| One closed final-catalog member with a canonical key. | `FinalCatalogItemIdentity` | mcp/src/agents_remember/certification/final_certification_models.py:36-45 |
-| One typed Gate-5 result with content-addressed subresult and status shape guard. | `FinalCatalogItemResult` | mcp/src/agents_remember/certification/final_certification_models.py:47-65 |
-| The deterministic complete plan with self-digest. | `FinalFullCatalogPlan` | mcp/src/agents_remember/certification/final_certification_models.py:68-100 |
-| The executed attestation that must exhaust its planned population. | `FinalFullCatalogAttestation` | mcp/src/agents_remember/certification/final_certification_models.py:103-140 |
-| The typed green/red/blocked certification over the exact pair. | `FinalCertificationResult` | mcp/src/agents_remember/certification/final_certification_models.py:143-190 |
-| Shared uniqueness-and-canonical-order guard. | `_require_unique_canonical` | mcp/src/agents_remember/certification/final_certification_models.py:193-196 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **both governing declarations repaired.** The field named `../overview.md` and the body link named `../overview.md`; each resolved card-relatively to nothing, and they did not agree with each other. Both now name `overview.md`, the route-local overview of this card's own directory. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-09T22:39:30+02:00 — CCR-L42 failed-Gate1 repair: preserved the behavior-identical final-certification models under `certification/final_certification_models.py`; refreshed this moved card's governing route and current source ranges. Verification remains closeout-owned; this entry does not assert acceptance.
-
-- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: created this file-level
-  onboarding card for the new CCR-R08 closed typed final-certification contract models module
-  delivered in code commit 16d1a4d6; anchors and ranges derived from the current worktree
-  source and pinned to that commit.
+- The status and state vocabularies. [1]
+- One closed final-catalog member with a canonical key. [2]
+- One typed Gate-5 result with content-addressed subresult and status shape guard. [3]
+- The deterministic complete plan with self-digest. [4]
+- The executed attestation that must exhaust its planned population. [5]
+- The typed green/red/blocked certification over the exact pair. [6]
+- Shared uniqueness-and-canonical-order guard. [7]

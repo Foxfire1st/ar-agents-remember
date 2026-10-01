@@ -1,15 +1,5 @@
 # dashboard/src/data/keymap/preferences.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/keymap/preferences.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate |  2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data/keymap overview](overview.md)
@@ -41,33 +31,29 @@ selected CodeMirror composer profile. It is the sole persistence/subscription bo
 Persistence is a user preference, not daemon truth. Invalid entries fall back to defaults with a
 visible issue; they never weaken browser safety or the focus-escape invariant.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card was verified from its direct source/tests and the reviewed L8
 task/worker/reviewer evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Cross-Repo References
+### Cross-Repo References
 
 The preference module imports only repository-local keymap definitions and browser/React APIs; no cross-repository implementation governs validation or persistence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Static chord definitions. | `CHROME_CHORDS`, `COMPOSER_CHORDS` | dashboard/src/data/keymap/chords.ts:20-81; dashboard/src/data/keymap/chords.ts:83-104 |
-| Browser/PTY reserved set. | `PTY_RESERVED`, `BROWSER_FORBIDDEN` | dashboard/src/data/keymap/reserved.ts:62-150; dashboard/src/data/keymap/reserved.ts:153-202 |
-| Global dispatcher consumer. | `useKeyboardZones` | dashboard/src/panels/session-cockpit/useKeyboardZones.ts:18-97 |
-| Composer and reference UI consumers. | `SessionComposer`, `CommandPalette` | dashboard/src/panels/SessionComposer.tsx:57-117; dashboard/src/panels/session-cockpit/CommandPalette.tsx:387-457 |
-| The default bindings include the reviewer's table (MIK-L33). | "const DEFAULT_BINDINGS = [...CHROME_CHORDS, ...COMPOSER_CHORDS, ...REVIEW_CHORDS] as const;" | dashboard/src/data/keymap/preferences.ts:39-40 |
+- Static chord definitions. [1]
+- Browser/PTY reserved set. [2]
+- Global dispatcher consumer. [3]
+- Composer and reference UI consumers. [4]
+- The default bindings include the reviewer's table (MIK-L33). [5]
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta (ariaKeyshortcuts helper)
 
@@ -77,15 +63,3 @@ WAI-ARIA `aria-keyshortcuts` token (`Control+Shift+Period` → `Control+Shift+.`
 and converts it through this helper, so a rebind of the stop chord through the `cockpit.sessions.keymap.v1`
 seam keeps the assistive-tech advertisement truthful (F25) — replacing a hardcoded default constant.
 Additive to the effective-keymap boundary; verification stays pinned to the FEUI-L8 base until closeout.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): **body updated for MIK-R33 rule 7:** `DEFAULT_BINDINGS` now includes `REVIEW_CHORDS`, so the reviewer's two traversal commands are known, rebindable and resolved through `bindingFor`. One row added. The rows moved by the changed import line were re-pointed by the installed fixer.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 9 citation findings (4 rows); scoped recheck clean.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 (structured Chats renderer, reviewer FINAL PASS): recorded
-  the pure `ariaKeyshortcuts(chord)` helper that renders a validated chord as the WAI-ARIA token, so
-  the interrupt control's derived `aria-keyshortcuts` follows a rebind of `conversation.stop` (F25).
-  Verification metadata remains pinned to the leaf base until closeout.
-- 2026-07-18T07:22+02:00 — Created for FEUI-L8 keymap preferences. Candidate metadata is blank
-  because the source is new and uncommitted; closeout owns verification stamping.

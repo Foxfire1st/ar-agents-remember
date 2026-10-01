@@ -1,0 +1,53 @@
+{
+  "path": "dashboard/src/App.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "28b5d529d145096de8b20ff331cf361f8bb37d4b",
+        "content": "sha256:3ac6b09f5419ba35f8dedafcebd764f37428d820f5118a797850845d6a7ec435",
+        "locator": {
+          "end": 19,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-TM8RDZY5",
+      "invariant": "INV-2D60EEQS",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The routing block is where the shipped presentation surface is decided, so it is the primary realization of a presentation-scope obligation.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Development import guard and pathname-based view selection\n\nAnchor: `Cockpit`; `Suspense`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b5d529d145096de8b20ff331cf361f8bb37d4b",
+            "content": "sha256:e03551219394142a83baf1ffb5374192bfc37ca8e632d064d7f2fceca84d7037",
+            "locator": {
+              "kind": "symbol",
+              "name": "DevApp"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28b5d529d145096de8b20ff331cf361f8bb37d4b",
+            "content": "sha256:1df6ef9d9818a1d3b9b7d60b6aa1e935324c2ba03bb3feaa69c6ddc2272423a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "App"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

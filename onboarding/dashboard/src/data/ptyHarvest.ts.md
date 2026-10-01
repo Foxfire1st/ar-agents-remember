@@ -1,15 +1,5 @@
 # dashboard/src/data/ptyHarvest.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/ptyHarvest.ts`               |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `a84add4c9422b18a26f1748dedaed16194994ded`       |
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -58,45 +48,28 @@ wired only for the raw archetype in `PtySurface`.
   rail's grammar dot (the reviewer's "dot stays pure grammar" case pins this).
 - Wired for the legacy-raw archetype only; controlled panes' truth is the runner line-log.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Store, parsers, and hint vocabulary. | `ptyHarvestStore`, `parseOsc133`, `parseOsc94`, `turnHintWord` | dashboard/src/data/ptyHarvest.ts:51-73; dashboard/src/data/ptyHarvest.ts:85-91; dashboard/src/data/ptyHarvest.ts:98-110; dashboard/src/data/ptyHarvest.ts:113-126 |
-| The xterm-side hooks (onBell/onTitleChange/OSC 133/OSC 9), observe-only. | "hooks?: TerminalStreamHooks;" | dashboard/src/panels/Terminal.tsx:14-14; dashboard/src/panels/Terminal.tsx:56-56 |
-| The archetype gate (hooks only when NOT controlled) + acknowledge-on-focus. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
-| The rail consumers: bell attention marker + labeled tooltip hints. | `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
-| The grammar this store must never feed. | `seatVisualState` | dashboard/src/data/stateGrammar.ts:101-125 |
-| The unit suite: parser matrices, clamps, no-fabrication, bell/ack semantics. | "parseOsc133 (shell-integration marks)", "parseOsc94 (ConEmu progress)", "turnHintWord", "harvest store" | dashboard/src/data/ptyHarvest.test.ts:11-23; dashboard/src/data/ptyHarvest.test.ts:25-37; dashboard/src/data/ptyHarvest.test.ts:39-44; dashboard/src/data/ptyHarvest.test.ts:46-70 |
+- Store, parsers, and hint vocabulary. [1]
+- The xterm-side hooks (onBell/onTitleChange/OSC 133/OSC 9), observe-only. [2]
+- The archetype gate (hooks only when NOT controlled) + acknowledge-on-focus. [3]
+- The rail consumers: bell attention marker + labeled tooltip hints. [4]
+- The grammar this store must never feed. [5]
+- The unit suite: parser matrices, clamps, no-fabrication, bell/ack semantics. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 10 citations (four local prose citations and six repository-internal references); existing parser prose citations were already current.
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R7: the client-side legacy-raw harvest
-  store (bell/ack-on-focus, OSC 0/2 title, turn hints) + the pure OSC 133 / OSC 9;4 parsers and
-  the labeled hint words — hints beside the grammar, never grammar states; wired only for the raw
-  archetype. Verification metadata pinned to the leaf base until closeout stamps the L6 code
-  commit.
+No applicable cross-repository source was found.

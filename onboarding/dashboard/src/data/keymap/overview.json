@@ -1,0 +1,155 @@
+{
+  "path": "dashboard/src/data/keymap",
+  "references": {
+    "1": {
+      "note": "The reviewer's zone and chords.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32384b5c1290e4e59213ae0a1b6fa2333ef47ec6",
+            "content": "sha256:7b6babf31461b35df086e7500fe3b4dcfc25b75ec224f13259985aa0fef5a8ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_CHORDS"
+            },
+            "path": "dashboard/src/data/keymap/chords.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cf09fc2cc7b5cd77e4b6a3662a135ea22c8951d",
+            "content": "sha256:8411b3483d6fad9439e6272849de52d5d9bcf15634e4bb08c68b5f9142d8f77d",
+            "locator": {
+              "kind": "symbol",
+              "name": "zoneForTarget"
+            },
+            "path": "dashboard/src/data/keymap/zones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reviewer's own binding on its zone.\n\nAnchor: \"const owner = zoneForTarget(target);\"; \"if (routeKey(owner, event, target) !== 'handle') return;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a086d5d370737964a02fb2cf41e0e60facd30f2a",
+            "content": "sha256:59fddd7a855198e28ae7d6d9c2b4d8f88fd74e7c450e98d2a0436422e618b498",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The effective-keymap preference and validation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8358886e1f6bdefb7a98b6697db164a2a4a504d",
+            "content": "sha256:b88df79f032b176d4f5e5f8effac280aa1e7ca4905433b16cb42cc6e2eefdf53",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveKeymap"
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The thin React binding that installs the effective tables via tinykeys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9428f12da2796a8267085f196e583f7874ba2f16",
+            "content": "sha256:9a4db9ecfacefdcd42aabbc588f910e037d4bafca4316af9cd1b856c49b54dcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "useKeyboardZones"
+            },
+            "path": "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `?` reference/profile page that renders the same effective map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f6d5f63b7058e0e74ede68e30f8233e29c5c3e9",
+            "content": "sha256:6cdabbc0b87cf73cdea0877c875a77d4fa1056c87c6b7a00f27cbcb565eba958",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommandPalette"
+            },
+            "path": "dashboard/src/panels/session-cockpit/CommandPalette.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The command ids the chord tables dispatch into.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fb3fdfac329f65625682d041f1e1a705883ff4c",
+            "content": "sha256:c84e84c34993294e9bd3bed50b9ab64df754c8b865342356c10f1c9e8713b14a",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerDefaultCommands"
+            },
+            "path": "dashboard/src/data/commands.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The DOM that carries the `data-kbzone`/`data-region` markers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca0ce2b1c506aaedbb68337eaf039d40cc19c9ed",
+            "content": "sha256:17024dec3e22d9be92510984860643994344ee1abde13899bc5764d85ceaf817",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionsView"
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The live CodeMirror surface that consumes profile and chord reconfiguration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bb3a062aadcf8a288bd4f1b8d2af05b8b8994e2",
+            "content": "sha256:4d795770f18dc7835ec304967fc5c43612b9a62f7b30007f780e1142427e2ba3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionComposer"
+            },
+            "path": "dashboard/src/panels/SessionComposer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

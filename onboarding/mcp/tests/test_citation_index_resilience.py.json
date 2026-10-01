@@ -1,0 +1,417 @@
+{
+  "path": "mcp/tests/test_citation_index_resilience.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A settings exclude removes a file and the register records the rule that did it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:b5f6838fc3c38743e6d5212bc71e9a386caae77cb1c6d82c8b934fd7ccd81489",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_rules_exclude_removes_a_file_and_the_register_records_the_rule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A total above the ruled 512 MiB default reports instead of refusing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:cdda73b2a47a829dc183dfc13670cd351356f8d9da564a9d115556df5ecc3add",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_total_above_the_ruled_default_reports_instead_of_refusing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The hard stop names the offenders and the next step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:611ca839a1e2bf78c015e07cbfbec8d079c7818efe5dfcf745da644d2ac1c0fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_hard_stop_names_the_offenders_and_the_next_step"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Every settings key overrides a cap while the module constants stay default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:cd1d7a5bcd1e6c673c9976cf3827e65ab48b5051205cb2e99fbcf6ccfc413cff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_citation_index_settings_override_every_cap_and_the_constants_stay_defaults"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The file-count cap refuses with the route that fixes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:b1c2a82dfe4fde0997b36ed5708da29dc310686fe4fdd81336c33e5fa8991048",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_file_count_cap_refuses_with_the_route_that_fixes_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A malformed `citationIndex` block is refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:c9b4576edaa7b3379ddce4a1a2270f49cc0823d425713d9c58a641ea1412b022",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_malformed_citation_index_block_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A capped index is reported on the citation check rather than raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:f4c31364bdb397038d45c4a6c9a43636ad665bc409db43c239bd2110cd5a90e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_capped_index_is_reported_on_the_citation_check"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "An unreadable source is reported with its path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:019db24c4f8eef85569c18ccc733bbffcd84e86d10cb1416c6d915117f692751",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_source_is_reported_with_its_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "An index that cannot be built is a reported state carrying a `nextStep`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:788c5f4cf0d38f8d6d01ff33aad0d4af38864aa7ccc95463a00bc8c0d4e84070",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_index_that_cannot_be_built_is_a_reported_state_with_a_next_step"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The closeout gate's own declared check group degrades the same way.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:f144cc0ab73bc59d4c512708a1cdd51a8da971fef3dec975c53045c5c388b7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_gates_own_check_group_degrades_the_same_way"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "A document with no code root says so rather than passing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:d0ac33aaf4157ac598fa000b05b924eea9687a80ab2c921f36c14480b8c19ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_with_no_code_root_still_says_so_rather_than_passing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A `.gitignore` rule removes a file and the register records the pattern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:14072214884f80c15d24419b79b9b9522fdb58cbc2b6f7850c84f21687a60768",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_gitignore_rule_removes_a_file_and_the_register_records_the_pattern"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The registered `citation_fix` MCP tool declares `exclude`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:a751453a3891d65a0dd94b0fdd692caf57537217ee2e8695913a4be0cab0aa33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_registered_tool_declares_exclude"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The CLI declares a repeatable `--exclude` option.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:5a6226f7995b257e3a8113bd23c6e79616a358d914340a5ab1314cb5a83e25e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cli_declares_a_repeatable_exclude_option"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The database cap and the file-count cap are unchanged by the ruling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:62912e778e9b2b29adabbf335966d54277eb44de803108c5eafe98d41bf711cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_db_cap_and_file_count_cap_are_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The ruled numbers the caps cases assert against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:6d221d8f2e6efeb197ebf30d35b106ccaed906b9647049cc0b0753b5fe8c41b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_BYTES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:8db6e294f7527bb8fee91cd9d660c341c87a9d342ffb93439f385561f810d627",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_FILE_BYTES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "496ae7522f0f6e5b3a56dd41fdc0f35aabd62dfd",
+            "content": "sha256:f184694585ecf810989c0bec7cdfc2569e6e69f93e632edbf3a237f5c4ee4192",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_HARD_STOP_BYTES"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The caller-exclude surface the last two cases read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf5d4bd962bb0138e26a43fc4836aadec32de998",
+            "content": "sha256:1d038a207f93de9c861eade9ab182afb81387d9a566344b1935277b8c96ec857",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A caller exclude narrows one call and only that call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:e04807205a272ec180efcc30b512c76427b9a7978651763c47ec4871c770a3df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_caller_supplied_exclude_narrows_one_call_and_only_that_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rule set survives on the durable record, parsed back out of the published manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:64960f667bff9ef3fa0375f76443832625a906c3d9798d7c9db579250651758e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_published_manifest_carries_the_rule_set_that_produced_the_index"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The non-Git fallback keeps a directory rule while a negation exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:991ea288f96591af9b39e2874e9226416ff746f64bb88bce69a9dc371a00ed49",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_non_git_fallback_keeps_a_directory_rule_while_a_negation_exists"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The register's deliberate divergence from Git, pinned on both sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:c45cbb53f6e910f4564f1adab31ff94142d50b7e6a31676e6fb226e7d2880d79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_register_admits_a_negated_file_under_an_excluded_directory_where_git_does_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "One root gives one `gitignoreAuthority` on both acquisition routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:a6bbc2348ea5925b4e56baf98b005b891b4ddf8601b64356b1f526032e8abc5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_root_gives_one_gitignore_authority_on_both_acquisition_routes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A caller exclude that cannot mean anything is refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:d695ca242b6568d03c83c7b466b6d94276baf87c7ae52897a7e568f0cc88e2bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_exclude_that_cannot_mean_anything_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "An oversized file is skipped and reported with its path and size, index still built.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d6f1543ad5c7743e2aa5674854c5a2ebf4789a",
+            "content": "sha256:bb4cdd1ea6327b92ec96e517981f6aaf6d82a4817228fa336d8a023fcf05db5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_oversized_file_is_skipped_and_reported_with_its_path_and_size"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

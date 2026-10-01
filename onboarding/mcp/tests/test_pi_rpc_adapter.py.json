@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_pi_rpc_adapter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Lf only decoder preserves unicode separators and accepts crlf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f0c8dab1b2d592002ee925d746ed624bd06623d",
+            "content": "sha256:ccd6447c6adce4fbc91f63a46f665c945a6f6c4e180358f3e9d2b234d20375aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lf_only_decoder_preserves_unicode_separators_and_accepts_crlf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Malformed and overlong frames refuse loudly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f0c8dab1b2d592002ee925d746ed624bd06623d",
+            "content": "sha256:9bfd781de632ac4fe8f43ef35984491fef362088bdcab6d279196c57d66812d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_malformed_and_overlong_frames_refuse_loudly"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Available models preserve provider identity and model gated thinking.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f0c8dab1b2d592002ee925d746ed624bd06623d",
+            "content": "sha256:69940dd845099490309204abbd1d7a644585123dc702942d547bd49872c813e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_available_models_preserve_provider_identity_and_model_gated_thinking"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

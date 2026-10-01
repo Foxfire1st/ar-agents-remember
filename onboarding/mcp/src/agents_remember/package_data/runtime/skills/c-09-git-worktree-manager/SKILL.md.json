@@ -1,0 +1,254 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill.\n\nAnchor: `# c-09-git-worktree-manager Git Worktree Manager`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:beff285115be3f42153de107aa896b9f4d5e450140f6949c239bd394db145585",
+            "locator": {
+              "end": 567,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38).\n\nAnchor: \"master lists it, the finalizer always derives that\"; \"assertions are omitted. A sub-task naming none whose folder\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 496
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shipped text is corrected: admission is contract-scoped, each canonical series contract owns its own activation record, and masters sharing one exact code/memory source pair never share that state.\n\nAnchor: \"Atomic-series implementation admission is a separate, contract-scoped authority.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:ff4da9185a4acb4d8fd505057f8649092f120823f91391fafc5276cc193cec71",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The shipped closeout-queue paragraph now projects only active, reconciling, or vacant waiting candidates and owns none of those lifecycle facts.\n\nAnchor: \"projects active, reconciling, or vacant waiting candidates\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:89c0a82ad678a941eef6f02b27f379d7523e957cd95dd102dcbaecaac9e2b2ee",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The shipped sync-scope \"source pair\" is current: sync derives one contract's code/memory branch pair from the contract, so the phrase describes a two-branch reconciliation, not a serialization claim.\n\nAnchor: \"def source_pair(contract\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a27da9e92f765e4148fa08b689f518f1545d1c79",
+            "content": "sha256:f5c3bef9b591e6724ccd8d1a41ea5ae8131ea8fdcac050b29186d38492008445",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout.\n\nAnchor: `# c-12-closeout Closeout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:e3c9649d873f62a1e0b6a83803e0b83ecbaa891f2d8fb458e805ffa2874752cb",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`.\n\nAnchor: \"The recorded leaf\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:67790debda6ad72d6fbf9ca6dd3c5919f80f2de54d445dbefca9f78f097943ad",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks.\n\nAnchor: \"The Worktree Intent Gate must name:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:29ec02729e239fa61d1b04c403728200cacd7798556cf9b284035aab0a5967e6",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Developer-gated starts run preflight, notify-and-stop, then auto-resume on the next AR call; accepted-series subordinate starts continue under recorded authority.\n\nAnchor: `## Pre-Worktree Intake`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:6d75bef9aab46ced3f512d6ee9468bf558a3790af63fe17835bb923ae3dfb520",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Integration and finalization run dry-runs first; developer-gated edges notify-and-stop while accepted-series subordinate edges continue under standing authority.\n\nAnchor: `## Integration`; `## Lifecycle Finalization And Cleanup`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:67f3f5edd19f2594dee9ce60b0cacb7dafed44708c730596b375326ef85c74b8",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 368
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 436
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Integration preview requires the recorded code and memory `source_branch` to be checked out in the source repositories, even for `dry_run=true`.\n\nAnchor: \"Before previewing integration\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:aa3a46e1a38484817e87bad222052465dfeddbe1cd2ee89555d30d6c0075f717",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 406
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:4dfb1c6ca01cb2ef8466faa95e0aa76d01d4a1658dbfa39d7b5be4ebb401bde9",
+            "locator": {
+              "end": 409,
+              "kind": "line_range",
+              "start": 409
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Integration remains owned by the `c-09-git-worktree-manager` skill and covers fast-forward and replay strategies after closeout.\n\nAnchor: `## Integration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:67f3f5edd19f2594dee9ce60b0cacb7dafed44708c730596b375326ef85c74b8",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 368
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Lifecycle finalization remains owned by the `c-09-git-worktree-manager` skill and requires completed integration, carryover, landed-commit proof, and cleanup/finalization approval.\n\nAnchor: `## Lifecycle Finalization And Cleanup`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 436
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

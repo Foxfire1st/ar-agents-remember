@@ -1,0 +1,264 @@
+{
+  "path": "mcp/tests/test_eve_protocol.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The routes, header gates, acceptance parsing and frame schema these cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:8307725a1249a5cd2d6d379f59e9b53e2c996f38bf7f71aa70d07c07f8ecec13",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_stream_version"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:6d379060d0376384ea9f974b0f188353246011bfcced3c4994d62c5e71875da1",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_stream_tail_index"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:9ea5dc1fb14422b5a9000e01432f60502a9e12078e436ccb54f1dd5b8f22280e",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_session_acceptance"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:7b503c29ca35e63e432a814746454164be180d6702f776219234141d131a74cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_event_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The absolute-index decoder and its frame ceiling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79d8d1104431897fbf5b93aa3c03edfdd97a5c2d",
+            "content": "sha256:705dbd8afad3708e860f1815c4f1add1c10048cecbb8c3d7af438417facb6ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveNdjsonDecoder"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_stream_cursor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79d8d1104431897fbf5b93aa3c03edfdd97a5c2d",
+            "content": "sha256:26868652e2f1e9ce5ece856dea097c15742c8673df5e3efc2219274b014b105d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_MAX_FRAME_BYTES"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_stream_cursor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bounded replay window whose occupancy and eviction these cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:4730c1c3a91a762b0cdcfda1fa8b43db4b21dde43dd60b143eabc5adb74fe990",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEventDeduplicator"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:89c1e6e8ca2b2fe0113dd57ecfb3fc5e4c0e92ffd11b5384861e09308ae9e2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_REPLAY_WINDOW"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:82dfaccf43e542c4b6f4b26b852012c5289334f8f94d5bb3b3f7a1ab7f5e69ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The production request builders and the transport these wire cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:76fc3ba2b4a5ae21fbe00976819e924ef259ae80ee0d6dfd410bfc9d9ee54be0",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_session_body"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:e7014d7a5bd832451a20f24148a0add445818f72937a4133851b7e5bec9fa63f",
+            "locator": {
+              "kind": "symbol",
+              "name": "follow_up_body"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:a2b3dae7a56dbb2057c824c7e342f4fabec95f0a5e3c8ca922c071e562ce2be5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_turn_body"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:65f4d062b6c46ef53987340bb549a1deef96b65b95c1206dc4f14d09473f08ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRuntimeProcess"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:65cb9ce5543f1b8daceb483851afd73986189bb397828e47f8d918add546fe91",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The adapter cases that consume this same wire layer one level up.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:0062daadc47481a647a99b2821d454d4504b9086b3214ce9746e297335476502",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterReconnectTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:6dad410fa54e270c0df91e505bbcdc46b1e414bf523d3eeac5cb1a6284f3909e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterReconcileTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:46f2baf33a07625deeace8369e392625cd2589b8f544dc0ca379303e3c762bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterInterruptTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The test suite this file joins and its fixture/collection conventions.\n\nAnchor: `## Fixture Roles And Claims`; `## Isolation And Collection`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/tests/overview.md:1781-1806"
+        }
+      ]
+    },
+    "7": {
+      "note": "The protocol shapes under test are the pinned published `eve` package's contract, not a sibling repository's.\n\nAnchor: `eve`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:265c0ed974c741d787c82726c57601ee1b9cb575bdbe2c33139f17e02a9aa37e",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

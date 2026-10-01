@@ -1,15 +1,5 @@
 # mcp/tests/test_memory_backfill.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_memory_backfill.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T03:43 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
@@ -71,110 +61,32 @@ cache commits and rescue refs are fixture data; no shared repository is rewritte
 
 No new implementation or live-state operation is authorized by this documentation pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests. | `test_a_plan_that_lost_a_mapping_does_not_share_a_digest_with_one_that_did_not`; `test_a_contested_memory_commit_names_the_oldest_claim_and_reports_the_loss`; `test_a_cell_naming_no_object_is_not_confused_with_an_unreachable_commit`; `test_the_same_history_plans_the_same_digest_twice` | mcp/tests/test_memory_backfill.py:222-392 |
-| The actual two-ref apply regression retains the original rescue tip. | `test_the_rescue_ref_holds_the_original_tip_before_the_rewrite` | mcp/tests/test_memory_backfill.py:579-596 |
-| Runtime proof uses the ordinary Git-only reader. | `test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded` | mcp/tests/test_memory_backfill.py:467-550 |
-| Historical table read/carry and real CLI boundaries stay covered. | `test_a_tip_with_no_ledger_refuses_rather_than_planning_nothing`; `test_the_carried_table_validates_and_reads_with_no_exclusion` | mcp/tests/test_memory_backfill.py:645-672; mcp/tests/test_memory_backfill.py:753-764 |
-| The production target-update stream emits exactly one newline between commands. | `_move_targets` | mcp/src/agents_remember/kernel/memory_backfill.py:837-879 |
-| The existing CLI case applies two named refs and retries the same target set. | `test_the_cli_applies_a_branch_name_tip_and_survives_its_own_retry` | mcp/tests/test_memory_backfill.py:853-909 |
-| The committed implementation uses native reversed topological traversal. | `_walk` | mcp/src/agents_remember/kernel/memory_backfill.py:784-791 |
+- Plan selection distinguishes conflict outcomes, missing data, and stable/loss-sensitive digests. [1]
+- The actual two-ref apply regression retains the original rescue tip. [2]
+- Runtime proof uses the ordinary Git-only reader. [3]
+- Historical table read/carry and real CLI boundaries stay covered. [4]
+- The production target-update stream emits exactly one newline between commands. [5]
+- The existing CLI case applies two named refs and retries the same target set. [6]
+- The committed implementation uses native reversed topological traversal. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional configured cross-repository evidence. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): stamped the untimestamped Update History entries with this document's own commit clock
-- 2026-09-17T03:31:11+02:00 — 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
-- 2026-09-15T06:48:46+02:00 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
-
-- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change set,
-  `ar/260913_ledger-commit-attribution`, base `bb65a207`): **the module gained the multi-target ref
-  case.** `test_two_declared_branches_move_together_in_one_transaction` creates a second branch at the
-  original tip and drives the public apply route with BOTH refs, because the reviewed defect —
-  `_move_targets` appended an empty string after each update instruction and joined the list with
-  newlines, so a blank line reached `git update-ref --stdin` and aborted the whole transaction with
-  `fatal: empty command in input` — was invisible to every single-ref case: one declared branch moved
-  only because the one trailing newline its last line needed doubled as the stream's terminator. The
-  case pins all three promises together: both declared branches arrive at the rewritten tip, the
-  rescue ref still holds the pre-rewrite history, and a second run over the migrated history reports
-  `updated_refs == ()` and `rewritten == ()` with both branches unmoved. Every citation in this card
-  was re-derived against the grown module (906 → 953 lines): `MemoryBackfillApplyTests` 399-629 →
-  399-676, the existing-refusal cases 585-594 → 632-641, 596-609 → 643-656, 611-621 → 658-668 and
-  623-629 → 670-676, `MemoryBackfillLedgerReadTests` 632-659 → 679-706 with its cases 639-654 →
-  686-701 and 656-659 → 703-706, `MemoryBackfillCarryTests` 662-751 → 709-798 with `ledger_text`
-  669-694 → 716-741 and its four cases 696-709 → 743-756, 711-723 → 758-770, 725-738 → 772-785 and
-  740-751 → 787-798, and `MemoryBackfillCliTests` 754-902 → 801-949 with `contract_path` 770-829 →
-  817-876, `invoke` 831-838 → 878-885 and its two cases 840-891 → 887-938 and 893-902 → 940-949; the
-  kernel anchors moved with the module (`_move_targets` 837-879 → 837-880, `carry_ledger_cells`
-  927-972 → 940-985, `_full_name` 1004-1012 → 1017-1025) and the projection anchors with its own
-  (`read_ledger_source` 302-350 → 315-363, `LedgerSource` 93-112 → 96-115). Verification metadata
-  remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-- 2026-09-15T03:43 UTC — Documented the committed C2 extension of the existing CLI case to two named refs, peer-tip equality, retained rescue/attribution checks, and same-target retry; refreshed source ranges without adding a test or making a live-migration execution claim. Verification hash/date stamping remains with normal closeout.
-
-
-- 2026-09-15T01:02 UTC — Documented two-ref apply coverage and the removal of the absent-path runtime proof workaround; preserved plan/loss/replay/rescue/CLI protections and separated historical migration-table tests from cache authority. Working candidate verified by source inspection; commit metadata records real committed history only.
-
-
-- 2026-09-14T18:20+02:00 — 260913-LCA-L3 curator (same uncommitted change set, `ar/260913-lca-l3-ar`,
-  base `7317108b`): **the module grew from 543 to 906 lines around the reviewed fix and this card now
-  describes it.** The rule's cases were replaced: the oldest-row-per-code-commit case became
-  `test_every_recorded_pairing_that_can_be_carried_gets_its_own_trailer` (both pairings of one code
-  commit keep a trailer, which is what the fill step exists for); the collision cases became
-  `test_a_contested_memory_commit_names_the_oldest_claim_and_reports_the_loss` and
-  `test_a_declined_row_names_whether_it_is_a_duplicate_or_a_lost_mapping`; and
-  `test_the_winner_does_not_depend_on_hash_order` is new, pinning the reviewed defect directly by
-  swapping two rows in the same table. A loss-digest case was added. **The acceptance proof changed
-  shape and is now trailer-only**: `test_the_trailers_alone_preserve_every_pairing_the_ledger_file_recorded`
-  reads the rewritten tip through `_ABSENT_LEDGER`, a declared path no commit carries, and compares
-  the mapped historical pairings against Git-parsed trailers by set equality, failing if any carryable
-  pairing is omitted — the earlier proof read the table the migration carries forward, and because
-  `read_ledger_source` unions table rows into trailer rows it proved the table survived rather than the
-  trailers, which is how 60 omitted pairings passed a green suite.
-  `test_a_content_bearing_duplicate_that_would_be_dropped_fails_the_proof` reproduces the documented
-  drop shape. A fifth class, `MemoryBackfillCliTests`, drives the real registered command path against
-  a branch-name tip and a second apply, because the reviewed second defect — a name resolved nowhere
-  before the rescue refs were written, and the rescue guard running before the empty-plan check — was
-  invisible from every kernel-level case. Fixture changes recorded: a configurable memory branch and a
-  `commit=False` table rewrite that isolates row ORDER from object identity. Every anchor in this card
-  is newly derived against the grown module. Verification metadata remains closeout-owned; no
-  acceptance claim and no verification stamp advanced.
-
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 curator (uncommitted change set on `ar/260913-lca-l3-ar`,
-  base `7317108b`): created the one-to-one sidecar for this new test module, mirroring the sibling
-  `mcp/tests/test_memory_attribution_producers.py` card's structure. Records the three load-bearing
-  properties the module is built around (oldest-row-wins with every passed-over row reported; a
-  second run plans nothing, moves no ref and rebuilds nothing byte-differently; the rewrite replays
-  tree, identity and both timestamps so the trailer is the only difference), the four `TestCase`
-  classes and what each pins, the real-`read_ledger_source` before/after case as the closed loop that
-  proves the format against its reader, and the disposable-repository boundary. Verifies the
-  `unit-regression` lane row this module already has at `mcp/tests/test-evidence-lanes.toml:69`, and
-  records that the module deliberately declares no `evidence-lifecycle.toml` consumer row because it
-  imports nothing from `mcp/tests/` and therefore reaches no `consumer_scope = "exact"` shared support
-  artifact. Verification metadata names the leaf's base commit and remains closeout-owned; no
-  acceptance claim and no verification stamp advanced.
+No additional configured cross-repository evidence.

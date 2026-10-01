@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The CLI parser and dispatcher live in the lifecycle package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7909ea45d5913b700d1357f71b602c218b8287d",
+            "content": "sha256:3fadbad578f0beacc4fac9c6b307901c31e91cd8227cf60d04cfcc3ae547e5f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/cli.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7909ea45d5913b700d1357f71b602c218b8287d",
+            "content": "sha256:c9e87fa58074ed79b1f795a0be8de14a29b2ec5765258d8ee318d4ec2a18573b",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/cli.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC exports are grouped behind the CGC package facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a90c2a0fe99768bd5cbd6a910e113452d8d8b6a8",
+            "content": "sha256:4e73e173a3b7cc280cd6d648b70d7dc3d5268b55a98cba42ba8ea0a01ac93d5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "GrepAI exports are grouped behind the Docker-owned GrepAI package facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b42b4e40bef082465ee9ebba788429c6ad408e2",
+            "content": "sha256:2220bb5058fb820aeeecb989660c8d8073cccda280f41a2a790229044a75bad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

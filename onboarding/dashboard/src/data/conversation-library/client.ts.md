@@ -1,15 +1,5 @@
 # dashboard/src/data/conversation-library/client.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/conversation-library/client.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c` |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data/conversation-library overview](overview.md)
@@ -55,42 +45,26 @@ it without a network (design §9.4, §11.2).
   `unsupported`/`stale-identity`/`request-conflict` outcome reaches the UI as itself, without focusing
   or fabricating an opened session.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `FetchLike` injection type reused from the active-side client. | `FetchLike` | dashboard/src/data/conversation/client.ts:17-17 |
-| The wire types this client returns (page/read/open/error). | `ConversationLibraryPage` | dashboard/src/data/conversation-library/types.ts:52-59 |
-| The store orchestrating list/preview/open over this client. | `conversationLibraryStore` | dashboard/src/data/conversation-library/store.ts:77-84 |
-| The landed native-library routes this client talks to. | `api_library_list` | mcp/src/agents_remember/serving/conversation/library/api.py:109-130 |
+- The `FetchLike` injection type reused from the active-side client. [1]
+- The wire types this client returns (page/read/open/error). [2]
+- The store orchestrating list/preview/open over this client. [3]
+- The landed native-library routes this client talks to. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Replaced the obsolete leaf-key launch-context implication with the
-  current canonical task-document reference and optional seat-role contract.
-- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 12 initial citation findings (3 anchor, 6 prose, 3 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the native-library HTTP
-  client — or-null list/read, the typed open/open-status/open-reconcile verbs behind one caller-stable
-  requestId, and the `parseOpen` discriminator that never guesses a refusal into success. Verification
-  is pinned to the leaf base (`0be0099`) because the new source file is uncommitted; closeout owns its
-  first source stamp.
+No applicable cross-repository source was found.

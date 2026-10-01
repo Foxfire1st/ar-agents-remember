@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Normal comparison capture and explicitly supplied record inputs for one exact resolved source/knowledge pair.",
+  "conditions": [
+    "Normal capture collects records from their existing owners for that already resolved pair.",
+    "Positive assessment inputs equal the complete immutable owner collection, reserved artifacts and one exact assessment channel; optional low-level currentness is independent.",
+    "A named expected artifact that fails validation refuses before retention/publication.",
+    "A genuinely non-applicable curator plane remains explicit unavailable metadata while valid source/knowledge can be captured; explicit empty inputs never cause implicit live-owner lookup."
+  ],
+  "exclusions": [
+    "Generic evidence impersonating reserved curator owner pins.",
+    "Inferring record availability from counts or manufacturing a favorable empty assessment read."
+  ],
+  "id": "INV-7W11WKKN",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "0325c4e7-160e-4871-abb1-512cda4b923f",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The ordinary comparison producer collects owner records for its exact resolved pair and binds validated immutable curator references through the existing comparison artifact vocabulary. Generic evidence citations cannot impersonate those reserved owner pins. Explicit positive inputs must match the complete owner artifact collection and assessment-channel provenance before retention/publication; optional low-level currentness is independent. Explicit empty inputs and honest unavailable channels retain their existing meaning.",
+  "status": "proposed",
+  "supersedes": []
+}

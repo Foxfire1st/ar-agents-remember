@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/providers/docker/codegraphcontext/requirements.txt",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The CodeGraphContext package pin.\n\nAnchor: \"codegraphcontext==0.4.10\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5449d6e67b6d378e6faecfe9f807d1eabd0e469b",
+            "content": "sha256:dccd23f1d6c8b7895715b539ae03004c07a19eb5674253116e8264e5cba363bf",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tree-sitter package pin.\n\nAnchor: \"tree-sitter==0.25.2\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5449d6e67b6d378e6faecfe9f807d1eabd0e469b",
+            "content": "sha256:aeb80c4b44038a908341b2a7c8cd5dbcf168a2b468da9fd1e2b2ec72d1145730",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tree-sitter language-pack pin.\n\nAnchor: \"tree-sitter-language-pack==0.13.0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5449d6e67b6d378e6faecfe9f807d1eabd0e469b",
+            "content": "sha256:4d92963c3ca31a6cb94794d6cff3237367dad7154aa7ba670544b0231691def0",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tree-sitter C# pin.\n\nAnchor: \"tree-sitter-c-sharp==0.23.5\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5449d6e67b6d378e6faecfe9f807d1eabd0e469b",
+            "content": "sha256:75d5f58313d5891d1d2867bae24b7ee4832506e2cd6a7eb95cbc5e4d0c018c8f",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

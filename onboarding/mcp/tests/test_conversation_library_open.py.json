@@ -1,0 +1,163 @@
+{
+  "path": "mcp/tests/test_conversation_library_open.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The open service, bounded ledger, and record model under test.\n\nAnchor: \"class ConversationOpenService\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0729d15658f2d44bcd782e253602bc0a4d8212dc",
+            "content": "sha256:4a2188f15656a2fb311be780888f04fe2b636447717cb8d5893be4c87cfa18df",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 258
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/open_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The ASGI open/status/reconcile surface mapping the same outcomes to HTTP.\n\nAnchor: \"class LibraryApiTests(unittest.IsolatedAsyncioTestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bdc6c6685ee70aa997f344125ff0d96fd4ed756",
+            "content": "sha256:e6d6cb49ad05d457cab165fd950bf8fb20ff1caf6b5fe470f2806b0a819b29b6",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 310
+            },
+            "path": "mcp/tests/test_conversation_library_api.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The helper host's own entry table, which the gate consults instead of a hardcoded harness pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:14c0b6954f3c60ba8b59754cc5d968ddf363286f85213581da3739c26233bd28",
+            "locator": {
+              "kind": "symbol",
+              "name": "HELPER_ENTRY_BY_HARNESS"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:dcbd4d2d10c8194de4c35fd8ccb30844515bad9e123376a956555fe9d4855288",
+            "locator": {
+              "kind": "symbol",
+              "name": "HelperHarness"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:a5f38881525bf65b58d0ead501d2fc98fbd594f9cf9a65265aa2be1fbbe09238",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryHelperHost"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The gate registry whose routing these cases pin, and the probes they substitute.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2b0dc4c477d223d867a0cd334952530134777c6",
+            "content": "sha256:31f6912bc5c168cd05e2348c50f966b5b34392ae15de87d08d496b1e4fc80e63",
+            "locator": {
+              "kind": "symbol",
+              "name": "LibraryGateRegistry"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/gates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2b0dc4c477d223d867a0cd334952530134777c6",
+            "content": "sha256:c2bf2da962fa6fa94cd02714b45e9eb0caf1b53ea8934fae689edaa718805a54",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateProbes"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/gates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f2b0dc4c477d223d867a0cd334952530134777c6",
+            "content": "sha256:d0b1703bc88236b29b85ed90981ff6ac43bd6cd1f0daab35a9702860eab80759",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_capabilities"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two classes this leaf added: the named refusal for an unserved harness, and the authority of the derived table over a hardcoded pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:b6e0e8385eda03986be2749741ccf2e5b4c94c6fc3f2cbdcadbb38e0f2ac14a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnservedHarnessRefusalTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:777e3f373876fc9b984b5614bcfddaa3ef9df13bd3cb6543089674a1b1879527",
+            "locator": {
+              "kind": "symbol",
+              "name": "HelperRouteAuthorityTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "content": "sha256:75580799d0599c4fe52fd5c0a082175e9d337e4484c9149dcb058d70722b398d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NeverCalledHelperHost"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

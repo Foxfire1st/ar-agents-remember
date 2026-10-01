@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/memory.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| lastUpdated | 2026-09-18T19:22+02:00 |
-| lastVerifiedCommitHash | `a4eba7b7b5b5ffee7277f6c19086697925a22df2` |
-| lastVerifiedCommitDate | 2026-09-29T21:14:42+02:00|
-| path                   | `mcp/src/agents_remember/models/memory.py` |
-| doc_type               | `file-level-onboarding`                    |
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -72,16 +62,16 @@ run states.
 - `capacity-reached` carries no run id because no work was admitted; `run-not-found` remains
   nondisclosing across absent, evicted, restarted, and wrong-repository lookup.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Memory-quality requests are executed by the focused controller. | `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` | mcp/src/agents_remember/application/memory_quality/controller.py:253-261; mcp/src/agents_remember/application/memory_quality/controller.py:262-270; mcp/src/agents_remember/application/memory_quality/controller.py:271-279 |
-| Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. | `drift_check_tool`; `citation_fix_tool`; `route_index_refresh_tool`; `memory_init_tool`; `memory_baseline_status_tool`; `memory_baseline_adopt_tool`; `memory_carryover_plan_tool`; `memory_carryover_apply_tool` | mcp/src/agents_remember/application/memory_tools.py:93-111; mcp/src/agents_remember/application/memory_tools.py:233-276; mcp/src/agents_remember/application/memory_tools.py:316-352; mcp/src/agents_remember/application/memory_tools.py:363-392; mcp/src/agents_remember/application/memory_tools.py:481-488; mcp/src/agents_remember/application/memory_tools.py:491-528; mcp/src/agents_remember/application/memory_tools.py:558-565; mcp/src/agents_remember/application/memory_tools.py:568-585 |
-| The strict sync/start/poll request models and discriminated union. | `MemoryQualitySyncRequest`; `MemoryQualityStartRequest`; `MemoryQualityPollRequest`; `MemoryQualityCheckRequest` | mcp/src/agents_remember/models/memory.py:108-111; mcp/src/agents_remember/models/memory.py:114-117; mcp/src/agents_remember/models/memory.py:120-128; mcp/src/agents_remember/models/memory.py:131-131 |
-| `DriftCheckResponse.status` uses the shared `DriftStatus` alias. | `DriftCheckResponse` | mcp/src/agents_remember/models/memory.py:15-29 |
-| `DriftSummary.status` uses the same shared `DriftStatus` alias. | `DriftSummary` | mcp/src/agents_remember/models/drift.py:14-24 |
-| The context-packet wire face includes its matching `error` field. | `DriftSummary`; `error` | mcp/src/agents_remember/models/drift.py:14-24 |
+### Repo-Internal References
+
+- Memory-quality requests are executed by the focused controller. [1]
+- Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. [2]
+- The strict sync/start/poll request models and discriminated union. [3]
+- `DriftCheckResponse.status` uses the shared `DriftStatus` alias. [4]
+- `DriftSummary.status` uses the same shared `DriftStatus` alias. [5]
+- The context-packet wire face includes its matching `error` field. [6]
 
 ## 260815-DAG-L3 Attestation Response Field
 
@@ -125,60 +115,3 @@ It is **declared** rather than left to the flexible envelope, by this package's 
 `extra="allow"`, so an undeclared stamp would validate and stay invisible in the tool's own schema.
 `drift_check` deliberately carries no stamp: it is a tree-integrity count rather than a curation count,
 and D-33 names the memory-quality and citation surfaces.
-
-## Update History
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/application/memory_quality/controller.py`, `mcp/src/agents_remember/application/memory_tools.py`, `mcp/src/agents_remember/models/drift.py`, `mcp/src/agents_remember/models/memory.py`, moved by MIK-R30's line insertions (or normalised by the installed fixer in the same pass), were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-working line map. Claim wording unchanged. No verification stamp was advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) The request-model row's last range `125-125` (`mode: Literal["poll"]`) stopped six lines above `type MemoryQualityCheckRequest = Annotated[…` at `131`; it was widened to `125-131`. (b) The entry-point row cited `memory_tools.py:352-409` for `memory_carryover_plan_tool`, whose definition is at `416`; the range was widened to `352-416`, so the tail of the cited span is the entry point the claim names. Claims, anchors and every other range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "status: DriftStatus" repointed to mcp/src/agents_remember/models/memory.py:20-20. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:249-255; mcp/src/agents_remember/application/memory_quality/controller.py:258-264; mcp/src/agents_remember/application/memory_quality/controller.py:267-273. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `run_memory_quality_request`; `start_memory_quality_request`; `poll_memory_quality_request` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:249-255; mcp/src/agents_remember/application/memory_quality/controller.py:258-264; mcp/src/agents_remember/application/memory_quality/controller.py:267-273. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:22+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the three `servingBuild` declarations this leaf's item 26 added, which this card did not mention.** `MemoryQualityCheckResponse` (`:84`), `CitationFixResponse` (`:143`) and `CitationMigrateResponse` (`:164`) each declare `servingBuild: ServingBuildPayload | None`, stamped from `measuring_build_stamp()` at the controller's three public entry points and in `citation_fix_tool`/`citation_migrate_tool`; the section above states why the field is declared on the model rather than left to the flexible envelope, and that `drift_check` is deliberately excluded. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout stamps the real code commit. The existing reference rows were left untouched for the citation-range repair pass that owns them.
-- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored both controller request-surface rows (67-144 to 98-208) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
-- 2026-08-29T21:46+02:00 — MCAR-L03: exposed exact pair identity/refusals and contract-bound poll
-  input on the memory-quality wire. Verification remains closeout-owned.
-- 2026-08-29T08:52+02:00 — Added typed raw-quality and structured-coherence readiness fields.
-  Verification remains closeout-owned.
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced the optional flat wait/run-id grammar with strict discriminated sync/start/poll request models; added typed capacity refusal and guidance fields. Verification metadata remains pinned until architect-owned closeout.
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `MemoryQualityCheckResponse` gained the optional async
-  `status` (`started`/`running`/`completed`/`failed`/`run-not-found`) and `runId` fields (L15-R7);
-  the synchronous shape is unchanged. Verified at code commit de3a0fd9.
-- 2026-08-15T09:10+02:00 — L3 content update: added the structured curator attestation path to
-  the memory-quality response model; verification remains closeout-owned.
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-- 2026-08-11T17:26+02:00 — L19 report-folder delta: exposed
-  `RouteIndexRefreshResponse.staleIndexes` in the agent-facing schema so the curator checklist can
-  name exact route-index work; verification metadata remains pinned for governed closeout.
-- 2026-08-11T16:54+02:00 — Declared the full scoped curator-checklist path, status, and component
-  counts on the memory-quality wire model without changing subset or official-memory payloads.
-- 2026-08-11T14:40+02:00 — Re-read the application memory-tool surface after its scoped-quality
-  extension and regenerated every shifted entry-point range; this response-model contract is unchanged.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-- 2026-08-04T15:32:44+02:00 — 260731-EFA-L6 S18-B08 curator: split the shared status declaration from both response consumers and the context-packet error field, with regenerated model extents.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T09:34+02:00 — 260731-EFA-L4 curator: body corrected. `DriftCheckStatus =
-  Literal["notChecked", "checked", "error"]` — this module's local copy, the third in the package
-  — is deleted; `DriftCheckResponse.status` (cit:(["status: DriftStatus"], mcp/src/agents_remember/models/memory.py:19-19)) now reads `DriftStatus` from
-  `memory_quality.integrity.onboarding_drift_check.models`. The Invariants line was
-  also wrong on its face: it said "checked/not-checked/error", and the actual members are
-  `notChecked` / `checked` / `error` — `not-checked` is `FreshnessSummary.status`, an unrelated
-  vocabulary. Corrected the spelling and added the no-local-copy invariant. Citations:
-  `DriftCheckResponse` pinned to cit:([`DriftCheckResponse`], mcp/src/agents_remember/models/memory.py:13-27) and its `status` to cit:(["status: DriftStatus"], mcp/src/agents_remember/models/memory.py:19-19); reference rows added for the
-  producing models module and for `models/drift.py`, the sibling wire face that gained the
-  matching `error` field this leaf. Verification metadata pinned until closeout stamps the L4
-  commit.
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/models/memory.py` since the L2 base commit is the whole-tree `ruff
-  format` pass in `00e8379`, which re-wrapped 3 line(s) with no token change whatsoever. Checked
-  by parsing both revisions and comparing the abstract syntax trees (identical) and the comment
-  tokens (identical), so no symbol, signature, default, decorator, control-flow branch, docstring,
-  or assertion this card describes has moved, and every claim this card makes about its own source
-  still holds.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
-  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
-  structure or responsibility change. The sidecar was re-read against the current source and
-  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-06-10T09:00+02:00 — Carryover plan/apply models gained documented optional `decisions`/`reportPath` (plus `carriedPaths` on apply) for the 2.5.2 response compaction (GitHub #52).
-- 2026-05-28T19:52+02:00: Created for memory and onboarding response contracts.

@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/tasks/semantic_topology_graph.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Validation, build, population, and candidate work have separate immutable counters.\n\nAnchor: \"Exact bounded collection operations performed while building one index.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:1cbe630133b2666a294ce9da9c743c0b74ac26ea503f87ea44f1a52253b1042f",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The graph index owns the sole bound graph and candidate slice APIs.\n\nAnchor: \"Immutable canonical graph projections and constant-time placement indexes.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:bf195e058ad0ea9621cb6511949aa957e1627b0a8e4d793523827b314ae9e0ba",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Construction enforces the lower bound and exact total budget before publishing an index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:121d4d362a81d7995c6ebc043e587febe575afc83af012dbe8e5460de10218a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_semantic_topology_graph_index"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:03a49c79a862b75ffcaa5a6617ca30abebc959342baafbabcbdc2c7afedbc232",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_minimum_work_budget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:c96cdcc69504a0e14047bc00c9ae46721709ad2fdbbfb9a7379ea25c64568885",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_exact_work_budget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Canonical capture, immutable binding, and indexed node/edge population are one bounded pipeline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:b3fc34e32905d017b49a7703758f5fd98b2781d6729de4b0b9861fbb6c7e8258",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_graph_capture"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:c25d094a146db1574e4ac3f3929c37359e23ca8ce712c26278120c5c9e6c24cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_graph_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:68ec75a741b60db249c00fc93e191803f4c8a398dffbfeb02e3645738e2e879a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_incident_edge_index"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e9ac34bce989206098f910a849102bf40c1b71a",
+            "content": "sha256:1d9b2d4c4d4e81e9779d3d09cf4568b881427e3451c683758d339b6273d612e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_node_lookup_indexes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

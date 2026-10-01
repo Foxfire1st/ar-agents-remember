@@ -1,0 +1,99 @@
+{
+  "path": "mcp/src/agents_remember/serving/inbox_reclamation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The aggregate reclamation plan is built from one reconstructed snapshot joined with catalog evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fe7290a15fa78380735bdaea641204078ad7c6e",
+            "content": "sha256:6732d0ab6a76a2bea3d6c9c6bfc202d44093c027cea7749b9cb78ed239de72f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "InboxReclamationPlan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5fe7290a15fa78380735bdaea641204078ad7c6e",
+            "content": "sha256:6f67d77d4679397269375a2edfbf71939cb4eb220946019f491f46aa3c518948",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Terminal catalog entries provide the status and ownership evidence.\n\nAnchor: \"class TerminalCatalogEntry:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "247ef5664d083bec5219606d829a442885d8794e",
+            "content": "sha256:ee56ddd14e1bbb34f7400f5b7ef878510d5300bf77ea615a6462ebefecb06aa5",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reconstructed tmux snapshots provide the remaining ownership evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fe7290a15fa78380735bdaea641204078ad7c6e",
+            "content": "sha256:ccb3887c8e84d80eed036c96ecfa8fbbed2ad1fe4fbf395e54d07365923b89a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "TmuxSessionNameSnapshotter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5fe7290a15fa78380735bdaea641204078ad7c6e",
+            "content": "sha256:6f67d77d4679397269375a2edfbf71939cb4eb220946019f491f46aa3c518948",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The agent-notifier imports the inbox-reclamation policy module.\n\nAnchor: `inbox_reclamation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97167b8aee49472572888ae15232802769d51ce2",
+            "content": "sha256:57adceba012e10b2bd842f307e5c3bae5a863cb487ab62fbb63973763f8d41de",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

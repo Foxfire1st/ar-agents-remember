@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/seriesNotes.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/seriesNotes.test.tsx`    |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -40,33 +30,21 @@ Assertions preserved from the monolithic suite.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The series-notes suite. | `describe` | dashboard/src/panels/detail-panel/seriesNotes.test.tsx:11-80 |
+- The series-notes suite. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `kind: "notes"` tag in the asserted note-open payload.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  series-notes suite split from `DetailPanel.test.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

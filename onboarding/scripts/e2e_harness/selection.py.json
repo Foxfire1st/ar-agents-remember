@@ -1,0 +1,41 @@
+{
+  "path": "scripts/e2e_harness/selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact admitted selector/mode/applicability and current Git observation are required.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edf4fac9c7deeef582625adb8728f44cf16fcfb6",
+            "content": "sha256:c91ca40e957c8b3911f90e40ef934de66d431988e46b6fbca5d1609179524ac7",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Repository profile owns dependency prefixes and stable ambient selector identity.\n\nAnchor: \"\\\"sourceApplicability\\\": {\"; \"\\\"selectorId\\\": \\\"ambient-role-dependencies\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "924c5b790a1b739463e949ed44520a9148ffb4e6",
+            "content": "sha256:12f5f6a9b8db39864b5a0d5a4592d27a3668b2b71f09adc373c07475a3b2a0ba",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 767
+            },
+            "path": "mcp/certification-profile-v1.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

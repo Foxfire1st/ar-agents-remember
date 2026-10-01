@@ -1,15 +1,5 @@
 # mcp/tests/test_review_route_refusals.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_review_route_refusals.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -110,61 +100,42 @@ rather than compared to a golden blob, so a failure names the missing field.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own docstring and lane
 marker, the bare-app helpers, the actionable field set, and the six cases. Every anchor in a row occurs
 inside the range that row cites.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The docstring's own statement of what the module is (the fast transport contract, driving the real route), of the two shapes a refusal arrives in, and of what it deliberately does not re-derive.** | `register_review_routes`; `KnowledgeReviewResult` | mcp/tests/test_review_route_refusals.py:1-22; mcp/tests/test_review_route_refusals.py:24-42; mcp/tests/test_review_route_refusals.py:65-69; mcp/tests/test_review_route_refusals.py:151-172 |
-| The real route constants, registrar and typed models under test. | `KNOWLEDGE_REVIEW_ENTRIES_ROUTE`; `KNOWLEDGE_REVIEW_ROUTE`; `register_review_routes` | mcp/tests/test_review_route_refusals.py:24-42 |
-| The lane marker that keeps this a hermetic unit module. | `pytestmark` | mcp/tests/test_review_route_refusals.py:43-43 |
-| The task context, the recorded subject, and **the module's own definition of actionable**. | `TASK`; `SUBJECT`; `ACTIONABLE` | mcp/tests/test_review_route_refusals.py:45-51 |
-| A configuration naming no real root, because these routes resolve nothing from it. | `runtime_config` | mcp/tests/test_review_route_refusals.py:54-62 |
-| **The one app builder: a bare `FastAPI()` with the real routes registered and the ports injected.** | `served` | mcp/tests/test_review_route_refusals.py:65-68 |
-| The typed refusal builder whose own action the cases assert survives the transport. | `typed_refusal` | mcp/tests/test_review_route_refusals.py:71-77 |
-| **An unwired adapter refused on both routes with an actionable body naming the composition root.** | "test_an_unwired_adapter_answers_with_the_action_that_wires_it" | mcp/tests/test_review_route_refusals.py:80-93 |
-| **An unadmitted selector refused by the transport itself before the port runs, naming the input and both admitted kinds.** | "test_an_unadmitted_selector_names_the_input_and_the_admitted_kinds" | mcp/tests/test_review_route_refusals.py:96-112 |
-| **The `AuthorityError` mapping this leaf made actionable.** | "test_a_refused_authority_carries_the_action_that_clears_it" | mcp/tests/test_review_route_refusals.py:115-130 |
-| **The `FileNotFoundError` mapping this leaf made actionable, keeping the path and adding the action.** | "test_a_missing_path_names_the_path_it_does_not_hold_and_a_next_action" | mcp/tests/test_review_route_refusals.py:133-148 |
-| **The packet's conforming example at the transport: `404` + `candidate_dataset_absent` + the whole refusal, with no `payload` key so it cannot read as a degraded success.** | "test_a_typed_refusal_travels_whole_in_the_body_of_its_own_status" | mcp/tests/test_review_route_refusals.py:151-172 |
-| **The status family derived from the refusal's own code, driven through the entry route.** | "test_the_entry_route_maps_each_refusal_code_onto_its_own_status" | mcp/tests/test_review_route_refusals.py:175-204 |
-| **The transport this module pins: the one actionable refusal body builder and the one 400/404 mapping both adapters reach through.** | `_transport_refusal`; `_port_outcome`; `_AUTHORITY_NEXT_ACTION`; `_NOT_FOUND_NEXT_ACTION` | mcp/src/agents_remember/serving/review.py:145-152; mcp/src/agents_remember/serving/review.py:155-167; mcp/src/agents_remember/serving/review.py:170-196 |
-| The result-to-status mapping the parametrized case pins from the code's own side. | `_status_for` |mcp/src/agents_remember/serving/review.py:607-624|
-| **The lane row that puts this module in the hermetic unit population.** | `unit-regression`; `test_review_route_refusals` | mcp/tests/test-evidence-lanes.toml:171-171 |
-| The client that reads these bodies whatever the status, which is why the status family stays the route's own contract. | `getReviewJson`; `reviewFailureToken` | dashboard/src/data/reviewTransport.ts:97-98; dashboard/src/data/reviewTransport.ts:161-171 |
+- **The docstring's own statement of what the module is (the fast transport contract, driving the real route), of the two shapes a refusal arrives in, and of what it deliberately does not re-derive.** [1]
+- The real route constants, registrar and typed models under test. [2]
+- The lane marker that keeps this a hermetic unit module. [3]
+- The task context, the recorded subject, and **the module's own definition of actionable**. [4]
+- A configuration naming no real root, because these routes resolve nothing from it. [5]
+- **The one app builder: a bare `FastAPI()` with the real routes registered and the ports injected.** [6]
+- The typed refusal builder whose own action the cases assert survives the transport. [7]
+- **An unwired adapter refused on both routes with an actionable body naming the composition root.** [8]
+- **An unadmitted selector refused by the transport itself before the port runs, naming the input and both admitted kinds.** [9]
+- **The `AuthorityError` mapping this leaf made actionable.** [10]
+- **The `FileNotFoundError` mapping this leaf made actionable, keeping the path and adding the action.** [11]
+- **The packet's conforming example at the transport: `404` + `candidate_dataset_absent` + the whole refusal, with no `payload` key so it cannot read as a degraded success.** [12]
+- **The status family derived from the refusal's own code, driven through the entry route.** [13]
+- **The transport this module pins: the one actionable refusal body builder and the one 400/404 mapping both adapters reach through.** [14]
+- The result-to-status mapping the parametrized case pins from the code's own side. [15]
+- **The lane row that puts this module in the hermetic unit population.** [16]
+- The client that reads these bodies whatever the status, which is why the status family stays the route's own contract. [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file. The routes serve one repository namespace's
 candidate and the app under test is built in-process.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 7 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`review.py`, `reviewTransport.ts`, `test_review_route_refusals.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:32:05+00:00: Generated citation repair: `test_review_route_refusals` repointed to mcp/tests/test-evidence-lanes.toml:171-171. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-
-- 2026-09-27T05:30:43+00:00 — Authored scoped citation maintenance for 1 L41 source-range projection(s) resolved by the frozen source index. Only changed-source ranges were adopted from the preview; unrelated ranges, generated history and verification stamps are preserved.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `test_review_route_refusals` repointed to mcp/tests/test-evidence-lanes.toml:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-22T11:39:00+02:00 — 260921-ICR-L13 curator, **sync follow-up: lane row re-derived to the merged tree (`:114` → `:115`).** ICR-L7 inserted its revision-selection row above, moving this registration one line down; re-read against the line that carries it. No verification stamp was advanced.
-
-
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **created.** The module is new in this leaf and this is its one-to-one card. It records what the six cases are *for* — the transport contract that every refusal the review route publishes is actionable in the body of its own status — and the two design facts a later reader would otherwise have to rediscover: the ports are injected **because the route is transport-only by design** (`serving` ranks below `application`, so an injected port is the only way to reach the route's own two exception mappings), and the two `AuthorityError`/`FileNotFoundError` cases are this leaf's actual server-side change, asserted as `ACTIONABLE` plus their own fields so a body that lost its next action would fail here. The card also records the module's **deliberate non-claims**: it does not re-measure the real adapter's refusals or the task-context review, which `test_knowledge_review_source_endpoints.py` owns over a real enclosure, and it says nothing about the rendered surface. `mcp/tests/evidence-lifecycle.toml` is unchanged by this leaf and `LIFECYCLE_CATALOG_SHA256` is therefore **not** re-pinned: the module registers no contract and no artifact and consumes no catalog-registered support module, so only the lane manifest row was needed. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00) — the line this candidate now sits on after the leaf's pair sync — while what was actually read is this leaf's **uncommitted** working tree at that base: this leaf's **uncommitted** candidate at that base. Nothing in this leaf is committed, so no commit contains the bytes a stamp would claim to have verified; closeout owns the stamp.
+No meaningful cross-repo references found.

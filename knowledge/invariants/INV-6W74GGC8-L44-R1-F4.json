@@ -1,0 +1,21 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every family member source reference in the Python model and its dashboard mirror.",
+  "conditions": [
+    "The store holds a role and a rationale for every realization claim."
+  ],
+  "exclusions": [
+    "The quality of the stored rationale text."
+  ],
+  "id": "INV-6W74GGC8",
+  "origin": {
+    "leaf": "260921-ICR-L44",
+    "legacyId": "5c331ee7-9427-463c-b0be-8cee5b5ba1da",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A family member source carries the claim's stored role and rationale as required fields in the Python model and the dashboard mirror; a reference without either is refused rather than published.",
+  "status": "proposed",
+  "supersedes": []
+}

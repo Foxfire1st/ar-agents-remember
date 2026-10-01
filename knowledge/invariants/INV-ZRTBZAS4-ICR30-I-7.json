@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [],
+  "exclusions": [],
+  "id": "INV-ZRTBZAS4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: The task-collaboration doctrine this repository works under states the JSON is the source of truth and the markdown is generated and never parsed back (ar-coordination/tasks/AGENTS.md, 'Task Authoring Is Authoritative'); the writer that renders the projection is the cited owner."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "b34fd171-97c7-4c5e-927a-4c8709e1d1ae",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task document's JSON file is the authored source of truth and its Markdown is a generated projection that is never parsed back, so a hand edit made only to the generated file changes nothing the product reads.",
+  "status": "proposed",
+  "supersedes": []
+}

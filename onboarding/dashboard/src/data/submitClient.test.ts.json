@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/data/submitClient.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The system under test owns transport classification and store-driving.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d556eff3b6d0e68f1e6c1b6f1c6f29234f250e5",
+            "content": "sha256:269195bec62fb3349bf2ea4bcf434897dc523114305a90319a2aceb20636207d",
+            "locator": {
+              "kind": "symbol",
+              "name": "createFetchSubmitTransport"
+            },
+            "path": "dashboard/src/data/submitClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared fixtures name accepted, ambiguous, queued, and withdrawal scenarios.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d773c64d2315d0322a017fb3fbf85059e8a83f20",
+            "content": "sha256:d2383f1fae9d2d520ed59c3a4575f9c786b4f6136a70de7a0355be4dd2e01dbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECEIPT_ACCEPTANCES"
+            },
+            "path": "dashboard/src/test/fixtures/submitScenarios.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

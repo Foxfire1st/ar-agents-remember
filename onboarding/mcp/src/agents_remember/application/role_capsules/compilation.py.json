@@ -1,0 +1,176 @@
+{
+  "path": "mcp/src/agents_remember/application/role_capsules/compilation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_role_capsule"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:772c8ca7013f9f40b5a4c05a5124d0c45795371436650dd7ac954af2edbc6e2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "refused_manifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:5d7c9f1d7735f98c4b098b6e4a7b412edd89ddd19280a02eca3480058011b7b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "manifest_for_error"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The admission step whose refusal is converted into the same outcome shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:915fd89222d1328505df921b788cb9559a7190b597c8b7549b071d961fa0e4f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_capsule_sources"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:5ace26cae48ab5833cfda401dceae4d4a4c0ddd4b37b6946b5c6a0be821bac36",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleAdmissionRequest"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:917f897eddff348cf7a75a420cdf74ab20d185daf659f681e16a00e17e16e4a3",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The task-projection seam accepted here and verified inside the compiler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_admitted_capsule"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:e6be4ad17ab07d45af1a4b6f00eae733e378e30911ccbe887d0e72b6223badf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "verified_task_context"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The typed refusal carried as a value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d584d2d788a3149eb72bbf9420b29b9a028e11f5",
+            "content": "sha256:b455239473b006be03beff93864429921efbe0b4fd2402ee452a6276939eff44",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleCompilationError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A supplied projection is carried in its own channel, an unverifiable one is refused, and no projection yields no context with a stable digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:3ff49ad413df538800c464394e40510824ee38c202f2b7a795db17649f6d06ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_supplied_task_projection_is_carried_in_its_own_channel"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:d5c34ac6d955df25f6b7d2ca9bf555dbd4a57bfbb3dd318b25550cc4d08032d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_projection_whose_bytes_do_not_match_its_digest_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:b74c36d6357b76bea878814bac8fa63154f21be8a0fbbee0c0805d86a3b37ba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_projection_means_no_task_context_and_a_stable_digest"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

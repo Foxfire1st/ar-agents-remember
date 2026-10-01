@@ -1,0 +1,185 @@
+{
+  "path": "mcp/src/agents_remember/serving/seat_turn_truth.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external/domain document defines these catalog writes; the atomic seam contract is the source of truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c4798d6c5bc8011e0b0a2ca27f1de8c8dcc0f81",
+            "content": "sha256:5cf73c26ca05fcc4d9a3dd7a6b3095cae9cc6ea93d14993e44e474ac6c9812af",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_turn_projection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7c4798d6c5bc8011e0b0a2ca27f1de8c8dcc0f81",
+            "content": "sha256:cb2e6226bbb9b5111feae33c5abe588b3a5b9501622333f616895563e2be3cf3",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The frozen catalog row, evidence stamp, and public get/upsert seams it writes through.\n\nAnchor: \"class TerminalCatalogEntry:\"; \"class CatalogTurnEvidence:\"; \"class TerminalCatalog:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:ee56ddd14e1bbb34f7400f5b7ef878510d5300bf77ea615a6462ebefecb06aa5",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
+            "content": "sha256:13a382981c4e4ddb764f66e331c96aa2da87c305bde2a2f119267116a0ea6911",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/models/terminal_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd18f29d3168b7332d49ea78e56e41bd89f7794d",
+            "content": "sha256:f94a56f9880192d795bfaf8caa86c5ee9d5735403103d21c07d6067d85571d01",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The liveness sweep's read-before-projection ordering that calls `record_terminal_cursors`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:bcbd5187cfb150a95fc031e6a6fe1dee0e765ca9948371a20194e8dba961e3a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_alive"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:a7487ea981b414428e9d01ed1d2c1b8ee4e36680489b2be6f0e880e5613a82ea",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 343
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The interrupt route stamping developer provenance after an accepted interrupt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:a7ac49d277d47b2905c5b83d09a2c00dfd6bbfc04b2665641475435ea65a3687",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_interrupt"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:7a7f902421437bf1a11f5d865e186c9a173304268308c423705a96199ee30dd3",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The state-signal and non-reaction action markers. The state-signal marker is written from the emitter's post-persistence callback — after the row is durable and on the sweep fold, before any delivery attempt — while the non-reaction marker stays a post-return write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:6f78c04b230fd4045a0510c37d01c80880e5534733c547ccd08741f98c135cff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_emit_state_signal"
+            },
+            "path": "mcp/src/agents_remember/serving/_agent_notifier_actions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:1eee7dbd72e9874be37c3883e5a8fdc85cd1b8abe613fffde6aeb35ad752b043",
+            "locator": {
+              "kind": "symbol",
+              "name": "_emit_non_reaction"
+            },
+            "path": "mcp/src/agents_remember/serving/_agent_notifier_actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The compound-idle action-time marker write (ask + marker share the fresh signature).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:d6249a481527dfa5c9f2e54a407096a252445be29a5756396288448802c36d45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_emit_compound_idle"
+            },
+            "path": "mcp/src/agents_remember/serving/_agent_notifier_actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

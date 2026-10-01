@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/fixtures/knowledge_files/4.5-decision-d12-local-family-routes.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture names its schema.\n\nAnchor: \"ar-decision/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49d02be5dcc1505f93e0b9a8979474f009d52f5e",
+            "content": "sha256:4701aab9fb6782dea6016e072f26a53743ed28b90623538c51467ecdc652bb10",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Its distinguishing identity.\n\nAnchor: \"DEC-D12RTE\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49d02be5dcc1505f93e0b9a8979474f009d52f5e",
+            "content": "sha256:442da832194f1dc016a6504959a952d848258add10cc3bb297fc5652accdf6dd",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test maps this file to its model.\n\nAnchor: \"4.5-decision-d12-local-family-routes.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b77ecb71863271304d8626c32c5a96b3930bf4cc",
+            "content": "sha256:ba6d824f554390911d0f2453ba86659d101080cb7944d1fd223942450d6d7d0f",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

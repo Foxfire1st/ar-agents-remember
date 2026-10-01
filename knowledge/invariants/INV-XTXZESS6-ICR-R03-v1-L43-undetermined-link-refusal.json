@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Review source-content reads (/api/review/intent/source-content) of one leaf's review comparison, for a path its requested measured tree pair does not list as changed.",
+  "conditions": [
+    "The link is asked per half with the read owner's exact claim-at-path query, which expands no family and so cannot fail on scope size.",
+    "When no half links the path and some bound knowledge (a half, the namespace record, or a generation) could not be read, the refusal says the link could not be determined, names the cause and directs initialization when every unread half's snapshot file is absent, or repair of the named snapshot otherwise."
+  ],
+  "exclusions": [
+    "Asserting that no realization links the path when bound knowledge was unread."
+  ],
+  "id": "INV-XTXZESS6",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "f1844666-da2e-4d74-b6fe-644b6355579d",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "The link is asked with the exact claim-at-path query, so scope size cannot fail it; when no half links the path and some bound knowledge could not be read, the refusal states that the link could not be determined, names the cause, and directs the matching remedy -- initializing the leaf's knowledge when every unread snapshot file is absent, repairing or restoring the named snapshot otherwise -- rather than asserting no realization links the path.",
+  "status": "proposed",
+  "supersedes": []
+}

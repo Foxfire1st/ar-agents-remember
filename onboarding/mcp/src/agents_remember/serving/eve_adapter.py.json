@@ -1,0 +1,916 @@
+{
+  "path": "mcp/src/agents_remember/serving/eve_adapter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter implements AR's existing protocol, capability and interrupt ports rather than introducing a new seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961ee00e2b3836187217ba0f9fc7d52ce7a0b47a",
+            "content": "sha256:f500dfc48b288c687f100a06250b8d4edc8b934036e8bc46b4461a67f74e8e63",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchableHarnessProtocolAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "961ee00e2b3836187217ba0f9fc7d52ce7a0b47a",
+            "content": "sha256:a47ec51c6b2f3e54631a349dd93412417160e11d32cc09d9079c3751a49a2025",
+            "locator": {
+              "kind": "symbol",
+              "name": "InterruptCapableAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:cd226fda3e0b3cd86bb115d4c41c47b666703d9713fe44f4a4d88d177f04c0f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdapterHandshake"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:d054c49147ff8bafbc0c9c7a2cabca6eab779e7113d36826796f3552cc0427b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionReceipt"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:048e09ca8e2ab6fca30fe58ed5008093f697f7f1421e2ebb97900e4c49bf4c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReconciliationResult"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:b261dd2aadac60a0d7a4e7752489f30bee914207fa92dbb9a1355a14433915ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "InterruptResult"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "961ee00e2b3836187217ba0f9fc7d52ce7a0b47a",
+            "content": "sha256:d55e646825ea98686251e1eda4048795c6dd212ff2338251ee4003715021dbe5",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "961ee00e2b3836187217ba0f9fc7d52ce7a0b47a",
+            "content": "sha256:136436e3f2d5753f53daae553da47405823cd4bb760d72837647cf092c923f9d",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The AR sentinel, the accepted reasoning vocabulary mirrored from eve's own union, and the setter that validates against it without echoing it back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:a359715fcbc90887e030318c81e33017d431a70fa43afc2ca4049f7c676a1a4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROVIDER_DEFAULT_EFFORT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:d72e0f89cef5023bc8e6f7b5ef20baa71c8e9269e77cc88d9bb292cfcb01aa7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "REASONING_EFFORTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:6b17634c37d2507404457b9ae70ec3227a30751c2c39a092ff35541b21b576c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "set_effort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The capability catalog consumes this snapshot, so the published axis is what the dashboard actually reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:149282dfd781a80c70d98a059169561792df1ec3cfd4e930aa22e2c4d22f2012",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessCapabilityCatalog"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The authored consumer that makes the axis real: the application reads the effort input and applies it through eve's own agent definition, omitting the property for the sentinel.\n\nAnchor: \"AR_EVE_EFFORT\"; \"provider-default\"; \"export default defineAgent({\"; \"reasoning === PROVIDER_DEFAULT_EFFORT ? {} : { reasoning }\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e7657e36f886ab4d4ed61f8016f36e1ec6a778",
+            "content": "sha256:867c72efdfebf3628e4c3c29011b5d25f7c5d6f0c8e6a4fe867a5bcf1743f412",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "eve_runtime/agent/agent.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e7657e36f886ab4d4ed61f8016f36e1ec6a778",
+            "content": "sha256:d3cabc0453dfb6cfc27e89c89641d09a84d933edc15a63660362601125083cda",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "eve_runtime/agent/agent.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e7657e36f886ab4d4ed61f8016f36e1ec6a778",
+            "content": "sha256:e6b0675a46361614ba68cec288924a188f7fd2aa91d3f797cdea71b83d4a7573",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "eve_runtime/agent/agent.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e7657e36f886ab4d4ed61f8016f36e1ec6a778",
+            "content": "sha256:a82cc2787371bb1d02e3fdfcf01a7d4ff70eea19de302e8cd23dab15025e6525",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "eve_runtime/agent/agent.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The launch input the consumer reads, and the two places the selection is carried into the child environment rather than re-derived.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:8d15402dd874dbd0ef0c3afeb5f3440bc06818d1483187b1ff30ba0a72e7545c",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFORT_ENV"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:0a105e4de3ae5106c866e0402cc6351823821f100f2634d1ecb4da4bd1811679",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_runtime_env"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:6ee2e7dbd9cee9fcbe26ace2ddd633165b0ab4cd3a118e25b230f852ed27cc41",
+            "locator": {
+              "kind": "symbol",
+              "name": "eve_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Cases pin the published axis in both directions: the pinned runtime consumes the effort input and the catalog publishes the axis the client would read, and the setter refuses every candidate including its own vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:5170528a5238ba25382f32eac0ba1719cc19d108be9ef5c90b9521eb80b9601b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pinned_runtime_consumes_the_effort_axis_and_the_client_would_read_it"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:1fd4a6420bf2c84dbf4737fad60bbddd024f258b9a08f591db19fe1ff24ddc6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_effort_setter_refuses_every_candidate_including_its_own_vocabulary"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:6aec0245827ec2876f3ff1df9d9afb01758dcde38a8199790865508976dd030e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_advertised_control_lacks_a_runtime_consumer"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The controlled application is the pinned published `eve` package, unmodified; nothing is forked or vendored.\n\nAnchor: \"the runtime is the unmodified published\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:6c82aaae98e7cc9c92b49f277c6ae5e38690c3f97471b92615c1ab8c39aba990",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:5da26b3e5857ea65a7bcc5d4f89d4a789152ac19f4d6c85c60c839ceb7799b6d",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Registration is through the existing factory owner, which is the seam this leaf deliberately used instead of adding a kernel harness row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2b5088b617b61478353dc2280de551ce38e85be3d6491a95f22fe51e3caf806c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_harness_protocol_adapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:c716d7fdd073062e087f2655d81778856b7c91c467cd8fe9b40637b199225e5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LAUNCH_KNOBS"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:548c3434bd9af2f7bdcaf54507d76326c2380f93740033e7e8a4eeacc97a2198",
+            "locator": {
+              "kind": "symbol",
+              "name": "_eve_expected_selection"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:517fb4a662a330b187f846c004f3a5fe6a644949563d115d715936ee79e675a7",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2d2926f0f01916d1e25a66b000d86f4a16ba267b709792be5a90474890d009cc",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2584e0370d5a2f981e220e91852723f7abd8acae907cb56b1baccc83621d16d2",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The wire contract, cursor decoder, transport seam, launch composition and interaction queue are the adapter's own dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:9d307f835cce51513136dfcf364b9400ec997c3664f69017f0578856ec69057a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveStreamEvent"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79d8d1104431897fbf5b93aa3c03edfdd97a5c2d",
+            "content": "sha256:705dbd8afad3708e860f1815c4f1add1c10048cecbb8c3d7af438417facb6ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveNdjsonDecoder"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_stream_cursor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3b99b0a20bef9eca415824c09f8708167adeedd",
+            "content": "sha256:3b88bb67a684a8f1a11560cff1cb9b0ba4432089686758fbe15040890b69487e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRuntimeTransport"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_client.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:bf11d29aaf0b2ebd471d2e4bbbc02aa45fcc1c00b4a1272e2eae0a7f164cf826",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRuntimeSpec"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44cf5d122b354a0dd14e20c032fe86e896d1d480",
+            "content": "sha256:d8f98bc4eb1aae5a486f4f2e2e776b3eda694300014951b3d2d7330954881fbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveInteractionQueue"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_interactions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:8c2ebf6620cc5e5fb1a172a241d346de7825aaa16c60e1f393a6783d09bfa6a8",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79d8d1104431897fbf5b93aa3c03edfdd97a5c2d",
+            "content": "sha256:d097b142a5a511ce7af5dcb00524cea5276ebd93bb8927353811e7e56f9268f1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/serving/eve_stream_cursor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44cf5d122b354a0dd14e20c032fe86e896d1d480",
+            "content": "sha256:442de0272a3940becf673fe5d3f28ccac615036f3fbfd3ece10e70003863ea4d",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/serving/eve_interactions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Event translation and normalized state are the mapper's, not the adapter's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51dbbd7f3f3570858ec80eb37e9284f2a67932d3",
+            "content": "sha256:f5b01b487ac325ebddf406b2b44be456942db1ecab3a811c713c6a584b6090f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEventMapper"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one replay window the adapter delegates to is declared beside the wire contract it serves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:4730c1c3a91a762b0cdcfda1fa8b43db4b21dde43dd60b143eabc5adb74fe990",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEventDeduplicator"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0594ec42a4861e7d492aa60ccba7ba0bf05ae338",
+            "content": "sha256:89c1e6e8ca2b2fe0113dd57ecfb3fc5e4c0e92ffd11b5384861e09308ae9e2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVE_REPLAY_WINDOW"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Acceptance on a reconciled request is proved from the durable record holding the exact message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:56c565bd4d9d837d732c17ca1bb1ef949be153752ddc26ab98391534e46aef12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_proves_delivery"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:7dd90678767f50a8bc69e4ce12c76b001a0390d8d7948639d78c679fb4b353a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECONCILE_READ_LIMIT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:f1dcfa1edd3990d334c8fa6829175b1e49a87307e08a27b26ab0e4899d512e93",
+            "locator": {
+              "end": 868,
+              "kind": "line_range",
+              "start": 868
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:4bf9b85aa90a2eb4e855d86c395ba98e15998b94a592a236861d489170528360",
+            "locator": {
+              "end": 889,
+              "kind": "line_range",
+              "start": 877
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The conformance suites drive this real adapter through the transport seam, one class per named scenario.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:a6170002d96d5232bea7b1406883c1165b498368a549b295a4bf4e96667959aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterHandshakeTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:8f5e6f1c3a4379259f7f88c1196403e482e50fde929dbc538ca9b288e7b37e1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterSubmissionTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:0062daadc47481a647a99b2821d454d4504b9086b3214ce9746e297335476502",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterReconnectTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:6dad410fa54e270c0df91e505bbcdc46b1e414bf523d3eeac5cb1a6284f3909e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterReconcileTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:46f2baf33a07625deeace8369e392625cd2589b8f544dc0ca379303e3c762bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterInterruptTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:3c8a11142875757bdd55801b1d84af6144fb4b1f9f68fe07fa8a678c82b64c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterRestartTests"
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:40c10384b54f774863c9935da921a6dce2b713d26d388ec696bae8f744eeb596",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:6eab25444da4fff35759d9aec352ebb0ecf041d200d80477bc8dbd30b10615a4",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 373
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:505817fa2c6621df48e34ac5f555096abd26d117b7efdbb149885fbf115ffcaf",
+            "locator": {
+              "end": 723,
+              "kind": "line_range",
+              "start": 663
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:84332f63baa9a8d1a789ba5ea1c0dc96ea317ef406178808c0b9cc8c3e39684e",
+            "locator": {
+              "end": 811,
+              "kind": "line_range",
+              "start": 726
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:14e8ee335e576678e39b128c016385b1d89c53b37cdde567d1db6b9e9a7f9403",
+            "locator": {
+              "end": 907,
+              "kind": "line_range",
+              "start": 814
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "content": "sha256:050415d9ab843c7aaa87437669dc660cd033649b0f2a1081a443d594d9f31095",
+            "locator": {
+              "end": 958,
+              "kind": "line_range",
+              "start": 910
+            },
+            "path": "mcp/tests/test_eve_adapter.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The live native fixture proves the same six scenarios against the real runtime over real HTTP.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:c853a53bea7b10900ebc7c642e9734a94e33f9141114ffe19f5274c49692ffb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scenario_protocol"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:fa74bcc11cc6f361ddeb6db8da5d876cb043032f882109e963a08c8ffc8b2a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scenario_reconnect"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:290dee857c5fdc98a445ba88846fc6b63680c9f4d53f298a6abdceacb8316939",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scenario_reconcile"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:5e85b32124be144931a8dfae2222c9a3925b09866ddb9ae6c87d3c4d8c15eb01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scenario_cancel"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:4ee274893f88099f4c2be1b599480624533a44ce31d6f1dcedef82c8e55eea7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scenario_restart"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:467a7b2e0c7dfc578c605f1efd58dd8d11d1ae1d7804529d13062d80654011e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scenario_concurrent"
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:836c53975686c7d426cbcbc3d32cb659e0556ded89cd4cc23c7e68cf4d61154b",
+            "locator": {
+              "end": 622,
+              "kind": "line_range",
+              "start": 572
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:6936f1a84528c3ef37f72afb9f50485c0d627731bb9c031a9ef27608a8173d6d",
+            "locator": {
+              "end": 833,
+              "kind": "line_range",
+              "start": 774
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:4dc31d80a378330db28fd91e80f4f67077086411ca52daa34ba977392c9d61ff",
+            "locator": {
+              "end": 888,
+              "kind": "line_range",
+              "start": 849
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "content": "sha256:0afcb0f581791869bd3bc1cf790d502ca1790bdedc8fce15fc48e1bac1dfb722",
+            "locator": {
+              "end": 1054,
+              "kind": "line_range",
+              "start": 1012
+            },
+            "path": "mcp/tests/live_eve_native_fixture.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The capability snapshot this adapter publishes: both axes are real, and the effort menu is the accepted vocabulary with its default.\n\nAnchor: `supports_effort`; `effort_options`; `default_effort`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88bb25890ff4fbcbf345438f07de1265eae938b",
+            "content": "sha256:a104e09d45bd98cb9e00145d5b1bc706fce198f1e30297e9912e69abbb47d274",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capability_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

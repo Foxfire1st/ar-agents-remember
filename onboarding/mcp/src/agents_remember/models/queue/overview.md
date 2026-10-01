@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/queue` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -47,9 +41,7 @@ current model contract.
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Queue projection vocabulary. | `CloseoutQueueRequest`; `CloseoutQueueResponse` | mcp/src/agents_remember/models/queue/closeout_queue.py:32-37; mcp/src/agents_remember/models/queue/closeout_queue.py:40-59 |
+- Queue projection vocabulary. [1]
 
 ## 260821-CLIVE Final Projection-Only Model
 
@@ -62,23 +54,3 @@ receipts, commits, integration, and lifecycle transitions are intentionally abse
 The projection answers one question: which waiting candidates are currently schedulable from the
 exact current canonical source? It may be discarded and rebuilt at any time without losing
 operation evidence.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-08-26T10:44:52+02:00 — No route content impact: reviewed the closeout-projection package relocation; this route remains a disposable scheduling projection only.
-
-- 2026-08-24T16:00+02:00 — Final cumulative closeout audit: corrected the route's
-  top-level purpose, hot path, conventions, and invariants so the final projection-only contract is
-  the live description and L2 remains history only.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: replaced the transitional mutable queue model with the final disposable projection response. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: created the `models/queue` route —
-  `closeout_queue.py` moved from `models/` (flat). Verified at code commit e5cb139f.

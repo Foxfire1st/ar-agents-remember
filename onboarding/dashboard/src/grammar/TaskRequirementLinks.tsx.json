@@ -1,0 +1,88 @@
+{
+  "path": "dashboard/src/grammar/TaskRequirementLinks.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The listing client that feeds the context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6804a766caa5f3a903d673cff23f59847af2df0b",
+            "content": "sha256:0ed99f9537aa1fff2a7ae2d08a565d1ea7feea88b13442cb9ee76489c71c0f12",
+            "locator": {
+              "kind": "symbol",
+              "name": "listRequirements"
+            },
+            "path": "dashboard/src/data/requirements.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The artifact target the `open` callback lifts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e409de6f0777f70c752a04cf186a7f910b158b",
+            "content": "sha256:5bd7f8dca22cf06dd249a8f12cfcabc24ae2ad0617e42c379c23366fa5dcdeb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskArtifactReaderTarget"
+            },
+            "path": "dashboard/src/data/taskArtifacts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The markdown consumer that renders registered addresses as buttons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
+            "content": "sha256:c218e2880adaa1a22fbc00eb50dc8a7d222601274de802ac6bff9fad071d8e41",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirementAnchor"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
+            "content": "sha256:1bff2bbd99e0820f1b2f98ccd5bf9a0c43da1ad9bbd87e371b5b46593b0273a7",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The reader that mounts the provider around task prose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:1ad8090fcb008f653a440e15d622f8351dda2a90723b5ae5b866c58658a39237",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRequirementBoundary"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

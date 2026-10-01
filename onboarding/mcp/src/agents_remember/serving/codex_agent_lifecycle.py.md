@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/codex_agent_lifecycle.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/codex_agent_lifecycle.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-30T12:51+02:00 |
-| lastVerifiedCommitHash |  `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Serving overview](overview.md)
@@ -42,25 +32,18 @@ duplicated in adapter branches.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Adapter registry applies the shared ordering. | "thread/status/changed params" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:704-704 |
+- Adapter registry applies the shared ordering. [1]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 The status spellings originate in Codex app-server evidence, but no external Domain Documentation
 source was configured for this pass.
-
-## Update History
-
-- 2026-08-02T21:14:56+02:00 — 260731-EFA-L6 curator W2-B10: repaired 4 citation findings (2 reference rows); scoped recheck clean.
-
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: created onboarding for the
-  shared child lifecycle authority ordering. Verification metadata remains blank until commit.

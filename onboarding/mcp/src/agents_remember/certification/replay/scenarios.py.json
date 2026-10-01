@@ -1,0 +1,196 @@
+{
+  "path": "mcp/src/agents_remember/certification/replay/scenarios.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The replay scenario catalog records each required scenario and its expected views.\n\nAnchor: \"REPLAY_ACCEPTANCE_SCENARIOS: tuple[ReplayScenarioExpectation, ...] = (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e25b8013f41d8d17d243942f7757b21a3704f36",
+            "content": "sha256:cf666e233d6cfdc1120e205b9897dbd9a0ca4623e71c5756251b10ccb814c225",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every mandatory replay scenario is evaluated against measured evidence in declared order.\n\nAnchor: \"def evaluate_all_replay_scenarios(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e25b8013f41d8d17d243942f7757b21a3704f36",
+            "content": "sha256:d3e079cdd3ec65ee1fe2d5e9fd7d97d633795cefe2b2ea8ef6acd624a7bf7d9f",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Scenarios consume the measured evidence envelope and rail placement vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:e41aeee03710b4722f5a8c5362be2288cd16d3e1b7ddb483c9836aeae041e076",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayScenarioEvidence"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:e7f18e5cecdcbe91a8e405ef8b3dfd4ccfe126db022c9fba3fd8dc4737f65937",
+            "locator": {
+              "kind": "symbol",
+              "name": "RunMeasurement"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:77aeff7038c22d31329bbe253840ae73d05006298265401beb3a6ba5a7c7800c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayRailPlacement"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:409541b3196b90e737db16b29d87704b4d7f4af4501fe82239eb1ffddf5b5d6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayProfileSnapshot"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Certification contract findings carry typed refusal details.\n\nAnchor: \"class CertificationContractFinding\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:4c6b249bef59d93e837829c6843ca2db493718e4a1f4d865cfc60acd6ff577e7",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Rail identity binds its declared rail id and version.\n\nAnchor: \"class RailIdentity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:628f20b3dd283d5b3f5dc34d5edc2656a649e7f37d476fe4b74c37b5744ac7d1",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Unknown scenario ids raise the shared certification contract error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f52af19e4c6a8e21279ef804f3b29ef5fdf49670",
+            "content": "sha256:40dffc28ab77ec0131cea0d37f8c28fd5b0ba94936a0ed8641b31051a64d67df",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationContractError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f52af19e4c6a8e21279ef804f3b29ef5fdf49670",
+            "content": "sha256:3a379ff84418e4c16c25c2faa91970d67269f3da67190758076822245508e96e",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The comparison builder evaluates all scenarios over measured evidence.\n\nAnchor: \"outcomes = evaluate_all_replay_scenarios(evidence)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16661cb188e4097ac21f764a70327d7b962bb053",
+            "content": "sha256:43e0839ab8e1d814f88eea80c4028a25a88f3c2dbefdfe2b9df97354b65dce8b",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/src/agents_remember/certification/replay/compare.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The facade exports replay scenarios and their evaluators alongside shared replay contracts.\n\nAnchor: \"__all__ = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:e7cd61ea0cc33773de044740feafb237316f17a34777fc462c6a1b18bca9a1c5",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/certification/replay/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

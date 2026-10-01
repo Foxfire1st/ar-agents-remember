@@ -1,0 +1,192 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/crossing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The explicit conflict marker the validator refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:990addb67919366a3695355cb2d841bf1cf5cbcda95f94bba0b32778bcff24a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONFLICT_MARKER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:2e432c9398b231c389f51ab7969a92854732e769a60650502fad1864393373cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_conflicted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Mechanical fields stripped for comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:7d988de15c904a26ccc1a73c40d4074bf231c4d1ce6750460c96851d6987e79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "authored"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The item rules: one side, authored beats mechanical, incoming for mechanical-only, delete versus mechanical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:8d10b0c40446794761e6e4e3ed7d94c324c33f23904fb9840f15544d77489b5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_item"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:4db626493f4453b97d71ec8bee0c67af07bfd24ca5a448fa19ff650b09062d30",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absent_on_a_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:5703c56e99d2eaa55075617c637459fd8d213e7ac9cbaab46ec2db135c9d17b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_both_changed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "References by number, entries by id, fields by name; a reference number added on both sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:5a9a4838485f057dbd388548b1ac09db65471d3f764a62f4f67d6725f446b736",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge_json"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:7db691e9e2559e5c16eb7d489336d80d24ad324e2c2c0f54dc85cc5460ff5324",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge_collection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Markdown three-way by line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:c3c8f39a3d19d2ebe18e8ff86bfc71e15b752ea2862a6445875245254b289f25",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge_markdown"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:6df17be831f38dccd9280152b16c5e092600151667e3b70c38d54e9b619d5e3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge_text_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The file-by-file merge and its provenance counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8798d3f2378c3d78a27623725cc402ba0331eb39",
+            "content": "sha256:ab6603547c99d2792c0a273682186fca700747df490e1393f77c76ee18ca8b1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_trees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The item rules on mechanical and authored fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "332a4fe6740f125bc2af30e9559bf2dd068bed92",
+            "content": "sha256:ace6564228b1d2dc12a39969501745b0a8d6eed5abe71770fa2c141008071299",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_items_merge_by_their_mechanical_and_authored_fields"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A reference number both sides added conflicts even when the Markdown merges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "332a4fe6740f125bc2af30e9559bf2dd068bed92",
+            "content": "sha256:bc8ade1a2f865ad64c622fef8ace488caa3ced7ebfa6616268ef29887bfb6b37",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reference_number_both_sides_added_conflicts_even_when_the_markdown_merges"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

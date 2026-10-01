@@ -1,0 +1,138 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The kind switch and accessible-name helper.\n\nAnchor: `itemAccessibleName`, `ConversationItemViewImpl`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b156fbba479b8bc6b33a0c1347cdee530f878b",
+            "content": "sha256:bd8bc9a0b7b212ee3fe6b7f761227254cc3cec6bb5a2417b9bf73dcdc81b4adb",
+            "locator": {
+              "kind": "symbol",
+              "name": "itemAccessibleName"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50b156fbba479b8bc6b33a0c1347cdee530f878b",
+            "content": "sha256:a16c51e5f1b6e9225cf504494ea527920501fa4142e3b923ad3f38879a2dd50d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItemViewImpl"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50b156fbba479b8bc6b33a0c1347cdee530f878b",
+            "content": "sha256:f7b2def6143cbbb795718a64334236787fd03dde5b7e4bbfa6218b82e291d7e3",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The item block-grammar renderers this dispatches to.\n\nAnchor: \"export function MessageItem({ item }: { item: ConversationItem }) {\"; \"export function ThinkingItem({ item\"; \"export function InteractionItem({ item }: { item: ConversationItem }) {\"; \"export function TurnResultItem({ item }: { item: ConversationItem }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccb97957c00edbe63e2a342a102589edeb21dc8e",
+            "content": "sha256:08b3fb09311702e396dfc62f67da0fb2d45b4d15837bb9833661cbd56e486a88",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/InteractionItem.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e50a2b3375e832bf56491fd44c36c8e258528618",
+            "content": "sha256:049d925a59bf0c5844c82c6eb2831bbad6c44937e06ca568c73b0486d30e4dae",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5bc18abcb57762e25e34d5c19dedac7e1b51e5e",
+            "content": "sha256:315c3572acdbdb9d9b9cb081cb11104ddf7c9278dad1477ce7c4e86aeadb57f1",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06901ae0677dd9ddb65cfeb322d7456fc510081a",
+            "content": "sha256:987a806b840cd0b228e586df7af49d91f0985a914bee6be6a583abea7032f603",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/TurnResultItem.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `ConversationItem` wire type it switches on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:dc580072cfe96fda01c3de42598e5bc2f81d32569780f998186cba1df463599e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItem"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The feed that mounts one dispatcher per article and reads the accessible name.\n\nAnchor: \"export function ConversationTimeline({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "678a26102901492941425c3a49304020b187637c",
+            "content": "sha256:ea61c6d92a1a63aecc26e5e3f229cc824d9795fa0137e9a4014f4162f3ae9d61",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/ConversationTimeline.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

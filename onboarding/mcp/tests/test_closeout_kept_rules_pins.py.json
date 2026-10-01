@@ -1,0 +1,93 @@
+{
+  "path": "mcp/tests/test_closeout_kept_rules_pins.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The enabled plan and message checks cover code and memory only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70807703016f501584ae93946ce2e27bf9a601f9",
+            "content": "sha256:94bb9460ee47ea08ea219559a722acafa1402f36ec7325954b6af5c1237a2f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enabled_plan"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "70807703016f501584ae93946ce2e27bf9a601f9",
+            "content": "sha256:e3d555faff539773694017f98d1d60e77325a71af5df6929fd527cf6ee4c1cb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r2_each_enabled_leg_requires_a_nonblank_commit_message"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both content messages are required without a ledger leg.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70807703016f501584ae93946ce2e27bf9a601f9",
+            "content": "sha256:ddc7088fbc5381b1597bb5199bda875ba3495426cffe588d727805222a984dff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r1_the_enabled_content_pair_requires_both_messages_without_a_ledger_leg"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Real ancestry covers base, checkpoint head, and unrelated movement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70807703016f501584ae93946ce2e27bf9a601f9",
+            "content": "sha256:1c9f84d8f4362713c07e59464d3072fbdfb061ac8336b9ee7ddaebc28d04b470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r3_closeout_ancestry_passes_when_the_source_is_still_at_the_recorded_base"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "70807703016f501584ae93946ce2e27bf9a601f9",
+            "content": "sha256:48f4d48d3a892622a3243eedc80713b553aa47ff4e3b8a3240af142170549fb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r3_closeout_accepts_the_source_head_a_checkpoint_landed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Replay uses Git facts and the retired recovery API remains absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70807703016f501584ae93946ce2e27bf9a601f9",
+            "content": "sha256:6614725601fc85047a3152e5dee803b674e21fc628d38d2928f0bd4347636eab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_r4_integration_replay_requirement_is_git_ancestry_not_a_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

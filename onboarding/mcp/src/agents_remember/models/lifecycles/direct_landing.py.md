@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/lifecycles/direct_landing.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/direct_landing.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
@@ -52,46 +42,32 @@ accepted state from queue rows, task prose, or cache files.
 
 No new file-local follow-up is established by this documentation pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The accepted input contains code/memory identity and validates route plus intent. | `_accepted_direct_plan_is_exact` | mcp/src/agents_remember/models/lifecycles/direct_landing.py:33-39 |
-| The shared snapshot keeps actual object identity and optional content-only comparison. | `GitMutationSnapshot` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
-| The coordinator captures the accepted candidate from actual Git facts. | `_prepare_direct_landing_candidate`; `candidateTree` | mcp/src/agents_remember/worktrees/direct_landing.py:550-598 |
-| The strict model carries code/memory identity and its `_accepted_direct_plan_is_exact` validator requires the direct-landing route plus a nonblank approval note. | `_accepted_direct_plan_is_exact` | mcp/src/agents_remember/models/lifecycles/direct_landing.py:33-39 |
-| The shared snapshot's `_require_state_evidence` validator keeps actual object identity: `observed is not before` is refused while `observed == before` is reconciled. | `_require_state_evidence` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:47-63 |
-| Recovery checks the typed facts against the current repositories and refs. | `classify_direct_landing_recovery` | mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py:77-134 |
+- The accepted input contains code/memory identity and validates route plus intent. [1]
+- The shared snapshot keeps actual object identity and optional content-only comparison. [2]
+- The coordinator captures the accepted candidate from actual Git facts. [3]
+- The strict model carries code/memory identity and its `_accepted_direct_plan_is_exact` validator requires the direct-landing route plus a nonblank approval note. [4]
+- The shared snapshot's `_require_state_evidence` validator keeps actual object identity: `observed is not before` is refused while `observed == before` is reconciled. [5]
+- Recovery checks the typed facts against the current repositories and refs. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Configured code and memory repositories or temporary fixture repositories are described through
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional configured cross-repository evidence is claimed. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `worktrees/direct_landing.py`, so the citation rows into them were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or, for the `_prepare_direct_landing_candidate` row it declined, by the exact base-to-staged line shift (the shifted range `550-598` now spans `_prepare_direct_landing_candidate` and the `_operation_candidate` it delegates to, where the typed input is built; the claim still holds). No verification stamp was advanced.
-- 2026-09-15T00:51 UTC — Removed the ledger byte/path/digest fields and DirectLandingLedgerIntent from the documented vocabulary; retained strict code/memory shapes and clarified the boundary between model validation and actual Git proof. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
-
-
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-input model package relocation; direct-landing accepted-input and ledger-intent contracts are unchanged.
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+No additional configured cross-repository evidence is claimed.

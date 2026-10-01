@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/data/railModel.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Structural rail nodes carry canonical task-document references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:e0bceae14036ffbaef0c3eb39af889ee8cff405f3c5ac5ab3694ba964ef64bcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailLeafCluster"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The default rail joins sessions to real task topology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:cb246c84cd67b13d018a14318050aeaaf2b7dbbb23881b5879637d68135b833f",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildRailModel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:55451313e11eb1dd74fe9976b4869b5f3ff372991ad9f312ab8191ed6e58edbc",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 397
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Runtime provenance is a separate diagnostic projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:48ca2d96fb6a842a57e5088427a5d831a9c1e8d8826c3e70b9caa527a5ddd5c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildSpawnTree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:a1857f63fd62dfcdfd132d8a1aab40a34a39313bd32da4e378d0dd81b031c2be",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 451
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The row segment contract keeps status as the only elidable segment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:cf881d6c4a25cd6f81f1b3e3d3d46bcc3118fca0d518c9f8159b226e8432ab0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROW_SEGMENTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

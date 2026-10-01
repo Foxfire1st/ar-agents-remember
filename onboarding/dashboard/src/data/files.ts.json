@@ -1,0 +1,392 @@
+{
+  "path": "dashboard/src/data/files.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Typed result contracts mirror the L1 endpoints' camelCase JSON (catalog, dir listing, file content, forward/reverse pairing).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:0b2c515bb11503a87233398cda65e4a5240106136cd9518594d2d1072c2cc4e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepoCatalog"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:c37c142d0b29d025924505b979d2579b21cb7c75474968056a70439b438a4626",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirListing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:28187cd63e1c4f01e1b28b9932d829ac691d9bb591c50b4f84900278f04ed417",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileContent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:c19917f3f40f043f8ea2a0888d52f73849ea2b2ccc36cf416455e07631ee2521",
+            "locator": {
+              "kind": "symbol",
+              "name": "ForwardPairing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:42a0bd51535fa68400030197e1e20a80c9debeae49dabe488e9d0f9a77c1cbe6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReversePairing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The vitest contract test pins the endpoint URLs and the `FilesApiError` mapping.\n\nAnchor: `FilesApiError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "content": "sha256:02116cd723ce98f1ec678702dff49d0586f138e652fb21fd33c5d7f6a769a575",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/files.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "House-style sibling client: `base` arg and typed results. Unlike this request/response client, `stream.ts` is stateful: it applies snapshots/deltas and connection status directly to the stream store.\n\nAnchor: \"export function openConversationStream\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5bcbf91dd9e078714dc8aec7e3ef1aa7d230459",
+            "content": "sha256:940a09d96098d92fbabf2dc62be3b4fa8b980bf9fd855b664e1245855b777984",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/data/conversation/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
+            "locator": {
+              "kind": "symbol",
+              "name": "getJson"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilesApiError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:21bfb5b2643dd6bf18c7bfee7063b020fa02725476791b85e3d2832880586da4",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:a4ec5d18d9e2d69fc7161f77421ca6f300ae59ded246c4b59c8e1242906c6c57",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchRepos"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:91575e55dc90ee57e29e251badab89c5662fd5cdc82a38e4d3c3afa8d794f3e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "listDir"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:e4ab790ad49ae4a24686b39e83f5038b85315bc6e2dbce5a9fc986beb3cc2f2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "readFile"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:17203a5a26c14b39c397cb26f7f7c7dafb5dce2e77618ddc150226164d34545b",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveForward"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:75065c8f2fe955d2fe6565cb8fa85cf63f6f1cd57c302eb1b4d45c704998b159",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveReverse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:b1417edcf2e73263bfdf0586709b4efaa8041fb1f867033e03b0ef436a323297",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:d140673ef8d242ea5e4def8bdda96981236944e5d794bbee46c7ac1f0ff8f0b6",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:d2684ca45e9472081c3b879f1c984d4349d5ec530eaa79255b01c7cd771caac3",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The serving layer registers the four `/api/files/*` endpoints this client calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
+            "content": "sha256:da51ca697097554c9248eec35802c35d09b7b454412d3388dd88ff002b3cbef2",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_files_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
+            "content": "sha256:e2e3dbc669e3689a73aa93a88daa39b0dfffdd2d25f9a7fd2a0f99dbf81808cc",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "mcp/src/agents_remember/serving/files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`run_scoped` maps domain errors to the status idiom this client surfaces (`unknown-repo`/`unknown-scope` 404, `bad-path` 400, `not-found` 404).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7581a4059025446b6723ceaa66e7d3d9f59ed212",
+            "content": "sha256:cf18e1b4612890662ae0cedcde62fdb7fd5948c9539a62b2526c69a1ea1f46c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_scoped"
+            },
+            "path": "mcp/src/agents_remember/serving/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7581a4059025446b6723ceaa66e7d3d9f59ed212",
+            "content": "sha256:e4170303a7d55afacdbfe0fedf0f22c113a531a40de8fb126bd0c940f23fbd9e",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "mcp/src/agents_remember/serving/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`FileViewer` orchestrates `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` and renders `FilesApiError.code`.\n\nAnchor: \"function FileViewerImpl({ active = true }: { active?: boolean }) {\"; \"return e instanceof FilesApiError ? e.code : \\\"request failed\\\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
+            "content": "sha256:2c41764df8a1e15c5d002164115230f73688aba7cd1aa72b94e2ee686616fd7c",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
+            "content": "sha256:f5386a914e8e6757d9ebe3f9a9f4724a06ec87a82417a9a8451dff5725f62ff8",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`useFilesTree` calls `listDir` per directory level to lazy-load each tree side.\n\nAnchor: `listDir`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78ed5b387ae1a6126a534c85b611bd6bc9b49102",
+            "content": "sha256:751ead725ab51e362885ec2f0bdc0c35d1d660942f2b87acfd25477223c55acf",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFilesTree"
+            },
+            "path": "dashboard/src/panels/file-viewer/useFilesTree.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`FileTree` consumes the `DirEntry` and `Scope` types.\n\nAnchor: `DirEntry`; `Scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a4be0915cb59c7be0894392a69d719bdaf8c12",
+            "content": "sha256:7bebff0aed6ad548d5a4a65da9e2b0c7961c26af3bdf66372e888e34b2c20222",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileTree"
+            },
+            "path": "dashboard/src/panels/file-viewer/FileTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`DualPane` consumes the `FileContent` type for its code side.\n\nAnchor: `FileContent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
+            "content": "sha256:b7d09e1dfa9ff6cfed47c439a853ed250342a83c8124fff97f051031b7146d28",
+            "locator": {
+              "kind": "symbol",
+              "name": "DualPane"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The namespace names its ownership without executing a workflow.\n\nAnchor: \"Journal-selected closeout certification admission and execution.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b321646148558d3ff7b81f90d872f5c4be36b0b5",
+            "content": "sha256:9225d62a57c086a37a30e16aaf52a23b664d15a5498684983453b83f07396e3b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

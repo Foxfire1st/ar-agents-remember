@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The sibling router reserves the harness-native conversation-library prefix.\n\nAnchor: \"/api/harnesses/{harness_id}/conversations\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:4e221e44aec886583c6a058690de7e3c82ad0e6abce122e86cc83b767940505f",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

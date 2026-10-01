@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The retained-membership effects of an eligible curator-authored family successor in the existing admitted knowledge batch.",
+  "conditions": [
+    "A retained successor edge points to the exact existing invariant revision; the retained invariant identity, statement, semantic scope, origins, anchors and realization records are not rewritten.",
+    "The predecessor family revision and the original retained source membership remain unchanged.",
+    "Eligible retention and retirement of the same source membership in one handoff refuse, including across entries. Entries already refused during declaration validation contribute neither effect to that conflict check and retain their original refusal."
+  ],
+  "exclusions": [
+    "This does not prohibit an independently eligible ordinary membership retirement outside a conflicting retention request.",
+    "It does not create a successor invariant merely to populate a family, nor claim semantic acceptance from successful storage."
+  ],
+  "id": "INV-HXAH9APB",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "0f6d9088-116f-4c1f-bf48-c78687a6bbf4",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Retaining a sibling creates only the new-family membership edge and keeps the exact stored invariant revision and original historical records unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The notes listing behind GET /api/notes/list (list_notes and its walk helpers in mcp/src/agents_remember/serving/notes.py) over one series master's tasks/<repo>/<master>/notes/ root.",
+  "conditions": [
+    "A note can grow in place, which changes its size without changing any directory mtime.",
+    "Family examination: no joint obligation is supported. Basis: This records a rejected design (negative knowledge) whose protective effect is already the no-listing-state member; making it a second member would count one reason twice."
+  ],
+  "exclusions": [
+    "Caches keyed on each file's own metadata, which this decision does not examine."
+  ],
+  "id": "INV-SMYSQKTJ",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "063e9bba-05a8-471e-a2c6-cd06c44d7fc4",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The notes listing is not cached by directory mtimes because a note growing in place changes its size without changing any directory mtime, which would serve stale sizes and break live refresh.",
+  "status": "proposed",
+  "supersedes": []
+}

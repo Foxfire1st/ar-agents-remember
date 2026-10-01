@@ -1,0 +1,141 @@
+{
+  "path": "mcp/native_helpers/conversation_library/src/protocol.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The private manifest and lock select the exact dependency versions represented by the protocol constants.\n\nAnchor: \"@anthropic-ai/claude-agent-sdk\", \"@earendil-works/pi-coding-agent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279753d178eb10cbc4d3a55fd3b69f2240df7e31",
+            "content": "sha256:c0a11fb9e3687ff2134b84e59a1c0c2ce5b2aa6baeae2729c140e15c79a59cc6",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/native_helpers/conversation_library/package.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Helper tests cover exact versions, malformed framing, wrong protocol, exact key sets, inapplicable fields, and hostile error details.\n\nAnchor: \"the exact locked helper versions are protocol constants\", \"request parser rejects malformed framing and wrong protocol\", \"request parser rejects unknown fields for every operation\", \"request parser rejects known fields when they belong to another operation\", \"helper crash detail is fixed allow-listed copy for secrets\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a62dcf4fbc0ce0148a3b5ff4e5311b0f22ca22d2",
+            "content": "sha256:2ada443672f3438476ab8ce6d30e93315a9517e4060eb0ee72e1643c50628a58",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a62dcf4fbc0ce0148a3b5ff4e5311b0f22ca22d2",
+            "content": "sha256:9b3398c8bc00cd8075c8b750a1ba22a3079c970c61aba89bcc3b624625b0684b",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a62dcf4fbc0ce0148a3b5ff4e5311b0f22ca22d2",
+            "content": "sha256:cf6f6db2882c0e79227be185cf0c30ace8d5117fc0a794a31699193f4f9fffa6",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a62dcf4fbc0ce0148a3b5ff4e5311b0f22ca22d2",
+            "content": "sha256:5cbbcf3f338799dba08d32627a10824e26416f65597a14ee426a0df21f663e4a",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a62dcf4fbc0ce0148a3b5ff4e5311b0f22ca22d2",
+            "content": "sha256:4bdf94415900b94e00ff9dded79493fe854facc5f22e12e1aee835ccff6f8330",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Python host spawns this contract's entries and correlates handshake plus one operation per process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "613060109092408f4f86a381cf3652f11d4866fe",
+            "content": "sha256:a5f38881525bf65b58d0ead501d2fc98fbd594f9cf9a65265aa2be1fbbe09238",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryHelperHost"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/helper_host.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The locked Claude and Pi entries consume the serve loop, probing, signing, and paging primitives.\n\nAnchor: `handleClaude`, `handlePi`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1945dd38d9854033591b322aeebcc0aae8f81f67",
+            "content": "sha256:838505a4441bd718f8e99f3e3e362d8fe5638ffdf9b2fc63db54b59ee932022c",
+            "locator": {
+              "kind": "symbol",
+              "name": "handleClaude"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/claude.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b7f7c7b80dc367a918409235141b75fc1d1497e",
+            "content": "sha256:6e0c71148c306535c56d90baacba388a30cd2f0aee92a2c69f0529ee5abf0e22",
+            "locator": {
+              "kind": "symbol",
+              "name": "handlePi"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/pi.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

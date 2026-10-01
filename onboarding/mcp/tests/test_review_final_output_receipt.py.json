@@ -1,0 +1,421 @@
+{
+  "path": "mcp/tests/test_review_final_output_receipt.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own map from property to case, and its statement that nothing here is a prebuilt payload.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:0ea4d59d9fc7db8a0fe44b9c517b1c3f003e2b3bc295db9e46782064dcf1d2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_review_receipt_binds_the_delivered_pair_to_the_selected_generation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:266e62fd7dec8d16f12d91d93ac7a5b9597d1bc0f96a6e5c60c4d373dcba7dd7",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The no-gate case: no generation, no receipt, and the closeout still reaches a real commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:e4d3ede635a3e2d74b65c90ee2fc67ac6f88ef456f63311c51dbef31abbd9b71",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closeout_records_no_receipt_without_a_generation_and_still_closes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The boundedness case: one file per phase, leaf-scoped, removed by the named owner.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:2f29cf0a4a67469b62e8f897bc0643213d563809ad24a4a1d43dfbc99b721a76",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_final_output_receipts_are_leaf_scoped_and_reclaimed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A location holding something that is not a dataset is `unusable`, with the bytes left untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:a7c0131d745059d35085eab4ce9b8e31e4c22e2bd44719eca672bb14a23e74e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_review_receipt_reports_an_unreadable_published_location"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The reproduced false sentence: the preview never claims a recording the store lacks, in both states.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:944a6febc318cb0676555b3e7aec4a763d9422ba7898c447913e7902adb84cee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_selection_sentence_never_claims_a_recording_the_store_lacks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The narrowing that was unprotected: a selected knowledge operand with nothing published is `unmeasured`, never `bound`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:7c71477ed807c6a9edb1a5fa9eee083adc555da32d869782a35be70055b831ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_selected_knowledge_operand_with_nothing_published_is_never_bound"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The tamper case: canonical bytes carrying a forged `bound` read back `unreadable`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:a764619c4c076f151c795fa821022b7c288ed6ac56db8d789b3821e5e1e64eaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_forged_coverage_verdict_is_refused_when_read_back"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The consumer case: the reopened generation reports what the task delivered, phase by phase.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:91e750a96554fd424dd39f68bc9d0784751f4a518700ee81cb6ba359e4f1f114",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_reopened_generation_reports_what_the_task_delivered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
+            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFECYCLE_CATALOG_SHA256"
+            },
+            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:b5e09c2e2020cce6702b57c68fbcb6d5470f0c019761c603288a27232d7f3274",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:f8356f8efec383d32a37ee2b5494fa9a8371e4145781cbdf43d6fa4c5d0244f0",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 807
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:ef7c4521e349fcc4ed0f2a833d5de737f85410df0b9a20292e331262aa2fbe59",
+            "locator": {
+              "end": 1443,
+              "kind": "line_range",
+              "start": 1443
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
+            "locator": {
+              "end": 1496,
+              "kind": "line_range",
+              "start": 1496
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The catalogue rows this module occupies, and the one revision identity both halves must carry for a subject to be selectable at all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:6cf51b2c9415c7d0ccab6696e217ad92e87439b0684e40e08488c91a3b6e2471",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_INVARIANT_ID"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:9cbcecab12f890a6ecb52a0910e5bfc724668f8578589656d1b1077e0a068b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANDIDATE_ONLY_INVARIANT_ID"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:a024c5b6116d296705cf8ac72a9ef1186295544124ff8f0162c6345bddbe5a1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_REVISION_ID"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The measured reason this module creates its own datasets instead of using the shared read-scope fixture.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:b9103791ae1e3f4574096f9a9a059a5601ac68bac4de728e2f20991d5d2c28af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_review_datasets"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one enclosure value the cases address, and the real fixture that builds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:3523aff319b033ee9eceb9fcfd2a00cc622894816d02787a7096dd0e4b63f3e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReviewCloseout"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:b5d9d2561be6693a6ff5089f47d70e38120279937740e055822b55b67e22ca53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_closeout_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:917f4ae9b431154fca1107c3b7e65af4cd22457280ad94c94bcd8cdebddb42b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_review_task_documents"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The real freeze, the real publication owners, and the real MCP tool calls the cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:5a243241ae4cda5787295dc7c0d6bcf5005a25a88294d9710b9f32814ac43200",
+            "locator": {
+              "kind": "symbol",
+              "name": "_freeze_review"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:0b8c047c8787e5cbbd3db25f5684e52b4d29629dc5c3dc0171c62dba9c6bba78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_dataset"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:5f48699cdab8d1da8850b5697b945af00900217ba8343513cad23e553e07268d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preview"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:3902a7ad7f286da5afb4f9835bba34ed9fe929fd180204fbaef15d8b1bd0f08e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The conforming case, whose every identity is compared against the contract, the Git objects, the published dataset and the reopened generation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:0ea4d59d9fc7db8a0fe44b9c517b1c3f003e2b3bc295db9e46782064dcf1d2c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_review_receipt_binds_the_delivered_pair_to_the_selected_generation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The integration phase records the refs it landed, after the move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:3568b327b08270ea967f4eab030b0eb4f937313d9ce0873b6be1a08735b7046a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integration_receipt_records_the_refs_it_landed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The non-conforming case: a published dataset the review never compared reads `moved`, and the coverage string is asserted absent.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:6df100a4b6c581bec4fdab415b9550d1dd4d43d2e60cf468e76168ec66104065",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_review_receipt_reports_a_published_dataset_the_review_never_compared"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The boundary case: the prior receipt's bytes are identical after a successor supersedes it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba578936b90857e4f615618804d0d3797e5f69d6",
+            "content": "sha256:efa9668e22c6c27ae10f8c7108d65183ddaa319c3ee5e580216bb8d5cd8cf1db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_candidate_is_recorded_as_moved_and_superseded_not_relabelled"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

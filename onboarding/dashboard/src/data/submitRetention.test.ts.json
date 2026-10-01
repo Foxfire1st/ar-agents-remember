@@ -1,0 +1,72 @@
+{
+  "path": "dashboard/src/data/submitRetention.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The system under test defines protected phases and settled-tail bounds.\n\nAnchor: `SUBMIT_HISTORY_INSPECTOR_WINDOW`, `SUBMIT_QUEUE_RETENTION_WINDOW`, `PROTECTED_SUBMIT_PHASES`, `compactSubmitHistory`, `compactSubmitQueue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd5f42cb8074b8b1d20efe04d8e25b31cf9f91d",
+            "content": "sha256:f3bfd90ba2902c0521a3ce72532bea0166d5d424ee65578ca3faf2568ebd6af5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBMIT_HISTORY_INSPECTOR_WINDOW"
+            },
+            "path": "dashboard/src/data/submitRetention.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bd5f42cb8074b8b1d20efe04d8e25b31cf9f91d",
+            "content": "sha256:952bda7a2c3c4f3e332874abc9bb94bbad5b6201753edab0c5f615ee37515874",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBMIT_QUEUE_RETENTION_WINDOW"
+            },
+            "path": "dashboard/src/data/submitRetention.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bd5f42cb8074b8b1d20efe04d8e25b31cf9f91d",
+            "content": "sha256:623d9b40d4098befb7cc47ce749f4adac4461ca3d6759b32e604b1a2fdec9a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROTECTED_SUBMIT_PHASES"
+            },
+            "path": "dashboard/src/data/submitRetention.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bd5f42cb8074b8b1d20efe04d8e25b31cf9f91d",
+            "content": "sha256:bdaab72d42de6078e9b644ff3ce5f094d8b23ddbe1cec8f0bedd9f50fe77fb06",
+            "locator": {
+              "kind": "symbol",
+              "name": "compactSubmitHistory"
+            },
+            "path": "dashboard/src/data/submitRetention.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bd5f42cb8074b8b1d20efe04d8e25b31cf9f91d",
+            "content": "sha256:ed8da6fc43a66a524f0806d6622974b00fcf76aaa9a8aff2f990c317c9e3b321",
+            "locator": {
+              "kind": "symbol",
+              "name": "compactSubmitQueue"
+            },
+            "path": "dashboard/src/data/submitRetention.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

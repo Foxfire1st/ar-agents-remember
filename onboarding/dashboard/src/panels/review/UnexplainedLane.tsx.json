@@ -1,0 +1,212 @@
+{
+  "path": "dashboard/src/panels/review/UnexplainedLane.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two destinations and what each lists, in the module's own words.\n\nAnchor: \"no allowlist or file-type rule hides a file\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:3d021d359012978ec0ecf8ddf3255b772e9f3ea32fb423b0e1e890df63187213",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The destination on screen and the file it opened.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:55e70b94eaa32a3365b4311c85a316ea80a00ff8f1c57a777a5f7f1cc8a0d3ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The rail line: pending, unavailable, not measured or the totals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:6994e312d17f9f321f2b5e25e6607f00882a1ed21784a7a1f2302e3de6138b5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "destinationLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rail nodes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:cfa62609af294f29b3a049fd640b342fefba9ff0b4f8aa829f750198c013c211",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneDestinations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The center and its read states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:5cea963027e96ea86cb7ad9f86802a67d1ff38fdf846702b7fd52d4fd00dcada",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnexplainedLaneCenter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:2ec45c4708ef88f5d27b3f1a1d9e1db9a5d955df3a7f4cd5990e9aa766e0bdf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaneBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two groups, each with its note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:5fe51d969ff18f0a76ff513b91018f66817c8163bb2d1059216b94a2d6e68aec",
+            "locator": {
+              "kind": "symbol",
+              "name": "DestinationFiles"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:9033b0a68730c62061460772b8014caac6c8e1365d5d795ec6836879478509ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileGroup"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A row's counts, the focused file, and the reason one click away.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:99f6c40b625bff0436a6b0a0787931fe3d44953d0b9da9df85dd5c4b66b9099b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowCounts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:e30760367cf0a5d0ea367823236004e844513da3486de0afb98e8c8e61383c05",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad32b71876748fcc2623b22a64fcaf04e6afd963",
+            "content": "sha256:511016db48adf1aa35abee6bf233cf6d30aac7cbaa9e8c79bab039bd8a685d8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowReason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Where the workspace mounts the rail nodes and the center.\n\nAnchor: \"<UnexplainedLaneCenter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:79b1ebd181c2826fb645f073837c0c6b9b6b5368dbec62158a12772ef8b0b46e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailLaneDestinations"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:b4614238d1448ac4be88809d7e304fdcc58aedb7d5a1d54df703604eadd7b9a9",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 412
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The rows in the server's order, and a focused hunk.\n\nAnchor: \"lists unexplained files first, then attributed files, and opens one on its unexplained hunk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:61fbde1e85324ed8d0b1b1af82a359cbd9ff7af7461e6fcdcc0df3fc578eaf80",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.lane.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

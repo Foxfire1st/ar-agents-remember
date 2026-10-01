@@ -1,0 +1,65 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/errors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The route table maps each family member subclass-before-base to one exact HTTP status.\n\nAnchor: \"def _error_response(exc: Exception) -> JSONResponse:\"; \"_ERROR_STATUS_TABLE: tuple[tuple[type[Exception], str, int], ...] = (\"; \"LIBRARY_RESPONSES: dict\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:78ab1fc97190513f90262e268c21a8411edd9db3a3a5b6b8c4334f7e7de60322",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b90fe05aa816d6a4426b30d9a81470c380d48d54",
+            "content": "sha256:1dda6e24233da56cb7e1d99733eff7341b235c5c798b8d25922d3381c2eae432",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared base types this family subclasses keep `except ValueError` handlers working.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48caba03d939d39c65b17fcbdc0b4a39df02640b",
+            "content": "sha256:f4c6c78c25d9d59a097c3305fcdce3c55fe9fd87ad58f42202e00f998e6864d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLibraryError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48caba03d939d39c65b17fcbdc0b4a39df02640b",
+            "content": "sha256:c94df5ac70b5d623804443b4b9526301d652edc91a6390ed69a9116337bd45a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LibraryScopeError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

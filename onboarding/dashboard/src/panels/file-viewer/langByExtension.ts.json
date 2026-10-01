@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/file-viewer/langByExtension.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`FilePane` awaits this and pushes the result as an editor extension, guarding a late resolve.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilePane"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `language` id is produced by the L1 read client.\n\nAnchor: `language`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:5008b069f52ac8f7c04d6206958e6fb7e8cf3d5a1f6a0e6ac04ae6cf38d12bd4",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

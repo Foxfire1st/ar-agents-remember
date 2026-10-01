@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/eve_protocol.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/eve_protocol.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -97,55 +87,31 @@ transport client can both depend on it without importing each other.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this file. eve's own published protocol documentation is the external
 authority this module mirrors.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source exists in `system/sources.md`; eve's published protocol docs are the external authority and are cited by the runtime README instead. | — | — |
+No configured `Domain Documentation` source exists in `system/sources.md`; eve's published protocol docs are the external authority and are cited by the runtime README instead.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The wire contract is consumed by the transport client and the cursor decoder, and it is mirrored by
 the AR-owned runtime application's authored channel.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The transport client is the only caller of these routes and parsers, and both of its body builders spell the queued policy from this module's one literal. | `EveRuntimeProcess.create_session`; `EveRuntimeProcess.stream`; `create_session_body`; `follow_up_body` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89; mcp/src/agents_remember/serving/eve_runtime_client.py:165-224 |
-| The incremental decoder feeds raw bytes through `parse_event_frame` one completed line at a time. | `parse_event_frame` | mcp/src/agents_remember/serving/eve_stream_cursor.py:36-69 |
-| The adapter owns the persisted cursor and drops a replayed envelope id before translating. | "drop a replayed duplicate"; "One replay verdict per event" | mcp/src/agents_remember/serving/eve_adapter.py:626-657 |
-| The runtime application's authored channel carries the same queue default for every later turn. | "turnPolicy: \"queue\"" | eve_runtime/agent/channels/eve.ts:63-63 |
-| Wire-conformance cases pin the index arithmetic, the version gate, the permissive-parse refusals, and the exact request bodies the production client sends over a mock transport. | `EveCursorTests`; `EveFrameTests`; `EveStreamHeaderTests`; `EveWireRequestTests` | mcp/tests/test_eve_protocol.py:76-102; mcp/tests/test_eve_protocol.py:123-216; mcp/tests/test_eve_protocol.py:218-526 |
-| The replay window's own cases cover first-sight versus repeat, oldest-first eviction at the bound, a size-1 window, id-less events, and the non-positive refusal. | `EveReplayWindowTests` | mcp/tests/test_eve_protocol.py:254-304 |
+- The transport client is the only caller of these routes and parsers, and both of its body builders spell the queued policy from this module's one literal. [1]
+- The incremental decoder feeds raw bytes through `parse_event_frame` one completed line at a time. [2]
+- The adapter owns the persisted cursor and drops a replayed envelope id before translating. [3]
+- The runtime application's authored channel carries the same queue default for every later turn. [4]
+- Wire-conformance cases pin the index arithmetic, the version gate, the permissive-parse refusals, and the exact request bodies the production client sends over a mock transport. [5]
+- The replay window's own cases cover first-sight versus repeat, oldest-first eviction at the bound, a size-1 window, id-less events, and the non-positive refusal. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The protocol is defined by the published `eve` package — a pinned third-party dependency, not a
 sibling Agents Remember repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `/eve/v1` routes, the `x-eve-stream-*` headers and the event envelope are eve's published wire contract, re-verified against the installed package at the pinned release. | "/eve/v1" | eve_runtime/README.md:91-91 |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `EveReplayWindowTests` repointed to mcp/tests/test_eve_protocol.py:254-304. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): the replay window is now a named
-  contract rather than a default argument. `EVE_REPLAY_WINDOW` (2048) is declared here with its
-  rationale, `EveEventDeduplicator.window` defaults to it, the class docstring states that it is the
-  **single owner** of the window the adapter delegates to, and `retained` was added for the
-  bounded-growth assertion. Body and both citation tables updated; tables rewritten into the
-  `Finding | Anchor | Source` shape. Verification metadata moves to the leaf's current base
-  `e9300687`; the candidate is deliberately uncommitted, so the governed closeout stamps the real
-  code commit and no hash or fingerprint was invented here.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: created this card for a file added by the native
-  eve session-adapter change set. Records the load-bearing cursor rule (absolute event index, not
-  `meta.id`), the required stream-version gate, the acceptance-without-identity refusal, and the
-  bounded replay window. Verification metadata is pinned to the leaf's base commit `67b21aeb`
-  because the candidate is deliberately uncommitted — the governed closeout stamps the real code
-  commit, and no hash or fingerprint was invented here.
+- The `/eve/v1` routes, the `x-eve-stream-*` headers and the event envelope are eve's published wire contract, re-verified against the installed package at the pinned release. [7]

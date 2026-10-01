@@ -1,0 +1,192 @@
+{
+  "path": "dashboard/src/grammar",
+  "references": {
+    "1": {
+      "note": "The Panda runtime these primitives import (`css`/`cva`/`cx`).\n\nAnchor: \"export default defineConfig\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
+            "content": "sha256:b2cecb144a46f5dcf12a6169fceed7695e8294b090de76f3661cdd0249300147",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/panda.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The React Aria condition reconciliation (data-hovered/-focused).\n\nAnchor: \"[data-hovered]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
+            "content": "sha256:e16b47be0657b66a2213fd936a17a7e8131a744184a51d01c57aacf6ac1d678b",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/panda.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The route's sole React Aria import wraps the viewport toggle group.\n\nAnchor: \"export function ModeBar\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b45841c184fdeb9e30c0f110f467043a3238b9a5",
+            "content": "sha256:0b91767ebd94474bd1117c5f3a4f569e732782bba11f51bb505e18c77470b589",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/grammar/ModeBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The complete direct production `EvidenceBadge` renderer set (two files; re-derived by grepping `dashboard/src` for `EvidenceBadge`).\n\nAnchor: \"export function EvidencePane\", \"export function FailedLaunchBanner\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00080d8fe34a78b3ac775a1d8ddcc74027a8ab4e",
+            "content": "sha256:7a31b2c2f1d252ca76cdbc99ea33bfdd02e417fc02a95bd632927b861be9b048",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 411
+            },
+            "path": "dashboard/src/panels/session-cockpit/EvidencePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:d4b5e93772c8125f4f6fe87f206ca6993e578a2c1731db8898ab121e916323de",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The action-availability shape `Affordance` renders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9fb22cc5f4b41d80db68b8648a6041886c13c80",
+            "content": "sha256:6fe14c2299ba2fab63251972715c6b52f48438fb251c2e676543aa3126dabdb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "Affordance"
+            },
+            "path": "dashboard/src/grammar/Affordance.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The six lifecycle states `Dot`'s variant vocabulary must cover, and the suite that asserts the two lists agree in both directions.\n\nAnchor: \"export type State = \", \"const ALL_VARIANTS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:9d9b036ca7b758530fc951f101646842785d8c93b5d47ba9ae79b6d724630fc7",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
+            "content": "sha256:05564ae2982b10ba2b48f196392042f06683b33b1b072ebf9f9d16319de85207",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "dashboard/src/grammar/Dot.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The OTHER state-to-visual table — a separate, total `Record<State, ConstelStatus>` with its own `UNCLASSIFIED_STATUS`; no import in either direction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:94db2618aaf24dd20956df08690ad730be78d11b5a801a1710f1f094ab67bf65",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCLASSIFIED_STATUS"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared global `pulse` / `pulseSlow` keyframes and the unlayered `html[data-effects=\"off\"]` freeze the dot's motion rules depend on.\n\nAnchor: \"@keyframes pulse {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:7a5cd245db969b10f90c184c0da06ed1cafed71f7318e8ec7203cf1d4e121ac5",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The attention and lifecycle panels rendered as siblings in the retained side rail — why an `awaiting-developer` state and a `warn` severity are on screen together and colour alone cannot separate them.\n\nAnchor: \"<AttentionQueue onSelect={onSelect}\"; \"<LifecycleList selectedId={selectedId}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:393c3fdf2b4f4364a45b11040680c5809ac65c4b38c3262364988ae69f7bdba5",
+            "locator": {
+              "end": 668,
+              "kind": "line_range",
+              "start": 667
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

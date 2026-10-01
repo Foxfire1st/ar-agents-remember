@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/dev/Reference.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Raw reference import and iframe presentation\n\nAnchor: `mc2`; `srcDoc`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72ca87f61db5286482e0f9f22cf89fd42976f189",
+            "content": "sha256:3499c066249efcb9f09af8a893de41fbb272c144911ef054067b64f71f9778bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "Reference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Development route selects this reference component\n\nAnchor: \"if (path.startsWith(\\\"/dev/reference\\\")) return <Reference />;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05fb9135e3ee54c650a57eeb04a093bb85c694c4",
+            "content": "sha256:ccad9aa3d3ec328aa06160eb815450cc6075f24e916ac3d8b48bc5fe60ee2720",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/dev/DevApp.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

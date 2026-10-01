@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The skill entrypoint applies when durable knowledge emerges during developer discussion, task execution, review, or direct clarification.\n\nAnchor: `# c-01-findings-capture Findings Capture`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d413e8fe5a7827093418cb0310bd68ccf3f5cb66",
+            "content": "sha256:c0798ed9c91479be26e3166bbb7020851a60b212613ce137fe8e574fe8e5275c",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Durable destinations include task-local artifacts and onboarding through `c-05-create-or-update-onboarding-files` skill when a verified factual current-state clarification should survive outside the task.\n\nAnchor: `## Durable Destinations`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d413e8fe5a7827093418cb0310bd68ccf3f5cb66",
+            "content": "sha256:3ce9cf57ccad534e0842b4597d8d844be8ee651d545719407434635b18e21084",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The entrypoint now requires code/onboarding verification and forbids copying developer clarifications into onboarding verbatim when code reality contradicts or only partially supports them.\n\nAnchor: `## Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d413e8fe5a7827093418cb0310bd68ccf3f5cb66",
+            "content": "sha256:f79e744c6e095512c573dba868db5b1f776ecd4b6e9773cd9c03cda8090af308",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The companion workflow requires verification before capture, only propagates factual current-state findings to onboarding after the guardrail passes, and preserves evidence/capture summaries.\n\nAnchor: `### 2. Verify before capture`; `### 5. Apply the onboarding guardrail`; `### 7. Return a capture summary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f9c929f47fbc72ebf4e0742c6d8747c8d14ada0",
+            "content": "sha256:2a825f888b3e7e570edd4706ce76287c2e67c402be6547c88a069279b7848c25",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-01-findings-capture/findings-capture-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/citation_closure.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/citation_closure.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:05+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -65,43 +55,33 @@ the recorded rows, not a second store.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The declared selected set and its one addressing, which is what the counts are over.** | `selected_set_of`; `selected_set_key` | mcp/src/agents_remember/memory/knowledge/citation_closure.py:125-134; mcp/src/agents_remember/memory/knowledge/citation_closure.py:136-140 |
-| **The read of the recorded bindings plus their sealed revisions, and the store-damage refusal that keeps an attribution out of no denominator.** | `load_recorded_bindings`; `_BindingStoreDamage` | mcp/src/agents_remember/memory/knowledge/citation_closure.py:142-155; mcp/src/agents_remember/memory/knowledge/citation_closure.py:327-340 |
-| **The closure itself: the bound checked before any item is emitted, the shipped refusal returned with the bound reached.** | `assemble_citation_closure` | mcp/src/agents_remember/memory/knowledge/citation_closure.py:182-232 |
-| **The per-binding enumeration L21's census counts — a read path, not a second store.** | `enumerate_recorded_bindings` | mcp/src/agents_remember/memory/knowledge/citation_closure.py:157-180 |
-| The one observation per item, and the target's recorded facts read out of the store. | `_observe_one`; `_reported_target`; `_target_facts`; `_revision_facts` | mcp/src/agents_remember/memory/knowledge/citation_closure.py:234-269; mcp/src/agents_remember/memory/knowledge/citation_closure.py:271-295; mcp/src/agents_remember/memory/knowledge/citation_closure.py:297-304; mcp/src/agents_remember/memory/knowledge/citation_closure.py:306-313 |
-| **The counts partition, the declared coverage, and the limitations a partial coverage must name.** | `_counts`; `_coverage`; `_limitations` | mcp/src/agents_remember/memory/knowledge/citation_closure.py:378-396; mcp/src/agents_remember/memory/knowledge/citation_closure.py:398-408; mcp/src/agents_remember/memory/knowledge/citation_closure.py:410-436 |
-| The deterministic order and the ambiguity decision over recorded key text. | `_binding_order_key`; `_ambiguous_binding_ids` | mcp/src/agents_remember/memory/knowledge/citation_closure.py:467-481; mcp/src/agents_remember/memory/knowledge/citation_closure.py:438-459 |
-| The shipped bound refusal this module returns rather than inventing totals. | `selection_incomplete_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:159-176 |
-| The declared selection bound the refusal names. | `SELECTION_ITEM_LIMIT` | mcp/src/agents_remember/models/knowledge/read.py:100-100 |
-| The one observation the closure delegates to. | `observe_binding` | mcp/src/agents_remember/memory/knowledge/read_bindings.py:117-140 |
-| **The unit cases that measure the refusal, the absent completeness field, and the one-state-per-binding enumeration.** | `test_a_bound_closure_refuses_with_selection_incomplete_and_the_bound_reached`; `test_the_closure_states_no_semantic_completeness_and_reports_its_declared_coverage`; `test_the_enumeration_returns_every_recorded_binding_with_exactly_one_state` | mcp/tests/test_knowledge_citation_bindings.py:433-552 |
-| The boundary case that proves a rewritten document leaves the binding stale and never re-bound. | `test_a_rewritten_document_leaves_the_binding_stale_and_never_re_bound` | mcp/tests/test_knowledge_citation_boundaries.py:248-305 |
+- **The declared selected set and its one addressing, which is what the counts are over.** [1]
+- **The read of the recorded bindings plus their sealed revisions, and the store-damage refusal that keeps an attribution out of no denominator.** [2]
+- **The closure itself: the bound checked before any item is emitted, the shipped refusal returned with the bound reached.** [3]
+- **The per-binding enumeration L21's census counts — a read path, not a second store.** [4]
+- The one observation per item, and the target's recorded facts read out of the store. [5]
+- **The counts partition, the declared coverage, and the limitations a partial coverage must name.** [6]
+- The deterministic order and the ambiguity decision over recorded key text. [7]
+- The shipped bound refusal this module returns rather than inventing totals. [8]
+- The declared selection bound the refusal names. [9]
+- The one observation the closure delegates to. [10]
+- **The unit cases that measure the refusal, the absent completeness field, and the one-state-per-binding enumeration.** [11]
+- The boundary case that proves a rewritten document leaves the binding stale and never re-bound. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The one object store it touches is the
 memory repository, and it touches it only to resolve the recorded identity each binding already holds.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/src/agents_remember/models/knowledge/read.py`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `test_a_rewritten_document_leaves_the_binding_stale_and_never_re_bound` repointed to mcp/tests/test_knowledge_citation_boundaries.py:248-305. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): created this one-to-one card for the closure read. It records the five properties the module enforces rather than documents, because each is a way a closure could lie: counts are over the **declared selected set** rather than over history or presumed prose; the bound is checked **before any item is emitted**, so a refusal never arrives beside a truncated closure; `unresolved` and `stale` are separate limitations and the per-state counts must partition the set, so an unresolved key cannot leave its denominator; there is **no semantic-completeness field**, only declared coverage and a `partial_key_form_coverage` limitation; and a stale binding stays readable and attributed and is **never re-bound** — no resolver here relocates a line or picks a target by similarity. The card also records that a binding whose sealed revision is missing is a *store defect* that raises rather than being reported as a missing target, because that report would silently drop an attribution out of a denominator. Verification metadata advances to the leaf's base commit `e963a01c` because every cited construct was re-read against the working tree; the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

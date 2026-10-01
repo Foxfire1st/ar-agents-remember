@@ -1,0 +1,148 @@
+{
+  "path": "dashboard/src/data/sessions.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The catalog-change helper accepts and forwards the L9 `\"leaf\"` reason for reassignment invalidation.\n\nAnchor: \"export function notifySessionCatalogChanged\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:0f69fb29f90e4595f046daea9d9f9b271d016d881ca3e154ab22b5346eb29d49",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store test proves server-authoritative `applyTaskAssignment` overrides a stale same-role local occupant of the document-owned seat.\n\nAnchor: \"applies a server-authoritative task assignment over a stale local same-role owner\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5f86498845a3e870f868f1712826bacdbce9af7",
+            "content": "sha256:ede8c20828aa172163d384ea6b8c4865c7b8c0d1201ac278bc2c99b7d82c60ea",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The catalog-sync test now receives a remote `\"leaf\"` event and ignores the sender tab's own broadcast.\n\nAnchor: \"receives remote catalog-change notifications and ignores this tab's own broadcast\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5f86498845a3e870f868f1712826bacdbce9af7",
+            "content": "sha256:825900cb127774002aee30e7eaabac85a58d5ffab5713e6d1deb3e5be88e665b",
+            "locator": {
+              "end": 626,
+              "kind": "line_range",
+              "start": 602
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The store and delivery helpers under test, including the separate draft-paste and submit-and-confirm paths.\n\nAnchor: \"export const sessionStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:f55ab13076aff02f44cc4852a24b51bfe3565885227800be8427bf921980cff1",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 543
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The connection-registry suite covers pending sends, submit-and-confirm delivery, draft paste without Enter, and timeout behavior.\n\nAnchor: \"queues sendToSession into pending and flushes in order once the terminal registers\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5f86498845a3e870f868f1712826bacdbce9af7",
+            "content": "sha256:8e7e0d1dc3c7f9979cd28e6b0661d43af6b4cbb028adde439a890ccf70d72975",
+            "locator": {
+              "end": 689,
+              "kind": "line_range",
+              "start": 681
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`PtySurface` pins visited-pane identity and hidden keep-alive behavior across focus changes and transient handoff.\n\nAnchor: \"keeps the exact visited terminal node across a transient removed-focus gap\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d09f1f11bc7e56ada9fec62b1c1a36ca055ec25",
+            "content": "sha256:9487110149c7b4e45d8e4f841baeb97166170662e74f5840f3077148c5e7bb31",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "dashboard/src/panels/session-cockpit/PtySurface.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`SessionsView` pins the full cockpit composition, hidden keyboard boundary, and focus/inspection handoff.\n\nAnchor: \"renders the scope root + rail/stage/inspector with markers and zones (F-c: no statusline region)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ed84cda6b4e113ac6fb303ebe89974e6b88476a",
+            "content": "sha256:63775756cfe6937ba0165745fd91f6cf09d3e2ed9b7e4bf59e1acb49b64329a6",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Cockpit S5 pins the one persistent `sessions-view` owner behind the Chats product label.\n\nAnchor: \"keeps one Chats cockpit mounted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc45f9a5cce0df9ea04fbf21f7a6079e360c9d8b",
+            "content": "sha256:91524a94111a4baf7fcbe5757a57ee3385e390c6579c5f7bc91b5f3ff1a3aa9f",
+            "locator": {
+              "end": 794,
+              "kind": "line_range",
+              "start": 767
+            },
+            "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,122 @@
+{
+  "path": "mcp/tests/test_signal_routing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Worker-to-manager and manager-to-orchestrator one-hop routing resolves the current occupant from document-and-role identity without spawn ids.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a27e440104e065fee97aa9aadeabf8f1a4a1bc2",
+            "content": "sha256:73c64429281a067192421b8bd376d839110a40202ee491cec709a49afaea0ab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worker_signal_routes_to_current_manager_without_spawn_ids"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4a27e440104e065fee97aa9aadeabf8f1a4a1bc2",
+            "content": "sha256:a19186aa267f2afea746c17e4e8077b65f37f5873259be3e8047bd468c1c8d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_manager_routes_to_current_orchestrator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One-hop-only regression: a missing manager never causes a worker signal to fall through to the orchestrator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a27e440104e065fee97aa9aadeabf8f1a4a1bc2",
+            "content": "sha256:31e54243b60dbb024f1e859ec69851d5d495b45362b5e57dbb7602c9f235505b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_manager_never_falls_through_to_orchestrator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`decision-item` routing resolves the current architect on the sender's sprint document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a27e440104e065fee97aa9aadeabf8f1a4a1bc2",
+            "content": "sha256:26aed4634ed5d59d2b50378228b173d05c1e91150fa8b03fb264b9bbb684913c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_decision_item_routes_to_sprint_architect"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Sprint-level roles follow the approved direct-parent ladder rather than skipping levels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a27e440104e065fee97aa9aadeabf8f1a4a1bc2",
+            "content": "sha256:a9cd3198ef16eea8cd7028a13acd9eb0082254075e24e841b2d4216783c085b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sprint_roles_follow_the_approved_direct_parent_ladder"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4a27e440104e065fee97aa9aadeabf8f1a4a1bc2",
+            "content": "sha256:cfc16f4cc3eee20807c035c510a5441cbfa61d26b916d00be57ae59c62a0741e",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared liveness primitive the rebind/dead-target and dead-upstream machinery reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a27e440104e065fee97aa9aadeabf8f1a4a1bc2",
+            "content": "sha256:6282fea9c856569554b415f76497ffcfc24cc9520c93d3fbf79b5f730dde089a",
+            "locator": {
+              "kind": "symbol",
+              "name": "IsSeatDeadTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4a27e440104e065fee97aa9aadeabf8f1a4a1bc2",
+            "content": "sha256:5d8aa923ca425dde1f44039aebcd03c28dac61942b937a068ff6dff56346c368",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 258
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

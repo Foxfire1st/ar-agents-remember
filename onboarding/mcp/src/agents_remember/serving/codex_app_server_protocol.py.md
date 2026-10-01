@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/codex_app_server_protocol.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/codex_app_server_protocol.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-12T08:41+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -51,30 +41,25 @@ syntax validation. The transport does not infer compatibility from package text.
 
 None known for the L3 cancellation boundary.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved source registry; the validated
 protocol snapshot is recorded in the repository fixture instead.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture pins the CLI version, protocol, and stable method inventory. | "codex-app-server/0.144.3", "generatedBy": "npx --yes @openai/codex@0.144.3 app-server generate-json-schema", "model/list" | mcp/tests/fixtures/codex_app_server_0_144_3.json:4-16 |
-| Adapter uses this transport for correlated fresh-turn settings application on the existing thread. | "class CodexAppServerSession:", "async def set_model(", "async def set_effort(" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:209-209; mcp/src/agents_remember/serving/codex_app_server_adapter.py:242-242; mcp/src/agents_remember/serving/codex_app_server_session.py:105-105; mcp/src/agents_remember/serving/codex_app_server_session.py:122-122 |
+- Fixture pins the CLI version, protocol, and stable method inventory. [1]
+- Adapter uses this transport for correlated fresh-turn settings application on the existing thread. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The transport is an external-process boundary to the installed Codex CLI.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-### 260713-PHA-L6 Capability Boundary
+#### 260713-PHA-L6 Capability Boundary
 
 The protocol identity is `codex-app-server`; the negotiated opaque CLI token is validated from
 structured initialization and thread evidence by the session layer. Exact package versions are
@@ -95,28 +80,3 @@ fuse only; it is not paging and does not bound retained history. cit:([`_read_me
 one JSONL newline before comparing payload bytes: a 128 MiB payload plus delimiter is
 valid, 128 MiB + 1 is shared-fatal, and the same explicit failure reaches pending RPCs and the event
 stream because the JSONL transport cannot safely resynchronize after a partial oversized record.
-
-## Update History
-
-- 2026-08-12T08:41+02:00 — 260731-EFA-L20 debt repair: replaced the historically ambiguous `initialize` fixture anchor with the unique schema-generator declaration; the protocol/version/method-inventory claim is unchanged and now has deterministic provenance.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 8 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=2, citation_source_malformed=3); final scoped citation check clean.
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented the 128 MiB emergency payload
-  fuse, delimiter-excluded boundary, shared-fatal above-fuse behavior, and separation from native
-  history paging/materialization bounds. Verification metadata remains pinned while the source
-  change is uncommitted.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented the guarded first-write seam, shared lock, and
-  pending-request cleanup when authority rejects dispatch.
-- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented cancellation reclamation,
-  syntactically valid late-response discard, absence of abandoned-id tombstones, and continued
-  strict failure for malformed correlation evidence.
-- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized the obsolete
-  exact-0.144.3 transport convention; structured initialize/thread evidence is authoritative.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: removed the stale pinned-version description and documented
-  the unversioned protocol boundary.
-
-- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for bounded JSON-RPC
-  stdio transport, pinned protocol version, and loud failure boundaries. Verification remains
-  unset until closeout stamps the code commit.

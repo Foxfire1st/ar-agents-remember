@@ -1,0 +1,449 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_family_integrity.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module docstring states the whole contract: the one operation, the two owners this leaf does not report, the retention read-back, and that nothing here is a gate.**\n\nAnchor: \"It decides nothing itself\"; \"the collapse §4.1 forbids\"; \"a destination nobody read back is an assumption rather than evidence\"; \"Nothing here is a gate.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:0c8011b87f89f32a1394c601560619ccacb61a1633a2caca73524b568ee06737",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The disposal predicate is one expression over the durable reference count a caller supplies, and its docstring, its expression and the shipped case agree: a count of zero — the row is the only pointer to the evidence — answers `False` and the row is kept.**\n\nAnchor: \"counted no durable reference gets\"; \"return durable_reference_count > 0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:2a933041fa9503a7d937b6ca6077d6257fa0366eb57169d523f983a2bc3299ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_row_disposable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The read-only open the operation reads the recorded run through, and the two lower-route owners it delegates to in order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8eb746358c835c1fc882f588061f2ddd7e8370e",
+            "content": "sha256:b3e2157172899792f77e8cddcbb60dd6bfda1fbcbbf90f6ef449c8e943e7a26e",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_store"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_composition.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:98b12c90f2206ac0ec74a042c9dcff8df0aba7fa76b6ec4e9ed0af23e6a74615",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_detection_run"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c9461fa9df3411b893855d34bbc8e7d6f69551f",
+            "content": "sha256:594c3377ae2751802b3837034203ca0f5644c1620582afaaf1ccaeec24707b6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "construct_registered_scope"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/registered_scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa097c9e4070ab48ae6ebdd0abe8f0c89c28587e",
+            "content": "sha256:bfb32242e0e4df52686b907501e7dbc329dc58e274a1facabe5e10116dbbc850",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 562
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/detection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The five owners, their declared order, and the validator that requires exactly one entry per owner in that order.\n\nAnchor: \"if owners != PIPELINE_STATUS_OWNERS:\"; \"which is not one of its declared \"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:cb6505988320bb133ae41f5730953ab002b923c2ea41cd4845d0dcf9923c1c0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PIPELINE_STATUS_OWNERS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:c2b7eaa50b06f2c62fc8c2e6cd2d8387d7bad612431fb7f6f34a64621eff2c0a",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:646ab38ae7a21869c8877ff486c34a3e9c42f59ae5ca0db63def4911d5dbd862",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The routing record's arithmetic tie, which is why the report cannot grow a fourth actionability term; the shipped formula it consumes; and the detector-status derivation the seam calls by name.**\n\nAnchor: \"and gains no fourth\"; `curator_actionable_count(repair_count, missing_count, stale_count)`; \"def detector_status(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b7fcd560803f33887ee66162f78ead0b3f1b5e",
+            "content": "sha256:3c51174138a8125914aee8220ba4008fcc7c6cd8f04bff48648f8c907e7da24c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyReviewRouting"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/family_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:8822fc81d9a0323579fec16ac6b6f9763203d50698f4a640b9ed25e8fde27c1e",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/src/agents_remember/memory_quality/family_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43628aaa6bf05bcf17b7ea65e03f59ba2f5fbd43",
+            "content": "sha256:45864b13d4acf1c0ccf94a63df722474b243d1554e6220bbe61a444552254001",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "mcp/src/agents_remember/memory_quality/family_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The publication and read-back owners this module delegates to, whose `matched()` composes into the retention record.**\n\nAnchor: \"def publish_durable_evidence\"; \"def matched(self) -> bool:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:3eea2a1693f26e8b9bafbeb750897b729b079cda5d363f6ea64e1216835cd878",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:8f6d5d2fc7c3fd82612e70a70db927c92fcadb4d27768663e08b369811a07623",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The subject spelling the routing rows address and the section renderer `section_lines()` delegates to, both defined by their own owners.\n\nAnchor: \"def assessment_subject_id(\"; \"def knowledge_review_section(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:b67644a8bf98393b203d90feaa09de9ff9ced272ee4225d12c1228f0269da79a",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
+            "content": "sha256:7faa070bc42a72be0eeb29736d8f7dd5c1998b0392dcf9e09a0eb02c98e76bc7",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The module's declared surface and its two decision-carrying constants: the owners this pipeline does not derive, and the operation name its own refusal carries.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:5192b980bd1cff2e86988aef3b78a3213ba6a829c5ad15369159b8a0a16b7b80",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:9347b79f3ea7823db9f7043eb7703ee2b7d8fdbede7bf49427c18b7db41d1a67",
+            "locator": {
+              "kind": "symbol",
+              "name": "CALLER_REPORTED_STATUS_OWNERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:a1513b8e726c77ebf942b8679fff4e2376f6ef39c93b551ffcf92f7faebfa0ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPOSE_REPORT_OPERATION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The request's shape, the property that reports which owner statuses it did not carry, and the two accessors that let a caller assert what the report-only section holds.\n\nAnchor: \"def missing_owner_statuses\"; \"def report_only_rows\"; \"def section_lines\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:bc08d68b98187acdca02b5ada5f1af3aa54106a69ba9ead82fd5a46052a6549e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyIntegrityRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:ccbcd31177df3b995ba7946a629dde9017277800e03d21f6e0b72c4be8142c53",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:e8897ac250183537633a7855f33043862ab912eb3d390ac4fff8cc8b1677d703",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The report shape: one field per act, a two-member `state`, and no field that could hold a merged verdict.**\n\nAnchor: \"state: Literal[\\\"composed\\\", \\\"refused\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:a3b997012b6a39a65ac991e226cdfac243909c1e16e92f997fbfe934ef30fe97",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyIntegrityReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The operation's order and its three short-circuits, and the `_refused` builder that keeps whatever was resolved and the refusal that stopped it.**\n\nAnchor: \"if missing:\"; \"store = open_read_only_store(database_path, request.repository_id)\"; \"def _refused(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:06fd536694367e0df648a0e4a13c2216d17bd4457a1787eb854ef2451cecd95e",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_integrity_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The five-act composition, and where three of the five statuses are derived while the two caller-reported ones pass through untouched.**\n\nAnchor: \"statuses=compose_status_report(_owner_statuses(run, request, currentness))\"; \"reported[\\\"detector\\\"] = detector_status(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:c20b97642ad9f8b55b5604fff58e4998b7b32e966656a478e847a936b56781eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:78e6c6b3b2afd3ef5f0efbc7e7fdf6c9bdd0d6674eaf333e2fbabe9eaef2942e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_statuses"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The refusal a request that omits an owner's status receives, by name, in the shipped vocabulary; and the record identities indexed by the subject spelling the routing rows use.\n\nAnchor: \"\\\"invalid_payload\\\"\"; `assessment_subject_id(record)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:cd0bbcb5eeb0aeeadafdd31d7f1fd58ab293d98a89d031272800767957bcd0aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_status_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:a1513b8e726c77ebf942b8679fff4e2376f6ef39c93b551ffcf92f7faebfa0ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPOSE_REPORT_OPERATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:241d46450620d8d1cb8fd7674407c7f2da1433de27fe185f82aa6ed2ee55d2f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_ids_by_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The retention record: the only claim it can make is about two read-backs, readability together is strictly stronger than a match, and a failure answers with the destination and both observed states rather than with \"published\".**\n\nAnchor: \"def readable_together\"; \"def blocked_reason\"; \"did not read both artifacts back\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:770ff3417111f3707f8e54b29f4bbf06f5e68a4a9862077ea39bef13b996b3ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEvidenceRetention"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**Publication plus immediate read-back, with the destination resolved by the shipped publication function rather than by this one.**\n\nAnchor: \"publish_durable_evidence(task_root, finding_name, finding_content)\"; \"read_back_evidence(manifest)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69134c9ca3679aed715b3886fdaa4df60d28543",
+            "content": "sha256:5fc007d2d445907adf79aec06ae4b41fdc78eb4290f4b08e9d5bd977d5fb5cae",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_review_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

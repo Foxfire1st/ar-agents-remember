@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/InteractionBar.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/InteractionBar.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-26T15:40+0200 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`       |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -90,34 +80,30 @@ becomes the visibly labeled answer input; payloads with no `interactionId` → a
 - Unrepresentable payloads must keep pointing at the inspector's raw payload — honesty over
   chrome.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Multiplexing fan-out + per-payload bar: representation, badge, stale clear, focus, composer mode, id-matched round-trip, retry. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
-| The answer path + the plural-pending helpers (`pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction`). | `pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction` | dashboard/src/data/interactionAnswer.ts:191-198; dashboard/src/data/interactionAnswer.ts:207-222; dashboard/src/data/interactionAnswer.ts:230-245 |
-| The payload selector the rail/triage chrome previews (parent first, else first agent entry). | `sessionPendingInteractionPayload` | dashboard/src/data/sessions.ts:587-591 |
-| The `interactionAnswer` per-seat slice this bar round-trips through. | "const submitAnswer = useCallback("; "const submitAnswers = useCallback("; "setInteractionAnswer: (id: string"; "interactionAnswer: answer"; "stale round-trip state (review finding 5)" | dashboard/src/data/sessionCockpitStore.ts:267-267; dashboard/src/data/sessionCockpitStore.ts:582-582; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:244-266; dashboard/src/panels/session-cockpit/InteractionBar.tsx:179-179; dashboard/src/panels/session-cockpit/InteractionBar.tsx:192-192 |
-| The centralized copy (honesty hint, answered/answering, composer-mode label). | `INTERACTION_HONESTY_HINT`, `INTERACTION_ANSWERED`, `INTERACTION_ANSWERING`, `INTERACTION_COMPOSER_MODE` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:71-72; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:74-74; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:77-78; dashboard/src/panels/session-cockpit/lifecycleCopy.ts:81-82 |
-| The view mounting the bar above the composer + the palette triage that focuses it. | `InteractionBar` | dashboard/src/panels/session-cockpit/InteractionBar.tsx:54-93 |
-| The inspector's verbatim payload the unrepresentable fallback points at. | "renderRow={(entry) => <SubmitEvidenceRow entry={entry} />}"; "value={<InspectorRaw value={bridgeError} testId="; "Pending interaction (raw)"; "unrepresentable kinds say so honestly — no dead buttons" | dashboard/src/panels/session-cockpit/EvidencePane.tsx:241-241; dashboard/src/panels/session-cockpit/EvidencePane.tsx:265-265; dashboard/src/panels/session-cockpit/EvidencePane.tsx:300-300; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:79-86; dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:128-128 |
-| The jsdom suite (kind-awareness, round-trip, focus, stale clear, + the multiplexed block). | "kind-awareness (F8)", "round-trip states (F7)", "stale round-trip state (review finding 5)", "focus + announce honesty", "structured questions (260718-CHATS-L5I)" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:56-93; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:95-242; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:244-266; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:268-290; dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:323-478 |
+- Multiplexing fan-out + per-payload bar: representation, badge, stale clear, focus, composer mode, id-matched round-trip, retry. [1]
+- The answer path + the plural-pending helpers (`pendingInteractionPayloads`, `pendingInteractionAgentLabel`, `representSessionPendingInteraction`). [2]
+- The payload selector the rail/triage chrome previews (parent first, else first agent entry). [3]
+- The `interactionAnswer` per-seat slice this bar round-trips through. [4]
+- The centralized copy (honesty hint, answered/answering, composer-mode label). [5]
+- The view mounting the bar above the composer + the palette triage that focuses it. [6]
+- The inspector's verbatim payload the unrepresentable fallback points at. [7]
+- The jsdom suite (kind-awareness, round-trip, focus, stale clear, + the multiplexed block). [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
+This file implements a repository-local contract.
 
 ## Reliable Submit Delta
 
@@ -133,34 +119,3 @@ multi-select question records a joined single answer only after explicit confirm
 answers submit together through the direct session route once every question is answered. Permission
 interactions share that direct route, while legacy shapes retain the gate fallback and unsupported
 payloads remain explicit rather than dead controls.
-
-## Update History
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `sessionPendingInteractionPayload` repointed to dashboard/src/data/sessions.ts:587-591. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the interactionParts/interactionStyles extraction. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 18 citations (citation_anchor_missing=7, citation_prose_not_in_cit_form=4, citation_source_malformed=7); amended max-reviewer subject binding for store round-trip and raw-payload evidence; final scoped citation check clean.
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the multiplexed sub-agent approval
-  chrome (review R6) — `InteractionBar` fans `pendingInteractionPayloads` out to one
-  `SingleInteractionBar` per pending payload (parent's singular slot first, keyed by
-  interactionId), each bar representing its OWN payload, badging WHO asks via the adapter-bound
-  `raw.agentLabel` (`interaction-bar-agent` chip + `<agentLabel> (<sessionLabel>)` aria-label),
-  and matching the per-session round-trip record by interactionId so a sibling bar never inherits
-  inflight/answered/error. Staleness is now absence from `activeInteractionIds` — a sibling's id
-  is never staleness. Corrected the pre-L7 claims that the bar appears only for the singular
-  `controlPendingInteraction` slot and that the stale clear was raw id-inequality. Source
-  uncommitted; closeout re-stamps verification.
-
-- 2026-07-24T13:17:17Z — Curator: documented per-question pages, all-or-nothing answer submission,
-  and direct-route versus legacy-gate routing; verification fields remain pre-commit.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented shared-composer answer mode, exact retry state, and
-  revision-safe clearing.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R4 (F7/F8; review findings 2 + 5 fixed
-  in-leaf): the single interaction axis above the composer — gate-only answers with the answer
-  as the decision note, kind-aware rendering (choices/composer/unrepresentable), store-backed
-  round-trip with verbatim errors + same-answer retry, poll-bounded answered copy, the
-  always-present honesty hint, no-steal/return focus discipline, the assertive announce region,
-  and the NOT-YET vs CANNOT missing-gate split. The skipped re-answer affordance is recorded as
-  a 409-by-construction upstream ask. Verification metadata pinned to the leaf base until
-  closeout stamps the L6 code commit.

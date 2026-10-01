@@ -1,0 +1,317 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_write_route.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The database-only flags refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:9e513e90cbf8b38c9226bfbf47a26fd96dbd04dbb8a3c9baf57256b4e8ad53fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DATABASE_ONLY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The bootstrap dispatch on the admitted memory root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:0fd1011447c58683e2f8903a3e6e6afaaf079b83579e9e1028228d4cf63719c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Planning writes nothing; unconverted memory is not this route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:078df420e31644b1f340f47734a8c35b1241e88c45dc6bb2525842f47fce4049",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_planning_run_writes_nothing_and_unconverted_memory_is_not_this_route"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Blank authorization refused and recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:11dc3a88c8fa488611ccf6d5105d86c3618ce4343795b3856cef139a88e35ec1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_leaf_file_route_refuses_a_blank_authorization_and_reports_it"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The leaf route and the wave route pass the coordination root requirement endpoints resolve against (MIK-R13).\n\nAnchor: `coordination_root`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b6d48f847e1ff2db6d7cbde01a7486d0b527b7e",
+            "content": "sha256:56edb5b1b595fd6321dbe6fb0c175854ea251b7d0289b3670acc9094b9246d16",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:47ee28d1e309e656330722bba19a19e1b06c983c25b5c34563fcb2cc0fb02138",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 343
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:07466aea358f60e4962894bcb93537e85747fe3bbb3719f386ef277572984455",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 373
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The crossing owner's route: the sync's memory worktree, the series' code work branch as C.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:fcf9fcbf0507fd7f2b936c120777391bbf3940ee45e05155575f5d86fdd525f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_crossing_write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Which worktree holds the open crossing history file, or why the run is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:1c7ef4a1b573daf80cdd22e5087cc54da49c445e1ae4802e2b486ed4eef171cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_crossing_memory_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The file route refuses a blank authorization and database-only flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:b75372f1190416a484dba029d2cfe36dc9d1e8040ed1ff9f171cc79be0a33a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_route_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The layout-marker test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_converted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The write refusal for an unconverted leaf tree: rule 9 when its official line is converted, else the cutover lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:7f8b8f69f67d04451c6c83e1669692a65d015c65e3109eae177a9e3772c66530",
+            "locator": {
+              "kind": "symbol",
+              "name": "unconverted_write_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unconverted_line_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The owner from the contract and `task.json`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:d4f4b98251aa354744e3ee82c0ff6886e9d7e5ec6ffaa9ac29ff181febdcf80f",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The task owner's decision resolver for the leaf (MIK-R11).\n\nAnchor: `leaf_decision_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:3a021993eccc5e40819cd6621e55eb6f19ad750ac8656e4511b65fb04f8b5c11",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_decisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The leaf route, which binds that resolver and, since MIK-R14, the lazy task-document port and the persisted worklist.\n\nAnchor: \"def run_leaf_write(\"; \"decisions=leaf_decisions(contract)\"; \"questions=LeafQuestions(args, contract)\"; \"worklist=read_leaf_worklist(contract.contract_path)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:fef54ec2100f81878cbf9367dd58f510b6cf41ff9672b7302b59a55ebb58c5fe",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:020d6b9b1e7e36c6f151b54610a8be80a8d032a9d741615ca3ba8b478e41a05b",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The lazy port: settings read only when a `raise` needs them, from `--config` or discovery; unavailable settings refuse the `raise`.\n\nAnchor: \"pass --config\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:ba5e55ff859440dfa035baff7bfc129e3373e37939dd4f611f432a91901dbafc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafQuestions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The wave route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:a81b2b4c32bf039dec508bfed35d1de0fa80de59400a181194537f876893955d",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_wave_write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The ingest dispatch on the loaded contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:199fd749c8d68e4c9fe056cecbe19f15e263505227e16733da828a1bc153b05f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,120 @@
+{
+  "path": "mcp/tests/test_checkpoint_landing_end_to_end.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Initial live-pair capture, source merge, and source divergence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:7aafc8dcfc0dc4452b2aa156fbfad690b7abf3ffb7c43cd594eb9702963e1ff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unfinished_master_checkpoints_its_own_refs_end_to_end"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:35d71d298d5debf4117326ed01939d5164d6b0124dba3e8efde29447566c7e54",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_that_merged_its_source_still_checkpoints"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:3217e64e900a0008dfa52f66514e37ec7a7ee5f557a3db196cb6a145e18d3022",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_source_memory_divergence_still_blocks_preview_and_apply"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retry, continued work, and final-route completion semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:926a9a2efad134bfad57c8fc20801929bf01022715c17e6c2f6324abe61dc8cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_is_idempotent_and_continued_work_checkpoints_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ordinary leaf cache absence and code-only checkpoint publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:8177a85e3f132ed885e2b1210968559f3cb5edb612146b21d17b2d32256a4f68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_ordinary_leaf_route_lands_without_a_cache_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Source-cache damage does not block; real approval/master/race guards survive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:1c0c261f03d34ffa9b9b490f52d261f2281be4bb7710b24b9d519ee2ffc59c9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_stale_or_malformed_source_cache_cannot_block_checkpoint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checkpoint publication remains distinct from pause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:e8deed6f7bc066eb66549d736775fee04632c74c4e6f4d27f88a320ea8a44519",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_landing_does_not_pose_as_a_pause"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c1e4000a1317560391c170295d57a9f4b8f093ac",
+            "content": "sha256:3aa5641b116e3c9febd3887cf2488a4d96f5b11abc4e31bfd433d9ea192a174a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CheckpointPausesAnUnfinishedMasterTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

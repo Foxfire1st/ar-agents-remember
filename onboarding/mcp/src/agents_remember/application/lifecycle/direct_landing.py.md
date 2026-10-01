@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/lifecycle/direct_landing.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/lifecycle/direct_landing.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Application lifecycle overview](overview.md)
@@ -41,31 +31,27 @@ the public function or model instead of re-deriving its lower-level state machin
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:1-285 |
+- No external domain source is required to establish this repository-owned implementation. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:1-285 |
-| Refusal payloads forward the typed task-intent next action. | `_direct_error_payload`; `task_intent_recovery` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:119-141 |
+- The module's concrete API, control flow, and validation boundary are implemented here. [2]
+- Refusal payloads forward the typed task-intent next action. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository reference applies. | `direct_landing_tool` | mcp/src/agents_remember/application/lifecycle/direct_landing.py:1-285 |
+- No meaningful cross-repository reference applies. [4]
 
 ## CCR-R02@v2 Task-Intent Refusal Guidance
 
@@ -74,13 +60,3 @@ exact unavailable/stale reason and route the record through its canonical republ
 operation. `DirectLandingError.next_action` (owned by
 `worktrees/integration/direct_landing/direct_landing_errors.py`) is the typed carrier, and the
 error payload here surfaces it to the caller. Part of the landed L25 candidate `99dc249b`.
-
-## Update History
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  the direct-landing error payload now forwards the typed `nextAction` on task-intent refusals;
-  documented the recovery-guidance seam and the missing-intent no-reuse boundary. Verified at code
-  commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.

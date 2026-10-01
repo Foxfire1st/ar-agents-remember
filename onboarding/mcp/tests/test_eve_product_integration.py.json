@@ -1,0 +1,518 @@
+{
+  "path": "mcp/tests/test_eve_product_integration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own purpose statement names the product-integration surface this suite evidences.\n\nAnchor: \"eve is selectable and observable through the existing AR product surface.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:b7806544e01cfbca6c51019bc1ad01c0c0708f4be38dc8e3385ad047b69e0ccc",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The provenance census and the falsifiable label case over it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:6c3e185b1cdcf9d516d504cec4baa3e2de065533a743c0605cc1ac74a4fff714",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PINNED_RUN_CENSUS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:141e38b5d6447b48decdfb04fb60ca82957a5d1acabef395338996aca7680a0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RECORDED_PROVENANCE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:83428513cf8486ab749a648d86bf6331fd9c195a09e05749f875632a70988c50",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_scripted_frame_carries_an_honest_provenance_label"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The real executable the probe actually runs, and the module's honest statement of the environment's limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:7149c74d152eed32449cdd4d539015259acdeaf9c768cc48877cb6d08a07b2bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stub_interpreter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The module's own lane row, which the fail-closed loader requires.\n\nAnchor: \"unit-regression\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "866a956469afcfdbe2585b3ec2e1e032a2d0b98f",
+            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The authored consumer the source-shape case parses, and the launch input it reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7e7657e36f886ab4d4ed61f8016f36e1ec6a778",
+            "content": "sha256:867c72efdfebf3628e4c3c29011b5d25f7c5d6f0c8e6a4fe867a5bcf1743f412",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROVIDER_DEFAULT_EFFORT"
+            },
+            "path": "eve_runtime/agent/agent.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7e7657e36f886ab4d4ed61f8016f36e1ec6a778",
+            "content": "sha256:d3cabc0453dfb6cfc27e89c89641d09a84d933edc15a63660362601125083cda",
+            "locator": {
+              "kind": "symbol",
+              "name": "reasoning"
+            },
+            "path": "eve_runtime/agent/agent.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:8d15402dd874dbd0ef0c3afeb5f3440bc06818d1483187b1ff30ba0a72e7545c",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFORT_ENV"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The production projector the projector cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cba7c51fa835ff154e6b7539c19dec57addcc",
+            "content": "sha256:59aa1d7c9b7a801460da9f7a23d708d9f5fba1edd473a8d65bc14e148fb0dca2",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_evidence_frame"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/eve.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The readiness probe the registry cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efe5a9054a15b1ebdcae7f0a5e978741155c635",
+            "content": "sha256:6efb4185237561f902d9379d22d993ee76ce30ac5a0dd15b5edd0c11b870c9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "eve_runtime_readiness"
+            },
+            "path": "mcp/src/agents_remember/kernel/eve_runtime_readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The mounted dashboard case consumes the capture produced alongside these cases, decoded through the wire mirror.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:cbc3745a1aedaae9ee0ebbb6e69d825529f3d2fbdbc462583651a984f41c5bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "eveConversationItems"
+            },
+            "path": "dashboard/src/test/fixtures/eveConversationCapture.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:526861ee93798a62581f1be88cbbe8bef41a159ecb53080660d5418601c72e08",
+            "locator": {
+              "kind": "symbol",
+              "name": "eveConversationStatus"
+            },
+            "path": "dashboard/src/test/fixtures/eveConversationCapture.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56e56d5d36f5f27cf81f1546d199a7ac8f01f951",
+            "content": "sha256:3ff84b25dd6533a27ed2d5b0e282bb227014871ad2f34050ce3cf9e823d10c80",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56e56d5d36f5f27cf81f1546d199a7ac8f01f951",
+            "content": "sha256:0ca3b35b7ca356006b09ab28df5609fafc7761dad833f681fe2f78bd5bdc8108",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The transport the double replaces, and the pinned release whose event vocabulary the census records.\n\nAnchor: `dependencies`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05456bd61dbf478a6af6f94c1def16dae7a97e93",
+            "content": "sha256:cc4374719a61b525f8d8aba3a818d60f7e1074918d2f92173cfe499e913fc811",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "eve_runtime/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37f30d7ae639fc46ccf2bddf8b47762b7102ae0e",
+            "content": "sha256:85776925c51b57961f99170d80648567c2f2e22517c82d683dd99d298589a45d",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "eve_runtime/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`CAPS-R17@v1` behaviour 4 is the requirement the declared-exclusion case evidences.\n\nAnchor: \"CAPS-R17 behaviour 4\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:6424a1eeb967054d14a62dd282b999bebbb83651d7c66ef8a19239301da01d57",
+            "locator": {
+              "end": 850,
+              "kind": "line_range",
+              "start": 828
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registry, readiness and terminal-launch surfaces, including the owned route exclusion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d7a14d6ef2ea9e00d35d53b3eef3801566ce381f2ba9f187241bbcf738e34f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveRegistryTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:7c57a769ccc5fa1307d38b8647c2cd5d662e1aee0ec6a8e075996426e4d0b86e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveTerminalLaunchTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:8bcf56d76c42f1e1f073410cf851481d2d31d6ffa9a6a2df77d924190fd50872",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveReadinessProbeTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:946b91f0ec484984b0400d6f3897387182af9b4d2a0211ba2d8a4802110fbceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declared_exclusion_belongs_to_the_route_and_is_owned"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The capability catalog's discovery and honesty surfaces, whose effort axis is published at this candidate because its runtime consumer exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:6a3e038b2945d878b691969b65426ea31b632fb3f55fe8b0a280470f504fbe77",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveCapabilityDiscoveryTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:4f057c6129f78549bc69c8c946beb77fb579ce0add4ceffaa2258e8305cac359",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveCapabilityHonestyTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two cases that keep the vocabulary honest without making the suite's verdict depend on the machine: the record-vs-vocabulary comparison, and the drift case that reads the live installed declaration when it exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d38f1200dadae9c29856d0cc6609db0745e37cb9eca2b0e274f684b0b2e54400",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_advertised_effort_vocabulary_is_the_installed_union_not_a_copy"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:df4a9246bca4eabd450b5b0afa69816289d8154e60d2e2ce0fa4e0f6d5101cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEffortVocabularyDriftTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:865dc43fb86e0c509098605a93d224f0102cf800e9facda9cb9e311c7b8a2c49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REASONING_UNION_AT_PIN"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:4366feb430c5fe914348756713ce44ef4c8aee1a77799df34db2494520c9f6b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_installed_reasoning_union"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Behaviour 1's sentinel rule, which the provider boundary cannot observe and so is pinned as an authored source shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d6f70d8f428b434bf7cb13747e0b604c0cc6ac4b1766b5838625db5d2a8a0b5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveEffortConsumerShapeTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:b3f46997001b550556e9bb9bc469a0155a9388ed4201ef61d59086ad6211594a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authored_agent_definition"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:b4e7a276e53f953d9363cf756191c755249b8c186841ad002b7381354af85530",
+            "locator": {
+              "kind": "symbol",
+              "name": "_code_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The projector surface, including the two-boundary rule and the preserved unknown event.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:d05b242f485214a32b662827d3f93f210681ab65c6b74be6765e8e20fd23c30c",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveProjectorTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:4a8cdb4e35ec9238ecedf8dad1bb67175b732cfe6c96aa704da818e4c3b12c79",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAdapterToProjectionIntegrationTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The capture, interaction and terminal-lift surfaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:a3d173277f0e216bce6397d6033a1903429301b1fd50af5af2286dcd4da15e59",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveConversationCaptureTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:06c03a24ee71099f23de68e4aa916542d9dc9c036d67c6a344be8b97e4030f59",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveInteractionProjectionTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:59b6f590b273a4f19f63cd01c46d5ce561c6a5a6c71e6c51bf1b67effa28ab38",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveTerminalProjectionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The asset and credential boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:6f0b329d48ba9f3e56a2e3fcb9fc1a382a8fc2391078b1cfa77c34f326e1bf34",
+            "locator": {
+              "kind": "symbol",
+              "name": "EveAssetAndCredentialBoundaryTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/launch_capsule.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/launch_capsule.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T09:05+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -117,54 +107,35 @@ None known for this module. The two open limitations around the paths it wires a
   `TerminalLaunchRequest.session_backend`, so the harness is checked as a PATH program). Pre-existing,
   measured by this leaf, owner **L17**.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured in the resolved source registry for this pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The operation a launch compiles, and the two role sets that decide the first branch of the gate. | `LAUNCH_OPERATION`; `LEGACY_SESSION_ROLES` | mcp/src/agents_remember/serving/launch_capsule.py:43-43; mcp/src/agents_remember/serving/launch_capsule.py:52-58 |
-| The two harnesses with a verified channel, and why every other harness is legacy by declaration. | `CAPSULE_CARRIER_HARNESSES` | mcp/src/agents_remember/serving/launch_capsule.py:60-70 |
-| The three modes, the resolved value's carriers and its admitted workspace, and the operator-facing explanation. | `LaunchCapsuleMode`; `LaunchCapsule`; `LaunchCapsule.explain` | mcp/src/agents_remember/serving/launch_capsule.py:73-80; mcp/src/agents_remember/serving/launch_capsule.py:108-159 |
-| The request the launch point fills from values it already holds; `is_role_configured` is the frozen-vocabulary membership test. | `LaunchCapsuleRequest`; `LaunchCapsuleRequest.is_role_configured` | mcp/src/agents_remember/serving/launch_capsule.py:82-106; mcp/src/agents_remember/serving/launch_capsule.py:97-100 |
-| The one workspace rule and the selection rule that follows it. | `session_workspace`; `selection_for_workspace` | mcp/src/agents_remember/serving/launch_capsule.py:166-176; mcp/src/agents_remember/serving/launch_capsule.py:179-192 |
-| The declared-legacy constructor refuses a blank reason, so "no capsule" always names why. | `legacy_launch_capsule` | mcp/src/agents_remember/serving/launch_capsule.py:195-208 |
-| The fail-closed answer for a role-configured seat whose capsule cannot be supplied. | `refused_launch_capsule` | mcp/src/agents_remember/serving/launch_capsule.py:216-231 |
-| The two reason functions: which role is a declared legacy seat, and which harness has no channel. | `legacy_seat_reason`; `capsule_channel_reason` | mcp/src/agents_remember/serving/launch_capsule.py:233-249; mcp/src/agents_remember/serving/launch_capsule.py:251-273 |
-| The whole decision tree in one function, including the no-resolver refusal. | `resolve_launch_capsule` | mcp/src/agents_remember/serving/launch_capsule.py:275-314 |
-| The port the serving launch points resolve through; the composition root fills it. | `LaunchCapsuleResolver` | mcp/src/agents_remember/serving/launch_capsule.py:162-163 |
-| The application-tier implementation the port is bound to. | `compile_launch_capsule` | mcp/src/agents_remember/application/role_capsules/launch.py:273-295 |
-| Both launch points resolve through this module before any host side effect. | `_spawn_launch_request`; `_open_terminal_response` | mcp/src/agents_remember/application/terminal_tools.py:740-787; mcp/src/agents_remember/serving/_app_terminal_routes.py:239-334 |
-| The runner's own agreement check, which is the product-side second axis of the one-workspace rule. | `parse_runner_config` | mcp/src/agents_remember/serving/harness_control_runner.py:144-171 |
-| The one launch point left on the legacy chain, with its named reason. | `LIBRARY_REOPEN_LEGACY_REASON` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124 |
-| The cases pinning the gate for every seat class, and the production-chain workspace agreement. | `test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class`; `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace` | mcp/tests/test_capsule_launch_wiring.py:615-657; mcp/tests/test_capsule_launch_wiring.py:874-918 |
+- The operation a launch compiles, and the two role sets that decide the first branch of the gate. [1]
+- The two harnesses with a verified channel, and why every other harness is legacy by declaration. [2]
+- The three modes, the resolved value's carriers and its admitted workspace, and the operator-facing explanation. [3]
+- The request the launch point fills from values it already holds; `is_role_configured` is the frozen-vocabulary membership test. [4]
+- The one workspace rule and the selection rule that follows it. [5]
+- The declared-legacy constructor refuses a blank reason, so "no capsule" always names why. [6]
+- The fail-closed answer for a role-configured seat whose capsule cannot be supplied. [7]
+- The two reason functions: which role is a declared legacy seat, and which harness has no channel. [8]
+- The whole decision tree in one function, including the no-resolver refusal. [9]
+- The port the serving launch points resolve through; the composition root fills it. [10]
+- The application-tier implementation the port is bound to. [11]
+- Both launch points resolve through this module before any host side effect. [12]
+- The runner's own agreement check, which is the product-side second axis of the one-workspace rule. [13]
+- The one launch point left on the legacy chain, with its named reason. [14]
+- The cases pinning the gate for every seat class, and the production-chain workspace agreement. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file. The eve carrier's environment names
 are read from `models/eve_capsule_carrier.py`, which is in this repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reader's own environment-name constants, which `eve_binding_env()` returns so writer and reader cannot drift. | `BINDING_REF_ENV`; `CAPSULE_PATH_ENV`; `CAPSULE_DIGEST_ENV` | mcp/src/agents_remember/models/eve_capsule_carrier.py:34-36 |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `parse_runner_config` repointed to mcp/src/agents_remember/serving/harness_control_runner.py:144-171. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T09:05+02:00 — 260915-CAPS-L15 curator: **created this card** (the census reported it
-  missing, `integrity.missing_onboarding`). Records the module as the one place a launch decides its
-  instruction mode and the one workspace rule that follows; the three-mode gate with its exact branch
-  order; the blank-reason refusal that makes "no capsule" a recorded decision; the admitted-workspace
-  read-back that makes cwd, settings selection and `AR_WORKSPACE_ROOT` one value by construction; the
-  rank discipline that keeps the decision in `serving` and the compile behind a port; and the two
-  limitations around the paths it wires that this leaf **reported rather than repaired** (D22, owner
-  L17; the dashboard route's `session_backend` gap, owner L17). Verification metadata pins the leaf's
-  base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real
-  code commit and no hash or fingerprint was invented here.
+- The reader's own environment-name constants, which `eve_binding_env()` returns so writer and reader cannot drift. [16]

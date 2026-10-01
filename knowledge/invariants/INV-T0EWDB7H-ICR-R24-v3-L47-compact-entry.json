@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The Intent review control in a leaf task document's change-set bar in the dashboard DetailPanel, for live and closed leaves.",
+  "conditions": [
+    "The bar is rendered for a leaf task document with an onOpen handler wired.",
+    "A live leaf's control opens the live candidate comparison; a closed leaf's opens its recorded comparison and is labelled (recorded)."
+  ],
+  "exclusions": [
+    "The reviewer surface's own subject navigation and refresh control.",
+    "The committed and working change-set buttons, which keep their line totals."
+  ],
+  "id": "INV-T0EWDB7H",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "76ada9a7-7cdc-4050-bf45-7b2a0a72937f",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf's task entry offers exactly one Intent review control, `⇄ Intent review +N −N` (`(recorded)` for a closed leaf), whose +N −N come from the comparison's changed-intent summary; for a tree comparison the same control also states that summary's attribution of the changed files (`· N unexplained`, with `· N unknown` when some are unknown, or `attribution partial` or `attribution unknown`, and nothing when both counts are zero). The entry has no subject picker, no refresh control and no backend paragraph, and always opens the task-context review.",
+  "status": "proposed",
+  "supersedes": []
+}

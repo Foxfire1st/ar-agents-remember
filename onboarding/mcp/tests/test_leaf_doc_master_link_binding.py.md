@@ -1,15 +1,5 @@
 # mcp/tests/test_leaf_doc_master_link_binding.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| path | `mcp/tests/test_leaf_doc_master_link_binding.py` |
-| doc_type | `file-level-onboarding` |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -100,120 +90,36 @@ None recorded. The module deliberately does **not** cover the false premise that
 `restamp_leaf_doc_lifecycle`'s docstring — that function has no caller in `mcp/src` at all (see the
 `tasks/leaf_doc.py` card), so there is no route to exercise; the live publisher is covered through start.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; the proving evidence is this
 repository's own source, the real `task_doc` plane and real Git objects.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external source is required for this repository-owned binding proof. | n/a | n/a |
+No external source is required for this repository-owned binding proof.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The pre-contract authoring path and the exact sequence that lost the master link: master and leaf authored through `task_doc` with no series contract, then started. | `test_leaf_authored_before_its_series_contract_gets_its_link_at_start`; `_author_master`; `_author_leaf`; `_start_leaf` | mcp/tests/test_leaf_doc_master_link_binding.py:78-93; mcp/tests/test_leaf_doc_master_link_binding.py:95-108; mcp/tests/test_leaf_doc_master_link_binding.py:143-159; mcp/tests/test_leaf_doc_master_link_binding.py:163-195 |
-| The repair path for an already-damaged document, asserted additive (authored content unchanged). | `test_an_existing_damaged_document_is_repaired_by_its_next_start`; `_write_leaf_document` | mcp/tests/test_leaf_doc_master_link_binding.py:110-141; mcp/tests/test_leaf_doc_master_link_binding.py:197-233 |
-| The fail-closed half: a leaf under a task root with no master document is refused with its remedy and writes nothing. | `test_authoring_a_leaf_with_no_master_document_is_refused_with_its_remedy` | mcp/tests/test_leaf_doc_master_link_binding.py:235-250 |
-| The counter-case that keeps planning usable: master plus two leaves before any start, still unstamped. | `test_authoring_a_master_and_its_leaves_before_any_start_still_succeeds` | mcp/tests/test_leaf_doc_master_link_binding.py:252-268 |
-| The refusal this module asserts, with its remedy text. | `_require_bindable_leaf_authoring` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:622-652 |
-| The start publisher that binds the missing link, entered from the real start path. | "def _publish_leaf_task_enclosure_binding(" | mcp/src/agents_remember/worktrees/modules/start.py:858-933 |
-| The worktree-side wrapper that resolves the canonical parent row and delegates to the task-domain planner. | "def plan_current_leaf_enclosure_registration(" | mcp/src/agents_remember/worktrees/task_leaf_binding.py:178-202 |
-| The task-domain planner that decides whether the derived master link is bound. | "def plan_leaf_doc_enclosure_registration(" | mcp/src/agents_remember/tasks/leaf_doc.py:332-391 |
-| The focused restamp decision-table class in the sibling module, which this module's docstring points at. | `LeafDocMasterLinkBindingTests` | mcp/tests/test_task_document_application_1.py:641-727 |
-| The two artifact rows that declare this module as an exact consumer, both through `test_worktree_support`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:283-283; mcp/tests/evidence-lifecycle.toml:363-363; mcp/tests/evidence-lifecycle.toml:326-333; mcp/tests/evidence-lifecycle.toml:373-380; mcp/tests/evidence-lifecycle.toml:337-343; mcp/tests/evidence-lifecycle.toml:384-390 |
-| The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-392 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" |mcp/tests/test-evidence-lanes.toml:323-323|
-| The transitive importer that makes the module a consumer of both supports. | `initialized_memory_repo` | mcp/tests/test_worktree_support.py:364-392 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_leaf_doc_master_link_binding.py" |mcp/tests/test-evidence-lanes.toml:323-323|
+- The pre-contract authoring path and the exact sequence that lost the master link: master and leaf authored through `task_doc` with no series contract, then started. [1]
+- The repair path for an already-damaged document, asserted additive (authored content unchanged). [2]
+- The fail-closed half: a leaf under a task root with no master document is refused with its remedy and writes nothing. [3]
+- The counter-case that keeps planning usable: master plus two leaves before any start, still unstamped. [4]
+- The refusal this module asserts, with its remedy text. [5]
+- The start publisher that binds the missing link, entered from the real start path. [6]
+- The worktree-side wrapper that resolves the canonical parent row and delegates to the task-domain planner. [7]
+- The task-domain planner that decides whether the derived master link is bound. [8]
+- The focused restamp decision-table class in the sibling module, which this module's docstring points at. [9]
+- The two artifact rows that declare this module as an exact consumer, both through `test_worktree_support`. [10]
+- The transitive importer that makes the module a consumer of both supports. [11]
+- The integration lane row the fail-closed manifest requires. [12]
+- The transitive importer that makes the module a consumer of both supports. [13]
+- The integration lane row the fail-closed manifest requires. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 Each case builds both repositories it spans — a code repository and an external memory repository — as real
 temporary Git repositories, which is what lets `worktree_start` run at all. No production
 cross-repository authority is claimed by this focused module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The external-memory side of each case is a real second repository created by the fixture, not a mock. | `init_repo`; `initialized_memory_repo` | mcp/tests/test_worktree_support.py:93-113; mcp/tests/test_worktree_support.py:364-392 |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 2 row(s) re-pointed by the installed fixer (its generated bullets kept); 4 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`task_doc_tools.py`, `test_task_document_application_1.py`, `test_worktree_support.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:30:07+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:323-323. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:30:07+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:323-323. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 2 citations into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T16:25:39+02:00 — 260921-ICR-L42 curator: No content impact: re-pointed this card's citations into `test-evidence-lanes.toml` after this leaf's line insertions (candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`). Each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:270-270. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:270-270. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:251-251. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:251-251. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:244-244. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:244-244. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T01:20+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_leaf_doc_master_link_binding.py.md:125` (?, ?) — re-read the claim against the landed source: the construct moved and the cited range was widened to the line that actually carries it, per the checker's own remedy.
-- 2026-09-18T19:53:17+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document** (one table row, two anchors). The artifact row cited `337-337` (the `[[artifact]]` header) for `"path = \"mcp/tests/closeout_input_test_support.py\""` and `384-384` (the next header) for `"path = \"mcp/tests/curator_coherence_test_support.py\""`; each `path = …` line sits one line below its header, so both ranges were widened by one line (`337-338`, `384-385`). The claim, the anchors and the consumer-list ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:237-237. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:237-237. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:232-232. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:232-232. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:231-231. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:231-231. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:191-191. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:230-230. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:230-230. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:228-228. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:228-228. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:226-226. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:226-226. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:204-204. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:202-202. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 8 generated projection bullet(s) by hand while resolving the memory sync** — `mcp/tests/test_leaf_doc_master_link_binding.py`, `init_repo`, `initialized_memory_repo`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand** — `mcp/tests/test_leaf_doc_master_link_binding.py`, `init_repo`, `initialized_memory_repo`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: `"mcp/tests/test_leaf_doc_master_link_binding.py"` → `mcp/tests/test-evidence-lanes.toml:195-195`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-- 2026-09-18T04:05:00+00:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read every claim in this card whose cited range the leaf's own source edits had moved. This leaf's insertion of `mcp/tests/test-evidence-lanes.toml` rows and a test module shifted the anchors below them, and the re-cited range of each claim was checked against the construct it is about rather than accepted from the mechanical projection. Ranges re-cited: `mcp/tests/test-evidence-lanes.toml:193-193` -> `mcp/tests/test-evidence-lanes.toml:194-194`. The generated projection bullets that recorded the same moves are retired here, so no mechanically rewritten range remains recorded as unverified evidence. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_leaf_doc_master_link_binding.py" repointed to mcp/tests/test-evidence-lanes.toml:190-190. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `initialized_memory_repo` repointed to mcp/tests/test_worktree_support.py:364-392. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/tests/test_worktree_support.py:93-94 in the row 137 of this card; the repetition added no pooled evidence
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `initialized_memory_repo` in the row 137 of this card from mcp/tests/test_worktree_support.py:93-94 to mcp/tests/test_worktree_support.py:364-366, the extent of the construct the claim is about (the checker named line(s) [364, 757] as its live location)
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `init_repo` in the row 137 of this card from mcp/tests/test_worktree_support.py:364-366 to mcp/tests/test_worktree_support.py:93-94, the extent of the construct the claim is about (the checker named line(s) [93, 160, 367] as its live location)
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/tests/test_worktree_support.py:364-366 to the row 126 of this card as the citation for `initialized_memory_repo`: no cited file carried the construct, and the checker named line(s) [364, 757] in this file as its live location; re-pointed `initialized_memory_repo` in the row 137 of this card from mcp/tests/test_worktree_support.py:93-94 to mcp/tests/test_worktree_support.py:364-366, the extent of the construct the claim is about (the checker named line(s) [364, 757] as its live location)
-- 2026-09-17T01:31:11+00:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/tests/test_worktree_support.py:364 to the row 126 of this card as the citation for `initialized_memory_repo`: no cited file carried the construct, and the checker named line(s) [364, 757] in this file as its live location; added mcp/tests/test_worktree_support.py:364 to the row 137 of this card as the citation for `initialized_memory_repo`: no cited file carried the construct, and the checker named line(s) [364, 757] in this file as its live location
-- 2026-09-14T18:00:00+00:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
-  this claim with its verification provenance because two of its three anchors appeared in both a
-  definition and an import in their own files, so no historical location was unique. Repaired the
-  citation, not the claim: the row is now three rows, each naming one exact declaration, so the
-  publisher, the worktree-side wrapper and the task-domain planner each resolve once. Verification
-  metadata remains closeout-owned.
-- 2026-09-14T17:00:00+00:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
-  claim(s) whose anchor no longer sat in its cited range and normalised 5 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-14T17:00:00+00:00 — 260913-LCA-L12 curator (drift re-verification): this row cites the
-  curator-coherence artifact path at `mcp/tests/evidence-lifecycle.toml:363`, which is its position
-  in the current working tree, where the in-flight `checkpoint_landing_test_support.py` artifact
-  block sits above it. The committed HEAD still carries that path at `:343`; the two forms differ
-  only by that uncommitted insertion, so the citation is correct for the tree this leaf is being
-  curated against and must be re-measured if the insertion does not land. Flagged rather than
-  silently chosen; verification metadata remains closeout-owned.
-- 2026-09-14T17:00:00+00:00 — 260913-LCA-L12 curator (flag resolved): the code worktree is frozen, so
-  the earlier flag is now measured rather than conditional. `mcp/tests/evidence-lifecycle.toml`
-  carries the inserted `checkpoint_landing_test_support.py` artifact block at `:342-361`, which
-  leaves `path = "mcp/tests/curator_coherence_test_support.py"` at `:363` — the position this row
-  already cites — and `path = "mcp/tests/closeout_input_test_support.py"` at `:283`. The pair
-  `283-283` / `363-363` is confirmed against the frozen tree, and the flag above stands as the
-  record of the interim state it described. Verification metadata remains closeout-owned.
-- 2026-09-14T05:05:00+00:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
-  `52875e7a`): created this one-to-one sidecar for the leaf's new integration module. Recorded the exact
-  sequence the leaf exists for (author master and leaf through `task_doc` with no series contract, then
-  start the leaf), the case-by-case proof shape — precondition asserted rather than assumed, repair asserted
-  additive, refusal asserted by message substance plus no write, planning counter-case — and the two
-  ownership facts the registration carries: registered in the integration lane at
-  `mcp/tests/test-evidence-lanes.toml:152`, and declared an exact consumer of
-  `closeout_input_test_support.py` (`:315`) and `curator_coherence_test_support.py` (`:373`) through
-  `test_worktree_support`'s `initialized_memory_repo`, which imports both. Verification metadata is
-  intentionally blank: the candidate is uncommitted and no commit contains this file yet, so closeout owns
-  the stamp; no execution or acceptance claim.
+- The external-memory side of each case is a real second repository created by the fixture, not a mock. [15]

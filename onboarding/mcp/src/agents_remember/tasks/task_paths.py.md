@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/task_paths.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/tasks/task_paths.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T15:34:31+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`|
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tasks/overview.md](overview.md)
@@ -78,46 +68,27 @@ today, and `tasks/__init__.py` does not re-export it.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; the proving evidence is this
 repository's own source and its `layers.toml` contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external source is required for this repository-owned path vocabulary. | n/a | n/a |
+No external source is required for this repository-owned path vocabulary.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The two constants and the slug rule that decide the enclosure directory name. | `SERIES_CONTRACT_FILENAME`; `ENCLOSURES_DIR`; `ARCHIVE_DIR`; `slugify` | mcp/src/agents_remember/tasks/task_paths.py:20-22; mcp/src/agents_remember/tasks/task_paths.py:25-28 |
-| The two path builders the derived-master-link binding calls. | `series_contract_path`; `leaf_enclosure_path`; `leaf_enclosure_dir` | mcp/src/agents_remember/tasks/task_paths.py:31-34; mcp/src/agents_remember/tasks/task_paths.py:37-40; mcp/src/agents_remember/tasks/task_paths.py:43-46 |
-| The predicates and the leaf-contract enumerator the resolution and catalogue paths rely on. | `is_archived_path`; `is_enclosure_contract`; `iter_leaf_enclosure_contracts` | mcp/src/agents_remember/tasks/task_paths.py:49-50; mcp/src/agents_remember/tasks/task_paths.py:53-58; mcp/src/agents_remember/tasks/task_paths.py:61-66 |
-| The re-export surface that keeps every existing caller working while the definition sits here. | "from agents_remember.tasks.task_paths import ("; `__all__` | mcp/src/agents_remember/worktrees/task_resolver.py:16-27; mcp/src/agents_remember/worktrees/task_resolver.py:29-49 |
-| The consumer whose binding need created this module. | `_derived_bindings`; `_derived_leaf_bindings` | mcp/src/agents_remember/tasks/leaf_doc.py:217-240; mcp/src/agents_remember/tasks/leaf_doc.py:243-253 |
-| The package order that makes this module the correct home, with no baseline and no exception. | "a module in package P may import package Q only when rank(Q) < rank(P)" | layers.toml:25-25 |
-| The armed rail step that measures it. | `_layering_step` | mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:310-320 |
+- The two constants and the slug rule that decide the enclosure directory name. [1]
+- The two path builders the derived-master-link binding calls. [2]
+- The predicates and the leaf-contract enumerator the resolution and catalogue paths rely on. [3]
+- The re-export surface that keeps every existing caller working while the definition sits here. [4]
+- The consumer whose binding need created this module. [5]
+- The package order that makes this module the correct home, with no baseline and no exception. [6]
+- The armed rail step that measures it. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository boundary is owned by this module; it is pure path arithmetic over one task root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No sibling repository boundary is needed to explain this file. | n/a | n/a |
-
-## Update History
-- 2026-09-30T15:34:31+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`): No content impact: this leaf's placement guard added 19 lines to `tasks/leaf_doc.py`, so the `_derived_bindings` row was re-pointed by that exact shift (`198-221; 224-234` → `217-240; 243-253`); it cites the same constructs, and its wording is unchanged. The installed fixer's normalisation also re-measured two passing rows into `task_paths.py` (ranges reordered) and `quality_plan.py` (`310-319` → `310-320`), files this leaf did not change. No verification stamp was advanced.
-
-- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator (uncommitted change set on `ar/260913-lca-l5-ar`, base
-  `52875e7a`): created this one-to-one sidecar for the change set's new source module. Recorded that it
-  exists to resolve a measured layering defect rather than as a refactor for its own sake — the first
-  revision of the change imported these two rules from `worktrees/task_resolver.py`, which inverted
-  `layers.toml`'s `tasks`(9) < `worktrees`(10) order and produced a `tasks <-> worktrees` cycle the armed
-  `layering` rail reports (17 violations / 2 cycles against a 16/1 base, measured with the repository's own
-  fitness function). Recorded the single-definition guarantee the resolution relies on, verified
-  structurally with `ast` over all of `mcp/src` rather than assumed, and the re-export arrangement that
-  keeps the existing callers working. Verification metadata is intentionally blank: the candidate is
-  uncommitted and no commit contains this file yet, so closeout owns the stamp; no execution or acceptance
-  claim.
+No sibling repository boundary is needed to explain this file.

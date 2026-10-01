@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -95,7 +85,9 @@ declared. `compute._Run.document` calls it as step 5; the declaration itself com
 - No real task document may declare `expectedKnowledgeEffects` before the L37 install (ruling Q2): the
   installed runtime's `TaskDocument` is `extra=forbid`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R11@v2` of task
@@ -104,43 +96,28 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: matching, classification and the satisfying row. | "Planned invariant effects reconciliation (MIK-R11@v2)" | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:1-27 |
-| The marked kinds and the unmatched reason. | `_MARKED_KINDS`; `UNMATCHED` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:62-62; mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:65-65 |
-| The kind registered on import, with its satisfying row. | `PLANNED_UNTOUCHED_KIND`; `register_item_kind` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:67-81 |
-| One declaration, its planned key and its record ID. | `Declaration` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:84-108 |
-| The task document's declarations read as `Declaration`s. | `declarations_from` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:111-126 |
-| The marks and the per-declaration summary. | `PlannedReconciliation` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:129-151 |
-| The reconciliation; no declaration gives `declared=False`. | `reconcile_planned_effects` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:154-181 |
-| Matching by subject form, and `subject_unknown`. | `_match` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:184-200 |
-| Which rows deliver an effect. | `_delivers` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:203-210 |
-| `new:` matches a writer-authored invariant of this leaf only. | `_new_invariant` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:213-221 |
-| The item, its facts, its stable ID and `satisfiedBy`. | `_untouched_item` | mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py:224-245 |
-| Step 5 of the run: marks, items and the summary. | `reconcile_planned_effects`; `plannedEffects` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:254-256; mcp/src/agents_remember/application/knowledge_worklist/compute.py:275-276; mcp/src/agents_remember/application/knowledge_worklist/compute.py:291-291 |
-| Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches. | `test_declarations_match_only_the_rows_that_deliver_them_and_mark_every_item` | mcp/tests/test_planned_knowledge_effects.py:246-360 |
-| A planned row answers its item; the stored predicate agrees. | `test_a_planned_row_answers_its_item_and_the_stored_predicate_agrees` | mcp/tests/test_planned_knowledge_effects.py:363-398 |
+- The module docstring: matching, classification and the satisfying row. [1]
+- The marked kinds and the unmatched reason. [2]
+- The kind registered on import, with its satisfying row. [3]
+- One declaration, its planned key and its record ID. [4]
+- The task document's declarations read as `Declaration`s. [5]
+- The marks and the per-declaration summary. [6]
+- The reconciliation; no declaration gives `declared=False`. [7]
+- Matching by subject form, and `subject_unknown`. [8]
+- Which rows deliver an effect. [9]
+- `new:` matches a writer-authored invariant of this leaf only. [10]
+- The item, its facts, its stable ID and `satisfiedBy`. [11]
+- Step 5 of the run: marks, items and the summary. [12]
+- Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches. [13]
+- A planned row answers its item; the stored predicate agrees. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The declaration is read from the leaf's task document in the coordination root, through the task plane
 (`tasks/leaf_decisions.py`); this module receives it as data and crosses no repository boundary itself.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `application/knowledge_worklist/compute.py`, so the citation rows into them were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or, for the multi-anchor step-5 row it declined, by the exact base-to-staged line shift, every anchor checked in both ranges. No verification stamp was advanced.
-- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `mcp/src/agents_remember/application/knowledge_worklist/compute.py`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. No verification stamp was advanced.
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): No content impact: this card's source is unchanged. `compute.py` moved under it (MIK-R14 bound the run's classifier to a local and added step 8). The "Step 5 of the run" row could not be shifted (its first line changed) and was already partly stale at base (`plannedEffects` lay outside `228-244`), so it was re-measured by hand to the call, the marked items and the summary key (`247-249; 268-269; 284-284`).
-- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): No content impact: citation-only repair. This card's source is unchanged; the step-5 row into `compute.py` moved when L06 split `_Run.document` into helpers and added step 6 (`243-272` → `228-244`, re-measured by hand: the fixer declined it as a multi-anchor row). Claim wording unchanged. No verification stamp was advanced.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): created this card for the new file MIK-R11 adds, recording the architect rulings of 21:56:18 (Q1, Q2, Q4, Q5) and 22:35:34 (F3). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/hunkMarkers.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/hunkMarkers.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:26:08+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -87,37 +77,28 @@ displayed region keep two marks (ICR-R34 rule 1).
 - The unknown-membership reason restates L32's server rule (review R1 N1). If MIK-R32's response later carries a
   per-occurrence reason, this function should read it instead.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R34@v1` (adopting `ICR-R34@v1`), the adopted `ICR-R24@v3` item 2 and the architect's rulings live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement: nothing here classifies; marks sit on the owner's side lines only. | "Nothing here classifies."; "owner hunks drawn in one displayed region keep two marks." | dashboard/src/panels/review/hunkMarkers.ts:1-8 |
-| The target an occurrence opens, carrying its membership state and reason. | `MarkTarget` | dashboard/src/panels/review/hunkMarkers.ts:20-33 |
-| An occurrence, an entry (realization or proof), an unknown line, a hunk's mark with its label and compact text, and a file's marks. | `MarkOccurrence`; `MarkEntry`; `HunkMark`; `FileMarks` | dashboard/src/panels/review/hunkMarkers.ts:35-85 |
-| One file-level mark for a confirmed-unregistered or wholly unreadable file; otherwise one mark per owner hunk. | `hunkKey`; `fileMarks` | dashboard/src/panels/review/hunkMarkers.ts:87-102 |
-| A hunk's realizations and proofs apart, and its unknown lines, including a linked hunk's unread side (ruling Q2). | `hunkMark`; `unreadChangedSides` | dashboard/src/panels/review/hunkMarkers.ts:104-140 |
-| One entry per kind and invariant; occurrences merged across sides; each with its target. | `markEntries`; `addOccurrence` | dashboard/src/panels/review/hunkMarkers.ts:142-201 |
-| The unknown-membership reason from the owner's facts, naming L32's rule as its owner (ruling Q3, review N1). | `unknownReason`; "The rule's owner is MIK-L32's server" | dashboard/src/panels/review/hunkMarkers.ts:203-227 |
-| The gutter label, the compact phone label (review R1 F2) and the occurrence label. | `markLabel`; `compactLabel`; `occurrenceLabel` | dashboard/src/panels/review/hunkMarkers.ts:229-284 |
-| Placement on the owner's side lines within the drawn window; an inline deletion below its removed lines. | `firstDrawn`; `markAnchor`; `wholeSide` | dashboard/src/panels/review/hunkMarkers.ts:290-347 |
-| The owner's response these functions read. | `ReviewFileClassification`; `ReviewLaneLink` | dashboard/src/data/reviewLane.ts:123-134; dashboard/src/data/reviewLane.ts:61-73 |
-| The cases over the six real scenarios. | "names every intersecting invariant of a replace hunk, with each family occurrence"; "marks every hunk a window draws, a neighbour shown as context too" | dashboard/src/panels/review/hunkMarkers.test.ts:34-227 |
+- The module's own statement: nothing here classifies; marks sit on the owner's side lines only. [1]
+- The target an occurrence opens, carrying its membership state and reason. [2]
+- An occurrence, an entry (realization or proof), an unknown line, a hunk's mark with its label and compact text, and a file's marks. [3]
+- One file-level mark for a confirmed-unregistered or wholly unreadable file; otherwise one mark per owner hunk. [4]
+- A hunk's realizations and proofs apart, and its unknown lines, including a linked hunk's unread side (ruling Q2). [5]
+- One entry per kind and invariant; occurrences merged across sides; each with its target. [6]
+- The unknown-membership reason from the owner's facts, naming L32's rule as its owner (ruling Q3, review N1). [7]
+- The gutter label, the compact phone label (review R1 F2) and the occurrence label. [8]
+- Placement on the owner's side lines within the drawn window; an inline deletion below its removed lines. [9]
+- The owner's response these functions read. [10]
+- The cases over the six real scenarios. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new pure marker model MIK-R34 adds, recording rulings 2026-09-30T16:19:34 Q2 (per-side availability on a linked hunk) and Q3 (the membership reason), review R1 F2 (compact labels) and N1 (the reason's owner), and one candidate invariant. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,295 @@
+{
+  "path": "mcp/src/agents_remember/models/closeout/input.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:54a904befebc3584ce05c8e27e36c69d05dca7c4ef6e4e3723ac81485036176a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutCommitLegName"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:b5e66c5b68b109768d7f9b3fa3b46cef7c18c9b10729650e94dee8263695b769",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectiveCloseoutInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:3162c4cb7386c9c98f99ac7bd91eb82e310fb8fadea4003c53a0fbe7d9b30e8a",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:8e272d5d3aebe96cc9f9600241586e3ded7ea7ec493af34631d2b12e90cd5971",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutMessageInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:dde7ba7bb8b303bbf419202b9a1fb3358d68f2505b2a5b83df405199a842647e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutInvalidField"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:cddc1709e2ea3b45f4c901c4af378308e81acf84cceb4caaf0cc213cac5ebedd",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectiveCloseoutLeg"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Raw observations and typed refusal vocabulary are public data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:8e272d5d3aebe96cc9f9600241586e3ded7ea7ec493af34631d2b12e90cd5971",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutMessageInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Effective legs are a discriminated union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:e54381c886b1d85d7c60d4da4be545159e10a954ea58111664f02e9e9d811bd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_normalized_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only enabled legs can return a raw commit message; this stays the public echo.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:12df68e68178f7e07b15cd2589ba56c931f47d76a2804bd0d2b77b073bcadc0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "message_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:0f887bf6cf3018b7dc699e839b093448d4413518c63e4a341769f050d3ff7806",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutPublicMessageField"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The model imports and calls the kernel renderer; the key and trailer rendering have one kernel definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
+            "content": "sha256:27080a1f03fa1174fbaf751a244ae5e116cb782523bded9c4b4c60e60c3f17f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_message"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:cac1e23697a3434a11cee71fcbb951fe998c7a5be61e3dad9742c6dfb4fff134",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_COMMIT_TRAILER_KEY"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
+            "content": "sha256:37da4281074d36584cef491db2dd8172b971abb050bccc5b9d2f475aeabbb2c2",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse.\n\nAnchor: `rule`; `kernel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:ded9434595ee95aa22bb7a4663f23ce66d79f845bb753c206d9512e29970ee22",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:8fe8d2dbc5ef9a40e9118c3f3035400382b7d92aa7c66a818470c579b2a36af7",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The round trip that proves this module's rendered trailer is the one the kernel reader parses, rather than two keys that merely look alike.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:30746d4806b2439de8caaad3c786e9af8abe15f4626494615f4c457b7c5a741c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rendered_trailer_is_the_one_the_reader_parses"
+            },
+            "path": "mcp/tests/test_memory_ledger.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "content": "sha256:2d54a909f329b7644cb4e9d713567c0c0efd8d0c4fd2b369998949e685d01a51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_attribution_key_is_named_and_rendered_in_exactly_one_module"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_census_producer_reaches_the_shared_renderer"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The worktree and direct routes render attributed memory messages at their real commit seams (since MIK-R09 the worktree route first validates a converted leaf's exact tree); no ledger commit is produced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
+            "content": "sha256:f42805eb6774d150f98de11e3a85ac0aaf847636b3e0fc97b7ac9423f264f663",
+            "locator": {
+              "kind": "symbol",
+              "name": "_commit_memory_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
+            "content": "sha256:71dc6b111f8da282d014b6892504a7795300587220e818cb6e952e175f640f4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_memory_commit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,405 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_dataset_contents.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of why one implementation serves both callers and what the drift would cost.**\n\nAnchor: \"one of them decides whether authored work may be\"; \"would show up as destroyed work rather than as a test\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:1a7cb1732a6ecc76278c2adc8a548020f8abdfa25fe4ff25ea6e04d5be16abba",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The refusal code carried into the partial sentence when a page refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:fdbe1ccdd5e6050aa2facc0e1d0875b673a587c18c756ffad79ae8415c527151",
+            "locator": {
+              "kind": "symbol",
+              "name": "_code_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:ea31e662d143a9b80a904db47c3a0845912f786eaa07908b17d6398e3c3bfe1a",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**Where a page's revisions come from: the rows' own subjects, with an empty revision contributing nothing.**\n\nAnchor: \"revision_id\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:77e9f2b3806be6259ea943c96bbce3e977842c786fedd9e8eb4418bc5da63e33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_page_revisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The view surface the rows come from, which is the same one the reviewer and a planning read use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "721814af4b9ad2433aeced4ba0ed34e488afa210",
+            "content": "sha256:62cf6d459b3b020429a11f14244aaa2ebde11fa29514e733e81dc88c849aca92",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_knowledge_view"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_views.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "721814af4b9ad2433aeced4ba0ed34e488afa210",
+            "content": "sha256:dca3ba4412698ece6c55ae7eae7e6140c713106631f46c6753874288b93262aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_view_context"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_views.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusal"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The view request, its payload and the page bound one page carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+            "content": "sha256:6b647ae2b2899fda0ee87e4a0ece8ee472286d84ea3c7ae0af7c40357020543a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+            "content": "sha256:aff482448a3b603ee7de02dc7042aa6cca6ad453dc35d25db526a57ad4803533",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+            "content": "sha256:45c5970e34abab5b39e30220d40751e5373aeb3dbcb2209f6fc04db4f209af28",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantView"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+            "content": "sha256:7bec36256f3df5ba16aee04895dd616e8fca0b6aa58729572cb2632f2d712106",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_VIEW_ROWS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+            "content": "sha256:dda475d8a1a9617079a9a154c6cebad4b62683e9bc3e0da5bcdf688c7a742ced",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewRefusal"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The two callers this one walk serves: the run's remaining-work readback and the cleanup guard.**\n\nAnchor: `dataset_revisions`; `measured_empty`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2537932adaf1fcf2a546d95ac62646867cebb363",
+            "content": "sha256:5f1be94aa5887c5e9d40c5a9fcd3a9dc219ecd49f0000da44e692e0bb6636f41",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9f14291da442a8fcdc018e7c36f6058ea172fc5",
+            "content": "sha256:2f1aefd9d8e55953b29249f5d3eea7c1f4ba7652e9df75355f05a2d9b05fc5e5",
+            "locator": {
+              "end": 470,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_staging.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the page cap, the value and the one entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:77efb5d5f0955efd27dcbd716c2578ba143ba9f694744013639ddd0390272ca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:9b0f7a6ffca3cd007ebbad901d82c849b5f66db52c2ff499765503e40397c4c5",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The page cap, generous for a real catalogue and finite for an implausible one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:efdf7c045aae6c72b08da11f694e2631104fa6cf4fed0e47a808cb0f02b74603",
+            "locator": {
+              "kind": "symbol",
+              "name": "DATASET_CONTENTS_MAX_PAGES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The four non-merging states as a declared vocabulary.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:ab9c5b008870e831973ebb089b126b1c0568e031d785a2ac07f4b73ade2980ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContentsState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The four states defined, including no-file-at-all as a measurement distinct from an unreadable file.**\n\nAnchor: \"which is not the same fact as\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:5c0b37ed11a19dcdafe9ec6e2c4c59aa8da258ec27099d7d605c6367fa651e33",
+            "locator": {
+              "kind": "symbol",
+              "name": "DatasetContents"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:209f6274ded8448da4aab679827bc67025d4032bf6dcefb0ec85db2b4627dd98",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**Absence established only by the two states that finished their work.**\n\nAnchor: \"manufactured work\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:5858879aceba190b398b1d98f7595c630981a81e7f6a7941994d4fa5eaddae90",
+            "locator": {
+              "kind": "symbol",
+              "name": "absence_established"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:f8177ee450848e443fffdbac28ff7642fff73c14d4df4328cf70d00f5b7191b8",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The one case where \"no revisions\" is a measurement, which is what cleanup may act on.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:121f015c2db148978a6414fb8505ec643d2b7f8ef773345efa88043f56724a27",
+            "locator": {
+              "kind": "symbol",
+              "name": "measured_empty"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:bbfa65b19e08ff381911496d1566a5cd6898d9657947f5ab10ac6779399bd651",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The bounded walk: absent file, missing namespace, page loop, refusal as partial, and the cap as a limitation.**\n\nAnchor: \"absence was not established\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:14fa91bd97dab5748198f2792e608111e24665f83bef8a543d1ddfcf8b166994",
+            "locator": {
+              "kind": "symbol",
+              "name": "dataset_revisions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:cf0bd8424547e92a5aa7c222be7484d37ce943258390e70c6c93a2ee9229e25b",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The unreadable-dataset constructor, which never reports emptiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:0546e665f025fbddb4e1473480f923c0e989471026845ea11e9529b3f0f99db3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreadable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "615727b6c4a71ce193ff77c11f224d25484a20cf",
+            "content": "sha256:f2873a79272972d1d4af086ec3b678628355cea5fb02236e63c97b70badc9eb0",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

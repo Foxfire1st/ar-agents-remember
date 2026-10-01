@@ -1,0 +1,159 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/legacy_db.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The read-only open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:4013bf1eccbceb8f37d6d3e15f92063b84f2fff908789f7174743aa8fcd3137f",
+            "locator": {
+              "kind": "symbol",
+              "name": "export_database"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Head revisions and their depth in the predecessor chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:449a25f7f7061e6900c36848def7cc4c3147d61b384545406237d7ddf14260c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_heads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Task and leaf from `actor_ref`, learned per task directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:9adcbbdf7f9cd6ec312484b4bf1a31544673536d059e048849e172a138ab351e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Origins"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Hand-off lines leave `conditions`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:c5488c1d0b7ab2eb6337c287317b137c865a2f474bd9afd9b5241788da675023",
+            "locator": {
+              "kind": "symbol",
+              "name": "HANDOFF_PREFIXES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:e04cf369cf645f302e4b3480d9287b9cd45634b461861cc1895c8b760ff87baa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_split_conditions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Records: derived IDs, collisions refused, status, revision, admission, family routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:5d9fb0cf86ca19a7bed309f6cb5d3c0d8968ddf5591b3190f41452f04ef3324c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_export"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Entries in their recorded blobs, derived IDs from (invariant, path, locator), collisions refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:1ffccbed50b6951bd55803e7647e56dfd3f288ea1f1900fb6accaa2f9ab1a258",
+            "locator": {
+              "kind": "symbol",
+              "name": "_export_realizations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e184fab00b751aa24ca6bec87ad797ed520fbc07",
+            "content": "sha256:0e220f9de9100f9ec046970f85e4b11ef981c182f0e0409f6ef69c304bc0a134",
+            "locator": {
+              "kind": "symbol",
+              "name": "_new_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The export matches a legacy database in the real column spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:ec0d9bde3bf1ef7efa5741d8855c2a92425ee46d790e9443ff70a11afbae0c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_database_exports_head_records_and_entries_in_their_recorded_blobs"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fixture database.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
+            "content": "sha256:312d96b27fbdb197fd4d07ed0e73ce3cc41b458bc8e983859b6882d43e89212f",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_database"
+            },
+            "path": "mcp/tests/knowledge_conversion_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

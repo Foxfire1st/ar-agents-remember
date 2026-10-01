@@ -1,0 +1,173 @@
+{
+  "path": "mcp/src/agents_remember/serving/pi_rpc_events.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pi frame schemas and UI policy.\n\nAnchor: `PI_RPC_DIALOG_METHODS`, `PI_RPC_FIRE_AND_FORGET_METHODS`, `PiRpcJsonlDecoder`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:7c38810d5a829e9b5a04d151ddd6085eab55127b204a1c27f18e36c8bd2536e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PI_RPC_DIALOG_METHODS"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:144334d2984ee6f9b8d94b9654ad9fdfe03810a314fa80485bbb4062b04ef132",
+            "locator": {
+              "kind": "symbol",
+              "name": "PI_RPC_FIRE_AND_FORGET_METHODS"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:a738fc3791becd4409737a72391950a93987a59c27e11031fc5314ce5a5b3764",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiRpcJsonlDecoder"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:74438b85008de0b90028786194aa1c74574aa0b2246466ef4cd6efc980eafa34",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adapter event-stream owner.\n\nAnchor: `PiRpcAdapter`, `_event_stream`, `subscribe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:f04b6c8c2f9c3c5127447d9d793956f72bfa8669e200ee7ea07f26bde0ab1007",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiRpcAdapter"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:7526876e0c5252dfe218e1868ac81fef0a18b07f211125f0bc1df6c0ec710b56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_event_stream"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:cc6633836764850ebda28d016fa090dab982d2381770a795fc723722db9516f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "subscribe"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Event/settlement coverage.\n\nAnchor: `test_retry_compaction_and_agent_settled_are_not_early_idle`, `test_extension_ui_round_trip_and_reclamation_scale`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a333f9adf0d1c4c9c1cc6bc0ecd1c3f36fd6a38",
+            "content": "sha256:a333354b34e4c60fca9fce699d5a7b2c87e0609803d6106a6e679e9d01bf0a2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_compaction_and_agent_settled_are_not_early_idle"
+            },
+            "path": "mcp/tests/test_pi_rpc_adapter_ops_2.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9a333f9adf0d1c4c9c1cc6bc0ecd1c3f36fd6a38",
+            "content": "sha256:0b86e44e0119c772cda01af4ef0482f51667f5a59fab2f6d2fa004ee34cc458f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_extension_ui_round_trip_and_reclamation_scale"
+            },
+            "path": "mcp/tests/test_pi_rpc_adapter_ops_2.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9a333f9adf0d1c4c9c1cc6bc0ecd1c3f36fd6a38",
+            "content": "sha256:97f2a82726319afb447d7610f4c00b28d38568b6a4f6aec269c20416e513a276",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/tests/test_pi_rpc_adapter_ops_2.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9a333f9adf0d1c4c9c1cc6bc0ecd1c3f36fd6a38",
+            "content": "sha256:ed3165b61f25b88616cca63a966b55df079f76704a71f104fbaf51eda72d45c3",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/tests/test_pi_rpc_adapter_ops_2.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Valid-role contentless message_end frames cross as evidence without fabricated transcript text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01608c7cc53b618a668b33cc25f0d2a94bb2c1b3",
+            "content": "sha256:f8c55e8d9d93ef538573efb874223fc8f0e51b190a89b9780ef08d93f9861dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_message_event"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

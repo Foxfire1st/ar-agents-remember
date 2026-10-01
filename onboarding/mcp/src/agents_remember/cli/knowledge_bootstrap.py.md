@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/cli/knowledge_bootstrap.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/cli/knowledge_bootstrap.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` |
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
@@ -114,95 +104,60 @@ a dataset and never mints an identity.
   the database modules stay until L26).
 - `--discard-staging` exits refused unless the cleanup owner discarded or found nothing.
 - `--config` reuses the umbrella CLI's trusted discovery; no environment variable is invented.
+- **The database route is locked for unconverted memory once the repository holds converted memory (L37,
+  MIK-R09 rule 6; MIK-R37 rule 3).** `_run` routes a converted memory tree to the file writer
+  (`run_wave_write`). For an unconverted tree it now asks `cutover_lock_refusal(memory,
+  operation="knowledge-bootstrap", ...)` before `bootstrap_knowledge`, prints the refusal and returns
+  `EXIT_REFUSED`. In a repository that holds no converted memory the database bootstrap runs as before. `_run`
+  is a realization of INV-1XKX9ERN (re-anchored from `run`, which binds twice in this file).
 
 ### Todos
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; `BOOTSTRAP-HANDOVER.md` is the process authority
 this entry point implements, and it is a task-tree document rather than a configured domain source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external documentation is required for the bootstrap CLI adapter. | — | — |
+No external documentation is required for the bootstrap CLI adapter.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the gap, the two refused shortcuts and the three modes.** | "the knowledge write plane did not have"; "EXIT ZERO IS NOT A PUBLICATION CLAIM" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:1-90 |
-| The two exit meanings: a report was produced, or the invocation was refused. | `EXIT_REPORTED`; `EXIT_REFUSED` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:100-101 |
-| **The whole argument surface, including the absent destination argument.** | `add_arguments`; "--repo" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:104-155 |
-| **`--commit` documented as the whole write act, with "Without it this reports and writes nothing, which is the dry run."** | "--commit"; "which is the dry run" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:117-124 |
-| The two read-only modes and their own stated boundaries. | "--status"; "--discard-staging" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:125-137 |
-| The authorization reference that is both the admission's authority and the authorship actor. | "--authorization-ref" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:113-117 |
-| **Why contradictory modes are refused rather than resolved by precedence.** | `_invocation_refusal`; "silently picking one is how a dry run becomes a real one" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:158-170 |
-| **The two refusals that keep `--status`, `--discard-staging` and `--commit` from meaning two things at once.** | `_mode_refusal`; "one run cannot mean both" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:173-183 |
-| The run's own requirements: a readable list and a non-blank authorization. | `_list_refusal` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:186-195 |
-| **Settings resolution through the umbrella CLI's own discovery, with no second convention.** | `_settings`; `load_config`; `discover_config` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:198-211 |
-| The one admission this invocation runs under, or the refusal that stopped it. | `_admitted` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:214-220 |
-| The typed refusal payload a refusal is rendered from. | `_refusal_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:223-229 |
-| The read-only status payload: what the staging retains and what the location holds now. | `_status_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:232-288 |
-| The run payload the report is rendered from. | `_run_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:291-397 |
-| The identity record one payload renders, and the cleanup payload. | `_identity_record`; `_cleanup_payload` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:400-407; mcp/src/agents_remember/cli/knowledge_bootstrap.py:410-416 |
-| **`run`: the invocation refusal answered first, then the one selected mode; the run mode is `_run`.** | `run`; `_dispatch` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:487-494; mcp/src/agents_remember/cli/knowledge_bootstrap.py:497-512 |
-| **The run mode: a converted admitted memory root is written by the curator file writer as a wave, with the bootstrap scope as task; anything else takes `bootstrap_knowledge` as before.** | `_run`; `run_wave_write` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-538; mcp/src/agents_remember/cli/knowledge_write_route.py:179-219 |
-| The `--wave` argument, required only for converted memory. | "--wave" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:144-149 |
-| **The cleanup's one outcome, and the exit that is refused unless nothing was at stake.** | `_cleanup` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:541-548 |
-| **The admission resolver this entry point is the public face of.** | `admit_bootstrap_context`; `BootstrapRefusal`; `AdmittedKnowledgeBootstrap` | mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:118-129; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:132-151; mcp/src/agents_remember/application/knowledge_bootstrap_admission.py:175-214 |
-| **The run this subcommand drives, and its refusal value.** | `bootstrap_knowledge`; `BootstrapRunRefusal` | mcp/src/agents_remember/application/knowledge_bootstrap.py:98-104; mcp/src/agents_remember/application/knowledge_bootstrap.py:157-244 |
-| **The bounded cleanup owner behind `--discard-staging`.** | `discard_bootstrap_staging`; `StagingCleanup` | mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:214-221; mcp/src/agents_remember/application/knowledge_bootstrap_staging.py:418-479 |
-| The subcommand registration that makes this file reachable. | `knowledge_bootstrap`; "knowledge-bootstrap" | mcp/src/agents_remember/cli/__main__.py:62-70 |
-| The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4). | "coordination_root=admitted.authority.coordination_root" | mcp/src/agents_remember/cli/knowledge_bootstrap.py:526-526 |
+- **The module's own statement of the gap, the two refused shortcuts and the three modes.** [1]
+- The two exit meanings: a report was produced, or the invocation was refused. [2]
+- **The whole argument surface, including the absent destination argument.** [3]
+- **`--commit` documented as the whole write act, with "Without it this reports and writes nothing, which is the dry run."** [4]
+- The two read-only modes and their own stated boundaries. [5]
+- The authorization reference that is both the admission's authority and the authorship actor. [6]
+- **Why contradictory modes are refused rather than resolved by precedence.** [7]
+- **The two refusals that keep `--status`, `--discard-staging` and `--commit` from meaning two things at once.** [8]
+- The run's own requirements: a readable list and a non-blank authorization. [9]
+- **Settings resolution through the umbrella CLI's own discovery, with no second convention.** [10]
+- The one admission this invocation runs under, or the refusal that stopped it. [11]
+- The typed refusal payload a refusal is rendered from. [12]
+- The read-only status payload: what the staging retains and what the location holds now. [13]
+- The run payload the report is rendered from. [14]
+- The identity record one payload renders, and the cleanup payload. [15]
+- **`run`: the invocation refusal answered first, then the one selected mode; the run mode is `_run`.** [16]
+- **The run mode: a converted admitted memory root is written by the curator file writer as a wave, with the bootstrap scope as task; an unconverted one takes the cutover lock (L37) and then `bootstrap_knowledge` as before.** [17]
+- The `--wave` argument, required only for converted memory. [18]
+- **The cleanup's one outcome, and the exit that is refused unless nothing was at stake.** [19]
+- **The admission resolver this entry point is the public face of.** [20]
+- **The run this subcommand drives, and its refusal value.** [21]
+- **The bounded cleanup owner behind `--discard-staging`.** [22]
+- The subcommand registration that makes this file reachable. [23]
+- The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4). [24]
 
-## Cross-Repo References
+- A bootstrap run: the file writer for converted memory, the cutover lock, then the database ingest. [25]
+- knowledge-bootstrap refuses unconverted memory once the repository holds converted memory. [26]
+
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file: the repository is named by `--repo` and every
 resolution stays inside that repository's own declared scope. The resolved settings' `crossRepo.allow` is
 empty, so nothing here names, reads or writes another repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** The run-mode paragraph records that the converted wave passes `admitted.authority.coordination_root` to `run_wave_write`, so requirement endpoints resolve and are reported (review F4, ruling 02:05:07). One row was added. Rows below the new line were re-pointed by the installed fixer; no claim was reworded. No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): No content impact: citation ranges only. MIK-R08 moved lines in `__main__.py`, and the rows here that cite them were re-pointed to the same constructs (by the installed `memory-citations --fix` where it could regenerate a range, and otherwise by the exact base-to-candidate line map). No claim, anchor or source file of this card changed.
-- 2026-09-29T08:08:46+00:00: Generated citation repair: `EXIT_REPORTED`; `EXIT_REFUSED` repointed to mcp/src/agents_remember/cli/knowledge_bootstrap.py:100-100; mcp/src/agents_remember/cli/knowledge_bootstrap.py:101-101. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T08:08:46+00:00: Generated citation repair: `_invocation_refusal`; "silently picking one is how a dry run becomes a real one" repointed to mcp/src/agents_remember/cli/knowledge_bootstrap.py:158-170; mcp/src/agents_remember/cli/knowledge_bootstrap.py:164-164. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T08:08:46+00:00: Generated citation repair: `_mode_refusal`; "one run cannot mean both" repointed to mcp/src/agents_remember/cli/knowledge_bootstrap.py:173-183; mcp/src/agents_remember/cli/knowledge_bootstrap.py:177-177. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T08:08:46+00:00: Generated citation repair: `_list_refusal` repointed to mcp/src/agents_remember/cli/knowledge_bootstrap.py:186-195. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T08:08:46+00:00: Generated citation repair: `_admitted` repointed to mcp/src/agents_remember/cli/knowledge_bootstrap.py:214-220. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T08:08:46+00:00: Generated citation repair: `_refusal_payload` repointed to mcp/src/agents_remember/cli/knowledge_bootstrap.py:223-229. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T08:08:46+00:00: Generated citation repair: `_cleanup` repointed to mcp/src/agents_remember/cli/knowledge_bootstrap.py:540-547. No content impact: mechanical anchor-range projection bound to citation source snapshot c2ff7be37748258a742372475ca8866db78df73e27e0de3f4e49550bdfa6662e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **body update — the converted-memory dispatch and `--wave`.** The Logic now says the run mode is `_run`, which sends a converted admitted memory root to `cli/knowledge_write_route.run_wave_write` as the wave `--wave` names (task = the bootstrap scope) and otherwise calls `bootstrap_knowledge` unchanged; the argument paragraph names `--wave`; an invariant states that unconverted memory keeps the database bootstrap until the cutover. The `run`/`_dispatch` row was reworded and re-derived to the constructs' own extents (`:487-494`, `:497-512`; its old ranges still passed only because the word `run` also sits in `_summary`), and two rows were added (`_run` at `:515-537`, `--wave` at `:144-149`). The other rows moved by the docstring, import and argument insertions and were re-pointed by the fixer or by exact base-to-working line mapping; their wording is retained. The prose line references in the Logic paragraphs (`:456-491` and the like) predate this leaf and are left as history. No verification stamp was advanced.
-- 2026-09-29T09:30:11+02:00 — 260928-MIK-L20 curator (uncommitted change set on `ar/260928-mik-l20`, code base `aa07b1c937d1dc01ea6c51d0582eaf3871afcc8d` plus the staged delta): **No content impact** — citation-only repair. MIK-R20 registers `knowledge-census` in `cli/__main__.py` (one import line and a longer docstring sentence), which moves the later registrations down by two lines; this card's registration row was re-pointed to the new extent, its claim unchanged. No verification stamp was advanced.
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`__main__.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`application/published_intent.py`, `mcp/tools/knowledge.py`, `mcp/registration/knowledge.py`, `models/tools/knowledge_responses.py`, `cli/__main__.py`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed by the installed fixer or, for the multi-anchor rows it declined, by exact base-to-working line mapping; a per-document `memory-citations` check then reported 0 findings. No claim wording changed.
-- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): No content impact: the `knowledge-bootstrap` registration row re-pointed to `cli/__main__.py:54-62` after MIK-R21 registered `knowledge-format` above it; the other re-pointed rows are the anchor-range projection's. Claim meaning unchanged; no stamp advanced.
-- 2026-09-24T10:50+02:00 — 260921-ICR-L29 curator, **micro-round-2 bytes (documentation only)** (uncommitted change set on
-  `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`): **re-read against the
-  corrected docstrings; the card and the source agree** — the contents block is named `destinationContents` with `publishedByThisRun` in the source, matching this card. All ranges were re-derived for the line shift. **No verification stamp was advanced.**
-- 2026-09-24T10:20+02:00 — 260921-ICR-L29 curator, **fix-round bytes** (uncommitted change set on
-  `ar/260921-icr-l29-ar`, base `0d7910f9d646161c414ed6543453536a3c749d49`; gate `verify-l29-round2.md`,
-  first line `pass-with-findings`): **the report's contents block was renamed because its old name was
-  false in one state.** `publishedContents` became **`destinationContents`** with a new
-  **`publishedByThisRun`** flag, so a refused-publication run can no longer be read as though the
-  contents it shows were this run's publication. The block is a read of the declared destination whether
-  or not this run published into it. The module is 517 lines on this candidate (501 when this card was
-  first written), and two new reference rows cite the block and the flag. **No verification stamp was
-  advanced** — the candidate is uncommitted and the governed closeout owns the real code and memory
-  commits.
-
-- 2026-09-24T09:20+02:00 — 260921-ICR-L29 curator (uncommitted change set on `ar/260921-icr-l29-ar`,
-  base `0d7910f9d646161c414ed6543453536a3c749d49`): created this one-to-one card for the module
-  `ICR-R29@v1` introduced as **the taskless bootstrap CLI adapter**. The stamp basis is the leaf's base
-  commit, because the module is untracked there. Two sentences carry the correctness: the destination is
-  **derived, never accepted** — there is no argument that can aim it elsewhere — and **exit zero is not a
-  publication claim**, so the report carries the read-back and the named remaining work rather than
-  leaving the exit code to be read as success. A third is that planning is the default and writes
-  nothing at all, while a contradictory mode pair is refused rather than resolved by precedence. No
-  verification stamp beyond the leaf's base is advanced: the candidate is uncommitted and the governed
-  closeout owns the real commit.
+No meaningful cross-repo references found.

@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/markerReturn.cards.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The entries, including the changed `_confined_stat` range and the unchanged range.\n\nAnchor: \"\\\"id\\\": \\\"RLZ-7X2C4VRQ\\\"\"; \"\\\"id\\\": \\\"RLZ-5KCQCHVQ\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7befebd23b9d30a44bd83365ec66615d96be4788",
+            "content": "sha256:83a0453c2dc9809b3db7629319a5b518233e600311a65434a986f6f73da0ebb6",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/markerReturn.cards.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92897c5349f3345fff3e532e3c2380b0ed621a1c",
+            "content": "sha256:555e4f89b42ea66edcdb42567289e7d27b2b793de8969426a1d2ab1368b2f948",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/panels/review/markerUnknown.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

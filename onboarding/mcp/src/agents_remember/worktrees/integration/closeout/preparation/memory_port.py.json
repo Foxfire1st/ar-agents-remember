@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/memory_port.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`PreparedMemoryCertificationRequest` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "441eaed0e16fb4632b4522d4d75a2bfe30deb4a4",
+            "content": "sha256:4819ed081a1dc8d6bf9ef89b7a76ab4f69855a9447fb520b2ced17fee0d34f52",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedMemoryCertificationRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`PreparedMemoryCertificationResult` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "441eaed0e16fb4632b4522d4d75a2bfe30deb4a4",
+            "content": "sha256:16e88b98b06605ec86efa1fc64fd935df2586a404cb8569353c9e242f1d1dfe2",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedMemoryCertificationResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`PreparedMemoryCertificationPort` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "441eaed0e16fb4632b4522d4d75a2bfe30deb4a4",
+            "content": "sha256:23d66273a92830e8d2e0e593888a249969cd8ae3e5866898fc781a64cb4d5215",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedMemoryCertificationPort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

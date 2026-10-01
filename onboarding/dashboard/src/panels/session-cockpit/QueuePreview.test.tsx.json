@@ -1,0 +1,133 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/QueuePreview.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixtures — `identity`, `capabilities`, `page`, `queued`, `seed` — that build interrupt-capability and working-turn evidence.\n\nAnchor: `conversationIdentity`, `conversationCapabilities`, `conversationPage`, `queued`, `seed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db73aee9d619ec648ddf4bd1b961ca0c8f8c3342",
+            "content": "sha256:2ff2eb71003b281bea221655edc985baaa350ff4e92d663f218ac780aee8e564",
+            "locator": {
+              "kind": "symbol",
+              "name": "queued"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db73aee9d619ec648ddf4bd1b961ca0c8f8c3342",
+            "content": "sha256:7aa2d55887d41a1d895788149828610ff5ebec45b7db74b012e2e6047c682e86",
+            "locator": {
+              "kind": "symbol",
+              "name": "seed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db73aee9d619ec648ddf4bd1b961ca0c8f8c3342",
+            "content": "sha256:a125d5279abb32468532518e2d1b305f9cfcb2d3a3876738fdfc216296c03964",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db73aee9d619ec648ddf4bd1b961ca0c8f8c3342",
+            "content": "sha256:f1302be2ca4b12332e16a851fe8bc67ab3c6d48c86831301b268fa8da29944d5",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db73aee9d619ec648ddf4bd1b961ca0c8f8c3342",
+            "content": "sha256:5d2b7b3a9be0a8be59323a448711d74f4460845bff7df70755584e57a6f93bc7",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The component gates its interrupt-capability read on a defined session id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f085bc82f54370ef4d82e8b56d5cb356c11ccbcf",
+            "content": "sha256:bd040b8631c40fea485acd08940576b368fcf13bcc90b2d65add2cffa98de229",
+            "locator": {
+              "kind": "symbol",
+              "name": "interruptCapability"
+            },
+            "path": "dashboard/src/panels/session-cockpit/QueuePreview.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Implementation under test (`QueuePreview`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f085bc82f54370ef4d82e8b56d5cb356c11ccbcf",
+            "content": "sha256:1992a9039fe0c540f87525c049990aa59a383a14c70809eb68cdabfe20604c82",
+            "locator": {
+              "kind": "symbol",
+              "name": "QueuePreview"
+            },
+            "path": "dashboard/src/panels/session-cockpit/QueuePreview.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`conversationCapabilities` / `featureCapability` — the full 23-leaf tree these fixtures now override three leaves of.\n\nAnchor: `conversationCapabilities`, `featureCapability`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:7d6fe87a94c03f5cb7457201327a23d9c5c3901deef84f41f110b257154578d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationCapabilities"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4968494f59006ceb24210c9021cbbc32d6fa039",
+            "content": "sha256:83d84ff9633875c9a6d6ffeab1676ecaccf3cb8b835225555c2c46a26c999eae",
+            "locator": {
+              "kind": "symbol",
+              "name": "featureCapability"
+            },
+            "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

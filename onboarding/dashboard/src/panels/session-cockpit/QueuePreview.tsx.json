@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/QueuePreview.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared composer mounts the preview and owns the Alt+Up action.\n\nAnchor: \"withdrawing queued message…\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8448208d92f3f1248ce35f98678d37f8299ba73b",
+            "content": "sha256:2fa20fbea924484ddcfd1eceaa7a47f7ebceadea6b2ee89888dfe1e9f51ef693",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "dashboard/src/panels/sessionComposerHooks.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The lifecycle client hydrates only raw-free authoritative status rows.\n\nAnchor: \"if (!isLifecycleState(state)) throw new Error(\\\"invalid submission status\\\");\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e62d3c995f9eae68a7efc0cb2afa1a2a075cc492",
+            "content": "sha256:02396321ad3f12c0b23e8c6e2cf67f62454cf138372ba7b49b9f2694064b66f9",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "dashboard/src/data/submissionLifecycleClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

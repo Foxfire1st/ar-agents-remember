@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines the exact task publication request, transaction, and result models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:28bfe9cddd38a79e9918e126b4e476daafd3bc036bf3c99a02f10923fb56bd7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocPublicationConflict"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:ce3f71f959c82159c1d56cd7d9aedfec2a471d105e557bf4093b35527533492e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocPublication"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:609566939ff3f24cd3010781e5ad5c7f64b1f1d22abdad6d8e21ff7e7c1191d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocPublicationTransaction"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:d2d6a1ac66b328c485a71679c3e1c60a884bf2d28a1a7f23e89ee5f502ad103a",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocPublicationResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publication delegates exact validation, task write, affected-scope invalidation, and independent rebuild to the task-first owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:4d206d0dab49978f058b58afa65ebd16a43e03dd1ee6e725c91c5083efa842b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_task_doc_set"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:1499691d3198481842de351bbadbd56e0cdf6962f0873bf242452ffbec7c9d9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_task_doc_transaction_and_refresh"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:4bc67f0bcc1f1ceae7f2c62d0b8739e80465e397f0f076f7778761cceb513265",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_task_doc_projection_effects"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:349152e3128018486243d62f95488305bb95b709485f6463e151842eee199c38",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_task_doc_transaction_projection_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Graph cardinality is checked before transaction construction while disk title reads remain inside the publisher callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:382ac1c56b0075ab841e4b01ce53a94985b33f5cb6b60e4726e6bf3f0c0240b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_publication_transaction"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Scope changes bind each candidate to its exact accepted original bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:19cfeebf26faa8038c801e0e9300ea4d5a0e6621cbaa65bd45a41aaa8cd70245",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_scope_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Dry-run preflight validates source currentness and the classifier-scoped union through the same closure as publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:92f2c232559d8a0058238b68c576d6788ac773c27bc92d7afb175a42c9d78347",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_task_doc_transaction"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb1607bd808d69b7cbcb9a52e5fe3b71acd1622c",
+            "content": "sha256:0d97fe2e18f2423ee08737fe40a6220845a89203eef9f2b68f1db1f61f2db47b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_task_doc_sources_current"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Focused proof refuses two graph documents before publisher/projection mutation and preserves sentinel bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56afdabb8daf6d4f55f78484a975fdd60e99601b",
+            "content": "sha256:bc41f407e5e432caa4afc030e851385ffe5f0e3276e64ff6a3768eefbc05629e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocGraphPublicationTests"
+            },
+            "path": "mcp/tests/test_task_doc_graph_publication.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

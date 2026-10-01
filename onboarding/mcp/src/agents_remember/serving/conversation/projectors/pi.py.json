@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/projectors/pi.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Pi RPC adapter streams live RPC events (tool lifecycle frames) and pages durable entries with native id/parent coordinates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:7526876e0c5252dfe218e1868ac81fef0a18b07f211125f0bc1df6c0ec710b56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_event_stream"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:3954c30a09b39686c90bfe36b2355123d3fb9b15e59d1f52ba6f42314dcbd28d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_native_page"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:b204a0d1ee478ab64711fb1d7f6e6a4e07d07d571905048af45dec2e33621403",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28fa3a6a2bc202932d643593662095d9f7969cf5",
+            "content": "sha256:2e91da96b786dd2ab47c92ff5bf1b3dd00adafb1ff90953c2e527784e8180c53",
+            "locator": {
+              "end": 611,
+              "kind": "line_range",
+              "start": 576
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_adapter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store unions tool-call blocks by `block_id` so start → update → end keeps the input block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:7d9ac71bac0011cf43221274d07284a14409a7dfc3003f8c4758e67befc32033",
+            "locator": {
+              "kind": "symbol",
+              "name": "_union_blocks"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57a95ab52597e1cbeac8d08b2d52b26373fe6e40",
+            "content": "sha256:7306af5bdabad5c0e9201ad803edd0dade2a99087548c1fcffcb02bc2835d194",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The engine continues native reads eagerly for pi so live items always carry native identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e73e115a6fe5e85cc188df828a303cd9883af437",
+            "content": "sha256:b3dbb2dbacd6aaed03ac4ce8b98da5dea0ce2db3eed0d338026d22ea82aecd8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll_native_continuation"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

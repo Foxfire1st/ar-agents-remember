@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/scene.ts
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/engine-room/scene.ts`                 |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`                  |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
@@ -45,32 +35,22 @@ fields degrade to the honest absent/planned register rather than fabricating sta
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The scene packet and its resolving entry point. | `EnclosureScene`; `resolveScene` | dashboard/src/panels/engine-room/scene.ts:22-58; dashboard/src/panels/engine-room/scene.ts:324-369 |
-| The per-aspect resolvers consumed by the layers. | `resolveEngines`; `resolveBlocks`; `resolveRecovery` | dashboard/src/panels/engine-room/scene.ts:74-110; dashboard/src/panels/engine-room/scene.ts:157-195; dashboard/src/panels/engine-room/scene.ts:292-303 |
+- The scene packet and its resolving entry point. [1]
+- The per-aspect resolvers consumed by the layers. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the new
-  scene module extracted from `EnclosureCanvas.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+No applicable cross-repository source was found.

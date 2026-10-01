@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/sidecar.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Metadata parsing, path mirroring, and `rel` come from `discovery`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47fbe0fe7452568f5bb7f766308430b516d8f247",
+            "content": "sha256:7766b2b0afb8de7bc41a411aa84bb26a640b5e876490a100355d228a0a15151f",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_table_metadata"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4386fbbbc4761658185ef15c5fc3f5f7e9c7931a",
+            "content": "sha256:8f09e6eb513ec1e3b96652de09519b0d96ef811cbc36202bf17ca56fc631bb35",
+            "locator": {
+              "kind": "symbol",
+              "name": "mirror_onboarding_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47fbe0fe7452568f5bb7f766308430b516d8f247",
+            "content": "sha256:7a9c34c9d98d9287ba75e16a2e4b3030569517b34f49d5d0e4eb2b3f198ee018",
+            "locator": {
+              "kind": "symbol",
+              "name": "rel"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4386fbbbc4761658185ef15c5fc3f5f7e9c7931a",
+            "content": "sha256:d29922ee58fb7322040679a9cefe25226867202ca615df89397420548dc95040",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47fbe0fe7452568f5bb7f766308430b516d8f247",
+            "content": "sha256:48e86279c5e126dde845fdadbf48fef97187365f01da582e5958ee83c3c666df",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Entity-catalog sidecars import `classify_entity_catalog` from `entities`.\n\nAnchor: \"from agents_remember.memory_quality.integrity.onboarding_drift_check.entities import ( classify_entity_catalog\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c3931f72183810cec08c4833bc012565e56f4b",
+            "content": "sha256:4e5fc359016a0e21f970f6905e7f57b2bd75681cbc064e029a79e2ac8bb34f7f",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "For `repo-entity-catalog` sidecars, `classify_sidecar_onboarding_units` delegates to `classify_entity_catalog`.\n\nAnchor: \"if doc_type == \\\"repo-entity-catalog\\\": return classify_entity_catalog\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c3931f72183810cec08c4833bc012565e56f4b",
+            "content": "sha256:c0b53669ddd69ae80da6aa677be3d761329e019db4564ec6f0099de746418251",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Local staged/unstaged change notes come from `git_ops`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c60efeec0ef3127bc1dd8922d20481a59200a57",
+            "content": "sha256:f6cb20d281d1e682ccf0ada344c0bee6e932dbb150ea317f5a0102a6685c8f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "local_change_note"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c60efeec0ef3127bc1dd8922d20481a59200a57",
+            "content": "sha256:831583716d45ccf8c8619c1d38d71c78b709ac708cc3797042b5a0c3b913e9d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "local_route_change_note"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `cat-file -e` and `diff --quiet` calls run on the single kernel git runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:b1152ceffbd4c31d92575acbc4a3c7b3ac5f4c523c673df3f488d6f1d2ff6f33",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

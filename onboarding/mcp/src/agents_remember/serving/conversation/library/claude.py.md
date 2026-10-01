@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/library/claude.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/library/claude.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:34 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Native conversation library overview](overview.md)
@@ -87,15 +77,15 @@ title, and a missing title is never fabricated.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal port.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The ports suite proves rows/paging, block/role/provenance mapping, range-absurd timestamp
 failures, and exact argv resume targets on fake helpers; the dedicated agents suite proves
@@ -103,62 +93,18 @@ sub-agent grouping, capability-honesty notes, agent reads, and the resume fail-c
 helper boundaries; the installed suite proves the library gates on CONTRACT, not version; the
 locked helper implements the native seam, including the on-disk `subagents/` enumeration.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The Claude library owns helper-backed list/read and exact native resume-target construction. | `ClaudeConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/claude.py:88-432 |
-| Out-of-range native timestamps raise LibraryStoreError even when their value has an integer type. | `_iso_from_millis` | mcp/src/agents_remember/serving/conversation/library/claude.py:620-627 |
-| Claude sub-agent rows derive identity and title from native helper metadata. | `_agent_row` | mcp/src/agents_remember/serving/conversation/library/claude.py:386-432 |
-| Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the Claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
-| The locked helper defines the session-listing call. | "listSessions({" | mcp/native_helpers/conversation_library/src/claude.ts:83-83 |
-| The locked helper defines the session-messages call. | "getSessionMessages(" | mcp/native_helpers/conversation_library/src/claude.ts:377-377 |
-| The locked helper defines the session-info call. | "getSessionInfo(" | mcp/native_helpers/conversation_library/src/claude.ts:426-426 |
-| The locked helper enumerates sub-agent transcripts and their metadata. | `listSubagents` | mcp/native_helpers/conversation_library/src/claude.ts:180-204 |
-| The locked helper reads sub-agent transcripts through the on-disk authority. | `readClaudeAgentTranscript` | mcp/native_helpers/conversation_library/src/claude.ts:313-369 |
+- The Claude library owns helper-backed list/read and exact native resume-target construction. [1]
+- Out-of-range native timestamps raise LibraryStoreError even when their value has an integer type. [2]
+- Claude sub-agent rows derive identity and title from native helper metadata. [3]
+Historical evidence (retired with the d3610903 suite reduction): The installed suite historically exercised the Claude library gates on contract, not version — a runtime drift still enables when the native operation probe passes. These removed artifacts provide no current execution or capability-enablement proof.
+- The locked helper defines the session-listing call. [4]
+- The locked helper defines the session-messages call. [5]
+- The locked helper defines the session-info call. [6]
+- The locked helper enumerates sub-agent transcripts and their metadata. [7]
+- The locked helper reads sub-agent transcripts through the on-disk authority. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local port.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
-
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/serving/conversation/library/claude.py` since the L2 base commit is the
-  whole-tree `ruff format` pass in `00e8379`, which re-wrapped 7 line(s), touching only redundant
-  grouping parentheses. Checked by parsing both revisions and comparing the abstract syntax trees
-  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
-  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
-  card makes about its own source still holds. Noted while checking: the references table also
-  cites line ranges inside `test_conversation_library_agents.py`,
-  `test_conversation_library_installed.py`, `test_conversation_library_ports.py`; those ranges
-  shifted because this task edited those files, so treat the cited numbers as approximate and the
-  linked cards as authoritative.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
-- 2026-07-26T15:34 — 260718-CHATS-L7: sub-agent grouping — list rows now carry
-  `ConversationLibraryAgentRow` children from the locked helper's `subagents/*.jsonl` +
-  `.meta.json` evidence; agent conversations open through the port's composite
-  `<sessionId>/<agentId>` vendor id (read routes `agentId` to the helper;
-  `resolve_resume_target` fails closed with an exact reason); a helper without enumeration
-  proof degrades to a visible `agents_note` (`agentsEnumerated` marker covers the empty
-  catalog), and nested `spawnDepth > 1` agents are named, never silently absent. Sidecar:
-  rewrote Purpose/Logic/Conventions/Invariants, refreshed ports-suite citation ranges (+7 shift
-  from the L7 fake-transport addition), re-anchored the claude.ts citations to the post-L7
-  helper layout (listSessions moved to L80; new sub-agent section L135-L370), and added the new
-  test_conversation_library_agents.py suite. Change uncommitted; verification hash/date
-  intentionally unchanged.
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: R4 version-gate removal — corrected the now-false
-  "version handshake re-proving locked runtime/helper versions on every spawn" claim. The helper
-  handshake reports observed versions as informational evidence only; the contract (the succeeding
-  `list`/`read` operation) is the only gate and a version drift never demotes the surface. Reworded
-  the installed-suite reference from "2.1.214 vs locked 2.1.211 fails closed" to gates-on-contract.
-  Change uncommitted; closeout re-stamps verification.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the helper-backed Claude port
-  sidecar. Verification is blank until closeout commits and stamps the new source.
+No meaningful cross-repo references found.

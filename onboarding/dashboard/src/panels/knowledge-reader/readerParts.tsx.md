@@ -1,15 +1,5 @@
 # dashboard/src/panels/knowledge-reader/readerParts.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/knowledge-reader/readerParts.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -54,45 +44,36 @@ changes the reader's address (and so the URL), never local state (rule 5).
   decision uses `DecisionCard`.
 - Proved by `KnowledgeReader.test.tsx`: the file case (six markers, reference 2 lists 3 targets, the decision in
   full), the directory case (superseded-by link), and the code-span case (`reports[0]` and a fenced
-  `candidates[3]` kept, only [1] and [2] linked); the reviewer's mutant that also rewrites code nodes was killed.
+  `candidates[3]` kept, only \[1] and \[2] linked); the reviewer's mutant that also rewrites code nodes was killed.
 
 ### Todos
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement: every link is a navigation. | "Every link is a navigation: it changes the reader's address" | dashboard/src/panels/knowledge-reader/readerParts.tsx:1-4 |
-| The navigation context. | `ReaderNav`; `ReaderNavContext`; `useReaderNav` | dashboard/src/panels/knowledge-reader/readerParts.tsx:24-36 |
-| A part that could not be read, named. | `Unavailable` | dashboard/src/panels/knowledge-reader/readerParts.tsx:169-175 |
-| Record, path and code links. | `RecordLink`; `PathLink`; `CodeLink` | dashboard/src/panels/knowledge-reader/readerParts.tsx:177-199; dashboard/src/panels/knowledge-reader/readerParts.tsx:201-214; dashboard/src/panels/knowledge-reader/readerParts.tsx:216-230 |
-| Any link or reference end, as a navigation. | `TargetLink` | dashboard/src/panels/knowledge-reader/readerParts.tsx:259-266 |
-| One entry with its state and code link. | `EntryRow` | dashboard/src/panels/knowledge-reader/readerParts.tsx:270-302 |
-| An alternative with its reason and `reconsider when`; the decision header with the derived status. | `AlternativeItem`; `DecisionHeader` | dashboard/src/panels/knowledge-reader/readerParts.tsx:304-324; dashboard/src/panels/knowledge-reader/readerParts.tsx:346-358 |
-| A decision in full, wherever it appears. | `DecisionCard` | dashboard/src/panels/knowledge-reader/readerParts.tsx:361-389 |
-| Markers linked in text nodes only (F4). | `splitMarkers`; `linkMarkers`; `remarkReferenceMarkers` | dashboard/src/panels/knowledge-reader/readerParts.tsx:409-424; dashboard/src/panels/knowledge-reader/readerParts.tsx:426-435; dashboard/src/panels/knowledge-reader/readerParts.tsx:438-440 |
-| The reference list and the prose with its markers. | `ReferenceList`; `ProseWithReferences` | dashboard/src/panels/knowledge-reader/readerParts.tsx:442-474; dashboard/src/panels/knowledge-reader/readerParts.tsx:477-534 |
-| The file case and the code-span case. | "opens a file with its prose, resolved references, entries, families and linked records"; "links [n] markers in prose text only, never inside code spans or fences" | dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:118-155; dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx:400-416 |
+- The module's own statement: every link is a navigation. [1]
+- The navigation context. [2]
+- A part that could not be read, named. [3]
+- Record, path and code links. [4]
+- Any link or reference end, as a navigation. [5]
+- One entry with its state and code link. [6]
+- An alternative with its reason and `reconsider when`; the decision header with the derived status. [7]
+- A decision in full, wherever it appears. [8]
+- Markers linked in text nodes only (F4). [9]
+- The reference list and the prose with its markers. [10]
+- The file case and the code-span case. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new shared parts MIK-R29 adds, recording the carried L13 rule (a decision in full wherever it appears) and ruling 09:42:58 F4 (markers never rewritten inside code spans or fences). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,79 @@
+{
+  "path": "dashboard/scripts/require-dagger-test-environment.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Token format, fixed attestation path, read failure, and exact-match outcomes share one validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:cca86771e02079a74809fd0d101dedf1e9881b65a63991f1103d60b14591d5fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "DAGGER_TEST_ATTESTATION_ENV"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:f01d260480c09a205c3b3174264de781e6f6351dc75030c7cdc19f34fcde4270",
+            "locator": {
+              "kind": "symbol",
+              "name": "DAGGER_TEST_ATTESTATION_PATH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:aa10c6c1e8543a7962406400499148de4d7cd42667a97a69f61af0c0a5280616",
+            "locator": {
+              "kind": "symbol",
+              "name": "daggerTestEnvironmentError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The throwing facade only adds a subject label and Dagger guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:1de2dde639c181144bafc495e4c5c0e171c566a10e6eb82bd2c14d11940e7a64",
+            "locator": {
+              "kind": "symbol",
+              "name": "requireDaggerTestEnvironment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The changed-lines CLI invokes this owner as the first operation of direct `main()`.\n\nAnchor: \"requireDaggerTestEnvironment(\\\"changed-lines coverage\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d1857a57c467a4753eba362622c41f739f85696",
+            "content": "sha256:dcda4323d9cfb52b5202bee29219fb95d7c5c9b0cafe72af05fcdd4ad13ada56",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

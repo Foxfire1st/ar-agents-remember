@@ -1,0 +1,239 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_leaf/chain.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: the chain, compact entries, the order, `no_governing_family`, and the rendering only `read_ar_files` applies.\n\nAnchor: \"Route-chain families of a seed path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:b75c30bc501f36414e7e2c2c0cb511b50ab4dfbca30c16d86162809dcd9e3f51",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The page's statement of the chain: the directory, the link count and the state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:b0cf1dd4fcd2c630d2e7d23657a483332f02ca747677bc16133ffb700d4d43a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_chain_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The rendering only `read_ar_files` applies: a served entry keeps its place as a reference row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:fb7520866aa02e96fcfbe885136ac053324e9883758d4410850292feb591f167",
+            "locator": {
+              "kind": "symbol",
+              "name": "shorten_served"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:8841d5be1cbce8e22a9ed65975759e05d7275ce2d3edd4e10e7f92a21f613bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_hash"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:f24ca0669092e3e9559e6b08b13233b2a8d592e1dd79e0416568465a71042be4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rendered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The derivation label, the row kinds and the chain states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:665b12006e40c99693c0e9223d6cd9ebad619860c7563cdf6f9cebfe6af717cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHAIN_DERIVATION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:b74234687f5de98dfa1a9b9631085aad44be8470725e3f4368aaf219776a157c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHAIN_ROW"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:d1e52a6ff494f7d4a6698e6db8c83db762e58a2edb37db05d8446aba6dc1b229",
+            "locator": {
+              "kind": "symbol",
+              "name": "NO_GOVERNING_FAMILY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:dda2ca926d662bb641606917050fa5851b9288bfa78164c09967a2b7cbc440cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_EARLIER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The seed-dependent fields left out of the served hash.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:0e4afa556a7dba1212e05de06469db0b351a9d148c49808d3a50e51ac808c9e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SEED_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One live family on the chain, with its live members, routes, the routes on the chain and whether a member is at the seed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:666ed884e1c2a5ad39134d6b5e0a0f07ebc1b69c7ebd1dd73f49f70152e8500a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChainFamily"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The chain's first link: the path's directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:28d204672ec5e2947466ad3f458ea69e1a897bc3f70bae424c2d984a22b52354",
+            "locator": {
+              "kind": "symbol",
+              "name": "chain_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The lookup through the index's governing families, skipping retired and non-family records, ordered by nearest route then ID.\n\nAnchor: `families_governing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:3f823d93e45fe81150fbc4d7bbdee36541b3a1c0b030f10d87d666f5a95889e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_chain"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The chain: the directory, then every ancestor, ending at the root.\n\nAnchor: `ROOT_ROUTE_PATH`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:91aba7591dde5b4709554ed7f393508ca879b751ac7f9b0cdc3a711f32ff2e8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_links"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Only live invariants count as members.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:ac79d4be0569cf648238190a610ab6827e7f446fa329f2c8f571328cdd220162",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_invariant"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The compact entry, with the family seed in `expand`.\n\nAnchor: \"expand\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
+            "content": "sha256:794f0ffb1389207a1356e5f273cc770345d0f64fed5684f4bb27da001f2c7fbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "chain_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

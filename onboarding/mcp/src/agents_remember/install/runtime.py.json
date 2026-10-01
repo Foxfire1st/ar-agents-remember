@@ -1,0 +1,229 @@
+{
+  "path": "mcp/src/agents_remember/install/runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The MCP application entry point forwards one typed request to the installer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10ffef7f8dfe40ebf25ce46db7d11c2f8d75c181",
+            "content": "sha256:467f4a6a564822c9967d0253e2cb876837e10d04373f708da2679f96482fb423",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_runtime_install"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Provider watcher lifecycle orchestration and recovery-action construction live in the extracted install helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "909cdf94dd906ed0ba63b830f69c0f882f746ddb",
+            "content": "sha256:eca44e11ad8b6a90f0b547953d798b691fd504ba17efadef1387246e922e3476",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_provider_watcher_rebind"
+            },
+            "path": "mcp/src/agents_remember/install/provider_watchers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`RuntimeInstallScope` carries the required resolved selection, and both public entry points funnel through one private installer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:e4fec328bd3a60d5ee744f217835980dfa2d8f113efc1b3c60097970fa52f12c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeInstallScope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_runtime"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:f2592acb3de309e5d5c9d230a540dc6b8dbb08fbf49afdb79e8cbd5d9846823c",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_experimental_runtime"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:34d06356a11377c85a04abb93a03795223ac2a1d7fddab178d5bb43a1ec4fef8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_runtime"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:60b74a9ee66f025d175b9d6378eff0dbb52a4c6497c1ee5426ae63da2808ac03",
+            "locator": {
+              "end": 632,
+              "kind": "line_range",
+              "start": 616
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The cutover withholds the legacy startup chain and removes a copy an earlier install left.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:e1c4866fd44742edd13a94902b7e6e147bdea6722cd3e4fd8f1b788cb0d702f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capsule_cutover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The installed `skills/` tree is authored source, not the compiler's input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:e31be0499207b85fd31680c64be58e41eb979566f28bfdc25d809009997c4384",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_assets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The packaged application mirror is installed into `<coordination_root>/runtime/eve-agent` with machine-local trees preserved rather than pruned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:7cb1b3ddb979b1dc4df45c6fb5cccfce574d0ff1ec5aa44a030cc73e7837fe0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_eve_application"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An already-resolved selection is what the installer consumes; only the configuration entry point reads the ambient environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:c394882fe50cb8c5fbd4c58641c06077492cbbacce38cca0e5715639c13753cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_experiment_install"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The launch path probes the packaged `runtime/eve-agent` path before the checkout's `eve_runtime/` and honours `AR_EVE_RUNTIME_ROOT` first; the generator writes the differently-named packaged mirror `runtime/eve-runtime`, which is why that probe path stays deliberately unpopulated in a checkout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d942e51b199424415541bd0624a50d27db7452ea",
+            "content": "sha256:19cda5555f03bf915477aba7ab1af77453d01f8a611967753e71d974c9922736",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_runtime_root"
+            },
+            "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Provider settings generation derives lifecycle settings from MCP authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:9969a7f0182302fc8c5ea375ef17d65c7cf07b3c2a67979ddb3cc322acaa450b",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:1264386338f6eb9979ee3f52c35e1b7c96dec06709fe251cffbb6d4458ae6fb9",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:f0e41d7834874b6bcc77ad3010c515db8b76282842ed22366209fcd595dff9ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

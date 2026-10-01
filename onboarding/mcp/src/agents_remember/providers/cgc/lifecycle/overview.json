@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle",
+  "references": {
+    "1": {
+      "note": "The parent lifecycle facade imports the CGC package facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e8b470d74215b38afe84d85693a7f42351ea7e",
+            "content": "sha256:72a94a1221e0cb6c3bf2b407c034d72a476b085abfc5e5cece6394892ab08ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "__getattr__"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Watcher aggregation imports CGC all-root start/status/stop behavior from this package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
+            "content": "sha256:fbbfaba94281ecefdaa486c468ff9645ff5cdeec4c59a194009514c4e5a6de2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "watcher_cgc_result"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_task_document_body_lookup.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_task_document_body_lookup.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -98,46 +88,31 @@ review finding L42-R1-F2).
 No implementation scope is opened here. The installed-build before/after measurement, including
 concurrent master+leaf reads and projector CPU, belongs to L50 (review finding L42-R1-F1).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern the repository's
 own test fixtures and assertions, so the retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what it protects. | "The on-demand task-document body reads one document, not the task corpus." | mcp/tests/test_task_document_body_lookup.py:1-7 |
-| The corpus fixture and its decoys, including the schema-less master the schema filter alone excludes. | `_corpus` | mcp/tests/test_task_document_body_lookup.py:69-119 |
-| The reference projection: the corpus-wide enumeration fed to the unchanged join builder. | `_corpus_wide_body` | mcp/tests/test_task_document_body_lookup.py:122-135 |
-| Byte identity for every document kind, the sprint's graph titles and fallback, and `None` for an absent path. | `test_every_document_kind_projects_the_same_body_as_the_corpus_wide_join` | mcp/tests/test_task_document_body_lookup.py:138-159 |
-| The recorder that counts listed directories and read files. | `touches` | mcp/tests/test_task_document_body_lookup.py:170-187 |
-| The same touched files at 4 and at 40 unrelated tasks; no listing at all for a leaf or a master. | `test_one_body_read_touches_the_same_files_whatever_the_corpus_size` | mcp/tests/test_task_document_body_lookup.py:190-228 |
-| The enumeration equals the earlier recursive glob, including its exclusions and symlink behavior. | `test_enumeration_keeps_exactly_the_canonical_depth_documents_the_recursive_glob_kept` | mcp/tests/test_task_document_body_lookup.py:231-263 |
-| The production read under test, and the only place that reads masters for it. | `read_task_document_body`; `_graph_master_docs` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:161-201; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:204-224 |
-| The bounded enumeration and the named-path probe under test. | `_iter_task_json`; `_canonical_task_json_candidates` | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:74-90; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:93-113 |
-| The lane registration. | "mcp/tests/test_task_document_body_lookup.py" | mcp/tests/test-evidence-lanes.toml:252-252 |
+- The module's own statement of what it protects. [1]
+- The corpus fixture and its decoys, including the schema-less master the schema filter alone excludes. [2]
+- The reference projection: the corpus-wide enumeration fed to the unchanged join builder. [3]
+- Byte identity for every document kind, the sprint's graph titles and fallback, and `None` for an absent path. [4]
+- The recorder that counts listed directories and read files. [5]
+- The same touched files at 4 and at 40 unrelated tasks; no listing at all for a leaf or a master. [6]
+- The enumeration equals the earlier recursive glob, including its exclusions and symlink behavior. [7]
+- The production read under test, and the only place that reads masters for it. [8]
+- The bounded enumeration and the named-path probe under test. [9]
+- The lane registration. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card covers test behavior only. There is no separate cross-repository protocol or live
 installation involved.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:32:43+00:00: Generated citation repair: "mcp/tests/test_task_document_body_lookup.py" repointed to mcp/tests/test-evidence-lanes.toml:252-252. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T23:11:42+02:00 — 260921-ICR-L56 curator (candidate tree `0dabc51f68b613546ec971657726b97828afb69a` over code base `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`): No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_read_anchor_memo.py` row at `:173`; each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T20:07:41+02:00 — 260921-ICR-L55 curator: No content impact: re-pointed 1 citation into `test-evidence-lanes.toml` after this leaf inserted the `mcp/tests/test_notes_listing.py` row at `:162` (candidate tree `c77a4346480db6674dd760f974e8b24079d8f755` over code base `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`). Each moved row cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-
-- 2026-09-28T16:27:50+02:00 — 260921-ICR-L42 curator (uncommitted candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): created this card for the new module. It has 3 functions and 5 cases, including the schema-less decoy added in L42-A2. The card is derived from the candidate source and the L42 review evidence. The stamp names the code base, and closeout owns the real commit stamp.
+No meaningful cross-repo references found.

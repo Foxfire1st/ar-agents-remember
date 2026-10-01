@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_reader/files.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_reader/files.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:06:02+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -68,38 +58,29 @@ and none of them is rendered as an empty result.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement
 packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
 memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of present, absent and unavailable. | "Three answers are kept apart everywhere" | mcp/src/agents_remember/application/knowledge_reader/files.py:1-12 |
-| The file states and the 2 MiB code bound. | `FileState`; `CODE_TEXT_LIMIT` | mcp/src/agents_remember/application/knowledge_reader/files.py:49-49; mcp/src/agents_remember/application/knowledge_reader/files.py:52-52 |
-| A request error, and one file's answer. | `ReaderRequestError`; `FileRead` | mcp/src/agents_remember/application/knowledge_reader/files.py:58-59; mcp/src/agents_remember/application/knowledge_reader/files.py:63-77 |
-| Control characters, `..` and absolute paths refused before any Git call (F15). | `normal_path` | mcp/src/agents_remember/application/knowledge_reader/files.py:86-99 |
-| A memory file from disk or from a commit, absent kept apart from unavailable. | `read_memory_file` | mcp/src/agents_remember/application/knowledge_reader/files.py:102-129 |
-| The onboarding mirror's and the code tree's children; a missing code tree named. | `list_onboarding_directory`; `list_code_directory`; `code_kind` | mcp/src/agents_remember/application/knowledge_reader/files.py:132-148; mcp/src/agents_remember/application/knowledge_reader/files.py:151-163; mcp/src/agents_remember/application/knowledge_reader/files.py:166-179 |
-| The size asked before the bytes; a tree is not a file; binary detection (F14, F18). | `code_text`; `_code_blob`; `_text`; `_blob_size` | mcp/src/agents_remember/application/knowledge_reader/files.py:182-200; mcp/src/agents_remember/application/knowledge_reader/files.py:203-215; mcp/src/agents_remember/application/knowledge_reader/files.py:218-225; mcp/src/agents_remember/application/knowledge_reader/files.py:228-232 |
-| The census files of the selected tree. | `census_files` | mcp/src/agents_remember/application/knowledge_reader/files.py:239-254 |
-| The route case: control characters answer 400 on every path view. | `_assert_control_characters_refused` | mcp/tests/test_knowledge_reader.py:1129-1139 |
-| The route case: a directory is absent, a binary blob and a blob above the bound are named and never read. | `test_bad_requests_are_400_and_large_or_binary_code_is_a_bounded_notice` | mcp/tests/test_knowledge_reader.py:1142-1182 |
+- The module's own statement of present, absent and unavailable. [1]
+- The file states and the 2 MiB code bound. [2]
+- A request error, and one file's answer. [3]
+- Control characters, `..` and absolute paths refused before any Git call (F15). [4]
+- A memory file from disk or from a commit, absent kept apart from unavailable. [5]
+- The onboarding mirror's and the code tree's children; a missing code tree named. [6]
+- The size asked before the bytes; a tree is not a file; binary detection (F14, F18). [7]
+- The census files of the selected tree. [8]
+- The route case: control characters answer 400 on every path view. [9]
+- The route case: a directory is absent, a binary blob and a blob above the bound are named and never read. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:06:02+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`; review R3 and post-sync pass-with-notes, with R3-1 and R3-2 fixed): created this card for the new module MIK-R29 adds, recording rulings 09:42:58 F14 (a binary or oversize blob answers a bounded notice) and F11, and 10:44:14 F15 (NUL and control characters answer 400), F17 (the size is asked before the bytes, tested) and F18 (the code view of a directory is a typed absent). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

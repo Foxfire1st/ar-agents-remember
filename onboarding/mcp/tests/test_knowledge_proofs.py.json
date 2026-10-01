@@ -1,0 +1,254 @@
+{
+  "path": "mcp/tests/test_knowledge_proofs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement of the rules it covers.\n\nAnchor: \"tests that prove an invariant are first-class proof entries\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:c96d2dfa77ba3d0c63814481350ff4213d554a8204cc3ea10c15c7c1ce8d7f0b",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A family with no proof shows `[]`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:3ca50d3f9ee1a02287b076df8a2ab5873b77daabc19839e6208d443fbca3df22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_whose_members_have_no_proof_shows_an_empty_list"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Live invariants without proof; a retired one is excluded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:4e8f0ee59e4dac2a9e38a8452d74ed20d42dacb261a6b17b7b83ef550ba19e86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_lists_live_invariants_without_proof"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The checklist section is information that moves no count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:34525bc8d9a84d228dd0827a93d992f393828d1cea11be4ea34a57b1aa483e74",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_checklist_shows_the_list_as_information_that_moves_no_count"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Migrated evidence is listed, then a curator pass writes the proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:2ea418d939b9272380e2fde90df33c48fd5e5cd4099b15a2025e9b4d00725bdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_migrated_evidence_is_listed_then_turned_into_a_proof_by_a_curator_pass"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The cached index is reused and an unreadable one reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:60ee6df7b32247359d10474dd664e0a131554f14e888a43526363c188abc64e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_list_reuses_the_cached_index_and_reports_an_unreadable_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer runs as this leaf's owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:2708f82dd0fb86f72c4046a5d04a43445e5bfeb547fd1efeede558d0142ed98e",
+            "locator": {
+              "kind": "symbol",
+              "name": "OWNER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:c19db846abeb908c1fd2011ee55ba15281fa1c1b10e64813591a19ea20d26710",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The parser's forms, expressions and helper modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:eabe6098adc9d27e81d976259bdf8d0ad5e0ef191d5182ec7d06b142e7e02299",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_evidence_names_a_test_as_a_test_id_or_as_a_path_plus_symbol"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "No bare row for a file named with a test elsewhere.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:3ca0e8c0a11ce0c176107c858932f8fe5622442b29939ac04758cc50e45158d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_named_with_a_test_anywhere_in_the_evidence_is_not_also_reported_bare"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Both forms become proofs once faceted; unresolvable evidence is reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:8911a79e0c86c0b57ff0c032ec0e7ba0e65075fb4ce725cc23a291149ab7c393",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_forms_become_proofs_once_faceted_and_unresolvable_evidence_is_reported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A proof waits for the curator's facet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:c95af7a1bbc79d3a8a1eae9131731e4171e3f7349832637befc86e6fcf0bcc78",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_waits_for_the_curator_facet_and_is_offered_the_statement_as_a_draft"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The view cases' tree and read helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:3feaa92e5c0f2bc4e07e617dcf5763ba806f550724bd4e5ef87504cd1cdbcc1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_tree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:8b07acc860cac24b0b323a8ae675c88d2d92ebdea1f81e21b6bb669149e29c30",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Invariant and family views carry their proofs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:56aad2e95f94971198ee2f83b8028706bd3e90b083bd5d0d640acf6a8e0b1896",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_invariant_and_family_views_carry_their_proofs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A database read and the other views carry none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:eb39b50b0d239145c6ac25fab4ec4a2cb247b8a7fa577a7aa1498a574b459bdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_database_read_and_other_views_carry_no_proofs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/test/smoke.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Placeholder scope and arithmetic smoke assertion\n\nAnchor: \"toolchain smoke\"; \"runs vitest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb690d7d3e306488a6aa24ec6221c9ee35a4e28",
+            "content": "sha256:868096bac190f9f9220a8451b71cf8dc88b39dda0ed2e7e3857dfd13786e198a",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/AgentPickupIndicator.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f4348f9d417ec5f7744217df78ddbebc9143fd",
+            "content": "sha256:5390c3d38b730372c454a86a67bad7362107ae084087616b7f59e96388ead934",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentPickupIndicator"
+            },
+            "path": "dashboard/src/panels/AgentPickupIndicator.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Client helper mocked by the dismiss test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ee3d856b19db6058dd8bba5fcb70ea9b00a1245",
+            "content": "sha256:d104425f85385838d7f7a0f16b62ee61583abfb381aa8b05011d2d548bd5125e",
+            "locator": {
+              "kind": "symbol",
+              "name": "dismissOperatorInboxEntry"
+            },
+            "path": "dashboard/src/data/operatorInbox.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

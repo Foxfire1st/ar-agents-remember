@@ -1,0 +1,119 @@
+{
+  "path": "mcp/src/agents_remember/serving/_agent_notifier_actions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Due rebinding updates and redelivers the current structural owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:0f9912e0f2d8ea271ffb23b703fe9d0cfff9c8200f33cebfbac1860c28adfe79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rebind_due"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The action-time state-signal marker guard: the shared delivery action refuses a pending row whose own seat still reports that row's evidence unmarked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:0069fc4011235f0b69c741eea83a70b1046eeda500e00f347eada2e47a24da51",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_signal_awaits_marker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared redelivery action carrying that guard first, before admission and delivery-state mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:c8f02ec2099fd8f18830ae79f89d5c714632d5eeebf62283385c020ac1391453",
+            "locator": {
+              "kind": "symbol",
+              "name": "_redeliver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "State-signal action revalidates, posts through the current structural owner, and supplies the post-persistence marker callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:6f78c04b230fd4045a0510c37d01c80880e5534733c547ccd08741f98c135cff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_emit_state_signal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Boundary drain inherits the same guard by delegating to the shared delivery action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:f09075ca289db661c1d7fdfbe3499c09890dd36b5b1612f10f9a2d06e7db83c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drain_boundary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Ordinary action-time structural and task-document failures become a skipped result for that finding only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:23026a671868b873e61fbc685731ea16c999d25b2e370aa1dac331807d8ad076",
+            "locator": {
+              "kind": "symbol",
+              "name": "act_on_finding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Expiry preparation contains an ambiguous or malformed route before batching other valid transitions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c172bd213d18fe18ae8a2dc38a893db4fad208e",
+            "content": "sha256:f6676cef2e1186041a67188ca969accfe96c20003975a0f6f5b634904b34ccfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "act_on_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

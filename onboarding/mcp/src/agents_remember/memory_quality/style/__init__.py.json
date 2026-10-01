@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Style checks for memory-layer documents.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fca78400d932bac8c6874fe23316179bd0549380",
+            "content": "sha256:1c628790ec568028e9a26ba3c42743176df2fbf9f9f894d1d4fc105cfdd45ce6",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/serving/codex_app_server_threads.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `CodexThreadState` (lines 32-66) — Per-thread demux state on one multiplexed app-server connection..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b325c4c18da76cc789a97cc7aa56b0ecdc016a6",
+            "content": "sha256:efad5cab068291a5d13590913f81c326cbaaf994032143c108f3cf1dc23e479f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexThreadState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the class `CodexThreadRegistry` (lines 69-300) — The threads on one connection, their agent identities, and the item->thread index..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b325c4c18da76cc789a97cc7aa56b0ecdc016a6",
+            "content": "sha256:1d4132e99942bbcb562a276703067769444221ceda8f7daa132bb8c90c6c78d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexThreadRegistry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,190 @@
+{
+  "path": "dashboard/src/dev/cockpitScenarios.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "L110-L142 — the daemon-answerability `describe` and its two exact-key-set assertions.\n\nAnchor: \"the scenario server answers only what the daemon could answer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ce9e3543aed2bcdf8645a3e5ef61362adf36402",
+            "content": "sha256:e477915b236acceff4cf500f67b614b4663b719c887a8a24a742de2ebe894887",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "L63-L75 — `authorityTransport`'s `withdraw`, now annotated `: Promise<WithdrawalResultWire>`, with the comment recording why the concise async body lost excess-property checking.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ce9e3543aed2bcdf8645a3e5ef61362adf36402",
+            "content": "sha256:a93a786af22147080ce8988f108f396bbb7dd4c3edf93fe38f47d9f995acf01c",
+            "locator": {
+              "kind": "symbol",
+              "name": "authorityTransport"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5ce9e3543aed2bcdf8645a3e5ef61362adf36402",
+            "content": "sha256:30bf68d2932de1a047546fc97a7185f89476f5c4b6924cd8ae6e74f2c91bad96",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "L40-L46 — `WithdrawalResultWire`'s five declared fields; `bridgeEpoch` is not among them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e62d3c995f9eae68a7efc0cb2afa1a2a075cc492",
+            "content": "sha256:a8acdda61ebb4663e054423f40ff03141bacead29070dffedb349474e4092c9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "WithdrawalResultWire"
+            },
+            "path": "dashboard/src/data/submissionLifecycleClient.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e62d3c995f9eae68a7efc0cb2afa1a2a075cc492",
+            "content": "sha256:973b195c6f66b499d483088c9d190458305d89cae876318a49038d81eac2e57a",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/data/submissionLifecycleClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "L4-L9 — `HarnessInfo`'s three fields, declared inline in a module with no mirror marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c87a333fcbc7605dad19267d7e48d7a354c2ee22",
+            "content": "sha256:382700cf19eb12ff3bc2d9c824123434a38f606118f4c2991885d37aa479e85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessInfo"
+            },
+            "path": "dashboard/src/data/harnessCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "L366-L377 — the server's `DetectedHarness` / `DetectedHarnessesResponse` declares exactly three fields, inheriting strict `WireResponse` whose `model_config` sets `extra=\"forbid\"`.\n\nAnchor: \"class WireResponse(BaseModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c20b9d7fc443b18eb1c69d3d9adcbb62a6f51c33",
+            "content": "sha256:29d177b2e2a02eb40a25bc6bcac134c02f344bbadd628a5a6bc430e4260b5124",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectedHarness"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c20b9d7fc443b18eb1c69d3d9adcbb62a6f51c33",
+            "content": "sha256:b08447f7a14ddeec24e1aeb9f5ffcee17012865f3ab23ae54ac2af80d6b2682d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectedHarnessesResponse"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c20b9d7fc443b18eb1c69d3d9adcbb62a6f51c33",
+            "content": "sha256:a8284802bf9cab66cd53eb2dc4b8bfe56b37d6a56e0ad0b5188a0d403d8eb0d6",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `/api/harnesses` GET branch returns its `harnesses` fixture, type-pinned with `satisfies HarnessInfo[]`.\n\nAnchor: \"satisfies HarnessInfo[]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
+            "content": "sha256:c4964415c2267fa9be71d537b7313e1b48185ffa34fbe2b0478c08ae4e2ec387",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "dashboard/src/dev/cockpitScenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "L55-L64 — the guard documents the unmarked-mirror blind spot and names the removed `control` and `bridgeEpoch` fixtures.\n\nAnchor: \"UNMARKED MIRROR\"; `control`; `bridgeEpoch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:020f7048a8ed3c3a61c33410d7d886b93c39c869438c469e5b362f75dc5eb338",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:577c96a048be2a3228559e332d8772e36603e4b242832ad5baa0b350d60dd744",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

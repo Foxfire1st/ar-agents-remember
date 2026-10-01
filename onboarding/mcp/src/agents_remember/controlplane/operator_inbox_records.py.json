@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Address, owner, subject, and message are explicit value objects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bf6786f6e546a7f79d0be5ccb3200c4da94e75a",
+            "content": "sha256:34e946a57af75b1aafd6a299c024f1cdcf9c4b1b056970fdcf7ecf27817b965b",
+            "locator": {
+              "kind": "symbol",
+              "name": "InboxAddress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The durable row separates structural identity from delivery correlations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bf6786f6e546a7f79d0be5ccb3200c4da94e75a",
+            "content": "sha256:c7945d4349211aed9bf5ad329756a61e7b4ec20fcb80d11fb344a95206462d86",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperatorInboxEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Consume preserves state and only stamps attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bf6786f6e546a7f79d0be5ccb3200c4da94e75a",
+            "content": "sha256:1ca15622c4d8e685d63ef75c402f972d8c589734b96ea4bb940a0942c47888bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "consume_operator_inbox_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

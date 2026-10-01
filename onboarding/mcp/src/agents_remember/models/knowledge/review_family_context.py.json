@@ -1,0 +1,636 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The four refusals this vocabulary encodes: an authored guarantee never assembled from members, a membership citing one exact family revision and one exact member revision, a side stating which snapshot fact it is, and five status dimensions that never collapse.**\n\nAnchor: \"A guarantee is the family's own authored text, never assembled from members.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:27173e34b81973cf40f57f8b892c5ebbf08b07f72ced93d86a42ad2072f00fef",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**One recorded realization claim as an inspectable source reference, with its structured locator, resolved ranges and locator state, imported from its own module and re-exported here.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:3f2aadd8daa716c3904a6a1c34b1ad619bfcdf4807078f6e09f95e37d3bcd8cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyMemberSource"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:ff0dd523eefc2edc0438cc85e87c4a442204a47fedc4f3d71d168d95af8433cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_locator_state"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:01ac453b7c9952584ed27cc0c4b7f73504cc3f50863d9cfb4a9970d41187cc97",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The validator refusing an address without its observation or its locator, so a reference never reads as a resolved realization.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:f92f4fa9fa720c0525b35c50d20f6fb401288f2afe8ceaa0b2ec0e2d0bfe1f1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_an_address_to_travel_with_its_observation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "One recorded membership carrying its exact member revision and the other family revisions that revision is recorded in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:c59b91a975edd56418508fbfe3ff15f659ba06208dac44a19562b3dad673aa27",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyMember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The validator keeping a member's stated content state and the content it carries one fact, and pinning a movement reference to the row's own recorded identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:bb998ee7fccf9c2a48a3ee69c985bd577387ac6172070dd69e01e6b4de12e44b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_content_state_to_match_the_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The read owner's own window of one family revision's roster: its counts, its completeness and the cursor that reaches the rest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:0abb4c80f79538013981461ff09ef47792de46885cbf1851087cee2e00060ed3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyRosterPage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The docstring paragraph stating that `complete` is the WALK's flag and not the page's, so a completed continued page is a position in a walk and only a single page may be read as the roster whole.**\n\nAnchor: \"``complete`` describes the WALK, not the page.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:6a0bf5222540ca53207f4ae0f1aa742b7279d815569c7f945161714d87ce8d2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:72ef9b2503979991adec6d15d92773b18da5b018baebc224205e193d380f4392",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The validator refusing a truncated roster presented as a complete one, and a member total that is not the read owner's own count.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:6e81dfb09c86d71f03f19f2a6367df0d6ef9d14ea7eb6f2f82d4a32aaab85b30",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_cursor_and_the_remainder_to_agree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "One snapshot's context for one family: the selected revision, its guarantee, the roster page it carried and the family owner's own recorded revision list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:15cc3994cc10149988368bfda74f2a8f6684de2246ce69d910f25c60b1dd0c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyRevisionContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The family owner's own list of every revision the snapshot records — a different population from the revisions a selection reached, which is the fix-round-1 field.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:1b002d1ded010f19cf9b5f38333c66462639e365d1d416c4e6de61e03e5d61c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_revision_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The validator requiring a recorded side to name the revision it read and carry the page it read, requiring that revision to be one the family owner records, and — this delta's correction — holding only a single-page walk (`complete and state == \"first_page\"`) to the revision-wide member count.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:5ab4dfd22fcf32ec1aae001948d5f3a6fef46685f8a50cef37df3aca6ea34ee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_state_to_match_what_it_carries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the fifteen names the composition, the roster read, the payload and the transport consume.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:7b7c5bebbdfc5c37e3bac90fcccfc0c991b16b2b87fee392f7b23ae6930e55ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "One family's full context: both snapshot sides, the explicit revision selection and the candidate guarantees of an unresolved lineage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:70cd4bca530a81850922ccd0d94d0009687f1722f603b4725380896cf51b5fb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyContextEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The validator pinning an entry's selection to the family it carries and its two sides to the two snapshots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:6eb6edb363363e32e7b04de99a8c332d15bde5f163f73cc9292a29c75527478a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_entry_to_describe_one_family"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The validator refusing a chosen revision beside a selection that chose none, an ambiguity with no inspectable candidate, and a guarantee presented as a family's own on an unresolved selection.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:937d38a2695f37e472b276af08809072d277293d1ee31f3b088eaac8cb246362",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_state_to_match_its_candidates_and_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Where each independent fact beside this context is owned, and the key that joins them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:d0e0f23b7307bf982e30e70a9c21b7491c3b9f494c605a315dfc4abc907da41a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyContextReferences"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The comparison-bound family context of one review: its entries, its measured counts, its references and its limitations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:0ef8999c09daa9334378a1e2193caa1e54c0432b4868889774d6edc10228a8e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The validator refusing a claimed remainder with no way to reach it, counts that do not describe the entries beside them, and a unique member total inflated by counting rows.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:e5cada4fd5584027202325d7f77647d005c1ad5dcd5cec27364f6f1871235204",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_family_counts_to_describe_the_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "**The composition that builds this value, from the two snapshots, the reviewed selector and the shipped read operation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09755c1ec83fa9aa2d5aa1888091ae3f978d1183",
+            "content": "sha256:c3a1c68003c00535b8f19dc02b4f5d41b5949bd9c0ff5d05a3a5ed710299d8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_family_context"
+            },
+            "path": "mcp/src/agents_remember/application/review_family_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The roster read that supplies each side's guarantee, its members and its page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "863986f5f429c7e0e5821471bcf7cd11a3543cbf",
+            "content": "sha256:3ae0a7fc31ce3170ec07afa8b5b29be43b59fbd32fcbf2103aec9daa2bb90ac2",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_family_roster"
+            },
+            "path": "mcp/src/agents_remember/application/review_family_rosters.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "**The production review read that composes the context once and carries it on the payload.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The payload field itself, required rather than optional so an absent field can never be read as a measured zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:869db22c0db3a48ab200d4359db76fc11c79e47349bb6e411f57d5d1ea5ef054",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_context"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The five states one review's family context can be in, and why the measured zero is deliberately not spelled `empty`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:36e0af9d120df4c579cc567541232050d3635975c3b112ffe0833a97cb7509f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyContextState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The task-context review, which states `no_subject_selected` because it compared no knowledge operand.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:a1e9951a80e3c0599f4087957acc15fdd6975af780628bdc7b4f330a9c65845d",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_context_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The values cases that pin the construction rules this module enforces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:59230cc595620a83ea6a269df61f933b83403cb4a8b03e8d2be568a5116cd813",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_side_may_not_name_a_revision_its_family_does_not_record"
+            },
+            "path": "mcp/tests/test_review_family_context_values.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "On a tree comparison the entry carries the change facts of exactly its returned members (MIK-L33).\n\nAnchor: \"# The change facts of a tree comparison (MIK-R33); a dataset review carries none.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:2519d61b9ffe6583bf3aba125d698405fcfa2ab8799845d3cc59c4757f603ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_change_facts_for_exactly_the_returned_members"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The facts' model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "866b77ee12e6af9e4aad4ba8adb9cae9e0e06fdf",
+            "content": "sha256:a372f932a9810199665eedd0c73fcdfa68f63ef6314a28ab197519e5b9e54f08",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyChanges"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_change_kinds.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two snapshots a side context or a label may name, so no value can name a third.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:ad3ed992bfdce8551293b1ec2327e80ce0fdf81787f90d0616f1dc976d1da6f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilySideName"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The four distinct facts one side can state — `recorded`, `not_recorded`, `not_resolved`, `unreadable` — none of them an empty roster.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:440feab5e4c21f3db54470f8002910e0df2bebdc13419cc1a0a1e00f799a459e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilySideState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One family's own four states, including the unresolved one that chose no revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:f52a83b20e1c3fbaf4c67384ba5cfad3e23068def7f865e16d45c37d6215457d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyEntryState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The one key that joins a member context to the evidence and assessment owners' own collections, so a rendering cannot join on a label or a path.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:bce897a136e7bb08db072cabbdb37a3e7620c60f40f24f8efd9f5e75d73de45e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_CONTEXT_JOIN_KEY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The owners this context points into rather than copying: the relationship union, the source inventory, evidence links, observations, assessments and applicability.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:60b87d5ac816a309a94b02bfae06f632842abeea69792ff8c7d30d876416805c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RELATIONSHIP_UNION_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:77c0eebf10fff6c8e8cbde52a7910e3ea26d02e3d9635d0bbd146c202defcdc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_INVENTORY_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:18800e4d13a746ffb246e41e4826e3a4d6494977b213c1dfd0a4a8cd2526042b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_LINKS_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:eea08bacfef1807d8a88a2597b56792b75051d64bf86a317ccce9911bb675666",
+            "locator": {
+              "kind": "symbol",
+              "name": "OBSERVATIONS_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:2267ad18a111a32ad5508b5a069e97501a398ae851805618b201b7baf601748f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ASSESSMENTS_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:759e4c070ba61aa440c9ea0c8b28cbcdfb07174c43b0e00ab3127524a29e16d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPLICABILITY_OWNER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One family revision's authored joint guarantee with its display version, origin state, acceptance reference, provenance and payload seal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:3e2cede25877e8c22694cd7fed278abfcf8952cdc63691d1d4b51aecb6497547",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyGuarantee"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

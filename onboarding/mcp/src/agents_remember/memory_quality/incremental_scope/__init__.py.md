@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/incremental_scope/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/incremental_scope/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `993953760ef65c4670a40c63a6d6ef0fbcddbe3b`|
-| lastVerifiedCommitDate | 2026-09-03T02:13:10+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory quality overview](../overview.md)
@@ -49,7 +39,9 @@ scope observations without reaching into package-private helpers.
 Connecting this package to the Gate-5 execution rail and the R08 final full certification remains
 owned by later lifecycle layers.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. The governing task artifacts
 below close the informational gap for the affected-closure surface.
@@ -63,24 +55,14 @@ the final full Gate-5 pass. Leaf L07 (07_incremental-affected-closure-validation
 commit 993953760ef6.
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The facade re-exports the R07 affected-closure planner, models, executor, and store. | `execute_affected_closure`; `compile_affected_closure_plan`; `ContentAddressedSubresultStore` | mcp/src/agents_remember/memory_quality/incremental_scope/__init__.py:3-11; mcp/src/agents_remember/memory_quality/incremental_scope/__init__.py:27-27 |
-| The typed Gate-5 closure refusal is part of the public error surface. | `GateFiveClosureRefusedError` | mcp/src/agents_remember/memory_quality/incremental_scope/errors.py:50-53 |
-| `__all__` fixes the complete public package surface. | `__all__` | mcp/src/agents_remember/memory_quality/incremental_scope/__init__.py:29-57 |
+- The facade re-exports the R07 affected-closure planner, models, executor, and store. [1]
+- The typed Gate-5 closure refusal is part of the public error surface. [2]
+- `__all__` fixes the complete public package surface. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Scope observation enters through R06 owners; no external boundary is exercised by this facade. | — | — |
-
-## Update History
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 993953760ef65c4670a40c63a6d6ef0fbcddbe3b (CCR-R07@v3/L07): created the card for the package facade widened with the R07 affected-closure planning/execution/store exports and the `GateFiveClosureRefusedError` public error; no prior sidecar existed.
+Scope observation enters through R06 owners; no external boundary is exercised by this facade.

@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/serving/claude_stream_startup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Initialize, non-query bootstrap, and `list_models` frame shapes are explicit protocol primitives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cf8df16f7b4dcbf5fea3a5cda1485cb4a22db6d",
+            "content": "sha256:58e63fb44bcccd3c47978eb5aa0956674ad1e255e3adb899939e259015ba677c",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialization_request"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cf8df16f7b4dcbf5fea3a5cda1485cb4a22db6d",
+            "content": "sha256:2974e686d342720a2409f599bdce8d340751edb2b4604c2fc1afe454e302d42e",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrap_message"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cf8df16f7b4dcbf5fea3a5cda1485cb4a22db6d",
+            "content": "sha256:bf60fc12b1155daa9341c5e48b925265b7cda3e8566ab4e748045ec1ba0aab1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_models_request"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The catalog parser returns a normalized snapshot only after current-model reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7907ed927e34b64195d50aab2a0baa2109383621",
+            "content": "sha256:03766ed7b240678706909f24497a7799e73c386c3e5655ad9eeed631b570b988",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_list_models_response"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7907ed927e34b64195d50aab2a0baa2109383621",
+            "content": "sha256:80ab5a9e89c01f545414209afbb9336153c38036407d5010e4d0ea2ecf5c13f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_current_model"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

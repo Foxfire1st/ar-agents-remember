@@ -1,0 +1,54 @@
+{
+  "path": "dashboard/src/panels/Topology.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The imperative renderer (refs + `.style`, no className dep).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountConstel"
+            },
+            "path": "dashboard/src/topology/constel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pure model adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:3a1f56c36ce5b8079c80ef81327f1d57edd5f2bf02ea24c322ddeea75b737650",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildTopology"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:5fa50d15a53015770e0d6a5699fd652ebba3d91d4c0c74203d2c45e7b2276a52",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

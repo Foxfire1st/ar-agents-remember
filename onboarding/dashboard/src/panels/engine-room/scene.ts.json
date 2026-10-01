@@ -1,0 +1,72 @@
+{
+  "path": "dashboard/src/panels/engine-room/scene.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scene packet and its resolving entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
+            "content": "sha256:7ad227f94029da89442cf4c4ec64823b2ed3cbc17859ded60630bedcc58721c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureScene"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
+            "content": "sha256:a30f00218c012af355f8de8b99295a1242f6ef8ae4316c84072cd1af075ffe34",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveScene"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The per-aspect resolvers consumed by the layers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
+            "content": "sha256:2fc674628105c01ec17f31f35cef24edbca2fcd7452124c2e13bffb825f11e4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveEngines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
+            "content": "sha256:0ee05ce370e178efbe456c5f1a1e1b9abbba8f9356b73256750f325c45b87bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveBlocks"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
+            "content": "sha256:43725cd7ddc2af69520742a7ee724db1b5d43dcad2005d95c9e59491bd7c1407",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveRecovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

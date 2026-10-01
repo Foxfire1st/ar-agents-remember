@@ -1,0 +1,248 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+        "content": "sha256:f28f70cfd17ca791ca4d58f5139169884a61845842f7c08db66bfbeee7ac0794",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorCoherenceRecordedJudgment"
+        }
+      },
+      "id": "RLZ-48YKHH1T",
+      "invariant": "INV-453ZPCZ5",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Carries the recorded judgment's evidenceSha256 and an optional evidenceArtifact. Its serializer omits the artifact key when none was stamped, so legacy records keep their original encoding, and its validator refuses custody whose SHA differs from the originally recorded evidence hash.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The quality attestation validates exact candidate count and uniqueness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:199a745b1a1009c4e66e0828643e0c9ea3e4620448d23d306b3c9c368c2ad286",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorQualityAttestation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Owner custody preserves original judgment bytes and old encoding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:f28f70cfd17ca791ca4d58f5139169884a61845842f7c08db66bfbeee7ac0794",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRecordedJudgment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A durable generation integrity result makes no live readiness claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:9b87927e234ed7eec7a95104ec1edaae81b4250cb8e1459eb2c30731b1f96c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "ValidatedCuratorCoherenceGeneration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Immutable record validation enforces exact candidate-to-judgment coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:890c9736acb344ad4e335a24a0bbf4670fa0b997c835052dcf94133cacd330d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The discriminated action request separates read actions from publication CAS input, and names the publication fields it is missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:81d06cb55a30457b2990e0ddac9c13dadfc7f977ee133cc1a53a3994254fdda6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCoherenceRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The one declaration of what `publish` requires, and the per-member flag marking the two `prepare` does not derive.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:bf16185fc4471584a353e4b3a235a287cb2d0263bc2baa66a1ca58efc8d703fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicationMember"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:bb049a3555b26c9f959e9e5d3289d2e9c71f4641c68da2fb93ffe66838fd75a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLICATION_MEMBERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The refusal that names every missing publication member by request field name, in declaration order, and calls out a missing delivery identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:1b0f109e9d0b9776c0155281ec86ef05d3ef91fdc74e82f1fb5e6f3552103747",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The sibling refusal that names the publication-only field a read action received.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:2fdbee7a51b831f6fd4b9216d65e272e798168e5c917c0d6452c28f179c40b0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "forbidden_publication_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The statement of the complete publication input set, read from the declaration at call time.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:429e832cb0e41a92a217f7a0009dc3ef4f874f13fbe872d7e2478b1669b545c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_input_statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:56e5adc11277cc9b28fd6156d34a973a7606affba68b355598f0ab6f52603172",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publication_inputs_supplied"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:4b66f4952e681126ce86951860c82aa18551606c79e43c75ea2a9ed0fb387cc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_action_has_one_input_shape"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The R03 dependency vocabulary used by this record type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:83efbdf93120a13fe6a3b7137a5a3297300880ed6579fb9463720a9b358974fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceDependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:5b6612f499b9cdb5f329c7c2bfc729e0f925d528e6804f8b0e709609a5e734cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "dependency"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:c8927de77cb08539e36e313e6eff3cb3667e095cb90dfe85e801a2556a2359b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_evidence_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_memory_mode_removal.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_memory_mode_removal.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](../overview.md)
@@ -131,72 +121,37 @@ tree, not from a count that a history entry recorded against a different one.
 removed default; it does not prove that the copies were generated rather than hand-edited, which is what
 the generator's own `--check` mode proves.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned refusal,
 migration-boundary and instruction-corpus assertions.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The three pinned properties, each named with the failure it prevents. | "memory mode: refused by name, reported, never substituted." | mcp/tests/test_memory_mode_removal.py:1-1 |
-| The expected supported set is written literally, not imported, so a vocabulary change must be made twice. | `EXPECTED_MODES` | mcp/tests/test_memory_mode_removal.py:93-93 |
-| The declared vocabulary holds no removed member. | `test_the_declared_vocabulary_has_no_removed_member` | mcp/tests/test_memory_mode_removal.py:122-125 |
-| A removed token is refused by name while an unknown token stays an invalid-argument error. | `test_require_supported_topology_keeps_unknown_tokens_distinct_from_the_removal` | mcp/tests/test_memory_mode_removal.py:140-145 |
-| Existing state recording the removed mode is reported and left byte-identical. | `test_a_contract_recording_the_removed_mode_is_reported_and_left_byte_identical` | mcp/tests/test_memory_mode_removal.py:321-336 |
-| The supported paths are unaffected: external still resolves, disabled still round-trips. | `test_external_selection_still_resolves` | mcp/tests/test_memory_mode_removal.py:357-375 |
-| The CLI never advertises the removed member and hands a removed token to the typed refusal. | `test_cli_never_advertises_the_removed_member` | mcp/tests/test_memory_mode_removal.py:396-402 |
-| The tool documentation no longer offers the removed mode. | `test_the_start_tool_documentation_no_longer_offers_the_removed_mode` | mcp/tests/test_memory_mode_removal.py:430-436 |
-| The operator receives the typed refusal with the recorded value, the supported set and the artifact. | `test_worktree_status_packet_reports_the_removed_mode_to_the_operator` | mcp/tests/test_memory_mode_removal.py:534-547 |
-| A removed-mode answer never claims the publication was lost. | `test_a_removed_mode_answer_never_claims_publication_was_lost` | mcp/tests/test_memory_mode_removal.py:652-668 |
-| Both flag narrowers distinguish a typo from a removal. | `test_the_flag_narrowers_do_not_report_a_typo_as_a_removal` | mcp/tests/test_memory_mode_removal.py:676-688 |
-| Thirteen corpus and documentation surfaces are guarded against re-teaching the removed default. | `CORRECTED_SURFACES` | mcp/tests/test_memory_mode_removal.py:704-788 |
-| The generated skill copy must equal the canonical tree it is generated from. | `test_the_generated_skill_copy_carries_the_canonical_correction` | mcp/tests/test_memory_mode_removal.py:805-812 |
-| The module's evidence lane is declared under `unit-regression`. | "test_memory_mode_removal.py" |mcp/tests/test-evidence-lanes.toml:195-195|
-| **The leaf enclosure's memory worktree is a supported onboarding root, and the resolver reports the root it was given rather than the official one.** | `test_a_leaf_enclosures_memory_worktree_is_a_supported_onboarding_root` | mcp/tests/test_memory_mode_removal.py:820-834 |
-| **The four lookalike shapes refused structurally — a `not-worktrees` path, a code worktree, an empty name after the prefix, and a one-segment-short path.** | `test_a_directory_that_merely_resembles_a_memory_worktree_is_refused` | mcp/tests/test_memory_mode_removal.py:837-860 |
-| **The refusal names both supported shapes and the root it received, so it cannot send the caller in a circle.** | `test_the_onboarding_root_refusal_names_both_shapes_and_the_root_received` | mcp/tests/test_memory_mode_removal.py:863-877 |
-| **The CLI entry point measured end to end: the leaf enclosure's root is measured and named, an unsupported root raises the refusal containing its own path.** | `test_the_cli_measures_a_leaf_memory_worktree_and_refuses_an_unsupported_root`; `check_missing_onboarding_main` | mcp/tests/test_memory_mode_removal.py:880-931; mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py:219-298 |
-| The module is declared in three evidence-lifecycle consumer lists: the shared curator-coherence support artifact's list and two further artifact lists. | "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:390-390 |
+- The three pinned properties, each named with the failure it prevents. [1]
+- The expected supported set is written literally, not imported, so a vocabulary change must be made twice. [2]
+- The declared vocabulary holds no removed member. [3]
+- A removed token is refused by name while an unknown token stays an invalid-argument error. [4]
+- Existing state recording the removed mode is reported and left byte-identical. [5]
+- The supported paths are unaffected: external still resolves, disabled still round-trips. [6]
+- The CLI never advertises the removed member and hands a removed token to the typed refusal. [7]
+- The tool documentation no longer offers the removed mode. [8]
+- The operator receives the typed refusal with the recorded value, the supported set and the artifact. [9]
+- A removed-mode answer never claims the publication was lost. [10]
+- Both flag narrowers distinguish a typo from a removal. [11]
+- Thirteen corpus and documentation surfaces are guarded against re-teaching the removed default. [12]
+- The generated skill copy must equal the canonical tree it is generated from. [13]
+- The module's evidence lane is declared under `unit-regression`. [14]
+- **The leaf enclosure's memory worktree is a supported onboarding root, and the resolver reports the root it was given rather than the official one.** [15]
+- **The four lookalike shapes refused structurally — a `not-worktrees` path, a code worktree, an empty name after the prefix, and a one-segment-short path.** [16]
+- **The refusal names both supported shapes and the root it received, so it cannot send the caller in a circle.** [17]
+- **The CLI entry point measured end to end: the leaf enclosure's root is measured and named, an unsupported root raises the refusal containing its own path.** [18]
+- The module is declared in three evidence-lifecycle consumer lists: the shared curator-coherence support artifact's list and two further artifact lists. [19]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local refusal and corpus assertions.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 12 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_memory_mode_removal.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:30:32+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:195-195. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:147-147. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:134-134. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:127-127. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "mcp/tests/curator_coherence_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:390-390. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `EXPECTED_MODES` repointed to mcp/tests/test_memory_mode_removal.py:93-93. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "mcp/tests/curator_coherence_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:385-385. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:28+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): recorded the group of cases this pass added and corrected the module's case counts. The module gained a fourth pinned property — **the two shapes an onboarding root legitimately takes** (`D-34`) — as five cases at `:820-931`: a leaf enclosure's `worktrees/<repo>/<group>/memory-<name>/onboarding` resolves to `external`; four lookalikes are refused structurally; the refusal names both supported shapes and the root it received; and `check_missing_onboarding_main` (imported at `:64-66`, a **production** entry point) is driven end to end so the two answers are shown to differ in one run. The Purpose now states four pinned properties, the Logic counts **eight** groups, and both the Purpose and the Invariants carry the measured counts. **The counts the card previously stated are wrong and are corrected here rather than silently replaced:** measured by AST over the module's own test functions expanded by its two parametrized decorators, `c5a74a85` holds **34 collected cases (26 unit + 8 integration)** and the working tree holds **41 (33 unit + 8 integration)** — the five new cases are the difference. The card's "46 collected cases, 38 unit and 8 integration" matches neither tree, and no existing history entry can be rewritten to say so, so the discrepancy is recorded as a measurement fact instead of smoothed over. Four rows were added for the new cases and the CLI entry point; no existing row, citation or range was rewritten (the new import and cases shift every range after `:807`, which the citation-range repair pass owns), and no verification stamp advanced (the source is uncommitted and closeout owns the stamp).
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "mcp/tests/curator_coherence_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:384-384. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:124-124. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:122-122. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "test_memory_mode_removal.py" repointed to mcp/tests/test-evidence-lanes.toml:120-120. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "mcp/tests/curator_coherence_test_support.py" repointed to mcp/tests/evidence-lifecycle.toml:380-380. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-
-- 2026-09-16T14:25+02:00 — 260915-CAPS-L12 curator (closeout-gate follow-up): the two verification fields above, which this card's creation entry left un-advanced, were populated on the closeout gate's refusal — `external-memory closeout requires onboarding verification metadata before memory commit`. They follow the canonical file-level model (`file-level-onboarding-workflow.md` § Metadata Rules: "use the latest commit that touched the source file once the content has been verified") and now read hash `b281bcd68261866be306cc80a48241921b6dd0d2`, date `2026-09-16T14:24:58+02:00` — the `[260915-CAPS-L12]` code commit that actually contains this source file, matching the value closeout's own `refresh_onboarding_metadata_for_context` writes for every required card. An earlier revision of this entry named the pre-commit base `c1dbebf8`, which does not contain this file; that value was replaced rather than retained, and no earlier history entry was rewritten. The creation entry's sentence that no stamp was advanced is superseded here, added rather than edited because `Update History` is append-only. Closeout re-stamps both fields authoritatively at the real commit.
-- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **created the missing sidecar** for the module
-  `CAPS-R12@v1` added. Recorded the three pinned properties, the seven case groups, the 38-unit/8-
-  integration split of 46 collected cases, the literal-expected-set convention, the 13 parametrized
-  corpus surfaces with their byte-identity case, and the lane row under `unit-regression` at line 78
-  plus the two `evidence-lifecycle.toml` consumer entries. Verification metadata remains
-  closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.

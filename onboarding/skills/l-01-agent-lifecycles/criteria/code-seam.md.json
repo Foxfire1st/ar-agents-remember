@@ -1,0 +1,41 @@
+{
+  "path": "skills/l-01-agent-lifecycles/criteria/code-seam.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external/domain document defines this criterion; catching evidence is leaf-cited.\n\nAnchor: `## Standing Criteria (MUST RUN — the regression floor)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "433f8190ab1b43e83eb600ffa449bf029d9a8d8c",
+            "content": "sha256:fbad8bf037bfbbf08ccaa8a8ed7e935aba037411d7a9a263331b0c5b0e9bea40",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical criterion file's standing/candidate structure, mirrored into the packaged runtime copies.\n\nAnchor: `### CS-6 — Scaling & reclamation *(promoted — 2 catches)*`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "433f8190ab1b43e83eb600ffa449bf029d9a8d8c",
+            "content": "sha256:67ae0d3753141effb9741a130cd0deccb97c566b2f6464161c5bde7e1d5295ee",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,304 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/queue_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `OperationQueueItem`/`CockpitQueueIdentity` privacy validator (source ∈ {cockpit,terminal,durable}; withdrawable cockpit block rule).\n\nAnchor: \"class CockpitQueueIdentity(WireModel):\"; \"class OperationQueueItem(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c42fab80701148e55eb502581ada2d0dcccc9c0a",
+            "content": "sha256:9a32e91bc8e742eba4df411907acadeada1fdfa719dc2cd79142cf445d7f9bee",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/models/conversations/submissions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c42fab80701148e55eb502581ada2d0dcccc9c0a",
+            "content": "sha256:6d9c91495ab9efe3e4e07739dc4bf76ffa0bcdb8d757c1ce87f08db858f98c26",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/models/conversations/submissions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The authority-internal setter mint with no submission source (`source=None`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:5b07f585e66862f289cacd9ca14bf4aea28264de46f7ca5c15dba218dea75e37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_setter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:df16f06454403d8869880d2d75f509f2459c41ce1ac360c536c3d13b18fe7d11",
+            "locator": {
+              "end": 594,
+              "kind": "line_range",
+              "start": 561
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The full-timeline paging seam and the submit journal this projection reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:d0c4b18adbf47c6be173e901de7d6f8bc7bcdbaf6b3e8cc442844258a14ce6ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_full_timeline"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:1a45cbf4043b7926fdfff91f5f032949db825dd03109938528cfbf3c79fbac2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ControlChannel"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:5f977227bff6699a7b369132bda41a716e804c7a203af7115cd7e52e4f5f413b",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 199
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4aefba9248347c18bb4f4f8d7a4d7e5affdf852",
+            "content": "sha256:f916d0bd28f5a95e114e81f517a987a5c60a81dbd6b21a22fb428d3fb44181c4",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The payload digest and redacted preview are deterministic transforms.\n\nAnchor: \"def payload_digest(\"; \"return f\\\"sha256:{sha256(text.encode('utf-8')).hexdigest()}\\\"\"; \"return f\\\"sha256:{sha256(canonical.encode('utf-8')).hexdigest()}\\\"\"; \"def redacted_preview(\"; \"redacted = str(redact_secrets(collapsed))\"; \"return redacted\"; \"return \\\"\\\".join(clusters[:MAX_PREVIEW_CLUSTERS])\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:d9b6edf2c079b9a2b15d1fce50802950c9e110dd4e60c0f6838a53d2e3606856",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:b649998c740a4e92bade81990c8d6b13472ac992137431e98af700aff6be3a5a",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:f4ca68b6b7e340e25344ada25f18dd73eb41619266cecc71b1d1460fe06a00e7",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:e653e3687ea5fdf4edd1528b8cf57528617b3bb7bb5af9433e09ccc49539cb09",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:62a42d0bd2fe502e96f33ce5ac571f7df736ad25abc72b6d36e6f38ea5fb727d",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:ecb74704a81e6c02fd661d8ba225a6b9324a5a45745daeee23ca7ccf700fa765",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:51bbb50204f3e6148bacf484e35e3c21faf1fdfa975cac73f75b4016e3425113",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:48ea9d2132bbf74d899cc3a2419128e9ebfab5fd7692c3050dfdc20c6d199c03",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:1dbc7a947b1dc11ed42b38ea0bebcec3c6ba6d60150ee7c20f1c91d5692cbf45",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0cdb8f3ccd542ef3f3522932ba340c9cdc5f5d2",
+            "content": "sha256:28d7f688019376fbece54a7c055b3f274028f206b0ac669b9530ac99d137e114",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/previews.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The queue projection precomputes the empty-content digest.\n\nAnchor: \"_EMPTY_DIGEST = payload_digest(\\\"\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1818fde0a667d5e743c19f35c8c46c7c2f09b4f6",
+            "content": "sha256:998c30031a8030d29e7ea2a8b07351717aee198af76d9e20916201564d0367ee",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Authorized cockpit rows use stored content or the empty fallback, then mint operation and withdrawal refs.\n\nAnchor: \"operation_ref = mint_ref(\"; \"withdrawal_ref=mint_ref(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1818fde0a667d5e743c19f35c8c46c7c2f09b4f6",
+            "content": "sha256:bf4b474088b08b64daa669783ee991c066d11310814d11a903d29fa0058ada19",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1818fde0a667d5e743c19f35c8c46c7c2f09b4f6",
+            "content": "sha256:8d9ecdb918e608616906015b2fc629aacaddefe685e55270fab82d1adc3697ed",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

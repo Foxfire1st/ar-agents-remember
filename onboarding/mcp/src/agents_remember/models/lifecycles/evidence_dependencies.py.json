@@ -1,0 +1,174 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:0c38c0ed7c6d897b122d6df1b6c57ffefa01d5623b3c300023adcbe647c9acb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceDependencyKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:91d5d38c7dfe98df935839ac5ec8ffa60aa6860e9222a315a5d9bdaaa47c3cba",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_DEPENDENCY_POLICIES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:ed923bfca34ced297e3b8070019c32b2d8bb71829ef8886708656363e02eb369",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "90f5a68fa9584c2eb07433aa104cdf5df93e0ad2",
+            "content": "sha256:5ed2fc4181087a160f31eaf80c2695c71aef44c113995c55fd347e5292a74d59",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:4676069cc230f2d693f3d2151b6f44515a5fb8acf09f1c4c70fd9aa076319157",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_quality_attestation_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
+            "content": "sha256:d7247170560d289489c2f59175a79451f8a910ea4c72fa8374b72899f4cd8743",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_QUALITY_ATTESTATION_VALIDATOR"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
+            "content": "sha256:2949ee104a3f9c384aaafd19cdddd9eb3bdb135fc910be2f5ea4144618f7cfa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_door_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/door.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
+            "content": "sha256:59fe6f14817f4b66b8edfb890570b6a8226fd649e8f347a02902daf0cc633ab7",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_closeout_door_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/door.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:c9efe21b266054d3b5a6af34c0d29f74b0f45b69a887aca922a5451b4e198e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_operation_dependencies"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:713623c53c197bedff2555c72fbd62cba7c7ef533c5d05b336a54ba42b0f4bd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationInput"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Route review binds code tree, task intent, per-evidence-file SHA-256, and validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:a19d6c217a92f988b92ac61567ac6004a483214ee67ae78f776fabec97932f93",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_review"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:13dcb4d63e00961836664f15e7c4f4957a2e706febcc3f9f076e203251b0c909",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_route_review_task_intent"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

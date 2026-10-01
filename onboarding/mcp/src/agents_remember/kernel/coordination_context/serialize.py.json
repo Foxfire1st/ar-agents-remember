@@ -1,0 +1,81 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/serialize.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The CLI delegates JSON/text output to this module.\n\nAnchor: \"context_to_dict(\"; \"print_text(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d473f12d1a8648d55e61e409ef9c491fdddded",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "mcp/src/agents_remember/cli/coordination_resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14d473f12d1a8648d55e61e409ef9c491fdddded",
+            "content": "sha256:74d76eb1123be2aedfbc5cb06808edf93113b4cbe661ea4a1df3ad0a6e17a27e",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/cli/coordination_resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14d473f12d1a8648d55e61e409ef9c491fdddded",
+            "content": "sha256:3d5eece3e31811fc3e082b49888af545075bb84d056c7a0a22c1bce1a25df8aa",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/cli/coordination_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The application context packet builds the packet with `context_to_dict()`.\n\nAnchor: \"context_to_dict(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:514fad889468a806ec57d17b62cd9ab44b6ebefa44cbd0699a45ced8dd108303",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_context_packet"
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f33f584513ad3833a35a818b88f51eaacb54fbc",
+            "content": "sha256:5d447d35f33dba40c66d1c4aff55d65dd1ed9c19199b789d5f91a7c3f67b330a",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,134 @@
+{
+  "path": "mcp/tests/test_terminal_evidence_cursors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external/domain document defines this local cursor contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43e9c45fa7b4e0b0792ae68233c039949b7304fa",
+            "content": "sha256:2e04ebcfa38b770e92adb87048a4e2c215fde9dcf974f5b3f56151a90f35f85b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_entry_terminal_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Deque envelope validation, unsupported-projector gating, and candidate cursor selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43e9c45fa7b4e0b0792ae68233c039949b7304fa",
+            "content": "sha256:a5e562573823cb45a6e702186e7ed38c9ad272d96826207f960a2289db2c3506",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validated_evidence_cursor"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43e9c45fa7b4e0b0792ae68233c039949b7304fa",
+            "content": "sha256:2e04ebcfa38b770e92adb87048a4e2c215fde9dcf974f5b3f56151a90f35f85b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_entry_terminal_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pi paging remains bounded and returns the last inspected native id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43e9c45fa7b4e0b0792ae68233c039949b7304fa",
+            "content": "sha256:ae5d7deefd7393d4b7815f7fff378936c4f38cca3abf945737c4f4e89c43cb49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_pi_terminal_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Liveness contains the harness read failure and suppresses cursor persistence.\n\nAnchor: \"except HarnessControlError:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:2ea7a0a8ac50d2198a645a3798ae035f92c76c0a17fedfa7e8ff74b27a179d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_evidence"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Evidence and native-page models define the typed page envelopes under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:c12839b55e1a162fd9ee4bdee061544319130f7cd5f479ac063ac70cd0a242a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidencePage"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:9a6f714d035347da59ad6a1a099c0bb2ea83b36d245b5d1a427212d193119374",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeEvidencePage"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "This focused module is classified as unit-regression.\n\nAnchor: \"unit-regression\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68b64799fabbf257ec95b4d6d3c83e1e83c9d925",
+            "content": "sha256:1b2ffba9bcc8cd6cbf7e789797bc2b7cd6f8854431a059705fc12995b33eaee2",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

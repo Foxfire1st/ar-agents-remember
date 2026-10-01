@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package's public surface: the owner, the report, the request and the one operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb243d77b18d1a078388b92a380f9f71193f81e7",
+            "content": "sha256:0d488668c813816c20450749d0380f09f73bce5d299cc3d80602b8dd7a7eb813",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one operation it exports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd6cf1d01b81aad12a4d1e9d8815046cd441dffe",
+            "content": "sha256:357ec0bb032b4a3d1e7affcdfdac35ec1f39ddc73624a3d818d8441d2bbba737",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module map names the reconsideration rows and the task-document question (MIK-R14).\n\nAnchor: `reconsideration`; `open_questions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb243d77b18d1a078388b92a380f9f71193f81e7",
+            "content": "sha256:7661a91afac87f18847d741a113b8681149ab56095c6d213c0bb1638b3274358",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The module map names the requirement endpoints module (MIK-R13).\n\nAnchor: `requirement_links`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb243d77b18d1a078388b92a380f9f71193f81e7",
+            "content": "sha256:374265a6c21c22acf805040e66f475769b9c8db33be6d3929475a157f2ce9a89",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

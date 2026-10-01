@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test (the R11 cue).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:e3698496c58f36900eb0fac3fdc8235f3c260622f57e5b56266867b22d82999e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityReason"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The capability type the fixture builds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:efbd38cd02cde5982078f4ce49eb4abce1e3bd052893d96124c7ac037368d20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureCapability"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The surface that renders the labeled `history`/`live` cues in production.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

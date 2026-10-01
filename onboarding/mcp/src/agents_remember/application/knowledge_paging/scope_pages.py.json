@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/scope_pages.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: one rule for page 1 and later pages.\n\nAnchor: \"Pages of the selective scope read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6fc5ad4c32569d853d3360a2fea53369f779e1",
+            "content": "sha256:7fd55171ed710e820f62b9fb73a717feeb6ba99a4708da5400b9ff527df95414",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The resuming view by seed kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6fc5ad4c32569d853d3360a2fea53369f779e1",
+            "content": "sha256:afc1c80d5b0902149f9e7ff3348036d61e035105a8addf3d35275b907c9fc531",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RESUMING_VIEW"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Items as rows; a family revision heads its memberships.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6fc5ad4c32569d853d3360a2fea53369f779e1",
+            "content": "sha256:f4fa355a6d8042341c9863abc08c2b7826eaee4582037a84b634edcd0ce76a3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "scope_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A prepared seed, deferred or collapsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6fc5ad4c32569d853d3360a2fea53369f779e1",
+            "content": "sha256:40a975eda6d83da1a3259bbc2324c6a6b6fcc2d8fee5d229374079e222e5566f",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedScope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a6fc5ad4c32569d853d3360a2fea53369f779e1",
+            "content": "sha256:3c9fbdbc25796414910357fcbb6d22f208d08f886679610c8b8c793418068194",
+            "locator": {
+              "kind": "symbol",
+              "name": "collapsed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Selecting and checking a resumed position.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6fc5ad4c32569d853d3360a2fea53369f779e1",
+            "content": "sha256:8b62f61d6ad3393ee022df1a720e9fa5089377302eb21cdb643dc701e6a1c07e",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a6fc5ad4c32569d853d3360a2fea53369f779e1",
+            "content": "sha256:cd2b6e1dd568a36f0c2ba9b60dc07ab29afbae474cfffb18ff1614efffcc152b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_next_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The next token, or the move on to a queued seed.\n\nAnchor: `continuationSeed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6fc5ad4c32569d853d3360a2fea53369f779e1",
+            "content": "sha256:7a5ccc1f063724817366f52d4a7dd168d301aa53e2f74c98a019e487e5783446",
+            "locator": {
+              "kind": "symbol",
+              "name": "_continuation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

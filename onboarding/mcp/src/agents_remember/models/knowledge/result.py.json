@@ -1,0 +1,2628 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/result.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The declared mutating-operation vocabulary, including the six L4 operations, the two L5 merge operations, the two L6 portable operations, the one L7 read operation, the one L8 comparison operation, the two L10 route operations, **the seven L11 facet operations, the two L14 detection operations, the two L19 requirement-revision operations and the two L16 family-integrity operations** — **fifty members, re-counted from the literal on this candidate**, whose declaration is `:36-157`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The family-label request that names the row the caller read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:b565a1cde16cd10316c17ead50751d9d4bfa0d454c9de83b76e8e3e03bbdcf88",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetFamilyLabelRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The invariant-label result and its `labeled`/`refused` consistency validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:5b6c1c248163db0cee4734b28d69659ce83bafee823823cd8e81b8c19f96e372",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetInvariantLabelResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The family-label result and its `labeled`/`refused` consistency validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:587e04a653c12a9ce1d580c12c9265a22391297197bfeaf7803e91e221e6d6d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetFamilyLabelResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The batch vocabulary that carries the change request and its factual receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:65db1db8e18e31dbaa60d1ffb8c5541f26824a626c459431766c62ced74510aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeContext"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:0d2e70c574ca5933d43f3b0fdeb35527b92baf076b7ce94e6b5d6243a62c2568",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeBatch"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d57eb29b54ac8b2aa959558bae6c700b2aba3a53c80b026c3971b693ea347524",
+            "locator": {
+              "kind": "symbol",
+              "name": "MutationResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:5ddcdecbc43ab09efca09b4378549369b5f9c8867c22482f71098036566cfa9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:48d104b1fd50d0a4dde75c9fb0698482a088028bb1c9f2b6759f536c7ed0d8a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpectedRecord"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 518,
+              "kind": "line_range",
+              "start": 518
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:fa70699c93b787cb5dad77c54321d91d302fa7e38129ada82424e9235c20f701",
+            "locator": {
+              "end": 577,
+              "kind": "line_range",
+              "start": 546
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:103c86a16e7ebd7ef30fdc91f47f9ae6aae9d7b1b45f23f19d2972fc84cda85c",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:dce362cde388902908aacb7b0b6d6af2828b3688b7e175125d675f4d9579f41a",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The graph's request vocabulary and the anchor-endpoint union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:777a6109c704e5c93a8a30415ff07b06cef814e30ae9839dae936eb3bb01d630",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:df1b8aa4ea3339fd4206a953810bc892e1b65363390d0b11a89001cd42146a6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRevisionRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:396f1ff20d902980cdc0adba9568c82caeac8bdebc7ea533572c27e996c2689f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:d0f31401e9e6150ca13b95845ceb8b68fba8561830888b4d92948079578150cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorReference"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:1d27b8c0e253515078f1f64513297bf6131ca9bf59261072ab9430d2cffcd188",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 294
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:fb326d33270f4b301aafc04b9adc578f611eeafda433b06b1e63ee7e6ff57967",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:849e7c288851cb27638bb9b08c9161a1bc18bcaa7b82c05db4a7e8ebd4d9610c",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 306
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:b4d0c0476856d7750459974de039e22482847d622e691a8dc74c103dc19493b7",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:540a080da1fc99e482153055b107329f058c5d4cdb80fb1168b9cb56b6fd1dac",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:b8d0d4a2a60ad82804f6d225796a045677fe9233a97b9291d8844a71ad119224",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 347
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The realization-claim request the graph half added.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:0ab59459d27512778a6860e3cdafd4afff62935399d755276bca4d1894927ed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationClaimRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The eight graph result models that reuse the shared outcome rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4c5563b1bde0dc2fa0668003a8610f0cab3c7285e686e50d43d23ef4ff77b1f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateFamilyResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:340f18c9acc3e08eeed8de56729f1f3470e114b42f4b976eda960dddbb62eaf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateFamilyRevisionResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:2b38c59e5ccbc411fe0983cd2b0d87a16ce2274b39a99f0decccb86b7020d8ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateSourceAnchorResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:5dfdbebc55fd4d7e1515cf0996b878b5ce7eca01b552b46c26d7a93665a0b110",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateFamilyMemberResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4ec01981be9e5ced7af13be086271773701cb7ae21fa34a1a42274ce5f5c5e19",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateRealizationClaimResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:d5e2ad3dc679fc78a03fea6fe7dd517dc0843afe57acbbb662151edb5e583d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveSourceAnchorResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:de1e22a906aa790082908e203804cfb66d2d2a90a2fdd6cdd7b11f99a61c56e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveFamilyMemberResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:bd790ae08f6b4f63f8f5f818fee5bf663e56d5d178574b8d2fbc1ef841807774",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveRealizationClaimResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:8e4a675bbec6c5294bca117745850a00d20f7ecd51090f66937609bfff19d988",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 440
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:607334361652067b22ea91f25e81050b9860e835cb795d4d48ff6595e96e39c3",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:dfd4d4a057672bc0fa291891577770c6cd733f1758e335c8afd29ff937397a7c",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 505
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:a214a58caf456f49a44057c39b0bf44f2f579832fa41f07e034a815df2eafa32",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 520
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:53f74630b24dd2daeea79b8f4cf550938fa94872e6421d1bbbfe51b90a6091db",
+            "locator": {
+              "end": 549,
+              "kind": "line_range",
+              "start": 535
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:cee35642ce9328b459d76d64ba2132acd1fa11cce6417b3813d7a3182041ddd8",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 460
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:a9d10e750c09ff07de30ee130eb9bcceaedcbc4cebfc6dc852c2caa5348c079f",
+            "locator": {
+              "end": 589,
+              "kind": "line_range",
+              "start": 577
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The three L1 outcome models the shared rules were extracted from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:f492457f943f223f9edb36ffe4ce551b5c53d5e2fd7dc0ba7c647433368c4333",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateRevisionResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:c3fb561397ffa4bf1ccf310b96947ad553a69a217125491a73dfcfbe2eca7eb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateInvariantResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:1c0638cd4567e8eede4170faf2f0b9a9fc1368924fd939658d2dcdb5fd18e784",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryCreationResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:3703d2a423e1947892e475f3aba71edf8b1811a2221de24584b21515d26a9020",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 404
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:483f27a0ba8232389030459391aefc4dfe9779ec0a6e6a5ec9e9f7e65099de90",
+            "locator": {
+              "end": 630,
+              "kind": "line_range",
+              "start": 620
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:fbde6e201ed83879ee5309edf049e73608b0b8cd7c3cc7252f51d52892763504",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 428
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:c412ab0ca76675d5f028a52c870bbefefe6559669936d18dcd5bca50e81a98cb",
+            "locator": {
+              "end": 652,
+              "kind": "line_range",
+              "start": 638
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The seven factories that produce this leaf's codes, one per observable failure point.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:f48790c1b07bc231b16073f34a37a549d1e8f9b869946017bbfe23ebc06afd82",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_input_unavailable_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:05fc1becd457e50d63d06cc557fe119d01ecc56590c3b7d1d1a8765b6a60f220",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_binding_changed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:da6ed2cf23de3e1d1ea924ac7c9941abbb5efbb787a3cdcfbcaedcbdb97c6b8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_snapshot_unpublished_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:225678f86495abd65a71a723214516d3c224e88826fd071b373014942af949cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_incomplete_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b6e422cafebca20874ba2ea31ab76ab66f7ee621c67cb8a69f5eee0237b686f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_stale_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:7f112abcc389856e00541f6c583890e592b98d3dc74a37378d30f353c82cda04",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_failed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:65679cee07fb1b244f16445fa55fd9b7abdfd0ba22a70c90a60f27ae14be113f",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_durability_unconfirmed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The factories that build every other refusal in this package, one per code and case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:76ad3fa09c62442818e34421b20adc33e29c8d521542a18f4293f20ddb07c102",
+            "locator": {
+              "kind": "symbol",
+              "name": "lineage_cycle_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:e2b50a84684ec68c90ce1dd4d9f7e136c13618c129600598dfba692af13879f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_sqlite_error"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:32c34f80fa328909ecbd353eab4de1a5d9f9981076d9c7d16e8b5a28d6f551d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_target_not_candidate_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b6125e69d64512faee04a53c4ae9e5b7bd14c285ddc871697323ad6a0ed07b5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_promotion_not_supported_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The two members this leaf added, each for the reason written beside it in the source: the scope construction is neither the retrieval selection nor the composition traversal, and the pipeline's composition act is neither the construction nor a record read — and no refusal code was added with either.**\n\nAnchor: `construct_registered_scope`; `compose_family_integrity_report`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4c724e3f7f5ae4d452842308000df69a716620e92b31c4260c5aab83623ce58c",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:e9abfc897805278c48fbf33d64c836f98170383ff70e730c05ab111076753da4",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The two result states that carry `no_change` and the two operations that reach them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d57eb29b54ac8b2aa959558bae6c700b2aba3a53c80b026c3971b693ea347524",
+            "locator": {
+              "kind": "symbol",
+              "name": "MutationResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:16ef5dfaba9b04d6f697253cc15037fa11c884cd411534a16bf3d652d8276c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotPublicationResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d0c69d2ab79a8c08e124e9a20dbeb3481201a0a43b64d7ebf7955e7aa1525aeb",
+            "locator": {
+              "end": 729,
+              "kind": "line_range",
+              "start": 686
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The refusal value carrying code, operation, offending record and next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The two shared outcome-consistency rules every result model calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:8e5bc57a6b2e3fcb18f645f9671a90e078607cffb9a64bf8a5b5148b70642278",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_stored_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:717e3e6608cbd2a4a0c3e3094da26ffad2f70455940f74adacc9df7b23cfa95c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_removal_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:2c621628b36bb1cc0bee16277f4029f40849ff63e2b6a0e6bf8643b1ccb3d56e",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:ddc5ebeb9d173028ddcc8fbd2bd8b93a567454938eaae86101e66f307b4192ee",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:438ddc4832a13160c7ebcae09e365513bf7bf010210a1335097fbf6ee1a4ab0e",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The digest-free caller draft that refuses a self-declared predecessor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:3b9e3b3210dc1c1d468b118282798a07ae9130aa6ac2e763f79aee56370c3175",
+            "locator": {
+              "kind": "symbol",
+              "name": "RevisionDraft"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:959562b803d194692368aaed03358d21a43752d13454d912c838a3d597e8535c",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The two label-edit requests, each naming the row the caller read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:f7c83fa8a6c2094f49c88e56ceb4be10e09a46a73e48b0943745ce0cfa49dc0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetInvariantLabelRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:2b99e12d08e3e0dc9676d4f7fcbb0af375881a27ff218448742a400a0d62e008",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The family-label request that names the row the caller read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:b565a1cde16cd10316c17ead50751d9d4bfa0d454c9de83b76e8e3e03bbdcf88",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetFamilyLabelRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The invariant-label result and its `labeled`/`refused` consistency validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:5b6c1c248163db0cee4734b28d69659ce83bafee823823cd8e81b8c19f96e372",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetInvariantLabelResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:56c1288c9d2a2114c89ab6a5a36e0690fb510c2e97aa8c1f7834618b028575e8",
+            "locator": {
+              "end": 612,
+              "kind": "line_range",
+              "start": 592
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The family-label result and its `labeled`/`refused` consistency validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:587e04a653c12a9ce1d580c12c9265a22391297197bfeaf7803e91e221e6d6d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetFamilyLabelResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:e2b5ae318128fa4f7c72d57c9ce642ffa15990adffa633a4246610448903c465",
+            "locator": {
+              "end": 635,
+              "kind": "line_range",
+              "start": 615
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The batch vocabulary that carries the change request and its factual receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:65db1db8e18e31dbaa60d1ffb8c5541f26824a626c459431766c62ced74510aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeContext"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:0d2e70c574ca5933d43f3b0fdeb35527b92baf076b7ce94e6b5d6243a62c2568",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeBatch"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d57eb29b54ac8b2aa959558bae6c700b2aba3a53c80b026c3971b693ea347524",
+            "locator": {
+              "kind": "symbol",
+              "name": "MutationResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:5ddcdecbc43ab09efca09b4378549369b5f9c8867c22482f71098036566cfa9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:48d104b1fd50d0a4dde75c9fb0698482a088028bb1c9f2b6759f536c7ed0d8a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpectedRecord"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:14e9a27e531deeb636b15bac0474cf28576ee12722ba69c7ca7d42fd4e34d5a7",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:fac06df3f3e5cfd699f83ca2d2d229e719e880e17d355ce93f93e20fca48ee7b",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 381
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d74fd95f6de7d8acb57725bebde97b9c4663e3404d7334349f6e1b623c3ae1e2",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 409
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:103c86a16e7ebd7ef30fdc91f47f9ae6aae9d7b1b45f23f19d2972fc84cda85c",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The graph's request vocabulary and the anchor-endpoint union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:777a6109c704e5c93a8a30415ff07b06cef814e30ae9839dae936eb3bb01d630",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:df1b8aa4ea3339fd4206a953810bc892e1b65363390d0b11a89001cd42146a6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRevisionRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:396f1ff20d902980cdc0adba9568c82caeac8bdebc7ea533572c27e996c2689f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:d0f31401e9e6150ca13b95845ceb8b68fba8561830888b4d92948079578150cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorReference"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:b4d0c0476856d7750459974de039e22482847d622e691a8dc74c103dc19493b7",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:540a080da1fc99e482153055b107329f058c5d4cdb80fb1168b9cb56b6fd1dac",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:af3353b66f8b1046038828528075a3f4e4d10cd6e2cb47295b32deca607e35dd",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:b8d0d4a2a60ad82804f6d225796a045677fe9233a97b9291d8844a71ad119224",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 347
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The declared refusal vocabulary, with each member naming a distinct observable failure — the seven L4 codes, the twelve L5 merge codes, the one L6 portable code, the six L7 read codes (L8, L10, L11, L16 and L18 added none) **the one L14 detection code** and the cutover's `database_frozen` (260928-MIK-L37); forty-six members, re-counted from the literal, over `:161-236`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The realization-claim request the graph half added.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:0ab59459d27512778a6860e3cdafd4afff62935399d755276bca4d1894927ed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationClaimRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The eight graph result models that reuse the shared outcome rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4c5563b1bde0dc2fa0668003a8610f0cab3c7285e686e50d43d23ef4ff77b1f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateFamilyResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:340f18c9acc3e08eeed8de56729f1f3470e114b42f4b976eda960dddbb62eaf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateFamilyRevisionResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:2b38c59e5ccbc411fe0983cd2b0d87a16ce2274b39a99f0decccb86b7020d8ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateSourceAnchorResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:5dfdbebc55fd4d7e1515cf0996b878b5ce7eca01b552b46c26d7a93665a0b110",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateFamilyMemberResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4ec01981be9e5ced7af13be086271773701cb7ae21fa34a1a42274ce5f5c5e19",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateRealizationClaimResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:d5e2ad3dc679fc78a03fea6fe7dd517dc0843afe57acbbb662151edb5e583d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveSourceAnchorResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:de1e22a906aa790082908e203804cfb66d2d2a90a2fdd6cdd7b11f99a61c56e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveFamilyMemberResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:bd790ae08f6b4f63f8f5f818fee5bf663e56d5d178574b8d2fbc1ef841807774",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveRealizationClaimResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:817ab2f796151a0eef4d143304790c2b5f592d54ff5f8c1d63cd2d420b43e665",
+            "locator": {
+              "end": 475,
+              "kind": "line_range",
+              "start": 462
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:c5f1f1b73d46315cd4eaada8b655b072e08b4017fb186e769242f39a6b652b9f",
+            "locator": {
+              "end": 495,
+              "kind": "line_range",
+              "start": 478
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:940ae7a0f9ae0b55c840c9c68cc151021671438636fe8db72d07f05963a2453f",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 498
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:0634a5c42bbb987bea62480f34e7e8a3d7ce138bd1cdf04faeefe01c2e48497d",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 514
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:062262471216739d263304aee46c64adacfbe79976a413731688362902896377",
+            "locator": {
+              "end": 544,
+              "kind": "line_range",
+              "start": 530
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:5f5a722834af6c6137b9615bcaed851257c803d73150e224668948bf0a1598c4",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:bf780ffef6d3f5b9042699d4302388aa617fd8b35f746f0d101352a698eeff9d",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 562
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:a9d10e750c09ff07de30ee130eb9bcceaedcbc4cebfc6dc852c2caa5348c079f",
+            "locator": {
+              "end": 589,
+              "kind": "line_range",
+              "start": 577
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The three L1 outcome models the shared rules were extracted from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:f492457f943f223f9edb36ffe4ce551b5c53d5e2fd7dc0ba7c647433368c4333",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateRevisionResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:c3fb561397ffa4bf1ccf310b96947ad553a69a217125491a73dfcfbe2eca7eb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateInvariantResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:1c0638cd4567e8eede4170faf2f0b9a9fc1368924fd939658d2dcdb5fd18e784",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryCreationResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:d87a975b0367374febd815f7e5c8aee072b0714fd108d44f48f434a22c8c615a",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 426
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:682de61ceb55269256785de4348b51a7ebbde85314d2f9be8106c83b91a8e205",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 446
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:c412ab0ca76675d5f028a52c870bbefefe6559669936d18dcd5bca50e81a98cb",
+            "locator": {
+              "end": 652,
+              "kind": "line_range",
+              "start": 638
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The seven factories that produce this leaf's codes, one per observable failure point.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:f48790c1b07bc231b16073f34a37a549d1e8f9b869946017bbfe23ebc06afd82",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_input_unavailable_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:05fc1becd457e50d63d06cc557fe119d01ecc56590c3b7d1d1a8765b6a60f220",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_binding_changed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:da6ed2cf23de3e1d1ea924ac7c9941abbb5efbb787a3cdcfbcaedcbdb97c6b8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_snapshot_unpublished_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:225678f86495abd65a71a723214516d3c224e88826fd071b373014942af949cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_incomplete_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b6e422cafebca20874ba2ea31ab76ab66f7ee621c67cb8a69f5eee0237b686f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_stale_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:7f112abcc389856e00541f6c583890e592b98d3dc74a37378d30f353c82cda04",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_failed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:65679cee07fb1b244f16445fa55fd9b7abdfd0ba22a70c90a60f27ae14be113f",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_durability_unconfirmed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The factories that build every other refusal in this package, one per code and case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:76ad3fa09c62442818e34421b20adc33e29c8d521542a18f4293f20ddb07c102",
+            "locator": {
+              "kind": "symbol",
+              "name": "lineage_cycle_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:e2b50a84684ec68c90ce1dd4d9f7e136c13618c129600598dfba692af13879f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_sqlite_error"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:32c34f80fa328909ecbd353eab4de1a5d9f9981076d9c7d16e8b5a28d6f551d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_target_not_candidate_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b6125e69d64512faee04a53c4ae9e5b7bd14c285ddc871697323ad6a0ed07b5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "batch_promotion_not_supported_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The two result states that carry `no_change` and the two operations that reach them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d57eb29b54ac8b2aa959558bae6c700b2aba3a53c80b026c3971b693ea347524",
+            "locator": {
+              "kind": "symbol",
+              "name": "MutationResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:16ef5dfaba9b04d6f697253cc15037fa11c884cd411534a16bf3d652d8276c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotPublicationResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d0c69d2ab79a8c08e124e9a20dbeb3481201a0a43b64d7ebf7955e7aa1525aeb",
+            "locator": {
+              "end": 729,
+              "kind": "line_range",
+              "start": 686
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The ten factories that produce this leaf's twelve merge codes, one per observable failure point**, including the two structural refusals that run before a session exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:920976ea3f0fbd90a87a8d1ec1165fdc7fa58712ff65e1755fa7f45df8936092",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_mismatch_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:e39b86199cc7015f0df6a39dbbbb29aedd58e6f03c20c85aeb5f9283900ff2e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_required_table_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:e0b4096f2cb0247f4b84145f7e98308a6662f510bd0d44e5710b8b20160fa25c",
+            "locator": {
+              "kind": "symbol",
+              "name": "conflicting_values_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:c7367d1f5cd16282ad820bc76bdda20ca2660f1abd1a1fb0ff174ce5334be660",
+            "locator": {
+              "kind": "symbol",
+              "name": "duplicate_identity_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:95f31d12c1d3d5bdc8b00fcc3fea2146b925d5ca29f057a64589f23ac44be5f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_reference_conflict_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:d735857b8dbd775befdf8f614af40c06761c722f8550ba18cdfc58e716cbda90",
+            "locator": {
+              "kind": "symbol",
+              "name": "duplicate_relationship_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:6d99bce89d68d3e61ccba203f6ad05a092429c17545a8611fca8c86bf7e1cb77",
+            "locator": {
+              "kind": "symbol",
+              "name": "immutable_revision_changed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:4b22035493622c5f1cf75b8b50675cd17629659ce2d82d3c369deb5463ee0d11",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_unavailable_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:bce33e210425266433ce6a53c0b9765b36f21f5594736ff202c5cbbdc0e94a3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "changeset_incomplete_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "503f2ccb249bab9459d345377b3813c066dbceb5",
+            "content": "sha256:14ecbf57a57976e65e41d84e93f2317ba8b4de4294df3a326512802698b082ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "changeset_postcondition_failed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "**The five factories that produce the portable boundary's codes in this leaf's own refusal module, one per observable failure point.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:f43e92b561938006f789cf6c4e6bb2e72bc11878eb98b1c08f221d5f1e9d8ffa",
+            "locator": {
+              "kind": "symbol",
+              "name": "invalid_export_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:412fc1ae3cebdb6a338e43c2ae32c50ff323cabb44558473d12eb7e8c3e823ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "non_canonical_export_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:ba31420c713f9d527825a422d2d033540043a0c1382246089604fe158d23636c",
+            "locator": {
+              "kind": "symbol",
+              "name": "unsupported_schema_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:734ab88d00f0fe1c1b40dec90e7567cd5b25f832daaf245416eb63a69c8ad54b",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_occupied_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:b06dd98b7300280383f43366f1dbfcc439bca94132d11e5b310db845e4534390",
+            "locator": {
+              "kind": "symbol",
+              "name": "destination_absent_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:6e31bd86e694da725c47c883f85f8dbc4265ff947f11ef8bf06278cdd959c827",
+            "locator": {
+              "kind": "symbol",
+              "name": "import_validation_failed_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "**The one L6 code's dedicated refusal identity: the canonical-form refusal, whose `record_id` distinguishes \"not this format\" from \"this format, spelled differently\".**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f664e4689c73b198b256afc292ac5030438337c5",
+            "content": "sha256:412fc1ae3cebdb6a338e43c2ae32c50ff323cabb44558473d12eb7e8c3e823ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "non_canonical_export_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/export_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The node that asserts the portable boundary's refusal codes by code rather than by message.\n\nAnchor: \"test_a_document_that_is_not_a_well_formed_artifact_is_refused\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3966b905a1b81009697545812315730b7db53e",
+            "content": "sha256:fe79284f775ff0a1a2d9300993a37de46cbc97dec4d74c69eda552620a9e141c",
+            "locator": {
+              "end": 802,
+              "kind": "line_range",
+              "start": 716
+            },
+            "path": "mcp/tests/test_knowledge_portable_roundtrip.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The six L7 codes' producers, one factory per observable failure point, each carrying the next action a caller needs.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:31ca80312b64d8661d81f5c7963e68fdeca954b4884298eb93d0b4799872cadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "selector_absent_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "447d4cc906e77679e15514daa94d05894257dd02",
+            "content": "sha256:95ab833358dd913ca94fe234fe7b8b89c0e49e93c46a6a51e4778e2ce7bd14db",
+            "locator": {
+              "kind": "symbol",
+              "name": "registration_absent_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:a8eb20316f741b99e95ec0b5cf45f84393020328212fbd5bd309141c93711ec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "page_budget_too_small_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:81d6f2516dae0d99c7f171dfdacff64b518a201ad4453e8ead1f61bb1e612588",
+            "locator": {
+              "kind": "symbol",
+              "name": "continuation_binding_mismatch_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:3de7d0510dfa4c6ae50302fe07c370133b6291b0ed9521db0d6aa5e23e588d99",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_unavailable_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:7ec991601ba2bddb4c403e4fb2139b18997c75b01a749382788ee0d8f3e0397b",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_incomplete_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "447d4cc906e77679e15514daa94d05894257dd02",
+            "content": "sha256:2d160c2dfe31da6e537fbba22014536244a3f8b66e96a996af78e5f03798cbc7",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:002046821eb3067afb3cf039edbaa3261760ab808d6b0c52abf5d43149c67225",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:c0078c3da7f8ef75f86e20575d7d0dc019be8bf573e8004076be6e7db3b3e777",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:7b3d6a1be184f00d3849c13f0849b097d4e54042196932bde5bb88545fbed4f0",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:a7772ebb59d4c2c6dabb61fb5ab4f9d1fbe236aaedd93e72052bf2d58d15a17c",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The declared mutating-operation vocabulary, including the six L4 operations, the two L5 merge operations, the two L6 portable operations, the one L7 read operation, the one L8 comparison operation, the two L10 route operations, the seven L11 facet operations, **the two L14 detection operations, the two L18 citation-binding operations and the two L16 family-integrity operations** — fifty members, re-counted from the literal on this candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The declared refusal vocabulary, with each member naming a distinct observable failure — the seven L4 codes, the twelve L5 merge codes, the one L6 portable code, the six L7 read codes (L8, L10, L11, L16 and L18 added none) **the one L14 detection code** and the cutover's `database_frozen` (260928-MIK-L37); forty-six members, re-counted from the literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The eight graph result models that reuse the shared outcome rules, cited at their own declarations rather than at one of them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4c5563b1bde0dc2fa0668003a8610f0cab3c7285e686e50d43d23ef4ff77b1f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateFamilyResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:340f18c9acc3e08eeed8de56729f1f3470e114b42f4b976eda960dddbb62eaf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateFamilyRevisionResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:2b38c59e5ccbc411fe0983cd2b0d87a16ce2274b39a99f0decccb86b7020d8ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateSourceAnchorResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:5dfdbebc55fd4d7e1515cf0996b878b5ce7eca01b552b46c26d7a93665a0b110",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateFamilyMemberResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:4ec01981be9e5ced7af13be086271773701cb7ae21fa34a1a42274ce5f5c5e19",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateRealizationClaimResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:d5e2ad3dc679fc78a03fea6fe7dd517dc0843afe57acbbb662151edb5e583d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveSourceAnchorResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:de1e22a906aa790082908e203804cfb66d2d2a90a2fdd6cdd7b11f99a61c56e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveFamilyMemberResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:bd790ae08f6b4f63f8f5f818fee5bf663e56d5d178574b8d2fbc1ef841807774",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoveRealizationClaimResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:ae6cae8f84c60c333c766a23214519df2a80d1607f1b8212734a3d5cb9d89142",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 419
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:1d3285f66779dbc8dbab1954c4fcfecc566ef20162913fbc34faead2e66e387c",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 435
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:d6e6b497a17c2c1978ac96e589b4bd4036c5cd679ce84e6c5512c57745e22c39",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 455
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:607a429ebb94a17f05a647d1e8fab739361561458af2efff1110af7fd2a77c9f",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 487
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:140b8bedb519e4f6edd4a8b0319e02fa8358036144a36db138383dca5977ec9a",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 504
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:27ff41b222182a94b78073df9f04708f39674eb61c55f8a959897f2270fb37d3",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 519
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:8e86464fe057a4fec37acdbc6aed171adf3c96a428c37839dc3397dc98762c16",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 539
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:a9d10e750c09ff07de30ee130eb9bcceaedcbc4cebfc6dc852c2caa5348c079f",
+            "locator": {
+              "end": 589,
+              "kind": "line_range",
+              "start": 577
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The three L1 outcome models the shared rules were extracted from, cited at their own declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:f492457f943f223f9edb36ffe4ce551b5c53d5e2fd7dc0ba7c647433368c4333",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateRevisionResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:c3fb561397ffa4bf1ccf310b96947ad553a69a217125491a73dfcfbe2eca7eb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CreateInvariantResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:1c0638cd4567e8eede4170faf2f0b9a9fc1368924fd939658d2dcdb5fd18e784",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryCreationResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:394e3c11a35d3aa8796257b8ace90ef1ff1decdfe669ec90b75fd6f4d2c26dd3",
+            "locator": {
+              "end": 401,
+              "kind": "line_range",
+              "start": 383
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:76bc1b4e7a6b14d49cacdcc3386253b36dfee27c4557f67ae3a97df6f6892f5d",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 403
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:fd382396cbafda32f81b18b0be72e630090d1254e5048daee4c1f42080f3ba42",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 595
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:fbde6e201ed83879ee5309edf049e73608b0b8cd7c3cc7252f51d52892763504",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 428
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:483f27a0ba8232389030459391aefc4dfe9779ec0a6e6a5ec9e9f7e65099de90",
+            "locator": {
+              "end": 630,
+              "kind": "line_range",
+              "start": 620
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:c412ab0ca76675d5f028a52c870bbefefe6559669936d18dcd5bca50e81a98cb",
+            "locator": {
+              "end": 652,
+              "kind": "line_range",
+              "start": 638
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The refusal code of a database write into a converted tree.\n\nAnchor: \"database_frozen\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:0b90ae412bdbdc8161756789aabbbb6802048b4912b9604da154bca94419e81e",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The read's own result model, which is a page or a refusal and never both, and the read operation literal it carries.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
+            "content": "sha256:a7b0c10886da65e1e962610c2c78e37f0e6c331a7c34481b8e4922c505104958",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The refusal value carrying code, operation, offending record and next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:023d46b486f2a19c6153bac77dc20760a89ffe9f3730d45ce557d869ff0405a1",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two shared outcome-consistency rules every result model calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:8e5bc57a6b2e3fcb18f645f9671a90e078607cffb9a64bf8a5b5148b70642278",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_stored_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:717e3e6608cbd2a4a0c3e3094da26ffad2f70455940f74adacc9df7b23cfa95c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_removal_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:f8921f4af660c39b5818e26430901cacd8430b745e94a1cbce68d4f6dfcd0f58",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:e93ec20a3edee2f1d9f4944286d66ec54f8a433045d3d642794e258dc7aa8559",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:cc1e87b1e0b90bba33370005fb3f022c6e615ea583d38d84070c634b1fff84fa",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 220
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:fed4fb467578732472f50a4d7b216c7e221760d30e93c8017f536d9f16a76ce7",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 203
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:438ddc4832a13160c7ebcae09e365513bf7bf010210a1335097fbf6ee1a4ab0e",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The digest-free caller draft that refuses a self-declared predecessor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:3b9e3b3210dc1c1d468b118282798a07ae9130aa6ac2e763f79aee56370c3175",
+            "locator": {
+              "kind": "symbol",
+              "name": "RevisionDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two label-edit requests, each naming the row the caller read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:f7c83fa8a6c2094f49c88e56ceb4be10e09a46a73e48b0943745ce0cfa49dc0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SetInvariantLabelRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
+            "content": "sha256:2b99e12d08e3e0dc9676d4f7fcbb0af375881a27ff218448742a400a0d62e008",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

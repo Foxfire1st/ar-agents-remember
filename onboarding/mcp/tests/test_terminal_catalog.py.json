@@ -1,0 +1,151 @@
+{
+  "path": "mcp/tests/test_terminal_catalog.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Landed state round trips and is not reanimated",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb4c0d68f659299c8a80d37a6e1322f5ca2074d1",
+            "content": "sha256:2b843db45a7797bd2b590eab39b80cf65b313577afc64fe2a361a3dcb28675dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_state_round_trips_and_is_not_reanimated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Dispatch brief receipts are idempotent and refuse a second receipt",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb4c0d68f659299c8a80d37a6e1322f5ca2074d1",
+            "content": "sha256:665c3b2d8546d67bef9ddd06c03c7cb34b9f27c1cb2fdef858c9ffdb477a56d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dispatch_brief_receipts_are_idempotent_and_refuse_a_second_receipt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Read refuses torn extra data without erasing evidence",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb4c0d68f659299c8a80d37a6e1322f5ca2074d1",
+            "content": "sha256:276d1e7d165dddd38f52b673249ee1cd6bdb5e1e5ee35835dab6697099c8e45a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_refuses_torn_extra_data_without_erasing_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Concurrent upserts do not lose or corrupt rows",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb4c0d68f659299c8a80d37a6e1322f5ca2074d1",
+            "content": "sha256:2b9fe13c0b5ee7bd0a14724947e26253a22c3f729cc71d8ae8956bad74217f7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_concurrent_upserts_do_not_lose_or_corrupt_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cross instance termination is sticky and never resurrected",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb4c0d68f659299c8a80d37a6e1322f5ca2074d1",
+            "content": "sha256:bae9ea0cfc371924f1e375d414f96559ef631acab7dc8211dfc004c3827de18c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cross_instance_termination_is_sticky_and_never_resurrected"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A batch whose rows do not change performs zero physical file replacements",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb4c0d68f659299c8a80d37a6e1322f5ca2074d1",
+            "content": "sha256:92f2b171c82adc32790480797b0e86a4c220ffc1ce54727bd61748be6743bd3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_clean_batch_does_not_replace_catalog"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Inside a batch, `get()` sees the working buffer while `list_committed()` sees the committed row",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb4c0d68f659299c8a80d37a6e1322f5ca2074d1",
+            "content": "sha256:14aaef1b1c9fdd675f6eb0aa59bb0ef067732d086d45c2d6bb229ee2f4050a18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_list_committed_bypasses_batch_buffer_without_changing_list_semantics"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Two logical mutations in one batch produce exactly one replacement",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb4c0d68f659299c8a80d37a6e1322f5ca2074d1",
+            "content": "sha256:bee5c390573a165b30ee369ca1b6a598eae5c39cf669a14d89e493a8e660f6c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dirty_batch_replaces_catalog_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A dirty partial flush persists earlier progress once, leaves later rows untouched, and permits a later batch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb4c0d68f659299c8a80d37a6e1322f5ca2074d1",
+            "content": "sha256:87cf5dafa20acc3bfcef10e35926d3e6167be38b5b4554d0217c10520906ec59",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dirty_partial_batch_flushes_once_and_releases_for_retry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

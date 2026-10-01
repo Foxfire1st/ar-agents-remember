@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/library/normalize_common.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Codex parser builds its blocks and provenance on these primitives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51452c8602b6dcc0098a3934fb9677c20d15b1ac",
+            "content": "sha256:03eaf91083eaa88f41f47dd51068add1d19b693a5c6119dd3e93a205eb6029d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_items_from_thread"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex_normalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51452c8602b6dcc0098a3934fb9677c20d15b1ac",
+            "content": "sha256:3b79580b0cc40089aa23455f32801b93afe676e7944ef15fe2ed1c8b62bfbf4f",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex_normalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Claude and Pi ports cap text, extract content, and require fields through this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:e17c16901463ff2a01ba79a41b65a5e64ccd974d1e5a29cecf1fc7aeb8596445",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaudeConversationLibrary"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad5c905bdab26a647e6669cdb5b5ed44fccfe85b",
+            "content": "sha256:9ce7d4a9669814732c4746d975a373a98d75f7bf6dc28055135250c9baac1967",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiConversationLibrary"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/pi.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:62bec279bb8361c5f0af2780e4fb9d4616732a9b962d1c90484203bec35aa3c3",
+            "locator": {
+              "end": 424,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad5c905bdab26a647e6669cdb5b5ed44fccfe85b",
+            "content": "sha256:cdab15da26b55a68c77358961c4a676c92dbf8d71053600241d12d69bf6af7bf",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/pi.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

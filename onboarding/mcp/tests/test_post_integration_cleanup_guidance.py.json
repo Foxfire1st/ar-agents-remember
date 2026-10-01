@@ -1,0 +1,156 @@
+{
+  "path": "mcp/tests/test_post_integration_cleanup_guidance.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Finalization and retired cleanup-vocabulary assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:16c6da45c04f620ff683a74de4fb64e06e5171c87f9e53acb5ebae9f13bca044",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pending_cleanup_offers_finalization_and_never_a_cleanup_decision"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:b9c4085efcfee5e52db272e52ae2765449e7058e086c96cd20c7505aa5bdc12f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cleanup_decision_is_no_longer_in_the_next_operation_vocabulary"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:4230adf5282f8f7097cb2fc11a9f5290511f5b2be3988091c3e1ef58d8fcbb4d",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:c68799da24e3edbaef23e4b8aef8aab61e0d29b3f0bdc41af0d25d587b3a7a6b",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "External completion depends on landed commits, never cache text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:bed6b4a3fd67105d46c67f019f143988f0646c47b20731e04a123696e73c563e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_external_completion_proves_landed_commits_without_reading_the_cache"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:760a46cf6be785dc3c5c006f8f47fa0f673fc86cc2c8986b307c93c83a64e404",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checkpoint guidance remains still-working.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:fdec85c80e11f9242add2e98cabcb2e45ac34ccdbe216a907977584ac74a5a22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_checkpointed_series_keeps_working_instead_of_being_told_to_integrate"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:38b61bae095090b09006a0f5302cca10a12806db6c47a6727b6dc7499496432b",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Production completion and post-integration guidance owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "carryover_done"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:b7a56934e8c671c2399fc9a8409212ce02831ef4a8fdee76e29d21b7e4eb92ba",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

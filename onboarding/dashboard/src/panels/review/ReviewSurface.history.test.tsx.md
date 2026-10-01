@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewSurface.history.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewSurface.history.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [panels route overview](../overview.md)
@@ -93,16 +83,16 @@ the surface stops showing an action the server supplied. `afterEach` calls `clea
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's two cases, the surface and
 client they drive, and the entry that produces the historical target in the first place. Three details a
@@ -111,41 +101,23 @@ rather than reinterpreting; the live read's query string is unchanged from every
 the entry that supplies `history="recorded"` is the change-set bar's closed-leaf branch, which is where
 the "Intent review (recorded)" label is chosen.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of what it exercises and the defect it catches, including that only `fetch` is stubbed.** | `ReviewSurface`; `intentReview` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:1-14; dashboard/src/panels/review/ReviewSurface.tsx:534-600; dashboard/src/data/review.ts:558-574 |
-| The one real task context the cases name, and the subject the historical target carries. | `REPO`; `MASTER`; `LEAF`; `SUBJECT` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:27-30 |
-| **The refusal a closed leaf with nothing recorded earns, carried verbatim from the server so the case fails if the surface stops showing the action.** | `NOTHING_RECORDED`; `candidate_not_live` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:34-49 |
-| The test server stub supplies the response body; requestUrl reads the actual request emitted by the client. | `serving`; `requestUrl` | dashboard/src/panels/review/ReviewSurface.history.test.tsx:51-64; dashboard/src/panels/review/ReviewSurface.history.test.tsx:66-68 |
-| Recorded task review sends the historical selector and states the recorded comparison in the mounted surface. | "asks for the leaf's recorded comparison and says so when the entry carries the record" | dashboard/src/panels/review/ReviewSurface.history.test.tsx:76-112 |
-| A live entry sends no historical selector and makes no recorded-comparison claim. | "asks for the live candidate and claims no record when the entry names none" | dashboard/src/panels/review/ReviewSurface.history.test.tsx:114-133 |
-| **The surface's half: the record is part of the target key, the header states it, and the root publishes which record was read.** | `targetKeyOf`; `ReviewHeader`; `history?: ReviewHistory`; "review-history"; `data-review-history={history ?? 'live'}` | dashboard/src/panels/review/ReviewReadCycle.ts:82-100; dashboard/src/panels/review/ReviewSurface.tsx:43-50; dashboard/src/panels/review/ReviewSurface.tsx:397-451; dashboard/src/panels/review/ReviewSurface.tsx:497-506; dashboard/src/panels/review/ReviewSurface.tsx:550-550 |
-| **The panes mounted as one block for one payload, which is what the extraction that cleared the lint rail produced: `ReviewPanes` mounts the workspace and the technical-details disclosure, whose knowledge, source and evidence panes live in `ReviewRecordPanes.tsx` since L48 and render only for the payload that answers the subject on screen.** | `ReviewPanes`; `ReviewTechnicalDetails` | dashboard/src/panels/review/ReviewSurface.tsx:302-370; dashboard/src/panels/review/ReviewRecordPanes.tsx:450-497 |
-| **The client's half: the record is appended to the query string only when it is defined, and it carries the one value the server admits.** | `intentReview`; `history?: ReviewHistory`; `params.history = history`; `export type ReviewHistory = "recorded"` | dashboard/src/data/review.ts:558-574; dashboard/src/data/review.ts:473-473; dashboard/src/data/review.ts:490-490; dashboard/src/data/review.ts:498-498 |
-| **The entry that produces the historical target: the closed leaf keeps its Intent review, labelled as the recorded one, and the working change-set stays live-gated. Since `260921-ICR-L47` the target and label are built by `IntentReviewEntry`, which `LeafEntries` mounts.** | `LeafEntries`; `IntentReviewEntry`; `historical: true`; "Intent review (recorded)" | dashboard/src/panels/detail-panel/changeSetBar.tsx:272-306; dashboard/src/panels/detail-panel/intentReviewEntry.tsx:131-171 |
-| **The takeover that hands the record to the surface: a closed leaf's entry carries `historical`, and the surface then asks for that leaf's recorded comparison.** | `ChangeSetTakeover` | dashboard/src/cockpit/Cockpit.tsx:567-606 |
-| **The target field the record travels in, beside the subject the entry already carried.** | `ChangeSetTarget` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:33-55 |
-| **The server's admission of the one historical form, and the transport ref that carries it beside the subject.** | `RECORDED_HISTORY`; `_admitted_history`; `ReviewQuestionRef`; `ReviewSelectorRef` | mcp/src/agents_remember/serving/review.py:79-79; mcp/src/agents_remember/serving/review.py:419-438; mcp/src/agents_remember/serving/review.py:219-240; mcp/src/agents_remember/serving/review.py:246-246 |
+- **The module's own statement of what it exercises and the defect it catches, including that only `fetch` is stubbed.** [1]
+- The one real task context the cases name, and the subject the historical target carries. [2]
+- **The refusal a closed leaf with nothing recorded earns, carried verbatim from the server so the case fails if the surface stops showing the action.** [3]
+- The test server stub supplies the response body; requestUrl reads the actual request emitted by the client. [4]
+- Recorded task review sends the historical selector and states the recorded comparison in the mounted surface. [5]
+- A live entry sends no historical selector and makes no recorded-comparison claim. [6]
+- **The surface's half: the record is part of the target key, the header states it, and the root publishes which record was read.** [7]
+- **The panes mounted as one block for one payload, which is what the extraction that cleared the lint rail produced: `ReviewPanes` mounts the workspace and the technical-details disclosure, whose knowledge, source and evidence panes live in `ReviewRecordPanes.tsx` since L48 and render only for the payload that answers the subject on screen.** [8]
+- **The client's half: the record is appended to the query string only when it is defined, and it carries the one value the server admits.** [9]
+- **The entry that produces the historical target: the closed leaf keeps its Intent review, labelled as the recorded one, and the working change-set stays live-gated. Since `260921-ICR-L47` the target and label are built by `IntentReviewEntry`, which `LeafEntries` mounts.** [10]
+- **The takeover that hands the record to the surface: a closed leaf's entry carries `historical`, and the surface then asks for that leaf's recorded comparison.** [11]
+- **The target field the record travels in, beside the subject the entry already carried.** [12]
+- **The server's admission of the one historical form, and the transport ref that carries it beside the subject.** [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised by this module. It drives one repository's own review route
 through a stubbed transport.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`ReviewSurface.tsx`) moved with the leaf's inserted lines: 1 passing row(s) normalised by the fixer; 1 row(s) the fixer declined re-pointed by the exact base-to-staged line shift (each byte-identical to memory HEAD, its anchors checked in the base and shifted ranges). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/detail-panel/intentReviewEntry.tsx`, `dashboard/src/panels/review/ReviewRecordPanes.tsx`, `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/cockpit/Cockpit.tsx`, `dashboard/src/data/review.ts`); no claim changed. No verification stamp was advanced.
-- 2026-09-28T21:38:58+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claims re-read after the surface split.** The record is still part of the target key (`targetKeyOf`, declared in `ReviewReadCycle.ts` and computed in `useSurface`), `ReviewHeader` still mounts `review-history` for the recorded read, and the root still publishes `data-review-history` (the anchor now spells the code's single-quoted literal). The panes row was reworded because `ReviewPanes` now mounts the workspace plus `ReviewTechnicalDetails` from the new `ReviewRecordPanes.tsx` rather than three inline panes. L48 adds one relevant rule this module's cases do not exercise: the history is also part of the frame's task context (`useFrame`), so a frame admitted for the live comparison is never kept as the recorded comparison's shell. No verification stamp was advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`dashboard/src/data/review.ts`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:04:44+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): **claim re-read and retained, re-cited.** The historical-target row still holds: a closed leaf keeps its Intent review labelled "(recorded)" with `historical: true`, and the working change-set stays live-gated. L47 moved the target and label from `LeafEntries` into the new `IntentReviewEntry`, so the row now cites both. No stamp advanced.
-- 2026-09-26T21:10:04+00:00: Generated citation repair: `REPO`; `MASTER`; `LEAF`; `SUBJECT` repointed to dashboard/src/panels/review/ReviewSurface.history.test.tsx:27-27; dashboard/src/panels/review/ReviewSurface.history.test.tsx:28-28; dashboard/src/panels/review/ReviewSurface.history.test.tsx:29-29; dashboard/src/panels/review/ReviewSurface.history.test.tsx:30-30. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:10:04+00:00: Generated citation repair: `ReviewPanes` repointed to dashboard/src/panels/review/ReviewSurface.tsx:658-720. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:10:04+00:00: Generated citation repair: `LeafEntries`; "Intent review (recorded)" repointed to dashboard/src/panels/detail-panel/changeSetBar.tsx:421-497; dashboard/src/panels/detail-panel/changeSetBar.tsx:489-489. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T19:49:05Z — The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **five enforced citation rows re-cited to the constructs they name, wording unchanged.** This leaf shortened `ReviewSurface.tsx` (995 → 910 lines) by moving the complete source change explorer into its own module, so three ranges that ended past the file's end were rewritten to the constructs they cite — the surface component `819-910` (`ReviewSurface`), the provenance paragraph `809-814` (`review-history`) and the root's record attribute `869-869` (`data-review-history={history ?? "live"}`) — and the panes block was re-cited to `ReviewPanes`'s own extent `712-765`, which is what reopens-then-holds that claim: its declaration now falls inside a cited range. The client's half followed `intentReview` to its declaration range `data/review.ts:533-549`. Contributing ranges (`targetKeyOf` `22-22`, `ReviewHeader`'s `858-903`, the three client single-line ranges and the module's own `1-14`) are kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T05:15:00+02:00 — 260921-ICR-L12 curator (candidate `ar/260921-icr-l12`, uncommitted; production line at this leaf's base `870701b43039cd205a8c98e418382729510c3de3`, confirmed from the enclosure contract): created this one-to-one card for the mounted client case module this leaf introduced (`ICR-R12@v1`). The card records the two properties the pair pins — the recorded read asks for the record it was handed and says so, and the live read asks for no record and claims none — and why each case is necessary to keep the other's failure open. The boundaries this leaf routes rather than closes are stated: R24 owns the leaf-history navigation and R25 the assembled browser acceptance. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

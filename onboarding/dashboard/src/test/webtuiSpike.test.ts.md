@@ -1,15 +1,5 @@
 # dashboard/src/test/webtuiSpike.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/test/webtuiSpike.test.ts`         |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-02T01:42+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -60,23 +50,12 @@ The four spike assertions plus the pin check:
   guard for the S1 adoption contract; weakening any of (a)-(d) needs a design-level ruling, not a
   test edit.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The mapping file whose imports/mapping/focus-restore the assertions parse. | "--background0" | dashboard/src/styles/webtui.css:23-23 |
-| The shared scoping options loaded via createRequire. | `module` | dashboard/webtui-scope.config.cjs:32-32 |
-| The build config that passes the same options object to the real build. | "./webtui-scope.config.cjs" | dashboard/postcss.config.cjs:6-6 |
-| The layer-order statement and unlayered freeze rule asserted. | "animation: none !important" | dashboard/src/index.css:141-141 |
-| The declared token vars assertion (b) resolves against. | "--muted" | dashboard/src/styles/tokens.css:13-13 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-02T21:18:27+02:00 — 260731-EFA-L6 curator W2-B06: repaired 14 citation claims; scoped result 0 findings.
-
-- 2026-08-02T01:42+02:00 — No content impact: corrected Source Path link depth. The link(s) in this document carried one `../` too many and had never resolved from this card's directory — not code moving out from under a citation, the path as written. Enumerating every depth in both trees leaves exactly one that resolves and it is exactly one level shallower, so there was nothing to judge (`memory_quality/style/citations`, `citation_link_depth_wrong`). No claim, range or target document changed. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-17T00:20+02:00 — Created for 260715-FEUI-L1 S1 (R2): the four automated spike
-  assertions (scope confinement incl. the :root/html/body collapse; one-color-system token
-  mapping; freeze sovereignty via the no-!important-animation walk over the whole dist + the
-  unlayered-freeze brace check; exact layer order + focus-visible restore) and the exact-pin
-  checks. This suite caught the missing `--muted` token during the spike. Verification metadata
-  pinned to the task base until closeout stamps the L1 code commit.
+- The mapping file whose imports/mapping/focus-restore the assertions parse. [1]
+- The shared scoping options loaded via createRequire. [2]
+- The build config that passes the same options object to the real build. [3]
+- The layer-order statement and unlayered freeze rule asserted. [4]
+- The declared token vars assertion (b) resolves against. [5]

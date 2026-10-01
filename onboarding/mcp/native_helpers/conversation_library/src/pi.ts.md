@@ -1,15 +1,5 @@
 # mcp/native_helpers/conversation_library/src/pi.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/native_helpers/conversation_library/src/pi.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Locked native conversation-library helper overview](../overview.md)
@@ -54,52 +44,28 @@ Python port never parses timestamps numerically.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the pinned manifest/lock and the local tests are
 the direct contract evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The protocol module owns the serve loop, handshake, paging, and error vocabulary this entry
 consumes; the Python Pi port drives it on the production seam; the installed suite proves the
 live gate and the real open.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. | `serveJsonLines`, `buildHandshake`, `pageByOffset`, `windowByOrdinal`, `signatureOf`, `failureFor`, `raiseHelperError` | mcp/native_helpers/conversation_library/src/protocol.ts:114-147; mcp/native_helpers/conversation_library/src/protocol.ts:150-178; mcp/native_helpers/conversation_library/src/protocol.ts:181-188; mcp/native_helpers/conversation_library/src/protocol.ts:239-241; mcp/native_helpers/conversation_library/src/protocol.ts:244-253; mcp/native_helpers/conversation_library/src/protocol.ts:269-286; mcp/native_helpers/conversation_library/src/protocol.ts:306-325 |
-| The Python Pi port calls list/read/resolve-resume-target through the locked helper host. | `PiConversationLibrary` | mcp/src/agents_remember/serving/conversation/library/pi.py:80-328 |
+- The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here. [1]
+- The Python Pi port calls list/read/resolve-resume-target through the locked helper host. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The installed `@earendil-works/pi-coding-agent` npm dependency is a third-party library
 resolved only from this repository's package/lock; no neighboring workspace repository
 participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
-  range of 0 claim(s) whose anchor no longer sat in its cited range and normalised 1 further
-  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`). 1 further claim(s) were declined because the solution they name no longer
-  exists in the code tree, so their wording needs a reading curator; they are recorded in the pass
-  report. No claim wording was changed to fit an anchor; every rewritten range was read back at its
-  current position. Verification metadata remains closeout-owned.
-- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 8 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=2, citation_source_malformed=3); final scoped citation check clean.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation that drifted
-  as `test_conversation_library_installed.py` grew. The three proofs the row names are now
-  cit:([`test_live_helper_gate_supports_pi_history`, `test_live_list_read_resolve`, `PiOpenEndToEndTests`], mcp/tests/test_conversation_library_installed.py:217-231; mcp/tests/test_conversation_library_installed.py:233-263; mcp/tests/test_conversation_library_installed.py:284-413)
-  (tracked opener → tmux → control runner → pi RPC resume → proof → retire). No claim text changed.
-
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the locked Pi helper entry
-  sidecar. Verification is blank until closeout commits and stamps the new source.
+No meaningful cross-repo references found.

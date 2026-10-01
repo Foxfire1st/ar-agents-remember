@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/providers/requirements/grepai.txt",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The requirement file pins GrepAI to `grepai==0.35.0`.\n\nAnchor: \"grepai==0.35.0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d3f275af8a95651cd929480b4cf751d066cfd82",
+            "content": "sha256:69c87719c985092e34a22a28fed48481902a775fc6d892ea179e1583bd4bfaae",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The MCP runtime installer requires both CGC and GrepAI provider requirement files before copying provider defaults into the coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:10561f1d1ab96d8b366013b6453df973fc3587f9095687469ad5c33fcd17ba04",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_runtime_tree"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The provider helper exposes the GrepAI pin and writes the managed requirements file through the package provider helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:60cf69c6600ea4515532f9cdcb55e154f3e125a539ebaea451ccacc6b638e5dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_grepai_requirements_file"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lifecycle installer reads the GrepAI pin and builds the Docker-owned runner image through the lifecycle facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:fe86e459d7ceaa3beb7965dd400610926a5138cca131fd5becfdb4b82dfdd057",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_install"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

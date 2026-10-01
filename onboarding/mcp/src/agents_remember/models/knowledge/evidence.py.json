@@ -1,0 +1,317 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two record kinds' kind and schema names, and the one lifecycle value both store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:6f8d425e2901c79eac204f05fc15eae30b893f2ca34633604ea3ef8e54701865",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_CLAIM_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:5d4a28ca5849305a56abd1c4a1c3116a84b9d9f83a9090bbdd12318c6d729973",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_CLAIM_SCHEMA"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:ccbfad57bf397e9c4d7dcc81a02aaf22f47804f1fe14ea0745d303dcb44848e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "VERIFICATION_OBSERVATION_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:8d631fc4cdf9f4705e9699a67ef4985719d09471073fccf7684953c14ed1b7bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "VERIFICATION_OBSERVATION_SCHEMA"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:495b6acce0450d4bdb36689cd0e8dbf7ec8abe0e257d148fe5e41267d0bf311d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_RECORD_LIFECYCLE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The two appended authored commands and the tables they may write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:a781c2769190a17ea63e915e8faad11abe2007f399629ef18f332243b872403c",
+            "locator": {
+              "kind": "symbol",
+              "name": "AddEvidenceClaim"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:8f4e926b8eb6486a6be91e644b43a4c760b9afaa12c0492ce430496c3e9e4de3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AddVerificationObservation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:8d005581d12670c2b01c3cfe2c5f013b1275da2d0e736438d720ceb725eee7c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_WRITABLE_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The case that asserts the payloads are frozen, extra-forbidden and never default the limitations value.\n\nAnchor: \"def test_the_claim_payload_is_frozen_extra_forbidden_and_never_defaults_limitations(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cb743660f0e38efab0ef477eac65152c937c259",
+            "content": "sha256:6d43cbb7044847ae10a77b39305a5e3522c67fce6c15022a257d24f2b095e5c4",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/tests/test_knowledge_evidence_claims.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two claimed-coverage endpoints, the union that discriminates them, and the row identity that makes a duplicate endpoint unrepresentable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:51877afda1ef3ed885575e0078914c6b96770db417e3c9f2fb7cf205b7d446b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationClaimCoverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:f575ee53059a6212b1c5e63ff2864db9c44a28471e6d7f1233d16b803bb50e5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorCoverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:5dae0ba4d043b55c8af0e13f6ef24661bc7887186b96fa9600ba114be0074b96",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoverageEndpoint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:f3cb53db05401b3850395dddacd520c850cbfc0449828f861e9cd258d34c9f0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "claimed_coverage_row_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two subject kinds, each naming its own table and revision column, so the declared kind is the table the row reaches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:e0c7ac5602ca1bed7c21e0371478a320b68cd23fbded7312633a2fa9c8f21555",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantRevisionSubject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:83aca7f8a7e6d1adf3a8650081badefab7757bdaf33520d3771007c5171c5a8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeFacetRevisionSubject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:10d0f313d6144cf8c2a536cb6f2b75cffbd027f0e08c19f1fa83176d626f397b",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_table"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:1cae397f8d6330035a9bf63217c7224573db6adae8f2479583408ba26cc43dd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_revision_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The artifact reference: a confined path, the bytes' sha256 and size — a reference, never a content store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:b56fa4629f75bde999d9971b7ee36eaafa24ca4051696ea547266fbe3b4dc8a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResultArtifactReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The publication reference whose presence states which retention route the record relies on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:fa977b494a9d93001dd37513d774d1ff2af88fb86d680ccf44e10e1afbc6f40c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicationReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The closed five-member execution vocabulary, with `not_run` a member and no sufficiency member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:da1188bc11af1fb9519c7adc163bef263b4936690e1e8038372d00de8ae93c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXECUTION_RESULTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The run's own toolchain, recorded at write time and bounded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:ddb4a940b717dac46a133ccf31d5c120b116cc23a28fe6ae1b217a6adc9ed827",
+            "locator": {
+              "kind": "symbol",
+              "name": "RunEnvironment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The claim aggregate: subject, anchor, coverage, explanation, required limitations, assessment references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:430c189c6853ebf98729700236b3f216bea4c7c7a549fc128960f2913fa55ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceClaimPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The observation aggregate: recorded candidate, command identity, artifact, execution result, environment, publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a379a181e6668816dacce4d7a6b73a56cd71f5a",
+            "content": "sha256:34ab7f99bf31d44e464d994357dae74aa34aefb9ac027fc685f4b7821279da6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "VerificationObservationPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

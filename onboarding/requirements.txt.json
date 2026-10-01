@@ -1,0 +1,90 @@
+{
+  "path": "requirements.txt",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The checkout pins pytest-xdist 3.8.0 with the other quality tools.\n\nAnchor: \"pytest-xdist==3.8.0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0517f59f84ba7109085617e6f58cd6f6659d52ba",
+            "content": "sha256:75535332262c1fae3457d7bf54428cc6fc5bdf506ef45dc46f7803e56b611fb1",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Root pytest configuration selects four workers by default.\n\nAnchor: \"-n=4\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931494bd0ba3d72541213830e5ff2773058929d9",
+            "content": "sha256:4db9424314fa43b50eb134fde0f65a5e665ef67880a9bc568f6189a8b5e2007e",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931494bd0ba3d72541213830e5ff2773058929d9",
+            "content": "sha256:a2c93a423b219d580128cb62d3ea549600b72ae4da1a3a3f6785aed3eb3193fd",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The checkout requirements pin Ruff 0.16.1 exactly.\n\nAnchor: \"ruff==0.16.1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0517f59f84ba7109085617e6f58cd6f6659d52ba",
+            "content": "sha256:3895b53fac8c94a606b7a9e0a0e7848ad2b0328a508688d3e9f61db8de13d621",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The package development extra independently pins the same Ruff release.\n\nAnchor: \"\\\"ruff==0.16.1\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab72de78e8bc9f72c5d7c631e761c9101d2ee84",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

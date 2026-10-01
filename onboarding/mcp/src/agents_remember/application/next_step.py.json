@@ -1,0 +1,263 @@
+{
+  "path": "mcp/src/agents_remember/application/next_step.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:b9a1f903280fdf70c544924c96f7717d7189f719708eac93720b3b059a8681be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_lifecycle_tail"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_next_step"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal.\n\nAnchor: `NextStep`, `ResponseModel`, `FlexibleResponseEnvelope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:97ca067f4e2155179fed866700f9d054d3bf3dd0ca64d618c853e3ea894b37dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextStep"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:45b7cfd1ea33c7e121c05e03d6d9040b9c5f4e017f07efaaef19d7a73d4d1607",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResponseModel"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:bab97e8117945fc2fe05d6a2063d006a4ce6a2ed3f8d1141acbf89838da6ba50",
+            "locator": {
+              "kind": "symbol",
+              "name": "FlexibleResponseEnvelope"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81b23e64d6dbede412527e290bd02d05e5b3073a",
+            "content": "sha256:656888b6f80fc1973338abb55a25f4b33bd3eba3d5b4a221a5bfafaf5ce12860",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_guidance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81b23e64d6dbede412527e290bd02d05e5b3073a",
+            "content": "sha256:1a47259c93d114ae5f9f094ac5cd3537012434d42944e406beb755899538e76f",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:c5e4e7307c4da5cc20c6c1b48e19c9012267dbd3e199212531320805f6447987",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:225670e4f2433ff1929faf819dafa637b0134fdf5c4ed4a175e9ef0925e0c65b",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 432
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:6c5ab465b93696620a60e450c2acfdda4e048e62046bf6b8962ad2c2657aba29",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`amb.current` — the live `LifecycleState` resolved at the edge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:d2eeec1c8c6e6fc8d9c8da84dbeb2175f828aa0fb955a2c168655a003b1c47d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AmbientLifecycle"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9).\n\nAnchor: \"LiveState = Literal[\"; \"Phase = Literal[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:68300b739da1927db29cec45b98779726e7acc34b5ab1a6256f0a9bc79d96672",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleState"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:bc7ea17ba44e1badcdc204a07a38778a4a22c7bba61e96ccffab247036ee5670",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:456bb986c16af0114076552af2472d3ca010830a6f0e8a0cddff06106786870d",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
+            "content": "sha256:51be012d8c1fb51ca4d362f7a3eb8025862f19d7729b7894e11e315c169d102b",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_step_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

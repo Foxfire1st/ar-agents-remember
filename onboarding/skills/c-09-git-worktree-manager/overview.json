@@ -1,0 +1,168 @@
+{
+  "path": "skills/c-09-git-worktree-manager",
+  "references": {
+    "1": {
+      "note": "The canonical skill owns contract-scoped admission, resumable sync, integration conflict ownership, and exact terminal release doctrine.\n\nAnchor: `## Mid-Task Sync`; `## Lifecycle Finalization And Cleanup`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:403098fe8eac8bcce4a4dd4b255f9863440e03a8d13d8fbde4823df1155f6782",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 436
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ordinary series integration and leaf direct landing remain distinct policy routes.\n\nAnchor: \"An ordinary master/series integration has no leaf closeout door of its own\"; `directExecutionEnabled`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:332ff661c33ba89aaa1fe379ab5d78267416ad499f14645aa514cf2f4a18b190",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:9ffec959ba59abc1da65b6d90b974b0497386a48bcb6115a9a892a9f71ecdb2c",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 381
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:0a2c532f1844c058d2f36b382a89f71b4faafaac0b04ab2eec8e04bf547a151f",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The graph-less atomic-sequential default describes sprint shape and serializes nothing between the masters.\n\nAnchor: \"nothing serializes the masters\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "content": "sha256:48d1bb8afc8ab2a99aab97d4638cb62b510cbd1a0645175a0b67c58e1cbb6bb0",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Public sync composes the selection and transaction owners without exposing private ids.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21969ed5fdd3d0a96855f1d252badef880c5febc",
+            "content": "sha256:263b46b9addc50759981f98b71636c39f48bd59bdaf15b6e5bee6459c680afe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Stable operation recovery is stored below the enclosure root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncOperationStore"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Real memory ancestry is the landing proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_integrated_memory_ancestry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The finalizer paragraph's two new clauses.\n\nAnchor: \"master lists it, the finalizer always derives that\"; \"assertions are omitted. A sub-task naming none whose folder\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 496
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

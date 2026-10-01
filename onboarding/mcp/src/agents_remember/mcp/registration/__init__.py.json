@@ -1,0 +1,124 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `create_server` consumer iterates `TOOL_REGISTRARS`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The advertised tool-name list's one definition, re-exported unchanged by the adapter.\n\nAnchor: \"__all__ = [\\\"PUBLIC_TOOLS\\\", \\\"RESERVED_TOOLS\\\", \\\"TRANSPORT\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11f7b63ef890f294ec645cb0a18372190e239551",
+            "content": "sha256:68e903ed4eb01e85a91b74875abc196a300101695c83e602e2fcf8a2d0805c21",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:b0053d26dc1ddbfeaa7d8e65af358e70b68734e5f38ed18b4c107d6c7d9f9c89",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registrar appended last so no existing registration order moved.\n\nAnchor: `register_knowledge_tools`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "mcp/src/agents_remember/mcp/registration/knowledge.py:44-57"
+        }
+      ]
+    },
+    "4": {
+      "note": "The five advertised names the appended registrar publishes, at the tail of both surfaces.\n\nAnchor: `knowledge_read`; `knowledge_change`; `knowledge_diff`; `knowledge_integrity_check`; `knowledge_project`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "mcp/src/agents_remember/models/tools/public_roster.py:92-96"
+        }
+      ]
+    },
+    "5": {
+      "note": "The registrar appended immediately before it, which established the same append-only precedent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:2f45c654bbec0d447d009eb6b10b263566657ec1f3f95f63f0afc3195330d00e",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_capsule_and_skill_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The three advertised names the capsule/skill registrar publishes, immediately before the knowledge tail.\n\nAnchor: `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11f7b63ef890f294ec645cb0a18372190e239551",
+            "content": "sha256:a3e47ab388213b4a1d29e82854bdf9947f0ce1be15289b541d5a0170ab3eb531",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The live registered-order comparison that makes a registrar-without-roster-name a surface violation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fef1f425c51b6301f92d4992ef459f0ba20bb23",
+            "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicSurfaceInventoryTests"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

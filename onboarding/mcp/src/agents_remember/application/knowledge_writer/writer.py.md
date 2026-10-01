@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_writer/writer.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_writer/writer.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -21,8 +11,8 @@ and 7).** It reads the hand-off document (`handoff.read_handoff`), loads the mem
 (`MemoryState.load`), captures the code candidate tree C (`CodeSnapshot.capture`), applies the document
 (`Authoring.run`), carries every `carried` entry forward at C (`carry_entries`, MIK-R08), checks every row of the owner's history file (`owner_history_problems`), renders each
 touched document canonically after model validation (`_render`), then runs the MIK-R22 validator
-(`validate_tree`) over the **whole resulting tree**, with the memory worktree's `HEAD` as base when that
-base is converted. Only then does it write, and only in a committing run.
+(`validate_tree`) over the **whole resulting tree**, with the state's base: the memory worktree's `HEAD`, or
+its conversion when `HEAD` is unconverted and the candidate is converted (L37, MIK-R24 rule 7). Only then does it write, and only in a committing run.
 
 ## Code Commentary
 
@@ -70,6 +60,17 @@ base is converted. Only then does it write, and only in a committing run.
   it, `MemoryState.write` writes and the state is `written`.
 - `_render` validates a history document with `parse_history_document` and every other document with
   `parse_document`, then renders `canonical_text`; a model refusal is a `Problem` per pydantic error.
+- **The base and what makes a tree unwritable (L37).** `_load(request)` loads the state with
+  `BaseCode(request.code_root, request.code_base, <coordination root>/runtime/knowledge-worklist-bases)`, so the
+  writer, the worklist, the onboarding gate and the validator read one converted base, cached once. It returns a
+  problem for an unconverted tree (`UNCONVERTED`, which now says that an unconverted line crosses the boundary
+  first once its repository holds converted memory) and for a base that cannot be built (`state.base_problem`).
+  `WriteRequest.code_base` is the commit a trailerless unconverted `HEAD` is converted at: the leaf route passes
+  the contract's code base B, the gate's and the worklist's fallback, so all three share one cache key.
+- **A crossing owner resolves and records, it does not author (L37, MIK-R24 rule 8 step 4).** For an owner of kind
+  `crossing`, `_crossing_problems` refuses `entries`, rulings and any record without an `id`
+  (`CROSSING_ROWS_ONLY`): the owner may update an existing record its sync left conflicted, which the writer
+  resolves at one more than the higher side's revision, and write `history` rows.
 
 ### Conventions
 
@@ -105,7 +106,9 @@ base is converted. Only then does it write, and only in a committing run.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R12@v2` of task
@@ -114,51 +117,37 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The operation and its stages.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The refusal text for an unconverted memory tree. | `UNCONVERTED` | mcp/src/agents_remember/application/knowledge_writer/writer.py:60-64 |
-| One operation's inputs, including the authorization reference the report records and the task owner's decision resolver. | `WriteRequest`; `decisions` | mcp/src/agents_remember/application/knowledge_writer/writer.py:67-95 |
-| Read, author, check history, render, validate, then finish or refuse. | `write_knowledge` | mcp/src/agents_remember/application/knowledge_writer/writer.py:98-155 |
-| The worklist and the task document's questions, both optional (MIK-R14). | `worklist`; `questions` | mcp/src/agents_remember/application/knowledge_writer/writer.py:90-95 |
-| The questions reach the task document after validation and before any file. | "refused = _append_raised(request, authoring.raised)" | mcp/src/agents_remember/application/knowledge_writer/writer.py:151-155 |
-| The worklist's reconsideration items by subject; the append in a committing run. | `_reconsideration_items`; `_append_raised` | mcp/src/agents_remember/application/knowledge_writer/writer.py:158-164; mcp/src/agents_remember/application/knowledge_writer/writer.py:167-173 |
-| The carry-forward call and its report field. | `carry_entries`; `carried=carried` | mcp/src/agents_remember/application/knowledge_writer/writer.py:81-125 |
-| The carry itself. | `carry_entries` | mcp/src/agents_remember/application/knowledge_writer/carry.py:65-90 |
-| The `writer_reports` rules become reports inside the writer; commit routes still refuse them. | `_writer_split` | mcp/src/agents_remember/application/knowledge_writer/writer.py:176-191 |
-| Planned or written. | `_finish` | mcp/src/agents_remember/application/knowledge_writer/writer.py:194-207 |
-| Model validation then canonical rendering of every touched document. | `_render` | mcp/src/agents_remember/application/knowledge_writer/writer.py:210-232 |
-| The registry side of the writer-reported rules. | `writer_reported_rule_ids` | mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py:83-88 |
-| A validator refusal writes nothing and names every violation. | `test_a_validator_refusal_writes_nothing_and_names_every_violation` | mcp/tests/test_knowledge_writer.py:326-338 |
-| Route rules are reports in the writer and refusals at a commit route. | `test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route` | mcp/tests/test_knowledge_writer.py:622-660 |
-| The coordination root requirement endpoints resolve against; never a reason to refuse. | `coordination_root` | mcp/src/agents_remember/application/knowledge_writer/writer.py:87-87 |
-| The report's requirement endpoints, resolved for every record the run touched. | `requirement_endpoints` | mcp/src/agents_remember/application/knowledge_writer/writer.py:137-137 |
+- The refusal text for an unconverted memory tree. [1]
+- One operation's inputs, including the authorization reference the report records and the task owner's decision resolver. [2]
+- Read, author, check history, render, validate, then finish or refuse. [3]
+- The worklist and the task document's questions, both optional (MIK-R14). [4]
+- The questions reach the task document after validation and before any file. [5]
+- The worklist's reconsideration items by subject; the append in a committing run. [6]
+- The carry-forward call and its report field. [7]
+- The carry itself. [8]
+- The `writer_reports` rules become reports inside the writer; commit routes still refuse them. [9]
+- Planned or written. [10]
+- Model validation then canonical rendering of every touched document. [11]
+- The registry side of the writer-reported rules. [12]
+- A validator refusal writes nothing and names every violation. [13]
+- Route rules are reports in the writer and refusals at a commit route. [14]
+- The coordination root requirement endpoints resolve against; never a reason to refuse. [15]
+- The report's requirement endpoints, resolved for every record the run touched. [16]
 
-## Cross-Repo References
+- The memory tree and its base, or why the writer cannot write it. [17]
+- A crossing owner authors no entry, ruling or new record. [18]
+- The writer compares an unconverted HEAD through its converted base. [19]
+- A master line's crossing records its rows through the writer. [20]
+
+### Cross-Repo References
 
 No cross-repo boundary is crossed: the writer reads the paired code worktree and writes the paired memory
 worktree of one repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** A Logic bullet records `WriteRequest.worklist` and `questions`, `_reconsideration_items` and `_append_raised` (the questions appended after validation and before `_finish`, a refusal refusing the whole operation); the endpoint invariant now notes that L14 reports `reconsider_on` endpoints in the worklist; a candidate invariant (a `raise` reaches the task document before any file, or writes nothing) and the recorded Q7/Q8/F7 two-store limit. Three rows added. The rows the fixer declined were re-pointed by the exact line shift of this leaf's diff; the others were projected or normalised by the installed fixer, and its generated bullets are kept. No verification stamp was advanced.
-- 2026-09-30T10:05:54+00:00: Generated citation repair: `_finish` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:194-207. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:05:54+00:00: Generated citation repair: `_render` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:210-232. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:05:54+00:00: Generated citation repair: `coordination_root` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:87-87. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** Logic and Invariants record `WriteRequest.coordination_root` and the `requirements` the operation reports through `requirement_links.requirement_endpoints` (reported, never refused; resolution stays in the writer, ruling 01:45:56 Q5/Q6). Two rows were added. Rows below the new import and field were re-pointed by the installed fixer; no claim was reworded. No verification stamp was advanced.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** The `WriteRequest` Logic bullet and row now name `decisions`, the task owner's resolver passed to `Authoring` for a planned `dropped` row (a wave refuses such a row). The reworded `WriteRequest` row reopened on the new `decisions` anchor; only the generated-repair bullet this pass's fixer wrote for it was removed. Ranges below the new field were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T15:42:32+00:00: Generated citation repair: `UNCONVERTED` repointed to mcp/src/agents_remember/application/knowledge_writer/writer.py:55-59. No content impact: mechanical anchor-range projection bound to citation source snapshot e0edc40115a57d64eee749407e3bb64382ff6c5a6884c16ce3f8938fb89031a7; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Purpose and Logic now name the carry-forward step (`carry.carry_entries`, called in every operation between authoring and the history check, its IDs in `WriteReport.carried`), and Invariants records architect ruling 5 (the carry updates only this leaf's own open row, never closed files or other owners' rows). Two rows cite the call and the new `carry.py`. The module docstring's new "Carried entries" paragraph is the source.
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

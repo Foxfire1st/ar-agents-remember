@@ -1,15 +1,5 @@
 # scripts/harness/shared/workspace-directive.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `scripts/harness/shared/workspace-directive.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-31T04:59+02:00                     |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -70,31 +60,11 @@ bodies exist:**
   copy directly is caught by `sync-harness.py --check` in both hook tiers and by
   `mcp/tests/test_sync_harness.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The generator's `HARNESSES` declaration table is defined here. | `HARNESSES` | scripts/sync-harness.py:202-408 |
-| The inside-the-workspace variant of the same directive uses the relative coordinator path. | "ar-coordination/AGENTS.md" | scripts/harness/shared/session-start-directive.md:11-11 |
-| `write_context_file` mirrors the rendered file to the workspace root for Hermes and Antigravity. | `write_context_file` | scripts/harness/render_starter.py:86-105 |
-| The classification recording why the two directive bodies differ. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded the shared
-  fail-closed role/hosted-identity admission and the identity-free-only role-brief route.
-  Verification remains closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the one-call canonical architect launcher,
-  separated ordinary bootstrap from explicit named-role takeover, and retained exact brief
-  durability plus the no-session-primitive boundary. Verification remains closeout-owned.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: refreshed the generated-workspace guidance for the
-  sprint-qualified architect launcher. Verification metadata remains pinned until closeout stamps
-  the code commit.
-
-- 2026-08-04T11:35:04+02:00 — 260731-EFA-L6 S18-B10 curator: source-first semantic citation curation; repaired this card's scoped citation findings with frozen-source evidence and corrected stale or pooled claims where needed.
-
-- 2026-07-31T06:30+02:00 — 260731-EFA-L2 promoted this to the single source for the three
-  workspace-root context files (requirement L2-R12). Verification metadata is pinned to
-  the leaf's reformat commit until closeout stamps the code commit.
+- The generator's `HARNESSES` declaration table is defined here. [1]
+- The inside-the-workspace variant of the same directive uses the relative coordinator path. [2]
+- `write_context_file` mirrors the rendered file to the workspace root for Hermes and Antigravity. [3]
+- The classification recording why the two directive bodies differ. [4]

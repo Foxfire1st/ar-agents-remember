@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/snapshot.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/snapshot.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T11:30+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -114,46 +104,37 @@ None recorded for this slice. The disposal union is closed at two members; a thi
 accepted import, a merge result) would be a new member with its own evidence that no unique authored data remains,
 not a relaxation of `DiscardedCandidate`/`PublishedCandidate`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one declaration of the local candidate layout and its two derived paths. | `CANDIDATE_DATABASE_NAME`; `CANDIDATE_RECEIPT_NAME`; `candidate_database_path`; `candidate_receipt_path` | mcp/src/agents_remember/models/knowledge/snapshot.py:52-54; mcp/src/agents_remember/models/knowledge/snapshot.py:53-53; mcp/src/agents_remember/models/knowledge/snapshot.py:58-62; mcp/src/agents_remember/models/knowledge/snapshot.py:64-67 |
-| The typed admitted handle that confers no authority by itself. | `AdmittedCandidateDestination` | mcp/src/agents_remember/models/knowledge/snapshot.py:70-93 |
-| The baseline that requires both a file and the identity admitted for it. | `CandidateBaseline` | mcp/src/agents_remember/models/knowledge/snapshot.py:96-106 |
-| The sealed receipt, its no-dataset-digest rule and the read-time seal validator. | `CandidateReceipt` | mcp/src/agents_remember/models/knowledge/snapshot.py:109-141 |
-| The digest and the one derived constructor that seals a receipt. | `receipt_digest`; `build_candidate_receipt` | mcp/src/agents_remember/models/knowledge/snapshot.py:144-148; mcp/src/agents_remember/models/knowledge/snapshot.py:151-185 |
-| The factual candidate outcome with its refusal/identity consistency rules. | `CandidateResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:188-221 |
-| The closed stage carrying both the logical identity and the physical digest. | `PreparedKnowledgeSnapshot` | mcp/src/agents_remember/models/knowledge/snapshot.py:224-236 |
-| The destination request whose absent-expectation mode is the only way to overwrite. | `SnapshotDestinationRequest`; `PublishSnapshotRequest` | mcp/src/agents_remember/models/knowledge/snapshot.py:239-249; mcp/src/agents_remember/models/knowledge/snapshot.py:252-256 |
-| The factual publication outcome with the previous identity it replaced. | `SnapshotPublicationResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:259-293 |
-| The publication-state measurement that never guesses which side moved. | `PublicationState` | mcp/src/agents_remember/models/knowledge/snapshot.py:296-321 |
-| The closed disposal union, its carried-not-examined authorization reference and its verdict. | `DiscardCandidate`; `PublishedCandidate`; `CandidateDisposition`; `CandidateDisposalResult` | mcp/src/agents_remember/models/knowledge/snapshot.py:324-337; mcp/src/agents_remember/models/knowledge/snapshot.py:340-345; mcp/src/agents_remember/models/knowledge/snapshot.py:351-354; mcp/src/agents_remember/models/knowledge/snapshot.py:357-375 |
-| The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:659-676; mcp/src/agents_remember/models/knowledge/candidate.py:158-167; mcp/src/agents_remember/models/knowledge/candidate.py:169-193; mcp/src/agents_remember/models/knowledge/candidate.py:498-529; mcp/src/agents_remember/models/knowledge/candidate.py:638-655; mcp/src/agents_remember/models/knowledge/candidate.py:209-218; mcp/src/agents_remember/models/knowledge/candidate.py:117-117; mcp/src/agents_remember/models/knowledge/candidate.py:656-656; mcp/src/agents_remember/models/knowledge/candidate.py:224-224; mcp/src/agents_remember/models/knowledge/candidate.py:195-195 |
-| The resolution shape every receipt field is derived from. | `CandidateResolution`; `ExactCandidateInput`; `KnowledgeLane`; `SnapshotIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:83-424 |
-| The canonical encoder the receipt seal is computed through. | `sha256_digest` | mcp/src/agents_remember/kernel/canonical_json.py:34-38 |
-| The candidate lifecycle in which these shapes are produced. | `create_candidate`; `clone_candidate`; `open_candidate`; `authorize_candidate_disposal` | mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:85-98; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:100-126; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:129-138; mcp/src/agents_remember/memory/knowledge/candidate_workspace.py:141-173 |
-| The publication that installs a prepared stage. | `publish_candidate_snapshot`; `publish_prepared_snapshot` | mcp/src/agents_remember/memory/knowledge/publication.py:66-111; mcp/src/agents_remember/memory/knowledge/publication.py:114-170 |
-| The node that proves a WAL-resident batch is published whole while a main-file copy is not. | "test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not" | mcp/tests/test_knowledge_snapshot_publication.py:81-110 |
+- The one declaration of the local candidate layout and its two derived paths. [1]
+- The typed admitted handle that confers no authority by itself. [2]
+- The baseline that requires both a file and the identity admitted for it. [3]
+- The sealed receipt, its no-dataset-digest rule and the read-time seal validator. [4]
+- The digest and the one derived constructor that seals a receipt. [5]
+- The factual candidate outcome with its refusal/identity consistency rules. [6]
+- The closed stage carrying both the logical identity and the physical digest. [7]
+- The destination request whose absent-expectation mode is the only way to overwrite. [8]
+- The factual publication outcome with the previous identity it replaced. [9]
+- The publication-state measurement that never guesses which side moved. [10]
+- The closed disposal union, its carried-not-examined authorization reference and its verdict. [11]
+- The resolution shape every receipt field is derived from. [12]
+- The resolution shape every receipt field is derived from. [13]
+- The canonical encoder the receipt seal is computed through. [14]
+- The candidate lifecycle in which these shapes are produced. [15]
+- The publication that installs a prepared stage. [16]
+- The node that proves a WAL-resident batch is published whole while a main-file copy is not. [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-20T00:56+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): hand-read the one enforced row this card carries and cleared it (`citation_anchor_absent_from_range`, "The resolution shape every receipt field is derived from."). The row's first range `107-109` no longer reached `CandidateResolution`, which the claim names first; reading `mcp/src/agents_remember/models/knowledge/candidate.py` places the class declaration at `659-676`, so the range was replaced with that extent. The row's nine other ranges are unchanged, as are its claim and all four anchors. No claim was re-worded, no anchor or range was dropped to silence a finding, and no verification stamp was advanced. No commits.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `snapshot.py.md:141` (`CandidateResolution`, `ExactCandidateInput`, `KnowledgeLane`, `SnapshotIdentity`).
-- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): created this one-to-one card for the new snapshot vocabulary. It records the two splits the whole contract rests on (working identity read from the database versus published identity installed as a closed representation, compared by digest not bytes; and a receipt versus a verdict, with no field able to carry a judgement), the sealed receipt's deliberate absence of a dataset digest, the two-member closed disposal union with `authorization_ref` carried rather than examined, and the closed result validators that make `state` the only branch a caller needs. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

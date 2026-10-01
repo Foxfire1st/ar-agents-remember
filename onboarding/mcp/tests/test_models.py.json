@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public tool metadata lives in the `mcp/tools/` package.\n\nAnchor: \"def _tool_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:99fcc8b8517d59f1b701140ddf00c842b539245f7a74358c3785a061633b7d23",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Response model registry lives in the models package.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_COMPAT_TOOL_NAMES"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:44c479df08f64f889b58153fa17569bf0b269ede2f80a9fdab3ebc5906a41d87",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # skills/l-01-agent-lifecycles/roles/architect.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | skills/l-01-agent-lifecycles/roles/architect.md |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
-
 ## Governing Overview
 
 [l-01 role overview](overview.md)
@@ -66,15 +56,17 @@ rewritten in place. A worker/reviewer classification cannot become semantic auth
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Worker source inventory, reviewer verdict, and governing route overview.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
 
@@ -113,47 +105,3 @@ Task-document authoring remains wholly upstream of activation and queue state. T
 approve otherwise-valid task changes; the affected disposable projection is then invalidated and
 rebuilt. A selector or queue cannot veto planning, and no valid task/master is discarded merely to
 free a runtime selection.
-
-## Update History
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented architect
-  dispatch and retirement authority for the architect-stamped sprint plan reviewer, excluding the
-  orchestrator-owned super generation. Verification remains closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 replaced the stale caller-visible
-  spawn/readiness/dispatch sequence with one ordinary ambient architect launch transaction,
-  separated explicit named-role takeover, and kept plane authority outside settings. Verification
-  remains closeout-owned.
-
-- 2026-08-27T21:53+02:00 — M40@v2: separated internal repair/test protocol events from formal
-  review-handoff attempt lineage while preserving developer-only semantic revision authority.
-- 2026-08-27T18:06+02:00 — M43: recorded architect/developer authority for requirement revisions
-  and kept ordinary implementation, evidence, and test/tool repairs on attempt lineage rather than
-  semantic versioning.
-- 2026-08-27T14:04+02:00 — M39 clarification: recorded immutable version-addressed packets,
-  packet-local durable corpus approval, and new-file revision handling rather than in-place edits.
-- 2026-08-27T13:32+02:00 — M39@v1: the architect now compiles, splits, packets, cold-reads, and
-  obtains developer approval for requirement revisions before creating topology; leaf projection
-  and version-change invalidation/rebriefing are explicit. Verification remains closeout-owned.
-
-- 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
-  reconciling architect activation doctrine.
-
-- 2026-08-26T05:20+02:00 — Reconciled architect doctrine with graph-less source-pair activation,
-  pause-without-retirement, task-authoring primacy, and queue/projection invalidation. Final source
-  ranges and verification remain post-Dagger/closeout-owned.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: recorded architect ownership of strategist planning,
-  explicit topology admission, and the complete/still-valid condition for recommending a skip.
-  Verification remains closeout-owned.
-- 2026-08-12T20:10+02:00 — L23 curator: documented canonical thematic-master recovery semantics;
-  verification remains closeout-owned.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the custody rewrite — rows whose
-  entire owner chain is dead surface to the architect as a mailbox, not a ladder rung (the
-  timed escalation ladder is retired); rows land at the architect's turn boundary and
-  `operator_inbox_consume` is an optional attribution marker, never a mechanical ack.
-  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

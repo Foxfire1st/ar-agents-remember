@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/certification_lane.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/certification_lane.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:14:14+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -42,34 +32,25 @@ Semantic digests exclude creation provenance. The projection preserves repositor
 
 Production lifecycle finalization and telemetry remain separate consumers; this bridge alone does not connect them.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| External domain documentation is not configured. | N/A | N/A |
+External domain documentation is not configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cited source establishes the current contracts and boundaries described above. Source verification is documentation evidence, not acceptance of the implementation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Lane identity and five-gate compilation | `CertificationLane`; `compile_certification_lane` | mcp/src/agents_remember/certification/certification_lane.py:57-121 |
-| Currentness recompilation/refusal | `admit_certification_lane` | mcp/src/agents_remember/certification/certification_lane.py:124-153 |
-| Registry construction preserves rail contracts | `_compile_registry_contribution`; `_project_repository_rail` | mcp/src/agents_remember/certification/certification_lane.py:156-212 |
-| Applicability and memory-rail validation | `_compile_registry_contribution`; `_project_not_applicable_gate`; `_require_memory_rails`; `_refuse` | mcp/src/agents_remember/certification/certification_lane.py:163-194; mcp/src/agents_remember/certification/certification_lane.py:225-269; mcp/src/agents_remember/certification/certification_lane.py:272-290; mcp/src/agents_remember/certification/certification_lane.py:293-295 |
+- Lane identity and five-gate compilation [1]
+- Currentness recompilation/refusal [2]
+- Registry construction preserves rail contracts [3]
+- Applicability and memory-rail validation [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required for these file-local claims. | N/A | N/A |
-
-## Update History
-- 2026-09-08T14:45:44+00:00: CCR-L24 preparation re-read the applicability and memory-rail claim. The deleted `_require_applicable_repository_gates` was replaced by the current applicability projection helpers; `_require_memory_rails` and `_refuse` remain current. Verification metadata remains pinned pending final pair composition.
-
-- 2026-09-05T06:14:14+00:00 — Created a source-bound account of the production authority bridge, its exact projection and the limits of its completeness checks.
+No cross-repository evidence is required for these file-local claims.

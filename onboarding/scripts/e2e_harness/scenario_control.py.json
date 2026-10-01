@@ -1,0 +1,71 @@
+{
+  "path": "scripts/e2e_harness/scenario_control.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public control admission is guarded by current live endpoint authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a326987113e1f5779678f4c39f4c2c291ce39602",
+            "content": "sha256:5de199e38f57d2a16ad360b240c24c015023297c41068b635c4af193e4f222d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "submit_control"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Catalog, brief, and inbox waits name their exact convergence target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a326987113e1f5779678f4c39f4c2c291ce39602",
+            "content": "sha256:a613aee2f44dbf5508d6cf2cc61d60f5f5914df06e5ed98d858b0f479219c029",
+            "locator": {
+              "kind": "symbol",
+              "name": "wait_for_seat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generic polling is bounded and exposes the last observation on failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a326987113e1f5779678f4c39f4c2c291ce39602",
+            "content": "sha256:8c6e6b991921d7e43fa053c91f7322ea191ca66ab86cb38dc994ac6caaf2fd64",
+            "locator": {
+              "kind": "symbol",
+              "name": "wait_until"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Control stimulus uses only repository-owned public serving APIs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a326987113e1f5779678f4c39f4c2c291ce39602",
+            "content": "sha256:5de199e38f57d2a16ad360b240c24c015023297c41068b635c4af193e4f222d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "submit_control"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

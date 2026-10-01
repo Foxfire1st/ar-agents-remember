@@ -1,0 +1,419 @@
+{
+  "path": "dashboard/src/panels/review/familyExpressions.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of why it assembles its own payloads where `ReviewWorkspace.family.test.tsx` refuses to: the captured bodies do not hold every case the arithmetic must get right, and the live 2-members-1-address shape is measured on the mounted product instead.**\n\nAnchor: \"WHY THIS FILE ASSEMBLES ITS OWN PAYLOAD\"; \"no capture holds two member revisions that name one address with\"; \"measured on the mounted product, not here\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:8a4807af8728e01f63ee3e79da36594d416d30e601cdaf849bac354f71b7c433",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Case 2: the dedup key may not be the path alone — two recorded blobs at one address are two excerpts.**\n\nAnchor: \"keeps two excerpts apart when one address carries two different recorded blobs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:32156c691fe4b909fbb2b82eef61ad2f5ce756fddfd8e99313b16724fcfe0bca",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**Case 3: rows naming one excerpt under different roles merge into one occurrence that names every role.**\n\nAnchor: \"merges the rows that named one excerpt under different roles, naming every role\"; `CONSTRUCTED`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:5f445ad3fd57238524b5c783132fc173b7e6d437508ab9bbef0d995f7a420649",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**Case 4 (its measured-shape comment naming the re-captured `walkFinal` revision since MIK-L31): the divergent address's two readings are kept — the case the F1 repair rewrote. It builds the real shape (one recorded blob, `observed === recorded` on before and different bytes on after) and asserts `readingsBySide` holds both sides' resolutions and both sides' observed identities.**\n\nAnchor: \"keeps both sides' readings of one divergent address, because the disagreement is the change\"; `readingsBySide`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:018834a4765d94ab296b15ef7de7b926f508568566ca79a68e32b34a5b0cd6ee",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**Case 5: the repair's complement, which keeps it from over-correcting — two sides that both changed and both observed different bytes are ONE excerpt with two readings, because the observed identity is a read result and not part of the address's identity.**\n\nAnchor: \"treats two different observed blobs at one address as one excerpt, read once per side\"; `readingsBySide`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:309bde3e0506e12f2091cb001f429660f310f20b829991751a57a68ae72dbbf7",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**Case 6: the three-way partition of the read's own resolutions, with the two unmeasured states counted apart and never called changed, and the per-side observed identity asserted at its two extremes (`[]` for the address the read found nowhere, `[\"3\"*40]` for the stale one).**\n\nAnchor: \"partitions the read's own resolutions: resolved, not the recorded bytes, and not measured\"; `unmeasured`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:5dabf7fbeabcb25941291ea128d1acb2b9cec6a98faf61e81a35f0276eef01ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:089b7439ac419649341c9f4a637f1ef4f4f01e05c3f1c39fa780ff0dadbe5947",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**Case 7: an empty collection is a measured empty one, with the carried membership rows still counted.**\n\nAnchor: \"reports an empty collection as a measured empty one, with the carried rows counted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:ca78fa331e6d0d3af621f7bcf95e5ce8e4786ae65a7a7c1a749d8ab070e28653",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 293
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The function under test, its exported input type, the per-side reading type, and the two-way partition of the resolution vocabulary it reads.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:919512bce016d5724a47041414039b47ebb45d0570677917e9c7a9e234ee5b21",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyExpressionExcerpts"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:f30386197109c3ebd8738f890bfeb817d0ee2fd1d7ce8a72d5394dd9ab1557c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMembershipRow"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:9f7d74252b9ad592d45a11a8b642914edaa2db921941286635a5250c95d5a3c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyExcerptSideReading"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:29a8abfa572938d38655ea21527ff0cc34eeddee09724c9c3e0ec3ebd3b67cb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RESOLVED_ADDRESSES"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:1350fee1f2b548bcaf87f0b2c6d38acb10f453a93ce37f997e43ba507bdbc6d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNMEASURED_ADDRESSES"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The dedup key contains the path and recorded identity; observed identities remain per-side readings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:c8c06c4f84ccd5a750fec7a568c7c674fd046d60d098ddfd28d116f9e57419ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "excerptKey"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:6eb2e9f702a7d3495c581f4eb4e1f55e84b31d16b6d6025e5aa42b8949c8d689",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordSideReadings"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The three-way realization classification keeps addressless and unmeasured claims separate from changed rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:66cdccf8e9f8aad7eb4a87642a7d506ab7fe433cc80f4c0334f2b1db1cd90ee9",
+            "locator": {
+              "kind": "symbol",
+              "name": "claimClass"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The shipped partition the cases pin, named as the shipped one rather than this file's invention: the seven `ANCHOR_RESOLUTIONS` and the attribution owner's three-way reading of them.**\n\nAnchor: \"models/knowledge/read.py::ANCHOR_RESOLUTIONS\"; \"application/review_attribution.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:7eb3fbf918c62eef5be9cb1073c671cda8c3722dfe70ef3e1d164b6a75a2e8be",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The imports that fix the boundary: the payload types from the public review entry, and the function and input type from the component module under test.**\n\nAnchor: `ReviewFamilyMemberSource`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:919512bce016d5724a47041414039b47ebb45d0570677917e9c7a9e234ee5b21",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyExpressionExcerpts"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:f30386197109c3ebd8738f890bfeb817d0ee2fd1d7ce8a72d5394dd9ab1557c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMembershipRow"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:cd52b54f1c5946c96079d8accc5611e8490894de0d3607ba4208a9c1cd8e9889",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The generator that keeps every constructed claim's identity distinct, and the builder that spreads a case's own fields last so a case names only the fields its property is about.\n\nAnchor: \"function claim\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:0befcf53b4e2fd12c8e153d24047e5f9601c09198a758a0ba4fedef816f92b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "claimCounter"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:a95bae5469762250106053d63189ea1d70f05ff1669aa73904426a44c75ae0cb",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The constructed claim follows the server's locator rule: a file locator on an observed address, `whole_file` on the exact recorded blob, `unresolved` otherwise, `not_observed` with no address, and never a range.**\n\nAnchor: \"follows the server's own locator rule\"; `locator_state`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:1d3fc948ba13423164629925cfdf76bfaaca695b1dcb9eeec222c68f1e6645f0",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The recorded-member builder the cases feed the collection with.\n\nAnchor: \"function member\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:9dadd050a42119fc926c5c1b640ae2ae5f29a5c34a3acfbb51492d0f53e8b2fc",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one input shape the collection reads: `[side, member]` pairs turned into carried membership rows.\n\nAnchor: \"function rows\"; `FamilyMembershipRow[\"side\"]`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:1f9ac5c5e1566a422e82f74206969f15cb2ba35bc02d49daeb04e7d7b72439cd",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one `describe` every case below lives in.\n\nAnchor: \"the family's changed expression excerpts (A4)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:e6da4e659bca6e6e02f94069524c41e4f59d33f65db07f5fd1ae9272b72fe27f",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**Case 1: two member revisions that record one address with the same recorded and observed bytes collapse to one excerpt, and the count carried is the distinct set rather than the row count.**\n\nAnchor: \"collapses two member revisions that record one address with the same recorded and observed bytes\"; `CONSTRUCTED`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:90fd7b3fc279aec681c811d9f1029cfc26c12303b954bf1732981b2bc4227a6b",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

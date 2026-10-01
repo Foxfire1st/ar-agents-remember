@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_writer/open_questions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_writer/open_questions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:05:38+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -62,40 +52,31 @@ can be reached (no MCP authority settings): every question is refused with that 
 - **L37 (review F10, ruling 05:31:11):** confirm that installed mode honours `knowledge-ingest --config` for a real
   `raise` after the cutover.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R14@v2` of task
 `260928_maintained-invariant-knowledge` and its leaf document `14_reconsideration-surfacing.json`; they live outside
 the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: the read-modify-write in three steps and the unavailable port. | "row's question, appended to the leaf's task document" | mcp/src/agents_remember/application/knowledge_writer/open_questions.py:1-17 |
-| The port over `task_doc`: `check` is the dry run, `append` the publication. | `TaskDocOpenQuestions`; "dry_run=True"; "dry_run=False" | mcp/src/agents_remember/application/knowledge_writer/open_questions.py:38-52 |
-| The leaf's one document found strictly, with its questions. | `_current`; "found = strict_leaf_doc(self.task_root, self.leaf)" | mcp/src/agents_remember/application/knowledge_writer/open_questions.py:54-68 |
-| A present key appends nothing; otherwise `set_field` with the whole list; refusals returned. | `_edit`; "task_doc refused the openQuestions edit" | mcp/src/agents_remember/application/knowledge_writer/open_questions.py:70-87 |
-| No task owner: every question refused with the reason. | `UnavailableOpenQuestions` | mcp/src/agents_remember/application/knowledge_writer/open_questions.py:90-102 |
-| The strict leaf-document lookup it reuses (L11). | `strict_leaf_doc` | mcp/src/agents_remember/tasks/leaf_decisions.py:39-51 |
-| The task owner's tool entry point. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:220-278 |
-| A real `task_doc` append that keeps the earlier question, re-renders, is idempotent and refuses a missing leaf. | `test_the_task_document_append_preserves_questions_through_task_doc` | mcp/tests/test_reconsideration_surfacing.py:503-542 |
+- The module docstring: the read-modify-write in three steps and the unavailable port. [1]
+- The port over `task_doc`: `check` is the dry run, `append` the publication. [2]
+- The leaf's one document found strictly, with its questions. [3]
+- A present key appends nothing; otherwise `set_field` with the whole list; refusals returned. [4]
+- No task owner: every question refused with the reason. [5]
+- The strict leaf-document lookup it reuses (L11). [6]
+- The task owner's tool entry point. [7]
+- A real `task_doc` append that keeps the earlier question, re-renders, is idempotent and refuses a missing leaf. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The task document lives under the coordination root (`tasks/<repository>/<task>/`), outside the code and memory
 repositories; this module reaches it only through `task_doc`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The edit is addressed by repository, contract path and slug. | "TaskDocTarget(self.repo_id, contract_path=str(self.contract_path), slug=slug)" | mcp/src/agents_remember/application/knowledge_writer/open_questions.py:78-84 |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:05:38+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): created this card for the new file MIK-R14 adds, recording the Q7 race window (ruling 04:37:56) and the F10 carry to L37 (ruling 05:31:11). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+- The edit is addressed by repository, contract path and slug. [9]

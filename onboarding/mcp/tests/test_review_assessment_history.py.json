@@ -1,0 +1,98 @@
+{
+  "path": "mcp/tests/test_review_assessment_history.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Normal capture survives cleanup and later pointer/source movement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6d41b2816ba04d4038a707d6b983c09cb8bde42",
+            "content": "sha256:dd26ebcd74c1622aa79bc02cf1fba2039cb284537df2a1823f89d15f02830849",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_capture_survives_cleanup_restart_and_later_canonical_source_movement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Damaged expected artifacts isolate the affected channel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6d41b2816ba04d4038a707d6b983c09cb8bde42",
+            "content": "sha256:fd39161c6531ae0590e000fd0e32693a752c44d5063c9d897354425e1784c065",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_corrupt_bound_artifact_is_unavailable_without_erasing_other_channels"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Empty and uncaptured history remain different facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6d41b2816ba04d4038a707d6b983c09cb8bde42",
+            "content": "sha256:2b9f03f8ecf49b75fb49a788f801685dc17f7a2c16a39ed4dfcd0fec5e211328",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_new_measured_empty_is_distinct_from_legacy_not_captured"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "An over-length unreadable-owner detail is summarised; one that fits keeps its landed wording exactly; every artifact is listed either way.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6d41b2816ba04d4038a707d6b983c09cb8bde42",
+            "content": "sha256:00e11660befdb7b48c68961dd7bc13ec93acdd2b9ae37ce05082e93e3b7c2009",
+            "locator": {
+              "kind": "symbol",
+              "name": "_curator_channel"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c6d41b2816ba04d4038a707d6b983c09cb8bde42",
+            "content": "sha256:9442c37c494ef6de03712fb5169d0ac2d7e3d773fccaa41fc2321316d284ac52",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_binding_many_missing_curator_artifacts_reads_as_unavailable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Explicit successor recovery preserves parent bytes and judgments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6d41b2816ba04d4038a707d6b983c09cb8bde42",
+            "content": "sha256:264c2f2ec0caab59c12315b6203f3461ca517b0e91a0a16dec3088eb3a18f311",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_explicit_recovery_keeps_two_legacy_generations_and_publishes_exact_successor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

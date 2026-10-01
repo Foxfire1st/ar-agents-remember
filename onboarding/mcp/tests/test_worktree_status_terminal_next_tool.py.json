@@ -1,0 +1,260 @@
+{
+  "path": "mcp/tests/test_worktree_status_terminal_next_tool.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The archive-ready branch names the accepted cleanup operation, its args bind to the real tool, and the branch is exercised for both cleanup verbs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "content": "sha256:2994e908c22c262a2a4248551c5ea35649166bb1701ccd8c7480f754ddad9381",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archive_ready_status_names_the_accepted_cleanup_operation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The wire envelope declares the three keys the projector writes; nothing rides as an extra.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "content": "sha256:3c4c8354b5df8c0a4517596ad4df67271c196f23eff5ab32ea1032d77b6c7de9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worktree_status_declares_the_next_move_keys"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The validator accepts roster members, accepts absence, and refuses an out-of-roster value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "content": "sha256:65ab14a3955048bc8c2485e1992cd01e4408f7af43094f0213bb0a355d15717b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_next_tool_must_name_a_registered_public_tool"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "content": "sha256:66790c2f73dd197a48d643d8cdc32f6a0ed9301063ae0ded5a829bb888c4a3e5",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The boundary case: a registered-but-non-public tool is refused on the worktree surface and accepted on the `task_doc` surface, which is what makes the rule per-surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "content": "sha256:09073ec8cc753fff30dfbd3724baa80856f9fbb54e64db4ddc520b9135ad8e51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_worktree_surface_refuses_a_registered_but_non_public_tool"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
+            "content": "sha256:424d6bcddb1f11c8f97d447b15cd90037be10f8cc308ef99c9ba21cc8bb079b6",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The declarations and the membership validator the cases pin.\n\nAnchor: \"# The next-move triple, declared here so the worktree surface's guidance is part of\"; \"def _require_registered_public_next_tool\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:d06a36c48b5e653e2b39c7fb2eb38f5d46ea8ae75fd1f5a4ccd1a8edfa187e2f",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 400
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 431
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The advertised roster the validator enforces membership against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The terminal-archive refusal producer that makes the protected state reachable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
+            "content": "sha256:82bd75e61cab5ed4053e17c48428a418a317411caea5f88538830609b97e91d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_archive_required_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The projector whose write this file protects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00d06ec6ebe2a4416c2f4549b9c5cb39e7e2e93",
+            "content": "sha256:c9958666764ea6263bf1a7ac0bd142cc5d8ccb1629a3a7cc51a0b313e3e6de8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_terminal_contract_status"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The non-public name that must stay non-public on the worktree surface, and the registry row that still registers it.\n\nAnchor: \"\\\"session_retire\\\",\"; \"\\\"session_retire\\\": SessionRetireResponse,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:e6c85ecf182139c332ec369bb6683ce1f80ae2bfa24eb24ccf1413339ed4e15c",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:7f820842b5f55d3ac2d66d9e45d5441376da099c929d628d2c03b5dc9cd39735",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:2b31e33ae00ebcc0247c90f40dc895e054fcd9c8491ad1d8d1a327500832c079",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:4406ed87348ce1dce05876b89d0f29d26877022cf379be11e53c6b7af28ef7d9",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:ce230cb09b26dd2e3595a1738300fa7773b0623a9b253570c763fb6553f2131f",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:3acab3684a78e89ded12fce95451a15ee7ec5766707a4fab70d2dce59e777adf",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

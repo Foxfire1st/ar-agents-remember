@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/cgc/context/core.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/cgc/context/core.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview      | `overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -92,26 +82,8 @@ otherwise reject.
   (possibly drive-lettered) path. The mapping is identity on POSIX hosts, so
   Linux/macOS behavior is unchanged and only Windows hosts are affected.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Lifecycle CGC modules use these layout and cleanup helpers before running or installing CGC. | "return cgc_runtime_layout("; "cleanup_cgc_runtime_artifacts("; "cleanup_cgc_runtime_artifacts("; `cgc_install_preflight`; `cgc_start_preflight`; "def cgc_runner_image_build(" | mcp/src/agents_remember/providers/cgc/lifecycle/core.py:50-50; mcp/src/agents_remember/providers/cgc/lifecycle/core.py:300-300; mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:136-149; mcp/src/agents_remember/providers/cgc/lifecycle/installation.py:185-185; mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py:162-172; mcp/src/agents_remember/providers/cgc/lifecycle/runner.py:37-37 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 1 citation item; scoped citation check now passes.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `cgc_runtime_layout` was re-signed onto `CgcRepo` + the optional `CgcInstance` / `CgcWatcher` /
-  `CgcBackend` bundles (with `DEFAULT_CGC_*` frozen singletons as defaults). The resolved
-  `CgcRuntimeLayout` is unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-06-10T07:05+02:00 — `to_container_path` moved to `providers/context_common.py` (canonical home); this module keeps a commented re-export so existing `cgc.context.core`/facade importers are unchanged (GitHub #58).
-- 2026-06-10T05:30+02:00 — `_cgc_runner_image` is now public `cgc_runner_image()` with a docstring naming it the single source of truth (GitHub #50); `providers/settings.py` and a regression test depend on it.
-- 2026-06-09T22:10+02:00 — `_cgc_runner_image()` now appends `CGC_RUNNER_IMAGE_LAYER_REVISION` to the tag (`agents-remember/codegraphcontext:0.4.10-ar1`) so Docker-layer-only changes (e.g. the watch-guard entrypoint) trigger image rebuilds on install.
-- 2026-05-29T18:35+02:00: Split `core.py` (668->522): extracted `materialize.py` (runtime dir/config writers) and `cleanup.py` (stale-artifact removal); `core.py` keeps the `CgcRuntimeLayout` dataclass, settings-derived construction, and `to_container_path` (commit `01f503d`).
-- 2026-05-29T07:19+02:00: Updated after adding `to_container_path`, the `container_runtime_root` / `container_code_repo_root` properties, and `env(for_container=...)` so CGC bind-mount targets, working dir, and container environment render as driveless POSIX paths on Windows hosts.
-- 2026-05-28T13:40+02:00: Updated after CGC layout removed host venv path fields and began rejecting stale `venvRoot` provider settings.
-- 2026-05-26T13:58+02:00: Updated after CGC layouts gained backend container and Docker network fields for runner connectivity.
-- 2026-05-26T12:51+02:00: Updated after CGC layout gained Docker runner fields and stopped creating host venv directories.
-- 2026-05-25T19:16+02:00: Created when `context_providers.py` was split into `context.py` plus provider-specific context modules.
+- Lifecycle CGC modules use these layout and cleanup helpers before running or installing CGC. [1]

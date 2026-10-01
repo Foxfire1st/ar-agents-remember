@@ -1,0 +1,1049 @@
+{
+  "path": "mcp/src/agents_remember/application/review_source_content.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the three properties it exists for — the generation is an input, every side states its own truth, and which paths are addressable is decided by the admission owner (inventory entries and recorded-realization context) — and of what it deliberately does not own (no diff, no re-measurement, no admission policy).**\n\nAnchor: \"does not decide which paths are addressable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:4380034a8b865cf10d3b7c3194542275a2e8284d6749a475a03ad433a5288bb8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The admission owner this module calls: a changed path of a measured change set, or an unchanged path a recorded realization of the same comparison links; the admission travels on the value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:38e8843a8cebfb16f766d607a7dee7674eb699fa1a559e313a7a5af4a6d746fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_source_path"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:f76ec60271007067c6917da384c08f73c345d32780469f99efab8c9e56eee3a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAdmission"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The refusals that keep the read confined, now in the admission owner: an unmeasured pair with no admitting change set, a measured pair whose recorded knowledge does not link the path, and a link that could not be determined.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:7a72ad5a3e738166b2ef87480774bdc91afd7694cfa9d2a77e291be68f293087",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unconfined"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:35208096f471216ee87820edc4f8bdf5b066971b0b8c2b55e347bd0bb297f3f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_not_listed"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:b8ceaccec69326358db9f3848aca2b3ba4261a406ccb0cf6a1e834c53d267845",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link_undetermined"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The status of an admitted path — the entry's own, `unchanged` for attributed context, and `unknown` when the pair's change set was not measured, rather than a status guessed from the bytes that happen to be there.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:f76ec60271007067c6917da384c08f73c345d32780469f99efab8c9e56eee3a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAdmission"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:54e598163059020c50c915ac1bea0105d1c3a2922429ffc0e88fa83926316deb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_for"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**Whether the requested generation is still the pair the leaf binds: the shipped recheck, and the three statements — current, superseded, unmeasured — that each end by saying the content is the requested generation's and no newer one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:e7f82746491e11a15a321f83abc0a40f2a79458cebea620dff21a3a6ee48c073",
+            "locator": {
+              "kind": "symbol",
+              "name": "_currentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**One endpoint's content, with the three outcomes kept apart: an unbound root and an unanswered lookup are `unavailable`, an answered lookup with no entry is `absent`, and only a real entry is read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:103ec757f203445b2f0689d878c3ca2af1f58bea986b1bc09b54a2b8285f8fa5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_content"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:44951a336bc414987e28988306a9ff517bdf8b66041ef2d8289587d765a78e62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Unreadable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The entry's kind decides before its bytes do: a tree is not source, a gitlink is a recorded pointer with no bytes, a symlink mode is a link target, and everything else is a regular file.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:a5a422ceed02ef1b4316876f67da1f6a7cce1d44a555e16cd3bae81a6742a484",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_content"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:98067369445c0c2fee1c7d88e2ac7cc49d36fd8493745ddc0f6c25b38669e420",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TreeEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A regular file's bytes as text or as the stated reason they cannot be carried as text, and a symlink's target as content when it has a lossless spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:ce1a2d96262c95972a8e7067e8ffb977a0d3ac9f09cde7b3fa4504adb9a4d378",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_content"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:bc64eabd1018c0abc7f85ca5f818b6827538c70d1af582519003936cb67fa162",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symlink_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The two reasons no text form exists — a NUL inside Git's own sniff window, and bytes that are not valid UTF-8 — and the bounded decode that carries a prefix rather than the whole object.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:e8939bd768d1cac4d901b6569777b6e1f5fe6bfa002cc508d31726466d6e2702",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decoded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:a132e1065d88a34f684cc4664a7746825d5e575bf9ad3232fcd1db8e5593db86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_binary_detail"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:3b78b5be6238743fb3b3af30fc0ba6400c2cfaed8e943b4b0f8a9fb4d59c1074",
+            "locator": {
+              "kind": "symbol",
+              "name": "_text_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**One path's entry in one tree, asked with a literal pathspec so a measured name is an address and not a pattern, and checked against the path that was asked about.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:d3803f61520d8afce2a5340df2179b9ae6efbde0d8171f4990e805ab57677287",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:636497054c33f6d732f84fbe2bb07f98cfba3dfc29b0bb8728dca386c4613a7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parsed_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The byte-exact blob read through the kernel's own reader, so a file's content is never normalized on its way to a reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:324fdc8b88de3b4a8b3a7ea1996f2f457c15170d01da8082054525d9e4c61d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the expansion's text bound, the operation's own reference, and the one entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:0e5c715bd6b63d44867b3b31c23ea624cbfe89107747d2082f208380b13312e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:1cba8ea6712f6b0657c98175ad42aae67021f1f0bece726c06d866e58dcc88ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_CONTENT_REFERENCE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The reproduction line: the exact `ls-tree`/`cat-file` commands that obtain the same bytes, naming every object the answer rests on.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:3af9c5e42c294a2d61caaaeab053f82b9ceb37d3d2493efa6ed46061ddbf9ab5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reproduction"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:bcbe62576e1f37d8e9ee9dedcd9d2224729dcbc760683da1080a6ddf62ca7cda",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_command"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:ab632c1d2548105c025596a5c0ab308d77be57c7a33e25caa486eb1d4e093a69",
+            "locator": {
+              "kind": "symbol",
+              "name": "_quoted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The second of the two path checks: the spellings Git could not have reported are refused before any argv is built, with the offending input bounded by the admission owner's helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:eebf7779c7f45fcc0a1a360b1dc4735d96075ea97f3b3e35c0ff4dd8f57c491b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_addressable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:334d6bbb1940e240d85edc359e302b9911caaa9d9e44cb429adbc6bd8303fa1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded_input"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The wire vocabulary this module fills: six side states, the closed currentness set, the two bounding measurements, the two admissions, and the structural prohibitions that make a non-textual side carrying text unrepresentable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:4238ed779a8790fb8f72c024a28bd7ddc31a1f7240d482a695d6b0feec7d83b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceSide"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:3df3bff746bde383b406b3741ba46e14f4d56695d025bffa61336eb44ae94531",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceSideState"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:b26d741048857cc4e837d95c0ec12dfe7415ba1aa63a58ae2652bc795f5e72e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceCurrentness"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:19ea57503e8179f9bd4a9334f0e56e213b314059d77c293173fca0e6e9e25624",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourcePathBound"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:54c92b9afc2fd4e7731d0dc4fd8ec21782f8ee08dc496671a69beda3c27aa139",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceAdmission"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The expansion value: the requested generation echoed back, the currentness statement, the bounding measurement, the admission, and the command beside the content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:3a3dc099eb0b876ca6894e60776ea0f172e0feb5e9711146d9b0302d0a7be502",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceExpansion"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The request that carries the task context, the path and the exact generation, and the result that is either the expansion or one typed refusal and never both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:0b63a74d8f3e792c4d24782b4f54ee357c448b75b20688f3a50a47f5329d2bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceContentRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:e99cc7aa6d8c6656ea4b600fc2b0a5c9fd81255d5c93edca94086ab9e8a1c984",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceContentResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The one measurement this module calls instead of re-deriving: the change inventory of a bound tree pair, and the side value that binds a tree id to the root it resolves in.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_inventory"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:660943b0c519a43f2230401da098b234638bae93577d58cc25567582a8370745",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_tree_side"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:36e43058366a4dd9540b7b3c7fb454dee1c44b0ef514b2316f148351312be728",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_candidate_identity"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The transport that reaches this owner: the third route, its selector value, its unwired answer and its incomplete-generation body.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:8604670d9976c4ec7e3f0bfa5eec624e3dda197e611a93fde7ad74f2f4a106cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:3d8e168ee22f6c9b451bd06933d55854d834167bcdea2bdbd6bf330c58e50111",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceContentRef"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:77a7088874866476b25a8429f1a0317bbd80d260a770575eaa17227ad73fdeb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_content_request_from_query"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_content_response"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:58bbd1bd83463b3bdce0a3636d2c658ec14ac1ad090f5848d7ce54ab00c8c1f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_incomplete_generation"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "content": "sha256:f2463a7eb78ed3144ff8acd8d1fa3fdb73ddf9266e6d2c0e8304158c20413705",
+            "locator": {
+              "end": 653,
+              "kind": "line_range",
+              "start": 635
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The third port the composition root supplies, and the wiring that gives it the real owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_source_content"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_source_content_port"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps.\n\nAnchor: `source_content_unresolved`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:bd6c5bf6eca62d44c807319571d642d9c42dffef1af37cc88ba79a795855c8f6",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bound one side may carry — the same 2 MiB the shipped file reader applies — and the window Git itself inspects before this surface classifies a blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:beb8c2c44a804daa1ca95428dd98d744663d53504c17ba100124dacf8f01846d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPANSION_TEXT_BYTES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:63982b467e98242814a54ad9ff8850c997c94e72abe4ffa1976762e90c9db759",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BINARY_SNIFF_BYTES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "**The production-composition cases: both endpoints' own bytes against an independent `git show`, an unmapped addition's whole text, a deletion's whole base text, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the pruned-blob and missing-object states, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:b7b74dfeab97a8844c6757cbe0567dacf80054cf52aec6e4d0bf44ab1729f738",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_modified_file_opens_both_endpoints_own_bytes"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:5dbfccf1824171ea2aa0c5ead1b0d15a42e072c32843faeb0ef93ffafa175c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_added_unmapped_file_opens_its_entire_candidate_text"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:b00603c408e29956e98ec23f7cd58fe4e3b049fe1832fe9cb3506f0937e3cf49",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_expansion_stays_bound_when_the_branch_advances_after_the_listing"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:50c1fac1f10c62d093fca91bed2ba4f1329841ed5910c658bb8df0265958f031",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unmeasured_generation_still_confines_the_path_to_a_measured_change_set"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:0e581199eea5c895d4d7b0a5b02504cdbac0f5d97d67fe45ea95ad989d09cf5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_generation_that_names_a_commit_is_refused_rather_than_served"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "content": "sha256:601d97ed28f97e42ea4b6b5909e9837bb19c2d8ff6f09e626f87dddc761b0ee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unwired_process_refuses_the_route_by_name"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "**The attributed-unchanged cases: admission without counting, cross-comparison refusal, historical bytes after the tree moves, exact spelling, and undetermined refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:a91f9b24a303265586c5bbd016bdf3e7233c2897ce74f821ce03ebf130172a60",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:c8d4944c85a19f02a6fdb0d278d9a9de1bb0f8f69aec5c9fa54cd29de21094b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_linked_only_in_another_comparison_is_refused_for_this_one"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:1ac66ae3aeb994c338c865c195eb25d4f2feee0e2e5753b1924c37b4cdc898c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:2edac6227df8eb74aadea566ce8f9193e3b1d6a7ff8b4ce12a12d9be9f2cff01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_padded_spelling_is_never_admitted_as_attributed_context"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
+            "content": "sha256:e7e8349ee6dbf01820889bfe44cd5c9bf7581763bab975eb30ac2a05ba7db799",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The renderer that consumes this value: the shipped `DiffPane` when both sides are text, each side's own state line and content otherwise, the refusal block, and the generation/path-bound statements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceContent"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:b84fd31944c3c27d5bc513725f1bf10f9e0660fd1009f5d4b8300735f0ad354b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Sides"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:434a0d861518953aa331a027354ef83829fc8cd7a658175b94c02ae4cc3a6177",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusalBlock"
+            },
+            "path": "dashboard/src/panels/review/SourceContent.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The entry modes the content read interprets for itself, and the states whose object is a blob printable from its recorded identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:640dbca901635881c6673203d7da11920a6243545ee18b7c225174091743775e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SUBMODULE_MODE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:679e360c072f008cac6ac1c6878f8081ff72ad9a97a038a37b7aa0b0046a3f24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SYMLINK_MODE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:baf89a3b901556268351b5ce06ba3aac8bb1602b0841ed0956a9acf7850778ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BLOB_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The four stated sentences a side can carry: no entry here, a link target rather than a document, a target that is not valid text, and a submodule pointer with no bytes of its own.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:35a603c3606a984bf612ad9c2eeef0cce9217818888c428a752c134c56e76983",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ABSENT_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:791de331323e2b0455e3c5b168e949287616d1892cb2d74ea9874075c901e42c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SYMLINK_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:f57fa0632921072010e711cfdd48448b514b18c77f728bc893c2540551cd4ce9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SYMLINK_UNTEXTUAL_DETAIL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:f1a6213ebd2a2076329534eb633704404c5a163270ad2d073766249451bf375c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SUBMODULE_DETAIL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The one entry point: resolve, screen, then read — with the currentness measurement taken after the bytes so it can only qualify them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:dd9c9685ddbd2a1538eee6c37c80ce168bbd04f1084ce9b67bf3c48c6eef0e79",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_source_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The four admission facts, each a distinct refusal: a complete object identity, this leaf's recorded baseline, a *tree* as the after generation, and a path Git can be handed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:de237539bab3bf29e8c326dc4f9af52f779ef61b4e571237a29d800b044a2e76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inadmissible"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The after generation must be a tree: a commit, blob or tag this repository holds is refused by name, while a missing object stays a per-side measurement rather than a refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:ac2e8f6676debd1ee2da4dffc1267922985b0ca3235fc2a6e37f808518958a06",
+            "locator": {
+              "kind": "symbol",
+              "name": "_non_tree_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The expansion itself: the measured pair re-asked through the inventory owner, the admission asked of the admission owner, both sides read at the requested trees, and the value assembled with the generation and admission statements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
+            "content": "sha256:ebb5f7773a87fded477bec63545ebd293f8b42fc91309cf6768a7b61a2436f74",
+            "locator": {
+              "kind": "symbol",
+              "name": "_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

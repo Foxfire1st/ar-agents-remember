@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewOutcome.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewOutcome.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -172,16 +162,16 @@ None recorded. One routed item is recorded rather than fixed:
   belong to **R25 (assembled acceptance) with R24 (usable review navigation) and R17 (coherent live
   refresh)**.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the shipped candidate: the module's own header and phase
 vocabulary, the two projections that decide what is rendered, the one failure renderer and its two
@@ -189,48 +179,30 @@ controls, the region that decides the notes, the two consumers that render throu
 modules that drive the mounted surface and the expansion pane. Every anchor in a row occurs inside the
 range that row cites.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The header's own vocabulary of the states a reader is owed distinctly, and its statement that nothing here invents a recovery route or renders an absent answer as an empty review.** | `known-empty`; `not-initialized`; `unavailable-history`; `validation`; `authority`; `domain-refused`; `network`; `unreadable` | dashboard/src/panels/review/ReviewOutcome.tsx:1-25 |
-| The one projection and the one accessor this module imports, from the review client's public entry. | `intentOnlyRefusal`; `reviewProblemFromRefusal`; `unreadableAnswer` | dashboard/src/panels/review/ReviewOutcome.tsx:27-32 |
-| **The read's four phases as one value, so a refusal and a payload can never both be the read.** | `ReviewRead` | dashboard/src/panels/review/ReviewOutcome.tsx:33-37 |
-| **The one place a typed result becomes a phase: an unadmitted or payload-less answer is a failure, never an empty review.** | `readFrom` | dashboard/src/panels/review/ReviewOutcome.tsx:42-55 |
-| **What the panes render: the answer, or — for a read that never answered — the last comparison the surface really read, while a typed refusal replaces the panes rather than sitting beside a comparison the server declined to stand behind.** | `shownPayload` | dashboard/src/panels/review/ReviewOutcome.tsx:61-68 |
-| The one accessor for the failure a phase carries. | `problemOf` | dashboard/src/panels/review/ReviewOutcome.tsx:70-71 |
-| **The in-flight state as its own rendering, so "nothing has answered yet" is distinguishable from "the answer was empty" and from every refusal.** | `ReviewLoading` | dashboard/src/panels/review/ReviewOutcome.tsx:75-81 |
-| **Known-empty as a measurement of four facts, never a mood.** | `knownEmpty`; `KnownEmptyNote` | dashboard/src/panels/review/ReviewOutcome.tsx:86-94; dashboard/src/panels/review/ReviewOutcome.tsx:96-108 |
-| **The one renderer for a `ReviewFailure`: every published field printed, an explicit sentence where the server published none, two test ids for the two refusal shapes, and the two conditional controls.** | `ReviewProblemBlock`; `review-offending-input`; `review-next-action`; `review-retry` | dashboard/src/panels/review/ReviewOutcome.tsx:115-177 |
-| **The note that keeps a refusal visible beside the inventory the reader asked for instead.** | `TaskContextInsteadNote` | dashboard/src/panels/review/ReviewOutcome.tsx:183-195 |
-| **The retained-generation label whose closing sentence is chosen by what the retained payload actually is.** | `RetainedGenerationNote` | dashboard/src/panels/review/ReviewOutcome.tsx:201-213 |
-| **The one place the notes are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** | `ReviewOutcomeRegion`; `measuredNothing`; `retainedIsReal`; `readingInWorkspace`; `loadingLine`; `problemLine` | dashboard/src/panels/review/ReviewOutcome.tsx:215-216; dashboard/src/panels/review/ReviewOutcome.tsx:265-265; dashboard/src/panels/review/ReviewOutcome.tsx:218-234; dashboard/src/panels/review/ReviewOutcome.tsx:247-278 |
-| The surface wires the outcome region to the target-bound read and appropriate retry/source actions. | `useSurface`; `ReviewSurface`; `readingStatusOf` | dashboard/src/panels/review/ReviewSurface.tsx:375-395; dashboard/src/panels/review/ReviewSurface.tsx:453-532; dashboard/src/panels/review/ReviewSurface.tsx:534-600 |
-| SourceContent consumes the shared problem renderer for transported failures. | `SourceContent` | dashboard/src/panels/review/SourceContent.tsx:252-305 |
-| **The mounted cases that pin each state and the retained-generation rules, including the F3 region cases.** | "shows a never-initialized refusal with its reason, offending input and next action"; "keeps source inspection reachable when only intent is unavailable, on request"; "says known empty for a measured empty answer and never for a failure"; "offers an explicit retry for a network failure, and the retry renders the answer"; "never renders a previous target's comparison under a new target's header"; "states a retained known-empty once, as the measured result it is, and never denies it" | dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:274-290; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:292-320; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:322-332; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:365-383; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:424-465; dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx:496-505 |
-| The expansion pane's transport-level cases, which render through this module's one block. | "carries the code, reason, offending input and next action of an unwired adapter" | dashboard/src/panels/review/SourceContentRefusal.test.tsx:52-78 |
+- **The header's own vocabulary of the states a reader is owed distinctly, and its statement that nothing here invents a recovery route or renders an absent answer as an empty review.** [1]
+- The one projection and the one accessor this module imports, from the review client's public entry. [2]
+- **The read's four phases as one value, so a refusal and a payload can never both be the read.** [3]
+- **The one place a typed result becomes a phase: an unadmitted or payload-less answer is a failure, never an empty review.** [4]
+- **What the panes render: the answer, or — for a read that never answered — the last comparison the surface really read, while a typed refusal replaces the panes rather than sitting beside a comparison the server declined to stand behind.** [5]
+- The one accessor for the failure a phase carries. [6]
+- **The in-flight state as its own rendering, so "nothing has answered yet" is distinguishable from "the answer was empty" and from every refusal.** [7]
+- **Known-empty as a measurement of four facts, never a mood.** [8]
+- **The one renderer for a `ReviewFailure`: every published field printed, an explicit sentence where the server published none, two test ids for the two refusal shapes, and the two conditional controls.** [9]
+- **The note that keeps a refusal visible beside the inventory the reader asked for instead.** [10]
+- **The retained-generation label whose closing sentence is chosen by what the retained payload actually is.** [11]
+- **The one place the notes are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** [12]
+- The surface wires the outcome region to the target-bound read and appropriate retry/source actions. [13]
+- SourceContent consumes the shared problem renderer for transported failures. [14]
+- **The mounted cases that pin each state and the retained-generation rules, including the F3 region cases.** [15]
+- The expansion pane's transport-level cases, which render through this module's one block. [16]
 
 | `ReviewProblemBlock` owns the behavior described above. | `ReviewProblemBlock` | dashboard/src/panels/review/ReviewOutcome.tsx:115-117 |
 | `ReviewOutcomeRegion` owns the behavior described above. | `ReviewOutcomeRegion` | dashboard/src/panels/review/ReviewOutcome.tsx:247-249 |
 | `knownEmpty` owns the behavior described above. | `knownEmpty` | dashboard/src/panels/review/ReviewOutcome.tsx:86-88 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The module renders one repository namespace's
 records and carries no identity that ranges beyond it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`ReviewSurface.tsx`) moved with the leaf's inserted lines: 1 passing row(s) normalised by the fixer. No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): No content impact: MIK-R34 gave `SourceContent` an optional `markers` prop, so the fixer normalised the `SourceContent` row (`222-271` → `252-305`); in the same run it only reordered the ranges of two rows citing files this leaf did not change (`ReviewOutcome.tsx`, `ReviewSurface.tsx`). Claims unchanged. No stamp advanced.
-- 2026-09-30T14:22:59+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewSurface.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/panels/review/ReviewOutcome.tsx`); no claim changed. No verification stamp was advanced.
-- 2026-09-28T21:42:39+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **body update — the region yields to the workspace's reading area (`ICR-R24@v3`; L48-R1-F1 ruling; R16 preserved).** `ReviewOutcomeRegion` gained `readingInWorkspace` and two extracted helpers (`loadingLine`, `problemLine`) that suppress the surface-level loading line and problem block when the mounted workspace states the requested subject's read. The card's invariant "a typed refusal replaces the panes" is **superseded** by the Architect's L48-R1 ruling: a refusal still replaces the subject's reading (`shownPayload` unchanged), but no longer the shell when a frame exists. R16's distinct, owner-worded states are **preserved** — the same `ReviewProblemBlock` renders them, now labelled with the requested subject. The reopened `useSurface`/`ReviewSurface` claim was re-read and holds; rows re-derived. No stamp advanced.
-- 2026-09-26T21:09:39+00:00: Generated citation repair: `ReviewRead` repointed to dashboard/src/panels/review/ReviewOutcome.tsx:33-37. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:09:39+00:00: Generated citation repair: `readFrom` repointed to dashboard/src/panels/review/ReviewOutcome.tsx:42-55. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:09:39+00:00: Generated citation repair: `problemOf` repointed to dashboard/src/panels/review/ReviewOutcome.tsx:70-71. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T19:49:05Z — Reconciled the changed ownership and current behavior with the source.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** This leaf shortened `ReviewSurface.tsx` (995 → 910 lines) by moving the complete source change explorer into its own module, which moved every construct this row cites: the region's mount is now `888-895` (carrying `ReviewOutcomeRegion`, `retryFor` and `insteadFor` at their call sites, which also clears the range's out-of-bounds end) and the two helpers' own declaration extents are `458-459` (`retryFor`) and `463-472` (`insteadFor`). The row's `targetKeyOf` range `22-22` is kept verbatim and no claim was reworded or dropped. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-22T07:05:34+02:00 — 260921-ICR-L16 curator (candidate `ar/260921-icr-l16`, uncommitted; base `8ff80ce08814856c9d6fec5b19093e6540fc6d7f`): **created.** The module is new in this leaf and this is its one-to-one card. It records what the renderer is *for*: one value carrying the read's four phases instead of three parallel outcome states; the two projections that decide what the panes render (`shownPayload`'s deliberate asymmetry — a typed refusal replaces the panes, a transport failure does not erase them — and `readFrom`'s refusal to read an unadmitted or payload-less answer as a review); `knownEmpty` as four simultaneous measurements; the **one** `ReviewProblemBlock` both the surface and R03's expansion pane render, printing every published field and an explicit sentence where the server published none; the two conditional controls (retry for `network` only, the source-inventory offer for an intent-only refusal only); and `ReviewOutcomeRegion` as the one place the known-empty statement and the retained-generation label are decided. The card also records the measured **design boundary** the independent re-verification found: "exactly one statement" is a property of the surface's calling convention rather than of the region's two independent props — the inconsistent combination is unreachable from the surface, and deriving `lastCoherent` from `shown` would make it structural. Finally it records the routed item: the browser-class A01/A13 journeys are **not verified by this leaf** and belong to R25 with R24/R17. **Stamp accounting:** the verification pair names the **merged production line** `8ff80ce08814856c9d6fec5b19093e6540fc6d7f` (2026-09-22T00:48:09+02:00) — the line this candidate now sits on after the leaf's pair sync — while what was actually read is this leaf's **uncommitted** working tree at that base: this leaf's **uncommitted** candidate at that base. Nothing in this leaf is committed, so no commit contains the bytes a stamp would claim to have verified; closeout owns the stamp.
+No meaningful cross-repo references found.

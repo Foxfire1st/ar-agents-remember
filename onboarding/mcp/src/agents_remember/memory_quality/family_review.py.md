@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/family_review.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/family_review.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:26+02:00 |
-| lastVerifiedCommitHash |  `e605822eb3bf83bf63a45963c5f51d5fc28859ee`|
-| lastVerifiedCommitDate |  2026-09-23T12:19:01+02:00|
-| governingOverview | `mcp/src/agents_remember/memory_quality/overview.md` |
-
 ## Governing Overview
 
 [memory quality overview](overview.md)
@@ -128,45 +118,36 @@ functions.
   `curator_actionable_count` accepts only repair, missing and stale counts, so nothing this module returns
   can reach the gate's arithmetic.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The four acts this module owns, one per pipeline stage: grouping, separated statuses, currentness and routing. | `group_detection_facts`; `compose_status_report`; `compose_currentness`; `route_family_review` | mcp/src/agents_remember/memory_quality/family_review.py:92-106; mcp/src/agents_remember/memory_quality/family_review.py:229-262; mcp/src/agents_remember/memory_quality/family_review.py:309-332; mcp/src/agents_remember/memory_quality/family_review.py:353-388 |
-| The two family conditions and the declared three-edge path shape their subject derivation requires. | `FAMILY_CONDITIONS`; `_FAMILY_PATH_EDGE_COUNT` | mcp/src/agents_remember/memory_quality/family_review.py:77-83; mcp/src/agents_remember/memory_quality/family_review.py:85-89 |
-| The subject derivation from recorded facts only, in `KS-R15@v1`'s own subject spelling. | `_subject_of` | mcp/src/agents_remember/memory_quality/family_review.py:116-140 |
-| The subject-kind classification over recorded change granularities, and the refusal of a signal that fits no kind. | `_subject_kind` | mcp/src/agents_remember/memory_quality/family_review.py:143-161 |
-| The path-shape check that refuses to guess a subject from a shorter recorded path. | `_first_edges` | mcp/src/agents_remember/memory_quality/family_review.py:164-177 |
-| The input signature rendered from the declared set and each side's context digest. | `_input_signature` | mcp/src/agents_remember/memory_quality/family_review.py:180-186 |
-| One group per key, carrying the declared grouping policy version and the shared group identity. | `_group_of`; "group_id=fact_group_identity(subject_id, _input_signature(signals[0])),"; "grouping_policy_version=FACT_GROUPING_POLICY_VERSION," | mcp/src/agents_remember/memory_quality/family_review.py:189-201 |
-| The match projection that keeps every supporting path, item id and edge of one signal. | `_match_of` | mcp/src/agents_remember/memory_quality/family_review.py:204-226 |
-| The five-owner composition: a sixth owner and a missing owner are both refused, and both sentences come from the declaration table. | `compose_status_report`; "a sixth owner is a second reporting surface" | mcp/src/agents_remember/memory_quality/family_review.py:229-262 |
-| The detector's declared precedence and the two recorded limitations that make an input unresolved. | `detector_status`; `registered_scope_status` | mcp/src/agents_remember/memory_quality/family_review.py:265-291 |
-| The curator's status vocabulary, with `no-record-recorded` as the answer for an empty collection. | `curator_review_status`; "no-record-recorded" | mcp/src/agents_remember/memory_quality/family_review.py:294-306 |
-| Currentness measured through `KS-R15@v1`'s own comparison rather than a locally restated one. | `compose_currentness`; "measured = assessment_currentness(assessment, current.get(assessment.assessmentId, {}))" | mcp/src/agents_remember/memory_quality/family_review.py:309-332; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:142-161 |
-| The one currentness string, targeting the field the curator-coherence response already declares. | `curator_currentness_status` | mcp/src/agents_remember/memory_quality/family_review.py:335-350 |
-| The routing report: one row per group addressed by the group's own subject id, the report-only heading, and the shipped formula consumed rather than restated. | `route_family_review`; `_subject_id_of`; `curator_actionable_count`; `KNOWLEDGE_REVIEW_HEADING` | mcp/src/agents_remember/memory_quality/family_review.py:353-388; mcp/src/agents_remember/memory_quality/family_review.py:391-399; mcp/src/agents_remember/memory_quality/curator_checklist.py:100-110; mcp/src/agents_remember/memory_quality/knowledge_review.py:31-31 |
-| The report-only section's rows, built from the shipped state projection and summary builder, with no row for a subject nobody recorded. | `family_review_summaries`; "def summarise_assessment_state(measured: AssessmentSummaryInput) -> AssessmentSummary:" | mcp/src/agents_remember/memory_quality/family_review.py:402-434; mcp/src/agents_remember/memory_quality/knowledge_review.py:153-173 |
-| The subject-state reader defined here, exercised by this leaf's tests and absent from the module's declared export list. | `reported_subject_status`; `__all__`; `subject_state` | mcp/src/agents_remember/memory_quality/family_review.py:437-452; mcp/src/agents_remember/memory_quality/family_review.py:65-75; mcp/src/agents_remember/models/lifecycles/review_assessment_binding.py:401-418 |
+- The four acts this module owns, one per pipeline stage: grouping, separated statuses, currentness and routing. [1]
+- The two family conditions and the declared three-edge path shape their subject derivation requires. [2]
+- The subject derivation from recorded facts only, in `KS-R15@v1`'s own subject spelling. [3]
+- The subject-kind classification over recorded change granularities, and the refusal of a signal that fits no kind. [4]
+- The path-shape check that refuses to guess a subject from a shorter recorded path. [5]
+- The input signature rendered from the declared set and each side's context digest. [6]
+- One group per key, carrying the declared grouping policy version and the shared group identity. [7]
+- The match projection that keeps every supporting path, item id and edge of one signal. [8]
+- The five-owner composition: a sixth owner and a missing owner are both refused, and both sentences come from the declaration table. [9]
+- The detector's declared precedence and the two recorded limitations that make an input unresolved. [10]
+- The curator's status vocabulary, with `no-record-recorded` as the answer for an empty collection. [11]
+- Currentness measured through `KS-R15@v1`'s own comparison rather than a locally restated one. [12]
+- The one currentness string, targeting the field the curator-coherence response already declares. [13]
+- The routing report: one row per group addressed by the group's own subject id, the report-only heading, and the shipped formula consumed rather than restated. [14]
+- The report-only section's rows, built from the shipped state projection and summary builder, with no row for a subject nobody recorded. [15]
+- The subject-state reader defined here, exercised by this leaf's tests and absent from the module's declared export list. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The pipeline's inputs are one namespace's
 recorded detection run and stored assessments, and every identity it reports is a store-local reference.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The subject-state row cited `review_assessment_binding.py:190-211` for `subject_state`; that range is now `require_current_assessment_binding`, and the projection `subject_state` declares at `:401-418`, so the range was repointed to `401-418`. The row's other two ranges are unchanged and still hold their anchors: `family_review.py:437-452` holds `reported_subject_status` (declared at `:441`) and `family_review.py:65-75` holds `__all__`. No claim, anchor or wording changed and no range was dropped to silence a row. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T14:26+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): created this one-to-one card for the family-integrity pipeline's composing module. It records that every subject is derived from recorded facts and that a fact unable to place one is refused rather than guessed, that the five status owners are composed with both sentences taken from the declaration table so a caller supplies only a status member, that currentness is `KS-R15@v1`'s own comparison result and yields exactly one string for the shipped field, and that the routing report consumes the shipped three-term `curator_actionable_count` — the helper this leaf added to `curator_checklist.py` — and folds the family-review row count into nothing. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

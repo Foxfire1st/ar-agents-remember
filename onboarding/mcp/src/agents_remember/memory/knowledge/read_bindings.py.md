@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/read_bindings.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/read_bindings.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3` |
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -59,44 +49,31 @@ the recorded bindings actually use so the closure's coverage record can be built
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The recorded fact set one observation is made from — the row's own five authored facts as they come back from the store.** | `RecordedBinding` | mcp/src/agents_remember/memory/knowledge/read_bindings.py:98-115 |
-| **The one entry point: one binding in, exactly one state out, with the recorded key preserved.** | `observe_binding` | mcp/src/agents_remember/memory/knowledge/read_bindings.py:117-140 |
-| **The declared observation order — the owner revision first, then the key form, then the locator and the target.** | `_observe_owner_and_key`; `_observe_locator_and_target` | mcp/src/agents_remember/memory/knowledge/read_bindings.py:142-168; mcp/src/agents_remember/memory/knowledge/read_bindings.py:170-196 |
-| **The state-to-fact mapping, and the closed membership the closure counts.** | `STATE_FACTS`; `declared_state_members` | mcp/src/agents_remember/memory/knowledge/read_bindings.py:79-97; mcp/src/agents_remember/memory/knowledge/read_bindings.py:228-232 |
-| The two key forms as recorded, and the tally the coverage record is built from. | `decode_local_key`; `key_forms_of` | mcp/src/agents_remember/memory/knowledge/read_bindings.py:247-253; mcp/src/agents_remember/memory/knowledge/read_bindings.py:234-245 |
-| The owner-revision resolver this module observes through. | `OwnerRevisionResolver` | mcp/src/agents_remember/memory/knowledge/read_owner_revisions.py:95-153 |
-| **The shipped anchor vocabulary the four shared literals must be members of, and the one-directional extension that gives it no citation member.** | `ANCHOR_RESOLUTIONS`; `AnchorResolutionState` | mcp/src/agents_remember/models/knowledge/read_anchor.py:27-45 |
-| The closed binding vocabulary and its shipped subset. | `BINDING_STATES`; `SHIPPED_BINDING_STATES` | mcp/src/agents_remember/models/knowledge/citation.py:423-449 |
-| **The cases that measure the identical shipped literal per shared fact and the one-directional extension, plus the uncovered-form state distinct from an absent key.** | `test_every_shared_fact_reports_the_identical_shipped_literal`; `test_the_binding_vocabulary_extends_the_shipped_one_only_in_one_direction`; `test_an_uncovered_key_form_is_a_counted_state_distinct_from_an_absent_key` | mcp/tests/test_knowledge_citation_bindings.py:201-285 |
-| The boundary case that produces the uncovered form on a real store and asserts it distinct from the recorded-blob mismatch. | `test_an_uncovered_key_form_is_counted_and_reported_on_a_real_store` | mcp/tests/test_knowledge_citation_boundaries.py:714-822 |
-| The boundary case that measures an unresolvable key keeping its recorded key and its attribution. | `test_a_key_absent_from_its_owner_revision_reports_the_shipped_mismatch_literal` | mcp/tests/test_knowledge_citation_boundaries.py:308-350 |
+- **The recorded fact set one observation is made from — the row's own five authored facts as they come back from the store.** [1]
+- **The one entry point: one binding in, exactly one state out, with the recorded key preserved.** [2]
+- **The declared observation order — the owner revision first, then the key form, then the locator and the target.** [3]
+- **The state-to-fact mapping, and the closed membership the closure counts.** [4]
+- The two key forms as recorded, and the tally the coverage record is built from. [5]
+- The owner-revision resolver this module observes through. [6]
+- **The shipped anchor vocabulary the four shared literals must be members of, and the one-directional extension that gives it no citation member.** [7]
+- The closed binding vocabulary and its shipped subset. [8]
+- **The cases that measure the identical shipped literal per shared fact and the one-directional extension, plus the uncovered-form state distinct from an absent key.** [9]
+- The boundary case that produces the uncovered form on a real store and asserts it distinct from the recorded-blob mismatch. [10]
+- The boundary case that measures an unresolvable key keeping its recorded key and its attribution. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. The anchor vocabulary it cites (`AnchorResolutionState`, `ANCHOR_RESOLUTIONS`) moved verbatim from `models/knowledge/read.py` to `models/knowledge/read_anchor.py` (still re-exported by `read.py`), so the row now cites the new module; no claim wording changed.
-
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `test_an_uncovered_key_form_is_counted_and_reported_on_a_real_store` repointed to mcp/tests/test_knowledge_citation_boundaries.py:714-822. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `test_a_key_absent_from_its_owner_revision_reports_the_shipped_mismatch_literal` repointed to mcp/tests/test_knowledge_citation_boundaries.py:308-350. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T06:05+02:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `e963a01c`): created this one-to-one card for the one-binding observation. It records the three rules that shape it and the reason each exists. **A shared fact reports the shipped literal** — four states are literally `ANCHOR_RESOLUTIONS` members, checked by a case rather than asserted, and the extension is one-directional so an anchor resolution can never acquire a citation fact. **The observation order is the order the facts depend on and it is declared**: the owner revision first (a key cannot be looked for in bytes that were not obtained), the key form next (a form the increment does not read is a fact about the *reader*, which is what keeps it distinct from an absent key), then the locator and the target. And **a key form this increment does not cover is a counted state, not a gap** — it is in the denominator and it makes the coverage partial. Verification metadata advances to the leaf's base commit `e963a01c` because every cited construct was re-read against the working tree; the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

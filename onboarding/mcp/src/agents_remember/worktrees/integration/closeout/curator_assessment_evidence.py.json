@@ -1,0 +1,190 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_assessment_evidence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+        "content": "sha256:ca899ecdbfe7dc8b30ca3752c60e8a636c73a7063c9be1aa3188822d5f65dbbc",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_assessment_evidence"
+        }
+      },
+      "id": "RLZ-SG5AVDV4",
+      "invariant": "INV-453ZPCZ5",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Supplies the generation reader's assessment evidence: it reads only the evidence-bytes edges the published assessment bound, requires such edges to be present exactly when the assessment names evidenceRefs (a presence check, not a per-reference comparison), requires each to be a sha256 edge inside that assessment's own evidence directory, and reads each retained byte against its recorded digest.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+        "content": "sha256:ca899ecdbfe7dc8b30ca3752c60e8a636c73a7063c9be1aa3188822d5f65dbbc",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_assessment_evidence"
+        }
+      },
+      "id": "RLZ-SKSXAFJS",
+      "invariant": "INV-VXA7SZ0Z",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Validates assessment evidence against the evidence-bytes edges the publisher recorded in the assessment's own examined-inputs declaration. It requires those paths to sit inside the assessment's confined evidence directory and reads each through _read_bound_byte against its recorded digest, rather than rebuilding a destination from how an evidenceRef is spelled.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The named destination, derived from the contract and the assessment identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:9f81bcdadae66eb187c8ab71a077f2cd25aa45207278ced336424ae5cd096d84",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:db614600b5f637029ee020438c4d6ba8471757c9d28e455d857b6030c50c80d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_directory_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:a0024620e2b58b18552bd6124ce65c58c5a0b5132ca4ffe80ac3fb3025398178",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publication with the mandatory read-back, and the blocked state a failed read-back produces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:8198e7fefad0a2c63f36bc1582c3259af93bd845300ca7f53b21f67fc5b9f30a",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_assessment_evidence_bytes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:76d957457b27e52873d79c429b55f88f83830c02f9ee16d312e1c86188300060",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentEvidenceBlockedError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The standalone read-back a later reader uses to re-prove survival.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:3d88c60cccf3d0995e146f9e24fee7ff018f32175836b17074e6843cabbfbb29",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_back_published_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shipped resolver that confines every recorded destination to a namespace root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9803f99ec17984b37829a2d4af77fd2a521764a",
+            "content": "sha256:94a463dec1d3656f96c82e8488484c140b7605c0496bdcdc3613af08dfcdd303",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_curator_evidence_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one terminal-archive admission rule the §6.6 destination is chosen against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
+            "content": "sha256:cea0851cc8ac09e4ba351956d9885f8fa98b9d176e662f7f79e5e2c3c029cf27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_canonical_artifact"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Recorded publisher destinations, including admitted aliases, are validated directly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:ca899ecdbfe7dc8b30ca3752c60e8a636c73a7063c9be1aa3188822d5f65dbbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_assessment_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The existing path, digest and size custody value is read back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26d81a2aa363bcb074785fd947100dd377220676",
+            "content": "sha256:4ee265144220947b71feabac99bd188b15e3c8205ab81027abf0c7438dcfde61",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_retained_evidence_byte"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/MemoryMirror.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/MemoryMirror.tsx`          |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-07T10:50+02:00                           |
-| lastVerifiedCommitHash | `2597ff98306ba7c7963005092ac597c4972e63ce`       |
-| lastVerifiedCommitDate | 2026-08-18T15:45:32+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/ overview](overview.md)
@@ -37,25 +27,9 @@ plain Panda rows.
 Read-only analytics; the segmented bar reads left→right good→actionable (healthy classes first). All
 ages are server-computed.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `driftSegments` + the `DRIFT_ORDER`. | `driftSegments` | dashboard/src/data/selectors.ts:178-186 |
-| The drift/ledger/stalest analytics nodes. | `Analytics` | mcp/src/agents_remember/observer/projection.py:1097-1153 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 2 citation items; scoped citation check now passes.
-
-- 2026-07-07T10:50+02:00 — L15: served ages advance locally (servedAges anchors + 10s ticker); volatile fields no longer arrive on the wire. Verification metadata pinned until closeout stamps the L15 commit.
-
-- 2026-07-07T05:32+02:00 — 260703-L15 S1: both age readouts now advance locally —
-  `servedAgeSeconds(snapshot, snapshot.snapshotStaleSeconds, nowMs)` for drift rows and
-  `servedAgeSeconds(sidecar, sidecar.ageSeconds, nowMs)` for the stalest-sidecar leaderboard,
-  with a panel-level `useNowMs()` (10 s tick); the header comment's "server-computed" ages became
-  "server-anchored, client-advanced".
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-06-15T17:00 — Created for slice 5d: migrated onto `Panel` + Panda css (segments by record).
-  Verification metadata pinned until closeout stamps the 5d code commit.
+- `driftSegments` + the `DRIFT_ORDER`. [1]
+- The drift/ledger/stalest analytics nodes. [2]

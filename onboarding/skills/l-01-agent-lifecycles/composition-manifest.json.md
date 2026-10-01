@@ -1,15 +1,5 @@
 # skills/l-01-agent-lifecycles/composition-manifest.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/composition-manifest.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-19T17:09+02:00 |
-| lastVerifiedCommitHash | `562cef4ca64de5b11712d5165d24e78c9a035312` |
-| lastVerifiedCommitDate | 2026-09-19T17:51:43+02:00|
-| governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
-
 ## Governing Overview
 
 [lifecycle skill overview](overview.md)
@@ -134,58 +124,39 @@ No task-independent follow-up is recorded in the file. One deliberate asymmetry 
 rather than fixing: `references.lenses` carries no `injected` field while its four siblings do, and
 the value that field would carry is the same `false`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rows below pair the manifest's own declarations with the consumers that read them: the parser
 that turns these bytes into typed values, the packaging provider that yields the corpus root and
 manifest together, the source admission that gives the manifest its reserved metadata identity, the
 install-time corpus anchor, and the corpus test that pins the registry wiring.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. | "ar-role-capsule-composition/v1"; "skills/l-01-agent-lifecycles/SKILL.md (thin router)"; "authoritative_tree" | skills/l-01-agent-lifecycles/composition-manifest.json:2-2; skills/l-01-agent-lifecycles/composition-manifest.json:3-3; skills/l-01-agent-lifecycles/composition-manifest.json:5-5 |
-| The role registry in canonical order and the three routing conditions, including the launcher condition that is not a role. | "role_order"; "spawn-role-env"; "fresh-session-role-brief"; "ambient-launcher" | skills/l-01-agent-lifecycles/composition-manifest.json:6-17; skills/l-01-agent-lifecycles/composition-manifest.json:18-26; skills/l-01-agent-lifecycles/composition-manifest.json:27-34; skills/l-01-agent-lifecycles/composition-manifest.json:35-44 |
-| The nine operation blocks, each with its source, purpose and the roles that may run it. | "operations"; "orientation"; "curation" | skills/l-01-agent-lifecycles/composition-manifest.json:45-134; skills/l-01-agent-lifecycles/composition-manifest.json:46-61; skills/l-01-agent-lifecycles/composition-manifest.json:89-96 |
-| The six shared core blocks a role may be composed with, including the launcher block authored here so the registry holds only roles. | "core"; "authority"; "launcher" | skills/l-01-agent-lifecycles/composition-manifest.json:135-160; skills/l-01-agent-lifecycles/composition-manifest.json:136-139; skills/l-01-agent-lifecycles/composition-manifest.json:156-159 |
-| The role registry itself and the two role entries that show the per-seat shape. | "roles"; "roles/architect.md"; "roles/orchestrator.md" | skills/l-01-agent-lifecycles/composition-manifest.json:161-161; skills/l-01-agent-lifecycles/composition-manifest.json:162-198; skills/l-01-agent-lifecycles/composition-manifest.json:200-242 |
-| The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. | "altitude"; "tools"; "seat" | skills/l-01-agent-lifecycles/composition-manifest.json:382-382; skills/l-01-agent-lifecycles/composition-manifest.json:383-387; skills/l-01-agent-lifecycles/composition-manifest.json:391-391 |
-| The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). | "master-handover-packet.md"; "turn-report.md"; "curator-brief.md"; "impact-analysis.md" | skills/l-01-agent-lifecycles/composition-manifest.json:231-238; skills/l-01-agent-lifecycles/composition-manifest.json:371-375; skills/l-01-agent-lifecycles/composition-manifest.json:402-405; skills/l-01-agent-lifecycles/composition-manifest.json:433-438 |
-| The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles. | "launcher"; "is_role" | skills/l-01-agent-lifecycles/composition-manifest.json:505-520; skills/l-01-agent-lifecycles/composition-manifest.json:506-506 |
-| The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. | "injected"; "composition_order"; "Routing metadata only: this file carries no instruction prose and no copies of any source section." | skills/l-01-agent-lifecycles/composition-manifest.json:521-546; skills/l-01-agent-lifecycles/composition-manifest.json:548-552; skills/l-01-agent-lifecycles/composition-manifest.json:553-558 |
-| The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement. | `COMPOSITION_MANIFEST_SCHEMA`; `parse_composition_manifest` | mcp/src/agents_remember/models/role_capsules/manifest.py:37-37; mcp/src/agents_remember/models/role_capsules/manifest.py:168-215 |
-| The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value "because they are one admission". | `COMPOSITION_MANIFEST`; `shipped_composition_corpus` | mcp/src/agents_remember/application/skill_resources/capsule.py:87-88; mcp/src/agents_remember/application/skill_resources/provider.py:50-64 |
-| The admission identity rule: the manifest is metadata rather than an instruction block, so it takes the reserved metadata identity and can never collide with a real block identity. | `_identity_for` | mcp/src/agents_remember/application/role_capsules/sources.py:160-166 |
-| The install-time corpus anchor and the corpus test that reads the manifest by path. | `CORPUS_ANCHOR`; `MANIFEST_PATH` | mcp/src/agents_remember/install/experiment.py:96-97; mcp/tests/test_role_instruction_corpus.py:33-33 |
+- The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [1]
+- The role registry in canonical order and the three routing conditions, including the launcher condition that is not a role. [2]
+- The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
+- The six shared core blocks a role may be composed with, including the launcher block authored here so the registry holds only roles. [4]
+- The role registry itself and the two role entries that show the per-seat shape. [5]
+- The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
+- The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [7]
+- The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles. [8]
+- The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. [9]
+- The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement. [10]
+- The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value "because they are one admission". [11]
+- The admission identity rule: the manifest is metadata rather than an instruction block, so it takes the reserved metadata identity and can never collide with a real block identity. [12]
+- The install-time corpus anchor and the corpus test that reads the manifest by path. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every declared path is relative to the
 admitted corpus root, the one skill entry names this repository's own tree as its origin, and no
 sibling repository or external system is addressed by any key.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-19T17:09+02:00 — 260915-KS-L28 curator: created this one-to-one card for the lifecycle
-  corpus's routing manifest. It records the identity and authority keys, the ten-role `role_order`
-  registry and the three `routing_conditions`, the nine `operations` blocks with their applicability
-  lists, the six shared `core` blocks, the per-seat `roles` entries (file, altitude, tools, skills,
-  seat, core, operations, templates, criteria) and the four template lists that register the curator
-  hand-off list, the single declared skill by origin and URI, the ambient `launcher` composition, the
-  reference-only trees marked `injected: false`, and the composition order and notes that state the
-  file is metadata only. It also records the consumers: the pure parser that enforces the declared
-  vocabulary, the packaging provider that admits the corpus root and manifest together, the source
-  admission that gives the manifest its reserved metadata identity, the install-time corpus anchor,
-  and the corpus test. Verified against the committed source at
-  `d0c1d1cfa9b576fd117ac2a0c05c5defe0089678`.
+No meaningful cross-repo references found.

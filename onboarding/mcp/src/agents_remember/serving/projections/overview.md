@@ -2,14 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/serving/projections/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated            | 2026-09-28T16:28:50+02:00 |
-| lastVerifiedCommitHash | `58e22246cc09ef0ee12095e284a111a475081c38` |
-| lastVerifiedCommitDate | 2026-09-28T16:46:12+02:00|
 
 ## What This Area Is
 
@@ -100,28 +95,24 @@ observer write side through `kernel/primitives/observer_paths.py`).
 - Readers may consume observer projection/reducer APIs; observer event mutation remains
   with its write-side owner. Layering permits serving to consume lower observer APIs.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The observer store-root conventions are kernel-owned. | `observer_logs_root` | mcp/src/agents_remember/kernel/primitives/observer_paths.py:34-34 |
-| The projection tick consumes these readers. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:214-214 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The observer store-root conventions are kernel-owned. [1]
+- The projection tick consumes these readers. [2]
+
+### Cross-Repo References
 
 No cross-repository implementation participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
-## Docs References
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
 ## File-Level Onboarding Map
 
@@ -240,70 +231,5 @@ installed-build confirmation (concurrent master+leaf reads, projector CPU) belon
 notes-listing request belongs to leaf L55 and the eager review catalogue to leaf L47; both are separate
 costs this route change does not claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The body read and its graph-only join table. | `read_task_document_body`; `_graph_master_docs` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:161-201; mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:204-224 |
-| The bounded canonical enumeration every always-on reader uses. | `_iter_task_json` | mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:74-90 |
-
-## Update History
-
-- 2026-09-28T16:28:50+02:00 — 260921-ICR-L42 route impact (curator, uncommitted candidate tree `27409ea9f3320689c28c6a810c9a88afa288bbba` over code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): **task-document reads on this route became bounded by what they name.** Added the route invariant that a request-path reader must cost what it names, because the projector and the HTTP reads share one GIL. Added one Operating Model sentence separating the always-on enumeration from the on-demand body read. Corrected the L12 route-impact sentence, which implied the body read indexes the whole projected set. Added the L42 route-impact section with the byte-identity evidence and the costs routed to L47, L50 and L55. No stamp was advanced; closeout owns it.
-- 2026-09-16T14:20+02:00 — 260916-TDPU route impact (curator, uncommitted change set on
-  `ar/260916-tdpu`, base `67b21aeb`): **the task-document summary bound is gone from this route.**
-  `TASK_DOCUMENT_SUMMARY_LIMIT`, `SERIES_DOCUMENT_SUMMARY_LIMIT`, `_bounded_task_document_payloads` and
-  `_stat_mtime_ns` were deleted from `snapshots_impl/`, so the readers on this route project every
-  canonical task document under `tasks/<repo>/<task>/` — 517 documents measured on the live root against
-  the old cap of 250, i.e. 267 previously withheld documents now reach `analytics.taskDocuments`. The
-  route-level consequence: an operator can no longer be shown a master whose sub-task rows are simply
-  absent, which is exactly the failure the removed bound produced silently. Corrected the stale
-  current-claim prose on this card — the L12 route-impact sentence said `_master_docs_by_ref` indexed
-  "the bounded window", and the L10 section called the limit "unchanged"; both now state the uncapped
-  route. The removal rationale is recorded in the code at `snapshots_impl/_common.py:63-69`. No
-  dashboard file changes behavior: this change set's only dashboard edits are prose recording the
-  removal, in `detail-panel/model.ts` and `detail-panel/masterSeries.test.tsx`. No served value other
-  than document count changed. Verification metadata remains closeout-owned; no verification stamp
-  advanced.
-
-- 2026-09-14T10:16+02:00 — 260913-LCA-L10 route impact (curator, uncommitted change set on
-  `ar/260913-lca-l10-ar`, base `4214d7a1`): the task-document reader's five read-edge call sites now share
-  one tolerant parse that tolerates only `extra_forbidden` and still withholds every genuinely invalid
-  document, with authoring and the enforcement folds unchanged. Added the route invariant that a
-  projection reader must not delete durable truth over one unknown field, and recorded that the 250-document
-  summary window was measured irrelevant and that the dashboard renderer was correct and untouched. No
-  budget, limit or dashboard file changed. Verification metadata remains closeout-owned; no verification
-  stamp advanced and no execution or acceptance claim is made here.
-
-- 2026-09-05T07:12+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added typed requirement/question rendering with semantic body identity and clarified observer read API imports. Verification records source review, not execution or acceptance.
-
-- 2026-08-26T10:44:52+02:00 — Reconciled the projections route with atomic task refresh, retained last-good state, and heartbeat retry semantics.
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled the effective closeout projection and discarded-unstarted task history surfaces. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: snapshots_impl import paths updated to the moved queue packages. Verified at code commit e5cb139f.
-
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready graph view wiring in the task-documents snapshot reader. Verified at code commit b7f2c8e2.
-
-- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: `_task_documents.py` projects
-  `masterRef` + `seats` and covers them in the body revision. Verified at code commit 8071a644.
-
-
-- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: the task-document snapshot slice hydrates
-  master nature and sprint graph, derives waves from the validated graph, and incorporates both into
-  body-revision identity.
-
-- 2026-08-14T06:25+02:00 — L23 final candidate review: runtime snapshots attach the newest
-  validated lifecycle operation and preserve bounded task-addressed phase/report evidence without
-  worker or recovery identifiers. Verification remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 makes the runtime enclosure reader attach the latest durable lifecycle-operation projection. The projection exposes task-addressed progress and report evidence while keeping worker/process resume identities private. Verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the route body for canonical
-  task-document references in inbox and expectation snapshots; private occupant coordinates remain
-  internal runtime evidence.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created the route overview for the
-  observer→serving projection-reader move; observer overview retains the write-side governance.
-  Verification metadata pinned until closeout stamps the L9 code commit.
+- The body read and its graph-only join table. [3]
+- The bounded canonical enumeration every always-on reader uses. [4]

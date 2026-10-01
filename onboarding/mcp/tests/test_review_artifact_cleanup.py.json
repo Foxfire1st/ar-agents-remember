@@ -1,0 +1,192 @@
+{
+  "path": "mcp/tests/test_review_artifact_cleanup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The plain task fixture with its leaf contract and two repositories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:7816db7c391921e041c422a1f65be80f130fec614965d61dd864b1a2510ac9fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "Task"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:e3efa2c7551c02a536566b1ae22b766e1b7be01840d115a32ce0eb11f6e01414",
+            "locator": {
+              "kind": "symbol",
+              "name": "task"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The main archive case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:3d1354f049755323c27c0138905c788eb69753b831a5e70f1f4a4a727b24d460",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archiving_deletes_the_tasks_review_refs_legacy_pins_and_dataset_copies"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Colliding task ids.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:f3de9985dc8eefa2c59de0ddf3c5843fcf261f8db2458bc4a6d6e693e49332e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archiving_one_task_never_selects_a_colliding_tasks_pins"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A record, a task document, or a planted leaf contract never reaches another task's refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:48c9bba2895028a959e993653fd15054c4e9d5c61e627adce810f242ec856c91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_comparison_record_naming_another_task_never_widens_the_archive"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:69c78bb4b7d80f38b290344ec1227c6ed05b2842d7824f3afed59240703bea17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_document_naming_another_task_touches_none_of_its_refs"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:644323d074eff1c0e638d36fe7eabb606e47639adfeafdb54d8583d50141ba1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_planted_leaf_contract_never_reaches_another_tasks_review_refs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Never raises; a refused generation is held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:dec51a878d6d07516df7f525e5a0f7ac0a6d9381a4da8e02895155cf801ff7db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_archive_hook_never_raises_and_holds_a_generation_its_owner_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A planted foreign manifest releases nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:07a620159193ebd167f5c23a0c03ce34249865ccdf73c2719164c78d079cb83b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_planted_foreign_manifest_releases_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Symlinks: the scan, the notes root, the generation directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:e52095f81a1655137fb3b3cbddf7d34132c0d1e19cb164f41f41dccfc7636b21",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_content_scan_never_follows_a_symlink_out_of_the_task"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:39562f0acfbe14addc185a517316f15b4eccd278a835c2d0949310e4a6d898d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_symlinked_notes_root_is_neither_scanned_nor_written"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "content": "sha256:8e3b11d481e64cc8932f1800d9732cb012476f1cf40be3adae013fc7b07ed87d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_symlinked_generation_directory_releases_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_review_artifact_cleanup.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

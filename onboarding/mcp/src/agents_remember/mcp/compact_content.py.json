@@ -1,0 +1,54 @@
+{
+  "path": "mcp/src/agents_remember/mcp/compact_content.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`create_server()` installs the shim as its first action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Behavior is verified through an in-process tool call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad020e68793e601a91add82fe38b4485c5b36430",
+            "content": "sha256:7ee0ffa0b9189d7a75fe2d0914c3b13afb67c8acba43280d4090a366b5cd2771",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_tool_call_text_block_is_compact_and_matches_structured"
+            },
+            "path": "mcp/tests/test_compact_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad020e68793e601a91add82fe38b4485c5b36430",
+            "content": "sha256:3d680b578c690ac4ec21fbeb66c7f4b87f0d02770c023e660b097f71fcfcb2b9",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/tests/test_compact_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

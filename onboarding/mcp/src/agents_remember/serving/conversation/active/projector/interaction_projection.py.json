@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/interaction_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Snapshot pending-interaction model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:20859473ddec59a6928023e0f7e24782ef1035bcf829b1e8c3d6331e36a6d784",
+            "locator": {
+              "kind": "symbol",
+              "name": "PendingInteraction"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

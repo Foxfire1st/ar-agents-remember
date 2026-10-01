@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selector publication and this contract's exact continuation/cancellation ownership live in the activation authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:02c769bd10c6ced2c205db3d5ddfe21f3b32ba4ed8644546ef38d628ea56dded",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_atomic_series_selection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:f74730e986faee53019c09e494f1881e2345a4e444c46df8518fe05be7c99cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_selected_atomic_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:75f6cc2a7436f8b4a0822273ded48850cec323c6f963399329ee7350af8a9dfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_atomic_series_cancellation_owner"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The transaction translates expected activation errors through the shared structured admission projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:473c0a0178a7b9e87bd85c7e51eea422cac4082a9d871b4faa4eed7f7580bd31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AdmissionRefusalRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:b639538336c50fb346cecaf89e91bf7450d9116c7f47406592f46c28f6d6635b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The selecting entry point refuses invalid inputs first, then re-reads the exact contract before reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:82a0467e81acda8134452cb44246bd38e3d67121d07bc23793e8ba7e05db8703",
+            "locator": {
+              "kind": "symbol",
+              "name": "activate_atomic_series_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The internal sync driver publishes reconciling, proves continue/cancel ownership, and advances only this contract to active.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:d7396696dcaf00edbb1527f2ab42a13ab21e0aff701abf80c6ad60218ec15497",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sync_selected_atomic_series_under_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:ea05cd69d2800a2c3aa4fabb826af781496ab06d3aa7a199b00d121bda4f49f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconciling_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:d859ade20e14875fb6e8933036d66394899f9ba1d0037a0d02155fcbd2bf2516",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mid_flight_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The sync driver admits, resumes, continues, cancels, or recovers one exact journal generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0cdb96036af069b62b402c49771a0478cd377d90",
+            "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_contract_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Projection write edge consumes this retained input state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:dd6c8dc88e614f2f3a1a6f62b428713e9bdafd8b33e320b3d8fc446b344a7893",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:065ddac2b36c48429b8296f7e366f9b1dc9b2cad5d1d31478fafa4842f232a39",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The serialized worker maps watcher wakes to refresh kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:d08508bb924901f32c9ddfe12ba1d6d80f1ae260c9d794cf9849f137417c5244",
+            "locator": {
+              "kind": "symbol",
+              "name": "Projector"
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "content": "sha256:9104a987660da97c196d75db843443e1c835a106149eb1b4cafe9e63fef449bd",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

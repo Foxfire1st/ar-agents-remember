@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T04:32:25+00:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -44,42 +34,27 @@ The fixer admits or declines each projection before adding an edit to `Staging.d
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. This card describes the repository's own implementation and forcing contracts without an external documentation claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source. | N/A | N/A |
+No configured external domain source.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The binding owner delegates publication to the document transaction.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A projection carries original cell, oracle extents and deferred document digest. | `Projection` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:64-104 |
-| Each anchor must have exactly one resolved extent from the repair outcome. | `plan_projection` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:167-218 |
-| Removed lines and unsafe source spans refuse before slicing. | `verify_unchanged` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:221-232 |
-| A document-batch conflict has an explicit refusal, including an optional anchor. | `conflicting_write_decline` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:235-243 |
-| History insertion preserves the heading line-ending convention. | `history_edit` | mcp/src/agents_remember/memory_quality/style/citations/deterministic_projection.py:246-256 |
-| The transaction renders, validates and publishes the complete accepted batch. | `DocumentTransaction` | mcp/src/agents_remember/memory_quality/style/citations/documents/transaction.py:30-99 |
+- A projection carries original cell, oracle extents and deferred document digest. [1]
+- Each anchor must have exactly one resolved extent from the repair outcome. [2]
+- Removed lines and unsafe source spans refuse before slicing. [3]
+- A document-batch conflict has an explicit refusal, including an optional anchor. [4]
+- History insertion preserves the heading line-ending convention. [5]
+- The transaction renders, validates and publishes the complete accepted batch. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This file introduces no separate cross-repository protocol. Local temporary code/memory roots and their application write-scope contract remain distinct from a cross-repository authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No new cross-repository protocol. | N/A | N/A |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-18T19:21+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): corrected the `history_edit` claim this change falsified and recorded the frame rule behind it. The card said the edit "preserves LF or CRLF when inserting grouped bullets", which no longer describes the mechanism: `history_edit` now chooses its insertion LINE by the section's parsed instants, below every offset-bearing entry newer than the newest generated bullet and directly under the heading when none is, because the generated bullet's UTC stamp and the document's own offset are different frames — top-of-block and newest-first are therefore different claims (item 22; the recorded "inserted in string order" diagnosis was wrong, the engine has inserted at the top since `709dd076`, and the surviving defect is the frame). Incomparable instants (a naive stamp, a malformed bullet) end the scan instead of being ordered against, matching the checker. Added the invariant and the named `history_order` members the edit delegates to. Documentation only: no source byte was touched by this pass. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are NOT advanced — these sources are uncommitted, so no commit carries their bytes; the candidate is named in the the recorded working candidate metadata row and the governed closeout owns the real commits.
-- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation at `b34f4a59562b76a3e2413027468e0f699117b36f`: Moved final-byte publication ownership to the document transaction, documented bounded source-cell checks and CRLF history preservation, and removed the deleted digest helper from the live inventory. Verification is source review of the prepared commit; Gate 5 and delivery remain pending.
-
-- 2026-09-04T01:15+02:00 - 260831-CCR-L10 Gate-5 memory pass: created this file-level
-  onboarding card for the new deterministic anchor-to-range projection module (CCR-R10) delivered
-  in code commit 709dd076; anchors and ranges derived from the current worktree source and pinned
-  to that commit.
+No new cross-repository protocol.

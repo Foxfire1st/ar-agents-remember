@@ -1,0 +1,179 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Curator readiness binds structured zero counts, rendered bytes, and exact dispositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:81944dcbe7c014dedc53029436030b3e88a7fcc1b2c982f0ea841ccc8575383f",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Candidate-boundary comparison reuses the canonical curator parser and exact evidence list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:efab24642df26db6cb1a916f3cf16691e61be46ccbc385409d848e10f7b7dbe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_evidence_blockers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Grade resolution requires exact Priority and Judgment Register agreement plus evidence digests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:8bbd91ccf9438a3b96f37638b488cca255c014f6da4d7c146096a692266526bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_grade"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Register parsing splits strict mutation reads from tolerant read-path facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:8a08d46c8afeadb216d624f0bfa6a6a96beed55aec956ea1e54251851da287c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "planning_authorities"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:852b431cd74ff05e8a74252c0d03214128c564163eeb6f94b0a270c5f2a90d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_section_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The write-time register-shape gate and the sprint-creation scaffold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:a0534b10652a589a413c3c0b8222cfc9926fb2664d886cbb2d3195bce170b1d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_register_sections_valid"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:51ffde3855fc7cb74219f640e7ac16030577d258acdc82549d191739a8843442",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_scaffold_sections"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Scheduling registers require the exact canonical header, rectangular separator, outer pipes, and row width.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:a4bb39244ced6e5c931af97524042876014edf0464df18971b618bc33e2f6bc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_table_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Curator and grade evidence failures use the shared bounded constructor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:81944dcbe7c014dedc53029436030b3e88a7fcc1b2c982f0ea841ccc8575383f",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:8bbd91ccf9438a3b96f37638b488cca255c014f6da4d7c146096a692266526bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_grade"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Register read and shape failures publish bounded task-document evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:852b431cd74ff05e8a74252c0d03214128c564163eeb6f94b0a270c5f2a90d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_section_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d55f097d700af6ac48e0c8782e085b0fb296843",
+            "content": "sha256:a0534b10652a589a413c3c0b8222cfc9926fb2664d886cbb2d3195bce170b1d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_register_sections_valid"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

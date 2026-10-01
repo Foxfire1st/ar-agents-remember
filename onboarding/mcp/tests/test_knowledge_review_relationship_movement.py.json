@@ -1,0 +1,419 @@
+{
+  "path": "mcp/tests/test_knowledge_review_relationship_movement.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it measures and of the near-copy content constant that makes the source movement a rename to Git's own detection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:32b50d54724c0cfa3a2eba7267ddbf4e199919a00bb08e04b25e57eb9a6cb11b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RENAMED_PATH_TEXT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:1062a0fb2737a6920b623abfe9cfba041145ab5cdcec439357dbf8306e63c6ae",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The unresolved anchor keeps its own state and reason.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:74509e216363fd63682446e1839e9f0173433a9da0420b3b13f492f6f9c20da4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_side_that_did_not_resolve_exactly_keeps_its_own_state_and_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two exact-scope support modules this case module consumes, registered on both consumer rows of the lifecycle catalog.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3b58d726cbf892f17bbd2cea4b738d4ed605cb0",
+            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:9701984c737fef80648c5f95a80af1340ba6b8094fdd1031c50ad72b6c3e953a",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two-snapshot fixture and the movement populations authored through the public store operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:d6b4786c861f860432626748737a02fce1b8d4c0f7a1c290f09e4150f2e099fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_movement_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:830f01e201cdd4ffb14badb6f081550e86d7a2a6003b683342b9f6334f5b4064",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaimDraft"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:03b05d620731952684da079b51f52cc3a244195ca4b77e0d860cdf92c7e8523d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MovementFixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:1d5d0648c7f40fed0616fafefd97f3719631b0b948a81b2880f637106d1c864a",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_claim"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:5c922918c97a92f9905b1a102d1c3281a6adff961b5e8fa37a802769bd4b283b",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_claim"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:c6d287f0b12627d93163a5c2a274889b83f24d601e867513e6aa70f854acecd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "author_revision"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:e8d925c635bae5ada45d9647d4de3e9b4191845bcc12cffcfac11450ee58c99b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reassign_family"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The route authoring at each snapshot's own scope, and the merge predecessors read from the candidate's rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:0fc33f84b6d12097f347d4d283a12e106f4e5a2f9b7d3361ed778e69bef75084",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_baseline_route"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:21b089ac73fba1ec8c40183b922ccc3d24771e514ce4794da3ada0e2e1d245ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_route"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:ffd15d290c8a0086e1b661e6f9049bd53e51e44d49c6dad45ff9d5a6828665b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_govern"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:800f87e41689fc469f51d9bd9d9e1488e6a37231a585e0a3f9298298ec42cd6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merge_predecessors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The read-back helpers: the composition call and the movement selection from the payload's relationship collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:13331c62212b693a6b933da8fbd2888c9671036f4f9d63eef5589653763b4a9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "review"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:7b29b1f6458393008fbab234a2473f9e4f9cc74681aaac6f5781f62192bd2018",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_of"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:801b506f0dba88c8b04b662c4f9b73ba5e00ababab02de93d7bdead03d237849",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_movements"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:4cbb1ea73016bfce0674b8d7486ab04953c0586cb72172f7e224f906db439393",
+            "locator": {
+              "kind": "symbol",
+              "name": "movement_between"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The packet's conforming example and the non-conforming reading measured beside it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:c541cc58ebe13ea87b050db72ad1eef4ed93ef7c75d4b2b8a9c2a79d16724e49",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:9096a319bd239f2105da43b307450910292bcef2d3825aadea7aa034e858132d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_the_after_graph_is_read_so_the_old_association_vanishes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The withdrawal boundary and the selection boundary: a deleted file keeps its identity and reason, and present-outside-selection is never a deletion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:e9f35ce7e338468c9d99e8b858bfdc030052d2335c8ab2f24deecb34a7930440",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_withdrawn_realization_stays_visible_with_its_deleted_file_and_its_identity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:307c81877c3bddfcf07f8af10790804b835c432b4248535000008eacd72dd784",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_the_other_selection_did_not_reach_is_not_displayed_as_a_deletion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The labelled rename inference, and the same rename with no authored edge producing a retraction and an addition.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:9d92a141ef6c66f5c78b86d4ff8ffaface38f7e13a723906ff63df0e4896b51f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_source_rename_is_displayed_as_a_labelled_git_inference"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:59361ee59b24cdfe4b9b41822833f6e6fb69b8fd21d51924ce4df8f161f1d4ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_no_authored_edge_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:37393abe0550ad036434b158b8266ac6b252e3a3acc840f54d43dff3fda09383",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_same_rename_with_no_authored_edge_is_a_retraction_and_an_addition"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The authored split and merge read from the candidate's own predecessor rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:628480f260dc87057626fcfb937025782b300a97c4f4dc141121c0e7411663c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_authored_split_and_merge_are_displayed_from_the_candidates_own_edges"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The family reassignment, the route reassignment and the ungoverned identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:f21712c4ef5c349abe321931144ddda784c8bc216fa95620670c0bf99df02865",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_association_reassigned_to_a_new_revision_displays_both_recorded_sides"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:8172fc576a742cab9408696a6cb1410c047ca8e21dc02cc1e9442d69f60aea15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_governing_route_reassignment_displays_both_recorded_routes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:ce1227404b5ccb2961b454dd17326d62bb0f07edd3f612c66359bbd349e499c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_identity_with_no_route_is_displayed_as_ungoverned_and_never_as_the_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

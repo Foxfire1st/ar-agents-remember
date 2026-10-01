@@ -1,0 +1,251 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/change_set.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The change set's kind and the one frozen shape it resolves to, declared as the registry's key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:3c47a1f1020716c3cd8045f91948a8023a1fa2eee5f553f0fe859df7f94f0dab",
+            "locator": {
+              "kind": "symbol",
+              "name": "SEMANTIC_CHANGE_SET_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:29debca52aa9a1572cb5b09c6b293fb3e28c540305c750198884adb8c804e882",
+            "locator": {
+              "kind": "symbol",
+              "name": "SEMANTIC_CHANGE_SET_SCHEMA"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:7ecca193cfdbfad0261c21e726d30f2ce2e226a8a0a82b6a721b118a9415514c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGE_SET_PAYLOAD_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The `extra=\"forbid\"` base these shapes derive from, which is what refuses a generated summary or a severity field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:c38d38cef2226ee90eabf38006faa6e6ca8cadeb5eb992a86d5d402b472448c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "model_config"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The snapshot identity both sides of the comparison are stored as, which the envelope does not otherwise carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The record group's one served operation, named beside the result so the two cannot disagree about which act ran.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:ca70fc77a8103e3279c93b3869549e914aeba03fc0637757344a86eb9bc1f66a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectReadOperation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The frozen payload: both snapshot identities, the opaque requirement references and the exact realization-claim identities — with no second copy of a member's identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:8fb26d9648f73190ae86064fbfc551cf636b82204d1bda8ebd8ea2ee6335037e",
+            "locator": {
+              "kind": "symbol",
+              "name": "SemanticChangeSetPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two construction refusals: a baseline and candidate from different namespaces, and a reference declared twice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:4f859e55d680405eb7b2cca3c0119ebb8cb0a5b7d8147a9b90d81b8de8a02250",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_namespace"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:05ee11782b16a1c26616cb09847d5658b0c1411bf398718400bbaca322c84b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_distinct_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The unresolved-reference fact: the holder, the closed field set, the verbatim reference, and no slot for a resolved value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:715f566b5fee22b04bc4d76060d1b871d493a50f1afc052a3403b3ac18b31c58",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnresolvedReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The three member views, each carrying the envelope's own lifecycle, route, provenance and content digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:770f56298c4bad3f0e80b6ffc033c252e8167e7f001892f59df9674bfc0d47f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantEffectClaimView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:c130c4e07f28a7dbb3373500f4a867ec5fa2ee6a8efe8db380d8f2af5b119380",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreservationClaimView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:3ea6dd51b53d0a886876b8e36a50eae7724154b0da3053d51fa0de481fbecbda",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnresolvedQuestionView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The computed membership fact, with an empty list meaning exactly that no member declares this change set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:bf67a60cf5a4ce9ce1a3990df70748adb63a6bdac6ead047873050511214a96b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetMembership"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The change set's view, with all six declared parts readable and the stored successor-to-predecessor edges addressable rather than overwritten.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:11a7d752744a9430483fce93b11da6a9361112b3d16b9435a78090bb89239186",
+            "locator": {
+              "kind": "symbol",
+              "name": "SemanticChangeSetView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The whole derived scope and the outcome that carries it — the scope or one refusal, never both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:a876e9a0cddd71dde538c1ebaeb6b9abade439fd3f87a59734faf43488ee787f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoredEffectScope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45f1d0dce022d9f408a79d0e957ad88146eca06c",
+            "content": "sha256:82c348b37c139422c0310571987e1667f64af62665fe9da07ee5af5e7c58331c",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectReadResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

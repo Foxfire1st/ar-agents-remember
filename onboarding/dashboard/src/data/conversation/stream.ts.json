@@ -1,0 +1,90 @@
+{
+  "path": "dashboard/src/data/conversation/stream.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The event-URL builder (`after=` only) this controller opens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:7be096e87e8ee7567815bae52b6489a05de73bf09a92c4d565148d180dfd8d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationEventsUrl"
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The envelope type this controller parses and forwards.\n\nAnchor: `eventCursor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:8f7c3798646da2abaacd5b2018a2710796b02e3c8ec72cd3cde008dede8e7e06",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store recovery path that stops and recreates the stream.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:321ba9a8bc48fa700d64946e7b885d89ca9ea8d3ecbfaee65d44984b66333fa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "startStream"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:78675ecf65299cae90365691986c74571b79807e7e83e6c3ab3cceabccd9100c",
+            "locator": {
+              "end": 425,
+              "kind": "line_range",
+              "start": 382
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The active-conversation cursor authority names the `cursor-conflict` refusal.\n\nAnchor: \"cursor-conflict\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d6cf3a4f2147199259cad445c3ba082b9ee00a2",
+            "content": "sha256:169e6c83d48f2e9f23f56f3ae131f198d48c9741d50e05d24ce8e4c2038ca41d",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/cursor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

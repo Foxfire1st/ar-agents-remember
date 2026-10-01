@@ -1,0 +1,263 @@
+{
+  "path": "mcp/tests/test_terminal_liveness_pane_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The production module whose authority boundary this suite pins; imports `record_turn_projection` and writes pane readings only to `control_raw[\"paneDiagnostic\"]`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:bcbd5187cfb150a95fc031e6a6fe1dee0e765ca9948371a20194e8dba961e3a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_alive"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:e9387f92c04632fd3f5e0e6519540039d295e017f034608737fb5dd3cd645cac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_control_read_failure"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93fcb1e2ab08983fffc181554360deab4805da6d",
+            "content": "sha256:a7c82e82d94be150508d0ada1dc38f6fd12fb9e048268051dbc7d60ad90ab0c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_adapter_turn_state"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_liveness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The pane-authority requirement this suite is the executable evidence for.\n\nAnchor: \"Pane classification stays diagnostic-only for turn and terminal truth.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ce1780223ee89ab9f5b577a9578add7e1063ee",
+            "content": "sha256:b3934f1548c22b9010ce644155a5eb578e79e3945ab70fa62cfc18859d74ba4f",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared fixtures this module imports instead of rebuilding — clock, host double, row builder, adapter snapshots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:8b50335289c690ceb7a036624991938f0869f9b9b6a1c7418e3afafc39a4e662",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Clock"
+            },
+            "path": "mcp/tests/test_terminal_liveness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:5cd918c22030e5716388eb6d634135a778d7abc407fbe7bde87e8386b2529ee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FakeHost"
+            },
+            "path": "mcp/tests/test_terminal_liveness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:2539f582dfd6c4260908777b4a0aa812564553027c7a8835516d70bb0f98d438",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry"
+            },
+            "path": "mcp/tests/test_terminal_liveness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:947685d14f2096161abd3c057cd9f74fe0bd724c0334b2b6f7437e06368b142a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot"
+            },
+            "path": "mcp/tests/test_terminal_liveness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7cb3828d8380a0ada1107afe9ac31f566fdafecc",
+            "content": "sha256:7c3c5edbc742cd2ebafeba37571ce18f733f76d33464faccb262f1f49a2c4a78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ready_snapshot"
+            },
+            "path": "mcp/tests/test_terminal_liveness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical adapter snapshot contract whose `ControlState` includes the `disconnected`/`failed` values the readiness case drives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:3bfbd414e81a3803aff06cad32f7a63a0d004b159439df86b409628d6cdb7539",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdapterSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:80debf2e89b4209e740a7435b90207565add9ba184581942e48ff564bf22a23f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ControlState"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The non-pane compatibility projection the legacy case pins (control `unsupported`, activity `unknown`, acceptance `unsupported`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2236e5ba76316e971b5c98c014e6232513f0dcf5",
+            "content": "sha256:b272478403bb281c344704af5796c121cd6f7ce58dc6c334b361f7f7b0777449",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_control_unsupported_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/hosted_control_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pane classifier whose output may only become a diagnostic.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60565329a1ed75f7c2581751c08a320424f0aa20",
+            "content": "sha256:715e1749b8f76639fd144e6647220892a6df13d3bf5e01a1cc4abe92c4b84933",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_turn_state"
+            },
+            "path": "mcp/src/agents_remember/serving/turn_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The state-signal eligibility rule the suite leaves dependent on canonical outcome plus a non-null terminal-evidence identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20755657a5f9d23e62d740aff814bf13aa33e113",
+            "content": "sha256:ca2d36774a8729ff734e88d19ba504e304df856a3ea555bbf41c1631b027449a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_signal_finding"
+            },
+            "path": "mcp/src/agents_remember/serving/state_signals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The lane registration the fail-closed manifest requires for this module.\n\nAnchor: \"mcp/tests/test_terminal_liveness_pane_authority.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:ff1d5d8d2422140913f0f762ad88eccdddafec48ba2ea8ba88ac1b99d81bb33c",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 351
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The requirement contract this suite is the executable evidence for: requirement packet `LOCR-R27@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.\n\nAnchor: \"Pane classification stays diagnostic-only for turn and terminal truth.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ce1780223ee89ab9f5b577a9578add7e1063ee",
+            "content": "sha256:b3934f1548c22b9010ce644155a5eb578e79e3945ab70fa62cfc18859d74ba4f",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lane registration the fail-closed manifest requires for this module.\n\nAnchor: \"mcp/tests/test_terminal_liveness_pane_authority.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:ff1d5d8d2422140913f0f762ad88eccdddafec48ba2ea8ba88ac1b99d81bb33c",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 351
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

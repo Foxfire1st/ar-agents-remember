@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/terminal.py
 
-| Field                  | Value                                        |
-| ---------------------- | -------------------------------------------- |
-| repository             | agents-remember                              |
-| path                   | `mcp/src/agents_remember/models/terminal.py` |
-| doc_type               | `file-level-onboarding`                      |
-| lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview      | `overview.md`                                |
-
 ## Governing Overview
 
 [models overview](overview.md)
@@ -158,35 +148,31 @@ of serving implementation code.
 
 No known follow-up in this file.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external/domain documentation found; this is an internal response contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The response fields are defined by the document-and-role assignment contract. | `TaskAssignmentStatus`; `AttachTerminalSessionToTaskResponse` | mcp/src/agents_remember/models/terminal.py:22-31; mcp/src/agents_remember/models/terminal.py:34-46 |
+- The response fields are defined by the document-and-role assignment contract. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The administrative attach payload builder returns the exact task-document-and-role fields modeled here. | `attach_terminal_session_to_task_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:27-44 |
-| Application producers import and annotate the terminal aliases across the centralized spawn-refusal builder, knob-refusal check, retire result, and rename result seams. | "def spawn_refusal("; "def _knob_refusal("; "_RETIRE_OK_STATUSES: frozenset[SessionRetireStatus] ="; "def _retire_payload("; "def _rename_payload(" | mcp/src/agents_remember/application/terminal_spawn_results.py:13-13; mcp/src/agents_remember/application/terminal_tools.py:473-473; mcp/src/agents_remember/application/terminal_tools.py:944-944; mcp/src/agents_remember/application/terminal_tools.py:947-947; mcp/src/agents_remember/application/terminal_tools.py:1129-1129; mcp/src/agents_remember/application/terminal_tools.py:482-482; mcp/src/agents_remember/application/terminal_tools.py:1005-1005; mcp/src/agents_remember/application/terminal_tools.py:1008-1008; mcp/src/agents_remember/application/terminal_tools.py:1190-1190 |
-| The MCP tool wrappers import the modeled spawn, retire, and rename payload aliases. | `spawn_agent_session_payload`; `session_retire_payload`; `session_rename_payload` | mcp/src/agents_remember/mcp/tools/terminal.py:46-63; mcp/src/agents_remember/mcp/tools/terminal.py:66-83; mcp/src/agents_remember/mcp/tools/terminal.py:86-95 |
-| `LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias. | "LeafRefStatus = Literal["; "class LeafRefResolutionError"; "VALID_LEAF_REF_STATUSES" | mcp/src/agents_remember/models/terminal.py:21-21; mcp/src/agents_remember/worktrees/leaf_refs.py:26-26; mcp/src/agents_remember/worktrees/leaf_refs.py:39-39 |
-| The response registry maps `attach_terminal_session_to_task` and `spawn_agent_session` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:140-212 |
-| The declared attach response owns its wire fields; removed conformance fixtures do not establish a current validation pass. | `AttachTerminalSessionToTaskResponse` | mcp/src/agents_remember/models/terminal.py:37-50 |
-| `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. | `session_retire_tool`; `session_rename_tool` | mcp/src/agents_remember/application/terminal_tools.py:985-1064; mcp/src/agents_remember/application/terminal_tools.py:1153-1167; mcp/src/agents_remember/application/terminal_tools.py:1214-1228 |
-| The response registry maps `session_retire`/`session_rename` to these strict models. | `TOOL_RESPONSE_MODELS` | mcp/src/agents_remember/models/tools/tool_registry.py:116-179 |
-| The three `VALID_*` sets this module declares are no longer pinned by a produced == declared case: `d3610903` removed the per-set `ProducedLiteralTests` cases when coverage became diagnostic, and `mcp/tests/test_wire_vocabulary_exhaustiveness.py` now keeps only its module docstring and helpers. | "VALID_SPAWN_AGENT_SESSION_STATUSES: frozenset[SpawnAgentSessionStatus] = frozenset("; "VALID_SESSION_RETIRE_STATUSES: frozenset[SessionRetireStatus] = frozenset("; "VALID_SESSION_RENAME_STATUSES: frozenset[SessionRenameStatus] = frozenset(" | mcp/src/agents_remember/models/terminal.py:88-88; mcp/src/agents_remember/models/terminal.py:174-174; mcp/src/agents_remember/models/terminal.py:200-200; mcp/src/agents_remember/models/terminal.py:93-93; mcp/src/agents_remember/models/terminal.py:184-184; mcp/src/agents_remember/models/terminal.py:219-219 |
+- The administrative attach payload builder returns the exact task-document-and-role fields modeled here. [2]
+- Application producers import and annotate the terminal aliases across the centralized spawn-refusal builder, knob-refusal check, retire result, and rename result seams. [3]
+- The MCP tool wrappers import the modeled spawn, retire, and rename payload aliases. [4]
+- `LeafRefStatus` declares the two leaf-ref refusal members; `LeafRefResolutionError` produces those statuses, and `VALID_LEAF_REF_STATUSES` derives the runtime set from the alias. [5]
+- The response registry maps `attach_terminal_session_to_task` and `spawn_agent_session` to these strict models. [6]
+- The declared attach response owns its wire fields; removed conformance fixtures do not establish a current validation pass. [7]
+- `session_retire_payload`/`session_rename_payload` return the exact fields modeled by `SessionRetireResponse`/`SessionRenameResponse`, including the `already-retired` idempotent fast-path and the `retire-refused` authority-policy detail. [8]
+- The response registry maps `session_retire`/`session_rename` to these strict models. [9]
+- The three `VALID_*` sets this module declares are no longer pinned by a produced == declared case: `d3610903` removed the per-set `ProducedLiteralTests` cases when coverage became diagnostic, and `mcp/tests/test_wire_vocabulary_exhaustiveness.py` now keeps only its module docstring and helpers. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The model validates a local MCP response and has no external boundary. | - | - |
+The model validates a local MCP response and has no external boundary.
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -223,131 +209,3 @@ seat or its lifecycle. They are set *after* the seat is already terminated and t
 posted, so without the declaration the caller lost the only report of that row — and a retry
 answers `already-retired` and carries none of them. Pinned by
 `mcp/tests/test_tool_response_conformance.py::test_session_retire_reports_the_stranded_row_after_the_seat_is_gone`.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the stranded-row report declared (`:222-224`, `T16`) and every citation into this file re-derived across the `+2`/`+11` shift. Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `SessionRenameStatus` repointed to mcp/src/agents_remember/models/terminal.py:217-217. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `VALID_SESSION_RENAME_STATUSES` repointed to mcp/src/agents_remember/models/terminal.py:219-221. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `SessionRetireStatus` repointed to mcp/src/agents_remember/models/terminal.py:174-180. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `_RETIRE_OK_STATUSES` repointed to mcp/src/agents_remember/application/terminal_tools.py:1005-1005. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `SessionRenameStatus` repointed to mcp/src/agents_remember/models/terminal.py:206-206. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `SessionRenameResponse` repointed to mcp/src/agents_remember/models/terminal.py:213-224. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `VALID_SPAWN_AGENT_SESSION_STATUSES` repointed to mcp/src/agents_remember/models/terminal.py:91-93. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `VALID_SESSION_RETIRE_STATUSES` repointed to mcp/src/agents_remember/models/terminal.py:182-184. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `VALID_SESSION_RENAME_STATUSES` repointed to mcp/src/agents_remember/models/terminal.py:208-210. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T10:40+02:00 — 260915-CAPS-L15 curator: **the spawn vocabulary gained a member and the
-  response gained the per-run mode record.** `capsule-unavailable` joins the status alias — the seat is
-  role-configured and its capsule could not be supplied, refused before any host side effect with the
-  stage and role named — and `SpawnAgentSessionResponse.instructionMode` carries the launch gate's own
-  compact report so a run's instruction mode is published rather than inferred from an empty field.
-  **Nothing was removed or re-spelled**: the vocabulary is additive, which is why no existing payload
-  changes shape. Added the matching invariant and re-anchored the two citation ranges this leaf's
-  insertions shifted (`SpawnAgentSessionStatus`, `SpawnAgentSessionResponse`). Verification metadata
-  moves to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed
-  closeout stamps the real code commit and no hash or fingerprint was invented here.
-
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `ProducedLiteralTests` repointed to mcp/tests/test_wire_vocabulary_exhaustiveness.py:58-58. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: added the exact
-  reviewer structural-parent pair to the strict internal spawn response contract and kept it
-  distinct from spawned-by provenance. Verification remains closeout-owned.
-
-- 2026-08-30T13:28+02:00 — 260821-ARSPAWN-L3: adopted the one-public-tool boundary in this
-  card's purpose: `SpawnAgentSessionResponse` models the internal session-creation primitive used
-  beneath `dispatch_agent`, not a second agent-facing spawn choice. Repaired the moved
-  `_RETIRE_OK_STATUSES` citation while re-reading the current source; verification metadata remains
-  closeout-owned.
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: citation-only repair repointed moved lifecycle, tool-model, direct-landing, legacy, or startup evidence to its canonical committed source path; this card's own documented behavior is unchanged.
-- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1: `SpawnAgentSessionResponse` gains `spawnedByKind` (`Literal["plane","ambient","unattributed"] | None`), the caller-kind provenance `dispatch_agent` sets by caller kind; two stale citation ranges repaired to current source (`_RETIRE_OK_STATUSES` 914→921, `SessionRenameStatus` 193→194). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-12T20:10+02:00 — L23 curator: recorded `source-lineage-stale` / `source-lineage-unavailable` and their typed evidence boundary; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: bound the leaf-ref alias, producer, and derived runtime set to their owning source under the adversarial verdict, then the exact scoped fixer/check passed.
-
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 16 repository-reference citations (16/16 anchored and sourced; scoped citation check clean).
-
-- 2026-08-01T09:48+02:00 — 260731-EFA-L4 curator: body corrected. The Conventions section said
-  "the model duplicates the status literal locally rather than importing the serving helper" —
-  true as far as the serving helper goes, but it framed local declaration as the whole convention,
-  and this file is now the one place in the package where the vocabulary-ownership direction is
-  deliberately INVERTED: the aliases stay here and `mcp/tools/terminal.py` imports them because
-  `mcp.tools.base` → `models.tool_registry` → `models.terminal` is an existing
-  import edge and the natural direction would close a cycle. Recorded that, the tool-side seams
-  now annotated with the aliases (`_spawn_refusal`, `_retire_payload`, rename,
-  preflight table), the three derived `VALID_*` frozensets
-  and the exhaustiveness assertions over them, plus the `_RETIRE_OK_STATUSES` L834 single-place
-  `ok` rule. `LeafRefStatus` is now imported from `worktrees.leaf_refs` and folded into
-  the historical leaf-assignment and spawn vocabularies instead of the two members
-  being typed out in both. L19 later replaced that assignment surface with the structural
-  `TaskAssignmentStatus` document contract while spawn retained its own vocabulary.
-  cit:(["TaskAssignmentStatus = Literal[", "SpawnAgentSessionStatus = Literal["], mcp/src/agents_remember/models/terminal.py:20-29; mcp/src/agents_remember/models/terminal.py:47-78)
-  Two pre-existing body errors found while checking the historical vocabularies against the
-  source and fixed: the assignment enumeration omitted `role-required` (added in
-  HFX2-L17, described later in this same card), and `SpawnAgentSessionStatus` was described as
-  having `spawned` as "the only `ok: true` case" — the success status is `spawned-unbriefed`
-  (`_spawned_payload` L768-L773 there, the only `ok: True`), while `brief-delivery-separate` is a
-  refusal of the retired one-call brief contract. Added four invariants. Citations: two stale
-  ranges repaired — the registry row read L82-L88; L111-L114 and the rows are at L121/L122 and
-  L124/L125; the conformance row read L88-L107 and the representative attach/spawn payloads are
-  at the corrected payload ranges (the former range is now `_write_json`/`_run_git`/`_write_leaf_task`). The self-citation
-  row was re-pointed to `LeafAssignmentStatus` / `AttachTerminalSessionToLeafResponse`, every
-  status alias and response class gained a range, and rows were added for `leaf_refs.py`, the
-  tool-side seams, and the exhaustiveness suite. Verification
-  metadata pinned until closeout stamps the L4 commit.
-- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented the additive
-  `launch-selection-invalid` status, resolved-selection provenance, and the user-authored-only
-  `sessionCommands` boundary. Verification metadata remains pinned until closeout stamps the L2
-  code commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: modeled current/previous seat identity and the
-  role-required attach refusal without overloading the transport-role compatibility field.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15: added replacement-leaf, resolved-knob, and bound-log
-  provenance fields and corrected delivery field semantics to log evidence. Verification metadata
-  remains pinned until closeout stamps the eventual L15 code commit.
-
-- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority):
-  `SpawnAgentSessionStatus` gained `spend-override-unsupported`, the pre-spawn refusal for legacy
-  caller spend fields and maintained harness-native spend env keys. Response shape otherwise stays
-  additive/strict. Verification metadata pinned until closeout stamps the 260707-HFX2-L10 commit.
-
-- 2026-07-08T02:43+02:00 — 260707-HFX-L8 (seat lifecycle: retirement + live identity + turn-state):
-  added `SessionRetireStatus`/`SessionRetireResponse` (issue #12) and `SessionRenameStatus`/
-  `SessionRenameResponse` (issue #4) — both strict `ToolResponse` subclasses following the existing
-  local-status-literal convention. `SessionRetireResponse` carries the four retirement provenance
-  fields (`retiredAt`/`retiredBySession`/`retiredReason`/`retiredEdge`) plus `detail` for the
-  authority-refusal case; `SessionRenameResponse` carries `label`/`spawnedLabel` only — identity
-  text, never `spawn_role`. Verification metadata pinned until closeout stamps the HFX-L8 commit.
-- 2026-07-07T22:15+02:00 — 260707-HFX-L3 (capture-verified delivery): `SpawnAgentSessionResponse`
-  gained `deliveryCapture` (`str | None = None`) — the final pane capture attached whenever any
-  delivery outcome reports `False`, absent on full success — and the delivery-field comments now
-  state the capture-verified contract. Additive; omitted when `None`. Verification metadata pinned
-  until closeout stamps the HFX-L3 commit.
-- 2026-07-07T20:50+02:00 — 260707-HFX-L4: terminal response models gained the strict leaf-ref refusal
-  statuses (`leaf-ref-not-found` / `leaf-ref-ambiguous`), and attach responses gained optional `detail`
-  for resolver errors. Verification metadata pinned until closeout stamps the 260707-HFX-L4 commit.
-- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `SpawnAgentSessionStatus` gained the
-  pre-spawn refusals `effort-invalid` / `model-invalid` / `level-invalid`;
-  `SpawnAgentSessionResponse` gained the free-form spawn provenance (`launchArgs` /
-  `promptKeywords` / `sessionCommands` / `sessionCommandsDelivered`) and the level provenance
-  (`spawnLevel` / `spawnLevelSource`) — all additive `None`-default fields omitted when absent.
-  Verification metadata pinned until closeout stamps the L16 commit.
-
-- 2026-07-06T23:58:30+02:00 — 260703-L14 (visual hierarchy + chat grouping): `SpawnAgentSessionResponse`
-  gained the optional `spawnRole` field (`str | None = None`) mirroring the new catalog column —
-  additive, omitted from payloads when the spawn carried no AR_SPAWN_ROLE.
-  Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-04T11:10+02:00 — L2: added `SpawnAgentSessionStatus` + the strict `SpawnAgentSessionResponse`
-  contract for the agent-facing `spawn_agent_session` dispatch tool (spawned-by provenance,
-  context-delivery outcome, and the server-arbitrated `leaf-taken` / pre-spawn refusal statuses). Follows
-  the existing strict `ToolResponse` pattern. Verification metadata pinned until closeout stamps the L2
-  commit.
-- 2026-07-02T17:04+02:00 — L9: created the strict `AttachTerminalSessionToLeafResponse` contract for
-  the agent-facing terminal leaf reassignment tool. Verification metadata pinned to the task base until
-  closeout stamps the L9 commit.

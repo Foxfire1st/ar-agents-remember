@@ -1,0 +1,139 @@
+{
+  "path": "mcp/tests/test_gate_certificate_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Five gate chain separates suite artifacts and finalization authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "323abd7438ca457b997a755aaea10d49b88571f5",
+            "content": "sha256:3fe40ca4f39790c26b4ad6cbc26cfa1bd57af4f3707bb100ce729f04129c1197",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_five_gate_chain_separates_suite_artifacts_and_finalization_authority"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323abd7438ca457b997a755aaea10d49b88571f5",
+            "content": "sha256:26a69aa6fcc3e29654ef9429973e723cfea9061913dddee8159a203784ac2e35",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 319
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Red partial diagnostic and combined results never publish certificates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "323abd7438ca457b997a755aaea10d49b88571f5",
+            "content": "sha256:ffb74f682886e6811a1f0d3e24b4f2321bb06780b94ba244c9ac90bf4d1e6862",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_red_partial_diagnostic_and_combined_results_never_publish_certificates"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323abd7438ca457b997a755aaea10d49b88571f5",
+            "content": "sha256:6090a3b43afe39873395aa98e50f50b14bf87f36a33f9681f7a0c4d3841e30ca",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 364
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reuse is dependency aware and refuses forged or stale identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "323abd7438ca457b997a755aaea10d49b88571f5",
+            "content": "sha256:c214d5a7ec6988728bc8dff4dee03ed2f564c2d9eb448642b182b5cdf3c2a9fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reuse_is_dependency_aware_and_refuses_forged_or_stale_identity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "323abd7438ca457b997a755aaea10d49b88571f5",
+            "content": "sha256:a123d3542f146fd3a955e70f9a92e613eb2e42d1ae65437f1a9e3b2551005ad0",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 410
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Profile mismatch and unproven runtime change fail closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "323abd7438ca457b997a755aaea10d49b88571f5",
+            "content": "sha256:b57e554c3f3b5916f2f989a7dce86c3e9dccf5f56ee7052067d22efae5dd4919",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_profile_mismatch_and_unproven_runtime_change_fail_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Content store is exact atomic bounded and has no historical lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "323abd7438ca457b997a755aaea10d49b88571f5",
+            "content": "sha256:ff93a032bc4830cf87a25c0d13c11c4e4c6f9fd133519a48406a10f053aa3f9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_content_store_is_exact_atomic_bounded_and_has_no_historical_lookup"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Admission refuses conflicts misalignment and unproven candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "323abd7438ca457b997a755aaea10d49b88571f5",
+            "content": "sha256:9cb58176b1f7ddbaebacdb10b11f883bcd24ffaee2585df51f8a8d599a9f8281",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admission_refuses_conflicts_misalignment_and_unproven_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

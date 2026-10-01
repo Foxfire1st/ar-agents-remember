@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/data/stateGrammar.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2442808e45cf6d1e58d3c213054af8c8ff78333",
+            "content": "sha256:d6e66ccb2d28fc9b22b37022e33255b1212d2f69ece095e8e007b3eec1ad7d18",
+            "locator": {
+              "kind": "symbol",
+              "name": "seatVisualState"
+            },
+            "path": "dashboard/src/data/stateGrammar.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The N1 agent-only-blocked pin (plural-only → awaiting-input; both slots → unchanged).\n\nAnchor: `controlPendingInteractions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4116fb8e18bd4ac9db13db393d04afda88ffc04",
+            "content": "sha256:a62dd7ec688c84e75483507d511f1bf87c5270d4625ddb1d095ab6fb2e839569",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The renderer whose Panda literal the cross-surface suite pins to the same string.\n\nAnchor: \"pulseSlow 2.4s ease-in-out infinite\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5021374525ac7482aac8ff6fe6d35ca1e0635215",
+            "content": "sha256:e276be841e5e18012cae91ab6d5f44017704ed29c3d26cc5b30aa89a477674d0",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/panels/session-cockpit/StateDot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

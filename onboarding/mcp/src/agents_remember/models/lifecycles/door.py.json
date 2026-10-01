@@ -1,0 +1,106 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/door.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
+            "content": "sha256:568f539cc8ae1159ba982d388d0bba8931ade1ef3ad772c650d6db5e7a4d8d96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_legacy_missing_intent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
+            "content": "sha256:337b121e2b8ea46b2218a5664fe160075da71620cc15768992379a37618a3c23",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutDoorGeneration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
+            "content": "sha256:2949ee104a3f9c384aaafd19cdddd9eb3bdb135fc910be2f5ea4144618f7cfa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_door_dependencies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
+            "content": "sha256:337b121e2b8ea46b2218a5664fe160075da71620cc15768992379a37618a3c23",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutDoorGeneration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
+            "content": "sha256:42d9d1c782b8e98f2ddd162a2cd83a3e0458d6a93d620128fdc09c59144c6e8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RETIRED_DOOR_CONTRACT_DIGEST_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The R03 door dependency vocabulary owned by this record type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a83bf32ba6af80f5dd06860a4e7a0332913809c",
+            "content": "sha256:ae9ac046ad5bb24691ac1300c5039547bc2942e375ad9673f190c6fbc247b31d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_edges_are_unique_and_canonical"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a83bf32ba6af80f5dd06860a4e7a0332913809c",
+            "content": "sha256:1ebe9e346661801b2b8f725837b8e1699f5cbfc26f6531e61a1a3397ea42f035",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_DEPENDENCY_POLICIES"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

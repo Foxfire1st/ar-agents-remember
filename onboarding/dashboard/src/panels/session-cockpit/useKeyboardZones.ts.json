@@ -1,0 +1,108 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/useKeyboardZones.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The binding: composed per-chord handlers, zone/route gating, `/` rule, ignore-disabled tinykeys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9428f12da2796a8267085f196e583f7874ba2f16",
+            "content": "sha256:9a4db9ecfacefdcd42aabbc588f910e037d4bafca4316af9cd1b856c49b54dcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "useKeyboardZones"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The zone/routing contract every handler defers to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cf09fc2cc7b5cd77e4b6a3662a135ea22c8951d",
+            "content": "sha256:102d5709fa45d81dd3ebfe675677819f22b9e57c706a9d4c6d894d0ef9a0eee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "routeKey"
+            },
+            "path": "dashboard/src/data/keymap/zones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The chord tables it installs (`CHROME_CHORDS`, `COMPOSER_CHORDS`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32384b5c1290e4e59213ae0a1b6fa2333ef47ec6",
+            "content": "sha256:d23e62fd4680de9811b36748784799b96d6f71e8b28c39887eb32dbf53cd7920",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHROME_CHORDS"
+            },
+            "path": "dashboard/src/data/keymap/chords.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The reserved set it installs — `PTY_RESERVED` lives in `reserved.ts`, not in `chords.ts`, which is why the old row's second range read out of bounds against the file it named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54343cbe0afefa4637c171ffb732d318dff6a422",
+            "content": "sha256:e2d72c0c9c0fc9f6298aac8eef4aa70e0c794bee34c387e6e8944e9b64421c0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "PTY_RESERVED"
+            },
+            "path": "dashboard/src/data/keymap/reserved.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The view that supplies `active` + `dispatch`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9428f12da2796a8267085f196e583f7874ba2f16",
+            "content": "sha256:9a4db9ecfacefdcd42aabbc588f910e037d4bafca4316af9cd1b856c49b54dcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "useKeyboardZones"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "End-to-end binding coverage (real markers, window tinykeys, preventDefault observation, active=false).\n\nAnchor: \"keyboard zones over the legacy-raw PTY (S4)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63eea4bd1f9d5462193341b7a1b75a2dc42e855b",
+            "content": "sha256:c9b42c0ef5a9c17142183aeb9f02bff5f17a15f32040ad7e8653af8712b761a9",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

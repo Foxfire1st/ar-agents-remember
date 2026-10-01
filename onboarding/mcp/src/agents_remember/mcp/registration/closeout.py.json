@@ -1,0 +1,307 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/closeout.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a816e4076dcc166e5d7e42c0346f56b8f240b224",
+            "content": "sha256:06449ee0b5aa0e577f6acacee7198e8022e841601f9ccb31f2227b89f76a3abf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_direct_landing_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The current module exposes `register_closeout_tools` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a816e4076dcc166e5d7e42c0346f56b8f240b224",
+            "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_closeout_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The payload builders these forward to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:d29499dd32149fef8bc8418afe3baad9a315b452ccb6a07494567469f0845ec1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_closeout_preview_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:6b0cf06a256f613fe4834271910e905309fc29f5b1b7601bf8cda29f45b7afce",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_closeout_apply_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:0e21a70c7ddbff6a8947db1fa44ef8aaa34a68085202c501f70efa6518f2002c",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_integrate_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:0430ae7f2b7ed259a2576820fc33c35146f0b5cb2f57e00492c4fc4291314798",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_checkpoint_landing_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:4b08a1f122026f5d3ce5012d93a4796f8b12aa73ec9c93b654ceace8e0b7b5e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_record_landing_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:7cf4fa3e68ddaa0bd592051a7872a2b8e810780982feb18cc56e09714e7738b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_operation_control_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:d1d4a089f69c8817115b4a75cc35f458dd988976000533d6c80e2368a7ce446a",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_cleanup_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:a013547477b416cf54076ecb821baf1a24bf5b99ea3310e7276f322a7726ca35",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_abandon_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The checkpoint-landing tool declaration and the payload builder it forwards to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a816e4076dcc166e5d7e42c0346f56b8f240b224",
+            "content": "sha256:e08910fde0433cf4e5dd401ba3aeee7fd2d672dced015beb97314466a885e0c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_checkpoint_landing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:0430ae7f2b7ed259a2576820fc33c35146f0b5cb2f57e00492c4fc4291314798",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_checkpoint_landing_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a163ae8bfeb510ef5d00749074dca6f458f8b2a1",
+            "content": "sha256:c456fcc0f20713aba55cf002081eb2b2871d7b84ca5b82c7adc9654bc372688d",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:9c12386695597fb00526ef24658b95d03a43536e8c8d600fe8af71c7c2e8cd67",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutCommitMessages"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:66d866b8ec052ac7ddab8696a358a74fa7191a06bfbe35b4d56044b8e23208e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutApproval"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Refuse to stage anywhere except a task's own throwaway worktree.\n\nAnchor: \"Refuse to stage anywhere except a task's own throwaway worktree.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:5de27feea7f0e036fc0c2e518099b663b6072b1daf0f4e514fd671da3e480bbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_outside_a_linked_worktree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Refuse before staging when the checkout has unresolved conflicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:d6917e72e7e8b6559e283adef0d6791db844a2bda587aae5dc688cdb711dabc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_conflicted_worktree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Prepare and certify a fresh candidate through the ordinary gate entry point.\n\nAnchor: \"Prepare and certify a fresh candidate through the ordinary gate entry point\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_staged_code"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that pins the checkpoint description as a partial publication and denies it is the pause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fef1f425c51b6301f92d4992ef459f0ba20bb23",
+            "content": "sha256:5b75019b3ffbc4d3e4a39bd0fb07638657128f43d4db984d5218401220ac7e24",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_checkpoint_description_publishes_rather_than_pausing"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The wrapper condition decides whether the gate — and therefore staging and its refusals — runs; the preview exposes the selected mode, executor, and cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:343b3a5dfccfbe3e2f62dc5f964cc25c6adc3766b76c039b59b5fefa77c06845",
+            "locator": {
+              "kind": "symbol",
+              "name": "requires_strict_code_quality"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "content": "sha256:c1c4c725f8875825ffbf289e9a27e3dd98489f514d9f0b851ae7b4e90be5f62b",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_quality_gate_preview"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

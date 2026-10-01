@@ -1,0 +1,58 @@
+{
+  "path": "skills/w-02-light-task-workflow/template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The rendered task links exact approved requirement revisions.\n\nAnchor: `## Requirement Projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
+            "content": "sha256:c6664ea7a0f142947c6b8fcf349909ccefe978040cdcc21b1f459c2ca91c653e",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Usage rules preserve one-primary ownership and per-revision evidence.\n\nAnchor: `## Usage Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
+            "content": "sha256:07600896a3e30dcc1c2d94bc9e6a6fc564fd4e9499369af57cfea172aebd2ce0",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Usage rules separate semantic versions from immutable attempts and name both legal invalidation paths.\n\nAnchor: `## Usage Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84b479a8f3f8ac7d0aceb374a2340f73f95a74f0",
+            "content": "sha256:a4ef27970f5ff84fcd13a02f3ce24304733b0dcb97018c3ed2b3a40aaf0d31d3",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

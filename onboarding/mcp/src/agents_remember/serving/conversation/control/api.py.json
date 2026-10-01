@@ -1,0 +1,89 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/control/api.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three interrupt routes delegate to the operations ledger's whole public surface: `interrupt`, `interrupt_status`, and the `interrupt_http_status` mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46b60613914598fb1f3d5815a8e76d9f81a86372",
+            "content": "sha256:3db5f53bbaee66bc183dfccfd405458760bff0e9670f83d18009894bd3c91824",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/operations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Operation, queue, withdrawal, recovery, attachment, and telemetry wire products (`OpenConversationOperation` through `ConversationTelemetry`).\n\nAnchor: \"class ConversationTelemetry\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6de2f473e3782a9770f89872bc2910c334f97ab",
+            "content": "sha256:88f0c0aab36303844fc9b1e9050c3a1b25c5e3bba9cd6573711f8c1022440243",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/models/conversations/telemetry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The read-only effective-policy wire models (`PolicyPart`, `ConversationPolicyProjection`) and the `conversation_policy` projector behind `GET .../conversation/policy`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0194cffc7625f827a5732a8c50372ef17646af2f",
+            "content": "sha256:65615f79c76ab35cd2fe4964c707b416dcd8a97d97924455ad2d2c8a56cfa2fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_policy"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0194cffc7625f827a5732a8c50372ef17646af2f",
+            "content": "sha256:d4942a29dc2deb216757d05c13d63b24deaca40a7b560a1fd879e116eed9bc80",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two L0 request dependencies every handler consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:86a4bfd51c9b281d12423321a9ba91ad2da5c61360f67b5c249a919a3316d33a",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

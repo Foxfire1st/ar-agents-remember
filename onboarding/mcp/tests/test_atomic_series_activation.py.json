@@ -1,0 +1,224 @@
+{
+  "path": "mcp/tests/test_atomic_series_activation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One sprint commands both masters, so both series contracts share one protected source pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:b674e15b0b76c36d8970de5e2826ba91db11859fc230b58eee717297b43828ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "ActivationFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A record whose fingerprint or contract path belongs to another contract is refused on read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:43fa914c6970f7935d94f2a425140ab5639b240575efb963f845ae9005ac30c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_record_identity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Only this contract's own reconciling state is projected as a waiting reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:8f185c22a95c3ed7c51df07d2b9764247886e8cd8ca1a91553979c42a36a58d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "activation_waiting_reason"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Contracts sharing one source pair hold independent selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:c062e91578cfb1b4519422df2d0a0c88eb7306555482d82ed9cb4980ba469252",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_contracts_sharing_one_source_pair_hold_independent_selection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Vacant and active are never waiting states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:30e94ca03276ffd3493206b6f1023107cdd2404f65b738ce467b1dfc0baba886",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_vacant_and_active_are_never_waiting_states"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A release addresses only the released contract and still requires its exact selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:2b2821cc9654e625c2ee4838b0c714cdb24333411aece77c9fd98e0f2cb0e66e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_release_addresses_only_the_released_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Another contract's record can never be adopted, in either direction, and only an explicit selecting repair recovers it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:c994d6631624e0b42bac96c1dc9152ced9ea882b373716bfb76c079d7a5995ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_another_contracts_record_can_never_be_adopted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A terminal contract cannot be selected.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:72e1d53850093a378e1070231ec2389c05061fc429c941349dacc6951c1074f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_terminal_contract_cannot_be_selected"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A completed pass beside a mid-flight selection is not this call's success: the state is `atomic-series-reconciling` and the summary names the stuck master, its publication time, its revision, both exits, and the pass's own message last.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:5e76dec374aeeebd693fb2aa28e0afc884036e219be49ea97f2f3a7d53cd3de7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReconcilingResultTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:71913bc9949e69e309bc5da8f0be4dcd08741e317b1c6694ad0337579f7cb74d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_completed_pass_beside_a_mid_flight_selection_is_not_success"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A refusal that left a record mid-flight leads with that state before the refusal's own words.\n\nAnchor: \"def _reconciling_result(\"; \"def _mid_flight_summary(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
+            "content": "sha256:93af19cd674003c9aba7a4daae0fa11b812ec3fab562b1d13e9c1be18cd448d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refusal_that_left_a_record_mid_flight_leads_with_that_state"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:ea05cd69d2800a2c3aa4fabb826af781496ab06d3aa7a199b00d121bda4f49f4",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:d859ade20e14875fb6e8933036d66394899f9ba1d0037a0d02155fcbd2bf2516",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 297
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The record identity is the contract, so the record path is keyed by the contract fingerprint rather than a source pair.\n\nAnchor: \"def contract_fingerprint(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:10d1737c51836553255dfb464c23079367c2aa306fb3eaebb19d1f4e795c4b01",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

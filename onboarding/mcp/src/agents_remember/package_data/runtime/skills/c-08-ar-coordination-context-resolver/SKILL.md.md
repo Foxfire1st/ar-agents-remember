@@ -1,14 +1,5 @@
 # c-08-ar-coordination-context-resolver/SKILL.md
 
-| Field                  | Value                                                          |
-| ---------------------- | -------------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md` |
-| doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-
 ## Purpose
 
 This skill defines `c-08-ar-coordination-context-resolver` skill, the authoritative facts-only resolver for memory roots, coordination roots, settings, path rules, task roots, temporary artifact roots, worktree contract fields, ledger paths, and branch-gated cross-repo allowances.
@@ -35,60 +26,26 @@ Add more examples after the first real worktree-backed task contract exists in t
 
 No external domain documentation applies to this repository-local skill contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 `c-08-ar-coordination-context-resolver` skill is the base dependency for `c-02-memory-quality-control` skill, `c-03-repo-bootstrap` skill, `c-04-retrieval-strategy-router` skill, `c-05-create-or-update-onboarding-files` skill, and task workflows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The skill accepts `code_repository_name`, optional `code_repository_root`, and `task_name`; no-task-name contexts resolve the repo task namespace, while task-name contexts resolve current wrapper task folders and persisted `*-ar` contract folders. | "Root series contracts live at" | mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md:22-22 |
-| The skill returns topology, code repository identity/root, settings paths, repo/task-specific task roots, temp/docs/system roots, worktree fields, ledger path, path rules, and cross-repo data. | "cross-repo facts" | mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md:10-10 |
-| Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use MCP settings or explicit/installed/default package roots for coordination, require supported memory roots, and fail clearly when no memory exists. A removed `internal` request or a repo-local `ar-memory/` root is refused by name with `memory-mode-unsupported`, never falling through to the external root; `external` is the only supported topology. | `## Resolution Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md:57-65 |
-| Consumers include `c-02-memory-quality-control` skill, `c-03-repo-bootstrap` skill, c-04-retrieval-strategy-router, `c-05-create-or-update-onboarding-files` skill, task workflows, and `c-09-git-worktree-manager` skill; boundaries keep `c-08-ar-coordination-context-resolver` skill out of mutation work. | "c-02-memory-quality-control" | mcp/src/agents_remember/package_data/runtime/skills/c-08-ar-coordination-context-resolver/SKILL.md:95-95 |
-| The package implementation exposes the same `code_repository_name` and `code_repository_root` fields through `CoordinationContext`, context construction, and MCP/JSON output. | `coordination_context_resolver` | mcp/src/agents_remember/kernel/coordination_context_resolver.py:154-154 |
+- The skill accepts `code_repository_name`, optional `code_repository_root`, and `task_name`; no-task-name contexts resolve the repo task namespace, while task-name contexts resolve current wrapper task folders and persisted `*-ar` contract folders. [1]
+- The skill returns topology, code repository identity/root, settings paths, repo/task-specific task roots, temp/docs/system roots, worktree fields, ledger path, path rules, and cross-repo data. [2]
+- Resolution rules validate explicit onboarding roots, load worktree contract coordination first, use MCP settings or explicit/installed/default package roots for coordination, require supported memory roots, and fail clearly when no memory exists. A removed `internal` request or a repo-local `ar-memory/` root is refused by name with `memory-mode-unsupported`, never falling through to the external root; `external` is the only supported topology. [3]
+- Consumers include `c-02-memory-quality-control` skill, `c-03-repo-bootstrap` skill, c-04-retrieval-strategy-router, `c-05-create-or-update-onboarding-files` skill, task workflows, and `c-09-git-worktree-manager` skill; boundaries keep `c-08-ar-coordination-context-resolver` skill out of mutation work. [4]
+- The package implementation exposes the same `code_repository_name` and `code_repository_root` fields through `CoordinationContext`, context construction, and MCP/JSON output. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 `c-08-ar-coordination-context-resolver` skill may read coordinator settings, but no external repository behavior is required to understand this skill's current contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found for current skill semantics. | n/a | n/a |
+No meaningful cross-repo references found for current skill semantics.
 
 ## Series-Contract Notes
 
 The packaged resolver skill now teaches active task-name lookup, optional `parent_task` disambiguation, optional `leaf_id` selection, and root/leaf `series-contract.md` paths so installed runtimes do not look for `contract.md`.
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `coordination_context_resolver` repointed to mcp/src/agents_remember/kernel/coordination_context_resolver.py:154-154. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-
-- 2026-09-16T14:05+02:00 — 260915-CAPS-L12 curator: **current-tense claim corrected** for the removal of `internal` memory mode (`CAPS-R12@v1`). The resolution-rules row quoted "repo-local internal memory or selected external memory" from `SKILL.md:10-10`, text that the correction removed; it now anchors the `## Resolution Rules` section (`:57-65`) and records that a removed `internal` request or a repo-local `ar-memory/` root is refused by name with `memory-mode-unsupported`, never falling through to the external root. Verification metadata remains closeout-owned: the source is uncommitted, so no stamp was advanced and no commit hash was invented.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the five `n/a`-anchor
-  table citations with exact anchors and fixer-generated ranges; exact non-fixing check returns
-  zero findings.
-
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: packaged resolver instructions now document `series-contract.md`, active task-root lookup, `parent_task`, and `leaf_id` so installed runtimes do not teach the retired `contract.md` schema. Verification metadata pinned until closeout stamps the code commit.
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` removed source-checkout `.env` resolver authority from `c-08-ar-coordination-context-resolver` skill guidance.
-- 2026-05-24T09:52+02:00: Updated after source-checkout `.env` and `.env.example` stopped being coordination-root resolver inputs.
-- 2026-05-24T04:34+02:00: Updated consumer references after `c-02-memory-quality-control` skill was renamed to memory quality control.
-- 2026-05-23T17:50+02:00: Updated implementation reference after the resolver script route was removed from the skill tree and the MCP package became the only implementation route.
-- 2026-05-21T03:05+02:00: Updated the consumer list after `c-04-retrieval-strategy-router` skill became the retrieval strategy router.
-- 2026-05-18T21:44+02:00: Refreshed after pulling the committed `c-04-retrieval-strategy-router` skill onboarding read-mode rename from `origin/main`.
-- 2026-05-18T21:38+02:00: Refreshed against the current committed `c-08-ar-coordination-context-resolver` skill, restoring `c-04-retrieval-strategy-router` skill as discovery in the consumer list and updating verification metadata.
-- 2026-05-18T16:42+02:00: Updated the consumers list after `c-04-retrieval-strategy-router` skill was renamed to `c-04-retrieval-strategy-router`.
-- 2026-05-15T01:07+02:00: Updated after the skill contract clarified repo-specific `task_root` output when no task name is supplied. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-12T18:51+02:00: Updated after the skill frontmatter moved to lowercase, coordination-root runtime discovery stopped using `.env.example`, and resolution rules began requiring supported memory roots with an explicit missing-memory failure.
-- 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
-- 2026-05-11T19:27: Renamed onboarding to `c-08-ar-coordination-context-resolver` skill AR coordination context resolver and updated resolver identity fields.
-- 2026-05-10T00:47: Updated after task-name contract resolution moved to wrapper folders with persisted `*-ar` contract discovery.
-- 2026-05-10T00:36: Refreshed verification metadata after the `temp_root` resolver contract landed on main.
-- 2026-05-09T23:22: Updated after `c-08-ar-coordination-context-resolver` skill added `temp_root` to the resolver output contract.
-- 2026-05-09T22:57: Refreshed verification metadata and updated citations for the current resolver layout.
-- 2026-05-09T21:59: Updated after the resolver contract added memory/coordination roots, contract fields, ledger path, and cross-repo v2 shape.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for `c-08-ar-coordination-context-resolver` skill documentation.

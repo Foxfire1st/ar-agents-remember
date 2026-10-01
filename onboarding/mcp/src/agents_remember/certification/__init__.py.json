@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/certification/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Core certificates and non-certifying diagnostics\n\nAnchor: `compile_certification_admission`; `ContentAddressedCertificateStore`; `DiagnosticManifestStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
+            "content": "sha256:18c28190bf4dcf89819f1045c25b09dd8bf9d7f93891fffd6e167a1272ffb647",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Final-Codex and typed lifecycle interfaces\n\nAnchor: `compile_final_codex_plan_record`; `compile_gate_four_certificate`; `compile_lifecycle_admission`; `compile_lifecycle_finalization`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
+            "content": "sha256:116450b0d2025b386ef668e020e55d2ef28068977af5ff90c4d036f91d431ddb",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Accumulated measured-replay surface\n\nAnchor: `compile_replay_freeze`; `measure_replay_run`; `require_comparable_replay_pair`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
+            "content": "sha256:1c16c2c8645aeacc309b84c97954f38dc638349f16ab7627126737583aac579e",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Telemetry imports and explicit public exports\n\nAnchor: `DurableTelemetryStore`; `compile_gate_started`; `compile_operation_terminal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
+            "content": "sha256:b51568546fc7ee86e693acdd873f39c1a3dfd94cbc4726b23166f7773f49562f",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

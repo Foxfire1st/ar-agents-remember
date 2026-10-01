@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_unexplained_lane.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_unexplained_lane.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:36:31+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -106,44 +96,34 @@ The last two are dispatched by `review_tree_knowledge.py`; the route and its bou
   `hunkMarkers.unknownReason` restates `_membership` and `_occurrences`' rule for an unknown membership and names this
   module as its owner (review R1 N1): **if that mapping changes here, that sentence must change with it.**
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement packet
 `MIK-R32@v1` (adopting `ICR-R33@v1`) and its rulings in `32_unexplained-changes-lane.json`; they live outside the code
 and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The three reads and the membership-state rule, in the module's own words. | "the entry's attribution count"; "A family occurrence's membership state compares the side's family record" | mcp/src/agents_remember/application/review_unexplained_lane.py:1-27 |
-| The entry's count: buckets only; unavailable, partial or counted. | `lane_summary` | mcp/src/agents_remember/application/review_unexplained_lane.py:87-110 |
-| The unmeasured scope named. | `_unmeasured` | mcp/src/agents_remember/application/review_unexplained_lane.py:113-123 |
-| The two destinations, the totals and every path's bucket (ruling Q1). | `unexplained_lane`; "paths=tuple(" | mcp/src/agents_remember/application/review_unexplained_lane.py:129-155 |
-| A destination: its bucket's files, then attributed files carrying its class or its gate linkage. | `_destination`; `_carries` | mcp/src/agents_remember/application/review_unexplained_lane.py:170-185; mcp/src/agents_remember/application/review_unexplained_lane.py:192-200 |
-| One listed file with its unknown reasons. | `_lane_file` | mcp/src/agents_remember/application/review_unexplained_lane.py:207-220 |
-| The per-file response, or the typed refusal with clipped input (review F2). | `classify_changed_path`; `_refusal` | mcp/src/agents_remember/application/review_unexplained_lane.py:226-244; mcp/src/agents_remember/application/review_unexplained_lane.py:247-255 |
-| Both sides, every entry's range or reason, and every hunk. | `_classification`; `_side`; `_entry_range`; `_hunk` | mcp/src/agents_remember/application/review_unexplained_lane.py:258-313 |
-| A link's keys, revision and family occurrences. | `_link`; `_occurrences` | mcp/src/agents_remember/application/review_unexplained_lane.py:316-356 |
-| The membership states (ruling Q5). | `_membership` | mcp/src/agents_remember/application/review_unexplained_lane.py:359-370 |
-| The lane and file reads dispatched. | "return _focused(query, trees, lane=unexplained_lane(trees))"; `_file_view` | mcp/src/agents_remember/application/review_tree_knowledge.py:122-127; mcp/src/agents_remember/application/review_tree_knowledge.py:216-230 |
-| The entry's count carried on the summary. | "return summary.model_copy(update={\"attribution\": lane_summary(resolved.trees)})" | mcp/src/agents_remember/application/review_intent_summary.py:139-142 |
-| Destinations and reconciliation; the entry count reads no hunk. | `test_every_changed_file_takes_one_bucket_and_the_destinations_reconcile`; `test_the_entry_count_reads_file_buckets_only` | mcp/tests/test_review_unexplained_lane.py:356-373; mcp/tests/test_review_unexplained_lane.py:430-441 |
-| Links, revisions, proofs and membership states. | `test_a_linked_hunk_names_its_entries_revisions_and_family_occurrences` | mcp/tests/test_review_unexplained_lane.py:493-509 |
-| Unmeasured change sets, and long paths answered typed. | `test_an_unmeasured_change_set_has_no_count`; `_long_paths_are_typed_refusals` | mcp/tests/test_review_unexplained_lane.py:596-618; mcp/tests/test_review_unexplained_lane.py:682-695 |
+- The three reads and the membership-state rule, in the module's own words. [1]
+- The entry's count: buckets only; unavailable, partial or counted. [2]
+- The unmeasured scope named. [3]
+- The two destinations, the totals and every path's bucket (ruling Q1). [4]
+- A destination: its bucket's files, then attributed files carrying its class or its gate linkage. [5]
+- One listed file with its unknown reasons. [6]
+- The per-file response, or the typed refusal with clipped input (review F2). [7]
+- Both sides, every entry's range or reason, and every hunk. [8]
+- A link's keys, revision and family occurrences. [9]
+- The membership states (ruling Q5). [10]
+- The lane and file reads dispatched. [11]
+- The entry's count carried on the summary. [12]
+- Destinations and reconciliation; the entry count reads no hunk. [13]
+- Links, revisions, proofs and membership states. [14]
+- Unmeasured change sets, and long paths answered typed. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **Both carried Todos are resolved** (ruling 2026-09-30T13:07:38 F5 and ruling Q5): MIK-L34 marks every owner hunk a lane window draws, a neighbour shown as context included, and kept the membership mapping as it is; the Logic heading and the Todos section record both, with the one dependency the dashboard now has on `_membership` and `_occurrences` (the restated unknown-membership reason, review R1 N1). The source file is unchanged.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T14:06:33+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): created this card for the new module MIK-R32 adds, recording rulings 2026-09-30T12:19:20 Q1 (`paths` for the explorer), Q3, Q4, Q5 and Q7, review R1 F2 (typed refusal for long `file=` values) fixed at 13:07:38, F5 carried to L34, and two candidate invariants. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineFollow.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The follow/prepend/anchor hooks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ab6d449ee288e2277ead91177ce3ab82146a105",
+            "content": "sha256:ad5a18fa76761d42438f7e3c64ec28bcfee7350a5fc839138b969f98d0e5fbd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFollowLayout"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ab6d449ee288e2277ead91177ce3ab82146a105",
+            "content": "sha256:100a99885ab6f8140cb46a3fe465401eea23404a2b7953dea0fe93b0692509b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePrependAnchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ab6d449ee288e2277ead91177ce3ab82146a105",
+            "content": "sha256:8c508c630467172e87b4da00020ae9e4fd58171677829e416b32fe7316e9ff64",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMeasureAnchorCommit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

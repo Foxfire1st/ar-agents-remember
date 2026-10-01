@@ -1,0 +1,492 @@
+{
+  "path": "skills/l-01-agent-lifecycles/composition-manifest.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from.\n\nAnchor: \"ar-role-capsule-composition/v1\"; \"skills/l-01-agent-lifecycles/SKILL.md (thin router)\"; \"authoritative_tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:26f90278779087cd7ae1572616b17992520363c1ac4ac4906be0e0e26b4abfe0",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:aa8132d16a690301e7e75340b9ab25e3382d7fdd80348a8a9bf32011cafdc07a",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:0f6b8919f1943853f3995eecf342951bb1995bbe585a1cf71a35b9d8016c9000",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPOSITION_MANIFEST_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "content": "sha256:d3e6eee279eafcfca161291cb247167af728e57159bcf6e30031ef5a16653f19",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_composition_manifest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value \"because they are one admission\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "content": "sha256:c9b9ba7c6ff90c281f934fdd76294de38ce4bb83cf6a3dca1969a13bee22b86a",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPOSITION_MANIFEST"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+            "content": "sha256:b1aa6db26f9495b7eac841b60e70fbfb0730b9dbbdeb2a63197ed4bac2c762b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "shipped_composition_corpus"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The admission identity rule: the manifest is metadata rather than an instruction block, so it takes the reserved metadata identity and can never collide with a real block identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:b37d92a73e4025436e6316bdf1a20530ac74c4dcf2b9d5f1583df188c9681218",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_for"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The install-time corpus anchor and the corpus test that reads the manifest by path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "825a6d7fb4950e9ba55bc5bf315f2e56b9946b30",
+            "content": "sha256:684230c5d826a8f344a73f6bf3f7ad650a399c83726c67edce126a43f987e75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CORPUS_ANCHOR"
+            },
+            "path": "mcp/src/agents_remember/install/experiment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "content": "sha256:11d5e725544b800c18eb49ec2165f047ec61603bda9a2b143868f6fa4386622d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MANIFEST_PATH"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role registry in canonical order and the three routing conditions, including the launcher condition that is not a role.\n\nAnchor: \"role_order\"; \"spawn-role-env\"; \"fresh-session-role-brief\"; \"ambient-launcher\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:824b4766a93ca350a63941b1b22b0e61281eabf8cec46fed5825bcb2b1ba52de",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:162f409416fb179bfda40fb3849205b0f87f10dc7a0666be9932ef55e1d3e1d0",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:75ed614aa258f3a252992e69058c6cfa9265ff9a9749a0aad2f1f76e12c49f2e",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:4954ba1514a39dc86e37fc0fa35fb56159d5ffc937e12d4f5c678fac2fec7559",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The nine operation blocks, each with its source, purpose and the roles that may run it.\n\nAnchor: \"operations\"; \"orientation\"; \"curation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:87cd5a75d33939e46b79b221336f339e307ac6242788f6ade181a8651c488422",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:5f65a4b0d06e12a5c88f968219e3b746ac2fbb9f61d123003fec960356d83c0e",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:3af0a042a2a2480e7a8a0e149343da2630e74a2ee16e36fe68564378e879d90e",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The six shared core blocks a role may be composed with, including the launcher block authored here so the registry holds only roles.\n\nAnchor: \"core\"; \"authority\"; \"launcher\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:500fea54367b7895f3da35e99d8a7a0f9b31bfe9fcd72a997f6c1413dc712745",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:3d650911791e5ad97f0a163aad515505996e30f380c9fa5885bbbbbbb14eabb8",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:d5dbf6217eb897a1e7b5f1c521d7672ba5cd52addda580e4bd9c9e1026d52e26",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The role registry itself and the two role entries that show the per-seat shape.\n\nAnchor: \"roles\"; \"roles/architect.md\"; \"roles/orchestrator.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:5e368d6a0650528ef5737e472495fcc5442da8e685ef5f5a46b50e379a9fbcb0",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:160d61c135d8f12994bd8114d22e969ff4d57e1017332f5cc6b6facd1f3cec24",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:7b9ff507983373b10019855b87180f8d11a81435b64ca01ddf41dd3559984232",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement.\n\nAnchor: \"altitude\"; \"tools\"; \"seat\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:da504006e949934428af920a32086d0aa9d8fe362c856e8456f88a09e7c8ee81",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 382
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:6be34389d066b2b2b1e6e46e5621491a1a4a66ca17535818a2afcd96e2145158",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 383
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:cc1e5eb81bf40e8dd467bd2b2e3bde14dda2fcb18e5c54d6a7d831e7a1b6edb5",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 391
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four).\n\nAnchor: \"master-handover-packet.md\"; \"turn-report.md\"; \"curator-brief.md\"; \"impact-analysis.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:58e059b7c8b5f73b806483acc5531824790614e851b70da7ba9a4d918c564e8b",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:4e4f3530c7b7ca1f69da355c08aa89c131d23dd288ff0be6cd146746260a1992",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 371
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:73ddba3c61588b6ae8054b74a1bf52c5bac932b1cd552ad7f74fd5626a1630e5",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 402
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:cdfa580d1029033c5053c051080c28ee152916dcc36a9bf92ac8812a31142890",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 433
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles.\n\nAnchor: \"launcher\"; \"is_role\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:795d480a4648c3d4f318d5cc448e237de7f0469f3066deac78f542096901fb89",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 505
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:8980488115b9b65b20f4b9f6c9a6ab7c372bec3d14cf7cc6ae8bb15e494ef76f",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 506
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not.\n\nAnchor: \"injected\"; \"composition_order\"; \"Routing metadata only: this file carries no instruction prose and no copies of any source section.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:a9cfe6c32e450692f6f05a0d1fcb8d0cbbe3e785a394234f54446059f37221d2",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 521
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:cfa31a54cb2790e8f4f408d91c3f636763581225be3707ebf0b14591058875dd",
+            "locator": {
+              "end": 552,
+              "kind": "line_range",
+              "start": 548
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
+            "content": "sha256:5bfe8d79eaa67a7e16887c3d69c32633bd881366e1af8efb2d645e6c09c267fe",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 553
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

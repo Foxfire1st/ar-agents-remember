@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_validate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "459d72581d1eea146bf23f1d56bf1eb1d814868d",
+            "content": "sha256:aad0db0b3bd27e37a79c07ff70c8ba90d1c799aba689647d1f7a3a1a62a5604e",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Printing the report or its JSON.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "459d72581d1eea146bf23f1d56bf1eb1d814868d",
+            "content": "sha256:9afaba359c8b7c508b842a1137620cfcd784997afb2ab4b940041b9e0601c199",
+            "locator": {
+              "kind": "symbol",
+              "name": "_print"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Inputs, the out-of-scope answer and the exit statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "459d72581d1eea146bf23f1d56bf1eb1d814868d",
+            "content": "sha256:06be4b3199ce3222e2e93f1a7329db8933d229b79644d4923dfc7fdbbe291163",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Registration in the umbrella.\n\nAnchor: \"knowledge-validate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "content": "sha256:493a2172319b24b380d5ff89c7cb14a358a561e5425a5e891c106bb0e9602f14",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The command passes the fixture tree and refuses a hand-added marker (re-read after MIK-R09 moved the case below the new sync-merge cases; unchanged).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "content": "sha256:72281b1010c8682009aedd5f4b5c3b050f645f2098811f2a9e676d1bd76f4cd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_standalone_command_validates_a_converted_fixture_tree"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

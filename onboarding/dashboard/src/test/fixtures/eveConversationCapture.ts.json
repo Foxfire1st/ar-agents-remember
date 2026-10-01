@@ -1,0 +1,281 @@
+{
+  "path": "dashboard/src/test/fixtures/eveConversationCapture.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two exported values the mounted case imports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:cbc3745a1aedaae9ee0ebbb6e69d825529f3d2fbdbc462583651a984f41c5bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "eveConversationItems"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:526861ee93798a62581f1be88cbbe8bef41a159ecb53080660d5418601c72e08",
+            "locator": {
+              "kind": "symbol",
+              "name": "eveConversationStatus"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The throwing membership check that makes a drifted capture name its own field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:262ffdff09473fd34228e491817013a4ca0c5233c400ecaf8f0ee0767d32574b",
+            "locator": {
+              "kind": "symbol",
+              "name": "oneOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The per-block rebuild and its explanatory `default` refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:b7ffff352bff2a782389d85b406c976ac1bbcfcbca4843ff1b9eb664106a55de",
+            "locator": {
+              "kind": "symbol",
+              "name": "decodeBlocks"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:5e3ffca173e3967c9e137b53debfe2b6fb13eaf4fc4313347d00610e2d6880e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "BLOCK_TYPES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The item, provenance, identity and status decoders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:a55ad606bfb0f0d0f7f7e20bfca37937d62533aacae713171cbd955bfca06e11",
+            "locator": {
+              "kind": "symbol",
+              "name": "decodeItem"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:8cf491b66147ce405142acb613e3c2bb644c317221aeddb9cd0e4b6b87a8180d",
+            "locator": {
+              "kind": "symbol",
+              "name": "decodeProvenance"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:a83d6d60a6367cf7772904486d16faa9ba04f5e6fe42b3c25b68fd35709178bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "decodeIdentity"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:7b4b1c5773f456ebfcec15ba9e85438cac175203a5852fd8ef13f905307de1d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "decodeStatus"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "166a47b63caa6caad8453577281b10927453a914",
+            "content": "sha256:877c2dd9b74207a363d0857e27f7a55ddc18a859f332495d93bf305925392bf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "decodeItems"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The mirror whose unions every token list restates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:24e413864af9294291068fc9652c5fc77b205da4efb83597f756690b85bafe46",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessId"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:d95a5432dcf8de0c55dc9ca2a932f0431d1506a4cf3e6f8b18a106f42f8d4b04",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeConversationRef"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:1af96a2cc18e3f2e86c6eb47610b35f936826c2dc03c6cc44c59e081b2e20528",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLane"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:d8aa1ada784375d0d40eb30af3ce3c95e0c28d15726966ac9ae1cfea87cac286",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSource"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:6bb6d1bc5c4ada8329c5e7db8254a947da9c25e433a2a8ee8074efe7d0c669ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItemKind"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2355dba37be508d03a637ef8f41d56e0c12bb04e",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The guard this decoder exists to satisfy: a bare JSON import reaching a wire-typed slot is an unchecked value in a checked slot.\n\nAnchor: `wireFixtureGuard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:bab6faeb5a57b9f79f793756218ba2ba0258f2c1618263cd8d31ac2d2612331b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:ab9506b21f483dc95df2f2b35f70c0a443b053a7b9649f77467e688a33200404",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The mounted case that consumes the decoder and asserts rendered text from the live React tree.\n\nAnchor: \"rendered text from the live React tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e56d5d36f5f27cf81f1546d199a7ac8f01f951",
+            "content": "sha256:b523207241cfa021eaa513022922afa54595513d1bbe0680be65d10fc499d1da",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.eve.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Python side pins the same JSON against what the projector produces today, so the decoder cannot drift from the projection it feeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "content": "sha256:ef7f426c7ba8233cef93a959643020ead8b9d71cb03b6e3529e8f9027830527e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_projection_matches_the_capture_the_mounted_ui_renders"
+            },
+            "path": "mcp/tests/test_eve_product_integration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

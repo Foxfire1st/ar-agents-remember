@@ -1,15 +1,5 @@
 # mcp/README.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/README.md`                            |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-29T16:12+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00 |
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -117,57 +107,20 @@ the workspace and never the user's home directory.
   access). The README must keep warning that benchmark execution runs untrusted
   code.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`. | `main`; `require_config_path` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:238-252; mcp/src/agents_remember/mcp/server.py:77-99 |
-| The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. | "agents-remember-mcp =" | mcp/pyproject.toml:76-76 |
-| The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. | `# c-13-install-and-onboard Install And Onboard` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:6-273 |
-| The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. | "def create_server(config: McpRuntimeConfig) -> Any:"; `# MCP Tool Reference` | docs/reference/mcp-tools.md:1-238; mcp/src/agents_remember/mcp/server.py:58-58 |
-| The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. | `parse_timeout_caps` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:676-695 |
-| The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. | `RuntimeInstallRequest` | mcp/src/agents_remember/install/runtime.py:137-159 |
-| Requirements and the development-runtime section state the bounded package line and canonical exact source build. | `## Requirements`; `### Canonical Linux/WSL development runtime` | mcp/README.md:49-85 |
+### Repo-Internal References
+
+- The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`. [1]
+- The PyPI package declares the `agents-remember-mcp` console script and uses this README as project metadata. [2]
+- The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup. [3]
+- The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. [4]
+- The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. [5]
+- The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. [6]
+- Requirements and the development-runtime section state the bounded package line and canonical exact source build. [7]
 
 ## 260821-DAGQC-L2 Memory-Quality Call Grammar
 
 The package quickstart now demonstrates the canonical `memory_quality_check` request object with an
 explicit mode instead of the removed flat wait/run-id surface. This is a contract replacement, not
 a compatibility example: sync/start execution fields and poll identity are separate strict shapes.
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `RuntimeInstallRequest` repointed to mcp/src/agents_remember/install/runtime.py:137-159. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "agents-remember-mcp =" repointed to mcp/pyproject.toml:76-76. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-08-29T16:12+02:00 — Reconciled the package-facing requirements and Linux/WSL bootstrap with
-  the one supported Python 3.13 line and canonical source-built 3.13.15 development runtime.
-  Verification remains closeout-owned.
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: updated the package-facing quality example to the canonical discriminated request grammar. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 6 citation items; scoped citation check now passes.
-
-- 2026-07-31T21:45+02:00 — 260731-EFA-L2 curator: No content impact: the leaf changed two
-  Troubleshooting lines in `mcp/README.md` from `provider_watchers(action="refresh")` to
-  `action="restart"`, because the tool now rejects `refresh` outright and directs callers to
-  `restart` (watchers only) or `invalidate-indexes` (full rebuild). This sidecar records the
-  README's section structure and setup claims and asserts nothing about that command, so no
-  claim it makes is affected; checked every invariant and reference row against the new text.
-- 2026-07-03T11:55+02:00 — 260703 L3: Install And Run gains the umbrella-CLI story — unpinned
-  `uv tool install agents-remember-mcp` first-class, discovery-backed flag-free `dashboard`,
-  daemon mode + the `dashboard.autoStart` settings key, pinning as the debugging path, and the
-  rc-period pre-release note (`--prerelease allow` / explicit registration pin). Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-11T14:07+02:00: Re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
-- 2026-06-11T06:47+02:00: No content impact: the Tool Surface bullet changed from "chat/direct closeout and worktree-backed task workflows" to "worktree-backed closeout and task workflows" (issue #62 worktree-only closeout); the bootstrap structure this sidecar describes is unchanged.
-- 2026-06-06T18:42+02:00: Refined the PyPI-facing quickstart memory so the renderer is an optional convenience script for placeholder replacement and manual replacement is explicit. Verification metadata stays pinned until closeout commits the source change.
-- 2026-06-06T18:19+02:00: Refined the PyPI-facing quickstart memory after renderers dropped the separate workspace-root flag; copied packages now infer the workspace root and accept one `--repo` list. Verification metadata stays pinned until closeout commits the source change.
-- 2026-06-06T16:45+02:00: Updated the PyPI-facing quickstart memory for harness-local `render-starter` scripts and the Claude Code `jq` correction; the setup path now renders copied package placeholders, repository scope, and hook commands before MCP wiring. Verification metadata stays pinned until closeout commits the source change.
-- 2026-06-03T19:25+02:00: Corrected the PyPI-facing package README for the 2.3.1 patch release: package-first starter package setup, one restart, `c-13-install-and-onboard` after MCP wiring, and `skills_install()` as maintenance/manual only. Verification metadata stays pinned until closeout commits the source change.
-- 2026-06-02T16:35+02:00: Second batch (install-location defaults) — documented the workspace-first settings default: `coordinationRoot` at `<workspace>/ar-coordination/` and the settings file under `<workspace>/<harness-folder>/mcp/`, inside the workspace and never the user's home directory. fix/skill-ref-naming-and-grepai-status branch; verification pinned until closeout.
-- 2026-06-02T11:00+02:00: Removed the stale `tree`/`flat` skill-layout language after confirming `skills_install` has no `layout` arg (removed in 2.0.0) — it copies one flat folder per skill at `<skill-root>/<name>/`. Updated the Logic note and the skill-install invariant; `README.md`, `docs/getting-started.md`, `docs/reference/mcp-tools.md`, and the per-harness install pages were corrected in the same pass (docs/** are outside file-level onboarding). Verification metadata stays pinned until closeout. fix/skills-install-layout-docs branch.
-- 2026-05-31T12:30+02:00 — Captured the README's new benchmark-safety callout (1.0.0 review remediation): `codex_benchmark_prepare`/`codex_benchmark_run` are opt-in behind `benchmarksEnabled: true`, real runs run untrusted code, and `codex_sandbox` defaults to `default` with `danger-full-access` opt-in.
-- 2026-05-30T21:22+02:00: Verified against `57944df` after the 0.9.0–0.9.4 run. Documented the README sections added since `412342847` — Settings file location (the `mcp`-parent rule that lets `skills_install` infer its target), Install Order And First Operations (scaffolding → skills → providers, `runnerIntegrityFailed`, `install_provider_deps`/`no_cache`), the `tree` vs `flat` skill-layout note, the `providerSeconds` → `providerSetupSeconds` rename, and Troubleshooting — and added matching invariants and references.
-- 2026-05-29T14:15+02:00: Rewrote the README as a self-contained, uvx-first bootstrap — added the 3-step "ask your agent to" Quickstart (hands off to `c-13-install-and-onboard` skill), inlined a starter `settings.json`, switched project-doc links to absolute GitHub URLs, and linked the MCP tool reference. Metadata pending closeout refresh.
-- 2026-05-28T15:52+02:00: Updated after the MCP package README added the canonical source checkout link.
-- 2026-05-28T15:43+02:00: Created after the MCP package gained a dedicated README and `pyproject.toml` started using it as package metadata. Verification metadata remains pinned until closeout commits the source change.

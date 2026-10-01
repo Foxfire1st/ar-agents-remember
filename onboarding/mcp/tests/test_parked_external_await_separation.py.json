@@ -1,0 +1,136 @@
+{
+  "path": "mcp/tests/test_parked_external_await_separation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The guard fixes the exact parked identifiers whose presence would mean the parked design was adopted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c40e2f523a35ac09013b9268a5be5b1fc351082",
+            "content": "sha256:e5f6084c551074ad067aa1a795f73b3bb6cbb7fff4763baa18df882e65844fc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARKED_MECHANISM_IDENTIFIERS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parked `waiting` kind is absent from the expectation model and cannot be validated into a row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c40e2f523a35ac09013b9268a5be5b1fc351082",
+            "content": "sha256:b34316cd5a14bbaadaeaef045f703a881ff2a1afc1fb6aab9c6c3bf15faf7730",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parked_waiting_expectation_kind_is_not_accepted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "No wait-registration tool is advertised and no wait/recheck/check-descriptor machinery ships.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c40e2f523a35ac09013b9268a5be5b1fc351082",
+            "content": "sha256:f9e96f3ea1bfbcf115cb39804a524670257f0a955e7a29ed9010bc6e873a256a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_shipped_runtime_exposes_no_parked_await_mechanism"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The relay's expectation kind is the Literal that must not gain a parked value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "883c4266d5e0b1f9db5d09dc7832650afdea5165",
+            "content": "sha256:15b58df51379433bdbfcf86fe78d085e8d9a8fe57eaea7e5f2b6bc21fda51c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpectationKind"
+            },
+            "path": "mcp/src/agents_remember/controlplane/expectation_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The parked row payload is rejected at model validation, not merely omitted from a set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "883c4266d5e0b1f9db5d09dc7832650afdea5165",
+            "content": "sha256:92b406143d6f0560580e32099ac478de515d1f1bda21749fcabd5fc5ee5d2f70",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpectationRow"
+            },
+            "path": "mcp/src/agents_remember/controlplane/expectation_rows.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "883c4266d5e0b1f9db5d09dc7832650afdea5165",
+            "content": "sha256:c32403142c8ef1c05f45b6358b44c4593e2ae16f231350b4cc06c969721400cc",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/controlplane/expectation_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The dispatch-surface kind set is the second definition the guard requires to stay parked-free.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c22434b876834849d0e27f57e5d832666ba1ec8",
+            "content": "sha256:de4a5c5b5cf9049115cb00078bafd800b74cb71e53b61e472f74ecf10ff58681",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWN_EXPECTATION_KINDS"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The advertised public capability set is what the no-wait-registration assertion inspects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11f7b63ef890f294ec645cb0a18372190e239551",
+            "content": "sha256:68e903ed4eb01e85a91b74875abc196a300101695c83e602e2fcf8a2d0805c21",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

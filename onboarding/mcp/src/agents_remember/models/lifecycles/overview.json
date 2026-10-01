@@ -1,0 +1,448 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles",
+  "references": {
+    "1": {
+      "note": "Lifecycle response vocabularies and models are owned together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:bc7ea17ba44e1badcdc204a07a38778a4a22c7bba61e96ccffab247036ee5670",
+            "locator": {
+              "kind": "symbol",
+              "name": "LiveState"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:782867d4b13e1c95aef1654d92f0bec55bb2067abaff8867e1a70e3710673517",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleResponse"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Worker termination evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb137c4967767e279ef9d2d6a3ee5ddc243bf34d",
+            "content": "sha256:ec93636b8cbae6205f345220b535029912dd8021cd229bb0721debfcaabd8ba7",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkerTerminationEvidence"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/termination.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb137c4967767e279ef9d2d6a3ee5ddc243bf34d",
+            "content": "sha256:6f40a4fcb79f7498761abc0fbc386a763cee10eacd22802d0290375a52bf2dfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleCancellationEvidence"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/termination.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The durable record owns both revisions; its meaningful subset includes both selected certification cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:f23cfa5b590d3f4fb88efb376e983988a392e1e07296e149c2377ad71777eeb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationRecord"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:a14895a41e27b356c6786293df4b9cde446c3c1312fc36e6506e1cc1583a818e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MEANINGFUL_STATE_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:adc7dc51f0edc871801d5d5542c8022147e1511e10d9dcdab9613e90e9178182",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaningful_state_payload"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:70b881a117ff01cfa44109b8dd22f026fa87b3de23e76e92a6c4084b37130b22",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaningful_state_changed"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:93df26976036983f8ccacd06ca96ca412fba53fa2bb91862eac3d613c07b5418",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 343
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:b4a188a4ea214cd978a7f602c7b8bb67e0ef0f8bcc14cb3ee6d148f3d19e0ba0",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 525
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:866066b45cbeaf42dc08768a03f474a274c1d03eec460d77dfd18059148f34ec",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 556
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:fc1489d75e2da8997bc0cf4a1841fd60de84cc1de738d00137018382fb171b36",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 562
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The public envelope carries the wait cursor beside versioned identity and component bindings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:5ec3b41e02623b995cb350315b0b85c4ebc0f03a7ded88863768b609411b082e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationProjection"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Finalization exposes edge proof and completion-seat result sets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eefe9957926f7c5e703c6dff044bdfebba98d76e",
+            "content": "sha256:3e11bc3ad41eaee18d73bded639a20efbae22405a74292f6646941a25856bd73",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleFinalizeTaskResponse"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Asynchronous operation records keep private identity out of the public projection.\n\nAnchor: \"class LifecycleOperationRecord(BaseModel):\"; \"class LifecycleOperationProjection(StrictResponseModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:188f4dce37bdcc145b40efc6fc6af794922ff8b5b288c55059eaf69fb81b0bbb",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:e2c1c761b8c34798cd25f2d24805d2bfa030b8fc598c5b0918780f8b2b3b2043",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Recovery records have two output commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationRecoveryCommits"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A filtered content head does not replace actual Git head/tree facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:1d2213697e54872749956c9f46bcec11d94fd8d6c15fb918b47608230c689933",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMutationSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:676028d407a623f20445d2780262e688f7780dde977111121d388d2e879596fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "contentHeadTree"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Prepared state has an ordered two-leg prefix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:bf395b2ffb81e1aa503770acb4d38997b5aa971cc2cc4028af99bd0392fd685d",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationPreparationState"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:4a64f6e80b675328de7c3fab07ead65fc1c56be8e0d89ff5fd00b0039ed7f2f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LEG_ORDER"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Closeout and integrate inputs retain their kind-specific accepted decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:6c8837dbdbd9baaf3cbb55bc1cf370d0f4072927c3622f2aa79c9deb83243d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutOperationInput"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:c7ce0e9d21e4cab8aef7639f86ec0056d956670a333124e524ad85919a58a3d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrateOperationInput"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:70b0fad8405ecfb1115f5f752d0dd5dfb7a10c60713732decb6c7f7c92777009",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:ee3872f8758ddb98b89d4d9c25376a2a6f62848d390db20f73964a7979c5617a",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Organizational completion proof requires original full-prefix references and the exact selected integration authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:60ffe14086f76d874b1b11c68a19dd05bc39ff89b7d6858af233cb558f0ad513",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationQualityCertification"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:8dd89f143ab8df92e9afa3fb62b225f04dc7c5a9acfd5502e31024224ea652d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_integration_certification_authority"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:d324bf3ed6cb8be664f2968a603db7baec9a5b328902589330aab426ddd14653",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:173e83960311818cc1a4184ec27200609fd789cc379e6015729fa58b2e1e7886",
+            "locator": {
+              "end": 585,
+              "kind": "line_range",
+              "start": 562
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Enclosure address models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbec9cbfc096676c54ad4dd86c945a5fd415f18",
+            "content": "sha256:1fc637971a9de203329bf654366427e8357cbd5224cc92f3c3da0c8821538068",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosurePublicationState"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6bbec9cbfc096676c54ad4dd86c945a5fd415f18",
+            "content": "sha256:37d4d0cbae40ce59c05610e80ad653f7c2d479361382ef59d060c1e69a23c490",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalEnclosurePredecessor"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

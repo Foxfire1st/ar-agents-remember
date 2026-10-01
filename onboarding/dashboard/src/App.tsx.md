@@ -1,15 +1,5 @@
 # dashboard/src/App.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/App.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T06:47:44+00:00 |
-| lastVerifiedCommitHash | `c041ff5fade16d9e4de73a4d2404574effb98cab` |
-| lastVerifiedCommitDate | 2026-06-14T17:36:44+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -36,22 +26,18 @@ When the development flag is false, this component always selects Cockpit. The s
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation is configured. This card describes repository source only.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These constructs establish the behavior described above.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Development import guard and pathname-based view selection | `DevApp`; `App`; `Cockpit`; `Suspense` | dashboard/src/App.tsx:1-19 |
+- Development import guard and pathname-based view selection [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
-
-## Update History
-
-- 2026-09-05T06:47:44+00:00 — Created during L31 full-population memory recovery from frozen ea359649; verification records the actual source-touching commit. Documentation evidence only.

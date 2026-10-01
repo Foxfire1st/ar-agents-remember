@@ -1,0 +1,188 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: registration, sides and the one list.\n\nAnchor: \"its registration, its sides and its worklist items.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "content": "sha256:f56dbddfc06b5b6cc03adda683cb0cbd6cc63a7a5973734dabf1df2baac144bf",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The persisted worklist carries the gate's items in order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1536b7cb7be42d16497b3947d060b74d1dc64018",
+            "content": "sha256:53cf52623c7054cf0bf953b325408656f4ed8b651b17cbad4f2c3df22b19168b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Mixed formats are an incomplete side and the persisted worklist is `incomplete`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1536b7cb7be42d16497b3947d060b74d1dc64018",
+            "content": "sha256:5b9fbe74258752d2aff8fc96fc3f18410be512420057e5bfbd955b040cc18661",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_mixed_formats_are_an_incomplete_side_never_a_vacuous_pass"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The kind's four registry fields, registered on import.\n\nAnchor: `register_item_kind`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "content": "sha256:8a4c19a5f416c9df44916428c48caff7bce3ba53bc128c7902df37ca4da3a967",
+            "locator": {
+              "kind": "symbol",
+              "name": "ONBOARDING_TRACE_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The explicit inputs of the side resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "content": "sha256:77c0f5dd6b74f37bc7c07dfd2ab92e2a86732f93b9839313a6299adc67a90b17",
+            "locator": {
+              "kind": "symbol",
+              "name": "TraceSideRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sides: `None`, the two mixed-format refusals, and the converted base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "content": "sha256:f2cafb6c0039ad2f87571f81a79a4dde7059d784c680947c99a17740ab0cae69",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_trace_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "K_C may be a Git tree, the gate's exact candidate (MIK-R09).\n\nAnchor: \"K_C: the memory working tree, or a Git tree of\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "content": "sha256:3f42a00f12566467f80cb3747db0158f3b760e886d3c1e6b554cdd5ea11d873d",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The storage settings the gate reads; since MIK-R09 each settings file read is recorded.\n\nAnchor: \"absent: the fallback below is taken because of it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "content": "sha256:3f782705956265b8ab6b1578f2daa375e69eed90f338af5e1ef842a41eac37ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "trace_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The gate's items merged, sorted and digested into the one list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "content": "sha256:091d1a408b7b46c6c9736fde7a04dedc9603e6383ded0bf4cb33dd0fbc4182ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_onboarding_items"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The worklist step, which names any side failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "content": "sha256:dba07c627f0253f04971b24734415ae35dbcea64bc81a5acba1446ca640bd9dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_onboarding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The worklist run that calls it after a complete run, since MIK-R09 inside `worklist_over`.\n\nAnchor: `worklist_onboarding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:18c02cb724e1fcc61b271b22034fb01ac2bc7f550c187734304b29c7b6463199",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_over"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

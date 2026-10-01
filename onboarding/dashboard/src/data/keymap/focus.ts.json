@@ -1,0 +1,118 @@
+{
+  "path": "dashboard/src/data/keymap/focus.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The region cycle, selectors, and the stage-header/PTY landing constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "773a54dd0e6201011e17b6dbca73b3d2e25ca148",
+            "content": "sha256:b73da07fae0513fc580423eef2984f608229072f66fefa33c3d74a55b0b58c8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "nextRegion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "773a54dd0e6201011e17b6dbca73b3d2e25ca148",
+            "content": "sha256:7d0b851ede944bb5fe47b529166730c547b5b6c74b8edd8c14ff0172b77e82db",
+            "locator": {
+              "kind": "symbol",
+              "name": "regionTargetSelector"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "773a54dd0e6201011e17b6dbca73b3d2e25ca148",
+            "content": "sha256:f0ee395b189e203fcd92081bfec82473985c431c70f02680f23fbbcd7d18970b",
+            "locator": {
+              "kind": "symbol",
+              "name": "STAGE_HEADER_SELECTOR"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "773a54dd0e6201011e17b6dbca73b3d2e25ca148",
+            "content": "sha256:c48b364fa0b5a3b2324a9c1506cfc21a589e827dc577ddd696a09dd1b24de5df",
+            "locator": {
+              "kind": "symbol",
+              "name": "PTY_HOST_SELECTOR"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The view wires F6/Shift+F6 through `nextRegion` with collapsed panels filtered out.\n\nAnchor: \"const next = nextRegion(current\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a7823e2eb9ae4b49612beefc26358f5262706a2",
+            "content": "sha256:2da5c397c6fc64cf100e1bdd4645b4533339b73d43c9e339fafd840d9ae0f554",
+            "locator": {
+              "end": 467,
+              "kind": "line_range",
+              "start": 467
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The cycle suite: forward/backward wrap, edge starts, collapsed dropout, unavailable-current recovery.\n\nAnchor: \"cycles backward with Shift+F6\"; \"skips collapsed panels (they leave the cycle)\"; \"recovers when the current region itself is unavailable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abc695820371c968f42f595b825c4e60323331ac",
+            "content": "sha256:3f5ddff68d3150d9d837410d8cfe39f41decd71fe820f9a8b167bb40372a73a6",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/data/keymap/focus.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "abc695820371c968f42f595b825c4e60323331ac",
+            "content": "sha256:cff7072824371179d098479179b41bb34326a6949004cd41ff466aa2542e3436",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/data/keymap/focus.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "abc695820371c968f42f595b825c4e60323331ac",
+            "content": "sha256:aabbe6a56e919c76c417ad06df18064178d1c650cd3d1d04f846acec95e29c08",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/data/keymap/focus.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,240 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The two absence codes, separated by which question the caller got wrong.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:31ca80312b64d8661d81f5c7963e68fdeca954b4884298eb93d0b4799872cadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "selector_absent_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:4f12f69750985663773b243af30d6cbf7f815f7c727600990bbda4e28e980710",
+            "locator": {
+              "kind": "symbol",
+              "name": "registration_absent_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The node that measures a refused read of a real database leaving the file byte-identical.**\n\nAnchor: \"test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:3bee079b0807815d5d2bfd9840144db2a31d59f93241d877b5b3697d51180f74",
+            "locator": {
+              "end": 988,
+              "kind": "line_range",
+              "start": 954
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The absence nodes, one per absence code.\n\nAnchor: \"test_an_unregistered_path_reports_registration_absence_rather_than_an_empty_scope\"; \"test_a_selector_naming_no_recorded_identity_is_told_that_the_selector_is_absent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:9be0f34229e5bd75b5a71958a3cc5aeb9616a7c013cfd8ad3637eba43d153246",
+            "locator": {
+              "end": 981,
+              "kind": "line_range",
+              "start": 962
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:459997fbd9b6470aa25c1ed76aca90b6bf9501b1289a3879f65b99adbb791af1",
+            "locator": {
+              "end": 1000,
+              "kind": "line_range",
+              "start": 982
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**MIK-R01: the leaf read's wording names proof claims too; the default wording is unchanged (ruling N6).**\n\nAnchor: `with_proofs`; \"realization or proof claim\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:4f12f69750985663773b243af30d6cbf7f815f7c727600990bbda4e28e980710",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The budget refusal that reports the exact minimum and leaves the position unchanged.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:a8eb20316f741b99e95ec0b5cf45f84393020328212fbd5bd309141c93711ec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "page_budget_too_small_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The binding refusal: a page assembled from two snapshots is not a page of either.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:81d6f2516dae0d99c7f171dfdacff64b518a201ad4453e8ead1f61bb1e612588",
+            "locator": {
+              "kind": "symbol",
+              "name": "continuation_binding_mismatch_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The snapshot-unavailable refusal, which is also what an unreadable schema generation surfaces as.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:3de7d0510dfa4c6ae50302fe07c370133b6291b0ed9521db0d6aa5e23e588d99",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_unavailable_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The execution-bound refusal, so a partial selection with an invented total is unrepresentable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
+            "content": "sha256:7ec991601ba2bddb4c403e4fb2139b18997c75b01a749382788ee0d8f3e0397b",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_incomplete_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared factory and facts model this module composes rather than re-declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20fbf8f958c5f13380299d7733886cfa8e92087c",
+            "content": "sha256:b83598a7c3d65dacbbc27f3e7e334a28f5be63918e3c741be171f543bc4acafe",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusalFacts"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The six codes and the one operation this leaf added to the shared vocabulary.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:f051963a9e1e68afc1b0bcc52921de0235a2dc7d1bb9fdc3445413c26a5fd763",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The node that measures the persisted-nothing property at a later page as well as at the first.**\n\nAnchor: \"test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7fcc9e995bdc8bd774cefa3177b87cfab97e1c",
+            "content": "sha256:88e836e2f828f2e4894ab0b6a7d0684b6ed834358ff502038b72c0d81c08b7cd",
+            "locator": {
+              "end": 1058,
+              "kind": "line_range",
+              "start": 1001
+            },
+            "path": "mcp/tests/test_knowledge_read_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

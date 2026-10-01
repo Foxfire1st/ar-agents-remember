@@ -1,0 +1,423 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+        "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
+        "locator": {
+          "kind": "symbol",
+          "name": "_graph_master_docs"
+        }
+      },
+      "id": "RLZ-4JY123GA",
+      "invariant": "INV-4RERAJCC",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Returns an empty master table for a document with no execution graph, so no master is read and no directory is listed. For a sprint it reads only the canonical candidate files for the master refs its graph nodes name.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+        "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
+        "locator": {
+          "kind": "symbol",
+          "name": "_graph_master_docs"
+        }
+      },
+      "id": "RLZ-D8Y5FWWB",
+      "invariant": "INV-1BRT5DX6",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Feeds the graph view only payloads that carry the task-document schema, read from the candidate paths for the refs the graph's nodes name, into the same _master_docs_by_ref join the corpus-wide table uses. The graph therefore sees the same entries for those refs, and a schema-less master-shaped JSON cannot enter the join.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+        "content": "sha256:8c8a9080ec2470467a7e0a4ff4b51136f348aee65991f4e5fa1486cdd592a650",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_task_document_body"
+        }
+      },
+      "id": "RLZ-MMSNGJN5",
+      "invariant": "INV-4RERAJCC",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Resolves the one requested path to a file inside tasks/, reads and schema-checks only that payload, and projects its body with master_docs taken from _graph_master_docs. It never calls a corpus enumeration, so the read's cost does not depend on how many unrelated tasks exist.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Canonicalized requirement text reader for typed packet refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:e181a2ed3a4c9bd7cb0edb661b24ddb2d255fd8bd5bfd81874c97faa82f73d87",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirement_reader_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The reader projects every canonical task document, and the removed summary bound with the rationale for its removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:96c8948dd8ead4c3659a1c7e247ae3464a7c85dba871200a086650e3df28ada7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_docs_by_ref"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:35d2c236b7be1a224a5fd1487bf4e8bfbe84f319d762016f3b6343e8cf035a49",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The dead-text element a withheld document produced, unchanged by this leaf.\n\nAnchor: \"not authored as a task document yet\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:1e6f0d4cc208512f3c206fa77ff498510871382e8517c63adef075f43af19d8f",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The legacy-bare-node `ref` synthesis that leaves one loc path unprunable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:d2414fde98b5fac3676d9457812d28a6f36aa1735bd880339a492fb99d6c8b64",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lift_legacy_ref"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The sixth same-class drop site, in the closeout-queue reader rather than this leaf's five and left unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ba045ba9f25d5337f6aa5d69d9fe191c82b6e1b",
+            "content": "sha256:0499c1d817917feaa0c5c0da174553c1076a92fbf4678f0da2b8b3ff03d3d570",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_closeout_queues"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The on-demand body read: resolve, confine under `tasks/`, read one file, project with the graph-only join table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:8c8a9080ec2470467a7e0a4ff4b51136f348aee65991f4e5fa1486cdd592a650",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_document_body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The body read's master join table: none without a graph, otherwise only the graph-named masters that carry the schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:ef9d55fda13cd15ddaabb9abc96ebc76481e9bd9a5e7a1f99f2ce33b8a69aa01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph_master_docs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The named-path probe that returns exactly the enumeration's subset for those tails, in the same order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_task_json_candidates"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The only consumer of `master_docs`, which looks masters up solely by graph ref.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:0c4000189a23e8764d270dec47e02a8d65de68b8ca418f9e1a34be0e97c799c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execution_graph_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The HTTP handler that calls the body read: 503 before the first projection, 404 when the read returns `None`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:6e185591957497070e9b21459d2ed5cff5cd8f8f5976fc1cbd043ab68e0d7d1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_document_response"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The regression evidence: byte identity against the corpus-wide join, and the same touched files at 4 and 40 unrelated tasks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:c58d52f97e6690c15e95fcd8bd702d8ca5cf8ae16fead946dc30b19f8f7d14a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_document_kind_projects_the_same_body_as_the_corpus_wide_join"
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4bd9d1ac3990250728549ef5c1dcb9b3360fe826",
+            "content": "sha256:d1fda4fe44bcfa06e31703aa14cb656ecabf9212f3f7ea366d4d1c1a39d2aca2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_body_read_touches_the_same_files_whatever_the_corpus_size"
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonicalized open-question reader for typed acceptance obligations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:d1714a1de071de85e622b114fba836aa05706b82892a1a410c55c16601e10742",
+            "locator": {
+              "kind": "symbol",
+              "name": "_question_reader_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Body revision hashing of typed intent slots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:4946195720bc413ba5c6eed89858459a20442442305d3a5b4645c490e32dc7e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_doc_body_revision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:7e80b55437564173990e7e07bfbed5b35c17b5c933773234a7092afe17550f8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_intent_body_value"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tolerant read edge: strict first, only `extra_forbidden` keys dropped, every other failure still `None`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:739671a860e8acf658130f7eb9c33cb6edfdc17e53f07c46beb1d1df6cc91c75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projected_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Targeted pruning of exactly the addressed keys from a deep copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:1f9148cd1d0370392a7868b9862da31fe57f7633ff6c61d00045446621576d86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The pruning pass bound and the residual unprunable-loc gap it exists to stop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:f7a6191c1e76449c572c8d7477431cdce868e773ec25d671f0912a305c03cd67",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNKNOWN_FIELD_PASSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The repository's own stated read-versus-enforcement split this change follows.\n\nAnchor: \"The read is deliberately the TOLERANT one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:cdad632c7ba4f436b0c9efca94d555f60e2ab020d6fa99feb86e799528b83471",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Authoring strictness is untouched: the strict base model, and the step-level `note` a newer build writes.\n\nAnchor: `Step.note`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:0f8da6cf1800ebe9d9fddec24e4a2847ae52c5c26c23067dc0ffb8302d2e405c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:33f48f246c2109e91baf88f5b616f534fe229ad8dc1d3e318be51af05935a3c7",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The durable-data writer takes an already-validated document, so it can write no unknown key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "content": "sha256:4ded8abcc33346b4533bd60af807e620fa626fafcbae2d0253cea00b609fcf6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_task_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

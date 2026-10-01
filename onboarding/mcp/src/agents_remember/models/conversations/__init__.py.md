@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/conversations/__init__.py
 
-| Field                  | Value                                                        |
-| ---------------------- | ------------------------------------------------------------ |
-| repository             | agents-remember                                              |
-| path                   | `mcp/src/agents_remember/models/conversations/__init__.py`    |
-| doc_type               | `file-level-onboarding`                                      |
-| lastUpdated | 2026-08-29T17:23+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a` |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00 |
-| governingOverview      | `overview.md`                                                |
-
 ## Governing Overview
 
 [models conversations overview](overview.md)
@@ -76,43 +66,23 @@ contracts (R2).
 
 If the export surface grows, keep it curated; behavior still belongs in the owning modules.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. Repository-owned hostile contract and stable
 architecture tests are the authoritative evidence for this internal grammar.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The curated export surface lists every public conversation-wire name. | `__all__` | mcp/src/agents_remember/models/conversations/__init__.py:211-384 |
-| The canonical conversation read/control ports consume these models without owning behavior. | `ControlPlanePort` | mcp/src/agents_remember/serving/ports.py:189-269 |
-| The response-contract declarations that make these models the routes' stated contract. | `WireResponse` | mcp/src/agents_remember/serving/response_contract.py:89-101 |
+- The curated export surface lists every public conversation-wire name. [1]
+- The canonical conversation read/control ports consume these models without owning behavior. [2]
+- The response-contract declarations that make these models the routes' stated contract. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation governs these contracts.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-08-29T17:23+02:00 — Removed the implementation-only telemetry type parameter `T` from the curated package exports after `MetricEvidence` adopted Python 3.13 lexical type parameters. No conversation-domain contract was removed; verification remains closeout-owned.
-
-- 2026-08-25T01:56+02:00 — 260824-PDLS removed stale migration-snapshot authority and repointed
-  stable export/layering proof to the architecture test; verification remains closeout-owned.
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: replaced the `serving/conversation/models.py`
-  sidecar (and the `_models_*` split cards) with this package-initializer card after the monolith
-  moved into the responsibility-owned modules under `models/conversations/`. Preserved the
-  contract grammar, invariant, and hostile-test knowledge from the deleted cards; citations
-  re-anchored to the new module paths. Verification metadata pinned until closeout stamps the L9
-  code commit.
+No meaningful cross-repo references found.

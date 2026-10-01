@@ -1,0 +1,504 @@
+{
+  "path": "dashboard/src/test/contract.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:1e3c65d378d210b59514a0ca0f9d5e715b8e2f6448d413772958bda417153509",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOCABULARIES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server.\n\nAnchor: `expect`; \"a bucket per live state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:4fdf198169600bebd5baabb448a5309af2cb4c729ea5da37c2843a01f36cb5fd",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 535
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:61e3cb49b5c0efc8a04bae9613f3b9ef9ffee37ea696eb90e2745d67a1fc515b",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 559
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`.\n\nAnchor: `distinct`; \"refusedPolarity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:afb987596f26101f99c7d07f4c1aabdaebaf264183a6f81ae1e0af25d517ab5e",
+            "locator": {
+              "end": 626,
+              "kind": "line_range",
+              "start": 626
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:2786017e5745b4345f7ae661353f54b7d86a48944579b51a0cd648a35282a2ab",
+            "locator": {
+              "end": 672,
+              "kind": "line_range",
+              "start": 627
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The generated mirror's metric and analytics declarations.\n\nAnchor: `number`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:162c26c0cad036357bad30e157f8f2604877fbdae3e2b73ed0f5d7f6e6658d23",
+            "locator": {
+              "kind": "symbol",
+              "name": "Analytics"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:6b3522b1e1d7d47339d79f2635e766c4be81d53a534547cec343cab534dbc7cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "Metrics"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The generated mirror's gate and lifecycle projection declarations.\n\nAnchor: `string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:57a7a8bc6d2a1ec60cf29ffe090ca55ab2f3ca6707ae423858f4aa93dd2c0b38",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "content": "sha256:854d33cad103c4456fc4c84048f8d629c64bb56c814e7546253dae94289104bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleProjection"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The sanctioned narrowing the fixture enters through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:12df43ff00e9127957d3b1b6424e4bd3dd39c9d43b08489a2906d08c6dee0cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "asServedProjection"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The independent fixture supplies the lifecycle rows sampled by the contract.\n\nAnchor: `false`; \"lifecycles\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:46d4626b8bd41a074f75c46766223a0cd01f4f848734f1cea9c3b028566020b8",
+            "locator": {
+              "end": 1928,
+              "kind": "line_range",
+              "start": 1791
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The independent fixture supplies the metrics rollup checked against generated count fields.\n\nAnchor: `awaitingDeveloperCount`; \"metrics\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "content": "sha256:63b8e78ba186f2f42199de2860280d6caefdb63eb192f2fd41ec6b10f75beb78",
+            "locator": {
+              "end": 1940,
+              "kind": "line_range",
+              "start": 1929
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:9c042907be28e211e81249997aac7c7f3e0835ecfaf4cf8219a2f663179de916",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_count_field"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:3ce2853b26b82778b30e9230c97b479776f3d256d011658ac43fa2bc74328a12",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_count_fields"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The producer's typed lifecycle vocabularies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:44c8d45e3b5599ef3ead09d582379cfa8aad059442a8ba986d59a79c55752845",
+            "locator": {
+              "kind": "symbol",
+              "name": "State"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff30578eff1d11b92f84732e4d4206ab67ebb366",
+            "content": "sha256:ea37c106bd70d708b0af987224aec3b4e5ee490743a05f8286ef5ba0c0bda493",
+            "locator": {
+              "kind": "symbol",
+              "name": "Phase"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason.\n\nAnchor: `error`; \"@ts-expect-error\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:6fb3069befefdbf0b993642000d2799d21ed30e2d0319e6c669b5c44fc852211",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Persisted projection state is written by `write_projection` with omitted `None` values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:959b8f03573616a2d384631232c632f1f4009fcef82870a0c7d2d2222cf14eec",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_projection"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest.\n\nAnchor: `projection`; \"This file makes the FIXTURES honest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:19ce2bbc6b38863728b1d9d5c3634cf4065296a982b4988bc428c9980485d82c",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:ea1acfc19fc5f9efabd2579b0931bb02b2f813054f37dd37262c8a1fb1b7ef5a",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The Python source of truth is in-repo, and its docstring states the served contract is client-agnostic rather than owned by any external consumer.\n\nAnchor: `dashboard`; \"The shapes are client-agnostic\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:122b8af302e57af32e5f7d3ee8fb735bb940e322c05d47e887bdcde86cccef00",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance.\n\nAnchor: `error`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "content": "sha256:6fb3069befefdbf0b993642000d2799d21ed30e2d0319e6c669b5c44fc852211",
+            "locator": {
+              "kind": "symbol",
+              "name": "SANCTIONED_WIRE_SITES"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen.\n\nAnchor: `directions`; \"it does so at three seams\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:04796d65286293f716f8e713fb17a4f4c3767ec81cd3ba161ffa77de1210c0aa",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:b11c19a7afaf928444a3387cf589035b202a9705875f862b421afb105b61137e",
+            "locator": {
+              "kind": "symbol",
+              "name": "mirrorMustDeclare"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:0a110dec98843285bfb20bde58fd9ba2daf36c1d4b7a55d6a1f6d6666f016f4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedOnlyPaths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:77239ba352a111c3c40f271e0f00cfbe46702e2215d52a4e2a61f8d1963fc990",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixtureMustSample"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:92c6be3a3f8b5b2315de340b42ba13553963d58c397d65bc01529bbcacf39021",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnownUnsampled"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:313f2576933f201d766ef5118c3305727c3dcdbdd25923fd4c206d3079e37c26",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_SIGNATURE_SITES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:4bce69eaa9645ba5566f4a0e67cba692db90a38e54177e3135ef2a6038858381",
+            "locator": {
+              "kind": "symbol",
+              "name": "AbsorbingPaths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:1e3c65d378d210b59514a0ca0f9d5e715b8e2f6448d413772958bda417153509",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOCABULARIES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:990940ed55ea9b857b23d30d0b037a09ab1d6d81bc3410767572ce1ed42685b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnsampledMirrorPaths"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:1e3c65d378d210b59514a0ca0f9d5e715b8e2f6448d413772958bda417153509",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOCABULARIES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16fab50217ecc5984c3168d29884ca0dcbb49d5f",
+            "content": "sha256:dcf2fa88586cf37ff5bff80ca9e6eb567432539485ef34dce78a259343abc20d",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 493
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

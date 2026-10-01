@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/panels/engine-room/sceneLayers.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shell and wire/engine layer entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "content": "sha256:b56ae47574d8caa3f3a7597513dfa0879cce5166256d39b1d81d0411c18fb9ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureShell"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "content": "sha256:534e65e711da33951c76591342b61040ef254b7da20f61d3ebc9687075506df3",
+            "locator": {
+              "kind": "symbol",
+              "name": "OfficialLineLayer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "content": "sha256:3e890b5b559815735786e337a27feca6e88b35b2845320858a32878c8730e31a",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeEngineLayer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The overlay/failure layer entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "content": "sha256:3a3d936c331078a39deeda6dd25e1473fc2d2e44c618665130ffb2fcf7794758",
+            "locator": {
+              "kind": "symbol",
+              "name": "FleetingOverlay"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "content": "sha256:1122c3a00450fd296887ef2c236764e2be8a6fc8fb472db4005cc6fa0628293c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusedOverlay"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "content": "sha256:4d3fb1b69283905c37c6f4de90fff1ea981cbca3f158a3af25ff03ee621665a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FxOverlay"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e4625511abcd31de1a3a3afa8101ac284b2c384",
+            "content": "sha256:2491f0e8fe78d3ad5c0685f0f524570eb80490167132d6ea70461cdaacafee3e",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

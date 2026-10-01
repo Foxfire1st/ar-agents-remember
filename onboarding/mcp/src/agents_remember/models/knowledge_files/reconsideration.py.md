@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge_files/reconsideration.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge_files/reconsideration.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:05:38+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -72,7 +62,9 @@ it reads no tree, no Git and no task document.
 - **L09:** the gate applies `reconsideration_item_open(item, rows_by_subject)`; an unanswered candidate blocks
   closeout (D29).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R14@v2` of task
@@ -80,35 +72,24 @@ No domain documentation source is configured for this repository (`system/source
 2026-09-30T04:37:56 to 11:53:13); they live outside the code and memory repositories, so they are named here and
 not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: the subject, the triggers, the rows and the one satisfying rule. | "Reconsideration candidates (MIK-R14@v2)" | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:1-24 |
-| The kind and the two row dispositions. | `RECONSIDERATION_ITEM_KIND`; `RECONSIDER_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:47-50 |
-| The history-row dispositions that count as a change of the row's subject. | `TRIGGERING_DISPOSITIONS` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:53-53 |
-| The five triggers, and the three a `still_rejected` answer refreshes. | `TRIGGERS`; `REFRESHED_TRIGGERS` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:55-62 |
-| The subject pattern over the shared decision ID pattern. | `RECONSIDER_SUBJECT_PATTERN` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:64-67 |
-| The subject spelled and parsed. | `reconsider_subject`; `parse_reconsider_subject` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:70-73; mcp/src/agents_remember/models/knowledge_files/reconsideration.py:76-80 |
-| One question per subject and leaf. | `question_key` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:83-90 |
-| The one spelling of a link target, compared before a refresh (N1). | `link_target_key` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:93-109 |
-| The satisfying rule over a stored item, for the gate. | `reconsideration_item_open` | mcp/src/agents_remember/models/knowledge_files/reconsideration.py:112-121 |
-| The row kind, the subject parser and the item kind are registered with MIK-R14 as owner. | `test_the_row_kind_and_the_item_kind_are_registered` | mcp/tests/test_reconsideration_surfacing.py:604-611 |
-| The stored predicate agrees with `satisfiedBy` on the answered item. | `test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees` | mcp/tests/test_reconsideration_surfacing.py:417-443 |
+- The module docstring: the subject, the triggers, the rows and the one satisfying rule. [1]
+- The kind and the two row dispositions. [2]
+- The history-row dispositions that count as a change of the row's subject. [3]
+- The five triggers, and the three a `still_rejected` answer refreshes. [4]
+- The subject pattern over the shared decision ID pattern. [5]
+- The subject spelled and parsed. [6]
+- One question per subject and leaf. [7]
+- The one spelling of a link target, compared before a refresh (N1). [8]
+- The satisfying rule over a stored item, for the gate. [9]
+- The row kind, the subject parser and the item kind are registered with MIK-R14 as owner. [10]
+- The stored predicate agrees with `satisfiedBy` on the answered item. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module defines names only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:05:38+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): created this card for the new file MIK-R14 adds, recording rulings 04:37:56 (Q7 question key), 05:31:11 (F3 `anchor_stale`, F1 `REFRESHED_TRIGGERS`) and 06:17:11 (N1 `link_target_key`). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

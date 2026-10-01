@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Harness-specific mapping contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9d9c4e78b62dcd9e1f69a01963dc0b6507b668",
+            "content": "sha256:814cb9a40fa232fc007a16d1410662e0fd3ff0a215a8e92045a2e9ecac116418",
+            "locator": {
+              "kind": "symbol",
+              "name": "projector_for"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Project-once and ordering regressions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eff5626c60ecbca25ee9dc03933e640809cd249f",
+            "content": "sha256:c63b0269d570211e9129e3eb68f9ba6fd6be640aeb78e6c53f011c11ea6bb954",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_settled_live_turns_project_once_when_native_ids_disjoint"
+            },
+            "path": "mcp/tests/test_conversation_active_service.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

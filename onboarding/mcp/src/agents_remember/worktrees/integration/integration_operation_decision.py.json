@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_operation_decision.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `IntegrationOperationObservation`; `classify_integration_operation`; `require_integration_operation_convergent` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26f43d88347635ce856b78d9a72db582cf78e25",
+            "content": "sha256:5a780e14258d293a3de8855b83d3fc3fdf715586d0d424defa3e16236f1192b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationOperationObservation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b26f43d88347635ce856b78d9a72db582cf78e25",
+            "content": "sha256:5544aa3c5f805daf3ce453a97df2429c53ed49e8b38d95c047328da187fad069",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_integration_operation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b26f43d88347635ce856b78d9a72db582cf78e25",
+            "content": "sha256:b10f40ba40754eebe75c66a7bdfba9c2ed17e493fd9fcfa50f72e046c621ced6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_integration_operation_convergent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b26f43d88347635ce856b78d9a72db582cf78e25",
+            "content": "sha256:19cc18dc30ef683b44c6d1d3aeff264880b94c142d67d80560296bed0f7361be",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

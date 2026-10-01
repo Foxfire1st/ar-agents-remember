@@ -1,15 +1,5 @@
 # dashboard/src/data/setChips.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/setChips.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -39,44 +29,27 @@ Test-only; production path route failures are also asserted in `setClient.test.t
 
 The two documented sev-4 presentation edges are not closed by this suite.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Pure presentation model under test. | `deriveSetChips`; `queuedComposerHint`; `hasUnackedSetAttention` | dashboard/src/data/setChips.ts:192-229; dashboard/src/data/setChips.ts:232-238; dashboard/src/data/setChips.ts:241-245 |
-| Pair copy/provenance source. | `startPairChange`; `applyPairStepResult`; `pairProgressCopy`; `pairPartialFailureCopy` | dashboard/src/data/pairChange.ts:50-52; dashboard/src/data/pairChange.ts:58-111; dashboard/src/data/pairChange.ts:199-203; dashboard/src/data/pairChange.ts:216-219 |
+- Pure presentation model under test. [1]
+- Pair copy/provenance source. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
+No cross-repo evidence applies.
 
 ## 260715-FEUI-L5 Reliable Submit Delta
 
 No set-chip behavior changed. The test fixture gained the required empty `submitHistory` field so it
 continues to construct the expanded cockpit session state without claiming any relationship between
 model/effort chips and prompt lifecycle authority.
-
-## Update History
-
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped repository-internal citation rows; final exact frozen-snapshot check is clean.
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5 fixture-only refresh for the expanded session state; no
-  set-chip semantic impact.
-
-- 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R2/R5/R6/R9 through the final PASS;
-  metadata awaits the uncommitted code's real commit.

@@ -1,0 +1,121 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/manager.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One manager owns one canonical master and the complete leaf closeout chain.\n\nAnchor: `# Manager`; \"**You drive exactly one master's leaf sequence from dispatch to handover.**\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:dd786f8cb783e9185b89055b2f8866df9445b4c629d7f63777dd171bcf518ac9",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids.\n\nAnchor: \"Dispatch is one structural transaction.\"; \"never request or retain an occupant id\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:34b9db31faa302e11846ab7f5cfa7c04eea590355b267524ecc217f5d0c955b7",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties.\n\nAnchor: \"The per-leaf loop\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:66f88c76234965f5417c1c2a28cfaafcb324cd2640a91b64c66cc1bf32f39268",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Master exit and handover use durable verdict/packet evidence and structural ownership.\n\nAnchor: \"Dispatch the optional master-exit review when the developer or the approved brief requests it\"; \"Routine closeout and integration require no master-exit reviewer and no verdict.\"; \"The master-handover packet\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:4e2aa3f4a92afbb8664001f89da35ef7a5c0140fae15f56b361b01a307e60120",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Structural parent/child messages are the role's communication path.\n\nAnchor: \"**Messages:**\"; \"durable and dashboard-visible\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:04cf53c1a62a09bb9bd2c9c6331e20692d57c68395f26bc54c52a170e811ed36",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs.\n\nAnchor: \"Per leaf before dispatch:\"; \"Hand the curator its brief\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:b36c4420013c87734ab5d56471258721692ed3961b80a5e02a3cab5193a8eade",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
+            "content": "sha256:abd175993933c2c1992572afd58e731b629877b267cdb590efd3a280bc936338",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

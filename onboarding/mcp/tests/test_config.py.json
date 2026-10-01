@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_config.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Two repository ids cannot share one git common dir.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "content": "sha256:daa371a7bb7719d9e8e9fdaf42f19b54a57adde5e593b325f79bd3663bd108c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_repository_ids_cannot_share_one_git_common_dir"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "External memory cannot alias another configured code repo.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "content": "sha256:bffca9508dbf7e6a58292a9ac05dacd1785465f5d5f38b6058a3d57277ac6623",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_external_memory_cannot_alias_another_configured_code_repo"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Config must not live inside coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "content": "sha256:40cff312ca5859c0ceaa581152bc307b17c0c875d6334f7bd1732cd8796afa04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_config_must_not_live_inside_coordination_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Loads authority settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "content": "sha256:4a066b62a3131e3ad3ef7164f19419770b73526a30baa7f6d16794647d92de9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_loads_authority_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Repository certification profile reference fails closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "content": "sha256:0a41093f08212b5c6c91d970699c3379fae4d5046b369392be47cbf47f2f20e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_certification_profile_reference_fails_closed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Repository contract path cannot escape coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "content": "sha256:e3b3b996c6a78c7a3531ae71b08a4c09a4a1910ba614ebe4b4520d29c89245cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repository_contract_path_cannot_escape_coordination_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Human pinned kind in global file fails boot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "content": "sha256:76a3c74f06a6b797c2b588747460f0b68af225482a6a70dd7b411e16d0d2a5b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_human_pinned_kind_in_global_file_fails_boot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

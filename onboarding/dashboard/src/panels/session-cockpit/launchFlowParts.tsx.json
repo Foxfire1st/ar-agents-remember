@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/launchFlowParts.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dialog parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d92c426e6363f86e4e9739fd68ac727b7bb4b113",
+            "content": "sha256:4571c0671bf0defbd9f7879bf5a7ee8f1d5c3bc56f3f2aafcbabb2dc44dddc3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessSection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d92c426e6363f86e4e9739fd68ac727b7bb4b113",
+            "content": "sha256:f21c00e22e366e16a3d1cb8be01c3324c43badcbabbedbb761fd7f61b5b74c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModelPicker"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d92c426e6363f86e4e9739fd68ac727b7bb4b113",
+            "content": "sha256:2b1fb6d4bae7ee3ba138a29349c0835e653d0e2ab020ac51992c59cb4ef20514",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchFlowDialog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

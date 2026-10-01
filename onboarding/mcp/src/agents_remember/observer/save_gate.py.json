@@ -1,0 +1,96 @@
+{
+  "path": "mcp/src/agents_remember/observer/save_gate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The ambient methods that raise/consume this vocabulary (`switch`/`attach`/`promote`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:b61f7d9f0677fd7f9b3a199e1e98ef235c1422ff93957ecdb9d4cf762609ec84",
+            "locator": {
+              "kind": "symbol",
+              "name": "switch"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:93b71081f9c0997444ec2ed50bc63828e3ba95f4452885ba351706e33de705cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:b1dfc0975b54520c772d9601fe5be092892525538be14964f11db0c26d0d052f",
+            "locator": {
+              "kind": "symbol",
+              "name": "promote"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:7e78355d47acfadd00aade43b8fae52f57f0ce14e92d6a04278a38d93c4c50db",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The typed-error family base (`LifecycleError` → `AgentsRememberError`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:c432752edf31d936f0a4abec2f303ef08a5ce15f7860c7aca9b3166bd2f137ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleError"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The design separates fleeting and persistent sessions with a save gate and TTL.\n\nAnchor: \"### 1.5 Fleeting vs persistent; save gate; TTL\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:59212c0efea45a218687014c4db6761f627c0ac84215e3ad0dbf068f326cda4c",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

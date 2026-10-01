@@ -1,0 +1,221 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public entry point and the `already-clean` short-circuit that reports a proven prior reclamation.\n\nAnchor: \"ALREADY_CLEAN = \\\"already-clean\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:5639d25df486b875d0fc0f50cfba0741b129eedf7856fbb199ed17283850a0e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_report"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:e74ee28e7f64b88a243d97af5586c007ca35f3d15151bb12efbd2f7fd64c1d3d",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The four target kinds are inventoried into `removed` / `notRemoved`; kept targets fall back to the contract's own worktrees and branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:4300e693df75096ff6afa825351145f1c066e9907cd59631db18ceb4f4bd7da3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inventory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:c5f906809a2aa16a65a2a856e5684e32c95b82039b74db0a3d635a70dc3ba1ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_worktrees"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:ed97bf02cb4785b056005ee23cbcbdc99a460213cf24ebd13feaab6f7d11822d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_branches"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:0dd9abb610dab4f013cac899ec917f1d9d5e70cd71086dbab7cc13d214f071ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The counted operator sentence naming what was removed and what was left in place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:1d4dd5fb6763f16c9a6c9a991deed567f1a0cbe06998ed20903da13f526a85c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_summary"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:e312d3ef1a861cc9ca6de989e1d120328cf176ad67bd1bc08a5f27fe74664a87",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inventory_phrase"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:eefb0afca206e53b9caca16267e6fe0dbda879b22cf75bb3be470f3de9e72bc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_counted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Removed entries come from the cleanup payload's own observation of each target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:c2edef868f0f4cffd709c5f8bacefacc4333b23aae343c0fb4bfa0f827e9e0f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_removed_worktrees"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:9932487cbb15b95b67984d61c4e0bc7329d53c010c0ba493ca93f3c2047b7576",
+            "locator": {
+              "kind": "symbol",
+              "name": "_removed_branches"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:96d3a77c21a4e5d76c4f914290ea79aefd2b75ac33ecd05ef2e9c6a29eee7831",
+            "locator": {
+              "kind": "symbol",
+              "name": "_presented"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words.\n\nAnchor: \"cleanup_report(contract, result.payload)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:b1082075b3a4eabb47883ac0350de3bba84a6a72f907649bad479667456e773f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_or_verify_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The destructive procedure and its refusal authority, which this module deliberately does not duplicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "content": "sha256:44d2b008191206b294dd234bf15673d4f0b510373db61fb21039bce38a8dd2f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The kept-inventory fallback reads the contract it is handed, so its report is derived from the contract's own worktree and branch facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:d5d4ee130e2c664749570f91727d67738703055f89b98b71631de14e4e6b3fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_kept_worktrees"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "content": "sha256:85c69d035a16b5f87744414588c99f82a5ae605aaa77eb9d256b5fd2d9fba673",
+            "locator": {
+              "kind": "symbol",
+              "name": "_kept_branches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

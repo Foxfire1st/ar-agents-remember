@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/diff_attribution.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/diff_attribution.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T08:30:00+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -95,39 +85,31 @@ re-exporting) when the fix-round additions pushed the display past the 900-line 
 `family_revision` subject kind is implemented in the acquisition owner but not covered by any
 production-composition case — that gap is recorded on this leaf's worker report, not here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **One recorded claim at one measured path, with its resolution and whether it resolved — stale and unresolved mappings carried, never promoted.** | `MappingFact` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:56-78 |
-| **One bound snapshot's contribution and how completely it was inspected.** | `SideInspection` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:82-88 |
-| **The reader seam: which registered mappings each bound snapshot holds at the measured paths.** | `AttributionReader` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:91-94 |
-| **The partition of a measurement never made: no total, and the reason it is not zero.** | `unavailable_attribution` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:97-113 |
-| **The whole accounting in four steps: measured denominator, resolved-attribution, licensed absence, subject link.** | `partition_attribution` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:116-178 |
-| **The licensing table and the one predicate behind both the bucket and the exclusive-outside label.** | `_LICENSED_ABSENCE`; `_licenses_absence`; `licenses_absence` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:198-227 |
-| **One path's bucket, its link, its mapped sides and the fact that decided it.** | `_path_attribution`; `_link`; `_mapped_sides` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:230-321 |
-| **The incomplete-partition label and the scope sentence that states a partial denominator.** | `_incomplete_suffix`; `_partition_detail`; `_denominator_scope` | mcp/src/agents_remember/memory/knowledge/diff_attribution.py:285-386 |
-| **The single caller that supplies the observation, the mappings and the sides.** | `review_attribution` | mcp/src/agents_remember/application/review_attribution.py:181-211 |
-| **The value the partition builds, with its disjoint-plus-exhaustive validator.** | `SourceAttribution` | mcp/src/agents_remember/models/knowledge/diff.py:509-620 |
+- **One recorded claim at one measured path, with its resolution and whether it resolved — stale and unresolved mappings carried, never promoted.** [1]
+- **One bound snapshot's contribution and how completely it was inspected.** [2]
+- **The reader seam: which registered mappings each bound snapshot holds at the measured paths.** [3]
+- **The partition of a measurement never made: no total, and the reason it is not zero.** [4]
+- **The whole accounting in four steps: measured denominator, resolved-attribution, licensed absence, subject link.** [5]
+- **The licensing table and the one predicate behind both the bucket and the exclusive-outside label.** [6]
+- **One path's bucket, its link, its mapped sides and the fact that decided it.** [7]
+- **The incomplete-partition label and the scope sentence that states a partial denominator.** [8]
+- **The single caller that supplies the observation, the mappings and the sides.** [9]
+- **The value the partition builds, with its disjoint-plus-exhaustive validator.** [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every statement runs against values the
 caller supplied; no second repository, ledger or coordination path is read.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-22T08:30:00+02:00 — 260921-ICR-L4 curator (uncommitted change set on `ar/260921-icr-l4`, base `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the module this leaf introduced as the **partition arithmetic for ICR-R04@v1**. It records the four rules the arithmetic implements (measured denominator with partial-scope statement; only `exact_recorded_blob` resolves; one path counted once; no negative conclusion from an unread side), the one licensing table with its one predicate read twice, the subject-link labels, and the pure-arithmetic boundary against the acquisition owner. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the production line at this leaf's recorded base, because every construct cited here exists only in this leaf's uncommitted candidate; what was actually read is this leaf's uncommitted working tree, and closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

@@ -1,0 +1,228 @@
+{
+  "path": "dashboard/src/data/taskHierarchy.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper finds a parent series ref, keeps the authored child task id as the display number, builds hierarchy labels, and returns parent navigation keys.\n\nAnchor: \"export function findParentTaskMatch\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:e8ef7306511b7dcd4a1588405c2c81c41577103a8f9976d06a7d2a495f86afac",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Focused tests cover BY REPO hierarchy nesting/indentation and numbered leaf labels; the enclosure-opened leaf parent link is pinned in the DetailPanel suite.\n\nAnchor: \"limits sidebar rows to root docs\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
+            "content": "sha256:892ab092a299ce2ded321d5a6f2a825b271f87f05f616da0d954b1358342143e",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The enclosure-opened leaf's parent-task link case.\n\nAnchor: \"renders the gate respond drawer with the full request packet\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6d94639ce269254167f467f4f452529bb1df0b7",
+            "content": "sha256:5348439330413b6d1c4b45c5308ef2a6054b88402195ec496b600fd0e2dc777e",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/panels/detail-panel/gateRespond.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The L14 orchestration-command helpers are consumed by Operations `LifecycleList` for command tiers and parent rows.\n\nAnchor: \"export function taskDocHierarchyLabel\", \"export const LifecycleList\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 357
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:26839b09027894cb79aaef216966c7cdc2a574b5ed540da6027b810a5abb3d5c",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current Chats session hierarchy is independently derived by `railModel`, not the retired `groupSessions` consumer.\n\nAnchor: \"export function buildRailModel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "872b6d79f8cd9c04f35e674d94f6ed3e1964283f",
+            "content": "sha256:5733b7ff0ed46bdee283a5c96159c9b8732b9e5dc3939d2eb65bcaf55ef5a773",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 408
+            },
+            "path": "dashboard/src/data/railModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The task document mirror provides the required orchestrates list these helpers read.\n\nAnchor: \"export interface TaskDocNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:75707db60d5408eb37a4d43361d1fdda0e8e042c5c1ba17f5d733d592e027fd5",
+            "locator": {
+              "end": 647,
+              "kind": "line_range",
+              "start": 647
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The task-doc master reference is distinct from a series row and may carry linkedLifecycleId.\n\nAnchor: \"export interface TaskSubTaskRefNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:3fab73214ca880cb59c0e002ac1a72ef5e70806ba155c90548949c959093bc4e",
+            "locator": {
+              "end": 792,
+              "kind": "line_range",
+              "start": 792
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "ParentTaskMatch uses the series-row model, which can carry createdAt.\n\nAnchor: \"export interface SeriesSubTaskNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:4c1f95f4e1d533a9a7ccc9f28e2052505f66ca1be4ef5438235f23fcf3b66eae",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 560
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`orderedByCreation` is exported here and shared with `DetailPanel`'s `seriesAsMasterDoc`, which replaced the panel's byte-identical private copy.\n\nAnchor: \"export function taskDocParentKey\", \"export const DetailPanel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:0d603a2217e67904c5092b477ac0480be90325636df74ae5e243dc61dd067a8b",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Operations uses the helper for numbered task labels, parent row keys, and BY REPO hierarchy rendering.\n\nAnchor: \"export const LifecycleList\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 357
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "DetailPanel uses the helper to render a parent link for directly opened leaf task documents and active leaf lifecycle documents.\n\nAnchor: \"export const DetailPanel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "134dbed76db1b3d0f5e726f16782674f52cc2377",
+            "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

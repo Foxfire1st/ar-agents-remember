@@ -1,0 +1,270 @@
+{
+  "path": "mcp/tests/test_tool_refusal_conformance.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three axes of a typed refusal, read from the payload itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:0235cc2a3f435dc6f95d5ad9ebf7f065f4a49503a944cbb4daa08a5d0f6e3625",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_axes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The hermeticity statement the module is held to: every fixture root inside the disposable world, no provider configured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:89e912b951809361ce333976f5bfb4f63c79932b6f51aff8d1b2e72cf1b98475",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_module_runs_in_seconds_and_touches_no_real_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "content": "sha256:70004f4a8906f2f7b09752a32beb96438e5bdf3a1b3dec692c144087a9559d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "failure_invocations"
+            },
+            "path": "mcp/tests/tool_refusal_census_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The driver that refuses a table which is not the roster before it drives anything.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "content": "sha256:f1eb90822a966bdd841e236dec24900e7cd7421e786986fb1e713dba929c984f",
+            "locator": {
+              "kind": "symbol",
+              "name": "drive_census"
+            },
+            "path": "mcp/tests/tool_refusal_census_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The nine tools `T34` repaired, owned by the sweep module beside the pin they left.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06c7d7ff5739a3ad3e74a813262fb3ce5803f41a",
+            "content": "sha256:60a9d93a1cc6995761b1305a228494edd1bd3f9f02248323fc6369ee4cd4b55d",
+            "locator": {
+              "kind": "symbol",
+              "name": "T34_REPAIRED_TOOLS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The sweep whose benign half this module completes, and the world both share.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06c7d7ff5739a3ad3e74a813262fb3ce5803f41a",
+            "content": "sha256:5c64f8e3c9cb8d30991cc0d9e0799de7d4585b70f68302fcfae99a461555202b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointWorld"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The advertised roster the population is derived from and asserted equal to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane row that keeps this module in the default selection.\n\nAnchor: \"mcp/tests/test_tool_refusal_conformance.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:b78fff81f43c6d30e5e8b25d49358e2b1ed7d8595b49fe2de0249401357402bf",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The seventeen invocations that legitimately answer `ok: true`, each with its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:4c7198c65f8ebb69beff8a42c6bc33ce2ec01c0a261922735f79304c641a364a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ALWAYS_ANSWERS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The eighteen tools that still lose the envelope, grouped in the source by the mechanism that raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:b299c5327ad71d4573de548512b9151a257d72c154da7ef8a6988add11252976",
+            "locator": {
+              "kind": "symbol",
+              "name": "BARE_RAISERS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The census: one world, one run, and the assertions that bind both pins in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:2a61392be61fb9656f5f336ed601e9876f012d4f21793dc007f887f259222b0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailurePathCensusTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The population is derived from the live advertisement and the roster, never a literal count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:87fc319ca947b359f418d49e1ac324e5b8dcf4dbcd8cc7f2c8bfcd3e90c21bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_censused_population_is_the_advertised_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The **four** shapes partition the population: a typed refusal, a stateful refusal, an always-answer and a raiser — there is no fifth answer. `260918-TSIP-L10` renamed this case from `..._three_named_shapes` in the change that added the fourth, because the name states the claim and the claim changed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:b984fec30800fe8e9939dddcfc551d5e1b9e1d9554d8d5098876dfedb50a12fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_failure_path_answers_in_one_of_the_four_named_shapes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each refusal axis asserted by name, so a regression says which one it broke.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:8b769d2a3669df7e8a51fbad966fb4756471c46c789dee36e6c06d44b82b37b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_refusal_names_what_refused_why_and_the_next_action"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`T34`'s nine answer in the envelope at the entry point, read from the sweep's single source of truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:c857c40d90be1b2386d31ed5480e7b9ed477d2651713be13f3953fa145726cd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_t34_family_is_no_longer_a_bare_raiser"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The executed control: each axis stripped from a real refusal, and the predicate required to reject it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
+            "content": "sha256:c225a0e907ddab59f8b7f22ada7eb82694e2db1dfddb93f08c87c0992b56beb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailurePathControlTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,117 @@
+{
+  "path": "dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shell-level suite pins graph/queue reachability, sprint scoping, graphless queue reachability, and mounted canonical-reset clearance.\n\nAnchor: \"sprint page shell (L12-R5)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1b733ab38f367f1c6ed72ba59926c718fb1860e",
+            "content": "sha256:ff353cc0dd6338a7111856285952b326b785485d0e559fc0c6d877c84142ddf9",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real sprint page surface rendered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed76f18284cd6e8f8a2ce8b2ad1c28a6eb4b7d46",
+            "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetailPanel"
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The master reader mounts the queue independently of the optional graph section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2ced2a394867efd5853cfc0ab0f1144bf890d0c",
+            "content": "sha256:48f3e8fea100eb5135c8242d28f742dab7740b66acfbe1bfc8ced2a0a6778c48",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterOverview"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2ced2a394867efd5853cfc0ab0f1144bf890d0c",
+            "content": "sha256:a69d6c3ed7680a2369192bb27d9a48da292c1e4a4d1b59b7116126ca9d20e2ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintGraphSection"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sprint-scoped queue implementation reads the authoritative store and renders nothing when no matching queue remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62251f313ef49ee93fea2fbbf69165052b43f298",
+            "content": "sha256:4caac3df490d4a28c8dd5a0f548d4a5edd9c7f35a947cd5aed8a6394f22d90df",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueueImpl"
+            },
+            "path": "dashboard/src/panels/CloseoutQueue.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The canonical store reset clears all scenario projections, including `closeoutQueues`, in one transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
+            "content": "sha256:a3c946229c56406848990af56afd233dc972a7d0f8fbf043b4531ba94ef6904c",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 382
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

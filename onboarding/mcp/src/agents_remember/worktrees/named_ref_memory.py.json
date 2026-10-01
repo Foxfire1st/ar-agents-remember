@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/named_ref_memory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reader derives attribution at the explicit normalized local branch.\n\nAnchor: \"Read committed attribution from the exact local ref, independent of cached tables.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c4eb6c98e30fdd074994a22fadbcbdb8271ce8",
+            "content": "sha256:561b14ae2de663b1b3eeb8854604f56038ed662e0283051eb6d008f99120e49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_named_ref_ledger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Local ref normalization and ledger derivation have shared owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "content": "sha256:bb671106c4738c19abd0c46b0a440e8c5e9dbc3ca686d0fd05b9be1e262a02b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "local_branch_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The kernel derives rows and current/base metadata from committed attribution.\n\nAnchor: \"Read mappings from Git without consulting a cached file or a ledger commit.\"; \"rows = ledger_rows_from_attribution(attributed_commits(repository, tip=tip))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A tag sharing the source branch name cannot redirect the read, even with a damaged cache.\n\nAnchor: \"Cache absence or damage is harmless; an unreadable Git ref remains a real failure.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7c7a08f0826c6f143907af618e5c57b6685955e",
+            "content": "sha256:b058f96c73f94fefb1220563a85cdbc7630c4b4375238fc0de5d917c5caa54dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_misses_preserve_contract_and_named_ref_history"
+            },
+            "path": "mcp/tests/test_memory_ledger.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

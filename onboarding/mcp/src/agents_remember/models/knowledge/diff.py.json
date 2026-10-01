@@ -1,0 +1,628 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/diff.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The comparison policy version and the display budget that bounds what a page *shows* and never what the comparison *selected*.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:35a36e6b2e2c862090ef6cf522eb794a55922c224b6fc41c269cad30d577b208",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIFF_POLICY_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:01f5b05930f309c0236c7b2856b401f18d02b48659fb022ec86668042705713f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIFF_DISPLAY_MAX_ITEMS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The omission value, the per-side absence, and the per-side revision groups kept apart because they can differ.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:56de4c292f4782ef2121484b731cfa049148eacf9602d4259c8278b13c54ca95",
+            "locator": {
+              "kind": "symbol",
+              "name": "OmittedChanges"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:9288229db50e75a971bf9771be02fbf614b56ee79538fbed189fae1aee652647",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideAbsence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:22332ed0815f66cd48ab223445e992f26700194e922b43f4521bd66417500f79",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideRevisionGroups"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:b7d691d05ae3aee6572083d660fccf3bf784ce46f87c32dad19c53490aadeb3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_revision_groups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The one granularity every attribution count is stated at, the three buckets, the four link labels and the three side states.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:233a3f48d0c7e1548cf2b83659c3a0848f9b70553f137aaa80069dee0da62290",
+            "locator": {
+              "kind": "symbol",
+              "name": "ATTRIBUTION_GRANULARITY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:f2923090ec45aad10f743f51efae0637ff5934336b4074db17e30a396e2bc924",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionBucket"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:043dd25f92c200d7355895b3a44f0f28a61f636282503adcc66c52e21e92aae6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionLink"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:9f675359678ad322f22337468496cb374c818111e9da1905e2d12c8f279bb191",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionSideState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**One side's contribution and how completely it was inspected — a link count, never a path count.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:a960fdbb207e233e44df72537d581d02efeab7c45b8df2769c9a15497fba23a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**One measured changed path in exactly one bucket, with the links that put it there and the purported mappings carried beside them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:c03544e64a191f94f8249a5d97b77fad624d1626ddf63cef3a51a7b56c7763fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangedPathAttribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The partition value: one population divided once, with the disjoint-plus-exhaustive validator and the three bucket accessors.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:2a7a4601f743cf6c9dae592d96253b497c6c143b4c120508d7f7dc09b7ae86d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceAttribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The expansion as a value: both trees and both roots, the reproducing command, the carried partition and its three path lists.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:9d6e9ee758a441616e9add19eed628f9aaa44066b6a55fe3378adaac81d243a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffExpansion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The counts that keep the comparison total and the display total apart, and refuse their own arithmetic contradiction.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:d7477d7dc0e23bda2225a8cae3dc45ff73852065fe35d13787c39e94ccc4c0eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffCounts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The per-snapshot counts carried whole, and the statement that they are counts and not verdicts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:1a00d06a5ffb6f4f97906e6609e0a15ddf59fcd566fcbac89a30f5947d437c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The truncated comparison that cannot be presentable as complete.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:9bac3840c0537a1e312616e74575eeca83ff8bb5f0fea0bee272bac19598d6d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffPage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The result that is a page or a refusal, never both, and whose declared limitations are checked against its omissions in both directions.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:3642fd44cdcc23015719c7ffced132a8d998adabfd17d64431b75ea793164d6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The closed vocabularies: item kinds, coverage, the six record transitions, the omission reasons and the five limitations.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:265062c6cd5921315f4506f765cee5d5a27a135f64d93f680224db9a5d0618d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffItemKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:6733152556905c93b86ae6ae020018eaed1385da8285ce0887564516b385768d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffCoverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:da6d283291257f21b559d724bae3a5b59c209fae3e0fdda2c9ed1a16246a40d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffRecordTransition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:05881efda0e978ed5d0d8d0b2bbd03922fb1fd869223cb624568dd07e6deb1be",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffOmissionReason"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:eef779e301b3611436082d0fd6722444b246839b54c28c6b60c9084525884ad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffLimitation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The comparison's own cursor and the two functions that encode and decode it — deliberately not the read's decoder.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:667ebeebd8debd0c34cc83c6c81239eadb4ccef0ea996118d6679920a11aeab9",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffCursor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:64a8a5d19b5e15b927697dc72f8b6d15ac0bf7a8b01068cc79cc9386b9ab84be",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_cursor_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:c30d825980d56276e04bd53e10f0b7a524aaafb281d21438286d0264f8e69f9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "continue_diff_from_cursor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The canonical spelling of one filter's effect, bound into a continuation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:768b987516ea86eee2d57c87ce1a1289eb3f175c09d2faab6963f1f6aa7304f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "filter_policy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The node that measures the absence the request shape cannot carry: nine verdict words searched over the whole serialized response, with a positive control.**\n\nAnchor: \"test_no_field_of_a_comparison_can_carry_a_strengthening_or_harmlessness_verdict\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:3de618a2e3240cb724e6f306b007b089d8664bce67fca3f6bd1037ec5cd7799d",
+            "locator": {
+              "end": 507,
+              "kind": "line_range",
+              "start": 481
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The node that holds the two change statements apart, and the node that measures the limitation validator.**\n\nAnchor: \"test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other\"; \"test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:91c18b6ad791054cd4ccf163dcf2706f62451c3c85fea6bd6da183ba515a2385",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:611f5be20d8ac034b28c6e947862c06ace22d98d3895e0c932548f329947985b",
+            "locator": {
+              "end": 649,
+              "kind": "line_range",
+              "start": 577
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The node that measures the truncated comparison, whose failing assertion sits at `:716` on the frozen file.**\n\nAnchor: \"test_a_truncated_comparison_cannot_be_presented_as_a_complete_one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:ff5a180781daa6da3f31375bea7079f5a33eb6b21e4a2290ebd7b63e45dea1a9",
+            "locator": {
+              "end": 713,
+              "kind": "line_range",
+              "start": 652
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The one member this leaf added to the operation union, and the vocabulary the new refusals reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:f051963a9e1e68afc1b0bcc52921de0235a2dc7d1bb9fdc3445413c26a5fd763",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:12fa1866d1db2c3499769a35939717f0e720d051b99867ba1d9063abe2ff4a3a",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The nine compared record fields in declared order, with `selection_reasons` deliberately absent.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:b82d5a6612701dea3a5404926763e10d607c25471d1228627a8a18e57b813f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_DIFF_FIELD_NAMES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**One side of a comparison: the exact snapshot and the per-side selector that is the one extension to R07's contract.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:ac05fc620ee5cccf91fe2f271a9897f4db11571d41a2646314d831b755583093",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The display-only budget and the registered-role filter that refuses a repeated role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:c82fcb3758214436ce6dbb05395163ee798830b29a821ebe872d14d4ab815f21",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffBudget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:f5134024f3cea6c2a741e3cc696ed902bd7c833460c485cb3d63992c1f2a6277",
+            "locator": {
+              "kind": "symbol",
+              "name": "DisplayFilter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:5a8fb388f08c0a25b65cae2c3d2f35e1d65764b6cd6c4eff3bf2d11d2083ff03",
+            "locator": {
+              "kind": "symbol",
+              "name": "filter_is_empty"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The request: one selector, two sides, an optional filter, a budget and a position.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:21a54311c4f697e6f9f55e18c34c0bd02353886b74710bffc07972ebc4c84842",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The binding every continuation is checked against, and the digest derived from it rather than stored beside it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:bf5f13485231de58cd679ce1ff1f4fdd4f3d3fcd4612fbff08be2fd23dab1acd",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:a9a2e05a500b699ad00dc152d524b6b5871ca991d182a656a43ade0399925cdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_binding_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The record half versus the source half, with no field that could hold a verdict and a `missing_side` that is a reason rather than a third change statement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:e354f5454fb326e80bfa0660b54bf575868dcafaaeafa97bedc151754fa5e626",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffSourceChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**One union item: both payloads, its coverage, its transition, its changed fields, the path that reached it and its source comparison.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:0ef0a2fd0d62d82cbb3c002edbcedbe4e9d0ee799f74ea3bd29873d9517343c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffItem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

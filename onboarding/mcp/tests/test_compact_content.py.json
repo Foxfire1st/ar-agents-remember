@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_compact_content.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shim under test installs the FastMCP converter patch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76986c59600c0de771c064c667d4b1050e7aff15",
+            "content": "sha256:d6ac9724f891f09649af6c3384ef17a2fec26dfe4b5ef39fb9d85dcc2826a211",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_compact_content"
+            },
+            "path": "mcp/src/agents_remember/mcp/compact_content.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`create_server()` installs the shim before registering tools.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "MCP settings fixtures come from `test_config.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "content": "sha256:bbe373889a6851ef3be438dee96f1dc073d10c9f51a6f9940eca98ff9391d1b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "settings_payload"
+            },
+            "path": "mcp/tests/test_config.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

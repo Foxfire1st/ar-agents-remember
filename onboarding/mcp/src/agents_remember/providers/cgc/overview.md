@@ -2,13 +2,7 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
 | sourceRoute            | `mcp/src/agents_remember/providers/cgc/`   |
-| doc_type               | `route-local-overview`                     |
-| lastUpdated            | 2026-07-31T00:00+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
-| governingOverview      | `../../../../overview.md`                  |
 
 ## Governing Overview
 
@@ -62,11 +56,11 @@ rendered via `to_container_path` (`providers/context_common.py`) — host-form
 - The public setup facade remains `providers.provider_setup`; the provider
   implementation lives here.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CGC setup orchestration lives in the provider-owned setup module. | "def isolated_cgc_settings" | mcp/src/agents_remember/providers/cgc/setup.py:42-42 |
+### Repo-Internal References
+
+- CGC setup orchestration lives in the provider-owned setup module. [1]
 
 ## 260731-EFA-L2 — The Seed Reads As Source → Target
 
@@ -121,38 +115,3 @@ above. What changed is that the repository those rules are evaluated against is 
 ## 260731-EFA-L9 Route Impact — Caller Re-Points
 
 CGC provider modules now import the shared kernel primitives directly — `kernel/primitives/runtime_config.py` (runtime config), `kernel/primitives/identity.py` (instance naming), and `kernel/primitives/provider_degradation_settings.py` — instead of the former `mcp`/`providers` homes. Seed/setup behavior is unchanged.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the `n/a` row with an exact
-  anchor (deleting two unresolvable overview rows); exact non-fixing check returns zero findings.
-
-- 2026-07-31T21:00+02:00 — 260731-EFA-L3 curator: added the section above. `seed.py` lost its two
-  hand-built `subprocess.run` git invocations; `git_head_or_none` and `seed_commit_divergence` now
-  call the one owner `run_git` (`kernel/git_command.py`), so an inherited `GIT_DIR` can no longer
-  make the seed read a different repository's HEAD and bless itself fresh, and the catch-up diff
-  carries a named `_CATCH_UP_DIFF_TIMEOUT_SECONDS = 60` instead of an inline literal. Verified
-  against the current `seed.py` that no seeding rule this overview records changed. Verification
-  metadata pinned until closeout stamps the L3 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: seeding kept every rule and gained the vocabulary for
-  them — `_CgcSeedEnd` names source and target instead of relying on argument order,
-  `_seed_precondition_skip`/`_seed_locations` stage resolution so the first skip wins,
-  `setup.py` dispatches via `LifecycleCommand`, and the catch-up stage split into
-  plan/skip/deliver with `caughtUp` conditioned on zero residuals. Layout construction moved to
-  the `CgcRepo`/`CgcInstance`/`CgcWatcher`/`CgcBackend` bundles (see the context route).
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-07T19:30+02:00 — 260707-HFX-L2 route impact (index lifecycle): the seed's HEAD-mismatch
-  refusal narrowed to UNRELATABLE heads only — `seed.py` computes the relatable divergence (git
-  diff in the source repo) and stashes it for the post-watcher catch-up stage, so small diffs
-  become index updates via watcher events; the full-reindex fallback is opt-in and `cgc refresh`
-  stays the explicit rebuild. Verification metadata pinned until closeout stamps the HFX-L2
-  commit.
-- 2026-07-03T01:55+02:00 — L12 route impact: compose memory caps across the CGC stack; watch hygiene fixes live in cgc/context (enriched cgcignore reaches the watch context, timer-pop patch, bundle exclusion).
-- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): restored the `_seed_skip` benchmark-scoped hermetic guard (task 260619 / MCP 2.9.2) that the series carryover had reverted. The merged tree at 84e95ad keeps main's hermetic seed behavior (the series did not touch this route's source).
-- 2026-06-19T13:42 — `seed.py` now refuses a benchmark-scoped seed target (`_seed_skip`) before any source/backend work, mirroring the GrepAI guard (hermetic; task 260619).
-- 2026-06-10T07:05+02:00 — Seed in-container argv (post-`--`) documented as container-form via `to_container_path` (GitHub #58: host-form Windows paths failed every seed into the silent reindex fallback).
-- 2026-06-10T05:30+02:00 — Route body caught up with 2.5.0/2.5.1: seed HEAD-match refusal with full-reindex fallback and the setup-cap-vs-uncapped-indexing boundary. Previous closeouts had only stamped the verification header (developer-flagged gap).
-- 2026-06-06T12:15: Re-verified against the current CGC provider package; expanded the hot-path summary to include isolated worktree settings and CGC index bundle seeding.
-- 2026-05-25T21:14+02:00: Created when provider modules were reorganized provider-first under `providers/cgc/`.

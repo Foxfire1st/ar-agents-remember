@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/memory/carryover.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate comparison and explicit review selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3098aadd9b50a1d925939290c164e59afb43611a",
+            "content": "sha256:70d995ddcb9a0ae5695f02f371dda09351c4d8e7a1981c45ba032ff50e80220c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CarryoverRefs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3098aadd9b50a1d925939290c164e59afb43611a",
+            "content": "sha256:21acfe200141bff26a1f5934a7916819f9eb398695cdf3c265c8a89f3beebd5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_candidates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3098aadd9b50a1d925939290c164e59afb43611a",
+            "content": "sha256:f65af551c6010f015e95f621e2138afe74fcb96ed9b95789b56adb42ec0d5d70",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Apply owns one content commit and preserves exact leaf/repository authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3098aadd9b50a1d925939290c164e59afb43611a",
+            "content": "sha256:dfa99ee31e7f92c07f24ca8f4f893677f6139263e11b2ee9582de4b17888aeaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3098aadd9b50a1d925939290c164e59afb43611a",
+            "content": "sha256:fed86363160cefb3b92ed2de4dbf62c3760401ba528d5c243e1fe9154ed9a8bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Target storage is established from effective explicit settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7017d03dd3293689706598705718baf9f1d23d1f",
+            "content": "sha256:5a9c9649a42bf93672b5c8bde46a3b0f2e6a06ee23f880f7cdaf0dbd95d978b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "required_target_storage"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared committing explicitly excludes the consumer cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_if_dirty"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_excluded_pathspec"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The public carryover test preserves the caller body, verifies attribution, and proves no extra repeat commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "content": "sha256:f5a9f40bcc0a1fbcfb056e2e1deca71f3de2c21f3c0577bea425d3a6bae847ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carryover_attributes_its_memory_content_commit_to_the_official_head"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A converted target is refused, and an unconverted one takes the cutover lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3098aadd9b50a1d925939290c164e59afb43611a",
+            "content": "sha256:fba247cc78e709d217d40c200126d0529c6538e287d4a7e5137f76eaef7c7ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_legacy_format_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Carryover never writes converted memory and takes the cutover lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
+            "content": "sha256:bc5c043af086c3e51c880b10223be8624c949d67783070dac5793f19d1cd3ae6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carryover_never_writes_converted_memory_and_takes_the_cutover_lock"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

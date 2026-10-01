@@ -1,0 +1,37 @@
+{
+  "path": "mcp/src/agents_remember/serving/hosted_control_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The canonical status authority this module now delegates to (classification plus single seat projection rule).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc935453ce0c3219cd887830d39fd21855857bf",
+            "content": "sha256:d2ce98899d236c6a8f6f7d6f59b89c1acd9e53c23f373193454ab2b7f7dd829d",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_seat_turn_state"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "edc935453ce0c3219cd887830d39fd21855857bf",
+            "content": "sha256:06610159d175f13288a9fd54773acd35c225328822fdede93aae9bb38c89f988",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

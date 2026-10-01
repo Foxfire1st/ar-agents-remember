@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_writer/carry.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_writer/carry.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -38,7 +28,8 @@ holds identical content. Such an entry needs no disposition; every writer operat
   **not** require identical content: MIK-R14's `still_rejected` refresh re-anchors a link target through it
   (`knowledge_writer/reconsideration.py`), and applies its own content checks. The carry's behaviour is unchanged
   (removing its content condition fails an existing carry test, review R2).
-- `_carry_rows` then updates the owner's own history file: a row's `covers` element whose `after` equals a
+- `_carry_rows` then updates the owner's own history file (`state.history_target(owner)`: a reopened leaf's
+  latest attempt, L37): a row's `covers` element whose `after` equals a
   carried entry's old anchor (with its path) gets the new anchor. It returns without editing when nothing
   was carried, the file is missing, or the file is `closed`.
 
@@ -60,7 +51,9 @@ holds identical content. Such an entry needs no disposition; every writer operat
 
 - None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R08@v2` of task
@@ -69,35 +62,23 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| What carried means and what the writer changes. | "Nothing else changes: not the locator kind, not the name" | mcp/src/agents_remember/application/knowledge_writer/carry.py:1-18 |
-| The carry keeps the mapping only when the content is identical. | `_carried_anchor` | mcp/src/agents_remember/application/knowledge_writer/carry.py:58-62 |
-| The mapping at a new blob, with the mapped span and the content there; `None` when it does not resolve (reused by MIK-R14's refresh). | `mapped_anchor` | mcp/src/agents_remember/application/knowledge_writer/carry.py:33-55 |
-| The refresh maps a line range through the diff with this function. | `test_the_refresh_maps_a_line_range_and_refreshes_only_the_fired_links` | mcp/tests/test_reconsideration_surfacing.py:781-810 |
-| Every carried entry of the tree is re-recorded. | `carry_entries` | mcp/src/agents_remember/application/knowledge_writer/carry.py:65-90 |
-| Only the owner's open row with the old `after` is updated. | `_carry_rows`; `history_path` | mcp/src/agents_remember/application/knowledge_writer/carry.py:93-105 |
-| The call in every writer operation. | `write_knowledge`; `carry_entries` | mcp/src/agents_remember/application/knowledge_writer/writer.py:98-155 |
-| Blobs and covering rows are carried. | `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them` | mcp/tests/test_knowledge_worklist_leaf.py:330-386 |
-| Another owner's row and a closed file are untouched. | `test_carrying_never_edits_another_owners_row_or_a_closed_history_file` | mcp/tests/test_knowledge_worklist_leaf.py:478-500 |
+- What carried means and what the writer changes. [1]
+- The carry keeps the mapping only when the content is identical. [2]
+- The mapping at a new blob, with the mapped span and the content there; `None` when it does not resolve (reused by MIK-R14's refresh). [3]
+- The refresh maps a line range through the diff with this function. [4]
+- Every carried entry of the tree is re-recorded. [5]
+- Only the owner's open row with the old `after` is updated. [6]
+- The call in every writer operation. [7]
+- Blobs and covering rows are carried. [8]
+- Another owner's row and a closed file are untouched. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the carry edits the in-memory state of one memory tree against
 one code snapshot.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14 (review F1, ruling 2026-09-30T05:31:11).** The carry's mapping is now the public `mapped_anchor` (records the mapped span and the content at the new blob, `None` when it does not resolve), which MIK-R14's `still_rejected` refresh reuses; `_carried_anchor` is `mapped_anchor` plus the identical-content condition, so the carry is unchanged. **Reopened claim re-read and reworded:** the `_carried_anchor` row (the function changed structurally) now cites it as the mapping plus the condition; I removed this pass's generated bullet for it. Two rows added; the `history_path` row the fixer declined was re-pointed by the exact line shift. No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): created this card for the new file MIK-R08 adds.  The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_governing_route.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_governing_route.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T19:40:00+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -90,43 +80,35 @@ and it writes nothing. Every fact it states comes from the route owner (`find_go
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the uncommitted candidate: the module's own docstring and ten
 definitions, the route owner it reads through, the traversal that calls it, and the two cases that
 measure it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of the three states, of the existence question asked before the route question, and of the path seed that asks about no identity.** | `governing_route_movement` | mcp/src/agents_remember/application/review_governing_route.py:1-21; mcp/src/agents_remember/application/review_governing_route.py:59-93 |
-| The published surface: the fourth relationship kind and the one entry point. | `GOVERNING_ROUTE_KIND`; `__all__` | mcp/src/agents_remember/application/review_governing_route.py:36-39; mcp/src/agents_remember/application/review_governing_route.py:41-41 |
-| The governed-table names the route owner's own writes answer, so the read asks the question the write answers. | `_GOVERNED_TABLES` | mcp/src/agents_remember/application/review_governing_route.py:45-45 |
-| **One side read: the identity kind named by the selector, the existence question first, then the route and its recorded path.** | `_route_side`; `_RouteFacts`; `_route_side_of`; `_identity_recorded` | mcp/src/agents_remember/application/review_governing_route.py:122-158; mcp/src/agents_remember/application/review_governing_route.py:112-119; mcp/src/agents_remember/application/review_governing_route.py:161-183; mcp/src/agents_remember/application/review_governing_route.py:246-255 |
-| The selector question: an identity or an exact revision of one names it, a path selector names none. | `_subject_identity` | mcp/src/agents_remember/application/review_governing_route.py:96-109 |
-| **The transition and the gap: reassigned when the recorded routes differ, and one gap per side whose snapshot does not record the identity.** | `_route_transition`; `_route_gaps` | mcp/src/agents_remember/application/review_governing_route.py:186-195; mcp/src/agents_remember/application/review_governing_route.py:198-212 |
-| The statement of both sides and the word each side is rendered as — never the repository root. | `_route_statement`; `_route_word` | mcp/src/agents_remember/application/review_governing_route.py:215-233; mcp/src/agents_remember/application/review_governing_route.py:236-243 |
-| The route owner the association is read through. | `find_governing_route`; `route_path_for_id` | mcp/src/agents_remember/memory/knowledge/routes.py:359-405; mcp/src/agents_remember/memory/knowledge/routes.py:269-282 |
-| The traversal that calls this module once per review, and the wire vocabulary the movement fills. | `relationship_movements`; `ReviewRelationshipMovement` | mcp/src/agents_remember/application/review_relationship_movement.py:142-177; mcp/src/agents_remember/models/knowledge/review_relationships.py:258-372 |
-| **The cases that measure the route movement: a reassignment displaying both recorded routes, and an identity with no route displayed as ungoverned and never as the root.** | `test_a_governing_route_reassignment_displays_both_recorded_routes`; `test_an_identity_with_no_route_is_displayed_as_ungoverned_and_never_as_the_root` | mcp/tests/test_knowledge_review_relationship_movement.py:803-826; mcp/tests/test_knowledge_review_relationship_movement.py:829-857 |
+- **The module's own statement of the three states, of the existence question asked before the route question, and of the path seed that asks about no identity.** [1]
+- The published surface: the fourth relationship kind and the one entry point. [2]
+- The governed-table names the route owner's own writes answer, so the read asks the question the write answers. [3]
+- **One side read: the identity kind named by the selector, the existence question first, then the route and its recorded path.** [4]
+- The selector question: an identity or an exact revision of one names it, a path selector names none. [5]
+- **The transition and the gap: reassigned when the recorded routes differ, and one gap per side whose snapshot does not record the identity.** [6]
+- The statement of both sides and the word each side is rendered as — never the repository root. [7]
+- The route owner the association is read through. [8]
+- The traversal that calls this module once per review, and the wire vocabulary the movement fills. [9]
+- **The cases that measure the route movement: a reassignment displaying both recorded routes, and an identity with no route displayed as ungoverned and never as the root.** [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It reads one repository's recorded route
 association for an identity inside that repository's namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **created.** The module is new in this leaf (`ICR-R08@v1`) and this is its one-to-one card. It records the route association as a fourth recorded relationship the union does not carry as an item, the three states kept apart (`recorded`/`ungoverned`/`not_recorded`), the existence question asked before the route question because the route owner answers `None` for both of the latter, and the measured boundary that an ungoverned identity is never placed in the repository root. **Basis accounting:** the verification pair above names this leaf's base, the last real commit the reading was taken against; the candidate is named here in the body rather than in a metadata row, and closeout owns the stamp once the code commit exists.
+No applicable cross-repository source was found.

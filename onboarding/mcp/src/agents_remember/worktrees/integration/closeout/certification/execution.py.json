@@ -1,0 +1,221 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/execution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact owner and selected objects passed to memory or finalization composition.\n\nAnchor: \"class CloseoutCertificationHandoff\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:c75ec2a30dbe2025c57465ce1a2bbeff13d1915a8526b42ce7821c6778ec7f01",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The unclosable-history refusal, then the cutover lock, both before recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:f97b2354f135afd68b5e814223b86720f916b53801824cd92e3191a68c7cb769",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_selected_closeout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Both prepared-closeout entries refuse by the lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:f2869f7892c76f52cb2a0a6a2ed7a4805b1c09f1504cc5a623a664592acd1760",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_prepared_closeout_refuses_by_the_lock_at_both_entry_points"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Reprove the live worker and selected authorities for a continuation action.\n\nAnchor: \"def current_certification_handoff\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:c4a15691da456092349da55881908a4ef0140f8363f29208a0f98a31413d9b45",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Execution inputs use original selected and predecessor evidence without latest lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:8b60032815c46a729ddf1f141316e4025a92c931ad0ef2fa4e3997c617096087",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execution_inputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:c91f20c75b57aade224b66a0a754e248cb5e7a4674f7d1375e4f3b59f63e899f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_original_input_terminals"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:738ff6341f692978e21215fd3736aa7a0c6e5f82713396fd105c047d922ae25f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inherited_memory_terminal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Actual memory changes and selected certificate progress drive append-only recovery decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:9ad26912d40e5d78aca5a5bcff0105d607d022d3d96c4d094e735131ec101e9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_recovery_changes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:77e83ba7808e5139bbc2a236474e3ec652318d78eea16c5a2d47ecc3c9a96e23",
+            "locator": {
+              "kind": "symbol",
+              "name": "_advance_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The code gate receives explicit selection, publication protection and last-moment authorization callbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:7cd055cb6d58e4544bc71f15b30c3de7272c00b27f07856ee6349a5647213314",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_code"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current memory inputs are canonically reparsed after a live-owner observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:ada982f98b03d7128a64e3032063c7fe910a2392d3856672ce383cb9920a4433",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_current_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The prepared path refuses on converted memory before recovery (MIK-R09 gap 3).\n\nAnchor: \"unclosable = prepared_closeout_refusal(contract)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:96c9dc437d9ef05dab1c909e8d0911d7cbeee1113b0bea58f8ffdbee98599e7e",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 361
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Suffix, Gate-5 observation and second-observation finalization dispatch remain explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0d31c386573baeb8f5f093dc57275fbd256e20e",
+            "content": "sha256:f97b2354f135afd68b5e814223b86720f916b53801824cd92e3191a68c7cb769",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_selected_closeout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The default application service bundle binds the prepared continuation and memory certification adapter (beside, since MIK-R24, the knowledge validator's base converter and the knowledge crossing).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

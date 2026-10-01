@@ -1,0 +1,259 @@
+{
+  "path": "mcp/tests/test_knowledge_writer.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The conforming example.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:bb2cf4dd9b773030da0cd6184d6daa71906840845643f755bef8cf05d0df996b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The requirement packet the owner resolves, and D12 lifted with governs, reconsider and requirement links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:2d221585f59252148554ca2b722212a954e92d6158c3283a447d4014faecd430",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirement_packet"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:fc7fd7161ce923ac71e751b143ced47f901c6ac872a6e7d0b4d00e274fdaf171",
+            "locator": {
+              "kind": "symbol",
+              "name": "_lifted_d12"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A lifted decision round-trips; its endpoints are reported, resolved and unresolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:c3f9e8959460806f9fabd77bc3d0db4dfa0972fdd61e4b08dc2f12363642b97b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A content-rule break refuses the write and writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:85a0d4277d72529872371513df1e6bc7acc158c7767c3ea26ac0ce1239bbc24b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_that_breaks_a_content_rule_is_refused_and_nothing_is_written"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The bootstrap wave resolves a requirement endpoint through the admitted coordination root (review F4).\n\nAnchor: \"The wave resolves requirement endpoints through the admitted coordination root\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:800060feb8f23fea50c1400c09768e7b87a4dd590411cf47ea35d3fb93276a22",
+            "locator": {
+              "end": 624,
+              "kind": "line_range",
+              "start": 621
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "knowledge-bootstrap refuses unconverted memory once the repository holds converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:5feda41c18ebfcf19a2014219c9a2232bc935006e28564ade7ac9e704af4282c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_bootstrap_refuses_unconverted_memory_once_the_repository_holds_converted_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A master line's crossing records its rows through the writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:09e5da1f57c2822063e408a1639fa81a660d26a982d1ed628fa8a27aca1ae25c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_crossing_records_its_rows_through_the_writer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every kind through the command line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:2c59d62ee361274b1da8e1047eff38794efaa3060578094aebad1f517d7aa5ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_command_line_round_trips_every_kind"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unresolvable evidence reported and kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:46ba98b7ee3702e4829e4e07edfb704f4c2724a762524fd2107205f4a25f9f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_evidence_that_names_no_resolvable_test_is_reported_and_kept"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A bootstrap of converted memory writes as a wave.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:ea73e44ce2550b670923f42c441106293a51c470fec4cce9265ceaec8960cbfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bootstrap_of_converted_memory_writes_as_a_wave"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A rerun that changes a locator removes this leaf's old entry only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:02105122a99dc3a42494a6ce19f6ce4f4f024cbc6bebddcb412775103b3ac38b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_that_changes_a_locator_removes_this_leafs_old_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The bootstrap command dispatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:9233667de56acf8ae662f0bcf5fb4c318fd5385e54eae25e96d6143e74b2a052",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_bootstrap_command_dispatches_converted_memory_to_the_file_writer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "MIK-R27: the writer refuses an unsupported admission claim and writes nothing, and writes once the proof is added.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:7e48993ba5bdb343df0182dfe1029efbb930397557db7522e8449a5cd59ea14b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Route rules: report in the writer, refusal at commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:654b94ba75c1212248cbaf2ffa17769545593edae0d2756d9d1ac199fdaf8df8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_family_route_rules_are_reports_in_the_writer_and_refusals_at_a_commit_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "MIK-R06 (ruling Q6): a moved row relocates its entry; malformed paths and remove-plus-path are refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:52c82a8871830d881e7a452f143a08ddffba667aad44f387070c04f042a31bae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_row_whose_after_names_another_path_relocates_the_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

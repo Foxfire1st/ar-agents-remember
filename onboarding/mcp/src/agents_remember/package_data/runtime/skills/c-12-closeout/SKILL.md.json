@@ -1,0 +1,295 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Cleanup is an explicit agent follow-up after landing and before handoff, including manual Git landing.\n\nAnchor: \"Closeout does not mark the task\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:ee31ecbd38a7cb0d68509d7cbc9f6980e34e8938744fc95462c2b32c58305607",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one external-memory closeout order restates step 4 as commit the code changes, then the prepared memory-content changes with their code attribution, keeping the transaction owner, pair identity and recoverable publication journal for each leg.\n\nAnchor: `## Closeout Order`; \"Commit the code changes, then the prepared memory-content changes with their\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:bbdf547231dff0604f87bd5004ad8ee55302b97f233d92e22fa7f407e78130c2",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "skills/c-12-closeout/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The caller-side implementation of that contract: `prepare_staged_code` runs both refusals before the mixed reset, then `git reset --mixed --quiet HEAD` and `git add -A`, and `gate_staged_code` then runs the strict targeted gate over the staged candidate.\n\nAnchor: \"Both refusals precede the mixed reset\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:9e444b5766680f6fd5f95f66dc6ba8553de7109a84a8a492a0497b7f6476e7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_staged_code"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_staged_code"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The closeout order is now one external-memory six-step list: confirm the worker's targeted-check report and the curator's handoff, preview the enabled code and memory legs, call `worktree_closeout_apply`, commit code then the prepared memory content with its code attribution, refuse before mutation on a moved ref or an unresolved conflict, then update the task contract closeout state.\n\nAnchor: `## Closeout Order`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:bbdf547231dff0604f87bd5004ad8ee55302b97f233d92e22fa7f407e78130c2",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The skill's own statement of the staging contract: a refused gate leaves the worktree fully staged and uncommitted, and because a retry must not inherit that index, each gate run begins with a reset and restages from the working tree, so resetting first recomputes the staged set under the ignore rules in force.\n\nAnchor: \"Staging is **not** undone if the gate refuses.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:2df36e1b981a0272f8013f86cf7cec6bf4b68ee2a99e1f4b41998207b496a173",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every \"the configured threshold\" sentence in this skill, which names no number itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fbe2e519b5448fefb73065d075615300f042042",
+            "content": "sha256:5d940e5d74d22d3ccc0c2213254d6083849b4faf7058b41be03a2260080b2aa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_CRAP_THRESHOLD"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence.\n\nAnchor: `# c-12-closeout Closeout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:e3c9649d873f62a1e0b6a83803e0b83ecbaa891f2d8fb458e805ffa2874752cb",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-12-closeout` keeps commit approval separate from implementation approval, states the quality altitude ladder, and binds completed strict runs to one atomically replaced enclosure test-results report.\n\nAnchor: `## Approval Authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Approval authority requires preview-first notify-and-stop for developer-gated closeout; an explicitly raised `closeout-approval` is the sole human commit gate.\n\nAnchor: `## Approval Authority`; `## Explicit Durable Closeout Gates`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:d29ff8f9f7e1931a5904b21b28cdb2920607cdcb6e60e7e845e3dc605d927870",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill.\n\nAnchor: `## Preconditions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:553df76532136a5d9351a11bb934354b4454a1a0d1a25bb250655ac2ac80c4c0",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`c-09-git-worktree-manager` skill routes worktree closeout to `c-12-closeout` skill and retains worktree lifecycle, integration, and cleanup ownership.\n\nAnchor: `# c-09-git-worktree-manager Git Worktree Manager`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3248316441238d5f05a25f4ac2dd7b0ef1360998",
+            "content": "sha256:8f8e146fcb54fa188119d4b99cd552bcb222c31dba36f457e872076cf7f2b834",
+            "locator": {
+              "end": 566,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover.\n\nAnchor: \"Closeout does not mark the task `Completed`\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:a0b62d45ca0d28fbfc7b234df4049920f840b16e33734de764c38146f7cb6a44",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:89fd1a502b17ac99ce596cba38da71a0b879995a2b59d0556b017d95ee7336b5",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper.\n\nAnchor: `## Approval Authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two staging refusals run before staging or ref movement: the code checkout must be the declared task worktree unless the declared route is a sanctioned branch-direct landing, and a worktree with unresolved merge conflicts (a merge, rebase, cherry-pick, or revert with unmerged entries) is refused so a blind stage cannot commit conflict markers.\n\nAnchor: \"unresolved merge conflicts\"; \"unmerged entries\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:fbbfdeba68dbde8f189c9c1068d354fe2cf194d9084ba25ca32549e18b9eebb4",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "content": "sha256:f1ed709efab6017546419cade58c8fb43486b179993c0b78343eb386e73fed70",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 274
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

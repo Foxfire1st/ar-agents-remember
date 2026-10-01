@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The admitted policy snapshot and the request/`ToolId` shapes this module works with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:4b407a4db5a6f1bee881e948f14ada7d20478e608329d406a8ce2e243128e4a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleToolPolicy"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:388ea62fbd05485dc8ef4132c6a41454d3b12c01d3c37e497d9cfad30598cd6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleToolRequest"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:f8075c57d7c634c239e55f159c753e476797f728d5b4d9d4077513ef426794a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleToolId"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:042ccb09469ae02fd5cdb7827ba26299f5865ede573a83e7bcb521bcf6491052",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:809e738f5c46803fdf6be8fee09920068e621c4bb8de6ebfd2c0e72539f9fff7",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The refusal code for a request outside the admitted snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:5e401d4f1f40b27245299f0349c57a73ae5546f03a2f7e1d6001ac13cf5e6f1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_TOOL_REQUEST_NOT_PERMITTED"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compiler step that narrows requests before sealing the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_role_capsule"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The architect seat's declared tool requests in the canonical manifest, including the child-seat messaging tool that supplies a declared identity.\n\nAnchor: `message_child`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3ab60b6e780b73cf9eea5d9de950566b03b5192",
+            "content": "sha256:21f46bb350690dde6c4201f996fa73d8b56bec6be1d59e153c5ee274a7037ab3",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A request inside the policy is carried but not granted; one outside it is refused; every declared id exists in the public tool roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:7e0c6365385b12fba26957748e6c2d7772bcb45751e5f23fc982b170d78c58a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tool_request_inside_the_policy_is_carried_but_not_granted"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:b69551206acd005f97914e357da0b1bcfd30f223e08f73284b3cc2ae35da2079",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tool_request_outside_the_admitted_policy_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "400a0aca9975b14bec43d3ffda07696f81af235c",
+            "content": "sha256:f34f06d8b39dee094e6d46952b91a62907f1e7d458fb471227d48cb6a9469142",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_tool_the_shipped_manifest_requests_exists_in_the_public_roster"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

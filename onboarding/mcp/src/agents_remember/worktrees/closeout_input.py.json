@@ -1,0 +1,119 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/closeout_input.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`resolve_closeout_plan` derives code/memory enabledness from the admitted route and candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369476acda4b94300a0cc422dc67996003cfc8e8",
+            "content": "sha256:396ed25f037b3e18a6f5a9858657f32e223caf0b5f2e36b709ffda2c3ad84154",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_closeout_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`normalize_closeout_input` validates the two explicit messages and returns one effective input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369476acda4b94300a0cc422dc67996003cfc8e8",
+            "content": "sha256:aef649fd97b3193615bb5c3e3a4b3cbd064582e2a0a4bd76b5e208180ce43162",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_closeout_input"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`effective_message_arguments` renders only enabled code/memory messages for next-call guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369476acda4b94300a0cc422dc67996003cfc8e8",
+            "content": "sha256:ff8b670fa4cff99dec9e67bc0adf78677d93a13c3f2fc5a3d1da09938ef7891b",
+            "locator": {
+              "kind": "symbol",
+              "name": "effective_message_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. (`capture_closeout_candidate`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369476acda4b94300a0cc422dc67996003cfc8e8",
+            "content": "sha256:813e08860a5abffd581b2673897d62b3d4e9b4a849f9e957a45f8b983b6f1297",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_closeout_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Enabled/not-applicable legs derive from validated route, contract, and candidate facts. (`resolve_closeout_plan`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369476acda4b94300a0cc422dc67996003cfc8e8",
+            "content": "sha256:396ed25f037b3e18a6f5a9858657f32e223caf0b5f2e36b709ffda2c3ad84154",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_closeout_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Typed refusal and corrected-call data are emitted together. (`CloseoutInputError`; `normalize_closeout_input`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369476acda4b94300a0cc422dc67996003cfc8e8",
+            "content": "sha256:514fe9bf003600ad3c75b74531172e519b1cb6a8756a27f395d347159ace9a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutInputError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Retried durable input is checked against its accepted plan. (`require_effective_closeout_plan`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "369476acda4b94300a0cc422dc67996003cfc8e8",
+            "content": "sha256:1efc0cf16cdf179d6ff0ba8703f54c604c92396a1ba5a8977a87ea829ac7b59d",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_effective_closeout_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

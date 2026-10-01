@@ -1,0 +1,356 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: items, satisfaction, the counted-change rule and findings.\n\nAnchor: \"The onboarding refresh gate on history files (MIK-R30), for converted memory trees.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:acbf64ed5d78dabbff7e86498796fec04ef4002ece4a8b2263a3af5eaec0e34e",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The leaf's `no_impact` rows, or the unreadable-history problem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:0686ba178a4f325dbd09b7d19e76e76b89295b59ddeb42fe8071e31067b860e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The nearest governing route of a changed path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:13e5efdcbcea27ee439cc551beacaffa61f85ebab7e19ac17c5f71823ee5895d",
+            "locator": {
+              "kind": "symbol",
+              "name": "nearest_governing_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The gate: card and route items, the incomplete side and the unreadable base sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:799ef332857d7fdc13a4df82773bec0a55a23233078d0ad2031c4d6baf1e2a73",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_trace_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The stored-item predicate L09 uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:f561dda98b3b6d9392ec4ed5dc3486a1359450d1788d018d4cc4ee9eddfb0d19",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_item_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The row model a `no_impact` row validates against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "243f4fd2542d5af8d9171708cba466521c103e6a",
+            "content": "sha256:855ab7ba95c83a62a5bd9718e34b68e4af6847299fb4b7f68d0c1c2e53bf0679",
+            "locator": {
+              "kind": "symbol",
+              "name": "OnboardingTraceRow"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The memory-quality and closeout entry points that call the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:9e3b7e95c6f5fd60bad9d7fc3c95f7df0d107863837cbc90fee565eea6cda89c",
+            "locator": {
+              "kind": "symbol",
+              "name": "onboarding_trace_gate_for_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
+            "content": "sha256:d76657a0214df95b0e4830f0d2948f17a02797fd2054fc3bc92ebc250ed56c5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_onboarding_traces_for_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Only mechanical fields changed: the item stays open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f1948f145246baa4b6f177eb8b28a39c86f655",
+            "content": "sha256:189a949aed87f767179b3609d23a0c088d1a3db233331f32f388d87d24e078e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_an_anchors_blob_line_numbers_and_content_do_not_count"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The stored predicate and the live gate agree on an unreadable K_C sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f1948f145246baa4b6f177eb8b28a39c86f655",
+            "content": "sha256:736d4a2f93d327fc36090298e4d5993f203f3008b197b2d0daab34a61520262a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_sidecar_never_satisfies_a_trace"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The leaf's rows come from all of its history files, read as one history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:0686ba178a4f325dbd09b7d19e76e76b89295b59ddeb42fe8071e31067b860e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The kind name and the finding codes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:c5c7527eeb29a4c7676d6a6c8a8b818fcfd2249bdf9dfb9d9d8131c3cfc51461",
+            "locator": {
+              "kind": "symbol",
+              "name": "ITEM_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:42c60a04fc135c347a116c66e087b956ab1283fa0f685a4f611685892e0e98f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_SIDECAR_UNREADABLE_CODE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Card and route subjects, the root route as `onboarding:overview`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:71052b9a0fcfa8174eb6aa972e5945c8606f1f17432fb195fb437a1a45eba074",
+            "locator": {
+              "kind": "symbol",
+              "name": "card_subject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:82839057fc09633a77b71765e6bd89486a697202886a92e6d7d967fe4af9bcb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Anchors lose `blob`, `content` and line numbers before a sidecar comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:2ae13e21f4d148298f66785255d96eb02c94a15af1d247814384e4d5840274ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_mechanical_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unparseable sidecar is never a counted change; a readable repair of one is.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:a36e379a47737a0458b58225611aeec52d9a56f84c6dd8881ffdbb9da124aaea",
+            "locator": {
+              "kind": "symbol",
+              "name": "counted_sidecar_change"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Sides that could not be established carry a named reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:e0e2162949e8e71c8d256170eca7a047e94137f6a1367321ad71748b28a48a9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "OnboardingTraceSides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One item, its open state and its stored document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:c9ce6e590e0b09e97d514e2b02222d566628e81d135242e107ba28b19c5b755b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TraceItem"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:7f9292da4db0cb6d46e310fb137deebcc995eec86765fe83dc593718377a7699",
+            "locator": {
+              "kind": "symbol",
+              "name": "to_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The result, its repair and report-only findings, and the refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:299d03d1a8437f066f3e471f8e133fb4eeb840a6209af3cad63a5e8bbfec32b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "OnboardingTraceResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:4f326fc4e8ec426083704a3ca09036120ae5cc08acba8a689d0fcae23f7acc1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Each unnecessary-row finding names its subject (MIK-R10).\n\nAnchor: \"\\\"subject\\\": subject,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
+            "content": "sha256:5ecf83f1fb20831569b9427c6731c96c37511d1227c1eedcd326338117158004",
+            "locator": {
+              "kind": "symbol",
+              "name": "report_only_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

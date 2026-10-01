@@ -1,0 +1,194 @@
+{
+  "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+        "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentReviewEntry"
+        }
+      },
+      "id": "RLZ-DDY3VDR2",
+      "invariant": "INV-T0EWDB7H",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Renders the entry's single Intent review button: it reads useIntentReviewSummary for this leaf, labels the button '(recorded)' for a closed leaf, shows IntentCounts' +added −removed from that summary (or a brief loading/unavailable state), and always calls onOpen with the task-context target, live or historical. No catalogue read, picker or refresh control appears here.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "What the numbers are, what the entry does not do, why unavailable is not zero, and why the lane's count is a separate fact.\n\nAnchor: \"WHAT THE NUMBERS ARE\"; \"UNAVAILABLE IS NOT ZERO\"; \"UNEXPLAINED IS A SEPARATE FACT\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:c38ab296fb553ba25b829153e309bc21da142b530d311af53b0e11448e4c1015",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The brief states and the counts inside the button.\n\nAnchor: `briefProblem`; `data-added`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:31a2a63519622a636a703b774f2a4c9e321e208d6eb41793cf09fe6ec2ca0ba5",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentCounts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The disclosure beside the button for unavailable and partial answers.\n\nAnchor: `problemSentence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:c342ff64edde800ba9a9b31ef001275f9ae03a927d49a89d5bad13de00a9da72",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lane's count inside the button and its disclosure beside it (MIK-L32).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:9e22e2645d3b1d91a5dd37f4578d13472ea9fabbcedb940b2ebab83de9a174be",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributionText"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:a4b2b612e17165e9f6d36b9ac10e6f34715027b57b1b9d56baef8973f49ce833",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionCount"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:b97e9c7ab455a45dababfe31c12adb079fbd1ddbb56b54e2e1fc28cbbfb4da43",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The control: its summary read, the task-context target and the recorded label.\n\nAnchor: `useIntentReviewSummary`; \"Intent review (recorded)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The count's states on the real summary: two elements, one request, never a zero.\n\nAnchor: \"shows the real leaf's unexplained and unknown files beside +N −N, from the one summary read\"; \"renders %s as its own state\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
+            "content": "sha256:6d035ac8c4dcee1f1f9a3ae86ff2501d82639b1083e6558dd9c6547ea10cb6a1",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.attribution.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Where the bar mounts it.\n\nAnchor: `IntentReviewEntry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The cases that pin one control, the request economy and the brief states.\n\nAnchor: \"is one control with the comparison's changed-intent counts and nothing beside it\"; \"states missing knowledge briefly, never as +0 −0, with the owner's refusal in the disclosure\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:46bfd4743067f13b1f3d46b57c9e21f8cd1db58079f97f14d3cd4ba61d97b76e",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:abffe14419e4e7726a20364d99a98ec86189881050ad4084b44e7e7861a0ed2f",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

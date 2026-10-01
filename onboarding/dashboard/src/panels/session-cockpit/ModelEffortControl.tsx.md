@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/ModelEffortControl.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/ModelEffortControl.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-02T01:42+02:00|
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -45,46 +35,29 @@ inherits an old row's effort options, or treats a missing echoed effort as an em
   visually indistinguishable from an echo-verified effective value even though its accessible
   description names the source.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Trigger, exact-session menus, staging, serialized apply, error, and chip UI. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:635-704 |
-| Sourcing, corrected menu, apply, and chip regression matrix. | "model + effort staged runs the SERIALIZED pair flow" | dashboard/src/panels/session-cockpit/ModelEffortControl.test.tsx:270-304 |
-| Live-session client and actions. | `sendSet` | dashboard/src/data/setClient.ts:157-244 |
-| Menu and effective-marker derivation. | `effectiveSelection` | dashboard/src/data/sessionCapabilities.ts:219-248 |
+- Trigger, exact-session menus, staging, serialized apply, error, and chip UI. [1]
+- Sourcing, corrected menu, apply, and chip regression matrix. [2]
+- Live-session client and actions. [3]
+- Menu and effective-marker derivation. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
+No cross-repo evidence applies.
 
 ## Current L5I Maintenance
 
 The trigger shows only a real running model/effort pair: freshest echoed evidence first, then the
 launch-resolved value. Missing effort now removes its segment instead of emitting an unsupported
 sentinel; the live menu remains the authority for choosing a value.
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 8 citation findings; scoped check passed.
-
-- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-24T13:17:17Z — Curator: corrected missing-effort presentation to omission rather than a
-  fabricated sentinel; verification fields remain pre-commit.
-
-- 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R1–R3/R5/R6 through fix round 3 and
-  final reviewer PASS. Sev-4 observation 6 remains recorded. Verification metadata is pinned to
-  the contract base until code commit.

@@ -1,15 +1,5 @@
 # mcp/tests/conftest.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/conftest.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:02+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -52,25 +42,25 @@ the prior environment and removes the disposable tree.
 - Unit collection avoids unnecessary application composition and integration imports.
 - Explicit environment/global restoration and cleanup remain mandatory.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured; these are repository-owned implementation facts.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The exact source declarations below establish the current behavior; this inventory is not execution evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Candidate paths and disposable scrubbed environment | `REPOSITORY_ROOT` | mcp/tests/conftest.py:15-68 |
-| Budget config and explicit certification option | `pytest_addoption` | mcp/tests/conftest.py:88-102 |
-| Single lane read and genuine certification admission | `pytest_configure` | mcp/tests/conftest.py:105-128 |
-| Skip integration imports for default units | `pytest_ignore_collect` | mcp/tests/conftest.py:131-138 |
-| Selected item budgets and explicit tradeoff refusal | `pytest_collection_finish` | mcp/tests/conftest.py:148-159 |
-| Explicit bind/reset application composition | `worktree_services` | mcp/tests/conftest.py:172-184 |
-| Restore environment and remove temporary root | `pytest_unconfigure` | mcp/tests/conftest.py:187-191 |
+- Candidate paths and disposable scrubbed environment [1]
+- Budget config and explicit certification option [2]
+- Single lane read and genuine certification admission [3]
+- Skip integration imports for default units [4]
+- Selected item budgets and explicit tradeoff refusal [5]
+- Explicit bind/reset application composition [6]
+- Restore environment and remove temporary root [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository authority is established by this file.
 
@@ -105,32 +95,3 @@ registration site.
 unit/300"; and the parser's standalone `addini` defaults in this file are **1100 unit / 300
 integration**, so they are *not* the declared values and a direct `pytest_addoption` read disagrees
 with repository policy by 900 unit cases. Found by the `T45` grep, not by any check.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T18:52+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **corrected the one sentence that stated this file's budget declaration, and re-derived the seven citation ranges the delivery moved.** `260915-KS-L23`'s item 12 (worker W1) removed the two never-effective `default=1100/300` declarations from `pytest_addoption`: the parser now only **registers** `unit_case_budget` and `integration_case_budget` by `addini`, with no `default=`, and the comment beside them states that the rails live once in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]` because `mcp/pyproject.toml` declares no `[tool.pytest.ini_options]` (D-20). The card said the opposite in three ways at once — "Pyproject supplies the operative 1100 unit/300 integration values", "the parser's standalone defaults are those same declared values", "a direct `pytest_addoption` read cannot disagree with repository policy" — and every clause is now false: the values are **2300 / 400**, and there are no parser defaults to agree or disagree with. The paragraph now states the registration/no-default rule, where the pair actually lives, that it moves, and the guard's `budget < 1` half that makes an absent rail fail closed. **The seven reference rows were re-derived by AST from the delivered file** (`pytest_addoption` `:72-86`, `pytest_configure` `:89-112`, `pytest_ignore_collect` `:115-122`, `pytest_collection_finish` `:132-143`, `worktree_services` `:156-168`, `pytest_unconfigure` `:171-175`) — the last of them **was anchor-absent from its old `:166-170` range**, so this repair also clears a live citation finding rather than only a stale number. Content was read against the delivered but **uncommitted** working tree, so **the verification stamp is not advanced**: no commit carries this file's current bytes and closeout stamps the real code commit. No other claim in this card was re-read in this pass.
-- 2026-09-18T17:02+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): the `evidence_lanes` plugin registered (`T48`), the Git-checkout consequence stated, and the card's own pyproject-budget paragraph corrected to 2000/300 against the parser's 1100/300 defaults (`T45`). Verification metadata stays at the recorded verification because the candidate is uncommitted and the governed closeout owns the real code commit; `lastUpdated` advances with this body edit.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `pytest_addoption` repointed to mcp/tests/conftest.py:88-97. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `pytest_ignore_collect` repointed to mcp/tests/conftest.py:126-133. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `pytest_collection_finish` repointed to mcp/tests/conftest.py:143-154. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T14:49:10+00:00: Generated citation repair: `pytest_unconfigure` repointed to mcp/tests/conftest.py:182-186. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fb0a4d92072964079a2a144c1f1da15ff07327804a09730959bc69f38a7e98f; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
-
-- 2026-08-28T11:32+02:00 — No content impact: shortened a stale explanatory comment; collection,
-  lane classification, and Dagger admission behavior are unchanged.
-
-- 2026-08-28T10:03:40+02:00 — Reconciled the current certifying composition after Candidate A
-  retirement; no host Python entrypoint or compatibility bypass remains.
-
-- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
-  above after source and requirement review. Verification remains closeout-owned.
-
-
-- 2026-08-24T21:23+02:00 — 260824-PDLS replaced the monolithic root guard/fixture implementation
-  with explicit admission, hermetic bootstrap, shared hooks, and certifying-only service composition.
-- 2026-08-10T18:31+02:00 — The predecessor established explicit checkout test mode and owned-global
-  restoration; that still-valid behavior moved to production testing modules.
-- 2026-08-05T00:00+02:00 — The predecessor established Dagger-only collection, candidate path/Git
-  isolation, disposable identity, cache isolation, deterministic order, and service binding; PDLS
-  preserves those contracts behind separate owners.

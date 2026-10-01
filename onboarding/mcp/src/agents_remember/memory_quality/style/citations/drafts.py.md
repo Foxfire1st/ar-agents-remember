@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/drafts.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/drafts.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -55,30 +45,17 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The curator-facing remediation for every decline code, including the three continuity refusals. | `ACTIONS` | mcp/src/agents_remember/memory_quality/style/citations/drafts.py:31-127 |
-| Only the anchor-found-nowhere code overrides the default curator tier. | `TIERS` | mcp/src/agents_remember/memory_quality/style/citations/drafts.py:129-129 |
-| Defines the class `Subject` (lines 132-139) — One document and the source file its own metadata table says it is about.. | `Subject` | mcp/src/agents_remember/memory_quality/style/citations/drafts.py:132-139 |
-| Defines the class `Draft` (lines 142-175) — One citation being migrated: where it is, what it states, and why it was refused.. | `Draft` | mcp/src/agents_remember/memory_quality/style/citations/drafts.py:142-175 |
-| Defines the class `TableDraft` (lines 178-191) — One superseded table: where its header is, its rows, and the marker a padded row uses.. | `TableDraft` | mcp/src/agents_remember/memory_quality/style/citations/drafts.py:178-191 |
-| Defines the class `Result` (lines 194-214) — What one pass read, converted and declined.. | `Result` | mcp/src/agents_remember/memory_quality/style/citations/drafts.py:194-214 |
-| The refusal recorder resolves an unlisted code to the default curator tier. | "    def refuse(" | mcp/src/agents_remember/memory_quality/style/citations/drafts.py:158-175 |
-| The tier constants the override resolves against. | `CURATOR_TIER`; `DEVELOPER_TIER` | mcp/src/agents_remember/memory_quality/style/citations/work_order.py:13-14 |
-
-## Update History
-
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: added the `ACTIONS` rows for the three new
-  continuity-refusal codes (`anchor_left_live_file`, `anchor_continuity_unproven`,
-  `anchor_kind_changed`) and recorded the deliberate choice to leave all three out of `TIERS`, so
-  `Draft.refuse`'s `TIERS.get(code, work_order.CURATOR_TIER)` gives them the default curator tier —
-  each is work a curator does by reading the claim and re-citing where its fact now lives. Recorded
-  that a new decline code needs an `ACTIONS` row or it cannot be refused, and corrected every
-  module-surface range. Verification metadata remains closeout-owned; no acceptance claim.
-
-- 2026-08-05T03:49+02:00 — 260731-EFA-L6 C1 closeout pass: aligned the Logic bullets and Finding line numbers with the scoped fixer's generated decorator-inclusive class ranges; verification metadata unchanged.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- The curator-facing remediation for every decline code, including the three continuity refusals. [1]
+- Only the anchor-found-nowhere code overrides the default curator tier. [2]
+- Defines the class `Subject` (lines 132-139) — One document and the source file its own metadata table says it is about.. [3]
+- Defines the class `Draft` (lines 142-175) — One citation being migrated: where it is, what it states, and why it was refused.. [4]
+- Defines the class `TableDraft` (lines 178-191) — One superseded table: where its header is, its rows, and the marker a padded row uses.. [5]
+- Defines the class `Result` (lines 194-214) — What one pass read, converted and declined.. [6]
+- The refusal recorder resolves an unlisted code to the default curator tier. [7]
+- The tier constants the override resolves against. [8]

@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/SeatInspector.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/SeatInspector.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T23:54+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -40,39 +30,24 @@ off-tab Bus interaction continuity, no-focus honesty, and the carried-forward L6
 
 None recorded; browser integration smoke remains a leaf-level residual.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Tab navigation and hidden-panel draft retention. | "exposes keyboard-navigable Evidence"; "retains an open Bus draft across click and keyboard tabs while hiding inactive controls" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:29-46; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:48-91 |
-| Off-tab success/error settlement and no-focus Bus. | "settles posted and error replies on their exact entries while the Bus tab is inactive" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:93-160 |
-| Carried L6 evidence cases. | "names the pane archetype for controlled vs legacy raw seats (R1)"; "shows the verbatim pending-interaction payload (the unrepresentable fallback's target)" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:187-196; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:212-222 |
-| Explicit mark-seen and seat-switch regressions. | "viewing the ledger does not acknowledge; the explicit mark-seen action does (F22)"; "switching seats never acknowledges the newly focused seat" | dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:251-273; dashboard/src/panels/session-cockpit/SeatInspector.test.tsx:275-292 |
-| Composition host under test. | `SeatInspector` | dashboard/src/panels/session-cockpit/SeatInspector.tsx:60-161 |
+- Tab navigation and hidden-panel draft retention. [1]
+- Off-tab success/error settlement and no-focus Bus. [2]
+- Carried L6 evidence cases. [3]
+- Explicit mark-seen and seat-switch regressions. [4]
+- Composition host under test. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
-
-## Update History
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round 2 (curator): No content impact: the supervisor -> agent-notifier rename does not change the behavior this sidecar documents; reviewed current against the changed source. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 10 citation finding(s); scoped recheck clean.
-
-- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 added integrated tab/hidden/off-tab settlement/no-focus
-  coverage and retained the earlier evidence contracts. Verification metadata remains pinned to the
-  leaf base until closeout.
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 added set-ledger and explicit mark-seen coverage.
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 archetype, residual, and raw evidence.
+No cross-repo evidence applies.

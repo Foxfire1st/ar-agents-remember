@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/agent_notifier_models.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | mcp/src/agents_remember/serving/agent_notifier_models.py |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-24T14:43+02:00|
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | mcp/src/agents_remember/serving/overview.md |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -70,15 +60,17 @@ host/catalog seams; `SweepState` freezes one bounded sweep snapshot.
 - These records describe evidence and planned actions. Evaluators choose findings and action
   modules perform effects.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Worker source inventory, reviewer verdict, and governing route overview.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
 
@@ -98,31 +90,3 @@ verification metadata stays pinned to the pre-commit source history until closeo
 `AgentNotifierContext.register_execution_evidence` accepts the current inbox snapshot and returns
 the exact ids whose first-execution evidence is now durable in task truth. `None` authorizes no
 deletion of task-bound leaf reports; it is a fail-closed injection state, not a compatibility reader.
-
-## Update History
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented the notifier's typed task-registration seam. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Replaced generic lifecycle prose and the leaf-key finding field with the
-  notifier model's actual task-document identity and evaluation/action boundary.
-- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: No content impact: re-read the current staged agent-notifier model vocabulary and rename seam; the sidecar remains accurate. Verification metadata remains pinned until closeout.
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 curator: recorded the fact-only vocabulary —
-  expectation/ladder finding and action kinds removed, nudge-store/escalation-knob fields
-  dropped from `AgentNotifierContext`, `SweepState.escalated_entry_ids` removed.
-  Verification metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 curator: recorded `rebind-due`/`rebind-expired`/
-  `inbox-ttl-expired` in `FindingKind` and `rebind`/`expire` in `ActionKind` (N14/N2/§9).
-  Verification metadata pinned until closeout stamps the 260713-TES-L4 commit.
-- 2026-08-09T03:51+02:00 — 260713-TES-L3 curator: recorded `compound-idle-due` in
-  `FindingKind` and `compound-idle` in `ActionKind`. Verification metadata pinned until
-  closeout stamps the 260713-TES-L3 commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the new state-signal
-  finding/action kinds and the removal of `turn-report-stale` (the 260713-TES-L1 "literal values
-  unchanged" claim is superseded). Verification metadata pinned until closeout stamps the
-  260713-TES-L2 commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 curator: moved this card to the renamed module path and recorded the `AgentNotifier*` model names. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: recorded the injected single-snapshot seam and
-  post-compaction folded inbox state carried through the supervisor context/state models.
-  Verification metadata remains pinned until closeout stamps the candidate commit.
-
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

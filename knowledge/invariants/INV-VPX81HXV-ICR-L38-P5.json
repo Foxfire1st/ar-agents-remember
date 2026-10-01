@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Main expression and family realization-detail presentation over bounded or unavailable family roster context.",
+  "conditions": [
+    "Loaded member contexts and loaded source claims are distinguished from the read owner cumulative item counts.",
+    "A recorded side is fully loaded only when its page is complete, its measured membership population is present and member content is recorded.",
+    "Partial or unavailable context states its limit and retains any owner-published continuation."
+  ],
+  "exclusions": [
+    "Inferring absent stored attribution or unchanged unreturned expressions from an empty loaded set.",
+    "Semantic acceptance, whole-source inventory filtering, or replacement of source/evidence owners."
+  ],
+  "id": "INV-VPX81HXV",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "28d4eb4a-3877-4c3c-bef3-b43a534cbd5c",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Partial linked-source views state that links are not yet fully loaded and retain user-driven roster continuation; loaded member counts are distinguished from the read owner's cumulative item counts.",
+  "status": "proposed",
+  "supersedes": []
+}

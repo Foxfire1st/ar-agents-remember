@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/pane_signals.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------- |
-| repository             | agents-remember                                    |
-| path                   | `mcp/src/agents_remember/serving/pane_signals.py` |
-| doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-02T01:42+02:00                             |
-| lastVerifiedCommitHash | `c51373425be3e3f488590ad2f444810df89b4ffb`         |
-| lastVerifiedCommitDate | 2026-08-26T19:22:10+02:00|
-| governingOverview      | `overview.md`                                      |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -101,62 +91,32 @@ Marker-based regex `.search()` over captured text, the same cheap, no-parser pos
 The retained modal/mid-turn regexes are best-effort diagnostic hints. No correctness or acceptance
 claim may be added on top of them.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation found after checking the repo Domain Documentation for
 pane-signal-classification-specific behavior; this file is same-repository runtime plumbing (the
 leaf task doc's R2a is the source of truth), same posture as `turn_state.py`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier. | "def evaluate_pane_findings(" | mcp/src/agents_remember/serving/_agent_notifier_evaluation.py:49-49 |
-| The pane classifier used by that path is `classify_pane_signal`. | `classify_pane_signal` | mcp/src/agents_remember/serving/pane_signals.py:80-97 |
-| `classify_turn_state` remains a separate classifier with its own operative call and precedence over the captured pane text. | `classify_turn_state` | mcp/src/agents_remember/serving/turn_state.py:157-171 |
+- `evaluate_pane_findings` reads the captured pane and harness before invoking the pane classifier. [1]
+- The pane classifier used by that path is `classify_pane_signal`. [2]
+- `classify_turn_state` remains a separate classifier with its own operative call and precedence over the captured pane text. [3]
 
 | The adapter exposes `blocked_reason` for final diagnostic classification; it does not expose the stale `composer_state` field. | `HarnessAdapter`; `blocked_reason` | mcp/src/agents_remember/serving/harness_adapters.py:14-25 |
 | The R1 delivery contract (`serving/injector.deliver`) reads `HarnessAdapter.blocked_reason` off the FINAL paste capture to classify a modal trap as `blocked(reason)` rather than a bare failed/delivered boolean. | `deliver` | mcp/src/agents_remember/serving/injector.py:60-134 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary owns or consumes this local pane-signal classifier. | — | — |
+No cross-repo boundary owns or consumes this local pane-signal classifier.
 
-### 260713-PHA-L5 Reviewed Hosted Cutover Impact
+#### 260713-PHA-L5 Reviewed Hosted Cutover Impact
 
 Reviewed this file against the accepted hosted-session cutover and PASS verdict. Its relevant
 contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
-
-## Update History
-- 2026-08-04T13:47:55+02:00 — 260731-EFA-L6 S18-B11 same-reviewer correction: narrowed pane-signal call ownership, classifier comparison, test coverage, and adapter behavior to operative source spans. Verification metadata unchanged.
-- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 removal round: deleted `never-briefed`,
-  `delivery-stalled`, composer-state, and paste-chip dispatch grammars. Retained only mid-turn and
-  blocked diagnostics; harness logs now own acceptance. Verification metadata remains pinned until
-  closeout stamps the eventual L15 code commit.
-
-- 2026-07-08T22:30+02:00 — 260707-HFX2-L3 (paste injector hardening, R2): populated
-  `_HARNESS_BLOCKED_PATTERNS["codex"]` with the issue #20 quota/rate-limit modal markers; added
-  `blocked_reason_label` (evidence → structured NEEDS-ATTENTION reason) and `composer_state`
-  (`empty`/`has-content`/`chip-stacked`) as the two new signatures the per-harness delivery adapter
-  (`harness_adapters.py`) composes. No change to `classify_pane_signal`'s own precedence or the
-  existing empty per-harness tables for other families. Verification metadata pinned until closeout
-  stamps the 260707-HFX2-L3 commit.
-- 2026-07-08T18:45+02:00 — Created for 260707-HFX2-L2 (supervisor sweep + predicates, R2a): the
-  pane-state classifier — `classify_pane_signal`, `PaneSignalClassification`, the
-  precedence-ordered marker tables (mid-turn > blocked > delivery-stalled > never-briefed > normal)
-  plus empty per-harness override dicts, reusing `terminal_paste.count_paste_chips` for the
-  delivery-stalled trigger. Feeds `supervisor.py::evaluate_pane_findings` on the sweep's own
-  cadence, never a hot loop. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L2 commit.

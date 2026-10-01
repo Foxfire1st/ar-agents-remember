@@ -1,0 +1,66 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared ClampButton, `sourceLineCount`, and `useClampIds`.\n\nAnchor: `ClampButton`, `sourceLineCount`, `useClampIds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:78ccc05389e44c687ada55c1ec2f312a48da4edc749b684b99fc130088c6fd8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClampButton"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:4c82ae3659bec3adaa3dc67825530f2df4973e47e0fc06691cd1a8dab8038033",
+            "locator": {
+              "kind": "symbol",
+              "name": "sourceLineCount"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b532b41ec3b2fdd334badf22ae3c507984ea5a66",
+            "content": "sha256:db77ef21a61783dfe333d220dfa764b5288dacc279ef65c7d80f2d934e3995fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "useClampIds"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tool item that routes a `diff` block here (path/unified/old/new).\n\nAnchor: `diff`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8bf75bd6ad3d3d78ab301bf407b8d1e1f7c4e42",
+            "content": "sha256:664aef7852c528592dc9dba69f261ba3f87098a3ebffde7005ed2629fba17336",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

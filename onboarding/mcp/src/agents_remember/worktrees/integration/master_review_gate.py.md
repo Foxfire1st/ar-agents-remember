@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/master_review_gate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/master_review_gate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Integration overview](overview.md)
@@ -45,22 +35,20 @@ deferred or not-applicable; only the master integration seam consumes this gate.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant domain documentation was configured for this repository-internal integration gate.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external documentation source was configured for this source-owned gate. | n/a | n/a |
+No external documentation source was configured for this source-owned gate.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Typed blocked-integration payload projection. The former `master_route_review_block` / `master_route_review_refusal` pair is gone from this module; the refusal projection now lives in `worktrees/route_review.py` as `route_review_refusal_projection` / `route_review_refusal_fields`. | `blocked_integration_payload` | mcp/src/agents_remember/worktrees/integration/master_review_gate.py:14-39 |
-| Preflight and lock-time publication paths consume the gate. | `integrate_result`; "def _publish_integration_edge("; "def publish_series_integration_under_authority[T](" | mcp/src/agents_remember/worktrees/modules/integrate.py:638-663; mcp/src/agents_remember/worktrees/modules/integrate.py:864-869; mcp/src/agents_remember/worktrees/series_closeout.py:73-73 |
+- Typed blocked-integration payload projection. The former `master_route_review_block` / `master_route_review_refusal` pair is gone from this module; the refusal projection now lives in `worktrees/route_review.py` as `route_review_refusal_projection` / `route_review_refusal_fields`. [1]
+- Preflight and lock-time publication paths consume the gate. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo implementation reference is required for this gate card. The coordination
 requirement is tracked in the task report and governs this preparation without serving as a source
@@ -79,22 +67,3 @@ The predecessor v2 cumulative candidate tree was `96b94b2a1c8e57a7a37b19b08cda33
 with this file's SHA-256 recorded as
 `dd51ab6200088274352370fc8830b1d05df291feb43f5a46f19ccd3b163efff4`. That whole-tree identity
 is retained as historical composition evidence and is not the active identity for this card.
-
-## Update History
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): No content impact: this document's own source is unchanged. MIK-R09 (260928-MIK-L09) moved lines in `worktrees/modules/integrate.py`, so the citation rows into them were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or, for the row it declined, by the exact base-to-staged line shift, every anchor checked in both ranges. No verification stamp was advanced.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_publish_integration_edge` in the row 61 of this card from mcp/src/agents_remember/worktrees/modules/integrate.py:636-661 to mcp/src/agents_remember/worktrees/modules/integrate.py:815-820, the extent of the construct the claim is about (the checker named line(s) [815] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_publish_integration_edge` in the row 61 of this card from mcp/src/agents_remember/worktrees/modules/integrate.py:846-921 to mcp/src/agents_remember/worktrees/modules/integrate.py:815, the extent of the construct the claim is about (the checker named line(s) [815] as its live location); re-pointed `publish_series_integration_under_authority[T]` in the row 61 of this card from mcp/src/agents_remember/worktrees/series_closeout.py:74-92 to mcp/src/agents_remember/worktrees/series_closeout.py:73, the extent of the construct the claim is about (the checker named line(s) [73] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_publish_integration_edge` in the row 61 of this card from mcp/src/agents_remember/worktrees/modules/integrate.py:610-613 to mcp/src/agents_remember/worktrees/modules/integrate.py:815-820, the extent of the construct the claim is about (the checker named line(s) [815] as its live location)
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `integrate_result` in the row 61 of this card from mcp/src/agents_remember/worktrees/modules/integrate.py:815-820 to mcp/src/agents_remember/worktrees/modules/integrate.py:610-613, the extent of the construct the claim is about (the checker named line(s) [610, 642] as its live location)
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation of the `closeout.py` / `integrate.py` anchors after the closeout auto-carry change shifted their lines; the cited symbols and claims are unchanged.
-
-- 2026-09-09T14:10+02:00 — CCR-L42 curator intake created/reconfirmed this one-to-one card against the current uncommitted source bytes (SHA-256 `dd51ab6200088274352370fc8830b1d05df291feb43f5a46f19ccd3b163efff4`, `3248` bytes, `102` lines). Verification remains closeout-owned; no test, review, acceptance, or future commit is asserted.
-
-- 2026-09-08T19:27:46+02:00 — Final L24 identity cleanup: verified unchanged source bytes against the immutable v3 manifest (`dd51ab6200088274352370fc8830b1d05df291feb43f5a46f19ccd3b163efff4`, 3248 bytes, 102 lines); replaced the active whole-tree binding with exact source-file binding and preserved `96b94b2a1c8e57a7a37b19b08cda33db93fe81b6` as historical. Closeout-owned verification metadata and shared overviews were not edited.
-- 2026-09-08T18:14:20+02:00 — CCR-L24 bounded memory-quality repair: updated the active candidate identity to frozen v2 while preserving the prior v1 history; no verification pin was fabricated.
-- 2026-09-08T17:31:25+02:00 — CCR-L24 final-v2 source binding: rebased active R25/R26 citation ranges against the frozen cumulative source; verification remains closeout-owned.
-
-- 2026-09-08T16:42+02:00 — CCR-R26 source-grounded preparation: created the card from the frozen
-  worktree source. Commit-owned verification metadata remains intentionally blank until the source
-  lands in Git.

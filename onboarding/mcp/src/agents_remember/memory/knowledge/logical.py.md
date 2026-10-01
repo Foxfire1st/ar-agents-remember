@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/logical.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/logical.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T23:50+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -171,51 +161,38 @@ column-level primary key). It now checks the selected generation's own key regis
 generation's own column manifest, so a future generation that declared the two inconsistently is refused at digest
 time rather than encoded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The declared primary key per canonical table, including the non-leading-column case. | `PRIMARY_KEYS` | mcp/src/agents_remember/memory/knowledge/logical.py:44-66 |
-| The typed JSON columns decoded at the portable boundary. | `JSON_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema.py:154-162 |
-| The body version and the digest over the canonical body. | `_BODY_VERSION`; `logical_digest`; `logical_body` | mcp/src/agents_remember/memory/knowledge/logical.py:50-50; mcp/src/agents_remember/memory/knowledge/logical.py:74-77; mcp/src/agents_remember/memory/knowledge/logical.py:88-99 |
-| **The one body constructor, and the digest over an already-encoded table mapping — the entry point the portable export seals through, so the scan and the artifact cannot define the body twice.** | `logical_body_from_tables`; `logical_digest_of_tables` | mcp/src/agents_remember/memory/knowledge/logical.py:95-129; mcp/src/agents_remember/memory/knowledge/logical.py:132-135 |
-| The row ordering, the cell decoding and the JSON-text-is-not-knowledge rule. | `_rows_of`; `_cell` | mcp/src/agents_remember/memory/knowledge/logical.py:221-237; mcp/src/agents_remember/memory/knowledge/logical.py:251-263 |
-| **The public spelling of that one decoder, added by 260915-KS-L7 so the selective read and this digest cannot disagree about a stored cell.** | `cell_value` | mcp/src/agents_remember/memory/knowledge/logical.py:240-248 |
-| The reader that calls it, instead of decoding a typed JSON column a second time. | `fetch_invariant_revisions`; `fetch_family_revisions` | mcp/src/agents_remember/memory/knowledge/read_queries.py:78-133 |
-| The key-versus-manifest honesty check, now reached by both the scan and the artifact path. | `_require_declared_keys` | mcp/src/agents_remember/memory/knowledge/logical.py:250-268 |
-| The identity packaging and the defensive namespace read. | `snapshot_identity`; `require_bound_repository` | mcp/src/agents_remember/memory/knowledge/logical.py:129-138; mcp/src/agents_remember/memory/knowledge/logical.py:186-204 |
-| **The file-level identity entry point this leaf added, and the ambiguous-namespace read it depends on.** | `dataset_identity`; `bound_repository` | mcp/src/agents_remember/memory/knowledge/logical.py:141-161; mcp/src/agents_remember/memory/knowledge/logical.py:164-183 |
-| The read-only connection the file-level entry point must use, so a comparison cannot repair what it measures. | `open_read_only_database`; `inspect_schema` | mcp/src/agents_remember/memory/knowledge/connection.py:52-63; mcp/src/agents_remember/memory/knowledge/connection.py:106-122 |
-| The table and column manifest this module derives its body from. | `CANONICAL_TABLES`; `CANONICAL_COLUMNS`; `schema_fingerprint` | mcp/src/agents_remember/memory/knowledge/schema.py:26-42; mcp/src/agents_remember/memory/knowledge/schema.py:47-112; mcp/src/agents_remember/memory/knowledge/schema.py:425-442 |
-| The kernel canonical encoder the digest is computed through. | `sha256_digest` | mcp/src/agents_remember/kernel/canonical_json.py:34-38 |
-| The JSON decoder a typed column is compared through, which refuses ambiguous stored text. | `decoded_json` | mcp/src/agents_remember/kernel/canonical_json.py:46-62 |
-| The store method that exposes the live identity to a caller cheaply, and the sibling half of every comparison. | `snapshot_identity` | mcp/src/agents_remember/memory/knowledge/store.py:363-376 |
-| The publication half that consumes this identity in both directions. | `publication_state`; `dataset_identity` | mcp/src/agents_remember/memory/knowledge/materialization.py:34-99; mcp/src/agents_remember/memory/knowledge/publication.py:215-249 |
-| The batch precondition this identity is compared against inside the transaction. | `_require_bound_context` | mcp/src/agents_remember/memory/knowledge/candidate.py:148-183 |
+- The declared primary key per canonical table, including the non-leading-column case. [1]
+- The typed JSON columns decoded at the portable boundary. [2]
+- The body version and the digest over the canonical body. [3]
+- **The one body constructor, and the digest over an already-encoded table mapping — the entry point the portable export seals through, so the scan and the artifact cannot define the body twice.** [4]
+- The row ordering, the cell decoding and the JSON-text-is-not-knowledge rule. [5]
+- **The public spelling of that one decoder, added by 260915-KS-L7 so the selective read and this digest cannot disagree about a stored cell.** [6]
+- The reader that calls it, instead of decoding a typed JSON column a second time. [7]
+- The key-versus-manifest honesty check, now reached by both the scan and the artifact path. [8]
+- The identity packaging and the defensive namespace read. [9]
+- **The file-level identity entry point this leaf added, and the ambiguous-namespace read it depends on.** [10]
+- The read-only connection the file-level entry point must use, so a comparison cannot repair what it measures. [11]
+- The table and column manifest this module derives its body from. [12]
+- The kernel canonical encoder the digest is computed through. [13]
+- The JSON decoder a typed column is compared through, which refuses ambiguous stored text. [14]
+- The store method that exposes the live identity to a caller cheaply, and the sibling half of every comparison. [15]
+- The publication half that consumes this identity in both directions. [16]
+- The batch precondition this identity is compared against inside the transaction. [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The digest deliberately excludes Git commits and
 ledger rows, so nothing here reads a second repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-20T11:53:49+00:00: Generated citation repair: `snapshot_identity` repointed to mcp/src/agents_remember/memory/knowledge/store.py:363-376. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T19:11+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): **replaced this card's central identity invariant, because the encoder is now parameterised over the selected generation.** The card asserted "**All ten tables participate.** The body is derived from `schema.CANONICAL_TABLES`" — that was the exact statement that stopped being true the moment a second generation existed, and it was worse than incomplete: a generation-1 dataset read under generation 2's live manifest would have digested over tables it does not have, silently changing the identity of data that never changed. The corrected invariant is the property that now holds: **the digest is total over its own generation's manifest** (a generation-1 dataset still digests over generation 1's ten tables including the empty ones, a generation-2 dataset over all sixteen), an absent manifest table is an empty list rather than an omission and a table mapping that omits one of its own generation's tables is **refused** rather than digested, a table that appears or disappears *within* one generation is still a difference, and **no digest is ever computed over the intersection of two generations**. Every entry point now takes a generation record or its schema name — `logical_body`, `logical_body_from_tables`, `logical_digest`, `logical_digest_of_tables`, `snapshot_identity`, `dataset_identity`, `_rows_of`, `_require_declared_keys` — with `resolve_generation` refusing a name no registered generation declares, and `snapshot_identity` reporting the selected generation's schema name as the identity's `schema_version`. The card also records the move a reader must not misread as a behaviour change: `PRIMARY_KEYS` and `JSON_COLUMNS` now live in `schema.py` (declarations byte-identical) and this module re-exports them under their shipped names, because a generation record must be assembled without importing the module that consumes it; `dataset_identity` now reads the generation from the file (`generation_of_database`) and hands that record to `snapshot_identity`, so the digest is assembled under the same generation `inspect_schema` validated. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp.
-- 2026-09-16T23:50+02:00 — 260915-KS-L7 curator (uncommitted change set on `ar/260915-ks-l07`, base `4eb2b199`): **recorded the one addition this leaf made — `cell_value`, the public spelling of the decoder every reader of a stored row uses.** It is a thin delegate to `_cell`, so there is still exactly one decoder, and it exists for the same reason the body has one constructor: the selective read decodes stored rows of its own, and a private re-implementation would let a read page and the logical digest disagree about what a dataset contains. The card states that consequence explicitly (one decoder, two names, no second behaviour) and names `memory/knowledge/read_queries.py` as its caller. The citation range for `_cell` was re-derived against the working tree, because the new public function sits between `_rows_of` and `_cell` and moved the private one down by eleven lines. Verification metadata is **not** advanced: the code commit does not exist and closeout owns the stamp.
-- 2026-09-16T17:45+02:00 — 260915-KS-L6 curator (uncommitted change set on `ar/260915-ks-l06`, base `7db50f8f`): **recorded that the digest definition is now literally single.** The portable export needs to seal a table mapping it *decoded from an artifact* rather than scanned from a database, and the repair that made that honest was to give the body **one constructor** — `logical_body_from_tables`, with `logical_digest_of_tables` over it — which `logical_body` now delegates to instead of assembling `body_version`/`schema`/`user_version`/`schema_fingerprint` itself. This card records the consequence a later reader must not flatten: **there is one digest definition in this package, not two**, the export path seals the same value `logical_digest`/`dataset_identity` returns for a dataset (that equality *is* the artifact contract), and the `_require_declared_keys` honesty check runs in both paths because it lives in the shared constructor. Every citation range below was re-derived against the working tree, because the new functions moved every anchor after them. Verification metadata is **not** advanced: the code commit does not exist and closeout owns the stamp.
-- 2026-09-16T11:30+02:00 — 260915-KS-L4 curator (uncommitted change set on `ar/260915-ks-l04`, base `76c7697c`): **recorded the file-level half of the dataset identity.** The card's `KS-R04` forward reference is now the shipped contract: `dataset_identity` reads one database *file*'s identity through a read-only connection — so a comparison pass can never repair the artifact it measures — and `bound_repository` is the read that makes "a dataset this code addresses" precise by refusing more than one namespace row instead of picking one. The card now states that the publication half consumes this module in both directions (a live candidate through `store.snapshot_identity()`, a closed file through `dataset_identity`), which is why the two can be compared at all, and that every file-level failure is a `KnowledgeStorageError` rather than an identity a caller could mistake for a measurement. Citation ranges were re-derived against the working tree, four rows whose ranges no longer held their anchors were corrected, and this card's `governingOverview` link was repaired from `../../overview.md` — the application route — to the three-level path from `knowledge/`. Verification metadata remains empty until closeout stamps the code commit.
-- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): created this one-to-one card for the new canonical logical dataset identity. It records what the body includes (all ten tables in manifest order, primary-key row order, typed JSON decoded) and what it deliberately excludes, the non-leading-column primary-key case that made the encoder's own honesty check necessary, the separate `body_version`, and the reuse rule that later publication and merge leaves compare this digest instead of defining a second encoder. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

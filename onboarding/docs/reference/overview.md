@@ -2,12 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | docs/reference |
-| doc_type | route-local-overview |
-| lastUpdated | 2026-09-30T15:32:24+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
 
 ## 260928-MIK-L38 The Tool Reference Names The Folder Master
 
@@ -300,150 +295,13 @@ master-to-parent integration; standalone and organizational leaves retain indepe
 review. Complexity and loop settings do not disable or move that atomic integration gate, and
 the route-review rule does not replace certifying evidence requirements.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The following current source owns the changed behavior; no external domain source is configured for this slice.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The normalized public input has only two commit legs. | `memory_content_message`; `EffectiveCloseoutInput` | mcp/src/agents_remember/models/closeout/input.py:128-166 |
-
-## Update History
-- 2026-09-30T15:32:24+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **route body updated for MIK-R38.** Added the section "260928-MIK-L38 The Tool Reference Names The Folder Master" at the top: the `lifecycle_finalize_task` row's two new clauses (rulings 12:33:07 Q3, 13:11:32 note 5, 14:12:52). The installed fixer normalised one row into `models/closeout/input.py`, a file this leaf did not change (its two overlapping ranges merged into `128-166`). No verification stamp was advanced.
-- 2026-09-24T12:34:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **route body updated for the catalogue's two edits.** `docs/reference/skills.md` gains a `c-14-knowledge-bootstrap` row and extends the `c-13-install-and-onboard` row so the knowledge foundation appears among the stages a first run reaches. The section states that both edits describe the shipped skill tree rather than define behaviour, and that the skills' canonical home is root `skills/**`. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T08:15:00+00:00 — 260915-KS-L9 curator (memory-quality closure): migrated this route's reference tables from the superseded `| Finding | Citations | Source Path |` shape — unbackticked `L..` ranges beside markdown-library links — to the canonical `| Finding | Anchor | Source |` shape, replacing every range-and-link pair with a real anchor naming the construct the claim is about and a `path:start-end` source that holds it. No claim wording changed; the underlying assertions were re-read against the code worktree and still hold. Recorded here because a reference-table migration is a body update and needs its history entry.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Corrected reference routing and current delivery vocabulary. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-13T15:03:18+02:00 — 260831-LOCR-L36 round 2: corrected this route's description of `execution-topology-migration.md` so it agrees with the guide's corrected text. The IAS execution-topology impact now carries the developer ruling — a missing `executionGraph` selects `atomic-sequential`, which describes the sprint's shape (every commanded master executes atomically) and serializes nothing, because a graph-less sprint declares no dependencies — alongside the per-contract activation account. Read the corrected guide to confirm: the intro's "describes the sprint's shape and serializes nothing" and "selecting one never pauses another" (guide lines 5-11) and the release-notes "a sprint shape, not a serialization mechanism (nothing serializes a graph-less sprint)" (guide lines 122-125). No route ownership changed; verification metadata remains closeout-owned and no acceptance claim is made.
-
-- 2026-09-13T14:24:00+02:00 — 260831-LOCR-L36 activation re-keying: corrected the IAS
-  execution-topology reference impact so it matches the rewritten `execution-topology-migration.md`
-  — graph-less scheduling is documented as per-contract activation (each series contract owns its
-  record; the sole waiting reason is `atomic-series-reconciling`; a foreign master is never a reason
-  to wait), not as one source-pair-scoped selection that pauses a former master. The 2026-08-26
-  history entry below still carries the superseded source-pair wording and is retained as history,
-  not as a current claim. Source documentation only; verification metadata remains closeout-owned and
-  no acceptance or test claim is made.
-
-- 2026-09-10T00:46+02:00 — CCR-L42 route reconciliation: recorded the current applicable-review
-  and atomic-integration semantics from `docs/reference/settings-json.md`. Source inspection only;
-  verification metadata remains closeout-owned.
-
-- 2026-09-05T07:10+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reconciled explicit repository-profile authority, fresh/recovery result paths, diagnostic Vitest boundary, and known fixer safety limitation. Verification records current source claims, not execution or acceptance.
-
-- 2026-08-30T12:42+02:00 — 260821-ARSPAWN-L3 review correction: distinguished ordinary
-  architect bootstrap from an explicit named-role takeover and made the structural role-table
-  rows' non-settings boundary explicit. Verification remains closeout-owned.
-
-- 2026-08-30T11:47+02:00 — 260821-ARSPAWN-L3 reconciled the public reference route to one
-  `dispatch_agent` vocabulary, one-call architect bootstrap, disjoint plane/ambient authority, and
-  no fallback. Verification remains closeout-owned.
-
-- 2026-08-26T05:20+02:00 — Reconciled the reference route with the source-pair selector, paused
-  live-master preservation, reconciling-before-active admission, retained conflict
-  continuation/cancellation, unlocked task authoring, disposable queue ownership, and
-  no-fallback boundaries documented in `execution-topology-migration.md`.
-
-- 2026-08-24T15:04+02:00 — Reframed the reference hot path around canonical task/door/journal/
-  locator ownership, disposable queue rebuilds, exact retry/terminal/discard contracts, and preserved
-  the concurrent DAGQC discriminated memory-quality request contract.
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: execution-topology-migration.md gained the served-build preflight operator section (excluded file; onboardable surface unchanged). Verified at code commit de3a0fd9.
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `execution-topology-migration.md` was
-  retitled from the migration cutover to graph authoring — the atomic-sequential default covers
-  graph-less sprints and `author_execution_graph` bootstraps the graph; the reference-route model
-  is unchanged. Verification remains closeout-owned.
-- 2026-08-18T12:00:00+00:00 — No route impact: L9 adds `execution-topology-migration.md` (operator migration/rollback reference); the reference-route model is unchanged.
-- 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-14T11:29+02:00 — R39 curator: reconciled the documentation route with the final
-  settings and altitude contract. Verification remains closeout-owned.
-
-- 2026-08-14T06:25+02:00 — L23 final candidate review: corrected quality references to
-  Dagger-only acceptance and fail-closed host test startup; removed the stale local-executor and
-  host-managed-full descriptions. Verification remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 documents guarded MCP citation repair, task-addressed asynchronous closeout/integration and cancellation, and exact `local`/`dagger` quality-executor policy with fail-closed selection. Verification provenance remains closeout-owned.
-
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: corrected the
-  settings-reference route from a mandatory 2 GiB cap to host-managed memory
-  with an optional explicit cap. Verification metadata remains pinned until
-  closeout stamps L24.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the four changed reference files
-  with structural agent control and the enclosure-local curator checklist; no exact-session public
-  control or duplicate drift-report authority remains.
-
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1: `settings-json.md` now documents default-on completion
-  close, the exact durable report blocker, owner exclusions, landed/archive opt-out, and the
-  cheap-first quality/retry contract.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: reviewed the reference route for sprint-bound command
-  seats and migration-only unbound language. Verification metadata remains pinned until closeout.
-
-- 2026-08-09T12:08+02:00 — 260713-TES-L5 route impact: recorded the escalation-family
-  removal, the `escalationBudget` load-shed re-wiring, and the fact-relay terminal vocabulary
-  in the reference docs; superseded the L4 "reserved/removed" row in place. Verification
-  metadata pinned until closeout stamps the 260713-TES-L5 commit.
-- 2026-08-09T06:48+02:00 — 260713-TES-L4 route impact: recorded the `mcp-tools.md` inbox
-  landing/supersession rows (N16/R11/N11) and the `settings-json.md` escalationBudget reserved
-  wording (N3, ladder demolished as policy). Verification metadata pinned until closeout stamps
-  the 260713-TES-L4 commit.
-- 2026-08-08T21:20+02:00 — 260713-TES-L1 route impact: `settings-json.md` documents the
-  `orchestration.agentNotifier` family with the compatibility-window alias, and `harnesses.md`
-  prose was refreshed to agent-notifier wording; route shape unchanged. Verification metadata
-  pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the corrected hook-tier and
-  closeout wording in the public references plus the `qualityGate` settings family. Verification
-  metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
-
-- 2026-08-05T03:47+02:00 — 260731-EFA-L6 curator: recorded the reference-route impact of the
-  contract-scoped memory tools (`contract_path` on `drift_check`, `memory_quality_check`,
-  `route_index_refresh`, with write behavior and `onboardingRoot`), the required-`--contract`
-  `memory-citations` repair rule (moves only), and the new task-document/lifecycle rows
-  (`worktree_cleanup` non-terminal, `lifecycle_finalize_task`, `task_doc`, `task_reopen`).
-  Verification metadata remains pinned.
-- 2026-07-31T16:20+02:00 — 260731-EFA-L2 curator: `mcp-tools.md` now names
-  `mcp/src/agents_remember/mcp/registration/` (one module per tool family, `TOOL_REGISTRARS` walked
-  by `create_server`) as the authoritative tool surface instead of `mcp/server.py`. Flagged the
-  three gate facts these pathRules-excluded reference documents predate: no baselines or exemption
-  files exist anywhere in the gate, the binding coverage gate is a 100% per-diff floor, and CRAP
-  consumes branch coverage at threshold 20.0. The closeout gate order is unchanged. Verification
-  metadata remains pinned.
-- 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: flagged the two commit-gate facts these public
-  reference documents now predate — the fast/full hook tier split (pre-commit no longer runs the
-  wrapper) and the removal of the repository-name condition from the closeout gate. The skill-copy
-  check claim remains true in both tiers. The referenced `docs/` sources are pathRules-excluded, so
-  the durable contract lives on the root overview. Verification metadata remains pinned.
-
-- 2026-07-24T14:44Z — 260718-CHATS-L5I preview-gate remediation: refreshed the
-  route body for the public MCP closeout description, strict
-  quality-before-commit worktree order, and pre-commit/pre-push skill-sync
-  checks. Verification metadata remains pinned until the code commit.
-
-- 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: aligned the reference route with the final
-  three-source Claude startup contract, live native advertise/launch/set evidence, dynamic Fable
-  switching, and the rule that captured versions/catalog rows remain evidence rather than pins.
-- 2026-07-15T23:31+02:00 — 260714-ACPUI-L2 closeout-preview delta: replaced the stale static
-  registry/session-command launch summary with settings-owned complete selection, token-free
-  per-install catalogs, model-local effort validation, native Claude/Codex/Pi launch channels, and
-  honest startup evidence.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the reference route body for the
-  negotiated capability model, full reload ownership, and deferred R10 boundary.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the reference route for structured harness
-  capability negotiation, full serving reload ownership, and the deferred R10 boundary.
-- 2026-07-14T12:00+02:00 — 260713-PHA-L1 closeout remediation: refreshed the reference route body for
-  the final harness effort policy and explicit control-bridge boundary.
-
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator: established governing route coverage for the final candidate.
+- The normalized public input has only two commit legs. [1]
 
 ## 260921-ICR-L23 The Raw-Git Identity Boundary Reference
 
@@ -460,6 +318,3 @@ The matrix below that prose is the code's own table rather than a summary of it:
 shapes with their measured signature, the boundary state each produces, whether this system
 reconciles it, and the recovery route where one exists. Four of the six are **unsupported** and
 say so instead of being implied by omission, which is the property the section exists to keep.
-
-## Update History
-- 2026-09-23T20:30:00+02:00 — 260921-ICR-L23 curator (memory worktree only; no code changed, no commits; leaf base `473ad8242bb4c22bdabed5d5253767350381eb3e` plus the working-tree delta): **this route's governed reference gained the raw-Git identity boundary section, and this overview now states what it carries.** `docs/reference/worktrees-c09.md` gained **Raw Git Identity Boundary** — the measured identities, the no-reconciliation rule, the `stale` and `not-measured` outcomes, and the support matrix with its four explicitly unsupported transitions. The new section above is a route-level body change, not a metadata refresh. **No verification stamp was advanced**: the candidate is uncommitted, so no commit holds the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.

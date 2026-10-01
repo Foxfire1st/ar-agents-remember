@@ -1,0 +1,34 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "The task entry opens the reviewed comparison through one compact control whose +/- numbers are that comparison's changed-intent counts - revision heads only one side holds, under the reviewer's own head rule and pair preflight - never change-set line totals and never a zero for knowledge that was not read; for a tree comparison the control also states the attribution of the changed files (unexplained and unknown counts, or that it is partial or unknown), never a zero for an attribution that was not measured; the entry reads no subject catalogue, and its counts are re-validated at the ruled points where the developer looks at it again.",
+  "id": "FAM-WEF4M4H1",
+  "members": [
+    "INV-115RDW8H",
+    "INV-74578B97",
+    "INV-8BYGSPZF",
+    "INV-8FWJM8RR",
+    "INV-EZ8QKFX6",
+    "INV-R93S8Y30",
+    "INV-SVZY1FHR",
+    "INV-T0EWDB7H",
+    "INV-TH4KXFTX",
+    "INV-WCEGX72X"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "7e79ca05-6857-443c-ab8c-f8095e7a799e",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "routes": [
+    "dashboard/src/data",
+    "dashboard/src/panels/detail-panel",
+    "dashboard/src/panels/review",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/models/knowledge",
+    "mcp/src/agents_remember/serving"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Honest changed-intent entry"
+}

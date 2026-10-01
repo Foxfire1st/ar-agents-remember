@@ -1,0 +1,723 @@
+{
+  "path": "mcp/tests/test_capsule_serving.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The extension identifier and the two method names the protocol cases exercise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:15709ccd2d1b8ead314f0ec02cce6fc8f34d0ff200577540c0bd2982c4f37489",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILLS_EXTENSION_ID"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:8d7542f2b9501504037f937f301c177dd83b3a2d3e568b3db3a3a49d170d2ad4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILLS_LIST_METHOD"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:124eba9f8cc94eda97bb89bdfc590213d5f6b82bc1472613c603b034e53a333f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SKILLS_GET_METHOD"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The serving guarantees: origin and revision kept, revision re-checked, no grant, no body in the listing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:8df423016ab6ab77cda9226a55583f9a447da318a07939889fcb635e278e3660",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_served_skill_keeps_its_origin_and_revision"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:151cf1b44b57d4d43437aecaf75e7c3230b8c28deab6f47b4336fa20e0263673",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_read_refuses_a_body_whose_bytes_changed_since_the_catalog"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:e8181a0720290a24893083991566ddd792976aeb263d08e9046d7d6ef75c9097",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reading_a_skill_does_not_grant_the_tools_its_frontmatter_names"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:fdc3df03e6984138a4dd82eb0bd84582f4754ab3779042878e6c006845bdd1f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_discovery_registry_is_not_the_model_visible_catalog"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 783,
+              "kind": "line_range",
+              "start": 783
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
+            "locator": {
+              "end": 882,
+              "kind": "line_range",
+              "start": 882
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:d443d8d1377b817966a41009614cf01588c3f20bf860224f1ece4caf8ff52edd",
+            "locator": {
+              "end": 797,
+              "kind": "line_range",
+              "start": 787
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:7d10bda865879e1f2d451ede7b79f3594c5fb78dba139d0e47b217332d062ff3",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 800
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:23240413395f0870408b2e3081f13621edce1e1fd1bfd54b1e279e2fe0c1da41",
+            "locator": {
+              "end": 849,
+              "kind": "line_range",
+              "start": 815
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:2b0607b723b829d47ef5ccf50b50809eed6a8297c71b5cdd98c349e47383b521",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 886
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two real-process conformance cases: the exchange (capabilities, both methods, resources, refusal) and the traversal refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:b8e12a88c690222106abb3e467066887f175eac7ea90103e3c71b33d0c844b3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_client_and_server_exchange_over_the_installed_sdk"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:29abe39404e8e3d0e624d5a5a0dcc63bee02fac8f9c793602eb5f1582bf7d4a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_server_process_never_serves_a_file_outside_a_skill_directory"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 1195,
+              "kind": "line_range",
+              "start": 1195
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:bbf8e9abc5153061cc1ab722ff28e4cf18e96fdd7cdcea32589f21a4155e3e6f",
+            "locator": {
+              "end": 1268,
+              "kind": "line_range",
+              "start": 1198
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:9e51e617d8b80854aade610ddf36be3629d5aef53c203a8e9d1722855ee2d878",
+            "locator": {
+              "end": 1302,
+              "kind": "line_range",
+              "start": 1271
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The case that keeps the seeded-mutation evidence honest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:0dddbfa450e25ce628e01f602c9101b9ade14e60b53ec0ea6299a655393276f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_mutation_harness_can_actually_fail"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:1b3ad9ef85fdefc3c65a86b98fa487e81c2882584e2540cac14186a830713f7b",
+            "locator": {
+              "end": 1317,
+              "kind": "line_range",
+              "start": 1305
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The evidence-lane row this module is selected by.\n\nAnchor: \"mcp/tests/test_capsule_serving.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "819c3a7a77b9b9d9bd0e10eea1d58fbc3bbd3782",
+            "content": "sha256:9d89ae673ca230b8f459a07683e4c73551e7256fe3d81e7baea4be088d79ff85",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The SEP entry shape the entry cases assert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+            "content": "sha256:8b3460de256e9488c1bcf005764605e8fa56496b0c59d589424108ae83898a9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_document"
+            },
+            "path": "mcp/src/agents_remember/models/skill_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixture world and the synthetic corpus (including its nested skill) every hermetic case is built from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:937522b87e25da9a43cc1ed8072f32f7c6a3b4db64f8b34c8d444d8c4b6a7190",
+            "locator": {
+              "kind": "symbol",
+              "name": "World"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:c8a571b003b0285ba3e50ee7dce8812c3324051b17fb186e8a8203d57710184f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_synthetic_corpus"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:6597a52ff10473553053b5559d10e5e5569f09f652389dad8b992c4a37b5bdfc",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 308
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The admission guarantees: no role acquisition by string, no caller-selected source, no write to the read tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:bccb2a34df8aeeb72d9049f1da7f3a06c727cc27ae808b84195cc0d9d52a8027",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_caller_changing_the_role_string_cannot_acquire_another_role"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:2017c073bfe6fb4d089e178a3a97208d39e911447c2891a257dcab12326a3304",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_decides_the_source_set_not_the_caller"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:dbe365f572ee066e721555063c41b65310ad1b98c6e19edd5c9330e06f600dcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_capsule_operation_writes_nothing_to_the_tree_it_reads"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:e98145f22c7fbdc2d188bc0ede97b49f38535d9bd2184dea1f63969516e22ace",
+            "locator": {
+              "end": 639,
+              "kind": "line_range",
+              "start": 639
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:80aaa876d10f9738345388840750fd59ae8536df35514d121257d017387034f8",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 690
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:754f73279f0ba1a48adae5d6b922c5bb5bf1deac2e4bfe35a353955adce26d0f",
+            "locator": {
+              "end": 673,
+              "kind": "line_range",
+              "start": 655
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:430bb4c791a3e2af89f13aceeb0b64df102b98105fc3d0c2f1007e9ca6d94145",
+            "locator": {
+              "end": 706,
+              "kind": "line_range",
+              "start": 694
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:ac60544dd0940c7fce96bdb15dc9dcc0bbb4ffdeb1891d47e95f16671f76c3de",
+            "locator": {
+              "end": 652,
+              "kind": "line_range",
+              "start": 643
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Altitude admission is pinned across every role the document can carry, so a hardcoded role fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:6c9c54e1157395a5a129f8673ed9316c38d0502d86c50915a51631c928ee5071",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_altitude_admission_admits_every_role_the_document_can_carry_and_refuses_the_rest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:ce78da61556e4d10644b7a7c2b470fd10ba14bfd62d46c594b84d6154aba3c8d",
+            "locator": {
+              "end": 1450,
+              "kind": "line_range",
+              "start": 1410
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The re-read and the refusal are separate, correctly-named behaviours.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:b09d8d5e945152990ce57bcd51775a8cc29cde422b5e13f9276d8bc8e91064c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_task_document_is_read_again_and_the_capsule_carries_the_new_digest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:594f1d24b38a9adf248435526d3a340ecb64bcad4a02b61d37989eab1dd2ad13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_admission_whose_bytes_moved_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:cae17264c4ceea254fd9e956b441fc35864011c2e16dd16026f45aa36bad1b97",
+            "locator": {
+              "end": 705,
+              "kind": "line_range",
+              "start": 705
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:96fb1febcf0c37cb46c7e92ff41c9df7981c39254397e3694a890e3ebb2035ba",
+            "locator": {
+              "end": 738,
+              "kind": "line_range",
+              "start": 709
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:268a76e9b7a7efea9534990725834c9d793af06af33c674542b62320579a9a0e",
+            "locator": {
+              "end": 779,
+              "kind": "line_range",
+              "start": 741
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The guards that round 1 found unpinned, each now driven directly by its own case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:8c299ac6f68f2b81ecbd0b9a131c0e8608296939f5b0afb935e41bdec2a8afc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_catalog_record_that_escapes_its_skill_directory_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:a93325d13b2b79be21da00cdf92251a99a5306c5430cfb4898da9b6681a8fe86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_reader_refuses_while_a_skill_cannot_be_served"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:378afdfef8b76860e35c51e2f6d4a0ed9d3bf44637dfbe22ef07839d1b4f274e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_skill_whose_directory_name_disagrees_with_its_name_is_recorded_not_served"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:a464c5c90ae7e6c60b75a33933f6ea136eefc3dbb7650e907500009240e000b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_extension_declaration_is_installed_once_per_server"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 1321,
+              "kind": "line_range",
+              "start": 1321
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:becf51c3bef5b058b4cb0339e76bec529111010ffdfecbc93e26f7ae957c89b0",
+            "locator": {
+              "end": 1349,
+              "kind": "line_range",
+              "start": 1325
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:c44d7746fe38276eae7f14af9331ab42e5ced91b43e1b307f3210505528521db",
+            "locator": {
+              "end": 1367,
+              "kind": "line_range",
+              "start": 1352
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:abfe0a2a44be3db6c4792ff44d25a64606a6338883ac3ac2b75b146aa6530cea",
+            "locator": {
+              "end": 1390,
+              "kind": "line_range",
+              "start": 1370
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:58c5cdb5eac0f54b16df586a0c0499539d707908cbbb1e899c1b1bba85f26971",
+            "locator": {
+              "end": 1407,
+              "kind": "line_range",
+              "start": 1393
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The SEP entry contract and this server's own index shape, asserted separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:5648d5b6e1c8200caad56717af8affec2584f1fd9a7a9ceee33399aeaa5805c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:7f8dabee218e05a3017e2d1037303ccb061d883f63e0039f70394874c98f559d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:7cdd8e8acc32985196662e7f577b364d2278c6b9e076506fadb7604e338e6f4c",
+            "locator": {
+              "end": 1008,
+              "kind": "line_range",
+              "start": 1008
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:61c08aaf49ada80c0fa72a39ba8af18ecb253d6e8dc875aea59002e16dca45d0",
+            "locator": {
+              "end": 1075,
+              "kind": "line_range",
+              "start": 1044
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:6a5284d975ca7896cc8f82935df8c5b0030bde2d51e539550a7dcf3fc349526e",
+            "locator": {
+              "end": 1041,
+              "kind": "line_range",
+              "start": 1012
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Nesting is published flat like any other skill.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:a44f494a228af6482216dcdec687a84d4102fb7523d1fe43b4d9fa1d94200b89",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_nested_skill_is_published_flat_like_any_other"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
+            "content": "sha256:438566dcb866e954ea963e41284ac4363533c5c59cd38f377ac7b3f4b1f03c49",
+            "locator": {
+              "end": 1542,
+              "kind": "line_range",
+              "start": 1496
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,195 @@
+{
+  "path": "dashboard/src/data/setClient.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact snapshot, set, pair, cycling, acknowledgment, and watcher orchestration.\n\nAnchor: `refreshSessionSnapshot`, `sendSet`, `startPairChangeFlow`, `acknowledgeSetAttention`, `cycleEffortRequested`, `startSetPromotionWatcher`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:1727a2b194dce457d5c2e618159e35ca6eecbfdb6bfdec873343ef6e0e247420",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshSessionSnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:5c9b106eb6d13eae4e1869dc85d471ac90db81c4e8cef24daa37879d4141f5df",
+            "locator": {
+              "kind": "symbol",
+              "name": "sendSet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:c0ba27ddf06208226ac847d155c326da394282fe5c111c03e7cd4f9621988c05",
+            "locator": {
+              "kind": "symbol",
+              "name": "startPairChangeFlow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:224ffc3eeb190d29fc8109c3ae2230abf90b786469061e5155b3eb6c05e43ca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "acknowledgeSetAttention"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:a9f32847179baf7c52fde8ff95901616d1c6bb127442da7d44fd361cc9790331",
+            "locator": {
+              "kind": "symbol",
+              "name": "cycleEffortRequested"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:20093927c0e6bc632c67ed3e9400814f384c02c94fdb5b18e96007eb695a73a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "startSetPromotionWatcher"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Full I/O and transition regression matrix.\n\nAnchor: \"sendSet — wire + honesty table application\", \"refreshSessionSnapshot (R1/F16)\", \"serialized pair change (R5)\", \"cycleEffortRequested (R7)\", \"startSetPromotionWatcher (R4 + v3 drift delta)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7fbabd235ed6e7c1111d1561d16bdfa3a26a03a7",
+            "content": "sha256:7a5d918943d87336d129da69c71ef35d104b4190c6ba7c545455e4a5ab73000c",
+            "locator": {
+              "end": 697,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "dashboard/src/data/setClient.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Acceptance and readback policy.\n\nAnchor: `reduceSetResult`, `resolvePendingsByReadback`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da4f1c6ffddb8a1cb523b9deb379df3ce4ee123e",
+            "content": "sha256:52b49af7458fa71a381db34c403a28e8b46c92122a1df96a7ec4e7c427cc77eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "reduceSetResult"
+            },
+            "path": "dashboard/src/data/setAcceptance.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da4f1c6ffddb8a1cb523b9deb379df3ce4ee123e",
+            "content": "sha256:17abdcde9682cf25b223fbfa4af104ba6b08856fd213e8e2d811422a30458eb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolvePendingsByReadback"
+            },
+            "path": "dashboard/src/data/setAcceptance.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Pair serialization machine.\n\nAnchor: `startPairChange`, `applyPairStepResult`, `applyPairReadback`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:b3608b3e37700576eccb3fe77f892c60c304fc4462d6f245542611d87f09f319",
+            "locator": {
+              "kind": "symbol",
+              "name": "startPairChange"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:3a05288cf06ce1bea8bd87fc746f9b597db942146f3057213eda6099a1a5b84b",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyPairStepResult"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:8519eaf304a46d494d50598dad873782d6da6cb5d96f47b828b6ef0b2a8f5fe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyPairReadback"
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Store state and mutation boundary.\n\nAnchor: `SessionCockpitState`, `sessionCockpitStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:e95365997da76cc3d9e6173bbff3f8be7549f72032367411056386ea84d98217",
+            "locator": {
+              "kind": "symbol",
+              "name": "SessionCockpitState"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:4ce91b1de2ede1af30146eefb690e1a4f70ca2b5e3429658a30cdb142391141a",
+            "locator": {
+              "kind": "symbol",
+              "name": "sessionCockpitStore"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

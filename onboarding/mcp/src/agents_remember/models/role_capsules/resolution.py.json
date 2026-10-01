@@ -1,0 +1,238 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/resolution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The override and selection-reason value types this module consumes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:018b25275a0a25d1a661a82c86407132d4259bc2d466fdc79259012b99591dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleOverride"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:cba9d62e564b34be6d4ed08e317e29ef2237ced4b7b8376256c3d29753bd57da",
+            "locator": {
+              "kind": "symbol",
+              "name": "SELECTION_EXPLICIT_SUPERSESSION"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:7ddeae0b61d0d5af213ccdacd15558c0a509f511394adfe44396c028137a49c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUPERSEDE_DUPLICATE_IDENTITY"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "content": "sha256:6c4c91ca970d21c724f26cc70594ccad1391f70466e35f1db2d2d268b11e9d41",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stopped-conflict code the equal-authority case resolves to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:de62d041b35f690f211587d0373489a3d822172302be3618ea7cef8a3ae3f693",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_EQUAL_AUTHORITY_CONTRADICTION"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:1b181775edf895c52908ef6e8e78b3974c94e62ccf59faab32b49a2ca6d751fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_UNKNOWN_SUPERSESSION"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:47eb20b20354ce148c0a100d5a6c557513b12011b822c685d2ef42096877b037",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_SUPERSESSION_CONFLICT"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compiler step that calls gathering and resolution in this order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
+            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_role_capsule"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declared plan and admitted sources this module reduces over.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:f6f6f803b52d4e84d61fdb6ccbca4b243307ecaa0b9e1d01fb3e64e122ee1f26",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleDeclaredInstruction"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:f5f3ac449878a4e5e5a4fedea401c505803868766c9be6b437e5f68ac6755006",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSource"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:757d3bdc99b4005af08a23b3e26ffbae98e03233e187efdd00b2e895859cc398",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The collapse, stop, override-provenance and override-ordering cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:61a8f180e721805c81b0eb7662bfbd18266fb510a5b394a63ec8e79020a124de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_identity_with_byte_identical_content_collapses_to_one_block"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:14193973518627c93f4628ade7f75ea9c079cdb6f200f935ade3e6ba44c9b63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_identity_with_a_different_body_stops_compilation"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:8bedfd1611a5b01d99c97d7ad5c839bad4d42e64aa0cec7aef9c849f6250074b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_explicit_override_records_its_provenance_and_selects_the_winner"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:49ce4848c207811e6dd05dd1155e8e9801e1067edebd2787abdb42fdcbad3769",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_override_that_pulls_an_earlier_tier_over_a_role_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:4cf2232b1b3bcb13a8bc13f7ebe15aab241cc689041c2529425dfc8beacd5f35",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_overrides_for_one_identity_are_refused_as_unorderable"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36c79c71932b778ea789062331c8d2f6f9a7593e",
+            "content": "sha256:2d0aeaed5427ec5bb7368fea9423ab0740f22a0c23a623068a1140a76ba9b9c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_override_may_replace_a_block_from_a_later_tier"
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,133 @@
+{
+  "path": "dashboard/src/dev/benchProbes.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`cockpitScenarios.ts` imports `CockpitBenchProbe` + `CockpitResetAudit` from this type-only module.\n\nAnchor: \"./benchProbes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
+            "content": "sha256:1c2299da8d03544b7480cad5461af568d1d6082c71eae746084d51f8bc3c7a35",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/dev/cockpitScenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`cockpitScenarios.ts` installs the `window.__cockpitBench` probe used by the browser drivers.\n\nAnchor: \"window.__cockpitBench =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
+            "content": "sha256:458689e0f040c47b0414c8fcc3e02b7b5c59af95f3bc259056909bc80673f284",
+            "locator": {
+              "end": 780,
+              "kind": "line_range",
+              "start": 780
+            },
+            "path": "dashboard/src/dev/cockpitScenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`cockpitScenarios.ts` installs the `__cockpitBenchResetAudit` reset-audit surface.\n\nAnchor: `__cockpitBenchResetAudit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
+            "content": "sha256:96cd510725c01cc499ef66313880d47e80ccd6d632670d15328d1ac22dea6141",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "dashboard/src/dev/cockpitScenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`PtyRenderBench.tsx` imports `PtyFrameStats` + `PtySerializeProbe` from this type-only module.\n\nAnchor: \"./benchProbes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:4ed4060a818da9315fa6b9336c06629fa4b1c492f01f51f885b8d80064d4a97c",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/dev/PtyRenderBench.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`PtyRenderBench.tsx` installs the initial `window.__ptyBench` probe state.\n\nAnchor: \"window.__ptyBench = { done: false\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:cff80180fb00107a30eb12a8b42d8fed189f627c71213125e9e443d0a20ef0a3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/src/dev/PtyRenderBench.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`PtyRenderBench.tsx` installs the real-column-count `__ptyBenchCols` surface.\n\nAnchor: `__ptyBenchCols`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4924c2ebd519c6eb87acf424313b77efc8a2dcb7",
+            "content": "sha256:a0f65ccafe879c03a1b6016ace035d6728e42098fb6deb26f6ee4267ad8a5fea",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "dashboard/src/dev/PtyRenderBench.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The driver TypeScript project includes this file.\n\nAnchor: \"src/dev/benchProbes.ts\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bdc0b3732020bde09dc1498306cabdf10d0262d",
+            "content": "sha256:fdcd1f91214633780831830e01746141b7ce7dcb1576d6fdbaf39fa2acb148d9",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/tsconfig.driver.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/test/fixtures/overrides.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/test/fixtures/overrides.ts`       |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T09:15+02:00                           |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`       |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `../../overview.md`                              |
-
 ## Governing Overview
 
 [dashboard/src overview](../../overview.md)
@@ -106,7 +96,9 @@ file, not caveats on it:
    prop, a store helper, an app-code decoder — still admits an explicit `undefined`, and only the
    project-wide flag would change that.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The mechanism rests on two TypeScript behaviours: `exactOptionalPropertyTypes` (off here) governs
 whether `undefined` may be written into an optional slot, and homomorphic mapped types are what let the
@@ -114,41 +106,24 @@ constraint preserve `O`'s own optionality while adding a demand over it.
 
 External language references retained for reading only: [TSConfig Reference — exactOptionalPropertyTypes](https://www.typescriptlang.org/tsconfig/#exactOptionalPropertyTypes) and [TypeScript Handbook — Mapped Types](https://www.typescriptlang.org/docs/handbook/2/mapped-types.html). These URLs are not repository-relative citation sources.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No repository-relative Domain Documentation source applies; the two external TypeScript references above are retained for reading only. | — | — |
+No repository-relative Domain Documentation source applies; the two external TypeScript references above are retained for reading only.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The defect statement: `Partial<T>` admits an explicit `undefined`, the four reachable impossible fixtures, and why no `wireFixtureGuard` rule sees them. | `conversationPage` | dashboard/src/test/fixtures/overrides.ts:3-12 |
-| The measured rejection of `exactOptionalPropertyTypes` (222 errors / 71 files) and the call-site property the narrow fix has instead. | `exactOptionalPropertyTypes` | dashboard/src/test/fixtures/overrides.ts:14-21 |
-| The three documented limits: fresh-literal-only, one level deep, and only these two modules. | `conversationCapabilities` | dashboard/src/test/fixtures/overrides.ts:23-43 |
-| `RequiredKeys<T>`, `Overrides<O, T>` and `NoOverrides`. | `NoOverrides` | dashboard/src/test/fixtures/overrides.ts:69-69 |
-| The proof that all four rejections fire, that excess-property checking survives, and that the widened-variable case is a known pass. | `diagnosticsFor` | dashboard/src/test/fixtureOverrides.test.ts:72-75; dashboard/src/test/fixtureOverrides.test.ts:82-89 |
-| Consumer: every projection builder takes `Overrides<O, Node>`. | "export function lifecycle<O extends Partial<LifecycleProjection> = NoOverrides>("; "export function projection<O extends Partial<WorkspaceProjection> = NoOverrides>(" | dashboard/src/test/fixtures/wire.ts:241-243; dashboard/src/test/fixtures/wire.ts:329-331 |
-| Consumer: the conversation builders, including the one that is deliberately NOT an `Overrides` (`conversationCapabilities`, per-group and one level deeper). | `conversationCapabilities` | dashboard/src/test/fixtures/conversationWire.ts:103-146 |
-| The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer. | `resolveJsonModule` | dashboard/tsconfig.app.json:2-22 |
-| `tsconfig.driver.json` covers the Playwright suites (`e2e`, `e2e-chats`, `e2e-production`, `perf`) and also omits the flag, which is why a call-site constraint reaches further than the flag would have. | "e2e-chats" | dashboard/tsconfig.driver.json:2-30 |
+- The defect statement: `Partial<T>` admits an explicit `undefined`, the four reachable impossible fixtures, and why no `wireFixtureGuard` rule sees them. [1]
+- The measured rejection of `exactOptionalPropertyTypes` (222 errors / 71 files) and the call-site property the narrow fix has instead. [2]
+- The three documented limits: fresh-literal-only, one level deep, and only these two modules. [3]
+- `RequiredKeys<T>`, `Overrides<O, T>` and `NoOverrides`. [4]
+- The proof that all four rejections fire, that excess-property checking survives, and that the widened-variable case is a known pass. [5]
+- Consumer: every projection builder takes `Overrides<O, Node>`. [6]
+- Consumer: the conversation builders, including the one that is deliberately NOT an `Overrides` (`conversationCapabilities`, per-group and one level deeper). [7]
+- The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer. [8]
+- `tsconfig.driver.json` covers the Playwright suites (`e2e`, `e2e-chats`, `e2e-production`, `perf`) and also omits the flag, which is why a call-site constraint reaches further than the flag would have. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository or external-system boundary is involved; this is a type helper for
 in-repo test fixtures.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Import and boundary review found the same-repository `wire.ts` consumer. | "import type { NoOverrides, Overrides } from \"./overrides\";" | dashboard/src/test/fixtures/wire.ts:62-62 |
-| Import and boundary review found the same-repository `conversationWire.ts` consumer. | "import type { NoOverrides, Overrides } from \"./overrides\";" | dashboard/src/test/fixtures/conversationWire.ts:48-48 |
-
-## Update History
-
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 8 citation rows and rewrote 3 superseded prose line citations as cit: forms; moved the two external typescriptlang.org references out of the Docs References citation table into a reading-only prose line (they are not repository-relative citation sources — the wireFixtureGuard.ts.md house pattern). Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-08-01T09:15+02:00 — 260731-EFA-L4 curator: created. Records `Overrides<O, T>` as a call-site
-  rejection of an explicit `undefined` on a required wire field, the measured reason
-  `exactOptionalPropertyTypes` was not turned on instead (222 errors / 71 files, recorded provenance not
-  a re-derived count), and — unflattened — the three limits the source states: fresh-literal-only, one
-  level deep, and scoped to the two fixture modules. Verification metadata pinned to the leaf base
-  `abc7cbcc74921cdcb57a61529445f61641e919e7` until closeout stamps the L4 code commit.
+- Import and boundary review found the same-repository `wire.ts` consumer. [10]
+- Import and boundary review found the same-repository `conversationWire.ts` consumer. [11]

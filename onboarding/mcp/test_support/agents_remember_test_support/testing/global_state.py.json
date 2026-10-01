@@ -1,0 +1,61 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one owned state register is explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381d2b5b4226195243682903153edb9ee3c2fb16",
+            "content": "sha256:db74eee153cea3fe9daa054f6ff4f5dc735fca7f5385c5649605c592da9bffeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "OWNED_MUTABLE_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Process snapshot/restore uses one typed owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381d2b5b4226195243682903153edb9ee3c2fb16",
+            "content": "sha256:cc9d5c3656d5622c4c4b6fb88b49adeee1266da659b6887d71283ffb81724162",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PytestProcessState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "381d2b5b4226195243682903153edb9ee3c2fb16",
+            "content": "sha256:0d412c968f7f0d8b4f299f22bb677b0f77b1d0e3df51044c71614832a4e57924",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_pytest_process"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "381d2b5b4226195243682903153edb9ee3c2fb16",
+            "content": "sha256:47a8a9c4982508707646a49899af5d6d9aac85b626a5175d6d46dd9636950110",
+            "locator": {
+              "kind": "symbol",
+              "name": "end_pytest_process"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

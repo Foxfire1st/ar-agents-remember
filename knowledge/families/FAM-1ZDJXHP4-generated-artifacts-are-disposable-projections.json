@@ -1,0 +1,20 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "An artifact that is generated from another authored source is disposable: task Markdown is a projection of the JSON source of truth and is never parsed back, every skill copy is regenerated from the canonical root tree rather than edited in place, and the read path tolerates an absent derived route index instead of failing.",
+  "id": "FAM-1ZDJXHP4",
+  "members": [
+    "INV-GRVXS8R9",
+    "INV-WS8GFNAC",
+    "INV-ZRTBZAS4"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L30",
+    "legacyId": "f36490ad-18e8-4552-8d34-bea3ee31c301",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "routes": [],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "generated-artifacts-are-disposable-projections"
+}

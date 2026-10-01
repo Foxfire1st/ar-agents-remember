@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/serving/control_plane_identity_migration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Startup log migration is explicit and context-bounded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0f307d094b034e8234283c722216ac4d985c56b",
+            "content": "sha256:c7897104d2c50e4dcc517ed8fe19d1f3190c00759cf3ed1835013082a2dfc9b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "migrate_control_plane_identity_logs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Row mapping is one-way and field-specific.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0f307d094b034e8234283c722216ac4d985c56b",
+            "content": "sha256:da6241ffb5908e5b3c65869b64bd67a47ed42a77de6cdfe75a5a2b73f9b6bfb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_migrate_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

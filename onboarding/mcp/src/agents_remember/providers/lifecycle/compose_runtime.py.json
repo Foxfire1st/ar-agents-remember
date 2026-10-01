@@ -1,0 +1,143 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/compose_runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No relevant external documentation source is configured for this file.\n\nAnchor: `# Sources`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "system/sources.md:1-3"
+        }
+      ]
+    },
+    "2": {
+      "note": "Compose rendering and execution use `docker compose --project-name <project> -f <base> -f -`, and `run_compose()` passes the rendered override through stdin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:d60b8c413606052dc621dea769190e90ed102ad50a77654e810e6de95582d7b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_compose"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:9223098d140dceba9eac6bcee8a6d948df944b72ffcccaf00f0e062857bc0710",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Template helpers reject unresolved placeholders, JSON-quote YAML scalar/environment values, render `auto` host ports as Compose's empty published-port form, and require generated ownership labels before rendering provider resources.\n\nAnchor: `auto`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:0594ba4350eb6739b4b46c1a653acdbb1c7f3e124034583a556d8a9b207a2407",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`host_user()` uses `getattr()` plus `callable()` checks before reading POSIX uid/gid APIs, returning `None` on hosts that do not expose them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:059bd4b04c61a90b4e4c72298a71aeb9a6d54e3bf27189ddc4b00bc1ea3ab487",
+            "locator": {
+              "kind": "symbol",
+              "name": "host_user"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:8b77e5a0ccc885b64729bce3eaf82dcb986cf1652352957b9a341e00546260d1",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Compose migration checks Docker Compose project labels before removing unmanaged pre-Compose containers or networks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:db196acaf78d0691c49a9ecfb2e8a61b1295ff4b8a794e049cc920e1f1a70ca7",
+            "locator": {
+              "kind": "symbol",
+              "name": "container_managed_by_project"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:710a8c8c337381b61c93a1f4a3280b642faf7cdbec966b31be1d4da4dad313ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "network_managed_by_project"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Removal command construction, dry-run payloads, and real command result formatting are split into focused helpers for containers and networks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:c1b783dd9dd7dab11c0883c3278bc1ffbebf194f2e0b59ce03516c051032449e",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_container_command"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39da23aacfeaa74262eea6a859e0662fc5dc8102",
+            "content": "sha256:b0f833d8318a5216209702a9e55d5d078c782f9edb24197c0c7975b8974b96b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_network_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

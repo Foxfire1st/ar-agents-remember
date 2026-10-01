@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/data/actions.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The serving route this POSTs to (records the developer/dashboard gate decision).\n\nAnchor: \"def _gate_decision_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:dc0775a1f4b0fe82b7f102900d3d755c43e8dcaa2e09957c316725fa26a2c412",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The gate responder that calls `postGateDecision` and maps failure outcomes into rendered status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
+            "content": "sha256:847bc6a130fc562990a803182e005dd6b8e5262a8290bd519278b9077d4f6936",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateResponder"
+            },
+            "path": "dashboard/src/panels/GateResponder.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The attention queue that calls `postAttentionDismiss`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
+            "content": "sha256:6a65d648e32adea6ffa505c946fb5448f67645d4c0b426adc7543e00568cb366",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionQueueImpl"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

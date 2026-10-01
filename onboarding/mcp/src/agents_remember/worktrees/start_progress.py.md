@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/start_progress.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/worktrees/start_progress.py` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-31T00:00+02:00                                 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d`       |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `../../../overview.md`                           |
-
 ## Governing Overview
 
 [worktrees overview](../../../overview.md)
@@ -65,30 +55,18 @@ a dict carrying the exact `START_PROGRESS_SCHEMA`.
 - The file is transient: it exists only while a start is pre-contract and is cleared once the
   contract lands.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Schema tag gating reads | `START_PROGRESS_SCHEMA` | mcp/src/agents_remember/worktrees/start_progress.py:23-23 |
-| Path layout under `temp/worktree-start/<repo>/<worktree>.json` | `start_progress_path` | mcp/src/agents_remember/worktrees/start_progress.py:62-63 |
-| Best-effort write that never raises | `write_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:66-95 |
-| `blockedReason` only emitted when present | `blockedReason` | mcp/src/agents_remember/worktrees/start_progress.py:89-89 |
-| Clear on contract supersession | `clear_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:98-103 |
-| Schema-gated read returning `None` on miss | `read_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:106-114 |
-| Layer placement avoids observer<->worktrees cycle | "observer<->worktrees cycle" | mcp/src/agents_remember/worktrees/start_progress.py:10-12 |
+### Repo-Internal References
+
+- Schema tag gating reads [1]
+- Path layout under `temp/worktree-start/<repo>/<worktree>.json` [2]
+- Best-effort write that never raises [3]
+- `blockedReason` only emitted when present [4]
+- Clear on contract supersession [5]
+- Schema-gated read returning `None` on miss [6]
+- Layer placement avoids observer<->worktrees cycle [7]
 
 ## Series-Contract Notes
 
 Start-progress remains the transient pre-contract surface, but the durable endpoint it waits for is now the leaf `series-contract.md` enclosure file.
-
-## Update History
-
-- 2026-08-04T18:34+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 6 citation rows with exact anchors (`START_PROGRESS_SCHEMA`, `start_progress_path`, `write_start_progress`, `clear_start_progress`, `read_start_progress`, and the "observer<->worktrees cycle" literal) and ledger-verified ranges — including re-pointing the schema-gated read row from the write payload region (85-93) to `read_start_progress` (106-114); converted 5 garbled/stale prose line citations to cit form. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `write_start_progress` was re-signed from thirteen keywords to `(coordination_root, enclosure:
-  StartingEnclosure, beat: StartBeat)`, and the two new frozen dataclasses were added. The written
-  JSON payload is byte-identical, so `observer.snapshots` and the Engine Room are unaffected.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the transient start-progress module prose now names leaf `series-contract.md` files as the durable dashboard anchor rather than task-root `contract.md`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-15T19:35 — Created for slice 5e: slice 5e §5.4: transient durable progress for the pre-contract window of worktree_start (write/clear/read); lives in worktrees layer to avoid an observer<->worktrees cycle; every write best-effort. Verification metadata pinned until closeout stamps the 5e code commit.

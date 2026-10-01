@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/canonical.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`canonicalize_repository_profile` normalizes one profile and refuses a declared digest that does not match canonical content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26022dfce05200b690efadcf1ca8c9939a305142",
+            "content": "sha256:feccda26744998a3d36c9330c1e0a1c11e3159685fd6d5727cd09daa0aeff85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonicalize_repository_profile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The digest is computed by `repository_profile_digest` over normalized content in models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd69e73dc45c2b52979eadf3356d450e5438fa8",
+            "content": "sha256:bc03d81261d1b09a6c9ff4a245be14302817f6e7557ff4686c3075f1461863cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_profile_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5cd69e73dc45c2b52979eadf3356d450e5438fa8",
+            "content": "sha256:fe3b19bd4da42f831fca1146b8d4e08a0154a695018ea34b65e6172f296d4803",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 401
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`load_repository_profile` calls canonicalization and converts digest refusal into a typed `profile-digest-mismatch` finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f68a57c94ffbd97a17bf284feb0f5345c496377b",
+            "content": "sha256:fa9fa6a2fb3e9db7129f222b5a51e9c6625903e47672614ab81e7cb196a8c4d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_repository_profile"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The canonical profile is what planning digests into immutable per-gate plans.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb6be843f3859633d32c3ccb26a6f293fd46fcb9",
+            "content": "sha256:c362a7bfe4ac269c860a242476f3ae4a9d0dc4cb94c12e4789f1132c0e9fbe26",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_repository_profile_plan"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/planning.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

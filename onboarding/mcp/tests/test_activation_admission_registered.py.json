@@ -1,0 +1,221 @@
+{
+  "path": "mcp/tests/test_activation_admission_registered.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Registered status projects activation without mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:070481150c47667d9011dcce349c59aa6698ce588ec93cb076074d6ae10cfd0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_status_projects_activation_without_mutation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:0449a2531d0f60e523d7d8177638ebaaf11368e650e112c7fb2126e359ad0b94",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sync refusal addresses only the addressed contract's own state: no `classification`/`blocking`/`sourcePair*` key, this contract's fingerprint and status action, and a foreign live master named nowhere.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:d0c30db2f705f24c90a0df61907ee97e71244aab976ba7d6c8d8c5537735f3fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_sync_refusal_addresses_only_this_contracts_own_state"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:3fded7ef3993df6ac6b4e1ad09de14c96049972a456743491b4973f59f82f32a",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Vacant and unreadable snapshots remain distinct and unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:3ae9515ce952f711ae2b635c1ee6555a1aa7e4128da82d80f25851fdae199253",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_sync_refusal_distinguishes_vacant_and_unreadable"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:3f1754b73fde8ca513e487dde999b0d166e01ff3e980b49dda5d268eab54de29",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Oversized unreadable detail is bounded in both status and sync projections without changing source bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:bcff311e8cad6923e9e47db4a2e7255552cd43909a3940e6a33a12741d740111",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_status_and_sync_bound_oversized_unreadable_detail"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:001f579809a2f1ebffe7a52cda06b0abfc8f988309f73661d8858dface924c5a",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Startup edge mismatch retains expected and observed branch evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:fcc76a59db328742aa740ca041dd7b6ca32046048ab9741bc1da6a3a2850c594",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_start_refusal_reports_contract_edges"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:d14a16cf53ec189f264336d28f8fa73e8d6f0807ff2eb215877d5cc1c346c626",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 322
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Authoritative startup reread preserves edge evidence when the contract drifts after upstream refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:566b1aa3c660afccce50071c5e429e01eef8e372ea6565af792e561adb4f93b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_start_reread_refusal_preserves_edges_and_guidance"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:293afee9f6f3ef5a42c98e7db79b65209e289caeb70bf2eb0f4fb2853120ecc6",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 371
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Unreadable startup contracts retain the concrete parser reason in refusal and observed evidence, including bounded oversized parser detail and unchanged source bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:d4f5bc5ef9d7950210522078c335622c26da99478142be34efbac7bb0b94e238",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_start_unreadable_contract_keeps_parser_reason"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:fb263af547424102d816142a981453509edd7384b6fc5d70c0df8e7041a9c1ed",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 425
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared admission explainer no longer emits `classification`/`blocking`, and keys the refusal to the observed contract fingerprint.\n\nAnchor: \"def atomic_series_admission_projection(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4582d616975e814d836e783e7740241623795fa",
+            "content": "sha256:717bc18f4e8598a04965175e233dc2913bf66b62a619ef2a03311e5f6e16a338",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

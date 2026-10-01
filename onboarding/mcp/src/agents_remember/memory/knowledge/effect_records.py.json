@@ -1,0 +1,307 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/effect_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The group's four kinds, derived from the vocabulary and the change-set kind so a kind cannot join the registry without joining the readers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:0605ec69492c56250769564686fd138c19d8ef10cb642b039bbe154096623235",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_RECORD_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The reader shared by the duplicate scan and the after-batch seal pass, whose one query keeps the two from disagreeing about a kind's rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:c16d1e62c3ff178770074e8a0bcb03270af129eb4918ab7a9079d1e67320830c",
+            "locator": {
+              "kind": "symbol",
+              "name": "stored_revisions_of_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The envelope registry the payloads are decoded through rather than restated from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:b261d7863d3eac60e1a1590cf46927132236b7378e0fc6692525dc4cba0e228b",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The generic revision column tuple and digest this module reuses instead of re-implementing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:90875c8c92b4e276f61848d5ee919776a7112beba0c6166582de7b893ca80d8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:6cbf65be7503a14ba23c76e66daa20ebd58741813b9d4e9fc3c3f092e4517698",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_revision_digest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:fd7d50d5023c7bcbffb7c3eeed0faf2a3c302795ccce1b4af1fbb63a3439b7f0",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1af046e62063981dd17248e01bb63be7d3008602",
+            "content": "sha256:228a54b00a1ac1d0550e231b22d636da44c9497b187a0a9d02b58c5bb258770e",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/facet_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The union of the four frozen payload shapes, which makes a fifth kind a type error rather than a silent omission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:d725540a66f01c1e828597488fb1066d6363fb9cc39e5a6b4c36553ebda8a05e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The three owned statements: the envelope insert, the sealed revision insert, and the one succession-edge insert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:53066d08b1451163e3ff6c14e27d1debd900e280b4839e36d078edf20f6cbe02",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_RECORD_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:ebb32250e426b901f74ff6cd455f752bd9bfc9843ad87ff4a0ae0b9783c94583",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_REVISION_INSERT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:b125c57d37ca298ab803b8a74d455bd5407cd9ea3376cf9c6a47d24aded0db08",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGE_SET_PREDECESSOR_INSERT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The group's three scoped readers: one record by identity, every record of a kind, and every revision of one record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:53c04a2999f01c1e8ffd9895be8a3926020306521a8bfad76894a473a3d25238",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_RECORD_BY_ID"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:9e112ccf6dfaacf4ba0748a505177a1dfdc0c6a2d356145c6b5b8fdf4eb5ce1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_RECORDS_OF_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:04fe4ff56ec368fb2cd3219036de250d5fc469451c28f44a2d66c1c56e73d049",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_REVISIONS_OF_RECORD"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The join through the envelope that answers \"every stored revision of one kind\" without reading another group's rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:dc181686eff2fb6dee86a1ee4901c51ffdf7880b97f4aa429f6a5052b23be369",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_REVISIONS_OF_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The ordered edges read the shared acyclic walk runs over, and the per-successor predecessors read the views use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:9f314bcd277242970d7cf36395c7140365e3dd6a26e32fcc8cf98f0a40144c2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGE_SET_PREDECESSOR_EDGES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:151a41af46073a77e70c80e9b5cd9606dcee6e42602ac583f51ddfbfd5a8881a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGE_SET_PREDECESSORS_OF"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The value one envelope is carried in, so a write is not seven positional arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:dd78b8e4cf9b75c9cf039fb623aad06838f7c19aa797236f4be2351c65322126",
+            "locator": {
+              "kind": "symbol",
+              "name": "EffectRecordDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The decoded revision type whose payload is the validated frozen model rather than the mapping it came from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:264de0dd991f7b3458fc3bb2b61c488e53c8b13d74fccb2ce6aea6af20d58116",
+            "locator": {
+              "kind": "symbol",
+              "name": "StoredEffectRevision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The decoder that verifies the seal and the declared kind, and the damaged-store report a mismatch produces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e509e51a915fd1f91aa96920e920e472097c3ca",
+            "content": "sha256:1870a7bf4870c26e28b9a0680e7d5abf498d450e510f344e553f78fff3cd65d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_effect_revision_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

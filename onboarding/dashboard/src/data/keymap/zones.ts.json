@@ -1,0 +1,140 @@
+{
+  "path": "dashboard/src/data/keymap/zones.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Zone resolution, editable/printable classification, the routing contract, and the `/` rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cf09fc2cc7b5cd77e4b6a3662a135ea22c8951d",
+            "content": "sha256:8411b3483d6fad9439e6272849de52d5d9bcf15634e4bb08c68b5f9142d8f77d",
+            "locator": {
+              "kind": "symbol",
+              "name": "zoneForTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reserved-set gate the pty branch defers to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54343cbe0afefa4637c171ffb732d318dff6a422",
+            "content": "sha256:e2d72c0c9c0fc9f6298aac8eef4aa70e0c794bee34c387e6e8944e9b64421c0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "PTY_RESERVED"
+            },
+            "path": "dashboard/src/data/keymap/reserved.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The React binding that calls `zoneForTarget`/`routeKey`/`slashOpensPalette` per event.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9428f12da2796a8267085f196e583f7874ba2f16",
+            "content": "sha256:9a4db9ecfacefdcd42aabbc588f910e037d4bafca4316af9cd1b856c49b54dcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "useKeyboardZones"
+            },
+            "path": "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The contract suite: PTY passthrough (incl. bare Esc + harness-owned chords), printable suppression, the `/` rule.\n\nAnchor: \"passes bare Esc — and any Esc chord — to the hosted harness (Claude owns Esc Esc)\"; \"printable keys never fire as bindings in editable targets\"; \"opens the palette only at the start of a line\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2fd8038c92a752d5ae89cd4afe2f7bc8b20c169",
+            "content": "sha256:521084d21ecda74771610e85c65950740d73c442fdd0c9061273b585ea953895",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "dashboard/src/data/keymap/zones.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b2fd8038c92a752d5ae89cd4afe2f7bc8b20c169",
+            "content": "sha256:5d8b7d3dd855386a3d5e8015c7ba601b1c69ef3fd2eb13f8ca8fc75b076dabb9",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "dashboard/src/data/keymap/zones.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b2fd8038c92a752d5ae89cd4afe2f7bc8b20c169",
+            "content": "sha256:88b605937826d93844d8dad256baf4cd5a90b9a238a61e1cc72082303c99fb16",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "dashboard/src/data/keymap/zones.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reviewer's zone (MIK-L33): in the union and recognized by `zoneForTarget`.\n\nAnchor: \"the intent reviewer (MIK-R33): its own chords (j/k change traversal)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cf09fc2cc7b5cd77e4b6a3662a135ea22c8951d",
+            "content": "sha256:116055efe570fcc9b076407ad21cc3d8c88183144bdb4533f3d0cdb52a177b7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "Zone"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cf09fc2cc7b5cd77e4b6a3662a135ea22c8951d",
+            "content": "sha256:8411b3483d6fad9439e6272849de52d5d9bcf15634e4bb08c68b5f9142d8f77d",
+            "locator": {
+              "kind": "symbol",
+              "name": "zoneForTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cf09fc2cc7b5cd77e4b6a3662a135ea22c8951d",
+            "content": "sha256:242b68e7d23a8deb61cf11b2564120686cb4c1f79c6b80ec7e83b3f95df2614f",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

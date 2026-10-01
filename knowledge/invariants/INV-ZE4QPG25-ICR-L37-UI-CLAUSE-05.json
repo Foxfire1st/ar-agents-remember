@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The Jump to selected review control in the existing review workspace.",
+  "conditions": [
+    "The existing center is the focus and scroll target.",
+    "The jump focuses without the browser default scroll and explicitly aligns the target start."
+  ],
+  "exclusions": [
+    "The jump changes no layout, full-file disclosure, source selection or persisted knowledge."
+  ],
+  "id": "INV-ZE4QPG25",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "70a26cb2-6bfe-4128-b4a1-7c19f8ba3a94",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Jump to selected review preserves keyboard focus while explicitly aligning the existing center scroll target at its start.",
+  "status": "proposed",
+  "supersedes": []
+}

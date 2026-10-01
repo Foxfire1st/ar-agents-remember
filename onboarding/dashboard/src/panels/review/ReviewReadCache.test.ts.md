@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewReadCache.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewReadCache.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T21:46:34+02:00 |
-| lastVerifiedCommitHash |  `ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6`|
-| lastVerifiedCommitDate |  2026-09-28T22:11:57+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -50,35 +40,27 @@ the navigation and read-cycle modules.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's one-line statement of what it pins, and the names it imports. | `REVIEW_CACHE_LIMIT`; `SOURCE_CACHE_LIMIT`; `sameGeneration`; `sourceContentKey` | dashboard/src/panels/review/ReviewReadCache.test.ts:1-12 |
-| Payloads derived from a captured review, varying only the generation fields. | `payloadAt`; "familyReview.complete.captured.json" | dashboard/src/panels/review/ReviewReadCache.test.ts:14-38 |
-| Review bound at two sizes, with recency refreshed by reads. | "keeps at most the bound of reviews and evicts the least recently used (%i inserted)" | dashboard/src/panels/review/ReviewReadCache.test.ts:47-63 |
-| Source bound at two sizes, and no refusal kept. | "keeps at most the bound of source answers (%i inserted) and never keeps a refusal" | dashboard/src/panels/review/ReviewReadCache.test.ts:65-81 |
-| Another generation empties both stores; a task-context answer cannot move the snapshot pair. | "empties both stores when an answer belongs to another comparison generation" | dashboard/src/panels/review/ReviewReadCache.test.ts:83-99 |
-| The generation comparison and the content key. | "treats code trees and compared snapshots as the generation" | dashboard/src/panels/review/ReviewReadCache.test.ts:101-110 |
-| The class under test. | `ReviewReadCache`; `BoundedStore` | dashboard/src/panels/review/ReviewReadCache.ts:32-67; dashboard/src/panels/review/ReviewReadCache.ts:106-150 |
+- The module's one-line statement of what it pins, and the names it imports. [1]
+- Payloads derived from a captured review, varying only the generation fields. [2]
+- Review bound at two sizes, with recency refreshed by reads. [3]
+- Source bound at two sizes, and no refusal kept. [4]
+- Another generation empties both stores; a task-context answer cannot move the snapshot pair. [5]
+- The generation comparison and the content key. [6]
+- The class under test. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is exercised in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T21:46:34+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **created this one-to-one card for the new cache unit module (6 cases).** Records the two-size bounds cases, the recency-by-read proof, the no-refusal rule, the generation-invalidation case (including that a task-context answer cannot move the snapshot pair) and the key case, and names where the mounted behaviour is pinned instead. The verification hash and date are blank because no commit contains this file yet; closeout owns the stamp.
+No meaningful cross-repo references found.

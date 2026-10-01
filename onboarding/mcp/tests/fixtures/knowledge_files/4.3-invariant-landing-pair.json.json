@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/fixtures/knowledge_files/4.3-invariant-landing-pair.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture names its schema.\n\nAnchor: \"ar-invariant/v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b9eaf64fed1ac7162e9b45283daf3cf64a1024",
+            "content": "sha256:7f7859c16dea1fc17e5f3d7334cdc0023beead40468214d1453fe405b4028cbb",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Its distinguishing identity.\n\nAnchor: \"INV-7K3F9Q\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b9eaf64fed1ac7162e9b45283daf3cf64a1024",
+            "content": "sha256:460a4ff63270ecc38ab6ecc09dc5979ac6700f2f30b5a491bae1f2d7ef788158",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The test maps this file to its model.\n\nAnchor: \"4.3-invariant-landing-pair.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b77ecb71863271304d8626c32c5a96b3930bf4cc",
+            "content": "sha256:6068239384b35707ab5aa985117f32518a85ee7386d3cf3c2f4f8668283000b8",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/tests/test_knowledge_file_formats.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,244 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_control_runner.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Launch selection, validation, effective echo checks, knob application, and duplicate-selector preflight are centralized in the launch module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:339985142e99180bb584df4a6675443b12d7ca1207f3b2ed94c8a7c802892e6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResolvedLaunch"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:8b89671dd7b82f5cc19d5e258392e1dcf675c11fcf63bd678c2160026f733612",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_launch_selection"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:7f9ca95dee3a483293013b9c276a5271d70b3f4671bafcd789b8296bbf191f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_effective_launch"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:0f8b168f5a30fff77a09df73d0ed12673499922e90c9bdfba8d345c96509498d",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:5167a659a20930ef63891903256fd7fc764b13c32e200ea303fbaa6fb9e63baf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owned_argv_overrides"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:534c4a92704330edbee5dfb88143457bbae8cb570748b1de79c3405da4d2d7c0",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:88c7b5d93271525e3f1de568a30a53e0608e401d792f60738c925ba10d871358",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:8b77fdc44dda3bfd84f499995d2cf573bfc0974c88c8fd48146f1500fd6e4a14",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:c06dc87bdc8e24fc6de13bfd63ce4e4dbc60f4f1eef134b49c3c340c273e9132",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:4385f80bed156b6c67d4322552b4eede8e7c0ed3619d704503364003c0b4a1a1",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The factory pairs a typed selection with adapter-produced knobs and ignores ambient role env as authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f1d7c5b682777ab351255fe979a0792f111508",
+            "content": "sha256:2b5088b617b61478353dc2280de551ce38e85be3d6491a95f22fe51e3caf806c",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_harness_protocol_adapter"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_factories.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The opener embeds the typed launch in this runner command and persists model/effort provenance on the terminal row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:f72d3143ef35e4bea23e7c248646dbe87f7f4026bd0f62cd1024c678c4bd27bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_session_command"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:f56a38cf2cdb6b2bd4de8b3b058e2c0726cd491e7596b53f5522e6d2875698ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_opened_catalog_entry"
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:ce08f2195e01d4f63e79993fce0030ebed827a033179691cc47434e3e60693b2",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 534
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:c952bca9ee96978f08947e07511b1ae1aa548e2e92d56b0b2bacfb6ee507962c",
+            "locator": {
+              "end": 636,
+              "kind": "line_range",
+              "start": 571
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The bridge translates `mark_failed` into failed/rejected state with exact raw error evidence (`raw[\"bridgeError\"]`), refusing to overwrite an already-started bridge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:0a7645fb9497e57dd8678e9d6632967479618a5366deeca0b87c8327e99f5f92",
+            "locator": {
+              "kind": "symbol",
+              "name": "mark_failed"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pre-session catalog reuses `adapter_argv` before calling the transient adapter's token-free discovery path.\n\nAnchor: \"argv=adapter_argv(installed.harness.id\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d836a7827669cffb870228db62417c870c151614",
+            "content": "sha256:52e95ee02ea631d8a494b173d4784d0d048f8b3c29f6cfab350ef7743540a9e5",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capability_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

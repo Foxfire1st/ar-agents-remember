@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/conversations/withdrawals.py
 
-| Field                  | Value                                                          |
-| ---------------------- | -------------------------------------------------------------- |
-| repository             | agents-remember                                                |
-| path                   | `mcp/src/agents_remember/models/conversations/withdrawals.py`   |
-| doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-08-29T17:23+02:00                                         |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`                     |
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
-| governingOverview      | `overview.md`                                                  |
-
 ## Governing Overview
 
 [models conversations overview](overview.md)
@@ -41,32 +31,20 @@ recovery projection.
 
 No known follow-up.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external/domain documentation is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Withdrawal projection validates allowed phase/outcome/recovery products and coherent recovery expiry. | `WithdrawalOperationProjection` | mcp/src/agents_remember/models/conversations/withdrawals.py:74-120 |
+- Withdrawal projection validates allowed phase/outcome/recovery products and coherent recovery expiry. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 type-alias syntax migration for `WithdrawQueueResponse` and confirmed that withdrawal outcome validation remains as documented. Verification remains closeout-owned.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the withdrawals module moved from
-  `serving/conversation/_models_operations.py`. Verification metadata pinned until closeout
-  stamps the L9 code commit.
+No meaningful cross-repo references found.

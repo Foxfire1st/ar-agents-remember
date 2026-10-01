@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public implementation facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b56e5dbb039d483688fd8032dade591b67a3c787",
+            "content": "sha256:8b0bed3bad7751094d580fe7530acb56f3af514c0f91a900d26265ae4d71d4ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "ActiveSessionProjector"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/projector/facade.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

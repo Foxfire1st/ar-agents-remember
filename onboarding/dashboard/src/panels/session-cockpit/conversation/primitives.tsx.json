@@ -1,0 +1,178 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/primitives.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lane/source/capability types these primitives narrow over.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:1af96a2cc18e3f2e86c6eb47610b35f936826c2dc03c6cc44c59e081b2e20528",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationLane"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:d8aa1ada784375d0d40eb30af3ce3c95e0c28d15726966ac9ae1cfea87cac286",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSource"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:0942e913ab7814c4dcb6f0a77c44ce06b84b126979211ab5214cb7f83bace52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationCapabilities"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The clamp/badge consumer in the message grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e50a2b3375e832bf56491fd44c36c8e258528618",
+            "content": "sha256:8241fc5ae866bd7542fc019fd19f3a848a60f37d2d940cd376cc96b2d2badc60",
+            "locator": {
+              "kind": "symbol",
+              "name": "MessageItem"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/MessageItem.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The clamp/badge consumer in the tool grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8bf75bd6ad3d3d78ab301bf407b8d1e1f7c4e42",
+            "content": "sha256:98876b7273fe138312027521fa19d79f3a4b933186e31804364890c937cd69fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolItem"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a8bf75bd6ad3d3d78ab301bf407b8d1e1f7c4e42",
+            "content": "sha256:4f25b79997a414cf091fa784cec1500a89acbaf264a7120b7fe4d0a910059101",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ToolItem.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The clamp/badge consumer in the diff grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81b2e034e2d269c2e5d91fe2ea3b2ee6378aed08",
+            "content": "sha256:9ac9f5df455325ab5e3c5ee057a09f683c58f8cd1140662c618fb4671452d444",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffBlock"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81b2e034e2d269c2e5d91fe2ea3b2ee6378aed08",
+            "content": "sha256:6425c00fdb3721f11cfbe9b8149ac3e34253f0bc344d209b4cfb4aa472c60687",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/DiffBlock.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The surface that renders CapabilityReason cues (labeled `history`/`live`) for history/live completeness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:69421748ca38a72458e532ae8501573598700d6e58ec2ade8760694199d3b602",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationSurface"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The renderer suite asserting the real clamp button + source badge.\n\nAnchor: \"ConversationTimeline — one navigable role=feed (R5\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa535ac4ad4fc146f8f3ae1130a08816b6459968",
+            "content": "sha256:480569b29c46516a0d1d673227202c674e0419685af3ba8ad775746df4f189d6",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/feedSemantics.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The R11 progressive-disclosure cue unit pins (visible state word, full reason in `title`, supported = nothing).\n\nAnchor: \"CapabilityReason — R11 progressive disclosure cue\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9601cb0dda02d360d7d244cd024cea706ab7c02b",
+            "content": "sha256:96fc9600ee3a409de1dcf33d5d832e38ac88a82a016b1068a039a4361e46e7bf",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/primitives.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

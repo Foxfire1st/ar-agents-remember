@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each member retains its original publication and exact declared file identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282fe6ee087803e3a963f412833ab1f321d55df7",
+            "content": "sha256:06f032ffd706e4674ab4e381c4519065e9b18e948d9fe85dca813cfd990c4581",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedReportFile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Inventory derives membership and byte bounds from frozen producer declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282fe6ee087803e3a963f412833ab1f321d55df7",
+            "content": "sha256:6ea8fef4e7d26f902c51191dd027dd8a86d079ba5a4d201f7d5b59ec2a13c62c",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained_report_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "All source paths are resolved before fresh exclusive transport writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282fe6ee087803e3a963f412833ab1f321d55df7",
+            "content": "sha256:7d55996dcc2ece2897f6e83862c8403062fe0420e76b0df15b5a4af81b53b9c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_retained_reports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,36 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/sessions-view/lifecycle.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lifecycle file contains the legacy-duty, smart-default/handoff, authoritative landed-cleanup, and planned-retirement-window suites.\n\nAnchor: \"describe(\\\"S5 legacy duty parity\\\", () => {\"; \"describe(\\\"smart-default focus + handoff + session cycling (L2: R9, F17)\\\", () => {\"; \"describe(\\\"authoritative landed cleanup through rail and palette callers (F5-S5-2)\\\", () => {\"; \"describe(\\\"planned retirement closes its own window (unplanned termination keeps it)\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d84ab38408b5028229e5eba2189980b81cfc2e1",
+            "content": "sha256:2ccec2d761ff6204ca9f146e6bd4083b0c62d784b1a6cc68856d16ab17750228",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6d84ab38408b5028229e5eba2189980b81cfc2e1",
+            "content": "sha256:9f773775e91c8c18a5c19c647df631e756fd4940d2bdf3bb2e2e37aa69775f2d",
+            "locator": {
+              "end": 508,
+              "kind": "line_range",
+              "start": 425
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

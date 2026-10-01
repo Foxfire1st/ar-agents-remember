@@ -1,0 +1,656 @@
+{
+  "path": "mcp/tests/test_knowledge_schema_generations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's stated contract: one consequential fact per case, and a gate must be observed in its failing direction.\n\nAnchor: \"a gate observed only in the passing direction\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:86e81f7b9778f0a1d19ebc6696c24991b2f345aa8291967197b54371a77e4fa0",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A version-1 file opened by generation-2 code validates and reports generation 1.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:2feb076bd1098bde851d775f22f32a3498a96f8046037360528b461820c0d10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_generation_1_dataset_is_still_validated_by_the_registry_it_declares"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:a1eae2f0d9a3c5914365de4a3417a8cffb9e93c664f1fd8a8dc0dbe04fb8c422",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 243
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every generation's key and typed-JSON registries, and the no-`ALTER TABLE` rule over the create statements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:8d93a0d7802c93d9c52b113a5a01fa349eb9d47fde0642c011ada9b68a10ab2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_supported_generation_declares_its_own_key_and_json_registries"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:0ac80f3abf66e9f053279a6567d369d5d445214a1bcc7b62889ff27c6d993dd7",
+            "locator": {
+              "end": 422,
+              "kind": "line_range",
+              "start": 400
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The symbols the cases drive, including the pinned constant and the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:cc599fb544a63f4398419bd3cf51cd365d05f2b3222200371fb265e75c5a1282",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_1_FINGERPRINT"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:e612a420a872832a27ab071a3d430f8df068a16e15cb664737b5fc735ce301e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_pinned_generation_unchanged"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:71024a5a00cce247149fa3741b69082dccc9873c018d758b21bdf2779bf66931",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:68e6dc6c4d567698d27b37fab626121bc786d409d865cbbef2e1775a93b56ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_new_store"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:01cd9b51d56c9d294dc05b425877b2ded9935e4e892f281960af338fdfd6e0b2",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:66b6684498e7623361400b0dc5955b4f7f7a436678abfbfe3d13669024b29317",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 413
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:807e3cc48a71b2c28d5d123b264b1a2dd3759a461e0e40aff0a575b666473141",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:f32cf75eca3138357371e88dc3017813c6d7571da060e4f49beeda1a6f4cdb2b",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 346
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:0bfa3d342192f12b15ec877165985d829bcb06ca79e585bfe8b4361eb4f38100",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:25504ff8950c759cd6926a7b39775aa537ce59ec0e22d0ba6c0cf2bfc2bfe591",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 450
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:276f696ff6d5e39ecf5e8ba60f51a772a3535fc4472419dcb81eb4da9a8e3a16",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 475
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:5f8b48dbc20ae7563cdaf7e80df070a6f17fcd6278ddbf1b190e34e6ce6e4bb7",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 507
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The symbols the cases drive, including the pinned constant and the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:cc599fb544a63f4398419bd3cf51cd365d05f2b3222200371fb265e75c5a1282",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_1_FINGERPRINT"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:e612a420a872832a27ab071a3d430f8df068a16e15cb664737b5fc735ce301e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_pinned_generation_unchanged"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:71024a5a00cce247149fa3741b69082dccc9873c018d758b21bdf2779bf66931",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:68e6dc6c4d567698d27b37fab626121bc786d409d865cbbef2e1775a93b56ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_of_new_store"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:edd96f330e54fc0cc690bf1394459ff2875604cd26533a3acdb7af31c0a5f319",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:a32d44d6ed93027bea766a991a06232a88b7f7df54bfca596cb83ae42fa56395",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:92b9148945fc777e65c278bd904b727a8f1c00d5b7dc8d918ed2f83c0a86fb24",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 304
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:d514a1f2c9252a8c0361aa568a868527c75595dfff5a3e894bc229f3920c4292",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 310
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:0bfa3d342192f12b15ec877165985d829bcb06ca79e585bfe8b4361eb4f38100",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:276f696ff6d5e39ecf5e8ba60f51a772a3535fc4472419dcb81eb4da9a8e3a16",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 475
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The encoder whose table mapping and digest the generation cases measure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:d4a1ac2d0b27bcc173c7d3418825643de6884234a34d6ae148a9f184f789da40",
+            "locator": {
+              "kind": "symbol",
+              "name": "logical_body"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:f92425208015accfffd67774a5c9a8f1944217a82c63b348537cd360a5a29a14",
+            "locator": {
+              "kind": "symbol",
+              "name": "logical_digest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "content": "sha256:be0962955b303788b7ad2f1f232027d69f1ce2535e7b7346b7733eee87f74aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "logical_body_from_tables"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The creation and inspection paths the cases call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:53c6a302dae053cdcdc2b6cc13bf78624646239924382882de2449261f0f3090",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_or_validate_schema"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_schema"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The shared support that builds a genuine version-1 dataset for the generation-1 cases.\n\nAnchor: \"def create_generation_1_store(database_path: Path, repository_id: str) -> OpenedKnowledgeStore:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "112f7a18a62526d17d968ad7c89f6c0c7c761e77",
+            "content": "sha256:3aa3c9d328298728ea7ff54d238395598dc79aa586179611ae4cc2b4441bdae8",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/tests/generation_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pin is checkable: constant, recomputed fingerprint and the passing gate agree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:3c4428573230265f7d91a436aafcb11e1cedda5801d93bcd4b41126b66587780",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pinned_generation_1_fingerprint_recomputes_to_its_recorded_constant"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The gate's failing direction, parametrized over three perturbed fields applied to copies of the record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:52008528feedb55e34532f678237db6f6df42b83d4a3fb09639590ccf409dd37",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pin_gate_fails_when_one_recorded_generation_1_field_is_perturbed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:ca028a3db9cab35be4d2b190a1d704666073a4f869cc49e0ce9d5ac634cc1ca8",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Generation 2 appends to generation 1 without touching its first ten tables.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:5b44f4ba87694214c3a7adfa60a4ba67340d8bedf8868f7228885b3da9e58904",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_generation_2_appends_to_generation_1_without_touching_its_first_ten_tables"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Type-strict artifact dispatch: `1.0` and `true` do not resolve to generation 1.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:d0ed5b78a22deabdddd0cec7567551e6af6e1cccfec76a762d17313615abeadf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_artifact_key_lookup_is_type_strict_on_the_declared_version"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:19533a2065d0888451586fbece532b3ab9db267b0b0d2a411536f736bdc44adc",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "An unregistered version is refused rather than migrated, repaired or re-read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:239793c681737f3db93a35b343102ae7858587e378ae2709c6c2c8d110b16902",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unregistered_version_is_refused_rather_than_repaired_or_re_read"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:21bea0814a458ffaa22abfc964771958f463625090ad4e9cb4870e0d2b4a8fb3",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Creation declares the newest supported generation while selection reads the dataset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:3ad630a2b9125d548ed270a558ec02ef22380c28574ddb52e884db300d8781ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_creation_declares_the_newest_supported_generation_and_selection_reads_the_dataset"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:fede6d0f824298bc834fd4b4f90ea6cd84dc7f58ee4c7d02528573d4f812aed0",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A generation-2 table row must enter the generation-2 digest, which the live-manifest encoder failed to do.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:cc9f397aedc80544e3e6ae0d633c6909caa9c665b6ec6774e5f6e378de27c599",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_generation_2_table_row_enters_the_generation_2_digest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:de1be802082068e986a7a57c6bb7261cfed557b43ee100c72db40d773d635db1",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "An unchanged version-1 dataset reproduces its own body and identity, and the same rows under generation 2 are a different dataset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:a17b4340d6f3fa9eb59762be337cb6c3cebd5f27cb33e3079426d663821c7a17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_generation_1_dataset_keeps_its_own_body_under_generation_1"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "956d21cb9207c61f1b675bf4436ea21a65d7a181",
+            "content": "sha256:4975381c22c8a0d8a489269e8b7ef4cff4f750cb5d8f1da423d7db8b9f580495",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 207
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

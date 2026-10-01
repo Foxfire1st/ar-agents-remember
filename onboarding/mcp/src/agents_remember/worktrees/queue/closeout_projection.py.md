@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/queue/closeout_projection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/queue/closeout_projection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T14:20+02:00 |
-| lastVerifiedCommitHash | `c1bb3543c6711f7f51991ec0afbd1a1defe181e2` |
-| lastVerifiedCommitDate | 2026-09-14T14:09:55+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Closeout queue overview](overview.md)
@@ -79,35 +69,31 @@ the public function or model instead of re-deriving its lower-level state machin
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:68-68 |
+- No external domain source is required to establish this repository-owned implementation. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's concrete API, control flow, and validation boundary are implemented here. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:68-68 |
-| Every live series is observed independently from its own contract-keyed record; `_projection_members` supplies each member the already-derived v2 topology fingerprint, while activation waiting remains candidate-local. | `_projection_members`; `_observe_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:461-560; mcp/src/agents_remember/worktrees/queue/closeout_projection.py:631-643 |
-| Member source facts bind the canonical task-intent identity. | "intent = task_intent_identity(contract.task_root, leaf)"; "source_fact[\"taskIntent\"]" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:522-545 |
-| The focused adapter converts strict per-contract selector observation into disposable source facts/waits/problems without lifecycle ownership. | `project_series_activation` | mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py:29-51 |
-| A capacity refusal is classified `invalid` from the declaration that owns the code, while a genuinely unreadable source still reports `unreadable`. | `_problem`; "error_type in CAPACITY_REFUSAL_CODES" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:835-856 |
-| Waiting-door admission refuses only an identity conflict (a repeated generation id or task reference); no population ceiling remains. | `_require_waiting_door_identities`; "waiting-door-identity-conflict" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:443-458 |
+- The module's concrete API, control flow, and validation boundary are implemented here. [2]
+- Every live series is observed independently from its own contract-keyed record; `_projection_members` supplies each member the already-derived v2 topology fingerprint, while activation waiting remains candidate-local. [3]
+- Member source facts bind the canonical task-intent identity. [4]
+- The focused adapter converts strict per-contract selector observation into disposable source facts/waits/problems without lifecycle ownership. [5]
+- A capacity refusal is classified `invalid` from the declaration that owns the code, while a genuinely unreadable source still reports `unreadable`. [6]
+- Waiting-door admission refuses only an identity conflict (a repeated generation id or task reference); no population ceiling remains. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository reference applies. | `_PRIORITY_RANK` | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:68-68 |
+- No meaningful cross-repository reference applies. [8]
 
 ## CCR-R02@v2 Intent-Bound Projection Sources
 
@@ -115,33 +101,3 @@ Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, projection memb
 intent-bound: every member exposes the exact canonical intent digest of its leaf, so the disposable
 queue cannot recompute a stale identity or offer a member whose intent is absent. Part of the landed
 L25 candidate `99dc249b`.
-
-## Update History
-- 2026-09-14T14:20+02:00 — 260913-LCA-L7 (uncommitted change set on `ar/260913-lca-l7`): the capacity family is now classified from its own declaration. `_problem` tests membership of `CAPACITY_REFUSAL_CODES` instead of the substring `cap-exceeded`, which neither surviving capacity code contains, so a sprint past its graph bound reported `invalid` rather than `unreadable`; `_bounded_problems` uses the `SOURCE_PROBLEM_CAP_EXCEEDED` constant. The card states exactly that and that the other vocabularies' markers are unchanged, so an unreadable source still reports `unreadable`. Re-derived every range against the current 890-line source: `_PRIORITY_RANK` 65-65 → 68-68, `_projection_members` 467-607 → 461-560, `_observe_series_activation` 637-649 → 631-643, the task-intent call 528 → 522 and its `taskIntent` assignment 539 → 533, the typed refusal 529-538 → 523-532, and `_require_waiting_door_identities` 439-454 → 443-458. Added the evidence row for the classification. Verification metadata remains closeout-owned; no stamp advanced.
-- 2026-09-13T22:22+02:00 — L6 (260913-LCA): the census no longer refuses a wait set that exceeds a candidate ceiling. The `len(waiting) > MAX_CLOSEOUT_CANDIDATES` branch and its `waiting-door-cap-exceeded` problem are deleted while the identity-conflict branch of `_require_waiting_door_identities` is kept, so the invariant notes the unbounded population and the surviving refusal, and a reference row records that branch at 439-454. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
-- 2026-09-13T14:19+02:00 — Per-contract activation curation: the census now calls `project_series_activation(contract)` for each live atomic master against that master's own contract-keyed record, so the card states that reconciling is the only candidate waiting reason (vacant/active are never waits and a foreign master is never a blocker). Rebound the `_projection_members` range to 467-607, the focused adapter to closeout_projection_activation.py:29-51, and re-read the task-intent prose line numbers (467-607 / 528 / 539 / 552 / 529-538). Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-11T23:05:00+00:00: The member-source-facts row anchored the bare symbol `task_intent_identity`, which resolved twice at verification and again now (the import and the call), and its second anchor `source_fact["taskIntent"]` was a backticked expression the anchor grammar cannot read. Both are now exact quoted source texts — the identity call and the `taskIntent` assignment — each occurring once inside `closeout_projection.py:526-551`; claim wording and extent unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_PRIORITY_RANK` repointed to mcp/src/agents_remember/worktrees/queue/closeout_projection.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_PRIORITY_RANK` repointed to mcp/src/agents_remember/worktrees/queue/closeout_projection.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_PRIORITY_RANK` repointed to mcp/src/agents_remember/worktrees/queue/closeout_projection.py:65-65. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-11T12:02+02:00 — Closeout-door cut reconciliation at code commit `fad9808e`: recorded that a series contributes its door source fact through `live_closeout_door(contract)` rather than the removed `contract.closeout_door` field, and that the per-contract ordering weight and absent-door branch were deleted. Verification metadata remains pinned because only the cut-affected claim was reconciled; source documentation only, no acceptance claim.
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  the closeout projection now binds each member source fact to the leaf's canonical task-intent
-  identity and refuses sources whose intent cannot be projected. Verified at code commit
-  99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-read the reopened member-projection
-  claim and documented its exact precomputed `semantic-topology/v2` identity input. Projection
-  currentness now separates completion readiness from semantic topology; verification remains
-  closeout-owned.
-
-- 2026-08-26T08:30+02:00 — Rebounded the activation-projection adapter citation to the frozen
-  focused module extent.
-
-- 2026-08-26T03:37+02:00 — Removed global live-series owner/conflict inference and documented
-  candidate-local activation observation for every live master. Queue remains a disposable observer
-  with no selector or lifecycle evidence. Verification remains post-Dagger/closeout-owned.
-
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.

@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_task_document_master.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Create master writes task json without lifecycle",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9420e52926385edf8df1e93368c32631ef9bd6",
+            "content": "sha256:e15ee5ec17edf6bd21116e9689cac00c6961c78385857a9a637d0dc0fc92ca86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_create_master_writes_task_json_without_lifecycle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Set subtask inserts then updates by number",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9420e52926385edf8df1e93368c32631ef9bd6",
+            "content": "sha256:3d2ef418fb385ef1080e1445d20b2241bcce6e860842dfb4a4c9e971d30b6b96",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_set_subtask_inserts_then_updates_by_number"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Set subtask completed trusts the declared row without grading the child leaf",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9420e52926385edf8df1e93368c32631ef9bd6",
+            "content": "sha256:22d9cf4f7bd5286f6c43eb0fc6668432458fec62519e3da8a3ddf9e1bceec88e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_set_subtask_completed_trusts_the_declared_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Replace cannot erase or change unresolved row identity or multiplicity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9420e52926385edf8df1e93368c32631ef9bd6",
+            "content": "sha256:408419e09ac8e3ef6340c60b807fdeb96bbff2068f6b30bf331330738f86a8d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replace_cannot_erase_or_change_unresolved_row_identity_or_multiplicity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Master completion does not regrade a pending child leaf",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9420e52926385edf8df1e93368c32631ef9bd6",
+            "content": "sha256:58891808a321a1d3252f567081f3324c437c019527b1886e7814f4f5e499d2c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_master_completion_does_not_regrade_a_pending_child_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Remove subtask deletes leaf doc and row",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9420e52926385edf8df1e93368c32631ef9bd6",
+            "content": "sha256:eadbf34e5ff9af637660cad79ee8993c7b7e1cc14b4f92b04b71e8deee7b6fb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remove_subtask_deletes_leaf_doc_and_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Remove subtask refuses unresolved row without touching any file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9420e52926385edf8df1e93368c32631ef9bd6",
+            "content": "sha256:a6c778ba7ad52853903ea4272341fcea81979c6474a4e777a3d00b1eefcc44a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remove_subtask_refuses_unresolved_row_without_touching_any_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

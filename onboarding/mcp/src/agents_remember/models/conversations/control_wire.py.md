@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/conversations/control_wire.py
 
-| Field                  | Value                                                           |
-| ---------------------- | --------------------------------------------------------------- |
-| repository             | agents-remember                                                 |
-| path                   | `mcp/src/agents_remember/models/conversations/control_wire.py`   |
-| doc_type               | `file-level-onboarding`                                         |
-| lastUpdated | 2026-08-25T08:16+02:00 |
-| lastVerifiedCommitHash | `cb6623775a04cbdeb0509dc26f08a8268189c3f6` |
-| lastVerifiedCommitDate | `2026-08-25T08:12:56+02:00` |
-| governingOverview      | `overview.md`                                                   |
-
 ## Governing Overview
 
 [models conversations overview](overview.md)
@@ -51,32 +41,20 @@ cit:(["class OperationTimeline:"], mcp/src/agents_remember/models/conversations/
 
 No known follow-up.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external/domain documentation is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Conversation control identity is declared in this shared wire owner. The deleted architecture suite no longer enforces import direction. | `ControlIdentity` | mcp/src/agents_remember/models/conversations/control_wire.py:59-79 |
+- Conversation control identity is declared in this shared wire owner. The deleted architecture suite no longer enforces import direction. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-25T01:56+02:00 — 260824-PDLS removed the expired split-baseline reference and retained
-  the stable single-owner assertion in the architecture test; verification remains closeout-owned.
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the shared control-wire module
-  moved from `serving/harness_control_models.py`/`harness_control_client.py`; ledger corrections
-  (F-2) reflected. Verification metadata pinned until closeout stamps the L9 code commit.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # dashboard/src/data/buildIdentity.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/buildIdentity.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -50,48 +40,23 @@ No task-independent technical debt was identified during FEUI-L9R review.
 keeps the stamp readable while the cockpit tooltip supplies the explicit dirty explanation; an absent
 commit still falls back to version identity rather than inventing a hash.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was found after checking the configured sources; current claims are
 proven by repository source and direct consumers.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external or domain documentation is configured for this repository-local seam. | — | — |
+No relevant external or domain documentation is configured for this repository-local seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The server projection still declares an optional dashboard fingerprint; the added process/source identity fields do not change the comparator's input. | "export interface ServingBuild {" | dashboard/src/types/projection.ts:569-569 |
-| Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. | `ServingBuildStamp` | dashboard/src/cockpit/Cockpit.tsx:940-966 |
-| Embeds the fingerprint into the compiled client. | `__AR_DASHBOARD_BUILD__` | dashboard/vite.config.ts:65-65 |
+- The server projection still declares an optional dashboard fingerprint; the added process/source identity fields do not change the comparator's input. [1]
+- Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. [2]
+- Embeds the fingerprint into the compiled client. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local seam.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | — | — |
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T08:27+02:00 — L31 native curator: Retained the optional dashboard-fingerprint contract after reviewing the expanded ServingBuild type; corrected the cockpit consumer to a mismatch tooltip rather than a reload action and refreshed its evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); final scoped citation check clean.
-- 2026-07-24T13:17:50Z — Documented dirty serving-build labels and their compact/tooltip split.
-  Verification hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: created the one-to-one card for the candidate build-identity
-  module; verification metadata stays blank until the code candidate is committed and closeout can
-  stamp it.
+The reviewed behavior is wholly repository-local.

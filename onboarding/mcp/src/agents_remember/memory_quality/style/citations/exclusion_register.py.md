@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T10:20+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
@@ -104,32 +94,25 @@ directory a later `!` rule re-includes would be the silent omission this subset 
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one construction point folding settings, ignore file and call into one register. | `resolve_exclusion_register` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:196-226 |
-| The three source constants the register records. | `EXCLUSION_SOURCE_PATH_RULES`; `EXCLUSION_SOURCE_GITIGNORE`; `EXCLUSION_SOURCE_CALLER` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:54-61 |
-| The three `gitignoreAuthority` values the register may carry. | `GITIGNORE_AUTHORITY_GIT`; `GITIGNORE_AUTHORITY_REGISTER`; `GITIGNORE_AUTHORITY_ABSENT` | mcp/src/agents_remember/memory_quality/style/citations/source_index_state.py:45-52 |
-| Only the path-rule and caller components are matched here; the ignore file is a separate branch. | `excluding_rule` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:144-161 |
-| A caller pattern that cannot mean anything is refused by name instead of matching nothing. | `validate_caller_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:171-193 |
-| The code root's ignore lines are recorded as written, minus comments and blanks. | `read_gitignore_patterns` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:229-249 |
-| The bounded fallback matcher, its ancestor walk and its pinned divergence from Git. | `FallbackIgnoreMatcher` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:253-297 |
-| Last match wins over the path's whole ancestor chain. | `_ancestry` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:308-318 |
-| A negation prevents directory pruning, so the walk descends and decides per file. | `has_negation` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:286-288 |
-| A path rule excludes a file by name, and a directory by name or by its contents. | `_pattern_excludes` | mcp/src/agents_remember/memory_quality/style/citations/exclusion_register.py:164-168 |
-| The one glob matcher shared with the storage resolver and the drift check. | `matches_any` | mcp/src/agents_remember/kernel/coordination_context/storage.py:50-56 |
-| The register is built from the memory layer's own settings keys. | `read_citation_index_settings` | mcp/src/agents_remember/memory_quality/style/citations/citation_index_settings.py:56-85 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The one construction point folding settings, ignore file and call into one register. [1]
+- The three source constants the register records. [2]
+- The three `gitignoreAuthority` values the register may carry. [3]
+- Only the path-rule and caller components are matched here; the ignore file is a separate branch. [4]
+- A caller pattern that cannot mean anything is refused by name instead of matching nothing. [5]
+- The code root's ignore lines are recorded as written, minus comments and blanks. [6]
+- The bounded fallback matcher, its ancestor walk and its pinned divergence from Git. [7]
+- Last match wins over the path's whole ancestor chain. [8]
+- A negation prevents directory pruning, so the walk descends and decides per file. [9]
+- A path rule excludes a file by name, and a directory by name or by its contents. [10]
+- The one glob matcher shared with the storage resolver and the drift check. [11]
+- The register is built from the memory layer's own settings keys. [12]
+
+### Cross-Repo References
 
 No sibling-repository contract defines these values.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-17T10:20+02:00 — 260915-CAPS-L14 curator: created this card for the module the leaf adds. Records the three sources feeding one register, the `matches_any` semantics shared with the storage resolver and the drift check, the two-part `.gitignore` story (Git is the authority inside a work tree; the bounded matcher applies the patterns outside one), the reported-skip rule, and the register's **deliberate, pinned divergence from Git** on a negated file under an excluded directory. Verification metadata is left at this leaf's synced base `0346da9c` with a recorded working candidate, because the candidate is deliberately uncommitted — the governed closeout stamps the real code commit and no hash or digest was invented here.
+No meaningful cross-repo references found.

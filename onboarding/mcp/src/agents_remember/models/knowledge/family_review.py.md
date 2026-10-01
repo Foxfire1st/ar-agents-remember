@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/family_review.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/family_review.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:18+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -148,45 +138,37 @@ records: the grouping rule's version travels on every group.
   imports are pydantic and two sibling model modules, so grouping, status composition, currentness and
   routing live in `memory_quality/family_review.py` and this file declares the shapes they construct.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one declared grouping rule: its version value, the renderer that spells the rule as one sentence, and the identity key built from the two facts the rule merges on. | `FACT_GROUPING_POLICY_VERSION`; `fact_grouping_rule`; `fact_group_identity` | mcp/src/agents_remember/models/knowledge/family_review.py:74-78; mcp/src/agents_remember/models/knowledge/family_review.py:151-165; mcp/src/agents_remember/models/knowledge/family_review.py:168-177 |
-| The two surfaces a finding may route into, declared as a value so a third surface fails construction instead of being added. | `FAMILY_REVIEW_ROUTING_SURFACES` | mcp/src/agents_remember/models/knowledge/family_review.py:80-87 |
-| The one authority that decides closeout readiness, named as a value so the routing report can state what it does not decide. | `CLOSEOUT_READINESS_DECIDER` | mcp/src/agents_remember/models/knowledge/family_review.py:89-94 |
-| The five status owners in the design's own order, the per-owner declaration with both its columns, and the vocabulary mapping derived from that table. | `PIPELINE_STATUS_OWNERS`; `STATUS_OWNER_DECLARATIONS`; `STATUS_VOCABULARIES` | mcp/src/agents_remember/models/knowledge/family_review.py:96-105; mcp/src/agents_remember/models/knowledge/family_review.py:107-144; mcp/src/agents_remember/models/knowledge/family_review.py:146-148 |
-| One recorded relationship a match was reached through, and one matched condition with its sides and its three supporting fact tuples. | `FactSupportingEdge`; `FactMatch` | mcp/src/agents_remember/models/knowledge/family_review.py:180-186; mcp/src/agents_remember/models/knowledge/family_review.py:189-215 |
-| The closed detection-condition vocabulary the match repeats rather than renames, and its declared membership order. | `DetectionCondition`; `DETECTION_CONDITIONS` | mcp/src/agents_remember/models/knowledge/detection.py:116-122; mcp/src/agents_remember/models/knowledge/detection.py:124-132 |
-| The group's declared field set — recorded family revisions, the input signature, the rule's identity, the matches and the review-record citation — with its accessors and the merge review. | `FamilyIntegrityFactGroup`; `matched_conditions`; `supporting_edges`; `retains` | mcp/src/agents_remember/models/knowledge/family_review.py:218-245; mcp/src/agents_remember/models/knowledge/family_review.py:241-245; mcp/src/agents_remember/models/knowledge/family_review.py:252-260; mcp/src/agents_remember/models/knowledge/family_review.py:262-281 |
-| The record citation that is a citation and not a conclusion, whose empty tuple reports a subject nobody has reviewed. | `review_record_ids` | mcp/src/agents_remember/models/knowledge/family_review.py:236-239 |
-| One owner's report with both required sentences, and the validator that refuses a status outside that owner's own members. | `PipelineStatusEntry`; `_require_the_owners_own_status_member` | mcp/src/agents_remember/models/knowledge/family_review.py:284-295; mcp/src/agents_remember/models/knowledge/family_review.py:297-313 |
-| The five-owner report: exactly one entry per owner in the declared order, no field for a combined verdict, and the keyed lookup that rule makes safe. | `SeparatedStatusReport`; `_require_one_entry_per_owner_in_order`; `entry_for` | mcp/src/agents_remember/models/knowledge/family_review.py:316-325; mcp/src/agents_remember/models/knowledge/family_review.py:327-339; mcp/src/agents_remember/models/knowledge/family_review.py:341-347 |
-| The currentness answer's two-member state, moved identities and typed statements, plus the two-direction rule and the reuse refusal. | `FindingCurrentness`; `binding_state`; `reinterpreted_for_new_inputs`; `_require_the_state_to_follow_from_the_moved_identities` | mcp/src/agents_remember/models/knowledge/family_review.py:350-366; mcp/src/agents_remember/models/knowledge/family_review.py:368-390 |
-| One routing row limited to the declared surfaces, and the report whose counts are tied to its rows and to the shipped three terms, with the report-only property beside them. | `FamilyReviewRoutingRow`; `FamilyReviewRouting`; `_require_two_counts_and_no_fourth_term`; `family_rows_are_report_only` | mcp/src/agents_remember/models/knowledge/family_review.py:393-420; mcp/src/agents_remember/models/knowledge/family_review.py:423-444; mcp/src/agents_remember/models/knowledge/family_review.py:446-467; mcp/src/agents_remember/models/knowledge/family_review.py:469-472 |
-| The decision's named owner and the bounded decision shape, with the typed `False` that records it creates no gate and the refusal of an unnamed authority. | `DecisionOwner`; `FamilyReviewGateDecision`; `creates_gate`; `_require_the_authority_basis_to_name_its_sources` | mcp/src/agents_remember/models/knowledge/family_review.py:475-486; mcp/src/agents_remember/models/knowledge/family_review.py:489-509; mcp/src/agents_remember/models/knowledge/family_review.py:509-509; mcp/src/agents_remember/models/knowledge/family_review.py:511-521 |
-| The one recorded decision this module exports, naming the developer as requirement authority and carrying its authority basis and revisit condition. | `RECORDED_GATE_CONSEQUENCE_DECISION` | mcp/src/agents_remember/models/knowledge/family_review.py:524-582 |
-| The frozen, `extra="forbid"` base every shape derives from, with the four bounded-length constants the fields reuse. | `KnowledgeModel`; `model_config`; `LABEL_MAX_LENGTH`; `REFERENCE_MAX_LENGTH`; `PROSE_MAX_LENGTH`; `PATH_MAX_LENGTH` | mcp/src/agents_remember/models/knowledge/base.py:24-37 |
-| The detector's conclusion-name list and the declared-field-set review the module names as the measurement that a fact group carries no conclusion. | `CONCLUSION_BEARING_FIELD_NAMES`; `conclusion_bearing_fields` | mcp/src/agents_remember/models/knowledge/detection.py:216-248; mcp/src/agents_remember/models/knowledge/detection.py:268-283 |
+- The one declared grouping rule: its version value, the renderer that spells the rule as one sentence, and the identity key built from the two facts the rule merges on. [1]
+- The two surfaces a finding may route into, declared as a value so a third surface fails construction instead of being added. [2]
+- The one authority that decides closeout readiness, named as a value so the routing report can state what it does not decide. [3]
+- The five status owners in the design's own order, the per-owner declaration with both its columns, and the vocabulary mapping derived from that table. [4]
+- One recorded relationship a match was reached through, and one matched condition with its sides and its three supporting fact tuples. [5]
+- The closed detection-condition vocabulary the match repeats rather than renames, and its declared membership order. [6]
+- The group's declared field set — recorded family revisions, the input signature, the rule's identity, the matches and the review-record citation — with its accessors and the merge review. [7]
+- The record citation that is a citation and not a conclusion, whose empty tuple reports a subject nobody has reviewed. [8]
+- One owner's report with both required sentences, and the validator that refuses a status outside that owner's own members. [9]
+- The five-owner report: exactly one entry per owner in the declared order, no field for a combined verdict, and the keyed lookup that rule makes safe. [10]
+- The currentness answer's two-member state, moved identities and typed statements, plus the two-direction rule and the reuse refusal. [11]
+- One routing row limited to the declared surfaces, and the report whose counts are tied to its rows and to the shipped three terms, with the report-only property beside them. [12]
+- The decision's named owner and the bounded decision shape, with the typed `False` that records it creates no gate and the refusal of an unnamed authority. [13]
+- The one recorded decision this module exports, naming the developer as requirement authority and carrying its authority basis and revisit condition. [14]
+- The frozen, `extra="forbid"` base every shape derives from, with the four bounded-length constants the fields reuse. [15]
+- The detector's conclusion-name list and the declared-field-set review the module names as the measurement that a fact group carries no conclusion. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. A record shape is a property of one
 namespace's stored knowledge, and every identity it carries is a store-local reference or a declared
 vocabulary member.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T14:18+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): created this one-to-one card for the family-review pipeline's own vocabulary. It records the four properties the record shapes enforce (no conclusion field, five separated owners, missing stays missing, currentness never re-judged), the one declared grouping rule with its identity key and the retention review that measures a merge rather than assuring it, the routing report whose actionable count is tied to the shipped three terms while the family-review row count is folded into nothing, and the single recorded gate-consequence decision that names its owner instead of claiming a ruling. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

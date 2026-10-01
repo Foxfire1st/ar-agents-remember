@@ -1,0 +1,342 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/schema_v8.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one appended table — the only name this generation adds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a611f7cd655f4cc763fe48017094385756365729",
+            "content": "sha256:ff312c647e8547aa30bba37b34685b261072cd73477c9d27150b99afe7dc6958",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The record group's declared writable tables — exactly the two envelope tables, so this generation adds nothing to the mutable union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aafe998aace199abd97cba3a574645151209fc7f",
+            "content": "sha256:a240cb9845d2d21fd84840b389947786b0fbbfac1085e752a4da5abb94a01e31",
+            "locator": {
+              "kind": "symbol",
+              "name": "EFFECT_WRITABLE_TABLES"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/effect.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The appended columns, primary key and typed-JSON column, declared as the generation's pinned structure rather than derived from the DDL text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a611f7cd655f4cc763fe48017094385756365729",
+            "content": "sha256:488981ca52552f9c6f35cc69318c5c0b7c34ffabe771bc198fb629345fbb39db",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_COLUMNS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a611f7cd655f4cc763fe48017094385756365729",
+            "content": "sha256:009a46f22329fd032200263ddc557999d1e9ad002d54c26014b4bb763704e789",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_PRIMARY_KEYS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a611f7cd655f4cc763fe48017094385756365729",
+            "content": "sha256:ad3e0dc9d1e5ae7501566f9a736e1dd1ff21a6aabfdca7cb96302931310e9149",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_JSON_COLUMNS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The DDL: the composite primary key, the one-node-cycle `CHECK`, and the two foreign-key groups that make an edge able to name only records this store holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a611f7cd655f4cc763fe48017094385756365729",
+            "content": "sha256:f9f8ffa76cf7474b720ed4419231520741130dfc424a464cc5d512d54d91371c",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLE_DDL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The reverse-direction index — \"which change sets supersede this one\" — and the no-update / no-delete triggers that seal a recorded succession.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a611f7cd655f4cc763fe48017094385756365729",
+            "content": "sha256:c1d9f47d0ea2d5c19fe2e528f0280ad19ef20dfe197fd4f1a02a70ebe3b6175d",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_INDEX_DDL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a611f7cd655f4cc763fe48017094385756365729",
+            "content": "sha256:81135ce36ebe0afc633906d01a26f8f5a0aa488f6a7efda3ce8aeea1f4612c2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TRIGGERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The declared-empty feature tuple: generation 8 requires nothing generation 7 did not already require.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a611f7cd655f4cc763fe48017094385756365729",
+            "content": "sha256:846958ed5776f88992812fe9a6aa343215317e23ae19d052f3cc72413f779aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_FEATURES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The generation this one is composed onto, by name, and the composition that names this module as generation 8's append.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:6e4541a8017248b3da2a0de5cda3418f71cfc9e5c28b1026435b59d13e94e5bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_7"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:83deffe6e9d9b8b0340625e08d08f026d66752bf7c2d873ad500db4e4d308e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compose_generation_8"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:502b6f9091f678d00ec177f4ec1d940c5a80289bb0700cc5af3e88ea66c4c1b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_8"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:9a1d7a2b524f3596ced3e0543e87542b2ae0aa5b18db502db77fc5679d2fc5e8",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:0b1fa51ff161a17eec15d2b90e568d4727c55d53c12acc80e0e1ac69536fade2",
+            "locator": {
+              "end": 422,
+              "kind": "line_range",
+              "start": 419
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The schema name generation 8 declares, and the registry whose last entry is now the created generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:1f76f4b250a6eda3d7312f64f3970a7b894a1213216996e5d39ddd9e3bbd9845",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATION_8_SCHEMA_NAME"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b4ba2ca4eea50894f1b195208f2f3a9e7bd2f309f3524bc9da6466bb930330a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "GENERATIONS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:c954da44fc1cb1e734e9bfa69681a7a466150cb94dcadac44e0688afef4fdaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURRENT_GENERATION"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:b07c8b04f6624131c1f6661347b5093ce450f25eefb250e42ec496bc85dadbb8",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:ee8890993746a582400ce823dc7ae072381eef0593bf5511f7066db205781686",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 425
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52130bb12a9b5e09f0c8034ddaaf76228db175e7",
+            "content": "sha256:2a10a01d0583ed6bcd5fce90e832f1e7c17f3eb3dc9ce18fa88e867ec69fa8ca",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 447
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_generations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The generation the write path and the read both require before any authored-effect row may exist or be served.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:15cb5446dbda413c361775724f17506a702f07b768f066808aaea1808f7ea59b",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIRED_EFFECT_GENERATION"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:6eea1458736dd62b5744668bfcae1cfc8ab3cb482e392b2fc0aaf0c2fc8c8a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_effect_generation"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The shared acyclic walk the longer cycle is found by, over this table, inside the successor's own transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad02904e9603ec93d95bd80a143d6c2dd80fa486",
+            "content": "sha256:56c9ab09fb13096725a96fbaa27dbca211e3c1f0d53fb22acd7a81e66d8d6ee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_acyclic_successions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5d9044862638f4b5520c12be845934a4d7b46e16",
+            "content": "sha256:d1db378bd4e8db580e661a4979fc83bf080ab5c08a30769dc02950c21203bb8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "cycle_vertices"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

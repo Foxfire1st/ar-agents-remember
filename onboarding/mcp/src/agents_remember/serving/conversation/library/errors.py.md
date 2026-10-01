@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/library/errors.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/library/errors.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T15:20+02:00 |
-| lastVerifiedCommitHash |  `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`|
-| lastVerifiedCommitDate |  2026-08-12T00:45:15+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Native conversation library overview](overview.md)
@@ -49,37 +39,24 @@ shared `errors.py` so parallel leaves stay collision-free.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this internal error family.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The route module maps every member of this family to one precise status; the shared error base
 keeps existing handlers compatible.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The route table maps each family member subclass-before-base to one exact HTTP status. | "def _error_response(exc: Exception) -> JSONResponse:"; "_ERROR_STATUS_TABLE: tuple[tuple[type[Exception], str, int], ...] = ("; "LIBRARY_RESPONSES: dict" | mcp/src/agents_remember/serving/conversation/library/api.py:278-312; mcp/src/agents_remember/serving/conversation/response_contract.py:131-142 |
-| The shared base types this family subclasses keep `except ValueError` handlers working. | `ConversationLibraryError`; `LibraryScopeError` | mcp/src/agents_remember/serving/conversation/library/errors.py:15-16; mcp/src/agents_remember/serving/conversation/library/errors.py:23-24 |
+- The route table maps each family member subclass-before-base to one exact HTTP status. [1]
+- The shared base types this family subclasses keep `except ValueError` handlers working. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary exists for this local error module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-11T15:20+02:00 — Replaced generic error/table names with their exact declarations and
-  removed the import-only citation that did not own response semantics.
-- 2026-08-03T10:50+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 4 assigned citation findings (2 missing anchors and 2 malformed sources); final scoped check is clean.
-
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the leaf-local typed error family
-  sidecar. Verification is blank until closeout commits and stamps the new source.
+No meaningful cross-repo references found.

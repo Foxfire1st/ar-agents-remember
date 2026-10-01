@@ -1,0 +1,206 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper centralizes the sanitized drift snapshot filename and exact dry-run/removal payload.\n\nAnchor: \"def drift_snapshot_path(coordination_root: Path\", \"def remove_drift_snapshot(\", \"return _remove_snapshot_file(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:8232e9eb442c1a4f7fd24cc18ba36e924475e60ed78e7875784d38e33890aa9b",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:1b0c3421cd46f50e7fa1265d4f027d6ddb96ab078b53a1c3546fa6bd5efc804b",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
+            "content": "sha256:0e6fc7397b841eab02d7db100a9a9a4494998106233dc77d29712a6b87df1b7f",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Projection pruning keeps configured repositories and still-existing leaf worktrees, skips invalid snapshots, and removes valid orphaned snapshots.\n\nAnchor: `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys`, `_read_valid_snapshot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
+            "content": "sha256:2f8d306e049220a2aa893df0c9dd64963eaf9559cdca1e78d2069128a07eb1f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_orphaned_drift_snapshots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
+            "content": "sha256:e72e9b1944a45942700369ee08b85b2bb8971f427ecde59e9b5f0e8d935dc4a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_active_worktree_snapshot_keys"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
+            "content": "sha256:e290921c4046bf274b788d9689a5afe5bbb61494909fb27617dbb4bc92d3535e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_valid_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses.\n\nAnchor: `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
+            "content": "sha256:2f8d306e049220a2aa893df0c9dd64963eaf9559cdca1e78d2069128a07eb1f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "prune_orphaned_drift_snapshots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
+            "content": "sha256:e72e9b1944a45942700369ee08b85b2bb8971f427ecde59e9b5f0e8d935dc4a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_active_worktree_snapshot_keys"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes.\n\nAnchor: `ContractSnapshot`, `ContractSnapshotCache`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "content": "sha256:e2084926cf923c0f10655025803960784c6289f7ea2eb9605ad5c137d00c903c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractSnapshot"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab4a26c25c915c33b0d791651543c8607283ff77",
+            "content": "sha256:6dad0eac1147fe7ae4d29c6d1208475075f6ec075e7cb42ffb04fc6646ef3f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractSnapshotCache"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The projection-input module exposes the `read` and refresh entries.\n\nAnchor: \"def read(\", \"def _refresh_tasks(\", \"def _refresh_drift(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
+            "content": "sha256:7d0fb8932a75b251be8c3db1aaa9c3432a84588e2fd60aed88bc0dabe4c3b078",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
+            "content": "sha256:9cf2dc9447f41a06e83d7a2d13d5e1ed1978510f736b89eb041918467befb3c0",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
+            "content": "sha256:4d39cf2eb4bad19720e17974b18eb213bdb5215c16aaf63e43ba92756f9cc540",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The projection-store module exposes the `project_and_write` entry.\n\nAnchor: \"def project_and_write(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:0be899ec6a4694b1a5d7bed6360ea44d7e8a3906181f6c89652f8985f4ac7125",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 214
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

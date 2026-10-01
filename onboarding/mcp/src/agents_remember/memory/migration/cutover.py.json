@@ -1,0 +1,402 @@
+{
+  "path": "mcp/src/agents_remember/memory/migration/cutover.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of its boundary: three artifacts, none executed, no trigger, no flag, no scheduled activation, and no function that writes anything.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:2bc1ddd137545cbd66cda22068475b74df8eaf6e620bbbf5b422e28b8b2393ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "CUTOVER_CRITERIA"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:b26ffc03037decc7fec0b6ae5ac5e190523588394272a77321a9d1fc7c67cc05",
+            "locator": {
+              "kind": "symbol",
+              "name": "CUTOVER_PLAN"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:091f42cc0d36d28575fdaf9c89c763378f86d55458d2dae36b2fcaafb718f8c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CUTOVER_PROPOSAL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:400f4c67562edd3688cd7e27798be64eec9592dc2e9f760f24e3e2a3e30f138e",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The decision vocabulary with no value that means approved, because an approval is a recorded decision owned elsewhere.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:06dd713465716232d2f629c79d24c68fd5147bc5a92002c4c0ce1bbfc3c0b8f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProposalDecision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The proposal shape: the exact boundary, the decision state and the field declaring that this artifact does not execute the cutover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:3f25e4e84a274d39f735b67e1c96137ddc8bf92607d015fdc13979bd4160c528",
+            "locator": {
+              "kind": "symbol",
+              "name": "CutoverProposal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:722315ac48b0a900d399f6f449275750f67ea890800509bc8c84e8578be84be9",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The pure re-ordering and completeness check, which refuses an evaluation that omits a declared criterion because an omitted criterion reads as a satisfied one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:17b2cf82cf41c400b71f69ae8aaf40700ea72aeee6fdb07a5d49ee18909c228f",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_criteria"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The verdict derived from the observations rather than passed in, rendering \"cutover is not yet justified\" with each unmet criterion's exact measure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:11ce6cf1432efc195fbb5bd2ac91dabb0354cb1b41b982d690415bf3d0e4ea92",
+            "locator": {
+              "kind": "symbol",
+              "name": "criteria_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The one measurement function: it refuses a criterion this module does not declare, and calls the predicate once so a met criterion cannot contradict its own measure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:3c5ce54ce613033f0e226a8935780134ba181d2b93921307be81bdf6cc6fcc27",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure_criterion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The single accessor that returns the three artifacts together, executing none of them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:2820b63fcd75d6a4811762221323569eed149d2ee91137cfdf12d62a9371d0aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_artifacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The case that exercises the artifact set and its execution claim, so the \"three artifacts, none executed\" boundary is checked rather than asserted.\n\nAnchor: `cutover`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68fb7ffeb0eee19d99c2ef4ee0c6dcdac124925",
+            "content": "sha256:d8869cabb0bc5edfece61c045758aa88a9558379f80c8e1e76192d58143dcffe",
+            "locator": {
+              "end": 804,
+              "kind": "line_range",
+              "start": 795
+            },
+            "path": "mcp/tests/test_migration_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The case that pins the escalation to the governing boundary and its exact item, and the case that refuses to soften an unmet criterion.\n\nAnchor: `cutover`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68fb7ffeb0eee19d99c2ef4ee0c6dcdac124925",
+            "content": "sha256:0be39ebc39c9081ef44d2e425b016c306d41bb7e813689495151da91938df29d",
+            "locator": {
+              "end": 812,
+              "kind": "line_range",
+              "start": 806
+            },
+            "path": "mcp/tests/test_migration_census.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c68fb7ffeb0eee19d99c2ef4ee0c6dcdac124925",
+            "content": "sha256:e647d68f0293f2bcb9414746f4833f93af698a84c1e902d2878d63b4070c2099",
+            "locator": {
+              "end": 838,
+              "kind": "line_range",
+              "start": 814
+            },
+            "path": "mcp/tests/test_migration_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One criterion's outcome as a value, carrying the exact observed measure beside what the criterion requires, so an unmet criterion reports what fell short.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:b83f6f1dbdde74948393dd783ac997d597289502e4cd91f3c1c9c94fbeba4f56",
+            "locator": {
+              "kind": "symbol",
+              "name": "CriterionObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The criterion shape, with the evidence field that names what would show the condition holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:381259ab374cdd1422d16363fe5dd70d6c2b4d656f71e74df34253f5e5c2b844",
+            "locator": {
+              "kind": "symbol",
+              "name": "CutoverCriterion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The step shape, each step stating its own reversibility rather than leaving it to the plan's prose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:48d00b8b04a790afa23e2d7180df4513960755af22df51c991a032158d88e02f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CutoverStep"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The plan value: the ordered steps, the rollback story, the archival step stated as a property to satisfy, and the point of no return as a step index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:4b67b368f8f937e6d596b6692553f98898b08fdc898d606f5de2d23e15b1c940",
+            "locator": {
+              "kind": "symbol",
+              "name": "CutoverPlan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:66ebdcc0925eb6ca0141be89b9e9e8a72acd02d66a0c3164447021c002a2cf40",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 220
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The six criteria, each a predicate over a census result with its own evidence, covering inventory completeness, parse-outcome disposition, reference resolution and assessment completion with `P` as the exact shortfall.\n\nAnchor: `CRIT-1-inventory-complete`; `CRIT-2-parse-outcomes-dispositioned`; `CRIT-3-references-resolved`; `CRIT-4-assessment-completion`; \"CRIT-1-inventory-complete\"; \"CRIT-2-parse-outcomes-dispositioned\"; \"CRIT-3-references-resolved\"; \"CRIT-4-assessment-completion\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:1787d40cf052429adf2cceea7a59fe809898bfa0415b5845094d7ce0ac45994c",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two criteria that gate on another seat's work rather than on a count: the independently reviewed denominator that was not derived from the corpus, and the negative proof that no path revives legacy prose as authority.\n\nAnchor: `CRIT-5-denominator-reviewed`; `CRIT-6-no-authority-fallback`; \"CRIT-5-denominator-reviewed\"; \"CRIT-6-no-authority-fallback\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:9e4b691fa124a62f33a9ddd48c2ee221eba3e960904e128856ba2283b8974f8b",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The seven-step plan: steps 1 to 4 reversible preparation, steps 5 to 7 irreversible, with the archive preserved and referencable and never read as authority again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:48d00b8b04a790afa23e2d7180df4513960755af22df51c991a032158d88e02f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CutoverStep"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:b9f5b24d2df904ad93bac1564483c3888b913c5f938ee1ba363cae96f873117c",
+            "locator": {
+              "kind": "symbol",
+              "name": "point_of_no_return"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:b26ffc03037decc7fec0b6ae5ac5e190523588394272a77321a9d1fc7c67cc05",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The escalation boundary and its item, stored as data so the proposal quotes the same sentence the decision is reserved by.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:3ecfff36b1203a57d8f7506bb8b363b6bc279e1f390b80ce16e94aef80dada96",
+            "locator": {
+              "kind": "symbol",
+              "name": "ESCALATION_BOUNDARY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:24080004e6adad84fe028285222a25a8d9f6ed6ce3e70ed39426ce44d08415a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ESCALATION_ITEM"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b67ae03455e5c6b10c0b91c4447a415311aede",
+            "content": "sha256:091f42cc0d36d28575fdaf9c89c763378f86d55458d2dae36b2fcaafb718f8c3",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

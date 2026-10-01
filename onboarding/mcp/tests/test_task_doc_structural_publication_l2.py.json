@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_task_doc_structural_publication_l2.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Attach refuses json side drift across selected master batch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60461b93b2043be11198aaee3cf9929191b7f87f",
+            "content": "sha256:bbc04cc81988353590997d6aae4395bc96c4fbd0dc1fa72a1d117a16043f1010",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attach_refuses_json_side_drift_across_selected_master_batch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Attach refuses markdown side drift across selected master batch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60461b93b2043be11198aaee3cf9929191b7f87f",
+            "content": "sha256:2e944dfd7708dcd552cd4d871f207f393ab81cba8a71da7277219371a0d3db7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attach_refuses_markdown_side_drift_across_selected_master_batch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Detach first allows later exact absence bound create",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60461b93b2043be11198aaee3cf9929191b7f87f",
+            "content": "sha256:ee4d084d3e6d19412f106a92c3361f6f05598cbf6530c6fe8f241e40292a3106",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detach_first_allows_later_exact_absence_bound_create"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

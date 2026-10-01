@@ -1,0 +1,19 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The review's measured change inventory and its listed_total while attributed unchanged paths are opened.",
+  "conditions": [
+    "Admission reads the inventory and adds no entry to it."
+  ],
+  "exclusions": [],
+  "id": "INV-YBS0CVBK",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "2b9a2231-a33c-44d7-bb03-63082b77e998",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Opening attributed unchanged context never adds an entry to the change inventory or changes its listed_total.",
+  "status": "proposed",
+  "supersedes": []
+}

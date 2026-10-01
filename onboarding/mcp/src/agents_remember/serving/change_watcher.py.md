@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/change_watcher.py
 
-| Field                  | Value                                                |
-| ---------------------- | ---------------------------------------------------- |
-| repository             | agents-remember                                      |
-| path                   | `mcp/src/agents_remember/serving/change_watcher.py`  |
-| doc_type               | `file-level-onboarding`                              |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db` |
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview      | `overview.md`                                        |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -153,110 +143,42 @@ not settings knobs; `--heartbeat` is the only operator-facing knob.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. This card records the repository's explicit `watchfiles` call arguments, retry policy and dependency declaration; it makes no claim to have checked upstream platform behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain documentation source. | N/A | N/A |
+No configured external domain documentation source.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The watch roots are derived from — and must stay in lock-step with — the reader list of
 `project_and_write`; the projector consumes the pacer; `create_app` decides when a watcher exists;
 the CLI/daemon own the `--heartbeat` knob's plumbing.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded. | `projection_input_roots`; `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:161-186; mcp/src/agents_remember/serving/change_watcher.py:189-207 |
-| Accepted paths map to reader domains; unknown accepted paths request every domain. | `projection_domains_for_paths` | mcp/src/agents_remember/serving/change_watcher.py:210-254 |
-| Typed wake reason/domains, structural watcher seams and complete pacer scheduling. | `ProjectionWake`; `WakeTarget`; `ChangeWatch`; `ChangePacer` | mcp/src/agents_remember/serving/change_watcher.py:257-262; mcp/src/agents_remember/serving/change_watcher.py:265-272; mcp/src/agents_remember/serving/change_watcher.py:275-282; mcp/src/agents_remember/serving/change_watcher.py:285-378 |
-| Watcher root discovery, degraded empty-root behavior, explicit awatch arguments and retry lifecycle. | `ProjectionInputWatcher` | mcp/src/agents_remember/serving/change_watcher.py:381-489 |
-| Shared lock naming and transaction mechanics keep filtering aligned. | `lock_path_for`; `exclusive_file_lock` | mcp/src/agents_remember/kernel/file_lock.py:36-38; mcp/src/agents_remember/kernel/file_lock.py:87-114 |
-| Projection source readers determine the input surface. | `project_and_write` | mcp/src/agents_remember/serving/projections/projection_store.py:214-278 |
-| Projector wiring and fail-open watcher completion retain actual ownership. | `ProjectionRefreshers`; `_on_watch_task_done` | mcp/src/agents_remember/serving/projector.py:112-123; mcp/src/agents_remember/serving/projector.py:262-273 |
-| The live-input model selects actual watcher participation. | `LiveProjectionInputs` | mcp/src/agents_remember/serving/_app_common.py:418-440 |
-| Dashboard reload entry carries the pacing configuration. | `_dev_app` | mcp/src/agents_remember/cli/dashboard.py:111-163; mcp/src/agents_remember/cli/dashboard.py:166-166; mcp/src/agents_remember/cli/dashboard.py:338-338 |
+- Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded. [1]
+- Accepted paths map to reader domains; unknown accepted paths request every domain. [2]
+- Typed wake reason/domains, structural watcher seams and complete pacer scheduling. [3]
+- Watcher root discovery, degraded empty-root behavior, explicit awatch arguments and retry lifecycle. [4]
+- Shared lock naming and transaction mechanics keep filtering aligned. [5]
+- Projection source readers determine the input surface. [6]
+- Projector wiring and fail-open watcher completion retain actual ownership. [7]
+- The live-input model selects actual watcher participation. [8]
+- Dashboard reload entry carries the pacing configuration. [9]
 
 | Derived suffix uses the same whole-log naming owner. | `_DURABLE_LOG_LOCK_SUFFIX` | mcp/src/agents_remember/serving/change_watcher.py:158-158 |
 | Frontend advances volatile ages between heartbeat snapshots. | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
 | Runtime dependency is explicitly version bounded. | "watchfiles>=1.1,<2" | mcp/pyproject.toml:28-28; mcp/pyproject.toml:34-34 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Same-repository serving concern only. | N/A | N/A |
+Same-repository serving concern only.
 
 ## 260727-CHATS-IM-L2 Current Delta
 
 Accepted watcher paths map to explicit projection reader domains. `ChangePacer` accumulates those
 domains through debounce/max-wait and returns a `ProjectionWake`; an unmapped accepted path returns
 all domains so correctness fails open to a full refresh.
-
-## Update History
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/cli/dashboard.py` (the reader import and the `knowledge_reader_port` binding); `mcp/src/agents_remember/serving/_app_common.py` (one import and the `knowledge_reader` collaborator field), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `dashboard.py`, `_app_common.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
-- 2026-09-30T01:48:12+00:00: Generated citation repair: `LiveProjectionInputs` repointed to mcp/src/agents_remember/serving/_app_common.py:417-439. No content impact: mechanical anchor-range projection bound to citation source snapshot a85c638de10bc300eb93d4b69fedcbaf6e141873de546e8335d0f51f59402273; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/cli/dashboard.py`, `mcp/src/agents_remember/serving/_app_common.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-18T18:20+02:00 — 260915-KS-L22 curator (uncommitted change set on `ar/260915-ks-l22`, base `2dcacb27`): **re-read this card's reopened claim against the construct its range now covers, and RETAINED its wording** — `_dev_app`, cited at mcp/src/agents_remember/cli/dashboard.py:102-132. The claim says the dashboard reload entry carries the pacing configuration, and the cited range holds `def _dev_app():` at `:102` with the reload-worker role declaration the sentence is about; the claim is true as written. What reopened it was a **generated anchor-range projection** that had rewritten the range mechanically, so the citation was not shown to be current until an agent read it — this is that reading. No range was substituted or deleted, and the verification stamp is **not** advanced: the code commit does not exist yet and closeout owns it, which is also what clears this stamp-relative reopen.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: `_dev_app` repointed to mcp/src/agents_remember/cli/dashboard.py:102-132. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-06T00:28+02:00 — Reconciled watcher lockfile derivation with the shared kernel owner; retained the suffix and every-directory filtering contract. Verified against the prepared L30 commit.
-
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T21:14+02:00 — W2-B03 curator: resolved 16 initial citation findings (8 anchor, 0 prose, 8 source); scoped recheck PASS (0 findings). Verification metadata unchanged.
-
-- 2026-08-01T19:45+02:00 — 260731-EFA-L5 (durable store integrity). The card described the
-  lockfile exclusion as a name in `_EXCLUDED_WORKSPACE_NAMES` (`operator-inbox.lock`), which is both
-  gone and was the defect: the literal had stopped matching once `lock_path_for` moved to
-  `operator-inbox.jsonl.lock`, so the filter looked correct and filtered nothing. Recorded the
-  replacement — `_DURABLE_LOG_LOCK_SUFFIX`, **derived** from `lock_path_for(Path("log.jsonl"))` and
-  suffix-matched in **every watched directory** — and why suffix-and-everywhere is what a basename
-  list structurally could not express: `gates.jsonl` lives under `workspace/` *and* once per
-  lifecycle, so `gates.jsonl.lock` appears in every lifecycle directory. Recorded that these are the
-  highest-frequency writes in the watched tree (every durable-store append and rewrite opens one
-  `a+b`) and that the rule is safe because no projection input is named `*.jsonl.lock`. Added the
-  invariant that the exclusion must stay derived. Re-anchored **every** citation in the table
-  against the current source, since the earlier ranges predated three leaves: module docstring
-  `L1-L67` → **L1-L71** (the old range stopped three lines short of the R7 failure posture the same
-  claim names); constants `L97-L131` → **L107-L156** (it stopped short of both
-  `_EXCLUDED_WORKSPACE_NAMES` and `_DURABLE_LOG_LOCK_SUFFIX`); `L134-L175` → **L159-L205**;
-  `L178-L279` → **L255-L376**; `L282-L384` → **L379-L487**; added a row for
-  `projection_domains_for_paths` (**L208-L252**), which the table never had. Off-file citations
-  likewise: `projector.py` `L105-L124; L149-L205` → **L107-L119; L145-L160; L193-L250** (neither old
-  range contained `_on_watch_task_done` or the legacy `sleep(self._interval)` the claim names);
-  `app.py` `L467-L505` → **L606-L688** (`L467` is now a `TerminalLandedCleanupRequest` field);
-  `cli/dashboard.py` `L59-L78; L190-L196` → **L101-L118; L76-L80; L218-L221**;
-  `test_change_watcher.py` `L1-L435` → **L1-L489**. Added a `lock_path_for` reference row.
-  Verification metadata untouched and still pinned.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: watcher paths now map to
-  explicit projection domains and `ChangePacer` coalesces both the wake and its invalidation set.
-  An accepted but unmapped path fails open to every domain, preserving correctness while narrow
-  known changes avoid a full input rebuild. Verification metadata remains pinned until closeout.
-
-- 2026-07-13T11:15+02:00 — 260712-PTS-L3 post-integration correction: removed the
-  `worktrees/*/*/provider-runtime` watch root entirely. It descended (recursive) into each task's
-  live container data (Postgres/grepai), which is unreadable to the daemon user — it crashed the
-  whole watch on permission-denied against the real coordination tree, falling back to permanent
-  1s ticking — and would have re-projected on every container WAL write. Worktree provider-state.json
-  is now heartbeat-covered; central provider status stays watched via `logs/providers`. Added
-  `ignore_permission_denied=True` to `awatch` and a regression test asserting no watch root falls
-  under `worktrees/`. Verified against the live tree with containers: watcher establishes cleanly,
-  re-projections dropped ~20/20s → ~3/20s, change latency ~1.2s.
-- 2026-07-12T20:24+02:00 — 260712-PTS-L3: created for change-driven projection pacing — the derived
-  projection-input watch roots (docstring derivation table; nothing under worktrees/, never
-  a worktree-checkout walk), the input-event filter (tmp/dotfile/own-output/workspace-churn +
-  `operator-inbox.lock`, review hardening), `ChangePacer` (debounce 0.1s, max-delay = interval so a
-  busy world keeps the former cadence, heartbeat default 15s, starts degraded), and
-  `ProjectionInputWatcher` on `watchfiles` (30s watch-set re-derivation; loud ERROR +
-  fixed-interval fallback on ANY failure with 30s retry — derivation failures follow the same
-  retry path after review hardening). Adversarial review verdict INTEGRATE with the two hardenings
-  adopted. Verification metadata remains empty until closeout stamps the PTS-L3 code commit.

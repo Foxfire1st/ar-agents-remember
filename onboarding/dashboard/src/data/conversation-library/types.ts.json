@@ -1,0 +1,245 @@
+{
+  "path": "dashboard/src/data/conversation-library/types.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared active-side types (`ConversationItem`, `FeatureCapability`, `HarnessId`, `NativeConversationRef`) reused here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:dc580072cfe96fda01c3de42598e5bc2f81d32569780f998186cba1df463599e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationItem"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:efbd38cd02cde5982078f4ce49eb4abce1e3bd052893d96124c7ac037368d20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureCapability"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:928eff350b8f7ccf6e965251ab294b49694e289689595d24ab0a14b99307bcb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessId"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:d95a5432dcf8de0c55dc9ca2a932f0431d1506a4cf3e6f8b18a106f42f8d4b04",
+            "locator": {
+              "kind": "symbol",
+              "name": "NativeConversationRef"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The client that returns these types as or-null reads / typed open evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:dc601bdfe9763ff941115acaf570a7db31daf1971939172c0aaa93d92bc960a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchLibraryList"
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:269260c8b7855e7808f9d9959c31c2c0a6f73825c1859b445812fa96beb61d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "openConversation"
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:18e0408cffaf42eeadf940aa63d2131bcd4b15a0625ea1babcb86ca0b874a337",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf28b6fa358ebaf6796d2ad56f5ca90258005e7f",
+            "content": "sha256:950d6f8a7214799902c1ed415e303ec90484913aea7acec8a8696af80c5779c4",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "dashboard/src/data/conversation-library/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store that holds the paged list, preview, and open-operation state over these types.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:b3e1ad2f9d0bd21123bc02f95b9d824ad6d55a8a72931714f5410fe959c0ef8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversationLibraryStore"
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b7b84cb440cdb8bfd86d8db02bdca06189def48",
+            "content": "sha256:157496507c2c22724a11ba85f32bfd3f8da8a261d61528a05737acd3edec2958",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "dashboard/src/data/conversation-library/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The native library route authority these types mirror.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:73c910414d1bd81da8f01f0bfa228218d2c2881f67e243c9ad733b4966b759d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "api_library_list"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
+            "content": "sha256:1fec6701e6a040fbc58f65c6b0c2435db979b5a32ca444176979af7a078a7f01",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The wire model authority these types mirror (moved to `models/conversations/` by L9).\n\nAnchor: \"class ConversationLibraryPage(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b69e8a46b71a1eaa0b7e258db2871b18708935c2",
+            "content": "sha256:1bb1247289fd2554296c6afbbacf3a8f3c0d53a7e8ddd44cffe3391c9dd38a20",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/models/conversations/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Server-side `ConversationLibraryAgentRow` / `agents` / `agents_note` producer these types mirror.\n\nAnchor: \"class ConversationLibraryAgentRow(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b69e8a46b71a1eaa0b7e258db2871b18708935c2",
+            "content": "sha256:1dc6de023efe2607f359365bb6fc33b96857fb59a3275d2d8495435a13802cba",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/models/conversations/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Claude harness lister's unavailable-agent note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bf0b8d909c9e035fe6a85913c3447ed1a00bf67",
+            "content": "sha256:d6cdd924609d91149a01eb1493cb353c246fadcdb7f1568a1b2cda92191540ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_AGENTS_UNAVAILABLE_NOTE"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Codex harness lister's degraded/truncated agent-page note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15c9d9e77817ceeeae851da545c349d5e178c680",
+            "content": "sha256:ccf2060b011ac12d93fc71026680a55f1e24668f060e18f1ec9831687d098941",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_page"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/codex.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

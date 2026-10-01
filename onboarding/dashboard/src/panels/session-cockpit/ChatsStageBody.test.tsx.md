@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-21T00:45+02:00 |
-| lastVerifiedCommitHash | `e5cb139f66abbd6502d4dcc4be883eb5f49770fe` |
-| lastVerifiedCommitDate | 2026-08-21T00:28:23+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Session cockpit overview](overview.md)
@@ -57,66 +47,30 @@ boot gets bounded transient retries, while terminal answers fail loud rather tha
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in `system/sources.md`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Harness setup preserves real stores while replacing the authority and conversation network edges at their module boundaries. | "mocked at their module boundary" | dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:32-48 |
-| Teardown unmounts while timers are fake, discards the virtualizer's orphaned debounce, and only then restores real time. | "TanStack Virtualizer owns a 150 ms scroll-observer debounce" | dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:99-112 |
-| Boot, pool, epoch/freshness, scroll-restore, and persistent-layer matrices cover the stage seams (six describes). | "ChatsStageBody fresh-chat boot (260721 D1/D2)"; "ChatsStageBody keep-alive pool (F-j)"; "ChatsStageBody epoch attribution (M3)"; "ChatsStageBody authority freshness (M9)"; "ChatsStageBody view-switch scroll restore (F-ac)"; "ChatsStageBody B1: persistent conversation + PTY layers" | dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:111-234; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:282-404; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:411-514; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:516-565; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:590-756; dashboard/src/panels/session-cockpit/ChatsStageBody.test.tsx:767-976 |
-| Implementation under test (`ChatsStageBody`). | `ChatsStageBody` | dashboard/src/panels/session-cockpit/ChatsStageBody.tsx:147-489 |
-| The typed page/item/status builders the warm seeds now use. | `conversationIdentity`; `conversationStatus`; `conversationItem`; `conversationPage` | dashboard/src/test/fixtures/conversationWire.ts:172-185; dashboard/src/test/fixtures/conversationWire.ts:187-207; dashboard/src/test/fixtures/conversationWire.ts:209-226; dashboard/src/test/fixtures/conversationWire.ts:228-243 |
-| The `live.completeness` reason stays `null` under the all-`supported` tree. | `CapabilityReason` | dashboard/src/panels/session-cockpit/conversation/primitives.tsx:140-158 |
-| The `history.toolCompleteness`/`history.completeness` cue stays `null` under the all-`supported` tree. | `historyCapability` | dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:313-315 |
+- Harness setup preserves real stores while replacing the authority and conversation network edges at their module boundaries. [1]
+- Teardown unmounts while timers are fake, discards the virtualizer's orphaned debounce, and only then restores real time. [2]
+- Boot, pool, epoch/freshness, scroll-restore, and persistent-layer matrices cover the stage seams (six describes). [3]
+- Implementation under test (`ChatsStageBody`). [4]
+- The typed page/item/status builders the warm seeds now use. [5]
+- The `live.completeness` reason stays `null` under the all-`supported` tree. [6]
+- The `history.toolCompleteness`/`history.completeness` cue stays `null` under the all-`supported` tree. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence applies. | — | — |
+No cross-repository evidence applies.
 
 ## 260815-DAG Master Full-Gate Repair
 
 `afterEach` is now async and flushes the virtualizer's 150 ms scroll-observer debounce (fake-timer clear + real-timer 200 ms settle) before jsdom teardown.
-
-## Update History
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: async `afterEach` flushes the virtualizer scroll-observer debounce before teardown. Verified at code commit e5cb139f.
-
-- 2026-08-14T06:30+02:00 — No production impact: L23 drains TanStack Virtualizer's fake-timer
-  callback before restoring real time, preserving the existing scroll-restore proof without jsdom
-  teardown leakage. Verification remains closeout-owned.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the keep-alive assertions added with the e2e repair. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T13:42:02+02:00 — 260731-EFA-L6 S18-B08 curator: regenerated the six describe bodies, restored builder owner order, and split the two capability cues so each whole claim retains its operative surface branch.
-
-- 2026-08-01T10:55+02:00 — 260731-EFA-L4 curator: recorded the conversation-wire fixture conversion,
-  which is the largest data change any of this leaf's session-cockpit suites received, so the Logic
-  section now enumerates it instead of leaving a reader to diff it. The described BEHAVIOUR is
-  unchanged, and I traced the one path that could have made it otherwise rather than trusting a green
-  run: `capabilities` went from a literal `undefined` to a full all-`supported` tree, and the stage's
-  only two capability-driven cues are in `ConversationSurface.tsx` — `live.completeness` renders a
-  `CapabilityReason` only when the state is defined AND not `"supported"` (cit:([`CapabilityReason`], dashboard/src/panels/session-cockpit/conversation/primitives.tsx:140-158)), and
-  `historyCapability` resolves to `null` unless `toolCompleteness` or `completeness` is not
-  `"supported"` (cit:([`historyCapability`], dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx:313-315)). Both produced nothing under `undefined` and produce nothing under
-  all-`supported`, so no cue appeared or disappeared; `grep` also finds no capability/interrupt/stop
-  reference anywhere in this suite. The status gained `identity`/`observedAt`/`freshness`/`evidence`/
-  `process.generation`, which is unrelated to the M9 "authority freshness" case (that one is about the
-  submission-authority cache having no TTL) — the card now says so, because the shared word is a real
-  trap. Suite re-run: all cases pass. Citation repairs: the file is 968 lines, so `L106-L981` was out
-  of bounds → `L109-L968` (opening on the first describe); harness setup `L1-L105` → `L1-L107` (the
-  `afterEach` closes at 107); implementation `L151-L454` → `L146-L454`, where `ChatsStageBody` actually
-  opens. Two rows added.
-
-- 2026-07-24T13:17:17Z — Curator: created the structured-stage regression-suite sidecar. It is
-  uncommitted, so verification fields are intentionally blank until closeout stamps the code commit.

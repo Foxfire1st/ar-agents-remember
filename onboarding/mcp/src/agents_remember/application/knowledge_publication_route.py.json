@@ -1,0 +1,367 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_publication_route.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+        "content": "sha256:a26b10bf2b87b50893180b1b3246bbb2cb72f0062f8d956290b22857a1ca074e",
+        "locator": {
+          "kind": "symbol",
+          "name": "declared_publication_location"
+        }
+      },
+      "id": "RLZ-YNWMKRWK",
+      "invariant": "INV-753SKJFF",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The read route owns the spelling of the location and the write route consumes that same owner, which is what makes the two halves one location rather than two conventions.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The one location the ordinary route publishes to, resolved through the enclosure's own coordination context exactly as the read side resolves it; an unresolvable memory layer is refused by name rather than guessed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:a26b10bf2b87b50893180b1b3246bbb2cb72f0062f8d956290b22857a1ca074e",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_publication_location"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:915de8efc4f64ff1e4dbdf1d83ccfcc46e7a727a2337ed117e5fb9ba08853aa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeclaredPublicationLocation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The caller that owns the destination *selection* and completes the admission's line from its own report — the split that keeps this module's detail from ever claiming a publication.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14ad7da8d438524430131df8924066d599b6ecff",
+            "content": "sha256:bc1be6d5b552ab70e4eb9b79280fd51874f8b468ed6ae85822bfe54a305268b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_declared_destination"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14ad7da8d438524430131df8924066d599b6ecff",
+            "content": "sha256:14f0f78f80edb47d0f1e69b71197976a549690acb164d74b03f240a6885e9814",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected_destination"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14ad7da8d438524430131df8924066d599b6ecff",
+            "content": "sha256:315fd4b106cd55709863b2aceca54e8de4b741de8cd79b4d60e9f135dd3e63ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publication_route"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14ad7da8d438524430131df8924066d599b6ecff",
+            "content": "sha256:aeb50e2e50169935c868d394391b74f9446682c594acff4edc6e4ad1f8c18831",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_back"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The production owner whose closed write path and publication result this route hands to and reads back from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:1e68e38b1d88e42cbf232455a533b8ff42545fd09694ebe83890024f9cd1ccb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ingest_curator_list"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:80c636a532276a687c96452b4754666f6f4c299cb815c74b8845c3393aa6fac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IngestPublication"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:37b6acf4e443690830efe1cc94fc9ec035491a1999a7061b537c2cab51cd2c41",
+            "locator": {
+              "end": 1016,
+              "kind": "line_range",
+              "start": 1002
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The cases that drive this route through the shipped CLI over a production-shaped enclosure.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b4db72c97fc17121fab7865c453a7201493261a",
+            "content": "sha256:56d0f5ac4e5e529a75fd3a53a30c9e157592d1e87a990e3313852f5222e32300",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_ordinary_route_publishes_to_the_declared_location_and_reads_it_back"
+            },
+            "path": "mcp/tests/test_knowledge_ingest_publication_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0b4db72c97fc17121fab7865c453a7201493261a",
+            "content": "sha256:53cae058d95954c4f946932a9d114e0a92b52da8b4b4e0ad58ed10b96ba325f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_declared_location_that_cannot_be_resolved_is_refused_rather_than_guessed"
+            },
+            "path": "mcp/tests/test_knowledge_ingest_publication_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The admission as four ordered facts, each stating only what it established, and the ordinary update as the fourth: the destination holds the dataset this run forked from, read from that path before the run could publish over it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:54711c8526ab83c479a899aac9c26fe5daf917b9bec4b3100cf4ec6f7b750cfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "admitted_destination"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:68e9b9c33c5f591aee5a9bf8a461c30b52fff3da2ad04756fd7ed83d7d0b2bf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "DestinationAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The read-back through the reader's own owner, its three states, and the refusal code carried beside the reader's own sentence when nothing readable is there.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:c31f33b68a4b6f664642c7b4faeabd06521cbcf5c7dd474315183345555ba8e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_identity_read_back"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:b42a642705b5669a1bd9c11e5d9165b1cf6ec6bfdf6baf35dbbe33979c7adaee",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedIdentityReadBack"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declared exports that make those six names this module's public surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:74ade4d89f370c71984f6fb3fb748de7de8386dd2c4304bfebc592840c42377d",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The declaration this module resolves against — the read route's one published-dataset location, which is what makes the write side reach the place the read side selects.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_dataset_path"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "content": "sha256:cd2dea47f4656356861ff6ee5742f8762eac9429df94c7868a7102ebc0de1930",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLISHED_DATASET_NAME"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The reader's owner the read-back goes through, and the named absence it answers with instead of raising.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_published_intent"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "content": "sha256:7fe54fb261752044862f79b45d0ea3ccf57b8981074bc78771a941b10ddc473c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedIntentUnavailable"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The context owner that decides *which* memory root this location is, shared with the read side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84c8b44837cb851e0578480cf522994641d4fc27",
+            "content": "sha256:585c7c8ba7cf65cee74d8ae542756abb97a99cc854f8df7e6cd412bdbe696836",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_context"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The bytes the admission is derived from, captured at the top of the run, and the read that turns them into a dataset identity or a reason they are not one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:46d1b1e1615c20847dfeba62e360a4de4a2b898b8201cf1f14e6e78bcc0f9433",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapturedBaseline"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:537340418e29664e57bbfc1adde8dcdb6d29d88b497397aee0626f14b1152c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_captured_dataset_identity"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The identity type both the admission and the read-back are expressed in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

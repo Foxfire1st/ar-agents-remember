@@ -1,0 +1,50 @@
+{
+  "path": "dashboard/src/panels/engine-room/ledger.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The warp-coupler entry point with ledger popover wiring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8c77203e752ccbf10a6c27855eed358fd6b1448",
+            "content": "sha256:b00fadf504908f1fa37a2bdf3a4d1cf3b2629ad41601c1b32062ed193df228c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "WarpCoupler"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The ledger popover/table internals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8c77203e752ccbf10a6c27855eed358fd6b1448",
+            "content": "sha256:b7cb9229cb022d8557b2f6a625470970b04562bfe588d92a408314ba6c074cd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "LedgerPopover"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8c77203e752ccbf10a6c27855eed358fd6b1448",
+            "content": "sha256:dc6fd0ebe30ed8914cf4e25113529f9aa28e3693d980c73628059cc4ba21aeac",
+            "locator": {
+              "kind": "symbol",
+              "name": "LedgerTable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation-library/ConversationHistoryPreview.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T22:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation-library overview](overview.md)
@@ -43,39 +33,25 @@ never mutates any live conversation.
   completeness note; a supported-state reason must never be shown as the "why partial" copy.
 - Reuses `ConversationItemView` so the historical and live grammars can never drift apart.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared kind-dispatcher that keeps historical and live grammar identical. | `ConversationItemView` | dashboard/src/panels/session-cockpit/conversation/ConversationItemView.tsx:66-69 |
-| The historical page wire type (items + `historicalCapabilities`). | `historicalCapabilities` | dashboard/src/data/conversation-library/types.ts:67-67 |
-| The surface that mounts this preview column. | `ConversationLibrarySurface` | dashboard/src/panels/session-cockpit/conversation-library/ConversationLibrarySurface.tsx:75-171 |
+- The shared kind-dispatcher that keeps historical and live grammar identical. [1]
+- The historical page wire type (items + `historicalCapabilities`). [2]
+- The surface that mounts this preview column. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 2 repository-internal references and normalized 2 prose citation references for the shared conversation dispatcher and history-library surface; final scoped result 0 (checker-clean).
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: created the sidecar for the read-only history
-  preview — same block grammar as the live feed via `ConversationItemView`, the `history preview ·
-  not active` label, no write affordances, and the F13-fixed partial note that prints the actually
-  unsupported capability's reason. Verification is pinned to the leaf base (`0be0099`) because the
-  new source file is uncommitted; closeout owns its first source stamp.
+No applicable cross-repository source was found.

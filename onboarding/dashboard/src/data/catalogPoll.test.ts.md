@@ -1,15 +1,5 @@
 # dashboard/src/data/catalogPoll.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/catalogPoll.test.ts`         |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -49,22 +39,27 @@ Regression cases now prove that one aborted catalog beat records one missed beat
 recovers, while a byte-identical catalog payload preserves state and row identity without notifying
 subscribers.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module under test. | `hydrateTerminalSessionsFromCatalog` | dashboard/src/data/catalogPoll.ts:139-157 |
-| The poll-health state the beat assertions read. | `recordPollBeat` | dashboard/src/data/sessionCockpitStore.ts:228-228 |
+- The module under test. [1]
+- The poll-health state the beat assertions read. [2]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -72,33 +67,3 @@ Adds refcounted eager/cross-tab reconciler coverage, including immediate remote 
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — No content impact: reviewed the `leaf`-to-`task` invalidation-reason
-  rename; the card already describes the same cross-tab catalog reconciliation and authoritative
-  empty-catalog behavior without depending on the old reason literal.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: rebased the
-  `hydrateTerminalSessionsFromCatalog` range; exact non-fixing check returns zero findings.
-
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 2 citation findings; scoped check passed.
-
-- 2026-07-24T13:17:50Z — Documented poll timeout recovery and no-op reconciliation coverage.
-  Verification hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S1 (R1/R11): hydrate + beat recording,
-  stale-cutoff flip, empty-list guard, exclusion set, and the refcounted single-interval /
-  full-stop driver contract under fake timers. Verification metadata pinned to the leaf base
-  until closeout stamps the L2 code commit.

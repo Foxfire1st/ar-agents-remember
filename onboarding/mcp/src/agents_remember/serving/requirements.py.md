@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/requirements.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/requirements.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `f141d164265e926be9249acf6ae680ccf9ffae61` |
-| lastVerifiedCommitDate | 2026-09-22T12:24:11+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -71,39 +61,25 @@ filesystem root.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Route registration + the two handlers. | `register_requirements_routes` | mcp/src/agents_remember/serving/requirements.py:181-182 |
-| Task-context root selection and the registered-root guard. | `_selected_root`; `_registered_root` | mcp/src/agents_remember/serving/requirements.py:45-72; mcp/src/agents_remember/serving/requirements.py:75-87 |
-| The stricter no-symlink confinement reused by read. | `confine_non_symlink_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:52-92 |
-| The declared models + shared scoped-read refusal table. | `RequirementRow`; `RequirementsListing`; `RequirementContents`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:83-83; mcp/src/agents_remember/serving/response_contract.py:767-798; mcp/src/agents_remember/serving/response_contract.py:1122-1128 |
-| Composition: the app registers this surface. | `register_requirements_routes`; `create_app` | mcp/src/agents_remember/serving/app.py:254-315 |
+- Route registration + the two handlers. [1]
+- Task-context root selection and the registered-root guard. [2]
+- The stricter no-symlink confinement reused by read. [3]
+- The declared models + shared scoped-read refusal table. [4]
+- Composition: the app registers this surface. [5]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): added mcp/src/agents_remember/serving/app.py:138 to the row 86 of this card as the citation for `register_requirements_routes`: no cited file carried the construct, and the checker named line(s) [138, 292] in this file as its live location; re-pointed `register_requirements_routes` in the row 90 of this card from mcp/src/agents_remember/serving/app.py:283-284 to mcp/src/agents_remember/serving/app.py:138, the extent of the construct the claim is about (the checker named line(s) [138, 292] as its live location)
-- 2026-09-05T08:27+02:00 — L31 native curator: Removed the leaked diff-marker bullet after checking root selection; retained the GET-only requirement-packet contract and refreshed the scoped-read refusal-table evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: created for the new
-  task-local requirement-packet serving module (confined GET-only list/read over the
-  `tasks/<repo>/<master>/requirements/` root). Verified at code commit 1993dd25.
+No applicable cross-repository source was found.

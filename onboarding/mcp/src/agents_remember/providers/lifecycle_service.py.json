@@ -1,0 +1,54 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle_service.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MCP provider tool application entry points call this service layer.\n\nAnchor: [\"from agents_remember.providers import lifecycle_service\"]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
+            "content": "sha256:6bc578018eaa66f497781c59344d68983f01282accbb2762374cc44ac4726f40",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/application/provider_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CLI/operator implementation functions remain behind the lifecycle facade.\n\nAnchor: `_EXPORT_MODULES`, `__getattr__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85e8b470d74215b38afe84d85693a7f42351ea7e",
+            "content": "sha256:a4c3cb15b6baf711eddd9967df575a9777d9f64941a3c48622b073af1d9aa9ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXPORT_MODULES"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85e8b470d74215b38afe84d85693a7f42351ea7e",
+            "content": "sha256:72a94a1221e0cb6c3bf2b407c034d72a476b085abfc5e5cece6394892ab08ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "__getattr__"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_memory_citation_agreement.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_memory_citation_agreement.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -187,62 +177,58 @@ comment-level findings above (`T58`'s second site, `T114`'s guard bound, `SV-3`'
 bounds) belong to whatever change next touches the module. `T138` — the tool reference's 20-row table
 divergence — is registered and not this module's.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured in this memory root. These are
 repository-owned contract and assertion facts; no external library behaviour is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The anchors below identify current behaviour of this module; they are not execution evidence and they
 make no acceptance claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The memory tree the product refuses, cited at the definition rather than at the module header's old wrong line (`R2-3`, repaired). | `_refuse_official_memory` | mcp/src/agents_remember/application/memory_tools.py:114-136 |
-| The world: a code tree and the memory tree that documents it, both under one temporary root, with the citation cache slot its census was built in removed. | `World` | mcp/tests/test_memory_citation_agreement.py:290-359 |
-| The live tree, named by the run and skipped when no run names one. | `live_onboarding_root` | mcp/tests/test_memory_citation_agreement.py:276-287 |
-| The `T52` REPORT-ONLY population pin, re-derived on the pair this leaf lands: **130** rows over 95 documents. It is a report and not a gate, and the rows that moved it are named at the constant. | `T52_DEFINITION_OUTSIDE_RANGE` | mcp/tests/test_memory_citation_agreement.py:159-159 |
-| The ENFORCED population on the same tree: **97**, which is the merged sibling line's inherited debt rather than this master's, so the check reports `ok: false` and the module says so. A change in either direction is a finding. | `T52_ENFORCED_POPULATION` | mcp/tests/test_memory_citation_agreement.py:160-160 |
-| The `T58` pins, derived by enumeration rather than from the fixer's counter, re-measured on the merged tree. | `T58_WRAPPED_CITATIONS`; `T58_WRAPPED_DOCUMENTS` | mcp/tests/test_memory_citation_agreement.py:161-162 |
-| The `T52` shape: green membership, definition outside the range, one report-only finding. | `DefinitionOutsideCitedRangeTests` | mcp/tests/test_memory_citation_agreement.py:370-486 |
-| The negative that makes the check a check: a corrected range clears it. | `test_a_corrected_range_clears_it` | mcp/tests/test_memory_citation_agreement.py:412-421 |
-| The escape resolved where cell text becomes anchor text, which is where the `T57` blind spot was. | `unescaped` | mcp/src/agents_remember/memory_quality/style/citations/cells.py:40-53 |
-| Both cells and the quote path: the escaped spelling must yield the anchor the plain spelling yields. | `EscapedPipeAnchorTests` | mcp/tests/test_memory_citation_agreement.py:489-582 |
-| The wrapped-`cit:` detector, proven by a planted shape so the corpus zero is measured. | `wrapped_constructs` | mcp/tests/test_memory_citation_agreement.py:605-618 |
-| The code repository's own markdown, enumerated: zero wrapped constructs is the pin. | `test_the_repository_carries_none` | mcp/tests/test_memory_citation_agreement.py:634-646 |
-| The live case: `T52` 130, enforced 97, `T58` 3 constructs in 2 documents, on the pair. | `test_the_live_memory_tree_matches_the_pins` | mcp/tests/test_memory_citation_agreement.py:648-698 |
-| Every stale site the sweep found, with the pair it states and the ceiling it was written against. | `NON_HISTORY_SITES` | mcp/tests/test_memory_citation_agreement.py:729-739 |
-| The subset a repair moves, counted separately from the worklist the next curation inherits. | `LIVE_SITE_COUNT` | mcp/tests/test_memory_citation_agreement.py:742-742 |
-| The superseded-pair worklist: **DERIVED from the tree**, never remembered. The rule is `superseded_pair_sites`, the producer it carries is `notes/reports/tsip-instruments/l7-curator-stale-pair-enum.py`, and a change in either direction is a finding (`T112`, `F2`). | `NON_HISTORY_SUPERSEDED_SITES` | mcp/tests/test_memory_citation_agreement.py:762-762 |
-| The derived rule itself, so the pin can fail when the derivation stops seeing. | `superseded_pair_sites` | mcp/tests/test_memory_citation_agreement.py:231-251 |
-| The five hermetic arms that prove the derivation fires: counted outside history, dated inside it, not hidden by a qualified heading, the comma-grouped spelling, and the declared pair excluded. | `SupersededPairDerivationTests` | mcp/tests/test_memory_citation_agreement.py:973-1027 |
-| The live arm: the worklist count on the named tree equals the derived count. | `test_the_superseded_pair_population_is_derived_from_the_tree` | mcp/tests/test_memory_citation_agreement.py:899-925 |
-| The qualified-heading census: a NAMED population pinned at one entry, the merged sibling line's deliberate dated heading. | `QualifiedHistoryHeadingTests` | mcp/tests/test_memory_citation_agreement.py:1030-1095 |
-| The census constant: the pinned tuple the live arm compares against, and what each entry means. | `QUALIFIED_HEADINGS` | mcp/tests/test_memory_citation_agreement.py:1057-1057 |
-| The live arm that reds when the pinned population moves in either direction. | `test_the_named_tree_carries_exactly_the_pinned_ones` | mcp/tests/test_memory_citation_agreement.py:1083-1095 |
-| The two section-boundary bounds of the worklist rule, each with its direction, measured on planted documents. | `history_section_flags` | mcp/tests/test_memory_citation_agreement.py:193-228 |
-| The budget screen: the declared pair read from `pyproject.toml`, never restated here. | `BudgetAgreementTests` | mcp/tests/test_memory_citation_agreement.py:701-970 |
-| The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap. | `test_the_repaired_site_states_the_declared_pair` | mcp/tests/test_memory_citation_agreement.py:799-835 |
-| Both figures asserted separately at every pinned site, so a site that has moved on is red. | `test_the_live_sites_still_state_the_figures_they_are_pinned_to` | mcp/tests/test_memory_citation_agreement.py:927-959 |
-| The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. | `test_the_two_figure_classes_are_counted_separately` | mcp/tests/test_memory_citation_agreement.py:961-970 |
-| The module's own mutation boundary, read from its own AST (`T114`'s bound). | `test_this_module_shells_out_to_nothing` | mcp/tests/test_memory_citation_agreement.py:1127-1160 |
-| The lane row that keeps this module in the default selection. | "mcp/tests/test_memory_citation_agreement.py" |mcp/tests/test-evidence-lanes.toml:188-188|
-| The product counter this module's live case reads, and the code string it emits. | `definition_outside_range_findings` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:466-527 |
-| The entry point `memory_quality_check` dispatches through, so the case drives the product and not a copy. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:650-683 |
-| The payload key the live pin reads. | "definitionsOutsideCitedRanges" | mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py:718-718 |
+- The memory tree the product refuses, cited at the definition rather than at the module header's old wrong line (`R2-3`, repaired). [1]
+- The world: a code tree and the memory tree that documents it, both under one temporary root, with the citation cache slot its census was built in removed. [2]
+- The live tree, named by the run and skipped when no run names one. [3]
+- The `T52` REPORT-ONLY population pin, re-derived on the pair this leaf lands: **130** rows over 95 documents. It is a report and not a gate, and the rows that moved it are named at the constant. [4]
+- The ENFORCED population on the same tree: **97**, which is the merged sibling line's inherited debt rather than this master's, so the check reports `ok: false` and the module says so. A change in either direction is a finding. [5]
+- The `T58` pins, derived by enumeration rather than from the fixer's counter, re-measured on the merged tree. [6]
+- The `T52` shape: green membership, definition outside the range, one report-only finding. [7]
+- The negative that makes the check a check: a corrected range clears it. [8]
+- The escape resolved where cell text becomes anchor text, which is where the `T57` blind spot was. [9]
+- Both cells and the quote path: the escaped spelling must yield the anchor the plain spelling yields. [10]
+- The wrapped-`cit:` detector, proven by a planted shape so the corpus zero is measured. [11]
+- The code repository's own markdown, enumerated: zero wrapped constructs is the pin. [12]
+- The live case: `T52` 130, enforced 97, `T58` 3 constructs in 2 documents, on the pair. [13]
+- Every stale site the sweep found, with the pair it states and the ceiling it was written against. [14]
+- The subset a repair moves, counted separately from the worklist the next curation inherits. [15]
+- The superseded-pair worklist: **DERIVED from the tree**, never remembered. The rule is `superseded_pair_sites`, the producer it carries is `notes/reports/tsip-instruments/l7-curator-stale-pair-enum.py`, and a change in either direction is a finding (`T112`, `F2`). [16]
+- The derived rule itself, so the pin can fail when the derivation stops seeing. [17]
+- The five hermetic arms that prove the derivation fires: counted outside history, dated inside it, not hidden by a qualified heading, the comma-grouped spelling, and the declared pair excluded. [18]
+- The live arm: the worklist count on the named tree equals the derived count. [19]
+- The qualified-heading census: a NAMED population pinned at one entry, the merged sibling line's deliberate dated heading. [20]
+- The census constant: the pinned tuple the live arm compares against, and what each entry means. [21]
+- The live arm that reds when the pinned population moves in either direction. [22]
+- The two section-boundary bounds of the worklist rule, each with its direction, measured on planted documents. [23]
+- The budget screen: the declared pair read from `pyproject.toml`, never restated here. [24]
+- The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap. [25]
+- Both figures asserted separately at every pinned site, so a site that has moved on is red. [26]
+- The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. [27]
+- The module's own mutation boundary, read from its own AST (`T114`'s bound). [28]
+- The lane row that keeps this module in the default selection. [29]
+- The product counter this module's live case reads, and the code string it emits. [30]
+- The entry point `memory_quality_check` dispatches through, so the case drives the product and not a copy. [31]
+- The payload key the live pin reads. [32]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local contract claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No repository or external-system boundary is proved by this module. | N/A | N/A |
+No repository or external-system boundary is proved by this module.
 
 ## 260918-TSIP-L7 The Agreement Leaf's Own Acceptance Module
 
@@ -319,19 +305,3 @@ carried from the pair it was cut from `4d0fc20a`/`47570cd8`: on that earlier pai
 0 / 3-2, and the merge moved three of them. `AR_ONBOARDING_ROOT=<the leaf tree>/onboarding` then runs
 **35 passed**; with the variable unset the same module reads **30 passed, 5 skipped**, which is the
 trap rather than a green light.
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 2 row(s) re-pointed by the installed fixer (its generated bullets kept); 17 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`memory_tools.py`, `range_resolution.py`, `test_memory_citation_agreement.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:30:28+00:00: Generated citation repair: `_refuse_official_memory` repointed to mcp/src/agents_remember/application/memory_tools.py:114-136. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T20:30:28+00:00: Generated citation repair: "mcp/tests/test_memory_citation_agreement.py" repointed to mcp/tests/test-evidence-lanes.toml:188-188. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_memory_citation_agreement.py" repointed to mcp/tests/test-evidence-lanes.toml:140-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_memory_citation_agreement.py" repointed to mcp/tests/test-evidence-lanes.toml:127-127. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `LIVE_SITE_COUNT` repointed to mcp/tests/test_memory_citation_agreement.py:742-742. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `NON_HISTORY_SUPERSEDED_SITES` repointed to mcp/tests/test_memory_citation_agreement.py:762-762. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: `QUALIFIED_HEADINGS` repointed to mcp/tests/test_memory_citation_agreement.py:1057-1057. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T05:10+02:00 — 260918-TSIP-L12 curator (uncommitted change set on `ar/260918-tsip-l12-ar`, memory base `ec1cebe5`, code base `15e10084`): **body re-derived, not a metadata refresh.** Every claim on this card was re-read against the module's current bytes (`mcp/tests/test_memory_citation_agreement.py`, **1124 lines / 35 cases**, sha256 `34db6ea729d58833…`) and against the merged tree, because the module's four shipped pins, its header clause and its live-case prose all changed in this leaf and the card still described the pre-`L12` module. Corrected here: the case and class counts (**26 → 35 cases**, five classes → **seven**); every cited line range, re-derived from the module rather than shifted; the three constants the card named as the module's pins (**`SUPERSEDED_DECLARED_SITES = 20` is gone** — the card's claim that it was "asserted, not derived" is now history rather than state, and its rows were re-pointed at the derivation that replaced it); `T52_DEFINITION_OUTSIDE_RANGE` **123 → 130**; and above all **`T52_ENFORCED_POPULATION` was recorded as 0 and now reads 97**, which the card states as **inherited debt from the merged `260915_knowledge-substrate` line**, the same 97 register row `T141` measured, with a change in **either** direction named as a finding. The pins' address is recorded as the **commit pair**, not a branch (`F3`), and the qualified-heading census is recorded as a **named population of one** (`mcp/tests/overview.md:4833`) rather than as a zero. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` advanced because the claim re-read happened rather than instead of it — and they name the base commit the candidate was cut from, because no commit yet carries this source and the governed closeout owns the real stamp. **DISCLOSED — this card moved a pin on its first draft, and the pin was not moved to accommodate it.** The first draft's `F1`/`F2` paragraphs named the superseded figures (`2300`/`400`) beside the declared ones, outside `## Update History`; `test_the_superseded_pair_population_is_derived_from_the_tree` red **58 != 55** on three of this card's own lines, exactly as the derivation is built to. The derivation was right and the prose was wrong, so the **prose was reworded to refer to `SUPERSEDED_PAIR` by name instead of restating its figures** and the constant stayed **55** — the alternative (re-pinning 55 → 58) would have converted a documentation slip into a standing exemption. Verified after the edit by calling `superseded_pair_sites` directly: 55, and this card contributes **none**. That is `T112`'s repair working in the direction that matters, and it is why a documentation edit may not be assumed pin-neutral. No `Generated citation repair` bullet was added (`T118`) and no projection bullet was retired by adding a note (`T134`).
-- 2026-09-20T01:30+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 5 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_memory_citation_agreement.py.md:156` (T52_DEFINITION_OUTSIDE_RANGE) — re-read the claim against the re-pinned constant: its value, its tree and its line all moved when 260918-TSIP-L11 re-derived the pins on the landed line; `test_memory_citation_agreement.py.md:157` (T52_ENFORCED_POPULATION) — re-read the claim against the re-pinned constant: the enforced population is 0 on the landed pair and the row says so now; `test_memory_citation_agreement.py.md:158` (T58_WRAPPED_CITATIONS) — re-read the claim against the re-pinned module: the T58 pins are unchanged in value and the cited lines moved with the header; `test_memory_citation_agreement.py.md:9` () — STAMP ADVANCE: the four constant rows were re-read against the landed commit, which is the pair this leaf closes out; `test_memory_citation_agreement.py.md:10` () — STAMP ADVANCE: date moves with the commit.
-- 2026-09-19T22:52+02:00 — 260918-TSIP-L7 curator (uncommitted change set on `ar/260918-tsip-l7-ar`, memory worktree base `fd1a024e`): **created.** The module is new in this leaf (**793 lines / 26 cases**, sha256 `125d9cc414154e1c…`) and had no file-level onboarding at all. Recorded the two agreement classes it keeps (`T52`, `T45`/`T56`), the five classes and their case counts, the tree **pair** every live number is measured against with the official checkout named as refused, the three non-history stale sites and the two figure classes, and the three recorded bounds — `SUPERSEDED_DECLARED_SITES = 20` asserted rather than derived (`T112`), the header's `memory_tools.py:100` corrected to `:105` (`R2-3`) and the `T58` comment's `worktree.py.md:99` corrected to `:102` (`R2-5`), and the AST guard's narrower set (`T114`). It also records the lane and lifecycle answer for `T106`'s class: the module is reached by `unit-regression` in the default selection, and the one unregistered governed path the catalog cases name is L10's `tool_refusal_census_support.py`, not this module. Verification metadata is the recorded base commit, which does not contain this file; the candidate is uncommitted and the governed closeout stamps the real code commit.

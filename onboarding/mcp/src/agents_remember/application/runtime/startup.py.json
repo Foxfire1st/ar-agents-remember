@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/runtime/startup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MCP startup migrates its owned logs before ambient installation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "content": "sha256:d2b19b94ab8b1709bbf05887fb6d470af890ca6e85d160671b72559a2bfbfd99",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialize_mcp_application"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The application boundary returns the one cached, strict serving-build payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed33a8e165b0a70034ce14c4d80b25d9cfef897c",
+            "content": "sha256:9c29d951910abed0042a43d058e5ae68fd77fd06994e8ab33343aa5808469774",
+            "locator": {
+              "kind": "symbol",
+              "name": "mcp_serving_build_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

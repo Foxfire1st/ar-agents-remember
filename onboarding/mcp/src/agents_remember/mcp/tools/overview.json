@@ -1,0 +1,723 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools",
+  "references": {
+    "1": {
+      "note": "The named refusal of a root with no code tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:fdb9ef8db381f88789d2d788db205da97ac71618dbb2d5ea10c39141240fab76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NoCodeTreeError"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:f1180471fd0347804bd270aeced3e698667044ffee9f812dd67dd59afef7afdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The refusal detail's new sentence.\n\nAnchor: \"On a converted memory tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:498c50b26483703205f3bc4fc068cf8b26d83bd8b3c40723a98f4877c46b63ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_change_result"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The MCP adapter delegates completed-response ownership to the application.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The application attaches bounded guidance and records the completed result after finalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:8c6ce6cb3afcda77d14da74501bc9317aec63207eaa83ff57e536393afd03d6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_tool_response"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Wire validation and token finalization consume the enriched model in one serialization pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1528f1fc6e82408f2ddd381ca2b6956cbf42f694",
+            "content": "sha256:db1f8864146fed21cfc113c37453f85a5f1327c0ac702321cd6eccc0ce005fc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_tool_response"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Public response model registry maps each tool name to a Pydantic model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_COMPAT_TOOL_NAMES"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The checkpoint-landing name sits in the advertised tuple immediately after its integrate sibling, with the record-landing name next.\n\nAnchor: `worktree_checkpoint_landing`; `worktree_record_landing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:bbb5cca63d43ead2e0f1ad32f19424df622d951e01b873c11f562c947aadb02e",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The stop's name sits in the advertised tuple immediately after its sync sibling, in the working half of the surface.\n\nAnchor: `worktree_pause`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Schema tests assert public tool and response model coverage.\n\nAnchor: `PUBLIC_TOOL_RESPONSE_MODELS`; \"def test_every_public_tool_has_a_schema_generating_response_model(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "566f0ff894b3067653493fbf7b93357b8720b29a",
+            "content": "sha256:f08069bc4e4bff840bbe0016918316052cdef6fbfefdcb1deed17b75356e81f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicToolResponseModelTests"
+            },
+            "path": "mcp/tests/test_models.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The external-chat inbox builders post, poll, and consume operator responses.\n\nAnchor: \"def operator_inbox_post_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "add94bcb168bf1547c416e51c0df80866c6a7ed9",
+            "content": "sha256:4426270d1078d878e7ced0255d4394a3bf2f08108f6fa596a4b46352c6494251",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/operator_inbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The lifecycle finalizer builder exposes the terminal task finalization tool.\n\nAnchor: \"def lifecycle_finalize_task_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc2a027fa8329302b9ba1a1af26589d7940d865",
+            "content": "sha256:cb9d8a52d4de3d40ee4e4d00b08886a459bb187ce0f897a9bb10f9f8121f1e01",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A converted tree's projection reads each view whole.\n\nAnchor: \"whole_views=selected.memory_tree is not None\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:469183ffe57bd60039572adf117b63abe81077b7784eabbbbacd1947a7411985",
+            "locator": {
+              "end": 1084,
+              "kind": "line_range",
+              "start": 1081
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The linear-half hint delegates to the worktree guidance state machine.\n\nAnchor: \"def lifecycle_guidance\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:56c28a24b4574bbd167a6c2db330fac203f0c5b8bbec11f82510db2ca04cb251",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The supervisor heartbeat store + staleness-banner helper `base.py`'s choke point calls (260707-HFX2-L2 R5).\n\nAnchor: \"class AgentNotifierHeartbeatStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f502fd398e2ca6d7fce379c4dcb1d9c2dadfb5da",
+            "content": "sha256:60c9112e004533b496696d9545ba1efb12e28e7eef28269ee8f131e6dfd1d3bb",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/serving/agent_notifier_heartbeat.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases.\n\nAnchor: \"class StrictResponseModel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The trusted terminal assignment response carries document-and-role binding plus private session correlation.\n\nAnchor: \"class AttachTerminalSessionToTaskResponse\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83aa73dee17434d2bb6c9038169c30d793a96ff",
+            "content": "sha256:398c56ff2987ccd2377c21546ac852fb789dd04612f5ef8350529245978f8c2c",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/models/terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The application request owner has only code and memory messages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38475a49c1a400b66a220740428e6a6b495a096a",
+            "content": "sha256:9c12386695597fb00526ef24658b95d03a43536e8c8d600fe8af71c7c2e8cd67",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutCommitMessages"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Lifecycle/adoption/legacy payloads — the enclosure-adoption payload builder was removed; lifecycle control now goes through `worktree_operation_control_payload`, and enclosure adoption survives only in the lifecycle-owned enclosure-adoption service.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ca5f754679645c69bfde58ceaec70643364e95",
+            "content": "sha256:7cf4fa3e68ddaa0bd592051a7872a2b8e810780982feb18cc56e09714e7738b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_operation_control_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The removed wait payload builder has no replacement; the surviving worktree builders still delegate the exact typed request and use the standard response wrapper.\n\nAnchor: \"def worktree_attach_payload(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20ca5f754679645c69bfde58ceaec70643364e95",
+            "content": "sha256:880624f96a076fedf4311728225663c8f6590a8809e2a421c9d89d2e91acbe6c",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The capsule builder re-shapes the flat declaration arguments into the application request record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
+            "content": "sha256:74d130d7392edbd2060c8dd5624fe46c0c2c1a6bff0e1a518f12a47651025ab5",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_capsule_compile_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The two skill builders build a corpus request only when an override was supplied, so the shipped corpus is the default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
+            "content": "sha256:78b74ad03e8fc930e8491136a0a4ce725cbe522ec1cde895ee3eb3a9eca75f37",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_list_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "881f2d92e48bc61b7518cff7024525d2e0305d4b",
+            "content": "sha256:0b5436cfc3823b3d5b72272844fdcabe592dffee0ff29eff96b306358d48368a",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_catalog_read_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The declarations that call these builders, which pass no corpus override to the wire surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:377ac80ba8a0470d8eda5c6052fa12f6cf74f6b6a6b3eac8faae8311655853e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_skill_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
+            "content": "sha256:5680bcd9eb0d97cf2dc07777b851539d05de60a0e94221f8549a48bda238e663",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_response"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The capsule envelope carries its refusal in the same shape as a success.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "content": "sha256:c60e6b82416934f780fdf1ce59eff9840476c4c307fc19b9b2089f211449a4c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleCapsuleResponse"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:cc4845b47643583a8b98ac754e62902b8c3afa0d20223d7a77ef2c6167511c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_extension_methods"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "This server's own index resource, kept deliberately distinct from that method.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "content": "sha256:ee869d666225ce11ebd22367359f189c9de8d29c941e8140a26f5ffc3ee9c0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "index_resource"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:332f7b79473dc6c398582497f5995186709cf808bc776a5276073be83b06b677",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:006a7730b74ff929e59726f0223be05eb81fa3389d5c10e1b337bd619dadaf10",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SELECTION_FAILURES"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:f1180471fd0347804bd270aeced3e698667044ffee9f812dd67dd59afef7afdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_refusal"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "A partial index is never presented as complete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:cb469cf17bd4dc08dc7b2401c29aa1661adfb4107bf6ce2bb1d6a6d352d16795",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_complete"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The projection's dataset, or the refusal of an unheld seed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:a00dbff60c6c47b22cf1d530d48a5b1f53c1f40c987664664142cc80a107b269",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projection_selection"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The seam that pages a converted tree's read, and the per-page extras.\n\nAnchor: `read_tree_page`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_extras"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:ffd06af126f47105e301dff45eece202293d1b9b2ee22286ec0a3ff4b7bb333f",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 449
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Converted-tree refusals state the threshold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:745552c6972af802278ac3a046f03f8cc91e1405796f4b0e7e8c71be1a554ee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_read_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The read's currentness, at the walk's code tree, prepared once per page with the proofs.\n\nAnchor: `WalkCurrentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_extras"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The request value and the routing, with the worklist fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:166066bfc594da21468972f00396bcaeed8652d3dfb570399e595b8ee35eb1c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrityCheckRequest"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:69e56216cfdcc2f473f6d4fd38c31d4bbe5ab314b316e3e0ba173f9b830957ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_integrity_check_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:ee1419c2e2f0a61b669abd3797d40c2aec258d5acbe891fee88ac814d40d694f",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 639
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:698332acdf96af700fdab8cbba8d445796452d8279e661aabc98fbcfb5d4b339",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 654
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:95a394f79cb7eab4b5677cd835d524aa9ead8da846a1920f936477cebfeefc47",
+            "locator": {
+              "end": 682,
+              "kind": "line_range",
+              "start": 673
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A converted tree's page carries `proofs`, prepared once per page since MIK-R02.\n\nAnchor: `tree_view_proofs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_extras"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A key mismatch is a selection failure.\n\nAnchor: `IndexMismatchError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:006a7730b74ff929e59726f0223be05eb81fa3389d5c10e1b337bd619dadaf10",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SELECTION_FAILURES"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

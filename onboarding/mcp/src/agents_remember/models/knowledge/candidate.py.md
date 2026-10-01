@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/candidate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/candidate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate |  2026-09-22T20:08:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -105,79 +95,46 @@ None recorded for this slice. The vocabulary is complete for the increment that 
 implements task-bound admission replaces the `task-candidate` refusal without widening this union, and the
 publication/merge requirements (`KS-R04`, `KS-R05`) reuse `SnapshotIdentity` rather than redefining it.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The served knowledge vocabulary as an explicit re-export list, which this module's names joined. | `__all__` | mcp/src/agents_remember/models/knowledge/__init__.py:98-170 |
-| The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:107-107; mcp/src/agents_remember/models/knowledge/candidate.py:109-111; mcp/src/agents_remember/models/knowledge/candidate.py:117-119 |
-| The portable content identity and the two exact candidate inputs. | `SnapshotIdentity`; `ExactCandidateInput` | mcp/src/agents_remember/models/knowledge/candidate.py:195-207; mcp/src/agents_remember/models/knowledge/candidate.py:210-218; mcp/src/agents_remember/models/knowledge/candidate.py:224-233 |
-| The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:236-277 |
-|  The module-level digest the validator calls and the operation re-derives. | "def context_digest(" | mcp/src/agents_remember/models/knowledge/candidate.py:280-280  |
-| The receipt entry, including the two-state rule and the no-entry case. | `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:293-314 |
-| The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:317-339 |
-| **The twenty-five-member discriminated union, with no promotion, approval or SQL member — the twenty-two it held before this leaf's three census command kinds joined it at the tail.** | `ProposedCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:611-643 |
-| **The six census tables `MutableRecordTable` gained, and the three census command models imported late in the same block that already imported the other command modules late.** | `MutableRecordTable`; `CensusInventoryRowCommand`; `CensusClaimCommand`; `CensusDispositionCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:140-191; mcp/src/agents_remember/models/knowledge/candidate.py:181-185; mcp/src/agents_remember/models/knowledge/candidate.py:186-191; mcp/src/agents_remember/models/knowledge/candidate.py:213-216 |
-| The portable content identity and the two exact candidate inputs. | `SnapshotIdentity`; `ExactCandidateInput` | mcp/src/agents_remember/models/knowledge/candidate.py:195-207; mcp/src/agents_remember/models/knowledge/candidate.py:210-218; mcp/src/agents_remember/models/knowledge/candidate.py:224-233 |
-| The alias a batch's commands travel under, and the construct that makes the union's membership checkable in one place. | `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:646-651 |
-| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:656-673 |
-| The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult` | mcp/src/agents_remember/models/knowledge/candidate.py:676-702; mcp/src/agents_remember/models/knowledge/candidate.py:704-747 |
-| The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. | `KnowledgeLane`; `CANDIDATE_LANES` | mcp/src/agents_remember/models/knowledge/candidate.py:117-117; mcp/src/agents_remember/models/knowledge/candidate.py:119-119 |
-| The portable content identity and the two exact candidate inputs. | `SnapshotIdentity`; `ExactCandidateInput` | mcp/src/agents_remember/models/knowledge/candidate.py:195-207; mcp/src/agents_remember/models/knowledge/candidate.py:224-233 |
-| The resolved context and its two consistency validators. | `KnowledgeContext` | mcp/src/agents_remember/models/knowledge/candidate.py:236-277 |
-|  The module-level digest the validator calls and the operation re-derives. | "def context_digest(" | mcp/src/agents_remember/models/knowledge/candidate.py:280-280  |
-| The receipt entry, including the two-state rule and the no-entry case. | `RecordIdentity` | mcp/src/agents_remember/models/knowledge/candidate.py:293-314 |
-| The expectation model and its present-with-digest / absent-without-digest rule. | `ExpectedRecord` | mcp/src/agents_remember/models/knowledge/candidate.py:317-339 |
-| The twenty-five-member discriminated union with no promotion, approval or SQL member — the twenty-two it held at `KS-R17@v1`, plus this leaf's three census command kinds. | `ProposedCommand`; `ChangeCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:611-643; mcp/src/agents_remember/models/knowledge/candidate.py:640-642; mcp/src/agents_remember/models/knowledge/candidate.py:646-651 |
-| The resolution shape that deliberately omits the dataset identity. | `CandidateResolution` | mcp/src/agents_remember/models/knowledge/candidate.py:656-673 |
-| The batch and the receipt consistency validator the operation's results must satisfy. | `ChangeBatch`; `MutationResult` | mcp/src/agents_remember/models/knowledge/candidate.py:676-702; mcp/src/agents_remember/models/knowledge/candidate.py:704-747 |
-| The operation that consumes this vocabulary and the context it re-derives inside its transaction. | `change_candidate`; `_require_bound_context` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:148-183 |
-| The composition seam that resolves a context from a live candidate and seals it. | `resolve_candidate_context`; `build_candidate_context`; `change_knowledge_candidate` | mcp/src/agents_remember/application/knowledge.py:252-273; mcp/src/agents_remember/application/knowledge.py:275-301; mcp/src/agents_remember/application/knowledge.py:303-318 |
-| The frozen base and the shared identifier/digest patterns every model here inherits. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
-| The operation that consumes this vocabulary and the pre-lock lane check it applies first. | `change_candidate`; `require_writable_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80; mcp/src/agents_remember/memory/knowledge/candidate.py:83-102 |
+- The served knowledge vocabulary as an explicit re-export list, which this module's names joined. [1]
+- The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. [2]
+- The portable content identity and the two exact candidate inputs. [3]
+- The resolved context and its two consistency validators. [4]
+- The module-level digest the validator calls and the operation re-derives. [5]
+- The receipt entry, including the two-state rule and the no-entry case. [6]
+- The expectation model and its present-with-digest / absent-without-digest rule. [7]
+- **The twenty-five-member discriminated union, with no promotion, approval or SQL member — the twenty-two it held before this leaf's three census command kinds joined it at the tail.** [8]
+- **The six census tables `MutableRecordTable` gained, and the three census command models imported late in the same block that already imported the other command modules late.** [9]
+- The portable content identity and the two exact candidate inputs. [10]
+- The alias a batch's commands travel under, and the construct that makes the union's membership checkable in one place. [11]
+- The resolution shape that deliberately omits the dataset identity. [12]
+- The batch and the receipt consistency validator the operation's results must satisfy. [13]
+- The lane vocabulary, including the read-only `baseline` member that exists so it can be refused by name. [14]
+- The portable content identity and the two exact candidate inputs. [15]
+- The resolved context and its two consistency validators. [16]
+- The module-level digest the validator calls and the operation re-derives. [17]
+- The receipt entry, including the two-state rule and the no-entry case. [18]
+- The expectation model and its present-with-digest / absent-without-digest rule. [19]
+- The twenty-five-member discriminated union with no promotion, approval or SQL member — the twenty-two it held at `KS-R17@v1`, plus this leaf's three census command kinds. [20]
+- The resolution shape that deliberately omits the dataset identity. [21]
+- The batch and the receipt consistency validator the operation's results must satisfy. [22]
+- The operation that consumes this vocabulary and the context it re-derives inside its transaction. [23]
+- The composition seam that resolves a context from a live candidate and seals it. [24]
+- The frozen base and the shared identifier/digest patterns every model here inherits. [25]
+- The operation that consumes this vocabulary and the pre-lock lane check it applies first. [26]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): re-read this card's two vocabulary claims against the current source and recorded the census group substantively. The truth-coverage census appends **three command kinds** to `ProposedCommand` (`CensusInventoryRowCommand`, `CensusClaimCommand`, `CensusDispositionCommand` at `mcp/src/agents_remember/models/knowledge/candidate.py:640-642`, taking the union to **twenty-five** members) and **six tables** to `MutableRecordTable` (`:186-191` — the inventory row, the assessable claim, the migration disposition and the three relations they resolve through), with the three command models imported late in the block that already imported the other command modules late (`:213-216`). The card's counts were therefore corrected rather than carried: the `MutableRecordTable` sentence said thirteen tables, the invariants said a thirteenth command kind could not be expressed, and the union rows said twenty-two members. Every citation this card carries was checked against the source as it now stands — this leaf's additions moved the module's later constructs — and the stale ranges were re-cited to the constructs that actually hold their anchors (`context_digest` at `:280`, `RecordIdentity` at `:293-314`, `ExpectedRecord` at `:317-339`, the union at `:611-643`, `ChangeCommand` at `:646-651`, `CandidateResolution` at `:656-673`, `ChangeBatch`/`MutationResult` at `:676-702` and `:704-747`, and `SnapshotIdentity`/`ExactCandidateInput` at `:195-207` and `:224-233`). No claim was deleted and no superseded value was removed. The metadata block above now names this leaf's candidate as what was read and carries **no `lastVerifiedCommitHash`**: the body was re-read against a working candidate no commit contains, so no real commit holds the content a stamp would claim to have verified, and closeout owns the stamp. The body was changed substantively and this entry is the history record, not a metadata-only refresh.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "def context_digest(" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:265-265. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `RecordIdentity` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:278-299. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `ExpectedRecord` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:302-324. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `CandidateResolution` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:638-655. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `SnapshotIdentity`; `ExactCandidateInput` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:185-194; mcp/src/agents_remember/models/knowledge/candidate.py:209-218. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `KnowledgeContext` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:221-262. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "def context_digest(" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:265-265. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `RecordIdentity` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:278-299. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `ExpectedRecord` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:302-324. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `CandidateResolution` repointed to mcp/src/agents_remember/models/knowledge/candidate.py:638-655. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "def context_digest(" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:249-249. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "def context_digest(" repointed to mcp/src/agents_remember/models/knowledge/candidate.py:249-249. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T05:00:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): **re-read the two union claims this leaf widened and corrected the counts.** `ProposedCommand` now holds **twenty-two** variants — the eighteen it held at the previous leaf plus this leaf's four composition command kinds — and `ChangeCommand` is the alias it travels under; the card's eighteen-member wording was therefore false and is corrected, with the union row split into one row per anchor so each resolves in its own declaration. `MutableRecordTable` gained the six composition tables. The generated bullet that had rewritten the alias row's range mechanically was removed and replaced by this entry. Verification metadata is **not** advanced; the code commit does not exist yet and closeout owns that stamp.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand** — `KnowledgeLane`, `CANDIDATE_LANES`, `def context_digest(`, `RecordIdentity`, `ExpectedRecord`, `CandidateResolution`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; their claims' ranges were **re-verified by hand against the current source in this pass** and repaired where this leaf's addition moved them, so a mechanically projected range is no longer the only evidence any of these claims carries. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **re-read every citation this card carries against the current source and repaired the ranges this leaf's addition moved.** This entry recorded the two appended union members, the five new mutable tables, and that no promotion member was added. Verification metadata is unchanged and the code commit does not exist yet; closeout owns that stamp.
-
-- 2026-09-18T02:55:00+00:00 — 260915-KS-L11 owning seat (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this claim against the source and re-cited it by hand, replacing a generated projection.** The claim said *twelve* members; the union now admits **eighteen** — the twelve shipped command models plus the six facet commands this leaf adds — at `models/knowledge/candidate.py:372-392`. The card's three other statements of the old count (the summary, the closed-union invariant and the `MutableRecordTable` sentence) were reconciled in the same read, so every count in this card now matches the declaration.
-
-- 2026-09-17T23:18:00+00:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): **re-read this card against the source for the round-2 citation work and recorded a contradiction instead of softening the row.** The row above reading "The eighteen-member discriminated union with no promotion, approval or SQL member" is **no longer true**: `ProposedCommand` (`mcp/src/agents_remember/models/knowledge/candidate.py:372-392`) now admits **eighteen** members — the shipped twelve plus `AddFacet`, `AttachFacet`, `RemoveFacetAttachment`, `AuthorExplanation`, `AddExplanationRevision` and `DesignateExplanation`, which this leaf's authored-judgment vocabulary added; `ChangeCommand` still aliases it at `:394`. The row's citation and range follow the union as it now stands, and its *member count* was not rewritten, because a claim's meaning belongs to the owning seat rather than to the citation curator. The one-word correction owed is `eighteen-member` → `eighteen-member`. Verification metadata is **not** advanced: the code commit does not exist yet and closeout owns the stamp. No content impact: this entry records a review, not a content change.
-
-- 2026-09-16T08:10:00+00:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): created this one-to-one card for the new candidate-change vocabulary. It records the closed twelve-command union with no promotion/approval/SQL member, the resolved-versus-authored and expected-versus-assumed splits, the deliberately absent dataset-identity field on `CandidateResolution`, the two-state receipt and its consistency validator, and the `baseline`/`task-candidate` lane distinction that exists so both can be refused by name. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

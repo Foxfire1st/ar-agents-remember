@@ -1,15 +1,5 @@
 # skills/l-01-agent-lifecycles/templates/turn-report.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/templates/turn-report.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
-
 ## Governing Overview
 
 [lifecycle overview](../overview.md)
@@ -66,19 +56,19 @@ None.
 
 This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source governs this report format.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope. | "## Requirement Attempt Journal Records Appended For This Handoff" | skills/l-01-agent-lifecycles/templates/turn-report.md:65-119 |
-| Exact commands and outcomes have a first-class report section. | "## Checks" | skills/l-01-agent-lifecycles/templates/turn-report.md:159-171 |
-| Artifact lifecycle and task continuity are recorded separately. | "## Durable-Evidence Promotion Hold Point (separate concern)"; "## Respawn State (onboard a successor from this — no transcript needed)" | skills/l-01-agent-lifecycles/templates/turn-report.md:172-177; skills/l-01-agent-lifecycles/templates/turn-report.md:204-209 |
+- Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope. [1]
+- Exact commands and outcomes have a first-class report section. [2]
+- Artifact lifecycle and task continuity are recorded separately. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The report shape is generic; each dispatched repository supplies the actual verification command
 and durable evidence paths.
@@ -89,27 +79,3 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
-
-## Update History
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-
-- 2026-08-28T11:51+02:00 — Made the one-primary envelope and removal of the transient worker-record
-  scaffold explicit after authoritative journal append.
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
-
-- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: added separate experimental protocol events and made
-  formal attempt records lightweight content-addressed views created only at review handoff.
-- 2026-08-27T20:45+02:00 — Separated the link-only turn report from the single physical leaf
-  journal so copied records cannot become competing authorities.
-- 2026-08-27T18:06+02:00 — M40/M43: converted the worker handoff into append-only attempt records
-  with exact candidate/predecessor identity, embedded M38 envelope/checks, and closed failure rows.
-- 2026-08-27T14:52+02:00 — Created onboarding for per-revision acceptance, the restored Checks
-  section, and the separate artifact-lifecycle hold point.

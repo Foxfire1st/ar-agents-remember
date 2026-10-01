@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`_recovery_evidence_controls` uses initial-door and direct-landing evidence without a ledger-recovery classifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
+            "content": "sha256:d8c4211602b3526af93b586a8d536d0af5c9c8ad02ad3812b6bdbe14aa1c1a3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recovery_evidence_controls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_resume_control` requests fresh messages for enabled code and memory legs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
+            "content": "sha256:54a9129eada47ca06e11fc8b7a1a4807771735e884dc778d287f2656064072bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume_control"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_integration_control` constructs integration arguments with no ledger commit subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
+            "content": "sha256:fe850989cc7d8c401c086c7c8cf938437cb30e2d623a2ce698bdcbfe45423957",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integration_control"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_direct_successor_control` constructs a direct successor from code identity and the memory-content message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
+            "content": "sha256:f06fa090af964a9f8936477b92737cf271cc62746d9ff581aa8cc78a1364f9a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_successor_control"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Missing-intent closeout/direct-landing recovery and retry controls are withheld. (`_without_legacy_generation_reuse`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e7aeef1171aee9772d65823994984cccf8bbbbc",
+            "content": "sha256:4cfa4b2f6669c2287a94e3970639493131ac8593dae9178b032a20f8bdf41e52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_legacy_generation_reuse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

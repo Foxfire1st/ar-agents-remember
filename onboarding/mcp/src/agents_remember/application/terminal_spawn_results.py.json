@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/terminal_spawn_results.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Common pre-spawn refusal envelope includes optional lineage evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cffed0e439c96fd52540647a209038ed2bf8a54",
+            "content": "sha256:06cbe9c784def91c33f9473a9582c42964c363b389224edc0972b0cac1920334",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Internal opener outcomes map to public statuses and keep occupied-seat evidence distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cffed0e439c96fd52540647a209038ed2bf8a54",
+            "content": "sha256:633fe6c1f40099b5a5bacd35c02184339dc0dcba021b49ca950b809c71ead35d",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_terminal_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

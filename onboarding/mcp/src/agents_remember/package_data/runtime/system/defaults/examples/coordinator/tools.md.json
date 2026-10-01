@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The coordinator tools example separates global commands from repository-specific checks, branch workflow, and code quality tools.\n\nAnchor: `# Coordinator Tools Example`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
+            "content": "sha256:e8200b76e6c82e2112a55edccb076190b6caf43128c6cee4ed1c622328fda8b0",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The provider command section records MCP runtime install, `grepai_search`, aggregate provider status/watcher flows, and CGC bounded `run -- ...` plus long-running `visualize --port 8000` command shapes.\n\nAnchor: \"Expected provider setup and lifecycle command shapes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
+            "content": "sha256:f0f3a77bdbcb06318717dbf5636269fa324e62ba299f7bbdaf607d91f44e93f7",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The provider notes say GrepAI lifecycle commands expand `grepai-memory` workspace roots, ensure Docker network/PostgreSQL/Ollama health, bind-mount and index the live memory roots in place, write provider-owned workspace config/state, and use the Docker runner container instead of host binaries; CGC lifecycle commands expand the configured `roots` array, ensure FalkorDB Docker, start/stop every configured root unless `--repo-id` narrows it, pass post-`--` arguments to native CGC for bounded queries, and expose the visualizer as a separate long-running lifecycle command.\n\nAnchor: \"The GrepAI lifecycle command reads\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
+            "content": "sha256:39cec743efc6c8438ab6d6f37e984b9d28839514ebc48ece8655a45ca61472da",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The process namespace note says long-running daemon actions such as watcher start/stop/shutdown, CGC start/stop/visualize, and GrepAI watcher start/stop/refresh must run from a durable host namespace, while lifecycle status reports `processNamespace` diagnostics and refuses `--die-with-parent` sandboxes.\n\nAnchor: `processNamespace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
+            "content": "sha256:3b88064d5d0d90075521e5fb4c5d6545224ffd833eb7166ae21400c0d807e5ab",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The containment notes say a CGC provider should not be used in managed mode if indexing writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs into the indexed source repository, and a GrepAI provider should not be used if indexing creates `.grepai/` inside source repositories or durable memory roots.\n\nAnchor: \"A CGC provider should not be used\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
+            "content": "sha256:f544f3f8e9bd70c0dcdf1fffe98147f47cebde772669bd1c5d95ae595327bff7",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

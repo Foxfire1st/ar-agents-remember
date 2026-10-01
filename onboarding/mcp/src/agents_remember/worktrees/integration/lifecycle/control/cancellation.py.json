@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:a03af421a3bc3495d5bbe1d8e6f1bb7b2583505c9140098c55648ef6b4b02686",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_operation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:a03af421a3bc3495d5bbe1d8e6f1bb7b2583505c9140098c55648ef6b4b02686",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_operation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A direct landing's kept closing: checked before anything moves, restored once cancelled (MIK-R09).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:c34b5ce53e415f359075c88545deefa2d5a872d873a81867c1c8d37640857249",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_direct_closing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:d4b115a4363dc6c1eb7ee57c506a6f40ed0d3f8abbddc9e57271451090fd4d91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_readable_direct_closings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:cb8233b1d69ab7ec06a3b1ec1b1f5dba4b6925e743f50f5e169bca6840994791",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closing_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A repeated cancel restores too.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:78d32d2de28e9249d4babe27ec7835bb7cba3c5c38de97fa7e923ef1c89b7ab5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_terminal_cancel_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The cancel restores the file but never a later edit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0232362ee0ee427401f2d21d0cbc238ab3db594c",
+            "content": "sha256:11f05df553efb98ed979d1ef3b3ba92fe9681d40304940c4147b292dc092c555",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancelling_the_generation_restores_the_file_it_closed_but_never_a_later_edit"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:a03af421a3bc3495d5bbe1d8e6f1bb7b2583505c9140098c55648ef6b4b02686",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_operation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

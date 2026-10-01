@@ -1,0 +1,223 @@
+{
+  "path": "mcp/src/agents_remember/serving/codex_app_server_adapter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Session keeps desired and effective settings separate, validates dynamic model-local choices, and promotes only accepted selection evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:0705847a2619367fe76daa83431470dc7a0e2eae0938d559d614149c30b0ee05",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexAppServerSession"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:f4bc20d84318535d85a5cbc915ff98cd7e3920f64c359f513c2f45f2800b25f1",
+            "locator": {
+              "end": 462,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Submission evidence captures the exact model/effort pair accepted at reservation time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:fa3008255fc028ab7c566e5ea90f7605d423b0979e304a5dc304878edc3260e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionEvidence"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The stable server-request grammar (`STABLE_SERVER_REQUESTS`) the method-first degrade split keys on: methods outside it parse as experimental/unsupported traffic, never protocol violations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:7b56428c1fb171fa4aa1cd59f8c53cbca21e3f927d550b9061502ab86586eaf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "STABLE_SERVER_REQUESTS"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The transport removes cancelled requests and ignores their syntactically valid late responses without retaining tombstones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c2c9c7cd6970c13d87df88985370acf600b3463",
+            "content": "sha256:8259446d20b69738b3735e9586e67ff6568e629c993c395ebf173f45491c950f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodexStdioTransport"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The launch boundary refuses duplicate adapter-owned argv/config selectors before discovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21709e9b0940189488bbf05a9266f3dc6b8910a6",
+            "content": "sha256:0f8b168f5a30fff77a09df73d0ed12673499922e90c9bdfba8d345c96509498d",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Model pages preserve display/description metadata and model-local reasoning effort options.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:18fbf2bd8f0e059bffc7c70d5e1a4332d2e6360a46818753d810a9cc83867a62",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_model_page"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:8d4b8284bf5416b5ce245f6ef7889e8e5e40511bbbd90e22418a6355033ec251",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The thread flatten helper enforces unique typed item identity for native paging.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:fd783ef748269bfb0c0303b30a1e85417a91e2ebf36455a84db7b1e249f7f2a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "native_evidence_frames_from_thread"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4d1330e3fd30f12431ff5eb7a9dcea5f0f731df5",
+            "content": "sha256:51c33ce316161b4733dee79f9c8589d3b1553b763bb57cb3ef2654a98c56ffbf",
+            "locator": {
+              "end": 422,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The multiplexing grammar this adapter fills: `AdapterSnapshot.pending_interactions` (parent slot back-compat, agent entries carry `raw.threadId`/`agentLabel`) and `EvidenceFrame.thread_id` as the demux key.\n\nAnchor: `AdapterSnapshot`, `EvidenceFrame`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92aa4f7725f9ca3a73e566e0e0e4ecb041297c5",
+            "content": "sha256:3bfbd414e81a3803aff06cad32f7a63a0d004b159439df86b409628d6cdb7539",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdapterSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/control_wire.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:0c8e1fe06c22330610aad9172e790eeec03a37e5f742d87c786c40f45338e9b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceFrame"
+            },
+            "path": "mcp/src/agents_remember/models/conversations/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The bridge extracts `threadId` from diverted evidence into `EvidenceFrame.thread_id` and forwards the additive `thread_id` native-page selector.\n\nAnchor: `native_page`, `_evidence_thread_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:88d2d0768172c99464a44bc1c7d98344a00a67d374360bfaec0c5f8627328942",
+            "locator": {
+              "kind": "symbol",
+              "name": "native_page"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:18645cf91bc6043f0534add37c8985484dc66bf40710489775f24764006f4e0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_thread_id"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

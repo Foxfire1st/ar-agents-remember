@@ -1,0 +1,23 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/consumer_inventory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete accepting-consumer inventory is explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6fef9d849dd7bfcf4a5aad05df70515debc0414",
+            "content": "sha256:9f33d3e25590b49bdea38b4237ecb513ca74c9d71b2cfc693ae62d046fb95c2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ACCEPTING_CONSUMER_INVENTORY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

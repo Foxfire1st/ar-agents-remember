@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/projections/landing_state.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/projections/landing_state.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-12T17:30+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving projections overview](overview.md)
@@ -29,18 +19,18 @@
 - Failures never invent remote or PR state.
 - Lifecycle cancellation is safe and does not create per-tick tasks or unbounded workers.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Projector owns startup and cancellation. | `run` | mcp/src/agents_remember/serving/projector.py:193-236 |
-| Landing facts are merged into projected status. | "def _safe_status_payload(  # pragma: no cover"; "def refresh_engine_process_landing(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:302-302; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:348-348 |
+- Projector owns startup and cancellation. [1]
+- Landing facts are merged into projected status. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repo references.
 
@@ -49,12 +39,3 @@ No cross-repo references.
 Completed contracts can freeze one fully observed landing result in `landing-final.json`, removing them from recurring remote probes. Frozen rows are validated and projected to reducer-known fields; corrupt, stale, or pre-reopen files are rejected so a reopened contract returns to live observation rather than serving the old landing result.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-04T11:40:58+02:00 — 260731-EFA-L6 S18-B08 curator: bound startup/cancellation and landing-merge claims to the current projector and snapshot constructs.
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: created for the bounded, exact-keyed, lifecycle-managed background landing observer.
